@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "但以理書/解說/第9章.md",
+                "file": "但以理書/經文/第11章.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第9章"
+              "title": "第11章"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "但以理書/解說/第9章.md",
+                "file": "但以理書/經文/第11章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第9章 的反向連結"
+              "title": "第11章 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "但以理書/解說/第9章.md",
+                "file": "但以理書/經文/第11章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第9章 的對外連結"
+              "title": "第11章 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "但以理書/解說/第9章.md",
+                "file": "但以理書/經文/第11章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第9章 的大綱"
+              "title": "第11章 的大綱"
             }
           }
         ]
@@ -185,9 +185,15 @@
   },
   "active": "87e216252851ab4d",
   "lastOpenFiles": [
-    "主題/禱告.md",
-    "但以理書/經文/第9章.md",
+    "但以理書/經文/第12章.md",
     "但以理書/解說/第9章.md",
+    "但以理書/拾穗/第12章.md",
+    "但以理書/註解/第12章.md",
+    "但以理書/解說/第12章.md",
+    "但以理書/解說/第10章.md",
+    "但以理書/解說/第7章.md",
+    "但以理書/經文/第9章.md",
+    "主題/禱告.md",
     "但以理書/經文/第10章.md",
     "主題/救贖.md",
     "人物/以賽亞.md",
@@ -201,15 +207,9 @@
     "但以理書/註解/第11章.md",
     "但以理書/經文/第11章.md",
     "但以理書/拾穗/第9章.md",
-    "但以理書/解說/第10章.md",
     "但以理書/拾穗/第10章.md",
     "但以理書/解說/第11章.md",
     "但以理書/註解/第10章.md",
-    "但以理書/拾穗/第11章.md",
-    "但以理書/註解/第9章.md",
-    "主題/安提阿古.md",
-    "主題/公綿羊.md",
-    "主題/瑪加伯.md",
-    "主題/加百列.md"
+    "但以理書/拾穗/第11章.md"
   ]
 }
