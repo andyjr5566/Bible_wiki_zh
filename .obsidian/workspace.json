@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "但以理書/經文/第11章.md",
+                "file": "scheme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第11章"
+              "title": "scheme"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "但以理書/經文/第11章.md",
+                "file": "scheme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第11章 的反向連結"
+              "title": "scheme 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "但以理書/經文/第11章.md",
+                "file": "scheme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第11章 的對外連結"
+              "title": "scheme 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "但以理書/經文/第11章.md",
+                "file": "scheme.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第11章 的大綱"
+              "title": "scheme 的大綱"
             }
           }
         ]
@@ -185,31 +185,41 @@
   },
   "active": "87e216252851ab4d",
   "lastOpenFiles": [
-    "但以理書/經文/第12章.md",
-    "但以理書/解說/第9章.md",
-    "但以理書/拾穗/第12章.md",
-    "但以理書/註解/第12章.md",
-    "但以理書/解說/第12章.md",
-    "但以理書/解說/第10章.md",
-    "但以理書/解說/第7章.md",
-    "但以理書/經文/第9章.md",
-    "主題/禱告.md",
-    "但以理書/經文/第10章.md",
-    "主題/救贖.md",
-    "人物/以賽亞.md",
-    "人物/尼希米.md",
-    "人物/亞達薛西.md",
-    "人物/耶利米.md",
-    "主題/彌賽亞.md",
-    "主題/受膏者.md",
-    "主題/七十個七.md",
-    "但以理書/經文/第8章.md",
-    "但以理書/註解/第11章.md",
-    "但以理書/經文/第11章.md",
-    "但以理書/拾穗/第9章.md",
-    "但以理書/拾穗/第10章.md",
-    "但以理書/解說/第11章.md",
-    "但以理書/註解/第10章.md",
-    "但以理書/拾穗/第11章.md"
+    "但以理書/註解/sedNxA034",
+    "fix_remaining.py",
+    "人物/雅姆.md",
+    "主題/神的護理.md",
+    "主題/羅馬帝國.md",
+    "地點/黎巴嫩.md",
+    "主題/奧秘的啟示.md",
+    "主題/大寶座.md",
+    "人物/馬他提亞.md",
+    "人物/薛西.md",
+    "主題/封住獅子口.md",
+    "主題/聖約.md",
+    "主題/外邦人的時刻.md",
+    "人物/亞哈隨魯.md",
+    "地點/書珊城.md",
+    "地點/希底結河.md",
+    "主題/至高者.md",
+    "fix_links.py",
+    "地點/以色列.md",
+    "link_orphans.py",
+    "地點/迦勒底.md",
+    "地點/巴勒斯坦.md",
+    "地點/塞浦路斯.md",
+    "地點/地中海.md",
+    "地點/應許之地.md",
+    "地點/西奈山.md",
+    "地點/伯利恆.md",
+    "地點/敘利亞.md",
+    "地點/埃及.md",
+    "但以理書/註解/sedeSmcRW",
+    "但以理書/註解/sedXVq7pu",
+    "但以理書/註解/sedzS2HKm",
+    "但以理書/註解/sed55imqX",
+    "但以理書/註解/seddeNcce",
+    "但以理書/拾穗/sedFd0bg5",
+    "但以理書/拾穗/sed5IG5dt"
   ]
 }
