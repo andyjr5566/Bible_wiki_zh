@@ -12,7 +12,29 @@ def verify_links(book_name=None, root_path=r'C:\Obsidian\Hermes\scripture'):
                 if f.endswith('.md'):
                     existing_entities.add(f[:-3])
 
-    # 2. Scan for wikilinks
+    # 2. Build set of all existing chapter-level wikilinks (e.g. "但以理書 第1章 註解")
+    existing_chapter_links = set()
+    for item in os.listdir(root_path):
+        item_path = os.path.join(root_path, item)
+        if not os.path.isdir(item_path) or item in ['人物', '地點', '主題']:
+            continue
+        for section in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
+            section_path = os.path.join(item_path, section)
+            if not os.path.exists(section_path):
+                continue
+            for fname in os.listdir(section_path):
+                if fname.endswith('.md'):
+                    # fname is like "第1章.md" → link format: "{書名} 第1章 {章節}"
+                    chapter = fname.replace('.md', '')
+                    existing_chapter_links.add(f"{item} {chapter}")
+                    existing_chapter_links.add(f"{item} {chapter} 註解")
+                    existing_chapter_links.add(f"{item} {chapter} 拾穗")
+                    existing_chapter_links.add(f"{item} {chapter} 解說")
+                    existing_chapter_links.add(f"{item} {chapter} 背景")
+                    existing_chapter_links.add(f"{item} {chapter} 綱要")
+                    existing_chapter_links.add(f"{item} {chapter} 交叉參照")
+
+    # 3. Scan for wikilinks
     # If book_name is None, scan all directories under root_path except the shared folders
     books_to_scan = []
     if book_name:
@@ -46,11 +68,11 @@ def verify_links(book_name=None, root_path=r'C:\Obsidian\Hermes\scripture'):
                     continue
                 
                 # Find all [[links]]
-                links = re.findall(r'\[\[([^\]]+)\]\]', content)
+                links = re.findall(r'\[\[([^\\]]+)\]\]', content)
                 for link in links:
                     # Clean link (handle [[Name|Alias]] case)
                     entity = link.split('|')[0]
-                    if entity not in existing_entities:
+                    if entity not in existing_entities and entity not in existing_chapter_links:
                         # Log the broken link
                         key = f"{book}/{section}/{fname}"
                         all_broken.setdefault(key, set()).add(entity)

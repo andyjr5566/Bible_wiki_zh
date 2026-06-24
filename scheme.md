@@ -345,7 +345,67 @@ scripture/
 4. **格式統一**：所有新書卷的 markdown 檔案皆採用上述格式模板，以確保觀感一致且連結正常。  
 5. **定期檢查**：使用 Obsidian 的「破損連結」與「未連結檔案」功能，及時修正遺漏或錯誤的連結。
 
-## 七、備註與後續維護
+## 七、來源網站 URL 模式（2026-06-24 實測紀錄）
+
+以下 URL 模式經本次《何西阿書》實際抓取驗證，**失敗的組合已標註**，避免下次重複試錯：
+
+### 1. 經文（cnbible.com 和合本）
+
+| 語言 | ✅ 正確 URL | ❌ 失敗 URL |
+|------|-------------|-------------|
+| 繁體中文 | `https://cnbible.com/cu/{英文書名}/{章}.htm` | `https://cnbible.com/{中文書名}/{章}.htm`（回目錄頁） |
+| 簡體中文 | `https://cnbible.com/cus/{英文書名}/{章}.htm` | `https://cnbible.com/{中文書名}.htm`（404） |
+
+**英文書名對照**：Hosea（何西阿書）、Genesis（創世記）、Daniel（但以理書）等。
+
+**注意**：逕行 web_extract 回傳內容有**字間空格**（如「當 烏 西 雅」），需後處理移除。
+
+### 2. 註解（ccbiblestudy.org 查經資料大全）
+
+| 語言 | ✅ 正確 URL | ❌ 失敗 URL |
+|------|-------------|-------------|
+| 繁體中文 | `https://www.ccbiblestudy.org/Old%20Testament/{編號}{書名}/{編號}CT{章}.htm` | `https://ccbiblestudy.org/commentaries/{編號}-{書名}/01.htm`（404） |
+
+**編號對照**：28Hosea（何西阿書）、28Daniel（但以理書）。
+
+**指令碼**：`{編號}CT{章}.htm` = 註解（CT = Commentary Traditional）；`{編號}BT{章}.pdf` = 黃迦勒 PDF；`{編號}GT{章}.htm` = 拾穗。
+
+### 3. 解說（kingcomments.com）
+
+| 狀態 | 說明 |
+|------|------|
+| ❌ 404 | `https://kingcomments.com/hosea-1/` 不存在 |
+| ✅ 正確 | `https://www.kingcomments.com/en/bible-studies/{英文書名縮寫}` |
+| ⚠️ 內容 | 僅提供**全卷概覽**，無逐章解說（不適合逐章擷取） |
+
+**結論**：KingComments 僅適合補充「全書概覽」層面的資料，不適合做逐章解說來源。
+
+### 4. 解說替代來源
+
+| 來源 | URL 模式 | 備註 |
+|------|----------|------|
+| Enduring Word | `https://enduringword.com/bible-commentary/{英文書名}-{章}/` | ✅ 逐章解說，英文，內容豐富 |
+| Bible Hub | `https://biblehub.com/commentaries/{英文書名}/{章}/` | ⚠️ 僅回傳 Menu，web_extract 抓不到內容 |
+
+### 5. 拾穗（ccbiblestudy.org）
+
+| 語言 | ✅ 正確 URL |
+|------|-------------|
+| 繁體中文 | `https://www.ccbiblestudy.org/Old%20Testament/{編號}{書名}/{編號}GT{章}.htm` |
+
+**指令碼**：`{編號}GT{章}.htm` = 拾穗（GT = Gleanings Traditional）。
+
+### 6. 抓取流程建議
+
+1. 先用 `web_search` 搜尋 `{書名} 第{章} 經文 和合本 cnbible` 確認正確 URL
+2. 用 `web_extract` 抓取 HTML 內容
+3. 若 web_extract 失敗或內容為空，嘗試 `web_search` 找替代頁面
+4. 若需中文但只有英文來源，直接抓取英文內容再於整理時轉譯
+5. 每章抓取後**立即檢查**內容是否包含經文/註解本體（而非僅導航目錄）
+
+---
+
+## 八、備註與後續維護
 - 本 scheme.md 為設計藍圖，實際執行時可依使用經驗微調（例如將「背景」與「綱要」合併，或增添「禱告回應」等子類別）。  
 - 任何調整應該先在本檔案中說明原因，並更新範例，以利未來書卷同步同步。  
 - 建議每完成一卷書後，利用 Obsidian 的「破損連結」與「未連結檔案」功能，及時修正遺漏或錯誤的連結。
