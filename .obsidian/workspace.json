@@ -11,10 +11,14 @@
             "id": "d194018f075c5c6d",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "關聯圖檢視"
+              "type": "markdown",
+              "state": {
+                "file": "創世記/第7章.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "第7章"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "創世記/第7章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向連結"
+              "title": "第7章 的反向連結"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "創世記/第7章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "對外連結"
+              "title": "第7章 的對外連結"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "創世記/第7章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "第7章 的大綱"
             }
           }
         ]
@@ -178,13 +185,13 @@
   },
   "active": "d194018f075c5c6d",
   "lastOpenFiles": [
+    "創世記/第6章.md",
+    "創世記/第7章.md",
+    "link_folder/神學/大淵的泉源與天上的窗戶.md",
+    "scheme.md",
     "link_folder/原文/四十的屬靈意義.md",
     "link_folder/主題/潔淨與不潔淨的早期區分.md",
     "link_folder/神學/耶和華把他關在方舟裡.md",
-    "link_folder/神學/大淵的泉源與天上的窗戶.md",
-    "創世記/第7章.md",
-    "scheme.md",
-    "創世記/第6章.md",
     "創世記/第5章.md",
     "link_folder/主題/強暴.md",
     "link_folder/神學/人的全面敗壞.md",
