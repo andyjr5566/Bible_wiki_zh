@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "link_folder/主題/神的恩典之約.md",
+                "file": "link_folder/神學/萬國同源.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "神的恩典之約"
+              "title": "萬國同源"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/主題/神的恩典之約.md",
+                "file": "link_folder/神學/萬國同源.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "神的恩典之約 的反向連結"
+              "title": "萬國同源 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/主題/神的恩典之約.md",
+                "file": "link_folder/神學/萬國同源.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "神的恩典之約 的對外連結"
+              "title": "萬國同源 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/主題/神的恩典之約.md",
+                "file": "link_folder/神學/萬國同源.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "神的恩典之約 的大綱"
+              "title": "萬國同源 的大綱"
             }
           }
         ]
@@ -183,34 +183,34 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "46a741830d3dac3f",
+  "active": "d194018f075c5c6d",
   "lastOpenFiles": [
+    "創世記/第11章.md",
+    "link_folder/互文/巴別塔與五旬節.md",
+    "link_folder/人物/撒萊.md",
+    "link_folder/人物/亞伯蘭.md",
+    "link_folder/人物/他拉.md",
+    "link_folder/地點/哈蘭.md",
+    "link_folder/地點/吾珥.md",
+    "link_folder/主題/言語的混亂.md",
+    "link_folder/主題/巴別塔.md",
+    "link_folder/神學/假合一.md",
     "創世記/第10章.md",
+    "link_folder/神學/信心與忍耐.md",
+    "link_folder/神學/審判已過.md",
+    "link_folder/神學/神的記念.md",
+    "link_folder/解經爭議/神是否暫時忘記了挪亞.md",
+    "創世記/第8章.md",
+    "創世記/第7章.md",
+    "創世記/第9章.md",
+    "創世記/第4章.md",
+    "link_folder/主題/神的恩典之約.md",
     "link_folder/互文/寧錄與敵基督.md",
     "link_folder/解經爭議/寧錄的在耶和華面前.md",
     "link_folder/地點/尼尼微.md",
     "link_folder/地點/示拿地.md",
     "link_folder/原文/七十的屬靈意義.md",
     "link_folder/地點/巴別.md",
-    "link_folder/人物/希伯.md",
-    "link_folder/人物/寧錄.md",
-    "link_folder/神學/萬國同源.md",
-    "link_folder/主題/虹.md",
-    "link_folder/人物/瑪土撒拉.md",
-    "agent_start_prompt.md",
-    "創世記/第9章.md",
-    "link_folder/原文/四十的屬靈意義.md",
-    "創世記/第7章.md",
-    "創世記/第4章.md",
-    "link_folder/人物/挪亞.md",
-    "link_folder/主題/遮蓋與宣揚.md",
-    "link_folder/解經爭議/為何咒詛迦南而非含.md",
-    "創世記/第8章.md",
-    "創世記/第6章.md",
-    "創世記/第2章.md",
-    "創世記/第1章.md",
-    "創世記/第3章.md",
-    "link_folder/解經爭議/神是否暫時忘記了挪亞.md",
     "link_folder/歷史",
     "link_folder/解經爭議",
     "link_folder/神學",
