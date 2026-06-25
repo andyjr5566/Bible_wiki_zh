@@ -3,81 +3,146 @@ import os
 import json
 
 def verify_links(book_name=None, root_path=r'C:\Obsidian\Hermes\scripture'):
-    # 1. Get all existing entity files
-    existing_entities = set()
-    for folder in ['人物', '地點', '主題']:
-        folder_path = os.path.join(root_path, folder)
-        if os.path.exists(folder_path):
-            for f in os.listdir(folder_path):
-                if f.endswith('.md'):
-                    existing_entities.add(f[:-3])
+    """
+    Verify all wiki-links in scripture project.
+    
+    New architecture (v2):
+    - Chapter files: 【書名】/第x.md  (not 【書名】/經文/第x.md)
+    - Link folders: 人物/, 地點/, 主题/, 歷史/, 原文/, 神學/, 文化/, 互文/, 解經爭議/, etc.
+    
+    Old architecture files (經文/, 註解/, etc.) still supported for backward compat.
+    """
 
-    # 2. Build set of all existing chapter-level wikilinks (e.g. "但以理書 第1章 註解")
+    # 1. Build entity registry from ALL link folders
+    link_folders = [
+        '人物', '地點', '主題', '背景', '歷史', '原文',
+        '文化', '神學', '互文', '解經爭議',
+    ]
+    
+    existing_entities = set()  # just the entity name
+    entity_locations = {}     # entity_name → folder/filename
+    
+    for folder in link_folders:
+        folder_path = os.path.join(root_path, folder)
+        if not os.path.exists(folder_path):
+            continue
+        for f in os.listdir(folder_path):
+            if f.endswith('.md'):
+                entity_name = f[:-3]
+                existing_entities.add(entity_name)
+                entity_locations[entity_name] = os.path.join(folder, f)
+
+    # 2. Build set of valid chapter-level wikilinks
     existing_chapter_links = set()
     for item in os.listdir(root_path):
         item_path = os.path.join(root_path, item)
-        if not os.path.isdir(item_path) or item in ['人物', '地點', '主題']:
+        if not os.path.isdir(item_path):
             continue
+        if item in link_folders + ['人物', '地點', '主題']:
+            continue
+        
+        # New architecture: 【書名】/第x.md
+        for fname in os.listdir(item_path):
+            if fname.startswith('第') and fname.endswith('.md'):
+                chapter = fname.replace('.md', '')
+                existing_chapter_links.add(f"{item} {chapter}")
+                existing_chapter_links.add(f"{item}/{chapter}")
+        
+        # Old architecture: 【書名】/經文/第x.md, etc.
         for section in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
             section_path = os.path.join(item_path, section)
             if not os.path.exists(section_path):
                 continue
             for fname in os.listdir(section_path):
                 if fname.endswith('.md'):
-                    # fname is like "第1章.md" → link format: "{書名} 第1章 {章節}"
                     chapter = fname.replace('.md', '')
                     existing_chapter_links.add(f"{item} {chapter}")
-                    existing_chapter_links.add(f"{item} {chapter} 註解")
-                    existing_chapter_links.add(f"{item} {chapter} 拾穗")
-                    existing_chapter_links.add(f"{item} {chapter} 解說")
-                    existing_chapter_links.add(f"{item} {chapter} 背景")
-                    existing_chapter_links.add(f"{item} {chapter} 綱要")
-                    existing_chapter_links.add(f"{item} {chapter} 交叉參照")
+                    existing_chapter_links.add(f"{item} {chapter} {section}")
 
-    # 3. Scan for wikilinks
-    # If book_name is None, scan all directories under root_path except the shared folders
+    # 3. Scan for wiki-links
     books_to_scan = []
     if book_name:
         books_to_scan = [book_name]
     else:
         for item in os.listdir(root_path):
             item_path = os.path.join(root_path, item)
-            if os.path.isdir(item_path) and item not in ['人物', '地點', '主題']:
+            if os.path.isdir(item_path) and item not in link_folders:
                 books_to_scan.append(item)
 
     all_broken = {}
-    
+
     for book in books_to_scan:
         book_path = os.path.join(root_path, book)
-        # Scan each section
-        for section in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
-            section_path = os.path.join(book_path, section)
-            if not os.path.exists(section_path):
+        if not os.path.isdir(book_path):
+            continue
+        
+        # Scan files in book folder (new architecture: 第x.md directly)
+        for item in os.listdir(book_path):
+            if item.startswith('.'):
                 continue
+            file_path = os.path.join(book_path, item)
             
-            for fname in os.listdir(section_path):
-                if not fname.endswith('.md'):
-                    continue
-                
-                file_path = os.path.join(section_path, fname)
+            if os.path.isfile(file_path) and item.endswith('.md'):
+                # This is a chapter file like 第7章.md
                 try:
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
                 except UnicodeDecodeError:
-                    # Skip binary files if any
                     continue
                 
-                # Find all [[links]]
-                links = re.findall(r'\[\[([^\\]]+)\]\]', content)
+                links = re.findall(r'\[\[([^\]]+)\]\]', content)
                 for link in links:
-                    # Clean link (handle [[Name|Alias]] case)
                     entity = link.split('|')[0]
-                    if entity not in existing_entities and entity not in existing_chapter_links:
-                        # Log the broken link
-                        key = f"{book}/{section}/{fname}"
-                        all_broken.setdefault(key, set()).add(entity)
+                    # Normalize
+                    entity_clean = entity.strip()
+                    if entity_clean not in existing_entities and entity_clean not in existing_chapter_links:
+                        key = f"{book}/{item}"
+                        all_broken.setdefault(key, set()).add(entity_clean)
+            
+            elif os.path.isdir(file_path) and item in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
+                # Old architecture folders
+                for fname in os.listdir(file_path):
+                    if not fname.endswith('.md'):
+                        continue
+                    filepath = os.path.join(file_path, fname)
+                    try:
+                        with open(filepath, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                    except UnicodeDecodeError:
+                        continue
+                    
+                    links = re.findall(r'\[\[([^\]]+)\]\]', content)
+                    for link in links:
+                        entity = link.split('|')[0]
+                        entity_clean = entity.strip()
+                        if entity_clean not in existing_entities and entity_clean not in existing_chapter_links:
+                            key = f"{book}/{item}/{fname}"
+                            all_broken.setdefault(key, set()).add(entity_clean)
 
-    # 3. Process and output results
+        # Also scan all link folder files for outbound links
+        for folder in link_folders:
+            folder_path = os.path.join(root_path, folder)
+            if not os.path.exists(folder_path):
+                continue
+            for fname in os.listdir(folder_path):
+                if not fname.endswith('.md'):
+                    continue
+                filepath = os.path.join(folder_path, fname)
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                except UnicodeDecodeError:
+                    continue
+                
+                links = re.findall(r'\[\[([^\]]+)\]\]', content)
+                for link in links:
+                    entity = link.split('|')[0]
+                    entity_clean = entity.strip()
+                    if entity_clean not in existing_entities and entity_clean not in existing_chapter_links:
+                        key = f"{folder}/{fname}"
+                        all_broken.setdefault(key, set()).add(entity_clean)
+
+    # 4. Build report
     report = {
         "total_broken_unique": 0,
         "broken_links": [],
@@ -92,16 +157,15 @@ def verify_links(book_name=None, root_path=r'C:\Obsidian\Hermes\scripture'):
     report["total_broken_unique"] = len(all_unique_broken)
     report["broken_links"] = sorted(list(all_unique_broken))
     
-    # Save to JSON report
+    # 5. Save reports
     report_path = os.path.join(root_path, 'broken_links_report.json')
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
         
-    # Save to human readable text
     txt_path = os.path.join(root_path, 'missing_entities.txt')
     with open(txt_path, 'w', encoding='utf-8') as f:
         f.write(f"Broken Links Report - Total Unique: {len(all_unique_broken)}\n")
-        f.write("="*50 + "\n")
+        f.write("=" * 50 + "\n")
         for entity in sorted(list(all_unique_broken)):
             f.write(f"[[{entity}]]\n")
             
