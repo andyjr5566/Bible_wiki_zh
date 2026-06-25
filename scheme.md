@@ -49,16 +49,17 @@ scripture/
 │   ├── 第2章.md
 │   └── ...
 │
-├── 人物/
-├── 地點/
-├── 主題/
-├── 背景/
-├── 歷史/
-├── 原文/
-├── 文化/
-├── 神學/
-├── 互文/
-├── 解經爭議/
+├── link_folder/
+│   ├── 人物/
+│   ├── 地點/
+│   ├── 主題/
+│   ├── 背景/
+│   ├── 歷史/
+│   ├── 原文/
+│   ├── 文化/
+│   ├── 神學/
+│   ├── 互文/
+│   └── 解經爭議/
 └── ...
 ```
 
@@ -105,15 +106,15 @@ scripture/
 例如：
 
 ```text
-人物/何西阿.md
-人物/歌篾.md
-地點/耶斯列.md
-主題/屬靈淫亂.md
-歷史/北國以色列滅亡.md
-背景/主前第八世紀先知.md
-原文/耶斯列的雙關.md
-互文/非我民到神的兒子.md
-解經爭議/歌篾何時成為淫婦.md
+link_folder/人物/何西阿.md
+link_folder/人物/歌篾.md
+link_folder/地點/耶斯列.md
+link_folder/主題/屬靈淫亂.md
+link_folder/歷史/北國以色列滅亡.md
+link_folder/背景/主前第八世紀先知.md
+link_folder/原文/耶斯列的雙關.md
+link_folder/互文/非我民到神的兒子.md
+link_folder/解經爭議/歌篾何時成為淫婦.md
 ```
 
 若某個背景或歷史概念只放在某卷書資料夾內，之後其他書卷不易共用。  
@@ -126,16 +127,16 @@ scripture/
 預設 link folders：
 
 ```text
-人物/
-地點/
-主題/
-背景/
-歷史/
-原文/
-文化/
-神學/
-互文/
-解經爭議/
+link_folder/人物/
+link_folder/地點/
+link_folder/主題/
+link_folder/背景/
+link_folder/歷史/
+link_folder/原文/
+link_folder/文化/
+link_folder/神學/
+link_folder/互文/
+link_folder/解經爭議/
 ```
 
 但不限於以上類型。
@@ -143,14 +144,14 @@ scripture/
 若日後資料自然產生大量同類知識節點，可以新增 link folder，例如：
 
 ```text
-制度/
-節期/
-祭祀/
-王朝/
-文學結構/
-預言應驗/
-新約引用/
-聖經神學/
+link_folder/制度/
+link_folder/節期/
+link_folder/祭祀/
+link_folder/王朝/
+link_folder/文學結構/
+link_folder/預言應驗/
+link_folder/新約引用/
+link_folder/聖經神學/
 ```
 
 ### 新增 link folder 的條件
