@@ -71,6 +71,29 @@
     "status": "formal",
     "aliases": []
   },
+  "先知": {
+    "path": "link_folder/主題/先知.md",
+    "type": "主題",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "先知",
+    "status": "formal",
+    "aliases": [
+      "prophet",
+      "nabi"
+    ]
+  },
+  "prophet": {
+    "alias_of": "先知"
+  },
+  "nabi": {
+    "alias_of": "先知"
+  },
+  "原文": {
+    "alias_of": "先知",
+    "via_secondary_type": true
+  },
   "割禮作為立約記號": {
     "path": "link_folder/主題/割禮作為立約記號.md",
     "type": "主題",
@@ -133,6 +156,14 @@
     "secondary_types": [],
     "title": "得勝後的試探",
     "status": "formal",
+    "aliases": []
+  },
+  "心正手潔": {
+    "path": "link_folder/主題/心正手潔.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "心正手潔",
+    "status": "candidate",
     "aliases": []
   },
   "我豈是看守我兄弟的麼": {
@@ -325,6 +356,14 @@
     "secondary_types": [],
     "title": "赤身露體不羞恥",
     "status": "formal",
+    "aliases": []
+  },
+  "遮羞": {
+    "path": "link_folder/主題/遮羞.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "遮羞",
+    "status": "candidate",
     "aliases": []
   },
   "遮蓋與宣揚": {
@@ -539,6 +578,19 @@
     "title": "亞摩利人",
     "status": "formal",
     "aliases": []
+  },
+  "亞比米勒": {
+    "path": "link_folder/人物/亞比米勒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞比米勒",
+    "status": "formal",
+    "aliases": [
+      "Abimelech"
+    ]
+  },
+  "Abimelech": {
+    "alias_of": "亞比米勒"
   },
   "亞瑪力人": {
     "path": "link_folder/人物/亞瑪力人.md",
@@ -1484,6 +1536,19 @@
     "status": "formal",
     "aliases": []
   },
+  "基拉耳": {
+    "path": "link_folder/地點/基拉耳.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基拉耳",
+    "status": "formal",
+    "aliases": [
+      "Gerar"
+    ]
+  },
+  "Gerar": {
+    "alias_of": "基拉耳"
+  },
   "基訓": {
     "path": "link_folder/地點/基訓.md",
     "type": "地點",
@@ -2068,6 +2133,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "應許之子與信心",
+    "status": "formal",
+    "aliases": []
+  },
+  "我以為這地方的人總不懼怕神": {
+    "path": "link_folder/神學/我以為這地方的人總不懼怕神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "我以為這地方的人總不懼怕神",
     "status": "formal",
     "aliases": []
   },

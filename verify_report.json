@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 2507,
+  "valid_links_count": 2580,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 89,
+  "pending_scripture_refs_count": 88,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -125,11 +125,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第20章",
-      "book": "創世記",
-      "chapter": 20
     },
     {
       "entity": "創世記/第21章",
@@ -779,6 +774,18 @@
           4
         ]
       ],
+      "link_folder/人物/亞比米勒.md": [
+        [
+          "創世記/第21章",
+          "創世記",
+          21
+        ],
+        [
+          "創世記/第26章",
+          "創世記",
+          26
+        ]
+      ],
       "link_folder/人物/亞瑪力人.md": [
         [
           "創世記/第36章",
@@ -885,11 +892,6 @@
         ]
       ],
       "link_folder/人物/撒拉.md": [
-        [
-          "創世記/第20章",
-          "創世記",
-          20
-        ],
         [
           "創世記/第21章",
           "創世記",
@@ -1169,6 +1171,13 @@
           "約書亞記/第15章",
           "約書亞記",
           15
+        ]
+      ],
+      "link_folder/地點/基拉耳.md": [
+        [
+          "創世記/第26章",
+          "創世記",
+          26
         ]
       ],
       "link_folder/地點/尼尼微.md": [
