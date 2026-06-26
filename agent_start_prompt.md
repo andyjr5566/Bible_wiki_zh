@@ -11,10 +11,6 @@ C:\Obsidian\Hermes\scripture\scheme.md
 ```
 
 `scheme.md` 是最高規則。  
-本 prompt 不重複規則細節；凡涉及資料夾結構、URL 模式、章節主檔格式、wiki-link、link folder、條目建立、驗證流程、commit 規則，全部以 `scheme.md` 為準。
-
----
-
 ## 開工流程
 
 請依序執行：
@@ -24,22 +20,22 @@ C:\Obsidian\Hermes\scripture\scheme.md
 3. 檢查該書卷目錄是否存在
 4. 檢查該書卷現有章節主檔與完成進度
 5. 執行 `python3 build_link_index.py` 建立最新 link index
-6. 檢查全域 link folders 是否存在
-7. 檢查 git 狀態
-8. 判斷下一個需要處理或修正的章節
-9. 不要重做已完成且已通過驗證的章節
-10. 只在缺資料時，依 `scheme.md` 指定來源與 URL 規則抓取資料
-11. 抓取後清理來源，根據來源內容建立 `【書名】/.tmp/第x章/link_candidates.md`
-12. 執行 `python3 resolve_link_candidates.py 【書名】 第x章`，產生 `link_plan.md`
-13. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
-14. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
-15. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
-16. 執行 `python3 link_quality_check.py`
-17. 執行 `python3 verify_links.py`
-18. 修正任何 broken links / invalid refs / critical quality warnings
-19. 重跑驗證直到全部通過
-20. 通過後 git commit + push
-21. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+6. 檢查 git 狀態
+7. 判斷下一個需要處理或修正的章節
+8. 不要重做已完成且已通過驗證的章節
+9. 只在缺資料時，依 `scheme.md` 指定來源與 URL 規則抓取資料
+10. 抓取後清理來源，根據來源內容建立 `【書名】/.tmp/第x章/link_candidates.md`
+11. 執行 `python3 resolve_link_candidates.py 【書名】 X，產生 `link_plan.md`
+		例如:`python3 resolve_link_candidates.py 創世記 13`
+12. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+13. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
+14. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
+15. 執行 `python3 link_quality_check.py 〖書名〗`
+16. 執行 `python3 verify_links.py 〖書名〗`
+17. 修正任何 broken links / invalid refs / critical quality warnings
+18. 重跑驗證直到全部通過
+19. 通過後 git commit + push
+20. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 

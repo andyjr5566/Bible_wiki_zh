@@ -909,8 +909,9 @@ link candidates 只記錄由已收集資料明確觸發的候選知識節點。
 執行：
 
 ```
-python3 resolve_link_candidates.py 創世記 13
+python3 resolve_link_candidates.py 【書名】 X
 ```
+ps: 章數X參數一律使用阿拉伯數字，不加「第」與「章」。
 
 將 link_candidates.md 與 link_index.json 比對，產生：
 
@@ -984,7 +985,7 @@ check_existing_links.py → build_link_index.py → link_quality_check.py → ve
 ```
 
 |- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
-|- `verify_links.py`：確認無 0 broken links
+|- `verify_links.py`：確認 broken links = 0，invalid scripture refs = 0，unknown links = 0
 |- `link_quality_check.py`：確認語意無 critical 錯誤
 
 ---
@@ -1315,11 +1316,9 @@ Total warnings: N
 Result: PASS (0 blocking errors) / FAIL
 
 ### Blocking Error 定義
-verify_links.py 必須達到以下條件才視為 PASS (0 blocking errors)：
-- BROKEN_LINKS = 0
-- INVALID_SCRIPTURE_REFS = 0
-- UNKNOWN_LINKS = 0
-- PENDING_SCRIPTURE_REFS 可存在，不視為 blocking error。
+link_quality_check.py 必須達到以下條件才視為 PASS (0 blocking errors)：
+- CRITICAL = 0  
+- WARNING 可存在，但必須回報
 ```
 
 **Critical 警告必須修正才能 commit。**
