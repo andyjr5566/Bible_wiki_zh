@@ -206,12 +206,28 @@
     "status": "formal",
     "aliases": []
   },
+  "樹木": {
+    "path": "link_folder/主題/樹木.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "樹木",
+    "status": "candidate",
+    "aliases": []
+  },
   "橄欖葉子": {
     "path": "link_folder/主題/橄欖葉子.md",
     "type": "主題",
     "secondary_types": [],
     "title": "橄欖葉子",
     "status": "formal",
+    "aliases": []
+  },
+  "死人": {
+    "path": "link_folder/主題/死人.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "死人",
+    "status": "candidate",
     "aliases": []
   },
   "求告耶和華的名": {
@@ -396,6 +412,14 @@
     "secondary_types": [],
     "title": "遮蓋與宣揚",
     "status": "formal",
+    "aliases": []
+  },
+  "銀子": {
+    "path": "link_folder/主題/銀子.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "銀子",
+    "status": "candidate",
     "aliases": []
   },
   "順服與即時行動": {
@@ -1951,6 +1975,14 @@
     "secondary_types": [],
     "title": "麥比拉洞",
     "status": "formal",
+    "aliases": []
+  },
+  "四百舍客勒": {
+    "path": "link_folder/文化/四百舍客勒.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "四百舍客勒",
+    "status": "candidate",
     "aliases": []
   },
   "城門口交易": {
