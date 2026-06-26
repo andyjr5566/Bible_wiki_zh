@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "創世記/第19章.md",
+                "file": "link_folder/人物/亞伯蘭.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第19章"
+              "title": "亞伯蘭"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "創世記/第19章.md",
+                "file": "link_folder/人物/亞伯蘭.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第19章 的反向連結"
+              "title": "亞伯蘭 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "創世記/第19章.md",
+                "file": "link_folder/人物/亞伯蘭.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第19章 的對外連結"
+              "title": "亞伯蘭 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "創世記/第19章.md",
+                "file": "link_folder/人物/亞伯蘭.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第19章 的大綱"
+              "title": "亞伯蘭 的大綱"
             }
           }
         ]
@@ -185,32 +185,32 @@
   },
   "active": "d194018f075c5c6d",
   "lastOpenFiles": [
+    "link_folder/神學/亞伯拉罕豫表父神.md",
+    "link_folder/神學/公羊.md",
+    "link_folder/神學/燔祭.md",
+    "link_folder/神學/第三日.md",
+    "link_folder/主題/清早起來.md",
+    "link_folder/神學/以撒豫表基督.md",
+    "link_folder/神學/神試驗亞伯拉罕.md",
+    "link_folder/神學/敬畏神.md",
+    "link_folder/人物/彼土利.md",
+    "link_folder/人物/利百加.md",
+    "link_folder/人物/拿鶴.md",
+    "link_folder/神學/公羊代贖.md",
+    "link_folder/神學/耶和華以勒.md",
+    "link_folder/地點/摩利亞地.md",
+    "創世記/第22章.md",
+    "創世記/第21章.md",
+    "創世記/第20章.md",
+    "創世記/第19章.md",
     "link_folder/神學/耶和華永生神.md",
     "link_folder/地點/別是巴.md",
-    "創世記/第21章.md",
     "link_folder/人物/羅得.md",
-    "創世記/第19章.md",
-    "創世記/第20章.md",
     "link_folder/人物/亞伯蘭.md",
     "link_folder/地點/基拉耳.md",
     "link_folder/主題/先知.md",
     "link_folder/主題/遮羞.md",
     "link_folder/神學/我以為這地方的人總不懼怕神.md",
-    "link_folder/主題/心正手潔.md",
-    "link_folder/人物/亞比米勒.md",
-    "link_folder/人物/摩押人.md",
-    "link_folder/人物/亞捫人.md",
-    "link_folder/人物/摩押.md",
-    "link_folder/主題/戲言.md",
-    "link_folder/神學/硫磺與火從天上降下.md",
-    "link_folder/主題/鹽柱.md",
-    "link_folder/原文/眼都昏迷.md",
-    "link_folder/神學/神記念亞伯拉罕.md",
-    "link_folder/神學/不可回頭看.md",
-    "link_folder/人物/便亞米.md",
-    "link_folder/神學/麥基洗德的豫表.md",
-    "scheme.md",
-    "創世記/第18章.md",
     "link_quality_report.json",
     "link_quality_check.py",
     "verify_result.txt",

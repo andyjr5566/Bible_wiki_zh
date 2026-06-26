@@ -206,6 +206,14 @@
     "status": "formal",
     "aliases": []
   },
+  "清早起來": {
+    "path": "link_folder/主題/清早起來.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "清早起來",
+    "status": "candidate",
+    "aliases": []
+  },
   "漸漸的墮落": {
     "path": "link_folder/主題/漸漸的墮落.md",
     "type": "主題",
@@ -733,6 +741,19 @@
     "status": "formal",
     "aliases": []
   },
+  "利百加": {
+    "path": "link_folder/人物/利百加.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "利百加",
+    "status": "formal",
+    "aliases": [
+      "Rebekah"
+    ]
+  },
+  "Rebekah": {
+    "alias_of": "利百加"
+  },
   "含": {
     "path": "link_folder/人物/含.md",
     "type": "人物",
@@ -826,6 +847,14 @@
     "status": "formal",
     "aliases": []
   },
+  "彼土利": {
+    "path": "link_folder/人物/彼土利.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "彼土利",
+    "status": "formal",
+    "aliases": []
+  },
   "拉麥": {
     "path": "link_folder/人物/拉麥.md",
     "type": "人物",
@@ -841,6 +870,19 @@
     "title": "拉麥（塞特族）",
     "status": "formal",
     "aliases": []
+  },
+  "拿鶴": {
+    "path": "link_folder/人物/拿鶴.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "拿鶴",
+    "status": "formal",
+    "aliases": [
+      "Nahor"
+    ]
+  },
+  "Nahor": {
+    "alias_of": "拿鶴"
   },
   "挪亞": {
     "path": "link_folder/人物/挪亞.md",
@@ -1688,6 +1730,23 @@
     "status": "formal",
     "aliases": []
   },
+  "摩利亞地": {
+    "path": "link_folder/地點/摩利亞地.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "摩利亞地",
+    "status": "formal",
+    "aliases": [
+      "Moriah",
+      "摩利亞山"
+    ]
+  },
+  "Moriah": {
+    "alias_of": "摩利亞地"
+  },
+  "摩利亞山": {
+    "alias_of": "摩利亞地"
+  },
   "撒冷": {
     "path": "link_folder/地點/撒冷.md",
     "type": "地點",
@@ -1882,6 +1941,18 @@
     "status": "formal",
     "aliases": []
   },
+  "亞伯拉罕豫表父神": {
+    "path": "link_folder/神學/亞伯拉罕豫表父神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "亞伯拉罕豫表父神",
+    "status": "formal",
+    "aliases": [
+      "亞伯拉罕豫表父神"
+    ]
+  },
   "亞伯的血哀告": {
     "path": "link_folder/神學/亞伯的血哀告.md",
     "type": "神學",
@@ -1938,6 +2009,19 @@
     "status": "formal",
     "aliases": []
   },
+  "以撒豫表基督": {
+    "path": "link_folder/神學/以撒豫表基督.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "以撒豫表基督",
+    "status": "formal",
+    "aliases": [
+      "以撒豫表基督",
+      "亞伯拉罕豫表父神"
+    ]
+  },
   "信心的危機": {
     "path": "link_folder/神學/信心的危機.md",
     "type": "神學",
@@ -1969,6 +2053,34 @@
     "title": "全能的神（El Shaddai）",
     "status": "formal",
     "aliases": []
+  },
+  "公羊": {
+    "path": "link_folder/神學/公羊.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "公羊",
+    "status": "candidate",
+    "aliases": []
+  },
+  "公羊代贖": {
+    "path": "link_folder/神學/公羊代贖.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "公羊代贖",
+    "status": "formal",
+    "aliases": [
+      "公羊",
+      "代贖",
+      "substitutionary sacrifice"
+    ]
+  },
+  "代贖": {
+    "alias_of": "公羊代贖"
+  },
+  "substitutionary sacrifice": {
+    "alias_of": "公羊代贖"
   },
   "分別善惡的樹": {
     "path": "link_folder/神學/分別善惡的樹.md",
@@ -2201,6 +2313,21 @@
     "status": "formal",
     "aliases": []
   },
+  "敬畏神": {
+    "path": "link_folder/神學/敬畏神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "敬畏神",
+    "status": "formal",
+    "aliases": [
+      "敬畏耶和華"
+    ]
+  },
+  "敬畏耶和華": {
+    "alias_of": "敬畏神"
+  },
   "方舟的豫表": {
     "path": "link_folder/神學/方舟的豫表.md",
     "type": "神學",
@@ -2255,6 +2382,14 @@
     "secondary_types": [],
     "title": "無花果葉與皮衣",
     "status": "formal",
+    "aliases": []
+  },
+  "燔祭": {
+    "path": "link_folder/神學/燔祭.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "燔祭",
+    "status": "candidate",
     "aliases": []
   },
   "生命樹": {
@@ -2360,12 +2495,39 @@
   "神記念亞伯蘭": {
     "alias_of": "神記念亞伯拉罕"
   },
+  "神試驗亞伯拉罕": {
+    "path": "link_folder/神學/神試驗亞伯拉罕.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神試驗亞伯拉罕",
+    "status": "formal",
+    "aliases": [
+      "神試驗人",
+      "神的試驗"
+    ]
+  },
+  "神試驗人": {
+    "alias_of": "神試驗亞伯拉罕"
+  },
+  "神的試驗": {
+    "alias_of": "神試驗亞伯拉罕"
+  },
   "立約的儀式": {
     "path": "link_folder/神學/立約的儀式.md",
     "type": "神學",
     "secondary_types": [],
     "title": "立約的儀式",
     "status": "formal",
+    "aliases": []
+  },
+  "第三日": {
+    "path": "link_folder/神學/第三日.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "第三日",
+    "status": "candidate",
     "aliases": []
   },
   "罪伏在門前": {
@@ -2407,6 +2569,29 @@
     "title": "義人與完全人",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華以勒": {
+    "path": "link_folder/神學/耶和華以勒.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "耶和華以勒",
+    "status": "formal",
+    "aliases": [
+      "Yahweh Yireh",
+      "耶和華必預備",
+      "在耶和華的山上必有預備"
+    ]
+  },
+  "Yahweh Yireh": {
+    "alias_of": "耶和華以勒"
+  },
+  "耶和華必預備": {
+    "alias_of": "耶和華以勒"
+  },
+  "在耶和華的山上必有預備": {
+    "alias_of": "耶和華以勒"
   },
   "耶和華把他關在方舟裡": {
     "path": "link_folder/神學/耶和華把他關在方舟裡.md",
