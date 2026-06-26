@@ -118,6 +118,14 @@
     "status": "formal",
     "aliases": []
   },
+  "寄居者身份": {
+    "path": "link_folder/主題/寄居者身份.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "寄居者身份",
+    "status": "formal",
+    "aliases": []
+  },
   "巴別塔": {
     "path": "link_folder/主題/巴別塔.md",
     "type": "主題",
@@ -155,6 +163,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "得勝後的試探",
+    "status": "formal",
+    "aliases": []
+  },
+  "復活盼望": {
+    "path": "link_folder/主題/復活盼望.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "復活盼望",
     "status": "formal",
     "aliases": []
   },
@@ -404,6 +420,14 @@
     "secondary_types": [],
     "title": "麥基洗德與基督豫表",
     "status": "formal",
+    "aliases": []
+  },
+  "撒拉之死與埋葬": {
+    "path": "link_folder/事件/撒拉之死與埋葬.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒拉之死與埋葬",
+    "status": "candidate",
     "aliases": []
   },
   "亞伯蘭下埃及與出埃及": {
@@ -661,6 +685,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "以實瑪利",
+    "status": "formal",
+    "aliases": []
+  },
+  "以弗崙": {
+    "path": "link_folder/人物/以弗崙.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以弗崙",
     "status": "formal",
     "aliases": []
   },
@@ -1599,6 +1631,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基列亞巴": {
+    "path": "link_folder/地點/基列亞巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基列亞巴",
+    "status": "candidate",
+    "aliases": []
+  },
   "基拉耳": {
     "path": "link_folder/地點/基拉耳.md",
     "type": "地點",
@@ -1905,6 +1945,22 @@
   "亞拉巴海": {
     "alias_of": "鹽海"
   },
+  "麥比拉洞": {
+    "path": "link_folder/地點/麥比拉洞.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "麥比拉洞",
+    "status": "formal",
+    "aliases": []
+  },
+  "城門口交易": {
+    "path": "link_folder/文化/城門口交易.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "城門口交易",
+    "status": "candidate",
+    "aliases": []
+  },
   "三位一體在創造中的隱現": {
     "path": "link_folder/神學/三位一體在創造中的隱現.md",
     "type": "神學",
@@ -2167,6 +2223,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "基路伯與火劍",
+    "status": "formal",
+    "aliases": []
+  },
+  "墳地": {
+    "path": "link_folder/神學/墳地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "墳地",
     "status": "formal",
     "aliases": []
   },
