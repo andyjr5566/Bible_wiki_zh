@@ -23,23 +23,23 @@ C:\Obsidian\Hermes\scripture\scheme.md
 2. 解析使用者指定的書卷名稱
 3. 檢查該書卷目錄是否存在
 4. 檢查該書卷現有章節主檔與完成進度
-5. 檢查全域 link folders 是否存在
-6. 檢查 git 狀態
-7. 判斷下一個需要處理或修正的章節
-8. 不要重做已完成且已通過驗證的章節
-9. 只在缺資料時，依 `scheme.md` 指定來源與 URL 規則抓取資料
-10. 建立或更新該章的整合型章節主檔：`【書名】/第x章.md`
-11. 經文內容直接寫在章節主檔開頭，並依 `scheme.md` 在經文上建立 wiki-link
-12. 四大來源取得的補充資料，不固定放入某個區塊；請依內容性質整理到章節主檔或沉澱到適合的全域 link folder
-13. 「本章知識節點」只列額外補充或本章核心知識節點，不要重複列出所有經文中已出現的 link
-14. 所有 wiki-link 必須閉合到本地 markdown 檔案
-15. 缺失條目依 `scheme.md` 建立正式條目或候選條目
-16. 已存在的 link folder 條目，若本章提供新資訊，請補充其內容
-17. 執行 `verify_links.py`
-18. 修正缺失連結並重新驗證
-19. 直到 0 破損連結
-20. 驗證通過後 commit + push
-21. 最後回報本章完成狀態、更新檔案、補建條目、verify 結果與 commit hash
+5. 執行 `python3 build_link_index.py` 建立最新 link index
+6. 檢查全域 link folders 是否存在
+7. 檢查 git 狀態
+8. 判斷下一個需要處理或修正的章節
+9. 不要重做已完成且已通過驗證的章節
+10. 只在缺資料時，依 `scheme.md` 指定來源與 URL 規則抓取資料
+11. 抓取後清理來源，根據來源內容建立 `【書名】/.tmp/第x章/link_candidates.md`
+12. 執行 `python3 resolve_link_candidates.py 【書名】 第x章`，產生 `link_plan.md`
+13. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+14. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
+15. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
+16. 執行 `python3 link_quality_check.py`
+17. 執行 `python3 verify_links.py`
+18. 修正任何 broken links / invalid refs / critical quality warnings
+19. 重跑驗證直到全部通過
+20. 通過後 git commit + push
+21. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 
@@ -47,7 +47,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 
 - 禁止用 gbrain 寫入
 - 禁止跳過 `scheme.md`
-- 禁止跳過 `verify_links.py`
+- 禁止跳過 `build_link_index.py`、`resolve_link_candidates.py`
+- 禁止跳過 `verify_links.py`、`link_quality_check.py`
 - 禁止未驗證就 commit
 - 禁止硬猜 URL
 - 禁止把 `scheme.md` 已規定的細節改成自己的做法
@@ -56,4 +57,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止重做已完成且已驗證通過的章節
 - 禁止再建立舊架構的 `經文/`、`註解/`、`拾穗/`、`解說/` 平行章節檔
 - 禁止把四大來源硬分配到固定資料夾；應依內容性質判斷放入章節主檔或適合的 link folder
+- 禁止同一個條目在多個 link folder 重複建立
+- 禁止根據 link_plan.md 直接撰寫條目內容而不回到來源資料
+- 禁止為未來章節預先建立空白章節檔
+- 禁止對正式條目的定義/核心摘要/主題發展區塊每章亂改
 - 所有輸出使用繁體中文

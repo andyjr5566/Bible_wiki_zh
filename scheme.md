@@ -791,34 +791,77 @@ verify_links.py
 
 ---
 
-## 二十一、verify_links.py 規格
+## 二十一、verify_links.py 規格與輸出分類
 
 位置：
 
 ```text
 C:\Obsidian\Hermes\scripture\verify_links.py
+C:\Obsidian\Hermes\scripture\_config\bible_books.json
 ```
 
-功能：
+### 核心原則
 
-- 掃描指定書卷或全庫的 wiki-link
-- 列出所有不存在的 wiki-link 目標
-- 判斷 alias 與實際檔案名
-- 依上下文推斷建議 link folder
-- 輸出 JSON 報告與人類可讀報告
+不是所有不存在的 wiki-link 都視為 broken link。
+verify_links.py 必須將所有 found link 分為四類：
 
-輸出建議包含：
+| 類別 | 說明 | 是否 blocking |
+|------|------|-------------|
+| BROKEN_LINKS | 真正破損連結：目標不存在於 link_folder、不是章節檔、不是合法聖經章節引用 | **必修正** |
+| PENDING_SCRIPTURE_REFS | 合法未來書卷引用：書卷名存在 + 章數在合法範圍內 | 不 blocking |
+| INVALID_SCRIPTURE_REFS | 無效聖經引用：書卷名存在但章數超出範圍 | **必修正** |
+| UNKNOWN_LINKS | 無法判斷：非 link_folder 條目、非章節檔、非合法聖經章節 | **必人工判斷** |
+
+### 聖經章節引用判定規則
+
+判斷 pending scripture ref 時，使用 `_config/bible_books.json` 確認書卷名稱與章數是否合法。
+
+支援兩種 wiki-link 格式：
+- 短格式：`[[啟示錄13]]`、`[[詩篇25]]`
+- 完整格式：`[[啟示錄/第13章|啟示錄13章]]`、`[[詩篇/第25篇|詩篇25篇]]`
+
+判定方式：
+1. 提取書卷名與章數
+2. 若書卷名存在於 `bible_books.json` 且章數在合法範圍內 → `pending_scripture_refs`
+3. 若書卷名存在但章數超出範圍 → `invalid_scripture_refs`（需修正引用或確認章數）
+
+禁止為了通過 verify 而預先建立大量空白章節檔。
+
+### 輸出格式
 
 ```text
-missing_entities.txt
-verify_report.json
+Verify result
+VALID LINKS: N
+BROKEN LINKS: N
+PENDING SCRIPTURE REFS: N
+INVALID SCRIPTURE REFS: N
+UNKNOWN LINKS: N
+
+--- BROKEN LINKS (must fix) ---
+[[破損連結]]
+
+--- PENDING SCRIPTURE REFS (info only) ---
+[[啟示錄13]] → valid future 啟示錄 chapter 13 reference
+
+--- INVALID SCRIPTURE REFS (must fix) ---
+[[啟示錄23]] → ERROR: 啟示錄 only has 22 chapters
+
+Result: PASS / FAIL
 ```
 
-missing_entities 建議格式：
+### bible_books.json 格式
 
-```text
-實體名|建議資料夾|引用檔案|引用上下文
+```json
+{
+  "創世記": 50,
+  "出埃及記": 40,
+  "詩篇": 150,
+  "啟示錄": 22
+}
 ```
+
+包含聖經 66 卷書的章數。若有次經或旁經引用，可在後續擴充。
+書卷別名也應在 verify_links.py 的 BOOK_ALIASES 中維護。
 
 ---
 
@@ -961,8 +1004,476 @@ link plan 必須把候選節點分成：
 check_existing_links.py → verify_links.py
 ```
 
-- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
-- `verify_links.py`：確認無 0 broken links
+|- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
+|- `verify_links.py`：確認無 0 broken links
+|- `link_quality_check.py`：確認語意無 critical 錯誤
+
+---
+
+## 二十二之一、link folder 長期治理與條目管理核心原則
+
+### 核心補充原則
+
+wiki-link 建立不可只依靠 Agent 讀完來源後「憑判斷」建立。
+所有 link 建立都必須經過以下流程：
+
+```text
+來源資料
+→ 清理
+→ link_candidates.md
+→ build_link_index.py
+→ resolve_link_candidates.py
+→ link_plan.md
+→ 寫章節主檔
+→ 建立／更新 link folder 條目
+→ check_existing_links.py
+→ link_quality_check.py
+→ verify_links.py
+→ commit
+```
+
+最重要的是：
+**link_plan.md 必須在正式寫入章節主檔 wiki-link 之前產生。**
+也就是：先查既有條目，再決定：
+- 使用既有條目
+- 擴充既有條目
+- 建立新正式條目
+- 建立候選條目
+- 不建立 link
+
+---
+
+## 二十二之二、build_link_index.py 強制步驟（加強版）
+
+每次處理章節前，必須先掃描 `link_folder/`，產生或更新 `link_folder/_index/link_index.json`。
+
+掃描時必須讀取每個 markdown 檔案的完整 YAML frontmatter，支援以下欄位：
+
+| frontmatter 欄位 | 類型 | 說明 |
+|-------|------|------|
+| `type:` | string | 主分類（人物、地點、主題、神學...） |
+| `secondary_types:` | list | 次分類，如 `[文化, 歷史, 神學]` |
+| `aliases:` | list | 別名列表，如 `[屬靈姦淫, 拜偶像如淫亂]` |
+| `status:` | string | `formal` 或 `candidate` |
+
+### link_index.json 格式
+
+```json
+{
+  "條目名稱": {
+    "path": "link_folder/分類/條目名稱.md",
+    "type": "分類",
+    "secondary_types": ["次分類1", "次分類2"],
+    "aliases": ["別名1", "別名2"],
+    "status": "formal"
+  },
+  "別名": {
+    "alias_of": "條目名稱"
+  }
+}
+```
+
+Obsidian 原生支援 aliases，所以 aliases 必須成為 link 比對核心，不是裝飾欄位。
+
+---
+
+## 二十二之三、resolve_link_candidates.py 比對邏輯（加強版）
+
+resolve_link_candidates.py 必須將本章 link_candidates.md 與 link_index.json 比對。
+比對優先順序：
+
+1. **完全同名檔案** — 條目名稱完全匹配 index key
+2. **YAML aliases 完全命中** — candidate 名稱命中某條目的 aliases 列表
+3. **常見同義詞命中** — 預設同義詞表比對
+4. **fuzzy match 候選** — 相似但非精確匹配，放入 D 類
+5. **不同資料夾中的同名條目** — 若候選名稱與某 index key 相同但分類不同，使用既有條目
+6. **書卷名與人物名衝突** — 檢查 `PERSON_TO_BOOK` 映射
+7. **經文原詞與條目完整名稱不同** — 確認 alias 格式正確
+
+### Alias 比對規則
+
+若命中 alias，必須指向 alias 所屬的主條目檔案，不可另建新條目。
+
+例如：
+
+```yaml
+# link_folder/主題/屬靈淫亂.md
+aliases:
+  - 屬靈姦淫
+  - 拜偶像如淫亂
+  - 以色列的淫亂
+```
+
+若本章 candidate 出現「屬靈姦淫」，應解析為：
+
+```md
+[[屬靈淫亂|屬靈姦淫]]
+```
+
+不可新增：
+```text
+link_folder/主題/屬靈姦淫.md
+```
+
+### 歧義處理
+
+若有歧義（同一名稱指向多個既有條目，或書卷人物衝突），
+不要自動建立新條目，放入 link_plan 的 D 類（候選條目）或 E 類（不建立）。
+
+---
+
+## 二十二之四、條目分類規則：只允許一個主分類
+
+若一個條目同時具有主題、文化、歷史、神學意義，**不要**在多個資料夾重複建立。
+
+### 禁止的做法
+
+```text
+link_folder/主題/巴力敬拜.md
+link_folder/文化/巴力敬拜.md
+link_folder/歷史/巴力敬拜.md
+link_folder/神學/巴力敬拜.md
+```
+
+### 正確的做法
+
+只建立一個主條目，使用 YAML frontmatter 標註 secondary_types：
+
+```yaml
+---
+type: 主題
+secondary_types:
+  - 文化
+  - 歷史
+  - 神學
+aliases:
+  - 巴力崇拜
+  - 敬拜巴力
+status: formal
+---
+```
+
+### 分類不確定時的處理
+
+若無法決定主分類，先放入：
+```text
+link_folder/_待分類/
+```
+
+`_待分類/` 只作暫存，不能長期堆積。
+每完成一卷書後必須清理 `_待分類/` 中的條目。
+
+---
+
+## 二十二之五、正式條目模板：防止無限膨脹
+
+正式條目不可無限制把每章內容往下堆疊（全書完成後可重構）。
+正式條目應使用固定結構，分為**保護區**與**累積區**。
+
+### 模板
+
+```yaml
+---
+type: 主題
+secondary_types:
+  - 神學
+aliases:
+  - ...
+status: formal
+source_scope: collected_only
+---
+
+# 條目名稱
+
+## 定義
+
+（保護區 — 全書完成後重構用）
+
+## 核心摘要
+
+（保護區）
+
+## 按書卷累積
+
+（累積區 — 每章處理時可新增）
+
+### 創世記
+
+#### 第1章
+
+- 觸發來源：
+- 本章重點：
+- 與本章關聯：
+
+#### 第13章
+
+- ...
+
+### 何西阿書
+
+#### 第1章
+
+- ...
+
+## 主題發展
+
+（保護區）
+
+## 相關條目
+
+（累積區）
+
+## 來源依據
+
+（累積區）
+
+## 待確認事項
+
+（累積區）
+
+### 累積規則
+
+Agent 只能在以下區塊新增內容：
+- `## 按書卷累積`
+- `## 相關條目`
+- `## 來源依據`
+- `## 待確認事項`
+
+除非使用者明確要求，Agent 不可自行覆寫或大改：
+- `## 定義`
+- `## 核心摘要`
+- `## 主題發展`
+
+**理由**：定義、核心摘要、主題發展是長期重構區，不應被每章處理任務反覆改壞。
+
+### 既有條目補充格式
+
+```markdown
+### 創世記 第13章
+
+- （根據本章資料描述與此條目的具體關聯）
+- 來源：CT, GT, KC, BH
+```
+
+---
+
+## 二十二之六、候選條目不能無限堆積
+
+所有 `status: candidate` 的條目必須可被管理。
+
+### 候選條目模板
+
+```yaml
+---
+type: 主題
+secondary_types: []
+aliases: []
+status: candidate
+created_from: 創世記 第13章
+source_scope: collected_only
+---
+```
+
+### 管理機制
+
+建立 Obsidian 儀表板（若使用 Dataview 可用它列出所有 candidate 條目）：
+
+```text
+link_folder/_管理/候選條目管理.md
+```
+
+### 每卷書完成後的清理
+
+每完成一卷書後，必須檢查 candidate 條目：
+
+- **被引用多次者** → 考慮升級 formal
+- **已有足夠來源者** → 升級 formal
+- **與既有條目重複者** → 合併
+- **長期無資料支撐者** → 保留或移除 link
+- **分類錯誤者** → 移動到正確 link folder
+
+可用 `review_candidates.py` 產生報告（腳本待建），也可用 Obsidian Dataview 管理。
+
+**重點**：candidate 不能變成垃圾堆。
+
+---
+
+## 二十二之七、link_quality_check.py — 語意品質檢查
+
+`verify_links.py` 只能檢查檔案是否存在，不能檢查語意是否正確。
+因此必須新增 `link_quality_check.py` 作為驗證流程的一環。
+
+### 檢查項目
+
+| # | 檢查項 | 說明 |
+|---|--------|------|
+| 1 | 書卷與人物同名錯連 | `[[何西阿]]書` → 應警告改為 `[[何西阿書]]` |
+| 2 | alias 格式錯誤 | `[[條目|]]` 空 alias 等格式錯誤 |
+| 3 | 短 target 過度 link | `[[手]]`、`[[去]]`、`[[弓]]`、`[[海沙]]` 若無來源明確支撐應警告 |
+| 4 | 經文原詞後綴判斷 | `[[何西阿]]` 後緊接「書」→ 高機率錯連 |
+| 5 | 同一 alias 指向多個 target | 同章中「何西阿」一處連人物、一處連書卷 |
+| 6 | 不存在於 link_index 的 target | 非 scripture 非章節檔的未知 target |
+| 7 | 冗長 alias 檢查 | 超過 3 字的 alias 可能混用 |
+
+### 用法
+
+```text
+python3 link_quality_check.py           # 全庫檢查
+python3 link_quality_check.py 創世記     # 指定書卷
+```
+
+### 輸出
+
+```text
+Link Quality Check Report
+Total warnings: N
+├─ Critical: N
+└─ Warning:  N
+
+🔴 [CRITICAL] [[何西阿]]後緊接「書」→ 應為 [[何西阿書]]
+🟡 [WARNING] 短詞 link: [[手]] → 檢查是否為普通詞誤連
+
+Result: PASS / FAIL
+```
+
+**Critical 警告必須修正才能 commit。**
+**Warning 警告應檢視，但可視情況判斷是否延後處理。**
+
+---
+
+## 二十二之八、link_plan 不是資料來源
+
+`link_plan.md` 只是一份執行計畫，不是內容依據。
+
+Agent 不可根據 `link_plan.md` 直接撰寫條目內容。
+處理條目時，必須回到：
+
+1. 原始來源暫存檔
+2. 清理後的來源資料
+3. 章節主檔
+4. 本章整理內容
+
+`link_plan.md` 只回答：
+- 要處理哪個條目？
+- 放在哪個 folder？
+- 是更新既有條目還是新增？
+- 由哪些來源觸發？
+
+**但不回答**：這個條目應該寫什麼內容？
+內容必須回到資料來源。
+
+---
+
+## 二十二之九、章節主檔不要變成資料倉庫
+
+章節主檔是讀經入口，不是四大來源全文摘要倉庫。
+
+### 章節主檔應保留
+
+- 完整經文
+- 經文上的資料驅動 wiki-link
+- 本章知識節點
+- 本章整理
+- 重要補充
+- 待確認事項
+- 資料來源
+
+### 不要做的事
+
+不要把 CT、GT、KC、BH 的內容逐段大量塞進主檔。
+來源資料只應被整理成對讀經有幫助的結論。
+
+### 若資料太多
+
+應沉澱到 `link_folder/` 對應條目中。
+或保留在 `【書名】/.tmp/第x章/`。
+但 `.tmp` 不是正式知識庫內容，僅供暫存。
+
+---
+
+## 二十二之十、聖經章節引用與 verify_links 過濾規則
+
+不是所有不存在的 wiki-link 都視為 broken link。
+
+若 wiki-link 指向尚未建立的聖經章節，但該引用符合聖經書卷與章數規則，
+應歸類為 `pending_scripture_refs`，不得視為 broken link。
+
+### 合法未來書卷引用範例
+
+- `[[啟示錄13]]`
+- `[[啟示錄4]]`
+- `[[撒母耳記下5]]`
+- `[[詩篇25]]`
+- `[[啟示錄/第13章|啟示錄13章]]`
+
+### 判定方式
+
+若書卷存在於 `_config/bible_books.json` 且章數在合法範圍內，
+即使本地章節檔尚未建立，也視為合法的未來書卷引用。
+
+### 不建議的做法
+
+不建議為所有未來章節先建立空檔案。
+例如不要為了通過 verify 就建立：
+
+```text
+啟示錄/第13章.md
+詩篇/第25篇.md
+撒母耳記下/第5章.md
+```
+
+原因：會污染進度判斷。Agent 看到檔案存在可能誤判為「這章已經處理過」。
+
+除非給 placeholder 加非常嚴格的 frontmatter：
+
+```yaml
+---
+status: planned
+content_status: empty_placeholder
+---
+```
+
+但整體來說較乾淨的做法是：**不建立空章節檔，由 verify_links.py 把合法未來章節歸類為 pending scripture refs。**
+
+---
+
+## 二十二之十一、commit 規則補充
+
+### 一般章節
+
+每完成一章且所有驗證通過後，才能 commit + push。
+
+commit message 建議格式：
+
+```text
+Add Hosea chapter 1 integrated study note
+Update Hosea chapter 1 links and knowledge nodes
+```
+
+### 超長章節
+
+超長章節可以分階段 commit，例如：
+
+```text
+Psalm 119 source cache
+Psalm 119 integrated chapter note
+Psalm 119 link folder updates
+```
+
+但最終完整章節仍必須通過：
+- `verify_links.py`
+- `link_quality_check.py`
+
+才算完成。
+
+### commit 前強制檢查清單
+
+commit 前必須確認：
+- [ ] verify_links.py 輸出：BROKEN LINKS = 0
+- [ ] verify_links.py 輸出：INVALID SCRIPTURE REFS = 0
+- [ ] link_quality_check.py 輸出：CRITICAL = 0
+- [ ] 所有新建的 link_folder 條目有 YAML frontmatter
+- [ ] 所有新建條目有關聯的觸發來源
 
 ---
 
@@ -985,10 +1496,11 @@ check_existing_links.py → verify_links.py
     - C類：建立新正式條目
     - D類：建立候選條目
 12. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
-13. **驗證**：執行 `python3 verify_links.py`
-14. 修正直到 0 broken
-15. git commit + push
-16. 回報完成狀態
+13. **語意品質檢查**：執行 `python3 link_quality_check.py`
+14. **驗證**：執行 `python3 verify_links.py`
+15. 修正到 verify 無 broken/invalid refs、quality 無 critical warnings
+16. git commit + push
+17. 回報完成狀態
 
 ### 超長章節處理流程
 
@@ -1088,10 +1600,11 @@ link queue 格式（簡潔版，保留最低限度來源證據）：
 #### 驗證與 commit
 
 - 每完成一個大段，可選擇執行局部 verify。
-- link queue 全部處理完後，執行完整 `verify_links.py`。
-- 修正 missing links。
+- link queue 全部處理完後，執行完整 `link_quality_check.py`。
+- 再執行完整 `verify_links.py`。
+- 修正 missing links 與 quality critical 問題。
 - 重跑驗證直到 0 破損。
-- 0 破損後才能 commit + push。
+- 只有 verify 無 broken/invalid refs、quality 無 critical 警告後才能 commit + push。
 
 ---
 
@@ -1103,12 +1616,13 @@ link queue 格式（簡潔版，保留最低限度來源證據）：
 4. 禁止根據暫存檔不存在的資料建立 link。
 5. 禁止 link queue 產生沒有資料支撐的節點。
 6. 禁止為了省事跳過最終整章 verify。
+7. 禁止為了省事跳過最終整章 quality check。
 
 ---
 
-## 二十三、commit 規則
+## 二十三（舊）、commit 規則（延伸規則見二十二之十一）
 
-每完成一章且驗證通過後，才能 commit + push。
+每完成一章且驗證通過後（verify + quality check），才能 commit + push。
 
 commit message 建議格式：
 
@@ -1147,22 +1661,27 @@ Update Hosea chapter 1 links and knowledge nodes
 
 1. 跳過 `scheme.md`
 2. 跳過 `verify_links.py`
-3. 使用 gbrain 寫入
-4. 只靠 Agent 記憶補連結
-5. 建立沒有本地 markdown 檔案的 wiki-link
-6. 為了補條目而任意外搜薄弱資料
-7. 建立只有 2-3 行的薄弱 stub
-8. 把普通名詞大量誤連成 wiki-link
-9. 把章節檔寫成 `[[第1章]]`
-10. 把書卷錯連成人物，例如 `[[何西阿]]書`
-11. 已完成章節未檢查就重做
-12. 驗證未通過就 commit
-13. 未確認 URL 就硬猜來源網址
-14. 把四大來源硬分配到固定資料夾
-15. 為單一零散概念亂開新 link folder
-16. 因 AI 覺得某概念重要就建立 link
-17. 建立目前資料沒有提到、沒有支撐的 link
-18. 為了讓知識庫看起來豐富而製造 link
+3. 跳過 `link_quality_check.py`
+4. 使用 gbrain 寫入
+5. 只靠 Agent 記憶補連結
+6. 建立沒有本地 markdown 檔案的 wiki-link
+7. 為了補條目而任意外搜薄弱資料
+8. 建立只有 2-3 行的薄弱 stub
+9. 把普通名詞大量誤連成 wiki-link
+10. 把章節檔寫成 `[[第1章]]`
+11. 把書卷錯連成人物，例如 `[[何西阿]]書`
+12. 已完成章節未檢查就重做
+13. 驗證未通過就 commit
+14. 未確認 URL 就硬猜來源網址
+15. 把四大來源硬分配到固定資料夾
+16. 為單一零散概念亂開新 link folder
+17. 因 AI 覺得某概念重要就建立 link
+18. 建立目前資料沒有提到、沒有支撐的 link
+19. 為了讓知識庫看起來豐富而製造 link
+20. 同一個條目在多個 link folder 重複建立（見二十二之四）
+21. 根據 link_plan.md 直接撰寫條目內容而不回到來源（見二十二之八）
+22. 把四大來源內容大量塞進章節主檔（見二十二之九）
+23. 為未來章節預先建立空白章節檔（見二十二之十）
 
 ---
 
@@ -1180,5 +1699,10 @@ Update Hosea chapter 1 links and knowledge nodes
 10. 所有 wiki-link 必須閉合到本地 markdown。
 11. 資料不足但已被來源明確觸發時，可以建立候選條目。
 12. 資料沒有觸發時，不建立 link。
-13. 每章必須驗證到 0 破損才能 commit。
-14. 所有輸出使用繁體中文。
+13. 每章必須 verify 到 0 broken/invalid refs 才能 commit。
+14. 每章必須 quality check 到 0 critical warnings。
+15. link_plan.md 必須在寫入章節主檔前產生。
+16. 條目只允許一個主分類，用 secondary_types 標註次分類。
+17. 正式條目的定義/核心摘要/主題發展為保護區，不可每章亂改。
+18. 所有輸出使用繁體中文。
+19. 不可為未來章節預建空檔案。
