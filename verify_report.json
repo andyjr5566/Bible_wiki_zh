@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 2336,
+  "valid_links_count": 2401,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 91,
+  "pending_scripture_refs_count": 90,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -125,11 +125,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第18章",
-      "book": "創世記",
-      "chapter": 18
     },
     {
       "entity": "創世記/第19章",
@@ -910,11 +905,6 @@
       ],
       "link_folder/人物/撒拉.md": [
         [
-          "創世記/第18章",
-          "創世記",
-          18
-        ],
-        [
           "創世記/第20章",
           "創世記",
           20
@@ -1167,13 +1157,6 @@
           10
         ]
       ],
-      "link_folder/地點/亞摩利人幔利的橡樹.md": [
-        [
-          "創世記/第18章",
-          "創世記",
-          18
-        ]
-      ],
       "link_folder/地點/伯拉大河.md": [
         [
           "申命記/第1章",
@@ -1275,11 +1258,6 @@
         ]
       ],
       "link_folder/地點/蛾摩拉.md": [
-        [
-          "創世記/第18章",
-          "創世記",
-          18
-        ],
         [
           "創世記/第19章",
           "創世記",

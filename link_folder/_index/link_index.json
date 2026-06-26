@@ -1910,6 +1910,29 @@
     "status": "formal",
     "aliases": []
   },
+  "審判全地的主豈不行公義": {
+    "path": "link_folder/神學/審判全地的主豈不行公義.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "審判全地的主豈不行公義",
+    "status": "formal",
+    "aliases": [
+      "審判全地的主行公義",
+      "神的公義與審判"
+    ]
+  },
+  "審判全地的主行公義": {
+    "alias_of": "審判全地的主豈不行公義"
+  },
+  "神的公義與審判": {
+    "alias_of": "審判全地的主豈不行公義"
+  },
+  "主題": {
+    "alias_of": "審判全地的主豈不行公義",
+    "via_secondary_type": true
+  },
   "審判已過": {
     "path": "link_folder/神學/審判已過.md",
     "type": "神學",
@@ -1947,6 +1970,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "應許之子與信心",
+    "status": "formal",
+    "aliases": []
+  },
+  "我所做的事豈可瞞著亞伯拉罕": {
+    "path": "link_folder/神學/我所做的事豈可瞞著亞伯拉罕.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "我所做的事豈可瞞著亞伯拉罕",
     "status": "formal",
     "aliases": []
   },
@@ -2181,6 +2214,25 @@
     "title": "耶和華的得勝",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華豈有難成的事": {
+    "path": "link_folder/神學/耶和華豈有難成的事.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "耶和華豈有難成的事",
+    "status": "formal",
+    "aliases": [
+      "耶和華豈有太奇妙的事",
+      "神豈有難成的事"
+    ]
+  },
+  "耶和華豈有太奇妙的事": {
+    "alias_of": "耶和華豈有難成的事"
+  },
+  "神豈有難成的事": {
+    "alias_of": "耶和華豈有難成的事"
   },
   "聖靈": {
     "path": "link_folder/神學/聖靈.md",
