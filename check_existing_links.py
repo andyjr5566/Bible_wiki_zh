@@ -59,8 +59,13 @@ def main():
         print(f"❌ 檔案不存在: {filepath}")
         sys.exit(1)
     
-    # 從檔名推斷章節標籤，如「第13章」
-    chapter_tag = filepath.stem  # e.g. 第13章
+    # 從檔名推斷章節標籤，如「第13章」或「第十三章」
+    import re as _re
+    m = _re.search(r'第(\d+)章|第([一二三四五六七八九十]+)章', filepath.stem)
+    if m:
+        chapter_tag = f"第{m.group(1) or m.group(2)}章"
+    else:
+        chapter_tag = filepath.stem
     
     targets = extract_links(filepath)
     existing = find_existing(targets)
