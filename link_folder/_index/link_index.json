@@ -7,6 +7,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞伯蘭的愛心與勇氣": {
+    "path": "link_folder/主題/亞伯蘭的愛心與勇氣.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "亞伯蘭的愛心與勇氣",
+    "status": "formal",
+    "aliases": []
+  },
   "你在那裡": {
     "path": "link_folder/主題/你在那裡.md",
     "type": "主題",
@@ -60,6 +68,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "強暴",
+    "status": "formal",
+    "aliases": []
+  },
+  "得勝後的試探": {
+    "path": "link_folder/主題/得勝後的試探.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "得勝後的試探",
     "status": "formal",
     "aliases": []
   },
@@ -151,11 +167,27 @@
     "status": "formal",
     "aliases": []
   },
+  "羅得的世俗選擇與後果": {
+    "path": "link_folder/主題/羅得的世俗選擇與後果.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "羅得的世俗選擇與後果",
+    "status": "formal",
+    "aliases": []
+  },
   "羅得的墮落": {
     "path": "link_folder/主題/羅得的墮落.md",
     "type": "主題",
     "secondary_types": [],
     "title": "羅得的墮落",
+    "status": "formal",
+    "aliases": []
+  },
+  "聖經第一場戰爭": {
+    "path": "link_folder/主題/聖經第一場戰爭.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "聖經第一場戰爭",
     "status": "formal",
     "aliases": []
   },
@@ -223,6 +255,14 @@
     "status": "formal",
     "aliases": []
   },
+  "麥基洗德與基督豫表": {
+    "path": "link_folder/主題/麥基洗德與基督豫表.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "麥基洗德與基督豫表",
+    "status": "formal",
+    "aliases": []
+  },
   "亞伯蘭下埃及與出埃及": {
     "path": "link_folder/互文/亞伯蘭下埃及與出埃及.md",
     "type": "互文",
@@ -271,6 +311,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞乃": {
+    "path": "link_folder/人物/亞乃.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞乃",
+    "status": "formal",
+    "aliases": []
+  },
   "亞伯": {
     "path": "link_folder/人物/亞伯.md",
     "type": "人物",
@@ -284,6 +332,30 @@
     "type": "人物",
     "secondary_types": [],
     "title": "亞伯蘭",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞摩利人": {
+    "path": "link_folder/人物/亞摩利人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞摩利人",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞瑪力人": {
+    "path": "link_folder/人物/亞瑪力人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞瑪力人",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞略": {
+    "path": "link_folder/人物/亞略.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞略",
     "status": "formal",
     "aliases": []
   },
@@ -311,11 +383,27 @@
     "status": "formal",
     "aliases": []
   },
+  "以實各": {
+    "path": "link_folder/人物/以實各.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以實各",
+    "status": "formal",
+    "aliases": []
+  },
   "以挪士": {
     "path": "link_folder/人物/以挪士.md",
     "type": "人物",
     "secondary_types": [],
     "title": "以挪士",
+    "status": "formal",
+    "aliases": []
+  },
+  "以米人": {
+    "path": "link_folder/人物/以米人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以米人",
     "status": "formal",
     "aliases": []
   },
@@ -335,6 +423,14 @@
     "status": "formal",
     "aliases": []
   },
+  "何利人": {
+    "path": "link_folder/人物/何利人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "何利人",
+    "status": "formal",
+    "aliases": []
+  },
   "偉人": {
     "path": "link_folder/人物/偉人.md",
     "type": "人物",
@@ -343,11 +439,40 @@
     "status": "candidate",
     "aliases": []
   },
+  "利乏音人": {
+    "path": "link_folder/人物/利乏音人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "利乏音人",
+    "status": "formal",
+    "aliases": []
+  },
   "含": {
     "path": "link_folder/人物/含.md",
     "type": "人物",
     "secondary_types": [],
     "title": "含",
+    "status": "formal",
+    "aliases": []
+  },
+  "善以別（洗扁王）": {
+    "path": "link_folder/人物/善以別（洗扁王）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "善以別（洗扁王）",
+    "status": "formal",
+    "aliases": [
+      "善以別"
+    ]
+  },
+  "善以別": {
+    "alias_of": "善以別（洗扁王）"
+  },
+  "基大老瑪": {
+    "path": "link_folder/人物/基大老瑪.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "基大老瑪",
     "status": "formal",
     "aliases": []
   },
@@ -383,6 +508,14 @@
     "status": "formal",
     "aliases": []
   },
+  "希伯來人": {
+    "path": "link_folder/人物/希伯來人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "希伯來人",
+    "status": "formal",
+    "aliases": []
+  },
   "拉麥": {
     "path": "link_folder/人物/拉麥.md",
     "type": "人物",
@@ -407,6 +540,14 @@
     "status": "formal",
     "aliases": []
   },
+  "提達": {
+    "path": "link_folder/人物/提達.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "提達",
+    "status": "formal",
+    "aliases": []
+  },
   "撒萊": {
     "path": "link_folder/人物/撒萊.md",
     "type": "人物",
@@ -414,6 +555,40 @@
     "title": "撒萊",
     "status": "formal",
     "aliases": []
+  },
+  "暗拉非": {
+    "path": "link_folder/人物/暗拉非.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "暗拉非",
+    "status": "formal",
+    "aliases": []
+  },
+  "比拉（所多瑪王）": {
+    "path": "link_folder/人物/比拉（所多瑪王）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "比拉（所多瑪王）",
+    "status": "formal",
+    "aliases": [
+      "比拉"
+    ]
+  },
+  "比拉": {
+    "alias_of": "比拉（所多瑪王）"
+  },
+  "比沙（蛾摩拉王）": {
+    "path": "link_folder/人物/比沙（蛾摩拉王）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "比沙（蛾摩拉王）",
+    "status": "formal",
+    "aliases": [
+      "比沙"
+    ]
+  },
+  "比沙": {
+    "alias_of": "比沙（蛾摩拉王）"
   },
   "瑪勒列": {
     "path": "link_folder/人物/瑪勒列.md",
@@ -431,11 +606,32 @@
     "status": "formal",
     "aliases": []
   },
+  "示納（押瑪王）": {
+    "path": "link_folder/人物/示納（押瑪王）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "示納（押瑪王）",
+    "status": "formal",
+    "aliases": [
+      "示納"
+    ]
+  },
+  "示納": {
+    "alias_of": "示納（押瑪王）"
+  },
   "羅得": {
     "path": "link_folder/人物/羅得.md",
     "type": "人物",
     "secondary_types": [],
     "title": "羅得",
+    "status": "formal",
+    "aliases": []
+  },
+  "蘇西人": {
+    "path": "link_folder/人物/蘇西人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "蘇西人",
     "status": "formal",
     "aliases": []
   },
@@ -495,11 +691,56 @@
     "status": "formal",
     "aliases": []
   },
+  "麥基洗德": {
+    "path": "link_folder/人物/麥基洗德.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "麥基洗德",
+    "status": "formal",
+    "aliases": [
+      "麥基洗得"
+    ]
+  },
+  "麥基洗得": {
+    "alias_of": "麥基洗德"
+  },
+  "「希伯來人」的意義": {
+    "path": "link_folder/原文/「希伯來人」的意義.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "「希伯來人」的意義",
+    "status": "formal",
+    "aliases": []
+  },
+  "「撒冷」名字含義": {
+    "path": "link_folder/原文/「撒冷」名字含義.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "「撒冷」名字含義",
+    "status": "formal",
+    "aliases": []
+  },
+  "「麥基洗德」名字含義": {
+    "path": "link_folder/原文/「麥基洗德」名字含義.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "「麥基洗德」名字含義",
+    "status": "formal",
+    "aliases": []
+  },
   "七十的屬靈意義": {
     "path": "link_folder/原文/七十的屬靈意義.md",
     "type": "原文",
     "secondary_types": [],
     "title": "七十的屬靈意義",
+    "status": "formal",
+    "aliases": []
+  },
+  "三百一十八人": {
+    "path": "link_folder/原文/三百一十八人.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "三百一十八人",
     "status": "formal",
     "aliases": []
   },
@@ -516,6 +757,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "修理與看守",
+    "status": "formal",
+    "aliases": []
+  },
+  "十分之一": {
+    "path": "link_folder/原文/十分之一.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "十分之一",
     "status": "formal",
     "aliases": []
   },
@@ -567,6 +816,14 @@
     "status": "formal",
     "aliases": []
   },
+  "石漆": {
+    "path": "link_folder/原文/石漆.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "石漆",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
     "type": "原文",
@@ -599,11 +856,51 @@
     "status": "formal",
     "aliases": []
   },
+  "亞摩利人幔利的橡樹": {
+    "path": "link_folder/地點/亞摩利人幔利的橡樹.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞摩利人幔利的橡樹",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞特蘭加寧": {
+    "path": "link_folder/地點/亞特蘭加寧.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞特蘭加寧",
+    "status": "formal",
+    "aliases": []
+  },
   "亞述": {
     "path": "link_folder/地點/亞述.md",
     "type": "地點",
     "secondary_types": [],
     "title": "亞述",
+    "status": "formal",
+    "aliases": []
+  },
+  "以拉撒": {
+    "path": "link_folder/地點/以拉撒.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以拉撒",
+    "status": "formal",
+    "aliases": []
+  },
+  "以攔": {
+    "path": "link_folder/地點/以攔.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以攔",
+    "status": "formal",
+    "aliases": []
+  },
+  "伊勒巴蘭": {
+    "path": "link_folder/地點/伊勒巴蘭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伊勒巴蘭",
     "status": "formal",
     "aliases": []
   },
@@ -622,6 +919,40 @@
     "title": "伯特利",
     "status": "formal",
     "aliases": []
+  },
+  "但": {
+    "path": "link_folder/地點/但.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "但",
+    "status": "formal",
+    "aliases": [
+      "拉億"
+    ]
+  },
+  "拉億": {
+    "alias_of": "但"
+  },
+  "何把": {
+    "path": "link_folder/地點/何把.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "何把",
+    "status": "formal",
+    "aliases": []
+  },
+  "加低斯": {
+    "path": "link_folder/地點/加低斯.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "加低斯",
+    "status": "formal",
+    "aliases": [
+      "加低斯巴尼亞"
+    ]
+  },
+  "加低斯巴尼亞": {
+    "alias_of": "加低斯"
   },
   "南地": {
     "path": "link_folder/地點/南地.md",
@@ -647,6 +978,14 @@
     "status": "formal",
     "aliases": []
   },
+  "哈洗遜他瑪": {
+    "path": "link_folder/地點/哈洗遜他瑪.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哈洗遜他瑪",
+    "status": "formal",
+    "aliases": []
+  },
   "哈腓拉": {
     "path": "link_folder/地點/哈腓拉.md",
     "type": "地點",
@@ -660,6 +999,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "哈蘭",
+    "status": "formal",
+    "aliases": []
+  },
+  "哈麥": {
+    "path": "link_folder/地點/哈麥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哈麥",
     "status": "formal",
     "aliases": []
   },
@@ -678,6 +1025,28 @@
     "title": "基訓",
     "status": "formal",
     "aliases": []
+  },
+  "大馬士革": {
+    "path": "link_folder/地點/大馬士革.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "大馬士革",
+    "status": "formal",
+    "aliases": []
+  },
+  "安密巴": {
+    "path": "link_folder/地點/安密巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "安密巴",
+    "status": "formal",
+    "aliases": [
+      "以實各谷",
+      "加低斯巴尼亞"
+    ]
+  },
+  "以實各谷": {
+    "alias_of": "安密巴"
   },
   "尼尼微": {
     "path": "link_folder/地點/尼尼微.md",
@@ -719,11 +1088,27 @@
     "status": "formal",
     "aliases": []
   },
+  "戈印": {
+    "path": "link_folder/地點/戈印.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "戈印",
+    "status": "formal",
+    "aliases": []
+  },
   "所多瑪": {
     "path": "link_folder/地點/所多瑪.md",
     "type": "地點",
     "secondary_types": [],
     "title": "所多瑪",
+    "status": "formal",
+    "aliases": []
+  },
+  "押瑪": {
+    "path": "link_folder/地點/押瑪.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "押瑪",
     "status": "formal",
     "aliases": []
   },
@@ -735,6 +1120,22 @@
     "status": "formal",
     "aliases": []
   },
+  "撒冷": {
+    "path": "link_folder/地點/撒冷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒冷",
+    "status": "formal",
+    "aliases": []
+  },
+  "死海": {
+    "path": "link_folder/地點/死海.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "死海",
+    "status": "formal",
+    "aliases": []
+  },
   "比遜": {
     "path": "link_folder/地點/比遜.md",
     "type": "地點",
@@ -743,11 +1144,51 @@
     "status": "formal",
     "aliases": []
   },
+  "沙微基列亭": {
+    "path": "link_folder/地點/沙微基列亭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "沙微基列亭",
+    "status": "formal",
+    "aliases": []
+  },
+  "洗扁": {
+    "path": "link_folder/地點/洗扁.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "洗扁",
+    "status": "formal",
+    "aliases": []
+  },
+  "王谷": {
+    "path": "link_folder/地點/王谷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "王谷",
+    "status": "formal",
+    "aliases": []
+  },
+  "瑣珥": {
+    "path": "link_folder/地點/瑣珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "瑣珥",
+    "status": "formal",
+    "aliases": []
+  },
   "示劍": {
     "path": "link_folder/地點/示劍.md",
     "type": "地點",
     "secondary_types": [],
     "title": "示劍",
+    "status": "formal",
+    "aliases": []
+  },
+  "示拿": {
+    "path": "link_folder/地點/示拿.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "示拿",
     "status": "formal",
     "aliases": []
   },
@@ -767,6 +1208,38 @@
     "status": "formal",
     "aliases": []
   },
+  "耶路撒冷": {
+    "path": "link_folder/地點/耶路撒冷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶路撒冷",
+    "status": "formal",
+    "aliases": []
+  },
+  "蛾摩拉": {
+    "path": "link_folder/地點/蛾摩拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "蛾摩拉",
+    "status": "formal",
+    "aliases": []
+  },
+  "西珥山": {
+    "path": "link_folder/地點/西珥山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西珥山",
+    "status": "formal",
+    "aliases": []
+  },
+  "西訂谷": {
+    "path": "link_folder/地點/西訂谷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西訂谷",
+    "status": "formal",
+    "aliases": []
+  },
   "迦南地": {
     "path": "link_folder/地點/迦南地.md",
     "type": "地點",
@@ -774,6 +1247,20 @@
     "title": "迦南地",
     "status": "formal",
     "aliases": []
+  },
+  "鹽海": {
+    "path": "link_folder/地點/鹽海.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "鹽海",
+    "status": "formal",
+    "aliases": [
+      "死海",
+      "亞拉巴海"
+    ]
+  },
+  "亞拉巴海": {
+    "alias_of": "鹽海"
   },
   "三位一體在創造中的隱現": {
     "path": "link_folder/神學/三位一體在創造中的隱現.md",
@@ -799,6 +1286,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞伯蘭拒絕所多瑪財物": {
+    "path": "link_folder/神學/亞伯蘭拒絕所多瑪財物.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "亞伯蘭拒絕所多瑪財物",
+    "status": "formal",
+    "aliases": []
+  },
   "人的全面敗壞": {
     "path": "link_folder/神學/人的全面敗壞.md",
     "type": "神學",
@@ -812,6 +1307,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "人的尊嚴與神的形像",
+    "status": "formal",
+    "aliases": []
+  },
+  "什一奉獻的起源": {
+    "path": "link_folder/神學/什一奉獻的起源.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "什一奉獻的起源",
     "status": "formal",
     "aliases": []
   },
@@ -863,6 +1366,14 @@
     "status": "formal",
     "aliases": []
   },
+  "四王與五王戰爭的屬靈意義": {
+    "path": "link_folder/神學/四王與五王戰爭的屬靈意義.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "四王與五王戰爭的屬靈意義",
+    "status": "formal",
+    "aliases": []
+  },
   "基督復活": {
     "path": "link_folder/神學/基督復活.md",
     "type": "神學",
@@ -892,6 +1403,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "大淵的泉源與天上的窗戶",
+    "status": "formal",
+    "aliases": []
+  },
+  "天地的主": {
+    "path": "link_folder/神學/天地的主.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "天地的主",
     "status": "formal",
     "aliases": []
   },
@@ -1119,11 +1638,35 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華的得勝": {
+    "path": "link_folder/神學/耶和華的得勝.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華的得勝",
+    "status": "formal",
+    "aliases": []
+  },
   "聖靈": {
     "path": "link_folder/神學/聖靈.md",
     "type": "神學",
     "secondary_types": [],
     "title": "聖靈",
+    "status": "formal",
+    "aliases": []
+  },
+  "至高的神": {
+    "path": "link_folder/神學/至高的神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "至高的神",
+    "status": "formal",
+    "aliases": []
+  },
+  "至高神的祭司": {
+    "path": "link_folder/神學/至高神的祭司.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "至高神的祭司",
     "status": "formal",
     "aliases": []
   },
@@ -1188,6 +1731,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "馨香之氣",
+    "status": "formal",
+    "aliases": []
+  },
+  "麥基洗德的豫表": {
+    "path": "link_folder/神學/麥基洗德的豫表.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "麥基洗德的豫表",
     "status": "formal",
     "aliases": []
   },
