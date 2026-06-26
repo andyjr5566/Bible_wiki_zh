@@ -822,7 +822,151 @@ missing_entities 建議格式：
 
 ---
 
-## 二十二、章節處理流程
+## 二十二、link candidate 與既有條目比對流程
+
+為避免 Agent 憑感覺建立 wiki-link，所有章節在正式寫入 wiki-link 前，
+必須先建立 link candidate 並與既有 link folder 條目比對。
+
+### 一、建立 link index
+
+每章開始處理前，必須掃描全域 link folders：
+
+```
+link_folder/
+├── 人物/
+├── 地點/
+├── 主題/
+├── 背景/
+├── 歷史/
+├── 原文/
+├── 文化/
+├── 神學/
+├── 互文/
+└── 解經爭議/
+```
+
+執行 `python3 build_link_index.py`，產生或更新：
+
+```
+link_folder/_index/link_index.json
+```
+
+link index 至少應包含：
+
+```json
+{
+  "條目名稱": {
+    "path": "link_folder/分類/條目名稱.md",
+    "type": "分類",
+    "aliases": ["別名1", "別名2"],
+    "status": "formal 或 candidate"
+  }
+}
+```
+
+### 二、抽取 link candidates
+
+四大來源清理完成後，Agent 不得立刻建立 wiki-link 或新條目。
+必須先根據已收集資料建立：
+
+```
+【書名】/.tmp/第x章/link_candidates.md
+```
+
+link candidates 只記錄由已收集資料明確觸發的候選知識節點。
+候選來源包括：
+
+- 經文本身明確出現的人物、地點、國家、書卷、重要事件
+- 註解、拾穗、解說、背景、歷史、原文、互文資料中明確解釋的概念
+- 來源資料提供足夠內容，可沉澱到 link folder 的知識節點
+
+不可把 AI 憑感覺認為重要的詞放入 candidates。
+
+### 三、解析 candidates
+
+執行：
+
+```
+python3 resolve_link_candidates.py 創世記 13
+```
+
+將 link_candidates.md 與 link_index.json 比對，產生：
+
+```
+【書名】/.tmp/第x章/link_plan.md
+```
+
+link plan 必須把候選節點分成：
+
+| 類別 | 說明 |
+|------|------|
+| A. 已存在，直接使用 | 既有條目完全涵蓋本章需求 |
+| B. 已存在，需要補充本章資料 | 既有條目需要加入本章新資料 |
+| C. 不存在，建立正式條目 | 新條目，有足夠資料 |
+| D. 不存在，建立候選條目 | 新條目，但資料不足 |
+| E. 不應建立 link | 改為純文字 |
+
+### 四、根據 link plan 寫入章節主檔
+
+只有 link_plan.md 產生後，才可正式寫入章節主檔的 wiki-link。
+
+經文中的 link 必須使用：
+
+```
+[[條目完整名稱|經文原詞]]
+```
+
+若經文原詞本身就是條目完整名稱，可使用：
+
+```
+[[條目完整名稱]]
+```
+
+### 五、根據 link plan 更新 link folder
+
+處理 link folder 條目時：
+
+1. 若條目不存在（C/D類），建立正式條目或候選條目
+2. 若條目已存在（B類），讀取原條目，根據本章已收集資料補充新內容
+3. 若本章沒有新內容，不硬補，僅在「聖經出現」或「觸發來源」補一行
+4. 所有新增內容必須能追溯到本章資料來源
+
+既有條目補充格式（新增在「與目前整理書卷的關聯」之後）：
+
+```markdown
+### 創世記 第13章
+
+- （根據本章資料描述與此條目的具體關聯）
+- 來源：CT, GT, KC, BH
+```
+
+### 六、防止重複與誤建
+
+解析 candidates 時必須優先檢查：
+
+- 完全同名條目
+- aliases
+- 同義詞
+- 不同資料夾中的同名條目
+- 書卷名與人物名衝突
+- 經文原詞與條目完整名稱不同的情況
+
+若有歧義，不要自動建立新條目，放入 link_plan 的 D 類（候選條目）或 E 類（不建立）。
+
+### 七、驗證
+
+最終驗證順序：
+
+```
+check_existing_links.py → verify_links.py
+```
+
+- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
+- `verify_links.py`：確認無 0 broken links
+
+---
+
+## 二十三、章節處理流程
 
 ### 一般流程（適用中等長度章節）
 
@@ -830,20 +974,21 @@ missing_entities 建議格式：
 2. 確認目前書卷與章節
 3. 檢查該章主檔是否已存在
 4. 若已存在，先讀取並判斷是否已完成
-5. 抓取四大來源資料
-6. 清理來源內容
-7. 建立或更新章節主檔
-8. 根據經文與已收集資料，在經文上直接建立 wiki-link（格式：`[[條目完整名稱|經文原詞]]`）
-9. 整理來源補充資料
-10. 判斷補充資料應放在章節主檔，或沉澱到全域 link folder
-11. 更新本章知識節點
-12. 新增 link folder 條目
-13. **擴充既有條目**：執行 `python3 check_existing_links.py 創世記/第x章.md`，掃描本章引用的所有既有 link folder 條目。逐一檢查每個既有條目，把新章節蒐集到的相關資料補充進去（新增「創世記第x章」小節、更新聖經出現、更新來源依據範圍）。這是強制步驟，不得省略。
-14. 確認所有新增 link 都由已收集資料觸發
-15. 執行 `verify_links.py`
-16. 修正直到 0 破損
-17. git commit + push
-18. 回報完成狀態
+5. 抓取四大來源資料（cnbible 經文、ccbiblestudy 註解、ccbiblestudy 拾穗、KingComments）
+6. 清理來源內容，提取關鍵資訊
+7. **建立 link index**：執行 `python3 build_link_index.py`
+8. **抽取 link candidates**：根據來源資料，寫入 `【書名】/.tmp/第x章/link_candidates.md`
+9. **解析 candidates**：執行 `python3 resolve_link_candidates.py 【書名】 第x章`，產生 `link_plan.md`
+10. **根據 link_plan 寫章節主檔**：寫入經文 + wiki-link + 補充資料
+11. **根據 link_plan 更新 link folder**：
+    - B類：補充章節資料到既有條目
+    - C類：建立新正式條目
+    - D類：建立候選條目
+12. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
+13. **驗證**：執行 `python3 verify_links.py`
+14. 修正直到 0 broken
+15. git commit + push
+16. 回報完成狀態
 
 ### 超長章節處理流程
 

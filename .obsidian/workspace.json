@@ -185,6 +185,10 @@
   },
   "active": "d194018f075c5c6d",
   "lastOpenFiles": [
+    "link_folder/_index/link_index.json",
+    "link_folder/_index",
+    "resolve_link_candidates.py",
+    "build_link_index.py",
     "check_existing_links.py",
     "link_folder/地點/迦南地.md",
     "創世記/第12章.md",
@@ -216,10 +220,6 @@
     "link_folder/神學",
     "link_folder/原文",
     "link_folder/背景",
-    "link_folder/地點",
-    "link_folder/主題",
-    "link_folder/文化",
-    "link_folder/互文",
-    "link_folder/人物"
+    "link_folder/地點"
   ]
 }
