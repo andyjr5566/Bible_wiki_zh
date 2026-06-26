@@ -1451,6 +1451,27 @@
     "status": "formal",
     "aliases": []
   },
+  "別是巴": {
+    "path": "link_folder/地點/別是巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "別是巴",
+    "status": "formal",
+    "aliases": [
+      "Beersheba",
+      "盟誓的井",
+      "七之井"
+    ]
+  },
+  "Beersheba": {
+    "alias_of": "別是巴"
+  },
+  "盟誓的井": {
+    "alias_of": "別是巴"
+  },
+  "七之井": {
+    "alias_of": "別是巴"
+  },
   "加低斯": {
     "path": "link_folder/地點/加低斯.md",
     "type": "地點",
@@ -2394,6 +2415,29 @@
     "title": "耶和華把他關在方舟裡",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華永生神": {
+    "path": "link_folder/神學/耶和華永生神.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "耶和華永生神",
+    "status": "formal",
+    "aliases": [
+      "El Olam",
+      "永生神",
+      "永活的神"
+    ]
+  },
+  "El Olam": {
+    "alias_of": "耶和華永生神"
+  },
+  "永生神": {
+    "alias_of": "耶和華永生神"
+  },
+  "永活的神": {
+    "alias_of": "耶和華永生神"
   },
   "耶和華的使者": {
     "path": "link_folder/神學/耶和華的使者.md",
