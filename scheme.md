@@ -621,42 +621,14 @@ wiki-link 必須由已收集資料觸發。
 
 條目依性質放入適合的全域 link folder。
 
-### 通用條目模板
+### 連結路徑規則
+1. 一般知識節點可使用短 link target，例如 `[[屬靈淫亂]]`。
+2. 若出現同名條目、跨資料夾歧義、或 verify 無法唯一解析，必須改用完整路徑：
+   `[[link_folder/主題/屬靈淫亂|淫亂]]`
 
-```md
----
-type: 人物／地點／主題／背景／歷史／原文／文化／神學／互文／解經爭議
-status: formal
-source_scope: collected_only
----
-
-# 條目名稱
-
-## 定義／基本資料
-
-## 觸發來源
-
-- [[書卷/第x章|書卷 第x章]]：
-
-## 聖經出現
-
-- [[書卷/第x章|書卷 第x章]]：
-
-## 與目前整理書卷的關聯
-
-## 神學意義／研讀意義
-
-## 相關條目
-
-- [[相關條目1]]
-- [[相關條目2]]
-
-## 來源依據
-
-- 目前已收集資料
-
-## 待確認事項
-```
+### 條目格式
+正式條目格式以「二十二之五、正式條目模板」為準（包含保護區與累積區）。
+本節僅說明基本 frontmatter 與閉合要求。
 
 ### 條目內容要求
 
@@ -785,9 +757,9 @@ verify_links.py
 4. 修正原文或補建條目
 5. 對新建條目再次驗證
 6. 重跑 `verify_links.py`
-7. 直到 0 破損連結
+7. 直到 0 blocking errors
 
-只有 0 破損後，才能 commit + push。
+只有 0 blocking errors 後，才能 commit + push。
 
 ---
 
@@ -846,7 +818,14 @@ UNKNOWN LINKS: N
 --- INVALID SCRIPTURE REFS (must fix) ---
 [[啟示錄23]] → ERROR: 啟示錄 only has 22 chapters
 
-Result: PASS / FAIL
+Result: PASS (0 blocking errors) / FAIL
+
+### Blocking Error 定義
+verify_links.py 必須達到以下條件才視為 PASS (0 blocking errors)：
+- BROKEN_LINKS = 0
+- INVALID_SCRIPTURE_REFS = 0
+- UNKNOWN_LINKS = 0
+- PENDING_SCRIPTURE_REFS 可存在，不視為 blocking error。
 ```
 
 ### bible_books.json 格式
@@ -1001,7 +980,7 @@ link plan 必須把候選節點分成：
 最終驗證順序：
 
 ```
-check_existing_links.py → verify_links.py
+check_existing_links.py → build_link_index.py → link_quality_check.py → verify_links.py
 ```
 
 |- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
@@ -1043,7 +1022,7 @@ wiki-link 建立不可只依靠 Agent 讀完來源後「憑判斷」建立。
 
 ---
 
-## 二十二之二、build_link_index.py 強制步驟（加強版）
+## 二十二之二、build_link_index.py 強制步驟
 
 每次處理章節前，必須先掃描 `link_folder/`，產生或更新 `link_folder/_index/link_index.json`。
 
@@ -1077,7 +1056,7 @@ Obsidian 原生支援 aliases，所以 aliases 必須成為 link 比對核心，
 
 ---
 
-## 二十二之三、resolve_link_candidates.py 比對邏輯（加強版）
+## 二十二之三、resolve_link_candidates.py 比對邏輯
 
 resolve_link_candidates.py 必須將本章 link_candidates.md 與 link_index.json 比對。
 比對優先順序：
@@ -1333,7 +1312,14 @@ Total warnings: N
 🔴 [CRITICAL] [[何西阿]]後緊接「書」→ 應為 [[何西阿書]]
 🟡 [WARNING] 短詞 link: [[手]] → 檢查是否為普通詞誤連
 
-Result: PASS / FAIL
+Result: PASS (0 blocking errors) / FAIL
+
+### Blocking Error 定義
+verify_links.py 必須達到以下條件才視為 PASS (0 blocking errors)：
+- BROKEN_LINKS = 0
+- INVALID_SCRIPTURE_REFS = 0
+- UNKNOWN_LINKS = 0
+- PENDING_SCRIPTURE_REFS 可存在，不視為 blocking error。
 ```
 
 **Critical 警告必須修正才能 commit。**
@@ -1485,7 +1471,7 @@ commit 前必須確認：
 2. 確認目前書卷與章節
 3. 檢查該章主檔是否已存在
 4. 若已存在，先讀取並判斷是否已完成
-5. 抓取四大來源資料（cnbible 經文、ccbiblestudy 註解、ccbiblestudy 拾穗、KingComments）
+5. 抓取主要來源資料（cnbible 經文、ccbiblestudy 註解、ccbiblestudy 拾穗、KingComments、BibleHub Study）
 6. 清理來源內容，提取關鍵資訊
 7. **建立 link index**：執行 `python3 build_link_index.py`
 8. **抽取 link candidates**：根據來源資料，寫入 `【書名】/.tmp/第x章/link_candidates.md`
@@ -1496,8 +1482,9 @@ commit 前必須確認：
     - C類：建立新正式條目
     - D類：建立候選條目
 12. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
-13. **語意品質檢查**：執行 `python3 link_quality_check.py`
-14. **驗證**：執行 `python3 verify_links.py`
+13. **更新 Index**：執行 `python3 build_link_index.py`
+14. **語意品質檢查**：執行 `python3 link_quality_check.py`
+15. **驗證**：執行 `python3 verify_links.py`
 15. 修正到 verify 無 broken/invalid refs、quality 無 critical warnings
 16. git commit + push
 17. 回報完成狀態
@@ -1565,28 +1552,22 @@ commit 前必須確認：
 
 #### 第三階段：link queue 處理
 
-link queue 格式（簡潔版，保留最低限度來源證據）：
+link queue 是超長章節分段產生的暫存候選清單，不直接驅動建檔。
 
+**處理流程**：
+1. 超長章節完成所有分段整合後，必須將所有分段的 `link_queue.md` 彙整成單一的 `link_candidates.md`。
+2. 執行 `python3 resolve_link_candidates.py` 產生 `link_plan.md`。
+3. 根據 `link_plan.md` 統一寫入章節主檔與更新 link folder。
+
+link queue 格式（僅作暫存）：
 ```md
 # 第x章 link queue
 
 ## 001-008
-
 - [[律法的喜樂]] → 主題/（CT, BH）
 - [[遵行神話語]] → 主題/（CT）
 - [[生命果子]] → 主題/（GT）
-
-## 009-016
-
-- [[潔淨自己的行為]] → 主題/（BH）
-- [[少年人與神的話]] → 主題/（CT, KC）
 ```
-
-**格式說明**：
-- `[[條目名稱]] → 建議 link folder（觸發來源縮寫）`
-- 來源縮寫：CT = ccbiblestudy 註解、GT = ccbiblestudy 拾穗、KC = KingComments、BH = BibleHub、CUV = cnbible 經文
-- link queue 只記錄候選知識節點，不寫長篇解釋。
-- 處理 link folder 條目時，Agent 必須回到對應暫存檔與章節主檔，根據資料支撐建立或更新條目。
 
 **link folder 更新規則**：
 - 若條目不存在，依 scheme.md 建立正式條目或候選條目。
@@ -1603,8 +1584,8 @@ link queue 格式（簡潔版，保留最低限度來源證據）：
 - link queue 全部處理完後，執行完整 `link_quality_check.py`。
 - 再執行完整 `verify_links.py`。
 - 修正 missing links 與 quality critical 問題。
-- 重跑驗證直到 0 破損。
-- 只有 verify 無 broken/invalid refs、quality 無 critical 警告後才能 commit + push。
+- 重跑驗證直到 0 blocking errors。
+- 只有 verify 到 0 blocking errors、quality 無 critical 警告後才能 commit + push。
 
 ---
 
@@ -1683,9 +1664,7 @@ Update Hosea chapter 1 links and knowledge nodes
 22. 把四大來源內容大量塞進章節主檔（見二十二之九）
 23. 為未來章節預先建立空白章節檔（見二十二之十）
 
----
-
-## 二十六、最重要的總原則
+---\n\n## 二十七、規則優先級\n\n若本 scheme 內不同章節對同一流程或格式有不同描述，以以下優先級為準：\n\n1. 二十六、最重要的總原則\n2. 二十二之一至二十二之十一：link governance 與長期治理規則\n3. 二十三、章節處理流程\n4. 前文中的格式範例\n\n若格式範例與治理流程衝突，以治理流程為準。\n\n---\n\n## 二十六、最重要的總原則
 
 1. `scheme.md` 是最高規則。
 2. 每章一個整合型章節主檔。
@@ -1699,7 +1678,7 @@ Update Hosea chapter 1 links and knowledge nodes
 10. 所有 wiki-link 必須閉合到本地 markdown。
 11. 資料不足但已被來源明確觸發時，可以建立候選條目。
 12. 資料沒有觸發時，不建立 link。
-13. 每章必須 verify 到 0 broken/invalid refs 才能 commit。
+13. 每章必須 verify 到 0 blocking errors 才能 commit。
 14. 每章必須 quality check 到 0 critical warnings。
 15. link_plan.md 必須在寫入章節主檔前產生。
 16. 條目只允許一個主分類，用 secondary_types 標註次分類。

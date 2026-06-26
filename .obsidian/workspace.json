@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "link_folder/神學/萬國同源.md",
+                "file": "agent_start_prompt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "萬國同源"
+              "title": "agent_start_prompt"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/神學/萬國同源.md",
+                "file": "agent_start_prompt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "萬國同源 的反向連結"
+              "title": "agent_start_prompt 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/神學/萬國同源.md",
+                "file": "agent_start_prompt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "萬國同源 的對外連結"
+              "title": "agent_start_prompt 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/神學/萬國同源.md",
+                "file": "agent_start_prompt.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "萬國同源 的大綱"
+              "title": "agent_start_prompt 的大綱"
             }
           }
         ]
@@ -185,32 +185,32 @@
   },
   "active": "d194018f075c5c6d",
   "lastOpenFiles": [
+    "創世記/第16章.md",
+    "link_folder/互文/羅馬書九章.md",
+    "link_folder/互文/加拉太書四章.md",
+    "link_folder/原文/「庇耳拉海萊」名字含義.md",
+    "link_folder/原文/「以實瑪利」名字含義.md",
+    "link_folder/神學/信心的危機.md",
+    "link_folder/主題/夏甲與撒萊的衝突.md",
+    "link_folder/主題/人的方法與神的應許.md",
+    "link_folder/主題/以實瑪利與以撒的豫表.md",
+    "link_folder/原文/「野驢」的隱喻.md",
+    "link_folder/神學/血氣與應許之對比.md",
+    "link_folder/地點/書珥.md",
+    "link_folder/人物/夏甲.md",
+    "link_folder/神學/耶和華的使者.md",
+    "link_folder/地點/巴列.md",
+    "link_folder/神學/恩典與律法之爭.md",
+    "link_folder/神學/看顧人的神（El Roi）.md",
+    "link_folder/地點/庇耳拉海萊.md",
+    "link_folder/人物/以實瑪利.md",
+    "scheme.md",
+    "link_folder/神學/萬國同源.md",
     "link_folder/人物/以利以謝（人物）.md",
     "link_folder/人物/迦南人.md",
     "link_folder/人物/赫人.md",
     "創世記/第15章.md",
     "link_folder/互文/耶利米書三十四章.md",
-    "link_folder/互文/以賽亞書六十二章.md",
-    "link_folder/互文/申命記四章.md",
-    "link_folder/互文/出埃及記一章.md",
-    "link_folder/互文/加拉太書三章.md",
-    "link_folder/互文/羅馬書四章.md",
-    "link_folder/原文/「伯拉大河」名稱.md",
-    "link_folder/原文/「冒煙的爐與火把」的象徵.md",
-    "link_folder/原文/「盾牌」的隱喻.md",
-    "link_folder/原文/「信耶和華」的意義.md",
-    "link_folder/主題/信心與環境.md",
-    "link_folder/主題/後裔的應許.md",
-    "link_folder/主題/神與亞伯蘭立約.md",
-    "link_folder/神學/立約的儀式.md",
-    "link_folder/神學/亞摩利人罪孽滿盈.md",
-    "link_folder/神學/神的盾牌.md",
-    "link_folder/神學/埃及的豫言.md",
-    "link_folder/神學/因信稱義.md",
-    "link_folder/神學/神單方面的約.md",
-    "link_folder/人物/耶布斯人.md",
-    "link_folder/人物/基尼人.md",
-    "link_folder/人物/革迦撒人.md",
     "link_quality_report.json",
     "link_quality_check.py",
     "verify_result.txt",
