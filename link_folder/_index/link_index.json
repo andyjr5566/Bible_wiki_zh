@@ -143,6 +143,14 @@
     "status": "formal",
     "aliases": []
   },
+  "戲言": {
+    "path": "link_folder/主題/戲言.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "戲言",
+    "status": "candidate",
+    "aliases": []
+  },
   "新造與新生活": {
     "path": "link_folder/神學/新造與新生活.md",
     "type": "神學",
@@ -335,6 +343,14 @@
     "status": "formal",
     "aliases": []
   },
+  "鹽柱": {
+    "path": "link_folder/主題/鹽柱.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "鹽柱",
+    "status": "candidate",
+    "aliases": []
+  },
   "麥基洗德與基督豫表": {
     "path": "link_folder/主題/麥基洗德與基督豫表.md",
     "type": "主題",
@@ -503,6 +519,19 @@
     "status": "formal",
     "aliases": []
   },
+  "亞捫人": {
+    "path": "link_folder/人物/亞捫人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞捫人",
+    "status": "formal",
+    "aliases": [
+      "Ammonites"
+    ]
+  },
+  "Ammonites": {
+    "alias_of": "亞捫人"
+  },
   "亞摩利人": {
     "path": "link_folder/人物/亞摩利人.md",
     "type": "人物",
@@ -622,6 +651,19 @@
     "title": "何利人",
     "status": "formal",
     "aliases": []
+  },
+  "便亞米": {
+    "path": "link_folder/人物/便亞米.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "便亞米",
+    "status": "formal",
+    "aliases": [
+      "Ben-Ammi"
+    ]
+  },
+  "Ben-Ammi": {
+    "alias_of": "便亞米"
   },
   "偉人": {
     "path": "link_folder/人物/偉人.md",
@@ -763,6 +805,32 @@
     "title": "提達",
     "status": "formal",
     "aliases": []
+  },
+  "摩押": {
+    "path": "link_folder/人物/摩押.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "摩押",
+    "status": "formal",
+    "aliases": [
+      "Moab"
+    ]
+  },
+  "Moab": {
+    "alias_of": "摩押"
+  },
+  "摩押人": {
+    "path": "link_folder/人物/摩押人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "摩押人",
+    "status": "formal",
+    "aliases": [
+      "Moabites"
+    ]
+  },
+  "Moabites": {
+    "alias_of": "摩押人"
   },
   "撒拉": {
     "path": "link_folder/人物/撒拉.md",
@@ -1183,6 +1251,20 @@
     "title": "用肚子行走，終身吃土",
     "status": "formal",
     "aliases": []
+  },
+  "眼都昏迷": {
+    "path": "link_folder/原文/眼都昏迷.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "眼都昏迷",
+    "status": "formal",
+    "aliases": []
+  },
+  "神學": {
+    "alias_of": "眼都昏迷",
+    "via_secondary_type": true
   },
   "石漆": {
     "path": "link_folder/原文/石漆.md",
@@ -1686,6 +1768,26 @@
     "status": "formal",
     "aliases": []
   },
+  "不可回頭看": {
+    "path": "link_folder/神學/不可回頭看.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可回頭看",
+    "status": "formal",
+    "aliases": [
+      "不可回頭看",
+      "不要回頭看"
+    ]
+  },
+  "不要回頭看": {
+    "alias_of": "不可回頭看"
+  },
+  "主題": {
+    "alias_of": "不可回頭看",
+    "via_secondary_type": true
+  },
   "亞伯拉罕之約": {
     "path": "link_folder/神學/亞伯拉罕之約.md",
     "type": "神學",
@@ -1929,10 +2031,6 @@
   "神的公義與審判": {
     "alias_of": "審判全地的主豈不行公義"
   },
-  "主題": {
-    "alias_of": "審判全地的主豈不行公義",
-    "via_secondary_type": true
-  },
   "審判已過": {
     "path": "link_folder/神學/審判已過.md",
     "type": "神學",
@@ -2095,6 +2193,14 @@
     "status": "formal",
     "aliases": []
   },
+  "硫磺與火從天上降下": {
+    "path": "link_folder/神學/硫磺與火從天上降下.md",
+    "type": "候選條目",
+    "secondary_types": [],
+    "title": "硫磺與火從天上降下",
+    "status": "candidate",
+    "aliases": []
+  },
   "神單方面的約": {
     "path": "link_folder/神學/神單方面的約.md",
     "type": "神學",
@@ -2142,6 +2248,21 @@
     "title": "神的靈的角色",
     "status": "formal",
     "aliases": []
+  },
+  "神記念亞伯拉罕": {
+    "path": "link_folder/神學/神記念亞伯拉罕.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神記念亞伯拉罕",
+    "status": "formal",
+    "aliases": [
+      "神記念亞伯蘭"
+    ]
+  },
+  "神記念亞伯蘭": {
+    "alias_of": "神記念亞伯拉罕"
   },
   "立約的儀式": {
     "path": "link_folder/神學/立約的儀式.md",

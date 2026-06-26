@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 2401,
+  "valid_links_count": 2507,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 90,
+  "pending_scripture_refs_count": 89,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -125,11 +125,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第19章",
-      "book": "創世記",
-      "chapter": 19
     },
     {
       "entity": "創世記/第20章",
@@ -598,20 +593,6 @@
           "詩篇/第25章",
           "詩篇",
           25
-        ]
-      ],
-      "link_folder/主題/羅得的世俗選擇與後果.md": [
-        [
-          "創世記/第19章",
-          "創世記",
-          19
-        ]
-      ],
-      "link_folder/主題/羅得的墮落.md": [
-        [
-          "創世記/第19章",
-          "創世記",
-          19
         ]
       ],
       "link_folder/主題/虹.md": [
@@ -1231,13 +1212,6 @@
           15
         ]
       ],
-      "link_folder/地點/瑣珥.md": [
-        [
-          "創世記/第19章",
-          "創世記",
-          19
-        ]
-      ],
       "link_folder/地點/示劍.md": [
         [
           "創世記/第33章",
@@ -1255,13 +1229,6 @@
           "但以理書/第1章",
           "但以理書",
           1
-        ]
-      ],
-      "link_folder/地點/蛾摩拉.md": [
-        [
-          "創世記/第19章",
-          "創世記",
-          19
         ]
       ],
       "link_folder/地點/西珥山.md": [
