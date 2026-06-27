@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "link_folder/人物/亞伯蘭.md",
+                "file": "link_folder/主題/虹.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "亞伯蘭"
+              "title": "虹"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/人物/亞伯蘭.md",
+                "file": "link_folder/主題/虹.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "亞伯蘭 的反向連結"
+              "title": "虹 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/人物/亞伯蘭.md",
+                "file": "link_folder/主題/虹.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "亞伯蘭 的對外連結"
+              "title": "虹 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/人物/亞伯蘭.md",
+                "file": "link_folder/主題/虹.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "亞伯蘭 的大綱"
+              "title": "虹 的大綱"
             }
           }
         ]
@@ -185,32 +185,34 @@
   },
   "active": "d194018f075c5c6d",
   "lastOpenFiles": [
-    "link_folder/神學/亞伯拉罕豫表父神.md",
-    "link_folder/神學/公羊.md",
-    "link_folder/神學/燔祭.md",
-    "link_folder/神學/第三日.md",
-    "link_folder/主題/清早起來.md",
-    "link_folder/神學/以撒豫表基督.md",
-    "link_folder/神學/神試驗亞伯拉罕.md",
-    "link_folder/神學/敬畏神.md",
-    "link_folder/人物/彼土利.md",
-    "link_folder/人物/利百加.md",
-    "link_folder/人物/拿鶴.md",
-    "link_folder/神學/公羊代贖.md",
-    "link_folder/神學/耶和華以勒.md",
-    "link_folder/地點/摩利亞地.md",
-    "創世記/第22章.md",
-    "創世記/第21章.md",
-    "創世記/第20章.md",
-    "創世記/第19章.md",
-    "link_folder/神學/耶和華永生神.md",
-    "link_folder/地點/別是巴.md",
-    "link_folder/人物/羅得.md",
-    "link_folder/人物/亞伯蘭.md",
-    "link_folder/地點/基拉耳.md",
-    "link_folder/主題/先知.md",
-    "link_folder/主題/遮羞.md",
-    "link_folder/神學/我以為這地方的人總不懼怕神.md",
+    "link_folder/主題/以實瑪利十二族.md",
+    "link_folder/神學/四十歲的意義.md",
+    "link_folder/神學/神的揀選.md",
+    "link_folder/主題/基土拉的地位.md",
+    "link_folder/主題/利百加不孕.md",
+    "link_folder/主題/以撒的禱告.md",
+    "link_folder/主題/亞伯拉罕分產.md",
+    "link_folder/主題/歸到列祖.md",
+    "link_folder/主題/父母偏愛.md",
+    "link_folder/主題/腹中相爭.md",
+    "link_folder/主題/大的服事小的.md",
+    "link_folder/主題/以掃輕看长子名分.md",
+    "link_folder/主題/長子名分.md",
+    "link_folder/地點/以東.md",
+    "link_folder/地點/巴旦亞蘭.md",
+    "link_folder/人物/米甸.md",
+    "link_folder/人物/基土拉.md",
+    "link_folder/人物/雅各.md",
+    "link_folder/人物/以掃.md",
+    "創世記/第25章.md",
+    "link_folder/人物/基大老瑪.md",
+    "link_folder/主題/寄居者身份.md",
+    "約伯記/第39章.md",
+    "約伯記",
+    "創世記/第24章.md",
+    "link_folder/文化/撒拉的帳棚.md",
+    "link_folder/地點/庇耳拉海萊.md",
+    "link_folder/事件",
     "link_quality_report.json",
     "link_quality_check.py",
     "verify_result.txt",
@@ -218,8 +220,6 @@
     "_config/bible_books.json",
     "_config",
     "link_folder/_index/link_index.json",
-    "link_folder/_index",
-    "resolve_link_candidates.py",
-    "build_link_index.py"
+    "link_folder/_index"
   ]
 }
