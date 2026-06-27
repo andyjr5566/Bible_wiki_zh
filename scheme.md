@@ -582,7 +582,7 @@ Update Daniel chapter 3 links and knowledge nodes
 14. 為未來章節預建空章節檔。
 15. 把 CT/GT/KC/BH 大量全文塞進章節主檔。
 16. 已完成且通過驗證的章節未檢查就重做。
-17. 驗證未通過就 commit。
+17. 驗證未通過就 commit 加push 到repo。
 18. 超長章節一次塞滿 context、跳過分段整合、跳過最終整章 verify/quality。
 
 ---
@@ -592,7 +592,7 @@ Update Daniel chapter 3 links and knowledge nodes
 ```text
 先讀 scheme → 讀本地經文 → 確認 URL → crawl 成 raw_data → 檢查 raw text
 → build index → link_candidates → resolve → link_plan
-→ 寫章節主檔 → 更新 link_folder → quality + verify 到 PASS → commit
+→ 寫章節主檔 → 更新 link_folder → quality + verify 到 PASS → commit push 到repo
 ```
 
 所有 link 必須由已收集資料觸發；所有內容必須能回到 raw text 或本章經文；所有 wiki-link 必須閉合到本地 markdown；所有正式條目的保護區不可被每章任務亂改。
