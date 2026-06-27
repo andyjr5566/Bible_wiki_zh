@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 3290,
+  "valid_links_count": 3367,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 108,
+  "pending_scripture_refs_count": 107,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -155,11 +155,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第27章",
-      "book": "創世記",
-      "chapter": 27
     },
     {
       "entity": "創世記/第28章",
@@ -582,13 +577,6 @@
           9
         ]
       ],
-      "link_folder/主題/以掃輕看长子名分.md": [
-        [
-          "希伯來書/第12章",
-          "希伯來書",
-          12
-        ]
-      ],
       "link_folder/主題/信心的喜笑.md": [
         [
           "詩篇/第126篇",
@@ -733,13 +721,6 @@
           "路加福音/第23章",
           "路加福音",
           23
-        ]
-      ],
-      "link_folder/主題/父母偏愛.md": [
-        [
-          "創世記/第27章",
-          "創世記",
-          27
         ]
       ],
       "link_folder/主題/神的記念.md": [
@@ -1000,11 +981,6 @@
       ],
       "link_folder/人物/以掃.md": [
         [
-          "創世記/第27章",
-          "創世記",
-          27
-        ],
-        [
           "創世記/第32章",
           "創世記",
           32
@@ -1032,13 +1008,6 @@
           "創世記/第36章",
           "創世記",
           36
-        ]
-      ],
-      "link_folder/人物/利百加.md": [
-        [
-          "創世記/第27章",
-          "創世記",
-          27
         ]
       ],
       "link_folder/人物/基土拉.md": [
@@ -1176,11 +1145,6 @@
         ]
       ],
       "link_folder/人物/雅各.md": [
-        [
-          "創世記/第27章",
-          "創世記",
-          27
-        ],
         [
           "創世記/第28章",
           "創世記",

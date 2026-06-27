@@ -55,13 +55,53 @@
     "status": "formal",
     "aliases": []
   },
+  "以掃的怨恨": {
+    "path": "link_folder/主題/以掃的怨恨.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "以掃的怨恨",
+    "status": "formal",
+    "aliases": []
+  },
+  "神學": {
+    "alias_of": "以掃的怨恨",
+    "via_secondary_type": true
+  },
   "以掃輕看长子名分": {
     "path": "link_folder/主題/以掃輕看长子名分.md",
     "type": "主題",
-    "secondary_types": [],
+    "secondary_types": [
+      "神學"
+    ],
     "title": "以掃輕看长子名分",
     "status": "formal",
     "aliases": []
+  },
+  "以撒偏愛以掃": {
+    "path": "link_folder/主題/以撒偏愛以掃.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "以撒偏愛以掃",
+    "status": "formal",
+    "aliases": []
+  },
+  "以撒的眼睛昏花": {
+    "path": "link_folder/主題/以撒的眼睛昏花.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "以撒的眼睛昏花",
+    "status": "formal",
+    "aliases": []
+  },
+  "歷史": {
+    "alias_of": "以撒的眼睛昏花",
+    "via_secondary_type": true
   },
   "以撒的禱告": {
     "path": "link_folder/主題/以撒的禱告.md",
@@ -133,6 +173,17 @@
   "原文": {
     "alias_of": "先知",
     "via_secondary_type": true
+  },
+  "刀劍": {
+    "path": "link_folder/主題/刀劍.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "刀劍",
+    "status": "formal",
+    "aliases": []
   },
   "利百加不孕": {
     "path": "link_folder/主題/利百加不孕.md",
@@ -221,6 +272,20 @@
     "title": "寄居者身份",
     "status": "formal",
     "aliases": []
+  },
+  "山羊羔皮": {
+    "path": "link_folder/主題/山羊羔皮.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "山羊羔皮",
+    "status": "formal",
+    "aliases": []
+  },
+  "文化": {
+    "alias_of": "山羊羔皮",
+    "via_secondary_type": true
   },
   "巴別塔": {
     "path": "link_folder/主題/巴別塔.md",
@@ -318,6 +383,16 @@
     "status": "formal",
     "aliases": []
   },
+  "族長祝福的不可更改性": {
+    "path": "link_folder/主題/族長祝福的不可更改性.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "族長祝福的不可更改性",
+    "status": "formal",
+    "aliases": []
+  },
   "樹木": {
     "path": "link_folder/主題/樹木.md",
     "type": "主題",
@@ -406,6 +481,16 @@
     "status": "formal",
     "aliases": []
   },
+  "祝福與咒詛": {
+    "path": "link_folder/主題/祝福與咒詛.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "祝福與咒詛",
+    "status": "formal",
+    "aliases": []
+  },
   "神堅定與亞伯拉罕的約": {
     "path": "link_folder/主題/神堅定與亞伯拉罕的約.md",
     "type": "主題",
@@ -435,6 +520,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的恩典之約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的旨意與人的詭詐": {
+    "path": "link_folder/主題/神的旨意與人的詭詐.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神的旨意與人的詭詐",
     "status": "formal",
     "aliases": []
   },
@@ -558,11 +653,36 @@
     "status": "formal",
     "aliases": []
   },
+  "親嘴": {
+    "path": "link_folder/主題/親嘴.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化",
+      "互文"
+    ],
+    "title": "親嘴",
+    "status": "formal",
+    "aliases": []
+  },
+  "互文": {
+    "alias_of": "親嘴",
+    "via_secondary_type": true
+  },
   "言語的混亂": {
     "path": "link_folder/主題/言語的混亂.md",
     "type": "主題",
     "secondary_types": [],
     "title": "言語的混亂",
+    "status": "formal",
+    "aliases": []
+  },
+  "詭詐": {
+    "path": "link_folder/主題/詭詐.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "詭詐",
     "status": "formal",
     "aliases": []
   },
@@ -606,6 +726,16 @@
     "status": "formal",
     "aliases": []
   },
+  "野味": {
+    "path": "link_folder/主題/野味.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "野味",
+    "status": "formal",
+    "aliases": []
+  },
   "銀子": {
     "path": "link_folder/主題/銀子.md",
     "type": "主題",
@@ -619,6 +749,28 @@
     "type": "主題",
     "secondary_types": [],
     "title": "長子名分",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各逃往哈蘭": {
+    "path": "link_folder/主題/雅各逃往哈蘭.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "雅各逃往哈蘭",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各騙取祝福": {
+    "path": "link_folder/主題/雅各騙取祝福.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "雅各騙取祝福",
     "status": "formal",
     "aliases": []
   },
@@ -758,6 +910,14 @@
     "status": "formal",
     "aliases": []
   },
+  "猶大出賣耶穌": {
+    "path": "link_folder/互文/猶大出賣耶穌.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "猶大出賣耶穌",
+    "status": "formal",
+    "aliases": []
+  },
   "申命記十章": {
     "path": "link_folder/互文/申命記十章.md",
     "type": "互文",
@@ -803,6 +963,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "耶利米書四章",
+    "status": "formal",
+    "aliases": []
+  },
+  "該隱殺亞伯": {
+    "path": "link_folder/互文/該隱殺亞伯.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "該隱殺亞伯",
     "status": "formal",
     "aliases": []
   },
@@ -1771,10 +1939,6 @@
     "title": "眼都昏迷",
     "status": "formal",
     "aliases": []
-  },
-  "神學": {
-    "alias_of": "眼都昏迷",
-    "via_secondary_type": true
   },
   "石漆": {
     "path": "link_folder/原文/石漆.md",

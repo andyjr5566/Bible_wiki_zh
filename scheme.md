@@ -500,7 +500,7 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 
 ## 9. 超長章節流程
 
-符合任一條件即超長：經文超過 60 節；任一 raw text 超過 60KB；來源合計估計超過 100KB；Agent 判斷 context 可能爆。
+符合任一條件即超長：經文超過 60 節；任一 raw text 超過 120KB；來源合計估計超過 250KB；Agent 判斷 context 可能爆。
 
 超長章節三階段：
 
