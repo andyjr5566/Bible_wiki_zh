@@ -2,34 +2,28 @@
   Wiki-Link Verification Report
 ============================================================
 
-  VALID LINKS:            3109
-  BROKEN LINKS:              7
-  PENDING SCRIPTURE REFS:  104
+  VALID LINKS:            3131
+  BROKEN LINKS:              0
+  PENDING SCRIPTURE REFS:  109
   INVALID SCRIPTURE REFS:    0
   UNKNOWN LINKS:             0
-
---- BROKEN LINKS (must fix) ---
-  [[亞蘭]]
-  [[亞蘭人]]
-  [[代上/第1章]]
-  [[以掃輕看長子名分]]
-  [[俄巴底亞書]]
-  [[瑣轄]]
-  [[紅湯]]
 
 --- PENDING SCRIPTURE REFS (info only) ---
   [[以弗所書/第6章]] → valid future 以弗所書 chapter 6 reference
   [[以西結書/第1章]] → valid future 以西結書 chapter 1 reference
+  [[以賽亞書/第7章]] → valid future 以賽亞書 chapter 7 reference
   [[以賽亞書/第28章]] → valid future 以賽亞書 chapter 28 reference
   [[以賽亞書/第54章]] → valid future 以賽亞書 chapter 54 reference
   [[以賽亞書/第60章]] → valid future 以賽亞書 chapter 60 reference
   [[以賽亞書/第62章]] → valid future 以賽亞書 chapter 62 reference
   [[但以理書/第1章]] → valid future 但以理書 chapter 1 reference
+  [[但以理書/第2章]] → valid future 但以理書 chapter 2 reference
   [[何西阿書/第8章]] → valid future 何西阿書 chapter 8 reference
   [[使徒行傳/第2章]] → valid future 使徒行傳 chapter 2 reference
   [[使徒行傳/第7章]] → valid future 使徒行傳 chapter 7 reference
   [[使徒行傳/第15章]] → valid future 使徒行傳 chapter 15 reference
   [[使徒行傳/第17章]] → valid future 使徒行傳 chapter 17 reference
+  [[俄巴底亞書]] → valid future 俄巴底亞書 chapter 0 reference
   [[出埃及記/第1章]] → valid future 出埃及記 chapter 1 reference
   [[出埃及記/第2章]] → valid future 出埃及記 chapter 2 reference
   [[出埃及記/第3章]] → valid future 出埃及記 chapter 3 reference
@@ -39,6 +33,7 @@
   [[出埃及記/第13章]] → valid future 出埃及記 chapter 13 reference
   [[出埃及記/第15章]] → valid future 出埃及記 chapter 15 reference
   [[出埃及記/第24章]] → valid future 出埃及記 chapter 24 reference
+  [[列王紀上/第10章]] → valid future 列王紀上 chapter 10 reference
   [[列王紀上/第22章]] → valid future 列王紀上 chapter 22 reference
   [[利未記/第1章]] → valid future 利未記 chapter 1 reference
   [[利未記/第11章]] → valid future 利未記 chapter 11 reference
@@ -82,6 +77,7 @@
   [[撒母耳記下/第8章]] → valid future 撒母耳記下 chapter 8 reference
   [[撒母耳記下/第12章]] → valid future 撒母耳記下 chapter 12 reference
   [[歌羅西書/第2章]] → valid future 歌羅西書 chapter 2 reference
+  [[代上/第1章]] → valid future 歷代志上 chapter 1 reference
   [[歷代志下/第21章]] → valid future 歷代志下 chapter 21 reference
   [[民數記/第11章]] → valid future 民數記 chapter 11 reference
   [[申命記/第1章]] → valid future 申命記 chapter 1 reference
@@ -123,4 +119,4 @@
   [[馬太福音/第3章]] → valid future 馬太福音 chapter 3 reference
   [[馬太福音/第4章]] → valid future 馬太福音 chapter 4 reference
 
-Result: FAIL (broken or invalid refs found)
+Result: PASS

@@ -74,6 +74,14 @@ BOOK_ALIASES = {
     # 常見簡體異名
     "创世记": "創世記", "诗篇": "詩篇", "箴言": "箴言",
     "传道书": "傳道書",
+    # 常見簡稱
+    "代上": "歷代志上", "代下": "歷代志下",
+    "撒上": "撒母耳記上", "撒下": "撒母耳記下",
+    "王上": "列王紀上", "王下": "列王紀下",
+    "林前": "哥林多前書", "林後": "哥林多後書",
+    "太": "馬太福音", "可": "馬可福音",
+    "路": "路加福音", "約": "約翰福音",
+    "徒": "使徒行傳", "羅": "羅馬書",
 }
 
 # ========== 2. 正規表達式 ==========
@@ -118,6 +126,12 @@ def parse_scripture_ref(target):
         chapter = int(m.group(2))
         return (book, chapter)
     
+    # 嘗試純書名（無章節數字）：詩篇、俄巴底亞書
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]+)$', target)
+    if m:
+        book = m.group(1).strip()
+        return (book, None)
+    
     return None
 
 
@@ -148,6 +162,10 @@ def classify_scripture_ref(target):
     max_chapters = BIBLE_BOOKS.get(canonical, 0)
     if max_chapters == 0:
         return None
+    
+    if chapter is None:
+        # 純書名無章節，視為合法的未來書卷引用
+        return ("pending", canonical, 0)
     
     if 1 <= chapter <= max_chapters:
         return ("pending", canonical, chapter)
