@@ -69,13 +69,13 @@
     "alias_of": "以掃的怨恨",
     "via_secondary_type": true
   },
-  "以掃輕看长子名分": {
-    "path": "link_folder/主題/以掃輕看长子名分.md",
+  "以掃輕看長子名分": {
+    "path": "link_folder/主題/以掃輕看長子名分.md",
     "type": "主題",
     "secondary_types": [
       "神學"
     ],
-    "title": "以掃輕看长子名分",
+    "title": "以掃輕看長子名分",
     "status": "formal",
     "aliases": []
   },
@@ -1335,6 +1335,14 @@
     "status": "formal",
     "aliases": []
   },
+  "尼拜約": {
+    "path": "link_folder/人物/尼拜約.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "尼拜約",
+    "status": "formal",
+    "aliases": []
+  },
   "巴實抹": {
     "path": "link_folder/人物/巴實抹.md",
     "type": "人物",
@@ -1535,6 +1543,16 @@
     "title": "瑪勒列",
     "status": "formal",
     "aliases": []
+  },
+  "瑪哈拉": {
+    "path": "link_folder/人物/瑪哈拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "瑪哈拉",
+    "status": "formal",
+    "aliases": [
+      "巴實抹"
+    ]
   },
   "瑪土撒拉": {
     "path": "link_folder/人物/瑪土撒拉.md",
@@ -2567,6 +2585,16 @@
     "status": "formal",
     "aliases": []
   },
+  "路斯": {
+    "path": "link_folder/地點/路斯.md",
+    "type": "地點",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "路斯",
+    "status": "formal",
+    "aliases": []
+  },
   "迦勒底的吾珥": {
     "path": "link_folder/地點/迦勒底的吾珥.md",
     "type": "地點",
@@ -2634,6 +2662,35 @@
     "type": "文化",
     "secondary_types": [],
     "title": "撒拉的帳棚",
+    "status": "formal",
+    "aliases": []
+  },
+  "立石柱與澆油": {
+    "path": "link_folder/文化/立石柱與澆油.md",
+    "type": "文化",
+    "secondary_types": [
+      "敬拜"
+    ],
+    "title": "立石柱與澆油",
+    "status": "formal",
+    "aliases": [
+      "立柱澆油"
+    ]
+  },
+  "立柱澆油": {
+    "alias_of": "立石柱與澆油"
+  },
+  "敬拜": {
+    "alias_of": "立石柱與澆油",
+    "via_secondary_type": true
+  },
+  "許願": {
+    "path": "link_folder/文化/許願.md",
+    "type": "文化",
+    "secondary_types": [
+      "敬拜"
+    ],
+    "title": "許願",
     "status": "formal",
     "aliases": []
   },
@@ -2934,6 +2991,21 @@
     "status": "formal",
     "aliases": []
   },
+  "天梯": {
+    "path": "link_folder/神學/天梯.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "天梯",
+    "status": "formal",
+    "aliases": [
+      "雅各的梯子"
+    ]
+  },
+  "雅各的梯子": {
+    "alias_of": "天梯"
+  },
   "女人的後裔": {
     "path": "link_folder/神學/女人的後裔.md",
     "type": "神學",
@@ -3185,6 +3257,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神單方面的約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的保守與帶領": {
+    "path": "link_folder/神學/神的保守與帶領.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神的保守與帶領",
     "status": "formal",
     "aliases": []
   },
