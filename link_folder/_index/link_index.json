@@ -47,6 +47,14 @@
     "status": "formal",
     "aliases": []
   },
+  "以掃娶外邦女子": {
+    "path": "link_folder/主題/以掃娶外邦女子.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "以掃娶外邦女子",
+    "status": "formal",
+    "aliases": []
+  },
   "以掃輕看长子名分": {
     "path": "link_folder/主題/以掃輕看长子名分.md",
     "type": "主題",
@@ -166,6 +174,14 @@
     "status": "formal",
     "aliases": []
   },
+  "塞井": {
+    "path": "link_folder/主題/塞井.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "塞井",
+    "status": "formal",
+    "aliases": []
+  },
   "夏甲與撒萊的衝突": {
     "path": "link_folder/主題/夏甲與撒萊的衝突.md",
     "type": "主題",
@@ -278,6 +294,22 @@
     "status": "candidate",
     "aliases": []
   },
+  "挖井": {
+    "path": "link_folder/主題/挖井.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "挖井",
+    "status": "formal",
+    "aliases": []
+  },
+  "支搭帳棚": {
+    "path": "link_folder/主題/支搭帳棚.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "支搭帳棚",
+    "status": "formal",
+    "aliases": []
+  },
   "新造與新生活": {
     "path": "link_folder/神學/新造與新生活.md",
     "type": "神學",
@@ -366,11 +398,27 @@
     "status": "formal",
     "aliases": []
   },
+  "百倍收成": {
+    "path": "link_folder/主題/百倍收成.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "百倍收成",
+    "status": "formal",
+    "aliases": []
+  },
   "神堅定與亞伯拉罕的約": {
     "path": "link_folder/主題/神堅定與亞伯拉罕的約.md",
     "type": "主題",
     "secondary_types": [],
     "title": "神堅定與亞伯拉罕的約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的同在被人看見": {
+    "path": "link_folder/主題/神的同在被人看見.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "神的同在被人看見",
     "status": "formal",
     "aliases": []
   },
@@ -419,6 +467,30 @@
     "type": "主題",
     "secondary_types": [],
     "title": "神與亞伯蘭立約",
+    "status": "formal",
+    "aliases": []
+  },
+  "稱妻說謊": {
+    "path": "link_folder/主題/稱妻說謊.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "稱妻說謊",
+    "status": "formal",
+    "aliases": []
+  },
+  "立約": {
+    "path": "link_folder/主題/立約.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "立約",
+    "status": "formal",
+    "aliases": []
+  },
+  "築壇": {
+    "path": "link_folder/主題/築壇.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "築壇",
     "status": "formal",
     "aliases": []
   },
@@ -550,11 +622,27 @@
     "status": "formal",
     "aliases": []
   },
+  "非利士人的嫉妒": {
+    "path": "link_folder/主題/非利士人的嫉妒.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "非利士人的嫉妒",
+    "status": "formal",
+    "aliases": []
+  },
   "順服與即時行動": {
     "path": "link_folder/主題/順服與即時行動.md",
     "type": "主題",
     "secondary_types": [],
     "title": "順服與即時行動",
+    "status": "formal",
+    "aliases": []
+  },
+  "饑荒": {
+    "path": "link_folder/主題/饑荒.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "饑荒",
     "status": "formal",
     "aliases": []
   },
@@ -750,6 +838,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞戶撒": {
+    "path": "link_folder/人物/亞戶撒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞戶撒",
+    "status": "formal",
+    "aliases": []
+  },
   "亞捫人": {
     "path": "link_folder/人物/亞捫人.md",
     "type": "人物",
@@ -808,6 +904,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞蘭人": {
+    "path": "link_folder/人物/亞蘭人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞蘭人",
+    "status": "formal",
+    "aliases": []
+  },
   "人": {
     "path": "link_folder/人物/人.md",
     "type": "人物",
@@ -821,6 +925,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "他拉",
+    "status": "formal",
+    "aliases": []
+  },
+  "以倫": {
+    "path": "link_folder/人物/以倫.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以倫",
     "status": "formal",
     "aliases": []
   },
@@ -1055,6 +1167,14 @@
     "status": "formal",
     "aliases": []
   },
+  "巴實抹": {
+    "path": "link_folder/人物/巴實抹.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "巴實抹",
+    "status": "formal",
+    "aliases": []
+  },
   "希伯": {
     "path": "link_folder/人物/希伯.md",
     "type": "人物",
@@ -1182,6 +1302,14 @@
     "status": "formal",
     "aliases": []
   },
+  "比利": {
+    "path": "link_folder/人物/比利.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "比利",
+    "status": "formal",
+    "aliases": []
+  },
   "比利洗人": {
     "path": "link_folder/人物/比利洗人.md",
     "type": "人物",
@@ -1215,6 +1343,22 @@
   },
   "比沙": {
     "alias_of": "比沙（蛾摩拉王）"
+  },
+  "猶滴": {
+    "path": "link_folder/人物/猶滴.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "猶滴",
+    "status": "formal",
+    "aliases": []
+  },
+  "瑣轄": {
+    "path": "link_folder/人物/瑣轄.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "瑣轄",
+    "status": "candidate",
+    "aliases": []
   },
   "瑪勒列": {
     "path": "link_folder/人物/瑪勒列.md",
@@ -1362,6 +1506,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "雅弗",
+    "status": "formal",
+    "aliases": []
+  },
+  "非各": {
+    "path": "link_folder/人物/非各.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "非各",
     "status": "formal",
     "aliases": []
   },
@@ -1538,6 +1690,14 @@
     "status": "formal",
     "aliases": []
   },
+  "利河伯（寬闊）": {
+    "path": "link_folder/原文/利河伯（寬闊）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "利河伯（寬闊）",
+    "status": "formal",
+    "aliases": []
+  },
   "十分之一": {
     "path": "link_folder/原文/十分之一.md",
     "type": "原文",
@@ -1559,6 +1719,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "四十的屬靈意義",
+    "status": "formal",
+    "aliases": []
+  },
+  "埃色（相爭）": {
+    "path": "link_folder/原文/埃色（相爭）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "埃色（相爭）",
     "status": "formal",
     "aliases": []
   },
@@ -1616,6 +1784,14 @@
     "status": "formal",
     "aliases": []
   },
+  "示巴（起誓、豐盛）": {
+    "path": "link_folder/原文/示巴（起誓、豐盛）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "示巴（起誓、豐盛）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
     "type": "原文",
@@ -1629,6 +1805,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "舍客勒",
+    "status": "formal",
+    "aliases": []
+  },
+  "西提拿（為敵）": {
+    "path": "link_folder/原文/西提拿（為敵）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "西提拿（為敵）",
     "status": "formal",
     "aliases": []
   },
@@ -1669,6 +1853,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "亞特蘭加寧",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞蘭": {
+    "path": "link_folder/地點/亞蘭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞蘭",
     "status": "formal",
     "aliases": []
   },
@@ -1778,6 +1970,14 @@
   "七之井": {
     "alias_of": "別是巴"
   },
+  "利河伯": {
+    "path": "link_folder/地點/利河伯.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "利河伯",
+    "status": "formal",
+    "aliases": []
+  },
   "加低斯": {
     "path": "link_folder/地點/加低斯.md",
     "type": "地點",
@@ -1863,6 +2063,14 @@
     "status": "formal",
     "aliases": []
   },
+  "埃色": {
+    "path": "link_folder/地點/埃色.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "埃色",
+    "status": "formal",
+    "aliases": []
+  },
   "基列亞巴": {
     "path": "link_folder/地點/基列亞巴.md",
     "type": "地點",
@@ -1883,6 +2091,14 @@
   },
   "Gerar": {
     "alias_of": "基拉耳"
+  },
+  "基拉耳谷": {
+    "path": "link_folder/地點/基拉耳谷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基拉耳谷",
+    "status": "formal",
+    "aliases": []
   },
   "基訓": {
     "path": "link_folder/地點/基訓.md",
@@ -2107,6 +2323,14 @@
     "status": "formal",
     "aliases": []
   },
+  "示巴": {
+    "path": "link_folder/地點/示巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "示巴",
+    "status": "formal",
+    "aliases": []
+  },
   "示拿": {
     "path": "link_folder/地點/示拿.md",
     "type": "地點",
@@ -2155,6 +2379,14 @@
     "status": "formal",
     "aliases": []
   },
+  "西提拿": {
+    "path": "link_folder/地點/西提拿.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西提拿",
+    "status": "formal",
+    "aliases": []
+  },
   "西珥山": {
     "path": "link_folder/地點/西珥山.md",
     "type": "地點",
@@ -2184,6 +2416,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "迦南地",
+    "status": "formal",
+    "aliases": []
+  },
+  "非利士人": {
+    "path": "link_folder/地點/非利士人.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "非利士人",
     "status": "formal",
     "aliases": []
   },
@@ -2781,6 +3021,22 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神單方面的約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的信實": {
+    "path": "link_folder/神學/神的信實.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的信實",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的同在": {
+    "path": "link_folder/神學/神的同在.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的同在",
     "status": "formal",
     "aliases": []
   },

@@ -25,6 +25,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 INDEX_FILE = ROOT / "link_folder" / "_index" / "link_index.json"
 
+# 同一人物不同階段/命名的 mapping（不納入 link_index，只供比對 fallback）
+SAME_PERSON_MAP = {
+    "亞伯拉罕": "亞伯蘭",   # 創17章前後改名
+    "撒拉": "撒萊",         # 取消炎改名
+    "亞伯蘭": "亞伯拉罕",   # 反向
+    "撒萊": "撒拉",         # 反向
+}
+
 # 書卷名→人物名映射（用於衝突檢測）
 PERSON_TO_BOOK = {
     "何西阿": "何西阿書", "約珥": "約珥書", "阿摩司": "阿摩司書",
@@ -112,7 +120,14 @@ def find_in_index(candidate_name, index):
                 # Candidate 是某條目的 alias → 指向主條目
                 return ("alias", entry)
 
-    # 3. 檢查書卷名衝突
+    # 3. 檢查 SAME_PERSON_MAP（同一人物不同命名階段）
+    mapped = SAME_PERSON_MAP.get(candidate_name)
+    if mapped and mapped in index:
+        entry = index[mapped]
+        if "alias_of" not in entry:
+            return ("exact", entry)
+
+    # 4. 檢查書卷名衝突
     for person, book in PERSON_TO_BOOK.items():
         if candidate_name == person or candidate_name == book:
             # 檢查 index 中是否有對應人物條目
@@ -140,8 +155,19 @@ def resolve(candidates, index, book, chapter):
     }
 
     for c in candidates:
-        name = c["name"]
+        name_raw = c["name"]
         suggested_type = c["suggested_type"]
+
+        # Step 1: 去除 candidates 中的英文括號註釋
+        #   亞伯拉罕（Abraham）→ 亞伯拉罕
+        #   亞蘭（Aram/Aramean）→ 亞蘭
+        name = re.sub(r'[（(][^）)]*[）)]', '', name_raw).strip()
+
+        # 若去除後為空，保留原始（如條目本身是英文）
+        if not name:
+            name = name_raw
+
+        c["clean_name"] = name
 
         # 跳過標記為「不建立」的項目
         if name.startswith('不建立') or name == '暫不建立':
@@ -204,13 +230,14 @@ def write_plan(plan, book, chapter):
         lines.append("")
 
     if plan["B_needs_update"]:
-        lines.append("## B. 更新既有條目\n")
+        lines.append("## B. 需更新既有條目\n")
         for c in plan["B_needs_update"]:
             match_label = ""
             if c.get("match_type") == "alias":
-                match_label = f"（由 alias [{c.get('original_candidate', c['name'])}] → {c.get('existing_title', c['name'])}）"
+                match_label = f"（由 alias [{c.get('original_candidate', c['name'])}] → {c.get('existing_title', c.get('clean_name', c['name']))}）"
             path = c.get('existing_path', '')
-            lines.append(f"- [[{c['name']}]] → {path}{match_label}\n")
+            link_name = c.get('clean_name', c['name'])
+            lines.append(f"- [[{link_name}]] → {path}{match_label}\n")
             lines.append(f"  - 動作：補充第{chapter}章資料（{c['suggested_type']}）\n")
         lines.append("")
 
