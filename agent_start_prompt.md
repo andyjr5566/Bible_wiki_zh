@@ -1,7 +1,5 @@
 # Agent Start Prompt
 
-你正在接續「聖經研讀資料整理」專案。
-
 本次要處理的書卷，請以使用者當前訊息指定的書名為準。
 
 開始前必須先讀取：
@@ -10,32 +8,61 @@
 C:\Obsidian\Hermes\scripture\scheme.md
 ```
 
-`scheme.md` 是最高規則。  
+`scheme.md` 是最高規則。
+
 ## 開工流程
 
 請依序執行：
 
 1. 讀取 `scheme.md`
-2. 解析使用者指定的書卷名稱
+2. 解析使用者指定的書卷名稱與章節需求
 3. 檢查該書卷目錄是否存在
 4. 檢查該書卷現有章節主檔與完成進度
 5. 執行 `python3 build_link_index.py` 建立最新 link index
 6. 檢查 git 狀態
 7. 判斷下一個需要處理或修正的章節
 8. 不要重做已完成且已通過驗證的章節
-9. 只在缺資料時，依 `scheme.md` 指定來源與 URL 規則抓取資料
-10. 抓取後清理來源，根據來源內容建立 `【書名】/.tmp/第x章/link_candidates.md`
-11. 執行 `python3 resolve_link_candidates.py 【書名】 X，產生 `link_plan.md`
-		例如:`python3 resolve_link_candidates.py 創世記 13`
-12. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
-13. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
-14. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
-15. 執行 `python3 link_quality_check.py 〖書名〗`
-16. 執行 `python3 verify_links.py 〖書名〗`
-17. 修正任何 broken links / invalid refs / critical quality warnings
-18. 重跑驗證直到全部通過
-19. 通過後 git commit + push
-20. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+9. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
+10. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
+11. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
+12. **使用 `crawl_bible_text.py` 產生 raw text**：
+    ```text
+    python crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
+    ```
+    例：
+    ```text
+    python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
+    ```
+13. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
+14. 讀取這次`crawl_bible_text.py` 產生的 raw text
+15. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
+16. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
+17. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
+18. 執行 `python3 resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
+    - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
+    - 例如：`python3 resolve_link_candidates.py 創世記 13`
+19. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+20. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
+21. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
+22. 執行 `python3 build_link_index.py`
+23. 執行 `python3 link_quality_check.py 【書名】`
+24. 執行 `python3 verify_links.py 【書名】`
+25. 修正任何 broken links / invalid refs / unknown links / critical quality warnings
+26. 重跑驗證直到全部通過
+27. 通過後 git commit + push
+28. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+
+---
+
+## raw text 原則
+
+- 補充資料不可直接使用網頁內容整理。
+- 所有補充資料必須先透過 `crawl_bible_text.py` 存成 `raw_data/*.txt`。
+- `crawl_bible_text.py` 的輸入是 URL，輸出是該網站清理後的 raw text。
+- `--output_filename` 不必加 `.txt`，程式會自動補上。
+- 檔案已存在時不覆蓋；需要覆蓋才加 `--overwrite`。
+- 建立 link_candidates.md 時，只能使用經文與已成功取得、已檢查有效的 raw text。
+- 無效來源要記錄在 `source_manifest.md`，不可假裝已使用。
 
 ---
 
@@ -47,6 +74,10 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止跳過 `verify_links.py`、`link_quality_check.py`
 - 禁止未驗證就 commit
 - 禁止硬猜 URL
+- 禁止直接把網頁內容抓進 context 後整理
+- 禁止跳過 `crawl_bible_text.py` 直接使用網站資料
+- 禁止在 raw_data 檔案已存在且未確認錯誤時任意使用 `--overwrite`
+- 禁止把無效 raw text 當作有效來源
 - 禁止把 `scheme.md` 已規定的細節改成自己的做法
 - 禁止為了補條目而亂搜薄弱資料
 - 禁止建立只有 2-3 行的薄弱 stub

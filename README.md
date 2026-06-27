@@ -215,46 +215,232 @@ Bible_wiki_zh/
 
 ---
 
+## 📱 手機版 Obsidian + GitHub Sync 設置指南
+
+使用 **GitHub Sync (Multi-Platform)** 外掛，在手機上無縫同步 GitHub 上的筆記。
+
+### 前置準備
+
+#### 1. 準備 GitHub Personal Access Token
+
+**為什麼需要？** GitHub Sync 外掛需要透過 token 存取你的倉庫。
+
+**取得 Token 步驟**：
+
+1. 登入 [GitHub](https://github.com)
+2. 點選右上角 **個人頭像** → **Settings**
+3. 左側菜單 → **Developer settings**
+4. 左側菜單 → **Personal access tokens** → **Tokens (classic)**
+5. 2-4 步可以直接點這個連結省略: 🔑 [GitHub Token 生成](https://github.com/settings/tokens)
+6. 點選 **Generate new token (classic)**
+7. 填寫資訊：
+   - **Note**: `Bible Wiki Obsidian Sync`（自訂名稱）
+   - **Expiration**: 選擇過期時間（建議 90 days 或 No expiration）
+7. **Select scopes** 勾選：
+   - ✅ `repo`（完整倉庫存取）
+   - ✅ `gist`（如需要）
+8. 點選 **Generate token**
+9. **複製 token**（只會顯示一次，遺失需重新生成）
+
+**⚠️ 重要**：Token 像密碼一樣，不要分享給他人！
+
+---
+
+### 步驟 1️⃣：下載手機版 Obsidian
+
+#### iOS
+- 在 App Store 搜尋 **"Obsidian"**
+- 下載官方應用（開發者：Dynalist Inc）
+
+#### Android
+- 在 Google Play 搜尋 **"Obsidian"**
+- 下載官方應用
+
+---
+
+### 步驟 2️⃣：Create a Vault
+
+#### iOS / Android 操作相同
+
+1. **打開 Obsidian**
+2. 點選 **Create new vault**
+3. 輸入 Vault 名稱（例如：`Bible Wiki`）
+4. 點選 **Create**
+5. 等待 Vault 初始化完成
+
+---
+
+### 步驟 3️⃣：安裝 GitHub Sync 外掛（詳細步驟）
+
+#### A. 打開外掛市場
+
+1. 在 Obsidian 主畫面
+2. 點選左下角 **設定圖示**（齒輪）
+3. 選擇 **Community plugins**（或 **第三方外掛**）
+4. 點選 **Browse**（或 **瀏覽**）
+
+#### B. 搜尋 GitHub Sync
+
+1. 搜尋框輸入：`GitHub Sync`
+2. 找到 **"GitHub Sync (Multi-Platform)"**
+   - 開發者：`Jackpotdever`
+   - 圖示：GitHub 標誌
+
+#### C. 安裝外掛
+
+1. 點選該外掛
+2. 點選 **Install**
+3. 等待安裝完成（通常 5-10 秒）
+4. 點選 **Enable**（啟用）
+5. 外掛會立即出現在設定中
+
+#### D. 驗證安裝成功
+
+1. 回到主設定頁
+2. 確認 **Community plugins** 清單中出現 **GitHub Sync**
+3. 右上角應該出現 **GitHub Sync 按鈕**（類似雲端同步圖示）
+
+---
+
+### 步驟 4️⃣：填寫 GitHub 設定
+
+#### A. 打開 GitHub Sync 設定
+
+1. 點選左下角 **設定圖示**（齒輪）
+2. 向下滑找到 **"GitHub Sync"** 設定區
+3. 或點選右上角 **GitHub Sync 按鈕** → 選擇 **Settings**
+
+#### B. 填寫必要欄位
+
+填寫以下四個欄位：
+
+| 欄位 | 值 | 說明 |
+|------|-----|------|
+| **Owner** | `andyjr5566` | GitHub 使用者名稱 |
+| **Repo** | `Bible_wiki_zh` | GitHub 倉庫名稱 |
+| **Branch** | `main` | 分支名稱（預設通常是 main） |
+| **Token** | `ghp_xxxxxxxxxxxx...` | 你的 Personal Access Token |
+
+**具體填寫**：
+
+```
+Owner: andyjr5566
+Repo: Bible_wiki_zh
+Branch: main
+Token: [貼上你複製的 token]
+```
+
+#### C. 驗證設定
+
+1. 填完後點選 **Test Connection**（若有此按鈕）
+2. 或直接進行同步測試
+
+---
+
+### 步驟 5️⃣：同步筆記（操作方式）
+
+#### 操作 A：手動同步（最常用）
+
+1. **拉取最新版本**（從 GitHub 下載）
+   - 右上角 **GitHub Sync 按鈕** → **Pull**
+   - 或 Command Palette（搜尋） → 搜尋 `GitHub Sync: Pull`
+   - 等待同步完成（通常 5-30 秒）
+
+2. **上傳你的編輯**（推送到 GitHub）
+   - 右上角 **GitHub Sync 按鈕** → **Push**
+   - 或 Command Palette → 搜尋 `GitHub Sync: Push`
+   - 輸入 commit message（例如：`Update notes from mobile`）
+   - 等待上傳完成
+
+#### 操作 B：自動同步（可選）
+
+在 GitHub Sync 設定中：
+
+1. 啟用 **Auto Pull**（自動拉取）
+   - 間隔時間：建議 5-10 分鐘
+   - 手機會自動從 GitHub 下載最新版本
+
+2. 啟用 **Auto Push**（自動推送）
+   - 每次編輯後自動上傳
+   - ⚠️ 會產生大量 commit，謹慎使用
+
+#### 操作 C：一鍵同步
+
+某些版本有 **Sync All** 按鈕：
+- 同時執行 Pull + Push
+- 快速同步最新狀態
+
+---
+
+### 手機版 Obsidian 基本操作
+
+| 功能 | 操作 |
+|------|------|
+| 打開檔案 | 點左上角 **≡ 菜單** → 瀏覽資料夾 |
+| 快速搜尋 | 點搜尋圖示 → 輸入關鍵字 |
+| 點擊 wiki-link | 直接點藍色連結 |
+| 返回上一頁 | 向右滑動 或 點 **< 返回** |
+| 編輯筆記 | 點 **編輯** 按鈕或雙擊 |
+| 查看圖譜 | 右上角 **圖譜** 按鈕 |
+| 同步 GitHub | 右上角 **GitHub Sync** 按鈕 |
+
+---
+
 ## ❓ 常見問題
 
 ### Q1: 我不懂 Git，能用嗎？
 
-**A**: 完全可以。直接下載 ZIP 即可，無需 Git。但如果未來想接收更新，建議學習 `git pull`。
+**A**: 完全可以。使用 GitHub Sync 外掛後，你不需要懂 Git 指令。只需按 **Pull** 和 **Push** 按鈕即可。
 
 ---
 
-### Q2: 資料在哪裡更新？
+### Q2: Token 過期了怎麼辦？
+
+**A**: 
+1. 重新生成 token（同上面的步驟）
+2. 更新 GitHub Sync 設定中的 Token
+3. 重新測試連線
+
+---
+
+### Q3: 同步出錯怎麼辦？
+
+**A**:
+1. 檢查網路連線
+2. 確認 Token 正確且未過期
+3. 確認 Owner、Repo、Branch 資訊無誤
+4. 嘗試手動 Pull 一次
+5. 查看 Obsidian 的錯誤日誌
+
+---
+
+### Q4: 能否自動同步？
+
+**A**: 可以。在 GitHub Sync 設定中啟用 **Auto Pull** 或 **Auto Push**，但建議謹慎使用 Auto Push 以避免過多 commit。
+
+---
+
+### Q5: 手機和電腦編輯同一個文件會有衝突嗎？
+
+**A**: 
+- 若同時編輯，先 Push 的版本會被保留，後 Push 的需要手動解決衝突
+- 建議：編輯完一個檔案後立即 Push，避免衝突
+
+---
+
+### Q6: 資料在哪裡更新？
 
 **A**: 
 - 所有聖經內容 → `各書卷資料夾/第X章.md`
 - 所有知識節點 → `link_folder/分類/*.md`
 
-你可以在 Obsidian 中直接編輯這些檔案。
+在手機版 Obsidian 中，同樣可以編輯這些檔案。
 
 ---
 
-### Q3: 我能離線使用嗎？
+### Q7: 我能離線使用嗎？
 
-**A**: 是的。本專案是純本地 markdown + Obsidian，無需網路。
-
----
-
-### Q4: 支援哪些聖經譯本？
-
-**A**: 目前預設為**和合本 (CUV)** 繁體版。其他譯本支援正在規劃。
-
----
-
-### Q5: 我想參與開發，怎麼開始？
-
-**A**: 
-1. Fork 本專案
-2. 新建 branch：`git checkout -b feature/your-feature`
-3. 遵照 [`scheme.md`](./scheme.md) 規則製作
-4. 執行驗證工具
-5. 提交 Pull Request
-
-詳見 [貢獻指南](#貢獻指南)
+**A**: 是的。一旦 Pull 下來，你可以離線閱讀所有筆記。編輯後有網路時再 Push 上傳。
 
 ---
 
@@ -268,9 +454,9 @@ Bible_wiki_zh/
 | ✏️ 更新章節 | 補充或修正既有章節 |
 | 🔗 新知識節點 | 在 link_folder 建立新條目 |
 | 🐛 修復 | 修正破損連結、錯字、格式問題 |
-| 📖 文檔 | 改進 README���scheme.md、評論 |
+| 📖 文檔 | 改進 README、scheme.md、評論 |
 
-### 提交步驟
+### 提交步驟（電腦版）
 
 ```bash
 # 1. Fork 本專案（GitHub 網站點擊 Fork）
@@ -298,6 +484,16 @@ git push origin feature/add-hosea-chapter-2
 # 8. 在 GitHub 提交 Pull Request
 ```
 
+### 提交步驟（手機版）
+
+1. 在手機 Obsidian 編輯筆記
+2. 完成編輯後，點右上角 **GitHub Sync**
+3. 點 **Push**
+4. 輸入 commit message（例如：`Update from mobile`）
+5. 完成上傳
+
+---
+
 ### 命名規範
 
 | 對象 | 規範 | 例子 |
@@ -316,17 +512,22 @@ git push origin feature/add-hosea-chapter-2
    - 確認 Vault 已正確開啟
    - 確認已信任此 Vault（允許外掛與腳本）
 
-2. **檢查檔案編碼**
-   - 本專案使用 UTF-8 編碼
-   - 若檔案顯示亂碼，嘗試重新開啟
+2. **檢查 GitHub Sync 設定**
+   - 確認 Owner、Repo、Branch 正確
+   - 確認 Token 未過期
+   - 嘗試測試連線
 
-3. **查看驗證工具輸出**
-   - 執行 `verify_links.py` 檢查破損連結
-   - 執行 `link_quality_check.py` 檢查品質問題
+3. **檢查網路連線**
+   - 確認手機/電腦已連線網路
+   - 檢查防火牆設定
 
 4. **提交 Issue**
    - [GitHub Issues](https://github.com/andyjr5566/Bible_wiki_zh/issues)
    - 詳細描述問題、操作步驟、預期結果
+
+5. **Obsidian 官方支援**
+   - 官方文檔：https://help.obsidian.md/
+   - 社群論壇：https://forum.obsidian.md/
 
 ---
 
@@ -347,6 +548,8 @@ git push origin feature/add-hosea-chapter-2
 
 感謝所有貢獻者！
 
+感謝 **GitHub Sync (Multi-Platform)** 外掛開發者！
+
 ---
 
 ## 📝 相關檔案
@@ -365,6 +568,9 @@ git push origin feature/add-hosea-chapter-2
 - 📖 [核心規則文檔](./scheme.md)
 - 🐛 [報告問題](https://github.com/andyjr5566/Bible_wiki_zh/issues)
 - 🔧 [技術討論](https://github.com/andyjr5566/Bible_wiki_zh/discussions)
+- 📱 [Obsidian 官網](https://obsidian.md/)
+- 📚 [Obsidian 官方文檔](https://help.obsidian.md/)
+- 🔑 [GitHub Token 生成](https://github.com/settings/tokens)
 
 ---
 

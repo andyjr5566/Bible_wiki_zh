@@ -1,0 +1,525 @@
+--- /mnt/data/scheme(2).md	2026-06-27 13:32:17.164777079 +0000
++++ /mnt/data/scheme.md	2026-06-27 13:34:48.739163941 +0000
+@@ -33,7 +33,10 @@
+ ```text
+ scripture/
+ ├── scheme.md
+-├── agent_prompt.md
++├── agent_start_prompt.md
++├── crawl_bible_text.py
++├── raw_data/
++├── raw_scripture/
+ │
+ ├── 何西阿書/
+ │   ├── 全書導論.md
+@@ -260,10 +263,11 @@
+ 本專案目前主要使用資料來源：
+ 
+ 1. ccbiblestudy.org
+-	1. 註解
+-	2. 拾穗
+-2. KingComments
+-3. BibleHub Study
++	1. 註解（CT）
++	2. 拾穗（GT）
++2. KingComments（KC）
++3. BibleHub Study（BH）
++4. 其他使用者指定、且可由 `crawl_bible_text.py` 轉成純文字的資料來源
+ 
+ ### 核心原則
+ 
+@@ -286,13 +290,37 @@
+ 不要寫死「某來源只能補某區塊」。  
+ 同一來源可能同時提供人物、歷史、神學、原文、文化、互文等資料。
+ 
++### 新資料取得方式：先快取 raw text，再整理
++
++從現在開始，補充資料來源不可直接把網頁內容抓進 context 後立刻整理。
++
++所有網站資料必須先透過 `crawl_bible_text.py` 轉成純文字 `.txt`，存入 `raw_data/`，再由 Agent 讀取本地 raw text 檔進行整理。
++
++標準流程：
++
++```text
++確認來源 URL
++→ 執行 crawl_bible_text.py
++→ 產生 raw_data/*.txt
++→ 檢查 raw text 是否有效
++→ 讀取 raw text
++→ 建立 link_candidates.md
++→ resolve_link_candidates.py
++→ link_plan.md
++→ 寫章節主檔與 link folder
++```
++
++也就是：
++
++> URL 只用來產生本地 raw text；正式整理時以 `raw_data/*.txt` 為直接資料來源。
++
+ ---
+ 
+-## 八、來源網站 URL 模式
++## 八、來源 URL 與 raw_data 快取規則
+ 
+ ### 1. 經文：本地檔案
+ 
+-本地已有經文檔案
++本地已有經文檔案：
+ 
+ ```text
+ raw_scripture/{資料夾名}/第{章}.txt
+@@ -309,15 +337,111 @@
+ **資料夾名稱與 bible_books.json 標準名稱相同**（創世記、出埃及記、何西阿書等），直接用標準名稱查找。
+ 
+ **檔案格式**：
+-每行格式為:
+-```
++每行格式為：
++
++```text
+ 在亞伯拉罕的日子，那地有一次饑荒...
+ 耶和華向以撒顯現...
+ ```
+ 
++經文來源仍讀取 `raw_scripture/`，不使用 `crawl_bible_text.py` 抓經文，除非使用者另有明確要求。
++
++---
++
++### 2. 補充資料：使用 crawl_bible_text.py 產生 raw_data
++
++`crawl_bible_text.py` 位置：
++
++```text
++C:\Obsidian\Hermes\scripture\crawl_bible_text.py
++```
++
++用法範例：
++
++```text
++python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
++```
++
++這會：
++
++1. 抓取指定 URL
++2. 清除 HTML、導覽列、頁尾等無關內容
++3. 將純文字存進 `raw_data/`
++4. 產生：
++
++```text
++raw_data/biblehub_study_daniel_3.txt
++```
++
++注意：
++
++- `--output_filename` 不必輸入 `.txt`，程式會自動補上。
++- 若檔案已存在，不會覆蓋。
++- 需要覆蓋舊檔時才加 `--overwrite`。
++- 不可在未確認舊檔內容失效時任意使用 `--overwrite`。
++
++---
++
++### 3. raw_data 建議命名規則
++
++建議使用可讀、可追溯來源的檔名：
++
++```text
++raw_data/{source}_{book_slug}_{chapter}.txt
++raw_data/{source}_{type}_{book_slug}_{chapter}.txt
++```
++
++例：
++
++```text
++raw_data/biblehub_study_daniel_3.txt
++raw_data/kingcomments_daniel_3.txt
++raw_data/ccbiblestudy_CT_daniel_3.txt
++raw_data/ccbiblestudy_GT_daniel_3.txt
++```
++
++說明：
++
++- `source`：資料來源，例如 `biblehub_study`、`kingcomments`、`ccbiblestudy`
++- `type`：若同一網站有不同資料型態，使用 `CT`、`GT` 等標籤
++- `book_slug`：以來源網站或既有檔名慣例為準
++- `chapter`：阿拉伯數字章號
++
++檔名只作為 raw text 快取索引；正式引用仍以 `source_manifest.md` 記錄來源 URL 與 raw_data 檔案。
++
++---
++
++### 4. source_manifest.md
++
++每章應建立或更新來源清單：
++
++```text
++【書名】/.tmp/第x章/source_manifest.md
++```
++
++格式建議：
++
++```md
++# 但以理書 第3章 source manifest
++
++| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |
++|---|---|---|---|---|
++| BibleHub Study | BH | https://biblehub.com/study/daniel/3.htm | raw_data/biblehub_study_daniel_3.txt | OK |
++| KingComments | KC | ... | raw_data/kingcomments_daniel_3.txt | OK |
++| ccbiblestudy | CT | ... | raw_data/ccbiblestudy_CT_daniel_3.txt | OK |
++| ccbiblestudy | GT | ... | raw_data/ccbiblestudy_GT_daniel_3.txt | OK |
++```
++
++用途：
++
++1. 記錄本章實際使用哪些來源。
++2. 記錄來源 URL 與本地 raw text 對應關係。
++3. 讓日後重跑或檢查時不必猜測檔案來源。
++4. 區分成功、失敗、缺來源、內容疑似無效等狀態。
++
+ ---
+ 
+-### 2. ccbiblestudy.org 查經資料大全
++### 5. ccbiblestudy.org 查經資料大全 URL 模式
+ 
+ | 類型   | URL                                                                  |
+ | ---- | -------------------------------------------------------------------- |
+@@ -339,11 +463,12 @@
+ 注意：
+ 
+ - `卷代碼` 不一定是完整英文書名。
+-- 必須以該書目錄頁為準。
++- 必須以該書目錄頁或既有可靠記錄為準。
++- URL 確認後，仍必須先用 `crawl_bible_text.py` 產生 `raw_data/*.txt`，不可直接使用網頁內容整理。
+ 
+ ---
+ 
+-### 3. KingComments
++### 6. KingComments URL 模式
+ 
+ ```text
+ https://www.kingcomments.com/en/bible-studies/{KC_slug}/{章}
+@@ -361,11 +486,12 @@
+ 
+ 注意：
+ 
+-- `KC_slug` 以 KingComments 網站實際連結為準，不自行猜。
++- `KC_slug` 以 KingComments 網站實際連結或既有可靠記錄為準，不自行猜。
++- URL 確認後，仍必須先用 `crawl_bible_text.py` 產生 `raw_data/*.txt`，不可直接使用網頁內容整理。
+ 
+ ---
+ 
+-### 4. BibleHub Study
++### 7. BibleHub Study URL 模式
+ 
+ ```text
+ https://biblehub.com/study/{book_slug}/{章}.htm
+@@ -376,30 +502,35 @@
+ ```text
+ hosea/1.htm
+ 1_samuel/1.htm
++daniel/3.htm
+ ```
+ 
+ 注意：
+ 
+ - `book_slug` 使用 BibleHub slug，不一定等於普通英文書名。
++- URL 確認後，仍必須先用 `crawl_bible_text.py` 產生 `raw_data/*.txt`，不可直接使用網頁內容整理。
+ 
+ ---
+ 
+-### 5. 抓取原則
++### 8. URL 與 raw text 取得原則
+ 
+-1. 優先從該書目錄頁取得實際連結，不要硬猜。
+-2. `cnbible`、`BibleHub` 使用 `book_slug`。
++1. 優先從該書目錄頁、既有 source_manifest、既有 raw_data 檔名或使用者指定 URL 取得實際連結，不要硬猜。
++2. `BibleHub` 使用 `book_slug`。
+ 3. `ccbiblestudy` 使用 `{卷代碼}` + `{卷號}`。
+ 4. `KingComments` 使用 `KC_slug`。
+-5. 若抓到的是目錄頁、404、空內容、亂碼或只有導覽列，視為失敗。
+-6. 失敗時回到目錄頁確認 URL，不要硬寫錯誤內容。
++5. 確認 URL 後，先執行 `crawl_bible_text.py`，產生 `raw_data/*.txt`。
++6. 若 raw_data 檔案已存在，優先讀取既有檔案；除非明確判斷內容錯誤或使用者要求，否則不要覆蓋。
++7. 若抓到的是目錄頁、404、空內容、亂碼、只有導覽列或明顯不是本章內容，視為失敗。
++8. 失敗時回到目錄頁或來源記錄確認 URL，不要硬寫錯誤內容。
++9. 若某來源暫時失敗，可以記錄在 `source_manifest.md` 的狀態欄，並只使用已成功取得的 raw text 繼續流程；但不可假裝該來源已使用。
+ 
+ ---
+ 
+-## 九、資料清理規則
++## 九、raw text 檢查與資料清理規則
+ 
+-所有抓取內容都必須清理後才可寫入 markdown。
++`crawl_bible_text.py` 會先清除 HTML、導覽列、頁尾等無關內容，但 Agent 讀取 `raw_data/*.txt` 後仍必須檢查內容是否可用。
+ 
+-必須移除：
++raw text 必須排除或忽略：
+ 
+ - 網站導覽列
+ - 廣告
+@@ -409,9 +540,19 @@
+ - 抓取工具殘留文字
+ - HTML 或亂碼
+ - 明顯與本章無關內容
++- 只有索引、目錄、章節清單，卻沒有實際註解內容的文字
+ 
+----
++### raw text 有效性判斷
++
++讀取 raw text 後，必須確認：
+ 
++1. 內容與本章有直接關聯。
++2. 不是 404、目錄頁、網站錯誤頁或純導覽列。
++3. 有足夠可整理的解經、背景、原文、互文、神學、歷史、文化或其他研讀資料。
++4. 若內容過短或明顯無效，不得用來建立 link candidate。
++5. 無效來源要記錄在 `source_manifest.md`，不要硬塞進章節主檔或 link folder。
++
++---
+ ## 十、wiki-link 資料驅動原則
+ 
+ wiki-link 的目的不是把所有名詞標起來，也不是由 AI 預設哪些詞「應該」成為條目。
+@@ -987,8 +1128,10 @@
+ 所有 link 建立都必須經過以下流程：
+ 
+ ```text
+-來源資料
+-→ 清理
++確認來源 URL
++→ crawl_bible_text.py 產生 raw_data/*.txt
++→ 讀取並檢查本地 raw text
++→ source_manifest.md
+ → link_candidates.md
+ → build_link_index.py
+ → resolve_link_candidates.py
+@@ -1322,10 +1465,11 @@
+ Agent 不可根據 `link_plan.md` 直接撰寫條目內容。
+ 處理條目時，必須回到：
+ 
+-1. 原始來源暫存檔
+-2. 清理後的來源資料
+-3. 章節主檔
+-4. 本章整理內容
++1. `raw_data/*.txt` 原始快取資料
++2. `source_manifest.md` 記錄的來源 URL 與狀態
++3. `【書名】/.tmp/第x章/` 中由 raw text 分段整理出的暫存資料
++4. 章節主檔
++5. 本章整理內容
+ 
+ `link_plan.md` 只回答：
+ - 要處理哪個條目？
+@@ -1459,23 +1603,31 @@
+ 2. 確認目前書卷與章節
+ 3. 檢查該章主檔是否已存在
+ 4. 若已存在，先讀取並判斷是否已完成
+-5. 抓取主要來源資料（cnbible 經文、ccbiblestudy 註解、ccbiblestudy 拾穗、KingComments、BibleHub Study）
+-6. 清理來源內容，提取關鍵資訊
+-7. **建立 link index**：執行 `python3 build_link_index.py`
+-8. **抽取 link candidates**：根據來源資料，寫入 `【書名】/.tmp/第x章/link_candidates.md`
+-9. **解析 candidates**：執行 `python3 resolve_link_candidates.py 【書名】 第x章`，產生 `link_plan.md`
+-10. **根據 link_plan 寫章節主檔**：寫入經文 + wiki-link + 補充資料
+-11. **根據 link_plan 更新 link folder**：
++5. 讀取經文：`raw_scripture/{資料夾名}/第{章}.txt`
++6. 建立暫存資料夾：`【書名】/.tmp/第x章/`
++7. 確認本章補充資料來源 URL（ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源）
++8. 對每個已確認 URL 執行 `crawl_bible_text.py`，將資料存成 `raw_data/*.txt`
++   - 若 raw_data 檔案已存在，優先沿用既有檔案
++   - 只有確認需要重抓時才使用 `--overwrite`
++9. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`
++10. 讀取本章所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有可整理資料
++11. **建立 link index**：執行 `python3 build_link_index.py`
++12. **抽取 link candidates**：根據經文與有效 raw text，寫入 `【書名】/.tmp/第x章/link_candidates.md`
++13. **解析 candidates**：執行 `python3 resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
++    - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
++    - 例：`python3 resolve_link_candidates.py 創世記 13`
++14. **根據 link_plan 寫章節主檔**：寫入經文 + wiki-link + 補充資料
++15. **根據 link_plan 更新 link folder**：
+     - B類：補充章節資料到既有條目
+     - C類：建立新正式條目
+     - D類：建立候選條目
+-12. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
+-13. **更新 Index**：執行 `python3 build_link_index.py`
+-14. **語意品質檢查**：執行 `python3 link_quality_check.py`
+-15. **驗證**：執行 `python3 verify_links.py`
+-15. 修正到 verify 無 broken/invalid refs、quality 無 critical warnings
+-16. git commit + push
+-17. 回報完成狀態
++16. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
++17. **更新 Index**：執行 `python3 build_link_index.py`
++18. **語意品質檢查**：執行 `python3 link_quality_check.py 【書名】`
++19. **驗證**：執行 `python3 verify_links.py 【書名】`
++20. 修正到 verify 無 broken/invalid/unknown refs，quality 無 critical warnings
++21. git commit + push
++22. 回報完成狀態
+ 
+ ### 超長章節處理流程
+ 
+@@ -1491,7 +1643,7 @@
+ #### 核心原則
+ 
+ 超長章節採用三階段處理：
+-- **第一階段：來源暫存** — 分段抓取、清理、存成暫存檔
++- **第一階段：來源暫存** — 先用 `crawl_bible_text.py` 產生完整 raw text，再視需要切成分段暫存檔
+ - **第二階段：分段整合** — 同一段範圍讀取所有來源暫存檔，整合寫入章節主檔，產生 link queue
+ - **第三階段：link queue 處理** — 分批建立／更新 link folder 條目
+ 
+@@ -1505,14 +1657,24 @@
+ 
+ #### 第一階段：來源暫存
+ 
+-1. 先抓取完整經文，建立章節主檔骨架（只有經文 + 標題 + 空區塊）。
+-2. 建立暫存資料夾：`【書名】/.tmp/第x章/`
+-3. 每個來源依分段範圍存成暫存檔：
++1. 先讀取完整經文：`raw_scripture/{資料夾名}/第{章}.txt`。
++2. 建立章節主檔骨架（只有標題、經文、空區塊）。
++3. 建立暫存資料夾：`【書名】/.tmp/第x章/`。
++4. 確認本章補充資料來源 URL。
++5. 對每個已確認 URL 執行 `crawl_bible_text.py`，先產生完整來源 raw text：
++
++```text
++python crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
++```
++
++6. 建立或更新 `source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態。
++7. 檢查每個 raw text 是否有效；無效來源不得進入後續分段整合。
++8. 若章節過長，再從有效的 `raw_data/*.txt` 切出分段暫存檔：
+    - `【書名】/.tmp/第x章/001-008_CT.md`
+    - `【書名】/.tmp/第x章/001-008_GT.md`
+    - `【書名】/.tmp/第x章/001-008_KC.md`
+    - `【書名】/.tmp/第x章/001-008_BH.md`
+-4. 分段方式優先依經文自然結構：
++9. 分段方式優先依經文自然結構：
+    - 詩歌按詩節、字母段或平行結構
+    - 家譜按世代或人物群組
+    - 敘事按事件場景
+@@ -1521,7 +1683,7 @@
+    - 書信按論證段落
+    - 若無明顯結構，才按每 10–20 節切分
+ 
+-**第一階段只做：抓取 → 清理（去除網站雜訊）→ 存成暫存檔。**
++**第一階段只做：讀經文 → 確認 URL → 產生 raw_data → 檢查 raw text → 切分暫存檔。**
+ **第一階段不要整合寫入章節主檔，也不要立即更新 link folder。**
+ 
+ ---
+@@ -1580,12 +1742,13 @@
+ #### 超長章節禁止事項
+ 
+ 1. 禁止一次把超長章節資料來源全部塞進 context。
+-2. 禁止每個來源各自整理後直接寫入主檔，卻不做跨來源整合。
+-3. 禁止暫存檔未清理就直接寫進主檔。
+-4. 禁止根據暫存檔不存在的資料建立 link。
+-5. 禁止 link queue 產生沒有資料支撐的節點。
+-6. 禁止為了省事跳過最終整章 verify。
+-7. 禁止為了省事跳過最終整章 quality check。
++2. 禁止跳過 `crawl_bible_text.py`，直接使用網頁內容整理。
++3. 禁止每個來源各自整理後直接寫入主檔，卻不做跨來源整合。
++4. 禁止 raw text 或暫存檔未檢查就直接寫進主檔。
++5. 禁止根據 raw text 或暫存檔不存在的資料建立 link。
++6. 禁止 link queue 產生沒有資料支撐的節點。
++7. 禁止為了省事跳過最終整章 verify。
++8. 禁止為了省事跳過最終整章 quality check。
+ 
+ ---
+ 
+@@ -1650,6 +1813,8 @@
+ 20. 根據 link_plan.md 直接撰寫條目內容而不回到來源（見二十二之八）
+ 21. 把資料來源內容大量塞進章節主檔（見二十二之九）
+ 22. 為未來章節預先建立空白章節檔（見二十二之十）
++23. 跳過 `crawl_bible_text.py` 直接使用網頁內容整理補充資料
++24. 在 raw_data 檔案已存在且未確認錯誤時任意覆蓋
+ 
+ ## 二十六、最重要的總原則
+ 
+@@ -1672,3 +1837,4 @@
+ 17. 正式條目的定義/核心摘要/主題發展為保護區，不可每章亂改。
+ 18. 所有輸出使用繁體中文。
+ 19. 不可為未來章節預建空檔案。
++20. 補充資料必須先快取為 `raw_data/*.txt`，再讀取本地 raw text 進入 link_candidates 流程。
+--- /mnt/data/agent_start_prompt(1).md	2026-06-27 13:32:17.537340298 +0000
++++ /mnt/data/agent_start_prompt.md	2026-06-27 13:34:48.746769928 +0000
+@@ -10,32 +10,60 @@
+ C:\Obsidian\Hermes\scripture\scheme.md
+ ```
+ 
+-`scheme.md` 是最高規則。  
++`scheme.md` 是最高規則。
++
+ ## 開工流程
+ 
+ 請依序執行：
+ 
+ 1. 讀取 `scheme.md`
+-2. 解析使用者指定的書卷名稱
++2. 解析使用者指定的書卷名稱與章節需求
+ 3. 檢查該書卷目錄是否存在
+ 4. 檢查該書卷現有章節主檔與完成進度
+ 5. 執行 `python3 build_link_index.py` 建立最新 link index
+ 6. 檢查 git 狀態
+ 7. 判斷下一個需要處理或修正的章節
+ 8. 不要重做已完成且已通過驗證的章節
+-9. **讀取經文**（本地 `raw_scripture/{資料夾名}/第{章}.txt`）
+-10. 抓取資料後，根據來源內容建立 `【書名】/.tmp/第x章/link_candidates.md`
+-11. 執行 `python3 resolve_link_candidates.py 【書名】 X，產生 `link_plan.md`
+-		例如:`python3 resolve_link_candidates.py 創世記 13`
+-12. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+-13. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
+-14. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
+-15. 執行 `python3 link_quality_check.py 〖書名〗`
+-16. 執行 `python3 verify_links.py 〖書名〗`
+-17. 修正任何 broken links / invalid refs / critical quality warnings
+-18. 重跑驗證直到全部通過
+-19. 通過後 git commit + push
+-20. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
++9. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
++10. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
++11. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
++12. **使用 `crawl_bible_text.py` 產生 raw text**：
++    ```text
++    python crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
++    ```
++    例：
++    ```text
++    python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
++    ```
++13. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
++14. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
++15. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
++16. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
++17. 執行 `python3 resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
++    - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
++    - 例如：`python3 resolve_link_candidates.py 創世記 13`
++18. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
++19. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
++20. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
++21. 執行 `python3 build_link_index.py`
++22. 執行 `python3 link_quality_check.py 【書名】`
++23. 執行 `python3 verify_links.py 【書名】`
++24. 修正任何 broken links / invalid refs / unknown links / critical quality warnings
++25. 重跑驗證直到全部通過
++26. 通過後 git commit + push
++27. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
++
++---
++
++## raw text 原則
++
++- 補充資料不可直接使用網頁內容整理。
++- 所有補充資料必須先透過 `crawl_bible_text.py` 存成 `raw_data/*.txt`。
++- `crawl_bible_text.py` 的輸入是 URL，輸出是該網站清理後的 raw text。
++- `--output_filename` 不必加 `.txt`，程式會自動補上。
++- 檔案已存在時不覆蓋；需要覆蓋才加 `--overwrite`。
++- 建立 link_candidates.md 時，只能使用經文與已成功取得、已檢查有效的 raw text。
++- 無效來源要記錄在 `source_manifest.md`，不可假裝已使用。
+ 
+ ---
+ 
+@@ -47,6 +75,10 @@
+ - 禁止跳過 `verify_links.py`、`link_quality_check.py`
+ - 禁止未驗證就 commit
+ - 禁止硬猜 URL
++- 禁止直接把網頁內容抓進 context 後整理
++- 禁止跳過 `crawl_bible_text.py` 直接使用網站資料
++- 禁止在 raw_data 檔案已存在且未確認錯誤時任意使用 `--overwrite`
++- 禁止把無效 raw text 當作有效來源
+ - 禁止把 `scheme.md` 已規定的細節改成自己的做法
+ - 禁止為了補條目而亂搜薄弱資料
+ - 禁止建立只有 2-3 行的薄弱 stub

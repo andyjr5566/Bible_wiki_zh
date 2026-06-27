@@ -1,54 +1,41 @@
-## 一、總體目標
+# Scripture Knowledge Base Scheme
 
-建立一套可擴展、結構清晰、適合 Obsidian 使用的聖經研讀知識庫。
+本檔是 `C:\Obsidian\Hermes\scripture\` 的最高規則。所有輸出用繁體中文。不得跳過本檔、驗證流程、資料驅動 link 流程。
 
-本知識庫的核心不是單純保存資料，而是建立一個可以逐章、逐卷累積的讀經網絡：
-
-- 每一章是一個「整合型章節主檔」
-- 章節主檔是讀經入口
-- 經文內容直接帶有 `[[wiki-link]]`
-- 五大來源提供補充資料
-- wiki-link 的建立必須由已收集資料出發
-- 有資料提到、有研讀價值、有內容可承載，才建立 link
-- 補充資料中有價值的內容，沉澱到全域 link folders
-- link folders 逐步形成跨章、跨卷、跨主題的知識節點庫
-
-核心原則：
-
-> 書卷資料夾負責「順著讀經」；全域 link folders 負責「累積知識」。  
-> wiki-link 必須由已收集資料觸發，不由 AI 憑感覺預設。
+核心：每章一個整合型章節主檔；書卷資料夾負責順讀，全域 `link_folder/` 負責跨章累積知識；wiki-link 必須由已收集資料明確觸發，不由 AI 憑感覺建立。
 
 ---
 
-## 二、資料夾結構
-
-預設根目錄：
-
-```text
-C:\Obsidian\Hermes\scripture\
-```
-
-建議結構：
+## 1. 目錄結構
 
 ```text
 scripture/
 ├── scheme.md
-├── agent_prompt.md
-│
+├── agent_start_prompt.md
+├── crawl_bible_text.py
+├── raw_scripture/              # 本地經文
+├── raw_data/                   # 網站來源純文字快取
+├── _config/bible_books.json
+├── build_link_index.py
+├── resolve_link_candidates.py
+├── check_existing_links.py
+├── link_quality_check.py
+├── verify_links.py
 ├── 何西阿書/
 │   ├── 全書導論.md
 │   ├── 全書綱要.md
 │   ├── 第1章.md
 │   ├── 第2章.md
 │   └── ...
-│
 ├── 但以理書/
 │   ├── 全書導論.md
 │   ├── 全書綱要.md
 │   ├── 第1章.md
-│   ├── 第2章.md
-│   └── ...
-│
+│   └── .tmp/第3章/
+│       ├── source_manifest.md
+│       ├── link_candidates.md
+│       ├── link_plan.md
+│       └── link_queue.md       # 僅超長章節需要
 ├── link_folder/
 │   ├── 人物/
 │   ├── 地點/
@@ -60,146 +47,115 @@ scripture/
 │   ├── 神學/
 │   ├── 互文/
 │   └── 解經爭議/
-└── ...
+    └── _index/link_index.json
 ```
 
-### 說明
-
-1. 每卷書使用獨立資料夾。
-2. 每卷書底下只保留整合型章節主檔，不再拆成 `經文/`、`註解/`、`拾穗/`、`解說/` 四套平行章節檔。
-3. `全書導論.md` 與 `全書綱要.md` 放在書卷資料夾中，作為讀該卷書時的入口。
-4. `人物/`、`地點/`、`主題/`、`背景/`、`歷史/` 等資料夾統稱為 **link folders**。
-5. link folders 是全域共用資料夾，不屬於單一書卷。
-6. link folders 的類型不限於以上列出的資料夾，可依資料自然增加。
+規則：
+- 每卷書一個資料夾；章節檔只用 `第x章.md`，不得再建立 `經文/`、`註解/`、`拾穗/`、`解說/` 等平行章節資料夾。
+- `link_folder/` 是全域共用，可依資料自然新增分類；新增分類必須適合跨章／跨卷累積，禁止為單一零散詞開新資料夾。
+- 同一條目只允許一個主分類；其他性質用 `secondary_types` 表示，不得在多個 folder 重複建檔。
 
 ---
 
-## 三、書卷資料夾與全域 link folders 的分工
+## 2. 資料來源與 raw text 快取
 
-### 1. 書卷資料夾：讀經路徑
+### 2.1 經文
 
-書卷資料夾用來承載讀經順序。
-
-例如：
+經文固定讀取本地檔：
 
 ```text
-何西阿書/
-├── 全書導論.md
-├── 全書綱要.md
-├── 第1章.md
-├── 第2章.md
-└── ...
+raw_scripture/{標準書卷名}/第{章}.txt
 ```
 
-使用者讀經時，應能直接從：
+`{標準書卷名}` 必須與 `_config/bible_books.json` 一致。經文檔每行一節；除非使用者明確要求，經文不透過 `crawl_bible_text.py` 抓取。
+
+### 2.2 補充資料
+
+目前主要來源：
+1. ccbiblestudy.org
+	1. 註解（CT）
+	2. 拾穗（GT）
+2. KingComments（KC）
+3. BibleHub Study（BH）
+4. 使用者指定且可轉成純文字的其他網站
+
+補充資料**不得直接讀網頁後整理**。必須先用 `crawl_bible_text.py` 轉成 `raw_data/*.txt`，再讀本地 raw text。
+
+標準命令：
 
 ```text
-何西阿書/第1章.md
+python crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
 ```
 
-看到該章經文與核心整理，不需要在多個資料夾中來回切換。
-
-### 2. 全域 link folders：知識節點庫
-
-全域 link folders 用來保存可跨章、跨卷、跨主題累積的內容。
-
-例如：
+例：
 
 ```text
-link_folder/人物/何西阿.md
-link_folder/人物/歌篾.md
-link_folder/地點/耶斯列.md
-link_folder/主題/屬靈淫亂.md
-link_folder/歷史/北國以色列滅亡.md
-link_folder/背景/主前第八世紀先知.md
-link_folder/原文/耶斯列的雙關.md
-link_folder/互文/非我民到神的兒子.md
-link_folder/解經爭議/歌篾何時成為淫婦.md
+python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
 ```
 
-若某個背景或歷史概念只放在某卷書資料夾內，之後其他書卷不易共用。  
-因此凡是可以跨卷累積的背景、歷史、文化、神學、互文、原文、解經爭議，都應放入全域 link folders。
+結果：`raw_data/biblehub_study_daniel_3.txt`。檔名不用加 `.txt`；已存在時不覆蓋，只有確認舊檔錯誤或使用者要求時才加 `--overwrite`。
 
----
-
-## 四、link folders 擴充原則
-
-預設 link folders：
+建議命名：
 
 ```text
-link_folder/人物/
-link_folder/地點/
-link_folder/主題/
-link_folder/背景/
-link_folder/歷史/
-link_folder/原文/
-link_folder/文化/
-link_folder/神學/
-link_folder/互文/
-link_folder/解經爭議/
+raw_data/biblehub_study_daniel_3.txt
+raw_data/kingcomments_daniel_3.txt
+raw_data/ccbiblestudy_CT_daniel_3.txt
+raw_data/ccbiblestudy_GT_daniel_3.txt
 ```
 
-但不限於以上類型。
+### 2.3 URL 模式與限制
 
-若日後資料自然產生大量同類知識節點，可以新增 link folder，例如：
+只可使用已確認 URL；來源優先順序：使用者指定 URL、既有 `source_manifest.md`、既有可靠記錄、來源目錄頁。禁止硬猜 URL。
 
 ```text
-link_folder/制度/
-link_folder/節期/
-link_folder/祭祀/
-link_folder/王朝/
-link_folder/文學結構/
-link_folder/預言應驗/
-link_folder/新約引用/
-link_folder/聖經神學/
+ccbiblestudy CT/GT:
+https://www.ccbiblestudy.org/{Old|New}%20Testament/{卷代碼}/{卷號}{CT|GT}{章2位}.htm
+例：27Daniel/27CT03.htm, 27Daniel/27GT03.htm, 28Hosea/28CT01.htm, 28Hosea/28GT01.htm, 01Gen/01CT01.htm, 40Matt/40CT01.htm
+
+KingComments:
+https://www.kingcomments.com/en/bible-studies/{KC_slug}/{章}
+例：Dan/3, Hos/1, Gen/1, 1Sam/1, Song/1
+
+BibleHub Study:
+https://biblehub.com/study/{book_slug}/{章}.htm
+例：daniel/3.htm, hosea/1.htm, 1_samuel/1.htm
 ```
 
-### 新增 link folder 的條件
+`卷代碼`、`KC_slug`、`book_slug` 必須以實際網站或既有可靠記錄為準。
 
-只有在符合以下條件時才新增資料夾：
+### 2.4 source_manifest.md
 
-1. 該類節點在已收集資料中反覆出現
-2. 適合跨章、跨卷累積
-3. 放在既有分類中會造成混亂
-4. 新分類能幫助使用者更直觀地查找
-
-禁止為單一零散詞硬開新資料夾。
-
----
-
-## 五、章節主檔命名規則
-
-每章使用中文章節號命名：
+每章建立：
 
 ```text
-第1章.md
-第2章.md
-第10章.md
+【書名】/.tmp/第x章/source_manifest.md
 ```
-
-完整路徑範例：
-
-```text
-C:\Obsidian\Hermes\scripture\何西阿書\第1章.md
-```
-
-章節主檔不再放入：
-
-```text
-經文/
-註解/
-拾穗/
-解說/
-交叉參照/
-```
-
----
-
-## 六、整合型章節主檔格式
-
-章節主檔是該章的主要讀經入口。
 
 格式：
+
+```md
+# 但以理書 第3章 source manifest
+
+| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |
+|---|---|---|---|---|
+| BibleHub Study | BH | https://biblehub.com/study/daniel/3.htm | raw_data/biblehub_study_daniel_3.txt | OK |
+| KingComments | KC | ... | raw_data/kingcomments_daniel_3.txt | OK |
+| ccbiblestudy | CT | ... | raw_data/ccbiblestudy_CT_daniel_3.txt | OK |
+| ccbiblestudy | GT | ... | raw_data/ccbiblestudy_GT_daniel_3.txt | OK |
+```
+
+狀態可用：`OK`、`MISSING`、`FAILED`、`INVALID`、`SKIPPED`。失敗來源可記錄，但不可假裝已使用。
+
+### 2.5 raw text 有效性
+
+讀取 `raw_data/*.txt` 後必須檢查。以下不得作為 link 或內容依據：404、目錄頁、網站錯誤頁、純導覽列、頁首頁尾、廣告、重複版權、亂碼、HTML 殘留、與本章無關、過短且無可整理資料。無效來源只記錄在 manifest。
+
+---
+
+## 3. 章節主檔格式
+
+檔名：`【書名】/第x章.md`。
 
 ```md
 # 何西阿書 第1章
@@ -238,924 +194,182 @@ C:\Obsidian\Hermes\scripture\何西阿書\第1章.md
 ---
 
 ## 本章整理
-
 ```
 
-### 重要規則
-
-1. 經文中的 wiki-link 必須基於經文本身或已收集資料的明確內容建立。
-2. 不要把所有經文中的 link 重複列到「本章知識節點」。
-3. 「本章知識節點」主要放：
-   - 來源補充後才顯明的重要概念
-   - 經文未直接出現，但來源資料明確討論的知識節點
-   - 值得跨章、跨卷累積的主題
-   - 本章核心神學、歷史、背景、原文、互文、爭議節點
-5. 「本章整理」不必逐字收納所有來源，而是整合五大來源後保留有研讀價值的內容。
-6. 若某段補充內容更適合沉澱為獨立知識節點，應放入對應 link folder，而不是塞滿章節主檔。
+規則：
+- 經文保留完整內容，wiki-link 直接加在經文上。
+- 「本章知識節點」只列來源補充後顯明、值得跨章累積的核心節點；不要重列所有經文 link。
+- 「本章整理」整合來源重點，不大量搬運 CT/GT/KC/BH 全文。
+- 過多資料應沉澱到 `link_folder/` 或暫存在 `.tmp/`，章節主檔不是資料倉庫。
 
 ---
 
-## 七、資料來源原則
+## 4. wiki-link 建立規則
 
-本專案目前主要使用五大來源：
+### 4.1 資料驅動原則
 
-1. cnbible.com
-2. ccbiblestudy.org
-	1. 註解
-	2. 拾穗
-3. KingComments
-4. BibleHub Study
-
-### 核心原則
-
-五大來源不是固定對應某個區塊，也不是固定對應某個 link folder。
-
-資料來源的功能是提供內容；內容應放哪裡，要依其性質判斷。
-
-例如：
-
-- 若來源補充人物資料，放入 `人物/`
-- 若補充地理位置，放入 `地點/`
-- 若補充神學主題，放入 `主題/` 或 `神學/`
-- 若補充歷史事件，放入 `歷史/`
-- 若補充時代背景，放入 `背景/`
-- 若補充原文字義，放入 `原文/`
-- 若補充文化習俗，放入 `文化/`
-- 若補充新舊約引用，放入 `互文/`
-- 若補充不同解經立場，放入 `解經爭議/`
-
-不要寫死「某來源只能補某區塊」。  
-同一來源可能同時提供人物、歷史、神學、原文、文化、互文等資料。
-
----
-
-## 八、來源網站 URL 模式
-
-### 1. 經文：cnbible.com 和合本
-
-| 類型 | URL |
-|---|---|
-| 繁體 CUV | `https://cnbible.com/cu/{book_slug}/{章}.htm` |
-| 簡體 CUS | `https://cnbible.com/cus/{book_slug}/{章}.htm` |
-
-例：
+建立任何 link 前先問：
 
 ```text
-https://cnbible.com/cu/hosea/1.htm
-https://cnbible.com/cu/1_samuel/1.htm
+此 link 是否由目前經文或已收集 raw text 明確觸發？
+此 link 是否有資料可支撐本地 markdown 條目？
 ```
 
-注意：
+任一答案為否，就不建立。
 
-- `book_slug` 使用網站 slug，不是中文書名。
-- 多字書卷常用底線。
-- 抓取後需移除中文字間空格。
+可建立條件：
+- 經文本身明確出現，且是人物、地點、國家、群體、書卷、重要事件。
+- raw text 明確解釋該詞、概念、背景、原文、象徵、互文、爭議、神學或歷史意義。
+- 來源提供足夠內容，可整理到 `link_folder/`。
+- 該概念與本章解釋直接相關。
 
----
+禁止建立：
+- AI 覺得可能重要，但來源未提。
+- 只靠一般神學常識聯想。
+- 沒有可整理內容或只能寫空泛 stub。
+- 普通名詞且來源未賦予特殊意義。
+- 為了讓知識庫看起來豐富。
+- 需要另行外搜才有內容。
 
-### 2. ccbiblestudy.org 查經資料大全
+### 4.2 link target 與 alias
 
-| 類型   | URL                                                                  |
-| ---- | -------------------------------------------------------------------- |
-| 舊約註解 | `https://www.ccbiblestudy.org/Old%20Testament/{卷代碼}/{卷號}CT{章2位}.htm` |
-| 新約註解 | `https://www.ccbiblestudy.org/New%20Testament/{卷代碼}/{卷號}CT{章2位}.htm` |
-| 舊約拾穗 | `https://www.ccbiblestudy.org/Old%20Testament/{卷代碼}/{卷號}GT{章2位}.htm` |
-| 新約拾穗 | `https://www.ccbiblestudy.org/New%20Testament/{卷代碼}/{卷號}GT{章2位}.htm` |
-
-例：
-
-```text
-28Hosea/28CT01.htm
-28Hosea/28GT01.htm
-27Daniel/27CT01.htm
-01Gen/01CT01.htm
-40Matt/40CT01.htm
-```
-
-注意：
-
-- `卷代碼` 不一定是完整英文書名。
-- 必須以該書目錄頁為準。
-
----
-
-### 3. KingComments
-
-```text
-https://www.kingcomments.com/en/bible-studies/{KC_slug}/{章}
-```
-
-例：
-
-```text
-Hos/1
-Dan/1
-Gen/1
-1Sam/1
-Song/1
-```
-
-注意：
-
-- `KC_slug` 以 KingComments 網站實際連結為準，不自行猜。
-
----
-
-### 4. BibleHub Study
-
-```text
-https://biblehub.com/study/{book_slug}/{章}.htm
-```
-
-例：
-
-```text
-hosea/1.htm
-1_samuel/1.htm
-```
-
-注意：
-
-- `book_slug` 使用 BibleHub slug，不一定等於普通英文書名。
-
----
-
-### 5. 抓取原則
-
-1. 優先從該書目錄頁取得實際連結，不要硬猜。
-2. `cnbible`、`BibleHub` 使用 `book_slug`。
-3. `ccbiblestudy` 使用 `{卷代碼}` + `{卷號}`。
-4. `KingComments` 使用 `KC_slug`。
-5. 若抓到的是目錄頁、404、空內容、亂碼或只有導覽列，視為失敗。
-6. 失敗時回到目錄頁確認 URL，不要硬寫錯誤內容。
-
----
-
-## 九、資料清理規則
-
-所有抓取內容都必須清理後才可寫入 markdown。
-
-必須移除：
-
-- 網站導覽列
-- 廣告
-- 頁首頁尾
-- 重複版權資訊
-- 無關推薦內容
-- 抓取工具殘留文字
-- HTML 或亂碼
-- 明顯與本章無關內容
-
-cnbible 經文若出現中文字間空格，例如：
-
-```text
-當 烏 西 雅
-```
-
-需整理為：
-
-```text
-當烏西雅
-```
-
----
-
-## 十、wiki-link 資料驅動原則
-
-wiki-link 的目的不是把所有名詞標起來，也不是由 AI 預設哪些詞「應該」成為條目。
-
-wiki-link 必須由已收集資料觸發。
-
-也就是：
-
-> 只有當經文、註解、解說、拾穗、背景、歷史、原文、互文或其他已收集資料中，明確提到並提供足夠整理價值時，才建立 wiki-link。
-
-### 建立 wiki-link 的必要條件
-
-一個詞或概念要建立 wiki-link，至少必須符合以下條件之一：
-
-1. 經文本身明確出現，且是人物、地點、國家、群體、書卷或重要事件。
-2. 已收集來源明確解釋該詞、概念、背景、原文、象徵、爭議或互文。
-3. 已收集來源提供足夠內容，可以整理進對應 link folder。
-4. 該概念在目前資料中與本章解釋有直接關聯。
-5. 該概念能幫助理解目前章節，且不是 AI 自行延伸推測。
-
-### 不可建立 wiki-link 的情況
-
-以下情況禁止建立 wiki-link：
-
-1. AI 只是覺得這個詞「可能重要」。
-2. AI 根據一般神學知識自行聯想，但目前收集資料沒有提到。
-3. 目前資料沒有提供任何可整理內容。
-4. 只是普通名詞，且來源沒有賦予其特殊意義。
-5. 只是為了讓知識庫看起來更豐富而建立。
-6. 需要額外外搜才有內容可寫。
-7. 建立後只能寫空泛 stub。
-
-### 簡化判斷句
-
-建立任何 wiki-link 前，先問：
-
-```text
-這個 link 是否由目前已收集資料明確觸發？
-這個 link 是否有資料可以支撐本地 markdown 條目？
-```
-
-若答案是否定，就不要建立 link。
-
----
-
-## 十之一、wiki-link 命名規則
-
-**核心原則：link target = 條目檔名，alias = 經文原詞。**
-
-經文中的 wiki-link 必須使用以下格式：
+核心：`link target = 條目檔名`，`alias = 經文原詞`。
 
 ```md
 [[條目完整名稱|經文原詞]]
+[[條目完整名稱]]       # 經文原詞與條目名完全相同時可用
 ```
-
-- `|` 前面是條目的完整檔案名（不含 `.md`），用於 match 本地檔案
-- `|` 后面是經文中的原始用詞，保持經文可讀性
-
-**範例**：
-
-```md
-3. [[神的話（創造媒介）|神說]]：「要有光」，就有了光。
-26. [[神的話（創造媒介）|神說]]：「我們要照著我們的[[形像與樣式|形像]]、按著我們的[[形像與樣式|樣式]]造[[人]]」
-2. 地是[[空虛混沌的原意|空虛混沌]]，淵面黑暗；[[神的靈的角色|神的靈]]運行在水面上。
-```
-
-**禁止**：
-
-1. 不經 alias 就用短詞當 link target（如 `[[神說]]`），導致與條目檔名不匹配
-2. 不把經文原詞當作條目檔名（如建立「神說.md」而非「神話（創造媒介）.md」）
-
-**理由**：
-- 減少 verify 修正成本（0 次匹配失敗）
-- 保持經文可讀性（alias 顯示原詞）
-- 條目檔名可獨立命名，不受經文用詞限制
-
----
-
-## 十一、wiki-link 類型
-
-若符合資料驅動原則，以下類型可以建立 wiki-link：
-
-1. 人物
-2. 地點
-3. 國家／民族／群體
-4. 書卷
-5. 神學主題
-6. 歷史事件
-7. 王朝與政治背景
-8. 聖經母題
-9. 象徵與隱喻
-10. 原文字義
-11. 名字含義
-12. 雙關語
-13. 解經爭議
-14. 跨經文互文
-15. 可逐章累積的知識節點
-
-注意：  
-上述清單只是「可建立類型」，不是「AI 主動腦補清單」。  
-每個 link 都仍然必須由已收集資料支撐。
-
----
-
-## 十二、普通詞處理
-
-普通名詞不要直接建立 wiki-link。
-
-若普通詞在已收集資料中被明確解釋為具有神學、象徵、審判、復興、盟約或救恩功能，請連完整概念短語，而不是單字本身。
 
 例：
 
 ```md
-不要連：[[弓]]
-若來源明確解釋其象徵意義，才可連：[[折斷以色列的弓]]
-
-不要連：[[海沙]]
-若來源明確連到族長應許，才可連：[[亞伯拉罕之約的海沙應許]]
-
-不要連：[[兒女]]
-若來源明確討論其象徵功能，才可連：[[象徵性命名]]
-
-不要連：[[淫亂]]
-若來源明確指出其屬靈含義，才可連：[[屬靈淫亂]]
-
-不要連：[[馬匹]]
-若來源明確討論其倚靠軍力的意義，才可連：[[不靠軍事力量得救]]
+[[神的話（創造媒介）|神說]]
+[[形像與樣式|形像]]
+[[屬靈淫亂|淫亂]]
 ```
 
----
+禁止用短詞誤當 target，例如來源討論的是「神的話（創造媒介）」，不得建 `[[神說]]`。
 
-## 十三、關於主題型 link 必須由已收集資料明確支撐。
+### 4.3 普通詞與主題詞
 
-例：
+普通詞不直接 link。若來源明確賦予神學、象徵、審判、盟約、救恩等意義，link 完整概念短語：
 
 ```md
-[[耶和華的話臨到]]
-[[耶和華是以色列的丈夫]]
-[[神的公義與慈愛]]
-[[神的憐憫]]
-[[神的棄絕非永遠]]
-[[不作你們的神]]
-[[我是自有永有的]]
+不要：[[弓]]        可：[[折斷以色列的弓]]
+不要：[[海沙]]      可：[[亞伯拉罕之約的海沙應許]]
+不要：[[淫亂]]      可：[[屬靈淫亂]]
 ```
 
-以上只有在目前來源資料確實討論該概念時才建立。  
-不可因為 AI 覺得神學上相關就自行建立。
+主題型 link 如 `[[神的公義與慈愛]]`、`[[耶和華的話臨到]]`，也必須由本章來源明確討論才可建立。
 
----
+### 4.4 書卷、人物、章節連結
 
-## 十四、書卷與人物同名處理
-
-若書卷名和人物名相同，必須分清楚。
-
-例：
-
-```md
-[[何西阿]] = 人物
-[[何西阿書]] = 書卷
-```
-
-禁止寫成：
-
-```md
-[[何西阿]]書
-```
-
-應寫成：
-
-```md
-[[何西阿書]]
-```
-
----
-
-## 十五、章節檔連結規則
-
-因為每卷書底下都有 `第1章.md`，所以跨章或跨卷連結時不可只寫：
-
-```md
-[[第1章]]
-```
-
-應使用完整路徑與顯示別名：
+- 書卷與人物同名要分清：`[[何西阿]]` 是人物，`[[何西阿書]]` 是書卷；禁止 `[[何西阿]]書`。
+- 跨章／跨卷引用不可寫 `[[第1章]]`，必須寫完整路徑：
 
 ```md
 [[何西阿書/第1章|何西阿書 第1章]]
 [[但以理書/第3章|但以理書 第3章]]
 ```
 
----
-
-## 十六、link folder 條目格式
-
-所有 wiki-link 必須閉合到本地 markdown 檔案。
-
-條目依性質放入適合的全域 link folder。
-
-### 連結路徑規則
-1. 一般知識節點可使用短 link target，例如 `[[屬靈淫亂]]`。
-2. 若出現同名條目、跨資料夾歧義、或 verify 無法唯一解析，必須改用完整路徑：
-   `[[link_folder/主題/屬靈淫亂|淫亂]]`
-
-### 條目格式
-正式條目格式以「二十二之五、正式條目模板」為準（包含保護區與累積區）。
-本節僅說明基本 frontmatter 與閉合要求。
-
-### 條目內容要求
-
-條目內容必須能回到已收集資料。  
-不要用 AI 常識補滿條目。  
-不要為了讓條目完整而自行外搜。
+- 合法但尚未建立的聖經章節引用交給 `verify_links.py` 分為 `PENDING_SCRIPTURE_REFS`，不得為未來章節預建空檔。
 
 ---
 
-## 十七、正式條目與候選條目
+## 5. link candidate → link plan 流程
 
-### 1. 正式條目
-
-若資料足夠，建立正式條目。
-至少應包含：
-
-- 定義或基本資料
-- 觸發來源
-- 聖經出現
-- 與目前書卷的關聯
-- 神學或研讀意義
-- 相關條目
-- 來源依據
-- 待確認事項
-
-### 2. 候選條目
-
-若某概念由已收集資料明確觸發，但目前資料不足以建立正式條目，可以建立候選條目。
-
-候選條目不是給 AI 腦補用的，而是給「資料已提到，但尚未足夠展開」的節點暫存。
-
-候選條目模板：
-
-```md
----
-type: 候選條目
-status: candidate
-source_scope: collected_only
----
-
-# 條目名稱
-
-## 類型
-人物／地點／主題／背景／歷史／原文／文化／神學／互文／解經爭議／其他
-
-## 觸發來源
-
-- [[書卷/第x章|書卷 第x章]]：
-
-## 目前資料
-
-- 根據目前已收集資料整理重點。
-
-## 相關條目
-
-- [[相關條目1]]
-- [[相關條目2]]
-
-## 待補充
-
-- 目前資料不足，日後整理更多章節或來源時再擴充。
-```
-
----
-
-## 十八、既有條目更新規則
-
-若條目已存在，不要跳過。
-
-但更新既有條目時，也必須由本章已收集資料觸發。
-
-請根據本章資料補充：
-
-1. 觸發來源
-2. 聖經出現
-3. 與本章關聯
-4. 神學意義
-5. 相關條目
-6. 待確認事項
-
-不要為了更新條目而加入本章資料沒有提到的內容。  
-不要重複貼上相同內容。
-
-原則：
-
-> 章節主檔負責觸發 link；link folder 條目負責逐章累積由資料支撐的內容。
-
----
-
-## 十九、避免條目爆炸規則
-
-新增 link 時應避免無限擴張。
-
-若新建條目內又出現新 link，請判斷：
-
-1. 是否由目前資料明確觸發
-2. 是否已存在對應本地檔案
-3. 是否為必要核心節點
-4. 是否只是普通名詞
-5. 是否應改成完整概念短語
-6. 是否應先列為候選條目
-7. 是否不需要 link
-
-禁止因為新條目中的每個詞都自動生成第二層、第三層大量條目。
-
----
-
-## 二十、強制連結驗證流程
-
-每完成一章，必須執行：
+正式寫入 wiki-link 前，必須完成：
 
 ```text
-verify_links.py
-```
-
-流程：
-
-1. 掃描該章主檔與本次新增／更新的 link folder 條目
-2. 找出 missing links
-3. 判斷 missing link 是：
-   - 錯字
-   - alias 問題
-   - 路徑錯誤
-   - 缺少條目
-   - 不該建立 link
-4. 修正原文或補建條目
-5. 對新建條目再次驗證
-6. 重跑 `verify_links.py`
-7. 直到 0 blocking errors
-
-只有 0 blocking errors 後，才能 commit + push。
-
----
-
-## 二十一、verify_links.py 規格與輸出分類
-
-位置：
-
-```text
-C:\Obsidian\Hermes\scripture\verify_links.py
-C:\Obsidian\Hermes\scripture\_config\bible_books.json
-```
-
-### 核心原則
-
-不是所有不存在的 wiki-link 都視為 broken link。
-verify_links.py 必須將所有 found link 分為四類：
-
-| 類別 | 說明 | 是否 blocking |
-|------|------|-------------|
-| BROKEN_LINKS | 真正破損連結：目標不存在於 link_folder、不是章節檔、不是合法聖經章節引用 | **必修正** |
-| PENDING_SCRIPTURE_REFS | 合法未來書卷引用：書卷名存在 + 章數在合法範圍內 | 不 blocking |
-| INVALID_SCRIPTURE_REFS | 無效聖經引用：書卷名存在但章數超出範圍 | **必修正** |
-| UNKNOWN_LINKS | 無法判斷：非 link_folder 條目、非章節檔、非合法聖經章節 | **必人工判斷** |
-
-### 聖經章節引用判定規則
-
-判斷 pending scripture ref 時，使用 `_config/bible_books.json` 確認書卷名稱與章數是否合法。
-
-支援兩種 wiki-link 格式：
-- 短格式：`[[啟示錄13]]`、`[[詩篇25]]`
-- 完整格式：`[[啟示錄/第13章|啟示錄13章]]`、`[[詩篇/第25篇|詩篇25篇]]`
-
-判定方式：
-1. 提取書卷名與章數
-2. 若書卷名存在於 `bible_books.json` 且章數在合法範圍內 → `pending_scripture_refs`
-3. 若書卷名存在但章數超出範圍 → `invalid_scripture_refs`（需修正引用或確認章數）
-
-禁止為了通過 verify 而預先建立大量空白章節檔。
-
-### 輸出格式
-
-```text
-Verify result
-VALID LINKS: N
-BROKEN LINKS: N
-PENDING SCRIPTURE REFS: N
-INVALID SCRIPTURE REFS: N
-UNKNOWN LINKS: N
-
---- BROKEN LINKS (must fix) ---
-[[破損連結]]
-
---- PENDING SCRIPTURE REFS (info only) ---
-[[啟示錄13]] → valid future 啟示錄 chapter 13 reference
-
---- INVALID SCRIPTURE REFS (must fix) ---
-[[啟示錄23]] → ERROR: 啟示錄 only has 22 chapters
-
-Result: PASS (0 blocking errors) / FAIL
-
-### Blocking Error 定義
-verify_links.py 必須達到以下條件才視為 PASS (0 blocking errors)：
-- BROKEN_LINKS = 0
-- INVALID_SCRIPTURE_REFS = 0
-- UNKNOWN_LINKS = 0
-- PENDING_SCRIPTURE_REFS 可存在，不視為 blocking error。
-```
-
-### bible_books.json 格式
-
-```json
-{
-  "創世記": 50,
-  "出埃及記": 40,
-  "詩篇": 150,
-  "啟示錄": 22
-}
-```
-
-包含聖經 66 卷書的章數。若有次經或旁經引用，可在後續擴充。
-書卷別名也應在 verify_links.py 的 BOOK_ALIASES 中維護。
-
----
-
-## 二十二、link candidate 與既有條目比對流程
-
-為避免 Agent 憑感覺建立 wiki-link，所有章節在正式寫入 wiki-link 前，
-必須先建立 link candidate 並與既有 link folder 條目比對。
-
-### 一、建立 link index
-
-每章開始處理前，必須掃描全域 link folders：
-
-```
-link_folder/
-├── 人物/
-├── 地點/
-├── 主題/
-├── 背景/
-├── 歷史/
-├── 原文/
-├── 文化/
-├── 神學/
-├── 互文/
-└── 解經爭議/
-```
-
-執行 `python3 build_link_index.py`，產生或更新：
-
-```
-link_folder/_index/link_index.json
-```
-
-link index 至少應包含：
-
-```json
-{
-  "條目名稱": {
-    "path": "link_folder/分類/條目名稱.md",
-    "type": "分類",
-    "aliases": ["別名1", "別名2"],
-    "status": "formal 或 candidate"
-  }
-}
-```
-
-### 二、抽取 link candidates
-
-五大來源清理完成後，Agent 不得立刻建立 wiki-link 或新條目。
-必須先根據已收集資料建立：
-
-```
-【書名】/.tmp/第x章/link_candidates.md
-```
-
-link candidates 只記錄由已收集資料明確觸發的候選知識節點。
-候選來源包括：
-
-- 經文本身明確出現的人物、地點、國家、書卷、重要事件
-- 註解、拾穗、解說、背景、歷史、原文、互文資料中明確解釋的概念
-- 來源資料提供足夠內容，可沉澱到 link folder 的知識節點
-
-不可把 AI 憑感覺認為重要的詞放入 candidates。
-
-### 三、解析 candidates
-
-執行：
-
-```
-python3 resolve_link_candidates.py 【書名】 X
-```
-ps: 章數X參數一律使用阿拉伯數字，不加「第」與「章」。
-
-將 link_candidates.md 與 link_index.json 比對，產生：
-
-```
-【書名】/.tmp/第x章/link_plan.md
-```
-
-link plan 必須把候選節點分成：
-
-| 類別 | 說明 |
-|------|------|
-| A. 已存在，直接使用 | 既有條目完全涵蓋本章需求 |
-| B. 已存在，需要補充本章資料 | 既有條目需要加入本章新資料 |
-| C. 不存在，建立正式條目 | 新條目，有足夠資料 |
-| D. 不存在，建立候選條目 | 新條目，但資料不足 |
-| E. 不應建立 link | 改為純文字 |
-
-### 四、根據 link plan 寫入章節主檔
-
-只有 link_plan.md 產生後，才可正式寫入章節主檔的 wiki-link。
-
-經文中的 link 必須使用：
-
-```
-[[條目完整名稱|經文原詞]]
-```
-
-若經文原詞本身就是條目完整名稱，可使用：
-
-```
-[[條目完整名稱]]
-```
-
-### 五、根據 link plan 更新 link folder
-
-處理 link folder 條目時：
-
-1. 若條目不存在（C/D類），建立正式條目或候選條目
-2. 若條目已存在（B類），讀取原條目，根據本章已收集資料補充新內容
-3. 若本章沒有新內容，不硬補，僅在「聖經出現」或「觸發來源」補一行
-4. 所有新增內容必須能追溯到本章資料來源
-
-既有條目補充格式（新增在「與目前整理書卷的關聯」之後）：
-
-```markdown
-### 創世記 第13章
-
-- （根據本章資料描述與此條目的具體關聯）
-- 來源：CT, GT, KC, BH
-```
-
-### 六、防止重複與誤建
-
-解析 candidates 時必須優先檢查：
-
-- 完全同名條目
-- aliases
-- 同義詞
-- 不同資料夾中的同名條目
-- 書卷名與人物名衝突
-- 經文原詞與條目完整名稱不同的情況
-
-若有歧義，不要自動建立新條目，放入 link_plan 的 D 類（候選條目）或 E 類（不建立）。
-
-### 七、驗證
-
-最終驗證順序：
-
-```
-check_existing_links.py → build_link_index.py → link_quality_check.py → verify_links.py
-```
-
-|- `check_existing_links.py`：確認本章引用的既有條目都已檢查過
-|- `verify_links.py`：確認 broken links = 0，invalid scripture refs = 0，unknown links = 0
-|- `link_quality_check.py`：確認語意無 critical 錯誤
-
----
-
-## 二十二之一、link folder 長期治理與條目管理核心原則
-
-### 核心補充原則
-
-wiki-link 建立不可只依靠 Agent 讀完來源後「憑判斷」建立。
-所有 link 建立都必須經過以下流程：
-
-```text
-來源資料
-→ 清理
+raw_scripture + 有效 raw_data
 → link_candidates.md
 → build_link_index.py
 → resolve_link_candidates.py
 → link_plan.md
-→ 寫章節主檔
-→ 建立／更新 link folder 條目
-→ check_existing_links.py
-→ link_quality_check.py
-→ verify_links.py
-→ commit
+→ 章節主檔 wiki-link
+→ link_folder 建立／更新
 ```
 
-最重要的是：
-**link_plan.md 必須在正式寫入章節主檔 wiki-link 之前產生。**
-也就是：先查既有條目，再決定：
-- 使用既有條目
-- 擴充既有條目
-- 建立新正式條目
-- 建立候選條目
-- 不建立 link
+### 5.1 build_link_index.py
 
----
+每章處理前執行：
 
-## 二十二之二、build_link_index.py 強制步驟
-
-每次處理章節前，必須先掃描 `link_folder/`，產生或更新 `link_folder/_index/link_index.json`。
-
-掃描時必須讀取每個 markdown 檔案的完整 YAML frontmatter，支援以下欄位：
-
-| frontmatter 欄位 | 類型 | 說明 |
-|-------|------|------|
-| `type:` | string | 主分類（人物、地點、主題、神學...） |
-| `secondary_types:` | list | 次分類，如 `[文化, 歷史, 神學]` |
-| `aliases:` | list | 別名列表，如 `[屬靈姦淫, 拜偶像如淫亂]` |
-| `status:` | string | `formal` 或 `candidate` |
-
-### link_index.json 格式
-
-```json
-{
-  "條目名稱": {
-    "path": "link_folder/分類/條目名稱.md",
-    "type": "分類",
-    "secondary_types": ["次分類1", "次分類2"],
-    "aliases": ["別名1", "別名2"],
-    "status": "formal"
-  },
-  "別名": {
-    "alias_of": "條目名稱"
-  }
-}
+```text
+python3 build_link_index.py
 ```
 
-Obsidian 原生支援 aliases，所以 aliases 必須成為 link 比對核心，不是裝飾欄位。
-
----
-
-## 二十二之三、resolve_link_candidates.py 比對邏輯
-
-resolve_link_candidates.py 必須將本章 link_candidates.md 與 link_index.json 比對。
-比對優先順序：
-
-1. **完全同名檔案** — 條目名稱完全匹配 index key
-2. **YAML aliases 完全命中** — candidate 名稱命中某條目的 aliases 列表
-3. **常見同義詞命中** — 預設同義詞表比對
-4. **fuzzy match 候選** — 相似但非精確匹配，放入 D 類
-5. **不同資料夾中的同名條目** — 若候選名稱與某 index key 相同但分類不同，使用既有條目
-6. **書卷名與人物名衝突** — 檢查 `PERSON_TO_BOOK` 映射
-7. **經文原詞與條目完整名稱不同** — 確認 alias 格式正確
-
-### Alias 比對規則
-
-若命中 alias，必須指向 alias 所屬的主條目檔案，不可另建新條目。
-
-例如：
+掃描 `link_folder/`，產生 `link_folder/_index/link_index.json`。每個條目讀取 YAML frontmatter：
 
 ```yaml
-# link_folder/主題/屬靈淫亂.md
-aliases:
-  - 屬靈姦淫
-  - 拜偶像如淫亂
-  - 以色列的淫亂
+type: 主分類
+secondary_types: [文化, 歷史]
+aliases: [別名1, 別名2]
+status: formal | candidate
 ```
 
-若本章 candidate 出現「屬靈姦淫」，應解析為：
+Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of。Aliases 是比對核心。
+
+### 5.2 link_candidates.md
+
+位置：
+
+```text
+【書名】/.tmp/第x章/link_candidates.md
+```
+
+只放由經文與有效 raw text 明確觸發的候選節點；不得放 AI 憑感覺認為重要的詞。
+
+### 5.3 resolve_link_candidates.py
+
+執行：
+
+```text
+python3 resolve_link_candidates.py 【書名】 X
+```
+
+`X` 一律為阿拉伯數字，不加「第／章」。例：
+
+```text
+python3 resolve_link_candidates.py 創世記 13
+```
+
+輸出：
+
+```text
+【書名】/.tmp/第x章/link_plan.md
+```
+
+link_plan 類別：
+
+| 類別 | 動作 |
+|---|---|
+| A | 已存在，直接使用 |
+| B | 已存在，補充本章資料 |
+| C | 不存在，資料足夠，建正式條目 |
+| D | 不存在，資料不足，建候選條目或待分類 |
+| E | 不應建立 link，改純文字 |
+
+比對優先序：完全同名 → YAML aliases → 同義詞表 → fuzzy 候選 → 同名不同分類 → 書卷/人物衝突 → alias 格式確認。歧義不得自動新建，放 D 或 E。
+
+### 5.4 link_plan 不是資料來源
+
+`link_plan.md` 只決定「用哪個條目、建在哪裡、A-E 類別、由哪些來源觸發」。寫章節內容或條目內容時必須回到：`raw_data/*.txt`、`source_manifest.md`、`.tmp/` 暫存、章節主檔；不得根據 link_plan 直接編內容。
+
+---
+
+## 6. link_folder 條目規則
+
+### 6.1 分類
+
+條目依主要性質放入一個主分類；其他性質放 `secondary_types`。分類不確定先放 `link_folder/_待分類/`，每卷完成後清理。
+
+### 6.2 正式條目模板
 
 ```md
-[[屬靈淫亂|屬靈姦淫]]
-```
-
-不可新增：
-```text
-link_folder/主題/屬靈姦淫.md
-```
-
-### 歧義處理
-
-若有歧義（同一名稱指向多個既有條目，或書卷人物衝突），
-不要自動建立新條目，放入 link_plan 的 D 類（候選條目）或 E 類（不建立）。
-
----
-
-## 二十二之四、條目分類規則：只允許一個主分類
-
-若一個條目同時具有主題、文化、歷史、神學意義，**不要**在多個資料夾重複建立。
-
-### 禁止的做法
-
-```text
-link_folder/主題/巴力敬拜.md
-link_folder/文化/巴力敬拜.md
-link_folder/歷史/巴力敬拜.md
-link_folder/神學/巴力敬拜.md
-```
-
-### 正確的做法
-
-只建立一個主條目，使用 YAML frontmatter 標註 secondary_types：
-
-```yaml
 ---
 type: 主題
-secondary_types:
-  - 文化
-  - 歷史
-  - 神學
-aliases:
-  - 巴力崇拜
-  - 敬拜巴力
-status: formal
----
-```
-
-### 分類不確定時的處理
-
-若無法決定主分類，先放入：
-```text
-link_folder/_待分類/
-```
-
-`_待分類/` 只作暫存，不能長期堆積。
-每完成一卷書後必須清理 `_待分類/` 中的條目。
-
----
-
-## 二十二之五、正式條目模板：防止無限膨脹
-
-正式條目不可無限制把每章內容往下堆疊（全書完成後可重構）。
-正式條目應使用固定結構，分為**保護區**與**累積區**。
-
-### 模板
-
-```yaml
----
-type: 主題
-secondary_types:
-  - 神學
-aliases:
-  - ...
+secondary_types: [神學]
+aliases: []
 status: formal
 source_scope: collected_only
 ---
@@ -1163,458 +377,174 @@ source_scope: collected_only
 # 條目名稱
 
 ## 定義
-
-（保護區 — 全書完成後重構用）
+（保護區）
 
 ## 核心摘要
-
 （保護區）
 
 ## 按書卷累積
 
-（累積區 — 每章處理時可新增）
-
-### 創世記
-
-#### 第1章
-
-- 觸發來源：
+### 但以理書
+#### 第3章
+- 觸發來源：BH/KC/CT/GT
 - 本章重點：
 - 與本章關聯：
 
-#### 第13章
-
-- ...
-
-### 何西阿書
-
-#### 第1章
-
-- ...
-
 ## 主題發展
-
 （保護區）
 
 ## 相關條目
 
-（累積區）
-
 ## 來源依據
 
-（累積區）
-
 ## 待確認事項
-
-（累積區）
-
-### 累積規則
-
-Agent 只能在以下區塊新增內容：
-- `## 按書卷累積`
-- `## 相關條目`
-- `## 來源依據`
-- `## 待確認事項`
-
-除非使用者明確要求，Agent 不可自行覆寫或大改：
-- `## 定義`
-- `## 核心摘要`
-- `## 主題發展`
-
-**理由**：定義、核心摘要、主題發展是長期重構區，不應被每章處理任務反覆改壞。
-
-### 既有條目補充格式
-
-```markdown
-### 創世記 第13章
-
-- （根據本章資料描述與此條目的具體關聯）
-- 來源：CT, GT, KC, BH
 ```
 
----
+Agent 只能在以下累積區新增：`按書卷累積`、`相關條目`、`來源依據`、`待確認事項`。除非使用者明確要求，不得大改 `定義`、`核心摘要`、`主題發展`。
 
-## 二十二之六、候選條目不能無限堆積
+### 6.3 候選條目模板
 
-所有 `status: candidate` 的條目必須可被管理。
-
-### 候選條目模板
-
-```yaml
+```md
 ---
 type: 主題
 secondary_types: []
 aliases: []
 status: candidate
-created_from: 創世記 第13章
+created_from: 但以理書 第3章
 source_scope: collected_only
 ---
+
+# 條目名稱
+
+## 類型
+
+## 觸發來源
+- [[但以理書/第3章|但以理書 第3章]]：
+
+## 目前資料
+- 根據目前已收集資料整理。
+
+## 相關條目
+
+## 待補充
+- 目前資料不足，日後再擴充或合併。
 ```
 
-### 管理機制
+候選條目不能變成垃圾堆；每卷完成後檢查：多次引用者升級、資料足夠者升級、重複者合併、分類錯者移動、長期無支撐者保留或移除 link。
 
-建立 Obsidian 儀表板（若使用 Dataview 可用它列出所有 candidate 條目）：
+### 6.4 更新既有條目
+
+既有條目也必須由本章資料觸發才更新。可補：觸發來源、聖經出現、與本章關聯、神學意義、相關條目、待確認事項。不得加入本章來源未提內容，不得重複貼相同內容。
+
+### 6.5 防止條目爆炸
+
+新條目內出現的新詞，不自動生成第二層、第三層條目。每個新 link 仍須通過資料驅動、必要性、已存在檔案、普通詞、候選條目等判斷。
+
+---
+
+## 7. 驗證規則
+
+最終順序：
 
 ```text
-link_folder/_管理/候選條目管理.md
+python3 check_existing_links.py 【書名】/第x章.md --missing
+python3 build_link_index.py
+python3 link_quality_check.py 【書名】
+python3 verify_links.py 【書名】
 ```
 
-### 每卷書完成後的清理
+### 7.1 verify_links.py
 
-每完成一卷書後，必須檢查 candidate 條目：
+Found links 分類：
 
-- **被引用多次者** → 考慮升級 formal
-- **已有足夠來源者** → 升級 formal
-- **與既有條目重複者** → 合併
-- **長期無資料支撐者** → 保留或移除 link
-- **分類錯誤者** → 移動到正確 link folder
+| 類別 | 說明 | blocking |
+|---|---|---|
+| BROKEN_LINKS | 目標不存在於 link_folder、不是章節檔、不是合法聖經引用 | 是 |
+| PENDING_SCRIPTURE_REFS | 書卷存在且章數合法，但本地章節未建 | 否 |
+| INVALID_SCRIPTURE_REFS | 書卷存在但章數超出範圍 | 是 |
+| UNKNOWN_LINKS | 非 link_folder、非章節檔、非合法聖經引用 | 是 |
 
-可用 `review_candidates.py` 產生報告（腳本待建），也可用 Obsidian Dataview 管理。
+PASS 條件：`BROKEN_LINKS=0`、`INVALID_SCRIPTURE_REFS=0`、`UNKNOWN_LINKS=0`。`PENDING_SCRIPTURE_REFS` 可存在。
 
-**重點**：candidate 不能變成垃圾堆。
+合法未來章節引用例：`[[啟示錄13]]`、`[[撒母耳記下5]]`、`[[啟示錄/第13章|啟示錄13章]]`。章數以 `_config/bible_books.json` 判斷，別名在 `BOOK_ALIASES` 維護。
+
+### 7.2 link_quality_check.py
+
+檢查書卷/人物錯連、alias 格式錯誤、短詞過度 link、`[[何西阿]]書` 類後綴錯連、同 alias 指向多 target、target 不在 index、冗長 alias 等。
+
+PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 
 ---
 
-## 二十二之七、link_quality_check.py — 語意品質檢查
+## 8. 一般章節流程
 
-`verify_links.py` 只能檢查檔案是否存在，不能檢查語意是否正確。
-因此必須新增 `link_quality_check.py` 作為驗證流程的一環。
+1. 讀取 `scheme.md`。
+2. 確認書卷與章節。
+3. 檢查書卷資料夾、現有章節檔、完成狀態；已完成且通過驗證者不重做。
+4. 讀取經文：`raw_scripture/{書名}/第{章}.txt`。
+5. 建立 `【書名】/.tmp/第x章/`。
+6. 確認 CT/GT/KC/BH/使用者指定來源 URL；不可硬猜。
+7. 對每個已確認 URL 執行 `crawl_bible_text.py` 產生或沿用 `raw_data/*.txt`。
+8. 建立／更新 `source_manifest.md`。
+9. 讀取並檢查有效 raw text。
+10. 執行 `python3 build_link_index.py`。
+11. 根據經文與有效 raw text 建 `link_candidates.md`。
+12. 執行 `python3 resolve_link_candidates.py 【書名】 X` 產生 `link_plan.md`。
+13. 根據 `link_plan.md` 寫 `第x章.md`：經文 + wiki-link + 本章知識節點 + 本章整理。
+14. 根據 `link_plan.md` 建立／更新 link_folder：B 補充、C 正式、D 候選、E 不連。
+15. 執行最終驗證順序，修到 verify 無 blocking、quality 無 critical。
+16. git status → commit → push。
+17. 回報完成狀態、更新檔案、link、條目、驗證結果、commit hash、待確認事項。
 
-### 檢查項目
+---
 
-| # | 檢查項 | 說明 |
-|---|--------|------|
-| 1 | 書卷與人物同名錯連 | `[[何西阿]]書` → 應警告改為 `[[何西阿書]]` |
-| 2 | alias 格式錯誤 | `[[條目|]]` 空 alias 等格式錯誤 |
-| 3 | 短 target 過度 link | `[[手]]`、`[[去]]`、`[[弓]]`、`[[海沙]]` 若無來源明確支撐應警告 |
-| 4 | 經文原詞後綴判斷 | `[[何西阿]]` 後緊接「書」→ 高機率錯連 |
-| 5 | 同一 alias 指向多個 target | 同章中「何西阿」一處連人物、一處連書卷 |
-| 6 | 不存在於 link_index 的 target | 非 scripture 非章節檔的未知 target |
-| 7 | 冗長 alias 檢查 | 超過 3 字的 alias 可能混用 |
+## 9. 超長章節流程
 
-### 用法
+符合任一條件即超長：經文超過 60 節；任一 raw text 超過 60KB；來源合計估計超過 100KB；Agent 判斷 context 可能爆。
+
+超長章節三階段：
+
+### 9.1 來源暫存
+
+1. 讀完整經文並建立章節骨架。
+2. 建 `.tmp/第x章/`。
+3. 確認 URL，用 `crawl_bible_text.py` 產生完整 `raw_data/*.txt`。
+4. 建 `source_manifest.md`。
+5. 檢查 raw text；無效來源不得進後續。
+6. 依自然段落切分有效來源：`001-008_CT.md`、`001-008_GT.md`、`001-008_KC.md`、`001-008_BH.md`。
+7. 第一階段只做暫存與切分；不得整合寫主檔或更新 link_folder。
+
+分段優先按文體自然結構：詩歌詩節／字母段，家譜世代，敘事事件，預言神諭，福音事件，書信論證；無明顯結構才每 10–20 節切。
+
+### 9.2 分段整合
+
+逐段讀同一範圍所有來源暫存檔，跨來源比較後整合進章節主檔，並更新 `link_queue.md`。整合必須由暫存資料支撐，不得過度推論。
+
+### 9.3 link queue 處理
+
+所有分段完成後，彙整 `link_queue.md` → `link_candidates.md` → `resolve_link_candidates.py` → `link_plan.md`，再統一寫 wiki-link 與更新 link_folder。最後完整跑 quality + verify。
+
+---
+
+## 10. commit 與回報
+
+只有以下條件全部成立才能 commit + push：
 
 ```text
-python3 link_quality_check.py           # 全庫檢查
-python3 link_quality_check.py 創世記     # 指定書卷
+verify_links.py: BROKEN_LINKS=0, INVALID_SCRIPTURE_REFS=0, UNKNOWN_LINKS=0
+link_quality_check.py: CRITICAL=0
+所有新建 link_folder 條目有 YAML frontmatter
+所有新建／更新內容有觸發來源
 ```
 
-### 輸出
+建議 commit message：
 
 ```text
-Link Quality Check Report
-Total warnings: N
-├─ Critical: N
-└─ Warning:  N
-
-🔴 [CRITICAL] [[何西阿]]後緊接「書」→ 應為 [[何西阿書]]
-🟡 [WARNING] 短詞 link: [[手]] → 檢查是否為普通詞誤連
-
-Result: PASS (0 blocking errors) / FAIL
-
-### Blocking Error 定義
-link_quality_check.py 必須達到以下條件才視為 PASS (0 blocking errors)：
-- CRITICAL = 0  
-- WARNING 可存在，但必須回報
+Add Daniel chapter 3 integrated study note
+Update Daniel chapter 3 links and knowledge nodes
 ```
 
-**Critical 警告必須修正才能 commit。**
-**Warning 警告應檢視，但可視情況判斷是否延後處理。**
-
----
-
-## 二十二之八、link_plan 不是資料來源
-
-`link_plan.md` 只是一份執行計畫，不是內容依據。
-
-Agent 不可根據 `link_plan.md` 直接撰寫條目內容。
-處理條目時，必須回到：
-
-1. 原始來源暫存檔
-2. 清理後的來源資料
-3. 章節主檔
-4. 本章整理內容
-
-`link_plan.md` 只回答：
-- 要處理哪個條目？
-- 放在哪個 folder？
-- 是更新既有條目還是新增？
-- 由哪些來源觸發？
-
-**但不回答**：這個條目應該寫什麼內容？
-內容必須回到資料來源。
-
----
-
-## 二十二之九、章節主檔不要變成資料倉庫
-
-章節主檔是讀經入口，不是五大來源全文摘要倉庫。
-
-### 章節主檔應保留
-
-- 完整經文
-- 經文上的資料驅動 wiki-link
-- 本章知識節點
-- 本章整理
-- 重要補充
-- 待確認事項
-- 資料來源
-
-### 不要做的事
-
-不要把 CT、GT、KC、BH 的內容逐段大量塞進主檔。
-來源資料只應被整理成對讀經有幫助的結論。
-
-### 若資料太多
-
-應沉澱到 `link_folder/` 對應條目中。
-或保留在 `【書名】/.tmp/第x章/`。
-但 `.tmp` 不是正式知識庫內容，僅供暫存。
-
----
-
-## 二十二之十、聖經章節引用與 verify_links 過濾規則
-
-不是所有不存在的 wiki-link 都視為 broken link。
-
-若 wiki-link 指向尚未建立的聖經章節，但該引用符合聖經書卷與章數規則，
-應歸類為 `pending_scripture_refs`，不得視為 broken link。
-
-### 合法未來書卷引用範例
-
-- `[[啟示錄13]]`
-- `[[啟示錄4]]`
-- `[[撒母耳記下5]]`
-- `[[詩篇25]]`
-- `[[啟示錄/第13章|啟示錄13章]]`
-
-### 判定方式
-
-若書卷存在於 `_config/bible_books.json` 且章數在合法範圍內，
-即使本地章節檔尚未建立，也視為合法的未來書卷引用。
-
-### 不建議的做法
-
-不建議為所有未來章節先建立空檔案。
-例如不要為了通過 verify 就建立：
-
-```text
-啟示錄/第13章.md
-詩篇/第25篇.md
-撒母耳記下/第5章.md
-```
-
-原因：會污染進度判斷。Agent 看到檔案存在可能誤判為「這章已經處理過」。
-
-除非給 placeholder 加非常嚴格的 frontmatter：
-
-```yaml
----
-status: planned
-content_status: empty_placeholder
----
-```
-
-但整體來說較乾淨的做法是：**不建立空章節檔，由 verify_links.py 把合法未來章節歸類為 pending scripture refs。**
-
----
-
-## 二十二之十一、commit 規則補充
-
-### 一般章節
-
-每完成一章且所有驗證通過後，才能 commit + push。
-
-commit message 建議格式：
-
-```text
-Add Hosea chapter 1 integrated study note
-Update Hosea chapter 1 links and knowledge nodes
-```
-
-### 超長章節
-
-超長章節可以分階段 commit，例如：
-
-```text
-Psalm 119 source cache
-Psalm 119 integrated chapter note
-Psalm 119 link folder updates
-```
-
-但最終完整章節仍必須通過：
-- `verify_links.py`
-- `link_quality_check.py`
-
-才算完成。
-
-### commit 前強制檢查清單
-
-commit 前必須確認：
-- [ ] verify_links.py 輸出：BROKEN LINKS = 0
-- [ ] verify_links.py 輸出：INVALID SCRIPTURE REFS = 0
-- [ ] link_quality_check.py 輸出：CRITICAL = 0
-- [ ] 所有新建的 link_folder 條目有 YAML frontmatter
-- [ ] 所有新建條目有關聯的觸發來源
-
----
-
-## 二十三、章節處理流程
-
-### 一般流程（適用中等長度章節）
-
-1. 讀取 `scheme.md`
-2. 確認目前書卷與章節
-3. 檢查該章主檔是否已存在
-4. 若已存在，先讀取並判斷是否已完成
-5. 抓取主要來源資料（cnbible 經文、ccbiblestudy 註解、ccbiblestudy 拾穗、KingComments、BibleHub Study）
-6. 清理來源內容，提取關鍵資訊
-7. **建立 link index**：執行 `python3 build_link_index.py`
-8. **抽取 link candidates**：根據來源資料，寫入 `【書名】/.tmp/第x章/link_candidates.md`
-9. **解析 candidates**：執行 `python3 resolve_link_candidates.py 【書名】 第x章`，產生 `link_plan.md`
-10. **根據 link_plan 寫章節主檔**：寫入經文 + wiki-link + 補充資料
-11. **根據 link_plan 更新 link folder**：
-    - B類：補充章節資料到既有條目
-    - C類：建立新正式條目
-    - D類：建立候選條目
-12. **最終檢查**：執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`，確認無遺漏
-13. **更新 Index**：執行 `python3 build_link_index.py`
-14. **語意品質檢查**：執行 `python3 link_quality_check.py`
-15. **驗證**：執行 `python3 verify_links.py`
-15. 修正到 verify 無 broken/invalid refs、quality 無 critical warnings
-16. git commit + push
-17. 回報完成狀態
-
-### 超長章節處理流程
-
-若章節符合以下任一條件，視為超長章節：
-
-1. 經文超過 60 節
-2. 任一來源 raw text 超過 60 KB
-3. 五大來源合計預估超過 100 KB
-4. Agent 判斷一次處理可能造成 context 爆掉
-
-超長章節不得一次抓取並整理所有來源。
-
-#### 核心原則
-
-超長章節採用三階段處理：
-- **第一階段：來源暫存** — 分段抓取、清理、存成暫存檔
-- **第二階段：分段整合** — 同一段範圍讀取所有來源暫存檔，整合寫入章節主檔，產生 link queue
-- **第三階段：link queue 處理** — 分批建立／更新 link folder 條目
-
-目的：
-- 避免 context 爆掉
-- 保留不同來源之間的互補性
-- 讓章節主檔仍然是整合後的讀經入口
-- 讓 wiki-link 仍然由已收集資料觸發
-
----
-
-#### 第一階段：來源暫存
-
-1. 先抓取完整經文，建立章節主檔骨架（只有經文 + 標題 + 空區塊）。
-2. 建立暫存資料夾：`【書名】/.tmp/第x章/`
-3. 每個來源依分段範圍存成暫存檔：
-   - `【書名】/.tmp/第x章/001-008_CT.md`
-   - `【書名】/.tmp/第x章/001-008_GT.md`
-   - `【書名】/.tmp/第x章/001-008_KC.md`
-   - `【書名】/.tmp/第x章/001-008_BH.md`
-4. 分段方式優先依經文自然結構：
-   - 詩歌按詩節、字母段或平行結構
-   - 家譜按世代或人物群組
-   - 敘事按事件場景
-   - 預言按神諭、主題轉折或段落
-   - 福音書按事件單元
-   - 書信按論證段落
-   - 若無明顯結構，才按每 10–20 節切分
-
-**第一階段只做：抓取 → 清理（去除網站雜訊）→ 存成暫存檔。**
-**第一階段不要整合寫入章節主檔，也不要立即更新 link folder。**
-
----
-
-#### 第二階段：分段整合
-
-1. 以同一段經文範圍為單位，讀取該段所有來源暫存檔。
-   - 例如處理 001-008 時，只讀取：`001-008_CT.md`、`001-008_GT.md`、`001-008_KC.md`、`001-008_BH.md`
-2. Agent 必須比較同一段中不同來源的互補內容，再整合寫入章節主檔。
-   - 例：CT 提到「復活主題」、GT 提到「生命果子」、KC 提到「第三日」、BH 提到相關互文
-   - 整合時才能判斷：第三日 → 復活 → 生命果子
-   - 但整合仍必須由暫存資料明確支撐，不可由 AI 自行推論過度延伸。
-3. 每段整合完成後，建立或更新 `【書名】/.tmp/第x章/link_queue.md`。
-
----
-
-#### 第三階段：link queue 處理
-
-link queue 是超長章節分段產生的暫存候選清單，不直接驅動建檔。
-
-**處理流程**：
-1. 超長章節完成所有分段整合後，必須將所有分段的 `link_queue.md` 彙整成單一的 `link_candidates.md`。
-2. 執行 `python3 resolve_link_candidates.py` 產生 `link_plan.md`。
-3. 根據 `link_plan.md` 統一寫入章節主檔與更新 link folder。
-
-link queue 格式（僅作暫存）：
-```md
-# 第x章 link queue
-
-## 001-008
-- [[律法的喜樂]] → 主題/（CT, BH）
-- [[遵行神話語]] → 主題/（CT）
-- [[生命果子]] → 主題/（GT）
-```
-
-**link folder 更新規則**：
-- 若條目不存在，依 scheme.md 建立正式條目或候選條目。
-- 若條目已存在，讀取既有條目，根據本段暫存來源補充新內容。
-- 不要重複貼上既有內容。
-- 不要根據 AI 常識補充暫存來源沒有提到的內容。
-- 若暫存資料不足，只建立候選條目或放入待確認事項。
-
----
-
-#### 驗證與 commit
-
-- 每完成一個大段，可選擇執行局部 verify。
-- link queue 全部處理完後，執行完整 `link_quality_check.py`。
-- 再執行完整 `verify_links.py`。
-- 修正 missing links 與 quality critical 問題。
-- 重跑驗證直到 0 blocking errors。
-- 只有 verify 到 0 blocking errors、quality 無 critical 警告後才能 commit + push。
-
----
-
-#### 超長章節禁止事項
-
-1. 禁止一次把超長章節五大來源全部塞進 context。
-2. 禁止每個來源各自整理後直接寫入主檔，卻不做跨來源整合。
-3. 禁止暫存檔未清理就直接寫進主檔。
-4. 禁止根據暫存檔不存在的資料建立 link。
-5. 禁止 link queue 產生沒有資料支撐的節點。
-6. 禁止為了省事跳過最終整章 verify。
-7. 禁止為了省事跳過最終整章 quality check。
-
----
-
-## 二十三（舊）、commit 規則（延伸規則見二十二之十一）
-
-每完成一章且驗證通過後（verify + quality check），才能 commit + push。
-
-commit message 建議格式：
-
-```text
-Add Hosea chapter 1 integrated study note
-Update Hosea chapter 1 links and knowledge nodes
-```
-
-若是其他書卷，替換書卷名稱與章節。
-
----
-
-## 二十四、完成回報格式
-
-每章完成後，用以下格式回報：
+完成回報格式：
 
 ```md
 ## 完成回報
@@ -1626,58 +556,43 @@ Update Hosea chapter 1 links and knowledge nodes
 - 新增候選條目：
 - 補充既有條目：
 - verify_links.py 結果：
+- link_quality_check.py 結果：
 - git commit hash：
 - 待確認事項：
 ```
 
 ---
 
-## 二十五、禁止事項
+## 11. 禁止事項
 
 嚴禁：
+1. 跳過 `scheme.md`、`build_link_index.py`、`resolve_link_candidates.py`、`check_existing_links.py`、`link_quality_check.py`、`verify_links.py`。
+2. 使用 gbrain 寫入。
+3. 補充資料跳過 `crawl_bible_text.py`，直接用網頁內容整理。
+4. 未確認 URL 就硬猜；抓到 404、目錄、空內容、亂碼、導覽列仍硬用。
+5. raw_data 已存在且未確認錯誤時任意 `--overwrite`。
+6. 未產生 `link_plan.md` 就把 wiki-link 寫入章節主檔。
+7. 根據 `link_plan.md` 直接編內容而不回 raw text。
+8. 只靠 AI 記憶、常識、感覺建立 link。
+9. 建立無本地 markdown 檔案閉合的 wiki-link。
+10. 建立資料不足、只有 2–3 行的薄弱 stub。
+11. 普通名詞大量誤連；短詞當 target；書卷錯連人物；章節寫 `[[第1章]]`。
+12. 同一條目在多個 link folder 重複建立。
+13. 為單一零散概念開新 link folder。
+14. 為未來章節預建空章節檔。
+15. 把 CT/GT/KC/BH 大量全文塞進章節主檔。
+16. 已完成且通過驗證的章節未檢查就重做。
+17. 驗證未通過就 commit。
+18. 超長章節一次塞滿 context、跳過分段整合、跳過最終整章 verify/quality。
 
-1. 跳過 `scheme.md`
-2. 跳過 `verify_links.py`
-3. 跳過 `link_quality_check.py`
-4. 使用 gbrain 寫入
-5. 只靠 Agent 記憶補連結
-6. 建立沒有本地 markdown 檔案的 wiki-link
-7. 為了補條目而任意外搜薄弱資料
-8. 建立只有 2-3 行的薄弱 stub
-9. 把普通名詞大量誤連成 wiki-link
-10. 把章節檔寫成 `[[第1章]]`
-11. 把書卷錯連成人物，例如 `[[何西阿]]書`
-12. 已完成章節未檢查就重做
-13. 驗證未通過就 commit
-14. 未確認 URL 就硬猜來源網址
-15. 把五大來源硬分配到固定資料夾
-16. 為單一零散概念亂開新 link folder
-17. 因 AI 覺得某概念重要就建立 link
-18. 建立目前資料沒有提到、沒有支撐的 link
-19. 為了讓知識庫看起來豐富而製造 link
-20. 同一個條目在多個 link folder 重複建立（見二十二之四）
-21. 根據 link_plan.md 直接撰寫條目內容而不回到來源（見二十二之八）
-22. 把五大來源內容大量塞進章節主檔（見二十二之九）
-23. 為未來章節預先建立空白章節檔（見二十二之十）
+---
 
----\n\n## 二十七、規則優先級\n\n若本 scheme 內不同章節對同一流程或格式有不同描述，以以下優先級為準：\n\n1. 二十六、最重要的總原則\n2. 二十二之一至二十二之十一：link governance 與長期治理規則\n3. 二十三、章節處理流程\n4. 前文中的格式範例\n\n若格式範例與治理流程衝突，以治理流程為準。\n\n---\n\n## 二十六、最重要的總原則
+## 12. 最短總原則
 
-1. `scheme.md` 是最高規則。
-2. 每章一個整合型章節主檔。
-3. 經文內容直接建立 wiki-link。
-4. wiki-link 必須由已收集資料明確觸發。
-5. 不可由 AI 憑感覺、常識或主觀判斷製造 link。
-6. 本章知識節點只列額外補充或核心知識節點，不必重複所有經文 link。
-7. 五大來源提供資料，但不固定對應某個資料夾。
-8. 可累積的內容沉澱到全域 link folders。
-9. link folders 不限於人物、地點、主題，可依資料自然擴充。
-10. 所有 wiki-link 必須閉合到本地 markdown。
-11. 資料不足但已被來源明確觸發時，可以建立候選條目。
-12. 資料沒有觸發時，不建立 link。
-13. 每章必須 verify 到 0 blocking errors 才能 commit。
-14. 每章必須 quality check 到 0 critical warnings。
-15. link_plan.md 必須在寫入章節主檔前產生。
-16. 條目只允許一個主分類，用 secondary_types 標註次分類。
-17. 正式條目的定義/核心摘要/主題發展為保護區，不可每章亂改。
-18. 所有輸出使用繁體中文。
-19. 不可為未來章節預建空檔案。
+```text
+先讀 scheme → 讀本地經文 → 確認 URL → crawl 成 raw_data → 檢查 raw text
+→ build index → link_candidates → resolve → link_plan
+→ 寫章節主檔 → 更新 link_folder → quality + verify 到 PASS → commit
+```
+
+所有 link 必須由已收集資料觸發；所有內容必須能回到 raw text 或本章經文；所有 wiki-link 必須閉合到本地 markdown；所有正式條目的保護區不可被每章任務亂改。
