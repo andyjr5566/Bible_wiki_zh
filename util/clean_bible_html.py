@@ -2,9 +2,9 @@
 """Extract useful chapter text from CCBibleStudy, KingComments, and BibleHub.
 
 Examples:
-    python clean_bible_html.py *.html
-    python clean_bible_html.py kc_dan_09.html --stdout
-    python clean_bible_html.py raw_html --output-dir cleaned
+    python util/clean_bible_html.py *.html
+    python util/clean_bible_html.py kc_dan_09.html --stdout
+    python util/clean_bible_html.py raw_html --output-dir cleaned
 """
 
 from __future__ import annotations

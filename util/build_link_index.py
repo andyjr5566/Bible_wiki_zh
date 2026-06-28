@@ -9,9 +9,11 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parent
+UTIL_DIR = Path(__file__).resolve().parent
+ROOT = UTIL_DIR.parent
 LINK_FOLDER = ROOT / "link_folder"
-INDEX_FILE = LINK_FOLDER / "_index" / "link_index.json"
+OUTPUT_DIR = UTIL_DIR / "output"
+INDEX_FILE = OUTPUT_DIR / "link_index.json"
 RESOLUTION_FILE = ROOT / "_config" / "link_conflict_resolutions.yaml"
 EXCLUDE_PARTS = {"_index", "_管理", "_待分類", "_template"}
 

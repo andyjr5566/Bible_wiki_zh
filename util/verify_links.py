@@ -16,15 +16,17 @@ verify_links.py — Wiki-link 驗證工具（v3）
   UNKNOWN LINKS: N
 
 Usage:
-  python3 verify_links.py [書卷名]
-  python3 verify_links.py --book=創世記
+  python util/verify_links.py [書卷名]
+  python util/verify_links.py --book=創世記
 """
 import re
 import os
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+UTIL_DIR = Path(__file__).resolve().parent
+ROOT = UTIL_DIR.parent
+OUTPUT_DIR = UTIL_DIR / "output"
 LINK_FOLDER_PARENT = "link_folder"
 
 # ========== 1. 聖經書卷章數資料 ==========
@@ -395,12 +397,13 @@ def build_report(broken_links, pending_refs, invalid_refs, root_path):
         }
     }
     
-    report_path = root_path / "verify_report.json"
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = OUTPUT_DIR / "verify_report.json"
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
     
     # 人類可讀輸出
-    txt_path = root_path / "verify_result.txt"
+    txt_path = OUTPUT_DIR / "verify_result.txt"
     with open(txt_path, 'w', encoding='utf-8') as f:
         f.write("=" * 60 + "\n")
         f.write("  Wiki-Link Verification Report\n")

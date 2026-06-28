@@ -8,8 +8,9 @@ from pathlib import Path
 
 from resolve_link_candidates import has_book_chapter_data
 
-ROOT = Path(__file__).resolve().parent
-INDEX_FILE = ROOT / "link_folder" / "_index" / "link_index.json"
+UTIL_DIR = Path(__file__).resolve().parent
+ROOT = UTIL_DIR.parent
+INDEX_FILE = UTIL_DIR / "output" / "link_index.json"
 
 
 def parse_chapter_path(path):

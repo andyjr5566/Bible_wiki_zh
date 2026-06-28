@@ -168,7 +168,11 @@ def main():
     errors, warnings = validate(args.base)
     if args.report:
         report = {"errors": errors, "warnings": warnings}
-        (ROOT / args.report).write_text(
+        report_path = Path(args.report)
+        if not report_path.is_absolute():
+            report_path = ROOT / "util" / "output" / report_path
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(
             json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
     for item in errors:

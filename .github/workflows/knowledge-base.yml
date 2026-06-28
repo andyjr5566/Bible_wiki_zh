@@ -15,9 +15,9 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install PyYAML
-      - run: python -m unittest discover -s tests -v
-      - run: python build_link_index.py --check
-      - run: python validate_knowledge_base.py --base HEAD^
-      - run: python link_quality_check.py
-      - run: python verify_links.py
-      - run: python audit_knowledge_base.py --check-due
+      - run: python -m unittest discover -s util/tests -v
+      - run: python util/build_link_index.py --check
+      - run: python util/validate_knowledge_base.py --base HEAD^
+      - run: python util/link_quality_check.py
+      - run: python util/verify_links.py
+      - run: python util/audit_knowledge_base.py --check-due

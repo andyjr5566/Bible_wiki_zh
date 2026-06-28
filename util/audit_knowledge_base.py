@@ -11,7 +11,7 @@ import yaml
 
 from build_link_index import ROOT, collect_entries, load_resolutions
 
-REPORT_DIR = ROOT / "_reports"
+REPORT_DIR = ROOT / "util" / "output" / "audits"
 POLICY_FILE = ROOT / "_config" / "maintenance_policy.yaml"
 BOOKS_FILE = ROOT / "_config" / "bible_books.json"
 
@@ -34,7 +34,7 @@ def link_usage():
     counter = Counter()
     pattern = re.compile(r"\[\[([^\]|]+)")
     for md in ROOT.rglob("*.md"):
-        if ".git" in md.parts or "_reports" in md.parts:
+        if ".git" in md.parts or (ROOT / "util" / "output") in md.parents:
             continue
         try:
             counter.update(pattern.findall(md.read_text(encoding="utf-8")))

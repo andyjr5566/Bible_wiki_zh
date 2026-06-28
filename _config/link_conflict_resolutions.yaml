@@ -1,5 +1,5 @@
 # 已人工確認、尚待全卷清理的既有衝突。
-# 新衝突若未列於此，build_link_index.py 會失敗。
+# 新衝突若未列於此，util/build_link_index.py 會失敗。
 titles:
   三一神同工: link_folder/神學/三一神同工.md
   信心與忍耐: link_folder/神學/信心與忍耐.md

@@ -14,8 +14,8 @@ link_quality_check.py — 語意品質檢查（不取代 verify_links.py）
 輸出：link_quality_report.json（非破壞性，僅警告）
 
 Usage:
-  python3 link_quality_check.py [書卷名]
-  python3 link_quality_check.py --book=創世記
+  python util/link_quality_check.py [書卷名]
+  python util/link_quality_check.py --book=創世記
 
 回傳：
   exit code 0: 無 critical 警告
@@ -25,9 +25,11 @@ import re
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+UTIL_DIR = Path(__file__).resolve().parent
+ROOT = UTIL_DIR.parent
 LINK_FOLDER_PARENT = "link_folder"
-LINK_INDEX_FILE = ROOT / LINK_FOLDER_PARENT / "_index" / "link_index.json"
+OUTPUT_DIR = UTIL_DIR / "output"
+LINK_INDEX_FILE = OUTPUT_DIR / "link_index.json"
 
 # 聖經書卷名清單（用於後綴判斷）
 BIBLE_BOOK_NAMES = {
@@ -240,7 +242,8 @@ def quality_check(book_name=None):
             all_warnings.extend(ws)
 
     # 寫入報告
-    report_path = ROOT / "link_quality_report.json"
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = OUTPUT_DIR / "link_quality_report.json"
     critical_count = sum(1 for w in all_warnings if w.get("severity") == "critical")
     warning_count = sum(1 for w in all_warnings if w.get("severity") == "warning")
 

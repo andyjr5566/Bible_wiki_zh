@@ -6,8 +6,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-INDEX_FILE = ROOT / "link_folder" / "_index" / "link_index.json"
+UTIL_DIR = Path(__file__).resolve().parent
+ROOT = UTIL_DIR.parent
+INDEX_FILE = UTIL_DIR / "output" / "link_index.json"
 
 SAME_PERSON_MAP = {
     "亞伯拉罕": "亞伯蘭", "亞伯蘭": "亞伯拉罕",
@@ -34,7 +35,7 @@ def normalize_name(value):
 
 def load_index(index_file=INDEX_FILE):
     if not index_file.exists():
-        raise FileNotFoundError("link index 不存在，請先執行 build_link_index.py")
+        raise FileNotFoundError("link index 不存在，請先執行 util/build_link_index.py")
     return json.loads(index_file.read_text(encoding="utf-8"))
 
 
@@ -210,7 +211,7 @@ def write_plan(plan, book, chapter, root=ROOT):
 
 def main():
     if len(sys.argv) != 3:
-        print("用法：python resolve_link_candidates.py <書卷名> <章>")
+        print("用法：python util/resolve_link_candidates.py <書卷名> <章>")
         return 2
     book, chapter = sys.argv[1], sys.argv[2]
     try:

@@ -4,22 +4,22 @@
 使用方式（PowerShell）：
 
 1. 抓取一個網址，輸出至預設的 ``cleaned`` 資料夾：
-   python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm"
+   python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm"
 
 2. 指定純文字輸出資料夾：
-   python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path "D:\\BibleText"
+   python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path "D:\\BibleText"
 
 3. 指定單一 URL 的輸出檔名（省略 .txt 時會自動補上）：
-   python crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path cleaned --output_filename "但以理書第3章"
+   python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path cleaned --output_filename "但以理書第3章"
 
 4. 從文字檔批次讀取網址（每行一個 URL）：
-   python crawl_bible_text.py --url-file urls.txt --output_path cleaned --delay 1
+   python util/crawl_bible_text.py --url-file urls.txt --output_path cleaned --delay 1
 
 5. 同時保留抓取到的原始 HTML：
-   python crawl_bible_text.py --url-file urls.txt --output_path cleaned --save-html raw
+   python util/crawl_bible_text.py --url-file urls.txt --output_path cleaned --save-html raw
 
 6. 覆蓋已存在的輸出檔案：
-   python crawl_bible_text.py --url-file urls.txt --output_path cleaned --overwrite
+   python util/crawl_bible_text.py --url-file urls.txt --output_path cleaned --overwrite
 
 ``--output_path`` 是選填參數；未指定時會儲存至目前目錄下的 ``cleaned``。
 它與既有的 ``-o``、``--output-dir`` 是相同參數的不同寫法。
