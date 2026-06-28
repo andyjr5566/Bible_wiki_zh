@@ -209,6 +209,10 @@ https://biblehub.com/study/{book_slug}/{章}.htm
 ---
 
 ## 本章整理
+
+## 參考資料
+<url>
+<url>
 ```
 
 規則：
@@ -369,6 +373,7 @@ Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of
 - `→` 右側只放主分類，必須使用 `link_folder/` 的合法分類名稱，不得把經節、說明或括號註解混入分類。
 - 每個候選必須使用 `- ` 項目符號。空行與 `#` 標題不視為候選。
 - 候選必須由經文或有效 raw text 觸發，但通常不必在每一列重複列出來源，以節省 token；詳細依據由 `source_manifest.md`、raw text 與後續整理保留。
+- 候選名稱中禁止使用 `/`、`\`、`<`、`>`、`:`、`"`、`|`、`?`、`*` 等檔案系統不安全字元
 
 候選名稱可能有歧義、分類理由不直觀，或需要留下稽核線索時，才選擇性加入 `— 觸發依據`：
 
@@ -483,7 +488,6 @@ source_scope: collected_only
 ### 但以理書
 <!-- accumulation:但以理書:3:start -->
 #### 第3章
-- 觸發來源：BH/KC/CT/GT
 - 本章重點：
 - 與本章關聯：
 <!-- accumulation:但以理書:3:end -->
@@ -531,7 +535,7 @@ source_scope: collected_only
 
 ### 6.4 更新既有條目
 
-既有條目也必須由本章資料觸發才更新。可補：觸發來源、聖經出現、與本章關聯、神學意義、相關條目。不得加入本章來源未提內容，不得重複貼相同內容。
+既有條目也必須由本章資料觸發才更新。可補：聖經出現、與本章關聯、神學意義、相關條目。不得加入本章來源未提內容，不得重複貼相同內容。
 
 ### 6.5 B 類安全累積流程
 
@@ -550,8 +554,6 @@ python util/link_updates.py prepare 【書名】 X
 Agent 必須回到本章經文與有效 raw text，逐項填入：
 - `summary`：本章重點
 - `relation`：與本章關聯
-- `sources`：觸發來源代碼
-- `source_files`：實際本地來源檔案
 
 先預覽，再套用：
 
@@ -576,7 +578,7 @@ python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml
 - 工具只負責安全寫入，內容仍由經文與 raw text 驅動。
 - 重跑必須冪等，不得重複新增同一章。
 - 工具只可改累積標記區，不得改正式條目的保護區。
-- manifest 缺少摘要、關聯、來源或來源檔案時不得套用。
+- manifest 缺少摘要、關聯、來源時不得套用。
 
 ### 6.6 防止條目爆炸
 
@@ -706,7 +708,6 @@ util/link_quality_check.py: CRITICAL=0
 util/validate_knowledge_base.py: ERRORS=0
 util/audit_knowledge_base.py --check-due: PASS
 所有新建 link_folder 條目有 YAML frontmatter
-所有新建／更新內容有觸發來源
 ```
 
 建議 commit message：

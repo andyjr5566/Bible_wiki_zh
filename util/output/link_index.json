@@ -924,6 +924,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神七次對雅各說話": {
+    "path": "link_folder/互文/神七次對雅各說話.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "神七次對雅各說話",
+    "status": "formal",
+    "aliases": []
+  },
   "羅馬書九章": {
     "path": "link_folder/互文/羅馬書九章.md",
     "type": "互文",
@@ -2040,6 +2048,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伊迦爾撒哈杜他": {
+    "path": "link_folder/原文/伊迦爾撒哈杜他.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "伊迦爾撒哈杜他",
+    "status": "formal",
+    "aliases": []
+  },
   "但（伸冤）": {
     "path": "link_folder/原文/但（伸冤）.md",
     "type": "原文",
@@ -2178,6 +2194,14 @@
     "status": "formal",
     "aliases": []
   },
+  "米斯巴": {
+    "path": "link_folder/原文/米斯巴.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "米斯巴",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟（增添／除去）": {
     "path": "link_folder/原文/約瑟（增添／除去）.md",
     "type": "原文",
@@ -2215,6 +2239,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "迦得（幸運）",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦累得": {
+    "path": "link_folder/原文/迦累得.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "迦累得",
     "status": "formal",
     "aliases": []
   },
@@ -2458,12 +2490,28 @@
     "status": "formal",
     "aliases": []
   },
+  "基列": {
+    "path": "link_folder/地點/基列.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基列",
+    "status": "formal",
+    "aliases": []
+  },
   "基列亞巴": {
     "path": "link_folder/地點/基列亞巴.md",
     "type": "地點",
     "secondary_types": [],
     "title": "基列亞巴",
     "status": "candidate",
+    "aliases": []
+  },
+  "基列山": {
+    "path": "link_folder/地點/基列山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基列山",
+    "status": "formal",
     "aliases": []
   },
   "基拉耳": {
@@ -2884,6 +2932,25 @@
     "status": "candidate",
     "aliases": []
   },
+  "婚宴與剪羊毛風俗": {
+    "path": "link_folder/文化/婚宴與剪羊毛風俗.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "婚宴與剪羊毛風俗",
+    "status": "formal",
+    "aliases": []
+  },
+  "家神像_特拉芬": {
+    "path": "link_folder/文化/家神像_特拉芬.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "家神像_特拉芬",
+    "status": "formal",
+    "aliases": [
+      "家神像_特拉芬",
+      "特拉芬"
+    ]
+  },
   "工價與雇約": {
     "path": "link_folder/文化/工價與雇約.md",
     "type": "文化",
@@ -2912,6 +2979,22 @@
       "立柱澆油"
     ]
   },
+  "立約石堆與柱子": {
+    "path": "link_folder/文化/立約石堆與柱子.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "立約石堆與柱子",
+    "status": "formal",
+    "aliases": []
+  },
+  "米斯巴作為瞭望塔與鑒察": {
+    "path": "link_folder/文化/米斯巴作為瞭望塔與鑒察.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "米斯巴作為瞭望塔與鑒察",
+    "status": "formal",
+    "aliases": []
+  },
   "許願": {
     "path": "link_folder/文化/許願.md",
     "type": "文化",
@@ -2932,11 +3015,45 @@
     "status": "formal",
     "aliases": []
   },
+  "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得": {
+    "path": "link_folder/文化/雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得",
+    "status": "formal",
+    "aliases": [
+      "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得"
+    ]
+  },
   "風茄（催情果）": {
     "path": "link_folder/文化/風茄（催情果）.md",
     "type": "文化",
     "secondary_types": [],
     "title": "風茄（催情果）",
+    "status": "formal",
+    "aliases": []
+  },
+  "努斯泥板與家神像": {
+    "path": "link_folder/歷史/努斯泥板與家神像.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "努斯泥板與家神像",
+    "status": "formal",
+    "aliases": []
+  },
+  "十次改工價": {
+    "path": "link_folder/歷史/十次改工價.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "十次改工價",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各二十年服事": {
+    "path": "link_folder/歷史/雅各二十年服事.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "雅各二十年服事",
     "status": "formal",
     "aliases": []
   },
@@ -2974,6 +3091,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "亞伯拉罕之約的應驗",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞伯拉罕的神與我同在": {
+    "path": "link_folder/神學/亞伯拉罕的神與我同在.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "亞伯拉罕的神與我同在",
     "status": "formal",
     "aliases": []
   },
@@ -3064,6 +3189,14 @@
     "aliases": [
       "以撒豫表基督"
     ]
+  },
+  "伯特利的神": {
+    "path": "link_folder/神學/伯特利的神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "伯特利的神",
+    "status": "formal",
+    "aliases": []
   },
   "信心的危機": {
     "path": "link_folder/神學/信心的危機.md",
@@ -3397,6 +3530,17 @@
     "status": "formal",
     "aliases": []
   },
+  "敬畏以撒的神": {
+    "path": "link_folder/神學/敬畏以撒的神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "敬畏以撒的神",
+    "status": "formal",
+    "aliases": [
+      "敬畏以撒的神",
+      "以撒的敬畏"
+    ]
+  },
   "敬畏神": {
     "path": "link_folder/神學/敬畏神.md",
     "type": "神學",
@@ -3529,6 +3673,22 @@
     "status": "formal",
     "aliases": []
   },
+  "神在夢中顯現與引導": {
+    "path": "link_folder/神學/神在夢中顯現與引導.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神在夢中顯現與引導",
+    "status": "formal",
+    "aliases": []
+  },
+  "神對不義者的約束": {
+    "path": "link_folder/神學/神對不義者的約束.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神對不義者的約束",
+    "status": "formal",
+    "aliases": []
+  },
   "神是生育的源頭": {
     "path": "link_folder/神學/神是生育的源頭.md",
     "type": "神學",
@@ -3560,6 +3720,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的同在",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的同在與保護": {
+    "path": "link_folder/神學/神的同在與保護.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的同在與保護",
     "status": "formal",
     "aliases": []
   },
@@ -3897,6 +4065,14 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華": {
+    "path": "link_folder/耶和華.md",
+    "type": "link_folder",
+    "secondary_types": [],
+    "title": "耶和華",
+    "status": "candidate",
+    "aliases": []
+  },
   "井權與牧羊取水規矩": {
     "path": "link_folder/背景/井權與牧羊取水規矩.md",
     "type": "背景",
@@ -3987,6 +4163,22 @@
     "status": "formal",
     "aliases": []
   },
+  "拉班假冒為善的送行": {
+    "path": "link_folder/解經爭議/拉班假冒為善的送行.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "拉班假冒為善的送行",
+    "status": "formal",
+    "aliases": []
+  },
+  "拉結偷神像的動機": {
+    "path": "link_folder/解經爭議/拉結偷神像的動機.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "拉結偷神像的動機",
+    "status": "formal",
+    "aliases": []
+  },
   "為何咒詛迦南而非含": {
     "path": "link_folder/解經爭議/為何咒詛迦南而非含.md",
     "type": "解經爭議",
@@ -4016,6 +4208,22 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "神的兒子們",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各「偷走」拉班的心機": {
+    "path": "link_folder/解經爭議/雅各「偷走」拉班的心機.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "雅各「偷走」拉班的心機",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各不知情發下咒詛": {
+    "path": "link_folder/解經爭議/雅各不知情發下咒詛.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "雅各不知情發下咒詛",
     "status": "formal",
     "aliases": []
   },
@@ -4115,6 +4323,9 @@
   "亞拉巴海": {
     "alias_of": "鹽海"
   },
+  "特拉芬": {
+    "alias_of": "家神像_特拉芬"
+  },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
   },
@@ -4135,6 +4346,9 @@
   },
   "神的公義與審判": {
     "alias_of": "審判全地的主豈不行公義"
+  },
+  "以撒的敬畏": {
+    "alias_of": "敬畏以撒的神"
   },
   "敬畏耶和華": {
     "alias_of": "敬畏神"

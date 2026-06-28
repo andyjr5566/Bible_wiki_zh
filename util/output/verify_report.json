@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 3899,
+  "valid_links_count": 4163,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 106,
+  "pending_scripture_refs_count": 105,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -155,11 +155,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第31章",
-      "book": "創世記",
-      "chapter": 31
     },
     {
       "entity": "創世記/第32章",
@@ -945,11 +940,6 @@
           10
         ],
         [
-          "創世記/第31章",
-          "創世記",
-          31
-        ],
-        [
           "撒母耳記下/第8章",
           "撒母耳記下",
           8
@@ -1320,11 +1310,6 @@
           10
         ],
         [
-          "創世記/第31章",
-          "創世記",
-          31
-        ],
-        [
           "撒母耳記下/第8章",
           "撒母耳記下",
           8
@@ -1398,13 +1383,6 @@
           "那鴻書/第1章",
           "那鴻書",
           1
-        ]
-      ],
-      "link_folder/地點/巴旦亞蘭.md": [
-        [
-          "創世記/第31章",
-          "創世記",
-          31
         ]
       ],
       "link_folder/地點/希伯崙.md": [
