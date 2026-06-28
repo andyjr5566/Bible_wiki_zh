@@ -19,7 +19,17 @@ from build_link_index import (
 )
 
 VALID_STATUS = {"formal", "candidate"}
-PROTECTED_HEADINGS = {"定義", "定義／基本資料", "核心摘要", "主題發展"}
+FORMAL_H2 = ["定義", "核心摘要", "按書卷累積", "主題發展", "相關條目", "來源依據"]
+CANDIDATE_H2 = ["類型", "觸發來源", "目前資料", "相關條目", "待補充"]
+PROTECTED_HEADINGS = {
+    "定義", "定義／基本資料", "定義／核心摘要", "定定義／核心摘要",
+    "核心摘要", "主題發展",
+}
+PROTECTED_CANONICAL = {
+    "定義／基本資料": "定義",
+    "定義／核心摘要": "定義",
+    "定定義／核心摘要": "定義",
+}
 MARKER_RE = re.compile(
     r"<!-- accumulation:(?P<book>[^:]+):(?P<chapter>\d+):"
     r"(?P<edge>start|end) -->"
@@ -82,9 +92,53 @@ def validate_file(path, strict=False):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少定義區")
         if not re.search(r"^##\s+來源依據\s*$", text, re.M):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少來源依據")
+        headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
+        if headings != FORMAL_H2:
+            errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
+    elif status == "candidate":
+        headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
+        if headings != CANDIDATE_H2:
+            errors.append(f"{relative}: 候選條目 H2 順序不符合 scheme")
     if re.search(r"（保護區）|根據目前已收集資料整理。", text):
         warnings.append(f"{relative}: 仍含模板占位文字")
     return errors, warnings
+
+
+def validate_chapter(path):
+    errors = []
+    book = path.parent.name
+    match = re.fullmatch(r"第(\d+)章", path.stem)
+    if not match:
+        return [f"{path.relative_to(ROOT)}: 章節檔名不合法"]
+    chapter = int(match.group(1))
+    text = path.read_text(encoding="utf-8")
+    expected_h1 = f"# {book} 第{chapter}章"
+    h1 = re.search(r"^#\s+.+$", text, re.M)
+    if not h1 or h1.group(0) != expected_h1:
+        errors.append(f"{path.relative_to(ROOT)}: H1 必須是「{expected_h1}」")
+    headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
+    if headings != ["本章知識節點", "本章整理"]:
+        errors.append(f"{path.relative_to(ROOT)}: H2 必須依序為本章知識節點、本章整理")
+    knowledge_match = re.search(
+        r"^## 本章知識節點\s*$([\s\S]*?)(?=^## 本章整理\s*$)", text, re.M
+    )
+    if not knowledge_match or not knowledge_match.group(1).strip():
+        errors.append(f"{path.relative_to(ROOT)}: 本章知識節點不可為空")
+    organization_match = re.search(r"^## 本章整理\s*$([\s\S]+)$", text, re.M)
+    if not organization_match or not organization_match.group(1).strip():
+        errors.append(f"{path.relative_to(ROOT)}: 本章整理不可為空")
+    knowledge = text.find("## 本章知識節點")
+    scripture = text[:knowledge] if knowledge >= 0 else text
+    verses = [int(value) for value in re.findall(r"^(\d+)\.\s", scripture, re.M)]
+    raw = ROOT / "raw_scripture" / book / f"第{chapter}章.txt"
+    if raw.exists():
+        expected_count = len(raw.read_text(encoding="utf-8").splitlines())
+        if verses != list(range(1, expected_count + 1)):
+            errors.append(
+                f"{path.relative_to(ROOT)}: 經文節數／順序不符，"
+                f"實際 {len(verses)}，應為 {expected_count}"
+            )
+    return errors
 
 
 def extract_protected(text):
@@ -97,7 +151,7 @@ def extract_protected(text):
         if heading:
             if current is not None:
                 sections[current] = "\n".join(buffer).strip()
-            name = heading.group(1)
+            name = PROTECTED_CANONICAL.get(heading.group(1), heading.group(1))
             current = name if name in PROTECTED_HEADINGS else None
             buffer = []
         elif current is not None:
@@ -123,8 +177,14 @@ def validate_protected_changes(base):
         )
         if old.returncode:  # 新檔沒有保護區歷史
             continue
-        if extract_protected(old.stdout) != extract_protected(path.read_text(encoding="utf-8")):
-            errors.append(f"{name}: 既有正式條目的保護區被修改")
+        old_sections = extract_protected(old.stdout)
+        new_sections = extract_protected(path.read_text(encoding="utf-8"))
+        changed = [
+            section for section, old_content in old_sections.items()
+            if old_content not in new_sections.get(section, "")
+        ]
+        if changed:
+            errors.append(f"{name}: 既有正式條目的保護區被修改：{', '.join(changed)}")
     return errors
 
 
@@ -155,6 +215,11 @@ def validate(base=None):
         file_errors, file_warnings = validate_file(path, strict=relative in changed)
         errors.extend(file_errors)
         warnings.extend(file_warnings)
+    for book_dir in sorted(ROOT.iterdir()):
+        if not book_dir.is_dir() or not (ROOT / "raw_scripture" / book_dir.name).exists():
+            continue
+        for chapter_path in sorted(book_dir.glob("第*章.md")):
+            errors.extend(validate_chapter(chapter_path))
     if base:
         errors.extend(validate_protected_changes(base))
     return errors, warnings

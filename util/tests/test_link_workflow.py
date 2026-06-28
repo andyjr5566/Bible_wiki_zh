@@ -14,6 +14,7 @@ from resolve_link_candidates import (
     resolve,
 )
 from link_updates import render_block, validate_update
+from normalize_format import normalize_chapter, normalize_entry
 
 
 def entry(title, path, entry_type, aliases=None, secondary=None):
@@ -96,6 +97,36 @@ class UpdateTests(unittest.TestCase):
         })
         self.assertIn("<!-- accumulation:創世記:28:start -->", block)
         self.assertIn("觸發來源：CT", block)
+
+
+class FormatNormalizationTests(unittest.TestCase):
+    def test_chapter_and_entry_use_different_scheme_templates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            chapter = root / "創世記" / "第8章.md"
+            chapter.parent.mkdir()
+            chapter.write_text(
+                "# 創世記 第八章\n\n## 經文\n\n1 起初\n\n---\n\n## 補充資料\n\n內容\n",
+                encoding="utf-8",
+            )
+            rendered_chapter = normalize_chapter(chapter)
+            self.assertIn("# 創世記 第8章", rendered_chapter)
+            self.assertIn("## 本章知識節點", rendered_chapter)
+            self.assertIn("## 本章整理", rendered_chapter)
+            self.assertNotIn("## 定義", rendered_chapter)
+
+            entry = root / "link_folder" / "神學" / "測試.md"
+            entry.parent.mkdir(parents=True)
+            entry.write_text(
+                "---\ntype: 神學\nstatus: formal\nsource_scope: collected_only\n---\n\n"
+                "# 測試\n\n## 定義／基本資料\n\n定義內容\n\n## 來源依據\n\n- CT\n",
+                encoding="utf-8",
+            )
+            rendered_entry = normalize_entry(entry)
+            self.assertIn("## 定義", rendered_entry)
+            self.assertIn("## 核心摘要", rendered_entry)
+            self.assertIn("## 按書卷累積", rendered_entry)
+            self.assertNotIn("## 本章整理", rendered_entry)
 
 
 if __name__ == "__main__":

@@ -106,4 +106,5 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止為比對方便而刪除候選名稱中的括號內容
 - 禁止只用「第x章」字串判斷累積完成，必須同時核對書卷與章數
 - 禁止自動刪除、合併、移動或升級巡檢報告列出的條目；必須人工判斷並回到來源
+- 既有格式需要遷移時，先執行 `python util/normalize_format.py --scope all --dry-run`；套用後必須重跑確認 0 變更，並用 `--verify-base` 確認條目正文未遺失
 - 所有輸出使用繁體中文

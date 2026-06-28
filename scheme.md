@@ -21,6 +21,7 @@ scripture/
 │   ├── build_link_index.py
 │   ├── resolve_link_candidates.py
 │   ├── link_updates.py
+│   ├── normalize_format.py
 │   ├── validate_knowledge_base.py
 │   ├── audit_knowledge_base.py
 │   ├── check_existing_links.py
@@ -600,6 +601,16 @@ python util/audit_knowledge_base.py --check-due
 `util/check_existing_links.py --missing` 必須核對書卷與章數；有缺漏時回傳非零狀態。
 
 `util/validate_knowledge_base.py` 檢查 YAML、分類、alias、重複累積標記、來源標記、正式條目結構與保護區。既有技術債可列 warning；本次新增或更新檔案若違規則為 blocking。
+
+既有成品需要統一格式時，使用：
+
+```text
+python util/normalize_format.py --scope all --dry-run
+python util/normalize_format.py --scope all
+python util/normalize_format.py --scope all --dry-run --verify-base HEAD
+```
+
+正規化必須區分章節主檔、正式條目與候選條目三種模板；不得把三者改成相同格式。套用後第二次 dry-run 必須為 0，正文保存驗證、schema、quality 與 verify 必須全部通過。
 
 單元測試：
 
