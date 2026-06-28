@@ -65,10 +65,6 @@
     "status": "formal",
     "aliases": []
   },
-  "神學": {
-    "alias_of": "以掃的怨恨",
-    "via_secondary_type": true
-  },
   "以掃輕看長子名分": {
     "path": "link_folder/主題/以掃輕看長子名分.md",
     "type": "主題",
@@ -98,10 +94,6 @@
     "title": "以撒的眼睛昏花",
     "status": "formal",
     "aliases": []
-  },
-  "歷史": {
-    "alias_of": "以撒的眼睛昏花",
-    "via_secondary_type": true
   },
   "以撒的禱告": {
     "path": "link_folder/主題/以撒的禱告.md",
@@ -163,16 +155,6 @@
       "prophet",
       "nabi"
     ]
-  },
-  "prophet": {
-    "alias_of": "先知"
-  },
-  "nabi": {
-    "alias_of": "先知"
-  },
-  "原文": {
-    "alias_of": "先知",
-    "via_secondary_type": true
   },
   "刀劍": {
     "path": "link_folder/主題/刀劍.md",
@@ -282,10 +264,6 @@
     "title": "山羊羔皮",
     "status": "formal",
     "aliases": []
-  },
-  "文化": {
-    "alias_of": "山羊羔皮",
-    "via_secondary_type": true
   },
   "巴別塔": {
     "path": "link_folder/主題/巴別塔.md",
@@ -664,10 +642,6 @@
     "status": "formal",
     "aliases": []
   },
-  "互文": {
-    "alias_of": "親嘴",
-    "via_secondary_type": true
-  },
   "言語的混亂": {
     "path": "link_folder/主題/言語的混亂.md",
     "type": "主題",
@@ -1024,9 +998,6 @@
       "Ammonites"
     ]
   },
-  "Ammonites": {
-    "alias_of": "亞捫人"
-  },
   "亞摩利人": {
     "path": "link_folder/人物/亞摩利人.md",
     "type": "人物",
@@ -1044,9 +1015,6 @@
     "aliases": [
       "Abimelech"
     ]
-  },
-  "Abimelech": {
-    "alias_of": "亞比米勒"
   },
   "亞瑪力人": {
     "path": "link_folder/人物/亞瑪力人.md",
@@ -1210,9 +1178,6 @@
       "Ben-Ammi"
     ]
   },
-  "Ben-Ammi": {
-    "alias_of": "便亞米"
-  },
   "偉人": {
     "path": "link_folder/人物/偉人.md",
     "type": "人物",
@@ -1239,9 +1204,6 @@
       "Rebekah"
     ]
   },
-  "Rebekah": {
-    "alias_of": "利百加"
-  },
   "含": {
     "path": "link_folder/人物/含.md",
     "type": "人物",
@@ -1259,9 +1221,6 @@
     "aliases": [
       "善以別"
     ]
-  },
-  "善以別": {
-    "alias_of": "善以別（洗扁王）"
   },
   "基土拉": {
     "path": "link_folder/人物/基土拉.md",
@@ -1409,9 +1368,6 @@
       "Nahor"
     ]
   },
-  "Nahor": {
-    "alias_of": "拿鶴"
-  },
   "挪亞": {
     "path": "link_folder/人物/挪亞.md",
     "type": "人物",
@@ -1438,9 +1394,6 @@
       "Moab"
     ]
   },
-  "Moab": {
-    "alias_of": "摩押"
-  },
   "摩押人": {
     "path": "link_folder/人物/摩押人.md",
     "type": "人物",
@@ -1450,9 +1403,6 @@
     "aliases": [
       "Moabites"
     ]
-  },
-  "Moabites": {
-    "alias_of": "摩押人"
   },
   "撒拉": {
     "path": "link_folder/人物/撒拉.md",
@@ -1504,9 +1454,6 @@
       "比拉"
     ]
   },
-  "比拉": {
-    "alias_of": "比拉（所多瑪王）"
-  },
   "比沙（蛾摩拉王）": {
     "path": "link_folder/人物/比沙（蛾摩拉王）.md",
     "type": "人物",
@@ -1516,9 +1463,6 @@
     "aliases": [
       "比沙"
     ]
-  },
-  "比沙": {
-    "alias_of": "比沙（蛾摩拉王）"
   },
   "猶滴": {
     "path": "link_folder/人物/猶滴.md",
@@ -1550,9 +1494,7 @@
     "secondary_types": [],
     "title": "瑪哈拉",
     "status": "formal",
-    "aliases": [
-      "巴實抹"
-    ]
+    "aliases": []
   },
   "瑪土撒拉": {
     "path": "link_folder/人物/瑪土撒拉.md",
@@ -1579,9 +1521,6 @@
     "aliases": [
       "示納"
     ]
-  },
-  "示納": {
-    "alias_of": "示納（押瑪王）"
   },
   "米甸": {
     "path": "link_folder/人物/米甸.md",
@@ -1720,9 +1659,6 @@
     "aliases": [
       "麥基洗得"
     ]
-  },
-  "麥基洗得": {
-    "alias_of": "麥基洗德"
   },
   "「亞伯拉罕」名字含義": {
     "path": "link_folder/原文/「亞伯拉罕」名字含義.md",
@@ -2120,9 +2056,6 @@
       "拉億"
     ]
   },
-  "拉億": {
-    "alias_of": "但"
-  },
   "何把": {
     "path": "link_folder/地點/何把.md",
     "type": "地點",
@@ -2143,15 +2076,6 @@
       "七之井"
     ]
   },
-  "Beersheba": {
-    "alias_of": "別是巴"
-  },
-  "盟誓的井": {
-    "alias_of": "別是巴"
-  },
-  "七之井": {
-    "alias_of": "別是巴"
-  },
   "利河伯": {
     "path": "link_folder/地點/利河伯.md",
     "type": "地點",
@@ -2169,9 +2093,6 @@
     "aliases": [
       "加低斯巴尼亞"
     ]
-  },
-  "加低斯巴尼亞": {
-    "alias_of": "加低斯"
   },
   "南地": {
     "path": "link_folder/地點/南地.md",
@@ -2271,9 +2192,6 @@
       "Gerar"
     ]
   },
-  "Gerar": {
-    "alias_of": "基拉耳"
-  },
   "基拉耳谷": {
     "path": "link_folder/地點/基拉耳谷.md",
     "type": "地點",
@@ -2308,9 +2226,6 @@
       "以實各谷",
       "加低斯巴尼亞"
     ]
-  },
-  "以實各谷": {
-    "alias_of": "安密巴"
   },
   "尼尼微": {
     "path": "link_folder/地點/尼尼微.md",
@@ -2418,12 +2333,6 @@
       "Moriah",
       "摩利亞山"
     ]
-  },
-  "Moriah": {
-    "alias_of": "摩利亞地"
-  },
-  "摩利亞山": {
-    "alias_of": "摩利亞地"
   },
   "撒冷": {
     "path": "link_folder/地點/撒冷.md",
@@ -2626,12 +2535,8 @@
     "title": "鹽海",
     "status": "formal",
     "aliases": [
-      "死海",
       "亞拉巴海"
     ]
-  },
-  "亞拉巴海": {
-    "alias_of": "鹽海"
   },
   "麥比拉洞": {
     "path": "link_folder/地點/麥比拉洞.md",
@@ -2677,13 +2582,6 @@
       "立柱澆油"
     ]
   },
-  "立柱澆油": {
-    "alias_of": "立石柱與澆油"
-  },
-  "敬拜": {
-    "alias_of": "立石柱與澆油",
-    "via_secondary_type": true
-  },
   "許願": {
     "path": "link_folder/文化/許願.md",
     "type": "文化",
@@ -2714,13 +2612,6 @@
       "不可回頭看",
       "不要回頭看"
     ]
-  },
-  "不要回頭看": {
-    "alias_of": "不可回頭看"
-  },
-  "主題": {
-    "alias_of": "不可回頭看",
-    "via_secondary_type": true
   },
   "亞伯拉罕之約": {
     "path": "link_folder/神學/亞伯拉罕之約.md",
@@ -2807,8 +2698,7 @@
     "title": "以撒豫表基督",
     "status": "formal",
     "aliases": [
-      "以撒豫表基督",
-      "亞伯拉罕豫表父神"
+      "以撒豫表基督"
     ]
   },
   "信心的危機": {
@@ -2860,16 +2750,9 @@
     "title": "公羊代贖",
     "status": "formal",
     "aliases": [
-      "公羊",
       "代贖",
       "substitutionary sacrifice"
     ]
-  },
-  "代贖": {
-    "alias_of": "公羊代贖"
-  },
-  "substitutionary sacrifice": {
-    "alias_of": "公羊代贖"
   },
   "分別善惡的樹": {
     "path": "link_folder/神學/分別善惡的樹.md",
@@ -3003,9 +2886,6 @@
       "雅各的梯子"
     ]
   },
-  "雅各的梯子": {
-    "alias_of": "天梯"
-  },
   "女人的後裔": {
     "path": "link_folder/神學/女人的後裔.md",
     "type": "神學",
@@ -3042,12 +2922,6 @@
       "審判全地的主行公義",
       "神的公義與審判"
     ]
-  },
-  "審判全地的主行公義": {
-    "alias_of": "審判全地的主豈不行公義"
-  },
-  "神的公義與審判": {
-    "alias_of": "審判全地的主豈不行公義"
   },
   "審判已過": {
     "path": "link_folder/神學/審判已過.md",
@@ -3144,9 +3018,6 @@
     "aliases": [
       "敬畏耶和華"
     ]
-  },
-  "敬畏耶和華": {
-    "alias_of": "敬畏神"
   },
   "方舟的豫表": {
     "path": "link_folder/神學/方舟的豫表.md",
@@ -3346,9 +3217,6 @@
       "神記念亞伯蘭"
     ]
   },
-  "神記念亞伯蘭": {
-    "alias_of": "神記念亞伯拉罕"
-  },
   "神試驗亞伯拉罕": {
     "path": "link_folder/神學/神試驗亞伯拉罕.md",
     "type": "神學",
@@ -3361,12 +3229,6 @@
       "神試驗人",
       "神的試驗"
     ]
-  },
-  "神試驗人": {
-    "alias_of": "神試驗亞伯拉罕"
-  },
-  "神的試驗": {
-    "alias_of": "神試驗亞伯拉罕"
   },
   "立約的儀式": {
     "path": "link_folder/神學/立約的儀式.md",
@@ -3438,15 +3300,6 @@
       "在耶和華的山上必有預備"
     ]
   },
-  "Yahweh Yireh": {
-    "alias_of": "耶和華以勒"
-  },
-  "耶和華必預備": {
-    "alias_of": "耶和華以勒"
-  },
-  "在耶和華的山上必有預備": {
-    "alias_of": "耶和華以勒"
-  },
   "耶和華把他關在方舟裡": {
     "path": "link_folder/神學/耶和華把他關在方舟裡.md",
     "type": "神學",
@@ -3468,15 +3321,6 @@
       "永生神",
       "永活的神"
     ]
-  },
-  "El Olam": {
-    "alias_of": "耶和華永生神"
-  },
-  "永生神": {
-    "alias_of": "耶和華永生神"
-  },
-  "永活的神": {
-    "alias_of": "耶和華永生神"
   },
   "耶和華的使者": {
     "path": "link_folder/神學/耶和華的使者.md",
@@ -3506,12 +3350,6 @@
       "耶和華豈有太奇妙的事",
       "神豈有難成的事"
     ]
-  },
-  "耶和華豈有太奇妙的事": {
-    "alias_of": "耶和華豈有難成的事"
-  },
-  "神豈有難成的事": {
-    "alias_of": "耶和華豈有難成的事"
   },
   "聖靈": {
     "path": "link_folder/神學/聖靈.md",
@@ -3720,5 +3558,134 @@
     "title": "神的兒子們",
     "status": "formal",
     "aliases": []
+  },
+  "prophet": {
+    "alias_of": "先知"
+  },
+  "nabi": {
+    "alias_of": "先知"
+  },
+  "Ammonites": {
+    "alias_of": "亞捫人"
+  },
+  "Abimelech": {
+    "alias_of": "亞比米勒"
+  },
+  "Ben-Ammi": {
+    "alias_of": "便亞米"
+  },
+  "Rebekah": {
+    "alias_of": "利百加"
+  },
+  "善以別": {
+    "alias_of": "善以別（洗扁王）"
+  },
+  "Nahor": {
+    "alias_of": "拿鶴"
+  },
+  "Moab": {
+    "alias_of": "摩押"
+  },
+  "Moabites": {
+    "alias_of": "摩押人"
+  },
+  "比拉": {
+    "alias_of": "比拉（所多瑪王）"
+  },
+  "比沙": {
+    "alias_of": "比沙（蛾摩拉王）"
+  },
+  "示納": {
+    "alias_of": "示納（押瑪王）"
+  },
+  "麥基洗得": {
+    "alias_of": "麥基洗德"
+  },
+  "拉億": {
+    "alias_of": "但"
+  },
+  "Beersheba": {
+    "alias_of": "別是巴"
+  },
+  "盟誓的井": {
+    "alias_of": "別是巴"
+  },
+  "七之井": {
+    "alias_of": "別是巴"
+  },
+  "加低斯巴尼亞": {
+    "alias_of": "加低斯"
+  },
+  "Gerar": {
+    "alias_of": "基拉耳"
+  },
+  "以實各谷": {
+    "alias_of": "安密巴"
+  },
+  "Moriah": {
+    "alias_of": "摩利亞地"
+  },
+  "摩利亞山": {
+    "alias_of": "摩利亞地"
+  },
+  "亞拉巴海": {
+    "alias_of": "鹽海"
+  },
+  "立柱澆油": {
+    "alias_of": "立石柱與澆油"
+  },
+  "不要回頭看": {
+    "alias_of": "不可回頭看"
+  },
+  "代贖": {
+    "alias_of": "公羊代贖"
+  },
+  "substitutionary sacrifice": {
+    "alias_of": "公羊代贖"
+  },
+  "雅各的梯子": {
+    "alias_of": "天梯"
+  },
+  "審判全地的主行公義": {
+    "alias_of": "審判全地的主豈不行公義"
+  },
+  "神的公義與審判": {
+    "alias_of": "審判全地的主豈不行公義"
+  },
+  "敬畏耶和華": {
+    "alias_of": "敬畏神"
+  },
+  "神記念亞伯蘭": {
+    "alias_of": "神記念亞伯拉罕"
+  },
+  "神試驗人": {
+    "alias_of": "神試驗亞伯拉罕"
+  },
+  "神的試驗": {
+    "alias_of": "神試驗亞伯拉罕"
+  },
+  "Yahweh Yireh": {
+    "alias_of": "耶和華以勒"
+  },
+  "耶和華必預備": {
+    "alias_of": "耶和華以勒"
+  },
+  "在耶和華的山上必有預備": {
+    "alias_of": "耶和華以勒"
+  },
+  "El Olam": {
+    "alias_of": "耶和華永生神"
+  },
+  "永生神": {
+    "alias_of": "耶和華永生神"
+  },
+  "永活的神": {
+    "alias_of": "耶和華永生神"
+  },
+  "耶和華豈有太奇妙的事": {
+    "alias_of": "耶和華豈有難成的事"
+  },
+  "神豈有難成的事": {
+    "alias_of": "耶和華豈有難成的事"
   }
 }

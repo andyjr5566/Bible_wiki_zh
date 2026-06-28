@@ -1,117 +1,177 @@
 #!/usr/bin/env python3
-"""
-build_link_index.py — 掃描全域 link_folder/，產生 link_folder/_index/link_index.json
-
-掃描時讀取每個 markdown 檔案的 YAML frontmatter，提取：
-  - type: 主分類
-  - secondary_types: 次分類（可選，列表）
-  - aliases: 別名（可選，列表）
-  - status: formal 或 candidate
-
-輸出：
-  link_folder/_index/link_index.json
-
-用法：
-  python3 build_link_index.py
-"""
+"""建立並驗證 link_folder 全域索引。"""
+import argparse
 import json
-import yaml
 import re
+import sys
+import unicodedata
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parent
 LINK_FOLDER = ROOT / "link_folder"
-INDEX_DIR = LINK_FOLDER / "_index"
-INDEX_FILE = INDEX_DIR / "link_index.json"
+INDEX_FILE = LINK_FOLDER / "_index" / "link_index.json"
+RESOLUTION_FILE = ROOT / "_config" / "link_conflict_resolutions.yaml"
+EXCLUDE_PARTS = {"_index", "_管理", "_待分類", "_template"}
+
+
+def normalize_name(value):
+    """只正規化 Unicode 與空白，不刪除具有語義的括號內容。"""
+    return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", str(value))).strip()
 
 
 def extract_frontmatter(text):
-    """完整解析 YAML frontmatter，回傳 dict；無 frontmatter 回傳空 dict"""
-    m = re.match(r'^---\s*\n(.*?)\n---', text, re.DOTALL)
-    if not m:
+    match = re.match(r"^---\s*\n(.*?)\n---", text, re.DOTALL)
+    if not match:
         return {}
-    try:
-        fm = yaml.safe_load(m.group(1))
-        if isinstance(fm, dict):
-            return fm
-        return {}
-    except yaml.YAMLError:
-        return {}
+    data = yaml.safe_load(match.group(1))
+    return data if isinstance(data, dict) else {}
 
 
-def build_index():
-    INDEX_DIR.mkdir(parents=True, exist_ok=True)
+def _as_list(value):
+    if value is None:
+        return []
+    return value if isinstance(value, list) else [value]
 
-    index = {}
 
-    # 排除檔案
-    EXCLUDE_PARTS = {'_index', '_管理', '_待分類', '_template'}
-
-    for md in sorted(LINK_FOLDER.rglob('*.md')):
-        # 跳過管理/模板/暫存
+def collect_entries(link_folder=LINK_FOLDER, root=ROOT):
+    entries = []
+    errors = []
+    for md in sorted(link_folder.rglob("*.md")):
         if EXCLUDE_PARTS & set(md.parts):
             continue
+        try:
+            fm = extract_frontmatter(md.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            errors.append(f"{md}: 無法解析：{exc}")
+            continue
 
-        text = md.read_text(encoding='utf-8')
-        fm = extract_frontmatter(text)
+        category = md.parent.name
+        entry_type = fm.get("type", category)
+        aliases = [normalize_name(x) for x in _as_list(fm.get("aliases")) if str(x).strip()]
+        secondary = [
+            normalize_name(x) for x in _as_list(fm.get("secondary_types")) if str(x).strip()
+        ]
+        title = md.stem
+        if entry_type != category:
+            errors.append(f"{md}: type={entry_type} 與資料夾分類 {category} 不一致")
+        if len(aliases) != len(set(aliases)):
+            errors.append(f"{md}: aliases 內有重複值")
+        entries.append({
+            "path": str(md.relative_to(root)).replace("\\", "/"),
+            "type": entry_type,
+            "secondary_types": secondary,
+            "title": title,
+            "status": fm.get("status", "candidate"),
+            "aliases": aliases,
+        })
+    return entries, errors
 
-        relative = md.relative_to(ROOT)
-        category = md.parent.name  # 人物, 神學, 主題 ...
 
-        # --- 主要條目 ---
-        entry = {
-            "path": str(relative).replace('\\', '/'),
-            "type": fm.get("type", category),           # frontmatter type 優先，否則用資料夾名
-            "secondary_types": fm.get("secondary_types", []),
-            "title": md.stem,
-            "status": fm.get("status", "candidate"),     # 預設 candidate
-            "aliases": fm.get("aliases", []),
-        }
+def load_resolutions(path=RESOLUTION_FILE):
+    if not path.exists():
+        return {"titles": {}, "aliases": {}}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return {
+        "titles": data.get("titles", {}),
+        "aliases": data.get("aliases", {}),
+    }
 
-        # 確保 aliases 是 list
-        if isinstance(entry["aliases"], str):
-            entry["aliases"] = [entry["aliases"]]
-        if isinstance(entry["secondary_types"], str):
-            entry["secondary_types"] = [entry["secondary_types"]]
 
-        index[md.stem] = entry
+def make_index(entries, resolutions=None):
+    """建立索引；名稱歧義一律回報，不能由掃描順序決定勝負。"""
+    resolutions = resolutions or {"titles": {}, "aliases": {}}
+    index = {}
+    owners = {}
+    errors = []
 
-        # --- 別名指向主條目 ---
+    for entry in entries:
+        title = entry["title"]
+        key = normalize_name(title)
+        if key in owners:
+            chosen = resolutions["titles"].get(title)
+            paths = {owners[key], entry["path"]}
+            if chosen not in paths:
+                errors.append(f"重複條目名稱：{title} → {owners[key]} / {entry['path']}")
+                continue
+            if entry["path"] == chosen:
+                index[title] = entry
+                owners[key] = entry["path"]
+            continue
+        owners[key] = entry["path"]
+        index[title] = entry
+
+    alias_owners = {}
+    normalized_titles = {normalize_name(e["title"]): e["title"] for e in entries}
+    for entry in entries:
         for alias in entry["aliases"]:
-            if alias and alias not in index:
-                index[alias] = {"alias_of": md.stem}
+            normalized = normalize_name(alias)
+            resolved_target = resolutions["aliases"].get(alias)
+            if normalized in normalized_titles and normalized_titles[normalized] != entry["title"]:
+                if resolved_target:
+                    continue
+                errors.append(
+                    f"alias 與正式名稱衝突：{alias} → {entry['title']} / "
+                    f"{normalized_titles[normalized]}"
+                )
+                continue
+            previous = alias_owners.get(normalized)
+            if previous and previous != entry["title"]:
+                if resolved_target in {previous, entry["title"]}:
+                    alias_owners[normalized] = resolved_target
+                    index[alias] = {"alias_of": resolved_target}
+                    continue
+                errors.append(f"alias 多重指向：{alias} → {previous} / {entry['title']}")
+                continue
+            alias_owners[normalized] = entry["title"]
+            if alias not in index:
+                index[alias] = {"alias_of": entry["title"]}
 
-        # --- secondary_types 也建立指向 ---
-        for st in entry["secondary_types"]:
-            if st and st not in index:
-                index[st] = {"alias_of": md.stem, "via_secondary_type": True}
+    # secondary_types 是分類資訊，絕不可成為 alias。
+    return index, errors
 
-    # 寫入
-    INDEX_FILE.write_text(
-        json.dumps(index, ensure_ascii=False, indent=2),
-        encoding='utf-8'
-    )
 
-    # 統計
-    formal_count = sum(
-        1 for v in index.values()
-        if isinstance(v, dict) and v.get("status") == "formal"
-    )
-    candidate_count = sum(
-        1 for v in index.values()
-        if isinstance(v, dict) and v.get("status") == "candidate"
-    )
-    alias_count = sum(
-        1 for v in index.values()
-        if isinstance(v, dict) and "alias_of" in v
-    )
+def build_index(link_folder=LINK_FOLDER, index_file=INDEX_FILE, root=ROOT, check=False):
+    entries, errors = collect_entries(link_folder, root)
+    # 舊式 type 值先作相容性警告；新檔由 validator 嚴格阻擋。
+    type_errors = [e for e in errors if "與資料夾分類" in e]
+    errors = [e for e in errors if e not in type_errors]
+    for warning in type_errors:
+        print(f"⚠️ {warning}")
+    index, index_errors = make_index(entries, load_resolutions())
+    errors.extend(index_errors)
+    if errors:
+        for error in errors:
+            print(f"❌ {error}")
+        return False
 
-    print(f"✅ link index 已建立: {INDEX_FILE}")
-    print(f"   共 {len(index)} 條（含別名）")
-    print(f"   ├─ 正式條目: {formal_count}")
-    print(f"   ├─ 候選條目: {candidate_count}")
-    print(f"   └─ 別名指向: {alias_count}")
+    rendered = json.dumps(index, ensure_ascii=False, indent=2) + "\n"
+    if check:
+        if not index_file.exists() or index_file.read_text(encoding="utf-8") != rendered:
+            print(f"❌ link index 不是最新：{index_file}")
+            return False
+        print(f"✅ link index 已是最新：{index_file}")
+    else:
+        index_file.parent.mkdir(parents=True, exist_ok=True)
+        index_file.write_text(rendered, encoding="utf-8")
+        print(f"✅ link index 已建立：{index_file}")
+
+    formal = sum(e["status"] == "formal" for e in entries)
+    candidate = sum(e["status"] == "candidate" for e in entries)
+    aliases = sum(1 for value in index.values() if "alias_of" in value)
+    print(f"   共 {len(entries)} 個條目、{aliases} 個 alias")
+    print(f"   ├─ 正式條目：{formal}")
+    print(f"   └─ 候選條目：{candidate}")
+    return True
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true", help="只確認索引可重現且為最新")
+    args = parser.parse_args()
+    sys.exit(0 if build_index(check=args.check) else 1)
 
 
 if __name__ == "__main__":
-    build_index()
+    main()

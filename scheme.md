@@ -18,9 +18,15 @@ scripture/
 ├── _config/bible_books.json
 ├── build_link_index.py
 ├── resolve_link_candidates.py
+├── link_updates.py
+├── validate_knowledge_base.py
+├── audit_knowledge_base.py
 ├── check_existing_links.py
 ├── link_quality_check.py
 ├── verify_links.py
+├── tests/
+├── _reports/
+├── .github/workflows/knowledge-base.yml
 ├── 何西阿書/
 │   ├── 全書導論.md
 │   ├── 全書綱要.md
@@ -309,6 +315,13 @@ status: formal | candidate
 
 Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of。Aliases 是比對核心。
 
+索引穩定性規則：
+- `secondary_types` 只表示次分類，**不得**建立為 alias。
+- 同名條目、alias 多重指向、alias 與正式名稱衝突不得由掃描順序靜默決定。
+- 已人工確認但尚待全卷清理的舊衝突，記錄在 `_config/link_conflict_resolutions.yaml`；未登記的新衝突必須阻擋建索引。
+- 名稱正規化只可處理 Unicode 與空白差異，不得刪除括號內容或其他可能帶有語義的文字。
+- CI 使用 `python build_link_index.py --check` 確認索引可重現且已是最新。
+
 ### 5.2 link_candidates.md
 
 位置：
@@ -318,6 +331,44 @@ Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of
 ```
 
 只放由經文與有效 raw text 明確觸發的候選節點；不得放 AI 憑感覺認為重要的詞。
+
+正式格式以第 26 章的精簡格式為準：
+
+```md
+# 創世記 第26章 — Link Candidates
+
+## 人物
+- 以撒 → 人物
+- 利百加 → 人物
+
+## 地點
+- 基拉耳 → 地點
+- 別是巴 → 地點
+
+## 神學主題
+- 亞伯拉罕之約 → 神學
+- 神的同在 → 神學
+```
+
+每一列的欄位固定為：
+
+```text
+- 條目完整名稱 → 主分類
+```
+
+- `##` 標題用於人類閱讀與分組，可以是「神學主題」、「名字含義」等整理名稱，不必等於實際主分類。
+- `→` 右側只放主分類，必須使用 `link_folder/` 的合法分類名稱，不得把經節、說明或括號註解混入分類。
+- 每個候選必須使用 `- ` 項目符號。空行與 `#` 標題不視為候選。
+- 候選必須由經文或有效 raw text 觸發，但通常不必在每一列重複列出來源，以節省 token；詳細依據由 `source_manifest.md`、raw text 與後續整理保留。
+
+候選名稱可能有歧義、分類理由不直觀，或需要留下稽核線索時，才選擇性加入 `— 觸發依據`：
+
+```md
+- 天梯 → 神學 — CT/GT/KC/BH 討論基督預表與天地交通
+- 埃色（相爭） → 原文 — 名字含義
+```
+
+解析時，`→` 與 `—` 必須分開：`→` 後是主分類，`—` 後是選填說明。不得寫成沒有 `→ 主分類` 的 `條目名稱 — 說明`。
 
 ### 5.3 resolve_link_candidates.py
 
@@ -351,6 +402,45 @@ link_plan 類別：
 
 比對優先序：完全同名 → YAML aliases → 同義詞表 → fuzzy 候選 → 同名不同分類 → 書卷/人物衝突 → alias 格式確認。歧義不得自動新建，放 D 或 E。
 
+## resolve_link_candidates.py 比對邏輯
+
+resolve_link_candidates.py 必須將本章 link_candidates.md 與 link_index.json 比對。
+
+比對優先順序：
+1. **完全同名檔案** — 條目名稱完全匹配 index key
+2. **YAML aliases 完全命中** — candidate 名稱命中某條目的 aliases 列表
+3. **常見同義詞命中** — 預設同義詞表比對
+4. **fuzzy match 候選** — 相似但非精確匹配，放入 D 類
+5. **不同資料夾中的同名條目** — 若候選名稱與某 index key 相同但分類不同，使用既有條目
+6. **書卷名與人物名衝突** — 檢查 `PERSON_TO_BOOK` 映射
+7. **經文原詞與條目完整名稱不同** — 確認 alias 格式正確
+
+附加規則：
+- 精確比對必須先使用完整候選名稱；例如「全能的神（El Shaddai）」不可先刪除括號再搜尋。
+- 命中既有條目後，必須核對候選主分類是否等於既有 `type`，或包含於其 `secondary_types`。
+- 分類不相容時不得自動連結或新建同名條目，必須列入 D 類人工判斷。
+- A 類表示既有條目已含「同一書卷＋同一章」累積；B 類表示條目存在但尚未累積本章。不得只搜尋「第x章」字串。
+### Alias 比對規則
+若命中 alias，必須指向 alias 所屬的主條目檔案，不可另建新條目。
+例如：
+```yaml
+# link_folder/主題/屬靈淫亂.md
+aliases:
+  - 屬靈姦淫
+  - 拜偶像如淫亂
+  - 以色列的淫亂
+```
+若本章 candidate 出現「屬靈姦淫」，應解析為：
+```md
+[[屬靈淫亂|屬靈姦淫]]
+```
+不可新增：
+```text
+link_folder/主題/屬靈姦淫.md
+```
+### 歧義處理
+若有歧義（同一名稱指向多個既有條目，或書卷人物衝突），
+不要自動建立新條目，放入 link_plan 的 D 類（候選條目）或 E 類（不建立）。
 ### 5.4 link_plan 不是資料來源
 
 `link_plan.md` 只決定「用哪個條目、建在哪裡、A-E 類別、由哪些來源觸發」。寫章節內容或條目內容時必須回到：`raw_data/*.txt`、`source_manifest.md`、`.tmp/` 暫存、章節主檔；不得根據 link_plan 直接編內容。
@@ -397,10 +487,9 @@ source_scope: collected_only
 
 ## 來源依據
 
-## 待確認事項
 ```
 
-Agent 只能在以下累積區新增：`按書卷累積`、`相關條目`、`來源依據`、`待確認事項`。除非使用者明確要求，不得大改 `定義`、`核心摘要`、`主題發展`。
+Agent 只能在以下累積區新增：`按書卷累積`、`相關條目`、`來源依據`。除非使用者明確要求，不得大改 `定義`、`核心摘要`、`主題發展`。
 
 ### 6.3 候選條目模板
 
@@ -434,11 +523,56 @@ source_scope: collected_only
 
 ### 6.4 更新既有條目
 
-既有條目也必須由本章資料觸發才更新。可補：觸發來源、聖經出現、與本章關聯、神學意義、相關條目、待確認事項。不得加入本章來源未提內容，不得重複貼相同內容。
+既有條目也必須由本章資料觸發才更新。可補：觸發來源、聖經出現、與本章關聯、神學意義、相關條目。不得加入本章來源未提內容，不得重複貼相同內容。
 
-### 6.5 防止條目爆炸
+### 6.5 B 類安全累積流程
+
+B 類條目預設使用：
+
+```text
+python link_updates.py prepare 【書名】 X
+```
+
+產生：
+
+```text
+【書名】/.tmp/第x章/link_updates.yaml
+```
+
+Agent 必須回到本章經文與有效 raw text，逐項填入：
+- `summary`：本章重點
+- `relation`：與本章關聯
+- `sources`：觸發來源代碼
+- `source_files`：實際本地來源檔案
+
+先預覽，再套用：
+
+```text
+python link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run
+python link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml
+```
+
+累積區使用穩定標記：
+
+```md
+<!-- accumulation:創世記:28:start -->
+### 創世記
+#### 第28章
+...
+<!-- accumulation:創世記:28:end -->
+```
+
+規則：
+- 工具只負責安全寫入，內容仍由經文與 raw text 驅動。
+- 重跑必須冪等，不得重複新增同一章。
+- 工具只可改累積標記區，不得改正式條目的保護區。
+- manifest 缺少摘要、關聯、來源或來源檔案時不得套用。
+
+### 6.6 防止條目爆炸
 
 新條目內出現的新詞，不自動生成第二層、第三層條目。每個新 link 仍須通過資料驅動、必要性、已存在檔案、普通詞、候選條目等判斷。
+
+不得設定每章正式條目數量上限，也不得因人物看似普通而先驗排除；是否建立條目只由已收集資料、跨章累積需要與內容充分性決定。
 
 ---
 
@@ -449,9 +583,23 @@ source_scope: collected_only
 ```text
 python3 check_existing_links.py 【書名】/第x章.md --missing
 python3 build_link_index.py
+python3 validate_knowledge_base.py
 python3 link_quality_check.py 【書名】
 python3 verify_links.py 【書名】
+python3 audit_knowledge_base.py --check-due
 ```
+
+`check_existing_links.py --missing` 必須核對書卷與章數；有缺漏時回傳非零狀態。
+
+`validate_knowledge_base.py` 檢查 YAML、分類、alias、重複累積標記、來源標記、正式條目結構與保護區。既有技術債可列 warning；本次新增或更新檔案若違規則為 blocking。
+
+單元測試：
+
+```text
+python -m unittest discover -s tests -v
+```
+
+CI 每次 push／pull request 必須執行單元測試、index check、結構驗證、quality、verify 與巡檢到期檢查。
 
 ### 7.1 verify_links.py
 
@@ -491,10 +639,12 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 11. 根據經文與有效 raw text 建 `link_candidates.md`。
 12. 執行 `python3 resolve_link_candidates.py 【書名】 X` 產生 `link_plan.md`。
 13. 根據 `link_plan.md` 寫 `第x章.md`：經文 + wiki-link + 本章知識節點 + 本章整理。
-14. 根據 `link_plan.md` 建立／更新 link_folder：B 補充、C 正式、D 候選、E 不連。
-15. 執行最終驗證順序，修到 verify 無 blocking、quality 無 critical。
-16. git status → commit → push。
-17. 回報完成狀態、更新檔案、link、條目、驗證結果、commit hash、待確認事項。
+14. 根據 `link_plan.md` 建立／更新 link_folder：B 預設經 `link_updates.yaml` 安全累積；C 正式、D 人工判斷、E 不連。
+15. 對 B 類執行 `link_updates.py prepare`，回到來源填寫 manifest，dry-run 後 apply；重跑確認 0 個重複變更。
+16. 執行最終驗證順序，修到結構驗證無 error、verify 無 blocking、quality 無 critical。
+17. 執行 `audit_knowledge_base.py --check-due`；到達巡檢里程碑時先產生並人工檢查報告。
+18. git status → commit → push；由 CI 作最終守門。
+19. 回報完成狀態、更新檔案、link、條目、驗證結果、commit hash。
 
 ---
 
@@ -533,6 +683,8 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 ```text
 verify_links.py: BROKEN_LINKS=0, INVALID_SCRIPTURE_REFS=0, UNKNOWN_LINKS=0
 link_quality_check.py: CRITICAL=0
+validate_knowledge_base.py: ERRORS=0
+audit_knowledge_base.py --check-due: PASS
 所有新建 link_folder 條目有 YAML frontmatter
 所有新建／更新內容有觸發來源
 ```
@@ -558,7 +710,6 @@ Update Daniel chapter 3 links and knowledge nodes
 - verify_links.py 結果：
 - link_quality_check.py 結果：
 - git commit hash：
-- 待確認事項：
 ```
 
 ---
@@ -584,15 +735,46 @@ Update Daniel chapter 3 links and knowledge nodes
 16. 已完成且通過驗證的章節未檢查就重做。
 17. 驗證未通過就 commit。
 18. 超長章節一次塞滿 context、跳過分段整合、跳過最終整章 verify/quality。
+19. 把 `secondary_types` 當 alias，或讓同名／alias 衝突由掃描順序自動決定。
+20. 以刪除括號內容的方式正規化候選名稱。
+21. 只用「第x章」字串判斷條目已累積，而未核對書卷。
+22. 手工大量附加 B 類資料而跳過可用的 `link_updates.yaml` 安全流程。
 
 ---
 
-## 12. 最短總原則
+## 12. 定期維護
+
+### 12.1 每 10 章全庫巡檢
+
+預設每累計完成 10 章執行：
+
+```text
+python audit_knowledge_base.py --all --checkpoint 10
+```
+
+巡檢 alias、候選條目、同名與重複概念、孤立條目、分類及來源問題。報告只提供人工決策線索，不自動刪除、合併、移動或升級。
+
+### 12.2 每卷完成巡檢
+
+完成一卷後執行：
+
+```text
+python audit_knowledge_base.py --book 【書名】
+```
+
+必須人工檢查 alias、一卷內候選條目、重複概念、分類與來源完整度，再決定保留、升級或合併。新正式條目數量不設上限，所有決定仍由資料驅動。
+
+`_config/maintenance_policy.yaml` 記錄巡檢間隔與導入基準；`audit_knowledge_base.py --check-due` 阻止漏掉應執行的巡檢。
+
+---
+
+## 13. 最短總原則
 
 ```text
 先讀 scheme → 讀本地經文 → 確認 URL → crawl 成 raw_data → 檢查 raw text
 → build index → link_candidates → resolve → link_plan
-→ 寫章節主檔 → 更新 link_folder → quality + verify 到 PASS → commit → push 到repo
+→ 寫章節主檔 → link_updates 安全累積／更新 link_folder
+→ schema + quality + verify + audit due 到 PASS → commit → CI → push 到 repo
 ```
 
 所有 link 必須由已收集資料觸發；所有內容必須能回到 raw text 或本章經文；所有 wiki-link 必須閉合到本地 markdown；所有正式條目的保護區不可被每章任務亂改。

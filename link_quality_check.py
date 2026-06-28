@@ -286,4 +286,5 @@ if __name__ == "__main__":
             target_book = sys.argv[1][7:]
         else:
             target_book = sys.argv[1]
-    quality_check(target_book)
+    result = quality_check(target_book)
+    sys.exit(1 if result["critical_count"] > 0 else 0)

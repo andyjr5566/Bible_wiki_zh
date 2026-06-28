@@ -1,0 +1,4 @@
+# 目前導入自動巡檢時已完成至創世記第28章。
+# 下一次全庫品質巡檢在累計完成第30章時觸發。
+full_audit_interval: 10
+baseline_completed_chapters: 28

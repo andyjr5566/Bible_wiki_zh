@@ -485,7 +485,11 @@ def verify_links(book_name=None):
             print(f"  [[{ref['entity']}]] → ERROR: {ref['book']} max {BIBLE_BOOKS.get(ref['book'], '?')} ch.")
         print()
     
-    has_error = report['broken_links_count'] > 0 or report['invalid_scripture_refs_count'] > 0
+    has_error = (
+        report['broken_links_count'] > 0
+        or report['invalid_scripture_refs_count'] > 0
+        or report['unknown_links_count'] > 0
+    )
     print(f"  Result: {'FAIL' if has_error else 'PASS'}")
     print(f"  Report: {txt_path}")
     print(f"{'='*60}\n")
@@ -501,4 +505,10 @@ if __name__ == "__main__":
             target_book = sys.argv[1][7:]
         else:
             target_book = sys.argv[1]
-    verify_links(target_book)
+    result = verify_links(target_book)
+    has_error = (
+        result["broken_links_count"] > 0
+        or result["invalid_scripture_refs_count"] > 0
+        or result["unknown_links_count"] > 0
+    )
+    sys.exit(1 if has_error else 0)

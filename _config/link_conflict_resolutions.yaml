@@ -1,0 +1,11 @@
+# 已人工確認、尚待全卷清理的既有衝突。
+# 新衝突若未列於此，build_link_index.py 會失敗。
+titles:
+  三一神同工: link_folder/神學/三一神同工.md
+  信心與忍耐: link_folder/神學/信心與忍耐.md
+  新造與新生活: link_folder/神學/新造與新生活.md
+  神的恩典之約: link_folder/神學/神的恩典之約.md
+  神的記念: link_folder/神學/神的記念.md
+
+aliases:
+  加低斯巴尼亞: 加低斯

@@ -41,16 +41,27 @@ C:\Obsidian\Hermes\scripture\scheme.md
 18. 執行 `python3 resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
     - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
     - 例如：`python3 resolve_link_candidates.py 創世記 13`
-19. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
-20. **根據 link_plan 更新 link folder**（B類補充、C類新建、D類候選）
-21. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
-22. 執行 `python3 build_link_index.py`
-23. 執行 `python3 link_quality_check.py 【書名】`
-24. 執行 `python3 verify_links.py 【書名】`
-25. 修正任何 broken links / invalid refs / unknown links / critical quality warnings
-26. 重跑驗證直到全部通過
-27. 通過後 git commit + push
-28. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+19. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
+20. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+21. **根據 link_plan 更新 link folder**：
+    - B 類先執行 `python link_updates.py prepare 【書名】 X`
+    - 回到經文與有效 raw text 填寫 `link_updates.yaml`
+    - 執行 `python link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run`
+    - 確認後執行 `python link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml`
+    - 重跑 apply 必須顯示 0 個變更
+    - C 類依來源建立正式條目；D 類人工判斷；E 類不連
+22. 執行 `python3 check_existing_links.py 【書名】/第x章.md --missing`
+23. 執行 `python3 build_link_index.py`
+24. 執行 `python3 validate_knowledge_base.py`
+25. 執行 `python3 link_quality_check.py 【書名】`
+26. 執行 `python3 verify_links.py 【書名】`
+27. 執行 `python3 audit_knowledge_base.py --check-due`
+28. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
+29. 重跑驗證直到全部通過
+30. 若累計完成章數到達 10 章里程碑，執行 `python audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
+31. 若完成一卷，執行 `python audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
+32. 通過後 git commit + push，確認 CI 通過
+33. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 
@@ -63,6 +74,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 檔案已存在時不覆蓋；需要覆蓋才加 `--overwrite`。
 - 建立 link_candidates.md 時，只能使用經文與已成功取得、已檢查有效的 raw text。
 - 無效來源要記錄在 `source_manifest.md`，不可假裝已使用。
+- 不設定每章正式條目數量上限，也不因人物看似普通而先驗排除；建立與否只由已收集資料決定。
+- B 類的 `link_updates.yaml` 必須記錄實際 `sources` 與 `source_files`，不得用工具生成無來源內容。
 
 ---
 
@@ -71,7 +84,7 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止用 gbrain 寫入
 - 禁止跳過 `scheme.md`
 - 禁止跳過 `build_link_index.py`、`resolve_link_candidates.py`
-- 禁止跳過 `verify_links.py`、`link_quality_check.py`
+- 禁止跳過 `link_updates.py`（有 B 類時）、`validate_knowledge_base.py`、`verify_links.py`、`link_quality_check.py`、`audit_knowledge_base.py --check-due`
 - 禁止未驗證就 commit
 - 禁止硬猜 URL
 - 禁止直接把網頁內容抓進 context 後整理
@@ -88,4 +101,9 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止根據 link_plan.md 直接撰寫條目內容而不回到來源資料
 - 禁止為未來章節預先建立空白章節檔
 - 禁止對正式條目的定義/核心摘要/主題發展區塊每章亂改
+- 禁止把 `secondary_types` 當 alias
+- 禁止忽略分類衝突、alias 多重指向或同名條目衝突
+- 禁止為比對方便而刪除候選名稱中的括號內容
+- 禁止只用「第x章」字串判斷累積完成，必須同時核對書卷與章數
+- 禁止自動刪除、合併、移動或升級巡檢報告列出的條目；必須人工判斷並回到來源
 - 所有輸出使用繁體中文
