@@ -16,16 +16,14 @@ C:\Obsidian\Hermes\scripture\scheme.md
 
 1. 讀取 `scheme.md`
 2. 解析使用者指定的書卷名稱與章節需求
-3. 檢查該書卷目錄是否存在
-4. 檢查該書卷現有章節主檔與完成進度
-5. 執行 `python util/build_link_index.py` 建立最新 link index
-6. 檢查 git 狀態
-7. 判斷下一個需要處理或修正的章節
-8. 不要重做已完成且已通過驗證的章節
-9. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
-10. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
-11. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
-12. **使用 `util/crawl_bible_text.py` 產生 raw text**：
+3. 執行 `python util/build_link_index.py` 建立最新 link index
+4. 檢查 git 狀態
+5. 判斷下一個需要處理或修正的章節
+6. 不要重做已完成且已通過驗證的章節
+7. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
+8. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
+9. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
+10. **使用 `util/crawl_bible_text.py` 產生 raw text**：
     ```text
     python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
     ```
@@ -33,17 +31,17 @@ C:\Obsidian\Hermes\scripture\scheme.md
     ```text
     python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
     ```
-13. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
-14. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
-15. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
-16. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
-17. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
-18. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
+11. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
+12. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
+13. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
+14. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
+15. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
+16. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
     - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
     - 例如：`python util/resolve_link_candidates.py 創世記 13`
-19. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
-20. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
-21. **根據 link_plan 更新 link folder**：
+17. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
+18. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+19. **根據 link_plan 更新 link folder**：
     - B 類先執行 `python util/link_updates.py prepare 【書名】 X`
     - 回到經文與有效 raw text 填寫 `link_updates.yaml`
     - 執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run`
@@ -51,18 +49,18 @@ C:\Obsidian\Hermes\scripture\scheme.md
     - 重跑 apply 必須顯示 0 個變更
     - 確認章次位於 `按書卷累積 → ### 書卷名 → #### 第N章`，並依章號排序
     - C 類依來源建立正式條目；D 類人工判斷；E 類不連
-22. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
-23. 執行 `python util/build_link_index.py`
-24. 執行 `python util/validate_knowledge_base.py`
-25. 執行 `python util/link_quality_check.py 【書名】`
-26. 執行 `python util/verify_links.py 【書名】`
-27. 執行 `python util/audit_knowledge_base.py --check-due`
-28. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
-29. 重跑驗證直到全部通過
-30. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
-31. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
-32. 通過後 git commit + push，確認 CI 通過
-33. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+20. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
+21. 執行 `python util/build_link_index.py`
+22. 執行 `python util/validate_knowledge_base.py`
+23. 執行 `python util/link_quality_check.py 【書名】`
+24. 執行 `python util/verify_links.py 【書名】`
+25. 執行 `python util/audit_knowledge_base.py --check-due`
+26. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
+27. 重跑驗證直到全部通過
+28. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
+29. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
+30. 通過後 git commit + push，確認 CI 通過
+31. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 
@@ -110,3 +108,12 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止自動刪除、合併、移動或升級巡檢報告列出的條目；必須人工判斷並回到來源
 - 既有格式需要遷移時，先執行 `python util/normalize_format.py --scope all --dry-run`；套用後必須重跑確認 0 變更，並用 `--verify-base` 確認條目正文未遺失
 - 所有輸出使用繁體中文
+
+---
+
+## debug
+
+- 若python util/verify_links.py 沒過
+	- 主要章節沒寫好,先讀在檢查link 寫法是否有誤 (90% 問題出在這)
+    - 若是依然沒過,檢查 broken link 在 link folder 的所在檔案, link 寫法是否有錯
+    - 若是沒過，在考慮這個是不是不用設link

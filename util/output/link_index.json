@@ -820,6 +820,21 @@
     "status": "formal",
     "aliases": []
   },
+  "何西阿書12章雅各摔跤": {
+    "path": "link_folder/互文/何西阿書12章雅各摔跤.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "歷史",
+      "原文"
+    ],
+    "title": "何西阿書12章雅各摔跤",
+    "status": "formal",
+    "aliases": [
+      "何西阿12雅各摔跤",
+      "何西阿書12章"
+    ]
+  },
   "出埃及記一章": {
     "path": "link_folder/互文/出埃及記一章.md",
     "type": "互文",
@@ -972,6 +987,20 @@
     "status": "formal",
     "aliases": []
   },
+  "雅各禱告的榜樣": {
+    "path": "link_folder/互文/雅各禱告的榜樣.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "雅各禱告的榜樣",
+    "status": "formal",
+    "aliases": [
+      "雅各禱告模式",
+      "雅各禱告結構"
+    ]
+  },
   "雅各與拉班（創31接續）": {
     "path": "link_folder/互文/雅各與拉班（創31接續）.md",
     "type": "互文",
@@ -1001,6 +1030,16 @@
     "type": "人物",
     "secondary_types": [],
     "title": "亞伯",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞伯拉罕": {
+    "path": "link_folder/人物/亞伯拉罕.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "亞伯拉罕",
     "status": "formal",
     "aliases": []
   },
@@ -1654,6 +1693,18 @@
       "示納"
     ]
   },
+  "神的使者": {
+    "path": "link_folder/人物/神的使者.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神的使者",
+    "status": "formal",
+    "aliases": [
+      "天使"
+    ]
+  },
   "米甸": {
     "path": "link_folder/人物/米甸.md",
     "type": "人物",
@@ -2040,6 +2091,21 @@
     "status": "formal",
     "aliases": []
   },
+  "以色列": {
+    "path": "link_folder/原文/以色列.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物",
+      "神學",
+      "歷史"
+    ],
+    "title": "以色列",
+    "status": "formal",
+    "aliases": [
+      "Israel",
+      "以色列人"
+    ]
+  },
   "以薩迦（報酬）": {
     "path": "link_folder/原文/以薩迦（報酬）.md",
     "type": "原文",
@@ -2120,6 +2186,22 @@
     "status": "formal",
     "aliases": []
   },
+  "大腿窩的筋": {
+    "path": "link_folder/原文/大腿窩的筋.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學",
+      "文化",
+      "歷史"
+    ],
+    "title": "大腿窩的筋",
+    "status": "formal",
+    "aliases": [
+      "坐骨神經",
+      "大腿窩筋",
+      "筋"
+    ]
+  },
   "底拿（審判）": {
     "path": "link_folder/原文/底拿（審判）.md",
     "type": "原文",
@@ -2135,6 +2217,19 @@
     "title": "拿弗他利（角力）",
     "status": "formal",
     "aliases": []
+  },
+  "摔跤": {
+    "path": "link_folder/原文/摔跤.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摔跤",
+    "status": "formal",
+    "aliases": [
+      "摔跤",
+      "角力"
+    ]
   },
   "汗流滿面才得糊口": {
     "path": "link_folder/原文/汗流滿面才得糊口.md",
@@ -2250,6 +2345,21 @@
     "status": "formal",
     "aliases": []
   },
+  "雅博": {
+    "path": "link_folder/原文/雅博.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點",
+      "神學"
+    ],
+    "title": "雅博",
+    "status": "formal",
+    "aliases": [
+      "Jabbok",
+      "雅博河",
+      "摔跤河"
+    ]
+  },
   "風與靈同字": {
     "path": "link_folder/原文/風與靈同字.md",
     "type": "原文",
@@ -2325,10 +2435,17 @@
   "以東": {
     "path": "link_folder/地點/以東.md",
     "type": "地點",
-    "secondary_types": [],
+    "secondary_types": [
+      "歷史",
+      "民族"
+    ],
     "title": "以東",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "以東地",
+      "西珥地",
+      "Edom"
+    ]
   },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
@@ -2708,6 +2825,24 @@
     "status": "formal",
     "aliases": []
   },
+  "毗努伊勒": {
+    "path": "link_folder/地點/毗努伊勒.md",
+    "type": "地點",
+    "secondary_types": [
+      "神學",
+      "原文",
+      "歷史"
+    ],
+    "title": "毗努伊勒",
+    "status": "formal",
+    "aliases": [
+      "毗尼伊勒",
+      "派尼伊勒",
+      "Peniel",
+      "Penuel",
+      "神之面"
+    ]
+  },
   "水井": {
     "path": "link_folder/地點/水井.md",
     "type": "地點",
@@ -2747,6 +2882,22 @@
     "title": "瑣珥",
     "status": "formal",
     "aliases": []
+  },
+  "瑪哈念": {
+    "path": "link_folder/地點/瑪哈念.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "神學",
+      "原文"
+    ],
+    "title": "瑪哈念",
+    "status": "formal",
+    "aliases": [
+      "二軍兵",
+      "兩隊",
+      "Mahanaim"
+    ]
   },
   "示劍": {
     "path": "link_folder/地點/示劍.md",
@@ -2796,6 +2947,19 @@
     "status": "formal",
     "aliases": []
   },
+  "約旦河": {
+    "path": "link_folder/地點/約旦河.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "約旦河",
+    "status": "formal",
+    "aliases": [
+      "Jordan River"
+    ]
+  },
   "耶路撒冷": {
     "path": "link_folder/地點/耶路撒冷.md",
     "type": "地點",
@@ -2823,10 +2987,15 @@
   "西珥山": {
     "path": "link_folder/地點/西珥山.md",
     "type": "地點",
-    "secondary_types": [],
+    "secondary_types": [
+      "歷史"
+    ],
     "title": "西珥山",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "Mount Seir",
+      "Seir"
+    ]
   },
   "西訂谷": {
     "path": "link_folder/地點/西訂谷.md",
@@ -2862,6 +3031,19 @@
     "status": "formal",
     "aliases": []
   },
+  "雅博渡口": {
+    "path": "link_folder/地點/雅博渡口.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "雅博渡口",
+    "status": "formal",
+    "aliases": [
+      "雅博渡口"
+    ]
+  },
   "非利士人": {
     "path": "link_folder/地點/非利士人.md",
     "type": "地點",
@@ -2887,6 +3069,21 @@
     "title": "麥比拉洞",
     "status": "formal",
     "aliases": []
+  },
+  "不吃大腿窩的筋": {
+    "path": "link_folder/文化/不吃大腿窩的筋.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "不吃大腿窩的筋",
+    "status": "formal",
+    "aliases": [
+      "大腿窩筋禁忌",
+      "挑筋教",
+      "不食坐骨神經"
+    ]
   },
   "使女代孕習俗": {
     "path": "link_folder/文化/使女代孕習俗.md",
@@ -2995,6 +3192,21 @@
     "status": "formal",
     "aliases": []
   },
+  "解恨之禮": {
+    "path": "link_folder/文化/解恨之禮.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "解恨之禮",
+    "status": "formal",
+    "aliases": [
+      "解恨禮物",
+      "安撫禮物",
+      "和解禮物"
+    ]
+  },
   "許願": {
     "path": "link_folder/文化/許願.md",
     "type": "文化",
@@ -3056,6 +3268,35 @@
     "title": "雅各二十年服事",
     "status": "formal",
     "aliases": []
+  },
+  "雅各改名以色列": {
+    "path": "link_folder/歷史/雅各改名以色列.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "人物",
+      "原文"
+    ],
+    "title": "雅各改名以色列",
+    "status": "formal",
+    "aliases": [
+      "雅各改名",
+      "以色列命名"
+    ]
+  },
+  "雅各與以掃的恩怨": {
+    "path": "link_folder/歷史/雅各與以掃的恩怨.md",
+    "type": "歷史",
+    "secondary_types": [
+      "人物",
+      "神學"
+    ],
+    "title": "雅各與以掃的恩怨",
+    "status": "formal",
+    "aliases": [
+      "雅各以掃恩怨",
+      "雅各以掃關係"
+    ]
   },
   "三位一體在創造中的隱現": {
     "path": "link_folder/神學/三位一體在創造中的隱現.md",
@@ -3771,6 +4012,21 @@
     "status": "formal",
     "aliases": []
   },
+  "神的軍兵": {
+    "path": "link_folder/神學/神的軍兵.md",
+    "type": "神學",
+    "secondary_types": [
+      "人物",
+      "歷史"
+    ],
+    "title": "神的軍兵",
+    "status": "formal",
+    "aliases": [
+      "天軍",
+      "神的軍隊",
+      "兩軍兵"
+    ]
+  },
   "神的靈的角色": {
     "path": "link_folder/神學/神的靈的角色.md",
     "type": "神學",
@@ -3778,6 +4034,21 @@
     "title": "神的靈的角色",
     "status": "formal",
     "aliases": []
+  },
+  "神的面": {
+    "path": "link_folder/神學/神的面.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文",
+      "人物"
+    ],
+    "title": "神的面",
+    "status": "formal",
+    "aliases": [
+      "神的臉面",
+      "神的光",
+      "神的榮光"
+    ]
   },
   "神的顧念與應允": {
     "path": "link_folder/神學/神的顧念與應允.md",
@@ -4049,6 +4320,21 @@
     "status": "formal",
     "aliases": []
   },
+  "面對面見神": {
+    "path": "link_folder/神學/面對面見神.md",
+    "type": "神學",
+    "secondary_types": [
+      "人物",
+      "原文"
+    ],
+    "title": "面對面見神",
+    "status": "formal",
+    "aliases": [
+      "面對面見神",
+      "神面對面",
+      "面對面見了神"
+    ]
+  },
   "馨香之氣": {
     "path": "link_folder/神學/馨香之氣.md",
     "type": "神學",
@@ -4067,10 +4353,10 @@
   },
   "耶和華": {
     "path": "link_folder/耶和華.md",
-    "type": "link_folder",
+    "type": "神",
     "secondary_types": [],
     "title": "耶和華",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "井權與牧羊取水規矩": {
@@ -4211,6 +4497,20 @@
     "status": "formal",
     "aliases": []
   },
+  "神與雅各摔跤的身分": {
+    "path": "link_folder/解經爭議/神與雅各摔跤的身分.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "人物"
+    ],
+    "title": "神與雅各摔跤的身分",
+    "status": "formal",
+    "aliases": [
+      "摔跤者身分",
+      "雅博摔跤對手"
+    ]
+  },
   "雅各「偷走」拉班的心機": {
     "path": "link_folder/解經爭議/雅各「偷走」拉班的心機.md",
     "type": "解經爭議",
@@ -4227,11 +4527,52 @@
     "status": "formal",
     "aliases": []
   },
+  "雅各大腿窩扭傷的屬靈意義": {
+    "path": "link_folder/解經爭議/雅各大腿窩扭傷的屬靈意義.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "原文",
+      "文化"
+    ],
+    "title": "雅各大腿窩扭傷的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "大腿窩扭傷意義",
+      "跛腿屬靈意義"
+    ]
+  },
+  "雅各禱告與策略的關係": {
+    "path": "link_folder/解經爭議/雅各禱告與策略的關係.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "雅各禱告與策略的關係",
+    "status": "formal",
+    "aliases": [
+      "雅各禱告謀算關係",
+      "禱告與策略"
+    ]
+  },
   "prophet": {
     "alias_of": "先知"
   },
   "nabi": {
     "alias_of": "先知"
+  },
+  "何西阿12雅各摔跤": {
+    "alias_of": "何西阿書12章雅各摔跤"
+  },
+  "何西阿書12章": {
+    "alias_of": "何西阿書12章雅各摔跤"
+  },
+  "雅各禱告模式": {
+    "alias_of": "雅各禱告的榜樣"
+  },
+  "雅各禱告結構": {
+    "alias_of": "雅各禱告的榜樣"
   },
   "Ammonites": {
     "alias_of": "亞捫人"
@@ -4284,6 +4625,9 @@
   "示納": {
     "alias_of": "示納（押瑪王）"
   },
+  "天使": {
+    "alias_of": "神的使者"
+  },
   "Simeon": {
     "alias_of": "西緬"
   },
@@ -4292,6 +4636,42 @@
   },
   "麥基洗得": {
     "alias_of": "麥基洗德"
+  },
+  "Israel": {
+    "alias_of": "以色列"
+  },
+  "以色列人": {
+    "alias_of": "以色列"
+  },
+  "坐骨神經": {
+    "alias_of": "大腿窩的筋"
+  },
+  "大腿窩筋": {
+    "alias_of": "大腿窩的筋"
+  },
+  "筋": {
+    "alias_of": "大腿窩的筋"
+  },
+  "角力": {
+    "alias_of": "摔跤"
+  },
+  "Jabbok": {
+    "alias_of": "雅博"
+  },
+  "雅博河": {
+    "alias_of": "雅博"
+  },
+  "摔跤河": {
+    "alias_of": "雅博"
+  },
+  "以東地": {
+    "alias_of": "以東"
+  },
+  "西珥地": {
+    "alias_of": "以東"
+  },
+  "Edom": {
+    "alias_of": "以東"
   },
   "拉億": {
     "alias_of": "但"
@@ -4320,14 +4700,77 @@
   "摩利亞山": {
     "alias_of": "摩利亞地"
   },
+  "毗尼伊勒": {
+    "alias_of": "毗努伊勒"
+  },
+  "派尼伊勒": {
+    "alias_of": "毗努伊勒"
+  },
+  "Peniel": {
+    "alias_of": "毗努伊勒"
+  },
+  "Penuel": {
+    "alias_of": "毗努伊勒"
+  },
+  "神之面": {
+    "alias_of": "毗努伊勒"
+  },
+  "二軍兵": {
+    "alias_of": "瑪哈念"
+  },
+  "兩隊": {
+    "alias_of": "瑪哈念"
+  },
+  "Mahanaim": {
+    "alias_of": "瑪哈念"
+  },
+  "Jordan River": {
+    "alias_of": "約旦河"
+  },
+  "Mount Seir": {
+    "alias_of": "西珥山"
+  },
+  "Seir": {
+    "alias_of": "西珥山"
+  },
   "亞拉巴海": {
     "alias_of": "鹽海"
+  },
+  "大腿窩筋禁忌": {
+    "alias_of": "不吃大腿窩的筋"
+  },
+  "挑筋教": {
+    "alias_of": "不吃大腿窩的筋"
+  },
+  "不食坐骨神經": {
+    "alias_of": "不吃大腿窩的筋"
   },
   "特拉芬": {
     "alias_of": "家神像_特拉芬"
   },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
+  },
+  "解恨禮物": {
+    "alias_of": "解恨之禮"
+  },
+  "安撫禮物": {
+    "alias_of": "解恨之禮"
+  },
+  "和解禮物": {
+    "alias_of": "解恨之禮"
+  },
+  "雅各改名": {
+    "alias_of": "雅各改名以色列"
+  },
+  "以色列命名": {
+    "alias_of": "雅各改名以色列"
+  },
+  "雅各以掃恩怨": {
+    "alias_of": "雅各與以掃的恩怨"
+  },
+  "雅各以掃關係": {
+    "alias_of": "雅各與以掃的恩怨"
   },
   "不要回頭看": {
     "alias_of": "不可回頭看"
@@ -4352,6 +4795,24 @@
   },
   "敬畏耶和華": {
     "alias_of": "敬畏神"
+  },
+  "天軍": {
+    "alias_of": "神的軍兵"
+  },
+  "神的軍隊": {
+    "alias_of": "神的軍兵"
+  },
+  "兩軍兵": {
+    "alias_of": "神的軍兵"
+  },
+  "神的臉面": {
+    "alias_of": "神的面"
+  },
+  "神的光": {
+    "alias_of": "神的面"
+  },
+  "神的榮光": {
+    "alias_of": "神的面"
   },
   "神記念亞伯蘭": {
     "alias_of": "神記念亞伯拉罕"
@@ -4385,5 +4846,29 @@
   },
   "神豈有難成的事": {
     "alias_of": "耶和華豈有難成的事"
+  },
+  "神面對面": {
+    "alias_of": "面對面見神"
+  },
+  "面對面見了神": {
+    "alias_of": "面對面見神"
+  },
+  "摔跤者身分": {
+    "alias_of": "神與雅各摔跤的身分"
+  },
+  "雅博摔跤對手": {
+    "alias_of": "神與雅各摔跤的身分"
+  },
+  "大腿窩扭傷意義": {
+    "alias_of": "雅各大腿窩扭傷的屬靈意義"
+  },
+  "跛腿屬靈意義": {
+    "alias_of": "雅各大腿窩扭傷的屬靈意義"
+  },
+  "雅各禱告謀算關係": {
+    "alias_of": "雅各禱告與策略的關係"
+  },
+  "禱告與策略": {
+    "alias_of": "雅各禱告與策略的關係"
   }
 }

@@ -2,11 +2,16 @@
   Wiki-Link Verification Report
 ============================================================
 
-  VALID LINKS:            4163
-  BROKEN LINKS:              0
-  PENDING SCRIPTURE REFS:  105
+  VALID LINKS:            4500
+  BROKEN LINKS:              3
+  PENDING SCRIPTURE REFS:  102
   INVALID SCRIPTURE REFS:    0
   UNKNOWN LINKS:             0
+
+--- BROKEN LINKS (must fix) ---
+  [[林後12:7-10]]
+  [[耶和華]]
+  [[西珥山]]
 
 --- PENDING SCRIPTURE REFS (info only) ---
   [[以弗所書/第6章]] → valid future 以弗所書 chapter 6 reference
@@ -18,12 +23,12 @@
   [[以賽亞書/第62章]] → valid future 以賽亞書 chapter 62 reference
   [[但以理書/第1章]] → valid future 但以理書 chapter 1 reference
   [[但以理書/第2章]] → valid future 但以理書 chapter 2 reference
+  [[何西阿書]] → valid future 何西阿書 chapter 0 reference
   [[何西阿書/第8章]] → valid future 何西阿書 chapter 8 reference
   [[使徒行傳/第2章]] → valid future 使徒行傳 chapter 2 reference
   [[使徒行傳/第7章]] → valid future 使徒行傳 chapter 7 reference
   [[使徒行傳/第15章]] → valid future 使徒行傳 chapter 15 reference
   [[使徒行傳/第17章]] → valid future 使徒行傳 chapter 17 reference
-  [[俄巴底亞書]] → valid future 俄巴底亞書 chapter 0 reference
   [[出埃及記/第1章]] → valid future 出埃及記 chapter 1 reference
   [[出埃及記/第2章]] → valid future 出埃及記 chapter 2 reference
   [[出埃及記/第3章]] → valid future 出埃及記 chapter 3 reference
@@ -34,12 +39,10 @@
   [[出埃及記/第15章]] → valid future 出埃及記 chapter 15 reference
   [[出埃及記/第24章]] → valid future 出埃及記 chapter 24 reference
   [[列王紀上/第10章]] → valid future 列王紀上 chapter 10 reference
-  [[列王紀上/第22章]] → valid future 列王紀上 chapter 22 reference
   [[利未記/第1章]] → valid future 利未記 chapter 1 reference
   [[利未記/第11章]] → valid future 利未記 chapter 11 reference
   [[利未記/第12章]] → valid future 利未記 chapter 12 reference
   [[利未記/第17章]] → valid future 利未記 chapter 17 reference
-  [[創世記/第32章]] → valid future 創世記 chapter 32 reference
   [[創世記/第33章]] → valid future 創世記 chapter 33 reference
   [[創世記/第35章]] → valid future 創世記 chapter 35 reference
   [[創世記/第36章]] → valid future 創世記 chapter 36 reference
@@ -99,7 +102,6 @@
   [[羅馬書/第9章]] → valid future 羅馬書 chapter 9 reference
   [[耶利米書/第4章]] → valid future 耶利米書 chapter 4 reference
   [[耶利米書/第34章]] → valid future 耶利米書 chapter 34 reference
-  [[耶利米書/第49章]] → valid future 耶利米書 chapter 49 reference
   [[腓立比書/第3章]] → valid future 腓立比書 chapter 3 reference
   [[詩篇/第3篇]] → valid future 詩篇 chapter 3 reference
   [[詩篇/第18篇]] → valid future 詩篇 chapter 18 reference
@@ -115,4 +117,4 @@
   [[馬太福音/第3章]] → valid future 馬太福音 chapter 3 reference
   [[馬太福音/第4章]] → valid future 馬太福音 chapter 4 reference
 
-Result: PASS
+Result: FAIL (broken or invalid refs found)
