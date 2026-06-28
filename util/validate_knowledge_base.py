@@ -116,6 +116,15 @@ def validate_file(path, strict=False):
         if not re.search(r"^##\s+來源依據\s*$", text, re.M):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少來源依據")
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
+        if "賜福" in str(path):
+            import sys
+            print(f"DEBUG headings: {headings}", file=sys.stderr)
+            print(f"DEBUG expected: {list(FORMAL_H2)}", file=sys.stderr)
+            print(f"DEBUG match: {headings == FORMAL_H2}", file=sys.stderr)
+            for i in range(min(len(headings), len(FORMAL_H2))):
+                h, f = headings[i], FORMAL_H2[i]
+                if h != f:
+                    print(f"  DIFF[{i}]: got {repr(h)} ({h.encode('utf-8').hex()}) expected {repr(f)} ({f.encode('utf-8').hex()})", file=sys.stderr)
         if headings != FORMAL_H2:
             errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
         marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)

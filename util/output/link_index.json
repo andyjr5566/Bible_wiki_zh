@@ -812,6 +812,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伯特利之約（亞伯拉罕之約延續）": {
+    "path": "link_folder/互文/伯特利之約（亞伯拉罕之約延續）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "伯特利之約（亞伯拉罕之約延續）",
+    "status": "formal",
+    "aliases": []
+  },
   "出埃及記一章": {
     "path": "link_folder/互文/出埃及記一章.md",
     "type": "互文",
@@ -873,6 +881,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "挪亞與亞當的平行",
+    "status": "formal",
+    "aliases": []
+  },
+  "撒拉與夏甲（代孕先例）": {
+    "path": "link_folder/互文/撒拉與夏甲（代孕先例）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "撒拉與夏甲（代孕先例）",
     "status": "formal",
     "aliases": []
   },
@@ -945,6 +961,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "該隱殺亞伯",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各與拉班（創31接續）": {
+    "path": "link_folder/互文/雅各與拉班（創31接續）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "雅各與拉班（創31接續）",
     "status": "formal",
     "aliases": []
   },
@@ -1048,6 +1072,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞設（有福）": {
+    "path": "link_folder/人物/亞設（有福）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞設（有福）",
+    "status": "formal",
+    "aliases": []
+  },
   "人": {
     "path": "link_folder/人物/人.md",
     "type": "人物",
@@ -1144,6 +1176,14 @@
     "status": "formal",
     "aliases": []
   },
+  "以薩迦（價值）": {
+    "path": "link_folder/人物/以薩迦（價值）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以薩迦（價值）",
+    "status": "formal",
+    "aliases": []
+  },
   "以諾": {
     "path": "link_folder/人物/以諾.md",
     "type": "人物",
@@ -1157,6 +1197,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "以諾（該隱之子）",
+    "status": "formal",
+    "aliases": []
+  },
+  "但（審判）": {
+    "path": "link_folder/人物/但（審判）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "但（審判）",
     "status": "formal",
     "aliases": []
   },
@@ -1346,6 +1394,14 @@
     "status": "formal",
     "aliases": []
   },
+  "底拿": {
+    "path": "link_folder/人物/底拿.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "底拿",
+    "status": "formal",
+    "aliases": []
+  },
   "彼土利": {
     "path": "link_folder/人物/彼土利.md",
     "type": "人物",
@@ -1395,6 +1451,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "拉麥（塞特族）",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿弗他利（相爭）": {
+    "path": "link_folder/人物/拿弗他利（相爭）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "拿弗他利（相爭）",
     "status": "formal",
     "aliases": []
   },
@@ -1590,6 +1654,14 @@
     "status": "formal",
     "aliases": []
   },
+  "約瑟（增添）": {
+    "path": "link_folder/人物/約瑟（增添）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "約瑟（增添）",
+    "status": "formal",
+    "aliases": []
+  },
   "羅得": {
     "path": "link_folder/人物/羅得.md",
     "type": "人物",
@@ -1619,6 +1691,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "蛇",
+    "status": "formal",
+    "aliases": []
+  },
+  "西布倫（同住）": {
+    "path": "link_folder/人物/西布倫（同住）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "西布倫（同住）",
     "status": "formal",
     "aliases": []
   },
@@ -1679,6 +1759,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "迦南人",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦得（萬幸）": {
+    "path": "link_folder/人物/迦得（萬幸）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "迦得（萬幸）",
     "status": "formal",
     "aliases": []
   },
@@ -1944,6 +2032,22 @@
     "status": "formal",
     "aliases": []
   },
+  "以薩迦（報酬）": {
+    "path": "link_folder/原文/以薩迦（報酬）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "以薩迦（報酬）",
+    "status": "formal",
+    "aliases": []
+  },
+  "但（伸冤）": {
+    "path": "link_folder/原文/但（伸冤）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "但（伸冤）",
+    "status": "formal",
+    "aliases": []
+  },
   "修理與看守": {
     "path": "link_folder/原文/修理與看守.md",
     "type": "原文",
@@ -1976,6 +2080,14 @@
     "status": "formal",
     "aliases": []
   },
+  "名字含義與諧音": {
+    "path": "link_folder/原文/名字含義與諧音.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "名字含義與諧音",
+    "status": "formal",
+    "aliases": []
+  },
   "四十的屬靈意義": {
     "path": "link_folder/原文/四十的屬靈意義.md",
     "type": "原文",
@@ -1989,6 +2101,22 @@
     "type": "原文",
     "secondary_types": [],
     "title": "埃色（相爭）",
+    "status": "formal",
+    "aliases": []
+  },
+  "底拿（審判）": {
+    "path": "link_folder/原文/底拿（審判）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "底拿（審判）",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿弗他利（角力）": {
+    "path": "link_folder/原文/拿弗他利（角力）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "拿弗他利（角力）",
     "status": "formal",
     "aliases": []
   },
@@ -2050,6 +2178,14 @@
     "status": "formal",
     "aliases": []
   },
+  "約瑟（增添／除去）": {
+    "path": "link_folder/原文/約瑟（增添／除去）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "約瑟（增添／除去）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
     "type": "原文",
@@ -2071,6 +2207,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "西提拿（為敵）",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦得（幸運）": {
+    "path": "link_folder/原文/迦得（幸運）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "迦得（幸運）",
     "status": "formal",
     "aliases": []
   },
@@ -2696,6 +2840,14 @@
     "status": "formal",
     "aliases": []
   },
+  "使女代孕習俗": {
+    "path": "link_folder/文化/使女代孕習俗.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "使女代孕習俗",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東婚筵七日": {
     "path": "link_folder/文化/古代近東婚筵七日.md",
     "type": "文化",
@@ -2730,6 +2882,14 @@
     "secondary_types": [],
     "title": "城門口交易",
     "status": "candidate",
+    "aliases": []
+  },
+  "工價與雇約": {
+    "path": "link_folder/文化/工價與雇約.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "工價與雇約",
+    "status": "formal",
     "aliases": []
   },
   "撒拉的帳棚": {
@@ -2772,6 +2932,14 @@
     "status": "formal",
     "aliases": []
   },
+  "風茄（催情果）": {
+    "path": "link_folder/文化/風茄（催情果）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "風茄（催情果）",
+    "status": "formal",
+    "aliases": []
+  },
   "三位一體在創造中的隱現": {
     "path": "link_folder/神學/三位一體在創造中的隱現.md",
     "type": "神學",
@@ -2798,6 +2966,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "亞伯拉罕之約",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞伯拉罕之約的應驗": {
+    "path": "link_folder/神學/亞伯拉罕之約的應驗.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "亞伯拉罕之約的應驗",
     "status": "formal",
     "aliases": []
   },
@@ -2850,6 +3026,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "人的尊嚴與神的形像",
+    "status": "formal",
+    "aliases": []
+  },
+  "人的詭詐與神的祝福": {
+    "path": "link_folder/神學/人的詭詐與神的祝福.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "人的詭詐與神的祝福",
     "status": "formal",
     "aliases": []
   },
@@ -3084,6 +3268,22 @@
     "status": "formal",
     "aliases": []
   },
+  "婚姻的盟約與次序": {
+    "path": "link_folder/神學/婚姻的盟約與次序.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "婚姻的盟約與次序",
+    "status": "formal",
+    "aliases": []
+  },
+  "嫉妒與爭競": {
+    "path": "link_folder/神學/嫉妒與爭競.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "嫉妒與爭競",
+    "status": "formal",
+    "aliases": []
+  },
   "安息": {
     "path": "link_folder/神學/安息.md",
     "type": "神學",
@@ -3313,11 +3513,27 @@
     "status": "candidate",
     "aliases": []
   },
+  "神作為賜福的源頭": {
+    "path": "link_folder/神學/神作為賜福的源頭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神作為賜福的源頭",
+    "status": "formal",
+    "aliases": []
+  },
   "神單方面的約": {
     "path": "link_folder/神學/神單方面的約.md",
     "type": "神學",
     "secondary_types": [],
     "title": "神單方面的約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神是生育的源頭": {
+    "path": "link_folder/神學/神是生育的源頭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神是生育的源頭",
     "status": "formal",
     "aliases": []
   },
@@ -3392,6 +3608,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的靈的角色",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的顧念與應允": {
+    "path": "link_folder/神學/神的顧念與應允.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的顧念與應允",
     "status": "formal",
     "aliases": []
   },
@@ -3639,6 +3863,14 @@
     "status": "formal",
     "aliases": []
   },
+  "除去羞恥": {
+    "path": "link_folder/神學/除去羞恥.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "除去羞恥",
+    "status": "formal",
+    "aliases": []
+  },
   "雅各受管教與被欺哄": {
     "path": "link_folder/神學/雅各受管教與被欺哄.md",
     "type": "神學",
@@ -3704,6 +3936,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "歌斐木",
+    "status": "formal",
+    "aliases": []
+  },
+  "牧羊與牲畜繁殖": {
+    "path": "link_folder/背景/牧羊與牲畜繁殖.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "牧羊與牲畜繁殖",
     "status": "formal",
     "aliases": []
   },
