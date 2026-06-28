@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 3636,
+  "valid_links_count": 3769,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 107,
+  "pending_scripture_refs_count": 106,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -155,11 +155,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第29章",
-      "book": "創世記",
-      "chapter": 29
     },
     {
       "entity": "創世記/第31章",
@@ -1140,11 +1135,6 @@
         ]
       ],
       "link_folder/人物/雅各.md": [
-        [
-          "創世記/第29章",
-          "創世記",
-          29
-        ],
         [
           "創世記/第32章",
           "創世記",

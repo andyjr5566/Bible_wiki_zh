@@ -49,6 +49,7 @@ C:\Obsidian\Hermes\scripture\scheme.md
     - 執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run`
     - 確認後執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml`
     - 重跑 apply 必須顯示 0 個變更
+    - 確認章次位於 `按書卷累積 → ### 書卷名 → #### 第N章`，並依章號排序
     - C 類依來源建立正式條目；D 類人工判斷；E 類不連
 22. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
 23. 執行 `python util/build_link_index.py`
@@ -100,7 +101,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 禁止同一個條目在多個 link folder 重複建立
 - 禁止根據 link_plan.md 直接撰寫條目內容而不回到來源資料
 - 禁止為未來章節預先建立空白章節檔
-- 禁止對正式條目的定義/核心摘要/主題發展區塊每章亂改
+- 禁止對正式條目的定義/主題發展區塊每章亂改；正式條目不另建容易與定義重複的核心摘要區
+- 禁止把章次累積附加到主題發展、相關條目或來源依據之後
 - 禁止把 `secondary_types` 當 alias
 - 禁止忽略分類衝突、alias 多重指向或同名條目衝突
 - 禁止為比對方便而刪除候選名稱中的括號內容

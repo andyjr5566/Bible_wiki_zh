@@ -2,6 +2,9 @@ import tempfile
 import unittest
 import sys
 from pathlib import Path
+from unittest.mock import patch
+
+import yaml
 
 UTIL_DIR = Path(__file__).resolve().parents[1]
 if str(UTIL_DIR) not in sys.path:
@@ -13,7 +16,7 @@ from resolve_link_candidates import (
     has_book_chapter_data,
     resolve,
 )
-from link_updates import render_block, validate_update
+from link_updates import apply_updates, render_block, validate_update
 from normalize_format import normalize_chapter, normalize_entry
 
 
@@ -97,6 +100,43 @@ class UpdateTests(unittest.TestCase):
         })
         self.assertIn("<!-- accumulation:創世記:28:start -->", block)
         self.assertIn("觸發來源：CT", block)
+        self.assertNotIn("### 創世記", block)
+
+    def test_apply_inserts_inside_book_group_in_chapter_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "人物" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            entry_path.write_text(
+                "# 測試\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n### 創世記\n\n"
+                "<!-- accumulation:創世記:2:start -->\n#### 第2章\n"
+                "- 本章重點：舊資料\n- 來源：CT\n"
+                "<!-- accumulation:創世記:2:end -->\n\n"
+                "## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "創世記",
+                "chapter": 1,
+                "updates": [{
+                    "title": "測試",
+                    "path": "link_folder/人物/測試.md",
+                    "summary": "新資料",
+                    "relation": "測試關聯",
+                    "sources": ["BH"],
+                    "source_files": ["raw_data/example.txt"],
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                self.assertEqual(1, apply_updates(manifest))
+                self.assertEqual(0, apply_updates(manifest))
+            rendered = entry_path.read_text(encoding="utf-8")
+            self.assertLess(rendered.index("#### 第1章"), rendered.index("#### 第2章"))
+            accumulation = rendered[
+                rendered.index("## 按書卷累積"):rendered.index("## 主題發展")
+            ]
+            self.assertIn("#### 第1章", accumulation)
 
 
 class FormatNormalizationTests(unittest.TestCase):
@@ -124,9 +164,36 @@ class FormatNormalizationTests(unittest.TestCase):
             )
             rendered_entry = normalize_entry(entry)
             self.assertIn("## 定義", rendered_entry)
-            self.assertIn("## 核心摘要", rendered_entry)
+            self.assertNotIn("## 核心摘要", rendered_entry)
             self.assertIn("## 按書卷累積", rendered_entry)
             self.assertNotIn("## 本章整理", rendered_entry)
+
+    def test_entry_merges_distinct_summary_and_orders_chapters(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            entry = Path(tmp) / "link_folder" / "人物" / "測試.md"
+            entry.parent.mkdir(parents=True)
+            entry.write_text(
+                "---\ntype: 人物\nstatus: formal\nsource_scope: collected_only\n---\n\n"
+                "# 測試\n\n## 定義\n\n定義內容\n\n## 核心摘要\n\n補充摘要\n\n"
+                "## 按書卷累積\n\n### 主題分析\n\n分析內容\n\n"
+                "### 創世記 第2章\n\n- 來源：CT\n\n"
+                "## 主題發展\n\n既有發展\n\n## 相關條目\n\n"
+                "### 創世記 第1章\n\n- 來源：BH\n\n## 來源依據\n\n- CT\n",
+                encoding="utf-8",
+            )
+            rendered = normalize_entry(entry)
+            self.assertIn("定義內容\n\n補充摘要", rendered)
+            self.assertLess(rendered.index("#### 第1章"), rendered.index("#### 第2章"))
+            accumulation = rendered[
+                rendered.index("## 按書卷累積"):rendered.index("## 主題發展")
+            ]
+            self.assertIn("#### 第1章", accumulation)
+            self.assertEqual(1, rendered.count("### 創世記\n"))
+            self.assertNotIn("### 主題分析", accumulation)
+            development = rendered[
+                rendered.index("## 主題發展"):rendered.index("## 相關條目")
+            ]
+            self.assertIn("### 主題分析", development)
 
 
 if __name__ == "__main__":

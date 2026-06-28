@@ -19,7 +19,11 @@ from build_link_index import (
 )
 
 VALID_STATUS = {"formal", "candidate"}
-FORMAL_H2 = ["定義", "核心摘要", "按書卷累積", "主題發展", "相關條目", "來源依據"]
+BIBLE_BOOKS = list(json.loads(
+    (ROOT / "_config" / "bible_books.json").read_text(encoding="utf-8")
+))
+BOOK_RANK = {book: index for index, book in enumerate(BIBLE_BOOKS)}
+FORMAL_H2 = ["定義", "按書卷累積", "主題發展", "相關條目", "來源依據"]
 CANDIDATE_H2 = ["類型", "觸發來源", "目前資料", "相關條目", "待補充"]
 PROTECTED_HEADINGS = {
     "定義", "定義／基本資料", "定義／核心摘要", "定定義／核心摘要",
@@ -29,6 +33,7 @@ PROTECTED_CANONICAL = {
     "定義／基本資料": "定義",
     "定義／核心摘要": "定義",
     "定定義／核心摘要": "定義",
+    "核心摘要": "定義",
 }
 MARKER_RE = re.compile(
     r"<!-- accumulation:(?P<book>[^:]+):(?P<chapter>\d+):"
@@ -84,6 +89,24 @@ def validate_file(path, strict=False):
             markers[key] = body
             if "來源" not in body:
                 errors.append(f"{relative}: {key[0]}第{key[1]}章累積缺少來源")
+            accumulation = re.search(
+                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## 主題發展\s*$)", text, re.M
+            )
+            if not accumulation or not (
+                accumulation.start(1) <= match.start() < accumulation.end(1)
+            ):
+                errors.append(f"{relative}: {key[0]}第{key[1]}章累積標記不在按書卷累積區")
+            else:
+                before_marker = text[accumulation.start(1):match.start()]
+                parent_headings = re.findall(r"^###\s+(.+?)\s*$", before_marker, re.M)
+                if not parent_headings or parent_headings[-1] != key[0]:
+                    errors.append(
+                        f"{relative}: {key[0]}第{key[1]}章不在「### {key[0]}」之下"
+                    )
+                if not re.match(rf"\s*####\s+第{key[1]}章\s*$", body, re.M):
+                    errors.append(
+                        f"{relative}: {key[0]}第{key[1]}章標記內缺少對應 H4"
+                    )
     for key in stack:
         errors.append(f"{relative}: 累積標記未結束 {key[0]}第{key[1]}章")
 
@@ -95,6 +118,16 @@ def validate_file(path, strict=False):
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
         if headings != FORMAL_H2:
             errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
+        marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)
+                       if m.group("edge") == "start"]
+        ordered_keys = sorted(
+            marker_keys,
+            key=lambda item: (BOOK_RANK.get(item[0], 999), item[1]),
+        )
+        if marker_keys != ordered_keys:
+            errors.append(f"{relative}: 按書卷累積未依書卷、章次排序")
+        if re.search(r"^###\s+.+?第\s*[一二三四五六七八九十廿百\d]+\s*章\s*$", text, re.M):
+            errors.append(f"{relative}: 章次必須使用「### 書卷／#### 第N章」結構")
     elif status == "candidate":
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
         if headings != CANDIDATE_H2:
@@ -150,14 +183,18 @@ def extract_protected(text):
         heading = re.match(r"^##\s+(.+?)\s*$", line)
         if heading:
             if current is not None:
-                sections[current] = "\n".join(buffer).strip()
+                content = "\n".join(buffer).strip()
+                if content and content not in sections.get(current, ""):
+                    sections[current] = "\n\n".join(filter(None, [sections.get(current), content]))
             name = PROTECTED_CANONICAL.get(heading.group(1), heading.group(1))
             current = name if name in PROTECTED_HEADINGS else None
             buffer = []
         elif current is not None:
             buffer.append(line)
     if current is not None:
-        sections[current] = "\n".join(buffer).strip()
+        content = "\n".join(buffer).strip()
+        if content and content not in sections.get(current, ""):
+            sections[current] = "\n\n".join(filter(None, [sections.get(current), content]))
     return sections
 
 

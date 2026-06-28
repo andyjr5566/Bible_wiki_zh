@@ -56,7 +56,6 @@ def render_block(book, chapter, update):
     source_files = "、".join(update["source_files"])
     return (
         f"<!-- accumulation:{book}:{chapter}:start -->\n"
-        f"### {book}\n\n"
         f"#### 第{chapter}章\n"
         f"- 本章重點：{update['summary'].strip()}\n"
         f"- 與本章關聯：{update['relation'].strip()}\n"
@@ -85,8 +84,9 @@ def apply_updates(manifest, dry_run=False):
         missing = validate_update(update)
         if missing:
             raise ValueError(f"{update.get('title', '?')} 缺少欄位：{', '.join(missing)}")
-        path = ROOT / update["path"]
-        if not path.exists() or ROOT not in path.resolve().parents:
+        root = ROOT.resolve()
+        path = (ROOT / update["path"]).resolve()
+        if not path.exists() or (path != root and root not in path.parents):
             raise ValueError(f"不合法的條目路徑：{path}")
         text = path.read_text(encoding="utf-8")
         start = f"<!-- accumulation:{book}:{chapter}:start -->"
@@ -98,10 +98,34 @@ def apply_updates(manifest, dry_run=False):
             if count != 1:
                 raise ValueError(f"{path}: 累積標記損壞")
         else:
-            insertion = text.find("\n## 來源依據")
-            if insertion < 0:
-                insertion = len(text.rstrip())
-            new_text = text[:insertion].rstrip() + "\n\n" + block + "\n" + text[insertion:]
+            accumulation = re.search(
+                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## 主題發展\s*$)", text, re.M
+            )
+            if not accumulation:
+                raise ValueError(f"{path}: 找不到合法的按書卷累積區")
+            section = accumulation.group(1)
+            book_heading = re.search(rf"^###\s+{re.escape(book)}\s*$", section, re.M)
+            if book_heading:
+                following = section[book_heading.end():]
+                next_book = re.search(r"^###\s+", following, re.M)
+                book_end = (
+                    accumulation.start(1) + book_heading.end()
+                    + (next_book.start() if next_book else len(following))
+                )
+                insertion = book_end
+                for marker in re.finditer(
+                    rf"^<!-- accumulation:{re.escape(book)}:(\d+):start -->",
+                    section[book_heading.end():(book_heading.end() + (next_book.start() if next_book else len(following)))],
+                    re.M,
+                ):
+                    if int(marker.group(1)) > chapter:
+                        insertion = accumulation.start(1) + book_heading.end() + marker.start()
+                        break
+                new_text = text[:insertion].rstrip() + "\n\n" + block + "\n" + text[insertion:].lstrip("\n")
+            else:
+                insertion = accumulation.end(1)
+                group = f"### {book}\n\n{block}"
+                new_text = text[:insertion].rstrip() + "\n\n" + group + "\n\n" + text[insertion:].lstrip()
         if new_text != text:
             changed += 1
             if not dry_run:

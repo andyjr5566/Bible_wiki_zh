@@ -3,6 +3,7 @@
 import argparse
 import difflib
 import io
+import json
 import re
 import subprocess
 import sys
@@ -28,6 +29,14 @@ DEVELOPMENT = {
 }
 RELATED = {"相關條目", "関連項目", "相关条目", "參見"}
 SOURCES = {"來源依據", "參考來源", "參考文獻"}
+BOOK_ORDER = list(json.loads(
+    (ROOT / "_config" / "bible_books.json").read_text(encoding="utf-8")
+))
+BOOK_RANK = {book: index for index, book in enumerate(BOOK_ORDER)}
+CHINESE_DIGITS = {
+    "零": 0, "一": 1, "二": 2, "三": 3, "四": 4,
+    "五": 5, "六": 6, "七": 7, "八": 8, "九": 9,
+}
 
 
 def split_frontmatter(text):
@@ -69,6 +78,115 @@ def merge_named(items, include_labels=True):
     return "\n\n".join(chunks).strip()
 
 
+def chinese_number(value):
+    value = value.replace("廿", "二十")
+    if value == "十":
+        return 10
+    if "十" in value:
+        left, right = value.split("十", 1)
+        tens = CHINESE_DIGITS.get(left, 1) if left else 1
+        ones = CHINESE_DIGITS.get(right, 0) if right else 0
+        return tens * 10 + ones
+    return CHINESE_DIGITS.get(value)
+
+
+def parse_book_chapter(title):
+    compact = re.sub(r"\s+", "", title)
+    for book in sorted(BOOK_ORDER, key=len, reverse=True):
+        prefix = f"{book}第"
+        if not compact.startswith(prefix) or not compact.endswith("章"):
+            continue
+        number = compact[len(prefix):-1]
+        chapter = int(number) if number.isdigit() else chinese_number(number)
+        if chapter:
+            return book, chapter
+    return None
+
+
+def extract_chapter_blocks(content):
+    """取出 H3/H4 章次資料，留下不屬於章次累積的原文。"""
+    content = re.sub(r"^<!-- accumulation:[^>]+:(?:start|end) -->\s*\n?", "", content, flags=re.M)
+    matches = list(re.finditer(r"^###\s+(.+?)\s*$", content, re.M))
+    if not matches:
+        return content.strip(), []
+    prefix = content[:matches[0].start()].strip()
+    kept = [prefix] if prefix else []
+    chapters = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(content)
+        title = match.group(1).strip()
+        body = content[match.end():end].strip()
+        combined = parse_book_chapter(title)
+        if combined:
+            chapters.append((*combined, body))
+            continue
+        if title in BOOK_RANK:
+            h4s = list(re.finditer(r"^####\s+第\s*(\d+)\s*章\s*$", body, re.M))
+            if h4s:
+                group_prefix = body[:h4s[0].start()].strip()
+                residual = [group_prefix] if group_prefix else []
+                for h4_index, h4 in enumerate(h4s):
+                    h4_end = h4s[h4_index + 1].start() if h4_index + 1 < len(h4s) else len(body)
+                    chapters.append((title, int(h4.group(1)), body[h4.end():h4_end].strip()))
+                if residual:
+                    kept.append(f"### {title}\n\n" + "\n\n".join(residual))
+                continue
+        if body:
+            kept.append(f"### {title}\n\n{body}".rstrip())
+    return "\n\n".join(part for part in kept if part).strip(), chapters
+
+
+def render_chapter_accumulation(chapters):
+    grouped = {}
+    for book, chapter, content in chapters:
+        key = (book, chapter)
+        values = grouped.setdefault(key, [])
+        if content and content not in values:
+            values.append(content)
+    books = {}
+    for (book, chapter), values in grouped.items():
+        books.setdefault(book, []).append((chapter, "\n\n".join(values)))
+    rendered = []
+    for book in sorted(books, key=lambda item: (BOOK_RANK.get(item, 999), item)):
+        blocks = []
+        for chapter, content in sorted(books[book]):
+            if "來源" not in content:
+                content = "\n".join(filter(None, [
+                    content,
+                    "- 來源：見本條目「來源依據」",
+                ]))
+            block = (
+                f"<!-- accumulation:{book}:{chapter}:start -->\n"
+                f"#### 第{chapter}章\n"
+                f"{content}\n"
+                f"<!-- accumulation:{book}:{chapter}:end -->"
+            )
+            blocks.append(block)
+        rendered.append(f"### {book}\n\n" + "\n\n".join(blocks))
+    return "\n\n".join(rendered)
+
+
+def partition_accumulation(content):
+    """累積區只留索引型資料；主題型 H3 移交主題發展。"""
+    allowed = {"觸發來源", "聖經出現", "與目前整理書卷的關聯"}
+    matches = list(re.finditer(r"^###\s+(.+?)\s*$", content, re.M))
+    if not matches:
+        return content.strip(), []
+    prefix = content[:matches[0].start()].strip()
+    kept = [prefix] if prefix else []
+    moved = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(content)
+        title = match.group(1).strip()
+        body = content[match.end():end].strip()
+        rendered = f"### {title}\n\n{body}".rstrip()
+        if title in allowed:
+            kept.append(rendered)
+        elif body:
+            moved.append((title, body))
+    return "\n\n".join(kept).strip(), moved
+
+
 def normalized_frontmatter(path, fm):
     status = fm.get("status", "candidate")
     if status not in {"formal", "candidate"}:
@@ -91,7 +209,10 @@ def normalized_frontmatter(path, fm):
 def normalize_formal(path, fm, body):
     _, sections = parse_h2(body)
     buckets = {key: [] for key in ("definition", "core", "accum", "development", "related", "sources", "other")}
+    chapters = []
     for name, content in sections:
+        content, found_chapters = extract_chapter_blocks(content)
+        chapters.extend(found_chapters)
         if name in DEFINITION:
             buckets["definition"].append((name, content))
         elif name in CORE:
@@ -107,13 +228,28 @@ def normalize_formal(path, fm, body):
         else:
             buckets["other"].append((name, content))
 
-    definition = merge_named(buckets["definition"], False)
+    migrated_development = []
+    cleaned_accumulation = []
+    for name, content in buckets["accum"]:
+        kept, moved = partition_accumulation(content)
+        if kept:
+            cleaned_accumulation.append((name, kept))
+        migrated_development.extend(moved)
+    buckets["accum"] = cleaned_accumulation
+
+    definition_parts = []
+    for _, content in buckets["definition"] + buckets["core"]:
+        if content and content not in definition_parts:
+            definition_parts.append(content)
+    definition = "\n\n".join(definition_parts)
     if not definition:
         definition = first_paragraph(merge_named(buckets["accum"], False))
-    core = merge_named(buckets["core"], False) or first_paragraph(definition)
     accumulation = merge_named(buckets["accum"])
-    development_items = buckets["development"] + buckets["other"]
+    chapter_accumulation = render_chapter_accumulation(chapters)
+    accumulation = "\n\n".join(filter(None, [accumulation, chapter_accumulation]))
+    development_items = buckets["development"] + buckets["other"] + migrated_development
     development = merge_named(development_items)
+    development = re.sub(r"^###\s+主題發展\s*\n+", "", development, count=1)
     related = merge_named(buckets["related"], False)
     sources = merge_named(buckets["sources"], False)
     if not sources:
@@ -123,7 +259,6 @@ def normalize_formal(path, fm, body):
     content = [
         f"# {path.stem}",
         f"## 定義\n\n{definition}",
-        f"## 核心摘要\n\n{core}",
         f"## 按書卷累積\n\n{accumulation}",
         f"## 主題發展\n\n{development}",
         f"## 相關條目\n\n{related}",
