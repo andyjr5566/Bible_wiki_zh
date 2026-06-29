@@ -1007,6 +1007,27 @@
     "status": "formal",
     "aliases": []
   },
+  "創世記27章雅各欺騙以撒": {
+    "path": "link_folder/互文/創世記27章雅各欺騙以撒.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "創世記27章雅各欺騙以撒",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記42章約瑟哥哥們認罪": {
+    "path": "link_folder/互文/創世記42章約瑟哥哥們認罪.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "創世記42章約瑟哥哥們認罪",
+    "status": "formal",
+    "aliases": []
+  },
   "創世記49章流便受責": {
     "path": "link_folder/互文/創世記49章流便受責.md",
     "type": "互文",
@@ -1488,6 +1509,16 @@
       "比喻"
     ],
     "title": "路加福音15章",
+    "status": "formal",
+    "aliases": []
+  },
+  "阿摩司書6章不為約瑟的苦難擔憂": {
+    "path": "link_folder/互文/阿摩司書6章不為約瑟的苦難擔憂.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "阿摩司書6章不為約瑟的苦難擔憂",
     "status": "formal",
     "aliases": []
   },
@@ -2328,6 +2359,31 @@
     "status": "formal",
     "aliases": [
       "比沙"
+    ]
+  },
+  "法老": {
+    "path": "link_folder/人物/法老.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "法老",
+    "status": "formal",
+    "aliases": [
+      "Pharaoh"
+    ]
+  },
+  "波提乏": {
+    "path": "link_folder/人物/波提乏.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "波提乏",
+    "status": "formal",
+    "aliases": [
+      "Potiphar"
     ]
   },
   "流便": {
@@ -3748,6 +3804,18 @@
     "status": "formal",
     "aliases": []
   },
+  "多坍": {
+    "path": "link_folder/地點/多坍.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "多坍",
+    "status": "formal",
+    "aliases": [
+      "Dothan"
+    ]
+  },
   "大馬士革": {
     "path": "link_folder/地點/大馬士革.md",
     "type": "地點",
@@ -4251,6 +4319,17 @@
       "不食坐骨神經"
     ]
   },
+  "二十舍客勒銀子": {
+    "path": "link_folder/文化/二十舍客勒銀子.md",
+    "type": "文化",
+    "secondary_types": [
+      "互文",
+      "神學"
+    ],
+    "title": "二十舍客勒銀子",
+    "status": "formal",
+    "aliases": []
+  },
   "使女代孕習俗": {
     "path": "link_folder/文化/使女代孕習俗.md",
     "type": "文化",
@@ -4273,6 +4352,17 @@
       "收生婆",
       "助產婦"
     ]
+  },
+  "古代近東夢文化": {
+    "path": "link_folder/文化/古代近東夢文化.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "互文"
+    ],
+    "title": "古代近東夢文化",
+    "status": "formal",
+    "aliases": []
   },
   "古代近東妾與繼承權": {
     "path": "link_folder/文化/古代近東妾與繼承權.md",
@@ -4326,6 +4416,17 @@
     "secondary_types": [],
     "title": "四百舍客勒",
     "status": "candidate",
+    "aliases": []
+  },
+  "坑中無水": {
+    "path": "link_folder/文化/坑中無水.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "坑中無水",
+    "status": "formal",
     "aliases": []
   },
   "城門口交易": {
@@ -4398,6 +4499,17 @@
       "神學"
     ],
     "title": "帳棚生活與定居對比",
+    "status": "formal",
+    "aliases": []
+  },
+  "彩衣": {
+    "path": "link_folder/文化/彩衣.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "彩衣",
     "status": "formal",
     "aliases": []
   },
@@ -4500,6 +4612,16 @@
     "type": "文化",
     "secondary_types": [],
     "title": "風茄(催情果)",
+    "status": "formal",
+    "aliases": []
+  },
+  "香料乳香沒藥貿易": {
+    "path": "link_folder/文化/香料乳香沒藥貿易.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "香料乳香沒藥貿易",
     "status": "formal",
     "aliases": []
   },
@@ -4692,6 +4814,27 @@
     "status": "formal",
     "aliases": []
   },
+  "約瑟下埃及": {
+    "path": "link_folder/歷史/約瑟下埃及.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約瑟下埃及",
+    "status": "formal",
+    "aliases": []
+  },
+  "約瑟被賣": {
+    "path": "link_folder/歷史/約瑟被賣.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "互文"
+    ],
+    "title": "約瑟被賣",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟骸骨葬於示劍": {
     "path": "link_folder/歷史/約瑟骸骨葬於示劍.md",
     "type": "歷史",
@@ -4740,6 +4883,17 @@
     "type": "歷史",
     "secondary_types": [],
     "title": "雅各二十年服事",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各受兒子欺騙": {
+    "path": "link_folder/歷史/雅各受兒子欺騙.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "互文"
+    ],
+    "title": "雅各受兒子欺騙",
     "status": "formal",
     "aliases": []
   },
@@ -5146,6 +5300,16 @@
       "受苦僕人 (賽53)",
       "賽53受苦僕人"
     ]
+  },
+  "受苦到榮耀": {
+    "path": "link_folder/神學/受苦到榮耀.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "受苦到榮耀",
+    "status": "formal",
+    "aliases": []
   },
   "四十歲的意義": {
     "path": "link_folder/神學/四十歲的意義.md",
@@ -5676,6 +5840,17 @@
     "status": "candidate",
     "aliases": []
   },
+  "父親偏愛與家庭破裂": {
+    "path": "link_folder/神學/父親偏愛與家庭破裂.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "父親偏愛與家庭破裂",
+    "status": "formal",
+    "aliases": []
+  },
   "生命樹": {
     "path": "link_folder/神學/生命樹.md",
     "type": "神學",
@@ -6002,6 +6177,16 @@
     "secondary_types": [],
     "title": "第三日",
     "status": "candidate",
+    "aliases": []
+  },
+  "約瑟預表基督": {
+    "path": "link_folder/神學/約瑟預表基督.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "約瑟預表基督",
+    "status": "formal",
     "aliases": []
   },
   "細羅 (創49_10)": {
@@ -6460,6 +6645,17 @@
     "status": "formal",
     "aliases": []
   },
+  "以實瑪利人與米甸人稱呼差異": {
+    "path": "link_folder/解經爭議/以實瑪利人與米甸人稱呼差異.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "以實瑪利人與米甸人稱呼差異",
+    "status": "formal",
+    "aliases": []
+  },
   "以掃三位妻子名單差異": {
     "path": "link_folder/解經爭議/以掃三位妻子名單差異.md",
     "type": "解經爭議",
@@ -6628,6 +6824,38 @@
       "摔跤者身分",
       "雅博摔跤對手"
     ]
+  },
+  "約瑟告哥哥惡行是否告狀": {
+    "path": "link_folder/解經爭議/約瑟告哥哥惡行是否告狀.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約瑟告哥哥惡行是否告狀",
+    "status": "formal",
+    "aliases": []
+  },
+  "約瑟母親在第二夢中的指涉": {
+    "path": "link_folder/解經爭議/約瑟母親在第二夢中的指涉.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "原文",
+      "互文"
+    ],
+    "title": "約瑟母親在第二夢中的指涉",
+    "status": "formal",
+    "aliases": []
+  },
+  "約瑟說夢是否不智": {
+    "path": "link_folder/解經爭議/約瑟說夢是否不智.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "文化"
+    ],
+    "title": "約瑟說夢是否不智",
+    "status": "formal",
+    "aliases": []
   },
   "西緬利未報復是否合乎公義": {
     "path": "link_folder/解經爭議/西緬利未報復是否合乎公義.md",
@@ -7004,6 +7232,12 @@
   "比沙": {
     "alias_of": "比沙（蛾摩拉王）"
   },
+  "Pharaoh": {
+    "alias_of": "法老"
+  },
+  "Potiphar": {
+    "alias_of": "波提乏"
+  },
   "Reuben": {
     "alias_of": "流便"
   },
@@ -7144,6 +7378,9 @@
   },
   "Gerar": {
     "alias_of": "基拉耳"
+  },
+  "Dothan": {
+    "alias_of": "多坍"
   },
   "以實各谷": {
     "alias_of": "安密巴"

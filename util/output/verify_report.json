@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 6186,
+  "valid_links_count": 6414,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 103,
+  "pending_scripture_refs_count": 104,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -162,9 +162,9 @@
       "chapter": 17
     },
     {
-      "entity": "創世記/第37章",
+      "entity": "創世記/第42章",
       "book": "創世記",
-      "chapter": 37
+      "chapter": 42
     },
     {
       "entity": "創世記/第46章",
@@ -502,6 +502,11 @@
       "chapter": 1
     },
     {
+      "entity": "阿摩司書/第6章",
+      "book": "阿摩司書",
+      "chapter": 6
+    },
+    {
       "entity": "雅各書/第2章",
       "book": "雅各書",
       "chapter": 2
@@ -632,11 +637,6 @@
         ]
       ],
       "link_folder/主題/寄居者身份.md": [
-        [
-          "創世記/第37章",
-          "創世記",
-          37
-        ],
         [
           "希伯來書/第11章",
           "希伯來書",
@@ -796,6 +796,13 @@
           1
         ]
       ],
+      "link_folder/互文/創世記42章約瑟哥哥們認罪.md": [
+        [
+          "創世記/第42章",
+          "創世記",
+          42
+        ]
+      ],
       "link_folder/互文/加拉太書三章.md": [
         [
           "加拉太書/第3章",
@@ -916,6 +923,13 @@
           "耶利米書/第4章",
           "耶利米書",
           4
+        ]
+      ],
+      "link_folder/互文/阿摩司書6章不為約瑟的苦難擔憂.md": [
+        [
+          "阿摩司書/第6章",
+          "阿摩司書",
+          6
         ]
       ],
       "link_folder/人物/亞蘭人.md": [
@@ -1047,11 +1061,6 @@
           "出埃及記/第3章",
           "出埃及記",
           3
-        ],
-        [
-          "創世記/第37章",
-          "創世記",
-          37
         ],
         [
           "士師記/第6章",
