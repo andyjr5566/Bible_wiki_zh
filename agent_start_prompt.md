@@ -114,6 +114,7 @@ C:\Obsidian\Hermes\scripture\scheme.md
 ## debug
 
 - 若python util/verify_links.py 沒過
-	- 主要章節沒寫好,先讀在檢查link 寫法是否有誤 (90% 問題出在這)
-    - 若是依然沒過,檢查 broken link 在 link folder 的所在檔案, link 寫法是否有錯
-    - 若是沒過，在考慮這個是不是不用設link
+	1. 確認主章的link 有沒有寫完
+	2. 若是有，應該是主要章節沒寫好,先讀在檢查link 寫法是否有誤 (90% 問題出在這)
+    3. 若是依然沒過,檢查 broken link 在 link folder 的所在檔案, link 寫法是否有錯
+    4. 若是沒過，在考慮這個是不是不用設link

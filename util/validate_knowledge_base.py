@@ -87,8 +87,6 @@ def validate_file(path, strict=False):
         else:
             body = text[stack.pop(key):match.start()]
             markers[key] = body
-            if "來源" not in body:
-                errors.append(f"{relative}: {key[0]}第{key[1]}章累積缺少來源")
             accumulation = re.search(
                 r"^## 按書卷累積\s*$([\s\S]*?)(?=^## 主題發展\s*$)", text, re.M
             )

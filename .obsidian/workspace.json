@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "創世記/第32章.md",
-                "mode": "source",
+                "file": "創世記/第33章.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第32章"
+              "title": "第33章"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "創世記/第32章.md",
+                "file": "創世記/第33章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第32章 的反向連結"
+              "title": "第33章 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "創世記/第32章.md",
+                "file": "創世記/第33章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第32章 的對外連結"
+              "title": "第33章 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "創世記/第32章.md",
+                "file": "創世記/第33章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第32章 的大綱"
+              "title": "第33章 的大綱"
             }
           }
         ]
@@ -185,42 +185,42 @@
   },
   "active": "0d256e0f31958fd4",
   "lastOpenFiles": [
-    "link_folder/地點/西珥山.md",
-    "link_folder/地點/以東.md",
-    "link_folder/人物/何利人.md",
-    "link_folder/地點/伊勒巴蘭.md",
+    "link_folder/歷史/亞瑪拿泥版.md",
+    "link_folder/歷史/亞伯拉罕買麥比拉洞 (創23).md",
+    "link_folder/互文/浪子比喻 (路15).md",
+    "創世記/第33章.md",
     "agent_start_prompt.md",
-    "link_folder/歷史/雅各改名以色列.md",
-    "link_folder/解經爭議/雅各大腿窩扭傷的屬靈意義.md",
-    "link_folder/人物/雅各.md",
-    "創世記/第32章.md",
-    "link_folder/神學/面對面見神.md",
-    "link_folder/神學/伯特利的神.md",
-    "link_folder/文化/不吃大腿窩的筋.md",
-    "link_folder/原文/大腿窩的筋.md",
-    "創世記/第14章.md",
+    "README.md",
     "scheme.md",
-    "link_folder/互文/何西阿書12章雅各摔跤.md",
-    "面對面見了神.md",
-    "link_folder/人物/以掃.md",
-    "link_folder/原文/摔跤.md",
-    "link_folder/人物/亞伯拉罕.md",
-    "link_folder/原文/毗努伊勒.md",
-    "link_folder/解經爭議/雅各禱告與策略的關係.md",
-    "link_folder/解經爭議/神與雅各摔跤的身分.md",
-    "link_folder/互文/雅各禱告的榜樣.md",
-    "link_folder/文化/解恨之禮.md",
-    "link_folder/原文/瑪哈念.md",
+    "link_folder/文化/古代送禮習俗 (賄賂-禮貌-表達愛).md",
+    "link_folder/原文/哈抹 (驢子-騾子).md",
+    "link_folder/解經爭議/雅各安排家人順序是否偏愛.md",
+    "link_folder/文化/古代送禮習俗 (賄賂_禮貌_表達愛).md/禮貌/表達愛).md",
+    "link_folder/文化/古代送禮習俗 (賄賂_禮貌_表達愛).md/禮貌",
+    "link_folder/文化/古代送禮習俗 (賄賂_禮貌_表達愛).md",
+    "link_folder/原文/哈抹 (驢子_騾子).md/騾子).md",
+    "link_folder/原文/哈抹 (驢子_騾子).md",
+    "link_folder/文化/帳棚生活與定居對比.md",
+    "link_folder/文化/客西達錢幣單位.md",
+    "link_folder/文化/古代送禮習俗 (賄賂/禮貌/表達愛).md",
+    "link_folder/文化/古代送禮習俗 (賄賂/禮貌",
+    "link_folder/文化/古代送禮習俗 (賄賂",
+    "link_folder/解經爭議/示劍築壇意義：紀念神還是佔領地土.md",
+    "link_folder/解經爭議/疏割居住是否屬靈倒退.md",
+    "link_folder/解經爭議/以掃饒恕雅各是否真心還是神感動.md",
+    "link_folder/解經爭議/雅各未去西珥卻往疏割示劍是否違背神旨意.md",
+    "link_folder/解經爭議/雅各見面如見神面是否冒犯神榮耀.md",
+    "link_folder/解經爭議/雅各稱以掃為主、自稱僕人是否失去尊嚴.md",
+    "link_folder/互文/和睦是神喜悅 (詩1331).md",
+    "link_folder/互文/神賜福賜財富能力 (申818).md",
+    "link_folder/互文/謙卑像基督 (腓27-8).md",
+    "link_folder/原文/哈抹 (驢子",
+    "util/tests/__pycache__/__init__.cpython-311.pyc",
+    "raw_data/biblehub_study_genesis_33.txt",
+    "raw_data/kingcomments_genesis_33.txt",
+    "raw_data/ccbiblestudy_GT_genesis_33.txt",
+    "raw_data/ccbiblestudy_CT_genesis_33.txt",
     "raw_data/biblehub_study_genesis_32.txt",
-    "raw_data/kingcomments_genesis_32.txt",
-    "raw_data/ccbiblestudy_GT_genesis_32.txt",
-    "raw_data/ccbiblestudy_CT_genesis_32.txt",
-    "util/output/audits",
-    "link_folder/文化/雙語命名（亞蘭語伊迦爾撒哈杜他 ",
-    "link_folder/文化/家神像 ",
-    "link_folder/歷史",
-    "appendix/video/演示.mp4",
-    "appendix/video/演示_.mp4",
     "Pasted image 20260628223946.png",
     "Pasted image 20260628223941.png"
   ]
