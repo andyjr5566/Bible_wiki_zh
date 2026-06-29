@@ -19,12 +19,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "agent_start_prompt.md",
-                    "mode": "source",
+                    "file": "README.md",
+                    "mode": "preview",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "agent_start_prompt"
+                  "title": "README"
                 },
                 "group": "07d503c601e0fc2d"
               }
@@ -41,7 +41,7 @@
                 "state": {
                   "type": "backlink",
                   "state": {
-                    "file": "agent_start_prompt.md",
+                    "file": "README.md",
                     "collapseAll": false,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
@@ -51,7 +51,7 @@
                     "unlinkedCollapsed": true
                   },
                   "icon": "links-coming-in",
-                  "title": "agent_start_prompt 的反向連結"
+                  "title": "README 的反向連結"
                 },
                 "group": "07d503c601e0fc2d"
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -99,7 +99,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "agent_start_prompt 的關聯圖"
+              "title": "README 的關聯圖"
             },
             "group": "07d503c601e0fc2d"
           }
@@ -176,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "agent_start_prompt 的反向連結"
+              "title": "README 的反向連結"
             }
           },
           {
@@ -195,12 +195,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "agent_start_prompt 的對外連結"
+              "title": "README 的對外連結"
             }
           },
           {
@@ -238,13 +238,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "agent_start_prompt 的大綱"
+              "title": "README 的大綱"
             }
           }
         ]
@@ -267,8 +267,8 @@
   },
   "active": "0d256e0f31958fd4",
   "lastOpenFiles": [
-    "scheme.md",
     "agent_start_prompt.md",
+    "scheme.md",
     "link_folder/文化/奠酒.md",
     "創世記/第35章.md",
     "創世記/第1章.md",
