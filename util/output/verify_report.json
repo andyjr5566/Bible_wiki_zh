@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 5854,
+  "valid_links_count": 6186,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 104,
+  "pending_scripture_refs_count": 103,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -160,11 +160,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第36章",
-      "book": "創世記",
-      "chapter": 36
     },
     {
       "entity": "創世記/第37章",
@@ -923,13 +918,6 @@
           4
         ]
       ],
-      "link_folder/人物/亞瑪力人.md": [
-        [
-          "創世記/第36章",
-          "創世記",
-          36
-        ]
-      ],
       "link_folder/人物/亞蘭人.md": [
         [
           "但以理書/第2章",
@@ -963,11 +951,6 @@
       ],
       "link_folder/人物/以掃.md": [
         [
-          "創世記/第36章",
-          "創世記",
-          36
-        ],
-        [
           "希伯來書/第12章",
           "希伯來書",
           12
@@ -978,13 +961,6 @@
           "羅馬書/第9章",
           "羅馬書",
           9
-        ]
-      ],
-      "link_folder/人物/何利人.md": [
-        [
-          "創世記/第36章",
-          "創世記",
-          36
         ]
       ],
       "link_folder/人物/基土拉.md": [
@@ -1030,13 +1006,6 @@
           "彌迦書/第5章",
           "彌迦書",
           5
-        ]
-      ],
-      "link_folder/人物/巴實抹.md": [
-        [
-          "創世記/第36章",
-          "創世記",
-          36
         ]
       ],
       "link_folder/人物/所羅門.md": [

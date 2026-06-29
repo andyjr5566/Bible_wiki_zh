@@ -922,6 +922,16 @@
       "何西阿書12章"
     ]
   },
+  "俄巴底亞書以東審判": {
+    "path": "link_folder/互文/俄巴底亞書以東審判.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "俄巴底亞書以東審判",
+    "status": "formal",
+    "aliases": []
+  },
   "兒女為神賞賜 (詩127-3)": {
     "path": "link_folder/互文/兒女為神賞賜 (詩127-3).md",
     "type": "互文",
@@ -940,6 +950,17 @@
       "兒女為神賞賜 (詩127-3)"
     ]
   },
+  "出埃及記17章亞瑪力攻擊以色列": {
+    "path": "link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "出埃及記17章亞瑪力攻擊以色列",
+    "status": "formal",
+    "aliases": []
+  },
   "出埃及記一章": {
     "path": "link_folder/互文/出埃及記一章.md",
     "type": "互文",
@@ -953,6 +974,36 @@
     "type": "互文",
     "secondary_types": [],
     "title": "創一章與創八章的對照",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記13章亞伯拉罕與羅得分離": {
+    "path": "link_folder/互文/創世記13章亞伯拉罕與羅得分離.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "創世記13章亞伯拉罕與羅得分離",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記25章以掃賣長子名分": {
+    "path": "link_folder/互文/創世記25章以掃賣長子名分.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "創世記25章以掃賣長子名分",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記27章以掃所得祝福": {
+    "path": "link_folder/互文/創世記27章以掃所得祝福.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "創世記27章以掃所得祝福",
     "status": "formal",
     "aliases": []
   },
@@ -1104,6 +1155,16 @@
     "status": "formal",
     "aliases": []
   },
+  "歷代志上1章以掃後裔": {
+    "path": "link_folder/互文/歷代志上1章以掃後裔.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "歷代志上1章以掃後裔",
+    "status": "formal",
+    "aliases": []
+  },
   "歷代志上5章流便失去長子名分": {
     "path": "link_folder/互文/歷代志上5章流便失去長子名分.md",
     "type": "互文",
@@ -1167,6 +1228,17 @@
     "aliases": [
       "申命記22:28-29 強姦者娶被害女子律法"
     ]
+  },
+  "申命記2章西珥賜給以掃": {
+    "path": "link_folder/互文/申命記2章西珥賜給以掃.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "地點"
+    ],
+    "title": "申命記2章西珥賜給以掃",
+    "status": "formal",
+    "aliases": []
   },
   "申命記7_3-4 禁止與迦南人通婚": {
     "path": "link_folder/互文/申命記7_3-4 禁止與迦南人通婚.md",
@@ -1288,6 +1360,16 @@
     "aliases": [
       "羅馬書2:28-29 真割禮是內心的"
     ]
+  },
+  "羅馬書9章雅各以掃揀選": {
+    "path": "link_folder/互文/羅馬書9章雅各以掃揀選.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "羅馬書9章雅各以掃揀選",
+    "status": "formal",
+    "aliases": []
   },
   "羅馬書九章": {
     "path": "link_folder/互文/羅馬書九章.md",
@@ -1523,11 +1605,27 @@
     "status": "candidate",
     "aliases": []
   },
+  "亞大": {
+    "path": "link_folder/人物/亞大.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞大",
+    "status": "formal",
+    "aliases": []
+  },
   "亞戶撒": {
     "path": "link_folder/人物/亞戶撒.md",
     "type": "人物",
     "secondary_types": [],
     "title": "亞戶撒",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞拿（何利人）": {
+    "path": "link_folder/人物/亞拿（何利人）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞拿（何利人）",
     "status": "formal",
     "aliases": []
   },
@@ -1599,6 +1697,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亭納": {
+    "path": "link_folder/人物/亭納.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亭納",
+    "status": "formal",
+    "aliases": []
+  },
   "人": {
     "path": "link_folder/人物/人.md",
     "type": "人物",
@@ -1646,6 +1752,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "以利以謝（人物）",
+    "status": "formal",
+    "aliases": []
+  },
+  "以利法": {
+    "path": "link_folder/人物/以利法.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以利法",
     "status": "formal",
     "aliases": []
   },
@@ -2226,6 +2340,14 @@
       "Reuben"
     ]
   },
+  "流珥（以掃之子）": {
+    "path": "link_folder/人物/流珥（以掃之子）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "流珥（以掃之子）",
+    "status": "formal",
+    "aliases": []
+  },
   "烏利亞": {
     "path": "link_folder/人物/烏利亞.md",
     "type": "人物",
@@ -2332,6 +2454,14 @@
       "天使"
     ]
   },
+  "祭便": {
+    "path": "link_folder/人物/祭便.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "祭便",
+    "status": "formal",
+    "aliases": []
+  },
   "米甸": {
     "path": "link_folder/人物/米甸.md",
     "type": "人物",
@@ -2419,6 +2549,14 @@
     "status": "formal",
     "aliases": []
   },
+  "西珥（何利人）": {
+    "path": "link_folder/人物/西珥（何利人）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "西珥（何利人）",
+    "status": "formal",
+    "aliases": []
+  },
   "西緬": {
     "path": "link_folder/人物/西緬.md",
     "type": "人物",
@@ -2493,6 +2631,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "閃",
+    "status": "formal",
+    "aliases": []
+  },
+  "阿何利巴瑪": {
+    "path": "link_folder/人物/阿何利巴瑪.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "阿何利巴瑪",
     "status": "formal",
     "aliases": []
   },
@@ -2787,6 +2933,27 @@
       "亞倫巴古"
     ]
   },
+  "以掃名字含義": {
+    "path": "link_folder/原文/以掃名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "以掃名字含義",
+    "status": "formal",
+    "aliases": []
+  },
+  "以東名字含義": {
+    "path": "link_folder/原文/以東名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點",
+      "人物"
+    ],
+    "title": "以東名字含義",
+    "status": "formal",
+    "aliases": []
+  },
   "以色列": {
     "path": "link_folder/原文/以色列.md",
     "type": "原文",
@@ -2851,6 +3018,16 @@
     "type": "原文",
     "secondary_types": [],
     "title": "但（伸冤）",
+    "status": "formal",
+    "aliases": []
+  },
+  "何利名字含義": {
+    "path": "link_folder/原文/何利名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "何利名字含義",
     "status": "formal",
     "aliases": []
   },
@@ -3053,6 +3230,26 @@
     "type": "原文",
     "secondary_types": [],
     "title": "洪水前先祖名字含義",
+    "status": "formal",
+    "aliases": []
+  },
+  "流珥名字含義": {
+    "path": "link_folder/原文/流珥名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "流珥名字含義",
+    "status": "formal",
+    "aliases": []
+  },
+  "溫泉或騾子（創36：24）": {
+    "path": "link_folder/原文/溫泉或騾子（創36：24）.md",
+    "type": "原文",
+    "secondary_types": [
+      "解經爭議"
+    ],
+    "title": "溫泉或騾子（創36：24）",
     "status": "formal",
     "aliases": []
   },
@@ -3391,6 +3588,16 @@
     "status": "formal",
     "aliases": []
   },
+  "利河伯（大河邊）": {
+    "path": "link_folder/地點/利河伯（大河邊）.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "利河伯（大河邊）",
+    "status": "formal",
+    "aliases": []
+  },
   "加低斯": {
     "path": "link_folder/地點/加低斯.md",
     "type": "地點",
@@ -3656,6 +3863,16 @@
     "status": "formal",
     "aliases": []
   },
+  "提幔": {
+    "path": "link_folder/地點/提幔.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "提幔",
+    "status": "formal",
+    "aliases": []
+  },
   "摩利亞地": {
     "path": "link_folder/地點/摩利亞地.md",
     "type": "地點",
@@ -3666,6 +3883,16 @@
       "Moriah",
       "摩利亞山"
     ]
+  },
+  "摩押地": {
+    "path": "link_folder/地點/摩押地.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "摩押地",
+    "status": "formal",
+    "aliases": []
   },
   "撒冷": {
     "path": "link_folder/地點/撒冷.md",
@@ -3738,6 +3965,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "沙微基列亭",
+    "status": "formal",
+    "aliases": []
+  },
+  "波斯拉": {
+    "path": "link_folder/地點/波斯拉.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "波斯拉",
     "status": "formal",
     "aliases": []
   },
@@ -4299,6 +4536,74 @@
     "status": "formal",
     "aliases": []
   },
+  "以掃妻子名差異": {
+    "path": "link_folder/歷史/以掃妻子名差異.md",
+    "type": "歷史",
+    "secondary_types": [
+      "解經爭議"
+    ],
+    "title": "以掃妻子名差異",
+    "status": "formal",
+    "aliases": []
+  },
+  "以掃後裔譜系": {
+    "path": "link_folder/歷史/以掃後裔譜系.md",
+    "type": "歷史",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "以掃後裔譜系",
+    "status": "formal",
+    "aliases": []
+  },
+  "以掃遷居西珥山": {
+    "path": "link_folder/歷史/以掃遷居西珥山.md",
+    "type": "歷史",
+    "secondary_types": [
+      "地點",
+      "神學"
+    ],
+    "title": "以掃遷居西珥山",
+    "status": "formal",
+    "aliases": []
+  },
+  "以東族長制度": {
+    "path": "link_folder/歷史/以東族長制度.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "以東族長制度",
+    "status": "formal",
+    "aliases": []
+  },
+  "以東諸王早於以色列王政": {
+    "path": "link_folder/歷史/以東諸王早於以色列王政.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "以東諸王早於以色列王政",
+    "status": "formal",
+    "aliases": []
+  },
+  "以東非世襲王制": {
+    "path": "link_folder/歷史/以東非世襲王制.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "以東非世襲王制",
+    "status": "formal",
+    "aliases": []
+  },
+  "何利人與以東人同化": {
+    "path": "link_folder/歷史/何利人與以東人同化.md",
+    "type": "歷史",
+    "secondary_types": [
+      "人物",
+      "地點"
+    ],
+    "title": "何利人與以東人同化",
+    "status": "formal",
+    "aliases": []
+  },
   "分裂國度": {
     "path": "link_folder/歷史/分裂國度.md",
     "type": "歷史",
@@ -4657,6 +4962,16 @@
     "aliases": [
       "以撒豫表基督"
     ]
+  },
+  "以東與以色列的敵對": {
+    "path": "link_folder/神學/以東與以色列的敵對.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "以東與以色列的敵對",
+    "status": "formal",
+    "aliases": []
   },
   "伯特利的神": {
     "path": "link_folder/神學/伯特利的神.md",
@@ -5044,6 +5359,16 @@
     "status": "formal",
     "aliases": []
   },
+  "屬世成功早於應許成就": {
+    "path": "link_folder/神學/屬世成功早於應許成就.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "屬世成功早於應許成就",
+    "status": "formal",
+    "aliases": []
+  },
   "屬神的憂愁 (林後7_10)": {
     "path": "link_folder/神學/屬神的憂愁 (林後7_10).md",
     "type": "神學",
@@ -5119,6 +5444,17 @@
     "secondary_types": [],
     "title": "悔改與信心",
     "status": "candidate",
+    "aliases": []
+  },
+  "應許之地與西珥山的分離": {
+    "path": "link_folder/神學/應許之地與西珥山的分離.md",
+    "type": "神學",
+    "secondary_types": [
+      "地點",
+      "歷史"
+    ],
+    "title": "應許之地與西珥山的分離",
+    "status": "formal",
     "aliases": []
   },
   "應許之子與信心": {
@@ -5409,6 +5745,17 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神對不義者的約束",
+    "status": "formal",
+    "aliases": []
+  },
+  "神對以掃的地業安排": {
+    "path": "link_folder/神學/神對以掃的地業安排.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史",
+      "地點"
+    ],
+    "title": "神對以掃的地業安排",
     "status": "formal",
     "aliases": []
   },
@@ -6113,6 +6460,16 @@
     "status": "formal",
     "aliases": []
   },
+  "以掃三位妻子名單差異": {
+    "path": "link_folder/解經爭議/以掃三位妻子名單差異.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "以掃三位妻子名單差異",
+    "status": "formal",
+    "aliases": []
+  },
   "以掃饒恕雅各是否真心還是神感動": {
     "path": "link_folder/解經爭議/以掃饒恕雅各是否真心還是神感動.md",
     "type": "解經爭議",
@@ -6129,6 +6486,16 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "利用割禮作欺騙工具的性質",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記36章以東諸王年代問題": {
+    "path": "link_folder/解經爭議/創世記36章以東諸王年代問題.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "創世記36章以東諸王年代問題",
     "status": "formal",
     "aliases": []
   },

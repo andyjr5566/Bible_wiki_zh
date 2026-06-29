@@ -141,13 +141,67 @@ def decode_html(raw: bytes) -> str:
 
 def repair_mojibake(text: str) -> str:
     """Repair common UTF-8-as-Windows-1252 sequences without harming CJK text."""
+    def repair_big5_as_latin1(candidate: str) -> str | None:
+        big5_markers = ("¡", "¤", "ª", "¦", "§", "¨", "«", "¬", "­", "®", "°", "±")
+        if not any(ord(char) > 127 for char in candidate):
+            return None
+        try:
+            repaired = candidate.encode("latin-1").decode("cp950")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            return None
+        old_cjk = sum("\u3400" <= char <= "\u9fff" for char in candidate)
+        new_cjk = sum("\u3400" <= char <= "\u9fff" for char in repaired)
+        old_markers = sum(candidate.count(marker) for marker in big5_markers)
+        new_markers = sum(repaired.count(marker) for marker in big5_markers)
+        if new_cjk >= max(4, old_cjk * 2 + 4) and new_markers <= old_markers:
+            return repaired
+        return None
+
+    repaired_text = repair_big5_as_latin1(text)
+    if repaired_text is not None:
+        text = repaired_text
+    else:
+        lines: list[str] = []
+        changed = False
+        for line in text.splitlines(keepends=True):
+            body = line.rstrip("\r\n")
+            ending = line[len(body):]
+            repaired_line = repair_big5_as_latin1(body)
+            if repaired_line is not None:
+                lines.append(repaired_line + ending)
+                changed = True
+            else:
+                lines.append(line)
+        if changed:
+            text = "".join(lines)
+
     markers = ("â€", "â€™", "â€œ", "â€”", "Ã", "Â©", "Â ")
     if not any(marker in text for marker in markers):
         return text
     try:
         repaired = text.encode("cp1252").decode("utf-8")
     except (UnicodeEncodeError, UnicodeDecodeError):
-        return text
+        lines = []
+        changed = False
+        for line in text.splitlines(keepends=True):
+            body = line.rstrip("\r\n")
+            ending = line[len(body):]
+            if not any(marker in body for marker in markers):
+                lines.append(line)
+                continue
+            try:
+                repaired_line = body.encode("cp1252").decode("utf-8")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                lines.append(line)
+                continue
+            old_score = sum(body.count(m) for m in markers)
+            new_score = sum(repaired_line.count(m) for m in markers)
+            if new_score < old_score:
+                lines.append(repaired_line + ending)
+                changed = True
+            else:
+                lines.append(line)
+        return "".join(lines) if changed else text
     old_score = sum(text.count(m) for m in markers)
     new_score = sum(repaired.count(m) for m in markers)
     return repaired if new_score < old_score else text

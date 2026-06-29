@@ -10,6 +10,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 
 `scheme.md` 是最高規則。
 
+並請注意本文尾端的debug方法，對之後若遇到問題時，幫助很大
+
 ## 開工流程
 
 請依序執行：
@@ -38,6 +40,7 @@ C:\Obsidian\Hermes\scripture\scheme.md
     - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
     - 例如：`python util/resolve_link_candidates.py 創世記 13`
 15. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
+    - 回報時不要貼完整 `link_plan.md`；只回報 D 類、C 類摘要、分類衝突與需要使用者決策的點
 16. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
 17. **根據 link_plan 更新 link folder**：
     - B 類先執行 `python util/link_updates.py prepare 【書名】 X`
@@ -55,6 +58,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
 23. 執行 `python util/audit_knowledge_base.py --check-due`
 24. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
 25. 重跑驗證直到全部通過
+    - 驗證通過時只回報摘要數字：validate errors/warnings、quality critical/warning、verify broken/invalid/unknown、audit due PASS/FAIL
+    - 只有失敗時才展開 blocking 錯誤細節；不要貼出完整 pending refs 或長篇報告
 26. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
 27. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
 28. 通過後 git commit + push，確認 CI 通過
@@ -115,3 +120,10 @@ C:\Obsidian\Hermes\scripture\scheme.md
 	2. 若是有，應該是主要章節沒寫好,先讀在檢查link 寫法是否有誤 (90% 問題出在這)
     3. 若是依然沒過,檢查 broken link 在 link folder 的所在檔案, link 寫法是否有錯
     4. 若是沒過，在考慮這個是不是不用設link
+
+- 關於link folder的link錯誤，需要改名時
+    - 任何既有 Markdown 檔案改名或移動時，一律使用：
+    ```text
+    python util/rename_markdown.py "目前檔案路徑.md" "改名後檔案路徑.md"
+    ```
+    工具會先確認目標檔名未與全庫任何 Markdown 檔案同名，再同步更新所有指向原檔案的 Obsidian WikiLink target；alias、標題錨點與嵌入語法必須保留。撞名或連結指向不明時必須拒絕執行，不得直接用檔案系統命令改名，或是自己生patch更改
