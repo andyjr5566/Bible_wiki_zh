@@ -1018,6 +1018,16 @@
     "status": "formal",
     "aliases": []
   },
+  "創世記37章山羊與衣服欺騙雅各": {
+    "path": "link_folder/互文/創世記37章山羊與衣服欺騙雅各.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "創世記37章山羊與衣服欺騙雅各",
+    "status": "formal",
+    "aliases": []
+  },
   "創世記42章約瑟哥哥們認罪": {
     "path": "link_folder/互文/創世記42章約瑟哥哥們認罪.md",
     "type": "互文",
@@ -1199,6 +1209,16 @@
       "歷代志上5章流便"
     ]
   },
+  "法勒斯出生與雅各以掃出生對照": {
+    "path": "link_folder/互文/法勒斯出生與雅各以掃出生對照.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "法勒斯出生與雅各以掃出生對照",
+    "status": "formal",
+    "aliases": []
+  },
   "浪子比喻 (路15)": {
     "path": "link_folder/互文/浪子比喻 (路15).md",
     "type": "互文",
@@ -1249,6 +1269,16 @@
     "aliases": [
       "申命記22:28-29 強姦者娶被害女子律法"
     ]
+  },
+  "申命記25章弟續兄孀律法": {
+    "path": "link_folder/互文/申命記25章弟續兄孀律法.md",
+    "type": "互文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "申命記25章弟續兄孀律法",
+    "status": "formal",
+    "aliases": []
   },
   "申命記2章西珥賜給以掃": {
     "path": "link_folder/互文/申命記2章西珥賜給以掃.md",
@@ -1512,6 +1542,14 @@
     "status": "formal",
     "aliases": []
   },
+  "路得記4章法勒斯家譜": {
+    "path": "link_folder/互文/路得記4章法勒斯家譜.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路得記4章法勒斯家譜",
+    "status": "formal",
+    "aliases": []
+  },
   "阿摩司書6章不為約瑟的苦難擔憂": {
     "path": "link_folder/互文/阿摩司書6章不為約瑟的苦難擔憂.md",
     "type": "互文",
@@ -1562,6 +1600,16 @@
     "type": "互文",
     "secondary_types": [],
     "title": "雅各與拉班（創31接續）",
+    "status": "formal",
+    "aliases": []
+  },
+  "馬太福音1章他瑪進入基督家譜": {
+    "path": "link_folder/互文/馬太福音1章他瑪進入基督家譜.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "馬太福音1章他瑪進入基督家譜",
     "status": "formal",
     "aliases": []
   },
@@ -1762,6 +1810,16 @@
       "他瑪 (撒下13)"
     ]
   },
+  "他瑪（創38）": {
+    "path": "link_folder/人物/他瑪（創38）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "他瑪（創38）",
+    "status": "formal",
+    "aliases": [
+      "Tamar"
+    ]
+  },
   "以倫": {
     "path": "link_folder/人物/以倫.md",
     "type": "人物",
@@ -1908,6 +1966,16 @@
     "status": "formal",
     "aliases": [
       "Benjamin"
+    ]
+  },
+  "俄南": {
+    "path": "link_folder/人物/俄南.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "俄南",
+    "status": "formal",
+    "aliases": [
+      "Onan"
     ]
   },
   "偉人": {
@@ -2097,6 +2165,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "希伯來人",
+    "status": "formal",
+    "aliases": []
+  },
+  "希拉": {
+    "path": "link_folder/人物/希拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "希拉",
     "status": "formal",
     "aliases": []
   },
@@ -2304,6 +2380,27 @@
     "status": "formal",
     "aliases": []
   },
+  "書亞的女兒": {
+    "path": "link_folder/人物/書亞的女兒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "書亞的女兒",
+    "status": "formal",
+    "aliases": [
+      "猶大的妻子",
+      "Shua's daughter"
+    ]
+  },
+  "書亞（迦南人）": {
+    "path": "link_folder/人物/書亞（迦南人）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "書亞（迦南人）",
+    "status": "formal",
+    "aliases": [
+      "Shua"
+    ]
+  },
   "比利": {
     "path": "link_folder/人物/比利.md",
     "type": "人物",
@@ -2359,6 +2456,16 @@
     "status": "formal",
     "aliases": [
       "比沙"
+    ]
+  },
+  "法勒斯": {
+    "path": "link_folder/人物/法勒斯.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "法勒斯",
+    "status": "formal",
+    "aliases": [
+      "Perez"
     ]
   },
   "法老": {
@@ -2440,6 +2547,16 @@
     "status": "formal",
     "aliases": []
   },
+  "珥": {
+    "path": "link_folder/人物/珥.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "珥",
+    "status": "formal",
+    "aliases": [
+      "Er"
+    ]
+  },
   "瑣轄": {
     "path": "link_folder/人物/瑣轄.md",
     "type": "人物",
@@ -2487,6 +2604,16 @@
     "title": "示劍（哈抹之子）",
     "status": "formal",
     "aliases": []
+  },
+  "示拉": {
+    "path": "link_folder/人物/示拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "示拉",
+    "status": "formal",
+    "aliases": [
+      "Shelah"
+    ]
   },
   "示納（押瑪王）": {
     "path": "link_folder/人物/示納（押瑪王）.md",
@@ -2638,6 +2765,16 @@
     "title": "該隱",
     "status": "formal",
     "aliases": []
+  },
+  "謝拉": {
+    "path": "link_folder/人物/謝拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "謝拉",
+    "status": "formal",
+    "aliases": [
+      "Zerah"
+    ]
   },
   "赫人": {
     "path": "link_folder/人物/赫人.md",
@@ -3487,6 +3624,16 @@
     "status": "formal",
     "aliases": []
   },
+  "亞杜蘭": {
+    "path": "link_folder/地點/亞杜蘭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞杜蘭",
+    "status": "formal",
+    "aliases": [
+      "Adullam"
+    ]
+  },
   "亞特蘭加寧": {
     "path": "link_folder/地點/亞特蘭加寧.md",
     "type": "地點",
@@ -3510,6 +3657,16 @@
     "title": "亞述",
     "status": "formal",
     "aliases": []
+  },
+  "亭拿（猶大）": {
+    "path": "link_folder/地點/亭拿（猶大）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亭拿（猶大）",
+    "status": "formal",
+    "aliases": [
+      "Timnah"
+    ]
   },
   "以得臺": {
     "path": "link_folder/地點/以得臺.md",
@@ -3571,6 +3728,16 @@
     "title": "伊勒巴蘭",
     "status": "formal",
     "aliases": []
+  },
+  "伊拿印": {
+    "path": "link_folder/地點/伊拿印.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伊拿印",
+    "status": "formal",
+    "aliases": [
+      "Enaim"
+    ]
   },
   "伊甸": {
     "path": "link_folder/地點/伊甸.md",
@@ -3777,6 +3944,17 @@
     "title": "基列山",
     "status": "formal",
     "aliases": []
+  },
+  "基悉": {
+    "path": "link_folder/地點/基悉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基悉",
+    "status": "formal",
+    "aliases": [
+      "Chezib",
+      "亞革悉"
+    ]
   },
   "基拉耳": {
     "path": "link_folder/地點/基拉耳.md",
@@ -4340,6 +4518,16 @@
       "使女"
     ]
   },
+  "印帶杖身份憑據": {
+    "path": "link_folder/文化/印帶杖身份憑據.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "印帶杖身份憑據",
+    "status": "formal",
+    "aliases": [
+      "印、帶子、杖"
+    ]
+  },
   "古代收生婆": {
     "path": "link_folder/文化/古代收生婆.md",
     "type": "文化",
@@ -4483,6 +4671,14 @@
       "特拉芬"
     ]
   },
+  "寡婦衣裳": {
+    "path": "link_folder/文化/寡婦衣裳.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "寡婦衣裳",
+    "status": "formal",
+    "aliases": []
+  },
   "工價與雇約": {
     "path": "link_folder/文化/工價與雇約.md",
     "type": "文化",
@@ -4501,6 +4697,19 @@
     "title": "帳棚生活與定居對比",
     "status": "formal",
     "aliases": []
+  },
+  "弟續兄孀制度": {
+    "path": "link_folder/文化/弟續兄孀制度.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "弟續兄孀制度",
+    "status": "formal",
+    "aliases": [
+      "兄終弟及婚姻",
+      "levirate marriage"
+    ]
   },
   "彩衣": {
     "path": "link_folder/文化/彩衣.md",
@@ -4549,6 +4758,16 @@
     "status": "formal",
     "aliases": []
   },
+  "紅線與長子標記": {
+    "path": "link_folder/文化/紅線與長子標記.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "紅線與長子標記",
+    "status": "formal",
+    "aliases": [
+      "紅線"
+    ]
+  },
   "耳環作異教護身符": {
     "path": "link_folder/文化/耳環作異教護身符.md",
     "type": "文化",
@@ -4586,6 +4805,19 @@
     "title": "許願",
     "status": "formal",
     "aliases": []
+  },
+  "迦南廟妓風俗": {
+    "path": "link_folder/文化/迦南廟妓風俗.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "迦南廟妓風俗",
+    "status": "formal",
+    "aliases": [
+      "廟妓",
+      "shrine prostitute"
+    ]
   },
   "送婢女為嫁妝": {
     "path": "link_folder/文化/送婢女為嫁妝.md",
@@ -4814,6 +5046,24 @@
     "status": "formal",
     "aliases": []
   },
+  "猶大支派三族來源": {
+    "path": "link_folder/歷史/猶大支派三族來源.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "猶大支派三族來源",
+    "status": "formal",
+    "aliases": []
+  },
+  "猶大與他瑪事件": {
+    "path": "link_folder/歷史/猶大與他瑪事件.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "猶大與他瑪事件",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟下埃及": {
     "path": "link_folder/歷史/約瑟下埃及.md",
     "type": "歷史",
@@ -4894,6 +5144,16 @@
       "互文"
     ],
     "title": "雅各受兒子欺騙",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅各家下埃及的必要性": {
+    "path": "link_folder/歷史/雅各家下埃及的必要性.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "雅各家下埃及的必要性",
     "status": "formal",
     "aliases": []
   },
@@ -5075,6 +5335,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "什一奉獻的起源",
+    "status": "formal",
+    "aliases": []
+  },
+  "他瑪比猶大更有義": {
+    "path": "link_folder/神學/他瑪比猶大更有義.md",
+    "type": "神學",
+    "secondary_types": [
+      "解經爭議"
+    ],
+    "title": "他瑪比猶大更有義",
     "status": "formal",
     "aliases": []
   },
@@ -5523,6 +5793,14 @@
     "status": "formal",
     "aliases": []
   },
+  "寬以律己嚴以待人": {
+    "path": "link_folder/神學/寬以律己嚴以待人.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "寬以律己嚴以待人",
+    "status": "formal",
+    "aliases": []
+  },
   "屬世成功早於應許成就": {
     "path": "link_folder/神學/屬世成功早於應許成就.md",
     "type": "神學",
@@ -5561,6 +5839,16 @@
       "Messiah",
       "基督"
     ]
+  },
+  "彌賽亞家譜中的恩典": {
+    "path": "link_folder/神學/彌賽亞家譜中的恩典.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "彌賽亞家譜中的恩典",
+    "status": "formal",
+    "aliases": []
   },
   "形像與樣式": {
     "path": "link_folder/神學/形像與樣式.md",
@@ -5851,6 +6139,14 @@
     "status": "formal",
     "aliases": []
   },
+  "猶大的認罪與悔改": {
+    "path": "link_folder/神學/猶大的認罪與悔改.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "猶大的認罪與悔改",
+    "status": "formal",
+    "aliases": []
+  },
   "生命樹": {
     "path": "link_folder/神學/生命樹.md",
     "type": "神學",
@@ -5947,7 +6243,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的主權",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "神的保守與帶領": {
@@ -6645,6 +6941,26 @@
     "status": "formal",
     "aliases": []
   },
+  "亭拿地點辨識": {
+    "path": "link_folder/解經爭議/亭拿地點辨識.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "亭拿地點辨識",
+    "status": "formal",
+    "aliases": []
+  },
+  "他瑪行動是否可稱義": {
+    "path": "link_folder/解經爭議/他瑪行動是否可稱義.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "他瑪行動是否可稱義",
+    "status": "formal",
+    "aliases": []
+  },
   "以實瑪利人與米甸人稱呼差異": {
     "path": "link_folder/解經爭議/以實瑪利人與米甸人稱呼差異.md",
     "type": "解經爭議",
@@ -6677,6 +6993,17 @@
     "status": "formal",
     "aliases": []
   },
+  "俄南之罪是否等於自瀆": {
+    "path": "link_folder/解經爭議/俄南之罪是否等於自瀆.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "文化"
+    ],
+    "title": "俄南之罪是否等於自瀆",
+    "status": "formal",
+    "aliases": []
+  },
   "利用割禮作欺騙工具的性質": {
     "path": "link_folder/解經爭議/利用割禮作欺騙工具的性質.md",
     "type": "解經爭議",
@@ -6692,6 +7019,27 @@
       "歷史"
     ],
     "title": "創世記36章以東諸王年代問題",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記38章插入約瑟敘事的原因": {
+    "path": "link_folder/解經爭議/創世記38章插入約瑟敘事的原因.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "創世記38章插入約瑟敘事的原因",
+    "status": "formal",
+    "aliases": []
+  },
+  "創世記38章時間順序問題": {
+    "path": "link_folder/解經爭議/創世記38章時間順序問題.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "創世記38章時間順序問題",
     "status": "formal",
     "aliases": []
   },
@@ -7169,11 +7517,17 @@
   "Abimelech": {
     "alias_of": "亞比米勒"
   },
+  "Tamar": {
+    "alias_of": "他瑪（創38）"
+  },
   "Ben-Ammi": {
     "alias_of": "便亞米"
   },
   "Benjamin": {
     "alias_of": "便雅憫"
+  },
+  "Onan": {
+    "alias_of": "俄南"
   },
   "Leah": {
     "alias_of": "利亞"
@@ -7223,6 +7577,15 @@
   "Moabites": {
     "alias_of": "摩押人"
   },
+  "猶大的妻子": {
+    "alias_of": "書亞的女兒"
+  },
+  "Shua's daughter": {
+    "alias_of": "書亞的女兒"
+  },
+  "Shua": {
+    "alias_of": "書亞（迦南人）"
+  },
   "比拉": {
     "alias_of": "比拉（所多瑪王）"
   },
@@ -7231,6 +7594,9 @@
   },
   "比沙": {
     "alias_of": "比沙（蛾摩拉王）"
+  },
+  "Perez": {
+    "alias_of": "法勒斯"
   },
   "Pharaoh": {
     "alias_of": "法老"
@@ -7247,6 +7613,12 @@
   "Judah": {
     "alias_of": "猶大（雅各之子）"
   },
+  "Er": {
+    "alias_of": "珥"
+  },
+  "Shelah": {
+    "alias_of": "示拉"
+  },
   "示納": {
     "alias_of": "示納（押瑪王）"
   },
@@ -7258,6 +7630,9 @@
   },
   "Simeon": {
     "alias_of": "西緬"
+  },
+  "Zerah": {
+    "alias_of": "謝拉"
   },
   "麥基洗得": {
     "alias_of": "麥基洗德"
@@ -7334,6 +7709,12 @@
   "摔跤河": {
     "alias_of": "雅博"
   },
+  "Adullam": {
+    "alias_of": "亞杜蘭"
+  },
+  "Timnah": {
+    "alias_of": "亭拿（猶大）"
+  },
   "以得台": {
     "alias_of": "以得臺"
   },
@@ -7355,6 +7736,9 @@
   "Ephrathah": {
     "alias_of": "以法他"
   },
+  "Enaim": {
+    "alias_of": "伊拿印"
+  },
   "Bethlehem": {
     "alias_of": "伯利恆"
   },
@@ -7375,6 +7759,12 @@
   },
   "Kiriath-arba": {
     "alias_of": "基列亞巴"
+  },
+  "Chezib": {
+    "alias_of": "基悉"
+  },
+  "亞革悉": {
+    "alias_of": "基悉"
   },
   "Gerar": {
     "alias_of": "基拉耳"
@@ -7460,6 +7850,9 @@
   "使女": {
     "alias_of": "使女代孕習俗"
   },
+  "印、帶子、杖": {
+    "alias_of": "印帶杖身份憑據"
+  },
   "收生婆": {
     "alias_of": "古代收生婆"
   },
@@ -7487,8 +7880,17 @@
   "特拉芬": {
     "alias_of": "家神像_特拉芬"
   },
+  "兄終弟及婚姻": {
+    "alias_of": "弟續兄孀制度"
+  },
+  "levirate marriage": {
+    "alias_of": "弟續兄孀制度"
+  },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
+  },
+  "紅線": {
+    "alias_of": "紅線與長子標記"
   },
   "耳朵上的環子": {
     "alias_of": "耳環作異教護身符"
@@ -7504,6 +7906,12 @@
   },
   "和解禮物": {
     "alias_of": "解恨之禮"
+  },
+  "廟妓": {
+    "alias_of": "迦南廟妓風俗"
+  },
+  "shrine prostitute": {
+    "alias_of": "迦南廟妓風俗"
   },
   "亞瑪拿文獻": {
     "alias_of": "古代朝見禮儀七次下拜"
