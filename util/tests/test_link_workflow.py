@@ -100,13 +100,14 @@ class ResolverTests(unittest.TestCase):
 
 
 class UpdateTests(unittest.TestCase):
-    def test_update_requires_sources_and_content(self):
+    def test_update_requires_content(self):
         missing = validate_update({
             "title": "天梯", "path": "link_folder/神學/天梯.md",
-            "summary": "", "relation": "", "sources": [], "source_files": [],
+            "summary": "", "relation": "",
         })
         self.assertIn("summary", missing)
-        self.assertIn("sources", missing)
+        self.assertIn("relation", missing)
+        self.assertNotIn("sources", missing)
 
     def test_marker_contains_book_and_chapter(self):
         block = render_block("創世記", 28, {
@@ -116,6 +117,11 @@ class UpdateTests(unittest.TestCase):
         self.assertIn("<!-- accumulation:創世記:28:start -->", block)
         self.assertIn("觸發來源：CT", block)
         self.assertNotIn("### 創世記", block)
+        compact = render_block("創世記", 28, {
+            "summary": "重點", "relation": "關聯",
+        })
+        self.assertNotIn("觸發來源", compact)
+        self.assertNotIn("來源檔案", compact)
 
     def test_apply_inserts_inside_book_group_in_chapter_order(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -139,8 +145,6 @@ class UpdateTests(unittest.TestCase):
                     "path": "link_folder/人物/測試.md",
                     "summary": "新資料",
                     "relation": "測試關聯",
-                    "sources": ["BH"],
-                    "source_files": ["raw_data/example.txt"],
                 }],
             }, allow_unicode=True), encoding="utf-8")
             with patch("link_updates.ROOT", root):

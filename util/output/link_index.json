@@ -956,6 +956,19 @@
     "status": "formal",
     "aliases": []
   },
+  "創世記49章流便受責": {
+    "path": "link_folder/互文/創世記49章流便受責.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "創世記49章流便受責",
+    "status": "formal",
+    "aliases": [
+      "創49流便受責",
+      "創世記49章流便"
+    ]
+  },
   "加拉太書三章": {
     "path": "link_folder/互文/加拉太書三章.md",
     "type": "互文",
@@ -1043,6 +1056,19 @@
     "status": "formal",
     "aliases": []
   },
+  "彌迦書5章伯利恆與彌賽亞": {
+    "path": "link_folder/互文/彌迦書5章伯利恆與彌賽亞.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "彌迦書5章伯利恆與彌賽亞",
+    "status": "formal",
+    "aliases": [
+      "彌5伯利恆與彌賽亞",
+      "伯利恆與彌賽亞"
+    ]
+  },
   "挪亞與亞當的平行": {
     "path": "link_folder/互文/挪亞與亞當的平行.md",
     "type": "互文",
@@ -1077,6 +1103,19 @@
     "title": "歌羅西書二章",
     "status": "formal",
     "aliases": []
+  },
+  "歷代志上5章流便失去長子名分": {
+    "path": "link_folder/互文/歷代志上5章流便失去長子名分.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "歷代志上5章流便失去長子名分",
+    "status": "formal",
+    "aliases": [
+      "代上5流便失去長子名分",
+      "歷代志上5章流便"
+    ]
   },
   "浪子比喻 (路15)": {
     "path": "link_folder/互文/浪子比喻 (路15).md",
@@ -1413,6 +1452,19 @@
     "status": "formal",
     "aliases": []
   },
+  "馬太福音2章拉結哭泣": {
+    "path": "link_folder/互文/馬太福音2章拉結哭泣.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "馬太福音2章拉結哭泣",
+    "status": "formal",
+    "aliases": [
+      "太2拉結哭泣",
+      "拉結哭泣"
+    ]
+  },
   "乳母底波拉": {
     "path": "link_folder/人物/乳母底波拉.md",
     "type": "人物",
@@ -1701,6 +1753,16 @@
     "status": "formal",
     "aliases": [
       "Ben-Ammi"
+    ]
+  },
+  "便雅憫": {
+    "path": "link_folder/人物/便雅憫.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "便雅憫",
+    "status": "formal",
+    "aliases": [
+      "Benjamin"
     ]
   },
   "偉人": {
@@ -2712,6 +2774,19 @@
     "status": "formal",
     "aliases": []
   },
+  "亞倫巴古": {
+    "path": "link_folder/原文/亞倫巴古.md",
+    "type": "原文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "亞倫巴古",
+    "status": "formal",
+    "aliases": [
+      "Allon-bacuth",
+      "亞倫巴古"
+    ]
+  },
   "以色列": {
     "path": "link_folder/原文/以色列.md",
     "type": "原文",
@@ -2750,6 +2825,19 @@
       "神以色列的神"
     ]
   },
+  "伊勒伯特利": {
+    "path": "link_folder/原文/伊勒伯特利.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "伊勒伯特利",
+    "status": "formal",
+    "aliases": [
+      "El-Bethel",
+      "伊勒伯特利"
+    ]
+  },
   "伊迦爾撒哈杜他": {
     "path": "link_folder/原文/伊迦爾撒哈杜他.md",
     "type": "原文",
@@ -2765,6 +2853,32 @@
     "title": "但（伸冤）",
     "status": "formal",
     "aliases": []
+  },
+  "便俄尼名字含義": {
+    "path": "link_folder/原文/便俄尼名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "便俄尼名字含義",
+    "status": "formal",
+    "aliases": [
+      "便俄尼",
+      "Ben-oni"
+    ]
+  },
+  "便雅憫名字含義": {
+    "path": "link_folder/原文/便雅憫名字含義.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "便雅憫名字含義",
+    "status": "formal",
+    "aliases": [
+      "Benjamin 名字含義",
+      "右手之子"
+    ]
   },
   "修理與看守": {
     "path": "link_folder/原文/修理與看守.md",
@@ -3144,6 +3258,18 @@
     "status": "formal",
     "aliases": []
   },
+  "以得臺": {
+    "path": "link_folder/地點/以得臺.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以得臺",
+    "status": "formal",
+    "aliases": [
+      "以得台",
+      "Migdal Eder",
+      "Tower of Eder"
+    ]
+  },
   "以拉撒": {
     "path": "link_folder/地點/以拉撒.md",
     "type": "地點",
@@ -3174,6 +3300,17 @@
       "Edom"
     ]
   },
+  "以法他": {
+    "path": "link_folder/地點/以法他.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以法他",
+    "status": "formal",
+    "aliases": [
+      "Ephrath",
+      "Ephrathah"
+    ]
+  },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
     "type": "地點",
@@ -3189,6 +3326,16 @@
     "title": "伊甸",
     "status": "formal",
     "aliases": []
+  },
+  "伯利恆": {
+    "path": "link_folder/地點/伯利恆.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯利恆",
+    "status": "formal",
+    "aliases": [
+      "Bethlehem"
+    ]
   },
   "伯拉大河": {
     "path": "link_folder/地點/伯拉大河.md",
@@ -3355,8 +3502,10 @@
     "type": "地點",
     "secondary_types": [],
     "title": "基列亞巴",
-    "status": "candidate",
-    "aliases": []
+    "status": "formal",
+    "aliases": [
+      "Kiriath-arba"
+    ]
   },
   "基列山": {
     "path": "link_folder/地點/基列山.md",
@@ -3875,6 +4024,32 @@
       "使女"
     ]
   },
+  "古代收生婆": {
+    "path": "link_folder/文化/古代收生婆.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "古代收生婆",
+    "status": "formal",
+    "aliases": [
+      "收生婆",
+      "助產婦"
+    ]
+  },
+  "古代近東妾與繼承權": {
+    "path": "link_folder/文化/古代近東妾與繼承權.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "古代近東妾與繼承權",
+    "status": "formal",
+    "aliases": [
+      "父親的妾與繼承權",
+      "與父親的妾同寢"
+    ]
+  },
   "古代近東婚筵七日": {
     "path": "link_folder/文化/古代近東婚筵七日.md",
     "type": "文化",
@@ -3923,6 +4098,19 @@
     "title": "城門口交易",
     "status": "candidate",
     "aliases": []
+  },
+  "奠酒": {
+    "path": "link_folder/文化/奠酒.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "奠酒",
+    "status": "formal",
+    "aliases": [
+      "奠祭",
+      "澆奠"
+    ]
   },
   "婚宴與剪羊毛風俗": {
     "path": "link_folder/文化/婚宴與剪羊毛風俗.md",
@@ -4011,6 +4199,19 @@
     "title": "米斯巴作為瞭望塔與鑒察",
     "status": "formal",
     "aliases": []
+  },
+  "耳環作異教護身符": {
+    "path": "link_folder/文化/耳環作異教護身符.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "耳環作異教護身符",
+    "status": "formal",
+    "aliases": [
+      "耳朵上的環子",
+      "異教耳環"
+    ]
   },
   "解恨之禮": {
     "path": "link_folder/文化/解恨之禮.md",
@@ -4161,6 +4362,19 @@
     "title": "希未人",
     "status": "formal",
     "aliases": []
+  },
+  "拉結之墓": {
+    "path": "link_folder/歷史/拉結之墓.md",
+    "type": "歷史",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "拉結之墓",
+    "status": "formal",
+    "aliases": [
+      "拉結的墓",
+      "拉結墓碑"
+    ]
   },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
@@ -4584,6 +4798,19 @@
     "status": "formal",
     "aliases": []
   },
+  "十二支派起源": {
+    "path": "link_folder/神學/十二支派起源.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "十二支派起源",
+    "status": "formal",
+    "aliases": [
+      "雅各十二子",
+      "以色列十二支派起源"
+    ]
+  },
   "千禧年": {
     "path": "link_folder/神學/千禧年.md",
     "type": "神學",
@@ -4620,6 +4847,17 @@
     "title": "四王與五王戰爭的屬靈意義",
     "status": "formal",
     "aliases": []
+  },
+  "回到伯特利的屬靈復興": {
+    "path": "link_folder/神學/回到伯特利的屬靈復興.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "回到伯特利的屬靈復興",
+    "status": "formal",
+    "aliases": [
+      "伯特利復興",
+      "回伯特利"
+    ]
   },
   "因信稱義": {
     "path": "link_folder/神學/因信稱義.md",
@@ -5056,6 +5294,19 @@
     "title": "永生",
     "status": "candidate",
     "aliases": []
+  },
+  "流便失去長子名分": {
+    "path": "link_folder/神學/流便失去長子名分.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "流便失去長子名分",
+    "status": "formal",
+    "aliases": [
+      "流便失去長子權",
+      "流便失長子名分"
+    ]
   },
   "潔淨與不潔淨": {
     "path": "link_folder/神學/潔淨與不潔淨.md",
@@ -5575,6 +5826,19 @@
     "status": "candidate",
     "aliases": []
   },
+  "自潔與更換衣裳": {
+    "path": "link_folder/神學/自潔與更換衣裳.md",
+    "type": "神學",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "自潔與更換衣裳",
+    "status": "formal",
+    "aliases": [
+      "自潔更衣",
+      "更換衣裳"
+    ]
+  },
   "至高的神": {
     "path": "link_folder/神學/至高的神.md",
     "type": "神學",
@@ -5701,6 +5965,19 @@
     "title": "除去羞恥",
     "status": "formal",
     "aliases": []
+  },
+  "除掉外邦神": {
+    "path": "link_folder/神學/除掉外邦神.md",
+    "type": "神學",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "除掉外邦神",
+    "status": "formal",
+    "aliases": [
+      "除掉偶像",
+      "除去外邦神"
+    ]
   },
   "雅各以掃和好": {
     "path": "link_folder/神學/雅各以掃和好.md",
@@ -5879,6 +6156,17 @@
     "status": "formal",
     "aliases": []
   },
+  "拉結之死與雅各咒詛是否相關": {
+    "path": "link_folder/解經爭議/拉結之死與雅各咒詛是否相關.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "拉結之死與雅各咒詛是否相關",
+    "status": "formal",
+    "aliases": [
+      "拉結之死與雅各咒詛",
+      "雅各咒詛拉結是否應驗"
+    ]
+  },
   "拉結偷神像的動機": {
     "path": "link_folder/解經爭議/拉結偷神像的動機.md",
     "type": "解經爭議",
@@ -5886,6 +6174,17 @@
     "title": "拉結偷神像的動機",
     "status": "formal",
     "aliases": []
+  },
+  "流便與辟拉同寢的性質": {
+    "path": "link_folder/解經爭議/流便與辟拉同寢的性質.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "流便與辟拉同寢的性質",
+    "status": "formal",
+    "aliases": [
+      "流便與辟拉同寢",
+      "流便亂倫"
+    ]
   },
   "為何咒詛迦南而非含": {
     "path": "link_folder/解經爭議/為何咒詛迦南而非含.md",
@@ -6113,6 +6412,12 @@
   "詩篇127-3": {
     "alias_of": "兒女為神賞賜 (詩127-3)"
   },
+  "創49流便受責": {
+    "alias_of": "創世記49章流便受責"
+  },
+  "創世記49章流便": {
+    "alias_of": "創世記49章流便受責"
+  },
   "詩133:1": {
     "alias_of": "和睦是神喜悅 (詩133-1)"
   },
@@ -6131,11 +6436,23 @@
   "希伯來書12:5-11 神管教兒女": {
     "alias_of": "希伯來書12_5-11 神管教兒女"
   },
+  "彌5伯利恆與彌賽亞": {
+    "alias_of": "彌迦書5章伯利恆與彌賽亞"
+  },
+  "伯利恆與彌賽亞": {
+    "alias_of": "彌迦書5章伯利恆與彌賽亞"
+  },
   "撒母耳記下13:10-19 暗嫩他瑪": {
     "alias_of": "撒母耳記下13_10-19 暗嫩他瑪"
   },
   "暗嫩他瑪 (撒下13)": {
     "alias_of": "撒母耳記下13_10-19 暗嫩他瑪"
+  },
+  "代上5流便失去長子名分": {
+    "alias_of": "歷代志上5章流便失去長子名分"
+  },
+  "歷代志上5章流便": {
+    "alias_of": "歷代志上5章流便失去長子名分"
   },
   "路15:11-32": {
     "alias_of": "浪子比喻 (路15)"
@@ -6245,6 +6562,12 @@
   "雅各禱告結構": {
     "alias_of": "雅各禱告的榜樣"
   },
+  "太2拉結哭泣": {
+    "alias_of": "馬太福音2章拉結哭泣"
+  },
+  "拉結哭泣": {
+    "alias_of": "馬太福音2章拉結哭泣"
+  },
   "Ammonites": {
     "alias_of": "亞捫人"
   },
@@ -6253,6 +6576,9 @@
   },
   "Ben-Ammi": {
     "alias_of": "便亞米"
+  },
+  "Benjamin": {
+    "alias_of": "便雅憫"
   },
   "Leah": {
     "alias_of": "利亞"
@@ -6344,6 +6670,9 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "Allon-bacuth": {
+    "alias_of": "亞倫巴古"
+  },
   "Israel": {
     "alias_of": "以色列"
   },
@@ -6355,6 +6684,21 @@
   },
   "神以色列的神": {
     "alias_of": "伊利伊羅伊以色列 (神、以色列神)"
+  },
+  "El-Bethel": {
+    "alias_of": "伊勒伯特利"
+  },
+  "便俄尼": {
+    "alias_of": "便俄尼名字含義"
+  },
+  "Ben-oni": {
+    "alias_of": "便俄尼名字含義"
+  },
+  "Benjamin 名字含義": {
+    "alias_of": "便雅憫名字含義"
+  },
+  "右手之子": {
+    "alias_of": "便雅憫名字含義"
   },
   "坐骨神經": {
     "alias_of": "大腿窩的筋"
@@ -6389,11 +6733,29 @@
   "摔跤河": {
     "alias_of": "雅博"
   },
+  "以得台": {
+    "alias_of": "以得臺"
+  },
+  "Migdal Eder": {
+    "alias_of": "以得臺"
+  },
+  "Tower of Eder": {
+    "alias_of": "以得臺"
+  },
   "以東地": {
     "alias_of": "以東"
   },
   "Edom": {
     "alias_of": "以東"
+  },
+  "Ephrath": {
+    "alias_of": "以法他"
+  },
+  "Ephrathah": {
+    "alias_of": "以法他"
+  },
+  "Bethlehem": {
+    "alias_of": "伯利恆"
   },
   "拉億": {
     "alias_of": "但"
@@ -6409,6 +6771,9 @@
   },
   "加低斯巴尼亞": {
     "alias_of": "加低斯"
+  },
+  "Kiriath-arba": {
+    "alias_of": "基列亞巴"
   },
   "Gerar": {
     "alias_of": "基拉耳"
@@ -6491,6 +6856,24 @@
   "使女": {
     "alias_of": "使女代孕習俗"
   },
+  "收生婆": {
+    "alias_of": "古代收生婆"
+  },
+  "助產婦": {
+    "alias_of": "古代收生婆"
+  },
+  "父親的妾與繼承權": {
+    "alias_of": "古代近東妾與繼承權"
+  },
+  "與父親的妾同寢": {
+    "alias_of": "古代近東妾與繼承權"
+  },
+  "奠祭": {
+    "alias_of": "奠酒"
+  },
+  "澆奠": {
+    "alias_of": "奠酒"
+  },
   "Kesitah": {
     "alias_of": "客西達錢幣單位"
   },
@@ -6502,6 +6885,12 @@
   },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
+  },
+  "耳朵上的環子": {
+    "alias_of": "耳環作異教護身符"
+  },
+  "異教耳環": {
+    "alias_of": "耳環作異教護身符"
   },
   "解恨禮物": {
     "alias_of": "解恨之禮"
@@ -6517,6 +6906,12 @@
   },
   "法老朝見禮": {
     "alias_of": "古代朝見禮儀七次下拜"
+  },
+  "拉結的墓": {
+    "alias_of": "拉結之墓"
+  },
+  "拉結墓碑": {
+    "alias_of": "拉結之墓"
   },
   "雅各改名": {
     "alias_of": "雅各改名以色列"
@@ -6548,8 +6943,20 @@
   "割禮": {
     "alias_of": "割禮之約"
   },
+  "雅各十二子": {
+    "alias_of": "十二支派起源"
+  },
+  "以色列十二支派起源": {
+    "alias_of": "十二支派起源"
+  },
   "賽53受苦僕人": {
     "alias_of": "受苦僕人 (賽53)"
+  },
+  "伯特利復興": {
+    "alias_of": "回到伯特利的屬靈復興"
+  },
+  "回伯特利": {
+    "alias_of": "回到伯特利的屬靈復興"
   },
   "先知祭司王三職": {
     "alias_of": "基督三重職分"
@@ -6592,6 +6999,12 @@
   },
   "新舊約": {
     "alias_of": "新約"
+  },
+  "流便失去長子權": {
+    "alias_of": "流便失去長子名分"
+  },
+  "流便失長子名分": {
+    "alias_of": "流便失去長子名分"
   },
   "天軍": {
     "alias_of": "神的軍兵"
@@ -6656,6 +7069,12 @@
   "內住聖靈": {
     "alias_of": "聖靈內住"
   },
+  "自潔更衣": {
+    "alias_of": "自潔與更換衣裳"
+  },
+  "更換衣裳": {
+    "alias_of": "自潔與更換衣裳"
+  },
   "新生": {
     "alias_of": "重生"
   },
@@ -6665,11 +7084,29 @@
   "重生得救": {
     "alias_of": "重生"
   },
+  "除掉偶像": {
+    "alias_of": "除掉外邦神"
+  },
+  "除去外邦神": {
+    "alias_of": "除掉外邦神"
+  },
   "神面對面": {
     "alias_of": "面對面見神"
   },
   "面對面見了神": {
     "alias_of": "面對面見神"
+  },
+  "拉結之死與雅各咒詛": {
+    "alias_of": "拉結之死與雅各咒詛是否相關"
+  },
+  "雅各咒詛拉結是否應驗": {
+    "alias_of": "拉結之死與雅各咒詛是否相關"
+  },
+  "流便與辟拉同寢": {
+    "alias_of": "流便與辟拉同寢的性質"
+  },
+  "流便亂倫": {
+    "alias_of": "流便與辟拉同寢的性質"
   },
   "摔跤者身分": {
     "alias_of": "神與雅各摔跤的身分"

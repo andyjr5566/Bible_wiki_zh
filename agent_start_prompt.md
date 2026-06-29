@@ -18,12 +18,10 @@ C:\Obsidian\Hermes\scripture\scheme.md
 2. 解析使用者指定的書卷名稱與章節需求
 3. 執行 `python util/build_link_index.py` 建立最新 link index
 4. 檢查 git 狀態
-5. 判斷下一個需要處理或修正的章節
-6. 不要重做已完成且已通過驗證的章節
-7. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
-8. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
-9. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
-10. **使用 `util/crawl_bible_text.py` 產生 raw text**：
+5. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
+6. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
+7. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
+8. **使用 `util/crawl_bible_text.py` 產生 raw text**：
     ```text
     python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
     ```
@@ -31,17 +29,17 @@ C:\Obsidian\Hermes\scripture\scheme.md
     ```text
     python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
     ```
-11. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
-12. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
-13. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
-14. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
-15. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
-16. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
+9. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
+10. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
+11. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
+12. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
+13. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
+14. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
     - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
     - 例如：`python util/resolve_link_candidates.py 創世記 13`
-17. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
-18. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
-19. **根據 link_plan 更新 link folder**：
+15. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
+16. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+17. **根據 link_plan 更新 link folder**：
     - B 類先執行 `python util/link_updates.py prepare 【書名】 X`
     - 回到經文與有效 raw text 填寫 `link_updates.yaml`
     - 執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run`
@@ -49,18 +47,18 @@ C:\Obsidian\Hermes\scripture\scheme.md
     - 重跑 apply 必須顯示 0 個變更
     - 確認章次位於 `按書卷累積 → ### 書卷名 → #### 第N章`，並依章號排序
     - C 類依來源建立正式條目；D 類人工判斷；E 類不連
-20. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
-21. 執行 `python util/build_link_index.py`
-22. 執行 `python util/validate_knowledge_base.py`
-23. 執行 `python util/link_quality_check.py 【書名】`
-24. 執行 `python util/verify_links.py 【書名】`
-25. 執行 `python util/audit_knowledge_base.py --check-due`
-26. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
-27. 重跑驗證直到全部通過
-28. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
-29. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
-30. 通過後 git commit + push，確認 CI 通過
-31. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+18. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
+19. 執行 `python util/build_link_index.py`
+20. 執行 `python util/validate_knowledge_base.py`
+21. 執行 `python util/link_quality_check.py 【書名】`
+22. 執行 `python util/verify_links.py 【書名】`
+23. 執行 `python util/audit_knowledge_base.py --check-due`
+24. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
+25. 重跑驗證直到全部通過
+26. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
+27. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
+28. 通過後 git commit + push，確認 CI 通過
+29. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 
@@ -74,7 +72,6 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 建立 link_candidates.md 時，只能使用經文與已成功取得、已檢查有效的 raw text。
 - 無效來源要記錄在 `source_manifest.md`，不可假裝已使用。
 - 不設定每章正式條目數量上限，也不因人物看似普通而先驗排除；建立與否只由已收集資料決定。
-- B 類的 `link_updates.yaml` 必須記錄實際 `sources` 與 `source_files`，不得用工具生成無來源內容。
 
 ---
 

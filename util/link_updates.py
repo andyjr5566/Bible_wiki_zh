@@ -29,8 +29,6 @@ def plan_updates(book, chapter):
                 "path": match.group(2).strip(),
                 "summary": "",
                 "relation": "",
-                "sources": [],
-                "source_files": [],
             })
     return {
         "book": book,
@@ -52,26 +50,25 @@ def prepare(book, chapter):
 
 
 def render_block(book, chapter, update):
-    sources = "、".join(update["sources"])
-    source_files = "、".join(update["source_files"])
-    return (
+    lines = [
         f"<!-- accumulation:{book}:{chapter}:start -->\n"
         f"#### 第{chapter}章\n"
         f"- 本章重點：{update['summary'].strip()}\n"
-        f"- 與本章關聯：{update['relation'].strip()}\n"
-        f"- 觸發來源：{sources}\n"
-        f"- 來源檔案：{source_files}\n"
-        f"<!-- accumulation:{book}:{chapter}:end -->"
-    )
+        f"- 與本章關聯：{update['relation'].strip()}"
+    ]
+    sources = update.get("sources")
+    source_files = update.get("source_files")
+    if sources:
+        lines.append(f"- 觸發來源：{'、'.join(sources)}")
+    if source_files:
+        lines.append(f"- 來源檔案：{'、'.join(source_files)}")
+    lines.append(f"<!-- accumulation:{book}:{chapter}:end -->")
+    return "\n".join(lines)
 
 
 def validate_update(update):
     required_text = ("title", "path", "summary", "relation")
-    missing = [key for key in required_text if not str(update.get(key, "")).strip()]
-    for key in ("sources", "source_files"):
-        if not isinstance(update.get(key), list) or not update[key]:
-            missing.append(key)
-    return missing
+    return [key for key in required_text if not str(update.get(key, "")).strip()]
 
 
 def apply_updates(manifest, dry_run=False):

@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 5532,
+  "valid_links_count": 5854,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 105,
+  "pending_scripture_refs_count": 104,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -160,11 +160,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第35章",
-      "book": "創世記",
-      "chapter": 35
     },
     {
       "entity": "創世記/第36章",
@@ -1121,11 +1116,6 @@
       ],
       "link_folder/人物/雅各.md": [
         [
-          "創世記/第35章",
-          "創世記",
-          35
-        ],
-        [
           "希伯來書/第11章",
           "希伯來書",
           11
@@ -1184,11 +1174,6 @@
           "出埃及記/第6章",
           "出埃及記",
           6
-        ],
-        [
-          "創世記/第35章",
-          "創世記",
-          35
         ],
         [
           "約伯記/第40章",
@@ -1457,11 +1442,6 @@
           "出埃及記/第6章",
           "出埃及記",
           6
-        ],
-        [
-          "創世記/第35章",
-          "創世記",
-          35
         ],
         [
           "約伯記/第40章",
