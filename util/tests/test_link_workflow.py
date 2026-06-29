@@ -16,6 +16,7 @@ from resolve_link_candidates import (
     has_book_chapter_data,
     resolve,
 )
+from validate_knowledge_base import ambiguous_wikilinks
 from link_updates import apply_updates, render_block, validate_update
 from normalize_format import normalize_chapter, normalize_entry
 
@@ -73,6 +74,20 @@ class ResolverTests(unittest.TestCase):
             )
             self.assertEqual(1, len(plan["D_new_candidate"]))
             self.assertEqual("type_conflict", plan["D_new_candidate"][0]["match_type"])
+
+    def test_registered_homonym_requires_manual_target_selection(self):
+        homonyms = {
+            "示劍": [
+                {"target": "示劍（城）", "type": "地點"},
+                {"target": "示劍（哈抹之子）", "type": "人物"},
+            ]
+        }
+        plan = resolve(
+            [{"name": "示劍", "suggested_type": "地點", "line_number": 1}],
+            {}, "創世記", "34", homonyms=homonyms,
+        )
+        self.assertEqual(1, len(plan["D_new_candidate"]))
+        self.assertEqual("homonym", plan["D_new_candidate"][0]["match_type"])
 
     def test_book_and_chapter_are_both_required(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -194,6 +209,26 @@ class FormatNormalizationTests(unittest.TestCase):
                 rendered.index("## 主題發展"):rendered.index("## 相關條目")
             ]
             self.assertIn("### 主題分析", development)
+
+
+class HomonymValidationTests(unittest.TestCase):
+    def test_bare_homonym_link_is_detected_but_qualified_target_is_allowed(self):
+        homonyms = {
+            "示劍": [
+                {"target": "示劍（城）", "type": "地點"},
+                {"target": "示劍（哈抹之子）", "type": "人物"},
+            ]
+        }
+        text = (
+            "[[示劍]]\n"
+            "[[示劍|原文]]\n"
+            "[[示劍（城）|示劍]]\n"
+            "[[示劍（哈抹之子）#生平|示劍]]\n"
+        )
+        self.assertEqual(
+            [("示劍", 1), ("示劍", 2)],
+            ambiguous_wikilinks(text, homonyms),
+        )
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ from build_link_index import (
     load_resolutions,
     make_index,
 )
+from resolve_link_candidates import load_homonyms, normalize_name
 
 VALID_STATUS = {"formal", "candidate"}
 BIBLE_BOOKS = list(json.loads(
@@ -39,6 +40,7 @@ MARKER_RE = re.compile(
     r"<!-- accumulation:(?P<book>[^:]+):(?P<chapter>\d+):"
     r"(?P<edge>start|end) -->"
 )
+WIKILINK_RE = re.compile(r"\[\[([^\]\r\n]+)\]\]")
 
 
 def frontmatter(text):
@@ -47,6 +49,47 @@ def frontmatter(text):
         return None
     data = yaml.safe_load(match.group(1))
     return data if isinstance(data, dict) else None
+
+
+def ambiguous_wikilinks(text, homonyms):
+    labels = {normalize_name(label): label for label in homonyms}
+    found = []
+    for match in WIKILINK_RE.finditer(text):
+        target = match.group(1).partition("|")[0].strip()
+        target = re.split(r"[#^]", target, maxsplit=1)[0].strip()
+        label = labels.get(normalize_name(target))
+        if label:
+            line = text.count("\n", 0, match.start()) + 1
+            found.append((label, line))
+    return found
+
+
+def validate_homonyms(homonyms, index):
+    errors = []
+    normalized_index_names = {normalize_name(name) for name in index}
+    for label, options in homonyms.items():
+        if len(options) < 2:
+            errors.append(f"link_homonyms.yaml:「{label}」至少需要兩個不同 target")
+        targets = [option["target"] for option in options]
+        if len(targets) != len(set(targets)):
+            errors.append(f"link_homonyms.yaml:「{label}」含重複 target")
+        if normalize_name(label) in normalized_index_names:
+            errors.append(
+                f"link_homonyms.yaml: 歧義裸名「{label}」不得作正式檔名或 alias"
+            )
+        for option in options:
+            target = option["target"]
+            entry = index.get(target)
+            if not entry or "alias_of" in entry:
+                errors.append(
+                    f"link_homonyms.yaml:「{label}」target 不存在或不是正式名稱：{target}"
+                )
+            elif entry.get("type") != option["type"]:
+                errors.append(
+                    f"link_homonyms.yaml:「{label}」target 類型不符："
+                    f"{target} 應為 {option['type']}，實為 {entry.get('type')}"
+                )
+    return errors
 
 
 def validate_file(path, strict=False):
@@ -114,15 +157,6 @@ def validate_file(path, strict=False):
         if not re.search(r"^##\s+來源依據\s*$", text, re.M):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少來源依據")
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
-        if "賜福" in str(path):
-            import sys
-            print(f"DEBUG headings: {headings}", file=sys.stderr)
-            print(f"DEBUG expected: {list(FORMAL_H2)}", file=sys.stderr)
-            print(f"DEBUG match: {headings == FORMAL_H2}", file=sys.stderr)
-            for i in range(min(len(headings), len(FORMAL_H2))):
-                h, f = headings[i], FORMAL_H2[i]
-                if h != f:
-                    print(f"  DIFF[{i}]: got {repr(h)} ({h.encode('utf-8').hex()}) expected {repr(f)} ({f.encode('utf-8').hex()})", file=sys.stderr)
         if headings != FORMAL_H2:
             errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
         marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)
@@ -248,8 +282,14 @@ def validate(base=None):
     # type 不一致先列警告，讓舊資料逐卷清理；其他解析錯誤阻擋。
     for issue in collect_errors:
         (warnings if "與資料夾分類" in issue else errors).append(issue)
-    _, index_errors = make_index(entries, load_resolutions())
+    index, index_errors = make_index(entries, load_resolutions())
     errors.extend(index_errors)
+    try:
+        homonyms = load_homonyms()
+        errors.extend(validate_homonyms(homonyms, index))
+    except (OSError, ValueError, yaml.YAMLError) as exc:
+        homonyms = {}
+        errors.append(f"link_homonyms.yaml 無法解析：{exc}")
 
     changed = changed_link_files(base) if base else set()
     for path in sorted(LINK_FOLDER.rglob("*.md")):
@@ -264,6 +304,21 @@ def validate(base=None):
             continue
         for chapter_path in sorted(book_dir.glob("第*章.md")):
             errors.extend(validate_chapter(chapter_path))
+            text = chapter_path.read_text(encoding="utf-8")
+            for label, line in ambiguous_wikilinks(text, homonyms):
+                errors.append(
+                    f"{chapter_path.relative_to(ROOT)}:{line}: "
+                    f"歧義裸 WikiLink [[{label}]] 必須改用完整 target"
+                )
+    for path in sorted(LINK_FOLDER.rglob("*.md")):
+        if EXCLUDE_PARTS & set(path.parts):
+            continue
+        text = path.read_text(encoding="utf-8")
+        for label, line in ambiguous_wikilinks(text, homonyms):
+            errors.append(
+                f"{path.relative_to(ROOT)}:{line}: "
+                f"歧義裸 WikiLink [[{label}]] 必須改用完整 target"
+            )
     if base:
         errors.extend(validate_protected_changes(base))
     return errors, warnings

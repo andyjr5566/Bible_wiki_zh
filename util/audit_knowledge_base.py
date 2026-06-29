@@ -129,10 +129,14 @@ def check_due():
     interval = int(policy["full_audit_interval"])
     baseline = int(policy["baseline_completed_chapters"])
     count = len(chapter_files())
+    audited_counts = []
+    for report in REPORT_DIR.glob("full_audit_*.md"):
+        match = re.fullmatch(r"full_audit_(\d+)\.md", report.name)
+        if match:
+            audited_counts.append(int(match.group(1)))
     next_due = ((baseline // interval) + 1) * interval
     while next_due <= count:
-        matches = list(REPORT_DIR.glob(f"full_audit_{next_due}.md"))
-        if not matches:
+        if not any(next_due <= audited <= count for audited in audited_counts):
             print(f"❌ 已完成 {count} 章，缺少第 {next_due} 章里程碑全庫稽核")
             return 1
         next_due += interval

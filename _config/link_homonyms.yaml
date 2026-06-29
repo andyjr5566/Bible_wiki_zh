@@ -1,0 +1,17 @@
+# 合法同名詞：同一表面名稱對應不同實體，不可自動選擇其中一個。
+# target 必須是全域唯一的正式檔名；裸名不得再作正式檔名或 alias。
+homonyms:
+  示劍:
+    - target: 示劍（城）
+      type: 地點
+    - target: 示劍（哈抹之子）
+      type: 人物
+    - target: 示劍名字含義
+      type: 原文
+  Shechem:
+    - target: 示劍（城）
+      type: 地點
+    - target: 示劍（哈抹之子）
+      type: 人物
+    - target: 示劍名字含義
+      type: 原文

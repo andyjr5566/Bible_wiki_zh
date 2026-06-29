@@ -6,9 +6,12 @@ import sys
 import unicodedata
 from pathlib import Path
 
+import yaml
+
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 INDEX_FILE = UTIL_DIR / "output" / "link_index.json"
+HOMONYM_FILE = ROOT / "_config" / "link_homonyms.yaml"
 
 SAME_PERSON_MAP = {
     "亞伯拉罕": "亞伯蘭", "亞伯蘭": "亞伯拉罕",
@@ -37,6 +40,30 @@ def load_index(index_file=INDEX_FILE):
     if not index_file.exists():
         raise FileNotFoundError("link index 不存在，請先執行 util/build_link_index.py")
     return json.loads(index_file.read_text(encoding="utf-8"))
+
+
+def load_homonyms(path=HOMONYM_FILE):
+    if not path.exists():
+        return {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    groups = data.get("homonyms", {})
+    if not isinstance(groups, dict):
+        raise ValueError("link_homonyms.yaml 的 homonyms 必須是 mapping")
+    for label, options in groups.items():
+        if not isinstance(options, list):
+            raise ValueError(f"同名詞「{label}」的選項必須是 list")
+        for option in options:
+            if not isinstance(option, dict) or not option.get("target") or not option.get("type"):
+                raise ValueError(f"同名詞「{label}」每個選項都必須包含 target 與 type")
+    return groups
+
+
+def homonym_options(name, homonyms):
+    normalized = normalize_name(name)
+    for label, options in homonyms.items():
+        if normalize_name(label) == normalized:
+            return label, options
+    return None, []
 
 
 def load_candidates(book, chapter, root=ROOT):
@@ -113,7 +140,8 @@ def has_book_chapter_data(entry_path, book, chapter, root=ROOT):
     return bool(direct.search(text) or nested.search(text))
 
 
-def resolve(candidates, index, book, chapter, root=ROOT):
+def resolve(candidates, index, book, chapter, root=ROOT, homonyms=None):
+    homonyms = load_homonyms(root / "_config" / "link_homonyms.yaml") if homonyms is None else homonyms
     plan = {key: [] for key in (
         "A_use_directly", "B_needs_update", "C_new_formal", "D_new_candidate", "E_skip"
     )}
@@ -128,6 +156,20 @@ def resolve(candidates, index, book, chapter, root=ROOT):
             continue
         if suggested not in VALID_TYPES:
             candidate["note"] = f"未知分類：{suggested}"
+            plan["D_new_candidate"].append(candidate)
+            continue
+
+        homonym_label, options = homonym_options(name, homonyms)
+        if options:
+            targets = "、".join(
+                f"{option['target']}（{option['type']}）" for option in options
+            )
+            candidate.update({
+                "match_type": "homonym",
+                "homonym_label": homonym_label,
+                "homonym_options": options,
+                "note": f"合法同名詞，需人工選擇完整 target：{targets}",
+            })
             plan["D_new_candidate"].append(candidate)
             continue
 
@@ -216,8 +258,9 @@ def main():
     book, chapter = sys.argv[1], sys.argv[2]
     try:
         index = load_index()
+        homonyms = load_homonyms()
         candidates = load_candidates(book, chapter)
-        plan = resolve(candidates, index, book, chapter)
+        plan = resolve(candidates, index, book, chapter, homonyms=homonyms)
         write_plan(plan, book, chapter)
     except (FileNotFoundError, ValueError, json.JSONDecodeError) as exc:
         print(f"❌ {exc}")

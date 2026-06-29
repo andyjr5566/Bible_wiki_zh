@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 4993,
+  "valid_links_count": 5532,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 102,
+  "pending_scripture_refs_count": 105,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -80,6 +80,11 @@
       "entity": "使徒行傳/第17章",
       "book": "使徒行傳",
       "chapter": 17
+    },
+    {
+      "entity": "傳道書",
+      "book": "傳道書",
+      "chapter": 0
     },
     {
       "entity": "出埃及記",
@@ -362,6 +367,11 @@
       "chapter": 30
     },
     {
+      "entity": "箴言",
+      "book": "箴言",
+      "chapter": 0
+    },
+    {
       "entity": "約伯記/第39章",
       "book": "約伯記",
       "chapter": 39
@@ -505,6 +515,11 @@
       "entity": "雅各書/第2章",
       "book": "雅各書",
       "chapter": 2
+    },
+    {
+      "entity": "雅歌",
+      "book": "雅歌",
+      "chapter": 0
     },
     {
       "entity": "馬太福音/第3章",
@@ -1029,23 +1044,28 @@
           36
         ]
       ],
+      "link_folder/人物/所羅門.md": [
+        [
+          "傳道書",
+          "傳道書",
+          0
+        ],
+        [
+          "箴言",
+          "箴言",
+          0
+        ],
+        [
+          "雅歌",
+          "雅歌",
+          0
+        ]
+      ],
       "link_folder/人物/撒拉.md": [
         [
           "加拉太書/第4章",
           "加拉太書",
           4
-        ]
-      ],
-      "link_folder/人物/比利洗人.md": [
-        [
-          "出埃及記/第3章",
-          "出埃及記",
-          3
-        ],
-        [
-          "申命記/第7章",
-          "申命記",
-          7
         ]
       ],
       "link_folder/人物/米甸.md": [
@@ -1097,18 +1117,6 @@
           "約書亞記/第1章",
           "約書亞記",
           1
-        ]
-      ],
-      "link_folder/人物/迦南人.md": [
-        [
-          "出埃及記/第3章",
-          "出埃及記",
-          3
-        ],
-        [
-          "約書亞記/第3章",
-          "約書亞記",
-          3
         ]
       ],
       "link_folder/人物/雅各.md": [
@@ -1357,13 +1365,6 @@
           "撒母耳記上/第15章",
           "撒母耳記上",
           15
-        ]
-      ],
-      "link_folder/地點/示劍.md": [
-        [
-          "約書亞記/第24章",
-          "約書亞記",
-          24
         ]
       ],
       "link_folder/地點/示拿地.md": [

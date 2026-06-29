@@ -14,7 +14,10 @@ scripture/
 ├── agent_start_prompt.md
 ├── raw_scripture/              # 本地經文
 ├── raw_data/                   # 網站來源純文字快取
-├── _config/bible_books.json
+├── _config/
+│   ├── bible_books.json
+│   ├── link_conflict_resolutions.yaml
+│   └── link_homonyms.yaml
 ├── util/
 │   ├── crawl_bible_text.py
 │   ├── clean_bible_html.py
@@ -22,6 +25,7 @@ scripture/
 │   ├── resolve_link_candidates.py
 │   ├── link_updates.py
 │   ├── normalize_format.py
+│   ├── rename_markdown.py
 │   ├── validate_knowledge_base.py
 │   ├── audit_knowledge_base.py
 │   ├── check_existing_links.py
@@ -293,6 +297,26 @@ https://biblehub.com/study/{book_slug}/{章}.htm
 
 - 合法但尚未建立的聖經章節引用交給 `util/verify_links.py` 分為 `PENDING_SCRIPTURE_REFS`，不得為未來章節預建空檔。
 
+### 4.5 合法同名詞與消歧義
+
+`folder` 只表示主分類，不能用來區分全庫同名 target。不同實體共用同一表面名稱時，全部正式檔名都必須加入最小且穩定的限定詞：
+
+```md
+[[示劍（城）|示劍]]
+[[示劍（哈抹之子）|示劍]]
+[[示劍人（城中居民）|示劍人]]
+```
+
+規則：
+- 不同實體必須分檔；人物、地點、族群不得因同名而合併。
+- 同一實體兼具多種性質時只建一檔，以主分類加 `secondary_types` 表示；不得誤當同名詞拆檔。
+- 同名組所有正式檔名都要加限定詞，包含最常見者；不得讓其中一個獨占裸名。
+- 限定詞優先使用可長期辨識身分的關係、職分或地點類型，例如「哈抹之子」、「城」；不得使用容易失效的流水號。
+- 經文原詞只放在 WikiLink alias 顯示位置，不得把歧義裸名加入任何條目的 YAML `aliases`。
+- 合法同名組登記於 `_config/link_homonyms.yaml`。`resolve_link_candidates.py` 遇到登記裸名必須列入 D 類人工判斷；`validate_knowledge_base.py` 必須阻擋裸 WikiLink。
+- `_config/link_conflict_resolutions.yaml` 只處理待清理的錯誤重複或 alias 衝突，不得用來替合法同名實體選定單一勝者。
+- 資料尚不足時不得為可能存在的同名人物或族群預建 stub。
+
 ---
 
 ## 5. link candidate → link plan 流程
@@ -331,6 +355,7 @@ Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of
 索引穩定性規則：
 - `secondary_types` 只表示次分類，**不得**建立為 alias。
 - 同名條目、alias 多重指向、alias 與正式名稱衝突不得由掃描順序靜默決定。
+- 合法同名實體必須使用帶限定詞的全域唯一正式名稱，並登記在 `_config/link_homonyms.yaml`。
 - 已人工確認但尚待全卷清理的舊衝突，記錄在 `_config/link_conflict_resolutions.yaml`；未登記的新衝突必須阻擋建索引。
 - 名稱正規化只可處理 Unicode 與空白差異，不得刪除括號內容或其他可能帶有語義的文字。
 - CI 使用 `python util/build_link_index.py --check` 確認索引可重現且已是最新。
@@ -373,7 +398,7 @@ Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of
 - `→` 右側只放主分類，必須使用 `link_folder/` 的合法分類名稱，不得把經節、說明或括號註解混入分類。
 - 每個候選必須使用 `- ` 項目符號。空行與 `#` 標題不視為候選。
 - 候選必須由經文或有效 raw text 觸發，但通常不必在每一列重複列出來源，以節省 token；詳細依據由 `source_manifest.md`、raw text 與後續整理保留。
-- 候選名稱中禁止使用 `/`、`\`、`<`、`>`、`:`、`"`、`|`、`?`、`*` 等檔案系統不安全字元
+- 候選名稱中禁止使用 `/`、`\`、`<`、`>`、`：`、`"`、`|`、`?`、`*` 等檔案系統不安全字元
 
 候選名稱可能有歧義、分類理由不直觀，或需要留下稽核線索時，才選擇性加入 `— 觸發依據`：
 
@@ -587,6 +612,17 @@ python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml
 
 不得設定每章正式條目數量上限，也不得因人物看似普通而先驗排除；是否建立條目只由已收集資料、跨章累積需要與內容充分性決定。
 
+### 6.7 Markdown 安全改名
+
+任何既有 Markdown 檔案改名或移動時，一律使用：
+
+```text
+python util/rename_markdown.py "目前檔案路徑.md" "改名後檔案路徑.md" --dry-run
+python util/rename_markdown.py "目前檔案路徑.md" "改名後檔案路徑.md"
+```
+
+工具會先確認目標檔名未與全庫任何 Markdown 檔案同名，再同步更新所有指向原檔案的 Obsidian WikiLink target；alias、標題錨點與嵌入語法必須保留。撞名或連結指向不明時必須拒絕執行，不得直接用檔案系統命令改名。
+
 ---
 
 ## 7. 驗證規則
@@ -604,7 +640,7 @@ python util/audit_knowledge_base.py --check-due
 
 `util/check_existing_links.py --missing` 必須核對書卷與章數；有缺漏時回傳非零狀態。
 
-`util/validate_knowledge_base.py` 檢查 YAML、分類、alias、重複累積標記、來源標記、正式條目結構與保護區。既有技術債可列 warning；本次新增或更新檔案若違規則為 blocking。
+`util/validate_knowledge_base.py` 檢查 YAML、分類、alias、重複累積標記、合法同名詞、歧義裸 WikiLink、正式條目結構與保護區。既有技術債可列 warning；本次新增或更新檔案若違規則為 blocking。
 
 既有成品需要統一格式時，使用：
 

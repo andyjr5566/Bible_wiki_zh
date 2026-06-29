@@ -4,22 +4,102 @@
     "type": "split",
     "children": [
       {
-        "id": "bc3fcda0b661b771",
+        "id": "dda965ef51dbf779",
+        "type": "split",
+        "children": [
+          {
+            "id": "bc3fcda0b661b771",
+            "type": "tabs",
+            "dimension": 80.23255813953489,
+            "children": [
+              {
+                "id": "0d256e0f31958fd4",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "link_folder/人物/西布倫（同住）.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "西布倫（同住）"
+                },
+                "group": "07d503c601e0fc2d"
+              }
+            ]
+          },
+          {
+            "id": "c74dc716d7fd6295",
+            "type": "tabs",
+            "dimension": 19.767441860465116,
+            "children": [
+              {
+                "id": "74556bd58b5da84c",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "link_folder/人物/西布倫（同住）.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "西布倫（同住） 的反向連結"
+                },
+                "group": "07d503c601e0fc2d"
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      },
+      {
+        "id": "8fbed1b02d337b82",
         "type": "tabs",
         "children": [
           {
-            "id": "0d256e0f31958fd4",
+            "id": "e1f8091c9bd8916e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "localgraph",
               "state": {
-                "file": "創世記/第33章.md",
-                "mode": "preview",
-                "source": false
+                "file": "link_folder/人物/西布倫（同住）.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.7132754626224419,
+                  "close": false
+                }
               },
-              "icon": "lucide-file",
-              "title": "第33章"
-            }
+              "icon": "lucide-git-fork",
+              "title": "西布倫（同住） 的關聯圖"
+            },
+            "group": "07d503c601e0fc2d"
           }
         ]
       }
@@ -94,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "創世記/第33章.md",
+                "file": "link_folder/人物/西布倫（同住）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +184,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第33章 的反向連結"
+              "title": "西布倫（同住） 的反向連結"
             }
           },
           {
@@ -113,12 +193,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "創世記/第33章.md",
+                "file": "link_folder/人物/西布倫（同住）.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第33章 的對外連結"
+              "title": "西布倫（同住） 的對外連結"
             }
           },
           {
@@ -156,13 +236,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "創世記/第33章.md",
+                "file": "link_folder/人物/西布倫（同住）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第33章 的大綱"
+              "title": "西布倫（同住） 的大綱"
             }
           }
         ]
@@ -185,42 +265,42 @@
   },
   "active": "0d256e0f31958fd4",
   "lastOpenFiles": [
-    "link_folder/神學/創世記3-22的三一體暗示.md",
-    "link_folder/互文/謙卑像基督 (腓2-7-8).md",
-    "link_folder/互文/禮物挽回怒氣 (箴21-14).md",
-    "link_folder/互文/神賜福賜財富能力 (申8-18).md",
-    "link_folder/互文/神使仇敵與人和好 (箴16-7).md",
-    "link_folder/互文/王心在神手中 (箴21-1).md",
-    "link_folder/互文/和睦是神喜悅 (詩133-1).md",
-    "link_folder/互文/兒女為神賞賜 (詩127-3).md",
-    "link_folder/互文/以掃為虔誠人 (來12-16).md",
-    "link_folder/互文/謙卑像基督 (腓2：7-8).md",
-    "link_folder/互文/禮物挽回怒氣 (箴21：14).md",
-    "link_folder/互文/神賜福賜財富能力 (申8：18).md",
-    "link_folder/互文/神使仇敵與人和好 (箴16：7).md",
-    "link_folder/互文/王心在神手中 (箴21：1).md",
-    "link_folder/互文/和睦是神喜悅 (詩133：1).md",
-    "link_folder/互文/兒女為神賞賜 (詩127：3).md",
-    "link_folder/互文/以掃為虔誠人 (來12：16).md",
-    "link_folder/事件/雅各全家下埃及.md",
-    "link_folder/互文/詩篇128篇.md",
-    "link_folder/神學/神的主權.md",
-    "link_folder/事件/曠野試驗.md",
-    "link_folder/互文/基督頌.md",
-    "link_folder/地點/加利利.md",
-    "link_folder/事件/以色列進迦南.md",
-    "link_folder/人物/拿弗他利.md",
-    "link_folder/原文/客西達錢幣單位.md",
-    "link_folder/文化/古代送禮習俗 (賄賂_禮貌_表達愛).md/禮貌",
-    "link_folder/文化/古代送禮習俗 (賄賂/禮貌",
-    "link_folder/文化/古代送禮習俗 (賄賂",
-    "link_folder/原文/哈抹 (驢子",
-    "util/tests/__pycache__/__init__.cpython-311.pyc",
-    "raw_data/biblehub_study_genesis_33.txt",
-    "raw_data/kingcomments_genesis_33.txt",
-    "raw_data/ccbiblestudy_GT_genesis_33.txt",
-    "raw_data/ccbiblestudy_CT_genesis_33.txt",
-    "raw_data/biblehub_study_genesis_32.txt",
+    "link_folder/人物/示劍（哈抹之子）.md",
+    "創世記/第34章.md",
+    "link_folder/互文/撒母耳記下13_10-19 暗嫩他瑪.md",
+    "link_folder/神學/麥基洗德等次.md",
+    "link_folder/神學/贖罪祭.md",
+    "link_folder/神學/舊約.md",
+    "link_folder/神學/聖靈果子.md",
+    "link_folder/地點/聖殿.md",
+    "link_folder/神學/耶利米書31章新約預言.md",
+    "link_folder/神學/稱義.md",
+    "link_folder/人物/猶大支派.md",
+    "link_folder/神學/永生.md",
+    "link_folder/人物/比拿雅.md",
+    "link_folder/神學/替代性贖罪.md",
+    "link_folder/主題/智慧文學.md",
+    "link_folder/神學/新天新地.md",
+    "link_folder/神學/教會.md",
+    "link_folder/神學/撒但最終敗亡.md",
+    "link_folder/人物/押尼珥.md",
+    "link_folder/神學/成聖.md",
+    "link_folder/神學/悔改與信心.md",
+    "link_folder/神學/得救確據.md",
+    "link_folder/神學/屬靈恩賜.md",
+    "link_folder/神學/屬神的憂愁 (林後7_10).md",
+    "link_folder/神學/基督之血.md",
+    "link_folder/神學/千禧年.md",
+    "util/output/kb_report.json",
+    "_config/link_homonyms.yaml",
+    "util/__pycache__/rename_markdown.cpython-311.pyc",
+    "util/tests/__pycache__/test_rename_markdown.cpython-311.pyc",
+    "util/tests/test_rename_markdown.py",
+    "util/rename_markdown.py",
+    "raw_data/biblehub_study_genesis_34.txt",
+    "raw_data/kingcomments_genesis_34.txt",
+    "raw_data/ccbiblestudy_GT_genesis_34.txt",
+    "raw_data/ccbiblestudy_CT_genesis_34.txt",
     "Pasted image 20260628223946.png",
     "Pasted image 20260628223941.png"
   ]
