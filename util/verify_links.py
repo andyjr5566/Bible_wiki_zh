@@ -175,15 +175,29 @@ def classify_scripture_ref(target):
         return ("invalid", canonical, chapter)
 
 
-# ========== 4. 建立實體註冊表 ==========
+# ========== 4. 動態取得 link_folder 下的所有資料夾 ==========
 
-def build_registry(root_path):
-    """建立 link_folder 條目與章節檔的實體註冊表"""
-    link_folders = [
-        '人物', '地點', '主題', '背景', '歷史', '原文',
-        '文化', '神學', '互文', '解經爭議',
-    ]
+def get_link_folders(root_path):
+    """
+    動態掃描 link_folder 下的所有子資料夾。
+    忽略隱藏資料夾和非資料夾的項目。
+    """
+    link_folder_path = root_path / LINK_FOLDER_PARENT
+    if not link_folder_path.exists():
+        return []
     
+    folders = []
+    for item in link_folder_path.iterdir():
+        if item.is_dir() and not item.name.startswith('.'):
+            folders.append(item.name)
+    
+    return sorted(folders)
+
+
+# ========== 5. 建立實體註冊表 ==========
+
+def build_registry(root_path, link_folders):
+    """建立 link_folder 條目與章節檔的實體註冊表"""
     existing_entities = set()      # 條目名稱
     entity_locations = {}          # 條目名稱 → 路徑
     
@@ -229,7 +243,7 @@ def build_registry(root_path):
     return existing_entities, entity_locations, existing_chapter_links
 
 
-# ========== 5. 掃描 wiki-link ==========
+# ========== 6. 掃描 wiki-link ==========
 
 def scan_links(root_path, link_folders, book_name=None):
     """掃描所有 wiki-link，回傳四類分類結果"""
@@ -246,7 +260,7 @@ def scan_links(root_path, link_folders, book_name=None):
             if item.is_dir() and item.name not in [LINK_FOLDER_PARENT] + link_folders:
                 books_to_scan.append(item.name)
 
-    existing_entities, entity_locations, existing_chapter_links = build_registry(root_path)
+    existing_entities, entity_locations, existing_chapter_links = build_registry(root_path, link_folders)
 
     def process_content(content, source_key):
         """處理一個檔案的內容，分類所有 wiki-link"""
@@ -318,9 +332,9 @@ def scan_links(root_path, link_folders, book_name=None):
     return broken_links, pending_refs, invalid_refs
 
 
-# ========== 6. 輸出報告 ==========
+# ========== 7. 輸出報告 ==========
 
-def build_report(broken_links, pending_refs, invalid_refs, root_path):
+def build_report(broken_links, pending_refs, invalid_refs, root_path, link_folders):
     """產生 4 類輸出報告"""
     # 收集 unique entities
     all_broken = set()
@@ -340,10 +354,9 @@ def build_report(broken_links, pending_refs, invalid_refs, root_path):
     # 計算總 valid 連結數
     total_valid_link_occurrences = 0
     # 略估：從已索引的檔案中估算 valid 數量，這裡先掃一次
-    existing_entities, _, existing_chapter_links = build_registry(root_path)
+    existing_entities, _, existing_chapter_links = build_registry(root_path, link_folders)
     all_valid_targets = existing_entities | existing_chapter_links
     
-    link_folders = ['人物', '地點', '主題', '背景', '歷史', '原文', '文化', '神學', '互文', '解經爭議']
     for item in root_path.iterdir():
         if item.is_dir() and item.name not in [LINK_FOLDER_PARENT] + link_folders:
             for f in item.rglob('*.md'):
@@ -440,22 +453,20 @@ def build_report(broken_links, pending_refs, invalid_refs, root_path):
     return report, txt_path
 
 
-# ========== 7. Main ==========
+# ========== 8. Main ==========
 
 def verify_links(book_name=None):
     """主入口"""
     root_path = ROOT
     
-    link_folders = [
-        '人物', '地點', '主題', '背景', '歷史', '原文',
-        '文化', '神學', '互文', '解經爭議',
-    ]
+    # 動態取得 link_folder 下的所有資料夾
+    link_folders = get_link_folders(root_path)
     
     broken_links, pending_refs, invalid_refs = scan_links(
         root_path, link_folders, book_name
     )
     
-    report, txt_path = build_report(broken_links, pending_refs, invalid_refs, root_path)
+    report, txt_path = build_report(broken_links, pending_refs, invalid_refs, root_path, link_folders)
     
     # 顯示摘要到 stdout
     print(f"\n{'='*60}")

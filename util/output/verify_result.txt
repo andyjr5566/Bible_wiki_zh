@@ -2,35 +2,11 @@
   Wiki-Link Verification Report
 ============================================================
 
-  VALID LINKS:            4874
-  BROKEN LINKS:             22
+  VALID LINKS:            4993
+  BROKEN LINKS:              0
   PENDING SCRIPTURE REFS:  102
   INVALID SCRIPTURE REFS:    0
   UNKNOWN LINKS:             0
-
---- BROKEN LINKS (must fix) ---
-  [[以掃為虔誠人 (來12:16)]]
-  [[使女]]
-  [[來12:16以掃]]
-  [[兒女為神賞賜 (詩127:3)]]
-  [[和睦是神喜悅 (詩133:1)]]
-  [[客西達 (錢幣單位)]]
-  [[希伯來書12章]]
-  [[拿弗他利]]
-  [[王心在神手中 (箴21:1)]]
-  [[申命記8章]]
-  [[神使仇敵與人和好 (箴16:7)]]
-  [[神賜福賜財富能力 (申8:18)]]
-  [[禮物挽回怒氣 (箴21:14)]]
-  [[約瑟在埃及]]
-  [[約瑟的夢]]
-  [[耶和華]]
-  [[腓立比書2章]]
-  [[華爾頓《創世記背景註釋》]]
-  [[詩篇127篇]]
-  [[詩篇133篇]]
-  [[謙卑像基督 (腓2:7-8)]]
-  [[路加福音15章]]
 
 --- PENDING SCRIPTURE REFS (info only) ---
   [[以弗所書/第6章]] → valid future 以弗所書 chapter 6 reference
@@ -136,4 +112,4 @@
   [[馬太福音/第3章]] → valid future 馬太福音 chapter 3 reference
   [[馬太福音/第4章]] → valid future 馬太福音 chapter 4 reference
 
-Result: FAIL (broken or invalid refs found)
+Result: PASS
