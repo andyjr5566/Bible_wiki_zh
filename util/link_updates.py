@@ -52,15 +52,11 @@ def prepare(book, chapter):
 
 
 def render_block(book, chapter, update):
-    sources = "、".join(update["sources"])
-    source_files = "、".join(update["source_files"])
     return (
         f"<!-- accumulation:{book}:{chapter}:start -->\n"
         f"#### 第{chapter}章\n"
         f"- 本章重點：{update['summary'].strip()}\n"
         f"- 與本章關聯：{update['relation'].strip()}\n"
-        f"- 觸發來源：{sources}\n"
-        f"- 來源檔案：{source_files}\n"
         f"<!-- accumulation:{book}:{chapter}:end -->"
     )
 

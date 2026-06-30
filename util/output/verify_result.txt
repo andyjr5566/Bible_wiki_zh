@@ -2,11 +2,34 @@
   Wiki-Link Verification Report
 ============================================================
 
-  VALID LINKS:            5532
-  BROKEN LINKS:              0
-  PENDING SCRIPTURE REFS:  105
+  VALID LINKS:            8320
+  BROKEN LINKS:             21
+  PENDING SCRIPTURE REFS:  104
   INVALID SCRIPTURE REFS:    0
   UNKNOWN LINKS:             0
+
+--- BROKEN LINKS (must fix) ---
+  [[「提你出監」/「抬起頭」]]
+  [[「斬斷你的頭」/「從你將你的頭抬起來」]]
+  [[但以理]]
+  [[兩個囚犯與十字架上兩個強盜 (路23:32, 39-43)]]
+  [[埃及人的生日習俗/大赦]]
+  [[埃及宮廷職制 (酒政、膳長)]]
+  [[希伯來人 (過河的人)]]
+  [[掛在木頭上/懸屍示眾]]
+  [[歌珊地]]
+  [[監/監牢/坑]]
+  [[約瑟受苦後高升與基督受苦後得榮耀 (腓2:8-9)]]
+  [[約瑟被遺忘與神不忘記 (賽49:15-16)]]
+  [[膳長 (baker)]]
+  [[葡萄樹/葡萄/杯]]
+  [[葡萄樹與真葡萄樹 (約15:1)]]
+  [[被掛在木頭上與基督被掛在樹上 (徒5:30; 加3:13)]]
+  [[護衛長/波提乏]]
+  [[酒政]]
+  [[酒政 (cupbearer)]]
+  [[酒政/酒政長]]
+  [[飛鳥吃食物/吃肉]]
 
 --- PENDING SCRIPTURE REFS (info only) ---
   [[以弗所書/第6章]] → valid future 以弗所書 chapter 6 reference
@@ -40,9 +63,7 @@
   [[利未記/第11章]] → valid future 利未記 chapter 11 reference
   [[利未記/第12章]] → valid future 利未記 chapter 12 reference
   [[利未記/第17章]] → valid future 利未記 chapter 17 reference
-  [[創世記/第35章]] → valid future 創世記 chapter 35 reference
-  [[創世記/第36章]] → valid future 創世記 chapter 36 reference
-  [[創世記/第37章]] → valid future 創世記 chapter 37 reference
+  [[創世記/第42章]] → valid future 創世記 chapter 42 reference
   [[創世記/第46章]] → valid future 創世記 chapter 46 reference
   [[創世記/第49章]] → valid future 創世記 chapter 49 reference
   [[創世記/第50章]] → valid future 創世記 chapter 50 reference
@@ -110,9 +131,10 @@
   [[路加福音/第10章]] → valid future 路加福音 chapter 10 reference
   [[路加福音/第23章]] → valid future 路加福音 chapter 23 reference
   [[那鴻書/第1章]] → valid future 那鴻書 chapter 1 reference
+  [[阿摩司書/第6章]] → valid future 阿摩司書 chapter 6 reference
   [[雅各書/第2章]] → valid future 雅各書 chapter 2 reference
   [[雅歌]] → valid future 雅歌 chapter 0 reference
   [[馬太福音/第3章]] → valid future 馬太福音 chapter 3 reference
   [[馬太福音/第4章]] → valid future 馬太福音 chapter 4 reference
 
-Result: PASS
+Result: FAIL (broken or invalid refs found)

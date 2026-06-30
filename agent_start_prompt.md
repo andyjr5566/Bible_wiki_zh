@@ -41,6 +41,8 @@ C:\Obsidian\Hermes\scripture\scheme.md
     - 例如：`python util/resolve_link_candidates.py 創世記 13`
 17. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
 18. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+    - 章節檔建立後執行 `python util/build_fhl_maps.py`，由程式將相關地圖同步到經文正文之後
+    - 不得手工建立或修改 `fhl-map-links` 管理區塊
 19. **根據 link_plan 更新 link folder**：
     - B 類先執行 `python util/link_updates.py prepare 【書名】 X`
     - 回到經文與有效 raw text 填寫 `link_updates.yaml`

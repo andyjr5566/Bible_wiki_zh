@@ -170,6 +170,26 @@ https://biblehub.com/study/{book_slug}/{章}.htm
 
 讀取 `raw_data/*.txt` 後必須檢查。以下不得作為 link 或內容依據：404、目錄頁、網站錯誤頁、純導覽列、頁首頁尾、廣告、重複版權、亂碼、HTML 殘留、與本章無關、過短且無可整理資料。無效來源只記錄在 manifest。
 
+### 2.6 FHL 聖經地圖
+
+FHL 地圖原始資料固定放在 `appendix/fhl_maps/`，其中包含 `metadata.json`、
+`images/` 與 `texts/`。地圖筆記、總索引與經文對照一律由程式產生：
+
+```powershell
+python util/build_fhl_maps.py
+```
+
+規則：
+- 每張地圖各有一個 `maps/{gid}.md`，整合圖片、解說、相關經文、相關地圖及來源。
+- 經文引用只在對應章節檔已存在時建立 wiki-link；未完成章節保留普通文字。
+- 每次新增或完成章節後執行 `python util/build_fhl_maps.py`。
+- 章內「相關地圖」固定放在經文正文之後、第一條分隔線之前，由 `fhl-map-links` 標記管理。
+- `fhl-map-manual` 標記以下為人工補充區，程式重建時必須保留。
+- 可用 `python util/build_fhl_maps.py --check` 驗證是否需要同步。
+- 圖片格式由 `appendix/fhl_maps/image_optimization.json` 決定；不得手工改寫副檔名。
+- 批次壓縮使用 `python util/optimize_fhl_map_images.py`；JPEG 固定採
+  `yuvj444p`，只有容量至少縮小 10% 才取代 GIF。
+
 ---
 
 ## 3. 章節主檔格式
@@ -581,6 +601,8 @@ Agent 必須回到本章經文與有效 raw text，逐項填入：
 - `summary`：本章重點
 - `relation`：與本章關聯
 
+`sources`、`source_files` 等內部追蹤欄位不得寫入 `link_folder` 條目；條目只保留有閱讀價值的內容，不顯示 raw_data 檔案路徑。
+
 先預覽，再套用：
 
 ```text
@@ -604,7 +626,7 @@ python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml
 - 工具只負責安全寫入，內容仍由經文與 raw text 驅動。
 - 重跑必須冪等，不得重複新增同一章。
 - 工具只可改累積標記區，不得改正式條目的保護區。
-- manifest 缺少摘要、關聯、來源時不得套用。
+- manifest 缺少摘要或關聯時不得套用。
 
 ### 6.6 防止條目爆炸
 

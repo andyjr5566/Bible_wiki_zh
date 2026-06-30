@@ -16,7 +16,7 @@ from resolve_link_candidates import (
     has_book_chapter_data,
     resolve,
 )
-from validate_knowledge_base import ambiguous_wikilinks
+from validate_knowledge_base import INTERNAL_SOURCE_LINE_RE, ambiguous_wikilinks
 from link_updates import apply_updates, render_block, validate_update
 from normalize_format import normalize_chapter, normalize_entry
 
@@ -100,6 +100,12 @@ class ResolverTests(unittest.TestCase):
 
 
 class UpdateTests(unittest.TestCase):
+    def test_internal_source_lines_are_forbidden_but_heading_is_allowed(self):
+        self.assertIsNone(INTERNAL_SOURCE_LINE_RE.search("### 觸發來源\n"))
+        self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- 觸發來源：CT\n"))
+        self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- 來源檔案：raw_data/a.txt\n"))
+        self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- raw_data：a.txt\n"))
+
     def test_update_requires_sources_and_content(self):
         missing = validate_update({
             "title": "天梯", "path": "link_folder/神學/天梯.md",
@@ -114,7 +120,9 @@ class UpdateTests(unittest.TestCase):
             "sources": ["CT"], "source_files": ["raw_data/example.txt"],
         })
         self.assertIn("<!-- accumulation:創世記:28:start -->", block)
-        self.assertIn("觸發來源：CT", block)
+        self.assertNotIn("觸發來源", block)
+        self.assertNotIn("來源檔案", block)
+        self.assertNotIn("raw_data/example.txt", block)
         self.assertNotIn("### 創世記", block)
 
     def test_apply_inserts_inside_book_group_in_chapter_order(self):

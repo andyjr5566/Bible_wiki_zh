@@ -4,64 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "dda965ef51dbf779",
-        "type": "split",
+        "id": "bc3fcda0b661b771",
+        "type": "tabs",
+        "dimension": 56.55216284987278,
         "children": [
           {
-            "id": "bc3fcda0b661b771",
-            "type": "tabs",
-            "dimension": 80.23255813953489,
-            "children": [
-              {
-                "id": "0d256e0f31958fd4",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "link_folder/人物/西布倫（同住）.md",
-                    "mode": "preview",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "西布倫（同住）"
-                },
-                "group": "07d503c601e0fc2d"
-              }
-            ]
-          },
-          {
-            "id": "c74dc716d7fd6295",
-            "type": "tabs",
-            "dimension": 19.767441860465116,
-            "children": [
-              {
-                "id": "74556bd58b5da84c",
-                "type": "leaf",
-                "state": {
-                  "type": "backlink",
-                  "state": {
-                    "file": "link_folder/人物/西布倫（同住）.md",
-                    "collapseAll": false,
-                    "extraContext": false,
-                    "sortOrder": "alphabetical",
-                    "showSearch": false,
-                    "searchQuery": "",
-                    "backlinkCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-coming-in",
-                  "title": "西布倫（同住） 的反向連結"
-                },
-                "group": "07d503c601e0fc2d"
-              }
-            ]
+            "id": "0d256e0f31958fd4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "link_folder/原文/同寢.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "同寢"
+            },
+            "group": "07d503c601e0fc2d"
           }
-        ],
-        "direction": "horizontal"
+        ]
       },
       {
         "id": "8fbed1b02d337b82",
         "type": "tabs",
+        "dimension": 43.44783715012723,
         "children": [
           {
             "id": "e1f8091c9bd8916e",
@@ -69,7 +36,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "link_folder/人物/西布倫（同住）.md",
+                "file": "link_folder/原文/同寢.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -92,12 +59,12 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.7132754626224419,
-                  "close": false
+                  "scale": 0.9999999999999993,
+                  "close": true
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "西布倫（同住） 的關聯圖"
+              "title": "同寢 的關聯圖"
             },
             "group": "07d503c601e0fc2d"
           }
@@ -133,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "西珥山",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -174,7 +141,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/人物/西布倫（同住）.md",
+                "file": "link_folder/原文/同寢.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -184,7 +151,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "西布倫（同住） 的反向連結"
+              "title": "同寢 的反向連結"
             }
           },
           {
@@ -193,12 +160,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/人物/西布倫（同住）.md",
+                "file": "link_folder/原文/同寢.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "西布倫（同住） 的對外連結"
+              "title": "同寢 的對外連結"
             }
           },
           {
@@ -236,13 +203,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/人物/西布倫（同住）.md",
+                "file": "link_folder/原文/同寢.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "西布倫（同住） 的大綱"
+              "title": "同寢 的大綱"
             }
           }
         ]
@@ -265,43 +232,51 @@
   },
   "active": "0d256e0f31958fd4",
   "lastOpenFiles": [
-    "link_folder/人物/示劍（哈抹之子）.md",
-    "創世記/第34章.md",
-    "link_folder/互文/撒母耳記下13_10-19 暗嫩他瑪.md",
-    "link_folder/神學/麥基洗德等次.md",
-    "link_folder/神學/贖罪祭.md",
-    "link_folder/神學/舊約.md",
-    "link_folder/神學/聖靈果子.md",
-    "link_folder/地點/聖殿.md",
-    "link_folder/神學/耶利米書31章新約預言.md",
-    "link_folder/神學/稱義.md",
-    "link_folder/人物/猶大支派.md",
-    "link_folder/神學/永生.md",
-    "link_folder/人物/比拿雅.md",
-    "link_folder/神學/替代性贖罪.md",
-    "link_folder/主題/智慧文學.md",
-    "link_folder/神學/新天新地.md",
-    "link_folder/神學/教會.md",
-    "link_folder/神學/撒但最終敗亡.md",
-    "link_folder/人物/押尼珥.md",
-    "link_folder/神學/成聖.md",
-    "link_folder/神學/悔改與信心.md",
-    "link_folder/神學/得救確據.md",
-    "link_folder/神學/屬靈恩賜.md",
-    "link_folder/神學/屬神的憂愁 (林後7_10).md",
-    "link_folder/神學/基督之血.md",
-    "link_folder/神學/千禧年.md",
-    "util/output/kb_report.json",
-    "_config/link_homonyms.yaml",
-    "util/__pycache__/rename_markdown.cpython-311.pyc",
-    "util/tests/__pycache__/test_rename_markdown.cpython-311.pyc",
-    "util/tests/test_rename_markdown.py",
-    "util/rename_markdown.py",
-    "raw_data/biblehub_study_genesis_34.txt",
-    "raw_data/kingcomments_genesis_34.txt",
-    "raw_data/ccbiblestudy_GT_genesis_34.txt",
-    "raw_data/ccbiblestudy_CT_genesis_34.txt",
-    "Pasted image 20260628223946.png",
-    "Pasted image 20260628223941.png"
+    "創世記/第39章.md",
+    "link_folder/神學/利亞四子命名的神學意義.md",
+    "util/__pycache__/verify_links.cpython-311.pyc",
+    "util/tests/__pycache__/test_verify_links.cpython-311.pyc",
+    "util/tests/test_verify_links.py",
+    "link_folder/人物/猶大（雅各之子）.md",
+    "link_folder/神學/他瑪比猶大更有義.md",
+    "link_folder/人物/他瑪（創38）.md",
+    "創世記/第38章.md",
+    "創世記/第36章.md",
+    "link_folder/互文/兩個囚犯與十字架上兩個強盜_路23_32_39-43.md",
+    "link_folder/人物/膳長.md",
+    "link_folder/原文/三筐白餅.md",
+    "link_folder/文化/香料乳香沒藥貿易.md",
+    "link_folder/文化/護衛長.md",
+    "link_folder/文化/管家（管理家務）.md",
+    "link_folder/文化/彩衣.md",
+    "link_folder/文化/寡婦衣裳.md",
+    "link_folder/文化/奠酒.md",
+    "link_folder/文化/古代近東妾與繼承權.md",
+    "link_folder/文化/古代近東夢文化.md",
+    "link_folder/文化/古代收生婆.md",
+    "link_folder/文化/印帶杖身份憑據.md",
+    "link_folder/文化/二十舍客勒銀子.md",
+    "link_folder/地點/監獄（王的囚犯被囚之處）.md",
+    "link_folder/地點/波斯拉.md",
+    "link_folder/地點/波提乏的家.md",
+    "link_folder/地點/摩押地.md",
+    "link_folder/地點/提幔.md",
+    "util/recover_remove_internal_source_lines.ps1",
+    "recovery_patches/fhl_maps_pipeline_part03.patch",
+    "recovery_patches/fhl_maps_pipeline_part02.patch",
+    "recovery_patches/fhl_maps_pipeline_part01.patch",
+    "recovery_patches/remove_internal_source_metadata.patch",
+    "recovery_patches",
+    "raw_data/kingcomments_genesis_38.txt",
+    "appendix/fhl_maps/images/208_208_王下表八.jpg",
+    "appendix/fhl_maps/images/208_208_王下表八.tmp.jpg",
+    "appendix/fhl_maps/images/207_207_王下表七.jpg",
+    "appendix/fhl_maps/images/205_205_王上表六.jpg",
+    "appendix/fhl_maps/images/206_206_王上表八.jpg",
+    "appendix/fhl_maps/images/206_206_王上表八.tmp.jpg",
+    "appendix/fhl_maps/images/204_204_民表一d.tmp.jpg",
+    "appendix/fhl_maps/images/207_207_王下表七.tmp.jpg",
+    "appendix/fhl_maps/images/205_205_王上表六.tmp.jpg",
+    "appendix/fhl_maps/images/203_203_民表一c.jpg"
   ]
 }

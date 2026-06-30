@@ -1,0 +1,45 @@
+book: 創世記
+chapter: 10
+updates:
+- title: 寧錄
+  path: link_folder/人物/寧錄.md
+  summary: 古實生寧錄；他成為世上英雄之首、在耶和華面前英勇的獵戶，其國從示拿地的巴別、以力、亞甲、甲尼開始，並向亞述方向擴展城邑。
+  relation: 寧錄使列國表不只列族名，也聚焦第一個帝國建造者；CT/KC以其獵戶、權勢與巴別國度發展反叛神及以暴力建國的教訓。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]
+- title: 希伯
+  path: link_folder/人物/希伯.md
+  summary: 閃被稱為希伯所有子孫之祖；希伯由沙拉所生，生法勒與約坍，兩支在列國表中各自展開。
+  relation: 希伯把閃的家譜導向後來的希伯來人與亞伯拉罕；來源也以其名可能有「越過、彼岸」之意發展客旅與分別的靈訓。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]
+- title: 示拿地
+  path: link_folder/地點/示拿地.md
+  summary: 寧錄國度的起頭包括示拿地的巴別、以力、亞甲與甲尼；示拿通常辨識為南部美索不達米亞的巴比倫平原。
+  relation: 第10章使示拿成為早期帝國與巴別的中心，並為第11章人在同一平原建城造塔的敘事預作地理背景。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]
+- title: 尼尼微
+  path: link_folder/地點/尼尼微.md
+  summary: 寧錄或亞述從示拿地出去建造尼尼微、利河伯、迦拉與利鮮；原句主詞可有不同理解，尼尼微後來成為著名大城。
+  relation: 本章把尼尼微置於含系帝國擴張的段落，為後來亞述勢力及約拿書的大城背景留下最早記載。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]
+- title: 萬國同源
+  path: link_folder/神學/萬國同源.md
+  summary: 挪亞三子洪水後生出各宗族，按家族、方言、地土與邦國分布；全地的邦國都由這些支系分出。
+  relation: 第10章的列國表宣告人類雖有多元民族與語言，仍同出挪亞一家；這既反對血統優越，也為神向萬族施恩的敘事奠基。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]
+- title: 七十的屬靈意義
+  path: link_folder/原文/七十的屬靈意義.md
+  summary: 傳統算法常把第10章列國表計為七十個民族或宗族單位，CT據此把七十解作完全或全體性的數目。
+  relation: 此數字靈訓用來表達列國表涵蓋全人類的象徵意義；實際計數會受人名、族名及重複名稱如何處理影響。
+  sources: [經文, CT, GT]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt]
+- title: 寧錄的在耶和華面前
+  path: link_folder/解經爭議/寧錄的在耶和華面前.md
+  summary: 寧錄被稱為「在耶和華面前英勇的獵戶」；可理解為在神面前極其英勇，也被CT與KC解作公然在神面前狂傲、敵擋神。
+  relation: 第10章的語句容許正面強調卓越或負面強調挑釁兩種讀法；其國度與巴別的關聯使多數本章來源採負面理解。
+  sources: [經文, CT, GT, KC, BH]
+  source_files: [raw_scripture/創世記/第10章.txt, raw_data/ccbiblestudy_CT_genesis_10.txt, raw_data/ccbiblestudy_GT_genesis_10.txt, raw_data/kingcomments_genesis_10.txt, raw_data/biblehub_study_genesis_10.txt]

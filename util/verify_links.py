@@ -243,6 +243,24 @@ def build_registry(root_path, link_folders):
     return existing_entities, entity_locations, existing_chapter_links
 
 
+def is_existing_path_link(root_path, target):
+    """Return whether an Obsidian path target resolves to a Markdown file in the vault."""
+    target = target.split("#", 1)[0].strip().replace("\\", "/")
+    if not target:
+        return False
+    relative = Path(target)
+    if relative.is_absolute() or ".." in relative.parts:
+        return False
+    candidate = root_path / relative
+    if candidate.suffix.lower() != ".md":
+        candidate = Path(f"{candidate}.md")
+    try:
+        candidate.resolve().relative_to(root_path.resolve())
+    except ValueError:
+        return False
+    return candidate.is_file()
+
+
 # ========== 6. 掃描 wiki-link ==========
 
 def scan_links(root_path, link_folders, book_name=None):
@@ -269,7 +287,11 @@ def scan_links(root_path, link_folders, book_name=None):
             entity = link.split('|')[0].strip()
             
             # 檢查是否在實體註冊表或章節檔中
-            if entity in existing_entities or entity in existing_chapter_links:
+            if (
+                entity in existing_entities
+                or entity in existing_chapter_links
+                or is_existing_path_link(root_path, entity)
+            ):
                 continue  # 正常連結
             
             # 檢查是否為聖經章節引用
@@ -367,7 +389,7 @@ def build_report(broken_links, pending_refs, invalid_refs, root_path, link_folde
                     links = WIKILINK_RE.findall(content)
                     for link in links:
                         entity = link.split('|')[0].strip()
-                        if entity in all_valid_targets:
+                        if entity in all_valid_targets or is_existing_path_link(root_path, entity):
                             total_valid_link_occurrences += 1
                 except:
                     pass
@@ -382,7 +404,7 @@ def build_report(broken_links, pending_refs, invalid_refs, root_path, link_folde
                 links = WIKILINK_RE.findall(content)
                 for link in links:
                     entity = link.split('|')[0].strip()
-                    if entity in all_valid_targets:
+                    if entity in all_valid_targets or is_existing_path_link(root_path, entity):
                         total_valid_link_occurrences += 1
             except:
                 pass

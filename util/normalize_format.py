@@ -150,11 +150,6 @@ def render_chapter_accumulation(chapters):
     for book in sorted(books, key=lambda item: (BOOK_RANK.get(item, 999), item)):
         blocks = []
         for chapter, content in sorted(books[book]):
-            if "來源" not in content:
-                content = "\n".join(filter(None, [
-                    content,
-                    "- 來源：見本條目「來源依據」",
-                ]))
             block = (
                 f"<!-- accumulation:{book}:{chapter}:start -->\n"
                 f"#### 第{chapter}章\n"
@@ -335,6 +330,11 @@ def normalize_chapter(path):
     knowledge = re.search(r"^##\s+本章知識節點\s*$", body, re.M)
     scripture_part = body[:knowledge.start()]
     rest = body[knowledge.start():]
+    map_block_match = re.search(
+        r"<!-- fhl-map-links:start -->[\s\S]*?<!-- fhl-map-links:end -->",
+        scripture_part,
+    )
+    map_block = map_block_match.group(0).strip() if map_block_match else ""
     scripture_part = re.sub(r"^(\d+)(?![.\d])\s+", r"\1. ", scripture_part, flags=re.M)
     scripture_part = re.sub(r"^(\d+\..*)\n\n(?=\d+\.)", r"\1\n", scripture_part, flags=re.M)
     raw_path = ROOT / "raw_scripture" / "創世記" / f"第{chapter}章.txt"
@@ -361,6 +361,8 @@ def normalize_chapter(path):
                     rendered = rendered.replace(token, link)
                 linked_lines.append(f"{number}. {rendered}")
             scripture_part = f"# 創世記 第{chapter}章\n\n" + "\n".join(linked_lines)
+            if map_block:
+                scripture_part += "\n\n" + map_block
     body = scripture_part.rstrip() + "\n\n---\n\n" + rest.lstrip()
     body = re.sub(r"\n---\n\n---\n", "\n---\n", body)
     knowledge_match = re.search(

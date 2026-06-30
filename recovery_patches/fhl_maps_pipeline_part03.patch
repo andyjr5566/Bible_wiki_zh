@@ -1,0 +1,155 @@
+*** Begin Patch
+*** Add File: util/build_fhl_maps.py
++#!/usr/bin/env python3
++"""由 FHL 地圖原始資料建立 Obsidian 筆記，並同步既有章節的相關地圖。"""
++from __future__ import annotations
++import argparse, json, re, sys
++from collections import defaultdict
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++DATA = ROOT / "appendix" / "fhl_maps"
++META = DATA / "metadata.json"
++MAPS = DATA / "maps"
++INDEX = DATA / "地圖索引.md"
++SCRIPTURE_INDEX = DATA / "scripture_map_index.json"
++IMAGE_MANIFEST = DATA / "image_optimization.json"
++START, END = "<!-- fhl-map-links:start -->", "<!-- fhl-map-links:end -->"
++MANUAL = "<!-- fhl-map-manual: edits below this line are preserved -->"
++SREF, MREF, DREF = re.compile(r"#([^|]+)\|"), re.compile(r"\$(\d{3})"), re.compile(r"\^([^|]+)\|")
++BOOKS = {
++ "創":"創世記","出":"出埃及記","民":"民數記","申":"申命記","書":"約書亞記",
++ "士":"士師記","撒上":"撒母耳記上","撒下":"撒母耳記下","王上":"列王紀上",
++ "王下":"列王紀下","代上":"歷代志上","代下":"歷代志下","拉":"以斯拉記",
++ "尼":"尼希米記","斯":"以斯帖記","伯":"約伯記","賽":"以賽亞書",
++ "耶":"耶利米書","結":"以西結書","但":"但以理書","何":"何西阿書",
++ "摩":"阿摩司書","該":"哈該書","亞":"撒迦利亞書","太":"馬太福音",
++ "可":"馬可福音","路":"路加福音","約":"約翰福音","徒":"使徒行傳",
++ "羅":"羅馬書","林前":"哥林多前書","加":"加拉太書","腓":"腓立比書",
++ "西":"歌羅西書","多":"提多書","門":"腓利門書","來":"希伯來書",
++ "彼前":"彼得前書","彼後":"彼得後書","猶":"猶大書",
++}
++
++def uniq(values): return list(dict.fromkeys(values))
++def refs(text): return uniq(m.group(1).strip() for m in SREF.finditer(text))
++def title(r): return re.sub(r"^\s*\d{3}\s+", "", r["heading"]).strip()
++def alias(r):
++    m = re.match(r"〈([^〉]+)〉", title(r)); return m.group(1) if m else None
++def group(r):
++    a = alias(r)
++    return re.sub(r"[一二三四五六七八九十百0-9ab]+$", "", a) if a else "附表"
++def parse_ref(raw):
++    m = re.match(r"^([^0-9]+)(.+)$", re.sub(r"\s+", "", raw))
++    if not m or m.group(1) not in BOOKS: return None, []
++    chapters = []
++    for part in m.group(2).split(";"):
++        start = re.match(r"^(\d+):", part)
++        if not start: continue
++        first = int(start.group(1))
++        ends = re.findall(r"-(\d+):", part)
++        last = max(first, int(ends[-1]) if ends else first)
++        chapters.extend(range(first, last + 1))
++    return BOOKS[m.group(1)], uniq(chapters)
++def ref_link(raw):
++    book, chapters = parse_ref(raw)
++    if not book: return raw
++    chapter = next((c for c in chapters if (ROOT/book/f"第{c}章.md").exists()), None)
++    return f"[[{book}/第{chapter}章|{raw}]]" if chapter else raw
++def map_link(gid, by_gid):
++    record = by_gid.get(gid)
++    label = alias(record) or title(record) if record else f"地圖 {gid}"
++    return f"[[appendix/fhl_maps/maps/{gid}|{label}]]"
++def description(record, by_gid):
++    lines = record["description"].replace("\r\n","\n").splitlines()[1:]
++    text = "\n".join(lines).strip()
++    text = SREF.sub(lambda m: ref_link(m.group(1).strip()), text)
++    text = MREF.sub(lambda m: map_link(m.group(1), by_gid), text)
++    text = DREF.sub(lambda m: f"〔FHL 地名詳解 {m.group(1)}〕", text)
++    return "\n\n".join(line.rstrip() for line in text.splitlines()).rstrip()
++def image_names():
++    if not IMAGE_MANIFEST.exists(): return {}
++    data = json.loads(IMAGE_MANIFEST.read_text(encoding="utf-8"))
++    return {x["gid"]:x["chosen_image"] for x in data.get("images",[])}
++def manual(path):
++    if not path.exists(): return ""
++    text = path.read_text(encoding="utf-8")
++    return text.split(MANUAL,1)[1].lstrip("\n").rstrip() if MANUAL in text else ""
++def q(value): return json.dumps(value, ensure_ascii=False)
++
++def render_map(record, by_gid, images, notes):
++    gid, heading = record["gid"], title(record)
++    source_image = Path(record["local_image"].replace("\\","/")).name
++    image = images.get(gid, source_image)
++    if not (DATA/"images"/image).exists(): raise FileNotFoundError(image)
++    raw_refs = refs(record["description"])
++    fm = ["---",f"gid: {q(gid)}",f"title: {q(heading)}",f"map_group: {q(group(record))}",
++          f"source_url: {q(record['page_url'])}",f"image_source_url: {q(record['image_url'])}"]
++    if alias(record): fm += ["aliases:",f"  - {q(alias(record))}"]
++    if raw_refs: fm += ["scripture_refs:"]+[f"  - {q(x)}" for x in raw_refs]
++    fm += ["---"]
++    parts = ["\n".join(fm),f"# {heading}",f"![[appendix/fhl_maps/images/{image}]]",
++             "## 地圖解說\n\n"+description(record,by_gid)]
++    if raw_refs: parts += ["## 相關經文\n\n"+"\n".join(f"- {ref_link(x)}" for x in raw_refs)]
++    map_refs = uniq(m.group(1) for m in MREF.finditer(record["description"]))
++    if map_refs: parts += ["## 相關地圖\n\n"+"\n".join(f"- {map_link(x,by_gid)}" for x in map_refs)]
++    parts += [f"## 來源\n\n- [信望愛聖經地圖]({record['page_url']})",
++              "## 補充筆記\n\n"+MANUAL+(f"\n{notes}" if notes else "")]
++    return "\n\n".join(parts).rstrip()+"\n"
++
++def build_ref_index(records):
++    chapters = defaultdict(lambda:defaultdict(list)); bad=[]
++    for r in records:
++        for raw in refs(r["description"]):
++            book, nums = parse_ref(raw)
++            if not book or not nums: bad.append({"gid":r["gid"],"reference":raw}); continue
++            for c in nums: chapters[f"{book}/第{c}章"][r["gid"]].append(raw)
++    result={}
++    for key in sorted(chapters):
++        result[key]=[{"gid":g,"refs":uniq(chapters[key][g])} for g in sorted(chapters[key])]
++    return result,bad
++def render_index(records):
++    grouped=defaultdict(list)
++    for r in records: grouped[group(r)].append(r)
++    parts=["# 信望愛聖經地圖索引","本索引由 `metadata.json` 自動產生。"]
++    for name,items in grouped.items():
++        parts += ["## "+name+"\n"+"\n".join(
++            f"- [[appendix/fhl_maps/maps/{r['gid']}|{r['gid']}　{title(r)}]]" for r in items)]
++    return "\n\n".join(parts)+"\n"
++def sync(path, entries, by_gid):
++    text=path.read_text(encoding="utf-8")
++    text=re.sub(rf"\n*{re.escape(START)}.*?{re.escape(END)}\n*","\n\n",text,flags=re.S)
++    if not entries:return text
++    lines=[START,"## 相關地圖",""]+[f"- [[appendix/fhl_maps/maps/{e['gid']}|{title(by_gid[e['gid']])}]]" for e in entries]+[END]
++    block="\n".join(lines); content=text.splitlines(); saw=False
++    for i,line in enumerate(content):
++        if re.match(r"^\d+\.\s",line): saw=True
++        elif saw and line.strip()=="---":
++            return "\n".join(content[:i]).rstrip()+"\n\n"+block+"\n\n"+"\n".join(content[i:]).lstrip()+"\n"
++    raise ValueError(f"找不到經文正文後分隔線：{path}")
++def write(path,content,check,changed):
++    current=path.read_text(encoding="utf-8") if path.exists() else None
++    if current==content:return
++    changed.append(path)
++    if not check:
++        path.parent.mkdir(parents=True,exist_ok=True)
++        path.write_text(content,encoding="utf-8",newline="\n")
++
++def main():
++    p=argparse.ArgumentParser(); p.add_argument("--check",action="store_true"); args=p.parse_args()
++    records=json.loads(META.read_text(encoding="utf-8")); by_gid={r["gid"]:r for r in records}
++    images=image_names(); chapter_index,bad=build_ref_index(records); changed=[]
++    for r in records:
++        path=MAPS/f"{r['gid']}.md"
++        write(path,render_map(r,by_gid,images,manual(path)),args.check,changed)
++    write(INDEX,render_index(records),args.check,changed)
++    payload=json.dumps({"chapters":chapter_index,"unparsed_references":bad},ensure_ascii=False,indent=2)+"\n"
++    write(SCRIPTURE_INDEX,payload,args.check,changed)
++    for key,entries in chapter_index.items():
++        path=ROOT/f"{key}.md"
++        if path.exists(): write(path,sync(path,entries,by_gid),args.check,changed)
++    print(f"{'需要更新' if args.check else '已更新'} {len(changed)} 個檔案；地圖 {len(records)} 張。")
++    if bad:
++        for item in bad: print(f"  {item['gid']}: {item['reference']}")
++    return 1 if args.check and changed else 0
++if __name__=="__main__":sys.exit(main())
+*** End Patch

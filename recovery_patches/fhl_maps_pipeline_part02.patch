@@ -1,0 +1,79 @@
+*** Begin Patch
+*** Update File: agent_start_prompt.md
+@@
+ 16. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
++    - 章節檔建立後執行 `python util/build_fhl_maps.py`，由程式將相關地圖同步到經文正文之後
++    - 不得手工建立或修改 `fhl-map-links` 管理區塊
+ 17. **根據 link_plan 更新 link folder**：
+*** Update File: scheme.md
+@@
+ ### 2.5 raw text 有效性
+ 
+ 讀取 `raw_data/*.txt` 後必須檢查。以下不得作為 link 或內容依據：404、目錄頁、網站錯誤頁、純導覽列、頁首頁尾、廣告、重複版權、亂碼、HTML 殘留、與本章無關、過短且無可整理資料。無效來源只記錄在 manifest。
+ 
++### 2.6 FHL 聖經地圖
++
++FHL 地圖原始資料固定放在 `appendix/fhl_maps/`，其中包含 `metadata.json`、
++`images/` 與 `texts/`。地圖筆記、總索引與經文對照一律由程式產生：
++
++```powershell
++python util/build_fhl_maps.py
++```
++
++規則：
++- 每張地圖各有一個 `maps/{gid}.md`，整合圖片、解說、相關經文、相關地圖及來源。
++- 經文引用只在對應章節檔已存在時建立 wiki-link；未完成章節保留普通文字。
++- 每次新增或完成章節後執行 `python util/build_fhl_maps.py`。
++- 章內「相關地圖」固定放在經文正文之後、第一條分隔線之前，由 `fhl-map-links` 標記管理。
++- `fhl-map-manual` 標記以下為人工補充區，程式重建時必須保留。
++- 可用 `python util/build_fhl_maps.py --check` 驗證是否需要同步。
++- 圖片格式由 `appendix/fhl_maps/image_optimization.json` 決定；不得手工改寫副檔名。
++- 批次壓縮使用 `python util/optimize_fhl_map_images.py`；JPEG 固定採
++  `yuvj444p`，只有容量至少縮小 10% 才取代 GIF。
++
+ ---
+*** Update File: util/validate_knowledge_base.py
+@@
+-    if headings != ["本章知識節點", "本章整理"]:
+-        errors.append(f"{path.relative_to(ROOT)}: H2 必須依序為本章知識節點、本章整理")
++    allowed_headings = (
++        ["本章知識節點", "本章整理"],
++        ["相關地圖", "本章知識節點", "本章整理"],
++    )
++    if headings not in allowed_headings:
++        errors.append(
++            f"{path.relative_to(ROOT)}: H2 必須依序為"
++            "（可選）相關地圖、本章知識節點、本章整理"
++        )
++    if "相關地圖" in headings:
++        start = text.count("<!-- fhl-map-links:start -->")
++        end = text.count("<!-- fhl-map-links:end -->")
++        if start != 1 or end != 1:
++            errors.append(
++                f"{path.relative_to(ROOT)}: 相關地圖必須由單一 fhl-map-links 區塊管理"
++            )
++        map_position = text.find("## 相關地圖")
++        first_rule = text.find("---")
++        last_verse = max(
++            (m.start() for m in re.finditer(r"^\d+\.\s", text[:first_rule], re.M)),
++            default=-1,
++        )
++        if not (last_verse < map_position < first_rule):
++            errors.append(
++                f"{path.relative_to(ROOT)}: 相關地圖必須位於經文正文後、第一條分隔線前"
++            )
+*** Update File: util/normalize_format.py
+@@
+     knowledge = re.search(r"^##\s+本章知識節點\s*$", body, re.M)
+     scripture_part = body[:knowledge.start()]
+     rest = body[knowledge.start():]
++    map_block_match = re.search(
++        r"<!-- fhl-map-links:start -->[\s\S]*?<!-- fhl-map-links:end -->",
++        scripture_part,
++    )
++    map_block = map_block_match.group(0).strip() if map_block_match else ""
+@@
+             scripture_part = f"# 創世記 第{chapter}章\n\n" + "\n".join(linked_lines)
++            if map_block:
++                scripture_part += "\n\n" + map_block
+*** End Patch

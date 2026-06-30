@@ -41,6 +41,12 @@ MARKER_RE = re.compile(
     r"(?P<edge>start|end) -->"
 )
 WIKILINK_RE = re.compile(r"\[\[([^\]\r\n]+)\]\]")
+INTERNAL_SOURCE_LINE_RE = re.compile(
+    r"^\s*-\s*(?:觸發來源|來源檔案)(?:\s*[：:].*)?\s*$"
+    r"|^\s*-?\s*raw_data\s*[：:].*$"
+    r"|^\s*-\s*來源\s*[：:]\s*見本條目「來源依據」\s*$",
+    re.M,
+)
 
 
 def frontmatter(text):
@@ -117,6 +123,9 @@ def validate_file(path, strict=False):
     if not heading or heading.group(1) != path.stem:
         (errors if strict else warnings).append(f"{relative}: H1 必須與檔名一致")
 
+    if INTERNAL_SOURCE_LINE_RE.search(text):
+        errors.append(f"{relative}: 不得顯示內部來源欄位或 raw_data 檔案路徑")
+
     markers = {}
     stack = {}
     for match in MARKER_RE.finditer(text):
@@ -191,8 +200,32 @@ def validate_chapter(path):
     if not h1 or h1.group(0) != expected_h1:
         errors.append(f"{path.relative_to(ROOT)}: H1 必須是「{expected_h1}」")
     headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
-    if headings != ["本章知識節點", "本章整理"]:
-        errors.append(f"{path.relative_to(ROOT)}: H2 必須依序為本章知識節點、本章整理")
+    allowed_headings = (
+        ["本章知識節點", "本章整理"],
+        ["相關地圖", "本章知識節點", "本章整理"],
+    )
+    if headings not in allowed_headings:
+        errors.append(
+            f"{path.relative_to(ROOT)}: H2 必須依序為"
+            "（可選）相關地圖、本章知識節點、本章整理"
+        )
+    if "相關地圖" in headings:
+        start = text.count("<!-- fhl-map-links:start -->")
+        end = text.count("<!-- fhl-map-links:end -->")
+        if start != 1 or end != 1:
+            errors.append(
+                f"{path.relative_to(ROOT)}: 相關地圖必須由單一 fhl-map-links 區塊管理"
+            )
+        map_position = text.find("## 相關地圖")
+        first_rule = text.find("---")
+        last_verse = max(
+            (m.start() for m in re.finditer(r"^\d+\.\s", text[:first_rule], re.M)),
+            default=-1,
+        )
+        if not (last_verse < map_position < first_rule):
+            errors.append(
+                f"{path.relative_to(ROOT)}: 相關地圖必須位於經文正文後、第一條分隔線前"
+            )
     knowledge_match = re.search(
         r"^## 本章知識節點\s*$([\s\S]*?)(?=^## 本章整理\s*$)", text, re.M
     )
