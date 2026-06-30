@@ -2985,6 +2985,17 @@
     "status": "formal",
     "aliases": []
   },
+  "酒政": {
+    "path": "link_folder/人物/酒政.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "酒政",
+    "status": "formal",
+    "aliases": [
+      "埃及王的酒政",
+      "酒政長"
+    ]
+  },
   "酒政_酒政長": {
     "path": "link_folder/人物/酒政_酒政長.md",
     "type": "人物",
@@ -8339,6 +8350,12 @@
   },
   "Zerah": {
     "alias_of": "謝拉"
+  },
+  "埃及王的酒政": {
+    "alias_of": "酒政"
+  },
+  "酒政長": {
+    "alias_of": "酒政"
   },
   "麥基洗得": {
     "alias_of": "麥基洗德"
