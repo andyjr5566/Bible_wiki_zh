@@ -471,6 +471,20 @@
     "status": "formal",
     "aliases": []
   },
+  "烏鴉與鴿子的象徵": {
+    "path": "link_folder/主題/烏鴉與鴿子的象徵.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學",
+      "背景"
+    ],
+    "title": "烏鴉與鴿子的象徵",
+    "status": "formal",
+    "aliases": [
+      "洪水中的烏鴉與鴿子",
+      "放烏鴉與三次放鴿子"
+    ]
+  },
   "父母偏愛": {
     "path": "link_folder/主題/父母偏愛.md",
     "type": "主題",
@@ -862,6 +876,22 @@
     "secondary_types": [],
     "title": "雅各全家下埃及",
     "status": "candidate",
+    "aliases": []
+  },
+  "「神使我忘記」與「神使我昌盛」的屬靈經歷": {
+    "path": "link_folder/互文/「神使我忘記」與「神使我昌盛」的屬靈經歷.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "「神使我忘記」與「神使我昌盛」的屬靈經歷",
+    "status": "formal",
+    "aliases": []
+  },
+  "七年豐收七年饑荒與安息年-禧年": {
+    "path": "link_folder/互文/七年豐收七年饑荒與安息年-禧年.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "七年豐收七年饑荒與安息年-禧年",
+    "status": "formal",
     "aliases": []
   },
   "亞伯蘭下埃及與出埃及": {
@@ -1605,6 +1635,14 @@
     "status": "formal",
     "aliases": []
   },
+  "約瑟與但以理（解夢、異邦宮廷）": {
+    "path": "link_folder/互文/約瑟與但以理（解夢、異邦宮廷）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約瑟與但以理（解夢、異邦宮廷）",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟被遺忘與神不忘記_賽49_15-16": {
     "path": "link_folder/互文/約瑟被遺忘與神不忘記_賽49_15-16.md",
     "type": "互文",
@@ -1619,6 +1657,14 @@
     "secondary_types": [],
     "title": "約瑟豫表主耶穌",
     "status": "formal",
+    "aliases": []
+  },
+  "約瑟預表基督（受苦 — 未知分類：榮耀、三十歲開始事奉、生命的糧、外邦新婦）": {
+    "path": "link_folder/互文/約瑟預表基督（受苦 — 未知分類：榮耀、三十歲開始事奉、生命的糧、外邦新婦）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約瑟預表基督（受苦 — 未知分類：榮耀、三十歲開始事奉、生命的糧、外邦新婦）",
+    "status": "candidate",
     "aliases": []
   },
   "約翰一書2章三樣情慾": {
@@ -1749,6 +1795,14 @@
       "基督論"
     ],
     "title": "腓立比書2章",
+    "status": "formal",
+    "aliases": []
+  },
+  "膳長被掛木架預表基督受咒詛": {
+    "path": "link_folder/互文/膳長被掛木架預表基督受咒詛.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "膳長被掛木架預表基督受咒詛",
     "status": "formal",
     "aliases": []
   },
@@ -1886,6 +1940,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "路得記4章法勒斯家譜",
+    "status": "formal",
+    "aliases": []
+  },
+  "酒政與主餐之杯": {
+    "path": "link_folder/互文/酒政與主餐之杯.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "酒政與主餐之杯",
     "status": "formal",
     "aliases": []
   },
@@ -2137,6 +2199,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞西納": {
+    "path": "link_folder/人物/亞西納.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞西納",
+    "status": "formal",
+    "aliases": []
+  },
   "亞設（有福）": {
     "path": "link_folder/人物/亞設（有福）.md",
     "type": "人物",
@@ -2284,6 +2354,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "以撒",
+    "status": "formal",
+    "aliases": []
+  },
+  "以法蓮": {
+    "path": "link_folder/人物/以法蓮.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以法蓮",
     "status": "formal",
     "aliases": []
   },
@@ -2921,6 +2999,14 @@
     "status": "formal",
     "aliases": []
   },
+  "波提非拉": {
+    "path": "link_folder/人物/波提非拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "波提非拉",
+    "status": "formal",
+    "aliases": []
+  },
   "洗拉": {
     "path": "link_folder/人物/洗拉.md",
     "type": "人物",
@@ -3046,6 +3132,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "瑪土撒拉",
+    "status": "formal",
+    "aliases": []
+  },
+  "瑪拿西": {
+    "path": "link_folder/人物/瑪拿西.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "瑪拿西",
     "status": "formal",
     "aliases": []
   },
@@ -3671,6 +3765,14 @@
       "亞倫巴古"
     ]
   },
+  "亞西納（屬內特女神）": {
+    "path": "link_folder/原文/亞西納（屬內特女神）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "亞西納（屬內特女神）",
+    "status": "formal",
+    "aliases": []
+  },
   "以掃名字含義": {
     "path": "link_folder/原文/以掃名字含義.md",
     "type": "原文",
@@ -3689,6 +3791,14 @@
       "人物"
     ],
     "title": "以東名字含義",
+    "status": "formal",
+    "aliases": []
+  },
+  "以法蓮（使之昌盛）": {
+    "path": "link_folder/原文/以法蓮（使之昌盛）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "以法蓮（使之昌盛）",
     "status": "formal",
     "aliases": []
   },
@@ -3982,6 +4092,14 @@
       "角力"
     ]
   },
+  "撒發那忒巴內亞": {
+    "path": "link_folder/原文/撒發那忒巴內亞.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "撒發那忒巴內亞",
+    "status": "formal",
+    "aliases": []
+  },
   "敗壞與毀滅的文字呼應": {
     "path": "link_folder/原文/敗壞與毀滅的文字呼應.md",
     "type": "原文",
@@ -4030,6 +4148,14 @@
     "status": "formal",
     "aliases": []
   },
+  "波提非拉（太陽神所賜）": {
+    "path": "link_folder/原文/波提非拉（太陽神所賜）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "波提非拉（太陽神所賜）",
+    "status": "formal",
+    "aliases": []
+  },
   "洪水前先祖名字含義": {
     "path": "link_folder/原文/洪水前先祖名字含義.md",
     "type": "原文",
@@ -4055,6 +4181,14 @@
       "解經爭議"
     ],
     "title": "溫泉或騾子（創36：24）",
+    "status": "formal",
+    "aliases": []
+  },
+  "瑪拿西（使之忘了）": {
+    "path": "link_folder/原文/瑪拿西（使之忘了）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "瑪拿西（使之忘了）",
     "status": "formal",
     "aliases": []
   },
@@ -4549,6 +4683,19 @@
     "status": "formal",
     "aliases": []
   },
+  "各城（積貨城）": {
+    "path": "link_folder/地點/各城（積貨城）.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "各城（積貨城）",
+    "status": "formal",
+    "aliases": [
+      "積貨城",
+      "糧倉城"
+    ]
+  },
   "吾珥": {
     "path": "link_folder/地點/吾珥.md",
     "type": "地點",
@@ -4696,6 +4843,21 @@
     "status": "formal",
     "aliases": []
   },
+  "安城": {
+    "path": "link_folder/地點/安城.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "安城",
+    "status": "formal",
+    "aliases": [
+      "Heliopolis",
+      "太陽之城",
+      "昂"
+    ]
+  },
   "安密巴": {
     "path": "link_folder/地點/安密巴.md",
     "type": "地點",
@@ -4712,6 +4874,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "尼尼微",
+    "status": "formal",
+    "aliases": []
+  },
+  "尼羅河": {
+    "path": "link_folder/地點/尼羅河.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "尼羅河",
     "status": "formal",
     "aliases": []
   },
@@ -5340,6 +5512,16 @@
       "古代送禮習俗 (賄賂-禮貌-表達愛)"
     ]
   },
+  "喝道「跪下」的禮儀": {
+    "path": "link_folder/文化/喝道「跪下」的禮儀.md",
+    "type": "文化",
+    "secondary_types": [
+      "禮儀"
+    ],
+    "title": "喝道「跪下」的禮儀",
+    "status": "formal",
+    "aliases": []
+  },
   "四百舍客勒": {
     "path": "link_folder/文化/四百舍客勒.md",
     "type": "文化",
@@ -5359,11 +5541,30 @@
     "status": "formal",
     "aliases": []
   },
+  "埃及人剃頭刮臉習俗": {
+    "path": "link_folder/文化/埃及人剃頭刮臉習俗.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "埃及人剃頭刮臉習俗",
+    "status": "formal",
+    "aliases": []
+  },
   "埃及人搬運物件頂在頭上": {
     "path": "link_folder/文化/埃及人搬運物件頂在頭上.md",
     "type": "文化",
     "secondary_types": [],
     "title": "埃及人搬運物件頂在頭上",
+    "status": "formal",
+    "aliases": []
+  },
+  "埃及印璽戒指代表權柄": {
+    "path": "link_folder/文化/埃及印璽戒指代表權柄.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史",
+      "政治"
+    ],
+    "title": "埃及印璽戒指代表權柄",
     "status": "formal",
     "aliases": []
   },
@@ -5485,6 +5686,16 @@
     "type": "文化",
     "secondary_types": [],
     "title": "撒拉的帳棚",
+    "status": "formal",
+    "aliases": []
+  },
+  "法老賜埃及名與妻": {
+    "path": "link_folder/文化/法老賜埃及名與妻.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "法老賜埃及名與妻",
     "status": "formal",
     "aliases": []
   },
@@ -5788,6 +5999,17 @@
     "status": "formal",
     "aliases": []
   },
+  "古埃及術士與博士": {
+    "path": "link_folder/歷史/古埃及術士與博士.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "宗教"
+    ],
+    "title": "古埃及術士與博士",
+    "status": "formal",
+    "aliases": []
+  },
   "喜克索王朝（Hyksos）背景": {
     "path": "link_folder/歷史/喜克索王朝（Hyksos）背景.md",
     "type": "歷史",
@@ -5822,6 +6044,16 @@
     "status": "formal",
     "aliases": []
   },
+  "埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）": {
+    "path": "link_folder/歷史/埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）",
+    "status": "formal",
+    "aliases": []
+  },
   "埃及宮廷職制_酒政_膳長": {
     "path": "link_folder/歷史/埃及宮廷職制_酒政_膳長.md",
     "type": "歷史",
@@ -5829,6 +6061,21 @@
     "title": "埃及宮廷職制_酒政_膳長",
     "status": "formal",
     "aliases": []
+  },
+  "埃及宰相職位（維齊爾）": {
+    "path": "link_folder/歷史/埃及宰相職位（維齊爾）.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "政治"
+    ],
+    "title": "埃及宰相職位（維齊爾）",
+    "status": "formal",
+    "aliases": [
+      "Vizier",
+      "大維齊爾",
+      "首相"
+    ]
   },
   "埃及監獄制度": {
     "path": "link_folder/歷史/埃及監獄制度.md",
@@ -5843,6 +6090,28 @@
     "type": "歷史",
     "secondary_types": [],
     "title": "城門口公共場合",
+    "status": "formal",
+    "aliases": []
+  },
+  "安城（赫利阿坡利斯）太陽神崇拜": {
+    "path": "link_folder/歷史/安城（赫利阿坡利斯）太陽神崇拜.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "宗教"
+    ],
+    "title": "安城（赫利阿坡利斯）太陽神崇拜",
+    "status": "formal",
+    "aliases": []
+  },
+  "尼羅河與埃及農業": {
+    "path": "link_folder/歷史/尼羅河與埃及農業.md",
+    "type": "歷史",
+    "secondary_types": [
+      "地理",
+      "農業"
+    ],
+    "title": "尼羅河與埃及農業",
     "status": "formal",
     "aliases": []
   },
@@ -5876,6 +6145,21 @@
     "title": "掛在木頭上_懸屍示眾",
     "status": "formal",
     "aliases": []
+  },
+  "東風（西洛可、卡姆辛）": {
+    "path": "link_folder/歷史/東風（西洛可、卡姆辛）.md",
+    "type": "歷史",
+    "secondary_types": [
+      "氣象",
+      "農業"
+    ],
+    "title": "東風（西洛可、卡姆辛）",
+    "status": "formal",
+    "aliases": [
+      "Sirocco",
+      "Khamsin",
+      "沙漠熱風"
+    ]
   },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
@@ -5913,6 +6197,20 @@
     "title": "生日筵席",
     "status": "formal",
     "aliases": []
+  },
+  "積貨城制度": {
+    "path": "link_folder/歷史/積貨城制度.md",
+    "type": "歷史",
+    "secondary_types": [
+      "制度",
+      "農業"
+    ],
+    "title": "積貨城制度",
+    "status": "formal",
+    "aliases": [
+      "糧倉制度",
+      "備荒制度"
+    ]
   },
   "約瑟下埃及": {
     "path": "link_folder/歷史/約瑟下埃及.md",
@@ -7105,6 +7403,14 @@
     "status": "formal",
     "aliases": []
   },
+  "智慧與治理": {
+    "path": "link_folder/神學/智慧與治理.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "智慧與治理",
+    "status": "formal",
+    "aliases": []
+  },
   "替代性贖罪": {
     "path": "link_folder/神學/替代性贖罪.md",
     "type": "神學",
@@ -7165,6 +7471,20 @@
       "洪水的審判與救恩"
     ]
   },
+  "洪水後自然秩序的保存": {
+    "path": "link_folder/神學/洪水後自然秩序的保存.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景",
+      "主題"
+    ],
+    "title": "洪水後自然秩序的保存",
+    "status": "formal",
+    "aliases": [
+      "稼穡寒暑冬夏晝夜的應許",
+      "洪水後季節秩序"
+    ]
+  },
   "流便失去長子名分": {
     "path": "link_folder/神學/流便失去長子名分.md",
     "type": "神學",
@@ -7205,10 +7525,15 @@
   "燔祭": {
     "path": "link_folder/神學/燔祭.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "制度",
+      "互文"
+    ],
     "title": "燔祭",
-    "status": "candidate",
-    "aliases": []
+    "status": "formal",
+    "aliases": [
+      "全燔祭"
+    ]
   },
   "父親偏愛與家庭破裂": {
     "path": "link_folder/神學/父親偏愛與家庭破裂.md",
@@ -7356,6 +7681,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神的主權與預定": {
+    "path": "link_folder/神學/神的主權與預定.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的主權與預定",
+    "status": "formal",
+    "aliases": []
+  },
   "神的保守與帶領": {
     "path": "link_folder/神學/神的保守與帶領.md",
     "type": "神學",
@@ -7492,6 +7825,14 @@
       "神的軍隊",
       "兩軍兵"
     ]
+  },
+  "神的靈在人身上": {
+    "path": "link_folder/神學/神的靈在人身上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的靈在人身上",
+    "status": "formal",
+    "aliases": []
   },
   "神的靈的角色": {
     "path": "link_folder/神學/神的靈的角色.md",
@@ -7958,6 +8299,14 @@
     "status": "formal",
     "aliases": []
   },
+  "試煉後的榮耀": {
+    "path": "link_folder/神學/試煉後的榮耀.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "試煉後的榮耀",
+    "status": "formal",
+    "aliases": []
+  },
   "該隱的記號": {
     "path": "link_folder/神學/該隱的記號.md",
     "type": "神學",
@@ -7982,6 +8331,14 @@
       "歷史"
     ],
     "title": "謙卑與悔改",
+    "status": "formal",
+    "aliases": []
+  },
+  "豐年與荒年的神聖節奏": {
+    "path": "link_folder/神學/豐年與荒年的神聖節奏.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "豐年與荒年的神聖節奏",
     "status": "formal",
     "aliases": []
   },
@@ -8271,6 +8628,14 @@
     "status": "formal",
     "aliases": []
   },
+  "「河」是否專指尼羅河": {
+    "path": "link_folder/解經爭議/「河」是否專指尼羅河.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "「河」是否專指尼羅河",
+    "status": "formal",
+    "aliases": []
+  },
   "「除了自己所吃的飯」含義": {
     "path": "link_folder/解經爭議/「除了自己所吃的飯」含義.md",
     "type": "解經爭議",
@@ -8278,6 +8643,21 @@
     "title": "「除了自己所吃的飯」含義",
     "status": "formal",
     "aliases": []
+  },
+  "亞拉臘山與方舟遺跡爭議": {
+    "path": "link_folder/解經爭議/亞拉臘山與方舟遺跡爭議.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "地點",
+      "背景",
+      "歷史"
+    ],
+    "title": "亞拉臘山與方舟遺跡爭議",
+    "status": "formal",
+    "aliases": [
+      "亞拉臘山的方舟遺跡",
+      "挪亞方舟遺跡"
+    ]
   },
   "亭拿地點辨識": {
     "path": "link_folder/解經爭議/亭拿地點辨識.md",
@@ -8509,6 +8889,14 @@
     "status": "formal",
     "aliases": []
   },
+  "撒發那忒巴內亞名字含義": {
+    "path": "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "撒發那忒巴內亞名字含義",
+    "status": "formal",
+    "aliases": []
+  },
   "方舟容納動物的可行性": {
     "path": "link_folder/解經爭議/方舟容納動物的可行性.md",
     "type": "解經爭議",
@@ -8532,6 +8920,14 @@
     "aliases": [
       "兩個與七對的動物數目"
     ]
+  },
+  "法老身份（許克所斯時期 vs 第十二王朝）": {
+    "path": "link_folder/解經爭議/法老身份（許克所斯時期 vs 第十二王朝）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "法老身份（許克所斯時期 vs 第十二王朝）",
+    "status": "formal",
+    "aliases": []
   },
   "波提乏是否全信妻子話": {
     "path": "link_folder/解經爭議/波提乏是否全信妻子話.md",
@@ -8710,6 +9106,14 @@
     "status": "formal",
     "aliases": []
   },
+  "酒政「想起罪」是指忘記約瑟還是得罪法老": {
+    "path": "link_folder/解經爭議/酒政「想起罪」是指忘記約瑟還是得罪法老.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "酒政「想起罪」是指忘記約瑟還是得罪法老",
+    "status": "formal",
+    "aliases": []
+  },
   "酒政和膳長得罪法老的具體原因": {
     "path": "link_folder/解經爭議/酒政和膳長得罪法老的具體原因.md",
     "type": "解經爭議",
@@ -8831,6 +9235,12 @@
   },
   "nabi": {
     "alias_of": "先知"
+  },
+  "洪水中的烏鴉與鴿子": {
+    "alias_of": "烏鴉與鴿子的象徵"
+  },
+  "放烏鴉與三次放鴿子": {
+    "alias_of": "烏鴉與鴿子的象徵"
   },
   "以弗所書5章婚姻奧祕": {
     "alias_of": "以弗所書5章基督與教會的婚姻奧祕"
@@ -9366,6 +9776,12 @@
   "加低斯巴尼亞": {
     "alias_of": "加低斯"
   },
+  "積貨城": {
+    "alias_of": "各城（積貨城）"
+  },
+  "糧倉城": {
+    "alias_of": "各城（積貨城）"
+  },
   "Kiriath-arba": {
     "alias_of": "基列亞巴"
   },
@@ -9380,6 +9796,15 @@
   },
   "Dothan": {
     "alias_of": "多坍"
+  },
+  "Heliopolis": {
+    "alias_of": "安城"
+  },
+  "太陽之城": {
+    "alias_of": "安城"
+  },
+  "昂": {
+    "alias_of": "安城"
   },
   "以實各谷": {
     "alias_of": "安密巴"
@@ -9531,11 +9956,35 @@
   "Hyksos": {
     "alias_of": "喜克索王朝（Hyksos）背景"
   },
+  "Vizier": {
+    "alias_of": "埃及宰相職位（維齊爾）"
+  },
+  "大維齊爾": {
+    "alias_of": "埃及宰相職位（維齊爾）"
+  },
+  "首相": {
+    "alias_of": "埃及宰相職位（維齊爾）"
+  },
   "拉結的墓": {
     "alias_of": "拉結之墓"
   },
   "拉結墓碑": {
     "alias_of": "拉結之墓"
+  },
+  "Sirocco": {
+    "alias_of": "東風（西洛可、卡姆辛）"
+  },
+  "Khamsin": {
+    "alias_of": "東風（西洛可、卡姆辛）"
+  },
+  "沙漠熱風": {
+    "alias_of": "東風（西洛可、卡姆辛）"
+  },
+  "糧倉制度": {
+    "alias_of": "積貨城制度"
+  },
+  "備荒制度": {
+    "alias_of": "積貨城制度"
   },
   "雅各改名": {
     "alias_of": "雅各改名以色列"
@@ -9651,11 +10100,20 @@
   "洪水的審判與救恩": {
     "alias_of": "洪水中的審判與拯救"
   },
+  "稼穡寒暑冬夏晝夜的應許": {
+    "alias_of": "洪水後自然秩序的保存"
+  },
+  "洪水後季節秩序": {
+    "alias_of": "洪水後自然秩序的保存"
+  },
   "流便失去長子權": {
     "alias_of": "流便失去長子名分"
   },
   "流便失長子名分": {
     "alias_of": "流便失去長子名分"
+  },
+  "全燔祭": {
+    "alias_of": "燔祭"
   },
   "天軍": {
     "alias_of": "神的軍兵"
@@ -9779,6 +10237,12 @@
   },
   "洪水371天時間軸": {
     "alias_of": "洪水全程時間軸"
+  },
+  "亞拉臘山的方舟遺跡": {
+    "alias_of": "亞拉臘山與方舟遺跡爭議"
+  },
+  "挪亞方舟遺跡": {
+    "alias_of": "亞拉臘山與方舟遺跡爭議"
   },
   "創世記2章動物創造次序問題": {
     "alias_of": "創世記2章19節創造次序問題"
