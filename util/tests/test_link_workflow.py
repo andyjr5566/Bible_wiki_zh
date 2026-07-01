@@ -106,13 +106,13 @@ class UpdateTests(unittest.TestCase):
         self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- 來源檔案：raw_data/a.txt\n"))
         self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- raw_data：a.txt\n"))
 
-    def test_update_requires_sources_and_content(self):
+    def test_update_requires_content(self):
         missing = validate_update({
             "title": "天梯", "path": "link_folder/神學/天梯.md",
             "summary": "", "relation": "", "sources": [], "source_files": [],
         })
         self.assertIn("summary", missing)
-        self.assertIn("sources", missing)
+        self.assertNotIn("sources", missing)
 
     def test_marker_contains_book_and_chapter(self):
         block = render_block("創世記", 28, {

@@ -63,11 +63,7 @@ def render_block(book, chapter, update):
 
 def validate_update(update):
     required_text = ("title", "path", "summary", "relation")
-    missing = [key for key in required_text if not str(update.get(key, "")).strip()]
-    for key in ("sources", "source_files"):
-        if not isinstance(update.get(key), list) or not update[key]:
-            missing.append(key)
-    return missing
+    return [key for key in required_text if not str(update.get(key, "")).strip()]
 
 
 def apply_updates(manifest, dry_run=False):
