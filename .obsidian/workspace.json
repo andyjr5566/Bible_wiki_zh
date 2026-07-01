@@ -12,14 +12,10 @@
             "id": "0d256e0f31958fd4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "創世記/第37章.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "第37章"
+              "title": "新分頁"
             },
             "group": "07d503c601e0fc2d"
           }
@@ -36,7 +32,6 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "創世記/第37章.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -64,7 +59,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "第37章 的關聯圖"
+              "title": "關聯圖檢視"
             },
             "group": "07d503c601e0fc2d"
           }
@@ -141,7 +136,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "創世記/第37章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +145,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第37章 的反向連結"
+              "title": "反向連結"
             }
           },
           {
@@ -160,12 +154,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "創世記/第37章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第37章 的對外連結"
+              "title": "對外連結"
             }
           },
           {
@@ -203,13 +196,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "創世記/第37章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第37章 的大綱"
+              "title": "大綱"
             }
           }
         ]
@@ -232,51 +224,51 @@
   },
   "active": "0d256e0f31958fd4",
   "lastOpenFiles": [
-    "util/output/link_index.json",
-    "link_folder/解經爭議/sed6oDAPN",
-    "link_folder/解經爭議/sedTV0eBk",
-    "link_folder/解經爭議/sedjCQ59a",
-    "link_folder/解經爭議/sed7WqJgQ",
-    "link_folder/解經爭議/sedcrNwBn",
-    "link_folder/解經爭議/sedkhL19h",
-    "link_folder/解經爭議/seddf9iu9",
-    "link_folder/解經爭議/sedchFhgb",
-    "link_folder/解經爭議/sed0SGvPx",
-    "link_folder/解經爭議/sed1SQiTd",
-    "link_folder/互文/七年豐收七年饑荒與安息年-禧年.md",
-    "link_folder/互文/約瑟預表基督（受苦 — 未知分類：榮耀、三十歲開始事奉、生命的糧、外邦新婦）.md",
-    "link_folder/解經爭議/「河」是否專指尼羅河.md",
-    "link_folder/解經爭議/酒政「想起罪」是指忘記約瑟還是得罪法老.md",
-    "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
+    "創世記/第41章.md",
+    "創世記/第40章.md",
+    "raw_data/ccbiblestudy_GT_genesis_6.txt",
+    "raw_data/ccbiblestudy_GT_genesis_5.txt",
+    "raw_data/ccbiblestudy_GT_genesis_41.txt",
+    "raw_data/ccbiblestudy_GT_genesis_40.txt",
+    "raw_data/ccbiblestudy_GT_genesis_39.txt",
+    "raw_data/ccbiblestudy_GT_genesis_12.txt",
+    "raw_data/ccbiblestudy_GT_genesis_11.txt",
+    "raw_data/ccbiblestudy_GT_genesis_10.txt",
+    "raw_data/ccbiblestudy_CT_genesis_9.txt",
+    "raw_data/ccbiblestudy_CT_genesis_8.txt",
+    "link_folder/解經爭議/洪水範圍的爭論.md",
+    "link_folder/解經爭議/洪水的考古證據.md",
     "link_folder/解經爭議/法老身份（許克所斯時期 vs 第十二王朝）.md",
-    "link_folder/文化/喝道「跪下」的禮儀.md",
-    "link_folder/文化/埃及印璽戒指代表權柄.md",
-    "link_folder/文化/法老賜埃及名與妻.md",
-    "link_folder/神學/燔祭.md",
-    "link_folder/文化/埃及人剃頭刮臉習俗.md",
-    "link_folder/互文/「神使我忘記」與「神使我昌盛」的屬靈經歷.md",
-    "link_folder/互文/七年豐收七年饑荒與安息年禧年.md",
-    "link_folder/互文/膳長被掛木架預表基督受咒詛.md",
-    "link_folder/解經爭議/亞拉臘山與方舟遺跡爭議.md",
-    "link_folder/主題/烏鴉與鴿子的象徵.md",
-    "link_folder/神學/洪水後自然秩序的保存.md",
-    "link_folder/互文/酒政與主餐之杯.md",
-    "link_folder/互文/約瑟與但以理（解夢、異邦宮廷）.md",
-    "link_folder/歷史/安城（赫利阿坡利斯）太陽神崇拜.md",
-    "link_folder/歷史/積貨城制度.md",
+    "link_folder/解經爭議/每樣兩個與潔淨畜類七對.md",
+    "link_folder/解經爭議/方舟容納動物的可行性.md",
+    "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
+    "link_folder/解經爭議/四十天降雨與一百五十天水勢.md",
+    "link_folder/解經爭議/創世記家譜的選擇性.md",
+    "link_folder/神學/飛鳥吃食物_吃肉.md",
+    "link_folder/神學/豐年與荒年的神聖節奏.md",
+    "link_folder/神學/試煉後的榮耀.md",
+    "link_folder/神學/試煉中的忠心事奉.md",
+    "link_folder/神學/解夢出於神.md",
+    "link_folder/神學/蒙恩與被遺忘.md",
+    "link_folder/神學/葡萄樹_葡萄_杯.md",
+    "link_folder/神學/神的靈在人身上.md",
+    "link_folder/神學/神的主權與預定.md",
+    "link_folder/神學/神的主權與安排.md",
+    "link_folder/歷史/埃及宰相職位（維齊爾）.md",
+    "link_folder/歷史/埃及宮廷職制_酒政_膳長.md",
+    "link_folder/歷史/埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）.md",
+    "link_folder/歷史/埃及人的生日習俗_大赦.md",
     "link_folder/歷史/古埃及術士與博士.md",
-    "link_folder/歷史/東風（西洛可、卡姆辛）.md",
-    "link_folder/歷史/東風（西洛可/卡姆辛）.md",
-    "link_folder/歷史/尼羅河與埃及農業.md",
+    "link_folder/文化/喝道「跪下」的禮儀.md",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
-    "appendix/fhl_maps/images/208_208_王下表八.tmp.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
-    "appendix/fhl_maps/images/205_205_王上表六.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",
-    "appendix/fhl_maps/images/206_206_王上表八.tmp.jpg",
-    "appendix/fhl_maps/images/204_204_民表一d.tmp.jpg",
-    "appendix/fhl_maps/images/207_207_王下表七.tmp.jpg",
-    "appendix/fhl_maps/images/205_205_王上表六.tmp.jpg",
-    "appendix/fhl_maps/images/203_203_民表一c.jpg"
+    "appendix/fhl_maps/images/205_205_王上表六.jpg",
+    "appendix/fhl_maps/images/204_204_民表一d.GIF",
+    "appendix/fhl_maps/images/203_203_民表一c.jpg",
+    "appendix/fhl_maps/images/202_202_民表一b.GIF",
+    "appendix/fhl_maps/images/201_201_民表一a.jpg",
+    "appendix/fhl_maps/images/171_171_創表十二_與以色列有關的埃及諸王.GIF",
+    "appendix/fhl_maps/images/120_120_啟圖一_啟示錄所提七個教會.jpg"
   ]
 }
