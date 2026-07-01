@@ -1,7 +1,7 @@
 ---
 type: 原文
 secondary_types: []
-aliases: []
+aliases: ["膳長 (baker)"]
 status: formal
 source_scope: collected_only
 ---

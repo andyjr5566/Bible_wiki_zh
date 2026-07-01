@@ -1,21 +1,6 @@
 {
-  "total_warnings": 2,
+  "total_warnings": 0,
   "critical_count": 0,
-  "warning_count": 2,
-  "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "瑪拿西",
-      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "以法蓮",
-      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
-    }
-  ]
+  "warning_count": 0,
+  "warnings": []
 }

@@ -24,6 +24,11 @@ import os
 import json
 from pathlib import Path
 
+try:
+    from .build_link_index import collect_entries, load_resolutions, make_index
+except ImportError:
+    from build_link_index import collect_entries, load_resolutions, make_index
+
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 OUTPUT_DIR = UTIL_DIR / "output"
@@ -200,17 +205,20 @@ def build_registry(root_path, link_folders):
     """建立 link_folder 條目與章節檔的實體註冊表"""
     existing_entities = set()      # 條目名稱
     entity_locations = {}          # 條目名稱 → 路徑
-    
-    # 掃描 link_folder
-    for folder in link_folders:
-        folder_path = root_path / LINK_FOLDER_PARENT / folder
-        if not folder_path.exists():
-            continue
-        for f in folder_path.iterdir():
-            if f.suffix == '.md':
-                entity_name = f.stem
-                existing_entities.add(entity_name)
-                entity_locations[entity_name] = str(f.relative_to(root_path))
+
+    # 與 build_link_index 共用同一套 frontmatter alias 與衝突解決規則。
+    entries, _ = collect_entries(root_path / LINK_FOLDER_PARENT, root_path)
+    index, _ = make_index(
+        entries,
+        load_resolutions(root_path / "_config" / "link_conflict_resolutions.yaml"),
+    )
+    title_locations = {entry["title"]: entry["path"] for entry in entries}
+    for entity_name, metadata in index.items():
+        existing_entities.add(entity_name)
+        canonical = metadata.get("alias_of", entity_name)
+        location = title_locations.get(canonical)
+        if location:
+            entity_locations[entity_name] = location
     
     # 掃描章節檔
     existing_chapter_links = set()

@@ -1,7 +1,7 @@
 ---
 type: 原文
 secondary_types: []
-aliases: []
+aliases: [監/監牢/坑]
 status: formal
 source_scope: collected_only
 ---

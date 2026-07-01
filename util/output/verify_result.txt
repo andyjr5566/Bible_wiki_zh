@@ -2,37 +2,11 @@
   Wiki-Link Verification Report
 ============================================================
 
-  VALID LINKS:            9329
-  BROKEN LINKS:             24
-  PENDING SCRIPTURE REFS:  104
+  VALID LINKS:            9448
+  BROKEN LINKS:              0
+  PENDING SCRIPTURE REFS:  105
   INVALID SCRIPTURE REFS:    0
   UNKNOWN LINKS:             0
-
---- BROKEN LINKS (must fix) ---
-  [[「提你出監」/「抬起頭」]]
-  [[「斬斷你的頭」/「從你將你的頭抬起來」]]
-  [[但以理]]
-  [[但以理與術士對比]]
-  [[兩個囚犯與十字架上兩個強盜 (路23:32, 39-43)]]
-  [[埃及人的生日習俗/大赦]]
-  [[埃及宮廷職制 (酒政、膳長)]]
-  [[安息年]]
-  [[希伯來人 (過河的人)]]
-  [[掛在木頭上/懸屍示眾]]
-  [[監/監牢/坑]]
-  [[禧年]]
-  [[約瑟受苦後高升與基督受苦後得榮耀 (腓2:8-9)]]
-  [[約瑟被遺忘與神不忘記]]
-  [[約瑟被遺忘與神不忘記 (賽49:15-16)]]
-  [[膳長 (baker)]]
-  [[葡萄樹/葡萄/杯]]
-  [[葡萄樹與真葡萄樹 (約15:1)]]
-  [[被掛在木頭上/懸屍示眾]]
-  [[被掛在木頭上與基督被掛在樹上 (徒5:30; 加3:13)]]
-  [[護衛長/波提乏]]
-  [[酒政 (cupbearer)]]
-  [[酒政/酒政長]]
-  [[飛鳥吃食物/吃肉]]
 
 --- PENDING SCRIPTURE REFS (info only) ---
   [[以弗所書/第6章]] → valid future 以弗所書 chapter 6 reference
@@ -116,6 +90,7 @@
   [[約書亞記/第14章]] → valid future 約書亞記 chapter 14 reference
   [[約書亞記/第15章]] → valid future 約書亞記 chapter 15 reference
   [[約書亞記/第24章]] → valid future 約書亞記 chapter 24 reference
+  [[約翰福音/第1章]] → valid future 約翰福音 chapter 1 reference
   [[約翰福音/第3章]] → valid future 約翰福音 chapter 3 reference
   [[羅馬書/第2章]] → valid future 羅馬書 chapter 2 reference
   [[羅馬書/第4章]] → valid future 羅馬書 chapter 4 reference
@@ -140,4 +115,4 @@
   [[馬太福音/第3章]] → valid future 馬太福音 chapter 3 reference
   [[馬太福音/第4章]] → valid future 馬太福音 chapter 4 reference
 
-Result: FAIL (broken or invalid refs found)
+Result: PASS

@@ -1,7 +1,7 @@
 ---
 type: 原文
 secondary_types: []
-aliases: []
+aliases: ["酒政 (cupbearer)"]
 status: formal
 source_scope: collected_only
 ---
