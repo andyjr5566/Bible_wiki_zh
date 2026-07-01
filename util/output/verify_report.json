@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 9634,
+  "valid_links_count": 9719,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 105,
+  "pending_scripture_refs_count": 104,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -165,11 +165,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第42章",
-      "book": "創世記",
-      "chapter": 42
     },
     {
       "entity": "創世記/第46章",
@@ -806,13 +801,6 @@
           "出埃及記/第1章",
           "出埃及記",
           1
-        ]
-      ],
-      "link_folder/互文/創世記42章約瑟哥哥們認罪.md": [
-        [
-          "創世記/第42章",
-          "創世記",
-          42
         ]
       ],
       "link_folder/互文/加拉太書三章.md": [

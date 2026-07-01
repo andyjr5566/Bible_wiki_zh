@@ -4479,6 +4479,20 @@
     "status": "formal",
     "aliases": []
   },
+  "通事（傳譯員）": {
+    "path": "link_folder/原文/通事（傳譯員）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "通事（傳譯員）",
+    "status": "formal",
+    "aliases": [
+      "傳譯員",
+      "通事",
+      "翻譯"
+    ]
+  },
   "配偶幫助者": {
     "path": "link_folder/原文/配偶幫助者.md",
     "type": "原文",
@@ -4503,6 +4517,20 @@
     "status": "formal",
     "aliases": [
       "酒政 (cupbearer)"
+    ]
+  },
+  "陰間（Sheol）": {
+    "path": "link_folder/原文/陰間（Sheol）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "陰間（Sheol）",
+    "status": "formal",
+    "aliases": [
+      "Sheol",
+      "陰府",
+      "死人住處"
     ]
   },
   "雅博": {
@@ -5610,6 +5638,32 @@
     "status": "formal",
     "aliases": [
       "古代送禮習俗 (賄賂-禮貌-表達愛)"
+    ]
+  },
+  "古埃及的起誓方式": {
+    "path": "link_folder/文化/古埃及的起誓方式.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "古埃及的起誓方式",
+    "status": "formal",
+    "aliases": [
+      "指著法老的性命起誓",
+      "埃及人的起誓"
+    ]
+  },
+  "古埃及銀子交易": {
+    "path": "link_folder/文化/古埃及銀子交易.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "古埃及銀子交易",
+    "status": "formal",
+    "aliases": [
+      "銀子交易",
+      "古埃及貿易"
     ]
   },
   "喝道「跪下」的禮儀": {
@@ -7199,6 +7253,17 @@
     "status": "formal",
     "aliases": []
   },
+  "對兄弟的試驗": {
+    "path": "link_folder/神學/對兄弟的試驗.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "對兄弟的試驗",
+    "status": "formal",
+    "aliases": [
+      "考驗兄弟",
+      "約瑟考驗哥哥們"
+    ]
+  },
   "屬世成功早於應許成就": {
     "path": "link_folder/神學/屬世成功早於應許成就.md",
     "type": "神學",
@@ -7311,6 +7376,18 @@
     "title": "悔改與信心",
     "status": "candidate",
     "aliases": []
+  },
+  "悔改與良心的覺醒": {
+    "path": "link_folder/神學/悔改與良心的覺醒.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "悔改與良心的覺醒",
+    "status": "formal",
+    "aliases": [
+      "良心甦醒",
+      "認罪悔改",
+      "約瑟哥哥們的認罪"
+    ]
   },
   "應許之地與西珥山的分離": {
     "path": "link_folder/神學/應許之地與西珥山的分離.md",
@@ -7918,6 +7995,17 @@
     "status": "formal",
     "aliases": []
   },
+  "神的護理": {
+    "path": "link_folder/神學/神的護理.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的護理",
+    "status": "formal",
+    "aliases": [
+      "神的掌管",
+      "神的安排"
+    ]
+  },
   "神的軍兵": {
     "path": "link_folder/神學/神的軍兵.md",
     "type": "神學",
@@ -8027,6 +8115,18 @@
     "status": "formal",
     "aliases": []
   },
+  "種與收的法則": {
+    "path": "link_folder/神學/種與收的法則.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "種與收的法則",
+    "status": "formal",
+    "aliases": [
+      "種與收",
+      "收割惡果",
+      "人種的是什麼收的也是什麼"
+    ]
+  },
   "稱義": {
     "path": "link_folder/神學/稱義.md",
     "type": "神學",
@@ -8050,6 +8150,17 @@
     "title": "第三日",
     "status": "candidate",
     "aliases": []
+  },
+  "約瑟的夢（應驗）": {
+    "path": "link_folder/神學/約瑟的夢（應驗）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "約瑟的夢（應驗）",
+    "status": "formal",
+    "aliases": [
+      "約瑟的兩個夢",
+      "禾捆下拜的夢"
+    ]
   },
   "約瑟預表基督": {
     "path": "link_folder/神學/約瑟預表基督.md",
@@ -8341,6 +8452,18 @@
     "title": "舊約",
     "status": "candidate",
     "aliases": []
+  },
+  "苦難與管教": {
+    "path": "link_folder/神學/苦難與管教.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "苦難與管教",
+    "status": "formal",
+    "aliases": [
+      "苦難的意義",
+      "神的管教",
+      "苦難使人悔改"
+    ]
   },
   "萬國同源": {
     "path": "link_folder/神學/萬國同源.md",
@@ -10047,6 +10170,15 @@
   "詩51": {
     "alias_of": "詩篇51篇"
   },
+  "傳譯員": {
+    "alias_of": "通事（傳譯員）"
+  },
+  "通事": {
+    "alias_of": "通事（傳譯員）"
+  },
+  "翻譯": {
+    "alias_of": "通事（傳譯員）"
+  },
   "相配的幫助者": {
     "alias_of": "配偶幫助者"
   },
@@ -10061,6 +10193,15 @@
   },
   "酒政 (cupbearer)": {
     "alias_of": "酒政_cupbearer"
+  },
+  "Sheol": {
+    "alias_of": "陰間（Sheol）"
+  },
+  "陰府": {
+    "alias_of": "陰間（Sheol）"
+  },
+  "死人住處": {
+    "alias_of": "陰間（Sheol）"
   },
   "Jabbok": {
     "alias_of": "雅博"
@@ -10241,6 +10382,18 @@
   },
   "與父親的妾同寢": {
     "alias_of": "古代近東妾與繼承權"
+  },
+  "指著法老的性命起誓": {
+    "alias_of": "古埃及的起誓方式"
+  },
+  "埃及人的起誓": {
+    "alias_of": "古埃及的起誓方式"
+  },
+  "銀子交易": {
+    "alias_of": "古埃及銀子交易"
+  },
+  "古埃及貿易": {
+    "alias_of": "古埃及銀子交易"
   },
   "奠祭": {
     "alias_of": "奠酒"
@@ -10428,11 +10581,26 @@
   "神的公義與審判": {
     "alias_of": "審判全地的主豈不行公義"
   },
+  "考驗兄弟": {
+    "alias_of": "對兄弟的試驗"
+  },
+  "約瑟考驗哥哥們": {
+    "alias_of": "對兄弟的試驗"
+  },
   "Messiah": {
     "alias_of": "彌賽亞"
   },
   "基督": {
     "alias_of": "彌賽亞"
+  },
+  "良心甦醒": {
+    "alias_of": "悔改與良心的覺醒"
+  },
+  "認罪悔改": {
+    "alias_of": "悔改與良心的覺醒"
+  },
+  "約瑟哥哥們的認罪": {
+    "alias_of": "悔改與良心的覺醒"
   },
   "我的靈不永遠住在人裡面": {
     "alias_of": "我的靈不永遠與人相爭"
@@ -10470,6 +10638,12 @@
   "全燔祭": {
     "alias_of": "燔祭"
   },
+  "神的掌管": {
+    "alias_of": "神的護理"
+  },
+  "神的安排": {
+    "alias_of": "神的護理"
+  },
   "天軍": {
     "alias_of": "神的軍兵"
   },
@@ -10496,6 +10670,21 @@
   },
   "神的試驗": {
     "alias_of": "神試驗亞伯拉罕"
+  },
+  "種與收": {
+    "alias_of": "種與收的法則"
+  },
+  "收割惡果": {
+    "alias_of": "種與收的法則"
+  },
+  "人種的是什麼收的也是什麼": {
+    "alias_of": "種與收的法則"
+  },
+  "約瑟的兩個夢": {
+    "alias_of": "約瑟的夢（應驗）"
+  },
+  "禾捆下拜的夢": {
+    "alias_of": "約瑟的夢（應驗）"
   },
   "細羅 (創49:10)": {
     "alias_of": "細羅 (創49_10)"
@@ -10553,6 +10742,15 @@
   },
   "更換衣裳": {
     "alias_of": "自潔與更換衣裳"
+  },
+  "苦難的意義": {
+    "alias_of": "苦難與管教"
+  },
+  "神的管教": {
+    "alias_of": "苦難與管教"
+  },
+  "苦難使人悔改": {
+    "alias_of": "苦難與管教"
   },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
