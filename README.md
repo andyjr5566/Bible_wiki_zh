@@ -1,4 +1,5 @@
-![[演示.mp4]]# 📖 聖經研讀知識庫 (Bible Wiki ZH)
+<video controls src="https://raw.githubusercontent.com/andyjr5566/Bible_wiki_zh/main/appendix/video/演示.mp4" style="max-width:100%;height:auto;"></video>
+# 📖 聖經研讀知識庫 (Bible Wiki ZH)
 
 這是一套**基於 Obsidian 的聖經研讀知識庫系統**，透過結構化的筆記與 wiki-link，建立可逐章累積、跨卷連結的聖經學習網絡。
 
