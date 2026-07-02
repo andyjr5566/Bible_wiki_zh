@@ -1407,6 +1407,19 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西因信被藏三個月": {
+    "path": "link_folder/互文/摩西因信被藏三個月.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "摩西因信被藏三個月",
+    "status": "formal",
+    "aliases": [
+      "希伯來書11章摩西被藏"
+    ]
+  },
   "撒拉與夏甲（代孕先例）": {
     "path": "link_folder/互文/撒拉與夏甲（代孕先例）.md",
     "type": "互文",
@@ -1887,6 +1900,19 @@
     "status": "formal",
     "aliases": [
       "葡萄樹與真葡萄樹 (約15:1)"
+    ]
+  },
+  "被拒絕的拯救者摩西": {
+    "path": "link_folder/互文/被拒絕的拯救者摩西.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "被拒絕的拯救者摩西",
+    "status": "formal",
+    "aliases": [
+      "誰立你作首領和審判官"
     ]
   },
   "被掛在木頭上與基督被掛在樹上_徒5_30_加3_13": {
@@ -2937,6 +2963,20 @@
       "Moabites"
     ]
   },
+  "摩西": {
+    "path": "link_folder/人物/摩西.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "摩西",
+    "status": "formal",
+    "aliases": [
+      "Moses",
+      "Moshe"
+    ]
+  },
   "撒拉": {
     "path": "link_folder/人物/撒拉.md",
     "type": "人物",
@@ -2990,6 +3030,19 @@
     "title": "暗拉非",
     "status": "formal",
     "aliases": []
+  },
+  "暗蘭": {
+    "path": "link_folder/人物/暗蘭.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "暗蘭",
+    "status": "formal",
+    "aliases": [
+      "Amram"
+    ]
   },
   "書亞的女兒": {
     "path": "link_folder/人物/書亞的女兒.md",
@@ -3106,6 +3159,19 @@
       "Pharaoh"
     ]
   },
+  "法老的女兒": {
+    "path": "link_folder/人物/法老的女兒.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "法老的女兒",
+    "status": "formal",
+    "aliases": [
+      "埃及公主"
+    ]
+  },
   "波提乏": {
     "path": "link_folder/人物/波提乏.md",
     "type": "人物",
@@ -3157,6 +3223,17 @@
     "type": "人物",
     "secondary_types": [],
     "title": "流珥（以掃之子）",
+    "status": "formal",
+    "aliases": []
+  },
+  "流珥（米甸祭司）": {
+    "path": "link_folder/人物/流珥（米甸祭司）.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "流珥（米甸祭司）",
     "status": "formal",
     "aliases": []
   },
@@ -3326,6 +3403,19 @@
     "status": "formal",
     "aliases": []
   },
+  "米利暗": {
+    "path": "link_folder/人物/米利暗.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "米利暗",
+    "status": "formal",
+    "aliases": [
+      "Miriam"
+    ]
+  },
   "米戶雅利": {
     "path": "link_folder/人物/米戶雅利.md",
     "type": "人物",
@@ -3341,6 +3431,19 @@
     "title": "米甸",
     "status": "formal",
     "aliases": []
+  },
+  "約基別": {
+    "path": "link_folder/人物/約基別.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學",
+      "文化"
+    ],
+    "title": "約基別",
+    "status": "formal",
+    "aliases": [
+      "Jochebed"
+    ]
   },
   "約押": {
     "path": "link_folder/人物/約押.md",
@@ -3447,6 +3550,18 @@
     "title": "蛇",
     "status": "formal",
     "aliases": []
+  },
+  "西坡拉": {
+    "path": "link_folder/人物/西坡拉.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "西坡拉",
+    "status": "formal",
+    "aliases": [
+      "Zipporah"
+    ]
   },
   "西布倫（同住）": {
     "path": "link_folder/人物/西布倫（同住）.md",
@@ -3635,6 +3750,17 @@
     "type": "人物",
     "secondary_types": [],
     "title": "非各",
+    "status": "formal",
+    "aliases": []
+  },
+  "革舜（摩西之子）": {
+    "path": "link_folder/人物/革舜（摩西之子）.md",
+    "type": "人物",
+    "secondary_types": [
+      "原文",
+      "歷史"
+    ],
+    "title": "革舜（摩西之子）",
     "status": "formal",
     "aliases": []
   },
@@ -4334,6 +4460,19 @@
       "角力"
     ]
   },
+  "摩西名字的由來": {
+    "path": "link_folder/原文/摩西名字的由來.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物",
+      "神學"
+    ],
+    "title": "摩西名字的由來",
+    "status": "formal",
+    "aliases": [
+      "摩西名字含義"
+    ]
+  },
   "撒發那忒巴內亞": {
     "path": "link_folder/原文/撒發那忒巴內亞.md",
     "type": "原文",
@@ -4581,6 +4720,20 @@
     "status": "formal",
     "aliases": []
   },
+  "蒲草箱與方舟同字": {
+    "path": "link_folder/原文/蒲草箱與方舟同字.md",
+    "type": "原文",
+    "secondary_types": [
+      "互文",
+      "神學"
+    ],
+    "title": "蒲草箱與方舟同字",
+    "status": "formal",
+    "aliases": [
+      "蒲草箱",
+      "摩西的蒲草箱"
+    ]
+  },
   "蛇的原文字義": {
     "path": "link_folder/原文/蛇的原文字義.md",
     "type": "原文",
@@ -4710,6 +4863,19 @@
       "Jabbok",
       "雅博河",
       "摔跤河"
+    ]
+  },
+  "革舜名字的由來": {
+    "path": "link_folder/原文/革舜名字的由來.md",
+    "type": "原文",
+    "secondary_types": [
+      "人物",
+      "神學"
+    ],
+    "title": "革舜名字的由來",
+    "status": "formal",
+    "aliases": [
+      "革舜名字含義"
     ]
   },
   "風與靈同字": {
@@ -5583,6 +5749,19 @@
     "status": "formal",
     "aliases": []
   },
+  "米甸地": {
+    "path": "link_folder/地點/米甸地.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "背景"
+    ],
+    "title": "米甸地",
+    "status": "formal",
+    "aliases": [
+      "Midian地"
+    ]
+  },
   "約但河": {
     "path": "link_folder/地點/約但河.md",
     "type": "地點",
@@ -5802,6 +5981,19 @@
     "status": "formal",
     "aliases": [
       "印、帶子、杖"
+    ]
+  },
+  "古代埃及的蒲草與防水籃": {
+    "path": "link_folder/文化/古代埃及的蒲草與防水籃.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景",
+      "歷史"
+    ],
+    "title": "古代埃及的蒲草與防水籃",
+    "status": "formal",
+    "aliases": [
+      "蒲草防水籃"
     ]
   },
   "古代收生婆": {
@@ -7883,6 +8075,31 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西憑己力施救與神的時間": {
+    "path": "link_folder/神學/摩西憑己力施救與神的時間.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "摩西憑己力施救與神的時間",
+    "status": "formal",
+    "aliases": [
+      "摩西憑血氣施救"
+    ]
+  },
+  "摩西認同受苦的神子民": {
+    "path": "link_folder/神學/摩西認同受苦的神子民.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題",
+      "互文"
+    ],
+    "title": "摩西認同受苦的神子民",
+    "status": "formal",
+    "aliases": [
+      "摩西認同希伯來弟兄"
+    ]
+  },
   "撒但": {
     "path": "link_folder/神學/撒但.md",
     "type": "神學",
@@ -8507,6 +8724,19 @@
     "status": "formal",
     "aliases": []
   },
+  "神聽見百姓的哀求": {
+    "path": "link_folder/神學/神聽見百姓的哀求.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神聽見百姓的哀求",
+    "status": "formal",
+    "aliases": [
+      "以色列人的哀聲達於神",
+      "神聽見哀聲"
+    ]
+  },
   "神記念亞伯拉罕": {
     "path": "link_folder/神學/神記念亞伯拉罕.md",
     "type": "神學",
@@ -8579,6 +8809,19 @@
     "title": "第三日",
     "status": "candidate",
     "aliases": []
+  },
+  "米甸曠野對摩西的預備": {
+    "path": "link_folder/神學/米甸曠野對摩西的預備.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景",
+      "主題"
+    ],
+    "title": "米甸曠野對摩西的預備",
+    "status": "formal",
+    "aliases": [
+      "摩西在米甸的預備"
+    ]
   },
   "約瑟的夢（應驗）": {
     "path": "link_folder/神學/約瑟的夢（應驗）.md",
@@ -9349,6 +9592,19 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西的希伯來與埃及雙重身分": {
+    "path": "link_folder/背景/摩西的希伯來與埃及雙重身分.md",
+    "type": "背景",
+    "secondary_types": [
+      "人物",
+      "歷史"
+    ],
+    "title": "摩西的希伯來與埃及雙重身分",
+    "status": "formal",
+    "aliases": [
+      "摩西的雙重身分"
+    ]
+  },
   "方舟的尺寸與結構": {
     "path": "link_folder/背景/方舟的尺寸與結構.md",
     "type": "背景",
@@ -10048,6 +10304,19 @@
       "創世記9章族長神諭"
     ]
   },
+  "摩西殺死埃及人的解經問題": {
+    "path": "link_folder/解經爭議/摩西殺死埃及人的解經問題.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "摩西殺死埃及人的解經問題",
+    "status": "formal",
+    "aliases": [
+      "摩西殺埃及人"
+    ]
+  },
   "撒發那忒巴內亞名字含義": {
     "path": "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
     "type": "解經爭議",
@@ -10159,6 +10428,19 @@
     "aliases": [
       "流便與辟拉同寢",
       "流便亂倫"
+    ]
+  },
+  "流珥葉忒羅與何巴的稱謂關係": {
+    "path": "link_folder/解經爭議/流珥葉忒羅與何巴的稱謂關係.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "人物",
+      "歷史"
+    ],
+    "title": "流珥葉忒羅與何巴的稱謂關係",
+    "status": "formal",
+    "aliases": [
+      "流珥與葉忒羅的關係"
     ]
   },
   "為何咒詛迦南而非含": {
@@ -10759,6 +11041,9 @@
   "挪亞傳義道": {
     "alias_of": "挪亞是傳義道者"
   },
+  "希伯來書11章摩西被藏": {
+    "alias_of": "摩西因信被藏三個月"
+  },
   "撒母耳記下13:10-19 暗嫩他瑪": {
     "alias_of": "撒母耳記下13_10-19 暗嫩他瑪"
   },
@@ -10897,6 +11182,9 @@
   "葡萄樹與真葡萄樹 (約15:1)": {
     "alias_of": "葡萄樹與真葡萄樹_約15_1"
   },
+  "誰立你作首領和審判官": {
+    "alias_of": "被拒絕的拯救者摩西"
+  },
   "被掛在木頭上與基督被掛在樹上 (徒5:30; 加3:13)": {
     "alias_of": "被掛在木頭上與基督被掛在樹上_徒5_30_加3_13"
   },
@@ -11026,6 +11314,15 @@
   "Moabites": {
     "alias_of": "摩押人"
   },
+  "Moses": {
+    "alias_of": "摩西"
+  },
+  "Moshe": {
+    "alias_of": "摩西"
+  },
+  "Amram": {
+    "alias_of": "暗蘭"
+  },
   "猶大的妻子": {
     "alias_of": "書亞的女兒"
   },
@@ -11056,6 +11353,9 @@
   "Pharaoh": {
     "alias_of": "法老"
   },
+  "埃及公主": {
+    "alias_of": "法老的女兒"
+  },
   "Potiphar": {
     "alias_of": "波提乏"
   },
@@ -11080,6 +11380,12 @@
   "天使": {
     "alias_of": "神的使者"
   },
+  "Miriam": {
+    "alias_of": "米利暗"
+  },
+  "Jochebed": {
+    "alias_of": "約基別"
+  },
   "Joseph": {
     "alias_of": "約瑟"
   },
@@ -11094,6 +11400,9 @@
   },
   "埃及王的膳長": {
     "alias_of": "膳長"
+  },
+  "Zipporah": {
+    "alias_of": "西坡拉"
   },
   "Simeon": {
     "alias_of": "西緬"
@@ -11212,6 +11521,9 @@
   "角力": {
     "alias_of": "摔跤"
   },
+  "摩西名字含義": {
+    "alias_of": "摩西名字的由來"
+  },
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
@@ -11235,6 +11547,12 @@
   },
   "膳長 (baker)": {
     "alias_of": "膳長_baker"
+  },
+  "蒲草箱": {
+    "alias_of": "蒲草箱與方舟同字"
+  },
+  "摩西的蒲草箱": {
+    "alias_of": "蒲草箱與方舟同字"
   },
   "詩51": {
     "alias_of": "詩篇51篇"
@@ -11280,6 +11598,9 @@
   },
   "摔跤河": {
     "alias_of": "雅博"
+  },
+  "革舜名字含義": {
+    "alias_of": "革舜名字的由來"
   },
   "我們是弟兄": {
     "alias_of": "骨肉原文作弟兄"
@@ -11431,6 +11752,9 @@
   "巴拉塔遺址": {
     "alias_of": "示劍（城）"
   },
+  "Midian地": {
+    "alias_of": "米甸地"
+  },
   "Jordan River": {
     "alias_of": "約旦河"
   },
@@ -11469,6 +11793,9 @@
   },
   "印、帶子、杖": {
     "alias_of": "印帶杖身份憑據"
+  },
+  "蒲草防水籃": {
+    "alias_of": "古代埃及的蒲草與防水籃"
   },
   "收生婆": {
     "alias_of": "古代收生婆"
@@ -11782,6 +12109,12 @@
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
   },
+  "摩西憑血氣施救": {
+    "alias_of": "摩西憑己力施救與神的時間"
+  },
+  "摩西認同希伯來弟兄": {
+    "alias_of": "摩西認同受苦的神子民"
+  },
   "以撒的敬畏": {
     "alias_of": "敬畏以撒的神"
   },
@@ -11851,6 +12184,12 @@
   "神的榮光": {
     "alias_of": "神的面"
   },
+  "以色列人的哀聲達於神": {
+    "alias_of": "神聽見百姓的哀求"
+  },
+  "神聽見哀聲": {
+    "alias_of": "神聽見百姓的哀求"
+  },
   "神記念亞伯蘭": {
     "alias_of": "神記念亞伯拉罕"
   },
@@ -11868,6 +12207,9 @@
   },
   "人種的是什麼收的也是什麼": {
     "alias_of": "種與收的法則"
+  },
+  "摩西在米甸的預備": {
+    "alias_of": "米甸曠野對摩西的預備"
   },
   "約瑟的兩個夢": {
     "alias_of": "約瑟的夢（應驗）"
@@ -12030,6 +12372,9 @@
   },
   "接待客旅的古代背景": {
     "alias_of": "古代近東接待客旅禮儀"
+  },
+  "摩西的雙重身分": {
+    "alias_of": "摩西的希伯來與埃及雙重身分"
   },
   "方舟規格": {
     "alias_of": "方舟的尺寸與結構"
@@ -12214,6 +12559,9 @@
   "創世記9章族長神諭": {
     "alias_of": "挪亞三子神諭的性質"
   },
+  "摩西殺埃及人": {
+    "alias_of": "摩西殺死埃及人的解經問題"
+  },
   "方舟能否容納各類動物": {
     "alias_of": "方舟容納動物的可行性"
   },
@@ -12246,6 +12594,9 @@
   },
   "流便亂倫": {
     "alias_of": "流便與辟拉同寢的性質"
+  },
+  "流珥與葉忒羅的關係": {
+    "alias_of": "流珥葉忒羅與何巴的稱謂關係"
   },
   "夏甲為何要回去": {
     "alias_of": "神為何命夏甲回到撒萊手下"
