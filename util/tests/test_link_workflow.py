@@ -161,6 +161,41 @@ class UpdateTests(unittest.TestCase):
             ]
             self.assertIn("#### 第1章", accumulation)
 
+    def test_apply_inserts_new_book_group_in_canonical_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "人物" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            entry_path.write_text(
+                "# 測試\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n"
+                "### 創世記\n\n"
+                "<!-- accumulation:創世記:1:start -->\n#### 第1章\n"
+                "- 本章重點：創世記資料\n- 與本章關聯：創世記關聯\n"
+                "<!-- accumulation:創世記:1:end -->\n\n"
+                "### 耶書亞記\n\n"
+                "<!-- accumulation:耶書亞記:1:start -->\n#### 第1章\n"
+                "- 本章重點：約書亞記資料\n- 與本章關聯：約書亞記關聯\n"
+                "<!-- accumulation:耶書亞記:1:end -->\n\n"
+                "## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "出埃及記",
+                "chapter": 3,
+                "updates": [{
+                    "title": "測試",
+                    "path": "link_folder/人物/測試.md",
+                    "summary": "新資料",
+                    "relation": "測試關聯",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                self.assertEqual(1, apply_updates(manifest))
+            rendered = entry_path.read_text(encoding="utf-8")
+            self.assertLess(rendered.index("### 創世記"), rendered.index("### 出埃及記"))
+            self.assertLess(rendered.index("### 出埃及記"), rendered.index("### 耶書亞記"))
+
 
 class FormatNormalizationTests(unittest.TestCase):
     def test_chapter_and_entry_use_different_scheme_templates(self):

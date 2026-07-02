@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 11240,
+  "valid_links_count": 11412,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 98,
+  "pending_scripture_refs_count": 97,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -95,11 +95,6 @@
       "entity": "出埃及記",
       "book": "出埃及記",
       "chapter": 0
-    },
-    {
-      "entity": "02 出埃及記/第3章",
-      "book": "出埃及記",
-      "chapter": 3
     },
     {
       "entity": "02 出埃及記/第4章",
@@ -1013,11 +1008,6 @@
       ],
       "link_folder/人物/米甸.md": [
         [
-          "02 出埃及記/第3章",
-          "出埃及記",
-          3
-        ],
-        [
           "07 士師記/第6章",
           "士師記",
           6
@@ -1041,11 +1031,6 @@
         ]
       ],
       "link_folder/人物/赫人.md": [
-        [
-          "02 出埃及記/第3章",
-          "出埃及記",
-          3
-        ],
         [
           "06 約書亞記/第1章",
           "約書亞記",
@@ -1124,11 +1109,6 @@
           "02 出埃及記/第13章",
           "出埃及記",
           13
-        ],
-        [
-          "02 出埃及記/第3章",
-          "出埃及記",
-          3
         ],
         [
           "05 申命記/第4章",
@@ -1528,11 +1508,6 @@
         ]
       ],
       "link_folder/神學/耶和華的使者.md": [
-        [
-          "02 出埃及記/第3章",
-          "出埃及記",
-          3
-        ],
         [
           "07 士師記/第6章",
           "士師記",

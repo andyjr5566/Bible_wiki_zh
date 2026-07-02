@@ -8,11 +8,17 @@ from pathlib import Path
 import yaml
 
 try:
-    from .book_paths import book_directory
+    from .book_paths import BOOK_NUMBERS, book_directory
 except ImportError:
-    from book_paths import book_directory
+    from book_paths import BOOK_NUMBERS, book_directory
 
 ROOT = Path(__file__).resolve().parent.parent
+BOOK_ALIASES = {"耶書亞記": "約書亞記"}
+
+
+def book_rank(book):
+    canonical = BOOK_ALIASES.get(book, book)
+    return BOOK_NUMBERS.get(canonical, len(BOOK_NUMBERS) + 1)
 
 
 def plan_updates(book, chapter):
@@ -121,8 +127,18 @@ def apply_updates(manifest, dry_run=False):
                 new_text = text[:insertion].rstrip() + "\n\n" + block + "\n" + text[insertion:].lstrip("\n")
             else:
                 insertion = accumulation.end(1)
+                for heading in re.finditer(r"^###\s+(.+?)\s*$", section, re.M):
+                    if book_rank(heading.group(1)) > book_rank(book):
+                        insertion = accumulation.start(1) + heading.start()
+                        break
                 group = f"### {book}\n\n{block}"
-                new_text = text[:insertion].rstrip() + "\n\n" + group + "\n\n" + text[insertion:].lstrip()
+                new_text = (
+                    text[:insertion].rstrip()
+                    + "\n\n"
+                    + group
+                    + "\n\n"
+                    + text[insertion:].lstrip()
+                )
         if new_text != text:
             changed += 1
             if not dry_run:

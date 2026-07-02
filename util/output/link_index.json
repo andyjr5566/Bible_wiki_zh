@@ -939,6 +939,18 @@
     "status": "formal",
     "aliases": []
   },
+  "亞伯拉罕以撒雅各的神是活人的神": {
+    "path": "link_folder/互文/亞伯拉罕以撒雅各的神是活人的神.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "亞伯拉罕以撒雅各的神是活人的神",
+    "status": "formal",
+    "aliases": [
+      "父祖的神是活人的神"
+    ]
+  },
   "亞伯拉罕後裔寄居受苦的預言": {
     "path": "link_folder/互文/亞伯拉罕後裔寄居受苦的預言.md",
     "type": "互文",
@@ -3535,6 +3547,19 @@
       "埃及王的膳長"
     ]
   },
+  "葉忒羅": {
+    "path": "link_folder/人物/葉忒羅.md",
+    "type": "人物",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "葉忒羅",
+    "status": "formal",
+    "aliases": [
+      "Jethro"
+    ]
+  },
   "蘇西人": {
     "path": "link_folder/人物/蘇西人.md",
     "type": "人物",
@@ -4415,6 +4440,19 @@
       "地上的塵沙不能數算"
     ]
   },
+  "我是自有永有的": {
+    "path": "link_folder/原文/我是自有永有的.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "我是自有永有的",
+    "status": "formal",
+    "aliases": [
+      "I AM WHO I AM",
+      "我是我所是"
+    ]
+  },
   "所多瑪罪惡的呼喊": {
     "path": "link_folder/原文/所多瑪罪惡的呼喊.md",
     "type": "原文",
@@ -5119,6 +5157,20 @@
     "title": "何把",
     "status": "formal",
     "aliases": []
+  },
+  "何烈山": {
+    "path": "link_folder/地點/何烈山.md",
+    "type": "地點",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "何烈山",
+    "status": "formal",
+    "aliases": [
+      "神的山何烈山",
+      "Horeb"
+    ]
   },
   "別是巴": {
     "path": "link_folder/地點/別是巴.md",
@@ -5963,6 +6015,19 @@
     "status": "formal",
     "aliases": []
   },
+  "以色列的長老": {
+    "path": "link_folder/文化/以色列的長老.md",
+    "type": "文化",
+    "secondary_types": [
+      "歷史",
+      "制度"
+    ],
+    "title": "以色列的長老",
+    "status": "formal",
+    "aliases": [
+      "以色列長老"
+    ]
+  },
   "使女代孕習俗": {
     "path": "link_folder/文化/使女代孕習俗.md",
     "type": "文化",
@@ -6417,6 +6482,19 @@
     "aliases": [
       "耳朵上的環子",
       "異教耳環"
+    ]
+  },
+  "脫鞋與聖地": {
+    "path": "link_folder/文化/脫鞋與聖地.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "背景"
+    ],
+    "title": "脫鞋與聖地",
+    "status": "formal",
+    "aliases": [
+      "在聖地脫鞋"
     ]
   },
   "解恨之禮": {
@@ -7408,6 +7486,18 @@
       "substitutionary sacrifice"
     ]
   },
+  "出埃及為要事奉神": {
+    "path": "link_folder/神學/出埃及為要事奉神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "出埃及為要事奉神",
+    "status": "formal",
+    "aliases": [
+      "出埃及的目的"
+    ]
+  },
   "分別善惡的樹": {
     "path": "link_folder/神學/分別善惡的樹.md",
     "type": "神學",
@@ -7666,6 +7756,19 @@
     "title": "大淵的泉源與天上的窗戶",
     "status": "formal",
     "aliases": []
+  },
+  "大能的手與出埃及神蹟": {
+    "path": "link_folder/神學/大能的手與出埃及神蹟.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題",
+      "預言應驗"
+    ],
+    "title": "大能的手與出埃及神蹟",
+    "status": "formal",
+    "aliases": [
+      "神伸手攻擊埃及"
+    ]
   },
   "大衛之約": {
     "path": "link_folder/神學/大衛之約.md",
@@ -8087,6 +8190,19 @@
       "摩西憑血氣施救"
     ]
   },
+  "摩西的呼召與差遣": {
+    "path": "link_folder/神學/摩西的呼召與差遣.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題",
+      "人物"
+    ],
+    "title": "摩西的呼召與差遣",
+    "status": "formal",
+    "aliases": [
+      "神差遣摩西"
+    ]
+  },
   "摩西認同受苦的神子民": {
     "path": "link_folder/神學/摩西認同受苦的神子民.md",
     "type": "神學",
@@ -8287,6 +8403,19 @@
       "流便失長子名分"
     ]
   },
+  "流奶與蜜之地": {
+    "path": "link_folder/神學/流奶與蜜之地.md",
+    "type": "神學",
+    "secondary_types": [
+      "地點",
+      "背景"
+    ],
+    "title": "流奶與蜜之地",
+    "status": "formal",
+    "aliases": [
+      "流奶與蜜的地"
+    ]
+  },
   "潔淨與不潔淨": {
     "path": "link_folder/神學/潔淨與不潔淨.md",
     "type": "神學",
@@ -8310,6 +8439,20 @@
     "title": "無花果葉與皮衣",
     "status": "formal",
     "aliases": []
+  },
+  "燃燒卻不燒毀的荊棘": {
+    "path": "link_folder/神學/燃燒卻不燒毀的荊棘.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題",
+      "互文"
+    ],
+    "title": "燃燒卻不燒毀的荊棘",
+    "status": "formal",
+    "aliases": [
+      "燃燒的荊棘",
+      "荊棘火焰異象"
+    ]
   },
   "燔祭": {
     "path": "link_folder/神學/燔祭.md",
@@ -8706,6 +8849,18 @@
     "status": "formal",
     "aliases": []
   },
+  "神看見聽見知道並下來拯救": {
+    "path": "link_folder/神學/神看見聽見知道並下來拯救.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神看見聽見知道並下來拯救",
+    "status": "formal",
+    "aliases": [
+      "神看見聽見知道"
+    ]
+  },
   "神看顧失寵者": {
     "path": "link_folder/神學/神看顧失寵者.md",
     "type": "神學",
@@ -9010,6 +9165,20 @@
       "LORD God",
       "Yahweh Elohim",
       "Jahwe Elohim"
+    ]
+  },
+  "耶和華聖名的啟示": {
+    "path": "link_folder/神學/耶和華聖名的啟示.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文",
+      "主題"
+    ],
+    "title": "耶和華聖名的啟示",
+    "status": "formal",
+    "aliases": [
+      "YHWH聖名",
+      "耶和華之名"
     ]
   },
   "耶和華與約瑟同在": {
@@ -9928,6 +10097,19 @@
       "火爐火把與立約"
     ]
   },
+  "出埃及時取得埃及財物": {
+    "path": "link_folder/解經爭議/出埃及時取得埃及財物.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "出埃及時取得埃及財物",
+    "status": "formal",
+    "aliases": [
+      "以色列奪取埃及財物"
+    ]
+  },
   "出埃及時期法老的身份": {
     "path": "link_folder/解經爭議/出埃及時期法老的身份.md",
     "type": "解經爭議",
@@ -10335,6 +10517,19 @@
     "status": "formal",
     "aliases": [
       "方舟能否容納各類動物"
+    ]
+  },
+  "曠野三天路程與獻祭要求": {
+    "path": "link_folder/解經爭議/曠野三天路程與獻祭要求.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "曠野三天路程與獻祭要求",
+    "status": "formal",
+    "aliases": [
+      "往曠野走三天獻祭"
     ]
   },
   "死刑與創世記9章6節": {
@@ -10948,6 +11143,9 @@
   "公開昭雪": {
     "alias_of": "遮羞"
   },
+  "父祖的神是活人的神": {
+    "alias_of": "亞伯拉罕以撒雅各的神是活人的神"
+  },
   "創世記15章寄居受苦預言": {
     "alias_of": "亞伯拉罕後裔寄居受苦的預言"
   },
@@ -11401,6 +11599,9 @@
   "埃及王的膳長": {
     "alias_of": "膳長"
   },
+  "Jethro": {
+    "alias_of": "葉忒羅"
+  },
   "Zipporah": {
     "alias_of": "西坡拉"
   },
@@ -11508,6 +11709,12 @@
   },
   "地上的塵沙不能數算": {
     "alias_of": "後裔如地上的塵沙"
+  },
+  "I AM WHO I AM": {
+    "alias_of": "我是自有永有的"
+  },
+  "我是我所是": {
+    "alias_of": "我是自有永有的"
   },
   "所多瑪和蛾摩拉的呼喊": {
     "alias_of": "所多瑪罪惡的呼喊"
@@ -11659,6 +11866,12 @@
   "拉億": {
     "alias_of": "但"
   },
+  "神的山何烈山": {
+    "alias_of": "何烈山"
+  },
+  "Horeb": {
+    "alias_of": "何烈山"
+  },
   "Beersheba": {
     "alias_of": "別是巴"
   },
@@ -11788,6 +12001,9 @@
   "不食坐骨神經": {
     "alias_of": "不吃大腿窩的筋"
   },
+  "以色列長老": {
+    "alias_of": "以色列的長老"
+  },
   "使女": {
     "alias_of": "使女代孕習俗"
   },
@@ -11889,6 +12105,9 @@
   },
   "異教耳環": {
     "alias_of": "耳環作異教護身符"
+  },
+  "在聖地脫鞋": {
+    "alias_of": "脫鞋與聖地"
   },
   "解恨禮物": {
     "alias_of": "解恨之禮"
@@ -12022,6 +12241,9 @@
   "substitutionary sacrifice": {
     "alias_of": "公羊代贖"
   },
+  "出埃及的目的": {
+    "alias_of": "出埃及為要事奉神"
+  },
   "割禮": {
     "alias_of": "割禮之約"
   },
@@ -12042,6 +12264,9 @@
   },
   "先知祭司王三職": {
     "alias_of": "基督三重職分"
+  },
+  "神伸手攻擊埃及": {
+    "alias_of": "大能的手與出埃及神蹟"
   },
   "Davidic Covenant": {
     "alias_of": "大衛之約"
@@ -12112,6 +12337,9 @@
   "摩西憑血氣施救": {
     "alias_of": "摩西憑己力施救與神的時間"
   },
+  "神差遣摩西": {
+    "alias_of": "摩西的呼召與差遣"
+  },
   "摩西認同希伯來弟兄": {
     "alias_of": "摩西認同受苦的神子民"
   },
@@ -12141,6 +12369,15 @@
   },
   "流便失長子名分": {
     "alias_of": "流便失去長子名分"
+  },
+  "流奶與蜜的地": {
+    "alias_of": "流奶與蜜之地"
+  },
+  "燃燒的荊棘": {
+    "alias_of": "燃燒卻不燒毀的荊棘"
+  },
+  "荊棘火焰異象": {
+    "alias_of": "燃燒卻不燒毀的荊棘"
   },
   "全燔祭": {
     "alias_of": "燔祭"
@@ -12183,6 +12420,9 @@
   },
   "神的榮光": {
     "alias_of": "神的面"
+  },
+  "神看見聽見知道": {
+    "alias_of": "神看見聽見知道並下來拯救"
   },
   "以色列人的哀聲達於神": {
     "alias_of": "神聽見百姓的哀求"
@@ -12252,6 +12492,12 @@
   },
   "Jahwe Elohim": {
     "alias_of": "耶和華神的名字"
+  },
+  "YHWH聖名": {
+    "alias_of": "耶和華聖名的啟示"
+  },
+  "耶和華之名": {
+    "alias_of": "耶和華聖名的啟示"
   },
   "耶和華豈有太奇妙的事": {
     "alias_of": "耶和華豈有難成的事"
@@ -12454,6 +12700,9 @@
   "火爐火把與立約": {
     "alias_of": "冒煙的爐與燒著的火把指什麼"
   },
+  "以色列奪取埃及財物": {
+    "alias_of": "出埃及時取得埃及財物"
+  },
   "出埃及記的法老": {
     "alias_of": "出埃及時期法老的身份"
   },
@@ -12564,6 +12813,9 @@
   },
   "方舟能否容納各類動物": {
     "alias_of": "方舟容納動物的可行性"
+  },
+  "往曠野走三天獻祭": {
+    "alias_of": "曠野三天路程與獻祭要求"
   },
   "凡流人血的他的血也必被人所流": {
     "alias_of": "死刑與創世記9章6節"
