@@ -19,7 +19,6 @@ source_scope: collected_only
 #### 第41章
 - 本章重點：法老身份未在經文明確，學者依歷史背景推測。
 - 與本章關聯：法老身份影響對約瑟任官歷史合理性的評估——許克所斯時期閃族高官常見，第十二王朝則較罕見。
-- 來源檔案：raw_data/biblehub_study_genesis_41.txt、raw_data/ccbiblestudy_CT_genesis_41.txt、raw_data/ccbiblestudy_GT_genesis_41.txt、raw_data/kingcomments_genesis_41.txt
 <!-- accumulation:創世記:41:end -->
 
 ## 主題發展
@@ -38,4 +37,3 @@ source_scope: collected_only
 - 《舊約背景註釋》創41:1-57
 - 喜克索王朝歷史資料
 - 第十二王朝歷史資料
-- raw_data：biblehub_study_genesis_41.txt、ccbiblestudy_CT_genesis_41.txt、ccbiblestudy_GT_genesis_41.txt、kingcomments_genesis_41.txt
