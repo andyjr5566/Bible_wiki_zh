@@ -1,5 +1,4 @@
 <video controls src="https://raw.githubusercontent.com/andyjr5566/Bible_wiki_zh/main/appendix/video/演示.mp4" style="max-width:100%;height:auto;"></video>
-
 # 📖 聖經研讀知識庫
 
 Bible Wiki ZH 是一套以 [Obsidian](https://obsidian.md/) 建立的中文聖經研讀知識庫。內容以書卷與章節整理，並透過 wiki-link 串連人物、地點、事件、原文、歷史背景與神學主題，形成可持續擴充的研讀網絡。
@@ -80,4 +79,37 @@ Bible_wiki_zh/
 
 ## 資料來源
 
-本知識庫整理自 cnbible、ccbiblestudy、KingComments 與 BibleHub 等資料來源。使用或引用內容時，請一併留意各來源的原始授權與使用條款。
+本知識庫整理自 nbible、ccbiblestudy、KingComments 與 BibleHub 等資料來源。使用或引用內容時，請一併留意各來源的原始授權與使用條款。
+
+批註
+- **BibleHub** — 聖經研究工具
+
+感謝所有貢獻者！
+
+感謝 **GitHub Sync (Multi-Platform)** 外掛開發者！
+
+---
+
+## 📝 相關檔案
+
+| 檔案 | 說明 |
+|------|------|
+| [`scheme.md`](./scheme.md) | 完整規則與工作流程文檔（必讀） |
+| [`agent_prompt.md`](./agent_prompt.md) | AI 助手提示詞（開發用） |
+| `_config/bible_books.json` | 聖經書卷章數配置 |
+
+---
+
+## 🌟 快速連結
+
+- 🏠 [GitHub 專案](https://github.com/andyjr5566/Bible_wiki_zh)
+- 📖 [核心規則文檔](./scheme.md)
+- 🐛 [報告問題](https://github.com/andyjr5566/Bible_wiki_zh/issues)
+- 🔧 [技術討論](https://github.com/andyjr5566/Bible_wiki_zh/discussions)
+- 📱 [Obsidian 官網](https://obsidian.md/)
+- 📚 [Obsidian 官方文檔](https://help.obsidian.md/)
+- 🔑 [GitHub Token 生成](https://github.com/settings/tokens)
+
+---
+
+**祝你使用愉快！願聖經研讀之路越走越寬。** 📖✨
