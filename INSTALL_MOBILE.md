@@ -5,7 +5,7 @@
 > [!IMPORTANT]
 > GitHub Gitless Sync 並非 Obsidian 官方同步服務。不要讓同一個 Vault 同時使用 Obsidian Sync、iCloud、Google Drive 或其他同步外掛，以免造成衝突或遺失內容。
 
-## [[影片教學](https://www.youtube.com/watch?v=Gkilz5IgZs0)](https://www.youtube.com/watch?v=Gkilz5IgZs0)
+## [影片教學](https://youtu.be/-e6oMacK4_I)
 ## 開始前準備
 
 你需要：

@@ -5,7 +5,7 @@
 > [!TIP]
 > 一般使用者可下載 ZIP；想持續取得更新或參與維護，建議使用 Git Clone。
 
-## [影片教學](https://www.youtube.com/watch?v=nbnmasV6zA0)
+## [影片教學](https://youtu.be/FGG2JbkHO78)
 
 ## 1. 安裝 Obsidian
 
