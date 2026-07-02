@@ -34,6 +34,14 @@ class ScriptureReferenceTests(unittest.TestCase):
             (None, []),
         )
 
+    def test_existing_reference_uses_ordered_book_folder(self):
+        with patch.object(build_fhl_maps, "chapter_path") as chapter_path:
+            chapter_path.return_value.exists.return_value = True
+            self.assertEqual(
+                "[[01 創世記/第14章|創14:1-16]]",
+                build_fhl_maps.render_scripture_reference("創14:1-16"),
+            )
+
     def test_description_paragraphs_are_separated_by_blank_lines(self):
         rendered = build_fhl_maps.render_description("標題\n第一段\n第二段", {})
         self.assertEqual(rendered, "第一段\n\n第二段")

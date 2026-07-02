@@ -21,9 +21,10 @@ C:\Obsidian\Hermes\scripture\scheme.md
 5. 判斷下一個需要處理或修正的章節
 6. 不要重做已完成且已通過驗證的章節
 7. **讀取經文**：本地 `raw_scripture/{資料夾名}/第{章}.txt`
-8. 建立或確認暫存資料夾：`【書名】/.tmp/第x章/`
-9. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
-10. **使用 `util/crawl_bible_text.py` 產生 raw text**：
+8. 依 `_config/bible_books.json` 的正典順序解析有序資料夾（例如 `01 創世記/`、`02 出埃及記/`）；工具命令仍傳入不含序號的標準書名
+9. 建立或確認暫存資料夾：`【序號 書名】/.tmp/第x章/`
+10. **確認補充資料來源 URL**：ccbiblestudy CT/GT、KingComments、BibleHub Study，或使用者指定來源
+11. **使用 `util/crawl_bible_text.py` 產生 raw text**：
     ```text
     python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"
     ```
@@ -31,38 +32,38 @@ C:\Obsidian\Hermes\scripture\scheme.md
     ```text
     python util/crawl_bible_text.py "https://biblehub.com/study/daniel/3.htm" --output_path raw_data --output_filename "biblehub_study_daniel_3"
     ```
-11. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
-12. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
-13. 建立或更新 `【書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
-14. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
-15. 根據經文與有效 raw text 建立 `【書名】/.tmp/第x章/link_candidates.md`
-16. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
+12. 若 raw text 檔案已存在，預設直接沿用；只有確認內容錯誤或使用者要求時才加 `--overwrite`
+13. 讀取這次 `util/crawl_bible_text.py` 產生的 raw text
+14. 建立或更新 `【序號 書名】/.tmp/第x章/source_manifest.md`，記錄每個來源的 URL、raw_data 檔案與狀態
+15. 讀取所有有效的 `raw_data/*.txt`，檢查是否為本章內容、是否有效、是否有研讀資料
+16. 根據經文與有效 raw text 建立 `【序號 書名】/.tmp/第x章/link_candidates.md`
+17. 執行 `python util/resolve_link_candidates.py 【書名】 X`，產生 `link_plan.md`
     - 章數 `X` 一律使用阿拉伯數字，不加「第」與「章」
     - 例如：`python util/resolve_link_candidates.py 創世記 13`
-17. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
-18. **根據 link_plan 寫章節主檔**：`【書名】/第x章.md`（經文 + wiki-link + 補充資料）
+18. 檢查 `link_plan.md` 的分類衝突與 alias 歧義；D 類不得自動建立或連結
+19. **根據 link_plan 寫章節主檔**：`【序號 書名】/第x章.md`（經文 + wiki-link + 補充資料）
     - 章節檔建立後執行 `python util/build_fhl_maps.py`，由程式將相關地圖同步到經文正文之後
     - 不得手工建立或修改 `fhl-map-links` 管理區塊
-19. **根據 link_plan 更新 link folder**：
+20. **根據 link_plan 更新 link folder**：
     - B 類先執行 `python util/link_updates.py prepare 【書名】 X`
     - 回到經文與有效 raw text 填寫 `link_updates.yaml`
-    - 執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run`
-    - 確認後執行 `python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml`
+    - 執行 `python util/link_updates.py apply 【序號 書名】/.tmp/第x章/link_updates.yaml --dry-run`
+    - 確認後執行 `python util/link_updates.py apply 【序號 書名】/.tmp/第x章/link_updates.yaml`
     - 重跑 apply 必須顯示 0 個變更
     - 確認章次位於 `按書卷累積 → ### 書卷名 → #### 第N章`，並依章號排序
     - C 類依來源建立正式條目；D 類人工判斷；E 類不連
-20. 執行 `python util/check_existing_links.py 【書名】/第x章.md --missing`
-21. 執行 `python util/build_link_index.py`
-22. 執行 `python util/validate_knowledge_base.py`
-23. 執行 `python util/link_quality_check.py 【書名】`
-24. 執行 `python util/verify_links.py 【書名】`
-25. 執行 `python util/audit_knowledge_base.py --check-due`
-26. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
-27. 重跑驗證直到全部通過
-28. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
-29. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
-30. 通過後 git commit + push，確認 CI 通過
-31. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
+21. 執行 `python util/check_existing_links.py 【序號 書名】/第x章.md --missing`
+22. 執行 `python util/build_link_index.py`
+23. 執行 `python util/validate_knowledge_base.py`
+24. 執行 `python util/link_quality_check.py 【書名】`
+25. 執行 `python util/verify_links.py 【書名】`
+26. 執行 `python util/audit_knowledge_base.py --check-due`
+27. 修正任何 schema errors / broken links / invalid refs / unknown links / critical quality warnings
+28. 重跑驗證直到全部通過
+29. 若累計完成章數到達 10 章里程碑，執行 `python util/audit_knowledge_base.py --all --checkpoint 10` 並人工檢查報告
+30. 若完成一卷，執行 `python util/audit_knowledge_base.py --book 【書名】`，清理 alias、候選條目與重複概念
+31. 通過後 git commit + push，確認 CI 通過
+32. 最後回報本章完成狀態、更新檔案、補建條目、驗證結果與 commit hash
 
 ---
 

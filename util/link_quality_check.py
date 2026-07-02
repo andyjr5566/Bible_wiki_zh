@@ -25,6 +25,11 @@ import re
 import json
 from pathlib import Path
 
+try:
+    from .book_paths import book_directory, existing_book_directories
+except ImportError:
+    from book_paths import book_directory, existing_book_directories
+
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 LINK_FOLDER_PARENT = "link_folder"
@@ -206,15 +211,12 @@ def quality_check(book_name=None):
     books_to_scan = []
 
     if book_name:
-        books_to_scan = [book_name]
+        books_to_scan = [(book_name, book_directory(ROOT, book_name))]
     else:
-        for item in ROOT.iterdir():
-            if item.is_dir() and item.name not in [LINK_FOLDER_PARENT] + link_folders:
-                books_to_scan.append(item.name)
+        books_to_scan = list(existing_book_directories(ROOT))
 
     # 掃描書卷
-    for book in books_to_scan:
-        book_path = ROOT / book
+    for book, book_path in books_to_scan:
         if not book_path.is_dir():
             continue
         for item in book_path.iterdir():

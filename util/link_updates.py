@@ -7,11 +7,16 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from .book_paths import book_directory
+except ImportError:
+    from book_paths import book_directory
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
 def plan_updates(book, chapter):
-    plan = ROOT / book / ".tmp" / f"第{chapter}章" / "link_plan.md"
+    plan = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章" / "link_plan.md"
     if not plan.exists():
         raise FileNotFoundError(plan)
     section = None
@@ -40,7 +45,7 @@ def plan_updates(book, chapter):
 
 
 def prepare(book, chapter):
-    output = ROOT / book / ".tmp" / f"第{chapter}章" / "link_updates.yaml"
+    output = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章" / "link_updates.yaml"
     if output.exists():
         raise FileExistsError(f"{output} 已存在；避免覆蓋人工內容")
     data = plan_updates(book, chapter)

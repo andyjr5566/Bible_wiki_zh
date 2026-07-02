@@ -5,6 +5,7 @@ import argparse
 import codecs
 import re
 import sys
+import time
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
@@ -13,6 +14,7 @@ from pathlib import Path
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 WIKILINK_RE = re.compile(r"\[\[(?P<body>[^\]\r\n]+)\]\]")
+CODE_RE = re.compile(r"(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\r\n]*`)")
 
 
 def configure_console():
@@ -69,7 +71,14 @@ def collect_markdown_files(root):
 
 
 def decode_markdown(path):
-    data = path.read_bytes()
+    for attempt in range(3):
+        try:
+            data = path.read_bytes()
+            break
+        except FileNotFoundError:
+            if attempt == 2:
+                raise
+            time.sleep(0.1)
     has_bom = data.startswith(codecs.BOM_UTF8)
     payload = data[len(codecs.BOM_UTF8):] if has_bom else data
     try:
@@ -169,7 +178,10 @@ def update_wikilinks(text, source, destination, resolver, containing_file):
         new_body = updated + (separator + alias if separator else "")
         return f"[[{new_body}]]"
 
-    return WIKILINK_RE.sub(replace, text), count
+    parts = CODE_RE.split(text)
+    for index in range(0, len(parts), 2):
+        parts[index] = WIKILINK_RE.sub(replace, parts[index])
+    return "".join(parts), count
 
 
 def update_source_h1(text, source, destination):
@@ -190,14 +202,15 @@ def validate_paths(source, destination, root, markdown_files):
     if destination.exists():
         raise RenameError(f"目標路徑已存在：{destination}")
 
-    wanted = normalize_name(destination.name)
-    conflicts = [
-        path for path in markdown_files
-        if path != source and normalize_name(path.name) == wanted
-    ]
-    if conflicts:
-        paths = "、".join(str(path.relative_to(root)) for path in conflicts)
-        raise RenameError(f"目標檔名「{destination.name}」已存在：{paths}")
+    if normalize_name(source.name) != normalize_name(destination.name):
+        wanted = normalize_name(destination.name)
+        conflicts = [
+            path for path in markdown_files
+            if path != source and normalize_name(path.name) == wanted
+        ]
+        if conflicts:
+            paths = "、".join(str(path.relative_to(root)) for path in conflicts)
+            raise RenameError(f"目標檔名「{destination.name}」已存在：{paths}")
 
 
 def rename_markdown(source_path, destination_path, root=ROOT, dry_run=False):
@@ -257,20 +270,100 @@ def rename_markdown(source_path, destination_path, root=ROOT, dry_run=False):
     return RenameResult(source, destination, len(updates), changed_links)
 
 
+def rename_markdown_directory(
+    source_path, destination_path, root=ROOT, dry_run=False
+):
+    """Rename a directory tree and update path-qualified WikiLinks atomically."""
+    root = Path(root).resolve()
+    source = resolve_in_root(source_path, root)
+    destination = resolve_in_root(destination_path, root)
+    if not source.is_dir():
+        raise RenameError(f"來源資料夾不存在：{source}")
+    if destination.exists():
+        raise RenameError(f"目標路徑已存在：{destination}")
+    if not destination.parent.is_dir():
+        raise RenameError(f"目標資料夾的上層不存在：{destination.parent}")
+    if source == destination or source in destination.parents:
+        raise RenameError("目標資料夾不可等於來源或位於來源之內")
+
+    markdown_files = collect_markdown_files(root)
+    source_markdown = [
+        path for path in markdown_files if source == path.parent or source in path.parents
+    ]
+    if not source_markdown:
+        raise RenameError(f"來源資料夾沒有 Markdown：{source}")
+    destinations = {
+        path: destination / path.relative_to(source) for path in source_markdown
+    }
+    conflicts = [path for path in destinations.values() if path.exists()]
+    if conflicts:
+        display = "、".join(str(path.relative_to(root)) for path in conflicts)
+        raise RenameError(f"目標 Markdown 已存在：{display}")
+
+    resolver = WikiLinkResolver(root, markdown_files)
+    updates = {}
+    changed_links = 0
+    for path in markdown_files:
+        original, text, has_bom = decode_markdown(path)
+        updated_text = text
+        for old_path, new_path in destinations.items():
+            updated_text, count = update_wikilinks(
+                updated_text, old_path, new_path, resolver, path
+            )
+            changed_links += count
+        if updated_text != text:
+            updates[path] = (
+                original,
+                encode_markdown(updated_text, has_bom),
+            )
+
+    if dry_run:
+        return RenameResult(
+            source, destination, len(updates), changed_links, dry_run=True
+        )
+
+    renamed = False
+    try:
+        source.rename(destination)
+        renamed = True
+        for original_path, (_, updated) in updates.items():
+            if source == original_path.parent or source in original_path.parents:
+                actual_path = destination / original_path.relative_to(source)
+            else:
+                actual_path = original_path
+            actual_path.write_bytes(updated)
+    except OSError as exc:
+        if renamed and destination.exists() and not source.exists():
+            try:
+                destination.rename(source)
+            except OSError:
+                pass
+        for original_path, (original, _) in updates.items():
+            try:
+                original_path.write_bytes(original)
+            except OSError:
+                pass
+        raise RenameError(f"寫入失敗，已嘗試回復原狀：{exc}") from exc
+
+    return RenameResult(source, destination, len(updates), changed_links)
+
+
 def main(argv=None):
     configure_console()
     parser = argparse.ArgumentParser(
         description="改名 Markdown，並同步更新 vault 中所有指向該檔案的 WikiLink。"
     )
-    parser.add_argument("source", help="目前的 .md 路徑")
-    parser.add_argument("destination", help="改名後的 .md 路徑")
+    parser.add_argument("source", help="目前的 .md 或資料夾路徑")
+    parser.add_argument("destination", help="改名後的 .md 或資料夾路徑")
     parser.add_argument(
         "--dry-run", action="store_true", help="只預覽，不寫入或改名"
     )
     args = parser.parse_args(argv)
 
     try:
-        result = rename_markdown(
+        source = resolve_in_root(args.source, ROOT)
+        operation = rename_markdown_directory if source.is_dir() else rename_markdown
+        result = operation(
             args.source, args.destination, root=ROOT, dry_run=args.dry_run
         )
     except RenameError as exc:

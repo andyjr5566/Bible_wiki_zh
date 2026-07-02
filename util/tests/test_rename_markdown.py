@@ -8,7 +8,11 @@ UTIL_DIR = Path(__file__).resolve().parents[1]
 if str(UTIL_DIR) not in sys.path:
     sys.path.insert(0, str(UTIL_DIR))
 
-from rename_markdown import RenameError, rename_markdown
+from rename_markdown import (
+    RenameError,
+    rename_markdown,
+    rename_markdown_directory,
+)
 
 
 class RenameMarkdownTests(unittest.TestCase):
@@ -104,6 +108,55 @@ class RenameMarkdownTests(unittest.TestCase):
             self.assertFalse(destination.exists())
             self.assertEqual(
                 "[[舊名|顯示文字]]\n", reference.read_text(encoding="utf-8")
+            )
+
+    def test_directory_rename_updates_path_links_and_keeps_non_markdown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source_chapter = self.make_file(
+                root, "創世記/第1章.md", "# 創世記 第1章\n"
+            )
+            self.make_file(root, "出埃及記/第1章.md", "# 出埃及記 第1章\n")
+            manifest = root / "創世記/.tmp/第1章/link_updates.yaml"
+            manifest.parent.mkdir(parents=True)
+            manifest.write_text("book: 創世記\n", encoding="utf-8")
+            reference = self.make_file(
+                root,
+                "link_folder/主題/測試.md",
+                "[[創世記/第1章|創世記1章]]\n",
+            )
+
+            result = rename_markdown_directory(
+                root / "創世記", root / "01 創世記", root=root
+            )
+
+            self.assertFalse(source_chapter.exists())
+            self.assertTrue((root / "01 創世記/第1章.md").exists())
+            self.assertTrue(
+                (root / "01 創世記/.tmp/第1章/link_updates.yaml").exists()
+            )
+            self.assertIn(
+                "[[01 創世記/第1章|創世記1章]]",
+                reference.read_text(encoding="utf-8"),
+            )
+            self.assertEqual(1, result.changed_links)
+
+    def test_markdown_code_examples_are_not_rewritten(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = self.make_file(root, "a/第1章.md", "# 第一章\n")
+            reference = self.make_file(
+                root,
+                "ref.md",
+                "`[[a/第1章]]`\n\n```\n[[a/第1章]]\n```\n",
+            )
+            (root / "b").mkdir()
+
+            rename_markdown(source, root / "b/第1章.md", root=root)
+
+            self.assertEqual(
+                "`[[a/第1章]]`\n\n```\n[[a/第1章]]\n```\n",
+                reference.read_text(encoding="utf-8"),
             )
 
 

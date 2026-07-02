@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 from resolve_link_candidates import has_book_chapter_data
+from book_paths import canonical_book_name
 
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
@@ -17,7 +18,7 @@ def parse_chapter_path(path):
     match = re.fullmatch(r"第(\d+)章", path.stem)
     if not match:
         raise ValueError(f"章節檔名格式錯誤：{path.name}")
-    return path.parent.name, match.group(1)
+    return canonical_book_name(path.parent.name), match.group(1)
 
 
 def extract_links(filepath):

@@ -25,6 +25,15 @@ import json
 from pathlib import Path
 
 try:
+    from .book_paths import (
+        book_directory,
+        canonical_book_name,
+        existing_book_directories,
+    )
+except ImportError:
+    from book_paths import book_directory, canonical_book_name, existing_book_directories
+
+try:
     from .build_link_index import collect_entries, load_resolutions, make_index
 except ImportError:
     from build_link_index import collect_entries, load_resolutions, make_index
@@ -156,6 +165,7 @@ def classify_scripture_ref(target):
         return None
     
     book, chapter = parsed
+    book = canonical_book_name(book)
     
     # 檢查書卷名（支援別名）
     canonical = BOOK_ALIASES.get(book, None)
@@ -222,12 +232,7 @@ def build_registry(root_path, link_folders):
     
     # 掃描章節檔
     existing_chapter_links = set()
-    for item in root_path.iterdir():
-        if not item.is_dir():
-            continue
-        if item.name in [LINK_FOLDER_PARENT] + link_folders:
-            continue
-        
+    for book, item in existing_book_directories(root_path):
         # 新架構：書卷名/第x章.md
         for fname in item.iterdir():
             if fname.suffix != '.md':
@@ -280,11 +285,9 @@ def scan_links(root_path, link_folders, book_name=None):
 
     books_to_scan = []
     if book_name:
-        books_to_scan = [book_name]
+        books_to_scan = [(book_name, book_directory(root_path, book_name))]
     else:
-        for item in root_path.iterdir():
-            if item.is_dir() and item.name not in [LINK_FOLDER_PARENT] + link_folders:
-                books_to_scan.append(item.name)
+        books_to_scan = list(existing_book_directories(root_path))
 
     existing_entities, entity_locations, existing_chapter_links = build_registry(root_path, link_folders)
 
@@ -320,8 +323,7 @@ def scan_links(root_path, link_folders, book_name=None):
             broken_links.setdefault(source_key, set()).add(entity)
 
     # 掃描書卷資料夾
-    for book in books_to_scan:
-        book_path = root_path / book
+    for book, book_path in books_to_scan:
         if not book_path.is_dir():
             continue
 
@@ -333,7 +335,7 @@ def scan_links(root_path, link_folders, book_name=None):
                     content = item.read_text(encoding='utf-8')
                 except (UnicodeDecodeError, Exception):
                     continue
-                process_content(content, f"{book}/{item.name}")
+                process_content(content, f"{book_path.name}/{item.name}")
 
             elif item.is_dir() and item.name in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
                 for f in item.iterdir():
@@ -343,7 +345,7 @@ def scan_links(root_path, link_folders, book_name=None):
                         content = f.read_text(encoding='utf-8')
                     except (UnicodeDecodeError, Exception):
                         continue
-                    process_content(content, f"{book}/{item.name}/{f.name}")
+                    process_content(content, f"{book_path.name}/{item.name}/{f.name}")
 
     # 掃描 link_folder
     for folder in link_folders:

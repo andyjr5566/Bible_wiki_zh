@@ -39,13 +39,13 @@ scripture/
 │       ├── link_quality_report.json
 │       └── audits/
 ├── .github/workflows/knowledge-base.yml
-├── 何西阿書/
+├── 28 何西阿書/
 │   ├── 全書導論.md
 │   ├── 全書綱要.md
 │   ├── 第1章.md
 │   ├── 第2章.md
 │   └── ...
-├── 但以理書/
+├── 27 但以理書/
 │   ├── 全書導論.md
 │   ├── 全書綱要.md
 │   ├── 第1章.md
@@ -70,7 +70,8 @@ scripture/
 規則：
 - 根目錄只保留專案文件、設定與經文／知識資料；所有工具 script 放在 `util/`，其索引、驗證與巡檢輸出放在 `util/output/`。
 - `raw_data/` 是來源快取，不是工具報告，因此維持原位。
-- 每卷書一個資料夾；章節檔只用 `第x章.md`，不得再建立 `經文/`、`註解/`、`拾穗/`、`解說/` 等平行章節資料夾。
+- 每卷書一個資料夾，名稱固定為正典序號加空格與標準書名，例如 `01 創世記/`、`02 出埃及記/`、`40 馬太福音/`。序號依 `_config/bible_books.json` 的正典順序，以兩位數表示；工具命令與累積標記仍使用不含序號的標準書名。
+- 章節檔只用 `第x章.md`，不得再建立 `經文/`、`註解/`、`拾穗/`、`解說/` 等平行章節資料夾。
 - `link_folder/` 是全域共用，可依資料自然新增分類；新增分類必須適合跨章／跨卷累積，禁止為單一零散詞開新資料夾。
 - 同一條目只允許一個主分類；其他性質用 `secondary_types` 表示，不得在多個 folder 重複建檔。
 
@@ -148,7 +149,7 @@ https://biblehub.com/study/{book_slug}/{章}.htm
 每章建立：
 
 ```text
-【書名】/.tmp/第x章/source_manifest.md
+【序號 書名】/.tmp/第x章/source_manifest.md
 ```
 
 格式：
@@ -194,7 +195,7 @@ python util/build_fhl_maps.py
 
 ## 3. 章節主檔格式
 
-檔名：`【書名】/第x章.md`。
+檔名：`【序號 書名】/第x章.md`。
 
 ```md
 # 何西阿書 第1章
@@ -311,8 +312,8 @@ python util/build_fhl_maps.py
 - 跨章／跨卷引用不可寫 `[[第1章]]`，必須寫完整路徑：
 
 ```md
-[[何西阿書/第1章|何西阿書 第1章]]
-[[但以理書/第3章|但以理書 第3章]]
+[[28 何西阿書/第1章|何西阿書 第1章]]
+[[27 但以理書/第3章|但以理書 第3章]]
 ```
 
 - 合法但尚未建立的聖經章節引用交給 `util/verify_links.py` 分為 `PENDING_SCRIPTURE_REFS`，不得為未來章節預建空檔。
@@ -385,7 +386,7 @@ Index 必須支援：條目名 → path/type/aliases/status；alias → alias_of
 位置：
 
 ```text
-【書名】/.tmp/第x章/link_candidates.md
+【序號 書名】/.tmp/第x章/link_candidates.md
 ```
 
 只放由經文與有效 raw text 明確觸發的候選節點；不得放 AI 憑感覺認為重要的詞。
@@ -446,7 +447,7 @@ python util/resolve_link_candidates.py 創世記 13
 輸出：
 
 ```text
-【書名】/.tmp/第x章/link_plan.md
+【序號 書名】/.tmp/第x章/link_plan.md
 ```
 
 link_plan 類別：
@@ -511,7 +512,7 @@ Agent 回報 `link_plan.md` 時，不得把完整 `link_plan.md` 貼回對話。
 - C 類新增正式條目的摘要與數量。
 - 分類衝突、alias 歧義、書卷／人物同名等需要使用者決策的點。
 
-若沒有 D 類或衝突，只需簡短說明 resolver 已產生、C/B 類數量與下一步動作。需要完整細節時，讀本地 `【書名】/.tmp/第x章/link_plan.md`，不要在對話中展開。
+若沒有 D 類或衝突，只需簡短說明 resolver 已產生、C/B 類數量與下一步動作。需要完整細節時，讀本地 `【序號 書名】/.tmp/第x章/link_plan.md`，不要在對話中展開。
 
 ---
 
@@ -576,7 +577,7 @@ source_scope: collected_only
 ## 類型
 
 ## 觸發來源
-- [[但以理書/第3章|但以理書 第3章]]：
+- [[27 但以理書/第3章|但以理書 第3章]]：
 
 ## 目前資料
 - 根據目前已收集資料整理。
@@ -604,7 +605,7 @@ python util/link_updates.py prepare 【書名】 X
 產生：
 
 ```text
-【書名】/.tmp/第x章/link_updates.yaml
+【序號 書名】/.tmp/第x章/link_updates.yaml
 ```
 
 Agent 必須回到本章經文與有效 raw text，逐項填入：
@@ -616,8 +617,8 @@ Agent 必須回到本章經文與有效 raw text，逐項填入：
 先預覽，再套用：
 
 ```text
-python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml --dry-run
-python util/link_updates.py apply 【書名】/.tmp/第x章/link_updates.yaml
+python util/link_updates.py apply 【序號 書名】/.tmp/第x章/link_updates.yaml --dry-run
+python util/link_updates.py apply 【序號 書名】/.tmp/第x章/link_updates.yaml
 ```
 
 累積區使用穩定標記：
@@ -662,7 +663,7 @@ python util/rename_markdown.py "目前檔案路徑.md" "改名後檔案路徑.md
 最終順序：
 
 ```text
-python util/check_existing_links.py 【書名】/第x章.md --missing
+python util/check_existing_links.py 【序號 書名】/第x章.md --missing
 python util/build_link_index.py
 python util/validate_knowledge_base.py
 python util/link_quality_check.py 【書名】
@@ -705,7 +706,7 @@ Found links 分類：
 
 PASS 條件：`BROKEN_LINKS=0`、`INVALID_SCRIPTURE_REFS=0`、`UNKNOWN_LINKS=0`。`PENDING_SCRIPTURE_REFS` 可存在。
 
-合法未來章節引用例：`[[啟示錄13]]`、`[[撒母耳記下5]]`、`[[啟示錄/第13章|啟示錄13章]]`。章數以 `_config/bible_books.json` 判斷，別名在 `BOOK_ALIASES` 維護。
+合法未來章節引用例：`[[啟示錄13]]`、`[[撒母耳記下5]]`、`[[66 啟示錄/第13章|啟示錄13章]]`。章數以 `_config/bible_books.json` 判斷，別名在 `BOOK_ALIASES` 維護。
 
 ### 7.2 util/link_quality_check.py
 
@@ -731,7 +732,7 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 2. 確認書卷與章節。
 3. 檢查書卷資料夾、現有章節檔、完成狀態；已完成且通過驗證者不重做。
 4. 讀取經文：`raw_scripture/{書名}/第{章}.txt`。
-5. 建立 `【書名】/.tmp/第x章/`。
+5. 建立 `【序號 書名】/.tmp/第x章/`。
 6. 確認 CT/GT/KC/BH/使用者指定來源 URL；不可硬猜。
 7. 對每個已確認 URL 執行 `util/crawl_bible_text.py` 產生或沿用 `raw_data/*.txt`。
 8. 建立／更新 `source_manifest.md`。
@@ -739,7 +740,7 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 10. 執行 `python util/build_link_index.py`。
 11. 根據經文與有效 raw text 建 `link_candidates.md`。
 12. 執行 `python util/resolve_link_candidates.py 【書名】 X` 產生 `link_plan.md`。
-13. 根據 `link_plan.md` 寫 `第x章.md`：經文 + wiki-link + 本章知識節點 + 本章整理。
+13. 根據 `link_plan.md` 寫 `【序號 書名】/第x章.md`：經文 + wiki-link + 本章知識節點 + 本章整理。
 14. 根據 `link_plan.md` 建立／更新 link_folder：B 預設經 `link_updates.yaml` 安全累積；C 正式、D 人工判斷、E 不連。
 15. 對 B 類執行 `util/link_updates.py prepare`，回到來源填寫 manifest，dry-run 後 apply；重跑確認 0 個重複變更。
 16. 執行最終驗證順序，修到結構驗證無 error、verify 無 blocking、quality 無 critical。

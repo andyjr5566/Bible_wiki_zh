@@ -10,6 +10,11 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+try:
+    from .book_paths import book_directory, ordered_book_dir_name
+except ImportError:
+    from book_paths import book_directory, ordered_book_dir_name
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "appendix" / "fhl_maps"
@@ -111,7 +116,7 @@ def parse_scripture_reference(raw: str) -> tuple[str | None, list[int]]:
 
 
 def chapter_path(book: str, chapter: int) -> Path:
-    return ROOT / book / f"第{chapter}章.md"
+    return book_directory(ROOT, book) / f"第{chapter}章.md"
 
 
 def render_scripture_reference(raw: str) -> str:
@@ -125,7 +130,7 @@ def render_scripture_reference(raw: str) -> str:
     )
     if first_existing is None:
         return raw
-    return f"[[{book}/第{first_existing}章|{raw}]]"
+    return f"[[{ordered_book_dir_name(book)}/第{first_existing}章|{raw}]]"
 
 
 def map_title(record: dict) -> str:
@@ -386,7 +391,8 @@ def main() -> int:
     write_or_check(SCRIPTURE_INDEX_PATH, index_content, args.check, changed)
 
     for key, entries in scripture_index.items():
-        path = ROOT / f"{key}.md"
+        book, chapter_name = key.split("/", 1)
+        path = book_directory(ROOT, book) / f"{chapter_name}.md"
         if not path.exists():
             continue
         content = sync_chapter(path, entries, records_by_gid)

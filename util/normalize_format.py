@@ -13,6 +13,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from .book_paths import book_directory, canonical_book_name
+except ImportError:
+    from book_paths import book_directory, canonical_book_name
+
 ROOT = Path(__file__).resolve().parent.parent
 LINK_FOLDER = ROOT / "link_folder"
 
@@ -392,12 +397,16 @@ def normalize_chapter(path):
 def apply_scope(scope, dry_run=False):
     paths = []
     if scope in {"genesis", "all"}:
-        paths.extend(sorted((ROOT / "創世記").glob("第*章.md"), key=lambda p: int(re.search(r"\d+", p.name).group())))
+        paths.extend(sorted(book_directory(ROOT, "創世記").glob("第*章.md"), key=lambda p: int(re.search(r"\d+", p.name).group())))
     if scope in {"links", "all"}:
         paths.extend(sorted(LINK_FOLDER.rglob("*.md")))
     changed = []
     for path in paths:
-        rendered = normalize_chapter(path) if path.parent.name == "創世記" else normalize_entry(path)
+        rendered = (
+            normalize_chapter(path)
+            if canonical_book_name(path.parent.name) == "創世記"
+            else normalize_entry(path)
+        )
         if rendered != path.read_text(encoding="utf-8"):
             changed.append(path)
             if not dry_run:

@@ -2,10 +2,21 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from util.verify_links import build_registry, get_link_folders, is_existing_path_link
+from util.verify_links import (
+    build_registry,
+    classify_scripture_ref,
+    get_link_folders,
+    is_existing_path_link,
+)
 
 
 class ExistingPathLinkTests(unittest.TestCase):
+    def test_ordered_future_scripture_reference_is_recognized(self):
+        self.assertEqual(
+            ("pending", "出埃及記", 2),
+            classify_scripture_ref("02 出埃及記/第2章"),
+        )
+
     def test_resolves_vault_relative_markdown_path(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

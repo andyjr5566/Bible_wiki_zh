@@ -10,6 +10,7 @@ from pathlib import Path
 import yaml
 
 from build_link_index import ROOT, collect_entries, load_resolutions
+from book_paths import book_directory
 
 REPORT_DIR = ROOT / "util" / "output" / "audits"
 POLICY_FILE = ROOT / "_config" / "maintenance_policy.yaml"
@@ -18,7 +19,11 @@ BOOKS_FILE = ROOT / "_config" / "bible_books.json"
 
 def chapter_files(book=None):
     books = json.loads(BOOKS_FILE.read_text(encoding="utf-8"))
-    roots = [ROOT / book] if book else [ROOT / name for name in books]
+    roots = (
+        [book_directory(ROOT, book)]
+        if book
+        else [book_directory(ROOT, name) for name in books]
+    )
     files = []
     for directory in roots:
         if not directory.exists():

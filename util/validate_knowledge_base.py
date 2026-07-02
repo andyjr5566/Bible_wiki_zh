@@ -9,6 +9,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from .book_paths import canonical_book_name, existing_book_directories
+except ImportError:
+    from book_paths import canonical_book_name, existing_book_directories
+
 from build_link_index import (
     EXCLUDE_PARTS,
     LINK_FOLDER,
@@ -189,7 +194,7 @@ def validate_file(path, strict=False):
 
 def validate_chapter(path):
     errors = []
-    book = path.parent.name
+    book = canonical_book_name(path.parent.name)
     match = re.fullmatch(r"第(\d+)章", path.stem)
     if not match:
         return [f"{path.relative_to(ROOT)}: 章節檔名不合法"]
@@ -332,9 +337,7 @@ def validate(base=None):
         file_errors, file_warnings = validate_file(path, strict=relative in changed)
         errors.extend(file_errors)
         warnings.extend(file_warnings)
-    for book_dir in sorted(ROOT.iterdir()):
-        if not book_dir.is_dir() or not (ROOT / "raw_scripture" / book_dir.name).exists():
-            continue
+    for _, book_dir in existing_book_directories(ROOT):
         for chapter_path in sorted(book_dir.glob("第*章.md")):
             errors.extend(validate_chapter(chapter_path))
             text = chapter_path.read_text(encoding="utf-8")

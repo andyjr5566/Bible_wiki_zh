@@ -8,6 +8,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from .book_paths import book_directory
+except ImportError:
+    from book_paths import book_directory
+
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 INDEX_FILE = UTIL_DIR / "output" / "link_index.json"
@@ -67,7 +72,7 @@ def homonym_options(name, homonyms):
 
 
 def load_candidates(book, chapter, root=ROOT):
-    path = root / book / ".tmp" / f"第{chapter}章" / "link_candidates.md"
+    path = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "link_candidates.md"
     if not path.exists():
         raise FileNotFoundError(f"link_candidates.md 不存在：{path}")
     candidates = []
@@ -211,7 +216,7 @@ def resolve(candidates, index, book, chapter, root=ROOT, homonyms=None):
 
 
 def write_plan(plan, book, chapter, root=ROOT):
-    output_dir = root / book / ".tmp" / f"第{chapter}章"
+    output_dir = book_directory(root, book) / ".tmp" / f"第{chapter}章"
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / "link_plan.md"
     lines = [f"# 第{chapter}章 link plan\n\n"]
