@@ -12,12 +12,6 @@
 - 一個 [GitHub 帳號](https://github.com/signup)
 - 已安裝手機版 Obsidian
 - 一個**空的**手機 Vault
-- 一個包含本專案的 GitHub 儲存庫
-
-使用此外掛前，請先在 [專案頁面](https://github.com/andyjr5566/Bible_wiki_zh) 點選 **Fork**，建立你有權限存取的副本。以下步驟以你的 Fork 為例；只想離線閱讀、不需要同步的使用者，可直接跳到文末的替代方式。
-
-Fork 不會自動跟隨原專案更新。日後可在 GitHub 的 Fork 頁面使用 **Sync fork**，再回到 Obsidian 執行同步。
-
 ## 1. 安裝 Obsidian
 
 - iPhone／iPad：從 [App Store](https://apps.apple.com/app/obsidian-connected-notes/id1557175442) 安裝 Obsidian。
