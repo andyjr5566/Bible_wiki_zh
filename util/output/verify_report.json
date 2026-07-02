@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 10082,
+  "valid_links_count": 10829,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 104,
+  "pending_scripture_refs_count": 101,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -165,21 +165,6 @@
       "entity": "利未記/第17章",
       "book": "利未記",
       "chapter": 17
-    },
-    {
-      "entity": "創世記/第46章",
-      "book": "創世記",
-      "chapter": 46
-    },
-    {
-      "entity": "創世記/第49章",
-      "book": "創世記",
-      "chapter": 49
-    },
-    {
-      "entity": "創世記/第50章",
-      "book": "創世記",
-      "chapter": 50
     },
     {
       "entity": "加拉太書/第3章",
@@ -1243,11 +1228,6 @@
           24
         ],
         [
-          "創世記/第46章",
-          "創世記",
-          46
-        ],
-        [
           "民數記/第11章",
           "民數記",
           11
@@ -1361,18 +1341,6 @@
           "尼希米記/第9章",
           "尼希米記",
           9
-        ]
-      ],
-      "link_folder/地點/麥比拉洞.md": [
-        [
-          "創世記/第49章",
-          "創世記",
-          49
-        ],
-        [
-          "創世記/第50章",
-          "創世記",
-          50
         ]
       ],
       "link_folder/歷史/喜克索王朝（Hyksos）背景.md": [
@@ -1500,16 +1468,6 @@
         ]
       ],
       "link_folder/神學/墳地.md": [
-        [
-          "創世記/第49章",
-          "創世記",
-          49
-        ],
-        [
-          "創世記/第50章",
-          "創世記",
-          50
-        ],
         [
           "希伯來書/第11章",
           "希伯來書",
