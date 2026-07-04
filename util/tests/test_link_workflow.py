@@ -172,10 +172,10 @@ class UpdateTests(unittest.TestCase):
                 "<!-- accumulation:創世記:1:start -->\n#### 第1章\n"
                 "- 本章重點：創世記資料\n- 與本章關聯：創世記關聯\n"
                 "<!-- accumulation:創世記:1:end -->\n\n"
-                "### 耶書亞記\n\n"
-                "<!-- accumulation:耶書亞記:1:start -->\n#### 第1章\n"
+                "### 約書亞記\n\n"
+                "<!-- accumulation:約書亞記:1:start -->\n#### 第1章\n"
                 "- 本章重點：約書亞記資料\n- 與本章關聯：約書亞記關聯\n"
-                "<!-- accumulation:耶書亞記:1:end -->\n\n"
+                "<!-- accumulation:約書亞記:1:end -->\n\n"
                 "## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
                 encoding="utf-8",
             )
@@ -194,7 +194,7 @@ class UpdateTests(unittest.TestCase):
                 self.assertEqual(1, apply_updates(manifest))
             rendered = entry_path.read_text(encoding="utf-8")
             self.assertLess(rendered.index("### 創世記"), rendered.index("### 出埃及記"))
-            self.assertLess(rendered.index("### 出埃及記"), rendered.index("### 耶書亞記"))
+            self.assertLess(rendered.index("### 出埃及記"), rendered.index("### 約書亞記"))
 
 
 class FormatNormalizationTests(unittest.TestCase):

@@ -13,7 +13,7 @@ except ImportError:
     from book_paths import BOOK_NUMBERS, book_directory
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOK_ALIASES = {"耶書亞記": "約書亞記"}
+BOOK_ALIASES = {"約書亞記": "約書亞記"}
 
 
 def book_rank(book):
