@@ -612,8 +612,6 @@ Agent 必須回到本章經文與有效 raw text，逐項填入：
 - `summary`：本章重點
 - `relation`：與本章關聯
 
-`sources`、`source_files` 等內部追蹤欄位不得寫入 `link_folder` 條目；條目只保留有閱讀價值的內容，不顯示 raw_data 檔案路徑。
-
 先預覽，再套用：
 
 ```text

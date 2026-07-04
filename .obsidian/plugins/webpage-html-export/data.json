@@ -86,7 +86,7 @@
         "type": "end"
       },
       "showCustomIcons": false,
-      "showDefaultFolderIcons": false,
+      "showDefaultFolderIcons": true,
       "showDefaultFileIcons": false,
       "defaultFolderIcon": "lucide//folder",
       "defaultFileIcon": "lucide//file",
@@ -176,7 +176,7 @@
         "selector": "head",
         "type": "end"
       },
-      "sourcePath": "",
+      "sourcePath": "..\\export\\export-head.html",
       "includePath": "site-lib/html/custom-head.html"
     },
     "documentOptions": {

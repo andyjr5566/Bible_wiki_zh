@@ -77,7 +77,7 @@ C:\Obsidian\Hermes\scripture\scheme.md
 - 建立 link_candidates.md 時，只能使用經文與已成功取得、已檢查有效的 raw text。
 - 無效來源要記錄在 `source_manifest.md`，不可假裝已使用。
 - 不設定每章正式條目數量上限，也不因人物看似普通而先驗排除；建立與否只由已收集資料決定。
-- B 類的 `link_updates.yaml` 必須記錄實際 `sources` 與 `source_files`，不得用工具生成無來源內容。
+- B 類的 `link_updates.yaml` 填寫 `summary` 與 `relation`，內容必須由經文與有效 raw text 驅動。
 
 ---
 

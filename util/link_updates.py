@@ -40,8 +40,6 @@ def plan_updates(book, chapter):
                 "path": match.group(2).strip(),
                 "summary": "",
                 "relation": "",
-                "sources": [],
-                "source_files": [],
             })
     return {
         "book": book,
