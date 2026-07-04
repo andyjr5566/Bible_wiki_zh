@@ -2510,6 +2510,16 @@
     "status": "formal",
     "aliases": []
   },
+  "以色列人的官長": {
+    "path": "link_folder/人物/以色列人的官長.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以色列人的官長",
+    "status": "formal",
+    "aliases": [
+      "官長"
+    ]
+  },
   "以色列的眾長老": {
     "path": "link_folder/人物/以色列的眾長老.md",
     "type": "人物",
@@ -3382,6 +3392,18 @@
     "title": "甲摩尼人",
     "status": "formal",
     "aliases": []
+  },
+  "督工的": {
+    "path": "link_folder/人物/督工的.md",
+    "type": "人物",
+    "secondary_types": [
+      "埃及體制"
+    ],
+    "title": "督工的",
+    "status": "formal",
+    "aliases": [
+      "taskmasters"
+    ]
   },
   "示劍（哈抹之子）": {
     "path": "link_folder/人物/示劍（哈抹之子）.md",
@@ -5599,6 +5621,16 @@
     "status": "formal",
     "aliases": []
   },
+  "曠野": {
+    "path": "link_folder/地點/曠野.md",
+    "type": "地點",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "曠野",
+    "status": "formal",
+    "aliases": []
+  },
   "書珥": {
     "path": "link_folder/地點/書珥.md",
     "type": "地點",
@@ -7190,6 +7222,14 @@
     "status": "formal",
     "aliases": []
   },
+  "三天的路程": {
+    "path": "link_folder/神學/三天的路程.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "三天的路程",
+    "status": "formal",
+    "aliases": []
+  },
   "不可回頭看": {
     "path": "link_folder/神學/不可回頭看.md",
     "type": "神學",
@@ -7600,6 +7640,18 @@
     "status": "formal",
     "aliases": []
   },
+  "勞碌": {
+    "path": "link_folder/神學/勞碌.md",
+    "type": "神學",
+    "secondary_types": [
+      "象徵"
+    ],
+    "title": "勞碌",
+    "status": "formal",
+    "aliases": [
+      "忙於工作無暇聽道"
+    ]
+  },
   "十二支派起源": {
     "path": "link_folder/神學/十二支派起源.md",
     "type": "神學",
@@ -7700,6 +7752,16 @@
     "title": "因信稱義",
     "status": "formal",
     "aliases": []
+  },
+  "在曠野向神守節": {
+    "path": "link_folder/神學/在曠野向神守節.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "在曠野向神守節",
+    "status": "formal",
+    "aliases": [
+      "在曠野守節"
+    ]
   },
   "埃及的豫言": {
     "path": "link_folder/神學/埃及的豫言.md",
@@ -7935,6 +7997,14 @@
     "status": "formal",
     "aliases": []
   },
+  "容我的百姓去": {
+    "path": "link_folder/神學/容我的百姓去.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "容我的百姓去",
+    "status": "formal",
+    "aliases": []
+  },
   "寄居身分": {
     "path": "link_folder/神學/寄居身分.md",
     "type": "神學",
@@ -8014,6 +8084,16 @@
     "title": "屬靈恩賜",
     "status": "candidate",
     "aliases": []
+  },
+  "希伯來人的神": {
+    "path": "link_folder/神學/希伯來人的神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "希伯來人的神",
+    "status": "formal",
+    "aliases": [
+      "希伯來人的神遇見了我們"
+    ]
   },
   "彌賽亞": {
     "path": "link_folder/神學/彌賽亞.md",
@@ -8284,6 +8364,18 @@
     "status": "candidate",
     "aliases": []
   },
+  "擔子": {
+    "path": "link_folder/神學/擔子.md",
+    "type": "神學",
+    "secondary_types": [
+      "象徵"
+    ],
+    "title": "擔子",
+    "status": "formal",
+    "aliases": [
+      "重擔"
+    ]
+  },
   "改名與立約": {
     "path": "link_folder/神學/改名與立約.md",
     "type": "神學",
@@ -8445,6 +8537,19 @@
     "title": "法老的心剛硬",
     "status": "formal",
     "aliases": []
+  },
+  "法老預表撒但": {
+    "path": "link_folder/神學/法老預表撒但.md",
+    "type": "神學",
+    "secondary_types": [
+      "預表"
+    ],
+    "title": "法老預表撒但",
+    "status": "formal",
+    "aliases": [
+      "法老預表魔鬼",
+      "法老象徵撒但"
+    ]
   },
   "洪水中的審判與拯救": {
     "path": "link_folder/神學/洪水中的審判與拯救.md",
@@ -8831,6 +8936,16 @@
     "title": "神的應許應驗",
     "status": "formal",
     "aliases": []
+  },
+  "神的拯救延遲": {
+    "path": "link_folder/神學/神的拯救延遲.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的拯救延遲",
+    "status": "formal",
+    "aliases": [
+      "拯救看似失敗"
+    ]
   },
   "神的揀選": {
     "path": "link_folder/神學/神的揀選.md",
@@ -9228,6 +9343,14 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華是誰": {
+    "path": "link_folder/神學/耶和華是誰.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華是誰",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華永生神": {
     "path": "link_folder/神學/耶和華永生神.md",
     "type": "神學",
@@ -9432,6 +9555,19 @@
       "苦難的意義",
       "神的管教",
       "苦難使人悔改"
+    ]
+  },
+  "草與磚": {
+    "path": "link_folder/神學/草與磚.md",
+    "type": "神學",
+    "secondary_types": [
+      "象徵"
+    ],
+    "title": "草與磚",
+    "status": "formal",
+    "aliases": [
+      "磚與草",
+      "做磚無草"
     ]
   },
   "萬國同源": {
@@ -10030,6 +10166,16 @@
     "aliases": [
       "亞伯拉罕接待的三人",
       "幔利三位訪客"
+    ]
+  },
+  "三天的路程是欺騙嗎": {
+    "path": "link_folder/解經爭議/三天的路程是欺騙嗎.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "三天的路程是欺騙嗎",
+    "status": "formal",
+    "aliases": [
+      "三天路程是否為欺騙"
     ]
   },
   "亞伯拉罕為何停在十個義人": {
@@ -11586,6 +11732,9 @@
   "Ishmaelites": {
     "alias_of": "以實瑪利人"
   },
+  "官長": {
+    "alias_of": "以色列人的官長"
+  },
   "Ben-Ammi": {
     "alias_of": "便亞米"
   },
@@ -11708,6 +11857,9 @@
   },
   "Er": {
     "alias_of": "珥"
+  },
+  "taskmasters": {
+    "alias_of": "督工的"
   },
   "Shelah": {
     "alias_of": "示拉"
@@ -12387,6 +12539,9 @@
   "割禮": {
     "alias_of": "割禮之約"
   },
+  "忙於工作無暇聽道": {
+    "alias_of": "勞碌"
+  },
   "雅各十二子": {
     "alias_of": "十二支派起源"
   },
@@ -12401,6 +12556,9 @@
   },
   "回伯特利": {
     "alias_of": "回到伯特利的屬靈復興"
+  },
+  "在曠野守節": {
+    "alias_of": "在曠野向神守節"
   },
   "先知祭司王三職": {
     "alias_of": "基督三重職分"
@@ -12453,6 +12611,9 @@
   "約瑟考驗哥哥們": {
     "alias_of": "對兄弟的試驗"
   },
+  "希伯來人的神遇見了我們": {
+    "alias_of": "希伯來人的神"
+  },
   "Messiah": {
     "alias_of": "彌賽亞"
   },
@@ -12483,6 +12644,9 @@
   "摩西認同希伯來弟兄": {
     "alias_of": "摩西認同受苦的神子民"
   },
+  "重擔": {
+    "alias_of": "擔子"
+  },
   "以撒的敬畏": {
     "alias_of": "敬畏以撒的神"
   },
@@ -12494,6 +12658,12 @@
   },
   "新舊約": {
     "alias_of": "新約"
+  },
+  "法老預表魔鬼": {
+    "alias_of": "法老預表撒但"
+  },
+  "法老象徵撒但": {
+    "alias_of": "法老預表撒但"
   },
   "洪水的審判與救恩": {
     "alias_of": "洪水中的審判與拯救"
@@ -12536,6 +12706,9 @@
   },
   "不是你們乃是神": {
     "alias_of": "神的主權與人的責任"
+  },
+  "拯救看似失敗": {
+    "alias_of": "神的拯救延遲"
   },
   "神的掌管": {
     "alias_of": "神的護理"
@@ -12672,6 +12845,12 @@
   "苦難使人悔改": {
     "alias_of": "苦難與管教"
   },
+  "磚與草": {
+    "alias_of": "草與磚"
+  },
+  "做磚無草": {
+    "alias_of": "草與磚"
+  },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
   },
@@ -12788,6 +12967,9 @@
   },
   "幔利三位訪客": {
     "alias_of": "三位訪客的身分"
+  },
+  "三天路程是否為欺騙": {
+    "alias_of": "三天的路程是欺騙嗎"
   },
   "十個義人的下限": {
     "alias_of": "亞伯拉罕為何停在十個義人"
