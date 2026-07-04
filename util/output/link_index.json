@@ -2228,6 +2228,20 @@
     "status": "formal",
     "aliases": []
   },
+  "亞倫的祭司譜系": {
+    "path": "link_folder/人物/亞倫的祭司譜系.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫的祭司譜系",
+    "status": "formal",
+    "aliases": [
+      "Aaronic priesthood",
+      "亞倫子孫祭司線",
+      "祭司家族",
+      "亞倫的兒子",
+      "亞倫後裔"
+    ]
+  },
   "亞哈假先知 (王上22)": {
     "path": "link_folder/人物/亞哈假先知 (王上22).md",
     "type": "人物",
@@ -2403,6 +2417,17 @@
     "title": "以倫",
     "status": "formal",
     "aliases": []
+  },
+  "以利亞撒": {
+    "path": "link_folder/人物/以利亞撒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以利亞撒",
+    "status": "formal",
+    "aliases": [
+      "Eleazar",
+      "以利亞撒 (亞倫子)"
+    ]
   },
   "以利以謝": {
     "path": "link_folder/人物/以利以謝.md",
@@ -2649,6 +2674,19 @@
     "status": "formal",
     "aliases": [
       "Rebekah"
+    ]
+  },
+  "可拉的背叛（預告）": {
+    "path": "link_folder/人物/可拉的背叛（預告）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "可拉的背叛（預告）",
+    "status": "formal",
+    "aliases": [
+      "可拉",
+      "Korah",
+      "可拉的叛亂",
+      "可拉黨"
     ]
   },
   "司獄": {
@@ -3815,6 +3853,17 @@
     "title": "非各",
     "status": "formal",
     "aliases": []
+  },
+  "非尼哈": {
+    "path": "link_folder/人物/非尼哈.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "非尼哈",
+    "status": "formal",
+    "aliases": [
+      "Phinehas",
+      "非尼哈 (亞倫孫)"
+    ]
   },
   "革舜（摩西之子）": {
     "path": "link_folder/人物/革舜（摩西之子）.md",
@@ -6756,6 +6805,19 @@
     "status": "candidate",
     "aliases": []
   },
+  "利未的族譜（出六14-27）": {
+    "path": "link_folder/歷史/利未的族譜（出六14-27）.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "利未的族譜（出六14-27）",
+    "status": "formal",
+    "aliases": [
+      "出六14-27",
+      "出埃及記六章族譜",
+      "摩西亞倫族譜",
+      "利未支派家譜"
+    ]
+  },
   "努斯泥板與家神像": {
     "path": "link_folder/歷史/努斯泥板與家神像.md",
     "type": "歷史",
@@ -7460,6 +7522,19 @@
       "次子以法蓮在長子瑪拿西以上"
     ]
   },
+  "以色列人的軍隊": {
+    "path": "link_folder/神學/以色列人的軍隊.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "以色列人的軍隊",
+    "status": "formal",
+    "aliases": [
+      "按著軍隊",
+      "以色列軍隊",
+      "hosts of Israel",
+      "出埃及軍隊"
+    ]
+  },
   "以色列是我的兒子我的長子": {
     "path": "link_folder/神學/以色列是我的兒子我的長子.md",
     "type": "神學",
@@ -7485,6 +7560,18 @@
     "title": "伯特利的神",
     "status": "formal",
     "aliases": []
+  },
+  "伸出來的膀臂": {
+    "path": "link_folder/神學/伸出來的膀臂.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "伸出來的膀臂",
+    "status": "formal",
+    "aliases": [
+      "outstretched arm",
+      "神的大能膀臂",
+      "伸出的膀臂"
+    ]
   },
   "保惠師": {
     "path": "link_folder/神學/保惠師.md",
@@ -8383,6 +8470,22 @@
     "title": "改名與立約",
     "status": "formal",
     "aliases": []
+  },
+  "救贖goel": {
+    "path": "link_folder/神學/救贖goel.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "救贖goel",
+    "status": "formal",
+    "aliases": [
+      "gaal",
+      "goel",
+      "至近親屬",
+      "救贖親屬",
+      "贖回",
+      "redeem",
+      "救贖者"
+    ]
   },
   "救贖歷史的進程": {
     "path": "link_folder/神學/救贖歷史的進程.md",
@@ -9335,6 +9438,18 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華我是": {
+    "path": "link_folder/神學/耶和華我是.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華我是",
+    "status": "formal",
+    "aliases": [
+      "我是耶和華",
+      "I am the LORD",
+      "耶和華名的宣告"
+    ]
+  },
   "耶和華把他關在方舟裡": {
     "path": "link_folder/神學/耶和華把他關在方舟裡.md",
     "type": "神學",
@@ -9627,6 +9742,18 @@
     "title": "解夢出於神",
     "status": "formal",
     "aliases": []
+  },
+  "記念我的約": {
+    "path": "link_folder/神學/記念我的約.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "記念我的約",
+    "status": "formal",
+    "aliases": [
+      "神記念他的約",
+      "記念",
+      "remember my covenant"
+    ]
   },
   "試探的本質": {
     "path": "link_folder/神學/試探的本質.md",
@@ -11720,6 +11847,21 @@
   "拉結哭泣": {
     "alias_of": "馬太福音2章拉結哭泣"
   },
+  "Aaronic priesthood": {
+    "alias_of": "亞倫的祭司譜系"
+  },
+  "亞倫子孫祭司線": {
+    "alias_of": "亞倫的祭司譜系"
+  },
+  "祭司家族": {
+    "alias_of": "亞倫的祭司譜系"
+  },
+  "亞倫的兒子": {
+    "alias_of": "亞倫的祭司譜系"
+  },
+  "亞倫後裔": {
+    "alias_of": "亞倫的祭司譜系"
+  },
   "Ammonites": {
     "alias_of": "亞捫人"
   },
@@ -11728,6 +11870,12 @@
   },
   "Tamar": {
     "alias_of": "他瑪（創38）"
+  },
+  "Eleazar": {
+    "alias_of": "以利亞撒"
+  },
+  "以利亞撒 (亞倫子)": {
+    "alias_of": "以利亞撒"
   },
   "Ishmaelites": {
     "alias_of": "以實瑪利人"
@@ -11761,6 +11909,18 @@
   },
   "Rebekah": {
     "alias_of": "利百加"
+  },
+  "可拉": {
+    "alias_of": "可拉的背叛（預告）"
+  },
+  "Korah": {
+    "alias_of": "可拉的背叛（預告）"
+  },
+  "可拉的叛亂": {
+    "alias_of": "可拉的背叛（預告）"
+  },
+  "可拉黨": {
+    "alias_of": "可拉的背叛（預告）"
   },
   "善以別": {
     "alias_of": "善以別（洗扁王）"
@@ -11914,6 +12074,12 @@
   },
   "酒政/酒政長": {
     "alias_of": "酒政_酒政長"
+  },
+  "Phinehas": {
+    "alias_of": "非尼哈"
+  },
+  "非尼哈 (亞倫孫)": {
+    "alias_of": "非尼哈"
   },
   "麥基洗得": {
     "alias_of": "麥基洗德"
@@ -12416,6 +12582,18 @@
   "shrine prostitute": {
     "alias_of": "迦南廟妓風俗"
   },
+  "出六14-27": {
+    "alias_of": "利未的族譜（出六14-27）"
+  },
+  "出埃及記六章族譜": {
+    "alias_of": "利未的族譜（出六14-27）"
+  },
+  "摩西亞倫族譜": {
+    "alias_of": "利未的族譜（出六14-27）"
+  },
+  "利未支派家譜": {
+    "alias_of": "利未的族譜（出六14-27）"
+  },
   "亞瑪拿文獻": {
     "alias_of": "古代朝見禮儀七次下拜"
   },
@@ -12526,6 +12704,27 @@
   },
   "次子以法蓮在長子瑪拿西以上": {
     "alias_of": "以法蓮在瑪拿西以上"
+  },
+  "按著軍隊": {
+    "alias_of": "以色列人的軍隊"
+  },
+  "以色列軍隊": {
+    "alias_of": "以色列人的軍隊"
+  },
+  "hosts of Israel": {
+    "alias_of": "以色列人的軍隊"
+  },
+  "出埃及軍隊": {
+    "alias_of": "以色列人的軍隊"
+  },
+  "outstretched arm": {
+    "alias_of": "伸出來的膀臂"
+  },
+  "神的大能膀臂": {
+    "alias_of": "伸出來的膀臂"
+  },
+  "伸出的膀臂": {
+    "alias_of": "伸出來的膀臂"
   },
   "代贖": {
     "alias_of": "公羊代贖"
@@ -12646,6 +12845,27 @@
   },
   "重擔": {
     "alias_of": "擔子"
+  },
+  "gaal": {
+    "alias_of": "救贖goel"
+  },
+  "goel": {
+    "alias_of": "救贖goel"
+  },
+  "至近親屬": {
+    "alias_of": "救贖goel"
+  },
+  "救贖親屬": {
+    "alias_of": "救贖goel"
+  },
+  "贖回": {
+    "alias_of": "救贖goel"
+  },
+  "redeem": {
+    "alias_of": "救贖goel"
+  },
+  "救贖者": {
+    "alias_of": "救贖goel"
   },
   "以撒的敬畏": {
     "alias_of": "敬畏以撒的神"
@@ -12785,6 +13005,15 @@
   "在耶和華的山上必有預備": {
     "alias_of": "耶和華以勒"
   },
+  "我是耶和華": {
+    "alias_of": "耶和華我是"
+  },
+  "I am the LORD": {
+    "alias_of": "耶和華我是"
+  },
+  "耶和華名的宣告": {
+    "alias_of": "耶和華我是"
+  },
   "El Olam": {
     "alias_of": "耶和華永生神"
   },
@@ -12853,6 +13082,15 @@
   },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
+  },
+  "神記念他的約": {
+    "alias_of": "記念我的約"
+  },
+  "記念": {
+    "alias_of": "記念我的約"
+  },
+  "remember my covenant": {
+    "alias_of": "記念我的約"
   },
   "新生": {
     "alias_of": "重生"

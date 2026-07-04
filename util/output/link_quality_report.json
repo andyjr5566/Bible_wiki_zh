@@ -1,6 +1,14 @@
 {
-  "total_warnings": 0,
+  "total_warnings": 1,
   "critical_count": 0,
-  "warning_count": 0,
-  "warnings": []
+  "warning_count": 1,
+  "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第6章.md",
+      "target": "耶和華",
+      "message": "同一 alias「耶和華」指向多個 target: 耶和華我是, 耶和華的話臨到, 耶和華聖名的啟示"
+    }
+  ]
 }
