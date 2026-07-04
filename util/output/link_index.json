@@ -2220,6 +2220,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞倫": {
+    "path": "link_folder/人物/亞倫.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫",
+    "status": "formal",
+    "aliases": []
+  },
   "亞哈假先知 (王上22)": {
     "path": "link_folder/人物/亞哈假先知 (王上22).md",
     "type": "人物",
@@ -2499,6 +2507,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "以米人",
+    "status": "formal",
+    "aliases": []
+  },
+  "以色列的眾長老": {
+    "path": "link_folder/人物/以色列的眾長老.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以色列的眾長老",
     "status": "formal",
     "aliases": []
   },
@@ -4467,6 +4483,14 @@
       "所多瑪聲聞於神"
     ]
   },
+  "拙口笨舌": {
+    "path": "link_folder/原文/拙口笨舌.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "拙口笨舌",
+    "status": "formal",
+    "aliases": []
+  },
   "拿弗他利（角力）": {
     "path": "link_folder/原文/拿弗他利（角力）.md",
     "type": "原文",
@@ -5790,6 +5814,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "示拿地",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的山": {
+    "path": "link_folder/地點/神的山.md",
+    "type": "地點",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神的山",
     "status": "formal",
     "aliases": []
   },
@@ -7386,6 +7420,14 @@
       "次子以法蓮在長子瑪拿西以上"
     ]
   },
+  "以色列是我的兒子我的長子": {
+    "path": "link_folder/神學/以色列是我的兒子我的長子.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "以色列是我的兒子我的長子",
+    "status": "formal",
+    "aliases": []
+  },
   "以諾被神取去": {
     "path": "link_folder/神學/以諾被神取去.md",
     "type": "神學",
@@ -8132,6 +8174,14 @@
       "我的靈不永遠住在人裡面"
     ]
   },
+  "手長大痲瘋的神蹟": {
+    "path": "link_folder/神學/手長大痲瘋的神蹟.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "手長大痲瘋的神蹟",
+    "status": "formal",
+    "aliases": []
+  },
   "拉麥的一夫多妻": {
     "path": "link_folder/神學/拉麥的一夫多妻.md",
     "type": "神學",
@@ -8332,6 +8382,22 @@
     "status": "formal",
     "aliases": []
   },
+  "杖": {
+    "path": "link_folder/神學/杖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "杖",
+    "status": "formal",
+    "aliases": []
+  },
+  "杖變蛇的神蹟": {
+    "path": "link_folder/神學/杖變蛇的神蹟.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "杖變蛇的神蹟",
+    "status": "formal",
+    "aliases": []
+  },
   "死亡的普遍性": {
     "path": "link_folder/神學/死亡的普遍性.md",
     "type": "神學",
@@ -8345,6 +8411,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "死的三層",
+    "status": "formal",
+    "aliases": []
+  },
+  "水變血的神蹟": {
+    "path": "link_folder/神學/水變血的神蹟.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "水變血的神蹟",
     "status": "formal",
     "aliases": []
   },
@@ -8362,6 +8436,14 @@
     "secondary_types": [],
     "title": "永生",
     "status": "candidate",
+    "aliases": []
+  },
+  "法老的心剛硬": {
+    "path": "link_folder/神學/法老的心剛硬.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "法老的心剛硬",
+    "status": "formal",
     "aliases": []
   },
   "洪水中的審判與拯救": {
@@ -8596,6 +8678,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神對人的呼召": {
+    "path": "link_folder/神學/神對人的呼召.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神對人的呼召",
+    "status": "formal",
+    "aliases": []
+  },
   "神對以掃的地業安排": {
     "path": "link_folder/神學/神對以掃的地業安排.md",
     "type": "神學",
@@ -8747,6 +8837,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的揀選",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的權柄與能力": {
+    "path": "link_folder/神學/神的權柄與能力.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的權柄與能力",
     "status": "formal",
     "aliases": []
   },
@@ -8916,6 +9014,14 @@
       "神試驗人",
       "神的試驗"
     ]
+  },
+  "神蹟（miraculous signs）": {
+    "path": "link_folder/神學/神蹟（miraculous signs）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神蹟（miraculous signs）",
+    "status": "formal",
+    "aliases": []
   },
   "祭壇敬拜": {
     "path": "link_folder/神學/祭壇敬拜.md",
@@ -9152,6 +9258,16 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華的話臨到": {
+    "path": "link_folder/神學/耶和華的話臨到.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "耶和華的話臨到",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華神的名字": {
     "path": "link_folder/神學/耶和華神的名字.md",
     "type": "神學",
@@ -9357,6 +9473,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "血的尊重",
+    "status": "formal",
+    "aliases": []
+  },
+  "血郎": {
+    "path": "link_folder/神學/血郎.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "血郎",
     "status": "formal",
     "aliases": []
   },
@@ -10844,6 +10968,14 @@
       "耶和華下去察看"
     ]
   },
+  "耶和華想要殺摩西（24節）": {
+    "path": "link_folder/解經爭議/耶和華想要殺摩西（24節）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "耶和華想要殺摩西（24節）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華的使者是否為神顯現": {
     "path": "link_folder/解經爭議/耶和華的使者是否為神顯現.md",
     "type": "解經爭議",
@@ -10857,6 +10989,14 @@
       "耶和華使者是基督嗎",
       "耶和華使者的身分"
     ]
+  },
+  "血郎的含義": {
+    "path": "link_folder/解經爭議/血郎的含義.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "血郎的含義",
+    "status": "formal",
+    "aliases": []
   },
   "西緬利未報復是否合乎公義": {
     "path": "link_folder/解經爭議/西緬利未報復是否合乎公義.md",
