@@ -4581,6 +4581,18 @@
       "地上的塵沙不能數算"
     ]
   },
+  "成群": {
+    "path": "link_folder/原文/成群.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "成群",
+    "status": "formal",
+    "aliases": [
+      "arob",
+      "混雜群",
+      "狗蠅"
+    ]
+  },
   "我是自有永有的": {
     "path": "link_folder/原文/我是自有永有的.md",
     "type": "原文",
@@ -6419,6 +6431,17 @@
       "埃及人與牧羊人"
     ]
   },
+  "埃及人厭惡的祭牲": {
+    "path": "link_folder/文化/埃及人厭惡的祭牲.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "埃及人厭惡的祭牲",
+    "status": "formal",
+    "aliases": [
+      "Egyptian abomination sacrifices",
+      "埃及人所憎惡的祭牲"
+    ]
+  },
   "埃及人搬運物件頂在頭上": {
     "path": "link_folder/文化/埃及人搬運物件頂在頭上.md",
     "type": "文化",
@@ -6612,6 +6635,16 @@
     "status": "formal",
     "aliases": []
   },
+  "爐灶和摶麵盆": {
+    "path": "link_folder/文化/爐灶和摶麵盆.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "爐灶和摶麵盆",
+    "status": "formal",
+    "aliases": [
+      "ovens and kneading bowls"
+    ]
+  },
   "神命名與主權": {
     "path": "link_folder/文化/神命名與主權.md",
     "type": "文化",
@@ -6758,6 +6791,18 @@
     "status": "formal",
     "aliases": [
       "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得"
+    ]
+  },
+  "青蛙為埃及聖物": {
+    "path": "link_folder/文化/青蛙為埃及聖物.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "青蛙為埃及聖物",
+    "status": "formal",
+    "aliases": [
+      "frogs sacred in Egypt",
+      "Heqet",
+      "蛙頭女神"
     ]
   },
   "風茄(催情果)": {
@@ -7173,6 +7218,18 @@
       "水變血"
     ]
   },
+  "法老四次妥協": {
+    "path": "link_folder/歷史/法老四次妥協.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "法老四次妥協",
+    "status": "formal",
+    "aliases": [
+      "Pharaoh four compromises",
+      "法老的妥協",
+      "法老的四次讓步"
+    ]
+  },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
     "type": "歷史",
@@ -7281,6 +7338,42 @@
     "title": "華爾頓《創世記背景註釋》",
     "status": "formal",
     "aliases": []
+  },
+  "蛙災": {
+    "path": "link_folder/歷史/蛙災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "蛙災",
+    "status": "formal",
+    "aliases": [
+      "second plague",
+      "frogs",
+      "青蛙之災"
+    ]
+  },
+  "蝨災": {
+    "path": "link_folder/歷史/蝨災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "蝨災",
+    "status": "formal",
+    "aliases": [
+      "third plague",
+      "gnats",
+      "蝨子之災"
+    ]
+  },
+  "蠅災": {
+    "path": "link_folder/歷史/蠅災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "蠅災",
+    "status": "formal",
+    "aliases": [
+      "fourth plague",
+      "flies",
+      "成群的蒼蠅之災"
+    ]
   },
   "迦南人與比利洗人": {
     "path": "link_folder/歷史/迦南人與比利洗人.md",
@@ -7592,6 +7685,18 @@
       "作神代表"
     ]
   },
+  "代求": {
+    "path": "link_folder/神學/代求.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "代求",
+    "status": "formal",
+    "aliases": [
+      "intercession",
+      "呼求耶和華",
+      "祈禱"
+    ]
+  },
   "以惡報惡的罪": {
     "path": "link_folder/神學/以惡報惡的罪.md",
     "type": "神學",
@@ -7684,6 +7789,17 @@
     "title": "以諾被神取去",
     "status": "formal",
     "aliases": []
+  },
+  "任憑你吧": {
+    "path": "link_folder/神學/任憑你吧.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "任憑你吧",
+    "status": "formal",
+    "aliases": [
+      "have the honor",
+      "榮耀你自己吧"
+    ]
   },
   "伯特利的神": {
     "path": "link_folder/神學/伯特利的神.md",
@@ -7806,6 +7922,18 @@
     "title": "分別善惡的樹",
     "status": "formal",
     "aliases": []
+  },
+  "分別百姓": {
+    "path": "link_folder/神學/分別百姓.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "分別百姓",
+    "status": "formal",
+    "aliases": [
+      "division",
+      "分開",
+      "分別出來"
+    ]
   },
   "利亞四子命名的神學意義": {
     "path": "link_folder/神學/利亞四子命名的神學意義.md",
@@ -7992,6 +8120,17 @@
     "status": "formal",
     "aliases": [
       "在曠野守節"
+    ]
+  },
+  "埃及人所厭惡的": {
+    "path": "link_folder/神學/埃及人所厭惡的.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "埃及人所厭惡的",
+    "status": "formal",
+    "aliases": [
+      "abomination to Egyptians",
+      "埃及人所憎惡的"
     ]
   },
   "埃及的豫言": {
@@ -9209,6 +9348,18 @@
     "title": "神的應許應驗",
     "status": "formal",
     "aliases": []
+  },
+  "神的手段": {
+    "path": "link_folder/神學/神的手段.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的手段",
+    "status": "formal",
+    "aliases": [
+      "finger of God",
+      "神的手指",
+      "神的手指頭"
+    ]
   },
   "神的拯救延遲": {
     "path": "link_folder/神學/神的拯救延遲.md",
@@ -12392,6 +12543,15 @@
   "地上的塵沙不能數算": {
     "alias_of": "後裔如地上的塵沙"
   },
+  "arob": {
+    "alias_of": "成群"
+  },
+  "混雜群": {
+    "alias_of": "成群"
+  },
+  "狗蠅": {
+    "alias_of": "成群"
+  },
   "I AM WHO I AM": {
     "alias_of": "我是自有永有的"
   },
@@ -12755,6 +12915,12 @@
   "埃及人與牧羊人": {
     "alias_of": "埃及人厭惡牧羊人"
   },
+  "Egyptian abomination sacrifices": {
+    "alias_of": "埃及人厭惡的祭牲"
+  },
+  "埃及人所憎惡的祭牲": {
+    "alias_of": "埃及人厭惡的祭牲"
+  },
   "埃及人不與希伯來人同席": {
     "alias_of": "埃及人的飲食分席"
   },
@@ -12806,6 +12972,9 @@
   "levirate marriage": {
     "alias_of": "弟續兄孀制度"
   },
+  "ovens and kneading bowls": {
+    "alias_of": "爐灶和摶麵盆"
+  },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
   },
@@ -12835,6 +13004,15 @@
   },
   "shrine prostitute": {
     "alias_of": "迦南廟妓風俗"
+  },
+  "frogs sacred in Egypt": {
+    "alias_of": "青蛙為埃及聖物"
+  },
+  "Heqet": {
+    "alias_of": "青蛙為埃及聖物"
+  },
+  "蛙頭女神": {
+    "alias_of": "青蛙為埃及聖物"
   },
   "Aaron's staff swallowed": {
     "alias_of": "亞倫的杖吞了術士的杖"
@@ -12938,6 +13116,15 @@
   "水變血": {
     "alias_of": "水變血之災"
   },
+  "Pharaoh four compromises": {
+    "alias_of": "法老四次妥協"
+  },
+  "法老的妥協": {
+    "alias_of": "法老四次妥協"
+  },
+  "法老的四次讓步": {
+    "alias_of": "法老四次妥協"
+  },
   "糧倉制度": {
     "alias_of": "積貨城制度"
   },
@@ -12952,6 +13139,33 @@
   },
   "饑荒土地政策": {
     "alias_of": "約瑟的饑荒土地政策"
+  },
+  "second plague": {
+    "alias_of": "蛙災"
+  },
+  "frogs": {
+    "alias_of": "蛙災"
+  },
+  "青蛙之災": {
+    "alias_of": "蛙災"
+  },
+  "third plague": {
+    "alias_of": "蝨災"
+  },
+  "gnats": {
+    "alias_of": "蝨災"
+  },
+  "蝨子之災": {
+    "alias_of": "蝨災"
+  },
+  "fourth plague": {
+    "alias_of": "蠅災"
+  },
+  "flies": {
+    "alias_of": "蠅災"
+  },
+  "成群的蒼蠅之災": {
+    "alias_of": "蠅災"
   },
   "雅各改名": {
     "alias_of": "雅各改名以色列"
@@ -12995,6 +13209,15 @@
   "作神代表": {
     "alias_of": "代替神"
   },
+  "intercession": {
+    "alias_of": "代求"
+  },
+  "呼求耶和華": {
+    "alias_of": "代求"
+  },
+  "祈禱": {
+    "alias_of": "代求"
+  },
   "交叉雙手祝福": {
     "alias_of": "以法蓮在瑪拿西以上"
   },
@@ -13013,6 +13236,12 @@
   "出埃及軍隊": {
     "alias_of": "以色列人的軍隊"
   },
+  "have the honor": {
+    "alias_of": "任憑你吧"
+  },
+  "榮耀你自己吧": {
+    "alias_of": "任憑你吧"
+  },
   "outstretched arm": {
     "alias_of": "伸出來的膀臂"
   },
@@ -13030,6 +13259,15 @@
   },
   "出埃及的目的": {
     "alias_of": "出埃及為要事奉神"
+  },
+  "division": {
+    "alias_of": "分別百姓"
+  },
+  "分開": {
+    "alias_of": "分別百姓"
+  },
+  "分別出來": {
+    "alias_of": "分別百姓"
   },
   "割禮": {
     "alias_of": "割禮之約"
@@ -13063,6 +13301,12 @@
   },
   "在曠野守節": {
     "alias_of": "在曠野向神守節"
+  },
+  "abomination to Egyptians": {
+    "alias_of": "埃及人所厭惡的"
+  },
+  "埃及人所憎惡的": {
+    "alias_of": "埃及人所厭惡的"
   },
   "先知祭司王三職": {
     "alias_of": "基督三重職分"
@@ -13252,6 +13496,15 @@
   },
   "不是你們乃是神": {
     "alias_of": "神的主權與人的責任"
+  },
+  "finger of God": {
+    "alias_of": "神的手段"
+  },
+  "神的手指": {
+    "alias_of": "神的手段"
+  },
+  "神的手指頭": {
+    "alias_of": "神的手段"
   },
   "拯救看似失敗": {
     "alias_of": "神的拯救延遲"
