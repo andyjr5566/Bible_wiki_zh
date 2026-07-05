@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "link_folder/原文/「希伯來人」的意義.md",
+                "file": "01 創世記/第1章.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -29,11 +29,36 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "「希伯來人」的意義"
+              "title": "第1章"
             },
             "group": "07d503c601e0fc2d"
+          },
+          {
+            "id": "4fb0dbb9407c6ecb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "link_folder/主題/新造與新生活.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "新造與新生活"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "8fbed1b02d337b82",
@@ -41,12 +66,36 @@
         "dimension": 43.44783715012723,
         "children": [
           {
+            "id": "63a9a556d850563e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "link_folder/主題/神的記念.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "神的記念"
+            }
+          },
+          {
             "id": "e1f8091c9bd8916e",
             "type": "leaf",
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "link_folder/原文/「希伯來人」的意義.md",
+                "file": "01 創世記/第1章.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -74,7 +123,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "「希伯來人」的意義 的關聯圖"
+              "title": "第1章 的關聯圖"
             },
             "group": "07d503c601e0fc2d"
           }
@@ -151,7 +200,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/原文/「希伯來人」的意義.md",
+                "file": "link_folder/主題/新造與新生活.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +210,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "「希伯來人」的意義 的反向連結"
+              "title": "新造與新生活 的反向連結"
             }
           },
           {
@@ -170,12 +219,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/原文/「希伯來人」的意義.md",
+                "file": "link_folder/主題/新造與新生活.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "「希伯來人」的意義 的對外連結"
+              "title": "新造與新生活 的對外連結"
             }
           },
           {
@@ -213,13 +262,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/原文/「希伯來人」的意義.md",
+                "file": "link_folder/主題/新造與新生活.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "「希伯來人」的意義 的大綱"
+              "title": "新造與新生活 的大綱"
             }
           }
         ]
@@ -241,34 +290,34 @@
       "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "0d256e0f31958fd4",
+  "active": "4fb0dbb9407c6ecb",
   "lastOpenFiles": [
-    "link_folder/地點/示拿.md",
-    "link_folder/地點/米甸地.md",
-    "link_folder/人物/流珥（米甸祭司）.md",
-    "02 出埃及記/第4章.md",
-    "link_folder/原文/拙口笨舌.md",
-    "link_folder/人物/亞倫.md",
-    "link_folder/地點/尼羅河.md",
-    "link_folder/神學/神蹟（miraculous signs）.md",
-    "link_folder/神學/耶和華的話臨到.md",
-    "appendix/fhl_maps/maps/001.md",
-    "02 出埃及記/第6章.md",
-    "appendix/fhl_maps/maps/018.md",
-    "02 出埃及記/第1章.md",
+    "01 創世記/第8章.md",
+    "01 創世記/第42章.md",
+    "link_folder/主題/神的記念.md",
+    "link_folder/神學/神的記念.md",
+    "link_folder/神學/三一神同工.md",
+    "index.md",
+    "01 創世記/全書目錄及綱要.md",
+    "scheme_index.md",
+    "README.md",
     "scheme.md",
-    "02 出埃及記/第7章.md",
-    "link_folder/原文/十分之一.md",
-    "link_folder/原文/「但」名字含義.md",
-    "link_folder/原文/「以實瑪利」名字含義.md",
-    "link_folder/歷史/亞倫的杖吞了術士的杖.md",
-    "link_folder/神學/容我的百姓去.md",
-    "link_folder/原文/法老心剛硬三字.md",
-    "link_folder/人物/摩西.md",
-    "link_folder/互文/七天的審判.md",
-    "link_folder/互文/摩西八十歲.md",
-    "link_folder/原文/tannin巨蛇.md",
-    "link_folder/文化/埃及行法術的.md",
+    "link_folder/地點/埃及.md",
+    "link_folder/人物/流便.md",
+    "link_folder/文化/古埃及的起誓方式.md",
+    "link_folder/原文/通事（傳譯員）.md",
+    "link_folder/文化/古埃及銀子交易.md",
+    "link_folder/原文/陰間（Sheol）.md",
+    "link_folder/神學/種與收的法則.md",
+    "01 創世記/第3章.md",
+    "01 創世記/第4章.md",
+    "01 創世記/第1章.md",
+    "02 出埃及記/第3章.md",
+    "link_folder/神學/亞伯拉罕之約.md",
+    "link_folder/神學/對兄弟的試驗.md",
+    "02 出埃及記/第8章.md",
+    "link_folder/歷史/埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）.md",
+    "link_folder/文化/爐灶和摶麵盆.md",
     "歷史",
     "人物",
     "神學",
