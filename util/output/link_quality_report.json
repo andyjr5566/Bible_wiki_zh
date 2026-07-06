@@ -1,7 +1,7 @@
 {
-  "total_warnings": 3,
+  "total_warnings": 4,
   "critical_count": 0,
-  "warning_count": 3,
+  "warning_count": 4,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,13 @@
       "source": "出埃及記/第10章.md",
       "target": "耶和華",
       "message": "同一 alias「耶和華」指向多個 target: 耶和華, 耶和華的話臨到"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第12章.md",
+      "target": "逾越節",
+      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
     },
     {
       "type": "alias_target_conflict",

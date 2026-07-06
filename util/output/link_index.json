@@ -1186,6 +1186,21 @@
     "status": "formal",
     "aliases": []
   },
+  "創十五13 四百年寄居預言": {
+    "path": "link_folder/互文/創十五13 四百年寄居預言.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "創十五13 四百年寄居預言",
+    "status": "formal",
+    "aliases": [
+      "創15:13",
+      "四百年寄居預言",
+      "亞伯拉罕之約的寄居預言"
+    ]
+  },
   "創十五14 亞伯拉罕之約的財物應驗": {
     "path": "link_folder/互文/創十五14 亞伯拉罕之約的財物應驗.md",
     "type": "互文",
@@ -1846,6 +1861,21 @@
       "我父作事直到如今",
       "父與子仍然作工",
       "約翰福音5章17節"
+    ]
+  },
+  "約翰福音十九36 羔羊骨頭不折": {
+    "path": "link_folder/互文/約翰福音十九36 羔羊骨頭不折.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "約翰福音十九36 羔羊骨頭不折",
+    "status": "formal",
+    "aliases": [
+      "約19:36",
+      "羔羊骨頭不折應驗",
+      "逾越節羔羊骨頭預表"
     ]
   },
   "羅馬書 9-17（神興起法老）": {
@@ -4302,6 +4332,21 @@
       "亞比米勒王號"
     ]
   },
+  "亞筆月": {
+    "path": "link_folder/原文/亞筆月.md",
+    "type": "原文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "亞筆月",
+    "status": "formal",
+    "aliases": [
+      "正月",
+      "亞筆",
+      "尼散月",
+      "Nisan"
+    ]
+  },
   "亞西納（屬內特女神）": {
     "path": "link_folder/原文/亞西納（屬內特女神）.md",
     "type": "原文",
@@ -4531,6 +4576,19 @@
     "title": "四十的屬靈意義",
     "status": "formal",
     "aliases": []
+  },
+  "四百三十年": {
+    "path": "link_folder/原文/四百三十年.md",
+    "type": "原文",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "四百三十年",
+    "status": "formal",
+    "aliases": [
+      "430年",
+      "在埃及四百三十年"
+    ]
   },
   "地上塵土與生命氣息": {
     "path": "link_folder/原文/地上塵土與生命氣息.md",
@@ -4932,6 +4990,33 @@
       "炭疽病"
     ]
   },
+  "無酵餅": {
+    "path": "link_folder/原文/無酵餅.md",
+    "type": "原文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "無酵餅",
+    "status": "formal",
+    "aliases": [
+      "matzot",
+      "matza",
+      "無酵的餅"
+    ]
+  },
+  "牛膝草": {
+    "path": "link_folder/原文/牛膝草.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "牛膝草",
+    "status": "formal",
+    "aliases": [
+      "hyssop",
+      "蘸血草"
+    ]
+  },
   "狗不敢搖舌": {
     "path": "link_folder/原文/狗不敢搖舌.md",
     "type": "原文",
@@ -5111,6 +5196,19 @@
     "status": "formal",
     "aliases": []
   },
+  "苦菜": {
+    "path": "link_folder/原文/苦菜.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "苦菜",
+    "status": "formal",
+    "aliases": [
+      "bitter herbs",
+      "merorim"
+    ]
+  },
   "蒲草箱與方舟同字": {
     "path": "link_folder/原文/蒲草箱與方舟同字.md",
     "type": "原文",
@@ -5212,6 +5310,19 @@
       "傳譯員",
       "通事",
       "翻譯"
+    ]
+  },
+  "逾越（pasach）": {
+    "path": "link_folder/原文/逾越（pasach）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "逾越（pasach）",
+    "status": "formal",
+    "aliases": [
+      "pasach",
+      "越過"
     ]
   },
   "配偶幫助者": {
@@ -7012,6 +7123,20 @@
       "異教耳環"
     ]
   },
+  "聖會": {
+    "path": "link_folder/文化/聖會.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "聖會",
+    "status": "formal",
+    "aliases": [
+      "miqra qodesh",
+      "聖集會"
+    ]
+  },
   "脫鞋與聖地": {
     "path": "link_folder/文化/脫鞋與聖地.md",
     "type": "文化",
@@ -7269,6 +7394,19 @@
       "final confrontation",
       "法老逐摩西",
       "不要再見我的面"
+    ]
+  },
+  "出埃及": {
+    "path": "link_folder/歷史/出埃及.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "出埃及",
+    "status": "formal",
+    "aliases": [
+      "以色列人出埃及",
+      "Exodus"
     ]
   },
   "分裂國度": {
@@ -7580,6 +7718,19 @@
       "水變血"
     ]
   },
+  "法老召摩西": {
+    "path": "link_folder/歷史/法老召摩西.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "法老召摩西",
+    "status": "formal",
+    "aliases": [
+      "法老半夜召摩西",
+      "法老放人"
+    ]
+  },
   "法老四次妥協": {
     "path": "link_folder/歷史/法老四次妥協.md",
     "type": "歷史",
@@ -7601,6 +7752,21 @@
     "aliases": [
       "法老見災止即越發犯罪",
       "法老再硬心"
+    ]
+  },
+  "無酵節": {
+    "path": "link_folder/歷史/無酵節.md",
+    "type": "歷史",
+    "secondary_types": [
+      "原文",
+      "神學"
+    ],
+    "title": "無酵節",
+    "status": "formal",
+    "aliases": [
+      "除酵節",
+      "七日除酵節",
+      "matzot節"
     ]
   },
   "牧人與獵人生活差異": {
@@ -7739,6 +7905,20 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華敗壞埃及一切神": {
+    "path": "link_folder/歷史/耶和華敗壞埃及一切神.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "文化"
+    ],
+    "title": "耶和華敗壞埃及一切神",
+    "status": "formal",
+    "aliases": [
+      "敗壞埃及神",
+      "擊打埃及諸神"
+    ]
+  },
   "華爾頓《創世記背景註釋》": {
     "path": "link_folder/歷史/華爾頓《創世記背景註釋》.md",
     "type": "歷史",
@@ -7818,6 +7998,89 @@
     "title": "迦南地買地習俗",
     "status": "formal",
     "aliases": []
+  },
+  "逾越節": {
+    "path": "link_folder/歷史/逾越節.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "原文"
+    ],
+    "title": "逾越節",
+    "status": "formal",
+    "aliases": [
+      "Pesach",
+      "Passover",
+      "逾越節的祭",
+      "耶和華的節"
+    ]
+  },
+  "逾越節定為永遠定例": {
+    "path": "link_folder/歷史/逾越節定為永遠定例.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "逾越節定為永遠定例",
+    "status": "formal",
+    "aliases": [
+      "永遠定例",
+      "世世代代守逾越節"
+    ]
+  },
+  "逾越節條例（外邦人與寄居者）": {
+    "path": "link_folder/歷史/逾越節條例（外邦人與寄居者）.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "逾越節條例（外邦人與寄居者）",
+    "status": "formal",
+    "aliases": [
+      "逾越節的例",
+      "外邦人不得吃逾越節"
+    ]
+  },
+  "逾越節的吃法": {
+    "path": "link_folder/歷史/逾越節的吃法.md",
+    "type": "歷史",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "逾越節的吃法",
+    "status": "formal",
+    "aliases": [
+      "逾越節吃法",
+      "烤羊羔"
+    ]
+  },
+  "逾越節羔羊": {
+    "path": "link_folder/歷史/逾越節羔羊.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "互文"
+    ],
+    "title": "逾越節羔羊",
+    "status": "formal",
+    "aliases": [
+      "逾越羊羔",
+      "無殘疾公羊羔"
+    ]
+  },
+  "逾越節血記": {
+    "path": "link_folder/歷史/逾越節血記.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "逾越節血記",
+    "status": "formal",
+    "aliases": [
+      "血記",
+      "門框上的血",
+      "逾越節的血"
+    ]
   },
   "長子之死": {
     "path": "link_folder/歷史/長子之死.md",
@@ -8692,6 +8955,20 @@
     "status": "formal",
     "aliases": []
   },
+  "基督預表（逾越節羔羊）": {
+    "path": "link_folder/神學/基督預表（逾越節羔羊）.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史",
+      "互文"
+    ],
+    "title": "基督預表（逾越節羔羊）",
+    "status": "formal",
+    "aliases": [
+      "逾越節羔羊預表基督",
+      "基督作為逾越節羔羊"
+    ]
+  },
   "基路伯與火劍": {
     "path": "link_folder/神學/基路伯與火劍.md",
     "type": "神學",
@@ -9278,6 +9555,21 @@
     "title": "改名與立約",
     "status": "formal",
     "aliases": []
+  },
+  "救贖": {
+    "path": "link_folder/神學/救贖.md",
+    "type": "神學",
+    "secondary_types": [
+      "歷史",
+      "互文"
+    ],
+    "title": "救贖",
+    "status": "formal",
+    "aliases": [
+      "redemption",
+      "耶和華的救贖",
+      "救了我們各家"
+    ]
   },
   "救贖goel": {
     "path": "link_folder/神學/救贖goel.md",
@@ -12596,6 +12888,15 @@
   "創世記49章流便": {
     "alias_of": "創世記49章流便受責"
   },
+  "創15:13": {
+    "alias_of": "創十五13 四百年寄居預言"
+  },
+  "四百年寄居預言": {
+    "alias_of": "創十五13 四百年寄居預言"
+  },
+  "亞伯拉罕之約的寄居預言": {
+    "alias_of": "創十五13 四百年寄居預言"
+  },
   "創十五14應驗": {
     "alias_of": "創十五14 亞伯拉罕之約的財物應驗"
   },
@@ -12808,6 +13109,15 @@
   },
   "約翰福音5章17節": {
     "alias_of": "約翰福音5章父與子仍然作工"
+  },
+  "約19:36": {
+    "alias_of": "約翰福音十九36 羔羊骨頭不折"
+  },
+  "羔羊骨頭不折應驗": {
+    "alias_of": "約翰福音十九36 羔羊骨頭不折"
+  },
+  "逾越節羔羊骨頭預表": {
+    "alias_of": "約翰福音十九36 羔羊骨頭不折"
   },
   "羅9:17": {
     "alias_of": "羅馬書 9-17（神興起法老）"
@@ -13190,6 +13500,18 @@
   "亞比米勒王號": {
     "alias_of": "亞比米勒名字與王號"
   },
+  "正月": {
+    "alias_of": "亞筆月"
+  },
+  "亞筆": {
+    "alias_of": "亞筆月"
+  },
+  "尼散月": {
+    "alias_of": "亞筆月"
+  },
+  "Nisan": {
+    "alias_of": "亞筆月"
+  },
   "Israel": {
     "alias_of": "以色列"
   },
@@ -13222,6 +13544,12 @@
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "430年": {
+    "alias_of": "四百三十年"
+  },
+  "在埃及四百三十年": {
+    "alias_of": "四百三十年"
   },
   "塵土與生命氣息": {
     "alias_of": "地上塵土與生命氣息"
@@ -13367,6 +13695,21 @@
   "炭疽病": {
     "alias_of": "炭疽（anthrax）"
   },
+  "matzot": {
+    "alias_of": "無酵餅"
+  },
+  "matza": {
+    "alias_of": "無酵餅"
+  },
+  "無酵的餅": {
+    "alias_of": "無酵餅"
+  },
+  "hyssop": {
+    "alias_of": "牛膝草"
+  },
+  "蘸血草": {
+    "alias_of": "牛膝草"
+  },
   "狗不搖舌": {
     "alias_of": "狗不敢搖舌"
   },
@@ -13397,6 +13740,12 @@
   "膳長 (baker)": {
     "alias_of": "膳長_baker"
   },
+  "bitter herbs": {
+    "alias_of": "苦菜"
+  },
+  "merorim": {
+    "alias_of": "苦菜"
+  },
   "蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
@@ -13426,6 +13775,12 @@
   },
   "翻譯": {
     "alias_of": "通事（傳譯員）"
+  },
+  "pasach": {
+    "alias_of": "逾越（pasach）"
+  },
+  "越過": {
+    "alias_of": "逾越（pasach）"
   },
   "相配的幫助者": {
     "alias_of": "配偶幫助者"
@@ -13865,6 +14220,12 @@
   "異教耳環": {
     "alias_of": "耳環作異教護身符"
   },
+  "miqra qodesh": {
+    "alias_of": "聖會"
+  },
+  "聖集會": {
+    "alias_of": "聖會"
+  },
   "在聖地脫鞋": {
     "alias_of": "脫鞋與聖地"
   },
@@ -13924,6 +14285,12 @@
   },
   "不要再見我的面": {
     "alias_of": "再見面必死"
+  },
+  "以色列人出埃及": {
+    "alias_of": "出埃及"
+  },
+  "Exodus": {
+    "alias_of": "出埃及"
   },
   "出六14-27": {
     "alias_of": "利未的族譜（出六14-27）"
@@ -14033,6 +14400,12 @@
   "水變血": {
     "alias_of": "水變血之災"
   },
+  "法老半夜召摩西": {
+    "alias_of": "法老召摩西"
+  },
+  "法老放人": {
+    "alias_of": "法老召摩西"
+  },
   "Pharaoh four compromises": {
     "alias_of": "法老四次妥協"
   },
@@ -14047,6 +14420,15 @@
   },
   "法老再硬心": {
     "alias_of": "法老第二次轉硬"
+  },
+  "除酵節": {
+    "alias_of": "無酵節"
+  },
+  "七日除酵節": {
+    "alias_of": "無酵節"
+  },
+  "matzot節": {
+    "alias_of": "無酵節"
   },
   "糧倉制度": {
     "alias_of": "積貨城制度"
@@ -14071,6 +14453,12 @@
   },
   "饑荒土地政策": {
     "alias_of": "約瑟的饑荒土地政策"
+  },
+  "敗壞埃及神": {
+    "alias_of": "耶和華敗壞埃及一切神"
+  },
+  "擊打埃及諸神": {
+    "alias_of": "耶和華敗壞埃及一切神"
   },
   "second plague": {
     "alias_of": "蛙災"
@@ -14107,6 +14495,51 @@
   },
   "成群的蒼蠅之災": {
     "alias_of": "蠅災"
+  },
+  "Pesach": {
+    "alias_of": "逾越節"
+  },
+  "Passover": {
+    "alias_of": "逾越節"
+  },
+  "逾越節的祭": {
+    "alias_of": "逾越節"
+  },
+  "耶和華的節": {
+    "alias_of": "逾越節"
+  },
+  "永遠定例": {
+    "alias_of": "逾越節定為永遠定例"
+  },
+  "世世代代守逾越節": {
+    "alias_of": "逾越節定為永遠定例"
+  },
+  "逾越節的例": {
+    "alias_of": "逾越節條例（外邦人與寄居者）"
+  },
+  "外邦人不得吃逾越節": {
+    "alias_of": "逾越節條例（外邦人與寄居者）"
+  },
+  "逾越節吃法": {
+    "alias_of": "逾越節的吃法"
+  },
+  "烤羊羔": {
+    "alias_of": "逾越節的吃法"
+  },
+  "逾越羊羔": {
+    "alias_of": "逾越節羔羊"
+  },
+  "無殘疾公羊羔": {
+    "alias_of": "逾越節羔羊"
+  },
+  "血記": {
+    "alias_of": "逾越節血記"
+  },
+  "門框上的血": {
+    "alias_of": "逾越節血記"
+  },
+  "逾越節的血": {
+    "alias_of": "逾越節血記"
   },
   "擊殺長子": {
     "alias_of": "長子之死"
@@ -14297,6 +14730,12 @@
   "先知祭司王三職": {
     "alias_of": "基督三重職分"
   },
+  "逾越節羔羊預表基督": {
+    "alias_of": "基督預表（逾越節羔羊）"
+  },
+  "基督作為逾越節羔羊": {
+    "alias_of": "基督預表（逾越節羔羊）"
+  },
   "神伸手攻擊埃及": {
     "alias_of": "大能的手與出埃及神蹟"
   },
@@ -14386,6 +14825,15 @@
   },
   "重擔": {
     "alias_of": "擔子"
+  },
+  "redemption": {
+    "alias_of": "救贖"
+  },
+  "耶和華的救贖": {
+    "alias_of": "救贖"
+  },
+  "救了我們各家": {
+    "alias_of": "救贖"
   },
   "gaal": {
     "alias_of": "救贖goel"
