@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "link_folder/主題/新造與新生活.md",
+                "file": "01 創世記/第8章.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -54,7 +54,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "新造與新生活"
+              "title": "第8章"
             }
           }
         ],
@@ -65,30 +65,6 @@
         "type": "tabs",
         "dimension": 43.44783715012723,
         "children": [
-          {
-            "id": "63a9a556d850563e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "link_folder/主題/神的記念.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "神的記念"
-            }
-          },
           {
             "id": "e1f8091c9bd8916e",
             "type": "leaf",
@@ -200,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/主題/新造與新生活.md",
+                "file": "01 創世記/第8章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +186,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "新造與新生活 的反向連結"
+              "title": "第8章 的反向連結"
             }
           },
           {
@@ -219,12 +195,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/主題/新造與新生活.md",
+                "file": "01 創世記/第8章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "新造與新生活 的對外連結"
+              "title": "第8章 的對外連結"
             }
           },
           {
@@ -262,13 +238,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/主題/新造與新生活.md",
+                "file": "01 創世記/第8章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "新造與新生活 的大綱"
+              "title": "第8章 的大綱"
             }
           }
         ]
@@ -292,6 +268,7 @@
   },
   "active": "4fb0dbb9407c6ecb",
   "lastOpenFiles": [
+    "link_folder/主題/新造與新生活.md",
     "01 創世記/第8章.md",
     "01 創世記/第42章.md",
     "link_folder/主題/神的記念.md",
@@ -317,7 +294,6 @@
     "link_folder/神學/對兄弟的試驗.md",
     "02 出埃及記/第8章.md",
     "link_folder/歷史/埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）.md",
-    "link_folder/文化/爐灶和摶麵盆.md",
     "歷史",
     "人物",
     "神學",

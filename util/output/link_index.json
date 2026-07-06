@@ -1,12 +1,4 @@
 {
-  "三一神同工": {
-    "path": "link_folder/神學/三一神同工.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "三一神同工",
-    "status": "formal",
-    "aliases": []
-  },
   "亞伯拉罕分產": {
     "path": "link_folder/主題/亞伯拉罕分產.md",
     "type": "主題",
@@ -137,14 +129,6 @@
     "type": "主題",
     "secondary_types": [],
     "title": "信心與世俗的對比",
-    "status": "formal",
-    "aliases": []
-  },
-  "信心與忍耐": {
-    "path": "link_folder/神學/信心與忍耐.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "信心與忍耐",
     "status": "formal",
     "aliases": []
   },
@@ -417,14 +401,6 @@
     "status": "formal",
     "aliases": []
   },
-  "新造與新生活": {
-    "path": "link_folder/神學/新造與新生活.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "新造與新生活",
-    "status": "formal",
-    "aliases": []
-  },
   "族長祝福的不可更改性": {
     "path": "link_folder/主題/族長祝福的不可更改性.md",
     "type": "主題",
@@ -579,14 +555,6 @@
     "status": "formal",
     "aliases": []
   },
-  "神的恩典之約": {
-    "path": "link_folder/神學/神的恩典之約.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "神的恩典之約",
-    "status": "formal",
-    "aliases": []
-  },
   "神的旨意與人的詭詐": {
     "path": "link_folder/主題/神的旨意與人的詭詐.md",
     "type": "主題",
@@ -594,14 +562,6 @@
       "神學"
     ],
     "title": "神的旨意與人的詭詐",
-    "status": "formal",
-    "aliases": []
-  },
-  "神的記念": {
-    "path": "link_folder/神學/神的記念.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "神的記念",
     "status": "formal",
     "aliases": []
   },
@@ -1278,6 +1238,17 @@
     "status": "formal",
     "aliases": []
   },
+  "啟示錄 16-21（末世大冰雹）": {
+    "path": "link_folder/互文/啟示錄 16-21（末世大冰雹）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "啟示錄 16-21（末世大冰雹）",
+    "status": "formal",
+    "aliases": [
+      "末世大雹",
+      "啟16:21"
+    ]
+  },
   "啟示錄12章古蛇撒但": {
     "path": "link_folder/互文/啟示錄12章古蛇撒但.md",
     "type": "互文",
@@ -1464,6 +1435,18 @@
     "title": "撒拉與夏甲（代孕先例）",
     "status": "formal",
     "aliases": []
+  },
+  "撒母耳記上 15-24（掃羅認罪）": {
+    "path": "link_folder/互文/撒母耳記上 15-24（掃羅認罪）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "撒母耳記上 15-24（掃羅認罪）",
+    "status": "formal",
+    "aliases": [
+      "掃羅認罪",
+      "I have sinned",
+      "撒上15:24"
+    ]
   },
   "撒母耳記下13_10-19 暗嫩他瑪": {
     "path": "link_folder/互文/撒母耳記下13_10-19 暗嫩他瑪.md",
@@ -1731,6 +1714,18 @@
       "禮物挽回怒氣 (箴21-14)"
     ]
   },
+  "約伯記 38-22-23（神所存留的冰雹）": {
+    "path": "link_folder/互文/約伯記 38-22-23（神所存留的冰雹）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約伯記 38-22-23（神所存留的冰雹）",
+    "status": "formal",
+    "aliases": [
+      "存留的冰雹",
+      "伯38:22-23",
+      "國庫之雹"
+    ]
+  },
   "約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9": {
     "path": "link_folder/互文/約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9.md",
     "type": "互文",
@@ -1836,6 +1831,18 @@
       "我父作事直到如今",
       "父與子仍然作工",
       "約翰福音5章17節"
+    ]
+  },
+  "羅馬書 9-17（神興起法老）": {
+    "path": "link_folder/互文/羅馬書 9-17（神興起法老）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "羅馬書 9-17（神興起法老）",
+    "status": "formal",
+    "aliases": [
+      "羅9:17",
+      "Romans 9:17",
+      "羅9-17"
     ]
   },
   "羅馬書2_28-29 真割禮是內心的": {
@@ -2054,6 +2061,18 @@
       "腓2-7-8",
       "腓立比書2-7-8",
       "謙卑像基督 (腓2-7-8)"
+    ]
+  },
+  "路加福音 15-18（浪子認罪）": {
+    "path": "link_folder/互文/路加福音 15-18（浪子認罪）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路加福音 15-18（浪子認罪）",
+    "status": "formal",
+    "aliases": [
+      "浪子認罪",
+      "prodigal son confession",
+      "路15:18"
     ]
   },
   "路加福音15章": {
@@ -4529,6 +4548,19 @@
       "希伯來人 (過河的人)"
     ]
   },
+  "希伯來（Hebrew）": {
+    "path": "link_folder/原文/希伯來（Hebrew）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "希伯來（Hebrew）",
+    "status": "formal",
+    "aliases": [
+      "Hebrew",
+      "過河的人",
+      "希伯來語言",
+      "希伯來文字"
+    ]
+  },
   "希伯與希伯來名稱": {
     "path": "link_folder/原文/希伯與希伯來名稱.md",
     "type": "原文",
@@ -4794,6 +4826,17 @@
     "status": "formal",
     "aliases": []
   },
+  "炭疽（anthrax）": {
+    "path": "link_folder/原文/炭疽（anthrax）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "炭疽（anthrax）",
+    "status": "formal",
+    "aliases": [
+      "anthrax",
+      "炭疽病"
+    ]
+  },
   "瑪拿西（使之忘了）": {
     "path": "link_folder/原文/瑪拿西（使之忘了）.md",
     "type": "原文",
@@ -4992,6 +5035,19 @@
     "title": "誣告",
     "status": "formal",
     "aliases": []
+  },
+  "起泡的瘡": {
+    "path": "link_folder/原文/起泡的瘡.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "起泡的瘡",
+    "status": "formal",
+    "aliases": [
+      "shechin",
+      "boils",
+      "膿皰",
+      "迸出的疹子"
+    ]
   },
   "迦得（幸運）": {
     "path": "link_folder/原文/迦得（幸運）.md",
@@ -5905,6 +5961,14 @@
       "Mahanaim"
     ]
   },
+  "田間": {
+    "path": "link_folder/地點/田間.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "田間",
+    "status": "formal",
+    "aliases": []
+  },
   "疏割": {
     "path": "link_folder/地點/疏割.md",
     "type": "地點",
@@ -6210,6 +6274,18 @@
     "status": "formal",
     "aliases": []
   },
+  "亞皮斯（Apis）": {
+    "path": "link_folder/文化/亞皮斯（Apis）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "亞皮斯（Apis）",
+    "status": "formal",
+    "aliases": [
+      "Apis",
+      "聖牛",
+      "亞皮斯神"
+    ]
+  },
   "以色列的長老": {
     "path": "link_folder/文化/以色列的長老.md",
     "type": "文化",
@@ -6231,6 +6307,17 @@
     "status": "formal",
     "aliases": [
       "使女"
+    ]
+  },
+  "出埃及時序（一月底二月初）": {
+    "path": "link_folder/文化/出埃及時序（一月底二月初）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "出埃及時序（一月底二月初）",
+    "status": "formal",
+    "aliases": [
+      "雹災時節",
+      "埃及曆時序"
     ]
   },
   "印帶杖身份憑據": {
@@ -6380,6 +6467,18 @@
       "古埃及貿易"
     ]
   },
+  "哈妥爾（Hathor）": {
+    "path": "link_folder/文化/哈妥爾（Hathor）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "哈妥爾（Hathor）",
+    "status": "formal",
+    "aliases": [
+      "Hathor",
+      "母牛神",
+      "哈托爾"
+    ]
+  },
   "喝道「跪下」的禮儀": {
     "path": "link_folder/文化/喝道「跪下」的禮儀.md",
     "type": "文化",
@@ -6475,6 +6574,43 @@
     "title": "埃及印璽戒指代表權柄",
     "status": "formal",
     "aliases": []
+  },
+  "埃及的天候之神": {
+    "path": "link_folder/文化/埃及的天候之神.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "埃及的天候之神",
+    "status": "formal",
+    "aliases": [
+      "Nut",
+      "Set",
+      "天空女神",
+      "風暴神"
+    ]
+  },
+  "埃及的祭司服飾（亞麻）": {
+    "path": "link_folder/文化/埃及的祭司服飾（亞麻）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "埃及的祭司服飾（亞麻）",
+    "status": "formal",
+    "aliases": [
+      "亞麻布",
+      "細麻",
+      "祭司服飾"
+    ]
+  },
+  "埃及的醫治之神": {
+    "path": "link_folder/文化/埃及的醫治之神.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "埃及的醫治之神",
+    "status": "formal",
+    "aliases": [
+      "Imhotep",
+      "Sekhmet",
+      "醫治神"
+    ]
   },
   "埃及行法術的": {
     "path": "link_folder/文化/埃及行法術的.md",
@@ -6643,6 +6779,19 @@
     "status": "formal",
     "aliases": [
       "ovens and kneading bowls"
+    ]
+  },
+  "磚窯": {
+    "path": "link_folder/文化/磚窯.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "磚窯",
+    "status": "formal",
+    "aliases": [
+      "燒窯",
+      "窯",
+      "爐",
+      "爐灰"
     ]
   },
   "神命名與主權": {
@@ -6822,6 +6971,17 @@
     "title": "香料乳香沒藥貿易",
     "status": "formal",
     "aliases": []
+  },
+  "駱駝成為家畜": {
+    "path": "link_folder/文化/駱駝成為家畜.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "駱駝成為家畜",
+    "status": "formal",
+    "aliases": [
+      "camel domestication",
+      "駱駝"
+    ]
   },
   "亞伯拉罕在示劍築壇": {
     "path": "link_folder/歷史/亞伯拉罕在示劍築壇.md",
@@ -7230,6 +7390,17 @@
       "法老的四次讓步"
     ]
   },
+  "法老第二次轉硬": {
+    "path": "link_folder/歷史/法老第二次轉硬.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "法老第二次轉硬",
+    "status": "formal",
+    "aliases": [
+      "法老見災止即越發犯罪",
+      "法老再硬心"
+    ]
+  },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
     "type": "歷史",
@@ -7280,6 +7451,30 @@
       "糧倉制度",
       "備荒制度"
     ]
+  },
+  "第七災：雹災": {
+    "path": "link_folder/歷史/第七災：雹災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "第七災：雹災",
+    "status": "formal",
+    "aliases": []
+  },
+  "第五災：畜疫之災": {
+    "path": "link_folder/歷史/第五災：畜疫之災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "第五災：畜疫之災",
+    "status": "formal",
+    "aliases": []
+  },
+  "第六災：瘡災": {
+    "path": "link_folder/歷史/第六災：瘡災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "第六災：瘡災",
+    "status": "formal",
+    "aliases": []
   },
   "約瑟下埃及": {
     "path": "link_folder/歷史/約瑟下埃及.md",
@@ -7488,6 +7683,16 @@
       "洪水前最後七天",
       "最後七天的寬限"
     ]
+  },
+  "三一神同工": {
+    "path": "link_folder/神學/三一神同工.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "三一神同工",
+    "status": "formal",
+    "aliases": []
   },
   "三位一體在創造中的隱現": {
     "path": "link_folder/神學/三位一體在創造中的隱現.md",
@@ -7845,6 +8050,16 @@
     "status": "formal",
     "aliases": []
   },
+  "信心與忍耐": {
+    "path": "link_folder/神學/信心與忍耐.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "信心與忍耐",
+    "status": "formal",
+    "aliases": []
+  },
   "信心與恐懼": {
     "path": "link_folder/神學/信心與恐懼.md",
     "type": "神學",
@@ -7873,6 +8088,17 @@
     "title": "光與黑暗的分別",
     "status": "formal",
     "aliases": []
+  },
+  "全地都是屬耶和華的": {
+    "path": "link_folder/神學/全地都是屬耶和華的.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "全地都是屬耶和華的",
+    "status": "formal",
+    "aliases": [
+      "大地是屬耶和華的",
+      "全地屬主"
+    ]
   },
   "全能的神（El Shaddai）": {
     "path": "link_folder/神學/全能的神（El Shaddai）.md",
@@ -7903,6 +8129,17 @@
       "substitutionary sacrifice"
     ]
   },
+  "公義與邪惡的對立": {
+    "path": "link_folder/神學/公義與邪惡的對立.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "公義與邪惡的對立",
+    "status": "formal",
+    "aliases": [
+      "耶和華是公義的",
+      "我和我的百姓是邪惡的"
+    ]
+  },
   "出埃及為要事奉神": {
     "path": "link_folder/神學/出埃及為要事奉神.md",
     "type": "神學",
@@ -7922,6 +8159,17 @@
     "title": "分別善惡的樹",
     "status": "formal",
     "aliases": []
+  },
+  "分別歌珊地": {
+    "path": "link_folder/神學/分別歌珊地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "分別歌珊地",
+    "status": "formal",
+    "aliases": [
+      "歌珊地無災",
+      "神分別保護"
+    ]
   },
   "分別百姓": {
     "path": "link_folder/神學/分別百姓.md",
@@ -8690,6 +8938,17 @@
       "摩西憑血氣施救"
     ]
   },
+  "摩西的代求": {
+    "path": "link_folder/神學/摩西的代求.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "摩西的代求",
+    "status": "formal",
+    "aliases": [
+      "出城舉手禱告",
+      "摩西禱告"
+    ]
+  },
   "摩西的呼召與差遣": {
     "path": "link_folder/神學/摩西的呼召與差遣.md",
     "type": "神學",
@@ -8809,6 +9068,17 @@
       "敬畏耶和華"
     ]
   },
+  "敬畏耶和華的話": {
+    "path": "link_folder/神學/敬畏耶和華的話.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "敬畏耶和華的話",
+    "status": "formal",
+    "aliases": [
+      "懼怕耶和華這話",
+      "敬畏神的話"
+    ]
+  },
   "新天新地": {
     "path": "link_folder/神學/新天新地.md",
     "type": "神學",
@@ -8828,6 +9098,16 @@
       "新舊約"
     ]
   },
+  "新造與新生活": {
+    "path": "link_folder/神學/新造與新生活.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "新造與新生活",
+    "status": "formal",
+    "aliases": []
+  },
   "方舟的豫表": {
     "path": "link_folder/神學/方舟的豫表.md",
     "type": "神學",
@@ -8835,6 +9115,17 @@
     "title": "方舟的豫表",
     "status": "formal",
     "aliases": []
+  },
+  "普天下沒有像我的": {
+    "path": "link_folder/神學/普天下沒有像我的.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "普天下沒有像我的",
+    "status": "formal",
+    "aliases": [
+      "in all the earth",
+      "沒有像我的"
+    ]
   },
   "智慧與治理": {
     "path": "link_folder/神學/智慧與治理.md",
@@ -8936,6 +9227,17 @@
     "title": "法老的心剛硬",
     "status": "formal",
     "aliases": []
+  },
+  "法老的認罪": {
+    "path": "link_folder/神學/法老的認罪.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "法老的認罪",
+    "status": "formal",
+    "aliases": [
+      "這一次我犯了罪了",
+      "法老認罪"
+    ]
   },
   "法老預表撒但": {
     "path": "link_folder/神學/法老預表撒但.md",
@@ -9177,6 +9479,18 @@
     "status": "formal",
     "aliases": []
   },
+  "神大能與名的傳遍": {
+    "path": "link_folder/神學/神大能與名的傳遍.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神大能與名的傳遍",
+    "status": "formal",
+    "aliases": [
+      "顯我的大能",
+      "使我的名傳遍天下",
+      "神名的彰顯"
+    ]
+  },
   "神尋找罪人": {
     "path": "link_folder/神學/神尋找罪人.md",
     "type": "神學",
@@ -9319,6 +9633,16 @@
     "status": "formal",
     "aliases": []
   },
+  "神的恩典之約": {
+    "path": "link_folder/神學/神的恩典之約.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神的恩典之約",
+    "status": "formal",
+    "aliases": []
+  },
   "神的恩典與保護": {
     "path": "link_folder/神學/神的恩典與保護.md",
     "type": "神學",
@@ -9400,6 +9724,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "神的管教與鞭打",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的記念": {
+    "path": "link_folder/神學/神的記念.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神的記念",
     "status": "formal",
     "aliases": []
   },
@@ -9610,6 +9944,17 @@
     "status": "candidate",
     "aliases": []
   },
+  "第五災：重重的瘟疫": {
+    "path": "link_folder/神學/第五災：重重的瘟疫.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "第五災：重重的瘟疫",
+    "status": "formal",
+    "aliases": [
+      "畜疫之災",
+      "第五災"
+    ]
+  },
   "米甸曠野對摩西的預備": {
     "path": "link_folder/神學/米甸曠野對摩西的預備.md",
     "type": "神學",
@@ -9735,6 +10080,17 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華使法老的心剛硬": {
+    "path": "link_folder/神學/耶和華使法老的心剛硬.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華使法老的心剛硬",
+    "status": "formal",
+    "aliases": [
+      "使法老剛硬",
+      "神使剛硬"
+    ]
+  },
   "耶和華使約瑟在司獄眼前蒙恩": {
     "path": "link_folder/神學/耶和華使約瑟在司獄眼前蒙恩.md",
     "type": "神學",
@@ -9816,6 +10172,17 @@
     "title": "耶和華的得勝",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華的手": {
+    "path": "link_folder/神學/耶和華的手.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華的手",
+    "status": "formal",
+    "aliases": [
+      "hand of the LORD",
+      "神的手"
+    ]
   },
   "耶和華的話臨到": {
     "path": "link_folder/神學/耶和華的話臨到.md",
@@ -11964,6 +12331,12 @@
   "詩篇133-1": {
     "alias_of": "和睦是神喜悅 (詩133-1)"
   },
+  "末世大雹": {
+    "alias_of": "啟示錄 16-21（末世大冰雹）"
+  },
+  "啟16:21": {
+    "alias_of": "啟示錄 16-21（末世大冰雹）"
+  },
   "希伯來書12:5-11 神管教兒女": {
     "alias_of": "希伯來書12_5-11 神管教兒女"
   },
@@ -11996,6 +12369,15 @@
   },
   "希伯來書11章摩西被藏": {
     "alias_of": "摩西因信被藏三個月"
+  },
+  "掃羅認罪": {
+    "alias_of": "撒母耳記上 15-24（掃羅認罪）"
+  },
+  "I have sinned": {
+    "alias_of": "撒母耳記上 15-24（掃羅認罪）"
+  },
+  "撒上15:24": {
+    "alias_of": "撒母耳記上 15-24（掃羅認罪）"
   },
   "撒母耳記下13:10-19 暗嫩他瑪": {
     "alias_of": "撒母耳記下13_10-19 暗嫩他瑪"
@@ -12096,6 +12478,15 @@
   "箴言21-14": {
     "alias_of": "禮物挽回怒氣 (箴21-14)"
   },
+  "存留的冰雹": {
+    "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
+  },
+  "伯38:22-23": {
+    "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
+  },
+  "國庫之雹": {
+    "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
+  },
   "約瑟受苦後高升與基督受苦後得榮耀 (腓2:8-9)": {
     "alias_of": "約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9"
   },
@@ -12129,6 +12520,15 @@
   "約翰福音5章17節": {
     "alias_of": "約翰福音5章父與子仍然作工"
   },
+  "羅9:17": {
+    "alias_of": "羅馬書 9-17（神興起法老）"
+  },
+  "Romans 9:17": {
+    "alias_of": "羅馬書 9-17（神興起法老）"
+  },
+  "羅9-17": {
+    "alias_of": "羅馬書 9-17（神興起法老）"
+  },
   "羅馬書2:28-29 真割禮是內心的": {
     "alias_of": "羅馬書2_28-29 真割禮是內心的"
   },
@@ -12158,6 +12558,15 @@
   },
   "腓立比書2-7-8": {
     "alias_of": "謙卑像基督 (腓2-7-8)"
+  },
+  "浪子認罪": {
+    "alias_of": "路加福音 15-18（浪子認罪）"
+  },
+  "prodigal son confession": {
+    "alias_of": "路加福音 15-18（浪子認罪）"
+  },
+  "路15:18": {
+    "alias_of": "路加福音 15-18（浪子認罪）"
   },
   "雅各書1:20 人的怒氣不成就神的義": {
     "alias_of": "雅各書1_20 人的怒氣不成就神的義"
@@ -12531,6 +12940,18 @@
   "希伯來人 (過河的人)": {
     "alias_of": "希伯來人_過河的人"
   },
+  "Hebrew": {
+    "alias_of": "希伯來（Hebrew）"
+  },
+  "過河的人": {
+    "alias_of": "希伯來（Hebrew）"
+  },
+  "希伯來語言": {
+    "alias_of": "希伯來（Hebrew）"
+  },
+  "希伯來文字": {
+    "alias_of": "希伯來（Hebrew）"
+  },
   "希伯來名稱的來源": {
     "alias_of": "希伯與希伯來名稱"
   },
@@ -12603,6 +13024,12 @@
   "剛硬三字": {
     "alias_of": "法老心剛硬三字"
   },
+  "anthrax": {
+    "alias_of": "炭疽（anthrax）"
+  },
+  "炭疽病": {
+    "alias_of": "炭疽（anthrax）"
+  },
   "監/監牢/坑": {
     "alias_of": "監_坑_地牢_dungeon"
   },
@@ -12620,6 +13047,18 @@
   },
   "詩51": {
     "alias_of": "詩篇51篇"
+  },
+  "shechin": {
+    "alias_of": "起泡的瘡"
+  },
+  "boils": {
+    "alias_of": "起泡的瘡"
+  },
+  "膿皰": {
+    "alias_of": "起泡的瘡"
+  },
+  "迸出的疹子": {
+    "alias_of": "起泡的瘡"
   },
   "傳譯員": {
     "alias_of": "通事（傳譯員）"
@@ -12858,11 +13297,26 @@
   "不食坐骨神經": {
     "alias_of": "不吃大腿窩的筋"
   },
+  "Apis": {
+    "alias_of": "亞皮斯（Apis）"
+  },
+  "聖牛": {
+    "alias_of": "亞皮斯（Apis）"
+  },
+  "亞皮斯神": {
+    "alias_of": "亞皮斯（Apis）"
+  },
   "以色列長老": {
     "alias_of": "以色列的長老"
   },
   "使女": {
     "alias_of": "使女代孕習俗"
+  },
+  "雹災時節": {
+    "alias_of": "出埃及時序（一月底二月初）"
+  },
+  "埃及曆時序": {
+    "alias_of": "出埃及時序（一月底二月初）"
   },
   "印、帶子、杖": {
     "alias_of": "印帶杖身份憑據"
@@ -12909,6 +13363,15 @@
   "古埃及貿易": {
     "alias_of": "古埃及銀子交易"
   },
+  "Hathor": {
+    "alias_of": "哈妥爾（Hathor）"
+  },
+  "母牛神": {
+    "alias_of": "哈妥爾（Hathor）"
+  },
+  "哈托爾": {
+    "alias_of": "哈妥爾（Hathor）"
+  },
   "牧羊人被埃及人厭惡": {
     "alias_of": "埃及人厭惡牧羊人"
   },
@@ -12929,6 +13392,36 @@
   },
   "分席": {
     "alias_of": "埃及人的飲食分席"
+  },
+  "Nut": {
+    "alias_of": "埃及的天候之神"
+  },
+  "Set": {
+    "alias_of": "埃及的天候之神"
+  },
+  "天空女神": {
+    "alias_of": "埃及的天候之神"
+  },
+  "風暴神": {
+    "alias_of": "埃及的天候之神"
+  },
+  "亞麻布": {
+    "alias_of": "埃及的祭司服飾（亞麻）"
+  },
+  "細麻": {
+    "alias_of": "埃及的祭司服飾（亞麻）"
+  },
+  "祭司服飾": {
+    "alias_of": "埃及的祭司服飾（亞麻）"
+  },
+  "Imhotep": {
+    "alias_of": "埃及的醫治之神"
+  },
+  "Sekhmet": {
+    "alias_of": "埃及的醫治之神"
+  },
+  "醫治神": {
+    "alias_of": "埃及的醫治之神"
   },
   "wise men and sorcerers": {
     "alias_of": "埃及行法術的"
@@ -12975,6 +13468,18 @@
   "ovens and kneading bowls": {
     "alias_of": "爐灶和摶麵盆"
   },
+  "燒窯": {
+    "alias_of": "磚窯"
+  },
+  "窯": {
+    "alias_of": "磚窯"
+  },
+  "爐": {
+    "alias_of": "磚窯"
+  },
+  "爐灰": {
+    "alias_of": "磚窯"
+  },
   "立柱澆油": {
     "alias_of": "立石柱與澆油"
   },
@@ -13013,6 +13518,12 @@
   },
   "蛙頭女神": {
     "alias_of": "青蛙為埃及聖物"
+  },
+  "camel domestication": {
+    "alias_of": "駱駝成為家畜"
+  },
+  "駱駝": {
+    "alias_of": "駱駝成為家畜"
   },
   "Aaron's staff swallowed": {
     "alias_of": "亞倫的杖吞了術士的杖"
@@ -13124,6 +13635,12 @@
   },
   "法老的四次讓步": {
     "alias_of": "法老四次妥協"
+  },
+  "法老見災止即越發犯罪": {
+    "alias_of": "法老第二次轉硬"
+  },
+  "法老再硬心": {
+    "alias_of": "法老第二次轉硬"
   },
   "糧倉制度": {
     "alias_of": "積貨城制度"
@@ -13251,14 +13768,32 @@
   "伸出的膀臂": {
     "alias_of": "伸出來的膀臂"
   },
+  "大地是屬耶和華的": {
+    "alias_of": "全地都是屬耶和華的"
+  },
+  "全地屬主": {
+    "alias_of": "全地都是屬耶和華的"
+  },
   "代贖": {
     "alias_of": "公羊代贖"
   },
   "substitutionary sacrifice": {
     "alias_of": "公羊代贖"
   },
+  "耶和華是公義的": {
+    "alias_of": "公義與邪惡的對立"
+  },
+  "我和我的百姓是邪惡的": {
+    "alias_of": "公義與邪惡的對立"
+  },
   "出埃及的目的": {
     "alias_of": "出埃及為要事奉神"
+  },
+  "歌珊地無災": {
+    "alias_of": "分別歌珊地"
+  },
+  "神分別保護": {
+    "alias_of": "分別歌珊地"
   },
   "division": {
     "alias_of": "分別百姓"
@@ -13386,6 +13921,12 @@
   "摩西憑血氣施救": {
     "alias_of": "摩西憑己力施救與神的時間"
   },
+  "出城舉手禱告": {
+    "alias_of": "摩西的代求"
+  },
+  "摩西禱告": {
+    "alias_of": "摩西的代求"
+  },
   "神差遣摩西": {
     "alias_of": "摩西的呼召與差遣"
   },
@@ -13422,11 +13963,23 @@
   "敬畏耶和華": {
     "alias_of": "敬畏神"
   },
+  "懼怕耶和華這話": {
+    "alias_of": "敬畏耶和華的話"
+  },
+  "敬畏神的話": {
+    "alias_of": "敬畏耶和華的話"
+  },
   "New Testament": {
     "alias_of": "新約"
   },
   "新舊約": {
     "alias_of": "新約"
+  },
+  "in all the earth": {
+    "alias_of": "普天下沒有像我的"
+  },
+  "沒有像我的": {
+    "alias_of": "普天下沒有像我的"
   },
   "hardening of Pharaoh's heart": {
     "alias_of": "法老心剛硬"
@@ -13439,6 +13992,12 @@
   },
   "法老心固執": {
     "alias_of": "法老心剛硬"
+  },
+  "這一次我犯了罪了": {
+    "alias_of": "法老的認罪"
+  },
+  "法老認罪": {
+    "alias_of": "法老的認罪"
   },
   "法老預表魔鬼": {
     "alias_of": "法老預表撒但"
@@ -13487,6 +14046,15 @@
   },
   "神保守救贖中的生命": {
     "alias_of": "神保守救贖計畫中的生命"
+  },
+  "顯我的大能": {
+    "alias_of": "神大能與名的傳遍"
+  },
+  "使我的名傳遍天下": {
+    "alias_of": "神大能與名的傳遍"
+  },
+  "神名的彰顯": {
+    "alias_of": "神大能與名的傳遍"
   },
   "神保守人不犯罪": {
     "alias_of": "神攔阻人犯罪"
@@ -13560,6 +14128,12 @@
   "人種的是什麼收的也是什麼": {
     "alias_of": "種與收的法則"
   },
+  "畜疫之災": {
+    "alias_of": "第五災：重重的瘟疫"
+  },
+  "第五災": {
+    "alias_of": "第五災：重重的瘟疫"
+  },
   "摩西在米甸的預備": {
     "alias_of": "米甸曠野對摩西的預備"
   },
@@ -13584,6 +14158,12 @@
   "在耶和華的山上必有預備": {
     "alias_of": "耶和華以勒"
   },
+  "使法老剛硬": {
+    "alias_of": "耶和華使法老的心剛硬"
+  },
+  "神使剛硬": {
+    "alias_of": "耶和華使法老的心剛硬"
+  },
   "我是耶和華": {
     "alias_of": "耶和華我是"
   },
@@ -13601,6 +14181,12 @@
   },
   "永活的神": {
     "alias_of": "耶和華永生神"
+  },
+  "hand of the LORD": {
+    "alias_of": "耶和華的手"
+  },
+  "神的手": {
+    "alias_of": "耶和華的手"
   },
   "耶和華神": {
     "alias_of": "耶和華神的名字"
