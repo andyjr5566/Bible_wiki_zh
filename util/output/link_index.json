@@ -4704,6 +4704,19 @@
       "摩西名字含義"
     ]
   },
+  "摸得著的黑暗": {
+    "path": "link_folder/原文/摸得著的黑暗.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "摸得著的黑暗",
+    "status": "formal",
+    "aliases": [
+      "yāmēsh",
+      "摸得著",
+      "palpable darkness",
+      "可摸的黑暗"
+    ]
+  },
   "撒發那忒巴內亞": {
     "path": "link_folder/原文/撒發那忒巴內亞.md",
     "type": "原文",
@@ -4730,6 +4743,18 @@
     "status": "formal",
     "aliases": [
       "「斬斷你的頭」/「從你將你的頭抬起來」"
+    ]
+  },
+  "東風與西風": {
+    "path": "link_folder/原文/東風與西風.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "東風與西風",
+    "status": "formal",
+    "aliases": [
+      "east and west winds",
+      "神掌管風向",
+      "神使用風"
     ]
   },
   "毗努伊勒 (神的面)": {
@@ -4931,6 +4956,19 @@
     "title": "約瑟（增添／除去）",
     "status": "formal",
     "aliases": []
+  },
+  "網羅": {
+    "path": "link_folder/原文/網羅.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "網羅",
+    "status": "formal",
+    "aliases": [
+      "yqš",
+      "陷害",
+      "誘餌",
+      "snare"
+    ]
   },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
@@ -6648,6 +6686,20 @@
     "status": "candidate",
     "aliases": []
   },
+  "太陽神Ra（Amon-Re）": {
+    "path": "link_folder/文化/太陽神Ra（Amon-Re）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "太陽神Ra（Amon-Re）",
+    "status": "formal",
+    "aliases": [
+      "Ra",
+      "Amon-Re",
+      "Amun-Re",
+      "埃及太陽神",
+      "國神"
+    ]
+  },
   "奠酒": {
     "path": "link_folder/文化/奠酒.md",
     "type": "文化",
@@ -7095,6 +7147,19 @@
     "title": "何利人與以東人同化",
     "status": "formal",
     "aliases": []
+  },
+  "再見面必死": {
+    "path": "link_folder/歷史/再見面必死.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "再見面必死",
+    "status": "formal",
+    "aliases": [
+      "摩西與法老最終破裂",
+      "final confrontation",
+      "法老逐摩西",
+      "不要再見我的面"
+    ]
   },
   "分裂國度": {
     "path": "link_folder/歷史/分裂國度.md",
@@ -7546,6 +7611,18 @@
       "青蛙之災"
     ]
   },
+  "蝗災": {
+    "path": "link_folder/歷史/蝗災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "蝗災",
+    "status": "formal",
+    "aliases": [
+      "第八災",
+      "locusts",
+      "蝗蟲之災"
+    ]
+  },
   "蝨災": {
     "path": "link_folder/歷史/蝨災.md",
     "type": "歷史",
@@ -7658,6 +7735,19 @@
     "title": "雅各買示劍地",
     "status": "formal",
     "aliases": []
+  },
+  "黑暗之災": {
+    "path": "link_folder/歷史/黑暗之災.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "黑暗之災",
+    "status": "formal",
+    "aliases": [
+      "第九災",
+      "darkness",
+      "黑暗",
+      "三天黑暗"
+    ]
   },
   "一百二十年的兩種解釋": {
     "path": "link_folder/神學/一百二十年的兩種解釋.md",
@@ -8078,6 +8168,18 @@
     "title": "假合一",
     "status": "formal",
     "aliases": []
+  },
+  "傳於後代": {
+    "path": "link_folder/神學/傳於後代.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "傳於後代",
+    "status": "formal",
+    "aliases": [
+      "敘述式神學",
+      "tell your children",
+      "傳於後代之命令"
+    ]
   },
   "光與黑暗的分別": {
     "path": "link_folder/神學/光與黑暗的分別.md",
@@ -10525,6 +10627,20 @@
     "title": "逃避情慾",
     "status": "formal",
     "aliases": []
+  },
+  "連一蹄也不留下": {
+    "path": "link_folder/神學/連一蹄也不留下.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "連一蹄也不留下",
+    "status": "formal",
+    "aliases": [
+      "完全奉獻",
+      "not a hoof left behind",
+      "no hoof",
+      "一蹄不留",
+      "全人奉獻"
+    ]
   },
   "配偶與婚姻": {
     "path": "link_folder/神學/配偶與婚姻.md",
@@ -12994,8 +13110,29 @@
   "摩西名字含義": {
     "alias_of": "摩西名字的由來"
   },
+  "yāmēsh": {
+    "alias_of": "摸得著的黑暗"
+  },
+  "摸得著": {
+    "alias_of": "摸得著的黑暗"
+  },
+  "palpable darkness": {
+    "alias_of": "摸得著的黑暗"
+  },
+  "可摸的黑暗": {
+    "alias_of": "摸得著的黑暗"
+  },
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
+  },
+  "east and west winds": {
+    "alias_of": "東風與西風"
+  },
+  "神掌管風向": {
+    "alias_of": "東風與西風"
+  },
+  "神使用風": {
+    "alias_of": "東風與西風"
   },
   "Peniel": {
     "alias_of": "毗努伊勒 (神的面)"
@@ -13032,6 +13169,18 @@
   },
   "監/監牢/坑": {
     "alias_of": "監_坑_地牢_dungeon"
+  },
+  "yqš": {
+    "alias_of": "網羅"
+  },
+  "陷害": {
+    "alias_of": "網羅"
+  },
+  "誘餌": {
+    "alias_of": "網羅"
+  },
+  "snare": {
+    "alias_of": "網羅"
   },
   "聘金": {
     "alias_of": "聘金與禮物"
@@ -13444,6 +13593,21 @@
   "遷徙車輛": {
     "alias_of": "埃及車輛與遷徙"
   },
+  "Ra": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
+  "Amon-Re": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
+  "Amun-Re": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
+  "埃及太陽神": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
+  "國神": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
   "奠祭": {
     "alias_of": "奠酒"
   },
@@ -13533,6 +13697,18 @@
   },
   "亞倫的蛇吞了術士的蛇": {
     "alias_of": "亞倫的杖吞了術士的杖"
+  },
+  "摩西與法老最終破裂": {
+    "alias_of": "再見面必死"
+  },
+  "final confrontation": {
+    "alias_of": "再見面必死"
+  },
+  "法老逐摩西": {
+    "alias_of": "再見面必死"
+  },
+  "不要再見我的面": {
+    "alias_of": "再見面必死"
   },
   "出六14-27": {
     "alias_of": "利未的族譜（出六14-27）"
@@ -13666,6 +13842,15 @@
   "青蛙之災": {
     "alias_of": "蛙災"
   },
+  "第八災": {
+    "alias_of": "蝗災"
+  },
+  "locusts": {
+    "alias_of": "蝗災"
+  },
+  "蝗蟲之災": {
+    "alias_of": "蝗災"
+  },
   "third plague": {
     "alias_of": "蝨災"
   },
@@ -13695,6 +13880,18 @@
   },
   "雅各以掃關係": {
     "alias_of": "雅各與以掃的恩怨"
+  },
+  "第九災": {
+    "alias_of": "黑暗之災"
+  },
+  "darkness": {
+    "alias_of": "黑暗之災"
+  },
+  "黑暗": {
+    "alias_of": "黑暗之災"
+  },
+  "三天黑暗": {
+    "alias_of": "黑暗之災"
   },
   "洪水前一百二十年": {
     "alias_of": "一百二十年的兩種解釋"
@@ -13767,6 +13964,15 @@
   },
   "伸出的膀臂": {
     "alias_of": "伸出來的膀臂"
+  },
+  "敘述式神學": {
+    "alias_of": "傳於後代"
+  },
+  "tell your children": {
+    "alias_of": "傳於後代"
+  },
+  "傳於後代之命令": {
+    "alias_of": "傳於後代"
   },
   "大地是屬耶和華的": {
     "alias_of": "全地都是屬耶和華的"
@@ -14256,6 +14462,21 @@
   },
   "remember my covenant": {
     "alias_of": "記念我的約"
+  },
+  "完全奉獻": {
+    "alias_of": "連一蹄也不留下"
+  },
+  "not a hoof left behind": {
+    "alias_of": "連一蹄也不留下"
+  },
+  "no hoof": {
+    "alias_of": "連一蹄也不留下"
+  },
+  "一蹄不留": {
+    "alias_of": "連一蹄也不留下"
+  },
+  "全人奉獻": {
+    "alias_of": "連一蹄也不留下"
   },
   "新生": {
     "alias_of": "重生"

@@ -1,8 +1,15 @@
 {
-  "total_warnings": 2,
+  "total_warnings": 3,
   "critical_count": 0,
-  "warning_count": 2,
+  "warning_count": 3,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第10章.md",
+      "target": "耶和華",
+      "message": "同一 alias「耶和華」指向多個 target: 耶和華, 耶和華的話臨到"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

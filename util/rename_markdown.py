@@ -381,3 +381,8 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+
+'''
+Usage:
+    python util/rename_markdown.py <source> <destination> [--dry-run]
+'''

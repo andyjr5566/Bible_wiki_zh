@@ -121,3 +121,9 @@ C:\Obsidian\Hermes\scripture\scheme.md
 	2. 若是有，應該是主要章節沒寫好,先讀在檢查link 寫法是否有誤 (90% 問題出在這)
     3. 若是依然沒過,檢查 broken link 在 link folder 的所在檔案, link 寫法是否有錯
     4. 若是沒過，在考慮這個是不是不用設link
+- 若是遇到要改 md檔案的名稱，尤其是link_folder裡面的條目，請用"util\rename_markdown.py" 這個工具來改名，它可以安全改名 Markdown 檔案，並同步更新整個 vault 內指向它的 WikiLink。
+	```
+		Usage:
+			python util/rename_markdown.py <source> <destination> [--dry-run]
+	```
+
