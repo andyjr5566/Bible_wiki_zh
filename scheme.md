@@ -537,7 +537,6 @@ source_scope: collected_only
 # 條目名稱
 
 ## 定義
-（保護區）
 
 ## 按書卷累積
 
@@ -549,7 +548,6 @@ source_scope: collected_only
 <!-- accumulation:但以理書:3:end -->
 
 ## 主題發展
-（保護區）
 
 ## 相關條目
 

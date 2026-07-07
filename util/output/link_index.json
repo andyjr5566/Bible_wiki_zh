@@ -1186,6 +1186,19 @@
     "status": "formal",
     "aliases": []
   },
+  "創五十25 約瑟骸骨應許": {
+    "path": "link_folder/互文/創五十25 約瑟骸骨應許.md",
+    "type": "互文",
+    "secondary_types": [
+      "應許",
+      "應驗"
+    ],
+    "title": "創五十25 約瑟骸骨應許",
+    "status": "formal",
+    "aliases": [
+      "創50:25"
+    ]
+  },
   "創十五13 四百年寄居預言": {
     "path": "link_folder/互文/創十五13 四百年寄居預言.md",
     "type": "互文",
@@ -1199,6 +1212,19 @@
       "創15:13",
       "四百年寄居預言",
       "亞伯拉罕之約的寄居預言"
+    ]
+  },
+  "創十五13-16 迦南應許": {
+    "path": "link_folder/互文/創十五13-16 迦南應許.md",
+    "type": "互文",
+    "secondary_types": [
+      "應許",
+      "約"
+    ],
+    "title": "創十五13-16 迦南應許",
+    "status": "formal",
+    "aliases": [
+      "創15:13-16"
     ]
   },
   "創十五14 亞伯拉罕之約的財物應驗": {
@@ -5249,6 +5275,21 @@
     "status": "formal",
     "aliases": []
   },
+  "記號與經文": {
+    "path": "link_folder/原文/記號與經文.md",
+    "type": "原文",
+    "secondary_types": [
+      "禮儀",
+      "猶太傳統"
+    ],
+    "title": "記號與經文",
+    "status": "formal",
+    "aliases": [
+      "Tefillin",
+      "經匣",
+      "Phylacteries"
+    ]
+  },
   "詩篇51篇": {
     "path": "link_folder/原文/詩篇51篇.md",
     "type": "原文",
@@ -5401,6 +5442,17 @@
     "status": "formal",
     "aliases": []
   },
+  "驢用羊羔代贖": {
+    "path": "link_folder/原文/驢用羊羔代贖.md",
+    "type": "原文",
+    "secondary_types": [
+      "禮儀",
+      "律例"
+    ],
+    "title": "驢用羊羔代贖",
+    "status": "formal",
+    "aliases": []
+  },
   "骨中的骨，肉中的肉": {
     "path": "link_folder/原文/骨中的骨，肉中的肉.md",
     "type": "原文",
@@ -5511,6 +5563,16 @@
     "aliases": [
       "Timnah"
     ]
+  },
+  "以倘": {
+    "path": "link_folder/地點/以倘.md",
+    "type": "地點",
+    "secondary_types": [
+      "地理"
+    ],
+    "title": "以倘",
+    "status": "formal",
+    "aliases": []
   },
   "以得臺": {
     "path": "link_folder/地點/以得臺.md",
@@ -6149,6 +6211,21 @@
     "status": "formal",
     "aliases": []
   },
+  "沿海大道（Via Maris）": {
+    "path": "link_folder/地點/沿海大道（Via Maris）.md",
+    "type": "地點",
+    "secondary_types": [
+      "地理",
+      "路線"
+    ],
+    "title": "沿海大道（Via Maris）",
+    "status": "formal",
+    "aliases": [
+      "非利士地的道路",
+      "Way of the Philistines",
+      "Derech Eretz Plishtim"
+    ]
+  },
   "波提乏的家": {
     "path": "link_folder/地點/波提乏的家.md",
     "type": "地點",
@@ -6340,6 +6417,16 @@
       "Jordan River"
     ]
   },
+  "紅海曠野": {
+    "path": "link_folder/地點/紅海曠野.md",
+    "type": "地點",
+    "secondary_types": [
+      "地理"
+    ],
+    "title": "紅海曠野",
+    "status": "formal",
+    "aliases": []
+  },
   "耶路撒冷": {
     "path": "link_folder/地點/耶路撒冷.md",
     "type": "地點",
@@ -6475,6 +6562,23 @@
     "title": "非利士人",
     "status": "formal",
     "aliases": []
+  },
+  "非利士地": {
+    "path": "link_folder/地點/非利士地.md",
+    "type": "地點",
+    "secondary_types": [
+      "神學",
+      "歷史",
+      "原文"
+    ],
+    "title": "非利士地",
+    "status": "formal",
+    "aliases": [
+      "Philistia",
+      "非利士",
+      "非利士人的地",
+      "巴勒斯坦地"
+    ]
   },
   "鹽海": {
     "path": "link_folder/地點/鹽海.md",
@@ -7359,6 +7463,16 @@
     "status": "formal",
     "aliases": []
   },
+  "以色列人帶兵器": {
+    "path": "link_folder/歷史/以色列人帶兵器.md",
+    "type": "歷史",
+    "secondary_types": [
+      "軍事"
+    ],
+    "title": "以色列人帶兵器",
+    "status": "formal",
+    "aliases": []
+  },
   "何利人與以東人同化": {
     "path": "link_folder/歷史/何利人與以東人同化.md",
     "type": "歷史",
@@ -7769,6 +7883,17 @@
       "matzot節"
     ]
   },
+  "無酵節重申": {
+    "path": "link_folder/歷史/無酵節重申.md",
+    "type": "歷史",
+    "secondary_types": [
+      "禮儀",
+      "節期"
+    ],
+    "title": "無酵節重申",
+    "status": "formal",
+    "aliases": []
+  },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
     "type": "歷史",
@@ -7894,6 +8019,17 @@
     "status": "formal",
     "aliases": []
   },
+  "約瑟骸骨": {
+    "path": "link_folder/歷史/約瑟骸骨.md",
+    "type": "歷史",
+    "secondary_types": [
+      "應許",
+      "人物"
+    ],
+    "title": "約瑟骸骨",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟骸骨葬於示劍": {
     "path": "link_folder/歷史/約瑟骸骨葬於示劍.md",
     "type": "歷史",
@@ -7902,6 +8038,17 @@
       "神學"
     ],
     "title": "約瑟骸骨葬於示劍",
+    "status": "formal",
+    "aliases": []
+  },
+  "繞道而行": {
+    "path": "link_folder/歷史/繞道而行.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "護理"
+    ],
+    "title": "繞道而行",
     "status": "formal",
     "aliases": []
   },
@@ -7996,6 +8143,17 @@
       "法律"
     ],
     "title": "迦南地買地習俗",
+    "status": "formal",
+    "aliases": []
+  },
+  "進迦南應許": {
+    "path": "link_folder/歷史/進迦南應許.md",
+    "type": "歷史",
+    "secondary_types": [
+      "應許",
+      "神學"
+    ],
+    "title": "進迦南應許",
     "status": "formal",
     "aliases": []
   },
@@ -8162,6 +8320,30 @@
     "title": "雅各買示劍地",
     "status": "formal",
     "aliases": []
+  },
+  "雲柱火柱": {
+    "path": "link_folder/歷史/雲柱火柱.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "顯現"
+    ],
+    "title": "雲柱火柱",
+    "status": "formal",
+    "aliases": []
+  },
+  "頭生歸神為聖": {
+    "path": "link_folder/歷史/頭生歸神為聖.md",
+    "type": "歷史",
+    "secondary_types": [
+      "神學",
+      "禮儀"
+    ],
+    "title": "頭生歸神為聖",
+    "status": "formal",
+    "aliases": [
+      "頭生的歸神為聖"
+    ]
   },
   "黑暗之災": {
     "path": "link_folder/歷史/黑暗之災.md",
@@ -8700,6 +8882,16 @@
       "神分別保護"
     ]
   },
+  "分別為聖": {
+    "path": "link_folder/神學/分別為聖.md",
+    "type": "神學",
+    "secondary_types": [
+      "聖潔"
+    ],
+    "title": "分別為聖",
+    "status": "formal",
+    "aliases": []
+  },
   "分別百姓": {
     "path": "link_folder/神學/分別百姓.md",
     "type": "神學",
@@ -9019,6 +9211,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "大淵的泉源與天上的窗戶",
+    "status": "formal",
+    "aliases": []
+  },
+  "大能的手": {
+    "path": "link_folder/神學/大能的手.md",
+    "type": "神學",
+    "secondary_types": [
+      "屬性"
+    ],
+    "title": "大能的手",
     "status": "formal",
     "aliases": []
   },
@@ -12888,6 +13090,9 @@
   "創世記49章流便": {
     "alias_of": "創世記49章流便受責"
   },
+  "創50:25": {
+    "alias_of": "創五十25 約瑟骸骨應許"
+  },
   "創15:13": {
     "alias_of": "創十五13 四百年寄居預言"
   },
@@ -12896,6 +13101,9 @@
   },
   "亞伯拉罕之約的寄居預言": {
     "alias_of": "創十五13 四百年寄居預言"
+  },
+  "創15:13-16": {
+    "alias_of": "創十五13-16 迦南應許"
   },
   "創十五14應驗": {
     "alias_of": "創十五14 亞伯拉罕之約的財物應驗"
@@ -13752,6 +13960,15 @@
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
+  "Tefillin": {
+    "alias_of": "記號與經文"
+  },
+  "經匣": {
+    "alias_of": "記號與經文"
+  },
+  "Phylacteries": {
+    "alias_of": "記號與經文"
+  },
   "詩51": {
     "alias_of": "詩篇51篇"
   },
@@ -13944,6 +14161,15 @@
   "神之面": {
     "alias_of": "毗努伊勒"
   },
+  "非利士地的道路": {
+    "alias_of": "沿海大道（Via Maris）"
+  },
+  "Way of the Philistines": {
+    "alias_of": "沿海大道（Via Maris）"
+  },
+  "Derech Eretz Plishtim": {
+    "alias_of": "沿海大道（Via Maris）"
+  },
   "二軍兵": {
     "alias_of": "瑪哈念"
   },
@@ -13997,6 +14223,18 @@
   },
   "Seir": {
     "alias_of": "西珥山"
+  },
+  "Philistia": {
+    "alias_of": "非利士地"
+  },
+  "非利士": {
+    "alias_of": "非利士地"
+  },
+  "非利士人的地": {
+    "alias_of": "非利士地"
+  },
+  "巴勒斯坦地": {
+    "alias_of": "非利士地"
   },
   "亞拉巴海": {
     "alias_of": "鹽海"
@@ -14558,6 +14796,9 @@
   },
   "雅各以掃關係": {
     "alias_of": "雅各與以掃的恩怨"
+  },
+  "頭生的歸神為聖": {
+    "alias_of": "頭生歸神為聖"
   },
   "第九災": {
     "alias_of": "黑暗之災"

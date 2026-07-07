@@ -1,7 +1,7 @@
 {
-  "total_warnings": 4,
+  "total_warnings": 6,
   "critical_count": 0,
-  "warning_count": 4,
+  "warning_count": 6,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -16,6 +16,20 @@
       "source": "出埃及記/第12章.md",
       "target": "逾越節",
       "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第13章.md",
+      "target": "埃及",
+      "message": "同一 alias「埃及」指向多個 target: 出埃及, 埃及"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第13章.md",
+      "target": "頭生的",
+      "message": "同一 alias「頭生的」指向多個 target: 長子之死, 頭生歸神為聖"
     },
     {
       "type": "alias_target_conflict",
