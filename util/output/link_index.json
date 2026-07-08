@@ -957,6 +957,35 @@
       "Defeat of Amalek"
     ]
   },
+  "摩西審判百姓": {
+    "path": "link_folder/事件/摩西審判百姓.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "摩西審判百姓",
+    "status": "formal",
+    "aliases": [
+      "Moses judging the people",
+      "摩西獨自審判"
+    ]
+  },
+  "摩西立首領": {
+    "path": "link_folder/事件/摩西立首領.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "摩西立首領",
+    "status": "formal",
+    "aliases": [
+      "Moses appoints leaders",
+      "摩西設立首領",
+      "揀選千夫長百夫長"
+    ]
+  },
   "摩西舉手得勝": {
     "path": "link_folder/事件/摩西舉手得勝.md",
     "type": "事件",
@@ -1021,6 +1050,61 @@
     "status": "formal",
     "aliases": [
       "Altar Jehovah Nissi"
+    ]
+  },
+  "葉忒羅來訪": {
+    "path": "link_folder/事件/葉忒羅來訪.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "葉忒羅來訪",
+    "status": "formal",
+    "aliases": [
+      "Jethro's visit",
+      "葉忒羅探訪摩西"
+    ]
+  },
+  "葉忒羅建議分層治理": {
+    "path": "link_folder/事件/葉忒羅建議分層治理.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "葉忒羅建議分層治理",
+    "status": "formal",
+    "aliases": [
+      "Jethro's counsel",
+      "葉忒羅的建議",
+      "分層負責建議"
+    ]
+  },
+  "葉忒羅獻祭": {
+    "path": "link_folder/事件/葉忒羅獻祭.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "葉忒羅獻祭",
+    "status": "formal",
+    "aliases": [
+      "Jethro's sacrifice",
+      "葉忒羅獻祭與團契"
+    ]
+  },
+  "葉忒羅返回本地": {
+    "path": "link_folder/事件/葉忒羅返回本地.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "葉忒羅返回本地",
+    "status": "formal",
+    "aliases": [
+      "Jethro returns home",
+      "葉忒羅離去"
     ]
   },
   "雅各全家下埃及": {
@@ -1232,6 +1316,18 @@
     "status": "formal",
     "aliases": [
       "Heb 3:8-9 Do not harden your heart"
+    ]
+  },
+  "來7：1-3 麥基洗德": {
+    "path": "link_folder/互文/來7：1-3 麥基洗德.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "來7：1-3 麥基洗德",
+    "status": "formal",
+    "aliases": [
+      "Heb 7:1-3 Melchizedek"
     ]
   },
   "來9：4 盛嗎哪的金罐": {
@@ -1588,6 +1684,18 @@
     "status": "candidate",
     "aliases": []
   },
+  "多1：5-9 長老資格": {
+    "path": "link_folder/互文/多1：5-9 長老資格.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "多1：5-9 長老資格",
+    "status": "formal",
+    "aliases": [
+      "Titus 1:5-9 Elder qualifications"
+    ]
+  },
   "寧錄與敵基督": {
     "path": "link_folder/互文/寧錄與敵基督.md",
     "type": "互文",
@@ -1686,6 +1794,30 @@
       "伯利恆與彌賽亞"
     ]
   },
+  "彼前5：1-4 牧養群羊": {
+    "path": "link_folder/互文/彼前5：1-4 牧養群羊.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "彼前5：1-4 牧養群羊",
+    "status": "formal",
+    "aliases": [
+      "1Pet 5:1-4 Shepherd the flock"
+    ]
+  },
+  "徒6：1-7 選立執事": {
+    "path": "link_folder/互文/徒6：1-7 選立執事.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "徒6：1-7 選立執事",
+    "status": "formal",
+    "aliases": [
+      "Acts 6:1-7 Choose deacons"
+    ]
+  },
   "挪亞是傳義道者": {
     "path": "link_folder/互文/挪亞是傳義道者.md",
     "type": "互文",
@@ -1705,6 +1837,18 @@
     "title": "挪亞與亞當的平行",
     "status": "formal",
     "aliases": []
+  },
+  "提前3：1-7 監督資格": {
+    "path": "link_folder/互文/提前3：1-7 監督資格.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "提前3：1-7 監督資格",
+    "status": "formal",
+    "aliases": [
+      "1Tim 3:1-7 Overseer qualifications"
+    ]
   },
   "摩西八十歲": {
     "path": "link_folder/互文/摩西八十歲.md",
@@ -1786,6 +1930,18 @@
     "status": "formal",
     "aliases": [
       "1Cor 10:4 Spiritual Rock"
+    ]
+  },
+  "林前12：18 肢體安排": {
+    "path": "link_folder/互文/林前12：18 肢體安排.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "林前12：18 肢體安排",
+    "status": "formal",
+    "aliases": [
+      "1Cor 12:18 God arranged members"
     ]
   },
   "林前十1-2 受浸歸入摩西": {
@@ -4573,6 +4729,16 @@
       "非尼哈 (亞倫孫)"
     ]
   },
+  "革舜": {
+    "path": "link_folder/人物/革舜.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "革舜",
+    "status": "formal",
+    "aliases": [
+      "Gershom"
+    ]
+  },
   "革舜（摩西之子）": {
     "path": "link_folder/人物/革舜（摩西之子）.md",
     "type": "人物",
@@ -4944,6 +5110,16 @@
     "title": "亞西納（屬內特女神）",
     "status": "formal",
     "aliases": []
+  },
+  "以利以謝（ God is help ）": {
+    "path": "link_folder/原文/以利以謝（ God is help ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "以利以謝（ God is help ）",
+    "status": "formal",
+    "aliases": [
+      "Eliezer etymology"
+    ]
   },
   "以掃名字含義": {
     "path": "link_folder/原文/以掃名字含義.md",
@@ -5986,6 +6162,16 @@
       "merorim"
     ]
   },
+  "葉忒羅（ his abundance ）": {
+    "path": "link_folder/原文/葉忒羅（ his abundance ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "葉忒羅（ his abundance ）",
+    "status": "formal",
+    "aliases": [
+      "Jethro etymology"
+    ]
+  },
   "蒲草箱與方舟同字": {
     "path": "link_folder/原文/蒲草箱與方舟同字.md",
     "type": "原文",
@@ -6017,6 +6203,16 @@
     "title": "衣裳（外袍）",
     "status": "formal",
     "aliases": []
+  },
+  "西坡拉（ bird ）": {
+    "path": "link_folder/原文/西坡拉（ bird ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "西坡拉（ bird ）",
+    "status": "formal",
+    "aliases": [
+      "Zipporah etymology"
+    ]
   },
   "西提拿（為敵）": {
     "path": "link_folder/原文/西提拿（為敵）.md",
@@ -6183,6 +6379,16 @@
     "status": "formal",
     "aliases": [
       "革舜名字含義"
+    ]
+  },
+  "革舜（ sojourner ）": {
+    "path": "link_folder/原文/革舜（ sojourner ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "革舜（ sojourner ）",
+    "status": "formal",
+    "aliases": [
+      "Gershom etymology"
     ]
   },
   "風與靈同字": {
@@ -7341,6 +7547,16 @@
     "status": "formal",
     "aliases": [
       "Sinai"
+    ]
+  },
+  "西乃山": {
+    "path": "link_folder/地點/西乃山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西乃山",
+    "status": "formal",
+    "aliases": [
+      "Mount Sinai"
     ]
   },
   "西提拿": {
@@ -9827,6 +10043,16 @@
       "分別出來"
     ]
   },
+  "分層授權": {
+    "path": "link_folder/神學/分層授權.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "分層授權",
+    "status": "formal",
+    "aliases": [
+      "Delegation of authority"
+    ]
+  },
   "利亞四子命名的神學意義": {
     "path": "link_folder/神學/利亞四子命名的神學意義.md",
     "type": "神學",
@@ -10367,6 +10593,16 @@
     "status": "formal",
     "aliases": []
   },
+  "審判與治理": {
+    "path": "link_folder/神學/審判與治理.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "審判與治理",
+    "status": "formal",
+    "aliases": [
+      "Judgment and governance"
+    ]
+  },
   "寬以律己嚴以待人": {
     "path": "link_folder/神學/寬以律己嚴以待人.md",
     "type": "神學",
@@ -10824,6 +11060,18 @@
       "敬畏耶和華"
     ]
   },
+  "敬畏神、誠實、恨不義之財": {
+    "path": "link_folder/神學/敬畏神、誠實、恨不義之財.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "敬畏神、誠實、恨不義之財",
+    "status": "formal",
+    "aliases": [
+      "Fear God",
+      "truth",
+      "hate dishonest gain"
+    ]
+  },
   "敬畏耶和華的話": {
     "path": "link_folder/神學/敬畏耶和華的話.md",
     "type": "神學",
@@ -11137,6 +11385,16 @@
     "title": "猶大的認罪與悔改",
     "status": "formal",
     "aliases": []
+  },
+  "獻祭敬拜": {
+    "path": "link_folder/神學/獻祭敬拜.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "獻祭敬拜",
+    "status": "formal",
+    "aliases": [
+      "Sacrifice and worship"
+    ]
   },
   "生命樹": {
     "path": "link_folder/神學/生命樹.md",
@@ -11516,6 +11774,16 @@
       "神的手指頭"
     ]
   },
+  "神的拯救": {
+    "path": "link_folder/神學/神的拯救.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的拯救",
+    "status": "formal",
+    "aliases": [
+      "God's salvation"
+    ]
+  },
   "神的拯救延遲": {
     "path": "link_folder/神學/神的拯救延遲.md",
     "type": "神學",
@@ -11786,6 +12054,16 @@
     "title": "稱義",
     "status": "candidate",
     "aliases": []
+  },
+  "稱頌耶和華": {
+    "path": "link_folder/神學/稱頌耶和華.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "稱頌耶和華",
+    "status": "formal",
+    "aliases": [
+      "Bless the LORD"
+    ]
   },
   "立約的儀式": {
     "path": "link_folder/神學/立約的儀式.md",
@@ -12812,6 +13090,20 @@
       "同父異母婚姻背景"
     ]
   },
+  "古代近東岳父禮儀": {
+    "path": "link_folder/背景/古代近東岳父禮儀.md",
+    "type": "背景",
+    "secondary_types": [
+      "文化",
+      "歷史"
+    ],
+    "title": "古代近東岳父禮儀",
+    "status": "formal",
+    "aliases": [
+      "古代近東岳父與女婿關係",
+      "岳父接待禮儀"
+    ]
+  },
   "古代近東接待客旅禮儀": {
     "path": "link_folder/背景/古代近東接待客旅禮儀.md",
     "type": "背景",
@@ -12890,6 +13182,20 @@
     "status": "formal",
     "aliases": [
       "方舟規格"
+    ]
+  },
+  "曠野審判制度": {
+    "path": "link_folder/背景/曠野審判制度.md",
+    "type": "背景",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "曠野審判制度",
+    "status": "formal",
+    "aliases": [
+      "曠野司法制度",
+      "以色列審判制度"
     ]
   },
   "書珥曠野三天無水": {
@@ -12990,6 +13296,20 @@
     "title": "空虛混沌的原意",
     "status": "formal",
     "aliases": []
+  },
+  "米甸祭司": {
+    "path": "link_folder/背景/米甸祭司.md",
+    "type": "背景",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "米甸祭司",
+    "status": "formal",
+    "aliases": [
+      "Midianite priest",
+      "米甸的祭司"
+    ]
   },
   "金環": {
     "path": "link_folder/背景/金環.md",
@@ -14348,6 +14668,21 @@
   "Defeat of Amalek": {
     "alias_of": "戰勝亞瑪力人"
   },
+  "Moses judging the people": {
+    "alias_of": "摩西審判百姓"
+  },
+  "摩西獨自審判": {
+    "alias_of": "摩西審判百姓"
+  },
+  "Moses appoints leaders": {
+    "alias_of": "摩西立首領"
+  },
+  "摩西設立首領": {
+    "alias_of": "摩西立首領"
+  },
+  "揀選千夫長百夫長": {
+    "alias_of": "摩西立首領"
+  },
   "Moses raised hands": {
     "alias_of": "摩西舉手得勝"
   },
@@ -14362,6 +14697,33 @@
   },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
+  },
+  "Jethro's visit": {
+    "alias_of": "葉忒羅來訪"
+  },
+  "葉忒羅探訪摩西": {
+    "alias_of": "葉忒羅來訪"
+  },
+  "Jethro's counsel": {
+    "alias_of": "葉忒羅建議分層治理"
+  },
+  "葉忒羅的建議": {
+    "alias_of": "葉忒羅建議分層治理"
+  },
+  "分層負責建議": {
+    "alias_of": "葉忒羅建議分層治理"
+  },
+  "Jethro's sacrifice": {
+    "alias_of": "葉忒羅獻祭"
+  },
+  "葉忒羅獻祭與團契": {
+    "alias_of": "葉忒羅獻祭"
+  },
+  "Jethro returns home": {
+    "alias_of": "葉忒羅返回本地"
+  },
+  "葉忒羅離去": {
+    "alias_of": "葉忒羅返回本地"
   },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
@@ -14425,6 +14787,9 @@
   },
   "Heb 3:8-9 Do not harden your heart": {
     "alias_of": "來3：8-9 硬著心不可像瑪撒"
+  },
+  "Heb 7:1-3 Melchizedek": {
+    "alias_of": "來7：1-3 麥基洗德"
   },
   "Hebrews 9:4 Golden jar of manna": {
     "alias_of": "來9：4 盛嗎哪的金罐"
@@ -14510,6 +14875,9 @@
   "啟16:21": {
     "alias_of": "啟示錄 16-21（末世大冰雹）"
   },
+  "Titus 1:5-9 Elder qualifications": {
+    "alias_of": "多1：5-9 長老資格"
+  },
   "希伯來書12:5-11 神管教兒女": {
     "alias_of": "希伯來書12_5-11 神管教兒女"
   },
@@ -14528,8 +14896,17 @@
   "伯利恆與彌賽亞": {
     "alias_of": "彌迦書5章伯利恆與彌賽亞"
   },
+  "1Pet 5:1-4 Shepherd the flock": {
+    "alias_of": "彼前5：1-4 牧養群羊"
+  },
+  "Acts 6:1-7 Choose deacons": {
+    "alias_of": "徒6：1-7 選立執事"
+  },
   "挪亞傳義道": {
     "alias_of": "挪亞是傳義道者"
+  },
+  "1Tim 3:1-7 Overseer qualifications": {
+    "alias_of": "提前3：1-7 監督資格"
   },
   "Moses eighty years old": {
     "alias_of": "摩西八十歲"
@@ -14566,6 +14943,9 @@
   },
   "1Cor 10:4 Spiritual Rock": {
     "alias_of": "林前10：4 靈磐石就是基督"
+  },
+  "1Cor 12:18 God arranged members": {
+    "alias_of": "林前12：18 肢體安排"
   },
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
@@ -15122,6 +15502,9 @@
   "非尼哈 (亞倫孫)": {
     "alias_of": "非尼哈"
   },
+  "Gershom": {
+    "alias_of": "革舜"
+  },
   "麥基洗得": {
     "alias_of": "麥基洗德"
   },
@@ -15178,6 +15561,9 @@
   },
   "Nisan": {
     "alias_of": "亞筆月"
+  },
+  "Eliezer etymology": {
+    "alias_of": "以利以謝（ God is help ）"
   },
   "Elim etymology": {
     "alias_of": "以琳（ trees ）"
@@ -15467,11 +15853,17 @@
   "merorim": {
     "alias_of": "苦菜"
   },
+  "Jethro etymology": {
+    "alias_of": "葉忒羅（ his abundance ）"
+  },
   "蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
+  },
+  "Zipporah etymology": {
+    "alias_of": "西坡拉（ bird ）"
   },
   "Tefillin": {
     "alias_of": "記號與經文"
@@ -15547,6 +15939,9 @@
   },
   "革舜名字含義": {
     "alias_of": "革舜名字的由來"
+  },
+  "Gershom etymology": {
+    "alias_of": "革舜（ sojourner ）"
   },
   "我們是弟兄": {
     "alias_of": "骨肉原文作弟兄"
@@ -15760,6 +16155,9 @@
   },
   "Sinai": {
     "alias_of": "西乃"
+  },
+  "Mount Sinai": {
+    "alias_of": "西乃山"
   },
   "以東山": {
     "alias_of": "西珥"
@@ -16478,6 +16876,9 @@
   "分別出來": {
     "alias_of": "分別百姓"
   },
+  "Delegation of authority": {
+    "alias_of": "分層授權"
+  },
   "割禮": {
     "alias_of": "割禮之約"
   },
@@ -16574,6 +16975,9 @@
   "神的公義與審判": {
     "alias_of": "審判全地的主豈不行公義"
   },
+  "Judgment and governance": {
+    "alias_of": "審判與治理"
+  },
   "考驗兄弟": {
     "alias_of": "對兄弟的試驗"
   },
@@ -16664,6 +17068,15 @@
   "敬畏耶和華": {
     "alias_of": "敬畏神"
   },
+  "Fear God": {
+    "alias_of": "敬畏神、誠實、恨不義之財"
+  },
+  "truth": {
+    "alias_of": "敬畏神、誠實、恨不義之財"
+  },
+  "hate dishonest gain": {
+    "alias_of": "敬畏神、誠實、恨不義之財"
+  },
   "懼怕耶和華這話": {
     "alias_of": "敬畏耶和華的話"
   },
@@ -16733,6 +17146,9 @@
   "全燔祭": {
     "alias_of": "燔祭"
   },
+  "Sacrifice and worship": {
+    "alias_of": "獻祭敬拜"
+  },
   "know I am the LORD": {
     "alias_of": "知道我是耶和華"
   },
@@ -16790,6 +17206,9 @@
   "神的手指頭": {
     "alias_of": "神的手段"
   },
+  "God's salvation": {
+    "alias_of": "神的拯救"
+  },
   "拯救看似失敗": {
     "alias_of": "神的拯救延遲"
   },
@@ -16843,6 +17262,9 @@
   },
   "人種的是什麼收的也是什麼": {
     "alias_of": "種與收的法則"
+  },
+  "Bless the LORD": {
+    "alias_of": "稱頌耶和華"
   },
   "畜疫之災": {
     "alias_of": "第五災：重重的瘟疫"
@@ -17108,6 +17530,12 @@
   "同父異母婚姻背景": {
     "alias_of": "古代近東同父異母婚姻"
   },
+  "古代近東岳父與女婿關係": {
+    "alias_of": "古代近東岳父禮儀"
+  },
+  "岳父接待禮儀": {
+    "alias_of": "古代近東岳父禮儀"
+  },
   "古代近東待客禮儀": {
     "alias_of": "古代近東接待客旅禮儀"
   },
@@ -17125,6 +17553,12 @@
   },
   "方舟規格": {
     "alias_of": "方舟的尺寸與結構"
+  },
+  "曠野司法制度": {
+    "alias_of": "曠野審判制度"
+  },
+  "以色列審判制度": {
+    "alias_of": "曠野審判制度"
   },
   "Three days without water in Shur": {
     "alias_of": "書珥曠野三天無水"
@@ -17146,6 +17580,12 @@
   },
   "Bitter waters of Marah": {
     "alias_of": "瑪拉苦水"
+  },
+  "Midianite priest": {
+    "alias_of": "米甸祭司"
+  },
+  "米甸的祭司": {
+    "alias_of": "米甸祭司"
   },
   "Quail migration": {
     "alias_of": "鵪鶉遷徙"
