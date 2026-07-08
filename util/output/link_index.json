@@ -11339,6 +11339,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神的試驗": {
+    "path": "link_folder/神學/神的試驗.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的試驗",
+    "status": "formal",
+    "aliases": []
+  },
   "神的話": {
     "path": "link_folder/神學/神的話.md",
     "type": "神學",
@@ -11485,8 +11493,7 @@
     "title": "神試驗亞伯拉罕",
     "status": "formal",
     "aliases": [
-      "神試驗人",
-      "神的試驗"
+      "神試驗人"
     ]
   },
   "神蹟（miraculous signs）": {
@@ -16466,9 +16473,6 @@
     "alias_of": "神記念亞伯拉罕"
   },
   "神試驗人": {
-    "alias_of": "神試驗亞伯拉罕"
-  },
-  "神的試驗": {
     "alias_of": "神試驗亞伯拉罕"
   },
   "種與收": {

@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 14357,
+  "valid_links_count": 14361,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 92,
+  "pending_scripture_refs_count": 96,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -125,6 +125,11 @@
       "entity": "03 利未記/第17章",
       "book": "利未記",
       "chapter": 17
+    },
+    {
+      "entity": "創世記",
+      "book": "創世記",
+      "chapter": 0
     },
     {
       "entity": "48 加拉太書/第3章",
@@ -267,6 +272,11 @@
       "chapter": 11
     },
     {
+      "entity": "申命記",
+      "book": "申命記",
+      "chapter": 0
+    },
+    {
       "entity": "05 申命記/第1章",
       "book": "申命記",
       "chapter": 1
@@ -350,6 +360,11 @@
       "entity": "06 約書亞記/第24章",
       "book": "約書亞記",
       "chapter": 24
+    },
+    {
+      "entity": "43 約翰福音/第1章",
+      "book": "約翰福音",
+      "chapter": 1
     },
     {
       "entity": "43 約翰福音/第3章",
@@ -447,6 +462,11 @@
       "chapter": 6
     },
     {
+      "entity": "雅各書",
+      "book": "雅各書",
+      "chapter": 0
+    },
+    {
       "entity": "59 雅各書/第2章",
       "book": "雅各書",
       "chapter": 2
@@ -471,6 +491,13 @@
   "details": {
     "broken": {},
     "pending": {
+      "01 創世記/第28章.md": [
+        [
+          "43 約翰福音/第1章",
+          "約翰福音",
+          1
+        ]
+      ],
       "link_folder/主題/人的方法與神的應許.md": [
         [
           "23 以賽亞書/第28章",
@@ -1405,6 +1432,28 @@
           "19 詩篇/第25章",
           "詩篇",
           25
+        ]
+      ],
+      "link_folder/神學/神的試驗.md": [
+        [
+          "出埃及記",
+          "出埃及記",
+          0
+        ],
+        [
+          "創世記",
+          "創世記",
+          0
+        ],
+        [
+          "申命記",
+          "申命記",
+          0
+        ],
+        [
+          "雅各書",
+          "雅各書",
+          0
         ]
       ],
       "link_folder/神學/立約的儀式.md": [
