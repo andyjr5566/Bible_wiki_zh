@@ -900,6 +900,19 @@
       "Elim oasis"
     ]
   },
+  "以色列到達西乃山": {
+    "path": "link_folder/事件/以色列到達西乃山.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "以色列到達西乃山",
+    "status": "formal",
+    "aliases": [
+      "Israel arrives at Sinai",
+      "到達西乃山"
+    ]
+  },
   "以色列進迦南": {
     "path": "link_folder/事件/以色列進迦南.md",
     "type": "事件",
@@ -955,6 +968,19 @@
     "status": "formal",
     "aliases": [
       "Defeat of Amalek"
+    ]
+  },
+  "摩西上山見神": {
+    "path": "link_folder/事件/摩西上山見神.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西上山見神",
+    "status": "formal",
+    "aliases": [
+      "Moses goes up to God",
+      "摩西上西乃山"
     ]
   },
   "摩西審判百姓": {
@@ -1028,6 +1054,20 @@
       "Water of Marah sweetened"
     ]
   },
+  "百姓自潔三天": {
+    "path": "link_folder/事件/百姓自潔三天.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "百姓自潔三天",
+    "status": "formal",
+    "aliases": [
+      "consecration of the people",
+      "百姓自潔預備"
+    ]
+  },
   "磐石出水": {
     "path": "link_folder/事件/磐石出水.md",
     "type": "事件",
@@ -1038,6 +1078,20 @@
     "status": "formal",
     "aliases": [
       "Water from the Rock event"
+    ]
+  },
+  "神降臨西乃山": {
+    "path": "link_folder/事件/神降臨西乃山.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "神降臨西乃山",
+    "status": "formal",
+    "aliases": [
+      "the LORD descends on Sinai",
+      "耶和華降臨西乃山"
     ]
   },
   "築壇耶和華尼西": {
@@ -1291,6 +1345,18 @@
     "aliases": [
       "何西阿12雅各摔跤",
       "何西阿書12章"
+    ]
+  },
+  "來12：18-24 西乃山與錫安山": {
+    "path": "link_folder/互文/來12：18-24 西乃山與錫安山.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "來12：18-24 西乃山與錫安山",
+    "status": "formal",
+    "aliases": [
+      "Heb 12:18-24 Sinai and Zion"
     ]
   },
   "來12：29 我們的神乃是烈火": {
@@ -1625,6 +1691,18 @@
       "Revelation 15:2-4"
     ]
   },
+  "啟1：6 國民與祭司": {
+    "path": "link_folder/互文/啟1：6 國民與祭司.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "啟1：6 國民與祭司",
+    "status": "formal",
+    "aliases": [
+      "Rev 1:6 kingdom and priests"
+    ]
+  },
   "啟2：17 隱藏的嗎哪": {
     "path": "link_folder/互文/啟2：17 隱藏的嗎哪.md",
     "type": "互文",
@@ -1794,6 +1872,18 @@
       "伯利恆與彌賽亞"
     ]
   },
+  "彼前2：9 君尊的祭司": {
+    "path": "link_folder/互文/彼前2：9 君尊的祭司.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "彼前2：9 君尊的祭司",
+    "status": "formal",
+    "aliases": [
+      "1Pet 2:9 royal priesthood"
+    ]
+  },
   "彼前5：1-4 牧養群羊": {
     "path": "link_folder/互文/彼前5：1-4 牧養群羊.md",
     "type": "互文",
@@ -1957,6 +2047,18 @@
       "林前10:1-2"
     ]
   },
+  "林後3：18 看見主的榮光": {
+    "path": "link_folder/互文/林後3：18 看見主的榮光.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "林後3：18 看見主的榮光",
+    "status": "formal",
+    "aliases": [
+      "2Cor 3:18 beholding the Lord's glory"
+    ]
+  },
   "林後8：13-15 多收的沒有餘少收的沒有缺": {
     "path": "link_folder/互文/林後8：13-15 多收的沒有餘少收的沒有缺.md",
     "type": "互文",
@@ -2116,6 +2218,18 @@
     "status": "formal",
     "aliases": [
       "Deut 25:17-19 Remember Amalek"
+    ]
+  },
+  "申32：11-12 如鷹攪動巢窩": {
+    "path": "link_folder/互文/申32：11-12 如鷹攪動巢窩.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "申32：11-12 如鷹攪動巢窩",
+    "status": "formal",
+    "aliases": [
+      "Deut 32:11-12 eagle's nest"
     ]
   },
   "申8：3 人活著不是單靠食物": {
@@ -6204,6 +6318,16 @@
     "status": "formal",
     "aliases": []
   },
+  "西乃（多刺的）": {
+    "path": "link_folder/原文/西乃（多刺的）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "西乃（多刺的）",
+    "status": "formal",
+    "aliases": [
+      "Sinai etymology"
+    ]
+  },
   "西坡拉（ bird ）": {
     "path": "link_folder/原文/西坡拉（ bird ）.md",
     "type": "原文",
@@ -7557,6 +7681,17 @@
     "status": "formal",
     "aliases": [
       "Mount Sinai"
+    ]
+  },
+  "西乃的曠野": {
+    "path": "link_folder/地點/西乃的曠野.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西乃的曠野",
+    "status": "formal",
+    "aliases": [
+      "Wilderness of Sinai",
+      "西乃曠野"
     ]
   },
   "西提拿": {
@@ -9553,6 +9688,17 @@
       "不要回頭看"
     ]
   },
+  "不可親近": {
+    "path": "link_folder/神學/不可親近.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可親近",
+    "status": "formal",
+    "aliases": [
+      "do not break through",
+      "不可闖過來"
+    ]
+  },
   "中保": {
     "path": "link_folder/神學/中保.md",
     "type": "神學",
@@ -10500,6 +10646,17 @@
     "status": "formal",
     "aliases": []
   },
+  "如鷹背在翅膀上": {
+    "path": "link_folder/神學/如鷹背在翅膀上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "如鷹背在翅膀上",
+    "status": "formal",
+    "aliases": [
+      "on eagles' wings",
+      "鷹的翅膀"
+    ]
+  },
   "婚姻的盟約與次序": {
     "path": "link_folder/神學/婚姻的盟約與次序.md",
     "type": "神學",
@@ -10562,6 +10719,17 @@
       "寄居",
       "寄居者",
       "客旅"
+    ]
+  },
+  "密雲": {
+    "path": "link_folder/神學/密雲.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "密雲",
+    "status": "formal",
+    "aliases": [
+      "thick cloud",
+      "密雲中的降臨"
     ]
   },
   "審判": {
@@ -10632,6 +10800,18 @@
     "status": "formal",
     "aliases": []
   },
+  "屬我的子民": {
+    "path": "link_folder/神學/屬我的子民.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "屬我的子民",
+    "status": "formal",
+    "aliases": [
+      "treasured possession",
+      "屬神的子民",
+      "特別的產業"
+    ]
+  },
   "屬神的憂愁 (林後7_10)": {
     "path": "link_folder/神學/屬神的憂愁 (林後7_10).md",
     "type": "神學",
@@ -10647,6 +10827,17 @@
     "title": "屬靈恩賜",
     "status": "candidate",
     "aliases": []
+  },
+  "山的界限": {
+    "path": "link_folder/神學/山的界限.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "山的界限",
+    "status": "formal",
+    "aliases": [
+      "bounds around the mountain",
+      "山的邊界"
+    ]
   },
   "希伯來人的神": {
     "path": "link_folder/神學/希伯來人的神.md",
@@ -11525,6 +11716,17 @@
     "status": "formal",
     "aliases": []
   },
+  "神在火中降臨": {
+    "path": "link_folder/神學/神在火中降臨.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神在火中降臨",
+    "status": "formal",
+    "aliases": [
+      "God descends in fire",
+      "火中降臨"
+    ]
+  },
   "神大能與名的傳遍": {
     "path": "link_folder/神學/神大能與名的傳遍.md",
     "type": "神學",
@@ -11848,6 +12050,17 @@
       "神的居所"
     ]
   },
+  "神的聖潔": {
+    "path": "link_folder/神學/神的聖潔.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的聖潔",
+    "status": "formal",
+    "aliases": [
+      "holiness of God",
+      "神的聖潔屬性"
+    ]
+  },
   "神的記念": {
     "path": "link_folder/神學/神的記念.md",
     "type": "神學",
@@ -11908,6 +12121,17 @@
       "天軍",
       "神的軍隊",
       "兩軍兵"
+    ]
+  },
+  "神的降臨": {
+    "path": "link_folder/神學/神的降臨.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的降臨",
+    "status": "formal",
+    "aliases": [
+      "the LORD descends",
+      "耶和華降臨"
     ]
   },
   "神的靈在人身上": {
@@ -12022,6 +12246,17 @@
     "title": "神蹟（miraculous signs）",
     "status": "formal",
     "aliases": []
+  },
+  "祭司的國度": {
+    "path": "link_folder/神學/祭司的國度.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司的國度",
+    "status": "formal",
+    "aliases": [
+      "kingdom of priests",
+      "君尊的祭司"
+    ]
   },
   "祭壇敬拜": {
     "path": "link_folder/神學/祭壇敬拜.md",
@@ -12477,6 +12712,17 @@
       "神豈有難成的事"
     ]
   },
+  "聖潔的國民": {
+    "path": "link_folder/神學/聖潔的國民.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖潔的國民",
+    "status": "formal",
+    "aliases": [
+      "holy nation",
+      "聖潔的國度"
+    ]
+  },
   "聖約子民與世界的界限": {
     "path": "link_folder/神學/聖約子民與世界的界限.md",
     "type": "神學",
@@ -12522,6 +12768,16 @@
     "status": "formal",
     "aliases": [
       "三樣情慾"
+    ]
+  },
+  "自潔": {
+    "path": "link_folder/神學/自潔.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "自潔",
+    "status": "formal",
+    "aliases": [
+      "consecration"
     ]
   },
   "自潔與更換衣裳": {
@@ -12655,6 +12911,30 @@
     "title": "血郎",
     "status": "formal",
     "aliases": []
+  },
+  "西乃之約": {
+    "path": "link_folder/神學/西乃之約.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "西乃之約",
+    "status": "formal",
+    "aliases": [
+      "Sinai Covenant",
+      "Mosaic Covenant",
+      "摩西之約"
+    ]
+  },
+  "角聲": {
+    "path": "link_folder/神學/角聲.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "角聲",
+    "status": "formal",
+    "aliases": [
+      "trumpet sound",
+      "ram's horn",
+      "號角聲"
+    ]
   },
   "解夢出於神": {
     "path": "link_folder/神學/解夢出於神.md",
@@ -12924,6 +13204,20 @@
     "status": "candidate",
     "aliases": []
   },
+  "五旬節與律法頒布": {
+    "path": "link_folder/背景/五旬節與律法頒布.md",
+    "type": "背景",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "五旬節與律法頒布",
+    "status": "formal",
+    "aliases": [
+      "Pentecost and the giving of the Law",
+      "五旬節與西乃"
+    ]
+  },
   "井權與牧羊取水規矩": {
     "path": "link_folder/背景/井權與牧羊取水規矩.md",
     "type": "背景",
@@ -13126,6 +13420,20 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東立約儀式": {
+    "path": "link_folder/背景/古代近東立約儀式.md",
+    "type": "背景",
+    "secondary_types": [
+      "文化",
+      "歷史"
+    ],
+    "title": "古代近東立約儀式",
+    "status": "formal",
+    "aliases": [
+      "ancient Near Eastern covenant ceremony",
+      "古代立約儀式"
+    ]
+  },
   "古代近東解夢文學_夢經": {
     "path": "link_folder/背景/古代近東解夢文學_夢經.md",
     "type": "背景",
@@ -13309,6 +13617,19 @@
     "aliases": [
       "Midianite priest",
       "米甸的祭司"
+    ]
+  },
+  "西乃山的地理": {
+    "path": "link_folder/背景/西乃山的地理.md",
+    "type": "背景",
+    "secondary_types": [
+      "地理"
+    ],
+    "title": "西乃山的地理",
+    "status": "formal",
+    "aliases": [
+      "Mount Sinai geography",
+      "西乃山位置"
     ]
   },
   "金環": {
@@ -14656,6 +14977,12 @@
   "Elim oasis": {
     "alias_of": "以琳綠洲"
   },
+  "Israel arrives at Sinai": {
+    "alias_of": "以色列到達西乃山"
+  },
+  "到達西乃山": {
+    "alias_of": "以色列到達西乃山"
+  },
   "Preserving an omer of manna": {
     "alias_of": "保存一俄梅珥嗎哪"
   },
@@ -14667,6 +14994,12 @@
   },
   "Defeat of Amalek": {
     "alias_of": "戰勝亞瑪力人"
+  },
+  "Moses goes up to God": {
+    "alias_of": "摩西上山見神"
+  },
+  "摩西上西乃山": {
+    "alias_of": "摩西上山見神"
   },
   "Moses judging the people": {
     "alias_of": "摩西審判百姓"
@@ -14692,8 +15025,20 @@
   "Water of Marah sweetened": {
     "alias_of": "瑪拉苦水變甜"
   },
+  "consecration of the people": {
+    "alias_of": "百姓自潔三天"
+  },
+  "百姓自潔預備": {
+    "alias_of": "百姓自潔三天"
+  },
   "Water from the Rock event": {
     "alias_of": "磐石出水"
+  },
+  "the LORD descends on Sinai": {
+    "alias_of": "神降臨西乃山"
+  },
+  "耶和華降臨西乃山": {
+    "alias_of": "神降臨西乃山"
   },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
@@ -14778,6 +15123,9 @@
   },
   "何西阿書12章": {
     "alias_of": "何西阿書12章雅各摔跤"
+  },
+  "Heb 12:18-24 Sinai and Zion": {
+    "alias_of": "來12：18-24 西乃山與錫安山"
   },
   "Hebrews 12:29": {
     "alias_of": "來12：29 我們的神乃是烈火"
@@ -14866,6 +15214,9 @@
   "Revelation 15:2-4": {
     "alias_of": "啟15：2-4 羔羊之歌"
   },
+  "Rev 1:6 kingdom and priests": {
+    "alias_of": "啟1：6 國民與祭司"
+  },
   "Revelation 2:17 Hidden manna": {
     "alias_of": "啟2：17 隱藏的嗎哪"
   },
@@ -14895,6 +15246,9 @@
   },
   "伯利恆與彌賽亞": {
     "alias_of": "彌迦書5章伯利恆與彌賽亞"
+  },
+  "1Pet 2:9 royal priesthood": {
+    "alias_of": "彼前2：9 君尊的祭司"
   },
   "1Pet 5:1-4 Shepherd the flock": {
     "alias_of": "彼前5：1-4 牧養群羊"
@@ -14950,6 +15304,9 @@
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
   },
+  "2Cor 3:18 beholding the Lord's glory": {
+    "alias_of": "林後3：18 看見主的榮光"
+  },
   "2Cor 8:13-15 Equality": {
     "alias_of": "林後8：13-15 多收的沒有餘少收的沒有缺"
   },
@@ -14997,6 +15354,9 @@
   },
   "Deut 25:17-19 Remember Amalek": {
     "alias_of": "申25：17-19 記念亞瑪力"
+  },
+  "Deut 32:11-12 eagle's nest": {
+    "alias_of": "申32：11-12 如鷹攪動巢窩"
   },
   "Deuteronomy 8:3 Man does not live by bread alone": {
     "alias_of": "申8：3 人活著不是單靠食物"
@@ -15862,6 +16222,9 @@
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
+  "Sinai etymology": {
+    "alias_of": "西乃（多刺的）"
+  },
   "Zipporah etymology": {
     "alias_of": "西坡拉（ bird ）"
   },
@@ -16158,6 +16521,12 @@
   },
   "Mount Sinai": {
     "alias_of": "西乃山"
+  },
+  "Wilderness of Sinai": {
+    "alias_of": "西乃的曠野"
+  },
+  "西乃曠野": {
+    "alias_of": "西乃的曠野"
   },
   "以東山": {
     "alias_of": "西珥"
@@ -16771,6 +17140,12 @@
   "不要回頭看": {
     "alias_of": "不可回頭看"
   },
+  "do not break through": {
+    "alias_of": "不可親近"
+  },
+  "不可闖過來": {
+    "alias_of": "不可親近"
+  },
   "神的朋友亞伯拉罕": {
     "alias_of": "亞伯拉罕為神的朋友"
   },
@@ -16957,6 +17332,12 @@
   "原福音": {
     "alias_of": "女人的後裔 (創3_15)"
   },
+  "on eagles' wings": {
+    "alias_of": "如鷹背在翅膀上"
+  },
+  "鷹的翅膀": {
+    "alias_of": "如鷹背在翅膀上"
+  },
   "Establishment of the Sabbath": {
     "alias_of": "安息日的設立"
   },
@@ -16968,6 +17349,12 @@
   },
   "客旅": {
     "alias_of": "寄居身分"
+  },
+  "thick cloud": {
+    "alias_of": "密雲"
+  },
+  "密雲中的降臨": {
+    "alias_of": "密雲"
   },
   "審判全地的主行公義": {
     "alias_of": "審判全地的主豈不行公義"
@@ -16983,6 +17370,21 @@
   },
   "約瑟考驗哥哥們": {
     "alias_of": "對兄弟的試驗"
+  },
+  "treasured possession": {
+    "alias_of": "屬我的子民"
+  },
+  "屬神的子民": {
+    "alias_of": "屬我的子民"
+  },
+  "特別的產業": {
+    "alias_of": "屬我的子民"
+  },
+  "bounds around the mountain": {
+    "alias_of": "山的界限"
+  },
+  "山的邊界": {
+    "alias_of": "山的界限"
   },
   "希伯來人的神遇見了我們": {
     "alias_of": "希伯來人的神"
@@ -17170,6 +17572,12 @@
   "神保守救贖中的生命": {
     "alias_of": "神保守救贖計畫中的生命"
   },
+  "God descends in fire": {
+    "alias_of": "神在火中降臨"
+  },
+  "火中降臨": {
+    "alias_of": "神在火中降臨"
+  },
   "顯我的大能": {
     "alias_of": "神大能與名的傳遍"
   },
@@ -17218,6 +17626,12 @@
   "神的居所": {
     "alias_of": "神的聖所"
   },
+  "holiness of God": {
+    "alias_of": "神的聖潔"
+  },
+  "神的聖潔屬性": {
+    "alias_of": "神的聖潔"
+  },
   "神的掌管": {
     "alias_of": "神的護理"
   },
@@ -17232,6 +17646,12 @@
   },
   "兩軍兵": {
     "alias_of": "神的軍兵"
+  },
+  "the LORD descends": {
+    "alias_of": "神的降臨"
+  },
+  "耶和華降臨": {
+    "alias_of": "神的降臨"
   },
   "神的臉面": {
     "alias_of": "神的面"
@@ -17253,6 +17673,12 @@
   },
   "神試驗人": {
     "alias_of": "神試驗亞伯拉罕"
+  },
+  "kingdom of priests": {
+    "alias_of": "祭司的國度"
+  },
+  "君尊的祭司": {
+    "alias_of": "祭司的國度"
   },
   "種與收": {
     "alias_of": "種與收的法則"
@@ -17383,6 +17809,12 @@
   "神豈有難成的事": {
     "alias_of": "耶和華豈有難成的事"
   },
+  "holy nation": {
+    "alias_of": "聖潔的國民"
+  },
+  "聖潔的國度": {
+    "alias_of": "聖潔的國民"
+  },
   "Holy Spirit Indwelling": {
     "alias_of": "聖靈內住"
   },
@@ -17391,6 +17823,9 @@
   },
   "三樣情慾": {
     "alias_of": "肉體的情慾、眼目的情慾、今生的驕傲"
+  },
+  "consecration": {
+    "alias_of": "自潔"
   },
   "自潔更衣": {
     "alias_of": "自潔與更換衣裳"
@@ -17418,6 +17853,24 @@
   },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
+  },
+  "Sinai Covenant": {
+    "alias_of": "西乃之約"
+  },
+  "Mosaic Covenant": {
+    "alias_of": "西乃之約"
+  },
+  "摩西之約": {
+    "alias_of": "西乃之約"
+  },
+  "trumpet sound": {
+    "alias_of": "角聲"
+  },
+  "ram's horn": {
+    "alias_of": "角聲"
+  },
+  "號角聲": {
+    "alias_of": "角聲"
   },
   "神記念他的約": {
     "alias_of": "記念我的約"
@@ -17488,6 +17941,12 @@
   "復和": {
     "alias_of": "饒恕與和好"
   },
+  "Pentecost and the giving of the Law": {
+    "alias_of": "五旬節與律法頒布"
+  },
+  "五旬節與西乃": {
+    "alias_of": "五旬節與律法頒布"
+  },
   "Twelve springs and seventy palm trees at Elim": {
     "alias_of": "以琳十二股水泉七十棵棕樹"
   },
@@ -17542,6 +18001,12 @@
   "接待客旅的古代背景": {
     "alias_of": "古代近東接待客旅禮儀"
   },
+  "ancient Near Eastern covenant ceremony": {
+    "alias_of": "古代近東立約儀式"
+  },
+  "古代立約儀式": {
+    "alias_of": "古代近東立約儀式"
+  },
   "Physical properties of manna": {
     "alias_of": "嗎哪的物理特性"
   },
@@ -17586,6 +18051,12 @@
   },
   "米甸的祭司": {
     "alias_of": "米甸祭司"
+  },
+  "Mount Sinai geography": {
+    "alias_of": "西乃山的地理"
+  },
+  "西乃山位置": {
+    "alias_of": "西乃山的地理"
   },
   "Quail migration": {
     "alias_of": "鵪鶉遷徙"
