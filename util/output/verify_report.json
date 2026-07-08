@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 13823,
+  "valid_links_count": 14050,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 93,
+  "pending_scripture_refs_count": 92,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -95,11 +95,6 @@
       "entity": "出埃及記",
       "book": "出埃及記",
       "chapter": 0
-    },
-    {
-      "entity": "02 出埃及記/第15章",
-      "book": "出埃及記",
-      "chapter": 15
     },
     {
       "entity": "02 出埃及記/第24章",
@@ -1181,11 +1176,6 @@
         ]
       ],
       "link_folder/地點/書珥.md": [
-        [
-          "02 出埃及記/第15章",
-          "出埃及記",
-          15
-        ],
         [
           "09 撒母耳記上/第15章",
           "撒母耳記上",

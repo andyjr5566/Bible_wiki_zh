@@ -737,6 +737,9 @@ PASS 條件：`CRITICAL=0`。WARNING 必須回報並人工判斷是否修。
 11. 根據經文與有效 raw text 建 `link_candidates.md`。
 12. 執行 `python util/resolve_link_candidates.py 【書名】 X` 產生 `link_plan.md`。
 13. 根據 `link_plan.md` 寫 `【序號 書名】/第x章.md`：經文 + wiki-link + 本章知識節點 + 本章整理。
+	- 若是四段太長，可以分成兩段撰寫，即:
+		- 經文 + wiki-link
+		- 本章知識節點 + 本章整理
 14. 根據 `link_plan.md` 建立／更新 link_folder：B 預設經 `link_updates.yaml` 安全累積；C 正式、D 人工判斷、E 不連。
 15. 對 B 類執行 `util/link_updates.py prepare`，回到來源填寫 manifest，dry-run 後 apply；重跑確認 0 個重複變更。
 16. 執行最終驗證順序，修到結構驗證無 error、verify 無 blocking、quality 無 critical。

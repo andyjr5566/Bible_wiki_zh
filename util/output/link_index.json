@@ -645,6 +645,18 @@
     "status": "formal",
     "aliases": []
   },
+  "聽命順從蒙醫治": {
+    "path": "link_folder/主題/聽命順從蒙醫治.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "聽命順從蒙醫治",
+    "status": "formal",
+    "aliases": [
+      "Obedience brings healing"
+    ]
+  },
   "腹中相爭": {
     "path": "link_folder/主題/腹中相爭.md",
     "type": "主題",
@@ -851,6 +863,19 @@
     "status": "candidate",
     "aliases": []
   },
+  "以琳綠洲": {
+    "path": "link_folder/事件/以琳綠洲.md",
+    "type": "事件",
+    "secondary_types": [
+      "地點",
+      "神學"
+    ],
+    "title": "以琳綠洲",
+    "status": "formal",
+    "aliases": [
+      "Elim oasis"
+    ]
+  },
   "以色列進迦南": {
     "path": "link_folder/事件/以色列進迦南.md",
     "type": "事件",
@@ -874,6 +899,20 @@
     "title": "曠野試驗",
     "status": "candidate",
     "aliases": []
+  },
+  "瑪拉苦水變甜": {
+    "path": "link_folder/事件/瑪拉苦水變甜.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "原文"
+    ],
+    "title": "瑪拉苦水變甜",
+    "status": "formal",
+    "aliases": [
+      "瑪拉苦水變甜神蹟",
+      "Water of Marah sweetened"
+    ]
   },
   "雅各全家下埃及": {
     "path": "link_folder/事件/雅各全家下埃及.md",
@@ -1047,6 +1086,19 @@
     "aliases": [
       "何西阿12雅各摔跤",
       "何西阿書12章"
+    ]
+  },
+  "來12：29 我們的神乃是烈火": {
+    "path": "link_folder/互文/來12：29 我們的神乃是烈火.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "來12：29 我們的神乃是烈火",
+    "status": "formal",
+    "aliases": [
+      "Hebrews 12:29",
+      "our God is a consuming fire"
     ]
   },
   "來十一29 因信過紅海": {
@@ -1318,6 +1370,20 @@
     "status": "formal",
     "aliases": []
   },
+  "啟15：2-4 羔羊之歌": {
+    "path": "link_folder/互文/啟15：2-4 羔羊之歌.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "敬拜"
+    ],
+    "title": "啟15：2-4 羔羊之歌",
+    "status": "formal",
+    "aliases": [
+      "Song of the Lamb",
+      "Revelation 15:2-4"
+    ]
+  },
   "啟示錄 16-21（末世大冰雹）": {
     "path": "link_folder/互文/啟示錄 16-21（末世大冰雹）.md",
     "type": "互文",
@@ -1537,6 +1603,20 @@
     "aliases": [
       "撒母耳記下13:10-19 暗嫩他瑪",
       "暗嫩他瑪 (撒下13)"
+    ]
+  },
+  "林前10：10 不要發怨言": {
+    "path": "link_folder/互文/林前10：10 不要發怨言.md",
+    "type": "互文",
+    "secondary_types": [
+      "主題",
+      "歷史"
+    ],
+    "title": "林前10：10 不要發怨言",
+    "status": "formal",
+    "aliases": [
+      "1 Corinthians 10:10",
+      "do not grumble"
     ]
   },
   "林前十1-2 受浸歸入摩西": {
@@ -2121,6 +2201,19 @@
       "西緬利未受咒詛 (創49:5-7)"
     ]
   },
+  "詩118：14 耶和華是我的力量我的詩歌": {
+    "path": "link_folder/互文/詩118：14 耶和華是我的力量我的詩歌.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "敬拜"
+    ],
+    "title": "詩118：14 耶和華是我的力量我的詩歌",
+    "status": "formal",
+    "aliases": [
+      "Psalm 118:14"
+    ]
+  },
   "詩一三六15 法老軍兵推翻": {
     "path": "link_folder/互文/詩一三六15 法老軍兵推翻.md",
     "type": "互文",
@@ -2247,6 +2340,19 @@
       "腓2-7-8",
       "腓立比書2-7-8",
       "謙卑像基督 (腓2-7-8)"
+    ]
+  },
+  "賽12：2 耶和華是我的力量我的詩歌": {
+    "path": "link_folder/互文/賽12：2 耶和華是我的力量我的詩歌.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學",
+      "敬拜"
+    ],
+    "title": "賽12：2 耶和華是我的力量我的詩歌",
+    "status": "formal",
+    "aliases": [
+      "Isaiah 12:2"
     ]
   },
   "賽五十八8 耶和華作後盾": {
@@ -4536,6 +4642,19 @@
     "status": "formal",
     "aliases": []
   },
+  "以琳（ trees ）": {
+    "path": "link_folder/原文/以琳（ trees ）.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "以琳（ trees ）",
+    "status": "formal",
+    "aliases": [
+      "Elim etymology",
+      "trees"
+    ]
+  },
   "以色列": {
     "path": "link_folder/原文/以色列.md",
     "type": "原文",
@@ -5048,6 +5167,19 @@
     "status": "formal",
     "aliases": []
   },
+  "書珥（ wall ）": {
+    "path": "link_folder/原文/書珥（ wall ）.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "書珥（ wall ）",
+    "status": "formal",
+    "aliases": [
+      "Shur etymology",
+      "wall"
+    ]
+  },
   "東風與西風": {
     "path": "link_folder/原文/東風與西風.md",
     "type": "原文",
@@ -5250,6 +5382,19 @@
     "aliases": [
       "狗不搖舌",
       "連狗也不敢向他們搖舌"
+    ]
+  },
+  "瑪拉（ bitterness ）": {
+    "path": "link_folder/原文/瑪拉（ bitterness ）.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "瑪拉（ bitterness ）",
+    "status": "formal",
+    "aliases": [
+      "Marah etymology",
+      "bitterness"
     ]
   },
   "瑪拿西（使之忘了）": {
@@ -5823,6 +5968,19 @@
       "Ephrathah"
     ]
   },
+  "以琳": {
+    "path": "link_folder/地點/以琳.md",
+    "type": "地點",
+    "secondary_types": [
+      "原文",
+      "歷史"
+    ],
+    "title": "以琳",
+    "status": "formal",
+    "aliases": [
+      "Elim"
+    ]
+  },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
     "type": "地點",
@@ -6348,6 +6506,19 @@
     "status": "formal",
     "aliases": []
   },
+  "書珥的曠野": {
+    "path": "link_folder/地點/書珥的曠野.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "書珥的曠野",
+    "status": "formal",
+    "aliases": [
+      "Wilderness of Shur",
+      "書珥曠野"
+    ]
+  },
   "東方人之地": {
     "path": "link_folder/地點/東方人之地.md",
     "type": "地點",
@@ -6527,6 +6698,19 @@
       "二軍兵",
       "兩隊",
       "Mahanaim"
+    ]
+  },
+  "瑪拉": {
+    "path": "link_folder/地點/瑪拉.md",
+    "type": "地點",
+    "secondary_types": [
+      "原文",
+      "歷史"
+    ],
+    "title": "瑪拉",
+    "status": "formal",
+    "aliases": [
+      "Marah"
     ]
   },
   "田間": {
@@ -9980,6 +10164,20 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西之歌": {
+    "path": "link_folder/神學/摩西之歌.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文",
+      "敬拜"
+    ],
+    "title": "摩西之歌",
+    "status": "formal",
+    "aliases": [
+      "Song of Moses",
+      "摩西和以色列人的歌"
+    ]
+  },
   "摩西伸杖": {
     "path": "link_folder/神學/摩西伸杖.md",
     "type": "神學",
@@ -10706,6 +10904,18 @@
     "status": "formal",
     "aliases": []
   },
+  "神的右手": {
+    "path": "link_folder/神學/神的右手.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神的右手",
+    "status": "formal",
+    "aliases": [
+      "Right hand of God"
+    ]
+  },
   "神的同在": {
     "path": "link_folder/神學/神的同在.md",
     "type": "神學",
@@ -10766,6 +10976,19 @@
     "title": "神的恩典與保護",
     "status": "formal",
     "aliases": []
+  },
+  "神的慈愛引領": {
+    "path": "link_folder/神學/神的慈愛引領.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神的慈愛引領",
+    "status": "formal",
+    "aliases": [
+      "God's loving devotion leads",
+      "神的慈愛引導"
+    ]
   },
   "神的憐憫": {
     "path": "link_folder/神學/神的憐憫.md",
@@ -10847,6 +11070,20 @@
     "title": "神的管教與鞭打",
     "status": "formal",
     "aliases": []
+  },
+  "神的聖所": {
+    "path": "link_folder/神學/神的聖所.md",
+    "type": "神學",
+    "secondary_types": [
+      "地點",
+      "敬拜"
+    ],
+    "title": "神的聖所",
+    "status": "formal",
+    "aliases": [
+      "God's holy dwelling",
+      "神的居所"
+    ]
   },
   "神的記念": {
     "path": "link_folder/神學/神的記念.md",
@@ -11076,6 +11313,19 @@
       "第五災"
     ]
   },
+  "米利暗之歌": {
+    "path": "link_folder/神學/米利暗之歌.md",
+    "type": "神學",
+    "secondary_types": [
+      "敬拜",
+      "人物"
+    ],
+    "title": "米利暗之歌",
+    "status": "formal",
+    "aliases": [
+      "Song of Miriam"
+    ]
+  },
   "米甸曠野對摩西的預備": {
     "path": "link_folder/神學/米甸曠野對摩西的預備.md",
     "type": "神學",
@@ -11193,6 +11443,19 @@
       "在耶和華的山上必有預備"
     ]
   },
+  "耶和華作王": {
+    "path": "link_folder/神學/耶和華作王.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "耶和華作王",
+    "status": "formal",
+    "aliases": [
+      "The LORD reigns",
+      "Yahweh shall reign"
+    ]
+  },
   "耶和華使凡事順利": {
     "path": "link_folder/神學/耶和華使凡事順利.md",
     "type": "神學",
@@ -11255,6 +11518,47 @@
     "title": "耶和華把他關在方舟裡",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華拉法": {
+    "path": "link_folder/神學/耶和華拉法.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文",
+      "主題"
+    ],
+    "title": "耶和華拉法",
+    "status": "formal",
+    "aliases": [
+      "Yahweh Rapha",
+      "耶和華是醫治者",
+      "Jehovah Rapha"
+    ]
+  },
+  "耶和華是我的力量我的詩歌我的拯救": {
+    "path": "link_folder/神學/耶和華是我的力量我的詩歌我的拯救.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文",
+      "敬拜"
+    ],
+    "title": "耶和華是我的力量我的詩歌我的拯救",
+    "status": "formal",
+    "aliases": [
+      "Yahweh is my strength and my song and my salvation"
+    ]
+  },
+  "耶和華是戰士": {
+    "path": "link_folder/神學/耶和華是戰士.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "耶和華是戰士",
+    "status": "formal",
+    "aliases": [
+      "Yahweh is a warrior",
+      "耶和華是戰士"
+    ]
   },
   "耶和華是誰": {
     "path": "link_folder/神學/耶和華是誰.md",
@@ -11840,6 +12144,19 @@
     "status": "formal",
     "aliases": []
   },
+  "以琳十二股水泉七十棵棕樹": {
+    "path": "link_folder/背景/以琳十二股水泉七十棵棕樹.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點",
+      "原文"
+    ],
+    "title": "以琳十二股水泉七十棵棕樹",
+    "status": "formal",
+    "aliases": [
+      "Twelve springs and seventy palm trees at Elim"
+    ]
+  },
   "伊甸園四河": {
     "path": "link_folder/背景/伊甸園四河.md",
     "type": "背景",
@@ -12005,6 +12322,19 @@
       "方舟規格"
     ]
   },
+  "書珥曠野三天無水": {
+    "path": "link_folder/背景/書珥曠野三天無水.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點",
+      "歷史"
+    ],
+    "title": "書珥曠野三天無水",
+    "status": "formal",
+    "aliases": [
+      "Three days without water in Shur"
+    ]
+  },
   "歌斐木": {
     "path": "link_folder/背景/歌斐木.md",
     "type": "背景",
@@ -12057,6 +12387,19 @@
     "title": "牧羊與牲畜繁殖",
     "status": "formal",
     "aliases": []
+  },
+  "瑪拉苦水": {
+    "path": "link_folder/背景/瑪拉苦水.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點",
+      "原文"
+    ],
+    "title": "瑪拉苦水",
+    "status": "formal",
+    "aliases": [
+      "Bitter waters of Marah"
+    ]
   },
   "空虛混沌的原意": {
     "path": "link_folder/背景/空虛混沌的原意.md",
@@ -13381,11 +13724,23 @@
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
+  "Obedience brings healing": {
+    "alias_of": "聽命順從蒙醫治"
+  },
   "遮眼": {
     "alias_of": "遮羞"
   },
   "公開昭雪": {
     "alias_of": "遮羞"
+  },
+  "Elim oasis": {
+    "alias_of": "以琳綠洲"
+  },
+  "瑪拉苦水變甜神蹟": {
+    "alias_of": "瑪拉苦水變甜"
+  },
+  "Water of Marah sweetened": {
+    "alias_of": "瑪拉苦水變甜"
   },
   "seven days": {
     "alias_of": "七天的審判"
@@ -13437,6 +13792,12 @@
   },
   "何西阿書12章": {
     "alias_of": "何西阿書12章雅各摔跤"
+  },
+  "Hebrews 12:29": {
+    "alias_of": "來12：29 我們的神乃是烈火"
+  },
+  "our God is a consuming fire": {
+    "alias_of": "來12：29 我們的神乃是烈火"
   },
   "來11:29": {
     "alias_of": "來十一29 因信過紅海"
@@ -13504,6 +13865,12 @@
   "詩篇133-1": {
     "alias_of": "和睦是神喜悅 (詩133-1)"
   },
+  "Song of the Lamb": {
+    "alias_of": "啟15：2-4 羔羊之歌"
+  },
+  "Revelation 15:2-4": {
+    "alias_of": "啟15：2-4 羔羊之歌"
+  },
   "末世大雹": {
     "alias_of": "啟示錄 16-21（末世大冰雹）"
   },
@@ -13557,6 +13924,12 @@
   },
   "暗嫩他瑪 (撒下13)": {
     "alias_of": "撒母耳記下13_10-19 暗嫩他瑪"
+  },
+  "1 Corinthians 10:10": {
+    "alias_of": "林前10：10 不要發怨言"
+  },
+  "do not grumble": {
+    "alias_of": "林前10：10 不要發怨言"
   },
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
@@ -13735,6 +14108,9 @@
   "西緬利未受咒詛 (創49:5-7)": {
     "alias_of": "西緬利未受咒詛 (創49_5-7)"
   },
+  "Psalm 118:14": {
+    "alias_of": "詩118：14 耶和華是我的力量我的詩歌"
+  },
   "詩136:15": {
     "alias_of": "詩一三六15 法老軍兵推翻"
   },
@@ -13767,6 +14143,9 @@
   },
   "腓立比書2-7-8": {
     "alias_of": "謙卑像基督 (腓2-7-8)"
+  },
+  "Isaiah 12:2": {
+    "alias_of": "賽12：2 耶和華是我的力量我的詩歌"
   },
   "賽58:8": {
     "alias_of": "賽五十八8 耶和華作後盾"
@@ -14119,6 +14498,12 @@
   "Nisan": {
     "alias_of": "亞筆月"
   },
+  "Elim etymology": {
+    "alias_of": "以琳（ trees ）"
+  },
+  "trees": {
+    "alias_of": "以琳（ trees ）"
+  },
   "Israel": {
     "alias_of": "以色列"
   },
@@ -14251,6 +14636,12 @@
   "chamushim": {
     "alias_of": "昂然無懼"
   },
+  "Shur etymology": {
+    "alias_of": "書珥（ wall ）"
+  },
+  "wall": {
+    "alias_of": "書珥（ wall ）"
+  },
   "east and west winds": {
     "alias_of": "東風與西風"
   },
@@ -14325,6 +14716,12 @@
   },
   "連狗也不敢向他們搖舌": {
     "alias_of": "狗不敢搖舌"
+  },
+  "Marah etymology": {
+    "alias_of": "瑪拉（ bitterness ）"
+  },
+  "bitterness": {
+    "alias_of": "瑪拉（ bitterness ）"
   },
   "監/監牢/坑": {
     "alias_of": "監_坑_地牢_dungeon"
@@ -14485,6 +14882,9 @@
   "Ephrathah": {
     "alias_of": "以法他"
   },
+  "Elim": {
+    "alias_of": "以琳"
+  },
   "Enaim": {
     "alias_of": "伊拿印"
   },
@@ -14557,6 +14957,12 @@
   "摩利亞山": {
     "alias_of": "摩利亞地"
   },
+  "Wilderness of Shur": {
+    "alias_of": "書珥的曠野"
+  },
+  "書珥曠野": {
+    "alias_of": "書珥的曠野"
+  },
   "Pi-hahiroth": {
     "alias_of": "比哈希錄"
   },
@@ -14595,6 +15001,9 @@
   },
   "Mahanaim": {
     "alias_of": "瑪哈念"
+  },
+  "Marah": {
+    "alias_of": "瑪拉"
   },
   "Succoth": {
     "alias_of": "疏割"
@@ -15466,6 +15875,12 @@
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
   },
+  "Song of Moses": {
+    "alias_of": "摩西之歌"
+  },
+  "摩西和以色列人的歌": {
+    "alias_of": "摩西之歌"
+  },
   "摩西憑血氣施救": {
     "alias_of": "摩西憑己力施救與神的時間"
   },
@@ -15622,6 +16037,15 @@
   "不是你們乃是神": {
     "alias_of": "神的主權與人的責任"
   },
+  "Right hand of God": {
+    "alias_of": "神的右手"
+  },
+  "God's loving devotion leads": {
+    "alias_of": "神的慈愛引領"
+  },
+  "神的慈愛引導": {
+    "alias_of": "神的慈愛引領"
+  },
   "finger of God": {
     "alias_of": "神的手段"
   },
@@ -15633,6 +16057,12 @@
   },
   "拯救看似失敗": {
     "alias_of": "神的拯救延遲"
+  },
+  "God's holy dwelling": {
+    "alias_of": "神的聖所"
+  },
+  "神的居所": {
+    "alias_of": "神的聖所"
   },
   "神的掌管": {
     "alias_of": "神的護理"
@@ -15691,6 +16121,9 @@
   "第五災": {
     "alias_of": "第五災：重重的瘟疫"
   },
+  "Song of Miriam": {
+    "alias_of": "米利暗之歌"
+  },
   "摩西在米甸的預備": {
     "alias_of": "米甸曠野對摩西的預備"
   },
@@ -15715,6 +16148,12 @@
   "在耶和華的山上必有預備": {
     "alias_of": "耶和華以勒"
   },
+  "The LORD reigns": {
+    "alias_of": "耶和華作王"
+  },
+  "Yahweh shall reign": {
+    "alias_of": "耶和華作王"
+  },
   "使法老剛硬": {
     "alias_of": "耶和華使法老的心剛硬"
   },
@@ -15729,6 +16168,21 @@
   },
   "耶和華名的宣告": {
     "alias_of": "耶和華我是"
+  },
+  "Yahweh Rapha": {
+    "alias_of": "耶和華拉法"
+  },
+  "耶和華是醫治者": {
+    "alias_of": "耶和華拉法"
+  },
+  "Jehovah Rapha": {
+    "alias_of": "耶和華拉法"
+  },
+  "Yahweh is my strength and my song and my salvation": {
+    "alias_of": "耶和華是我的力量我的詩歌我的拯救"
+  },
+  "Yahweh is a warrior": {
+    "alias_of": "耶和華是戰士"
   },
   "El Olam": {
     "alias_of": "耶和華永生神"
@@ -15874,6 +16328,9 @@
   "復和": {
     "alias_of": "饒恕與和好"
   },
+  "Twelve springs and seventy palm trees at Elim": {
+    "alias_of": "以琳十二股水泉七十棵棕樹"
+  },
   "伊甸四河": {
     "alias_of": "伊甸園四河"
   },
@@ -15919,6 +16376,9 @@
   "方舟規格": {
     "alias_of": "方舟的尺寸與結構"
   },
+  "Three days without water in Shur": {
+    "alias_of": "書珥曠野三天無水"
+  },
   "挪亞洪水時間軸": {
     "alias_of": "洪水全程時間軸"
   },
@@ -15930,6 +16390,9 @@
   },
   "地容不下牧群": {
     "alias_of": "牧人水草與土地承載"
+  },
+  "Bitter waters of Marah": {
+    "alias_of": "瑪拉苦水"
   },
   "一千銀子的意義": {
     "alias_of": "一千銀子與遮羞的含義"
