@@ -145,8 +145,13 @@ def validate_file(path, strict=False):
             body = text[stack.pop(key):match.start()]
             markers[key] = body
             accumulation = re.search(
-                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## 主題發展\s*$)", text, re.M
+                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## (?:主題發展|相關條目|來源依據)\s*$)",
+                text, re.M,
             )
+            if not accumulation:
+                accumulation = re.search(
+                    r"^## 按書卷累積\s*$([\s\S]*)", text, re.M
+                )
             if not accumulation or not (
                 accumulation.start(1) <= match.start() < accumulation.end(1)
             ):
@@ -171,7 +176,18 @@ def validate_file(path, strict=False):
         if not re.search(r"^##\s+來源依據\s*$", text, re.M):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少來源依據")
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
-        if headings != FORMAL_H2:
+        # H2 順序檢查：允許缺少非必填 H2（主題發展、相關條目），
+        # 但存在的 H2 必須按 scheme 順序排列。
+        # 必填：定義、按書卷累積、來源依據
+        # 選填：主題發展、相關條目
+        missing_required = [h for h in ["定義", "按書卷累積", "來源依據"] if h not in headings]
+        if missing_required:
+            errors.append(f"{relative}: 正式條目缺少必填 H2：{', '.join(missing_required)}")
+        # 檢查存在的 H2 是否按 scheme 順序
+        order_map = {h: i for i, h in enumerate(FORMAL_H2)}
+        present_in_order = [h for h in headings if h in order_map]
+        expected_order = sorted(present_in_order, key=lambda h: order_map[h])
+        if present_in_order != expected_order:
             errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
         marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)
                        if m.group("edge") == "start"]

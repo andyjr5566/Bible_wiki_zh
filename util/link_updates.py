@@ -99,9 +99,19 @@ def apply_updates(manifest, dry_run=False):
             if count != 1:
                 raise ValueError(f"{path}: 累積標記損壞")
         else:
+            # Try to locate the accumulation section.  The canonical end
+            # boundary is ``## 主題發展``; if that is missing (older entries
+            # may only have ``## 相關條目`` or ``## 來源依據``), fall back to
+            # the next available H2 heading after ``## 按書卷累積``.
             accumulation = re.search(
-                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## 主題發展\s*$)", text, re.M
+                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## (?:主題發展|相關條目|來源依據)\s*$)",
+                text, re.M,
             )
+            if not accumulation:
+                # Last resort: grab everything from ``## 按書卷累積`` to EOF
+                accumulation = re.search(
+                    r"^## 按書卷累積\s*$([\s\S]*)", text, re.M
+                )
             if not accumulation:
                 raise ValueError(f"{path}: 找不到合法的按書卷累積區")
             section = accumulation.group(1)
