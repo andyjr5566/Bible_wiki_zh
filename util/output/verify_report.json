@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 14361,
+  "valid_links_count": 14567,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 96,
+  "pending_scripture_refs_count": 95,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -362,11 +362,6 @@
       "chapter": 24
     },
     {
-      "entity": "43 約翰福音/第1章",
-      "book": "約翰福音",
-      "chapter": 1
-    },
-    {
       "entity": "43 約翰福音/第3章",
       "book": "約翰福音",
       "chapter": 3
@@ -491,13 +486,6 @@
   "details": {
     "broken": {},
     "pending": {
-      "01 創世記/第28章.md": [
-        [
-          "43 約翰福音/第1章",
-          "約翰福音",
-          1
-        ]
-      ],
       "link_folder/主題/人的方法與神的應許.md": [
         [
           "23 以賽亞書/第28章",

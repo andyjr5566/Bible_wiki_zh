@@ -4,56 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "bc3fcda0b661b771",
-        "type": "tabs",
-        "dimension": 56.04325699745547,
-        "children": [
-          {
-            "id": "0d256e0f31958fd4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            },
-            "group": "07d503c601e0fc2d"
-          },
-          {
-            "id": "3becc5299f2bbc6c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "link_folder/神學/神試驗亞伯拉罕.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "神試驗亞伯拉罕"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
         "id": "8fbed1b02d337b82",
         "type": "tabs",
-        "dimension": 43.95674300254453,
         "children": [
           {
             "id": "e1f8091c9bd8916e",
@@ -61,7 +13,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "index.md",
+                "file": "02 出埃及記/第17章.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -89,11 +41,25 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "index 的關聯圖"
-            },
-            "group": "07d503c601e0fc2d"
+              "title": "第17章 的關聯圖"
+            }
+          },
+          {
+            "id": "ba0fc19f9777580b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02 出埃及記/第17章.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "第17章"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -125,7 +91,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "神的試驗",
+                "query": "耶和華拉法",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -146,8 +112,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -167,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link_folder/神學/神試驗亞伯拉罕.md",
+                "file": "02 出埃及記/第17章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +142,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "神試驗亞伯拉罕 的反向連結"
+              "title": "第17章 的反向連結"
             }
           },
           {
@@ -186,12 +151,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link_folder/神學/神試驗亞伯拉罕.md",
+                "file": "02 出埃及記/第17章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "神試驗亞伯拉罕 的對外連結"
+              "title": "第17章 的對外連結"
             }
           },
           {
@@ -229,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link_folder/神學/神試驗亞伯拉罕.md",
+                "file": "02 出埃及記/第17章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "神試驗亞伯拉罕 的大綱"
+              "title": "第17章 的大綱"
             }
           }
         ]
@@ -257,44 +222,44 @@
       "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "3becc5299f2bbc6c",
+  "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "02 出埃及記/第16章.md",
-    "link_folder/事件/保存一俄梅珥嗎哪.md",
-    "link_folder/事件/安息日收取規定.md",
-    "link_folder/事件/鵪鶉遮營.md",
-    "link_folder/事件/天降嗎哪.md",
-    "link_folder/背景/安息日的前身.md",
-    "link_folder/背景/嗎哪的物理特性.md",
-    "link_folder/背景/鵪鶉遷徙.md",
-    "link_folder/背景/汛的曠野地理.md",
-    "link_folder/互文/腓2：14 不發怨言.md",
-    "link_folder/互文/申8：3 人活著不是單靠食物.md",
-    "link_folder/互文/詩78：24-25 天上的糧食.md",
-    "link_folder/互文/來9：4 盛嗎哪的金罐.md",
-    "link_folder/互文/啟2：17 隱藏的嗎哪.md",
-    "link_folder/互文/林後8：13-15 多收的沒有餘少收的沒有缺.md",
-    "link_folder/互文/約6：51 我是從天上降下來的活糧.md",
-    "link_folder/互文/約6：31-35 耶穌是生命的糧.md",
-    "link_folder/地點/西乃.md",
-    "link_folder/地點/汛的曠野.md",
-    "link_folder/原文/汛（ Sin thorn ）.md",
-    "link_folder/原文/嗎哪（ What is it ）.md",
-    "link_folder/原文/俄梅珥（ omer ）.md",
-    "link_folder/神學/耶和華的榮光.md",
-    "link_folder/神學/安息日的設立.md",
-    "link_folder/神學/嗎哪預表基督.md",
-    "link_folder/主題/神的供應.md",
+    "scheme.md",
+    "02 出埃及記/第17章.md",
+    "link_folder/事件/築壇耶和華尼西.md",
+    "link_folder/事件/摩西舉手得勝.md",
+    "link_folder/事件/戰勝亞瑪力人.md",
+    "link_folder/事件/磐石出水.md",
+    "link_folder/背景/何烈與西乃的關係.md",
+    "link_folder/背景/利非訂地理.md",
+    "link_folder/互文/賽53：4-5 磐石被擊打.md",
+    "link_folder/互文/約7：38-39 活水的江河.md",
+    "link_folder/互文/約4：14 活水.md",
+    "link_folder/互文/申25：17-19 記念亞瑪力.md",
+    "link_folder/互文/來3：8-9 硬著心不可像瑪撒.md",
+    "link_folder/互文/詩78：15-16 磐石出水.md",
+    "link_folder/互文/林前10：4 靈磐石就是基督.md",
+    "link_folder/神學/磐石預表基督.md",
+    "link_folder/神學/耶和華尼西.md",
+    "link_folder/神學/磐石出活水.md",
+    "link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md",
+    "link_folder/原文/利非訂（ repose ）.md",
+    "link_folder/原文/米利巴（ strife ）.md",
+    "link_folder/原文/瑪撒（ temptation ）.md",
+    "link_folder/地點/何烈.md",
+    "link_folder/地點/利非訂.md",
+    "scheme_index.md",
+    "link_folder/人物/亞瑪力.md",
+    "raw_data/ccbiblestudy_GT_exodus_17.txt",
+    "raw_data/ccbiblestudy_CT_exodus_17.txt",
+    "raw_data/kingcomments_exodus_17.txt",
+    "raw_data/biblehub_study_exodus_17.txt",
     "raw_data/biblehub_study_exodus_16.txt",
     "raw_data/kingcomments_exodus_16.txt",
     "raw_data/ccbiblestudy_GT_exodus_16.txt",
     "raw_data/ccbiblestudy_CT_exodus_16.txt",
     "raw_data/ccbiblestudy_GT_exodus_15.txt",
     "raw_data/ccbiblestudy_CT_exodus_15.txt",
-    "raw_data/ccbiblestudy_GT_exodus_14.txt",
-    "raw_data/ccbiblestudy_CT_exodus_14.txt",
-    "raw_data/ccbiblestudy_GT_exodus_13.txt",
-    "raw_data/ccbiblestudy_CT_exodus_13.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

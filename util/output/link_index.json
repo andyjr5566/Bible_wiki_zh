@@ -945,6 +945,30 @@
       "Sabbath gathering rules"
     ]
   },
+  "戰勝亞瑪力人": {
+    "path": "link_folder/事件/戰勝亞瑪力人.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "戰勝亞瑪力人",
+    "status": "formal",
+    "aliases": [
+      "Defeat of Amalek"
+    ]
+  },
+  "摩西舉手得勝": {
+    "path": "link_folder/事件/摩西舉手得勝.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西舉手得勝",
+    "status": "formal",
+    "aliases": [
+      "Moses raised hands"
+    ]
+  },
   "撒拉之死與埋葬": {
     "path": "link_folder/事件/撒拉之死與埋葬.md",
     "type": "事件",
@@ -973,6 +997,30 @@
     "aliases": [
       "瑪拉苦水變甜神蹟",
       "Water of Marah sweetened"
+    ]
+  },
+  "磐石出水": {
+    "path": "link_folder/事件/磐石出水.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "磐石出水",
+    "status": "formal",
+    "aliases": [
+      "Water from the Rock event"
+    ]
+  },
+  "築壇耶和華尼西": {
+    "path": "link_folder/事件/築壇耶和華尼西.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "築壇耶和華尼西",
+    "status": "formal",
+    "aliases": [
+      "Altar Jehovah Nissi"
     ]
   },
   "雅各全家下埃及": {
@@ -1172,6 +1220,18 @@
     "aliases": [
       "Hebrews 12:29",
       "our God is a consuming fire"
+    ]
+  },
+  "來3：8-9 硬著心不可像瑪撒": {
+    "path": "link_folder/互文/來3：8-9 硬著心不可像瑪撒.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "來3：8-9 硬著心不可像瑪撒",
+    "status": "formal",
+    "aliases": [
+      "Heb 3:8-9 Do not harden your heart"
     ]
   },
   "來9：4 盛嗎哪的金罐": {
@@ -1716,6 +1776,18 @@
       "do not grumble"
     ]
   },
+  "林前10：4 靈磐石就是基督": {
+    "path": "link_folder/互文/林前10：4 靈磐石就是基督.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "林前10：4 靈磐石就是基督",
+    "status": "formal",
+    "aliases": [
+      "1Cor 10:4 Spiritual Rock"
+    ]
+  },
   "林前十1-2 受浸歸入摩西": {
     "path": "link_folder/互文/林前十1-2 受浸歸入摩西.md",
     "type": "互文",
@@ -1878,6 +1950,18 @@
       "王心在神手中 (箴21-1)"
     ]
   },
+  "申25：17-19 記念亞瑪力": {
+    "path": "link_folder/互文/申25：17-19 記念亞瑪力.md",
+    "type": "互文",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "申25：17-19 記念亞瑪力",
+    "status": "formal",
+    "aliases": [
+      "Deut 25:17-19 Remember Amalek"
+    ]
+  },
   "申8：3 人活著不是單靠食物": {
     "path": "link_folder/互文/申8：3 人活著不是單靠食物.md",
     "type": "互文",
@@ -2021,6 +2105,18 @@
       "禮物挽回怒氣 (箴21-14)"
     ]
   },
+  "約4：14 活水": {
+    "path": "link_folder/互文/約4：14 活水.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約4：14 活水",
+    "status": "formal",
+    "aliases": [
+      "John 4:14 Living water"
+    ]
+  },
   "約6：31-35 耶穌是生命的糧": {
     "path": "link_folder/互文/約6：31-35 耶穌是生命的糧.md",
     "type": "互文",
@@ -2043,6 +2139,18 @@
     "status": "formal",
     "aliases": [
       "John 6:51 Living bread"
+    ]
+  },
+  "約7：38-39 活水的江河": {
+    "path": "link_folder/互文/約7：38-39 活水的江河.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約7：38-39 活水的江河",
+    "status": "formal",
+    "aliases": [
+      "John 7:38-39 Rivers of living water"
     ]
   },
   "約伯記 38-22-23（神所存留的冰雹）": {
@@ -2371,6 +2479,18 @@
       "Psalm 118:14"
     ]
   },
+  "詩78：15-16 磐石出水": {
+    "path": "link_folder/互文/詩78：15-16 磐石出水.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "詩78：15-16 磐石出水",
+    "status": "formal",
+    "aliases": [
+      "Psalm 78:15-16 Rock water"
+    ]
+  },
   "詩78：24-25 天上的糧食": {
     "path": "link_folder/互文/詩78：24-25 天上的糧食.md",
     "type": "互文",
@@ -2522,6 +2642,18 @@
     "status": "formal",
     "aliases": [
       "Isaiah 12:2"
+    ]
+  },
+  "賽53：4-5 磐石被擊打": {
+    "path": "link_folder/互文/賽53：4-5 磐石被擊打.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "賽53：4-5 磐石被擊打",
+    "status": "formal",
+    "aliases": [
+      "Isa 53:4-5 Stricken Rock"
     ]
   },
   "賽五十八8 耶和華作後盾": {
@@ -2847,6 +2979,16 @@
     "status": "formal",
     "aliases": [
       "Abimelech"
+    ]
+  },
+  "亞瑪力": {
+    "path": "link_folder/人物/亞瑪力.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞瑪力",
+    "status": "formal",
+    "aliases": [
+      "Amalek"
     ]
   },
   "亞瑪力人": {
@@ -3414,6 +3556,16 @@
     "status": "formal",
     "aliases": [
       "Zilpah"
+    ]
+  },
+  "戶珥": {
+    "path": "link_folder/人物/戶珥.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "戶珥",
+    "status": "formal",
+    "aliases": [
+      "Hur"
     ]
   },
   "所羅門": {
@@ -4072,6 +4224,17 @@
     "status": "formal",
     "aliases": [
       "約押"
+    ]
+  },
+  "約書亞": {
+    "path": "link_folder/人物/約書亞.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "約書亞",
+    "status": "formal",
+    "aliases": [
+      "Joshua",
+      "Hoshea"
     ]
   },
   "約瑟": {
@@ -4966,6 +5129,16 @@
     "status": "formal",
     "aliases": []
   },
+  "利非訂（ repose ）": {
+    "path": "link_folder/原文/利非訂（ repose ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "利非訂（ repose ）",
+    "status": "formal",
+    "aliases": [
+      "Rephidim etymology"
+    ]
+  },
   "十分之一": {
     "path": "link_folder/原文/十分之一.md",
     "type": "原文",
@@ -5607,6 +5780,17 @@
     "status": "formal",
     "aliases": []
   },
+  "瑪撒（ temptation ）": {
+    "path": "link_folder/原文/瑪撒（ temptation ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "瑪撒（ temptation ）",
+    "status": "formal",
+    "aliases": [
+      "Massah",
+      "試探"
+    ]
+  },
   "用肚子行走，終身吃土": {
     "path": "link_folder/原文/用肚子行走，終身吃土.md",
     "type": "原文",
@@ -5692,6 +5876,17 @@
     "status": "formal",
     "aliases": []
   },
+  "米利巴（ strife ）": {
+    "path": "link_folder/原文/米利巴（ strife ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "米利巴（ strife ）",
+    "status": "formal",
+    "aliases": [
+      "Meribah",
+      "爭鬧"
+    ]
+  },
   "米斯巴": {
     "path": "link_folder/原文/米斯巴.md",
     "type": "原文",
@@ -5719,6 +5914,19 @@
       "陷害",
       "誘餌",
       "snare"
+    ]
+  },
+  "耶和華尼西（ Jehovah Nissi ）": {
+    "path": "link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "耶和華尼西（ Jehovah Nissi ）",
+    "status": "formal",
+    "aliases": [
+      "Jehovah Nissi",
+      "耶和華是我旌旗"
     ]
   },
   "耶和華的園子": {
@@ -6253,6 +6461,16 @@
     "status": "formal",
     "aliases": []
   },
+  "何烈": {
+    "path": "link_folder/地點/何烈.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "何烈",
+    "status": "formal",
+    "aliases": [
+      "Horeb"
+    ]
+  },
   "何烈山": {
     "path": "link_folder/地點/何烈山.md",
     "type": "地點",
@@ -6263,8 +6481,7 @@
     "title": "何烈山",
     "status": "formal",
     "aliases": [
-      "神的山何烈山",
-      "Horeb"
+      "神的山何烈山"
     ]
   },
   "別是巴": {
@@ -6296,6 +6513,16 @@
     "title": "利河伯（大河邊）",
     "status": "formal",
     "aliases": []
+  },
+  "利非訂": {
+    "path": "link_folder/地點/利非訂.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "利非訂",
+    "status": "formal",
+    "aliases": [
+      "Rephidim"
+    ]
   },
   "加低斯": {
     "path": "link_folder/地點/加低斯.md",
@@ -10979,6 +11206,30 @@
       "硫磺與火"
     ]
   },
+  "磐石出活水": {
+    "path": "link_folder/神學/磐石出活水.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "磐石出活水",
+    "status": "formal",
+    "aliases": [
+      "Water from the Rock"
+    ]
+  },
+  "磐石預表基督": {
+    "path": "link_folder/神學/磐石預表基督.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "磐石預表基督",
+    "status": "formal",
+    "aliases": [
+      "Rock as type of Christ"
+    ]
+  },
   "神作為賜福的源頭": {
     "path": "link_folder/神學/神作為賜福的源頭.md",
     "type": "神學",
@@ -11749,6 +12000,16 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華尼西": {
+    "path": "link_folder/神學/耶和華尼西.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華尼西",
+    "status": "formal",
+    "aliases": [
+      "The LORD is my Banner"
+    ]
+  },
   "耶和華我是": {
     "path": "link_folder/神學/耶和華我是.md",
     "type": "神學",
@@ -12433,6 +12694,18 @@
       "伊甸河流"
     ]
   },
+  "何烈與西乃的關係": {
+    "path": "link_folder/背景/何烈與西乃的關係.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "何烈與西乃的關係",
+    "status": "formal",
+    "aliases": [
+      "Horeb and Sinai relationship"
+    ]
+  },
   "光體作記號定節令": {
     "path": "link_folder/背景/光體作記號定節令.md",
     "type": "背景",
@@ -12477,6 +12750,18 @@
     "aliases": [
       "創世記列國表",
       "Table of Nations"
+    ]
+  },
+  "利非訂地理": {
+    "path": "link_folder/背景/利非訂地理.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "利非訂地理",
+    "status": "formal",
+    "aliases": [
+      "Geography of Rephidim"
     ]
   },
   "十匹駱駝": {
@@ -14060,11 +14345,23 @@
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
   },
+  "Defeat of Amalek": {
+    "alias_of": "戰勝亞瑪力人"
+  },
+  "Moses raised hands": {
+    "alias_of": "摩西舉手得勝"
+  },
   "瑪拉苦水變甜神蹟": {
     "alias_of": "瑪拉苦水變甜"
   },
   "Water of Marah sweetened": {
     "alias_of": "瑪拉苦水變甜"
+  },
+  "Water from the Rock event": {
+    "alias_of": "磐石出水"
+  },
+  "Altar Jehovah Nissi": {
+    "alias_of": "築壇耶和華尼西"
   },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
@@ -14125,6 +14422,9 @@
   },
   "our God is a consuming fire": {
     "alias_of": "來12：29 我們的神乃是烈火"
+  },
+  "Heb 3:8-9 Do not harden your heart": {
+    "alias_of": "來3：8-9 硬著心不可像瑪撒"
   },
   "Hebrews 9:4 Golden jar of manna": {
     "alias_of": "來9：4 盛嗎哪的金罐"
@@ -14264,6 +14564,9 @@
   "do not grumble": {
     "alias_of": "林前10：10 不要發怨言"
   },
+  "1Cor 10:4 Spiritual Rock": {
+    "alias_of": "林前10：4 靈磐石就是基督"
+  },
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
   },
@@ -14311,6 +14614,9 @@
   },
   "箴言21-1": {
     "alias_of": "王心在神手中 (箴21-1)"
+  },
+  "Deut 25:17-19 Remember Amalek": {
+    "alias_of": "申25：17-19 記念亞瑪力"
   },
   "Deuteronomy 8:3 Man does not live by bread alone": {
     "alias_of": "申8：3 人活著不是單靠食物"
@@ -14369,11 +14675,17 @@
   "箴言21-14": {
     "alias_of": "禮物挽回怒氣 (箴21-14)"
   },
+  "John 4:14 Living water": {
+    "alias_of": "約4：14 活水"
+  },
   "John 6:31-35 Manna and Christ": {
     "alias_of": "約6：31-35 耶穌是生命的糧"
   },
   "John 6:51 Living bread": {
     "alias_of": "約6：51 我是從天上降下來的活糧"
+  },
+  "John 7:38-39 Rivers of living water": {
+    "alias_of": "約7：38-39 活水的江河"
   },
   "存留的冰雹": {
     "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
@@ -14459,6 +14771,9 @@
   "Psalm 118:14": {
     "alias_of": "詩118：14 耶和華是我的力量我的詩歌"
   },
+  "Psalm 78:15-16 Rock water": {
+    "alias_of": "詩78：15-16 磐石出水"
+  },
   "Psalm 78:24-25 Bread from heaven": {
     "alias_of": "詩78：24-25 天上的糧食"
   },
@@ -14497,6 +14812,9 @@
   },
   "Isaiah 12:2": {
     "alias_of": "賽12：2 耶和華是我的力量我的詩歌"
+  },
+  "Isa 53:4-5 Stricken Rock": {
+    "alias_of": "賽53：4-5 磐石被擊打"
   },
   "賽58:8": {
     "alias_of": "賽五十八8 耶和華作後盾"
@@ -14564,6 +14882,9 @@
   "Abimelech": {
     "alias_of": "亞比米勒"
   },
+  "Amalek": {
+    "alias_of": "亞瑪力"
+  },
   "Tamar": {
     "alias_of": "他瑪（創38）"
   },
@@ -14629,6 +14950,9 @@
   },
   "Zilpah": {
     "alias_of": "悉帕"
+  },
+  "Hur": {
+    "alias_of": "戶珥"
   },
   "所羅門王": {
     "alias_of": "所羅門"
@@ -14731,6 +15055,12 @@
   },
   "Jochebed": {
     "alias_of": "約基別"
+  },
+  "Joshua": {
+    "alias_of": "約書亞"
+  },
+  "Hoshea": {
+    "alias_of": "約書亞"
   },
   "Joseph": {
     "alias_of": "約瑟"
@@ -14890,6 +15220,9 @@
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "Rephidim etymology": {
+    "alias_of": "利非訂（ repose ）"
   },
   "Manna etymology": {
     "alias_of": "嗎哪（ What is it ）"
@@ -15086,11 +15419,23 @@
   "bitterness": {
     "alias_of": "瑪拉（ bitterness ）"
   },
+  "Massah": {
+    "alias_of": "瑪撒（ temptation ）"
+  },
+  "試探": {
+    "alias_of": "瑪撒（ temptation ）"
+  },
   "監/監牢/坑": {
     "alias_of": "監_坑_地牢_dungeon"
   },
   "推磨的婢女": {
     "alias_of": "磨子後的婢女"
+  },
+  "Meribah": {
+    "alias_of": "米利巴（ strife ）"
+  },
+  "爭鬧": {
+    "alias_of": "米利巴（ strife ）"
   },
   "yqš": {
     "alias_of": "網羅"
@@ -15103,6 +15448,12 @@
   },
   "snare": {
     "alias_of": "網羅"
+  },
+  "Jehovah Nissi": {
+    "alias_of": "耶和華尼西（ Jehovah Nissi ）"
+  },
+  "耶和華是我旌旗": {
+    "alias_of": "耶和華尼西（ Jehovah Nissi ）"
   },
   "聘金": {
     "alias_of": "聘金與禮物"
@@ -15257,10 +15608,10 @@
   "拉億": {
     "alias_of": "但"
   },
-  "神的山何烈山": {
-    "alias_of": "何烈山"
-  },
   "Horeb": {
+    "alias_of": "何烈"
+  },
+  "神的山何烈山": {
     "alias_of": "何烈山"
   },
   "Beersheba": {
@@ -15271,6 +15622,9 @@
   },
   "七之井": {
     "alias_of": "別是巴"
+  },
+  "Rephidim": {
+    "alias_of": "利非訂"
   },
   "加低斯巴尼亞": {
     "alias_of": "加低斯"
@@ -16391,6 +16745,12 @@
   "硫磺與火": {
     "alias_of": "硫磺與火從天上降下"
   },
+  "Water from the Rock": {
+    "alias_of": "磐石出活水"
+  },
+  "Rock as type of Christ": {
+    "alias_of": "磐石預表基督"
+  },
   "神保守救贖中的生命": {
     "alias_of": "神保守救贖計畫中的生命"
   },
@@ -16528,6 +16888,9 @@
   },
   "神使剛硬": {
     "alias_of": "耶和華使法老的心剛硬"
+  },
+  "The LORD is my Banner": {
+    "alias_of": "耶和華尼西"
   },
   "我是耶和華": {
     "alias_of": "耶和華我是"
@@ -16715,6 +17078,9 @@
   "伊甸河流": {
     "alias_of": "伊甸園四河"
   },
+  "Horeb and Sinai relationship": {
+    "alias_of": "何烈與西乃的關係"
+  },
   "出埃及記的書名": {
     "alias_of": "出埃及記書名的由來"
   },
@@ -16726,6 +17092,9 @@
   },
   "Table of Nations": {
     "alias_of": "列國表"
+  },
+  "Geography of Rephidim": {
+    "alias_of": "利非訂地理"
   },
   "使女代主母生子": {
     "alias_of": "古代近東代理孕母安排"
