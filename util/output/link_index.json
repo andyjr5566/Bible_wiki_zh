@@ -208,6 +208,18 @@
     "status": "formal",
     "aliases": []
   },
+  "嗎哪": {
+    "path": "link_folder/主題/嗎哪.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "嗎哪",
+    "status": "formal",
+    "aliases": [
+      "Manna"
+    ]
+  },
   "基土拉的地位": {
     "path": "link_folder/主題/基土拉的地位.md",
     "type": "主題",
@@ -538,6 +550,18 @@
     "title": "神堅定與亞伯拉罕的約",
     "status": "formal",
     "aliases": []
+  },
+  "神的供應": {
+    "path": "link_folder/主題/神的供應.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神的供應",
+    "status": "formal",
+    "aliases": [
+      "God's provision"
+    ]
   },
   "神的同在被人看見": {
     "path": "link_folder/主題/神的同在被人看見.md",
@@ -884,6 +908,43 @@
     "status": "candidate",
     "aliases": []
   },
+  "保存一俄梅珥嗎哪": {
+    "path": "link_folder/事件/保存一俄梅珥嗎哪.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "保存一俄梅珥嗎哪",
+    "status": "formal",
+    "aliases": [
+      "Preserving an omer of manna"
+    ]
+  },
+  "天降嗎哪": {
+    "path": "link_folder/事件/天降嗎哪.md",
+    "type": "事件",
+    "secondary_types": [
+      "主題",
+      "神學"
+    ],
+    "title": "天降嗎哪",
+    "status": "formal",
+    "aliases": [
+      "Manna from heaven"
+    ]
+  },
+  "安息日收取規定": {
+    "path": "link_folder/事件/安息日收取規定.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "安息日收取規定",
+    "status": "formal",
+    "aliases": [
+      "Sabbath gathering rules"
+    ]
+  },
   "撒拉之死與埋葬": {
     "path": "link_folder/事件/撒拉之死與埋葬.md",
     "type": "事件",
@@ -921,6 +982,18 @@
     "title": "雅各全家下埃及",
     "status": "candidate",
     "aliases": []
+  },
+  "鵪鶉遮營": {
+    "path": "link_folder/事件/鵪鶉遮營.md",
+    "type": "事件",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "鵪鶉遮營",
+    "status": "formal",
+    "aliases": [
+      "Quail covers the camp"
+    ]
   },
   "「神使我忘記」與「神使我昌盛」的屬靈經歷": {
     "path": "link_folder/互文/「神使我忘記」與「神使我昌盛」的屬靈經歷.md",
@@ -1099,6 +1172,18 @@
     "aliases": [
       "Hebrews 12:29",
       "our God is a consuming fire"
+    ]
+  },
+  "來9：4 盛嗎哪的金罐": {
+    "path": "link_folder/互文/來9：4 盛嗎哪的金罐.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "來9：4 盛嗎哪的金罐",
+    "status": "formal",
+    "aliases": [
+      "Hebrews 9:4 Golden jar of manna"
     ]
   },
   "來十一29 因信過紅海": {
@@ -1384,6 +1469,18 @@
       "Revelation 15:2-4"
     ]
   },
+  "啟2：17 隱藏的嗎哪": {
+    "path": "link_folder/互文/啟2：17 隱藏的嗎哪.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "啟2：17 隱藏的嗎哪",
+    "status": "formal",
+    "aliases": [
+      "Revelation 2:17 Hidden manna"
+    ]
+  },
   "啟示錄 16-21（末世大冰雹）": {
     "path": "link_folder/互文/啟示錄 16-21（末世大冰雹）.md",
     "type": "互文",
@@ -1632,6 +1729,18 @@
       "林前10:1-2"
     ]
   },
+  "林後8：13-15 多收的沒有餘少收的沒有缺": {
+    "path": "link_folder/互文/林後8：13-15 多收的沒有餘少收的沒有缺.md",
+    "type": "互文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "林後8：13-15 多收的沒有餘少收的沒有缺",
+    "status": "formal",
+    "aliases": [
+      "2Cor 8:13-15 Equality"
+    ]
+  },
   "歌羅西書二章": {
     "path": "link_folder/互文/歌羅西書二章.md",
     "type": "互文",
@@ -1769,6 +1878,18 @@
       "王心在神手中 (箴21-1)"
     ]
   },
+  "申8：3 人活著不是單靠食物": {
+    "path": "link_folder/互文/申8：3 人活著不是單靠食物.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "申8：3 人活著不是單靠食物",
+    "status": "formal",
+    "aliases": [
+      "Deuteronomy 8:3 Man does not live by bread alone"
+    ]
+  },
   "申命記22_28-29 強姦者娶被害女子律法": {
     "path": "link_folder/互文/申命記22_28-29 強姦者娶被害女子律法.md",
     "type": "互文",
@@ -1898,6 +2019,30 @@
       "箴21-14",
       "箴言21-14",
       "禮物挽回怒氣 (箴21-14)"
+    ]
+  },
+  "約6：31-35 耶穌是生命的糧": {
+    "path": "link_folder/互文/約6：31-35 耶穌是生命的糧.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約6：31-35 耶穌是生命的糧",
+    "status": "formal",
+    "aliases": [
+      "John 6:31-35 Manna and Christ"
+    ]
+  },
+  "約6：51 我是從天上降下來的活糧": {
+    "path": "link_folder/互文/約6：51 我是從天上降下來的活糧.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "約6：51 我是從天上降下來的活糧",
+    "status": "formal",
+    "aliases": [
+      "John 6:51 Living bread"
     ]
   },
   "約伯記 38-22-23（神所存留的冰雹）": {
@@ -2131,6 +2276,18 @@
     "status": "formal",
     "aliases": []
   },
+  "腓2：14 不發怨言": {
+    "path": "link_folder/互文/腓2：14 不發怨言.md",
+    "type": "互文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "腓2：14 不發怨言",
+    "status": "formal",
+    "aliases": [
+      "Philippians 2:14 Without grumbling"
+    ]
+  },
   "腓立比書2章": {
     "path": "link_folder/互文/腓立比書2章.md",
     "type": "互文",
@@ -2212,6 +2369,18 @@
     "status": "formal",
     "aliases": [
       "Psalm 118:14"
+    ]
+  },
+  "詩78：24-25 天上的糧食": {
+    "path": "link_folder/互文/詩78：24-25 天上的糧食.md",
+    "type": "互文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "詩78：24-25 天上的糧食",
+    "status": "formal",
+    "aliases": [
+      "Psalm 78:24-25 Bread from heaven"
     ]
   },
   "詩一三六15 法老軍兵推翻": {
@@ -4758,6 +4927,16 @@
       "右手之子"
     ]
   },
+  "俄梅珥（ omer ）": {
+    "path": "link_folder/原文/俄梅珥（ omer ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "俄梅珥（ omer ）",
+    "status": "formal",
+    "aliases": [
+      "Omer"
+    ]
+  },
   "修理與看守": {
     "path": "link_folder/原文/修理與看守.md",
     "type": "原文",
@@ -4839,6 +5018,17 @@
     "title": "哈抹名字含義",
     "status": "formal",
     "aliases": []
+  },
+  "嗎哪（ What is it ）": {
+    "path": "link_folder/原文/嗎哪（ What is it ）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "嗎哪（ What is it ）",
+    "status": "formal",
+    "aliases": [
+      "Manna etymology",
+      "What is it"
+    ]
   },
   "四十的屬靈意義": {
     "path": "link_folder/原文/四十的屬靈意義.md",
@@ -5237,6 +5427,18 @@
     "title": "汗流滿面才得糊口",
     "status": "formal",
     "aliases": []
+  },
+  "汛（ Sin thorn ）": {
+    "path": "link_folder/原文/汛（ Sin thorn ）.md",
+    "type": "原文",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "汛（ Sin thorn ）",
+    "status": "formal",
+    "aliases": [
+      "Sin wilderness etymology"
+    ]
   },
   "治理與管理": {
     "path": "link_folder/原文/治理與管理.md",
@@ -6600,6 +6802,16 @@
     "status": "formal",
     "aliases": []
   },
+  "汛的曠野": {
+    "path": "link_folder/地點/汛的曠野.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "汛的曠野",
+    "status": "formal",
+    "aliases": [
+      "Wilderness of Sin"
+    ]
+  },
   "沙微基列亭": {
     "path": "link_folder/地點/沙微基列亭.md",
     "type": "地點",
@@ -6893,6 +7105,16 @@
     "title": "蛾摩拉",
     "status": "formal",
     "aliases": []
+  },
+  "西乃": {
+    "path": "link_folder/地點/西乃.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西乃",
+    "status": "formal",
+    "aliases": [
+      "Sinai"
+    ]
   },
   "西提拿": {
     "path": "link_folder/地點/西提拿.md",
@@ -9519,6 +9741,18 @@
     "status": "formal",
     "aliases": []
   },
+  "嗎哪預表基督": {
+    "path": "link_folder/神學/嗎哪預表基督.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "嗎哪預表基督",
+    "status": "formal",
+    "aliases": [
+      "Manna as type of Christ"
+    ]
+  },
   "四十歲的意義": {
     "path": "link_folder/神學/四十歲的意義.md",
     "type": "神學",
@@ -9844,6 +10078,16 @@
     "title": "安息日",
     "status": "formal",
     "aliases": []
+  },
+  "安息日的設立": {
+    "path": "link_folder/神學/安息日的設立.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "安息日的設立",
+    "status": "formal",
+    "aliases": [
+      "Establishment of the Sabbath"
+    ]
   },
   "容我的百姓去": {
     "path": "link_folder/神學/容我的百姓去.md",
@@ -11166,8 +11410,7 @@
     "status": "formal",
     "aliases": [
       "神的臉面",
-      "神的光",
-      "神的榮光"
+      "神的光"
     ]
   },
   "神的顧念與應允": {
@@ -11607,6 +11850,17 @@
     "aliases": [
       "hand of the LORD",
       "神的手"
+    ]
+  },
+  "耶和華的榮光": {
+    "path": "link_folder/神學/耶和華的榮光.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華的榮光",
+    "status": "formal",
+    "aliases": [
+      "Glory of the LORD",
+      "神的榮光"
     ]
   },
   "耶和華的爭戰": {
@@ -12296,6 +12550,30 @@
     "status": "formal",
     "aliases": []
   },
+  "嗎哪的物理特性": {
+    "path": "link_folder/背景/嗎哪的物理特性.md",
+    "type": "背景",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "嗎哪的物理特性",
+    "status": "formal",
+    "aliases": [
+      "Physical properties of manna"
+    ]
+  },
+  "安息日的前身": {
+    "path": "link_folder/背景/安息日的前身.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "安息日的前身",
+    "status": "formal",
+    "aliases": [
+      "Precursor to Sabbath"
+    ]
+  },
   "摩西的希伯來與埃及雙重身分": {
     "path": "link_folder/背景/摩西的希伯來與埃及雙重身分.md",
     "type": "背景",
@@ -12342,6 +12620,18 @@
     "title": "歌斐木",
     "status": "formal",
     "aliases": []
+  },
+  "汛的曠野地理": {
+    "path": "link_folder/背景/汛的曠野地理.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "汛的曠野地理",
+    "status": "formal",
+    "aliases": [
+      "Geography of Wilderness of Sin"
+    ]
   },
   "洪水全程時間軸": {
     "path": "link_folder/背景/洪水全程時間軸.md",
@@ -12424,6 +12714,18 @@
     "title": "金鐲",
     "status": "formal",
     "aliases": []
+  },
+  "鵪鶉遷徙": {
+    "path": "link_folder/背景/鵪鶉遷徙.md",
+    "type": "背景",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "鵪鶉遷徙",
+    "status": "formal",
+    "aliases": [
+      "Quail migration"
+    ]
   },
   "「河」是否專指尼羅河": {
     "path": "link_folder/解經爭議/「河」是否專指尼羅河.md",
@@ -13706,6 +14008,9 @@
   "nabi": {
     "alias_of": "先知"
   },
+  "Manna": {
+    "alias_of": "嗎哪"
+  },
   "宗族方言地土邦國": {
     "alias_of": "宗族方言地土地與邦國"
   },
@@ -13724,6 +14029,9 @@
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
+  "God's provision": {
+    "alias_of": "神的供應"
+  },
   "Obedience brings healing": {
     "alias_of": "聽命順從蒙醫治"
   },
@@ -13736,11 +14044,23 @@
   "Elim oasis": {
     "alias_of": "以琳綠洲"
   },
+  "Preserving an omer of manna": {
+    "alias_of": "保存一俄梅珥嗎哪"
+  },
+  "Manna from heaven": {
+    "alias_of": "天降嗎哪"
+  },
+  "Sabbath gathering rules": {
+    "alias_of": "安息日收取規定"
+  },
   "瑪拉苦水變甜神蹟": {
     "alias_of": "瑪拉苦水變甜"
   },
   "Water of Marah sweetened": {
     "alias_of": "瑪拉苦水變甜"
+  },
+  "Quail covers the camp": {
+    "alias_of": "鵪鶉遮營"
   },
   "seven days": {
     "alias_of": "七天的審判"
@@ -13798,6 +14118,9 @@
   },
   "our God is a consuming fire": {
     "alias_of": "來12：29 我們的神乃是烈火"
+  },
+  "Hebrews 9:4 Golden jar of manna": {
+    "alias_of": "來9：4 盛嗎哪的金罐"
   },
   "來11:29": {
     "alias_of": "來十一29 因信過紅海"
@@ -13871,6 +14194,9 @@
   "Revelation 15:2-4": {
     "alias_of": "啟15：2-4 羔羊之歌"
   },
+  "Revelation 2:17 Hidden manna": {
+    "alias_of": "啟2：17 隱藏的嗎哪"
+  },
   "末世大雹": {
     "alias_of": "啟示錄 16-21（末世大冰雹）"
   },
@@ -13934,6 +14260,9 @@
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
   },
+  "2Cor 8:13-15 Equality": {
+    "alias_of": "林後8：13-15 多收的沒有餘少收的沒有缺"
+  },
   "代上5流便失去長子名分": {
     "alias_of": "歷代志上5章流便失去長子名分"
   },
@@ -13975,6 +14304,9 @@
   },
   "箴言21-1": {
     "alias_of": "王心在神手中 (箴21-1)"
+  },
+  "Deuteronomy 8:3 Man does not live by bread alone": {
+    "alias_of": "申8：3 人活著不是單靠食物"
   },
   "申命記22:28-29 強姦者娶被害女子律法": {
     "alias_of": "申命記22_28-29 強姦者娶被害女子律法"
@@ -14029,6 +14361,12 @@
   },
   "箴言21-14": {
     "alias_of": "禮物挽回怒氣 (箴21-14)"
+  },
+  "John 6:31-35 Manna and Christ": {
+    "alias_of": "約6：31-35 耶穌是生命的糧"
+  },
+  "John 6:51 Living bread": {
+    "alias_of": "約6：51 我是從天上降下來的活糧"
   },
   "存留的冰雹": {
     "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
@@ -14096,6 +14434,9 @@
   "羅7-8": {
     "alias_of": "羅馬書七-八章對應"
   },
+  "Philippians 2:14 Without grumbling": {
+    "alias_of": "腓2：14 不發怨言"
+  },
   "葡萄樹與真葡萄樹 (約15:1)": {
     "alias_of": "葡萄樹與真葡萄樹_約15_1"
   },
@@ -14110,6 +14451,9 @@
   },
   "Psalm 118:14": {
     "alias_of": "詩118：14 耶和華是我的力量我的詩歌"
+  },
+  "Psalm 78:24-25 Bread from heaven": {
+    "alias_of": "詩78：24-25 天上的糧食"
   },
   "詩136:15": {
     "alias_of": "詩一三六15 法老軍兵推翻"
@@ -14531,11 +14875,20 @@
   "右手之子": {
     "alias_of": "便雅憫名字含義"
   },
+  "Omer": {
+    "alias_of": "俄梅珥（ omer ）"
+  },
   "驅趕": {
     "alias_of": "催逼"
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "Manna etymology": {
+    "alias_of": "嗎哪（ What is it ）"
+  },
+  "What is it": {
+    "alias_of": "嗎哪（ What is it ）"
   },
   "430年": {
     "alias_of": "四百三十年"
@@ -14662,6 +15015,9 @@
   },
   "憤怒離開": {
     "alias_of": "氣忿忿"
+  },
+  "Sin wilderness etymology": {
+    "alias_of": "汛（ Sin thorn ）"
   },
   "法勒原文字義": {
     "alias_of": "法勒名字與分地"
@@ -14978,6 +15334,9 @@
   "神之面": {
     "alias_of": "毗努伊勒"
   },
+  "Wilderness of Sin": {
+    "alias_of": "汛的曠野"
+  },
   "非利士地的道路": {
     "alias_of": "沿海大道（Via Maris）"
   },
@@ -15037,6 +15396,9 @@
   },
   "拉美西斯": {
     "alias_of": "蘭塞"
+  },
+  "Sinai": {
+    "alias_of": "西乃"
   },
   "以東山": {
     "alias_of": "西珥"
@@ -15770,6 +16132,9 @@
   "賽53受苦僕人": {
     "alias_of": "受苦僕人 (賽53)"
   },
+  "Manna as type of Christ": {
+    "alias_of": "嗎哪預表基督"
+  },
   "伯特利復興": {
     "alias_of": "回到伯特利的屬靈復興"
   },
@@ -15829,6 +16194,9 @@
   },
   "原福音": {
     "alias_of": "女人的後裔 (創3_15)"
+  },
+  "Establishment of the Sabbath": {
+    "alias_of": "安息日的設立"
   },
   "寄居": {
     "alias_of": "寄居身分"
@@ -16085,9 +16453,6 @@
   "神的光": {
     "alias_of": "神的面"
   },
-  "神的榮光": {
-    "alias_of": "神的面"
-  },
   "神看見聽見知道": {
     "alias_of": "神看見聽見知道並下來拯救"
   },
@@ -16198,6 +16563,12 @@
   },
   "神的手": {
     "alias_of": "耶和華的手"
+  },
+  "Glory of the LORD": {
+    "alias_of": "耶和華的榮光"
+  },
+  "神的榮光": {
+    "alias_of": "耶和華的榮光"
   },
   "耶和華神": {
     "alias_of": "耶和華神的名字"
@@ -16370,6 +16741,12 @@
   "接待客旅的古代背景": {
     "alias_of": "古代近東接待客旅禮儀"
   },
+  "Physical properties of manna": {
+    "alias_of": "嗎哪的物理特性"
+  },
+  "Precursor to Sabbath": {
+    "alias_of": "安息日的前身"
+  },
   "摩西的雙重身分": {
     "alias_of": "摩西的希伯來與埃及雙重身分"
   },
@@ -16378,6 +16755,9 @@
   },
   "Three days without water in Shur": {
     "alias_of": "書珥曠野三天無水"
+  },
+  "Geography of Wilderness of Sin": {
+    "alias_of": "汛的曠野地理"
   },
   "挪亞洪水時間軸": {
     "alias_of": "洪水全程時間軸"
@@ -16393,6 +16773,9 @@
   },
   "Bitter waters of Marah": {
     "alias_of": "瑪拉苦水"
+  },
+  "Quail migration": {
+    "alias_of": "鵪鶉遷徙"
   },
   "一千銀子的意義": {
     "alias_of": "一千銀子與遮羞的含義"
