@@ -1,7 +1,7 @@
 {
-  "total_warnings": 7,
+  "total_warnings": 9,
   "critical_count": 0,
-  "warning_count": 7,
+  "warning_count": 9,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -37,6 +37,20 @@
       "source": "出埃及記/第15章.md",
       "target": "瑪拉",
       "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第22章.md",
+      "target": "聖潔",
+      "message": "同一 alias「聖潔」指向多個 target: 聖潔, 聖潔（qodesh）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第22章.md",
+      "target": "滅絕",
+      "message": "同一 alias「滅絕」指向多個 target: 滅絕（charam）, 滅絕（herem）"
     },
     {
       "type": "alias_target_conflict",

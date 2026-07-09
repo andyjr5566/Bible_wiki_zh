@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 出埃及記/第20章.md",
-                "mode": "source",
+                "file": "02 出埃及記/第21章.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第20章"
+              "title": "第21章"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 出埃及記/第20章.md",
+                "file": "02 出埃及記/第21章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第20章 的反向連結"
+              "title": "第21章 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02 出埃及記/第20章.md",
+                "file": "02 出埃及記/第21章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第20章 的對外連結"
+              "title": "第21章 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 出埃及記/第20章.md",
+                "file": "02 出埃及記/第21章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第20章 的大綱"
+              "title": "第21章 的大綱"
             }
           }
         ]
@@ -184,44 +184,44 @@
       "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "46a741830d3dac3f",
+  "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
+    "02 出埃及記/第22章.md",
     "02 出埃及記/第21章.md",
-    "link_folder/人物/波提乏.md",
-    "link_folder/互文/創37：24.md",
-    "link_folder/互文/撒下23：20.md",
-    "link_folder/互文/出29：20.md",
-    "link_folder/互文/出22：3.md",
-    "link_folder/互文/出34：7.md",
-    "link_folder/互文/出20：15.md",
-    "link_folder/互文/出20：12.md",
-    "link_folder/互文/出20：13.md",
-    "link_folder/互文/羅1：1.md",
-    "link_folder/互文/羅6：22.md",
-    "link_folder/互文/太6：25-34.md",
+    "link_folder/互文/來10：5.md",
+    "02 出埃及記/第20章.md",
+    "link_folder/互文/申21：18-21.md",
+    "link_folder/事件/井口敞開的律例.md",
+    "link_folder/原文/好合的事.md",
+    "link_folder/互文/太7：12.md",
     "link_folder/互文/提前5：8.md",
-    "link_folder/互文/瑪2：14.md",
-    "link_folder/互文/弗5：22-33.md",
-    "link_folder/互文/弗4：17-18.md",
-    "link_folder/互文/約壹3：15.md",
-    "link_folder/互文/賽53：5.md",
-    "link_folder/互文/彼前2：24.md",
+    "link_folder/互文/太5：38-39.md",
+    "02 出埃及記/第18章.md",
+    "02 出埃及記/第19章.md",
+    "link_folder/互文/利25：39-43.md",
+    "link_folder/互文/太26：15.md",
+    "link_folder/解經爭議/出21：22與墮胎議題.md",
     "link_folder/互文/雅4：17.md",
-    "link_folder/互文/加6：7.md",
-    "link_folder/互文/林後5：21.md",
-    "link_folder/互文/太5：23-24.md",
-    "link_folder/互文/可2：17.md",
-    "link_folder/互文/太23：23.md",
+    "link_folder/互文/逃城.md",
+    "link_folder/解經爭議/出22：29-30頭生歸神的方式.md",
+    "link_folder/解經爭議/出22：25取利禁令的範圍.md",
+    "link_folder/解經爭議/出22：18行邪術的死刑.md",
+    "link_folder/解經爭議/出22：2-3自衛殺人的界限.md",
+    "link_folder/主題/聖潔飲食.md",
+    "link_folder/主題/財產權.md",
+    "link_folder/主題/保護弱勢.md",
+    "link_folder/主題/聖潔生活.md",
+    "link_folder/主題/賠償與公義.md",
+    "raw_data/biblehub_study_exodus_22.txt",
+    "raw_data/kingcomments_exodus_22.txt",
+    "raw_data/ccbiblestudy_GT_exodus_22.txt",
+    "raw_data/ccbiblestudy_CT_exodus_22.txt",
     "raw_data/biblehub_study_exodus_21.txt",
     "raw_data/kingcomments_exodus_21.txt",
     "raw_data/ccbiblestudy_GT_exodus_21.txt",
     "raw_data/ccbiblestudy_CT_exodus_21.txt",
     "raw_data/biblehub_study_exodus_20.txt",
     "raw_data/kingcomments_exodus_20.txt",
-    "raw_data/ccbiblestudy_GT_exodus_20.txt",
-    "raw_data/ccbiblestudy_CT_exodus_20.txt",
-    "raw_data/biblehub_study_exodus_19.txt",
-    "raw_data/kingcomments_exodus_19.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",
