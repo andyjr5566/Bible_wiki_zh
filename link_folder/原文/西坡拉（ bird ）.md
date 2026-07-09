@@ -35,7 +35,7 @@ source_scope: collected_only
 
 ## 來源依據
 
-- CT: 出十八2註解 — 西坡拉預表經過曠野的教會
-- KC: Exodus 18:2 — 西坡拉預表教會在大災難後與基督聯合
-- BH: Exodus 18:2 — 西坡拉的回歸代表家庭關係恢復
-- GT: 出十八2拾穗 — 摩西因安全打發西坡拉回米甸
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT18.htm — CT: 出十八2註解 — 西坡拉預表經過曠野的教會
+- https://www.kingcomments.com/en/bible-studies/Exo/18 — KC: Exodus 18:2 — 西坡拉預表教會在大災難後與基督聯合
+- https://biblehub.com/study/exodus/18.htm — BH: Exodus 18:2 — 西坡拉的回歸代表家庭關係恢復
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT18.htm — GT: 出十八2拾穗 — 摩西因安全打發西坡拉回米甸

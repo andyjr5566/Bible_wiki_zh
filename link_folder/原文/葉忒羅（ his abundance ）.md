@@ -34,6 +34,6 @@ source_scope: collected_only
 
 ## 來源依據
 
-- CT: 出十八1註解 — 葉忒羅可能是祭司職稱
-- GT: 出十八1拾穗 — 葉忒羅可能是稱號，義為「大人」
-- BH: Exodus 18:1 — 葉忒羅是米甸祭司和酋長
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT18.htm — CT: 出十八1註解 — 葉忒羅可能是祭司職稱
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT18.htm — GT: 出十八1拾穗 — 葉忒羅可能是稱號，義為「大人」
+- https://biblehub.com/study/exodus/18.htm — BH: Exodus 18:1 — 葉忒羅是米甸祭司和酋長

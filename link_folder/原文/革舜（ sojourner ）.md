@@ -34,6 +34,6 @@ source_scope: collected_only
 
 ## 來源依據
 
-- CT: 出十八3註解 — 革舜意為異族人，兩種相反意思
-- GT: 出十八3拾穗 — 革舜見證摩西在外邦寄居
-- BH: Exodus 18:3 — 革舜名字與來11:13呼應
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT18.htm — CT: 出十八3註解 — 革舜意為異族人，兩種相反意思
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT18.htm — GT: 出十八3拾穗 — 革舜見證摩西在外邦寄居
+- https://biblehub.com/study/exodus/18.htm — BH: Exodus 18:3 — 革舜名字與來11:13呼應

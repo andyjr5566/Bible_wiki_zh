@@ -34,6 +34,6 @@ source_scope: collected_only
 
 ## 來源依據
 
-- CT: 出十八4註解 — 以利以謝意為「神是幫助」
-- GT: 出十八4拾穗 — 以利以謝與革舜的絕望對比，顯示信心重燃
-- BH: Exodus 18:4 — 以利以謝名字連結列祖信仰
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT18.htm — CT: 出十八4註解 — 以利以謝意為「神是幫助」
+- https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT18.htm — GT: 出十八4拾穗 — 以利以謝與革舜的絕望對比，顯示信心重燃
+- https://biblehub.com/study/exodus/18.htm — BH: Exodus 18:4 — 以利以謝名字連結列祖信仰
