@@ -332,6 +332,19 @@
     "status": "formal",
     "aliases": []
   },
+  "律法與恩典": {
+    "path": "link_folder/主題/律法與恩典.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "律法與恩典",
+    "status": "formal",
+    "aliases": [
+      "恩典與律法",
+      "律法前的恩典"
+    ]
+  },
   "後裔的應許": {
     "path": "link_folder/主題/後裔的應許.md",
     "type": "主題",
@@ -412,6 +425,19 @@
     "title": "支搭帳棚",
     "status": "formal",
     "aliases": []
+  },
+  "敬拜": {
+    "path": "link_folder/主題/敬拜.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "敬拜",
+    "status": "formal",
+    "aliases": [
+      "worship",
+      "崇拜"
+    ]
   },
   "族長祝福的不可更改性": {
     "path": "link_folder/主題/族長祝福的不可更改性.md",
@@ -532,6 +558,19 @@
     "title": "百倍收成",
     "status": "formal",
     "aliases": []
+  },
+  "盟約": {
+    "path": "link_folder/主題/盟約.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "盟約",
+    "status": "formal",
+    "aliases": [
+      "covenant",
+      "約"
+    ]
   },
   "祝福與咒詛": {
     "path": "link_folder/主題/祝福與咒詛.md",
@@ -997,6 +1036,19 @@
       "摩西獨自審判"
     ]
   },
+  "摩西就近幽暗": {
+    "path": "link_folder/事件/摩西就近幽暗.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西就近幽暗",
+    "status": "formal",
+    "aliases": [
+      "摩西進入幽暗",
+      "摩西挨近神"
+    ]
+  },
   "摩西立首領": {
     "path": "link_folder/事件/摩西立首領.md",
     "type": "事件",
@@ -1054,6 +1106,19 @@
       "Water of Marah sweetened"
     ]
   },
+  "百姓懼怕神的顯現": {
+    "path": "link_folder/事件/百姓懼怕神的顯現.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "百姓懼怕神的顯現",
+    "status": "formal",
+    "aliases": [
+      "百姓發顫",
+      "百姓懼怕"
+    ]
+  },
   "百姓自潔三天": {
     "path": "link_folder/事件/百姓自潔三天.md",
     "type": "事件",
@@ -1080,6 +1145,19 @@
       "Water from the Rock event"
     ]
   },
+  "神指示築壇獻祭": {
+    "path": "link_folder/事件/神指示築壇獻祭.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神指示築壇獻祭",
+    "status": "formal",
+    "aliases": [
+      "築壇指示",
+      "獻祭指示"
+    ]
+  },
   "神降臨西乃山": {
     "path": "link_folder/事件/神降臨西乃山.md",
     "type": "事件",
@@ -1092,6 +1170,19 @@
     "aliases": [
       "the LORD descends on Sinai",
       "耶和華降臨西乃山"
+    ]
+  },
+  "神頒布十誡": {
+    "path": "link_folder/事件/神頒布十誡.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神頒布十誡",
+    "status": "formal",
+    "aliases": [
+      "十誡頒布",
+      "律法頒布"
     ]
   },
   "築壇耶和華尼西": {
@@ -1372,6 +1463,17 @@
       "our God is a consuming fire"
     ]
   },
+  "來2：2": {
+    "path": "link_folder/互文/來2：2.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "來2：2",
+    "status": "formal",
+    "aliases": [
+      "來二2",
+      "天使所傳的律法"
+    ]
+  },
   "來3：8-9 硬著心不可像瑪撒": {
     "path": "link_folder/互文/來3：8-9 硬著心不可像瑪撒.md",
     "type": "互文",
@@ -1382,6 +1484,28 @@
     "status": "formal",
     "aliases": [
       "Heb 3:8-9 Do not harden your heart"
+    ]
+  },
+  "來4：16": {
+    "path": "link_folder/互文/來4：16.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "來4：16",
+    "status": "formal",
+    "aliases": [
+      "坦然無懼到施恩座",
+      "來四16"
+    ]
+  },
+  "來4：9-10": {
+    "path": "link_folder/互文/來4：9-10.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "來4：9-10",
+    "status": "formal",
+    "aliases": [
+      "來四9-10",
+      "安息日的終末應驗"
     ]
   },
   "來7：1-3 麥基洗德": {
@@ -1458,6 +1582,39 @@
       "兩個囚犯與十字架上兩個強盜 (路23:32, 39-43)"
     ]
   },
+  "出28：42-43": {
+    "path": "link_folder/互文/出28：42-43.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出28：42-43",
+    "status": "formal",
+    "aliases": [
+      "祭司褲子",
+      "出二十八42-43"
+    ]
+  },
+  "出29：45-46": {
+    "path": "link_folder/互文/出29：45-46.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出29：45-46",
+    "status": "formal",
+    "aliases": [
+      "神住在百姓中間",
+      "出二十九45-46"
+    ]
+  },
+  "出33：20": {
+    "path": "link_folder/互文/出33：20.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出33：20",
+    "status": "formal",
+    "aliases": [
+      "不能見神面而存活",
+      "出三十三20"
+    ]
+  },
   "出埃及記17章亞瑪力攻擊以色列": {
     "path": "link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md",
     "type": "互文",
@@ -1476,6 +1633,82 @@
     "title": "出埃及記一章",
     "status": "formal",
     "aliases": []
+  },
+  "利10：3": {
+    "path": "link_folder/互文/利10：3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利10：3",
+    "status": "formal",
+    "aliases": [
+      "神在親近人中顯為聖",
+      "利十3"
+    ]
+  },
+  "創12：7": {
+    "path": "link_folder/互文/創12：7.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創12：7",
+    "status": "formal",
+    "aliases": [
+      "亞伯拉罕築壇",
+      "創十二7"
+    ]
+  },
+  "創15：1": {
+    "path": "link_folder/互文/創15：1.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創15：1",
+    "status": "formal",
+    "aliases": [
+      "創十五1"
+    ]
+  },
+  "創22": {
+    "path": "link_folder/互文/創22.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創22",
+    "status": "formal",
+    "aliases": [
+      "亞伯拉罕試驗",
+      "創二十二章"
+    ]
+  },
+  "創26：25": {
+    "path": "link_folder/互文/創26：25.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創26：25",
+    "status": "formal",
+    "aliases": [
+      "以撒築壇",
+      "創二十六25"
+    ]
+  },
+  "創35：7": {
+    "path": "link_folder/互文/創35：7.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創35：7",
+    "status": "formal",
+    "aliases": [
+      "雅各築壇",
+      "創三十五7"
+    ]
+  },
+  "創9：20-23": {
+    "path": "link_folder/互文/創9：20-23.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "創9：20-23",
+    "status": "formal",
+    "aliases": [
+      "挪亞赤身",
+      "創九20-23"
+    ]
   },
   "創一章與創八章的對照": {
     "path": "link_folder/互文/創一章與創八章的對照.md",
@@ -1625,6 +1858,28 @@
       "創世記十五章14節應驗"
     ]
   },
+  "加3：19": {
+    "path": "link_folder/互文/加3：19.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "加3：19",
+    "status": "formal",
+    "aliases": [
+      "天使傳律法",
+      "加三19"
+    ]
+  },
+  "加5：1": {
+    "path": "link_folder/互文/加5：1.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "加5：1",
+    "status": "formal",
+    "aliases": [
+      "基督裡的自由",
+      "加五1"
+    ]
+  },
   "加拉太書三章": {
     "path": "link_folder/互文/加拉太書三章.md",
     "type": "互文",
@@ -1648,6 +1903,17 @@
     "title": "受冤屈不開口",
     "status": "formal",
     "aliases": []
+  },
+  "可2：27-28": {
+    "path": "link_folder/互文/可2：27-28.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "可2：27-28",
+    "status": "formal",
+    "aliases": [
+      "可二27-28",
+      "安息日為人設立"
+    ]
   },
   "和睦是神喜悅 (詩133-1)": {
     "path": "link_folder/互文/和睦是神喜悅 (詩133-1).md",
@@ -1715,6 +1981,17 @@
       "Revelation 2:17 Hidden manna"
     ]
   },
+  "啟4：5": {
+    "path": "link_folder/互文/啟4：5.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "啟4：5",
+    "status": "formal",
+    "aliases": [
+      "雷轟閃電",
+      "啟四5"
+    ]
+  },
   "啟示錄 16-21（末世大冰雹）": {
     "path": "link_folder/互文/啟示錄 16-21（末世大冰雹）.md",
     "type": "互文",
@@ -1772,6 +2049,94 @@
     "status": "formal",
     "aliases": [
       "Titus 1:5-9 Elder qualifications"
+    ]
+  },
+  "太12：34-37": {
+    "path": "link_folder/互文/太12：34-37.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太12：34-37",
+    "status": "formal",
+    "aliases": [
+      "太十二34-37",
+      "言語與內心"
+    ]
+  },
+  "太22：36-39": {
+    "path": "link_folder/互文/太22：36-39.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太22：36-39",
+    "status": "formal",
+    "aliases": [
+      "最大誡命",
+      "太二十二36-39"
+    ]
+  },
+  "太27：45": {
+    "path": "link_folder/互文/太27：45.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太27：45",
+    "status": "formal",
+    "aliases": [
+      "十字架黑暗",
+      "太二十七45"
+    ]
+  },
+  "太3：17": {
+    "path": "link_folder/互文/太3：17.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太3：17",
+    "status": "formal",
+    "aliases": [
+      "天上有聲音",
+      "太三17"
+    ]
+  },
+  "太5：17": {
+    "path": "link_folder/互文/太5：17.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太5：17",
+    "status": "formal",
+    "aliases": [
+      "耶穌成全律法",
+      "太五17"
+    ]
+  },
+  "太5：21-22": {
+    "path": "link_folder/互文/太5：21-22.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太5：21-22",
+    "status": "formal",
+    "aliases": [
+      "太五21-22",
+      "殺人與怒氣"
+    ]
+  },
+  "太5：27-28": {
+    "path": "link_folder/互文/太5：27-28.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太5：27-28",
+    "status": "formal",
+    "aliases": [
+      "太五27-28",
+      "姦淫與淫念"
+    ]
+  },
+  "太6：24": {
+    "path": "link_folder/互文/太6：24.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太6：24",
+    "status": "formal",
+    "aliases": [
+      "不能事奉神又事奉瑪門",
+      "太六24"
     ]
   },
   "寧錄與敵基督": {
@@ -1859,6 +2224,39 @@
       "安息日的安息"
     ]
   },
+  "弗1：3": {
+    "path": "link_folder/互文/弗1：3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "弗1：3",
+    "status": "formal",
+    "aliases": [
+      "屬靈福氣",
+      "弗一3"
+    ]
+  },
+  "弗2：14-16": {
+    "path": "link_folder/互文/弗2：14-16.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "弗2：14-16",
+    "status": "formal",
+    "aliases": [
+      "基督成就和平",
+      "弗二14-16"
+    ]
+  },
+  "弗6：2-3": {
+    "path": "link_folder/互文/弗6：2-3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "弗6：2-3",
+    "status": "formal",
+    "aliases": [
+      "孝敬父母的應許",
+      "弗六2-3"
+    ]
+  },
   "彌迦書5章伯利恆與彌賽亞": {
     "path": "link_folder/互文/彌迦書5章伯利恆與彌賽亞.md",
     "type": "互文",
@@ -1927,6 +2325,17 @@
     "title": "挪亞與亞當的平行",
     "status": "formal",
     "aliases": []
+  },
+  "提前2：5": {
+    "path": "link_folder/互文/提前2：5.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "提前2：5",
+    "status": "formal",
+    "aliases": [
+      "基督為中保",
+      "提前二5"
+    ]
   },
   "提前3：1-7 監督資格": {
     "path": "link_folder/互文/提前3：1-7 監督資格.md",
@@ -2045,6 +2454,28 @@
     "status": "formal",
     "aliases": [
       "林前10:1-2"
+    ]
+  },
+  "林前十19-20": {
+    "path": "link_folder/互文/林前十19-20.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "林前十19-20",
+    "status": "formal",
+    "aliases": [
+      "林前十19-20",
+      "拜偶像與鬼魔"
+    ]
+  },
+  "林後11：2": {
+    "path": "link_folder/互文/林後11：2.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "林後11：2",
+    "status": "formal",
+    "aliases": [
+      "神那樣的嫉妒",
+      "林後十一2"
     ]
   },
   "林後3：18 看見主的榮光": {
@@ -2208,6 +2639,28 @@
       "王心在神手中 (箴21-1)"
     ]
   },
+  "申12：5": {
+    "path": "link_folder/互文/申12：5.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申12：5",
+    "status": "formal",
+    "aliases": [
+      "神立名居所",
+      "申十二5"
+    ]
+  },
+  "申24：16": {
+    "path": "link_folder/互文/申24：16.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申24：16",
+    "status": "formal",
+    "aliases": [
+      "不可因父殺子",
+      "申二十四16"
+    ]
+  },
   "申25：17-19 記念亞瑪力": {
     "path": "link_folder/互文/申25：17-19 記念亞瑪力.md",
     "type": "互文",
@@ -2230,6 +2683,17 @@
     "status": "formal",
     "aliases": [
       "Deut 32:11-12 eagle's nest"
+    ]
+  },
+  "申5：6-21": {
+    "path": "link_folder/互文/申5：6-21.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申5：6-21",
+    "status": "formal",
+    "aliases": [
+      "申命記十誡",
+      "申五章6-21節"
     ]
   },
   "申8：3 人活著不是單靠食物": {
@@ -2375,6 +2839,61 @@
       "禮物挽回怒氣 (箴21-14)"
     ]
   },
+  "箴16：6": {
+    "path": "link_folder/互文/箴16：6.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴16：6",
+    "status": "formal",
+    "aliases": [
+      "敬畏神遠離惡事",
+      "箴十六6"
+    ]
+  },
+  "箴9：10": {
+    "path": "link_folder/互文/箴9：10.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴9：10",
+    "status": "formal",
+    "aliases": [
+      "敬畏耶和華是智慧開端",
+      "箴九10"
+    ]
+  },
+  "約1：14": {
+    "path": "link_folder/互文/約1：14.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約1：14",
+    "status": "formal",
+    "aliases": [
+      "道成肉身",
+      "約一14"
+    ]
+  },
+  "約1：29": {
+    "path": "link_folder/互文/約1：29.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約1：29",
+    "status": "formal",
+    "aliases": [
+      "神的羔羊",
+      "約一29"
+    ]
+  },
+  "約3：31-34": {
+    "path": "link_folder/互文/約3：31-34.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約3：31-34",
+    "status": "formal",
+    "aliases": [
+      "從天上來的",
+      "約三31-34"
+    ]
+  },
   "約4：14 活水": {
     "path": "link_folder/互文/約4：14 活水.md",
     "type": "互文",
@@ -2385,6 +2904,28 @@
     "status": "formal",
     "aliases": [
       "John 4:14 Living water"
+    ]
+  },
+  "約4：21-24": {
+    "path": "link_folder/互文/約4：21-24.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約4：21-24",
+    "status": "formal",
+    "aliases": [
+      "用心靈誠實敬拜",
+      "約四21-24"
+    ]
+  },
+  "約4：24": {
+    "path": "link_folder/互文/約4：24.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約4：24",
+    "status": "formal",
+    "aliases": [
+      "用心靈和誠實敬拜",
+      "約四24"
     ]
   },
   "約6：31-35 耶穌是生命的糧": {
@@ -2433,6 +2974,17 @@
       "存留的冰雹",
       "伯38:22-23",
       "國庫之雹"
+    ]
+  },
+  "約壹5：21": {
+    "path": "link_folder/互文/約壹5：21.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約壹5：21",
+    "status": "formal",
+    "aliases": [
+      "遠避偶像",
+      "約壹五21"
     ]
   },
   "約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9": {
@@ -2557,6 +3109,50 @@
       "逾越節羔羊骨頭預表"
     ]
   },
+  "結18：1-4": {
+    "path": "link_folder/互文/結18：1-4.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "結18：1-4",
+    "status": "formal",
+    "aliases": [
+      "個人責任",
+      "結十八1-4"
+    ]
+  },
+  "結18：20": {
+    "path": "link_folder/互文/結18：20.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "結18：20",
+    "status": "formal",
+    "aliases": [
+      "個人擔罪",
+      "結十八20"
+    ]
+  },
+  "羅12：1": {
+    "path": "link_folder/互文/羅12：1.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "羅12：1",
+    "status": "formal",
+    "aliases": [
+      "活祭",
+      "羅十二1"
+    ]
+  },
+  "羅2：15": {
+    "path": "link_folder/互文/羅2：15.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "羅2：15",
+    "status": "formal",
+    "aliases": [
+      "律法刻在人心",
+      "羅二15"
+    ]
+  },
   "羅馬書 9-17（神興起法老）": {
     "path": "link_folder/互文/羅馬書 9-17（神興起法老）.md",
     "type": "互文",
@@ -2638,6 +3234,28 @@
     "status": "formal",
     "aliases": []
   },
+  "耶31：29-30": {
+    "path": "link_folder/互文/耶31：29-30.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "耶31：29-30",
+    "status": "formal",
+    "aliases": [
+      "不再因父罪酸牙",
+      "耶三十一29-30"
+    ]
+  },
+  "耶31：33": {
+    "path": "link_folder/互文/耶31：33.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "耶31：33",
+    "status": "formal",
+    "aliases": [
+      "律法寫在心上",
+      "耶三十一33"
+    ]
+  },
   "耶利米書三十四章": {
     "path": "link_folder/互文/耶利米書三十四章.md",
     "type": "互文",
@@ -2664,6 +3282,17 @@
     "status": "formal",
     "aliases": [
       "Philippians 2:14 Without grumbling"
+    ]
+  },
+  "腓3：19": {
+    "path": "link_folder/互文/腓3：19.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "腓3：19",
+    "status": "formal",
+    "aliases": [
+      "以肚腹為神",
+      "腓三19"
     ]
   },
   "腓立比書2章": {
@@ -2726,6 +3355,17 @@
     "status": "formal",
     "aliases": []
   },
+  "西3：5": {
+    "path": "link_folder/互文/西3：5.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "西3：5",
+    "status": "formal",
+    "aliases": [
+      "貪婪如拜偶像",
+      "西三5"
+    ]
+  },
   "西緬利未受咒詛 (創49_5-7)": {
     "path": "link_folder/互文/西緬利未受咒詛 (創49_5-7).md",
     "type": "互文",
@@ -2773,6 +3413,17 @@
       "Psalm 78:24-25 Bread from heaven"
     ]
   },
+  "詩97：2": {
+    "path": "link_folder/互文/詩97：2.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "詩97：2",
+    "status": "formal",
+    "aliases": [
+      "密雲幽暗環繞神",
+      "詩九十七2"
+    ]
+  },
   "詩一三六15 法老軍兵推翻": {
     "path": "link_folder/互文/詩一三六15 法老軍兵推翻.md",
     "type": "互文",
@@ -2783,6 +3434,17 @@
     "status": "formal",
     "aliases": [
       "詩136:15"
+    ]
+  },
+  "詩一百十九96": {
+    "path": "link_folder/互文/詩一百十九96.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "詩一百十九96",
+    "status": "formal",
+    "aliases": [
+      "詩一百十九96",
+      "誡命的寬廣"
     ]
   },
   "詩一零六9 紅海乾地": {
@@ -2926,6 +3588,17 @@
       "Isa 53:4-5 Stricken Rock"
     ]
   },
+  "賽6：5": {
+    "path": "link_folder/互文/賽6：5.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "賽6：5",
+    "status": "formal",
+    "aliases": [
+      "賽六5",
+      "聖潔神的臨在"
+    ]
+  },
   "賽五十八8 耶和華作後盾": {
     "path": "link_folder/互文/賽五十八8 耶和華作後盾.md",
     "type": "互文",
@@ -2950,6 +3623,28 @@
     "status": "formal",
     "aliases": [
       "賽43:1-3"
+    ]
+  },
+  "路1：30": {
+    "path": "link_folder/互文/路1：30.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路1：30",
+    "status": "formal",
+    "aliases": [
+      "路一30",
+      "不要懼怕"
+    ]
+  },
+  "路5：8": {
+    "path": "link_folder/互文/路5：8.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路5：8",
+    "status": "formal",
+    "aliases": [
+      "彼得遇見神聖",
+      "路五8"
     ]
   },
   "路加福音 15-18（浪子認罪）": {
@@ -5437,6 +6132,18 @@
     "status": "formal",
     "aliases": []
   },
+  "十句話": {
+    "path": "link_folder/原文/十句話.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "十句話",
+    "status": "formal",
+    "aliases": [
+      "aseret hadevarim"
+    ]
+  },
   "各從其類": {
     "path": "link_folder/原文/各從其類.md",
     "type": "原文",
@@ -5573,6 +6280,32 @@
       "筋"
     ]
   },
+  "妄稱（vain）": {
+    "path": "link_folder/原文/妄稱（vain）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "妄稱（vain）",
+    "status": "formal",
+    "aliases": [
+      "shav",
+      "虛妄"
+    ]
+  },
+  "姦淫（na'aph）": {
+    "path": "link_folder/原文/姦淫（na'aph）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "姦淫（na'aph）",
+    "status": "formal",
+    "aliases": [
+      "na'aph",
+      "姦淫"
+    ]
+  },
   "密奪 (Migdol)": {
     "path": "link_folder/原文/密奪 (Migdol).md",
     "type": "原文",
@@ -5667,6 +6400,16 @@
       "後裔如塵沙",
       "地上的塵沙不能數算"
     ]
+  },
+  "忌邪（嫉妒）": {
+    "path": "link_folder/原文/忌邪（嫉妒）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "忌邪（嫉妒）",
+    "status": "formal",
+    "aliases": []
   },
   "成群": {
     "path": "link_folder/原文/成群.md",
@@ -5843,6 +6586,19 @@
       "east and west winds",
       "神掌管風向",
       "神使用風"
+    ]
+  },
+  "殺人（ratsach）": {
+    "path": "link_folder/原文/殺人（ratsach）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "殺人（ratsach）",
+    "status": "formal",
+    "aliases": [
+      "ratsach",
+      "非法殺人"
     ]
   },
   "比哈希錄 (Pi-hahiroth)": {
@@ -6346,6 +7102,18 @@
     "status": "formal",
     "aliases": []
   },
+  "記念（zakar）": {
+    "path": "link_folder/原文/記念（zakar）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "記念（zakar）",
+    "status": "formal",
+    "aliases": [
+      "zakar"
+    ]
+  },
   "記號與經文": {
     "path": "link_folder/原文/記號與經文.md",
     "type": "原文",
@@ -6380,6 +7148,19 @@
     "title": "誣告",
     "status": "formal",
     "aliases": []
+  },
+  "貪戀（chamad）": {
+    "path": "link_folder/原文/貪戀（chamad）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "貪戀（chamad）",
+    "status": "formal",
+    "aliases": [
+      "chamad",
+      "貪戀"
+    ]
   },
   "起泡的瘡": {
     "path": "link_folder/原文/起泡的瘡.md",
@@ -6461,6 +7242,19 @@
     "status": "formal",
     "aliases": [
       "酒政 (cupbearer)"
+    ]
+  },
+  "除了我以外（`al-pa{na{y）": {
+    "path": "link_folder/原文/除了我以外（`al-pa{na{y）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "除了我以外（`al-pa{na{y）",
+    "status": "formal",
+    "aliases": [
+      "al-panay",
+      "在我面前"
     ]
   },
   "陰間（Sheol）": {
@@ -9675,6 +10469,34 @@
     "status": "formal",
     "aliases": []
   },
+  "不可作假見證陷害人": {
+    "path": "link_folder/神學/不可作假見證陷害人.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可作假見證陷害人",
+    "status": "formal",
+    "aliases": [
+      "第九誡",
+      "第九條誡命",
+      "不可作假見證"
+    ]
+  },
+  "不可偷盜": {
+    "path": "link_folder/神學/不可偷盜.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可偷盜",
+    "status": "formal",
+    "aliases": [
+      "第八誡",
+      "第八條誡命",
+      "不可偷盜"
+    ]
+  },
   "不可回頭看": {
     "path": "link_folder/神學/不可回頭看.md",
     "type": "神學",
@@ -9688,6 +10510,62 @@
       "不要回頭看"
     ]
   },
+  "不可妄稱耶和華你神的名": {
+    "path": "link_folder/神學/不可妄稱耶和華你神的名.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可妄稱耶和華你神的名",
+    "status": "formal",
+    "aliases": [
+      "第三誡",
+      "第三條誡命",
+      "不可妄稱神名"
+    ]
+  },
+  "不可姦淫": {
+    "path": "link_folder/神學/不可姦淫.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可姦淫",
+    "status": "formal",
+    "aliases": [
+      "第七誡",
+      "第七條誡命",
+      "不可姦淫"
+    ]
+  },
+  "不可殺人": {
+    "path": "link_folder/神學/不可殺人.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可殺人",
+    "status": "formal",
+    "aliases": [
+      "第六誡",
+      "第六條誡命",
+      "不可殺人"
+    ]
+  },
+  "不可為自己雕刻偶像": {
+    "path": "link_folder/神學/不可為自己雕刻偶像.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可為自己雕刻偶像",
+    "status": "formal",
+    "aliases": [
+      "第二誡",
+      "第二條誡命",
+      "禁止偶像"
+    ]
+  },
   "不可親近": {
     "path": "link_folder/神學/不可親近.md",
     "type": "神學",
@@ -9697,6 +10575,20 @@
     "aliases": [
       "do not break through",
       "不可闖過來"
+    ]
+  },
+  "不可貪戀": {
+    "path": "link_folder/神學/不可貪戀.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可貪戀",
+    "status": "formal",
+    "aliases": [
+      "第十誡",
+      "第十條誡命",
+      "不可貪戀"
     ]
   },
   "中保": {
@@ -10055,6 +10947,18 @@
     "status": "formal",
     "aliases": []
   },
+  "倫理十誡": {
+    "path": "link_folder/神學/倫理十誡.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "倫理十誡",
+    "status": "formal",
+    "aliases": [
+      "道德十誡"
+    ]
+  },
   "假合一": {
     "path": "link_folder/神學/假合一.md",
     "type": "神學",
@@ -10276,6 +11180,31 @@
       "以色列十二支派起源"
     ]
   },
+  "十誡": {
+    "path": "link_folder/神學/十誡.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題",
+      "背景"
+    ],
+    "title": "十誡",
+    "status": "formal",
+    "aliases": [
+      "Decalogue",
+      "十條誡命",
+      "十言"
+    ]
+  },
+  "十誡的條分法": {
+    "path": "link_folder/神學/十誡的條分法.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "十誡的條分法",
+    "status": "formal",
+    "aliases": []
+  },
   "千禧年": {
     "path": "link_folder/神學/千禧年.md",
     "type": "神學",
@@ -10386,6 +11315,19 @@
     "title": "因信稱義",
     "status": "formal",
     "aliases": []
+  },
+  "土壇": {
+    "path": "link_folder/神學/土壇.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "土壇",
+    "status": "formal",
+    "aliases": [
+      "土壇",
+      "石壇"
+    ]
   },
   "在曠野事奉神": {
     "path": "link_folder/神學/在曠野事奉神.md",
@@ -10699,6 +11641,20 @@
       "Establishment of the Sabbath"
     ]
   },
+  "定言式法律": {
+    "path": "link_folder/神學/定言式法律.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "定言式法律",
+    "status": "formal",
+    "aliases": [
+      "apodictic law",
+      "絕對式法律",
+      "定言式誡命"
+    ]
+  },
   "容我的百姓去": {
     "path": "link_folder/神學/容我的百姓去.md",
     "type": "神學",
@@ -10849,6 +11805,19 @@
       "希伯來人的神遇見了我們"
     ]
   },
+  "平安祭": {
+    "path": "link_folder/神學/平安祭.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "平安祭",
+    "status": "formal",
+    "aliases": [
+      "shelamim",
+      "平安祭"
+    ]
+  },
   "彌賽亞": {
     "path": "link_folder/神學/彌賽亞.md",
     "type": "神學",
@@ -10895,6 +11864,20 @@
     "title": "得罪神",
     "status": "formal",
     "aliases": []
+  },
+  "忌邪的神": {
+    "path": "link_folder/神學/忌邪的神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "忌邪的神",
+    "status": "formal",
+    "aliases": [
+      "嫉妒的神",
+      "忌邪者",
+      "qanna"
+    ]
   },
   "忠心管家": {
     "path": "link_folder/神學/忠心管家.md",
@@ -10994,6 +11977,19 @@
     "title": "我所做的事豈可瞞著亞伯拉罕",
     "status": "formal",
     "aliases": []
+  },
+  "我是耶和華你的神": {
+    "path": "link_folder/神學/我是耶和華你的神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "我是耶和華你的神",
+    "status": "formal",
+    "aliases": [
+      "十誡引言",
+      "十誡序言"
+    ]
   },
   "我的靈不永遠與人相爭": {
     "path": "link_folder/神學/我的靈不永遠與人相爭.md",
@@ -11227,6 +12223,18 @@
     "title": "教會",
     "status": "candidate",
     "aliases": []
+  },
+  "敬拜十守則": {
+    "path": "link_folder/神學/敬拜十守則.md",
+    "type": "神學",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "敬拜十守則",
+    "status": "formal",
+    "aliases": [
+      "禮儀十誡"
+    ]
   },
   "敬畏以撒的神": {
     "path": "link_folder/神學/敬畏以撒的神.md",
@@ -11604,6 +12612,48 @@
     "title": "生命樹道路被把守",
     "status": "formal",
     "aliases": []
+  },
+  "當孝敬父母": {
+    "path": "link_folder/神學/當孝敬父母.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "當孝敬父母",
+    "status": "formal",
+    "aliases": [
+      "第五誡",
+      "第五條誡命",
+      "孝敬父母"
+    ]
+  },
+  "當記念安息日守為聖日": {
+    "path": "link_folder/神學/當記念安息日守為聖日.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "當記念安息日守為聖日",
+    "status": "formal",
+    "aliases": [
+      "第四誡",
+      "第四條誡命",
+      "守安息日"
+    ]
+  },
+  "發慈愛直到千代": {
+    "path": "link_folder/神學/發慈愛直到千代.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "發慈愛直到千代",
+    "status": "formal",
+    "aliases": [
+      "hesed",
+      "神的慈愛",
+      "千代的應許"
+    ]
   },
   "皮衣與血祭": {
     "path": "link_folder/神學/皮衣與血祭.md",
@@ -13031,6 +14081,19 @@
     "status": "formal",
     "aliases": []
   },
+  "追討罪自父及子直到三四代": {
+    "path": "link_folder/神學/追討罪自父及子直到三四代.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "追討罪自父及子直到三四代",
+    "status": "formal",
+    "aliases": [
+      "罪的跨代影響",
+      "三四代的追討"
+    ]
+  },
   "逃避情慾": {
     "path": "link_folder/神學/逃避情慾.md",
     "type": "神學",
@@ -13071,6 +14134,20 @@
       "新生",
       "Born Again",
       "重生得救"
+    ]
+  },
+  "除了我以外你不可有別的神": {
+    "path": "link_folder/神學/除了我以外你不可有別的神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "除了我以外你不可有別的神",
+    "status": "formal",
+    "aliases": [
+      "第一誡",
+      "第一條誡命",
+      "不可有別的神"
     ]
   },
   "除去羞恥": {
@@ -13358,6 +14435,19 @@
       "古代代理孕母"
     ]
   },
+  "古代近東偶像崇拜": {
+    "path": "link_folder/背景/古代近東偶像崇拜.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "古代近東偶像崇拜",
+    "status": "formal",
+    "aliases": [
+      "古代偶像",
+      "偶像世界觀"
+    ]
+  },
   "古代近東割禮背景": {
     "path": "link_folder/背景/古代近東割禮背景.md",
     "type": "背景",
@@ -13412,6 +14502,19 @@
       "接待客旅的古代背景"
     ]
   },
+  "古代近東法典": {
+    "path": "link_folder/背景/古代近東法典.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "古代近東法典",
+    "status": "formal",
+    "aliases": [
+      "古代法典",
+      "漢摩拉比法典"
+    ]
+  },
   "古代近東洪水故事中的放鳥情節": {
     "path": "link_folder/背景/古代近東洪水故事中的放鳥情節.md",
     "type": "背景",
@@ -13419,6 +14522,19 @@
     "title": "古代近東洪水故事中的放鳥情節",
     "status": "formal",
     "aliases": []
+  },
+  "古代近東祭壇": {
+    "path": "link_folder/背景/古代近東祭壇.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "古代近東祭壇",
+    "status": "formal",
+    "aliases": [
+      "古代祭壇",
+      "築壇傳統"
+    ]
   },
   "古代近東立約儀式": {
     "path": "link_folder/背景/古代近東立約儀式.md",
@@ -13464,6 +14580,19 @@
     "status": "formal",
     "aliases": [
       "Precursor to Sabbath"
+    ]
+  },
+  "宗主條約": {
+    "path": "link_folder/背景/宗主條約.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "宗主條約",
+    "status": "formal",
+    "aliases": [
+      "suzerainty treaty",
+      "赫人條約"
     ]
   },
   "摩西的希伯來與埃及雙重身分": {
@@ -13631,6 +14760,16 @@
       "Mount Sinai geography",
       "西乃山位置"
     ]
+  },
+  "西乃山立約": {
+    "path": "link_folder/背景/西乃山立約.md",
+    "type": "背景",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "西乃山立約",
+    "status": "formal",
+    "aliases": []
   },
   "金環": {
     "path": "link_folder/背景/金環.md",
@@ -14950,17 +16089,35 @@
   "家族語言土地國家": {
     "alias_of": "宗族方言地土地與邦國"
   },
+  "恩典與律法": {
+    "alias_of": "律法與恩典"
+  },
+  "律法前的恩典": {
+    "alias_of": "律法與恩典"
+  },
   "心中正直手上清潔": {
     "alias_of": "心正手潔"
   },
   "開玩笑": {
     "alias_of": "戲言"
   },
+  "worship": {
+    "alias_of": "敬拜"
+  },
+  "崇拜": {
+    "alias_of": "敬拜"
+  },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
+  },
+  "covenant": {
+    "alias_of": "盟約"
+  },
+  "約": {
+    "alias_of": "盟約"
   },
   "God's provision": {
     "alias_of": "神的供應"
@@ -15007,6 +16164,12 @@
   "摩西獨自審判": {
     "alias_of": "摩西審判百姓"
   },
+  "摩西進入幽暗": {
+    "alias_of": "摩西就近幽暗"
+  },
+  "摩西挨近神": {
+    "alias_of": "摩西就近幽暗"
+  },
   "Moses appoints leaders": {
     "alias_of": "摩西立首領"
   },
@@ -15025,6 +16188,12 @@
   "Water of Marah sweetened": {
     "alias_of": "瑪拉苦水變甜"
   },
+  "百姓發顫": {
+    "alias_of": "百姓懼怕神的顯現"
+  },
+  "百姓懼怕": {
+    "alias_of": "百姓懼怕神的顯現"
+  },
   "consecration of the people": {
     "alias_of": "百姓自潔三天"
   },
@@ -15034,11 +16203,23 @@
   "Water from the Rock event": {
     "alias_of": "磐石出水"
   },
+  "築壇指示": {
+    "alias_of": "神指示築壇獻祭"
+  },
+  "獻祭指示": {
+    "alias_of": "神指示築壇獻祭"
+  },
   "the LORD descends on Sinai": {
     "alias_of": "神降臨西乃山"
   },
   "耶和華降臨西乃山": {
     "alias_of": "神降臨西乃山"
+  },
+  "十誡頒布": {
+    "alias_of": "神頒布十誡"
+  },
+  "律法頒布": {
+    "alias_of": "神頒布十誡"
   },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
@@ -15133,8 +16314,26 @@
   "our God is a consuming fire": {
     "alias_of": "來12：29 我們的神乃是烈火"
   },
+  "來二2": {
+    "alias_of": "來2：2"
+  },
+  "天使所傳的律法": {
+    "alias_of": "來2：2"
+  },
   "Heb 3:8-9 Do not harden your heart": {
     "alias_of": "來3：8-9 硬著心不可像瑪撒"
+  },
+  "坦然無懼到施恩座": {
+    "alias_of": "來4：16"
+  },
+  "來四16": {
+    "alias_of": "來4：16"
+  },
+  "來四9-10": {
+    "alias_of": "來4：9-10"
+  },
+  "安息日的終末應驗": {
+    "alias_of": "來4：9-10"
   },
   "Heb 7:1-3 Melchizedek": {
     "alias_of": "來7：1-3 麥基洗德"
@@ -15162,6 +16361,63 @@
   },
   "兩個囚犯與十字架上兩個強盜 (路23:32, 39-43)": {
     "alias_of": "兩個囚犯與十字架上兩個強盜_路23_32_39-43"
+  },
+  "祭司褲子": {
+    "alias_of": "出28：42-43"
+  },
+  "出二十八42-43": {
+    "alias_of": "出28：42-43"
+  },
+  "神住在百姓中間": {
+    "alias_of": "出29：45-46"
+  },
+  "出二十九45-46": {
+    "alias_of": "出29：45-46"
+  },
+  "不能見神面而存活": {
+    "alias_of": "出33：20"
+  },
+  "出三十三20": {
+    "alias_of": "出33：20"
+  },
+  "神在親近人中顯為聖": {
+    "alias_of": "利10：3"
+  },
+  "利十3": {
+    "alias_of": "利10：3"
+  },
+  "亞伯拉罕築壇": {
+    "alias_of": "創12：7"
+  },
+  "創十二7": {
+    "alias_of": "創12：7"
+  },
+  "創十五1": {
+    "alias_of": "創15：1"
+  },
+  "亞伯拉罕試驗": {
+    "alias_of": "創22"
+  },
+  "創二十二章": {
+    "alias_of": "創22"
+  },
+  "以撒築壇": {
+    "alias_of": "創26：25"
+  },
+  "創二十六25": {
+    "alias_of": "創26：25"
+  },
+  "雅各築壇": {
+    "alias_of": "創35：7"
+  },
+  "創三十五7": {
+    "alias_of": "創35：7"
+  },
+  "挪亞赤身": {
+    "alias_of": "創9：20-23"
+  },
+  "創九20-23": {
+    "alias_of": "創9：20-23"
   },
   "創49流便受責": {
     "alias_of": "創世記49章流便受責"
@@ -15193,6 +16449,24 @@
   "創世記十五章14節應驗": {
     "alias_of": "創十五14 亞伯拉罕之約的財物應驗"
   },
+  "天使傳律法": {
+    "alias_of": "加3：19"
+  },
+  "加三19": {
+    "alias_of": "加3：19"
+  },
+  "基督裡的自由": {
+    "alias_of": "加5：1"
+  },
+  "加五1": {
+    "alias_of": "加5：1"
+  },
+  "可二27-28": {
+    "alias_of": "可2：27-28"
+  },
+  "安息日為人設立": {
+    "alias_of": "可2：27-28"
+  },
   "詩133:1": {
     "alias_of": "和睦是神喜悅 (詩133-1)"
   },
@@ -15220,6 +16494,12 @@
   "Revelation 2:17 Hidden manna": {
     "alias_of": "啟2：17 隱藏的嗎哪"
   },
+  "雷轟閃電": {
+    "alias_of": "啟4：5"
+  },
+  "啟四5": {
+    "alias_of": "啟4：5"
+  },
   "末世大雹": {
     "alias_of": "啟示錄 16-21（末世大冰雹）"
   },
@@ -15228,6 +16508,54 @@
   },
   "Titus 1:5-9 Elder qualifications": {
     "alias_of": "多1：5-9 長老資格"
+  },
+  "太十二34-37": {
+    "alias_of": "太12：34-37"
+  },
+  "言語與內心": {
+    "alias_of": "太12：34-37"
+  },
+  "最大誡命": {
+    "alias_of": "太22：36-39"
+  },
+  "太二十二36-39": {
+    "alias_of": "太22：36-39"
+  },
+  "十字架黑暗": {
+    "alias_of": "太27：45"
+  },
+  "太二十七45": {
+    "alias_of": "太27：45"
+  },
+  "天上有聲音": {
+    "alias_of": "太3：17"
+  },
+  "太三17": {
+    "alias_of": "太3：17"
+  },
+  "耶穌成全律法": {
+    "alias_of": "太5：17"
+  },
+  "太五17": {
+    "alias_of": "太5：17"
+  },
+  "太五21-22": {
+    "alias_of": "太5：21-22"
+  },
+  "殺人與怒氣": {
+    "alias_of": "太5：21-22"
+  },
+  "太五27-28": {
+    "alias_of": "太5：27-28"
+  },
+  "姦淫與淫念": {
+    "alias_of": "太5：27-28"
+  },
+  "不能事奉神又事奉瑪門": {
+    "alias_of": "太6：24"
+  },
+  "太六24": {
+    "alias_of": "太6：24"
   },
   "希伯來書12:5-11 神管教兒女": {
     "alias_of": "希伯來書12_5-11 神管教兒女"
@@ -15240,6 +16568,24 @@
   },
   "安息日的安息": {
     "alias_of": "希伯來書4章神的安息"
+  },
+  "屬靈福氣": {
+    "alias_of": "弗1：3"
+  },
+  "弗一3": {
+    "alias_of": "弗1：3"
+  },
+  "基督成就和平": {
+    "alias_of": "弗2：14-16"
+  },
+  "弗二14-16": {
+    "alias_of": "弗2：14-16"
+  },
+  "孝敬父母的應許": {
+    "alias_of": "弗6：2-3"
+  },
+  "弗六2-3": {
+    "alias_of": "弗6：2-3"
   },
   "彌5伯利恆與彌賽亞": {
     "alias_of": "彌迦書5章伯利恆與彌賽亞"
@@ -15258,6 +16604,12 @@
   },
   "挪亞傳義道": {
     "alias_of": "挪亞是傳義道者"
+  },
+  "基督為中保": {
+    "alias_of": "提前2：5"
+  },
+  "提前二5": {
+    "alias_of": "提前2：5"
   },
   "1Tim 3:1-7 Overseer qualifications": {
     "alias_of": "提前3：1-7 監督資格"
@@ -15303,6 +16655,15 @@
   },
   "林前10:1-2": {
     "alias_of": "林前十1-2 受浸歸入摩西"
+  },
+  "拜偶像與鬼魔": {
+    "alias_of": "林前十19-20"
+  },
+  "神那樣的嫉妒": {
+    "alias_of": "林後11：2"
+  },
+  "林後十一2": {
+    "alias_of": "林後11：2"
   },
   "2Cor 3:18 beholding the Lord's glory": {
     "alias_of": "林後3：18 看見主的榮光"
@@ -15352,11 +16713,29 @@
   "箴言21-1": {
     "alias_of": "王心在神手中 (箴21-1)"
   },
+  "神立名居所": {
+    "alias_of": "申12：5"
+  },
+  "申十二5": {
+    "alias_of": "申12：5"
+  },
+  "不可因父殺子": {
+    "alias_of": "申24：16"
+  },
+  "申二十四16": {
+    "alias_of": "申24：16"
+  },
   "Deut 25:17-19 Remember Amalek": {
     "alias_of": "申25：17-19 記念亞瑪力"
   },
   "Deut 32:11-12 eagle's nest": {
     "alias_of": "申32：11-12 如鷹攪動巢窩"
+  },
+  "申命記十誡": {
+    "alias_of": "申5：6-21"
+  },
+  "申五章6-21節": {
+    "alias_of": "申5：6-21"
   },
   "Deuteronomy 8:3 Man does not live by bread alone": {
     "alias_of": "申8：3 人活著不是單靠食物"
@@ -15415,8 +16794,50 @@
   "箴言21-14": {
     "alias_of": "禮物挽回怒氣 (箴21-14)"
   },
+  "敬畏神遠離惡事": {
+    "alias_of": "箴16：6"
+  },
+  "箴十六6": {
+    "alias_of": "箴16：6"
+  },
+  "敬畏耶和華是智慧開端": {
+    "alias_of": "箴9：10"
+  },
+  "箴九10": {
+    "alias_of": "箴9：10"
+  },
+  "道成肉身": {
+    "alias_of": "約1：14"
+  },
+  "約一14": {
+    "alias_of": "約1：14"
+  },
+  "神的羔羊": {
+    "alias_of": "約1：29"
+  },
+  "約一29": {
+    "alias_of": "約1：29"
+  },
+  "從天上來的": {
+    "alias_of": "約3：31-34"
+  },
+  "約三31-34": {
+    "alias_of": "約3：31-34"
+  },
   "John 4:14 Living water": {
     "alias_of": "約4：14 活水"
+  },
+  "用心靈誠實敬拜": {
+    "alias_of": "約4：21-24"
+  },
+  "約四21-24": {
+    "alias_of": "約4：21-24"
+  },
+  "用心靈和誠實敬拜": {
+    "alias_of": "約4：24"
+  },
+  "約四24": {
+    "alias_of": "約4：24"
   },
   "John 6:31-35 Manna and Christ": {
     "alias_of": "約6：31-35 耶穌是生命的糧"
@@ -15435,6 +16856,12 @@
   },
   "國庫之雹": {
     "alias_of": "約伯記 38-22-23（神所存留的冰雹）"
+  },
+  "遠避偶像": {
+    "alias_of": "約壹5：21"
+  },
+  "約壹五21": {
+    "alias_of": "約壹5：21"
   },
   "約瑟受苦後高升與基督受苦後得榮耀 (腓2:8-9)": {
     "alias_of": "約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9"
@@ -15478,6 +16905,30 @@
   "逾越節羔羊骨頭預表": {
     "alias_of": "約翰福音十九36 羔羊骨頭不折"
   },
+  "個人責任": {
+    "alias_of": "結18：1-4"
+  },
+  "結十八1-4": {
+    "alias_of": "結18：1-4"
+  },
+  "個人擔罪": {
+    "alias_of": "結18：20"
+  },
+  "結十八20": {
+    "alias_of": "結18：20"
+  },
+  "活祭": {
+    "alias_of": "羅12：1"
+  },
+  "羅十二1": {
+    "alias_of": "羅12：1"
+  },
+  "律法刻在人心": {
+    "alias_of": "羅2：15"
+  },
+  "羅二15": {
+    "alias_of": "羅2：15"
+  },
   "羅9:17": {
     "alias_of": "羅馬書 9-17（神興起法老）"
   },
@@ -15493,8 +16944,26 @@
   "羅7-8": {
     "alias_of": "羅馬書七-八章對應"
   },
+  "不再因父罪酸牙": {
+    "alias_of": "耶31：29-30"
+  },
+  "耶三十一29-30": {
+    "alias_of": "耶31：29-30"
+  },
+  "律法寫在心上": {
+    "alias_of": "耶31：33"
+  },
+  "耶三十一33": {
+    "alias_of": "耶31：33"
+  },
   "Philippians 2:14 Without grumbling": {
     "alias_of": "腓2：14 不發怨言"
+  },
+  "以肚腹為神": {
+    "alias_of": "腓3：19"
+  },
+  "腓三19": {
+    "alias_of": "腓3：19"
   },
   "葡萄樹與真葡萄樹 (約15:1)": {
     "alias_of": "葡萄樹與真葡萄樹_約15_1"
@@ -15504,6 +16973,12 @@
   },
   "被掛在木頭上與基督被掛在樹上 (徒5:30; 加3:13)": {
     "alias_of": "被掛在木頭上與基督被掛在樹上_徒5_30_加3_13"
+  },
+  "貪婪如拜偶像": {
+    "alias_of": "西3：5"
+  },
+  "西三5": {
+    "alias_of": "西3：5"
   },
   "西緬利未受咒詛 (創49:5-7)": {
     "alias_of": "西緬利未受咒詛 (創49_5-7)"
@@ -15517,8 +16992,17 @@
   "Psalm 78:24-25 Bread from heaven": {
     "alias_of": "詩78：24-25 天上的糧食"
   },
+  "密雲幽暗環繞神": {
+    "alias_of": "詩97：2"
+  },
+  "詩九十七2": {
+    "alias_of": "詩97：2"
+  },
   "詩136:15": {
     "alias_of": "詩一三六15 法老軍兵推翻"
+  },
+  "誡命的寬廣": {
+    "alias_of": "詩一百十九96"
   },
   "詩106:9": {
     "alias_of": "詩一零六9 紅海乾地"
@@ -15556,11 +17040,29 @@
   "Isa 53:4-5 Stricken Rock": {
     "alias_of": "賽53：4-5 磐石被擊打"
   },
+  "賽六5": {
+    "alias_of": "賽6：5"
+  },
+  "聖潔神的臨在": {
+    "alias_of": "賽6：5"
+  },
   "賽58:8": {
     "alias_of": "賽五十八8 耶和華作後盾"
   },
   "賽43:1-3": {
     "alias_of": "賽四十三1-3 水中行走不漫過"
+  },
+  "路一30": {
+    "alias_of": "路1：30"
+  },
+  "不要懼怕": {
+    "alias_of": "路1：30"
+  },
+  "彼得遇見神聖": {
+    "alias_of": "路5：8"
+  },
+  "路五8": {
+    "alias_of": "路5：8"
   },
   "浪子認罪": {
     "alias_of": "路加福音 15-18（浪子認罪）"
@@ -15970,6 +17472,9 @@
   "Rephidim etymology": {
     "alias_of": "利非訂（ repose ）"
   },
+  "aseret hadevarim": {
+    "alias_of": "十句話"
+  },
   "Manna etymology": {
     "alias_of": "嗎哪（ What is it ）"
   },
@@ -15999,6 +17504,18 @@
   },
   "筋": {
     "alias_of": "大腿窩的筋"
+  },
+  "shav": {
+    "alias_of": "妄稱（vain）"
+  },
+  "虛妄": {
+    "alias_of": "妄稱（vain）"
+  },
+  "na'aph": {
+    "alias_of": "姦淫（na'aph）"
+  },
+  "姦淫": {
+    "alias_of": "姦淫（na'aph）"
   },
   "希伯來人 (過河的人)": {
     "alias_of": "希伯來人_過河的人"
@@ -16089,6 +17606,12 @@
   },
   "神使用風": {
     "alias_of": "東風與西風"
+  },
+  "ratsach": {
+    "alias_of": "殺人（ratsach）"
+  },
+  "非法殺人": {
+    "alias_of": "殺人（ratsach）"
   },
   "Peniel": {
     "alias_of": "毗努伊勒 (神的面)"
@@ -16228,6 +17751,9 @@
   "Zipporah etymology": {
     "alias_of": "西坡拉（ bird ）"
   },
+  "zakar": {
+    "alias_of": "記念（zakar）"
+  },
   "Tefillin": {
     "alias_of": "記號與經文"
   },
@@ -16239,6 +17765,12 @@
   },
   "詩51": {
     "alias_of": "詩篇51篇"
+  },
+  "chamad": {
+    "alias_of": "貪戀（chamad）"
+  },
+  "貪戀": {
+    "alias_of": "貪戀（chamad）"
   },
   "shechin": {
     "alias_of": "起泡的瘡"
@@ -16281,6 +17813,12 @@
   },
   "酒政 (cupbearer)": {
     "alias_of": "酒政_cupbearer"
+  },
+  "al-panay": {
+    "alias_of": "除了我以外（`al-pa{na{y）"
+  },
+  "在我面前": {
+    "alias_of": "除了我以外（`al-pa{na{y）"
   },
   "Sheol": {
     "alias_of": "陰間（Sheol）"
@@ -17137,14 +18675,65 @@
   "最後七天的寬限": {
     "alias_of": "七天的等候與最後寬限"
   },
+  "第九誡": {
+    "alias_of": "不可作假見證陷害人"
+  },
+  "第九條誡命": {
+    "alias_of": "不可作假見證陷害人"
+  },
+  "不可作假見證": {
+    "alias_of": "不可作假見證陷害人"
+  },
+  "第八誡": {
+    "alias_of": "不可偷盜"
+  },
+  "第八條誡命": {
+    "alias_of": "不可偷盜"
+  },
   "不要回頭看": {
     "alias_of": "不可回頭看"
+  },
+  "第三誡": {
+    "alias_of": "不可妄稱耶和華你神的名"
+  },
+  "第三條誡命": {
+    "alias_of": "不可妄稱耶和華你神的名"
+  },
+  "不可妄稱神名": {
+    "alias_of": "不可妄稱耶和華你神的名"
+  },
+  "第七誡": {
+    "alias_of": "不可姦淫"
+  },
+  "第七條誡命": {
+    "alias_of": "不可姦淫"
+  },
+  "第六誡": {
+    "alias_of": "不可殺人"
+  },
+  "第六條誡命": {
+    "alias_of": "不可殺人"
+  },
+  "第二誡": {
+    "alias_of": "不可為自己雕刻偶像"
+  },
+  "第二條誡命": {
+    "alias_of": "不可為自己雕刻偶像"
+  },
+  "禁止偶像": {
+    "alias_of": "不可為自己雕刻偶像"
   },
   "do not break through": {
     "alias_of": "不可親近"
   },
   "不可闖過來": {
     "alias_of": "不可親近"
+  },
+  "第十誡": {
+    "alias_of": "不可貪戀"
+  },
+  "第十條誡命": {
+    "alias_of": "不可貪戀"
   },
   "神的朋友亞伯拉罕": {
     "alias_of": "亞伯拉罕為神的朋友"
@@ -17206,6 +18795,9 @@
   "伸出的膀臂": {
     "alias_of": "伸出來的膀臂"
   },
+  "道德十誡": {
+    "alias_of": "倫理十誡"
+  },
   "敘述式神學": {
     "alias_of": "傳於後代"
   },
@@ -17266,6 +18858,15 @@
   "以色列十二支派起源": {
     "alias_of": "十二支派起源"
   },
+  "Decalogue": {
+    "alias_of": "十誡"
+  },
+  "十條誡命": {
+    "alias_of": "十誡"
+  },
+  "十言": {
+    "alias_of": "十誡"
+  },
   "賽53受苦僕人": {
     "alias_of": "受苦僕人 (賽53)"
   },
@@ -17277,6 +18878,9 @@
   },
   "回伯特利": {
     "alias_of": "回到伯特利的屬靈復興"
+  },
+  "石壇": {
+    "alias_of": "土壇"
   },
   "serve Me in the wilderness": {
     "alias_of": "在曠野事奉神"
@@ -17341,6 +18945,15 @@
   "Establishment of the Sabbath": {
     "alias_of": "安息日的設立"
   },
+  "apodictic law": {
+    "alias_of": "定言式法律"
+  },
+  "絕對式法律": {
+    "alias_of": "定言式法律"
+  },
+  "定言式誡命": {
+    "alias_of": "定言式法律"
+  },
   "寄居": {
     "alias_of": "寄居身分"
   },
@@ -17389,11 +19002,23 @@
   "希伯來人的神遇見了我們": {
     "alias_of": "希伯來人的神"
   },
+  "shelamim": {
+    "alias_of": "平安祭"
+  },
   "Messiah": {
     "alias_of": "彌賽亞"
   },
   "基督": {
     "alias_of": "彌賽亞"
+  },
+  "嫉妒的神": {
+    "alias_of": "忌邪的神"
+  },
+  "忌邪者": {
+    "alias_of": "忌邪的神"
+  },
+  "qanna": {
+    "alias_of": "忌邪的神"
   },
   "良心甦醒": {
     "alias_of": "悔改與良心的覺醒"
@@ -17403,6 +19028,12 @@
   },
   "約瑟哥哥們的認罪": {
     "alias_of": "悔改與良心的覺醒"
+  },
+  "十誡引言": {
+    "alias_of": "我是耶和華你的神"
+  },
+  "十誡序言": {
+    "alias_of": "我是耶和華你的神"
   },
   "我的靈不永遠住在人裡面": {
     "alias_of": "我的靈不永遠與人相爭"
@@ -17463,6 +19094,9 @@
   },
   "救贖者": {
     "alias_of": "救贖goel"
+  },
+  "禮儀十誡": {
+    "alias_of": "敬拜十守則"
   },
   "以撒的敬畏": {
     "alias_of": "敬畏以撒的神"
@@ -17550,6 +19184,33 @@
   },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
+  },
+  "第五誡": {
+    "alias_of": "當孝敬父母"
+  },
+  "第五條誡命": {
+    "alias_of": "當孝敬父母"
+  },
+  "孝敬父母": {
+    "alias_of": "當孝敬父母"
+  },
+  "第四誡": {
+    "alias_of": "當記念安息日守為聖日"
+  },
+  "第四條誡命": {
+    "alias_of": "當記念安息日守為聖日"
+  },
+  "守安息日": {
+    "alias_of": "當記念安息日守為聖日"
+  },
+  "hesed": {
+    "alias_of": "發慈愛直到千代"
+  },
+  "神的慈愛": {
+    "alias_of": "發慈愛直到千代"
+  },
+  "千代的應許": {
+    "alias_of": "發慈愛直到千代"
   },
   "know I am the LORD": {
     "alias_of": "知道我是耶和華"
@@ -17881,6 +19542,12 @@
   "remember my covenant": {
     "alias_of": "記念我的約"
   },
+  "罪的跨代影響": {
+    "alias_of": "追討罪自父及子直到三四代"
+  },
+  "三四代的追討": {
+    "alias_of": "追討罪自父及子直到三四代"
+  },
   "完全奉獻": {
     "alias_of": "連一蹄也不留下"
   },
@@ -17904,6 +19571,15 @@
   },
   "重生得救": {
     "alias_of": "重生"
+  },
+  "第一誡": {
+    "alias_of": "除了我以外你不可有別的神"
+  },
+  "第一條誡命": {
+    "alias_of": "除了我以外你不可有別的神"
+  },
+  "不可有別的神": {
+    "alias_of": "除了我以外你不可有別的神"
   },
   "除掉偶像": {
     "alias_of": "除掉外邦神"
@@ -17983,6 +19659,12 @@
   "古代代理孕母": {
     "alias_of": "古代近東代理孕母安排"
   },
+  "古代偶像": {
+    "alias_of": "古代近東偶像崇拜"
+  },
+  "偶像世界觀": {
+    "alias_of": "古代近東偶像崇拜"
+  },
   "古代割禮背景": {
     "alias_of": "古代近東割禮背景"
   },
@@ -18001,6 +19683,18 @@
   "接待客旅的古代背景": {
     "alias_of": "古代近東接待客旅禮儀"
   },
+  "古代法典": {
+    "alias_of": "古代近東法典"
+  },
+  "漢摩拉比法典": {
+    "alias_of": "古代近東法典"
+  },
+  "古代祭壇": {
+    "alias_of": "古代近東祭壇"
+  },
+  "築壇傳統": {
+    "alias_of": "古代近東祭壇"
+  },
   "ancient Near Eastern covenant ceremony": {
     "alias_of": "古代近東立約儀式"
   },
@@ -18012,6 +19706,12 @@
   },
   "Precursor to Sabbath": {
     "alias_of": "安息日的前身"
+  },
+  "suzerainty treaty": {
+    "alias_of": "宗主條約"
+  },
+  "赫人條約": {
+    "alias_of": "宗主條約"
   },
   "摩西的雙重身分": {
     "alias_of": "摩西的希伯來與埃及雙重身分"
