@@ -169,6 +169,14 @@
       "nabi"
     ]
   },
+  "公義與真理": {
+    "path": "link_folder/主題/公義與真理.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "公義與真理",
+    "status": "formal",
+    "aliases": []
+  },
   "六日創造與信徒重生經歷": {
     "path": "link_folder/主題/六日創造與信徒重生經歷.md",
     "type": "主題",
@@ -422,6 +430,14 @@
       "心中正直手上清潔"
     ]
   },
+  "愛鄰舍與仇敵": {
+    "path": "link_folder/主題/愛鄰舍與仇敵.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "愛鄰舍與仇敵",
+    "status": "formal",
+    "aliases": []
+  },
   "我豈是看守我兄弟的麼": {
     "path": "link_folder/主題/我豈是看守我兄弟的麼.md",
     "type": "主題",
@@ -478,6 +494,14 @@
       "worship",
       "崇拜"
     ]
+  },
+  "敬畏神與專一事奉": {
+    "path": "link_folder/主題/敬畏神與專一事奉.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "敬畏神與專一事奉",
+    "status": "formal",
+    "aliases": []
   },
   "族長祝福的不可更改性": {
     "path": "link_folder/主題/族長祝福的不可更改性.md",
@@ -550,6 +574,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "漸漸的墮落",
+    "status": "formal",
+    "aliases": []
+  },
+  "漸進性征服": {
+    "path": "link_folder/主題/漸進性征服.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "漸進性征服",
     "status": "formal",
     "aliases": []
   },
@@ -658,6 +690,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神的引導與保護": {
+    "path": "link_folder/主題/神的引導與保護.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "神的引導與保護",
+    "status": "formal",
+    "aliases": []
+  },
   "神的旨意與人的詭詐": {
     "path": "link_folder/主題/神的旨意與人的詭詐.md",
     "type": "主題",
@@ -705,6 +745,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "立約",
+    "status": "formal",
+    "aliases": []
+  },
+  "節期與紀念": {
+    "path": "link_folder/主題/節期與紀念.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "節期與紀念",
     "status": "formal",
     "aliases": []
   },
@@ -925,6 +973,14 @@
     "status": "formal",
     "aliases": []
   },
+  "關懷弱勢": {
+    "path": "link_folder/主題/關懷弱勢.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "關懷弱勢",
+    "status": "formal",
+    "aliases": []
+  },
   "雅各逃往哈蘭": {
     "path": "link_folder/主題/雅各逃往哈蘭.md",
     "type": "主題",
@@ -990,6 +1046,14 @@
     "status": "formal",
     "aliases": []
   },
+  "三大節期律例": {
+    "path": "link_folder/事件/三大節期律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "三大節期律例",
+    "status": "formal",
+    "aliases": []
+  },
   "五旬節": {
     "path": "link_folder/事件/五旬節.md",
     "type": "事件",
@@ -1052,6 +1116,14 @@
       "Preserving an omer of manna"
     ]
   },
+  "保護弱勢律例": {
+    "path": "link_folder/事件/保護弱勢律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "保護弱勢律例",
+    "status": "formal",
+    "aliases": []
+  },
   "保護弱者的律例": {
     "path": "link_folder/事件/保護弱者的律例.md",
     "type": "事件",
@@ -1100,6 +1172,22 @@
     "status": "formal",
     "aliases": []
   },
+  "司法公正律例": {
+    "path": "link_folder/事件/司法公正律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "司法公正律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "天使引導應許": {
+    "path": "link_folder/事件/天使引導應許.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "天使引導應許",
+    "status": "formal",
+    "aliases": []
+  },
   "天降嗎哪": {
     "path": "link_folder/事件/天降嗎哪.md",
     "type": "事件",
@@ -1112,6 +1200,22 @@
     "aliases": [
       "Manna from heaven"
     ]
+  },
+  "安息年律例": {
+    "path": "link_folder/事件/安息年律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "安息年律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "安息日律例": {
+    "path": "link_folder/事件/安息日律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "安息日律例",
+    "status": "formal",
+    "aliases": []
   },
   "安息日收取規定": {
     "path": "link_folder/事件/安息日收取規定.md",
@@ -1149,6 +1253,22 @@
     "status": "formal",
     "aliases": []
   },
+  "征服迦南應許": {
+    "path": "link_folder/事件/征服迦南應許.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "征服迦南應許",
+    "status": "formal",
+    "aliases": []
+  },
+  "愛仇敵律例": {
+    "path": "link_folder/事件/愛仇敵律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "愛仇敵律例",
+    "status": "formal",
+    "aliases": []
+  },
   "戰勝亞瑪力人": {
     "path": "link_folder/事件/戰勝亞瑪力人.md",
     "type": "事件",
@@ -1160,6 +1280,14 @@
     "aliases": [
       "Defeat of Amalek"
     ]
+  },
+  "拆毀偶像律例": {
+    "path": "link_folder/事件/拆毀偶像律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "拆毀偶像律例",
+    "status": "formal",
+    "aliases": []
   },
   "摩西上山見神": {
     "path": "link_folder/事件/摩西上山見神.md",
@@ -1257,6 +1385,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "牛觸死人的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "獻祭條例": {
+    "path": "link_folder/事件/獻祭條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "獻祭條例",
     "status": "formal",
     "aliases": []
   },
@@ -1358,6 +1494,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "禮儀的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "立約禁令": {
+    "path": "link_folder/事件/立約禁令.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "立約禁令",
     "status": "formal",
     "aliases": []
   },
@@ -1850,6 +1994,14 @@
     "status": "formal",
     "aliases": []
   },
+  "傳7：7": {
+    "path": "link_folder/互文/傳7：7.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "傳7：7",
+    "status": "formal",
+    "aliases": []
+  },
   "兒女為神賞賜 (詩127-3)": {
     "path": "link_folder/互文/兒女為神賞賜 (詩127-3).md",
     "type": "互文",
@@ -1926,11 +2078,27 @@
     "status": "formal",
     "aliases": []
   },
+  "出20：16": {
+    "path": "link_folder/互文/出20：16.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出20：16",
+    "status": "formal",
+    "aliases": []
+  },
   "出20：3": {
     "path": "link_folder/互文/出20：3.md",
     "type": "互文",
     "secondary_types": [],
     "title": "出20：3",
+    "status": "formal",
+    "aliases": []
+  },
+  "出20：8-11": {
+    "path": "link_folder/互文/出20：8-11.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出20：8-11",
     "status": "formal",
     "aliases": []
   },
@@ -1963,6 +2131,22 @@
     "type": "互文",
     "secondary_types": [],
     "title": "出21：6",
+    "status": "formal",
+    "aliases": []
+  },
+  "出22：21": {
+    "path": "link_folder/互文/出22：21.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出22：21",
+    "status": "formal",
+    "aliases": []
+  },
+  "出22：25-27": {
+    "path": "link_folder/互文/出22：25-27.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "出22：25-27",
     "status": "formal",
     "aliases": []
   },
@@ -2101,6 +2285,22 @@
     "status": "formal",
     "aliases": []
   },
+  "利19：15": {
+    "path": "link_folder/互文/利19：15.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利19：15",
+    "status": "formal",
+    "aliases": []
+  },
+  "利19：16": {
+    "path": "link_folder/互文/利19：16.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利19：16",
+    "status": "formal",
+    "aliases": []
+  },
   "利19：18": {
     "path": "link_folder/互文/利19：18.md",
     "type": "互文",
@@ -2178,6 +2378,22 @@
     "type": "互文",
     "secondary_types": [],
     "title": "利24：19-20",
+    "status": "formal",
+    "aliases": []
+  },
+  "利25：1-7": {
+    "path": "link_folder/互文/利25：1-7.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利25：1-7",
+    "status": "formal",
+    "aliases": []
+  },
+  "利25：20-22": {
+    "path": "link_folder/互文/利25：20-22.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利25：20-22",
     "status": "formal",
     "aliases": []
   },
@@ -2672,6 +2888,14 @@
     "status": "formal",
     "aliases": []
   },
+  "可14：56": {
+    "path": "link_folder/互文/可14：56.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "可14：56",
+    "status": "formal",
+    "aliases": []
+  },
   "可2：17": {
     "path": "link_folder/互文/可2：17.md",
     "type": "互文",
@@ -2902,6 +3126,14 @@
       "言語與內心"
     ]
   },
+  "太12：36-37": {
+    "path": "link_folder/互文/太12：36-37.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太12：36-37",
+    "status": "formal",
+    "aliases": []
+  },
   "太15：26": {
     "path": "link_folder/互文/太15：26.md",
     "type": "互文",
@@ -3040,6 +3272,14 @@
     "status": "formal",
     "aliases": []
   },
+  "太5：44": {
+    "path": "link_folder/互文/太5：44.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太5：44",
+    "status": "formal",
+    "aliases": []
+  },
   "太6：24": {
     "path": "link_folder/互文/太6：24.md",
     "type": "互文",
@@ -3072,6 +3312,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "太7：12",
+    "status": "formal",
+    "aliases": []
+  },
+  "太7：13-14": {
+    "path": "link_folder/互文/太7：13-14.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太7：13-14",
     "status": "formal",
     "aliases": []
   },
@@ -3190,11 +3438,27 @@
     "status": "formal",
     "aliases": []
   },
+  "弗4：25": {
+    "path": "link_folder/互文/弗4：25.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "弗4：25",
+    "status": "formal",
+    "aliases": []
+  },
   "弗4：28": {
     "path": "link_folder/互文/弗4：28.md",
     "type": "互文",
     "secondary_types": [],
     "title": "弗4：28",
+    "status": "formal",
+    "aliases": []
+  },
+  "弗5：11": {
+    "path": "link_folder/互文/弗5：11.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "弗5：11",
     "status": "formal",
     "aliases": []
   },
@@ -3233,11 +3497,27 @@
     "status": "formal",
     "aliases": []
   },
+  "彌3：9-11": {
+    "path": "link_folder/互文/彌3：9-11.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "彌3：9-11",
+    "status": "formal",
+    "aliases": []
+  },
   "彌5：12": {
     "path": "link_folder/互文/彌5：12.md",
     "type": "互文",
     "secondary_types": [],
     "title": "彌5：12",
+    "status": "formal",
+    "aliases": []
+  },
+  "彌6：8": {
+    "path": "link_folder/互文/彌6：8.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "彌6：8",
     "status": "formal",
     "aliases": []
   },
@@ -3347,6 +3627,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "徒23：4-5",
+    "status": "formal",
+    "aliases": []
+  },
+  "徒4：19-20": {
+    "path": "link_folder/互文/徒4：19-20.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "徒4：19-20",
     "status": "formal",
     "aliases": []
   },
@@ -3486,6 +3774,14 @@
       "希伯來書11章摩西被藏"
     ]
   },
+  "撒上12：3": {
+    "path": "link_folder/互文/撒上12：3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "撒上12：3",
+    "status": "formal",
+    "aliases": []
+  },
   "撒上15：22": {
     "path": "link_folder/互文/撒上15：22.md",
     "type": "互文",
@@ -3507,6 +3803,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "撒上28：3,9",
+    "status": "formal",
+    "aliases": []
+  },
+  "撒上8：3": {
+    "path": "link_folder/互文/撒上8：3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "撒上8：3",
     "status": "formal",
     "aliases": []
   },
@@ -3573,6 +3877,14 @@
     "status": "formal",
     "aliases": []
   },
+  "書23：12-13": {
+    "path": "link_folder/互文/書23：12-13.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "書23：12-13",
+    "status": "formal",
+    "aliases": []
+  },
   "林前10：10 不要發怨言": {
     "path": "link_folder/互文/林前10：10 不要發怨言.md",
     "type": "互文",
@@ -3619,11 +3931,27 @@
       "1Cor 12:18 God arranged members"
     ]
   },
+  "林前16：23": {
+    "path": "link_folder/互文/林前16：23.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "林前16：23",
+    "status": "formal",
+    "aliases": []
+  },
   "林前4：7": {
     "path": "link_folder/互文/林前4：7.md",
     "type": "互文",
     "secondary_types": [],
     "title": "林前4：7",
+    "status": "formal",
+    "aliases": []
+  },
+  "林前5：6-8": {
+    "path": "link_folder/互文/林前5：6-8.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "林前5：6-8",
     "status": "formal",
     "aliases": []
   },
@@ -3924,6 +4252,14 @@
     "status": "formal",
     "aliases": []
   },
+  "王上21：12-13": {
+    "path": "link_folder/互文/王上21：12-13.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "王上21：12-13",
+    "status": "formal",
+    "aliases": []
+  },
   "王上2：28-32": {
     "path": "link_folder/互文/王上2：28-32.md",
     "type": "互文",
@@ -3972,6 +4308,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "瑪3：5",
+    "status": "formal",
+    "aliases": []
+  },
+  "申10：17-19": {
+    "path": "link_folder/互文/申10：17-19.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申10：17-19",
     "status": "formal",
     "aliases": []
   },
@@ -4066,6 +4410,14 @@
     "status": "formal",
     "aliases": []
   },
+  "申1：17": {
+    "path": "link_folder/互文/申1：17.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申1：17",
+    "status": "formal",
+    "aliases": []
+  },
   "申21：18-21": {
     "path": "link_folder/互文/申21：18-21.md",
     "type": "互文",
@@ -4103,6 +4455,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "申23：19-20",
+    "status": "formal",
+    "aliases": []
+  },
+  "申23：6": {
+    "path": "link_folder/互文/申23：6.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申23：6",
     "status": "formal",
     "aliases": []
   },
@@ -4177,6 +4537,14 @@
     "status": "formal",
     "aliases": []
   },
+  "申27：19": {
+    "path": "link_folder/互文/申27：19.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申27：19",
+    "status": "formal",
+    "aliases": []
+  },
   "申27：21": {
     "path": "link_folder/互文/申27：21.md",
     "type": "互文",
@@ -4215,6 +4583,22 @@
       "申命記十誡",
       "申五章6-21節"
     ]
+  },
+  "申7：1-2": {
+    "path": "link_folder/互文/申7：1-2.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申7：1-2",
+    "status": "formal",
+    "aliases": []
+  },
+  "申7：22": {
+    "path": "link_folder/互文/申7：22.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "申7：22",
+    "status": "formal",
+    "aliases": []
   },
   "申8：3 人活著不是單靠食物": {
     "path": "link_folder/互文/申8：3 人活著不是單靠食物.md",
@@ -4370,11 +4754,35 @@
       "箴十六6"
     ]
   },
+  "箴17：23": {
+    "path": "link_folder/互文/箴17：23.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴17：23",
+    "status": "formal",
+    "aliases": []
+  },
+  "箴24：23-25": {
+    "path": "link_folder/互文/箴24：23-25.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴24：23-25",
+    "status": "formal",
+    "aliases": []
+  },
   "箴28：8": {
     "path": "link_folder/互文/箴28：8.md",
     "type": "互文",
     "secondary_types": [],
     "title": "箴28：8",
+    "status": "formal",
+    "aliases": []
+  },
+  "箴29：7": {
+    "path": "link_folder/互文/箴29：7.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴29：7",
     "status": "formal",
     "aliases": []
   },
@@ -4386,11 +4794,27 @@
     "status": "formal",
     "aliases": []
   },
+  "箴31：9": {
+    "path": "link_folder/互文/箴31：9.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴31：9",
+    "status": "formal",
+    "aliases": []
+  },
   "箴3：9": {
     "path": "link_folder/互文/箴3：9.md",
     "type": "互文",
     "secondary_types": [],
     "title": "箴3：9",
+    "status": "formal",
+    "aliases": []
+  },
+  "箴6：16-19": {
+    "path": "link_folder/互文/箴6：16-19.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "箴6：16-19",
     "status": "formal",
     "aliases": []
   },
@@ -4437,11 +4861,27 @@
     "status": "formal",
     "aliases": []
   },
+  "約10：28-29": {
+    "path": "link_folder/互文/約10：28-29.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約10：28-29",
+    "status": "formal",
+    "aliases": []
+  },
   "約13：34": {
     "path": "link_folder/互文/約13：34.md",
     "type": "互文",
     "secondary_types": [],
     "title": "約13：34",
+    "status": "formal",
+    "aliases": []
+  },
+  "約14：6": {
+    "path": "link_folder/互文/約14：6.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約14：6",
     "status": "formal",
     "aliases": []
   },
@@ -4519,6 +4959,14 @@
       "用心靈和誠實敬拜",
       "約四24"
     ]
+  },
+  "約5：44": {
+    "path": "link_folder/互文/約5：44.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約5：44",
+    "status": "formal",
+    "aliases": []
   },
   "約6：31-35 耶穌是生命的糧": {
     "path": "link_folder/互文/約6：31-35 耶穌是生命的糧.md",
@@ -4798,6 +5246,22 @@
       "羅十二1"
     ]
   },
+  "羅12：2": {
+    "path": "link_folder/互文/羅12：2.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "羅12：2",
+    "status": "formal",
+    "aliases": []
+  },
+  "羅12：20": {
+    "path": "link_folder/互文/羅12：20.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "羅12：20",
+    "status": "formal",
+    "aliases": []
+  },
   "羅13：1-7": {
     "path": "link_folder/互文/羅13：1-7.md",
     "type": "互文",
@@ -5020,6 +5484,14 @@
       "Philippians 2:14 Without grumbling"
     ]
   },
+  "腓2：4": {
+    "path": "link_folder/互文/腓2：4.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "腓2：4",
+    "status": "formal",
+    "aliases": []
+  },
   "腓2：6-7": {
     "path": "link_folder/互文/腓2：6-7.md",
     "type": "互文",
@@ -5115,6 +5587,14 @@
     "status": "formal",
     "aliases": []
   },
+  "西2：16-17": {
+    "path": "link_folder/互文/西2：16-17.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "西2：16-17",
+    "status": "formal",
+    "aliases": []
+  },
   "西3：12": {
     "path": "link_folder/互文/西3：12.md",
     "type": "互文",
@@ -5189,6 +5669,14 @@
     "status": "formal",
     "aliases": []
   },
+  "詩1：1": {
+    "path": "link_folder/互文/詩1：1.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "詩1：1",
+    "status": "formal",
+    "aliases": []
+  },
   "詩34：17": {
     "path": "link_folder/互文/詩34：17.md",
     "type": "互文",
@@ -5244,6 +5732,14 @@
     "aliases": [
       "Psalm 78:24-25 Bread from heaven"
     ]
+  },
+  "詩82：3": {
+    "path": "link_folder/互文/詩82：3.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "詩82：3",
+    "status": "formal",
+    "aliases": []
   },
   "詩91：4": {
     "path": "link_folder/互文/詩91：4.md",
@@ -5448,6 +5944,14 @@
     "status": "formal",
     "aliases": []
   },
+  "賽1：17": {
+    "path": "link_folder/互文/賽1：17.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "賽1：17",
+    "status": "formal",
+    "aliases": []
+  },
   "賽44：25": {
     "path": "link_folder/互文/賽44：25.md",
     "type": "互文",
@@ -5497,6 +6001,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "賽53：5",
+    "status": "formal",
+    "aliases": []
+  },
+  "賽5：23": {
+    "path": "link_folder/互文/賽5：23.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "賽5：23",
     "status": "formal",
     "aliases": []
   },
@@ -5553,6 +6065,22 @@
     "status": "formal",
     "aliases": []
   },
+  "路10：30-33": {
+    "path": "link_folder/互文/路10：30-33.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路10：30-33",
+    "status": "formal",
+    "aliases": []
+  },
+  "路12：24": {
+    "path": "link_folder/互文/路12：24.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路12：24",
+    "status": "formal",
+    "aliases": []
+  },
   "路12：33": {
     "path": "link_folder/互文/路12：33.md",
     "type": "互文",
@@ -5604,6 +6132,14 @@
       "不要懼怕"
     ]
   },
+  "路23：13-25": {
+    "path": "link_folder/互文/路23：13-25.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路23：13-25",
+    "status": "formal",
+    "aliases": []
+  },
   "路23：34": {
     "path": "link_folder/互文/路23：34.md",
     "type": "互文",
@@ -5628,6 +6164,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "路6：30",
+    "status": "formal",
+    "aliases": []
+  },
+  "路6：35": {
+    "path": "link_folder/互文/路6：35.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "路6：35",
     "status": "formal",
     "aliases": []
   },
@@ -5717,6 +6261,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "雅1：27",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅2：1-9": {
+    "path": "link_folder/互文/雅2：1-9.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "雅2：1-9",
     "status": "formal",
     "aliases": []
   },
@@ -8089,6 +8641,14 @@
     "status": "formal",
     "aliases": []
   },
+  "使者（mal'akh）": {
+    "path": "link_folder/原文/使者（mal'akh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "使者（mal'akh）",
+    "status": "formal",
+    "aliases": []
+  },
   "便俄尼名字含義": {
     "path": "link_folder/原文/便俄尼名字含義.md",
     "type": "原文",
@@ -8162,6 +8722,14 @@
     "status": "formal",
     "aliases": []
   },
+  "初熟（bikkurim）": {
+    "path": "link_folder/原文/初熟（bikkurim）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "初熟（bikkurim）",
+    "status": "formal",
+    "aliases": []
+  },
   "利河伯（寬闊）": {
     "path": "link_folder/原文/利河伯（寬闊）.md",
     "type": "原文",
@@ -8179,6 +8747,14 @@
     "aliases": [
       "Rephidim etymology"
     ]
+  },
+  "剪除（kareth）": {
+    "path": "link_folder/原文/剪除（kareth）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "剪除（kareth）",
+    "status": "formal",
+    "aliases": []
   },
   "十分之一": {
     "path": "link_folder/原文/十分之一.md",
@@ -8402,6 +8978,22 @@
       "姦淫"
     ]
   },
+  "守節（chagag）": {
+    "path": "link_folder/原文/守節（chagag）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "守節（chagag）",
+    "status": "formal",
+    "aliases": []
+  },
+  "安息（shabath）": {
+    "path": "link_folder/原文/安息（shabath）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "安息（shabath）",
+    "status": "formal",
+    "aliases": []
+  },
   "寄居的（ger）": {
     "path": "link_folder/原文/寄居的（ger）.md",
     "type": "原文",
@@ -8425,6 +9017,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "審判官（elohim）",
+    "status": "formal",
+    "aliases": []
+  },
+  "屈枉（natah）": {
+    "path": "link_folder/原文/屈枉（natah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "屈枉（natah）",
     "status": "formal",
     "aliases": []
   },
@@ -8520,6 +9120,14 @@
       "神學"
     ],
     "title": "忌邪（嫉妒）",
+    "status": "formal",
+    "aliases": []
+  },
+  "惹（marah）": {
+    "path": "link_folder/原文/惹（marah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "惹（marah）",
     "status": "formal",
     "aliases": []
   },
@@ -8635,6 +9243,14 @@
     "status": "formal",
     "aliases": []
   },
+  "收藏（asaph）": {
+    "path": "link_folder/原文/收藏（asaph）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "收藏（asaph）",
+    "status": "formal",
+    "aliases": []
+  },
   "敗壞與毀滅的文字呼應": {
     "path": "link_folder/原文/敗壞與毀滅的文字呼應.md",
     "type": "原文",
@@ -8699,6 +9315,22 @@
       "神掌管風向",
       "神使用風"
     ]
+  },
+  "柱像（matsebah）": {
+    "path": "link_folder/原文/柱像（matsebah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "柱像（matsebah）",
+    "status": "formal",
+    "aliases": []
+  },
+  "歇息（shamat）": {
+    "path": "link_folder/原文/歇息（shamat）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "歇息（shamat）",
+    "status": "formal",
+    "aliases": []
   },
   "殺人（ratsach）": {
     "path": "link_folder/原文/殺人（ratsach）.md",
@@ -8856,6 +9488,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "滅絕（charam）",
+    "status": "formal",
+    "aliases": []
+  },
+  "漸漸（me'at me'at）": {
+    "path": "link_folder/原文/漸漸（me'at me'at）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "漸漸（me'at me'at）",
     "status": "formal",
     "aliases": []
   },
@@ -9098,6 +9738,14 @@
       "snare"
     ]
   },
+  "網羅（moqesh）": {
+    "path": "link_folder/原文/網羅（moqesh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "網羅（moqesh）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華尼西（ Jehovah Nissi ）": {
     "path": "link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md",
     "type": "原文",
@@ -9144,6 +9792,14 @@
     "aliases": [
       "聘金"
     ]
+  },
+  "聯手（shathaph）": {
+    "path": "link_folder/原文/聯手（shathaph）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "聯手（shathaph）",
+    "status": "formal",
+    "aliases": []
   },
   "膳長_baker": {
     "path": "link_folder/原文/膳長_baker.md",
@@ -9317,6 +9973,14 @@
     "status": "formal",
     "aliases": []
   },
+  "謠言（shema`）": {
+    "path": "link_folder/原文/謠言（shema`）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "謠言（shema`）",
+    "status": "formal",
+    "aliases": []
+  },
   "貪戀（chamad）": {
     "path": "link_folder/原文/貪戀（chamad）.md",
     "type": "原文",
@@ -9449,6 +10113,14 @@
       "在我面前"
     ]
   },
+  "除酵（matsah）": {
+    "path": "link_folder/原文/除酵（matsah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "除酵（matsah）",
+    "status": "formal",
+    "aliases": []
+  },
   "陰間（Sheol）": {
     "path": "link_folder/原文/陰間（Sheol）.md",
     "type": "原文",
@@ -9462,6 +10134,14 @@
       "陰府",
       "死人住處"
     ]
+  },
+  "隨眾（rab）": {
+    "path": "link_folder/原文/隨眾（rab）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "隨眾（rab）",
+    "status": "formal",
+    "aliases": []
   },
   "雅博": {
     "path": "link_folder/原文/雅博.md",
@@ -9541,6 +10221,14 @@
       "我們是弟兄",
       "弟兄泛指男性親屬"
     ]
+  },
+  "黃蜂（tsirah）": {
+    "path": "link_folder/原文/黃蜂（tsirah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "黃蜂（tsirah）",
+    "status": "formal",
+    "aliases": []
   },
   "亞拉臘山": {
     "path": "link_folder/地點/亞拉臘山.md",
@@ -12653,6 +13341,14 @@
     "status": "formal",
     "aliases": []
   },
+  "三大節期": {
+    "path": "link_folder/神學/三大節期.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "三大節期",
+    "status": "formal",
+    "aliases": []
+  },
   "三天的路程": {
     "path": "link_folder/神學/三天的路程.md",
     "type": "神學",
@@ -13485,6 +14181,14 @@
     "status": "formal",
     "aliases": []
   },
+  "司法公義": {
+    "path": "link_folder/神學/司法公義.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "司法公義",
+    "status": "formal",
+    "aliases": []
+  },
   "咒罵父母": {
     "path": "link_folder/神學/咒罵父母.md",
     "type": "神學",
@@ -13734,6 +14438,14 @@
       "大衛之約"
     ]
   },
+  "天使引導": {
+    "path": "link_folder/神學/天使引導.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "天使引導",
+    "status": "formal",
+    "aliases": []
+  },
   "天地的主": {
     "path": "link_folder/神學/天地的主.md",
     "type": "神學",
@@ -13847,6 +14559,14 @@
     "status": "formal",
     "aliases": []
   },
+  "安息年": {
+    "path": "link_folder/神學/安息年.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "安息年",
+    "status": "formal",
+    "aliases": []
+  },
   "安息日": {
     "path": "link_folder/神學/安息日.md",
     "type": "神學",
@@ -13956,6 +14676,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "寬以律己嚴以待人",
+    "status": "formal",
+    "aliases": []
+  },
+  "專一事奉": {
+    "path": "link_folder/神學/專一事奉.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "專一事奉",
     "status": "formal",
     "aliases": []
   },
@@ -15569,6 +16297,14 @@
       "神試驗人"
     ]
   },
+  "神賜福應許": {
+    "path": "link_folder/神學/神賜福應許.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神賜福應許",
+    "status": "formal",
+    "aliases": []
+  },
   "神蹟（miraculous signs）": {
     "path": "link_folder/神學/神蹟（miraculous signs）.md",
     "type": "神學",
@@ -15629,6 +16365,14 @@
     "aliases": [
       "Bless the LORD"
     ]
+  },
+  "立約界限": {
+    "path": "link_folder/神學/立約界限.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "立約界限",
+    "status": "formal",
+    "aliases": []
   },
   "立約的儀式": {
     "path": "link_folder/神學/立約的儀式.md",
@@ -16414,6 +17158,14 @@
     "status": "formal",
     "aliases": []
   },
+  "逐漸趕出": {
+    "path": "link_folder/神學/逐漸趕出.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逐漸趕出",
+    "status": "formal",
+    "aliases": []
+  },
   "連一蹄也不留下": {
     "path": "link_folder/神學/連一蹄也不留下.md",
     "type": "神學",
@@ -16741,6 +17493,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東三大節期": {
+    "path": "link_folder/背景/古代近東三大節期.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東三大節期",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東井的構造": {
     "path": "link_folder/背景/古代近東井的構造.md",
     "type": "背景",
@@ -16821,6 +17581,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東司法制度": {
+    "path": "link_folder/背景/古代近東司法制度.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東司法制度",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東同父異母婚姻": {
     "path": "link_folder/背景/古代近東同父異母婚姻.md",
     "type": "背景",
@@ -16834,11 +17602,43 @@
       "同父異母婚姻背景"
     ]
   },
+  "使者": {
+    "path": "link_folder/背景/古代近東天使/使者.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "使者",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東奴隸制度": {
     "path": "link_folder/背景/古代近東奴隸制度.md",
     "type": "背景",
     "secondary_types": [],
     "title": "古代近東奴隸制度",
+    "status": "formal",
+    "aliases": []
+  },
+  "古代近東安息年": {
+    "path": "link_folder/背景/古代近東安息年.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東安息年",
+    "status": "formal",
+    "aliases": []
+  },
+  "古代近東安息日": {
+    "path": "link_folder/背景/古代近東安息日.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東安息日",
+    "status": "formal",
+    "aliases": []
+  },
+  "古代近東寄居者保護": {
+    "path": "link_folder/背景/古代近東寄居者保護.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東寄居者保護",
     "status": "formal",
     "aliases": []
   },
@@ -16944,6 +17744,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東立約": {
+    "path": "link_folder/背景/古代近東立約.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東立約",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東立約儀式": {
     "path": "link_folder/背景/古代近東立約儀式.md",
     "type": "背景",
@@ -16990,6 +17798,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東賄賂": {
+    "path": "link_folder/背景/古代近東賄賂.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東賄賂",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東頭生奉獻": {
     "path": "link_folder/背景/古代近東頭生奉獻.md",
     "type": "背景",
@@ -17003,6 +17819,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "古代近東飲食潔淨",
+    "status": "formal",
+    "aliases": []
+  },
+  "災禍": {
+    "path": "link_folder/背景/古代近東黃蜂/災禍.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "災禍",
     "status": "formal",
     "aliases": []
   },
@@ -17559,6 +18383,70 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "出22：29-30頭生歸神的方式",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：10-11安息年執行": {
+    "path": "link_folder/解經爭議/出23：10-11安息年執行.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：10-11安息年執行",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：13不可提別神名": {
+    "path": "link_folder/解經爭議/出23：13不可提別神名.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：13不可提別神名",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：19不可用山羊羔母奶煮山羊羔": {
+    "path": "link_folder/解經爭議/出23：19不可用山羊羔母奶煮山羊羔.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：19不可用山羊羔母奶煮山羊羔",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：2-3隨眾與偏護窮人": {
+    "path": "link_folder/解經爭議/出23：2-3隨眾與偏護窮人.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：2-3隨眾與偏護窮人",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：20-23使者身分": {
+    "path": "link_folder/解經爭議/出23：20-23使者身分.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：20-23使者身分",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：27-30逐漸趕出": {
+    "path": "link_folder/解經爭議/出23：27-30逐漸趕出.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：27-30逐漸趕出",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：32-33立約禁令": {
+    "path": "link_folder/解經爭議/出23：32-33立約禁令.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：32-33立約禁令",
+    "status": "formal",
+    "aliases": []
+  },
+  "出23：4-5愛仇敵律例": {
+    "path": "link_folder/解經爭議/出23：4-5愛仇敵律例.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "出23：4-5愛仇敵律例",
     "status": "formal",
     "aliases": []
   },
