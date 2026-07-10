@@ -128,6 +128,19 @@ def parse_scripture_ref(target):
       - 出20：16       → (出埃及記, 16)  # 簡寫+全形冒號
       - 出20：8-11     → (出埃及記, 8)   # 範圍格式，取起始章
       - 民35：9-34     → (民數記, 9)     # 範圍格式
+      - 來10:10        → (希伯來書, 10)  # 簡寫+半形冒號+章:節
+      - 來10:10-12     → (希伯來書, 10)  # 簡寫+章:節-節
+      - 出25:10-16     → (出埃及記, 25)  # 簡寫+章:節-節
+      - 利16:12-13     → (利未記, 16)    # 簡寫+章:節-節
+      - 來10:10,14     → (希伯來書, 10)  # 簡寫+章:節,節
+      - 利1-7          → (利未記, 1)     # 簡寫+章-章
+      - 利16           → (利未記, 16)    # 簡寫+章
+      - 申31:9,24-26   → (申命記, 31)    # 簡寫+章:節,節-節
+      - 出14:4,17,18   → (出埃及記, 14)  # 簡寫+章:節,節,節
+      - 尼8-10         → (尼希米記, 8)   # 簡寫+章-章
+      - 利未記17:11    → (利未記, 17)    # 全名+章:節
+      - 利未記1章      → (利未記, 1)     # 全名+章
+      - 約書亞記4:2-9  → (約書亞記, 4)   # 全名+章:節-節
     
     回傳 (book_name, chapter_num) 或 None
     """
@@ -138,12 +151,52 @@ def parse_scripture_ref(target):
         chapter = int(m.group(2))
         return (book, chapter)
     
+    # 嘗試全名書卷+章:節格式（可能含範圍、逗號）：利未記17:11、約書亞記4:2-9
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]{2,6})(\d+)[：:](\d+)', target)
+    if m:
+        book = m.group(1).strip()
+        chapter = int(m.group(2))
+        book = expand_book_abbrev(book)
+        return (book, chapter)
+    
+    # 嘗試全名書卷+章（無冒號）：利未記1章、利未記16
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]{2,6})(\d+)(?:章)?$', target)
+    if m:
+        book = m.group(1).strip()
+        chapter = int(m.group(2))
+        book = expand_book_abbrev(book)
+        return (book, chapter)
+    
     # 嘗試簡寫書名+全形/半形冒號+章節（可能含範圍）：出20：16、出20：8-11
     m = re.match(r'^(?P<book>[\u4e00-\u9fff]{1,4})[：:](\d+)(?:-(\d+))?$', target)
     if m:
         book_abbrev = m.group(1).strip()
         chapter = int(m.group(2))
         # 將簡寫轉為標準書名
+        book = expand_book_abbrev(book_abbrev)
+        return (book, chapter)
+    
+    # 嘗試簡寫書名+章:節格式（可能含範圍、逗號）：來10:10、出25:10-16、利16:12-13
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]{1,4})(\d+)[：:](\d+)', target)
+    if m:
+        book_abbrev = m.group(1).strip()
+        chapter = int(m.group(2))
+        book = expand_book_abbrev(book_abbrev)
+        return (book, chapter)
+    
+    # 嘗試簡寫書名+章-章格式（無冒號）：利1-7、尼8-10
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]{1,4})(\d+)-(\d+)$', target)
+    if m:
+        book_abbrev = m.group(1).strip()
+        chapter = int(m.group(2))
+        book = expand_book_abbrev(book_abbrev)
+        return (book, chapter)
+    
+    # 嘗試簡寫書名+章（無冒號、無範圍）：利16、申28
+    m = re.match(r'^(?P<book>[\u4e00-\u9fff]{1,4})(\d+)$', target)
+    if m:
+        book_abbrev = m.group(1).strip()
+        chapter = int(m.group(2))
         book = expand_book_abbrev(book_abbrev)
         return (book, chapter)
     
@@ -597,3 +650,9 @@ if __name__ == "__main__":
         or result["unknown_links_count"] > 0
     )
     sys.exit(1 if has_error else 0)
+
+'''
+example usage:
+  python util/verify_links.py
+  python util/verify_links.py --book=創世記
+'''

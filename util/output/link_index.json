@@ -1557,6 +1557,14 @@
       "Altar Jehovah Nissi"
     ]
   },
+  "經理燈油": {
+    "path": "link_folder/事件/經理燈油.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "經理燈油",
+    "status": "formal",
+    "aliases": []
+  },
   "葉忒羅來訪": {
     "path": "link_folder/事件/葉忒羅來訪.md",
     "type": "事件",
@@ -1644,6 +1652,30 @@
     "status": "formal",
     "aliases": []
   },
+  "造銅祭壇": {
+    "path": "link_folder/事件/造銅祭壇.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "造銅祭壇",
+    "status": "formal",
+    "aliases": []
+  },
+  "造門簾": {
+    "path": "link_folder/事件/造門簾.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "造門簾",
+    "status": "formal",
+    "aliases": []
+  },
+  "造院子": {
+    "path": "link_folder/事件/造院子.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "造院子",
+    "status": "formal",
+    "aliases": []
+  },
   "道德與宗教的律例": {
     "path": "link_folder/事件/道德與宗教的律例.md",
     "type": "事件",
@@ -1679,6 +1711,14 @@
     "aliases": [
       "Quail covers the camp"
     ]
+  },
+  "點燈": {
+    "path": "link_folder/事件/點燈.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "點燈",
+    "status": "formal",
+    "aliases": []
   },
   "「神使我忘記」與「神使我昌盛」的屬靈經歷": {
     "path": "link_folder/互文/「神使我忘記」與「神使我昌盛」的屬靈經歷.md",
@@ -6712,6 +6752,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞何利亞伯": {
+    "path": "link_folder/人物/亞何利亞伯.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞何利亞伯",
+    "status": "formal",
+    "aliases": []
+  },
   "亞倫": {
     "path": "link_folder/人物/亞倫.md",
     "type": "人物",
@@ -6919,6 +6967,14 @@
     "aliases": [
       "Tamar"
     ]
+  },
+  "以他瑪": {
+    "path": "link_folder/人物/以他瑪.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以他瑪",
+    "status": "formal",
+    "aliases": []
   },
   "以倫": {
     "path": "link_folder/人物/以倫.md",
@@ -7714,6 +7770,14 @@
     "secondary_types": [],
     "title": "比拿雅",
     "status": "candidate",
+    "aliases": []
+  },
+  "比撒列": {
+    "path": "link_folder/人物/比撒列.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "比撒列",
+    "status": "formal",
     "aliases": []
   },
   "比沙（蛾摩拉王）": {
@@ -9424,6 +9488,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "希未人稱呼",
+    "status": "formal",
+    "aliases": []
+  },
+  "幔子": {
+    "path": "link_folder/原文/幔子.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "幔子",
     "status": "formal",
     "aliases": []
   },
@@ -11470,6 +11542,14 @@
     "status": "formal",
     "aliases": []
   },
+  "壇": {
+    "path": "link_folder/地點/壇.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "壇",
+    "status": "formal",
+    "aliases": []
+  },
   "多坍": {
     "path": "link_folder/地點/多坍.md",
     "type": "地點",
@@ -11749,6 +11829,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "會幕",
+    "status": "formal",
+    "aliases": []
+  },
+  "會幕門口": {
+    "path": "link_folder/地點/會幕門口.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "會幕門口",
     "status": "formal",
     "aliases": []
   },
@@ -12123,6 +12211,14 @@
     "status": "candidate",
     "aliases": []
   },
+  "至聖所": {
+    "path": "link_folder/地點/至聖所.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "至聖所",
+    "status": "formal",
+    "aliases": []
+  },
   "蘭塞": {
     "path": "link_folder/地點/蘭塞.md",
     "type": "地點",
@@ -12253,6 +12349,14 @@
     "status": "formal",
     "aliases": []
   },
+  "院子": {
+    "path": "link_folder/地點/院子.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "院子",
+    "status": "formal",
+    "aliases": []
+  },
   "雅博渡口": {
     "path": "link_folder/地點/雅博渡口.md",
     "type": "地點",
@@ -12290,6 +12394,14 @@
       "非利士人的地",
       "巴勒斯坦地"
     ]
+  },
+  "香壇": {
+    "path": "link_folder/地點/香壇.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "香壇",
+    "status": "formal",
+    "aliases": []
   },
   "鹽海": {
     "path": "link_folder/地點/鹽海.md",
@@ -15226,6 +15338,14 @@
     "status": "formal",
     "aliases": []
   },
+  "大祭司": {
+    "path": "link_folder/神學/大祭司.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "大祭司",
+    "status": "formal",
+    "aliases": []
+  },
   "大能的手": {
     "path": "link_folder/神學/大能的手.md",
     "type": "神學",
@@ -15589,6 +15709,22 @@
       "希伯來人的神遇見了我們"
     ]
   },
+  "帳幕": {
+    "path": "link_folder/神學/帳幕.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "帳幕",
+    "status": "formal",
+    "aliases": []
+  },
+  "常點的燈": {
+    "path": "link_folder/神學/常點的燈.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "常點的燈",
+    "status": "formal",
+    "aliases": []
+  },
   "平安祭": {
     "path": "link_folder/神學/平安祭.md",
     "type": "神學",
@@ -15747,7 +15883,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "成聖",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "我以為這地方的人總不懼怕神": {
@@ -16242,6 +16378,14 @@
     "status": "formal",
     "aliases": []
   },
+  "永遠的定例": {
+    "path": "link_folder/神學/永遠的定例.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "永遠的定例",
+    "status": "formal",
+    "aliases": []
+  },
   "法櫃": {
     "path": "link_folder/神學/法櫃.md",
     "type": "神學",
@@ -16294,6 +16438,14 @@
       "法老預表魔鬼",
       "法老象徵撒但"
     ]
+  },
+  "洗濯盆": {
+    "path": "link_folder/神學/洗濯盆.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "洗濯盆",
+    "status": "formal",
+    "aliases": []
   },
   "洪水中的審判與拯救": {
     "path": "link_folder/神學/洪水中的審判與拯救.md",
@@ -16401,6 +16553,14 @@
       "荊棘火焰異象"
     ]
   },
+  "燈油": {
+    "path": "link_folder/神學/燈油.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "燈油",
+    "status": "formal",
+    "aliases": []
+  },
   "燈臺": {
     "path": "link_folder/神學/燈臺.md",
     "type": "神學",
@@ -16438,6 +16598,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "猶大的認罪與悔改",
+    "status": "formal",
+    "aliases": []
+  },
+  "獻祭": {
+    "path": "link_folder/神學/獻祭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "獻祭",
     "status": "formal",
     "aliases": []
   },
@@ -17185,6 +17353,14 @@
     "status": "formal",
     "aliases": []
   },
+  "祭司": {
+    "path": "link_folder/神學/祭司.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司",
+    "status": "formal",
+    "aliases": []
+  },
   "祭司的國度": {
     "path": "link_folder/神學/祭司的國度.md",
     "type": "神學",
@@ -17195,6 +17371,22 @@
       "kingdom of priests",
       "君尊的祭司"
     ]
+  },
+  "祭司職分": {
+    "path": "link_folder/神學/祭司職分.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司職分",
+    "status": "formal",
+    "aliases": []
+  },
+  "祭壇": {
+    "path": "link_folder/神學/祭壇.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭壇",
+    "status": "formal",
+    "aliases": []
   },
   "祭壇敬拜": {
     "path": "link_folder/神學/祭壇敬拜.md",
@@ -17740,6 +17932,22 @@
       "三樣情慾"
     ]
   },
+  "膏油": {
+    "path": "link_folder/神學/膏油.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "膏油",
+    "status": "formal",
+    "aliases": []
+  },
+  "膏立": {
+    "path": "link_folder/神學/膏立.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "膏立",
+    "status": "formal",
+    "aliases": []
+  },
   "自潔": {
     "path": "link_folder/神學/自潔.md",
     "type": "神學",
@@ -18001,12 +18209,20 @@
     "status": "formal",
     "aliases": []
   },
+  "贖罪": {
+    "path": "link_folder/神學/贖罪.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "贖罪",
+    "status": "formal",
+    "aliases": []
+  },
   "贖罪祭": {
     "path": "link_folder/神學/贖罪祭.md",
     "type": "神學",
     "secondary_types": [],
     "title": "贖罪祭",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "赤身露體與羞恥": {
@@ -18088,6 +18304,14 @@
       "重生得救"
     ]
   },
+  "銅祭壇": {
+    "path": "link_folder/神學/銅祭壇.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "銅祭壇",
+    "status": "formal",
+    "aliases": []
+  },
   "除了我以外你不可有別的神": {
     "path": "link_folder/神學/除了我以外你不可有別的神.md",
     "type": "神學",
@@ -18128,6 +18352,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "陳設餅",
+    "status": "formal",
+    "aliases": []
+  },
+  "陳設餅桌子": {
+    "path": "link_folder/神學/陳設餅桌子.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "陳設餅桌子",
     "status": "formal",
     "aliases": []
   },
@@ -18224,6 +18456,14 @@
       "饒恕和好",
       "復和"
     ]
+  },
+  "香": {
+    "path": "link_folder/神學/香.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "香",
+    "status": "formal",
+    "aliases": []
   },
   "馨香之氣": {
     "path": "link_folder/神學/馨香之氣.md",
