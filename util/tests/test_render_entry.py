@@ -146,6 +146,16 @@ class PayloadRejectionTests(unittest.TestCase):
         errors = validate_payload(payload, known_types=KNOWN_TYPES)
         self.assertTrue(any("合法分類" in e for e in errors))
 
+    def test_intertext_bare_scripture_ref_name_is_rejected(self):
+        payload = dict(GOLDEN_FORMAL, name="來9:23-24", type="互文")
+        errors = validate_payload(payload, known_types=KNOWN_TYPES)
+        self.assertTrue(any("互文" in e and "簡短標題" in e for e in errors))
+
+    def test_intertext_titled_name_is_accepted(self):
+        payload = dict(GOLDEN_FORMAL, name="天上真聖所（來9:23-24）", type="互文")
+        errors = validate_payload(payload, known_types=KNOWN_TYPES)
+        self.assertFalse(any("簡短標題" in e for e in errors))
+
     def test_formal_requires_accumulations(self):
         payload = dict(GOLDEN_FORMAL)
         payload["accumulations"] = []

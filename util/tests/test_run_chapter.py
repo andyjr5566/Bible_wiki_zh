@@ -14,53 +14,43 @@ import run_chapter
 RAW = ["要做施恩座安在法櫃上。", "用金子包裹。"]
 ENTRY_NAME = "施恩座（kapporet 測試）"
 
-ENTRY_PAYLOAD = f"""\
-name: {ENTRY_NAME}
-type: 原文
-secondary_types: []
-aliases: []
-status: formal
-definition: 希伯來文 kapporet，法櫃的蓋子，神與人相會之處。
-accumulations:
-  - book: 出埃及記
-    chapter: 26
-    summary: 神指示製作施恩座。
-    relation: 施恩座是神與摩西相會之處。
-related_entries: []
-sources:
-  - 出埃及記26:1
-"""
+ENTRY_PAYLOAD = {
+    "name": ENTRY_NAME,
+    "type": "原文",
+    "secondary_types": [],
+    "aliases": [],
+    "status": "formal",
+    "definition": "希伯來文 kapporet，法櫃的蓋子，神與人相會之處。",
+    "accumulations": [
+        {"book": "出埃及記", "chapter": 26, "summary": "神指示製作施恩座。",
+         "relation": "施恩座是神與摩西相會之處。"},
+    ],
+    "related_entries": [],
+    "sources": ["出埃及記26:1"],
+}
 
-VERSE_LINKS_PAYLOAD = f"""\
-book: 出埃及記
-chapter: 26
-links:
-  - verse: 1
-    phrase: 施恩座
-    target: {ENTRY_NAME}
-    occurrence: 1
-"""
+# 批量步驟要求模型回傳「陣列」；單筆步驟仍回傳物件
+ENTRY_BATCH_RESPONSE = yaml.safe_dump([ENTRY_PAYLOAD], allow_unicode=True, sort_keys=False)
 
-CHAPTER_CONTENT_PAYLOAD = f"""\
-book: 出埃及記
-chapter: 26
-knowledge_nodes:
-  神學:
-    - {ENTRY_NAME}
-organization: |
-  **重點摘要**
-  - 施恩座與會幕
-"""
+VERSE_LINKS_PAYLOAD = yaml.safe_dump({
+    "book": "出埃及記", "chapter": 26,
+    "links": [{"verse": 1, "phrase": "施恩座", "target": ENTRY_NAME}],
+}, allow_unicode=True, sort_keys=False)
+
+CHAPTER_CONTENT_PAYLOAD = yaml.safe_dump({
+    "book": "出埃及記", "chapter": 26,
+    "knowledge_nodes": {"神學": [ENTRY_NAME]},
+    "organization": "**重點摘要**\n- 施恩座與會幕",
+}, allow_unicode=True, sort_keys=False)
 
 
 def fake_runner(prompt):
-    """依 prompt 內容回傳對應步驟的 payload（模擬 claude -p）。"""
-    if "entry_content payload" in prompt:
-        return ENTRY_PAYLOAD
     if "verse_links payload" in prompt:
         return VERSE_LINKS_PAYLOAD
     if "chapter_content payload" in prompt:
         return CHAPTER_CONTENT_PAYLOAD
+    if "entry_content payload" in prompt:
+        return ENTRY_BATCH_RESPONSE
     raise AssertionError(f"未預期的 prompt：{prompt[:60]}")
 
 
@@ -93,12 +83,10 @@ class OrchestratorTests(unittest.TestCase):
             self.assertEqual([], result["errors"])
             self.assertEqual([], result["manual_review"])
             self.assertEqual(1, result["entry_count"])
-            # 條目與章節主檔都由程式渲染寫出
             entry = root / "link_folder" / "原文" / f"{ENTRY_NAME}.md"
             chapter = root / "02 出埃及記" / "第26章.md"
             self.assertTrue(entry.exists())
             self.assertTrue(chapter.exists())
-            # 章節經文只連指定 occurrence，alias 格式由程式產生
             self.assertIn(f"[[{ENTRY_NAME}|施恩座]]", chapter.read_text(encoding="utf-8"))
 
     def test_resume_skips_model_on_second_run(self):
@@ -109,20 +97,21 @@ class OrchestratorTests(unittest.TestCase):
             )
 
             def exploding_runner(prompt):
-                raise AssertionError("resume 應該直接沿用 .tmp payload，不得再呼叫模型")
+                raise AssertionError("resume 應直接沿用 .tmp payload，不得再呼叫模型")
 
             result = run_chapter.run_chapter(
                 "出埃及記", 26, root=root, runner=exploding_runner, index={}, homonyms={},
             )
             self.assertEqual([], result["errors"])
 
-    def test_invalid_model_output_is_routed_to_manual_review(self):
+    def test_failed_batch_entry_is_routed_to_manual_review(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._make_vault(tmp)
 
             def bad_entry_runner(prompt):
-                if "entry_content payload" in prompt:
-                    return "name: 缺很多必填欄位\ntype: 原文\nstatus: formal\n"
+                if "entry_content payload" in prompt and "verse_links" not in prompt \
+                        and "chapter_content" not in prompt:
+                    return "name: 缺欄位\ntype: 原文\nstatus: formal\n"  # 非陣列，恆失敗
                 return fake_runner(prompt)
 
             result = run_chapter.run_chapter(
@@ -130,7 +119,6 @@ class OrchestratorTests(unittest.TestCase):
             )
             self.assertEqual(1, len(result["manual_review"]))
             self.assertIn("entry_content", result["manual_review"][0])
-            # 條目未通過驗證，不得產生 markdown
             self.assertFalse((root / "link_folder" / "原文" / f"{ENTRY_NAME}.md").exists())
 
 

@@ -124,46 +124,103 @@ def _model_step(ctx, out_path, prompt, validate, label):
 
 
 # --------------------------------------------------------------------------- #
-# M3 entry_content（每個 C 類條目一次呼叫）
+# M3 entry_content（批量：一次 request 產出多個條目，全部來源直接餵入）
 # --------------------------------------------------------------------------- #
-def _entry_prompt(ctx, entry, allowed_related, raw_text, excerpt):
-    excerpt_block = (
-        f"【相關來源摘錄（CT/GT/KC/BH）】\n{excerpt}\n\n"
-        if excerpt else "【相關來源摘錄】（本章來源未提及此條目，僅依經文整理）\n\n"
-    )
+BATCH_SIZE = 5
+
+
+def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text):
+    listing = "\n".join(f"- {e['name']}（{e['suggested_type']}）" for e in batch)
     return (
-        f"你是聖經研經資料整理員。唯一任務：為 link_folder 條目「{entry['name']}」"
-        f"（主分類：{entry['suggested_type']}）填寫 entry_content payload。\n\n"
+        f"你是聖經研經資料整理員。任務：一次為以下 {len(batch)} 個 link_folder 條目"
+        f"各填一份 entry_content payload。\n\n"
+        f"【要寫的條目】\n{listing}\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
-        f"{excerpt_block}"
-        f"【規則】所有陳述須能對應上述經文或來源摘錄；未提及者不得寫入。"
-        f"related_entries 只能從此清單選：{', '.join(allowed_related) or '（無）'}。\n"
-        f"status 用 formal；accumulations 至少含本章一項。\n\n"
-        f"【輸出】只輸出符合下列規格的 YAML：\n{_schema_hint('entry_content.schema.json')}"
+        f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
+        f"【規則】\n"
+        f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
+        f"- status 一律 formal；每個條目 accumulations 至少含本章一項，同一章只給一筆。\n"
+        f"- related_entries 只能從此清單選：{', '.join(allowed_related) or '（無）'}。\n"
+        f"- 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，"
+        f"例如「天上真聖所（來9:23-24）」；括號內保留原經文。\n"
+        f"- 每個 payload 的 name 必須能對回上面清單。\n\n"
+        f"【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），每個元素是一份"
+        f" entry_content payload，欄位：\n{_schema_hint('entry_content.schema.json')}"
     )
 
 
-def entry_content_step(ctx, plan, model_inputs=None):
+def _match_payload(entry, results):
+    for payload in results:
+        if isinstance(payload, dict) and payload.get("name") == entry["name"]:
+            return payload
+    if entry["suggested_type"] == "互文":
+        for payload in results:
+            if isinstance(payload, dict) and entry["name"] in str(payload.get("name", "")):
+                return payload
+    return None
+
+
+def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known):
+    prompt = _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text)
+    try:
+        results = call_model(
+            prompt,
+            validate=lambda p: [] if isinstance(p, list) and p else ["需回傳非空的 payload 陣列"],
+            runner=ctx.runner, label="entry_batch",
+        )
+    except ModelValidationError:
+        return {}
+    matched = {}
+    for entry in batch:
+        payload = _match_payload(entry, results)
+        if payload is None or render_entry.validate_payload(payload, known_types=known):
+            continue
+        matched[entry["name"]] = payload
+    return matched
+
+
+def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     out_dir = ctx.path("entry_content")
     known = ctx.known_types()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
-    sources = ctx.sources()
+    sources_text = source_excerpts.full_source_text(ctx.sources())
     c_entries = plan.get("C_new_formal", [])
     allowed_related = [e["name"] for e in c_entries]
-    payloads = {}
-    for entry in c_entries:
-        out_path = out_dir / f"{entry['name']}.yaml"
-        excerpt = source_excerpts.slice_for_keywords(
-            sources, source_excerpts.keyword_variants(entry["name"])
-        )
-        prompt = _entry_prompt(ctx, entry, allowed_related, raw_text, excerpt)
-        payload = _model_step(
-            ctx, out_path, prompt,
-            validate=lambda p: render_entry.validate_payload(p, known_types=known),
-            label=f"entry_content:{entry['name']}",
-        )
-        if payload is not None:
-            payloads[entry["name"]] = payload
+    if limit is not None:
+        c_entries = c_entries[:limit]
+
+    # resume：讀已存在的 payload（互文可能已改名，用「原名 ⊂ 檔名」判定）
+    existing = [_read_yaml(p) for p in sorted(out_dir.glob("*.yaml"))] if out_dir.exists() else []
+    payloads = {p["name"]: p for p in existing if isinstance(p, dict) and p.get("name")}
+
+    def done(entry):
+        for payload in existing:
+            title = payload.get("name", "") if isinstance(payload, dict) else ""
+            if title == entry["name"] or (
+                entry["suggested_type"] == "互文" and entry["name"] in title
+            ):
+                return True
+        return False
+
+    pending = [e for e in c_entries if not done(e)]
+    for _ in range(2):  # 一輪批量 + 一輪重做
+        failed = []
+        for start in range(0, len(pending), batch_size):
+            batch = pending[start:start + batch_size]
+            results = _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known)
+            for entry in batch:
+                payload = results.get(entry["name"])
+                if payload is None:
+                    failed.append(entry)
+                    continue
+                _write_yaml(out_dir / f"{payload['name']}.yaml", payload)
+                payloads[payload["name"]] = payload
+        pending = failed
+        if not pending:
+            break
+    for entry in pending:
+        ctx.manual_review.append(f"entry_content:{entry['name']}：批量重做後仍不合格")
+    ctx.created_entry_names = list(payloads)
     return payloads
 
 
@@ -174,15 +231,15 @@ def verse_links_step(ctx, plan):
     out_path = ctx.path("verse_links.yaml")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
-    linkable = [e["name"] for key in ("A_use_directly", "B_needs_update", "C_new_formal")
-                for e in plan.get(key, [])]
-    digest = source_excerpts.chapter_digest(ctx.sources())
-    digest_block = f"【來源重點摘錄】\n{digest}\n\n" if digest else ""
+    linkable = [e["name"] for key in ("A_use_directly", "B_needs_update")
+                for e in plan.get(key, [])] + list(getattr(ctx, "created_entry_names", []))
+    sources_text = source_excerpts.full_source_text(ctx.sources())
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章標注經文 "
-        f"wiki-link（verse_links payload）。\n\n【經文】\n{raw_text}\n\n{digest_block}"
+        f"wiki-link（verse_links payload）。\n\n【經文】\n{raw_text}\n\n"
+        f"【本章全部來源】\n{sources_text}\n\n"
         f"【規則】phrase 必須是該節經文的子字串；target 只能用：{', '.join(linkable) or '（無）'}；"
-        f"同一詞多次出現用 occurrence 指定第幾次。\n\n"
+        f"同一詞若要連多次就重複列出，不必自己數第幾次出現。\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('verse_links.schema.json')}"
     )
     return _model_step(
@@ -198,13 +255,19 @@ def verse_links_step(ctx, plan):
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
-    digest = source_excerpts.chapter_digest(ctx.sources())
-    digest_block = f"【來源重點摘錄（CT/GT/KC/BH）】\n{digest}\n\n" if digest else ""
+    sources_text = source_excerpts.full_source_text(ctx.sources())
+    created = list(getattr(ctx, "created_entry_names", []))
+    created_hint = (
+        f"\n本章新建條目（knowledge_nodes 若引用請用完整名稱）：{', '.join(created)}"
+        if created else ""
+    )
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
-        f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n{digest_block}"
+        f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
+        f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
         f"【規則】knowledge_nodes 只列值得跨章累積的核心節點，不重列所有經文 link；"
-        f"organization 整合上述來源重點，不搬運整段全文，也不得寫入來源未提及的內容。\n\n"
+        f"organization 整合上述來源重點，不搬運整段全文，也不得寫入來源未提及的內容。"
+        f"{created_hint}\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('chapter_content.schema.json')}"
     )
     return _model_step(
@@ -263,12 +326,13 @@ def validate_step(ctx, written):
 # --------------------------------------------------------------------------- #
 # orchestrate
 # --------------------------------------------------------------------------- #
-def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None):
+def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None,
+                entry_limit=None):
     ctx = ChapterContext(
         book, chapter, root=root, runner=runner, index=index, homonyms=homonyms
     )
     plan = resolve_step(ctx)
-    entry_payloads = entry_content_step(ctx, plan)
+    entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
     verse_links = verse_links_step(ctx, plan)
     chapter_content = chapter_content_step(ctx, plan)
     written = render_step(ctx, entry_payloads, verse_links, chapter_content)
@@ -289,9 +353,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("book")
     parser.add_argument("chapter", type=int)
+    parser.add_argument("--limit-entries", type=int, default=None,
+                        help="只處理前 N 個 C 類新條目（試跑品質用）")
     args = parser.parse_args()
     try:
-        result = run_chapter(args.book, args.chapter)
+        result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries)
     except (OSError, ValueError, yaml.YAMLError) as exc:
         print(f"❌ {exc}")
         return 1

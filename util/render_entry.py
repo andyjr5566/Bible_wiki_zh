@@ -30,6 +30,8 @@ BOOK_RANK = {book: index for index, book in enumerate(BOOK_ORDER)}
 VALID_STATUS = {"formal", "candidate"}
 UNSAFE_NAME_CHARS = set('/\\<>："|?*')
 ACCUMULATION_FIELDS = ("book", "chapter", "summary", "relation")
+# 互文條目不可只有經文引用（如 來9:23-24、啟21:23）；須用「簡短標題（經文）」
+BARE_SCRIPTURE_REF_RE = re.compile(r"^[一-鿿]{1,4}\d+([:：][\d\-,，]+)?$")
 
 
 def valid_types():
@@ -67,6 +69,12 @@ def validate_payload(payload, *, known_types=None):
         errors.append(
             f"type「{entry_type}」不是 link_folder 下的合法分類；"
             f"合法值：{', '.join(sorted(types))}"
+        )
+
+    if entry_type == "互文" and isinstance(name, str) and BARE_SCRIPTURE_REF_RE.match(name.strip()):
+        errors.append(
+            f"互文條目 name「{name}」不可只有經文引用，須用「簡短標題（經文）」，"
+            "例如「天上真聖所（來9:23-24）」"
         )
 
     status = payload.get("status")
