@@ -103,12 +103,37 @@ def validate_verse_links(links, raw_verses):
     return errors
 
 
+def coerce_knowledge_nodes(nodes):
+    """把模型各種寫法統一成 {分組: [target, …]}。
+
+    寬容處理：dict 值是字串 → 包成單元素 list；整個是 list（如
+    [{group:…, nodes:[…]}, …]）→ 轉成 dict。無法辨識則回空 dict。
+    """
+    if isinstance(nodes, dict):
+        result = {}
+        for group, value in nodes.items():
+            if isinstance(value, list):
+                result[str(group)] = value
+            elif value:
+                result[str(group)] = [value]
+        return result
+    if isinstance(nodes, list):
+        result = {}
+        for item in nodes:
+            if not isinstance(item, dict):
+                continue
+            group = item.get("group") or item.get("type") or item.get("category")
+            values = item.get("nodes") or item.get("items") or item.get("targets") or []
+            if group:
+                result[str(group)] = values if isinstance(values, list) else [values]
+        return result
+    return {}
+
+
 def validate_chapter_content(content):
     errors = []
-    nodes = content.get("knowledge_nodes")
-    if not isinstance(nodes, dict) or not any(
-        isinstance(v, list) and v for v in nodes.values()
-    ):
+    nodes = coerce_knowledge_nodes(content.get("knowledge_nodes"))
+    if not any(isinstance(v, list) and v for v in nodes.values()):
         errors.append("chapter_content.knowledge_nodes 至少需一個分組且含節點")
     if not str(content.get("organization", "")).strip():
         errors.append("chapter_content.organization（本章整理）必填且不可為空")
@@ -160,7 +185,7 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
         raise ValueError("payload 驗證失敗：\n- " + "\n- ".join(errors))
 
     scripture = render_scripture(raw_verses, verse_links_payload.get("links", []))
-    nodes = render_knowledge_nodes(chapter_content["knowledge_nodes"])
+    nodes = render_knowledge_nodes(coerce_knowledge_nodes(chapter_content["knowledge_nodes"]))
     organization = str(chapter_content["organization"]).strip()
 
     blocks = [f"# {canonical_book_name(book)} 第{chapter}章", scripture]

@@ -111,7 +111,7 @@ def resolve_step(ctx):
 # --------------------------------------------------------------------------- #
 # 模型步驟共用：resume + call_model + 寫檔；失敗記入 manual_review
 # --------------------------------------------------------------------------- #
-def _model_step(ctx, out_path, prompt, validate, label):
+def _model_step(ctx, out_path, prompt, validate, label, normalize=None):
     if out_path.exists():
         return _read_yaml(out_path)
     try:
@@ -119,6 +119,8 @@ def _model_step(ctx, out_path, prompt, validate, label):
     except ModelValidationError as exc:
         ctx.manual_review.append(str(exc))
         return None
+    if normalize:
+        payload = normalize(payload)
     _write_yaml(out_path, payload)
     return payload
 
@@ -242,10 +244,22 @@ def verse_links_step(ctx, plan):
         f"同一詞若要連多次就重複列出，不必自己數第幾次出現。\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('verse_links.schema.json')}"
     )
+    allowed = set(linkable)
+
+    def _normalize(payload):
+        # 不信模型的 book/chapter（程式知道正確值）；過濾掉清單外 target 的 broken link
+        payload["book"] = ctx.book
+        payload["chapter"] = ctx.chapter
+        payload["links"] = [
+            link for link in payload.get("links", [])
+            if isinstance(link, dict) and link.get("target") in allowed
+        ]
+        return payload
+
     return _model_step(
         ctx, out_path, prompt,
         validate=lambda p: render_chapter.validate_verse_links(p.get("links", []), raw_verses),
-        label="verse_links",
+        label="verse_links", normalize=_normalize,
     )
 
 
@@ -265,15 +279,23 @@ def chapter_content_step(ctx, plan):
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
         f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
-        f"【規則】knowledge_nodes 只列值得跨章累積的核心節點，不重列所有經文 link；"
+        f"【規則】knowledge_nodes 是「分組→節點清單」的物件，例如：\n"
+        f"  神學: [會幕, 神的同在]\n  原文: [皂莢木, 銅]\n"
+        f"只列值得跨章累積的核心節點，不重列所有經文 link；"
         f"organization 整合上述來源重點，不搬運整段全文，也不得寫入來源未提及的內容。"
         f"{created_hint}\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('chapter_content.schema.json')}"
     )
+
+    def _normalize(payload):
+        payload["book"] = ctx.book
+        payload["chapter"] = ctx.chapter
+        return payload
+
     return _model_step(
         ctx, out_path, prompt,
         validate=render_chapter.validate_chapter_content,
-        label="chapter_content",
+        label="chapter_content", normalize=_normalize,
     )
 
 

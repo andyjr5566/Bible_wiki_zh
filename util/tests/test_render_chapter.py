@@ -10,6 +10,7 @@ if str(UTIL_DIR) not in sys.path:
 
 import validate_knowledge_base as vkb
 from render_chapter import (
+    coerce_knowledge_nodes,
     parse_chapter,
     render_chapter,
     validate_chapter_content,
@@ -168,6 +169,23 @@ class VerseLinkValidationTests(unittest.TestCase):
             {"knowledge_nodes": {}, "organization": "內容"}
         )
         self.assertTrue(any("knowledge_nodes" in e for e in errors))
+
+    def test_coerce_knowledge_nodes_handles_list_and_string_forms(self):
+        self.assertEqual(
+            {"神學": ["會幕"]},
+            coerce_knowledge_nodes([{"group": "神學", "nodes": ["會幕"]}]),
+        )
+        self.assertEqual({"神學": ["會幕"]}, coerce_knowledge_nodes({"神學": "會幕"}))
+        self.assertEqual(
+            {"神學": ["會幕", "銅"]}, coerce_knowledge_nodes({"神學": ["會幕", "銅"]})
+        )
+        self.assertEqual({}, coerce_knowledge_nodes("garbage"))
+
+    def test_list_form_knowledge_nodes_passes_validation(self):
+        errors = validate_chapter_content(
+            {"knowledge_nodes": [{"group": "神學", "nodes": ["會幕"]}], "organization": "x"}
+        )
+        self.assertEqual([], errors)
 
 
 if __name__ == "__main__":

@@ -32,14 +32,18 @@ ENTRY_PAYLOAD = {
 # 批量步驟要求模型回傳「陣列」；單筆步驟仍回傳物件
 ENTRY_BATCH_RESPONSE = yaml.safe_dump([ENTRY_PAYLOAD], allow_unicode=True, sort_keys=False)
 
+# 故意用英文書名 + 清單外 target + list-form 節點，測程式的三個修正
 VERSE_LINKS_PAYLOAD = yaml.safe_dump({
-    "book": "出埃及記", "chapter": 26,
-    "links": [{"verse": 1, "phrase": "施恩座", "target": ENTRY_NAME}],
+    "book": "Exodus", "chapter": 26,
+    "links": [
+        {"verse": 1, "phrase": "施恩座", "target": ENTRY_NAME},
+        {"verse": 1, "phrase": "法櫃", "target": "清單外的東西"},
+    ],
 }, allow_unicode=True, sort_keys=False)
 
 CHAPTER_CONTENT_PAYLOAD = yaml.safe_dump({
-    "book": "出埃及記", "chapter": 26,
-    "knowledge_nodes": {"神學": [ENTRY_NAME]},
+    "book": "Exodus", "chapter": 26,
+    "knowledge_nodes": [{"group": "神學", "nodes": [ENTRY_NAME]}],
     "organization": "**重點摘要**\n- 施恩座與會幕",
 }, allow_unicode=True, sort_keys=False)
 
@@ -87,7 +91,11 @@ class OrchestratorTests(unittest.TestCase):
             chapter = root / "02 出埃及記" / "第26章.md"
             self.assertTrue(entry.exists())
             self.assertTrue(chapter.exists())
-            self.assertIn(f"[[{ENTRY_NAME}|施恩座]]", chapter.read_text(encoding="utf-8"))
+            text = chapter.read_text(encoding="utf-8")
+            self.assertTrue(text.startswith("# 出埃及記 第26章"))  # 英文書名被覆蓋
+            self.assertIn(f"[[{ENTRY_NAME}|施恩座]]", text)
+            self.assertNotIn("清單外的東西", text)  # broken target 被丟棄
+            self.assertIn("### 神學", text)  # list-form knowledge_nodes 被 coerce
 
     def test_resume_skips_model_on_second_run(self):
         with tempfile.TemporaryDirectory() as tmp:
