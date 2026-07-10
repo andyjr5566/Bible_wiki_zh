@@ -41,6 +41,11 @@ def normalize_name(value):
     return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", value)).strip()
 
 
+def base_name(value):
+    """去掉音譯後綴的中文基名，例如「皂莢木（atzei shittim）」→「皂莢木」。"""
+    return normalize_name(re.split(r"[（(]", value, 1)[0])
+
+
 def load_index(index_file=INDEX_FILE):
     if not index_file.exists():
         raise FileNotFoundError("link index 不存在，請先執行 util/build_link_index.py")
@@ -166,6 +171,24 @@ def find_in_index(candidate_name, index):
     if mapped and mapped in index:
         entry, title = _canonical_entry(index[mapped], index)
         return "alias", entry, title
+
+    # 音譯後綴匹配：候選「皂莢木」對既有條目「皂莢木（atzei shittim）」。index 只以
+    # 完整標題（含音譯）為 key、既有條目 aliases 多為空，故裸中文候選須以「括號前
+    # 的中文基名」比對，否則重複出現的原文詞每章都被誤判為新條目、甚至覆蓋既有累積。
+    candidate_base = base_name(candidate_name)
+    if candidate_base:
+        base_matches = []
+        for key, value in index.items():
+            if base_name(key) == candidate_base:
+                entry, title = _canonical_entry(value, index)
+                if entry:
+                    base_matches.append((entry, title))
+        unique_base = {(m[0].get("path", ""), m[1]): m for m in base_matches}
+        if len(unique_base) == 1:
+            entry, title = next(iter(unique_base.values()))
+            return "base", entry, title
+        if len(unique_base) > 1:
+            return "conflict", None, None
     return "not_found", None, None
 
 

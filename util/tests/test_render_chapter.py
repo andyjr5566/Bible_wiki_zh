@@ -11,6 +11,7 @@ if str(UTIL_DIR) not in sys.path:
 import validate_knowledge_base as vkb
 from render_chapter import (
     coerce_knowledge_nodes,
+    coerce_organization,
     parse_chapter,
     render_chapter,
     validate_chapter_content,
@@ -186,6 +187,32 @@ class VerseLinkValidationTests(unittest.TestCase):
             {"knowledge_nodes": [{"group": "神學", "nodes": ["會幕"]}], "organization": "x"}
         )
         self.assertEqual([], errors)
+
+    def test_coerce_organization_handles_dict_list_string(self):
+        self.assertEqual("純文字", coerce_organization("純文字"))
+        self.assertEqual(
+            "**結構**\n- 甲\n- 乙\n\n**主題**\n- 丙",
+            coerce_organization({"結構": ["甲", "乙"], "主題": ["丙"]}),
+        )
+        self.assertEqual("- 甲\n- 乙", coerce_organization(["甲", "乙"]))
+        self.assertEqual("", coerce_organization(None))
+
+    def test_dict_organization_renders_markdown_not_repr(self):
+        content = dict(CHAPTER_CONTENT, organization={"結構": ["會幕外院兩大物件"]})
+        rendered = render_chapter(VERSE_LINKS, content, raw_verses=RAW)
+        body = rendered.split("## 本章整理")[1]
+        self.assertNotIn("{'", body)  # 不得出現 dict repr
+        self.assertIn("**結構**", body)
+        self.assertIn("- 會幕外院兩大物件", body)
+
+    def test_dict_organization_passes_validation(self):
+        self.assertEqual(
+            [],
+            validate_chapter_content(
+                {"knowledge_nodes": {"神學": ["會幕"]},
+                 "organization": {"結構": ["重點"]}}
+            ),
+        )
 
 
 if __name__ == "__main__":

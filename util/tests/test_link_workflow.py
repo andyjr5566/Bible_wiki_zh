@@ -17,7 +17,8 @@ from resolve_link_candidates import (
     resolve,
 )
 from validate_knowledge_base import INTERNAL_SOURCE_LINE_RE, ambiguous_wikilinks
-from link_updates import apply_updates, render_block, validate_update
+import link_updates
+from link_updates import apply_updates, plan_updates, render_block, validate_update
 from normalize_format import normalize_chapter, normalize_entry
 
 
@@ -272,6 +273,58 @@ class HomonymValidationTests(unittest.TestCase):
             [("示劍", 1), ("示劍", 2)],
             ambiguous_wikilinks(text, homonyms),
         )
+
+
+class PlanUpdatesTests(unittest.TestCase):
+    """prepare 讀 link_plan：yaml（orchestrator 產物）優先，md 為舊流程 fallback。"""
+
+    def _tmp_dir(self, root):
+        d = root / "02 出埃及記" / ".tmp" / "第26章"
+        d.mkdir(parents=True)
+        return d
+
+    def test_prefers_yaml_plan_and_uses_existing_title(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            d = self._tmp_dir(root)
+            (d / "link_plan.yaml").write_text(yaml.safe_dump({
+                "B_needs_update": [{
+                    "name": "皂莢木",
+                    "existing_title": "皂莢木（atzei shittim）",
+                    "existing_path": "link_folder/原文/皂莢木（atzei shittim）.md",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch.object(link_updates, "ROOT", root):
+                data = plan_updates("出埃及記", 26)
+            self.assertEqual(1, len(data["updates"]))
+            self.assertEqual("皂莢木（atzei shittim）", data["updates"][0]["title"])
+            self.assertEqual(
+                "link_folder/原文/皂莢木（atzei shittim）.md", data["updates"][0]["path"]
+            )
+
+    def test_falls_back_to_md_plan(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            d = self._tmp_dir(root)
+            (d / "link_plan.md").write_text(
+                "## B. 需更新既有條目\n\n"
+                "- [[摩西]] → link_folder/人物/摩西.md（exact；來源行=1）\n",
+                encoding="utf-8",
+            )
+            with patch.object(link_updates, "ROOT", root):
+                data = plan_updates("出埃及記", 26)
+            self.assertEqual(
+                [("摩西", "link_folder/人物/摩西.md")],
+                [(u["title"], u["path"]) for u in data["updates"]],
+            )
+
+    def test_missing_both_plans_raises(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._tmp_dir(root)
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaises(FileNotFoundError):
+                    plan_updates("出埃及記", 26)
 
 
 if __name__ == "__main__":

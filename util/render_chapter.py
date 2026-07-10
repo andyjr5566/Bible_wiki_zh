@@ -130,12 +130,38 @@ def coerce_knowledge_nodes(nodes):
     return {}
 
 
+def _org_lines(value):
+    if isinstance(value, list):
+        return [f"- {str(v).strip()}" for v in value if str(v).strip()]
+    text = str(value).strip()
+    return [f"- {text}"] if text else []
+
+
+def coerce_organization(org):
+    """把 organization 統一成 markdown 字串。
+
+    模型常把「本章整理」寫成 {主題: [重點, …]} 的 dict 或 list，直接 str() 會
+    印出 Python repr。這裡一律轉成「**主題** + bullet」的 markdown；字串則原樣
+    保留（維持既有章節 round-trip）。
+    """
+    if isinstance(org, str):
+        return org.strip()
+    if isinstance(org, dict):
+        groups = []
+        for key, value in org.items():
+            groups.append("\n".join([f"**{key}**", *_org_lines(value)]))
+        return "\n\n".join(g for g in groups if g.strip()).strip()
+    if isinstance(org, list):
+        return "\n".join(_org_lines(org)).strip()
+    return ""
+
+
 def validate_chapter_content(content):
     errors = []
     nodes = coerce_knowledge_nodes(content.get("knowledge_nodes"))
     if not any(isinstance(v, list) and v for v in nodes.values()):
         errors.append("chapter_content.knowledge_nodes 至少需一個分組且含節點")
-    if not str(content.get("organization", "")).strip():
+    if not coerce_organization(content.get("organization")).strip():
         errors.append("chapter_content.organization（本章整理）必填且不可為空")
     return errors
 
@@ -186,7 +212,7 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
 
     scripture = render_scripture(raw_verses, verse_links_payload.get("links", []))
     nodes = render_knowledge_nodes(coerce_knowledge_nodes(chapter_content["knowledge_nodes"]))
-    organization = str(chapter_content["organization"]).strip()
+    organization = coerce_organization(chapter_content["organization"])
 
     blocks = [f"# {canonical_book_name(book)} 第{chapter}章", scripture]
     if map_block.strip():

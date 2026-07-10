@@ -131,39 +131,82 @@ def _model_step(ctx, out_path, prompt, validate, label, normalize=None):
 BATCH_SIZE = 5
 
 
-def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text):
-    listing = "\n".join(f"- {e['name']}（{e['suggested_type']}）" for e in batch)
+_ENTRY_EXAMPLE = (
+    "- name: 施恩座（kapporet）        # 原文類用「中文（希伯來音譯）」；勿寫成「施恩座（原文）」\n"
+    "  type: 原文                      # 必須是該條目的分類，不是詞性；不可寫 word/noun\n"
+    "  secondary_types: []\n"
+    "  aliases: [施恩座]\n"
+    "  status: formal\n"
+    "  definition: 希伯來文 kapporet，法櫃的蓋子……（完整說明原文、字義與本章用法）\n"
+    "  accumulations:                  # 物件陣列，非字串；每項四個欄位\n"
+    "    - book: 出埃及記\n"
+    "      chapter: 27\n"
+    "      summary: 本章對此條目的重點（一句）\n"
+    "      relation: 與本章的神學關聯（一句）\n"
+    "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單\n"
+    "  sources:\n"
+    "    - BibleHub Study (Exodus 27)\n"
+)
+
+
+def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text, feedback=None):
+    listing = "\n".join(f"- {e['name']}（分類：{e['suggested_type']}）" for e in batch)
+    feedback_block = ""
+    if feedback:
+        feedback_block = (
+            "\n【上一輪這些條目未通過驗證，請務必依錯誤修正】\n"
+            + "\n".join(f"- {item}" for item in feedback) + "\n"
+        )
     return (
         f"你是聖經研經資料整理員。任務：一次為以下 {len(batch)} 個 link_folder 條目"
         f"各填一份 entry_content payload。\n\n"
-        f"【要寫的條目】\n{listing}\n\n"
+        f"【要寫的條目】（括號內是分類，不是名稱的一部分）\n{listing}\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
         f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
         f"【規則】\n"
         f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
-        f"- status 一律 formal；每個條目 accumulations 至少含本章一項，同一章只給一筆。\n"
+        f"- type 欄位必須正好是該條目的分類（如 原文、神學），不是詞性——不可寫 word、noun。\n"
+        f"- name：原文類用「中文（希伯來音譯）」，其餘用簡明中文；切勿把分類當音譯"
+        f"寫成「X（原文）」。找不到音譯就用裸中文名。\n"
+        f"- status 一律 formal。accumulations 是「物件陣列」，每項含 book、chapter、"
+        f"summary、relation 四欄，且至少含本章（{ctx.book} 第{ctx.chapter}章）一筆、同章只給一筆。\n"
         f"- related_entries 只能從此清單選：{', '.join(allowed_related) or '（無）'}。\n"
         f"- 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，"
-        f"例如「天上真聖所（來9:23-24）」；括號內保留原經文。\n"
-        f"- 每個 payload 的 name 必須能對回上面清單。\n\n"
-        f"【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），每個元素是一份"
-        f" entry_content payload，欄位：\n{_schema_hint('entry_content.schema.json')}"
+        f"例如「天上真聖所（來9：23-24）」；括號內保留原經文、冒號用全形「：」。\n"
+        f"- 每個 payload 的 name 必須能對回上面清單（可加音譯後綴）。\n"
+        f"{feedback_block}\n"
+        f"【輸出格式範例——照此結構輸出一個 YAML 陣列】\n{_ENTRY_EXAMPLE}\n"
+        f"【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），不要任何說明文字。"
+        f"欄位定義見 {_schema_hint('entry_content.schema.json')}"
     )
 
 
 def _match_payload(entry, results):
+    name = entry["name"]
     for payload in results:
-        if isinstance(payload, dict) and payload.get("name") == entry["name"]:
+        if isinstance(payload, dict) and payload.get("name") == name:
+            return payload
+    # 原文等：計畫用裸名（皂莢木），模型依慣例加音譯後綴（皂莢木（atzei shittim））。
+    # 用「裸名（」前綴比對，避免 銅 誤配到 銅網（...）。
+    for payload in results:
+        pname = str(payload.get("name", "")) if isinstance(payload, dict) else ""
+        if pname.startswith(f"{name}（") or pname.startswith(f"{name}("):
             return payload
     if entry["suggested_type"] == "互文":
+        # 冒號無視：計畫用半形（來9:23-24），模型可能用全形（來9：23-24）
+        norm = name.replace(":", "：")
         for payload in results:
-            if isinstance(payload, dict) and entry["name"] in str(payload.get("name", "")):
+            pname = str(payload.get("name", "")).replace(":", "：") if isinstance(payload, dict) else ""
+            if norm in pname:
                 return payload
     return None
 
 
-def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known):
-    prompt = _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text)
+def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known, feedback=None):
+    """回傳 (通過驗證的 payloads, 各條目的失敗原因)。失敗原因供下一輪回饋模型。"""
+    prompt = _batch_entry_prompt(
+        ctx, batch, allowed_related, sources_text, raw_text, feedback
+    )
     try:
         results = call_model(
             prompt,
@@ -171,14 +214,19 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known)
             runner=ctx.runner, label="entry_batch",
         )
     except ModelValidationError:
-        return {}
-    matched = {}
+        return {}, {e["name"]: "模型未回傳有效 payload 陣列" for e in batch}
+    matched, errors = {}, {}
     for entry in batch:
         payload = _match_payload(entry, results)
-        if payload is None or render_entry.validate_payload(payload, known_types=known):
+        if payload is None:
+            errors[entry["name"]] = "找不到對應此條目的 payload（name 需能對回清單）"
+            continue
+        verrs = render_entry.validate_payload(payload, known_types=known)
+        if verrs:
+            errors[entry["name"]] = "；".join(verrs)
             continue
         matched[entry["name"]] = payload
-    return matched
+    return matched, errors
 
 
 def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
@@ -186,42 +234,57 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     known = ctx.known_types()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
     sources_text = source_excerpts.full_source_text(ctx.sources())
-    c_entries = plan.get("C_new_formal", [])
+    # 候選去重：計畫可能同名重複（柱子×2、銀座×2…），否則各批各建一次會產生重複條目
+    seen_names = set()
+    c_entries = [e for e in plan.get("C_new_formal", [])
+                 if not (e["name"] in seen_names or seen_names.add(e["name"]))]
     allowed_related = [e["name"] for e in c_entries]
     if limit is not None:
         c_entries = c_entries[:limit]
 
-    # resume：讀已存在的 payload（互文可能已改名，用「原名 ⊂ 檔名」判定）
+    # resume：讀已存在的 payload。裸候選名（撚的細麻）要對得上實建全名（撚的細麻（…）），
+    # 否則每次 resume 都判定未完成 → 重建出音譯略異的重複條目。
     existing = [_read_yaml(p) for p in sorted(out_dir.glob("*.yaml"))] if out_dir.exists() else []
     payloads = {p["name"]: p for p in existing if isinstance(p, dict) and p.get("name")}
 
     def done(entry):
+        name = entry["name"]
         for payload in existing:
             title = payload.get("name", "") if isinstance(payload, dict) else ""
-            if title == entry["name"] or (
-                entry["suggested_type"] == "互文" and entry["name"] in title
-            ):
+            if (title == name or title.startswith(f"{name}（") or title.startswith(f"{name}(")
+                    or (entry["suggested_type"] == "互文"
+                        and name.replace(":", "：") in title.replace(":", "："))):
                 return True
         return False
 
     pending = [e for e in c_entries if not done(e)]
-    for _ in range(2):  # 一輪批量 + 一輪重做
-        failed = []
+    last_errors = {}
+    for _ in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
+        failed, feedback = [], None
         for start in range(0, len(pending), batch_size):
             batch = pending[start:start + batch_size]
-            results = _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known)
+            if last_errors:
+                feedback = [f"{e['name']}：{last_errors[e['name']]}"
+                            for e in batch if e["name"] in last_errors]
+            results, errors = _run_entry_batch(
+                ctx, batch, allowed_related, sources_text, raw_text, known, feedback
+            )
             for entry in batch:
                 payload = results.get(entry["name"])
                 if payload is None:
                     failed.append(entry)
+                    last_errors[entry["name"]] = errors.get(entry["name"], "不合格")
                     continue
+                last_errors.pop(entry["name"], None)
+                payload["name"] = render_entry.safe_name(payload["name"])  # 半形冒號→全形
                 _write_yaml(out_dir / f"{payload['name']}.yaml", payload)
                 payloads[payload["name"]] = payload
         pending = failed
         if not pending:
             break
     for entry in pending:
-        ctx.manual_review.append(f"entry_content:{entry['name']}：批量重做後仍不合格")
+        reason = last_errors.get(entry["name"], "不合格")
+        ctx.manual_review.append(f"entry_content:{entry['name']}：批量重做後仍不合格（{reason}）")
     ctx.created_entry_names = list(payloads)
     return payloads
 
@@ -229,38 +292,73 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
 # --------------------------------------------------------------------------- #
 # M5 verse_links
 # --------------------------------------------------------------------------- #
+def _created_title(candidate, created_names):
+    """候選裸名 → 模型實建的完整條目名（皂莢木 → 皂莢木（atzei shittim））。"""
+    name = candidate["name"]
+    for full in created_names:
+        if full == name or full.startswith(f"{name}（") or full.startswith(f"{name}("):
+            return full
+    if candidate.get("suggested_type") == "互文":
+        norm = name.replace(":", "：")
+        for full in created_names:
+            if norm in full.replace(":", "："):
+                return full
+    return None
+
+
+def build_surface_map(ctx, plan):
+    """裸名（皂莢木、摩西）→ 條目全名（皂莢木（atzei shittim）、摩西）。
+
+    A/B 用既有標題、C 用模型實建全名；再補上實建條目的裸名。這是「經文詞 →
+    要連去的條目檔」的對照表。
+    """
+    surface_to_title = {}
+    for key in ("A_use_directly", "B_needs_update"):
+        for e in plan.get(key, []):
+            surface_to_title.setdefault(e["name"], e.get("existing_title") or e["name"])
+    created = list(getattr(ctx, "created_entry_names", []))
+    for e in plan.get("C_new_formal", []):
+        full = _created_title(e, created)
+        if full:
+            surface_to_title.setdefault(e["name"], full)
+    for name in created:
+        base = name.split("（", 1)[0].split("(", 1)[0].strip()
+        if base:
+            surface_to_title.setdefault(base, name)
+    return surface_to_title
+
+
 def verse_links_step(ctx, plan):
+    """程式化標注（不呼叫模型）：逐節掃描可連詞、長詞優先、同節不重疊。
+
+    連詞是機械工作——把「已知詞彙」對到「經文子字串」——交給程式比模型可靠：
+    模型多次無法穩定產出對得上經文的 phrase／target。程式直接掃 raw 經文，
+    連出來的一定是經文子字串、target 一定是既有條目，零漂移。事件／互文等不會
+    出現在經文字面的條目自然不會被連（它們屬章節層 knowledge_nodes，非內文連結）。
+    """
     out_path = ctx.path("verse_links.yaml")
+    if out_path.exists():
+        return _read_yaml(out_path)
     raw_verses = ctx.raw_verses()
-    raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
-    linkable = [e["name"] for key in ("A_use_directly", "B_needs_update")
-                for e in plan.get(key, [])] + list(getattr(ctx, "created_entry_names", []))
-    sources_text = source_excerpts.full_source_text(ctx.sources())
-    prompt = (
-        f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章標注經文 "
-        f"wiki-link（verse_links payload）。\n\n【經文】\n{raw_text}\n\n"
-        f"【本章全部來源】\n{sources_text}\n\n"
-        f"【規則】phrase 必須是該節經文的子字串；target 只能用：{', '.join(linkable) or '（無）'}；"
-        f"同一詞若要連多次就重複列出，不必自己數第幾次出現。\n\n"
-        f"【輸出】只輸出 YAML：\n{_schema_hint('verse_links.schema.json')}"
-    )
-    allowed = set(linkable)
-
-    def _normalize(payload):
-        # 不信模型的 book/chapter（程式知道正確值）；過濾掉清單外 target 的 broken link
-        payload["book"] = ctx.book
-        payload["chapter"] = ctx.chapter
-        payload["links"] = [
-            link for link in payload.get("links", [])
-            if isinstance(link, dict) and link.get("target") in allowed
-        ]
-        return payload
-
-    return _model_step(
-        ctx, out_path, prompt,
-        validate=lambda p: render_chapter.validate_verse_links(p.get("links", []), raw_verses),
-        label="verse_links", normalize=_normalize,
-    )
+    surface_to_title = build_surface_map(ctx, plan)
+    surfaces = [s for s in surface_to_title if s]
+    links = []
+    for vnum, verse in enumerate(raw_verses, 1):
+        spans = []
+        for surface in surfaces:
+            idx = verse.find(surface)
+            if idx != -1:  # 每詞每節只連首次出現，避免同詞洗版
+                spans.append((idx, idx + len(surface), surface))
+        spans.sort(key=lambda s: (s[0], -(s[1] - s[0])))  # 起點升冪、長詞優先
+        last_end = -1
+        for start, end, surface in spans:
+            if start >= last_end:  # 不重疊：銅座 勝過 銅
+                links.append({"verse": vnum, "phrase": surface,
+                              "target": surface_to_title[surface]})
+                last_end = end
+    payload = {"book": ctx.book, "chapter": ctx.chapter, "links": links}
+    _write_yaml(out_path, payload)
+    return payload
 
 
 # --------------------------------------------------------------------------- #
@@ -302,12 +400,32 @@ def chapter_content_step(ctx, plan):
 # --------------------------------------------------------------------------- #
 # P3 render（程式產生 markdown）
 # --------------------------------------------------------------------------- #
+_OTHER_CHAPTER_ACCUM_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
+
+
+def _would_destroy_data(ctx, target):
+    """既有條目檔內含「其他章節」累積標記時，覆寫會毀掉跨章資料——拒絕覆寫。"""
+    if not target.exists():
+        return False
+    text = target.read_text(encoding="utf-8")
+    for book, chapter in _OTHER_CHAPTER_ACCUM_RE.findall(text):
+        if not (book == ctx.book and chapter == str(ctx.chapter)):
+            return True
+    return False
+
+
 def render_step(ctx, entry_payloads, verse_links, chapter_content):
     written = []
     known = ctx.known_types()
     for name, payload in entry_payloads.items():
+        safe = render_entry.safe_name(name)
+        target = ctx.root / "link_folder" / payload["type"] / f"{safe}.md"
+        if _would_destroy_data(ctx, target):
+            ctx.manual_review.append(
+                f"entry_content:{name}：既有條目已含其他章節累積，跳過以免覆蓋（應歸 B 累積）"
+            )
+            continue
         markdown = render_entry.render_entry(payload, known_types=known)
-        target = ctx.root / "link_folder" / payload["type"] / f"{name}.md"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(markdown, encoding="utf-8")
         written.append(target)

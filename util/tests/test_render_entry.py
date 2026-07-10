@@ -14,6 +14,7 @@ from render_entry import (
     ROOT,
     parse_entry,
     render_entry,
+    safe_name,
     validate_payload,
 )
 
@@ -155,6 +156,16 @@ class PayloadRejectionTests(unittest.TestCase):
         payload = dict(GOLDEN_FORMAL, name="天上真聖所（來9:23-24）", type="互文")
         errors = validate_payload(payload, known_types=KNOWN_TYPES)
         self.assertFalse(any("簡短標題" in e for e in errors))
+
+    def test_halfwidth_colon_normalized_to_fullwidth(self):
+        # 半形 : 在 Windows 檔名非法（會變 NTFS 資料流留下空檔）；須正規化為全形 ：
+        self.assertEqual("天上真聖所（來9：23-24）", safe_name("天上真聖所（來9:23-24）"))
+        payload = dict(GOLDEN_FORMAL, name="天上真聖所（來9:23-24）", type="互文")
+        errors = validate_payload(payload, known_types=KNOWN_TYPES)
+        self.assertFalse(any("不安全字元" in e for e in errors))
+        md = render_entry(payload, known_types=KNOWN_TYPES)
+        self.assertIn("# 天上真聖所（來9：23-24）", md)
+        self.assertNotIn("來9:23-24", md)  # 半形冒號不得殘留
 
     def test_formal_requires_accumulations(self):
         payload = dict(GOLDEN_FORMAL)

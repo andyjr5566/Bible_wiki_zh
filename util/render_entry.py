@@ -28,8 +28,15 @@ BOOK_ORDER = list(BOOK_CHAPTERS)
 BOOK_RANK = {book: index for index, book in enumerate(BOOK_ORDER)}
 
 VALID_STATUS = {"formal", "candidate"}
-UNSAFE_NAME_CHARS = set('/\\<>："|?*')
+# Windows 檔名不可含半形 :（會被當成 NTFS 資料流，留下 0-byte 空檔）。互文條目
+# 慣例用全形 ：（如「來10：19-20」），故半形冒號一律正規化為全形、不視為不安全。
+UNSAFE_NAME_CHARS = set('/\\<>"|?*')
 ACCUMULATION_FIELDS = ("book", "chapter", "summary", "relation")
+
+
+def safe_name(name):
+    """把條目名正規化為檔名安全形式：半形 : → 全形 ：（符合互文命名慣例）。"""
+    return str(name).replace(":", "：").strip()
 # 互文條目不可只有經文引用（如 來9:23-24、啟21:23）；須用「簡短標題（經文）」
 BARE_SCRIPTURE_REF_RE = re.compile(r"^[一-鿿]{1,4}\d+([:：][\d\-,，]+)?$")
 
@@ -57,9 +64,11 @@ def validate_payload(payload, *, known_types=None):
     name = payload.get("name")
     if not isinstance(name, str) or not name.strip():
         errors.append("name 必填且不可為空")
-    elif UNSAFE_NAME_CHARS & set(name):
-        bad = "".join(sorted(UNSAFE_NAME_CHARS & set(name)))
-        errors.append(f"name 含檔案系統不安全字元：{bad}")
+    else:
+        name = safe_name(name)  # 半形冒號正規化為全形後再檢查
+        if UNSAFE_NAME_CHARS & set(name):
+            bad = "".join(sorted(UNSAFE_NAME_CHARS & set(name)))
+            errors.append(f"name 含檔案系統不安全字元：{bad}")
 
     types = valid_types() if known_types is None else set(known_types)
     entry_type = payload.get("type")
@@ -257,6 +266,7 @@ def render_entry(payload, *, known_types=None):
     errors = validate_payload(payload, known_types=known_types)
     if errors:
         raise ValueError("payload 驗證失敗：\n- " + "\n- ".join(errors))
+    payload = {**payload, "name": safe_name(payload["name"])}
     fm = _frontmatter(payload)
     yaml_text = yaml.safe_dump(
         dict(fm), allow_unicode=True, sort_keys=False, default_flow_style=False
@@ -270,7 +280,7 @@ def render_entry(payload, *, known_types=None):
 
 
 def entry_path(payload):
-    return LINK_FOLDER / payload["type"] / f"{payload['name']}.md"
+    return LINK_FOLDER / payload["type"] / f"{safe_name(payload['name'])}.md"
 
 
 # --------------------------------------------------------------------------- #

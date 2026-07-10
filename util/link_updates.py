@@ -22,25 +22,37 @@ def book_rank(book):
 
 
 def plan_updates(book, chapter):
-    plan = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章" / "link_plan.md"
-    if not plan.exists():
-        raise FileNotFoundError(plan)
-    section = None
+    base = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章"
+    plan_yaml = base / "link_plan.yaml"
+    plan_md = base / "link_plan.md"
     updates = []
-    for line in plan.read_text(encoding="utf-8").splitlines():
-        if line.startswith("## "):
-            section = line[3:]
-            continue
-        if not section or not section.startswith("B."):
-            continue
-        match = re.match(r"- \[\[(.+?)\]\] → ([^（]+)", line)
-        if match:
+    if plan_yaml.exists():  # orchestrator（run_chapter/resolver）的結構化輸出優先
+        data = yaml.safe_load(plan_yaml.read_text(encoding="utf-8")) or {}
+        for item in data.get("B_needs_update", []):
             updates.append({
-                "title": match.group(1),
-                "path": match.group(2).strip(),
+                "title": item.get("existing_title") or item.get("name", ""),
+                "path": item.get("existing_path", ""),
                 "summary": "",
                 "relation": "",
             })
+    elif plan_md.exists():
+        section = None
+        for line in plan_md.read_text(encoding="utf-8").splitlines():
+            if line.startswith("## "):
+                section = line[3:]
+                continue
+            if not section or not section.startswith("B."):
+                continue
+            match = re.match(r"- \[\[(.+?)\]\] → ([^（]+)", line)
+            if match:
+                updates.append({
+                    "title": match.group(1),
+                    "path": match.group(2).strip(),
+                    "summary": "",
+                    "relation": "",
+                })
+    else:
+        raise FileNotFoundError(plan_yaml)
     return {
         "book": book,
         "chapter": int(chapter),

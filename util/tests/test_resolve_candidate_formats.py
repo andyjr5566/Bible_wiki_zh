@@ -10,7 +10,9 @@ if str(UTIL_DIR) not in sys.path:
 import yaml
 
 from resolve_link_candidates import (
+    base_name,
     build_plan_document,
+    find_in_index,
     parse_candidates_md,
     parse_candidates_yaml,
     resolve,
@@ -110,6 +112,63 @@ class CandidateFormatEquivalenceTests(unittest.TestCase):
         self.assertEqual(set(md_item), set(yaml_item))
         for field in ("name", "suggested_type", "evidence"):
             self.assertEqual(md_item[field], yaml_item[field])
+
+
+class TranslitBaseNameMatchTests(unittest.TestCase):
+    """裸中文候選（皂莢木）須匹配既有音譯條目（皂莢木（atzei shittim）），
+    否則每章重複詞被誤判為新條目、覆蓋既有累積。"""
+
+    INDEX = {
+        "皂莢木（atzei shittim）": {
+            "title": "皂莢木（atzei shittim）",
+            "type": "原文",
+            "path": "link_folder/原文/皂莢木（atzei shittim）.md",
+            "secondary_types": [],
+        },
+        "銅網（sevakah）": {
+            "title": "銅網（sevakah）",
+            "type": "原文",
+            "path": "link_folder/原文/銅網（sevakah）.md",
+            "secondary_types": [],
+        },
+    }
+
+    def test_base_name_strips_translit_suffix(self):
+        self.assertEqual("皂莢木", base_name("皂莢木（atzei shittim）"))
+        self.assertEqual("皂莢木", base_name("皂莢木"))
+        self.assertEqual("銅", base_name("銅(nechosheth)"))
+
+    def test_bare_candidate_matches_translit_entry(self):
+        match_type, entry, title = find_in_index("皂莢木", self.INDEX)
+        self.assertEqual("base", match_type)
+        self.assertEqual("皂莢木（atzei shittim）", title)
+
+    def test_base_match_does_not_confuse_prefix_words(self):
+        # 「銅」不得誤配到「銅網（sevakah）」（基名是「銅網」不是「銅」）
+        match_type, entry, title = find_in_index("銅", self.INDEX)
+        self.assertEqual("not_found", match_type)
+
+    def test_recurring_word_routes_to_accumulation_not_new(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry = root / "link_folder" / "原文" / "皂莢木（atzei shittim）.md"
+            entry.parent.mkdir(parents=True)
+            entry.write_text(
+                "# 皂莢木（atzei shittim）\n\n## 定義\n\n木材\n\n## 按書卷累積\n\n"
+                "### 出埃及記\n<!-- accumulation:出埃及記:25:start -->\n#### 第25章\n"
+                "- 本章重點：x\n- 與本章關聯：y\n"
+                "<!-- accumulation:出埃及記:25:end -->\n\n## 來源依據\n\n- CT\n",
+                encoding="utf-8",
+            )
+            candidates = parse_candidates_yaml({
+                "candidates": [{"name": "皂莢木", "type": "原文"}]
+            })
+            plan = resolve(candidates, self.INDEX, "出埃及記", "27", root=root, homonyms={})
+            self.assertEqual([], [e["name"] for e in plan["C_new_formal"]])
+            self.assertEqual(["皂莢木"], [e["name"] for e in plan["B_needs_update"]])
+            self.assertEqual(
+                "皂莢木（atzei shittim）", plan["B_needs_update"][0]["existing_title"]
+            )
 
 
 if __name__ == "__main__":
