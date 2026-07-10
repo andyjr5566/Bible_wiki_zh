@@ -1,24 +1,39 @@
 #!/usr/bin/env python3
-"""模型呼叫層：schema 強制 + 重試迴圈 + 最小輸入。
+"""模型呼叫層 + 端點控制器：schema 強制 + 重試迴圈 + 可切換端點。
 
-orchestrator 只在「內容任務」節點呼叫模型。每次呼叫：
-  1. 把 prompt 交給 runner（預設 shell 到 `claude -p --output-format json`）。
-  2. 從回應抽出 YAML/JSON payload。
-  3. 用傳入的 validate() 檢查 payload（schema／語義）。
-  4. 不合格時把「具體錯誤 + 原輸出」回饋給模型重試，上限 retries 次；
-     全數失敗則丟 ModelValidationError，交由 orchestrator 標記人工處理。
+orchestrator 只在「內容任務」節點呼叫模型。實際打哪個端點由
+`_config/model_endpoints.yaml` 的 active 決定，可用 CLI 或 MODEL_ENDPOINT
+環境變數隨時切換（localhost:4000／localhost:4001／claude -p 等）。
 
-runner 可注入，讓 orchestrator 的控制流程能以假模型單元測試，不需真的
-花 token 呼叫 claude。
+每次呼叫：
+  1. 取得 active 端點的 runner（openai 相容 HTTP 或 shell 到 claude -p）。
+  2. 把 prompt 交給 runner，取回文字。
+  3. 從文字抽出 YAML/JSON payload。
+  4. 用傳入的 validate() 檢查；不合格時把「具體錯誤 + 原輸出」回饋重試，
+     上限 retries 次；全數失敗丟 ModelValidationError，交 orchestrator
+     標記人工處理。
+
+runner 可注入，讓 orchestrator 控制流程能以假模型單元測試。
 """
+import argparse
 import json
+import os
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
 
 import yaml
 
+ROOT = Path(__file__).resolve().parent.parent
+ENDPOINTS_FILE = ROOT / "_config" / "model_endpoints.yaml"
+ENV_ENDPOINT = "MODEL_ENDPOINT"
+
 FENCE_RE = re.compile(r"```(?:ya?ml|json)?\s*\n(.*?)```", re.S)
+DEFAULT_OPENAI_BASE_URL = "http://localhost:4000/v1"
+DEFAULT_OPENAI_MODEL = "deepseek-ai/deepseek-v4-pro"
 
 
 class ModelError(RuntimeError):
@@ -29,8 +44,100 @@ class ModelValidationError(ModelError):
     """重試上限內 payload 始終不合格。"""
 
 
-def claude_runner(prompt, *, model=None, timeout=600):
-    """預設 runner：呼叫 `claude -p --output-format json` 並取出 result 文字。"""
+# --------------------------------------------------------------------------- #
+# 端點控制器
+# --------------------------------------------------------------------------- #
+def load_endpoints(path=ENDPOINTS_FILE):
+    if not path.exists():
+        return {"active": "claude-cli", "endpoints": {"claude-cli": {"type": "claude"}}}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    if not isinstance(data.get("endpoints"), dict) or not data["endpoints"]:
+        raise ModelError(f"{path.name} 缺少 endpoints 設定")
+    if data.get("active") not in data["endpoints"]:
+        raise ModelError(f"{path.name} 的 active「{data.get('active')}」不在 endpoints 內")
+    return data
+
+
+def select_endpoint(name=None, config=None):
+    """依（明確指定 → MODEL_ENDPOINT → active）順序選端點。"""
+    config = config or load_endpoints()
+    endpoints = config["endpoints"]
+    chosen = name or os.environ.get(ENV_ENDPOINT) or config["active"]
+    if chosen not in endpoints:
+        raise ModelError(f"未知端點「{chosen}」；可用：{', '.join(endpoints)}")
+    endpoint = dict(endpoints[chosen])
+    endpoint["name"] = chosen
+    return endpoint
+
+
+def _endpoint_api_key(endpoint):
+    if endpoint.get("api_key"):
+        return endpoint["api_key"]
+    env_name = endpoint.get("api_key_env")
+    return os.environ.get(env_name) if env_name else None
+
+
+def make_runner(endpoint):
+    """把端點設定轉成 runner 函式（prompt → 文字）。"""
+    kind = endpoint.get("type", "openai")
+    if kind == "claude":
+        model = endpoint.get("model")
+        return lambda prompt: claude_runner(prompt, model=model)
+    if kind == "openai":
+        base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
+        model = endpoint.get("model", DEFAULT_OPENAI_MODEL)
+        api_key = _endpoint_api_key(endpoint)
+        return lambda prompt: openai_runner(
+            prompt, base_url=base_url, model=model, api_key=api_key
+        )
+    raise ModelError(f"未知端點 type「{kind}」")
+
+
+def active_runner():
+    return make_runner(select_endpoint())
+
+
+def set_active(name, path=ENDPOINTS_FILE):
+    """切換 active 端點（保留檔案註解）。"""
+    config = load_endpoints(path)
+    if name not in config["endpoints"]:
+        raise ModelError(f"未知端點「{name}」；可用：{', '.join(config['endpoints'])}")
+    text = path.read_text(encoding="utf-8")
+    new_text, count = re.subn(r"(?m)^active:.*$", f"active: {name}", text, count=1)
+    if count != 1:
+        raise ModelError(f"{path.name} 找不到可替換的 active 行")
+    path.write_text(new_text, encoding="utf-8")
+
+
+# --------------------------------------------------------------------------- #
+# runners
+# --------------------------------------------------------------------------- #
+def openai_runner(prompt, *, base_url=DEFAULT_OPENAI_BASE_URL,
+                  model=DEFAULT_OPENAI_MODEL, api_key=None, timeout=1500):
+    """OpenAI 相容 /chat/completions（本機 litellm proxy 等）。"""
+    url = base_url.rstrip("/") + "/chat/completions"
+    body = json.dumps({
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0,
+    }).encode("utf-8")
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise ModelError(f"呼叫 {url} 失敗：{exc}") from exc
+    try:
+        return data["choices"][0]["message"]["content"]
+    except (KeyError, IndexError, TypeError) as exc:
+        raise ModelError(f"回應格式非預期：{str(data)[:300]}") from exc
+
+
+def claude_runner(prompt, *, model=None, timeout=1500):
+    """shell 到 `claude -p --output-format json`，取出 result 文字。"""
     command = ["claude", "-p", "--output-format", "json"]
     if model:
         command += ["--model", model]
@@ -59,8 +166,10 @@ def _result_text(stdout):
     return stdout
 
 
+# --------------------------------------------------------------------------- #
+# payload 抽取 + 驗證重試
+# --------------------------------------------------------------------------- #
 def extract_payload(text):
-    """從模型文字取出 payload；優先 fenced code block，否則整段當 YAML。"""
     match = FENCE_RE.search(text)
     block = match.group(1) if match else text
     try:
@@ -85,10 +194,9 @@ def _retry_prompt(base_prompt, previous_output, errors):
 
 def call_model(prompt, *, validate=None, retries=3, runner=None, label="task"):
     """呼叫模型並取得通過驗證的 payload；失敗上限後丟 ModelValidationError。"""
-    runner = runner or claude_runner
+    runner = runner or active_runner()
     current_prompt = prompt
     last_errors = ["未取得任何有效輸出"]
-    last_output = ""
     for _ in range(max(1, retries)):
         last_output = runner(current_prompt)
         try:
@@ -107,21 +215,66 @@ def call_model(prompt, *, validate=None, retries=3, runner=None, label="task"):
     )
 
 
-def _main():
-    """CLI 煙霧測試：從 stdin 讀 prompt，用真 claude runner 回一段 payload。"""
+# --------------------------------------------------------------------------- #
+# CLI 控制器
+# --------------------------------------------------------------------------- #
+def _cmd_list(_args):
+    config = load_endpoints()
+    active = config["active"]
+    for name, endpoint in config["endpoints"].items():
+        marker = "＊" if name == active else "  "
+        target = endpoint.get("base_url") or endpoint.get("type")
+        model = endpoint.get("model") or "（預設）"
+        print(f"{marker} {name}: {target} / {model}")
+    override = os.environ.get(ENV_ENDPOINT)
+    if override:
+        print(f"（MODEL_ENDPOINT 覆蓋中：{override}）")
+    return 0
+
+
+def _cmd_use(args):
+    set_active(args.name)
+    print(f"✅ active 端點已切換為：{args.name}")
+    return 0
+
+
+def _cmd_test(args):
+    endpoint = select_endpoint(args.name)
+    runner = make_runner(endpoint)
+    prompt = (
+        "只輸出下列 YAML（放在 ```yaml code block 內），不要任何其他文字：\n"
+        "```yaml\nok: true\nendpoint: 測試\n```"
+    )
+    try:
+        payload = call_model(prompt, validate=lambda p: [] if p.get("ok") else ["缺少 ok"], runner=runner)
+    except ModelError as exc:
+        print(f"❌ {endpoint['name']} 測試失敗：{exc}")
+        return 1
+    print(f"✅ {endpoint['name']} 回應正常：{payload}")
+    return 0
+
+
+def main():
     for stream in (sys.stdout, sys.stderr):
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure:
             reconfigure(encoding="utf-8")
-    prompt = sys.stdin.read()
+    parser = argparse.ArgumentParser(description="模型端點控制器")
+    sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("list", help="列出端點與 active").set_defaults(func=_cmd_list)
+    use_parser = sub.add_parser("use", help="切換 active 端點")
+    use_parser.add_argument("name")
+    use_parser.set_defaults(func=_cmd_use)
+    test_parser = sub.add_parser("test", help="對端點做一次煙霧測試")
+    test_parser.add_argument("name", nargs="?", default=None)
+    test_parser.set_defaults(func=_cmd_test)
+    args = parser.parse_args()
     try:
-        payload = call_model(prompt, label="cli-smoke")
+        return args.func(args)
     except ModelError as exc:
         print(f"❌ {exc}")
         return 1
-    sys.stdout.write(yaml.safe_dump(payload, allow_unicode=True, sort_keys=False))
-    return 0
 
 
 if __name__ == "__main__":
-    sys.exit(_main())
+    sys.exit(main())

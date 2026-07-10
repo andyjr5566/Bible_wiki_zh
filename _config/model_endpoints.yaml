@@ -1,0 +1,33 @@
+# 模型端點控制器設定。
+#
+# orchestrator 的內容任務透過 util/model_client.py 呼叫模型；實際打哪個端點
+# 由本檔的 active 決定，可隨時切換：
+#   python util/model_client.py list          # 列出端點與目前 active
+#   python util/model_client.py use local-4001 # 切換 active
+#   python util/model_client.py test           # 對 active 端點做一次煙霧測試
+#
+# 也可用環境變數臨時覆蓋，不改檔：
+#   MODEL_ENDPOINT=local-4001 python util/run_chapter.py 出埃及記 27
+#
+# 端點 type：
+#   openai —— OpenAI 相容 HTTP（如本機 litellm proxy）；需 base_url 與 model
+#   claude —— shell 到 `claude -p`（標準 Claude Code 安裝）；model 可省略
+#
+# 不要把 API key 寫進本檔。需要金鑰時用 api_key_env 指向環境變數名稱。
+
+active: local-4000
+
+endpoints:
+  local-4000:
+    type: openai
+    base_url: http://localhost:4000/v1
+    model: deepseek-ai/deepseek-v4-pro
+
+  local-4001:
+    type: openai
+    base_url: http://localhost:4001/v1
+    model: openai/gpt-oss-120b
+
+  claude-cli:
+    type: claude
+    model: null
