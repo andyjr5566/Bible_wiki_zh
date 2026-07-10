@@ -1,8 +1,0 @@
-# Source Manifest — 出埃及記 第29章
-
-| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |
-|------|-----|-----|--------------|------|
-| BibleHub Study | BH | https://biblehub.com/study/exodus/29.htm | raw_data/biblehub_study_exodus_29.txt | ✅ OK (63,342 chars) |
-| ccbiblestudy 註解 | CT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT29.htm | raw_data/ccbiblestudy_CT_exodus_29.txt | ✅ OK (19,677 chars) |
-| ccbiblestudy 拾穗 | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT29.htm | raw_data/ccbiblestudy_GT_exodus_29.txt | ✅ OK (26,221 chars) |
-| KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/29 | raw_data/kingcomments_exodus_29.txt | ✅ OK (17,306 chars) |
