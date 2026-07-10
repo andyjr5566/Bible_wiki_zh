@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes.scripture/schemas/entry_content.schema.json",
+  "title": "link_folder 條目內容 payload",
+  "description": "模型只填本 payload；最終 markdown 一律由 util/render_entry.py 生成。frontmatter、H2 順序、按書卷累積標記與 alias 格式全由程式排版，模型不得手寫 markdown。type 必須是 link_folder/ 下的實際分類資料夾名；accumulations.book 與 chapter 必須符合 _config/bible_books.json。這兩項在 JSON Schema 只標為字串，實際合法值由 util/render_entry.py 對照真實資料強制。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "type", "status"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "條目完整名稱，同時作為 H1 與檔名（不含 .md）。禁止使用檔案系統不安全字元：/ \\ < > ： \" | ? *。同名不同實體必須帶最小穩定限定詞，例如「示劍（城）」。"
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "主分類，必須等於 link_folder/ 下實際存在的分類資料夾名（如 人物、地點、主題、原文、神學、互文、背景、歷史、文化、事件、解經爭議）。"
+    },
+    "secondary_types": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "次分類，只表示條目兼具的其他性質，不得建立為 alias、不得在其他資料夾重複建檔。"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "別名列表，供 build_link_index 比對。不得放入登記為合法同名的歧義裸名。"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["formal", "candidate"],
+      "description": "formal＝資料足夠的正式條目；candidate＝資料不足、日後再擴充或合併的候選條目。"
+    },
+    "definition": {
+      "type": "string",
+      "description": "（formal 必填）條目定義與核心摘要。說明原文、字義與本章用法，越詳細越好。可含合法 wiki-link；不另設容易重複的「核心摘要」區。"
+    },
+    "development": {
+      "type": "string",
+      "description": "（formal 選填，對應 H2「主題發展」）跨經卷的主題遞進或預表發展。留空則不輸出此區。"
+    },
+    "accumulations": {
+      "type": "array",
+      "description": "（formal 必填，對應 H2「按書卷累積」）逐章累積資料。程式依書卷正典序與章號排序並產生穩定標記，模型不得手寫標記。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["book", "chapter", "summary", "relation"],
+        "properties": {
+          "book": {"type": "string", "description": "書卷標準名，須在 _config/bible_books.json 內。"},
+          "chapter": {"type": "integer", "minimum": 1, "description": "章號阿拉伯數字，須在該書卷章數範圍內。"},
+          "summary": {"type": "string", "minLength": 1, "description": "本章重點：本章與此條目直接相關的內容。"},
+          "relation": {"type": "string", "minLength": 1, "description": "與本章關聯：此條目在本章的神學／敘事關聯。"}
+        }
+      }
+    },
+    "related_entries": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "相關條目。每項是 wiki-link 內文（target 或 target|顯示），程式自動包成 [[...]]；每項須為已存在或同批建立的條目。"
+    },
+    "sources": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "（formal 必填，對應 H2「來源依據」）來源清單，每項一行，例如經文範圍或 CT/GT/KC/BH 的 URL。"
+    },
+    "created_from": {
+      "type": "string",
+      "description": "（candidate 選填）首次觸發本候選條目的章節，例如「出埃及記 第26章」。"
+    },
+    "category": {
+      "type": "string",
+      "description": "（candidate 選填，對應 H2「類型」）條目性質說明；留空則預設為 type。"
+    },
+    "trigger_sources": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "（candidate 必填，對應 H2「觸發來源」）觸發本候選條目的來源，每項一行，通常是章節 wiki-link 加節次。"
+    },
+    "current_data": {
+      "type": "string",
+      "description": "（candidate 必填，對應 H2「目前資料」）目前已收集、可支撐本候選條目的資料。"
+    },
+    "pending": {
+      "type": "string",
+      "description": "（candidate 選填，對應 H2「待補充」）日後需補充或釐清的事項。"
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "formal"}}},
+      "then": {
+        "required": ["definition", "accumulations", "sources"],
+        "properties": {
+          "accumulations": {"minItems": 1},
+          "sources": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "candidate"}}},
+      "then": {
+        "required": ["trigger_sources", "current_data"],
+        "properties": {
+          "trigger_sources": {"minItems": 1},
+          "current_data": {"minLength": 1}
+        }
+      }
+    }
+  ]
+}
