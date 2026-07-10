@@ -118,28 +118,44 @@ class RenderChapterTests(unittest.TestCase):
 
 class VerseLinkValidationTests(unittest.TestCase):
     def test_phrase_absent_from_verse_is_rejected(self):
-        links = [{"verse": 2, "phrase": "不存在的詞", "target": "x", "occurrence": 1}]
+        links = [{"verse": 2, "phrase": "不存在的詞", "target": "x"}]
         errors = validate_verse_links(links, RAW)
-        self.assertTrue(any("找不到" in e for e in errors))
+        self.assertTrue(any("沒有" in e for e in errors))
 
-    def test_occurrence_beyond_count_is_rejected(self):
-        # 「幔子」在 v1 只出現兩次，要第 3 次應失敗
-        links = [{"verse": 1, "phrase": "幔子", "target": "x", "occurrence": 3}]
-        errors = validate_verse_links(links, RAW)
-        self.assertTrue(any("找不到" in e for e in errors))
+    def test_extra_links_are_capped_not_failed(self):
+        # 「幔子」在 v1 只出現兩次；給三個 link 應通過驗證，渲染時只連兩次、捨棄多的
+        links = [
+            {"verse": 1, "phrase": "幔子", "target": "幔子"},
+            {"verse": 1, "phrase": "幔子", "target": "幔子"},
+            {"verse": 1, "phrase": "幔子", "target": "幔子"},
+        ]
+        self.assertEqual([], validate_verse_links(links, RAW))
+        rendered = render_chapter(
+            {"book": "出埃及記", "chapter": 26, "links": links},
+            CHAPTER_CONTENT, raw_verses=RAW,
+        )
+        verse1 = rendered.splitlines()[2]
+        self.assertEqual(2, verse1.count("[[幔子]]"))
 
     def test_verse_out_of_range_is_rejected(self):
-        links = [{"verse": 99, "phrase": "幔子", "target": "x", "occurrence": 1}]
+        links = [{"verse": 99, "phrase": "幔子", "target": "x"}]
         errors = validate_verse_links(links, RAW)
         self.assertTrue(any("verse" in e for e in errors))
 
-    def test_overlapping_links_are_rejected(self):
+    def test_overlapping_links_are_resolved_not_failed(self):
+        # 重疊的 phrase 不再讓整章失敗；渲染時保留較前、捨棄較後
         links = [
-            {"verse": 1, "phrase": "幔子做", "target": "a", "occurrence": 1},
-            {"verse": 1, "phrase": "做帳幕", "target": "b", "occurrence": 1},
+            {"verse": 1, "phrase": "幔子做", "target": "a"},
+            {"verse": 1, "phrase": "做帳幕", "target": "b"},
         ]
-        errors = validate_verse_links(links, RAW)
-        self.assertTrue(any("重疊" in e for e in errors))
+        self.assertEqual([], validate_verse_links(links, RAW))
+        rendered = render_chapter(
+            {"book": "出埃及記", "chapter": 26, "links": links},
+            CHAPTER_CONTENT, raw_verses=RAW,
+        )
+        verse1 = rendered.splitlines()[2]
+        self.assertIn("[[a|幔子做]]", verse1)
+        self.assertNotIn("[[b|", verse1)
 
     def test_empty_organization_is_rejected(self):
         errors = validate_chapter_content(

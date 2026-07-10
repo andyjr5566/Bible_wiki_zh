@@ -43,19 +43,44 @@ def load_raw_verses(book, chapter):
 # --------------------------------------------------------------------------- #
 # 驗證（驗證左移）
 # --------------------------------------------------------------------------- #
-def _occurrence_span(raw, phrase, occurrence):
-    index = -1
-    for _ in range(occurrence):
-        index = raw.find(phrase, index + 1)
-        if index == -1:
-            return None
-    return (index, index + len(phrase))
+def _phrase_positions(raw, phrase):
+    positions, start = [], raw.find(phrase)
+    while start != -1:
+        positions.append(start)
+        start = raw.find(phrase, start + 1)
+    return positions
+
+
+def _assign_spans(raw, links):
+    """同一節的 links 依序對應到 phrase 的出現位置。
+
+    模型無法可靠地數「第幾次出現」，所以不採信 occurrence，改依 link 出現
+    順序把同一 phrase 對應到第 1、2、… 次出現；超出出現次數者捨棄，範圍
+    重疊者保留較前、捨棄較後。回傳排序後的 [(start, end, target)]。
+    """
+    used = {}
+    spans = []
+    for link in links:
+        phrase = link["phrase"]
+        slot = used.setdefault(phrase, {"idxs": _phrase_positions(raw, phrase), "n": 0})
+        if slot["n"] < len(slot["idxs"]):
+            start = slot["idxs"][slot["n"]]
+            slot["n"] += 1
+            spans.append((start, start + len(phrase), link["target"]))
+    spans.sort()
+    filtered, last_end = [], -1
+    for start, end, target in spans:
+        if start >= last_end:
+            filtered.append((start, end, target))
+            last_end = end
+    return filtered
 
 
 def validate_verse_links(links, raw_verses):
+    """只硬性檢查結構與「phrase 是否真的在該節」；occurrence／重疊／過量
+    由 _assign_spans 於渲染時寬容處理，不讓整章因此失敗。"""
     errors = []
     verse_count = len(raw_verses)
-    spans_by_verse = {}
     for position, link in enumerate(links):
         prefix = f"links[{position}]"
         if not isinstance(link, dict):
@@ -73,24 +98,8 @@ def validate_verse_links(links, raw_verses):
         if not isinstance(target, str) or not target.strip():
             errors.append(f"{prefix}.target 必填")
             continue
-        occurrence = link.get("occurrence", 1)
-        if not isinstance(occurrence, int) or isinstance(occurrence, bool) or occurrence < 1:
-            errors.append(f"{prefix}.occurrence 必須是 ≥1 的整數")
-            continue
-        span = _occurrence_span(raw_verses[verse - 1], phrase, occurrence)
-        if span is None:
-            errors.append(
-                f"{prefix}: 第{verse}節找不到第{occurrence}次出現的「{phrase}」"
-            )
-            continue
-        spans_by_verse.setdefault(verse, []).append((span, phrase))
-    for verse, spans in spans_by_verse.items():
-        spans.sort()
-        for (a_span, a_phrase), (b_span, b_phrase) in zip(spans, spans[1:]):
-            if a_span[1] > b_span[0]:
-                errors.append(
-                    f"第{verse}節 link 範圍重疊：「{a_phrase}」與「{b_phrase}」"
-                )
+        if phrase not in raw_verses[verse - 1]:
+            errors.append(f"{prefix}: 第{verse}節沒有「{phrase}」")
     return errors
 
 
@@ -110,13 +119,8 @@ def validate_chapter_content(content):
 # 渲染
 # --------------------------------------------------------------------------- #
 def _link_verse(raw, links):
-    spans = []
-    for link in links:
-        span = _occurrence_span(raw, link["phrase"], link.get("occurrence", 1))
-        spans.append((span[0], span[1], link["target"]))
-    spans.sort()
     out, cursor = [], 0
-    for start, end, target in spans:
+    for start, end, target in _assign_spans(raw, links):
         out.append(raw[cursor:start])
         phrase = raw[start:end]
         out.append(f"[[{target}]]" if target == phrase else f"[[{target}|{phrase}]]")

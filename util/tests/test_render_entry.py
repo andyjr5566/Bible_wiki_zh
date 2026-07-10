@@ -80,6 +80,18 @@ class RenderStructureTests(unittest.TestCase):
         self.assertEqual(["定義", "按書卷累積", "來源依據"], headings)
         self._assert_validator_clean(rendered, "原文", payload["name"])
 
+    def test_duplicate_chapter_accumulations_are_merged(self):
+        # 模型常為同一章不同節次各給一筆 accumulation；必須合併成單一標記區塊
+        payload = dict(GOLDEN_FORMAL, name="測試銅")
+        payload["accumulations"] = [
+            {"book": "出埃及記", "chapter": 27, "summary": "用銅包裹祭壇。", "relation": "祭壇材料。"},
+            {"book": "出埃及記", "chapter": 27, "summary": "銅座作柱基。", "relation": "院子結構。"},
+        ]
+        rendered = render_entry(payload, known_types=KNOWN_TYPES)
+        self.assertEqual(1, rendered.count("<!-- accumulation:出埃及記:27:start -->"))
+        self.assertIn("用銅包裹祭壇。；銅座作柱基。", rendered)
+        self._assert_validator_clean(rendered, "原文", payload["name"])
+
     def test_candidate_uses_exact_scheme_headings(self):
         rendered = render_entry(GOLDEN_CANDIDATE, known_types=KNOWN_TYPES)
         headings = [line[3:] for line in rendered.splitlines() if line.startswith("## ")]

@@ -170,19 +170,31 @@ def _wikilink(inner):
 
 
 def _render_accumulations(accums):
-    grouped = {}
+    # 同一 (書卷, 章) 只能有一個累積標記區塊；模型常為不同節次各給一筆，
+    # 這裡依 (書卷, 章) 合併 summary／relation，避免重複標記。
+    merged = {}
     for item in accums:
-        grouped.setdefault(item["book"], []).append(item)
+        key = (item["book"], int(item["chapter"]))
+        bucket = merged.setdefault(key, {"summaries": [], "relations": []})
+        summary = str(item.get("summary", "")).strip()
+        relation = str(item.get("relation", "")).strip()
+        if summary and summary not in bucket["summaries"]:
+            bucket["summaries"].append(summary)
+        if relation and relation not in bucket["relations"]:
+            bucket["relations"].append(relation)
+    by_book = {}
+    for book, chapter in merged:
+        by_book.setdefault(book, set()).add(chapter)
     parts = []
-    for book in sorted(grouped, key=lambda b: (BOOK_RANK.get(b, 999), b)):
+    for book in sorted(by_book, key=lambda b: (BOOK_RANK.get(b, 999), b)):
         blocks = []
-        for item in sorted(grouped[book], key=lambda x: x["chapter"]):
-            chapter = item["chapter"]
+        for chapter in sorted(by_book[book]):
+            bucket = merged[(book, chapter)]
             block = (
                 f"<!-- accumulation:{book}:{chapter}:start -->\n"
                 f"#### 第{chapter}章\n"
-                f"- 本章重點：{item['summary'].strip()}\n"
-                f"- 與本章關聯：{item['relation'].strip()}\n"
+                f"- 本章重點：{'；'.join(bucket['summaries'])}\n"
+                f"- 與本章關聯：{'；'.join(bucket['relations'])}\n"
                 f"<!-- accumulation:{book}:{chapter}:end -->"
             )
             blocks.append(block)
