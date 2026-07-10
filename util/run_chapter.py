@@ -30,6 +30,7 @@ except ImportError:
 import render_chapter
 import render_entry
 import resolve_link_candidates as resolver
+import source_excerpts
 import validate_knowledge_base as vkb
 from model_client import ModelValidationError, call_model
 
@@ -62,6 +63,13 @@ class ChapterContext:
         if not folder.is_dir():
             return set()
         return {p.name for p in folder.iterdir() if p.is_dir() and not p.name.startswith(".")}
+
+    def sources(self):
+        if getattr(self, "_sources", None) is None:
+            self._sources = source_excerpts.parse_manifest(
+                self.path("source_manifest.md"), self.root
+            )
+        return self._sources
 
 
 def _read_yaml(path):
@@ -118,12 +126,17 @@ def _model_step(ctx, out_path, prompt, validate, label):
 # --------------------------------------------------------------------------- #
 # M3 entry_content（每個 C 類條目一次呼叫）
 # --------------------------------------------------------------------------- #
-def _entry_prompt(ctx, entry, allowed_related, raw_text):
+def _entry_prompt(ctx, entry, allowed_related, raw_text, excerpt):
+    excerpt_block = (
+        f"【相關來源摘錄（CT/GT/KC/BH）】\n{excerpt}\n\n"
+        if excerpt else "【相關來源摘錄】（本章來源未提及此條目，僅依經文整理）\n\n"
+    )
     return (
         f"你是聖經研經資料整理員。唯一任務：為 link_folder 條目「{entry['name']}」"
         f"（主分類：{entry['suggested_type']}）填寫 entry_content payload。\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
-        f"【規則】所有陳述須能對應經文或已收集來源；輸入未提及者不得寫入。"
+        f"{excerpt_block}"
+        f"【規則】所有陳述須能對應上述經文或來源摘錄；未提及者不得寫入。"
         f"related_entries 只能從此清單選：{', '.join(allowed_related) or '（無）'}。\n"
         f"status 用 formal；accumulations 至少含本章一項。\n\n"
         f"【輸出】只輸出符合下列規格的 YAML：\n{_schema_hint('entry_content.schema.json')}"
@@ -134,12 +147,16 @@ def entry_content_step(ctx, plan, model_inputs=None):
     out_dir = ctx.path("entry_content")
     known = ctx.known_types()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
+    sources = ctx.sources()
     c_entries = plan.get("C_new_formal", [])
     allowed_related = [e["name"] for e in c_entries]
     payloads = {}
     for entry in c_entries:
         out_path = out_dir / f"{entry['name']}.yaml"
-        prompt = _entry_prompt(ctx, entry, allowed_related, raw_text)
+        excerpt = source_excerpts.slice_for_keywords(
+            sources, source_excerpts.keyword_variants(entry["name"])
+        )
+        prompt = _entry_prompt(ctx, entry, allowed_related, raw_text, excerpt)
         payload = _model_step(
             ctx, out_path, prompt,
             validate=lambda p: render_entry.validate_payload(p, known_types=known),
@@ -159,9 +176,11 @@ def verse_links_step(ctx, plan):
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
     linkable = [e["name"] for key in ("A_use_directly", "B_needs_update", "C_new_formal")
                 for e in plan.get(key, [])]
+    digest = source_excerpts.chapter_digest(ctx.sources())
+    digest_block = f"【來源重點摘錄】\n{digest}\n\n" if digest else ""
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章標注經文 "
-        f"wiki-link（verse_links payload）。\n\n【經文】\n{raw_text}\n\n"
+        f"wiki-link（verse_links payload）。\n\n【經文】\n{raw_text}\n\n{digest_block}"
         f"【規則】phrase 必須是該節經文的子字串；target 只能用：{', '.join(linkable) or '（無）'}；"
         f"同一詞多次出現用 occurrence 指定第幾次。\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('verse_links.schema.json')}"
@@ -179,11 +198,13 @@ def verse_links_step(ctx, plan):
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
+    digest = source_excerpts.chapter_digest(ctx.sources())
+    digest_block = f"【來源重點摘錄（CT/GT/KC/BH）】\n{digest}\n\n" if digest else ""
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
-        f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
+        f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n{digest_block}"
         f"【規則】knowledge_nodes 只列值得跨章累積的核心節點，不重列所有經文 link；"
-        f"organization 整合來源重點，不搬運整段全文。\n\n"
+        f"organization 整合上述來源重點，不搬運整段全文，也不得寫入來源未提及的內容。\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('chapter_content.schema.json')}"
     )
     return _model_step(
