@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes.scripture/schemas/chapter_content.schema.json",
+  "title": "章節主檔非經文內容 payload",
+  "description": "章節主檔的「本章知識節點」與「本章整理」。knowledge_nodes 的分組與 target 由程式渲染成 ### 分組 / - [[target]]，格式不由模型手寫。組成的 markdown 由 util/render_chapter.py 產生。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["book", "chapter", "knowledge_nodes", "organization"],
+  "properties": {
+    "book": {"type": "string", "description": "書卷標準名，須在 _config/bible_books.json 內。"},
+    "chapter": {"type": "integer", "minimum": 1, "description": "章號阿拉伯數字。"},
+    "knowledge_nodes": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "本章知識節點：分組名（如 主題／神學／原文／互文／事件）對應該組的 target 清單。只列來源補充後顯明、值得跨章累積的核心節點，不重列所有經文 link。",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string", "minLength": 1}
+      }
+    },
+    "organization": {
+      "type": "string",
+      "minLength": 1,
+      "description": "本章整理正文：整合來源重點（重點摘要、神學意義、參考資料等），由模型撰寫；不大量搬運 CT/GT/KC/BH 全文。"
+    }
+  }
+}

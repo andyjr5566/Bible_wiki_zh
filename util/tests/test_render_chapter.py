@@ -1,0 +1,158 @@
+import re
+import sys
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+UTIL_DIR = Path(__file__).resolve().parents[1]
+if str(UTIL_DIR) not in sys.path:
+    sys.path.insert(0, str(UTIL_DIR))
+
+import validate_knowledge_base as vkb
+from render_chapter import (
+    parse_chapter,
+    render_chapter,
+    validate_chapter_content,
+    validate_verse_links,
+)
+
+# 受控 raw 經文（v1 的「幔子」出現兩次，用來測 occurrence 只連指定那一次）
+RAW = [
+    "你要用十幅幔子做帳幕。這些幔子要用撚的細麻繡上基路伯。",
+    "每幅幔子要長二十八肘。",
+    "又要做五十個金鉤，使幔子相連。",
+]
+
+VERSE_LINKS = {
+    "book": "出埃及記",
+    "chapter": 26,
+    "links": [
+        {"verse": 1, "phrase": "幔子", "target": "幔子（yeriah）", "occurrence": 1},
+        {"verse": 1, "phrase": "帳幕", "target": "帳幕", "occurrence": 1},
+        {"verse": 3, "phrase": "金鉤", "target": "金鉤（qeres）", "occurrence": 1},
+    ],
+}
+
+CHAPTER_CONTENT = {
+    "book": "出埃及記",
+    "chapter": 26,
+    "knowledge_nodes": {"神學": ["會幕", "帳幕"], "原文": ["幔子（yeriah）"]},
+    "organization": "**重點摘要**\n- 會幕結構與材料",
+}
+
+
+def _strip_links(text):
+    return re.sub(
+        r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]",
+        lambda m: m.group(2) or m.group(1),
+        text,
+    )
+
+
+class RenderChapterTests(unittest.TestCase):
+    def test_only_specified_occurrence_is_linked(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        verse1 = rendered.splitlines()[2]  # H1, blank, then "1. ..."
+        # 第一個「幔子」被連、alias 格式正確；第二個「這些幔子」保持純文字
+        self.assertIn("十幅[[幔子（yeriah）|幔子]]做[[帳幕]]", verse1)
+        self.assertIn("這些幔子要用", verse1)
+        self.assertEqual(1, verse1.count("[[幔子（yeriah）|幔子]]"))
+
+    def test_scripture_text_matches_raw_exactly(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        scripture_zone = rendered.split("## 本章知識節點")[0]
+        stripped = [
+            _strip_links(m.group(2))
+            for m in re.finditer(r"^(\d+)\.\s(.*)$", scripture_zone, re.M)
+        ]
+        self.assertEqual(RAW, stripped)
+
+    def test_section_skeleton_and_headings(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        self.assertTrue(rendered.startswith("# 出埃及記 第26章\n"))
+        headings = [line[3:] for line in rendered.splitlines() if line.startswith("## ")]
+        self.assertEqual(["本章知識節點", "本章整理"], headings)
+        self.assertIn("### 神學\n- [[會幕]]\n- [[帳幕]]", rendered)
+
+    def test_payload_is_idempotent_through_parse(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        verse_links, chapter_content, _ = parse_chapter(rendered)
+        self.assertEqual(VERSE_LINKS, verse_links)
+        self.assertEqual(
+            CHAPTER_CONTENT["knowledge_nodes"], chapter_content["knowledge_nodes"]
+        )
+        self.assertEqual(
+            CHAPTER_CONTENT["organization"], chapter_content["organization"]
+        )
+
+    def test_map_block_is_preserved_as_passthrough(self):
+        block = (
+            "<!-- fhl-map-links:start -->\n## 相關地圖\n\n"
+            "- [[appendix/fhl_maps/maps/019|〈出圖二〉]]\n"
+            "<!-- fhl-map-links:end -->"
+        )
+        rendered = render_chapter(
+            VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW, map_block=block
+        )
+        self.assertIn(block, rendered)
+        # 地圖必須在經文後、第一條分隔線前
+        self.assertLess(rendered.index("相關地圖"), rendered.index("\n---\n"))
+
+    def test_rendered_chapter_passes_real_validator(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "raw_scripture" / "出埃及記").mkdir(parents=True)
+            (root / "raw_scripture" / "出埃及記" / "第26章.txt").write_text(
+                "\n".join(RAW) + "\n", encoding="utf-8"
+            )
+            chapter_dir = root / "02 出埃及記"
+            chapter_dir.mkdir()
+            path = chapter_dir / "第26章.md"
+            path.write_text(rendered, encoding="utf-8")
+            with patch.object(vkb, "ROOT", root):
+                errors = vkb.validate_chapter(path)
+            self.assertEqual([], errors)
+
+
+class VerseLinkValidationTests(unittest.TestCase):
+    def test_phrase_absent_from_verse_is_rejected(self):
+        links = [{"verse": 2, "phrase": "不存在的詞", "target": "x", "occurrence": 1}]
+        errors = validate_verse_links(links, RAW)
+        self.assertTrue(any("找不到" in e for e in errors))
+
+    def test_occurrence_beyond_count_is_rejected(self):
+        # 「幔子」在 v1 只出現兩次，要第 3 次應失敗
+        links = [{"verse": 1, "phrase": "幔子", "target": "x", "occurrence": 3}]
+        errors = validate_verse_links(links, RAW)
+        self.assertTrue(any("找不到" in e for e in errors))
+
+    def test_verse_out_of_range_is_rejected(self):
+        links = [{"verse": 99, "phrase": "幔子", "target": "x", "occurrence": 1}]
+        errors = validate_verse_links(links, RAW)
+        self.assertTrue(any("verse" in e for e in errors))
+
+    def test_overlapping_links_are_rejected(self):
+        links = [
+            {"verse": 1, "phrase": "幔子做", "target": "a", "occurrence": 1},
+            {"verse": 1, "phrase": "做帳幕", "target": "b", "occurrence": 1},
+        ]
+        errors = validate_verse_links(links, RAW)
+        self.assertTrue(any("重疊" in e for e in errors))
+
+    def test_empty_organization_is_rejected(self):
+        errors = validate_chapter_content(
+            {"knowledge_nodes": {"神學": ["會幕"]}, "organization": "  "}
+        )
+        self.assertTrue(any("本章整理" in e for e in errors))
+
+    def test_empty_knowledge_nodes_is_rejected(self):
+        errors = validate_chapter_content(
+            {"knowledge_nodes": {}, "organization": "內容"}
+        )
+        self.assertTrue(any("knowledge_nodes" in e for e in errors))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes.scripture/schemas/verse_links.schema.json",
+  "title": "章節經文 wiki-link 標注 payload",
+  "description": "模型只標注「哪一節、哪個詞、連到哪個 target、第幾次出現」；經文本文取自 raw_scripture 不得改寫，實際把詞替換成 [[target|詞]] 由 util/render_chapter.py 完成，alias 格式因此永遠合規。phrase 必須是該節 raw 經文的子字串，target 應對應 link_plan 的 A/B/C 類——這兩項的實際強制在 util/render_chapter.py（對照 raw_scripture 與後續 verify_links）。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["book", "chapter", "links"],
+  "properties": {
+    "book": {"type": "string", "description": "書卷標準名，須在 _config/bible_books.json 內。"},
+    "chapter": {"type": "integer", "minimum": 1, "description": "章號阿拉伯數字。"},
+    "links": {
+      "type": "array",
+      "description": "本章所有 wiki-link 標注；同一詞多次出現時以 occurrence 指定連哪一次。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["verse", "phrase", "target"],
+        "properties": {
+          "verse": {"type": "integer", "minimum": 1, "description": "節次，須在本章節數範圍內。"},
+          "phrase": {"type": "string", "minLength": 1, "description": "要連結的經文原詞，必須是該節 raw 經文的子字串。"},
+          "target": {"type": "string", "minLength": 1, "description": "條目完整名稱（link target）。與 phrase 相同時渲染成 [[target]]，否則 [[target|phrase]]。"},
+          "occurrence": {"type": "integer", "minimum": 1, "default": 1, "description": "phrase 在該節第幾次出現要被連結，預設第 1 次。"}
+        }
+      }
+    }
+  }
+}
