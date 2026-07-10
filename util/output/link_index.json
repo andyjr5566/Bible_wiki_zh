@@ -268,6 +268,16 @@
     "status": "formal",
     "aliases": []
   },
+  "基路伯（施恩座）": {
+    "path": "link_folder/主題/基路伯（施恩座）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "基路伯（施恩座）",
+    "status": "formal",
+    "aliases": [
+      "基路伯"
+    ]
+  },
   "塞井": {
     "path": "link_folder/主題/塞井.md",
     "type": "主題",
@@ -502,6 +512,17 @@
     "title": "敬畏神與專一事奉",
     "status": "formal",
     "aliases": []
+  },
+  "施恩座": {
+    "path": "link_folder/主題/施恩座.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "施恩座",
+    "status": "formal",
+    "aliases": [
+      "蔽罪座",
+      "憐恤座"
+    ]
   },
   "族長祝福的不可更改性": {
     "path": "link_folder/主題/族長祝福的不可更改性.md",
@@ -764,6 +785,17 @@
     "status": "formal",
     "aliases": []
   },
+  "約櫃": {
+    "path": "link_folder/主題/約櫃.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "約櫃",
+    "status": "formal",
+    "aliases": [
+      "法櫃",
+      "見證的櫃"
+    ]
+  },
   "羅得的世俗選擇與後果": {
     "path": "link_folder/主題/羅得的世俗選擇與後果.md",
     "type": "主題",
@@ -957,6 +989,18 @@
     "status": "formal",
     "aliases": []
   },
+  "金燈臺": {
+    "path": "link_folder/主題/金燈臺.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "金燈臺",
+    "status": "formal",
+    "aliases": [
+      "金燈檯",
+      "燈臺",
+      "燈檯"
+    ]
+  },
   "銀子": {
     "path": "link_folder/主題/銀子.md",
     "type": "主題",
@@ -980,6 +1024,17 @@
     "title": "關懷弱勢",
     "status": "formal",
     "aliases": []
+  },
+  "陳設餅桌子": {
+    "path": "link_folder/主題/陳設餅桌子.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "陳設餅桌子",
+    "status": "formal",
+    "aliases": [
+      "陳設餅的桌子",
+      "擺陳設餅的桌子"
+    ]
   },
   "雅各逃往哈蘭": {
     "path": "link_folder/主題/雅各逃往哈蘭.md",
@@ -1380,28 +1435,12 @@
     "status": "candidate",
     "aliases": []
   },
-  "收納禮物": {
-    "path": "link_folder/事件/收納禮物.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "收納禮物",
-    "status": "formal",
-    "aliases": []
-  },
   "曠野試驗": {
     "path": "link_folder/事件/曠野試驗.md",
     "type": "事件",
     "secondary_types": [],
     "title": "曠野試驗",
     "status": "candidate",
-    "aliases": []
-  },
-  "會幕樣式指示": {
-    "path": "link_folder/事件/會幕樣式指示.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "會幕樣式指示",
-    "status": "formal",
     "aliases": []
   },
   "牛傷牛的律例": {
@@ -1557,14 +1596,6 @@
       "Altar Jehovah Nissi"
     ]
   },
-  "經理燈油": {
-    "path": "link_folder/事件/經理燈油.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "經理燈油",
-    "status": "formal",
-    "aliases": []
-  },
   "葉忒羅來訪": {
     "path": "link_folder/事件/葉忒羅來訪.md",
     "type": "事件",
@@ -1620,59 +1651,11 @@
       "葉忒羅離去"
     ]
   },
-  "製作法櫃": {
-    "path": "link_folder/事件/製作法櫃.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "製作法櫃",
-    "status": "formal",
-    "aliases": []
-  },
-  "製作燈臺": {
-    "path": "link_folder/事件/製作燈臺.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "製作燈臺",
-    "status": "formal",
-    "aliases": []
-  },
-  "製作陳設餅桌子": {
-    "path": "link_folder/事件/製作陳設餅桌子.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "製作陳設餅桌子",
-    "status": "formal",
-    "aliases": []
-  },
   "財物受損的律例": {
     "path": "link_folder/事件/財物受損的律例.md",
     "type": "事件",
     "secondary_types": [],
     "title": "財物受損的律例",
-    "status": "formal",
-    "aliases": []
-  },
-  "造銅祭壇": {
-    "path": "link_folder/事件/造銅祭壇.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "造銅祭壇",
-    "status": "formal",
-    "aliases": []
-  },
-  "造門簾": {
-    "path": "link_folder/事件/造門簾.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "造門簾",
-    "status": "formal",
-    "aliases": []
-  },
-  "造院子": {
-    "path": "link_folder/事件/造院子.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "造院子",
     "status": "formal",
     "aliases": []
   },
@@ -1712,19 +1695,19 @@
       "Quail covers the camp"
     ]
   },
-  "點燈": {
-    "path": "link_folder/事件/點燈.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "點燈",
-    "status": "formal",
-    "aliases": []
-  },
   "「神使我忘記」與「神使我昌盛」的屬靈經歷": {
     "path": "link_folder/互文/「神使我忘記」與「神使我昌盛」的屬靈經歷.md",
     "type": "互文",
     "secondary_types": [],
     "title": "「神使我忘記」與「神使我昌盛」的屬靈經歷",
+    "status": "formal",
+    "aliases": []
+  },
+  "七個金燈臺的奧祕（啟1：20）": {
+    "path": "link_folder/互文/七個金燈臺的奧祕（啟1：20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "七個金燈臺的奧祕（啟1：20）",
     "status": "formal",
     "aliases": []
   },
@@ -1754,6 +1737,22 @@
     "type": "互文",
     "secondary_types": [],
     "title": "三十舍客勒",
+    "status": "formal",
+    "aliases": []
+  },
+  "不可摸約櫃（撒下6：6-7）": {
+    "path": "link_folder/互文/不可摸約櫃（撒下6：6-7）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "不可摸約櫃（撒下6：6-7）",
+    "status": "formal",
+    "aliases": []
+  },
+  "世界的光（約8：12）": {
+    "path": "link_folder/互文/世界的光（約8：12）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "世界的光（約8：12）",
     "status": "formal",
     "aliases": []
   },
@@ -2347,70 +2346,6 @@
     "type": "互文",
     "secondary_types": [],
     "title": "出24：12",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：10-16": {
-    "path": "link_folder/互文/出25：10-16.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：10-16",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：10-22": {
-    "path": "link_folder/互文/出25：10-22.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：10-22",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：17-22": {
-    "path": "link_folder/互文/出25：17-22.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：17-22",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：2": {
-    "path": "link_folder/互文/出25：2.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：2",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：23-30": {
-    "path": "link_folder/互文/出25：23-30.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：23-30",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：31-40": {
-    "path": "link_folder/互文/出25：31-40.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：31-40",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：8": {
-    "path": "link_folder/互文/出25：8.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：8",
-    "status": "formal",
-    "aliases": []
-  },
-  "出25：9,40": {
-    "path": "link_folder/互文/出25：9,40.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出25：9,40",
     "status": "formal",
     "aliases": []
   },
@@ -3319,6 +3254,14 @@
     "status": "formal",
     "aliases": []
   },
+  "四活物的形像（結1：5-11）": {
+    "path": "link_folder/互文/四活物的形像（結1：5-11）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "四活物的形像（結1：5-11）",
+    "status": "formal",
+    "aliases": []
+  },
   "基督復活預表": {
     "path": "link_folder/互文/基督復活預表.md",
     "type": "互文",
@@ -3362,6 +3305,32 @@
     "aliases": [
       "Titus 1:5-9 Elder qualifications"
     ]
+  },
+  "天上事的形狀和影像（來8：5）": {
+    "path": "link_folder/互文/天上事的形狀和影像（來8：5）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "天上事的形狀和影像（來8：5）",
+    "status": "formal",
+    "aliases": [
+      "來8:5"
+    ]
+  },
+  "天上真帳幕的祭物（來9：11-12）": {
+    "path": "link_folder/互文/天上真帳幕的祭物（來9：11-12）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "天上真帳幕的祭物（來9：11-12）",
+    "status": "formal",
+    "aliases": []
+  },
+  "天上真聖所（來9：23-24）": {
+    "path": "link_folder/互文/天上真聖所（來9：23-24）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "天上真聖所（來9：23-24）",
+    "status": "formal",
+    "aliases": []
   },
   "太12：34-37": {
     "path": "link_folder/互文/太12：34-37.md",
@@ -3914,6 +3883,14 @@
       "Acts 6:1-7 Choose deacons"
     ]
   },
+  "把守生命樹的道路（創3：24）": {
+    "path": "link_folder/互文/把守生命樹的道路（創3：24）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "把守生命樹的道路（創3：24）",
+    "status": "formal",
+    "aliases": []
+  },
   "挪亞是傳義道者": {
     "path": "link_folder/互文/挪亞是傳義道者.md",
     "type": "互文",
@@ -3931,6 +3908,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "挪亞與亞當的平行",
+    "status": "formal",
+    "aliases": []
+  },
+  "挽回祭（羅3：25）": {
+    "path": "link_folder/互文/挽回祭（羅3：25）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "挽回祭（羅3：25）",
     "status": "formal",
     "aliases": []
   },
@@ -4036,6 +4021,16 @@
     "status": "formal",
     "aliases": [
       "希伯來書11章摩西被藏"
+    ]
+  },
+  "摩西在山上四十晝夜（出24：15-18）": {
+    "path": "link_folder/互文/摩西在山上四十晝夜（出24：15-18）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "摩西在山上四十晝夜（出24：15-18）",
+    "status": "formal",
+    "aliases": [
+      "出24:15-18"
     ]
   },
   "撒上12：3": {
@@ -4591,6 +4586,22 @@
     "status": "formal",
     "aliases": []
   },
+  "甘心樂意的奉獻（林後9：7）": {
+    "path": "link_folder/互文/甘心樂意的奉獻（林後9：7）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "甘心樂意的奉獻（林後9：7）",
+    "status": "formal",
+    "aliases": []
+  },
+  "生命的糧（約6：35）": {
+    "path": "link_folder/互文/生命的糧（約6：35）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "生命的糧（約6：35）",
+    "status": "formal",
+    "aliases": []
+  },
   "申10：1-5": {
     "path": "link_folder/互文/申10：1-5.md",
     "type": "互文",
@@ -5132,6 +5143,14 @@
       "敬畏耶和華是智慧開端",
       "箴九10"
     ]
+  },
+  "精金之城（啟21：18）": {
+    "path": "link_folder/互文/精金之城（啟21：18）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "精金之城（啟21：18）",
+    "status": "formal",
+    "aliases": []
   },
   "約10：11": {
     "path": "link_folder/互文/約10：11.md",
@@ -5773,6 +5792,22 @@
     "type": "互文",
     "secondary_types": [],
     "title": "耶利米書四章",
+    "status": "formal",
+    "aliases": []
+  },
+  "耶穌以身體為殿（約2：19-21）": {
+    "path": "link_folder/互文/耶穌以身體為殿（約2：19-21）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "耶穌以身體為殿（約2：19-21）",
+    "status": "formal",
+    "aliases": []
+  },
+  "聖殿中的基路伯（王上6：23-28）": {
+    "path": "link_folder/互文/聖殿中的基路伯（王上6：23-28）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "聖殿中的基路伯（王上6：23-28）",
     "status": "formal",
     "aliases": []
   },
@@ -6550,6 +6585,14 @@
     "status": "formal",
     "aliases": []
   },
+  "金燈臺與聖靈（亞4：1-6）": {
+    "path": "link_folder/互文/金燈臺與聖靈（亞4：1-6）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "金燈臺與聖靈（亞4：1-6）",
+    "status": "formal",
+    "aliases": []
+  },
   "門1：18-19": {
     "path": "link_folder/互文/門1：18-19.md",
     "type": "互文",
@@ -6665,6 +6708,16 @@
       "雅弗分享閃的福分"
     ]
   },
+  "頭一層帳幕作現今的表樣（來9：8-9）": {
+    "path": "link_folder/互文/頭一層帳幕作現今的表樣（來9：8-9）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "頭一層帳幕作現今的表樣（來9：8-9）",
+    "status": "formal",
+    "aliases": [
+      "來9:8-9"
+    ]
+  },
   "馬太福音19章婚姻不可分開": {
     "path": "link_folder/互文/馬太福音19章婚姻不可分開.md",
     "type": "互文",
@@ -6749,14 +6802,6 @@
     "type": "人物",
     "secondary_types": [],
     "title": "亞伯蘭",
-    "status": "formal",
-    "aliases": []
-  },
-  "亞何利亞伯": {
-    "path": "link_folder/人物/亞何利亞伯.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "亞何利亞伯",
     "status": "formal",
     "aliases": []
   },
@@ -6967,14 +7012,6 @@
     "aliases": [
       "Tamar"
     ]
-  },
-  "以他瑪": {
-    "path": "link_folder/人物/以他瑪.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "以他瑪",
-    "status": "formal",
-    "aliases": []
   },
   "以倫": {
     "path": "link_folder/人物/以倫.md",
@@ -7770,14 +7807,6 @@
     "secondary_types": [],
     "title": "比拿雅",
     "status": "candidate",
-    "aliases": []
-  },
-  "比撒列": {
-    "path": "link_folder/人物/比撒列.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "比撒列",
-    "status": "formal",
     "aliases": []
   },
   "比沙（蛾摩拉王）": {
@@ -8872,14 +8901,6 @@
     "status": "formal",
     "aliases": []
   },
-  "他連得（kikkar）": {
-    "path": "link_folder/原文/他連得（kikkar）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "他連得（kikkar）",
-    "status": "formal",
-    "aliases": []
-  },
   "以利以謝（ God is help ）": {
     "path": "link_folder/原文/以利以謝（ God is help ）.md",
     "type": "原文",
@@ -8889,14 +8910,6 @@
     "aliases": [
       "Eliezer etymology"
     ]
-  },
-  "以弗得（ephod）": {
-    "path": "link_folder/原文/以弗得（ephod）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "以弗得（ephod）",
-    "status": "formal",
-    "aliases": []
   },
   "以掃名字含義": {
     "path": "link_folder/原文/以掃名字含義.md",
@@ -9275,14 +9288,6 @@
     "status": "formal",
     "aliases": []
   },
-  "基路伯（keruv）": {
-    "path": "link_folder/原文/基路伯（keruv）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "基路伯（keruv）",
-    "status": "formal",
-    "aliases": []
-  },
   "夏娃名字含義": {
     "path": "link_folder/原文/夏娃名字含義.md",
     "type": "原文",
@@ -9412,27 +9417,11 @@
     "status": "formal",
     "aliases": []
   },
-  "寶石（avnei millu'im）": {
-    "path": "link_folder/原文/寶石（avnei millu'im）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "寶石（avnei millu'im）",
-    "status": "formal",
-    "aliases": []
-  },
   "屈枉（natah）": {
     "path": "link_folder/原文/屈枉（natah）.md",
     "type": "原文",
     "secondary_types": [],
     "title": "屈枉（natah）",
-    "status": "formal",
-    "aliases": []
-  },
-  "山羊毛（izim）": {
-    "path": "link_folder/原文/山羊毛（izim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "山羊毛（izim）",
     "status": "formal",
     "aliases": []
   },
@@ -9488,14 +9477,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "希未人稱呼",
-    "status": "formal",
-    "aliases": []
-  },
-  "幔子": {
-    "path": "link_folder/原文/幔子.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "幔子",
     "status": "formal",
     "aliases": []
   },
@@ -9695,14 +9676,6 @@
       "「斬斷你的頭」/「從你將你的頭抬起來」"
     ]
   },
-  "施恩座（kapporet）": {
-    "path": "link_folder/原文/施恩座（kapporet）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "施恩座（kapporet）",
-    "status": "formal",
-    "aliases": []
-  },
   "昂然無懼": {
     "path": "link_folder/原文/昂然無懼.md",
     "type": "原文",
@@ -9723,14 +9696,6 @@
     "status": "formal",
     "aliases": []
   },
-  "曉諭（dabar）": {
-    "path": "link_folder/原文/曉諭（dabar）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "曉諭（dabar）",
-    "status": "formal",
-    "aliases": []
-  },
   "書珥（ wall ）": {
     "path": "link_folder/原文/書珥（ wall ）.md",
     "type": "原文",
@@ -9744,30 +9709,6 @@
       "wall"
     ]
   },
-  "會幕（mishkan）": {
-    "path": "link_folder/原文/會幕（mishkan）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "會幕（mishkan）",
-    "status": "formal",
-    "aliases": []
-  },
-  "朱紅色（tola'at shani）": {
-    "path": "link_folder/原文/朱紅色（tola'at shani）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "朱紅色（tola'at shani）",
-    "status": "formal",
-    "aliases": []
-  },
-  "杏花形狀（ka-gevi'im meshukadim）": {
-    "path": "link_folder/原文/杏花形狀（ka-gevi'im meshukadim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "杏花形狀（ka-gevi'im meshukadim）",
-    "status": "formal",
-    "aliases": []
-  },
   "東風與西風": {
     "path": "link_folder/原文/東風與西風.md",
     "type": "原文",
@@ -9780,22 +9721,6 @@
       "神使用風"
     ]
   },
-  "枝子（qaneh）": {
-    "path": "link_folder/原文/枝子（qaneh）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "枝子（qaneh）",
-    "status": "formal",
-    "aliases": []
-  },
-  "染紅的公羊皮（orot elim me'adamim）": {
-    "path": "link_folder/原文/染紅的公羊皮（orot elim me'adamim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "染紅的公羊皮（orot elim me'adamim）",
-    "status": "formal",
-    "aliases": []
-  },
   "柱像（matsebah）": {
     "path": "link_folder/原文/柱像（matsebah）.md",
     "type": "原文",
@@ -9804,43 +9729,11 @@
     "status": "formal",
     "aliases": []
   },
-  "桌子（shulchan）": {
-    "path": "link_folder/原文/桌子（shulchan）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "桌子（shulchan）",
-    "status": "formal",
-    "aliases": []
-  },
   "榮耀（kabod）": {
     "path": "link_folder/原文/榮耀（kabod）.md",
     "type": "原文",
     "secondary_types": [],
     "title": "榮耀（kabod）",
-    "status": "formal",
-    "aliases": []
-  },
-  "槓（bad）": {
-    "path": "link_folder/原文/槓（bad）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "槓（bad）",
-    "status": "formal",
-    "aliases": []
-  },
-  "樣式（tabnit）": {
-    "path": "link_folder/原文/樣式（tabnit）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "樣式（tabnit）",
-    "status": "formal",
-    "aliases": []
-  },
-  "櫃（aron）": {
-    "path": "link_folder/原文/櫃（aron）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "櫃（aron）",
     "status": "formal",
     "aliases": []
   },
@@ -9953,13 +9846,17 @@
       "法勒就是分的意思"
     ]
   },
-  "法版（luchot ha-brit）": {
-    "path": "link_folder/原文/法版（luchot ha-brit）.md",
+  "法版（edut）": {
+    "path": "link_folder/原文/法版（edut）.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "法版（luchot ha-brit）",
+    "title": "法版（edut）",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "法版",
+      "見證版",
+      "石版"
+    ]
   },
   "法老心剛硬三字": {
     "path": "link_folder/原文/法老心剛硬三字.md",
@@ -9998,14 +9895,6 @@
       "人物"
     ],
     "title": "流珥名字含義",
-    "status": "formal",
-    "aliases": []
-  },
-  "海狗皮（tachash）": {
-    "path": "link_folder/原文/海狗皮（tachash）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "海狗皮（tachash）",
     "status": "formal",
     "aliases": []
   },
@@ -10089,22 +9978,6 @@
       "無酵的餅"
     ]
   },
-  "燈盞（ner）": {
-    "path": "link_folder/原文/燈盞（ner）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "燈盞（ner）",
-    "status": "formal",
-    "aliases": []
-  },
-  "燈臺（menorah）": {
-    "path": "link_folder/原文/燈臺（menorah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "燈臺（menorah）",
-    "status": "formal",
-    "aliases": []
-  },
   "燔祭（olah）": {
     "path": "link_folder/原文/燔祭（olah）.md",
     "type": "原文",
@@ -10149,14 +10022,6 @@
       "連狗也不敢向他們搖舌"
     ]
   },
-  "球（kaftor）": {
-    "path": "link_folder/原文/球（kaftor）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "球（kaftor）",
-    "status": "formal",
-    "aliases": []
-  },
   "瑪拉（ bitterness ）": {
     "path": "link_folder/原文/瑪拉（ bitterness ）.md",
     "type": "原文",
@@ -10188,14 +10053,6 @@
       "Massah",
       "試探"
     ]
-  },
-  "甘心樂意（nadib）": {
-    "path": "link_folder/原文/甘心樂意（nadib）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "甘心樂意（nadib）",
-    "status": "formal",
-    "aliases": []
   },
   "用肚子行走，終身吃土": {
     "path": "link_folder/原文/用肚子行走，終身吃土.md",
@@ -10230,7 +10087,9 @@
     "secondary_types": [],
     "title": "皂莢木（atzei shittim）",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "皂莢木"
+    ]
   },
   "監_坑_地牢_dungeon": {
     "path": "link_folder/原文/監_坑_地牢_dungeon.md",
@@ -10241,14 +10100,6 @@
     "aliases": [
       "監/監牢/坑"
     ]
-  },
-  "相會（no'ad）": {
-    "path": "link_folder/原文/相會（no'ad）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "相會（no'ad）",
-    "status": "formal",
-    "aliases": []
   },
   "眼都昏迷": {
     "path": "link_folder/原文/眼都昏迷.md",
@@ -10304,7 +10155,10 @@
     "secondary_types": [],
     "title": "禮物（terumah）",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "禮物",
+      "奉獻"
+    ]
   },
   "秀雅俊美（約瑟容貌）": {
     "path": "link_folder/原文/秀雅俊美（約瑟容貌）.md",
@@ -10333,14 +10187,6 @@
     "status": "formal",
     "aliases": []
   },
-  "精金（zahab tahor）": {
-    "path": "link_folder/原文/精金（zahab tahor）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "精金（zahab tahor）",
-    "status": "formal",
-    "aliases": []
-  },
   "約書（sefer habberith）": {
     "path": "link_folder/原文/約書（sefer habberith）.md",
     "type": "原文",
@@ -10354,30 +10200,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "約瑟（增添／除去）",
-    "status": "formal",
-    "aliases": []
-  },
-  "紅瑪瑙（odem）": {
-    "path": "link_folder/原文/紅瑪瑙（odem）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "紅瑪瑙（odem）",
-    "status": "formal",
-    "aliases": []
-  },
-  "紫色（argaman）": {
-    "path": "link_folder/原文/紫色（argaman）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "紫色（argaman）",
-    "status": "formal",
-    "aliases": []
-  },
-  "細麻（shesh）": {
-    "path": "link_folder/原文/細麻（shesh）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "細麻（shesh）",
     "status": "formal",
     "aliases": []
   },
@@ -10402,14 +10224,6 @@
     "status": "formal",
     "aliases": []
   },
-  "翅膀（kanaph）": {
-    "path": "link_folder/原文/翅膀（kanaph）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "翅膀（kanaph）",
-    "status": "formal",
-    "aliases": []
-  },
   "耶和華尼西（ Jehovah Nissi ）": {
     "path": "link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md",
     "type": "原文",
@@ -10428,14 +10242,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "耶和華的園子",
-    "status": "formal",
-    "aliases": []
-  },
-  "聖所（miqdash）": {
-    "path": "link_folder/原文/聖所（miqdash）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "聖所（miqdash）",
     "status": "formal",
     "aliases": []
   },
@@ -10473,30 +10279,6 @@
     "status": "formal",
     "aliases": []
   },
-  "肘（ammah）": {
-    "path": "link_folder/原文/肘（ammah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "肘（ammah）",
-    "status": "formal",
-    "aliases": []
-  },
-  "胸牌（choshen）": {
-    "path": "link_folder/原文/胸牌（choshen）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "胸牌（choshen）",
-    "status": "formal",
-    "aliases": []
-  },
-  "膏油（shemen ha-mishchah）": {
-    "path": "link_folder/原文/膏油（shemen ha-mishchah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "膏油（shemen ha-mishchah）",
-    "status": "formal",
-    "aliases": []
-  },
   "膳長_baker": {
     "path": "link_folder/原文/膳長_baker.md",
     "type": "原文",
@@ -10506,14 +10288,6 @@
     "aliases": [
       "膳長 (baker)"
     ]
-  },
-  "臉對臉（el-achiv）": {
-    "path": "link_folder/原文/臉對臉（el-achiv）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "臉對臉（el-achiv）",
-    "status": "formal",
-    "aliases": []
   },
   "自由（chophshi）": {
     "path": "link_folder/原文/自由（chophshi）.md",
@@ -10536,14 +10310,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "色誘",
-    "status": "formal",
-    "aliases": []
-  },
-  "花（perach）": {
-    "path": "link_folder/原文/花（perach）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "花（perach）",
     "status": "formal",
     "aliases": []
   },
@@ -10584,14 +10350,6 @@
       "摩西的蒲草箱"
     ]
   },
-  "藍色（tekheleth）": {
-    "path": "link_folder/原文/藍色（tekheleth）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "藍色（tekheleth）",
-    "status": "formal",
-    "aliases": []
-  },
   "蛇的原文字義": {
     "path": "link_folder/原文/蛇的原文字義.md",
     "type": "原文",
@@ -10599,22 +10357,6 @@
       "背景"
     ],
     "title": "蛇的原文字義",
-    "status": "formal",
-    "aliases": []
-  },
-  "蠟剪（melqachayim）": {
-    "path": "link_folder/原文/蠟剪（melqachayim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "蠟剪（melqachayim）",
-    "status": "formal",
-    "aliases": []
-  },
-  "蠟花盤（machtah）": {
-    "path": "link_folder/原文/蠟花盤（machtah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "蠟花盤（machtah）",
     "status": "formal",
     "aliases": []
   },
@@ -10725,14 +10467,6 @@
     "status": "formal",
     "aliases": []
   },
-  "謹慎（ra'ah）": {
-    "path": "link_folder/原文/謹慎（ra'ah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "謹慎（ra'ah）",
-    "status": "formal",
-    "aliases": []
-  },
   "貪戀（chamad）": {
     "path": "link_folder/原文/貪戀（chamad）.md",
     "type": "原文",
@@ -10818,14 +10552,6 @@
       "越過"
     ]
   },
-  "遮掩（sakakh）": {
-    "path": "link_folder/原文/遮掩（sakakh）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "遮掩（sakakh）",
-    "status": "formal",
-    "aliases": []
-  },
   "遵行（asah）": {
     "path": "link_folder/原文/遵行（asah）.md",
     "type": "原文",
@@ -10859,46 +10585,6 @@
     "aliases": [
       "酒政 (cupbearer)"
     ]
-  },
-  "金牙邊（zer zahav）": {
-    "path": "link_folder/原文/金牙邊（zer zahav）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "金牙邊（zer zahav）",
-    "status": "formal",
-    "aliases": []
-  },
-  "金環（taba'at zahav）": {
-    "path": "link_folder/原文/金環（taba'at zahav）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "金環（taba'at zahav）",
-    "status": "formal",
-    "aliases": []
-  },
-  "金（zahab）": {
-    "path": "link_folder/原文/金（zahab）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "金（zahab）",
-    "status": "formal",
-    "aliases": []
-  },
-  "銀（keseph）": {
-    "path": "link_folder/原文/銀（keseph）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "銀（keseph）",
-    "status": "formal",
-    "aliases": []
-  },
-  "銅（nechosheth）": {
-    "path": "link_folder/原文/銅（nechosheth）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "銅（nechosheth）",
-    "status": "formal",
-    "aliases": []
   },
   "錐子穿耳": {
     "path": "link_folder/原文/錐子穿耳.md",
@@ -10942,14 +10628,6 @@
       "陰府",
       "死人住處"
     ]
-  },
-  "陳設餅（lechem ha-panim）": {
-    "path": "link_folder/原文/陳設餅（lechem ha-panim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "陳設餅（lechem ha-panim）",
-    "status": "formal",
-    "aliases": []
   },
   "隨眾（rab）": {
     "path": "link_folder/原文/隨眾（rab）.md",
@@ -11013,14 +10691,6 @@
     "status": "formal",
     "aliases": []
   },
-  "香（qetoret）": {
-    "path": "link_folder/原文/香（qetoret）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "香（qetoret）",
-    "status": "formal",
-    "aliases": []
-  },
   "驢用羊羔代贖": {
     "path": "link_folder/原文/驢用羊羔代贖.md",
     "type": "原文",
@@ -11059,14 +10729,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "黃蜂（tsirah）",
-    "status": "formal",
-    "aliases": []
-  },
-  "點燈的油（shemen la-maor）": {
-    "path": "link_folder/原文/點燈的油（shemen la-maor）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "點燈的油（shemen la-maor）",
     "status": "formal",
     "aliases": []
   },
@@ -11542,14 +11204,6 @@
     "status": "formal",
     "aliases": []
   },
-  "壇": {
-    "path": "link_folder/地點/壇.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "壇",
-    "status": "formal",
-    "aliases": []
-  },
   "多坍": {
     "path": "link_folder/地點/多坍.md",
     "type": "地點",
@@ -11823,22 +11477,6 @@
       "Wilderness of Shur",
       "書珥曠野"
     ]
-  },
-  "會幕": {
-    "path": "link_folder/地點/會幕.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "會幕",
-    "status": "formal",
-    "aliases": []
-  },
-  "會幕門口": {
-    "path": "link_folder/地點/會幕門口.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "會幕門口",
-    "status": "formal",
-    "aliases": []
   },
   "東方人之地": {
     "path": "link_folder/地點/東方人之地.md",
@@ -12195,28 +11833,12 @@
     "status": "formal",
     "aliases": []
   },
-  "聖所": {
-    "path": "link_folder/地點/聖所.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "聖所",
-    "status": "formal",
-    "aliases": []
-  },
   "聖殿": {
     "path": "link_folder/地點/聖殿.md",
     "type": "地點",
     "secondary_types": [],
     "title": "聖殿",
     "status": "candidate",
-    "aliases": []
-  },
-  "至聖所": {
-    "path": "link_folder/地點/至聖所.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "至聖所",
-    "status": "formal",
     "aliases": []
   },
   "蘭塞": {
@@ -12349,14 +11971,6 @@
     "status": "formal",
     "aliases": []
   },
-  "院子": {
-    "path": "link_folder/地點/院子.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "院子",
-    "status": "formal",
-    "aliases": []
-  },
   "雅博渡口": {
     "path": "link_folder/地點/雅博渡口.md",
     "type": "地點",
@@ -12394,14 +12008,6 @@
       "非利士人的地",
       "巴勒斯坦地"
     ]
-  },
-  "香壇": {
-    "path": "link_folder/地點/香壇.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "香壇",
-    "status": "formal",
-    "aliases": []
   },
   "鹽海": {
     "path": "link_folder/地點/鹽海.md",
@@ -15277,14 +14883,6 @@
       "基督作為逾越節羔羊"
     ]
   },
-  "基路伯": {
-    "path": "link_folder/神學/基路伯.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "基路伯",
-    "status": "formal",
-    "aliases": []
-  },
   "基路伯與火劍": {
     "path": "link_folder/神學/基路伯與火劍.md",
     "type": "神學",
@@ -15335,14 +14933,6 @@
     "type": "神學",
     "secondary_types": [],
     "title": "大淵的泉源與天上的窗戶",
-    "status": "formal",
-    "aliases": []
-  },
-  "大祭司": {
-    "path": "link_folder/神學/大祭司.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "大祭司",
     "status": "formal",
     "aliases": []
   },
@@ -15688,6 +15278,14 @@
     "status": "candidate",
     "aliases": []
   },
+  "山上的樣式": {
+    "path": "link_folder/神學/山上的樣式.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "山上的樣式",
+    "status": "formal",
+    "aliases": []
+  },
   "山的界限": {
     "path": "link_folder/神學/山的界限.md",
     "type": "神學",
@@ -15708,22 +15306,6 @@
     "aliases": [
       "希伯來人的神遇見了我們"
     ]
-  },
-  "帳幕": {
-    "path": "link_folder/神學/帳幕.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "帳幕",
-    "status": "formal",
-    "aliases": []
-  },
-  "常點的燈": {
-    "path": "link_folder/神學/常點的燈.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "常點的燈",
-    "status": "formal",
-    "aliases": []
   },
   "平安祭": {
     "path": "link_folder/神學/平安祭.md",
@@ -15883,7 +15465,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "成聖",
-    "status": "formal",
+    "status": "candidate",
     "aliases": []
   },
   "我以為這地方的人總不懼怕神": {
@@ -16263,14 +15845,6 @@
     "status": "formal",
     "aliases": []
   },
-  "施恩座": {
-    "path": "link_folder/神學/施恩座.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "施恩座",
-    "status": "formal",
-    "aliases": []
-  },
   "普天下沒有像我的": {
     "path": "link_folder/神學/普天下沒有像我的.md",
     "type": "神學",
@@ -16296,6 +15870,14 @@
     "secondary_types": [],
     "title": "替代性贖罪",
     "status": "candidate",
+    "aliases": []
+  },
+  "會幕材料的豫表": {
+    "path": "link_folder/神學/會幕材料的豫表.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "會幕材料的豫表",
+    "status": "formal",
     "aliases": []
   },
   "有靈的活人": {
@@ -16378,22 +15960,6 @@
     "status": "formal",
     "aliases": []
   },
-  "永遠的定例": {
-    "path": "link_folder/神學/永遠的定例.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "永遠的定例",
-    "status": "formal",
-    "aliases": []
-  },
-  "法櫃": {
-    "path": "link_folder/神學/法櫃.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "法櫃",
-    "status": "formal",
-    "aliases": []
-  },
   "法老心剛硬": {
     "path": "link_folder/神學/法老心剛硬.md",
     "type": "神學",
@@ -16438,14 +16004,6 @@
       "法老預表魔鬼",
       "法老象徵撒但"
     ]
-  },
-  "洗濯盆": {
-    "path": "link_folder/神學/洗濯盆.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "洗濯盆",
-    "status": "formal",
-    "aliases": []
   },
   "洪水中的審判與拯救": {
     "path": "link_folder/神學/洪水中的審判與拯救.md",
@@ -16531,14 +16089,6 @@
     "status": "formal",
     "aliases": []
   },
-  "照著樣式": {
-    "path": "link_folder/神學/照著樣式.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "照著樣式",
-    "status": "formal",
-    "aliases": []
-  },
   "燃燒卻不燒毀的荊棘": {
     "path": "link_folder/神學/燃燒卻不燒毀的荊棘.md",
     "type": "神學",
@@ -16552,22 +16102,6 @@
       "燃燒的荊棘",
       "荊棘火焰異象"
     ]
-  },
-  "燈油": {
-    "path": "link_folder/神學/燈油.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "燈油",
-    "status": "formal",
-    "aliases": []
-  },
-  "燈臺": {
-    "path": "link_folder/神學/燈臺.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "燈臺",
-    "status": "formal",
-    "aliases": []
   },
   "燔祭": {
     "path": "link_folder/神學/燔祭.md",
@@ -16601,14 +16135,6 @@
     "status": "formal",
     "aliases": []
   },
-  "獻祭": {
-    "path": "link_folder/神學/獻祭.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "獻祭",
-    "status": "formal",
-    "aliases": []
-  },
   "獻祭敬拜": {
     "path": "link_folder/神學/獻祭敬拜.md",
     "type": "神學",
@@ -16619,11 +16145,11 @@
       "Sacrifice and worship"
     ]
   },
-  "甘心樂意奉獻": {
-    "path": "link_folder/神學/甘心樂意奉獻.md",
+  "甘心樂意的奉獻": {
+    "path": "link_folder/神學/甘心樂意的奉獻.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "甘心樂意奉獻",
+    "title": "甘心樂意的奉獻",
     "status": "formal",
     "aliases": []
   },
@@ -16768,6 +16294,14 @@
     "aliases": [
       "Rock as type of Christ"
     ]
+  },
+  "神住在人間": {
+    "path": "link_folder/神學/神住在人間.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神住在人間",
+    "status": "formal",
+    "aliases": []
   },
   "神作為賜福的源頭": {
     "path": "link_folder/神學/神作為賜福的源頭.md",
@@ -17353,14 +16887,6 @@
     "status": "formal",
     "aliases": []
   },
-  "祭司": {
-    "path": "link_folder/神學/祭司.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "祭司",
-    "status": "formal",
-    "aliases": []
-  },
   "祭司的國度": {
     "path": "link_folder/神學/祭司的國度.md",
     "type": "神學",
@@ -17371,22 +16897,6 @@
       "kingdom of priests",
       "君尊的祭司"
     ]
-  },
-  "祭司職分": {
-    "path": "link_folder/神學/祭司職分.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "祭司職分",
-    "status": "formal",
-    "aliases": []
-  },
-  "祭壇": {
-    "path": "link_folder/神學/祭壇.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "祭壇",
-    "status": "formal",
-    "aliases": []
   },
   "祭壇敬拜": {
     "path": "link_folder/神學/祭壇敬拜.md",
@@ -17932,22 +17442,6 @@
       "三樣情慾"
     ]
   },
-  "膏油": {
-    "path": "link_folder/神學/膏油.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "膏油",
-    "status": "formal",
-    "aliases": []
-  },
-  "膏立": {
-    "path": "link_folder/神學/膏立.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "膏立",
-    "status": "formal",
-    "aliases": []
-  },
   "自潔": {
     "path": "link_folder/神學/自潔.md",
     "type": "神學",
@@ -18209,20 +17703,12 @@
     "status": "formal",
     "aliases": []
   },
-  "贖罪": {
-    "path": "link_folder/神學/贖罪.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "贖罪",
-    "status": "formal",
-    "aliases": []
-  },
   "贖罪祭": {
     "path": "link_folder/神學/贖罪祭.md",
     "type": "神學",
     "secondary_types": [],
     "title": "贖罪祭",
-    "status": "formal",
+    "status": "candidate",
     "aliases": []
   },
   "赤身露體與羞恥": {
@@ -18304,14 +17790,6 @@
       "重生得救"
     ]
   },
-  "銅祭壇": {
-    "path": "link_folder/神學/銅祭壇.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "銅祭壇",
-    "status": "formal",
-    "aliases": []
-  },
   "除了我以外你不可有別的神": {
     "path": "link_folder/神學/除了我以外你不可有別的神.md",
     "type": "神學",
@@ -18346,22 +17824,6 @@
       "除掉偶像",
       "除去外邦神"
     ]
-  },
-  "陳設餅": {
-    "path": "link_folder/神學/陳設餅.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "陳設餅",
-    "status": "formal",
-    "aliases": []
-  },
-  "陳設餅桌子": {
-    "path": "link_folder/神學/陳設餅桌子.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "陳設餅桌子",
-    "status": "formal",
-    "aliases": []
   },
   "雅各以掃和好": {
     "path": "link_folder/神學/雅各以掃和好.md",
@@ -18456,14 +17918,6 @@
       "饒恕和好",
       "復和"
     ]
-  },
-  "香": {
-    "path": "link_folder/神學/香.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "香",
-    "status": "formal",
-    "aliases": []
   },
   "馨香之氣": {
     "path": "link_folder/神學/馨香之氣.md",
@@ -20635,6 +20089,9 @@
   "Manna": {
     "alias_of": "嗎哪"
   },
+  "基路伯": {
+    "alias_of": "基路伯（施恩座）"
+  },
   "宗族方言地土邦國": {
     "alias_of": "宗族方言地土地與邦國"
   },
@@ -20659,6 +20116,12 @@
   "崇拜": {
     "alias_of": "敬拜"
   },
+  "蔽罪座": {
+    "alias_of": "施恩座"
+  },
+  "憐恤座": {
+    "alias_of": "施恩座"
+  },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
@@ -20674,6 +20137,12 @@
   "God's provision": {
     "alias_of": "神的供應"
   },
+  "法櫃": {
+    "alias_of": "約櫃"
+  },
+  "見證的櫃": {
+    "alias_of": "約櫃"
+  },
   "Obedience brings healing": {
     "alias_of": "聽命順從蒙醫治"
   },
@@ -20682,6 +20151,21 @@
   },
   "公開昭雪": {
     "alias_of": "遮羞"
+  },
+  "金燈檯": {
+    "alias_of": "金燈臺"
+  },
+  "燈臺": {
+    "alias_of": "金燈臺"
+  },
+  "燈檯": {
+    "alias_of": "金燈臺"
+  },
+  "陳設餅的桌子": {
+    "alias_of": "陳設餅桌子"
+  },
+  "擺陳設餅的桌子": {
+    "alias_of": "陳設餅桌子"
   },
   "Elim oasis": {
     "alias_of": "以琳綠洲"
@@ -21061,6 +20545,9 @@
   "Titus 1:5-9 Elder qualifications": {
     "alias_of": "多1：5-9 長老資格"
   },
+  "來8:5": {
+    "alias_of": "天上事的形狀和影像（來8：5）"
+  },
   "太十二34-37": {
     "alias_of": "太12：34-37"
   },
@@ -21177,6 +20664,9 @@
   },
   "希伯來書11章摩西被藏": {
     "alias_of": "摩西因信被藏三個月"
+  },
+  "出24:15-18": {
+    "alias_of": "摩西在山上四十晝夜（出24：15-18）"
   },
   "掃羅認罪": {
     "alias_of": "撒母耳記上 15-24（掃羅認罪）"
@@ -21639,6 +21129,9 @@
   },
   "雅弗分享閃的福分": {
     "alias_of": "雅弗住在閃的帳棚"
+  },
+  "來9:8-9": {
+    "alias_of": "頭一層帳幕作現今的表樣（來9：8-9）"
   },
   "馬太福音19章婚姻": {
     "alias_of": "馬太福音19章婚姻不可分開"
@@ -22186,6 +21679,15 @@
   "法勒就是分的意思": {
     "alias_of": "法勒名字與分地"
   },
+  "法版": {
+    "alias_of": "法版（edut）"
+  },
+  "見證版": {
+    "alias_of": "法版（edut）"
+  },
+  "石版": {
+    "alias_of": "法版（edut）"
+  },
   "hard heart three Hebrew words": {
     "alias_of": "法老心剛硬三字"
   },
@@ -22246,11 +21748,20 @@
   "試探": {
     "alias_of": "瑪撒（ temptation ）"
   },
+  "皂莢木": {
+    "alias_of": "皂莢木（atzei shittim）"
+  },
   "監/監牢/坑": {
     "alias_of": "監_坑_地牢_dungeon"
   },
   "推磨的婢女": {
     "alias_of": "磨子後的婢女"
+  },
+  "禮物": {
+    "alias_of": "禮物（terumah）"
+  },
+  "奉獻": {
+    "alias_of": "禮物（terumah）"
   },
   "Meribah": {
     "alias_of": "米利巴（ strife ）"
