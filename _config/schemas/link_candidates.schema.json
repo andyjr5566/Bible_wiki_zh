@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes.scripture/schemas/link_candidates.schema.json",
+  "title": "章節 link candidates payload",
+  "description": "本章由經文與有效 raw text 觸發的候選節點。取代手寫 link_candidates.md；util/resolve_link_candidates.py 讀本檔（或舊 .md）與全域 index 比對，產生 link_plan（A-E 分類）。name 不得含檔案系統不安全字元；type 應為 link_folder 合法分類（實際比對在 resolver 與 validate_knowledge_base）。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["book", "chapter", "candidates"],
+  "properties": {
+    "book": {"type": "string", "description": "書卷標準名，須在 _config/bible_books.json 內。"},
+    "chapter": {"type": "integer", "minimum": 1, "description": "章號阿拉伯數字。"},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "type"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1, "description": "條目完整名稱；同名不同實體須帶最小穩定限定詞。禁止 / \\ < > ： \" | ? *。"},
+          "type": {"type": "string", "minLength": 1, "description": "建議主分類，須為 link_folder 合法分類名。"},
+          "section": {"type": "string", "description": "選填：人類閱讀用的分組標題，不必等於實際主分類。"},
+          "evidence": {"type": "string", "description": "選填：觸發依據／稽核線索，歧義或分類不直觀時填寫。"},
+          "line": {"type": "integer", "minimum": 1, "description": "選填：來源行號；省略則以清單位置作審計參考。"}
+        }
+      }
+    }
+  }
+}

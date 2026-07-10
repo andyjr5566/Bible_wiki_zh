@@ -71,13 +71,11 @@ def homonym_options(name, homonyms):
     return None, []
 
 
-def load_candidates(book, chapter, root=ROOT):
-    path = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "link_candidates.md"
-    if not path.exists():
-        raise FileNotFoundError(f"link_candidates.md 不存在：{path}")
+def parse_candidates_md(text):
+    """解析手寫 link_candidates.md（舊格式）。"""
     candidates = []
     current_section = None
-    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+    for line_number, line in enumerate(text.splitlines(), 1):
         section = re.match(r"^##\s+(.+)", line)
         if section:
             current_section = section.group(1).strip()
@@ -94,6 +92,49 @@ def load_candidates(book, chapter, root=ROOT):
         elif re.match(r"^\s*-\s+\S", line):
             print(f"⚠️ 無法解析候選（第 {line_number} 行）：{line.strip()}")
     return candidates
+
+
+def parse_candidates_yaml(data):
+    """解析程式產生的 link_candidates.yaml（新格式）。
+
+    產出與 parse_candidates_md 完全相同的候選字典結構，讓 resolve() 對兩種
+    來源產生一致的 link plan。
+    """
+    if not isinstance(data, dict):
+        raise ValueError("link_candidates.yaml 必須是 mapping")
+    items = data.get("candidates", [])
+    if not isinstance(items, list):
+        raise ValueError("link_candidates.yaml 的 candidates 必須是 list")
+    candidates = []
+    for position, item in enumerate(items, 1):
+        if not isinstance(item, dict):
+            raise ValueError(f"candidates[{position - 1}] 必須是 mapping")
+        name = str(item.get("name", "")).strip()
+        suggested = str(item.get("type", item.get("suggested_type", ""))).strip()
+        if not name or not suggested:
+            raise ValueError(f"candidates[{position - 1}] 缺少 name 或 type")
+        candidates.append({
+            "name": name,
+            "suggested_type": suggested,
+            "evidence": str(item.get("evidence", "")).strip(),
+            "section": item.get("section"),
+            "line_number": item.get("line", position),
+        })
+    return candidates
+
+
+def load_candidates(book, chapter, root=ROOT):
+    """優先讀 link_candidates.yaml，否則沿用舊的 link_candidates.md。"""
+    base = book_directory(root, book) / ".tmp" / f"第{chapter}章"
+    yaml_path = base / "link_candidates.yaml"
+    md_path = base / "link_candidates.md"
+    if yaml_path.exists():
+        return parse_candidates_yaml(
+            yaml.safe_load(yaml_path.read_text(encoding="utf-8")) or {}
+        )
+    if md_path.exists():
+        return parse_candidates_md(md_path.read_text(encoding="utf-8"))
+    raise FileNotFoundError(f"link_candidates.yaml／.md 都不存在：{base}")
 
 
 def _canonical_entry(entry, index):
@@ -256,6 +297,59 @@ def write_plan(plan, book, chapter, root=ROOT):
     return output
 
 
+PLAN_SECTIONS = (
+    "A_use_directly", "B_needs_update", "C_new_formal", "D_new_candidate", "E_skip"
+)
+
+
+def build_plan_document(plan, book, chapter):
+    """把 resolve() 結果整理成穩定、可被程式消費的 link_plan.yaml 結構。
+
+    不含隨來源格式變動的 line_number；相同分類的候選在 md／yaml 兩種來源下
+    產出的文件因此完全一致。
+    """
+    document = {"book": book, "chapter": int(chapter)}
+    for key in PLAN_SECTIONS:
+        entries = []
+        for item in plan[key]:
+            record = {
+                "name": item["name"],
+                "suggested_type": item["suggested_type"],
+            }
+            if item.get("evidence"):
+                record["evidence"] = item["evidence"]
+            if key in {"A_use_directly", "B_needs_update"}:
+                record["match_type"] = item.get("match_type")
+                record["existing_title"] = item.get("existing_title")
+                record["existing_path"] = item.get("existing_path")
+            elif key == "C_new_formal":
+                record["target_path"] = (
+                    f"link_folder/{item['suggested_type']}/{item['name']}.md"
+                )
+            elif key == "D_new_candidate":
+                if item.get("match_type"):
+                    record["match_type"] = item["match_type"]
+                if item.get("note"):
+                    record["note"] = item["note"]
+            entries.append(record)
+        document[key] = entries
+    return document
+
+
+def write_plan_yaml(plan, book, chapter, root=ROOT):
+    output = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "link_plan.yaml"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(
+        yaml.safe_dump(
+            build_plan_document(plan, book, chapter),
+            allow_unicode=True, sort_keys=False,
+        ),
+        encoding="utf-8",
+    )
+    print(f"✅ link plan (yaml) 已建立：{output}")
+    return output
+
+
 def main():
     if len(sys.argv) != 3:
         print("用法：python util/resolve_link_candidates.py <書卷名> <章>")
@@ -267,6 +361,7 @@ def main():
         candidates = load_candidates(book, chapter)
         plan = resolve(candidates, index, book, chapter, homonyms=homonyms)
         write_plan(plan, book, chapter)
+        write_plan_yaml(plan, book, chapter)
     except (FileNotFoundError, ValueError, json.JSONDecodeError) as exc:
         print(f"❌ {exc}")
         return 1
