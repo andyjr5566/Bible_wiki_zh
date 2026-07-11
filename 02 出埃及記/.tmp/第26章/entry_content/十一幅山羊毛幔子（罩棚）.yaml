@@ -1,0 +1,27 @@
+name: 十一幅山羊毛幔子（罩棚）
+type: 主題
+secondary_types: []
+aliases:
+- 山羊毛幔子
+- 罩棚
+status: formal
+definition: 帳幕的第一層覆蓋物，由十一幅山羊毛織成的幔子組成，分為五幅與六幅相連，以銅鉤相連成一片，作為帳幕的罩棚。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 用山羊毛織十一幅幔子作為帳幕以上的罩棚，以五十個銅鉤相連。
+  relation: 罩棚垂下的餘幅遮蓋帳幕後頭與兩旁，形成保護層。
+related_entries:
+- 五十個銅鉤
+- 十幅幔子（內層幕幔）
+- 會幕（帳幕整體）
+sources:
+- 'CT: 出埃及記第26章經文（https://www.chinesetoolz.com/bible/eb/2/26.html）'
+- 'GT: Exodus 26 — 山羊毛幔子（https://biblehub.com/exodus/26.htm）'
+- 'KC: Exodus 26 — 罩棚結構（https://biblehub.com/study/exodus/26.htm）'
+- 'BH: Exodus 26 — 山羊毛罩棚（https://biblehub.com/study/exodus/26.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

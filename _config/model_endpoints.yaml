@@ -7,7 +7,7 @@
 #   python util/model_client.py test           # 對 active 端點做一次煙霧測試
 #
 # 也可用環境變數臨時覆蓋，不改檔：
-#   MODEL_ENDPOINT=local-4001 python util/run_chapter.py 出埃及記 27
+#   MODEL_ENDPOINT=local-4000 python util/run_chapter.py 出埃及記 27
 #
 # 端點 type：
 #   openai —— OpenAI 相容 HTTP（如本機 litellm proxy）；需 base_url 與 model
@@ -21,12 +21,12 @@ endpoints:
   local-4000:
     type: openai
     base_url: http://localhost:4000/v1
-    model: deepseek-ai/deepseek-v4-pro
+    model: z-ai/glm-5.2
 
   local-4001:
     type: openai
     base_url: http://localhost:4001/v1
-    model: openai/gpt-oss-120b
+    model: nvidia/nemotron-3-ultra-550b-a55b:free
 
   claude-cli:
     type: claude

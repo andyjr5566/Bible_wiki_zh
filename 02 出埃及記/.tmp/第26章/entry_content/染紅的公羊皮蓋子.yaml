@@ -1,0 +1,27 @@
+name: 染紅的公羊皮蓋子
+type: 主題
+secondary_types: []
+aliases:
+- 公羊皮蓋
+- 罩棚的蓋
+status: formal
+definition: 帳幕罩棚上的覆蓋物之一，用染紅的公羊皮製成，作為罩棚的蓋，提供額外的保護與遮蔽。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 用染紅的公羊皮做罩棚的蓋。
+  relation: 作為帳幕覆蓋層的一部分，與海狗皮頂蓋共同保護罩棚。
+related_entries:
+- 海狗皮頂蓋
+- 十一幅山羊毛幔子（罩棚）
+- 會幕（帳幕整體）
+sources:
+- 'CT: 出埃及記第26章經文（https://www.chinesetoolz.com/bible/eb/2/26.html）'
+- 'GT: Exodus 26 — 染紅公羊皮（https://biblehub.com/exodus/26.htm）'
+- 'KC: Exodus 26 — 公羊皮蓋（https://biblehub.com/study/exodus/26.htm）'
+- 'BH: Exodus 26 — 染紅的公羊皮（https://biblehub.com/study/exodus/26.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

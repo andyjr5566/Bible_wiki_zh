@@ -1,0 +1,28 @@
+name: 銀座（帶卯的銀座）
+type: 主題
+secondary_types: []
+aliases:
+- 帶卯的銀座
+- 銀座
+status: formal
+definition: 指用銀子鑄造、帶有榫眼（卯）的座基，用以承接皂莢木豎板下端的兩榫（十榫），使板能穩固立起。出埃及記 26 章記載南面二十塊板用四十個銀座（v.19）、北面二十塊板用四十個銀座（v.21）、西面六塊板加兩塊拐角板共八塊板用十六個銀座（v.25），以及內幔四根柱子各安在一個銀座上（v.32）。每塊板兩榫對應兩卯，銀座為帳幕結構提供堅實的地基。
+development: ''
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 規定南、北、西三面豎板及內幔柱子所需的帶卯銀座數量與安裝方式。
+  relation: 為會幕框架與內幔柱提供穩固地基，體現聖所根基的貴重與堅固。
+related_entries:
+- 皂莢木豎板
+- 拐角板（雙板）
+- 內幔（隔聖所至聖所的幔子）
+- 四根包金柱子（內幔柱）
+- 銀子
+- 會幕（帳幕整體）
+sources:
+- 'BH: Exodus 26 — 銀座的數量與功能（https://biblehub.com/exodus/26.htm）'
+created_from: 出埃及記 26
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

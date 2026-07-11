@@ -1,0 +1,32 @@
+name: 十幅幔子（內層幕幔）
+type: 主題
+secondary_types: []
+aliases:
+- 十幅幔子
+- 內層幕幔
+- 帳幕幔子
+status: formal
+definition: 會幕最內層的覆蓋，由十幅幔子組成，每幅長二十八肘、寬四肘，用撚的細麻與藍色、紫色、朱紅色線織成，並繡上基路伯。五幅相連成兩組，再以五十個金鉤透過藍色鈕扣連結，合成一個完整的帳幕（出26:1-6）。
+development: 本章詳細規範內層幔子的材質、尺寸、連接方式，強調其為會幕核心結構，將聖所與至聖所包覆其中，象徵神同在的遮蓋與榮耀。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 規範十幅幔子的材質、尺寸、繡工、連接細節，構成會幕的第一層覆蓋。
+  relation: 作為會幕最內層幔子，直接覆蓋聖所與至聖所，彰顯神同在的榮耀與分別為聖。
+related_entries:
+- 撚的細麻
+- 藍色、紫色、朱紅色線
+- 基路伯（施恩座）
+- 五十個金鉤
+- 藍色鈕扣
+- 會幕（帳幕整體）
+- 聖所
+- 至聖所
+sources:
+- 'BH: 出埃及記 26:1-6 — 十幅幔子的材質、尺寸與連接規範（無URL）'
+created_from: exodus_26
+category: 主題
+trigger_sources:
+- exodus_26
+current_data: {}
+pending: false

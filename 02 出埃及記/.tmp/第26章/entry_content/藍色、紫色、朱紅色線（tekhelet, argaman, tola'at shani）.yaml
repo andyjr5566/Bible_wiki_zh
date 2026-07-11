@@ -1,0 +1,32 @@
+name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+type: 主題
+secondary_types: []
+aliases:
+- 藍色線
+- 紫色線
+- 朱紅色線
+- 三色線
+- 彩線
+status: formal
+definition: 會幕織物使用的三種染色線：藍色（tekhelet，取自蝸牛分泌物）、紫色（argaman，同源料不同工藝）、朱紅色（tola'at shani，蚧蟲染料）。三色線與撚的細麻結合，織製內層幔子、內幔、門簾，並繡上基路伯（出26:1,
+  31, 36）。
+development: 本章三處幔子皆採用此三色線配搭，構成會幕視覺核心：藍色指向天上/神聖，紫色象徵王權/榮耀，朱紅色預表贖罪/生命，三色交織彰顯神榮耀同在的屬天實體。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 內層十幅幔子、內幔、門簾均以三色線配合細麻織製，並繡基路伯。
+  relation: 三色線貫穿會幕所有進入點與分隔幔子，標示聖所空間的屬天屬性與救贖意涵。
+related_entries:
+- 十幅幔子（內層幕幔）
+- 撚的細麻
+- 內幔（隔聖所至聖所的幔子）
+- 帳幕門簾
+- 基路伯（施恩座）
+sources:
+- 'BH: 出埃及記 26:1, 31, 36 — 三色線於三處幔子的織製規範（無URL）'
+created_from: exodus_26
+category: 主題
+trigger_sources:
+- exodus_26
+current_data: {}
+pending: false

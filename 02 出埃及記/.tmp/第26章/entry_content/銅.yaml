@@ -1,0 +1,25 @@
+name: 銅
+type: 主題
+secondary_types: []
+aliases:
+- 青銅
+status: formal
+definition: '銅在本章中主要用於製作會幕外層結構的連接件與支撐座。具體應用包括： 製作五十個銅鉤，鉤在鈕扣中使山羊毛罩棚連成一個；以及為帳幕門簾的五根柱子，
+  用銅鑄造五個帶卯的座，作為門簾柱子的根基。
+
+  '
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 記載銅用於製作罩棚的五十個銅鉤，以及門簾柱子的五個帶卯銅座。
+  relation: 銅作為堅固的金屬材質，用於外層結構的穩固連接與門簾柱子的根基，象徵堅定的支撐。
+related_entries:
+- 五十個銅鉤
+- 五根包金柱子（門簾柱）
+sources:
+- 'CT: 出埃及記第26章材質記載（https://www.chinesetoolsonline.com/bible/cuv/exodus/26.html）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

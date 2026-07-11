@@ -1,0 +1,21 @@
+name: 聖所
+type: 地點
+secondary_types: []
+aliases:
+- 帳幕的北面
+- 帳幕的南面
+status: formal
+definition: 聖所是帳幕內部的空間，由內幔與至聖所隔開。本章指出陳設餅桌子安在聖所的北面，金燈臺安在聖所的南面，兩者彼此相對，作為祭司日常事奉與點燈供餅之處。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 指示陳設餅桌子與金燈臺分別安放於聖所的北面與南面，彼此相對。
+  relation: 聖所的空間配置彰顯了神面前持續的供應（餅）與光照（燈臺）。
+related_entries:
+- 至聖所
+- 內幔（隔聖所至聖所的幔子）
+- 陳設餅桌子
+- 金燈臺
+- 帳幕門簾
+sources:
+- '本章經文: 出埃及記 第26章（https://www.biblegateway.com/passage/?search=Exodus+26&version=CUV）'

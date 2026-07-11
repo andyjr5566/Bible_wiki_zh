@@ -1,0 +1,25 @@
+name: 五十個銅鉤
+type: 主題
+secondary_types: []
+aliases:
+- 銅鉤
+status: formal
+definition: 用來連接山羊毛罩棚兩組幔子（五幅連成一幅與六幅連成一幅）的鉤子，使罩棚連成一個整體。
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 在罩棚相連的幔子末幅邊上做五十個鈕扣，並做五十個銅鉤鉤在鈕扣中。
+  relation: 銅鉤使罩棚連成一個，象徵外層覆蓋物的完整與堅固連結。
+related_entries:
+- 十一幅山羊毛幔子（罩棚）
+- 銅
+sources:
+- 'CT: 出埃及記第26章經文（https://www.chinesetoolz.com/bible/eb/2/26.html）'
+- 'GT: Exodus 26 — 銅鉤（https://biblehub.com/exodus/26.htm）'
+- 'KC: Exodus 26 — 銅鉤連接（https://biblehub.com/study/exodus/26.htm）'
+- 'BH: Exodus 26 — 銅鉤（https://biblehub.com/study/exodus/26.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

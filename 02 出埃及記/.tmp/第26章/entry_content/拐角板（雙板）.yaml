@@ -1,0 +1,25 @@
+name: 拐角板（雙板）
+type: 主題
+secondary_types: []
+aliases:
+- 雙板
+- 拐角板
+status: formal
+definition: 指帳幕西面（後面）兩角特製的雙層豎板。出埃及記 26 章規定西面作六塊板，另加兩塊拐角板（v.22-23），這兩塊板下半截是雙的（雙層），上半截合成一整塊，直頂到第一個環子（v.24），兩塊拐角板共用十六個銀座（v.25），加強轉角結構的穩固度。
+development: ''
+accumulations:
+- book: 出埃及記
+  chapter: 26
+  summary: 描述西面兩角拐角板的雙層構造、與環子銜接及銀座數量。
+  relation: 解決帳幕轉角受力問題，確保西牆與南北牆連接處的堅固。
+related_entries:
+- 皂莢木豎板
+- 銀座（帶卯的銀座）
+- 會幕（帳幕整體）
+sources:
+- 'BH: Exodus 26 — 拐角板的特殊構造（https://biblehub.com/exodus/26.htm）'
+created_from: 出埃及記 26
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

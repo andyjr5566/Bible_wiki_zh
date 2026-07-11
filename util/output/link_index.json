@@ -1,4 +1,35 @@
 {
+  "五十個金鉤（vavei zahav）": {
+    "path": "link_folder/主題/五十個金鉤（vavei zahav）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "五十個金鉤（vavei zahav）",
+    "status": "formal",
+    "aliases": [
+      "金鉤",
+      "五十金鉤"
+    ]
+  },
+  "五十個銅鉤": {
+    "path": "link_folder/主題/五十個銅鉤.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "五十個銅鉤",
+    "status": "formal",
+    "aliases": [
+      "銅鉤"
+    ]
+  },
+  "五根包金柱子（門簾柱）": {
+    "path": "link_folder/主題/五根包金柱子（門簾柱）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "五根包金柱子（門簾柱）",
+    "status": "formal",
+    "aliases": [
+      "門簾柱"
+    ]
+  },
   "亞伯拉罕分產": {
     "path": "link_folder/主題/亞伯拉罕分產.md",
     "type": "主題",
@@ -169,15 +200,15 @@
       "nabi"
     ]
   },
-  "內幔": {
-    "path": "link_folder/主題/內幔.md",
+  "內幔（隔聖所至聖所的幔子）": {
+    "path": "link_folder/主題/內幔（隔聖所至聖所的幔子）.md",
     "type": "主題",
     "secondary_types": [],
-    "title": "內幔",
+    "title": "內幔（隔聖所至聖所的幔子）",
     "status": "formal",
     "aliases": [
       "幔子",
-      "帳幕的幔子"
+      "內幔"
     ]
   },
   "公義與真理": {
@@ -225,6 +256,29 @@
     "status": "formal",
     "aliases": []
   },
+  "十一幅山羊毛幔子（罩棚）": {
+    "path": "link_folder/主題/十一幅山羊毛幔子（罩棚）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "十一幅山羊毛幔子（罩棚）",
+    "status": "formal",
+    "aliases": [
+      "山羊毛幔子",
+      "罩棚"
+    ]
+  },
+  "十幅幔子（內層幕幔）": {
+    "path": "link_folder/主題/十幅幔子（內層幕幔）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "十幅幔子（內層幕幔）",
+    "status": "formal",
+    "aliases": [
+      "十幅幔子",
+      "內層幕幔",
+      "帳幕幔子"
+    ]
+  },
   "千萬人的母": {
     "path": "link_folder/主題/千萬人的母.md",
     "type": "主題",
@@ -253,6 +307,16 @@
     "status": "formal",
     "aliases": [
       "Manna"
+    ]
+  },
+  "四根包金柱子（內幔柱）": {
+    "path": "link_folder/主題/四根包金柱子（內幔柱）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "四根包金柱子（內幔柱）",
+    "status": "formal",
+    "aliases": [
+      "內幔柱"
     ]
   },
   "基土拉的地位": {
@@ -378,6 +442,16 @@
     "status": "formal",
     "aliases": []
   },
+  "帳幕門簾": {
+    "path": "link_folder/主題/帳幕門簾.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "帳幕門簾",
+    "status": "formal",
+    "aliases": [
+      "門簾"
+    ]
+  },
   "帳棚與祭壇": {
     "path": "link_folder/主題/帳棚與祭壇.md",
     "type": "主題",
@@ -488,6 +562,17 @@
     "status": "formal",
     "aliases": []
   },
+  "拐角板（雙板）": {
+    "path": "link_folder/主題/拐角板（雙板）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "拐角板（雙板）",
+    "status": "formal",
+    "aliases": [
+      "雙板",
+      "拐角板"
+    ]
+  },
   "挖井": {
     "path": "link_folder/主題/挖井.md",
     "type": "主題",
@@ -555,6 +640,28 @@
     "status": "candidate",
     "aliases": []
   },
+  "會幕（帳幕整體）": {
+    "path": "link_folder/主題/會幕（帳幕整體）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "會幕（帳幕整體）",
+    "status": "formal",
+    "aliases": [
+      "帳幕",
+      "會幕"
+    ]
+  },
+  "染紅的公羊皮蓋子": {
+    "path": "link_folder/主題/染紅的公羊皮蓋子.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "染紅的公羊皮蓋子",
+    "status": "formal",
+    "aliases": [
+      "公羊皮蓋",
+      "罩棚的蓋"
+    ]
+  },
   "樹木": {
     "path": "link_folder/主題/樹木.md",
     "type": "主題",
@@ -594,6 +701,17 @@
     "title": "求告耶和華的名",
     "status": "formal",
     "aliases": []
+  },
+  "海狗皮頂蓋": {
+    "path": "link_folder/主題/海狗皮頂蓋.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "海狗皮頂蓋",
+    "status": "formal",
+    "aliases": [
+      "海狗皮",
+      "罩棚上的頂蓋"
+    ]
   },
   "清早起來": {
     "path": "link_folder/主題/清早起來.md",
@@ -664,6 +782,16 @@
     "title": "百倍收成",
     "status": "formal",
     "aliases": []
+  },
+  "皂莢木豎板": {
+    "path": "link_folder/主題/皂莢木豎板.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "皂莢木豎板",
+    "status": "formal",
+    "aliases": [
+      "帳幕的豎板"
+    ]
   },
   "盟約": {
     "path": "link_folder/主題/盟約.md",
@@ -885,6 +1013,32 @@
     "status": "formal",
     "aliases": []
   },
+  "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）": {
+    "path": "link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）",
+    "status": "formal",
+    "aliases": [
+      "藍色線",
+      "紫色線",
+      "朱紅色線",
+      "三色線",
+      "彩線"
+    ]
+  },
+  "藍色鈕扣（lula'ot tekhelet）": {
+    "path": "link_folder/主題/藍色鈕扣（lula'ot tekhelet）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "藍色鈕扣（lula'ot tekhelet）",
+    "status": "formal",
+    "aliases": [
+      "藍色鈕扣",
+      "鈕扣",
+      "幔子鈕扣"
+    ]
+  },
   "虹": {
     "path": "link_folder/主題/虹.md",
     "type": "主題",
@@ -1002,6 +1156,17 @@
     "status": "formal",
     "aliases": []
   },
+  "金子（包金）": {
+    "path": "link_folder/主題/金子（包金）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "金子（包金）",
+    "status": "formal",
+    "aliases": [
+      "金",
+      "包金"
+    ]
+  },
   "金燈臺": {
     "path": "link_folder/主題/金燈臺.md",
     "type": "主題",
@@ -1019,8 +1184,29 @@
     "type": "主題",
     "secondary_types": [],
     "title": "銀子",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
+  },
+  "銀座（帶卯的銀座）": {
+    "path": "link_folder/主題/銀座（帶卯的銀座）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "銀座（帶卯的銀座）",
+    "status": "formal",
+    "aliases": [
+      "帶卯的銀座",
+      "銀座"
+    ]
+  },
+  "銅": {
+    "path": "link_folder/主題/銅.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "銅",
+    "status": "formal",
+    "aliases": [
+      "青銅"
+    ]
   },
   "長子名分": {
     "path": "link_folder/主題/長子名分.md",
@@ -1030,15 +1216,15 @@
     "status": "formal",
     "aliases": []
   },
-  "門簾": {
-    "path": "link_folder/主題/門簾.md",
+  "閂（橫閂）": {
+    "path": "link_folder/主題/閂（橫閂）.md",
     "type": "主題",
     "secondary_types": [],
-    "title": "門簾",
+    "title": "閂（橫閂）",
     "status": "formal",
     "aliases": [
-      "帳幕的門簾",
-      "簾子"
+      "橫閂",
+      "閂"
     ]
   },
   "關懷弱勢": {
@@ -3914,16 +4100,6 @@
       "Acts 6:1-7 Choose deacons"
     ]
   },
-  "我是門（約10：7-9）": {
-    "path": "link_folder/互文/我是門（約10：7-9）.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "我是門（約10：7-9）",
-    "status": "formal",
-    "aliases": [
-      "我是門"
-    ]
-  },
   "挪亞是傳義道者": {
     "path": "link_folder/互文/挪亞是傳義道者.md",
     "type": "互文",
@@ -4500,16 +4676,6 @@
     "aliases": [
       "路15:11-32",
       "浪子回頭"
-    ]
-  },
-  "無佳形美容（賽53：2-3）": {
-    "path": "link_folder/互文/無佳形美容（賽53：2-3）.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "無佳形美容（賽53：2-3）",
-    "status": "formal",
-    "aliases": [
-      "無佳形美容"
     ]
   },
   "猶1：8": {
@@ -9680,6 +9846,16 @@
     "status": "formal",
     "aliases": []
   },
+  "撚的細麻": {
+    "path": "link_folder/原文/撚的細麻.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "撚的細麻",
+    "status": "formal",
+    "aliases": [
+      "撚的細麻"
+    ]
+  },
   "收藏（asaph）": {
     "path": "link_folder/原文/收藏（asaph）.md",
     "type": "原文",
@@ -9929,17 +10105,6 @@
     "title": "流珥名字含義",
     "status": "formal",
     "aliases": []
-  },
-  "海狗皮（塔哈皮）": {
-    "path": "link_folder/原文/海狗皮（塔哈皮）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "海狗皮（塔哈皮）",
-    "status": "formal",
-    "aliases": [
-      "海狗皮",
-      "塔哈皮"
-    ]
   },
   "溫泉或騾子（創36：24）": {
     "path": "link_folder/原文/溫泉或騾子（創36：24）.md",
@@ -11879,6 +12044,16 @@
     "status": "formal",
     "aliases": []
   },
+  "聖所": {
+    "path": "link_folder/地點/聖所.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "聖所",
+    "status": "formal",
+    "aliases": [
+      "帳幕的北面與南面空間"
+    ]
+  },
   "聖殿": {
     "path": "link_folder/地點/聖殿.md",
     "type": "地點",
@@ -11886,6 +12061,16 @@
     "title": "聖殿",
     "status": "candidate",
     "aliases": []
+  },
+  "至聖所": {
+    "path": "link_folder/地點/至聖所.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "至聖所",
+    "status": "formal",
+    "aliases": [
+      "幔子內"
+    ]
   },
   "蘭塞": {
     "path": "link_folder/地點/蘭塞.md",
@@ -20132,6 +20317,18 @@
       "餅和酒預表"
     ]
   },
+  "金鉤": {
+    "alias_of": "五十個金鉤（vavei zahav）"
+  },
+  "五十金鉤": {
+    "alias_of": "五十個金鉤（vavei zahav）"
+  },
+  "銅鉤": {
+    "alias_of": "五十個銅鉤"
+  },
+  "門簾柱": {
+    "alias_of": "五根包金柱子（門簾柱）"
+  },
   "亞伯拉罕的代求": {
     "alias_of": "亞伯拉罕為所多瑪代求"
   },
@@ -20145,13 +20342,31 @@
     "alias_of": "先知"
   },
   "幔子": {
-    "alias_of": "內幔"
+    "alias_of": "內幔（隔聖所至聖所的幔子）"
   },
-  "帳幕的幔子": {
-    "alias_of": "內幔"
+  "內幔": {
+    "alias_of": "內幔（隔聖所至聖所的幔子）"
+  },
+  "山羊毛幔子": {
+    "alias_of": "十一幅山羊毛幔子（罩棚）"
+  },
+  "罩棚": {
+    "alias_of": "十一幅山羊毛幔子（罩棚）"
+  },
+  "十幅幔子": {
+    "alias_of": "十幅幔子（內層幕幔）"
+  },
+  "內層幕幔": {
+    "alias_of": "十幅幔子（內層幕幔）"
+  },
+  "帳幕幔子": {
+    "alias_of": "十幅幔子（內層幕幔）"
   },
   "Manna": {
     "alias_of": "嗎哪"
+  },
+  "內幔柱": {
+    "alias_of": "四根包金柱子（內幔柱）"
   },
   "榮耀的基路伯": {
     "alias_of": "基路伯（施恩座）"
@@ -20165,6 +20380,9 @@
   "家族語言土地國家": {
     "alias_of": "宗族方言地土地與邦國"
   },
+  "門簾": {
+    "alias_of": "帳幕門簾"
+  },
   "恩典與律法": {
     "alias_of": "律法與恩典"
   },
@@ -20176,6 +20394,12 @@
   },
   "開玩笑": {
     "alias_of": "戲言"
+  },
+  "雙板": {
+    "alias_of": "拐角板（雙板）"
+  },
+  "拐角板": {
+    "alias_of": "拐角板（雙板）"
   },
   "worship": {
     "alias_of": "敬拜"
@@ -20192,11 +20416,32 @@
   "慈悲座": {
     "alias_of": "施恩座"
   },
+  "帳幕": {
+    "alias_of": "會幕（帳幕整體）"
+  },
+  "會幕": {
+    "alias_of": "會幕（帳幕整體）"
+  },
+  "公羊皮蓋": {
+    "alias_of": "染紅的公羊皮蓋子"
+  },
+  "罩棚的蓋": {
+    "alias_of": "染紅的公羊皮蓋子"
+  },
+  "海狗皮": {
+    "alias_of": "海狗皮頂蓋"
+  },
+  "罩棚上的頂蓋": {
+    "alias_of": "海狗皮頂蓋"
+  },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
+  },
+  "帳幕的豎板": {
+    "alias_of": "皂莢木豎板"
   },
   "covenant": {
     "alias_of": "盟約"
@@ -20216,11 +20461,41 @@
   "Obedience brings healing": {
     "alias_of": "聽命順從蒙醫治"
   },
+  "藍色線": {
+    "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
+  },
+  "紫色線": {
+    "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
+  },
+  "朱紅色線": {
+    "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
+  },
+  "三色線": {
+    "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
+  },
+  "彩線": {
+    "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
+  },
+  "藍色鈕扣": {
+    "alias_of": "藍色鈕扣（lula'ot tekhelet）"
+  },
+  "鈕扣": {
+    "alias_of": "藍色鈕扣（lula'ot tekhelet）"
+  },
+  "幔子鈕扣": {
+    "alias_of": "藍色鈕扣（lula'ot tekhelet）"
+  },
   "遮眼": {
     "alias_of": "遮羞"
   },
   "公開昭雪": {
     "alias_of": "遮羞"
+  },
+  "金": {
+    "alias_of": "金子（包金）"
+  },
+  "包金": {
+    "alias_of": "金子（包金）"
   },
   "燈臺": {
     "alias_of": "金燈臺"
@@ -20231,11 +20506,20 @@
   "七盞燈金燈臺": {
     "alias_of": "金燈臺"
   },
-  "帳幕的門簾": {
-    "alias_of": "門簾"
+  "帶卯的銀座": {
+    "alias_of": "銀座（帶卯的銀座）"
   },
-  "簾子": {
-    "alias_of": "門簾"
+  "銀座": {
+    "alias_of": "銀座（帶卯的銀座）"
+  },
+  "青銅": {
+    "alias_of": "銅"
+  },
+  "橫閂": {
+    "alias_of": "閂（橫閂）"
+  },
+  "閂": {
+    "alias_of": "閂（橫閂）"
   },
   "陳設餅的桌子": {
     "alias_of": "陳設餅桌子"
@@ -20729,9 +21013,6 @@
   "Acts 6:1-7 Choose deacons": {
     "alias_of": "徒6：1-7 選立執事"
   },
-  "我是門": {
-    "alias_of": "我是門（約10：7-9）"
-  },
   "挪亞傳義道": {
     "alias_of": "挪亞是傳義道者"
   },
@@ -20824,9 +21105,6 @@
   },
   "浪子回頭": {
     "alias_of": "浪子比喻 (路15)"
-  },
-  "無佳形美容": {
-    "alias_of": "無佳形美容（賽53：2-3）"
   },
   "箴21:1": {
     "alias_of": "王心在神手中 (箴21-1)"
@@ -21806,12 +22084,6 @@
   "剛硬三字": {
     "alias_of": "法老心剛硬三字"
   },
-  "海狗皮": {
-    "alias_of": "海狗皮（塔哈皮）"
-  },
-  "塔哈皮": {
-    "alias_of": "海狗皮（塔哈皮）"
-  },
   "nagaph": {
     "alias_of": "災殃"
   },
@@ -22228,6 +22500,12 @@
   },
   "Jordan River": {
     "alias_of": "約旦河"
+  },
+  "帳幕的北面與南面空間": {
+    "alias_of": "聖所"
+  },
+  "幔子內": {
+    "alias_of": "至聖所"
   },
   "Rameses": {
     "alias_of": "蘭塞"
