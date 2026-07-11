@@ -530,10 +530,11 @@ def chapter_content_step(ctx, plan):
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
         f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
-        f"【規則】knowledge_nodes 是「分組→節點清單」的物件，例如：\n"
+        f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
+        f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
         f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n\n"
-        f"organization（本章整理）是本章的詳盡研讀整理，要求：\n"
+        f"organization（本章整理）是一段純文字散文，不是巢狀物件或條列清單，要求：\n"
         f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
         f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
         f"- 每小節是連貫散文（不用條列），沿經文脈絡敘述並整合各來源觀點，"
@@ -541,7 +542,12 @@ def chapter_content_step(ctx, plan):
         f"- 全文合計 ≥{min_chars} 字；整合重點而非搬運來源全文，"
         f"也不得寫入來源未提及的內容。\n"
         f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
-        f"【輸出】只輸出 YAML：\n{_schema_hint('chapter_content.schema.json')}"
+        f"【輸出格式，極重要】只輸出 YAML，且 book/chapter/knowledge_nodes/organization "
+        f"必須是最上層欄位——不可在外面再包一層 chapter_content 或任何其他 key。範例：\n"
+        f"```yaml\nbook: {ctx.book}\nchapter: {ctx.chapter}\n"
+        f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n"
+        f"organization: |\n  ### 標題一（v1-6）\n  文字…\n\n  ### 標題二（v7-13）\n  文字…\n```\n"
+        f"{_schema_hint('chapter_content.schema.json')}"
     )
 
     def _normalize(payload):

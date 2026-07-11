@@ -1,0 +1,93 @@
+book: 出埃及記
+chapter: 26
+A_use_directly: []
+B_needs_update:
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 要照著在山上指示你的樣式立起帳幕，重申出25:9,40的原則並應用於帳幕的立起本身（出26:30）
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+- name: 天上真聖所（來9：23-24）
+  suggested_type: 互文
+  evidence: 山上指示的樣式對照天上真聖所的複本主題，本章應用於帳幕立起（出26:30）
+  match_type: exact
+  existing_title: 天上真聖所（來9：23-24）
+  existing_path: link_folder/互文/天上真聖所（來9：23-24）.md
+- name: 皂莢木（atzei shittim）
+  suggested_type: 原文
+  evidence: 用皂莢木做帳幕豎板、閂、內幔柱子與門簾柱子，皆包裹金子（出26:15,26,29,32,37）
+  match_type: exact
+  existing_title: 皂莢木（atzei shittim）
+  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: 把法櫃抬進幔子內，安於至聖所（出26:33）
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 把施恩座安在至聖所內的法櫃上（出26:34）
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  evidence: 把桌子安在幔子外帳幕的北面（出26:35）
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  evidence: 把燈臺安在帳幕的南面，與桌子彼此相對（出26:35）
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 會幕材料的豫表
+  suggested_type: 神學
+  evidence: 藍紫朱紅細麻、山羊毛、染紅公羊皮、海狗皮、金銀銅，各按材質再次豫表基督與教會（出26:1,7,14,19,31,36）
+  match_type: exact
+  existing_title: 會幕材料的豫表
+  existing_path: link_folder/神學/會幕材料的豫表.md
+- name: 來10：19-20
+  suggested_type: 互文
+  evidence: 幔子將聖所和至聖所隔開，把法櫃抬進幔子內，是既有條目已預告的出26:33直接應驗
+  match_type: exact
+  existing_title: 來10：19-20
+  existing_path: link_folder/互文/來10：19-20.md
+- name: 林後5：21
+  suggested_type: 互文
+  evidence: 山羊毛所織罩棚，CT/GT靈意註解明指其表徵耶穌代替人成為罪（出26:7）
+  match_type: exact
+  existing_title: 林後5：21
+  existing_path: link_folder/互文/林後5：21.md
+- name: 來10：5
+  suggested_type: 互文
+  evidence: 內幔柱子上的金鉤，CT靈意註解明指其表徵基督的身體出於神的預備（出26:32）
+  match_type: exact
+  existing_title: 來10：5
+  existing_path: link_folder/互文/來10：5.md
+C_new_formal:
+- name: 內幔
+  suggested_type: 主題
+  evidence: 藍紫朱紅細麻織成、繡上基路伯的幔子，掛在四根包金皂莢木柱上，將聖所和至聖所隔開，法櫃抬進其內（出26:31-34）；與門簾同材質但有基路伯、掛四柱銀座，兩者為不同實體
+  target_path: link_folder/主題/內幔.md
+- name: 門簾
+  suggested_type: 主題
+  evidence: 帳幕出入口的簾子，繡花手工織成，無基路伯，掛在五根包金皂莢木柱上，柱子安在銅座上（出26:36-37）；CT/GT/BH皆指其表徵基督是門
+  target_path: link_folder/主題/門簾.md
+- name: 海狗皮（塔哈皮）
+  suggested_type: 原文
+  evidence: 罩棚最外層頂蓋，呂振中譯本原文音譯「塔哈皮」，外表粗糙卻堅固耐苦（出26:14）
+  target_path: link_folder/原文/海狗皮（塔哈皮）.md
+- name: 無佳形美容（賽53：2-3）
+  suggested_type: 互文
+  evidence: KC明引賽53:2-3描述基督無佳形美容卻無人喜悅祂，對應海狗皮外表不美觀卻堅固耐苦的預表（出26:14）
+  target_path: link_folder/互文/無佳形美容（賽53：2-3）.md
+- name: 我是門（約10：7-9）
+  suggested_type: 互文
+  evidence: CT/GT/BH三來源皆指帳幕門簾預表約10:7,9「我是羊的門」「我就是門」，唯獨藉此門可進入蒙恩（出26:36）
+  target_path: link_folder/互文/我是門（約10：7-9）.md
+D_new_candidate: []
+E_skip: []

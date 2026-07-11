@@ -63,6 +63,7 @@ def plan_updates(book, chapter):
 
 
 def prepare(book, chapter):
+    console.utf8_stdio()
     output = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章" / "link_updates.yaml"
     if output.exists():
         raise FileExistsError(f"{output} 已存在；避免覆蓋人工內容")
@@ -90,6 +91,7 @@ def validate_update(update):
 
 
 def apply_updates(manifest, dry_run=False):
+    console.utf8_stdio()
     data = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
     book, chapter = data.get("book"), data.get("chapter")
     if not book or not isinstance(chapter, int):
