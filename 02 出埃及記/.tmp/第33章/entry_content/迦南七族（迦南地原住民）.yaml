@@ -1,0 +1,28 @@
+name: 迦南七族（迦南地原住民）
+type: 背景
+secondary_types: []
+aliases:
+- 迦南地原住民
+- 迦南六族
+status: formal
+definition: 指迦南地的原住民，包含迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人。撒瑪利亞抄本和七十士譯本在出埃及記33章2節中加入了革迦撒人，湊足通常所稱的迦南地七族（參徒十三19）。這些群體代表著盤踞在迦南地的異教文化，神應許差遣使者在其前面攆出這些居民，領百姓到流奶與蜜之地。
+accumulations:
+- book: 出埃及記
+  chapter: 33
+  summary: 神應許差遣使者攆出迦南人、亞摩利人等六族，領百姓進入應許之地。
+  relation: 顯示神對迦南地異教文化的審判，以及祂信守對亞伯拉罕、以撒、雅各的誓約。
+related_entries:
+- 耶和華的使者
+- 亞伯拉罕
+- 以撒
+- 雅各
+sources:
+- 'BH: Exodus 33:2 — 迦南地六族的列舉與神驅逐的應許（https://biblehub.com/study/exodus/33.htm）'
+- 'CT: 出三十三2 — 攆出迦南人等六族與補充革迦撒人的註解（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT33.htm）'
+- 'GT: 出三十三2~4 — 迦南七族的記載與流奶與蜜之地（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT33.htm）'
+- 'KC: Exodus 33:2 — 神差遣使者驅逐迦南異族（https://www.kingcomments.com/en/bible-studies/Exo/33）'
+created_from: []
+category: 背景
+trigger_sources: []
+current_data: {}
+pending: false

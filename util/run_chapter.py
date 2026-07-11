@@ -579,13 +579,31 @@ def _org_requirements(verse_count):
 
     參考基準：已完成章節（出17–19）的本章整理為多個「### 段落小節」的長篇
     散文；沒有門檻時模型傾向交出三行條列（出25 第一次重做即如此）。
+    門檻只管份量，不管體裁——創8 那種散文混表格／編號清單的呈現是允許的，
+    格式隨 rawdata 的材料性質調整。
     """
     min_sections = 3 if verse_count >= 15 else 2
     min_chars = max(400, min(1500, verse_count * 40))
     return min_sections, min_chars
 
 
-def _chapter_payload_validator(verse_count):
+_ORG_WIKILINK_RE = re.compile(r"\[\[([^\]\r\n]+)\]\]")
+
+
+def _org_wikilink_targets(organization):
+    """organization 內 wiki-link 的 target 集合（去掉 |顯示詞 與 #^ 錨點）。"""
+    return {
+        re.split(r"[#^]", match.group(1).partition("|")[0], maxsplit=1)[0].strip()
+        for match in _ORG_WIKILINK_RE.finditer(organization)
+    }
+
+
+def _chapter_payload_validator(verse_count, allowed_links=None):
+    """份量門檻＋（allowed_links 給定時）wiki-link 白名單檢查。
+
+    白名單擋兩頭：連到清單外＝壞連結不得進 vault；一個連結都沒有＝
+    浪費 Obsidian 圖譜（出34 全章整理零連結的教訓）。
+    """
     min_sections, min_chars = _org_requirements(verse_count)
 
     def validate(payload):
@@ -601,9 +619,24 @@ def _chapter_payload_validator(verse_count):
             )
         if len(organization) < min_chars:
             errors.append(
-                f"organization 太薄（{len(organization)} 字）：需 ≥{min_chars} 字的"
-                f"整合性散文，逐段整合各來源重點並標明出處（CT指出…、KC指出…）"
+                f"organization 太薄（{len(organization)} 字）：需 ≥{min_chars} 字，"
+                f"逐段整合各來源重點；散文為主，"
+                f"適合對照的材料可用表格或編號清單"
             )
+        if allowed_links:
+            targets = _org_wikilink_targets(organization)
+            unknown = sorted(targets - set(allowed_links))
+            if unknown:
+                errors.append(
+                    f"organization 的 wiki-link 目標不在本章可連清單："
+                    f"{'、'.join(unknown)}——只能連本章條目的完整名稱，"
+                    f"行文用詞不同時寫 [[完整條目名|行文用詞]]"
+                )
+            if not targets:
+                errors.append(
+                    "organization 沒有任何 wiki-link：行文首次提到本章條目時，"
+                    "應以 [[完整條目名|行文用詞]] 連結，讓整理接入 Obsidian 圖譜"
+                )
         return errors
 
     return validate
@@ -619,6 +652,13 @@ def chapter_content_step(ctx, plan):
         f"\n本章新建條目（knowledge_nodes 若引用請用完整名稱）：{', '.join(created)}"
         if created else ""
     )
+    # 本章整理可連的 wiki-link 白名單＝A/B 既有條目標題＋本章實建 C 條目
+    existing_titles = [
+        e.get("existing_title") or e["name"]
+        for key in ("A_use_directly", "B_needs_update")
+        for e in plan.get(key, [])
+    ]
+    allowed_links = list(dict.fromkeys(existing_titles + created))
     min_sections, min_chars = _org_requirements(len(raw_verses))
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
@@ -628,11 +668,22 @@ def chapter_content_step(ctx, plan):
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
         f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n\n"
-        f"organization（本章整理）是一段純文字散文，不是巢狀物件或條列清單，要求：\n"
+        f"organization（本章整理）是單一 markdown 字串（YAML 的 | 區塊），"
+        f"不可是巢狀物件或 YAML 陣列，要求：\n"
         f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
         f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
-        f"- 每小節是連貫散文（不用條列），沿經文脈絡敘述並整合各來源觀點，"
-        f"標明出處，寫法如「CT指出…」「GT指出…」「KC指出…」「BH指出…」。\n"
+        f"- 各小節以連貫散文為主幹，沿經文脈絡敘述並整合各來源觀點；"
+        f"當材料本身適合對照呈現時（時間軸、多項並列比較、新舊呼應、尺寸規格、"
+        f"來源間差異），改用 markdown 表格或短編號清單更清楚——格式隨本章內容"
+        f"的性質調整，不必全部寫成散文。\n"
+        f"- 表格與清單是散文的補充，不能取代整合敘述；不得只交出幾行條列。\n"
+        f"- 這是 Obsidian 筆記庫：行文首次提到本章條目時用 wiki-link 連結——"
+        f"寫 [[完整條目名]]，行文用詞不同時寫 [[完整條目名|行文用詞]]，"
+        f"同一條目之後再提不必重連。連結目標只能取自本章可連條目："
+        f"{'、'.join(allowed_links) or '（本章無可連條目）'}——不可連清單外的目標。\n"
+        f"- 材料合適時可用 Obsidian callout 突顯分辨：來源的關鍵引句用"
+        f"「> [!quote] 出處」、「這是來源解讀、非經文明言」這類提醒用"
+        f"「> [!note] 標題」；callout 是點綴，一般敘述不要包進 callout。\n"
         f"- 全文合計 ≥{min_chars} 字；整合重點而非搬運來源全文，"
         f"也不得寫入來源未提及的內容。\n"
         f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
@@ -640,7 +691,9 @@ def chapter_content_step(ctx, plan):
         f"必須是最上層欄位——不可在外面再包一層 chapter_content 或任何其他 key。範例：\n"
         f"```yaml\nbook: {ctx.book}\nchapter: {ctx.chapter}\n"
         f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n"
-        f"organization: |\n  ### 標題一（v1-6）\n  文字…\n\n  ### 標題二（v7-13）\n  文字…\n```\n"
+        f"organization: |\n  ### 標題一（v1-6）\n"
+        f"  文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…\n\n"
+        f"  ### 標題二（v7-13）\n  文字…\n```\n"
         f"{_schema_hint('chapter_content.schema.json')}"
     )
 
@@ -651,7 +704,7 @@ def chapter_content_step(ctx, plan):
 
     payload = _model_step(
         ctx, out_path, prompt,
-        validate=_chapter_payload_validator(len(raw_verses)),
+        validate=_chapter_payload_validator(len(raw_verses), allowed_links),
         label="chapter_content", normalize=_normalize,
     )
     return _inject_references(ctx, out_path, payload)

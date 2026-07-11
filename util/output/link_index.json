@@ -1661,6 +1661,17 @@
     "status": "formal",
     "aliases": []
   },
+  "利未人受聖職討罪": {
+    "path": "link_folder/事件/利未人受聖職討罪.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人受聖職討罪",
+    "status": "formal",
+    "aliases": [
+      "利未人討罪",
+      "利未人受聖職"
+    ]
+  },
   "十二根柱子": {
     "path": "link_folder/事件/十二根柱子.md",
     "type": "事件",
@@ -1842,6 +1853,39 @@
       "摩西挨近神"
     ]
   },
+  "摩西摔碎法版（廢約的象徵）": {
+    "path": "link_folder/事件/摩西摔碎法版（廢約的象徵）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西摔碎法版（廢約的象徵）",
+    "status": "formal",
+    "aliases": [
+      "摔碎法版",
+      "摩西摔碎兩塊法版"
+    ]
+  },
+  "摩西求神同去並蒙應允": {
+    "path": "link_folder/事件/摩西求神同去並蒙應允.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西求神同去並蒙應允",
+    "status": "formal",
+    "aliases": [
+      "摩西求神同行",
+      "神應允同去"
+    ]
+  },
+  "摩西的臨時會幕（營外）": {
+    "path": "link_folder/事件/摩西的臨時會幕（營外）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西的臨時會幕（營外）",
+    "status": "formal",
+    "aliases": [
+      "營外的會幕",
+      "臨時會幕"
+    ]
+  },
   "摩西立首領": {
     "path": "link_folder/事件/摩西立首領.md",
     "type": "事件",
@@ -1867,6 +1911,17 @@
     "status": "formal",
     "aliases": [
       "Moses raised hands"
+    ]
+  },
+  "摩西鑿石版（第二次法版）": {
+    "path": "link_folder/事件/摩西鑿石版（第二次法版）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西鑿石版（第二次法版）",
+    "status": "formal",
+    "aliases": [
+      "第二次法版",
+      "重造石版"
     ]
   },
   "撒拉之死與埋葬": {
@@ -1934,6 +1989,17 @@
     "aliases": [
       "百姓發顫",
       "百姓懼怕"
+    ]
+  },
+  "百姓摘除妝飾表悔改": {
+    "path": "link_folder/事件/百姓摘除妝飾表悔改.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "百姓摘除妝飾表悔改",
+    "status": "formal",
+    "aliases": [
+      "摘除妝飾",
+      "悲哀不佩戴妝飾"
     ]
   },
   "百姓自潔三天": {
@@ -2108,6 +2174,17 @@
     "title": "道德與宗教的律例",
     "status": "formal",
     "aliases": []
+  },
+  "金牛犢事件": {
+    "path": "link_folder/事件/金牛犢事件.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "金牛犢事件",
+    "status": "formal",
+    "aliases": [
+      "金牛犢",
+      "鑄造金牛犢事件"
+    ]
   },
   "長老上山見神": {
     "path": "link_folder/事件/長老上山見神.md",
@@ -4393,6 +4470,19 @@
       "Acts 6:1-7 Choose deacons"
     ]
   },
+  "從冊上塗抹（生命冊）": {
+    "path": "link_folder/互文/從冊上塗抹（生命冊）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "從冊上塗抹（生命冊）",
+    "status": "formal",
+    "aliases": [
+      "生命冊",
+      "神的冊"
+    ]
+  },
   "披戴基督（羅13：14）": {
     "path": "link_folder/互文/披戴基督（羅13：14）.md",
     "type": "互文",
@@ -4541,6 +4631,32 @@
     "status": "formal",
     "aliases": [
       "希伯來書11章摩西被藏"
+    ]
+  },
+  "摩西為百姓代求（金牛犢）": {
+    "path": "link_folder/互文/摩西為百姓代求（金牛犢）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西為百姓代求（金牛犢）",
+    "status": "formal",
+    "aliases": [
+      "摩西代求",
+      "摩西的代禱"
+    ]
+  },
+  "摩西面皮發光（與帕子）": {
+    "path": "link_folder/互文/摩西面皮發光（與帕子）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西面皮發光（與帕子）",
+    "status": "formal",
+    "aliases": [
+      "摩西臉上發光",
+      "帕子蒙臉"
     ]
   },
   "撒上12：3": {
@@ -5524,6 +5640,26 @@
       "箴16-7",
       "箴言16-7",
       "神使仇敵與人和好 (箴16-7)"
+    ]
+  },
+  "神施恩憐憫的主權（羅9：15,18）": {
+    "path": "link_folder/互文/神施恩憐憫的主權（羅9：15,18）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "神施恩憐憫的主權（羅9：15,18）",
+    "status": "formal",
+    "aliases": [
+      "神施恩憐憫的主權"
+    ]
+  },
+  "神的指頭（路11：20）": {
+    "path": "link_folder/互文/神的指頭（路11：20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "神的指頭（路11：20）",
+    "status": "formal",
+    "aliases": [
+      "神的指頭"
     ]
   },
   "神賜福賜財富能力 (申8-18)": {
@@ -7404,6 +7540,16 @@
     "status": "formal",
     "aliases": []
   },
+  "亞何利亞伯（Oholiab）": {
+    "path": "link_folder/人物/亞何利亞伯（Oholiab）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞何利亞伯（Oholiab）",
+    "status": "formal",
+    "aliases": [
+      "亞何利亞伯"
+    ]
+  },
   "亞倫": {
     "path": "link_folder/人物/亞倫.md",
     "type": "人物",
@@ -7789,6 +7935,16 @@
     "title": "以諾（該隱之子）",
     "status": "formal",
     "aliases": []
+  },
+  "但支派": {
+    "path": "link_folder/人物/但支派.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "但支派",
+    "status": "formal",
+    "aliases": [
+      "但支派"
+    ]
   },
   "但（審判）": {
     "path": "link_folder/人物/但（審判）.md",
@@ -8418,6 +8574,16 @@
     "title": "比拿雅",
     "status": "candidate",
     "aliases": []
+  },
+  "比撒列（Bezalel）": {
+    "path": "link_folder/人物/比撒列（Bezalel）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "比撒列（Bezalel）",
+    "status": "formal",
+    "aliases": [
+      "比撒列"
+    ]
   },
   "比沙（蛾摩拉王）": {
     "path": "link_folder/人物/比沙（蛾摩拉王）.md",
@@ -14775,6 +14941,16 @@
       "不可貪戀"
     ]
   },
+  "不能看見神的面而存活": {
+    "path": "link_folder/神學/不能看見神的面而存活.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不能看見神的面而存活",
+    "status": "formal",
+    "aliases": [
+      "人見神面不能存活"
+    ]
+  },
   "中保": {
     "path": "link_folder/神學/中保.md",
     "type": "神學",
@@ -17093,6 +17269,17 @@
       "硫磺與火"
     ]
   },
+  "硬著頸項的百姓": {
+    "path": "link_folder/神學/硬著頸項的百姓.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "硬著頸項的百姓",
+    "status": "formal",
+    "aliases": [
+      "硬著頸項",
+      "頸項剛硬"
+    ]
+  },
   "磐石出活水": {
     "path": "link_folder/神學/磐石出活水.md",
     "type": "神學",
@@ -17359,6 +17546,19 @@
     "title": "神的後悔與憂傷",
     "status": "formal",
     "aliases": []
+  },
+  "神的性情宣告（耶和華有憐憫有恩典）": {
+    "path": "link_folder/神學/神的性情宣告（耶和華有憐憫有恩典）.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "神的性情宣告（耶和華有憐憫有恩典）",
+    "status": "formal",
+    "aliases": [
+      "神的十三種屬性",
+      "耶和華的性情宣告"
+    ]
   },
   "神的恩典之約": {
     "path": "link_folder/神學/神的恩典之約.md",
@@ -18395,6 +18595,16 @@
     "title": "蒙恩與被遺忘",
     "status": "formal",
     "aliases": []
+  },
+  "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）": {
+    "path": "link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）",
+    "status": "formal",
+    "aliases": [
+      "蒙靈充滿的智慧恩賜"
+    ]
   },
   "血氣與應許之對比": {
     "path": "link_folder/神學/血氣與應許之對比.md",
@@ -19484,6 +19694,17 @@
     "title": "西乃山立約",
     "status": "formal",
     "aliases": []
+  },
+  "迦南七族（迦南地原住民）": {
+    "path": "link_folder/背景/迦南七族（迦南地原住民）.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "迦南七族（迦南地原住民）",
+    "status": "formal",
+    "aliases": [
+      "迦南地原住民",
+      "迦南六族"
+    ]
   },
   "金環": {
     "path": "link_folder/背景/金環.md",
@@ -21261,6 +21482,12 @@
   "Preserving an omer of manna": {
     "alias_of": "保存一俄梅珥嗎哪"
   },
+  "利未人討罪": {
+    "alias_of": "利未人受聖職討罪"
+  },
+  "利未人受聖職": {
+    "alias_of": "利未人受聖職討罪"
+  },
   "Manna from heaven": {
     "alias_of": "天降嗎哪"
   },
@@ -21288,6 +21515,24 @@
   "摩西挨近神": {
     "alias_of": "摩西就近幽暗"
   },
+  "摔碎法版": {
+    "alias_of": "摩西摔碎法版（廢約的象徵）"
+  },
+  "摩西摔碎兩塊法版": {
+    "alias_of": "摩西摔碎法版（廢約的象徵）"
+  },
+  "摩西求神同行": {
+    "alias_of": "摩西求神同去並蒙應允"
+  },
+  "神應允同去": {
+    "alias_of": "摩西求神同去並蒙應允"
+  },
+  "營外的會幕": {
+    "alias_of": "摩西的臨時會幕（營外）"
+  },
+  "臨時會幕": {
+    "alias_of": "摩西的臨時會幕（營外）"
+  },
   "Moses appoints leaders": {
     "alias_of": "摩西立首領"
   },
@@ -21300,6 +21545,12 @@
   "Moses raised hands": {
     "alias_of": "摩西舉手得勝"
   },
+  "第二次法版": {
+    "alias_of": "摩西鑿石版（第二次法版）"
+  },
+  "重造石版": {
+    "alias_of": "摩西鑿石版（第二次法版）"
+  },
   "瑪拉苦水變甜神蹟": {
     "alias_of": "瑪拉苦水變甜"
   },
@@ -21311,6 +21562,12 @@
   },
   "百姓懼怕": {
     "alias_of": "百姓懼怕神的顯現"
+  },
+  "摘除妝飾": {
+    "alias_of": "百姓摘除妝飾表悔改"
+  },
+  "悲哀不佩戴妝飾": {
+    "alias_of": "百姓摘除妝飾表悔改"
   },
   "consecration of the people": {
     "alias_of": "百姓自潔三天"
@@ -21368,6 +21625,12 @@
   },
   "葉忒羅離去": {
     "alias_of": "葉忒羅返回本地"
+  },
+  "金牛犢": {
+    "alias_of": "金牛犢事件"
+  },
+  "鑄造金牛犢事件": {
+    "alias_of": "金牛犢事件"
   },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
@@ -21756,6 +22019,12 @@
   "Acts 6:1-7 Choose deacons": {
     "alias_of": "徒6：1-7 選立執事"
   },
+  "生命冊": {
+    "alias_of": "從冊上塗抹（生命冊）"
+  },
+  "神的冊": {
+    "alias_of": "從冊上塗抹（生命冊）"
+  },
   "披戴主耶穌基督": {
     "alias_of": "披戴基督（羅13：14）"
   },
@@ -21782,6 +22051,18 @@
   },
   "希伯來書11章摩西被藏": {
     "alias_of": "摩西因信被藏三個月"
+  },
+  "摩西代求": {
+    "alias_of": "摩西為百姓代求（金牛犢）"
+  },
+  "摩西的代禱": {
+    "alias_of": "摩西為百姓代求（金牛犢）"
+  },
+  "摩西臉上發光": {
+    "alias_of": "摩西面皮發光（與帕子）"
+  },
+  "帕子蒙臉": {
+    "alias_of": "摩西面皮發光（與帕子）"
   },
   "掃羅認罪": {
     "alias_of": "撒母耳記上 15-24（掃羅認罪）"
@@ -21923,6 +22204,12 @@
   },
   "箴言16-7": {
     "alias_of": "神使仇敵與人和好 (箴16-7)"
+  },
+  "神施恩憐憫的主權": {
+    "alias_of": "神施恩憐憫的主權（羅9：15,18）"
+  },
+  "神的指頭": {
+    "alias_of": "神的指頭（路11：20）"
   },
   "申8:18": {
     "alias_of": "神賜福賜財富能力 (申8-18)"
@@ -22305,6 +22592,9 @@
   "拉結哭泣": {
     "alias_of": "馬太福音2章拉結哭泣"
   },
+  "亞何利亞伯": {
+    "alias_of": "亞何利亞伯（Oholiab）"
+  },
   "亞倫和他的兒子": {
     "alias_of": "亞倫和他兒子（祭司）"
   },
@@ -22454,6 +22744,9 @@
   },
   "Bilhah": {
     "alias_of": "比拉（雅各使女）"
+  },
+  "比撒列": {
+    "alias_of": "比撒列（Bezalel）"
   },
   "比沙": {
     "alias_of": "比沙（蛾摩拉王）"
@@ -24042,6 +24335,9 @@
   "第十條誡命": {
     "alias_of": "不可貪戀"
   },
+  "人見神面不能存活": {
+    "alias_of": "不能看見神的面而存活"
+  },
   "神的朋友亞伯拉罕": {
     "alias_of": "亞伯拉罕為神的朋友"
   },
@@ -24567,6 +24863,12 @@
   "硫磺與火": {
     "alias_of": "硫磺與火從天上降下"
   },
+  "硬著頸項": {
+    "alias_of": "硬著頸項的百姓"
+  },
+  "頸項剛硬": {
+    "alias_of": "硬著頸項的百姓"
+  },
   "Water from the Rock": {
     "alias_of": "磐石出活水"
   },
@@ -24608,6 +24910,12 @@
   },
   "Right hand of God": {
     "alias_of": "神的右手"
+  },
+  "神的十三種屬性": {
+    "alias_of": "神的性情宣告（耶和華有憐憫有恩典）"
+  },
+  "耶和華的性情宣告": {
+    "alias_of": "神的性情宣告（耶和華有憐憫有恩典）"
   },
   "God's loving devotion leads": {
     "alias_of": "神的慈愛引領"
@@ -24870,6 +25178,9 @@
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
   },
+  "蒙靈充滿的智慧恩賜": {
+    "alias_of": "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）"
+  },
   "Sinai Covenant": {
     "alias_of": "西乃之約"
   },
@@ -25112,6 +25423,12 @@
   },
   "西乃山位置": {
     "alias_of": "西乃山的地理"
+  },
+  "迦南地原住民": {
+    "alias_of": "迦南七族（迦南地原住民）"
+  },
+  "迦南六族": {
+    "alias_of": "迦南七族（迦南地原住民）"
   },
   "Quail migration": {
     "alias_of": "鵪鶉遷徙"

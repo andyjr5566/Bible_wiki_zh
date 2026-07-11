@@ -1,0 +1,192 @@
+book: 出埃及記
+chapter: 35
+A_use_directly: []
+B_needs_update:
+- name: 安息日
+  suggested_type: 神學
+  evidence: 出35:2-3 摩西重申六日要做工，第七日為聖日守為安息聖日，干犯者治死，當日不可在住處生火。CT：安息日是摩西之約的標誌（出31:15-16），摩西在宣布會幕建造樣式之前先重申此律，顯明其重要性優先於建造聖工本身。GT/丁道爾：安息日律法在此位於整段的開始，在出31章卻是該段落的結語，這是故意的安排，顯出即使百姓捲在建造帳幕的熱潮中，仍不可稍忘守聖日；「不可生火」是舊約僅見此處的獨特規定，可能針對建造聖所金工所用之火而發。已有條目「安息日」
+  surfaces:
+  - phrase: 安息聖日
+    verses:
+    - 2
+  - phrase: 安息日
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 甘心樂意的奉獻
+  suggested_type: 神學
+  evidence: 出35:5,21,22,26,29 摩西呼籲百姓「凡樂意獻的可以拿耶和華的禮物來」，眾人「心裡受感和甘心樂意的」都將金器、紡線、寶石、香料等材料拿來，無論男女都甘心樂意獻禮物。CT：奉獻的動機必須不勉強而是甘心樂意才能蒙神悅納，奉獻是屬神聖徒的權利而非外人可代行之事；丁良才指出百姓的捐法可分六層——甘心樂意、按著所有、人人都捐、豐豐富富、足夠有餘、獻給真神。GT：3節出現三等奉獻的人——凡心裡樂意獻的、凡心裡有智慧的、凡心裡受感的；32:2-4
+    百姓曾將金環獻上鑄造金牛犢，如今已失去那批飾物，如同我們把獻給世界的東西獻給主的服事已然失落。BH：the willingness to give is a
+    precursor to the New Testament principle of giving out of love and gratitude (2
+    Corinthians 8:12)。已有條目「甘心樂意的奉獻」
+  surfaces:
+  - phrase: 樂意獻的
+    verses:
+    - 5
+  - phrase: 心裡受感和甘心樂意的
+    verses:
+    - 21
+  - phrase: 甘心樂意獻禮物
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 甘心樂意的奉獻
+  existing_path: link_folder/神學/甘心樂意的奉獻.md
+- name: 比撒列
+  suggested_type: 人物
+  evidence: 出35:30-33 摩西向以色列人宣告猶大支派中戶珥的孫子、烏利的兒子比撒列，耶和華已提他的名召他，以神的靈充滿使他有智慧聰明知識，能做金銀銅各物、刻寶石鑲嵌、雕刻木頭。與出31:2-5
+    呼應，此處是摩西向全會眾正式轉達神的選召。GT：摩西早已知道神用主權揀選了比撒列與亞何利亞伯（31:1-11），此處只是傳達神的主權，神根據自己的預知呼召人（徒9:15），且從不後悔（羅11:29）。已有條目「比撒列」
+  surfaces:
+  - phrase: 比撒列
+    verses:
+    - 30
+  match_type: alias
+  existing_title: 比撒列（Bezalel）
+  existing_path: link_folder/人物/比撒列（Bezalel）.md
+- name: 亞何利亞伯
+  suggested_type: 人物
+  evidence: 出35:34 耶和華使比撒列和但支派中亞希撒抹的兒子亞何利亞伯心裡靈明，能教導人。CT：兩人不僅自己有智慧技巧，更有靈敏心思懂得教導別人分工製作。已有條目「亞何利亞伯」
+  surfaces:
+  - phrase: 亞何利亞伯
+    verses:
+    - 34
+  match_type: alias
+  existing_title: 亞何利亞伯（Oholiab）
+  existing_path: link_folder/人物/亞何利亞伯（Oholiab）.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 出35:34 亞何利亞伯出自但支派。已有條目「但支派」
+  surfaces:
+  - phrase: 但支派
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 出35:30 比撒列出自猶大支派。已有條目「猶大支派」
+  surfaces:
+  - phrase: 猶大支派
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 戶珥
+  suggested_type: 人物
+  evidence: 出35:30 比撒列是戶珥的孫子、烏利的兒子。已有條目「戶珥」
+  surfaces:
+  - phrase: 戶珥
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 戶珥
+  existing_path: link_folder/人物/戶珥.md
+- name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  suggested_type: 神學
+  evidence: 出35:31,35 神以靈充滿比撒列使他有智慧聰明知識能做各樣的工，又使他和亞何利亞伯心裡滿有智慧，能做雕刻、巧匠、繡花、機匠等各樣奇巧的工。CT：一切智慧知識聰明能力的來源乃是耶和華，越倚靠祂的就越有能力；神呼召有恩賜的人事奉祂，卻不是靠恩賜本身，乃是靠神的靈充滿。KC：神給二人創意，但不將如何運用創意的決定留給人自己，所設計的必須源於神的靈的工作，不在乎是否合人的口味，乃在乎是否合神自己；所羅門建殿時大衛也照樣將殿的樣式、心中所想的一切都交給所羅門（代上28:11-12），地方教會聚會也照樣有神明確的引導不容人自行更改（林前11:23、14:37）。已有候選/條目「蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）」
+  surfaces:
+  - phrase: 以神的靈充滿了他
+    verses:
+    - 31
+  - phrase: 耶和華使他們的心滿有智慧
+    verses:
+    - 35
+  match_type: exact
+  existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 出35:11,18,21 摩西呼召眾人奉獻材料製作帳幕和帳幕的罩棚、蓋、鉤子、板、閂、柱子等，用以做會幕和其中一切的使用。KC/來3:5-6：摩西是神家中忠心的僕人，基督卻是超越摩西、治理這家的兒子。已有條目「會幕（帳幕整體）」
+  surfaces:
+  - phrase: 帳幕和帳幕的罩棚
+    verses:
+    - 11
+  - phrase: 會幕
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  evidence: 出35:13 「桌子和桌子的杠與桌子的一切器具，並陳設餅」。已有條目「陳設餅桌子」
+  surfaces:
+  - phrase: 桌子和桌子的杠
+    verses:
+    - 13
+  - phrase: 陳設餅
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 出35:12 「櫃和櫃的杠，施恩座和遮掩櫃的幔子」。KC：這裡補充一個細節——遮掩櫃的幔子即民4:5 所說「幔子的簾子」，起營時亞倫和他兒子要取下這幔子蓋在法櫃上。已有條目「施恩座」
+  surfaces:
+  - phrase: 施恩座
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 皂莢木（atzei shittim）
+  suggested_type: 原文
+  evidence: 出35:7,24 材料清單中列有皂莢木，凡有皂莢木可做什麼使用的百姓也都拿了來。GT：皂莢木盛產於西乃半島，質堅耐用。已有條目「皂莢木（atzei
+    shittim）」
+  surfaces:
+  - phrase: 皂莢木
+    verses:
+    - 7
+    - 24
+  match_type: exact
+  existing_title: 皂莢木（atzei shittim）
+  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 以弗得
+  suggested_type: 原文
+  evidence: 出35:9,27 紅瑪瑙與別樣的寶石可以鑲嵌在以弗得和胸牌上，眾官長將寶石拿了來。已有條目「以弗得」
+  surfaces:
+  - phrase: 以弗得
+    verses:
+    - 9
+    - 27
+  match_type: exact
+  existing_title: 以弗得
+  existing_path: link_folder/原文/以弗得.md
+- name: 胸牌（決斷胸牌）
+  suggested_type: 原文
+  evidence: 出35:9,27 寶石鑲嵌在以弗得和胸牌上。已有條目「胸牌（決斷胸牌）」
+  surfaces:
+  - phrase: 胸牌
+    verses:
+    - 9
+    - 27
+  match_type: exact
+  existing_title: 胸牌（決斷胸牌）
+  existing_path: link_folder/原文/胸牌（決斷胸牌）.md
+C_new_formal:
+- name: 橛子與繩子的預表
+  suggested_type: 神學
+  evidence: 出35:18 「帳幕的橛子並院子的橛子，和這兩處的繩子」。CT：橛子深埋地中人所不見，卻擔起支持會幕的工作，表徵甘願隱藏自己、高舉基督的事奉者；院子銅柱每根用兩條繩子固定，一內一外，表徵神雙份的大愛將人繫住，使人在基督的受苦與降卑上與祂聯合（腓3:10、彼前2:21、腓1:29）
+  surfaces:
+  - phrase: 帳幕的橛子並院子的橛子，和這兩處的繩子
+    verses:
+    - 18
+  target_path: link_folder/神學/橛子與繩子的預表.md
+- name: 婦女參與建造會幕
+  suggested_type: 主題
+  evidence: 出35:22,25-26 凡心裡樂意獻禮物的連男帶女都將金器獻上；凡心中有智慧的婦女親手紡線，把所紡的藍色、紫色、朱紅色線和細麻拿了來，凡有智慧心裡受感的婦女就紡山羊毛。GT：埃及國女人多紡線染布，男人多織布繡花；聖經精讀本指出「智慧的」一詞與10節男子的「智慧」是同一詞，神賜給婦女和男人同等的恩賜參與神的工作（路8:2-3、羅12:6-8、16:1）。丁道爾：模式再次擴闊，人人都有資格獻上禮物，即使本身沒技巧的人也不例外，女人可以紡線（箴31:13），官長帶來寶石香料（27-28節），人人有分建造聖所（弗4:16）
+  surfaces:
+  - phrase: 凡心中有智慧的婦女親手紡線
+    verses:
+    - 25
+  - phrase: 凡有智慧、心裡受感的婦女
+    verses:
+    - 26
+  target_path: link_folder/主題/婦女參與建造會幕.md
+D_new_candidate: []
+E_skip: []

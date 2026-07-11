@@ -1,0 +1,94 @@
+book: 創世記
+chapter: 1
+candidates:
+  - name: 創造（從無到有）
+    type: 神學
+    evidence: 1、21、27節；BH、CT、GT、KC 均指出 bara 是神獨有的創造行動，從無到有、顯神主權
+  - name: 神的靈的角色
+    type: 神學
+    evidence: 2節；來源討論神的靈運行／覆翼／賦生命
+    surfaces: [神的靈]
+  - name: 神的話（創造媒介）
+    type: 神學
+    evidence: 3、6、9、11、14、20、24、26、29節「神說」帶出創造命令，立即成就
+    surfaces: [神說]
+  - name: 三位一體在創造中的隱現
+    type: 神學
+    evidence: 1-3、26節；來源提及 Elohim、神的靈、神說與「我們要」暗示三一工作
+  - name: 形像與樣式
+    type: 神學
+    evidence: 26-27節；人按神形像樣式被造，涉及性情、代表權柄、與神關係（沿用舊版僅連26節）
+    surfaces:
+      - {phrase: 形像, verses: [26]}
+      - {phrase: 樣式, verses: [26]}
+  - name: 人的尊嚴與神的形像
+    type: 神學
+    evidence: 26-27節；BH、GT、KC 強調男女同按神形像被造
+    surfaces: [造男造女]
+  - name: 光與黑暗的分別
+    type: 神學
+    evidence: 3-5節；BH、CT、KC 將光暗分開連於秩序、真理、生命與屬靈光照
+    surfaces: [光暗分開]
+  - name: 人
+    type: 人物
+    evidence: 26-28節；人是創造高峰，男女同被造，承受賜福與治理託付（沿用舊版僅連26節）
+    surfaces:
+      - {phrase: 人, verses: [26]}
+  - name: 空虛混沌的原意
+    type: 背景
+    evidence: 2節；來源討論 tohu wa-bohu 的「未成形、無居住」與「審判後荒涼」兩種處理
+    surfaces: [空虛混沌]
+  - name: 六日復造的結構
+    type: 背景
+    evidence: 3-31節；來源按六日整理創造／復造秩序與「晚上、早晨」結構
+  - name: 光體作記號定節令
+    type: 背景
+    evidence: 14-19節；日月星辰分晝夜、定節令，受神管轄不可被敬拜
+    surfaces: [光體]
+  - name: 創造日長度問題
+    type: 解經爭議
+    evidence: 5、8、13、19、23、31節；BH 提及 24 小時與長時期等不同解讀，KC 與 CT/GT 偏普通一日
+  - name: 創世記1章第1-2節間隔問題
+    type: 解經爭議
+    evidence: 1-2節；CT、GT 採間隔／復造說，KC 曾採後改，BH 偏向神使未成形進入秩序
+  - name: 各從其類
+    type: 原文
+    evidence: 11-12、21、24-25節；CT、BH 指出此語反覆出現，強調種類、界限與秩序（沿用舊版僅連首次出現的11節）
+    surfaces:
+      - {phrase: 各從其類, verses: [11]}
+  - name: 治理與管理
+    type: 原文
+    evidence: 26、28節；神給人的代表性權柄與管家責任（18節「管理晝夜」屬光體，不連）
+    surfaces:
+      - {phrase: 管理, verses: [26, 28]}
+  - name: 神命名與主權
+    type: 文化
+    evidence: 5、8、10節；神稱光暗、穹蒼、旱地與海，命名表明主權與界定秩序（沿用舊版連結的完整片語）
+    surfaces: [神稱光為晝，稱暗為夜, 神稱空氣為天, 神稱旱地為地，稱水的聚處為海]
+  - name: 生養眾多與治理
+    type: 主題
+    evidence: 28節；神賜福人類生養、遍滿、治理，人的第一份託付
+    surfaces: [生養眾多, 治理]
+  - name: 神看為好（甚好）
+    type: 主題
+    evidence: 4、10、12、18、21、25、31節；神反覆宣告「好」，31節總結「甚好」
+    surfaces: [甚好]
+  - name: 原初素食與受造界和平
+    type: 主題
+    evidence: 29-30節；墮落前神以植物給人與動物作食物，呈現未流血的受造界秩序
+    surfaces: [食物]
+  - name: 六日創造與信徒重生經歷
+    type: 主題
+    evidence: 3-31節；KC、CT 以六日次序作屬靈應用（光照、分別、結果、發光、成熟）
+  - name: 詩篇33篇神話語創造
+    type: 互文
+    evidence: 3節；來源以詩33:6、9 說明神說有就有
+  - name: 約翰福音1章道與創造
+    type: 互文
+    evidence: 1-3節；BH、KC、CT 將「起初」與神的話／道連於約1:1-3
+  - name: 詩篇8篇人的治理權柄
+    type: 互文
+    evidence: 26-28節；BH、KC 以詩8篇說明人被立為受造界代表
+  - name: 創世記9章洪水後准吃肉
+    type: 互文
+    evidence: 29-30節；來源以創9:3 對照原初植物作食物

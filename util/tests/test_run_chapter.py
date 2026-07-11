@@ -55,9 +55,13 @@ _ORG_PARA = (
     "遮蓋律法對人的定罪；BH指出精金象徵神聖潔的性情，不可攙雜；GT指出一切樣式全"
     "出於神在山上的啟示，人不得憑己意增減，事奉的根基在於完全的順服。"
 )
-CHAPTER_ORGANIZATION = (
+_ORG_PLAIN = (
     "### 施恩座的樣式（v1）\n\n" + _ORG_PARA * 3 +
     "\n\n### 照樣式而造（v2）\n\n" + _ORG_PARA * 3
+)
+# 首次提及以 wiki-link 連回本章條目（M6 白名單要求至少一個行內連結）
+CHAPTER_ORGANIZATION = _ORG_PLAIN.replace(
+    "CT指出施恩座", f"CT指出[[{ENTRY_NAME}|施恩座]]", 1
 )
 
 CHAPTER_CONTENT_PAYLOAD = yaml.safe_dump({
@@ -511,7 +515,8 @@ class KnowledgeNodesClosureTests(unittest.TestCase):
 
 
 class ChapterDepthTests(unittest.TestCase):
-    """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）。"""
+    """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）；
+    給定白名單時 wiki-link 只能連本章條目、且至少要有一個（出34 零連結的教訓）。"""
 
     def test_thin_bullet_summary_is_rejected(self):
         validate = run_chapter._chapter_payload_validator(40)
@@ -533,6 +538,30 @@ class ChapterDepthTests(unittest.TestCase):
     def test_requirements_scale_with_chapter_length(self):
         self.assertEqual((2, 400), run_chapter._org_requirements(2))
         self.assertEqual((3, 1500), run_chapter._org_requirements(40))
+
+    def test_allowed_wikilink_passes(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION,
+        })
+        self.assertEqual([], errors)
+
+    def test_wikilink_outside_allowed_list_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION + "\n\n另見 [[清單外條目]]。",
+        })
+        self.assertTrue(any("清單外條目" in e for e in errors))
+
+    def test_organization_without_any_wikilink_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": _ORG_PLAIN,
+        })
+        self.assertTrue(any("wiki-link" in e for e in errors))
 
 
 class RelatedEntriesClosureTests(unittest.TestCase):

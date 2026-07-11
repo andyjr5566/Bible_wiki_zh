@@ -19,6 +19,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import urllib.error
@@ -136,9 +137,28 @@ def openai_runner(prompt, *, base_url=DEFAULT_OPENAI_BASE_URL,
         raise ModelError(f"回應格式非預期：{str(data)[:300]}") from exc
 
 
+def _find_claude_cli():
+    """尋找 claude CLI：先查 PATH，再查常見安裝位置（Windows 原生安裝器不改當前程序的 PATH）。"""
+    found = shutil.which("claude")
+    if found:
+        return found
+    home = os.path.expanduser("~")
+    for candidate in (
+        os.path.join(home, ".local", "bin", "claude.exe"),
+        os.path.join(home, ".local", "bin", "claude"),
+        os.path.join(os.environ.get("APPDATA", ""), "npm", "claude.cmd"),
+    ):
+        if candidate and os.path.isfile(candidate):
+            return candidate
+    return None
+
+
 def claude_runner(prompt, *, model=None, timeout=1500):
     """shell 到 `claude -p --output-format json`，取出 result 文字。"""
-    command = ["claude", "-p", "--output-format", "json"]
+    claude_cli = _find_claude_cli()
+    if not claude_cli:
+        raise ModelError("找不到 claude CLI；請確認 Claude Code 已安裝於 PATH")
+    command = [claude_cli, "-p", "--output-format", "json"]
     if model:
         command += ["--model", model]
     try:

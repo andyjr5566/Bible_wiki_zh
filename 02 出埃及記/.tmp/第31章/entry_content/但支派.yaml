@@ -1,0 +1,27 @@
+name: 但支派
+type: 人物
+secondary_types: []
+aliases:
+- 但支派
+status: formal
+definition: 但支派是以色列十二支派之一，亞何利亞伯即出自此支派。在聖經歷史中，但支派並非如猶大或利未般的領導支派，但在建造會幕的聖工中，神同樣揀選了但支派的亞何利亞伯作為比撒列的助手，顯示神的工作包容了不同背景的人。
+development: 在出埃及記中，但支派因亞何利亞伯被選召而參與了會幕的建造。這表明神的恩典大於人的宗派或背景，即使是較不顯著的支派，神也賜予技能並裝備他們參與聖工。此原則呼應了新約中肢體互相配搭的教導。
+accumulations:
+- book: 出埃及記
+  chapter: 31
+  summary: 神從但支派中選召亞何利亞伯，作為比撒列的同工助手。
+  relation: 但支派的參與表明神在建造會幕的聖工中，使用了非領導支派的成員，彰顯其恩典的包容性。
+related_entries:
+- 亞何利亞伯
+sources:
+- 'BH: Exodus 31 — 但支派在會幕建造中的角色（https://biblehub.com/study/exodus/31.htm）'
+- 'GT: 出埃及記第三十一章拾穗 — 但支派的名字與背景註釋（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT31.htm）'
+- 'KC: Exodus 31 — 但支派作為最暗弱的支派卻蒙神使用（https://www.kingcomments.com/en/bible-studies/Exo/31）'
+created_from: manual
+category: 人物
+trigger_sources:
+- 'BH: https://biblehub.com/study/exodus/31.htm'
+- 'GT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT31.htm'
+- 'KC: https://www.kingcomments.com/en/bible-studies/Exo/31'
+current_data: null
+pending: null
