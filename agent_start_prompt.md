@@ -12,8 +12,9 @@
    - 檢查每份 raw text 是否為本章有效內容（404／目錄頁／亂碼／無關＝無效），寫 `source_manifest.md`（表格欄位：來源｜類型｜URL｜raw_data 檔案｜狀態）。狀態 OK 者才會被程式使用；無效來源照實記錄。
 
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
-   - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?}]}`。
+   - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。
    - 只放經文或有效 raw text 明確觸發的候選；分類用 `link_folder/` 現有資料夾名。
+   - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
    - 資料驅動判準見 `scheme.md` §3。
 
 3. **跑 orchestrator**（結構、渲染、驗證全由程式處理）

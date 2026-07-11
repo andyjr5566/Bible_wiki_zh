@@ -93,10 +93,47 @@ def parse_candidates_md(text):
                 "evidence": (item.group(3) or "").strip(),
                 "section": current_section,
                 "line_number": line_number,
+                "surfaces": [],
             })
         elif re.match(r"^\s*-\s+\S", line):
             print(f"⚠️ 無法解析候選（第 {line_number} 行）：{line.strip()}")
     return candidates
+
+
+def _normalize_surfaces(raw, position):
+    """候選 surfaces 正規化為 [{"phrase": str, "verses": [int]|省略}, ...]。
+
+    surfaces＝本章經文中應連至此條目的字面詞（經文原詞）。字串＝全章比對；
+    {phrase, verses}＝只在指定節次比對，用於同一個詞在本章有多義的情況
+    （出26「幔子」v1-13 指幕幔、v31-33 指內幔）。
+    """
+    if raw in (None, []):
+        return []
+    if not isinstance(raw, list):
+        raise ValueError(f"candidates[{position - 1}].surfaces 必須是 list")
+    surfaces = []
+    for item in raw:
+        verses = None
+        if isinstance(item, str):
+            phrase = item.strip()
+        elif isinstance(item, dict):
+            phrase = str(item.get("phrase", "")).strip()
+            verses = item.get("verses")
+            if verses is not None and (
+                not isinstance(verses, list) or not verses
+                or not all(isinstance(v, int) and v >= 1 for v in verses)
+            ):
+                raise ValueError(
+                    f"candidates[{position - 1}].surfaces 的 verses 必須是正整數 list"
+                )
+        else:
+            raise ValueError(
+                f"candidates[{position - 1}].surfaces 項目必須是字串或 {{phrase, verses}}"
+            )
+        if not phrase:
+            raise ValueError(f"candidates[{position - 1}].surfaces 缺少 phrase")
+        surfaces.append({"phrase": phrase, "verses": verses} if verses else {"phrase": phrase})
+    return surfaces
 
 
 def parse_candidates_yaml(data):
@@ -124,6 +161,7 @@ def parse_candidates_yaml(data):
             "evidence": str(item.get("evidence", "")).strip(),
             "section": item.get("section"),
             "line_number": item.get("line", position),
+            "surfaces": _normalize_surfaces(item.get("surfaces"), position),
         })
     return candidates
 
@@ -341,6 +379,8 @@ def build_plan_document(plan, book, chapter):
             }
             if item.get("evidence"):
                 record["evidence"] = item["evidence"]
+            if item.get("surfaces"):
+                record["surfaces"] = item["surfaces"]
             if key in {"A_use_directly", "B_needs_update"}:
                 record["match_type"] = item.get("match_type")
                 record["existing_title"] = item.get("existing_title")

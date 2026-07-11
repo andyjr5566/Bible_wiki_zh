@@ -108,7 +108,7 @@ raw_scripture + 有效 raw_data
 
 - `link_plan` 只決定「用哪個條目、放哪、什麼類別」；寫內容一律回到 raw text 與經文，不得依 plan 編內容。
 - 本章整理（organization）是「### 小節（vX-Y）」分段的整合性散文並標明出處（CT指出…），份量門檻隨章節長度由程式驗證；章節「參考資料」由程式從 source_manifest 注入 OK 來源 URL，模型不手寫。
-- 經文本文只取自 `raw_scripture`，render_chapter 逐字對齊；wiki-link 由程式掃描已知詞彙套用（子字串保證、長詞優先、目標閉合），模型不再手寫經文區。
+- 經文本文只取自 `raw_scripture`，render_chapter 逐字對齊；wiki-link 由程式掃描已知詞彙套用（子字串保證、長詞優先、目標閉合），模型不再手寫經文區。已知詞彙＝候選名＋條目全名＋括號前裸名＋條目 aliases（A/B 取全庫索引、C 取本章 payload）＋候選宣告的 `surfaces`——經文用條目全名與 aliases 都對不上的簡稱時（桌子→陳設餅桌子），在 link_candidates 為該候選宣告 surfaces；同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 幕幔、v31-33 內幔）。同一詞推導出多個條目＝歧義，整詞不連並記 manual_review（宣告的 surfaces 優先於推導，可用來裁決）。
 - 來源全文直接餵給模型（不切片）；超大章節由程式等比截斷（§7）。
 - 累積標記 `<!-- accumulation:{書}:{章}:start/end -->` 由程式生成與定位；同書卷一個 `### 標題`、章次依序排列，重跑冪等。
 

@@ -255,6 +255,147 @@ class VerseLinkTargetTests(unittest.TestCase):
             self.assertEqual("幔子（yeriah）", links[0]["target"])
 
 
+class SurfaceVocabularyTests(unittest.TestCase):
+    """出26 回饋：經文用簡稱（法櫃、燈臺、皂莢木）時 raw data 明明有補充，
+    卻因詞彙表只含候選宣告名而全部連不上。詞彙表必須涵蓋條目全名的括號前
+    裸名、條目 aliases，以及候選宣告的 surfaces（可帶節次限定）。"""
+
+    def _ctx(self, tmp, raw, created=None, index=None, payloads=None):
+        root = Path(tmp)
+        (root / "raw_scripture" / "出埃及記").mkdir(parents=True)
+        (root / "raw_scripture" / "出埃及記" / "第26章.txt").write_text(
+            "\n".join(raw) + "\n", encoding="utf-8"
+        )
+        tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+        tmp_dir.mkdir(parents=True)
+        (root / "link_folder").mkdir(exist_ok=True)
+        if payloads:
+            (tmp_dir / "entry_content").mkdir()
+            for payload in payloads:
+                (tmp_dir / "entry_content" / f"{payload['name']}.yaml").write_text(
+                    yaml.safe_dump(payload, allow_unicode=True), encoding="utf-8"
+                )
+        ctx = run_chapter.ChapterContext(
+            "出埃及記", 26, root=root, index=index if index is not None else {}, homonyms={}
+        )
+        if created is not None:
+            ctx.created_entry_names = created
+        return ctx
+
+    def test_alias_of_existing_entry_links(self):
+        # 經文寫「法櫃」，條目是「約櫃」（alias 含 法櫃）→ 必須連上
+        index = {"約櫃": {"title": "約櫃", "aliases": ["法櫃", "見證的櫃"]}}
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["把法櫃抬進幔子內。"], index=index)
+            plan = {"B_needs_update": [{"name": "約櫃", "existing_title": "約櫃"}]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 1, "phrase": "法櫃", "target": "約櫃"}], links
+            )
+
+    def test_base_name_of_existing_title_links(self):
+        # B 類既有條目「皂莢木（atzei shittim）」，經文寫裸名「皂莢木」→ 必須連上
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["你要用皂莢木做帳幕的豎板。"])
+            plan = {"B_needs_update": [{
+                "name": "皂莢木（atzei shittim）",
+                "existing_title": "皂莢木（atzei shittim）",
+            }]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 1, "phrase": "皂莢木", "target": "皂莢木（atzei shittim）"}],
+                links,
+            )
+
+    def test_created_payload_alias_links(self):
+        # C 類新條目尚未進索引；其 payload aliases 也要入詞彙表
+        payload = {"name": "內幔", "aliases": ["至聖所的幔子"]}
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["至聖所的幔子要垂下來。"],
+                            created=["內幔"], payloads=[payload])
+            plan = {"C_new_formal": [{"name": "內幔", "suggested_type": "主題"}]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 1, "phrase": "至聖所的幔子", "target": "內幔"}], links
+            )
+
+    def test_declared_surface_with_verse_restriction(self):
+        # 同詞多義：v1 幔子=幕幔、v3 幔子=內幔；宣告 surfaces 限定 v3 才連
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, [
+                "你要用十幅幔子做帳幕。",
+                "用金子包裹。",
+                "這幔子要將聖所和至聖所隔開。",
+            ])
+            plan = {"B_needs_update": [{
+                "name": "內幔", "existing_title": "內幔",
+                "surfaces": [{"phrase": "幔子", "verses": [3]}],
+            }]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 3, "phrase": "幔子", "target": "內幔"}], links
+            )
+
+    def test_declared_surface_without_restriction_links_everywhere(self):
+        # 字串形式的 surface：全章比對（桌子→陳設餅桌子）
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["把桌子安在帳幕的北面。"])
+            plan = {"B_needs_update": [{
+                "name": "陳設餅桌子", "existing_title": "陳設餅桌子",
+                "surfaces": ["桌子"],
+            }]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 1, "phrase": "桌子", "target": "陳設餅桌子"}], links
+            )
+
+    def test_ambiguous_surface_is_dropped_and_reported(self):
+        # 兩個條目 aliases 撞同一個詞 → 整詞不連、記 manual_review（D 類精神）
+        index = {
+            "金燈臺": {"title": "金燈臺", "aliases": ["燈"]},
+            "燈油": {"title": "燈油", "aliases": ["燈"]},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["點燈的時候。"], index=index)
+            plan = {"B_needs_update": [
+                {"name": "金燈臺", "existing_title": "金燈臺"},
+                {"name": "燈油", "existing_title": "燈油"},
+            ]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual([], links)
+            self.assertTrue(any("歧義" in m and "燈" in m for m in ctx.manual_review))
+
+    def test_declared_surface_overrides_derived_ambiguity(self):
+        # 人工宣告（priority 0）勝過推導層的歧義：宣告 燈→金燈臺 就照宣告連
+        index = {
+            "金燈臺": {"title": "金燈臺", "aliases": ["燈"]},
+            "燈油": {"title": "燈油", "aliases": ["燈"]},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["點燈的時候。"], index=index)
+            plan = {"B_needs_update": [
+                {"name": "金燈臺", "existing_title": "金燈臺", "surfaces": ["燈"]},
+                {"name": "燈油", "existing_title": "燈油"},
+            ]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual(
+                [{"verse": 1, "phrase": "燈", "target": "金燈臺"}], links
+            )
+            self.assertFalse(any("歧義" in m for m in ctx.manual_review))
+
+    def test_unmatched_declared_surface_is_reported(self):
+        # 宣告的 surface 打錯字連不上任何節 → 記 manual_review 供人工檢查
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, ["把桌子安在帳幕的北面。"])
+            plan = {"B_needs_update": [{
+                "name": "陳設餅桌子", "existing_title": "陳設餅桌子",
+                "surfaces": ["桌孒"],
+            }]}
+            links = run_chapter.verse_links_step(ctx, plan)["links"]
+            self.assertEqual([], links)
+            self.assertTrue(any("surfaces" in m and "桌孒" in m for m in ctx.manual_review))
+
+
 class EntrySourceUrlTests(unittest.TestCase):
     """條目 sources 每項必須含本章 manifest 的來源 URL（出25 重做回饋）。"""
 

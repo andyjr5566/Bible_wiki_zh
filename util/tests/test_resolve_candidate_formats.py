@@ -114,6 +114,51 @@ class CandidateFormatEquivalenceTests(unittest.TestCase):
             self.assertEqual(md_item[field], yaml_item[field])
 
 
+class SurfacesFieldTests(unittest.TestCase):
+    """候選可宣告 surfaces（經文原詞→條目），供 verse_links 連上經文簡稱；
+    字串＝全章比對、{phrase, verses}＝限定節次（同詞多義章節）。"""
+
+    def test_string_and_object_forms_are_normalized(self):
+        items = parse_candidates_yaml({"candidates": [{
+            "name": "陳設餅桌子", "type": "主題",
+            "surfaces": ["桌子", {"phrase": "幔子", "verses": [31, 32, 33]}],
+        }]})[0]["surfaces"]
+        self.assertEqual(
+            [{"phrase": "桌子"}, {"phrase": "幔子", "verses": [31, 32, 33]}], items
+        )
+
+    def test_omitted_surfaces_default_to_empty(self):
+        item = parse_candidates_yaml({
+            "candidates": [{"name": "甲", "type": "人物"}]
+        })[0]
+        self.assertEqual([], item["surfaces"])
+
+    def test_bad_verses_are_rejected(self):
+        for bad in ([], ["三十一"], [0], "31"):
+            with self.assertRaises(ValueError):
+                parse_candidates_yaml({"candidates": [{
+                    "name": "甲", "type": "人物",
+                    "surfaces": [{"phrase": "幔子", "verses": bad}],
+                }]})
+
+    def test_empty_phrase_is_rejected(self):
+        with self.assertRaises(ValueError):
+            parse_candidates_yaml({"candidates": [{
+                "name": "甲", "type": "人物", "surfaces": [" "],
+            }]})
+
+    def test_surfaces_flow_through_to_plan_document(self):
+        candidates = parse_candidates_yaml({"candidates": [{
+            "name": "內幔", "type": "主題",
+            "surfaces": [{"phrase": "幔子", "verses": [31]}],
+        }]})
+        with tempfile.TemporaryDirectory() as tmp:
+            plan = resolve(candidates, {}, "出埃及記", "26", root=Path(tmp), homonyms={})
+            doc = build_plan_document(plan, "出埃及記", 26)
+        record = doc["C_new_formal"][0]
+        self.assertEqual([{"phrase": "幔子", "verses": [31]}], record["surfaces"])
+
+
 class TranslitBaseNameMatchTests(unittest.TestCase):
     """裸中文候選（皂莢木）須匹配既有音譯條目（皂莢木（atzei shittim）），
     否則每章重複詞被誤判為新條目、覆蓋既有累積。"""

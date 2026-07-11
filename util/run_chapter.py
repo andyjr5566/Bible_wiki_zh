@@ -422,26 +422,108 @@ def _created_title(candidate, created_names):
     return None
 
 
-def build_surface_map(ctx, plan):
-    """裸名（皂莢木、摩西）→ 條目全名（皂莢木（atzei shittim）、摩西）。
+def _base_surface(title):
+    """括號前裸名（皂莢木（atzei shittim）→ 皂莢木）；無括號時回 None。"""
+    base = title.split("（", 1)[0].split("(", 1)[0].strip()
+    return base if base and base != title else None
 
-    A/B 用既有標題、C 用模型實建全名；再補上實建條目的裸名。這是「經文詞 →
-    要連去的條目檔」的對照表。
+
+def _payload_aliases(ctx):
+    """本章 entry_content payload 的 aliases——C 類新條目尚未進全庫索引，
+    其別稱只能從本章 payload 檔取得（斷點續跑也讀得到）。"""
+    out_dir = ctx.path("entry_content")
+    if not out_dir.exists():
+        return {}
+    aliases = {}
+    for path in sorted(out_dir.glob("*.yaml")):
+        data = _read_yaml(path)
+        if isinstance(data, dict) and data.get("name"):
+            aliases[data["name"]] = [
+                str(a).strip() for a in (data.get("aliases") or []) if str(a).strip()
+            ]
+    return aliases
+
+
+def build_surface_map(ctx, plan):
+    """經文詞 →｛target, verses, declared｝對照表（verses=None 表全章可連）。
+
+    詞彙推導層級（高→低；跨層由高層勝出、同層同詞指向不同條目＝歧義不連）：
+      0. 候選宣告的 surfaces（人工判斷，可帶 verses 限定節次）
+      1. 候選名稱（A/B 對 existing_title、C 對實建全名）
+      2. 條目全名與其括號前裸名（皂莢木（atzei shittim）→ 皂莢木）
+      3. 條目 aliases（A/B 取自全庫索引、C 取自本章 entry_content payload）
+
+    aliases 與裸名入詞彙表是「raw data 有補充的經文詞也要連上」的關鍵：
+    經文常用簡稱（法櫃、燈臺、皂莢木），只比對候選宣告名永遠對不上。
+    歧義詞整詞不連並記 manual_review，對應 D 類「歧義交人工」精神。
     """
-    surface_to_title = {}
+    index = ctx.index if ctx.index is not None else resolver.load_index()
+    payload_aliases = _payload_aliases(ctx)
+    created = list(getattr(ctx, "created_entry_names", []))
+    records = []  # (priority, surface, target, verses)
+
+    def add(priority, surface, target, verses=None):
+        surface = (surface or "").strip()
+        if surface and target:
+            records.append((priority, surface, target, verses))
+
+    def add_declared(entry, target):
+        for item in entry.get("surfaces") or []:
+            if isinstance(item, dict):
+                verses = item.get("verses")
+                add(0, item.get("phrase"), target,
+                    {int(v) for v in verses} if verses else None)
+            else:
+                add(0, item, target)
+
+    def add_title_forms(title):
+        add(2, title, title)
+        add(2, _base_surface(title), title)
+
     for key in ("A_use_directly", "B_needs_update"):
         for e in plan.get(key, []):
-            surface_to_title.setdefault(e["name"], e.get("existing_title") or e["name"])
-    created = list(getattr(ctx, "created_entry_names", []))
+            title = e.get("existing_title") or e["name"]
+            add_declared(e, title)
+            add(1, e["name"], title)
+            add_title_forms(title)
+            info = index.get(title)
+            for alias in (info or {}).get("aliases") or []:
+                add(3, alias, title)
     for e in plan.get("C_new_formal", []):
         full = _created_title(e, created)
-        if full:
-            surface_to_title.setdefault(e["name"], full)
+        if not full:
+            continue
+        add_declared(e, full)
+        add(1, e["name"], full)
     for name in created:
-        base = name.split("（", 1)[0].split("(", 1)[0].strip()
-        if base:
-            surface_to_title.setdefault(base, name)
-    return surface_to_title
+        add_title_forms(name)
+        for alias in payload_aliases.get(name, []):
+            add(3, alias, name)
+
+    by_surface = {}
+    for record in records:
+        by_surface.setdefault(record[1], []).append(record)
+    surface_map, ambiguous = {}, []
+    for surface, recs in by_surface.items():
+        top_priority = min(r[0] for r in recs)
+        top = [r for r in recs if r[0] == top_priority]
+        targets = {r[2] for r in top}
+        if len(targets) > 1:
+            ambiguous.append(f"{surface}（{'／'.join(sorted(targets))}）")
+            continue
+        verses = None
+        if all(r[3] is not None for r in top):
+            verses = set().union(*(r[3] for r in top))
+        surface_map[surface] = {
+            "target": targets.pop(),
+            "verses": verses,
+            "declared": top_priority == 0,
+        }
+    if ambiguous:
+        ctx.manual_review.append(
+            f"verse_links：同一經文詞指向多個條目，歧義不自動連結：{'；'.join(sorted(ambiguous))}"
+        )
+    return surface_map
 
 
 def verse_links_step(ctx, plan):
@@ -451,17 +533,20 @@ def verse_links_step(ctx, plan):
     模型多次無法穩定產出對得上經文的 phrase／target。程式直接掃 raw 經文，
     連出來的一定是經文子字串、target 一定是既有條目，零漂移。事件／互文等不會
     出現在經文字面的條目自然不會被連（它們屬章節層 knowledge_nodes，非內文連結）。
+    詞彙表的推導（含 aliases 與候選宣告 surfaces）見 build_surface_map。
     """
     out_path = ctx.path("verse_links.yaml")
     if out_path.exists():
         return _read_yaml(out_path)
     raw_verses = ctx.raw_verses()
-    surface_to_title = build_surface_map(ctx, plan)
-    surfaces = [s for s in surface_to_title if s]
+    surface_map = build_surface_map(ctx, plan)
     links = []
+    matched = set()
     for vnum, verse in enumerate(raw_verses, 1):
         spans = []
-        for surface in surfaces:
+        for surface, info in surface_map.items():
+            if info["verses"] is not None and vnum not in info["verses"]:
+                continue
             idx = verse.find(surface)
             if idx != -1:  # 每詞每節只連首次出現，避免同詞洗版
                 spans.append((idx, idx + len(surface), surface))
@@ -470,8 +555,17 @@ def verse_links_step(ctx, plan):
         for start, end, surface in spans:
             if start >= last_end:  # 不重疊：銅座 勝過 銅
                 links.append({"verse": vnum, "phrase": surface,
-                              "target": surface_to_title[surface]})
+                              "target": surface_map[surface]["target"]})
+                matched.add(surface)
                 last_end = end
+    missing = sorted(
+        s for s, info in surface_map.items() if info["declared"] and s not in matched
+    )
+    if missing:
+        ctx.manual_review.append(
+            f"verse_links：候選宣告的 surfaces 未連上任何節（不在經文或被長詞覆蓋）："
+            f"{'、'.join(missing)}"
+        )
     payload = {"book": ctx.book, "chapter": ctx.chapter, "links": links}
     _write_yaml(out_path, payload)
     return payload
