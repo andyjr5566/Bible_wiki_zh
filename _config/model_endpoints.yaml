@@ -21,7 +21,7 @@ endpoints:
   local-4000:
     type: openai
     base_url: http://localhost:4000/v1
-    model: z-ai/glm-5.2
+    model: z-ai/glm-5.2 # minimaxai/minimax-m2.7 # deepseek-ai/deepseek-v4-pro #
 
   local-4001:
     type: openai

@@ -1,0 +1,311 @@
+book: "出埃及記"
+chapter: 28
+candidates:
+  # === 祭司聖衣相關 ===
+  - name: "以弗得"
+    type: "原文"
+    evidence: "出28:6-14 經文詳細描述以弗得用金線、藍色、紫色、朱紅色線和撚的細麻做成，有兩條肩帶，鑲兩塊紅瑪瑙刻以色列兒子名字。CT/GT/KC/BH 註解：以弗得預表基督作大祭司、肩負神子民、神性與人性聯結"
+    surfaces:
+      - phrase: "以弗得"
+        verses: [6, 7, 8, 9, 10, 11, 12, 13, 14]
+      - phrase: "肩帶"
+        verses: [7, 8, 9, 10, 11, 12]
+      - phrase: "紅瑪瑙"
+        verses: [9, 10, 11, 12]
+
+  - name: "胸牌（決斷胸牌）"
+    type: "原文"
+    evidence: "出28:15-30 經文詳細描述胸牌四方疊兩層，鑲十二塊寶石刻十二支派名字，裡面放烏陵和土明。CT/GT/KC/BH 註解：胸牌預表基督在神面前為聖徒代求、烏陵土明表神引導"
+    surfaces:
+      - phrase: "胸牌"
+        verses: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+      - phrase: "決斷胸牌"
+        verses: [15, 29, 30]
+      - phrase: "烏陵和土明"
+        verses: [30]
+
+  - name: "烏陵和土明"
+    type: "原文"
+    evidence: "出28:30 經文記載將烏陵和土明放在決斷胸牌裡，亞倫進到耶和華面前帶在胸前。CT/GT/KC/BH 註解：烏陵土明表神的啟示與引導、預表基督作智慧"
+    surfaces:
+      - phrase: "烏陵和土明"
+        verses: [30]
+      - phrase: "烏陵"
+        verses: [30]
+      - phrase: "土明"
+        verses: [30]
+
+  - name: "外袍（以弗得的外袍）"
+    type: "主題"
+    evidence: "出28:31-35 經文記載外袍顏色全是藍的，領口織領邊，底邊有金鈴鐺和石榴相間。CT/GT/KC/BH 註解：藍色表屬天/神性、金鈴鐺表見證、石榴表豐盛生命"
+    surfaces:
+      - phrase: "外袍"
+        verses: [31, 32, 33, 34, 35]
+      - phrase: "金鈴鐺"
+        verses: [33, 34, 35]
+      - phrase: "石榴"
+        verses: [33, 34, 35]
+
+  - name: "牌子（冠冕牌）"
+    type: "原文"
+    evidence: "出28:36-37 經文記載用精金做牌，刻『歸耶和華為聖』，用藍細帶子繫在冠冕前面。CT/GT/KC/BH 註解：牌子預表基督完全聖潔、信徒蒙悅納"
+    surfaces:
+      - phrase: "牌子"
+        verses: [36, 37]
+      - phrase: "冠冕牌"
+        verses: [36, 37]
+      - phrase: "歸耶和華為聖"
+        verses: [36]
+
+  - name: "冠冕（裹頭巾）"
+    type: "原文"
+    evidence: "出28:37,39 經文記載冠冕用細麻布做，牌子繫在前面。CT/GT/KC/BH 註解：冠冕預表基督榮耀、細麻表聖潔"
+    surfaces:
+      - phrase: "冠冕"
+        verses: [37, 39]
+      - phrase: "裹頭巾"
+        verses: [39, 40]
+
+  - name: "內袍（雜色內袍）"
+    type: "主題"
+    evidence: "出28:39 經文記載用雜色細麻線織內袍。CT/GT/KC/BH 註解：內袍預表基督人性、雜色表各樣恩賜"
+    surfaces:
+      - phrase: "內袍"
+        verses: [39, 40]
+      - phrase: "雜色內袍"
+        verses: [4, 39]
+
+  - name: "腰帶（繡花腰帶）"
+    type: "主題"
+    evidence: "出28:39-40 經文記載腰帶用繡花手工做，為亞倫和兒子做。CT/GT/KC/BH 註解：腰帶預表服事的準備、忠心"
+    surfaces:
+      - phrase: "腰帶"
+        verses: [39, 40]
+      - phrase: "繡花腰帶"
+        verses: [39]
+
+  - name: "褲子（細麻布褲子）"
+    type: "主題"
+    evidence: "出28:42-43 經文記載做細麻布褲子遮掩下體，從腰達到大腿，免得擔罪而死。CT/GT/KC/BH 註解：褲子預表基督遮蓋、聖潔事奉的要求"
+    surfaces:
+      - phrase: "褲子"
+        verses: [42, 43]
+      - phrase: "細麻布褲子"
+        verses: [42]
+      - phrase: "遮掩下體"
+        verses: [42]
+
+  - name: "紅瑪瑙（紀念石）"
+    type: "原文"
+    evidence: "出28:9-12 經文記載取兩塊紅瑪瑙刻以色列兒子名字，安在以弗得肩帶上作紀念石。
+CT/GT/KC/BH 註解：紅瑪瑙預表基督寶血贖回、紀念石表神不忘記子民"
+    surfaces:
+      - phrase: "紅瑪瑙"
+        verses: [9, 10, 11, 12]
+      - phrase: "紀念石"
+        verses: [12]
+
+  - name: "十二寶石（胸牌寶石）"
+    type: "主題"
+    evidence: "出28:17-21 經文詳細列出胸牌四行十二塊寶石：紅寶石、紅璧璽、紅玉、綠寶石、藍寶石、金鋼石、紫瑪瑙、白瑪瑙、紫晶、水蒼玉、紅瑪瑙、碧玉，刻十二支派名字。
+CT/GT/KC/BH 註解：十二寶石預表神子民在基督裡蒙寶貴、各有榮美"
+    surfaces:
+      - phrase: "寶石"
+        verses: [17, 18, 19, 20, 21]
+      - phrase: "十二寶石"
+        verses: [17, 21]
+      - phrase: "紅寶石"
+        verses: [17]
+      - phrase: "紅璧璽"
+        verses: [17]
+      - phrase: "紅玉"
+        verses: [17]
+      - phrase: "綠寶石"
+        verses: [18]
+      - phrase: "藍寶石"
+        verses: [18]
+      - phrase: "金鋼石"
+        verses: [18]
+      - phrase: "紫瑪瑙"
+        verses: [19]
+      - phrase: "白瑪瑙"
+        verses: [19]
+      - phrase: "紫晶"
+        verses: [19]
+      - phrase: "水蒼玉"
+        verses: [20]
+      - phrase: "碧玉"
+        verses: [20]
+
+  # === 祭司相關 ===
+  - name: "亞倫（大祭司）"
+    type: "人物"
+    evidence: "出28:1,3,4,41,43 經文記載神揀選亞倫和兒子供祭司職分，穿聖衣分別為聖。
+CT/GT/KC/BH 註解：亞倫預表基督作大祭司、按麥基洗德等次"
+    surfaces:
+      - phrase: "亞倫"
+        verses: [1, 3, 4, 41, 43]
+      - phrase: "大祭司"
+        verses: [1, 3, 4, 41, 43]
+
+  - name: "亞倫的兒子（拿答、亞比戶、以利亞撒、以他瑪）"
+    type: "人物"
+    evidence: "出28:1,40-41,43 經文列舉亞倫四個兒子：拿答、亞比戶、以利亞撒、以他瑪，同供祭司職分。
+CT/GT/KC/BH 註解：祭司兒子預表信徒祭司職分(彼前2:9)"
+    surfaces:
+      - phrase: "拿答"
+        verses: [1]
+      - phrase: "亞比戶"
+        verses: [1]
+      - phrase: "以利亞撒"
+        verses: [1]
+      - phrase: "以他瑪"
+        verses: [1]
+      - phrase: "亞倫的兒子"
+        verses: [1, 40, 41, 43]
+      - phrase: "祭司"
+        verses: [1, 3, 4, 41, 43]
+
+  # === 材料/顏色象徵 ===
+  - name: "金線"
+    type: "原文"
+    evidence: "出28:5,6,8,15,22,23,24,25,26,27,28,36 經文多處用金線做聖衣。
+CT/GT/KC/BH 註解：金表神性、神榮耀"
+    surfaces:
+      - phrase: "金線"
+        verses: [5, 6, 8, 15, 22, 23, 24, 25, 26, 27, 28, 36]
+      - phrase: "金子"
+        verses: [5, 6, 8, 11, 15, 22, 23, 24, 25, 26, 27, 28, 36]
+
+  - name: "藍色、紫色、朱紅色線"
+    type: "主題"
+    evidence: "出28:5,6,8,15,31,33,37 經文多處用藍色、紫色、朱紅色線做聖衣、外袍、冠冕牌。
+已有條目「藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）」。CT/GT/KC/BH 註解：藍色表屬天/神性、紫色表君尊、朱紅色表流血贖罪"
+    surfaces:
+      - phrase: "藍色"
+        verses: [5, 6, 8, 15, 31, 33, 37]
+      - phrase: "紫色"
+        verses: [5, 6, 8, 15, 33]
+      - phrase: "朱紅色"
+        verses: [5, 6, 8, 15, 33]
+      - phrase: "藍色、紫色、朱紅色線"
+        verses: [5, 6, 8, 15, 33]
+
+  - name: "撚的細麻"
+    type: "原文"
+    evidence: "出28:5,6,8,15,39,42 經文多處用撚的細麻做聖衣、內袍、褲子。
+已有條目「撚的細麻」。CT/GT/KC/BH 註解：細麻表潔白聖潔(啟19:8)、基督純潔人性"
+    surfaces:
+      - phrase: "細麻"
+        verses: [5, 6, 8, 15, 39, 42]
+      - phrase: "撚的細麻"
+        verses: [5, 6, 8, 15, 39, 42]
+
+  - name: "精金"
+    type: "主題"
+    evidence: "出28:11,13,14,22,23,24,25,26,27,28,36 經文多處用精金做槽、鍊子、環、牌子。
+CT/GT/KC/BH 註解：精金表神性純全、榮耀"
+    surfaces:
+      - phrase: "精金"
+        verses: [11, 13, 14, 22, 23, 24, 25, 26, 27, 28, 36]
+      - phrase: "金子"
+        verses: [5, 6, 8, 11, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 36]
+
+  # === 神學/互文主題 ===
+  - name: "山上的樣式"
+    type: "神學"
+    evidence: "出28:1-43 整章聖衣製作都照神指示，預表天上真實。已有條目「山上的樣式」、「天上真聖所（來9:23-24）」、「天上事的形狀和影像（來8:5）」。來8:5、9:23-24 指出地上帳幕是天上真聖所的影兒/副本"
+    surfaces:
+      - phrase: "聖衣"
+        verses: [2, 3, 4, 40, 41, 42, 43]
+      - phrase: "分別為聖"
+        verses: [3, 41]
+
+  - name: "會幕（帳幕整體）"
+    type: "主題"
+    evidence: "出28:43 經文提到亞倫和兒子進會幕、就近壇供職。已有條目「會幕（帳幕整體）」。KC/BH 註解：會幕=神與人會面之處、基督和教會的預表(弗2:20-21)"
+    surfaces:
+      - phrase: "會幕"
+        verses: [43]
+      - phrase: "帳幕"
+        verses: [43]
+
+  - name: "聖所"
+    type: "地點"
+    evidence: "出28:29,30,35,43 經文提到亞倫進聖所、在耶和華面前。已有條目「神的聖所」"
+    surfaces:
+      - phrase: "聖所"
+        verses: [29, 30, 35, 43]
+      - phrase: "進聖所"
+        verses: [29, 30, 35]
+
+  - name: "至聖所"
+    type: "地點"
+    evidence: "出28:29,30,35 暗示胸牌、烏陵土明在至聖所使用。已有條目「至聖所」"
+    surfaces:
+      - phrase: "至聖所"
+        verses: [29, 30, 35]
+      - phrase: "耶和華面前"
+        verses: [29, 30, 35, 43]
+
+  # === 互文條目 ===
+  - name: "大祭司基督（來4:14-15）"
+    type: "互文"
+    evidence: "來4:14-15 指出耶穌是大祭司，能體恤軟弱。KC/CT 註解：亞倫預表基督作大祭司、按麥基洗德等次(來7:17)"
+    surfaces:
+      - phrase: "大祭司"
+        verses: [1, 3, 4, 41, 43]
+
+  - name: "信徒作祭司（彼前2:5,9）"
+    type: "互文"
+    evidence: "彼前2:5,9 信徒是聖潔的祭司、有君尊的祭司。KC/CT 註解：亞倫兒子預表信徒祭司職分、穿聖衣表披戴基督(羅13:14)"
+    surfaces:
+      - phrase: "祭司"
+        verses: [1, 3, 4, 41, 43]
+      - phrase: "供祭司職分"
+        verses: [1, 3, 4, 41, 43]
+
+  - name: "披戴基督（羅13:14）"
+    type: "互文"
+    evidence: "羅13:14 吩咐披戴主耶穌基督。KC/CT 註解：祭司聖衣就是耶穌基督、祂是我們的榮耀華美、公義聖潔"
+    surfaces:
+      - phrase: "聖衣"
+        verses: [2, 3, 4, 40, 41, 42, 43]
+      - phrase: "穿聖服"
+        verses: [4, 41]
+
+  - name: "烏陵土明與神引導（來5:1-4）"
+    type: "互文"
+    evidence: "來5:1-4 論大祭司為百姓獻祭、能體恤無知誤謬。KC/CT 註解：烏陵土明預表基督作智慧、神引導"
+    surfaces:
+      - phrase: "烏陵和土明"
+        verses: [30]
+      - phrase: "決斷"
+        verses: [15, 29, 30]
+
+  - name: "聖靈膏抹（約壹2:20,27）"
+    type: "互文"
+    evidence: "約壹2:20,27 信徒從聖者受恩膏。KC/CT 註解：聖衣製作需智慧靈充滿(出28:3)、預表聖靈膏抹使人明白基督奧秘(林前2:6-8)"
+    surfaces:
+      - phrase: "智慧的靈"
+        verses: [3]
+      - phrase: "心中有智慧"
+        verses: [3]
+
+  - name: "義行的細麻（啟19:8）"
+    type: "互文"
+    evidence: "啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行"
+    surfaces:
+      - phrase: "細麻"
+        verses: [5, 6, 8, 15, 39, 42]
+      - phrase: "內袍"
+        verses: [39, 40]
+
+  - name: "基督作智慧（林前1:30）"
+    type: "互文"
+    evidence: "林前1:30 基督成了我們的智慧。KC/CT 註解：烏陵土明預表基督作神的智慧、引導"
+    surfaces:
+      - phrase: "烏陵和土明"
+        verses: [30]
+      - phrase: "決斷"
+        verses: [15, 29, 30]

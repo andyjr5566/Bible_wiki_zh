@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 出埃及記/第26章.md",
-                "mode": "source",
+                "file": "02 出埃及記/第30章.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第26章"
+              "title": "第30章"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 出埃及記/第26章.md",
+                "file": "02 出埃及記/第30章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第26章 的反向連結"
+              "title": "第30章 的反向連結"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02 出埃及記/第26章.md",
+                "file": "02 出埃及記/第30章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第26章 的對外連結"
+              "title": "第30章 的對外連結"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 出埃及記/第26章.md",
+                "file": "02 出埃及記/第30章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第26章 的大綱"
+              "title": "第30章 的大綱"
             }
           }
         ]
@@ -186,35 +186,35 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "link_folder/主題/律法與恩典.md",
-    "link_folder/主題/閂（橫閂）.md",
-    "link_folder/主題/金子（包金）.md",
-    "link_folder/主題/五根包金柱子（門簾柱）.md",
-    "02 出埃及記/第26章.md",
-    "02 出埃及記/第25章.md",
-    "scheme.md",
-    "link_folder/主題/銅.md",
-    "link_folder/主題/銀座（帶卯的銀座）.md",
-    "link_folder/主題/約櫃.md",
-    "link_folder/主題/拐角板（雙板）.md",
-    "link_folder/主題/皂莢木豎板.md",
+    "link_folder/神學/基督作贖罪祭.md",
+    "02 出埃及記/第29章.md",
+    "link_folder/互文/披戴基督（羅13：14）.md",
+    "link_folder/原文/膏油（聖膏油）.md",
+    "02 出埃及記/第28章.md",
+    "link_folder/主題/十二寶石（胸牌寶石）.md",
+    "02 出埃及記/第27章.md",
+    "專案流程說明.md",
     "link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md",
-    "link_folder/主題/十幅幔子（內層幕幔）.md",
-    "link_folder/原文/撚的細麻.md",
-    "link_folder/主題/會幕（帳幕整體）.md",
-    "link_folder/主題/帳幕門簾.md",
-    "link_folder/主題/四根包金柱子（內幔柱）.md",
-    "link_folder/主題/內幔（隔聖所至聖所的幔子）.md",
-    "link_folder/主題/海狗皮頂蓋.md",
-    "link_folder/主題/染紅的公羊皮蓋子.md",
-    "link_folder/主題/五十個銅鉤.md",
-    "link_folder/主題/十一幅山羊毛幔子（罩棚）.md",
-    "link_folder/主題/藍色鈕扣（lula'ot tekhelet）.md",
-    "link_folder/主題/五十個金鉤（vavei zahav）.md",
+    "link_folder/人物/亞倫.md",
+    "link_folder/神學/贖罪祭.md",
+    "02 出埃及記/第30章.md",
+    "link_folder/主題/金香壇（香壇）.md",
+    "link_folder/互文/贖價（基督作贖價）.md",
+    "link_folder/互文/話語潔淨（弗5：26）.md",
+    "link_folder/原文/聖香（清淨聖潔的香）.md",
+    "link_folder/原文/聖膏油.md",
+    "link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md",
+    "link_folder/主題/洗濯盆（銅盆）.md",
+    "link_folder/主題/壇的四角（香壇）.md",
+    "link_folder/互文/基督代禱（來7：25）.md",
+    "link_folder/互文/信徒禱告如香（啟5：8, 8：3-4）.md",
+    "link_folder/人物/亞倫和他兒子（祭司）.md",
+    "link_folder/互文/贖價（基督作贖價）（來9：22）.md",
+    "link_folder/神學/承接聖職（分別為聖）.md",
+    "link_folder/主題/聖衣（祭司聖服）.md",
     "util/run_chapter.py.tmp.72432.71e3da23132b",
     "util/resolve_link_candidates.py.tmp.72432.439302b22515",
     "util/resolve_link_candidates.py.tmp.72432.517aab50c59b",
-    "link_folder/主題/門簾.md",
     "util/link_updates.py.tmp.72432.aed9715cc767",
     "debug_output.txt",
     "util/run_chapter.py.tmp.56312.f399cfdcca17",

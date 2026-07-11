@@ -211,6 +211,18 @@
       "內幔"
     ]
   },
+  "內袍（雜色內袍）": {
+    "path": "link_folder/主題/內袍（雜色內袍）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "內袍（雜色內袍）",
+    "status": "formal",
+    "aliases": [
+      "雜色內袍",
+      "內袍",
+      "細麻內袍"
+    ]
+  },
   "公義與真理": {
     "path": "link_folder/主題/公義與真理.md",
     "type": "主題",
@@ -265,6 +277,17 @@
     "aliases": [
       "山羊毛幔子",
       "罩棚"
+    ]
+  },
+  "十二寶石（胸牌寶石）": {
+    "path": "link_folder/主題/十二寶石（胸牌寶石）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "十二寶石（胸牌寶石）",
+    "status": "formal",
+    "aliases": [
+      "胸牌寶石",
+      "十二支派寶石"
     ]
   },
   "十幅幔子（內層幕幔）": {
@@ -362,6 +385,71 @@
     "status": "formal",
     "aliases": []
   },
+  "壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）": {
+    "path": "link_folder/主題/壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）",
+    "status": "formal",
+    "aliases": [
+      "祭壇的器具",
+      "銅製器具"
+    ]
+  },
+  "壇的四角": {
+    "path": "link_folder/主題/壇的四角.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的四角",
+    "status": "formal",
+    "aliases": [
+      "祭壇的四角",
+      "壇角"
+    ]
+  },
+  "壇的四角（香壇）": {
+    "path": "link_folder/主題/壇的四角（香壇）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的四角（香壇）",
+    "status": "formal",
+    "aliases": [
+      "香壇的四角"
+    ]
+  },
+  "壇的槓（抬壇用）": {
+    "path": "link_folder/主題/壇的槓（抬壇用）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的槓（抬壇用）",
+    "status": "formal",
+    "aliases": [
+      "抬壇的槓",
+      "祭壇的槓"
+    ]
+  },
+  "壇的銅環": {
+    "path": "link_folder/主題/壇的銅環.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的銅環",
+    "status": "formal",
+    "aliases": [
+      "四個銅環",
+      "銅環"
+    ]
+  },
+  "壇的銅網": {
+    "path": "link_folder/主題/壇的銅網.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇的銅網",
+    "status": "formal",
+    "aliases": [
+      "銅網",
+      "網格狀物"
+    ]
+  },
   "夏甲與撒萊的衝突": {
     "path": "link_folder/主題/夏甲與撒萊的衝突.md",
     "type": "主題",
@@ -369,6 +457,17 @@
     "title": "夏甲與撒萊的衝突",
     "status": "formal",
     "aliases": []
+  },
+  "外袍（以弗得的外袍）": {
+    "path": "link_folder/主題/外袍（以弗得的外袍）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "外袍（以弗得的外袍）",
+    "status": "formal",
+    "aliases": [
+      "以弗得的外袍",
+      "藍色外袍"
+    ]
   },
   "大的服事小的": {
     "path": "link_folder/主題/大的服事小的.md",
@@ -459,6 +558,17 @@
     "title": "帳棚與祭壇",
     "status": "formal",
     "aliases": []
+  },
+  "帶卯的銅座（院子柱子座）": {
+    "path": "link_folder/主題/帶卯的銅座（院子柱子座）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "帶卯的銅座（院子柱子座）",
+    "status": "formal",
+    "aliases": [
+      "銅座",
+      "帶卯的座"
+    ]
   },
   "強暴": {
     "path": "link_folder/主題/強暴.md",
@@ -640,6 +750,17 @@
     "status": "candidate",
     "aliases": []
   },
+  "會幕院子": {
+    "path": "link_folder/主題/會幕院子.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "會幕院子",
+    "status": "formal",
+    "aliases": [
+      "帳幕的院子",
+      "外院"
+    ]
+  },
   "會幕（帳幕整體）": {
     "path": "link_folder/主題/會幕（帳幕整體）.md",
     "type": "主題",
@@ -702,6 +823,17 @@
     "status": "formal",
     "aliases": []
   },
+  "洗濯盆（銅盆）": {
+    "path": "link_folder/主題/洗濯盆（銅盆）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "洗濯盆（銅盆）",
+    "status": "formal",
+    "aliases": [
+      "銅洗濯盆",
+      "洗濯盆和盆座"
+    ]
+  },
   "海狗皮頂蓋": {
     "path": "link_folder/主題/海狗皮頂蓋.md",
     "type": "主題",
@@ -720,6 +852,16 @@
     "title": "清早起來",
     "status": "candidate",
     "aliases": []
+  },
+  "清橄欖油（點燈用）": {
+    "path": "link_folder/主題/清橄欖油（點燈用）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "清橄欖油（點燈用）",
+    "status": "formal",
+    "aliases": [
+      "搗成的清橄欖油"
+    ]
   },
   "漸漸的墮落": {
     "path": "link_folder/主題/漸漸的墮落.md",
@@ -926,6 +1068,16 @@
     "status": "formal",
     "aliases": []
   },
+  "精金": {
+    "path": "link_folder/主題/精金.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "精金",
+    "status": "formal",
+    "aliases": [
+      "純金"
+    ]
+  },
   "約櫃": {
     "path": "link_folder/主題/約櫃.md",
     "type": "主題",
@@ -977,6 +1129,17 @@
     "status": "formal",
     "aliases": []
   },
+  "聖衣（祭司聖服）": {
+    "path": "link_folder/主題/聖衣（祭司聖服）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "聖衣（祭司聖服）",
+    "status": "formal",
+    "aliases": [
+      "聖衣",
+      "祭司聖服"
+    ]
+  },
   "聖靈的引領": {
     "path": "link_folder/主題/聖靈的引領.md",
     "type": "主題",
@@ -995,6 +1158,18 @@
     "status": "formal",
     "aliases": [
       "Obedience brings healing"
+    ]
+  },
+  "腰帶（繡花腰帶）": {
+    "path": "link_folder/主題/腰帶（繡花腰帶）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "腰帶（繡花腰帶）",
+    "status": "formal",
+    "aliases": [
+      "繡花腰帶",
+      "腰帶",
+      "束腰帶"
     ]
   },
   "腹中相爭": {
@@ -1054,6 +1229,18 @@
     "title": "血祭與素祭",
     "status": "formal",
     "aliases": []
+  },
+  "褲子（細麻布褲子）": {
+    "path": "link_folder/主題/褲子（細麻布褲子）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "褲子（細麻布褲子）",
+    "status": "formal",
+    "aliases": [
+      "細麻布褲子",
+      "褲子",
+      "內褲"
+    ]
   },
   "親嘴": {
     "path": "link_folder/主題/親嘴.md",
@@ -1179,6 +1366,17 @@
       "七盞燈金燈臺"
     ]
   },
+  "金香壇（香壇）": {
+    "path": "link_folder/主題/金香壇（香壇）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "金香壇（香壇）",
+    "status": "formal",
+    "aliases": [
+      "燒香的壇",
+      "金壇"
+    ]
+  },
   "銀子": {
     "path": "link_folder/主題/銀子.md",
     "type": "主題",
@@ -1198,6 +1396,17 @@
       "銀座"
     ]
   },
+  "銀杆（連絡柱子）": {
+    "path": "link_folder/主題/銀杆（連絡柱子）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "銀杆（連絡柱子）",
+    "status": "formal",
+    "aliases": [
+      "銀製杆子",
+      "連絡柱子的銀杆"
+    ]
+  },
   "銅": {
     "path": "link_folder/主題/銅.md",
     "type": "主題",
@@ -1206,6 +1415,18 @@
     "status": "formal",
     "aliases": [
       "青銅"
+    ]
+  },
+  "銅壇（燔祭壇）": {
+    "path": "link_folder/主題/銅壇（燔祭壇）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "銅壇（燔祭壇）",
+    "status": "formal",
+    "aliases": [
+      "祭壇",
+      "燔祭壇",
+      "銅壇"
     ]
   },
   "長子名分": {
@@ -1234,6 +1455,17 @@
     "title": "關懷弱勢",
     "status": "formal",
     "aliases": []
+  },
+  "院子門簾": {
+    "path": "link_folder/主題/院子門簾.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "院子門簾",
+    "status": "formal",
+    "aliases": [
+      "院子的門簾",
+      "會幕院子的門簾"
+    ]
   },
   "陳設餅桌子": {
     "path": "link_folder/主題/陳設餅桌子.md",
@@ -2340,6 +2572,27 @@
     "title": "俄巴底亞書以東審判",
     "status": "formal",
     "aliases": []
+  },
+  "信徒作祭司（彼前2：5,9）": {
+    "path": "link_folder/互文/信徒作祭司（彼前2：5,9）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "信徒作祭司（彼前2：5,9）",
+    "status": "formal",
+    "aliases": [
+      "信徒皆祭司(彼前2:5",
+      "9)"
+    ]
+  },
+  "信徒禱告如香（啟5：8, 8：3-4）": {
+    "path": "link_folder/互文/信徒禱告如香（啟5：8, 8：3-4）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "信徒禱告如香（啟5：8, 8：3-4）",
+    "status": "formal",
+    "aliases": [
+      "信徒禱告如香"
+    ]
   },
   "傳10：20": {
     "path": "link_folder/互文/傳10：20.md",
@@ -3476,6 +3729,26 @@
       "四活物的形象"
     ]
   },
+  "基督代禱（來7：25）": {
+    "path": "link_folder/互文/基督代禱（來7：25）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "基督代禱（來7：25）",
+    "status": "formal",
+    "aliases": [
+      "基督代禱"
+    ]
+  },
+  "基督作智慧（林前1：30）": {
+    "path": "link_folder/互文/基督作智慧（林前1：30）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "基督作智慧（林前1：30）",
+    "status": "formal",
+    "aliases": [
+      "基督是我們的智慧"
+    ]
+  },
   "基督復活預表": {
     "path": "link_folder/互文/基督復活預表.md",
     "type": "互文",
@@ -3483,6 +3756,16 @@
     "title": "基督復活預表",
     "status": "formal",
     "aliases": []
+  },
+  "基督是門（約10：7）": {
+    "path": "link_folder/互文/基督是門（約10：7）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "基督是門（約10：7）",
+    "status": "formal",
+    "aliases": [
+      "門(約10:7)"
+    ]
   },
   "基督頌": {
     "path": "link_folder/互文/基督頌.md",
@@ -3518,6 +3801,16 @@
     "status": "formal",
     "aliases": [
       "Titus 1:5-9 Elder qualifications"
+    ]
+  },
+  "大祭司基督（來4：14-15）": {
+    "path": "link_folder/互文/大祭司基督（來4：14-15）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "大祭司基督（來4：14-15）",
+    "status": "formal",
+    "aliases": [
+      "基督為大祭司"
     ]
   },
   "天上事的形狀和影像（來8：5）": {
@@ -4100,6 +4393,24 @@
       "Acts 6:1-7 Choose deacons"
     ]
   },
+  "披戴基督（羅13：14）": {
+    "path": "link_folder/互文/披戴基督（羅13：14）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "披戴基督（羅13：14）",
+    "status": "formal",
+    "aliases": [
+      "披戴主耶穌基督"
+    ]
+  },
+  "拯救的角（路1：69）": {
+    "path": "link_folder/互文/拯救的角（路1：69）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "拯救的角（路1：69）",
+    "status": "formal",
+    "aliases": []
+  },
   "挪亞是傳義道者": {
     "path": "link_folder/互文/挪亞是傳義道者.md",
     "type": "互文",
@@ -4676,6 +4987,16 @@
     "aliases": [
       "路15:11-32",
       "浪子回頭"
+    ]
+  },
+  "烏陵土明與神引導（來5：1-4）": {
+    "path": "link_folder/互文/烏陵土明與神引導（來5：1-4）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "烏陵土明與神引導（來5：1-4）",
+    "status": "formal",
+    "aliases": [
+      "烏陵與土明"
     ]
   },
   "猶1：8": {
@@ -5910,6 +6231,14 @@
     "status": "formal",
     "aliases": []
   },
+  "義行的細麻（啟19：8）": {
+    "path": "link_folder/互文/義行的細麻（啟19：8）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "義行的細麻（啟19：8）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶22：3": {
     "path": "link_folder/互文/耶22：3.md",
     "type": "互文",
@@ -5996,6 +6325,16 @@
     "status": "formal",
     "aliases": []
   },
+  "聖徒禱告如香（啟5：8, 8：3-4）": {
+    "path": "link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "聖徒禱告如香（啟5：8, 8：3-4）",
+    "status": "formal",
+    "aliases": [
+      "聖徒禱告如香"
+    ]
+  },
   "聖殿中的基路伯（王上6：23-28）": {
     "path": "link_folder/互文/聖殿中的基路伯（王上6：23-28）.md",
     "type": "互文",
@@ -6004,6 +6343,27 @@
     "status": "formal",
     "aliases": [
       "所羅門聖殿的基路伯"
+    ]
+  },
+  "聖靈如橄欖油（約壹2：20）": {
+    "path": "link_folder/互文/聖靈如橄欖油（約壹2：20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "聖靈如橄欖油（約壹2：20）",
+    "status": "formal",
+    "aliases": [
+      "橄欖油預表聖靈(約壹2:20)"
+    ]
+  },
+  "聖靈膏抹（約壹2：20,27）": {
+    "path": "link_folder/互文/聖靈膏抹（約壹2：20,27）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "聖靈膏抹（約壹2：20,27）",
+    "status": "formal",
+    "aliases": [
+      "聖靈的膏抹",
+      "膏抹的聖靈"
     ]
   },
   "腓2：14 不發怨言": {
@@ -6415,6 +6775,16 @@
     "status": "formal",
     "aliases": []
   },
+  "話語潔淨（弗5：26）": {
+    "path": "link_folder/互文/話語潔淨（弗5：26）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "話語潔淨（弗5：26）",
+    "status": "formal",
+    "aliases": [
+      "話語潔淨(弗5:26)"
+    ]
+  },
   "該隱殺亞伯": {
     "path": "link_folder/互文/該隱殺亞伯.md",
     "type": "互文",
@@ -6589,6 +6959,27 @@
     "status": "formal",
     "aliases": [
       "賽43:1-3"
+    ]
+  },
+  "贖價（基督作贖價）": {
+    "path": "link_folder/互文/贖價（基督作贖價）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "贖價（基督作贖價）",
+    "status": "formal",
+    "aliases": [
+      "贖價(基督作贖價)"
+    ]
+  },
+  "贖價（基督作贖價）（來9：22）": {
+    "path": "link_folder/互文/贖價（基督作贖價）（來9：22）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "贖價（基督作贖價）（來9：22）",
+    "status": "formal",
+    "aliases": [
+      "贖價",
+      "基督作贖價"
     ]
   },
   "赫人法律": {
@@ -6788,6 +7179,16 @@
     "status": "formal",
     "aliases": [
       "金燈臺與聖靈"
+    ]
+  },
+  "銅壇與十字架（來13：10-13）": {
+    "path": "link_folder/互文/銅壇與十字架（來13：10-13）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "銅壇與十字架（來13：10-13）",
+    "status": "formal",
+    "aliases": [
+      "祭壇預表十字架"
     ]
   },
   "門1：18-19": {
@@ -7010,6 +7411,17 @@
     "title": "亞倫",
     "status": "formal",
     "aliases": []
+  },
+  "亞倫和他兒子（祭司）": {
+    "path": "link_folder/人物/亞倫和他兒子（祭司）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫和他兒子（祭司）",
+    "status": "formal",
+    "aliases": [
+      "亞倫和他的兒子",
+      "祭司"
+    ]
   },
   "亞倫的祭司譜系": {
     "path": "link_folder/人物/亞倫的祭司譜系.md",
@@ -8310,6 +8722,16 @@
     "status": "formal",
     "aliases": []
   },
+  "祭司經理燈（亞倫和他兒子）": {
+    "path": "link_folder/人物/祭司經理燈（亞倫和他兒子）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "祭司經理燈（亞倫和他兒子）",
+    "status": "formal",
+    "aliases": [
+      "亞倫和他兒子經理這燈"
+    ]
+  },
   "米利暗": {
     "path": "link_folder/人物/米利暗.md",
     "type": "人物",
@@ -9109,6 +9531,17 @@
       "Eliezer etymology"
     ]
   },
+  "以弗得": {
+    "path": "link_folder/原文/以弗得.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "以弗得",
+    "status": "formal",
+    "aliases": [
+      "以弗得",
+      "ephod"
+    ]
+  },
   "以掃名字含義": {
     "path": "link_folder/原文/以掃名字含義.md",
     "type": "原文",
@@ -9308,6 +9741,18 @@
     "title": "典章（mishpatim）",
     "status": "formal",
     "aliases": []
+  },
+  "冠冕（裹頭巾）": {
+    "path": "link_folder/原文/冠冕（裹頭巾）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "冠冕（裹頭巾）",
+    "status": "formal",
+    "aliases": [
+      "冠冕",
+      "裹頭巾",
+      "禮冠"
+    ]
   },
   "初熟（bikkurim）": {
     "path": "link_folder/原文/初熟（bikkurim）.md",
@@ -10172,6 +10617,18 @@
     "status": "formal",
     "aliases": []
   },
+  "烏陵和土明": {
+    "path": "link_folder/原文/烏陵和土明.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "烏陵和土明",
+    "status": "formal",
+    "aliases": [
+      "烏陵",
+      "土明",
+      "Urim and Thummim"
+    ]
+  },
   "無酵餅": {
     "path": "link_folder/原文/無酵餅.md",
     "type": "原文",
@@ -10203,6 +10660,17 @@
     "title": "牆垣",
     "status": "formal",
     "aliases": []
+  },
+  "牌子（冠冕牌）": {
+    "path": "link_folder/原文/牌子（冠冕牌）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "牌子（冠冕牌）",
+    "status": "formal",
+    "aliases": [
+      "金牌",
+      "歸耶和華為聖的牌"
+    ]
   },
   "牛膝草": {
     "path": "link_folder/原文/牛膝草.md",
@@ -10414,6 +10882,18 @@
     "status": "formal",
     "aliases": []
   },
+  "紅瑪瑙（紀念石）": {
+    "path": "link_folder/原文/紅瑪瑙（紀念石）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "紅瑪瑙（紀念石）",
+    "status": "formal",
+    "aliases": [
+      "紅瑪瑙",
+      "紀念石",
+      "條紋瑪瑙"
+    ]
+  },
   "網羅": {
     "path": "link_folder/原文/網羅.md",
     "type": "原文",
@@ -10464,6 +10944,32 @@
     "status": "formal",
     "aliases": []
   },
+  "聖膏油": {
+    "path": "link_folder/原文/聖膏油.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "聖膏油",
+    "status": "formal",
+    "aliases": [
+      "聖膏油",
+      "膏油"
+    ]
+  },
+  "聖香（清淨聖潔的香）": {
+    "path": "link_folder/原文/聖香（清淨聖潔的香）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "聖香（清淨聖潔的香）",
+    "status": "formal",
+    "aliases": [
+      "聖香",
+      "清淨聖潔的香"
+    ]
+  },
   "聘禮（mohar）": {
     "path": "link_folder/原文/聘禮（mohar）.md",
     "type": "原文",
@@ -10489,6 +10995,17 @@
     "title": "聯手（shathaph）",
     "status": "formal",
     "aliases": []
+  },
+  "胸牌（決斷胸牌）": {
+    "path": "link_folder/原文/胸牌（決斷胸牌）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "胸牌（決斷胸牌）",
+    "status": "formal",
+    "aliases": [
+      "決斷胸牌",
+      "breastpiece of judgment"
+    ]
   },
   "膳長_baker": {
     "path": "link_folder/原文/膳長_baker.md",
@@ -10795,6 +11312,16 @@
     "status": "formal",
     "aliases": [
       "酒政 (cupbearer)"
+    ]
+  },
+  "金線": {
+    "path": "link_folder/原文/金線.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "金線",
+    "status": "formal",
+    "aliases": [
+      "金絲"
     ]
   },
   "錐子穿耳": {
@@ -11689,6 +12216,17 @@
       "書珥曠野"
     ]
   },
+  "會幕門口": {
+    "path": "link_folder/地點/會幕門口.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "會幕門口",
+    "status": "formal",
+    "aliases": [
+      "會幕出入處",
+      "帳幕門口"
+    ]
+  },
   "東方人之地": {
     "path": "link_folder/地點/東方人之地.md",
     "type": "地點",
@@ -12051,7 +12589,8 @@
     "title": "聖所",
     "status": "formal",
     "aliases": [
-      "帳幕的北面與南面空間"
+      "帳幕的北面",
+      "帳幕的南面"
     ]
   },
   "聖殿": {
@@ -15084,6 +15623,16 @@
     "status": "candidate",
     "aliases": []
   },
+  "基督作贖罪祭": {
+    "path": "link_folder/神學/基督作贖罪祭.md",
+    "type": "神學",
+    "secondary_types": [
+      "互文"
+    ],
+    "title": "基督作贖罪祭",
+    "status": "formal",
+    "aliases": []
+  },
   "基督復活": {
     "path": "link_folder/神學/基督復活.md",
     "type": "神學",
@@ -15756,6 +16305,16 @@
     "status": "formal",
     "aliases": []
   },
+  "承接聖職（分別為聖）": {
+    "path": "link_folder/神學/承接聖職（分別為聖）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "承接聖職（分別為聖）",
+    "status": "formal",
+    "aliases": [
+      "承接聖職"
+    ]
+  },
   "拉麥的一夫多妻": {
     "path": "link_folder/神學/拉麥的一夫多妻.md",
     "type": "神學",
@@ -16165,6 +16724,17 @@
     "status": "formal",
     "aliases": []
   },
+  "每日獻祭（常獻燔祭）": {
+    "path": "link_folder/神學/每日獻祭（常獻燔祭）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "每日獻祭（常獻燔祭）",
+    "status": "formal",
+    "aliases": [
+      "常獻的燔祭",
+      "每日當獻之祭"
+    ]
+  },
   "水變血的神蹟": {
     "path": "link_folder/神學/水變血的神蹟.md",
     "type": "神學",
@@ -16240,6 +16810,18 @@
     "aliases": [
       "法老預表魔鬼",
       "法老象徵撒但"
+    ]
+  },
+  "洗身（水洗）": {
+    "path": "link_folder/神學/洗身（水洗）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "洗身（水洗）",
+    "status": "formal",
+    "aliases": [
+      "洗身",
+      "水洗",
+      "用水洗身"
     ]
   },
   "洪水中的審判與拯救": {
@@ -17088,6 +17670,17 @@
     "aliases": [
       "以色列人的哀聲達於神",
       "神聽見哀聲"
+    ]
+  },
+  "神與人相會（耶和華面前）": {
+    "path": "link_folder/神學/神與人相會（耶和華面前）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神與人相會（耶和華面前）",
+    "status": "formal",
+    "aliases": [
+      "耶和華面前",
+      "神與人相會"
     ]
   },
   "神記念亞伯拉罕": {
@@ -17951,7 +18544,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "贖罪祭",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "赤身露體與羞恥": {
@@ -20347,11 +20940,26 @@
   "內幔": {
     "alias_of": "內幔（隔聖所至聖所的幔子）"
   },
+  "雜色內袍": {
+    "alias_of": "內袍（雜色內袍）"
+  },
+  "內袍": {
+    "alias_of": "內袍（雜色內袍）"
+  },
+  "細麻內袍": {
+    "alias_of": "內袍（雜色內袍）"
+  },
   "山羊毛幔子": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
   },
   "罩棚": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
+  },
+  "胸牌寶石": {
+    "alias_of": "十二寶石（胸牌寶石）"
+  },
+  "十二支派寶石": {
+    "alias_of": "十二寶石（胸牌寶石）"
   },
   "十幅幔子": {
     "alias_of": "十幅幔子（內層幕幔）"
@@ -20374,6 +20982,45 @@
   "二基路伯": {
     "alias_of": "基路伯（施恩座）"
   },
+  "祭壇的器具": {
+    "alias_of": "壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）"
+  },
+  "銅製器具": {
+    "alias_of": "壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）"
+  },
+  "祭壇的四角": {
+    "alias_of": "壇的四角"
+  },
+  "壇角": {
+    "alias_of": "壇的四角"
+  },
+  "香壇的四角": {
+    "alias_of": "壇的四角（香壇）"
+  },
+  "抬壇的槓": {
+    "alias_of": "壇的槓（抬壇用）"
+  },
+  "祭壇的槓": {
+    "alias_of": "壇的槓（抬壇用）"
+  },
+  "四個銅環": {
+    "alias_of": "壇的銅環"
+  },
+  "銅環": {
+    "alias_of": "壇的銅環"
+  },
+  "銅網": {
+    "alias_of": "壇的銅網"
+  },
+  "網格狀物": {
+    "alias_of": "壇的銅網"
+  },
+  "以弗得的外袍": {
+    "alias_of": "外袍（以弗得的外袍）"
+  },
+  "藍色外袍": {
+    "alias_of": "外袍（以弗得的外袍）"
+  },
   "宗族方言地土邦國": {
     "alias_of": "宗族方言地土地與邦國"
   },
@@ -20382,6 +21029,12 @@
   },
   "門簾": {
     "alias_of": "帳幕門簾"
+  },
+  "銅座": {
+    "alias_of": "帶卯的銅座（院子柱子座）"
+  },
+  "帶卯的座": {
+    "alias_of": "帶卯的銅座（院子柱子座）"
   },
   "恩典與律法": {
     "alias_of": "律法與恩典"
@@ -20416,6 +21069,12 @@
   "慈悲座": {
     "alias_of": "施恩座"
   },
+  "帳幕的院子": {
+    "alias_of": "會幕院子"
+  },
+  "外院": {
+    "alias_of": "會幕院子"
+  },
   "帳幕": {
     "alias_of": "會幕（帳幕整體）"
   },
@@ -20428,11 +21087,20 @@
   "罩棚的蓋": {
     "alias_of": "染紅的公羊皮蓋子"
   },
+  "銅洗濯盆": {
+    "alias_of": "洗濯盆（銅盆）"
+  },
+  "洗濯盆和盆座": {
+    "alias_of": "洗濯盆（銅盆）"
+  },
   "海狗皮": {
     "alias_of": "海狗皮頂蓋"
   },
   "罩棚上的頂蓋": {
     "alias_of": "海狗皮頂蓋"
+  },
+  "搗成的清橄欖油": {
+    "alias_of": "清橄欖油（點燈用）"
   },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
@@ -20452,14 +21120,32 @@
   "God's provision": {
     "alias_of": "神的供應"
   },
+  "純金": {
+    "alias_of": "精金"
+  },
   "法櫃": {
     "alias_of": "約櫃"
   },
   "見證的櫃": {
     "alias_of": "約櫃"
   },
+  "聖衣": {
+    "alias_of": "聖衣（祭司聖服）"
+  },
+  "祭司聖服": {
+    "alias_of": "聖衣（祭司聖服）"
+  },
   "Obedience brings healing": {
     "alias_of": "聽命順從蒙醫治"
+  },
+  "繡花腰帶": {
+    "alias_of": "腰帶（繡花腰帶）"
+  },
+  "腰帶": {
+    "alias_of": "腰帶（繡花腰帶）"
+  },
+  "束腰帶": {
+    "alias_of": "腰帶（繡花腰帶）"
   },
   "藍色線": {
     "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
@@ -20485,6 +21171,15 @@
   "幔子鈕扣": {
     "alias_of": "藍色鈕扣（lula'ot tekhelet）"
   },
+  "細麻布褲子": {
+    "alias_of": "褲子（細麻布褲子）"
+  },
+  "褲子": {
+    "alias_of": "褲子（細麻布褲子）"
+  },
+  "內褲": {
+    "alias_of": "褲子（細麻布褲子）"
+  },
   "遮眼": {
     "alias_of": "遮羞"
   },
@@ -20506,20 +21201,47 @@
   "七盞燈金燈臺": {
     "alias_of": "金燈臺"
   },
+  "燒香的壇": {
+    "alias_of": "金香壇（香壇）"
+  },
+  "金壇": {
+    "alias_of": "金香壇（香壇）"
+  },
   "帶卯的銀座": {
     "alias_of": "銀座（帶卯的銀座）"
   },
   "銀座": {
     "alias_of": "銀座（帶卯的銀座）"
   },
+  "銀製杆子": {
+    "alias_of": "銀杆（連絡柱子）"
+  },
+  "連絡柱子的銀杆": {
+    "alias_of": "銀杆（連絡柱子）"
+  },
   "青銅": {
     "alias_of": "銅"
+  },
+  "祭壇": {
+    "alias_of": "銅壇（燔祭壇）"
+  },
+  "燔祭壇": {
+    "alias_of": "銅壇（燔祭壇）"
+  },
+  "銅壇": {
+    "alias_of": "銅壇（燔祭壇）"
   },
   "橫閂": {
     "alias_of": "閂（橫閂）"
   },
   "閂": {
     "alias_of": "閂（橫閂）"
+  },
+  "院子的門簾": {
+    "alias_of": "院子門簾"
+  },
+  "會幕院子的門簾": {
+    "alias_of": "院子門簾"
   },
   "陳設餅的桌子": {
     "alias_of": "陳設餅桌子"
@@ -20743,6 +21465,15 @@
   "來11:29": {
     "alias_of": "來十一29 因信過紅海"
   },
+  "信徒皆祭司(彼前2:5": {
+    "alias_of": "信徒作祭司（彼前2：5,9）"
+  },
+  "9)": {
+    "alias_of": "信徒作祭司（彼前2：5,9）"
+  },
+  "信徒禱告如香": {
+    "alias_of": "信徒禱告如香（啟5：8, 8：3-4）"
+  },
   "詩127:3": {
     "alias_of": "兒女為神賞賜 (詩127-3)"
   },
@@ -20908,8 +21639,20 @@
   "四活物的形象": {
     "alias_of": "四活物的形象（結1：5-11）"
   },
+  "基督代禱": {
+    "alias_of": "基督代禱（來7：25）"
+  },
+  "基督是我們的智慧": {
+    "alias_of": "基督作智慧（林前1：30）"
+  },
+  "門(約10:7)": {
+    "alias_of": "基督是門（約10：7）"
+  },
   "Titus 1:5-9 Elder qualifications": {
     "alias_of": "多1：5-9 長老資格"
+  },
+  "基督為大祭司": {
+    "alias_of": "大祭司基督（來4：14-15）"
   },
   "天上事的形狀和影像": {
     "alias_of": "天上事的形狀和影像（來8：5）"
@@ -21013,6 +21756,9 @@
   "Acts 6:1-7 Choose deacons": {
     "alias_of": "徒6：1-7 選立執事"
   },
+  "披戴主耶穌基督": {
+    "alias_of": "披戴基督（羅13：14）"
+  },
   "挪亞傳義道": {
     "alias_of": "挪亞是傳義道者"
   },
@@ -21105,6 +21851,9 @@
   },
   "浪子回頭": {
     "alias_of": "浪子比喻 (路15)"
+  },
+  "烏陵與土明": {
+    "alias_of": "烏陵土明與神引導（來5：1-4）"
   },
   "箴21:1": {
     "alias_of": "王心在神手中 (箴21-1)"
@@ -21370,8 +22119,20 @@
   "耶三十一33": {
     "alias_of": "耶31：33"
   },
+  "聖徒禱告如香": {
+    "alias_of": "聖徒禱告如香（啟5：8, 8：3-4）"
+  },
   "所羅門聖殿的基路伯": {
     "alias_of": "聖殿中的基路伯（王上6：23-28）"
+  },
+  "橄欖油預表聖靈(約壹2:20)": {
+    "alias_of": "聖靈如橄欖油（約壹2：20）"
+  },
+  "聖靈的膏抹": {
+    "alias_of": "聖靈膏抹（約壹2：20,27）"
+  },
+  "膏抹的聖靈": {
+    "alias_of": "聖靈膏抹（約壹2：20,27）"
   },
   "Philippians 2:14 Without grumbling": {
     "alias_of": "腓2：14 不發怨言"
@@ -21436,6 +22197,9 @@
   "詩77:16-20": {
     "alias_of": "詩七十七16-20 紅海記念"
   },
+  "話語潔淨(弗5:26)": {
+    "alias_of": "話語潔淨（弗5：26）"
+  },
   "腓2:7-8": {
     "alias_of": "謙卑像基督 (腓2-7-8)"
   },
@@ -21469,6 +22233,15 @@
   "賽43:1-3": {
     "alias_of": "賽四十三1-3 水中行走不漫過"
   },
+  "贖價(基督作贖價)": {
+    "alias_of": "贖價（基督作贖價）"
+  },
+  "贖價": {
+    "alias_of": "贖價（基督作贖價）（來9：22）"
+  },
+  "基督作贖價": {
+    "alias_of": "贖價（基督作贖價）（來9：22）"
+  },
   "路一30": {
     "alias_of": "路1：30"
   },
@@ -21492,6 +22265,9 @@
   },
   "金燈臺與聖靈": {
     "alias_of": "金燈臺與聖靈（亞4：1-6）"
+  },
+  "祭壇預表十字架": {
+    "alias_of": "銅壇與十字架（來13：10-13）"
   },
   "雅各書1:20 人的怒氣不成就神的義": {
     "alias_of": "雅各書1_20 人的怒氣不成就神的義"
@@ -21528,6 +22304,12 @@
   },
   "拉結哭泣": {
     "alias_of": "馬太福音2章拉結哭泣"
+  },
+  "亞倫和他的兒子": {
+    "alias_of": "亞倫和他兒子（祭司）"
+  },
+  "祭司": {
+    "alias_of": "亞倫和他兒子（祭司）"
   },
   "Aaronic priesthood": {
     "alias_of": "亞倫的祭司譜系"
@@ -21718,6 +22500,9 @@
   "天使": {
     "alias_of": "神的使者"
   },
+  "亞倫和他兒子經理這燈": {
+    "alias_of": "祭司經理燈（亞倫和他兒子）"
+  },
   "Miriam": {
     "alias_of": "米利暗"
   },
@@ -21853,6 +22638,9 @@
   "Eliezer etymology": {
     "alias_of": "以利以謝（ God is help ）"
   },
+  "ephod": {
+    "alias_of": "以弗得"
+  },
   "Elim etymology": {
     "alias_of": "以琳（ trees ）"
   },
@@ -21894,6 +22682,15 @@
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "冠冕": {
+    "alias_of": "冠冕（裹頭巾）"
+  },
+  "裹頭巾": {
+    "alias_of": "冠冕（裹頭巾）"
+  },
+  "禮冠": {
+    "alias_of": "冠冕（裹頭巾）"
   },
   "Rephidim etymology": {
     "alias_of": "利非訂（ repose ）"
@@ -22096,6 +22893,15 @@
   "炭疽病": {
     "alias_of": "炭疽（anthrax）"
   },
+  "烏陵": {
+    "alias_of": "烏陵和土明"
+  },
+  "土明": {
+    "alias_of": "烏陵和土明"
+  },
+  "Urim and Thummim": {
+    "alias_of": "烏陵和土明"
+  },
   "matzot": {
     "alias_of": "無酵餅"
   },
@@ -22104,6 +22910,12 @@
   },
   "無酵的餅": {
     "alias_of": "無酵餅"
+  },
+  "金牌": {
+    "alias_of": "牌子（冠冕牌）"
+  },
+  "歸耶和華為聖的牌": {
+    "alias_of": "牌子（冠冕牌）"
   },
   "hyssop": {
     "alias_of": "牛膝草"
@@ -22159,6 +22971,15 @@
   "爭鬧": {
     "alias_of": "米利巴（ strife ）"
   },
+  "紅瑪瑙": {
+    "alias_of": "紅瑪瑙（紀念石）"
+  },
+  "紀念石": {
+    "alias_of": "紅瑪瑙（紀念石）"
+  },
+  "條紋瑪瑙": {
+    "alias_of": "紅瑪瑙（紀念石）"
+  },
   "yqš": {
     "alias_of": "網羅"
   },
@@ -22177,8 +22998,23 @@
   "耶和華是我旌旗": {
     "alias_of": "耶和華尼西（ Jehovah Nissi ）"
   },
+  "膏油": {
+    "alias_of": "聖膏油"
+  },
+  "聖香": {
+    "alias_of": "聖香（清淨聖潔的香）"
+  },
+  "清淨聖潔的香": {
+    "alias_of": "聖香（清淨聖潔的香）"
+  },
   "聘金": {
     "alias_of": "聘金與禮物"
+  },
+  "決斷胸牌": {
+    "alias_of": "胸牌（決斷胸牌）"
+  },
+  "breastpiece of judgment": {
+    "alias_of": "胸牌（決斷胸牌）"
   },
   "膳長 (baker)": {
     "alias_of": "膳長_baker"
@@ -22266,6 +23102,9 @@
   },
   "酒政 (cupbearer)": {
     "alias_of": "酒政_cupbearer"
+  },
+  "金絲": {
+    "alias_of": "金線"
   },
   "al-panay": {
     "alias_of": "除了我以外（`al-pa{na{y）"
@@ -22429,6 +23268,12 @@
   "書珥曠野": {
     "alias_of": "書珥的曠野"
   },
+  "會幕出入處": {
+    "alias_of": "會幕門口"
+  },
+  "帳幕門口": {
+    "alias_of": "會幕門口"
+  },
   "Pi-hahiroth": {
     "alias_of": "比哈希錄"
   },
@@ -22501,7 +23346,10 @@
   "Jordan River": {
     "alias_of": "約旦河"
   },
-  "帳幕的北面與南面空間": {
+  "帳幕的北面": {
+    "alias_of": "聖所"
+  },
+  "帳幕的南面": {
     "alias_of": "聖所"
   },
   "幔子內": {
@@ -23503,6 +24351,9 @@
   "我的靈不永遠住在人裡面": {
     "alias_of": "我的靈不永遠與人相爭"
   },
+  "承接聖職": {
+    "alias_of": "承接聖職（分別為聖）"
+  },
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
   },
@@ -23602,6 +24453,12 @@
   "建造材料的屬靈意義": {
     "alias_of": "會幕材料的豫表"
   },
+  "常獻的燔祭": {
+    "alias_of": "每日獻祭（常獻燔祭）"
+  },
+  "每日當獻之祭": {
+    "alias_of": "每日獻祭（常獻燔祭）"
+  },
   "hardening of Pharaoh's heart": {
     "alias_of": "法老心剛硬"
   },
@@ -23625,6 +24482,15 @@
   },
   "法老象徵撒但": {
     "alias_of": "法老預表撒但"
+  },
+  "洗身": {
+    "alias_of": "洗身（水洗）"
+  },
+  "水洗": {
+    "alias_of": "洗身（水洗）"
+  },
+  "用水洗身": {
+    "alias_of": "洗身（水洗）"
   },
   "洪水的審判與救恩": {
     "alias_of": "洪水中的審判與拯救"
@@ -23811,6 +24677,12 @@
   },
   "神聽見哀聲": {
     "alias_of": "神聽見百姓的哀求"
+  },
+  "耶和華面前": {
+    "alias_of": "神與人相會（耶和華面前）"
+  },
+  "神與人相會": {
+    "alias_of": "神與人相會（耶和華面前）"
   },
   "神記念亞伯蘭": {
     "alias_of": "神記念亞伯拉罕"

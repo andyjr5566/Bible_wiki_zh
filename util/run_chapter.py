@@ -5,7 +5,7 @@
 
   P2 resolve         link_candidates(.yaml/.md) → link_plan.yaml            （程式）
   M3 entry_content   每個 C 類條目呼叫模型填 payload → schema 驗證 → 重試   （模型）
-  M5 verse_links     呼叫模型標注經文 wiki-link → 對 raw_scripture 驗證      （模型）
+  M5 verse_links     程式化標注（不呼叫模型）：逐節掃描可連詞、長詞優先、同節不重疊  (程式）
   M6 chapter_content 呼叫模型填知識節點 + 本章整理                          （模型）
   P3 render          render_entry / render_chapter 產生 markdown            （程式）
   P4 validate        validate_knowledge_base 結構驗證                       （程式）

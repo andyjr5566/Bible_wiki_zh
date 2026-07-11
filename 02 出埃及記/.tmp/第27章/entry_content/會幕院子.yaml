@@ -1,0 +1,35 @@
+name: 會幕院子
+type: 主題
+secondary_types: []
+aliases:
+- 帳幕的院子
+- 外院
+status: formal
+definition: 指圍繞會幕（帳幕）外圍的露天聖區，又稱外院。本章規定院子長一百肘、寬五十肘、高五肘，四周以撚的細麻做帷子圍起，並以帶卯的銅座、柱子與銀杆支撐。院子將神聖的會幕與外面的世界隔開，表徵神聖潔的見證與分別為聖的界線，其內擺設銅壇與洗濯盆，是百姓前來獻祭與敬拜的場所。
+development: 院子的帷子用細麻製成，表徵信徒在神面前必須有公義與聖潔的生活見證。柱子立在銅座上，表徵行為表現經得起神公義的審判；銀杆與銀鉤將柱子連結並掛住帷子，表徵蒙救贖的信徒在基督救贖的基礎上聯結並維繫見證。院子東面設有門，表徵基督是通神之門，引導人進入神的同在。
+accumulations:
+- book: 出埃及記
+  chapter: 27
+  summary: 詳細記載會幕院子的尺寸、細麻帷子、柱子、銅座與銀杆的規格與配置。
+  relation: 院子表徵基督與教會的見證，是信徒在神審判亮光下立穩並藉救贖聯結的範圍。
+related_entries:
+- 會幕（帳幕整體）
+- 撚的細麻
+- 帶卯的銅座（院子柱子座）
+- 銀杆（連絡柱子）
+- 院子門簾
+- 銅壇（燔祭壇）
+sources:
+- 'BH: Exodus 27:9-19 — 院子的尺寸與材料意義（https://biblehub.com/study/exodus/27.htm）'
+- 'CT: 出埃及記第二十七章註解 — 院子與帷子的靈意（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT27.htm）'
+- 'GT: 出埃及記第二十七章拾穗 — 院子的結構與功能（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT27.htm）'
+- 'KC: Exodus 27 — 院子預表基督與信徒的見證（https://www.kingcomments.com/en/bible-studies/Exo/27）'
+created_from: manual
+category: 主題
+trigger_sources:
+- 'BH: https://biblehub.com/study/exodus/27.htm'
+- 'CT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT27.htm'
+- 'GT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT27.htm'
+- 'KC: https://www.kingcomments.com/en/bible-studies/Exo/27'
+current_data: complete
+pending: false

@@ -1,0 +1,27 @@
+name: 壇的銅網
+type: 主題
+secondary_types: []
+aliases:
+- 銅網
+- 網格狀物
+status: formal
+definition: 壇的銅網是為祭壇製作的銅製網格狀物，安裝在壇四面的圍腰板以下，從下達到壇的半腰。其功用為托住祭牲並幫助焚燒，同時讓空氣流通維持火勢。銅網一面托住祭牲，一面幫助焚燒，表徵信徒不逃避十字架的對付。
+accumulations:
+- book: 出埃及記
+  chapter: 27
+  summary: 規定要為壇做一個銅網，安在壇四面的圍腰板以下，使網從下達到壇的半腰。
+  relation: 銅網安置在壇的半腰（與約櫃等高），表徵十字架的救贖合乎神公義的要求，並幫助祭物完全焚燒。
+related_entries:
+- 銅壇（燔祭壇）
+- 銅
+- 壇的銅環
+sources:
+- 'BH: Exodus 27:4-5 — Construct for it a grate of bronze mesh 的位置與功用（https://biblehub.com/study/exodus/27.htm）'
+- 'CT: 出埃及記第二十七章註解 — 銅網的製作與靈意表徵（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT27.htm）'
+- 'GT: 出埃及記第二十七章拾穗 — 銅網的形式與作用（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT27.htm）'
+- 'KC: Exodus 27:1-8 — Halfway up of the altar is a grating for the sacrifice（https://www.kingcomments.com/en/bible-studies/Exo/27）'
+created_from: manual
+category: ''
+trigger_sources: []
+current_data: {}
+pending: false
