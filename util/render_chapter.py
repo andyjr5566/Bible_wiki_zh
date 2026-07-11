@@ -156,6 +156,22 @@ def coerce_organization(org):
     return ""
 
 
+REFERENCES_RE = re.compile(r"\n?\*\*參考資料\*\*\s*\n(?P<body>[\s\S]*)\Z")
+
+
+def split_references(text):
+    """把「本章整理」正文結尾的 **參考資料** 區塊拆出 → (正文, [url, …])。"""
+    match = REFERENCES_RE.search(text)
+    if not match:
+        return text.strip(), []
+    references = [
+        line.strip().lstrip("- ").strip()
+        for line in match.group("body").splitlines()
+        if line.strip()
+    ]
+    return text[: match.start()].strip(), references
+
+
 def validate_chapter_content(content):
     errors = []
     nodes = coerce_knowledge_nodes(content.get("knowledge_nodes"))
@@ -163,6 +179,11 @@ def validate_chapter_content(content):
         errors.append("chapter_content.knowledge_nodes 至少需一個分組且含節點")
     if not coerce_organization(content.get("organization")).strip():
         errors.append("chapter_content.organization（本章整理）必填且不可為空")
+    references = content.get("references")
+    if references is not None and (
+        not isinstance(references, list) or any(not isinstance(r, str) for r in references)
+    ):
+        errors.append("chapter_content.references 必須是字串陣列")
     return errors
 
 
@@ -212,7 +233,13 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
 
     scripture = render_scripture(raw_verses, verse_links_payload.get("links", []))
     nodes = render_knowledge_nodes(coerce_knowledge_nodes(chapter_content["knowledge_nodes"]))
-    organization = coerce_organization(chapter_content["organization"])
+    # organization 內殘留的參考資料一併拆出，與 references 欄位合流，避免重複渲染
+    organization, inline_refs = split_references(
+        coerce_organization(chapter_content["organization"])
+    )
+    references = [
+        str(r).strip() for r in (chapter_content.get("references") or []) if str(r).strip()
+    ] or inline_refs
 
     blocks = [f"# {canonical_book_name(book)} 第{chapter}章", scripture]
     if map_block.strip():
@@ -220,7 +247,10 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
     blocks.append("---")
     blocks.append(f"## 本章知識節點\n\n{nodes}")
     blocks.append("---")
-    blocks.append(f"## 本章整理\n\n{organization}")
+    organization_block = f"## 本章整理\n\n{organization}"
+    if references:
+        organization_block += "\n\n**參考資料**\n" + "\n".join(references)
+    blocks.append(organization_block)
     return "\n\n".join(blocks).rstrip() + "\n"
 
 
@@ -302,12 +332,14 @@ def parse_chapter(text):
 
     organization_match = re.search(r"^## 本章整理\s*$([\s\S]+)$", text, re.M)
     organization = organization_match.group(1).strip() if organization_match else ""
+    organization, references = split_references(organization)
 
     chapter_content = {
         "book": book,
         "chapter": chapter,
         "knowledge_nodes": nodes,
         "organization": organization,
+        "references": references,
     }
     return verse_links_payload, chapter_content, map_block
 

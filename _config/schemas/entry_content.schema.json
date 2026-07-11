@@ -61,13 +61,13 @@
       "type": "array",
       "items": {"type": "string"},
       "default": [],
-      "description": "相關條目。每項是 wiki-link 內文（target 或 target|顯示），程式自動包成 [[...]]；每項須為已存在或同批建立的條目。"
+      "description": "相關條目。每項是 wiki-link 內文（target 或 target|顯示），程式自動包成 [[...]]；每項須為已存在或同批建立的條目完整名稱，不可用裸經文引用。渲染前由程式閉合：無法對應到條目者移除並回報。"
     },
     "sources": {
       "type": "array",
       "items": {"type": "string"},
       "default": [],
-      "description": "（formal 必填，對應 H2「來源依據」）來源清單，每項一行，例如經文範圍或 CT/GT/KC/BH 的 URL。"
+      "description": "（formal 必填，對應 H2「來源依據」）來源清單，每項一行，格式「標籤: 位置說明（URL）」；URL 須取自本章 source_manifest 狀態 OK 的來源，由 util/run_chapter.py 驗證。"
     },
     "created_from": {
       "type": "string",

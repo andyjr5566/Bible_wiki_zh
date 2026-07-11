@@ -21,7 +21,13 @@
     "organization": {
       "type": "string",
       "minLength": 1,
-      "description": "本章整理正文：整合來源重點（重點摘要、神學意義、參考資料等），由模型撰寫；不大量搬運 CT/GT/KC/BH 全文。"
+      "description": "本章整理正文：依本章段落結構分成多個「### 標題（vX-Y）」小節的整合性散文，逐段整合各來源觀點並標明出處（CT指出…、KC指出…）；不大量搬運 CT/GT/KC/BH 全文。份量門檻（小節數、字數）由 util/run_chapter.py 依章節長度驗證。不含參考資料清單。"
+    },
+    "references": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "參考資料 URL 清單，由程式從 source_manifest.md 的 OK 來源注入，模型不需填寫；渲染於「本章整理」結尾的 **參考資料** 區。"
     }
   }
 }

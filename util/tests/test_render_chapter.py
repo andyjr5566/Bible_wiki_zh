@@ -100,6 +100,30 @@ class RenderChapterTests(unittest.TestCase):
         # 地圖必須在經文後、第一條分隔線前
         self.assertLess(rendered.index("相關地圖"), rendered.index("\n---\n"))
 
+    def test_references_render_and_roundtrip(self):
+        content = dict(
+            CHAPTER_CONTENT, references=["https://a.example/1", "https://b.example/2"]
+        )
+        rendered = render_chapter(VERSE_LINKS, content, raw_verses=RAW)
+        self.assertIn(
+            "**參考資料**\nhttps://a.example/1\nhttps://b.example/2", rendered
+        )
+        _, parsed, _ = parse_chapter(rendered)
+        self.assertEqual(
+            ["https://a.example/1", "https://b.example/2"], parsed["references"]
+        )
+        self.assertEqual(CHAPTER_CONTENT["organization"], parsed["organization"])
+
+    def test_inline_references_in_organization_render_once(self):
+        content = dict(
+            CHAPTER_CONTENT,
+            organization=CHAPTER_CONTENT["organization"]
+            + "\n\n**參考資料**\nhttps://x.example",
+        )
+        rendered = render_chapter(VERSE_LINKS, content, raw_verses=RAW)
+        self.assertEqual(1, rendered.count("**參考資料**"))
+        self.assertIn("**參考資料**\nhttps://x.example", rendered)
+
     def test_rendered_chapter_passes_real_validator(self):
         rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
         import tempfile

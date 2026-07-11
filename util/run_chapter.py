@@ -143,13 +143,14 @@ _ENTRY_EXAMPLE = (
     "      chapter: 27\n"
     "      summary: 本章對此條目的重點（一句）\n"
     "      relation: 與本章的神學關聯（一句）\n"
-    "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單\n"
-    "  sources:\n"
-    "    - BibleHub Study (Exodus 27)\n"
+    "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用\n"
+    "  sources:                        # 每項含實際來源 URL（取自本章來源清單）\n"
+    "    - 'BH: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
 )
 
 
-def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text, feedback=None):
+def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
+                        feedback=None, source_urls=None):
     listing = "\n".join(f"- {e['name']}（分類：{e['suggested_type']}）" for e in batch)
     feedback_block = ""
     if feedback:
@@ -170,7 +171,10 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text, fee
         f"寫成「X（原文）」。找不到音譯就用裸中文名。\n"
         f"- status 一律 formal。accumulations 是「物件陣列」，每項含 book、chapter、"
         f"summary、relation 四欄，且至少含本章（{ctx.book} 第{ctx.chapter}章）一筆、同章只給一筆。\n"
-        f"- related_entries 只能從此清單選：{', '.join(allowed_related) or '（無）'}。\n"
+        f"- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）："
+        f"{', '.join(allowed_related) or '（無）'}。\n"
+        f"- sources 每項格式「標籤: 位置說明（URL）」，URL 必須取自本章來源："
+        f"{'；'.join(f'{label} {url}' for label, url in (source_urls or [])) or '（本章無來源 URL）'}。\n"
         f"- 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，"
         f"例如「天上真聖所（來9：23-24）」；括號內保留原經文、冒號用全形「：」。\n"
         f"- 每個 payload 的 name 必須能對回上面清單（可加音譯後綴）。\n"
@@ -202,10 +206,30 @@ def _match_payload(entry, results):
     return None
 
 
-def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known, feedback=None):
+def _entry_source_errors(payload, allowed_urls):
+    """formal 條目 sources 每項必須含本章 source_manifest 的其中一個 URL。
+
+    manifest 無 URL（如純測試環境）時不啟用；經文引據寫進 definition／
+    accumulations，sources 只放可回溯的來源出處。
+    """
+    if not allowed_urls or payload.get("status") != "formal":
+        return []
+    errors = []
+    for source in payload.get("sources") or []:
+        text = str(source)
+        if not any(url in text for url in allowed_urls):
+            errors.append(
+                f"sources「{text}」未含本章來源 URL；每項格式「標籤: 位置說明（URL）」，"
+                f"URL 取自：{'、'.join(allowed_urls)}"
+            )
+    return errors
+
+
+def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
+                     feedback=None, source_urls=None):
     """回傳 (通過驗證的 payloads, 各條目的失敗原因)。失敗原因供下一輪回饋模型。"""
     prompt = _batch_entry_prompt(
-        ctx, batch, allowed_related, sources_text, raw_text, feedback
+        ctx, batch, allowed_related, sources_text, raw_text, feedback, source_urls
     )
     try:
         results = call_model(
@@ -216,12 +240,14 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
     except ModelValidationError:
         return {}, {e["name"]: "模型未回傳有效 payload 陣列" for e in batch}
     matched, errors = {}, {}
+    allowed_urls = [url for _, url in (source_urls or [])]
     for entry in batch:
         payload = _match_payload(entry, results)
         if payload is None:
             errors[entry["name"]] = "找不到對應此條目的 payload（name 需能對回清單）"
             continue
         verrs = render_entry.validate_payload(payload, known_types=known)
+        verrs.extend(_entry_source_errors(payload, allowed_urls))
         if verrs:
             errors[entry["name"]] = "；".join(verrs)
             continue
@@ -238,7 +264,14 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     seen_names = set()
     c_entries = [e for e in plan.get("C_new_formal", [])
                  if not (e["name"] in seen_names or seen_names.add(e["name"]))]
-    allowed_related = [e["name"] for e in c_entries]
+    # related_entries 允許清單＝A/B 既有條目標題＋本批 C 類候選名（同批建立）
+    existing_titles = [
+        e.get("existing_title") or e["name"]
+        for key in ("A_use_directly", "B_needs_update")
+        for e in plan.get(key, [])
+    ]
+    allowed_related = list(dict.fromkeys(existing_titles + [e["name"] for e in c_entries]))
+    source_urls = source_excerpts.manifest_urls(ctx.path("source_manifest.md"))
     if limit is not None:
         c_entries = c_entries[:limit]
 
@@ -267,7 +300,8 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
                 feedback = [f"{e['name']}：{last_errors[e['name']]}"
                             for e in batch if e["name"] in last_errors]
             results, errors = _run_entry_batch(
-                ctx, batch, allowed_related, sources_text, raw_text, known, feedback
+                ctx, batch, allowed_related, sources_text, raw_text, known,
+                feedback, source_urls
             )
             for entry in batch:
                 payload = results.get(entry["name"])
@@ -364,24 +398,67 @@ def verse_links_step(ctx, plan):
 # --------------------------------------------------------------------------- #
 # M6 chapter_content
 # --------------------------------------------------------------------------- #
+def _org_requirements(verse_count):
+    """本章整理的份量門檻（隨章節長度調整），供 prompt 與驗證共用。
+
+    參考基準：已完成章節（出17–19）的本章整理為多個「### 段落小節」的長篇
+    散文；沒有門檻時模型傾向交出三行條列（出25 第一次重做即如此）。
+    """
+    min_sections = 3 if verse_count >= 15 else 2
+    min_chars = max(400, min(1500, verse_count * 40))
+    return min_sections, min_chars
+
+
+def _chapter_payload_validator(verse_count):
+    min_sections, min_chars = _org_requirements(verse_count)
+
+    def validate(payload):
+        errors = render_chapter.validate_chapter_content(payload)
+        organization, _ = render_chapter.split_references(
+            render_chapter.coerce_organization(payload.get("organization"))
+        )
+        sections = re.findall(r"^###\s+\S", organization, re.M)
+        if len(sections) < min_sections:
+            errors.append(
+                f"organization 需依本章段落結構分成至少 {min_sections} 個小節，"
+                f"每小節以「### 標題（vX-Y）」開頭（目前只有 {len(sections)} 個）"
+            )
+        if len(organization) < min_chars:
+            errors.append(
+                f"organization 太薄（{len(organization)} 字）：需 ≥{min_chars} 字的"
+                f"整合性散文，逐段整合各來源重點並標明出處（CT指出…、KC指出…）"
+            )
+        return errors
+
+    return validate
+
+
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
-    raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
+    raw_verses = ctx.raw_verses()
+    raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
     sources_text = source_excerpts.full_source_text(ctx.sources())
     created = list(getattr(ctx, "created_entry_names", []))
     created_hint = (
         f"\n本章新建條目（knowledge_nodes 若引用請用完整名稱）：{', '.join(created)}"
         if created else ""
     )
+    min_sections, min_chars = _org_requirements(len(raw_verses))
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
         f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，例如：\n"
-        f"  神學: [會幕, 神的同在]\n  原文: [皂莢木, 銅]\n"
-        f"只列值得跨章累積的核心節點，不重列所有經文 link；"
-        f"organization 整合上述來源重點，不搬運整段全文，也不得寫入來源未提及的內容。"
-        f"{created_hint}\n\n"
+        f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
+        f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n\n"
+        f"organization（本章整理）是本章的詳盡研讀整理，要求：\n"
+        f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
+        f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
+        f"- 每小節是連貫散文（不用條列），沿經文脈絡敘述並整合各來源觀點，"
+        f"標明出處，寫法如「CT指出…」「GT指出…」「KC指出…」「BH指出…」。\n"
+        f"- 全文合計 ≥{min_chars} 字；整合重點而非搬運來源全文，"
+        f"也不得寫入來源未提及的內容。\n"
+        f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
         f"【輸出】只輸出 YAML：\n{_schema_hint('chapter_content.schema.json')}"
     )
 
@@ -390,11 +467,33 @@ def chapter_content_step(ctx, plan):
         payload["chapter"] = ctx.chapter
         return payload
 
-    return _model_step(
+    payload = _model_step(
         ctx, out_path, prompt,
-        validate=render_chapter.validate_chapter_content,
+        validate=_chapter_payload_validator(len(raw_verses)),
         label="chapter_content", normalize=_normalize,
     )
+    return _inject_references(ctx, out_path, payload)
+
+
+def _inject_references(ctx, out_path, payload):
+    """章節「參考資料」不由模型手寫：程式從 source_manifest 注入 OK 來源的 URL。
+
+    也涵蓋 resume（舊 payload 無 references）；organization 內殘留的參考資料
+    區塊一併拆出合流，重跑冪等。
+    """
+    if payload is None:
+        return None
+    organization, inline_refs = render_chapter.split_references(
+        render_chapter.coerce_organization(payload.get("organization"))
+    )
+    manifest_refs = [
+        url for _, url in source_excerpts.manifest_urls(ctx.path("source_manifest.md"))
+    ]
+    references = manifest_refs or payload.get("references") or inline_refs
+    updated = dict(payload, organization=organization, references=references)
+    if updated != payload:
+        _write_yaml(out_path, updated)
+    return updated
 
 
 # --------------------------------------------------------------------------- #
@@ -414,11 +513,71 @@ def _would_destroy_data(ctx, target):
     return False
 
 
-def render_step(ctx, entry_payloads, verse_links, chapter_content):
+def _related_title_map(ctx, plan, created_names):
+    """裸名／別名 → 條目完整標題的對照，用於 related_entries 閉合。
+
+    涵蓋全庫索引（含 aliases）、本章 A/B 既有條目、本批實建條目。
+    """
+    index = ctx.index if ctx.index is not None else resolver.load_index()
+    mapping = {}
+    for key, info in (index or {}).items():
+        title = (info.get("title") if isinstance(info, dict) else None) or key
+        mapping[render_entry.safe_name(key)] = title
+    for category in ("A_use_directly", "B_needs_update"):
+        for e in (plan or {}).get(category, []):
+            title = e.get("existing_title") or e["name"]
+            mapping[render_entry.safe_name(e["name"])] = title
+            mapping[render_entry.safe_name(title)] = title
+    for name in created_names:
+        mapping[render_entry.safe_name(name)] = name
+    return mapping
+
+
+def _resolve_related(item, mapping):
+    """related_entries 單項 → 條目完整標題；無法唯一對應則回 None（丟棄）。
+
+    對應序：完全同名（含別名）→ 音譯前綴（皂莢木 → 皂莢木（atzei shittim））
+    → 裸經文引用對互文標題（創3:24 → 把守生命樹的道路（創3：24））。
+    模型愛在相關條目塞裸經文引用，成品就是一堆沒有 md 的 [[創3:24]]——
+    在這裡由程式閉合，related_entries 渲染出去必有對應條目。
+    """
+    inner = str(item).strip()
+    match = re.fullmatch(r"\[\[(.+?)\]\]", inner)
+    if match:
+        inner = match.group(1)
+    name = render_entry.safe_name(inner.partition("|")[0])
+    if not name:
+        return None
+    title = mapping.get(name)
+    if title:
+        return title
+    titles = sorted(set(mapping.values()))
+    hits = [t for t in titles if t.startswith(f"{name}（")]
+    if not hits and render_entry.BARE_SCRIPTURE_REF_RE.match(name):
+        hits = [t for t in titles if name in t]
+    return hits[0] if len(hits) == 1 else None
+
+
+def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
     written = []
     known = ctx.known_types()
+    related_map = _related_title_map(ctx, plan, list(entry_payloads)) if entry_payloads else {}
     for name, payload in entry_payloads.items():
         safe = render_entry.safe_name(name)
+        resolved, dropped = [], []
+        for item in payload.get("related_entries") or []:
+            title = _resolve_related(item, related_map)
+            if title == safe:
+                continue  # 自我引用，靜默去除
+            if title and title not in resolved:
+                resolved.append(title)
+            elif title is None:
+                dropped.append(str(item))
+        if dropped:
+            ctx.manual_review.append(
+                f"related_entries:{name}：無對應條目，已移除：{'、'.join(dropped)}"
+            )
+        payload = {**payload, "related_entries": resolved}
         target = ctx.root / "link_folder" / payload["type"] / f"{safe}.md"
         if _would_destroy_data(ctx, target):
             ctx.manual_review.append(
@@ -475,7 +634,7 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
     entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
     verse_links = verse_links_step(ctx, plan)
     chapter_content = chapter_content_step(ctx, plan)
-    written = render_step(ctx, entry_payloads, verse_links, chapter_content)
+    written = render_step(ctx, entry_payloads, verse_links, chapter_content, plan=plan)
     errors = validate_step(ctx, written)
     return {
         "written": written,

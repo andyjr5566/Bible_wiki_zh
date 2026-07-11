@@ -15,12 +15,12 @@ LARGE_TOTAL_CHARS = 250_000
 LARGE_SINGLE_CHARS = 120_000
 
 
-def parse_manifest(manifest_path, root):
-    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。"""
+def _manifest_rows(manifest_path):
+    """source_manifest.md 中狀態 OK 的資料列 → [(label, url, rel_path)]。"""
     manifest_path = Path(manifest_path)
-    sources = []
+    rows = []
     if not manifest_path.exists():
-        return sources
+        return rows
     for line in manifest_path.read_text(encoding="utf-8").splitlines():
         match = MANIFEST_ROW_RE.match(line.strip())
         if not match:
@@ -28,13 +28,32 @@ def parse_manifest(manifest_path, root):
         cells = [cell.strip() for cell in match.group(1).split("|")]
         if len(cells) < 5:
             continue
-        label, _kind, _url, rel_path, status = cells[:5]
+        label, _kind, url, rel_path, status = cells[:5]
         if "OK" not in status:
             continue
-        if not (rel_path.startswith("raw_data") and rel_path.endswith(".txt")):
-            continue
-        sources.append((label, Path(root) / rel_path))
-    return sources
+        rows.append((label, url, rel_path))
+    return rows
+
+
+def parse_manifest(manifest_path, root):
+    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。"""
+    return [
+        (label, Path(root) / rel_path)
+        for label, _url, rel_path in _manifest_rows(manifest_path)
+        if rel_path.startswith("raw_data") and rel_path.endswith(".txt")
+    ]
+
+
+def manifest_urls(manifest_path):
+    """讀 source_manifest.md，回傳 [(label, url)]（僅狀態 OK 且 URL 為 http(s)）。
+
+    章節「參考資料」與條目「來源依據」的 URL 以此為唯一事實來源，不由模型手寫。
+    """
+    return [
+        (label, url)
+        for label, url, _rel_path in _manifest_rows(manifest_path)
+        if url.startswith("http")
+    ]
 
 
 def _read_all(sources):

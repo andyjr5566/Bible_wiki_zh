@@ -13,6 +13,14 @@ import run_chapter
 
 RAW = ["要做施恩座安在法櫃上。", "用金子包裹。"]
 ENTRY_NAME = "施恩座（kapporet 測試）"
+SOURCE_URL = "https://biblehub.com/study/exodus/26.htm"
+
+MANIFEST = (
+    "# Source Manifest — 出埃及記 第26章\n\n"
+    "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+    "|------|-----|-----|--------------|------|\n"
+    f"| BibleHub Study | BH | {SOURCE_URL} | raw_data/biblehub_study_exodus_26.txt | ✅ OK |\n"
+)
 
 ENTRY_PAYLOAD = {
     "name": ENTRY_NAME,
@@ -26,7 +34,7 @@ ENTRY_PAYLOAD = {
          "relation": "施恩座是神與摩西相會之處。"},
     ],
     "related_entries": [],
-    "sources": ["出埃及記26:1"],
+    "sources": [f"BH: Exodus 26 — 施恩座的樣式（{SOURCE_URL}）"],
 }
 
 # 批量步驟要求模型回傳「陣列」；單筆步驟仍回傳物件
@@ -41,10 +49,21 @@ VERSE_LINKS_PAYLOAD = yaml.safe_dump({
     ],
 }, allow_unicode=True, sort_keys=False)
 
+# 2 節經文 → 門檻為 2 個 ### 小節、≥400 字（_org_requirements）
+_ORG_PARA = (
+    "CT指出施恩座是神與人相會之處，蔽罪的意義由此而來；KC指出這預表基督的救贖工作，"
+    "遮蓋律法對人的定罪；BH指出精金象徵神聖潔的性情，不可攙雜；GT指出一切樣式全"
+    "出於神在山上的啟示，人不得憑己意增減，事奉的根基在於完全的順服。"
+)
+CHAPTER_ORGANIZATION = (
+    "### 施恩座的樣式（v1）\n\n" + _ORG_PARA * 3 +
+    "\n\n### 照樣式而造（v2）\n\n" + _ORG_PARA * 3
+)
+
 CHAPTER_CONTENT_PAYLOAD = yaml.safe_dump({
     "book": "Exodus", "chapter": 26,
     "knowledge_nodes": [{"group": "神學", "nodes": [ENTRY_NAME]}],
-    "organization": "**重點摘要**\n- 施恩座與會幕",
+    "organization": CHAPTER_ORGANIZATION,
 }, allow_unicode=True, sort_keys=False)
 
 
@@ -69,6 +88,7 @@ class OrchestratorTests(unittest.TestCase):
             (root / "link_folder" / group).mkdir(parents=True)
         tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
         tmp_dir.mkdir(parents=True)
+        (tmp_dir / "source_manifest.md").write_text(MANIFEST, encoding="utf-8")
         (tmp_dir / "link_candidates.yaml").write_text(
             yaml.safe_dump({
                 "book": "出埃及記", "chapter": 26,
@@ -99,6 +119,8 @@ class OrchestratorTests(unittest.TestCase):
             self.assertIn(f"[[{ENTRY_NAME}|施恩座]]", text)
             self.assertNotIn("清單外的東西", text)  # broken target 被丟棄
             self.assertIn("### 神學", text)  # list-form knowledge_nodes 被 coerce
+            # 參考資料由程式從 source_manifest 注入，模型不手寫 URL
+            self.assertIn(f"**參考資料**\n{SOURCE_URL}", text)
 
     def test_resume_skips_model_on_second_run(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -231,6 +253,103 @@ class VerseLinkTargetTests(unittest.TestCase):
             links = run_chapter.verse_links_step(ctx, plan)["links"]
             self.assertEqual(1, len(links))  # 同節同詞只連首次出現
             self.assertEqual("幔子（yeriah）", links[0]["target"])
+
+
+class EntrySourceUrlTests(unittest.TestCase):
+    """條目 sources 每項必須含本章 manifest 的來源 URL（出25 重做回饋）。"""
+
+    def test_source_without_url_is_rejected(self):
+        payload = dict(ENTRY_PAYLOAD, sources=["BibleHub Study (Exodus 26)"])
+        errors = run_chapter._entry_source_errors(payload, [SOURCE_URL])
+        self.assertEqual(1, len(errors))
+        self.assertIn("URL", errors[0])
+
+    def test_source_with_manifest_url_passes(self):
+        self.assertEqual(
+            [], run_chapter._entry_source_errors(ENTRY_PAYLOAD, [SOURCE_URL])
+        )
+
+    def test_no_manifest_urls_skips_check(self):
+        payload = dict(ENTRY_PAYLOAD, sources=["出埃及記26:1"])
+        self.assertEqual([], run_chapter._entry_source_errors(payload, []))
+
+
+class ChapterDepthTests(unittest.TestCase):
+    """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）。"""
+
+    def test_thin_bullet_summary_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(40)
+        errors = validate({
+            "knowledge_nodes": {"神學": ["會幕"]},
+            "organization": "**本章主題**\n- 建造會幕的材料與樣式",
+        })
+        self.assertTrue(any("小節" in e for e in errors))
+        self.assertTrue(any("太薄" in e for e in errors))
+
+    def test_sectioned_prose_passes(self):
+        validate = run_chapter._chapter_payload_validator(2)
+        errors = validate({
+            "knowledge_nodes": {"神學": ["會幕"]},
+            "organization": CHAPTER_ORGANIZATION,
+        })
+        self.assertEqual([], errors)
+
+    def test_requirements_scale_with_chapter_length(self):
+        self.assertEqual((2, 400), run_chapter._org_requirements(2))
+        self.assertEqual((3, 1500), run_chapter._org_requirements(40))
+
+
+class RelatedEntriesClosureTests(unittest.TestCase):
+    """related_entries 渲染前閉合：裸經文引用改寫為互文全名、無對應者移除。"""
+
+    def test_related_entries_closed_to_known_titles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for group in ("神學", "互文"):
+                (root / "link_folder" / group).mkdir(parents=True)
+            ctx = run_chapter.ChapterContext(
+                "出埃及記", 25, root=root,
+                index={"約櫃": {"title": "約櫃"}}, homonyms={},
+            )
+            plan = {"A_use_directly": [{"name": "摩西", "existing_title": "摩西"}],
+                    "B_needs_update": []}
+            intertext = dict(
+                ENTRY_PAYLOAD, name="把守生命樹的道路（創3：24）", type="互文",
+                related_entries=[],
+            )
+            main = dict(
+                ENTRY_PAYLOAD, name="基路伯（施恩座）", type="神學",
+                related_entries=["約櫃", "摩西", "創3:24", "來9:5"],
+            )
+            run_chapter.render_step(
+                ctx,
+                {intertext["name"]: intertext, main["name"]: main},
+                None, None, plan=plan,
+            )
+            text = (root / "link_folder" / "神學" / "基路伯（施恩座）.md").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("[[約櫃]]", text)          # 全庫索引命中
+            self.assertIn("[[摩西]]", text)          # 計畫 A 類命中
+            self.assertIn("[[把守生命樹的道路（創3：24）]]", text)  # 裸經文引用 → 互文全名
+            self.assertNotIn("[[創3:24]]", text)
+            self.assertNotIn("[[來9:5]]", text)      # 無對應條目 → 移除
+            self.assertTrue(any("來9:5" in m for m in ctx.manual_review))
+
+    def test_self_reference_is_dropped(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "link_folder" / "原文").mkdir(parents=True)
+            ctx = run_chapter.ChapterContext(
+                "出埃及記", 26, root=root, index={}, homonyms={},
+            )
+            payload = dict(ENTRY_PAYLOAD, related_entries=[ENTRY_NAME])
+            run_chapter.render_step(ctx, {ENTRY_NAME: payload}, None, None, plan={})
+            text = (root / "link_folder" / "原文" / f"{ENTRY_NAME}.md").read_text(
+                encoding="utf-8"
+            )
+            self.assertNotIn("## 相關條目", text)  # 不自連
+            self.assertEqual([], ctx.manual_review)  # 自我引用靜默去除，不吵人
 
 
 if __name__ == "__main__":

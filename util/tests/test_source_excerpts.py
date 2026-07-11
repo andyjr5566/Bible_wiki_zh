@@ -7,7 +7,12 @@ UTIL_DIR = Path(__file__).resolve().parents[1]
 if str(UTIL_DIR) not in sys.path:
     sys.path.insert(0, str(UTIL_DIR))
 
-from source_excerpts import full_source_text, is_large_chapter, parse_manifest
+from source_excerpts import (
+    full_source_text,
+    is_large_chapter,
+    manifest_urls,
+    parse_manifest,
+)
 
 MANIFEST = """\
 # Source Manifest — 出埃及記 第27章
@@ -33,6 +38,18 @@ class ManifestTests(unittest.TestCase):
 
     def test_missing_manifest_returns_empty(self):
         self.assertEqual([], parse_manifest(Path("nope.md"), Path(".")))
+
+    def test_manifest_urls_only_ok_http(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            manifest = Path(tmp) / "source_manifest.md"
+            manifest.write_text(MANIFEST, encoding="utf-8")
+            self.assertEqual(
+                [("BibleHub", "http://x"), ("KingComments", "http://y")],
+                manifest_urls(manifest),  # FAILED 的 ct 不入列
+            )
+
+    def test_manifest_urls_missing_manifest_returns_empty(self):
+        self.assertEqual([], manifest_urls(Path("nope.md")))
 
 
 class FullSourceTests(unittest.TestCase):

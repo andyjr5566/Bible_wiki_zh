@@ -87,6 +87,8 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 ### 3.4 條目內容原則
 
 - 定義要完整說明原文、字義與本章用法，不吝嗇篇幅；一切陳述可對回來源。
+- 來源依據每項格式「標籤: 位置說明（URL）」，URL 取自本章 source_manifest 的 OK 來源（程式驗證）。
+- 相關條目只能指向已存在或同批建立的條目完整名稱；渲染前由程式閉合——裸經文引用（創3:24）改寫為對應互文條目全名，無對應者移除並回報。
 - 正式條目的 `定義`／`主題發展` 是保護區：每章任務只累積，不重寫（除非使用者要求）。
 - 候選條目（status: candidate）每卷完成後清理：多次引用者升級、重複者合併、長期無支撐者處置。
 
@@ -105,6 +107,7 @@ raw_scripture + 有效 raw_data
 ```
 
 - `link_plan` 只決定「用哪個條目、放哪、什麼類別」；寫內容一律回到 raw text 與經文，不得依 plan 編內容。
+- 本章整理（organization）是「### 小節（vX-Y）」分段的整合性散文並標明出處（CT指出…），份量門檻隨章節長度由程式驗證；章節「參考資料」由程式從 source_manifest 注入 OK 來源 URL，模型不手寫。
 - 經文本文只取自 `raw_scripture`，render_chapter 逐字對齊；wiki-link 由程式掃描已知詞彙套用（子字串保證、長詞優先、目標閉合），模型不再手寫經文區。
 - 來源全文直接餵給模型（不切片）；超大章節由程式等比截斷（§7）。
 - 累積標記 `<!-- accumulation:{書}:{章}:start/end -->` 由程式生成與定位；同書卷一個 `### 標題`、章次依序排列，重跑冪等。
@@ -117,7 +120,7 @@ raw_scripture + 有效 raw_data
 
 - **結構**：frontmatter、H2 順序、模板、alias 格式、標記區——render 程式產物必然合規；結構驗證出錯＝程式 bug，修程式而非叫模型重寫。
 - **安全**：覆寫保護（含其他章累積的既有條目拒絕覆寫）、檔名安全字元、`rename_markdown.py` 同步全庫連結、`link_updates` 只動標記區。
-- **正確性**：verse_links 的 phrase 必為經文子字串且 target 閉合；book/chapter 以程式認定為準；驗證左移（payload 層擋錯＋錯誤回饋重試）。
+- **正確性**：verse_links 的 phrase 必為經文子字串且 target 閉合；related_entries 渲染前閉合（無對應條目者移除並回報）；條目 sources 與章節參考資料的 URL 以 source_manifest 為唯一事實來源；本章整理份量門檻依章節長度驗證；book/chapter 以程式認定為準；驗證左移（payload 層擋錯＋錯誤回饋重試）。
 - 舊成品格式遷移用 `normalize_format.py --scope all --dry-run` → 套用 → 再 dry-run 必須 0 變更。
 
 ---
