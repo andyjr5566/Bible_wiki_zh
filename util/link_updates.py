@@ -148,7 +148,13 @@ def apply_updates(manifest, dry_run=False):
             else:
                 insertion = accumulation.end(1)
                 for heading in re.finditer(r"^###\s+(.+?)\s*$", section, re.M):
-                    if book_rank(heading.group(1)) > book_rank(book):
+                    heading_name = heading.group(1)
+                    # 部分舊格式條目在「## 按書卷累積」下混有非書卷子標題
+                    # （如 觸發來源／聖經出現／與目前整理書卷的關聯）；
+                    # 只依實際書卷標題排序，略過非書卷標題以免插入位置跑掉。
+                    if BOOK_ALIASES.get(heading_name, heading_name) not in BOOK_NUMBERS:
+                        continue
+                    if book_rank(heading_name) > book_rank(book):
                         insertion = accumulation.start(1) + heading.start()
                         break
                 group = f"### {book}\n\n{block}"

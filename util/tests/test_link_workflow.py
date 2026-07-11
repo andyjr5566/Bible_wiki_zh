@@ -197,6 +197,42 @@ class UpdateTests(unittest.TestCase):
             self.assertLess(rendered.index("### 創世記"), rendered.index("### 出埃及記"))
             self.assertLess(rendered.index("### 出埃及記"), rendered.index("### 約書亞記"))
 
+    def test_apply_ignores_legacy_non_book_headings_when_ordering(self):
+        """舊格式條目在「## 按書卷累積」下混有非書卷子標題（觸發來源／聖經出現／
+        與目前整理書卷的關聯），新書卷區塊插入時不得誤把它們當書卷排序依據。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "神學" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            entry_path.write_text(
+                "# 測試\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n"
+                "### 觸發來源\n\n- [[01 創世記/第3章|創世記 第3章]]：24 節\n\n"
+                "### 聖經出現\n\n- 內容\n\n"
+                "### 與目前整理書卷的關聯\n\n內容\n\n"
+                "### 創世記\n\n"
+                "<!-- accumulation:創世記:3:start -->\n#### 第3章\n"
+                "- 本章重點：創世記資料\n- 與本章關聯：創世記關聯\n"
+                "<!-- accumulation:創世記:3:end -->\n\n"
+                "## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "出埃及記",
+                "chapter": 25,
+                "updates": [{
+                    "title": "測試",
+                    "path": "link_folder/神學/測試.md",
+                    "summary": "新資料",
+                    "relation": "測試關聯",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                self.assertEqual(1, apply_updates(manifest))
+            rendered = entry_path.read_text(encoding="utf-8")
+            self.assertLess(rendered.index("### 創世記"), rendered.index("### 出埃及記"))
+            self.assertLess(rendered.index("### 出埃及記"), rendered.index("## 主題發展"))
+
 
 class FormatNormalizationTests(unittest.TestCase):
     def test_chapter_and_entry_use_different_scheme_templates(self):

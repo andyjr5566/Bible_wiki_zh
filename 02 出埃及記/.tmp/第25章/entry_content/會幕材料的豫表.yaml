@@ -1,26 +1,35 @@
 name: 會幕材料的豫表
 type: 神學
 secondary_types: []
-aliases: []
+aliases:
+- 會幕材料的預表
+- 建造材料的屬靈意義
 status: formal
-definition: 出埃及記25:3-7所列建造會幕的禮物清單，每一項材料都具有豫表（typological）意義，指向基督的位格與工作、信徒的屬靈經歷，以及教會的建造。金表徵神的性情與榮耀；銀表徵救贖；銅表徵審判；藍色線表徵屬天；紫色線表徵君尊；朱紅色線表徵流血犧牲；細麻表徵聖潔的義行；山羊毛表徵贖罪；染紅的公羊皮表徵流血的救贖；海狗皮表徵外表無佳形美容卻經得起苦難；皂莢木表徵基督堅固不朽的人性；油表徵聖靈；香料表徵基督的馨香與美德；寶石表徵聖靈變化信徒後所顯出的榮耀。
-development:
-- 材料從金屬、紡織品、皮料、木料、油、香料到寶石，涵蓋礦物、植物、動物三界，代表受造界的全部。
-- 越接近神（至聖所）的材料越貴重（精金），反映神聖潔與榮耀的遞進。
-- 皂莢木包精金的結構（約櫃、桌子）豫表基督神人二性——人性為木、神性為金。
-- 這些材料來自百姓甘心樂意的奉獻，豫表信徒將自己所有的獻給神，參與教會的建造。
+definition: '神指定用於建造會幕的各種材料（金、銀、銅、細麻、木、皮、油、香料、寶石等）皆具有深刻的屬靈豫表意義。這些材料描繪了基督的神性與人性、祂的救贖工作、聖靈的運行，以及信徒在聖靈裡經歷變化後的屬靈美德。
+
+  '
+development: '這些材料不僅是物質的奉獻，更預表了基督的各方面榮美與工作。例如皂莢木預表基督堅固無朽壞的人性，精金預表祂的神性，染紅的公羊皮預表祂流血的救贖。這些豫表在基督身上得著完全的應驗與彰顯。
+
+  '
 accumulations:
 - book: 出埃及記
   chapter: 25
-  summary: 神詳細列出建造會幕所需的各類材料，包括金屬、紡線、皮料、木料、油、香料和寶石。
-  relation: 本章的材料清單是會幕豫表的基礎，每一項材料都指向基督或信徒的屬靈實際。
+  summary: 列舉了金銀銅、木與各色紡線等建造會幕的材料，並隱含其屬靈豫表。
+  relation: 藉由物質材料的屬性描繪基督的位格、工作與教會建造的屬靈實際。
 related_entries:
-- 甘心樂意的奉獻
 - 皂莢木（atzei shittim）
-- 禮物（terumah）
-- 約櫃
-- 金燈臺
-- 陳設餅桌子
+- 禮物
 sources:
-- ccbiblestudy 註解（出25:3-7）
-- BibleHub Study (Exodus 25:3-7)
+- 'BH: Exodus 25:3-7 — Symbolism of materials（https://biblehub.com/study/exodus/25.htm）'
+- 'CT: 出二十五3-7 註解 — 材料的靈意註解（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm）'
+- 'GT: 出二十五3-7 拾穗 — 會幕材料所頸表的意思（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm）'
+- 'KC: Exodus 25:3-7 — Features of materials（https://www.kingcomments.com/en/bible-studies/Exo/25）'
+created_from:
+- BH
+- CT
+- GT
+- KC
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: {}

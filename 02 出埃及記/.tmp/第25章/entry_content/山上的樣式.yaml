@@ -1,23 +1,35 @@
 name: 山上的樣式
 type: 神學
 secondary_types: []
-aliases: []
+aliases:
+- 山上指示的樣式
+- 屬天的樣式
 status: formal
-definition: 神在出埃及記25章兩次強調（25:9, 25:40），摩西製造帳幕和其中一切器具，都必須「照著在山上指示你的樣式」。這表明會幕的設計不是出於人的構想，而是源於神在西乃山上向摩西啟示的屬天藍圖。地上的會幕是「天上事的形狀和影像」（來8:5），因此每一細節都具有神學意義，必須嚴格遵照神的指示，不可擅自更改。這原則教導：神的事工必須按照神的啟示和方法執行，順服是執行神計畫的關鍵。
-development:
-- 出25:9 在列出材料後立即強調「都要照我所指示你的樣式」，確立建造的權威來源。
-- 出25:40 在燈臺指示結束時再次重申「要謹慎做這些物件，都要照著在山上指示你的樣式」，形成首尾呼應。
-- 希伯來書8:5 引用此原則，說明地上的會幕是天上真帳幕的副本與影兒。
-- 這原則預表基督——祂是那「真帳幕」的實體，神一切的豐盛都有形有體地居住在祂裡面（西2:9）。
+definition: '神吩咐摩西建造帳幕與一切器具時，必須嚴格照著在山上指示他的樣式。這表明屬地的敬拜與事奉必須完全根據屬天的啟示，而非人的意思或創意。會幕的樣式是天上真帳幕的影兒，預表基督的位格與工作。
+
+  '
+development: '此原則在希伯來書中被進一步解明，指出地上的帳幕是天上事的形狀和影像。這教導我們，教會的建造與屬靈的事奉也必須完全順服神話語的啟示與聖靈的引導，不可擅自更改神的定規。
+
+  '
 accumulations:
 - book: 出埃及記
   chapter: 25
-  summary: 神兩次吩咐摩西，製造帳幕和一切器具必須完全按照在山上指示的樣式。
-  relation: 本章以「山上的樣式」為建造的最高準則，確保會幕準確反映屬天的啟示。
+  summary: 神警戒摩西製造帳幕和器具都要照著山上指示的樣式。
+  relation: 確立了屬靈事工必須完全依據神屬天啟示的原則。
 related_entries:
-- 來8:5
-- 來9:23-24
-- 出24:15-18
+- 天上事的形狀和影像（來8：5）
+- 頭一層帳幕作現今的表樣（來9：8-9）
 sources:
-- ccbiblestudy 註解（出25:9, 25:40）
-- BibleHub Study (Exodus 25:9, 25:40)
+- 'BH: Exodus 25:9, 40 — According to the pattern shown on the mountain（https://biblehub.com/study/exodus/25.htm）'
+- 'CT: 出二十五9, 40 註解 — 照我所指示你的樣式（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm）'
+- 'GT: 出二十五9 拾穗 — 照山上指示的樣式（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm）'
+- 'KC: Exodus 25:9 — The pattern of the tabernacle（https://www.kingcomments.com/en/bible-studies/Exo/25）'
+created_from:
+- BH
+- CT
+- GT
+- KC
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: {}
