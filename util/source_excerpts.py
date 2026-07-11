@@ -16,7 +16,7 @@ LARGE_SINGLE_CHARS = 120_000
 
 
 def _manifest_rows(manifest_path):
-    """source_manifest.md 中狀態 OK 的資料列 → [(label, url, rel_path)]。"""
+    """source_manifest.md 中狀態 OK 的資料列 → [(label, kind, url, rel_path)]。"""
     manifest_path = Path(manifest_path)
     rows = []
     if not manifest_path.exists():
@@ -28,10 +28,10 @@ def _manifest_rows(manifest_path):
         cells = [cell.strip() for cell in match.group(1).split("|")]
         if len(cells) < 5:
             continue
-        label, _kind, url, rel_path, status = cells[:5]
+        label, kind, url, rel_path, status = cells[:5]
         if "OK" not in status:
             continue
-        rows.append((label, url, rel_path))
+        rows.append((label, kind, url, rel_path))
     return rows
 
 
@@ -39,7 +39,7 @@ def parse_manifest(manifest_path, root):
     """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。"""
     return [
         (label, Path(root) / rel_path)
-        for label, _url, rel_path in _manifest_rows(manifest_path)
+        for label, _kind, _url, rel_path in _manifest_rows(manifest_path)
         if rel_path.startswith("raw_data") and rel_path.endswith(".txt")
     ]
 
@@ -51,7 +51,20 @@ def manifest_urls(manifest_path):
     """
     return [
         (label, url)
-        for label, url, _rel_path in _manifest_rows(manifest_path)
+        for label, _kind, url, _rel_path in _manifest_rows(manifest_path)
+        if url.startswith("http")
+    ]
+
+
+def manifest_kind_urls(manifest_path):
+    """讀 source_manifest.md，回傳 [(類型, url)]（僅狀態 OK 且 URL 為 http(s)）。
+
+    類型欄是 BH/CT/GT/KC 簡稱；條目 sources 的「標籤: 位置說明（URL）」以此
+    驗證標籤與 URL 成對（出25 實例：模型寫 KC 標籤卻附 CT 的 URL）。
+    """
+    return [
+        (kind, url)
+        for _label, kind, url, _rel_path in _manifest_rows(manifest_path)
         if url.startswith("http")
     ]
 

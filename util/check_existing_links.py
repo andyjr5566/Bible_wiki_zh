@@ -6,6 +6,7 @@ import re
 import sys
 from pathlib import Path
 
+import console
 from resolve_link_candidates import has_book_chapter_data
 from book_paths import canonical_book_name
 
@@ -43,6 +44,7 @@ def resolve_existing(targets, index):
 
 
 def main():
+    console.utf8_stdio()
     parser = argparse.ArgumentParser()
     parser.add_argument("chapter_file")
     parser.add_argument("--missing", action="store_true")

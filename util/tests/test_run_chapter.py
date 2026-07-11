@@ -274,6 +274,101 @@ class EntrySourceUrlTests(unittest.TestCase):
         self.assertEqual([], run_chapter._entry_source_errors(payload, []))
 
 
+class EntrySourceLabelTests(unittest.TestCase):
+    """sources 行首標籤須與 URL 的 manifest 類型一致（出25 實例：KC 標籤配 CT URL）。"""
+
+    CT_URL = "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT26.htm"
+    URL_KINDS = {SOURCE_URL: "BH", CT_URL: "CT"}
+
+    def _errors(self, sources):
+        payload = dict(ENTRY_PAYLOAD, sources=sources)
+        return run_chapter._entry_source_errors(
+            payload, list(self.URL_KINDS), self.URL_KINDS
+        )
+
+    def test_wrong_label_for_url_is_rejected(self):
+        errors = self._errors([f"KC: 出埃及記第26章 — 說明（{self.CT_URL}）"])
+        self.assertEqual(1, len(errors))
+        self.assertIn("標籤", errors[0])
+        self.assertIn("CT", errors[0])
+
+    def test_matching_label_passes(self):
+        self.assertEqual([], self._errors([f"CT: 出埃及記第26章 — 說明（{self.CT_URL}）"]))
+
+    def test_free_form_label_is_not_restricted(self):
+        # 標籤不是 manifest 已知類型（如舊式 ccbiblestudy.org 寫法）→ 只驗 URL
+        self.assertEqual([], self._errors([f"ccbiblestudy 註解: 說明（{self.CT_URL}）"]))
+
+
+class EntryAliasConflictTests(unittest.TestCase):
+    """aliases 驗證左移（出25 實例：alias 撞同批正式條目、兩條目搶同一 alias）。"""
+
+    def test_alias_owned_by_existing_or_planned_entry_is_rejected(self):
+        owners = run_chapter._alias_owners(
+            {"甘心樂意的奉獻": {"title": "甘心樂意的奉獻", "status": "formal"}},
+            set(), {},
+        )
+        entry = {"name": "甘心樂意的奉獻（林後9：7）", "suggested_type": "互文"}
+        payload = {"name": "甘心樂意的奉獻（林後9：7）", "aliases": ["甘心樂意的奉獻"]}
+        errors = run_chapter._entry_alias_errors(entry, payload, owners)
+        self.assertEqual(1, len(errors))
+        self.assertIn("甘心樂意的奉獻", errors[0])
+
+    def test_bare_planned_name_as_own_alias_is_allowed(self):
+        owners = run_chapter._alias_owners({}, {"皂莢木"}, {})
+        entry = {"name": "皂莢木", "suggested_type": "原文"}
+        payload = {"name": "皂莢木（atzei shittim）", "aliases": ["皂莢木"]}
+        self.assertEqual([], run_chapter._entry_alias_errors(entry, payload, owners))
+
+    def test_index_alias_key_resolves_to_its_formal_owner(self):
+        owners = run_chapter._alias_owners(
+            {"道成肉身": {"alias_of": "約1：14"}}, set(), {},
+        )
+        entry = {"name": "新條目", "suggested_type": "神學"}
+        payload = {"name": "新條目", "aliases": ["道成肉身"]}
+        errors = run_chapter._entry_alias_errors(entry, payload, owners)
+        self.assertEqual(1, len(errors))
+        self.assertIn("約1：14", errors[0])
+
+    def test_same_batch_double_claim_is_rejected(self):
+        owners = run_chapter._alias_owners(
+            {}, {"山上的樣式", "天上事的形狀和影像（來8：5）"}, {},
+        )
+        run_chapter._register_alias_owner(
+            owners, {"name": "山上的樣式", "aliases": ["山上指示的樣式"]}
+        )
+        entry = {"name": "天上事的形狀和影像（來8：5）", "suggested_type": "互文"}
+        second = {"name": "天上事的形狀和影像（來8：5）", "aliases": ["山上指示的樣式"]}
+        errors = run_chapter._entry_alias_errors(entry, second, owners)
+        self.assertEqual(1, len(errors))
+
+
+class KnowledgeNodesClosureTests(unittest.TestCase):
+    """knowledge_nodes 與 related_entries 同法閉合（出25 實例：裸名 禮物／法版）。"""
+
+    MAPPING = {
+        "禮物（terumah）": "禮物（terumah）",
+        "法版（edut）": "法版（edut）",
+        "約櫃": "約櫃",
+    }
+
+    def test_bare_names_closed_and_unknown_dropped(self):
+        content = {"knowledge_nodes": {"原文": ["禮物", "法版", "不存在的節點"],
+                                       "主題": ["約櫃"]}}
+        closed, dropped = run_chapter._close_knowledge_nodes(content, self.MAPPING)
+        self.assertEqual(
+            ["禮物（terumah）", "法版（edut）"], closed["knowledge_nodes"]["原文"]
+        )
+        self.assertEqual(["約櫃"], closed["knowledge_nodes"]["主題"])
+        self.assertEqual(["不存在的節點"], dropped)
+
+    def test_group_left_empty_after_drops_is_removed(self):
+        content = {"knowledge_nodes": {"神學": ["全部都不存在"], "主題": ["約櫃"]}}
+        closed, dropped = run_chapter._close_knowledge_nodes(content, self.MAPPING)
+        self.assertNotIn("神學", closed["knowledge_nodes"])
+        self.assertEqual(["全部都不存在"], dropped)
+
+
 class ChapterDepthTests(unittest.TestCase):
     """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）。"""
 

@@ -11,8 +11,10 @@ import yaml
 
 try:
     from .book_paths import canonical_book_name, existing_book_directories
+    from . import console
 except ImportError:
     from book_paths import canonical_book_name, existing_book_directories
+    import console
 
 from build_link_index import (
     EXCLUDE_PARTS,
@@ -377,6 +379,7 @@ def validate(base=None):
 
 
 def main():
+    console.utf8_stdio()
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", help="檢查相對此 Git revision 的保護區變更")
     parser.add_argument("--report", help="選填：將完整結果寫入指定 JSON")

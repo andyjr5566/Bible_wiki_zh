@@ -34,7 +34,7 @@ source_scope: collected_only
 
 ## 來源依據
 
-- BH: Exodus 25:5,10,13,23,28 — 皂莢木的耐用性、抗腐性及作為基督不朽人性的象徵（https://biblehub.com/study/exodus/25.htm）
-- KC: Exodus 25:1-9,10-16 — 皂莢木作為材料表徵主耶穌完美的人性（https://www.kingcomments.com/en/bible-studies/Exo/25）
-- CT: 出埃及記第二十五章註解 — 皂莢木表徵堅固的人性及豫表主耶穌的性質堅固不會朽壞（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm）
-- GT: 出埃及記第二十五章拾穗 — 皂莢木作為西乃曠野最好的木材及其預表主為人（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm）
+- BH: Exodus 25:5,10,13,23,28 — 皂莢木的耐用性、抗腐性及作為基督不朽人性的象徵（<https://biblehub.com/study/exodus/25.htm>）
+- KC: Exodus 25:1-9,10-16 — 皂莢木作為材料表徵主耶穌完美的人性（<https://www.kingcomments.com/en/bible-studies/Exo/25>）
+- CT: 出埃及記第二十五章註解 — 皂莢木表徵堅固的人性及豫表主耶穌的性質堅固不會朽壞（<https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm>）
+- GT: 出埃及記第二十五章拾穗 — 皂莢木作為西乃曠野最好的木材及其預表主為人（<https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm>）

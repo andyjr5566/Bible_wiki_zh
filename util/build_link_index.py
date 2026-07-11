@@ -169,6 +169,12 @@ def build_index(link_folder=LINK_FOLDER, index_file=INDEX_FILE, root=ROOT, check
 
 
 def main():
+    # 輸出含中文與 emoji；Windows cp1252 stdout 直接 print 會 UnicodeEncodeError，
+    # 須在 argparse（--help 也會印字）之前重設編碼。
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure:
+            reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="只確認索引可重現且為最新")
     args = parser.parse_args()

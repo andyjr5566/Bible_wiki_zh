@@ -186,6 +186,17 @@ def _wikilink(inner):
     return f"[[{inner}]]"
 
 
+# GFM/Obsidian 只在 URL 前是行首、空白或半形 ( 時自動連結；來源依據慣用
+# 「標籤: 位置說明（URL）」，全形括號緊貼 URL 使其渲染後不可點。渲染時把
+# 這類 URL 包成 <URL>（CommonMark 顯式 autolink）；本可自動連結或已包 <>
+# 的 URL 維持原樣，確保既有條目 round-trip 不變、重渲染冪等。
+_UNLINKABLE_URL_RE = re.compile(r"(?<=[^\s(<\[])(https?://[^\s<>（）]+)")
+
+
+def linkify_urls(text):
+    return _UNLINKABLE_URL_RE.sub(r"<\1>", text)
+
+
 def _render_accumulations(accums):
     # 同一 (書卷, 章) 只能有一個累積標記區塊；模型常為不同節次各給一筆，
     # 這裡依 (書卷, 章) 合併 summary／relation，避免重複標記。
@@ -233,7 +244,7 @@ def _render_formal(payload):
         related_body = "\n".join(f"- {_wikilink(item)}" for item in related)
         parts.append(f"## 相關條目\n\n{related_body}")
     source_body = "\n".join(
-        f"- {str(source).strip()}"
+        f"- {linkify_urls(str(source).strip())}"
         for source in payload["sources"]
         if str(source).strip()
     )

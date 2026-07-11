@@ -33,7 +33,7 @@ source_scope: collected_only
 
 ## 來源依據
 
-- BH: Exodus 25:16 — 法版作為立約的見證與預表（https://biblehub.com/study/exodus/25.htm）
-- KC: 出埃及記第25章 — 法版的原文意義與屬靈表徵（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm）
-- GT: 出埃及記第25章拾穗 — 法版作為見證與十誡的關聯（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm）
-- KC: Exodus 25 — The Ark（https://www.kingcomments.com/en/bible-studies/Exo/25）
+- BH: Exodus 25:16 — 法版作為立約的見證與預表（<https://biblehub.com/study/exodus/25.htm>）
+- CT: 出埃及記第25章 — 法版的原文意義與屬靈表徵（<https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm>）
+- GT: 出埃及記第25章拾穗 — 法版作為見證與十誡的關聯（<https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm>）
+- KC: Exodus 25 — The Ark（<https://www.kingcomments.com/en/bible-studies/Exo/25>）

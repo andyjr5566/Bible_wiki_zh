@@ -12,8 +12,10 @@ from pathlib import Path
 
 try:
     from .book_paths import book_directory, ordered_book_dir_name
+    from . import console
 except ImportError:
     from book_paths import book_directory, ordered_book_dir_name
+    import console
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -355,6 +357,7 @@ def write_or_check(path: Path, content: str, check: bool, changed: list[Path]):
 
 
 def main() -> int:
+    console.utf8_stdio()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--check",

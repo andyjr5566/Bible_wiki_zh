@@ -173,8 +173,9 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
         f"summary、relation 四欄，且至少含本章（{ctx.book} 第{ctx.chapter}章）一筆、同章只給一筆。\n"
         f"- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）："
         f"{', '.join(allowed_related) or '（無）'}。\n"
-        f"- sources 每項格式「標籤: 位置說明（URL）」，URL 必須取自本章來源："
-        f"{'；'.join(f'{label} {url}' for label, url in (source_urls or [])) or '（本章無來源 URL）'}。\n"
+        f"- sources 每項格式「標籤: 位置說明（URL）」，標籤與 URL 必須成對取自本章來源："
+        f"{'；'.join(f'{kind}: {url}' for kind, url in (source_urls or [])) or '（本章無來源 URL）'}"
+        f"——標籤寫錯對應（如 KC 標籤配 CT 的 URL）視為錯誤。\n"
         f"- 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，"
         f"例如「天上真聖所（來9：23-24）」；括號內保留原經文、冒號用全形「：」。\n"
         f"- 每個 payload 的 name 必須能對回上面清單（可加音譯後綴）。\n"
@@ -206,28 +207,98 @@ def _match_payload(entry, results):
     return None
 
 
-def _entry_source_errors(payload, allowed_urls):
-    """formal 條目 sources 每項必須含本章 source_manifest 的其中一個 URL。
+_SOURCE_LABEL_RE = re.compile(r"^\s*([A-Z]{2,4})\s*[:：]")
+
+
+def _entry_source_errors(payload, allowed_urls, url_kinds=None):
+    """formal 條目 sources 每項必須含本章 source_manifest 的其中一個 URL，
+    且行首標籤（BH/CT/GT/KC）須與該 URL 的 manifest 類型一致。
 
     manifest 無 URL（如純測試環境）時不啟用；經文引據寫進 definition／
-    accumulations，sources 只放可回溯的來源出處。
+    accumulations，sources 只放可回溯的來源出處。標籤↔URL 驗證（出25 實例：
+    「KC: …（…02CT25.htm）」標籤寫 KC、URL 卻是 CT）只在標籤是 manifest
+    已知類型時啟用，不限制其他自由寫法。
     """
     if not allowed_urls or payload.get("status") != "formal":
         return []
+    url_kinds = url_kinds or {}
     errors = []
     for source in payload.get("sources") or []:
         text = str(source)
-        if not any(url in text for url in allowed_urls):
+        hit = next((url for url in allowed_urls if url in text), None)
+        if hit is None:
             errors.append(
                 f"sources「{text}」未含本章來源 URL；每項格式「標籤: 位置說明（URL）」，"
                 f"URL 取自：{'、'.join(allowed_urls)}"
             )
+            continue
+        kind = url_kinds.get(hit)
+        label = _SOURCE_LABEL_RE.match(text)
+        if kind and label and label.group(1) != kind:
+            errors.append(
+                f"sources「{text}」標籤「{label.group(1)}」與 URL 不符：該 URL 屬 {kind}，"
+                f"請改用正確標籤或換成 {label.group(1)} 的 URL"
+            )
     return errors
 
 
+def _entry_alias_errors(entry, payload, owners):
+    """aliases 驗證左移：不得與既有條目（名稱或 alias）、本章計畫或已接受的
+    其他條目衝突，否則 build_link_index 才爆「alias 衝突／多重指向」。
+
+    出25 實例：模型幫「甘心樂意的奉獻（林後9：7）」加 alias「甘心樂意的奉獻」
+    撞上同批正式條目；兩個條目同時認領「山上指示的樣式」。條目以計畫裸名
+    作自身 alias（皂莢木 ↔ 皂莢木（atzei shittim））屬合法慣例，不擋。
+    """
+    own = {
+        render_entry.safe_name(str(payload.get("name", ""))),
+        render_entry.safe_name(entry["name"]),
+    }
+    errors = []
+    for alias in payload.get("aliases") or []:
+        norm = render_entry.safe_name(str(alias))
+        owner = owners.get(norm)
+        if owner and owner not in own:
+            errors.append(
+                f"aliases「{alias}」已屬於條目「{owner}」（既有或同批），請移除此 alias"
+            )
+    return errors
+
+
+def _alias_owners(index, planned_names, payloads):
+    """名稱／alias（safe_name 後）→ 擁有者條目名，供 alias 衝突驗證。
+
+    涵蓋全庫索引（alias 歸還其正式條目）、本章計畫中的 C 類名稱、已接受的
+    同章 payload（含其 aliases）。
+    """
+    owners = {}
+    for key, info in (index or {}).items():
+        if isinstance(info, dict):
+            title = info.get("alias_of") or info.get("title") or key
+        else:
+            title = key
+        owners[render_entry.safe_name(key)] = render_entry.safe_name(str(title))
+    for name in planned_names:
+        owners.setdefault(name, name)
+    for payload in payloads.values():
+        _register_alias_owner(owners, payload)
+    return owners
+
+
+def _register_alias_owner(owners, payload):
+    name = render_entry.safe_name(str(payload.get("name", "")))
+    owners[name] = name
+    for alias in payload.get("aliases") or []:
+        owners.setdefault(render_entry.safe_name(str(alias)), name)
+
+
 def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
-                     feedback=None, source_urls=None):
-    """回傳 (通過驗證的 payloads, 各條目的失敗原因)。失敗原因供下一輪回饋模型。"""
+                     feedback=None, source_urls=None, owners=None):
+    """回傳 (通過驗證的 payloads, 各條目的失敗原因)。失敗原因供下一輪回饋模型。
+
+    owners（名稱／alias → 擁有者）為可變 dict：payload 通過驗證即登記其名稱
+    與 aliases，讓同批後續條目的 alias 衝突當場擋下。
+    """
     prompt = _batch_entry_prompt(
         ctx, batch, allowed_related, sources_text, raw_text, feedback, source_urls
     )
@@ -241,17 +312,22 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
         return {}, {e["name"]: "模型未回傳有效 payload 陣列" for e in batch}
     matched, errors = {}, {}
     allowed_urls = [url for _, url in (source_urls or [])]
+    url_kinds = dict((url, kind) for kind, url in (source_urls or []))
     for entry in batch:
         payload = _match_payload(entry, results)
         if payload is None:
             errors[entry["name"]] = "找不到對應此條目的 payload（name 需能對回清單）"
             continue
         verrs = render_entry.validate_payload(payload, known_types=known)
-        verrs.extend(_entry_source_errors(payload, allowed_urls))
+        verrs.extend(_entry_source_errors(payload, allowed_urls, url_kinds))
+        if owners is not None:
+            verrs.extend(_entry_alias_errors(entry, payload, owners))
         if verrs:
             errors[entry["name"]] = "；".join(verrs)
             continue
         matched[entry["name"]] = payload
+        if owners is not None:
+            _register_alias_owner(owners, payload)
     return matched, errors
 
 
@@ -271,7 +347,8 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         for e in plan.get(key, [])
     ]
     allowed_related = list(dict.fromkeys(existing_titles + [e["name"] for e in c_entries]))
-    source_urls = source_excerpts.manifest_urls(ctx.path("source_manifest.md"))
+    # (類型, url) 成對供 prompt 與標籤↔URL 驗證；類型即模型該寫的標籤（BH/CT/GT/KC）
+    source_urls = source_excerpts.manifest_kind_urls(ctx.path("source_manifest.md"))
     if limit is not None:
         c_entries = c_entries[:limit]
 
@@ -291,6 +368,11 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         return False
 
     pending = [e for e in c_entries if not done(e)]
+    # alias 衝突驗證左移：既有索引（alias 歸還正式條目）＋計畫中 C 類名稱＋
+    # 已接受 payload（含 resume 讀回的）；批次內通過者即時登記，同批也擋。
+    index = ctx.index if ctx.index is not None else resolver.load_index()
+    planned_names = {render_entry.safe_name(e["name"]) for e in c_entries}
+    owners = _alias_owners(index, planned_names, payloads)
     last_errors = {}
     for _ in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
         failed, feedback = [], None
@@ -301,7 +383,7 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
                             for e in batch if e["name"] in last_errors]
             results, errors = _run_entry_batch(
                 ctx, batch, allowed_related, sources_text, raw_text, known,
-                feedback, source_urls
+                feedback, source_urls, owners
             )
             for entry in batch:
                 payload = results.get(entry["name"])
@@ -521,7 +603,11 @@ def _related_title_map(ctx, plan, created_names):
     index = ctx.index if ctx.index is not None else resolver.load_index()
     mapping = {}
     for key, info in (index or {}).items():
-        title = (info.get("title") if isinstance(info, dict) else None) or key
+        # alias 鍵歸還其正式條目名（alias_of），閉合結果一律是實際檔名
+        if isinstance(info, dict):
+            title = info.get("alias_of") or info.get("title") or key
+        else:
+            title = key
         mapping[render_entry.safe_name(key)] = title
     for category in ("A_use_directly", "B_needs_update"):
         for e in (plan or {}).get(category, []):
@@ -558,10 +644,35 @@ def _resolve_related(item, mapping):
     return hits[0] if len(hits) == 1 else None
 
 
+def _close_knowledge_nodes(chapter_content, mapping):
+    """knowledge_nodes 與 related_entries 同法閉合：裸名／別名 → 條目全名，
+    無對應者移除並回報。
+
+    related_entries 有閉合而知識節點沒有，模型照樣寫裸名（出25 實例：寫
+    「禮物」「法版」，實建條目是「禮物（terumah）」「法版（edut）」），
+    渲染出的章節連結就是斷鏈——在這裡由程式閉合。回傳 (閉合後 payload,
+    被移除清單)；不回寫 chapter_content.yaml，閉合是渲染期行為。
+    """
+    nodes = render_chapter.coerce_knowledge_nodes(chapter_content.get("knowledge_nodes"))
+    closed, dropped = {}, []
+    for group, items in nodes.items():
+        resolved = []
+        for item in items:
+            title = _resolve_related(item, mapping)
+            if title and title not in resolved:
+                resolved.append(title)
+            elif title is None:
+                dropped.append(str(item))
+        if resolved:
+            closed[group] = resolved
+    return dict(chapter_content, knowledge_nodes=closed), dropped
+
+
 def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
     written = []
     known = ctx.known_types()
-    related_map = _related_title_map(ctx, plan, list(entry_payloads)) if entry_payloads else {}
+    # 章節 knowledge_nodes 也要閉合，無 C 類條目時仍需全庫對照表
+    related_map = _related_title_map(ctx, plan, list(entry_payloads))
     for name, payload in entry_payloads.items():
         safe = render_entry.safe_name(name)
         resolved, dropped = [], []
@@ -589,6 +700,18 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
         target.write_text(markdown, encoding="utf-8")
         written.append(target)
     if verse_links and chapter_content:
+        chapter_content, node_dropped = _close_knowledge_nodes(chapter_content, related_map)
+        if node_dropped:
+            ctx.manual_review.append(
+                f"knowledge_nodes：無對應條目，已移除：{'、'.join(node_dropped)}"
+            )
+        if not chapter_content.get("knowledge_nodes"):
+            # 全數無對應（例如條目批量整批失敗）：跳過章節渲染交人工，
+            # 不讓 render_chapter 的驗證把整條流程炸掉；resume 補完條目後重跑即可
+            ctx.manual_review.append(
+                "chapter：knowledge_nodes 閉合後全空，章節未渲染（先補條目再重跑）"
+            )
+            return written
         chapter_path = book_directory(ctx.root, ctx.book) / f"第{ctx.chapter}章.md"
         chapter_path.parent.mkdir(parents=True, exist_ok=True)
         map_block = ""

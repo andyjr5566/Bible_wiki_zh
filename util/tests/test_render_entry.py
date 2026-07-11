@@ -118,6 +118,33 @@ class RenderStructureTests(unittest.TestCase):
             self.assertEqual([], errors)
 
 
+class SourceUrlLinkifyTests(unittest.TestCase):
+    """來源依據的 URL 被全形括號緊貼時，GFM/Obsidian 不會自動連結；
+    渲染須包成 <URL>（CommonMark autolink），且重渲染冪等。"""
+
+    def _render_sources(self, sources):
+        payload = dict(GOLDEN_FORMAL, sources=sources)
+        rendered = render_entry(payload, known_types=KNOWN_TYPES)
+        return rendered[rendered.index("## 來源依據"):]
+
+    def test_url_in_fullwidth_parens_is_angle_bracketed(self):
+        body = self._render_sources(
+            ["BH: Exodus 25 — 說明（https://biblehub.com/study/exodus/25.htm）"]
+        )
+        self.assertIn("（<https://biblehub.com/study/exodus/25.htm>）", body)
+
+    def test_bare_url_after_space_is_left_as_is(self):
+        body = self._render_sources(["CT: https://example.org/CT25.htm"])
+        self.assertIn("- CT: https://example.org/CT25.htm", body)
+        self.assertNotIn("<https://example.org/CT25.htm>", body)
+
+    def test_rerender_is_idempotent(self):
+        source = "BH: 說明（https://biblehub.com/study/exodus/25.htm）"
+        first = render_entry(dict(GOLDEN_FORMAL, sources=[source]), known_types=KNOWN_TYPES)
+        second = render_entry(parse_entry(first), known_types=KNOWN_TYPES)
+        self.assertEqual(first, second)
+
+
 class RoundTripTests(unittest.TestCase):
     """既有條目 → 正規化 → payload → 重新渲染，必須完全一致。"""
 

@@ -285,6 +285,8 @@ def quality_check(book_name=None):
 
 if __name__ == "__main__":
     import sys
+    import console
+    console.utf8_stdio()
     target_book = None
     if len(sys.argv) > 1:
         if sys.argv[1].startswith('--book='):

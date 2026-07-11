@@ -9,6 +9,7 @@ from pathlib import Path
 
 import yaml
 
+import console
 from build_link_index import ROOT, collect_entries, load_resolutions
 from book_paths import book_directory
 
@@ -158,6 +159,7 @@ def check_due():
 
 
 def main():
+    console.utf8_stdio()
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--all", action="store_true")

@@ -9,8 +9,10 @@ import yaml
 
 try:
     from .book_paths import BOOK_NUMBERS, book_directory
+    from . import console
 except ImportError:
     from book_paths import BOOK_NUMBERS, book_directory
+    import console
 
 ROOT = Path(__file__).resolve().parent.parent
 BOOK_ALIASES = {"約書亞記": "約書亞記"}
@@ -175,6 +177,7 @@ def apply_updates(manifest, dry_run=False):
 
 
 def main():
+    console.utf8_stdio()
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="command", required=True)
     prepare_parser = sub.add_parser("prepare")

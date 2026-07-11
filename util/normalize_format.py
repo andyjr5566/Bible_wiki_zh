@@ -15,8 +15,10 @@ import yaml
 
 try:
     from .book_paths import book_directory, canonical_book_name
+    from . import console
 except ImportError:
     from book_paths import book_directory, canonical_book_name
+    import console
 
 ROOT = Path(__file__).resolve().parent.parent
 LINK_FOLDER = ROOT / "link_folder"
@@ -470,6 +472,7 @@ def verify_preservation(base):
 
 
 def main():
+    console.utf8_stdio()
     parser = argparse.ArgumentParser()
     parser.add_argument("--scope", choices=("genesis", "links", "all"), default="all")
     parser.add_argument("--dry-run", action="store_true")
