@@ -1,7 +1,7 @@
 {
-  "total_warnings": 20,
+  "total_warnings": 30,
   "critical_count": 0,
-  "warning_count": 20,
+  "warning_count": 30,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -88,6 +88,62 @@
       "message": "同一 alias「第1章」指向多個 target: 01 創世記/第1章, 02 出埃及記/第1章"
     },
     {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/主題/香壇.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/公山羊.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/公牛.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/公牛犢.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/山羊.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/母山羊.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/綿羊.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/綿羊羔.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/神學/彌賽亞.md",
@@ -121,6 +177,20 @@
       "source": "link_folder/神學/聖靈內住.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/神學/脂油和血都不可吃.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/神學/贖罪.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
     },
     {
       "type": "alias_target_conflict",
