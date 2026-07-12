@@ -1,0 +1,299 @@
+book: 創世記
+chapter: 3
+A_use_directly:
+- name: 蛇
+  suggested_type: 人物
+  evidence: 1-14節；CT/GT 指出撒但附在當時最出色的活物身上說話（啟十二9；林後十一3），KC 論字面實蛇與撒但媒介之辨
+  match_type: exact
+  existing_title: 蛇
+  existing_path: link_folder/人物/蛇.md
+- name: 撒但
+  suggested_type: 神學
+  evidence: 1-15節背後的引誘者；來源以約八44「說謊之人的父」、啟十二9「古蛇」指認
+  match_type: exact
+  existing_title: 撒但
+  existing_path: link_folder/神學/撒但.md
+- name: 古蛇
+  suggested_type: 神學
+  evidence: 啟十二9、二十2稱撒但為古蛇；GT 指出不可用受咒詛後的蛇想像伊甸園中那蛇
+  match_type: exact
+  existing_title: 古蛇
+  existing_path: link_folder/神學/古蛇.md
+- name: 蛇的原文字義
+  suggested_type: 原文
+  evidence: 1節；CT 指出「蛇」字根與邪術占卜相同、發音近「引誘」，「狡猾」意為靈巧通達
+  match_type: exact
+  existing_title: 蛇的原文字義
+  existing_path: link_folder/原文/蛇的原文字義.md
+- name: 試探的本質
+  suggested_type: 神學
+  evidence: 1節「神豈是真說」；KC/CT 整理撒但技倆：使人懷疑神的話與神的愛，再公開否認審判
+  surfaces:
+  - phrase: 神豈是真說
+  match_type: exact
+  existing_title: 試探的本質
+  existing_path: link_folder/神學/試探的本質.md
+- name: 神的話
+  suggested_type: 神學
+  evidence: 1-5節試探圍繞神說過的話；來源指出人不按神的話看事情就成掠物（申八3）
+  match_type: exact
+  existing_title: 神的話
+  existing_path: link_folder/神學/神的話.md
+- name: 夏娃更改神的話
+  suggested_type: 神學
+  evidence: 2-3節；CT/GT 整理三層更動：減少「隨意」、加添「不可摸」、弱化「必定死」；KC 列出六處出入
+  surfaces:
+  - phrase: 不可摸，免得你們死
+  match_type: exact
+  existing_title: 夏娃更改神的話
+  existing_path: link_folder/神學/夏娃更改神的話.md
+- name: 分別善惡的樹
+  suggested_type: 神學
+  evidence: 5節「知道善惡」；串珠指出希伯來文「知道善惡」意指由自己掌管一切、自己作神
+  surfaces:
+  - phrase: 知道善惡
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 分別善惡的樹
+  existing_path: link_folder/神學/分別善惡的樹.md
+- name: 肉體的情慾、眼目的情慾、今生的驕傲
+  suggested_type: 神學
+  evidence: 6節三重觀看；CT/GT/BH 皆連約壹二16：好作食物＝肉體情慾、悅人眼目＝眼目情慾、使人有智慧＝今生驕傲
+  surfaces:
+  - phrase: 好作食物，也悅人的眼目，且是可喜愛的，能使人有智慧
+  match_type: exact
+  existing_title: 肉體的情慾、眼目的情慾、今生的驕傲
+  existing_path: link_folder/神學/肉體的情慾、眼目的情慾、今生的驕傲.md
+- name: 罪的起源（創世記3章）
+  suggested_type: 神學
+  evidence: 1-6節；GT 稱本章為全卷樞紐，無此章罪惡來由無法解釋；BH/雷氏連羅五12罪從一人入世界
+  match_type: exact
+  existing_title: 罪的起源（創世記3章）
+  existing_path: link_folder/神學/罪的起源（創世記3章）.md
+- name: 罪的後果（創世記3章）
+  suggested_type: 神學
+  evidence: 7-24節；CT 靈訓要義整理失去權柄、快樂、良善、聖潔、平安、生命六項
+  match_type: exact
+  existing_title: 罪的後果（創世記3章）
+  existing_path: link_folder/神學/罪的後果（創世記3章）.md
+- name: 赤身露體與羞恥
+  suggested_type: 神學
+  evidence: 7、10、11節；眼睛明亮卻只見羞恥；KC 指出宗教義務的遮蓋在神面前無效
+  surfaces:
+  - phrase: 赤身露體
+  match_type: exact
+  existing_title: 赤身露體與羞恥
+  existing_path: link_folder/神學/赤身露體與羞恥.md
+- name: 無花果葉與皮衣
+  suggested_type: 神學
+  evidence: 7節無花果葉裙子對照21節皮衣；CT 以葉子象徵人靠行為遮蓋，GT 背景註釋論無花果葉為迦南最大葉
+  surfaces:
+  - phrase: 無花果樹的葉子
+  match_type: exact
+  existing_title: 無花果葉與皮衣
+  existing_path: link_folder/神學/無花果葉與皮衣.md
+- name: 伊甸
+  suggested_type: 地點
+  evidence: 23-24節被逐出伊甸園（8節raw經文僅作「園中」）
+  match_type: exact
+  existing_title: 伊甸
+  existing_path: link_folder/地點/伊甸.md
+- name: 神尋找罪人
+  suggested_type: 神學
+  evidence: 9節；CT/GT 整理神尋人三因：公義、憂愁、慈愛；是神尋找人而非人尋找神
+  match_type: exact
+  existing_title: 神尋找罪人
+  existing_path: link_folder/神學/神尋找罪人.md
+- name: 你在那裡
+  suggested_type: 主題
+  evidence: 9節神的呼喚；來源指出非不知情，而是引人站到光中悔改（raw經文作「你在哪裡」）
+  surfaces:
+  - phrase: 你在哪裡
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 你在那裡
+  existing_path: link_folder/主題/你在那裡.md
+- name: 推諉罪責
+  suggested_type: 神學
+  evidence: 12-13節；亞當怪女人並間接怪神，女人推給蛇；CT 引箴廿八13遮掩罪過必不亨通
+  surfaces:
+  - phrase: 你所賜給我、與我同居的女人，他把那樹上的果子給我，我就吃了
+  match_type: exact
+  existing_title: 推諉罪責
+  existing_path: link_folder/神學/推諉罪責.md
+- name: 用肚子行走，終身吃土
+  suggested_type: 原文
+  evidence: 14節；CT/GT 指吃土是衰敗蒙羞之意（詩七十二9；彌七17），顯示蛇行動方式被貶低
+  match_type: exact
+  existing_title: 用肚子行走，終身吃土
+  existing_path: link_folder/原文/用肚子行走，終身吃土.md
+- name: 女人的後裔
+  suggested_type: 神學
+  evidence: 15節原始福音；CT 指原文單數豫表基督為童女所生，傷蛇頭＝除滅魔鬼（來二14）
+  match_type: exact
+  existing_title: 女人的後裔
+  existing_path: link_folder/神學/女人的後裔.md
+- name: 女人生產與戀慕的判決
+  suggested_type: 神學
+  evidence: 16節；GT 論戀慕與管轄的婚姻張力，丁道爾指「愛與珍惜」變成「戀慕與轄制」
+  surfaces:
+  - phrase: 我必多多加增你懷胎的苦楚；你生產兒女必多受苦楚。你必戀慕你丈夫；你丈夫必管轄你
+  match_type: exact
+  existing_title: 女人生產與戀慕的判決
+  existing_path: link_folder/神學/女人生產與戀慕的判決.md
+- name: 亞當
+  suggested_type: 人物
+  evidence: 17、20、21節；受判決仍以信心給妻子起名夏娃
+  match_type: exact
+  existing_title: 亞當
+  existing_path: link_folder/人物/亞當.md
+- name: 受造界因罪受咒詛
+  suggested_type: 神學
+  evidence: 17節地因人受咒詛；CT 指亞當是舊造元首、萬物受連累（羅八19-23）
+  surfaces:
+  - phrase: 地必為你的緣故受咒詛
+  match_type: exact
+  existing_title: 受造界因罪受咒詛
+  existing_path: link_folder/神學/受造界因罪受咒詛.md
+- name: 荊棘與蒺藜
+  suggested_type: 主題
+  evidence: 18節；CT/GT 指主耶穌戴荊棘冠冕表明擔當罪的咒詛
+  surfaces:
+  - phrase: 荊棘和蒺藜
+  match_type: exact
+  existing_title: 荊棘與蒺藜
+  existing_path: link_folder/主題/荊棘與蒺藜.md
+- name: 汗流滿面才得糊口
+  suggested_type: 原文
+  evidence: 19節；人須辛勞作工維生為神定命；GT 背景註釋對照美索不達米亞人為神明代勞的觀念
+  match_type: exact
+  existing_title: 汗流滿面才得糊口
+  existing_path: link_folder/原文/汗流滿面才得糊口.md
+- name: 死的三層
+  suggested_type: 神學
+  evidence: 19節歸於塵土；GT/艾基斯詳論肉身的死、靈的死、永遠的死三層
+  surfaces:
+  - phrase: 歸於塵土
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 死的三層
+  existing_path: link_folder/神學/死的三層.md
+- name: 夏娃名字含義
+  suggested_type: 原文
+  evidence: 20節；夏娃原文意「生命」，蘇美語 ti 兼指肋骨與生命；起名表明信靠15節應許
+  surfaces:
+  - phrase: 起名
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 夏娃名字含義
+  existing_path: link_folder/原文/夏娃名字含義.md
+- name: 夏娃
+  suggested_type: 人物
+  evidence: 20節得名，眾生之母
+  match_type: exact
+  existing_title: 夏娃
+  existing_path: link_folder/人物/夏娃.md
+- name: 眾生之母
+  suggested_type: 神學
+  evidence: 20節；KC 指「眾生」指凡因信與女人後裔（基督）聯合的人（加三16）
+  match_type: exact
+  existing_title: 眾生之母
+  existing_path: link_folder/神學/眾生之母.md
+- name: 皮衣與血祭
+  suggested_type: 神學
+  evidence: 21節；CT/KC 指皮子須流血捨命，豫表基督犧牲遮蓋（來九22），獻祭之禮大概從此而起
+  surfaces:
+  - phrase: 皮子
+  match_type: exact
+  existing_title: 皮衣與血祭
+  existing_path: link_folder/神學/皮衣與血祭.md
+- name: 創世記3章22節的我們
+  suggested_type: 解經爭議
+  evidence: 22節「與我們相似」；艾基斯整理三一位格與天庭議會（神的眾子）兩解
+  surfaces:
+  - phrase: 與我們相似
+  match_type: exact
+  existing_title: 創世記3章22節的我們
+  existing_path: link_folder/解經爭議/創世記3章22節的我們.md
+- name: 生命樹
+  suggested_type: 神學
+  evidence: 22、24節；人被隔絕於生命樹即「死」；啟廿二2生命樹重現
+  match_type: exact
+  existing_title: 生命樹
+  existing_path: link_folder/神學/生命樹.md
+- name: 失樂園
+  suggested_type: 神學
+  evidence: 23-24節；KC 指被逐既是審判也是恩典，免得人永遠活在罪中
+  surfaces:
+  - phrase: 打發他出
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 失樂園
+  existing_path: link_folder/神學/失樂園.md
+- name: 基路伯與火劍
+  suggested_type: 神學
+  evidence: 24節；CT 以基路伯象徵神的榮耀、火焰象徵聖潔、劍象徵公義；GT 背景註釋論基路伯為神臨在的保衛者
+  surfaces:
+  - phrase: 基路伯和四面轉動發火焰的劍
+  match_type: exact
+  existing_title: 基路伯與火劍
+  existing_path: link_folder/神學/基路伯與火劍.md
+- name: 生命樹道路被把守
+  suggested_type: 神學
+  evidence: 24節；人須先滿足神榮耀聖潔公義的要求才能親近生命；啟二十二14藉基督救贖重得權柄
+  surfaces:
+  - phrase: 把守生命樹的道路
+  match_type: exact
+  existing_title: 生命樹道路被把守
+  existing_path: link_folder/神學/生命樹道路被把守.md
+- name: 約翰一書2章三樣情慾
+  suggested_type: 互文
+  evidence: 6節三重觀看；CT/GT/BH 皆連約壹二16
+  match_type: exact
+  existing_title: 約翰一書2章三樣情慾
+  existing_path: link_folder/互文/約翰一書2章三樣情慾.md
+- name: 羅馬書5章亞當與基督
+  suggested_type: 互文
+  evidence: 6、19節；來源引羅五12-21一人犯罪與一人順服的對照
+  match_type: exact
+  existing_title: 羅馬書5章亞當與基督
+  existing_path: link_folder/互文/羅馬書5章亞當與基督.md
+- name: 哥林多前書15章首先的人亞當與末後的亞當
+  suggested_type: 互文
+  evidence: 19節歸於塵土；來源引林前十五22、45、47首末亞當對照
+  match_type: exact
+  existing_title: 哥林多前書15章首先的人亞當與末後的亞當
+  existing_path: link_folder/互文/哥林多前書15章首先的人亞當與末後的亞當.md
+- name: 希伯來書2章基督藉死敗壞魔鬼
+  suggested_type: 互文
+  evidence: 15節傷蛇的頭；CT/GT 引來二14基督藉死敗壞掌死權的魔鬼
+  match_type: exact
+  existing_title: 希伯來書2章基督藉死敗壞魔鬼
+  existing_path: link_folder/互文/希伯來書2章基督藉死敗壞魔鬼.md
+- name: 羅馬書8章受造之物服在虛空之下
+  suggested_type: 互文
+  evidence: 17節地受咒詛；CT/KC 引羅八19-23受造之物服在虛空之下
+  match_type: exact
+  existing_title: 羅馬書8章受造之物服在虛空之下
+  existing_path: link_folder/互文/羅馬書8章受造之物服在虛空之下.md
+- name: 啟示錄12章古蛇撒但
+  suggested_type: 互文
+  evidence: 1節蛇的身分；來源引啟十二9大龍就是那古蛇
+  match_type: exact
+  existing_title: 啟示錄12章古蛇撒但
+  existing_path: link_folder/互文/啟示錄12章古蛇撒但.md
+- name: 啟示錄22章生命樹恢復
+  suggested_type: 互文
+  evidence: 22-24節失去生命樹；啟廿二2、14生命樹在新耶路撒冷重現
+  match_type: exact
+  existing_title: 啟示錄22章生命樹恢復
+  existing_path: link_folder/互文/啟示錄22章生命樹恢復.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
