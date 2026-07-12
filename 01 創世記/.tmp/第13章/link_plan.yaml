@@ -1,0 +1,154 @@
+book: 創世記
+chapter: 13
+A_use_directly:
+- name: 亞伯蘭
+  suggested_type: 人物
+  evidence: 1-18節；回伯特利恢復求告、讓羅得先選、得應許遷希伯崙築壇
+  match_type: exact
+  existing_title: 亞伯蘭
+  existing_path: link_folder/人物/亞伯蘭.md
+- name: 羅得
+  suggested_type: 人物
+  evidence: 1-12節；財物甚多、舉目自選約但河平原、漸漸挪移直到所多瑪
+  match_type: exact
+  existing_title: 羅得
+  existing_path: link_folder/人物/羅得.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1、10節；從埃及上南地；平原「像埃及地」
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 1、3節尼革乾旱區，回伯特利的路線
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 3節回到起先支搭帳棚築壇之地
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 帳棚與祭壇
+  suggested_type: 主題
+  evidence: 4、18節；回到起先築壇處求告耶和華的名，又在幔利築壇
+  surfaces:
+  - phrase: 築壇
+    verses:
+    - 4
+  - phrase: 築了一座壇
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 帳棚與祭壇
+  existing_path: link_folder/主題/帳棚與祭壇.md
+- name: 牧人水草與土地承載
+  suggested_type: 背景
+  evidence: 6-7節；GT 背景註釋論季節性遷牧與水草使用權常引發爭執；「容不下」指同一放牧區資源不足
+  surfaces:
+  - phrase: 那地容不下他們
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 牧人水草與土地承載
+  existing_path: link_folder/背景/牧人水草與土地承載.md
+- name: 謙讓
+  suggested_type: 主題
+  evidence: 8-9節亞伯蘭放棄先選權；KC 指他不堅持權利，留給神選擇（詩四十七4）
+  surfaces:
+  - phrase: 亞伯蘭就對羅得說
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 謙讓
+  existing_path: link_folder/主題/謙讓.md
+- name: 骨肉原文作弟兄
+  suggested_type: 原文
+  evidence: 8節；原文弟兄可泛指男性親屬，中文依叔姪關係譯作骨肉
+  surfaces:
+  - phrase: 骨肉【原文作弟兄】
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 骨肉原文作弟兄
+  existing_path: link_folder/原文/骨肉原文作弟兄.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 10-11節全平原直到瑣珥，水源充足
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 所多瑪
+  suggested_type: 地點
+  evidence: 10、12-13節；罪大惡極之城，羅得漸漸挪移直到所多瑪
+  match_type: exact
+  existing_title: 所多瑪
+  existing_path: link_folder/地點/所多瑪.md
+- name: 耶和華的園子
+  suggested_type: 原文
+  evidence: 10節；形容平原如伊甸般水源植物豐盛（結四十七6-12）
+  match_type: exact
+  existing_title: 耶和華的園子
+  existing_path: link_folder/原文/耶和華的園子.md
+- name: 羅得的世俗選擇與後果
+  suggested_type: 主題
+  evidence: 11-13節；KC 指羅得只看眼前利益、心隨眼走如夏娃；GT 整理眼錯心錯腳錯的次序
+  surfaces:
+  - phrase: 羅得選擇約但河的全平原
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 羅得的世俗選擇與後果
+  existing_path: link_folder/主題/羅得的世俗選擇與後果.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 12節亞伯蘭住迦南地；GT 背景註釋指約但河為迦南東界，羅得等於離開了迦南
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 後裔如地上的塵沙
+  suggested_type: 原文
+  evidence: 16節；數量極多的修辭；傳統以塵沙表屬地後裔、十五5眾星表屬天後裔
+  surfaces:
+  - phrase: 地上的塵沙
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 後裔如地上的塵沙
+  existing_path: link_folder/原文/後裔如地上的塵沙.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 18節；原文意「聯合、交通」；猶大山地古道交會處，後為族長家族中心
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 幔利
+  suggested_type: 地點
+  evidence: 18節；既是地點也是十四13與亞伯蘭結盟者之名
+  match_type: exact
+  existing_title: 幔利
+  existing_path: link_folder/地點/幔利.md
+- name: 撒萊
+  suggested_type: 人物
+  evidence: 1節「帶著他的妻子」與全家同回迦南
+  match_type: exact
+  existing_title: 撒萊
+  existing_path: link_folder/人物/撒萊.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 14-17節重申土地與後裔應許，直到永遠
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 信心與世俗的對比
+  suggested_type: 主題
+  evidence: 全章敘事對照：神吩咐舉目對比自己舉目、留迦南對比住平原城邑、築壇對比無壇
+  match_type: exact
+  existing_title: 信心與世俗的對比
+  existing_path: link_folder/主題/信心與世俗的對比.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
