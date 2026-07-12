@@ -1,0 +1,121 @@
+book: 創世記
+chapter: 15
+candidates:
+  - name: 亞伯蘭
+    type: 人物
+    evidence: 1-18節；領受盾牌與賞賜應許、信而稱義、預備祭牲、與神立約
+  - name: 以利以謝（人物）
+    type: 人物
+    evidence: 2節大馬色人以利以謝；無子家庭擬立家僕為後嗣（努斯書板背景）
+  - name: 神的盾牌
+    type: 神學
+    evidence: 1節我是你的盾牌；GT 論亞伯蘭或懼四王報復，神應許保護
+    surfaces:
+      - {phrase: 盾牌, verses: [1]}
+  - name: 後裔的應許
+    type: 主題
+    evidence: 5節數算眾星，後裔將要如此（羅四18）
+    surfaces:
+      - {phrase: 後裔將要如此, verses: [5]}
+  - name: 「信耶和華」的意義
+    type: 原文
+    evidence: 6節；信的字根與阿們相關，亞伯蘭阿們神的話
+    surfaces:
+      - {phrase: 亞伯蘭信耶和華, verses: [6]}
+  - name: 因信稱義
+    type: 神學
+    evidence: 6節以此為他的義；羅四3、加三6、雅二23三次引用
+    surfaces:
+      - {phrase: 以此為他的義, verses: [6]}
+  - name: 迦勒底的吾珥
+    type: 地點
+    evidence: 7節神自陳曾領亞伯蘭出吾珥，為賜地之保證
+  - name: 立約的儀式
+    type: 神學
+    evidence: 9-10節劈牲相對擺列；耶卅四18-19切約背景
+    surfaces:
+      - {phrase: 亞伯蘭就取了這些來，每樣劈開，分成兩半，一半對著一半地擺列, verses: [10]}
+  - name: 四百年與第四代的關係
+    type: 解經爭議
+    evidence: 13、16節；出十二40記四百三十年，起算點與整數說並存
+    surfaces:
+      - {phrase: 四百年, verses: [13]}
+      - {phrase: 第四代, verses: [16]}
+  - name: 亞摩利人罪孽滿盈
+    type: 神學
+    evidence: 16節；神容忍等待，罪滿盈才審判（彼後三9）
+    surfaces:
+      - {phrase: 亞摩利人的罪孽還沒有滿盈, verses: [16]}
+  - name: 冒煙的爐與燒著的火把指什麼
+    type: 解經爭議
+    evidence: 17節；或連雲柱火柱、或苦難與救恩之表徵，諸說並陳
+    surfaces:
+      - {phrase: 冒煙的爐並燒著的火把, verses: [17]}
+  - name: 神與亞伯蘭立約
+    type: 主題
+    evidence: 18節當那日耶和華與亞伯蘭立約；「我已賜給」表約已成立
+    surfaces:
+      - {phrase: 立約, verses: [18]}
+  - name: 埃及河
+    type: 地點
+    evidence: 18節立約疆界南端
+  - name: 伯拉大河
+    type: 地點
+    evidence: 18節立約疆界北端，即幼發拉底河
+  - name: 基尼人
+    type: 人物
+    evidence: 19節十族之一；遊牧民族，摩西岳父屬此族（士一16）
+  - name: 基尼洗人
+    type: 人物
+    evidence: 19節十族之一；迦勒之父耶孚尼屬此族（民卅二12）
+  - name: 甲摩尼人
+    type: 人物
+    evidence: 19節十族之一；字義東方人，聖經僅此處提及
+  - name: 赫人
+    type: 人物
+    evidence: 20節十族之一；赫的後裔（創十15）
+  - name: 比利洗人
+    type: 人物
+    evidence: 20節十族之一；字義鄉下人，常與迦南人連稱
+  - name: 利乏音人
+    type: 人物
+    evidence: 20節十族之一；身量高大的土人（申二11）
+  - name: 亞摩利人
+    type: 人物
+    evidence: 21節十族之一；迦南強族，常代表全地居民（16節）
+  - name: 迦南人
+    type: 人物
+    evidence: 21節十族之一；此處指迦南南方一族
+  - name: 革迦撒人
+    type: 人物
+    evidence: 21節十族之一；迦南後裔（創十16）
+  - name: 耶布斯人
+    type: 人物
+    evidence: 21節十族之一；據耶路撒冷，城因之稱耶布斯
+  - name: 神單方面的約
+    type: 神學
+    evidence: 12、17節；亞伯蘭沉睡，惟神經過肉塊，單方承擔守約
+  - name: 「盾牌」的隱喻
+    type: 原文
+    evidence: 1節；抵禦刀箭的保護意象（詩三3；十八2）
+  - name: 「冒煙的爐與火把」的象徵
+    type: 原文
+    evidence: 17節；火與煙標示神的臨在、聖潔與審判
+  - name: 「伯拉大河」名稱
+    type: 原文
+    evidence: 18節；大河即幼發拉底河的名稱討論
+  - name: 羅馬書四章
+    type: 互文
+    evidence: 6節互文；受割禮以前因信算為義，及於信使耶穌復活之神的人
+  - name: 加拉太書三章
+    type: 互文
+    evidence: 5-6節互文；以信為本的人是亞伯拉罕子孫，後裔集中於基督
+  - name: 出埃及記一章
+    type: 互文
+    evidence: 13節互文；寄居、服事、苦待的應驗
+  - name: 耶利米書三十四章
+    type: 互文
+    evidence: 10、17節互文；從肉塊中經過的切約儀式
+  - name: 埃及河的地理辨識
+    type: 解經爭議
+    evidence: 18節；埃及小河／阿里什乾河與尼羅河支流諸說

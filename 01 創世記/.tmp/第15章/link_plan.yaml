@@ -1,0 +1,244 @@
+book: 創世記
+chapter: 15
+A_use_directly:
+- name: 亞伯蘭
+  suggested_type: 人物
+  evidence: 1-18節；領受盾牌與賞賜應許、信而稱義、預備祭牲、與神立約
+  match_type: exact
+  existing_title: 亞伯蘭
+  existing_path: link_folder/人物/亞伯蘭.md
+- name: 以利以謝（人物）
+  suggested_type: 人物
+  evidence: 2節大馬色人以利以謝；無子家庭擬立家僕為後嗣（努斯書板背景）
+  match_type: exact
+  existing_title: 以利以謝（人物）
+  existing_path: link_folder/人物/以利以謝（人物）.md
+- name: 神的盾牌
+  suggested_type: 神學
+  evidence: 1節我是你的盾牌；GT 論亞伯蘭或懼四王報復，神應許保護
+  surfaces:
+  - phrase: 盾牌
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 神的盾牌
+  existing_path: link_folder/神學/神的盾牌.md
+- name: 後裔的應許
+  suggested_type: 主題
+  evidence: 5節數算眾星，後裔將要如此（羅四18）
+  surfaces:
+  - phrase: 後裔將要如此
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 後裔的應許
+  existing_path: link_folder/主題/後裔的應許.md
+- name: 「信耶和華」的意義
+  suggested_type: 原文
+  evidence: 6節；信的字根與阿們相關，亞伯蘭阿們神的話
+  surfaces:
+  - phrase: 亞伯蘭信耶和華
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 「信耶和華」的意義
+  existing_path: link_folder/原文/「信耶和華」的意義.md
+- name: 因信稱義
+  suggested_type: 神學
+  evidence: 6節以此為他的義；羅四3、加三6、雅二23三次引用
+  surfaces:
+  - phrase: 以此為他的義
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 因信稱義
+  existing_path: link_folder/神學/因信稱義.md
+- name: 迦勒底的吾珥
+  suggested_type: 地點
+  evidence: 7節神自陳曾領亞伯蘭出吾珥，為賜地之保證
+  match_type: exact
+  existing_title: 迦勒底的吾珥
+  existing_path: link_folder/地點/迦勒底的吾珥.md
+- name: 立約的儀式
+  suggested_type: 神學
+  evidence: 9-10節劈牲相對擺列；耶卅四18-19切約背景
+  surfaces:
+  - phrase: 亞伯蘭就取了這些來，每樣劈開，分成兩半，一半對著一半地擺列
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 立約的儀式
+  existing_path: link_folder/神學/立約的儀式.md
+- name: 四百年與第四代的關係
+  suggested_type: 解經爭議
+  evidence: 13、16節；出十二40記四百三十年，起算點與整數說並存
+  surfaces:
+  - phrase: 四百年
+    verses:
+    - 13
+  - phrase: 第四代
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 四百年與第四代的關係
+  existing_path: link_folder/解經爭議/四百年與第四代的關係.md
+- name: 亞摩利人罪孽滿盈
+  suggested_type: 神學
+  evidence: 16節；神容忍等待，罪滿盈才審判（彼後三9）
+  surfaces:
+  - phrase: 亞摩利人的罪孽還沒有滿盈
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 亞摩利人罪孽滿盈
+  existing_path: link_folder/神學/亞摩利人罪孽滿盈.md
+- name: 冒煙的爐與燒著的火把指什麼
+  suggested_type: 解經爭議
+  evidence: 17節；或連雲柱火柱、或苦難與救恩之表徵，諸說並陳
+  surfaces:
+  - phrase: 冒煙的爐並燒著的火把
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 冒煙的爐與燒著的火把指什麼
+  existing_path: link_folder/解經爭議/冒煙的爐與燒著的火把指什麼.md
+- name: 神與亞伯蘭立約
+  suggested_type: 主題
+  evidence: 18節當那日耶和華與亞伯蘭立約；「我已賜給」表約已成立
+  surfaces:
+  - phrase: 立約
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 神與亞伯蘭立約
+  existing_path: link_folder/主題/神與亞伯蘭立約.md
+- name: 埃及河
+  suggested_type: 地點
+  evidence: 18節立約疆界南端
+  match_type: exact
+  existing_title: 埃及河
+  existing_path: link_folder/地點/埃及河.md
+- name: 伯拉大河
+  suggested_type: 地點
+  evidence: 18節立約疆界北端，即幼發拉底河
+  match_type: exact
+  existing_title: 伯拉大河
+  existing_path: link_folder/地點/伯拉大河.md
+- name: 基尼人
+  suggested_type: 人物
+  evidence: 19節十族之一；遊牧民族，摩西岳父屬此族（士一16）
+  match_type: exact
+  existing_title: 基尼人
+  existing_path: link_folder/人物/基尼人.md
+- name: 基尼洗人
+  suggested_type: 人物
+  evidence: 19節十族之一；迦勒之父耶孚尼屬此族（民卅二12）
+  match_type: exact
+  existing_title: 基尼洗人
+  existing_path: link_folder/人物/基尼洗人.md
+- name: 甲摩尼人
+  suggested_type: 人物
+  evidence: 19節十族之一；字義東方人，聖經僅此處提及
+  match_type: exact
+  existing_title: 甲摩尼人
+  existing_path: link_folder/人物/甲摩尼人.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 20節十族之一；赫的後裔（創十15）
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 20節十族之一；字義鄉下人，常與迦南人連稱
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 利乏音人
+  suggested_type: 人物
+  evidence: 20節十族之一；身量高大的土人（申二11）
+  match_type: exact
+  existing_title: 利乏音人
+  existing_path: link_folder/人物/利乏音人.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 21節十族之一；迦南強族，常代表全地居民（16節）
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 21節十族之一；此處指迦南南方一族
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 革迦撒人
+  suggested_type: 人物
+  evidence: 21節十族之一；迦南後裔（創十16）
+  match_type: exact
+  existing_title: 革迦撒人
+  existing_path: link_folder/人物/革迦撒人.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 21節十族之一；據耶路撒冷，城因之稱耶布斯
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 神單方面的約
+  suggested_type: 神學
+  evidence: 12、17節；亞伯蘭沉睡，惟神經過肉塊，單方承擔守約
+  match_type: exact
+  existing_title: 神單方面的約
+  existing_path: link_folder/神學/神單方面的約.md
+- name: 「盾牌」的隱喻
+  suggested_type: 原文
+  evidence: 1節；抵禦刀箭的保護意象（詩三3；十八2）
+  match_type: exact
+  existing_title: 「盾牌」的隱喻
+  existing_path: link_folder/原文/「盾牌」的隱喻.md
+- name: 「冒煙的爐與火把」的象徵
+  suggested_type: 原文
+  evidence: 17節；火與煙標示神的臨在、聖潔與審判
+  match_type: exact
+  existing_title: 「冒煙的爐與火把」的象徵
+  existing_path: link_folder/原文/「冒煙的爐與火把」的象徵.md
+- name: 「伯拉大河」名稱
+  suggested_type: 原文
+  evidence: 18節；大河即幼發拉底河的名稱討論
+  match_type: exact
+  existing_title: 「伯拉大河」名稱
+  existing_path: link_folder/原文/「伯拉大河」名稱.md
+- name: 羅馬書四章
+  suggested_type: 互文
+  evidence: 6節互文；受割禮以前因信算為義，及於信使耶穌復活之神的人
+  match_type: exact
+  existing_title: 羅馬書四章
+  existing_path: link_folder/互文/羅馬書四章.md
+- name: 加拉太書三章
+  suggested_type: 互文
+  evidence: 5-6節互文；以信為本的人是亞伯拉罕子孫，後裔集中於基督
+  match_type: exact
+  existing_title: 加拉太書三章
+  existing_path: link_folder/互文/加拉太書三章.md
+- name: 出埃及記一章
+  suggested_type: 互文
+  evidence: 13節互文；寄居、服事、苦待的應驗
+  match_type: exact
+  existing_title: 出埃及記一章
+  existing_path: link_folder/互文/出埃及記一章.md
+- name: 耶利米書三十四章
+  suggested_type: 互文
+  evidence: 10、17節互文；從肉塊中經過的切約儀式
+  match_type: exact
+  existing_title: 耶利米書三十四章
+  existing_path: link_folder/互文/耶利米書三十四章.md
+- name: 埃及河的地理辨識
+  suggested_type: 解經爭議
+  evidence: 18節；埃及小河／阿里什乾河與尼羅河支流諸說
+  match_type: exact
+  existing_title: 埃及河的地理辨識
+  existing_path: link_folder/解經爭議/埃及河的地理辨識.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
