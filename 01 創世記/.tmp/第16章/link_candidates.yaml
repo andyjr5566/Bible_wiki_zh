@@ -1,0 +1,70 @@
+book: 創世記
+chapter: 16
+candidates:
+  - name: 亞伯蘭
+    type: 人物
+    evidence: 1-16節；聽從撒萊納夏甲為妾，八十六歲得以實瑪利
+  - name: 撒萊
+    type: 人物
+    evidence: 1-8節；不能生育、提出安排、受輕視後苦待夏甲
+  - name: 夏甲
+    type: 人物
+    evidence: 1-16節；埃及使女，懷孕輕視主母，逃亡遇使者，生以實瑪利
+  - name: 以實瑪利
+    type: 人物
+    evidence: 11、15-16節；名意「神聽見」，亞伯蘭八十六歲所生
+  - name: 書珥
+    type: 地點
+    evidence: 7節書珥路上的水泉；往埃及的大路
+  - name: 庇耳拉海萊
+    type: 地點
+    evidence: 14節井名；「看顧我的永活者之井」
+  - name: 加低斯
+    type: 地點
+    evidence: 14節井在加低斯和巴列中間
+  - name: 巴列
+    type: 地點
+    evidence: 14節；位置不明，或在加低斯之西
+  - name: 耶和華的使者
+    type: 神學
+    evidence: 7-11節聖經首次出現；以神第一人稱應許後裔
+  - name: 看顧人的神（El Roi）
+    type: 神學
+    evidence: 13節夏甲以自身經歷稱神，舊約中人給神起名的僅例
+  - name: 人的方法與神的應許
+    type: 主題
+    evidence: 1-4節；以代理孕母安排完成應許所生的家庭後果
+  - name: 夏甲與撒萊的衝突
+    type: 主題
+    evidence: 4-6節；輕視、歸咎、苦待、逃走的三方衝突
+  - name: 以實瑪利與以撒的豫表
+    type: 主題
+    evidence: 加四22-31；按血氣生與憑應許生的對照
+  - name: 古代近東代理孕母安排
+    type: 背景
+    evidence: 2-3節；漢摩拉比法典、努斯泥板記不育妻子藉使女得嗣
+  - name: 「以實瑪利」名字含義
+    type: 原文
+    evidence: 11節；神聽見、神已應允
+  - name: 「庇耳拉海萊」名字含義
+    type: 原文
+    evidence: 14節；看顧我的永活者之井／見了我仍活著者的井
+  - name: 「野驢」的隱喻
+    type: 原文
+    evidence: 12節；自由、難馴、適應曠野（伯卅九5-8）
+    surfaces:
+      - {phrase: 野驢, verses: [12]}
+  - name: 加拉太書四章
+    type: 互文
+    evidence: 保羅以夏甲撒拉寓意兩約：為奴與自由
+  - name: 耶和華的使者是否為神顯現
+    type: 解經爭議
+    evidence: 7-13節；神顯現／基督顯現說與使者全權代表說並陳
+  - name: 以實瑪利與阿拉伯族群的關係
+    type: 解經爭議
+    evidence: 12節；傳統追溯與現代族群多重來源的分辨
+  - name: 神為何命夏甲回到撒萊手下
+    type: 解經爭議
+    evidence: 9節；不能抽離敘事變成要求受虐者回到危險環境的規則
+    surfaces:
+      - {phrase: 耶和華的使者對他說：你回到你主母那裡，服在他手下, verses: [9]}

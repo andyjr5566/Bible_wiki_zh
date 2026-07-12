@@ -1792,6 +1792,16 @@
       "取下脂油"
     ]
   },
+  "受膏的日子": {
+    "path": "link_folder/事件/受膏的日子.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "受膏的日子",
+    "status": "formal",
+    "aliases": [
+      "亞倫受膏的日子"
+    ]
+  },
   "受託看管的律例": {
     "path": "link_folder/事件/受託看管的律例.md",
     "type": "事件",
@@ -2397,6 +2407,16 @@
     "status": "formal",
     "aliases": [
       "耶和華呼叫摩西"
+    ]
+  },
+  "耶和華曉諭摩西（利6：1）": {
+    "path": "link_folder/事件/耶和華曉諭摩西（利6：1）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華曉諭摩西（利6：1）",
+    "status": "formal",
+    "aliases": [
+      "耶和華曉諭摩西"
     ]
   },
   "葉忒羅來訪": {
@@ -10646,6 +10666,17 @@
     "status": "formal",
     "aliases": []
   },
+  "干犯耶和華（ma'al）": {
+    "path": "link_folder/原文/干犯耶和華（ma'al）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "干犯耶和華（ma'al）",
+    "status": "formal",
+    "aliases": [
+      "干犯耶和華",
+      "ma'al"
+    ]
+  },
   "平安祭（shelamim）": {
     "path": "link_folder/原文/平安祭（shelamim）.md",
     "type": "原文",
@@ -11131,6 +11162,16 @@
     "title": "灑（zaraq）",
     "status": "formal",
     "aliases": []
+  },
+  "火祭（isheh）": {
+    "path": "link_folder/原文/火祭（isheh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "火祭（isheh）",
+    "status": "formal",
+    "aliases": [
+      "火祭"
+    ]
   },
   "災殃": {
     "path": "link_folder/原文/災殃.md",
@@ -12018,6 +12059,16 @@
     "status": "formal",
     "aliases": []
   },
+  "馨香（reach nichoach）": {
+    "path": "link_folder/原文/馨香（reach nichoach）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "馨香（reach nichoach）",
+    "status": "formal",
+    "aliases": [
+      "馨香"
+    ]
+  },
   "驢用羊羔代贖": {
     "path": "link_folder/原文/驢用羊羔代贖.md",
     "type": "原文",
@@ -12577,6 +12628,16 @@
       "加低斯巴尼亞"
     ]
   },
+  "宰燔祭牲的地方": {
+    "path": "link_folder/地點/宰燔祭牲的地方.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "宰燔祭牲的地方",
+    "status": "formal",
+    "aliases": [
+      "宰贖罪祭牲的地方"
+    ]
+  },
   "密奪": {
     "path": "link_folder/地點/密奪.md",
     "type": "地點",
@@ -12975,6 +13036,16 @@
       "蘆葦海"
     ]
   },
+  "營外潔淨之處": {
+    "path": "link_folder/地點/營外潔淨之處.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "營外潔淨之處",
+    "status": "formal",
+    "aliases": [
+      "潔淨之處"
+    ]
+  },
   "王谷": {
     "path": "link_folder/地點/王谷.md",
     "type": "地點",
@@ -13189,6 +13260,17 @@
     "title": "聖殿",
     "status": "candidate",
     "aliases": []
+  },
+  "聖處（會幕院子）": {
+    "path": "link_folder/地點/聖處（會幕院子）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "聖處（會幕院子）",
+    "status": "formal",
+    "aliases": [
+      "聖處",
+      "會幕的院子"
+    ]
   },
   "至聖所": {
     "path": "link_folder/地點/至聖所.md",
@@ -13435,6 +13517,16 @@
     "status": "formal",
     "aliases": [
       "以色列長老"
+    ]
+  },
+  "伊法十分之一": {
+    "path": "link_folder/文化/伊法十分之一.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "伊法十分之一",
+    "status": "formal",
+    "aliases": [
+      "伊法十分之一"
     ]
   },
   "使女代孕習俗": {
@@ -14076,6 +14168,16 @@
       "紅線"
     ]
   },
+  "細麻布衣服（祭司服）": {
+    "path": "link_folder/文化/細麻布衣服（祭司服）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "細麻布衣服（祭司服）",
+    "status": "formal",
+    "aliases": [
+      "細麻布衣服"
+    ]
+  },
   "綿羊": {
     "path": "link_folder/文化/綿羊.md",
     "type": "文化",
@@ -14217,6 +14319,17 @@
     "title": "送婢女為嫁妝",
     "status": "formal",
     "aliases": []
+  },
+  "鐵鏊（煎盤）": {
+    "path": "link_folder/文化/鐵鏊（煎盤）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "鐵鏊（煎盤）",
+    "status": "formal",
+    "aliases": [
+      "鐵鏊",
+      "煎盤"
+    ]
   },
   "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得": {
     "path": "link_folder/文化/雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得.md",
@@ -15492,6 +15605,16 @@
       "不可貪戀"
     ]
   },
+  "不帶酵（無酵）": {
+    "path": "link_folder/神學/不帶酵（無酵）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不帶酵（無酵）",
+    "status": "formal",
+    "aliases": [
+      "不帶酵"
+    ]
+  },
   "不能看見神的面而存活": {
     "path": "link_folder/神學/不能看見神的面而存活.md",
     "type": "神學",
@@ -15611,6 +15734,17 @@
     "title": "亞當作舊造元首",
     "status": "formal",
     "aliases": []
+  },
+  "交易上的詭詐": {
+    "path": "link_folder/神學/交易上的詭詐.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "交易上的詭詐",
+    "status": "formal",
+    "aliases": [
+      "交易詭詐",
+      "商業欺詐"
+    ]
   },
   "人子 (但7_13)": {
     "path": "link_folder/神學/人子 (但7_13).md",
@@ -15895,6 +16029,17 @@
     "title": "假合一",
     "status": "formal",
     "aliases": []
+  },
+  "假誓": {
+    "path": "link_folder/神學/假誓.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "假誓",
+    "status": "formal",
+    "aliases": [
+      "說謊起誓",
+      "虛假誓言"
+    ]
   },
   "傳於後代": {
     "path": "link_folder/神學/傳於後代.md",
@@ -16434,6 +16579,17 @@
     "status": "formal",
     "aliases": []
   },
+  "壇火常燒（不可熄滅）": {
+    "path": "link_folder/神學/壇火常燒（不可熄滅）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "壇火常燒（不可熄滅）",
+    "status": "formal",
+    "aliases": [
+      "壇火常燒",
+      "不可熄滅"
+    ]
+  },
   "夏娃更改神的話": {
     "path": "link_folder/神學/夏娃更改神的話.md",
     "type": "神學",
@@ -16838,6 +16994,17 @@
       "希伯來人的神遇見了我們"
     ]
   },
+  "常獻的素祭（祭司每日）": {
+    "path": "link_folder/神學/常獻的素祭（祭司每日）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "常獻的素祭（祭司每日）",
+    "status": "formal",
+    "aliases": [
+      "常獻的素祭",
+      "祭司每日的素祭"
+    ]
+  },
   "平安祭": {
     "path": "link_folder/神學/平安祭.md",
     "type": "神學",
@@ -16849,6 +17016,17 @@
     "aliases": [
       "shelamim",
       "平安祭"
+    ]
+  },
+  "彈血洗衣（聖處洗淨）": {
+    "path": "link_folder/神學/彈血洗衣（聖處洗淨）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "彈血洗衣（聖處洗淨）",
+    "status": "formal",
+    "aliases": [
+      "聖處洗淨",
+      "彈血的衣服洗淨"
     ]
   },
   "彌賽亞": {
@@ -17089,6 +17267,17 @@
     "status": "formal",
     "aliases": []
   },
+  "拾遺不報": {
+    "path": "link_folder/神學/拾遺不報.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "拾遺不報",
+    "status": "formal",
+    "aliases": [
+      "撿了遺失的物上行詭詐",
+      "侵佔遺失物"
+    ]
+  },
   "挪亞之約": {
     "path": "link_folder/神學/挪亞之約.md",
     "type": "神學",
@@ -17208,6 +17397,16 @@
     "status": "formal",
     "aliases": [
       "摩西認同希伯來弟兄"
+    ]
+  },
+  "摸祭成聖": {
+    "path": "link_folder/神學/摸祭成聖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "摸祭成聖",
+    "status": "formal",
+    "aliases": [
+      "摸祭物成聖"
     ]
   },
   "撒但": {
@@ -17711,6 +17910,16 @@
       "流奶與蜜的地"
     ]
   },
+  "添柴（每日早晨）": {
+    "path": "link_folder/神學/添柴（每日早晨）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "添柴（每日早晨）",
+    "status": "formal",
+    "aliases": [
+      "每日早晨燒柴"
+    ]
+  },
   "滅絕（herem）": {
     "path": "link_folder/神學/滅絕（herem）.md",
     "type": "神學",
@@ -17790,6 +17999,16 @@
       "全燔祭"
     ]
   },
+  "燔祭灰": {
+    "path": "link_folder/神學/燔祭灰.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "燔祭灰",
+    "status": "formal",
+    "aliases": [
+      "燔祭的灰"
+    ]
+  },
   "父親偏愛與家庭破裂": {
     "path": "link_folder/神學/父親偏愛與家庭破裂.md",
     "type": "神學",
@@ -17817,6 +18036,16 @@
     "status": "formal",
     "aliases": [
       "Sacrifice and worship"
+    ]
+  },
+  "瓦器打碎": {
+    "path": "link_folder/神學/瓦器打碎.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "瓦器打碎",
+    "status": "formal",
+    "aliases": [
+      "煮祭物的瓦器要打碎"
     ]
   },
   "甘心樂意的奉獻": {
@@ -18613,6 +18842,16 @@
       "君尊的祭司"
     ]
   },
+  "祭司素祭全燒": {
+    "path": "link_folder/神學/祭司素祭全燒.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司素祭全燒",
+    "status": "formal",
+    "aliases": [
+      "祭司的素祭"
+    ]
+  },
   "祭壇敬拜": {
     "path": "link_folder/神學/祭壇敬拜.md",
     "type": "神學",
@@ -19343,6 +19582,16 @@
       "血"
     ]
   },
+  "血入會幕的贖罪祭（肉不可吃）": {
+    "path": "link_folder/神學/血入會幕的贖罪祭（肉不可吃）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "血入會幕的贖罪祭（肉不可吃）",
+    "status": "formal",
+    "aliases": [
+      "血入會幕的贖罪祭"
+    ]
+  },
   "血氣與應許之對比": {
     "path": "link_folder/神學/血氣與應許之對比.md",
     "type": "神學",
@@ -19486,6 +19735,17 @@
     "status": "formal",
     "aliases": []
   },
+  "賠還（歸還加五分之一）": {
+    "path": "link_folder/神學/賠還（歸還加五分之一）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "賠還（歸還加五分之一）",
+    "status": "formal",
+    "aliases": [
+      "歸還加五分之一",
+      "加五分之一"
+    ]
+  },
   "贖罪": {
     "path": "link_folder/神學/贖罪.md",
     "type": "神學",
@@ -19581,6 +19841,16 @@
       "新生",
       "Born Again",
       "重生得救"
+    ]
+  },
+  "銅器擦磨涮淨": {
+    "path": "link_folder/神學/銅器擦磨涮淨.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "銅器擦磨涮淨",
+    "status": "formal",
+    "aliases": [
+      "銅器擦磨在水中涮淨"
     ]
   },
   "除了我以外你不可有別的神": {
@@ -19739,6 +20009,16 @@
     "status": "formal",
     "aliases": [
       "馨香的火祭"
+    ]
+  },
+  "馨香素祭的紀念": {
+    "path": "link_folder/神學/馨香素祭的紀念.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "馨香素祭的紀念",
+    "status": "formal",
+    "aliases": [
+      "素祭的紀念"
     ]
   },
   "鹽約": {
@@ -22303,6 +22583,9 @@
   "切成塊子": {
     "alias_of": "剝皮切塊"
   },
+  "亞倫受膏的日子": {
+    "alias_of": "受膏的日子"
+  },
   "Manna from heaven": {
     "alias_of": "天降嗎哪"
   },
@@ -22473,6 +22756,9 @@
   },
   "素祭所剩的要歸給亞倫和他的子孫": {
     "alias_of": "素祭所剩歸祭司"
+  },
+  "耶和華曉諭摩西": {
+    "alias_of": "耶和華曉諭摩西（利6：1）"
   },
   "Jethro's visit": {
     "alias_of": "葉忒羅來訪"
@@ -23953,6 +24239,12 @@
   "希伯來人名稱": {
     "alias_of": "希伯與希伯來名稱"
   },
+  "干犯耶和華": {
+    "alias_of": "干犯耶和華（ma'al）"
+  },
+  "ma'al": {
+    "alias_of": "干犯耶和華（ma'al）"
+  },
   "後裔如塵沙": {
     "alias_of": "後裔如地上的塵沙"
   },
@@ -24090,6 +24382,9 @@
   },
   "剛硬三字": {
     "alias_of": "法老心剛硬三字"
+  },
+  "火祭": {
+    "alias_of": "火祭（isheh）"
   },
   "nagaph": {
     "alias_of": "災殃"
@@ -24361,6 +24656,9 @@
   "Gershom etymology": {
     "alias_of": "革舜（ sojourner ）"
   },
+  "馨香": {
+    "alias_of": "馨香（reach nichoach）"
+  },
   "我們是弟兄": {
     "alias_of": "骨肉原文作弟兄"
   },
@@ -24475,6 +24773,9 @@
   "以實各谷": {
     "alias_of": "安密巴"
   },
+  "宰贖罪祭牲的地方": {
+    "alias_of": "宰燔祭牲的地方"
+  },
   "Migdol": {
     "alias_of": "密奪"
   },
@@ -24532,6 +24833,9 @@
   "蘆葦海": {
     "alias_of": "海（紅海）"
   },
+  "潔淨之處": {
+    "alias_of": "營外潔淨之處"
+  },
   "二軍兵": {
     "alias_of": "瑪哈念"
   },
@@ -24576,6 +24880,12 @@
   },
   "帳幕的南面": {
     "alias_of": "聖所"
+  },
+  "聖處": {
+    "alias_of": "聖處（會幕院子）"
+  },
+  "會幕的院子": {
+    "alias_of": "聖處（會幕院子）"
   },
   "幔子內": {
     "alias_of": "至聖所"
@@ -24844,6 +25154,9 @@
   "紅線": {
     "alias_of": "紅線與長子標記"
   },
+  "細麻布衣服": {
+    "alias_of": "細麻布衣服（祭司服）"
+  },
   "母綿羊": {
     "alias_of": "綿羊羔"
   },
@@ -24882,6 +25195,12 @@
   },
   "shrine prostitute": {
     "alias_of": "迦南廟妓風俗"
+  },
+  "鐵鏊": {
+    "alias_of": "鐵鏊（煎盤）"
+  },
+  "煎盤": {
+    "alias_of": "鐵鏊（煎盤）"
   },
   "frogs sacred in Egypt": {
     "alias_of": "青蛙為埃及聖物"
@@ -25282,11 +25601,20 @@
   "第十條誡命": {
     "alias_of": "不可貪戀"
   },
+  "不帶酵": {
+    "alias_of": "不帶酵（無酵）"
+  },
   "人見神面不能存活": {
     "alias_of": "不能看見神的面而存活"
   },
   "神的朋友亞伯拉罕": {
     "alias_of": "亞伯拉罕為神的朋友"
+  },
+  "交易詭詐": {
+    "alias_of": "交易上的詭詐"
+  },
+  "商業欺詐": {
+    "alias_of": "交易上的詭詐"
   },
   "人子 (但7:13)": {
     "alias_of": "人子 (但7_13)"
@@ -25347,6 +25675,12 @@
   },
   "道德十誡": {
     "alias_of": "倫理十誡"
+  },
+  "說謊起誓": {
+    "alias_of": "假誓"
+  },
+  "虛假誓言": {
+    "alias_of": "假誓"
   },
   "敘述式神學": {
     "alias_of": "傳於後代"
@@ -25459,6 +25793,12 @@
   "基督作為逾越節羔羊": {
     "alias_of": "基督預表（逾越節羔羊）"
   },
+  "壇火常燒": {
+    "alias_of": "壇火常燒（不可熄滅）"
+  },
+  "不可熄滅": {
+    "alias_of": "壇火常燒（不可熄滅）"
+  },
   "神伸手攻擊埃及": {
     "alias_of": "大能的手與出埃及神蹟"
   },
@@ -25564,8 +25904,20 @@
   "希伯來人的神遇見了我們": {
     "alias_of": "希伯來人的神"
   },
+  "常獻的素祭": {
+    "alias_of": "常獻的素祭（祭司每日）"
+  },
+  "祭司每日的素祭": {
+    "alias_of": "常獻的素祭（祭司每日）"
+  },
   "shelamim": {
     "alias_of": "平安祭"
+  },
+  "聖處洗淨": {
+    "alias_of": "彈血洗衣（聖處洗淨）"
+  },
+  "彈血的衣服洗淨": {
+    "alias_of": "彈血洗衣（聖處洗淨）"
   },
   "Messiah": {
     "alias_of": "彌賽亞"
@@ -25606,6 +25958,12 @@
   "承接聖職": {
     "alias_of": "承接聖職（分別為聖）"
   },
+  "撿了遺失的物上行詭詐": {
+    "alias_of": "拾遺不報"
+  },
+  "侵佔遺失物": {
+    "alias_of": "拾遺不報"
+  },
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
   },
@@ -25632,6 +25990,9 @@
   },
   "摩西認同希伯來弟兄": {
     "alias_of": "摩西認同受苦的神子民"
+  },
+  "摸祭物成聖": {
+    "alias_of": "摸祭成聖"
   },
   "重擔": {
     "alias_of": "擔子"
@@ -25795,6 +26156,9 @@
   "流奶與蜜的地": {
     "alias_of": "流奶與蜜之地"
   },
+  "每日早晨燒柴": {
+    "alias_of": "添柴（每日早晨）"
+  },
   "沒有殘疾": {
     "alias_of": "無殘疾"
   },
@@ -25807,8 +26171,14 @@
   "全燔祭": {
     "alias_of": "燔祭"
   },
+  "燔祭的灰": {
+    "alias_of": "燔祭灰"
+  },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
+  },
+  "煮祭物的瓦器要打碎": {
+    "alias_of": "瓦器打碎"
   },
   "甘心樂意": {
     "alias_of": "甘心樂意的奉獻"
@@ -25996,6 +26366,9 @@
   "君尊的祭司": {
     "alias_of": "祭司的國度"
   },
+  "祭司的素祭": {
+    "alias_of": "祭司素祭全燒"
+  },
   "種與收": {
     "alias_of": "種與收的法則"
   },
@@ -26179,6 +26552,9 @@
   "蒙靈充滿的智慧恩賜": {
     "alias_of": "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）"
   },
+  "血入會幕的贖罪祭": {
+    "alias_of": "血入會幕的贖罪祭（肉不可吃）"
+  },
   "Sinai Covenant": {
     "alias_of": "西乃之約"
   },
@@ -26205,6 +26581,12 @@
   },
   "remember my covenant": {
     "alias_of": "記念我的約"
+  },
+  "歸還加五分之一": {
+    "alias_of": "賠還（歸還加五分之一）"
+  },
+  "加五分之一": {
+    "alias_of": "賠還（歸還加五分之一）"
   },
   "罪的跨代影響": {
     "alias_of": "追討罪自父及子直到三四代"
@@ -26235,6 +26617,9 @@
   },
   "重生得救": {
     "alias_of": "重生"
+  },
+  "銅器擦磨在水中涮淨": {
+    "alias_of": "銅器擦磨涮淨"
   },
   "第一誡": {
     "alias_of": "除了我以外你不可有別的神"
@@ -26286,6 +26671,9 @@
   },
   "復和": {
     "alias_of": "饒恕與和好"
+  },
+  "素祭的紀念": {
+    "alias_of": "馨香素祭的紀念"
   },
   "Pentecost and the giving of the Law": {
     "alias_of": "五旬節與律法頒布"
