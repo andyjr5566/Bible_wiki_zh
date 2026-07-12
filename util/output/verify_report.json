@@ -122,12 +122,12 @@
       "chapter": 13
     },
     {
-      "entity": "出14:4,17,18",
+      "entity": "出14:19-20",
       "book": "出埃及記",
       "chapter": 14
     },
     {
-      "entity": "出14:19-20",
+      "entity": "出14:4,17,18",
       "book": "出埃及記",
       "chapter": 14
     },
@@ -147,12 +147,12 @@
       "chapter": 19
     },
     {
-      "entity": "出24:7",
+      "entity": "出24:3",
       "book": "出埃及記",
       "chapter": 24
     },
     {
-      "entity": "出24:3",
+      "entity": "出24:7",
       "book": "出埃及記",
       "chapter": 24
     },
@@ -172,17 +172,17 @@
       "chapter": 33
     },
     {
-      "entity": "出34:1-4,28",
-      "book": "出埃及記",
-      "chapter": 34
-    },
-    {
       "entity": "出34:1-4",
       "book": "出埃及記",
       "chapter": 34
     },
     {
       "entity": "出34:1",
+      "book": "出埃及記",
+      "chapter": 34
+    },
+    {
+      "entity": "出34:1-4,28",
       "book": "出埃及記",
       "chapter": 34
     },
@@ -212,12 +212,12 @@
       "chapter": 19
     },
     {
-      "entity": "03 利未記/第1章",
+      "entity": "利未記1章",
       "book": "利未記",
       "chapter": 1
     },
     {
-      "entity": "利未記1章",
+      "entity": "03 利未記/第1章",
       "book": "利未記",
       "chapter": 1
     },
@@ -282,12 +282,12 @@
       "chapter": 11
     },
     {
-      "entity": "林前11:26",
+      "entity": "林前11:23-26",
       "book": "哥林多前書",
       "chapter": 11
     },
     {
-      "entity": "林前11:23-26",
+      "entity": "林前11:26",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -387,12 +387,12 @@
       "chapter": 7
     },
     {
-      "entity": "來8:10",
+      "entity": "來8:10, 10:16",
       "book": "希伯來書",
       "chapter": 8
     },
     {
-      "entity": "來8:10, 10:16",
+      "entity": "來8:10",
       "book": "希伯來書",
       "chapter": 8
     },
@@ -402,7 +402,12 @@
       "chapter": 8
     },
     {
-      "entity": "來9:12,24",
+      "entity": "來9:4",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:15",
       "book": "希伯來書",
       "chapter": 9
     },
@@ -422,27 +427,27 @@
       "chapter": 9
     },
     {
-      "entity": "來9:18-22",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:4",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
       "entity": "來9:11-12",
       "book": "希伯來書",
       "chapter": 9
     },
     {
-      "entity": "來9:15",
+      "entity": "來9:18-22",
       "book": "希伯來書",
       "chapter": 9
     },
     {
-      "entity": "來10:16",
+      "entity": "來9:12,24",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來10:10",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "來10:19-22",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -457,17 +462,12 @@
       "chapter": 10
     },
     {
-      "entity": "來10:10",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
-      "entity": "來10:19-22",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
       "entity": "來10:5-10",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "來10:16",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -478,11 +478,6 @@
     },
     {
       "entity": "來12:18-24",
-      "book": "希伯來書",
-      "chapter": 12
-    },
-    {
-      "entity": "來12:24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -498,6 +493,11 @@
     },
     {
       "entity": "來12:22-24",
+      "book": "希伯來書",
+      "chapter": 12
+    },
+    {
+      "entity": "來12:24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -617,12 +617,12 @@
       "chapter": 7
     },
     {
-      "entity": "申9:9-11",
+      "entity": "05 申命記/第9章",
       "book": "申命記",
       "chapter": 9
     },
     {
-      "entity": "05 申命記/第9章",
+      "entity": "申9:9-11",
       "book": "申命記",
       "chapter": 9
     },
@@ -652,12 +652,12 @@
       "chapter": 30
     },
     {
-      "entity": "申31:9",
+      "entity": "申31:9,24-26",
       "book": "申命記",
       "chapter": 31
     },
     {
-      "entity": "申31:9,24-26",
+      "entity": "申31:9",
       "book": "申命記",
       "chapter": 31
     },
@@ -697,12 +697,12 @@
       "chapter": 3
     },
     {
-      "entity": "約書亞記4:2-9",
+      "entity": "書4:9",
       "book": "約書亞記",
       "chapter": 4
     },
     {
-      "entity": "書4:9",
+      "entity": "約書亞記4:2-9",
       "book": "約書亞記",
       "chapter": 4
     },
@@ -717,12 +717,12 @@
       "chapter": 15
     },
     {
-      "entity": "書24:16-24",
+      "entity": "06 約書亞記/第24章",
       "book": "約書亞記",
       "chapter": 24
     },
     {
-      "entity": "06 約書亞記/第24章",
+      "entity": "書24:16-24",
       "book": "約書亞記",
       "chapter": 24
     },
