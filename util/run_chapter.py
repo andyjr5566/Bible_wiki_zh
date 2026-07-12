@@ -598,11 +598,54 @@ def _org_wikilink_targets(organization):
     }
 
 
-def _chapter_payload_validator(verse_count, allowed_links=None):
-    """份量門檻＋（allowed_links 給定時）wiki-link 白名單檢查。
+_ORG_NON_PROSE_RE = re.compile(r"^\s*(?:#{1,6}\s|>|\||[-*+]\s|\d+[.、)]\s?)")
 
-    白名單擋兩頭：連到清單外＝壞連結不得進 vault；一個連結都沒有＝
-    浪費 Obsidian 圖譜（出34 全章整理零連結的教訓）。
+
+def _org_prose_chars(organization):
+    """散文主幹字數：去除標題、callout／引用、表格、條列行後的內文長度。"""
+    return sum(
+        len(line.strip())
+        for line in organization.splitlines()
+        if line.strip() and not _ORG_NON_PROSE_RE.match(line)
+    )
+
+
+_ORG_FENCE_RE = re.compile(r"```([^\n`]*)\n(.*?)```", re.S)
+
+# mermaid 只放行這幾種穩定圖型；gantt/er 等模型產出易壞
+_MERMAID_TYPES = ("flowchart", "graph", "timeline", "mindmap", "sequenceDiagram")
+
+
+def _org_split_fences(organization):
+    """拆出 ``` 圍欄區塊：回傳（圍欄外文字, [(語言標記, 內文), …]）。
+
+    mermaid 的節點語法（A[[x]]、A --> B）會誤傷 wiki-link 判定與散文
+    計數，所以 fence 內文先拆掉，其餘檢查只看圍欄外文字。
+    """
+    fences = [
+        (m.group(1).strip(), m.group(2))
+        for m in _ORG_FENCE_RE.finditer(organization)
+    ]
+    return _ORG_FENCE_RE.sub("", organization), fences
+
+
+def _mermaid_type(body):
+    """mermaid 區塊第一個有效字（跳過空行與 %% 註解），即圖型宣告。"""
+    for line in body.splitlines():
+        line = line.strip()
+        if line and not line.startswith("%%"):
+            return line.split()[0].rstrip(";")
+    return ""
+
+
+def _chapter_payload_validator(verse_count, allowed_links=None):
+    """份量門檻＋散文主幹門檻＋（allowed_links 給定時）wiki-link 白名單檢查。
+
+    體裁自由（表格／清單／callout／高亮／mermaid 圖表隨材料用），但兩頭有欄杆：
+    - 白名單擋壞連結進 vault；零連結擋出34 式的圖譜孤島；
+    - 散文主幹下限擋「大半內容包進表格、callout 或圖表」的放飛；
+    - ![[]] 嵌入（重複條目內文）直接禁；``` 圍欄只放行 mermaid，
+      且圖型限 _MERMAID_TYPES（其他圖型模型產出易壞）。
     """
     min_sections, min_chars = _org_requirements(verse_count)
 
@@ -611,7 +654,8 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
         organization, _ = render_chapter.split_references(
             render_chapter.coerce_organization(payload.get("organization"))
         )
-        sections = re.findall(r"^###\s+\S", organization, re.M)
+        org_text, fences = _org_split_fences(organization)
+        sections = re.findall(r"^###\s+\S", org_text, re.M)
         if len(sections) < min_sections:
             errors.append(
                 f"organization 需依本章段落結構分成至少 {min_sections} 個小節，"
@@ -623,8 +667,44 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
                 f"逐段整合各來源重點；散文為主，"
                 f"適合對照的材料可用表格或編號清單"
             )
+        prose_chars = _org_prose_chars(org_text)
+        min_prose = min_chars // 2
+        if prose_chars < min_prose:
+            errors.append(
+                f"organization 散文主幹太薄（{prose_chars} 字，需 ≥{min_prose} 字）："
+                f"表格、清單、callout、圖表只是補充，整合性的連貫敘述才是主幹，"
+                f"不可把大半內容包進去"
+            )
+        if "![[" in org_text:
+            errors.append(
+                "organization 不可用 ![[]] 嵌入（會在章節頁重複條目全文），"
+                "改用一般 wiki-link [[完整條目名]]"
+            )
+        if "```" in org_text:
+            errors.append(
+                "organization 的 ``` 圍欄沒有閉合：每個 ```mermaid 區塊"
+                "必須以獨立一行 ``` 結尾"
+            )
+        for lang, body in fences:
+            if lang != "mermaid":
+                errors.append(
+                    f"organization 只能用 ```mermaid 圖表區塊，不可用其他"
+                    f"程式碼區塊（發現 ```{lang or '（無語言標記）'}）"
+                )
+            elif _mermaid_type(body) not in _MERMAID_TYPES:
+                errors.append(
+                    f"mermaid 圖表第一行必須是 {'／'.join(_MERMAID_TYPES)} "
+                    f"其中之一（發現「{_mermaid_type(body) or '空區塊'}」）"
+                    f"——其他圖型易產出壞語法"
+                )
+            elif "[[" in body:
+                errors.append(
+                    "mermaid 圖內不可出現 [[（wiki-link 在圖中無效，"
+                    "且會被 vault 連結檢查掃成壞連結）："
+                    '節點一律用雙引號方形 A["標籤"]'
+                )
         if allowed_links:
-            targets = _org_wikilink_targets(organization)
+            targets = _org_wikilink_targets(org_text)
             unknown = sorted(targets - set(allowed_links))
             if unknown:
                 errors.append(
@@ -669,30 +749,44 @@ def chapter_content_step(ctx, plan):
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
         f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n\n"
         f"organization（本章整理）是單一 markdown 字串（YAML 的 | 區塊），"
-        f"不可是巢狀物件或 YAML 陣列，要求：\n"
+        f"不可是巢狀物件或 YAML 陣列。\n\n"
+        f"【硬規格——程式會驗證，不符會退回重做】\n"
         f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
         f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
-        f"- 各小節以連貫散文為主幹，沿經文脈絡敘述並整合各來源觀點；"
-        f"當材料本身適合對照呈現時（時間軸、多項並列比較、新舊呼應、尺寸規格、"
-        f"來源間差異），改用 markdown 表格或短編號清單更清楚——格式隨本章內容"
-        f"的性質調整，不必全部寫成散文。\n"
-        f"- 表格與清單是散文的補充，不能取代整合敘述；不得只交出幾行條列。\n"
-        f"- 這是 Obsidian 筆記庫：行文首次提到本章條目時用 wiki-link 連結——"
-        f"寫 [[完整條目名]]，行文用詞不同時寫 [[完整條目名|行文用詞]]，"
-        f"同一條目之後再提不必重連。連結目標只能取自本章可連條目："
+        f"- 全文合計 ≥{min_chars} 字，其中散文敘述至少 {min_chars // 2} 字——"
+        f"沿經文脈絡整合各來源觀點的連貫敘述是主幹，表格、清單、callout "
+        f"都是它的補充，不可把大半內容包進表格或 callout。\n"
+        f"- 這是 Obsidian 筆記庫：行文首次提到本章條目時用 wiki-link 連結，"
+        f"用詞不同寫 [[完整條目名|行文用詞]]，之後再提不必重連；至少要有一個連結，"
+        f"且目標只能取自本章可連條目："
         f"{'、'.join(allowed_links) or '（本章無可連條目）'}——不可連清單外的目標。\n"
-        f"- 材料合適時可用 Obsidian callout 突顯分辨：來源的關鍵引句用"
-        f"「> [!quote] 出處」、「這是來源解讀、非經文明言」這類提醒用"
-        f"「> [!note] 標題」；callout 是點綴，一般敘述不要包進 callout。\n"
-        f"- 全文合計 ≥{min_chars} 字；整合重點而非搬運來源全文，"
-        f"也不得寫入來源未提及的內容。\n"
+        f"- 內容只能出自上面的經文與來源；整合重點而非搬運來源全文。\n"
         f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
+        f"【設計空間——你是本章筆記的設計者】\n"
+        f"硬規格之內體裁自由，依材料性質決定呈現方式，每章的長相本就該不同：\n"
+        f"- 對照性材料（時間軸、多項並列比較、新舊呼應、尺寸規格、來源間差異）"
+        f"用 markdown 表格或短編號清單比散文清楚。\n"
+        f"- 材料本身是流程、關係或結構時（獻祭步驟、人物關係、行程路線、"
+        f"空間配置、系譜），歡迎用 ```mermaid 圖表呈現，限 "
+        f"{'、'.join(_MERMAID_TYPES)} 這幾種圖型；節點標籤一律用雙引號包住"
+        f'（如 A["燔祭壇"]）以免特殊字元破圖；圖內放不了 wiki-link，'
+        f"關鍵詞仍要在行文中連結；圖旁配散文說明，不可只丟一張圖。\n"
+        f"- callout 各型皆可用：[!quote] 收來源關鍵引句、[!note]／[!info] 標"
+        f"「這是來源解讀、非經文明言」的分辨、[!important] 突顯本章樞紐、"
+        f"[!question] 留懸而未決的問題；補充性長內容可用可摺疊的"
+        f"「> [!example]- 標題」預設收合。\n"
+        f"- 關鍵詞句可用 ==高亮==。\n"
+        f"- 唯一原則：形式服務材料——用某個手法是因為這段材料需要它，"
+        f"不是為了裝飾；沒有合適材料就整段散文，完全正當。\n"
+        f"【禁用】![[]] 嵌入、mermaid 以外的程式碼區塊、#標籤、HTML——"
+        f"會重複條目內文、破壞頁面或污染 vault。\n\n"
         f"【輸出格式，極重要】只輸出 YAML，且 book/chapter/knowledge_nodes/organization "
         f"必須是最上層欄位——不可在外面再包一層 chapter_content 或任何其他 key。範例：\n"
         f"```yaml\nbook: {ctx.book}\nchapter: {ctx.chapter}\n"
         f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n"
         f"organization: |\n  ### 標題一（v1-6）\n"
         f"  文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…\n\n"
+        f"  > [!quote] CT\n  > 來源的關鍵引句…\n\n"
         f"  ### 標題二（v7-13）\n  文字…\n```\n"
         f"{_schema_hint('chapter_content.schema.json')}"
     )

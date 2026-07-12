@@ -516,7 +516,9 @@ class KnowledgeNodesClosureTests(unittest.TestCase):
 
 class ChapterDepthTests(unittest.TestCase):
     """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）；
-    給定白名單時 wiki-link 只能連本章條目、且至少要有一個（出34 零連結的教訓）。"""
+    給定白名單時 wiki-link 只能連本章條目、且至少要有一個（出34 零連結的教訓）；
+    體裁自由（表格／callout／高亮／mermaid 圖表）但散文主幹有下限，
+    ![[]] 嵌入與 mermaid 以外的 ``` 區塊禁用、mermaid 圖型限穩定清單。"""
 
     def test_thin_bullet_summary_is_rejected(self):
         validate = run_chapter._chapter_payload_validator(40)
@@ -562,6 +564,92 @@ class ChapterDepthTests(unittest.TestCase):
             "organization": _ORG_PLAIN,
         })
         self.assertTrue(any("wiki-link" in e for e in errors))
+
+    def test_prose_with_table_and_callout_passes(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        supplement = (
+            "\n\n| 來源 | 觀點 |\n| --- | --- |\n"
+            "| CT | 相會之處 |\n| KC | 預表救贖 |\n\n"
+            "> [!quote] CT\n> 施恩座是神與人==相會之處==。"
+        )
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION + supplement,
+        })
+        self.assertEqual([], errors)
+
+    def test_structure_heavy_organization_is_rejected(self):
+        # 總字數過門檻（2 節→400 字）但散文只有十來字：大半內容包進表格
+        validate = run_chapter._chapter_payload_validator(2)
+        row = "| CT | " + "解讀文字" * 10 + " |\n"
+        errors = validate({
+            "knowledge_nodes": {"神學": ["會幕"]},
+            "organization": (
+                "### 施恩座的樣式（v1）\n\n短短一句。\n\n" + row * 12 +
+                "\n### 照樣式而造（v2）\n\n又是一句。\n\n" + row * 12
+            ),
+        })
+        self.assertTrue(any("散文主幹" in e for e in errors))
+
+    def test_embed_syntax_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION + f"\n\n![[{ENTRY_NAME}]]",
+        })
+        self.assertTrue(any("![[]]" in e for e in errors))
+
+    def test_non_mermaid_code_fence_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION
+            + "\n\n```python\nprint('hi')\n```",
+        })
+        self.assertTrue(any("程式碼區塊" in e for e in errors))
+
+    def test_mermaid_diagram_passes(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        mermaid = (
+            "\n\n```mermaid\nflowchart TD\n"
+            '  A["金牛犢"] --> B["摔碎法版"] --> C["重造法版"]\n```'
+        )
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION + mermaid,
+        })
+        self.assertEqual([], errors)
+
+    def test_mermaid_unstable_diagram_type_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION
+            + "\n\n```mermaid\ngantt\n  title 節期\n```",
+        })
+        self.assertTrue(any("第一行必須是" in e for e in errors))
+
+    def test_unclosed_fence_is_rejected(self):
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": CHAPTER_ORGANIZATION + "\n\n```mermaid\nflowchart TD\n",
+        })
+        self.assertTrue(any("閉合" in e for e in errors))
+
+    def test_mermaid_double_bracket_node_is_not_a_wikilink(self):
+        # A[[x]] 是 mermaid 的 subroutine 節點語法，不得算成 wiki-link：
+        # 不能誤觸白名單、不能充當「至少一個連結」，且圖內 [[ 本身要退回
+        # （渲染後會被 verify_links.py 掃成 BROKEN）
+        validate = run_chapter._chapter_payload_validator(2, [ENTRY_NAME])
+        errors = validate({
+            "knowledge_nodes": {"神學": [ENTRY_NAME]},
+            "organization": _ORG_PLAIN
+            + "\n\n```mermaid\nflowchart TD\n  A[[清單外條目]] --> B\n```",
+        })
+        self.assertFalse(any("不在本章可連清單" in e for e in errors))
+        self.assertTrue(any("沒有任何 wiki-link" in e for e in errors))
+        self.assertTrue(any("圖內不可出現" in e for e in errors))
 
 
 class RelatedEntriesClosureTests(unittest.TestCase):
