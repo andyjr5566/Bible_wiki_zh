@@ -1,0 +1,235 @@
+book: 創世記
+chapter: 10
+A_use_directly:
+- name: 萬國同源
+  suggested_type: 神學
+  evidence: 1、32節全章框架：列國都出自挪亞三子（徒十七26）
+  surfaces:
+  - phrase: 挪亞的兒子
+    verses:
+    - 1
+  - phrase: 挪亞三個兒子的宗族
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 萬國同源
+  existing_path: link_folder/神學/萬國同源.md
+- name: 閃
+  suggested_type: 人物
+  evidence: 1、21-31節；希伯子孫之祖，家系通往亞伯蘭
+  match_type: exact
+  existing_title: 閃
+  existing_path: link_folder/人物/閃.md
+- name: 含
+  suggested_type: 人物
+  evidence: 1、6-20節；後裔佔全章約半篇幅，多成以色列世仇
+  match_type: exact
+  existing_title: 含
+  existing_path: link_folder/人物/含.md
+- name: 雅弗
+  suggested_type: 人物
+  evidence: 1、2-5、21節；後裔多在安那托利亞、愛琴海與北方地區
+  match_type: exact
+  existing_title: 雅弗
+  existing_path: link_folder/人物/雅弗.md
+- name: 宗族方言地土地與邦國
+  suggested_type: 主題
+  evidence: 5、20、31節重複公式；CT 分析血緣、語言、地緣、政治四層關係
+  surfaces:
+  - phrase: 方言、宗族立國
+    verses:
+    - 5
+  - phrase: 宗族、方言，所住的地土、邦國
+  match_type: exact
+  existing_title: 宗族方言地土地與邦國
+  existing_path: link_folder/主題/宗族方言地土地與邦國.md
+- name: 迦南
+  suggested_type: 人物
+  evidence: 6、15-19節；迦南支系集中於地中海東岸
+  match_type: exact
+  existing_title: 迦南
+  existing_path: link_folder/人物/迦南.md
+- name: 寧錄
+  suggested_type: 人物
+  evidence: 8-12節；原文意「反叛」；世上英雄之首，國起頭在示拿地
+  match_type: exact
+  existing_title: 寧錄
+  existing_path: link_folder/人物/寧錄.md
+- name: 寧錄的在耶和華面前
+  suggested_type: 解經爭議
+  evidence: 9節；CT/KC 讀作目中無神的逞強，呂振中與 BH 保留「靠耶和華的恩」或卓著聲名的可能
+  surfaces:
+  - phrase: 他在耶和華面前是個英勇的獵戶
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 寧錄的在耶和華面前
+  existing_path: link_folder/解經爭議/寧錄的在耶和華面前.md
+- name: 巴別
+  suggested_type: 地點
+  evidence: 10節寧錄國的起頭，巴比倫的前身
+  match_type: exact
+  existing_title: 巴別
+  existing_path: link_folder/地點/巴別.md
+- name: 示拿地
+  suggested_type: 地點
+  evidence: 10節巴比倫平原；11章建塔之地
+  match_type: exact
+  existing_title: 示拿地
+  existing_path: link_folder/地點/示拿地.md
+- name: 寧錄還是亞述建造尼尼微
+  suggested_type: 解經爭議
+  evidence: 11節希伯來文主詞可讀寧錄或亞述；兩種譯法並存
+  surfaces:
+  - phrase: 他從那地出來往亞述去
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 寧錄還是亞述建造尼尼微
+  existing_path: link_folder/解經爭議/寧錄還是亞述建造尼尼微.md
+- name: 尼尼微
+  suggested_type: 地點
+  evidence: 11-12節；後成亞述帝國都城（拿三3大城）
+  match_type: exact
+  existing_title: 尼尼微
+  existing_path: link_folder/地點/尼尼微.md
+- name: 非利士人出自迦斯路希或迦斐託
+  suggested_type: 解經爭議
+  evidence: 14節；句法接迦斯路希之後，申二23等又連迦斐託；遷徙路線資料不足
+  surfaces:
+  - phrase: 從迦斐託出來的有非利士人
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 非利士人出自迦斯路希或迦斐託
+  existing_path: link_folder/解經爭議/非利士人出自迦斯路希或迦斐託.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 19節從西頓經基拉耳到迦薩、平原諸城的境界描述
+  surfaces:
+  - phrase: 迦南的境界
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 希伯
+  suggested_type: 人物
+  evidence: 21、24-25節；閃被特稱「希伯子孫之祖」，焦點移向亞伯蘭家系
+  match_type: exact
+  existing_title: 希伯
+  existing_path: link_folder/人物/希伯.md
+- name: 亞述
+  suggested_type: 地點
+  evidence: 22節閃的兒子；亦為地名（11節）
+  match_type: exact
+  existing_title: 亞述
+  existing_path: link_folder/地點/亞述.md
+- name: 法勒
+  suggested_type: 人物
+  evidence: 25節希伯之子；名字意「分」
+  match_type: exact
+  existing_title: 法勒
+  existing_path: link_folder/人物/法勒.md
+- name: 法勒名字與分地
+  suggested_type: 原文
+  evidence: 25節經文自注「法勒就是分的意思」
+  surfaces:
+  - phrase: 法勒就是分的意思
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 法勒名字與分地
+  existing_path: link_folder/原文/法勒名字與分地.md
+- name: 法勒時代的分地指什麼
+  suggested_type: 解經爭議
+  evidence: 25節；巴別分散為主流解釋，另有土地劃分、群體遷徙、定居與遊牧分開諸說
+  surfaces:
+  - phrase: 分地居住
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 法勒時代的分地指什麼
+  existing_path: link_folder/解經爭議/法勒時代的分地指什麼.md
+- name: 挪亞
+  suggested_type: 人物
+  evidence: 1、32節全章家譜源頭
+  match_type: exact
+  existing_title: 挪亞
+  existing_path: link_folder/人物/挪亞.md
+- name: 列國表
+  suggested_type: 背景
+  evidence: 全章通稱；承接九18-19，為11章巴別與12章亞伯蘭蒙召預備
+  match_type: exact
+  existing_title: 列國表
+  existing_path: link_folder/背景/列國表.md
+- name: 七十的屬靈意義
+  suggested_type: 原文
+  evidence: 傳統在本章數出七十宗族單位；出一5、廿四1等以七十表完整
+  match_type: exact
+  existing_title: 七十的屬靈意義
+  existing_path: link_folder/原文/七十的屬靈意義.md
+- name: 生養眾多與治理
+  suggested_type: 主題
+  evidence: 列國分布延續九1、7遍滿全地的命令
+  match_type: exact
+  existing_title: 生養眾多與治理
+  existing_path: link_folder/主題/生養眾多與治理.md
+- name: 希伯與希伯來名稱
+  suggested_type: 原文
+  evidence: 21、24節；「希伯」與「希伯來」字形相關，與 Habiru 的關係仍有討論；亞伯蘭於十四13首稱希伯來人
+  match_type: exact
+  existing_title: 希伯與希伯來名稱
+  existing_path: link_folder/原文/希伯與希伯來名稱.md
+- name: 雅弗住在閃的帳棚
+  suggested_type: 互文
+  evidence: 2-5節雅弗分布呼應九27神諭；KC 指擴張要到第四帝國才顯著
+  match_type: exact
+  existing_title: 雅弗住在閃的帳棚
+  existing_path: link_folder/互文/雅弗住在閃的帳棚.md
+- name: 巴別塔
+  suggested_type: 主題
+  evidence: 10節巴別、25節分地與11章敘事相連
+  match_type: exact
+  existing_title: 巴別塔
+  existing_path: link_folder/主題/巴別塔.md
+- name: 寧錄與敵基督
+  suggested_type: 互文
+  evidence: CT 靈訓以寧錄的名字、能力、性情、態度、工作預表大罪人（帖後二；啟十三）
+  match_type: exact
+  existing_title: 寧錄與敵基督
+  existing_path: link_folder/互文/寧錄與敵基督.md
+- name: 列國表的古代地理與現代族群
+  suggested_type: 解經爭議
+  evidence: GT 背景註釋：名稱可指人、宗族、地區或城市，親屬語言可表政治關係，不能按名稱相似推定現代民族血統
+  match_type: exact
+  existing_title: 列國表的古代地理與現代族群
+  existing_path: link_folder/解經爭議/列國表的古代地理與現代族群.md
+- name: 寧錄與巴別塔的關係
+  suggested_type: 解經爭議
+  evidence: 經文未載寧錄建塔；約瑟夫等後來傳統把他寫成煽動者
+  match_type: exact
+  existing_title: 寧錄與巴別塔的關係
+  existing_path: link_folder/解經爭議/寧錄與巴別塔的關係.md
+- name: 第10章多種方言與第11章一種語言
+  suggested_type: 解經爭議
+  evidence: 賈斯樂郝威命題28：兩章按主題安排，10章敘分布結果、11章敘原因
+  match_type: exact
+  existing_title: 第10章多種方言與第11章一種語言
+  existing_path: link_folder/解經爭議/第10章多種方言與第11章一種語言.md
+- name: 挪亞三子神諭的性質
+  suggested_type: 解經爭議
+  evidence: 本章列國分布常被讀作九25-27神諭的展開
+  match_type: exact
+  existing_title: 挪亞三子神諭的性質
+  existing_path: link_folder/解經爭議/挪亞三子神諭的性質.md
+- name: 迦南咒詛的種族主義誤用
+  suggested_type: 解經爭議
+  evidence: 迦南人、腓尼基人語言屬閃語族卻列含系，顯示本章非按膚色或現代語族分類
+  match_type: exact
+  existing_title: 迦南咒詛的種族主義誤用
+  existing_path: link_folder/解經爭議/迦南咒詛的種族主義誤用.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
