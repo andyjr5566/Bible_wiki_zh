@@ -1,0 +1,123 @@
+book: 創世記
+chapter: 8
+candidates:
+  - name: 神的記念
+    type: 神學
+    evidence: 1、15節；來源一致解「記念」為顧念並採取行動，常與施恩連用（尼五19）；哈三2「發怒的時候以憐憫為念」
+    surfaces:
+      - {phrase: 神記念, verses: [1]}
+      - {phrase: 神, verses: [15]}
+  - name: 挪亞
+    type: 人物
+    evidence: 1-20節；等候神的話才出方舟，出舟即築壇獻祭
+  - name: 風與靈同字
+    type: 原文
+    evidence: 1節；希伯來文 ruach 可指風、氣息或靈；語境直接指風，來源並與創一2神的靈運行對照
+    surfaces:
+      - {phrase: 風吹地, verses: [1]}
+  - name: 審判已過
+    type: 神學
+    evidence: 2-5節「閉塞了、止住了、過了、現出來了」；CT 指四個「了」顯明審判已過、轉向恢復
+    surfaces:
+      - 閉塞了
+      - 止住了
+      - {phrase: 山頂都現出來了, verses: [5]}
+  - name: 四十天降雨與一百五十天水勢
+    type: 解經爭議
+    evidence: 3節承接七24一百五十天的水勢階段
+    surfaces:
+      - {phrase: 一百五十天, verses: [3]}
+  - name: 亞拉臘山
+    type: 地點
+    evidence: 4節；原文複數「亞拉臘眾山」，土耳其東部凡湖地區古烏拉爾圖山地，非必指單一最高峰
+  - name: 信心與忍耐
+    type: 神學
+    evidence: 6節過了四十天才開窗；13-16節看見地乾仍等神命令五十多天
+    surfaces:
+      - {phrase: 過了四十天, verses: [6]}
+  - name: 烏鴉與鴿子的象徵
+    type: 主題
+    evidence: 7-12節；烏鴉食腐不歸、鴿子三次探察；CT/KC 以不潔烏鴉喻舊性情、鴿子喻聖靈（利十一15；太三16）
+    surfaces:
+      - {phrase: 烏鴉, verses: [7]}
+      - {phrase: 鴿子, verses: [8]}
+  - name: 橄欖葉子
+    type: 主題
+    evidence: 11節新擰下來的橄欖葉；GT 指橄欖樹不長高處，新葉顯示水退多日；丁道爾指首先是新造的應許而非和平標誌
+  - name: 乾的兩個希伯來字
+    type: 原文
+    evidence: 13、14節；串珠指13節指地面無積水、14節強調土地乾透
+    surfaces:
+      - {phrase: 乾了, verses: [13, 14]}
+  - name: 新造與新生活
+    type: 神學
+    evidence: 17節多多滋生大大興旺與創一22、28呼應；KC 連於行在生命新樣中（羅六4）
+    surfaces:
+      - {phrase: 多多滋生，大大興旺, verses: [17]}
+  - name: 祭壇敬拜
+    type: 神學
+    evidence: 20節聖經首次用「壇」字；挪亞出方舟第一件事是為耶和華築壇
+    surfaces:
+      - {phrase: 築了一座壇, verses: [20]}
+  - name: 燔祭
+    type: 神學
+    evidence: 20節全然焚燒獻上；KC 指燔祭專屬於神，豫表基督完全的獻上；GT 背景註釋提醒經文未稱其為感謝祭或贖罪祭
+  - name: 馨香之氣
+    type: 神學
+    evidence: 21節擬人化表達神悅納；丁道爾比較巴比倫故事「諸神如蒼蠅聚攏」凸顯舊約的分別；弗五2
+  - name: 神的恩典之約
+    type: 神學
+    evidence: 21節人心仍惡神卻應許不再咒詛地；KC 指審判未改變人心，神如今基於燔祭馨香看待地
+    surfaces:
+      - {phrase: 咒詛地, verses: [21]}
+  - name: 人的全面敗壞
+    type: 神學
+    evidence: 21節「人從小時心裡懷著惡念」；洪水沒有改變人心從幼年傾向惡的事實
+    surfaces:
+      - {phrase: 人從小時心裡懷著惡念, verses: [21]}
+  - name: 挪亞之約
+    type: 神學
+    evidence: 21節先在心裡應許不再滅各種活物，第9章正式立約賜虹為記
+    surfaces:
+      - {phrase: 滅各種的活物了, verses: [21]}
+  - name: 洪水後自然秩序的保存
+    type: 神學
+    evidence: 22節稼穡寒暑冬夏晝夜永不停息；賈斯樂郝威指應許的是季節節律不止息，非每季必豐收
+    surfaces:
+      - {phrase: 地還存留的時候，稼穡、寒暑、冬夏、晝夜就永不停息了, verses: [22]}
+  - name: 三一神同工
+    type: 神學
+    evidence: 1節神、方舟與風（靈）；CT 以神顧念、基督替死、聖靈運行連於三一救恩工作
+  - name: 潔淨與不潔淨
+    type: 神學
+    evidence: 20節取各類潔淨牲畜飛鳥獻祭，呼應七2多帶潔淨畜類的用途
+  - name: 方舟的豫表
+    type: 神學
+    evidence: 出方舟到更新之地；CT 以在基督裡死而復活整理本章
+  - name: 無條件之約
+    type: 神學
+    evidence: 21-22節；GT（丁良才）將洪水後保存世界的應許列為五個無條件之約之一
+  - name: 基督復活預表
+    type: 互文
+    evidence: 4節七月十七日；CT 按出埃及後宗教曆讀作逾越節後第三日，為傳統日期豫表
+  - name: 創一章與創八章的對照
+    type: 互文
+    evidence: 啟導本列風／靈、水退旱地、各從其類、滋生繁多等平行，1章為創造次序、8-9章為新生活次序
+  - name: 洪水與洗禮的豫表
+    type: 互文
+    evidence: 彼前三20-21八口藉水得救連於洗禮與基督復活
+  - name: 洪水全程時間軸
+    type: 背景
+    evidence: 4、5、13、14節停靠、山顯、地乾、出舟等日期；GT 重建371日、雷氏377日兩種總數
+  - name: 古代近東洪水故事中的放鳥情節
+    type: 背景
+    evidence: GT 背景註釋：吉加墨斯史詩放鴿、燕、鴉，次序與敘事功能與創世記不同；挪亞已停靠山區，放鳥非導航
+  - name: 神是否暫時忘記了挪亞
+    type: 解經爭議
+    evidence: 1節；賈斯樂郝威命題24：全知的神從未忘記，「記念」表示採取行動
+  - name: 神是否改變心意
+    type: 解經爭議
+    evidence: 21節；賈斯樂郝威命題25：不再「照我才行的」用水滅絕，不等於取消末後火的審判（彼後三10）
+  - name: 亞拉臘山與方舟遺跡爭議
+    type: 解經爭議
+    evidence: 4節；GT 保存俄國探險隊等傳聞但欠缺可核查證據；BH 亦指尚無決定性遺址證明
