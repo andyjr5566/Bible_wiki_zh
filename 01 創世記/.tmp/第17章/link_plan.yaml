@@ -1,0 +1,178 @@
+book: 創世記
+chapter: 17
+A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-27節；九十九歲領受改名、割禮之約與以撒的應許，當日遵行
+  surfaces:
+  - phrase: 亞伯蘭
+    verses:
+    - 1
+    - 3
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 撒拉
+  suggested_type: 人物
+  evidence: 15-21節；撒萊改名撒拉，應許作多國之母、生以撒
+  surfaces:
+  - phrase: 撒萊
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 撒拉
+  existing_path: link_folder/人物/撒拉.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 19、21節；撒拉所生、承受永約的兒子，名意「他笑」
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 以實瑪利
+  suggested_type: 人物
+  evidence: 18、20、23-26節；蒙昌盛之福生十二族長，十三歲受割禮
+  match_type: exact
+  existing_title: 以實瑪利
+  existing_path: link_folder/人物/以實瑪利.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 8節迦南全地賜作永遠的產業
+  surfaces:
+  - phrase: 迦南全地
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 1節神自稱 El Shaddai；語源有山、豐足諸說
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 神堅定與亞伯拉罕的約
+  suggested_type: 主題
+  evidence: 2-8節重申並展開約：多國、君王、永遠為業、作他們的神
+  match_type: exact
+  existing_title: 神堅定與亞伯拉罕的約
+  existing_path: link_folder/主題/神堅定與亞伯拉罕的約.md
+- name: 改名與立約
+  suggested_type: 神學
+  evidence: 5、15節；改名使應許身分成為公開名字
+  match_type: exact
+  existing_title: 改名與立約
+  existing_path: link_folder/神學/改名與立約.md
+- name: 割禮作為立約記號
+  suggested_type: 主題
+  evidence: 10-11節割禮是立約的證據，涵蓋整個家戶
+  surfaces:
+  - phrase: 割禮
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 割禮作為立約記號
+  existing_path: link_folder/主題/割禮作為立約記號.md
+- name: 割禮的意義
+  suggested_type: 神學
+  evidence: 9-14節；順從委身、選民記號、屬靈意義的發展
+  match_type: exact
+  existing_title: 割禮的意義
+  existing_path: link_folder/神學/割禮的意義.md
+- name: 以實瑪利十二族
+  suggested_type: 主題
+  evidence: 20節必生十二個族長；創廿五12-16列名應驗
+  surfaces:
+  - phrase: 十二個族長
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 以實瑪利十二族
+  existing_path: link_folder/主題/以實瑪利十二族.md
+- name: 古代近東割禮背景
+  suggested_type: 背景
+  evidence: 割禮非以色列獨有；他族於青春期婚姻等階段施行
+  match_type: exact
+  existing_title: 古代近東割禮背景
+  existing_path: link_folder/背景/古代近東割禮背景.md
+- name: 「全能的神」原文
+  suggested_type: 原文
+  evidence: 1節 El Shaddai 確切語源未定；沙杜（山）說等
+  match_type: exact
+  existing_title: 「全能的神」原文
+  existing_path: link_folder/原文/「全能的神」原文.md
+- name: 「亞伯拉罕」名字含義
+  suggested_type: 原文
+  evidence: 5節多國的父；亞伯蘭為尊貴／被高舉的父
+  match_type: exact
+  existing_title: 「亞伯拉罕」名字含義
+  existing_path: link_folder/原文/「亞伯拉罕」名字含義.md
+- name: 「撒拉」名字含義
+  suggested_type: 原文
+  evidence: 15節撒萊與撒拉皆與公主相關
+  match_type: exact
+  existing_title: 「撒拉」名字含義
+  existing_path: link_folder/原文/「撒拉」名字含義.md
+- name: 「以撒」名字含義
+  suggested_type: 原文
+  evidence: 19節「他笑」；連於17章與21章的笑
+  match_type: exact
+  existing_title: 「以撒」名字含義
+  existing_path: link_folder/原文/「以撒」名字含義.md
+- name: 「割禮」原文意義
+  suggested_type: 原文
+  evidence: 11節原文作割陽皮
+  surfaces:
+  - phrase: 受割禮
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 「割禮」原文意義
+  existing_path: link_folder/原文/「割禮」原文意義.md
+- name: 羅馬書四章
+  suggested_type: 互文
+  evidence: 羅四11割禮是未受割禮時因信稱義的印證
+  match_type: exact
+  existing_title: 羅馬書四章
+  existing_path: link_folder/互文/羅馬書四章.md
+- name: 歌羅西書二章
+  suggested_type: 互文
+  evidence: 西二11-12非人手所行的割禮與受洗埋葬
+  match_type: exact
+  existing_title: 歌羅西書二章
+  existing_path: link_folder/互文/歌羅西書二章.md
+- name: 羅馬書2_28-29 真割禮是內心的
+  suggested_type: 互文
+  evidence: 真割禮是心裡的，在乎靈不在乎儀文
+  match_type: exact
+  existing_title: 羅馬書2_28-29 真割禮是內心的
+  existing_path: link_folder/互文/羅馬書2_28-29 真割禮是內心的.md
+- name: 亞伯拉罕的喜笑是信心還是疑惑
+  suggested_type: 解經爭議
+  evidence: 17節俯伏喜笑；喜樂信心、驚訝、疑惑三種判斷並陳
+  surfaces:
+  - phrase: 亞伯拉罕就俯伏在地喜笑
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 亞伯拉罕的喜笑是信心還是疑惑
+  existing_path: link_folder/解經爭議/亞伯拉罕的喜笑是信心還是疑惑.md
+- name: 割禮與洗禮的關係
+  suggested_type: 解經爭議
+  evidence: 取代說與對應說不一；創17本身只定肉身割禮為記號
+  match_type: exact
+  existing_title: 割禮與洗禮的關係
+  existing_path: link_folder/解經爭議/割禮與洗禮的關係.md
+- name: 從民中剪除的含義
+  suggested_type: 解經爭議
+  evidence: 14節；死刑、逐出群體或神親自剪除諸說
+  surfaces:
+  - phrase: 從民中剪除
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 從民中剪除的含義
+  existing_path: link_folder/解經爭議/從民中剪除的含義.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
