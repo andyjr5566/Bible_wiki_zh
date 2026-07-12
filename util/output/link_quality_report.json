@@ -1,15 +1,8 @@
 {
-  "total_warnings": 21,
+  "total_warnings": 20,
   "critical_count": 0,
-  "warning_count": 21,
+  "warning_count": 20,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第2章.md",
-      "target": "壇",
-      "message": "同一 alias「壇」指向多個 target: 壇, 銅壇（燔祭壇）"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

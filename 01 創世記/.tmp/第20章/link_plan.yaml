@@ -1,0 +1,129 @@
+book: 創世記
+chapter: 20
+A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-18節；遷基拉耳再稱妻為妹，被責備後為亞比米勒代求
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 撒拉
+  suggested_type: 人物
+  evidence: 2、14、16、18節；被取入宮又蒙保守歸還，公開昭雪
+  match_type: exact
+  existing_title: 撒拉
+  existing_path: link_folder/人物/撒拉.md
+- name: 亞比米勒
+  suggested_type: 人物
+  evidence: 2-18節；基拉耳王，夢中受警告，歸還撒拉並賠償
+  match_type: exact
+  existing_title: 亞比米勒
+  existing_path: link_folder/人物/亞比米勒.md
+- name: 基拉耳
+  suggested_type: 地點
+  evidence: 1-2節；尼革西部城邑或地區，非利士人之地
+  match_type: exact
+  existing_title: 基拉耳
+  existing_path: link_folder/地點/基拉耳.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 1節亞伯拉罕向南地遷去
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: 1節寄居在加低斯和書珥中間
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 書珥
+  suggested_type: 地點
+  evidence: 1節；近埃及東界的地區
+  match_type: exact
+  existing_title: 書珥
+  existing_path: link_folder/地點/書珥.md
+- name: 先知
+  suggested_type: 主題
+  evidence: 7節聖經首次使用；功能與代求直接相連
+  match_type: exact
+  existing_title: 先知
+  existing_path: link_folder/主題/先知.md
+- name: 心正手潔
+  suggested_type: 主題
+  evidence: 5節亞比米勒自辯動機純正行為清潔
+  match_type: exact
+  existing_title: 心正手潔
+  existing_path: link_folder/主題/心正手潔.md
+- name: 遮羞
+  suggested_type: 主題
+  evidence: 16節原文作眼；撒拉名譽的公開恢復
+  match_type: exact
+  existing_title: 遮羞
+  existing_path: link_folder/主題/遮羞.md
+- name: 我以為這地方的人總不懼怕神
+  suggested_type: 神學
+  evidence: 11節；亞伯拉罕的預設與亞比米勒臣僕甚懼怕成反差
+  match_type: exact
+  existing_title: 我以為這地方的人總不懼怕神
+  existing_path: link_folder/神學/我以為這地方的人總不懼怕神.md
+- name: 神在夢中顯現與引導
+  suggested_type: 神學
+  evidence: 3-7節；神以夢向非以色列君王說話
+  match_type: exact
+  existing_title: 神在夢中顯現與引導
+  existing_path: link_folder/神學/神在夢中顯現與引導.md
+- name: 神是生育的源頭
+  suggested_type: 神學
+  evidence: 17-18節；神使不能生育又恢復生育
+  match_type: exact
+  existing_title: 神是生育的源頭
+  existing_path: link_folder/神學/神是生育的源頭.md
+- name: 神攔阻人犯罪
+  suggested_type: 神學
+  evidence: 6節；未發生的罪歸因於神的保守
+  surfaces:
+  - phrase: 我也攔阻了你，免得你得罪我
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 神攔阻人犯罪
+  existing_path: link_folder/神學/神攔阻人犯罪.md
+- name: 古代近東同父異母婚姻
+  suggested_type: 背景
+  evidence: 12節；族長時代容許，利二十17後來禁止
+  match_type: exact
+  existing_title: 古代近東同父異母婚姻
+  existing_path: link_folder/背景/古代近東同父異母婚姻.md
+- name: 亞比米勒名字與王號
+  suggested_type: 原文
+  evidence: 2節；「王的父親」，如法老、凱撒的稱銜
+  match_type: exact
+  existing_title: 亞比米勒名字與王號
+  existing_path: link_folder/原文/亞比米勒名字與王號.md
+- name: 亞伯蘭稱撒萊為妹子的性質
+  suggested_type: 解經爭議
+  evidence: 2、13節；與創12章相同策略，離開父家時早已約定
+  match_type: exact
+  existing_title: 亞伯蘭稱撒萊為妹子的性質
+  existing_path: link_folder/解經爭議/亞伯蘭稱撒萊為妹子的性質.md
+- name: 亞比米勒為何取撒拉
+  suggested_type: 解經爭議
+  evidence: 2節；被吸引說與政治聯盟說皆非經文明言
+  match_type: exact
+  existing_title: 亞比米勒為何取撒拉
+  existing_path: link_folder/解經爭議/亞比米勒為何取撒拉.md
+- name: 一千銀子與遮羞的含義
+  suggested_type: 解經爭議
+  evidence: 16節難譯句；昭雪名譽與補償諸說
+  surfaces:
+  - phrase: 一千銀子，作為你在閤家人面前遮羞
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 一千銀子與遮羞的含義
+  existing_path: link_folder/解經爭議/一千銀子與遮羞的含義.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
