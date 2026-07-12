@@ -1,0 +1,130 @@
+book: 創世記
+chapter: 12
+A_use_directly:
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 1-3節七層應許：大國、賜福、名為大、叫人得福、賜福祝福者、咒詛咒詛者、萬族因你得福（加三8、16）
+  surfaces:
+  - phrase: 耶和華對亞伯蘭說
+    verses:
+    - 1
+  - phrase: 我必叫你成為大國
+    verses:
+    - 2
+  - phrase: 地上的萬族都要因你得福
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 信心的本質
+  suggested_type: 神學
+  evidence: 1、4節神先說話、亞伯蘭照吩咐去；來十一8因信出去不知往哪裡去
+  surfaces:
+  - phrase: 亞伯蘭就照著耶和華的吩咐去了
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 信心的本質
+  existing_path: link_folder/神學/信心的本質.md
+- name: 羅得
+  suggested_type: 人物
+  evidence: 4-5節與亞伯蘭同去；CT 指帶羅得同行顯出未完全離開本族
+  match_type: exact
+  existing_title: 羅得
+  existing_path: link_folder/人物/羅得.md
+- name: 哈蘭
+  suggested_type: 地點
+  evidence: 4-5節出哈蘭時年七十五歲
+  match_type: exact
+  existing_title: 哈蘭
+  existing_path: link_folder/地點/哈蘭.md
+- name: 亞伯蘭
+  suggested_type: 人物
+  evidence: 4-20節蒙召出哈蘭進迦南、築壇求告、下埃及失敗（沿用舊版僅連5節）
+  surfaces:
+  - phrase: 亞伯蘭
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 亞伯蘭
+  existing_path: link_folder/人物/亞伯蘭.md
+- name: 撒萊
+  suggested_type: 人物
+  evidence: 5、11-20節；六十五歲仍容貌俊美，被帶入法老宮，神因她降災保護
+  match_type: exact
+  existing_title: 撒萊
+  existing_path: link_folder/人物/撒萊.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 5節到了迦南地；7節應許賜給後裔；當時迦南人住在那地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 6節入迦南第一站，摩利橡樹之地；位於基利心與以巴路兩山之間的商道樞紐
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 帳棚與祭壇
+  suggested_type: 主題
+  evidence: 7-8節築壇支搭帳棚；KC 指帳棚表客旅、祭壇表敬拜，敬拜者是客旅、客旅是敬拜者
+  surfaces:
+  - phrase: 築了一座壇
+  - phrase: 帳棚
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 帳棚與祭壇
+  existing_path: link_folder/主題/帳棚與祭壇.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 8節帳棚在伯特利與艾之間；伯特利意「神的家」、艾意「廢墟」
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 漸漸的墮落
+  suggested_type: 主題
+  evidence: 9節漸漸遷往南地；CT 整理從築壇到南地、埃及、妹子之說的下滑次序
+  surfaces:
+  - phrase: 後來亞伯蘭又漸漸遷往南地去
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 漸漸的墮落
+  existing_path: link_folder/主題/漸漸的墮落.md
+- name: 亞伯蘭下埃及是否出於不信
+  suggested_type: 解經爭議
+  evidence: 10節；埃及是饑荒常見避難地、「暫居」顯示未棄迦南；多數註釋指他未求問神並靠自保方法
+  surfaces:
+  - phrase: 那地遭遇饑荒
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 亞伯蘭下埃及是否出於不信
+  existing_path: link_folder/解經爭議/亞伯蘭下埃及是否出於不信.md
+- name: 亞伯蘭稱撒萊為妹子的性質
+  suggested_type: 解經爭議
+  evidence: 13節半真半假（撒萊確為同父異母之妹，創二十12）；GT 背景註釋論妻子／姊妹主題的三重功用
+  surfaces:
+  - phrase: 求你說，你是我的妹子
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 亞伯蘭稱撒萊為妹子的性質
+  existing_path: link_folder/解經爭議/亞伯蘭稱撒萊為妹子的性質.md
+- name: 亞伯蘭下埃及與出埃及
+  suggested_type: 互文
+  evidence: 10-20節與出埃及平行：因饑荒下埃及、神降災法老家、攜財物出埃及
+  match_type: exact
+  existing_title: 亞伯蘭下埃及與出埃及
+  existing_path: link_folder/互文/亞伯蘭下埃及與出埃及.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
