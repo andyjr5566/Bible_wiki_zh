@@ -1,0 +1,203 @@
+book: 創世記
+chapter: 6
+A_use_directly:
+- name: 神的兒子們
+  suggested_type: 解經爭議
+  evidence: 2、4節；CT/KC 採墮落天使說（伯一6；猶6-7），GT 收錄倪柝聲辨正與塞特後裔說、君王說；BH 並存天使與塞特兩說
+  match_type: exact
+  existing_title: 神的兒子們
+  existing_path: link_folder/解經爭議/神的兒子們.md
+- name: 我的靈不永遠與人相爭
+  suggested_type: 神學
+  evidence: 3節；原文可作「不永遠與他相爭」或「不永遠住在他裡面」；涉及聖靈勸戒與生命氣息兩種理解
+  surfaces:
+  - phrase: 我的靈就不永遠住在他裡面
+  match_type: exact
+  existing_title: 我的靈不永遠與人相爭
+  existing_path: link_folder/神學/我的靈不永遠與人相爭.md
+- name: 一百二十年的兩種解釋
+  suggested_type: 神學
+  evidence: 3節；洪水前寬限期（丁良才、CT）或壽命界限（GT 背景註釋引埃瑪爾智慧文獻）；洪水後仍有人活過120歲
+  surfaces:
+  - phrase: 一百二十年
+  match_type: exact
+  existing_title: 一百二十年的兩種解釋
+  existing_path: link_folder/神學/一百二十年的兩種解釋.md
+- name: 偉人
+  suggested_type: 人物
+  evidence: 4節 Nephilim；原文「跌倒者」；巨人、英武戰士或混種諸說並存（民十三33再現）
+  match_type: exact
+  existing_title: 偉人
+  existing_path: link_folder/人物/偉人.md
+- name: 人的全面敗壞
+  suggested_type: 神學
+  evidence: 5節終日所思想的盡都是惡；GT 引加爾文完全墮落說的經文根基
+  surfaces:
+  - phrase: 罪惡很大
+  match_type: exact
+  existing_title: 人的全面敗壞
+  existing_path: link_folder/神學/人的全面敗壞.md
+- name: 神的後悔與憂傷
+  suggested_type: 神學
+  evidence: 6-7節；CT 原文字義「深長地呼吸、嘆息」；KC 詳論神的後悔非認錯而是治理中的回轉（撒上十五29；耶十八7-10）
+  surfaces:
+  - phrase: 後悔
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 神的後悔與憂傷
+  existing_path: link_folder/神學/神的後悔與憂傷.md
+- name: 挪亞
+  suggested_type: 人物
+  evidence: 8-22節；在普世敗壞中蒙恩、義人、完全人、與神同行、完全順服
+  match_type: exact
+  existing_title: 挪亞
+  existing_path: link_folder/人物/挪亞.md
+- name: 恩典的首次出現
+  suggested_type: 神學
+  evidence: 8節；「恩」（chen）首次出現於聖經；字根意彎腰俯就，指不配得的恩寵
+  surfaces:
+  - phrase: 蒙恩
+  match_type: exact
+  existing_title: 恩典的首次出現
+  existing_path: link_folder/神學/恩典的首次出現.md
+- name: 義人與完全人
+  suggested_type: 神學
+  evidence: 9節；義人＝因信稱義（來十一7），完全人＝純全專一（書廿四14「誠心實意」同字），非毫無罪性
+  surfaces:
+  - phrase: 義人
+  - phrase: 完全人
+  match_type: exact
+  existing_title: 義人與完全人
+  existing_path: link_folder/神學/義人與完全人.md
+- name: 閃
+  suggested_type: 人物
+  evidence: 10節挪亞三子
+  surfaces:
+  - phrase: 閃
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 閃
+  existing_path: link_folder/人物/閃.md
+- name: 含
+  suggested_type: 人物
+  evidence: 10節挪亞三子
+  surfaces:
+  - phrase: 含
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 含
+  existing_path: link_folder/人物/含.md
+- name: 雅弗
+  suggested_type: 人物
+  evidence: 10節挪亞三子
+  surfaces:
+  - phrase: 雅弗
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 雅弗
+  existing_path: link_folder/人物/雅弗.md
+- name: 敗壞與毀滅的文字呼應
+  suggested_type: 原文
+  evidence: 11-13節；希伯來文同字根：世界自我敗壞（shachath），神遂宣告毀滅（同字根）；丁道爾指世界事實上已自我毀滅
+  surfaces:
+  - phrase: 敗壞
+  - phrase: 毀滅
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 敗壞與毀滅的文字呼應
+  existing_path: link_folder/原文/敗壞與毀滅的文字呼應.md
+- name: 強暴
+  suggested_type: 主題
+  evidence: 11、13節 hamas 滿地；串珠指流血污染全地，是神降洪水的直接原因
+  match_type: exact
+  existing_title: 強暴
+  existing_path: link_folder/主題/強暴.md
+- name: 歌斐木
+  suggested_type: 背景
+  evidence: 14節方舟材料；樹種不可確定，或為絲柏、柏木、香柏木；CT 靈意解作基督堅固完美的人性
+  match_type: exact
+  existing_title: 歌斐木
+  existing_path: link_folder/背景/歌斐木.md
+- name: 方舟的豫表
+  suggested_type: 神學
+  evidence: 14-16節；CT 整理方舟豫表基督八方面（木、間、松香、尺寸、透光處、門、旁邊、三層）
+  surfaces:
+  - phrase: 方舟
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 方舟的豫表
+  existing_path: link_folder/神學/方舟的豫表.md
+- name: 方舟的尺寸與結構
+  suggested_type: 背景
+  evidence: 15-16節300×50×30肘；GT 背景註釋估算排水量約四萬三千噸並比較吉加墨斯史詩立方體方舟
+  surfaces:
+  - phrase: 方舟的造法
+  match_type: exact
+  existing_title: 方舟的尺寸與結構
+  existing_path: link_folder/背景/方舟的尺寸與結構.md
+- name: 洪水中的審判與拯救
+  suggested_type: 神學
+  evidence: 17-18節；丁道爾指神對罪不姑息，同時施展極度審判與極度拯救
+  surfaces:
+  - phrase: 洪水
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 洪水中的審判與拯救
+  existing_path: link_folder/神學/洪水中的審判與拯救.md
+- name: 挪亞之約
+  suggested_type: 神學
+  evidence: 18節聖經首次明說「約」；CT 指立約表明救恩的信實穩固，全家一同蒙恩
+  surfaces:
+  - phrase: 立約
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 挪亞之約
+  existing_path: link_folder/神學/挪亞之約.md
+- name: 每樣兩個與潔淨畜類七對
+  suggested_type: 解經爭議
+  evidence: 19-20節一般保存原則；第7章再為潔淨畜類加七公七母的指示，為第8章獻祭預備
+  surfaces:
+  - phrase: 每樣兩個，一公一母
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 每樣兩個與潔淨畜類七對
+  existing_path: link_folder/解經爭議/每樣兩個與潔淨畜類七對.md
+- name: 挪亞的完全順服
+  suggested_type: 神學
+  evidence: 22節凡神所吩咐的都照樣行了；KC 對照摩西照樣式造會幕（來八5）；信心以順服為明證
+  surfaces:
+  - phrase: 照樣行了
+  match_type: exact
+  existing_title: 挪亞的完全順服
+  existing_path: link_folder/神學/挪亞的完全順服.md
+- name: 挪亞是傳義道者
+  suggested_type: 互文
+  evidence: 彼後二5稱挪亞為傳義道者；造舟期間向當世作見證
+  match_type: exact
+  existing_title: 挪亞是傳義道者
+  existing_path: link_folder/互文/挪亞是傳義道者.md
+- name: 方舟容納動物的可行性
+  suggested_type: 解經爭議
+  evidence: 14-21節；GT 收錄種類定義、容量估算（約522個貨車車廂）、幼體或卵等護教模型，非經文明載
+  match_type: exact
+  existing_title: 方舟容納動物的可行性
+  existing_path: link_folder/解經爭議/方舟容納動物的可行性.md
+- name: 洪水的考古證據
+  suggested_type: 解經爭議
+  evidence: GT 背景註釋：吾珥、基什等地洪水層年代不一，亞拉臘木片測年不early，均不足作決定性證明
+  match_type: exact
+  existing_title: 洪水的考古證據
+  existing_path: link_folder/解經爭議/洪水的考古證據.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
