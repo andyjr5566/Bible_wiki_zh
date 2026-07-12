@@ -1,0 +1,143 @@
+book: 創世記
+chapter: 2
+candidates:
+  - name: 安息
+    type: 神學
+    evidence: 2-3節「歇了他一切的工，安息了」；CT 指出神安息因工作完成而非疲倦，神管理宇宙之工並未停止（約五17）
+  - name: 安息日
+    type: 神學
+    evidence: 3節神賜福第七日定為聖日；CT 整理安息日豫表福音、GT 詳論安息日之設立與主日之別、KC/BH 連到來4安息（沿用舊版以「定為聖日」連結）
+    surfaces:
+      - {phrase: 定為聖日, verses: [3]}
+  - name: 創造（從無到有）
+    type: 神學
+    evidence: 3-4節「創造的工」「創造天地的來歷」；來源指出 bara 是神獨有的創造行動
+  - name: 耶和華神的名字
+    type: 神學
+    evidence: 4節起反覆出現「耶和華神」；GT/BH 指出 Yahweh Elohim 凸顯神與人立約來往的關係，CT 表明祂是降卑滿有恩慈的神
+    surfaces: [耶和華神]
+  - name: 創世記2章與1章關係
+    type: 解經爭議
+    evidence: 4節起重述創造；GT/BH 指出第2章非重複記載而是詳述人的受造，托雷多（toledot）標示新段落
+  - name: 創世記2章19節創造次序問題
+    type: 解經爭議
+    evidence: 19節動物受造次序看似與第1章相反；GT 命題9整理「次序 vs 內容」的調和
+  - name: 亞當
+    type: 人物
+    evidence: 7節「名叫亞當」；原文字義紅土，CT/GT 論其受造與命名活物的智慧
+  - name: 夏娃
+    type: 人物
+    evidence: 22節神用肋骨造成女人領到人前（沿用舊版僅連22節「女人」）
+    surfaces:
+      - {phrase: 女人, verses: [22]}
+  - name: 人
+    type: 人物
+    evidence: 7、15節人由塵土受造、被安置於伊甸園（沿用舊版僅連7、15節）
+    surfaces:
+      - {phrase: 人, verses: [7, 15]}
+  - name: 有靈的活人
+    type: 神學
+    evidence: 7節；CT/GT 論靈魂體三元、nephesh 字義，人以靈接觸神
+  - name: 人的尊嚴與神的形像
+    type: 神學
+    evidence: 7、20-23節；KC/BH 指出人受神吹氣而高於動物、女人同按神形像被造
+  - name: 地上塵土與生命氣息
+    type: 原文
+    evidence: 7節「造」字原文為陶匠塑造、neshamah 生命氣息；GT/BH 詳論塵土與 adamah 同音關聯
+    surfaces: [地上的塵土, 生氣]
+  - name: 配偶幫助者
+    type: 原文
+    evidence: 18、20節 ezer kenegdo；KC/BH 指出「幫助者」非低等（神也自稱幫助者），是相對相配的同伴
+    surfaces: [配偶幫助他]
+  - name: 女人由肋骨造成
+    type: 神學
+    evidence: 21-22節；CT/GT/KC 整理肋骨（非頭骨腳骨）表同等、受保護、蒙親愛；蘇美語 ti 兼指肋骨與生命
+    surfaces: [肋骨]
+  - name: 配偶與婚姻
+    type: 神學
+    evidence: 24節離開父母與妻子連合；來源整理一夫一妻、婚姻為神設立（沿用舊版以「離開父母」連結）
+    surfaces:
+      - {phrase: 離開父母, verses: [24]}
+  - name: 婚姻的盟約與次序
+    type: 神學
+    evidence: 18-25節；KC 指出先造亞當後造夏娃立定次序（林前十一8-9），啟導本整理夫妻同等互信諸原則
+  - name: 基督之新婦（豫表）
+    type: 主題
+    evidence: 18-24節；CT 靈訓要義以亞當沉睡、肋骨造女、領到人前豫表基督受死、教會從基督而出、教會歸基督
+  - name: 伊甸
+    type: 地點
+    evidence: 8、10、15節；原文意平原／歡愉，GT 詳論位置諸說（米所波大米、亞美尼亞高原等）
+  - name: 伊甸園四河
+    type: 背景
+    evidence: 10-14節河分四道；CT 整理四河原文字義與靈意，GT 論四河地理考證（沿用舊版以「四道」連結）
+    surfaces:
+      - {phrase: 四道, verses: [10]}
+  - name: 生命樹
+    type: 神學
+    evidence: 9節園子當中；CT 象徵神為生命源頭，KC 指人無生命在己須倚靠生命樹（約壹五12）
+  - name: 分別善惡的樹
+    type: 神學
+    evidence: 9、17節；CT 象徵人不要神不依靠神，KC 視為順服信心的試驗場
+    surfaces: [分別善惡樹]
+  - name: 神的命令與自由意志
+    type: 主題
+    evidence: 16-17節「隨意吃」與唯一禁令；CT 表明神給人自由自主之權，GT 論神試驗人是否甘心順服
+  - name: 死的三層
+    type: 神學
+    evidence: 17節「你吃的日子必定死」；CT/GT 整理靈性之死、肉身之死、第二次的死三層（沿用舊版僅連17節「死」）
+    surfaces:
+      - {phrase: 死, verses: [17]}
+  - name: 骨中的骨，肉中的肉
+    type: 原文
+    evidence: 23節亞當之歌；GT 指出此語後成成語（創29:14等），希伯來文三重「這是」表極大喜悅；CT 以骨表復活生命
+  - name: 修理與看守
+    type: 原文
+    evidence: 15節；CT 論「修理」應付破壞、「看守」應付攻擊，原文含耕種服事與守護之意
+    surfaces: [修理，看守]
+  - name: 神命名與主權
+    type: 文化
+    evidence: 19-20節人給活物起名；GT 指出起名表示擁有主權，神授人管理之權（沿用舊版僅連20節「起了名」）
+    surfaces:
+      - {phrase: 起了名, verses: [20]}
+  - name: 赤身露體不羞恥
+    type: 主題
+    evidence: 25節；來源整理墮落前的透明信任無罪咎，與3章7節羞恥遮蓋對照
+    surfaces: [赤身露體，並不羞恥]
+  - name: 比遜
+    type: 地點
+    evidence: 11節；原文意白色湧流／暢流充溢；GT 記衛星攝影考證的古河床說
+  - name: 哈腓拉
+    type: 地點
+    evidence: 11-12節有金子珍珠紅瑪瑙之地；GT 考證或在阿拉伯西部
+  - name: 基訓
+    type: 地點
+    evidence: 13節；原文意飛濺／眾水洪發；河床已湮沒
+  - name: 古實
+    type: 地點
+    evidence: 13節；CT 指非洲以外的米所波大米一省，GT 論加瑟區考證
+  - name: 底格里斯
+    type: 地點
+    evidence: 14節「希底結」即今底格里斯河；原文意急流（沿用舊版以「希底結」連結）
+    surfaces: [希底結]
+  - name: 亞述
+    type: 地點
+    evidence: 14節希底結流在亞述東邊
+  - name: 伯拉大河
+    type: 地點
+    evidence: 14節「伯拉河」即幼發拉底河；原文意多結果子、甜（沿用舊版以「伯拉河」連結）
+    surfaces: [伯拉河]
+  - name: 約翰福音5章父與子仍然作工
+    type: 互文
+    evidence: 2-3節神歇了創造之工；CT/GT/KC 皆引約五17指出神管理救贖之工未停
+  - name: 希伯來書4章神的安息
+    type: 互文
+    evidence: 2-3節第七日安息；KC/BH/GT 連到來4安息日的安息在基督裡成全
+  - name: 約翰福音19章肋旁血和水
+    type: 互文
+    evidence: 21-22節取肋骨造女人；CT 以肋旁被扎流血水豫表教會從基督受死復活而出
+  - name: 以弗所書5章基督與教會的婚姻奧祕
+    type: 互文
+    evidence: 22-24節婚姻設立；CT/KC/BH 以弗5:25-32 婚姻豫表基督與教會
+  - name: 馬太福音19章婚姻不可分開
+    type: 互文
+    evidence: 24節二人成為一體；來源引太19:4-6 耶穌回到起初設立說明婚姻不可分開
