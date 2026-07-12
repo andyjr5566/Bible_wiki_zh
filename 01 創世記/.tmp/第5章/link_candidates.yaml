@@ -1,0 +1,94 @@
+book: 創世記
+chapter: 5
+candidates:
+  - name: 亞當
+    type: 人物
+    evidence: 1-5節家譜起點；活930歲就死了（沿用舊版僅連1、3節）
+    surfaces:
+      - {phrase: 亞當, verses: [1, 3]}
+  - name: 形像與樣式
+    type: 神學
+    evidence: 1、3節對照：神照自己樣式造人，亞當卻生了「形像樣式和自己相似」的兒子——傳遞的是墮落後的罪人形像（羅五12）
+    surfaces:
+      - {phrase: 樣式, verses: [1]}
+      - {phrase: 形像, verses: [3]}
+  - name: 塞特
+    type: 人物
+    evidence: 3、6節；家譜經塞特而非該隱，豫表新造的族類（沿用舊版僅連3、6節）
+    surfaces:
+      - {phrase: 塞特, verses: [3, 6]}
+  - name: 以挪士
+    type: 人物
+    evidence: 6、9節；原文意「軟弱必死的人」
+    surfaces:
+      - {phrase: 以挪士, verses: [6, 9]}
+  - name: 該南
+    type: 人物
+    evidence: 9、12節；原文意「得業者」
+    surfaces:
+      - {phrase: 該南, verses: [9, 12]}
+  - name: 瑪勒列
+    type: 人物
+    evidence: 12、15節；原文意「神的稱讚」
+    surfaces:
+      - {phrase: 瑪勒列, verses: [12, 15]}
+  - name: 雅列
+    type: 人物
+    evidence: 15、18節；原文意「卑下、向下流出」
+    surfaces:
+      - {phrase: 雅列, verses: [15, 18]}
+  - name: 以諾
+    type: 人物
+    evidence: 18-24節本章核心人物；與神同行三百年被神取去；猶14稱亞當七世孫、最早的先知
+    surfaces:
+      - {phrase: 以諾, verses: [18, 21, 24]}
+  - name: 與神同行
+    type: 神學
+    evidence: 22、24節；CT 釋為亦步亦趨、以基督的心為心；KC 引摩三3二人同心才能同行
+  - name: 瑪土撒拉
+    type: 人物
+    evidence: 21、25、27節；世上最長壽969歲；原文意「他死時必有大事發生」，死年正是洪水之年
+    surfaces:
+      - {phrase: 瑪土撒拉, verses: [21, 25]}
+  - name: 拉麥（塞特族）
+    type: 人物
+    evidence: 25、28節；與該隱族拉麥同名對比：一留自誇之言、一留渴望之言；共活777歲
+    surfaces:
+      - {phrase: 拉麥, verses: [25, 28]}
+  - name: 挪亞
+    type: 人物
+    evidence: 29、32節；原文意「安息」，與「安慰」諧音；500歲生閃含雅弗
+    surfaces:
+      - {phrase: 挪亞, verses: [29, 32]}
+  - name: 安慰與安息
+    type: 主題
+    evidence: 29節拉麥命名之言；原文「挪亞（安息）」與「安慰」為字音遊戲，反映對咒詛地勞苦中的盼望
+    surfaces:
+      - {phrase: 安慰, verses: [29]}
+  - name: 閃
+    type: 人物
+    evidence: 32節；原文意「名聲」；名列前因以色列人是閃的後裔，非長子（創十一10推算）
+    surfaces:
+      - {phrase: 閃, verses: [32]}
+  - name: 含
+    type: 人物
+    evidence: 32節；原文意「熱、溫暖」
+    surfaces:
+      - {phrase: 含, verses: [32]}
+  - name: 雅弗
+    type: 人物
+    evidence: 32節；原文意「擴張、增大」
+    surfaces:
+      - {phrase: 雅弗, verses: [32]}
+  - name: 死亡的普遍性
+    type: 神學
+    evidence: 5、8、11、14、17、20、27、31節「就死了」八次如喪鐘；羅五12死臨到眾人；唯一例外是以諾
+  - name: 洪水前先祖名字含義
+    type: 原文
+    evidence: 全章十代名字；CT 靈訓要義以名字串講屬靈歷程（屬土→代替→軟弱→得業→稱讚→謙卑→學習→審判將臨→勞苦→安息）
+  - name: 希伯來書11章以諾因信被接去
+    type: 互文
+    evidence: 24節神將他取去；來十一5以諾因著信被接去，不至於見死
+  - name: 猶大書以諾預言審判
+    type: 互文
+    evidence: 21-24節；猶14-15亞當七世孫以諾曾預言主帶著千萬聖者降臨施行審判
