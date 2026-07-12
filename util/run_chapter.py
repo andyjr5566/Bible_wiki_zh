@@ -163,7 +163,7 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
         f"各填一份 entry_content payload。\n\n"
         f"【要寫的條目】（括號內是分類，不是名稱的一部分）\n{listing}\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
-        f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
+        f"【本章全部來源）】\n{sources_text}\n\n"
         f"【規則】\n"
         f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
         f"- type 欄位必須正好是該條目的分類（如 原文、神學），不是詞性——不可寫 word、noun。\n"
@@ -743,7 +743,7 @@ def chapter_content_step(ctx, plan):
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
-        f"【本章全部來源（CT/GT/KC/BH 全文）】\n{sources_text}\n\n"
+        f"【本章全部來源】\n{sources_text}\n\n"
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"

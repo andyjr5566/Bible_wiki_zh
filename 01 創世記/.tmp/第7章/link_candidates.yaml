@@ -1,0 +1,93 @@
+book: 創世記
+chapter: 7
+candidates:
+  - name: 挪亞
+    type: 人物
+    evidence: 1-24節；奉命全家進方舟，遵行所吩咐的一切（沿用舊版僅連1節）
+    surfaces:
+      - {phrase: 挪亞, verses: [1]}
+  - name: 方舟的豫表
+    type: 神學
+    evidence: 1、7節進入方舟躲避洪水；CT 以方舟豫表基督、進入方舟即在基督裡（沿用舊版僅連1、7節）
+    surfaces:
+      - {phrase: 方舟, verses: [1, 7]}
+  - name: 義人與完全人
+    type: 神學
+    evidence: 1節「我見你在我面前是義人」；神親自宣告，與敗壞世代分別
+    surfaces:
+      - {phrase: 義人, verses: [1]}
+  - name: 潔淨與不潔淨的早期區分
+    type: 主題
+    evidence: 2、8節；摩西律法前已有潔淨區分；GT 背景註釋指此時只關乎獻祭不關乎飲食（創九3尚未按此限制食肉）
+    surfaces: [潔淨, 不潔淨]
+  - name: 七天的等候與最後寬限
+    type: 神學
+    evidence: 4、10節；CT/GT 視為審判前最後寬限與挪亞信心的試驗；KC 指神彷彿把方舟的門再多敞開七天
+    surfaces: [再過七天]
+  - name: 四十的屬靈意義
+    type: 原文
+    evidence: 4、12節四十晝夜；CT/BH 指四十在聖經表徵試探試煉（太四2；王上十九8）（沿用舊版僅連4、12節）
+    surfaces:
+      - {phrase: 四十, verses: [4, 12]}
+  - name: 挪亞的完全順服
+    type: 神學
+    evidence: 5節；與六22呼應；CT 以雅二20、26說明信心必須落實為順服
+    surfaces: [挪亞就遵著耶和華所吩咐的行了]
+  - name: 洪水全程時間軸
+    type: 背景
+    evidence: 11節精確日期起算；GT/啟導本按三十日月份重建371日進程；丁道爾指巴比倫洪水故事無此日期記法
+    surfaces: [二月十七日那一天]
+  - name: 大淵的泉源與天上的窗戶
+    type: 神學
+    evidence: 11節上下水源同開；GT 背景註釋論古代宇宙圖像；CT 靈意以大淵象徵陰府攻擊、天雨象徵神忿怒
+    surfaces: [大淵的泉源, 天上的窗戶]
+  - name: 閃
+    type: 人物
+    evidence: 13節與全家同日進方舟
+    surfaces:
+      - {phrase: 閃, verses: [13]}
+  - name: 含
+    type: 人物
+    evidence: 13節與全家同日進方舟
+    surfaces:
+      - {phrase: 含, verses: [13]}
+  - name: 雅弗
+    type: 人物
+    evidence: 13節與全家同日進方舟
+    surfaces:
+      - {phrase: 雅弗, verses: [13]}
+  - name: 各從其類
+    type: 原文
+    evidence: 14節四次重複；洪水中仍按創造秩序保存不同類別的生命（與創一25動物目錄相同）
+  - name: 耶和華把他關在方舟裡
+    type: 神學
+    evidence: 16節；CT 指含看顧與機會結束雙義並論神／耶和華稱謂交替；丁道爾稱此語流露神如父親的輕撫
+    surfaces: [耶和華就把他關在方舟裡頭]
+  - name: 洪水中的審判與拯救
+    type: 神學
+    evidence: 23節同一場水除滅方舟外的生命卻保存方舟內的；KC 以方舟承受審判喻基督在十架上代受
+    surfaces:
+      - {phrase: 只留下挪亞和那些與他同在方舟裡的, verses: [23]}
+  - name: 四十天降雨與一百五十天水勢
+    type: 解經爭議
+    evidence: 24節；四十天是降雨期、一百五十天是水勢浩大期（含前四十天）；賈斯樂郝威命題23專論
+    surfaces:
+      - {phrase: 一百五十天, verses: [24]}
+  - name: 挪亞作為審判中蒙保守的預表
+    type: 神學
+    evidence: 1-24節；KC 對照以諾災前被取、挪亞災中蒙保守，預表大災難中蒙保守的餘民
+  - name: 挪亞是傳義道者
+    type: 互文
+    evidence: 彼後二5；KC 指挪亞邊造舟邊警告世人，經文未載逐年時程
+  - name: 每樣兩個與潔淨畜類七對
+    type: 解經爭議
+    evidence: 2-3、8-9節；「七七」可解七對或三對加一；潔淨類多帶為獻祭與繁衍（創八20）
+  - name: 洪水範圍的爭論
+    type: 解經爭議
+    evidence: 19-20節「天下的高山」；KC/BH/精讀本主張普世性，CT 明言範圍「我們不知道」，丁道爾指經文關心審判而非地理
+  - name: 洪水的考古證據
+    type: 解經爭議
+    evidence: GT 收艾基斯含骨化石裂縫論證與270種洪水傳說；與第6章背景註釋的保留態度並存
+  - name: 洪水與洗禮的豫表
+    type: 互文
+    evidence: 彼前三20-21八口藉水得救連於洗禮與基督復活；KC 詳論在基督裡經過審判之水
