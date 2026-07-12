@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "link_folder/神學/神的同在.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "神的同在"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "主題發展",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "link_folder/神學/神的同在.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "index 的反向連結"
+              "title": "神的同在 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "link_folder/神學/神的同在.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "index 的對外連結"
+              "title": "神的同在 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "link_folder/神學/神的同在.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大綱"
+              "title": "神的同在 的大綱"
             }
           }
         ]
@@ -196,42 +196,42 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "raw_data/ccbiblestudy_CT_leviticus_6.txt",
-    "raw_data/biblehub_study_leviticus_10.txt",
-    "raw_data/biblehub_study_leviticus_9.txt",
-    "raw_data/biblehub_study_leviticus_8.txt",
-    "raw_data/biblehub_study_leviticus_7.txt",
-    "raw_data/biblehub_study_leviticus_6.txt",
-    "02 出埃及記/全書目錄及綱要.md",
-    "02 出埃及記/第13章.md",
-    "02 出埃及記/第12章.md",
-    "01 創世記/第13章.md",
-    "01 創世記/第14章.md",
-    "01 創世記/第11章.md",
-    "01 創世記/第9章.md",
+    "03 利未記/第6章.md",
+    "01 創世記/第4章.md",
+    "link_folder/主題/腰帶（繡花腰帶）.md",
+    "01 創世記/第6章.md",
     "03 利未記/第3章.md",
-    "link_folder/解經爭議/巴別塔是否為美索不達米亞神塔.md",
-    "link_folder/主題/脂油.md",
-    "link_folder/事件/燒在壇上.md",
-    "03 利未記/第4章.md",
-    "03 利未記/第5章.md",
-    "01 創世記/第8章.md",
-    "01 創世記/第7章.md",
-    "link_folder/文化/雛鴿.md",
-    "link_folder/文化/聖所的舍客勒.md",
-    "link_folder/事件/償還加五分之一.md",
-    "link_folder/事件/承認罪.md",
-    "link_folder/事件/流血在壇腳.md",
-    "link_folder/事件/彈血.md",
-    "link_folder/主題/細麵.md",
-    "link_folder/文化/斑鳩.md",
-    "link_folder/文化/羊羔.md",
-    "link_folder/原文/贖愆祭（asham）.md",
-    "03 利未記",
-    "raw_data/ccbiblestudy_CT_leviticus_5.txt",
-    "raw_data/ccbiblestudy_CT_leviticus_3.txt",
-    "raw_data/ccbiblestudy_GT_leviticus_5.txt",
-    "raw_data/ccbiblestudy_GT_leviticus_4.txt",
+    "write_yaml.py",
+    "01 創世記/第19章.md",
+    "01 創世記/第18章.md",
+    "01 創世記/第17章.md",
+    "01 創世記/第16章.md",
+    "link_folder/事件/耶和華曉諭摩西（利6：1）.md",
+    "index.md",
+    "link_folder/神學/不帶酵（無酵）.md",
+    "link_folder/文化/細麻布衣服（祭司服）.md",
+    "link_folder/原文/馨香（reach nichoach）.md",
+    "link_folder/原文/火祭（isheh）.md",
+    "link_folder/神學/血入會幕的贖罪祭（肉不可吃）.md",
+    "link_folder/神學/銅器擦磨涮淨.md",
+    "link_folder/神學/瓦器打碎.md",
+    "link_folder/神學/彈血洗衣（聖處洗淨）.md",
+    "link_folder/地點/宰燔祭牲的地方.md",
+    "link_folder/神學/祭司素祭全燒.md",
+    "link_folder/文化/鐵鏊（煎盤）.md",
+    "link_folder/文化/伊法十分之一.md",
+    "link_folder/神學/常獻的素祭（祭司每日）.md",
+    "link_folder/神學/馨香素祭的紀念.md",
+    "link_folder/神學/賠還（歸還加五分之一）.md",
+    "memories",
+    "raw_data/kingcomments_leviticus_10.txt",
+    "raw_data/kingcomments_leviticus_9.txt",
+    "raw_data/kingcomments_leviticus_8.txt",
+    "raw_data/kingcomments_leviticus_7.txt",
+    "raw_data/kingcomments_leviticus_6.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_10.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_9.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_8.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

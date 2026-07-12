@@ -21,6 +21,14 @@ source_scope: collected_only
 - 與本章關聯：燔祭與平安祭並獻，構成立約獻祭的雙重意義——燔祭表達對神的完全獻上，平安祭表達與神和好後的交通。
 <!-- accumulation:出埃及記:24:end -->
 
+### 利未記
+
+<!-- accumulation:利未記:6:start -->
+#### [[03 利未記/第6章|第6章]]
+- 本章重點：本章8-13節從祭司角度補充燔祭條例：燔祭放在壇柴上從晚上燒到天亮，壇火要常常燒著不可熄滅（三次強調）；祭司穿細麻衣收灰倒在壇旁，換衣後將灰拿到營外潔淨之處；每日早晨添柴、擺燔祭、燒平安祭脂油。BH: perpetual fire symbolizes God's continuous presence and ongoing need for atonement. CT: 火是神聖潔的表號，神與人交通的門路常常開著。KC: God wants His people to be constantly surrounded by the fragrance of the burnt offering, aware they are pleasing to God in the Beloved (Eph 1:6).
+- 與本章關聯：本章從祭司管理壇火角度補充第一章（獻祭者角度），強調壇火不可熄滅——預表基督獻祭的馨香永遠在神面前。燔祭灰拿到營外預表基督在營外受苦（來13:11-13）。
+<!-- accumulation:利未記:6:end -->
+
 ## 主題發展
 
 燔祭在聖經中是最基本的祭：創8:20挪亞出方舟獻燔祭、創22:2亞伯拉罕獻以撒為燔祭、利1章燔祭條例、來10:5-10基督來到世上說「獻祭和祭物你不願意，但你曾給我預備了身體」，基督的自我獻上成就了燔祭的終極意義。

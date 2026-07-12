@@ -21,6 +21,14 @@ source_scope: collected_only
 - 與本章關聯：燔祭（全歸神）與平安祭（神人同享）雙重獻祭，完整表達立約關係——完全獻上自己（燔祭），並進入與神的交通（平安祭）。
 <!-- accumulation:出埃及記:24:end -->
 
+### 利未記
+
+<!-- accumulation:利未記:6:start -->
+#### [[03 利未記/第6章|第6章]]
+- 本章重點：v12 祭司每日早晨在壇上燒柴，把燔祭擺上，在其上燒平安祭牲的脂油。BH: peace offering symbolized fellowship and reconciliation with God. CT: 脂油表徵將上好的因著感恩獻給神。KC: the fat portions of the peace offerings are offered up in smoke on the altar.
+- 與本章關聯：本章平安祭脂油與燔祭同燒在常燃的壇火上，表徵感恩與交通建立在基督完全奉獻（燔祭）的基礎上。
+<!-- accumulation:利未記:6:end -->
+
 ## 主題發展
 
 平安祭預表基督藉十字架成就「和平」（西1:20, 弗2:14-17），使信徒得與神和好並享受交通。聖餐是新約的平安祭筵席——主耶穌說「這杯是用你們的血所立的新約」（路22:20），信徒領受餅杯，紀念基督、宣告主的死、享受與神與聖徒的交通（林前10:16-17, 11:23-26）。
