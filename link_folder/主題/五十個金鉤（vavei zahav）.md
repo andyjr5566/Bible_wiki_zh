@@ -24,6 +24,11 @@ source_scope: collected_only
 - 與本章關聯：金鉤將分體的幔子合一，預表基督以神性榮耀將教會連結為一，也呼應聖所內一切以金包裹的聖潔原則。
 <!-- accumulation:出埃及記:26:end -->
 
+<!-- accumulation:出埃及記:36:start -->
+#### 第36章
+- 本章重點：出36:13 又做五十個金鉤，使幔子相連，這才成了一個帳幕。CT靈意：金表神性；五十個金鉤表徵神性的能力促成完美的聯結。KC：the colored curtains are called 'the tabernacle'——it is as if this is the actual dwelling place of God。
+- 與本章關聯：本章首次記載金鉤的實際製作與使用；金鉤將兩組各五幅的內層幕幔連結成一整個帳幕，五十（5×10）表徵負責任顯出完美的聯結。
+<!-- accumulation:出埃及記:36:end -->
 ## 主題發展
 
 金鉤數目五十，與鈕扣數目對應，確保幔子連接穩固完整。金材質呼應聖所內部一切器具包金的原則，象徵神聖、榮耀、不朽壞的連結。

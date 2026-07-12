@@ -1,0 +1,450 @@
+book: 出埃及記
+chapter: 36
+A_use_directly: []
+B_needs_update:
+- name: 比撒列
+  suggested_type: 人物
+  evidence: 出36:1-2 比撒列和亞何利亞伯並一切心裡有智慧的蒙耶和華賜智慧聰明，都要照耶和華所吩咐的做工；摩西把他們一同召來。CT：比撒列是負總責的工頭（出35:30-33），名字意為「在神的庇蔭之下」。BH：Bezalel
+    from Judah and Oholiab from Dan represent the unity of Israel's tribes。已有條目「比撒列（Bezalel）」
+  surfaces:
+  - phrase: 比撒列
+    verses:
+    - 1
+    - 2
+    - 8
+  match_type: alias
+  existing_title: 比撒列（Bezalel）
+  existing_path: link_folder/人物/比撒列（Bezalel）.md
+- name: 亞何利亞伯
+  suggested_type: 人物
+  evidence: 出36:1-2 亞何利亞伯與比撒列同被召來帶領工匠開工。CT：亞何利亞伯是比撒列的副手，協助管理建造會幕的事工（出35:34-35），名字意為「父親的帳幕」。已有條目「亞何利亞伯（Oholiab）」
+  surfaces:
+  - phrase: 亞何利亞伯
+    verses:
+    - 1
+    - 2
+  match_type: alias
+  existing_title: 亞何利亞伯（Oholiab）
+  existing_path: link_folder/人物/亞何利亞伯（Oholiab）.md
+- name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  suggested_type: 神學
+  evidence: '出36:1-2 凡耶和華賜他心裡有智慧、而且受感前來做這工的，摩西把他們和比撒列並亞何利亞伯一同召來。CT：神的工人必須是神賜他心裡有智慧，單靠自己的智慧聰明是遠遠不及神的要求的（亞4:6）。KC：two
+    things are important in every work for the Lord: adequacy and willingness；competence
+    is not from themselves but from God（2Cor 3:5）。BH：the skills and abilities are
+    portrayed as gifts from God（James 1:17）。已有條目「蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）」'
+  surfaces:
+  - phrase: 蒙耶和華賜智慧聰明
+    verses:
+    - 1
+  - phrase: 耶和華賜他心裡有智慧
+    verses:
+    - 2
+  - phrase: 受感前來做這工的
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+- name: 甘心樂意的奉獻
+  suggested_type: 神學
+  evidence: 出36:3-7 百姓每早晨還把甘心獻的禮物拿來，以致材料富富有餘，摩西不得不傳命攔住百姓不再拿禮物來。CT：百姓每早晨表明是繼續的奉獻，不是一陣熱心過去了；教會缺乏之際理當鼓勵奉獻，但富富有餘之時就應攔住。GT/丁道爾：神子民領受了救恩和赦罪之愛，這是典型的回應；捨不得財寶而拖延未獻的人發現神已經用不著他們了，一定又失望又沮喪。KC：the
+    people are so willing to give that too much is brought；the secret behind such
+    generosity is 'they first gave themselves to the Lord'（2Cor 8:5）。BH：freewill offerings
+    were voluntary, indicating a heartfelt response to God's grace（2Cor 9:7）。已有條目「甘心樂意的奉獻」
+  surfaces:
+  - phrase: 甘心獻的禮物
+    verses:
+    - 3
+  - phrase: 富富有餘
+    verses:
+    - 5
+  - phrase: 攔住百姓不再拿禮物來
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 甘心樂意的奉獻
+  existing_path: link_folder/神學/甘心樂意的奉獻.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 出36:8-38 全章記載帳幕的實際建造：十幅幔子、罩棚、蓋、頂蓋、豎板、銀座、閂、內幔、門簾。KC：in the description
+    of the tabernacle that the LORD gives Moses in Exodus 25, the ark comes first,
+    for it is most important to God；when constructing the tabernacle the building
+    comes first——the first spiritual lesson is what the church is。BH：the sanctuary
+    was the dwelling place of God among His people, a precursor to the Temple, symbolizing
+    God's desire to dwell with humanity（John 1:14）。已有條目「會幕（帳幕整體）」
+  surfaces:
+  - phrase: 帳幕
+    verses:
+    - 8
+    - 13
+    - 14
+    - 20
+    - 22
+    - 23
+    - 25
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 37
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 十幅幔子（內層幕幔）
+  suggested_type: 主題
+  evidence: 出36:8-13 比撒列用撚的細麻和藍色、紫色、朱紅色線製造十幅幔子，用巧匠的手工繡上基路伯；每幅長二十八肘寬四肘；五幅相連、另五幅相連；做五十個藍色鈕扣和五十個金鉤使幔子相連成一個帳幕。CT靈意：十表徵人的完全；幔子表徵耶穌人性的美麗；細麻表徵潔白和聖潔（啟19:8）；藍色線表徵屬天；紫色線表徵君尊；朱紅色線表徵流血犧牲；基路伯表徵彰顯神的榮耀。KC：the
+    colored curtains represent in a special way the multiple facets of the glory of
+    the Lord Jesus（Col 1:19; 2:9）。已有條目「十幅幔子（內層幕幔）」
+  surfaces:
+  - phrase: 十幅幔子
+    verses:
+    - 8
+  - phrase: 幔子
+    verses:
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+  match_type: exact
+  existing_title: 十幅幔子（內層幕幔）
+  existing_path: link_folder/主題/十幅幔子（內層幕幔）.md
+- name: 十一幅山羊毛幔子（罩棚）
+  suggested_type: 主題
+  evidence: 出36:14-18 用山羊毛織十一幅幔子作為帳幕以上的罩棚；每幅長三十肘寬四肘；五幅連成一幅、六幅連成一幅；做五十個鈕扣和五十個銅鉤使罩棚連成一個。KC：the
+    curtain of goats' hair speaks of the separation from the world；the truth of separation
+    is seen only by those who live in the presence of God。已有條目「十一幅山羊毛幔子（罩棚）」
+  surfaces:
+  - phrase: 山羊毛織十一幅幔子
+    verses:
+    - 14
+  - phrase: 罩棚
+    verses:
+    - 14
+    - 18
+    - 19
+  match_type: exact
+  existing_title: 十一幅山羊毛幔子（罩棚）
+  existing_path: link_folder/主題/十一幅山羊毛幔子（罩棚）.md
+- name: 五十個金鉤（vavei zahav）
+  suggested_type: 主題
+  evidence: 出36:13 又做五十個金鉤，使幔子相連，這才成了一個帳幕。CT靈意：金表神性；五十個金鉤表徵神性的能力促成完美的聯結。已有條目「五十個金鉤（vavei
+    zahav）」
+  surfaces:
+  - phrase: 五十個金鉤
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 五十個金鉤（vavei zahav）
+  existing_path: link_folder/主題/五十個金鉤（vavei zahav）.md
+- name: 五十個銅鉤
+  suggested_type: 主題
+  evidence: 出36:18 又做五十個銅鉤，使罩棚連成一個。已有條目「五十個銅鉤」
+  surfaces:
+  - phrase: 五十個銅鉤
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 五十個銅鉤
+  existing_path: link_folder/主題/五十個銅鉤.md
+- name: 染紅的公羊皮蓋子
+  suggested_type: 主題
+  evidence: 出36:19 並用染紅的公羊皮做罩棚的蓋。KC：the covering of rams' skins dyed red has everything
+    to do with dedication to God；it is the counterpart of the goats' hair covering——separation
+    must be followed by dedication。BH：rams were considered valuable animals, often
+    used in sacrifices, symbolizing substitution and atonement；the red dye likely
+    symbolizes blood, pointing to the sacrificial system and ultimately to the blood
+    of Christ（Heb 9:22）。已有條目「染紅的公羊皮蓋子」
+  surfaces:
+  - phrase: 染紅的公羊皮
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 染紅的公羊皮蓋子
+  existing_path: link_folder/主題/染紅的公羊皮蓋子.md
+- name: 海狗皮頂蓋
+  suggested_type: 主題
+  evidence: 出36:19 再用海狗皮做一層罩棚上的頂蓋。KC：the covering of porpoise skins is visible to
+    the people；it is not beautiful but useful——it protects the tabernacle from heat
+    and storm and rain；for the world, the dwelling place of God has nothing attractive。BH：the
+    fine leather served as an additional protective layer, ensuring the tabernacle's
+    longevity。已有條目「海狗皮頂蓋」
+  surfaces:
+  - phrase: 海狗皮
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 海狗皮頂蓋
+  existing_path: link_folder/主題/海狗皮頂蓋.md
+- name: 皂莢木豎板
+  suggested_type: 主題
+  evidence: 出36:20-30 用皂莢木做帳幕的豎板，每塊長十肘寬一肘半，有兩榫相對；南面二十塊、北面二十塊、西面六塊加拐角兩塊，共四十八塊板配九十六個帶卯銀座。KC：each
+    board is from the same material, they all have the same length and have the same
+    foundation；the distinction between 'clergy' and 'layman' is alien to God's Word。BH：acacia
+    wood was chosen for its durability and resistance to decay, symbolizing incorruptibility
+    and purity。已有條目「皂莢木豎板」
+  surfaces:
+  - phrase: 皂莢木做帳幕的豎板
+    verses:
+    - 20
+  - phrase: 豎板
+    verses:
+    - 20
+  - phrase: 板
+    verses:
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 34
+  match_type: exact
+  existing_title: 皂莢木豎板
+  existing_path: link_folder/主題/皂莢木豎板.md
+- name: 拐角板（雙板）
+  suggested_type: 主題
+  evidence: 出36:28-29 帳幕後面的拐角做板兩塊，板的下半截是雙的、上半截是整的，直到第一個環子。BH：the corners were crucial
+    for structural integrity；the coupling from bottom to top signifies a comprehensive
+    and secure assembly。已有條目「拐角板（雙板）」
+  surfaces:
+  - phrase: 拐角做板兩塊
+    verses:
+    - 28
+  - phrase: 板的下半截是雙的
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 拐角板（雙板）
+  existing_path: link_folder/主題/拐角板（雙板）.md
+- name: 閂（橫閂）
+  suggested_type: 主題
+  evidence: 出36:31-34 用皂莢木做閂：南面五閂、北面五閂、西面五閂，板腰間的中閂從這一頭通到那一頭；用金子將板包裹，又做板上的金環套閂，閂也用金子包裹。GT：閂起到把會幕的豎板互相套住的作用。KC：all
+    boards are held together by five bars, one of which is applied in a special way（the
+    middle bar）。已有條目「閂（橫閂）」
+  surfaces:
+  - phrase: 閂
+    verses:
+    - 31
+    - 32
+    - 33
+    - 34
+  - phrase: 中閂
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 閂（橫閂）
+  existing_path: link_folder/主題/閂（橫閂）.md
+- name: 金子（包金）
+  suggested_type: 主題
+  evidence: 出36:34,36,38 用金子將板包裹，又做板上的金環套閂，閂也用金子包裹；內幔柱子用金包裹、柱子上有金鉤；門簾柱頂和杆子用金子包裹。已有條目「金子（包金）」
+  surfaces:
+  - phrase: 用金子將板包裹
+    verses:
+    - 34
+  - phrase: 用金包裹
+    verses:
+    - 36
+  - phrase: 用金子把柱頂和柱子上的杆子包裹
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 金子（包金）
+  existing_path: link_folder/主題/金子（包金）.md
+- name: 內幔（隔聖所至聖所的幔子）
+  suggested_type: 主題
+  evidence: 出36:35-36 用藍色、紫色、朱紅色線和撚的細麻織幔子，以巧匠的手工繡上基路伯；為幔子做四根皂莢木柱子用金包裹，柱子上有金鉤，鑄四個帶卯的銀座。GT：幔子掛在聖所和至聖所入口，為了維護神的榮耀和聖潔用幔子擋住至聖所；唯獨神指定的人在指定的時間用指定的禮物才能進入；基督作為中保用死亡撕裂了它（來10:19-20）。KC：the
+    veil is called 'the second veil' in Hebrews（Heb 9:3）；we may even have boldness
+    to enter by the blood of Jesus（Heb 10:19-20）。已有條目「內幔（隔聖所至聖所的幔子）」
+  surfaces:
+  - phrase: 織幔子
+    verses:
+    - 35
+  - phrase: 幔子
+    verses:
+    - 35
+    - 36
+  match_type: exact
+  existing_title: 內幔（隔聖所至聖所的幔子）
+  existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
+- name: 四根包金柱子（內幔柱）
+  suggested_type: 主題
+  evidence: 出36:36 為幔子做四根皂莢木柱子，用金包裹，柱子上有金鉤，又為柱子鑄了四個帶卯的銀座。已有條目「四根包金柱子（內幔柱）」
+  surfaces:
+  - phrase: 四根皂莢木柱子
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 四根包金柱子（內幔柱）
+  existing_path: link_folder/主題/四根包金柱子（內幔柱）.md
+- name: 帳幕門簾
+  suggested_type: 主題
+  evidence: 出36:37-38 拿藍色、紫色、朱紅色線和撚的細麻，用繡花的手工織帳幕的門簾；又為簾子做五根柱子和柱子上的鉤子，用金子把柱頂和柱子上的杆子包裹，柱子有五個帶卯的銅座。GT/丁良才：聖書裡從前沒有提到這些柱頂和杆子（出26:37），會幕第二個講法圖也沒有畫上這些杆子，這些柱頂和杆子是叫柱子相連，和外院的杆子一樣（出27:10）。KC：a
+    screen is hung for the entrance to the holy place；behind this is 'the outer one'（Heb
+    9:2a）where priests go daily to do their service。已有條目「帳幕門簾」
+  surfaces:
+  - phrase: 帳幕的門簾
+    verses:
+    - 37
+  - phrase: 簾子
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 帳幕門簾
+  existing_path: link_folder/主題/帳幕門簾.md
+- name: 五根包金柱子（門簾柱）
+  suggested_type: 主題
+  evidence: 出36:38 為簾子做五根柱子和柱子上的鉤子，用金子把柱頂和柱子上的杆子包裹，柱子有五個帶卯的銅座。GT/丁良才補充：柱頂和杆子是叫柱子相連。已有條目「五根包金柱子（門簾柱）」
+  surfaces:
+  - phrase: 五根柱子
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 五根包金柱子（門簾柱）
+  existing_path: link_folder/主題/五根包金柱子（門簾柱）.md
+- name: 撚的細麻
+  suggested_type: 原文
+  evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻製造。CT：撚的細麻指用手撚的細麻線織成的布幔。KC：fine twisted linen。BH：finely
+    spun linen was a luxurious and costly material, indicating the tabernacle's sacredness；linen
+    was often associated with purity and righteousness（Rev 19:8）。需檢查是否已有條目「撚的細麻」
+  surfaces:
+  - phrase: 撚的細麻
+    verses:
+    - 8
+    - 35
+    - 37
+  match_type: exact
+  existing_title: 撚的細麻
+  existing_path: link_folder/原文/撚的細麻.md
+- name: 皂莢木（atzei shittim）
+  suggested_type: 原文
+  evidence: 出36:20,31,36 豎板、閂、內幔柱子均用皂莢木製作。BH：acacia wood was chosen for its durability
+    and resistance to decay, making it ideal for the harsh desert environment；it is
+    native to the Sinai region。已有條目「皂莢木（atzei shittim）」
+  surfaces:
+  - phrase: 皂莢木
+    verses:
+    - 20
+    - 31
+    - 36
+  match_type: exact
+  existing_title: 皂莢木（atzei shittim）
+  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 出36:1 都要照耶和華所吩咐的做工。CT：所有事奉神的人都要遵照神的旨意行事，並不是自己想要做甚麼就做甚麼；神工人的才幹必須是在神的旨意中發揮恩賜。KC：no
+    detail is unimportant；every repetition underlines what has been said before and
+    indicates its certainty（Phil 3:1）；as God has shown it on the mountain, so it is
+    made。BH：the construction was not left to human creativity but was to follow the
+    divine blueprint given to Moses on Mount Sinai（Exo 25:9）。已有條目「山上的樣式」
+  surfaces:
+  - phrase: 照耶和華所吩咐的
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+- name: 銅座（門簾柱座）
+  suggested_type: 主題
+  evidence: 出36:38 帳幕門簾的五根柱子有五個帶卯的座，是銅的。CT：門簾柱子用銅座（非銀座），與內幔柱子的銀座不同。需檢查是否已有獨立條目，或歸入「帶卯的銅座（院子柱子座）」
+  surfaces:
+  - phrase: 帶卯的座，是銅的
+    verses:
+    - 38
+  match_type: base
+  existing_title: 帶卯的銅座（院子柱子座）
+  existing_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
+C_new_formal:
+- name: 奉獻過剩與節制
+  suggested_type: 神學
+  evidence: 出36:4-7 凡做聖所一切工的智慧人各都離開他所做的工，來對摩西說百姓所拿來的富富有餘；摩西傳命在全營中宣告無論男女不必再為聖所拿什麼禮物來，這樣才攔住百姓不再拿禮物來；因為他們所有的材料夠做一切當做的物而且有餘。CT：這是出奇的禁令，無非是因為百姓蒙了赦免（出34:6），有感恩的心（路7:47）；教會缺乏之際理當鼓勵奉獻，但富富有餘之時就應攔住。GT/丁道爾：神子民領受了救恩和赦罪之愛，這是典型的回應；捨不得財寶而拖延未獻的人發現神已經用不著他們了，一定又失望又沮喪。KC：the
+    statement that there is no need to give more——'God loves a cheerful giver'（2Cor
+    9:7）；if He finds that enough has been given, He lets you know。此為獨特事件（聖經中唯一因奉獻過多而停止收奉獻的記載），建議新建條目
+  surfaces:
+  - phrase: 富富有餘
+    verses:
+    - 5
+  - phrase: 不必再為聖所拿什麼禮物來
+    verses:
+    - 6
+  - phrase: 攔住百姓不再拿禮物來
+    verses:
+    - 6
+  - phrase: 材料夠做一切當做的物，而且有餘
+    verses:
+    - 7
+  target_path: link_folder/神學/奉獻過剩與節制.md
+- name: 比撒列和亞何利亞伯的配搭
+  suggested_type: 神學
+  evidence: 出36:1-2 比撒列（猶大支派）和亞何利亞伯（但支派）同被召來帶領工匠。BH：Bezalel from Judah and Oholiab
+    from Dan represent the unity of Israel's tribes in this divine task。KC：Moses is
+    here a picture of the Lord Jesus——for the construction of the church, the Lord
+    Jesus has given gifts（Eph 4:11-12）。CT：一同配合來做聖工是非常重要的，神的工人需要配備、需要同心、在恩賜上彼此服事、彼此配搭（彼前4:10）。建議新建條目或歸入既有條目
+  surfaces:
+  - phrase: 比撒列和亞何利亞伯
+    verses:
+    - 1
+    - 2
+  target_path: link_folder/神學/比撒列和亞何利亞伯的配搭.md
+D_new_candidate:
+- name: 藍色鈕扣（lula'ot tekhelet）
+  suggested_type: 原文
+  evidence: 出36:11-12 在相連的幔子末幅邊上做藍色的鈕扣，每邊五十個，兩兩相對。CT靈意：藍色的鈕扣表徵屬天的聯結。已有條目「藍色鈕扣（lula'ot
+    tekhelet）」
+  surfaces:
+  - phrase: 藍色的鈕扣
+    verses:
+    - 11
+  - phrase: 五十個鈕扣
+    verses:
+    - 12
+    - 17
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+- name: 銀座（帶卯的銀座）
+  suggested_type: 原文
+  evidence: 出36:24,26,30,36 每塊豎板底下兩個帶卯的銀座，南面四十個、北面四十個、西面十六個；內幔柱子也鑄四個帶卯的銀座。GT：榫起到讓板堅實地插入銀座的作用，信徒因著基督的救贖建造神的聖殿——教會。BH：silver
+    often symbolizes redemption in the Bible；the forty bases suggest a foundation
+    of redemption。已有條目「銀座（帶卯的銀座）」
+  surfaces:
+  - phrase: 帶卯的銀座
+    verses:
+    - 24
+    - 26
+    - 30
+    - 36
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+- name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+  suggested_type: 原文
+  evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻和藍色、紫色、朱紅色線製造。CT靈意：藍色線表徵屬天（出24:10）；紫色線表徵君尊；朱紅色線表徵流血犧牲。BH：blue
+    symbolized the heavens and divine revelation, purple was a color of royalty and
+    wealth, and scarlet represented sacrifice and atonement。已有條目「藍色、紫色、朱紅色線（tekhelet,
+    argaman, tola'at shani）」
+  surfaces:
+  - phrase: 藍色、紫色、朱紅色線
+    verses:
+    - 8
+    - 35
+    - 37
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+- name: 基路伯（keruv）
+  suggested_type: 原文
+  evidence: 出36:8,35 十幅幔子和內幔上均以巧匠的手工繡上基路伯。CT靈意：巧匠的手工表徵聖靈的工作；繡表徵受苦的管教；基路伯表徵彰顯神的榮耀。BH：cherubim
+    are angelic beings often associated with the presence of God（Gen 3:24; Ezek 10）。已有條目「基路伯（施恩座）」——注意：此處基路伯是繡於幔子上，非施恩座上的基路伯，但可能同一條目涵蓋
+  surfaces:
+  - phrase: 基路伯
+    verses:
+    - 8
+    - 35
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+E_skip: []

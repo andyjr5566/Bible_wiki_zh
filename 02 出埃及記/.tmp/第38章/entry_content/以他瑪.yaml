@@ -1,0 +1,29 @@
+name: 以他瑪
+type: 人物
+secondary_types: []
+aliases:
+- Ithamar
+status: formal
+definition: 以他瑪是祭司亞倫的四個兒子中最小的一位。在出埃及記第三十八章中，摩西吩咐他負責數點法櫃帳幕中利未人所使用的一切物件總數。此項記錄表明了在建造會幕的工程中，有明確的權責劃分與管理，並強調神對奉獻物資的看重與問責。
+accumulations:
+- book: 出埃及記
+  chapter: 38
+  summary: 摩西指派亞倫的兒子以他瑪負責數點法櫃帳幕中利未人所用物件的總數。
+  relation: 以他瑪的數點職責確保了聖所材料管理的透明與精確，預表了教會在建造與管理上需有明確的分工與忠心的管家。
+related_entries:
+- 比撒列
+- 亞何利亞伯
+sources:
+- 'BH: Exodus 38:21 — 以他瑪負責數點物件（https://biblehub.com/study/exodus/38.htm）'
+- 'CT: 出三十八21 — 以他瑪手數點的（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT38.htm）'
+- 'GT: 出三十八21 — 亞倫的兒子以他瑪（https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT38.htm）'
+- 'KC: Exodus 38:21 — by the hand of Ithamar（https://www.kingcomments.com/en/bible-studies/Exo/38）'
+created_from: manual
+category: 人物
+trigger_sources:
+- 'BH: https://biblehub.com/study/exodus/38.htm'
+- 'CT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT38.htm'
+- 'GT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT38.htm'
+- 'KC: https://www.kingcomments.com/en/bible-studies/Exo/38'
+current_data: {}
+pending: []

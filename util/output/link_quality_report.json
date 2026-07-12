@@ -1,6 +1,70 @@
 {
-  "total_warnings": 0,
+  "total_warnings": 9,
   "critical_count": 0,
-  "warning_count": 0,
-  "warnings": []
+  "warning_count": 9,
+  "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第10章.md",
+      "target": "耶和華",
+      "message": "同一 alias「耶和華」指向多個 target: 耶和華, 耶和華的話臨到"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第12章.md",
+      "target": "逾越節",
+      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第13章.md",
+      "target": "埃及",
+      "message": "同一 alias「埃及」指向多個 target: 出埃及, 埃及"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第13章.md",
+      "target": "頭生的",
+      "message": "同一 alias「頭生的」指向多個 target: 長子之死, 頭生歸神為聖"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第15章.md",
+      "target": "瑪拉",
+      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第22章.md",
+      "target": "聖潔",
+      "message": "同一 alias「聖潔」指向多個 target: 聖潔, 聖潔（qodesh）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第22章.md",
+      "target": "滅絕",
+      "message": "同一 alias「滅絕」指向多個 target: 滅絕（charam）, 滅絕（herem）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第6章.md",
+      "target": "耶和華",
+      "message": "同一 alias「耶和華」指向多個 target: 耶和華我是, 耶和華的話臨到, 耶和華聖名的啟示"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第8章.md",
+      "target": "耶和華",
+      "message": "同一 alias「耶和華」指向多個 target: 耶和華的話臨到, 耶和華聖名的啟示"
+    }
+  ]
 }

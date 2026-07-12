@@ -493,6 +493,19 @@
     "status": "formal",
     "aliases": []
   },
+  "婦女參與建造會幕": {
+    "path": "link_folder/主題/婦女參與建造會幕.md",
+    "type": "主題",
+    "secondary_types": [
+      "事奉"
+    ],
+    "title": "婦女參與建造會幕",
+    "status": "formal",
+    "aliases": [
+      "有智慧的婦女",
+      "紡線的婦女"
+    ]
+  },
   "安慰與安息": {
     "path": "link_folder/主題/安慰與安息.md",
     "type": "主題",
@@ -1661,6 +1674,16 @@
     "status": "formal",
     "aliases": []
   },
+  "六十萬零三千五百五十人（出38：26）": {
+    "path": "link_folder/事件/六十萬零三千五百五十人（出38：26）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "六十萬零三千五百五十人（出38：26）",
+    "status": "formal",
+    "aliases": [
+      "人口普查數目"
+    ]
+  },
   "利未人受聖職討罪": {
     "path": "link_folder/事件/利未人受聖職討罪.md",
     "type": "事件",
@@ -1826,6 +1849,17 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西完了工": {
+    "path": "link_folder/事件/摩西完了工.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西完了工",
+    "status": "formal",
+    "aliases": [
+      "摩西就完了工",
+      "摩西把工程作完了"
+    ]
+  },
   "摩西審判百姓": {
     "path": "link_folder/事件/摩西審判百姓.md",
     "type": "事件",
@@ -1873,6 +1907,16 @@
     "aliases": [
       "摩西求神同行",
       "神應允同去"
+    ]
+  },
+  "摩西的祝福": {
+    "path": "link_folder/事件/摩西的祝福.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西的祝福",
+    "status": "formal",
+    "aliases": [
+      "摩西察驗後的祝福"
     ]
   },
   "摩西的臨時會幕（營外）": {
@@ -1939,6 +1983,17 @@
     "title": "曠野試驗",
     "status": "candidate",
     "aliases": []
+  },
+  "正月初一日": {
+    "path": "link_folder/事件/正月初一日.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "正月初一日",
+    "status": "formal",
+    "aliases": [
+      "第二年正月初一日",
+      "正月一日"
+    ]
   },
   "牛傷牛的律例": {
     "path": "link_folder/事件/牛傷牛的律例.md",
@@ -2184,6 +2239,16 @@
     "aliases": [
       "金牛犢",
       "鑄造金牛犢事件"
+    ]
+  },
+  "金銀銅統計（出38：24-31）": {
+    "path": "link_folder/事件/金銀銅統計（出38：24-31）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "金銀銅統計（出38：24-31）",
+    "status": "formal",
+    "aliases": [
+      "會幕材料統計"
     ]
   },
   "長老上山見神": {
@@ -7769,6 +7834,16 @@
       "Tamar"
     ]
   },
+  "以他瑪": {
+    "path": "link_folder/人物/以他瑪.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以他瑪",
+    "status": "formal",
+    "aliases": [
+      "Ithamar"
+    ]
+  },
   "以倫": {
     "path": "link_folder/人物/以倫.md",
     "type": "人物",
@@ -8733,7 +8808,7 @@
     "type": "人物",
     "secondary_types": [],
     "title": "猶大支派",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "猶大（雅各之子）": {
@@ -9564,6 +9639,28 @@
     "title": "「麥基洗德」名字含義",
     "status": "formal",
     "aliases": []
+  },
+  "一他連得精金（燈臺用金量）": {
+    "path": "link_folder/原文/一他連得精金（燈臺用金量）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "一他連得精金（燈臺用金量）",
+    "status": "formal",
+    "aliases": [
+      "一他連得",
+      "他連得"
+    ]
+  },
+  "一比加": {
+    "path": "link_folder/原文/一比加.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "一比加",
+    "status": "formal",
+    "aliases": [
+      "beka",
+      "比加"
+    ]
   },
   "七十的屬靈意義": {
     "path": "link_folder/原文/七十的屬靈意義.md",
@@ -10528,6 +10625,19 @@
       "wall"
     ]
   },
+  "杏花杯球花（燈臺裝飾）": {
+    "path": "link_folder/原文/杏花杯球花（燈臺裝飾）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "杏花杯球花（燈臺裝飾）",
+    "status": "formal",
+    "aliases": [
+      "杏花",
+      "杯",
+      "球",
+      "花"
+    ]
+  },
   "東風與西風": {
     "path": "link_folder/原文/東風與西風.md",
     "type": "原文",
@@ -11488,6 +11598,17 @@
     "status": "formal",
     "aliases": [
       "金絲"
+    ]
+  },
+  "鈴鐺與石榴（大祭司袍子）": {
+    "path": "link_folder/原文/鈴鐺與石榴（大祭司袍子）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "鈴鐺與石榴（大祭司袍子）",
+    "status": "formal",
+    "aliases": [
+      "金鈴鐺",
+      "石榴"
     ]
   },
   "錐子穿耳": {
@@ -15967,6 +16088,17 @@
     "status": "formal",
     "aliases": []
   },
+  "奉獻過剩與節制": {
+    "path": "link_folder/神學/奉獻過剩與節制.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "奉獻過剩與節制",
+    "status": "formal",
+    "aliases": [
+      "奉獻過剩",
+      "富富有餘的奉獻"
+    ]
+  },
   "女人生產與戀慕的判決": {
     "path": "link_folder/神學/女人生產與戀慕的判決.md",
     "type": "神學",
@@ -16545,6 +16677,16 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西不能進會幕": {
+    "path": "link_folder/神學/摩西不能進會幕.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "摩西不能進會幕",
+    "status": "formal",
+    "aliases": [
+      "摩西不能進帳幕"
+    ]
+  },
   "摩西之歌": {
     "path": "link_folder/神學/摩西之歌.md",
     "type": "神學",
@@ -16814,6 +16956,17 @@
     "status": "formal",
     "aliases": []
   },
+  "日間雲彩、夜間雲中有火": {
+    "path": "link_folder/神學/日間雲彩、夜間雲中有火.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "日間雲彩、夜間雲中有火",
+    "status": "formal",
+    "aliases": [
+      "雲柱與火柱",
+      "雲彩與火"
+    ]
+  },
   "普天下沒有像我的": {
     "path": "link_folder/神學/普天下沒有像我的.md",
     "type": "神學",
@@ -16876,6 +17029,30 @@
     "status": "formal",
     "aliases": []
   },
+  "橛子與繩子的預表": {
+    "path": "link_folder/神學/橛子與繩子的預表.md",
+    "type": "神學",
+    "secondary_types": [
+      "預表"
+    ],
+    "title": "橛子與繩子的預表",
+    "status": "formal",
+    "aliases": [
+      "帳幕的橛子",
+      "院子的橛子"
+    ]
+  },
+  "歸耶和華為聖": {
+    "path": "link_folder/神學/歸耶和華為聖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "歸耶和華為聖",
+    "status": "formal",
+    "aliases": [
+      "聖冠上的牌",
+      "聖冠"
+    ]
+  },
   "死亡的普遍性": {
     "path": "link_folder/神學/死亡的普遍性.md",
     "type": "神學",
@@ -16911,6 +17088,17 @@
       "每日當獻之祭"
     ]
   },
+  "比撒列和亞何利亞伯的配搭": {
+    "path": "link_folder/神學/比撒列和亞何利亞伯的配搭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "比撒列和亞何利亞伯的配搭",
+    "status": "formal",
+    "aliases": [
+      "比撒列與亞何利亞伯的同工",
+      "工匠的配搭"
+    ]
+  },
   "水變血的神蹟": {
     "path": "link_folder/神學/水變血的神蹟.md",
     "type": "神學",
@@ -16942,6 +17130,17 @@
     "title": "永遠服事的奴僕",
     "status": "formal",
     "aliases": []
+  },
+  "永遠當祭司的職任": {
+    "path": "link_folder/神學/永遠當祭司的職任.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "永遠當祭司的職任",
+    "status": "formal",
+    "aliases": [
+      "世世代代祭司的職任",
+      "祭司的職分"
+    ]
   },
   "法老心剛硬": {
     "path": "link_folder/神學/法老心剛硬.md",
@@ -18478,6 +18677,14 @@
       "三樣情慾"
     ]
   },
+  "膏抹成聖": {
+    "path": "link_folder/神學/膏抹成聖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "膏抹成聖",
+    "status": "formal",
+    "aliases": []
+  },
   "自潔": {
     "path": "link_folder/神學/自潔.md",
     "type": "神學",
@@ -18891,6 +19098,17 @@
     "title": "雅各受管教與被欺哄",
     "status": "formal",
     "aliases": []
+  },
+  "雲彩引導行程": {
+    "path": "link_folder/神學/雲彩引導行程.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "雲彩引導行程",
+    "status": "formal",
+    "aliases": [
+      "雲彩收上去",
+      "雲柱引導"
+    ]
   },
   "面對面見神": {
     "path": "link_folder/神學/面對面見神.md",
@@ -21242,6 +21460,12 @@
   "藍色外袍": {
     "alias_of": "外袍（以弗得的外袍）"
   },
+  "有智慧的婦女": {
+    "alias_of": "婦女參與建造會幕"
+  },
+  "紡線的婦女": {
+    "alias_of": "婦女參與建造會幕"
+  },
   "宗族方言地土邦國": {
     "alias_of": "宗族方言地土地與邦國"
   },
@@ -21482,6 +21706,9 @@
   "Preserving an omer of manna": {
     "alias_of": "保存一俄梅珥嗎哪"
   },
+  "人口普查數目": {
+    "alias_of": "六十萬零三千五百五十人（出38：26）"
+  },
   "利未人討罪": {
     "alias_of": "利未人受聖職討罪"
   },
@@ -21502,6 +21729,12 @@
   },
   "摩西上西乃山": {
     "alias_of": "摩西上山見神"
+  },
+  "摩西就完了工": {
+    "alias_of": "摩西完了工"
+  },
+  "摩西把工程作完了": {
+    "alias_of": "摩西完了工"
   },
   "Moses judging the people": {
     "alias_of": "摩西審判百姓"
@@ -21527,6 +21760,9 @@
   "神應允同去": {
     "alias_of": "摩西求神同去並蒙應允"
   },
+  "摩西察驗後的祝福": {
+    "alias_of": "摩西的祝福"
+  },
   "營外的會幕": {
     "alias_of": "摩西的臨時會幕（營外）"
   },
@@ -21550,6 +21786,12 @@
   },
   "重造石版": {
     "alias_of": "摩西鑿石版（第二次法版）"
+  },
+  "第二年正月初一日": {
+    "alias_of": "正月初一日"
+  },
+  "正月一日": {
+    "alias_of": "正月初一日"
   },
   "瑪拉苦水變甜神蹟": {
     "alias_of": "瑪拉苦水變甜"
@@ -21631,6 +21873,9 @@
   },
   "鑄造金牛犢事件": {
     "alias_of": "金牛犢事件"
+  },
+  "會幕材料統計": {
+    "alias_of": "金銀銅統計（出38：24-31）"
   },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
@@ -22628,6 +22873,9 @@
   "Tamar": {
     "alias_of": "他瑪（創38）"
   },
+  "Ithamar": {
+    "alias_of": "以他瑪"
+  },
   "Eleazar": {
     "alias_of": "以利亞撒"
   },
@@ -22898,6 +23146,18 @@
   "摩押名字含義": {
     "alias_of": "「摩押」名字含義"
   },
+  "一他連得": {
+    "alias_of": "一他連得精金（燈臺用金量）"
+  },
+  "他連得": {
+    "alias_of": "一他連得精金（燈臺用金量）"
+  },
+  "beka": {
+    "alias_of": "一比加"
+  },
+  "比加": {
+    "alias_of": "一比加"
+  },
   "七次下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
@@ -23113,6 +23373,18 @@
   },
   "wall": {
     "alias_of": "書珥（ wall ）"
+  },
+  "杏花": {
+    "alias_of": "杏花杯球花（燈臺裝飾）"
+  },
+  "杯": {
+    "alias_of": "杏花杯球花（燈臺裝飾）"
+  },
+  "球": {
+    "alias_of": "杏花杯球花（燈臺裝飾）"
+  },
+  "花": {
+    "alias_of": "杏花杯球花（燈臺裝飾）"
   },
   "east and west winds": {
     "alias_of": "東風與西風"
@@ -23398,6 +23670,12 @@
   },
   "金絲": {
     "alias_of": "金線"
+  },
+  "金鈴鐺": {
+    "alias_of": "鈴鐺與石榴（大祭司袍子）"
+  },
+  "石榴": {
+    "alias_of": "鈴鐺與石榴（大祭司袍子）"
   },
   "al-panay": {
     "alias_of": "除了我以外（`al-pa{na{y）"
@@ -24521,6 +24799,12 @@
   "雅各的梯子": {
     "alias_of": "天梯"
   },
+  "奉獻過剩": {
+    "alias_of": "奉獻過剩與節制"
+  },
+  "富富有餘的奉獻": {
+    "alias_of": "奉獻過剩與節制"
+  },
   "肋骨造女人": {
     "alias_of": "女人由肋骨造成"
   },
@@ -24653,6 +24937,9 @@
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
   },
+  "摩西不能進帳幕": {
+    "alias_of": "摩西不能進會幕"
+  },
   "Song of Moses": {
     "alias_of": "摩西之歌"
   },
@@ -24737,6 +25024,12 @@
   "新舊約": {
     "alias_of": "新約"
   },
+  "雲柱與火柱": {
+    "alias_of": "日間雲彩、夜間雲中有火"
+  },
+  "雲彩與火": {
+    "alias_of": "日間雲彩、夜間雲中有火"
+  },
   "in all the earth": {
     "alias_of": "普天下沒有像我的"
   },
@@ -24749,11 +25042,35 @@
   "建造材料的屬靈意義": {
     "alias_of": "會幕材料的豫表"
   },
+  "帳幕的橛子": {
+    "alias_of": "橛子與繩子的預表"
+  },
+  "院子的橛子": {
+    "alias_of": "橛子與繩子的預表"
+  },
+  "聖冠上的牌": {
+    "alias_of": "歸耶和華為聖"
+  },
+  "聖冠": {
+    "alias_of": "歸耶和華為聖"
+  },
   "常獻的燔祭": {
     "alias_of": "每日獻祭（常獻燔祭）"
   },
   "每日當獻之祭": {
     "alias_of": "每日獻祭（常獻燔祭）"
+  },
+  "比撒列與亞何利亞伯的同工": {
+    "alias_of": "比撒列和亞何利亞伯的配搭"
+  },
+  "工匠的配搭": {
+    "alias_of": "比撒列和亞何利亞伯的配搭"
+  },
+  "世世代代祭司的職任": {
+    "alias_of": "永遠當祭司的職任"
+  },
+  "祭司的職分": {
+    "alias_of": "永遠當祭司的職任"
   },
   "hardening of Pharaoh's heart": {
     "alias_of": "法老心剛硬"
@@ -25252,6 +25569,12 @@
   },
   "除去外邦神": {
     "alias_of": "除掉外邦神"
+  },
+  "雲彩收上去": {
+    "alias_of": "雲彩引導行程"
+  },
+  "雲柱引導": {
+    "alias_of": "雲彩引導行程"
   },
   "神面對面": {
     "alias_of": "面對面見神"

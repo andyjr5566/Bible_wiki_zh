@@ -1,0 +1,226 @@
+book: 出埃及記
+chapter: 37
+A_use_directly: []
+B_needs_update:
+- name: 比撒列
+  suggested_type: 人物
+  evidence: 出37:1 比撒列用皂莢木做櫃。GT/丁良才：比撒列親自製造法櫃，無非因為約櫃是至聖的，不然就是比撒列指揮人做的。GT/精讀本：在聖物的具體製作過程中唯一提到的人物是比撒列，因為他是被選出來做櫃的人，可能是當時充滿神的智慧的最好的工匠。已有條目「比撒列（Bezalel）」
+  surfaces:
+  - phrase: 比撒列
+    verses:
+    - 1
+  match_type: alias
+  existing_title: 比撒列（Bezalel）
+  existing_path: link_folder/人物/比撒列（Bezalel）.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: 出37:1-5 比撒列用皂莢木做櫃，長二肘半寬一肘半高一肘半，裡外包精金、四圍鑲金牙邊；鑄四個金環安在四腳上；用皂莢木做兩根杠用金包裹，把杠穿在環內以便抬櫃。CT靈意：皂莢木做櫃表徵神與人立約的見證；裡外包精金表徵耶穌的神人二性。KC：the
+    ark is the only object in the holy of holies；Hebrews calls it 'the ark of the
+    covenant'（Heb 9:4）。BH：the Ark served as the earthly throne of God, where He would
+    meet with Moses and the high priest。已有條目「約櫃」
+  surfaces:
+  - phrase: 櫃
+    verses:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 出37:6-9 用精金做施恩座，長二肘半寬一肘半；用金子錘出兩個基路伯安在施恩座兩頭，二基路伯接連一塊，高張翅膀遮掩施恩座，臉對臉朝著施恩座。CT：施恩座希伯來原文字根有「遮蓋」的意思，具有遮蓋罪或贖罪的功用；施恩座的尺寸跟約櫃一模一樣——公義多大，恩典也多大。KC：the
+    mercy seat has become for us 'the throne of grace'（Heb 4:16）。BH：the mercy seat
+    was where the high priest would sprinkle the blood on the Day of Atonement, foreshadowing
+    Christ's ultimate sacrifice（Rom 3:25）。已有條目「施恩座」
+  surfaces:
+  - phrase: 施恩座
+    verses:
+    - 6
+    - 7
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 基路伯（施恩座）
+  suggested_type: 主題
+  evidence: 出37:7-9 用金子錘出兩個基路伯安在施恩座兩頭，二基路伯接連一塊，高張翅膀遮掩施恩座，臉對臉朝著施恩座。CT：基路伯是「榮耀的基路伯」（來9:5），大概是因為他們特別與神相近，神的榮耀照射在他們身上；用金子錘出表徵神榮耀的見證需經過受苦的試煉。KC：Hebrews
+    speaks of 'the cherubim of glory overshadowing the mercy seat'（Heb 9:5）。BH：cherubim
+    are angelic beings often associated with the presence and glory of God（Gen 3:24;
+    Ezek 10）。已有條目「基路伯（施恩座）」
+  surfaces:
+  - phrase: 基路伯
+    verses:
+    - 7
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 基路伯（施恩座）
+  existing_path: link_folder/主題/基路伯（施恩座）.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  evidence: 出37:10-16 用皂莢木做一張桌子，長二肘寬一肘高一肘半，包精金、四圍鑲金牙邊；四圍各做一掌寬的橫梁鑲金牙邊；鑄四個金環安在四腳四角上挨近橫梁，穿杠抬桌子；用精金做桌子上的器皿——盤子、調羹、奠酒的瓶和爵。KC：a
+    table speaks of fellowship；through the work of the Lord Jesus, fellowship is possible
+    with God and with each other；the table is as high as the ark——our fellowship is
+    at the level of the Person and the work of Christ。BH：the Table of Showbread held
+    the bread of the Presence, representing God's provision and fellowship with His
+    people。已有條目「陳設餅桌子」
+  surfaces:
+  - phrase: 桌子
+    verses:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  evidence: 出37:17-24 用精金做一個燈臺，座和幹與杯、球、花都是接連一塊錘出來的；兩旁杈出六個枝子，每枝有三個杯形狀像杏花有球有花；燈臺上有四個杯形狀像杏花有球有花；每兩個枝子以下有球與枝子接連一塊；用精金做七個燈盞並蠟剪和蠟花盤；用精金一他連得做燈臺和一切器具。CT靈意：座比方基督為根基（林前3:11），幹比方基督在祂的百姓當中凡事居首位（西1:18）。KC：after
+    the table the lampstand is made——our fellowship can only take place in the light（1Jn
+    1:7）；the walk in the light produces the fruit of light（Eph 5:9）。BH：the lampstand
+    or menorah was crafted from a single piece of gold, emphasizing unity and perfection。已有條目「金燈臺」
+  surfaces:
+  - phrase: 燈臺
+    verses:
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  evidence: 出37:25-28 用皂莢木做香壇，是四方的，長一肘寬一肘高二肘，壇的四角與壇接連一塊；用精金把壇的上面與四面並四角包裹，四圍鑲金牙邊；做兩個金環安在牙子邊以下兩旁兩根橫撐上，作為穿杠的用處以便抬壇；用皂莢木做杠用金包裹。KC：the
+    golden altar of incense represents worship；Hebrews says this altar is in the holy
+    of holies（Heb 9:3-4a）——its actual function belongs to the holy of holies。BH：the
+    altar of incense was placed before the veil, symbolizing the prayers of the saints
+    ascending to God（Rev 5:8）。已有條目「金香壇（香壇）」
+  surfaces:
+  - phrase: 香壇
+    verses:
+    - 25
+    - 26
+    - 27
+    - 28
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 壇的四角（香壇）
+  suggested_type: 主題
+  evidence: 出37:25-26 香壇的四角與壇接連一塊，用精金包裹。已有條目「壇的四角（香壇）」
+  surfaces:
+  - phrase: 壇的四角
+    verses:
+    - 25
+    - 26
+  match_type: exact
+  existing_title: 壇的四角（香壇）
+  existing_path: link_folder/主題/壇的四角（香壇）.md
+- name: 聖膏油
+  suggested_type: 原文
+  evidence: 出37:29 又按做香之法做聖膏油和馨香料的淨香。KC：the Lord Jesus is 'anointed with the Holy
+    Spirit and with power'（Acts 10:38）；in the perfumer we can see a picture of the
+    Holy Spirit。已有條目「聖膏油」
+  surfaces:
+  - phrase: 聖膏油
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
+- name: 聖香（清淨聖潔的香）
+  suggested_type: 原文
+  evidence: 出37:29 又按做香之法做馨香料的淨香。KC：the pure, fragrant incense of spices rises to
+    God as a pleasant fragrance（Eph 5:2）。已有條目「聖香（清淨聖潔的香）」
+  surfaces:
+  - phrase: 馨香料的淨香
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 聖香（清淨聖潔的香）
+  existing_path: link_folder/原文/聖香（清淨聖潔的香）.md
+- name: 皂莢木（atzei shittim）
+  suggested_type: 原文
+  evidence: 出37:1,4,10,15,25,28 約櫃、杠、陳設餅桌子、香壇及其杠均用皂莢木製作。BH：acacia wood is durable
+    and resistant to decay, symbolizing the enduring nature of God's covenant。已有條目「皂莢木（atzei
+    shittim）」
+  surfaces:
+  - phrase: 皂莢木
+    verses:
+    - 1
+    - 4
+    - 10
+    - 15
+    - 25
+    - 28
+  match_type: exact
+  existing_title: 皂莢木（atzei shittim）
+  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 精金
+  suggested_type: 主題
+  evidence: 出37:2,6,11,16,17,22,23,24,26 約櫃裡外包精金、施恩座用精金、桌子包精金、桌子器皿用精金、燈臺用精金、燈臺七個燈盞用精金、香壇包精金。GT/精讀本：聖所裡只有施恩座和燈臺是用精金製作的；精金希伯來文表示「純金」，是從普通金子中提煉出來的精華。已有條目「精金」
+  surfaces:
+  - phrase: 精金
+    verses:
+    - 2
+    - 6
+    - 11
+    - 16
+    - 17
+    - 22
+    - 23
+    - 24
+    - 26
+  match_type: exact
+  existing_title: 精金
+  existing_path: link_folder/主題/精金.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 出37章全章 每一件器具的製作都嚴格依照神在山上指示的樣式（出25-30章）。GT/丁道爾：本段的安排依照建築工程的自然次序，材料經過小心而有系統的重整，並非無意識的重複。KC：after
+    the house is made, the furniture that will be placed in the house is made——first
+    the ark, followed by the mercy seat with the cherubim。已有條目「山上的樣式」
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+C_new_formal:
+- name: 杏花杯球花（燈臺裝飾）
+  suggested_type: 原文
+  evidence: 出37:19-22 燈臺每枝上有三個杯形狀像杏花，有球有花；燈臺上有四個杯形狀像杏花有球有花；每兩個枝子以下有球與枝子接連一塊；球和枝子是接連一塊，都是一塊精金錘出來的。CT：杏花是早春開花，表徵復活的生命。GT/精讀本：枝子離開杆不能發光，信徒若離開基督同樣一事無成。KC：cups
+    shaped like almond blossoms, bulbs and flowers——the walk in the light produces
+    the fruit of light（Eph 5:9）。BH：the almond tree is the first to bloom in spring,
+    symbolizing watchfulness and new life（Jer 1:11-12）。建議新建條目
+  surfaces:
+  - phrase: 杯，形狀像杏花
+    verses:
+    - 19
+    - 20
+  - phrase: 有球有花
+    verses:
+    - 19
+    - 20
+    - 21
+  target_path: link_folder/原文/杏花杯球花（燈臺裝飾）.md
+- name: 一他連得精金（燈臺用金量）
+  suggested_type: 原文
+  evidence: 出37:24 他用精金一他連得做燈臺和燈臺的一切器具。一他連得約合34公斤，燈臺用金量極大，表徵教會（燈臺）在神眼中極為貴重。BH：a talent
+    was a large unit of weight, emphasizing the immense value of the lampstand。建議新建條目或納入金燈臺累積
+  surfaces:
+  - phrase: 一他連得
+    verses:
+    - 24
+  target_path: link_folder/原文/一他連得精金（燈臺用金量）.md
+D_new_candidate: []
+E_skip: []

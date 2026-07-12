@@ -141,8 +141,8 @@ _ENTRY_EXAMPLE = (
     "  accumulations:                  # 物件陣列，非字串；每項四個欄位\n"
     "    - book: 出埃及記\n"
     "      chapter: 27\n"
-    "      summary: 本章對此條目的重點（一句）\n"
-    "      relation: 與本章的神學關聯（一句）\n"
+    "      summary: 本章對此條目的重點\n"
+    "      relation: 與本章的神學關聯\n"
     "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用\n"
     "  sources:                        # 每項含實際來源 URL（取自本章來源清單）\n"
     "    - 'BH: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
@@ -159,7 +159,7 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
             + "\n".join(f"- {item}" for item in feedback) + "\n"
         )
     return (
-        f"你是聖經研經資料整理員。任務：一次為以下 {len(batch)} 個 link_folder 條目"
+        f"你是聖經研經資料整理員，並且輸出以繁體中文為主。任務：一次為以下 {len(batch)} 個 link_folder 條目"
         f"各填一份 entry_content payload。\n\n"
         f"【要寫的條目】（括號內是分類，不是名稱的一部分）\n{listing}\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
