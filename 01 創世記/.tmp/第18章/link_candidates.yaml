@@ -1,0 +1,60 @@
+book: 創世記
+chapter: 18
+candidates:
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 1-33節；接待三位訪客、聽撒拉生子應許、為所多瑪代求
+  - name: 撒拉
+    type: 人物
+    evidence: 6、9-15節；預備餅食，帳棚門口聽見應許而暗笑
+  - name: 幔利
+    type: 地點
+    evidence: 1節幔利橡樹，耶和華顯現之處
+  - name: 所多瑪
+    type: 地點
+    evidence: 16、20-26節；罪惡甚重聲聞於神，代求的對象
+  - name: 蛾摩拉
+    type: 地點
+    evidence: 20節與所多瑪並列罪惡甚重
+  - name: 耶和華豈有難成的事
+    type: 神學
+    evidence: 14節；原文亦可作「豈有太奇妙的事」（耶卅二17）
+  - name: 我所做的事豈可瞞著亞伯拉罕
+    type: 神學
+    evidence: 17節；神向朋友透露計畫（詩廿五14；摩三7）
+    surfaces:
+      - {phrase: 我所要做的事豈可瞞著亞伯拉罕, verses: [17]}
+  - name: 審判全地的主豈不行公義
+    type: 神學
+    evidence: 25節；代求以神的公義為根據
+  - name: 亞伯拉罕為神的朋友
+    type: 神學
+    evidence: 全章朋友式信任；代下二十7、賽四十一8、雅二23
+  - name: 亞伯拉罕為所多瑪代求
+    type: 主題
+    evidence: 23-32節六次求問，聖經記載的第一個代禱
+    surfaces:
+      - {phrase: 亞伯拉罕近前來, verses: [23]}
+  - name: 古代近東接待客旅禮儀
+    type: 背景
+    evidence: 1-8節；洗腳、豐盛筵席，實際供應遠超口頭所許
+  - name: 所多瑪罪惡的呼喊
+    type: 原文
+    evidence: 20節聲聞於我；受害者控訴或罪惡本身如呼喊
+    surfaces:
+      - {phrase: 聲聞於我, verses: [20]}
+  - name: 三位訪客的身分
+    type: 解經爭議
+    evidence: 2節三個人；一位耶和華與兩位天使（創十九1），基督顯現說另議
+    surfaces:
+      - {phrase: 三個人, verses: [2]}
+  - name: 耶和華下去察看是否表示不知道
+    type: 解經爭議
+    evidence: 21節；以人間審判官查證方式描寫公正審判，非缺乏資訊
+    surfaces:
+      - {phrase: 我現在要下去，察看他們所行的, verses: [21]}
+  - name: 亞伯拉罕為何停在十個義人
+    type: 解經爭議
+    evidence: 32節；羅得家人數估計說與最低群體數說皆非敘事明言
+    surfaces:
+      - {phrase: 假若在那裡見有十個呢, verses: [32]}
