@@ -1,0 +1,67 @@
+book: 創世記
+chapter: 11
+candidates:
+  - name: 示拿地
+    type: 地點
+    evidence: 2節巴比倫平原；GT 背景註釋指語言學上等同「蘇美」，人類文明最先出現之地
+  - name: 巴別塔
+    type: 主題
+    evidence: 3-4節建城造塔塔頂通天；動機是傳名與免分散，直接抗拒遍滿全地的命令（創九1）
+    surfaces:
+      - {phrase: 來吧！我們要做磚，把磚燒透了, verses: [3]}
+      - {phrase: 來吧！我們要建造一座城和一座塔，塔頂通天, verses: [4]}
+      - {phrase: 免得我們分散在全地上, verses: [4]}
+  - name: 假合一
+    type: 神學
+    evidence: 3-4節；CT 靈訓整理七項特徵：人意代神意、人工代神工、傳自己的名、維持團結假象等
+    surfaces:
+      - {phrase: 傳揚我們的名, verses: [4]}
+  - name: 巴別塔與五旬節
+    type: 互文
+    evidence: 7節「我們下去」對應徒二1-11聖靈澆灌解開語言變亂；KC 詳論真合一以羔羊工作為根基（啟五9）
+    surfaces:
+      - {phrase: 我們下去, verses: [7]}
+  - name: 言語的混亂
+    type: 主題
+    evidence: 7、9節變亂口音使言語不通；原文「變亂」如煮菜混拌難辨原貌；治本不治標——未拆塔而變亂人
+    surfaces:
+      - {phrase: 變亂他們的口音, verses: [7]}
+      - {phrase: 變亂天下人的言語, verses: [9]}
+  - name: 巴別
+    type: 地點
+    evidence: 9節；巴比倫語「神的門」，希伯來文諧音「變亂」；榮耀之名成羞辱之名
+  - name: 希伯
+    type: 人物
+    evidence: 14-17節閃系家譜中的關鍵人物，希伯來名稱傳統上溯於他
+  - name: 他拉
+    type: 人物
+    evidence: 26-32節；帶全家出吾珥往迦南，走到哈蘭住下，205歲死在哈蘭；書廿四2記他事奉別神
+    surfaces:
+      - {phrase: 他拉, verses: [26, 27, 28, 31, 32]}
+  - name: 亞伯蘭
+    type: 人物
+    evidence: 26-31節；名意「崇高的父」；徒七2-4記神的呼召在吾珥臨到他
+  - name: 迦勒底吾珥的位置
+    type: 解經爭議
+    evidence: 28節；主流考證為伊拉克南部蘇美名城，GT 背景註釋另提北美索不達米亞同名小鎮的可能
+    surfaces:
+      - {phrase: 迦勒底的吾珥, verses: [28]}
+  - name: 撒萊
+    type: 人物
+    evidence: 29-31節；名意「公主」；30節特記不生育，凸顯選民出於神的作為
+  - name: 吾珥
+    type: 地點
+    evidence: 31節；當時中東文明最先進的城市之一，居民拜月神
+    surfaces:
+      - {phrase: 吾珥, verses: [31]}
+  - name: 哈蘭
+    type: 地點
+    evidence: 31-32節；幼發拉底河上游商道要城，亦拜月神；他拉一家停留並死於此
+    surfaces:
+      - {phrase: 哈蘭, verses: [31, 32]}
+  - name: 他拉生亞伯蘭的年齡與離開哈蘭年代
+    type: 解經爭議
+    evidence: 26、32節與十二4、徒七4合算；常見解法：他拉七十歲起生三子，約一百三十歲生亞伯蘭
+  - name: 巴別塔是否為美索不達米亞神塔
+    type: 解經爭議
+    evidence: GT 背景註釋詳述廟塔（ziggurat）功能；雷氏認為本塔主要是聚集點與名聲象徵，不宜直接等同神塔

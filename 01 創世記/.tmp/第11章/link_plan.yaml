@@ -1,0 +1,143 @@
+book: 創世記
+chapter: 11
+A_use_directly:
+- name: 示拿地
+  suggested_type: 地點
+  evidence: 2節巴比倫平原；GT 背景註釋指語言學上等同「蘇美」，人類文明最先出現之地
+  match_type: exact
+  existing_title: 示拿地
+  existing_path: link_folder/地點/示拿地.md
+- name: 巴別塔
+  suggested_type: 主題
+  evidence: 3-4節建城造塔塔頂通天；動機是傳名與免分散，直接抗拒遍滿全地的命令（創九1）
+  surfaces:
+  - phrase: 來吧！我們要做磚，把磚燒透了
+    verses:
+    - 3
+  - phrase: 來吧！我們要建造一座城和一座塔，塔頂通天
+    verses:
+    - 4
+  - phrase: 免得我們分散在全地上
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 巴別塔
+  existing_path: link_folder/主題/巴別塔.md
+- name: 假合一
+  suggested_type: 神學
+  evidence: 3-4節；CT 靈訓整理七項特徵：人意代神意、人工代神工、傳自己的名、維持團結假象等
+  surfaces:
+  - phrase: 傳揚我們的名
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 假合一
+  existing_path: link_folder/神學/假合一.md
+- name: 巴別塔與五旬節
+  suggested_type: 互文
+  evidence: 7節「我們下去」對應徒二1-11聖靈澆灌解開語言變亂；KC 詳論真合一以羔羊工作為根基（啟五9）
+  surfaces:
+  - phrase: 我們下去
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 巴別塔與五旬節
+  existing_path: link_folder/互文/巴別塔與五旬節.md
+- name: 言語的混亂
+  suggested_type: 主題
+  evidence: 7、9節變亂口音使言語不通；原文「變亂」如煮菜混拌難辨原貌；治本不治標——未拆塔而變亂人
+  surfaces:
+  - phrase: 變亂他們的口音
+    verses:
+    - 7
+  - phrase: 變亂天下人的言語
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 言語的混亂
+  existing_path: link_folder/主題/言語的混亂.md
+- name: 巴別
+  suggested_type: 地點
+  evidence: 9節；巴比倫語「神的門」，希伯來文諧音「變亂」；榮耀之名成羞辱之名
+  match_type: exact
+  existing_title: 巴別
+  existing_path: link_folder/地點/巴別.md
+- name: 希伯
+  suggested_type: 人物
+  evidence: 14-17節閃系家譜中的關鍵人物，希伯來名稱傳統上溯於他
+  match_type: exact
+  existing_title: 希伯
+  existing_path: link_folder/人物/希伯.md
+- name: 他拉
+  suggested_type: 人物
+  evidence: 26-32節；帶全家出吾珥往迦南，走到哈蘭住下，205歲死在哈蘭；書廿四2記他事奉別神
+  surfaces:
+  - phrase: 他拉
+    verses:
+    - 26
+    - 27
+    - 28
+    - 31
+    - 32
+  match_type: exact
+  existing_title: 他拉
+  existing_path: link_folder/人物/他拉.md
+- name: 亞伯蘭
+  suggested_type: 人物
+  evidence: 26-31節；名意「崇高的父」；徒七2-4記神的呼召在吾珥臨到他
+  match_type: exact
+  existing_title: 亞伯蘭
+  existing_path: link_folder/人物/亞伯蘭.md
+- name: 迦勒底吾珥的位置
+  suggested_type: 解經爭議
+  evidence: 28節；主流考證為伊拉克南部蘇美名城，GT 背景註釋另提北美索不達米亞同名小鎮的可能
+  surfaces:
+  - phrase: 迦勒底的吾珥
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 迦勒底吾珥的位置
+  existing_path: link_folder/解經爭議/迦勒底吾珥的位置.md
+- name: 撒萊
+  suggested_type: 人物
+  evidence: 29-31節；名意「公主」；30節特記不生育，凸顯選民出於神的作為
+  match_type: exact
+  existing_title: 撒萊
+  existing_path: link_folder/人物/撒萊.md
+- name: 吾珥
+  suggested_type: 地點
+  evidence: 31節；當時中東文明最先進的城市之一，居民拜月神
+  surfaces:
+  - phrase: 吾珥
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 吾珥
+  existing_path: link_folder/地點/吾珥.md
+- name: 哈蘭
+  suggested_type: 地點
+  evidence: 31-32節；幼發拉底河上游商道要城，亦拜月神；他拉一家停留並死於此
+  surfaces:
+  - phrase: 哈蘭
+    verses:
+    - 31
+    - 32
+  match_type: exact
+  existing_title: 哈蘭
+  existing_path: link_folder/地點/哈蘭.md
+- name: 他拉生亞伯蘭的年齡與離開哈蘭年代
+  suggested_type: 解經爭議
+  evidence: 26、32節與十二4、徒七4合算；常見解法：他拉七十歲起生三子，約一百三十歲生亞伯蘭
+  match_type: exact
+  existing_title: 他拉生亞伯蘭的年齡與離開哈蘭年代
+  existing_path: link_folder/解經爭議/他拉生亞伯蘭的年齡與離開哈蘭年代.md
+- name: 巴別塔是否為美索不達米亞神塔
+  suggested_type: 解經爭議
+  evidence: GT 背景註釋詳述廟塔（ziggurat）功能；雷氏認為本塔主要是聚集點與名聲象徵，不宜直接等同神塔
+  match_type: exact
+  existing_title: 巴別塔是否為美索不達米亞神塔
+  existing_path: link_folder/解經爭議/巴別塔是否為美索不達米亞神塔.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
