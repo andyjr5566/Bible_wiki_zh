@@ -8,10 +8,10 @@ from pathlib import Path
 import yaml
 
 try:
-    from .book_paths import BOOK_NUMBERS, book_directory
+    from .book_paths import BOOK_NUMBERS, book_directory, chapter_link
     from . import console
 except ImportError:
-    from book_paths import BOOK_NUMBERS, book_directory
+    from book_paths import BOOK_NUMBERS, book_directory, chapter_link
     import console
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -78,7 +78,7 @@ def prepare(book, chapter):
 def render_block(book, chapter, update):
     return (
         f"<!-- accumulation:{book}:{chapter}:start -->\n"
-        f"#### 第{chapter}章\n"
+        f"#### {chapter_link(book, chapter)}\n"
         f"- 本章重點：{update['summary'].strip()}\n"
         f"- 與本章關聯：{update['relation'].strip()}\n"
         f"<!-- accumulation:{book}:{chapter}:end -->"

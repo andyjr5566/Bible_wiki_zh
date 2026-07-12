@@ -14,10 +14,10 @@ from pathlib import Path
 import yaml
 
 try:
-    from .book_paths import book_directory, canonical_book_name
+    from .book_paths import book_directory, canonical_book_name, chapter_link
     from . import console
 except ImportError:
-    from book_paths import book_directory, canonical_book_name
+    from book_paths import book_directory, canonical_book_name, chapter_link
     import console
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -128,7 +128,8 @@ def extract_chapter_blocks(content):
             chapters.append((*combined, body))
             continue
         if title in BOOK_RANK:
-            h4s = list(re.finditer(r"^####\s+第\s*(\d+)\s*章\s*$", body, re.M))
+            h4s = list(re.finditer(
+                r"^####\s+(?:\[\[[^\]|]*\|)?第\s*(\d+)\s*章(?:\]\])?\s*$", body, re.M))
             if h4s:
                 group_prefix = body[:h4s[0].start()].strip()
                 residual = [group_prefix] if group_prefix else []
@@ -159,7 +160,7 @@ def render_chapter_accumulation(chapters):
         for chapter, content in sorted(books[book]):
             block = (
                 f"<!-- accumulation:{book}:{chapter}:start -->\n"
-                f"#### 第{chapter}章\n"
+                f"#### {chapter_link(book, chapter)}\n"
                 f"{content}\n"
                 f"<!-- accumulation:{book}:{chapter}:end -->"
             )

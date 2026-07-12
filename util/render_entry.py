@@ -18,6 +18,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from .book_paths import chapter_link
+except ImportError:
+    from book_paths import chapter_link
+
 ROOT = Path(__file__).resolve().parent.parent
 LINK_FOLDER = ROOT / "link_folder"
 SCHEMA_PATH = ROOT / "_config" / "schemas" / "entry_content.schema.json"
@@ -220,7 +225,7 @@ def _render_accumulations(accums):
             bucket = merged[(book, chapter)]
             block = (
                 f"<!-- accumulation:{book}:{chapter}:start -->\n"
-                f"#### 第{chapter}章\n"
+                f"#### {chapter_link(book, chapter)}\n"
                 f"- 本章重點：{'；'.join(bucket['summaries'])}\n"
                 f"- 與本章關聯：{'；'.join(bucket['relations'])}\n"
                 f"<!-- accumulation:{book}:{chapter}:end -->"

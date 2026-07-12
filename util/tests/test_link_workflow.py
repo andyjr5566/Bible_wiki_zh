@@ -156,11 +156,14 @@ class UpdateTests(unittest.TestCase):
                 self.assertEqual(1, apply_updates(manifest))
                 self.assertEqual(0, apply_updates(manifest))
             rendered = entry_path.read_text(encoding="utf-8")
-            self.assertLess(rendered.index("#### 第1章"), rendered.index("#### 第2章"))
+            self.assertLess(
+                rendered.index("#### [[01 創世記/第1章|第1章]]"),
+                rendered.index("#### 第2章"),
+            )
             accumulation = rendered[
                 rendered.index("## 按書卷累積"):rendered.index("## 主題發展")
             ]
-            self.assertIn("#### 第1章", accumulation)
+            self.assertIn("#### [[01 創世記/第1章|第1章]]", accumulation)
 
     def test_apply_inserts_new_book_group_in_canonical_order(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -278,11 +281,14 @@ class FormatNormalizationTests(unittest.TestCase):
             )
             rendered = normalize_entry(entry)
             self.assertIn("定義內容\n\n補充摘要", rendered)
-            self.assertLess(rendered.index("#### 第1章"), rendered.index("#### 第2章"))
+            self.assertLess(
+                rendered.index("#### [[01 創世記/第1章|第1章]]"),
+                rendered.index("#### [[01 創世記/第2章|第2章]]"),
+            )
             accumulation = rendered[
                 rendered.index("## 按書卷累積"):rendered.index("## 主題發展")
             ]
-            self.assertIn("#### 第1章", accumulation)
+            self.assertIn("#### [[01 創世記/第1章|第1章]]", accumulation)
             self.assertEqual(1, rendered.count("### 創世記\n"))
             self.assertNotIn("### 主題分析", accumulation)
             development = rendered[

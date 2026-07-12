@@ -62,7 +62,10 @@ GOLDEN_CANDIDATE = {
 class RenderStructureTests(unittest.TestCase):
     def test_formal_orders_chapters_and_uses_stable_markers(self):
         rendered = render_entry(GOLDEN_FORMAL, known_types=KNOWN_TYPES)
-        self.assertLess(rendered.index("#### 第25章"), rendered.index("#### 第26章"))
+        self.assertLess(
+            rendered.index("#### [[02 出埃及記/第25章|第25章]]"),
+            rendered.index("#### [[02 出埃及記/第26章|第26章]]"),
+        )
         self.assertIn("<!-- accumulation:出埃及記:25:start -->", rendered)
         self.assertIn("### 出埃及記", rendered)
         # H2 依 scheme 順序

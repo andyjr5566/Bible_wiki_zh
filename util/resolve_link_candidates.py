@@ -241,7 +241,8 @@ def has_book_chapter_data(entry_path, book, chapter, root=ROOT):
         return True
     direct = re.compile(rf"^###\s+{re.escape(book)}\s*第{re.escape(str(chapter))}章\s*$", re.M)
     nested = re.compile(
-        rf"^###\s+{re.escape(book)}\s*$[\s\S]*?^####\s+第{re.escape(str(chapter))}章\s*$",
+        rf"^###\s+{re.escape(book)}\s*$[\s\S]*?"
+        rf"^####\s+(?:\[\[[^\]|]*\|)?第{re.escape(str(chapter))}章(?:\]\])?\s*$",
         re.M,
     )
     return bool(direct.search(text) or nested.search(text))

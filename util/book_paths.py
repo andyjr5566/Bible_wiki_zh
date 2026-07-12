@@ -38,6 +38,23 @@ def canonical_book_name(folder_or_book: str) -> str:
     return book
 
 
+def chapter_link(book: str, chapter) -> str:
+    """Wikilink from an accumulation heading to its chapter note.
+
+    Returns e.g. ``[[01 創世記/第1章|第1章]]`` so the ``#### 第N章`` heading
+    resolves to the ordered book folder. Falls back to a plain ``第N章`` label
+    when *book* is not a known canonical book, so callers never emit a broken
+    ordered-folder prefix.
+    """
+    label = f"第{chapter}章"
+    canonical = canonical_book_name(book)
+    try:
+        dir_name = ordered_book_dir_name(canonical)
+    except ValueError:
+        return label
+    return f"[[{dir_name}/{label}|{label}]]"
+
+
 def book_directory(root: Path, book: str) -> Path:
     """Resolve an existing ordered/legacy folder, preferring the ordered form."""
     root = Path(root)

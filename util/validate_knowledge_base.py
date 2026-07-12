@@ -165,7 +165,8 @@ def validate_file(path, strict=False):
                     errors.append(
                         f"{relative}: {key[0]}第{key[1]}章不在「### {key[0]}」之下"
                     )
-                if not re.match(rf"\s*####\s+第{key[1]}章\s*$", body, re.M):
+                if not re.match(
+                    rf"\s*####\s+(?:\[\[[^\]|]*\|)?第{key[1]}章(?:\]\])?\s*$", body, re.M):
                     errors.append(
                         f"{relative}: {key[0]}第{key[1]}章標記內缺少對應 H4"
                     )
