@@ -1,0 +1,232 @@
+book: 創世記
+chapter: 9
+A_use_directly:
+- name: 挪亞
+  suggested_type: 人物
+  evidence: 1-29節；蒙福領約、醉酒失態、宣告三子神諭，950歲收束
+  match_type: exact
+  existing_title: 挪亞
+  existing_path: link_folder/人物/挪亞.md
+- name: 生養眾多與治理
+  suggested_type: 主題
+  evidence: 1、7節重申創一28使命（沿用舊版僅連1節）
+  surfaces:
+  - phrase: 你們要生養眾多，遍滿了地
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 生養眾多與治理
+  existing_path: link_folder/主題/生養眾多與治理.md
+- name: 創世記9章洪水後准吃肉
+  suggested_type: 互文
+  evidence: 3節首次明准吃肉；對照創一29菜蔬；提前四3-4
+  surfaces:
+  - phrase: 凡活著的動物都可以作你們的食物
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 創世記9章洪水後准吃肉
+  existing_path: link_folder/互文/創世記9章洪水後准吃肉.md
+- name: 血的尊重
+  suggested_type: 神學
+  evidence: 4節血代表生命屬神；GT 背景註釋指禁令意在宰後放血、把生命歸還賜生命者，在古近東獨特
+  surfaces:
+  - phrase: 不可吃
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 血的尊重
+  existing_path: link_folder/神學/血的尊重.md
+- name: 人的尊嚴與神的形像
+  suggested_type: 神學
+  evidence: 5-6節生命追討的根據是人按神形像受造
+  surfaces:
+  - phrase: 流你們血、害你們命的，無論是獸是人，我必討他的罪
+    verses:
+    - 5
+  - phrase: 神造人是照自己的形像造的
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 人的尊嚴與神的形像
+  existing_path: link_folder/神學/人的尊嚴與神的形像.md
+- name: 死刑與創世記9章6節
+  suggested_type: 解經爭議
+  evidence: 6節；KC/BH/GT 視為刑罰權（政府佩劍）的設立（羅十三1-4），CT 較保留地引述「許多解經家認為」
+  surfaces:
+  - phrase: 凡流人血的，他的血也必被人所流
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 死刑與創世記9章6節
+  existing_path: link_folder/解經爭議/死刑與創世記9章6節.md
+- name: 挪亞之約
+  suggested_type: 神學
+  evidence: 8-17節神與挪亞後裔及一切活物立約，不再以洪水滅絕
+  surfaces:
+  - phrase: 我與你們和你們的後裔立約
+    verses:
+    - 9
+  - phrase: 不再被洪水滅絕
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 挪亞之約
+  existing_path: link_folder/神學/挪亞之約.md
+- name: 無條件之約
+  suggested_type: 神學
+  evidence: 12、16節永約；KC/GT 指保全條款全由神承擔的單方面之約
+  surfaces:
+  - phrase: 永約
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 無條件之約
+  existing_path: link_folder/神學/無條件之約.md
+- name: 虹
+  suggested_type: 主題
+  evidence: 13-16節立約記號；虹與弓同字，CT 讀弓朝天為安慰；啟四3寶座周圍的虹
+  match_type: exact
+  existing_title: 虹
+  existing_path: link_folder/主題/虹.md
+- name: 神的記念
+  suggested_type: 神學
+  evidence: 15-16節神看見虹便記念約，信實行動的擬人化表達
+  surfaces:
+  - phrase: 記念
+    verses:
+    - 15
+    - 16
+  match_type: exact
+  existing_title: 神的記念
+  existing_path: link_folder/神學/神的記念.md
+- name: 閃
+  suggested_type: 人物
+  evidence: 18、23、26-27節；遮蓋父親，耶和華被稱為「閃的神」
+  match_type: exact
+  existing_title: 閃
+  existing_path: link_folder/人物/閃.md
+- name: 含
+  suggested_type: 人物
+  evidence: 18、22節；看見並宣揚父親羞恥，是迦南的父親
+  match_type: exact
+  existing_title: 含
+  existing_path: link_folder/人物/含.md
+- name: 雅弗
+  suggested_type: 人物
+  evidence: 18、23、27節；與閃遮蓋父親，神諭為擴張並住閃帳棚
+  match_type: exact
+  existing_title: 雅弗
+  existing_path: link_folder/人物/雅弗.md
+- name: 迦南
+  suggested_type: 人物
+  evidence: 18、22、25-27節；咒詛直接點名的對象，不等於含的所有後裔
+  match_type: exact
+  existing_title: 迦南
+  existing_path: link_folder/人物/迦南.md
+- name: 罪性的持續
+  suggested_type: 神學
+  evidence: 20-21節；洪水潔淨了地卻沒有改變人心，義人挪亞仍醉酒失去自制
+  surfaces:
+  - phrase: 挪亞作起農夫來，栽了一個葡萄園
+    verses:
+    - 20
+  - phrase: 他喝了園中的酒便醉了
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 罪性的持續
+  existing_path: link_folder/神學/罪性的持續.md
+- name: 赤身露體與羞恥
+  suggested_type: 神學
+  evidence: 21節帳棚裡赤身；與創三7、9:22-23兒子反應相連
+  surfaces:
+  - phrase: 赤著身子
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 赤身露體與羞恥
+  existing_path: link_folder/神學/赤身露體與羞恥.md
+- name: 遮蓋與宣揚
+  suggested_type: 主題
+  evidence: 22-23節含宣揚對比閃雅弗倒退遮蓋；彼前四8愛能遮掩許多的罪
+  surfaces:
+  - phrase: 告訴他兩個弟兄
+    verses:
+    - 22
+  - phrase: 倒退著進去，給他父親蓋上
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 遮蓋與宣揚
+  existing_path: link_folder/主題/遮蓋與宣揚.md
+- name: 含看見父親赤身的含義
+  suggested_type: 解經爭議
+  evidence: 22、24節；經文明載看見與外告；猶太傳說與更深行為推測不可混同明文
+  surfaces:
+  - phrase: 小兒子向他所做的事
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 含看見父親赤身的含義
+  existing_path: link_folder/解經爭議/含看見父親赤身的含義.md
+- name: 為何咒詛迦南而非含
+  suggested_type: 解經爭議
+  evidence: 25節；諸說並存：迦南先見、小兒子廣義、代表後裔、預見命運、宣告未全存
+  surfaces:
+  - phrase: 迦南當受咒詛
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 為何咒詛迦南而非含
+  existing_path: link_folder/解經爭議/為何咒詛迦南而非含.md
+- name: 雅弗住在閃的帳棚
+  suggested_type: 互文
+  evidence: 27節；基督教來源以弗三6解作外邦人分享由閃族而來的應許
+  surfaces:
+  - phrase: 住在閃的帳棚裡
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 雅弗住在閃的帳棚
+  existing_path: link_folder/互文/雅弗住在閃的帳棚.md
+- name: 洪水後自然秩序的保存
+  suggested_type: 神學
+  evidence: 8:22的季節應許構成本約的生活背景
+  match_type: exact
+  existing_title: 洪水後自然秩序的保存
+  existing_path: link_folder/神學/洪水後自然秩序的保存.md
+- name: 人的全面敗壞
+  suggested_type: 神學
+  evidence: 洪水沒有改造人心（8:21），世界保存出於神憐憫
+  match_type: exact
+  existing_title: 人的全面敗壞
+  existing_path: link_folder/神學/人的全面敗壞.md
+- name: 挪亞與亞當的平行
+  suggested_type: 互文
+  evidence: 兩人都領受生養治理使命，也都在新開始後犯罪裸露；KC 對照亞當、挪亞、亞倫諸子、掃羅、教會的失敗模式
+  match_type: exact
+  existing_title: 挪亞與亞當的平行
+  existing_path: link_folder/互文/挪亞與亞當的平行.md
+- name: 基督徒是否可吃血
+  suggested_type: 解經爭議
+  evidence: 徒十五20、29重申禁戒血；艾基斯主張仍應禁戒，另一理解視為初代團契安排
+  match_type: exact
+  existing_title: 基督徒是否可吃血
+  existing_path: link_folder/解經爭議/基督徒是否可吃血.md
+- name: 挪亞三子神諭的性質
+  suggested_type: 解經爭議
+  evidence: 25-27節；聖靈感動的預言或古代族長宣告，來源判斷不一；GT 背景註釋指無「耶和華如此說」
+  match_type: exact
+  existing_title: 挪亞三子神諭的性質
+  existing_path: link_folder/解經爭議/挪亞三子神諭的性質.md
+- name: 迦南咒詛的種族主義誤用
+  suggested_type: 解經爭議
+  evidence: 咒詛不涉及膚色，只點名迦南而非整個含族；雷氏指古迦南人已不存為可辨族群
+  match_type: exact
+  existing_title: 迦南咒詛的種族主義誤用
+  existing_path: link_folder/解經爭議/迦南咒詛的種族主義誤用.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

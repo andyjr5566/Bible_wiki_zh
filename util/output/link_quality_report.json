@@ -1,7 +1,7 @@
 {
-  "total_warnings": 30,
+  "total_warnings": 31,
   "critical_count": 0,
-  "warning_count": 30,
+  "warning_count": 31,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -119,6 +119,13 @@
       "type": "short_word_link",
       "severity": "warning",
       "source": "link_folder/文化/山羊.md",
+      "target": "血",
+      "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "link_folder/文化/斑鳩.md",
       "target": "血",
       "message": "短詞 link 缺少來源支撐: [[血]]，檢查是否為普通詞誤連"
     },
