@@ -1,0 +1,409 @@
+book: 創世記
+chapter: 14
+A_use_directly:
+- name: 暗拉非
+  suggested_type: 人物
+  evidence: 1、9節示拿王；GT 論不能可靠等同漢摩拉比
+  match_type: exact
+  existing_title: 暗拉非
+  existing_path: link_folder/人物/暗拉非.md
+- name: 亞略
+  suggested_type: 人物
+  evidence: 1、9節以拉撒王；GT 記馬里文獻有同名王子
+  match_type: exact
+  existing_title: 亞略
+  existing_path: link_folder/人物/亞略.md
+- name: 基大老瑪
+  suggested_type: 人物
+  evidence: 1、4-5、9、17節以攔王，四王首領，五城事奉他十二年
+  match_type: exact
+  existing_title: 基大老瑪
+  existing_path: link_folder/人物/基大老瑪.md
+- name: 提達
+  suggested_type: 人物
+  evidence: 1、9節戈印王；GT 記與赫人王族名 Tudhaliyas 相似
+  match_type: exact
+  existing_title: 提達
+  existing_path: link_folder/人物/提達.md
+- name: 示拿地
+  suggested_type: 地點
+  evidence: 1、9節暗拉非作示拿王；即巴比倫一帶
+  surfaces:
+  - phrase: 示拿
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 示拿地
+  existing_path: link_folder/地點/示拿地.md
+- name: 以拉撒
+  suggested_type: 地點
+  evidence: 1、9節亞略之國；或在米所波大米北部
+  match_type: exact
+  existing_title: 以拉撒
+  existing_path: link_folder/地點/以拉撒.md
+- name: 以攔
+  suggested_type: 地點
+  evidence: 1、9節基大老瑪之國；即後來的波斯（今伊朗西南）
+  match_type: exact
+  existing_title: 以攔
+  existing_path: link_folder/地點/以攔.md
+- name: 戈印
+  suggested_type: 地點
+  evidence: 1、9節提達之國；字義「列國」，或指部族聯盟
+  match_type: exact
+  existing_title: 戈印
+  existing_path: link_folder/地點/戈印.md
+- name: 所多瑪
+  suggested_type: 地點
+  evidence: 2、8、10-12、17、21-22節；戰敗被擄掠，羅得正住在城中
+  match_type: exact
+  existing_title: 所多瑪
+  existing_path: link_folder/地點/所多瑪.md
+- name: 比拉（所多瑪王）
+  suggested_type: 人物
+  evidence: 2節所多瑪王；原文字義「禮物，毀滅」
+  surfaces:
+  - phrase: 比拉
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 比拉（所多瑪王）
+  existing_path: link_folder/人物/比拉（所多瑪王）.md
+- name: 蛾摩拉
+  suggested_type: 地點
+  evidence: 2、8、10-11節；與所多瑪同敗，財物糧食被擄
+  match_type: exact
+  existing_title: 蛾摩拉
+  existing_path: link_folder/地點/蛾摩拉.md
+- name: 比沙（蛾摩拉王）
+  suggested_type: 人物
+  evidence: 2節蛾摩拉王；原文字義「罪惡之子」
+  match_type: exact
+  existing_title: 比沙（蛾摩拉王）
+  existing_path: link_folder/人物/比沙（蛾摩拉王）.md
+- name: 押瑪
+  suggested_type: 地點
+  evidence: 2、8節五城之一；申廿九23與所多瑪同滅
+  match_type: exact
+  existing_title: 押瑪
+  existing_path: link_folder/地點/押瑪.md
+- name: 示納（押瑪王）
+  suggested_type: 人物
+  evidence: 2節押瑪王
+  match_type: exact
+  existing_title: 示納（押瑪王）
+  existing_path: link_folder/人物/示納（押瑪王）.md
+- name: 洗扁
+  suggested_type: 地點
+  evidence: 2、8節五城之一；字義「瞪羚」
+  match_type: exact
+  existing_title: 洗扁
+  existing_path: link_folder/地點/洗扁.md
+- name: 善以別（洗扁王）
+  suggested_type: 人物
+  evidence: 2節洗扁王；字義「高飛，翅膀」
+  match_type: exact
+  existing_title: 善以別（洗扁王）
+  existing_path: link_folder/人物/善以別（洗扁王）.md
+- name: 瑣珥
+  suggested_type: 地點
+  evidence: 2、8節比拉就是瑣珥；十九章羅得逃往之城
+  match_type: exact
+  existing_title: 瑣珥
+  existing_path: link_folder/地點/瑣珥.md
+- name: 西訂谷
+  suggested_type: 地點
+  evidence: 3、8、10節會戰之地，多石漆坑；後成鹽海一部
+  match_type: exact
+  existing_title: 西訂谷
+  existing_path: link_folder/地點/西訂谷.md
+- name: 鹽海
+  suggested_type: 地點
+  evidence: 3節西訂谷就是鹽海（死海）
+  match_type: exact
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 亞特律加寧
+  suggested_type: 地點
+  evidence: 5節殺敗利乏音人之地；巴珊境內，後為噩王之都近鄰
+  match_type: exact
+  existing_title: 亞特律加寧
+  existing_path: link_folder/地點/亞特律加寧.md
+- name: 利乏音人
+  suggested_type: 人物
+  evidence: 5節；身量高大的土人（申二11）
+  match_type: exact
+  existing_title: 利乏音人
+  existing_path: link_folder/人物/利乏音人.md
+- name: 哈麥
+  suggested_type: 地點
+  evidence: 5節殺敗蘇西人之地；死海東北
+  match_type: exact
+  existing_title: 哈麥
+  existing_path: link_folder/地點/哈麥.md
+- name: 蘇西人
+  suggested_type: 人物
+  evidence: 5節；或即申二20散送冥人
+  match_type: exact
+  existing_title: 蘇西人
+  existing_path: link_folder/人物/蘇西人.md
+- name: 沙微基列亭
+  suggested_type: 地點
+  evidence: 5節殺敗以米人之地；約但河東摩押境內
+  match_type: exact
+  existing_title: 沙微基列亭
+  existing_path: link_folder/地點/沙微基列亭.md
+- name: 以米人
+  suggested_type: 人物
+  evidence: 5節；住摩押地的巨人（申二10-11）
+  match_type: exact
+  existing_title: 以米人
+  existing_path: link_folder/人物/以米人.md
+- name: 何利人
+  suggested_type: 人物
+  evidence: 6節西珥山的穴居土人（申二12）
+  match_type: exact
+  existing_title: 何利人
+  existing_path: link_folder/人物/何利人.md
+- name: 西珥山
+  suggested_type: 地點
+  evidence: 6節何利人之地；後為以東境
+  match_type: exact
+  existing_title: 西珥山
+  existing_path: link_folder/地點/西珥山.md
+- name: 伊勒巴蘭
+  suggested_type: 地點
+  evidence: 6節四王殺到之極南處；或即紅海東岔的以拉他
+  match_type: exact
+  existing_title: 伊勒巴蘭
+  existing_path: link_folder/地點/伊勒巴蘭.md
+- name: 安密巴
+  suggested_type: 地點
+  evidence: 7節就是加低斯；字義「審判之泉」
+  match_type: exact
+  existing_title: 安密巴
+  existing_path: link_folder/地點/安密巴.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: 7節；後來以色列人曠野行程要站（申一2）
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 亞瑪力人
+  suggested_type: 人物
+  evidence: 7節亞瑪力全地；「亞瑪力」為後起之名（創卅六12）
+  surfaces:
+  - phrase: 亞瑪力全地的人
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 亞瑪力人
+  existing_path: link_folder/人物/亞瑪力人.md
+- name: 哈洗遜他瑪
+  suggested_type: 地點
+  evidence: 7節亞摩利人所住；即隱基底（代下二十2）
+  match_type: exact
+  existing_title: 哈洗遜他瑪
+  existing_path: link_folder/地點/哈洗遜他瑪.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 7、13節；住哈洗遜他瑪，幔利亦屬亞摩利人
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 亞伯蘭
+  suggested_type: 人物
+  evidence: 12-24節；聞訊率壯丁追擊救羅得、受麥基洗德祝福、拒所多瑪王財物
+  match_type: exact
+  existing_title: 亞伯蘭
+  existing_path: link_folder/人物/亞伯蘭.md
+- name: 羅得
+  suggested_type: 人物
+  evidence: 12、16節；正住在所多瑪，與財物同被擄，被亞伯蘭奪回
+  match_type: exact
+  existing_title: 羅得
+  existing_path: link_folder/人物/羅得.md
+- name: 希伯來人
+  suggested_type: 人物
+  evidence: 13節聖經首次出現此名；「過來之人」，外人對選民的稱呼
+  match_type: exact
+  existing_title: 希伯來人
+  existing_path: link_folder/人物/希伯來人.md
+- name: 幔利
+  suggested_type: 地點
+  evidence: 13、24節；亞伯蘭住其橡樹處，與以實各亞乃同盟
+  match_type: exact
+  existing_title: 幔利
+  existing_path: link_folder/地點/幔利.md
+- name: 以實各
+  suggested_type: 人物
+  evidence: 13、24節；幔利之弟兄，與亞伯蘭聯盟
+  match_type: exact
+  existing_title: 以實各
+  existing_path: link_folder/人物/以實各.md
+- name: 亞乃
+  suggested_type: 人物
+  evidence: 13、24節；幔利之弟兄，與亞伯蘭聯盟
+  match_type: exact
+  existing_title: 亞乃
+  existing_path: link_folder/人物/亞乃.md
+- name: 亞伯蘭的愛心與勇氣
+  suggested_type: 主題
+  evidence: 14節；以數百家丁追擊四王聯軍，CT 論對人有愛心、對神有信心
+  surfaces:
+  - phrase: 亞伯蘭聽見他姪兒【原文作弟兄】被擄去
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 亞伯蘭的愛心與勇氣
+  existing_path: link_folder/主題/亞伯蘭的愛心與勇氣.md
+- name: 但
+  suggested_type: 地點
+  evidence: 14節直追到但；原名拉億，士十八29改名
+  surfaces:
+  - phrase: 但
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 但
+  existing_path: link_folder/地點/但.md
+- name: 大馬士革
+  suggested_type: 地點
+  evidence: 15節追到大馬色左邊的何把；存到如今的古城
+  surfaces:
+  - phrase: 大馬色
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 大馬士革
+  existing_path: link_folder/地點/大馬士革.md
+- name: 何把
+  suggested_type: 地點
+  evidence: 15節；大馬色以北的隱匿處
+  match_type: exact
+  existing_title: 何把
+  existing_path: link_folder/地點/何把.md
+- name: 王谷
+  suggested_type: 地點
+  evidence: 17節沙微谷就是王谷；近耶路撒冷，或即汲淪谷（撒下十八18）
+  surfaces:
+  - phrase: 沙微谷
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 王谷
+  existing_path: link_folder/地點/王谷.md
+- name: 撒冷
+  suggested_type: 地點
+  evidence: 18節麥基洗德之城；通常辨識為耶路撒冷（詩七十六2）
+  match_type: exact
+  existing_title: 撒冷
+  existing_path: link_folder/地點/撒冷.md
+- name: 麥基洗德
+  suggested_type: 人物
+  evidence: 18-20節撒冷王、至高神祭司；帶餅和酒迎接並祝福亞伯蘭
+  match_type: exact
+  existing_title: 麥基洗德
+  existing_path: link_folder/人物/麥基洗德.md
+- name: 麥基洗德的餅和酒是否預表聖餐
+  suggested_type: 解經爭議
+  evidence: 18節；KC 明確反對直接等同主餐，中文註釋解作屬靈供應
+  surfaces:
+  - phrase: 餅和酒
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 麥基洗德的餅和酒是否預表聖餐
+  existing_path: link_folder/解經爭議/麥基洗德的餅和酒是否預表聖餐.md
+- name: 至高的神
+  suggested_type: 神學
+  evidence: 18-20、22節 El Elyon；迦南文學對主神的稱呼，亞伯蘭認作耶和華
+  surfaces:
+  - phrase: 至高神
+    verses:
+    - 18
+  - phrase: 耶和華
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 至高的神
+  existing_path: link_folder/神學/至高的神.md
+- name: 天地的主
+  suggested_type: 神學
+  evidence: 19、22節；天地的擁有者，一切財富的源頭
+  surfaces:
+  - phrase: 天地的主─至高的神
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 天地的主
+  existing_path: link_folder/神學/天地的主.md
+- name: 十分之一
+  suggested_type: 原文
+  evidence: 20節；聖經最早的什一奉獻，早於摩西律法（來七4）
+  match_type: exact
+  existing_title: 十分之一
+  existing_path: link_folder/原文/十分之一.md
+- name: 亞伯蘭拒絕所多瑪財物
+  suggested_type: 神學
+  evidence: 23節一根線一根鞋帶都不拿，免得所多瑪王說使亞伯蘭富足
+  surfaces:
+  - phrase: 凡是你的東西，就是一根線、一根鞋帶，我都不拿
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 亞伯蘭拒絕所多瑪財物
+  existing_path: link_folder/神學/亞伯蘭拒絕所多瑪財物.md
+- name: 「希伯來人」的意義
+  suggested_type: 原文
+  evidence: 13節；過來之人／希伯後裔／Habiru 諸說，GT 詳論
+  match_type: exact
+  existing_title: 「希伯來人」的意義
+  existing_path: link_folder/原文/「希伯來人」的意義.md
+- name: 「撒冷」名字含義
+  suggested_type: 原文
+  evidence: 18節；平安、和平、完美（來七2平安王）
+  match_type: exact
+  existing_title: 「撒冷」名字含義
+  existing_path: link_folder/原文/「撒冷」名字含義.md
+- name: 「麥基洗德」名字含義
+  suggested_type: 原文
+  evidence: 18節；仁義的王（來七2公義王）
+  match_type: exact
+  existing_title: 「麥基洗德」名字含義
+  existing_path: link_folder/原文/「麥基洗德」名字含義.md
+- name: 麥基洗德與基督豫表
+  suggested_type: 主題
+  evidence: 18-20節；詩一一〇4、來七章以其為基督君王祭司職分的預表
+  match_type: exact
+  existing_title: 麥基洗德與基督豫表
+  existing_path: link_folder/主題/麥基洗德與基督豫表.md
+- name: 得勝後的試探
+  suggested_type: 主題
+  evidence: 17、21節；KC 論得勝時刻常是危險時刻，所多瑪王如光明天使
+  match_type: exact
+  existing_title: 得勝後的試探
+  existing_path: link_folder/主題/得勝後的試探.md
+- name: 羅得的世俗選擇與後果
+  suggested_type: 主題
+  evidence: 12節；住所多瑪承受城市政治風險，被擄失財物與自由
+  match_type: exact
+  existing_title: 羅得的世俗選擇與後果
+  existing_path: link_folder/主題/羅得的世俗選擇與後果.md
+- name: 創世記14章四王的歷史辨識
+  suggested_type: 解經爭議
+  evidence: 1節；暗拉非不能等同漢摩拉比，四王無法在現存王表逐一確認
+  match_type: exact
+  existing_title: 創世記14章四王的歷史辨識
+  existing_path: link_folder/解經爭議/創世記14章四王的歷史辨識.md
+- name: 麥基洗德的身分
+  suggested_type: 解經爭議
+  evidence: 18節；閃、天使、基督顯現諸說，創世記以其為歷史人物
+  match_type: exact
+  existing_title: 麥基洗德的身分
+  existing_path: link_folder/解經爭議/麥基洗德的身分.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

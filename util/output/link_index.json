@@ -155,6 +155,16 @@
     "status": "formal",
     "aliases": []
   },
+  "供物": {
+    "path": "link_folder/主題/供物.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "供物",
+    "status": "formal",
+    "aliases": [
+      "供物"
+    ]
+  },
   "保護弱勢": {
     "path": "link_folder/主題/保護弱勢.md",
     "type": "主題",
@@ -251,6 +261,16 @@
     "title": "刀劍",
     "status": "formal",
     "aliases": []
+  },
+  "初熟之物": {
+    "path": "link_folder/主題/初熟之物.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "初熟之物",
+    "status": "formal",
+    "aliases": [
+      "初熟的供物"
+    ]
   },
   "利百加不孕": {
     "path": "link_folder/主題/利百加不孕.md",
@@ -382,6 +402,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "塞井",
+    "status": "formal",
+    "aliases": []
+  },
+  "壇": {
+    "path": "link_folder/主題/壇.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "壇",
     "status": "formal",
     "aliases": []
   },
@@ -1173,6 +1201,16 @@
       "Obedience brings healing"
     ]
   },
+  "脂油": {
+    "path": "link_folder/主題/脂油.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "脂油",
+    "status": "formal",
+    "aliases": [
+      "脂油"
+    ]
+  },
   "腰帶（繡花腰帶）": {
     "path": "link_folder/主題/腰帶（繡花腰帶）.md",
     "type": "主題",
@@ -1537,6 +1575,16 @@
     "status": "formal",
     "aliases": []
   },
+  "香壇": {
+    "path": "link_folder/主題/香壇.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "香壇",
+    "status": "formal",
+    "aliases": [
+      "會幕內的壇"
+    ]
+  },
   "鹽柱": {
     "path": "link_folder/主題/鹽柱.md",
     "type": "主題",
@@ -1642,6 +1690,16 @@
     "status": "formal",
     "aliases": []
   },
+  "倒血在壇腳": {
+    "path": "link_folder/事件/倒血在壇腳.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "倒血在壇腳",
+    "status": "formal",
+    "aliases": [
+      "倒在壇的腳那裡"
+    ]
+  },
   "借物賠償的律例": {
     "path": "link_folder/事件/借物賠償的律例.md",
     "type": "事件",
@@ -1674,6 +1732,16 @@
     "status": "formal",
     "aliases": []
   },
+  "償還加五分之一": {
+    "path": "link_folder/事件/償還加五分之一.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "償還加五分之一",
+    "status": "formal",
+    "aliases": [
+      "加五分之一償還"
+    ]
+  },
   "六十萬零三千五百五十人（出38：26）": {
     "path": "link_folder/事件/六十萬零三千五百五十人（出38：26）.md",
     "type": "事件",
@@ -1695,6 +1763,17 @@
       "利未人受聖職"
     ]
   },
+  "剝皮切塊": {
+    "path": "link_folder/事件/剝皮切塊.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "剝皮切塊",
+    "status": "formal",
+    "aliases": [
+      "剝去燔祭牲的皮",
+      "切成塊子"
+    ]
+  },
   "十二根柱子": {
     "path": "link_folder/事件/十二根柱子.md",
     "type": "事件",
@@ -1702,6 +1781,16 @@
     "title": "十二根柱子",
     "status": "formal",
     "aliases": []
+  },
+  "取下脂油": {
+    "path": "link_folder/事件/取下脂油.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "取下脂油",
+    "status": "formal",
+    "aliases": [
+      "取下脂油"
+    ]
   },
   "受託看管的律例": {
     "path": "link_folder/事件/受託看管的律例.md",
@@ -1768,6 +1857,17 @@
       "Sabbath gathering rules"
     ]
   },
+  "宰殺": {
+    "path": "link_folder/事件/宰殺.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "宰殺",
+    "status": "formal",
+    "aliases": [
+      "宰公牛",
+      "宰羊"
+    ]
+  },
   "希伯來女僕的律例": {
     "path": "link_folder/事件/希伯來女僕的律例.md",
     "type": "事件",
@@ -1789,6 +1889,24 @@
     "type": "事件",
     "secondary_types": [],
     "title": "引誘處女的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "彈血": {
+    "path": "link_folder/事件/彈血.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "彈血",
+    "status": "formal",
+    "aliases": [
+      "彈在壇的旁邊"
+    ]
+  },
+  "彈血七次": {
+    "path": "link_folder/事件/彈血七次.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "彈血七次",
     "status": "formal",
     "aliases": []
   },
@@ -1820,6 +1938,26 @@
       "Defeat of Amalek"
     ]
   },
+  "承認罪": {
+    "path": "link_folder/事件/承認罪.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "承認罪",
+    "status": "formal",
+    "aliases": [
+      "承認所犯的罪"
+    ]
+  },
+  "抹壇角": {
+    "path": "link_folder/事件/抹壇角.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "抹壇角",
+    "status": "formal",
+    "aliases": [
+      "抹在壇的四角上"
+    ]
+  },
   "拆毀偶像律例": {
     "path": "link_folder/事件/拆毀偶像律例.md",
     "type": "事件",
@@ -1827,6 +1965,16 @@
     "title": "拆毀偶像律例",
     "status": "formal",
     "aliases": []
+  },
+  "搬到營外燒": {
+    "path": "link_folder/事件/搬到營外燒.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "搬到營外燒",
+    "status": "formal",
+    "aliases": [
+      "營外焚燒"
+    ]
   },
   "摩西上山見神": {
     "path": "link_folder/事件/摩西上山見神.md",
@@ -1995,6 +2143,68 @@
       "正月一日"
     ]
   },
+  "洗臟腑與腿": {
+    "path": "link_folder/事件/洗臟腑與腿.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "洗臟腑與腿",
+    "status": "formal",
+    "aliases": [
+      "洗臟腑與腿"
+    ]
+  },
+  "流血在壇腳": {
+    "path": "link_folder/事件/流血在壇腳.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "流血在壇腳",
+    "status": "formal",
+    "aliases": [
+      "流在壇的腳那裡"
+    ]
+  },
+  "灑血": {
+    "path": "link_folder/事件/灑血.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "灑血",
+    "status": "formal",
+    "aliases": [
+      "奉上血",
+      "把血灑在壇的周圍"
+    ]
+  },
+  "煎盤做": {
+    "path": "link_folder/事件/煎盤做.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "煎盤做",
+    "status": "formal",
+    "aliases": [
+      "煎盤做的素祭"
+    ]
+  },
+  "燒在壇上": {
+    "path": "link_folder/事件/燒在壇上.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "燒在壇上",
+    "status": "formal",
+    "aliases": [
+      "全燒在壇上",
+      "焚燒"
+    ]
+  },
+  "爐中烤": {
+    "path": "link_folder/事件/爐中烤.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "爐中烤",
+    "status": "formal",
+    "aliases": [
+      "爐中烤的物"
+    ]
+  },
   "牛傷牛的律例": {
     "path": "link_folder/事件/牛傷牛的律例.md",
     "type": "事件",
@@ -2123,6 +2333,16 @@
       "律法頒布"
     ]
   },
+  "祭司取一把": {
+    "path": "link_folder/事件/祭司取一把.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司取一把",
+    "status": "formal",
+    "aliases": [
+      "取出作為紀念的"
+    ]
+  },
   "禮儀的律例": {
     "path": "link_folder/事件/禮儀的律例.md",
     "type": "事件",
@@ -2157,6 +2377,26 @@
     "status": "formal",
     "aliases": [
       "Altar Jehovah Nissi"
+    ]
+  },
+  "素祭所剩歸祭司": {
+    "path": "link_folder/事件/素祭所剩歸祭司.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "素祭所剩歸祭司",
+    "status": "formal",
+    "aliases": [
+      "素祭所剩的要歸給亞倫和他的子孫"
+    ]
+  },
+  "耶和華呼叫摩西": {
+    "path": "link_folder/事件/耶和華呼叫摩西.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華呼叫摩西",
+    "status": "formal",
+    "aliases": [
+      "耶和華呼叫摩西"
     ]
   },
   "葉忒羅來訪": {
@@ -2251,6 +2491,16 @@
       "會幕材料統計"
     ]
   },
+  "鐵鏊上做": {
+    "path": "link_folder/事件/鐵鏊上做.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "鐵鏊上做",
+    "status": "formal",
+    "aliases": [
+      "鐵鏊上做的素祭"
+    ]
+  },
   "長老上山見神": {
     "path": "link_folder/事件/長老上山見神.md",
     "type": "事件",
@@ -2258,6 +2508,16 @@
     "title": "長老上山見神",
     "status": "formal",
     "aliases": []
+  },
+  "長老按手": {
+    "path": "link_folder/事件/長老按手.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "長老按手",
+    "status": "formal",
+    "aliases": [
+      "會中長老按手"
+    ]
   },
   "雅各全家下埃及": {
     "path": "link_folder/事件/雅各全家下埃及.md",
@@ -10497,6 +10757,17 @@
     "status": "formal",
     "aliases": []
   },
+  "按手（samak）": {
+    "path": "link_folder/原文/按手（samak）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "按手（samak）",
+    "status": "formal",
+    "aliases": [
+      "按手",
+      "samakh"
+    ]
+  },
   "提你出監_抬起頭": {
     "path": "link_folder/原文/提你出監_抬起頭.md",
     "type": "原文",
@@ -11170,6 +11441,27 @@
       "條紋瑪瑙"
     ]
   },
+  "素祭（minchah）": {
+    "path": "link_folder/原文/素祭（minchah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "素祭（minchah）",
+    "status": "formal",
+    "aliases": [
+      "素祭",
+      "minchah"
+    ]
+  },
+  "細麵": {
+    "path": "link_folder/原文/細麵.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "細麵",
+    "status": "formal",
+    "aliases": [
+      "細麵"
+    ]
+  },
   "網羅": {
     "path": "link_folder/原文/網羅.md",
     "type": "原文",
@@ -11499,6 +11791,16 @@
     "title": "贖命的價銀",
     "status": "formal",
     "aliases": []
+  },
+  "贖愆祭（asham）": {
+    "path": "link_folder/原文/贖愆祭（asham）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "贖愆祭（asham）",
+    "status": "formal",
+    "aliases": [
+      "贖愆祭"
+    ]
   },
   "起泡的瘡": {
     "path": "link_folder/原文/起泡的瘡.md",
@@ -13145,6 +13447,44 @@
       "使女"
     ]
   },
+  "公山羊": {
+    "path": "link_folder/文化/公山羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "公山羊",
+    "status": "formal",
+    "aliases": [
+      "公山羊"
+    ]
+  },
+  "公牛": {
+    "path": "link_folder/文化/公牛.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "公牛",
+    "status": "formal",
+    "aliases": [
+      "牛"
+    ]
+  },
+  "公牛犢": {
+    "path": "link_folder/文化/公牛犢.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "公牛犢",
+    "status": "formal",
+    "aliases": [
+      "公牛犢"
+    ]
+  },
+  "公綿羊": {
+    "path": "link_folder/文化/公綿羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "公綿羊",
+    "status": "formal",
+    "aliases": []
+  },
   "出埃及時序（一月底二月初）": {
     "path": "link_folder/文化/出埃及時序（一月底二月初）.md",
     "type": "文化",
@@ -13552,6 +13892,14 @@
     "status": "formal",
     "aliases": []
   },
+  "山羊": {
+    "path": "link_folder/文化/山羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "山羊",
+    "status": "formal",
+    "aliases": []
+  },
   "工價與雇約": {
     "path": "link_folder/文化/工價與雇約.md",
     "type": "文化",
@@ -13608,6 +13956,34 @@
     "type": "文化",
     "secondary_types": [],
     "title": "撒拉的帳棚",
+    "status": "formal",
+    "aliases": []
+  },
+  "斑鳩": {
+    "path": "link_folder/文化/斑鳩.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "斑鳩",
+    "status": "formal",
+    "aliases": [
+      "鴿子"
+    ]
+  },
+  "母山羊": {
+    "path": "link_folder/文化/母山羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "母山羊",
+    "status": "formal",
+    "aliases": [
+      "母山羊"
+    ]
+  },
+  "母羊": {
+    "path": "link_folder/文化/母羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "母羊",
     "status": "formal",
     "aliases": []
   },
@@ -13700,6 +14076,34 @@
       "紅線"
     ]
   },
+  "綿羊": {
+    "path": "link_folder/文化/綿羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "綿羊",
+    "status": "formal",
+    "aliases": []
+  },
+  "綿羊羔": {
+    "path": "link_folder/文化/綿羊羔.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "綿羊羔",
+    "status": "formal",
+    "aliases": [
+      "母綿羊"
+    ]
+  },
+  "羊羔": {
+    "path": "link_folder/文化/羊羔.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "羊羔",
+    "status": "formal",
+    "aliases": [
+      "羔羊"
+    ]
+  },
   "耳環作異教護身符": {
     "path": "link_folder/文化/耳環作異教護身符.md",
     "type": "文化",
@@ -13711,6 +14115,16 @@
     "aliases": [
       "耳朵上的環子",
       "異教耳環"
+    ]
+  },
+  "聖所的舍客勒": {
+    "path": "link_folder/文化/聖所的舍客勒.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "聖所的舍客勒",
+    "status": "formal",
+    "aliases": [
+      "聖所舍客勒"
     ]
   },
   "聖會": {
@@ -13739,6 +14153,14 @@
     "aliases": [
       "在聖地脫鞋"
     ]
+  },
+  "蜜": {
+    "path": "link_folder/文化/蜜.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "蜜",
+    "status": "formal",
+    "aliases": []
   },
   "解恨之禮": {
     "path": "link_folder/文化/解恨之禮.md",
@@ -13805,6 +14227,14 @@
     "aliases": [
       "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得"
     ]
+  },
+  "雛鴿": {
+    "path": "link_folder/文化/雛鴿.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "雛鴿",
+    "status": "formal",
+    "aliases": []
   },
   "青蛙為埃及聖物": {
     "path": "link_folder/文化/青蛙為埃及聖物.md",
@@ -15087,6 +15517,16 @@
     "title": "主餐",
     "status": "candidate",
     "aliases": []
+  },
+  "乳香": {
+    "path": "link_folder/神學/乳香.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "乳香",
+    "status": "formal",
+    "aliases": [
+      "乳香"
+    ]
   },
   "亞伯拉罕之約": {
     "path": "link_folder/神學/亞伯拉罕之約.md",
@@ -16504,6 +16944,16 @@
     "status": "formal",
     "aliases": []
   },
+  "悅納": {
+    "path": "link_folder/神學/悅納.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "悅納",
+    "status": "formal",
+    "aliases": [
+      "蒙悅納"
+    ]
+  },
   "悔改": {
     "path": "link_folder/神學/悔改.md",
     "type": "神學",
@@ -17142,6 +17592,16 @@
       "祭司的職分"
     ]
   },
+  "油": {
+    "path": "link_folder/神學/油.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "油",
+    "status": "formal",
+    "aliases": [
+      "油"
+    ]
+  },
   "法老心剛硬": {
     "path": "link_folder/神學/法老心剛硬.md",
     "type": "神學",
@@ -17275,6 +17735,16 @@
     "status": "formal",
     "aliases": []
   },
+  "無殘疾": {
+    "path": "link_folder/神學/無殘疾.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "無殘疾",
+    "status": "formal",
+    "aliases": [
+      "沒有殘疾"
+    ]
+  },
   "無花果葉與皮衣": {
     "path": "link_folder/神學/無花果葉與皮衣.md",
     "type": "神學",
@@ -17282,6 +17752,16 @@
     "title": "無花果葉與皮衣",
     "status": "formal",
     "aliases": []
+  },
+  "無酵": {
+    "path": "link_folder/神學/無酵.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "無酵",
+    "status": "formal",
+    "aliases": [
+      "無酵"
+    ]
   },
   "燃燒卻不燒毀的荊棘": {
     "path": "link_folder/神學/燃燒卻不燒毀的荊棘.md",
@@ -18244,6 +18724,16 @@
       "摩西在米甸的預備"
     ]
   },
+  "紀念": {
+    "path": "link_folder/神學/紀念.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "紀念",
+    "status": "formal",
+    "aliases": [
+      "作為紀念"
+    ]
+  },
   "約書": {
     "path": "link_folder/神學/約書.md",
     "type": "神學",
@@ -18677,6 +19167,26 @@
       "三樣情慾"
     ]
   },
+  "脂油和血都不可吃": {
+    "path": "link_folder/神學/脂油和血都不可吃.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "脂油和血都不可吃",
+    "status": "formal",
+    "aliases": [
+      "脂油和血都不可吃"
+    ]
+  },
+  "脂油都是耶和華的": {
+    "path": "link_folder/神學/脂油都是耶和華的.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "脂油都是耶和華的",
+    "status": "formal",
+    "aliases": [
+      "脂油都是耶和華的"
+    ]
+  },
   "膏抹成聖": {
     "path": "link_folder/神學/膏抹成聖.md",
     "type": "神學",
@@ -18706,6 +19216,16 @@
     "aliases": [
       "自潔更衣",
       "更換衣裳"
+    ]
+  },
+  "至聖": {
+    "path": "link_folder/神學/至聖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "至聖",
+    "status": "formal",
+    "aliases": [
+      "至聖的"
     ]
   },
   "至高的神": {
@@ -18811,6 +19331,16 @@
     "status": "formal",
     "aliases": [
       "蒙靈充滿的智慧恩賜"
+    ]
+  },
+  "血": {
+    "path": "link_folder/神學/血.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "血",
+    "status": "formal",
+    "aliases": [
+      "血"
     ]
   },
   "血氣與應許之對比": {
@@ -18955,6 +19485,16 @@
     "title": "賠償原則",
     "status": "formal",
     "aliases": []
+  },
+  "贖罪": {
+    "path": "link_folder/神學/贖罪.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "贖罪",
+    "status": "formal",
+    "aliases": [
+      "贖罪"
+    ]
   },
   "贖罪祭": {
     "path": "link_folder/神學/贖罪祭.md",
@@ -19190,6 +19730,26 @@
     "title": "馨香之氣",
     "status": "formal",
     "aliases": []
+  },
+  "馨香的火祭": {
+    "path": "link_folder/神學/馨香的火祭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "馨香的火祭",
+    "status": "formal",
+    "aliases": [
+      "馨香的火祭"
+    ]
+  },
+  "鹽約": {
+    "path": "link_folder/神學/鹽約.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "鹽約",
+    "status": "formal",
+    "aliases": [
+      "鹽約"
+    ]
   },
   "麥基洗德的豫表": {
     "path": "link_folder/神學/麥基洗德的豫表.md",
@@ -19816,6 +20376,16 @@
     "title": "洪水前族長長壽",
     "status": "formal",
     "aliases": []
+  },
+  "牛群羊群": {
+    "path": "link_folder/背景/牛群羊群.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "牛群羊群",
+    "status": "formal",
+    "aliases": [
+      "牛群羊群"
+    ]
   },
   "牧人水草與土地承載": {
     "path": "link_folder/背景/牧人水草與土地承載.md",
@@ -21388,6 +21958,9 @@
   "細麻內袍": {
     "alias_of": "內袍（雜色內袍）"
   },
+  "初熟的供物": {
+    "alias_of": "初熟之物"
+  },
   "山羊毛幔子": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
   },
@@ -21694,6 +22267,9 @@
   "擺陳設餅的桌子": {
     "alias_of": "陳設餅桌子"
   },
+  "會幕內的壇": {
+    "alias_of": "香壇"
+  },
   "Elim oasis": {
     "alias_of": "以琳綠洲"
   },
@@ -21706,6 +22282,12 @@
   "Preserving an omer of manna": {
     "alias_of": "保存一俄梅珥嗎哪"
   },
+  "倒在壇的腳那裡": {
+    "alias_of": "倒血在壇腳"
+  },
+  "加五分之一償還": {
+    "alias_of": "償還加五分之一"
+  },
   "人口普查數目": {
     "alias_of": "六十萬零三千五百五十人（出38：26）"
   },
@@ -21715,14 +22297,38 @@
   "利未人受聖職": {
     "alias_of": "利未人受聖職討罪"
   },
+  "剝去燔祭牲的皮": {
+    "alias_of": "剝皮切塊"
+  },
+  "切成塊子": {
+    "alias_of": "剝皮切塊"
+  },
   "Manna from heaven": {
     "alias_of": "天降嗎哪"
   },
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
   },
+  "宰公牛": {
+    "alias_of": "宰殺"
+  },
+  "宰羊": {
+    "alias_of": "宰殺"
+  },
+  "彈在壇的旁邊": {
+    "alias_of": "彈血"
+  },
   "Defeat of Amalek": {
     "alias_of": "戰勝亞瑪力人"
+  },
+  "承認所犯的罪": {
+    "alias_of": "承認罪"
+  },
+  "抹在壇的四角上": {
+    "alias_of": "抹壇角"
+  },
+  "營外焚燒": {
+    "alias_of": "搬到營外燒"
   },
   "Moses goes up to God": {
     "alias_of": "摩西上山見神"
@@ -21793,6 +22399,27 @@
   "正月一日": {
     "alias_of": "正月初一日"
   },
+  "流在壇的腳那裡": {
+    "alias_of": "流血在壇腳"
+  },
+  "奉上血": {
+    "alias_of": "灑血"
+  },
+  "把血灑在壇的周圍": {
+    "alias_of": "灑血"
+  },
+  "煎盤做的素祭": {
+    "alias_of": "煎盤做"
+  },
+  "全燒在壇上": {
+    "alias_of": "燒在壇上"
+  },
+  "焚燒": {
+    "alias_of": "燒在壇上"
+  },
+  "爐中烤的物": {
+    "alias_of": "爐中烤"
+  },
   "瑪拉苦水變甜神蹟": {
     "alias_of": "瑪拉苦水變甜"
   },
@@ -21838,8 +22465,14 @@
   "律法頒布": {
     "alias_of": "神頒布十誡"
   },
+  "取出作為紀念的": {
+    "alias_of": "祭司取一把"
+  },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
+  },
+  "素祭所剩的要歸給亞倫和他的子孫": {
+    "alias_of": "素祭所剩歸祭司"
   },
   "Jethro's visit": {
     "alias_of": "葉忒羅來訪"
@@ -21876,6 +22509,12 @@
   },
   "會幕材料統計": {
     "alias_of": "金銀銅統計（出38：24-31）"
+  },
+  "鐵鏊上做的素祭": {
+    "alias_of": "鐵鏊上做"
+  },
+  "會中長老按手": {
+    "alias_of": "長老按手"
   },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
@@ -23341,6 +23980,12 @@
   "所多瑪聲聞於神": {
     "alias_of": "所多瑪罪惡的呼喊"
   },
+  "按手": {
+    "alias_of": "按手（samak）"
+  },
+  "samakh": {
+    "alias_of": "按手（samak）"
+  },
   "「提你出監」/「抬起頭」": {
     "alias_of": "提你出監_抬起頭"
   },
@@ -23545,6 +24190,12 @@
   "條紋瑪瑙": {
     "alias_of": "紅瑪瑙（紀念石）"
   },
+  "素祭": {
+    "alias_of": "素祭（minchah）"
+  },
+  "minchah": {
+    "alias_of": "素祭（minchah）"
+  },
   "yqš": {
     "alias_of": "網羅"
   },
@@ -23625,6 +24276,9 @@
   },
   "貪戀": {
     "alias_of": "貪戀（chamad）"
+  },
+  "贖愆祭": {
+    "alias_of": "贖愆祭（asham）"
   },
   "shechin": {
     "alias_of": "起泡的瘡"
@@ -23995,6 +24649,9 @@
   "使女": {
     "alias_of": "使女代孕習俗"
   },
+  "牛": {
+    "alias_of": "公牛"
+  },
   "雹災時節": {
     "alias_of": "出埃及時序（一月底二月初）"
   },
@@ -24163,6 +24820,9 @@
   "levirate marriage": {
     "alias_of": "弟續兄孀制度"
   },
+  "鴿子": {
+    "alias_of": "斑鳩"
+  },
   "ovens and kneading bowls": {
     "alias_of": "爐灶和摶麵盆"
   },
@@ -24184,11 +24844,20 @@
   "紅線": {
     "alias_of": "紅線與長子標記"
   },
+  "母綿羊": {
+    "alias_of": "綿羊羔"
+  },
+  "羔羊": {
+    "alias_of": "羊羔"
+  },
   "耳朵上的環子": {
     "alias_of": "耳環作異教護身符"
   },
   "異教耳環": {
     "alias_of": "耳環作異教護身符"
+  },
+  "聖所舍客勒": {
+    "alias_of": "聖所的舍客勒"
   },
   "miqra qodesh": {
     "alias_of": "聖會"
@@ -24913,6 +25582,9 @@
   "qanna": {
     "alias_of": "忌邪的神"
   },
+  "蒙悅納": {
+    "alias_of": "悅納"
+  },
   "良心甦醒": {
     "alias_of": "悔改與良心的覺醒"
   },
@@ -25122,6 +25794,9 @@
   },
   "流奶與蜜的地": {
     "alias_of": "流奶與蜜之地"
+  },
+  "沒有殘疾": {
+    "alias_of": "無殘疾"
   },
   "燃燒的荊棘": {
     "alias_of": "燃燒卻不燒毀的荊棘"
@@ -25345,6 +26020,9 @@
   "摩西在米甸的預備": {
     "alias_of": "米甸曠野對摩西的預備"
   },
+  "作為紀念": {
+    "alias_of": "紀念"
+  },
   "約瑟的兩個夢": {
     "alias_of": "約瑟的夢（應驗）"
   },
@@ -25473,6 +26151,9 @@
   },
   "更換衣裳": {
     "alias_of": "自潔與更換衣裳"
+  },
+  "至聖的": {
+    "alias_of": "至聖"
   },
   "越發苦害越發增多": {
     "alias_of": "苦害中仍然增長"
