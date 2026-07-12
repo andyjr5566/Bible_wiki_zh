@@ -1,0 +1,211 @@
+book: 創世記
+chapter: 19
+A_use_directly:
+- name: 羅得
+  suggested_type: 人物
+  evidence: 1-38節；坐城門口接待天使，遲延被拉出城，逃瑣珥後居山洞
+  match_type: exact
+  existing_title: 羅得
+  existing_path: link_folder/人物/羅得.md
+- name: 羅得的妻子
+  suggested_type: 人物
+  evidence: 16、26節；被拉出城，回頭一看成鹽柱
+  surfaces:
+  - phrase: 他妻子的手
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 羅得的妻子
+  existing_path: link_folder/人物/羅得的妻子.md
+- name: 羅得的兩個女兒
+  suggested_type: 人物
+  evidence: 15-16、30-36節；與父出逃，山洞中設計存留後裔
+  surfaces:
+  - phrase: 兩個女兒的手
+    verses:
+    - 16
+  - phrase: 兩個女兒
+    verses:
+    - 15
+    - 30
+  match_type: exact
+  existing_title: 羅得的兩個女兒
+  existing_path: link_folder/人物/羅得的兩個女兒.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 27-29節；清早回到代求之處觀看，神記念他
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 摩押
+  suggested_type: 人物
+  evidence: 37節大女兒之子，摩押人始祖
+  match_type: exact
+  existing_title: 摩押
+  existing_path: link_folder/人物/摩押.md
+- name: 便亞米
+  suggested_type: 人物
+  evidence: 38節小女兒之子，亞捫人始祖
+  match_type: exact
+  existing_title: 便亞米
+  existing_path: link_folder/人物/便亞米.md
+- name: 摩押人
+  suggested_type: 人物
+  evidence: 37節；以色列近鄰，路得出自此族
+  match_type: exact
+  existing_title: 摩押人
+  existing_path: link_folder/人物/摩押人.md
+- name: 亞捫人
+  suggested_type: 人物
+  evidence: 38節；約但河東民族，以色列世仇
+  match_type: exact
+  existing_title: 亞捫人
+  existing_path: link_folder/人物/亞捫人.md
+- name: 所多瑪
+  suggested_type: 地點
+  evidence: 1、4、24、28節；罪惡甚重，被硫磺與火傾覆
+  match_type: exact
+  existing_title: 所多瑪
+  existing_path: link_folder/地點/所多瑪.md
+- name: 蛾摩拉
+  suggested_type: 地點
+  evidence: 24、28節；與所多瑪同被傾覆
+  match_type: exact
+  existing_title: 蛾摩拉
+  existing_path: link_folder/地點/蛾摩拉.md
+- name: 瑣珥
+  suggested_type: 地點
+  evidence: 22-23、30節；「小」的雙關，羅得暫居之城
+  match_type: exact
+  existing_title: 瑣珥
+  existing_path: link_folder/地點/瑣珥.md
+- name: 不可回頭看
+  suggested_type: 神學
+  evidence: 17節逃命的命令；路十七32「回想羅得的妻子」
+  match_type: exact
+  existing_title: 不可回頭看
+  existing_path: link_folder/神學/不可回頭看.md
+- name: 硫磺與火從天上降下
+  suggested_type: 神學
+  evidence: 24節；審判出於耶和華（申廿九23；彼後二6）
+  surfaces:
+  - phrase: 硫磺與火從天上耶和華那裡降與
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 硫磺與火從天上降下
+  existing_path: link_folder/神學/硫磺與火從天上降下.md
+- name: 神記念亞伯拉罕
+  suggested_type: 神學
+  evidence: 29節；代求與羅得得救在敘事上相連
+  surfaces:
+  - phrase: 記念亞伯拉罕
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 神記念亞伯拉罕
+  existing_path: link_folder/神學/神記念亞伯拉罕.md
+- name: 羅得的世俗選擇與後果
+  suggested_type: 主題
+  evidence: 全章；由選擇平原到失去一切的敘事終局
+  match_type: exact
+  existing_title: 羅得的世俗選擇與後果
+  existing_path: link_folder/主題/羅得的世俗選擇與後果.md
+- name: 鹽柱
+  suggested_type: 主題
+  evidence: 26節；持續的警戒記號（路十七32）
+  match_type: exact
+  existing_title: 鹽柱
+  existing_path: link_folder/主題/鹽柱.md
+- name: 戲言
+  suggested_type: 主題
+  evidence: 14節女婿們以為毀城警告是說笑
+  match_type: exact
+  existing_title: 戲言
+  existing_path: link_folder/主題/戲言.md
+- name: 古代近東接待客旅禮儀
+  suggested_type: 背景
+  evidence: 1-3節；接納客旅後負保護責任，三日住宿慣例
+  match_type: exact
+  existing_title: 古代近東接待客旅禮儀
+  existing_path: link_folder/背景/古代近東接待客旅禮儀.md
+- name: 城門口公共場合
+  suggested_type: 歷史
+  evidence: 1節；市場、集會與司法場所（得四1）
+  surfaces:
+  - phrase: 所多瑪城門口
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 城門口公共場合
+  existing_path: link_folder/歷史/城門口公共場合.md
+- name: 所多瑪罪惡的呼喊
+  suggested_type: 原文
+  evidence: 13節罪惡的聲音在耶和華面前甚大
+  surfaces:
+  - phrase: 罪惡的聲音
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 所多瑪罪惡的呼喊
+  existing_path: link_folder/原文/所多瑪罪惡的呼喊.md
+- name: 眼都昏迷
+  suggested_type: 原文
+  evidence: 11節；僅此處與王下六18使用的罕見詞
+  match_type: exact
+  existing_title: 眼都昏迷
+  existing_path: link_folder/原文/眼都昏迷.md
+- name: 「摩押」名字含義
+  suggested_type: 原文
+  evidence: 37節；通常解作「從父親而來」
+  match_type: exact
+  existing_title: 「摩押」名字含義
+  existing_path: link_folder/原文/「摩押」名字含義.md
+- name: 「便亞米」名字含義
+  suggested_type: 原文
+  evidence: 38節；「我族人之子」，另有「我父之子」等解釋
+  match_type: exact
+  existing_title: 「便亞米」名字含義
+  existing_path: link_folder/原文/「便亞米」名字含義.md
+- name: 所多瑪的罪是什麼
+  suggested_type: 解經爭議
+  evidence: 4-9節集體性侵意圖；結十六49-50與猶7的多重角度
+  match_type: exact
+  existing_title: 所多瑪的罪是什麼
+  existing_path: link_folder/解經爭議/所多瑪的罪是什麼.md
+- name: 羅得提出交出女兒如何評價
+  suggested_type: 解經爭議
+  evidence: 8節；待客義務能解釋動機，不能使手段正當
+  surfaces:
+  - phrase: 我有兩個女兒，還是處女，容我領出來，任憑你們的心願而行
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 羅得提出交出女兒如何評價
+  existing_path: link_folder/解經爭議/羅得提出交出女兒如何評價.md
+- name: 羅得妻變成鹽柱如何理解
+  suggested_type: 解經爭議
+  evidence: 26節；回頭動機與鹽柱性質諸說並陳
+  surfaces:
+  - phrase: 羅得的妻子在後邊回頭一看，就變成了一根鹽柱
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 羅得妻變成鹽柱如何理解
+  existing_path: link_folder/解經爭議/羅得妻變成鹽柱如何理解.md
+- name: 所多瑪與蛾摩拉毀滅的自然機制
+  suggested_type: 解經爭議
+  evidence: 24-25節；地震、可燃氣體、瀝青燃燒等假說未成定論
+  match_type: exact
+  existing_title: 所多瑪與蛾摩拉毀滅的自然機制
+  existing_path: link_folder/解經爭議/所多瑪與蛾摩拉毀滅的自然機制.md
+- name: 羅得女兒亂倫敘事是否表示贊同
+  suggested_type: 解經爭議
+  evidence: 30-38節；描述而非認可，利18章後來明文禁止
+  match_type: exact
+  existing_title: 羅得女兒亂倫敘事是否表示贊同
+  existing_path: link_folder/解經爭議/羅得女兒亂倫敘事是否表示贊同.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

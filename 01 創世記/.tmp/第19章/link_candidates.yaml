@@ -1,0 +1,104 @@
+book: 創世記
+chapter: 19
+candidates:
+  - name: 羅得
+    type: 人物
+    evidence: 1-38節；坐城門口接待天使，遲延被拉出城，逃瑣珥後居山洞
+  - name: 羅得的妻子
+    type: 人物
+    evidence: 16、26節；被拉出城，回頭一看成鹽柱
+    surfaces:
+      - {phrase: 他妻子的手, verses: [16]}
+  - name: 羅得的兩個女兒
+    type: 人物
+    evidence: 15-16、30-36節；與父出逃，山洞中設計存留後裔
+    surfaces:
+      - {phrase: 兩個女兒的手, verses: [16]}
+      - {phrase: 兩個女兒, verses: [15, 30]}
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 27-29節；清早回到代求之處觀看，神記念他
+  - name: 摩押
+    type: 人物
+    evidence: 37節大女兒之子，摩押人始祖
+  - name: 便亞米
+    type: 人物
+    evidence: 38節小女兒之子，亞捫人始祖
+  - name: 摩押人
+    type: 人物
+    evidence: 37節；以色列近鄰，路得出自此族
+  - name: 亞捫人
+    type: 人物
+    evidence: 38節；約但河東民族，以色列世仇
+  - name: 所多瑪
+    type: 地點
+    evidence: 1、4、24、28節；罪惡甚重，被硫磺與火傾覆
+  - name: 蛾摩拉
+    type: 地點
+    evidence: 24、28節；與所多瑪同被傾覆
+  - name: 瑣珥
+    type: 地點
+    evidence: 22-23、30節；「小」的雙關，羅得暫居之城
+  - name: 不可回頭看
+    type: 神學
+    evidence: 17節逃命的命令；路十七32「回想羅得的妻子」
+  - name: 硫磺與火從天上降下
+    type: 神學
+    evidence: 24節；審判出於耶和華（申廿九23；彼後二6）
+    surfaces:
+      - {phrase: 硫磺與火從天上耶和華那裡降與, verses: [24]}
+  - name: 神記念亞伯拉罕
+    type: 神學
+    evidence: 29節；代求與羅得得救在敘事上相連
+    surfaces:
+      - {phrase: 記念亞伯拉罕, verses: [29]}
+  - name: 羅得的世俗選擇與後果
+    type: 主題
+    evidence: 全章；由選擇平原到失去一切的敘事終局
+  - name: 鹽柱
+    type: 主題
+    evidence: 26節；持續的警戒記號（路十七32）
+  - name: 戲言
+    type: 主題
+    evidence: 14節女婿們以為毀城警告是說笑
+  - name: 古代近東接待客旅禮儀
+    type: 背景
+    evidence: 1-3節；接納客旅後負保護責任，三日住宿慣例
+  - name: 城門口公共場合
+    type: 歷史
+    evidence: 1節；市場、集會與司法場所（得四1）
+    surfaces:
+      - {phrase: 所多瑪城門口, verses: [1]}
+  - name: 所多瑪罪惡的呼喊
+    type: 原文
+    evidence: 13節罪惡的聲音在耶和華面前甚大
+    surfaces:
+      - {phrase: 罪惡的聲音, verses: [13]}
+  - name: 眼都昏迷
+    type: 原文
+    evidence: 11節；僅此處與王下六18使用的罕見詞
+  - name: 「摩押」名字含義
+    type: 原文
+    evidence: 37節；通常解作「從父親而來」
+  - name: 「便亞米」名字含義
+    type: 原文
+    evidence: 38節；「我族人之子」，另有「我父之子」等解釋
+  - name: 所多瑪的罪是什麼
+    type: 解經爭議
+    evidence: 4-9節集體性侵意圖；結十六49-50與猶7的多重角度
+  - name: 羅得提出交出女兒如何評價
+    type: 解經爭議
+    evidence: 8節；待客義務能解釋動機，不能使手段正當
+    surfaces:
+      - {phrase: 我有兩個女兒，還是處女，容我領出來，任憑你們的心願而行, verses: [8]}
+  - name: 羅得妻變成鹽柱如何理解
+    type: 解經爭議
+    evidence: 26節；回頭動機與鹽柱性質諸說並陳
+    surfaces:
+      - {phrase: 羅得的妻子在後邊回頭一看，就變成了一根鹽柱, verses: [26]}
+  - name: 所多瑪與蛾摩拉毀滅的自然機制
+    type: 解經爭議
+    evidence: 24-25節；地震、可燃氣體、瀝青燃燒等假說未成定論
+  - name: 羅得女兒亂倫敘事是否表示贊同
+    type: 解經爭議
+    evidence: 30-38節；描述而非認可，利18章後來明文禁止
