@@ -1,0 +1,24 @@
+name: 燒在壇上
+type: 事件
+secondary_types: []
+aliases:
+- 燒在壇上
+status: formal
+definition: 燒在壇上是指將祭物置於祭壇上用火焚燒獻給耶和華的動作。在利未記第5章中，當貧困者獻細麵為贖罪祭時，祭司要取出自己的一把作為紀念，按獻給耶和華火祭的條例「燒在壇上」。此動作將供物轉化為馨香的火祭獻給神，完成贖罪祭的紀念部分，使獻祭者得以蒙赦免。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 細麵贖罪祭中，祭司取出一把作為紀念，按火祭條例燒在壇上。
+  relation: 本章將細麵供物燒在壇上，作為無血贖罪祭中獻給神的紀念部分，成就贖罪之效。
+related_entries:
+- 銅壇（燔祭壇）
+- 馨香的火祭
+- 細麵
+sources:
+- '研經註解: Leviticus 5 — 細麵供物焚燒於壇上的條例（https://biblehub.com/study/leviticus/5.htm）'
+- '逐節註解: 利未記第5章 — 祭司燒麵於壇的贖罪祭程序（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+created_from: []
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,26 @@
+name: 壇
+type: 主題
+secondary_types: []
+aliases:
+- 壇
+status: formal
+definition: 壇是獻祭與焚燒祭物的神聖場所。在利未記第3章中，壇主要指會幕門口的銅壇（燔祭壇），祭司在此將祭牲的血灑在壇的周圍，並將脂油與祭肉焚燒獻給耶和華作為馨香的火祭。壇是平安祭獻祭程序的核心，象徵神與人相交的地點。
+accumulations:
+- book: 利未記
+  chapter: 3
+  summary: 亞倫子孫作祭司的要把平安祭牲的血灑在壇的周圍，並將脂油等燒在壇的燔祭上，作為獻與耶和華為馨香的火祭。
+  relation: 壇是本章平安祭獻祭過程中灑血與焚燒脂油的核心場所，是獻祭儀式得以完成的實體媒介。
+related_entries:
+- 銅壇（燔祭壇）
+- 灑血
+- 燒在壇上
+- 馨香的火祭
+- 平安祭（shelamim）
+sources:
+- '研經註解: 利未記第3章中關於壇的獻祭功能（https://biblehub.com/study/leviticus/3.htm）'
+- '逐節註解: 利未記第3章壇與平安祭的關聯（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT03.htm）'
+created_from: []
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

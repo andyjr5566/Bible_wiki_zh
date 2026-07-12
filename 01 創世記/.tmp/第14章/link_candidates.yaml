@@ -1,0 +1,203 @@
+book: 創世記
+chapter: 14
+candidates:
+  - name: 暗拉非
+    type: 人物
+    evidence: 1、9節示拿王；GT 論不能可靠等同漢摩拉比
+  - name: 亞略
+    type: 人物
+    evidence: 1、9節以拉撒王；GT 記馬里文獻有同名王子
+  - name: 基大老瑪
+    type: 人物
+    evidence: 1、4-5、9、17節以攔王，四王首領，五城事奉他十二年
+  - name: 提達
+    type: 人物
+    evidence: 1、9節戈印王；GT 記與赫人王族名 Tudhaliyas 相似
+  - name: 示拿地
+    type: 地點
+    evidence: 1、9節暗拉非作示拿王；即巴比倫一帶
+    surfaces:
+      - {phrase: 示拿, verses: [1, 9]}
+  - name: 以拉撒
+    type: 地點
+    evidence: 1、9節亞略之國；或在米所波大米北部
+  - name: 以攔
+    type: 地點
+    evidence: 1、9節基大老瑪之國；即後來的波斯（今伊朗西南）
+  - name: 戈印
+    type: 地點
+    evidence: 1、9節提達之國；字義「列國」，或指部族聯盟
+  - name: 所多瑪
+    type: 地點
+    evidence: 2、8、10-12、17、21-22節；戰敗被擄掠，羅得正住在城中
+  - name: 比拉（所多瑪王）
+    type: 人物
+    evidence: 2節所多瑪王；原文字義「禮物，毀滅」
+    surfaces:
+      - {phrase: 比拉, verses: [2]}
+  - name: 蛾摩拉
+    type: 地點
+    evidence: 2、8、10-11節；與所多瑪同敗，財物糧食被擄
+  - name: 比沙（蛾摩拉王）
+    type: 人物
+    evidence: 2節蛾摩拉王；原文字義「罪惡之子」
+  - name: 押瑪
+    type: 地點
+    evidence: 2、8節五城之一；申廿九23與所多瑪同滅
+  - name: 示納（押瑪王）
+    type: 人物
+    evidence: 2節押瑪王
+  - name: 洗扁
+    type: 地點
+    evidence: 2、8節五城之一；字義「瞪羚」
+  - name: 善以別（洗扁王）
+    type: 人物
+    evidence: 2節洗扁王；字義「高飛，翅膀」
+  - name: 瑣珥
+    type: 地點
+    evidence: 2、8節比拉就是瑣珥；十九章羅得逃往之城
+  - name: 西訂谷
+    type: 地點
+    evidence: 3、8、10節會戰之地，多石漆坑；後成鹽海一部
+  - name: 鹽海
+    type: 地點
+    evidence: 3節西訂谷就是鹽海（死海）
+  - name: 亞特律加寧
+    type: 地點
+    evidence: 5節殺敗利乏音人之地；巴珊境內，後為噩王之都近鄰
+  - name: 利乏音人
+    type: 人物
+    evidence: 5節；身量高大的土人（申二11）
+  - name: 哈麥
+    type: 地點
+    evidence: 5節殺敗蘇西人之地；死海東北
+  - name: 蘇西人
+    type: 人物
+    evidence: 5節；或即申二20散送冥人
+  - name: 沙微基列亭
+    type: 地點
+    evidence: 5節殺敗以米人之地；約但河東摩押境內
+  - name: 以米人
+    type: 人物
+    evidence: 5節；住摩押地的巨人（申二10-11）
+  - name: 何利人
+    type: 人物
+    evidence: 6節西珥山的穴居土人（申二12）
+  - name: 西珥山
+    type: 地點
+    evidence: 6節何利人之地；後為以東境
+  - name: 伊勒巴蘭
+    type: 地點
+    evidence: 6節四王殺到之極南處；或即紅海東岔的以拉他
+  - name: 安密巴
+    type: 地點
+    evidence: 7節就是加低斯；字義「審判之泉」
+  - name: 加低斯
+    type: 地點
+    evidence: 7節；後來以色列人曠野行程要站（申一2）
+  - name: 亞瑪力人
+    type: 人物
+    evidence: 7節亞瑪力全地；「亞瑪力」為後起之名（創卅六12）
+    surfaces:
+      - {phrase: 亞瑪力全地的人, verses: [7]}
+  - name: 哈洗遜他瑪
+    type: 地點
+    evidence: 7節亞摩利人所住；即隱基底（代下二十2）
+  - name: 亞摩利人
+    type: 人物
+    evidence: 7、13節；住哈洗遜他瑪，幔利亦屬亞摩利人
+  - name: 亞伯蘭
+    type: 人物
+    evidence: 12-24節；聞訊率壯丁追擊救羅得、受麥基洗德祝福、拒所多瑪王財物
+  - name: 羅得
+    type: 人物
+    evidence: 12、16節；正住在所多瑪，與財物同被擄，被亞伯蘭奪回
+  - name: 希伯來人
+    type: 人物
+    evidence: 13節聖經首次出現此名；「過來之人」，外人對選民的稱呼
+  - name: 幔利
+    type: 地點
+    evidence: 13、24節；亞伯蘭住其橡樹處，與以實各亞乃同盟
+  - name: 以實各
+    type: 人物
+    evidence: 13、24節；幔利之弟兄，與亞伯蘭聯盟
+  - name: 亞乃
+    type: 人物
+    evidence: 13、24節；幔利之弟兄，與亞伯蘭聯盟
+  - name: 亞伯蘭的愛心與勇氣
+    type: 主題
+    evidence: 14節；以數百家丁追擊四王聯軍，CT 論對人有愛心、對神有信心
+    surfaces:
+      - {phrase: 亞伯蘭聽見他姪兒【原文作弟兄】被擄去, verses: [14]}
+  - name: 但
+    type: 地點
+    evidence: 14節直追到但；原名拉億，士十八29改名
+    surfaces:
+      - {phrase: 但, verses: [14]}
+  - name: 大馬士革
+    type: 地點
+    evidence: 15節追到大馬色左邊的何把；存到如今的古城
+    surfaces:
+      - {phrase: 大馬色, verses: [15]}
+  - name: 何把
+    type: 地點
+    evidence: 15節；大馬色以北的隱匿處
+  - name: 王谷
+    type: 地點
+    evidence: 17節沙微谷就是王谷；近耶路撒冷，或即汲淪谷（撒下十八18）
+    surfaces:
+      - {phrase: 沙微谷, verses: [17]}
+  - name: 撒冷
+    type: 地點
+    evidence: 18節麥基洗德之城；通常辨識為耶路撒冷（詩七十六2）
+  - name: 麥基洗德
+    type: 人物
+    evidence: 18-20節撒冷王、至高神祭司；帶餅和酒迎接並祝福亞伯蘭
+  - name: 麥基洗德的餅和酒是否預表聖餐
+    type: 解經爭議
+    evidence: 18節；KC 明確反對直接等同主餐，中文註釋解作屬靈供應
+    surfaces:
+      - {phrase: 餅和酒, verses: [18]}
+  - name: 至高的神
+    type: 神學
+    evidence: 18-20、22節 El Elyon；迦南文學對主神的稱呼，亞伯蘭認作耶和華
+    surfaces:
+      - {phrase: 至高神, verses: [18]}
+      - {phrase: 耶和華, verses: [22]}
+  - name: 天地的主
+    type: 神學
+    evidence: 19、22節；天地的擁有者，一切財富的源頭
+    surfaces:
+      - {phrase: 天地的主─至高的神, verses: [22]}
+  - name: 十分之一
+    type: 原文
+    evidence: 20節；聖經最早的什一奉獻，早於摩西律法（來七4）
+  - name: 亞伯蘭拒絕所多瑪財物
+    type: 神學
+    evidence: 23節一根線一根鞋帶都不拿，免得所多瑪王說使亞伯蘭富足
+    surfaces:
+      - {phrase: 凡是你的東西，就是一根線、一根鞋帶，我都不拿, verses: [23]}
+  - name: 「希伯來人」的意義
+    type: 原文
+    evidence: 13節；過來之人／希伯後裔／Habiru 諸說，GT 詳論
+  - name: 「撒冷」名字含義
+    type: 原文
+    evidence: 18節；平安、和平、完美（來七2平安王）
+  - name: 「麥基洗德」名字含義
+    type: 原文
+    evidence: 18節；仁義的王（來七2公義王）
+  - name: 麥基洗德與基督豫表
+    type: 主題
+    evidence: 18-20節；詩一一〇4、來七章以其為基督君王祭司職分的預表
+  - name: 得勝後的試探
+    type: 主題
+    evidence: 17、21節；KC 論得勝時刻常是危險時刻，所多瑪王如光明天使
+  - name: 羅得的世俗選擇與後果
+    type: 主題
+    evidence: 12節；住所多瑪承受城市政治風險，被擄失財物與自由
+  - name: 創世記14章四王的歷史辨識
+    type: 解經爭議
+    evidence: 1節；暗拉非不能等同漢摩拉比，四王無法在現存王表逐一確認
+  - name: 麥基洗德的身分
+    type: 解經爭議
+    evidence: 18節；閃、天使、基督顯現諸說，創世記以其為歷史人物

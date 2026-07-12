@@ -1,0 +1,28 @@
+name: 鐵鏊上做
+type: 事件
+secondary_types: []
+aliases:
+- 鐵鏊上做的素祭
+status: formal
+definition: 指以鐵鏊（平底的烘烤器具）來製作素祭的方式。獻祭者要用調油的無酵細麵，分成塊子並澆上油，以此作為素祭獻給耶和華。
+development: 本章第5至6節具體記載此法的程序，為素祭多樣化製作方式之一，強調無酵與調油的基本要求。
+accumulations:
+- book: 利未記
+  chapter: 2
+  summary: 規定鐵鏊上做的素祭須用調油的無酵細麵，分成塊子後澆上油。
+  relation: 展現素祭在製作方式上的彈性，同時維持無酵與用油的核心規範。
+related_entries:
+- 素祭（minchah）
+- 細麵
+- 油
+- 無酵
+sources:
+- '研經註解: Leviticus 2 — 鐵鏊素祭的製作條例（https://biblehub.com/study/leviticus/2.htm）'
+- '逐節註解: 利未記第2章 — 鐵鏊上做之素祭的解釋（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT02.htm）'
+- '研經註解: Leviticus 2 — 素祭的器具與方法（https://www.kingcomments.com/en/bible-studies/Lev/2）'
+created_from: manual
+category: 事件
+trigger_sources:
+- '研經註解: https://biblehub.com/study/leviticus/2.htm'
+current_data: {}
+pending: false

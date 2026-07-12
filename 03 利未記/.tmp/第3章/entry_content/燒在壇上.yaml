@@ -1,0 +1,28 @@
+name: 燒在壇上
+type: 事件
+secondary_types: []
+aliases:
+- 焚燒
+- 燒在壇的燔祭上
+status: formal
+definition: 燒在壇上是祭司將取下的脂油部分在壇上焚燒的獻祭事件。在利未記第3章中，亞倫的子孫要把取下的脂油燒在壇的燔祭上，就是在火的柴上。此焚燒動作產生獻與耶和華為馨香的火祭，作為獻給耶和華為食物的火祭，表明脂油全然歸屬於神。
+accumulations:
+- book: 利未記
+  chapter: 3
+  summary: 亞倫的子孫要把取下的脂油燒在壇的燔祭上，作為獻給耶和華為馨香火祭的食物。
+  relation: 燒在壇上是平安祭獻祭程序的高潮，將屬於神的脂油藉由火焚燒化為馨香之氣獻給神。
+related_entries:
+- 壇
+- 馨香的火祭
+- 取下脂油
+- 燔祭（olah）
+- 亞倫和他兒子（祭司）
+- 脂油都是耶和華的
+sources:
+- '研經註解: 利未記第3章焚燒脂油作為火祭的意義（https://biblehub.com/study/leviticus/3.htm）'
+- '逐節註解: 利未記第3章燒在壇上的燔祭上之描述（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT03.htm）'
+created_from: []
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

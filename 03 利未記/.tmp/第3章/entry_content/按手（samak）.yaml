@@ -1,0 +1,24 @@
+name: 按手（samak）
+type: 原文
+secondary_types: []
+aliases:
+- 按手
+status: formal
+definition: 希伯來文字根 samak，意為「靠」、「按」或「放在其上」。在利未記第3章的平安祭條例中，獻祭者需按手在供物（牛或羊）的頭上，此動作象徵獻祭者與祭物之間的認同與聯合，將祭物作為獻祭者的代表呈獻給神。
+accumulations:
+- book: 利未記
+  chapter: 3
+  summary: 獻平安祭者需按手在供物的頭上，隨後宰於會幕門口。
+  relation: 按手是獻平安祭的必要程序，確立獻祭者與無殘疾祭物之間的替代與呈獻關係。
+related_entries:
+- 平安祭（shelamim）
+- 無殘疾
+- 宰殺
+sources:
+- '研經註解: 利未記第3章按手動作的意義（https://biblehub.com/study/leviticus/3.htm）'
+- '逐節註解: 利未記第3章獻祭者按手於供物頭上之條例（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT03.htm）'
+created_from: []
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

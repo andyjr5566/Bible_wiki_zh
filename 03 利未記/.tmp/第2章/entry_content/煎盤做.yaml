@@ -1,0 +1,27 @@
+name: 煎盤做
+type: 事件
+secondary_types: []
+aliases:
+- 煎盤做的素祭
+status: formal
+definition: 指以煎盤來烹製素祭的方式。獻祭者要用油與細麵做成，以此作為素祭獻給耶和華。
+development: 本章第7節簡要記載此法，與爐中烤及鐵鏊上做並列，為素祭的不同製作途徑之一，同樣需符合素祭的基本材料要求。
+accumulations:
+- book: 利未記
+  chapter: 2
+  summary: 規定煎盤做的素祭須用油與細麵做成。
+  relation: 豐富素祭的製作形式，讓不同階層的獻祭者都能以可得材料獻祭。
+related_entries:
+- 素祭（minchah）
+- 細麵
+- 油
+sources:
+- '研經註解: Leviticus 2 — 煎盤素祭的製作條例（https://biblehub.com/study/leviticus/2.htm）'
+- '逐節註解: 利未記第2章 — 煎盤做之素祭的解釋（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT02.htm）'
+- '研經註解: Leviticus 2 — 素祭的烹調方式（https://www.kingcomments.com/en/bible-studies/Lev/2）'
+created_from: manual
+category: 事件
+trigger_sources:
+- '研經註解: https://biblehub.com/study/leviticus/2.htm'
+current_data: {}
+pending: false

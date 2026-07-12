@@ -1,0 +1,26 @@
+name: 長老按手
+type: 事件
+secondary_types: []
+aliases:
+- 會中長老按手
+status: formal
+definition: 在利未記第4章中，當以色列全會眾誤犯罪並獻上公牛犢為贖罪祭時，會 中的長老要在耶和華面前按手在牛的頭上，然後將牛宰於耶和華面前。此 按手動作代表會眾的代表（長老）將全會眾的罪轉移到祭牲身上，藉由祭
+  牲的代死來為會眾贖罪。
+accumulations:
+- book: 利未記
+  chapter: 4
+  summary: 本章記載以色列全會眾獻贖罪祭時，會中的長老要在耶和華面前按手 在牛的頭上，將牛宰了，作為會眾犯罪的贖罪程序。
+  relation: 長老按手是全會眾贖罪祭中代表會眾認罪與罪孽轉移的關鍵步驟。
+related_entries:
+- 按手
+- 公牛犢
+- 宰殺
+- 贖罪
+sources:
+- '研經註解: Leviticus 4 — 長老代表會眾按手（https://biblehub.com/study/leviticus/4.htm）'
+- '研經註解: Leviticus 4 — 會眾贖罪祭的按手意義（https://www.kingcomments.com/en/bible-studies/Lev/4）'
+created_from: []
+category: []
+trigger_sources: []
+current_data: {}
+pending: false

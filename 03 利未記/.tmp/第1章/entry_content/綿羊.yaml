@@ -1,0 +1,30 @@
+name: 綿羊
+type: 文化
+secondary_types: []
+aliases:
+- 公綿羊
+status: formal
+definition: 綿羊是古代以色列人常見的牲畜，常作為獻給耶和華的供物。在利未記第1章中，若獻祭者以綿羊為燔祭，必須獻上沒有殘疾的公羊。綿羊需在壇的北邊、在耶和華面前宰殺，祭司要把羊血灑在壇的周圍。其肉塊、頭與脂油要擺在壇上火的柴上，臟腑與腿用水洗後全然燒在壇上，成為獻與耶和華馨香的火祭。
+accumulations:
+- book: 利未記
+  chapter: 1
+  summary: 以綿羊為燔祭時，需獻無殘疾的公羊，在壇北邊宰殺、灑血、切塊並全燒在壇上。
+  relation: 本章規範了綿羊作為燔祭牲畜的宰殺位置與獻祭程序，與公牛的條例平行。
+related_entries:
+- 燔祭（olah）
+- 無殘疾
+- 山羊
+- 血
+- 灑血
+- 剝皮切塊
+- 燒在壇上
+- 洗臟腑與腿
+- 馨香的火祭
+sources:
+- '逐節註解: 利未記第1章 — 綿羊燔祭的條例（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT01.htm）'
+- '研經註解: Leviticus 1 — 綿羊在壇北邊宰殺（https://biblehub.com/study/leviticus/1.htm）'
+created_from: []
+category: 文化
+trigger_sources: []
+current_data: {}
+pending: false

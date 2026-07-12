@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 創世記/第4章.md",
+                "file": "03 利未記/第3章.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "第4章"
+              "title": "第3章"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 創世記/第4章.md",
+                "file": "03 利未記/第3章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第4章 的反向連結"
+              "title": "第3章 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 創世記/第4章.md",
+                "file": "03 利未記/第3章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第4章 的對外連結"
+              "title": "第3章 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 創世記/第4章.md",
+                "file": "03 利未記/第3章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第4章 的大綱"
+              "title": "第3章 的大綱"
             }
           }
         ]
@@ -196,42 +196,42 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "link_folder/互文/希伯來書11章亞伯因信獻祭.md",
-    "01 創世記/第4章.md",
-    "01 創世記/第2章.md",
-    "01 創世記/第6章.md",
-    "link_folder/神學/恩典的首次出現.md",
-    "link_folder/神學/義人與完全人.md",
-    "link_folder/神學/方舟的豫表.md",
-    "link_folder/互文/挪亞是傳義道者.md",
-    "01 創世記/第5章.md",
-    "01 創世記/第3章.md",
-    "01 創世記/第1章.md",
-    "link_folder/人物/猶大支派.md",
-    "link_folder/人物/雅八.md",
-    "link_folder/人物/猶大（雅各之子）.md",
-    "link_folder/人物/瑪勒列.md",
-    "link_folder/人物/雅列.md",
-    "link_folder/人物/以諾.md",
-    "link_folder/主題/死人.md",
-    "util/output/audits/book_audit_出埃及記.md",
-    "link_folder/人物/押尼珥.md",
-    "link_folder/人物/押沙龍.md",
-    "link_folder/人物/拉班.md",
-    "link_folder/人物/底拿.md",
-    "link_folder/人物/亞摩利人.md",
-    "link_folder/人物/俄南.md",
-    "link_folder/人物/迦南.md",
-    "temp/migrate_chapter_headings.py.tmp.56024.85673cea6b01",
-    "temp/migrate_chapter_headings.py",
-    "temp/migrate_chapter_headings.py.tmp.56024.f0e8d31c5e57",
-    "temp",
-    "專案流程說明.md.tmp.14512.0bd39997c6f4",
-    "util/run_chapter.py.tmp.14512.c82d64048054",
-    "util/run_chapter.py.tmp.14512.a6999374284d",
-    "util/run_chapter.py.tmp.14512.416bb7ab085d",
-    "util/tests/test_run_chapter.py.tmp.14512.1e11bf75e3fe",
-    "util/run_chapter.py.tmp.14512.8a20b1bf02a4",
+    "link_folder/主題/脂油.md",
+    "03 利未記/第3章.md",
+    "link_folder/事件/燒在壇上.md",
+    "03 利未記/第4章.md",
+    "03 利未記/第5章.md",
+    "01 創世記/第14章.md",
+    "01 創世記/第8章.md",
+    "01 創世記/第7章.md",
+    "link_folder/文化/雛鴿.md",
+    "link_folder/文化/聖所的舍客勒.md",
+    "link_folder/事件/償還加五分之一.md",
+    "link_folder/事件/承認罪.md",
+    "link_folder/事件/流血在壇腳.md",
+    "link_folder/事件/彈血.md",
+    "link_folder/主題/細麵.md",
+    "link_folder/文化/斑鳩.md",
+    "link_folder/文化/羊羔.md",
+    "link_folder/原文/贖愆祭（asham）.md",
+    "link_folder/文化/母羊.md",
+    "link_folder/文化/公綿羊.md",
+    "link_folder/主題/香壇.md",
+    "link_folder/事件/長老按手.md",
+    "link_folder/事件/搬到營外燒.md",
+    "link_folder/文化/綿羊羔.md",
+    "link_folder/文化/母山羊.md",
+    "link_folder/原文/按手.md",
+    "03 利未記",
+    "raw_data/ccbiblestudy_CT_leviticus_5.txt",
+    "raw_data/ccbiblestudy_CT_leviticus_3.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_5.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_4.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_3.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_2.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_1.txt",
+    "raw_data/kingcomments_leviticus_5.txt",
+    "raw_data/biblehub_study_leviticus_5.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

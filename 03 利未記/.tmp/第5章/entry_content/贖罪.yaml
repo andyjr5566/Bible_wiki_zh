@@ -1,0 +1,26 @@
+name: 贖罪
+type: 神學
+secondary_types: []
+aliases:
+- 贖罪
+status: formal
+definition: 指透過祭牲與祭司的媒介，為犯罪者除去罪孽，使其在耶和華面前蒙赦免的過程。在利未記第5章中，贖罪涵蓋了承認罪、獻上祭牲、祭司彈血及燒在壇上等程序，最終使罪人必蒙赦免。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 本章詳述當人有了罪時，需承認所犯的罪並獻上贖罪祭或贖愆祭，祭司要為他贖了，他必蒙赦免。
+  relation: 贖罪是本章的核心神學主題，連結了人的認罪、祭物的替代與神的赦免。
+related_entries:
+- 承認罪
+- 血
+- 燒在壇上
+- 亞倫和他兒子（祭司）
+sources:
+- '研經註解: 利未記第5章贖罪與赦免（https://biblehub.com/study/leviticus/5.htm）'
+- '逐節註解: 利未記第5章贖罪之工（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+- '研經註解: 利未記第5章贖罪恩典（https://www.kingcomments.com/en/bible-studies/Lev/5）'
+created_from: chapter_import
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

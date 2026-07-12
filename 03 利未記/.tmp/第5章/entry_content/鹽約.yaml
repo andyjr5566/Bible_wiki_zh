@@ -1,0 +1,26 @@
+name: 鹽約
+type: 神學
+secondary_types: []
+aliases:
+- 永約
+status: formal
+definition: 指以鹽作為象徵，表明神與人之間立下不可廢除、永遠有效且帶有忠信的盟約。 雖然利未記第5章的贖罪祭細麵明確規定「不可加上油，也不可加上乳香」，
+  但在更廣的素祭神學中，素祭被視為與神立約關係的記號， 鹽作為防腐與持久不變的象徵，指向神信實守約的屬性。 贖罪祭中禁止添加乳香等物，凸顯了贖罪祭的單純與嚴肅性，
+  而其底層的神學基礎仍是神與選民之間不可磨滅的立約關係。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 貧困者獻細麵為贖罪祭，雖不可加乳香，但細麵供物本身屬於素祭範疇，隱含神守約的基礎。
+  relation: 鹽約的神學概念為贖罪與赦免提供了立約的基礎，說明神之所以提供贖罪途徑，是因祂信實守約。
+related_entries:
+- 素祭
+- 細麵
+- 贖罪
+sources:
+- '研經註解: 利未記第5章贖罪祭與素祭條例之神學意涵（https://biblehub.com/study/leviticus/5.htm）'
+- '拾穗/應用: 利未記第5章贖罪祭與立約關係之應用（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT05.htm）'
+created_from: []
+category: []
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,26 @@
+name: 素祭
+type: 主題
+secondary_types: []
+aliases:
+- 細麵素祭
+status: formal
+definition: 指以細麵為主要成分的獻祭供物。在利未記第5章的贖罪祭條例中， 若獻祭者的力量不夠獻斑鳩或雛鴿，可帶細麵伊法十分之一作為贖罪祭， 但不可加上油與乳香。祭司取出其中一把作為紀念燒在壇上，
+  剩下的麵則歸給祭司，和素祭一樣。此主題顯示神對貧窮者的恩典與供應， 同時將素祭的分配原則應用於極度貧困者的贖罪祭中。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 貧窮者獻細麵為贖罪祭，剩下的麵歸祭司，其處理方式與素祭相同。
+  relation: 素祭的剩餘分配原則被引用作為貧困者贖罪祭的處理依據，連結了不同祭司所得的供物主題。
+related_entries:
+- 細麵
+- 祭司
+- 燒在壇上
+- 銅壇（燔祭壇）
+sources:
+- '研經註解: 利未記第5章細麵贖罪祭與素祭之關聯（https://biblehub.com/study/leviticus/5.htm）'
+- '逐節註解: 利未記第5章第13節素祭的分配原則（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+created_from: []
+category: []
+trigger_sources: []
+current_data: {}
+pending: false

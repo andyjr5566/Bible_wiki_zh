@@ -1,0 +1,24 @@
+name: 流血在壇腳
+type: 事件
+secondary_types: []
+aliases:
+- 流在壇的腳那裡
+status: formal
+definition: 流血在壇腳是指將剩餘的祭牲之血傾倒於祭壇底部的動作。在利未記第5章中，針對鳥類贖罪祭，祭司在將部分血彈在壇的旁邊後，剩下的血要「流在壇的腳那裡」。此動作確保祭牲的血完全歸於祭壇，不留在地上，象徵贖罪之血的完全傾倒與奉獻，滿足贖罪祭的條例。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 鳥類贖罪祭中，彈血後剩下的血要流在壇的腳那裡。
+  relation: 本章將剩餘的血流在壇腳，作為鳥類贖罪祭完成血之應用的最終步驟。
+related_entries:
+- 血
+- 銅壇（燔祭壇）
+- 彈血
+sources:
+- '研經註解: Leviticus 5 — 剩餘之血倒在壇腳的條例（https://biblehub.com/study/leviticus/5.htm）'
+- '逐節註解: 利未記第5章 — 流血在壇腳的贖罪祭規範（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+created_from: []
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

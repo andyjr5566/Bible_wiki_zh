@@ -1,0 +1,27 @@
+name: 供物
+type: 主題
+secondary_types: []
+aliases:
+- 供物
+status: formal
+definition: 以色列人獻給耶和華的物品，在利未記第1章中特指從牛群羊群或鳥類中挑選的牲畜。供物是敬拜者出於自願或特定目的帶到神面前的奉獻，本章詳述了供物作為燔祭時的種類（公牛、公羊、斑鳩或雛鴿）與獻祭程序，為要贖罪並蒙神悅納。
+accumulations:
+- book: 利未記
+  chapter: 1
+  summary: 以色列人中間若有人獻供物給耶和華，要從牛群羊群中獻牲畜為供物，也可獻鳥類為供物。
+  relation: 本章核心主題，涵蓋燔祭之供物的動物種類、挑選標準與獻祭流程。
+related_entries:
+- 燔祭（olah）
+- 牛群羊群
+- 鳥（斑鳩/雛鴿）
+- 贖罪
+- 悅納
+sources:
+- '研經註解: 利未記第1章 — 供物的定義與獻祭種類（https://biblehub.com/study/leviticus/1.htm）'
+- '拾穗/應用: 利未記第1章 — 供物在信徒生活中的屬靈應用（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT01.htm）'
+created_from: chapter_import
+category: 主題
+trigger_sources:
+- '研經註解: 利未記第1章（https://biblehub.com/study/leviticus/1.htm）'
+current_data: complete
+pending: false

@@ -1,0 +1,25 @@
+name: 鹽約
+type: 神學
+secondary_types: []
+aliases:
+- 鹽約
+status: formal
+definition: 鹽約在聖經神學中象徵神與人立約的永恆、不朽壞與持久性。鹽具有防腐與保存的作用，因此在獻祭中加上鹽，代表所立的約在神面前是不可廢棄的。利未記第4章雖未直接提及鹽約，但本章論及祭司將贖罪祭牲的脂油燒在壇上，作為獻給耶和華的「馨香的火祭」，此一獻給神的聖潔祭司條例，與素祭中「凡獻為素祭的供物都要用鹽調和，不可缺了你神立約的鹽」之永恆立約原則相呼應，共同構成神悅納並守約的神學基礎。
+accumulations:
+- book: 利未記
+  chapter: 4
+  summary: 本章記載祭司將贖罪祭牲的脂油燒在壇上，作為獻給耶和華的火祭，為百姓贖罪使其蒙赦免。
+  relation: 本章獻上脂油作為馨香火祭的原則，與素祭中不可缺鹽之「鹽約」的永恆立約神學概念同屬獻給神、蒙神悅納的聖潔條例。
+related_entries:
+- 脂油
+- 馨香的火祭
+- 燒在壇上
+- 素祭
+sources:
+- '研經註解: 利未記第4章火祭與獻祭條例之神學意涵（https://biblehub.com/study/leviticus/4.htm）'
+- '逐節註解: 利未記第4章脂油焚燒之條例解析（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT04.htm）'
+created_from: manual
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

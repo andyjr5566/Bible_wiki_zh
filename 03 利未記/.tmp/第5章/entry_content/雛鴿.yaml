@@ -1,0 +1,26 @@
+name: 雛鴿
+type: 文化
+secondary_types: []
+aliases: []
+status: formal
+definition: 在利未記第5章的獻祭條例中，雛鴿被指定為貧窮獻祭者的替代祭牲。若獻祭者的力量不夠獻一隻羊羔，可將兩隻斑鳩或兩隻雛鴿帶到耶和華面前為贖愆祭，一隻作贖罪祭，一隻作燔祭。這反映了古代以色列社會中對窮人經濟能力的體恤，允許以經濟價值較低的鳥類來代替羊群，使所有人無論貧富都能在神面前贖罪並蒙赦免。
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 力量不夠獻羊羔者可獻兩隻雛鴿，一隻作贖罪祭，一隻作燔祭。
+  relation: 雛鴿作為窮人的替代祭牲，體現了神在贖罪條例中對不同階層百姓的恩典與照顧。
+related_entries:
+- 斑鳩
+- 羊羔
+- 贖愆祭（asham）
+- 燔祭（olah）
+- 宰殺
+- 彈血
+sources:
+- '研經註解: 利未記第5章貧窮者的鳥類獻祭條例（https://biblehub.com/study/leviticus/5.htm）'
+- '研經註解: 利未記第5章雛鴿作為贖愆祭的意義（https://www.kingcomments.com/en/bible-studies/Lev/5）'
+created_from: []
+category: 文化
+trigger_sources: []
+current_data: {}
+pending: false

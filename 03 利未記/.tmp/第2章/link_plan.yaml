@@ -1,0 +1,212 @@
+book: 利未記
+chapter: 2
+A_use_directly: []
+B_needs_update:
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: v2、3、8、9、10、16 多處出現「亞倫子孫作祭司的」、「亞倫和他的子孫」。KC 強調祭司為信徒屬靈成熟的圖畫（彼前2:5）。
+  surfaces:
+  - phrase: 亞倫子孫
+  - phrase: 亞倫的子孫
+  - phrase: 祭司
+  - phrase: 亞倫和他的子孫
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: 本章多次提到「壇」，出埃及記27:1-8、38:1-7 記載銅壇構造。KC 指出銅壇預表十字架，銅表審判，火表聖潔。
+  surfaces:
+  - phrase: 銅壇
+  - phrase: 燔祭壇
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: v4、5、11「無酵餅」、「無酵薄餅」。既有條目為原文類型，分類衝突：候選=主題，既有=原文。
+  surfaces:
+  - phrase: 無酵餅
+  - phrase: 無酵薄餅
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: 利未記1章燔祭條例，與素祭同為馨香火祭。KC 指出燔祭表基督完全獻上自己。
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 火祭
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+C_new_formal:
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: 利未記2章核心主題：素祭條例（v1-16），希伯來文 minchah 意為「禮物、貢物」，表自願獻給神的感恩祭。BH、CCB、KC 均詳細解釋其字義、儀式與預表基督。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 供物
+    verses:
+    - 1
+  - phrase: 獻素祭
+    verses:
+    - 1
+  target_path: link_folder/原文/素祭（minchah）.md
+- name: 細麵
+  suggested_type: 原文
+  evidence: v1、4、5、7「細麵」，希伯來文 solet，指篩過三次的精細麵粉。KC 指出預表基督清潔、精細、無過不及的品格；CCB 解釋細麵預表基督作我們的糧食。
+  surfaces:
+  - phrase: 細麵
+  - phrase: 麵
+    verses:
+    - 1
+    - 4
+    - 5
+    - 7
+  target_path: link_folder/原文/細麵.md
+- name: 油
+  suggested_type: 神學
+  evidence: v1、2、4、5、6、7、15、16「油」，希伯來文 shemen。KC 指出油表聖靈，澆上油預表耶穌由聖靈感孕；CCB 解釋油表聖靈膏抹。
+  surfaces:
+  - phrase: 油
+  - phrase: 澆上油
+  - phrase: 調油
+  - phrase: 抹油
+  target_path: link_folder/神學/油.md
+- name: 乳香
+  suggested_type: 神學
+  evidence: v1、2、15、16「乳香」，希伯來文 lebonah。KC 指出乳香預表基督受苦後發出的香氣，表示耶穌的生活滿足神心、榮耀神；CCB 解釋乳香作聖香原料，把崇拜的人帶到神面前。
+  surfaces:
+  - phrase: 乳香
+  - phrase: 加上乳香
+  target_path: link_folder/神學/乳香.md
+- name: 無酵
+  suggested_type: 神學
+  evidence: v4、5、11「無酵」，希伯來文 matsah。KC 指出無酵表基督無罪、純潔；酵表邪惡、虛偽（太16:6）；CCB 解釋不可燒酵蜜作火祭。
+  surfaces:
+  - phrase: 無酵
+  - phrase: 無酵餅
+  - phrase: 無酵薄餅
+  - phrase: 酵
+  target_path: link_folder/神學/無酵.md
+- name: 鹽約
+  suggested_type: 神學
+  evidence: v13「一切的供物都要配鹽而獻...不可缺了你神立約的鹽」。KC 指出鹽表立約永恆、不變質；CCB 解釋鹽約表神與人約關係永不廢棄。
+  surfaces:
+  - phrase: 鹽
+  - phrase: 配鹽
+  - phrase: 立約的鹽
+  target_path: link_folder/神學/鹽約.md
+- name: 紀念
+  suggested_type: 神學
+  evidence: v2、9、16「作為紀念」，希伯來文 azkarah。KC 指出紀念部分燒在壇上，表基督一生全然為神而活，是神所喜悅的愛子；CCB 解釋這一把細麵作為全部細麵的代表獻上給神。
+  surfaces:
+  - phrase: 紀念
+  - phrase: 作為紀念
+  target_path: link_folder/神學/紀念.md
+- name: 至聖
+  suggested_type: 神學
+  evidence: v3、10「這是獻與耶和華的火祭中為至聖的」。KC 指出至聖表信徒不可將享受基督視為平凡；CCB 解釋至聖意指分別出來歸於神，只可在聖所吃。
+  surfaces:
+  - phrase: 至聖
+  - phrase: 為至聖的
+  target_path: link_folder/神學/至聖.md
+- name: 初熟之物
+  suggested_type: 主題
+  evidence: v12、14、16「初熟之物」，希伯來文 bikkurim。KC 指出初熟預表基督復活成為睡了之人初熟的果子（林前15:20）；CCB 解釋烘了的禾穗子、軋了的新穗子作初熟素祭。
+  surfaces:
+  - phrase: 初熟之物
+  - phrase: 初熟
+  - phrase: 禾穗子
+  - phrase: 新穗子
+  target_path: link_folder/主題/初熟之物.md
+- name: 爐中烤
+  suggested_type: 事件
+  evidence: v4「若用爐中烤的物為素祭」。KC 指出爐烤表基督經歷火的試煉；CCB 解釋爐中烤的素祭用調油的無酵細麵餅或抹油的無酵薄餅。
+  surfaces:
+  - phrase: 爐中烤
+  - phrase: 烤
+  target_path: link_folder/事件/爐中烤.md
+- name: 鐵鏊上做
+  suggested_type: 事件
+  evidence: v5「若用鐵鏊上做的物為素祭」。KC 指出鐵鏊表基督在世受苦的經歷；CCB 解釋用調油的無酵細麵，分成塊子澆上油。
+  surfaces:
+  - phrase: 鐵鏊上做
+  - phrase: 鐵鏊
+  - phrase: 分成塊子
+  target_path: link_folder/事件/鐵鏊上做.md
+- name: 煎盤做
+  suggested_type: 事件
+  evidence: v7「若用煎盤做的物為素祭」。KC 指出煎盤表基督受苦的細緻經歷；CCB 解釋用油與細麵做成。
+  surfaces:
+  - phrase: 煎盤做
+  - phrase: 煎盤
+  target_path: link_folder/事件/煎盤做.md
+- name: 祭司取一把
+  suggested_type: 事件
+  evidence: v2、9、16「祭司就要從細麵中取出一把來」。KC 指出取一把表信徒手中的作為充滿基督柔細生命；CCB 解釋這一把作為全部的代表獻上給神。
+  surfaces:
+  - phrase: 取出一把
+  - phrase: 一把
+  target_path: link_folder/事件/祭司取一把.md
+- name: 燒在壇上
+  suggested_type: 事件
+  evidence: v2、9、16「燒在壇上」。KC 指出燒在壇上表基督工作完全被神悅納；CCB 解釋火祭指經過火燒的獻祭。
+  surfaces:
+  - phrase: 燒在壇上
+  - phrase: 火祭
+  target_path: link_folder/事件/燒在壇上.md
+- name: 素祭所剩歸祭司
+  suggested_type: 事件
+  evidence: v3、10「素祭所剩的要歸給亞倫和他的子孫」。KC 指出亞倫和子孫表愛神、事神的信徒，基督是信徒的生命之糧；CCB 解釋祭司世襲制度，至聖的素祭只可在聖所吃。
+  surfaces:
+  - phrase: 所剩的
+  - phrase: 歸給亞倫
+  target_path: link_folder/事件/素祭所剩歸祭司.md
+- name: 蜜
+  suggested_type: 文化
+  evidence: v11「不可燒一點酵、一點蜜當作火祭」。KC 指出蜜表天然的甜美、人的情感，不可與火祭同獻；CCB 解釋酵蜜只可作為初熟的供物獻上。
+  surfaces:
+  - phrase: 蜜
+  target_path: link_folder/文化/蜜.md
+- name: 壇
+  suggested_type: 主題
+  evidence: v2、9、16「燒在壇上」。KC 指出壇預表十字架，火表神審判的聖潔。
+  surfaces:
+  - phrase: 壇
+  - phrase: 壇上
+  target_path: link_folder/主題/壇.md
+- name: 馨香的火祭
+  suggested_type: 神學
+  evidence: v2、9、16「馨香的火祭」。KC 指出素祭同為馨香之氣，表基督工作完全榮耀神；BH 連結弗5:2。
+  surfaces:
+  - phrase: 馨香的火祭
+  - phrase: 馨香
+  target_path: link_folder/神學/馨香的火祭.md
+- name: 贖愆祭
+  suggested_type: 神學
+  evidence: 利未記5-6章贖愆祭條例，與素祭同為獻祭制度一部分。KC 指出贖愆祭為得罪聖物、誤犯罪而設。
+  surfaces:
+  - phrase: 贖愆祭
+  - phrase: 贖愆
+  target_path: link_folder/神學/贖愆祭.md
+D_new_candidate:
+- name: 會幕
+  suggested_type: 地點
+  evidence: v2、8、9「帶到亞倫子孫作祭司的那裡」、「帶到耶和華面前」、「奉給祭司，帶到壇前」。BH 指出會幕為神與人相會之處。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 耶和華面前
+  - phrase: 壇前
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 平安祭
+  suggested_type: 主題
+  evidence: 利未記3章平安祭條例，與素祭同為馨香火祭。KC 指出平安祭表基督成就與神與人之平安（西1:20）。分類衝突：候選=主題，既有=神學。
+  surfaces:
+  - phrase: 平安祭
+  - phrase: 酬恩祭
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['背景']
+E_skip: []
