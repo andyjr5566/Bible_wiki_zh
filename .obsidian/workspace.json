@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 創世記/第22章.md",
+                "file": "01 創世記/第24章.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "第22章"
+              "title": "第24章"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 創世記/第22章.md",
+                "file": "01 創世記/第24章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第22章 的反向連結"
+              "title": "第24章 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 創世記/第22章.md",
+                "file": "01 創世記/第24章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第22章 的對外連結"
+              "title": "第24章 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 創世記/第22章.md",
+                "file": "01 創世記/第24章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第22章 的大綱"
+              "title": "第24章 的大綱"
             }
           }
         ]
@@ -196,12 +196,28 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
+    "01 創世記/第23章.md",
+    "01 創世記/第28章.md",
+    "01 創世記/第29章.md",
+    "01 創世記/第30章.md",
+    "01 創世記/第31章.md",
+    "03 利未記/第7章.md",
+    "raw_data/ccbiblestudy_GT_genesis_24.txt",
+    "raw_data/ccbiblestudy_CT_genesis_24.txt",
+    "raw_data/kingcomments_genesis_24.txt",
+    "raw_data/biblehub_study_genesis_24.txt",
+    "link_folder/文化/四百舍客勒.md.tmp.67068.0a70831117d4",
+    "util/__pycache__/run_chapter.cpython-312.pyc",
+    "raw_data/ccbiblestudy_GT_genesis_23.txt",
+    "raw_data/ccbiblestudy_CT_genesis_23.txt",
+    "raw_data/kingcomments_genesis_23.txt",
+    "raw_data/biblehub_study_genesis_23.txt",
+    "01 創世記/第22章.md",
     "01 創世記/第21章.md",
     "01 創世記/第20章.md",
     "link_folder/神學/神在夢中顯現與引導.md",
     "01 創世記/第19章.md",
     "01 創世記/第18章.md",
-    "01 創世記/第22章.md",
     "03 利未記/第6章.md",
     "link_folder/主題/以實瑪利十二族.md",
     "link_folder/事件/西乃山吩咐（利7：38）.md",
@@ -216,22 +232,6 @@
     "link_folder/神學/不潔淨而吃祭肉.md",
     "link_folder/神學/第三天焚燒.md",
     "link_folder/原文/甘心祭（nedabah）.md",
-    "link_folder/神學/還願祭.md",
-    "link_folder/原文/舉祭（terumah）.md",
-    "link_folder/神學/有酵餅與平安祭.md",
-    "link_folder/原文/感謝祭（todah）.md",
-    "link_folder/神學/大家均分.md",
-    "link_folder/神學/素祭歸祭司.md",
-    "raw_data/ccbiblestudy_GT_genesis_21.txt",
-    "raw_data/ccbiblestudy_CT_genesis_21.txt",
-    "raw_data/kingcomments_genesis_21.txt",
-    "raw_data/biblehub_study_genesis_21.txt",
-    "write_yaml.py",
-    "memories",
-    "raw_data/kingcomments_leviticus_10.txt",
-    "raw_data/kingcomments_leviticus_9.txt",
-    "raw_data/kingcomments_leviticus_8.txt",
-    "raw_data/kingcomments_leviticus_7.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

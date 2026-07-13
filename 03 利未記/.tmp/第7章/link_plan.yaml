@@ -120,6 +120,14 @@ B_needs_update:
   match_type: alias
   existing_title: 耶和華曉諭摩西（利6：1）
   existing_path: link_folder/事件/耶和華曉諭摩西（利6：1）.md
+- name: 無酵餅（matzah）
+  suggested_type: 文化
+  evidence: 'v12 感謝祭同獻調油無酵餅、抹油無酵薄餅、油調細麵餅。BH: unleavened cakes signify purity and absence
+    of sin.'
+  match_type: type_conflict
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+  note: 分類衝突已解決：保留既有分類原文，不另建文化條目
 C_new_formal:
 - name: 灑血壇的周圍
   suggested_type: 神學
@@ -261,11 +269,5 @@ C_new_formal:
     at Mount Sinai in the wilderness. CT: 西乃山是神頒布律法之處。KC: God expects us to continually
     offer up a sacrifice of praise while living on earth.'
   target_path: link_folder/事件/西乃山吩咐.md
-D_new_candidate:
-- name: 無酵餅（matzah）
-  suggested_type: 文化
-  evidence: 'v12 感謝祭同獻調油無酵餅、抹油無酵薄餅、油調細麵餅。BH: unleavened cakes signify purity and absence
-    of sin.'
-  match_type: type_conflict
-  note: 分類衝突：候選=文化，既有=原文，secondary=['歷史']
+D_new_candidate: []
 E_skip: []

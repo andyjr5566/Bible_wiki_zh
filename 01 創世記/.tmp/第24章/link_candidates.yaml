@@ -1,0 +1,71 @@
+book: 創世記
+chapter: 24
+candidates:
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 1-9節；年老蒙福，囑老僕人起誓為以撒在本族娶妻（舊檔未連，本次補全）
+  - name: 以撒
+    type: 人物
+    evidence: 4、14、62-67節；南地田間默想，迎娶利百加得安慰
+  - name: 利百加
+    type: 人物
+    evidence: 15-67節；井旁打水、果斷「我去」、蒙上帕子成為以撒之妻
+  - name: 拿鶴
+    type: 人物
+    evidence: 10、15、24、47節；亞伯拉罕之兄，其城即哈蘭一帶
+  - name: 彼土利
+    type: 人物
+    evidence: 15、24、47、50節；利百加之父，密迦與拿鶴之子
+  - name: 密迦
+    type: 人物
+    evidence: 15、24、47節；拿鶴之妻，利百加祖母
+  - name: 拉班
+    type: 人物
+    evidence: 29-50節；利百加之兄，見金飾出迎，代表家族允婚
+  - name: 大腿底下起誓
+    type: 主題
+    evidence: 2、9節；古代鄭重起誓之禮，關乎後裔傳承
+    surfaces:
+      - {phrase: 大腿底下, verses: [2, 9]}
+  - name: 迦南人
+    type: 人物
+    evidence: 3節不可娶迦南地中的女子；避免後裔被偶像崇拜誘轉
+    surfaces:
+      - {phrase: 迦南地中的女子, verses: [3]}
+  - name: 十匹駱駝
+    type: 背景
+    evidence: 10節；馱運聘禮並供新婦一行乘用，顯主人之富
+  - name: 米所波大米
+    type: 地點
+    evidence: 10節兩河流域；僕人往拿鶴的城（哈蘭一帶）
+  - name: 水井
+    type: 地點
+    evidence: 11節城外水井；古代社群生活與相遇之處
+    surfaces:
+      - {phrase: 水井, verses: [11]}
+  - name: 金環
+    type: 背景
+    evidence: 22、29、47節；重半舍客勒，戴在鼻上的訂親飾物
+  - name: 金鐲
+    type: 背景
+    evidence: 22、29、47節；重十舍客勒，戴在兩手上
+  - name: 舍客勒
+    type: 原文
+    evidence: 22節重量單位；半舍客勒約7克，十舍客勒約114克
+    surfaces:
+      - {phrase: 舍客勒, verses: [22]}
+  - name: 撒拉的帳棚
+    type: 文化
+    evidence: 67節；領利百加進母親的帳棚，表明她承接主母地位
+  - name: 基督之新婦（豫表）
+    type: 主題
+    evidence: 全章豫表：父差僕人為子娶妻，教會為基督的新婦（弗五31-32）
+  - name: 聖靈的引領
+    type: 主題
+    evidence: 老僕人豫表聖靈：述說主人與子的豐富、引領新婦走曠野路
+  - name: 神約定之妻
+    type: 主題
+    evidence: 14、44節「你所預定給你僕人以撒的妻」；50節這事乃出於耶和華
+  - name: 千萬人的母
+    type: 主題
+    evidence: 60節家人祝福，呼應創廿二17對亞伯拉罕的應許

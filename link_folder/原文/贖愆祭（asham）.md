@@ -34,6 +34,12 @@ source_scope: collected_only
 - 本章重點：本章1-7節是第五章贖愆祭的延續，處理人際財物罪（俗事上的愆尤）。犯罪者干犯耶和華（ma'al），須如數歸還所搶奪/欺壓/侵佔/拾遺之物，另加五分之一罰金，在查出有罪的日子交還本主；再獻無殘疾公綿羊為贖愆祭，祭司為他贖罪即蒙赦免。BH: guilt offering (asham) specifically addresses sins involving deceit against a neighbor, requiring restitution in full plus 20% penalty. CT: 贖愆祭的「還」與挽回祭的「挽」同義——在神面前要「挽」，在人面前要「還」。KC: every sin against one's neighbor is in the first place a sin against God, unfaithfulness against Him.
 - 與本章關聯：本章補充贖愆祭在人際財物罪方面的應用（第五章側重聖物上的愆尤），強調「賠還」是悔改的果子（太3:8），預表基督作為完全的贖愆祭（西2:13）。
 <!-- accumulation:利未記:6:end -->
+
+<!-- accumulation:利未記:7:start -->
+#### [[03 利未記/第7章|第7章]]
+- 本章重點：本章1-7節從祭司角度補充贖愆祭條例：宰於燔祭牲處（壇北邊）、血灑壇周圍（非抹壇角，與贖罪祭不同）、脂油（肥尾巴、蓋臟脂油、腰子、肝上網子）焚燒為火祭、祭司男丁在聖處吃祭物（至聖）。v7 贖罪祭怎樣贖愆祭也是怎樣，兩個祭一個條例，獻贖愆祭贖罪的祭司得祭物。BH: guilt offering is most holy; blood splattered on all sides indicates thoroughness of atonement. CT: 贖愆祭表徵基督應付人的罪行（複數）。GT: 贖愆祭有五樣與贖罪祭不同之處——表意、性質、用血、祭牲、條例。KC: whoever brings a guilt offering may also see that the Lord Jesus is also the burnt offering.
+- 與本章關聯：本章補充贖愆祭的祭司實務細節（宰殺位置、灑血方式、脂油部位、祭司食用權），強調贖愆祭與贖罪祭同例——對付罪行與對付罪性不可分割。
+<!-- accumulation:利未記:7:end -->
 ## 相關條目
 
 - [[公綿羊]]

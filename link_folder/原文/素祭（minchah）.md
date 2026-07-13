@@ -35,6 +35,12 @@ source_scope: collected_only
 - 本章重點：本章14-18節從祭司角度補充素祭條例：祭司取一把細麵+油+所有乳香燒在壇上，奉給耶和華為馨香素祭的紀念；剩下的亞倫和他子孫在聖處（會幕院子）不帶酵而吃，烤時不可攙酵。這是從獻給耶和華的火祭中賜給祭司的分，是至聖的，和贖罪祭並贖愆祭一樣。凡祭司中的男丁都可吃，直到萬代；摸這些祭物的都要成為聖。BH: grain offering represents dedication of fruits of human labor to God. CT: 素祭含有禮物或貢物的意味，自願獻祭表明忠貞與感恩。KC: eating the grain offering means taking in something spiritual so that our hearts are filled with it.
 - 與本章關聯：本章從祭司食用角度補充第二章（獻祭者角度），強調素祭的至聖性與祭司共享的權利。素祭預表基督作為完全的人在地上為神而活。
 <!-- accumulation:利未記:6:end -->
+
+<!-- accumulation:利未記:7:start -->
+#### [[03 利未記/第7章|第7章]]
+- 本章重點：v9-10 素祭歸祭司細則：爐烤/煎盤/鐵鏊做的歸獻祭祭司；油調和或乾的歸亞倫子孫大家均分。v12 感謝祭同獻三種無酵餅（調油無酵餅、抹油無酵薄餅、油調細麵餅）。BH: grain offerings provided for priests; communal aspect of worship. CT: 表徵事奉並供應基督的人得以享用基督受苦的功效（烤、煎）和滿有聖靈的基督（油調）。KC: a believer who deals with guilt of another receives special appreciation for the perfect devotion of the Lord Jesus.
+- 與本章關聯：本章補充素祭歸祭司的分配細則——不同做法（爐/煎盤/鐵鏊）歸不同祭司，乾/油調均分，預表事奉者從不同角度享用基督。
+<!-- accumulation:利未記:7:end -->
 ## 主題發展
 
 本章詳細記載素祭的四種製作方式（爐中烤、鐵鏊上做、煎盤做、初熟禾穗），並強調鹽約與無酵的要求，確立素祭作為向耶和華獻上感恩與記念的供物規範。

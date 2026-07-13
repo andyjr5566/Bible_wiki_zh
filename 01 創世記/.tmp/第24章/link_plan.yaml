@@ -1,0 +1,144 @@
+book: 創世記
+chapter: 24
+A_use_directly:
+- name: 以撒
+  suggested_type: 人物
+  evidence: 4、14、62-67節；南地田間默想，迎娶利百加得安慰
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 15-67節；井旁打水、果斷「我去」、蒙上帕子成為以撒之妻
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 拿鶴
+  suggested_type: 人物
+  evidence: 10、15、24、47節；亞伯拉罕之兄，其城即哈蘭一帶
+  match_type: exact
+  existing_title: 拿鶴
+  existing_path: link_folder/人物/拿鶴.md
+- name: 彼土利
+  suggested_type: 人物
+  evidence: 15、24、47、50節；利百加之父，密迦與拿鶴之子
+  match_type: exact
+  existing_title: 彼土利
+  existing_path: link_folder/人物/彼土利.md
+- name: 密迦
+  suggested_type: 人物
+  evidence: 15、24、47節；拿鶴之妻，利百加祖母
+  match_type: exact
+  existing_title: 密迦
+  existing_path: link_folder/人物/密迦.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 29-50節；利百加之兄，見金飾出迎，代表家族允婚
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 大腿底下起誓
+  suggested_type: 主題
+  evidence: 2、9節；古代鄭重起誓之禮，關乎後裔傳承
+  surfaces:
+  - phrase: 大腿底下
+    verses:
+    - 2
+    - 9
+  match_type: exact
+  existing_title: 大腿底下起誓
+  existing_path: link_folder/主題/大腿底下起誓.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 3節不可娶迦南地中的女子；避免後裔被偶像崇拜誘轉
+  surfaces:
+  - phrase: 迦南地中的女子
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 十匹駱駝
+  suggested_type: 背景
+  evidence: 10節；馱運聘禮並供新婦一行乘用，顯主人之富
+  match_type: exact
+  existing_title: 十匹駱駝
+  existing_path: link_folder/背景/十匹駱駝.md
+- name: 米所波大米
+  suggested_type: 地點
+  evidence: 10節兩河流域；僕人往拿鶴的城（哈蘭一帶）
+  match_type: exact
+  existing_title: 米所波大米
+  existing_path: link_folder/地點/米所波大米.md
+- name: 水井
+  suggested_type: 地點
+  evidence: 11節城外水井；古代社群生活與相遇之處
+  surfaces:
+  - phrase: 水井
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 水井
+  existing_path: link_folder/地點/水井.md
+- name: 金環
+  suggested_type: 背景
+  evidence: 22、29、47節；重半舍客勒，戴在鼻上的訂親飾物
+  match_type: exact
+  existing_title: 金環
+  existing_path: link_folder/背景/金環.md
+- name: 金鐲
+  suggested_type: 背景
+  evidence: 22、29、47節；重十舍客勒，戴在兩手上
+  match_type: exact
+  existing_title: 金鐲
+  existing_path: link_folder/背景/金鐲.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: 22節重量單位；半舍客勒約7克，十舍客勒約114克
+  surfaces:
+  - phrase: 舍客勒
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 撒拉的帳棚
+  suggested_type: 文化
+  evidence: 67節；領利百加進母親的帳棚，表明她承接主母地位
+  match_type: exact
+  existing_title: 撒拉的帳棚
+  existing_path: link_folder/文化/撒拉的帳棚.md
+- name: 基督之新婦（豫表）
+  suggested_type: 主題
+  evidence: 全章豫表：父差僕人為子娶妻，教會為基督的新婦（弗五31-32）
+  match_type: exact
+  existing_title: 基督之新婦（豫表）
+  existing_path: link_folder/主題/基督之新婦（豫表）.md
+- name: 聖靈的引領
+  suggested_type: 主題
+  evidence: 老僕人豫表聖靈：述說主人與子的豐富、引領新婦走曠野路
+  match_type: exact
+  existing_title: 聖靈的引領
+  existing_path: link_folder/主題/聖靈的引領.md
+- name: 神約定之妻
+  suggested_type: 主題
+  evidence: 14、44節「你所預定給你僕人以撒的妻」；50節這事乃出於耶和華
+  match_type: exact
+  existing_title: 神約定之妻
+  existing_path: link_folder/主題/神約定之妻.md
+- name: 千萬人的母
+  suggested_type: 主題
+  evidence: 60節家人祝福，呼應創廿二17對亞伯拉罕的應許
+  match_type: exact
+  existing_title: 千萬人的母
+  existing_path: link_folder/主題/千萬人的母.md
+B_needs_update:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-9節；年老蒙福，囑老僕人起誓為以撒在本族娶妻（舊檔未連，本次補全）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

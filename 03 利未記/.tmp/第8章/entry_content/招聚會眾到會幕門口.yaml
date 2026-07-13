@@ -1,0 +1,24 @@
+name: 招聚會眾到會幕門口
+type: 事件
+secondary_types: []
+aliases:
+- 會眾聚集在會幕門口
+status: formal
+definition: 摩西照耶和華的吩咐，將亞倫和他兒子帶來，並招聚全體會眾聚集在會幕門口，作為執行祭司承接聖職之禮的公開場合。此事件表明祭司的設立是在全會眾的見證下進行，具有公開性與代表性。
+accumulations:
+- book: 利未記
+  chapter: 8
+  summary: 摩西招聚會眾到會幕門口，並在會眾面前宣告耶和華所吩咐當行的事。
+  relation: 此事件為本章祭司受膏儀式的開端，確立了整個禮儀是在公眾見證與神吩咐下進行。
+related_entries:
+- 摩西
+- 亞倫和他兒子（祭司）
+- 會幕（帳幕整體）
+sources:
+- '研經註解: 利未記第8章會眾聚集的背景（https://biblehub.com/study/leviticus/8.htm）'
+- '拾穗/應用: 利未記第8章會幕門口的屬靈應用（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT08.htm）'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

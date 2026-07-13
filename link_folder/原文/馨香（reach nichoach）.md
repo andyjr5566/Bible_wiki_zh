@@ -23,6 +23,11 @@ source_scope: collected_only
 - 與本章關聯：本章透過原文 reach nichoach 連結了素祭的紀念部分與祭司受膏時的常獻素祭，表明這些燒在壇上的祭物是蒙神悅納的香氣。
 <!-- accumulation:利未記:6:end -->
 
+<!-- accumulation:利未記:7:start -->
+#### [[03 利未記/第7章|第7章]]
+- 本章重點：v5 祭司在壇上焚燒贖愆祭脂油為獻給耶和華的火祭——火祭即馨香火祭。BH: food offering signifies pleasing aroma to God. CT: 脂油焚燒為馨香火祭歸神。KC: the offering by fire is a soothing aroma to the LORD.
+- 與本章關聯：本章贖愆祭脂油焚燒為馨香火祭，延續火祭的馨香意義——基督獻己為神所悅納。
+<!-- accumulation:利未記:7:end -->
 ## 相關條目
 
 - [[素祭（minchah）]]

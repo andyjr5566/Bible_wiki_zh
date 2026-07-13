@@ -29,6 +29,11 @@ source_scope: collected_only
 - 與本章關聯：本章從祭司管理壇火角度補充第一章（獻祭者角度），強調壇火不可熄滅——預表基督獻祭的馨香永遠在神面前。燔祭灰拿到營外預表基督在營外受苦（來13:11-13）。
 <!-- accumulation:利未記:6:end -->
 
+<!-- accumulation:利未記:7:start -->
+#### [[03 利未記/第7章|第7章]]
+- 本章重點：v2 贖愆祭牲宰於宰燔祭牲之處（壇北邊），暗示贖愆祭與燔祭相連。v8 獻燔祭的祭司無論為誰奉獻，要親自得那燔祭牲的皮——皮歸祭司為酬勞。BH: hide was valuable commodity; priests relied on portions of offerings for sustenance. CT: 表徵事奉並供應基督的人得以享用基督的保守和彰顯（皮）。KC: the skin speaks of being clothed with the value of the Son's sacrifice——knowing who you are in Christ.
+- 與本章關聯：本章以燔祭為贖愆祭的參照點（同宰殺處），並首次規定燔祭牲皮歸祭司——皮表徵基督外在的保守與彰顯，祭司得皮預表事奉者披戴基督。
+<!-- accumulation:利未記:7:end -->
 ## 主題發展
 
 燔祭在聖經中是最基本的祭：創8:20挪亞出方舟獻燔祭、創22:2亞伯拉罕獻以撒為燔祭、利1章燔祭條例、來10:5-10基督來到世上說「獻祭和祭物你不願意，但你曾給我預備了身體」，基督的自我獻上成就了燔祭的終極意義。
