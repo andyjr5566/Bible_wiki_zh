@@ -1,0 +1,112 @@
+book: 創世記
+chapter: 23
+A_use_directly:
+- name: 撒拉
+  suggested_type: 人物
+  evidence: 1-2、19節；享壽127歲，聖經唯一記壽數的女人，葬於麥比拉洞
+  match_type: exact
+  existing_title: 撒拉
+  existing_path: link_folder/人物/撒拉.md
+- name: 基列亞巴
+  suggested_type: 地點
+  evidence: 2節；希伯崙古稱，字義四方城
+  match_type: exact
+  existing_title: 基列亞巴
+  existing_path: link_folder/地點/基列亞巴.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 3-20節；地主民族，交易的見證群體
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 寄居者身份
+  suggested_type: 主題
+  evidence: 4節我在你們中間是外人是寄居的（來十一13）
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 寄居者身份
+  existing_path: link_folder/主題/寄居者身份.md
+- name: 以弗崙
+  suggested_type: 人物
+  evidence: 8-17節；瑣轄之子，表面贈地實則高價的談判
+  match_type: exact
+  existing_title: 以弗崙
+  existing_path: link_folder/人物/以弗崙.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 9、17-19節；字義「雙倍」，族長家族墳地
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
+- name: 銀子
+  suggested_type: 主題
+  evidence: 16節買賣通用的銀子平了四百舍客勒
+  surfaces:
+  - phrase: 銀子
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 銀子
+  existing_path: link_folder/主題/銀子.md
+- name: 墳地
+  suggested_type: 神學
+  evidence: 4-20節；應許地的初熟果子，惟一永久產業竟是墳地
+  match_type: exact
+  existing_title: 墳地
+  existing_path: link_folder/神學/墳地.md
+- name: 復活盼望
+  suggested_type: 主題
+  evidence: 全章；埋葬連於復活，埋葬是撒種（林前十五3-4）
+  match_type: exact
+  existing_title: 復活盼望
+  existing_path: link_folder/主題/復活盼望.md
+B_needs_update:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 2-20節；哀慟哭號後起來購地葬妻（舊檔 v2 連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 2、19節；撒拉死葬之地，後為族長祖墳
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 死人
+  suggested_type: 主題
+  evidence: 4、6、8、13節埋葬我的死人；死人必須埋葬
+  surfaces:
+  - phrase: 死人
+    verses:
+    - 4
+    - 6
+    - 8
+    - 13
+  match_type: exact
+  existing_title: 死人
+  existing_path: link_folder/主題/死人.md
+- name: 四百舍客勒
+  suggested_type: 文化
+  evidence: 15-16節；對照大衛50舍客勒、耶利米17舍客勒，估價甚高
+  match_type: exact
+  existing_title: 四百舍客勒
+  existing_path: link_folder/文化/四百舍客勒.md
+- name: 樹木
+  suggested_type: 主題
+  evidence: 17節田間四圍的樹木都定準歸與亞伯拉罕
+  match_type: exact
+  existing_title: 樹木
+  existing_path: link_folder/主題/樹木.md
+- name: 城門口交易
+  suggested_type: 文化
+  evidence: 10、18節；城門出入的人面前買妥，公開法律保障
+  match_type: exact
+  existing_title: 城門口交易
+  existing_path: link_folder/文化/城門口交易.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

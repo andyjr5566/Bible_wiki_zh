@@ -1,0 +1,54 @@
+book: 創世記
+chapter: 23
+candidates:
+  - name: 撒拉
+    type: 人物
+    evidence: 1-2、19節；享壽127歲，聖經唯一記壽數的女人，葬於麥比拉洞
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 2-20節；哀慟哭號後起來購地葬妻（舊檔 v2 連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
+  - name: 基列亞巴
+    type: 地點
+    evidence: 2節；希伯崙古稱，字義四方城
+  - name: 希伯崙
+    type: 地點
+    evidence: 2、19節；撒拉死葬之地，後為族長祖墳
+  - name: 赫人
+    type: 人物
+    evidence: 3-20節；地主民族，交易的見證群體
+  - name: 寄居者身份
+    type: 主題
+    evidence: 4節我在你們中間是外人是寄居的（來十一13）
+    surfaces:
+      - {phrase: 寄居的, verses: [4]}
+  - name: 死人
+    type: 主題
+    evidence: 4、6、8、13節埋葬我的死人；死人必須埋葬
+    surfaces:
+      - {phrase: 死人, verses: [4, 6, 8, 13]}
+  - name: 以弗崙
+    type: 人物
+    evidence: 8-17節；瑣轄之子，表面贈地實則高價的談判
+  - name: 麥比拉洞
+    type: 地點
+    evidence: 9、17-19節；字義「雙倍」，族長家族墳地
+  - name: 四百舍客勒
+    type: 文化
+    evidence: 15-16節；對照大衛50舍客勒、耶利米17舍客勒，估價甚高
+  - name: 銀子
+    type: 主題
+    evidence: 16節買賣通用的銀子平了四百舍客勒
+    surfaces:
+      - {phrase: 銀子, verses: [16]}
+  - name: 樹木
+    type: 主題
+    evidence: 17節田間四圍的樹木都定準歸與亞伯拉罕
+  - name: 城門口交易
+    type: 文化
+    evidence: 10、18節；城門出入的人面前買妥，公開法律保障
+  - name: 墳地
+    type: 神學
+    evidence: 4-20節；應許地的初熟果子，惟一永久產業竟是墳地
+  - name: 復活盼望
+    type: 主題
+    evidence: 全章；埋葬連於復活，埋葬是撒種（林前十五3-4）
