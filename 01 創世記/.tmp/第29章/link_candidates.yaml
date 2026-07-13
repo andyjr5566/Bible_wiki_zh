@@ -1,0 +1,109 @@
+book: 創世記
+chapter: 29
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 全章；到東方人之地、輥石飲羊、為拉結服事十四年、娶利亞拉結
+  - name: 拉班
+    type: 人物
+    evidence: 5-30節；雅各母舅，以利亞冒充拉結欺哄雅各，再要七年勞役
+  - name: 拿鶴
+    type: 人物
+    evidence: 5節；亞伯拉罕之弟，拉班之祖父
+  - name: 拉結
+    type: 人物
+    evidence: 6-30節；拉班小女兒，牧羊女，雅各所深愛，起初不生育
+  - name: 利百加
+    type: 人物
+    evidence: 12節；雅各之母，拉班之妹
+  - name: 利亞
+    type: 人物
+    evidence: 16-35節；拉班大女兒，被冒充嫁雅各，失寵卻生四子
+  - name: 悉帕
+    type: 人物
+    evidence: 24節；拉班給利亞的使女
+  - name: 辟拉
+    type: 人物
+    evidence: 29節；拉班給拉結的使女
+  - name: 流便
+    type: 人物
+    evidence: 32節；利亞長子
+  - name: 西緬
+    type: 人物
+    evidence: 33節；利亞次子
+  - name: 利未
+    type: 人物
+    evidence: 34節；利亞三子，日後祭司支派之祖
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 35節；利亞四子，日後大衛與基督的家系
+    surfaces:
+      - {phrase: 猶大, verses: [35]}
+  - name: 哈蘭
+    type: 地點
+    evidence: 4節；牧人所來之地，即巴旦亞蘭，拉班居處
+  - name: 東方人之地
+    type: 地點
+    evidence: 1節；亞蘭人通稱，哈蘭附近郊野，雅各所到之地
+  - name: 井權與牧羊取水規矩
+    type: 背景
+    evidence: 2-3、8、10節；井口大石防污染濫取，牧人聚齊共同轉石取水
+    surfaces:
+      - {phrase: 井口上的石頭是大的, verses: [2]}
+  - name: 古代近東聘禮與七年勞役
+    type: 文化
+    evidence: 18-20節；以七年勞力代替聘金，遠超常規的高代價
+    surfaces:
+      - {phrase: 服事你七年, verses: [18]}
+  - name: 古代近東婚筵七日
+    type: 文化
+    evidence: 22、27-28節；婚筵延續七日，拉結在利亞七日後嫁予雅各
+    surfaces:
+      - {phrase: 筵席, verses: [22]}
+  - name: 送婢女為嫁妝
+    type: 文化
+    evidence: 24、29節；拉班分別給利亞悉帕、給拉結辟拉作使女
+    surfaces:
+      - {phrase: 婢女, verses: [24]}
+  - name: 神的保守與帶領
+    type: 神學
+    evidence: 全章；信實的神按應許帶雅各到母族之地，時間地點恰到好處
+  - name: 雅各受管教與被欺哄
+    type: 神學
+    evidence: 23-25節；雅各昔日欺哄父兄，如今在拉班手下被欺哄，人種什麼收什麼
+    surfaces:
+      - {phrase: 欺哄我, verses: [25]}
+  - name: 神看顧失寵者
+    type: 神學
+    evidence: 31節；耶和華見利亞失寵就使她生育，恩待被輕看者
+    surfaces:
+      - {phrase: 利亞失寵, verses: [31]}
+  - name: 利亞四子命名的神學意義
+    type: 神學
+    evidence: 32-35節；流便、西緬、利未、猶大之名成一條看見-聽見-聯合-讚美的信仰脈絡
+  - name: 「利亞」名字含義
+    type: 原文
+    evidence: 16節；利亞意為疲乏、沒有眼神、母牛
+  - name: 「拉結」名字含義
+    type: 原文
+    evidence: 6、16節；拉結意為母羊、羊羔
+  - name: 「流便」名字含義
+    type: 原文
+    evidence: 32節；流便意為「看哪，一個兒子」
+    surfaces:
+      - {phrase: 有兒子的意思, verses: [32]}
+  - name: 「西緬」名字含義
+    type: 原文
+    evidence: 33節；西緬意為聽見
+    surfaces:
+      - {phrase: 聽見的意思, verses: [33]}
+  - name: 「利未」名字含義
+    type: 原文
+    evidence: 34節；利未意為聯合
+    surfaces:
+      - {phrase: 聯合的意思, verses: [34]}
+  - name: 「猶大」名字含義
+    type: 原文
+    evidence: 35節；猶大意為讚美
+    surfaces:
+      - {phrase: 讚美的意思, verses: [35]}
