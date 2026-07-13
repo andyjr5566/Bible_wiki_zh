@@ -83,7 +83,8 @@ def make_runner(endpoint):
     kind = endpoint.get("type", "openai")
     if kind == "claude":
         model = endpoint.get("model")
-        return lambda prompt: claude_runner(prompt, model=model)
+        effort = endpoint.get("effort")
+        return lambda prompt: claude_runner(prompt, model=model, effort=effort)
     if kind == "openai":
         base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
         model = endpoint.get("model", DEFAULT_OPENAI_MODEL)
@@ -153,7 +154,7 @@ def _find_claude_cli():
     return None
 
 
-def claude_runner(prompt, *, model=None, timeout=1500):
+def claude_runner(prompt, *, model=None, effort=None, timeout=1500):
     """shell 到 `claude -p --output-format json`，取出 result 文字。"""
     claude_cli = _find_claude_cli()
     if not claude_cli:
@@ -161,6 +162,8 @@ def claude_runner(prompt, *, model=None, timeout=1500):
     command = [claude_cli, "-p", "--output-format", "json"]
     if model:
         command += ["--model", model]
+    if effort:
+        command += ["--effort", effort]
     try:
         result = subprocess.run(
             command, input=prompt, capture_output=True,
@@ -245,7 +248,9 @@ def _cmd_list(_args):
         marker = "＊" if name == active else "  "
         target = endpoint.get("base_url") or endpoint.get("type")
         model = endpoint.get("model") or "（預設）"
-        print(f"{marker} {name}: {target} / {model}")
+        effort = endpoint.get("effort")
+        suffix = f" / effort={effort}" if effort else ""
+        print(f"{marker} {name}: {target} / {model}{suffix}")
     override = os.environ.get(ENV_ENDPOINT)
     if override:
         print(f"（MODEL_ENDPOINT 覆蓋中：{override}）")

@@ -11,11 +11,14 @@
 #
 # 端點 type：
 #   openai —— OpenAI 相容 HTTP（如本機 litellm proxy）；需 base_url 與 model
-#   claude —— shell 到 `claude -p`（標準 Claude Code 安裝）；model 可省略
+#   claude —— shell 到 `claude -p`（標準 Claude Code 安裝）；model/effort 皆可省略
+#     model:  別名（sonnet/opus/fable...）或完整模型名（claude-sonnet-5 等），
+#             省略則用 claude CLI 目前設定的預設模型
+#     effort: low / medium / high / xhigh / max，省略則用 CLI 預設 effort
 #
 # 不要把 API key 寫進本檔。需要金鑰時用 api_key_env 指向環境變數名稱。
 
-active: local-4000
+active: claude-cli
 
 endpoints:
   local-4000:
@@ -30,4 +33,5 @@ endpoints:
 
   claude-cli:
     type: claude
-    model: null
+    model: opus
+    effort: xhigh

@@ -69,7 +69,7 @@ def prepare(book, chapter):
         raise FileExistsError(f"{output} 已存在；避免覆蓋人工內容")
     data = plan_updates(book, chapter)
     output.write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+        yaml.safe_dump(data, allow_unicode=True, sort_keys=False, default_style='"'), encoding="utf-8"
     )
     print(f"✅ 已建立更新骨架：{output}（{len(data['updates'])} 條）")
     return output

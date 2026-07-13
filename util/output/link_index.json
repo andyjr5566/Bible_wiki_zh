@@ -1976,6 +1976,16 @@
     "status": "formal",
     "aliases": []
   },
+  "招聚會眾到會幕門口": {
+    "path": "link_folder/事件/招聚會眾到會幕門口.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "招聚會眾到會幕門口",
+    "status": "formal",
+    "aliases": [
+      "會眾聚集在會幕門口"
+    ]
+  },
   "搬到營外燒": {
     "path": "link_folder/事件/搬到營外燒.md",
     "type": "事件",
@@ -10803,6 +10813,14 @@
       "所多瑪聲聞於神"
     ]
   },
+  "承接聖職之禮（millu'im）": {
+    "path": "link_folder/原文/承接聖職之禮（millu'im）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "承接聖職之禮（millu'im）",
+    "status": "formal",
+    "aliases": []
+  },
   "承接聖職的禮（millu'im）": {
     "path": "link_folder/原文/承接聖職的禮（millu'im）.md",
     "type": "原文",
@@ -12005,6 +12023,14 @@
     "aliases": [
       "酒政 (cupbearer)"
     ]
+  },
+  "金牌聖冠（nezer hakodesh）": {
+    "path": "link_folder/原文/金牌聖冠（nezer hakodesh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "金牌聖冠（nezer hakodesh）",
+    "status": "formal",
+    "aliases": []
   },
   "金線": {
     "path": "link_folder/原文/金線.md",
@@ -15525,6 +15551,17 @@
       "洪水前一百二十年"
     ]
   },
+  "七天不可出會幕門": {
+    "path": "link_folder/神學/七天不可出會幕門.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "七天不可出會幕門",
+    "status": "formal",
+    "aliases": [
+      "七天住在會幕門口",
+      "承接聖職七日"
+    ]
+  },
   "七天的等候與最後寬限": {
     "path": "link_folder/神學/七天的等候與最後寬限.md",
     "type": "神學",
@@ -16109,6 +16146,16 @@
     "status": "formal",
     "aliases": []
   },
+  "倒膏油在頭上": {
+    "path": "link_folder/神學/倒膏油在頭上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "倒膏油在頭上",
+    "status": "formal",
+    "aliases": [
+      "倒膏油在亞倫頭上"
+    ]
+  },
   "倫理十誡": {
     "path": "link_folder/神學/倫理十誡.md",
     "type": "神學",
@@ -16171,6 +16218,16 @@
     "aliases": [
       "大地是屬耶和華的",
       "全地屬主"
+    ]
+  },
+  "全羊燒在壇上": {
+    "path": "link_folder/神學/全羊燒在壇上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "全羊燒在壇上",
+    "status": "formal",
+    "aliases": [
+      "全羊燒在壇上為燔祭"
     ]
   },
   "全能的神（El Shaddai）": {
@@ -17143,6 +17200,27 @@
       "平安祭"
     ]
   },
+  "彈膏油七次": {
+    "path": "link_folder/神學/彈膏油七次.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "彈膏油七次",
+    "status": "formal",
+    "aliases": [
+      "彈膏油"
+    ]
+  },
+  "彈膏油和血在衣服上": {
+    "path": "link_folder/神學/彈膏油和血在衣服上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "彈膏油和血在衣服上",
+    "status": "formal",
+    "aliases": [
+      "彈膏油和血在衣服上",
+      "膏油與血彈在衣服上"
+    ]
+  },
   "彈血洗衣（聖處洗淨）": {
     "path": "link_folder/神學/彈血洗衣（聖處洗淨）.md",
     "type": "神學",
@@ -17376,6 +17454,26 @@
       "承接聖職"
     ]
   },
+  "抹血在右耳垂、右手大拇指、右腳大拇指": {
+    "path": "link_folder/神學/抹血在右耳垂、右手大拇指、右腳大拇指.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "抹血在右耳垂、右手大拇指、右腳大拇指",
+    "status": "formal",
+    "aliases": [
+      "抹血在耳垂拇指"
+    ]
+  },
+  "抹血在壇四角": {
+    "path": "link_folder/神學/抹血在壇四角.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "抹血在壇四角",
+    "status": "formal",
+    "aliases": [
+      "抹血在壇的四角"
+    ]
+  },
   "拉麥的一夫多妻": {
     "path": "link_folder/神學/拉麥的一夫多妻.md",
     "type": "神學",
@@ -17401,6 +17499,16 @@
     "aliases": [
       "撿了遺失的物上行詭詐",
       "侵佔遺失物"
+    ]
+  },
+  "按手在贖罪祭公牛頭上": {
+    "path": "link_folder/神學/按手在贖罪祭公牛頭上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "按手在贖罪祭公牛頭上",
+    "status": "formal",
+    "aliases": [
+      "按手在公牛頭上"
     ]
   },
   "挪亞之約": {
@@ -17440,6 +17548,25 @@
     "title": "推諉罪責",
     "status": "formal",
     "aliases": []
+  },
+  "搖祭在手上": {
+    "path": "link_folder/神學/搖祭在手上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "搖祭在手上",
+    "status": "formal",
+    "aliases": []
+  },
+  "搖胸歸摩西": {
+    "path": "link_folder/神學/搖胸歸摩西.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "搖胸歸摩西",
+    "status": "formal",
+    "aliases": [
+      "搖胸作搖祭",
+      "羊胸歸摩西"
+    ]
   },
   "摩西不能進會幕": {
     "path": "link_folder/神學/摩西不能進會幕.md",
@@ -18115,6 +18242,16 @@
       "無酵"
     ]
   },
+  "煮肉在會幕門口吃": {
+    "path": "link_folder/神學/煮肉在會幕門口吃.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "煮肉在會幕門口吃",
+    "status": "formal",
+    "aliases": [
+      "在會幕門口煮肉"
+    ]
+  },
   "燃燒卻不燒毀的荊棘": {
     "path": "link_folder/神學/燃燒卻不燒毀的荊棘.md",
     "type": "神學",
@@ -18160,6 +18297,16 @@
     "status": "formal",
     "aliases": [
       "燔祭的皮"
+    ]
+  },
+  "營外焚燒公牛": {
+    "path": "link_folder/神學/營外焚燒公牛.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "營外焚燒公牛",
+    "status": "formal",
+    "aliases": [
+      "營外燒公牛"
     ]
   },
   "父親偏愛與家庭破裂": {
@@ -18229,6 +18376,16 @@
     "title": "生命樹道路被把守",
     "status": "formal",
     "aliases": []
+  },
+  "用水洗了他們": {
+    "path": "link_folder/神學/用水洗了他們.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "用水洗了他們",
+    "status": "formal",
+    "aliases": [
+      "洗淨禮"
+    ]
   },
   "當孝敬父母": {
     "path": "link_folder/神學/當孝敬父母.md",
@@ -22825,6 +22982,9 @@
   "抹在壇的四角上": {
     "alias_of": "抹壇角"
   },
+  "會眾聚集在會幕門口": {
+    "alias_of": "招聚會眾到會幕門口"
+  },
   "營外焚燒": {
     "alias_of": "搬到營外燒"
   },
@@ -25780,6 +25940,12 @@
   "洪水前一百二十年": {
     "alias_of": "一百二十年的兩種解釋"
   },
+  "七天住在會幕門口": {
+    "alias_of": "七天不可出會幕門"
+  },
+  "承接聖職七日": {
+    "alias_of": "七天不可出會幕門"
+  },
   "洪水前最後七天": {
     "alias_of": "七天的等候與最後寬限"
   },
@@ -25921,6 +26087,9 @@
   "伸出的膀臂": {
     "alias_of": "伸出來的膀臂"
   },
+  "倒膏油在亞倫頭上": {
+    "alias_of": "倒膏油在頭上"
+  },
   "道德十誡": {
     "alias_of": "倫理十誡"
   },
@@ -25944,6 +26113,9 @@
   },
   "全地屬主": {
     "alias_of": "全地都是屬耶和華的"
+  },
+  "全羊燒在壇上為燔祭": {
+    "alias_of": "全羊燒在壇上"
   },
   "代贖": {
     "alias_of": "公羊代贖"
@@ -26161,6 +26333,12 @@
   "shelamim": {
     "alias_of": "平安祭"
   },
+  "彈膏油": {
+    "alias_of": "彈膏油七次"
+  },
+  "膏油與血彈在衣服上": {
+    "alias_of": "彈膏油和血在衣服上"
+  },
   "聖處洗淨": {
     "alias_of": "彈血洗衣（聖處洗淨）"
   },
@@ -26206,14 +26384,29 @@
   "承接聖職": {
     "alias_of": "承接聖職（分別為聖）"
   },
+  "抹血在耳垂拇指": {
+    "alias_of": "抹血在右耳垂、右手大拇指、右腳大拇指"
+  },
+  "抹血在壇的四角": {
+    "alias_of": "抹血在壇四角"
+  },
   "撿了遺失的物上行詭詐": {
     "alias_of": "拾遺不報"
   },
   "侵佔遺失物": {
     "alias_of": "拾遺不報"
   },
+  "按手在公牛頭上": {
+    "alias_of": "按手在贖罪祭公牛頭上"
+  },
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"
+  },
+  "搖胸作搖祭": {
+    "alias_of": "搖胸歸摩西"
+  },
+  "羊胸歸摩西": {
+    "alias_of": "搖胸歸摩西"
   },
   "摩西不能進帳幕": {
     "alias_of": "摩西不能進會幕"
@@ -26413,6 +26606,9 @@
   "沒有殘疾": {
     "alias_of": "無殘疾"
   },
+  "在會幕門口煮肉": {
+    "alias_of": "煮肉在會幕門口吃"
+  },
   "燃燒的荊棘": {
     "alias_of": "燃燒卻不燒毀的荊棘"
   },
@@ -26428,6 +26624,9 @@
   "燔祭的皮": {
     "alias_of": "燔祭牲的皮"
   },
+  "營外燒公牛": {
+    "alias_of": "營外焚燒公牛"
+  },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
   },
@@ -26439,6 +26638,9 @@
   },
   "樂意的奉獻": {
     "alias_of": "甘心樂意的奉獻"
+  },
+  "洗淨禮": {
+    "alias_of": "用水洗了他們"
   },
   "第五誡": {
     "alias_of": "當孝敬父母"

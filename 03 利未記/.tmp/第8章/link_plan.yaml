@@ -141,6 +141,28 @@ B_needs_update:
   match_type: base
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
+- name: 聖衣（bigdei kodesh）
+  suggested_type: 原文
+  evidence: 'v7-9 亞倫穿內袍、束腰帶、穿外袍、加以弗得、戴胸牌（放烏陵土明）、戴冠冕（釘金牌聖冠）。v13 亞倫兒子穿內袍、束腰帶、包裹頭巾。BH:
+    priestly garments symbolize holiness and set priests apart for sacred duties.
+    CT: 大祭司聖衣七件：內袍、腰帶、外袍、以弗得、胸牌、冠冕、金牌。KC: garments speak of the glories of Christ
+    as High Priest.'
+  match_type: base
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 裹頭巾
+  suggested_type: 文化
+  evidence: 'v13 亞倫兒子穿內袍、束腰帶、包上裹頭巾（祭司頭飾，非大祭司冠冕）。BH: head coverings for priests. CT:
+    裹頭巾是祭司的頭飾，與大祭司冠冕不同。'
+  match_type: base
+  existing_title: 冠冕（裹頭巾）
+  existing_path: link_folder/原文/冠冕（裹頭巾）.md
+- name: 洗濯盆
+  suggested_type: 器物
+  evidence: v11 用膏油抹洗濯盆和盆座使成聖。v6 用水洗亞倫和他兒子（在洗濯盆處）。
+  match_type: base
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
 C_new_formal:
 - name: 承接聖職之禮（millu'im）
   suggested_type: 原文
@@ -241,23 +263,4 @@ C_new_formal:
     tabernacle entrance signifies fellowship. CT: 在會幕門口吃表徵在神面前的交通。KC: eating at the
     entrance speaks of fellowship with God.'
   target_path: link_folder/神學/煮肉在會幕門口吃.md
-D_new_candidate:
-- name: 聖衣（bigdei kodesh）
-  suggested_type: 原文
-  evidence: 'v7-9 亞倫穿內袍、束腰帶、穿外袍、加以弗得、戴胸牌（放烏陵土明）、戴冠冕（釘金牌聖冠）。v13 亞倫兒子穿內袍、束腰帶、包裹頭巾。BH:
-    priestly garments symbolize holiness and set priests apart for sacred duties.
-    CT: 大祭司聖衣七件：內袍、腰帶、外袍、以弗得、胸牌、冠冕、金牌。KC: garments speak of the glories of Christ
-    as High Priest.'
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=主題，secondary=[]
-- name: 裹頭巾
-  suggested_type: 文化
-  evidence: 'v13 亞倫兒子穿內袍、束腰帶、包上裹頭巾（祭司頭飾，非大祭司冠冕）。BH: head coverings for priests. CT:
-    裹頭巾是祭司的頭飾，與大祭司冠冕不同。'
-  match_type: type_conflict
-  note: 分類衝突：候選=文化，既有=原文，secondary=[]
-- name: 洗濯盆
-  suggested_type: 器物
-  evidence: v11 用膏油抹洗濯盆和盆座使成聖。v6 用水洗亞倫和他兒子（在洗濯盆處）。
-  note: 未知分類：器物
 E_skip: []

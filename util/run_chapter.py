@@ -128,7 +128,7 @@ def _model_step(ctx, out_path, prompt, validate, label, normalize=None):
 # --------------------------------------------------------------------------- #
 # M3 entry_content（批量：一次 request 產出多個條目，全部來源直接餵入）
 # --------------------------------------------------------------------------- #
-BATCH_SIZE = 5
+BATCH_SIZE = 20
 
 
 _ENTRY_EXAMPLE = (
