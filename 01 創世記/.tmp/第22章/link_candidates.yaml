@@ -1,0 +1,61 @@
+book: 創世記
+chapter: 22
+candidates:
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 1-24節；受試驗獻以撒、經歷耶和華以勒、得指誓的祝福（舊檔連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
+  - name: 以撒
+    type: 人物
+    evidence: 2-9節；獨生愛子，負柴上山、任憑捆綁、甘心被獻
+  - name: 耶和華的使者
+    type: 神學
+    evidence: 11、15節兩次從天上呼叫；12、16節顯明即耶和華自己
+  - name: 拿鶴
+    type: 人物
+    evidence: 20-24節；密迦生八子、流瑪生四子的家譜
+  - name: 彼土利
+    type: 人物
+    evidence: 22節；利百加之父，為24章預作伏筆
+  - name: 利百加
+    type: 人物
+    evidence: 23節首次出現；日後成為以撒之妻
+  - name: 摩利亞地
+    type: 地點
+    evidence: 2節獻祭之地；代下三1所羅門建殿之處
+  - name: 別是巴
+    type: 地點
+    evidence: 19節事後亞伯拉罕居於盟誓的井
+  - name: 神試驗亞伯拉罕
+    type: 神學
+    evidence: 1節；非神需要得知，乃使信心顯明（彼前一7）
+    surfaces:
+      - {phrase: 試驗, verses: [1]}
+  - name: 燔祭
+    type: 神學
+    evidence: 2節把他獻為燔祭；全燒歸神的祭
+    surfaces:
+      - {phrase: 燔祭, verses: [2]}
+  - name: 清早起來
+    type: 主題
+    evidence: 3節；得命令後立即順服，不遲延
+  - name: 第三日
+    type: 神學
+    evidence: 4節；心中承受煎熬後得回愛子，豫表第三日復活（來十一19）
+  - name: 敬畏神
+    type: 神學
+    evidence: 12節原文「極其怕神」；不留下獨生子
+  - name: 公羊
+    type: 神學
+    evidence: 13節兩角扣在稠密小樹中，獻為燔祭代替其子
+  - name: 耶和華以勒
+    type: 神學
+    evidence: 14節 Yahweh Yireh；耶和華必預備
+  - name: 公羊代贖
+    type: 神學
+    evidence: 13節代替他的兒子；豫表神的羔羊（約一29）
+  - name: 以撒豫表基督
+    type: 神學
+    evidence: 背柴、被捆、放壇上、第三日；CT 靈訓要義四層對照
+  - name: 亞伯拉罕豫表父神
+    type: 神學
+    evidence: 不留下獨生愛子（羅八32；約三16；太三17）

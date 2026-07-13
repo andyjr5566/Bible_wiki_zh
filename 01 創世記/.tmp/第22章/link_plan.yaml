@@ -1,0 +1,123 @@
+book: 創世記
+chapter: 22
+A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-24節；受試驗獻以撒、經歷耶和華以勒、得指誓的祝福（舊檔連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 2-9節；獨生愛子，負柴上山、任憑捆綁、甘心被獻
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 拿鶴
+  suggested_type: 人物
+  evidence: 20-24節；密迦生八子、流瑪生四子的家譜
+  match_type: exact
+  existing_title: 拿鶴
+  existing_path: link_folder/人物/拿鶴.md
+- name: 彼土利
+  suggested_type: 人物
+  evidence: 22節；利百加之父，為24章預作伏筆
+  match_type: exact
+  existing_title: 彼土利
+  existing_path: link_folder/人物/彼土利.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 23節首次出現；日後成為以撒之妻
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 摩利亞地
+  suggested_type: 地點
+  evidence: 2節獻祭之地；代下三1所羅門建殿之處
+  match_type: exact
+  existing_title: 摩利亞地
+  existing_path: link_folder/地點/摩利亞地.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 19節事後亞伯拉罕居於盟誓的井
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 神試驗亞伯拉罕
+  suggested_type: 神學
+  evidence: 1節；非神需要得知，乃使信心顯明（彼前一7）
+  surfaces:
+  - phrase: 試驗
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 神試驗亞伯拉罕
+  existing_path: link_folder/神學/神試驗亞伯拉罕.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: 2節把他獻為燔祭；全燒歸神的祭
+  surfaces:
+  - phrase: 燔祭
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 12節原文「極其怕神」；不留下獨生子
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 耶和華以勒
+  suggested_type: 神學
+  evidence: 14節 Yahweh Yireh；耶和華必預備
+  match_type: exact
+  existing_title: 耶和華以勒
+  existing_path: link_folder/神學/耶和華以勒.md
+- name: 公羊代贖
+  suggested_type: 神學
+  evidence: 13節代替他的兒子；豫表神的羔羊（約一29）
+  match_type: exact
+  existing_title: 公羊代贖
+  existing_path: link_folder/神學/公羊代贖.md
+- name: 以撒豫表基督
+  suggested_type: 神學
+  evidence: 背柴、被捆、放壇上、第三日；CT 靈訓要義四層對照
+  match_type: exact
+  existing_title: 以撒豫表基督
+  existing_path: link_folder/神學/以撒豫表基督.md
+- name: 亞伯拉罕豫表父神
+  suggested_type: 神學
+  evidence: 不留下獨生愛子（羅八32；約三16；太三17）
+  match_type: exact
+  existing_title: 亞伯拉罕豫表父神
+  existing_path: link_folder/神學/亞伯拉罕豫表父神.md
+B_needs_update:
+- name: 耶和華的使者
+  suggested_type: 神學
+  evidence: 11、15節兩次從天上呼叫；12、16節顯明即耶和華自己
+  match_type: exact
+  existing_title: 耶和華的使者
+  existing_path: link_folder/神學/耶和華的使者.md
+- name: 清早起來
+  suggested_type: 主題
+  evidence: 3節；得命令後立即順服，不遲延
+  match_type: exact
+  existing_title: 清早起來
+  existing_path: link_folder/主題/清早起來.md
+- name: 第三日
+  suggested_type: 神學
+  evidence: 4節；心中承受煎熬後得回愛子，豫表第三日復活（來十一19）
+  match_type: exact
+  existing_title: 第三日
+  existing_path: link_folder/神學/第三日.md
+- name: 公羊
+  suggested_type: 神學
+  evidence: 13節兩角扣在稠密小樹中，獻為燔祭代替其子
+  match_type: exact
+  existing_title: 公羊
+  existing_path: link_folder/神學/公羊.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
