@@ -1,0 +1,21 @@
+name: 潔淨不潔淨條例（創7：2-3）
+type: 互文
+secondary_types: []
+aliases:
+- 創世記潔淨條例
+status: formal
+definition: 創世記第7章第2至3節記載挪亞進方舟時，神吩咐他將潔淨的畜類每樣帶七公七母，不潔淨的畜類每樣帶一公一母。這顯示在利未記第11章正式頒布飲食條例之前，早在洪水時代，動物就已經存在「潔淨」與「不潔淨」的分類。利未記第11章並非首創此分類，而是將洪水前既有的區分標準化、律法化，作為以色列人日常飲食的規範。
+accumulations:
+- book: 利未記
+  chapter: 11
+  summary: 本章系統性地列舉了潔淨與不潔淨動物的標準，與創世記中挪亞對動物的分類遙相呼應。
+  relation: 利未記的條例為創世記中早已存在的潔淨與不潔淨區分提供了明確的判定標準與神學解釋。
+related_entries:
+- 潔淨與不潔淨的飲食條例
+sources:
+- '綜合研讀註解: Leviticus 11 — 與創世記挪亞方舟潔淨條例的互文關聯（https://biblehub.com/study/leviticus/11.htm）'
+created_from: manual
+category: 互文
+trigger_sources: []
+current_data: {}
+pending: false

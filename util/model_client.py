@@ -60,11 +60,22 @@ def load_endpoints(path=ENDPOINTS_FILE):
     return data
 
 
-def select_endpoint(name=None, config=None):
-    """依（明確指定 → MODEL_ENDPOINT → active）順序選端點。"""
+def select_endpoint(name=None, config=None, task=None):
+    """選端點，優先序：明確指定 → MODEL_ENDPOINT → 該 task 的 MODEL_ENDPOINT_<TASK>
+    → tasks.<task>（設定檔）→ active。
+
+    task 用來把「做條目」（entry）與「本章整理」（chapter）等內容任務分開指定
+    端點，設定見 `_config/model_endpoints.yaml` 的 tasks 區塊；未列出的 task
+    或未傳 task 時退回 active。
+    """
     config = config or load_endpoints()
     endpoints = config["endpoints"]
-    chosen = name or os.environ.get(ENV_ENDPOINT) or config["active"]
+    task_env = os.environ.get(f"{ENV_ENDPOINT}_{task.upper()}") if task else None
+    task_default = (config.get("tasks") or {}).get(task) if task else None
+    chosen = (
+        name or task_env or os.environ.get(ENV_ENDPOINT) or task_default
+        or config["active"]
+    )
     if chosen not in endpoints:
         raise ModelError(f"未知端點「{chosen}」；可用：{', '.join(endpoints)}")
     endpoint = dict(endpoints[chosen])
@@ -96,8 +107,8 @@ def make_runner(endpoint):
     raise ModelError(f"未知端點 type「{kind}」")
 
 
-def active_runner():
-    return make_runner(select_endpoint())
+def active_runner(task=None):
+    return make_runner(select_endpoint(task=task))
 
 
 def set_active(name, path=ENDPOINTS_FILE):
@@ -216,10 +227,15 @@ def _retry_prompt(base_prompt, previous_output, errors):
     )
 
 
-def call_model(prompt, *, validate=None, retries=3, runner=None, label="task", retry_delay=5):
+def call_model(prompt, *, validate=None, retries=3, runner=None, label="task",
+                retry_delay=5, task=None):
     """呼叫模型並取得通過驗證的 payload；失敗上限後丟 ModelValidationError。
+
+    task（如 "entry"／"chapter"）在未明確傳入 runner 時，交給
+    select_endpoint 依 `_config/model_endpoints.yaml` 的 tasks 對照選端點，
+    讓「做條目」與「本章整理」可各自指定端點。
     """
-    runner = runner or active_runner()
+    runner = runner or active_runner(task=task)
     current_prompt = prompt
     last_errors = ["未取得任何有效輸出"]
     for _ in range(max(1, retries)):
@@ -253,9 +269,18 @@ def _cmd_list(_args):
         effort = endpoint.get("effort")
         suffix = f" / effort={effort}" if effort else ""
         print(f"{marker} {name}: {target} / {model}{suffix}")
+    tasks = config.get("tasks") or {}
+    if tasks:
+        print("任務路由：")
+        for task, endpoint_name in tasks.items():
+            print(f"  {task} → {endpoint_name}")
     override = os.environ.get(ENV_ENDPOINT)
     if override:
         print(f"（MODEL_ENDPOINT 覆蓋中：{override}）")
+    for task in tasks:
+        task_override = os.environ.get(f"{ENV_ENDPOINT}_{task.upper()}")
+        if task_override:
+            print(f"（MODEL_ENDPOINT_{task.upper()} 覆蓋中：{task_override}）")
     return 0
 
 
@@ -266,7 +291,7 @@ def _cmd_use(args):
 
 
 def _cmd_test(args):
-    endpoint = select_endpoint(args.name)
+    endpoint = select_endpoint(args.name, task=args.task)
     runner = make_runner(endpoint)
     prompt = (
         "只輸出下列 YAML（放在 ```yaml code block 內），不要任何其他文字：\n"
@@ -294,6 +319,10 @@ def main():
     use_parser.set_defaults(func=_cmd_use)
     test_parser = sub.add_parser("test", help="對端點做一次煙霧測試")
     test_parser.add_argument("name", nargs="?", default=None)
+    test_parser.add_argument(
+        "--task", default=None,
+        help="改測 tasks 對照選出的端點（如 entry／chapter），與 name 併用時 name 優先",
+    )
     test_parser.set_defaults(func=_cmd_test)
     args = parser.parse_args()
     try:

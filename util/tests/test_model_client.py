@@ -24,6 +24,7 @@ from model_client import (
 
 CONFIG = {
     "active": "local-4000",
+    "tasks": {"entry": "local-4001", "chapter": "claude-cli"},
     "endpoints": {
         "local-4000": {"type": "openai", "base_url": "http://localhost:4000/v1", "model": "m-a"},
         "local-4001": {"type": "openai", "base_url": "http://localhost:4001/v1", "model": "m-b"},
@@ -114,6 +115,37 @@ class EndpointControllerTests(unittest.TestCase):
     def test_select_unknown_endpoint_raises(self):
         with self.assertRaises(ModelError):
             select_endpoint("does-not-exist", config=CONFIG)
+
+    def test_select_task_default_used_when_no_explicit_or_env(self):
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertEqual(
+                "local-4001", select_endpoint(config=CONFIG, task="entry")["name"]
+            )
+            self.assertEqual(
+                "claude-cli", select_endpoint(config=CONFIG, task="chapter")["name"]
+            )
+            # 沒有對照或沒傳 task：退回 active
+            self.assertEqual(
+                "local-4000", select_endpoint(config=CONFIG, task="unknown-task")["name"]
+            )
+            self.assertEqual("local-4000", select_endpoint(config=CONFIG)["name"])
+
+    def test_select_task_env_override_beats_task_default(self):
+        with patch.dict("os.environ", {"MODEL_ENDPOINT_ENTRY": "claude-cli"}, clear=True):
+            self.assertEqual(
+                "claude-cli", select_endpoint(config=CONFIG, task="entry")["name"]
+            )
+            # 不影響其他 task
+            self.assertEqual(
+                "claude-cli", select_endpoint(config=CONFIG, task="chapter")["name"]
+            )
+
+    def test_select_explicit_name_beats_task_routing(self):
+        with patch.dict("os.environ", {"MODEL_ENDPOINT_ENTRY": "claude-cli"}, clear=True):
+            self.assertEqual(
+                "local-4000",
+                select_endpoint("local-4000", config=CONFIG, task="entry")["name"],
+            )
 
     def test_make_runner_openai_posts_and_parses(self):
         endpoint = select_endpoint("local-4000", config=CONFIG)

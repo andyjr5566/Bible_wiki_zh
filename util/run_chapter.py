@@ -118,11 +118,11 @@ def resolve_step(ctx):
 # --------------------------------------------------------------------------- #
 # 模型步驟共用：resume + call_model + 寫檔；失敗記入 manual_review
 # --------------------------------------------------------------------------- #
-def _model_step(ctx, out_path, prompt, validate, label, normalize=None):
+def _model_step(ctx, out_path, prompt, validate, label, normalize=None, task=None):
     if out_path.exists():
         return _read_yaml(out_path)
     try:
-        payload = call_model(prompt, validate=validate, runner=ctx.runner, label=label)
+        payload = call_model(prompt, validate=validate, runner=ctx.runner, label=label, task=task)
     except ModelValidationError as exc:
         ctx.manual_review.append(str(exc))
         return None
@@ -313,7 +313,7 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
         results = call_model(
             prompt,
             validate=lambda p: [] if isinstance(p, list) and p else ["需回傳非空的 payload 陣列"],
-            runner=ctx.runner, label="entry_batch",
+            runner=ctx.runner, label="entry_batch", task="entry",
         )
     except ModelValidationError:
         return {}, {e["name"]: "模型未回傳有效 payload 陣列" for e in batch}
@@ -823,7 +823,7 @@ def chapter_content_step(ctx, plan):
     payload = _model_step(
         ctx, out_path, prompt,
         validate=_chapter_payload_validator(len(raw_verses), allowed_links),
-        label="chapter_content", normalize=_normalize,
+        label="chapter_content", normalize=_normalize, task="chapter",
     )
     return _inject_references(ctx, out_path, payload)
 

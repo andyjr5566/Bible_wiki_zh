@@ -1,4 +1,15 @@
 {
+  "不潔淨傳染與潔淨儀式": {
+    "path": "link_folder/主題/不潔淨傳染與潔淨儀式.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "不潔淨傳染與潔淨儀式",
+    "status": "formal",
+    "aliases": [
+      "不潔淨的傳染與潔淨",
+      "接觸不潔的條例"
+    ]
+  },
   "五十個金鉤（vavei zahav）": {
     "path": "link_folder/主題/五十個金鉤（vavei zahav）.md",
     "type": "主題",
@@ -261,6 +272,16 @@
     "title": "刀劍",
     "status": "formal",
     "aliases": []
+  },
+  "分蹄倒嚼的屬靈意義": {
+    "path": "link_folder/主題/分蹄倒嚼的屬靈意義.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "分蹄倒嚼的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "分蹄倒嚼的屬靈意涵"
+    ]
   },
   "初熟之物": {
     "path": "link_folder/主題/初熟之物.md",
@@ -928,6 +949,17 @@
     "status": "formal",
     "aliases": []
   },
+  "潔淨與不潔淨的飲食條例": {
+    "path": "link_folder/主題/潔淨與不潔淨的飲食條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "潔淨與不潔淨的飲食條例",
+    "status": "formal",
+    "aliases": [
+      "飲食條例",
+      "潔淨與不潔淨的條例"
+    ]
+  },
   "烏鴉與鴿子的象徵": {
     "path": "link_folder/主題/烏鴉與鴿子的象徵.md",
     "type": "主題",
@@ -940,6 +972,16 @@
     "aliases": [
       "洪水中的烏鴉與鴿子",
       "放烏鴉與三次放鴿子"
+    ]
+  },
+  "爬物與污穢的屬靈意義": {
+    "path": "link_folder/主題/爬物與污穢的屬靈意義.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "爬物與污穢的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "爬物與污穢的屬靈意涵"
     ]
   },
   "父母偏愛": {
@@ -1146,6 +1188,16 @@
     "status": "formal",
     "aliases": []
   },
+  "翅與鱗的屬靈意義": {
+    "path": "link_folder/主題/翅與鱗的屬靈意義.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "翅與鱗的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "有翅有鱗的屬靈意涵"
+    ]
+  },
   "聖潔生活": {
     "path": "link_folder/主題/聖潔生活.md",
     "type": "主題",
@@ -1153,6 +1205,16 @@
     "title": "聖潔生活",
     "status": "formal",
     "aliases": []
+  },
+  "聖潔的呼召與分別為聖": {
+    "path": "link_folder/主題/聖潔的呼召與分別為聖.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "聖潔的呼召與分別為聖",
+    "status": "formal",
+    "aliases": [
+      "聖潔的呼召"
+    ]
   },
   "聖潔飲食": {
     "path": "link_folder/主題/聖潔飲食.md",
@@ -1361,6 +1423,16 @@
     "title": "赤身露體不羞恥",
     "status": "formal",
     "aliases": []
+  },
+  "蹦跳昆蟲的屬靈意義": {
+    "path": "link_folder/主題/蹦跳昆蟲的屬靈意義.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "蹦跳昆蟲的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "蹦跳昆蟲的屬靈意涵"
+    ]
   },
   "遮羞": {
     "path": "link_folder/主題/遮羞.md",
@@ -2189,6 +2261,14 @@
       "揀選千夫長百夫長"
     ]
   },
+  "摩西聽了便以為美": {
+    "path": "link_folder/事件/摩西聽了便以為美.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西聽了便以為美",
+    "status": "formal",
+    "aliases": []
+  },
   "摩西舉手得勝": {
     "path": "link_folder/事件/摩西舉手得勝.md",
     "type": "事件",
@@ -2586,6 +2666,14 @@
       "耶和華曉諭摩西"
     ]
   },
+  "耶和華豈看為美呢": {
+    "path": "link_folder/事件/耶和華豈看為美呢.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華豈看為美呢",
+    "status": "formal",
+    "aliases": []
+  },
   "葉忒羅來訪": {
     "path": "link_folder/事件/葉忒羅來訪.md",
     "type": "事件",
@@ -2723,6 +2811,16 @@
     "title": "雅各全家下埃及",
     "status": "candidate",
     "aliases": []
+  },
+  "頒布潔淨不潔淨條例": {
+    "path": "link_folder/事件/頒布潔淨不潔淨條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "頒布潔淨不潔淨條例",
+    "status": "formal",
+    "aliases": [
+      "頒布飲食條例"
+    ]
   },
   "鵪鶉遮營": {
     "path": "link_folder/事件/鵪鶉遮營.md",
@@ -2894,6 +2992,16 @@
       "來12-16-17",
       "以掃為虔誠人 (來12-16)",
       "來12-16以掃"
+    ]
+  },
+  "以色列人分別為聖（利20：24-26）": {
+    "path": "link_folder/互文/以色列人分別為聖（利20：24-26）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "以色列人分別為聖（利20：24-26）",
+    "status": "formal",
+    "aliases": [
+      "利未記20章分別為聖"
     ]
   },
   "以賽亞書53章": {
@@ -3171,6 +3279,16 @@
     "title": "俄巴底亞書以東審判",
     "status": "formal",
     "aliases": []
+  },
+  "保羅論食物不潔淨（羅14：14）": {
+    "path": "link_folder/互文/保羅論食物不潔淨（羅14：14）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "保羅論食物不潔淨（羅14：14）",
+    "status": "formal",
+    "aliases": [
+      "羅馬書食物條例"
+    ]
   },
   "信徒作祭司（彼前2：5,9）": {
     "path": "link_folder/互文/信徒作祭司（彼前2：5,9）.md",
@@ -4948,6 +5066,16 @@
     "status": "formal",
     "aliases": []
   },
+  "彼得異象廢除飲食條例（徒10：9-16）": {
+    "path": "link_folder/互文/彼得異象廢除飲食條例（徒10：9-16）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "彼得異象廢除飲食條例（徒10：9-16）",
+    "status": "formal",
+    "aliases": [
+      "彼得異象"
+    ]
+  },
   "徒13：10": {
     "path": "link_folder/互文/徒13：10.md",
     "type": "互文",
@@ -5625,6 +5753,16 @@
     "aliases": [
       "路15:11-32",
       "浪子回頭"
+    ]
+  },
+  "潔淨不潔淨條例（創7：2-3）": {
+    "path": "link_folder/互文/潔淨不潔淨條例（創7：2-3）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "潔淨不潔淨條例（創7：2-3）",
+    "status": "formal",
+    "aliases": [
+      "創世記潔淨條例"
     ]
   },
   "烏陵土明與神引導（來5：1-4）": {
@@ -9025,6 +9163,17 @@
     "status": "formal",
     "aliases": []
   },
+  "施洗約翰": {
+    "path": "link_folder/人物/施洗約翰.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "施洗約翰",
+    "status": "formal",
+    "aliases": [
+      "約翰",
+      "施洗者約翰"
+    ]
+  },
   "普阿": {
     "path": "link_folder/人物/普阿.md",
     "type": "人物",
@@ -10243,6 +10392,17 @@
     "status": "formal",
     "aliases": []
   },
+  "不潔淨（tame）": {
+    "path": "link_folder/原文/不潔淨（tame）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "不潔淨（tame）",
+    "status": "formal",
+    "aliases": [
+      "不潔淨",
+      "污穢"
+    ]
+  },
   "乾的兩個希伯來字": {
     "path": "link_folder/原文/乾的兩個希伯來字.md",
     "type": "原文",
@@ -10493,6 +10653,17 @@
     "status": "formal",
     "aliases": []
   },
+  "倒嚼（ma'aleh gerah）": {
+    "path": "link_folder/原文/倒嚼（ma'aleh gerah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "倒嚼（ma'aleh gerah）",
+    "status": "formal",
+    "aliases": [
+      "倒嚼",
+      "反芻"
+    ]
+  },
   "偷（ganab）": {
     "path": "link_folder/原文/偷（ganab）.md",
     "type": "原文",
@@ -10514,6 +10685,17 @@
       "催逼驅趕"
     ]
   },
+  "兔子（arnebet）": {
+    "path": "link_folder/原文/兔子（arnebet）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "兔子（arnebet）",
+    "status": "formal",
+    "aliases": [
+      "兔子",
+      "野兔"
+    ]
+  },
   "典章（mishpatim）": {
     "path": "link_folder/原文/典章（mishpatim）.md",
     "type": "原文",
@@ -10532,6 +10714,16 @@
       "冠冕",
       "裹頭巾",
       "禮冠"
+    ]
+  },
+  "分蹄（mafris parsah）": {
+    "path": "link_folder/原文/分蹄（mafris parsah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "分蹄（mafris parsah）",
+    "status": "formal",
+    "aliases": [
+      "分蹄"
     ]
   },
   "初熟（bikkurim）": {
@@ -10595,6 +10787,17 @@
     "title": "取利（neshek）",
     "status": "formal",
     "aliases": []
+  },
+  "可憎（sheqets）": {
+    "path": "link_folder/原文/可憎（sheqets）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "可憎（sheqets）",
+    "status": "formal",
+    "aliases": [
+      "可憎",
+      "可憎惡的"
+    ]
   },
   "各從其類": {
     "path": "link_folder/原文/各從其類.md",
@@ -11504,6 +11707,16 @@
       "Urim and Thummim"
     ]
   },
+  "烏鴉（oreb）": {
+    "path": "link_folder/原文/烏鴉（oreb）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "烏鴉（oreb）",
+    "status": "formal",
+    "aliases": [
+      "烏鴉"
+    ]
+  },
   "無酵餅": {
     "path": "link_folder/原文/無酵餅.md",
     "type": "原文",
@@ -12015,6 +12228,27 @@
     "status": "formal",
     "aliases": []
   },
+  "蝗蟲（arbeh）": {
+    "path": "link_folder/原文/蝗蟲（arbeh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "蝗蟲（arbeh）",
+    "status": "formal",
+    "aliases": [
+      "蝗蟲",
+      "螞蚱"
+    ]
+  },
+  "蝙蝠（atallef）": {
+    "path": "link_folder/原文/蝙蝠（atallef）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "蝙蝠（atallef）",
+    "status": "formal",
+    "aliases": [
+      "蝙蝠"
+    ]
+  },
   "行邪術的女人（mekhashephah）": {
     "path": "link_folder/原文/行邪術的女人（mekhashephah）.md",
     "type": "原文",
@@ -12131,6 +12365,16 @@
     "title": "謠言（shema`）",
     "status": "formal",
     "aliases": []
+  },
+  "豬（chazir）": {
+    "path": "link_folder/原文/豬（chazir）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "豬（chazir）",
+    "status": "formal",
+    "aliases": [
+      "豬"
+    ]
   },
   "貪戀（chamad）": {
     "path": "link_folder/原文/貪戀（chamad）.md",
@@ -12436,6 +12680,16 @@
     "aliases": [
       "我們是弟兄",
       "弟兄泛指男性親屬"
+    ]
+  },
+  "鴕鳥（bat ya'anah）": {
+    "path": "link_folder/原文/鴕鳥（bat ya'anah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "鴕鳥（bat ya'anah）",
+    "status": "formal",
+    "aliases": [
+      "鴕鳥"
     ]
   },
   "黃蜂（tsirah）": {
@@ -14030,6 +14284,16 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東飲食習慣與以色列差異": {
+    "path": "link_folder/文化/古代近東飲食習慣與以色列差異.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "古代近東飲食習慣與以色列差異",
+    "status": "formal",
+    "aliases": [
+      "古代近東飲食文化"
+    ]
+  },
   "古代送禮習俗 (賄賂-禮貌-表達愛)": {
     "path": "link_folder/文化/古代送禮習俗 (賄賂-禮貌-表達愛).md",
     "type": "文化",
@@ -14465,6 +14729,17 @@
     "title": "牛犢",
     "status": "formal",
     "aliases": []
+  },
+  "猶太教潔淨飲食傳統": {
+    "path": "link_folder/文化/猶太教潔淨飲食傳統.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "猶太教潔淨飲食傳統",
+    "status": "formal",
+    "aliases": [
+      "猶太飲食傳統",
+      "Kashrut"
+    ]
   },
   "磚窯": {
     "path": "link_folder/文化/磚窯.md",
@@ -18359,6 +18634,16 @@
     "status": "formal",
     "aliases": []
   },
+  "死與不潔淨的關聯": {
+    "path": "link_folder/神學/死與不潔淨的關聯.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "死與不潔淨的關聯",
+    "status": "formal",
+    "aliases": [
+      "死亡與不潔淨"
+    ]
+  },
   "每日獻祭（常獻燔祭）": {
     "path": "link_folder/神學/每日獻祭（常獻燔祭）.md",
     "type": "神學",
@@ -18526,6 +18811,16 @@
     "aliases": [
       "稼穡寒暑冬夏晝夜的應許",
       "洪水後季節秩序"
+    ]
+  },
+  "活水與聖靈": {
+    "path": "link_folder/神學/活水與聖靈.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "活水與聖靈",
+    "status": "formal",
+    "aliases": [
+      "活水的潔淨功能"
     ]
   },
   "流便失去長子名分": {
@@ -20177,6 +20472,16 @@
     "aliases": [
       "holy nation",
       "聖潔的國度"
+    ]
+  },
+  "聖潔與分別為聖": {
+    "path": "link_folder/神學/聖潔與分別為聖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖潔與分別為聖",
+    "status": "formal",
+    "aliases": [
+      "聖潔神學"
     ]
   },
   "聖約子民與世界的界限": {
@@ -23084,6 +23389,12 @@
       "餅和酒預表"
     ]
   },
+  "不潔淨的傳染與潔淨": {
+    "alias_of": "不潔淨傳染與潔淨儀式"
+  },
+  "接觸不潔的條例": {
+    "alias_of": "不潔淨傳染與潔淨儀式"
+  },
   "金鉤": {
     "alias_of": "五十個金鉤（vavei zahav）"
   },
@@ -23122,6 +23433,9 @@
   },
   "細麻內袍": {
     "alias_of": "內袍（雜色內袍）"
+  },
+  "分蹄倒嚼的屬靈意涵": {
+    "alias_of": "分蹄倒嚼的屬靈意義"
   },
   "初熟的供物": {
     "alias_of": "初熟之物"
@@ -23285,11 +23599,20 @@
   "搗成的清橄欖油": {
     "alias_of": "清橄欖油（點燈用）"
   },
+  "飲食條例": {
+    "alias_of": "潔淨與不潔淨的飲食條例"
+  },
+  "潔淨與不潔淨的條例": {
+    "alias_of": "潔淨與不潔淨的飲食條例"
+  },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
+  },
+  "爬物與污穢的屬靈意涵": {
+    "alias_of": "爬物與污穢的屬靈意義"
   },
   "帳幕的豎板": {
     "alias_of": "皂莢木豎板"
@@ -23311,6 +23634,12 @@
   },
   "見證的櫃": {
     "alias_of": "約櫃"
+  },
+  "有翅有鱗的屬靈意涵": {
+    "alias_of": "翅與鱗的屬靈意義"
+  },
+  "聖潔的呼召": {
+    "alias_of": "聖潔的呼召與分別為聖"
   },
   "聖衣": {
     "alias_of": "聖衣（祭司聖服）"
@@ -23362,6 +23691,9 @@
   },
   "內褲": {
     "alias_of": "褲子（細麻布褲子）"
+  },
+  "蹦跳昆蟲的屬靈意涵": {
+    "alias_of": "蹦跳昆蟲的屬靈意義"
   },
   "遮眼": {
     "alias_of": "遮羞"
@@ -23747,6 +24079,9 @@
   "會中長老按手": {
     "alias_of": "長老按手"
   },
+  "頒布飲食條例": {
+    "alias_of": "頒布潔淨不潔淨條例"
+  },
   "Quail covers the camp": {
     "alias_of": "鵪鶉遮營"
   },
@@ -23795,6 +24130,9 @@
   "來12-16以掃": {
     "alias_of": "以掃為虔誠人 (來12-16)"
   },
+  "利未記20章分別為聖": {
+    "alias_of": "以色列人分別為聖（利20：24-26）"
+  },
   "伯26:12": {
     "alias_of": "伯二十六12 攪動大海"
   },
@@ -23842,6 +24180,9 @@
   },
   "來11:29": {
     "alias_of": "來十一29 因信過紅海"
+  },
+  "羅馬書食物條例": {
+    "alias_of": "保羅論食物不潔淨（羅14：14）"
   },
   "信徒皆祭司(彼前2:5": {
     "alias_of": "信徒作祭司（彼前2：5,9）"
@@ -24131,6 +24472,9 @@
   "1Pet 5:1-4 Shepherd the flock": {
     "alias_of": "彼前5：1-4 牧養群羊"
   },
+  "彼得異象": {
+    "alias_of": "彼得異象廢除飲食條例（徒10：9-16）"
+  },
   "Acts 6:1-7 Choose deacons": {
     "alias_of": "徒6：1-7 選立執事"
   },
@@ -24247,6 +24591,9 @@
   },
   "浪子回頭": {
     "alias_of": "浪子比喻 (路15)"
+  },
+  "創世記潔淨條例": {
+    "alias_of": "潔淨不潔淨條例（創7：2-3）"
   },
   "烏陵與土明": {
     "alias_of": "烏陵土明與神引導（來5：1-4）"
@@ -24848,6 +25195,12 @@
   "Moshe": {
     "alias_of": "摩西"
   },
+  "約翰": {
+    "alias_of": "施洗約翰"
+  },
+  "施洗者約翰": {
+    "alias_of": "施洗約翰"
+  },
   "Amram": {
     "alias_of": "暗蘭"
   },
@@ -25058,6 +25411,12 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "不潔淨": {
+    "alias_of": "不潔淨（tame）"
+  },
+  "污穢": {
+    "alias_of": "不潔淨（tame）"
+  },
   "Allon-bacuth": {
     "alias_of": "亞倫巴古"
   },
@@ -25121,11 +25480,23 @@
   "Omer": {
     "alias_of": "俄梅珥（ omer ）"
   },
+  "倒嚼": {
+    "alias_of": "倒嚼（ma'aleh gerah）"
+  },
+  "反芻": {
+    "alias_of": "倒嚼（ma'aleh gerah）"
+  },
   "驅趕": {
     "alias_of": "催逼"
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "兔子": {
+    "alias_of": "兔子（arnebet）"
+  },
+  "野兔": {
+    "alias_of": "兔子（arnebet）"
   },
   "冠冕": {
     "alias_of": "冠冕（裹頭巾）"
@@ -25136,11 +25507,20 @@
   "禮冠": {
     "alias_of": "冠冕（裹頭巾）"
   },
+  "分蹄": {
+    "alias_of": "分蹄（mafris parsah）"
+  },
   "Rephidim etymology": {
     "alias_of": "利非訂（ repose ）"
   },
   "aseret hadevarim": {
     "alias_of": "十句話"
+  },
+  "可憎": {
+    "alias_of": "可憎（sheqets）"
+  },
+  "可憎惡的": {
+    "alias_of": "可憎（sheqets）"
   },
   "Manna etymology": {
     "alias_of": "嗎哪（ What is it ）"
@@ -25391,6 +25771,9 @@
   "Urim and Thummim": {
     "alias_of": "烏陵和土明"
   },
+  "烏鴉": {
+    "alias_of": "烏鴉（oreb）"
+  },
   "matzot": {
     "alias_of": "無酵餅"
   },
@@ -25541,6 +25924,15 @@
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
+  "蝗蟲": {
+    "alias_of": "蝗蟲（arbeh）"
+  },
+  "螞蚱": {
+    "alias_of": "蝗蟲（arbeh）"
+  },
+  "蝙蝠": {
+    "alias_of": "蝙蝠（atallef）"
+  },
   "Sinai etymology": {
     "alias_of": "西乃（多刺的）"
   },
@@ -25564,6 +25956,9 @@
   },
   "調油素祭": {
     "alias_of": "調油的素祭（minchah belulah bashemen）"
+  },
+  "豬": {
+    "alias_of": "豬（chazir）"
   },
   "chamad": {
     "alias_of": "貪戀（chamad）"
@@ -25663,6 +26058,9 @@
   },
   "弟兄泛指男性親屬": {
     "alias_of": "骨肉原文作弟兄"
+  },
+  "鴕鳥": {
+    "alias_of": "鴕鳥（bat ya'anah）"
   },
   "Adullam": {
     "alias_of": "亞杜蘭"
@@ -25994,6 +26392,9 @@
   "從我手中追討": {
     "alias_of": "古代近東的作保制度"
   },
+  "古代近東飲食文化": {
+    "alias_of": "古代近東飲食習慣與以色列差異"
+  },
   "指著法老的性命起誓": {
     "alias_of": "古埃及的起誓方式"
   },
@@ -26140,6 +26541,12 @@
   },
   "ovens and kneading bowls": {
     "alias_of": "爐灶和摶麵盆"
+  },
+  "猶太飲食傳統": {
+    "alias_of": "猶太教潔淨飲食傳統"
+  },
+  "Kashrut": {
+    "alias_of": "猶太教潔淨飲食傳統"
   },
   "燒窯": {
     "alias_of": "磚窯"
@@ -27173,6 +27580,9 @@
   "聖冠": {
     "alias_of": "歸耶和華為聖"
   },
+  "死亡與不潔淨": {
+    "alias_of": "死與不潔淨的關聯"
+  },
   "常獻的燔祭": {
     "alias_of": "每日獻祭（常獻燔祭）"
   },
@@ -27238,6 +27648,9 @@
   },
   "洪水後季節秩序": {
     "alias_of": "洪水後自然秩序的保存"
+  },
+  "活水的潔淨功能": {
+    "alias_of": "活水與聖靈"
   },
   "流便失去長子權": {
     "alias_of": "流便失去長子名分"
@@ -27658,6 +28071,9 @@
   },
   "聖潔的國度": {
     "alias_of": "聖潔的國民"
+  },
+  "聖潔神學": {
+    "alias_of": "聖潔與分別為聖"
   },
   "Holy Spirit Indwelling": {
     "alias_of": "聖靈內住"

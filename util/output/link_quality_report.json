@@ -1,8 +1,15 @@
 {
-  "total_warnings": 26,
+  "total_warnings": 29,
   "critical_count": 0,
-  "warning_count": 26,
+  "warning_count": 29,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第10章.md",
+      "target": "清酒、濃酒都不可喝",
+      "message": "同一 alias「清酒、濃酒都不可喝」指向多個 target: 祭司不可喝酒, 酒和濃酒（yayin veshekar）"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -30,6 +37,13 @@
       "source": "link_folder/人物/亞伯拉罕.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 02 出埃及記/第32章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
     },
     {
       "type": "alias_target_conflict",
@@ -65,6 +79,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第10章",
       "message": "同一 alias「第10章」指向多個 target: 02 出埃及記/第10章, 03 利未記/第10章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
     },
     {
       "type": "alias_target_conflict",

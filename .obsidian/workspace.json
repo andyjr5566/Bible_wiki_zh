@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "agent_start_prompt.md",
-                "mode": "preview",
+                "file": "scheme.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "agent_start_prompt"
+              "title": "scheme"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "scheme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "agent_start_prompt 的反向連結"
+              "title": "scheme 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "scheme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "agent_start_prompt 的對外連結"
+              "title": "scheme 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "agent_start_prompt.md",
+                "file": "scheme.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "agent_start_prompt 的大綱"
+              "title": "scheme 的大綱"
             }
           }
         ]
@@ -196,42 +196,42 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "03 利未記/第10章.md",
-    "link_folder/事件/耶和華豈看為美呢.md",
-    "link_folder/事件/摩西聽了便以為美.md",
-    "03 利未記/第9章.md",
-    "link_folder/原文/耶和華的膏油（shemen mishchat YHWH）.md",
-    "link_folder/神學/潔淨處.md",
-    "link_folder/人物/以利亞撒、以他瑪.md",
-    "link_folder/人物/拿答、亞比戶.md",
-    "link_folder/神學/凡火（陌生的火）.md",
-    "link_folder/地點/營外.md",
-    "link_folder/神學/潔淨不潔淨.md",
-    "link_folder/神學/聖俗.md",
-    "link_folder/神學/教導律例.md",
-    "link_folder/神學/永遠的定例.md",
-    "link_folder/文化/酒和濃酒（yayin veshekar）.md",
-    "link_folder/人物/烏薛.md",
-    "link_folder/人物/米沙利、以利撒反.md",
-    "link_folder/事件/亞倫解釋今日獻贖罪祭燔祭仍遭禍.md",
-    "link_folder/事件/摩西因贖罪祭肉被燒而發怒.md",
-    "link_folder/神學/祭司不可喝酒.md",
-    "link_folder/神學/在親近我的人中要顯為聖.md",
-    "link_folder/神學/火從耶和華面前出來燒滅他們.md",
-    "03 利未記/第8章.md",
-    "link_folder/文化/肝上取的網子.md",
-    "link_folder/神學/舉手祝福（民6：24-26）.md",
-    "link_folder/原文/調油的素祭（minchah belulah bashemen）.md",
+    "raw_data/ccbiblestudy_CT_leviticus_12.txt",
+    "raw_data/biblehub_study_leviticus_12.txt",
+    "util/output/audits/full_audit_101.md",
+    "03 利未記/第11章.md",
+    "link_folder/文化/猶太教潔淨飲食傳統.md",
+    "link_folder/文化/古代近東飲食習慣與以色列差異.md",
+    "link_folder/事件/頒布潔淨不潔淨條例.md",
+    "link_folder/互文/以色列人分別為聖（利20：24-26）.md",
+    "link_folder/互文/保羅論食物不潔淨（羅14：14）.md",
+    "link_folder/互文/彼得異象廢除飲食條例（徒10：9-16）.md",
+    "link_folder/互文/潔淨不潔淨條例（創7：2-3）.md",
+    "link_folder/神學/活水與聖靈.md",
+    "link_folder/神學/死與不潔淨的關聯.md",
+    "link_folder/神學/聖潔與分別為聖.md",
+    "link_folder/主題/聖潔的呼召與分別為聖.md",
+    "link_folder/原文/鴕鳥（bat ya'anah）.md",
+    "link_folder/主題/蹦跳昆蟲的屬靈意義.md",
+    "link_folder/原文/豬（chazir）.md",
+    "link_folder/原文/蝙蝠（atallef）.md",
+    "link_folder/原文/蝗蟲（arbeh）.md",
+    "link_folder/主題/翅與鱗的屬靈意義.md",
+    "link_folder/主題/爬物與污穢的屬靈意義.md",
+    "link_folder/原文/烏鴉（oreb）.md",
+    "link_folder/主題/潔淨與不潔淨的飲食條例.md",
+    "link_folder/人物/施洗約翰.md",
+    "link_folder/原文/可憎（sheqets）.md",
+    "link_folder/原文/分蹄（mafris parsah）.md",
+    "raw_data/kingcomments_leviticus_11.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_11.txt",
+    "raw_data/ccbiblestudy_CT_leviticus_11.txt",
+    "raw_data/biblehub_study_leviticus_11.txt",
+    "util/model_client.py.tmp.49732.9cd3dd0828ee",
     "util/run_chapter.py.tmp.70636.269c1cf99449",
     "test_yaml.py",
     "_config/model_endpoints.yaml.tmp.27236.2969121d6f02",
     "01 創世記/第26章.md.tmp.67068.83b6c7508631",
-    "raw_data/ccbiblestudy_GT_genesis_26.txt",
-    "raw_data/ccbiblestudy_CT_genesis_26.txt",
-    "raw_data/kingcomments_genesis_26.txt",
-    "raw_data/biblehub_study_genesis_26.txt",
-    "raw_data/ccbiblestudy_GT_genesis_25.txt",
-    "raw_data/ccbiblestudy_CT_genesis_25.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",
