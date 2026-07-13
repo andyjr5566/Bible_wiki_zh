@@ -1,0 +1,86 @@
+book: 創世記
+chapter: 27
+candidates:
+  - name: 以撒
+    type: 人物
+    evidence: 1-46節；年老眼花欲祝福以掃，被雅各騙取，戰兢後仍確認祝福
+  - name: 以掃
+    type: 人物
+    evidence: 1-41節；打獵求福被奪，放聲痛哭得次等祝福，怨恨欲殺雅各
+  - name: 利百加
+    type: 人物
+    evidence: 5-17、42-46節；設計雅各騙福，得知殺機打發雅各逃亡
+  - name: 雅各
+    type: 人物
+    evidence: 6-29、42-43節；穿以掃衣、包羊皮冒充，騙取祝福後逃往哈蘭
+  - name: 拉班
+    type: 人物
+    evidence: 43節；利百加之兄，哈蘭，雅各逃亡投靠之處
+  - name: 赫人
+    type: 人物
+    evidence: 46節；以掃所娶女子的民族，使利百加厭煩
+  - name: 以撒的眼睛昏花
+    type: 主題
+    evidence: 1節；老年目盲，倚賴觸覺嗅覺而被騙
+    surfaces:
+      - {phrase: 眼睛昏花, verses: [1]}
+  - name: 野味
+    type: 主題
+    evidence: 4-33節；以撒偏愛的美味，貪食偏心的物質因素
+    surfaces:
+      - {phrase: 美味, verses: [4, 7, 9, 14, 17, 31]}
+  - name: 族長祝福的不可更改性
+    type: 主題
+    evidence: 4、33節；臨終祝福具約束力與預言能力，一出口不能撤回
+    surfaces:
+      - {phrase: 祝福, verses: [4]}
+  - name: 山羊羔皮
+    type: 主題
+    evidence: 16節；包在雅各手與頸的偽裝工具
+  - name: 親嘴
+    type: 主題
+    evidence: 26-27節；以撒摸辨並親嘴確認，愛與信任被濫用
+  - name: 詭詐
+    type: 主題
+    evidence: 35節；以撒指以掃被雅各用詭計奪福（raw作詭計）
+    surfaces:
+      - {phrase: 詭計, verses: [35]}
+  - name: 長子名分
+    type: 主題
+    evidence: 36節；以掃指雅各兩次奪他名分與福分
+    surfaces:
+      - {phrase: 長子的名分, verses: [36]}
+  - name: 刀劍
+    type: 主題
+    evidence: 40節；以掃必倚靠刀劍度日，終掙開軛
+  - name: 以掃的怨恨
+    type: 主題
+    evidence: 41節；因祝福被奪懷恨欲殺雅各，該隱的靈
+    surfaces:
+      - {phrase: 怨恨, verses: [41]}
+  - name: 雅各逃往哈蘭
+    type: 主題
+    evidence: 43節；逃往哈蘭拉班處，離家二十年
+    surfaces:
+      - {phrase: 哈蘭, verses: [43]}
+  - name: 雅各騙取祝福
+    type: 主題
+    evidence: 全章；詭計、說謊、妄稱神名奪取祝福
+  - name: 以撒偏愛以掃
+    type: 主題
+    evidence: 4節；因愛吃野味而偏心，導致家庭分裂
+  - name: 神的旨意與人的詭詐
+    type: 神學
+    evidence: 全章；神用人的錯誤成就揀選（大的服事小的）
+  - name: 祝福與咒詛
+    type: 主題
+    evidence: 29節；咒詛你的受咒詛，為你祝福的蒙福（創12:3）
+  - name: 猶大出賣耶穌
+    type: 互文
+    evidence: 26-27節互文；親嘴成為出賣與濫用信任的記號
+  - name: 該隱殺亞伯
+    type: 互文
+    evidence: 41節互文；以掃欲殺兄弟，該隱式的兄弟相殘
+  - name: 以掃輕看長子名分
+    type: 主題
+    evidence: 36節互文；來12:16-17對輕看名分者的警戒
