@@ -1,0 +1,38 @@
+book: 創世記
+chapter: 31
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 全章；蒙神指示帶全家逃離拉班，基列山與拉班立約
+  - name: 拉班
+    type: 人物
+    evidence: 全章；氣色變、追趕、搜神像、立約，愛財過於愛女兒外孫
+  - name: 拉結
+    type: 人物
+    evidence: 4、14-16、19、33-35節；偷父親神像，藏馱簍謊稱經期
+  - name: 利亞
+    type: 人物
+    evidence: 4、14-16、33節；與拉結一同贊同離開，被父當作外人
+  - name: 以撒
+    type: 人物
+    evidence: 18、42、53節；雅各所歸之父，其所敬畏的神
+  - name: 巴旦亞蘭
+    type: 地點
+    evidence: 18節；雅各所得牲畜財物之地
+  - name: 基列山
+    type: 地點
+    evidence: 21、23、25節；約但河東山地，拉班追上雅各立約之處
+  - name: 伯特利的神
+    type: 神學
+    evidence: 13節；神自稱，提醒雅各當初澆油立柱許願（創28）
+  - name: 亞伯拉罕的神與我同在
+    type: 神學
+    evidence: 42、53節；雅各信仰告白，以撒所敬畏、亞伯拉罕的神與他同在
+    surfaces:
+      - {phrase: 亞伯拉罕的神, verses: [53]}
+  - name: 迦累得
+    type: 原文
+    evidence: 47-48節；雅各用希伯來語稱石堆，意以石堆為證
+  - name: 米斯巴
+    type: 原文
+    evidence: 49節；意瞭望塔／守望台，願耶和華在你我中間鑒察

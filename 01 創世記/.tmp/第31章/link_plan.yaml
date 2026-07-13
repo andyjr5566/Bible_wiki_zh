@@ -1,0 +1,77 @@
+book: 創世記
+chapter: 31
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；蒙神指示帶全家逃離拉班，基列山與拉班立約
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 全章；氣色變、追趕、搜神像、立約，愛財過於愛女兒外孫
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 拉結
+  suggested_type: 人物
+  evidence: 4、14-16、19、33-35節；偷父親神像，藏馱簍謊稱經期
+  match_type: exact
+  existing_title: 拉結
+  existing_path: link_folder/人物/拉結.md
+- name: 利亞
+  suggested_type: 人物
+  evidence: 4、14-16、33節；與拉結一同贊同離開，被父當作外人
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 18、42、53節；雅各所歸之父，其所敬畏的神
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 巴旦亞蘭
+  suggested_type: 地點
+  evidence: 18節；雅各所得牲畜財物之地
+  match_type: exact
+  existing_title: 巴旦亞蘭
+  existing_path: link_folder/地點/巴旦亞蘭.md
+- name: 基列山
+  suggested_type: 地點
+  evidence: 21、23、25節；約但河東山地，拉班追上雅各立約之處
+  match_type: exact
+  existing_title: 基列山
+  existing_path: link_folder/地點/基列山.md
+- name: 伯特利的神
+  suggested_type: 神學
+  evidence: 13節；神自稱，提醒雅各當初澆油立柱許願（創28）
+  match_type: exact
+  existing_title: 伯特利的神
+  existing_path: link_folder/神學/伯特利的神.md
+- name: 亞伯拉罕的神與我同在
+  suggested_type: 神學
+  evidence: 42、53節；雅各信仰告白，以撒所敬畏、亞伯拉罕的神與他同在
+  surfaces:
+  - phrase: 亞伯拉罕的神
+    verses:
+    - 53
+  match_type: exact
+  existing_title: 亞伯拉罕的神與我同在
+  existing_path: link_folder/神學/亞伯拉罕的神與我同在.md
+- name: 迦累得
+  suggested_type: 原文
+  evidence: 47-48節；雅各用希伯來語稱石堆，意以石堆為證
+  match_type: exact
+  existing_title: 迦累得
+  existing_path: link_folder/原文/迦累得.md
+- name: 米斯巴
+  suggested_type: 原文
+  evidence: 49節；意瞭望塔／守望台，願耶和華在你我中間鑒察
+  match_type: exact
+  existing_title: 米斯巴
+  existing_path: link_folder/原文/米斯巴.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
