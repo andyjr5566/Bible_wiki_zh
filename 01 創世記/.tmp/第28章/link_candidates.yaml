@@ -1,0 +1,86 @@
+book: 創世記
+chapter: 28
+candidates:
+  - name: 以撒
+    type: 人物
+    evidence: 1-8節；主動祝福雅各、囑咐不可娶迦南女子、打發往巴旦亞蘭
+  - name: 雅各
+    type: 人物
+    evidence: 全章；領受亞伯拉罕之福、赴哈蘭、夢見天梯、立石柱許願
+  - name: 以掃
+    type: 人物
+    evidence: 5-9節；見雅各蒙福順從，另娶以實瑪利之女討父歡心
+  - name: 利百加
+    type: 人物
+    evidence: 5節；雅各以掃的母親，經文特意雅各排名在前
+  - name: 彼土利
+    type: 人物
+    evidence: 2、5節；雅各外祖，亞蘭人，拉班之父
+  - name: 拉班
+    type: 人物
+    evidence: 2、5節；雅各母舅，哈蘭，雅各前往娶妻之處
+  - name: 以實瑪利
+    type: 人物
+    evidence: 9節；以掃往其家娶瑪哈拉，代表肉體與立約之外的支系
+  - name: 瑪哈拉
+    type: 人物
+    evidence: 9節；以實瑪利之女、尼拜約之妹，以掃第三妻
+  - name: 尼拜約
+    type: 人物
+    evidence: 9節；以實瑪利長子，瑪哈拉之兄
+  - name: 迦南人
+    type: 人物
+    evidence: 1、6、8節；以撒囑咐不可娶迦南的女子，因其拜偶像
+    surfaces:
+      - {phrase: 迦南, verses: [1, 6, 8]}
+  - name: 巴旦亞蘭
+    type: 地點
+    evidence: 2、5-7節；亞蘭平原，拉班居地，雅各娶妻之地
+  - name: 別是巴
+    type: 地點
+    evidence: 10節；雅各起程之地，亞伯拉罕以撒久居處
+  - name: 哈蘭
+    type: 地點
+    evidence: 10節；雅各投奔的目的地，即巴旦亞蘭
+  - name: 伯特利
+    type: 地點
+    evidence: 19節；雅各夢見天梯之地，意為神的殿
+  - name: 路斯
+    type: 地點
+    evidence: 19節；伯特利舊名
+  - name: 亞伯拉罕之約
+    type: 神學
+    evidence: 3-4、13-15節；以撒與神將亞伯拉罕之約傳給雅各
+    surfaces:
+      - {phrase: 應許亞伯拉罕的福, verses: [4]}
+  - name: 全能的神（El Shaddai）
+    type: 神學
+    evidence: 3節；以撒以此名為雅各祝福，呼應創17章
+    surfaces:
+      - {phrase: 全能的神, verses: [3]}
+  - name: 神的同在
+    type: 神學
+    evidence: 15-16節；神應許與雅各同在，雅各醒悟耶和華真在這裡
+    surfaces:
+      - {phrase: 與你同在, verses: [15]}
+  - name: 天梯
+    type: 神學
+    evidence: 12節；立地頂天的梯子，天地交通，豫表基督（約1:51）
+    surfaces:
+      - {phrase: 梯子, verses: [12]}
+  - name: 神的保守與帶領
+    type: 神學
+    evidence: 15節；神應許保佑、領歸回、不離棄、直到成全
+    surfaces:
+      - {phrase: 保佑你，領你歸回這地, verses: [15]}
+  - name: 立石柱與澆油
+    type: 文化
+    evidence: 18節；立枕石為柱作記念，澆油分別為聖
+    surfaces:
+      - {phrase: 立作柱子，澆油在上面, verses: [18]}
+  - name: 許願
+    type: 文化
+    evidence: 20-22節；雅各帶條件許願，以耶和華為神並獻十分之一
+  - name: 十分之一
+    type: 原文
+    evidence: 22節；律法頒布前自願的什一奉獻，承認萬有出於神

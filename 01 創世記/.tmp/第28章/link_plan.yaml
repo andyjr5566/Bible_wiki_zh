@@ -1,0 +1,175 @@
+book: 創世記
+chapter: 28
+A_use_directly:
+- name: 以撒
+  suggested_type: 人物
+  evidence: 1-8節；主動祝福雅各、囑咐不可娶迦南女子、打發往巴旦亞蘭
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；領受亞伯拉罕之福、赴哈蘭、夢見天梯、立石柱許願
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 5-9節；見雅各蒙福順從，另娶以實瑪利之女討父歡心
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 5節；雅各以掃的母親，經文特意雅各排名在前
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 彼土利
+  suggested_type: 人物
+  evidence: 2、5節；雅各外祖，亞蘭人，拉班之父
+  match_type: exact
+  existing_title: 彼土利
+  existing_path: link_folder/人物/彼土利.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 2、5節；雅各母舅，哈蘭，雅各前往娶妻之處
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 以實瑪利
+  suggested_type: 人物
+  evidence: 9節；以掃往其家娶瑪哈拉，代表肉體與立約之外的支系
+  match_type: exact
+  existing_title: 以實瑪利
+  existing_path: link_folder/人物/以實瑪利.md
+- name: 瑪哈拉
+  suggested_type: 人物
+  evidence: 9節；以實瑪利之女、尼拜約之妹，以掃第三妻
+  match_type: exact
+  existing_title: 瑪哈拉
+  existing_path: link_folder/人物/瑪哈拉.md
+- name: 尼拜約
+  suggested_type: 人物
+  evidence: 9節；以實瑪利長子，瑪哈拉之兄
+  match_type: exact
+  existing_title: 尼拜約
+  existing_path: link_folder/人物/尼拜約.md
+- name: 巴旦亞蘭
+  suggested_type: 地點
+  evidence: 2、5-7節；亞蘭平原，拉班居地，雅各娶妻之地
+  match_type: exact
+  existing_title: 巴旦亞蘭
+  existing_path: link_folder/地點/巴旦亞蘭.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 10節；雅各起程之地，亞伯拉罕以撒久居處
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 哈蘭
+  suggested_type: 地點
+  evidence: 10節；雅各投奔的目的地，即巴旦亞蘭
+  match_type: exact
+  existing_title: 哈蘭
+  existing_path: link_folder/地點/哈蘭.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 19節；雅各夢見天梯之地，意為神的殿
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 路斯
+  suggested_type: 地點
+  evidence: 19節；伯特利舊名
+  match_type: exact
+  existing_title: 路斯
+  existing_path: link_folder/地點/路斯.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 3-4、13-15節；以撒與神將亞伯拉罕之約傳給雅各
+  surfaces:
+  - phrase: 應許亞伯拉罕的福
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 3節；以撒以此名為雅各祝福，呼應創17章
+  surfaces:
+  - phrase: 全能的神
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: 15-16節；神應許與雅各同在，雅各醒悟耶和華真在這裡
+  surfaces:
+  - phrase: 與你同在
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 天梯
+  suggested_type: 神學
+  evidence: 12節；立地頂天的梯子，天地交通，豫表基督（約1:51）
+  surfaces:
+  - phrase: 梯子
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 天梯
+  existing_path: link_folder/神學/天梯.md
+- name: 神的保守與帶領
+  suggested_type: 神學
+  evidence: 15節；神應許保佑、領歸回、不離棄、直到成全
+  surfaces:
+  - phrase: 保佑你，領你歸回這地
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 神的保守與帶領
+  existing_path: link_folder/神學/神的保守與帶領.md
+- name: 立石柱與澆油
+  suggested_type: 文化
+  evidence: 18節；立枕石為柱作記念，澆油分別為聖
+  surfaces:
+  - phrase: 立作柱子，澆油在上面
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 立石柱與澆油
+  existing_path: link_folder/文化/立石柱與澆油.md
+- name: 許願
+  suggested_type: 文化
+  evidence: 20-22節；雅各帶條件許願，以耶和華為神並獻十分之一
+  match_type: exact
+  existing_title: 許願
+  existing_path: link_folder/文化/許願.md
+- name: 十分之一
+  suggested_type: 原文
+  evidence: 22節；律法頒布前自願的什一奉獻，承認萬有出於神
+  match_type: exact
+  existing_title: 十分之一
+  existing_path: link_folder/原文/十分之一.md
+B_needs_update:
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 1、6、8節；以撒囑咐不可娶迦南的女子，因其拜偶像
+  surfaces:
+  - phrase: 迦南
+    verses:
+    - 1
+    - 6
+    - 8
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
