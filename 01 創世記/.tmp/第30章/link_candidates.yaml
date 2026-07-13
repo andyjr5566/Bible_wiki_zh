@@ -1,0 +1,69 @@
+book: 創世記
+chapter: 30
+candidates:
+  - name: 拉結
+    type: 人物
+    evidence: 1-24節；因不育嫉妒利亞，以辟拉代孕生但、拿弗他利，末後神顧念生約瑟
+  - name: 利亞
+    type: 人物
+    evidence: 9-21節；以悉帕代孕生迦得、亞設，用風茄換同寢生以薩迦、西布倫、底拿
+  - name: 雅各
+    type: 人物
+    evidence: 全章；承認生育主權在神，議訂新工價，用計使羊群增多而發大
+  - name: 辟拉
+    type: 人物
+    evidence: 3-8節；拉結的使女，為雅各生但與拿弗他利
+  - name: 悉帕
+    type: 人物
+    evidence: 9-13節；利亞的使女，為雅各生迦得與亞設
+  - name: 拉班
+    type: 人物
+    evidence: 25-42節；不願雅各離去，承認因雅各蒙福，議工價後又暗中挑走斑點羊
+  - name: 流便
+    type: 人物
+    evidence: 14節；利亞長子，割麥時尋見風茄拿給母親
+  - name: 但（審判）
+    type: 人物
+    evidence: 6節；辟拉長子，拉結取名，意伸冤
+    surfaces:
+      - {phrase: 但, verses: [6]}
+  - name: 拿弗他利（相爭）
+    type: 人物
+    evidence: 8節；辟拉次子，拉結取名，意相爭、角力
+    surfaces:
+      - {phrase: 拿弗他利, verses: [8]}
+  - name: 迦得（萬幸）
+    type: 人物
+    evidence: 11節；悉帕長子，利亞取名，意萬幸、幸運
+    surfaces:
+      - {phrase: 迦得, verses: [11]}
+  - name: 亞設（有福）
+    type: 人物
+    evidence: 13節；悉帕次子，利亞取名，意有福
+    surfaces:
+      - {phrase: 亞設, verses: [13]}
+  - name: 以薩迦（價值）
+    type: 人物
+    evidence: 18節；利亞第五子，意價值、工價，與雇下諧音
+    surfaces:
+      - {phrase: 以薩迦, verses: [18]}
+  - name: 西布倫（同住）
+    type: 人物
+    evidence: 20節；利亞第六子，意同住，與賜厚賞諧音
+    surfaces:
+      - {phrase: 西布倫, verses: [20]}
+  - name: 底拿（審判）
+    type: 原文
+    evidence: 21節；利亞之女，與但同字源，意審判，伏筆創34章
+    surfaces:
+      - {phrase: 底拿, verses: [21]}
+  - name: 約瑟（增添）
+    type: 人物
+    evidence: 24節；拉結長子，意增添／除去，神除去拉結羞恥
+    surfaces:
+      - {phrase: 約瑟, verses: [24]}
+  - name: 風茄(催情果)
+    type: 文化
+    evidence: 14-16節；巴勒斯坦植物，迷信可催情助孕，拉結以同寢權換取
+    surfaces:
+      - {phrase: 風茄, verses: [14]}

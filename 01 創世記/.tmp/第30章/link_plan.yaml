@@ -1,0 +1,139 @@
+book: 創世記
+chapter: 30
+A_use_directly:
+- name: 拉結
+  suggested_type: 人物
+  evidence: 1-24節；因不育嫉妒利亞，以辟拉代孕生但、拿弗他利，末後神顧念生約瑟
+  match_type: exact
+  existing_title: 拉結
+  existing_path: link_folder/人物/拉結.md
+- name: 利亞
+  suggested_type: 人物
+  evidence: 9-21節；以悉帕代孕生迦得、亞設，用風茄換同寢生以薩迦、西布倫、底拿
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；承認生育主權在神，議訂新工價，用計使羊群增多而發大
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 辟拉
+  suggested_type: 人物
+  evidence: 3-8節；拉結的使女，為雅各生但與拿弗他利
+  match_type: exact
+  existing_title: 辟拉
+  existing_path: link_folder/人物/辟拉.md
+- name: 悉帕
+  suggested_type: 人物
+  evidence: 9-13節；利亞的使女，為雅各生迦得與亞設
+  match_type: exact
+  existing_title: 悉帕
+  existing_path: link_folder/人物/悉帕.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 25-42節；不願雅各離去，承認因雅各蒙福，議工價後又暗中挑走斑點羊
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 14節；利亞長子，割麥時尋見風茄拿給母親
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 但（審判）
+  suggested_type: 人物
+  evidence: 6節；辟拉長子，拉結取名，意伸冤
+  surfaces:
+  - phrase: 但
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 但（審判）
+  existing_path: link_folder/人物/但（審判）.md
+- name: 拿弗他利（相爭）
+  suggested_type: 人物
+  evidence: 8節；辟拉次子，拉結取名，意相爭、角力
+  surfaces:
+  - phrase: 拿弗他利
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 拿弗他利（相爭）
+  existing_path: link_folder/人物/拿弗他利（相爭）.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 11節；悉帕長子，利亞取名，意萬幸、幸運
+  surfaces:
+  - phrase: 迦得
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 13節；悉帕次子，利亞取名，意有福
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 18節；利亞第五子，意價值、工價，與雇下諧音
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 20節；利亞第六子，意同住，與賜厚賞諧音
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 底拿（審判）
+  suggested_type: 原文
+  evidence: 21節；利亞之女，與但同字源，意審判，伏筆創34章
+  surfaces:
+  - phrase: 底拿
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 底拿（審判）
+  existing_path: link_folder/原文/底拿（審判）.md
+- name: 約瑟（增添）
+  suggested_type: 人物
+  evidence: 24節；拉結長子，意增添／除去，神除去拉結羞恥
+  surfaces:
+  - phrase: 約瑟
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 約瑟（增添）
+  existing_path: link_folder/人物/約瑟（增添）.md
+- name: 風茄(催情果)
+  suggested_type: 文化
+  evidence: 14-16節；巴勒斯坦植物，迷信可催情助孕，拉結以同寢權換取
+  surfaces:
+  - phrase: 風茄
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 風茄(催情果)
+  existing_path: link_folder/文化/風茄(催情果).md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
