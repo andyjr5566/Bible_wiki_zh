@@ -1,0 +1,251 @@
+book: 創世記
+chapter: 26
+A_use_directly:
+- name: 饑荒
+  suggested_type: 主題
+  evidence: 1節；亞伯拉罕日子與以撒日子兩次饑荒，神藉此試驗信心
+  match_type: exact
+  existing_title: 饑荒
+  existing_path: link_folder/主題/饑荒.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 1-35節；本章主角，遷基拉耳、稱妻為妹、挖井、別是巴立約
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 基拉耳
+  suggested_type: 地點
+  evidence: 1、6、17、20、26節；非利士人之地，以撒寄居處
+  match_type: exact
+  existing_title: 基拉耳
+  existing_path: link_folder/地點/基拉耳.md
+- name: 非利士人
+  suggested_type: 地點
+  evidence: 1、8、14-18節；亞比米勒之民，嫉妒塞井
+  match_type: exact
+  existing_title: 非利士人
+  existing_path: link_folder/地點/非利士人.md
+- name: 亞比米勒
+  suggested_type: 人物
+  evidence: 1、8-16、26節；基拉耳王（或前王之子孫），與以撒立約
+  match_type: exact
+  existing_title: 亞比米勒
+  existing_path: link_folder/人物/亞比米勒.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 7-11、35節；被稱為妹子，戲玩露餡
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 非利士人的嫉妒
+  suggested_type: 主題
+  evidence: 14節；以撒昌大成富戶，非利士人嫉妒
+  surfaces:
+  - phrase: 嫉妒
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 非利士人的嫉妒
+  existing_path: link_folder/主題/非利士人的嫉妒.md
+- name: 塞井
+  suggested_type: 主題
+  evidence: 15、18節；非利士人塞住亞伯拉罕所挖的井，切斷倚賴
+  surfaces:
+  - phrase: 塞住
+    verses:
+    - 15
+    - 18
+  match_type: exact
+  existing_title: 塞井
+  existing_path: link_folder/主題/塞井.md
+- name: 基拉耳谷
+  suggested_type: 地點
+  evidence: 17節；以撒被迫遷居支搭帳棚之地
+  match_type: exact
+  existing_title: 基拉耳谷
+  existing_path: link_folder/地點/基拉耳谷.md
+- name: 支搭帳棚
+  suggested_type: 主題
+  evidence: 17、25節；過寄居客旅的生活
+  match_type: exact
+  existing_title: 支搭帳棚
+  existing_path: link_folder/主題/支搭帳棚.md
+- name: 水井
+  suggested_type: 地點
+  evidence: 18-19節；重挖父親的井、得活水井
+  match_type: exact
+  existing_title: 水井
+  existing_path: link_folder/地點/水井.md
+- name: 埃色（相爭）
+  suggested_type: 原文
+  evidence: 20節；字義相爭，因牧人爭競而起名
+  surfaces:
+  - phrase: 埃色
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 埃色（相爭）
+  existing_path: link_folder/原文/埃色（相爭）.md
+- name: 西提拿（為敵）
+  suggested_type: 原文
+  evidence: 21節；字義為敵，衝突加劇
+  surfaces:
+  - phrase: 西提拿
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 西提拿（為敵）
+  existing_path: link_folder/原文/西提拿（為敵）.md
+- name: 利河伯（寬闊）
+  suggested_type: 原文
+  evidence: 22節；字義寬闊，神開路不再爭競
+  surfaces:
+  - phrase: 利河伯
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 利河伯（寬闊）
+  existing_path: link_folder/原文/利河伯（寬闊）.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 23、33節；神二次顯現、與亞比米勒立約之地
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 求告耶和華的名
+  suggested_type: 主題
+  evidence: 25節；築壇後對神顯現與應許的回應
+  match_type: exact
+  existing_title: 求告耶和華的名
+  existing_path: link_folder/主題/求告耶和華的名.md
+- name: 築壇
+  suggested_type: 主題
+  evidence: 25節；在別是巴築壇敬拜神
+  match_type: exact
+  existing_title: 築壇
+  existing_path: link_folder/主題/築壇.md
+- name: 亞戶撒
+  suggested_type: 人物
+  evidence: 26節；亞比米勒的朋友（國策顧問）
+  match_type: exact
+  existing_title: 亞戶撒
+  existing_path: link_folder/人物/亞戶撒.md
+- name: 非各
+  suggested_type: 人物
+  evidence: 26節；軍長（或為稱號），隨亞比米勒來立約
+  match_type: exact
+  existing_title: 非各
+  existing_path: link_folder/人物/非各.md
+- name: 神的同在被人看見
+  suggested_type: 主題
+  evidence: 28節；外邦人承認「耶和華與你同在」
+  surfaces:
+  - phrase: 耶和華與你同在
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 神的同在被人看見
+  existing_path: link_folder/主題/神的同在被人看見.md
+- name: 立約
+  suggested_type: 主題
+  evidence: 28-31節；以撒與亞比米勒彼此起誓立約
+  match_type: exact
+  existing_title: 立約
+  existing_path: link_folder/主題/立約.md
+- name: 示巴（起誓、豐盛）
+  suggested_type: 原文
+  evidence: 33節；井名示巴，城因此叫別是巴
+  surfaces:
+  - phrase: 示巴
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 示巴（起誓、豐盛）
+  existing_path: link_folder/原文/示巴（起誓、豐盛）.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 34節；四十歲娶兩個赫人女子
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 34節；比利、以倫的民族
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 比利
+  suggested_type: 人物
+  evidence: 34節；猶滴之父，赫人
+  match_type: exact
+  existing_title: 比利
+  existing_path: link_folder/人物/比利.md
+- name: 猶滴
+  suggested_type: 人物
+  evidence: 34節；以掃之妻，赫人比利之女
+  match_type: exact
+  existing_title: 猶滴
+  existing_path: link_folder/人物/猶滴.md
+- name: 以倫
+  suggested_type: 人物
+  evidence: 34節；巴實抹之父，赫人
+  match_type: exact
+  existing_title: 以倫
+  existing_path: link_folder/人物/以倫.md
+- name: 巴實抹
+  suggested_type: 人物
+  evidence: 34節；以掃之妻，赫人以倫之女
+  match_type: exact
+  existing_title: 巴實抹
+  existing_path: link_folder/人物/巴實抹.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 3-5節；神將亞伯拉罕之約重申給以撒
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: 3、24、28節；以撒蒙福的核心，連世人也看見
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 稱妻說謊
+  suggested_type: 主題
+  evidence: 7-11節；以撒重蹈父親稱妻為妹的過犯
+  match_type: exact
+  existing_title: 稱妻說謊
+  existing_path: link_folder/主題/稱妻說謊.md
+- name: 百倍收成
+  suggested_type: 主題
+  evidence: 12節；饑荒之年耕種得百倍，耶和華賜福
+  match_type: exact
+  existing_title: 百倍收成
+  existing_path: link_folder/主題/百倍收成.md
+- name: 挖井
+  suggested_type: 主題
+  evidence: 18-22、25、32節；尋求屬靈供應的圖像
+  match_type: exact
+  existing_title: 挖井
+  existing_path: link_folder/主題/挖井.md
+- name: 以掃娶外邦女子
+  suggested_type: 主題
+  evidence: 34-35節；輕看長子名分，使父母愁煩
+  match_type: exact
+  existing_title: 以掃娶外邦女子
+  existing_path: link_folder/主題/以掃娶外邦女子.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 2節；神吩咐以撒不要下埃及去
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate:
+- name: 神的信實
+  suggested_type: 主題
+  evidence: 3、24節；人軟弱稱妻說謊，神仍信守約
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+E_skip: []

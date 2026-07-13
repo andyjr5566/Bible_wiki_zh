@@ -1,8 +1,29 @@
 {
-  "total_warnings": 20,
+  "total_warnings": 23,
   "critical_count": 0,
-  "warning_count": 20,
+  "warning_count": 23,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第26章.md",
+      "target": "埃色",
+      "message": "同一 alias「埃色」指向多個 target: 埃色（相爭）, 埃色（相爭）\\"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第26章.md",
+      "target": "西提拿",
+      "message": "同一 alias「西提拿」指向多個 target: 西提拿（為敵）, 西提拿（為敵）\\"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第26章.md",
+      "target": "利河伯",
+      "message": "同一 alias「利河伯」指向多個 target: 利河伯（寬闊）, 利河伯（寬闊）\\"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
