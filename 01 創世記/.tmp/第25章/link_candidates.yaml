@@ -1,0 +1,134 @@
+book: 創世記
+chapter: 25
+candidates:
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 1-11節；娶基土拉、分產給以撒、175歲氣絕而死葬麥比拉洞（舊檔 v9 連 亞伯蘭，統一連 亞伯拉罕）
+  - name: 基土拉
+    type: 人物
+    evidence: 1-4節；亞伯拉罕續娶之妾，生六子成阿拉伯諸族之祖
+  - name: 米甸
+    type: 人物
+    evidence: 2、4節；基土拉之子，米甸族之祖，後常侵擾以色列
+  - name: 以撒
+    type: 人物
+    evidence: 5-6、11、19-28節；承受一切、蒙神賜福、為利百加祈求得雙子
+  - name: 歸到列祖
+    type: 主題
+    evidence: 8、17節；死亡用語，靈魂不滅、歸到本民（創卅七35）
+    surfaces:
+      - {phrase: 歸到他列祖, verses: [8]}
+  - name: 以實瑪利
+    type: 人物
+    evidence: 9、12-18節；與以撒同葬父，十二族族長，享壽137歲
+  - name: 麥比拉洞
+    type: 地點
+    evidence: 9-10節；亞伯拉罕與撒拉同葬之處
+  - name: 幔利
+    type: 地點
+    evidence: 9節；麥比拉洞所在，即希伯崙
+  - name: 赫人
+    type: 人物
+    evidence: 9-10節；瑣轄與以弗崙的民族，售田者
+  - name: 瑣轄
+    type: 人物
+    evidence: 9節；以弗崙之父
+  - name: 以弗崙
+    type: 人物
+    evidence: 9節；麥比拉田原主
+  - name: 撒拉
+    type: 人物
+    evidence: 10、12節；葬於麥比拉洞，夏甲之主母
+  - name: 庇耳拉海萊
+    type: 地點
+    evidence: 11節；以撒蒙福後居住之地（創十六14）
+  - name: 夏甲
+    type: 人物
+    evidence: 12節；撒拉的埃及使女，以實瑪利之母
+  - name: 以實瑪利十二族
+    type: 主題
+    evidence: 16節十二族的族長；應驗創17:20
+    surfaces:
+      - {phrase: 十二族的族長, verses: [16]}
+  - name: 書珥
+    type: 地點
+    evidence: 18節；以實瑪利子孫住處西界，埃及前
+  - name: 亞述
+    type: 地點
+    evidence: 18節；「正在亞述的道上」
+  - name: 利百加
+    type: 人物
+    evidence: 20-28節；巴旦亞蘭彼土利之女，不孕蒙應允生雙子
+  - name: 四十歲的意義
+    type: 神學
+    evidence: 20節以撒娶妻正四十歲；四十為試煉數目
+    surfaces:
+      - {phrase: 四十歲, verses: [20]}
+  - name: 巴旦亞蘭
+    type: 地點
+    evidence: 20節利百加原鄉，即米所波大米
+  - name: 亞蘭
+    type: 地點
+    evidence: 20節彼土利、拉班為亞蘭人
+    surfaces:
+      - {phrase: 亞蘭人, verses: [20]}
+  - name: 彼土利
+    type: 人物
+    evidence: 20節；利百加之父，亞蘭人
+  - name: 拉班
+    type: 人物
+    evidence: 20節；利百加之兄，亞蘭人
+  - name: 利百加不孕
+    type: 主題
+    evidence: 21節不生育；婚後二十年方懷孕
+    surfaces:
+      - {phrase: 不生育, verses: [21]}
+  - name: 以撒的禱告
+    type: 主題
+    evidence: 21節為妻祈求耶和華；應許不代替禱告乃鼓勵禱告
+    surfaces:
+      - {phrase: 祈求耶和華, verses: [21]}
+  - name: 腹中相爭
+    type: 主題
+    evidence: 22節孩子們彼此相爭；預示兩族相爭
+    surfaces:
+      - {phrase: 彼此相爭, verses: [22]}
+  - name: 大的服事小的
+    type: 主題
+    evidence: 23節神諭；揀選在出生前，不在乎行為（羅九11-12）
+    surfaces:
+      - {phrase: 將來大的要服事小的, verses: [23]}
+  - name: 以掃
+    type: 人物
+    evidence: 25、27-34節；先產紅毛、善打獵，輕看長子名分
+  - name: 雅各
+    type: 人物
+    evidence: 26、29-34節；抓住腳跟，安靜住帳棚，得長子名分
+  - name: 父母偏愛
+    type: 主題
+    evidence: 28節以撒愛以掃、利百加愛雅各；種下家庭衝突
+  - name: 以東
+    type: 地點
+    evidence: 30節以掃因紅湯又叫以東
+  - name: 長子名分
+    type: 主題
+    evidence: 31-33節；父親祝福、一家之主、雙份產業、祭司尊榮
+    surfaces:
+      - {phrase: 長子的名分, verses: [31]}
+  - name: 以掃輕看長子名分
+    type: 主題
+    evidence: 34節；為一碗紅湯賣了名分，貪戀世俗（來12:16）
+    surfaces:
+      - {phrase: 以掃輕看了他長子的名分, verses: [34]}
+  - name: 亞伯拉罕之約
+    type: 神學
+    evidence: 全章傳承：一切給以撒，庶子分產東遷，約歸應許之子
+  - name: 亞伯拉罕分產
+    type: 主題
+    evidence: 5-6節；一切給以撒，財物分庶子打發往東方
+  - name: 基土拉的地位
+    type: 主題
+    evidence: 1、6節；聖經另稱她為妾（代上一32），地位次於撒拉
+  - name: 神的揀選
+    type: 神學
+    evidence: 23節；大的服事小的，揀選出於召人的主（羅九11）

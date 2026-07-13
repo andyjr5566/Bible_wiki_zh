@@ -1,0 +1,269 @@
+book: 創世記
+chapter: 25
+A_use_directly:
+- name: 基土拉
+  suggested_type: 人物
+  evidence: 1-4節；亞伯拉罕續娶之妾，生六子成阿拉伯諸族之祖
+  match_type: exact
+  existing_title: 基土拉
+  existing_path: link_folder/人物/基土拉.md
+- name: 米甸
+  suggested_type: 人物
+  evidence: 2、4節；基土拉之子，米甸族之祖，後常侵擾以色列
+  match_type: exact
+  existing_title: 米甸
+  existing_path: link_folder/人物/米甸.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 5-6、11、19-28節；承受一切、蒙神賜福、為利百加祈求得雙子
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 歸到列祖
+  suggested_type: 主題
+  evidence: 8、17節；死亡用語，靈魂不滅、歸到本民（創卅七35）
+  surfaces:
+  - phrase: 歸到他列祖
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 歸到列祖
+  existing_path: link_folder/主題/歸到列祖.md
+- name: 以實瑪利
+  suggested_type: 人物
+  evidence: 9、12-18節；與以撒同葬父，十二族族長，享壽137歲
+  match_type: exact
+  existing_title: 以實瑪利
+  existing_path: link_folder/人物/以實瑪利.md
+- name: 幔利
+  suggested_type: 地點
+  evidence: 9節；麥比拉洞所在，即希伯崙
+  match_type: exact
+  existing_title: 幔利
+  existing_path: link_folder/地點/幔利.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 9-10節；瑣轄與以弗崙的民族，售田者
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 以弗崙
+  suggested_type: 人物
+  evidence: 9節；麥比拉田原主
+  match_type: exact
+  existing_title: 以弗崙
+  existing_path: link_folder/人物/以弗崙.md
+- name: 撒拉
+  suggested_type: 人物
+  evidence: 10、12節；葬於麥比拉洞，夏甲之主母
+  match_type: exact
+  existing_title: 撒拉
+  existing_path: link_folder/人物/撒拉.md
+- name: 庇耳拉海萊
+  suggested_type: 地點
+  evidence: 11節；以撒蒙福後居住之地（創十六14）
+  match_type: exact
+  existing_title: 庇耳拉海萊
+  existing_path: link_folder/地點/庇耳拉海萊.md
+- name: 夏甲
+  suggested_type: 人物
+  evidence: 12節；撒拉的埃及使女，以實瑪利之母
+  match_type: exact
+  existing_title: 夏甲
+  existing_path: link_folder/人物/夏甲.md
+- name: 以實瑪利十二族
+  suggested_type: 主題
+  evidence: 16節十二族的族長；應驗創17:20
+  surfaces:
+  - phrase: 十二族的族長
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 以實瑪利十二族
+  existing_path: link_folder/主題/以實瑪利十二族.md
+- name: 書珥
+  suggested_type: 地點
+  evidence: 18節；以實瑪利子孫住處西界，埃及前
+  match_type: exact
+  existing_title: 書珥
+  existing_path: link_folder/地點/書珥.md
+- name: 亞述
+  suggested_type: 地點
+  evidence: 18節；「正在亞述的道上」
+  match_type: exact
+  existing_title: 亞述
+  existing_path: link_folder/地點/亞述.md
+- name: 四十歲的意義
+  suggested_type: 神學
+  evidence: 20節以撒娶妻正四十歲；四十為試煉數目
+  surfaces:
+  - phrase: 四十歲
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 四十歲的意義
+  existing_path: link_folder/神學/四十歲的意義.md
+- name: 巴旦亞蘭
+  suggested_type: 地點
+  evidence: 20節利百加原鄉，即米所波大米
+  match_type: exact
+  existing_title: 巴旦亞蘭
+  existing_path: link_folder/地點/巴旦亞蘭.md
+- name: 亞蘭
+  suggested_type: 地點
+  evidence: 20節彼土利、拉班為亞蘭人
+  surfaces:
+  - phrase: 亞蘭人
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 亞蘭
+  existing_path: link_folder/地點/亞蘭.md
+- name: 彼土利
+  suggested_type: 人物
+  evidence: 20節；利百加之父，亞蘭人
+  match_type: exact
+  existing_title: 彼土利
+  existing_path: link_folder/人物/彼土利.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 20節；利百加之兄，亞蘭人
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 利百加不孕
+  suggested_type: 主題
+  evidence: 21節不生育；婚後二十年方懷孕
+  surfaces:
+  - phrase: 不生育
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 利百加不孕
+  existing_path: link_folder/主題/利百加不孕.md
+- name: 以撒的禱告
+  suggested_type: 主題
+  evidence: 21節為妻祈求耶和華；應許不代替禱告乃鼓勵禱告
+  surfaces:
+  - phrase: 祈求耶和華
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 以撒的禱告
+  existing_path: link_folder/主題/以撒的禱告.md
+- name: 腹中相爭
+  suggested_type: 主題
+  evidence: 22節孩子們彼此相爭；預示兩族相爭
+  surfaces:
+  - phrase: 彼此相爭
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 腹中相爭
+  existing_path: link_folder/主題/腹中相爭.md
+- name: 大的服事小的
+  suggested_type: 主題
+  evidence: 23節神諭；揀選在出生前，不在乎行為（羅九11-12）
+  surfaces:
+  - phrase: 將來大的要服事小的
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 大的服事小的
+  existing_path: link_folder/主題/大的服事小的.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 25、27-34節；先產紅毛、善打獵，輕看長子名分
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 26、29-34節；抓住腳跟，安靜住帳棚，得長子名分
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 父母偏愛
+  suggested_type: 主題
+  evidence: 28節以撒愛以掃、利百加愛雅各；種下家庭衝突
+  match_type: exact
+  existing_title: 父母偏愛
+  existing_path: link_folder/主題/父母偏愛.md
+- name: 以東
+  suggested_type: 地點
+  evidence: 30節以掃因紅湯又叫以東
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 長子名分
+  suggested_type: 主題
+  evidence: 31-33節；父親祝福、一家之主、雙份產業、祭司尊榮
+  surfaces:
+  - phrase: 長子的名分
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 長子名分
+  existing_path: link_folder/主題/長子名分.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 全章傳承：一切給以撒，庶子分產東遷，約歸應許之子
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 亞伯拉罕分產
+  suggested_type: 主題
+  evidence: 5-6節；一切給以撒，財物分庶子打發往東方
+  match_type: exact
+  existing_title: 亞伯拉罕分產
+  existing_path: link_folder/主題/亞伯拉罕分產.md
+- name: 基土拉的地位
+  suggested_type: 主題
+  evidence: 1、6節；聖經另稱她為妾（代上一32），地位次於撒拉
+  match_type: exact
+  existing_title: 基土拉的地位
+  existing_path: link_folder/主題/基土拉的地位.md
+- name: 神的揀選
+  suggested_type: 神學
+  evidence: 23節；大的服事小的，揀選出於召人的主（羅九11）
+  match_type: exact
+  existing_title: 神的揀選
+  existing_path: link_folder/神學/神的揀選.md
+B_needs_update:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-11節；娶基土拉、分產給以撒、175歲氣絕而死葬麥比拉洞（舊檔 v9 連 亞伯蘭，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 9-10節；亞伯拉罕與撒拉同葬之處
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
+- name: 瑣轄
+  suggested_type: 人物
+  evidence: 9節；以弗崙之父
+  match_type: exact
+  existing_title: 瑣轄
+  existing_path: link_folder/人物/瑣轄.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 20-28節；巴旦亞蘭彼土利之女，不孕蒙應允生雙子
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 以掃輕看長子名分
+  suggested_type: 主題
+  evidence: 34節；為一碗紅湯賣了名分，貪戀世俗（來12:16）
+  surfaces:
+  - phrase: 以掃輕看了他長子的名分
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 以掃輕看長子名分
+  existing_path: link_folder/主題/以掃輕看長子名分.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
