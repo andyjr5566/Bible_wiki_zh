@@ -1,0 +1,184 @@
+book: 利未記
+chapter: 12
+A_use_directly: []
+B_needs_update:
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: 利12:6「她要把一歲的羊羔為燔祭」；CT註解：燔祭表徵完全為神而活(參羅十二1)；BH：burnt offering = total surrender
+    to God
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 一歲的羊羔
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 利12:1「耶和華對摩西說」
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+C_new_formal:
+- name: 產後潔淨（taharah）
+  suggested_type: 原文
+  evidence: 利12:4「婦人在產血不潔之中，要家居三十三天」；CT註解：產後潔淨期表徵通過神的煉淨；BH：purification after childbirth
+  surfaces:
+  - phrase: 潔淨的日子
+  - phrase: 產血不潔
+  - phrase: 家居
+  target_path: link_folder/原文/產後潔淨（taharah）.md
+- name: 月經污穢（niddah）
+  suggested_type: 原文
+  evidence: 利12:2「像在月經污穢的日子不潔淨一樣」；CT原文字義：污穢的、生病、不舒服；BH：menstruation = ceremonial uncleanness
+  surfaces:
+  - phrase: 月經污穢
+  - phrase: 污穢的時候
+  target_path: link_folder/原文/月經污穢（niddah）.md
+- name: 聖物（qodesh）
+  suggested_type: 原文
+  evidence: 利12:4「不可摸聖物」；CT文意註解：聖物指經過分別為聖的聖禮物；BH：holy things = consecrated objects
+  surfaces:
+  - phrase: 聖物
+  target_path: link_folder/原文/聖物（qodesh）.md
+- name: 產後潔淨條例
+  suggested_type: 主題
+  evidence: 利12:1-8全章；CT壹內容綱要【婦人產後潔與不潔的條例】三大段；BH：Purification after Childbirth；KC：laws
+    of purification after childbirth
+  surfaces:
+  - phrase: 產後潔淨
+  - phrase: 潔淨的日子
+  - phrase: 產後條例
+  target_path: link_folder/主題/產後潔淨條例.md
+- name: 男女潔淨期差異的屬靈意義
+  suggested_type: 主題
+  evidence: 利12:2-5；CT靈意註解：生男孩七天表徵生命剛強者完全不潔，生女孩十四天表徵生命軟弱者加倍不潔；家居三十三天vs六十六天表徵神的煉淨vs雙倍試煉；話中之光：生女孩日子加倍讓人想起夏娃犯罪(參提前二14)
+  surfaces:
+  - phrase: 生男孩
+  - phrase: 生女孩
+  - phrase: 七天
+  - phrase: 兩個七天
+  - phrase: 三十三天
+  - phrase: 六十六天
+  target_path: link_folder/主題/男女潔淨期差異的屬靈意義.md
+- name: 割禮的屬靈意義
+  suggested_type: 主題
+  evidence: 利12:3；CT靈意註解：第八天表徵藉著基督復活的生命，割禮表徵靠基督十字架除去肉體情慾(參西二11)；BH：eighth day = new
+    beginnings, covenant fulfillment
+  surfaces:
+  - phrase: 第八天
+  - phrase: 割禮
+  target_path: link_folder/主題/割禮的屬靈意義.md
+- name: 燔祭與贖罪祭的屬靈意義
+  suggested_type: 主題
+  evidence: 利12:6-8；CT靈意註解：燔祭表徵完全為神而活(參羅十二1)，贖罪祭表徵對付裏面的罪性(參羅七20)；話中之光：先獻燔祭後獻贖罪祭，人的不潔因未完全為神活著；BH：burnt
+    offering = total surrender, sin offering = atonement
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 贖罪祭
+  - phrase: 一歲的羊羔
+  - phrase: 雛鴿
+  - phrase: 斑鳩
+  target_path: link_folder/主題/燔祭與贖罪祭的屬靈意義.md
+- name: 貧窮人的代替獻祭
+  suggested_type: 主題
+  evidence: 利12:8「他的力量若不夠獻一隻羊羔，他就要取兩隻斑鳩或是兩隻雛鴿」；CT文意註解：神體恤貧窮人，使人人都能獻祭；BH：provision
+    for the poor = two turtledoves or two pigeons
+  surfaces:
+  - phrase: 力量若不夠
+  - phrase: 兩隻斑鳩
+  - phrase: 兩隻雛鴿
+  - phrase: 貧窮人
+  target_path: link_folder/主題/貧窮人的代替獻祭.md
+- name: 耶穌
+  suggested_type: 人物
+  evidence: 利12:3-4；CT靈意註解：主耶穌也是依此條例在第八天行割禮(參路二21)；BH：Jesus' circumcision on eighth
+    day (Luke 2:21)
+  surfaces:
+  - phrase: 主耶穌
+  - phrase: 耶穌
+  target_path: link_folder/人物/耶穌.md
+- name: 原罪與生來不潔
+  suggested_type: 神學
+  evidence: 利12:2,5；CT話中之光：婦人產後不潔表徵全人類一出生就是不潔的；『從肉身生的，就是肉身』(約三6)；源頭既不潔，所生的也就不潔
+  surfaces:
+  - phrase: 不潔淨
+  - phrase: 從肉身生的
+  target_path: link_folder/神學/原罪與生來不潔.md
+- name: 基督的救贖與潔淨
+  suggested_type: 神學
+  evidence: 利12:6-8；CT話中之光：基督的救贖使我們得潔，不僅叫我們罪得赦免，並且叫我們經過死而復活，解決了神人之間的一切問題；燔祭表徵完全為神而活，贖罪祭表徵對付裏面的罪性
+  surfaces:
+  - phrase: 潔淨
+  - phrase: 贖罪
+  - phrase: 救贖
+  target_path: link_folder/神學/基督的救贖與潔淨.md
+- name: 馬利亞的潔淨（路2：22-24）
+  suggested_type: 互文
+  evidence: 利12:6-8；CT文意註解：滿了潔淨的日子...帶到會幕門口交給祭司；BH：Mary's purification (Luke 2:22-24)
+    - offered two turtledoves
+  surfaces:
+  - phrase: 路加福音2章
+  - phrase: 馬利亞
+  target_path: link_folder/互文/馬利亞的潔淨（路2：22-24）.md
+- name: 夏娃犯罪與女孩潔淨期加倍（提前2：14）
+  suggested_type: 互文
+  evidence: 利12:5；CT話中之光：生女孩日子加倍讓人想起夏娃的犯罪，因為女人先犯罪(參提前二14)
+  surfaces:
+  - phrase: 提摩太前書2章
+  - phrase: 夏娃
+  target_path: link_folder/互文/夏娃犯罪與女孩潔淨期加倍（提前2：14）.md
+- name: 頒布產後潔淨條例
+  suggested_type: 事件
+  evidence: 利12:1-8全章；CT壹：本章宣示有關婦人產後潔與不潔的條例
+  surfaces:
+  - phrase: 耶和華對摩西說
+  - phrase: 曉諭以色列人
+  target_path: link_folder/事件/頒布產後潔淨條例.md
+- name: 古代以色列產後習俗與神學意義
+  suggested_type: 文化
+  evidence: 利12:2-5；CT話中之光：產婦不潔淨的日子是體味罪之痛苦的時間，同時也是仰望耶穌基督的時間；生女孩日子加倍讓人恨惡罪
+  surfaces:
+  - phrase: 產後習俗
+  - phrase: 家居
+  target_path: link_folder/文化/古代以色列產後習俗與神學意義.md
+D_new_candidate:
+- name: 割禮（milah）
+  suggested_type: 原文
+  evidence: 利12:3「第八天，要給嬰孩行割禮」；CT靈意註解：第八天表徵藉著基督復活的生命，割禮表徵靠基督十字架除去肉體情慾(參西二11)；BH：circumcision
+    on the eighth day
+  surfaces:
+  - phrase: 行割禮
+  - phrase: 第八天
+  - phrase: 割禮
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+- name: 贖罪祭（chatat）
+  suggested_type: 原文
+  evidence: 利12:6「一隻雛鴿或是一隻斑鳩為贖罪祭」；CT註解：贖罪祭表徵對付裏面的罪性(參羅七20)；BH：sin offering = atonement
+    for ceremonial uncleanness
+  surfaces:
+  - phrase: 贖罪祭
+  - phrase: 雛鴿
+  - phrase: 斑鳩
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+- name: 聖所（miqdash）
+  suggested_type: 原文
+  evidence: 利12:4「也不可進入聖所」；CT文意註解：聖所指經過分別為聖的場所和房屋；BH：sanctuary = holy place
+  surfaces:
+  - phrase: 聖所
+  - phrase: 會幕門口
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=地點，secondary=[]
+- name: 割禮之約（創17：10-14）
+  suggested_type: 互文
+  evidence: 利12:3；CT文意註解：主耶穌也是依此條例在第八天行割禮(參路二21)；BH：circumcision covenant with Abraham
+    (Gen 17:10-14)
+  surfaces:
+  - phrase: 創世記17章
+  - phrase: 路加福音2章
+  match_type: type_conflict
+  note: 分類衝突：候選=互文，既有=神學，secondary=[]
+E_skip: []

@@ -1,0 +1,24 @@
+name: 頒布產後潔淨條例
+type: 事件
+secondary_types: []
+aliases:
+- 曉諭以色列人
+status: formal
+definition: 耶和華對摩西說，曉諭以色列人關於產後潔淨的條例。此事件確立了以色列社會中生育婦人的潔淨規範、割禮時間以及獻祭贖罪的標準。
+accumulations:
+- book: 利未記
+  chapter: 12
+  summary: 耶和華對摩西說，曉諭以色列人產後潔淨的具體條例。
+  relation: 本章第1至2節記載了此條例頒布事件的開端。
+related_entries:
+- 摩西
+- 產後潔淨條例
+- 產後潔淨（taharah）
+sources:
+- '綜合研讀註解: Leviticus 12 — 耶和華曉諭摩西（https://biblehub.com/study/leviticus/12.htm）'
+- '中文註解: 利未記第十二章 — 條例的頒布背景（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT12.htm）'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

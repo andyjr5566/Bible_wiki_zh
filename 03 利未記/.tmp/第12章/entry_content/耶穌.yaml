@@ -1,0 +1,25 @@
+name: 耶穌
+type: 人物
+secondary_types: []
+aliases:
+- 嬰孩耶穌
+status: formal
+definition: 利未記第12章的條例在新約中應驗於耶穌身上。根據路加福音記載，馬利亞在潔淨的日子滿了後，帶著嬰孩耶穌上聖殿獻祭，應驗了第八天行割禮與產後潔淨獻祭的律法要求。
+accumulations:
+- book: 利未記
+  chapter: 12
+  summary: 規定生男孩第八天行割禮及產婦潔淨後獻祭的條例。
+  relation: 耶穌作為律法之子，完全順服並應驗了本章所記載的潔淨與割禮條例。
+related_entries:
+- 產後潔淨條例
+- 割禮的屬靈意義
+- 馬利亞的潔淨（路2：22-24）
+- 基督的救贖與潔淨
+sources:
+- '綜合研讀註解: Leviticus 12 — 律法條例的預表（https://biblehub.com/study/leviticus/12.htm）'
+- '英文註解: Leviticus 12 — 基督與律法的關聯（https://www.kingcomments.com/en/bible-studies/Lev/12）'
+created_from: manual
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false
