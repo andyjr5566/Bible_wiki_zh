@@ -22,6 +22,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -215,8 +216,9 @@ def _retry_prompt(base_prompt, previous_output, errors):
     )
 
 
-def call_model(prompt, *, validate=None, retries=3, runner=None, label="task"):
-    """呼叫模型並取得通過驗證的 payload；失敗上限後丟 ModelValidationError。"""
+def call_model(prompt, *, validate=None, retries=3, runner=None, label="task", retry_delay=5):
+    """呼叫模型並取得通過驗證的 payload；失敗上限後丟 ModelValidationError。
+    """
     runner = runner or active_runner()
     current_prompt = prompt
     last_errors = ["未取得任何有效輸出"]

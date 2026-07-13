@@ -38,6 +38,11 @@ ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_DIR = ROOT / "_config" / "schemas"
 
 
+def _log(message):
+    """進度訊息印到 stderr——模型呼叫可能單次卡數分鐘，讓終端機不要整段空白。"""
+    print(message, file=sys.stderr, flush=True)
+
+
 class ChapterContext:
     def __init__(self, book, chapter, root=ROOT, runner=None, index=None, homonyms=None):
         self.book = canonical_book_name(book)
@@ -99,12 +104,14 @@ def resolve_step(ctx):
     plan_path = ctx.path("link_plan.yaml")
     if plan_path.exists():
         return _read_yaml(plan_path)
+    _log(f"▶ P2 resolve：{ctx.book} 第{ctx.chapter}章 連結計畫產生中…")
     index = resolver.load_index() if ctx.index is None else ctx.index
     homonyms = resolver.load_homonyms() if ctx.homonyms is None else ctx.homonyms
     candidates = resolver.load_candidates(ctx.book, ctx.chapter, root=ctx.root)
     plan = resolver.resolve(candidates, index, ctx.book, ctx.chapter, root=ctx.root, homonyms=homonyms)
     document = resolver.build_plan_document(plan, ctx.book, ctx.chapter)
     _write_yaml(plan_path, document)
+    _log("✔ P2 resolve 完成")
     return document
 
 
@@ -373,14 +380,21 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     index = ctx.index if ctx.index is not None else resolver.load_index()
     planned_names = {render_entry.safe_name(e["name"]) for e in c_entries}
     owners = _alias_owners(index, planned_names, payloads)
+    if pending:
+        _log(f"▶ M3 entry_content：{len(pending)} 個條目待建（每批 {batch_size} 個）")
     last_errors = {}
-    for _ in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
+    for round_num in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
         failed, feedback = [], None
-        for start in range(0, len(pending), batch_size):
+        total_batches = (len(pending) + batch_size - 1) // batch_size
+        for batch_num, start in enumerate(range(0, len(pending), batch_size), 1):
             batch = pending[start:start + batch_size]
             if last_errors:
                 feedback = [f"{e['name']}：{last_errors[e['name']]}"
                             for e in batch if e["name"] in last_errors]
+            _log(
+                f"  · entry_content 第 {round_num + 1} 輪 批次 {batch_num}/{total_batches}"
+                f"（{len(batch)} 條目）呼叫模型中…"
+            )
             results, errors = _run_entry_batch(
                 ctx, batch, allowed_related, sources_text, raw_text, known,
                 feedback, source_urls, owners
@@ -538,6 +552,7 @@ def verse_links_step(ctx, plan):
     out_path = ctx.path("verse_links.yaml")
     if out_path.exists():
         return _read_yaml(out_path)
+    _log("▶ M5 verse_links：程式化標注中…")
     raw_verses = ctx.raw_verses()
     surface_map = build_surface_map(ctx, plan)
     links = []
@@ -724,6 +739,8 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
 
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
+    if not out_path.exists():
+        _log("▶ M6 chapter_content：本章整理呼叫模型中…")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
     sources_text = source_excerpts.full_source_text(ctx.sources())
@@ -923,6 +940,7 @@ def _close_knowledge_nodes(chapter_content, mapping):
 
 
 def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
+    _log("▶ P3 render：產生 markdown 中…")
     written = []
     known = ctx.known_types()
     # 章節 knowledge_nodes 也要閉合，無 C 類條目時仍需全庫對照表
@@ -984,6 +1002,7 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
 # P4 validate
 # --------------------------------------------------------------------------- #
 def validate_step(ctx, written):
+    _log("▶ P4 validate：結構驗證中…")
     errors = []
     old_root = vkb.ROOT
     vkb.ROOT = ctx.root

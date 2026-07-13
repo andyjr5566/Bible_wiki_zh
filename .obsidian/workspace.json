@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 利未記/第8章.md",
+                "file": "agent_start_prompt.md",
                 "mode": "preview",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "第8章"
+              "title": "agent_start_prompt"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 利未記/第8章.md",
+                "file": "agent_start_prompt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第8章 的反向連結"
+              "title": "agent_start_prompt 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 利未記/第8章.md",
+                "file": "agent_start_prompt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第8章 的對外連結"
+              "title": "agent_start_prompt 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 利未記/第8章.md",
+                "file": "agent_start_prompt.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第8章 的大綱"
+              "title": "agent_start_prompt 的大綱"
             }
           }
         ]
@@ -196,33 +196,35 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "test_yaml.py",
-    "03 利未記/第7章.md",
+    "03 利未記/第10章.md",
+    "link_folder/事件/耶和華豈看為美呢.md",
+    "link_folder/事件/摩西聽了便以為美.md",
+    "03 利未記/第9章.md",
+    "link_folder/原文/耶和華的膏油（shemen mishchat YHWH）.md",
+    "link_folder/神學/潔淨處.md",
+    "link_folder/人物/以利亞撒、以他瑪.md",
+    "link_folder/人物/拿答、亞比戶.md",
+    "link_folder/神學/凡火（陌生的火）.md",
+    "link_folder/地點/營外.md",
+    "link_folder/神學/潔淨不潔淨.md",
+    "link_folder/神學/聖俗.md",
+    "link_folder/神學/教導律例.md",
+    "link_folder/神學/永遠的定例.md",
+    "link_folder/文化/酒和濃酒（yayin veshekar）.md",
+    "link_folder/人物/烏薛.md",
+    "link_folder/人物/米沙利、以利撒反.md",
+    "link_folder/事件/亞倫解釋今日獻贖罪祭燔祭仍遭禍.md",
+    "link_folder/事件/摩西因贖罪祭肉被燒而發怒.md",
+    "link_folder/神學/祭司不可喝酒.md",
+    "link_folder/神學/在親近我的人中要顯為聖.md",
+    "link_folder/神學/火從耶和華面前出來燒滅他們.md",
     "03 利未記/第8章.md",
-    "01 創世記/第29章.md",
-    "link_folder/原文/金牌聖冠（nezer hakodesh）.md",
-    "link_folder/神學/用水洗了他們.md",
-    "link_folder/神學/營外焚燒公牛.md",
-    "link_folder/神學/煮肉在會幕門口吃.md",
-    "link_folder/神學/搖胸歸摩西.md",
-    "link_folder/神學/搖祭在手上.md",
-    "link_folder/神學/按手在贖罪祭公牛頭上.md",
-    "link_folder/事件/招聚會眾到會幕門口.md",
-    "link_folder/神學/抹血在壇四角.md",
-    "link_folder/神學/抹血在右耳垂、右手大拇指、右腳大拇指.md",
-    "link_folder/原文/承接聖職之禮（millu'im）.md",
-    "link_folder/神學/彈膏油和血在衣服上.md",
-    "link_folder/神學/彈膏油七次.md",
-    "link_folder/神學/全羊燒在壇上.md",
-    "link_folder/神學/倒膏油在頭上.md",
-    "link_folder/神學/七天不可出會幕門.md",
+    "link_folder/文化/肝上取的網子.md",
+    "link_folder/神學/舉手祝福（民6：24-26）.md",
+    "link_folder/原文/調油的素祭（minchah belulah bashemen）.md",
+    "util/run_chapter.py.tmp.70636.269c1cf99449",
+    "test_yaml.py",
     "_config/model_endpoints.yaml.tmp.27236.2969121d6f02",
-    "01 創世記/第30章.md",
-    "01 創世記/第33章.md",
-    "01 創世記/第31章.md",
-    "01 創世記/第28章.md",
-    "01 創世記/第27章.md",
-    "01 創世記/第26章.md",
     "01 創世記/第26章.md.tmp.67068.83b6c7508631",
     "raw_data/ccbiblestudy_GT_genesis_26.txt",
     "raw_data/ccbiblestudy_CT_genesis_26.txt",
@@ -230,8 +232,6 @@
     "raw_data/biblehub_study_genesis_26.txt",
     "raw_data/ccbiblestudy_GT_genesis_25.txt",
     "raw_data/ccbiblestudy_CT_genesis_25.txt",
-    "raw_data/kingcomments_genesis_25.txt",
-    "raw_data/biblehub_study_genesis_25.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

@@ -34,4 +34,4 @@ endpoints:
   claude-cli:
     type: claude
     model: opus
-    effort: xhigh
+    effort: high

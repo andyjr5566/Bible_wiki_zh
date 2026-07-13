@@ -1,7 +1,7 @@
 {
-  "total_warnings": 22,
+  "total_warnings": 26,
   "critical_count": 0,
-  "warning_count": 22,
+  "warning_count": 26,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,20 @@
       "source": "利未記/第2章.md",
       "target": "壇",
       "message": "同一 alias「壇」指向多個 target: 壇, 銅壇（燔祭壇）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第9章.md",
+      "target": "燔祭",
+      "message": "同一 alias「燔祭」指向多個 target: 為百姓獻燔祭牛犢綿羊羔, 燔祭（olah）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第9章.md",
+      "target": "耶和華的榮光",
+      "message": "同一 alias「耶和華的榮光」指向多個 target: 耶和華的榮光, 耶和華的榮光向百姓顯現"
     },
     {
       "type": "alias_target_conflict",
@@ -37,6 +51,20 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 03 利未記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第9章",
+      "message": "同一 alias「第9章」指向多個 target: 02 出埃及記/第9章, 03 利未記/第9章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第10章",
+      "message": "同一 alias「第10章」指向多個 target: 02 出埃及記/第10章, 03 利未記/第10章"
     },
     {
       "type": "alias_target_conflict",
