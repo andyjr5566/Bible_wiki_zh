@@ -1,0 +1,271 @@
+book: 利未記
+chapter: 7
+A_use_directly: []
+B_needs_update:
+- name: 贖愆祭（asham）
+  suggested_type: 原文
+  evidence: 'v1-7 贖愆祭條例：宰於燔祭牲處、灑血壇周圍、脂油焚燒、祭司吃祭物。BH: guilt offering is most holy, distinct
+    from sin offering, primarily concerned with restitution. CT: 贖愆祭表徵基督應付人的罪行（複數）。KC:
+    the guilt offering meets all the holy demands of God with regard to the guilt.'
+  surfaces:
+  - phrase: 贖愆祭
+  match_type: exact
+  existing_title: 贖愆祭（asham）
+  existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v2 宰贖愆祭牲在宰燔祭牲之處；v8 燔祭牲皮歸祭司。全章多次以燔祭為參照點。
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v9-10 素祭歸祭司的細則：爐烤/煎盤/鐵鏊歸獻祭祭司，油調/乾歸眾祭司均分。v12 感謝祭同獻三種無酵餅。
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 贖罪祭（chatta't）
+  suggested_type: 神學
+  evidence: v7 贖罪祭怎樣，贖愆祭也是怎樣，兩個祭是一個條例。
+  match_type: base
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: v11-21 平安祭條例全段：感謝/還願/甘心三類，祭肉食用期限，不潔禁吃。v28-36 搖祭舉祭歸祭司。
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: v6-10 祭司吃贖愆祭/素祭；v14 灑血祭司得舉祭餅；v31-36 胸歸亞倫和子孫、右腿歸獻血脂油祭司、受膏永得之分。
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 脂油（chelev）
+  suggested_type: 主題
+  evidence: v3-5 贖愆祭脂油焚燒；v22-25 禁吃脂油（牛/綿羊/山羊），自死撕裂脂油可他用，吃者剪除；v30-31 平安祭脂油焚燒。
+  match_type: base
+  existing_title: 脂油
+  existing_path: link_folder/主題/脂油.md
+- name: 血（dam）
+  suggested_type: 神學
+  evidence: v2 贖愆祭血灑壇周圍；v14 灑平安祭牲血的祭司得舉祭餅；v26-27 禁吃一切血（雀鳥/野獸），吃者剪除。
+  match_type: base
+  existing_title: 血
+  existing_path: link_folder/神學/血.md
+- name: 至聖（qodesh qodashim）
+  suggested_type: 神學
+  evidence: v1 贖愆祭是至聖的；v6 要在聖處吃，是至聖的。
+  match_type: base
+  existing_title: 至聖
+  existing_path: link_folder/神學/至聖.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v2 宰於宰燔祭牲之處（壇北邊）；v5 祭司在壇上焚燒脂油；v30-31 脂油在壇上焚燒。
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: v6 要在聖處吃（會幕院子）。
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 細麵（solet）
+  suggested_type: 原文
+  evidence: v12 用油調勻細麵做的餅與感謝祭一同獻上。
+  match_type: base
+  existing_title: 細麵
+  existing_path: link_folder/原文/細麵.md
+- name: 贖罪（kipper）
+  suggested_type: 神學
+  evidence: v7 獻贖愆祭贖罪的祭司要得這祭物。
+  match_type: base
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+- name: 馨香（reach nichoach）
+  suggested_type: 原文
+  evidence: v5 祭司在壇上焚燒為獻給耶和華的火祭。
+  match_type: exact
+  existing_title: 馨香（reach nichoach）
+  existing_path: link_folder/原文/馨香（reach nichoach）.md
+- name: 火祭（isheh）
+  suggested_type: 原文
+  evidence: v5 為獻給耶和華的火祭，是贖愆祭；v30 親手獻給耶和華的火祭；v35 從耶和華火祭中作受膏的分。
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/原文/火祭（isheh）.md
+- name: 供物（qorban）
+  suggested_type: 主題
+  evidence: v13-14 與供物一同獻上；v38 吩咐以色列人獻供物給耶和華。
+  match_type: base
+  existing_title: 供物
+  existing_path: link_folder/主題/供物.md
+- name: 無殘疾（tamim）
+  suggested_type: 神學
+  evidence: v1-7 贖愆祭牲須無殘疾（參5:15;6:6）。
+  match_type: base
+  existing_title: 無殘疾
+  existing_path: link_folder/神學/無殘疾.md
+- name: 公綿羊（ayil）
+  suggested_type: 文化
+  evidence: v1-7 贖愆祭牲為公綿羊（參5:15;6:6）。
+  match_type: base
+  existing_title: 公綿羊
+  existing_path: link_folder/文化/公綿羊.md
+- name: 耶和華曉諭摩西
+  suggested_type: 事件
+  evidence: v22,28 兩次「耶和華對摩西說」，分段啟示禁吃脂油血和搖舉祭條例。
+  match_type: alias
+  existing_title: 耶和華曉諭摩西（利6：1）
+  existing_path: link_folder/事件/耶和華曉諭摩西（利6：1）.md
+C_new_formal:
+- name: 灑血壇的周圍
+  suggested_type: 神學
+  evidence: 'v2 贖愆祭牲的血，祭司要灑在壇的周圍（非抹壇角，與贖罪祭不同）。BH: splattering blood on all sides indicates
+    thoroughness of atonement. CT: 贖愆祭牲的血灑在壇周圍，像燔祭和平安祭一樣。GT: 贖愆祭注重賠償罪所致的虧損，故血灑壇周圍而非抹壇角。'
+  target_path: link_folder/神學/灑血壇的周圍.md
+- name: 肥尾巴
+  suggested_type: 文化
+  evidence: 'v3 贖愆祭牲的肥尾巴和蓋臟的脂油要取下焚燒。BH: fat tail refers to fatty appendage of certain
+    breeds of sheep, weighing several pounds, considered a delicacy. CT: 脂油表徵基督將生命的豐富和最好的奉獻給神。'
+  target_path: link_folder/文化/肥尾巴.md
+- name: 肝上的網子
+  suggested_type: 文化
+  evidence: 'v4 肝上的網子和腰子一概取下焚燒。BH: lobe of the liver was associated with divination
+    in ancient Near Eastern cultures, vital organ for life. CT: 肝上的網子或作「肝葉」，乃指肝上的脂油，其狀似網。'
+  target_path: link_folder/文化/肝上的網子.md
+- name: 贖罪祭怎樣贖愆祭也是怎樣
+  suggested_type: 神學
+  evidence: 'v7 贖罪祭怎樣，贖愆祭也是怎樣，兩個祭是一個條例。獻贖愆祭贖罪的祭司要得這祭物。BH: the same law applies to
+    both, indicating uniformity in sacrificial system. CT: 表徵人如何對付罪性（單數），也要如何對付罪行（複數）。KC:
+    whoever brings a guilt offering may also see that the Lord Jesus is also the burnt
+    offering.'
+  target_path: link_folder/神學/贖罪祭怎樣贖愆祭也是怎樣.md
+- name: 燔祭牲的皮
+  suggested_type: 神學
+  evidence: 'v8 獻燔祭的祭司，無論為誰奉獻，要親自得他所獻那燔祭牲的皮。BH: hide was a valuable commodity for
+    clothing or trade; priests relied on portions of offerings for sustenance. CT:
+    表徵事奉並供應基督的人（祭司），得以親自享用基督的保守和彰顯（皮）。KC: the skin of the burnt offering speaks of
+    being clothed with the value of the Son''s sacrifice.'
+  target_path: link_folder/神學/燔祭牲的皮.md
+- name: 素祭歸祭司
+  suggested_type: 神學
+  evidence: 'v9-10 爐烤/煎盤/鐵鏊素祭歸獻祭祭司；油調/乾素祭歸亞倫子孫均分。BH: grain offerings provided for
+    priests who served as mediators. CT: 表徵事奉並供應基督的人，得以享用基督受苦的功效（烤、煎）。KC: a believer
+    who deals with guilt of another receives special appreciation for the perfect
+    devotion of the Lord Jesus.'
+  target_path: link_folder/神學/素祭歸祭司.md
+- name: 大家均分
+  suggested_type: 神學
+  evidence: 'v10 凡素祭，無論是油調和的是乾的，都要歸亞倫的子孫，大家均分。BH: belongs equally to all the sons
+    of Aaron, reflecting communal aspect of worship. CT: 神是公平公正的，信徒只要有分於事奉，人人都得享神的供應。'
+  target_path: link_folder/神學/大家均分.md
+- name: 感謝祭（todah）
+  suggested_type: 原文
+  evidence: 'v12-15 為感謝獻平安祭：調油無酵餅+抹油無酵薄餅+油調細麵餅+有酵餅同獻；祭肉當日吃完不可留到早晨。BH: thanksgiving
+    offering was voluntary act of worship expressing gratitude. CT: 平安祭有三類：感謝、還願、甘心。KC:
+    the peace offering is a festival sacrifice; our joy is always based on the work
+    of the Lord Jesus.'
+  target_path: link_folder/原文/感謝祭（todah）.md
+- name: 有酵餅與平安祭
+  suggested_type: 神學
+  evidence: 'v13 要用有酵的餅和為感謝獻的平安祭與供物一同獻上（有酵餅不可燒在壇上，只作慶祝食物）。BH: leavened bread unique
+    in peace offering, representing fullness of God''s blessings. CT: 獻感謝祭的人承認自己是有罪（酵）的。KC:
+    leaven speaks of sin; these cakes tell that we come in awareness that sin is still
+    in us.'
+  target_path: link_folder/神學/有酵餅與平安祭.md
+- name: 舉祭（terumah）
+  suggested_type: 原文
+  evidence: 'v14 從各樣供物中取一個餅獻給耶和華為舉祭，歸給灑平安祭牲血的祭司。BH: contribution/heave offering involves
+    lifting before the Lord as symbolic gesture of presenting to Him. CT: 舉祭指將手中祭物垂直向上舉起上下擺動，表示獻給神。GT:
+    舉祭是歸與獻這祭的祭司。'
+  target_path: link_folder/原文/舉祭（terumah）.md
+- name: 還願祭
+  suggested_type: 神學
+  evidence: 'v16 若所獻的是為還願，或是甘心獻的，必在獻祭的日子吃，所剩下的第二天也可以吃。BH: votive offering fulfilled
+    a vow made to God. CT: 還願祭是決心按神的話語生活而獻上。KC: a votive or freewill offering has
+    a more sustainable character than thanksgiving.'
+  target_path: link_folder/神學/還願祭.md
+- name: 甘心祭（nedabah）
+  suggested_type: 原文
+  evidence: 'v16 甘心獻的祭，祭肉當日吃，剩下次日可吃，第三日必用火焚燒。BH: freewill offering was spontaneous
+    act of devotion. CT: 甘心祭與神的祝福沒有關係，是自願獻的祭。KC: a freewill offering has been considered
+    beforehand.'
+  target_path: link_folder/原文/甘心祭（nedabah）.md
+- name: 第三天焚燒
+  suggested_type: 神學
+  evidence: 'v17-18 第三天若吃了平安祭肉，這祭必不蒙悅納，反為可憎嫌的，吃的人必擔當罪孽。BH: prohibition underscores
+    sacredness of offerings and need for obedience. CT: 如果違背神的話語，即使獻祭也不蒙悅納——事奉神的標準是聽從神的話語。KC:
+    thoughts that linger become an obstacle in spiritual life; growth stops.'
+  target_path: link_folder/神學/第三天焚燒.md
+- name: 不潔淨而吃祭肉
+  suggested_type: 神學
+  evidence: 'v19-21 挨了污穢物的肉不可吃；不潔淨的人吃了平安祭肉必從民中剪除；摸了不潔淨物/人/牲畜/可憎之物而吃祭肉者必剪除。BH: uncleanness
+    disqualified from participating in sacred meal. CT: 吃平安祭肉象徵人與聖潔之神的交通，不潔之人不能吃。KC:
+    no uncleanness may be associated with the Table of the Lord.'
+  target_path: link_folder/神學/不潔淨而吃祭肉.md
+- name: 從民中剪除（karet）
+  suggested_type: 原文
+  evidence: 'v20-21,25,27 四次「必從民中剪除」——不潔吃祭肉者、吃脂油者、吃血者。BH: cut off from his people
+    means exclusion from covenant community. CT: 被趕出營外，從神與以色列約的團契中逐出。KC: cut off from
+    his people.'
+  target_path: link_folder/原文/從民中剪除（karet）.md
+- name: 脂油不可吃
+  suggested_type: 神學
+  evidence: 'v22-25 牛/綿羊/山羊脂油不可吃；自死/撕裂脂油可作他用；吃獻為火祭牲畜脂油者必從民中剪除。BH: fat was considered
+    the best part, reserved for God alone. CT: 脂油為祭物最好的部分，應屬耶和華神。KC: the fat speaks
+    of the energy with which the Lord Jesus completed the work; only God can measure
+    this energy perfectly.'
+  target_path: link_folder/神學/脂油不可吃.md
+- name: 血不可吃
+  suggested_type: 神學
+  evidence: 'v26-27 無論雀鳥的血或野獸的血都不可吃；吃血者必從民中剪除。BH: blood represents life and belongs
+    exclusively to God. CT: 血是活物的生命所寄，生命既為神所給，只可歸還給祂。KC: the deep meaning of the blood
+    of Christ to God cannot be fathomed by human understanding.'
+  target_path: link_folder/神學/血不可吃.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: 'v30 親手獻脂油和胸，把胸在耶和華面前作搖祭搖一搖；胸歸亞倫和他子孫。BH: wave offering presented before
+    the LORD as symbolic gesture. CT: 搖祭是水平方向前後擺動，與舉祭形成「十字架」狀態。KC: the breast speaks
+    of the love of the Lord Jesus.'
+  target_path: link_folder/原文/搖祭（tenufah）.md
+- name: 右腿舉祭
+  suggested_type: 神學
+  evidence: 'v32-34 從平安祭中把右腿作舉祭奉給祭司；獻平安祭牲血和脂油的祭司得右腿為分；搖胸和舉腿是祭司從以色列人中永得的分。BH: right
+    thigh given to priest as contribution. CT: 右腿舉祭歸祭司。KC: the right thigh speaks
+    of the strength and perseverance of the Lord Jesus.'
+  target_path: link_folder/神學/右腿舉祭.md
+- name: 親手獻祭
+  suggested_type: 神學
+  evidence: 'v30 他親手獻給耶和華的火祭，就是脂油和胸，要帶來。BH: his own hands are to bring offerings,
+    emphasizing personal participation. CT: 獻祭者親自參與獻祭過程。KC: we cannot leave the offering
+    of the peace offering to others; God wants to receive from each individual.'
+  target_path: link_folder/神學/親手獻祭.md
+- name: 受膏的分
+  suggested_type: 神學
+  evidence: 'v35-36 這是從耶和華火祭中作亞倫受膏的分和他子孫受膏的分，在摩西膏他們的日子吩咐以色列人給他們的，世世代代永得的分。BH: consecrated
+    portion for Aaron and his sons from offerings by fire. CT: 祭司受膏的日子所定永得之分。KC: this
+    is that which is consecrated to Aaron and his sons.'
+  target_path: link_folder/神學/受膏的分.md
+- name: 承接聖職的禮（millu'im）
+  suggested_type: 原文
+  evidence: 'v37 燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例，並承接聖職的禮。BH: ordination offering mentioned alongside
+    five main offerings. CT: 承接聖職的禮即祭司就職禮（出29章；利8章）。KC: the ordination offering is
+    part of the law of offerings.'
+  target_path: link_folder/原文/承接聖職的禮（millu'im）.md
+- name: 西乃山吩咐
+  suggested_type: 事件
+  evidence: 'v38 都是耶和華在西乃山所吩咐摩西的，就是他在西乃曠野吩咐以色列人獻供物給耶和華之日所說的。BH: instructions given
+    at Mount Sinai in the wilderness. CT: 西乃山是神頒布律法之處。KC: God expects us to continually
+    offer up a sacrifice of praise while living on earth.'
+  target_path: link_folder/事件/西乃山吩咐.md
+D_new_candidate:
+- name: 無酵餅（matzah）
+  suggested_type: 文化
+  evidence: 'v12 感謝祭同獻調油無酵餅、抹油無酵薄餅、油調細麵餅。BH: unleavened cakes signify purity and absence
+    of sin.'
+  match_type: type_conflict
+  note: 分類衝突：候選=文化，既有=原文，secondary=['歷史']
+E_skip: []

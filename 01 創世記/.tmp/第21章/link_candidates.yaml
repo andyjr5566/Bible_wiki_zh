@@ -1,0 +1,38 @@
+book: 創世記
+chapter: 21
+candidates:
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 2-34節；百歲得以撒、遵命打發夏甲、與亞比米勒立約（舊檔連 亞伯蘭 為改名前條目，本章事件在創17改名後，統一連 亞伯拉罕）
+  - name: 撒拉
+    type: 人物
+    evidence: 1-12節；蒙眷顧生子、喜笑頌讚、要求趕出使女之子
+  - name: 以撒
+    type: 人物
+    evidence: 3-12節；應許之子出生、第八日受割禮、斷奶設筵
+  - name: 夏甲
+    type: 人物
+    evidence: 9-21節；被打發走，曠野絕望中蒙神開眼見井
+  - name: 以實瑪利
+    type: 人物
+    evidence: 9-21節戲笑、被逐、神聽見童子聲音（raw 經文 v9 無其名，僅作知識節點）
+  - name: 亞比米勒
+    type: 人物
+    evidence: 22-32節；求立約、歸還水井爭議、於別是巴起誓
+  - name: 別是巴
+    type: 地點
+    evidence: 14、31-33節；盟誓的井／七之井，栽垂絲柳樹之地
+  - name: 耶和華永生神
+    type: 神學
+    evidence: 33節 El Olam；亞伯拉罕對神認識的推進
+    surfaces:
+      - {phrase: 耶和華─永生神, verses: [33]}
+  - name: 加拉太書四章
+    type: 互文
+    evidence: 加四22-31以撒夏甲寓意兩約，引用本章「把使女和她兒子趕出去」
+  - name: 以實瑪利與以撒的豫表
+    type: 主題
+    evidence: 8-21節；按血氣生的逼迫按靈生的（加四29）
+  - name: 「以撒」名字含義
+    type: 原文
+    evidence: 3、6節；喜笑，從暗笑到信心的歡笑，與9節「戲笑」同字根
