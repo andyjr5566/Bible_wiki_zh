@@ -1,0 +1,96 @@
+book: 創世記
+chapter: 38
+candidates:
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 全章；離開弟兄下亞杜蘭，娶迦南女子，失信於他瑪，終認罪「他比我更有義」
+    surfaces:
+      - {phrase: 猶大, verses: [1, 2, 3, 5, 6, 7, 8, 11, 12, 15, 16, 17, 18, 20, 22, 23, 24, 26]}
+  - name: 希拉
+    type: 人物
+    evidence: 1、12、20節；亞杜蘭人，猶大的朋友
+  - name: 書亞（迦南人）
+    type: 人物
+    evidence: 2節；迦南人，猶大岳父
+    surfaces:
+      - {phrase: 書亞, verses: [2]}
+  - name: 書亞的女兒
+    type: 人物
+    evidence: 2、12節；猶大之妻，生珥、俄南、示拉
+    surfaces:
+      - {phrase: 女兒, verses: [2]}
+      - {phrase: 書亞的女兒, verses: [12]}
+  - name: 珥
+    type: 人物
+    evidence: 3、6-7節；猶大長子，在耶和華眼中看為惡而死
+  - name: 俄南
+    type: 人物
+    evidence: 4、8-10節；猶大次子，拒為兄留後，在耶和華眼中看為惡而死
+  - name: 示拉
+    type: 人物
+    evidence: 5、11、14、26節；猶大三子，猶大未依約將他瑪給他為妻
+  - name: 他瑪（創38）
+    type: 人物
+    evidence: 6、11、13-27節；珥之妻，在猶大失信後設法為亡夫留後
+    surfaces:
+      - {phrase: 他瑪, verses: [6, 11, 13, 14, 16, 17, 18, 19, 24, 25, 27]}
+  - name: 法勒斯
+    type: 人物
+    evidence: 29節；雙生子中先出，意「衝破」，日後入大衛與基督家譜
+  - name: 謝拉
+    type: 人物
+    evidence: 30節；手上有紅線者，後出生
+  - name: 迦南人
+    type: 人物
+    evidence: 2節；書亞的族屬，猶大與之聯姻
+  - name: 亞杜蘭
+    type: 地點
+    evidence: 1、12、20節；希伯崙西北的城，猶大所「下」之地
+  - name: 基悉
+    type: 地點
+    evidence: 5節；示拉出生之地，又名亞革悉
+  - name: 亭拿（猶大）
+    type: 地點
+    evidence: 12-14節；猶大剪羊毛之處
+    surfaces:
+      - {phrase: 亭拿, verses: [12, 13, 14]}
+  - name: 伊拿印
+    type: 地點
+    evidence: 14、21節；亭拿路上的城門口，意「雙泉、廣場」
+  - name: 弟續兄孀制度
+    type: 文化
+    evidence: 8節；兄死無後，弟當娶兄嫂為兄生子立後，後成摩西律法（申25:5-6）
+    surfaces:
+      - {phrase: 生子立後, verses: [8]}
+  - name: 寡婦衣裳
+    type: 文化
+    evidence: 14、19節；古時寡婦有特定服飾表明身分與法定權益
+    surfaces:
+      - {phrase: 寡婦的衣裳, verses: [14, 19]}
+  - name: 婚宴與剪羊毛風俗
+    type: 文化
+    evidence: 12-13節；剪羊毛如農民收割，舉行盛大筵宴歡樂
+    surfaces:
+      - {phrase: 剪羊毛, verses: [12, 13]}
+  - name: 印帶杖身份憑據
+    type: 文化
+    evidence: 18、20、25節；印、帶子、杖為古代近東的身分憑證
+    surfaces:
+      - {phrase: 印、你的帶子，和你手裡的杖, verses: [18]}
+      - {phrase: 當頭, verses: [20]}
+      - {phrase: 印和帶子並杖, verses: [25]}
+  - name: 迦南廟妓風俗
+    type: 文化
+    evidence: 21節；原文與15節「妓女」不同字，此處指廟妓，供奉亞斯他錄女神
+    surfaces:
+      - {phrase: 妓女, verses: [21]}
+  - name: 紅線與長子標記
+    type: 文化
+    evidence: 28、30節；收生婆以紅線標記頭生者
+    surfaces:
+      - {phrase: 紅線, verses: [28, 30]}
+  - name: 他瑪比猶大更有義
+    type: 神學
+    evidence: 26節；猶大認罪的關鍵話語——不是稱他瑪無罪，而是承認自己更虧欠
+    surfaces:
+      - {phrase: 他比我更有義, verses: [26]}
