@@ -1,0 +1,231 @@
+book: 出埃及記
+chapter: 3
+A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 1-6、11、13-15節；牧羊時蒙召；八十歲（徒7:23,30）
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 葉忒羅
+  suggested_type: 人物
+  evidence: 1節；米甸祭司，摩西的岳父；名意「豐富、有餘、卓越、握有主權」
+  match_type: exact
+  existing_title: 葉忒羅
+  existing_path: link_folder/人物/葉忒羅.md
+- name: 何烈山
+  suggested_type: 地點
+  evidence: 1節；神的山，即西乃山；名意「不毛之地、乾旱之地」（19:11；申5:2）
+  match_type: exact
+  existing_title: 何烈山
+  existing_path: link_folder/地點/何烈山.md
+- name: 耶和華的使者
+  suggested_type: 神學
+  evidence: 2節；從荊棘裡火焰中向摩西顯現；第4節顯明就是神自己
+  match_type: exact
+  existing_title: 耶和華的使者
+  existing_path: link_folder/神學/耶和華的使者.md
+- name: 燃燒卻不燒毀的荊棘
+  suggested_type: 神學
+  evidence: 2節；「荊棘被火燒著，卻沒有燒毀」——神在火中，故荊棘不被吞滅
+  surfaces:
+  - phrase: 荊棘裡火焰中
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 燃燒卻不燒毀的荊棘
+  existing_path: link_folder/神學/燃燒卻不燒毀的荊棘.md
+- name: 脫鞋與聖地
+  suggested_type: 文化
+  evidence: 5節；「當把你腳上的鞋脫下來，因為你所站之地是聖地」（書5:15）
+  surfaces:
+  - phrase: 當把你腳上的鞋脫下來，因為你所站之地是聖地
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 脫鞋與聖地
+  existing_path: link_folder/文化/脫鞋與聖地.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 6、15-16節；「我是亞伯拉罕的神」——守約的神
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 6、15-16節；同上
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 6、15-16節；同上
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 7、10-12、17、20節；百姓受困苦之地；神要領他們出來
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 10-11、13-15節；神的百姓，要從埃及領出來
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 11節；「我是甚麼人，竟能去見法老」
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 流奶與蜜之地
+  suggested_type: 神學
+  evidence: 8、17節；首次出現，其後多次重複（利20:24；民13:27；申6:3；書5:6）
+  match_type: exact
+  existing_title: 流奶與蜜之地
+  existing_path: link_folder/神學/流奶與蜜之地.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 8、17節；迦南地原住民之一
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 8、17節；來自安那托利亞，部分南遷至敘利亞與迦南
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 8、17節；名意「山地居民」；美索不達米亞稱阿穆魯／瑪律圖
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 8、17節；名意「鄉村、田舍」；是否為種族仍未有定論
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 希未人
+  suggested_type: 歷史
+  evidence: 8、17節；或與何利人（胡利人）有關
+  match_type: exact
+  existing_title: 希未人
+  existing_path: link_folder/歷史/希未人.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 8、17節；大衛攻取耶路撒冷前的原有居民
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 神聽見百姓的哀求
+  suggested_type: 神學
+  evidence: 9節；「以色列人的哀聲達到我耳中」——承接2:23-25
+  surfaces:
+  - phrase: 以色列人的哀聲
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 神聽見百姓的哀求
+  existing_path: link_folder/神學/神聽見百姓的哀求.md
+- name: 摩西的呼召與差遣
+  suggested_type: 神學
+  evidence: 10節；「我要打發你去見法老」——摩西是器皿，發起並成就拯救的是神
+  surfaces:
+  - phrase: 打發你去見法老
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 摩西的呼召與差遣
+  existing_path: link_folder/神學/摩西的呼召與差遣.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: 12節；「我必與你同在」——神沒有先稱讚摩西的才幹，只給他自己（士6:16；耶1:8）
+  surfaces:
+  - phrase: 我必與你同在
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 出埃及為要事奉神
+  suggested_type: 神學
+  evidence: 12節；「你們必在這山上事奉我」——救贖的目的是事奉（帖前1:9）
+  surfaces:
+  - phrase: 事奉我
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 出埃及為要事奉神
+  existing_path: link_folder/神學/出埃及為要事奉神.md
+- name: 我是自有永有的
+  suggested_type: 原文
+  evidence: 14節；ehyeh asher ehyeh，「我就是那我是」；約8:58 主耶穌自稱「我是」
+  match_type: exact
+  existing_title: 我是自有永有的
+  existing_path: link_folder/原文/我是自有永有的.md
+- name: 耶和華聖名的啟示
+  suggested_type: 神學
+  evidence: 15節；「耶和華是我的名，直到永遠」——YHWH 為「我是」的第三人稱
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 耶和華聖名的啟示
+  existing_path: link_folder/神學/耶和華聖名的啟示.md
+- name: 神的記念
+  suggested_type: 神學
+  evidence: 15節；「這也是我的紀念，直到萬代」
+  surfaces:
+  - phrase: 紀念
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 神的記念
+  existing_path: link_folder/神學/神的記念.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 16、18節；原文「有鬍鬚的人」；宗族領袖，代表百姓
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 曠野三天路程與獻祭要求
+  suggested_type: 解經爭議
+  evidence: 18節；「走三天的路程」——是否為權宜之計？各家說法不一
+  surfaces:
+  - phrase: 走三天的路程
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 曠野三天路程與獻祭要求
+  existing_path: link_folder/解經爭議/曠野三天路程與獻祭要求.md
+- name: 大能的手與出埃及神蹟
+  suggested_type: 神學
+  evidence: 19節；埃及碑文常以「伸出的手」形容法老權勢，此處反用以描述神的能力
+  surfaces:
+  - phrase: 大能的手
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 大能的手與出埃及神蹟
+  existing_path: link_folder/神學/大能的手與出埃及神蹟.md
+- name: 出埃及時取得埃及財物
+  suggested_type: 解經爭議
+  evidence: 22節；「把埃及人的財物奪去了」——「要」（sa'al）不是「借」；補償勞役、應驗創15:14
+  surfaces:
+  - phrase: 把埃及人的財物奪去了
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 出埃及時取得埃及財物
+  existing_path: link_folder/解經爭議/出埃及時取得埃及財物.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

@@ -1,0 +1,115 @@
+book: 出埃及記
+chapter: 3
+candidates:
+  - name: 摩西
+    type: 人物
+    evidence: 1-6、11、13-15節；牧羊時蒙召；八十歲（徒7:23,30）
+  - name: 葉忒羅
+    type: 人物
+    evidence: 1節；米甸祭司，摩西的岳父；名意「豐富、有餘、卓越、握有主權」
+  - name: 何烈山
+    type: 地點
+    evidence: 1節；神的山，即西乃山；名意「不毛之地、乾旱之地」（19:11；申5:2）
+  - name: 耶和華的使者
+    type: 神學
+    evidence: 2節；從荊棘裡火焰中向摩西顯現；第4節顯明就是神自己
+  - name: 燃燒卻不燒毀的荊棘
+    type: 神學
+    evidence: 2節；「荊棘被火燒著，卻沒有燒毀」——神在火中，故荊棘不被吞滅
+    surfaces:
+      - {phrase: 荊棘裡火焰中, verses: [2]}
+  - name: 脫鞋與聖地
+    type: 文化
+    evidence: 5節；「當把你腳上的鞋脫下來，因為你所站之地是聖地」（書5:15）
+    surfaces:
+      - {phrase: 當把你腳上的鞋脫下來，因為你所站之地是聖地, verses: [5]}
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 6、15-16節；「我是亞伯拉罕的神」——守約的神
+  - name: 以撒
+    type: 人物
+    evidence: 6、15-16節；同上
+  - name: 雅各
+    type: 人物
+    evidence: 6、15-16節；同上
+  - name: 埃及
+    type: 地點
+    evidence: 7、10-12、17、20節；百姓受困苦之地；神要領他們出來
+  - name: 以色列
+    type: 原文
+    evidence: 10-11、13-15節；神的百姓，要從埃及領出來
+  - name: 法老
+    type: 人物
+    evidence: 11節；「我是甚麼人，竟能去見法老」
+  - name: 流奶與蜜之地
+    type: 神學
+    evidence: 8、17節；首次出現，其後多次重複（利20:24；民13:27；申6:3；書5:6）
+  - name: 迦南人
+    type: 人物
+    evidence: 8、17節；迦南地原住民之一
+  - name: 赫人
+    type: 人物
+    evidence: 8、17節；來自安那托利亞，部分南遷至敘利亞與迦南
+  - name: 亞摩利人
+    type: 人物
+    evidence: 8、17節；名意「山地居民」；美索不達米亞稱阿穆魯／瑪律圖
+  - name: 比利洗人
+    type: 人物
+    evidence: 8、17節；名意「鄉村、田舍」；是否為種族仍未有定論
+  - name: 希未人
+    type: 歷史
+    evidence: 8、17節；或與何利人（胡利人）有關
+  - name: 耶布斯人
+    type: 人物
+    evidence: 8、17節；大衛攻取耶路撒冷前的原有居民
+  - name: 神聽見百姓的哀求
+    type: 神學
+    evidence: 9節；「以色列人的哀聲達到我耳中」——承接2:23-25
+    surfaces:
+      - {phrase: 以色列人的哀聲, verses: [9]}
+  - name: 摩西的呼召與差遣
+    type: 神學
+    evidence: 10節；「我要打發你去見法老」——摩西是器皿，發起並成就拯救的是神
+    surfaces:
+      - {phrase: 打發你去見法老, verses: [10]}
+  - name: 神的同在
+    type: 神學
+    evidence: 12節；「我必與你同在」——神沒有先稱讚摩西的才幹，只給他自己（士6:16；耶1:8）
+    surfaces:
+      - {phrase: 我必與你同在, verses: [12]}
+  - name: 出埃及為要事奉神
+    type: 神學
+    evidence: 12節；「你們必在這山上事奉我」——救贖的目的是事奉（帖前1:9）
+    surfaces:
+      - {phrase: 事奉我, verses: [12]}
+  - name: 我是自有永有的
+    type: 原文
+    evidence: 14節；ehyeh asher ehyeh，「我就是那我是」；約8:58 主耶穌自稱「我是」
+  - name: 耶和華聖名的啟示
+    type: 神學
+    evidence: 15節；「耶和華是我的名，直到永遠」——YHWH 為「我是」的第三人稱
+    surfaces:
+      - {phrase: 耶和華, verses: [15]}
+  - name: 神的記念
+    type: 神學
+    evidence: 15節；「這也是我的紀念，直到萬代」
+    surfaces:
+      - {phrase: 紀念, verses: [15]}
+  - name: 以色列的長老
+    type: 文化
+    evidence: 16、18節；原文「有鬍鬚的人」；宗族領袖，代表百姓
+  - name: 曠野三天路程與獻祭要求
+    type: 解經爭議
+    evidence: 18節；「走三天的路程」——是否為權宜之計？各家說法不一
+    surfaces:
+      - {phrase: 走三天的路程, verses: [18]}
+  - name: 大能的手與出埃及神蹟
+    type: 神學
+    evidence: 19節；埃及碑文常以「伸出的手」形容法老權勢，此處反用以描述神的能力
+    surfaces:
+      - {phrase: 大能的手, verses: [19]}
+  - name: 出埃及時取得埃及財物
+    type: 解經爭議
+    evidence: 22節；「把埃及人的財物奪去了」——「要」（sa'al）不是「借」；補償勞役、應驗創15:14
+    surfaces:
+      - {phrase: 把埃及人的財物奪去了, verses: [22]}
