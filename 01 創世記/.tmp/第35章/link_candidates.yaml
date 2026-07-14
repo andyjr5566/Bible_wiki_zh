@@ -1,0 +1,190 @@
+book: 創世記
+chapter: 35
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 全章；奉命上伯特利、除偶像、築壇、改名以色列、葬拉結與以撒
+  - name: 以掃
+    type: 人物
+    evidence: 1、7、29節；雅各所逃避的哥哥，末了與雅各同葬父親
+  - name: 以撒
+    type: 人物
+    evidence: 12、27-29節；雅各之父，活一百八十歲，氣絕而死
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 12、27節；神所賜之地的承受者，寄居幔利
+  - name: 利百加
+    type: 人物
+    evidence: 8節；底波拉為其奶母
+  - name: 乳母底波拉
+    type: 人物
+    evidence: 8節；利百加的奶母，死葬伯特利下邊橡樹底下
+    surfaces:
+      - {phrase: 底波拉, verses: [8]}
+  - name: 拉結
+    type: 人物
+    evidence: 16-20、24-25節；生便雅憫時難產而死，葬以法他路旁
+  - name: 便雅憫
+    type: 人物
+    evidence: 18、24節；雅各所改之名（右手之子），唯一生於迦南地之子
+  - name: 流便
+    type: 人物
+    evidence: 22-23節；長子，與父妾辟拉同寢，因此失長子名分
+  - name: 辟拉
+    type: 人物
+    evidence: 22、25節；雅各之妾，拉結的使女
+  - name: 利亞
+    type: 人物
+    evidence: 23、26節；所生六子，其使女為悉帕
+  - name: 西緬
+    type: 人物
+    evidence: 23節；利亞次子
+  - name: 利未
+    type: 人物
+    evidence: 23節；利亞三子
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 23節；利亞四子
+    surfaces:
+      - {phrase: 猶大, verses: [23]}
+  - name: 以薩迦（價值）
+    type: 人物
+    evidence: 23節；利亞五子
+    surfaces:
+      - {phrase: 以薩迦, verses: [23]}
+  - name: 西布倫（同住）
+    type: 人物
+    evidence: 23節；利亞六子
+    surfaces:
+      - {phrase: 西布倫, verses: [23]}
+  - name: 約瑟
+    type: 人物
+    evidence: 24節；拉結長子
+  - name: 但（審判）
+    type: 人物
+    evidence: 25節；辟拉長子
+    surfaces:
+      - {phrase: 但, verses: [25]}
+  - name: 拿弗他利
+    type: 人物
+    evidence: 25節；辟拉次子
+  - name: 悉帕
+    type: 人物
+    evidence: 26節；利亞的使女
+  - name: 迦得（萬幸）
+    type: 人物
+    evidence: 26節；悉帕長子
+    surfaces:
+      - {phrase: 迦得, verses: [26]}
+  - name: 亞設（有福）
+    type: 人物
+    evidence: 26節；悉帕次子
+    surfaces:
+      - {phrase: 亞設, verses: [26]}
+  - name: 伯特利
+    type: 地點
+    evidence: 1、3、6-8、15-16節；神的家，雅各許願與神再顯現之地
+  - name: 路斯
+    type: 地點
+    evidence: 6節；伯特利的舊名
+  - name: 示劍（城）
+    type: 地點
+    evidence: 4節；雅各將外邦神像與耳環埋在示劍的橡樹底下
+    surfaces:
+      - {phrase: 示劍, verses: [4]}
+  - name: 迦南地
+    type: 地點
+    evidence: 6節；路斯（伯特利）所在的應許之地
+  - name: 巴旦亞蘭
+    type: 地點
+    evidence: 9、26節；雅各所從回來、十二子所生之地
+  - name: 以法他
+    type: 地點
+    evidence: 16、19節；即伯利恆，拉結死葬之處
+  - name: 伯利恆
+    type: 地點
+    evidence: 19節；以法他的新名，日後基督降生之地
+  - name: 以得臺
+    type: 地點
+    evidence: 21節；牧羊臺／瞭望臺，以色列支搭帳棚之處
+  - name: 基列亞巴
+    type: 地點
+    evidence: 27節；即希伯崙
+  - name: 幔利
+    type: 地點
+    evidence: 27節；亞伯拉罕與以撒寄居之地
+  - name: 希伯崙
+    type: 地點
+    evidence: 27節；基列亞巴的別名，以撒終老之地
+  - name: 祭壇敬拜
+    type: 神學
+    evidence: 1、3、7節；神命雅各在伯特利築壇，回到起初奉獻的地位
+    surfaces:
+      - {phrase: 築一座壇, verses: [1, 3]}
+  - name: 除掉外邦神
+    type: 神學
+    evidence: 2、4節；除掉中間的外邦神與神像，埋在示劍橡樹底下
+    surfaces:
+      - {phrase: 除掉你們中間的外邦神, verses: [2]}
+      - {phrase: 外邦人的神像, verses: [4]}
+  - name: 自潔與更換衣裳
+    type: 神學
+    evidence: 2節；親近神前必須潔淨自己、改變行為
+    surfaces:
+      - {phrase: 自潔，更換衣裳, verses: [2]}
+  - name: 神的同在與保護
+    type: 神學
+    evidence: 3、5節；在遭難日子應允禱告、保佑行路；使周圍城邑驚懼不追趕
+    surfaces:
+      - {phrase: 保佑我的那位, verses: [3]}
+      - {phrase: 神使那周圍城邑的人都甚驚懼, verses: [5]}
+  - name: 伯特利的神
+    type: 神學
+    evidence: 7節；伊勒伯特利＝伯特利之神，雅各從個人的神進入神家的神
+    surfaces:
+      - {phrase: 伯特利之神, verses: [7]}
+  - name: 雅各改名以色列
+    type: 神學
+    evidence: 10節；神在伯特利重申毘努伊勒所改的名，付諸實施
+    surfaces:
+      - {phrase: 改名叫以色列, verses: [10]}
+  - name: 全能的神（El Shaddai）
+    type: 神學
+    evidence: 11節；神以此名重申生養眾多、多國君王、賜地的應許
+    surfaces:
+      - {phrase: 全能的神, verses: [11]}
+  - name: 耳環作異教護身符
+    type: 文化
+    evidence: 4節；耳朵上的環子非尋常妝飾，乃異教護身符或刻有神像
+    surfaces:
+      - {phrase: 耳朵上的環子, verses: [4]}
+  - name: 立石柱與澆油
+    type: 文化
+    evidence: 14節；雅各第二次立石柱並澆油（參創28:18）
+    surfaces:
+      - {phrase: 立了一根石柱, verses: [14]}
+      - {phrase: 澆油, verses: [14]}
+  - name: 奠酒
+    type: 文化
+    evidence: 14節；聖經首次提及奠酒，表明獻身與喜樂
+  - name: 古代收生婆
+    type: 文化
+    evidence: 17節；助產婦在拉結艱難時安慰她
+    surfaces:
+      - {phrase: 收生婆, verses: [17]}
+  - name: 拉結之墓
+    type: 歷史
+    evidence: 20節；雅各在拉結墳上立碑，到今日還在
+    surfaces:
+      - {phrase: 拉結的墓碑, verses: [20]}
+  - name: 伊勒伯特利
+    type: 原文
+    evidence: 7節；意伯特利之神
+  - name: 亞倫巴古
+    type: 原文
+    evidence: 8節；意哭泣的橡樹，底波拉葬處
+  - name: 便俄尼名字含義
+    type: 原文
+    evidence: 18節；拉結所起，意我憂患／艱難之子
+    surfaces:
+      - {phrase: 便俄尼, verses: [18]}

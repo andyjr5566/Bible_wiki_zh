@@ -1,0 +1,385 @@
+book: 創世記
+chapter: 35
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；奉命上伯特利、除偶像、築壇、改名以色列、葬拉結與以撒
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 1、7、29節；雅各所逃避的哥哥，末了與雅各同葬父親
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 12、27-29節；雅各之父，活一百八十歲，氣絕而死
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 12、27節；神所賜之地的承受者，寄居幔利
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 8節；底波拉為其奶母
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
+- name: 乳母底波拉
+  suggested_type: 人物
+  evidence: 8節；利百加的奶母，死葬伯特利下邊橡樹底下
+  surfaces:
+  - phrase: 底波拉
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 乳母底波拉
+  existing_path: link_folder/人物/乳母底波拉.md
+- name: 拉結
+  suggested_type: 人物
+  evidence: 16-20、24-25節；生便雅憫時難產而死，葬以法他路旁
+  match_type: exact
+  existing_title: 拉結
+  existing_path: link_folder/人物/拉結.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 18、24節；雅各所改之名（右手之子），唯一生於迦南地之子
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 22-23節；長子，與父妾辟拉同寢，因此失長子名分
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 辟拉
+  suggested_type: 人物
+  evidence: 22、25節；雅各之妾，拉結的使女
+  match_type: exact
+  existing_title: 辟拉
+  existing_path: link_folder/人物/辟拉.md
+- name: 利亞
+  suggested_type: 人物
+  evidence: 23、26節；所生六子，其使女為悉帕
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 23節；利亞次子
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 利未
+  suggested_type: 人物
+  evidence: 23節；利亞三子
+  match_type: exact
+  existing_title: 利未
+  existing_path: link_folder/人物/利未.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 23節；利亞四子
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 23節；利亞五子
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 23節；利亞六子
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 24節；拉結長子
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 但（審判）
+  suggested_type: 人物
+  evidence: 25節；辟拉長子
+  surfaces:
+  - phrase: 但
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 但（審判）
+  existing_path: link_folder/人物/但（審判）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 25節；辟拉次子
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 悉帕
+  suggested_type: 人物
+  evidence: 26節；利亞的使女
+  match_type: exact
+  existing_title: 悉帕
+  existing_path: link_folder/人物/悉帕.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 26節；悉帕長子
+  surfaces:
+  - phrase: 迦得
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 26節；悉帕次子
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 1、3、6-8、15-16節；神的家，雅各許願與神再顯現之地
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 路斯
+  suggested_type: 地點
+  evidence: 6節；伯特利的舊名
+  match_type: exact
+  existing_title: 路斯
+  existing_path: link_folder/地點/路斯.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 4節；雅各將外邦神像與耳環埋在示劍的橡樹底下
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 6節；路斯（伯特利）所在的應許之地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 巴旦亞蘭
+  suggested_type: 地點
+  evidence: 9、26節；雅各所從回來、十二子所生之地
+  match_type: exact
+  existing_title: 巴旦亞蘭
+  existing_path: link_folder/地點/巴旦亞蘭.md
+- name: 以法他
+  suggested_type: 地點
+  evidence: 16、19節；即伯利恆，拉結死葬之處
+  match_type: exact
+  existing_title: 以法他
+  existing_path: link_folder/地點/以法他.md
+- name: 伯利恆
+  suggested_type: 地點
+  evidence: 19節；以法他的新名，日後基督降生之地
+  match_type: exact
+  existing_title: 伯利恆
+  existing_path: link_folder/地點/伯利恆.md
+- name: 以得臺
+  suggested_type: 地點
+  evidence: 21節；牧羊臺／瞭望臺，以色列支搭帳棚之處
+  match_type: exact
+  existing_title: 以得臺
+  existing_path: link_folder/地點/以得臺.md
+- name: 基列亞巴
+  suggested_type: 地點
+  evidence: 27節；即希伯崙
+  match_type: exact
+  existing_title: 基列亞巴
+  existing_path: link_folder/地點/基列亞巴.md
+- name: 幔利
+  suggested_type: 地點
+  evidence: 27節；亞伯拉罕與以撒寄居之地
+  match_type: exact
+  existing_title: 幔利
+  existing_path: link_folder/地點/幔利.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 27節；基列亞巴的別名，以撒終老之地
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 祭壇敬拜
+  suggested_type: 神學
+  evidence: 1、3、7節；神命雅各在伯特利築壇，回到起初奉獻的地位
+  surfaces:
+  - phrase: 築一座壇
+    verses:
+    - 1
+    - 3
+  match_type: exact
+  existing_title: 祭壇敬拜
+  existing_path: link_folder/神學/祭壇敬拜.md
+- name: 除掉外邦神
+  suggested_type: 神學
+  evidence: 2、4節；除掉中間的外邦神與神像，埋在示劍橡樹底下
+  surfaces:
+  - phrase: 除掉你們中間的外邦神
+    verses:
+    - 2
+  - phrase: 外邦人的神像
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 除掉外邦神
+  existing_path: link_folder/神學/除掉外邦神.md
+- name: 自潔與更換衣裳
+  suggested_type: 神學
+  evidence: 2節；親近神前必須潔淨自己、改變行為
+  surfaces:
+  - phrase: 自潔，更換衣裳
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 自潔與更換衣裳
+  existing_path: link_folder/神學/自潔與更換衣裳.md
+- name: 神的同在與保護
+  suggested_type: 神學
+  evidence: 3、5節；在遭難日子應允禱告、保佑行路；使周圍城邑驚懼不追趕
+  surfaces:
+  - phrase: 保佑我的那位
+    verses:
+    - 3
+  - phrase: 神使那周圍城邑的人都甚驚懼
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 神的同在與保護
+  existing_path: link_folder/神學/神的同在與保護.md
+- name: 伯特利的神
+  suggested_type: 神學
+  evidence: 7節；伊勒伯特利＝伯特利之神，雅各從個人的神進入神家的神
+  surfaces:
+  - phrase: 伯特利之神
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 伯特利的神
+  existing_path: link_folder/神學/伯特利的神.md
+- name: 雅各改名以色列
+  suggested_type: 神學
+  evidence: 10節；神在伯特利重申毘努伊勒所改的名，付諸實施
+  surfaces:
+  - phrase: 改名叫以色列
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 雅各改名以色列
+  existing_path: link_folder/歷史/雅各改名以色列.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 11節；神以此名重申生養眾多、多國君王、賜地的應許
+  surfaces:
+  - phrase: 全能的神
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 耳環作異教護身符
+  suggested_type: 文化
+  evidence: 4節；耳朵上的環子非尋常妝飾，乃異教護身符或刻有神像
+  surfaces:
+  - phrase: 耳朵上的環子
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 耳環作異教護身符
+  existing_path: link_folder/文化/耳環作異教護身符.md
+- name: 立石柱與澆油
+  suggested_type: 文化
+  evidence: 14節；雅各第二次立石柱並澆油（參創28:18）
+  surfaces:
+  - phrase: 立了一根石柱
+    verses:
+    - 14
+  - phrase: 澆油
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 立石柱與澆油
+  existing_path: link_folder/文化/立石柱與澆油.md
+- name: 奠酒
+  suggested_type: 文化
+  evidence: 14節；聖經首次提及奠酒，表明獻身與喜樂
+  match_type: exact
+  existing_title: 奠酒
+  existing_path: link_folder/文化/奠酒.md
+- name: 古代收生婆
+  suggested_type: 文化
+  evidence: 17節；助產婦在拉結艱難時安慰她
+  surfaces:
+  - phrase: 收生婆
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 古代收生婆
+  existing_path: link_folder/文化/古代收生婆.md
+- name: 拉結之墓
+  suggested_type: 歷史
+  evidence: 20節；雅各在拉結墳上立碑，到今日還在
+  surfaces:
+  - phrase: 拉結的墓碑
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 拉結之墓
+  existing_path: link_folder/歷史/拉結之墓.md
+- name: 伊勒伯特利
+  suggested_type: 原文
+  evidence: 7節；意伯特利之神
+  match_type: exact
+  existing_title: 伊勒伯特利
+  existing_path: link_folder/原文/伊勒伯特利.md
+- name: 亞倫巴古
+  suggested_type: 原文
+  evidence: 8節；意哭泣的橡樹，底波拉葬處
+  match_type: exact
+  existing_title: 亞倫巴古
+  existing_path: link_folder/原文/亞倫巴古.md
+- name: 便俄尼名字含義
+  suggested_type: 原文
+  evidence: 18節；拉結所起，意我憂患／艱難之子
+  surfaces:
+  - phrase: 便俄尼
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 便俄尼名字含義
+  existing_path: link_folder/原文/便俄尼名字含義.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
