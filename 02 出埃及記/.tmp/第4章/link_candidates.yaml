@@ -1,0 +1,88 @@
+book: 出埃及記
+chapter: 4
+candidates:
+  - name: 摩西
+    type: 人物
+    evidence: 全章；三、四、五次推辭；領受三個神蹟；回埃及
+  - name: 耶和華的話臨到
+    type: 神學
+    evidence: 2-6、11、14、19、21-22、27-28、30節；「耶和華對摩西說」——本章反覆出現的敘事骨架
+    surfaces:
+      - {phrase: 耶和華, verses: [1, 2, 3, 4, 5, 6, 7, 10, 11, 14, 19, 21, 22, 24, 26, 27, 28, 30, 31]}
+  - name: 杖
+    type: 神學
+    evidence: 2、4、17、20節；牧人的杖；原文 matteh 出自動詞「伸出、延長」；20節成為「神的杖」
+  - name: 杖變蛇的神蹟
+    type: 神學
+    evidence: 3節；法老冠冕上的蛇形（uraeus）是埃及王權的象徵——法老與王權都在神掌管之下
+    surfaces:
+      - {phrase: 蛇, verses: [3]}
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 5節；「亞伯拉罕的神」——守約的神
+  - name: 以撒
+    type: 人物
+    evidence: 5節；同上
+  - name: 雅各
+    type: 人物
+    evidence: 5節；同上
+  - name: 神蹟（miraculous signs）
+    type: 神學
+    evidence: 8-9、17、28、30節；原文「記號」（複數）；神蹟的目的是印證差遣，不是炫奇
+    surfaces:
+      - {phrase: 神蹟, verses: [8, 9, 17, 28, 30]}
+  - name: 尼羅河
+    type: 地點
+    evidence: 9節；埃及的生命之源，被尊為神（哈庇 Hapi）；從河裡取的水必變作血
+    surfaces:
+      - {phrase: 河, verses: [9]}
+  - name: 拙口笨舌
+    type: 原文
+    evidence: 10節；原文 kabed peh ukabed lashon「口重、舌重」——口舌搬不動
+  - name: 亞倫
+    type: 人物
+    evidence: 14-16、27-30節；摩西的哥哥，利未人；名意「開明的、帶來光的」；作摩西的口
+  - name: 葉忒羅
+    type: 人物
+    evidence: 18節；摩西的岳父；「你可以平平安安地去吧」
+  - name: 埃及
+    type: 地點
+    evidence: 18-21節；摩西要回去之地
+  - name: 米甸地
+    type: 地點
+    evidence: 19節；耶和華在米甸對摩西說話
+    surfaces:
+      - {phrase: 米甸, verses: [19]}
+  - name: 法老
+    type: 人物
+    evidence: 21-22節；一切奇事要行在他面前；神要使他的心剛硬
+  - name: 法老的心剛硬
+    type: 神學
+    evidence: 21節；「我要使（或作：任憑）他的心剛硬」——原文有三個不同的字（chazaq／qashah／kabed）
+    surfaces:
+      - {phrase: 他的心剛硬, verses: [21]}
+  - name: 以色列是我的兒子我的長子
+    type: 神學
+    evidence: 22節；舊約唯一稱以色列為神長子的經文（何11:1；太2:15）
+    surfaces:
+      - {phrase: 以色列是我的兒子，我的長子, verses: [22]}
+  - name: 耶和華想要殺摩西（24節）
+    type: 解經爭議
+    evidence: 24節；「耶和華遇見他，想要殺他」——出埃及記最難解的經文之一
+    surfaces:
+      - {phrase: 想要殺他, verses: [24]}
+  - name: 西坡拉
+    type: 人物
+    evidence: 25-26節；拿火石割下兒子的陽皮，救了摩西的性命
+  - name: 血郎的含義
+    type: 解經爭議
+    evidence: 25-26節；chatan damim「血的新郎」——原意已失，各家推測不一
+    surfaces:
+      - {phrase: 割下他兒子的陽皮，丟在摩西腳前，說：你真是我的血郎了, verses: [25]}
+      - {phrase: 你因割禮就是血郎了, verses: [26]}
+  - name: 神的山
+    type: 地點
+    evidence: 27節；即何烈山（3:1）；亞倫在此迎接摩西
+  - name: 以色列的眾長老
+    type: 人物
+    evidence: 29節；摩西、亞倫招聚他們，傳達神的命令
