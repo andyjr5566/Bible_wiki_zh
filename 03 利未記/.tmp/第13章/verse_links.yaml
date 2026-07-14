@@ -1,0 +1,507 @@
+book: 利未記
+chapter: 13
+links:
+- verse: 1
+  phrase: 摩西
+  target: 摩西
+- verse: 1
+  phrase: 亞倫
+  target: 亞倫
+- verse: 2
+  phrase: 癬
+  target: 癬（neteq）
+- verse: 2
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 2
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 2
+  phrase: 帶到祭司
+  target: 祭司雙重角色：屬靈與醫療
+- verse: 2
+  phrase: 亞倫
+  target: 亞倫
+- verse: 3
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 3
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 3
+  phrase: 毛已經變白
+  target: 白毛（se'ar laban）
+- verse: 3
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 3
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 4
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 4
+  phrase: 變白
+  target: 白毛（se'ar laban）
+- verse: 4
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 4
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 5
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 5
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 5
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 6
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 6
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 6
+  phrase: 定他為潔淨
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 6
+  phrase: 是癬
+  target: 癬（neteq）
+- verse: 7
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 7
+  phrase: 癬
+  target: 癬（neteq）
+- verse: 8
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 8
+  phrase: 癬
+  target: 癬（neteq）
+- verse: 8
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 8
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 9
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 9
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 9
+  phrase: 帶到祭司
+  target: 祭司雙重角色：屬靈與醫療
+- verse: 10
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 10
+  phrase: 毛變白
+  target: 白毛（se'ar laban）
+- verse: 11
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 11
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 11
+  phrase: 關鎖
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 12
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 12
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 12
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 13
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 13
+  phrase: 長滿了大痲瘋
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 13
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 14
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 15
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 15
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 16
+  phrase: 變白
+  target: 白毛（se'ar laban）
+- verse: 17
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 17
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 17
+  phrase: 變白
+  target: 白毛（se'ar laban）
+- verse: 18
+  phrase: 長瘡
+  target: 瘡痕（shechin）
+- verse: 18
+  phrase: 治好了
+  target: 瘡痕（shechin）
+- verse: 19
+  phrase: 長瘡
+  target: 瘡痕（shechin）
+- verse: 19
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 20
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 20
+  phrase: 窪於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 20
+  phrase: 變白
+  target: 白毛（se'ar laban）
+- verse: 20
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 20
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 20
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 20
+  phrase: 瘡
+  target: 瘡痕（shechin）
+- verse: 21
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 21
+  phrase: 白毛
+  target: 白毛（se'ar laban）
+- verse: 21
+  phrase: 窪於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 21
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 22
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 22
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 23
+  phrase: 瘡
+  target: 瘡痕（shechin）
+- verse: 23
+  phrase: 定他為潔淨
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 25
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 25
+  phrase: 變白
+  target: 白毛（se'ar laban）
+- verse: 25
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 25
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 25
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 25
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 26
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 26
+  phrase: 白毛
+  target: 白毛（se'ar laban）
+- verse: 26
+  phrase: 窪於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 26
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 27
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 27
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 27
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 27
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 28
+  phrase: 定他為潔淨
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 29
+  phrase: 頭上有災病
+  target: 頭疥（neteq ba-rosh）
+- verse: 29
+  phrase: 鬍鬚上有災病
+  target: 頭疥（neteq ba-rosh）
+- verse: 30
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 30
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 30
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 30
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 30
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 30
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 31
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 31
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 31
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 31
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 31
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 32
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 32
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 32
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 32
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 33
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 33
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 34
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 34
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 34
+  phrase: 深於皮
+  target: 現象深於皮（ma'amar amok min ha'or）
+- verse: 34
+  phrase: 定他為潔淨
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 35
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 36
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 36
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 36
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 37
+  phrase: 頭疥
+  target: 頭疥（neteq ba-rosh）
+- verse: 37
+  phrase: 定他為潔淨
+  target: 大痲瘋痊癒的辨別（全身變白反潔淨）
+- verse: 38
+  phrase: 白火斑
+  target: 白癬（bohaq）
+- verse: 39
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 39
+  phrase: 白癬
+  target: 白癬（bohaq）
+- verse: 42
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 42
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 43
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 43
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 43
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 44
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 44
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 44
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 45
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 45
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 45
+  phrase: 蓬頭散髮
+  target: 不潔淨的傳染與隔離
+- verse: 45
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 46
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 46
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 46
+  phrase: 獨居營外
+  target: 不潔淨的傳染與隔離
+- verse: 47
+  phrase: 染了大痲瘋災病的衣服
+  target: 大痲瘋人的衣服（beged tzara'at）
+- verse: 47
+  phrase: 羊毛衣服
+  target: 大痲瘋人的衣服（beged tzara'at）
+- verse: 47
+  phrase: 麻布衣服
+  target: 大痲瘋人的衣服（beged tzara'at）
+- verse: 49
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 49
+  phrase: 發綠
+  target: 衣服與皮子的大痲瘋條例
+- verse: 49
+  phrase: 發紅
+  target: 衣服與皮子的大痲瘋條例
+- verse: 49
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 49
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 50
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 50
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 50
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 51
+  phrase: 察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 51
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 51
+  phrase: 蠶食的大痲瘋
+  target: 蠶食的大痲瘋（pechet tzara'at）
+- verse: 51
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 52
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 52
+  phrase: 焚燒
+  target: 衣服與皮子的大痲瘋條例
+- verse: 52
+  phrase: 蠶食的大痲瘋
+  target: 蠶食的大痲瘋（pechet tzara'at）
+- verse: 53
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 53
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 54
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 54
+  phrase: 關鎖七天
+  target: 關鎖七天（hispir shiv'at yamim）
+- verse: 55
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 55
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 55
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離
+- verse: 55
+  phrase: 透重的災病
+  target: 蠶食的大痲瘋（pechet tzara'at）
+- verse: 55
+  phrase: 焚燒
+  target: 衣服與皮子的大痲瘋條例
+- verse: 56
+  phrase: 祭司要察看
+  target: 祭司察看（kohen ra'ah）
+- verse: 56
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 57
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 57
+  phrase: 焚燒
+  target: 衣服與皮子的大痲瘋條例
+- verse: 58
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 59
+  phrase: 大痲瘋
+  target: 大痲瘋（tzara'at）
+- verse: 59
+  phrase: 災病
+  target: 大痲瘋（tzara'at）
+- verse: 59
+  phrase: 羊毛衣服
+  target: 大痲瘋人的衣服（beged tzara'at）
+- verse: 59
+  phrase: 麻布衣服
+  target: 大痲瘋人的衣服（beged tzara'at）
+- verse: 59
+  phrase: 不潔淨
+  target: 不潔淨的傳染與隔離

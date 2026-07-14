@@ -1,0 +1,216 @@
+book: "利未記"
+chapter: 14
+candidates:
+  # === 原文類（希伯來文關鍵字） ===
+  - name: "大痲瘋潔淨禮（tzara'at taharah）"
+    type: "原文"
+    evidence: "利14:2「長大痲瘋得潔淨的日子，其例乃是這樣」；CT註解：大痲瘋潔淨禮分營外與會幕內兩階段；BH：cleansing ritual for leper"
+    surfaces:
+      - "得潔淨的日子"
+      - "潔淨禮"
+      - "大痲瘋潔淨"
+  - name: "兩隻潔淨活鳥（shtei tzipporim tehorot）"
+    type: "原文"
+    evidence: "利14:4「就要吩咐人為那求潔淨的拿兩隻潔淨的活鳥」；CT註解：兩隻鳥預表基督死而復活(羅四25)；BH：two live clean birds = death and resurrection"
+    surfaces:
+      - "兩隻潔淨的活鳥"
+      - "活鳥"
+      - "潔淨的鳥"
+  - name: "香柏木（erez）"
+    type: "原文"
+    evidence: "利14:4「和香柏木」；CT註解：香柏木不易朽壞，象徵永生的生命；BH：cedar wood = incorruptibility, eternal life"
+    surfaces:
+      - "香柏木"
+      - "柏木"
+  - name: "朱紅色線（sheni tola'at）"
+    type: "原文"
+    evidence: "利14:4「朱紅色線」；CT註解：朱紅色線象徵血，即基督寶血的能力和救恩(書二18)；BH：scarlet yarn = blood of Christ"
+    surfaces:
+      - "朱紅色線"
+      - "紅線"
+  - name: "牛膝草（ezov）"
+    type: "原文"
+    evidence: "利14:4「並牛膝草」；CT註解：牛膝草用來灑血，象徵使罪得以潔淨的能力(出十二22；詩五十一7)；BH：hyssop = purification"
+    surfaces:
+      - "牛膝草"
+      - "膝草"
+  - name: "瓦器盛活水（kli cheres mayim chayim）"
+    type: "原文"
+    evidence: "利14:5「用瓦器盛活水」；CT註解：瓦器象徵軟弱但因永生的活水和基督寶血而得救的聖徒(林後四7)；BH：clay pot with living water = fragile vessel with divine life"
+    surfaces:
+      - "瓦器"
+      - "活水"
+      - "盛活水"
+  - name: "灑七次（hizah sheva pe'amim）"
+    type: "原文"
+    evidence: "利14:7「用以在那長大痲瘋求潔淨的人身上灑七次」；CT註解：七是完全數，象徵毫無缺乏；BH：sprinkle seven times = complete purification"
+    surfaces:
+      - "灑七次"
+      - "七次"
+  - name: "剃去毛髮（giluach）"
+    type: "原文"
+    evidence: "利14:8-9「剃去毛髮...第七天，再把頭上所有的頭髮與鬍鬚、眉毛，並全身的毛，都剃了」；CT註解：頭髮表徵驕傲炫耀、鬍鬚表徵自尊、眉毛表徵天然美麗、全身毛表徵天然能力；BH：shave all hair = complete removal of old self"
+    surfaces:
+      - "剃去毛髮"
+      - "剃毛"
+      - "全身的毛"
+  - name: "贖愆祭（asham）"
+    type: "原文"
+    evidence: "利14:12-13「祭司要取一隻公羊羔獻為贖愆祭」；CT註解：贖愆祭補償對神的虧欠，大痲瘋使會眾受虧損；BH：guilt offering = restitution for harm to sanctuary/community"
+    surfaces:
+      - "贖愆祭"
+      - "贖愆"
+  - name: "搖祭（tenufah）"
+    type: "原文"
+    evidence: "利14:12「和那一羅革油一同作搖祭，在耶和華面前搖一搖」；CT註解：贖愆祭牲是活搖的，獨一無二；BH：wave offering = living sacrifice waved before LORD"
+    surfaces:
+      - "搖祭"
+      - "作搖祭"
+      - "搖一搖"
+  - name: "抹血抹油禮儀（dam ve-shemen）"
+    type: "原文"
+    evidence: "利14:14-18「祭司要取些贖愆祭牲的血，抹在求潔淨人的右耳垂上和右手的大拇指上，並右腳的大拇指上...將手裡所剩的油抹在那求潔淨人的頭上」；CT註解：先抹血後抹油，基督寶血潔淨，聖靈印記分別；BH：blood on ear/thumb/toe = total consecration; oil on blood = Spirit on atonement"
+    surfaces:
+      - "抹在...右耳垂上"
+      - "右手的大拇指"
+      - "右腳的大拇指"
+      - "抹油"
+      - "抹血"
+  - name: "貧窮人的代替獻祭（dal）"
+    type: "原文"
+    evidence: "利14:21-22「他若貧窮不能預備夠數，就要取一隻公羊羔作贖愆祭...也要把調油的細麵伊法十分之一為素祭」；CT註解：神體恤貧窮人，在神面前人人平等；BH：provision for the poor = equality before God"
+    surfaces:
+      - "貧窮"
+      - "不能預備夠數"
+      - "一隻公羊羔"
+  - name: "房屋大痲瘋（tzara'at ba-bayit）"
+    type: "原文"
+    evidence: "利14:33-53「你們到了我賜給你們為業的迦南地，我若使你們所得為業之地的房屋中有大痲瘋的災病」；CT註解：房屋大痲瘋須拆毀或刮牆換石；BH：house leprosy = mold/fungus requiring priestly inspection"
+    surfaces:
+      - "房屋中有大痲瘋"
+      - "房屋大痲瘋"
+      - "房子發黴"
+
+  # === 主題類（神學概念） ===
+  - name: "大痲瘋潔淨禮的兩階段"
+    type: "主題"
+    evidence: "利14:1-32；CT壹：第一階段營外宣告潔淨(1-9)，第二階段會幕內獻祭贖罪(10-32)；BH：two-stage cleansing = outside camp then before LORD"
+    surfaces:
+      - "營外潔淨"
+      - "會幕內獻祭"
+      - "兩階段"
+  - name: "兩隻鳥預表基督死而復活"
+    type: "主題"
+    evidence: "利14:4-7；CT靈意註解：一隻鳥宰殺象徵基督死，一隻鳥放生象徵基督復活(羅四25)；BH：two birds = Christ's death and resurrection"
+    surfaces:
+      - "兩隻鳥"
+      - "死而復活"
+      - "羅馬書4:25"
+  - name: "贖愆祭的獨特性"
+    type: "主題"
+    evidence: "利14:12-13；CT註解：贖愆祭牲是公羊羔、活搖、有同獻素祭、與油同獻、祭司自己搖、無罰金，八大不同；BH：guilt offering unique features = living wave offering with oil"
+    surfaces:
+      - "贖愆祭獨特"
+      - "活搖"
+      - "八大不同"
+  - name: "抹血抹油：完全潔淨與聖靈印記"
+    type: "主題"
+    evidence: "利14:14-18；CT靈意註解：血抹耳拇指拇趾表徵全身潔淨，油抹在血上表徵聖靈以寶血贖罪能力工作(弗一13)；BH：blood then oil = atonement then Spirit sealing"
+    surfaces:
+      - "抹血抹油"
+      - "右耳右手右腳"
+      - "聖靈印記"
+  - name: "貧窮人也能得潔淨"
+    type: "主題"
+    evidence: "利14:21-32；CT註解：神體恤貧窮人，暗示無論窮人富人在神面前平等；BH：poor can be cleansed = equality before God"
+    surfaces:
+      - "貧窮人"
+      - "代替獻祭"
+      - "神體恤"
+  - name: "房屋大痲瘋與迦南地"
+    type: "主題"
+    evidence: "利14:33-53；CT註解：房屋大痲瘋須拆毀或刮牆換石，預表最終審判；BH：house leprosy in Canaan = judgment on persistent impurity"
+    surfaces:
+      - "房屋發黴"
+      - "拆毀房屋"
+      - "迦南地"
+  - name: "大痲瘋條例總結"
+    type: "主題"
+    evidence: "利14:54-57「這就是大痲瘋災病的條例...可以定為潔淨或是不潔淨」；CT註解：總結皮膚病、頭疥、衣服、房屋的大痲瘋條例；BH：summary of leprosy laws for all contexts"
+    surfaces:
+      - "大痲瘋條例"
+      - "定為潔淨或不潔淨"
+
+  # === 人物類 ===
+  - name: "摩西"
+    type: "人物"
+    evidence: "利14:1「耶和華曉諭摩西說」"
+    surfaces:
+      - "摩西"
+  - name: "耶穌"
+    type: "人物"
+    evidence: "利14:4,7,14,19；CT靈意註解：耶穌醫治痲瘋病人(太8:1-4；可1:40-45；路5:12-16)象徵屬靈醫治；BH：Jesus healing lepers = fulfills priestly role"
+    surfaces:
+      - "耶穌"
+      - "主耶穌"
+      - "基督"
+
+  # === 神學類 ===
+  - name: "基督作大祭司醫治大痲瘋"
+    type: "神學"
+    evidence: "利14:3,12-18；CT靈意註解：祭司察看預表基督作大祭司察看人心；耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role"
+    surfaces:
+      - "大祭司"
+      - "耶穌醫治痲瘋"
+      - "屬靈醫治"
+  - name: "罪如大痲瘋：滲透、隔離、需神醫治"
+    type: "神學"
+    evidence: "利14:45-46；CT靈意註解：大痲瘋表徵罪的滲透性、隔離性，唯有基督能醫治；BH：leprosy as type of sin = pervasive, isolating, only Christ heals"
+    surfaces:
+      - "罪"
+      - "大痲瘋表徵罪"
+      - "隔離"
+
+  # === 互文類 ===
+  - name: "米利暗患大痲瘋（民12：10-15）"
+    type: "互文"
+    evidence: "利14:45-46；CT註解：米利暗說摩西的不是，患大痲瘋被關鎖七天；BH：Miriam's leprosy = judgment for speaking against Moses"
+    surfaces:
+      - "米利暗"
+      - "民數記12章"
+  - name: "烏西雅王患大痲瘋（代下26：19-21）"
+    type: "互文"
+    evidence: "利14:45-46；CT註解：烏西雅王心高氣傲進聖殿燒香，患大痲瘋至死；BH：Uzziah's leprosy = pride judged"
+    surfaces:
+      - "烏西雅"
+      - "歷代志下26章"
+  - name: "乃縵患大痲瘋得醫治（王下5：1-14）"
+    type: "互文"
+    evidence: "利14:3,45-46；CT註解：乃縵順服以利沙吩咐在約旦河洗七次得潔淨；BH：Naaman's healing = obedience brings cleansing"
+    surfaces:
+      - "乃縵"
+      - "列王記下5章"
+  - name: "耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）"
+    type: "互文"
+    evidence: "利14:3,45-46；CT註解：耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role"
+    surfaces:
+      - "馬太福音8章"
+      - "馬可福音1章"
+      - "路加福音5章"
+      - "耶穌醫治痲瘋"
+
+  # === 事件類 ===
+  - name: "頒布大痲瘋潔淨條例"
+    type: "事件"
+    evidence: "利14:1-2「耶和華曉諭摩西說...長大痲瘋得潔淨的日子，其例乃是這樣」"
+    surfaces:
+      - "耶和華曉諭摩西"
+      - "頒布條例"
+
+  # === 文化類 ===
+  - name: "古代近東皮膚病與禮儀潔淨觀"
+    type: "文化"
+    evidence: "利14:2-3；CT註解：古代近東視皮膚病為神懲罰或不潔；以色列條例將醫療診斷納入祭司職分；BH：ancient Near East viewed skin disease as divine judgment"
+    surfaces:
+      - "古代近東"
+      - "皮膚病觀念"

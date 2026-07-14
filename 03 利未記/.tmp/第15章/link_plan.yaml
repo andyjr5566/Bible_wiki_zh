@@ -1,0 +1,285 @@
+book: 利未記
+chapter: 15
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 利15:1「耶和華對摩西、亞倫說」
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 利15:1「耶和華對摩西、亞倫說」
+  surfaces:
+  - phrase: 亞倫
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 祭司
+  suggested_type: 人物
+  evidence: 利15:14-15,29-30「把鳥交給祭司...祭司要獻上一隻為贖罪祭，一隻為燔祭」；CT註解：祭司作中保，預表基督作大祭司
+  surfaces:
+  - phrase: 祭司
+  - phrase: 大祭司
+  match_type: alias
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+C_new_formal:
+- name: 漏症（zav）
+  suggested_type: 原文
+  evidence: 利15:2-3「人若身患漏症...他因這漏症就不潔淨了」；CT註解：漏症表徵天然生命的流露；BH：bodily discharge = ritual
+    impurity
+  surfaces:
+  - phrase: 漏症
+  - phrase: 身患漏症
+  - phrase: 下流的
+  - phrase: 止住的
+  target_path: link_folder/原文/漏症（zav）.md
+- name: 不潔淨到晚上（tame ad erev）
+  suggested_type: 原文
+  evidence: 利15:5-11,16-18,21-24,27「必不潔淨到晚上」；CT註解：晚上表徵必須有所結束，才能有新的開始；BH：unclean until
+    evening = temporary impurity
+  surfaces:
+  - phrase: 不潔淨到晚上
+  - phrase: 到晚上
+  target_path: link_folder/原文/不潔淨到晚上（tame ad erev）.md
+- name: 洗衣服用水洗澡（kibbus u-rechitzah）
+  suggested_type: 原文
+  evidence: 利15:5-11,13,16-18,21-22,27「並要洗衣服，用水洗澡」；CT註解：洗衣服表徵對付行事為人，洗澡表徵全人接受聖靈和話中之水的洗滌；BH：wash
+    clothes and bathe = purification ritual
+  surfaces:
+  - phrase: 洗衣服
+  - phrase: 用水洗澡
+  - phrase: 洗衣服，用水洗澡
+  target_path: link_folder/原文/洗衣服用水洗澡（kibbus u-rechitzah）.md
+- name: 夢遺（mikreh lailah）
+  suggested_type: 原文
+  evidence: 利15:16「人若夢遺，他必不潔淨到晚上」；CT註解：夢遺表徵偶然被過犯所勝(加六1)；BH：emission of semen = involuntary
+    impurity
+  surfaces:
+  - phrase: 夢遺
+  - phrase: 遺精
+  target_path: link_folder/原文/夢遺（mikreh lailah）.md
+- name: 男女交合（shichvat zera）
+  suggested_type: 原文
+  evidence: 利15:18「若男女交合，兩個人必不潔淨到晚上」；CT註解：男女交合表徵肉體的情慾；BH：sexual intercourse = temporary
+    uncleanness
+  surfaces:
+  - phrase: 男女交合
+  - phrase: 同房
+  - phrase: 交合
+  target_path: link_folder/原文/男女交合（shichvat zera）.md
+- name: 月經（niddah）
+  suggested_type: 原文
+  evidence: 利15:19-24「女人行經，必污穢七天」；CT註解：月經表徵肉體的污穢；BH：menstruation = seven-day impurity
+  surfaces:
+  - phrase: 行經
+  - phrase: 月經
+  - phrase: 污穢七天
+  - phrase: 經期
+  target_path: link_folder/原文/月經（niddah）.md
+- name: 血漏（zavah）
+  suggested_type: 原文
+  evidence: 利15:25-30「女人若在經期以外患多日的血漏...她就因這漏症不潔淨」；CT註解：血漏視同行經，一樣不潔淨；BH：abnormal bleeding
+    = extended impurity
+  surfaces:
+  - phrase: 血漏
+  - phrase: 漏症
+  - phrase: 經期以外
+  - phrase: 經期過長
+  target_path: link_folder/原文/血漏（zavah）.md
+- name: 計算七天（shiv'at yamim）
+  suggested_type: 原文
+  evidence: 利15:13,28「就要為潔淨自己計算七天」；CT註解：七天表徵完全的試煉；BH：count seven days = complete purification
+    period
+  surfaces:
+  - phrase: 計算七天
+  - phrase: 七天
+  target_path: link_folder/原文/計算七天（shiv'at yamim）.md
+- name: 第八天獻祭（yom ha-shemini）
+  suggested_type: 原文
+  evidence: 利15:14-15,29-30「第八天，要取兩隻斑鳩或是兩隻雛鴿...祭司要獻上一隻為贖罪祭，一隻為燔祭」；CT註解：第八天表徵基督的復活；BH：eighth
+    day = new beginning, atonement
+  surfaces:
+  - phrase: 第八天
+  - phrase: 兩隻斑鳩
+  - phrase: 兩隻雛鴿
+  - phrase: 贖罪祭
+  - phrase: 燔祭
+  target_path: link_folder/原文/第八天獻祭（yom ha-shemini）.md
+- name: 隔絕污穢（hivdil）
+  suggested_type: 原文
+  evidence: 利15:31「你們要這樣使以色列人與他們的污穢隔絕」；CT註解：隔絕指避免沾染，免得玷污帳幕致死；BH：separate from uncleanness
+    = protect sanctuary
+  surfaces:
+  - phrase: 隔絕
+  - phrase: 與...隔絕
+  - phrase: 免得玷污
+  target_path: link_folder/原文/隔絕污穢（hivdil）.md
+- name: 漏症條例與潔淨儀式
+  suggested_type: 主題
+  evidence: 利15:1-33全章；CT壹內容綱要【人潔與不潔的條例】四大段；BH：Laws about Bodily Discharges；KC：uncleanness
+    from discharges
+  surfaces:
+  - phrase: 漏症條例
+  - phrase: 潔淨儀式
+  - phrase: 不潔淨條例
+  target_path: link_folder/主題/漏症條例與潔淨儀式.md
+- name: 漏症表徵天然生命流露
+  suggested_type: 主題
+  evidence: 利15:2-3；CT靈意註解：漏症表徵天然生命的流露，是不潔淨的；下流的表徵壞的天然生命，止住的表徵好的天然生命；BH：discharge
+    = natural life flowing out
+  surfaces:
+  - phrase: 天然生命
+  - phrase: 流露
+  - phrase: 下流的
+  - phrase: 止住的
+  target_path: link_folder/主題/漏症表徵天然生命流露.md
+- name: 不潔淨的傳染與隔離
+  suggested_type: 主題
+  evidence: 利15:4-12,19-24,26-27「他所躺的床...所坐的物也為不潔淨...凡摸的必不潔淨到晚上」；CT註解：不潔淨可經由床、坐物、身體接觸、唾沫、鞍子傳染；BH：uncleanness
+    transmits through contact
+  surfaces:
+  - phrase: 床
+  - phrase: 坐的物
+  - phrase: 摸
+  - phrase: 唾沫
+  - phrase: 鞍子
+  - phrase: 傳染
+  target_path: link_folder/主題/不潔淨的傳染與隔離.md
+- name: 洗濯儀式的屬靈意義
+  suggested_type: 主題
+  evidence: 利15:5-13,16-18,21-22,27「洗衣服、用水洗澡」；CT靈意註解：洗衣服表徵對付行事為人，洗澡表徵全人接受聖靈和話中之水的洗滌；BH：washing
+    = spiritual cleansing
+  surfaces:
+  - phrase: 洗衣服
+  - phrase: 洗澡
+  - phrase: 活水
+  - phrase: 聖靈洗滌
+  target_path: link_folder/主題/洗濯儀式的屬靈意義.md
+- name: 男女交合與夢遺的屬靈意義
+  suggested_type: 主題
+  evidence: 利15:16-18；CT靈意註解：夢遺表徵偶然被過犯所勝(加六1)，男女交合表徵肉體的情慾；話中之光：神關心人的性生活習慣，要保守純潔；BH：sexual
+    relations = temporary uncleanness, need for holiness
+  surfaces:
+  - phrase: 夢遺
+  - phrase: 男女交合
+  - phrase: 肉體情慾
+  - phrase: 性生活純潔
+  target_path: link_folder/主題/男女交合與夢遺的屬靈意義.md
+- name: 月經與血漏的屬靈意義
+  suggested_type: 主題
+  evidence: 利15:19-30；CT靈意註解：月經表徵肉體的污穢，血漏視同行經；話中之光：聖潔意義不止道德潔淨，乃是分別歸神；BH：menstruation
+    = fleshly impurity, separation unto God
+  surfaces:
+  - phrase: 月經
+  - phrase: 血漏
+  - phrase: 分別歸神
+  - phrase: 聖潔
+  target_path: link_folder/主題/月經與血漏的屬靈意義.md
+- name: 隔絕污穢保護帳幕
+  suggested_type: 主題
+  evidence: 利15:31「使以色列人與他們的污穢隔絕，免得他們玷污我的帳幕，就因自己的污穢死亡」；CT話中之光：教會要求比個人更嚴厲，決不可放鬆；BH：protect
+    tabernacle from defilement
+  surfaces:
+  - phrase: 隔絕
+  - phrase: 玷污帳幕
+  - phrase: 污穢死亡
+  - phrase: 教會要求
+  target_path: link_folder/主題/隔絕污穢保護帳幕.md
+- name: 罪如漏症：滲透、隔離、需神醫治
+  suggested_type: 神學
+  evidence: 利15:2-3,31；CT靈意註解：漏症表徵罪的滲透性、隔離性，唯有基督能醫治；BH：leprosy/discharge as type of
+    sin = pervasive, isolating, only Christ heals
+  surfaces:
+  - phrase: 罪
+  - phrase: 漏症表徵罪
+  - phrase: 隔離
+  - phrase: 基督醫治
+  target_path: link_folder/神學/罪如漏症：滲透、隔離、需神醫治.md
+- name: 基督作大祭司醫治漏症
+  suggested_type: 神學
+  evidence: 利15:14-15,30；CT靈意註解：祭司察看預表基督作大祭司察看人心；耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches
+    leper = fulfills priestly role
+  surfaces:
+  - phrase: 大祭司
+  - phrase: 耶穌醫治
+  - phrase: 屬靈醫治
+  target_path: link_folder/神學/基督作大祭司醫治漏症.md
+- name: 聖潔與分別歸神
+  suggested_type: 神學
+  evidence: 利15:31；CT話中之光：聖潔意義不止道德潔淨，乃是分別歸神；凡出於人本性的都不能被神接納；BH：holiness = separation
+    unto God
+  surfaces:
+  - phrase: 聖潔
+  - phrase: 分別歸神
+  - phrase: 聖潔意義
+  target_path: link_folder/神學/聖潔與分別歸神.md
+- name: 大衛求潔淨（詩51：7）
+  suggested_type: 互文
+  evidence: 利15:5-13；CT靈意註解：洗衣服、洗澡表徵聖靈和話中之水的洗滌；大衛禱告『求你用牛膝草潔淨我，我就乾淨』；BH：Psalm 51:7
+    = hyssop cleansing
+  surfaces:
+  - phrase: 詩篇51篇
+  - phrase: 牛膝草
+  - phrase: 潔淨我
+  target_path: link_folder/互文/大衛求潔淨（詩51：7）.md
+- name: 耶穌醫治漏血婦（太9：20-22；可5：25-34；路8：43-48）
+  suggested_type: 互文
+  evidence: 利15:25-27；CT註解：血漏視同行經；耶穌醫治十二年血漏的婦人，說『女兒，你的信救了你，平平安安地去吧』；BH：woman with
+    issue of blood = faith brings healing
+  surfaces:
+  - phrase: 馬太福音9章
+  - phrase: 馬可福音5章
+  - phrase: 路加福音8章
+  - phrase: 漏血婦
+  target_path: link_folder/互文/耶穌醫治漏血婦（太9：20-22；可5：25-34；路8：43-48）.md
+- name: 耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）
+  suggested_type: 互文
+  evidence: 利15:14-15；CT註解：耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills
+    priestly role
+  surfaces:
+  - phrase: 馬太福音8章
+  - phrase: 馬可福音1章
+  - phrase: 路加福音5章
+  - phrase: 耶穌醫治痲瘋
+  target_path: link_folder/互文/耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）.md
+- name: 保羅論肉體情慾（加5：19-21；羅7：14-25）
+  suggested_type: 互文
+  evidence: 利15:16-18；CT靈意註解：夢遺表徵偶然被過犯所勝(加六1)，男女交合表徵肉體的情慾；BH：fleshly lusts = works
+    of the flesh
+  surfaces:
+  - phrase: 加拉太書5章
+  - phrase: 羅馬書7章
+  - phrase: 肉體情慾
+  target_path: link_folder/互文/保羅論肉體情慾（加5：19-21；羅7：14-25）.md
+- name: 教會紀律與隔絕（太18：15-17；林前5：1-13）
+  suggested_type: 互文
+  evidence: 利15:31；CT話中之光：教會要求比個人更嚴厲，決不可放鬆；BH：church discipline = separation from
+    uncleanness
+  surfaces:
+  - phrase: 馬太福音18章
+  - phrase: 哥林多前書5章
+  - phrase: 教會紀律
+  target_path: link_folder/互文/教會紀律與隔絕（太18：15-17；林前5：1-13）.md
+- name: 頒布漏症條例
+  suggested_type: 事件
+  evidence: 利15:1-2「耶和華對摩西、亞倫說：你們曉諭以色列人說...」
+  surfaces:
+  - phrase: 耶和華對摩西亞倫說
+  - phrase: 曉諭以色列人
+  target_path: link_folder/事件/頒布漏症條例.md
+- name: 古代近東身體排泄物與禮儀潔淨觀
+  suggested_type: 文化
+  evidence: 利15:2-3；CT註解：古代近東視身體排泄物為不潔；以色列條例將醫療診斷納入祭司職分；BH：ancient Near East viewed
+    bodily discharges as impurity
+  surfaces:
+  - phrase: 古代近東
+  - phrase: 身體排泄物
+  - phrase: 禮儀潔淨
+  target_path: link_folder/文化/古代近東身體排泄物與禮儀潔淨觀.md
+D_new_candidate: []
+E_skip: []

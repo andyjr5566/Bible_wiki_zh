@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "scheme.md",
+                "file": "03 利未記/第15章.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "scheme"
+              "title": "第15章"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "scheme.md",
+                "file": "03 利未記/第15章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "scheme 的反向連結"
+              "title": "第15章 的反向連結"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "scheme.md",
+                "file": "03 利未記/第15章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "scheme 的對外連結"
+              "title": "第15章 的對外連結"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "scheme.md",
+                "file": "03 利未記/第15章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "scheme 的大綱"
+              "title": "第15章 的大綱"
             }
           }
         ]
@@ -196,22 +196,32 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
+    "link_folder/原文/夢遺（mikreh lailah）.md",
+    "03 利未記/第15章.md",
+    "link_folder/主題/男女交合與夢遺的屬靈意義.md",
+    "03 利未記/第14章.md",
+    "03 利未記/第13章.md",
     "03 利未記/第12章.md",
-    "link_folder/原文/月經污穢（niddah）.md",
-    "link_folder/文化/古代以色列產後習俗與神學意義.md",
-    "link_folder/事件/頒布產後潔淨條例.md",
-    "link_folder/互文/夏娃犯罪與女孩潔淨期加倍（提前2：14）.md",
-    "link_folder/互文/馬利亞的潔淨（路2：22-24）.md",
-    "link_folder/神學/基督的救贖與潔淨.md",
-    "link_folder/神學/原罪與生來不潔.md",
-    "link_folder/人物/耶穌.md",
-    "link_folder/主題/貧窮人的代替獻祭.md",
-    "link_folder/主題/燔祭與贖罪祭的屬靈意義.md",
-    "link_folder/主題/割禮的屬靈意義.md",
-    "link_folder/主題/男女潔淨期差異的屬靈意義.md",
-    "link_folder/主題/產後潔淨條例.md",
-    "link_folder/原文/聖物（qodesh）.md",
-    "link_folder/原文/產後潔淨（taharah）.md",
+    "scheme.md",
+    "link_folder/神學/聖潔與分別歸神.md",
+    "link_folder/原文/第八天獻祭（yom ha-shemini）.md",
+    "link_folder/原文/血漏（zavah）.md",
+    "link_folder/原文/月經（niddah）.md",
+    "link_folder/文化/古代近東身體排泄物與禮儀潔淨觀.md",
+    "link_folder/事件/頒布漏症條例.md",
+    "link_folder/互文/教會紀律與隔絕（太18：15-17；林前5：1-13）.md",
+    "link_folder/互文/保羅論肉體情慾（加5：19-21；羅7：14-25）.md",
+    "link_folder/互文/耶穌醫治漏血婦（太9：20-22；可5：25-34；路8：43-48）.md",
+    "link_folder/互文/大衛求潔淨（詩51：7）.md",
+    "link_folder/神學/基督作大祭司醫治漏症.md",
+    "link_folder/神學/罪如漏症：滲透、隔離、需神醫治.md",
+    "link_folder/主題/隔絕污穢保護帳幕.md",
+    "link_folder/主題/月經與血漏的屬靈意義.md",
+    "link_folder/主題/洗濯儀式的屬靈意義.md",
+    "link_folder/主題/漏症表徵天然生命流露.md",
+    "link_folder/主題/漏症條例與潔淨儀式.md",
+    "link_folder/原文/隔絕污穢（hivdil）.md",
+    "link_folder/原文/計算七天（shiv'at yamim）.md",
     "raw_data/kingcomments_leviticus_15.txt",
     "raw_data/ccbiblestudy_GT_leviticus_15.txt",
     "raw_data/ccbiblestudy_CT_leviticus_15.txt",
@@ -222,16 +232,6 @@
     "raw_data/biblehub_study_leviticus_14.txt",
     "raw_data/kingcomments_leviticus_13.txt",
     "raw_data/ccbiblestudy_GT_leviticus_13.txt",
-    "util/output/audits/full_audit_101.md",
-    "03 利未記/第11章.md",
-    "link_folder/文化/猶太教潔淨飲食傳統.md",
-    "link_folder/文化/古代近東飲食習慣與以色列差異.md",
-    "link_folder/事件/頒布潔淨不潔淨條例.md",
-    "link_folder/互文/以色列人分別為聖（利20：24-26）.md",
-    "link_folder/互文/保羅論食物不潔淨（羅14：14）.md",
-    "link_folder/互文/彼得異象廢除飲食條例（徒10：9-16）.md",
-    "link_folder/互文/潔淨不潔淨條例（創7：2-3）.md",
-    "link_folder/神學/活水與聖靈.md",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",
