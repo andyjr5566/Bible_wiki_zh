@@ -1,0 +1,115 @@
+book: 創世記
+chapter: 46
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；在別是巴獻祭求問，得神應許後帶全家下埃及；經文交替以「以色列」稱之（1、2、5、29、30節）
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 1
+    - 2
+    - 5
+    - 29
+    - 30
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 4、19-20、27-31節；套車往歌珊迎接父親，伏在頸項上哭了許久；並為父家豫先策劃向法老的應對
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 28節；雅各打發他先去見約瑟引路——可見猶大已取得家族領導的地位（參49:10）
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 31、33節；約瑟要上去告訴法老，並豫先教導家人如何回答法老的問話
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 別是巴
+  suggested_type: 地點
+  evidence: 1、5節；迦南南界，亞伯拉罕與以撒都曾在此求告神（21:33；26:25）；雅各在此獻祭
+  match_type: exact
+  existing_title: 別是巴
+  existing_path: link_folder/地點/別是巴.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 3-8、20、26-27節；雅各全家遷徙之地
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 6、12、31節；他們所離開的應許之地；珥與俄南死在那裡
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 歌珊地
+  suggested_type: 地點
+  evidence: 28-29、34節；尼羅河三角洲東部，宜牧、近迦南、與埃及人聚居處相隔
+  surfaces:
+  - phrase: 歌珊
+    verses:
+    - 28
+    - 29
+  match_type: exact
+  existing_title: 歌珊地
+  existing_path: link_folder/地點/歌珊地.md
+- name: 神的護理
+  suggested_type: 神學
+  evidence: 4節；「我要和你同下埃及去，也必定帶你上來」——個人層面應驗於雅各歸葬迦南，群體層面應驗於後裔出埃及
+  surfaces:
+  - phrase: 我要和你同下埃及去，也必定帶你上來
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 神的護理
+  existing_path: link_folder/神學/神的護理.md
+- name: 埃及車輛與遷徙
+  suggested_type: 歷史
+  evidence: 5節；法老送來的車輛載老父、妻子、兒女；半遊牧民族通常沒有車輛
+  surfaces:
+  - phrase: 法老為雅各送來的車上
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 埃及車輛與遷徙
+  existing_path: link_folder/文化/埃及車輛與遷徙.md
+- name: 雅各家七十人與七十五人
+  suggested_type: 解經爭議
+  evidence: 26-27節；同行的直系後裔六十六人，加雅各與已在埃及的約瑟、瑪拿西、以法蓮共七十人；徒7:14 依七十士譯本作七十五人
+  surfaces:
+  - phrase: 六十六人
+    verses:
+    - 26
+  - phrase: 七十人
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 雅各家七十人與七十五人
+  existing_path: link_folder/解經爭議/雅各家七十人與七十五人.md
+- name: 埃及人厭惡牧羊人
+  suggested_type: 歷史
+  evidence: 34節；「凡牧羊的都被埃及人所厭惡」——來源列出多種原因，經文本身只陳述事實
+  surfaces:
+  - phrase: 凡牧羊的都被埃及人所厭惡
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 埃及人厭惡牧羊人
+  existing_path: link_folder/文化/埃及人厭惡牧羊人.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
