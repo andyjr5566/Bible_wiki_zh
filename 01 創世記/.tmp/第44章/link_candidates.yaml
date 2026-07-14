@@ -1,0 +1,48 @@
+book: 創世記
+chapter: 44
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 1-2、4、14-15、17節；設銀杯之計，最後一次試驗哥哥們對便雅憫的態度
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 14、16、18-34節；代表眾弟兄認罪，並自願代替便雅憫作奴僕——全章的高峰
+    surfaces:
+      - {phrase: 猶大, verses: [14, 16, 18]}
+  - name: 便雅憫
+    type: 人物
+    evidence: 12節；銀杯竟在他的口袋裡搜出來——他是唯一與賣約瑟之罪無關的人，罪卻都歸在他身上
+  - name: 迦南地
+    type: 地點
+    evidence: 8節；「我們從前在口袋裡所見的銀子，尚且從迦南地帶來還你」
+  - name: 銀杯與杯占術
+    type: 文化
+    evidence: 5、15節；埃及的杯占術（盤占／水占）；約瑟是敬畏神的人必不行占卜，此乃裝作埃及人的說法
+    surfaces:
+      - {phrase: 占卜用的, verses: [5]}
+      - {phrase: 占卜, verses: [15]}
+  - name: 約瑟的夢（應驗）
+    type: 神學
+    evidence: 14節；「俯伏於地」——這是約瑟的夢第三次應驗（37:5-10；42:6；43:26）
+    surfaces:
+      - {phrase: 俯伏於地, verses: [14]}
+  - name: 悔改與良心的覺醒
+    type: 神學
+    evidence: 16節；「神已經查出僕人的罪孽了」——原文「僕人」為複數，是代表眾弟兄認賣約瑟之罪
+    surfaces:
+      - {phrase: 神已經查出僕人的罪孽了, verses: [16]}
+  - name: 古代近東的作保制度
+    type: 文化
+    evidence: 32節；猶大重述他向父親所立的保：「我若不帶他回來……我便在父親面前永遠擔罪」
+    surfaces:
+      - {phrase: 作保, verses: [32]}
+  - name: 猶大的認罪與悔改
+    type: 神學
+    evidence: 33節；「求你容僕人住下，替這童子作我主的奴僕」——當年提議賣弟為奴的人，如今自願代弟為奴
+    surfaces:
+      - {phrase: 替這童子作我主的奴僕, verses: [33]}
+  - name: 陰間（Sheol）
+    type: 原文
+    evidence: 29、31節；「白髮蒼蒼、悲悲慘慘地下陰間去了」——希伯來人觀念中人死後所居之處
+    surfaces:
+      - {phrase: 陰間, verses: [29, 31]}
