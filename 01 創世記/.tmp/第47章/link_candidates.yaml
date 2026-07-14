@@ -1,0 +1,45 @@
+book: 創世記
+chapter: 47
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；引弟兄與父親見法老，奉養父家，並在饑荒中為法老收銀子、牲畜、田地，定下五分之一的常例
+  - name: 雅各
+    type: 人物
+    evidence: 7-10、28-31節；兩次給法老祝福，自陳「寄居在世的年日一百三十歲，又少又苦」；臨終叫約瑟起誓不葬他在埃及
+    surfaces:
+      - {phrase: 以色列, verses: [29, 31]}
+  - name: 法老
+    type: 人物
+    evidence: 1-11、19-26節；准雅各家住歌珊地，並派能人看管王室牲畜；饑荒後埃及田地盡歸法老
+  - name: 埃及
+    type: 地點
+    evidence: 6、11、13-15、20-21、26-30節；雅各寄居之地，也是他不肯歸葬之地
+  - name: 迦南地
+    type: 地點
+    evidence: 1、4、13-15節；饑荒甚大之地；雅各所要歸葬的列祖之地
+  - name: 歌珊地
+    type: 地點
+    evidence: 1、4、6、27節；即蘭塞境內的地；以色列人在此置產、生育甚多
+  - name: 寄居身分
+    type: 神學
+    evidence: 4、9節；「我們來到這地寄居」「我寄居在世的年日」——表明埃及只是暫居，盼望重返迦南（來11:13）
+    surfaces:
+      - {phrase: 寄居, verses: [4]}
+      - {phrase: 寄居在世, verses: [9]}
+  - name: 約瑟的饑荒土地政策
+    type: 歷史
+    evidence: 20、24節；銀子→牲畜→田地與人，逐步歸於法老；定下收成五分之一納王的常例，惟祭司的地不買
+    surfaces:
+      - {phrase: 約瑟為法老買了埃及所有的地, verses: [20]}
+      - {phrase: 五分之一納給法老, verses: [24]}
+  - name: 大腿底下起誓
+    type: 主題
+    evidence: 29節；古代鄭重起誓的方式（參24:2），手所觸近生殖之處，意味違誓將遭絕後之報
+    surfaces:
+      - {phrase: 把手放在我大腿底下, verses: [29]}
+  - name: 床頭或杖頭
+    type: 解經爭議
+    evidence: 31節；希伯來輔音相同（床 mittah／杖 matteh），馬所拉本作「床」，七十士譯本與來11:21 作「杖」
+    surfaces:
+      - {phrase: 床頭上【或作扶著杖頭】, verses: [31]}
