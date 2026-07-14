@@ -1,0 +1,143 @@
+book: 創世記
+chapter: 33
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；七次俯伏求和、勉強以掃收禮、往疏割示劍定居築壇
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 1-16節；帶四百人來，卻跑來抱住親嘴同哭，饒恕雅各
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 利亞
+  suggested_type: 人物
+  evidence: 1-2、7節；孩子安排在中間
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
+- name: 拉結
+  suggested_type: 人物
+  evidence: 1-2、7節；與約瑟安排在盡後頭，顯出雅各偏愛
+  match_type: exact
+  existing_title: 拉結
+  existing_path: link_folder/人物/拉結.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 2、7節；拉結之子，經文先提約瑟後提拉結，暗示日後主角
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 哈抹
+  suggested_type: 人物
+  evidence: 19節；示劍的父親，雅各向其子孫買地
+  match_type: exact
+  existing_title: 哈抹
+  existing_path: link_folder/人物/哈抹.md
+- name: 示劍（哈抹之子）
+  suggested_type: 人物
+  evidence: 19節；哈抹之子，示劍城以其名命名（此處「示劍的父親」指人非城）
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 示劍（哈抹之子）
+  existing_path: link_folder/人物/示劍（哈抹之子）.md
+- name: 西珥
+  suggested_type: 地點
+  evidence: 14、16節；以掃所居之地，雅各口頭承諾前往卻未去
+  match_type: exact
+  existing_title: 西珥
+  existing_path: link_folder/地點/西珥.md
+- name: 疏割
+  suggested_type: 地點
+  evidence: 17節；約但河東、雅博河北，雅各蓋房搭棚久居之地
+  match_type: exact
+  existing_title: 疏割
+  existing_path: link_folder/地點/疏割.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 18節；迦南地之城，雅各買地築壇，日後底拿事件之地
+  surfaces:
+  - phrase: 示劍城
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 巴旦亞蘭
+  suggested_type: 地點
+  evidence: 18節；雅各所從回來之地
+  match_type: exact
+  existing_title: 巴旦亞蘭
+  existing_path: link_folder/地點/巴旦亞蘭.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 18節；應許之地，雅各平平安安到達
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 神的恩典與保護
+  suggested_type: 神學
+  evidence: 11節；雅各承認一切所有都歸功於神的賜福（申8:18）
+  surfaces:
+  - phrase: 神恩待我，使我充足
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 神的恩典與保護
+  existing_path: link_folder/神學/神的恩典與保護.md
+- name: 七次俯伏 (古代朝見禮儀)
+  suggested_type: 原文
+  evidence: 3節；古代覲見帝王禮儀（亞瑪拿文獻藩屬向法老下拜七次）
+  surfaces:
+  - phrase: 俯伏在地
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 七次俯伏 (古代朝見禮儀)
+  existing_path: link_folder/原文/七次俯伏 (古代朝見禮儀).md
+- name: 疏割 (棚)
+  suggested_type: 原文
+  evidence: 17節；疏割意為棚、帳棚
+  surfaces:
+  - phrase: 棚
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 疏割 (棚)
+  existing_path: link_folder/原文/疏割 (棚).md
+- name: 伊利伊羅伊以色列 (神、以色列神)
+  suggested_type: 原文
+  evidence: 10、20節；雅各所築壇名，意神、以色列的神；並見以掃面如見神面
+  surfaces:
+  - phrase: 神的面
+    verses:
+    - 10
+  - phrase: 伊利伊羅伊以色列
+    verses:
+    - 20
+  - phrase: 神、以色列神
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 伊利伊羅伊以色列 (神、以色列神)
+  existing_path: link_folder/原文/伊利伊羅伊以色列 (神、以色列神).md
+- name: 客西達錢幣單位
+  suggested_type: 文化
+  evidence: 19節；原文非舍客勒而是客西達，全聖經僅此一處
+  surfaces:
+  - phrase: 銀子
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 客西達錢幣單位
+  existing_path: link_folder/文化/客西達錢幣單位.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

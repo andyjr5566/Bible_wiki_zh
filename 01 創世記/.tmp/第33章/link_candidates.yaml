@@ -1,0 +1,70 @@
+book: 創世記
+chapter: 33
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 全章；七次俯伏求和、勉強以掃收禮、往疏割示劍定居築壇
+  - name: 以掃
+    type: 人物
+    evidence: 1-16節；帶四百人來，卻跑來抱住親嘴同哭，饒恕雅各
+  - name: 利亞
+    type: 人物
+    evidence: 1-2、7節；孩子安排在中間
+  - name: 拉結
+    type: 人物
+    evidence: 1-2、7節；與約瑟安排在盡後頭，顯出雅各偏愛
+  - name: 約瑟
+    type: 人物
+    evidence: 2、7節；拉結之子，經文先提約瑟後提拉結，暗示日後主角
+  - name: 哈抹
+    type: 人物
+    evidence: 19節；示劍的父親，雅各向其子孫買地
+  - name: 示劍（哈抹之子）
+    type: 人物
+    evidence: 19節；哈抹之子，示劍城以其名命名（此處「示劍的父親」指人非城）
+    surfaces:
+      - {phrase: 示劍, verses: [19]}
+  - name: 西珥
+    type: 地點
+    evidence: 14、16節；以掃所居之地，雅各口頭承諾前往卻未去
+  - name: 疏割
+    type: 地點
+    evidence: 17節；約但河東、雅博河北，雅各蓋房搭棚久居之地
+  - name: 示劍（城）
+    type: 地點
+    evidence: 18節；迦南地之城，雅各買地築壇，日後底拿事件之地
+    surfaces:
+      - {phrase: 示劍城, verses: [18]}
+  - name: 巴旦亞蘭
+    type: 地點
+    evidence: 18節；雅各所從回來之地
+  - name: 迦南地
+    type: 地點
+    evidence: 18節；應許之地，雅各平平安安到達
+  - name: 神的恩典與保護
+    type: 神學
+    evidence: 11節；雅各承認一切所有都歸功於神的賜福（申8:18）
+    surfaces:
+      - {phrase: 神恩待我，使我充足, verses: [11]}
+  - name: 七次俯伏 (古代朝見禮儀)
+    type: 原文
+    evidence: 3節；古代覲見帝王禮儀（亞瑪拿文獻藩屬向法老下拜七次）
+    surfaces:
+      - {phrase: 俯伏在地, verses: [3]}
+  - name: 疏割 (棚)
+    type: 原文
+    evidence: 17節；疏割意為棚、帳棚
+    surfaces:
+      - {phrase: 棚, verses: [17]}
+  - name: 伊利伊羅伊以色列 (神、以色列神)
+    type: 原文
+    evidence: 10、20節；雅各所築壇名，意神、以色列的神；並見以掃面如見神面
+    surfaces:
+      - {phrase: 神的面, verses: [10]}
+      - {phrase: 伊利伊羅伊以色列, verses: [20]}
+      - {phrase: 神、以色列神, verses: [20]}
+  - name: 客西達錢幣單位
+    type: 文化
+    evidence: 19節；原文非舍客勒而是客西達，全聖經僅此一處
+    surfaces:
+      - {phrase: 銀子, verses: [19]}

@@ -895,14 +895,6 @@
     "status": "formal",
     "aliases": []
   },
-  "智慧文學": {
-    "path": "link_folder/主題/智慧文學.md",
-    "type": "主題",
-    "secondary_types": [],
-    "title": "智慧文學",
-    "status": "candidate",
-    "aliases": []
-  },
   "會幕院子": {
     "path": "link_folder/主題/會幕院子.md",
     "type": "主題",
@@ -951,7 +943,7 @@
     "type": "主題",
     "secondary_types": [],
     "title": "樹木",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "橄欖葉子": {
@@ -975,7 +967,7 @@
     "type": "主題",
     "secondary_types": [],
     "title": "死人",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "求告耶和華的名": {
@@ -1023,7 +1015,7 @@
     "type": "主題",
     "secondary_types": [],
     "title": "清早起來",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "清橄欖油（點燈用）": {
@@ -1917,14 +1909,6 @@
     "status": "formal",
     "aliases": []
   },
-  "五旬節": {
-    "path": "link_folder/事件/五旬節.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "五旬節",
-    "status": "candidate",
-    "aliases": []
-  },
   "井口敞開的律例": {
     "path": "link_folder/事件/井口敞開的律例.md",
     "type": "事件",
@@ -2001,14 +1985,6 @@
       "Israel arrives at Sinai",
       "到達西乃山"
     ]
-  },
-  "以色列進迦南": {
-    "path": "link_folder/事件/以色列進迦南.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "以色列進迦南",
-    "status": "candidate",
-    "aliases": []
   },
   "保存一俄梅珥嗎哪": {
     "path": "link_folder/事件/保存一俄梅珥嗎哪.md",
@@ -2525,14 +2501,6 @@
       "重造石版"
     ]
   },
-  "撒拉之死與埋葬": {
-    "path": "link_folder/事件/撒拉之死與埋葬.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "撒拉之死與埋葬",
-    "status": "candidate",
-    "aliases": []
-  },
   "早晨的燔祭": {
     "path": "link_folder/事件/早晨的燔祭.md",
     "type": "事件",
@@ -2542,14 +2510,6 @@
     "aliases": [
       "常獻的早祭"
     ]
-  },
-  "曠野試驗": {
-    "path": "link_folder/事件/曠野試驗.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "曠野試驗",
-    "status": "candidate",
-    "aliases": []
   },
   "正月初一日": {
     "path": "link_folder/事件/正月初一日.md",
@@ -3037,14 +2997,6 @@
       "會中長老按手"
     ]
   },
-  "雅各全家下埃及": {
-    "path": "link_folder/事件/雅各全家下埃及.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "雅各全家下埃及",
-    "status": "candidate",
-    "aliases": []
-  },
   "頒布大痲瘋察看條例": {
     "path": "link_folder/事件/頒布大痲瘋察看條例.md",
     "type": "事件",
@@ -3287,14 +3239,6 @@
       "利未記20章分別為聖"
     ]
   },
-  "以賽亞書53章": {
-    "path": "link_folder/互文/以賽亞書53章.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "以賽亞書53章",
-    "status": "candidate",
-    "aliases": []
-  },
   "以賽亞書六十二章": {
     "path": "link_folder/互文/以賽亞書六十二章.md",
     "type": "互文",
@@ -3342,14 +3286,6 @@
     "secondary_types": [],
     "title": "伯特利之約（亞伯拉罕之約延續）",
     "status": "formal",
-    "aliases": []
-  },
-  "但以理書7章": {
-    "path": "link_folder/互文/但以理書7章.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "但以理書7章",
-    "status": "candidate",
     "aliases": []
   },
   "何1：6,9": {
@@ -4776,14 +4712,6 @@
     "aliases": [
       "門(約10:7)"
     ]
-  },
-  "基督頌": {
-    "path": "link_folder/互文/基督頌.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "基督頌",
-    "status": "candidate",
-    "aliases": []
   },
   "士1：16": {
     "path": "link_folder/互文/士1：16.md",
@@ -7895,14 +7823,6 @@
     "status": "formal",
     "aliases": []
   },
-  "詩篇128篇": {
-    "path": "link_folder/互文/詩篇128篇.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "詩篇128篇",
-    "status": "candidate",
-    "aliases": []
-  },
   "詩篇133篇": {
     "path": "link_folder/互文/詩篇133篇.md",
     "type": "互文",
@@ -8616,22 +8536,6 @@
       "亞倫後裔"
     ]
   },
-  "亞哈假先知 (王上22)": {
-    "path": "link_folder/人物/亞哈假先知 (王上22).md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "亞哈假先知 (王上22)",
-    "status": "candidate",
-    "aliases": []
-  },
-  "亞多尼雅": {
-    "path": "link_folder/人物/亞多尼雅.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "亞多尼雅",
-    "status": "candidate",
-    "aliases": []
-  },
   "亞大": {
     "path": "link_folder/人物/亞大.md",
     "type": "人物",
@@ -9337,14 +9241,6 @@
       "耶迪底亞"
     ]
   },
-  "押尼珥": {
-    "path": "link_folder/人物/押尼珥.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "押尼珥",
-    "status": "candidate",
-    "aliases": []
-  },
   "押沙龍": {
     "path": "link_folder/人物/押沙龍.md",
     "type": "人物",
@@ -9647,14 +9543,6 @@
       "Bilhah"
     ]
   },
-  "比拿雅": {
-    "path": "link_folder/人物/比拿雅.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "比拿雅",
-    "status": "candidate",
-    "aliases": []
-  },
   "比撒列（Bezalel）": {
     "path": "link_folder/人物/比撒列（Bezalel）.md",
     "type": "人物",
@@ -9868,7 +9756,7 @@
     "type": "人物",
     "secondary_types": [],
     "title": "瑣轄",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "瑪勒列": {
@@ -13728,14 +13616,6 @@
       "加低斯巴尼亞"
     ]
   },
-  "加利利": {
-    "path": "link_folder/地點/加利利.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "加利利",
-    "status": "candidate",
-    "aliases": []
-  },
   "南地": {
     "path": "link_folder/地點/南地.md",
     "type": "地點",
@@ -14435,7 +14315,6 @@
     "aliases": [
       "Succoth",
       "棚",
-      "帳棚",
       "疏割棚"
     ]
   },
@@ -14575,14 +14454,6 @@
       "帳幕的北面",
       "帳幕的南面"
     ]
-  },
-  "聖殿": {
-    "path": "link_folder/地點/聖殿.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "聖殿",
-    "status": "candidate",
-    "aliases": []
   },
   "聖處（會幕院子）": {
     "path": "link_folder/地點/聖處（會幕院子）.md",
@@ -15135,7 +15006,7 @@
     "type": "文化",
     "secondary_types": [],
     "title": "四百舍客勒",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "坑中無水": {
@@ -15286,7 +15157,7 @@
     "type": "文化",
     "secondary_types": [],
     "title": "城門口交易",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "太陽神Ra（Amon-Re）": {
@@ -16028,14 +15899,6 @@
       "以色列人出埃及",
       "Exodus"
     ]
-  },
-  "分裂國度": {
-    "path": "link_folder/歷史/分裂國度.md",
-    "type": "歷史",
-    "secondary_types": [],
-    "title": "分裂國度",
-    "status": "candidate",
-    "aliases": []
   },
   "利未的族譜（出六14-27）": {
     "path": "link_folder/歷史/利未的族譜（出六14-27）.md",
@@ -17115,14 +16978,6 @@
     "status": "formal",
     "aliases": []
   },
-  "主餐": {
-    "path": "link_folder/神學/主餐.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "主餐",
-    "status": "candidate",
-    "aliases": []
-  },
   "乳香": {
     "path": "link_folder/神學/乳香.md",
     "type": "神學",
@@ -17439,14 +17294,6 @@
       "伸出的膀臂"
     ]
   },
-  "保惠師": {
-    "path": "link_folder/神學/保惠師.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "保惠師",
-    "status": "candidate",
-    "aliases": []
-  },
   "信心的危機": {
     "path": "link_folder/神學/信心的危機.md",
     "type": "神學",
@@ -17600,7 +17447,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "公羊",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "公羊代贖": {
@@ -17814,14 +17661,6 @@
     ],
     "title": "十誡的條分法",
     "status": "formal",
-    "aliases": []
-  },
-  "千禧年": {
-    "path": "link_folder/神學/千禧年.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "千禧年",
-    "status": "candidate",
     "aliases": []
   },
   "原罪與生來不潔": {
@@ -18056,14 +17895,6 @@
       "基督三重職分",
       "先知祭司王三職"
     ]
-  },
-  "基督之血": {
-    "path": "link_folder/神學/基督之血.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "基督之血",
-    "status": "candidate",
-    "aliases": []
   },
   "基督作大祭司醫治大痲瘋": {
     "path": "link_folder/神學/基督作大祭司醫治大痲瘋.md",
@@ -18545,22 +18376,6 @@
       "特別的產業"
     ]
   },
-  "屬神的憂愁 (林後7_10)": {
-    "path": "link_folder/神學/屬神的憂愁 (林後7_10).md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "屬神的憂愁 (林後7_10)",
-    "status": "candidate",
-    "aliases": []
-  },
-  "屬靈恩賜": {
-    "path": "link_folder/神學/屬靈恩賜.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "屬靈恩賜",
-    "status": "candidate",
-    "aliases": []
-  },
   "山上的樣式": {
     "path": "link_folder/神學/山上的樣式.md",
     "type": "神學",
@@ -18680,14 +18495,6 @@
     "status": "formal",
     "aliases": []
   },
-  "得救確據": {
-    "path": "link_folder/神學/得救確據.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "得救確據",
-    "status": "candidate",
-    "aliases": []
-  },
   "得罪神": {
     "path": "link_folder/神學/得罪神.md",
     "type": "神學",
@@ -18760,14 +18567,6 @@
     "status": "formal",
     "aliases": []
   },
-  "悔改與信心": {
-    "path": "link_folder/神學/悔改與信心.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "悔改與信心",
-    "status": "candidate",
-    "aliases": []
-  },
   "悔改與良心的覺醒": {
     "path": "link_folder/神學/悔改與良心的覺醒.md",
     "type": "神學",
@@ -18797,14 +18596,6 @@
     "secondary_types": [],
     "title": "應許之子與信心",
     "status": "formal",
-    "aliases": []
-  },
-  "成聖": {
-    "path": "link_folder/神學/成聖.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "成聖",
-    "status": "candidate",
     "aliases": []
   },
   "我以為這地方的人總不懼怕神": {
@@ -19099,14 +18890,6 @@
     "status": "formal",
     "aliases": []
   },
-  "撒但最終敗亡": {
-    "path": "link_folder/神學/撒但最終敗亡.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "撒但最終敗亡",
-    "status": "candidate",
-    "aliases": []
-  },
   "擔子": {
     "path": "link_folder/神學/擔子.md",
     "type": "神學",
@@ -19185,14 +18968,6 @@
       "將一切律例教訓他們"
     ]
   },
-  "教會": {
-    "path": "link_folder/神學/教會.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "教會",
-    "status": "candidate",
-    "aliases": []
-  },
   "敬拜十守則": {
     "path": "link_folder/神學/敬拜十守則.md",
     "type": "神學",
@@ -19259,14 +19034,6 @@
     "status": "formal",
     "aliases": []
   },
-  "新天新地": {
-    "path": "link_folder/神學/新天新地.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "新天新地",
-    "status": "candidate",
-    "aliases": []
-  },
   "新約": {
     "path": "link_folder/神學/新約.md",
     "type": "神學",
@@ -19324,14 +19091,6 @@
     "secondary_types": [],
     "title": "智慧與治理",
     "status": "formal",
-    "aliases": []
-  },
-  "替代性贖罪": {
-    "path": "link_folder/神學/替代性贖罪.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "替代性贖罪",
-    "status": "candidate",
     "aliases": []
   },
   "會幕材料的豫表": {
@@ -19471,14 +19230,6 @@
     "secondary_types": [],
     "title": "永恆國度",
     "status": "formal",
-    "aliases": []
-  },
-  "永生": {
-    "path": "link_folder/神學/永生.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "永生",
-    "status": "candidate",
     "aliases": []
   },
   "永遠服事的奴僕": {
@@ -20723,14 +20474,6 @@
       "人種的是什麼收的也是什麼"
     ]
   },
-  "稱義": {
-    "path": "link_folder/神學/稱義.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "稱義",
-    "status": "candidate",
-    "aliases": []
-  },
   "稱頌耶和華": {
     "path": "link_folder/神學/稱頌耶和華.md",
     "type": "神學",
@@ -20780,7 +20523,7 @@
     "type": "神學",
     "secondary_types": [],
     "title": "第三日",
-    "status": "candidate",
+    "status": "formal",
     "aliases": []
   },
   "第五災：重重的瘟疫": {
@@ -20956,14 +20699,6 @@
     "secondary_types": [],
     "title": "義人與完全人",
     "status": "formal",
-    "aliases": []
-  },
-  "耶利米書31章新約預言": {
-    "path": "link_folder/神學/耶利米書31章新約預言.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "耶利米書31章新約預言",
-    "status": "candidate",
     "aliases": []
   },
   "耶和華": {
@@ -21331,14 +21066,6 @@
       "內住聖靈"
     ]
   },
-  "聖靈果子": {
-    "path": "link_folder/神學/聖靈果子.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "聖靈果子",
-    "status": "candidate",
-    "aliases": []
-  },
   "肉皮燒在營外": {
     "path": "link_folder/神學/肉皮燒在營外.md",
     "type": "神學",
@@ -21464,14 +21191,6 @@
       "舉手祝福",
       "祭司祝福"
     ]
-  },
-  "舊約": {
-    "path": "link_folder/神學/舊約.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "舊約",
-    "status": "candidate",
-    "aliases": []
   },
   "苦害中仍然增長": {
     "path": "link_folder/神學/苦害中仍然增長.md",
@@ -22049,14 +21768,6 @@
     "status": "formal",
     "aliases": []
   },
-  "麥基洗德等次": {
-    "path": "link_folder/神學/麥基洗德等次.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "麥基洗德等次",
-    "status": "candidate",
-    "aliases": []
-  },
   "五旬節與律法頒布": {
     "path": "link_folder/背景/五旬節與律法頒布.md",
     "type": "背景",
@@ -22306,14 +22017,6 @@
       "同父異母婚姻背景"
     ]
   },
-  "使者": {
-    "path": "link_folder/背景/古代近東天使/使者.md",
-    "type": "背景",
-    "secondary_types": [],
-    "title": "使者",
-    "status": "formal",
-    "aliases": []
-  },
   "古代近東奴隸制度": {
     "path": "link_folder/背景/古代近東奴隸制度.md",
     "type": "背景",
@@ -22523,14 +22226,6 @@
     "type": "背景",
     "secondary_types": [],
     "title": "古代近東飲食潔淨",
-    "status": "formal",
-    "aliases": []
-  },
-  "災禍": {
-    "path": "link_folder/背景/古代近東黃蜂/災禍.md",
-    "type": "背景",
-    "secondary_types": [],
-    "title": "災禍",
     "status": "formal",
     "aliases": []
   },
@@ -27342,9 +27037,6 @@
     "alias_of": "疏割"
   },
   "棚": {
-    "alias_of": "疏割"
-  },
-  "帳棚": {
     "alias_of": "疏割"
   },
   "疏割棚": {
