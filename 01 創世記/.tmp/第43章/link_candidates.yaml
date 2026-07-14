@@ -1,0 +1,51 @@
+book: 創世記
+chapter: 43
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 6、8、11節；經文以「以色列」稱之——因便雅憫之事關乎全民族遷埃及，用民族之名更為合宜
+    surfaces:
+      - {phrase: 以色列, verses: [6, 8, 11]}
+  - name: 約瑟
+    type: 人物
+    evidence: 15-17、19、24-27、29-34節；見便雅憫同來就設筵，愛弟之情發動、進內室哭了一場
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 3、8-10節；說服父親打發便雅憫，並以自己的性命作保（勝過流便以二子作保，創42:37）
+    surfaces:
+      - {phrase: 猶大, verses: [3, 8]}
+  - name: 便雅憫
+    type: 人物
+    evidence: 14-16、29節；拉結僅存之子，約瑟同母的兄弟；所得食物比別人多五倍
+  - name: 西緬
+    type: 人物
+    evidence: 23節；家宰把他從監中帶出來交還弟兄們
+  - name: 迦南地
+    type: 地點
+    evidence: 1節；「那地的饑荒甚大」——指迦南地
+    surfaces:
+      - {phrase: 那地, verses: [1]}
+  - name: 埃及
+    type: 地點
+    evidence: 2、15節；糧食來源；兄弟們第二次下埃及
+  - name: 古代近東的作保制度
+    type: 文化
+    evidence: 9節；「作保」「從我手中追討」是法律術語——借款人若不還，擔保人負全責
+    surfaces:
+      - {phrase: 作保, verses: [9]}
+  - name: 全能的神（El Shaddai）
+    type: 神學
+    evidence: 14節；雅各求「全能的神」（El Shaddai）使眾子蒙憐憫，把一切交託神
+    surfaces:
+      - {phrase: 全能的神, verses: [14]}
+  - name: 埃及人的飲食分席
+    type: 文化
+    evidence: 32節；擺三席——埃及人不可和希伯來人一同吃飯，那原是埃及人所厭惡的
+    surfaces:
+      - {phrase: 埃及人另擺了一席, verses: [32]}
+      - {phrase: 埃及人不可和希伯來人一同吃飯, verses: [32]}
+  - name: 對兄弟的試驗
+    type: 神學
+    evidence: 34節；便雅憫所得的比別人多五倍——刻意優待，試看哥哥們是否仍存嫉妒
+    surfaces:
+      - {phrase: 便雅憫所得的比別人多五倍, verses: [34]}

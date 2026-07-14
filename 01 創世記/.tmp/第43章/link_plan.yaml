@@ -1,0 +1,107 @@
+book: 創世記
+chapter: 43
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 6、8、11節；經文以「以色列」稱之——因便雅憫之事關乎全民族遷埃及，用民族之名更為合宜
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 6
+    - 8
+    - 11
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 15-17、19、24-27、29-34節；見便雅憫同來就設筵，愛弟之情發動、進內室哭了一場
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 3、8-10節；說服父親打發便雅憫，並以自己的性命作保（勝過流便以二子作保，創42:37）
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 3
+    - 8
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 14-16、29節；拉結僅存之子，約瑟同母的兄弟；所得食物比別人多五倍
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 23節；家宰把他從監中帶出來交還弟兄們
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 1節；「那地的饑荒甚大」——指迦南地
+  surfaces:
+  - phrase: 那地
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 2、15節；糧食來源；兄弟們第二次下埃及
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 古代近東的作保制度
+  suggested_type: 文化
+  evidence: 9節；「作保」「從我手中追討」是法律術語——借款人若不還，擔保人負全責
+  surfaces:
+  - phrase: 作保
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 古代近東的作保制度
+  existing_path: link_folder/文化/古代近東的作保制度.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 14節；雅各求「全能的神」（El Shaddai）使眾子蒙憐憫，把一切交託神
+  surfaces:
+  - phrase: 全能的神
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 埃及人的飲食分席
+  suggested_type: 文化
+  evidence: 32節；擺三席——埃及人不可和希伯來人一同吃飯，那原是埃及人所厭惡的
+  surfaces:
+  - phrase: 埃及人另擺了一席
+    verses:
+    - 32
+  - phrase: 埃及人不可和希伯來人一同吃飯
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 埃及人的飲食分席
+  existing_path: link_folder/文化/埃及人的飲食分席.md
+- name: 對兄弟的試驗
+  suggested_type: 神學
+  evidence: 34節；便雅憫所得的比別人多五倍——刻意優待，試看哥哥們是否仍存嫉妒
+  surfaces:
+  - phrase: 便雅憫所得的比別人多五倍
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 對兄弟的試驗
+  existing_path: link_folder/神學/對兄弟的試驗.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
