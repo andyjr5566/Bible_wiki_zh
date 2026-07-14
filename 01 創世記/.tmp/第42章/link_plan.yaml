@@ -1,0 +1,113 @@
+book: 創世記
+chapter: 42
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 1、4、29、36、38節；打發十子下埃及糴糧，卻不肯放便雅憫去
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 3、6-9、12、14、17-18、23-25、36節；埃及宰相，認得哥哥卻裝作生人，以嚴厲與恩慈試驗他們
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 4、36節；拉結僅存的兒子，雅各不肯打發他同去
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 22、37節；當年主張不可害約瑟，如今以兩子性命擔保便雅憫
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 24、36節；被挑出捆綁作人質；他生性殘忍（創34:25；49:5），可能是當年謀害約瑟的主謀
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1-3節；有糧之地，雅各打發兒子們下去糴糧
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 5、7、13、29、32節；也有饑荒，哥哥們自述來歷之地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 約瑟的夢（應驗）
+  suggested_type: 神學
+  evidence: 6、9節；哥哥們臉伏於地下拜，二十年前的夢完全應驗（創37:7,10）
+  surfaces:
+  - phrase: 那兩個夢
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 約瑟的夢（應驗）
+  existing_path: link_folder/神學/約瑟的夢（應驗）.md
+- name: 神的護理
+  suggested_type: 神學
+  evidence: 18、28節；約瑟自陳「我是敬畏神的」；哥哥們戰兢說「這是神向我們做什麼呢」
+  surfaces:
+  - phrase: 神
+    verses:
+    - 18
+  - phrase: 這是神向我們做什麼呢
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 神的護理
+  existing_path: link_folder/神學/神的護理.md
+- name: 古埃及的起誓方式
+  suggested_type: 文化
+  evidence: 15-16節；「指著法老的性命起誓」是古埃及鄭重誓詞——「就如法老活著那樣實在」
+  surfaces:
+  - phrase: 指著法老的性命起誓
+    verses:
+    - 15
+    - 16
+  match_type: exact
+  existing_title: 古埃及的起誓方式
+  existing_path: link_folder/文化/古埃及的起誓方式.md
+- name: 古埃及銀子交易
+  suggested_type: 文化
+  evidence: 27節；主前六世紀纔有錢幣，此前以銀按重量交易；埃及無銀礦，銀子是受歡迎的貿易標準
+  surfaces:
+  - phrase: 銀子
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 古埃及銀子交易
+  existing_path: link_folder/文化/古埃及銀子交易.md
+- name: 通事（傳譯員）
+  suggested_type: 原文
+  evidence: 23節；約瑟刻意透過翻譯與哥哥們對話，藉此隱藏身分
+  surfaces:
+  - phrase: 通事
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 通事（傳譯員）
+  existing_path: link_folder/原文/通事（傳譯員）.md
+- name: 陰間（Sheol）
+  suggested_type: 原文
+  evidence: 38節；雅各說「使我白髮蒼蒼、悲悲慘慘地下陰間去了」——希伯來人觀念中人死後所居之處
+  surfaces:
+  - phrase: 陰間
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 陰間（Sheol）
+  existing_path: link_folder/原文/陰間（Sheol）.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
