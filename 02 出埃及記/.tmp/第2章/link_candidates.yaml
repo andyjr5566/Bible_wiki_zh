@@ -1,0 +1,90 @@
+book: 出埃及記
+chapter: 2
+candidates:
+  - name: 利未
+    type: 人物
+    evidence: 1節；「有一個利未家的人娶了一個利未女子為妻」——即暗蘭與約基別（6:20）
+  - name: 摩西
+    type: 人物
+    evidence: 10-11、14-15、17、21-22節；被法老女兒收養、長大後殺埃及人、逃往米甸、娶妻生子
+  - name: 米利暗
+    type: 人物
+    evidence: 4節；孩子的姊姊遠遠站著；她的機智使母親得以奶養親生兒子
+  - name: 約基別
+    type: 人物
+    evidence: 8節；孩子的母親；因著信把摩西藏了三個月，又受法老女兒之雇奶養親子
+  - name: 法老的女兒
+    type: 人物
+    evidence: 5、7-10節；來到河邊洗澡發現蒲草箱，動了憐憫收養摩西——違逆父王殺嬰的政策
+  - name: 法老
+    type: 人物
+    evidence: 15節；聽見摩西殺埃及人的事就想殺他
+  - name: 流珥（米甸祭司）
+    type: 人物
+    evidence: 16、18節；米甸的祭司，七個女兒的父親；名意「神的朋友」
+    surfaces:
+      - {phrase: 米甸的祭司, verses: [16]}
+      - {phrase: 流珥, verses: [18]}
+  - name: 西坡拉
+    type: 人物
+    evidence: 21-22節；流珥的女兒，摩西之妻；名意「鳥、女歌者」
+  - name: 革舜（摩西之子）
+    type: 人物
+    evidence: 22節；摩西長子，名意「在那裡作了寄居的」
+    surfaces:
+      - {phrase: 革舜, verses: [22]}
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 24節；神記念與他所立的約
+  - name: 以撒
+    type: 人物
+    evidence: 24節；同上
+  - name: 雅各
+    type: 人物
+    evidence: 24節；同上
+  - name: 以色列
+    type: 原文
+    evidence: 23、25節；因作苦工歎息哀求；神看顧他們
+  - name: 米甸地
+    type: 地點
+    evidence: 15節；摩西逃往之地；位於阿卡巴灣以東，米甸人是亞伯拉罕與基土拉的後裔（創25:2）
+  - name: 摩西因信被藏三個月
+    type: 互文
+    evidence: 2節；來11:23：「摩西因著信，生下來的時候……被父母藏了三個月，並不怕王命」
+    surfaces:
+      - {phrase: 藏了他三個月, verses: [2]}
+  - name: 蒲草箱與方舟同字
+    type: 原文
+    evidence: 3節；「箱」（tevah）與挪亞「方舟」在希伯來文同字（創6:14）；同樣抹上防水材料，同樣在水中保存生命
+    surfaces:
+      - {phrase: 蒲草箱, verses: [3]}
+  - name: 摩西名字的由來
+    type: 原文
+    evidence: 10節；埃及語 ms(w)「生／兒子」（如杜得模西士、蘭塞）；希伯來語雙關為「拉出來」
+    surfaces:
+      - {phrase: 給孩子起名叫摩西, verses: [10]}
+  - name: 被拒絕的拯救者摩西
+    type: 互文
+    evidence: 14節；「誰立你作我們的首領和審判官呢？」——徒7:27,35 兩次引用；豫表基督被本族棄絕（約1:11）
+    surfaces:
+      - {phrase: 誰立你作我們的首領和審判官呢, verses: [14]}
+  - name: 寄居身分
+    type: 神學
+    evidence: 22節；「因我在外邦作了寄居的」——革舜之名保存了摩西的自覺
+    surfaces:
+      - {phrase: 寄居的, verses: [22]}
+  - name: 神聽見百姓的哀求
+    type: 神學
+    evidence: 23節；「他們的哀聲達於神」——歎息、哀求、哀聲三重的苦，達到神那裡
+    surfaces:
+      - {phrase: 哀聲達於神, verses: [23]}
+  - name: 神的記念
+    type: 神學
+    evidence: 24節；「就記念他與亞伯拉罕、以撒、雅各所立的約」——不是曾遺忘，而是決定行動的時候到了
+    surfaces:
+      - {phrase: 記念, verses: [24]}
+  - name: 亞伯拉罕之約
+    type: 神學
+    evidence: 24節；創15:18；17:5-8,19；26:24；35:11-12——拯救的根基是神對盟約的信實
+    surfaces:
+      - {phrase: 約, verses: [24]}
