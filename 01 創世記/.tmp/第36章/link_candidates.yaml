@@ -1,0 +1,88 @@
+book: 創世記
+chapter: 36
+candidates:
+  - name: 以掃
+    type: 人物
+    evidence: 全章；以東人的始祖，離開雅各遷居西珥山
+  - name: 雅各
+    type: 人物
+    evidence: 6節；以掃所離開的兄弟
+  - name: 亞大
+    type: 人物
+    evidence: 2、4、10、12、16節；赫人以倫的女兒，生以利法
+  - name: 巴實抹
+    type: 人物
+    evidence: 3-4、10、13、17節；以實瑪利的女兒、尼拜約的妹子，生流珥
+  - name: 阿何利巴瑪
+    type: 人物
+    evidence: 2、5、14、18、25、41節；亞拿的女兒，生耶烏施、雅蘭、可拉
+  - name: 以實瑪利
+    type: 人物
+    evidence: 3節；巴實抹之父
+  - name: 尼拜約
+    type: 人物
+    evidence: 3節；以實瑪利長子，巴實抹之兄
+  - name: 以利法
+    type: 人物
+    evidence: 4、10-12、15-16節；以掃長子，亞瑪力之父
+  - name: 流珥（以掃之子）
+    type: 人物
+    evidence: 4、10、13、17節；巴實抹之子，意「神的朋友」
+    surfaces:
+      - {phrase: 流珥, verses: [4, 10, 13, 17]}
+  - name: 亭納
+    type: 人物
+    evidence: 12、22、40節；以利法的妾，亞瑪力之母；亦為羅坍的妹子
+  - name: 亞瑪力人
+    type: 人物
+    evidence: 12、16節；以利法與亭納所生，日後成為以色列的世仇
+    surfaces:
+      - {phrase: 亞瑪力, verses: [12, 16]}
+  - name: 何利人
+    type: 人物
+    evidence: 20-21、29-30節；西珥地原住民，穴居者，後被以掃後裔同化
+  - name: 西珥（何利人）
+    type: 人物
+    evidence: 20-21節；何利人的先祖，西珥地原有居民之始祖
+    surfaces:
+      - {phrase: 西珥, verses: [20, 21]}
+  - name: 亞拿（何利人）
+    type: 人物
+    evidence: 2、14、18、20、24-25、29節；祭便之子，在曠野放驢遇著溫泉者
+    surfaces:
+      - {phrase: 亞拿, verses: [2, 14, 18, 20, 24, 25, 29]}
+  - name: 祭便
+    type: 人物
+    evidence: 2、14、20、24、29節；希未人，亞拿之父，阿何利巴瑪的祖父
+  - name: 迦南地
+    type: 地點
+    evidence: 2、5-6節；以掃娶妻與生子之地，日後所離開之地
+    surfaces:
+      - {phrase: 迦南, verses: [2]}
+  - name: 西珥山
+    type: 地點
+    evidence: 8-9、30節；以掃遷居之地，神所賜給以掃的地業（申2:5）
+    surfaces:
+      - {phrase: 西珥地, verses: [30]}
+  - name: 以東
+    type: 地點
+    evidence: 1、8-9、16-17、19、21、31-32、43節；以掃的別名，亦為其後裔與地業之名
+  - name: 提幔
+    type: 地點
+    evidence: 11、15、34、42節；以利法之子，以東北部地區，以多智慧人著稱
+  - name: 波斯拉
+    type: 地點
+    evidence: 33節；以東重要城邑，約巴的出身地
+  - name: 摩押地
+    type: 地點
+    evidence: 35節；哈達在此殺敗米甸人
+  - name: 利河伯（大河邊）
+    type: 地點
+    evidence: 37節；大河（伯拉河）邊之地，掃羅的出身地
+    surfaces:
+      - {phrase: 利河伯, verses: [37]}
+  - name: 溫泉或騾子（創36：24）
+    type: 原文
+    evidence: 24節；亞拿在曠野遇著的，武加大譯本作溫泉，猶太傳統作騾子
+    surfaces:
+      - {phrase: 溫泉, verses: [24]}
