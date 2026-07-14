@@ -1,0 +1,314 @@
+book: 出埃及記
+chapter: 8
+A_use_directly:
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1、5、13、15-16、19-20、24、26-27、29、31節；本章的敘事骨架
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 5
+    - 13
+    - 15
+    - 16
+    - 19
+    - 20
+    - 24
+    - 26
+    - 27
+    - 31
+  - phrase: 祭祀耶和華
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；三災的執行者與代求者
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 全章；兩次妥協、兩次求代禱、三次硬心
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 5-6、8、12、16-17、19、25節；伸杖行前三災
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 5-7、16-17、21、24節；遍地受災
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 尼羅河
+  suggested_type: 地點
+  evidence: 3、5、9、11節；青蛙從河裡上來；除滅後只留在河裡
+  surfaces:
+  - phrase: 河裡
+    verses:
+    - 3
+    - 9
+    - 11
+  - phrase: 河
+    verses:
+    - 5
+  - phrase: 水邊
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 尼羅河
+  existing_path: link_folder/地點/尼羅河.md
+- name: 容我的百姓去
+  suggested_type: 神學
+  evidence: 1、8、17、20節；本章重申兩次；法老口頭應許卻反悔
+  surfaces:
+  - phrase: 容我的百姓去
+    verses:
+    - 1
+    - 20
+  - phrase: 容百姓去祭祀耶和華
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 容我的百姓去
+  existing_path: link_folder/神學/容我的百姓去.md
+- name: 在曠野事奉神
+  suggested_type: 神學
+  evidence: 1、20節；「好事奉我」——出埃及的目的
+  surfaces:
+  - phrase: 事奉我
+    verses:
+    - 1
+    - 20
+  match_type: exact
+  existing_title: 在曠野事奉神
+  existing_path: link_folder/神學/在曠野事奉神.md
+- name: 蛙災
+  suggested_type: 歷史
+  evidence: 2-3、5、11節；第二災；埃及蛙頭女神赫克特（Heqet）司生育
+  surfaces:
+  - phrase: 青蛙蹧蹋你的四境
+    verses:
+    - 2
+  - phrase: 青蛙
+    verses:
+    - 3
+    - 11
+  - phrase: 青蛙到埃及地上來
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 蛙災
+  existing_path: link_folder/歷史/蛙災.md
+- name: 爐灶和摶麵盆
+  suggested_type: 文化
+  evidence: 3節；青蛙進入日常飲食用具——埃及人極重潔淨（祭司每日沐浴數次、穿細麻衣）
+  surfaces:
+  - phrase: 摶麵盆
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 爐灶和摶麵盆
+  existing_path: link_folder/文化/爐灶和摶麵盆.md
+- name: 埃及行法術的
+  suggested_type: 文化
+  evidence: 7、18-19節；蛙災能仿效，蝨災卻不能——只能加災，不能消災
+  surfaces:
+  - phrase: 行法術的
+    verses:
+    - 7
+    - 18
+    - 19
+  match_type: exact
+  existing_title: 埃及行法術的
+  existing_path: link_folder/文化/埃及行法術的.md
+- name: 代求
+  suggested_type: 神學
+  evidence: 8-9、12、28-30節；法老兩次求代禱；摩西作代求者（耶7:16；摩7:2,5）
+  surfaces:
+  - phrase: 求耶和華
+    verses:
+    - 8
+    - 29
+    - 30
+  - phrase: 祈求
+    verses:
+    - 9
+  - phrase: 呼求耶和華
+    verses:
+    - 12
+  - phrase: 祈禱
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 代求
+  existing_path: link_folder/神學/代求.md
+- name: 任憑你吧
+  suggested_type: 神學
+  evidence: 9節；原文直譯「榮耀你自己吧／請給我光彩吧」——對君主的敬稱，由法老定時間
+  surfaces:
+  - phrase: 任憑你吧
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 任憑你吧
+  existing_path: link_folder/神學/任憑你吧.md
+- name: 耶和華聖名的啟示
+  suggested_type: 神學
+  evidence: 10節；「好叫你知道沒有像耶和華我們神的」
+  surfaces:
+  - phrase: 耶和華─我們神的
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 耶和華聖名的啟示
+  existing_path: link_folder/神學/耶和華聖名的啟示.md
+- name: 法老心剛硬
+  suggested_type: 神學
+  evidence: 15、19、32節；15、32節的「硬著心」原文是 kabed（使之重）
+  surfaces:
+  - phrase: 硬著心
+    verses:
+    - 15
+    - 32
+  - phrase: 法老心裡剛硬
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 法老心剛硬
+  existing_path: link_folder/神學/法老心剛硬.md
+- name: 蝨災
+  suggested_type: 歷史
+  evidence: 16-18節；第三災；原文 kinnim 僅出現於此，或作蚊蚋、虼蚤
+  surfaces:
+  - phrase: 虱子
+    verses:
+    - 16
+    - 17
+    - 18
+  match_type: exact
+  existing_title: 蝨災
+  existing_path: link_folder/歷史/蝨災.md
+- name: 神的手段
+  suggested_type: 神學
+  evidence: 19節；原文「神的指頭」（etsba Elohim）——術士自己承認這不是人所能行的
+  surfaces:
+  - phrase: 神的手段
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 神的手段
+  existing_path: link_folder/神學/神的手段.md
+- name: 蠅災
+  suggested_type: 歷史
+  evidence: 21-22、24、29、31節；第四災；arob 原文是「混雜群」
+  surfaces:
+  - phrase: 成群的蒼蠅
+    verses:
+    - 21
+    - 22
+    - 24
+    - 29
+    - 31
+  - phrase: 大群
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 蠅災
+  existing_path: link_folder/歷史/蠅災.md
+- name: 分別百姓
+  suggested_type: 神學
+  evidence: 22-23節；首次把歌珊地分別出來；23節「分別」原文 peduth 出自 padah（贖買、救贖）
+  surfaces:
+  - phrase: 分別
+    verses:
+    - 22
+  - phrase: 分別出來
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 分別百姓
+  existing_path: link_folder/神學/分別百姓.md
+- name: 歌珊地
+  suggested_type: 地點
+  evidence: 22節；以色列人在埃及的聚居地；在尼羅河三角洲東境
+  match_type: exact
+  existing_title: 歌珊地
+  existing_path: link_folder/地點/歌珊地.md
+- name: 知道我是耶和華
+  suggested_type: 神學
+  evidence: 22節；「好叫你知道我是天下的耶和華」——不只是眾神中的一神
+  surfaces:
+  - phrase: 天下的耶和華
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 知道我是耶和華
+  existing_path: link_folder/神學/知道我是耶和華.md
+- name: 法老四次妥協
+  suggested_type: 歷史
+  evidence: 25、28節；第一次「在這地祭祀」；第二次「不要走得很遠」（另見10:8-11,24）
+  surfaces:
+  - phrase: 這地祭祀你們的神
+    verses:
+    - 25
+  - phrase: 曠野祭祀耶和華─你們的神；只是不要走得很遠
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 法老四次妥協
+  existing_path: link_folder/歷史/法老四次妥協.md
+- name: 埃及人所厭惡的
+  suggested_type: 神學
+  evidence: 26節；以色列人的祭牲（牛羊）正是埃及人奉為聖物的——若在其眼前獻祭必遭石頭打死
+  surfaces:
+  - phrase: 埃及人所厭惡的
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 埃及人所厭惡的
+  existing_path: link_folder/神學/埃及人所厭惡的.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 27-28節；獻祭之地，必須在埃及境外
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 三天的路程
+  suggested_type: 神學
+  evidence: 27節；超出埃及人的干擾範圍（3:18；5:3）
+  surfaces:
+  - phrase: 三天的路程
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 三天的路程
+  existing_path: link_folder/神學/三天的路程.md
+- name: 詭詐
+  suggested_type: 主題
+  evidence: 29節；「法老卻不可再行詭詐」——摩西根據15節的經驗預先警告
+  surfaces:
+  - phrase: 詭詐
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 詭詐
+  existing_path: link_folder/主題/詭詐.md
+B_needs_update:
+- name: 以色列
+  suggested_type: 原文
+  evidence: 神的百姓（本章以「我的百姓」稱之）
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
