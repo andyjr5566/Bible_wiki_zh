@@ -1,0 +1,174 @@
+book: "利未記"
+chapter: 17
+candidates:
+  # === 原文類（希伯來文關鍵字） ===
+  - name: "獻祭地點（meqom zebach）"
+    type: "原文"
+    evidence: "利17:3-4,8-9「若未曾牽到會幕門口...獻給耶和華為供物」；CT註解：集中獻祭於會幕門口，防止私設祭壇；BH：centralized worship at Tent of Meeting"
+    surfaces:
+      - "會幕門口"
+      - "會幕前"
+      - "獻給耶和華"
+  - name: "血（dam）"
+    type: "原文"
+    evidence: "利17:10-14「凡吃血的...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the blood = atonement"
+    surfaces:
+      - "血"
+      - "吃血"
+      - "生命是在血中"
+  - name: "剪除（karat）"
+    type: "原文"
+    evidence: "利17:4,9,10,14「那人必從民中剪除」；CT註解：剪除指被社群除名或死刑，嚴重後果；BH：cut off = excommunication/death"
+    surfaces:
+      - "剪除"
+      - "從民中剪除"
+  - name: "鬼魔/公山羊（se'irim）"
+    type: "原文"
+    evidence: "利17:7「不可再獻祭給他們行邪淫所隨從的鬼魔（原文作公山羊）」；CT註解：鬼魔指曠野惡魔，以色列人曾隨從；BH：goat demons = wilderness demons"
+    surfaces:
+      - "鬼魔"
+      - "公山羊"
+      - "行邪淫"
+  - name: "平安祭（shelamim）"
+    type: "原文"
+    evidence: "利17:5「獻與耶和華為平安祭」；CT註解：平安祭表徵與神和好、團契；BH：peace offering = fellowship"
+    surfaces:
+      - "平安祭"
+      - "平安祭牲"
+  - name: "燔祭（olah）"
+    type: "原文"
+    evidence: "利17:8「獻燔祭或是平安祭」；CT註解：燔祭完全獻給神，馨香之氣上升；BH：burnt offering = total dedication"
+    surfaces:
+      - "燔祭"
+      - "獻燔祭"
+  - name: "吃血禁令（issur dam）"
+    type: "原文"
+    evidence: "利17:10-14「你們都不可吃血...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：prohibition of eating blood = respect for life"
+    surfaces:
+      - "不可吃血"
+      - "吃血"
+      - "放出他的血來"
+      - "用土掩蓋"
+  - name: "自死/撕裂之物（nevelah/terefah）"
+    type: "原文"
+    evidence: "利17:15「凡吃自死的，或是被野獸撕裂的...必不潔淨到晚上」；CT註解：自死之物不潔淨，須洗濯等待；BH：carrion = temporary uncleanness"
+    surfaces:
+      - "自死的"
+      - "被野獸撕裂的"
+      - "不潔淨到晚上"
+
+  # === 主題類（神學概念） ===
+  - name: "集中獻祭條例"
+    type: "主題"
+    evidence: "利17:3-9「若未曾牽到會幕門口...流血的罪必歸到那人身上」；CT壹：本章為集中獻祭條例，防止私設祭壇；BH：centralized sacrifice = prevent idolatry"
+    surfaces:
+      - "集中獻祭"
+      - "會幕門口獻祭"
+      - "私設祭壇"
+  - name: "血代表生命與贖罪"
+    type: "主題"
+    evidence: "利17:11「因為活物的生命是在血中...血裡有生命，所以能贖罪」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：blood = life = atonement"
+    surfaces:
+      - "生命是在血中"
+      - "血能贖罪"
+      - "贖罪"
+  - name: "吃血禁令的屬靈意義"
+    type: "主題"
+    evidence: "利17:10-14；CT靈意註解：吃血表徵接受屬靈死亡，禁令教導敬畏生命；BH：eating blood = spiritual death"
+    surfaces:
+      - "不可吃血"
+      - "吃血的屬靈意義"
+      - "敬畏生命"
+  - name: "獵物處理條例"
+    type: "主題"
+    evidence: "利17:13「若打獵得了可吃的禽獸，必放出他的血來，用土掩蓋」；CT註解：用土掩蓋血表徵敬畏生命、歸還神；BH：covering blood with earth = respect for life"
+    surfaces:
+      - "放出他的血來"
+      - "用土掩蓋"
+      - "打獵"
+  - name: "自死/撕裂之物的潔淨條例"
+    type: "主題"
+    evidence: "利17:15-16「凡吃自死的...必不潔淨到晚上，都要洗衣服，用水洗身」；CT註解：洗衣洗身表徵對付行事為人、接受聖靈洗滌；BH：washing = spiritual cleansing"
+    surfaces:
+      - "不潔淨到晚上"
+      - "洗衣服"
+      - "用水洗身"
+  - name: "外人同歸一律"
+    type: "主題"
+    evidence: "利17:8,10,12-13「或是寄居在他們中間的外人...同歸一律」；CT註解：外人同歸一律，神的律法不分民族；BH：same law for native and stranger"
+    surfaces:
+      - "寄居的外人"
+      - "同歸一律"
+      - "外人同歸一律"
+
+  # === 人物類 ===
+  - name: "摩西"
+    type: "人物"
+    evidence: "利17:1「耶和華對摩西說」"
+    surfaces:
+      - "摩西"
+  - name: "亞倫"
+    type: "人物"
+    evidence: "利17:2「你曉諭亞倫和他兒子並以色列眾人說」"
+    surfaces:
+      - "亞倫"
+      - "亞倫和他兒子"
+
+  # === 神學類 ===
+  - name: "基督的寶血贖罪"
+    type: "神學"
+    evidence: "利17:11「我把這血賜給你們，可以在壇上為你們的生命贖罪」；CT靈意註解：基督的寶血一次成就永遠贖罪(來9:12)；BH：Christ's blood = eternal atonement"
+    surfaces:
+      - "寶血"
+      - "贖罪"
+      - "基督的血"
+  - name: "生命在血中"
+    type: "神學"
+    evidence: "利17:11,14「因為活物的生命是在血中」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the blood"
+    surfaces:
+      - "生命是在血中"
+      - "血就是生命"
+
+  # === 互文類 ===
+  - name: "挪亞禁吃血（創9：4）"
+    type: "互文"
+    evidence: "利17:10-14；CT註解：挪亞時代已禁吃血，利未記重申此律；BH：Noahic covenant = blood prohibition"
+    surfaces:
+      - "挪亞"
+      - "創世記9章"
+  - name: "耶路撒冷會議禁吃血（徒15：20）"
+    type: "互文"
+    evidence: "利17:10-14；CT註解：使徒行傳15章決議外邦信徒也禁吃血；BH：Jerusalem Council = blood prohibition for Gentiles"
+    surfaces:
+      - "使徒行傳15章"
+      - "耶路撒冷會議"
+  - name: "基督的血贖罪（來9：12-14）"
+    type: "互文"
+    evidence: "利17:11；CT註解：基督的血一次成就永遠贖罪；BH：Christ's blood = eternal redemption"
+    surfaces:
+      - "希伯來書9章"
+      - "基督的血"
+  - name: "基督的身體為帳幕（約1：14；來9：11）"
+    type: "互文"
+    evidence: "利17:4-5「會幕門口...獻給耶和華」；CT註解：基督是真帳幕，信徒藉著祂親近神；BH：Christ = true tabernacle"
+    surfaces:
+      - "約翰福音1章"
+      - "希伯來書9章"
+      - "真帳幕"
+
+  # === 事件類 ===
+  - name: "頒布獻祭與禁血條例"
+    type: "事件"
+    evidence: "利17:1-16全章；CT壹：本章宣示集中獻祭與禁吃血的條例"
+    surfaces:
+      - "耶和華對摩西說"
+      - "曉諭亞倫和他兒子"
+
+  # === 文化類 ===
+  - name: "古代近東獻祭與血的觀念"
+    type: "文化"
+    evidence: "利17:7「不可再獻祭給他們行邪淫所隨從的鬼魔」；CT註解：古代近東視獻祭為餵養神明，以色列條例將醫療診斷納入祭司職分；BH：ancient Near East viewed sacrifice as feeding gods"
+    surfaces:
+      - "古代近東"
+      - "獻祭觀念"
+      - "鬼魔"

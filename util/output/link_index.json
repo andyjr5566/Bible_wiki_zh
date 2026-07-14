@@ -21,6 +21,17 @@
       "隔離措施"
     ]
   },
+  "亂倫禁令（gillui ervah）": {
+    "path": "link_folder/主題/亂倫禁令（gillui ervah）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "亂倫禁令（gillui ervah）",
+    "status": "formal",
+    "aliases": [
+      "露下體禁令",
+      "親屬性禁忌"
+    ]
+  },
   "五十個金鉤（vavei zahav）": {
     "path": "link_folder/主題/五十個金鉤（vavei zahav）.md",
     "type": "主題",
@@ -392,6 +403,28 @@
     "status": "formal",
     "aliases": []
   },
+  "吃血禁令的屬靈意義": {
+    "path": "link_folder/主題/吃血禁令的屬靈意義.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "吃血禁令的屬靈意義",
+    "status": "formal",
+    "aliases": [
+      "禁血的屬靈理由",
+      "尊重生命"
+    ]
+  },
+  "同性戀禁令（mishkav zakhar）": {
+    "path": "link_folder/主題/同性戀禁令（mishkav zakhar）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "同性戀禁令（mishkav zakhar）",
+    "status": "formal",
+    "aliases": [
+      "男男性行為禁令",
+      "同性性行為禁令"
+    ]
+  },
   "嗎哪": {
     "path": "link_folder/主題/嗎哪.md",
     "type": "主題",
@@ -538,6 +571,17 @@
     "status": "formal",
     "aliases": []
   },
+  "外人同歸一律": {
+    "path": "link_folder/主題/外人同歸一律.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "外人同歸一律",
+    "status": "formal",
+    "aliases": [
+      "寄居者同例",
+      "外人與本地人同等"
+    ]
+  },
   "外袍（以弗得的外袍）": {
     "path": "link_folder/主題/外袍（以弗得的外袍）.md",
     "type": "主題",
@@ -606,6 +650,17 @@
     "title": "大腿底下起誓",
     "status": "formal",
     "aliases": []
+  },
+  "大贖罪日儀式的兩階段": {
+    "path": "link_folder/主題/大贖罪日儀式的兩階段.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "大贖罪日儀式的兩階段",
+    "status": "formal",
+    "aliases": [
+      "贖罪日兩階段",
+      "兩階段贖罪"
+    ]
   },
   "奴僕與自由": {
     "path": "link_folder/主題/奴僕與自由.md",
@@ -1125,6 +1180,28 @@
     "status": "formal",
     "aliases": []
   },
+  "獵物處理條例": {
+    "path": "link_folder/主題/獵物處理條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "獵物處理條例",
+    "status": "formal",
+    "aliases": [
+      "打獵放血",
+      "用土掩蓋血"
+    ]
+  },
+  "獸交禁令": {
+    "path": "link_folder/主題/獸交禁令.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "獸交禁令",
+    "status": "formal",
+    "aliases": [
+      "人獸性行為禁令",
+      "與獸淫合禁令"
+    ]
+  },
   "生養眾多與治理": {
     "path": "link_folder/主題/生養眾多與治理.md",
     "type": "主題",
@@ -1509,6 +1586,14 @@
     "status": "formal",
     "aliases": []
   },
+  "血代表生命與贖罪": {
+    "path": "link_folder/主題/血代表生命與贖罪.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "血代表生命與贖罪",
+    "status": "formal",
+    "aliases": []
+  },
   "血祭與素祭": {
     "path": "link_folder/主題/血祭與素祭.md",
     "type": "主題",
@@ -1516,6 +1601,17 @@
     "title": "血祭與素祭",
     "status": "formal",
     "aliases": []
+  },
+  "行經不潔淨時的禁令": {
+    "path": "link_folder/主題/行經不潔淨時的禁令.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "行經不潔淨時的禁令",
+    "status": "formal",
+    "aliases": [
+      "月經期性禁令",
+      "經期親近禁令"
+    ]
   },
   "衣服與皮子的大痲瘋條例": {
     "path": "link_folder/主題/衣服與皮子的大痲瘋條例.md",
@@ -1670,6 +1766,16 @@
     "title": "遮蓋與宣揚",
     "status": "formal",
     "aliases": []
+  },
+  "鄰舍妻行淫": {
+    "path": "link_folder/主題/鄰舍妻行淫.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "鄰舍妻行淫",
+    "status": "formal",
+    "aliases": [
+      "與鄰舍妻行淫"
+    ]
   },
   "野味": {
     "path": "link_folder/主題/野味.md",
@@ -1845,6 +1951,14 @@
       "歷史"
     ],
     "title": "雅各騙取祝福",
+    "status": "formal",
+    "aliases": []
+  },
+  "集中獻祭條例": {
+    "path": "link_folder/主題/集中獻祭條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "集中獻祭條例",
     "status": "formal",
     "aliases": []
   },
@@ -3017,6 +3131,17 @@
       "大痲瘋潔淨條例頒布"
     ]
   },
+  "頒布大贖罪日條例": {
+    "path": "link_folder/事件/頒布大贖罪日條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "頒布大贖罪日條例",
+    "status": "formal",
+    "aliases": [
+      "大贖罪日條例頒布",
+      "贖罪日條例設立"
+    ]
+  },
   "頒布漏症條例": {
     "path": "link_folder/事件/頒布漏症條例.md",
     "type": "事件",
@@ -3036,6 +3161,14 @@
     "aliases": [
       "頒布飲食條例"
     ]
+  },
+  "頒布獻祭與禁血條例": {
+    "path": "link_folder/事件/頒布獻祭與禁血條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "頒布獻祭與禁血條例",
+    "status": "formal",
+    "aliases": []
   },
   "頒布產後潔淨條例": {
     "path": "link_folder/事件/頒布產後潔淨條例.md",
@@ -4713,6 +4846,22 @@
       "門(約10:7)"
     ]
   },
+  "基督的血贖罪（來9：12-14）": {
+    "path": "link_folder/互文/基督的血贖罪（來9：12-14）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "基督的血贖罪（來9：12-14）",
+    "status": "formal",
+    "aliases": []
+  },
+  "基督的身體為帳幕（約1：14；來9：11）": {
+    "path": "link_folder/互文/基督的身體為帳幕（約1：14；來9：11）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "基督的身體為帳幕（約1：14；來9：11）",
+    "status": "formal",
+    "aliases": []
+  },
   "士1：16": {
     "path": "link_folder/互文/士1：16.md",
     "type": "互文",
@@ -5101,6 +5250,17 @@
       "安息日的安息"
     ]
   },
+  "幔子裂開（太27：51；來10：19-20）": {
+    "path": "link_folder/互文/幔子裂開（太27：51；來10：19-20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "幔子裂開（太27：51；來10：19-20）",
+    "status": "formal",
+    "aliases": [
+      "幔子裂開",
+      "聖所幔子裂開"
+    ]
+  },
   "弗1：3": {
     "path": "link_folder/互文/弗1：3.md",
     "type": "互文",
@@ -5403,6 +5563,14 @@
     "aliases": [
       "挪亞傳義道"
     ]
+  },
+  "挪亞禁吃血（創9：4）": {
+    "path": "link_folder/互文/挪亞禁吃血（創9：4）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "挪亞禁吃血（創9：4）",
+    "status": "formal",
+    "aliases": []
   },
   "挪亞與亞當的平行": {
     "path": "link_folder/互文/挪亞與亞當的平行.md",
@@ -7411,6 +7579,14 @@
     "aliases": [
       "耶穌醫治痲瘋病人"
     ]
+  },
+  "耶路撒冷會議禁吃血（徒15：20）": {
+    "path": "link_folder/互文/耶路撒冷會議禁吃血（徒15：20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "耶路撒冷會議禁吃血（徒15：20）",
+    "status": "formal",
+    "aliases": []
   },
   "聖徒禱告如香（啟5：8, 8：3-4）": {
     "path": "link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md",
@@ -10976,6 +11152,16 @@
       "野兔"
     ]
   },
+  "兩隻公山羊（shnei se'irim）": {
+    "path": "link_folder/原文/兩隻公山羊（shnei se'irim）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "兩隻公山羊（shnei se'irim）",
+    "status": "formal",
+    "aliases": [
+      "兩隻公山羊"
+    ]
+  },
   "兩隻潔淨活鳥（shtei tzipporim tehorot）": {
     "path": "link_folder/原文/兩隻潔淨活鳥（shtei tzipporim tehorot）.md",
     "type": "原文",
@@ -10984,6 +11170,26 @@
     "status": "formal",
     "aliases": [
       "兩隻潔淨活鳥"
+    ]
+  },
+  "公牛贖罪祭（par chatat）": {
+    "path": "link_folder/原文/公牛贖罪祭（par chatat）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "公牛贖罪祭（par chatat）",
+    "status": "formal",
+    "aliases": [
+      "公牛贖罪祭"
+    ]
+  },
+  "公綿羊燔祭（ayil olah）": {
+    "path": "link_folder/原文/公綿羊燔祭（ayil olah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "公綿羊燔祭（ayil olah）",
+    "status": "formal",
+    "aliases": [
+      "公綿羊燔祭"
     ]
   },
   "典章（mishpatim）": {
@@ -11097,6 +11303,17 @@
     "aliases": [
       "可憎",
       "可憎惡的"
+    ]
+  },
+  "吃血禁令（issur dam）": {
+    "path": "link_folder/原文/吃血禁令（issur dam）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "吃血禁令（issur dam）",
+    "status": "formal",
+    "aliases": [
+      "禁吃血",
+      "不可吃血"
     ]
   },
   "各從其類": {
@@ -11291,6 +11508,16 @@
       "坐骨神經",
       "大腿窩筋",
       "筋"
+    ]
+  },
+  "大贖罪日條例（chukat Yom Kippur）": {
+    "path": "link_folder/原文/大贖罪日條例（chukat Yom Kippur）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "大贖罪日條例（chukat Yom Kippur）",
+    "status": "formal",
+    "aliases": [
+      "大贖罪日條例"
     ]
   },
   "奴僕（ebed）": {
@@ -11614,6 +11841,16 @@
       "抹血抹油禮儀"
     ]
   },
+  "拈鬮（goral）": {
+    "path": "link_folder/原文/拈鬮（goral）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "拈鬮（goral）",
+    "status": "formal",
+    "aliases": [
+      "拈鬮"
+    ]
+  },
   "拙口笨舌": {
     "path": "link_folder/原文/拙口笨舌.md",
     "type": "原文",
@@ -11629,6 +11866,16 @@
     "title": "拿弗他利（角力）",
     "status": "formal",
     "aliases": []
+  },
+  "按手承認罪孽（semikhah）": {
+    "path": "link_folder/原文/按手承認罪孽（semikhah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "按手承認罪孽（semikhah）",
+    "status": "formal",
+    "aliases": [
+      "按手承認罪孽"
+    ]
   },
   "按手（samak）": {
     "path": "link_folder/原文/按手（samak）.md",
@@ -12203,6 +12450,17 @@
       "連狗也不敢向他們搖舌"
     ]
   },
+  "獻祭地點（meqom zebach）": {
+    "path": "link_folder/原文/獻祭地點（meqom zebach）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "獻祭地點（meqom zebach）",
+    "status": "formal",
+    "aliases": [
+      "宰牲地點",
+      "會幕門口獻祭"
+    ]
+  },
   "現象深於皮（ma'amar amok min ha'or）": {
     "path": "link_folder/原文/現象深於皮（ma'amar amok min ha'or）.md",
     "type": "原文",
@@ -12525,6 +12783,16 @@
     "status": "formal",
     "aliases": [
       "細麵"
+    ]
+  },
+  "細麻布聖服（bigdei bad）": {
+    "path": "link_folder/原文/細麻布聖服（bigdei bad）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "細麻布聖服（bigdei bad）",
+    "status": "formal",
+    "aliases": [
+      "細麻布聖服"
     ]
   },
   "網羅": {
@@ -12980,6 +13248,16 @@
       "贖愆祭"
     ]
   },
+  "贖罪日（Yom Kippur）": {
+    "path": "link_folder/原文/贖罪日（Yom Kippur）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "贖罪日（Yom Kippur）",
+    "status": "formal",
+    "aliases": [
+      "贖罪日"
+    ]
+  },
   "起泡的瘡": {
     "path": "link_folder/原文/起泡的瘡.md",
     "type": "原文",
@@ -13118,6 +13396,16 @@
       "關鎖"
     ]
   },
+  "阿撒瀉勒（Azazel）": {
+    "path": "link_folder/原文/阿撒瀉勒（Azazel）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "阿撒瀉勒（Azazel）",
+    "status": "formal",
+    "aliases": [
+      "阿撒瀉勒"
+    ]
+  },
   "除了我以外（`al-pa{na{y）": {
     "path": "link_folder/原文/除了我以外（`al-pa{na{y）.md",
     "type": "原文",
@@ -13246,6 +13534,16 @@
       "香柏木"
     ]
   },
+  "香爐與香料（machtah u-ketoret）": {
+    "path": "link_folder/原文/香爐與香料（machtah u-ketoret）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "香爐與香料（machtah u-ketoret）",
+    "status": "formal",
+    "aliases": [
+      "香爐與香料"
+    ]
+  },
   "馨香（reach nichoach）": {
     "path": "link_folder/原文/馨香（reach nichoach）.md",
     "type": "原文",
@@ -13274,6 +13572,18 @@
     "title": "骨中的骨，肉中的肉",
     "status": "formal",
     "aliases": []
+  },
+  "骨肉之親（she'er besaro）": {
+    "path": "link_folder/原文/骨肉之親（she'er besaro）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "骨肉之親（she'er besaro）",
+    "status": "formal",
+    "aliases": [
+      "骨肉之親",
+      "近親",
+      "she'er besaro"
+    ]
   },
   "骨肉原文作弟兄": {
     "path": "link_folder/原文/骨肉原文作弟兄.md",
@@ -14861,6 +15171,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東獻祭與血的觀念": {
+    "path": "link_folder/文化/古代近東獻祭與血的觀念.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "古代近東獻祭與血的觀念",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東的作保制度": {
     "path": "link_folder/文化/古代近東的作保制度.md",
     "type": "文化",
@@ -14893,6 +15211,17 @@
     "title": "古代近東聘禮與七年勞役",
     "status": "formal",
     "aliases": []
+  },
+  "古代近東贖罪觀與替罪羊概念": {
+    "path": "link_folder/文化/古代近東贖罪觀與替罪羊概念.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "古代近東贖罪觀與替罪羊概念",
+    "status": "formal",
+    "aliases": [
+      "替罪羊概念",
+      "古代近東贖罪觀"
+    ]
   },
   "古代近東身體排泄物與禮儀潔淨觀": {
     "path": "link_folder/文化/古代近東身體排泄物與禮儀潔淨觀.md",
@@ -15285,6 +15614,17 @@
     "title": "彩衣",
     "status": "formal",
     "aliases": []
+  },
+  "摩洛（Molech）": {
+    "path": "link_folder/文化/摩洛（Molech）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "摩洛（Molech）",
+    "status": "formal",
+    "aliases": [
+      "摩洛神",
+      "米勒"
+    ]
   },
   "撒拉的帳棚": {
     "path": "link_folder/文化/撒拉的帳棚.md",
@@ -16886,6 +17226,17 @@
       "不可姦淫"
     ]
   },
+  "不可效法外邦惡俗": {
+    "path": "link_folder/神學/不可效法外邦惡俗.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可效法外邦惡俗",
+    "status": "formal",
+    "aliases": [
+      "不可隨從外邦惡俗",
+      "離棄列國風俗"
+    ]
+  },
   "不可殺人": {
     "path": "link_folder/神學/不可殺人.md",
     "type": "神學",
@@ -17863,6 +18214,17 @@
       "我要得榮耀"
     ]
   },
+  "地吐出居民": {
+    "path": "link_folder/神學/地吐出居民.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "地吐出居民",
+    "status": "formal",
+    "aliases": [
+      "地吐出人",
+      "土地嘔吐居民"
+    ]
+  },
   "埃及人所厭惡的": {
     "path": "link_folder/神學/埃及人所厭惡的.md",
     "type": "神學",
@@ -17931,6 +18293,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "基督復活",
+    "status": "formal",
+    "aliases": []
+  },
+  "基督的寶血贖罪": {
+    "path": "link_folder/神學/基督的寶血贖罪.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "基督的寶血贖罪",
     "status": "formal",
     "aliases": []
   },
@@ -19612,6 +19982,18 @@
       "Sacrifice and worship"
     ]
   },
+  "玷污自己與玷污地": {
+    "path": "link_folder/神學/玷污自己與玷污地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "玷污自己與玷污地",
+    "status": "formal",
+    "aliases": [
+      "自我玷污",
+      "土地玷污",
+      "雙重玷污"
+    ]
+  },
   "瓦器打碎": {
     "path": "link_folder/神學/瓦器打碎.md",
     "type": "神學",
@@ -19632,6 +20014,14 @@
       "甘心樂意",
       "樂意的奉獻"
     ]
+  },
+  "生命在血中": {
+    "path": "link_folder/神學/生命在血中.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "生命在血中",
+    "status": "formal",
+    "aliases": []
   },
   "生命樹": {
     "path": "link_folder/神學/生命樹.md",
@@ -21541,6 +21931,17 @@
     "status": "formal",
     "aliases": []
   },
+  "遵行律例就必活著": {
+    "path": "link_folder/神學/遵行律例就必活著.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "遵行律例就必活著",
+    "status": "formal",
+    "aliases": [
+      "守律例得生",
+      "律例典章與生命"
+    ]
+  },
   "還願祭": {
     "path": "link_folder/神學/還願祭.md",
     "type": "神學",
@@ -22238,6 +22639,17 @@
     "status": "formal",
     "aliases": [
       "Physical properties of manna"
+    ]
+  },
+  "埃及與迦南惡俗": {
+    "path": "link_folder/背景/埃及與迦南惡俗.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "埃及與迦南惡俗",
+    "status": "formal",
+    "aliases": [
+      "埃及迦南習俗",
+      "外邦惡俗"
     ]
   },
   "安息日的前身": {
@@ -23915,6 +24327,12 @@
   "隔離措施": {
     "alias_of": "不潔淨的傳染與隔離"
   },
+  "露下體禁令": {
+    "alias_of": "亂倫禁令（gillui ervah）"
+  },
+  "親屬性禁忌": {
+    "alias_of": "亂倫禁令（gillui ervah）"
+  },
   "金鉤": {
     "alias_of": "五十個金鉤（vavei zahav）"
   },
@@ -23987,6 +24405,18 @@
   "帳幕幔子": {
     "alias_of": "十幅幔子（內層幕幔）"
   },
+  "禁血的屬靈理由": {
+    "alias_of": "吃血禁令的屬靈意義"
+  },
+  "尊重生命": {
+    "alias_of": "吃血禁令的屬靈意義"
+  },
+  "男男性行為禁令": {
+    "alias_of": "同性戀禁令（mishkav zakhar）"
+  },
+  "同性性行為禁令": {
+    "alias_of": "同性戀禁令（mishkav zakhar）"
+  },
   "Manna": {
     "alias_of": "嗎哪"
   },
@@ -24032,6 +24462,12 @@
   "網格狀物": {
     "alias_of": "壇的銅網"
   },
+  "寄居者同例": {
+    "alias_of": "外人同歸一律"
+  },
+  "外人與本地人同等": {
+    "alias_of": "外人同歸一律"
+  },
   "以弗得的外袍": {
     "alias_of": "外袍（以弗得的外袍）"
   },
@@ -24052,6 +24488,12 @@
   },
   "大痲瘋痊癒辨別": {
     "alias_of": "大痲瘋痊癒的辨別（全身變白反潔淨）"
+  },
+  "贖罪日兩階段": {
+    "alias_of": "大贖罪日儀式的兩階段"
+  },
+  "兩階段贖罪": {
+    "alias_of": "大贖罪日儀式的兩階段"
   },
   "有智慧的婦女": {
     "alias_of": "婦女參與建造會幕"
@@ -24173,6 +24615,18 @@
   "爬物與污穢的屬靈意涵": {
     "alias_of": "爬物與污穢的屬靈意義"
   },
+  "打獵放血": {
+    "alias_of": "獵物處理條例"
+  },
+  "用土掩蓋血": {
+    "alias_of": "獵物處理條例"
+  },
+  "人獸性行為禁令": {
+    "alias_of": "獸交禁令"
+  },
+  "與獸淫合禁令": {
+    "alias_of": "獸交禁令"
+  },
   "生育婦人潔淨條例": {
     "alias_of": "產後潔淨條例"
   },
@@ -24257,6 +24711,12 @@
   "幔子鈕扣": {
     "alias_of": "藍色鈕扣（lula'ot tekhelet）"
   },
+  "月經期性禁令": {
+    "alias_of": "行經不潔淨時的禁令"
+  },
+  "經期親近禁令": {
+    "alias_of": "行經不潔淨時的禁令"
+  },
   "衣服大痲瘋條例": {
     "alias_of": "衣服與皮子的大痲瘋條例"
   },
@@ -24289,6 +24749,9 @@
   },
   "公開昭雪": {
     "alias_of": "遮羞"
+  },
+  "與鄰舍妻行淫": {
+    "alias_of": "鄰舍妻行淫"
   },
   "金": {
     "alias_of": "金子（包金）"
@@ -24677,6 +25140,12 @@
   "大痲瘋潔淨條例頒布": {
     "alias_of": "頒布大痲瘋潔淨條例"
   },
+  "大贖罪日條例頒布": {
+    "alias_of": "頒布大贖罪日條例"
+  },
+  "贖罪日條例設立": {
+    "alias_of": "頒布大贖罪日條例"
+  },
   "頒布飲食條例": {
     "alias_of": "頒布潔淨不潔淨條例"
   },
@@ -25054,6 +25523,12 @@
   },
   "安息日的安息": {
     "alias_of": "希伯來書4章神的安息"
+  },
+  "幔子裂開": {
+    "alias_of": "幔子裂開（太27：51；來10：19-20）"
+  },
+  "聖所幔子裂開": {
+    "alias_of": "幔子裂開（太27：51；來10：19-20）"
   },
   "屬靈福氣": {
     "alias_of": "弗1：3"
@@ -26132,8 +26607,17 @@
   "野兔": {
     "alias_of": "兔子（arnebet）"
   },
+  "兩隻公山羊": {
+    "alias_of": "兩隻公山羊（shnei se'irim）"
+  },
   "兩隻潔淨活鳥": {
     "alias_of": "兩隻潔淨活鳥（shtei tzipporim tehorot）"
+  },
+  "公牛贖罪祭": {
+    "alias_of": "公牛贖罪祭（par chatat）"
+  },
+  "公綿羊燔祭": {
+    "alias_of": "公綿羊燔祭（ayil olah）"
   },
   "冠冕": {
     "alias_of": "冠冕（裹頭巾）"
@@ -26161,6 +26645,12 @@
   },
   "可憎惡的": {
     "alias_of": "可憎（sheqets）"
+  },
+  "禁吃血": {
+    "alias_of": "吃血禁令（issur dam）"
+  },
+  "不可吃血": {
+    "alias_of": "吃血禁令（issur dam）"
   },
   "Manna etymology": {
     "alias_of": "嗎哪（ What is it ）"
@@ -26209,6 +26699,9 @@
   },
   "筋": {
     "alias_of": "大腿窩的筋"
+  },
+  "大贖罪日條例": {
+    "alias_of": "大贖罪日條例（chukat Yom Kippur）"
   },
   "shav": {
     "alias_of": "妄稱（vain）"
@@ -26296,6 +26789,12 @@
   },
   "抹血抹油禮儀": {
     "alias_of": "抹血抹油禮儀（dam ve-shemen）"
+  },
+  "拈鬮": {
+    "alias_of": "拈鬮（goral）"
+  },
+  "按手承認罪孽": {
+    "alias_of": "按手承認罪孽（semikhah）"
   },
   "按手": {
     "alias_of": "按手（samak）"
@@ -26495,6 +26994,12 @@
   "連狗也不敢向他們搖舌": {
     "alias_of": "狗不敢搖舌"
   },
+  "宰牲地點": {
+    "alias_of": "獻祭地點（meqom zebach）"
+  },
+  "會幕門口獻祭": {
+    "alias_of": "獻祭地點（meqom zebach）"
+  },
   "現象深於皮": {
     "alias_of": "現象深於皮（ma'amar amok min ha'or）"
   },
@@ -26602,6 +27107,9 @@
   },
   "minchah": {
     "alias_of": "素祭（minchah）"
+  },
+  "細麻布聖服": {
+    "alias_of": "細麻布聖服（bigdei bad）"
   },
   "yqš": {
     "alias_of": "網羅"
@@ -26732,6 +27240,9 @@
   "贖愆祭": {
     "alias_of": "贖愆祭（asham）"
   },
+  "贖罪日": {
+    "alias_of": "贖罪日（Yom Kippur）"
+  },
   "shechin": {
     "alias_of": "起泡的瘡"
   },
@@ -26789,6 +27300,9 @@
   "關鎖": {
     "alias_of": "關鎖七天（hispir shiv'at yamim）"
   },
+  "阿撒瀉勒": {
+    "alias_of": "阿撒瀉勒（Azazel）"
+  },
   "al-panay": {
     "alias_of": "除了我以外（`al-pa{na{y）"
   },
@@ -26831,8 +27345,20 @@
   "香柏木": {
     "alias_of": "香柏木（erez）"
   },
+  "香爐與香料": {
+    "alias_of": "香爐與香料（machtah u-ketoret）"
+  },
   "馨香": {
     "alias_of": "馨香（reach nichoach）"
+  },
+  "骨肉之親": {
+    "alias_of": "骨肉之親（she'er besaro）"
+  },
+  "近親": {
+    "alias_of": "骨肉之親（she'er besaro）"
+  },
+  "she'er besaro": {
+    "alias_of": "骨肉之親（she'er besaro）"
   },
   "我們是弟兄": {
     "alias_of": "骨肉原文作弟兄"
@@ -27176,6 +27702,12 @@
   "古代近東皮膚病與潔淨觀": {
     "alias_of": "古代近東皮膚病與禮儀潔淨觀"
   },
+  "替罪羊概念": {
+    "alias_of": "古代近東贖罪觀與替罪羊概念"
+  },
+  "古代近東贖罪觀": {
+    "alias_of": "古代近東贖罪觀與替罪羊概念"
+  },
   "古代近東飲食文化": {
     "alias_of": "古代近東飲食習慣與以色列差異"
   },
@@ -27319,6 +27851,12 @@
   },
   "levirate marriage": {
     "alias_of": "弟續兄孀制度"
+  },
+  "摩洛神": {
+    "alias_of": "摩洛（Molech）"
+  },
+  "米勒": {
+    "alias_of": "摩洛（Molech）"
   },
   "鴿子": {
     "alias_of": "斑鳩"
@@ -27797,6 +28335,12 @@
   "第七條誡命": {
     "alias_of": "不可姦淫"
   },
+  "不可隨從外邦惡俗": {
+    "alias_of": "不可效法外邦惡俗"
+  },
+  "離棄列國風俗": {
+    "alias_of": "不可效法外邦惡俗"
+  },
   "第六誡": {
     "alias_of": "不可殺人"
   },
@@ -28024,6 +28568,12 @@
   },
   "我要得榮耀": {
     "alias_of": "在親近我的人中要顯為聖"
+  },
+  "地吐出人": {
+    "alias_of": "地吐出居民"
+  },
+  "土地嘔吐居民": {
+    "alias_of": "地吐出居民"
   },
   "abomination to Egyptians": {
     "alias_of": "埃及人所厭惡的"
@@ -28514,6 +29064,15 @@
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
   },
+  "自我玷污": {
+    "alias_of": "玷污自己與玷污地"
+  },
+  "土地玷污": {
+    "alias_of": "玷污自己與玷污地"
+  },
+  "雙重玷污": {
+    "alias_of": "玷污自己與玷污地"
+  },
   "煮祭物的瓦器要打碎": {
     "alias_of": "瓦器打碎"
   },
@@ -28997,6 +29556,12 @@
   "全人奉獻": {
     "alias_of": "連一蹄也不留下"
   },
+  "守律例得生": {
+    "alias_of": "遵行律例就必活著"
+  },
+  "律例典章與生命": {
+    "alias_of": "遵行律例就必活著"
+  },
   "還願": {
     "alias_of": "還願祭"
   },
@@ -29152,6 +29717,12 @@
   },
   "Physical properties of manna": {
     "alias_of": "嗎哪的物理特性"
+  },
+  "埃及迦南習俗": {
+    "alias_of": "埃及與迦南惡俗"
+  },
+  "外邦惡俗": {
+    "alias_of": "埃及與迦南惡俗"
   },
   "Precursor to Sabbath": {
     "alias_of": "安息日的前身"

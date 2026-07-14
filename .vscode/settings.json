@@ -1,0 +1,50 @@
+{
+    "chat.viewSessions.orientation": "stacked",
+    "git.enableSmartCommit": true,
+    "hooks": {
+        "preToolUse": [
+            {
+                "matcher": "run_in_terminal",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python .github/hooks/enforce_sync_terminal.py"
+                    }
+                ]
+            }
+        ]
+    },
+    "chat.tools.terminal.autoApprove": {
+        "/^python util/link_updates\\.py apply \"02 å‡ºåŸƒåŠè¨˜/\\.tmp/ç¬¬14ç« /link_updates\\.yaml\" --dry-run$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^\\$env:PYTHONIOENCODING='utf-8'; C:\\\\Users\\\\andyj_adknr2z\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent\\\\venv\\\\Scripts\\\\python\\.exe -m unittest discover -s util/tests 2>&1 \\| Select-Object -Last 5$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "remote.tunnels.access.enableMicrosoftAuth": true,
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://www.kingcomments.com/en/bible-studies/Exo/15": true,
+        "https://www.kingcomments.com/en/bible-studies/Exo": true,
+        "https://www.kingcomments.com/en/bible-studies": true,
+        "https://www.kingcomments.com/en": true,
+        "https://www.kingcomments.com": true,
+        "https://*.kingcomments.com": true,
+        "https://www.ccbiblestudy.org/Old Testament/02Exo/02CT15.htm": true,
+        "https://www.ccbiblestudy.org/Old Testament/02Exo": true,
+        "https://www.ccbiblestudy.org/Old Testament": true,
+        "https://www.ccbiblestudy.org": true,
+        "https://*.ccbiblestudy.org": true,
+        "https://www.ccbiblestudy.org/Old Testament/02Exo/02GT15.htm": true,
+        "https://biblehub.com": {
+            "approveRequest": true,
+            "approveResponse": false
+        }
+    },
+    "chat.agent.maxRequests": 99999999,
+    "claudeCode.preferredLocation": "panel"
+}

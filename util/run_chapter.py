@@ -597,8 +597,8 @@ def _org_requirements(verse_count):
     門檻只管份量，不管體裁——創8 那種散文混表格／編號清單的呈現是允許的，
     格式隨 rawdata 的材料性質調整。
     """
-    min_sections = 3 if verse_count >= 15 else 2
-    min_chars = max(400, min(1500, verse_count * 40))
+    min_sections = 1 #3 if verse_count >= 15 else 2
+    min_chars = 200#max(400, min(1500, verse_count * 40))
     return min_sections, min_chars
 
 

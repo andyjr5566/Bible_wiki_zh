@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "python .github/hooks/enforce_sync_terminal.py",
+        "timeout": 10,
+        "windows": {
+          "command": "python .github/hooks/enforce_sync_terminal.py"
+        }
+      }
+    ]
+  }
+}

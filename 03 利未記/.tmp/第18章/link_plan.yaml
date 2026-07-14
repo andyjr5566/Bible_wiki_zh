@@ -1,0 +1,138 @@
+book: 利未記
+chapter: 18
+A_use_directly: []
+B_needs_update:
+- name: 可憎（sheqets）
+  suggested_type: 原文
+  evidence: 利18:22,26,27,29,30 多次以 to'evah（可憎）描述同性戀、迦南惡俗等。本章將 to'evah 用於性倫理領域。
+  match_type: exact
+  existing_title: 可憎（sheqets）
+  existing_path: link_folder/原文/可憎（sheqets）.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 利18:29 行可憎之事者從民中剪除。
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 月經（niddah）
+  suggested_type: 原文
+  evidence: 利18:19 禁止在女人行經不潔淨時親近她。
+  match_type: exact
+  existing_title: 月經（niddah）
+  existing_path: link_folder/原文/月經（niddah）.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 利18:26 無論是本地人或寄居的外人，都不可行這些可憎的事。
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 利18:1 耶和華對摩西說話，頒布性倫理律法。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 利18:3,24-30 迦南人行可憎的事玷污了地，地被吐出。
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+C_new_formal:
+- name: 亂倫禁令（gillui ervah）
+  suggested_type: 主題
+  evidence: 利18:6-18 禁止露骨肉之親的下體，共列12種禁止的親屬關係。希伯來文 gillui ervah（露下體）為性交的委婉語。
+  surfaces:
+  - phrase: 露下體
+  - phrase: 露骨肉之親的下體
+  - phrase: 不可露…的下體
+  target_path: link_folder/主題/亂倫禁令（gillui ervah）.md
+- name: 摩洛（Molech）
+  suggested_type: 文化
+  evidence: 利18:21 禁止使兒女經火歸摩洛。摩洛為亞捫人的國神，可能涉及廟妓或火祭。
+  surfaces:
+  - phrase: 經火歸摩洛
+  - phrase: 摩洛
+  target_path: link_folder/文化/摩洛（Molech）.md
+- name: 同性戀禁令（mishkav zakhar）
+  suggested_type: 主題
+  evidence: 利18:22 不可與男人苟合像與女人一樣，這是可憎的。希伯來文 mishkav zakhar 指男與男同寢。
+  surfaces:
+  - phrase: 與男人苟合
+  - phrase: 男與男同寢
+  target_path: link_folder/主題/同性戀禁令（mishkav zakhar）.md
+- name: 獸交禁令
+  suggested_type: 主題
+  evidence: 利18:23 不可與獸淫合玷污自己，女人也不可站在獸前與牠配合，這是逆性的事。
+  surfaces:
+  - phrase: 與獸淫合
+  - phrase: 逆性的事
+  target_path: link_folder/主題/獸交禁令.md
+- name: 地吐出居民
+  suggested_type: 神學
+  evidence: 利18:25,28 地因居民行可憎的事而被玷污，將居民吐出。
+  surfaces:
+  - phrase: 地吐出
+  - phrase: 地將居民吐出
+  target_path: link_folder/神學/地吐出居民.md
+- name: 埃及與迦南惡俗
+  suggested_type: 背景
+  evidence: 利18:3 不可效法埃及地和迦南地的行為，不可照他們的惡俗行。
+  surfaces:
+  - phrase: 埃及地的行為
+  - phrase: 迦南地的行為
+  - phrase: 不可效法…惡俗
+  target_path: link_folder/背景/埃及與迦南惡俗.md
+- name: 遵行律例就必活著
+  suggested_type: 神學
+  evidence: 利18:5 人若遵行神的律例典章就必因此活著。此節在新舊約多次引用（結20:11,13,21; 尼9:29; 路10:25-28; 羅10:5;
+    加3:12）。
+  surfaces:
+  - phrase: 就必因此活著
+  - phrase: 遵行就必活著
+  target_path: link_folder/神學/遵行律例就必活著.md
+- name: 玷污自己與玷污地
+  suggested_type: 神學
+  evidence: 利18:24-30 行可憎的事玷污自己，也玷污地；地因此吐出居民。
+  surfaces:
+  - phrase: 玷污自己
+  - phrase: 玷污地
+  - phrase: 地也被玷污
+  target_path: link_folder/神學/玷污自己與玷污地.md
+- name: 骨肉之親（she'er besaro）
+  suggested_type: 原文
+  evidence: 利18:6 不可親近骨肉之親露其下體。希伯來文 she'er besaro 指血緣親屬。
+  surfaces:
+  - phrase: 骨肉之親
+  target_path: link_folder/原文/骨肉之親（she'er besaro）.md
+- name: 行經不潔淨時的禁令
+  suggested_type: 主題
+  evidence: 利18:19 不可親近行經不潔淨的婦人露其下體。
+  surfaces:
+  - phrase: 行經不潔淨
+  - phrase: 月經污穢時不可親近
+  target_path: link_folder/主題/行經不潔淨時的禁令.md
+- name: 鄰舍妻行淫
+  suggested_type: 主題
+  evidence: 利18:20 不可與鄰舍的妻行淫玷污自己。
+  surfaces:
+  - phrase: 與鄰舍妻行淫
+  - phrase: 鄰舍的妻
+  target_path: link_folder/主題/鄰舍妻行淫.md
+- name: 不可效法外邦惡俗
+  suggested_type: 神學
+  evidence: 利18:3-4,30 不可效法埃及和迦南的惡俗，要遵行神的律例典章。
+  surfaces:
+  - phrase: 不可效法
+  - phrase: 外邦惡俗
+  - phrase: 不可行可憎的惡俗
+  target_path: link_folder/神學/不可效法外邦惡俗.md
+D_new_candidate:
+- name: 從民中剪除（kareth）的應用
+  suggested_type: 主題
+  evidence: 利18:29 凡行這些可憎之事的，必從民中剪除。
+  surfaces:
+  - phrase: 從民中剪除
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+E_skip: []
