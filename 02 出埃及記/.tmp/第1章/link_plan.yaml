@@ -1,0 +1,247 @@
+book: 出埃及記
+chapter: 1
+A_use_directly:
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1、7、9、12-13、20節；「以色列的眾子」承接創世記；在埃及生養眾多、極其強盛
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: 1、5節；眾子各帶家眷與雅各一同來到埃及；凡從雅各而生的共七十人
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1、5、8節；雅各家寄居之地，也是後來為奴之地
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 5-6、8節；已經在埃及；他和那一代都死了；新王不認識約瑟
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 2節；雅各長子（利亞所生）
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 2節；利亞所生
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 利未
+  suggested_type: 人物
+  evidence: 2節；利亞所生；摩西與亞倫從此支派而出
+  match_type: exact
+  existing_title: 利未
+  existing_path: link_folder/人物/利未.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 2節；利亞所生；主耶穌從他而出
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 3節；利亞所生
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 3節；利亞所生
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 3節；拉結所生
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 但（審判）
+  suggested_type: 人物
+  evidence: 4節；辟拉所生
+  surfaces:
+  - phrase: 但
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 但（審判）
+  existing_path: link_folder/人物/但（審判）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 4節；辟拉所生
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 4節；悉帕所生
+  surfaces:
+  - phrase: 迦得
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 4節；悉帕所生
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 11、19、22節；為他建造積貨城；收生婆向他回話；他吩咐眾民把男孩丟在河裡
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 施弗拉
+  suggested_type: 人物
+  evidence: 15節；希伯來收生婆之一；名字意為「秀麗、佳美」——法老無名，她卻留名
+  match_type: exact
+  existing_title: 施弗拉
+  existing_path: link_folder/人物/施弗拉.md
+- name: 普阿
+  suggested_type: 人物
+  evidence: 15節；希伯來收生婆之一；名字意為「光耀、芳香」
+  match_type: exact
+  existing_title: 普阿
+  existing_path: link_folder/人物/普阿.md
+- name: 比東
+  suggested_type: 地點
+  evidence: 11節；積貨城之一；考證為開羅東北約六十哩的拉塔巴遺址
+  match_type: exact
+  existing_title: 比東
+  existing_path: link_folder/地點/比東.md
+- name: 蘭塞
+  suggested_type: 地點
+  evidence: 11節；積貨城之一；即達巴遺址，曾為許克所斯首都亞華里斯
+  match_type: exact
+  existing_title: 蘭塞
+  existing_path: link_folder/地點/蘭塞.md
+- name: 雅各家七十人與七十五人
+  suggested_type: 解經爭議
+  evidence: 5節；「凡從雅各而生的，共有七十人」——徒7:14 的七十五人依七十士譯本，計算範圍不同
+  surfaces:
+  - phrase: 雅各而生的，共有七十人
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 雅各家七十人與七十五人
+  existing_path: link_folder/解經爭議/雅各家七十人與七十五人.md
+- name: 生養眾多與治理
+  suggested_type: 主題
+  evidence: 7節；「生養眾多、繁茂、強盛、滿了那地」——原文刻意重複創1:28 的祝福用詞
+  surfaces:
+  - phrase: 生養眾多
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 生養眾多與治理
+  existing_path: link_folder/主題/生養眾多與治理.md
+- name: 積貨城制度
+  suggested_type: 歷史
+  evidence: 11節；積貨城兼具儲糧、行政與軍事功能，是各區的地理與活動中心
+  surfaces:
+  - phrase: 積貨城
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 積貨城制度
+  existing_path: link_folder/歷史/積貨城制度.md
+- name: 苦害中仍然增長
+  suggested_type: 神學
+  evidence: 12節；「越發苦害他們，他們越發多起來，越發蔓延」——法老的巧計弄巧成拙
+  surfaces:
+  - phrase: 越發多起來，越發蔓延
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 苦害中仍然增長
+  existing_path: link_folder/神學/苦害中仍然增長.md
+- name: 埃及的強迫勞役與製磚
+  suggested_type: 歷史
+  evidence: 14節；和泥、做磚、田間各樣的工；埃及少雨，磚不經火燒，摻碎草曬乾
+  surfaces:
+  - phrase: 做苦工
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 埃及的強迫勞役與製磚
+  existing_path: link_folder/歷史/埃及的強迫勞役與製磚.md
+- name: 古代收生婆
+  suggested_type: 文化
+  evidence: 15節；收生婆不只助產，也是受孕、妊娠、生產、育嬰全程的顧問
+  surfaces:
+  - phrase: 收生婆
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 古代收生婆
+  existing_path: link_folder/文化/古代收生婆.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 17、21節；「但是收生婆敬畏神」；「收生婆因為敬畏神，神便叫她們成立家室」
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 順服神勝過君王命令
+  suggested_type: 神學
+  evidence: 17節；「不照埃及王的吩咐行」——順從神，不順從人（徒5:29）
+  surfaces:
+  - phrase: 不照埃及王的吩咐行
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 順服神勝過君王命令
+  existing_path: link_folder/神學/順服神勝過君王命令.md
+- name: 神保守救贖計畫中的生命
+  suggested_type: 神學
+  evidence: 17節；「竟存留男孩的性命」——原文含「任令甚至幫助其存活」之意
+  surfaces:
+  - phrase: 存留男孩的性命
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 神保守救贖計畫中的生命
+  existing_path: link_folder/神學/神保守救贖計畫中的生命.md
+- name: 法老與希律殺害男嬰的對照
+  suggested_type: 互文
+  evidence: 22節；法老吩咐眾民把男孩丟在河裡——與希律殺伯利恆男嬰對照（太2:16；啟12:4）
+  surfaces:
+  - phrase: 法老吩咐他的眾民
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 法老與希律殺害男嬰的對照
+  existing_path: link_folder/互文/法老與希律殺害男嬰的對照.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
