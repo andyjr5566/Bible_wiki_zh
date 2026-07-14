@@ -1,0 +1,104 @@
+book: 創世記
+chapter: 39
+A_use_directly:
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 全章；在波提乏家作管家、拒絕色誘、被誣下監，耶和華始終與他同在
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 波提乏
+  suggested_type: 人物
+  evidence: 6、20節；法老的內臣、護衛長，將一切交在約瑟手中，後把他下監
+  match_type: exact
+  existing_title: 波提乏
+  existing_path: link_folder/人物/波提乏.md
+- name: 護衛長波提乏
+  suggested_type: 人物
+  evidence: 1節；埃及人，法老的內臣，從以實瑪利人手下買了約瑟
+  match_type: exact
+  existing_title: 護衛長波提乏
+  existing_path: link_folder/人物/護衛長波提乏.md
+- name: 以實瑪利人
+  suggested_type: 人物
+  evidence: 1節；把約瑟帶下埃及並賣給波提乏的商隊
+  match_type: exact
+  existing_title: 以實瑪利人
+  existing_path: link_folder/人物/以實瑪利人.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 1節；埃及王的稱謂
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 司獄
+  suggested_type: 人物
+  evidence: 21-23節；監獄主管，把所有囚犯交在約瑟手下，凡事不察
+  match_type: exact
+  existing_title: 司獄
+  existing_path: link_folder/人物/司獄.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 2、3、5、21、23節；四次「與約瑟同在」，使他所辦盡都順利
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1-2、5節；約瑟被帶下之地
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 秀雅俊美（約瑟容貌）
+  suggested_type: 原文
+  evidence: 6節；秀雅指體型挺拔，俊美指容貌英俊；為下文色誘埋下伏筆
+  surfaces:
+  - phrase: 秀雅俊美
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 秀雅俊美（約瑟容貌）
+  existing_path: link_folder/原文/秀雅俊美（約瑟容貌）.md
+- name: 同寢
+  suggested_type: 原文
+  evidence: 7、10、12、14節；波提乏之妻反覆的要求，約瑟堅拒
+  match_type: exact
+  existing_title: 同寢
+  existing_path: link_folder/原文/同寢.md
+- name: 得罪神
+  suggested_type: 神學
+  evidence: 9節；約瑟拒絕的核心理由——「我怎能作這大惡，得罪神呢？」
+  match_type: exact
+  existing_title: 得罪神
+  existing_path: link_folder/神學/得罪神.md
+- name: 衣裳（外袍）
+  suggested_type: 原文
+  evidence: 12-13、15-16、18節；約瑟第二次失衣袍，成為誣告的假證物
+  surfaces:
+  - phrase: 衣裳
+    verses:
+    - 12
+    - 13
+    - 15
+    - 16
+    - 18
+  match_type: exact
+  existing_title: 衣裳（外袍）
+  existing_path: link_folder/原文/衣裳（外袍）.md
+- name: 希伯來人（族群稱呼）
+  suggested_type: 文化
+  evidence: 14、17節；含輕蔑意，婦人藉此激起埃及人的種族歧視
+  surfaces:
+  - phrase: 希伯來人
+    verses:
+    - 14
+  - phrase: 希伯來
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 希伯來人（族群稱呼）
+  existing_path: link_folder/文化/希伯來人（族群稱呼）.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

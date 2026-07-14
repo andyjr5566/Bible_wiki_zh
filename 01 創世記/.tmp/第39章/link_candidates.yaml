@@ -1,0 +1,49 @@
+book: 創世記
+chapter: 39
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；在波提乏家作管家、拒絕色誘、被誣下監，耶和華始終與他同在
+  - name: 波提乏
+    type: 人物
+    evidence: 6、20節；法老的內臣、護衛長，將一切交在約瑟手中，後把他下監
+  - name: 護衛長波提乏
+    type: 人物
+    evidence: 1節；埃及人，法老的內臣，從以實瑪利人手下買了約瑟
+  - name: 以實瑪利人
+    type: 人物
+    evidence: 1節；把約瑟帶下埃及並賣給波提乏的商隊
+  - name: 法老
+    type: 人物
+    evidence: 1節；埃及王的稱謂
+  - name: 司獄
+    type: 人物
+    evidence: 21-23節；監獄主管，把所有囚犯交在約瑟手下，凡事不察
+  - name: 耶和華
+    type: 神學
+    evidence: 2、3、5、21、23節；四次「與約瑟同在」，使他所辦盡都順利
+  - name: 埃及
+    type: 地點
+    evidence: 1-2、5節；約瑟被帶下之地
+  - name: 秀雅俊美（約瑟容貌）
+    type: 原文
+    evidence: 6節；秀雅指體型挺拔，俊美指容貌英俊；為下文色誘埋下伏筆
+    surfaces:
+      - {phrase: 秀雅俊美, verses: [6]}
+  - name: 同寢
+    type: 原文
+    evidence: 7、10、12、14節；波提乏之妻反覆的要求，約瑟堅拒
+  - name: 得罪神
+    type: 神學
+    evidence: 9節；約瑟拒絕的核心理由——「我怎能作這大惡，得罪神呢？」
+  - name: 衣裳（外袍）
+    type: 原文
+    evidence: 12-13、15-16、18節；約瑟第二次失衣袍，成為誣告的假證物
+    surfaces:
+      - {phrase: 衣裳, verses: [12, 13, 15, 16, 18]}
+  - name: 希伯來人（族群稱呼）
+    type: 文化
+    evidence: 14、17節；含輕蔑意，婦人藉此激起埃及人的種族歧視
+    surfaces:
+      - {phrase: 希伯來人, verses: [14]}
+      - {phrase: 希伯來, verses: [17]}
