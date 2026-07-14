@@ -1,0 +1,72 @@
+book: 創世記
+chapter: 50
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；伏在父親面上哀哭、薰屍、扶柩歸葬迦南；饒恕哥哥們，並臨終留下骸骨的遺命
+  - name: 雅各
+    type: 人物
+    evidence: 2、12節；醫生用香料薰了「以色列」；雅各的兒子們遵著他所吩咐的辦了
+    surfaces:
+      - {phrase: 以色列, verses: [2]}
+  - name: 法老
+    type: 人物
+    evidence: 4、6-7節；准約瑟上去葬父，並差臣僕與長老同去
+  - name: 以法蓮
+    type: 人物
+    evidence: 23節；約瑟得見以法蓮第三代的子孫
+  - name: 瑪拿西
+    type: 人物
+    evidence: 23節；瑪拿西的孫子、瑪吉的兒子也養在約瑟的膝上
+  - name: 埃及
+    type: 地點
+    evidence: 7、11、14、22、26節；約瑟一生所居之地；他的棺材最後「停在埃及」
+  - name: 迦南地
+    type: 地點
+    evidence: 5、11、13節；雅各歸葬之地；迦南的居民見證了亞達禾場的哀哭
+    surfaces:
+      - {phrase: 迦南, verses: [11]}
+  - name: 歌珊地
+    type: 地點
+    evidence: 8節；婦人孩子與羊群牛群都留在歌珊地
+  - name: 麥比拉洞
+    type: 地點
+    evidence: 13節；幔利前、麥比拉田間的洞——亞伯拉罕向赫人以弗崙買來作墳地
+    surfaces:
+      - {phrase: 麥比拉田間的洞, verses: [13]}
+  - name: 亞達禾場與亞伯麥西
+    type: 地點
+    evidence: 10-11節；約但河外亞達的禾場，哀哭七天；因此那地名叫亞伯麥西（意「埃及人的哀哭」）
+    surfaces:
+      - {phrase: 亞達的禾場, verses: [10]}
+      - {phrase: 亞達禾場上的哀哭, verses: [11]}
+      - {phrase: 亞伯麥西, verses: [11]}
+  - name: 古埃及薰屍與哀悼
+    type: 文化
+    evidence: 2-3、26節；薰屍四十天、埃及人哀哭七十天（王族之禮）；約瑟死後也被薰了，收殮在棺材裡
+    surfaces:
+      - {phrase: 香料薰他父親, verses: [2]}
+      - {phrase: 薰屍的常例是四十天, verses: [3]}
+      - {phrase: 埃及人為他哀哭了七十天, verses: [3]}
+      - {phrase: 香料將他薰了, verses: [26]}
+  - name: 神的主權與人的責任
+    type: 神學
+    evidence: 20節；「從前你們的意思是要害我，但神的意思原是好的」——全卷神護理主題的高峰
+    surfaces:
+      - {phrase: 你們的意思是要害我，但神的意思原是好的, verses: [20]}
+  - name: 神的護理
+    type: 神學
+    evidence: 20、24節；「保全許多人的性命」；「神必定看顧你們」
+    surfaces:
+      - {phrase: 保全許多人的性命, verses: [20]}
+      - {phrase: 神必定看顧你們, verses: [24]}
+  - name: 饒恕與和好
+    type: 神學
+    evidence: 21節；「我必養活你們和你們的婦人孩子」——並用親愛的話安慰他們
+    surfaces:
+      - {phrase: 我必養活你們和你們的婦人孩子, verses: [21]}
+  - name: 約瑟骸骨葬於示劍
+    type: 歷史
+    evidence: 25節；「你們要把我的骸骨從這裡搬上去」——出13:19 由摩西帶出，書24:32 葬於示劍
+    surfaces:
+      - {phrase: 骸骨從這裡搬上去, verses: [25]}

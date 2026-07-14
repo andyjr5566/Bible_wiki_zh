@@ -1,0 +1,129 @@
+book: 創世記
+chapter: 48
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；病中勉強坐起，收納約瑟二子為己子，交叉雙手祝福，立以法蓮在瑪拿西以上；經文多以「以色列」稱之
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 2
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 21
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 全章；帶二子見病中的父親；見父親右手按在以法蓮頭上就不喜悅，欲挪過來
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 1、5、13-14、17、20節；約瑟次子，卻得雅各右手的祝福，後成北國最強的支派
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 1、5、13-14、17、20節；約瑟長子，雅各說他「也必成為一族，也必昌大」，只是兄弟將來比他還大
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 拉結
+  suggested_type: 人物
+  evidence: 7節；雅各在祝福約瑟二子時，回憶拉結死在他眼前，葬在以法他的路上
+  match_type: exact
+  existing_title: 拉結
+  existing_path: link_folder/人物/拉結.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 5節；以法蓮與瑪拿西的出生之地
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 3、7節；全能的神在路斯向雅各顯現之地；也是拉結去世與埋葬之地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 路斯
+  suggested_type: 地點
+  evidence: 3節；伯特利的古名（28:19）——全能的神在此向雅各顯現、賜福與他
+  match_type: exact
+  existing_title: 路斯
+  existing_path: link_folder/地點/路斯.md
+- name: 伯利恆
+  suggested_type: 地點
+  evidence: 7節；即以法他；拉結葬在通往此地的路上
+  match_type: exact
+  existing_title: 伯利恆
+  existing_path: link_folder/地點/伯利恆.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 3節；「全能的神曾在迦南地的路斯向我顯現，賜福與我」——雅各把伯特利之約傳給下一代
+  surfaces:
+  - phrase: 全能的神
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 神的護理
+  suggested_type: 神學
+  evidence: 11、15節；「神又使我得見你的兒子」；「一生牧養我直到今日的神」——聖經第一次稱神為牧者
+  surfaces:
+  - phrase: 神又使我得見你的兒子
+    verses:
+    - 11
+  - phrase: 一生牧養我直到今日的神
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 神的護理
+  existing_path: link_folder/神學/神的護理.md
+- name: 收納以法蓮與瑪拿西
+  suggested_type: 歷史
+  evidence: 5節；「這兩個兒子是我的，正如流便和西緬是我的一樣」——收養之法（近漢摩拉比法典），使約瑟得雙份產業
+  surfaces:
+  - phrase: 以法蓮和瑪拿西這兩個兒子是我的
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 收納以法蓮與瑪拿西
+  existing_path: link_folder/歷史/收納以法蓮與瑪拿西.md
+- name: 以法蓮在瑪拿西以上
+  suggested_type: 神學
+  evidence: 19-20節；「他的兄弟將來比他還大」——祝福次序的反轉；日後以法蓮之名幾成北國的代稱
+  surfaces:
+  - phrase: 他的兄弟將來比他還大
+    verses:
+    - 19
+  - phrase: 立以法蓮在瑪拿西以上
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 以法蓮在瑪拿西以上
+  existing_path: link_folder/神學/以法蓮在瑪拿西以上.md
+- name: 約瑟多得的一分地
+  suggested_type: 解經爭議
+  evidence: 22節；「我從前用弓用刀從亞摩利人手下奪的那塊地」——經文未載此事，各家解法不一
+  surfaces:
+  - phrase: 那塊地
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 約瑟多得的一分地
+  existing_path: link_folder/解經爭議/約瑟多得的一分地.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

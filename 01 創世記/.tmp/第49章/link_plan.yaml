@@ -1,0 +1,112 @@
+book: 創世記
+chapter: 49
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 1-2、7、33節；召聚眾子宣告「日後必遇的事」，囑咐葬事後把腳收在床上，氣絕而死
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 3-4節；長子，本當大有尊榮，卻因上了父親的床而「必不得居首位」
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 5-7節；與利未同以刀劍行殘忍之事（示劍屠城，創34），被宣告分居散住
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 利未
+  suggested_type: 人物
+  evidence: 5-7節；同上；日後這「分散」卻因蒙召事奉而成為全國的祝福
+  match_type: exact
+  existing_title: 利未
+  existing_path: link_folder/人物/利未.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 8-12節；弟兄必讚美他，圭必不離猶大——王權與彌賽亞的應許歸於此支派
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 8
+    - 9
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 22-26節；多結果子的樹枝；受弓箭手苦害仍站立，得天上、地裡、生產乳養的福
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 27節；撕掠的狼，早晨吃所抓的，晚上分所奪的——豫指該支派的勇士傳統
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 30節；麥比拉洞所在之地——列祖合法購得、實際持有的應許地產業
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 30節；亞伯拉罕向赫人以弗崙買來為業作墳地；亞伯拉罕、撒拉、以撒、利百加、利亞皆葬於此
+  surfaces:
+  - phrase: 麥比拉田間的洞
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
+- name: 細羅 (創49_10)
+  suggested_type: 神學
+  evidence: 10節；「直等細羅來到，萬民都必歸順」——傳統譯「賜平安者」，另有「那應得的人」等讀法
+  surfaces:
+  - phrase: 細羅【就是賜平安者】
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 細羅 (創49_10)
+  existing_path: link_folder/神學/細羅 (創49_10).md
+- name: 神的護理
+  suggested_type: 神學
+  evidence: 24節；「以色列的牧者，以色列的磐石──就是雅各的大能者」——約瑟能站立的力量泉源
+  surfaces:
+  - phrase: 以色列的牧者，以色列的磐石─就是雅各的大能者
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 神的護理
+  existing_path: link_folder/神學/神的護理.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: 25節；「那全能者必將天上所有的福，地裡所藏的福，以及生產乳養的福，都賜給你」
+  surfaces:
+  - phrase: 全能者
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 十二支派起源
+  suggested_type: 神學
+  evidence: 28節；「這一切是以色列的十二支派」——並且「都是按著各人的福分為他們祝福」
+  surfaces:
+  - phrase: 以色列的十二支派
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 十二支派起源
+  existing_path: link_folder/神學/十二支派起源.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
