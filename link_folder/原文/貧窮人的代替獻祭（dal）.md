@@ -1,8 +1,7 @@
 ---
 type: 原文
 secondary_types: []
-aliases:
-- 貧窮人的代替獻祭
+aliases: []
 status: formal
 source_scope: collected_only
 ---

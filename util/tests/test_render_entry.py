@@ -163,7 +163,15 @@ class RoundTripTests(unittest.TestCase):
         self._assert_roundtrip("link_folder/原文/施恩座（kapporet）.md")
 
     def test_candidate_entry_roundtrip(self):
-        self._assert_roundtrip("link_folder/主題/樹木.md")
+        # 全庫已無 candidate 條目（舊候選已升級或處置），改用 render 產出的樣本，
+        # 不綁任何實檔——render_entry 仍支援 candidate 路徑，須保持冪等。
+        rendered = render_entry(GOLDEN_CANDIDATE, known_types=KNOWN_TYPES)
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "主題" / f"{GOLDEN_CANDIDATE['name']}.md"
+            path.parent.mkdir(parents=True)
+            path.write_text(rendered, encoding="utf-8")
+            canonical = normalize_entry(path)
+        self.assertEqual(canonical, render_entry(parse_entry(canonical)))
 
 
 class PayloadRejectionTests(unittest.TestCase):

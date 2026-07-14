@@ -32,7 +32,10 @@ BIBLE_BOOKS = list(json.loads(
 ))
 BOOK_RANK = {book: index for index, book in enumerate(BIBLE_BOOKS)}
 FORMAL_H2 = ["定義", "按書卷累積", "主題發展", "相關條目", "來源依據"]
-CANDIDATE_H2 = ["類型", "觸發來源", "目前資料", "相關條目", "待補充"]
+FORMAL_REQUIRED_H2 = ["定義", "按書卷累積", "來源依據"]
+# 候選條目被 link_updates 累積後會多出「按書卷累積」（render_entry 初建時沒有）。
+CANDIDATE_H2 = ["類型", "觸發來源", "目前資料", "按書卷累積", "相關條目", "待補充"]
+CANDIDATE_REQUIRED_H2 = ["類型", "觸發來源", "目前資料", "待補充"]
 PROTECTED_HEADINGS = {
     "定義", "定義／基本資料", "定義／核心摘要", "定定義／核心摘要",
     "核心摘要", "主題發展",
@@ -102,6 +105,19 @@ def validate_homonyms(homonyms, index):
                     f"link_homonyms.yaml:「{label}」target 類型不符："
                     f"{target} 應為 {option['type']}，實為 {entry.get('type')}"
                 )
+    return errors
+
+
+def check_h2(relative, headings, scheme, required, label):
+    """必填 H2 齊備，且出現的 scheme H2 依 scheme 順序排列（選填可缺）。"""
+    errors = []
+    missing = [name for name in required if name not in headings]
+    if missing:
+        errors.append(f"{relative}: {label}缺少必填 H2：{', '.join(missing)}")
+    order = {name: index for index, name in enumerate(scheme)}
+    present = [name for name in headings if name in order]
+    if present != sorted(present, key=lambda name: order[name]):
+        errors.append(f"{relative}: {label} H2 順序不符合 scheme")
     return errors
 
 
@@ -179,19 +195,9 @@ def validate_file(path, strict=False):
         if not re.search(r"^##\s+來源依據\s*$", text, re.M):
             (errors if strict else warnings).append(f"{relative}: 正式條目缺少來源依據")
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
-        # H2 順序檢查：允許缺少非必填 H2（主題發展、相關條目），
-        # 但存在的 H2 必須按 scheme 順序排列。
-        # 必填：定義、按書卷累積、來源依據
-        # 選填：主題發展、相關條目
-        missing_required = [h for h in ["定義", "按書卷累積", "來源依據"] if h not in headings]
-        if missing_required:
-            errors.append(f"{relative}: 正式條目缺少必填 H2：{', '.join(missing_required)}")
-        # 檢查存在的 H2 是否按 scheme 順序
-        order_map = {h: i for i, h in enumerate(FORMAL_H2)}
-        present_in_order = [h for h in headings if h in order_map]
-        expected_order = sorted(present_in_order, key=lambda h: order_map[h])
-        if present_in_order != expected_order:
-            errors.append(f"{relative}: 正式條目 H2 順序不符合 scheme")
+        errors.extend(
+            check_h2(relative, headings, FORMAL_H2, FORMAL_REQUIRED_H2, "正式條目")
+        )
         marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)
                        if m.group("edge") == "start"]
         ordered_keys = sorted(
@@ -204,8 +210,9 @@ def validate_file(path, strict=False):
             errors.append(f"{relative}: 章次必須使用「### 書卷／#### 第N章」結構")
     elif status == "candidate":
         headings = re.findall(r"^##\s+(.+?)\s*$", text, re.M)
-        if headings != CANDIDATE_H2:
-            errors.append(f"{relative}: 候選條目 H2 順序不符合 scheme")
+        errors.extend(
+            check_h2(relative, headings, CANDIDATE_H2, CANDIDATE_REQUIRED_H2, "候選條目")
+        )
     if re.search(r"（保護區）|根據目前已收集資料整理。", text):
         warnings.append(f"{relative}: 仍含模板占位文字")
     return errors, warnings
