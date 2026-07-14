@@ -1,0 +1,154 @@
+book: 出埃及記
+chapter: 11
+A_use_directly:
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1、9節；「耶和華對摩西說」——最後一災的宣告與總結
+  surfaces:
+  - phrase: 耶和華對摩西說
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；向法老宣告第十災；氣忿忿離開
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 1、5、8、10節；長子必死；臣僕要俯伏求摩西離開
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1、4-6、9節；遍地必有大哀號
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 災殃
+  suggested_type: 原文
+  evidence: 1節；原文可直譯為「擊打」，與9:14 的「災殃」不是同一個字
+  surfaces:
+  - phrase: 災殃
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 災殃
+  existing_path: link_folder/原文/災殃.md
+- name: 催逼
+  suggested_type: 原文
+  evidence: 1節；原文含「無法容忍而以暴力驅趕」之意——從「不容」到「催逼」
+  surfaces:
+  - phrase: 催逼
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 催逼
+  existing_path: link_folder/原文/催逼.md
+- name: 傳於後代
+  suggested_type: 神學
+  evidence: 2節；「你要傳於百姓的耳中」——原文是命令式且加了強調
+  surfaces:
+  - phrase: 傳於百姓的耳中
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 傳於後代
+  existing_path: link_folder/神學/傳於後代.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 3-4、10節；祂叫百姓蒙恩；祂親自出去巡行
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 3
+    - 4
+    - 10
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 磨子後的婢女
+  suggested_type: 原文
+  evidence: 5節；推磨是社會最卑賤的工作（賽47:2；士16:21）——上自法老下至女奴，無一例外
+  surfaces:
+  - phrase: 磨子後的婢女
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 磨子後的婢女
+  existing_path: link_folder/原文/磨子後的婢女.md
+- name: 狗不敢搖舌
+  suggested_type: 原文
+  evidence: 7節；原文作「磨利舌頭」；當時的狗是流浪惡犬，脾氣一觸即發——狗不吠表示極度的平靖
+  surfaces:
+  - phrase: 狗也不敢向他們搖舌
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 狗不敢搖舌
+  existing_path: link_folder/原文/狗不敢搖舌.md
+- name: 知道我是耶和華
+  suggested_type: 神學
+  evidence: 7節；「好叫你們知道耶和華是將埃及人和以色列人分別出來」
+  surfaces:
+  - phrase: 知道耶和華是將埃及人和以色列人分別出來
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 知道我是耶和華
+  existing_path: link_folder/神學/知道我是耶和華.md
+- name: 氣忿忿
+  suggested_type: 原文
+  evidence: 8節；原文字義是「鼻孔、怒氣」——摩西的義怒
+  surfaces:
+  - phrase: 氣忿忿
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 氣忿忿
+  existing_path: link_folder/原文/氣忿忿.md
+- name: 神蹟（miraculous signs）
+  suggested_type: 神學
+  evidence: 9節；「使我的奇事在埃及地多起來」
+  surfaces:
+  - phrase: 奇事
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 神蹟（miraculous signs）
+  existing_path: link_folder/神學/神蹟（miraculous signs）.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 10節；與摩西在法老面前行了這一切奇事
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 法老心剛硬
+  suggested_type: 神學
+  evidence: 10節；「耶和華使法老的心剛硬」
+  surfaces:
+  - phrase: 法老的心剛硬
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 法老心剛硬
+  existing_path: link_folder/神學/法老心剛硬.md
+- name: 出埃及為要事奉神
+  suggested_type: 神學
+  evidence: 10節；「不容以色列人出離他的地」
+  surfaces:
+  - phrase: 以色列人出離他的地
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 出埃及為要事奉神
+  existing_path: link_folder/神學/出埃及為要事奉神.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
