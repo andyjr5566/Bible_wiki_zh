@@ -1,0 +1,181 @@
+book: 創世記
+chapter: 37
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 1-2、34節；住迦南地，受兒子欺騙為約瑟悲哀
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 3、13-14節；雅各的新名，愛約瑟過於眾子，差他去看哥哥們
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 全章；十七歲牧羊，做兩夢，被哥哥恨、丟坑、賣到埃及
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 辟拉
+  suggested_type: 人物
+  evidence: 2節；雅各的妾，其子與約瑟常在一處
+  match_type: exact
+  existing_title: 辟拉
+  existing_path: link_folder/人物/辟拉.md
+- name: 悉帕
+  suggested_type: 人物
+  evidence: 2節；雅各的妾，其子與約瑟常在一處
+  match_type: exact
+  existing_title: 悉帕
+  existing_path: link_folder/人物/悉帕.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 21-22、29-30節；長子，設法救約瑟脫離眾人的手
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 26-27節；提議把約瑟賣給以實瑪利人
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 以實瑪利
+  suggested_type: 人物
+  evidence: 25、27-28節；亞伯拉罕與夏甲之子的後裔，商隊買下約瑟
+  surfaces:
+  - phrase: 以實瑪利人
+    verses:
+    - 25
+    - 27
+    - 28
+  match_type: exact
+  existing_title: 以實瑪利
+  existing_path: link_folder/人物/以實瑪利.md
+- name: 米甸
+  suggested_type: 人物
+  evidence: 25、28、36節；亞伯拉罕與基土拉之子的後裔，與以實瑪利人交替稱呼
+  match_type: exact
+  existing_title: 米甸
+  existing_path: link_folder/人物/米甸.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 36節；埃及王的稱謂
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 波提乏
+  suggested_type: 人物
+  evidence: 36節；法老的內臣、護衛長，買下約瑟
+  match_type: exact
+  existing_title: 波提乏
+  existing_path: link_folder/人物/波提乏.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 1節；雅各所住、他父親寄居之地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 12-14節；哥哥們放羊之處
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 12
+    - 13
+    - 14
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 14節；雅各打發約瑟出希伯崙谷
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 多坍
+  suggested_type: 地點
+  evidence: 17節；示劍以北，約瑟遇見哥哥們之處，商道要衝
+  match_type: exact
+  existing_title: 多坍
+  existing_path: link_folder/地點/多坍.md
+- name: 基列
+  suggested_type: 地點
+  evidence: 25節；約但河東山地，出產乳香香料
+  match_type: exact
+  existing_title: 基列
+  existing_path: link_folder/地點/基列.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 25、28、36節；商隊的目的地，約瑟被賣之處
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 彩衣
+  suggested_type: 文化
+  evidence: 3、23、31-32節；長袖有飾的外袍，父愛與長子名分的表記
+  match_type: exact
+  existing_title: 彩衣
+  existing_path: link_folder/文化/彩衣.md
+- name: 二十舍客勒銀子
+  suggested_type: 文化
+  evidence: 28節；五至二十歲男子的估價（利27:5），低於成年奴隸三十舍客勒
+  match_type: exact
+  existing_title: 二十舍客勒銀子
+  existing_path: link_folder/文化/二十舍客勒銀子.md
+- name: 坑中無水
+  suggested_type: 文化
+  evidence: 20、22、24、28-29節；廢棄的旱井／蓄水池，無水可作臨時牢房
+  surfaces:
+  - phrase: 坑
+    verses:
+    - 20
+    - 22
+    - 24
+    - 28
+    - 29
+  match_type: exact
+  existing_title: 坑中無水
+  existing_path: link_folder/文化/坑中無水.md
+- name: 香料乳香沒藥貿易
+  suggested_type: 文化
+  evidence: 25節；基列名產，經多坍商道運往埃及
+  surfaces:
+  - phrase: 香料、乳香、沒藥
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 香料乳香沒藥貿易
+  existing_path: link_folder/文化/香料乳香沒藥貿易.md
+- name: 嫉妒與爭競
+  suggested_type: 神學
+  evidence: 11節；哥哥們都嫉妒他，原文意「因忿怒而臉紅」
+  surfaces:
+  - phrase: 嫉妒
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 嫉妒與爭競
+  existing_path: link_folder/神學/嫉妒與爭競.md
+- name: 約瑟的夢
+  suggested_type: 互文
+  evidence: 20節；哥哥們說「且看他的夢將來怎麼樣」，反倒使夢走向應驗
+  surfaces:
+  - phrase: 夢
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 約瑟的夢
+  existing_path: link_folder/互文/約瑟的夢.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

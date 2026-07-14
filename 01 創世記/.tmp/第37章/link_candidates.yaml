@@ -1,0 +1,86 @@
+book: 創世記
+chapter: 37
+candidates:
+  - name: 雅各
+    type: 人物
+    evidence: 1-2、34節；住迦南地，受兒子欺騙為約瑟悲哀
+  - name: 以色列
+    type: 原文
+    evidence: 3、13-14節；雅各的新名，愛約瑟過於眾子，差他去看哥哥們
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；十七歲牧羊，做兩夢，被哥哥恨、丟坑、賣到埃及
+  - name: 辟拉
+    type: 人物
+    evidence: 2節；雅各的妾，其子與約瑟常在一處
+  - name: 悉帕
+    type: 人物
+    evidence: 2節；雅各的妾，其子與約瑟常在一處
+  - name: 流便
+    type: 人物
+    evidence: 21-22、29-30節；長子，設法救約瑟脫離眾人的手
+  - name: 猶大（雅各之子）
+    type: 人物
+    evidence: 26-27節；提議把約瑟賣給以實瑪利人
+    surfaces:
+      - {phrase: 猶大, verses: [26]}
+  - name: 以實瑪利
+    type: 人物
+    evidence: 25、27-28節；亞伯拉罕與夏甲之子的後裔，商隊買下約瑟
+    surfaces:
+      - {phrase: 以實瑪利人, verses: [25, 27, 28]}
+  - name: 米甸
+    type: 人物
+    evidence: 25、28、36節；亞伯拉罕與基土拉之子的後裔，與以實瑪利人交替稱呼
+  - name: 法老
+    type: 人物
+    evidence: 36節；埃及王的稱謂
+  - name: 波提乏
+    type: 人物
+    evidence: 36節；法老的內臣、護衛長，買下約瑟
+  - name: 迦南地
+    type: 地點
+    evidence: 1節；雅各所住、他父親寄居之地
+  - name: 示劍（城）
+    type: 地點
+    evidence: 12-14節；哥哥們放羊之處
+    surfaces:
+      - {phrase: 示劍, verses: [12, 13, 14]}
+  - name: 希伯崙
+    type: 地點
+    evidence: 14節；雅各打發約瑟出希伯崙谷
+  - name: 多坍
+    type: 地點
+    evidence: 17節；示劍以北，約瑟遇見哥哥們之處，商道要衝
+  - name: 基列
+    type: 地點
+    evidence: 25節；約但河東山地，出產乳香香料
+  - name: 埃及
+    type: 地點
+    evidence: 25、28、36節；商隊的目的地，約瑟被賣之處
+  - name: 彩衣
+    type: 文化
+    evidence: 3、23、31-32節；長袖有飾的外袍，父愛與長子名分的表記
+  - name: 二十舍客勒銀子
+    type: 文化
+    evidence: 28節；五至二十歲男子的估價（利27:5），低於成年奴隸三十舍客勒
+  - name: 坑中無水
+    type: 文化
+    evidence: 20、22、24、28-29節；廢棄的旱井／蓄水池，無水可作臨時牢房
+    surfaces:
+      - {phrase: 坑, verses: [20, 22, 24, 28, 29]}
+  - name: 香料乳香沒藥貿易
+    type: 文化
+    evidence: 25節；基列名產，經多坍商道運往埃及
+    surfaces:
+      - {phrase: 香料、乳香、沒藥, verses: [25]}
+  - name: 嫉妒與爭競
+    type: 神學
+    evidence: 11節；哥哥們都嫉妒他，原文意「因忿怒而臉紅」
+    surfaces:
+      - {phrase: 嫉妒, verses: [11]}
+  - name: 約瑟的夢
+    type: 互文
+    evidence: 20節；哥哥們說「且看他的夢將來怎麼樣」，反倒使夢走向應驗
+    surfaces:
+      - {phrase: 夢, verses: [20]}
