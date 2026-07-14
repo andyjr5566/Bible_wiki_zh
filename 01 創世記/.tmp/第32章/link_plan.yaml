@@ -1,0 +1,144 @@
+book: 創世記
+chapter: 32
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；歸途遇天軍、懼怕以掃、禱告、雅博渡口摔跤改名以色列
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 以掃
+  suggested_type: 人物
+  evidence: 3-20節；雅各所懼的哥哥，帶四百人來迎，雅各備禮解恨
+  match_type: exact
+  existing_title: 以掃
+  existing_path: link_folder/人物/以掃.md
+- name: 拉班
+  suggested_type: 人物
+  evidence: 4節；雅各所寄居之處
+  match_type: exact
+  existing_title: 拉班
+  existing_path: link_folder/人物/拉班.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 9節；雅各禱告所稱我祖之神
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 9節；雅各禱告所稱我父之神
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 神的使者
+  suggested_type: 人物
+  evidence: 1節；歸途遇見雅各，安慰激勵，顯明神的同在
+  match_type: exact
+  existing_title: 神的使者
+  existing_path: link_folder/人物/神的使者.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 9節；雅各禱告所呼求、曾吩咐他回本地的神
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 神的軍兵
+  suggested_type: 神學
+  evidence: 2節；天上軍隊護送雅各，命名瑪哈念
+  match_type: exact
+  existing_title: 神的軍兵
+  existing_path: link_folder/神學/神的軍兵.md
+- name: 面對面見神
+  suggested_type: 神學
+  evidence: 30節；雅各宣稱面對面見神而性命保全
+  surfaces:
+  - phrase: 面對面見了神
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 面對面見神
+  existing_path: link_folder/神學/面對面見神.md
+- name: 瑪哈念
+  suggested_type: 地點
+  evidence: 2節；意二軍兵，神的營與雅各的營相遇之地
+  match_type: exact
+  existing_title: 瑪哈念
+  existing_path: link_folder/地點/瑪哈念.md
+- name: 以東
+  suggested_type: 地點
+  evidence: 3節；即西珥地，以掃所居之地
+  surfaces:
+  - phrase: 西珥地
+    verses:
+    - 3
+  - phrase: 以東地
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 約旦河
+  suggested_type: 地點
+  evidence: 10節；雅各先前只拿杖過此河，如今成兩隊（raw 作「約但河」）
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 約旦河
+  existing_path: link_folder/地點/約旦河.md
+- name: 雅博渡口
+  suggested_type: 地點
+  evidence: 22節；雅各送家眷過此，獨留摔跤之地
+  match_type: exact
+  existing_title: 雅博渡口
+  existing_path: link_folder/地點/雅博渡口.md
+- name: 毗努伊勒
+  suggested_type: 地點
+  evidence: 30-31節；意神之面，雅各摔跤見神命名之地
+  surfaces:
+  - phrase: 毘努伊勒
+    verses:
+    - 30
+    - 31
+  match_type: exact
+  existing_title: 毗努伊勒
+  existing_path: link_folder/地點/毗努伊勒.md
+- name: 解恨之禮
+  suggested_type: 文化
+  evidence: 20-21節；雅各以五百八十頭牲畜禮物解以掃之恨
+  surfaces:
+  - phrase: 禮物
+    verses:
+    - 20
+    - 21
+  match_type: exact
+  existing_title: 解恨之禮
+  existing_path: link_folder/文化/解恨之禮.md
+- name: 摔跤
+  suggested_type: 原文
+  evidence: 24節；一人主動來與雅各摔跤直到黎明
+  match_type: exact
+  existing_title: 摔跤
+  existing_path: link_folder/原文/摔跤.md
+- name: 大腿窩的筋
+  suggested_type: 原文
+  evidence: 25、32節；神摸雅各大腿窩使其扭傷，以色列人因此不吃此筋
+  surfaces:
+  - phrase: 大腿窩
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 大腿窩的筋
+  existing_path: link_folder/原文/大腿窩的筋.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 28、32節；雅各新名，意與神較力得勝、神的王子
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

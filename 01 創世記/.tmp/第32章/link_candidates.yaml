@@ -41,7 +41,9 @@ candidates:
       - {phrase: 以東地, verses: [3]}
   - name: 約旦河
     type: 地點
-    evidence: 10節；雅各先前只拿杖過此河，如今成兩隊
+    evidence: 10節；雅各先前只拿杖過此河，如今成兩隊（raw 作「約但河」）
+    surfaces:
+      - {phrase: 約但河, verses: [10]}
   - name: 雅博渡口
     type: 地點
     evidence: 22節；雅各送家眷過此，獨留摔跤之地
