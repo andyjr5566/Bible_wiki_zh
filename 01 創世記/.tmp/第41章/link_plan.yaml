@@ -1,0 +1,308 @@
+book: 創世記
+chapter: 41
+A_use_directly:
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 14-57節；被召出監為法老解夢，宣告「這不在乎我」，獻積糧之策，三十歲被立為宰相，生瑪拿西、以法蓮
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 全章；同夜兩夢，術士不能解，聽約瑟之言，立他治理埃及全地
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 酒政
+  suggested_type: 人物
+  evidence: 9-13節；因法老作夢想起自己的罪，舉薦約瑟
+  match_type: exact
+  existing_title: 酒政
+  existing_path: link_folder/人物/酒政.md
+- name: 膳長
+  suggested_type: 人物
+  evidence: 10、13節；酒政追述當年同囚、同夢，膳長被掛起來
+  match_type: exact
+  existing_title: 膳長
+  existing_path: link_folder/人物/膳長.md
+- name: 護衛長波提乏
+  suggested_type: 人物
+  evidence: 10、12節；酒政稱約瑟為「護衛長的僕人」
+  surfaces:
+  - phrase: 護衛長
+    verses:
+    - 10
+    - 12
+  match_type: exact
+  existing_title: 護衛長波提乏
+  existing_path: link_folder/人物/護衛長波提乏.md
+- name: 波提非拉
+  suggested_type: 人物
+  evidence: 45、50節；安城的祭司，亞西納之父
+  match_type: exact
+  existing_title: 波提非拉
+  existing_path: link_folder/人物/波提非拉.md
+- name: 亞西納
+  suggested_type: 人物
+  evidence: 45、50節；法老所賜之妻，生瑪拿西、以法蓮
+  match_type: exact
+  existing_title: 亞西納
+  existing_path: link_folder/人物/亞西納.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 51節；約瑟長子，名意「使之忘了」
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 52節；約瑟次子，名意「使之昌盛」
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 8、19、29-30、33-34、36、41、44-46、48、53-57節；全章舞臺，七豐年七荒年之地
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 尼羅河
+  suggested_type: 地點
+  evidence: 1-3、17-18節；原文為尼羅河專用字，埃及的命脈，母牛從河裡上來
+  surfaces:
+  - phrase: 河
+    verses:
+    - 1
+    - 2
+    - 3
+    - 17
+    - 18
+  match_type: exact
+  existing_title: 尼羅河
+  existing_path: link_folder/地點/尼羅河.md
+- name: 監獄（王的囚犯被囚之處）
+  suggested_type: 地點
+  evidence: 10節；護衛長府內的監，酒政與膳長被囚、約瑟服事之處
+  surfaces:
+  - phrase: 監
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 監獄（王的囚犯被囚之處）
+  existing_path: link_folder/地點/監獄（王的囚犯被囚之處）.md
+- name: 安城
+  suggested_type: 地點
+  evidence: 45、50節；開羅東北的太陽神崇拜中心（赫利阿坡利斯），波提非拉為其祭司
+  match_type: exact
+  existing_title: 安城
+  existing_path: link_folder/地點/安城.md
+- name: 各城（積貨城）
+  suggested_type: 地點
+  evidence: 35、48節；豐年糧食收存之處，各城周圍田地的糧食積存在本城
+  surfaces:
+  - phrase: 各城
+    verses:
+    - 35
+    - 48
+  match_type: exact
+  existing_title: 各城（積貨城）
+  existing_path: link_folder/地點/各城（積貨城）.md
+- name: 試煉後的榮耀
+  suggested_type: 神學
+  evidence: 1節；「過了兩年」——神量定苦難的日期，時候滿足纔提拔他的僕人（詩105:17-21）
+  surfaces:
+  - phrase: 兩年
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 試煉後的榮耀
+  existing_path: link_folder/神學/試煉後的榮耀.md
+- name: 豐年與荒年的神聖節奏
+  suggested_type: 神學
+  evidence: 5-7、22-27節；麥子七穗與七個枯穗，豫表七豐年與七荒年，皆由神命定
+  surfaces:
+  - phrase: 麥子
+    verses:
+    - 5
+    - 22
+  - phrase: 穗子
+    verses:
+    - 5
+    - 6
+    - 7
+    - 22
+    - 23
+    - 24
+    - 26
+    - 27
+  match_type: exact
+  existing_title: 豐年與荒年的神聖節奏
+  existing_path: link_folder/神學/豐年與荒年的神聖節奏.md
+- name: 智慧與治理
+  suggested_type: 神學
+  evidence: 33-34節；約瑟建議揀選有聰明有智慧的人，又派官員分層管理
+  surfaces:
+  - phrase: 官員
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 智慧與治理
+  existing_path: link_folder/神學/智慧與治理.md
+- name: 神的靈在人身上
+  suggested_type: 神學
+  evidence: 38節；法老認出「有神的靈在他裡頭」——舊約首次如此稱人
+  surfaces:
+  - phrase: 神的靈
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 神的靈在人身上
+  existing_path: link_folder/神學/神的靈在人身上.md
+- name: 尼羅河與埃及農業
+  suggested_type: 歷史
+  evidence: 2、18節；牛浸在水中避烈日蒼蠅，在蘆荻（菖蒲）中吃草；尼羅河年年氾濫帶來肥土
+  surfaces:
+  - phrase: 蘆荻
+    verses:
+    - 2
+    - 18
+  match_type: exact
+  existing_title: 尼羅河與埃及農業
+  existing_path: link_folder/歷史/尼羅河與埃及農業.md
+- name: 東風（西洛可、卡姆辛）
+  suggested_type: 歷史
+  evidence: 6、23、27節；春末夏初從東邊沙漠吹來的灼熱大風，毀壞農作物（何13:15；賽40:7）
+  surfaces:
+  - phrase: 東風
+    verses:
+    - 6
+    - 23
+    - 27
+  match_type: exact
+  existing_title: 東風（西洛可、卡姆辛）
+  existing_path: link_folder/歷史/東風（西洛可、卡姆辛）.md
+- name: 古埃及術士與博士
+  suggested_type: 歷史
+  evidence: 8、24節；術士研究祕術典籍、博士為星象學家，被埃及人視為解夢專家，卻無人能解
+  surfaces:
+  - phrase: 術士和博士
+    verses:
+    - 8
+  - phrase: 術士
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 古埃及術士與博士
+  existing_path: link_folder/歷史/古埃及術士與博士.md
+- name: 埃及宰相職位（維齊爾）
+  suggested_type: 歷史
+  evidence: 40節；「掌管我的家」即大維齊爾（首相）兼王室物業總監，惟寶座上法老比他大
+  surfaces:
+  - phrase: 家
+    verses:
+    - 40
+  - phrase: 寶座
+    verses:
+    - 40
+  match_type: exact
+  existing_title: 埃及宰相職位（維齊爾）
+  existing_path: link_folder/歷史/埃及宰相職位（維齊爾）.md
+- name: 埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）
+  suggested_type: 歷史
+  evidence: 42-43節；細麻衣為埃及朝服，金鍊表榮寵，副車為僅次於法老的座駕
+  surfaces:
+  - phrase: 細麻衣
+    verses:
+    - 42
+  - phrase: 金鍊
+    verses:
+    - 42
+  - phrase: 副車
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）
+  existing_path: link_folder/歷史/埃及宮廷禮儀（剃頭、刮臉、賜名、賜戒指、細麻衣、金鍊、副車）.md
+- name: 積貨城制度
+  suggested_type: 歷史
+  evidence: 35、49、56-57節；積蓄五穀如同海沙，荒年糶糧、各地來糴糧
+  surfaces:
+  - phrase: 五穀
+    verses:
+    - 35
+    - 49
+  - phrase: 糶糧
+    verses:
+    - 56
+  - phrase: 糴糧
+    verses:
+    - 57
+  match_type: exact
+  existing_title: 積貨城制度
+  existing_path: link_folder/歷史/積貨城制度.md
+- name: 埃及人剃頭刮臉習俗
+  suggested_type: 文化
+  evidence: 14節；埃及男人不留鬚，朝見法老必須剃頭刮臉；希伯來人則留鬚
+  surfaces:
+  - phrase: 剃頭
+    verses:
+    - 14
+  - phrase: 刮臉
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 埃及人剃頭刮臉習俗
+  existing_path: link_folder/文化/埃及人剃頭刮臉習俗.md
+- name: 埃及印璽戒指代表權柄
+  suggested_type: 文化
+  evidence: 42節；打印的戒指是認證文件的印璽，掌權的標誌（斯3:10；8:2）
+  surfaces:
+  - phrase: 打印的戒指
+    verses:
+    - 42
+  match_type: exact
+  existing_title: 埃及印璽戒指代表權柄
+  existing_path: link_folder/文化/埃及印璽戒指代表權柄.md
+- name: 喝道「跪下」的禮儀
+  suggested_type: 文化
+  evidence: 43節；喝道的在前呼叫「跪下」，此詞由埃及文轉來，含讓開、屈膝、歡呼之意
+  surfaces:
+  - phrase: 喝道的
+    verses:
+    - 43
+  - phrase: 跪下
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 喝道「跪下」的禮儀
+  existing_path: link_folder/文化/喝道「跪下」的禮儀.md
+- name: 撒發那忒巴內亞
+  suggested_type: 原文
+  evidence: 45節；法老所賜埃及名，意「奧祕的啟示者／世界的救主／生命的糧」
+  match_type: exact
+  existing_title: 撒發那忒巴內亞
+  existing_path: link_folder/原文/撒發那忒巴內亞.md
+- name: 瑪拿西（使之忘了）
+  suggested_type: 原文
+  evidence: 51節；「神使我忘了一切的困苦和我父的全家」
+  surfaces:
+  - phrase: 使之忘了
+    verses:
+    - 51
+  match_type: exact
+  existing_title: 瑪拿西（使之忘了）
+  existing_path: link_folder/原文/瑪拿西（使之忘了）.md
+- name: 以法蓮（使之昌盛）
+  suggested_type: 原文
+  evidence: 52節；「神使我在受苦的地方昌盛」，原文另意「雙倍的果子」
+  surfaces:
+  - phrase: 使之昌盛
+    verses:
+    - 52
+  match_type: exact
+  existing_title: 以法蓮（使之昌盛）
+  existing_path: link_folder/原文/以法蓮（使之昌盛）.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
