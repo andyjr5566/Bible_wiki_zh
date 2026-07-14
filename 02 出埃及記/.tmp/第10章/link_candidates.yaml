@@ -1,0 +1,118 @@
+book: 出埃及記
+chapter: 10
+candidates:
+  - name: 耶和華的話臨到
+    type: 神學
+    evidence: 1、12、21節；「耶和華對摩西說」——三災的開端
+    surfaces:
+      - {phrase: 耶和華對摩西說, verses: [1, 12, 21]}
+  - name: 摩西
+    type: 人物
+    evidence: 全章；伸杖行蝗災與黑暗之災；與法老最後決裂
+  - name: 法老
+    type: 人物
+    evidence: 全章；第三、四次妥協；最後下逐客令
+  - name: 亞倫
+    type: 人物
+    evidence: 3、8、16節；與摩西同去見法老
+  - name: 埃及
+    type: 地點
+    evidence: 2、6、12-15、19、21-22節；遍地受災
+  - name: 以色列
+    type: 原文
+    evidence: 20、23節；家中都有亮光
+  - name: 法老心剛硬
+    type: 神學
+    evidence: 1、20、27節；「我使他和他臣僕的心剛硬」——這次連臣僕也一併提及
+    surfaces:
+      - {phrase: 剛硬, verses: [1, 20, 27]}
+  - name: 神蹟（miraculous signs）
+    type: 神學
+    evidence: 1-2節；原文是「記號」——目的是叫人認識神
+    surfaces:
+      - {phrase: 神蹟, verses: [1, 2]}
+  - name: 傳於後代
+    type: 神學
+    evidence: 2節；「傳於你兒子和你孫子的耳中」——敘述式神學（申4:9；6:7；詩78:3-4）
+    surfaces:
+      - {phrase: 傳於你兒子和你孫子的耳中, verses: [2]}
+  - name: 耶和華聖名的啟示
+    type: 神學
+    evidence: 2節；「好叫你們知道我是耶和華」
+    surfaces:
+      - {phrase: 好叫你們知道我是耶和華, verses: [2]}
+  - name: 希伯來人的神
+    type: 神學
+    evidence: 3節；「耶和華─希伯來人的神」
+    surfaces:
+      - {phrase: 耶和華─希伯來人的神, verses: [3]}
+  - name: 出埃及為要事奉神
+    type: 神學
+    evidence: 3、7-8、11、24、26節；全章反覆出現的核心要求
+    surfaces:
+      - {phrase: 容我的百姓去，好事奉我, verses: [3]}
+      - {phrase: 事奉耶和華─他們的神, verses: [7]}
+      - {phrase: 事奉耶和華─你們的神, verses: [8]}
+      - {phrase: 事奉耶和華, verses: [11, 24, 26]}
+      - {phrase: 事奉, verses: [26]}
+  - name: 蝗災
+    type: 歷史
+    evidence: 4-6、12-15、19節；第八災；蝗蟲在近東是極常見的禍患，但在埃及較少
+    surfaces:
+      - {phrase: 蝗蟲, verses: [4, 6, 12, 13, 14, 15, 19]}
+      - {phrase: 遮滿地面, verses: [5]}
+  - name: 網羅
+    type: 原文
+    evidence: 7節；原文本指捕鳥獸的誘餌、陷阱；法老的臣僕首次公開勸諫
+    surfaces:
+      - {phrase: 網羅, verses: [7]}
+  - name: 神的手段
+    type: 神學
+    evidence: 7節；「埃及已經敗壞了，你還不知道嗎？」——臣僕比法老更早看清現實
+    surfaces:
+      - {phrase: 埃及已經敗壞了, verses: [7]}
+  - name: 在曠野向神守節
+    type: 神學
+    evidence: 9節；「我們務要向耶和華守節」——朝聖式的崇拜，全家大小都要去
+    surfaces:
+      - {phrase: 向耶和華守節, verses: [9]}
+  - name: 東風與西風
+    type: 原文
+    evidence: 13、19節；東風從阿拉伯沙漠颳來蝗蟲，西風（原文「海風」）把牠們吹入紅海
+    surfaces:
+      - {phrase: 東風, verses: [13]}
+      - {phrase: 西風, verses: [19]}
+      - {phrase: 颳起, verses: [19]}
+  - name: 摸得著的黑暗
+    type: 原文
+    evidence: 15、21節；蝗蟲遮天使「地都黑暗了」；黑暗之災「似乎摸得著」（yames）
+    surfaces:
+      - {phrase: 黑暗了, verses: [15]}
+      - {phrase: 黑暗似乎摸得著, verses: [21]}
+  - name: 連一蹄也不留下
+    type: 神學
+    evidence: 15、26節；蝗蟲「連一點青的也沒有留下」；摩西「連一蹄也不留下」
+    surfaces:
+      - {phrase: 連一點青的也沒有留下, verses: [15]}
+      - {phrase: 連一蹄也不留下, verses: [26]}
+  - name: 耶和華
+    type: 神學
+    evidence: 13、16-19、25、27節；祂掌管風、蝗蟲與黑暗
+    surfaces:
+      - {phrase: 耶和華, verses: [13, 16, 17, 18, 19, 20, 25, 27]}
+  - name: 黑暗之災
+    type: 歷史
+    evidence: 21節；第九災；沒有預告；對付埃及的太陽神
+    surfaces:
+      - {phrase: 黑暗, verses: [21]}
+  - name: 分別百姓
+    type: 神學
+    evidence: 23節；「惟有以色列人家中都有亮光」
+    surfaces:
+      - {phrase: 以色列人家中都有亮光, verses: [23]}
+  - name: 再見面必死
+    type: 歷史
+    evidence: 28-29節；法老下逐客令並發出死亡威脅；摩西回答「你說得好」
+    surfaces:
+      - {phrase: 不要再見我的面, verses: [28]}
+      - {phrase: 你說得好, verses: [29]}
