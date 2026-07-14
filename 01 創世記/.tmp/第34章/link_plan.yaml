@@ -1,0 +1,173 @@
+book: 創世記
+chapter: 34
+A_use_directly:
+- name: 雅各
+  suggested_type: 人物
+  evidence: 全章；聽見女兒受辱卻閉口不言，事後只顧自身臭名
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 底拿
+  suggested_type: 人物
+  evidence: 1-26節；利亞所生之女，出去見那地的女子們而遭示劍玷辱
+  match_type: exact
+  existing_title: 底拿
+  existing_path: link_folder/人物/底拿.md
+- name: 哈抹
+  suggested_type: 人物
+  evidence: 2-26節；希未人，那地的主，示劍之父，提議通婚同住
+  match_type: exact
+  existing_title: 哈抹
+  existing_path: link_folder/人物/哈抹.md
+- name: 示劍（哈抹之子）
+  suggested_type: 人物
+  evidence: 2-26節；那地的主之子，玷辱底拿後求娶，終被西緬利未所殺
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 11
+    - 13
+    - 18
+    - 20
+    - 24
+    - 26
+  match_type: exact
+  existing_title: 示劍（哈抹之子）
+  existing_path: link_folder/人物/示劍（哈抹之子）.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 25、30節；底拿的哥哥，屠城報復的主謀之一
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 利未
+  suggested_type: 人物
+  evidence: 25、30節；底拿的哥哥，屠城報復的主謀之一
+  match_type: exact
+  existing_title: 利未
+  existing_path: link_folder/人物/利未.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 30節；雅各懼怕在其中有了臭名的那地居民
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 30節；與迦南人並列的那地居民
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 希未人
+  suggested_type: 歷史
+  evidence: 2節；迦南地一族，哈抹與示劍所屬
+  match_type: exact
+  existing_title: 希未人
+  existing_path: link_folder/歷史/希未人.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 10、21、30節；哈抹提議「這地都在你們面前」，雅各懼在此地留臭名
+  surfaces:
+  - phrase: 這地
+    verses:
+    - 10
+    - 21
+    - 30
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 古代近東婚姻習俗
+  suggested_type: 歷史
+  evidence: 9節；彼此結親、互嫁互娶，古代近東結盟通婚之法
+  surfaces:
+  - phrase: 彼此結親
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 古代近東婚姻習俗
+  existing_path: link_folder/歷史/古代近東婚姻習俗.md
+- name: 城門口公共場合
+  suggested_type: 歷史
+  evidence: 20、24節；古時城門口為公眾聚集、處理買賣訴訟之地
+  surfaces:
+  - phrase: 本城的門口
+    verses:
+    - 20
+  - phrase: 城門出入
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 城門口公共場合
+  existing_path: link_folder/歷史/城門口公共場合.md
+- name: 聘金與禮物
+  suggested_type: 原文
+  evidence: 12節；聘金付予女方父母，禮物為新婦嫁妝
+  surfaces:
+  - phrase: 聘金和禮物
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 聘金與禮物
+  existing_path: link_folder/原文/聘金與禮物.md
+- name: 割禮之約
+  suggested_type: 神學
+  evidence: 14-24節；神與亞伯拉罕立約的記號（創17:9-14），此處被降格為報復工具
+  surfaces:
+  - phrase: 割禮
+    verses:
+    - 14
+    - 15
+    - 17
+    - 22
+    - 24
+  match_type: exact
+  existing_title: 割禮之約
+  existing_path: link_folder/神學/割禮之約.md
+- name: 聖約子民與世界的界限
+  suggested_type: 神學
+  evidence: 16、22節；「兩下成為一樣的人民」——聖約群體與世界界限被模糊
+  surfaces:
+  - phrase: 一樣的人民
+    verses:
+    - 16
+    - 22
+  match_type: exact
+  existing_title: 聖約子民與世界的界限
+  existing_path: link_folder/神學/聖約子民與世界的界限.md
+- name: 以惡報惡的罪
+  suggested_type: 神學
+  evidence: 27節；擄掠那城，報復程度遠過於示劍的過失
+  surfaces:
+  - phrase: 擄掠那城
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 以惡報惡的罪
+  existing_path: link_folder/神學/以惡報惡的罪.md
+- name: 雅各閉口不言的屬靈狀態
+  suggested_type: 解經爭議
+  evidence: 5節；雅各聽見女兒被玷污卻閉口不言，屬靈領袖缺位
+  surfaces:
+  - phrase: 閉口不言
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 雅各閉口不言的屬靈狀態
+  existing_path: link_folder/解經爭議/雅各閉口不言的屬靈狀態.md
+B_needs_update:
+- name: 利亞
+  suggested_type: 人物
+  evidence: 1節；底拿之母
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
