@@ -1,0 +1,113 @@
+book: 出埃及記
+chapter: 9
+candidates:
+  - name: 耶和華
+    type: 神學
+    evidence: 1、5-6、8、12-13、22-23、28-30、33、35節；本章的敘事骨架
+    surfaces:
+      - {phrase: 耶和華, verses: [1, 5, 6, 8, 12, 22, 23, 28, 29, 30, 33, 35]}
+  - name: 摩西
+    type: 人物
+    evidence: 全章；行瘡災與雹災；為法老代求
+  - name: 法老
+    type: 人物
+    evidence: 全章；首次認罪，卻在災止後越發犯罪
+  - name: 亞倫
+    type: 人物
+    evidence: 8、10、27節；與摩西同取爐灰
+  - name: 埃及
+    type: 地點
+    evidence: 9、11、18、22-25節；遍地受災
+  - name: 以色列
+    type: 原文
+    evidence: 4、6-7、35節；牲畜一個都沒有死
+  - name: 田間
+    type: 地點
+    evidence: 3、19、21、25節；災難只臨到田間的人和牲畜——「催進來」的就得存活
+  - name: 希伯來人的神
+    type: 神學
+    evidence: 1、13節；「耶和華─希伯來人的神」——「希伯來」意為「過河的人、從那邊來的人」
+    surfaces:
+      - {phrase: 耶和華─希伯來人的神, verses: [1, 13]}
+  - name: 耶和華的手
+    type: 神學
+    evidence: 3節；全舊約有二百多次以「手」表達神的權能
+    surfaces:
+      - {phrase: 耶和華的手, verses: [3]}
+  - name: 第五災：重重的瘟疫
+    type: 神學
+    evidence: 3節；許多學者認為可能是炭疽（anthrax）
+    surfaces:
+      - {phrase: 重重的瘟疫, verses: [3]}
+  - name: 分別歌珊地
+    type: 神學
+    evidence: 4、26節；牲畜的分別與地土的分別
+    surfaces:
+      - {phrase: 耶和華要分別以色列的牲畜和埃及的牲畜, verses: [4]}
+      - {phrase: 以色列人所住的歌珊地沒有冰雹, verses: [26]}
+  - name: 磚窯
+    type: 文化
+    evidence: 8、10節；「爐灰」原文指燒窯的灰；埃及人有時散灰作為遏止瘟疫的法術儀式
+    surfaces:
+      - {phrase: 爐灰, verses: [8, 10]}
+  - name: 起泡的瘡
+    type: 原文
+    evidence: 9-10節；原文「紅腫之處」接著發出膿頭或潰瘍；申28:27 稱之為「埃及的瘡」
+  - name: 耶和華使法老的心剛硬
+    type: 神學
+    evidence: 12節；這是災難真正發生後，第一次用這個措辭
+    surfaces:
+      - {phrase: 耶和華使法老的心剛硬, verses: [12]}
+  - name: 普天下沒有像我的
+    type: 神學
+    evidence: 14節；「一切的災殃」原文含「你的心」；降災的第一個目的
+    surfaces:
+      - {phrase: 一切的災殃, verses: [14]}
+      - {phrase: 叫你知道在普天下沒有像我的, verses: [14]}
+  - name: 神大能與名的傳遍
+    type: 神學
+    evidence: 16節；羅9:17 引用此節；「叫你存立」原文是「維持你的性命」，不是「創造你」
+    surfaces:
+      - {phrase: 我的大能, verses: [16]}
+      - {phrase: 我的名傳遍天下, verses: [16]}
+  - name: 敬畏耶和華的話
+    type: 神學
+    evidence: 20-21節；埃及人中首次出現「懼怕耶和華」——分野在於是否把神的話放在心上
+    surfaces:
+      - {phrase: 懼怕耶和華這話, verses: [20]}
+      - {phrase: 不把耶和華這話放在心上, verses: [21]}
+  - name: 法老的認罪
+    type: 神學
+    evidence: 27節；「這一次我犯了罪了」——出於災害的認罪，非出於自責
+    surfaces:
+      - {phrase: 這一次我犯了罪了, verses: [27]}
+  - name: 公義與邪惡的對立
+    type: 神學
+    evidence: 27節；司法用辭——耶和華是清白的，法老和他的百姓罪名成立
+    surfaces:
+      - {phrase: 耶和華是公義的；我和我的百姓是邪惡的, verses: [27]}
+  - name: 全地都是屬耶和華的
+    type: 神學
+    evidence: 29節；摩西宣告世界的統治者究竟是誰（詩24:1）
+    surfaces:
+      - {phrase: 叫你知道全地都是屬耶和華的, verses: [29]}
+  - name: 埃及的祭司服飾（亞麻）
+    type: 文化
+    evidence: 31節；埃及的祭司全穿麻衣；埃及所產細麻布聞名世界
+    surfaces:
+      - {phrase: 麻, verses: [31]}
+  - name: 出埃及時序（一月底二月初）
+    type: 文化
+    evidence: 32節；大麥吐穗、麻開花而小麥粗麥未長成——推知雹災在一月底至二月初
+    surfaces:
+      - {phrase: 還沒有長成, verses: [32]}
+  - name: 摩西的代求
+    type: 神學
+    evidence: 33節；出城向耶和華舉手禱告——舊約祈禱姿勢的特徵之一
+    surfaces:
+      - {phrase: 禱告, verses: [33]}
+  - name: 法老第二次轉硬
+    type: 歷史
+    evidence: 34節；「見雨和雹與雷止住，就越發犯罪」
+    surfaces:
+      - {phrase: 法老見雨和雹與雷止住，就越發犯罪, verses: [34]}
