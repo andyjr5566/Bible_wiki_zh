@@ -1,0 +1,162 @@
+book: 創世記
+chapter: 40
+A_use_directly:
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 全章；在監中伺候二臣、為他們解夢、求酒政記念他
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 酒政_酒政長
+  suggested_type: 人物
+  evidence: 1-2、5、9、13、20-21、23節；掌王的飲料，夢見葡萄枝，三日官復原職，卻忘了約瑟
+  surfaces:
+  - phrase: 酒政
+    verses:
+    - 1
+    - 2
+    - 5
+    - 9
+    - 13
+    - 20
+    - 21
+    - 23
+  match_type: exact
+  existing_title: 酒政_酒政長
+  existing_path: link_folder/人物/酒政_酒政長.md
+- name: 膳長
+  suggested_type: 人物
+  evidence: 1-2、5、16、20、22節；主理王的膳食，夢見三筐白餅，三日被掛木頭上
+  match_type: exact
+  existing_title: 膳長
+  existing_path: link_folder/人物/膳長.md
+- name: 護衛長_波提乏
+  suggested_type: 人物
+  evidence: 3-4節；把二臣交給約瑟伺候
+  surfaces:
+  - phrase: 護衛長
+    verses:
+    - 3
+    - 4
+  match_type: exact
+  existing_title: 護衛長_波提乏
+  existing_path: link_folder/人物/護衛長_波提乏.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 2、7、11、13-14、17、19-21節；埃及王，生日設筵，成就二夢
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1節；埃及王的酒政和膳長得罪其主
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 監_監牢_坑
+  suggested_type: 地點
+  evidence: 3、14-15節；護衛長府內的監，約瑟被囚之地（15節原文另作「坑、地牢」）
+  surfaces:
+  - phrase: 監
+    verses:
+    - 3
+    - 15
+  - phrase: 監牢
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 監_監牢_坑
+  existing_path: link_folder/地點/監_監牢_坑.md
+- name: 解夢出於神
+  suggested_type: 神學
+  evidence: 8節；約瑟宣告「解夢不是出於神嗎？」把榮耀歸給神
+  surfaces:
+  - phrase: 解夢不是出於神嗎？
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 解夢出於神
+  existing_path: link_folder/神學/解夢出於神.md
+- name: 葡萄樹_葡萄_杯
+  suggested_type: 神學
+  evidence: 9-11節；酒政夢中的葡萄樹、葡萄與法老的杯
+  surfaces:
+  - phrase: 葡萄樹
+    verses:
+    - 9
+  - phrase: 葡萄
+    verses:
+    - 10
+    - 11
+  - phrase: 杯
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 葡萄樹_葡萄_杯
+  existing_path: link_folder/神學/葡萄樹_葡萄_杯.md
+- name: 三根枝子
+  suggested_type: 原文
+  evidence: 10、12節；三根枝子就是三天
+  match_type: exact
+  existing_title: 三根枝子
+  existing_path: link_folder/原文/三根枝子.md
+- name: 三天
+  suggested_type: 原文
+  evidence: 12-13、18-19節；解夢的時間指標
+  match_type: exact
+  existing_title: 三天
+  existing_path: link_folder/原文/三天.md
+- name: 三筐白餅
+  suggested_type: 原文
+  evidence: 16、18節；膳長夢中頭頂三筐白餅，三個筐子就是三天
+  surfaces:
+  - phrase: 三筐白餅
+    verses:
+    - 16
+  - phrase: 三個筐子
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 三筐白餅
+  existing_path: link_folder/原文/三筐白餅.md
+- name: 飛鳥吃食物_吃肉
+  suggested_type: 神學
+  evidence: 17、19節；飛鳥吃筐中食物，日後也要吃膳長身上的肉
+  surfaces:
+  - phrase: 飛鳥
+    verses:
+    - 17
+    - 19
+  match_type: exact
+  existing_title: 飛鳥吃食物_吃肉
+  existing_path: link_folder/神學/飛鳥吃食物_吃肉.md
+- name: 掛在木頭上_懸屍示眾
+  suggested_type: 歷史
+  evidence: 19節；極刑，屍體不得入土，蒙羞示眾（申21:22-23；書10:26）
+  surfaces:
+  - phrase: 木頭
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 掛在木頭上_懸屍示眾
+  existing_path: link_folder/歷史/掛在木頭上_懸屍示眾.md
+- name: 生日筵席
+  suggested_type: 歷史
+  evidence: 20節；古代帝王生日設宴大赦，成為二夢應驗之日
+  surfaces:
+  - phrase: 生日
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 生日筵席
+  existing_path: link_folder/歷史/生日筵席.md
+- name: 希伯來人之地
+  suggested_type: 地點
+  evidence: 15節；約瑟自述被拐之處，不說迦南地
+  match_type: exact
+  existing_title: 希伯來人之地
+  existing_path: link_folder/地點/希伯來人之地.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

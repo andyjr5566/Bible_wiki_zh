@@ -1,0 +1,73 @@
+book: 創世記
+chapter: 40
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；在監中伺候二臣、為他們解夢、求酒政記念他
+  - name: 酒政_酒政長
+    type: 人物
+    evidence: 1-2、5、9、13、20-21、23節；掌王的飲料，夢見葡萄枝，三日官復原職，卻忘了約瑟
+    surfaces:
+      - {phrase: 酒政, verses: [1, 2, 5, 9, 13, 20, 21, 23]}
+  - name: 膳長
+    type: 人物
+    evidence: 1-2、5、16、20、22節；主理王的膳食，夢見三筐白餅，三日被掛木頭上
+  - name: 護衛長_波提乏
+    type: 人物
+    evidence: 3-4節；把二臣交給約瑟伺候
+    surfaces:
+      - {phrase: 護衛長, verses: [3, 4]}
+  - name: 法老
+    type: 人物
+    evidence: 2、7、11、13-14、17、19-21節；埃及王，生日設筵，成就二夢
+  - name: 埃及
+    type: 地點
+    evidence: 1節；埃及王的酒政和膳長得罪其主
+  - name: 監_監牢_坑
+    type: 地點
+    evidence: 3、14-15節；護衛長府內的監，約瑟被囚之地（15節原文另作「坑、地牢」）
+    surfaces:
+      - {phrase: 監, verses: [3, 15]}
+      - {phrase: 監牢, verses: [14]}
+  - name: 解夢出於神
+    type: 神學
+    evidence: 8節；約瑟宣告「解夢不是出於神嗎？」把榮耀歸給神
+    surfaces:
+      - {phrase: 解夢不是出於神嗎？, verses: [8]}
+  - name: 葡萄樹_葡萄_杯
+    type: 神學
+    evidence: 9-11節；酒政夢中的葡萄樹、葡萄與法老的杯
+    surfaces:
+      - {phrase: 葡萄樹, verses: [9]}
+      - {phrase: 葡萄, verses: [10, 11]}
+      - {phrase: 杯, verses: [11]}
+  - name: 三根枝子
+    type: 原文
+    evidence: 10、12節；三根枝子就是三天
+  - name: 三天
+    type: 原文
+    evidence: 12-13、18-19節；解夢的時間指標
+  - name: 三筐白餅
+    type: 原文
+    evidence: 16、18節；膳長夢中頭頂三筐白餅，三個筐子就是三天
+    surfaces:
+      - {phrase: 三筐白餅, verses: [16]}
+      - {phrase: 三個筐子, verses: [18]}
+  - name: 飛鳥吃食物_吃肉
+    type: 神學
+    evidence: 17、19節；飛鳥吃筐中食物，日後也要吃膳長身上的肉
+    surfaces:
+      - {phrase: 飛鳥, verses: [17, 19]}
+  - name: 掛在木頭上_懸屍示眾
+    type: 歷史
+    evidence: 19節；極刑，屍體不得入土，蒙羞示眾（申21:22-23；書10:26）
+    surfaces:
+      - {phrase: 木頭, verses: [19]}
+  - name: 生日筵席
+    type: 歷史
+    evidence: 20節；古代帝王生日設宴大赦，成為二夢應驗之日
+    surfaces:
+      - {phrase: 生日, verses: [20]}
+  - name: 希伯來人之地
+    type: 地點
+    evidence: 15節；約瑟自述被拐之處，不說迦南地
