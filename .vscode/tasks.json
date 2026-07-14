@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run_chapter",
+      "type": "shell",
+      "command": "python util/run_chapter.py ${input:book} ${input:chapter}",
+      "isBackground": false,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "build_link_index",
+      "type": "shell",
+      "command": "python util/build_link_index.py",
+      "isBackground": false,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "verify_links",
+      "type": "shell",
+      "command": "python util/verify_links.py",
+      "isBackground": false,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "validate_knowledge_base",
+      "type": "shell",
+      "command": "python util/validate_knowledge_base.py",
+      "isBackground": false,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "link_quality_check",
+      "type": "shell",
+      "command": "python util/link_quality_check.py",
+      "isBackground": false,
+      "group": "build",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "book",
+      "type": "promptString",
+      "description": "書卷代碼（如 出埃及記）"
+    },
+    {
+      "id": "chapter",
+      "type": "promptString",
+      "description": "章節編號（如 10）"
+    }
+  ]
+}

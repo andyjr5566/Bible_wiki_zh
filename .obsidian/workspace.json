@@ -13,22 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 創世記/第48章.md",
+                "file": "03 利未記/第14章.md",
                 "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "第48章"
+              "title": "第14章"
             }
           }
         ]
@@ -104,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 創世記/第48章.md",
+                "file": "03 利未記/第14章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "第48章 的反向連結"
+              "title": "第14章 的反向連結"
             }
           },
           {
@@ -123,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 創世記/第48章.md",
+                "file": "03 利未記/第14章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "第48章 的對外連結"
+              "title": "第14章 的對外連結"
             }
           },
           {
@@ -166,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 創世記/第48章.md",
+                "file": "03 利未記/第14章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第48章 的大綱"
+              "title": "第14章 的大綱"
             }
           }
         ]
@@ -196,8 +186,33 @@
   },
   "active": "ba0fc19f9777580b",
   "lastOpenFiles": [
-    "01 創世記/第47章.md",
+    "03 利未記/第8章.md",
+    "03 利未記/第9章.md",
+    "03 利未記/第10章.md",
+    "03 利未記/第11章.md",
+    "03 利未記/第12章.md",
+    "03 利未記/第13章.md",
+    "03 利未記/第15章.md",
+    "03 利未記/第14章.md",
+    "link_folder/人物/耶穌.md",
+    "02 出埃及記/第2章.md",
+    "copilot-instructions.md",
+    "raw_data/kingcomments_leviticus_18.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_18.txt",
+    "raw_data/ccbiblestudy_CT_leviticus_18.txt",
+    "raw_data/biblehub_study_leviticus_18.txt",
+    "raw_data/kingcomments_leviticus_17.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_17.txt",
+    "raw_data/ccbiblestudy_CT_leviticus_17.txt",
+    "raw_data/biblehub_study_leviticus_17.txt",
+    "raw_data/kingcomments_leviticus_16.txt",
+    "raw_data/ccbiblestudy_GT_leviticus_16.txt",
+    "02 出埃及記/第1章.md",
+    "02 出埃及記/第30章.md",
+    "link_folder/歷史/猶大與他瑪事件.md",
+    "util/output/audits/book_audit_出埃及記.md",
     "01 創世記/第48章.md",
+    "01 創世記/第47章.md",
     "01 創世記/第49章.md",
     "01 創世記/第43章.md",
     "01 創世記/第45章.md",
@@ -207,31 +222,6 @@
     "link_folder/文化/家神像_特拉芬.md",
     "link_folder/歷史/努斯泥板與家神像.md",
     "01 創世記/第34章.md",
-    "01 創世記/第33章.md",
-    "03 利未記/第15章.md",
-    "link_folder/文化/城門口交易.md.tmp.65852.f894355a11d9",
-    "link_folder/文化/四百舍客勒.md.tmp.65852.a0e52eea29fa",
-    "link_folder/原文/夢遺（mikreh lailah）.md",
-    "link_folder/主題/男女交合與夢遺的屬靈意義.md",
-    "03 利未記/第14章.md",
-    "03 利未記/第13章.md",
-    "03 利未記/第12章.md",
-    "scheme.md",
-    "link_folder/神學/聖潔與分別歸神.md",
-    "link_folder/原文/第八天獻祭（yom ha-shemini）.md",
-    "link_folder/原文/血漏（zavah）.md",
-    "link_folder/原文/月經（niddah）.md",
-    "link_folder/文化/古代近東身體排泄物與禮儀潔淨觀.md",
-    "link_folder/事件/頒布漏症條例.md",
-    "link_folder/互文/教會紀律與隔絕（太18：15-17；林前5：1-13）.md",
-    "raw_data/kingcomments_leviticus_15.txt",
-    "raw_data/ccbiblestudy_GT_leviticus_15.txt",
-    "raw_data/ccbiblestudy_CT_leviticus_15.txt",
-    "raw_data/biblehub_study_leviticus_15.txt",
-    "raw_data/kingcomments_leviticus_14.txt",
-    "raw_data/ccbiblestudy_GT_leviticus_14.txt",
-    "raw_data/ccbiblestudy_CT_leviticus_14.txt",
-    "raw_data/biblehub_study_leviticus_14.txt",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",
     "appendix/fhl_maps/images/207_207_王下表七.jpg",
     "appendix/fhl_maps/images/206_206_王上表八.jpg",

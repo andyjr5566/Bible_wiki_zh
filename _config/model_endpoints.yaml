@@ -29,7 +29,7 @@ active: local-4001
 # 環境變數 → 這裡的設定 → active。
 tasks:
   entry: local-4000
-  chapter: claude-cli
+  chapter: local-4000
 
 endpoints:
   local-4000:
