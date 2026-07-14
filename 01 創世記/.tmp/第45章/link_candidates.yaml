@@ -1,0 +1,52 @@
+book: 創世記
+chapter: 45
+candidates:
+  - name: 約瑟
+    type: 人物
+    evidence: 全章；情不自禁遣開左右、放聲大哭、「我是約瑟」，向弟兄們表明身分並差人接父親下埃及
+  - name: 便雅憫
+    type: 人物
+    evidence: 12、14、22節；約瑟伏在他頸項上哭；獨得三百銀子、五套衣服
+  - name: 雅各
+    type: 人物
+    evidence: 21、25-28節；聽見約瑟還在心裡冰涼，看見車輛心就甦醒；經文以「以色列」稱之（21、28節）
+    surfaces:
+      - {phrase: 以色列, verses: [21, 28]}
+  - name: 法老
+    type: 人物
+    evidence: 2、8、16-17、21節；聽見約瑟弟兄們來了很喜歡，吩咐迎接全家搬來埃及
+  - name: 埃及
+    type: 地點
+    evidence: 2、4、9、13、18、20、23、25-26節；約瑟被賣之地，如今成了保全全家生命之地
+  - name: 迦南地
+    type: 地點
+    evidence: 17、25節；弟兄們回去接父親之處
+  - name: 歌珊地
+    type: 地點
+    evidence: 10節；尼羅河三角洲東部的肥沃之地（蘭塞境內），宜牧且與約瑟相近
+  - name: 神的主權與人的責任
+    type: 神學
+    evidence: 5節；「這是神差我在你們以先來，為要保全生命」——與 4 節「你們所賣」並存，人的惡意不因此減輕
+    surfaces:
+      - {phrase: 神差我在你們以先來, verses: [5]}
+  - name: 餘民與大施拯救
+    type: 神學
+    evidence: 7節；「存留餘種在世上，又要大施拯救」——「餘種」與「拯救」二詞露出救贖主題（羅9:27）
+    surfaces:
+      - {phrase: 存留餘種在世上，又要大施拯救, verses: [7]}
+  - name: 神的護理
+    type: 神學
+    evidence: 8節；「差我到這裡來的不是你們，乃是神」
+    surfaces:
+      - {phrase: 神, verses: [8]}
+  - name: 埃及宰相職位（維齊爾）
+    type: 歷史
+    evidence: 8節；「如法老的父，作他全家的主，並埃及全地的宰相」——「法老的父」為埃及對重臣的尊稱（it-ntr）
+    surfaces:
+      - {phrase: 埃及全地的宰相, verses: [8]}
+  - name: 埃及車輛與遷徙
+    type: 歷史
+    evidence: 19、21、27節；法老賜下埃及車輛載婦孺與老父；半遊牧民族通常沒有車輛，故成為雅各確信的憑據
+    surfaces:
+      - {phrase: 埃及地帶著車輛, verses: [19]}
+      - {phrase: 車輛, verses: [21, 27]}
