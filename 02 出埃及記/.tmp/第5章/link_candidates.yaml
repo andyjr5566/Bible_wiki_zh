@@ -1,0 +1,91 @@
+book: 出埃及記
+chapter: 5
+candidates:
+  - name: 摩西
+    type: 人物
+    evidence: 1、4、20、22節；首次見法老；末了回到耶和華那裡哀訴
+  - name: 亞倫
+    type: 人物
+    evidence: 1、4、20節；與摩西同去見法老
+  - name: 法老
+    type: 人物
+    evidence: 1-2、5-6、10、14-15、17、20-21、23節；拒絕請求並加重苦工
+  - name: 耶和華的話臨到
+    type: 神學
+    evidence: 1-3、21-23節；「耶和華以色列的神這樣說」——先知宣告的標準格式
+    surfaces:
+      - {phrase: 耶和華, verses: [1, 2, 3, 21, 22]}
+  - name: 以色列
+    type: 原文
+    evidence: 1-2、5節；神的百姓；法老不容他們去
+  - name: 容我的百姓去
+    type: 神學
+    evidence: 1節；這是命令不是請求；神將七次如此吩咐法老（7:16；8:1,20；9:1,13；10:3）
+    surfaces:
+      - {phrase: 容我的百姓去, verses: [1]}
+      - {phrase: 容我們去祭祀我們的神, verses: [8]}
+      - {phrase: 容我們去祭祀耶和華, verses: [17]}
+  - name: 曠野
+    type: 地點
+    evidence: 1、3節；西乃半島的荒漠；出埃及境外之地
+  - name: 在曠野向神守節
+    type: 神學
+    evidence: 1節；原文「守節」是「朝聖」的用字，不是節期；埃及不能提供這樣的敬拜
+    surfaces:
+      - {phrase: 守節, verses: [1]}
+  - name: 耶和華是誰
+    type: 神學
+    evidence: 2節；「我不認識耶和華，也不容以色列人去」——蔑視而非求知
+    surfaces:
+      - {phrase: 耶和華是誰, verses: [2]}
+  - name: 希伯來人的神
+    type: 神學
+    evidence: 3節；「希伯來」意為「過河的人、從另一邊來的人」；埃及人如此稱以色列人
+    surfaces:
+      - {phrase: 希伯來人的神, verses: [3]}
+  - name: 三天的路程
+    type: 神學
+    evidence: 3節；指埃及勢力範圍之外；曠野起自邊境哨崗
+    surfaces:
+      - {phrase: 三天的路程, verses: [3]}
+  - name: 埃及
+    type: 地點
+    evidence: 4、12節；埃及王；百姓散在埃及遍地撿碎稭
+  - name: 勞碌
+    type: 神學
+    evidence: 4、9節；「曠工」與「叫他們勞碌」——法老要百姓忙到無暇聽神的話
+    surfaces:
+      - {phrase: 曠工, verses: [4]}
+      - {phrase: 勞碌, verses: [9]}
+  - name: 擔子
+    type: 神學
+    evidence: 4-5節；原文與1:11 的「重擔」同字
+  - name: 督工的
+    type: 人物
+    evidence: 6、10、13-14、16節；埃及人；原文出自字根 NGS「驅趕、鎮壓」，比1:11 更嚴厲
+  - name: 以色列人的官長
+    type: 人物
+    evidence: 6、10、14-15、19節；督工所派的以色列人工頭；原文字根 ShTR，指低級幹部
+    surfaces:
+      - {phrase: 官長, verses: [6, 10]}
+      - {phrase: 以色列人的官長, verses: [14, 15, 19]}
+  - name: 草與磚
+    type: 神學
+    evidence: 7-8、11-13、16、18-19節；草是泥磚的黏結劑；不給草卻要如數交磚
+    surfaces:
+      - {phrase: 草給百姓做磚, verses: [7]}
+      - {phrase: 做磚的數目, verses: [8]}
+      - {phrase: 草, verses: [11, 12, 13, 16, 18]}
+      - {phrase: 做磚, verses: [14, 16, 19]}
+      - {phrase: 磚, verses: [18]}
+  - name: 法老預表撒但
+    type: 神學
+    evidence: 9節；法老稱神的應許為「虛謊的言語」——撒但總是扭曲真理（約8:44）
+    surfaces:
+      - {phrase: 虛謊的言語, verses: [9]}
+  - name: 神的拯救延遲
+    type: 神學
+    evidence: 22-23節；「你為什麼苦待這百姓呢？……你一點也沒有拯救他們」
+    surfaces:
+      - {phrase: 苦待這百姓, verses: [22]}
+      - {phrase: 拯救他們, verses: [23]}

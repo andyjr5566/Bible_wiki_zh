@@ -1,0 +1,205 @@
+book: 出埃及記
+chapter: 5
+A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 1、4、20、22節；首次見法老；末了回到耶和華那裡哀訴
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 1、4、20節；與摩西同去見法老
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 1-2、5-6、10、14-15、17、20-21、23節；拒絕請求並加重苦工
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1-3、21-23節；「耶和華以色列的神這樣說」——先知宣告的標準格式
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 2
+    - 3
+    - 21
+    - 22
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1-2、5節；神的百姓；法老不容他們去
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 容我的百姓去
+  suggested_type: 神學
+  evidence: 1節；這是命令不是請求；神將七次如此吩咐法老（7:16；8:1,20；9:1,13；10:3）
+  surfaces:
+  - phrase: 容我的百姓去
+    verses:
+    - 1
+  - phrase: 容我們去祭祀我們的神
+    verses:
+    - 8
+  - phrase: 容我們去祭祀耶和華
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 容我的百姓去
+  existing_path: link_folder/神學/容我的百姓去.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 1、3節；西乃半島的荒漠；出埃及境外之地
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 在曠野向神守節
+  suggested_type: 神學
+  evidence: 1節；原文「守節」是「朝聖」的用字，不是節期；埃及不能提供這樣的敬拜
+  surfaces:
+  - phrase: 守節
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 在曠野向神守節
+  existing_path: link_folder/神學/在曠野向神守節.md
+- name: 耶和華是誰
+  suggested_type: 神學
+  evidence: 2節；「我不認識耶和華，也不容以色列人去」——蔑視而非求知
+  surfaces:
+  - phrase: 耶和華是誰
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 耶和華是誰
+  existing_path: link_folder/神學/耶和華是誰.md
+- name: 希伯來人的神
+  suggested_type: 神學
+  evidence: 3節；「希伯來」意為「過河的人、從另一邊來的人」；埃及人如此稱以色列人
+  surfaces:
+  - phrase: 希伯來人的神
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 希伯來人的神
+  existing_path: link_folder/神學/希伯來人的神.md
+- name: 三天的路程
+  suggested_type: 神學
+  evidence: 3節；指埃及勢力範圍之外；曠野起自邊境哨崗
+  surfaces:
+  - phrase: 三天的路程
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 三天的路程
+  existing_path: link_folder/神學/三天的路程.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 4、12節；埃及王；百姓散在埃及遍地撿碎稭
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 勞碌
+  suggested_type: 神學
+  evidence: 4、9節；「曠工」與「叫他們勞碌」——法老要百姓忙到無暇聽神的話
+  surfaces:
+  - phrase: 曠工
+    verses:
+    - 4
+  - phrase: 勞碌
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 勞碌
+  existing_path: link_folder/神學/勞碌.md
+- name: 擔子
+  suggested_type: 神學
+  evidence: 4-5節；原文與1:11 的「重擔」同字
+  match_type: exact
+  existing_title: 擔子
+  existing_path: link_folder/神學/擔子.md
+- name: 督工的
+  suggested_type: 人物
+  evidence: 6、10、13-14、16節；埃及人；原文出自字根 NGS「驅趕、鎮壓」，比1:11 更嚴厲
+  match_type: exact
+  existing_title: 督工的
+  existing_path: link_folder/人物/督工的.md
+- name: 以色列人的官長
+  suggested_type: 人物
+  evidence: 6、10、14-15、19節；督工所派的以色列人工頭；原文字根 ShTR，指低級幹部
+  surfaces:
+  - phrase: 官長
+    verses:
+    - 6
+    - 10
+  - phrase: 以色列人的官長
+    verses:
+    - 14
+    - 15
+    - 19
+  match_type: exact
+  existing_title: 以色列人的官長
+  existing_path: link_folder/人物/以色列人的官長.md
+- name: 草與磚
+  suggested_type: 神學
+  evidence: 7-8、11-13、16、18-19節；草是泥磚的黏結劑；不給草卻要如數交磚
+  surfaces:
+  - phrase: 草給百姓做磚
+    verses:
+    - 7
+  - phrase: 做磚的數目
+    verses:
+    - 8
+  - phrase: 草
+    verses:
+    - 11
+    - 12
+    - 13
+    - 16
+    - 18
+  - phrase: 做磚
+    verses:
+    - 14
+    - 16
+    - 19
+  - phrase: 磚
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 草與磚
+  existing_path: link_folder/神學/草與磚.md
+- name: 法老預表撒但
+  suggested_type: 神學
+  evidence: 9節；法老稱神的應許為「虛謊的言語」——撒但總是扭曲真理（約8:44）
+  surfaces:
+  - phrase: 虛謊的言語
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 法老預表撒但
+  existing_path: link_folder/神學/法老預表撒但.md
+- name: 神的拯救延遲
+  suggested_type: 神學
+  evidence: 22-23節；「你為什麼苦待這百姓呢？……你一點也沒有拯救他們」
+  surfaces:
+  - phrase: 苦待這百姓
+    verses:
+    - 22
+  - phrase: 拯救他們
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 神的拯救延遲
+  existing_path: link_folder/神學/神的拯救延遲.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
