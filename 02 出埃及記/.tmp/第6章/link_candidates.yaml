@@ -1,0 +1,121 @@
+book: 出埃及記
+chapter: 6
+candidates:
+  - name: 耶和華的話臨到
+    type: 神學
+    evidence: 1節；承接5:22-23 摩西的哀問，神沒有責備，只回答「現在你必看見」
+    surfaces:
+      - {phrase: 耶和華對摩西說, verses: [1]}
+  - name: 摩西
+    type: 人物
+    evidence: 全章；領受七重應許；兩次以「拙口笨舌」推辭
+  - name: 法老
+    type: 人物
+    evidence: 1、11-13、27、29-30節；神要使他把以色列人趕出他的地
+  - name: 大能的手與出埃及神蹟
+    type: 神學
+    evidence: 1節；「使他因我大能的手容以色列人去，且把他們趕出他的地」——從被動允許到主動驅逐
+    surfaces:
+      - {phrase: 大能的手, verses: [1]}
+  - name: 以色列
+    type: 原文
+    evidence: 1、5-6、9、11-14、26-27節；神的百姓
+  - name: 耶和華我是
+    type: 神學
+    evidence: 2、6-8、29節；本章三次「我是耶和華」（2、6、29）；6-8節首尾呼應如同簽名蓋章
+    surfaces:
+      - {phrase: 我是耶和華, verses: [2, 6, 7, 8, 29]}
+  - name: 亞伯拉罕
+    type: 人物
+    evidence: 3、8節；神向他顯現為全能的神；神起誓應許給他那地
+  - name: 以撒
+    type: 人物
+    evidence: 3、8節；同上
+  - name: 雅各
+    type: 人物
+    evidence: 3、8節；同上
+  - name: 全能的神（El Shaddai）
+    type: 神學
+    evidence: 3節；El Shaddai；與列祖立約時所用的名（創17:1；28:3；35:11）
+    surfaces:
+      - {phrase: 全能的神, verses: [3]}
+  - name: 耶和華聖名的啟示
+    type: 神學
+    evidence: 3、10、12-13、26、28、30節；「至於我名耶和華，他們未曾知道」——啟示的兩個階段
+    surfaces:
+      - {phrase: 我名耶和華, verses: [3]}
+      - {phrase: 耶和華曉諭摩西說, verses: [10]}
+      - {phrase: 耶和華面前, verses: [12, 30]}
+      - {phrase: 耶和華吩咐摩西, verses: [13]}
+      - {phrase: 耶和華說, verses: [26]}
+      - {phrase: 耶和華在埃及地對摩西說話, verses: [28]}
+  - name: 立約
+    type: 主題
+    evidence: 4-5節；「我與他們堅定所立的約」；創15:18；17:7-8；26:3-4；35:12
+    surfaces:
+      - {phrase: 約, verses: [4, 5]}
+  - name: 寄居身分
+    type: 神學
+    evidence: 4節；列祖在迦南只是寄居的客旅，不曾真正擁有那地（來11:9）
+    surfaces:
+      - {phrase: 寄居, verses: [4]}
+  - name: 迦南
+    type: 人物
+    evidence: 4節；神應許賜給列祖後裔的地；15節另有迦南女子的兒子掃羅
+  - name: 埃及
+    type: 地點
+    evidence: 5-7、11、13、26-28節；苦待以色列人之地
+  - name: 記念我的約
+    type: 神學
+    evidence: 5節；不是神曾遺忘，而是成就約的時候到了（丁道爾：希伯來人喜用擬人法）
+  - name: 伸出來的膀臂
+    type: 神學
+    evidence: 6節；埃及碑文常以法老「伸出來的膀臂」形容其大能——如今耶和華的膀臂要壓倒法老
+    surfaces:
+      - {phrase: 伸出來的膀臂, verses: [6]}
+  - name: 救贖goel
+    type: 神學
+    evidence: 6節；goel 是「至近親屬」的贖回（利25:25-55；得4）——強調救贖者與被贖者的親密關係
+    surfaces:
+      - {phrase: 救贖, verses: [6]}
+  - name: 擔子
+    type: 神學
+    evidence: 6-7節；「脫離他們的重擔」
+    surfaces:
+      - {phrase: 重擔, verses: [6, 7]}
+  - name: 拙口笨舌
+    type: 原文
+    evidence: 12、30節；原文直譯「未受割禮的嘴唇」（aral sifotayim）
+  - name: 亞倫
+    type: 人物
+    evidence: 13、20、23、25-27節；摩西的哥哥；祭司家族的先祖
+  - name: 流便
+    type: 人物
+    evidence: 14節；以色列長子；族譜只列一代
+  - name: 西緬
+    type: 人物
+    evidence: 15節；族譜只列一代
+  - name: 利未
+    type: 人物
+    evidence: 16、19、25節；族譜列五代；摩西與亞倫都出自利未
+  - name: 暗蘭
+    type: 人物
+    evidence: 18、20節；娶姑母約基別為妻，生亞倫和摩西
+  - name: 約基別
+    type: 人物
+    evidence: 20節；暗蘭之妻；名意「耶和華是榮耀」
+  - name: 可拉的背叛（預告）
+    type: 人物
+    evidence: 21、24節；以斯哈之子；後來領導叛亂（民16），但眾子未受株連（民26:10-11）
+    surfaces:
+      - {phrase: 可拉, verses: [21, 24]}
+  - name: 亞倫的祭司譜系
+    type: 人物
+    evidence: 23、25節；以利亞撒接續亞倫作大祭司；其子非尼哈得「非尼哈之約」（民25:10-13）
+    surfaces:
+      - {phrase: 以利亞撒, verses: [23, 25]}
+  - name: 以色列人的軍隊
+    type: 神學
+    evidence: 26節；「按著他們的軍隊」——按支派家族編排，有秩有序（7:4 稱「我的軍隊」）
+    surfaces:
+      - {phrase: 按著他們的軍隊, verses: [26]}
