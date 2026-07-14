@@ -1,0 +1,243 @@
+book: 出埃及記
+chapter: 7
+A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；在法老面前代替神
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 全章；要求行奇事；心裡剛硬；轉身進宮不放在心上
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 代替神
+  suggested_type: 神學
+  evidence: 1節；「我使你在法老面前代替神」——原文即「像神一樣」；亞倫是「你的先知」
+  surfaces:
+  - phrase: 代替神
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 代替神
+  existing_path: link_folder/神學/代替神.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 1-2、6-10、12、19-20、22節；摩西的先知（代言人）；杖在他手中
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 容我的百姓去
+  suggested_type: 神學
+  evidence: 2、16節；「容以色列人出他的地」；「容我的百姓去」
+  surfaces:
+  - phrase: 容以色列人出他的地
+    verses:
+    - 2
+  - phrase: 容我的百姓去
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 容我的百姓去
+  existing_path: link_folder/神學/容我的百姓去.md
+- name: 法老心剛硬
+  suggested_type: 神學
+  evidence: 3、13-14、22節；本章原文用 chazaq（加強、堅定）與 kabed（沉重、固執）
+  surfaces:
+  - phrase: 法老的心剛硬
+    verses:
+    - 3
+  - phrase: 法老心裡剛硬
+    verses:
+    - 13
+    - 22
+  - phrase: 法老心裡固執
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 法老心剛硬
+  existing_path: link_folder/神學/法老心剛硬.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 3-5、18-19、21、24節；神要在此多行神蹟奇事
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 十災
+  suggested_type: 歷史
+  evidence: 3節；「多行神蹟奇事」——前九災分三組，每組首災神都吩咐摩西清早去見法老
+  surfaces:
+  - phrase: 神蹟奇事
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 以色列人的軍隊
+  suggested_type: 神學
+  evidence: 4節；「我的軍隊以色列民」——像軍隊般排列整齊大步踏出埃及
+  surfaces:
+  - phrase: 軍隊以色列民
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 以色列人的軍隊
+  existing_path: link_folder/神學/以色列人的軍隊.md
+- name: 知道我是耶和華
+  suggested_type: 神學
+  evidence: 5、17節；十災的核心目的——回答法老5:2「耶和華是誰」的蔑視之問
+  surfaces:
+  - phrase: 知道我是耶和華
+    verses:
+    - 5
+    - 17
+  match_type: exact
+  existing_title: 知道我是耶和華
+  existing_path: link_folder/神學/知道我是耶和華.md
+- name: 摩西八十歲
+  suggested_type: 互文
+  evidence: 7節；摩西八十歲、亞倫八十三歲；摩西一生三個四十年（徒7:23,30,36）
+  surfaces:
+  - phrase: 摩西八十歲
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 摩西八十歲
+  existing_path: link_folder/互文/摩西八十歲.md
+- name: tannin巨蛇
+  suggested_type: 原文
+  evidence: 9-10、12、15節；tannin 與4:3 的 nahash 不同——指巨獸、龍或怪物（創1:21；結29:3）
+  surfaces:
+  - phrase: 蛇
+    verses:
+    - 10
+    - 12
+    - 15
+  match_type: exact
+  existing_title: tannin巨蛇
+  existing_path: link_folder/原文/tannin巨蛇.md
+- name: 埃及行法術的
+  suggested_type: 文化
+  evidence: 11、22節；hartummim「能看見隱藏的」；猶太傳統稱其首領為雅尼與佯庇（提後3:8）
+  surfaces:
+  - phrase: 埃及行法術的
+    verses:
+    - 11
+    - 22
+  match_type: exact
+  existing_title: 埃及行法術的
+  existing_path: link_folder/文化/埃及行法術的.md
+- name: 亞倫的杖吞了術士的杖
+  suggested_type: 歷史
+  evidence: 12節；埃及金字塔文獻以「一個王冠吞吃另一個王冠」描繪征服；石棺文獻中吞食表示吸收被吞者的法力
+  surfaces:
+  - phrase: 亞倫的杖吞了他們的杖
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 亞倫的杖吞了術士的杖
+  existing_path: link_folder/歷史/亞倫的杖吞了術士的杖.md
+- name: 尼羅河
+  suggested_type: 地點
+  evidence: 15、17-18、20-21、24-25節；埃及的生命線；哈皮神（Hapi）是尼羅河氾濫的化身
+  surfaces:
+  - phrase: 水邊
+    verses:
+    - 15
+  - phrase: 河邊
+    verses:
+    - 15
+  - phrase: 河中的水
+    verses:
+    - 17
+  - phrase: 河裡的水
+    verses:
+    - 20
+  - phrase: 河
+    verses:
+    - 18
+    - 19
+    - 21
+    - 24
+    - 25
+  match_type: exact
+  existing_title: 尼羅河
+  existing_path: link_folder/地點/尼羅河.md
+- name: 在曠野事奉神
+  suggested_type: 神學
+  evidence: 16節；「好在曠野事奉我」——神向法老索回祂百姓的事奉權
+  surfaces:
+  - phrase: 曠野事奉我
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 在曠野事奉神
+  existing_path: link_folder/神學/在曠野事奉神.md
+- name: 水變血之災
+  suggested_type: 歷史
+  evidence: 17、19-20節；第一災；擊打埃及人所敬拜的尼羅河神
+  surfaces:
+  - phrase: 水就變作血
+    verses:
+    - 17
+  - phrase: 水都變作血
+    verses:
+    - 19
+  - phrase: 變作血了
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 水變血之災
+  existing_path: link_folder/歷史/水變血之災.md
+- name: 七天的審判
+  suggested_type: 互文
+  evidence: 25節；「耶和華擊打河以後滿了七天」——七是完全的數字
+  surfaces:
+  - phrase: 滿了七天
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 七天的審判
+  existing_path: link_folder/互文/七天的審判.md
+B_needs_update:
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1、6、8、10、13-14、17、19-20、22、25節；本章的敘事骨架
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 6
+    - 8
+    - 10
+    - 13
+    - 14
+    - 17
+    - 19
+    - 20
+    - 22
+    - 25
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 2、4-5節；神的百姓
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 希伯來人的神
+  suggested_type: 神學
+  evidence: 16節；「耶和華─希伯來人的神打發我來見你」
+  surfaces:
+  - phrase: 耶和華─希伯來人的神
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 希伯來人的神
+  existing_path: link_folder/神學/希伯來人的神.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
