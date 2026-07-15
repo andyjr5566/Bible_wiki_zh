@@ -1,0 +1,30 @@
+name: 以色列眾首領
+type: 人物
+secondary_types: []
+aliases:
+- 十二支派首領
+- 各族長
+status: formal
+definition: 以色列十二支派的首領（族長），各按支派將杖交給摩西，杖上寫各人名字，利未支派杖寫亞倫名字；後來各自認回自己的杖（民17:2-3, 6, 9）。
+development: 首領們代表各支派參與神揀選祭司的公開試驗，見證亞倫杖神蹟後各取回自己的杖，象徵各支派承認神揀選結果，不再爭競祭司職分。
+accumulations:
+- book: 民數記
+  chapter: 17
+  summary: 十二支派首領獻杖、見證神蹟、各取回杖，代表支派接受神揀選。
+  relation: 作為群體代表參與事件，其順服行動確立全會眾對祭司職分的共識。
+related_entries:
+- 耶和華吩咐取十二支派杖放法櫃前
+- 亞倫杖發芽生苞開花結杏
+- 摩西
+- 亞倫
+- 以色列人懼怕必死
+sources:
+- '註解: 民數記17章 以色列眾首領獻杖（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT17.htm）'
+- '拾穗: 民數記17章 首領們的代表性（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT17.htm）'
+- '註解: Numbers 17 Leaders of Israel bring rods（https://www.kingcomments.com/en/bible-studies/Num/17）'
+- '研讀: Numbers 17 Princes of Israel rods（https://biblehub.com/study/numbers/17.htm）'
+created_from: numbers_17
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

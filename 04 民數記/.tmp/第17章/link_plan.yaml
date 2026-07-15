@@ -1,0 +1,190 @@
+book: 民數記
+chapter: 17
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民17:1-7,10-11 耶和華對摩西說取杖、寫名字、存法櫃前。摩西曉諭以色列人，收杖、存放、拿出給眾人看，照耶和華吩咐把亞倫杖放回法櫃前。四份註解均記載摩西作中保領袖執行神揀選試驗。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 摩西曉諭以色列人
+  - phrase: 摩西執行神命
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民17:3,5,8,10 亞倫的名字寫在利未杖上，神所揀選那人杖必發芽，亞倫杖發芽生苞開花結杏，亞倫杖放回法櫃前作記號。四份註解均記載亞倫為神揀選的大祭司。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 亞倫杖發芽
+  - phrase: 神揀選大祭司
+  - phrase: 利未支派首領
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+C_new_formal:
+- name: 耶和華吩咐取十二支派杖放法櫃前
+  suggested_type: 事件
+  evidence: 民17:1-7 耶和華對摩西說：你曉諭以色列人，從他們手下取杖，每支派一根，從他們所有的首領按著支派共取十二根。將各人的名字寫在各人的杖上，並要將亞倫的名字寫在利未的杖上。摩西曉諭以色列人，他們的首領就把杖交給他，按著支派每首領一根，共有十二根；亞倫的杖也在其中。摩西就把杖存在法櫃的帳幕內，在耶和華面前。四份註解均記載此為神主權揀選祭司的公開試驗。
+  surfaces:
+  - phrase: 取杖每支派一根
+  - phrase: 寫名字在杖上
+  - phrase: 存在法櫃前
+  - phrase: 亞倫杖在其中
+  target_path: link_folder/事件/耶和華吩咐取十二支派杖放法櫃前.md
+- name: 亞倫杖發芽生苞開花結杏
+  suggested_type: 事件
+  evidence: 民17:8-9 第二天摩西進法櫃的帳幕去，誰知利未族亞倫的杖已經發了芽，生了花苞，開了花，結了熟杏。摩西就把所有的杖從耶和華面前拿出來，給以色列眾人看，他們就看見了，各人認自己的杖。四份註解均記載此為復活生命顯明神揀選。
+  surfaces:
+  - phrase: 亞倫杖發芽
+  - phrase: 生花苞開花結杏
+  - phrase: 復活生命顯明
+  - phrase: 神揀選證據
+  target_path: link_folder/事件/亞倫杖發芽生苞開花結杏.md
+- name: 亞倫杖存放法櫃前作記號
+  suggested_type: 事件
+  evidence: 民17:10-11 耶和華對摩西說：把亞倫的杖放回法櫃前，留作記號，向悖逆之子止息他們的怨言，免得他們死。摩西就照耶和華所吩咐的行了。四份註解均記載此為永久見證止息怨言。
+  surfaces:
+  - phrase: 亞倫杖放回法櫃前
+  - phrase: 留作記號
+  - phrase: 止息怨言
+  - phrase: 永久見證
+  target_path: link_folder/事件/亞倫杖存放法櫃前作記號.md
+- name: 以色列人懼怕必死
+  suggested_type: 事件
+  evidence: 民17:12-13 以色列人對摩西說：我們死喪了，盡都死喪了。凡挨近耶和華帳幕的必死，我們豈盡都要死喪了呢？四份註解均記載百姓因神審判而恐懼，認識到祭司職分的嚴肅。
+  surfaces:
+  - phrase: 我們死喪了
+  - phrase: 挨近帳幕必死
+  - phrase: 百姓恐懼
+  - phrase: 認識祭司嚴肅
+  target_path: link_folder/事件/以色列人懼怕必死.md
+- name: 神主權揀選祭司職分
+  suggested_type: 神學
+  evidence: 民17:5,8 後來我所揀選的那人，他的杖必發芽。亞倫的杖發芽生苞開花結杏。丁良才：祭司職分非人自取乃神揀選；啟導本：神主權高過人意願；串珠註釋：來5:4無人自取榮耀。
+  surfaces:
+  - phrase: 神主權揀選
+  - phrase: 杖發芽為證
+  - phrase: 無人自取榮耀
+  - phrase: 來5:4
+  target_path: link_folder/神學/神主權揀選祭司職分.md
+- name: 死杖發芽表徵復活生命
+  suggested_type: 神學
+  evidence: 民17:8 杖是被砍下來的樹枝，早已枯死；發芽顯示復活的生機。丁良才：死杖發芽表徵復活生命；啟導本：事奉能力從生命而來；串珠註釋：基督復活生命賜給揀選者。
+  surfaces:
+  - phrase: 死杖發芽
+  - phrase: 復活生命
+  - phrase: 事奉能力從生命來
+  - phrase: 基督復活生命
+  target_path: link_folder/神學/死杖發芽表徵復活生命.md
+- name: 怨言止息靠神蹟非人勸
+  suggested_type: 神學
+  evidence: 民17:5,10 這樣，我必使以色列人向你們所發的怨言止息，不再達到我耳中。把亞倫的杖放回法櫃前，留作記號，向悖逆之子止息他們的怨言。丁良才：神用神蹟止息怨言；啟導本：人的勸說無效唯有神顯明；串珠註釋：神的審判與恩典並行。
+  surfaces:
+  - phrase: 怨言止息
+  - phrase: 神蹟止息怨言
+  - phrase: 神審判與恩典
+  target_path: link_folder/神學/怨言止息靠神蹟非人勸.md
+- name: 祭司職分嚴肅性
+  suggested_type: 神學
+  evidence: 民17:12-13 以色列人說：我們死喪了，盡都死喪了。凡挨近耶和華帳幕的必死。丁良才：百姓認識祭司職分嚴肅；啟導本：神的聖潔不可輕慢；串珠註釋：利10:1-2拿答亞比戶獻凡火為前鑑。
+  surfaces:
+  - phrase: 祭司職分嚴肅
+  - phrase: 挨近帳幕必死
+  - phrase: 神聖潔不可輕慢
+  - phrase: 拿答亞比戶前鑑
+  target_path: link_folder/神學/祭司職分嚴肅性.md
+- name: 以色列眾首領
+  suggested_type: 人物
+  evidence: 民17:2,6 從他們所有的首領按著支派共取十二根，他們的首領就把杖交給摩西，按著支派每首領一根。四份註解均記載十二支派首領參與神揀選試驗。
+  surfaces:
+  - phrase: 十二支派首領
+  - phrase: 各支派一根杖
+  - phrase: 參與神試驗
+  target_path: link_folder/人物/以色列眾首領.md
+- name: 發芽（parach）
+  suggested_type: 原文
+  evidence: 民17:5,8 杖必發芽、亞倫杖發了芽。原文 פָּרַח (parach) 意為發芽、開花、發榮、生長。丁良才：枯死杖發芽表徵復活生命；啟導本：神賜生命給揀選者。
+  surfaces:
+  - phrase: 發芽
+  - phrase: parach
+  - phrase: 開花結果
+  - phrase: 復活生命
+  target_path: link_folder/原文/發芽（parach）.md
+- name: 杏（shaqed）
+  suggested_type: 原文
+  evidence: 民17:8 結了熟杏。原文 שָׁקֵד (shaqed) 意為杏樹、杏仁、警醒、儆醒。丁良才：杏樹最早開花表徵神話語速成；啟導本：耶1:11-12杏樹枝預表神警醒成就話語。
+  surfaces:
+  - phrase: 熟杏
+  - phrase: shaqed
+  - phrase: 杏樹最早開花
+  - phrase: 神話語速成
+  target_path: link_folder/原文/杏（shaqed）.md
+- name: 亞倫杖發芽預表基督復活大祭司
+  suggested_type: 互文
+  evidence: 民17:8 亞倫杖發芽生苞開花結杏 → 來7:16 基督是照著無盡生命的大能成了大祭司。丁良才：死杖發芽預表基督復活生命；啟導本：基督無盡生命大能成就祭司職分。
+  surfaces:
+  - phrase: 亞倫杖發芽
+  - phrase: 基督復活大祭司
+  - phrase: 無盡生命大能
+  - phrase: 來7:16
+  target_path: link_folder/互文/亞倫杖發芽預表基督復活大祭司.md
+- name: 神揀選止息怨言預表基督平息叛逆
+  suggested_type: 互文
+  evidence: 民17:5,10 怨言止息不再達到我耳中 → 來12:24-25 基督所灑的血說更美的話。丁良才：神主權揀選平息叛逆；啟導本：基督中保職分止息控告。
+  surfaces:
+  - phrase: 怨言止息
+  - phrase: 基督中保職分
+  - phrase: 更美的話
+  - phrase: 平息叛逆
+  target_path: link_folder/互文/神揀選止息怨言預表基督平息叛逆.md
+- name: 法櫃前杖作記號預表基督在神面前為證
+  suggested_type: 互文
+  evidence: 民17:10 把亞倫的杖放回法櫃前留作記號 → 來9:24 基督進入天上聖所，現今在神面前為我們顯現。丁良才：法櫃前記號預表基督在父面前；啟導本：基督為我們永遠存留。
+  surfaces:
+  - phrase: 法櫃前記號
+  - phrase: 基督在神面前
+  - phrase: 永遠存留
+  - phrase: 來9:24
+  target_path: link_folder/互文/法櫃前杖作記號預表基督在神面前為證.md
+- name: 亞倫杖發芽是否為自然現象
+  suggested_type: 解經爭議
+  evidence: 民17:8 亞倫杖發芽生苞開花結杏。丁良才：枯杖一夜發芽開花結果為超自然神蹟；啟導本：包含春夏秋三季生長過程在一夜完成；串珠註釋：非自然現象乃神蹟。
+  surfaces:
+  - phrase: 一夜發芽開花結果
+  - phrase: 超自然神蹟
+  - phrase: 非自然現象
+  - phrase: 包含三季生長
+  target_path: link_folder/解經爭議/亞倫杖發芽是否為自然現象.md
+- name: 十二根杖是否包含利未支派
+  suggested_type: 解經爭議
+  evidence: 民17:2-3,6 每支派一根共十二根，亞倫名字寫在利未杖上。丁良才：利未支派單獨列出因祭司職分屬利未；啟導本：十二支派含利未，約瑟分兩支派補足；串珠註釋：利未支派不分地業但分祭司職分。
+  surfaces:
+  - phrase: 十二根杖含利未
+  - phrase: 約瑟分兩支派
+  - phrase: 利未分祭司職分
+  - phrase: 支派計算方式
+  target_path: link_folder/解經爭議/十二根杖是否包含利未支派.md
+D_new_candidate:
+- name: 法櫃帳幕
+  suggested_type: 地點
+  evidence: 民17:4,7,9 你要把這些杖存在會幕內法櫃前，就是我與你們相會之處。摩西就把杖存在法櫃的帳幕內，在耶和華面前。第二天摩西進法櫃的帳幕去。四份註解均記載法櫃前為神顯現揀選之地。
+  surfaces:
+  - phrase: 法櫃前
+  - phrase: 會幕內
+  - phrase: 耶和華面前
+  - phrase: 神顯現之地
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 杖（matteh）
+  suggested_type: 原文
+  evidence: 民17:2-8 取杖、寫名字、杖發芽。原文 מַטֶּה (matteh) 意為杖、權杖、支派、族長權柄象徵。丁良才：杖代表身分地位權柄；啟導本：死杖發芽表徵復活生命。
+  surfaces:
+  - phrase: 杖
+  - phrase: matteh
+  - phrase: 權杖
+  - phrase: 支派權柄象徵
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+E_skip: []

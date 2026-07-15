@@ -6721,6 +6721,36 @@
       "宰為自己作贖罪祭的牛犢"
     ]
   },
+  "亞倫帶利未人聯合服事": {
+    "path": "link_folder/事件/亞倫帶利未人聯合服事.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "亞倫帶利未人聯合服事",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞倫杖存放法櫃前作記號": {
+    "path": "link_folder/事件/亞倫杖存放法櫃前作記號.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "亞倫杖存放法櫃前作記號",
+    "status": "formal",
+    "aliases": [
+      "亞倫杖作記號",
+      "杖存法櫃"
+    ]
+  },
+  "亞倫杖發芽生苞開花結杏": {
+    "path": "link_folder/事件/亞倫杖發芽生苞開花結杏.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "亞倫杖發芽生苞開花結杏",
+    "status": "formal",
+    "aliases": [
+      "亞倫杖發芽",
+      "杖生杏"
+    ]
+  },
   "亞倫獻燔祭公綿羊": {
     "path": "link_folder/事件/亞倫獻燔祭公綿羊.md",
     "type": "事件",
@@ -6784,6 +6814,17 @@
     "aliases": [
       "初次按序起行",
       "首次行軍次序"
+    ]
+  },
+  "以色列人懼怕必死": {
+    "path": "link_folder/事件/以色列人懼怕必死.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "以色列人懼怕必死",
+    "status": "formal",
+    "aliases": [
+      "百姓恐懼死亡",
+      "我們死啦"
     ]
   },
   "以色列人順服": {
@@ -6954,6 +6995,30 @@
       "利未人討罪",
       "利未人受聖職"
     ]
+  },
+  "利未人從十分之一中獻舉祭給祭司": {
+    "path": "link_folder/事件/利未人從十分之一中獻舉祭給祭司.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人從十分之一中獻舉祭給祭司",
+    "status": "formal",
+    "aliases": []
+  },
+  "利未人歸耶和華作賞賜給亞倫": {
+    "path": "link_folder/事件/利未人歸耶和華作賞賜給亞倫.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人歸耶和華作賞賜給亞倫",
+    "status": "formal",
+    "aliases": []
+  },
+  "利未人當得的分：十分之一": {
+    "path": "link_folder/事件/利未人當得的分：十分之一.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人當得的分：十分之一",
+    "status": "formal",
+    "aliases": []
   },
   "剝皮切塊": {
     "path": "link_folder/事件/剝皮切塊.md",
@@ -8054,6 +8119,14 @@
     "status": "formal",
     "aliases": []
   },
+  "看守聖所壇免得忿怒臨到": {
+    "path": "link_folder/事件/看守聖所壇免得忿怒臨到.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "看守聖所壇免得忿怒臨到",
+    "status": "formal",
+    "aliases": []
+  },
   "磐石出水": {
     "path": "link_folder/事件/磐石出水.md",
     "type": "事件",
@@ -8159,6 +8232,14 @@
       "銀號永遠定例"
     ]
   },
+  "祭司在以色列中無分無業": {
+    "path": "link_folder/事件/祭司在以色列中無分無業.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司在以色列中無分無業",
+    "status": "formal",
+    "aliases": []
+  },
   "祭司在耶和華面前辦完": {
     "path": "link_folder/事件/祭司在耶和華面前辦完.md",
     "type": "事件",
@@ -8169,6 +8250,30 @@
       "祭司辦完",
       "祭司在耶和華面前行完"
     ]
+  },
+  "祭司當得的分：初熟獻給耶和華": {
+    "path": "link_folder/事件/祭司當得的分：初熟獻給耶和華.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司當得的分：初熟獻給耶和華",
+    "status": "formal",
+    "aliases": []
+  },
+  "祭司當得的分：至聖物獻祭": {
+    "path": "link_folder/事件/祭司當得的分：至聖物獻祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司當得的分：至聖物獻祭",
+    "status": "formal",
+    "aliases": []
+  },
+  "祭司當得的分：舉祭搖祭": {
+    "path": "link_folder/事件/祭司當得的分：舉祭搖祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司當得的分：舉祭搖祭",
+    "status": "formal",
+    "aliases": []
   },
   "禮儀的律例": {
     "path": "link_folder/事件/禮儀的律例.md",
@@ -8272,6 +8377,17 @@
       "素祭所剩的要歸給亞倫和他的子孫"
     ]
   },
+  "耶和華吩咐取十二支派杖放法櫃前": {
+    "path": "link_folder/事件/耶和華吩咐取十二支派杖放法櫃前.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華吩咐取十二支派杖放法櫃前",
+    "status": "formal",
+    "aliases": [
+      "神命取杖",
+      "十二支派杖"
+    ]
+  },
   "耶和華呼叫摩西": {
     "path": "link_folder/事件/耶和華呼叫摩西.md",
     "type": "事件",
@@ -8281,6 +8397,14 @@
     "aliases": [
       "耶和華呼叫摩西"
     ]
+  },
+  "耶和華單獨對亞倫說話擔當聖所罪孽": {
+    "path": "link_folder/事件/耶和華單獨對亞倫說話擔當聖所罪孽.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華單獨對亞倫說話擔當聖所罪孽",
+    "status": "formal",
+    "aliases": []
   },
   "耶和華在會幕門口召喚三人": {
     "path": "link_folder/事件/耶和華在會幕門口召喚三人.md",
@@ -8853,6 +8977,24 @@
     "type": "互文",
     "secondary_types": [],
     "title": "亞伯蘭下埃及與出埃及",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）": {
+    "path": "link_folder/互文/亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）",
+    "status": "formal",
+    "aliases": [
+      "亞倫杖預表基督"
+    ]
+  },
+  "亞倫杖發芽預表基督永遠大祭司（民18：1-7）": {
+    "path": "link_folder/互文/亞倫杖發芽預表基督永遠大祭司（民18：1-7）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "亞倫杖發芽預表基督永遠大祭司（民18：1-7）",
     "status": "formal",
     "aliases": []
   },
@@ -9724,6 +9866,14 @@
     "status": "formal",
     "aliases": []
   },
+  "利未人獻十分之一預表雙重奉獻（民18：26-28）": {
+    "path": "link_folder/互文/利未人獻十分之一預表雙重奉獻（民18：26-28）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "利未人獻十分之一預表雙重奉獻（民18：26-28）",
+    "status": "formal",
+    "aliases": []
+  },
   "利皮特-伊施他爾": {
     "path": "link_folder/互文/利皮特-伊施他爾.md",
     "type": "互文",
@@ -10150,6 +10300,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "加拉太書四章",
+    "status": "formal",
+    "aliases": []
+  },
+  "十一奉獻預表新約奉獻原則（民18：21-24）": {
+    "path": "link_folder/互文/十一奉獻預表新約奉獻原則（民18：21-24）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "十一奉獻預表新約奉獻原則（民18：21-24）",
     "status": "formal",
     "aliases": []
   },
@@ -11828,6 +11986,16 @@
     "status": "formal",
     "aliases": []
   },
+  "法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）": {
+    "path": "link_folder/互文/法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）",
+    "status": "formal",
+    "aliases": [
+      "法櫃前杖作記號"
+    ]
+  },
   "法老與希律殺害男嬰的對照": {
     "path": "link_folder/互文/法老與希律殺害男嬰的對照.md",
     "type": "互文",
@@ -12485,6 +12653,16 @@
       "神審判背叛預表末世審判"
     ]
   },
+  "神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10）": {
+    "path": "link_folder/互文/神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10）",
+    "status": "formal",
+    "aliases": [
+      "神揀選止息怨言"
+    ]
+  },
   "神施恩憐憫的主權（羅9：15,18）": {
     "path": "link_folder/互文/神施恩憐憫的主權（羅9：15,18）.md",
     "type": "互文",
@@ -12522,6 +12700,14 @@
       "申命記8-18",
       "神賜福賜財富能力 (申8-18)"
     ]
+  },
+  "祭司無分無業神為分預表基督徒產業（民18：20）": {
+    "path": "link_folder/互文/祭司無分無業神為分預表基督徒產業（民18：20）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "祭司無分無業神為分預表基督徒產業（民18：20）",
+    "status": "formal",
+    "aliases": []
   },
   "禮物挽回怒氣 (箴21-14)": {
     "path": "link_folder/互文/禮物挽回怒氣 (箴21-14).md",
@@ -15220,6 +15406,17 @@
     "status": "formal",
     "aliases": [
       "眾長老"
+    ]
+  },
+  "以色列眾首領": {
+    "path": "link_folder/人物/以色列眾首領.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "以色列眾首領",
+    "status": "formal",
+    "aliases": [
+      "十二支派首領",
+      "各族長"
     ]
   },
   "以薩迦支派": {
@@ -19610,6 +19807,16 @@
       "撚的細麻"
     ]
   },
+  "擔當（nasa）": {
+    "path": "link_folder/原文/擔當（nasa）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "擔當（nasa）",
+    "status": "formal",
+    "aliases": [
+      "擔當"
+    ]
+  },
   "收藏（asaph）": {
     "path": "link_folder/原文/收藏（asaph）.md",
     "type": "原文",
@@ -19748,6 +19955,16 @@
       "杯",
       "球",
       "花"
+    ]
+  },
+  "杏（shaqed）": {
+    "path": "link_folder/原文/杏（shaqed）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "杏（shaqed）",
+    "status": "formal",
+    "aliases": [
+      "杏"
     ]
   },
   "杖下經過（taḥat haššēḇeṭ）": {
@@ -20546,6 +20763,17 @@
       "癬"
     ]
   },
+  "發芽（parach）": {
+    "path": "link_folder/原文/發芽（parach）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "發芽（parach）",
+    "status": "formal",
+    "aliases": [
+      "parach",
+      "發芽"
+    ]
+  },
   "白毛（se'ar laban）": {
     "path": "link_folder/原文/白毛（se'ar laban）.md",
     "type": "原文",
@@ -21098,6 +21326,16 @@
     "title": "自由（chophshi）",
     "status": "formal",
     "aliases": []
+  },
+  "至聖物（qodesh qodashim）": {
+    "path": "link_folder/原文/至聖物（qodesh qodashim）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "至聖物（qodesh qodashim）",
+    "status": "formal",
+    "aliases": [
+      "至聖物"
+    ]
   },
   "至近的親屬（goel）": {
     "path": "link_folder/原文/至近的親屬（goel）.md",
@@ -28552,6 +28790,17 @@
     "status": "formal",
     "aliases": []
   },
+  "怨言止息靠神蹟非人勸": {
+    "path": "link_folder/神學/怨言止息靠神蹟非人勸.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "怨言止息靠神蹟非人勸",
+    "status": "formal",
+    "aliases": [
+      "神蹟止息怨言",
+      "怨言因神蹟止住"
+    ]
+  },
   "恩典的首次出現": {
     "path": "link_folder/神學/恩典的首次出現.md",
     "type": "神學",
@@ -29388,6 +29637,17 @@
     "status": "formal",
     "aliases": []
   },
+  "死杖發芽表徵復活生命": {
+    "path": "link_folder/神學/死杖發芽表徵復活生命.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "死杖發芽表徵復活生命",
+    "status": "formal",
+    "aliases": [
+      "枯杖發芽預表復活",
+      "死木生生命"
+    ]
+  },
   "死的三層": {
     "path": "link_folder/神學/死的三層.md",
     "type": "神學",
@@ -30187,6 +30447,17 @@
       "祝福禱告"
     ]
   },
+  "神主權揀選祭司職分": {
+    "path": "link_folder/神學/神主權揀選祭司職分.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神主權揀選祭司職分",
+    "status": "formal",
+    "aliases": [
+      "祭司職分神揀選",
+      "神揀選亞倫"
+    ]
+  },
   "神主權揀選祭司與領袖": {
     "path": "link_folder/神學/神主權揀選祭司與領袖.md",
     "type": "神學",
@@ -30977,6 +31248,17 @@
     "status": "formal",
     "aliases": [
       "祭司的素祭"
+    ]
+  },
+  "祭司職分嚴肅性": {
+    "path": "link_folder/神學/祭司職分嚴肅性.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司職分嚴肅性",
+    "status": "formal",
+    "aliases": [
+      "祭司職分神聖不可侵犯",
+      "祭司職分嚴重性"
     ]
   },
   "祭壇敬拜": {
@@ -33574,6 +33856,16 @@
       "亞伯蘭的半真半假"
     ]
   },
+  "亞倫杖發芽是否為自然現象": {
+    "path": "link_folder/解經爭議/亞倫杖發芽是否為自然現象.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "亞倫杖發芽是否為自然現象",
+    "status": "formal",
+    "aliases": [
+      "杖發芽自然與超自然"
+    ]
+  },
   "亞拉臘山與方舟遺跡爭議": {
     "path": "link_folder/解經爭議/亞拉臘山與方舟遺跡爭議.md",
     "type": "解經爭議",
@@ -33876,6 +34168,14 @@
       "挪亞三子與現代族群"
     ]
   },
+  "利未人是否也要奉獻十分之一（民18：26-28）": {
+    "path": "link_folder/解經爭議/利未人是否也要奉獻十分之一（民18：26-28）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "利未人是否也要奉獻十分之一（民18：26-28）",
+    "status": "formal",
+    "aliases": []
+  },
   "利用割禮作欺騙工具的性質": {
     "path": "link_folder/解經爭議/利用割禮作欺騙工具的性質.md",
     "type": "解經爭議",
@@ -34005,6 +34305,24 @@
     "title": "創造日長度問題",
     "status": "formal",
     "aliases": []
+  },
+  "十一奉獻是否適用新約信徒（民18：21-24）": {
+    "path": "link_folder/解經爭議/十一奉獻是否適用新約信徒（民18：21-24）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "十一奉獻是否適用新約信徒（民18：21-24）",
+    "status": "formal",
+    "aliases": []
+  },
+  "十二根杖是否包含利未支派": {
+    "path": "link_folder/解經爭議/十二根杖是否包含利未支派.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "十二根杖是否包含利未支派",
+    "status": "formal",
+    "aliases": [
+      "十二杖利未支派問題"
+    ]
   },
   "十探子報惡信是否故意": {
     "path": "link_folder/解經爭議/十探子報惡信是否故意.md",
@@ -34612,6 +34930,14 @@
       "摔跤者身分",
       "雅博摔跤對手"
     ]
+  },
+  "祭司無地業是否為貧窮（民18：20）": {
+    "path": "link_folder/解經爭議/祭司無地業是否為貧窮（民18：20）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "祭司無地業是否為貧窮（民18：20）",
+    "status": "formal",
+    "aliases": []
   },
   "第10章多種方言與第11章一種語言": {
     "path": "link_folder/解經爭議/第10章多種方言與第11章一種語言.md",
@@ -37379,6 +37705,18 @@
   "宰為自己作贖罪祭的牛犢": {
     "alias_of": "亞倫宰贖罪祭牛犢"
   },
+  "亞倫杖作記號": {
+    "alias_of": "亞倫杖存放法櫃前作記號"
+  },
+  "杖存法櫃": {
+    "alias_of": "亞倫杖存放法櫃前作記號"
+  },
+  "亞倫杖發芽": {
+    "alias_of": "亞倫杖發芽生苞開花結杏"
+  },
+  "杖生杏": {
+    "alias_of": "亞倫杖發芽生苞開花結杏"
+  },
   "亞倫宰了燔祭牲": {
     "alias_of": "亞倫獻燔祭公綿羊"
   },
@@ -37399,6 +37737,12 @@
   },
   "首次行軍次序": {
     "alias_of": "以色列人初次按序起行"
+  },
+  "百姓恐懼死亡": {
+    "alias_of": "以色列人懼怕必死"
+  },
+  "我們死啦": {
+    "alias_of": "以色列人懼怕必死"
   },
   "Israel arrives at Sinai": {
     "alias_of": "以色列到達西乃山"
@@ -37808,6 +38152,12 @@
   "素祭所剩的要歸給亞倫和他的子孫": {
     "alias_of": "素祭所剩歸祭司"
   },
+  "神命取杖": {
+    "alias_of": "耶和華吩咐取十二支派杖放法櫃前"
+  },
+  "十二支派杖": {
+    "alias_of": "耶和華吩咐取十二支派杖放法櫃前"
+  },
   "進迦南地獻祭條例": {
     "alias_of": "耶和華曉諭摩西進迦南地獻祭條例"
   },
@@ -37957,6 +38307,9 @@
   },
   "創世記15章寄居受苦預言": {
     "alias_of": "亞伯拉罕後裔寄居受苦的預言"
+  },
+  "亞倫杖預表基督": {
+    "alias_of": "亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）"
   },
   "亞倫贖罪預表基督大祭司贖罪": {
     "alias_of": "亞倫贖罪預表基督大祭司贖罪（來7：25）"
@@ -38477,6 +38830,9 @@
   "民33:7-8": {
     "alias_of": "民三十三7-8 行程記錄"
   },
+  "法櫃前杖作記號": {
+    "alias_of": "法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）"
+  },
   "法老與希律的殺嬰令": {
     "alias_of": "法老與希律殺害男嬰的對照"
   },
@@ -38581,6 +38937,9 @@
   },
   "神審判背叛預表末世審判": {
     "alias_of": "神審判背叛預表末世審判（啟20：11-15）"
+  },
+  "神揀選止息怨言": {
+    "alias_of": "神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10）"
   },
   "神施恩憐憫的主權": {
     "alias_of": "神施恩憐憫的主權（羅9：15,18）"
@@ -39103,6 +39462,12 @@
   },
   "眾長老": {
     "alias_of": "以色列眾長老"
+  },
+  "十二支派首領": {
+    "alias_of": "以色列眾首領"
+  },
+  "各族長": {
+    "alias_of": "以色列眾首領"
   },
   "以薩迦": {
     "alias_of": "以薩迦支派"
@@ -40202,6 +40567,9 @@
   "撒下6": {
     "alias_of": "撒下6（撒母耳記下第6章）"
   },
+  "擔當": {
+    "alias_of": "擔當（nasa）"
+  },
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
@@ -40261,6 +40629,9 @@
   },
   "花": {
     "alias_of": "杏花杯球花（燈臺裝飾）"
+  },
+  "杏": {
+    "alias_of": "杏（shaqed）"
   },
   "經杖": {
     "alias_of": "杖下經過（taḥat haššēḇeṭ）"
@@ -40571,6 +40942,12 @@
   "癬": {
     "alias_of": "癬（neteq）"
   },
+  "parach": {
+    "alias_of": "發芽（parach）"
+  },
+  "發芽": {
+    "alias_of": "發芽（parach）"
+  },
   "白毛": {
     "alias_of": "白毛（se'ar laban）"
   },
@@ -40780,6 +41157,9 @@
   },
   "連核帶皮": {
     "alias_of": "自核至皮（mechartsannim ve'ad zag）"
+  },
+  "至聖物": {
+    "alias_of": "至聖物（qodesh qodashim）"
   },
   "贖回者": {
     "alias_of": "至近的親屬（goel）"
@@ -42929,6 +43309,12 @@
   "qanna": {
     "alias_of": "忌邪的神"
   },
+  "神蹟止息怨言": {
+    "alias_of": "怨言止息靠神蹟非人勸"
+  },
+  "怨言因神蹟止住": {
+    "alias_of": "怨言止息靠神蹟非人勸"
+  },
   "賜恩": {
     "alias_of": "恩待"
   },
@@ -43174,6 +43560,12 @@
   },
   "聖冠": {
     "alias_of": "歸耶和華為聖"
+  },
+  "枯杖發芽預表復活": {
+    "alias_of": "死杖發芽表徵復活生命"
+  },
+  "死木生生命": {
+    "alias_of": "死杖發芽表徵復活生命"
   },
   "死亡與不潔淨": {
     "alias_of": "死與不潔淨的關聯"
@@ -43442,6 +43834,12 @@
   "祝福禱告": {
     "alias_of": "祝福（berakhah）"
   },
+  "祭司職分神揀選": {
+    "alias_of": "神主權揀選祭司職分"
+  },
+  "神揀選亞倫": {
+    "alias_of": "神主權揀選祭司職分"
+  },
   "神的揀選權柄": {
     "alias_of": "神主權揀選祭司與領袖"
   },
@@ -43624,6 +44022,12 @@
   },
   "祭司的素祭": {
     "alias_of": "祭司素祭全燒"
+  },
+  "祭司職分神聖不可侵犯": {
+    "alias_of": "祭司職分嚴肅性"
+  },
+  "祭司職分嚴重性": {
+    "alias_of": "祭司職分嚴肅性"
   },
   "約的福分": {
     "alias_of": "福分"
@@ -44288,6 +44692,9 @@
   "亞伯蘭的半真半假": {
     "alias_of": "亞伯蘭稱撒萊為妹子的性質"
   },
+  "杖發芽自然與超自然": {
+    "alias_of": "亞倫杖發芽是否為自然現象"
+  },
   "亞拉臘山的方舟遺跡": {
     "alias_of": "亞拉臘山與方舟遺跡爭議"
   },
@@ -44344,6 +44751,9 @@
   },
   "創世記2章動物創造次序問題": {
     "alias_of": "創世記2章19節創造次序問題"
+  },
+  "十二杖利未支派問題": {
+    "alias_of": "十二根杖是否包含利未支派"
   },
   "十探子惡信動機": {
     "alias_of": "十探子報惡信是否故意"

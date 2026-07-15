@@ -1,0 +1,31 @@
+name: 利未人歸耶和華作賞賜給亞倫
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 耶和華宣告已將利未人從以色列人中揀選出來歸耶和華，再賜給亞倫與其兒子作賞賜，為要辦理會幕的事（民18:6）。利未人屬於神，神再將他們「賞賜」給祭司，建立利未人服事祭司的產權與關係基礎。
+development: 此事件緊接亞倫帶利未人聯合服事（民18:2-4），從神學層面定義利未人的雙重歸屬：先歸耶和華（被揀選、分別為聖），再歸亞倫（作賞賜、輔助服事）。這解釋為何利未人不可挨近聖所器具（屬神），卻要服事祭司（屬亞倫），並為後續利未人無地業、以十分之一為業（民18:20-24）鋪路。
+accumulations:
+- book: 民數記
+  chapter: 18
+  summary: 利未人被揀選歸耶和華，再賜給亞倫作賞賜辦理會幕事（民18:6）。
+  relation: 本章祭司利未人關係的神學奠基事件，連結前節聯合服事與後節利未人產業規定，確立利未人「屬神、賜祭司」的獨特地位。
+related_entries:
+- 利未人
+- 亞倫
+- 亞倫和他兒子（祭司）
+- 會幕
+- 亞倫帶利未人聯合服事
+- 利未人當得的分：十分之一
+- 祭司在以色列中無分無業
+sources:
+- '註解: 民數記第18章註解 — 利未人作賞賜給亞倫（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT18.htm）'
+- '拾穗: 民數記第18章拾穗 — 利未人的雙重歸屬（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT18.htm）'
+- '註解: Numbers 18 Commentary — Levites Given as a Gift to Aaron（https://www.kingcomments.com/en/bible-studies/Num/18）'
+- '研讀: Numbers 18 Study — Levites Belong to the LORD（https://biblehub.com/study/numbers/18.htm）'
+created_from: numbers_18
+category: 事件
+trigger_sources:
+- 民數記 18:6
+current_data: true
+pending: false

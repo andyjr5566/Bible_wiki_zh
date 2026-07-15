@@ -1,0 +1,30 @@
+name: 以色列人懼怕必死
+type: 事件
+secondary_types: []
+aliases:
+- 百姓恐懼死亡
+- 我們死啦
+status: formal
+definition: 見證亞倫杖神蹟後，以色列人向摩西喊稱「我們死啦！我們滅亡啦！都滅亡啦！」，恐懼凡挨近耶和華帳幕的必死，連自己也難逃一死（民17:12-13）。
+development: 此反應緊隨亞倫杖存放法櫃前（v.11），顯示百姓雖見神蹟止息怨言暫止，卻因聖潔敬畏轉為極端恐懼，預備進入第18章祭司利未守職贖罪的安排。
+accumulations:
+- book: 民數記
+  chapter: 17
+  summary: 百姓因見神蹟而極度恐懼，自認必死。
+  relation: 本章結尾的群體反應，凸顯聖潔神與罪人之間的張力，引出下章祭司職分贖罪供應。
+related_entries:
+- 亞倫杖存放法櫃前作記號
+- 祭司職分嚴肅性
+- 怨言止息靠神蹟非人勸
+- 摩西
+- 亞倫
+sources:
+- '註解: 民數記17章 以色列人懼怕必死（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT17.htm）'
+- '拾穗: 民數記17章 百姓的恐懼與祭司的需要（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT17.htm）'
+- '註解: Numbers 17 People fear death after the sign（https://www.kingcomments.com/en/bible-studies/Num/17）'
+- '研讀: Numbers 17 We perish we all perish（https://biblehub.com/study/numbers/17.htm）'
+created_from: numbers_17
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

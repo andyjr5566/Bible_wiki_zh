@@ -1,7 +1,7 @@
 {
-  "total_warnings": 109,
+  "total_warnings": 112,
   "critical_count": 0,
-  "warning_count": 109,
+  "warning_count": 112,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -322,6 +322,20 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 04 民數記/第17章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第18章",
+      "message": "同一 alias「第18章」指向多個 target: 02 出埃及記/第18章, 04 民數記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
       "target": "第24章",
       "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 03 利未記/第24章"
     },
@@ -464,6 +478,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第16章",
       "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 04 民數記/第16章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 04 民數記/第17章"
     },
     {
       "type": "alias_target_conflict",
