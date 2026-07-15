@@ -1,0 +1,25 @@
+name: 火刑
+type: 文化
+secondary_types: []
+aliases:
+- 火刑處決
+status: formal
+definition: 利未記20:14規定若人娶妻並娶其母，屬大惡，要用火焚燒三人，以除去會中的大惡。火刑在古近東與以色列律法中作為極嚴重性罪的刑罰，象徵徹底除惡。
+development: 後期猶太傳統多以石刑取代火刑，但在此條例保留火刑作為特定逆倫之罪的處決方式。
+accumulations:
+- book: 利未記
+  chapter: 20
+  summary: 第14節規定娶妻並娶其母者，三人用火焚燒，稱為火刑。
+  relation: 體現律法對逆倫（tevel）之罪的零容忍，並以火刑作為公開警示。
+related_entries:
+- 娶妻並娶其母火刑條例
+- 石頭打死
+- 逆倫（tevel）
+sources:
+- '註解: 利未記20章註解（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT20.htm）'
+- '註解: 利未記20章王氏註解（https://www.kingcomments.com/en/bible-studies/Lev/20）'
+created_from: 利未記 20
+category: 文化
+trigger_sources: []
+current_data: {}
+pending: false

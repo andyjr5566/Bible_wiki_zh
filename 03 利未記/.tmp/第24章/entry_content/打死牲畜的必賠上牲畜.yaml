@@ -1,0 +1,33 @@
+name: 打死牲畜的必賠上牲畜
+type: 主題
+secondary_types: []
+aliases:
+- 以命償命
+status: formal
+definition: 根據利未記 24:18、21，規定打死牲畜者必須賠償同類牲畜，體現「以命償命」的公義原則。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 24
+  summary: 本章列出打死牲畜須賠上牲畜的條文，與打死人條文並列，顯示法律對生命與財產的公平處理。
+  relation: 作為本章法律條文之一，與「打死人的必被治死」共同構成以命償命的法律框架。
+related_entries:
+- 打死人的必被治死
+- 以傷還傷
+- 律例
+- 寄居的（ger）
+- 以色列全會眾
+sources:
+- '註解: 利未記24章註解（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT24.htm）'
+- '拾穗: 利未記24章拾穗（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT24.htm）'
+- '註解: 利未記24章King Comments註解（https://www.kingcomments.com/en/bible-studies/Lev/24）'
+- '研讀: 利未記24章研讀（https://biblehub.com/study/leviticus/24.htm）'
+created_from: 利未記 24
+category: 主題
+trigger_sources:
+- 註解
+- 拾穗
+- 註解
+- 研讀
+current_data: {}
+pending: false

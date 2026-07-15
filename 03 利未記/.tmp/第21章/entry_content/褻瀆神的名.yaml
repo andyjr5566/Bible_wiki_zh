@@ -1,0 +1,27 @@
+name: 褻瀆神的名
+type: 神學
+secondary_types: []
+aliases:
+- 褻瀆神的名
+status: formal
+definition: 利未記21章6、12、23節多次提到祭司與大祭司不可褻瀆神的名、不可褻瀆聖所，強調聖潔與神名榮耀的關聯。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 21
+  summary: 第6節祭司要歸神為聖，不可褻瀆神的名；第12節大祭司不可褻瀆聖所；第23節殘疾祭司不可進幔子前免得褻瀆聖所。
+  relation: 顯示聖潔條例的核心動機是保護神的名與聖所不被褻瀆。
+related_entries:
+- 聖潔
+- 聖所
+- 內幔（隔聖所至聖所的幔子）
+- 祭司聖潔條例總綱
+- 大祭司
+sources:
+- '註解: 利未記21章關於褻瀆神的名（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT21.htm）'
+- '研讀: 利未記21章研讀（https://biblehub.com/study/leviticus/21.htm）'
+created_from: 利未記 21
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

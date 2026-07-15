@@ -1,0 +1,33 @@
+name: 外人不可吃聖物
+type: 主題
+secondary_types: []
+aliases:
+- 外人禁吃聖物
+status: formal
+definition: 凡外人不可吃聖物；寄居在祭司家的、雇工人都不可吃（利22:10）。惟獨祭司用錢買的人、生在他家的人可以吃（v.11）。祭司女兒嫁外人不可吃舉祭聖物（v.12）；但若寡居或被休、無子女、歸回父家，則可像青年時一樣吃父親的食物（v.13）。此條例嚴格界定「祭司家屬」範圍，保護聖物專屬性。
+development: 經文以「外人」為核心概念，層層界定例外：買的僕人、家生僕人、歸回父家的女兒，皆基於「屬於祭司家產/權柄」的法律關係而得吃聖物。
+accumulations:
+- book: 利未記
+  chapter: 22
+  summary: 規定外人、寄居者、雇工不可吃聖物；祭司買的人、家生的人可吃；祭司女兒嫁外人不可吃，歸回父家無子女者可吃。
+  relation: 本章聖物分配條例，界定聖物食用資格的法律邊界。
+related_entries:
+- 外人
+- 寄居的外人
+- 雇工人
+- 祭司買的人
+- 祭司女兒
+- 聖物（qodesh）
+- 亞倫和他兒子（祭司）
+- 自然關係
+sources:
+- '註解: 利未記22章講解 — 外人不可吃聖物（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT22.htm）'
+- '拾穗: 利未記22章拾穗 — 聖物食用資格（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT22.htm）'
+- '註解: 利未記22章研讀 — 外人與聖物（https://www.kingcomments.com/en/bible-studies/Lev/22）'
+- '研讀: 利未記22章研讀 — 聖物分配（https://biblehub.com/study/leviticus/22.htm）'
+created_from: lev22
+category: 主題
+trigger_sources:
+- lev22
+current_data: {}
+pending: false

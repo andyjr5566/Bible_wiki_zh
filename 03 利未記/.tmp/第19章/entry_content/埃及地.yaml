@@ -1,0 +1,33 @@
+name: 埃及地
+type: 地點
+secondary_types: []
+aliases:
+- 出埃及地
+- 救贖之地
+status: formal
+definition: 利未記 19:34、36 兩次提及「埃及地」：以色列人曾在埃及地作寄居的（19:34），神曾把他們從埃及地領出來（19:36）。此地點作為救贖歷史錨點，成為對待寄居者與守誠實度量衡的神學動機。
+development: 出埃及記 1-14 記載埃及奴役與出埃及拯救。申命記 10:19 同樣以「你們在埃及地也作過寄居的」命令愛寄居者。新約將出埃及視為基督救贖預表（林前
+  5:7, 10:1-4）。
+accumulations:
+- book: 利未記
+  chapter: 19
+  summary: 第 34 節以在埃及作寄居為由命令愛寄居者；第 36 節以從埃及領出為由命令用公道度量衡。
+  relation: 本章倫理誡命的救贖論基礎，神的拯救行動構成聖潔生活的動力與標準。
+related_entries:
+- 寄居的（ger）
+- 不可欺負寄居者要愛寄居者如己
+- 以色列全會眾
+- 謹守遵行一切律例典章
+- 審判度量衡不可行不義
+sources:
+- '註解: 利未記 19 章釋經註解（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT19.htm）'
+- '拾穗: 利未記 19 章拾穗資料（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT19.htm）'
+- '註解: 利未記 19 章 King Comments 註解（https://www.kingcomments.com/en/bible-studies/Lev/19）'
+- '研讀: 利未記 19 章研讀資料（https://biblehub.com/study/leviticus/19.htm）'
+created_from: lev19_entry_generation
+category: 地點
+trigger_sources:
+- Leviticus 19:34
+- 36
+current_data: {}
+pending: false

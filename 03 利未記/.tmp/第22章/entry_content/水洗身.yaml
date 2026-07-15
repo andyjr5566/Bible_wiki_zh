@@ -1,0 +1,26 @@
+name: 水洗身
+type: 文化
+secondary_types: []
+aliases:
+- 水洗身
+status: formal
+definition: 指用水沖洗全身以除去儀式上不潔淨（利22:6）。經文規定摸不潔淨之物後，必須水洗身，待日落才可吃聖物。
+development: 水洗身為潔淨儀式的基本步驟，體現「潔淨然後親近聖物」的原則。
+accumulations:
+- book: 利未記
+  chapter: 22
+  summary: 摸不潔淨之物後，若不用水洗身，就不可吃聖物。
+  relation: 連結污穢條例與聖物食用資格，強調儀式潔淨的具體行動。
+related_entries:
+- 污穢/不潔淨（tame'）
+- 死屍
+- 爬物
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT22.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT22.htm'
+- '研讀: https://biblehub.com/study/leviticus/22.htm'
+created_from: ''
+category: 文化
+trigger_sources: ''
+current_data: ''
+pending: ''

@@ -1,0 +1,26 @@
+name: 祭司買的人
+type: 人物
+secondary_types: []
+aliases:
+- 祭司買的人
+status: formal
+definition: 指祭司用銀錢購買的奴僕/僕人（利22:11）。經文規定這些人可吃聖物，並視同祭司家庭成員。
+development: 購買關係使外人進入祭司家庭，獲得聖物食用資格，區別於寄居外人與雇工人。
+accumulations:
+- book: 利未記
+  chapter: 22
+  summary: 祭司買的人可吃聖物；生在他家的人也可吃。
+  relation: 以財產關係納入祭司家庭，享有聖物特權。
+related_entries:
+- 外人
+- 寄居的外人
+- 雇工人
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT22.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT22.htm'
+- '研讀: https://biblehub.com/study/leviticus/22.htm'
+created_from: ''
+category: 人物
+trigger_sources: ''
+current_data: ''
+pending: ''

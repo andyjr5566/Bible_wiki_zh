@@ -1,0 +1,28 @@
+name: 祭司女兒
+type: 人物
+secondary_types: []
+aliases:
+- 祭司女兒
+status: formal
+definition: 利未記21章9節規定祭司的女兒若行淫，辱沒父親，必用火焚燒，顯示祭司家庭必須保持聖潔。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 21
+  summary: 第9節針對祭司女兒行淫的刑罰——火刑。
+  relation: 強調祭司家庭成員同樣受聖潔標準約束。
+related_entries:
+- 祭司女兒行淫火刑條例
+- 火刑
+- 被污的女人
+- 被休的婦人
+- 處女
+- 祭司聖潔條例總綱
+sources:
+- '註解: 利未記21章祭司女兒條例（https://www.kingcomments.com/en/bible-studies/Lev/21）'
+- '拾穗: 利未記21章拾穗（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT21.htm）'
+created_from: 利未記 21
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

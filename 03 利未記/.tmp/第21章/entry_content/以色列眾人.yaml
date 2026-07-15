@@ -1,0 +1,26 @@
+name: 以色列眾人
+type: 人物
+secondary_types: []
+aliases:
+- 以色列眾人
+status: formal
+definition: 利未記21章24節記載摩西將祭司聖潔條例曉諭亞倫、亞倫子孫並以色列眾人，使全會眾知悉祭司的聖潔標準。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 21
+  summary: 第24節摩西向亞倫、其子孫及以色列眾人宣讀本章條例。
+  relation: 全體以色列人共同承擔維護祭司聖潔的責任。
+related_entries:
+- 摩西
+- 亞倫
+- 亞倫和他兒子（祭司）
+- 祭司聖潔條例總綱
+sources:
+- '研讀: 利未記21章研讀（https://biblehub.com/study/leviticus/21.htm）'
+- '註解: 利未記21章註解（https://www.kingcomments.com/en/bible-studies/Lev/21）'
+created_from: 利未記 21
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

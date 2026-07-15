@@ -28,14 +28,14 @@ active: local-4001
 # 選擇順序：明確指定 → MODEL_ENDPOINT_<TASK> 環境變數 → MODEL_ENDPOINT
 # 環境變數 → 這裡的設定 → active。
 tasks:
-  entry: local-4001
+  entry: local-4000
   chapter: local-4000
 
 endpoints:
   local-4000:
     type: openai
     base_url: http://localhost:4000/v1
-    model: deepseek-ai/deepseek-v4-pro #z-ai/glm-5.2 #minimaxai/minimax-m2.7 #  
+    model: nvidia/nemotron-3-ultra-550b-a55b #deepseek-ai/deepseek-v4-pro #z-ai/glm-5.2 #minimaxai/minimax-m2.7 #  
 
   local-4001:
     type: openai

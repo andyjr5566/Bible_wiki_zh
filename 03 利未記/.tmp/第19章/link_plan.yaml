@@ -1,0 +1,484 @@
+book: 利未記
+chapter: 19
+A_use_directly: []
+B_needs_update:
+- name: 聖潔
+  suggested_type: 神學
+  evidence: 利19:2 你們要聖潔，因為我耶和華你們的神是聖潔的。本章聖潔生活條例的神學根基：神的聖潔屬性要求子民效法。彼前1:15-16引用。
+  surfaces:
+  - phrase: 聖潔
+  - phrase: 你們要聖潔
+  match_type: exact
+  existing_title: 聖潔
+  existing_path: link_folder/神學/聖潔.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 利19:3,30 守安息日作為聖潔生活起點（v3）與結語（v30）重複出現。安息日為神與以色列立約證據（出31:13），表徵享受基督裡安息（太11:28-29，來4:9）。
+  surfaces:
+  - phrase: 守我的安息日
+  - phrase: 安息日
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 利19:8 吃第三天平安祭肉者必從民中剪除。本章將剪除刑罰應用於褻瀆聖物。
+  surfaces:
+  - phrase: 從民中剪除
+  - phrase: 剪除
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 利19:10,33-34 留田角給窮人和寄居的（v10）；寄居者與本地人同權同愛（v33-34），動機：你們在埃及作過寄居的。
+  surfaces:
+  - phrase: 寄居的
+  - phrase: 寄居者
+  - phrase: 外人同居
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
+- name: 可憎（to'evah）
+  suggested_type: 原文
+  evidence: 利19:7 第三天吃平安祭為可憎惡的（to'evah）。將可憎概念從飲食潔淨（利11 sheqets）延伸至獻祭領域。
+  surfaces:
+  - phrase: 可憎惡的
+  - phrase: 可憎
+  match_type: base
+  existing_title: 可憎（sheqets）
+  existing_path: link_folder/原文/可憎（sheqets）.md
+- name: 月經（niddah）
+  suggested_type: 原文
+  evidence: 利19:19（關聯利18:19）禁止行經不潔淨時親近。本章雖未直接提niddah，但聖潔法典將禮儀潔淨與道德純正整合。
+  surfaces:
+  - phrase: 行經不潔淨
+  match_type: exact
+  existing_title: 月經（niddah）
+  existing_path: link_folder/原文/月經（niddah）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 利19:1 耶和華對摩西說。摩西作為聖潔法典傳遞者，將神的聖潔標準頒布給全會眾。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 利19:23 你們到了迦南地，栽種各樣結果子的樹木。果樹條例在迦南地生效。
+  surfaces:
+  - phrase: 迦南地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 聖所
+  suggested_type: 地點
+  evidence: 利19:30 敬我的聖所。聖所為神臨在之處，當敬畏。出3:5、利16:2、來10:19-22新約開了新又活的路。
+  surfaces:
+  - phrase: 敬我的聖所
+  - phrase: 聖所
+  match_type: exact
+  existing_title: 聖所
+  existing_path: link_folder/地點/聖所.md
+- name: 孝敬父母
+  suggested_type: 主題
+  evidence: 利19:3 孝敬父母作為聖潔生活起點（第五誡）。父母是子女源頭，如神是人源頭；孝敬父母即尊敬神。弗6:2-3第一條帶應許誡命。
+  surfaces:
+  - phrase: 孝敬父母
+  - phrase: 當孝敬父母
+  match_type: alias
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+C_new_formal:
+- name: 聖潔生活總綱（利19:1-2）
+  suggested_type: 主題
+  evidence: 利19:1-2 耶和華對摩西說，曉諭以色列全會眾：你們要聖潔，因為我耶和華你們的神是聖潔的。本章總綱，神的聖潔是百姓聖潔的根基與標準。CT：本節是全章總綱，要求對象是全體子民，理由是神的屬性。KC：利18強調分離，利19強調分別為聖歸給神。
+  surfaces:
+  - phrase: 你們要聖潔
+  - phrase: 聖潔生活總綱
+  target_path: link_folder/主題/聖潔生活總綱（利19:1-2）.md
+- name: 孝敬父母與守安息日並列
+  suggested_type: 主題
+  evidence: 利19:3 你們各人都當孝敬父母，也要守我的安息日。第五誡與第四誡並列，孝敬父母（敬畏源頭）與守安息日（承認神創造/救贖主權）是聖潔生活的起點。GT：孝敬父母原文作「懼怕」，與申6:2、13同詞；咒罵父母與褻瀆神名同罰（利20:9，24:16）。
+  surfaces:
+  - phrase: 孝敬父母
+  - phrase: 守我的安息日
+  target_path: link_folder/主題/孝敬父母與守安息日並列.md
+- name: 不可偏向虛無的神與鑄造神像
+  suggested_type: 主題
+  evidence: 利19:4 不可偏向虛無的神，也不可為自己鑄造神像。第二誡申命，虛無的神（elilim）指偶像假神，有名無實。KC：人所鑄造的神像非神真像，乃憑空想慾念，引誘人偏向虛妄、諂媚鬼魔。
+  surfaces:
+  - phrase: 虛無的神
+  - phrase: 鑄造神像
+  - phrase: 偏向虛無的神
+  target_path: link_folder/主題/不可偏向虛無的神與鑄造神像.md
+- name: 平安祭獻得可蒙悅納條例
+  suggested_type: 主題
+  evidence: 利19:5-8 獻平安祭要獻得可蒙悅納：當天和第二天吃，第三天剩下的必用火焚燒；第三天吃者為可憎惡，不蒙悅納；吃的人擔當罪孽，褻瀆聖物，必從民中剪除。重申利7:15-18條例。KC：平安祭表甘心祭，與神交通必須保持新鮮，不可陳舊。
+  surfaces:
+  - phrase: 平安祭獻得可蒙悅納
+  - phrase: 第三天必用火焚燒
+  - phrase: 褻瀆聖物
+  - phrase: 從民中剪除
+  target_path: link_folder/主題/平安祭獻得可蒙悅納條例.md
+- name: 留田角與遺落給窮人寄居者
+  suggested_type: 主題
+  evidence: 利19:9-10 收割不可割盡田角，不可拾取遺落；摘葡萄不可摘盡，不可拾取掉落果子；要留給窮人和寄居的。CT：昭示看重生命的社會應體現神對窮苦人的關懷。KC：波阿斯（得2:14-16）為例。申24:19-22詳述。
+  surfaces:
+  - phrase: 不可割盡田角
+  - phrase: 不可拾取遺落
+  - phrase: 留給窮人和寄居的
+  - phrase: 田角條例
+  target_path: link_folder/主題/留田角與遺落給窮人寄居者.md
+- name: 不可偷盜欺騙說謊
+  suggested_type: 主題
+  evidence: 利19:11 不可偷盜，不可欺騙，也不可彼此說謊。第八誡（偷盜）延伸：欺騙、說謊。KC：信實是神百姓不可少的德行；西3:9、弗4:25新約重申。
+  surfaces:
+  - phrase: 不可偷盜
+  - phrase: 不可欺騙
+  - phrase: 不可彼此說謊
+  target_path: link_folder/主題/不可偷盜欺騙說謊.md
+- name: 不可指神名起假誓褻瀆神名
+  suggested_type: 主題
+  evidence: 利19:12 不可指著我的名起假誓，褻瀆你神的名。第三誡延伸：起假誓褻瀆神名。KC：撒謊是罪，起假誓是更大的罪；凡事不可虧欠人（羅13:8，雅5:4）。
+  surfaces:
+  - phrase: 指著我的名起假誓
+  - phrase: 褻瀆你神的名
+  - phrase: 起假誓
+  target_path: link_folder/主題/不可指神名起假誓褻瀆神名.md
+- name: 不可欺壓鄰舍搶奪與雇工工價不過夜
+  suggested_type: 主題
+  evidence: 利19:13 不可欺壓鄰舍，不可搶奪他的物；雇工人的工價不可過夜留到早晨。KC：保護軟弱無能力者；施洗約翰勸兵丁不以強暴待人、不訛詐（路3:14）。申24:14-15、耶22:13、瑪3:5、雅5:4重申。
+  surfaces:
+  - phrase: 不可欺壓鄰舍
+  - phrase: 不可搶奪
+  - phrase: 雇工人的工價不可過夜
+  - phrase: 工價不過夜
+  target_path: link_folder/主題/不可欺壓鄰舍搶奪與雇工工價不過夜.md
+- name: 不可咒罵聾子與絆腳石放在瞎子面前
+  suggested_type: 主題
+  evidence: 利19:14 不可咒罵聾子，也不可將絆腳石放在瞎子面前，只要敬畏你的神。保護身體軟弱者；屬靈應用：不可使人跌倒（羅14:13，林前8:9）。KC：神有能力抵住、聽見、看見。
+  surfaces:
+  - phrase: 不可咒罵聾子
+  - phrase: 不可將絆腳石放在瞎子面前
+  - phrase: 絆腳石
+  target_path: link_folder/主題/不可咒罵聾子與絆腳石放在瞎子面前.md
+- name: 審判不可行不義偏護窮人重看有勢力
+  suggested_type: 主題
+  evidence: 利19:15 施行審判，不可行不義；不可偏護窮人，也不可重看有勢力的人，只要按著公義審判鄰舍。司法公正：不偏護貧窮，不偏袒權勢。雅各2:9按外貌待人便是犯罪。
+  surfaces:
+  - phrase: 施行審判不可行不義
+  - phrase: 不可偏護窮人
+  - phrase: 不可重看有勢力的人
+  - phrase: 按著公義審判
+  target_path: link_folder/主題/審判不可行不義偏護窮人重看有勢力.md
+- name: 不可搬弄是非與不可與鄰舍為敵置之於死
+  suggested_type: 主題
+  evidence: 利19:16 不可在民中往來搬弄是非，也不可與鄰舍為敵，置之於死（原文作流他的血）。KC：搬弄是非原文譯作「往來傳舌」（箴11:13，20:19）、「讒謗人」（耶6:28，9:4，結22:9）。兩層意：不可因假見證置無辜於死；不可知情不作見證置人於死。
+  surfaces:
+  - phrase: 不可搬弄是非
+  - phrase: 不可與鄰舍為敵
+  - phrase: 置之於死
+  - phrase: 流他的血
+  - phrase: 往來傳舌
+  target_path: link_folder/主題/不可搬弄是非與不可與鄰舍為敵置之於死.md
+- name: 不可心裡恨弟兄要指摘鄰舍免得擔罪
+  suggested_type: 主題
+  evidence: 利19:17 不可心裡恨你的弟兄；總要指摘你的鄰舍，免得因他擔罪。內心仇恨與外在指摘責備：真愛不喜歡不義，只喜歡真理（林前13:6）。太18:15-20、加6:1處理弟兄犯罪。
+  surfaces:
+  - phrase: 不可心裡恨你的弟兄
+  - phrase: 總要指摘你的鄰舍
+  - phrase: 免得因他擔罪
+  - phrase: 心裡恨弟兄
+  target_path: link_folder/主題/不可心裡恨弟兄要指摘鄰舍免得擔罪.md
+- name: 不可報仇埋怨要愛人如己
+  suggested_type: 主題
+  evidence: 利19:18 不可報仇，也不可埋怨你本國的子民，卻要愛人如己。內在動機層面：愛人如己為第二大誡命（太22:39，羅13:9，加5:14，雅2:8）。KC：律法以我為準則，基督教以基督為準則（約壹3:16）。
+  surfaces:
+  - phrase: 不可報仇
+  - phrase: 不可埋怨
+  - phrase: 愛人如己
+  - phrase: 愛鄰舍如己
+  target_path: link_folder/主題/不可報仇埋怨要愛人如己.md
+- name: 禁止混雜條例（牲畜種地衣服）
+  suggested_type: 主題
+  evidence: 利19:19 要守律例：不可叫牲畜與異類配合；不可用兩樣攙雜的種種地；不可用兩樣攙雜的料做衣服穿。三種混雜：動物、種子、衣料。KC：不可分開神所合併的，也不可合併神所分開的（創1:25各從其類）。屬靈功課：律法與恩典、肉體與聖靈不可混雜（加拉太書、歌羅西書、林後6:14-18）。
+  surfaces:
+  - phrase: 不可叫牲畜與異類配合
+  - phrase: 不可用兩樣攙雜的種種地
+  - phrase: 不可用兩樣攙雜的料做衣服
+  - phrase: 混雜條例
+  - phrase: 沙特尼茲
+  target_path: link_folder/主題/禁止混雜條例（牲畜種地衣服）.md
+- name: 婢女許配未贖身行淫條例
+  suggested_type: 主題
+  evidence: 利19:20-22 婢女許配丈夫未被贖身得釋放，人與他行淫，二人受刑罰但不治死（因婢女未得自由）；那人牽贖愆祭公綿羊到會幕門口，祭司贖罪，罪得赦免。保護婢女權利，不可視為商業財產。KC：屬靈意義——錯誤混雜：人與奴僕有交通，表徵認同律法原則容其進入生活。
+  surfaces:
+  - phrase: 婢女許配了丈夫
+  - phrase: 還沒有被贖、得釋放
+  - phrase: 贖愆祭
+  - phrase: 公綿羊
+  target_path: link_folder/主題/婢女許配未贖身行淫條例.md
+- name: 栽種果樹前三年如未受割禮不可吃
+  suggested_type: 主題
+  evidence: 利19:23-25 進迦南地栽種結果子樹木，前三年果子如未受割禮不可吃；第四年果子全成為聖，用以讚美耶和華；第五年可吃，叫樹結果子更多。KC：果子仍受迦南地污漬影響，三年不可吃；第四年歸神；承認神的產權帶來更多收成。提前4:4-5：凡物藉著神的道和禱告成聖。
+  surfaces:
+  - phrase: 前三年如未受割禮不可吃
+  - phrase: 第四年成為聖
+  - phrase: 第五年可吃
+  - phrase: 未受割禮的果子
+  - phrase: 橄欖樹條例
+  target_path: link_folder/主題/栽種果樹前三年如未受割禮不可吃.md
+- name: 不可吃帶血的物與法術觀兆
+  suggested_type: 主題
+  evidence: 利19:26 不可吃帶血的物；不可用法術，也不可觀兆。禁血（創9:4，利17:10-14）與禁占卜並列。KC：吃帶血物似為異教習俗；不可進入黑暗領域（看星相、算命），屬靈姦淫，嫉妒神不容。掃羅違背v31求問交鬼婦人而死（代上10:13）。
+  surfaces:
+  - phrase: 不可吃帶血的物
+  - phrase: 不可用法術
+  - phrase: 不可觀兆
+  - phrase: 法術觀兆
+  target_path: link_folder/主題/不可吃帶血的物與法術觀兆.md
+- name: 頭周圍不可剃鬍鬚周圍不可損壞
+  suggested_type: 主題
+  evidence: 利19:27 頭的周圍（兩鬢）不可剃，鬍鬚的周圍也不可損壞。區別於異教喪禮習俗（利21:5，申14:1）。
+  surfaces:
+  - phrase: 頭的周圍不可剃
+  - phrase: 鬍鬚的周圍不可損壞
+  - phrase: 兩鬢不可剃
+  target_path: link_folder/主題/頭周圍不可剃鬍鬚周圍不可損壞.md
+- name: 不可為死人用刀劃身與刺花紋
+  suggested_type: 主題
+  evidence: 利19:28 不可為死人用刀劃身，也不可在身上刺花紋。異教喪禮與崇拜習俗（申14:1，王上18:28）。
+  surfaces:
+  - phrase: 不可為死人用刀劃身
+  - phrase: 不可在身上刺花紋
+  - phrase: 刺花紋
+  - phrase: 劃身
+  target_path: link_folder/主題/不可為死人用刀劃身與刺花紋.md
+- name: 不可辱沒女兒使為娼妓
+  suggested_type: 主題
+  evidence: 利19:29 不可辱沒你的女兒，使他為娼妓，恐怕地上的人專向淫亂，地就滿了大惡。保護女性免被家庭賣淫；社會後果：地滿淫亂大惡。
+  surfaces:
+  - phrase: 不可辱沒你的女兒
+  - phrase: 使他為娼妓
+  - phrase: 地滿了大惡
+  target_path: link_folder/主題/不可辱沒女兒使為娼妓.md
+- name: 守安息日敬畏聖所
+  suggested_type: 主題
+  evidence: 利19:30 你們要守我的安息日，敬我的聖所。安息日（第四誡）與聖所敬畏並列。KC：出35:1-3重申安息日，補充禁令「安息日不可生火」（針對建造會幕金工）。
+  surfaces:
+  - phrase: 守我的安息日
+  - phrase: 敬我的聖所
+  - phrase: 敬畏聖所
+  target_path: link_folder/主題/守安息日敬畏聖所.md
+- name: 不可偏向交鬼行巫術的
+  suggested_type: 主題
+  evidence: 利19:31 不可偏向那些交鬼的和行巫術的；不可求問他們，以致被他們玷污了。禁交鬼（ob）與巫術（yidde'oni）。申18:10-12、賽8:19平行。KC：基督徒以為看星相「為好玩」無害，大錯特錯；每進入黑暗領域都是屬靈姦淫。掃羅違背而死。
+  surfaces:
+  - phrase: 不可偏向交鬼的
+  - phrase: 不可偏向行巫術的
+  - phrase: 交鬼
+  - phrase: 行巫術
+  - phrase: 求問他們
+  - phrase: 被玷污
+  target_path: link_folder/主題/不可偏向交鬼行巫術的.md
+- name: 白髮人面前站起尊敬老人
+  suggested_type: 主題
+  evidence: 利19:32 在白髮的人面前，你要站起來；也要尊敬老人，又要敬畏你的神。尊敬老人作為敬畏神的表現。
+  surfaces:
+  - phrase: 白髮的人面前站起來
+  - phrase: 尊敬老人
+  - phrase: 站起來
+  target_path: link_folder/主題/白髮人面前站起尊敬老人.md
+- name: 不可欺負寄居者要愛寄居者如己
+  suggested_type: 主題
+  evidence: 利19:33-34 若有外人在你們國中同居，不可欺負他；看他如本地人一樣，並要愛他如己，因為你們在埃及地也作過寄居的。寄居者（ger）與本地人同權同愛，動機：以色列在埃及作過寄居者。出22:21、23:9、申10:19平行。
+  surfaces:
+  - phrase: 不可欺負寄居者
+  - phrase: 愛寄居者如己
+  - phrase: 外人同居
+  - phrase: 寄居者同權
+  target_path: link_folder/主題/不可欺負寄居者要愛寄居者如己.md
+- name: 審判度量衡不可行不義
+  suggested_type: 主題
+  evidence: 利19:35-36 施行審判，不可行不義；在尺、秤、升、斗上也是如此。要用公道天平、公道法碼、公道升斗、公道秤。商業誠信：度量衡公義。申25:13-16、箴11:1、16:11、20:10、23。
+  surfaces:
+  - phrase: 審判不可行不義
+  - phrase: 公道天平
+  - phrase: 公道法碼
+  - phrase: 公道升斗
+  - phrase: 公道秤
+  - phrase: 度量衡公義
+  target_path: link_folder/主題/審判度量衡不可行不義.md
+- name: 謹守遵行一切律例典章
+  suggested_type: 主題
+  evidence: 利19:37 你們要謹守遵行我一切的律例典章。本章結語，呼應開頭聖潔總綱。
+  surfaces:
+  - phrase: 謹守遵行一切律例典章
+  - phrase: 律例典章
+  target_path: link_folder/主題/謹守遵行一切律例典章.md
+- name: 愛人如己
+  suggested_type: 神學
+  evidence: 利19:18 卻要愛人如己。第二大誡命（太22:39，羅13:9，加5:14，雅2:8）。愛人如己成全律法（羅13:10）。
+  surfaces:
+  - phrase: 愛人如己
+  - phrase: 愛鄰舍如己
+  target_path: link_folder/神學/愛人如己.md
+- name: 以色列全會眾
+  suggested_type: 人物
+  evidence: 利19:2 曉諭以色列全會眾。聖潔要求針對全體子民，不僅祭司。KC：全體子民都需要實踐這些條例。
+  surfaces:
+  - phrase: 以色列全會眾
+  - phrase: 全會眾
+  target_path: link_folder/人物/以色列全會眾.md
+- name: 埃及地
+  suggested_type: 地點
+  evidence: 利19:34 因為你們在埃及地也作過寄居的。愛寄居者的動機：親身經歷埃及寄居之苦。
+  surfaces:
+  - phrase: 埃及地
+  target_path: link_folder/地點/埃及地.md
+- name: 未受割禮
+  suggested_type: 原文
+  evidence: 利19:23 前三年果子如未受割禮的一樣不可吃。以割禮作為「不可接近/不可吃」的比喻。
+  surfaces:
+  - phrase: 未受割禮
+  - phrase: 如未受割禮
+  target_path: link_folder/原文/未受割禮.md
+- name: 法術與觀兆
+  suggested_type: 文化
+  evidence: 利19:26,31 不可用法術、觀兆；不可偏向交鬼行巫術的。異教占卜習俗：法術（nachash）、觀兆（onen）、交鬼（ob）、巫術（yidde'oni）。申18:10-12、賽8:19平行。
+  surfaces:
+  - phrase: 法術
+  - phrase: 觀兆
+  - phrase: 交鬼
+  - phrase: 行巫術
+  target_path: link_folder/文化/法術與觀兆.md
+- name: 公義審判
+  suggested_type: 神學
+  evidence: 利19:15,35-36 審判按公義，度量衡公道。神是公義的（詩145:17），要求百姓效法。彌6:8、箴11:1、16:11。
+  surfaces:
+  - phrase: 公義審判
+  - phrase: 公道天平
+  - phrase: 公道法碼
+  - phrase: 公道升斗
+  - phrase: 公道秤
+  target_path: link_folder/神學/公義審判.md
+- name: 偶像崇拜
+  suggested_type: 主題
+  evidence: 利19:4 不可偏向虛無的神，不可鑄造神像。第二誡申命。KC：神是靈，人所鑄造神像非真像，引誘人偏向虛妄、諂媚鬼魔。
+  surfaces:
+  - phrase: 虛無的神
+  - phrase: 鑄造神像
+  - phrase: 偶像
+  target_path: link_folder/主題/偶像崇拜.md
+- name: 田角條例
+  suggested_type: 主題
+  evidence: 利19:9-10 收割留田角、遺落給窮人寄居者。體現神恩慈屬性，信徒當顧念窮人。得2章波阿斯實例。
+  surfaces:
+  - phrase: 田角
+  - phrase: 遺落
+  - phrase: 留給窮人和寄居的
+  target_path: link_folder/主題/田角條例.md
+- name: 雇工工價
+  suggested_type: 主題
+  evidence: 利19:13 雇工工價不可過夜留到早晨。保護日工生計。申24:14-15、耶22:13、瑪3:5、雅5:4重申。
+  surfaces:
+  - phrase: 雇工人的工價
+  - phrase: 工價不可過夜
+  target_path: link_folder/主題/雇工工價.md
+- name: 指摘鄰舍
+  suggested_type: 主題
+  evidence: 利19:17 總要指摘你的鄰舍，免得因他擔罪。真愛包含責備（箴27:5-6，太18:15-20，加6:1）。
+  surfaces:
+  - phrase: 指摘鄰舍
+  - phrase: 免得因他擔罪
+  target_path: link_folder/主題/指摘鄰舍.md
+- name: 混雜條例
+  suggested_type: 主題
+  evidence: 利19:19 三種混雜禁令：牲畜異類配合、種子攙雜、衣料攙雜（沙特尼茲）。神創造各從其類（創1:25），不可混淆受造秩序。屬靈：律法與恩典、肉體與聖靈不可混（加、西、林後6:14-18）。
+  surfaces:
+  - phrase: 異類配合
+  - phrase: 攙雜的種
+  - phrase: 攙雜的料
+  - phrase: 沙特尼茲
+  target_path: link_folder/主題/混雜條例.md
+- name: 占卜
+  suggested_type: 文化
+  evidence: 利19:26,31 禁法術、觀兆、交鬼、巫術。申18:10-12詳細列舉。掃羅求問交鬼婦人違背而死（代上10:13）。
+  surfaces:
+  - phrase: 占卜
+  - phrase: 法術
+  - phrase: 觀兆
+  - phrase: 交鬼
+  - phrase: 巫術
+  target_path: link_folder/文化/占卜.md
+- name: 刺青
+  suggested_type: 文化
+  evidence: 利19:28 不可在身上刺花紋。異教喪禮習俗（申14:1，王上18:28）。
+  surfaces:
+  - phrase: 刺花紋
+  - phrase: 刺青
+  - phrase: 在身上刺花紋
+  target_path: link_folder/文化/刺青.md
+- name: 賣淫
+  suggested_type: 主題
+  evidence: 利19:29 不可辱沒女兒使為娼妓，免得地滿淫亂大惡。保護女性免被家庭賣淫。
+  surfaces:
+  - phrase: 使為娼妓
+  - phrase: 辱沒女兒
+  - phrase: 賣淫
+  target_path: link_folder/主題/賣淫.md
+- name: 度量衡
+  suggested_type: 主題
+  evidence: 利19:35-36 審判與度量衡同要求公道。尺、秤、升、斗公道。申25:13-16、箴11:1、16:11、20:10、23。
+  surfaces:
+  - phrase: 尺
+  - phrase: 秤
+  - phrase: 升
+  - phrase: 斗
+  - phrase: 公道天平
+  - phrase: 公道法碼
+  - phrase: 公道升斗
+  - phrase: 公道秤
+  target_path: link_folder/主題/度量衡.md
+D_new_candidate:
+- name: 平安祭
+  suggested_type: 主題
+  evidence: 利19:5-8 重申平安祭條例（利7:11-18）：感謝祭當天吃完，還願/甘心祭第二天可吃，第三天必焚燒；第三天吃為可憎惡，褻瀆聖物，從民中剪除。
+  surfaces:
+  - phrase: 平安祭
+  - phrase: 感謝祭
+  - phrase: 還願祭
+  - phrase: 甘心祭
+  - phrase: 第三天焚燒
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['背景']
+- name: 贖愆祭
+  suggested_type: 主題
+  evidence: 利19:21-22 婢女行淫案中，那人牽贖愆祭公綿羊到會幕門口，祭司贖罪，罪得赦免。贖愆祭處理具體過犯（利5:14-6:7，7:1-7）。
+  surfaces:
+  - phrase: 贖愆祭
+  - phrase: 公綿羊
+  - phrase: 贖罪
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 保護弱勢
+  suggested_type: 神學
+  evidence: 利19:14,32-34 保護聾子、瞎子、白髮老人、寄居者。神監察軟弱無力者（v14敬畏神）。
+  surfaces:
+  - phrase: 保護聾子
+  - phrase: 保護瞎子
+  - phrase: 尊敬老人
+  - phrase: 保護寄居者
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=主題，secondary=[]
+- name: 割禮
+  suggested_type: 主題
+  evidence: 利19:23 果子如未受割禮不可吃。割禮作為立約記號（創17），此處作比喻：未受割禮＝未分別為聖、不可接近。
+  surfaces:
+  - phrase: 割禮
+  - phrase: 未受割禮
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+E_skip: []

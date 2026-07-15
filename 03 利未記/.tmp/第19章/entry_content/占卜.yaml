@@ -1,0 +1,25 @@
+name: 占卜
+type: 文化
+secondary_types: []
+aliases:
+- 占卜
+status: formal
+definition: 利未記 19:26 禁「不可用法術，也不可觀兆」；19:31 禁「不可偏向那些交鬼的和行巫術的」。占卜被視為對神主權的挑戰，屬文化禁忌範疇。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 19
+  summary: 禁止一切占卜、法術與求問交鬼行巫術
+  relation: 強調單單倚靠耶和華，拒絕以人為本的超自然尋求
+related_entries:
+- 法術與觀兆
+- 不可偏向交鬼行巫術的
+- 聖潔生活總綱（利19:1-2）
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT19.htm'
+- '研讀: https://biblehub.com/study/leviticus/19.htm'
+created_from: 利未記 19
+category: 文化
+trigger_sources: []
+current_data: {}
+pending: false
