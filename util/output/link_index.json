@@ -4790,6 +4790,16 @@
     "status": "formal",
     "aliases": []
   },
+  "第二年正月": {
+    "path": "link_folder/主題/第二年正月.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "第二年正月",
+    "status": "formal",
+    "aliases": [
+      "出埃及第二年正月"
+    ]
+  },
   "第二隊往前行": {
     "path": "link_folder/主題/第二隊往前行.md",
     "type": "主題",
@@ -6948,6 +6958,24 @@
     "status": "formal",
     "aliases": []
   },
+  "因死屍不潔不能守節": {
+    "path": "link_folder/事件/因死屍不潔不能守節.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "因死屍不潔不能守節",
+    "status": "formal",
+    "aliases": [
+      "因屍體不潔無法守逾越節"
+    ]
+  },
+  "因死屍不潔延後守節": {
+    "path": "link_folder/事件/因死屍不潔延後守節.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "因死屍不潔延後守節",
+    "status": "formal",
+    "aliases": []
+  },
   "在埃及地擊殺一切頭生的那日": {
     "path": "link_folder/事件/在埃及地擊殺一切頭生的那日.md",
     "type": "事件",
@@ -6958,6 +6986,14 @@
       "擊殺頭生之日",
       "埃及擊殺頭生"
     ]
+  },
+  "外人守逾越節同歸一例": {
+    "path": "link_folder/事件/外人守逾越節同歸一例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "外人守逾越節同歸一例",
+    "status": "formal",
+    "aliases": []
   },
   "大衛用車運約櫃（大衛違例用車運櫃）": {
     "path": "link_folder/事件/大衛用車運約櫃（大衛違例用車運櫃）.md",
@@ -7050,6 +7086,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "希伯來奴僕的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "帳幕立起之日雲彩遮蓋": {
+    "path": "link_folder/事件/帳幕立起之日雲彩遮蓋.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "帳幕立起之日雲彩遮蓋",
     "status": "formal",
     "aliases": []
   },
@@ -7274,6 +7318,16 @@
     "aliases": [
       "摔碎法版",
       "摩西摔碎兩塊法版"
+    ]
+  },
+  "摩西求問神（逾越節補守）": {
+    "path": "link_folder/事件/摩西求問神（逾越節補守）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西求問神（逾越節補守）",
+    "status": "formal",
+    "aliases": [
+      "摩西為不潔淨者求問耶和華"
     ]
   },
   "摩西求神同去並蒙應允": {
@@ -7773,6 +7827,16 @@
     "status": "formal",
     "aliases": []
   },
+  "立起帳幕的那日（正月初一）": {
+    "path": "link_folder/事件/立起帳幕的那日（正月初一）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "立起帳幕的那日（正月初一）",
+    "status": "formal",
+    "aliases": [
+      "立起帳幕的日子"
+    ]
+  },
   "築壇耶和華尼西": {
     "path": "link_folder/事件/築壇耶和華尼西.md",
     "type": "事件",
@@ -7878,6 +7942,17 @@
       "葉忒羅離去"
     ]
   },
+  "補守逾越節條例": {
+    "path": "link_folder/事件/補守逾越節條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "補守逾越節條例",
+    "status": "formal",
+    "aliases": [
+      "二月逾越節條例",
+      "逾越節補守律例"
+    ]
+  },
   "西乃山吩咐（利7：38）": {
     "path": "link_folder/事件/西乃山吩咐（利7：38）.md",
     "type": "事件",
@@ -7896,11 +7971,27 @@
     "status": "formal",
     "aliases": []
   },
+  "逾越節第二年首次守節": {
+    "path": "link_folder/事件/逾越節第二年首次守節.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "逾越節第二年首次守節",
+    "status": "formal",
+    "aliases": []
+  },
   "道德與宗教的律例": {
     "path": "link_folder/事件/道德與宗教的律例.md",
     "type": "事件",
     "secondary_types": [],
     "title": "道德與宗教的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "遠方行路延後守節": {
+    "path": "link_folder/事件/遠方行路延後守節.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "遠方行路延後守節",
     "status": "formal",
     "aliases": []
   },
@@ -7952,6 +8043,34 @@
     "aliases": [
       "會中長老按手"
     ]
+  },
+  "雲彩停住安營": {
+    "path": "link_folder/事件/雲彩停住安營.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "雲彩停住安營",
+    "status": "formal",
+    "aliases": [
+      "雲彩停留安營"
+    ]
+  },
+  "雲彩收上去起行": {
+    "path": "link_folder/事件/雲彩收上去起行.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "雲彩收上去起行",
+    "status": "formal",
+    "aliases": [
+      "雲彩升起起行"
+    ]
+  },
+  "雲彩遮蓋帳幕（民9：15-23）": {
+    "path": "link_folder/事件/雲彩遮蓋帳幕（民9：15-23）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "雲彩遮蓋帳幕（民9：15-23）",
+    "status": "formal",
+    "aliases": []
   },
   "頒布大痲瘋察看條例": {
     "path": "link_folder/事件/頒布大痲瘋察看條例.md",
@@ -9730,6 +9849,14 @@
       "夏娃犯罪與潔淨期"
     ]
   },
+  "外人守逾越節（出12：48-49）": {
+    "path": "link_folder/互文/外人守逾越節（出12：48-49）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "外人守逾越節（出12：48-49）",
+    "status": "formal",
+    "aliases": []
+  },
   "多1：5-9 長老資格": {
     "path": "link_folder/互文/多1：5-9 長老資格.md",
     "type": "互文",
@@ -10090,6 +10217,16 @@
       "希伯來書4章安息",
       "神的安息",
       "安息日的安息"
+    ]
+  },
+  "希西家守二月逾越節（代下三十）": {
+    "path": "link_folder/互文/希西家守二月逾越節（代下三十）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "希西家守二月逾越節（代下三十）",
+    "status": "formal",
+    "aliases": [
+      "希西家二月逾越節"
     ]
   },
   "幔子裂開（太27：51；來10：19-20）": {
@@ -10681,6 +10818,14 @@
     "status": "formal",
     "aliases": []
   },
+  "會幕雲光（出40：34-38）": {
+    "path": "link_folder/互文/會幕雲光（出40：34-38）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "會幕雲光（出40：34-38）",
+    "status": "formal",
+    "aliases": []
+  },
   "林前10：10 不要發怨言": {
     "path": "link_folder/互文/林前10：10 不要發怨言.md",
     "type": "互文",
@@ -10921,6 +11066,14 @@
       "歷代志上5章流便"
     ]
   },
+  "死屍不潔條例（民19：11-13）": {
+    "path": "link_folder/互文/死屍不潔條例（民19：11-13）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "死屍不潔條例（民19：11-13）",
+    "status": "formal",
+    "aliases": []
+  },
   "民18：15-16": {
     "path": "link_folder/互文/民18：15-16.md",
     "type": "互文",
@@ -11024,6 +11177,16 @@
     "status": "formal",
     "aliases": [
       "創世記潔淨條例"
+    ]
+  },
+  "火柱雲柱引導出埃及（出十三）": {
+    "path": "link_folder/互文/火柱雲柱引導出埃及（出十三）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "火柱雲柱引導出埃及（出十三）",
+    "status": "formal",
+    "aliases": [
+      "出埃及火柱雲柱"
     ]
   },
   "烏西雅王患大痲瘋（代下26：19-21）": {
@@ -13252,6 +13415,14 @@
     "status": "formal",
     "aliases": []
   },
+  "逾越節與主餐（林前5：7-8, 11：24-25）": {
+    "path": "link_folder/互文/逾越節與主餐（林前5：7-8, 11：24-25）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "逾越節與主餐（林前5：7-8, 11：24-25）",
+    "status": "formal",
+    "aliases": []
+  },
   "酒政與主餐之杯": {
     "path": "link_folder/互文/酒政與主餐之杯.md",
     "type": "互文",
@@ -13402,6 +13573,14 @@
       "雅弗住閃帳棚",
       "雅弗分享閃的福分"
     ]
+  },
+  "雲柱火柱引導（出13：21-22）": {
+    "path": "link_folder/互文/雲柱火柱引導（出13：21-22）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "雲柱火柱引導（出13：21-22）",
+    "status": "formal",
+    "aliases": []
   },
   "頭一層帳幕作現今的表樣（來9：8-9）": {
     "path": "link_folder/互文/頭一層帳幕作現今的表樣（來9：8-9）.md",
@@ -17809,6 +17988,16 @@
     "status": "formal",
     "aliases": []
   },
+  "守（shamar）": {
+    "path": "link_folder/原文/守（shamar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "守（shamar）",
+    "status": "formal",
+    "aliases": [
+      "shamar"
+    ]
+  },
   "安息（shabath）": {
     "path": "link_folder/原文/安息（shabath）.md",
     "type": "原文",
@@ -18211,6 +18400,17 @@
     "aliases": [
       "所多瑪和蛾摩拉的呼喊",
       "所多瑪聲聞於神"
+    ]
+  },
+  "所定的日期（逾越節）（mo'ed）": {
+    "path": "link_folder/原文/所定的日期（逾越節）（mo'ed）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "所定的日期（逾越節）（mo'ed）",
+    "status": "formal",
+    "aliases": [
+      "所定的日期",
+      "逾越節定期"
     ]
   },
   "承接聖職之禮（millu'im）": {
@@ -21817,6 +22017,16 @@
       "Derech Eretz Plishtim"
     ]
   },
+  "法櫃的帳幕（見證的帳幕）": {
+    "path": "link_folder/地點/法櫃的帳幕（見證的帳幕）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "法櫃的帳幕（見證的帳幕）",
+    "status": "formal",
+    "aliases": [
+      "見證的帳幕"
+    ]
+  },
   "波提乏的家": {
     "path": "link_folder/地點/波提乏的家.md",
     "type": "地點",
@@ -23070,6 +23280,16 @@
       "火刑處決"
     ]
   },
+  "無酵餅與苦菜（補守逾越節）": {
+    "path": "link_folder/文化/無酵餅與苦菜（補守逾越節）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "無酵餅與苦菜（補守逾越節）",
+    "status": "formal",
+    "aliases": [
+      "補守逾越節的無酵餅苦菜"
+    ]
+  },
   "爐灶和摶麵盆": {
     "path": "link_folder/文化/爐灶和摶麵盆.md",
     "type": "文化",
@@ -23098,6 +23318,14 @@
       "猶太飲食傳統",
       "Kashrut"
     ]
+  },
+  "猶太曆法黃昏算日": {
+    "path": "link_folder/文化/猶太曆法黃昏算日.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "猶太曆法黃昏算日",
+    "status": "formal",
+    "aliases": []
   },
   "石頭打死": {
     "path": "link_folder/文化/石頭打死.md",
@@ -23384,6 +23612,14 @@
       "背景"
     ],
     "title": "送婢女為嫁妝",
+    "status": "formal",
+    "aliases": []
+  },
+  "逾越節與無酵節重疊": {
+    "path": "link_folder/文化/逾越節與無酵節重疊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "逾越節與無酵節重疊",
     "status": "formal",
     "aliases": []
   },
@@ -24113,6 +24349,17 @@
     "title": "第七災：雹災",
     "status": "formal",
     "aliases": []
+  },
+  "第二年正月初一立帳幕": {
+    "path": "link_folder/歷史/第二年正月初一立帳幕.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "第二年正月初一立帳幕",
+    "status": "formal",
+    "aliases": [
+      "立帳幕之日",
+      "會幕豎立"
+    ]
   },
   "第五災：畜疫之災": {
     "path": "link_folder/歷史/第五災：畜疫之災.md",
@@ -25216,6 +25463,16 @@
       "以色列軍隊",
       "hosts of Israel",
       "出埃及軍隊"
+    ]
+  },
+  "以色列人順服守節": {
+    "path": "link_folder/神學/以色列人順服守節.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "以色列人順服守節",
+    "status": "formal",
+    "aliases": [
+      "百姓遵命守逾越節"
     ]
   },
   "以色列是我的兒子我的長子": {
@@ -26369,6 +26626,16 @@
     "status": "formal",
     "aliases": []
   },
+  "外人寄居守逾越節同歸一例": {
+    "path": "link_folder/神學/外人寄居守逾越節同歸一例.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "外人寄居守逾越節同歸一例",
+    "status": "formal",
+    "aliases": [
+      "寄居者守逾越節同歸一律"
+    ]
+  },
   "大家均分": {
     "path": "link_folder/神學/大家均分.md",
     "type": "神學",
@@ -26574,6 +26841,16 @@
     "title": "嫉妒與爭競",
     "status": "formal",
     "aliases": []
+  },
+  "守耶和華的吩咐（雲彩引導下）": {
+    "path": "link_folder/神學/守耶和華的吩咐（雲彩引導下）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "守耶和華的吩咐（雲彩引導下）",
+    "status": "formal",
+    "aliases": [
+      "守耶和華吩咐"
+    ]
   },
   "安息": {
     "path": "link_folder/神學/安息.md",
@@ -27667,6 +27944,25 @@
       "雲彩與火"
     ]
   },
+  "日間雲彩夜間火（帳幕上）": {
+    "path": "link_folder/神學/日間雲彩夜間火（帳幕上）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "日間雲彩夜間火（帳幕上）",
+    "status": "formal",
+    "aliases": [
+      "雲彩火柱",
+      "晝夜雲火"
+    ]
+  },
+  "晝夜雲彩不斷": {
+    "path": "link_folder/神學/晝夜雲彩不斷.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "晝夜雲彩不斷",
+    "status": "formal",
+    "aliases": []
+  },
   "普天下沒有像我的": {
     "path": "link_folder/神學/普天下沒有像我的.md",
     "type": "神學",
@@ -28135,6 +28431,16 @@
       "絕後",
       "斷絕後裔",
       "以死謝罪"
+    ]
+  },
+  "無故不守逾越節剪除": {
+    "path": "link_folder/神學/無故不守逾越節剪除.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "無故不守逾越節剪除",
+    "status": "formal",
+    "aliases": [
+      "推辭不守逾越節被剪除"
     ]
   },
   "無條件之約": {
@@ -28857,6 +29163,14 @@
       "主題"
     ],
     "title": "神的恩典之約",
+    "status": "formal",
+    "aliases": []
+  },
+  "神的恩典供應補救條例": {
+    "path": "link_folder/神學/神的恩典供應補救條例.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的恩典供應補救條例",
     "status": "formal",
     "aliases": []
   },
@@ -29596,6 +29910,16 @@
     "title": "罪的起源（創世記3章）",
     "status": "formal",
     "aliases": []
+  },
+  "羊羔骨頭不可折斷（補守）": {
+    "path": "link_folder/神學/羊羔骨頭不可折斷（補守）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "羊羔骨頭不可折斷（補守）",
+    "status": "formal",
+    "aliases": [
+      "補守逾越節羊羔骨頭不可折斷"
+    ]
   },
   "義人與完全人": {
     "path": "link_folder/神學/義人與完全人.md",
@@ -30551,6 +30875,14 @@
       "全人奉獻"
     ]
   },
+  "逾越節羔羊骨頭不可折斷": {
+    "path": "link_folder/神學/逾越節羔羊骨頭不可折斷.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逾越節羔羊骨頭不可折斷",
+    "status": "formal",
+    "aliases": []
+  },
   "遠遠下拜": {
     "path": "link_folder/神學/遠遠下拜.md",
     "type": "神學",
@@ -30558,6 +30890,16 @@
     "title": "遠遠下拜",
     "status": "formal",
     "aliases": []
+  },
+  "遵耶和華吩咐起行安營": {
+    "path": "link_folder/神學/遵耶和華吩咐起行安營.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "遵耶和華吩咐起行安營",
+    "status": "formal",
+    "aliases": [
+      "順服雲彩引導"
+    ]
   },
   "遵行律例就必活著": {
     "path": "link_folder/神學/遵行律例就必活著.md",
@@ -30569,6 +30911,14 @@
       "守律例得生",
       "律例典章與生命"
     ]
+  },
+  "遵雲彩起行安營": {
+    "path": "link_folder/神學/遵雲彩起行安營.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "遵雲彩起行安營",
+    "status": "formal",
+    "aliases": []
   },
   "還願祭": {
     "path": "link_folder/神學/還願祭.md",
@@ -30710,6 +31060,16 @@
     "status": "formal",
     "aliases": []
   },
+  "雲彩停留長短不定（兩天一月一年）": {
+    "path": "link_folder/神學/雲彩停留長短不定（兩天一月一年）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "雲彩停留長短不定（兩天一月一年）",
+    "status": "formal",
+    "aliases": [
+      "雲彩停留不定"
+    ]
+  },
   "雲彩引導行程": {
     "path": "link_folder/神學/雲彩引導行程.md",
     "type": "神學",
@@ -30758,6 +31118,14 @@
     "aliases": [
       "照神吩咐而行"
     ]
+  },
+  "順服神的主權引導": {
+    "path": "link_folder/神學/順服神的主權引導.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "順服神的主權引導",
+    "status": "formal",
+    "aliases": []
   },
   "頭生歸神": {
     "path": "link_folder/神學/頭生歸神.md",
@@ -31630,6 +31998,17 @@
       "遮羞原文作眼"
     ]
   },
+  "三位祭司能否宰殺所有逾越節羊羔": {
+    "path": "link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "三位祭司能否宰殺所有逾越節羊羔",
+    "status": "formal",
+    "aliases": [
+      "三祭司宰羊問題",
+      "亞倫以利亞撒以他瑪宰殺逾越節羔羊"
+    ]
+  },
   "三位訪客的身分": {
     "path": "link_folder/解經爭議/三位訪客的身分.md",
     "type": "解經爭議",
@@ -31652,6 +32031,17 @@
     "status": "formal",
     "aliases": [
       "三天路程是否為欺騙"
+    ]
+  },
+  "二月逾越節是否只有一天、不必除酵": {
+    "path": "link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "二月逾越節是否只有一天、不必除酵",
+    "status": "formal",
+    "aliases": [
+      "補守逾越節除酵爭議",
+      "二月逾越節無酵餅規定"
     ]
   },
   "亞伯拉罕為何停在十個義人": {
@@ -32430,6 +32820,17 @@
     "status": "formal",
     "aliases": [
       "兩個與七對的動物數目"
+    ]
+  },
+  "民9：22「一年」是否指加低斯住營一年": {
+    "path": "link_folder/解經爭議/民9：22「一年」是否指加低斯住營一年.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "民9：22「一年」是否指加低斯住營一年",
+    "status": "formal",
+    "aliases": [
+      "民數記9:22一年解經",
+      "雲彩停留一年加低斯"
     ]
   },
   "法勒時代的分地指什麼": {
@@ -34680,6 +35081,9 @@
   "第三隊": {
     "alias_of": "第三隊往前行（民2-24）_old"
   },
+  "出埃及第二年正月": {
+    "alias_of": "第二年正月"
+  },
   "節期獻祭": {
     "alias_of": "節期獻祭總結"
   },
@@ -35352,6 +35756,9 @@
   "摩西召亞倫和以色列眾長老": {
     "alias_of": "召聚長老作見證"
   },
+  "因屍體不潔無法守逾越節": {
+    "alias_of": "因死屍不潔不能守節"
+  },
   "擊殺頭生之日": {
     "alias_of": "在埃及地擊殺一切頭生的那日"
   },
@@ -35435,6 +35842,9 @@
   },
   "摩西摔碎兩塊法版": {
     "alias_of": "摩西摔碎法版（廢約的象徵）"
+  },
+  "摩西為不潔淨者求問耶和華": {
+    "alias_of": "摩西求問神（逾越節補守）"
   },
   "摩西求神同行": {
     "alias_of": "摩西求神同去並蒙應允"
@@ -35613,6 +36023,9 @@
   "祭司在耶和華面前行完": {
     "alias_of": "祭司在耶和華面前辦完"
   },
+  "立起帳幕的日子": {
+    "alias_of": "立起帳幕的那日（正月初一）"
+  },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
   },
@@ -35649,6 +36062,12 @@
   "葉忒羅離去": {
     "alias_of": "葉忒羅返回本地"
   },
+  "二月逾越節條例": {
+    "alias_of": "補守逾越節條例"
+  },
+  "逾越節補守律例": {
+    "alias_of": "補守逾越節條例"
+  },
   "西乃山吩咐": {
     "alias_of": "西乃山吩咐（利7：38）"
   },
@@ -35666,6 +36085,12 @@
   },
   "會中長老按手": {
     "alias_of": "長老按手"
+  },
+  "雲彩停留安營": {
+    "alias_of": "雲彩停住安營"
+  },
+  "雲彩升起起行": {
+    "alias_of": "雲彩收上去起行"
   },
   "大痲瘋察看條例頒布": {
     "alias_of": "頒布大痲瘋察看條例"
@@ -36057,6 +36482,9 @@
   "安息日的安息": {
     "alias_of": "希伯來書4章神的安息"
   },
+  "希西家二月逾越節": {
+    "alias_of": "希西家守二月逾越節（代下三十）"
+  },
   "幔子裂開": {
     "alias_of": "幔子裂開（太27：51；來10：19-20）"
   },
@@ -36218,6 +36646,9 @@
   },
   "創世記潔淨條例": {
     "alias_of": "潔淨不潔淨條例（創7：2-3）"
+  },
+  "出埃及火柱雲柱": {
+    "alias_of": "火柱雲柱引導出埃及（出十三）"
   },
   "烏西雅王患大痲瘋": {
     "alias_of": "烏西雅王患大痲瘋（代下26：19-21）"
@@ -37608,6 +38039,9 @@
   "基拉": {
     "alias_of": "季拉（gerah）"
   },
+  "shamar": {
+    "alias_of": "守（shamar）"
+  },
   "希1": {
     "alias_of": "希1（Hebraious 1）"
   },
@@ -37757,6 +38191,12 @@
   },
   "所多瑪聲聞於神": {
     "alias_of": "所多瑪罪惡的呼喊"
+  },
+  "所定的日期": {
+    "alias_of": "所定的日期（逾越節）（mo'ed）"
+  },
+  "逾越節定期": {
+    "alias_of": "所定的日期（逾越節）（mo'ed）"
   },
   "承接聖職的禮": {
     "alias_of": "承接聖職的禮（millu'im）"
@@ -38964,6 +39404,9 @@
   "Derech Eretz Plishtim": {
     "alias_of": "沿海大道（Via Maris）"
   },
+  "見證的帳幕": {
+    "alias_of": "法櫃的帳幕（見證的帳幕）"
+  },
   "紅海": {
     "alias_of": "海（紅海）"
   },
@@ -39315,6 +39758,9 @@
   "火刑處決": {
     "alias_of": "火刑"
   },
+  "補守逾越節的無酵餅苦菜": {
+    "alias_of": "無酵餅與苦菜（補守逾越節）"
+  },
   "ovens and kneading bowls": {
     "alias_of": "爐灶和摶麵盆"
   },
@@ -39620,6 +40066,12 @@
   },
   "備荒制度": {
     "alias_of": "積貨城制度"
+  },
+  "立帳幕之日": {
+    "alias_of": "第二年正月初一立帳幕"
+  },
+  "會幕豎立": {
+    "alias_of": "第二年正月初一立帳幕"
   },
   "殺長子之災": {
     "alias_of": "第十災（殺長子之災）"
@@ -39957,6 +40409,9 @@
   "出埃及軍隊": {
     "alias_of": "以色列人的軍隊"
   },
+  "百姓遵命守逾越節": {
+    "alias_of": "以色列人順服守節"
+  },
   "向你仰臉": {
     "alias_of": "仰臉"
   },
@@ -40257,6 +40712,9 @@
   "不可熄滅": {
     "alias_of": "壇火常燒（不可熄滅）"
   },
+  "寄居者守逾越節同歸一律": {
+    "alias_of": "外人寄居守逾越節同歸一例"
+  },
   "神伸手攻擊埃及": {
     "alias_of": "大能的手與出埃及神蹟"
   },
@@ -40304,6 +40762,9 @@
   },
   "鷹的翅膀": {
     "alias_of": "如鷹背在翅膀上"
+  },
+  "守耶和華吩咐": {
+    "alias_of": "守耶和華的吩咐（雲彩引導下）"
   },
   "Establishment of the Sabbath": {
     "alias_of": "安息日的設立"
@@ -40653,6 +41114,12 @@
   "雲彩與火": {
     "alias_of": "日間雲彩、夜間雲中有火"
   },
+  "雲彩火柱": {
+    "alias_of": "日間雲彩夜間火（帳幕上）"
+  },
+  "晝夜雲火": {
+    "alias_of": "日間雲彩夜間火（帳幕上）"
+  },
   "in all the earth": {
     "alias_of": "普天下沒有像我的"
   },
@@ -40808,6 +41275,9 @@
   },
   "以死謝罪": {
     "alias_of": "無子女而死"
+  },
+  "推辭不守逾越節被剪除": {
+    "alias_of": "無故不守逾越節剪除"
   },
   "沒有殘疾": {
     "alias_of": "無殘疾"
@@ -41190,6 +41660,9 @@
   "罪如大痲瘋": {
     "alias_of": "罪如大痲瘋：滲透、隔離、需神醫治"
   },
+  "補守逾越節羊羔骨頭不可折斷": {
+    "alias_of": "羊羔骨頭不可折斷（補守）"
+  },
   "Yahweh Yireh": {
     "alias_of": "耶和華以勒"
   },
@@ -41439,6 +41912,9 @@
   "全人奉獻": {
     "alias_of": "連一蹄也不留下"
   },
+  "順服雲彩引導": {
+    "alias_of": "遵耶和華吩咐起行安營"
+  },
   "守律例得生": {
     "alias_of": "遵行律例就必活著"
   },
@@ -41498,6 +41974,9 @@
   },
   "陳設餅桌包裹": {
     "alias_of": "陳設餅桌子遮蓋"
+  },
+  "雲彩停留不定": {
+    "alias_of": "雲彩停留長短不定（兩天一月一年）"
   },
   "雲彩收上去": {
     "alias_of": "雲彩引導行程"
@@ -41703,6 +42182,12 @@
   "遮羞原文作眼": {
     "alias_of": "一千銀子與遮羞的含義"
   },
+  "三祭司宰羊問題": {
+    "alias_of": "三位祭司能否宰殺所有逾越節羊羔"
+  },
+  "亞倫以利亞撒以他瑪宰殺逾越節羔羊": {
+    "alias_of": "三位祭司能否宰殺所有逾越節羊羔"
+  },
   "亞伯拉罕接待的三人": {
     "alias_of": "三位訪客的身分"
   },
@@ -41711,6 +42196,12 @@
   },
   "三天路程是否為欺騙": {
     "alias_of": "三天的路程是欺騙嗎"
+  },
+  "補守逾越節除酵爭議": {
+    "alias_of": "二月逾越節是否只有一天、不必除酵"
+  },
+  "二月逾越節無酵餅規定": {
+    "alias_of": "二月逾越節是否只有一天、不必除酵"
   },
   "十個義人的下限": {
     "alias_of": "亞伯拉罕為何停在十個義人"
@@ -41888,6 +42379,12 @@
   },
   "兩個與七對的動物數目": {
     "alias_of": "每樣兩個與潔淨畜類七對"
+  },
+  "民數記9:22一年解經": {
+    "alias_of": "民9：22「一年」是否指加低斯住營一年"
+  },
+  "雲彩停留一年加低斯": {
+    "alias_of": "民9：22「一年」是否指加低斯住營一年"
   },
   "法勒時代的分裂": {
     "alias_of": "法勒時代的分地指什麼"

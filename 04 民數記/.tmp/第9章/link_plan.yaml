@@ -1,0 +1,368 @@
+book: 民數記
+chapter: 9
+A_use_directly:
+- name: 補守逾越節條例
+  suggested_type: 事件
+  evidence: 民9:10-12 耶和華吩咐因死屍不潔或遠方行路者，在二月十四日補守逾越節，稱「二月逾越節」或 Pesach Sheni。ccbiblestudy_CT、GT、KingComments
+    均詳述此條例。
+  surfaces:
+  - phrase: 二月十四日
+  - phrase: 補守逾越節
+  - phrase: 第二次逾越節
+  match_type: exact
+  existing_title: 補守逾越節條例
+  existing_path: link_folder/事件/補守逾越節條例.md
+- name: 雲彩收上去起行
+  suggested_type: 事件
+  evidence: 民9:17,21-22 雲彩幾時從帳幕收上去，以色列人就幾時起行。丁良才註釋引民14:39-45 曾有一次不遵雲彩起行而受重罰。
+  surfaces:
+  - phrase: 雲彩收上去
+  - phrase: 收上去
+  - phrase: 起行
+  match_type: exact
+  existing_title: 雲彩收上去起行
+  existing_path: link_folder/事件/雲彩收上去起行.md
+- name: 雲彩停住安營
+  suggested_type: 事件
+  evidence: 民9:17-18,22 雲彩在哪裡停住，以色列人就在那裡安營；雲彩在帳幕上停住幾時，他們就住營幾時。
+  surfaces:
+  - phrase: 雲彩停住
+  - phrase: 雲彩在帳幕上停住
+  - phrase: 安營
+  match_type: exact
+  existing_title: 雲彩停住安營
+  existing_path: link_folder/事件/雲彩停住安營.md
+- name: 雲彩停留長短不定
+  suggested_type: 神學
+  evidence: 民9:19-22 雲彩停留或許多日子、或幾天、或從晚上到早晨、或晝夜、或兩天、一月、一年。ccbiblestudy_CT、GT、聖經精讀本均強調：教導以色列人忍耐等候，神的主權引導，不可強求知道理由。
+  surfaces:
+  - phrase: 停留許多日子
+  - phrase: 幾天
+  - phrase: 從晚上到早晨
+  - phrase: 晝夜
+  - phrase: 兩天
+  - phrase: 一月
+  - phrase: 一年
+  match_type: base
+  existing_title: 雲彩停留長短不定（兩天一月一年）
+  existing_path: link_folder/神學/雲彩停留長短不定（兩天一月一年）.md
+- name: 希西家守二月逾越節（代下30）
+  suggested_type: 互文
+  evidence: 民9:11 二月十四日補守逾越節 → 代下30:1-15 希西家王照此條例，將大逾越節改在二月守。丁良才、ccbiblestudy_CT、GT、KingComments
+    均引用。
+  surfaces:
+  - phrase: 二月十四日
+  - phrase: 希西家
+  - phrase: 代下30
+  match_type: base
+  existing_title: 希西家守二月逾越節（代下三十）
+  existing_path: link_folder/互文/希西家守二月逾越節（代下三十）.md
+B_needs_update:
+- name: 米沙利（亞倫叔父）
+  suggested_type: 人物
+  evidence: 民9:6 註解一致指認「有幾個人」為米沙利、以利撒反（利10:4-5 奉摩西命處理拿答、亞比戶屍體）。丁良才、啟導本、串珠註釋、聖經精讀本均確認。
+  surfaces:
+  - phrase: 米沙利
+  - phrase: 有幾個人
+  match_type: base
+  existing_title: 米沙利、以利撒反
+  existing_path: link_folder/人物/米沙利、以利撒反.md
+- name: 以利撒反（亞倫叔父）
+  suggested_type: 人物
+  evidence: 同上，與米沙利一同處理屍體，導致不潔七天（民19:11），趕不上正月逾越節。
+  surfaces:
+  - phrase: 以利撒反
+  - phrase: 以利撒反
+  match_type: base
+  existing_title: 米沙利、以利撒反
+  existing_path: link_folder/人物/米沙利、以利撒反.md
+- name: 拿答（亞倫長子）
+  suggested_type: 人物
+  evidence: 利10:1-2 獻凡火被火燒死，屍體由米沙利、以利撒反抬出營外。民9:6 註解關聯此事。
+  surfaces:
+  - phrase: 拿答
+  match_type: base
+  existing_title: 拿答
+  existing_path: link_folder/人物/拿答.md
+- name: 亞比戶（亞倫次子）
+  suggested_type: 人物
+  evidence: 同上，與拿答同被火燒死。
+  surfaces:
+  - phrase: 亞比戶
+  match_type: base
+  existing_title: 亞比戶
+  existing_path: link_folder/人物/亞比戶.md
+- name: 西乃的曠野
+  suggested_type: 地點
+  evidence: 民9:1,5 耶和華在西乃曠野吩咐摩西；以色列人在西乃曠野守逾越節。ccbiblestudy_GT、舊約背景註釋：西乃山腳下周邊曠野地帶，尚未出發飄流前駐營處。
+  surfaces:
+  - phrase: 西乃的曠野
+  - phrase: 西乃曠野
+  match_type: exact
+  existing_title: 西乃的曠野
+  existing_path: link_folder/地點/西乃的曠野.md
+- name: 不潔淨（tame）
+  suggested_type: 原文
+  evidence: 民9:6-7,10,13 因死屍而不潔淨（טָמֵא tame）。民19:11-13 摸死屍不潔七天。聖經精讀本：日常生活犯罪未解決，可能沾染鄰舍。
+  surfaces:
+  - phrase: 不潔淨
+  - phrase: 不潔
+  match_type: exact
+  existing_title: 不潔淨（tame）
+  existing_path: link_folder/原文/不潔淨（tame）.md
+- name: 逾越節羔羊預表基督（約19:36）
+  suggested_type: 互文
+  evidence: 民9:12 羊羔骨頭一根不可折斷 → 約19:33,36 基督被釘十字架骨頭未斷，應驗此預表。丁良才、串珠註釋、聖經精讀本、KingComments
+    均引用。
+  surfaces:
+  - phrase: 骨頭一根也不可折斷
+  - phrase: 預表基督
+  match_type: base
+  existing_title: 基督預表（逾越節羔羊）
+  existing_path: link_folder/神學/基督預表（逾越節羔羊）.md
+C_new_formal:
+- name: 因死屍不潔延後守節
+  suggested_type: 事件
+  evidence: 民9:6-7 有幾個人因死屍不潔（據註解為米沙利、以利撒反處理拿答、亞比戶屍體），不能在正月十四日守節，向摩西、亞倫陳情。四份註解均確認此背景。
+  surfaces:
+  - phrase: 因死屍而不潔淨
+  - phrase: 不潔淨不能守逾越節
+  target_path: link_folder/事件/因死屍不潔延後守節.md
+- name: 遠方行路延後守節
+  suggested_type: 事件
+  evidence: 民9:10 耶和華將「在遠方行路」列為補守逾越節的第二個正當理由。丁良才註釋、啟導本、串珠註釋均提及此條款。
+  surfaces:
+  - phrase: 在遠方行路
+  - phrase: 遠方行路
+  target_path: link_folder/事件/遠方行路延後守節.md
+- name: 外人守逾越節同歸一例
+  suggested_type: 事件
+  evidence: 民9:14 寄居的外人願意守逾越節，須照同樣律例典章，本地人與寄居者同歸一例。出12:48-49 要求外人受割禮。四份註解均引用此交叉參照。
+  surfaces:
+  - phrase: 外人寄居
+  - phrase: 寄居的是本地人
+  - phrase: 同歸一例
+  target_path: link_folder/事件/外人守逾越節同歸一例.md
+- name: 逾越節第二年首次守節
+  suggested_type: 事件
+  evidence: 民9:1-5 以色列人出埃及後第二年正月，在西乃曠野首次在曠野中守逾越節（出埃及時為第一次）。ccbiblestudy_GT、串珠註釋、聖經精讀本均明確指出此為「出埃及後守的第一個逾越節」。
+  surfaces:
+  - phrase: 第二年正月
+  - phrase: 西乃的曠野守逾越節
+  - phrase: 首次在曠野守逾越節
+  target_path: link_folder/事件/逾越節第二年首次守節.md
+- name: 逾越節羔羊骨頭不可折斷
+  suggested_type: 神學
+  evidence: 民9:12 羊羔骨頭一根也不可折斷。丁良才、串珠註釋、聖經精讀本均指此預表基督（約19:33,36；詩34:20）。KingComments
+    亦提及此預表意義。
+  surfaces:
+  - phrase: 骨頭一根也不可折斷
+  - phrase: 羊羔的骨頭
+  target_path: link_folder/神學/逾越節羔羊骨頭不可折斷.md
+- name: 神的恩典供應補救條例
+  suggested_type: 神學
+  evidence: 民9:10-13 律法規定逾越節不可更改，神卻因體恤人軟弱，賜下二月補守條例。ccbiblestudy_CT、GT、聖經精讀本均強調：顯示律法局限性、神非講形式、神願饒恕人、希西家代下30
+    應用此條例。
+  surfaces:
+  - phrase: 補救條例
+  - phrase: 恩典供應
+  target_path: link_folder/神學/神的恩典供應補救條例.md
+- name: 雲彩遮蓋帳幕（民9：15-23）
+  suggested_type: 事件
+  evidence: 民9:15-23 立帳幕之日（二年正月初一，出40:17），雲彩遮蓋帳幕（法櫃的帳幕/見證的帳幕），夜間形狀如火。四份註解均引用出40:34-38
+    平行經文，丁良才註釋指出雲柱預表聖靈（林前10:12）。
+  surfaces:
+  - phrase: 立起帳幕的那日
+  - phrase: 雲彩遮蓋帳幕
+  - phrase: 法櫃的帳幕
+  - phrase: 見證的帳幕
+  - phrase: 形狀如火
+  target_path: link_folder/事件/雲彩遮蓋帳幕（民9：15-23）.md
+- name: 帳幕立起之日雲彩遮蓋
+  suggested_type: 事件
+  evidence: 民9:15 立起帳幕的那日（二年正月初一），有雲彩遮蓋帳幕。啟導本、串珠註釋、聖經精讀本均確認時間點為出40:17。
+  surfaces:
+  - phrase: 立起帳幕的那日
+  - phrase: 正月初一
+  target_path: link_folder/事件/帳幕立起之日雲彩遮蓋.md
+- name: 遵雲彩起行安營
+  suggested_type: 神學
+  evidence: 民9:18,20,23 三次重複「遵耶和華的吩咐起行，也遵耶和華的吩咐安營」。KingComments 強調：一切必須在「耶和華的吩咐」下，不可自行計劃；教會今日也當仰望聖靈引導。
+  surfaces:
+  - phrase: 遵耶和華的吩咐起行
+  - phrase: 遵耶和華的吩咐安營
+  - phrase: 守耶和華所吩咐的
+  target_path: link_folder/神學/遵雲彩起行安營.md
+- name: 晝夜雲彩不斷
+  suggested_type: 神學
+  evidence: 民9:16 常是這樣，雲彩遮蓋帳幕，夜間形狀如火。丁良才：帳幕裡的榮光是暫時的（出40:35），但曠野時期常有雲柱。KingComments：神特別的眷顧，預表聖靈常與信徒同在（約14:16-17）。
+  surfaces:
+  - phrase: 常是這樣
+  - phrase: 夜間形狀如火
+  - phrase: 晝夜不斷
+  target_path: link_folder/神學/晝夜雲彩不斷.md
+- name: 順服神的主權引導
+  suggested_type: 神學
+  evidence: 民9:23 他們遵耶和華的吩咐安營，也遵耶和華的吩咐起行，都是憑耶和華吩咐摩西的。ccbiblestudy_GT、聖經精讀本：表徵徹底順服，不問理由，只要跟上神。KingComments：教會不可自行計劃，當交托聖靈引導。
+  surfaces:
+  - phrase: 憑耶和華吩咐摩西的
+  - phrase: 徹底順服
+  target_path: link_folder/神學/順服神的主權引導.md
+- name: 法櫃的帳幕（見證的帳幕）
+  suggested_type: 地點
+  evidence: 民9:15 雲彩遮蓋帳幕，就是法櫃的帳幕（見證的帳幕）。出40:34-38 平行經文。丁良才：會幕中最重要的物件就是約櫃。
+  surfaces:
+  - phrase: 法櫃的帳幕
+  - phrase: 見證的帳幕
+  - phrase: 帳幕
+  target_path: link_folder/地點/法櫃的帳幕（見證的帳幕）.md
+- name: 守（shamar）
+  suggested_type: 原文
+  evidence: 民9:19,23 守耶和華所吩咐的（שָׁמַר shamar）。ccbiblestudy_CT：守永恆主所吩咐的、都不往前行。
+  surfaces:
+  - phrase: 守耶和華所吩咐的
+  - phrase: 守
+  target_path: link_folder/原文/守（shamar）.md
+- name: 逾越節與主餐（林前5:7-8, 11:24-25）
+  suggested_type: 互文
+  evidence: 民9:1-14 逾越節為救贖紀念 → 林前5:7 基督是我們的逾越節羔羊；林前11:24-25 主餐「為記念我」。KingComments
+    詳細論述：逾越節在出埃及、民數記、約書亞記三階段的意義，對應信徒得救、曠野旅程、天上福分。
+  surfaces:
+  - phrase: 逾越節
+  - phrase: 主餐
+  - phrase: 紀念
+  target_path: link_folder/互文/逾越節與主餐（林前5:7-8, 11:24-25）.md
+- name: 雲柱火柱引導（出13:21-22）
+  suggested_type: 互文
+  evidence: 民9:15-23 帳幕上的雲彩/火 → 出13:21-22 出埃及時雲柱火柱引導。丁良才、啟導本、串珠註釋、聖經精讀本、KingComments
+    均引用此平行經文。
+  surfaces:
+  - phrase: 雲柱火柱
+  - phrase: 雲彩遮蓋帳幕
+  - phrase: 形狀如火
+  target_path: link_folder/互文/雲柱火柱引導（出13:21-22）.md
+- name: 外人守逾越節（出12:48-49）
+  suggested_type: 互文
+  evidence: 民9:14 外人寄居願守逾越節，同歸一例 → 出12:48-49 外人男子受割禮後才可守逾越節，本地人與寄居者同一條例。丁良才、聖經精讀本、KingComments
+    均引用。
+  surfaces:
+  - phrase: 外人寄居
+  - phrase: 同歸一例
+  - phrase: 受割禮
+  target_path: link_folder/互文/外人守逾越節（出12:48-49）.md
+- name: 死屍不潔條例（民19:11-13）
+  suggested_type: 互文
+  evidence: 民9:6-7,10 因死屍不潔 → 民19:11-13 摸死屍不潔七天，須用紅母牛灰潔淨。丁良才、啟導本、串珠註釋、聖經精讀本均引用。
+  surfaces:
+  - phrase: 因死屍而不潔淨
+  - phrase: 不潔七天
+  target_path: link_folder/互文/死屍不潔條例（民19:11-13）.md
+- name: 會幕雲光（出40:34-38）
+  suggested_type: 互文
+  evidence: 民9:15-23 雲彩遮蓋帳幕、夜間如火 → 出40:34-38 立帳幕日雲彩遮蓋會幕、榮光充滿、夜間有火。啟導本、串珠註釋、丁良才、聖經精讀本均指出本段發揮出40:34-38。
+  surfaces:
+  - phrase: 立起帳幕的那日
+  - phrase: 雲彩遮蓋帳幕
+  - phrase: 出40:34-38
+  target_path: link_folder/互文/會幕雲光（出40:34-38）.md
+- name: 猶太曆法黃昏算日
+  suggested_type: 文化
+  evidence: 民9:3,5,11 黃昏（傍晚）為一天開始。ccbiblestudy_GT：猶太傳統一天從黃昏到次日黃昏；新約時代約下午三時宰殺羔羊。啟導本：依申16:6「晚上日落時候」翻譯。
+  surfaces:
+  - phrase: 黃昏
+  - phrase: 傍晚時分
+  target_path: link_folder/文化/猶太曆法黃昏算日.md
+- name: 逾越節與無酵節重疊
+  suggested_type: 文化
+  evidence: 民9:3 正月十四日黃昏是逾越節，按猶太曆法算十五日，故逾越節與無酵節第一天可能重疊。ccbiblestudy_CT 引利23:5-6 說明。
+  surfaces:
+  - phrase: 逾越節
+  - phrase: 無酵節
+  target_path: link_folder/文化/逾越節與無酵節重疊.md
+- name: 第二年正月初一立帳幕
+  suggested_type: 歷史
+  evidence: 民9:15 立起帳幕的那日 → 出40:17 二年正月初一立帳幕。ccbiblestudy_GT、啟導本、聖經精讀本均確認：本章時間早於民1:1（二月初一數點人口）。
+  surfaces:
+  - phrase: 立起帳幕的那日
+  - phrase: 正月初一
+  - phrase: 第二年正月
+  target_path: link_folder/歷史/第二年正月初一立帳幕.md
+- name: 三位祭司能否宰殺所有逾越節羊羔
+  suggested_type: 解經爭議
+  evidence: 民9:5 以色列人都守逾越節。丁良才提出：有人質疑三位祭司（亞倫、以利亞撒、以他瑪）能否宰殺那麼多羊羔、把血灑在壇上。兩種解法：(1) 本次逾越節禮節與後來不同，申16:5-6
+    暗示家長在別處宰殺；(2) 另有利未人幫忙（出24:5，代下30:16, 35:11）。ccbiblestudy_CT 同樣記錄此爭議。
+  surfaces:
+  - phrase: 宰殺逾越節羊羔
+  - phrase: 祭司不夠
+  target_path: link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md
+- name: 二月逾越節是否只有一天、不必除酵
+  suggested_type: 解經爭議
+  evidence: 民9:11 二月十四日守逾越節。丁良才記載：猶太人有遺傳說，第二月逾越節只有一天，不必除酵，但這與聖書不合。神給會眾六天工夫才從西奈起行（民10:11）。
+  surfaces:
+  - phrase: 二月逾越節只有一天
+  - phrase: 不必除酵
+  target_path: link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md
+- name: 民9:22「一年」是否指加低斯住營一年
+  suggested_type: 解經爭議
+  evidence: 民9:22 雲彩停留無論兩天、一月、一年。丁良才：有註釋家以為本段在以色列人到加低斯以後寫的，因為他們到那時住營才有一年功夫；也有古譯家認為「年」字原文指「長久的時候」。
+  surfaces:
+  - phrase: 是一年
+  - phrase: 加低斯
+  target_path: link_folder/解經爭議/民9:22「一年」是否指加低斯住營一年.md
+D_new_candidate:
+- name: 無故不守逾越節剪除
+  suggested_type: 事件
+  evidence: 民9:13 潔淨而不行路者若推辭不守逾越節，要從民中剪除，擔當自己的罪。四份註解均強調此為嚴重刑罰（被治死/逐出會眾）。
+  surfaces:
+  - phrase: 從民中剪除
+  - phrase: 剪除
+  - phrase: 擔當他的罪
+  match_type: type_conflict
+  note: 分類衝突：候選=事件，既有=神學，secondary=[]
+- name: 逾越節不可留到早晨
+  suggested_type: 儀式
+  evidence: 民9:12 一點不可留到早晨。丁良才、串珠註釋、聖經精讀本解釋：須在原地吃完，免被外人或野獸沾染；預表基督完全的贖祭完全給被贖者享用（約6:53-56）。
+  surfaces:
+  - phrase: 不可留到早晨
+  - phrase: 一點不可留到早晨
+  note: 未知分類：儀式
+- name: 苦菜無酵餅同吃逾越節羔羊
+  suggested_type: 儀式
+  evidence: 民9:11 二月逾越節要用無酵餅與苦菜同吃羊羔。丁良才、聖經精讀本：無酵餅象徵無罪生活（林前5:6-8），苦菜象徵埃及苦難，羔羊預表基督（約1:29）。
+  surfaces:
+  - phrase: 無酵餅與苦菜
+  - phrase: 苦菜
+  - phrase: 無酵餅
+  note: 未知分類：儀式
+- name: 剪除（karat）
+  suggested_type: 原文
+  evidence: 民9:13 那人要從民中剪除（כָּרַת karat）。聖經精讀本：從百姓營中被逐，不能享受神律法恩惠（利20:18）。
+  surfaces:
+  - phrase: 剪除
+  - phrase: 從民中剪除
+  note: 名稱或 alias 有多重指向
+- name: 寄居（gur）
+  suggested_type: 原文
+  evidence: 民9:14 外人寄居在你們中間（גּוּר gur）。丁良才：指受過割禮的外邦人（出12:48-49）。聖經精讀本：割禮是約的標記，屬神百姓記號。
+  surfaces:
+  - phrase: 寄居
+  - phrase: 外人寄居
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=['主題']
+- name: 起行（nasa）
+  suggested_type: 原文
+  evidence: 民9:17-18,21-23 以色列人起行（נָסַע nasa）。雲彩收上去就起行。
+  surfaces:
+  - phrase: 起行
+  - phrase: 起行
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+- name: 安營（chanah）
+  suggested_type: 原文
+  evidence: 民9:17-18,22-23 以色列人安營（חָנָה chanah）。雲彩停住就安營。
+  surfaces:
+  - phrase: 安營
+  - phrase: 住營
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+E_skip: []

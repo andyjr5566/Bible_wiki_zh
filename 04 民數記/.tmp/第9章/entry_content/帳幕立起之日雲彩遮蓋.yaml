@@ -1,0 +1,24 @@
+name: 帳幕立起之日雲彩遮蓋
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記9:15記載，帳幕立起的那日，有雲彩遮蓋帳幕，就是法櫃的帳幕；從晚上到早晨，雲彩在其上，形狀如火。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 9
+  summary: 記載帳幕立起當日雲彩遮蓋的具體描述
+  relation: 本條目為9:15單一事件的細節
+related_entries:
+- 雲彩遮蓋帳幕（民9：15-23）
+- 晝夜雲彩不斷
+- 會幕雲光（出40:34-38）
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm'
+- '研讀: https://biblehub.com/study/numbers/9.htm'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

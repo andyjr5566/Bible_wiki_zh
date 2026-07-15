@@ -1,0 +1,24 @@
+name: 遠方行路延後守節
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記9:10-11規定，身在遠方行路無法在正月守逾越節的人，可在二月十四日黃昏補守，並遵守逾越節一切律例典章。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 9
+  summary: 記載遠方行路者延後守逾越節的規定
+  relation: 本條目對應經文9:10-11的補守條例
+related_entries:
+- 補守逾越節條例
+- 因死屍不潔延後守節
+- 外人守逾越節同歸一例
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm'
+- '研讀: https://biblehub.com/study/numbers/9.htm'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

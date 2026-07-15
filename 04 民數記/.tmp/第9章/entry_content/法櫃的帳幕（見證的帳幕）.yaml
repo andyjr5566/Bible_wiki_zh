@@ -1,0 +1,25 @@
+name: 法櫃的帳幕（見證的帳幕）
+type: 地點
+secondary_types: []
+aliases:
+- 見證的帳幕
+status: formal
+definition: 指會幕中安放法櫃的至聖所，民9:15稱「法櫃的帳幕」，是神同在顯現的地方。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 9
+  summary: 立起帳幕之日，雲彩遮蓋法櫃的帳幕，夜間形狀如火，顯示神同在。
+  relation: 本章記載神榮光遮蓋法櫃帳幕，作為引導以色列人起行安營的中心。
+related_entries:
+- 帳幕立起之日雲彩遮蓋
+- 雲彩遮蓋帳幕（民9：15-23）
+- 會幕雲光（出40:34-38）
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm'
+created_from: 民數記第9章
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false
