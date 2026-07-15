@@ -6759,6 +6759,17 @@
       "出埃及後第二年"
     ]
   },
+  "以色列人初次按序起行": {
+    "path": "link_folder/事件/以色列人初次按序起行.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "以色列人初次按序起行",
+    "status": "formal",
+    "aliases": [
+      "初次按序起行",
+      "首次行軍次序"
+    ]
+  },
   "以色列人順服": {
     "path": "link_folder/事件/以色列人順服.md",
     "type": "事件",
@@ -6860,6 +6871,17 @@
     "status": "formal",
     "aliases": [
       "加五分之一償還"
+    ]
+  },
+  "兩枝銀號條例": {
+    "path": "link_folder/事件/兩枝銀號條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "兩枝銀號條例",
+    "status": "formal",
+    "aliases": [
+      "兩枝銀號",
+      "銀號條例"
     ]
   },
   "六十萬零三千五百五十人（出38：26）": {
@@ -7397,6 +7419,28 @@
       "揀選千夫長百夫長"
     ]
   },
+  "摩西約櫃停住禱告": {
+    "path": "link_folder/事件/摩西約櫃停住禱告.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西約櫃停住禱告",
+    "status": "formal",
+    "aliases": [
+      "約櫃安息禱告",
+      "摩西求神回到以色列中禱告"
+    ]
+  },
+  "摩西約櫃起行禱告": {
+    "path": "link_folder/事件/摩西約櫃起行禱告.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西約櫃起行禱告",
+    "status": "formal",
+    "aliases": [
+      "約櫃前行禱告",
+      "摩西求神興起禱告"
+    ]
+  },
   "摩西聽了便以為美": {
     "path": "link_folder/事件/摩西聽了便以為美.md",
     "type": "事件",
@@ -7792,6 +7836,17 @@
       "取出作為紀念的"
     ]
   },
+  "祭司吹銀號永遠定例": {
+    "path": "link_folder/事件/祭司吹銀號永遠定例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "祭司吹銀號永遠定例",
+    "status": "formal",
+    "aliases": [
+      "祭司吹號",
+      "銀號永遠定例"
+    ]
+  },
   "祭司在耶和華面前辦完": {
     "path": "link_folder/事件/祭司在耶和華面前辦完.md",
     "type": "事件",
@@ -7837,6 +7892,17 @@
       "立起帳幕的日子"
     ]
   },
+  "第二年二月二十日起行_民10-11": {
+    "path": "link_folder/事件/第二年二月二十日起行_民10-11.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "第二年二月二十日起行_民10-11",
+    "status": "formal",
+    "aliases": [
+      "二年二月二十日起行",
+      "民數記10:11起行"
+    ]
+  },
   "築壇耶和華尼西": {
     "path": "link_folder/事件/築壇耶和華尼西.md",
     "type": "事件",
@@ -7847,6 +7913,17 @@
     "status": "formal",
     "aliases": [
       "Altar Jehovah Nissi"
+    ]
+  },
+  "約櫃在前尋找安歇處": {
+    "path": "link_folder/事件/約櫃在前尋找安歇處.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "約櫃在前尋找安歇處",
+    "status": "formal",
+    "aliases": [
+      "約櫃前行",
+      "約櫃尋安歇"
     ]
   },
   "素祭所剩歸祭司": {
@@ -7971,6 +8048,14 @@
     "status": "formal",
     "aliases": []
   },
+  "起行次序四隊與利未人位置": {
+    "path": "link_folder/事件/起行次序四隊與利未人位置.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "起行次序四隊與利未人位置",
+    "status": "formal",
+    "aliases": []
+  },
   "逾越節第二年首次守節": {
     "path": "link_folder/事件/逾越節第二年首次守節.md",
     "type": "事件",
@@ -8014,6 +8099,50 @@
     "status": "formal",
     "aliases": [
       "會幕材料統計"
+    ]
+  },
+  "銀號戰時吹號求救": {
+    "path": "link_folder/事件/銀號戰時吹號求救.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "銀號戰時吹號求救",
+    "status": "formal",
+    "aliases": [
+      "爭戰吹號",
+      "銀號求救"
+    ]
+  },
+  "銀號招聚會眾": {
+    "path": "link_folder/事件/銀號招聚會眾.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "銀號招聚會眾",
+    "status": "formal",
+    "aliases": [
+      "吹號招聚",
+      "銀號召集會眾"
+    ]
+  },
+  "銀號指揮起行次序": {
+    "path": "link_folder/事件/銀號指揮起行次序.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "銀號指揮起行次序",
+    "status": "formal",
+    "aliases": [
+      "吹號起行",
+      "銀號指揮行軍"
+    ]
+  },
+  "銀號節期獻祭吹號": {
+    "path": "link_folder/事件/銀號節期獻祭吹號.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "銀號節期獻祭吹號",
+    "status": "formal",
+    "aliases": [
+      "節期吹號",
+      "獻祭吹號"
     ]
   },
   "鐵鏊上做": {
@@ -8403,6 +8532,14 @@
     "type": "互文",
     "secondary_types": [],
     "title": "何3：3-5",
+    "status": "formal",
+    "aliases": []
+  },
+  "何巴後裔基尼人（士1：16、4：11）": {
+    "path": "link_folder/互文/何巴後裔基尼人（士1：16、4：11）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "何巴後裔基尼人（士1：16、4：11）",
     "status": "formal",
     "aliases": []
   },
@@ -10684,6 +10821,14 @@
       "摩西的代禱"
     ]
   },
+  "摩西禱告約櫃起行停住（詩68：1）": {
+    "path": "link_folder/互文/摩西禱告約櫃起行停住（詩68：1）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "摩西禱告約櫃起行停住（詩68：1）",
+    "status": "formal",
+    "aliases": []
+  },
   "摩西面皮發光（與帕子）": {
     "path": "link_folder/互文/摩西面皮發光（與帕子）.md",
     "type": "互文",
@@ -12120,6 +12265,14 @@
       "約壹五21"
     ]
   },
+  "約櫃前行尋安歇（書3：3-6）": {
+    "path": "link_folder/互文/約櫃前行尋安歇（書3：3-6）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "約櫃前行尋安歇（書3：3-6）",
+    "status": "formal",
+    "aliases": []
+  },
   "約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9": {
     "path": "link_folder/互文/約瑟受苦後高升與基督受苦後得榮耀_腓2_8-9.md",
     "type": "互文",
@@ -13448,6 +13601,22 @@
     "aliases": [
       "金燈臺與聖靈"
     ]
+  },
+  "銀號與主再來天使吹號（太24：31）": {
+    "path": "link_folder/互文/銀號與主再來天使吹號（太24：31）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "銀號與主再來天使吹號（太24：31）",
+    "status": "formal",
+    "aliases": []
+  },
+  "銀號與聖殿敬拜（代下5：12）": {
+    "path": "link_folder/互文/銀號與聖殿敬拜（代下5：12）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "銀號與聖殿敬拜（代下5：12）",
+    "status": "formal",
+    "aliases": []
   },
   "銅壇與十字架（來13：10-13）": {
     "path": "link_folder/互文/銅壇與十字架（來13：10-13）.md",
@@ -18335,6 +18504,19 @@
     "status": "formal",
     "aliases": []
   },
+  "悠長響號（taqa）": {
+    "path": "link_folder/原文/悠長響號（taqa）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "悠長響號（taqa）",
+    "status": "formal",
+    "aliases": [
+      "悠長響號",
+      "長聲",
+      "taqa",
+      "吹長聲"
+    ]
+  },
   "惹（marah）": {
     "path": "link_folder/原文/惹（marah）.md",
     "type": "原文",
@@ -18487,6 +18669,16 @@
     "aliases": [
       "按手",
       "samakh"
+    ]
+  },
+  "按站（machanah）": {
+    "path": "link_folder/原文/按站（machanah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "按站（machanah）",
+    "status": "formal",
+    "aliases": [
+      "machanah"
     ]
   },
   "提你出監_抬起頭": {
@@ -20214,6 +20406,18 @@
       "tekelet毯子"
     ]
   },
+  "號（chatsotserah）": {
+    "path": "link_folder/原文/號（chatsotserah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "號（chatsotserah）",
+    "status": "formal",
+    "aliases": [
+      "銀號",
+      "chatsotserah",
+      "號角"
+    ]
+  },
   "蛇的原文字義": {
     "path": "link_folder/原文/蛇的原文字義.md",
     "type": "原文",
@@ -21552,6 +21756,17 @@
     "status": "formal",
     "aliases": []
   },
+  "基博羅哈他瓦": {
+    "path": "link_folder/地點/基博羅哈他瓦.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基博羅哈他瓦",
+    "status": "formal",
+    "aliases": [
+      "基博羅哈他瓦",
+      "貪慾之墳墓"
+    ]
+  },
   "基悉": {
     "path": "link_folder/地點/基悉.md",
     "type": "地點",
@@ -21730,6 +21945,17 @@
     "title": "巴旦亞蘭",
     "status": "formal",
     "aliases": []
+  },
+  "巴蘭的曠野": {
+    "path": "link_folder/地點/巴蘭的曠野.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴蘭的曠野",
+    "status": "formal",
+    "aliases": [
+      "巴蘭曠野",
+      "巴蘭"
+    ]
   },
   "希伯來人之地": {
     "path": "link_folder/地點/希伯來人之地.md",
@@ -22289,6 +22515,14 @@
       "地理"
     ],
     "title": "紅海曠野",
+    "status": "formal",
+    "aliases": []
+  },
+  "耶和華的山（西乃山）": {
+    "path": "link_folder/地點/耶和華的山（西乃山）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶和華的山（西乃山）",
     "status": "formal",
     "aliases": []
   },
@@ -23636,6 +23870,22 @@
       "清酒、濃酒"
     ]
   },
+  "銀號形制（直筒喇叭口）": {
+    "path": "link_folder/文化/銀號形制（直筒喇叭口）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "銀號形制（直筒喇叭口）",
+    "status": "formal",
+    "aliases": []
+  },
+  "銀號製作工藝（錘出法）": {
+    "path": "link_folder/文化/銀號製作工藝（錘出法）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "銀號製作工藝（錘出法）",
+    "status": "formal",
+    "aliases": []
+  },
   "鐵鏊（煎盤）": {
     "path": "link_folder/文化/鐵鏊（煎盤）.md",
     "type": "文化",
@@ -24347,6 +24597,14 @@
     "type": "歷史",
     "secondary_types": [],
     "title": "第七災：雹災",
+    "status": "formal",
+    "aliases": []
+  },
+  "第二年二月二十日時間點_民10-11": {
+    "path": "link_folder/歷史/第二年二月二十日時間點_民10-11.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "第二年二月二十日時間點_民10-11",
     "status": "formal",
     "aliases": []
   },
@@ -27819,6 +28077,17 @@
       "救贖者"
     ]
   },
+  "救贖宣告招聚引導": {
+    "path": "link_folder/神學/救贖宣告招聚引導.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "救贖宣告招聚引導",
+    "status": "formal",
+    "aliases": [
+      "銀號救贖神學",
+      "招聚引導神學"
+    ]
+  },
   "救贖歷史的進程": {
     "path": "link_folder/神學/救贖歷史的進程.md",
     "type": "神學",
@@ -30527,6 +30796,17 @@
       "蒙靈充滿的智慧恩賜"
     ]
   },
+  "號聲區分與屬靈洞察力": {
+    "path": "link_folder/神學/號聲區分與屬靈洞察力.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "號聲區分與屬靈洞察力",
+    "status": "formal",
+    "aliases": [
+      "號聲分辨",
+      "屬靈聽覺"
+    ]
+  },
   "血": {
     "path": "link_folder/神學/血.md",
     "type": "神學",
@@ -32763,6 +33043,17 @@
       "摩西殺埃及人"
     ]
   },
+  "摩西請何巴作眼目是否缺乏信心": {
+    "path": "link_folder/解經爭議/摩西請何巴作眼目是否缺乏信心.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "摩西請何巴作眼目是否缺乏信心",
+    "status": "formal",
+    "aliases": [
+      "摩西邀何巴同行",
+      "摩西求何巴作向導"
+    ]
+  },
   "撒發那忒巴內亞名字含義": {
     "path": "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
     "type": "解經爭議",
@@ -33016,6 +33307,14 @@
       "創世記10章與11章語言矛盾",
       "列國表與巴別的次序"
     ]
+  },
+  "約櫃在營中間還是前頭（民2：17 vs 10：33）": {
+    "path": "link_folder/解經爭議/約櫃在營中間還是前頭（民2：17 vs 10：33）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "約櫃在營中間還是前頭（民2：17 vs 10：33）",
+    "status": "formal",
+    "aliases": []
   },
   "約瑟告哥哥惡行是否告狀": {
     "path": "link_folder/解經爭議/約瑟告哥哥惡行是否告狀.md",
@@ -35717,6 +36016,12 @@
   "出埃及後第二年": {
     "alias_of": "以色列人出埃及地後"
   },
+  "初次按序起行": {
+    "alias_of": "以色列人初次按序起行"
+  },
+  "首次行軍次序": {
+    "alias_of": "以色列人初次按序起行"
+  },
   "Israel arrives at Sinai": {
     "alias_of": "以色列到達西乃山"
   },
@@ -35731,6 +36036,12 @@
   },
   "加五分之一償還": {
     "alias_of": "償還加五分之一"
+  },
+  "兩枝銀號": {
+    "alias_of": "兩枝銀號條例"
+  },
+  "銀號條例": {
+    "alias_of": "兩枝銀號條例"
   },
   "人口普查數目": {
     "alias_of": "六十萬零三千五百五十人（出38：26）"
@@ -35876,6 +36187,18 @@
   "揀選千夫長百夫長": {
     "alias_of": "摩西立首領"
   },
+  "約櫃安息禱告": {
+    "alias_of": "摩西約櫃停住禱告"
+  },
+  "摩西求神回到以色列中禱告": {
+    "alias_of": "摩西約櫃停住禱告"
+  },
+  "約櫃前行禱告": {
+    "alias_of": "摩西約櫃起行禱告"
+  },
+  "摩西求神興起禱告": {
+    "alias_of": "摩西約櫃起行禱告"
+  },
   "Moses raised hands": {
     "alias_of": "摩西舉手得勝"
   },
@@ -36017,6 +36340,12 @@
   "取出作為紀念的": {
     "alias_of": "祭司取一把"
   },
+  "祭司吹號": {
+    "alias_of": "祭司吹銀號永遠定例"
+  },
+  "銀號永遠定例": {
+    "alias_of": "祭司吹銀號永遠定例"
+  },
   "祭司辦完": {
     "alias_of": "祭司在耶和華面前辦完"
   },
@@ -36026,8 +36355,20 @@
   "立起帳幕的日子": {
     "alias_of": "立起帳幕的那日（正月初一）"
   },
+  "二年二月二十日起行": {
+    "alias_of": "第二年二月二十日起行_民10-11"
+  },
+  "民數記10:11起行": {
+    "alias_of": "第二年二月二十日起行_民10-11"
+  },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
+  },
+  "約櫃前行": {
+    "alias_of": "約櫃在前尋找安歇處"
+  },
+  "約櫃尋安歇": {
+    "alias_of": "約櫃在前尋找安歇處"
   },
   "素祭所剩的要歸給亞倫和他的子孫": {
     "alias_of": "素祭所剩歸祭司"
@@ -36079,6 +36420,30 @@
   },
   "會幕材料統計": {
     "alias_of": "金銀銅統計（出38：24-31）"
+  },
+  "爭戰吹號": {
+    "alias_of": "銀號戰時吹號求救"
+  },
+  "銀號求救": {
+    "alias_of": "銀號戰時吹號求救"
+  },
+  "吹號招聚": {
+    "alias_of": "銀號招聚會眾"
+  },
+  "銀號召集會眾": {
+    "alias_of": "銀號招聚會眾"
+  },
+  "吹號起行": {
+    "alias_of": "銀號指揮起行次序"
+  },
+  "銀號指揮行軍": {
+    "alias_of": "銀號指揮起行次序"
+  },
+  "節期吹號": {
+    "alias_of": "銀號節期獻祭吹號"
+  },
+  "獻祭吹號": {
+    "alias_of": "銀號節期獻祭吹號"
   },
   "鐵鏊上做的素祭": {
     "alias_of": "鐵鏊上做"
@@ -38165,6 +38530,18 @@
   "從民中剪除": {
     "alias_of": "從民中剪除（karet）"
   },
+  "悠長響號": {
+    "alias_of": "悠長響號（taqa）"
+  },
+  "長聲": {
+    "alias_of": "悠長響號（taqa）"
+  },
+  "taqa": {
+    "alias_of": "悠長響號（taqa）"
+  },
+  "吹長聲": {
+    "alias_of": "悠長響號（taqa）"
+  },
   "感謝祭": {
     "alias_of": "感謝祭（todah）"
   },
@@ -38218,6 +38595,9 @@
   },
   "samakh": {
     "alias_of": "按手（samak）"
+  },
+  "machanah": {
+    "alias_of": "按站（machanah）"
   },
   "「提你出監」/「抬起頭」": {
     "alias_of": "提你出監_抬起頭"
@@ -38888,6 +39268,15 @@
   "tekelet毯子": {
     "alias_of": "藍色毯子（tekelet）"
   },
+  "銀號": {
+    "alias_of": "號（chatsotserah）"
+  },
+  "chatsotserah": {
+    "alias_of": "號（chatsotserah）"
+  },
+  "號角": {
+    "alias_of": "號（chatsotserah）"
+  },
   "蝗蟲": {
     "alias_of": "蝗蟲（arbeh）"
   },
@@ -39320,6 +39709,9 @@
   "Kiriath-arba": {
     "alias_of": "基列亞巴"
   },
+  "貪慾之墳墓": {
+    "alias_of": "基博羅哈他瓦"
+  },
   "Chezib": {
     "alias_of": "基悉"
   },
@@ -39352,6 +39744,12 @@
   },
   "Baal-zephon": {
     "alias_of": "巴力洗分"
+  },
+  "巴蘭曠野": {
+    "alias_of": "巴蘭的曠野"
+  },
+  "巴蘭": {
+    "alias_of": "巴蘭的曠野"
   },
   "Moriah": {
     "alias_of": "摩利亞地"
@@ -41072,6 +41470,12 @@
   "救贖者": {
     "alias_of": "救贖goel"
   },
+  "銀號救贖神學": {
+    "alias_of": "救贖宣告招聚引導"
+  },
+  "招聚引導神學": {
+    "alias_of": "救贖宣告招聚引導"
+  },
   "教訓以色列人": {
     "alias_of": "教導律例"
   },
@@ -41834,6 +42238,12 @@
   "蒙靈充滿的智慧恩賜": {
     "alias_of": "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）"
   },
+  "號聲分辨": {
+    "alias_of": "號聲區分與屬靈洞察力"
+  },
+  "屬靈聽覺": {
+    "alias_of": "號聲區分與屬靈洞察力"
+  },
   "血入會幕的贖罪祭": {
     "alias_of": "血入會幕的贖罪祭（肉不可吃）"
   },
@@ -42364,6 +42774,12 @@
   },
   "摩西殺埃及人": {
     "alias_of": "摩西殺死埃及人的解經問題"
+  },
+  "摩西邀何巴同行": {
+    "alias_of": "摩西請何巴作眼目是否缺乏信心"
+  },
+  "摩西求何巴作向導": {
+    "alias_of": "摩西請何巴作眼目是否缺乏信心"
   },
   "方舟能否容納各類動物": {
     "alias_of": "方舟容納動物的可行性"

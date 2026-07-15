@@ -1,0 +1,23 @@
+name: 耶和華的山（西乃山）
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 又稱西乃山，是神將律法賜給摩西、雲彩停留、以色列人出發前所在的聖山（民 10:33）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 10
+  summary: 10:33 提到「以色列人離開耶和華的山」，標誌起行的地理起點。
+  relation: 本章以此地點為起行的背景。
+related_entries:
+- 巴蘭的曠野
+- 第二年二月二十日起行
+sources:
+- '註解: 民數記 10 章地理背景（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT10.htm）'
+- '研讀: 民數記 10 章研讀（https://biblehub.com/study/numbers/10.htm）'
+created_from: manual
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

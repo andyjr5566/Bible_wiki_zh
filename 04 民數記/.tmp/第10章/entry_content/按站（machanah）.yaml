@@ -1,0 +1,24 @@
+name: 按站（machanah）
+type: 原文
+secondary_types: []
+aliases:
+- machanah
+status: formal
+definition: 希伯來文 machanah，意為「營、站、安營處」，民 10:12-13,28 以「按站」描述以色列人依序起行、安營的動作。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 10
+  summary: 10:12-13,28 反覆使用「按站」說明行軍與安營的秩序。
+  relation: 本章為 machanah 在行軍語境下的關鍵用例。
+related_entries:
+- 起行次序四隊與利未人位置
+- 以色列人初次按序起行
+sources:
+- '拾穗: 民數記 10 章按站用法拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT10.htm）'
+- '研讀: 民數記 10 章研讀（https://biblehub.com/study/numbers/10.htm）'
+created_from: manual
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

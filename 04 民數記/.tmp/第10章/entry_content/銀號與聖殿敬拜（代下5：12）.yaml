@@ -1,0 +1,27 @@
+name: 銀號與聖殿敬拜（代下5：12）
+type: 互文
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 10:10 規定節期、月朔獻祭時吹銀號，歷代志下 5:12 記載所羅門聖殿奉獻時祭司吹號、利未人歌唱，顯示銀號在聖殿敬拜中的延續。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 10
+  summary: 10:10 明定「快樂的日子、節期、月朔……要吹號」。
+  relation: 為聖殿敬拜吹號提供律法依據。
+- book: 歷代志下
+  chapter: 5
+  summary: 5:12 描述祭司吹號、利未人歌頌，榮耀充滿聖殿。
+  relation: 實際歷史中銀號在敬拜中的運用。
+related_entries:
+- 銀號節期獻祭吹號
+- 祭司吹銀號永遠定例
+sources:
+- '註解: 民數記 10 章銀號與敬拜（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT10.htm）'
+- '研讀: 民數記 10 章研讀（https://biblehub.com/study/numbers/10.htm）'
+created_from: manual
+category: 互文
+trigger_sources: []
+current_data: {}
+pending: false

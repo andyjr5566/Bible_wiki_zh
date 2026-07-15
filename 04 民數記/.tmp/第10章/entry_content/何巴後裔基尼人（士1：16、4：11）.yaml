@@ -1,0 +1,31 @@
+name: 何巴後裔基尼人（士1：16、4：11）
+type: 互文
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 10:29-32 何巴拒絕同行，其後裔在士師記 1:16、4:11 被稱為基尼人，居住在猶大曠野，顯示何巴家族後來融入以色列並參與歷史。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 10
+  summary: 10:29-32 何巴身分與摩西的邀請。
+  relation: 為基尼人身分提供源頭。
+- book: 士師記
+  chapter: 1
+  summary: 1:16 基尼人隨猶大支派上去住在亞拉得曠野。
+  relation: 記載何巴後裔的具體去向。
+- book: 士師記
+  chapter: 4
+  summary: 4:11 基尼人希伯住在靠近基低斯的橡樹下。
+  relation: 進一步確認基尼人分布。
+related_entries:
+- 何巴（流珥兒子、摩西內兄）
+- 摩西岳父究竟是誰（流珥/葉忒羅/何巴）
+sources:
+- '拾穗: 民數記 10 章何巴與基尼人拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT10.htm）'
+- '研讀: 民數記 10 章研讀（https://biblehub.com/study/numbers/10.htm）'
+created_from: manual
+category: 互文
+trigger_sources: []
+current_data: {}
+pending: false
