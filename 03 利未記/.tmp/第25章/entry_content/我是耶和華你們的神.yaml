@@ -1,0 +1,46 @@
+name: 我是耶和華你們的神
+type: 神學
+secondary_types:
+- 立約公式
+- 敬畏神
+aliases:
+- 我是耶和華─你們的神
+- 耶和華你們的神
+status: formal
+definition: 本章四次出現此立約自證公式（v.17, 38, 43, 55），每次皆作為特定命令的終極動機：(1) v.17 禁止虧負鄰舍，因「我是耶和華─你們的神」；(2)
+  v.38 幫補窮乏弟兄不可取利，因「我是耶和華─你們的神，曾領你們從埃及地出來，為要把迦南地賜給你們，要作你們的神」；(3) v.43 不可嚴嚴轄管弟兄，因「我是耶和華─你們的神」；(4)
+  v.55 以色列人都是我的僕人，因「我是耶和華─你們的神，曾領你們從埃及地出來」。此公式將出埃及救贖（歷史）、賜地（地理）、立約關係（神學）三位一體，成為禧年社會倫理的憲法性依據。
+development: 此公式在舊約出現超過 160 次，新約在基督裡應驗：「我是耶和華─你們的神」成為「主耶穌基督的神」（弗1:3），教會作新以色列同蒙召活出禧年公義（路4:18-19，徒4:32-35）。
+accumulations:
+- book: 利未記
+  chapter: 25
+  summary: 四次作為禁止虧負、幫補窮乏、禁止嚴嚴轄管、確立僕人身份的神學依據，串聯出埃及救贖與賜地應許。
+  relation: 本章所有社會倫理條文的終極制裁與動力來源，將經濟法規提升為立約忠信的具體表現。
+related_entries:
+- 敬畏神
+- 埃及地
+- 迦南地
+- 兄弟
+- 貧窮
+- 宗族
+- 兒女
+- 祖宗的地業
+- 禧年
+- 產業
+- 虧負
+- 幫補窮乏弟兄不可取利
+- 弟兄賣身為雇工人直到禧年
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm'
+- '註解: https://www.kingcomments.com/en/bible-studies/Lev/25'
+- '研讀: https://biblehub.com/study/leviticus/25.htm'
+created_from: 利未記25章研經
+category: 神學
+trigger_sources:
+- 利未記25:17
+- 利未記25:38
+- 利未記25:43
+- 利未記25:55
+current_data: true
+pending: false

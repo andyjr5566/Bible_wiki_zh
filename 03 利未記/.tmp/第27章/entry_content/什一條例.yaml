@@ -1,0 +1,31 @@
+name: 什一條例
+type: 主題
+secondary_types: []
+aliases:
+- 什一奉獻條例
+- 十一奉獻法
+status: formal
+definition: 利未記第27章30-33節規定：地產什一（種子、果子）歸耶和華為聖，贖回加五分之一；牲畜什一（牛羊群中杖下經過每第十隻）歸耶和華為聖，不可問好壞、不可更換，若換則雙方成聖不可贖。此條例規範農業與牧業收成的十分之一歸神。
+development: 土地出產與牲畜增殖的十分之一屬神，承認神為真正主人；牲畜什一以「杖下經過」隨機抽樣，防止人為挑選，強調順服而非品質。
+accumulations:
+- book: 利未記
+  chapter: 27
+  summary: 地產什一可贖回加五分之一；牲畜什一杖下經過不可換不可贖。
+  relation: 結束全章條例，將日常生產納入聖潔體系，呼應開篇許願估價的聖所平原則。
+related_entries:
+- 什一
+- 贖回加五分之一
+- 杖下經過
+- 不可問好壞不可更換
+- 更換牲畜雙方成聖
+sources:
+- '註解: 利未記27章什一條例（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT27.htm）'
+- '拾穗: 利未記27章什一奉獻規定（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT27.htm）'
+- '註解: 利未記27章註解——什一不可更換（https://www.kingcomments.com/en/bible-studies/Lev/27）'
+- '研讀: 利未記27章研讀——什一條例（https://biblehub.com/study/leviticus/27.htm）'
+created_from: leviticus_27
+category: 主題
+trigger_sources:
+- leviticus_27
+current_data: true
+pending: false

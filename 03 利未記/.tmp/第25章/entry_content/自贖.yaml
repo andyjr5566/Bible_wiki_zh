@@ -1,0 +1,43 @@
+name: 自贖
+type: 主題
+secondary_types:
+- 神學
+- 法律
+aliases:
+- 自己贖回
+- 自行贖回
+status: formal
+definition: 本章規定兩種自贖情況：(1) 賣地後「自己漸漸富足，能夠贖回」，按剩餘年數計算價值歸還買主（v.26-27）；(2) 賣身給外人後「自己若漸漸富足，也可以自贖」，按禧年前剩餘年數與買主計算贖價（v.49,
+  51-52）。自贖權利與親屬贖回權並存，體現禧年法典對人身自由與產業權的雙重保障。計算公式統一採「年數 × 年工價」（v.50-52），反映勞動價值而非人身價值。自贖展現神賦予以色列人作「我的僕人」（v.42,
+  55）的主體性，不容永久喪失自由。
+development: 自贖機制預表基督徒雖屬基督（林前6:19-20），仍須在聖靈幫助下「自己潔淨自己」（約壹3:3），並在末世完全得贖（羅8:23）。
+accumulations:
+- book: 利未記
+  chapter: 25
+  summary: 詳細規定賣地者與賣身給外人者自贖的條件、計算方式（按剩餘年數與年工價）及法律效力。
+  relation: 補足親屬贖回制度，確保無親屬或親屬無力時，當事人仍有恢復產業自由的法律管道。
+related_entries:
+- 兄弟
+- 宗族
+- 至近的親屬（goel）
+- 禧年
+- 產業
+- 祖宗的地業
+- 貧窮
+- 兒女
+- 我是耶和華你們的神
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm'
+- '註解: https://www.kingcomments.com/en/bible-studies/Lev/25'
+- '研讀: https://biblehub.com/study/leviticus/25.htm'
+created_from: 利未記25章研經
+category: 主題
+trigger_sources:
+- 利未記25:26
+- 利未記25:27
+- 利未記25:49
+- 利未記25:51
+- 利未記25:52
+current_data: true
+pending: false

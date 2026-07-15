@@ -1,0 +1,29 @@
+name: 頭生牲畜不可再分別為聖
+type: 主題
+secondary_types: []
+aliases:
+- 頭生牲畜不可聖
+- 初生獸屬耶和華
+status: formal
+definition: 利未記第27章26節規定，牲畜中頭生的（牛、羊）既屬耶和華（出13:2），誰也不可再將其分別為聖，因為這本是耶和華的。此條例防止重複獻上已屬神之物。
+development: 頭生牲畜自出生即屬神（出埃及記13章），利未記27章重申不可再行「分別為聖」儀式，避免將神固有產權視為人自願獻獻。
+accumulations:
+- book: 利未記
+  chapter: 27
+  summary: 頭生牛羊屬耶和華，不可再分別為聖。
+  relation: 確立神對頭生者的先在主權，與不潔淨頭生贖回條例對照。
+related_entries:
+- 不潔淨牲畜頭生贖回
+- 永獻條例
+- 什一條例
+sources:
+- '註解: 利未記27章頭生牲畜不可再分別為聖（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT27.htm）'
+- '拾穗: 利未記27章頭生牲畜屬神原則（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT27.htm）'
+- '註解: 利未記27章註解——頭生牲畜聖潔（https://www.kingcomments.com/en/bible-studies/Lev/27）'
+- '研讀: 利未記27章研讀——頭生牲畜規定（https://biblehub.com/study/leviticus/27.htm）'
+created_from: leviticus_27
+category: 主題
+trigger_sources:
+- leviticus_27
+current_data: true
+pending: false
