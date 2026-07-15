@@ -1,0 +1,28 @@
+name: 時候
+type: 主題
+secondary_types: []
+aliases:
+- 時機
+- 節期
+- 特定時間
+status: formal
+definition: 本章中「時候」特指「起營的時候」（民4:5, 15），即以色列會眾準備遷徙、會幕需拆遷的特定時刻。此時祭司必須先行包裹聖物，利未人才可按序抬運，強調神聖服事的時序性與秩序。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 經文以「起營的時候」標示祭司遮掩聖物與利未人抬運的啟動時機（第5、15節）。
+  relation: 時候作為儀式動作的觸發點，確保聖物在移動前已妥善遮掩，避免褻瀆聖潔。
+related_entries:
+- 起營
+- 起營的時候
+- 亞倫和他兒子包裹聖物
+- 哥轄子孫搬運至聖之物
+- 遮掩
+- 抬擔
+sources:
+- '本章: 民數記 4:5, 15'
+created_from: Numbers 4
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

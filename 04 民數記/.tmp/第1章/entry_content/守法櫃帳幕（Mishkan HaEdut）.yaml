@@ -1,0 +1,31 @@
+name: 守法櫃帳幕（Mishkan HaEdut）
+type: 主題
+secondary_types: []
+aliases:
+- 法櫃帳幕
+- 證據帳幕
+status: formal
+definition: 指存放法櫃（約櫃）的帳幕，即會幕中至聖所所在的帳幕結構。根據民數記第1章，耶和華吩咐摩西派利未人看守法櫃的帳幕、其中的器具，並負責搬運、豎立、拆卸，且在帳幕四圍安營，免得忿怒臨到以色列會眾（民1:50-53）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 1
+  summary: 利未人被派定看守法櫃帳幕，負責搬運、服事、安營在其四圍。
+  relation: 本章確立利未人專職守護法櫃帳幕的制度，區別於其他支派被數點服兵役。
+related_entries:
+- 利未人
+- 約櫃
+- 會幕四圍安營條例
+- 利未支派不被數點條例
+- 器具
+- 抬帳幕
+- 安營
+- 忿怒
+sources:
+- '註解: 民數記第1章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm）'
+- '研讀: 民數記第1章研讀（https://biblehub.com/study/numbers/1.htm）'
+created_from: 民數記第1章
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

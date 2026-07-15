@@ -1,56 +1,49 @@
 {
-  "total_warnings": 41,
+  "total_warnings": 57,
   "critical_count": 0,
-  "warning_count": 41,
+  "warning_count": 57,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第10章.md",
-      "target": "清酒、濃酒都不可喝",
-      "message": "同一 alias「清酒、濃酒都不可喝」指向多個 target: 祭司不可喝酒, 酒和濃酒（yayin veshekar）"
+      "source": "民數記/第3章.md",
+      "target": "拿答",
+      "message": "同一 alias「拿答」指向多個 target: 亞倫家族祭司職分, 拿答"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第12章.md",
-      "target": "潔淨",
-      "message": "同一 alias「潔淨」指向多個 target: 基督的救贖與潔淨, 產後潔淨（taharah）"
+      "source": "民數記/第3章.md",
+      "target": "亞比戶",
+      "message": "同一 alias「亞比戶」指向多個 target: 亞倫家族祭司職分, 亞比戶"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第18章.md",
-      "target": "行經不潔淨",
-      "message": "同一 alias「行經不潔淨」指向多個 target: 月經（niddah）, 行經不潔淨時的禁令"
+      "source": "民數記/第3章.md",
+      "target": "以利亞撒",
+      "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的兒子以利亞撒, 以利亞撒"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第23章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日為節期基礎"
+      "source": "民數記/第3章.md",
+      "target": "以他瑪",
+      "message": "同一 alias「以他瑪」指向多個 target: 亞倫的兒子以他瑪, 以他瑪"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第2章.md",
-      "target": "壇",
-      "message": "同一 alias「壇」指向多個 target: 壇, 銅壇（燔祭壇）"
+      "source": "民數記/第4章.md",
+      "target": "耶和華曉諭摩西",
+      "message": "同一 alias「耶和華曉諭摩西」指向多個 target: 摩西, 耶和華曉諭摩西說"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第9章.md",
-      "target": "燔祭",
-      "message": "同一 alias「燔祭」指向多個 target: 為百姓獻燔祭牛犢綿羊羔, 燔祭（olah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第9章.md",
-      "target": "耶和華的榮光",
-      "message": "同一 alias「耶和華的榮光」指向多個 target: 耶和華的榮光, 耶和華的榮光向百姓顯現"
+      "source": "民數記/第5章.md",
+      "target": "長大痲瘋",
+      "message": "同一 alias「長大痲瘋」指向多個 target: 痲瘋, 長大痲瘋"
     },
     {
       "type": "alias_target_conflict",
@@ -58,6 +51,13 @@
       "source": "link_folder/人物/亞伯拉罕.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 02 出埃及記/第32章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 02 出埃及記/第4章, 04 民數記/第4章"
     },
     {
       "type": "alias_target_conflict",
@@ -76,6 +76,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/亞設（有福）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/以撒.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 02 出埃及記/第32章"
@@ -83,9 +90,51 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/但（審判）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/便雅憫.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/所羅門.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 11 列王紀上/第1章, 14 歷代志下/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/拿弗他利.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第3章",
+      "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 04 民數記/第3章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 02 出埃及記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 02 出埃及記/第5章, 04 民數記/第5章"
     },
     {
       "type": "alias_target_conflict",
@@ -160,9 +209,23 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/流便.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/烏利亞.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 10 撒母耳記下/第11章, 13 歷代志上/第11章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/猶大（雅各之子）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -174,9 +237,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/西布倫（同住）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/西緬.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/迦南人.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 06 約書亞記/第3章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/迦得（萬幸）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -202,6 +286,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/曠野.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 02 出埃及記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/聖所.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 02 出埃及記/第26章, 03 利未記/第26章"
@@ -219,6 +310,27 @@
       "source": "link_folder/主題/生養眾多與治理.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 01 創世記/第1章, 02 出埃及記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/以色列.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/以色列.md",
+      "target": "第3章",
+      "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 04 民數記/第3章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/以色列.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 02 出埃及記/第5章, 04 民數記/第5章"
     },
     {
       "type": "alias_target_conflict",

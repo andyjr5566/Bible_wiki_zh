@@ -1,0 +1,29 @@
+name: 肚腹發脹
+type: 主題
+secondary_types: []
+aliases:
+- 腹部脹大
+- 肚子發脹
+status: formal
+definition: 希伯來文 beten tsavah（腹部/子宮脹大）。民數記 5:21、22、27 三次出現，與「大腿消癟」並列為誓約咒詛的身體徵兆，暗示懷孕狀態的異常（如假性懷孕、流產、子宮病變），直接對應「行淫」可能產生的私生子或生殖系統審判。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 誓約咒詛與試驗結果皆以「肚腹發脹」作為有罪的身體證據。
+  relation: 身體徵兆的公開顯現，使社群能辨認神的審判，維護婚姻盟約純潔。
+related_entries:
+- 大腿消癟
+- 發誓
+- 致咒詛的苦水
+- 苦水試驗
+- 咒詛
+- 使肚腹發脹
+- 丈夫疑妻行淫釋疑條例
+sources:
+- 'BH: Numbers 5:21,22,27 — 咒詛與試驗結果中的肚腹發脹描述（https://biblehub.com/numbers/5.htm）'
+created_from: numbers_5
+category: 儀式神學
+trigger_sources:
+- numbers_5
+current_data: {}
+pending: false

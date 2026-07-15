@@ -1,0 +1,505 @@
+book: 民數記
+chapter: 2
+A_use_directly: []
+B_needs_update:
+- name: 利未人不被數點
+  suggested_type: 主題
+  evidence: 民2:33 惟獨利未人沒有數在以色列人中，是照耶和華所吩咐摩西的。 CT：利未人專供聖職，不參軍，代替長子歸神。
+  surfaces:
+  - phrase: 利未人沒有數在以色列人中
+  - phrase: 不被數點
+  match_type: alias
+  existing_title: 利未支派不被數點條例
+  existing_path: link_folder/主題/利未支派不被數點條例.md
+- name: 猶大（雅各之子）
+  suggested_type: 人物
+  evidence: 民2:3,4,9 東邊猶大營，拿順作首領，74600人。 猶大支派出大衛王和彌賽亞。
+  surfaces:
+  - phrase: 猶大
+  - phrase: 猶大營
+  - phrase: 拿順
+  match_type: exact
+  existing_title: 猶大（雅各之子）
+  existing_path: link_folder/人物/猶大（雅各之子）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 民2:5,6 挨著猶大安營的是以薩迦支派，拿坦業作首領，54400人。 以薩迦、西布倫、猶大同屬一組軍隊編組。
+  surfaces:
+  - phrase: 以薩迦
+  - phrase: 以薩迦支派
+  - phrase: 拿坦業
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 民2:7,8 又有西布倫支派，希倫的兒子以利押作首領，57400人。 西布倫與猶大、以薩迦同組。
+  surfaces:
+  - phrase: 西布倫
+  - phrase: 西布倫支派
+  - phrase: 以利押
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 民2:10,11 南邊流便營，以利蓿作首領，46500人。 流便為雅各長子，但因犯淫亂失去長子名份。
+  surfaces:
+  - phrase: 流便
+  - phrase: 流便營
+  - phrase: 以利蓿
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 民2:12,13 挨著流便安營的是西緬支派，示路蔑作首領，59300人。 西緬與利未常相提並論。
+  surfaces:
+  - phrase: 西緬
+  - phrase: 西緬支派
+  - phrase: 示路蔑
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 民2:14,15 又有迦得支派，以利雅薩作首領，45650人。 迦得與流便、西緬同組。
+  surfaces:
+  - phrase: 迦得
+  - phrase: 迦得支派
+  - phrase: 以利雅薩
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 民2:18,19 西邊以法蓮營，以利沙瑪作首領，40500人。 以法蓮為約瑟長子，雅各立以法蓮在瑪拿西之上。
+  surfaces:
+  - phrase: 以法蓮
+  - phrase: 以法蓮營
+  - phrase: 以利沙瑪
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 民2:20,21 挨著以法蓮的是瑪拿西支派，迦瑪列作首領，32200人。 瑪拿西為約瑟長子，但以法蓮居首位。
+  surfaces:
+  - phrase: 瑪拿西
+  - phrase: 瑪拿西支派
+  - phrase: 迦瑪列
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 民2:22,23 又有便雅憫支派，亞比但作首領，35400人。 便雅憫為拉結幼子，與以法蓮、瑪拿西同組。
+  surfaces:
+  - phrase: 便雅憫
+  - phrase: 便雅憫支派
+  - phrase: 亞比但
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 但（審判）
+  suggested_type: 人物
+  evidence: 民2:25,26 北邊但營，亞希以謝作首領，62700人。 但為辟拉所生，與拿弗他利、亞設同組殿後。
+  surfaces:
+  - phrase: 但
+  - phrase: 但營
+  - phrase: 亞希以謝
+  match_type: exact
+  existing_title: 但（審判）
+  existing_path: link_folder/人物/但（審判）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 民2:27,28 挨著但安營的是亞設支派，帕結作首領，41500人。 亞設與但、拿弗他利同組殿後。
+  surfaces:
+  - phrase: 亞設
+  - phrase: 亞設支派
+  - phrase: 帕結
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 民2:29,30 又有拿弗他利支派，亞希拉作首領，53400人。 拿弗他利與但、亞設同組殿後。
+  surfaces:
+  - phrase: 拿弗他利
+  - phrase: 拿弗他利支派
+  - phrase: 亞希拉
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 利未人
+  suggested_type: 人物
+  evidence: 民2:17,33 會幕往前行，有利未營在諸營中間。 利未人沒有數在以色列人中。 利未人專供聖職，不參軍，代替長子歸神。
+  surfaces:
+  - phrase: 利未人
+  - phrase: 利未營
+  - phrase: 利未人沒有數在以色列人中
+  match_type: exact
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民2:1 耶和華曉諭摩西、亞倫說。 摩西作為條例傳遞者。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 耶和華曉諭摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民2:1 耶和華曉諭摩西、亞倫說。 亞倫作為大祭司協助。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 耶和華曉諭摩西、亞倫
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 民2:2,32,34 以色列人要各歸自己的纛下...這些以色列人...共有六十萬零三千五百五十名...以色列人就這樣行。 條例針對全會眾。
+  surfaces:
+  - phrase: 以色列人
+  - phrase: 以色列人要
+  - phrase: 以色列人就這樣行
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 纛
+  suggested_type: 主題
+  evidence: 民2:2,3,10,18,25 各歸自己的纛下...猶大營的纛...流便營的纛...以法蓮營的纛...但營的纛。 纛代表東西南北四個方向的各支派陣旗。
+  surfaces:
+  - phrase: 纛
+  - phrase: 各歸自己的纛下
+  - phrase: 猶大營的纛
+  - phrase: 流便營的纛
+  - phrase: 以法蓮營的纛
+  - phrase: 但營的纛
+  match_type: exact
+  existing_title: 纛
+  existing_path: link_folder/主題/纛.md
+- name: 安營
+  suggested_type: 主題
+  evidence: 民2:2,3,10,18,25,34 對著會幕的四圍安營...照著軍隊安營...各按本位，各歸本纛，安營起行. 安營秩序：利未人圍帳幕，各支派各歸本纛。
+  surfaces:
+  - phrase: 安營
+  - phrase: 對著會幕的四圍安營
+  - phrase: 各按本位，各歸本纛，安營起行
+  match_type: exact
+  existing_title: 安營
+  existing_path: link_folder/主題/安營.md
+- name: 軍隊
+  suggested_type: 主題
+  evidence: 民2:3,9,10,16,17,24,31,32 照著軍隊安營...按著軍隊被數的...按著軍隊是流便營的纛...凡屬流便營、按著軍隊被數的...會幕要往前行，有利未營在諸營中間...凡屬以法蓮營、按著軍隊被數的...凡但營被數的...照他們的軍隊，在諸營中被數的.
+    軍隊編組為安營和起行依據。
+  surfaces:
+  - phrase: 軍隊
+  - phrase: 照著軍隊
+  - phrase: 按著軍隊
+  - phrase: 軍隊被數的
+  match_type: exact
+  existing_title: 軍隊
+  existing_path: link_folder/主題/軍隊.md
+- name: 纛
+  suggested_type: 主題
+  evidence: 民2:2,3,10,18,25 各歸自己的纛下...猶大營的纛...流便營的纛...以法蓮營的纛...但營的纛. 纛代表東西南北四個方向的各支派陣旗。
+  surfaces:
+  - phrase: 纛
+  - phrase: 各歸自己的纛下
+  - phrase: 猶大營的纛
+  - phrase: 流便營的纛
+  - phrase: 以法蓮營的纛
+  - phrase: 但營的纛
+  match_type: exact
+  existing_title: 纛
+  existing_path: link_folder/主題/纛.md
+C_new_formal:
+- name: 四面安營條例
+  suggested_type: 主題
+  evidence: 民2:2 以色列人要各歸自己的纛下，在本族的旗號那裡，對著會幕的四圍安營。GT：以會幕為中心，四方形安營，利未人在中間，十二支派分四組各三支派。KC：四組支派按母系分組——東邊利亞所生三支派、南邊利亞與婢女所生、西邊拉結子孫、北邊婢女所生。
+  surfaces:
+  - phrase: 各歸自己的纛下
+  - phrase: 本族的旗號
+  - phrase: 對著會幕的四圍安營
+  - phrase: 四面安營
+  target_path: link_folder/主題/四面安營條例.md
+- name: 纛與旗號
+  suggested_type: 主題
+  evidence: 民2:2-3 各歸自己的纛下，在本族的旗號那裡。GT：纛代表四個方向的陣旗，猶大纛(獅子)、流便纛(人首)、以法蓮纛(牛)、但纛(鷹)。KC：纛有標準、象徵字義，也作標記。KC引猶太傳統：猶大綠旗獅子、流便紅旗人首、以法蓮黃旗牛、但紅白旗鷹。
+  surfaces:
+  - phrase: 纛
+  - phrase: 旗號
+  - phrase: 各歸自己的纛下
+  - phrase: 本族的旗號
+  target_path: link_folder/主題/纛與旗號.md
+- name: 十字架隊形
+  suggested_type: 神學
+  evidence: 民2:3,10,18,25 東邊猶大、南邊流便、西邊以法蓮、北邊但，形成十字架隊形。CT：東邊猶大、南邊流便、西邊以法蓮、北邊但，形成十字架，表徵十字架乃防守禦敵之道。
+    GT：四組支派排列形成十字架，象徵神住在子民中間，也是聖城模式(結40、啟21)。
+  surfaces:
+  - phrase: 東邊
+  - phrase: 南邊
+  - phrase: 西邊
+  - phrase: 北邊
+  - phrase: 十字架隊形
+  - phrase: 四面安營
+  target_path: link_folder/神學/十字架隊形.md
+- name: 起行次序
+  suggested_type: 主題
+  evidence: 民2:9,16,17,24,31 猶大營第一隊、流便營第二隊、會幕利未營第三、以法蓮營第三隊、但營末隊。 GT：起行次序：猶大領頭、流便其次、利未人會幕第三、以法蓮第四、但殿後。
+    KC：猶大營第一隊往前行(9節)、流便營第二隊(16節)、會幕利未營在中間(17節)、以法蓮營第三隊(24節)、但營末隊(31節)。
+  surfaces:
+  - phrase: 第一隊往前行
+  - phrase: 第二隊往前行
+  - phrase: 第三隊往前行
+  - phrase: 末隊往前行
+  - phrase: 起行次序
+  - phrase: 會幕要往前行
+  target_path: link_folder/主題/起行次序.md
+- name: 會幕中心安營
+  suggested_type: 神學
+  evidence: 民2:2,17 以會幕為中心，四圍安營。 GT：會幕在中心，象徵神作為真正統治者臨在他們生活中。 CT：以會幕為中心，表徵以基督為中心，全軍在基督率領下。
+  surfaces:
+  - phrase: 對著會幕的四圍安營
+  - phrase: 會幕要往前行
+  - phrase: 利未營在諸營中間
+  - phrase: 會幕中心
+  target_path: link_folder/神學/會幕中心安營.md
+- name: 猶大營(東方第一隊)
+  suggested_type: 主題
+  evidence: 民2:3-9 東邊猶大營，拿順作首領，74600人；以薩迦拿坦業54400；西布倫以利押57400；共186400，作第一隊往前行。 CT：猶大營在東邊向日出之地，會幕門口面向東，最重要方位。拿順為亞倫妻兄、大衛先祖。
+    GT：猶大支派站在行軍隊列前面，預表耶穌作救主君王站在人類前面引到永遠國度(約10:4)。耶穌借猶大血統道成肉身(太1:3-16)。
+  surfaces:
+  - phrase: 猶大營
+  - phrase: 東邊
+  - phrase: 第一隊往前行
+  - phrase: 猶大營的纛
+  - phrase: 拿順
+  - phrase: 以薩迦
+  - phrase: 西布倫
+  target_path: link_folder/主題/猶大營(東方第一隊).md
+- name: 流便營(南方第二隊)
+  suggested_type: 主題
+  evidence: 民2:10-16 南邊流便營，以利蓿作首領46500；西緬示路蔑59300；迦得以利雅薩45650；共151450，作第二隊往前行。 CT：南邊按行軍方向指右邊，希伯來人右邊意味力量和祝福，對長子流便特殊照顧。
+    KC：流便西緬迦得三支派，利亞長子次子與婢女長子。
+  surfaces:
+  - phrase: 流便營
+  - phrase: 南邊
+  - phrase: 第二隊往前行
+  - phrase: 流便營的纛
+  - phrase: 以利蓿
+  - phrase: 西緬
+  - phrase: 迦得
+  target_path: link_folder/主題/流便營(南方第二隊).md
+- name: 以法蓮營(西方第三隊)
+  suggested_type: 主題
+  evidence: 民2:18-24 西邊以法蓮營，以利沙瑪作首領40500；瑪拿西迦瑪列32200；便雅憫亞比但35400；共108100，作第三隊往前行。
+    CT：西邊是帳幕後邊，以法蓮、瑪拿西、便雅憫同為拉結子孫。 GT：西邊以法蓮為首，瑪拿西、便雅憫同為拉結子孫。
+  surfaces:
+  - phrase: 以法蓮營
+  - phrase: 西邊
+  - phrase: 第三隊往前行
+  - phrase: 以法蓮營的纛
+  - phrase: 以利沙瑪
+  - phrase: 瑪拿西
+  - phrase: 便雅憫
+  target_path: link_folder/主題/以法蓮營(西方第三隊).md
+- name: 但營(北方末隊)
+  suggested_type: 主題
+  evidence: 民2:25-31 北邊但營，亞希以謝作首領62700；亞設帕結41500；拿弗他利亞希拉53400；共157600，歸本纛作末隊往前行。 CT：但營人數最多(除猶大外)，勇敢人群，擔負守衛後方重任。
+    GT：北邊但、亞設、拿弗他利，但為辟拉長子後裔，亞設悉帕後裔，拿弗他利辟拉後裔。
+  surfaces:
+  - phrase: 但營
+  - phrase: 北邊
+  - phrase: 末隊往前行
+  - phrase: 但營的纛
+  - phrase: 亞希以謝
+  - phrase: 亞設
+  - phrase: 拿弗他利
+  target_path: link_folder/主題/但營(北方末隊).md
+- name: 利未營在中間
+  suggested_type: 主題
+  evidence: 民2:17,33 會幕往前行，利未營在諸營中間。 他們怎樣安營就怎樣往前行。利未人沒有數在以色列人中。 CT：利未營在諸營中間，會幕聖物佔據最中心位置。
+    神讓百姓即使行軍也維持以神為中心。 GT：利未營在中間，哥轄子孫抬聖物(10:21)。帳幕聖物佔最中心位置，神要百姓隨時以神為中心。
+  surfaces:
+  - phrase: 利未營在諸營中間
+  - phrase: 會幕要往前行
+  - phrase: 利未營在諸營中間
+  - phrase: 利未人沒有數在以色列人中
+  target_path: link_folder/主題/利未營在中間.md
+- name: 總人數統計
+  suggested_type: 主題
+  evidence: 民2:32 照他們的宗族，按他們的軍隊，在諸營中被數的，共有六十萬零三千五百五十名。 GT：人口統計數目問題，"千"字與"軍事部隊"字同形，可能為混合數字。
+  surfaces:
+  - phrase: 六十萬零三千五百五十名
+  - phrase: 照他們的宗族
+  - phrase: 按他們的軍隊
+  - phrase: 總人數
+  target_path: link_folder/主題/總人數統計.md
+- name: 順服神吩咐
+  suggested_type: 主題
+  evidence: 民2:34 以色列人就這樣行，各人照他們的家室、宗族歸於本纛，安營起行，都是照耶和華所吩咐摩西的。 CT：以色列人就這樣行，表示絕對順服。
+    人在神面前最美麗樣式是謙卑和順服(撒上15:22)。
+  surfaces:
+  - phrase: 以色列人就這樣行
+  - phrase: 照耶和華所吩咐摩西的
+  - phrase: 安營起行
+  target_path: link_folder/主題/順服神吩咐.md
+- name: 旗號
+  suggested_type: 主題
+  evidence: 民2:2 在本族的旗號那裡. 旗號為支派標誌，各支派各有旗幟。
+  surfaces:
+  - phrase: 旗號
+  - phrase: 本族的旗號
+  target_path: link_folder/主題/旗號.md
+- name: 起行
+  suggested_type: 主題
+  evidence: 民2:9,16,17,24,31,34 要作第一隊往前行...要作第二隊往前行...會幕要往前行...要作第三隊往前行...要歸本纛作末隊往前行...安營起行，都是照耶和華所吩咐摩西的.
+    起行次序：猶大→流便→會幕利未→以法蓮→但。
+  surfaces:
+  - phrase: 起行
+  - phrase: 往前行
+  - phrase: 第一隊往前行
+  - phrase: 第二隊往前行
+  - phrase: 第三隊往前行
+  - phrase: 末隊往前行
+  - phrase: 安營起行
+  target_path: link_folder/主題/起行.md
+- name: 旗號
+  suggested_type: 主題
+  evidence: 民2:2 在本族的旗號那裡. 旗號為支派標誌，各支派各有旗幟。
+  surfaces:
+  - phrase: 旗號
+  - phrase: 本族的旗號
+  target_path: link_folder/主題/旗號.md
+- name: 東邊
+  suggested_type: 主題
+  evidence: 民2:3 在東邊，向日出之地，照著軍隊安營的是猶大營的纛. 東邊向日出之地，會幕門口面向東。
+  surfaces:
+  - phrase: 東邊
+  - phrase: 向日出之地
+  target_path: link_folder/主題/東邊.md
+- name: 南邊
+  suggested_type: 主題
+  evidence: 民2:10 在南邊，按著軍隊是流便營的纛. 南邊按行軍方向指右邊，希伯來人右邊意味力量和祝福。
+  surfaces:
+  - phrase: 南邊
+  - phrase: 在南邊
+  target_path: link_folder/主題/南邊.md
+- name: 西邊
+  suggested_type: 主題
+  evidence: 民2:18 在西邊，按著軍隊是以法蓮營的纛. 西邊是帳幕的後邊。
+  surfaces:
+  - phrase: 西邊
+  - phrase: 在西邊
+  target_path: link_folder/主題/西邊.md
+- name: 北邊
+  suggested_type: 主題
+  evidence: 民2:25 在北邊，按著軍隊是但營的纛. 北邊是帳幕周圍安置以色列各支派陣營時最後提到的地方。
+  surfaces:
+  - phrase: 北邊
+  - phrase: 在北邊
+  target_path: link_folder/主題/北邊.md
+- name: 第一隊往前行
+  suggested_type: 主題
+  evidence: 民2:9 凡屬猶大營...要作第一隊往前行. 猶大營為先鋒。
+  surfaces:
+  - phrase: 第一隊往前行
+  - phrase: 作第一隊往前行
+  target_path: link_folder/主題/第一隊往前行.md
+- name: 第二隊往前行
+  suggested_type: 主題
+  evidence: 民2:16 凡屬流便營...要作第二隊往前行. 流便營第二。
+  surfaces:
+  - phrase: 第二隊往前行
+  - phrase: 作第二隊往前行
+  target_path: link_folder/主題/第二隊往前行.md
+- name: 第三隊往前行
+  suggested_type: 主題
+  evidence: 民2:24 凡屬以法蓮營...要作第三隊往前行. 以法蓮營第三。
+  surfaces:
+  - phrase: 第三隊往前行
+  - phrase: 作第三隊往前行
+  target_path: link_folder/主題/第三隊往前行.md
+- name: 末隊往前行
+  suggested_type: 主題
+  evidence: 民2:31 凡但營被數的...要歸本纛作末隊往前行. 但營殿後。
+  surfaces:
+  - phrase: 末隊往前行
+  - phrase: 作末隊往前行
+  target_path: link_folder/主題/末隊往前行.md
+- name: 會幕要往前行
+  suggested_type: 主題
+  evidence: 民2:17 隨後，會幕要往前行，有利未營在諸營中間. 會幕與利未營在中間行進。
+  surfaces:
+  - phrase: 會幕要往前行
+  - phrase: 會幕往前行
+  target_path: link_folder/主題/會幕要往前行.md
+- name: 利未營在諸營中間
+  suggested_type: 主題
+  evidence: 民2:17 有利未營在諸營中間。他們怎樣安營就怎樣往前行. 利未營居中，保護會幕。
+  surfaces:
+  - phrase: 利未營在諸營中間
+  - phrase: 利未營在中間
+  target_path: link_folder/主題/利未營在諸營中間.md
+- name: 他們怎樣安營就怎樣往前行
+  suggested_type: 主題
+  evidence: 民2:17 他們怎樣安營就怎樣往前行，各按本位，各歸本纛. 安營次序與起行次序相同。
+  surfaces:
+  - phrase: 他們怎樣安營就怎樣往前行
+  - phrase: 怎樣安營就怎樣往前行
+  target_path: link_folder/主題/他們怎樣安營就怎樣往前行.md
+- name: 各按本位，各歸本纛
+  suggested_type: 主題
+  evidence: 民2:17,34 他們怎樣安營就怎樣往前行，各按本位，各歸本纛...各人照他們的家室、宗族歸於本纛，安營起行，都是照耶和華所吩咐摩西的. 安營起行秩序井然。
+  surfaces:
+  - phrase: 各按本位，各歸本纛
+  - phrase: 各歸本纛
+  target_path: link_folder/主題/各按本位，各歸本纛.md
+- name: 以色列人就這樣行
+  suggested_type: 主題
+  evidence: 民2:34 以色列人就這樣行，各人照他們的家室、宗族歸於本纛，安營起行，都是照耶和華所吩咐摩西的. 完全順服。
+  surfaces:
+  - phrase: 以色列人就這樣行
+  - phrase: 就這樣行
+  target_path: link_folder/主題/以色列人就這樣行.md
+- name: 照耶和華所吩咐摩西的
+  suggested_type: 主題
+  evidence: 民2:34 安營起行，都是照耶和華所吩咐摩西的. 完全順服。
+  surfaces:
+  - phrase: 照耶和華所吩咐摩西的
+  - phrase: 所吩咐摩西的
+  target_path: link_folder/主題/照耶和華所吩咐摩西的.md
+D_new_candidate:
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民2:2,17 對著會幕的四圍安營...隨後，會幕要往前行，有利未營在諸營中間。 會幕為神與人相會之所，利未人專司其事。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 會幕要往前行
+  - phrase: 會幕中
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 家室
+  suggested_type: 主題
+  evidence: 民2:34 各人照他們的家室、宗族歸於本纛. 家室為家族單位，安營基本單位。
+  surfaces:
+  - phrase: 家室
+  - phrase: 家室、宗族
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 宗族
+  suggested_type: 主題
+  evidence: 民2:2,32,34 在本族的旗號那裡...照他們的宗族，按他們的軍隊...各人照他們的家室、宗族歸於本纛. 宗族介於支派和家室之間。
+  surfaces:
+  - phrase: 宗族
+  - phrase: 本族的旗號
+  - phrase: 照他們的宗族
+  - phrase: 家室、宗族
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=人物，secondary=['神學']
+E_skip: []

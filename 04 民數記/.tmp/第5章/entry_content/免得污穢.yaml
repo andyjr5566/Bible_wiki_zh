@@ -1,0 +1,33 @@
+name: 免得污穢
+type: 神學
+secondary_types: []
+aliases:
+- 防止污穢
+- 避免玷污
+status: formal
+definition: 神命令將不潔淨者趕出營外的目的（v.3）。「污穢」指儀式上的不潔淨若留在營中，會玷污神居住的營地，導致神離棄百姓。體現「聖潔神與不潔之物不可共存」的神學原則。
+development: 緊接「這營是我所住的」（v.3），構成「神的同在→營地必須聖潔→不潔者必須出營」的邏輯鏈。預表新約「教會須清除惡人」（林前5:13）與「信徒身體為聖靈殿」（林前6:19）的真理。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: v.3 闡明驅逐不潔淨者的神學理由：「免得污穢他們的營」。
+  relation: 本章營地潔淨條例的核心神學動機，連結「神的同在」與「百姓的順服」。
+related_entries:
+- 這營是我所住的
+- 污穢營地
+- 營地潔淨條例
+- 長大痲瘋
+- 因死屍不潔淨
+- 患漏症
+- 營外
+- 順服神命
+- 以色列
+- 曉諭
+sources:
+- '本章經文: 民數記 5:3（驅逐不潔淨者的神學目的）'
+created_from: 民數記第5章研經整理
+category: 神學
+trigger_sources:
+- 民數記 5:3
+current_data: {}
+pending: false

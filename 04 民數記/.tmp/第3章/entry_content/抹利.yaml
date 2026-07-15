@@ -1,0 +1,26 @@
+name: 抹利
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 米拉利的兒子（民3:20），抹利族的始祖（民3:33）。屬米拉利宗族，在帳幕北邊安營，負責看守帳幕結構組件（民3:35-37）。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 記載抹利為米拉利兒子，其族人被數六千二百名，掌管帳幕板、閂、柱子、帶卯的座等架構。
+  relation: 體現利未人米拉利族分工看守帳幕骨架的具體職務分配。
+related_entries:
+- 米拉利
+- 母示
+- 抹利族
+- 亞比亥的兒子蘇列
+- 看守帳幕的板、閂、柱子、帶卯的座
+- 院子四圍的柱子、帶卯的座、橛子，和繩子
+sources:
+- '註解: 民數記 3 章經文與大綱（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記 3 章拾穗資料（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+created_from: numbers_3
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,26 @@
+name: 共有二萬二千名
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 3:39 記載利未人被數點的總數為二萬二千名，作為後續贖銀計算的基準。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 本章結尾給出利未人總數二萬二千。
+  relation: 此數字與以色列頭生男子總數（二萬二千二百七十三）的差額決定贖銀金額。
+related_entries:
+- 利未人總數與贖銀
+- 利未人
+- 贖銀
+- 聖所的平
+sources:
+- '註解: 民數記 3 章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記 3 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '研讀: 民數記 3 章研讀（https://biblehub.com/study/numbers/3.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

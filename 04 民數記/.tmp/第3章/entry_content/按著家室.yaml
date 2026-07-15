@@ -1,0 +1,27 @@
+name: 按著家室
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 3:15、20、39 等處反覆提到「按著家室」數點利未人，強調以家族單位進行人口統計。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 本章多次出現「按著家室」作為數點單位。
+  relation: 此主題貫穿利未人數點的整個過程，顯示家庭結構在以色列社會的重要性。
+related_entries:
+- 利未人
+- 摩西
+- 亞倫
+- 利未人的家室
+- 利未人數點條例
+sources:
+- '註解: 民數記 3 章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記 3 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '研讀: 民數記 3 章研讀（https://biblehub.com/study/numbers/3.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

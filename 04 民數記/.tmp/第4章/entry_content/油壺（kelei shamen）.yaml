@@ -1,0 +1,27 @@
+name: 油壺（kelei shamen）
+type: 原文
+secondary_types: []
+aliases:
+- 油壺
+- 盛油的器皿
+status: formal
+definition: 希伯來文 כָּל־כֵּלֵי שַׁמְנֹה (kol kēlê šammĕnō)，意指「一切盛油的器皿」。民數記 4:9 記載起營時這些器皿與燈臺、燈盞、剪刀一同被藍色毯子遮蓋。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 起營時一切盛油的器皿作為燈臺器具之一，被藍色毯子遮蓋，再用海狗皮包裹。
+  relation: 屬哥轄子孫搬運的聖物，不可直接觸摸；與點燈的油有關。
+related_entries:
+- 金燈臺
+- 點燈的油
+- 哥轄子孫搬運至聖之物
+- 亞倫和他兒子包裹聖物
+- 藍色毯子
+- 海狗皮
+sources:
+- '本章: 民數記 第4章第9節（無URL）'
+created_from: 民數記 4:9
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

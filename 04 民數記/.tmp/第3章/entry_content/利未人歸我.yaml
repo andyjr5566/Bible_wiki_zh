@@ -1,0 +1,26 @@
+name: 利未人歸我
+type: 神學
+secondary_types: []
+aliases: []
+status: formal
+definition: 上帝宣告利未人屬於祂，代替以色列一切頭生的歸祂（民3:12-13,45）。這確立利未人作為聖職人員的神學地位，並顯示「歸神」的贖回原則。
+development: 此觀念在後來利未人服事會幕、聖殿的制度中延續，成為以色列敬拜體系的核心。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 上帝揀選利未人代替頭生的，宣告利未人歸祂。
+  relation: 本條目直接引用本章 12-13,45 節的神學宣告。
+related_entries:
+- 利未人
+- 歸神
+- 代替
+- 頭生
+- 利未人歸神
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm'
+- '研讀: https://biblehub.com/study/numbers/3.htm'
+created_from: 民數記 3
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

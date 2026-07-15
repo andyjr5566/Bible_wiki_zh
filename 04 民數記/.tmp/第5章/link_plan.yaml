@@ -1,0 +1,1065 @@
+book: 民數記
+chapter: 5
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民5:1,5,11 耶和華曉諭摩西說...耶和華對摩西說...耶和華對摩西說。摩西作為條例傳遞者。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 耶和華曉諭摩西
+  - phrase: 耶和華對摩西說
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 民5:2,6,9,12,31 你吩咐以色列人...你曉諭以色列人說...以色列人一切的聖物...以色列人中...以色列人就這樣行。條例針對全會眾。
+  surfaces:
+  - phrase: 以色列人
+  - phrase: 以色列人中
+  - phrase: 以色列全會眾
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 祭司
+  suggested_type: 人物
+  evidence: 民5:8,15,16,17,18,19,20,21,23,25,26,28,30,31 那所賠還的就要歸與服事耶和華的祭司...把妻子帶到祭司面前...祭司叫婦人站在耶和華面前...祭司取聖水...祭司手裡拿致咒詛的苦水。祭司執行嫉妒條例、收聖物、獻祭。
+  surfaces:
+  - phrase: 祭司
+  - phrase: 服事耶和華的祭司
+  - phrase: 把妻子帶到祭司面前
+  - phrase: 祭司叫婦人站在耶和華面前
+  - phrase: 祭司取聖水
+  - phrase: 祭司手裡拿
+  match_type: alias
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 大祭司
+  suggested_type: 人物
+  evidence: 民5:8,15,16,17,18,19,20,21,23,25,26,28,30,31 祭司...大祭司預表基督代求。KC：祭司為屬靈成熟信徒，代人擔當重擔。BH：祭司執行嫉妒條例全程。
+  surfaces:
+  - phrase: 大祭司
+  - phrase: 祭司
+  - phrase: 基督大祭司
+  - phrase: 代求
+  - phrase: 屬靈成熟信徒
+  match_type: exact
+  existing_title: 大祭司
+  existing_path: link_folder/人物/大祭司.md
+- name: 咒詛
+  suggested_type: 神學
+  evidence: 民5:21,22,23,27 耶和華使你的大腿消癟，肚腹發脹...這致咒詛的苦水必進入你腸裡...婦人喝這致咒詛的苦水。CT：咒詛預表基督為我們成了咒詛（加3:13）。KC：咒詛臨到有罪者。BH：大腿消癟、肚腹發脹為咒詛徵兆。
+  surfaces:
+  - phrase: 咒詛
+  - phrase: 大腿消癟
+  - phrase: 肚腹發脹
+  - phrase: 基督成了咒詛
+  - phrase: 加3:13
+  - phrase: 咒詛徵兆
+  match_type: exact
+  existing_title: 咒詛
+  existing_path: link_folder/神學/咒詛.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: 民5:10 各人所分別為聖的物，無論是什麼，都要歸給祭司。CT：分別為聖歸神預表信徒完全獻給神（羅12:1）。KC：分別為聖離開人手完全獻給神。BH：聖物歸祭司供養。
+  surfaces:
+  - phrase: 分別為聖
+  - phrase: 完全獻給神
+  - phrase: 羅12:1
+  - phrase: 離開人手
+  - phrase: 聖物歸祭司
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 民5:1,5,11 耶和華曉諭摩西說...耶和華對摩西說...耶和華對摩西說。神在曠野向摩西啟示條例。
+  surfaces:
+  - phrase: 曠野
+  - phrase: 西乃曠野
+  - phrase: 神啟示條例
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 民5:1 耶和華曉諭摩西說。神在西乃山曉諭潔淨營地條例。
+  surfaces:
+  - phrase: 西乃山
+  - phrase: 神曉諭摩西
+  - phrase: 頒布條例
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 以色列會眾
+  suggested_type: 人物
+  evidence: 民5:2,6,9,12,31 你吩咐以色列人...你曉諭以色列人說...以色列人一切的聖物...以色列人中...以色列人就這樣行。條例針對全會眾。
+  surfaces:
+  - phrase: 以色列人
+  - phrase: 以色列會眾
+  - phrase: 全會眾
+  - phrase: 條例針對全會眾
+  match_type: alias
+  existing_title: 以色列全會眾
+  existing_path: link_folder/人物/以色列全會眾.md
+- name: 營外
+  suggested_type: 地點
+  evidence: 民5:2,3,4 都出營外去...使他們出到營外...以色列人就這樣行，使他們出到營外。營外為隔離之地。
+  surfaces:
+  - phrase: 營外
+  - phrase: 出營外
+  - phrase: 隔離之地
+  - phrase: 使他們出到營外
+  match_type: exact
+  existing_title: 營外
+  existing_path: link_folder/地點/營外.md
+- name: 贖罪
+  suggested_type: 神學
+  evidence: 民5:8 至於那為他贖罪的公羊是在外。CT：贖罪預表基督贖罪。KC：贖愆祭公羊贖罪。BH：利未記5:15-16贖罪公羊。
+  surfaces:
+  - phrase: 贖罪
+  - phrase: 贖罪公羊
+  - phrase: 基督贖罪
+  - phrase: 贖愆祭
+  - phrase: 利未記5:15-16
+  match_type: exact
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+C_new_formal:
+- name: 營地潔淨條例
+  suggested_type: 主題
+  evidence: 民5:1-4 耶和華曉諭摩西，吩咐以色列人使長大痲瘋的、患漏症的、因死屍不潔淨的都出營外。CT：聖潔神不能容許污穢，教會須除去邪惡舊酵。KC：三種不潔預表罪、肉體流露、屬靈死亡。BH：營中有神同在，不潔者必須出營。
+  surfaces:
+  - phrase: 營地潔淨
+  - phrase: 出營外
+  - phrase: 長大痲瘋的
+  - phrase: 患漏症的
+  - phrase: 因死屍不潔淨的
+  - phrase: 免得污穢他們的營
+  - phrase: 這營是我所住的
+  target_path: link_folder/主題/營地潔淨條例.md
+- name: 長大痲瘋
+  suggested_type: 主題
+  evidence: 民5:2 使一切長大痲瘋的...都出營外去。CT：表徵從人裡面罪性顯露出來的罪污。KC：大痲瘋預表爆發且未被審判的罪。BH：利未記13章詳細條例，皮膚病須隔離。
+  surfaces:
+  - phrase: 長大痲瘋的
+  - phrase: 大痲瘋
+  - phrase: 痲瘋
+  - phrase: 皮膚病
+  - phrase: 隔離
+  target_path: link_folder/主題/長大痲瘋.md
+- name: 因死屍不潔淨
+  suggested_type: 主題
+  evidence: 民5:2 並因死屍不潔淨的，都出營外去。CT：表徵沾染屬靈死亡的污穢。KC：摸死屍不潔七天，預表接觸屬靈死亡。BH：民數記19章紅母牛條例潔淨死屍不潔。
+  surfaces:
+  - phrase: 因死屍不潔淨的
+  - phrase: 死屍不潔淨
+  - phrase: 摸死屍
+  - phrase: 紅母牛
+  - phrase: 七天不潔淨
+  target_path: link_folder/主題/因死屍不潔淨.md
+- name: 犯罪認罪賠償條例
+  suggested_type: 主題
+  evidence: 民5:5-10 耶和華對摩西說：無論男女，若犯了人所常犯的罪，干犯耶和華，那人就有了罪。要承認所犯的罪，將所虧負人的如數賠還，另外加上五分之一。CT：虧負人即干犯神，認罪賠償加五分之一。KC：贖愆祭原則，無親屬則歸祭司。BH：利未記5-6章贖愆祭補充條例。
+  surfaces:
+  - phrase: 犯罪認罪賠償
+  - phrase: 干犯耶和華
+  - phrase: 承認所犯的罪
+  - phrase: 如數賠還
+  - phrase: 加上五分之一
+  - phrase: 贖愆祭
+  - phrase: 無親屬歸祭司
+  target_path: link_folder/主題/犯罪認罪賠償條例.md
+- name: 丈夫疑妻行淫釋疑條例
+  suggested_type: 主題
+  evidence: 民5:11-31 耶和華對摩西說：人的妻若行邪淫，干犯丈夫...把妻子帶到祭司面前，獻上嫉妒的素祭。CT：嫉妒素祭預表基督為不忠受審。KC：嫉妒素祭為大麥麵，無油無乳香，提醒罪孽。BH：苦水試驗，祭司取聖水加會幕地上的塵，女子喝下。
+  surfaces:
+  - phrase: 丈夫疑妻行淫
+  - phrase: 嫉妒素祭
+  - phrase: 苦水試驗
+  - phrase: 聖水
+  - phrase: 會幕地上的塵
+  - phrase: 大腿消腫
+  - phrase: 肚腹發脹
+  - phrase: 阿們阿們
+  target_path: link_folder/主題/丈夫疑妻行淫釋疑條例.md
+- name: 嫉妒素祭
+  suggested_type: 主題
+  evidence: 民5:15,18,25,26 獻上嫉妒的素祭...祭司把素祭從婦人手中接過來，搖一搖，在耶和華面前獻上...祭司取一把素祭作為紀念，在壇上燒。CT：大麥麵表基督深卑微，無油無乳香表神不喜悅不義。KC：嫉妒素祭為紀念素祭，提醒罪孽。BH：大麥麵為最低等素祭，表基督受苦。
+  surfaces:
+  - phrase: 嫉妒素祭
+  - phrase: 大麥麵
+  - phrase: 無油無乳香
+  - phrase: 紀念素祭
+  - phrase: 搖祭
+  - phrase: 提醒罪孽
+  target_path: link_folder/主題/嫉妒素祭.md
+- name: 苦水試驗
+  suggested_type: 主題
+  evidence: 民5:17-24 祭司取聖水在瓦器裡，又取會幕地上的塵，加在水裡...祭司叫婦人喝這致咒詛的苦水。CT：聖水表神話語，瓦器表人本質，塵表死權勢。KC：水表神話語潔淨，塵表審判，頭髮散開表獻身受威脅。BH：苦水帶來咒詛，無辜則免受害。
+  surfaces:
+  - phrase: 苦水試驗
+  - phrase: 聖水
+  - phrase: 瓦器
+  - phrase: 會幕地上的塵
+  - phrase: 致咒詛的苦水
+  - phrase: 頭髮散開
+  - phrase: 喝苦水
+  target_path: link_folder/主題/苦水試驗.md
+- name: 無辜釋放
+  suggested_type: 神學
+  evidence: 民5:28,31 若婦人沒有污穢，卻是潔淨的，就必免受這災，且要懷孕...男人必免受罪罰，那婦人要擔當自己的罪孽。CT：無辜者得福，預表基督使信徒稱義。KC：無辜婦人免受害且懷孕，神保護無辜。BH：男子免受罪罰，女子擔當罪孽。
+  surfaces:
+  - phrase: 無辜釋放
+  - phrase: 免受災害
+  - phrase: 懷孕
+  - phrase: 男人免受罪罰
+  - phrase: 婦人擔當罪孽
+  target_path: link_folder/神學/無辜釋放.md
+- name: 祭司獻素祭
+  suggested_type: 主題
+  evidence: 民5:25,26 祭司把素祭從婦人手中接過來，搖一搖，在耶和華面前獻上...祭司取一把素祭作為紀念，在壇上燒。CT：祭司代求預表基督大祭司代求。KC：搖祭表獻給神，燒作紀念表神紀念。BH：祭司執行嫉妒條例全程。
+  surfaces:
+  - phrase: 祭司獻素祭
+  - phrase: 搖祭
+  - phrase: 在耶和華面前獻上
+  - phrase: 取一把作紀念
+  - phrase: 在壇上燒
+  target_path: link_folder/主題/祭司獻素祭.md
+- name: 聖物歸祭司
+  suggested_type: 主題
+  evidence: 民5:9,10 以色列人一切的聖物中，所奉給祭司的舉祭都要歸與祭司。各人所分別為聖的物，無論是什麼，都要歸給祭司。CT：聖物歸祭司預表供應神僕人。KC：舉祭、搖祭、初熟物、十分之一歸祭司。BH：祭司無產業，靠聖物供養。
+  surfaces:
+  - phrase: 聖物歸祭司
+  - phrase: 舉祭
+  - phrase: 搖祭
+  - phrase: 初熟物
+  - phrase: 十分之一
+  - phrase: 分別為聖的物
+  - phrase: 祭司供養
+  target_path: link_folder/主題/聖物歸祭司.md
+- name: 營
+  suggested_type: 地點
+  evidence: 民5:2,3,4 都出營外去...免得污穢他們的營...以色列人就這樣行，使他們出到營外。營為神與百姓同住之所。
+  surfaces:
+  - phrase: 營
+  - phrase: 營外
+  - phrase: 出營外
+  - phrase: 這營是我所住的
+  - phrase: 營地
+  target_path: link_folder/地點/營.md
+- name: 聖水
+  suggested_type: 主題
+  evidence: 民5:17 祭司取聖水在瓦器裡。CT：聖水表神話語潔淨。KC：水表神話語，瓦器表人本質。BH：聖水加塵成為苦水。
+  surfaces:
+  - phrase: 聖水
+  - phrase: 神話語
+  - phrase: 潔淨
+  - phrase: 瓦器
+  target_path: link_folder/主題/聖水.md
+- name: 瓦器
+  suggested_type: 原文
+  evidence: 民5:17 祭司取聖水在瓦器裡。CT：瓦器表人本質（林後4:7）。KC：瓦器盛聖水表人承載神話語。BH：瓦器易碎，表人軟弱。
+  surfaces:
+  - phrase: 瓦器
+  - phrase: 人本質
+  - phrase: 林後4:7
+  - phrase: 易碎
+  - phrase: 軟弱
+  target_path: link_folder/原文/瓦器.md
+- name: 會幕地上的塵
+  suggested_type: 原文
+  evidence: 民5:17 又取會幕地上的塵，加在水裡。CT：塵表死權勢（詩22:15）。KC：塵表審判，水表潔淨，水塵混合表神藉審判潔淨。BH：塵為人本質（創3:19）。
+  surfaces:
+  - phrase: 會幕地上的塵
+  - phrase: 塵
+  - phrase: 死權勢
+  - phrase: 審判
+  - phrase: 人本質
+  - phrase: 創3:19
+  target_path: link_folder/原文/會幕地上的塵.md
+- name: 致咒詛的苦水
+  suggested_type: 主題
+  evidence: 民5:18,19,22,23,24,27 祭司手裡拿致咒詛的苦水...這致咒詛的苦水必進入你腸裡...婦人喝這致咒詛的苦水。CT：苦水表神話語審判。KC：苦水帶來咒詛，無辜則免受害。BH：喝苦水後肚腹發脹、大腿消癟。
+  surfaces:
+  - phrase: 致咒詛的苦水
+  - phrase: 苦水
+  - phrase: 神話語審判
+  - phrase: 肚腹發脹
+  - phrase: 大腿消癟
+  - phrase: 咒詛
+  target_path: link_folder/主題/致咒詛的苦水.md
+- name: 頭髮散開
+  suggested_type: 主題
+  evidence: 民5:18 祭司叫婦人蓬頭散髮。CT：頭髮表獻身（林前11:15），散開表獻身受威脅。KC：長髮為婦人榮耀，散開表羞辱。BH：利未記13:45痲瘋人也蓬頭散髮。
+  surfaces:
+  - phrase: 頭髮散開
+  - phrase: 蓬頭散髮
+  - phrase: 獻身
+  - phrase: 受威脅
+  - phrase: 羞辱
+  - phrase: 痲瘋人
+  target_path: link_folder/主題/頭髮散開.md
+- name: 紀念素祭
+  suggested_type: 主題
+  evidence: 民5:15,26 獻上嫉妒的素祭...祭司取一把素祭作為紀念，在壇上燒。CT：紀念素祭提醒罪孽。KC：紀念表神紀念。BH：一把素祭在壇上燒作紀念。
+  surfaces:
+  - phrase: 紀念素祭
+  - phrase: 提醒罪孽
+  - phrase: 神紀念
+  - phrase: 一把素祭
+  - phrase: 在壇上燒
+  target_path: link_folder/主題/紀念素祭.md
+- name: 阿們
+  suggested_type: 原文
+  evidence: 民5:22 婦人要說：阿們，阿們。CT：阿們表誠心領受審判。KC：雙重阿們表確定承諾。BH：阿們意為『願如此成就』。
+  surfaces:
+  - phrase: 阿們
+  - phrase: 阿們阿們
+  - phrase: 誠心領受
+  - phrase: 確定承諾
+  - phrase: 願如此成就
+  target_path: link_folder/原文/阿們.md
+- name: 無親屬歸祭司
+  suggested_type: 主題
+  evidence: 民5:8 那人若沒有親屬可受所賠還的，那所賠還的就要歸與服事耶和華的祭司。CT：無親屬賠償歸祭司預表最終向神交帳。KC：祭司為神代表，收無主賠償。BH：利未記5-6章贖愆祭補充。
+  surfaces:
+  - phrase: 無親屬歸祭司
+  - phrase: 無親屬
+  - phrase: 賠償歸祭司
+  - phrase: 神代表
+  - phrase: 最終向神交帳
+  target_path: link_folder/主題/無親屬歸祭司.md
+- name: 初熟物
+  suggested_type: 主題
+  evidence: 民5:10 各人所分別為聖的物，無論是什麼，都要歸給祭司。CT：初熟物歸祭司預表初熟果子歸基督。KC：初熟物、十分之一歸祭司。BH：民數記18:8-22祭司分條例。
+  surfaces:
+  - phrase: 初熟物
+  - phrase: 初熟果子歸基督
+  - phrase: 十分之一
+  - phrase: 祭司分
+  - phrase: 民數記18:8-22
+  target_path: link_folder/主題/初熟物.md
+- name: 痲瘋
+  suggested_type: 主題
+  evidence: 民5:2 使一切長大痲瘋的...都出營外去。CT：痲瘋表罪污。KC：痲瘋預表爆發未審判之罪。BH：利未記13-14章痲瘋條例。
+  surfaces:
+  - phrase: 痲瘋
+  - phrase: 長大痲瘋
+  - phrase: 罪污
+  - phrase: 爆發未審判之罪
+  - phrase: 利未記13-14章
+  target_path: link_folder/主題/痲瘋.md
+- name: 死屍不潔淨
+  suggested_type: 主題
+  evidence: 民5:2 並因死屍不潔淨的，都出營外去。CT：死屍表屬靈死亡污穢。KC：摸死屍不潔七天。BH：民數記19章紅母牛潔淨條例。
+  surfaces:
+  - phrase: 死屍不潔淨
+  - phrase: 屬靈死亡污穢
+  - phrase: 摸死屍
+  - phrase: 七天不潔淨
+  - phrase: 紅母牛
+  - phrase: 民數記19章
+  target_path: link_folder/主題/死屍不潔淨.md
+- name: 污穢營地
+  suggested_type: 神學
+  evidence: 民5:3 免得污穢他們的營；這營是我所住的。CT：教會須除去邪惡舊酵（林前5:6-7）。KC：神住在營中，不潔污穢營地。BH：神同在要求聖潔。
+  surfaces:
+  - phrase: 污穢營地
+  - phrase: 這營是我所住的
+  - phrase: 除去邪惡舊酵
+  - phrase: 林前5:6-7
+  - phrase: 神同在要求聖潔
+  target_path: link_folder/神學/污穢營地.md
+- name: 順服神命
+  suggested_type: 神學
+  evidence: 民5:4 耶和華怎樣吩咐摩西，以色列人就怎樣行了。CT：遵行神話建造教會第一步。KC：以色列人聽信摩西話。BH：完全順服。
+  surfaces:
+  - phrase: 順服神命
+  - phrase: 耶和華怎樣吩咐摩西
+  - phrase: 以色列人就怎樣行了
+  - phrase: 遵行神話
+  - phrase: 建造教會第一步
+  target_path: link_folder/神學/順服神命.md
+- name: 如數賠還
+  suggested_type: 主題
+  evidence: 民5:7 將所虧負人的，如數賠還。CT：賠償表公義。KC：賠償原數加五分之一。BH：利未記6:4-5如數賠還。
+  surfaces:
+  - phrase: 如數賠還
+  - phrase: 賠償表公義
+  - phrase: 賠償原數
+  - phrase: 加五分之一
+  - phrase: 利未記6:4-5
+  target_path: link_folder/主題/如數賠還.md
+- name: 加上五分之一
+  suggested_type: 主題
+  evidence: 民5:7 另外加上五分之一，也歸與所虧負的人。CT：五分之一表神公義補償。KC：漢摩拉比法典加六分之一利息。BH：利未記5:16加五分之一。
+  surfaces:
+  - phrase: 加上五分之一
+  - phrase: 神公義補償
+  - phrase: 漢摩拉比法典
+  - phrase: 六分之一利息
+  - phrase: 利未記5:16
+  target_path: link_folder/主題/加上五分之一.md
+- name: 行邪淫
+  suggested_type: 主題
+  evidence: 民5:12,13,14,19,20,27,29,30 人的妻若行邪淫，干犯丈夫...婦人喝這致咒詛的苦水。CT：屬靈姦淫表以色列/教會事奉偶像/世界。KC：行邪淫干犯丈夫預表背棄神。BH：嫉妒條例處理隱藏姦淫。
+  surfaces:
+  - phrase: 行邪淫
+  - phrase: 干犯丈夫
+  - phrase: 屬靈姦淫
+  - phrase: 事奉偶像
+  - phrase: 背棄神
+  - phrase: 隱藏姦淫
+  - phrase: 嫉妒條例
+  target_path: link_folder/主題/行邪淫.md
+- name: 干犯丈夫
+  suggested_type: 主題
+  evidence: 民5:12,13,14,19,20,27,29,30 人的妻若行邪淫，干犯丈夫。CT：干犯丈夫預表干犯基督。KC：丈夫為妻子頭，干犯丈夫即干犯基督。BH：以弗所書5:23丈夫為妻子頭。
+  surfaces:
+  - phrase: 干犯丈夫
+  - phrase: 干犯基督
+  - phrase: 丈夫為妻子頭
+  - phrase: 以弗所書5:23
+  - phrase: 屬靈權柄
+  target_path: link_folder/主題/干犯丈夫.md
+- name: 隱藏
+  suggested_type: 主題
+  evidence: 民5:13 並沒有見證人，也沒有被捉住。CT：隱藏之罪神鑒察。KC：隱藏姦淫無見證人。BH：嫉妒條例處理無見證之罪。
+  surfaces:
+  - phrase: 隱藏
+  - phrase: 沒有見證人
+  - phrase: 沒有被捉住
+  - phrase: 神鑒察隱情
+  - phrase: 無見證之罪
+  target_path: link_folder/主題/隱藏.md
+- name: 嫉妒
+  suggested_type: 神學
+  evidence: 民5:14,18,25,29,30 丈夫心裡起了嫉妒...祭司叫婦人喝這致咒詛的苦水...這是嫉妒的條例。CT：神的嫉妒為聖潔忌邪。KC：嫉妒為正當愛的反應。BH：神為忌邪的神（出20:5）。
+  surfaces:
+  - phrase: 嫉妒
+  - phrase: 神的嫉妒
+  - phrase: 聖潔忌邪
+  - phrase: 正當愛的反應
+  - phrase: 忌邪的神
+  - phrase: 出埃及記20:5
+  target_path: link_folder/神學/嫉妒.md
+- name: 大麥麵
+  suggested_type: 原文
+  evidence: 民5:15 獻上嫉妒的素祭，就是大麥麵伊法十分之一。CT：大麥麵表基督深卑微。KC：大麥為最低等穀物，表基督受苦。BH：大麥麵為最低等素祭。
+  surfaces:
+  - phrase: 大麥麵
+  - phrase: 伊法十分之一
+  - phrase: 基督深卑微
+  - phrase: 最低等穀物
+  - phrase: 基督受苦
+  - phrase: 最低等素祭
+  target_path: link_folder/原文/大麥麵.md
+- name: 無油無乳香
+  suggested_type: 主題
+  evidence: 民5:15 不要澆上油，也不要加上乳香。CT：無油表聖靈不與不義同工，無乳香表神不喜悅不義。KC：油表聖靈，乳香表基督馨香。BH：素祭通常有油乳香，嫉妒素祭除外。
+  surfaces:
+  - phrase: 無油無乳香
+  - phrase: 聖靈不與不義同工
+  - phrase: 神不喜悅不義
+  - phrase: 油表聖靈
+  - phrase: 乳香表基督馨香
+  - phrase: 素祭通常有油乳香
+  target_path: link_folder/主題/無油無乳香.md
+- name: 站在耶和華面前
+  suggested_type: 主題
+  evidence: 民5:16,18,30 祭司叫婦人站在耶和華面前...祭司叫婦人站在耶和華面前...祭司在耶和華面前辦完這條例。CT：任何獻身問題只能在神面前決定。KC：教會法庭不能代替神審判。BH：祭司呈現『嫌疑人』在耶和華面前。
+  surfaces:
+  - phrase: 站在耶和華面前
+  - phrase: 在神面前決定
+  - phrase: 教會法庭不能代替
+  - phrase: 呈現嫌疑人
+  - phrase: 祭司辦完條例
+  target_path: link_folder/主題/站在耶和華面前.md
+- name: 解髮
+  suggested_type: 主題
+  evidence: 民5:18 祭司叫婦人蓬頭散髮。CT：頭髮表獻身，散開表獻身受威脅。KC：長髮為婦人榮耀，散開表羞辱。BH：利未記13:45痲瘋人也蓬頭散髮。
+  surfaces:
+  - phrase: 解髮
+  - phrase: 蓬頭散髮
+  - phrase: 頭髮表獻身
+  - phrase: 獻身受威脅
+  - phrase: 長髮為榮耀
+  - phrase: 羞辱
+  - phrase: 痲瘋人蓬頭散髮
+  target_path: link_folder/主題/解髮.md
+- name: 發誓
+  suggested_type: 主題
+  evidence: 民5:19,21,22 祭司要叫婦人發誓...祭司要叫婦人發咒詛的誓...婦人要說：阿們，阿們。CT：發誓表在神面前承擔責任。KC：誓言約束良心。BH：希伯來書6:16人指著比自己大的發誓。
+  surfaces:
+  - phrase: 發誓
+  - phrase: 發咒詛的誓
+  - phrase: 阿們阿們
+  - phrase: 在神面前承擔責任
+  - phrase: 誓言約束良心
+  - phrase: 希伯來書6:16
+  target_path: link_folder/主題/發誓.md
+- name: 大腿消癟
+  suggested_type: 主題
+  evidence: 民5:21,22,27 耶和華使你的大腿消癟，肚腹發脹...這致咒詛的苦水必進入你腸裡，使肚腹發脹，大腿消癟。CT：大腿表力量，消癟表失去生育能力。KC：咒詛徵兆具體可見。BH：生殖器官受害為咒詛核心。
+  surfaces:
+  - phrase: 大腿消癟
+  - phrase: 肚腹發脹
+  - phrase: 失去生育能力
+  - phrase: 咒詛徵兆
+  - phrase: 生殖器官受害
+  - phrase: 苦水進入腸裡
+  target_path: link_folder/主題/大腿消癟.md
+- name: 肚腹發脹
+  suggested_type: 主題
+  evidence: 民5:21,22,27 耶和華使你的大腿消癟，肚腹發脹...這致咒詛的苦水必進入你腸裡，使肚腹發脹，大腿消癟。CT：肚腹發脹表內在腐爛外露。KC：咒詛從內而外顯現。BH：苦水進入腸胃產生生理反應。
+  surfaces:
+  - phrase: 肚腹發脹
+  - phrase: 內在腐爛外露
+  - phrase: 咒詛從內而外
+  - phrase: 苦水進入腸胃
+  - phrase: 生理反應
+  target_path: link_folder/主題/肚腹發脹.md
+- name: 懷孕
+  suggested_type: 主題
+  evidence: 民5:28 若婦人沒有污穢，卻是潔淨的，就必免受這災，且要懷孕。CT：無辜得福預表基督使信徒稱義。KC：神保護無辜，賜福生養。BH：創世記1:28生養眾多。
+  surfaces:
+  - phrase: 懷孕
+  - phrase: 免受災害
+  - phrase: 神保護無辜
+  - phrase: 賜福生養
+  - phrase: 創世記1:28
+  - phrase: 基督使信徒稱義
+  target_path: link_folder/主題/懷孕.md
+- name: 男人免受罪罰
+  suggested_type: 神學
+  evidence: 民5:31 男人必免受罪罰，那婦人要擔當自己的罪孽。CT：丈夫免責預表基督承擔教會罪。KC：男子免受罪罰，女子擔當罪孽。BH：嫉妒條例結束語。
+  surfaces:
+  - phrase: 男人免受罪罰
+  - phrase: 婦人擔當罪孽
+  - phrase: 基督承擔教會罪
+  - phrase: 嫉妒條例結束
+  - phrase: 丈夫免責
+  target_path: link_folder/神學/男人免受罪罰.md
+- name: 擔當罪孽
+  suggested_type: 神學
+  evidence: 民5:31 男人必免受罪罰，那婦人要擔當自己的罪孽。CT：擔當罪孽預表基督擔當我們罪（賽53:4）。KC：有罪者自擔其咎。BH：以西結書18:20犯罪的靈魂必死。
+  surfaces:
+  - phrase: 擔當罪孽
+  - phrase: 基督擔當我們罪
+  - phrase: 以賽亞書53:4
+  - phrase: 有罪者自擔其咎
+  - phrase: 以西結書18:20
+  - phrase: 犯罪的靈魂必死
+  target_path: link_folder/神學/擔當罪孽.md
+- name: 嫉妒條例
+  suggested_type: 主題
+  evidence: 民5:29,30,31 這是嫉妒的條例...祭司在耶和華面前辦完這條例...男人必免受罪罰。CT：嫉妒條例處理隱藏姦淫。KC：神提供查明真相途徑。BH：嫉妒條例完整程序。
+  surfaces:
+  - phrase: 嫉妒條例
+  - phrase: 處理隱藏姦淫
+  - phrase: 查明真相途徑
+  - phrase: 完整程序
+  - phrase: 祭司辦完條例
+  target_path: link_folder/主題/嫉妒條例.md
+- name: 服事耶和華的祭司
+  suggested_type: 人物
+  evidence: 民5:8 那所賠還的就要歸與服事耶和華的祭司。CT：祭司為神代表。KC：祭司收無主賠償。BH：祭司無產業靠聖物供養。
+  surfaces:
+  - phrase: 服事耶和華的祭司
+  - phrase: 祭司為神代表
+  - phrase: 收無主賠償
+  - phrase: 祭司無產業
+  - phrase: 靠聖物供養
+  target_path: link_folder/人物/服事耶和華的祭司.md
+- name: 無論男女
+  suggested_type: 主題
+  evidence: 民5:3,6 無論男女，都要使他們出到營外...無論男女，若犯了人所常犯的罪。CT：神面前男女平等受審。KC：不分性別一律適用。BH：加拉太書3:28不分男女。
+  surfaces:
+  - phrase: 無論男女
+  - phrase: 不分性別
+  - phrase: 男女平等受審
+  - phrase: 一律適用
+  - phrase: 加拉太書3:28
+  target_path: link_folder/主題/無論男女.md
+- name: 免得污穢
+  suggested_type: 神學
+  evidence: 民5:3 免得污穢他們的營；這營是我所住的。CT：教會須聖潔維持神同在。KC：留住污穢人就不能留住聖潔神。BH：神同在帶來祝福。
+  surfaces:
+  - phrase: 免得污穢
+  - phrase: 這營是我所住的
+  - phrase: 教會須聖潔
+  - phrase: 維持神同在
+  - phrase: 留住污穢人
+  - phrase: 神同在帶來祝福
+  target_path: link_folder/神學/免得污穢.md
+- name: 這營是我所住的
+  suggested_type: 神學
+  evidence: 民5:3 這營是我所住的。CT：教會為神聖殿（林前3:16）。KC：神住在百姓中間。BH：出埃及記25:8讓我住在他們中間。
+  surfaces:
+  - phrase: 這營是我所住的
+  - phrase: 教會為神聖殿
+  - phrase: 林前3:16
+  - phrase: 神住在百姓中間
+  - phrase: 出埃及記25:8
+  target_path: link_folder/神學/這營是我所住的.md
+- name: 曉諭
+  suggested_type: 主題
+  evidence: 民5:6 你曉諭以色列人說。CT：曉諭表詳細教導。KC：曉諭以色列人認罪賠償。BH：民數記5:6曉諭。
+  surfaces:
+  - phrase: 曉諭
+  - phrase: 詳細教導
+  - phrase: 認罪賠償教導
+  - phrase: 民數記5:6
+  target_path: link_folder/主題/曉諭.md
+- name: 人所常犯的罪
+  suggested_type: 主題
+  evidence: 民5:6 若犯了人所常犯的罪。CT：常犯之罪指良心有虧之事。KC：不一定正式被定罪。BH：利未記6:2-3人所常犯之罪。
+  surfaces:
+  - phrase: 人所常犯的罪
+  - phrase: 常犯之罪
+  - phrase: 良心有虧
+  - phrase: 不一定正式定罪
+  - phrase: 利未記6:2-3
+  target_path: link_folder/主題/人所常犯的罪.md
+- name: 那人就有了罪
+  suggested_type: 神學
+  evidence: 民5:6 那人就有了罪。CT：虧負人即有罪。KC：干犯耶和華即有罪責。BH：利未記5:17那人就有了罪。
+  surfaces:
+  - phrase: 那人就有了罪
+  - phrase: 虧負人即有罪
+  - phrase: 干犯耶和華
+  - phrase: 有罪責
+  - phrase: 利未記5:17
+  target_path: link_folder/神學/那人就有了罪.md
+- name: 所虧負人的
+  suggested_type: 主題
+  evidence: 民5:7,8 將所虧負人的，如數賠還...那人若沒有親屬可受所賠還的。CT：虧負人具體對象。KC：虧負人須賠償。BH：利未記6:4所虧負人的。
+  surfaces:
+  - phrase: 所虧負人的
+  - phrase: 虧負人具體對象
+  - phrase: 虧負人須賠償
+  - phrase: 利未記6:4
+  target_path: link_folder/主題/所虧負人的.md
+- name: 親屬
+  suggested_type: 人物
+  evidence: 民5:8 那人若沒有親屬可受所賠還的。CT：親屬為賠償受領人。KC：無親屬則歸祭司。BH：利未記25:25親屬救贖。
+  surfaces:
+  - phrase: 親屬
+  - phrase: 賠償受領人
+  - phrase: 無親屬歸祭司
+  - phrase: 親屬救贖
+  - phrase: 利未記25:25
+  target_path: link_folder/人物/親屬.md
+- name: 歸與祭司
+  suggested_type: 主題
+  evidence: 民5:8,9,10 那所賠還的就要歸與服事耶和華的祭司...所奉給祭司的舉祭都要歸與祭司...都要歸給祭司。CT：聖物歸祭司供養。KC：祭司為神代表收聖物。BH：民數記18:8-22祭司分。
+  surfaces:
+  - phrase: 歸與祭司
+  - phrase: 聖物歸祭司
+  - phrase: 祭司為神代表
+  - phrase: 收聖物
+  - phrase: 祭司供養
+  - phrase: 民數記18:8-22
+  target_path: link_folder/主題/歸與祭司.md
+- name: 妻子
+  suggested_type: 人物
+  evidence: 民5:12,13,14,15,18,19,20,21,22,23,24,25,27,28,29,30,31 人的妻若行邪淫...把妻子帶到祭司面前...祭司叫婦人站在耶和華面前。CT：妻子預表教會/以色列。KC：妻子對丈夫忠貞預表信徒對基督忠貞。BH：以弗所書5:22-33妻子順服丈夫。
+  surfaces:
+  - phrase: 妻子
+  - phrase: 婦人
+  - phrase: 教會預表
+  - phrase: 以色列預表
+  - phrase: 信徒對基督忠貞
+  - phrase: 妻子順服丈夫
+  - phrase: 以弗所書5:22-33
+  target_path: link_folder/人物/妻子.md
+- name: 丈夫
+  suggested_type: 人物
+  evidence: 民5:12,13,14,19,20,21,22,27,29,30,31 丈夫心裡起了嫉妒...祭司叫婦人發誓...男人必免受罪罰。CT：丈夫為妻子頭預表基督為教會頭。KC：丈夫嫉妒為正當愛的反應。BH：以弗所書5:23丈夫為妻子頭。
+  surfaces:
+  - phrase: 丈夫
+  - phrase: 丈夫為妻子頭
+  - phrase: 基督為教會頭
+  - phrase: 正當愛的反應
+  - phrase: 丈夫嫉妒
+  - phrase: 男人免受罪罰
+  - phrase: 以弗所書5:23
+  target_path: link_folder/人物/丈夫.md
+- name: 見證人
+  suggested_type: 人物
+  evidence: 民5:13 並沒有見證人，也沒有被捉住。CT：隱藏之罪無人見證但神鑒察。KC：無見證人無法定罪。BH：申命記19:15兩三個見證人。
+  surfaces:
+  - phrase: 見證人
+  - phrase: 沒有見證人
+  - phrase: 神鑒察隱情
+  - phrase: 無法定罪
+  - phrase: 兩三個見證人
+  - phrase: 申命記19:15
+  target_path: link_folder/人物/見證人.md
+- name: 被捉住
+  suggested_type: 主題
+  evidence: 民5:13 也沒有被捉住。CT：隱藏姦淫未被發現。KC：未被當場捉住。BH：嫉妒條例處理未被捉住之罪。
+  surfaces:
+  - phrase: 被捉住
+  - phrase: 隱藏姦淫
+  - phrase: 未被發現
+  - phrase: 未被當場捉住
+  - phrase: 嫉妒條例處理
+  target_path: link_folder/主題/被捉住.md
+- name: 心裡起了嫉妒
+  suggested_type: 神學
+  evidence: 民5:14,30 丈夫心裡起了嫉妒...這是嫉妒的條例。CT：嫉妒為愛的反面保護。KC：嫉妒為正當情感。BH：雅各書4:5神賜給我們的靈是戀愛嫉妒。
+  surfaces:
+  - phrase: 心裡起了嫉妒
+  - phrase: 嫉妒為愛的反面保護
+  - phrase: 嫉妒為正當情感
+  - phrase: 神賜給我們的靈
+  - phrase: 雅各書4:5
+  target_path: link_folder/神學/心裡起了嫉妒.md
+- name: 素祭伊法十分之一
+  suggested_type: 原文
+  evidence: 民5:15 獻上嫉妒的素祭，就是大麥麵伊法十分之一。CT：伊法十分之一為固定量。KC：素祭量度固定。BH：伊法為乾量單位。
+  surfaces:
+  - phrase: 伊法十分之一
+  - phrase: 素祭量度
+  - phrase: 固定量
+  - phrase: 伊法
+  - phrase: 乾量單位
+  target_path: link_folder/原文/素祭伊法十分之一.md
+- name: 澆上油
+  suggested_type: 主題
+  evidence: 民5:15 不要澆上油。CT：油表聖靈，不澆油表聖靈不與不義同工。KC：素祭通常有油。BH：利未記2:1素祭要澆油。
+  surfaces:
+  - phrase: 澆上油
+  - phrase: 油表聖靈
+  - phrase: 聖靈不與不義同工
+  - phrase: 素祭通常有油
+  - phrase: 利未記2:1
+  target_path: link_folder/主題/澆上油.md
+- name: 加上乳香
+  suggested_type: 主題
+  evidence: 民5:15 也不要加上乳香。CT：乳香表基督馨香，不加表神不喜悅不義。KC：素祭通常有乳香。BH：利未記2:1素祭要加乳香。
+  surfaces:
+  - phrase: 加上乳香
+  - phrase: 乳香表基督馨香
+  - phrase: 神不喜悅不義
+  - phrase: 素祭通常有乳香
+  - phrase: 利未記2:1
+  target_path: link_folder/主題/加上乳香.md
+- name: 接過來
+  suggested_type: 主題
+  evidence: 民5:25 祭司把素祭從婦人手中接過來。CT：祭司接收代求。KC：祭司為中保。BH：祭司手中接素祭。
+  surfaces:
+  - phrase: 接過來
+  - phrase: 祭司接收
+  - phrase: 代求
+  - phrase: 祭司為中保
+  - phrase: 祭司手中
+  target_path: link_folder/主題/接過來.md
+- name: 在耶和華面前獻上
+  suggested_type: 主題
+  evidence: 民5:25 祭司把素祭從婦人手中接過來，搖一搖，在耶和華面前獻上。CT：獻給神而非人。KC：搖祭在耶和華面前。BH：利未記7:30在耶和華面前搖祭。
+  surfaces:
+  - phrase: 在耶和華面前獻上
+  - phrase: 獻給神而非人
+  - phrase: 搖祭在耶和華面前
+  - phrase: 利未記7:30
+  target_path: link_folder/主題/在耶和華面前獻上.md
+- name: 取一把
+  suggested_type: 主題
+  evidence: 民5:26 祭司取一把素祭作為紀念，在壇上燒。CT：一把表完全獻上。KC：取一把作紀念燒在壇上。BH：利未記2:2取一把素祭。
+  surfaces:
+  - phrase: 取一把
+  - phrase: 完全獻上
+  - phrase: 作紀念
+  - phrase: 在壇上燒
+  - phrase: 利未記2:2
+  target_path: link_folder/主題/取一把.md
+- name: 在壇上燒
+  suggested_type: 主題
+  evidence: 民5:26 祭司取一把素祭作為紀念，在壇上燒。CT：燒在壇上表神悅納。KC：紀念素祭在壇上燒。BH：利未記2:9在壇上燒作為馨香之氣。
+  surfaces:
+  - phrase: 在壇上燒
+  - phrase: 神悅納
+  - phrase: 紀念素祭
+  - phrase: 馨香之氣
+  - phrase: 利未記2:9
+  target_path: link_folder/主題/在壇上燒.md
+- name: 叫婦人喝
+  suggested_type: 主題
+  evidence: 民5:24,27 祭司叫婦人喝這致咒詛的苦水...婦人喝這致咒詛的苦水。CT：喝苦水表領受審判。KC：婦人必須喝下。BH：民數記5:24,27叫婦人喝。
+  surfaces:
+  - phrase: 叫婦人喝
+  - phrase: 領受審判
+  - phrase: 婦人必須喝下
+  - phrase: 致咒詛的苦水
+  - phrase: 民數記5:24,27
+  target_path: link_folder/主題/叫婦人喝.md
+- name: 進入腸裡
+  suggested_type: 主題
+  evidence: 民5:22,27 這致咒詛的苦水必進入你腸裡...婦人喝這致咒詛的苦水。CT：苦水進入內心表審判深入。KC：苦水進入腸胃產生反應。BH：苦水進入腸裡使肚腹發脹。
+  surfaces:
+  - phrase: 進入腸裡
+  - phrase: 審判深入
+  - phrase: 苦水進入腸胃
+  - phrase: 產生反應
+  - phrase: 肚腹發脹
+  target_path: link_folder/主題/進入腸裡.md
+- name: 使肚腹發脹
+  suggested_type: 主題
+  evidence: 民5:22,27 使肚腹發脹，大腿消癟...這致咒詛的苦水必進入你腸裡，使肚腹發脹，大腿消癟。CT：肚腹發脹表內在腐爛外露。KC：咒詛從內而外顯現。BH：苦水進入腸胃產生生理反應。
+  surfaces:
+  - phrase: 使肚腹發脹
+  - phrase: 內在腐爛外露
+  - phrase: 咒詛從內而外
+  - phrase: 苦水進入腸胃
+  - phrase: 生理反應
+  target_path: link_folder/主題/使肚腹發脹.md
+- name: 使大腿消癟
+  suggested_type: 主題
+  evidence: 民5:21,22,27 耶和華使你的大腿消癟，肚腹發脹...使肚腹發脹，大腿消癟。CT：大腿表力量，消癟表失去生育能力。KC：咒詛徵兆具體可見。BH：生殖器官受害為咒詛核心。
+  surfaces:
+  - phrase: 使大腿消癟
+  - phrase: 大腿表力量
+  - phrase: 失去生育能力
+  - phrase: 咒詛徵兆
+  - phrase: 生殖器官受害
+  target_path: link_folder/主題/使大腿消癟.md
+- name: 婦人要說阿們
+  suggested_type: 主題
+  evidence: 民5:22 婦人要說：阿們，阿們。CT：雙重阿們表誠心領受審判。KC：阿們意為『願如此成就』。BH：阿們為確定承諾。
+  surfaces:
+  - phrase: 婦人要說阿們
+  - phrase: 雙重阿們
+  - phrase: 誠心領受審判
+  - phrase: 願如此成就
+  - phrase: 確定承諾
+  target_path: link_folder/主題/婦人要說阿們.md
+- name: 寫在書上
+  suggested_type: 主題
+  evidence: 民5:23 祭司要把這咒詛寫在書上。CT：寫在書上表記錄永久。KC：咒詛文字化為法律文書。BH：申命記27:26寫在律法書上。
+  surfaces:
+  - phrase: 寫在書上
+  - phrase: 記錄永久
+  - phrase: 咒詛文字化
+  - phrase: 法律文書
+  - phrase: 申命記27:26
+  target_path: link_folder/主題/寫在書上.md
+- name: 塗抹在苦水裡
+  suggested_type: 主題
+  evidence: 民5:23 祭司要把這咒詛寫在書上，塗抹在苦水裡。CT：塗抹表咒詛進入苦水生效。KC：文字溶於水表話語成就。BH：民數記5:23塗抹在苦水裡。
+  surfaces:
+  - phrase: 塗抹在苦水裡
+  - phrase: 咒詛進入苦水生效
+  - phrase: 文字溶於水
+  - phrase: 話語成就
+  - phrase: 民數記5:23
+  target_path: link_folder/主題/塗抹在苦水裡.md
+- name: 祭司在耶和華面前辦完
+  suggested_type: 事件
+  evidence: 民5:30 祭司在耶和華面前辦完這條例。CT：祭司執行神審判程序。KC：祭司在神面前辦完嫉妒條例。BH：民數記5:30祭司辦完條例。
+  surfaces:
+  - phrase: 祭司在耶和華面前辦完
+  - phrase: 執行神審判程序
+  - phrase: 嫉妒條例
+  - phrase: 民數記5:30
+  target_path: link_folder/事件/祭司在耶和華面前辦完.md
+- name: 條例
+  suggested_type: 主題
+  evidence: 民5:29,30,31 這是嫉妒的條例...祭司在耶和華面前辦完這條例...男人必免受罪罰。CT：條例為神頒布律法。KC：嫉妒條例完整程序。BH：民數記5:29-31條例結束。
+  surfaces:
+  - phrase: 條例
+  - phrase: 嫉妒條例
+  - phrase: 神頒布律法
+  - phrase: 完整程序
+  - phrase: 條例結束
+  target_path: link_folder/主題/條例.md
+- name: 免受罪罰
+  suggested_type: 神學
+  evidence: 民5:31 男人必免受罪罰，那婦人要擔當自己的罪孽。CT：丈夫免責預表基督承擔教會罪。KC：男子免受罪罰，女子擔當罪孽。BH：嫉妒條例結束語。
+  surfaces:
+  - phrase: 免受罪罰
+  - phrase: 丈夫免責
+  - phrase: 基督承擔教會罪
+  - phrase: 女子擔當罪孽
+  - phrase: 條例結束語
+  target_path: link_folder/神學/免受罪罰.md
+- name: 擔當自己的罪孽
+  suggested_type: 神學
+  evidence: 民5:31 男人必免受罪罰，那婦人要擔當自己的罪孽。CT：擔當罪孽預表基督擔當我們罪（賽53:4）。KC：有罪者自擔其咎。BH：以西結書18:20犯罪的靈魂必死。
+  surfaces:
+  - phrase: 擔當自己的罪孽
+  - phrase: 基督擔當我們罪
+  - phrase: 以賽亞書53:4
+  - phrase: 有罪者自擔其咎
+  - phrase: 以西結書18:20
+  - phrase: 犯罪的靈魂必死
+  target_path: link_folder/神學/擔當自己的罪孽.md
+D_new_candidate:
+- name: 患漏症
+  suggested_type: 主題
+  evidence: 民5:2 患漏症的...都出營外去。CT：表徵天然生命的流露，是不潔淨的。KC：漏症預表從人流出污染他人的罪。BH：利未記15章條例，性器官長期不潔排泄物。
+  surfaces:
+  - phrase: 患漏症的
+  - phrase: 漏症
+  - phrase: 漏症病
+  - phrase: 性器官排泄
+  - phrase: 不潔淨
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 耶和華曉諭摩西
+  suggested_type: 主題
+  evidence: 民5:1,5,11 耶和華曉諭摩西說...耶和華對摩西說...耶和華對摩西說。神直接啟示潔淨營地、賠償、嫉妒條例。
+  surfaces:
+  - phrase: 耶和華曉諭摩西
+  - phrase: 耶和華對摩西說
+  - phrase: 神直接啟示
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=事件，secondary=[]
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民5:17,21,25 祭司取聖水在瓦器裡...會幕地上的塵...在耶和華面前獻上。會幕為神同在之所。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 會幕地上的塵
+  - phrase: 在耶和華面前
+  - phrase: 神同在
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 素祭
+  suggested_type: 主題
+  evidence: 民5:15,18,25,26 獻上嫉妒的素祭...祭司把素祭從婦人手中接過來，搖一搖...祭司取一把素祭作為紀念，在壇上燒。CT：大麥麵表基督卑微，無油無乳香表神不喜悅不義。KC：素祭為紀念，提醒罪孽。BH：大麥麵為最低等素祭。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 嫉妒素祭
+  - phrase: 大麥麵
+  - phrase: 無油無乳香
+  - phrase: 搖祭
+  - phrase: 紀念素祭
+  - phrase: 在壇上燒
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 搖祭
+  suggested_type: 主題
+  evidence: 民5:25 祭司把素祭從婦人手中接過來，搖一搖，在耶和華面前獻上。CT：搖祭表獻給神。KC：搖祭表舉起獻給神。BH：搖祭為祭司動作。
+  surfaces:
+  - phrase: 搖祭
+  - phrase: 在耶和華面前獻上
+  - phrase: 舉起獻給神
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 贖愆祭
+  suggested_type: 主題
+  evidence: 民5:8 至於那為他贖罪的公羊是在外。CT：贖愆祭公羊預表基督贖罪。KC：贖愆祭為虧負人之罪。BH：利未記5:14-6:7贖愆祭條例。
+  surfaces:
+  - phrase: 贖愆祭
+  - phrase: 贖罪公羊
+  - phrase: 基督贖罪
+  - phrase: 虧負人之罪
+  - phrase: 利未記5-6章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 舉祭
+  suggested_type: 主題
+  evidence: 民5:9 以色列人一切的聖物中，所奉給祭司的舉祭都要歸與祭司。CT：舉祭表獻給神再歸祭司。KC：舉祭為祭司分。BH：出埃及記29:28，民數記18:8-9舉祭條例。
+  surfaces:
+  - phrase: 舉祭
+  - phrase: 獻給神再歸祭司
+  - phrase: 祭司分
+  - phrase: 出埃及記29:28
+  - phrase: 民數記18:8-9
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 搖祭
+  suggested_type: 主題
+  evidence: 民5:25 祭司把素祭從婦人手中接過來，搖一搖，在耶和華面前獻上。CT：搖祭表獻給神。KC：搖祭表舉起獻給神。BH：搖祭為祭司動作。
+  surfaces:
+  - phrase: 搖祭
+  - phrase: 舉起獻給神
+  - phrase: 祭司動作
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 漏症
+  suggested_type: 主題
+  evidence: 民5:2 患漏症的...都出營外去。CT：漏症表天然生命流露。KC：漏症預表污染他人之罪。BH：利未記15章漏症條例。
+  surfaces:
+  - phrase: 漏症
+  - phrase: 患漏症
+  - phrase: 天然生命流露
+  - phrase: 污染他人之罪
+  - phrase: 利未記15章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 干犯耶和華
+  suggested_type: 神學
+  evidence: 民5:6 若犯了人所常犯的罪，以致干犯耶和華。CT：虧負人即干犯神。KC：向人犯罪即向神叛逆。BH：出埃及記9:27干犯耶和華。
+  surfaces:
+  - phrase: 干犯耶和華
+  - phrase: 虧負人即干犯神
+  - phrase: 向人犯罪即向神叛逆
+  - phrase: 出埃及記9:27
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=原文，secondary=[]
+- name: 承認所犯的罪
+  suggested_type: 主題
+  evidence: 民5:7 他要承認所犯的罪。CT：認罪為悔改第一步。KC：向神認罪、向人認罪。BH：利未記5:5承認所犯的罪。
+  surfaces:
+  - phrase: 承認所犯的罪
+  - phrase: 認罪
+  - phrase: 悔改第一步
+  - phrase: 向神認罪
+  - phrase: 向人認罪
+  - phrase: 利未記5:5
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=事件，secondary=[]
+- name: 紀念
+  suggested_type: 主題
+  evidence: 民5:15,26 獻上嫉妒的素祭...祭司取一把素祭作為紀念，在壇上燒。CT：紀念素祭提醒罪孽。KC：紀念表神紀念。BH：一把素祭在壇上燒作紀念。
+  surfaces:
+  - phrase: 紀念
+  - phrase: 紀念素祭
+  - phrase: 提醒罪孽
+  - phrase: 神紀念
+  - phrase: 一把素祭
+  - phrase: 在壇上燒
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 公羊
+  suggested_type: 原文
+  evidence: 民5:8 至於那為他贖罪的公羊是在外。CT：公羊預表基督贖罪。KC：贖愆祭用公羊。BH：利未記5:15-16贖愆祭公羊。
+  surfaces:
+  - phrase: 公羊
+  - phrase: 贖罪公羊
+  - phrase: 基督贖罪
+  - phrase: 贖愆祭
+  - phrase: 利未記5:15-16
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+- name: 聖物
+  suggested_type: 主題
+  evidence: 民5:9,10 以色列人一切的聖物中，所奉給祭司的舉祭都要歸與祭司。各人所分別為聖的物，無論是什麼，都要歸給祭司。CT：聖物歸祭司預表供應神僕人。KC：舉祭、搖祭、初熟物、十分之一歸祭司。BH：祭司無產業靠聖物供養。
+  surfaces:
+  - phrase: 聖物
+  - phrase: 舉祭
+  - phrase: 搖祭
+  - phrase: 初熟物
+  - phrase: 十分之一
+  - phrase: 分別為聖的物
+  - phrase: 供應神僕人
+  - phrase: 祭司無產業
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 以色列人就這樣行
+  suggested_type: 事件
+  evidence: 民5:4 耶和華怎樣吩咐摩西，以色列人就怎樣行了。CT：遵行神話建造教會第一步。KC：以色列人聽信摩西話。BH：完全順服。
+  surfaces:
+  - phrase: 以色列人就這樣行
+  - phrase: 耶和華怎樣吩咐摩西
+  - phrase: 遵行神話
+  - phrase: 建造教會第一步
+  - phrase: 完全順服
+  match_type: type_conflict
+  note: 分類衝突：候選=事件，既有=主題，secondary=[]
+E_skip: []

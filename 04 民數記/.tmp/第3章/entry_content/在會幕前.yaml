@@ -1,0 +1,32 @@
+name: 在會幕前
+type: 主題
+secondary_types: []
+aliases:
+- 在帳幕前
+status: formal
+definition: 利未人服事的地點——會幕（帳幕）前（民3:7,8,38）。摩西、亞倫與其子在帳幕前東邊安營看守聖所（民3:38）。會幕前是敬拜服事的中心區域。
+development: 會幕前服事模式延續至聖殿時代，最終指向天上真帳幕（來9:11-12）。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 利未人在會幕前守所吩咐的、辦理帳幕的事；摩西亞倫在帳幕前東邊安營看守聖所。
+  relation: 本章多次提及會幕前作為服事與安營的核心地點。
+related_entries:
+- 會幕
+- 利未人
+- 摩西
+- 亞倫
+- 守所吩咐的
+- 辦理帳幕的事
+- 摩西亞倫東邊安營
+sources:
+- '註解: 民數記3章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '研讀: 民數記3章研讀（https://biblehub.com/study/numbers/3.htm）'
+created_from: Numbers 3
+category: 主題
+trigger_sources:
+- 民3:7
+- 民3:8
+- 民3:38
+current_data: true
+pending: false

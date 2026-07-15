@@ -1,0 +1,28 @@
+name: 懷孕
+type: 主題
+secondary_types: []
+aliases:
+- 受孕
+- 生育
+status: formal
+definition: 希伯來文 zara' zera（播種/生子）。民數記 5:28 指出若婦人清潔無罪，「就要免受這災，且要懷孕」。在苦水試驗語境下，懷孕不僅是免刑的結果，更是神賜福、恢復名譽、確立婚姻合法生育權的積極應許，與咒詛的「肚腹發脹、大腿消癟」形成鮮明對比。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 無辜婦人喝苦水後不受害，反得應許能懷孕生子。
+  relation: 試驗的雙向性：有罪受咒詛身體敗壞，無罪得神賜福生養眾多。
+related_entries:
+- 無辜釋放
+- 免受罪罰
+- 肚腹發脹
+- 大腿消癟
+- 丈夫疑妻行淫釋疑條例
+- 咒詛
+sources:
+- 'BH: Numbers 5:28 — 無辜婦人免災且得懷孕的應許（https://biblehub.com/numbers/5.htm）'
+created_from: numbers_5
+category: 神學應許
+trigger_sources:
+- numbers_5
+current_data: {}
+pending: false

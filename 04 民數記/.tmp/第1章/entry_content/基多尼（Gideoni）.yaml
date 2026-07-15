@@ -1,0 +1,26 @@
+name: 基多尼（Gideoni）
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 便雅憫支派族長亞比但的父親。民數記第1章記載「基多尼的兒子亞比但」為便雅憫支派的首領（民1:11）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 1
+  summary: 作為便雅憫支派族長亞比但的父親被提及。
+  relation: 顯示支派族長的家系背景，屬於十二支派族長名單之一。
+related_entries:
+- 便雅憫
+- 亞比但（便雅憫族長）
+- 基多尼的兒子亞比但
+- 十二支派族長名單
+- 族長
+sources:
+- '註解: 民數記第1章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm）'
+- '研讀: 民數記第1章研讀（https://biblehub.com/study/numbers/1.htm）'
+created_from: 民數記第1章
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

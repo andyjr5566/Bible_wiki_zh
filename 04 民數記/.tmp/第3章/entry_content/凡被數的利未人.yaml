@@ -1,0 +1,30 @@
+name: 凡被數的利未人
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 指摩西、亞倫照耶和華吩咐，按家室數點所得的一個月以上利未男丁總數，共二萬二千名（民數記 3:39）。
+development: 此總數作為利未人代替以色列頭生子歸神的基礎，後續並以贖銀處理超額的二百七十三名頭生子（民數記 3:40-51）。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 經文給出利未人總點數，並說明其統計依據（按家室、一個月以上男子）。
+  relation: 連結利未人代替頭生子的神學主題，與後續贖銀條例構成完整敘事單元。
+related_entries:
+- 利未人
+- 摩西
+- 亞倫
+- 利未人數點條例
+- 利未人代替頭生歸神
+- 利未人總數與贖銀
+- 贖銀
+- 聖所的平
+sources:
+- '註解: 民數記 3 章利未人總數與贖銀（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '研讀: Numbers 3 total Levites numbered（https://biblehub.com/study/numbers/3.htm）'
+created_from: 民數記 3
+category: 主題
+trigger_sources:
+- '註解: 民數記 3 章利未人總數與贖銀（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+current_data: {}
+pending: false

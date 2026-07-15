@@ -1,0 +1,25 @@
+name: 你要按人丁，照聖所的平，每人取贖銀五舍客勒
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 上帝訂定贖價為每人五舍客勒，依聖所平衡標準（民3:47）。
+development: 此標準成為以色列贖回頭生男子的固定價值，後世延用。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 規定贖銀金額與計算標準。
+  relation: 本條目對應本章 47 節的贖價規定。
+related_entries:
+- 贖銀
+- 聖所的平
+- 舍客勒
+- 季拉
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm'
+- '研讀: https://biblehub.com/study/numbers/3.htm'
+created_from: 民數記 3
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,2409 @@
+book: 民數記
+chapter: 3
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民3:5,11,14,16,39,40,42,44,49,51 耶和華曉諭摩西說...於是摩西照耶和華所吩咐的數點他們...摩西就照耶和華所吩咐的把以色列人頭生的都數點了...摩西照耶和華的話把這贖銀給亞倫和他的兒子。摩西作為條例傳遞者和數點執行者。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 耶和華曉諭摩西
+  - phrase: 摩西照耶和華所吩咐的
+  - phrase: 摩西照耶和華的話
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民3:1,2,3,4,6,7,9,10,32,38,39 亞倫和摩西的後代...亞倫的兒子...受膏的祭司...你使利未支派近前來，站在祭司亞倫面前好服事他...祭司亞倫的兒子以利亞撒作利未人眾首領的領袖...在帳幕前東邊...安營的是摩西、亞倫，和亞倫的兒子。亞倫作為大祭司和利未人領袖。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 亞倫和摩西的後代
+  - phrase: 祭司亞倫
+  - phrase: 亞倫的兒子
+  - phrase: 站在祭司亞倫面前
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 民3:11,12,13,40,41,43,43,45,46,46,51 我從以色列人中揀選了利未人...代替以色列人一切頭生的...以色列人中頭生的...以色列人頭生的...以色列人的牲畜...以色列人頭生的...以色列人...頭生的。條例針對全會眾。
+  surfaces:
+  - phrase: 以色列人
+  - phrase: 以色列人中
+  - phrase: 以色列人頭生的
+  - phrase: 以色列人的牲畜
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 利未人
+  suggested_type: 人物
+  evidence: 民3:6,7,8,9,12,14,15,16,17,39,40,41,45,46,51 你使利未支派近前來...利未人要歸我...你要照利未人的宗族、家室數點他們...凡被數的利未人...共有二萬二千名...利未人要歸我...利未人的牲畜。利未人專供聖職，代替長子歸神。
+  surfaces:
+  - phrase: 利未人
+  - phrase: 利未支派
+  - phrase: 利未人要歸我
+  - phrase: 利未人...共有二萬二千名
+  - phrase: 利未人的牲畜
+  match_type: exact
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 民3:1,11,14 耶和華在西乃山曉諭摩西的日子...耶和華曉諭摩西說...耶和華在西乃的曠野曉諭摩西說。西乃山為神頒布律法之地。
+  surfaces:
+  - phrase: 西乃山
+  - phrase: 西乃的曠野
+  - phrase: 西乃山曉諭摩西
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 西乃曠野
+  suggested_type: 地點
+  evidence: 民3:1,14,39 耶和華在西乃山曉諭摩西的日子...耶和華在西乃的曠野曉諭摩西說...摩西、亞倫照耶和華吩咐在西乃的曠野數點他們。西乃曠野為數點利未人地點。
+  surfaces:
+  - phrase: 西乃的曠野
+  - phrase: 西乃曠野
+  match_type: alias
+  existing_title: 西乃的曠野
+  existing_path: link_folder/地點/西乃的曠野.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 民3:1,4,14,39 耶和華在西乃的曠野...在西乃的曠野向耶和華獻凡火...耶和華在西乃的曠野曉諭摩西說...摩西、亞倫照耶和華吩咐在西乃的曠野數點他們。曠野為以色列人漂流四十年之地。
+  surfaces:
+  - phrase: 曠野
+  - phrase: 西乃的曠野
+  - phrase: 西乃曠野
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 埃及地
+  suggested_type: 地點
+  evidence: 民3:13,41 我在埃及地擊殺一切頭生的那日...也取利未人的牲畜代替以色列人的牲畜。出埃及救贖為利未人代替長子的神學基礎。
+  surfaces:
+  - phrase: 埃及地
+  - phrase: 在埃及地
+  - phrase: 擊殺一切頭生的那日
+  match_type: exact
+  existing_title: 埃及地
+  existing_path: link_folder/地點/埃及地.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: 民3:13 就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我。分別為聖歸神，預表信徒分別為聖歸基督。
+  surfaces:
+  - phrase: 分別為聖
+  - phrase: 分別為聖歸我
+  - phrase: 都分別為聖歸我
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: 民3:47,50 每人取贖銀五舍客勒...有一千三百六十五舍客勒。舍客勒為貨幣單位。
+  surfaces:
+  - phrase: 舍客勒
+  - phrase: 五舍客勒
+  - phrase: 一千三百六十五舍客勒
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 亞米拿達
+  suggested_type: 人物
+  evidence: 民3:4 拿答、亞比戶、以利亞撒、以他瑪...亞米拿達的兒子拿順作猶大人的首領。亞米拿達為拿順之父。
+  surfaces:
+  - phrase: 亞米拿達
+  - phrase: 亞米拿達的兒子
+  match_type: base
+  existing_title: 亞米拿達（Amminadab）
+  existing_path: link_folder/人物/亞米拿達（Amminadab）.md
+- name: 示丟珥
+  suggested_type: 人物
+  evidence: 民3:4 示丟珥的兒子以利蓿作流便人的首領。示丟珥為以利蓿之父。
+  surfaces:
+  - phrase: 示丟珥
+  - phrase: 示丟珥的兒子
+  match_type: base
+  existing_title: 示丟珥（Shedeur）
+  existing_path: link_folder/人物/示丟珥（Shedeur）.md
+- name: 蘇利沙代
+  suggested_type: 人物
+  evidence: 民3:4 蘇利沙代的兒子示路蔑作西緬人的首領。示路蔑之父。
+  surfaces:
+  - phrase: 蘇利沙代
+  - phrase: 蘇利沙代的兒子
+  match_type: base
+  existing_title: 蘇利沙代（Zurishaddai）
+  existing_path: link_folder/人物/蘇利沙代（Zurishaddai）.md
+- name: 蘇押
+  suggested_type: 人物
+  evidence: 民3:4 蘇押的兒子拿坦業作以薩迦人的首領。拿坦業之父。
+  surfaces:
+  - phrase: 蘇押
+  - phrase: 蘇押的兒子
+  match_type: base
+  existing_title: 蘇押（Zuar）
+  existing_path: link_folder/人物/蘇押（Zuar）.md
+- name: 希倫
+  suggested_type: 人物
+  evidence: 民3:4 希倫的兒子以利押作西布倫人的首領。以利押之父。
+  surfaces:
+  - phrase: 希倫
+  - phrase: 希倫的兒子
+  match_type: base
+  existing_title: 希倫（Helon）
+  existing_path: link_folder/人物/希倫（Helon）.md
+- name: 亞米忽
+  suggested_type: 人物
+  evidence: 民3:4 亞米忽的兒子以利沙瑪作以法蓮人的首領。以利沙瑪之父。
+  surfaces:
+  - phrase: 亞米忽
+  - phrase: 亞米忽的兒子
+  match_type: base
+  existing_title: 亞米忽（Ammihud）
+  existing_path: link_folder/人物/亞米忽（Ammihud）.md
+- name: 比大蓿
+  suggested_type: 人物
+  evidence: 民3:4 比大蓿的兒子迦瑪列作瑪拿西人的首領。迦瑪列之父。
+  surfaces:
+  - phrase: 比大蓿
+  - phrase: 比大蓿的兒子
+  match_type: base
+  existing_title: 比大蓿（Pedahzur）
+  existing_path: link_folder/人物/比大蓿（Pedahzur）.md
+- name: 基多尼
+  suggested_type: 人物
+  evidence: 民3:4 基多尼的兒子亞比但作便雅憫人的首領。亞比但之父。
+  surfaces:
+  - phrase: 基多尼
+  - phrase: 基多尼的兒子
+  match_type: base
+  existing_title: 基多尼（Gideoni）
+  existing_path: link_folder/人物/基多尼（Gideoni）.md
+- name: 亞米沙代
+  suggested_type: 人物
+  evidence: 民3:4 亞米沙代的兒子亞希以謝作但人的首領。亞希以謝之父。
+  surfaces:
+  - phrase: 亞米沙代
+  - phrase: 亞米沙代的兒子
+  match_type: base
+  existing_title: 亞米沙代（Amishaddai）
+  existing_path: link_folder/人物/亞米沙代（Amishaddai）.md
+- name: 俄蘭
+  suggested_type: 人物
+  evidence: 民3:4 俄蘭的兒子帕結作亞設人的首領。帕結之父。
+  surfaces:
+  - phrase: 俄蘭
+  - phrase: 俄蘭的兒子
+  match_type: exact
+  existing_title: 俄蘭
+  existing_path: link_folder/人物/俄蘭.md
+- name: 以南
+  suggested_type: 人物
+  evidence: 民3:4 以南的兒子亞希拉作拿弗他利人的首領。亞希拉之父。
+  surfaces:
+  - phrase: 以南
+  - phrase: 以南的兒子
+  match_type: exact
+  existing_title: 以南
+  existing_path: link_folder/人物/以南.md
+- name: 亞米拿達的兒子拿順
+  suggested_type: 人物
+  evidence: 民3:4 亞米拿達的兒子拿順作猶大人的首領。拿順為猶大族長，大衛王祖先。
+  surfaces:
+  - phrase: 亞米拿達的兒子拿順
+  - phrase: 拿順
+  match_type: exact
+  existing_title: 亞米拿達的兒子拿順
+  existing_path: link_folder/人物/亞米拿達的兒子拿順.md
+- name: 示丟珥的兒子以利蓿
+  suggested_type: 人物
+  evidence: 民3:4 示丟珥的兒子以利蓿作流便人的首領。以利蓿為流便族長。
+  surfaces:
+  - phrase: 示丟珥的兒子以利蓿
+  - phrase: 以利蓿
+  match_type: exact
+  existing_title: 示丟珥的兒子以利蓿
+  existing_path: link_folder/人物/示丟珥的兒子以利蓿.md
+- name: 蘇利沙代的兒子示路蔑
+  suggested_type: 人物
+  evidence: 民3:4 蘇利沙代的兒子示路蔑作西緬人的首領。示路蔑為西緬族長。
+  surfaces:
+  - phrase: 蘇利沙代的兒子示路蔑
+  - phrase: 示路蔑
+  match_type: exact
+  existing_title: 蘇利沙代的兒子示路蔑
+  existing_path: link_folder/人物/蘇利沙代的兒子示路蔑.md
+- name: 蘇押的兒子拿坦業
+  suggested_type: 人物
+  evidence: 民3:4 蘇押的兒子拿坦業作以薩迦人的首領。拿坦業為以薩迦族長。
+  surfaces:
+  - phrase: 蘇押的兒子拿坦業
+  - phrase: 拿坦業
+  match_type: exact
+  existing_title: 蘇押的兒子拿坦業
+  existing_path: link_folder/人物/蘇押的兒子拿坦業.md
+- name: 希倫的兒子以利押
+  suggested_type: 人物
+  evidence: 民3:4 希倫的兒子以利押作西布倫人的首領。以利押為西布倫族長。
+  surfaces:
+  - phrase: 希倫的兒子以利押
+  - phrase: 以利押
+  match_type: exact
+  existing_title: 希倫的兒子以利押
+  existing_path: link_folder/人物/希倫的兒子以利押.md
+- name: 亞米忽的兒子以利沙瑪
+  suggested_type: 人物
+  evidence: 民3:4 亞米忽的兒子以利沙瑪作以法蓮人的首領。以利沙瑪為以法蓮族長。
+  surfaces:
+  - phrase: 亞米忽的兒子以利沙瑪
+  - phrase: 以利沙瑪
+  match_type: exact
+  existing_title: 亞米忽的兒子以利沙瑪
+  existing_path: link_folder/人物/亞米忽的兒子以利沙瑪.md
+- name: 比大蓿的兒子迦瑪列
+  suggested_type: 人物
+  evidence: 民3:4 比大蓿的兒子迦瑪列作瑪拿西人的首領。迦瑪列為瑪拿西族長。
+  surfaces:
+  - phrase: 比大蓿的兒子迦瑪列
+  - phrase: 迦瑪列
+  match_type: exact
+  existing_title: 比大蓿的兒子迦瑪列
+  existing_path: link_folder/人物/比大蓿的兒子迦瑪列.md
+- name: 基多尼的兒子亞比但
+  suggested_type: 人物
+  evidence: 民3:4 基多尼的兒子亞比但作便雅憫人的首領。亞比但為便雅憫族長。
+  surfaces:
+  - phrase: 基多尼的兒子亞比但
+  - phrase: 亞比但
+  match_type: exact
+  existing_title: 基多尼的兒子亞比但
+  existing_path: link_folder/人物/基多尼的兒子亞比但.md
+- name: 亞米沙代的兒子亞希以謝
+  suggested_type: 人物
+  evidence: 民3:4 亞米沙代的兒子亞希以謝作但人的首領。亞希以謝為但族長。
+  surfaces:
+  - phrase: 亞米沙代的兒子亞希以謝
+  - phrase: 亞希以謝
+  match_type: exact
+  existing_title: 亞米沙代的兒子亞希以謝
+  existing_path: link_folder/人物/亞米沙代的兒子亞希以謝.md
+- name: 俄蘭的兒子帕結
+  suggested_type: 人物
+  evidence: 民3:4 俄蘭的兒子帕結作亞設人的首領。帕結為亞設族長。
+  surfaces:
+  - phrase: 俄蘭的兒子帕結
+  - phrase: 帕結
+  match_type: exact
+  existing_title: 俄蘭的兒子帕結
+  existing_path: link_folder/人物/俄蘭的兒子帕結.md
+- name: 以南的兒子亞希拉
+  suggested_type: 人物
+  evidence: 民3:4 以南的兒子亞希拉作拿弗他利人的首領。亞希拉為拿弗他利族長。
+  surfaces:
+  - phrase: 以南的兒子亞希拉
+  - phrase: 亞希拉
+  match_type: base
+  existing_title: 以南的兒子亞希拉（Ahira ben Enan）
+  existing_path: link_folder/人物/以南的兒子亞希拉（Ahira ben Enan）.md
+- name: 暗蘭
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。暗蘭為哥轄長子，摩西亞倫之父。
+  surfaces:
+  - phrase: 暗蘭
+  - phrase: 哥轄的兒子
+  match_type: exact
+  existing_title: 暗蘭
+  existing_path: link_folder/人物/暗蘭.md
+- name: 烏薛
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。烏薛為哥轄四子。
+  surfaces:
+  - phrase: 烏薛
+  - phrase: 哥轄的兒子
+  match_type: exact
+  existing_title: 烏薛
+  existing_path: link_folder/人物/烏薛.md
+- name: 烏薛
+  suggested_type: 人物
+  evidence: 民3:30 烏薛的兒子以利撒反作哥轄宗族家室的首領。以利撒反之父。
+  surfaces:
+  - phrase: 烏薛
+  - phrase: 烏薛的兒子
+  match_type: exact
+  existing_title: 烏薛
+  existing_path: link_folder/人物/烏薛.md
+- name: 以利雅薩
+  suggested_type: 人物
+  evidence: 民3:24 拉伊勒的兒子以利雅薩作革順人宗族的首領。革順族長。
+  surfaces:
+  - phrase: 以利雅薩
+  - phrase: 拉伊勒的兒子
+  - phrase: 革順人宗族的首領
+  match_type: base
+  existing_title: 以利雅薩（迦得族長）
+  existing_path: link_folder/人物/以利雅薩（迦得族長）.md
+- name: 以利撒反
+  suggested_type: 人物
+  evidence: 民3:30 烏薛的兒子以利撒反作哥轄宗族家室的首領。哥轄族長。
+  surfaces:
+  - phrase: 以利撒反
+  - phrase: 烏薛的兒子
+  - phrase: 哥轄宗族家室的首領
+  match_type: alias
+  existing_title: 米沙利、以利撒反
+  existing_path: link_folder/人物/米沙利、以利撒反.md
+- name: 亞倫的兒子
+  suggested_type: 人物
+  evidence: 民3:2,3,4,10,32 亞倫的兒子...受膏的祭司...是摩西叫他們承接聖職供祭司職分的...你要囑咐亞倫和他的兒子謹守自己祭司的職任...祭司亞倫的兒子以利亞撒。
+  surfaces:
+  - phrase: 亞倫的兒子
+  - phrase: 亞倫的兒子們
+  - phrase: 受膏的祭司
+  - phrase: 承接聖職供祭司職分
+  match_type: alias
+  existing_title: 亞倫的祭司譜系
+  existing_path: link_folder/人物/亞倫的祭司譜系.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 民3:6,12,14,15,17,39,45 你使利未支派近前來...我從以色列人中揀選了利未人...你要照利未人的宗族、家室數點他們...利未眾子的名字是革順、哥轄、米拉利。利未支派專供聖職。
+  surfaces:
+  - phrase: 利未支派
+  - phrase: 利未人
+  - phrase: 利未支派近前來
+  - phrase: 利未人要歸我
+  match_type: alias
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,45 我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,41,45 我是耶和華...我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,41,45 我是耶和華...我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:45 我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 亞倫的兒子
+  suggested_type: 人物
+  evidence: 民3:2,3,4,10,32 亞倫的兒子...受膏的祭司...是摩西叫他們承接聖職供祭司職分的...你要囑咐亞倫和他的兒子謹守自己祭司的職任...祭司亞倫的兒子以利亞撒。
+  surfaces:
+  - phrase: 亞倫的兒子
+  - phrase: 亞倫的兒子們
+  - phrase: 受膏的祭司
+  - phrase: 承接聖職供祭司職分
+  match_type: alias
+  existing_title: 亞倫的祭司譜系
+  existing_path: link_folder/人物/亞倫的祭司譜系.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 民3:6,12,14,15,17,39,45 你使利未支派近前來...我從以色列人中揀選了利未人...你要照利未人的宗族、家室數點他們...利未眾子的名字是革順、哥轄、米拉利。利未支派專供聖職。
+  surfaces:
+  - phrase: 利未支派
+  - phrase: 利未人
+  - phrase: 利未支派近前來
+  - phrase: 利未人要歸我
+  match_type: alias
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,41,45 我是耶和華...我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,41,45 我是耶和華...我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+- name: 我是耶和華
+  suggested_type: 神學
+  evidence: 民3:13,41,45 我是耶和華...我是耶和華...我是耶和華。神名宣告主權。
+  surfaces:
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  - phrase: 我是耶和華
+  match_type: alias
+  existing_title: 耶和華我是
+  existing_path: link_folder/神學/耶和華我是.md
+C_new_formal:
+- name: 亞倫家族祭司職分
+  suggested_type: 主題
+  evidence: 民3:1-4 亞倫的兒子拿答、亞比戶、以利亞撒、以他瑪都是受膏的祭司。拿答、亞比戶因獻凡火死在耶和華面前，無兒子。以利亞撒、以他瑪在亞倫面前供祭司職分。CT：事奉神必須按神心意，獻凡火是不接受神權柄。KC：亞倫預表基督，兒子預表信徒祭司職分。BH：祭司職分傳承顯示神主權揀選。
+  surfaces:
+  - phrase: 亞倫的兒子
+  - phrase: 受膏的祭司
+  - phrase: 拿答
+  - phrase: 亞比戶
+  - phrase: 以利亞撒
+  - phrase: 以他瑪
+  - phrase: 凡火
+  - phrase: 承接聖職
+  target_path: link_folder/主題/亞倫家族祭司職分.md
+- name: 利未人代替頭生歸神
+  suggested_type: 神學
+  evidence: 民3:11-13 耶和華揀選利未人代替以色列一切頭生的，利未人要歸神。凡頭生的是神的，因在埃及擊殺頭生時分別為聖歸神。CT：利未人代替長子預表基督代替罪人。KC：神主權揀選利未人代替長子。BH：長子歸神基於逾越節救贖。
+  surfaces:
+  - phrase: 利未人代替頭生
+  - phrase: 利未人要歸我
+  - phrase: 凡頭生的是我的
+  - phrase: 分別為聖歸我
+  - phrase: 代替以色列人一切頭生的
+  target_path: link_folder/神學/利未人代替頭生歸神.md
+- name: 利未人數點條例
+  suggested_type: 主題
+  evidence: 民3:14-16 耶和華在西乃曠野吩咐摩西照利未人宗族、家室數點，凡一個月以外的男子都要數點。摩西照吩咐數點。CT：一個月以外不限年齡，生命價值不在年歲。KC：利未人從一個月數起，不同於別支派二十歲起數。BH：利未人從一個月數起，反映生命價值不在年歲。
+  surfaces:
+  - phrase: 照利未人的宗族、家室數點他們
+  - phrase: 凡一個月以外的男子都要數點
+  - phrase: 摩西照耶和華所吩咐的數點他們
+  target_path: link_folder/主題/利未人數點條例.md
+- name: 利未三族分工
+  suggested_type: 主題
+  evidence: 民3:17-37 利未三子革順、哥轄、米拉利各有家室族系。革順7500人看守帳幕罩棚門簾(西邊)；哥轄8600人看守約櫃桌子燈臺壇器皿(南邊)；米拉利6200人看守板柱帶卯座橛子繩子(北邊)。CT：三族分工按才能，預表信徒按恩賜事奉。KC：三族分工各有專長，預表教會恩賜多樣。BH：三族安營位置圍繞會幕，形成保護圈。
+  surfaces:
+  - phrase: 革順
+  - phrase: 哥轄
+  - phrase: 米拉利
+  - phrase: 立尼
+  - phrase: 示每
+  - phrase: 暗蘭
+  - phrase: 以斯哈
+  - phrase: 希伯倫
+  - phrase: 烏薛
+  - phrase: 抹利
+  - phrase: 母示
+  - phrase: 革順族
+  - phrase: 哥轄族
+  - phrase: 米拉利族
+  target_path: link_folder/主題/利未三族分工.md
+- name: 利未人總數與贖銀
+  suggested_type: 主題
+  evidence: 民3:39-51 利未人一個月以上男丁共22000名。以色列頭生男子22273名，多出273人，每人贖銀5舍客勒，共1365舍客勒給亞倫兒子。CT：利未人不足替代頭生，須贖銀補足。KC：贖銀5舍客勒，聖所平20季拉=1舍客勒。BH：贖銀預表基督贖價，贖價歸祭司。
+  surfaces:
+  - phrase: 利未人...共有二萬二千名
+  - phrase: 以色列人中頭生的...共有二萬二千二百七十三名
+  - phrase: 多二百七十三個
+  - phrase: 贖銀五舍客勒
+  - phrase: 聖所的平
+  - phrase: 贖銀交給亞倫和他的兒子
+  target_path: link_folder/主題/利未人總數與贖銀.md
+- name: 摩西亞倫東邊安營
+  suggested_type: 主題
+  evidence: 民3:38 摩西、亞倫和亞倫兒子在帳幕前東邊向日出之地安營，看守聖所。近前來的外人必被治死。CT：東邊向日出之地，摩西亞倫最近神同在。KC：摩西亞倫代表基督使徒與大祭司雙重職分。BH：東邊為會幕門口，摩西亞倫守衛聖所入口。
+  surfaces:
+  - phrase: 摩西、亞倫，和亞倫的兒子
+  - phrase: 在帳幕前東邊
+  - phrase: 向日出之地安營
+  - phrase: 看守聖所
+  - phrase: 近前來的外人必被治死
+  target_path: link_folder/主題/摩西亞倫東邊安營.md
+- name: 利未人歸神
+  suggested_type: 神學
+  evidence: 民3:12-13,45 我從以色列人中揀選了利未人，代替以色列人一切頭生的；利未人要歸我。利未人要歸我；我是耶和華。CT：利未人完全歸神，預表信徒完全歸基督。KC：利未人歸神是神主權揀選。BH：利未人歸神預表信徒歸基督。
+  surfaces:
+  - phrase: 利未人要歸我
+  - phrase: 我從以色列人中揀選了利未人
+  - phrase: 代替以色列人一切頭生的
+  - phrase: 我是耶和華
+  target_path: link_folder/神學/利未人歸神.md
+- name: 亞倫長子拿答
+  suggested_type: 人物
+  evidence: 民3:2,4 亞倫的兒子，長子名叫拿答...拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。他們也沒有兒子。CT：拿答獻凡火被神擊殺，無後代。KC：拿答預表不按神心意事奉的後果。
+  surfaces:
+  - phrase: 拿答
+  - phrase: 亞倫的兒子
+  - phrase: 長子
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  target_path: link_folder/人物/亞倫長子拿答.md
+- name: 亞倫次子亞比戶
+  suggested_type: 人物
+  evidence: 民3:2,4 還有亞比戶...拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。他們也沒有兒子。CT：亞比戶同拿答一同獻凡火被擊殺。KC：亞比戶同犯凡火之罪。
+  surfaces:
+  - phrase: 亞比戶
+  - phrase: 亞倫的兒子
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  target_path: link_folder/人物/亞倫次子亞比戶.md
+- name: 亞倫三子以利亞撒
+  suggested_type: 人物
+  evidence: 民3:2,4,32 以利亞撒...在他們的父親亞倫面前供祭司的職分...以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。CT：以利亞撒接續祭司職分，作利未人領袖。KC：以利亞撒預表基督大祭司。BH：以利亞撒監察聖所事奉。
+  surfaces:
+  - phrase: 以利亞撒
+  - phrase: 亞倫的兒子
+  - phrase: 供祭司的職分
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/亞倫三子以利亞撒.md
+- name: 亞倫四子以他瑪
+  suggested_type: 人物
+  evidence: 民3:2,4 以他瑪...在他們的父親亞倫面前供祭司的職分。CT：以他瑪與以利亞撒同供祭司職分。KC：以他瑪接續祭司職分。
+  surfaces:
+  - phrase: 以他瑪
+  - phrase: 亞倫的兒子
+  - phrase: 供祭司的職分
+  target_path: link_folder/人物/亞倫四子以他瑪.md
+- name: 革順
+  suggested_type: 人物
+  evidence: 民3:17,18,21-25 利未眾子的名字是革順...革順的兒子...是立尼、示每...屬革順的，有立尼族、示每族...其中被數...共有七千五百名...革順的二族要在帳幕後西邊安營...看守的，就是帳幕和罩棚，並罩棚的蓋與會幕的門簾。
+  surfaces:
+  - phrase: 革順
+  - phrase: 立尼
+  - phrase: 示每
+  - phrase: 革順族
+  - phrase: 革順人
+  - phrase: 七千五百名
+  - phrase: 帳幕後西邊
+  - phrase: 帳幕和罩棚
+  - phrase: 罩棚的蓋
+  - phrase: 會幕的門簾
+  target_path: link_folder/人物/革順.md
+- name: 哥轄
+  suggested_type: 人物
+  evidence: 民3:17,19,27-32 利未眾子的名字是...哥轄...哥轄的兒子...是暗蘭、以斯哈、希伯倫、烏薛...屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族...共有八千六百名...哥轄兒子的諸族要在帳幕的南邊安營...看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿。
+  surfaces:
+  - phrase: 哥轄
+  - phrase: 暗蘭
+  - phrase: 以斯哈
+  - phrase: 希伯倫
+  - phrase: 烏薛
+  - phrase: 哥轄族
+  - phrase: 哥轄人
+  - phrase: 八千六百名
+  - phrase: 帳幕的南邊
+  - phrase: 約櫃
+  - phrase: 桌子
+  - phrase: 燈臺
+  - phrase: 兩座壇
+  - phrase: 聖所內使用的器皿
+  target_path: link_folder/人物/哥轄.md
+- name: 米拉利
+  suggested_type: 人物
+  evidence: 民3:17,20,33-37 利未眾子的名字是...米拉利...米拉利的兒子...是抹利、母示...屬米拉利的，有抹利族、母示族...被數的...共有六千二百名...米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座...院子四圍的柱子、帶卯的座、橛子，和繩子。
+  surfaces:
+  - phrase: 米拉利
+  - phrase: 抹利
+  - phrase: 母示
+  - phrase: 米拉利族
+  - phrase: 米拉利人
+  - phrase: 六千二百名
+  - phrase: 帳幕的北邊
+  - phrase: 帳幕的板
+  - phrase: 閂
+  - phrase: 柱子
+  - phrase: 帶卯的座
+  - phrase: 橛子
+  - phrase: 繩子
+  target_path: link_folder/人物/米拉利.md
+- name: 拉伊勒的兒子以利雅薩
+  suggested_type: 人物
+  evidence: 民3:24 拉伊勒的兒子以利雅薩作革順人宗族的首領。
+  surfaces:
+  - phrase: 拉伊勒的兒子以利雅薩
+  - phrase: 革順人宗族的首領
+  target_path: link_folder/人物/拉伊勒的兒子以利雅薩.md
+- name: 烏薛的兒子以利撒反
+  suggested_type: 人物
+  evidence: 民3:30 烏薛的兒子以利撒反作哥轄宗族家室的首領。
+  surfaces:
+  - phrase: 烏薛的兒子以利撒反
+  - phrase: 哥轄宗族家室的首領
+  target_path: link_folder/人物/烏薛的兒子以利撒反.md
+- name: 亞比亥的兒子蘇列
+  suggested_type: 人物
+  evidence: 民3:35 亞比亥的兒子蘇列作米拉利二宗族的首領。
+  surfaces:
+  - phrase: 亞比亥的兒子蘇列
+  - phrase: 米拉利二宗族的首領
+  target_path: link_folder/人物/亞比亥的兒子蘇列.md
+- name: 祭司以利亞撒作利未人領袖
+  suggested_type: 人物
+  evidence: 民3:32 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。
+  surfaces:
+  - phrase: 祭司亞倫的兒子以利亞撒
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/祭司以利亞撒作利未人領袖.md
+- name: 頭生
+  suggested_type: 主題
+  evidence: 民3:12,13,40,41,43,46 我從以色列人中揀選了利未人，代替以色列人一切頭生的...凡頭生的是我的...數點一個月以外、凡頭生的男子...以色列人中頭生的...以色列人中頭生的男子比利未人多二百七十三個。頭生歸神基於逾越節救贖。
+  surfaces:
+  - phrase: 頭生
+  - phrase: 一切頭生的
+  - phrase: 凡頭生的是我的
+  - phrase: 頭生的男子
+  - phrase: 頭生的男子比利未人多
+  target_path: link_folder/主題/頭生.md
+- name: 代替
+  suggested_type: 神學
+  evidence: 民3:12,41,45 代替以色列人一切頭生的...代替以色列人所有頭生的...利未人代替以色列人所有頭生的。利未人代替長子預表基督代替罪人。
+  surfaces:
+  - phrase: 代替
+  - phrase: 代替以色列人一切頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替.md
+- name: 歸神
+  suggested_type: 神學
+  evidence: 民3:12,13,45 利未人要歸我...他們定要屬我...利未人要歸我。利未人歸神預表信徒歸基督。
+  surfaces:
+  - phrase: 歸我
+  - phrase: 屬我
+  - phrase: 利未人要歸我
+  - phrase: 利未人要歸我
+  target_path: link_folder/神學/歸神.md
+- name: 贖銀
+  suggested_type: 主題
+  evidence: 民3:46,47,48,49,50,51 以色列人中頭生的男子比利未人多二百七十三個，必當將他們贖出來...每人取贖銀五舍客勒...按聖所的平...把那多餘之人的贖銀交給亞倫和他的兒子...摩西從那被利未人所贖以外的人取了贖銀...摩西照耶和華的話把這贖銀給亞倫和他的兒子。贖銀預表基督贖價。
+  surfaces:
+  - phrase: 贖出來
+  - phrase: 贖銀
+  - phrase: 五舍客勒
+  - phrase: 聖所的平
+  - phrase: 贖銀交給亞倫和他的兒子
+  - phrase: 贖銀給亞倫和他的兒子
+  target_path: link_folder/主題/贖銀.md
+- name: 聖所的平
+  suggested_type: 原文
+  evidence: 民3:47,50 按聖所的平，每人取贖銀五舍客勒（一舍客勒是二十季拉）...從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒。聖所平為度量衡標準。
+  surfaces:
+  - phrase: 聖所的平
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  - phrase: 一千三百六十五舍客勒
+  target_path: link_folder/原文/聖所的平.md
+- name: 季拉
+  suggested_type: 原文
+  evidence: 民3:47 一舍客勒是二十季拉。季拉為最小貨幣單位。
+  surfaces:
+  - phrase: 季拉
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  target_path: link_folder/原文/季拉.md
+- name: 亞倫的兒子以利亞撒
+  suggested_type: 人物
+  evidence: 民3:2,4,32 以利亞撒...在他們的父親亞倫面前供祭司的職分...祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。
+  surfaces:
+  - phrase: 以利亞撒
+  - phrase: 亞倫的兒子以利亞撒
+  - phrase: 供祭司的職分
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/亞倫的兒子以利亞撒.md
+- name: 亞倫的兒子以他瑪
+  suggested_type: 人物
+  evidence: 民3:2,4 以他瑪...在他們的父親亞倫面前供祭司的職分。
+  surfaces:
+  - phrase: 以他瑪
+  - phrase: 亞倫的兒子以他瑪
+  - phrase: 供祭司的職分
+  target_path: link_folder/人物/亞倫的兒子以他瑪.md
+- name: 立尼
+  suggested_type: 人物
+  evidence: 民3:18 革順的兒子，按著家室，是立尼、示每。立尼為革順長子。
+  surfaces:
+  - phrase: 立尼
+  - phrase: 革順的兒子
+  target_path: link_folder/人物/立尼.md
+- name: 示每
+  suggested_type: 人物
+  evidence: 民3:18 革順的兒子，按著家室，是立尼、示每。示每為革順次子。
+  surfaces:
+  - phrase: 示每
+  - phrase: 革順的兒子
+  target_path: link_folder/人物/示每.md
+- name: 以斯哈
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。以斯哈為哥轄次子。
+  surfaces:
+  - phrase: 以斯哈
+  - phrase: 哥轄的兒子
+  target_path: link_folder/人物/以斯哈.md
+- name: 希伯倫
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。希伯倫為哥轄三子。
+  surfaces:
+  - phrase: 希伯倫
+  - phrase: 哥轄的兒子
+  target_path: link_folder/人物/希伯倫.md
+- name: 抹利
+  suggested_type: 人物
+  evidence: 民3:20 米拉利的兒子，按著家室，是抹利、母示。抹利為米拉利長子。
+  surfaces:
+  - phrase: 抹利
+  - phrase: 米拉利的兒子
+  target_path: link_folder/人物/抹利.md
+- name: 母示
+  suggested_type: 人物
+  evidence: 民3:20 米拉利的兒子，按著家室，是抹利、母示。母示為米拉利次子。
+  surfaces:
+  - phrase: 母示
+  - phrase: 米拉利的兒子
+  target_path: link_folder/人物/母示.md
+- name: 拉伊勒
+  suggested_type: 人物
+  evidence: 民3:24 拉伊勒的兒子以利雅薩作革順人宗族的首領。以利雅薩之父。
+  surfaces:
+  - phrase: 拉伊勒
+  - phrase: 拉伊勒的兒子
+  target_path: link_folder/人物/拉伊勒.md
+- name: 亞比亥
+  suggested_type: 人物
+  evidence: 民3:35 亞比亥的兒子蘇列作米拉利二宗族的首領。蘇列之父。
+  surfaces:
+  - phrase: 亞比亥
+  - phrase: 亞比亥的兒子
+  target_path: link_folder/人物/亞比亥.md
+- name: 蘇列
+  suggested_type: 人物
+  evidence: 民3:35 亞比亥的兒子蘇列作米拉利二宗族的首領。米拉利族長。
+  surfaces:
+  - phrase: 蘇列
+  - phrase: 亞比亥的兒子
+  - phrase: 米拉利二宗族的首領
+  target_path: link_folder/人物/蘇列.md
+- name: 亞倫的兒子以利亞撒
+  suggested_type: 人物
+  evidence: 民3:32 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。
+  surfaces:
+  - phrase: 祭司亞倫的兒子以利亞撒
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/亞倫的兒子以利亞撒.md
+- name: 亞倫和摩西的後代
+  suggested_type: 人物
+  evidence: 民3:1 耶和華在西乃山曉諭摩西的日子，亞倫和摩西的後代如下。亞倫列在摩西前，因亞倫為長子且職位可傳承。
+  surfaces:
+  - phrase: 亞倫和摩西的後代
+  - phrase: 亞倫
+  - phrase: 摩西
+  target_path: link_folder/人物/亞倫和摩西的後代.md
+- name: 亞倫和摩西
+  suggested_type: 人物
+  evidence: 民3:1,5,6,9,10,38,39 耶和華曉諭摩西...亞倫和摩西的後代...你使利未支派近前來，站在祭司亞倫面前...你要將利未人給亞倫和他的兒子...摩西、亞倫，和亞倫的兒子。
+  surfaces:
+  - phrase: 亞倫和摩西
+  - phrase: 亞倫
+  - phrase: 摩西
+  - phrase: 祭司亞倫
+  - phrase: 摩西、亞倫
+  target_path: link_folder/人物/亞倫和摩西.md
+- name: 受膏的祭司
+  suggested_type: 主題
+  evidence: 民3:3 這是亞倫兒子的名字，都是受膏的祭司，是摩西叫他們承接聖職供祭司職分的。受膏表徵聖靈膏立，祭司職分聖別。
+  surfaces:
+  - phrase: 受膏的祭司
+  - phrase: 受膏
+  - phrase: 承接聖職
+  - phrase: 供祭司職分
+  target_path: link_folder/主題/受膏的祭司.md
+- name: 供祭司職分
+  suggested_type: 主題
+  evidence: 民3:3,4,10 供祭司職分...供祭司的職分...謹守自己祭司的職任。祭司職分為神所命，終身服事。
+  surfaces:
+  - phrase: 供祭司職分
+  - phrase: 祭司的職分
+  - phrase: 祭司的職任
+  - phrase: 供祭司職分的
+  target_path: link_folder/主題/供祭司職分.md
+- name: 沒有兒子
+  suggested_type: 主題
+  evidence: 民3:4 他們也沒有兒子。無後代承接祭司職分，預表事奉無後繼。
+  surfaces:
+  - phrase: 沒有兒子
+  - phrase: 也沒有兒子
+  target_path: link_folder/主題/沒有兒子.md
+- name: 父親亞倫面前
+  suggested_type: 主題
+  evidence: 民3:4 以利亞撒、以他瑪在他們的父親亞倫面前供祭司的職分。在父親權柄下繼續祭司職分。
+  surfaces:
+  - phrase: 在他們的父親亞倫面前
+  - phrase: 父親亞倫面前
+  target_path: link_folder/主題/父親亞倫面前.md
+- name: 供祭司的職分
+  suggested_type: 主題
+  evidence: 民3:4,10 以利亞撒、以他瑪在他們的父親亞倫面前供祭司的職分...謹守自己祭司的職任。祭司職分傳承不斷。
+  surfaces:
+  - phrase: 供祭司的職分
+  - phrase: 供祭司的職分的
+  - phrase: 祭司的職任
+  target_path: link_folder/主題/供祭司的職分.md
+- name: 近前來
+  suggested_type: 主題
+  evidence: 民3:6 你使利未支派近前來，站在祭司亞倫面前好服事他。近前來表徵親近神，事奉始於親近。
+  surfaces:
+  - phrase: 近前來
+  - phrase: 近前來，站在祭司亞倫面前
+  target_path: link_folder/主題/近前來.md
+- name: 站在祭司亞倫面前
+  suggested_type: 主題
+  evidence: 民3:6 站在祭司亞倫面前好服事他。站在面前表徵僕人姿態，等候差遣。
+  surfaces:
+  - phrase: 站在祭司亞倫面前
+  - phrase: 站在...面前
+  target_path: link_folder/主題/站在祭司亞倫面前.md
+- name: 好服事他
+  suggested_type: 主題
+  evidence: 民3:6 站在祭司亞倫面前好服事他。服事祭司即服事神，利未人協助祭司。
+  surfaces:
+  - phrase: 好服事他
+  - phrase: 服事他
+  target_path: link_folder/主題/好服事他.md
+- name: 替他和會眾
+  suggested_type: 主題
+  evidence: 民3:7 替他和會眾在會幕前守所吩咐的，辦理帳幕的事。利未人雙重服事：服事祭司與會眾。
+  surfaces:
+  - phrase: 替他和會眾
+  - phrase: 替他
+  - phrase: 和會眾
+  target_path: link_folder/主題/替他和會眾.md
+- name: 在會幕前
+  suggested_type: 主題
+  evidence: 民3:7,8,23,25,26,29,31,32,36,38 在會幕前...在會幕中...在帳幕後西邊...在會幕中...在會幕中...在帳幕前東邊。會幕前為利未人服事場所。
+  surfaces:
+  - phrase: 在會幕前
+  - phrase: 在會幕中
+  - phrase: 會幕前
+  target_path: link_folder/主題/在會幕前.md
+- name: 守所吩咐的
+  suggested_type: 主題
+  evidence: 民3:7,8 替他和會眾在會幕前守所吩咐的，辦理帳幕的事...並守所吩咐以色列人的，辦理帳幕的事。守所吩咐表徵順服神命。
+  surfaces:
+  - phrase: 守所吩咐的
+  - phrase: 守所吩咐以色列人的
+  - phrase: 所吩咐的
+  target_path: link_folder/主題/守所吩咐的.md
+- name: 辦理帳幕的事
+  suggested_type: 主題
+  evidence: 民3:7,8 替他和會眾在會幕前守所吩咐的，辦理帳幕的事...並守所吩咐以色列人的，辦理帳幕的事。辦理帳幕事務為利未人核心職責。
+  surfaces:
+  - phrase: 辦理帳幕的事
+  - phrase: 辦理帳幕的事務
+  - phrase: 帳幕的事
+  target_path: link_folder/主題/辦理帳幕的事.md
+- name: 看守會幕的器具
+  suggested_type: 主題
+  evidence: 民3:8 又要看守會幕的器具，並守所吩咐以色列人的，辦理帳幕的事。看守器具為利未人職責。
+  surfaces:
+  - phrase: 看守會幕的器具
+  - phrase: 會幕的器具
+  - phrase: 器具
+  target_path: link_folder/主題/看守會幕的器具.md
+- name: 守所吩咐以色列人的
+  suggested_type: 主題
+  evidence: 民3:8 並守所吩咐以色列人的，辦理帳幕的事。守所吩咐以色列人，即守神吩咐百姓的。
+  surfaces:
+  - phrase: 守所吩咐以色列人的
+  - phrase: 吩咐以色列人的
+  target_path: link_folder/主題/守所吩咐以色列人的.md
+- name: 將利未人給亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:9 你要將利未人給亞倫和他的兒子，因為他們是從以色列人中選出來給他的。利未人歸屬祭司，協助祭司職分。
+  surfaces:
+  - phrase: 將利未人給亞倫和他的兒子
+  - phrase: 給亞倫和他的兒子
+  - phrase: 利未人給亞倫
+  target_path: link_folder/主題/將利未人給亞倫和他的兒子.md
+- name: 從以色列人中選出來給他的
+  suggested_type: 主題
+  evidence: 民3:9 因為他們是從以色列人中選出來給他的。利未人蒙神揀選，歸屬祭司。
+  surfaces:
+  - phrase: 從以色列人中選出來給他的
+  - phrase: 選出來給他的
+  - phrase: 從以色列人中選出來
+  target_path: link_folder/主題/從以色列人中選出來給他的.md
+- name: 囑咐亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:10 你要囑咐亞倫和他的兒子謹守自己祭司的職任。囑咐祭司謹守職任。
+  surfaces:
+  - phrase: 囑咐亞倫和他的兒子
+  - phrase: 囑咐亞倫
+  - phrase: 囑咐他的兒子
+  target_path: link_folder/主題/囑咐亞倫和他的兒子.md
+- name: 謹守自己祭司的職任
+  suggested_type: 主題
+  evidence: 民3:10 謹守自己祭司的職任。祭司職任須謹守，不可輕忽。
+  surfaces:
+  - phrase: 謹守自己祭司的職任
+  - phrase: 謹守
+  - phrase: 祭司的職任
+  target_path: link_folder/主題/謹守自己祭司的職任.md
+- name: 近前來的外人必被治死
+  suggested_type: 主題
+  evidence: 民3:10,38 近前來的外人必被治死...近前來的外人必被治死。非祭司擅入聖所必死。
+  surfaces:
+  - phrase: 近前來的外人必被治死
+  - phrase: 外人必被治死
+  - phrase: 外人
+  target_path: link_folder/主題/近前來的外人必被治死.md
+- name: 我從以色列人中揀選了利未人
+  suggested_type: 神學
+  evidence: 民3:12 我從以色列人中揀選了利未人，代替以色列人一切頭生的；利未人要歸我。神主權揀選利未人代替長子。
+  surfaces:
+  - phrase: 我從以色列人中揀選了利未人
+  - phrase: 揀選了利未人
+  - phrase: 從以色列人中揀選
+  target_path: link_folder/神學/我從以色列人中揀選了利未人.md
+- name: 代替以色列人一切頭生的
+  suggested_type: 神學
+  evidence: 民3:12,41,45 代替以色列人一切頭生的...代替以色列人所有頭生的...利未人代替以色列人所有頭生的。利未人代替長子預表基督代替罪人。
+  surfaces:
+  - phrase: 代替以色列人一切頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替以色列人一切頭生的.md
+- name: 利未人要歸我
+  suggested_type: 神學
+  evidence: 民3:12,13,45 利未人要歸我...利未人要歸我；我是耶和華。利未人完全歸神。
+  surfaces:
+  - phrase: 利未人要歸我
+  - phrase: 利未人要歸我
+  - phrase: 歸我
+  target_path: link_folder/神學/利未人要歸我.md
+- name: 凡頭生的是我的
+  suggested_type: 神學
+  evidence: 民3:13 因為凡頭生的是我的。神宣稱對頭生的主權。
+  surfaces:
+  - phrase: 凡頭生的是我的
+  - phrase: 凡頭生的
+  - phrase: 是我的
+  target_path: link_folder/神學/凡頭生的是我的.md
+- name: 在埃及地擊殺一切頭生的那日
+  suggested_type: 事件
+  evidence: 民3:13 我在埃及地擊殺一切頭生的那日，就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我。逾越節審判為頭生歸神的基礎。
+  surfaces:
+  - phrase: 在埃及地擊殺一切頭生的那日
+  - phrase: 擊殺一切頭生的那日
+  - phrase: 埃及地擊殺
+  target_path: link_folder/事件/在埃及地擊殺一切頭生的那日.md
+- name: 分別為聖歸我
+  suggested_type: 神學
+  evidence: 民3:13 就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我。分別為聖歸神，預表信徒分別為聖。
+  surfaces:
+  - phrase: 分別為聖歸我
+  - phrase: 分別為聖
+  - phrase: 歸我
+  target_path: link_folder/神學/分別為聖歸我.md
+- name: 他們定要屬我
+  suggested_type: 神學
+  evidence: 民3:13 他們定要屬我。頭生歸神無例外。
+  surfaces:
+  - phrase: 他們定要屬我
+  - phrase: 定要屬我
+  - phrase: 屬我
+  target_path: link_folder/神學/他們定要屬我.md
+- name: 你要照利未人的宗族、家室數點他們
+  suggested_type: 主題
+  evidence: 民3:15 你要照利未人的宗族、家室數點他們。按宗族家室數點，建立家譜秩序。
+  surfaces:
+  - phrase: 你要照利未人的宗族、家室數點他們
+  - phrase: 照利未人的宗族、家室數點他們
+  - phrase: 宗族、家室數點
+  target_path: link_folder/主題/你要照利未人的宗族、家室數點他們.md
+- name: 凡一個月以外的男子都要數點
+  suggested_type: 主題
+  evidence: 民3:15 凡一個月以外的男子都要數點。一個月以上男丁皆數，生命價值不在年歲。
+  surfaces:
+  - phrase: 凡一個月以外的男子都要數點
+  - phrase: 一個月以外的男子
+  - phrase: 一個月以外
+  target_path: link_folder/主題/凡一個月以外的男子都要數點.md
+- name: 於是摩西照耶和華所吩咐的數點他們
+  suggested_type: 事件
+  evidence: 民3:16 於是摩西照耶和華所吩咐的數點他們。摩西順服執行神命。
+  surfaces:
+  - phrase: 於是摩西照耶和華所吩咐的數點他們
+  - phrase: 摩西照耶和華所吩咐的
+  - phrase: 數點他們
+  target_path: link_folder/事件/於是摩西照耶和華所吩咐的數點他們.md
+- name: 利未眾子的名字是革順、哥轄、米拉利
+  suggested_type: 人物
+  evidence: 民3:17 利未眾子的名字是革順、哥轄、米拉利。利未三子為三族始祖。
+  surfaces:
+  - phrase: 利未眾子的名字是革順、哥轄、米拉利
+  - phrase: 革順、哥轄、米拉利
+  - phrase: 利未眾子
+  target_path: link_folder/人物/利未眾子的名字是革順、哥轄、米拉利.md
+- name: 革順的兒子
+  suggested_type: 人物
+  evidence: 民3:18 革順的兒子，按著家室，是立尼、示每。革順二子為族長。
+  surfaces:
+  - phrase: 革順的兒子
+  - phrase: 革順的兒子，按著家室
+  - phrase: 立尼、示每
+  target_path: link_folder/人物/革順的兒子.md
+- name: 哥轄的兒子
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。哥轄四子為族長。
+  surfaces:
+  - phrase: 哥轄的兒子
+  - phrase: 哥轄的兒子，按著家室
+  - phrase: 暗蘭、以斯哈、希伯倫、烏薛
+  target_path: link_folder/人物/哥轄的兒子.md
+- name: 米拉利的兒子
+  suggested_type: 人物
+  evidence: 民3:20 米拉利的兒子，按著家室，是抹利、母示。米拉利二子為族長。
+  surfaces:
+  - phrase: 米拉利的兒子
+  - phrase: 米拉利的兒子，按著家室
+  - phrase: 抹利、母示
+  target_path: link_folder/人物/米拉利的兒子.md
+- name: 這些按著宗族是利未人的家室
+  suggested_type: 主題
+  evidence: 民3:20 這些按著宗族是利未人的家室。宗族家室建立利未人組織架構。
+  surfaces:
+  - phrase: 這些按著宗族是利未人的家室
+  - phrase: 按著宗族是利未人的家室
+  - phrase: 利未人的家室
+  target_path: link_folder/主題/這些按著宗族是利未人的家室.md
+- name: 屬革順的
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。這是革順的二族。革順二族為族長。
+  surfaces:
+  - phrase: 屬革順的
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/屬革順的.md
+- name: 立尼族
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。立尼族為革順長子族系。
+  surfaces:
+  - phrase: 立尼族
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/立尼族.md
+- name: 示每族
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。示每族為革順次子族系。
+  surfaces:
+  - phrase: 示每族
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/示每族.md
+- name: 其中被數、從一個月以外所有的男子共有七千五百名
+  suggested_type: 主題
+  evidence: 民3:22 其中被數、從一個月以外所有的男子共有七千五百名。革順族人數7500。
+  surfaces:
+  - phrase: 其中被數、從一個月以外所有的男子共有七千五百名
+  - phrase: 七千五百名
+  - phrase: 一個月以外所有的男子
+  target_path: link_folder/主題/其中被數、從一個月以外所有的男子共有七千五百名.md
+- name: 這革順的二族要在帳幕後西邊安營
+  suggested_type: 主題
+  evidence: 民3:23 這革順的二族要在帳幕後西邊安營。革順族安營西邊，看守帳幕布幔。
+  surfaces:
+  - phrase: 這革順的二族要在帳幕後西邊安營
+  - phrase: 在帳幕後西邊安營
+  - phrase: 帳幕後西邊
+  target_path: link_folder/主題/這革順的二族要在帳幕後西邊安營.md
+- name: 拉伊勒的兒子以利雅薩作革順人宗族的首領
+  suggested_type: 人物
+  evidence: 民3:24 拉伊勒的兒子以利雅薩作革順人宗族的首領。以利雅薩為革順族長。
+  surfaces:
+  - phrase: 拉伊勒的兒子以利雅薩作革順人宗族的首領
+  - phrase: 拉伊勒的兒子以利雅薩
+  - phrase: 革順人宗族的首領
+  target_path: link_folder/人物/拉伊勒的兒子以利雅薩作革順人宗族的首領.md
+- name: 革順的子孫在會幕中所要看守的
+  suggested_type: 主題
+  evidence: 民3:25,26 革順的子孫在會幕中所要看守的，就是帳幕和罩棚，並罩棚的蓋與會幕的門簾，院子的帷子和門簾...並一切使用的繩子。革順族看守帳幕布幔繩索。
+  surfaces:
+  - phrase: 革順的子孫在會幕中所要看守的
+  - phrase: 帳幕和罩棚
+  - phrase: 罩棚的蓋
+  - phrase: 會幕的門簾
+  - phrase: 院子的帷子
+  - phrase: 門簾
+  - phrase: 繩子
+  target_path: link_folder/主題/革順的子孫在會幕中所要看守的.md
+- name: 屬哥轄的
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。這是哥轄的諸族。哥轄四族為族長。
+  surfaces:
+  - phrase: 屬哥轄的
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/屬哥轄的.md
+- name: 暗蘭族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。暗蘭族為哥轄長子族系。
+  surfaces:
+  - phrase: 暗蘭族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/暗蘭族.md
+- name: 以斯哈族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。以斯哈族為哥轄次子族系。
+  surfaces:
+  - phrase: 以斯哈族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/以斯哈族.md
+- name: 希伯倫族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。希伯倫族為哥轄三子族系。
+  surfaces:
+  - phrase: 希伯倫族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/希伯倫族.md
+- name: 烏薛族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。烏薛族為哥轄四子族系。
+  surfaces:
+  - phrase: 烏薛族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/烏薛族.md
+- name: 這是哥轄的諸族
+  suggested_type: 主題
+  evidence: 民3:27 這是哥轄的諸族。哥轄四族總稱。
+  surfaces:
+  - phrase: 這是哥轄的諸族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/主題/這是哥轄的諸族.md
+- name: 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名
+  suggested_type: 主題
+  evidence: 民3:28 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名。哥轄族人數8600，看守聖所核心器具。
+  surfaces:
+  - phrase: 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名
+  - phrase: 八千六百名
+  - phrase: 一個月以外看守聖所的
+  target_path: link_folder/主題/按所有男子的數目，從一個月以外看守聖所的，共有八千六百名.md
+- name: 哥轄兒子的諸族要在帳幕的南邊安營
+  suggested_type: 主題
+  evidence: 民3:29 哥轄兒子的諸族要在帳幕的南邊安營。哥轄族安營南邊，看守聖所核心器具。
+  surfaces:
+  - phrase: 哥轄兒子的諸族要在帳幕的南邊安營
+  - phrase: 在帳幕的南邊安營
+  - phrase: 帳幕的南邊
+  target_path: link_folder/主題/哥轄兒子的諸族要在帳幕的南邊安營.md
+- name: 烏薛的兒子以利撒反作哥轄宗族家室的首領
+  suggested_type: 人物
+  evidence: 民3:30 烏薛的兒子以利撒反作哥轄宗族家室的首領。以利撒反為哥轄族長。
+  surfaces:
+  - phrase: 烏薛的兒子以利撒反作哥轄宗族家室的首領
+  - phrase: 烏薛的兒子以利撒反
+  - phrase: 哥轄宗族家室的首領
+  target_path: link_folder/人物/烏薛的兒子以利撒反作哥轄宗族家室的首領.md
+- name: 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物
+  suggested_type: 主題
+  evidence: 民3:31 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物。哥轄族看守聖所核心聖物。
+  surfaces:
+  - phrase: 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物
+  - phrase: 約櫃
+  - phrase: 桌子
+  - phrase: 燈臺
+  - phrase: 兩座壇
+  - phrase: 聖所內使用的器皿
+  - phrase: 簾子
+  target_path: link_folder/主題/他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物.md
+- name: 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖
+  suggested_type: 人物
+  evidence: 民3:32 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。以利亞撒為利未人總領袖。
+  surfaces:
+  - phrase: 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖
+  - phrase: 祭司亞倫的兒子以利亞撒
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/祭司亞倫的兒子以利亞撒作利未人眾首領的領袖.md
+- name: 要監察那些看守聖所的人
+  suggested_type: 主題
+  evidence: 民3:32 要監察那些看守聖所的人。以利亞撒監察利未人看守聖所。
+  surfaces:
+  - phrase: 要監察那些看守聖所的人
+  - phrase: 監察那些看守聖所的人
+  - phrase: 監察那些看守聖所的
+  target_path: link_folder/主題/要監察那些看守聖所的人.md
+- name: 屬米拉利的
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。這是米拉利的二族。米拉利二族為族長。
+  surfaces:
+  - phrase: 屬米拉利的
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/屬米拉利的.md
+- name: 抹利族
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。抹利族為米拉利長子族系。
+  surfaces:
+  - phrase: 抹利族
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/抹利族.md
+- name: 母示族
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。母示族為米拉利次子族系。
+  surfaces:
+  - phrase: 母示族
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/母示族.md
+- name: 這是米拉利的二族
+  suggested_type: 主題
+  evidence: 民3:33 這是米拉利的二族。米拉利二族總稱。
+  surfaces:
+  - phrase: 這是米拉利的二族
+  - phrase: 米拉利的二族
+  target_path: link_folder/主題/這是米拉利的二族.md
+- name: 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名
+  suggested_type: 主題
+  evidence: 民3:34 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名。米拉利族人數6200。
+  surfaces:
+  - phrase: 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名
+  - phrase: 六千二百名
+  - phrase: 一個月以外的
+  target_path: link_folder/主題/他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名.md
+- name: 亞比亥的兒子蘇列作米拉利二宗族的首領
+  suggested_type: 人物
+  evidence: 民3:35 亞比亥的兒子蘇列作米拉利二宗族的首領。蘇列為米拉利族長。
+  surfaces:
+  - phrase: 亞比亥的兒子蘇列作米拉利二宗族的首領
+  - phrase: 亞比亥的兒子蘇列
+  - phrase: 米拉利二宗族的首領
+  target_path: link_folder/人物/亞比亥的兒子蘇列作米拉利二宗族的首領.md
+- name: 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具
+  suggested_type: 主題
+  evidence: 民3:36,37 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具，院子四圍的柱子、帶卯的座、橛子，和繩子。米拉利族看守帳幕結構骨架。
+  surfaces:
+  - phrase: 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具
+  - phrase: 帳幕的板
+  - phrase: 閂
+  - phrase: 柱子
+  - phrase: 帶卯的座
+  - phrase: 帳幕一切所使用的器具
+  - phrase: 院子四圍的柱子
+  - phrase: 帶卯的座
+  - phrase: 橛子
+  - phrase: 繩子
+  target_path: link_folder/主題/米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具.md
+- name: 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子
+  suggested_type: 主題
+  evidence: 民3:38 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子。他們看守聖所，替以色列人守耶和華所吩咐的。近前來的外人必被治死。摩西亞倫安營東邊，守衛聖所入口。
+  surfaces:
+  - phrase: 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子
+  - phrase: 在帳幕前東邊
+  - phrase: 向日出之地安營
+  - phrase: 摩西、亞倫，和亞倫的兒子
+  - phrase: 看守聖所
+  - phrase: 近前來的外人必被治死
+  target_path: link_folder/主題/在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子.md
+- name: 他們看守聖所，替以色列人守耶和華所吩咐的
+  suggested_type: 主題
+  evidence: 民3:38 他們看守聖所，替以色列人守耶和華所吩咐的。摩西亞倫守衛聖所，代百姓守神命。
+  surfaces:
+  - phrase: 他們看守聖所，替以色列人守耶和華所吩咐的
+  - phrase: 看守聖所
+  - phrase: 替以色列人守
+  - phrase: 耶和華所吩咐的
+  target_path: link_folder/主題/他們看守聖所，替以色列人守耶和華所吩咐的.md
+- name: 近前來的外人必被治死
+  suggested_type: 主題
+  evidence: 民3:38 近前來的外人必被治死。非祭司擅入聖所必死。
+  surfaces:
+  - phrase: 近前來的外人必被治死
+  - phrase: 外人必被治死
+  - phrase: 外人
+  target_path: link_folder/主題/近前來的外人必被治死.md
+- name: 凡被數的利未人
+  suggested_type: 主題
+  evidence: 民3:39 凡被數的利未人，就是摩西、亞倫照耶和華吩咐所數的，按著家室，從一個月以外的男子，共有二萬二千名。利未人總數22000。
+  surfaces:
+  - phrase: 凡被數的利未人
+  - phrase: 共有二萬二千名
+  - phrase: 一個月以外的男子
+  - phrase: 二萬二千名
+  target_path: link_folder/主題/凡被數的利未人.md
+- name: 就是摩西、亞倫照耶和華吩咐所數的
+  suggested_type: 事件
+  evidence: 民3:39 凡被數的利未人，就是摩西、亞倫照耶和華吩咐所數的。摩西亞倫順服執行神命。
+  surfaces:
+  - phrase: 就是摩西、亞倫照耶和華吩咐所數的
+  - phrase: 摩西、亞倫照耶和華吩咐所數的
+  - phrase: 照耶和華吩咐所數的
+  target_path: link_folder/事件/就是摩西、亞倫照耶和華吩咐所數的.md
+- name: 按著家室
+  suggested_type: 主題
+  evidence: 民3:39 按著家室，從一個月以外的男子，共有二萬二千名。按家室數點建立家譜。
+  surfaces:
+  - phrase: 按著家室
+  - phrase: 按著家室
+  - phrase: 家室
+  target_path: link_folder/主題/按著家室.md
+- name: 從一個月以外的男子
+  suggested_type: 主題
+  evidence: 民3:39 從一個月以外的男子，共有二萬二千名。利未人從一個月數起。
+  surfaces:
+  - phrase: 從一個月以外的男子
+  - phrase: 一個月以外的男子
+  - phrase: 一個月以外
+  target_path: link_folder/主題/從一個月以外的男子.md
+- name: 共有二萬二千名
+  suggested_type: 主題
+  evidence: 民3:39 共有二萬二千名。利未人總數22000。
+  surfaces:
+  - phrase: 共有二萬二千名
+  - phrase: 二萬二千名
+  - phrase: 總數
+  target_path: link_folder/主題/共有二萬二千名.md
+- name: 耶和華對摩西說
+  suggested_type: 主題
+  evidence: 民3:40,44 耶和華對摩西說...耶和華對摩西說。神直接向摩西啟示。
+  surfaces:
+  - phrase: 耶和華對摩西說
+  - phrase: 耶和華對摩西說
+  - phrase: 對摩西說
+  target_path: link_folder/主題/耶和華對摩西說.md
+- name: 你要從以色列人中數點一個月以外、凡頭生的男子
+  suggested_type: 主題
+  evidence: 民3:40 你要從以色列人中數點一個月以外、凡頭生的男子，把他們的名字記下。頭生男子單獨數點，與利未人比較。
+  surfaces:
+  - phrase: 你要從以色列人中數點一個月以外、凡頭生的男子
+  - phrase: 從以色列人中數點
+  - phrase: 一個月以外、凡頭生的男子
+  - phrase: 把他們的名字記下
+  target_path: link_folder/主題/你要從以色列人中數點一個月以外、凡頭生的男子.md
+- name: 把他們的名字記下
+  suggested_type: 主題
+  evidence: 民3:40 把他們的名字記下。記名建立家譜，確立身分。
+  surfaces:
+  - phrase: 把他們的名字記下
+  - phrase: 名字記下
+  - phrase: 記下
+  target_path: link_folder/主題/把他們的名字記下.md
+- name: 你要揀選利未人歸我
+  suggested_type: 神學
+  evidence: 民3:41 你要揀選利未人歸我，代替以色列人所有頭生的，也取利未人的牲畜代替以色列人的牲畜。利未人完全歸神。
+  surfaces:
+  - phrase: 你要揀選利未人歸我
+  - phrase: 揀選利未人歸我
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 取利未人的牲畜代替
+  target_path: link_folder/神學/你要揀選利未人歸我.md
+- name: 代替以色列人所有頭生的
+  suggested_type: 神學
+  evidence: 民3:41,45 代替以色列人所有頭生的...利未人代替以色列人所有頭生的。利未人完全代替長子。
+  surfaces:
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替以色列人所有頭生的.md
+- name: 也取利未人的牲畜代替以色列人的牲畜
+  suggested_type: 神學
+  evidence: 民3:41 也取利未人的牲畜代替以色列人的牲畜。牲畜也同樣代替原則。
+  surfaces:
+  - phrase: 取利未人的牲畜代替以色列人的牲畜
+  - phrase: 利未人的牲畜
+  - phrase: 以色列人的牲畜
+  - phrase: 代替以色列人的牲畜
+  target_path: link_folder/神學/也取利未人的牲畜代替以色列人的牲畜.md
+- name: 利未人歸我
+  suggested_type: 神學
+  evidence: 民3:41,45 利未人歸我...利未人歸我。利未人完全歸神。
+  surfaces:
+  - phrase: 利未人歸我
+  - phrase: 利未人歸我
+  - phrase: 歸我
+  target_path: link_folder/神學/利未人歸我.md
+- name: 摩西就照耶和華所吩咐的把以色列人頭生的都數點了
+  suggested_type: 事件
+  evidence: 民3:42 摩西就照耶和華所吩咐的把以色列人頭生的都數點了。摩西順服執行神命。
+  surfaces:
+  - phrase: 摩西就照耶和華所吩咐的把以色列人頭生的都數點了
+  - phrase: 摩西就照耶和華所吩咐的
+  - phrase: 把以色列人頭生的都數點了
+  target_path: link_folder/事件/摩西就照耶和華所吩咐的把以色列人頭生的都數點了.md
+- name: 按人名的數目，從一個月以外、凡頭生的男子，共有二萬二千二百七十三名
+  suggested_type: 主題
+  evidence: 民3:43 按人名的數目，從一個月以外、凡頭生的男子，共有二萬二千二百七十三名。頭生男子總數22273。
+  surfaces:
+  - phrase: 按人名的數目，從一個月以外、凡頭生的男子，共有二萬二千二百七十三名
+  - phrase: 二萬二千二百七十三名
+  - phrase: 一個月以外、凡頭生的男子
+  target_path: link_folder/主題/按人名的數目，從一個月以外、凡頭生的男子，共有二萬二千二百七十三名.md
+- name: 耶和華曉諭摩西說
+  suggested_type: 主題
+  evidence: 民3:44 耶和華曉諭摩西說。神直接向摩西啟示。
+  surfaces:
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 曉諭摩西說
+  target_path: link_folder/主題/耶和華曉諭摩西說.md
+- name: 你要揀選利未人歸我
+  suggested_type: 神學
+  evidence: 民3:45 你要揀選利未人歸我，代替以色列人所有頭生的，也取利未人的牲畜代替以色列人的牲畜。利未人完全歸神。
+  surfaces:
+  - phrase: 你要揀選利未人歸我
+  - phrase: 揀選利未人歸我
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 取利未人的牲畜代替
+  target_path: link_folder/神學/你要揀選利未人歸我.md
+- name: 代替以色列人所有頭生的
+  suggested_type: 神學
+  evidence: 民3:45 代替以色列人所有頭生的。利未人完全代替長子。
+  surfaces:
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替以色列人所有頭生的.md
+- name: 也取利未人的牲畜代替以色列人的牲畜
+  suggested_type: 神學
+  evidence: 民3:45 也取利未人的牲畜代替以色列人的牲畜。牲畜也同樣代替原則。
+  surfaces:
+  - phrase: 取利未人的牲畜代替以色列人的牲畜
+  - phrase: 利未人的牲畜
+  - phrase: 以色列人的牲畜
+  - phrase: 代替以色列人的牲畜
+  target_path: link_folder/神學/也取利未人的牲畜代替以色列人的牲畜.md
+- name: 利未人歸我
+  suggested_type: 神學
+  evidence: 民3:45 利未人歸我。利未人完全歸神。
+  surfaces:
+  - phrase: 利未人歸我
+  - phrase: 利未人歸我
+  - phrase: 歸我
+  target_path: link_folder/神學/利未人歸我.md
+- name: 以色列人中頭生的男子比利未人多二百七十三個
+  suggested_type: 主題
+  evidence: 民3:46 以色列人中頭生的男子比利未人多二百七十三個。頭生男子超過利未人273。
+  surfaces:
+  - phrase: 以色列人中頭生的男子比利未人多二百七十三個
+  - phrase: 比利未人多二百七十三個
+  - phrase: 多二百七十三個
+  target_path: link_folder/主題/以色列人中頭生的男子比利未人多二百七十三個.md
+- name: 必當將他們贖出來
+  suggested_type: 主題
+  evidence: 民3:46 必當將他們贖出來。超額頭生男子須贖回。
+  surfaces:
+  - phrase: 必當將他們贖出來
+  - phrase: 贖出來
+  - phrase: 贖回
+  target_path: link_folder/主題/必當將他們贖出來.md
+- name: 你要按人丁，照聖所的平，每人取贖銀五舍客勒
+  suggested_type: 主題
+  evidence: 民3:47 你要按人丁，照聖所的平，每人取贖銀五舍客勒（一舍客勒是二十季拉）。贖銀標準：聖所平，5舍客勒/人。
+  surfaces:
+  - phrase: 你要按人丁，照聖所的平，每人取贖銀五舍客勒
+  - phrase: 按人丁
+  - phrase: 照聖所的平
+  - phrase: 每人取贖銀五舍客勒
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  target_path: link_folder/主題/你要按人丁，照聖所的平，每人取贖銀五舍客勒.md
+- name: 一舍客勒是二十季拉
+  suggested_type: 原文
+  evidence: 民3:47 一舍客勒是二十季拉。季拉為最小貨幣單位。
+  surfaces:
+  - phrase: 一舍客勒是二十季拉
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  - phrase: 季拉
+  target_path: link_folder/原文/一舍客勒是二十季拉.md
+- name: 把那多餘之人的贖銀交給亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:48 把那多餘之人的贖銀交給亞倫和他的兒子。贖銀歸祭司。
+  surfaces:
+  - phrase: 把那多餘之人的贖銀交給亞倫和他的兒子
+  - phrase: 多餘之人的贖銀
+  - phrase: 交給亞倫和他的兒子
+  - phrase: 贖銀交給亞倫
+  target_path: link_folder/主題/把那多餘之人的贖銀交給亞倫和他的兒子.md
+- name: 於是摩西從那被利未人所贖以外的人取了贖銀
+  suggested_type: 事件
+  evidence: 民3:49 於是摩西從那被利未人所贖以外的人取了贖銀。摩西收取超額頭生男子贖銀。
+  surfaces:
+  - phrase: 於是摩西從那被利未人所贖以外的人取了贖銀
+  - phrase: 摩西從那被利未人所贖以外的人取了贖銀
+  - phrase: 取了贖銀
+  target_path: link_folder/事件/於是摩西從那被利未人所贖以外的人取了贖銀.md
+- name: 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒
+  suggested_type: 主題
+  evidence: 民3:50 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒。贖銀總額1365舍客勒。
+  surfaces:
+  - phrase: 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒
+  - phrase: 一千三百六十五舍客勒
+  - phrase: 聖所的平
+  - phrase: 以色列人頭生的所取之銀
+  target_path: link_folder/主題/從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒.md
+- name: 摩西照耶和華的話把這贖銀給亞倫和他的兒子
+  suggested_type: 事件
+  evidence: 民3:51 摩西照耶和華的話把這贖銀給亞倫和他的兒子，正如耶和華所吩咐的。摩西順服分發贖銀。
+  surfaces:
+  - phrase: 摩西照耶和華的話把這贖銀給亞倫和他的兒子
+  - phrase: 摩西照耶和華的話
+  - phrase: 把這贖銀給亞倫和他的兒子
+  - phrase: 正如耶和華所吩咐的
+  target_path: link_folder/事件/摩西照耶和華的話把這贖銀給亞倫和他的兒子.md
+- name: 正如耶和華所吩咐的
+  suggested_type: 主題
+  evidence: 民3:51 正如耶和華所吩咐的。完全順服。
+  surfaces:
+  - phrase: 正如耶和華所吩咐的
+  - phrase: 正如耶和華所吩咐的
+  - phrase: 所吩咐的
+  target_path: link_folder/主題/正如耶和華所吩咐的.md
+- name: 亞倫的兒子拿答
+  suggested_type: 人物
+  evidence: 民3:2,4 亞倫的兒子，長子名叫拿答...拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。拿答為亞倫長子。
+  surfaces:
+  - phrase: 拿答
+  - phrase: 亞倫的兒子
+  - phrase: 長子
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  target_path: link_folder/人物/亞倫的兒子拿答.md
+- name: 亞倫的兒子亞比戶
+  suggested_type: 人物
+  evidence: 民3:2,4 還有亞比戶...拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。亞比戶為亞倫次子。
+  surfaces:
+  - phrase: 亞比戶
+  - phrase: 亞倫的兒子
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  target_path: link_folder/人物/亞倫的兒子亞比戶.md
+- name: 亞倫的兒子以利亞撒
+  suggested_type: 人物
+  evidence: 民3:2,4,32 以利亞撒...在他們的父親亞倫面前供祭司的職分...祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。以利亞撒為亞倫三子，接續祭司職分。
+  surfaces:
+  - phrase: 以利亞撒
+  - phrase: 亞倫的兒子
+  - phrase: 供祭司的職分
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/亞倫的兒子以利亞撒.md
+- name: 亞倫的兒子以他瑪
+  suggested_type: 人物
+  evidence: 民3:2,4 以他瑪...在他們的父親亞倫面前供祭司的職分。以他瑪為亞倫四子。
+  surfaces:
+  - phrase: 以他瑪
+  - phrase: 亞倫的兒子
+  - phrase: 供祭司的職分
+  target_path: link_folder/人物/亞倫的兒子以他瑪.md
+- name: 受膏的祭司
+  suggested_type: 主題
+  evidence: 民3:3 這是亞倫兒子的名字，都是受膏的祭司，是摩西叫他們承接聖職供祭司職分的。受膏表徵聖靈膏立。
+  surfaces:
+  - phrase: 受膏的祭司
+  - phrase: 受膏
+  - phrase: 承接聖職
+  - phrase: 供祭司職分
+  target_path: link_folder/主題/受膏的祭司.md
+- name: 供祭司職分
+  suggested_type: 主題
+  evidence: 民3:3,4,10 供祭司職分...供祭司的職分...謹守自己祭司的職任。祭司職分為神所命，終身服事。
+  surfaces:
+  - phrase: 供祭司職分
+  - phrase: 供祭司的職分
+  - phrase: 祭司的職任
+  - phrase: 供祭司職分的
+  target_path: link_folder/主題/供祭司職分.md
+- name: 獻凡火
+  suggested_type: 主題
+  evidence: 民3:4 拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。凡火為未奉神命之火。
+  surfaces:
+  - phrase: 獻凡火
+  - phrase: 獻凡火的時候
+  - phrase: 凡火
+  target_path: link_folder/主題/獻凡火.md
+- name: 他們也沒有兒子
+  suggested_type: 主題
+  evidence: 民3:4 他們也沒有兒子。無後代承接祭司職分。
+  surfaces:
+  - phrase: 他們也沒有兒子
+  - phrase: 也沒有兒子
+  - phrase: 沒有兒子
+  target_path: link_folder/主題/他們也沒有兒子.md
+- name: 在他們的父親亞倫面前
+  suggested_type: 主題
+  evidence: 民3:4 以利亞撒、以他瑪在他們的父親亞倫面前供祭司的職分。在父親權柄下繼續祭司職分。
+  surfaces:
+  - phrase: 在他們的父親亞倫面前
+  - phrase: 父親亞倫面前
+  - phrase: 父親亞倫
+  target_path: link_folder/主題/在他們的父親亞倫面前.md
+- name: 供祭司的職分
+  suggested_type: 主題
+  evidence: 民3:4,10 以利亞撒、以他瑪在他們的父親亞倫面前供祭司的職分...謹守自己祭司的職任。祭司職分傳承不斷。
+  surfaces:
+  - phrase: 供祭司的職分
+  - phrase: 供祭司的職分的
+  - phrase: 祭司的職任
+  target_path: link_folder/主題/供祭司的職分.md
+- name: 近前來
+  suggested_type: 主題
+  evidence: 民3:6 你使利未支派近前來，站在祭司亞倫面前好服事他。近前來表徵親近神，事奉始於親近。
+  surfaces:
+  - phrase: 近前來
+  - phrase: 近前來，站在祭司亞倫面前
+  - phrase: 近前來
+  target_path: link_folder/主題/近前來.md
+- name: 站在祭司亞倫面前
+  suggested_type: 主題
+  evidence: 民3:6 站在祭司亞倫面前好服事他。站在面前表徵僕人姿態，等候差遣。
+  surfaces:
+  - phrase: 站在祭司亞倫面前
+  - phrase: 站在...面前
+  - phrase: 站在
+  target_path: link_folder/主題/站在祭司亞倫面前.md
+- name: 好服事他
+  suggested_type: 主題
+  evidence: 民3:6 站在祭司亞倫面前好服事他。服事祭司即服事神，利未人協助祭司。
+  surfaces:
+  - phrase: 好服事他
+  - phrase: 服事他
+  - phrase: 服事
+  target_path: link_folder/主題/好服事他.md
+- name: 替他和會眾
+  suggested_type: 主題
+  evidence: 民3:7 替他和會眾在會幕前守所吩咐的，辦理帳幕的事。利未人雙重服事：服事祭司與會眾。
+  surfaces:
+  - phrase: 替他和會眾
+  - phrase: 替他
+  - phrase: 和會眾
+  target_path: link_folder/主題/替他和會眾.md
+- name: 在會幕前
+  suggested_type: 主題
+  evidence: 民3:7,8,23,25,26,29,31,32,36,38 在會幕前...在會幕中...在帳幕後西邊...在會幕中...在會幕中...在帳幕前東邊。會幕前為利未人服事場所。
+  surfaces:
+  - phrase: 在會幕前
+  - phrase: 在會幕中
+  - phrase: 會幕前
+  target_path: link_folder/主題/在會幕前.md
+- name: 守所吩咐的
+  suggested_type: 主題
+  evidence: 民3:7,8 替他和會眾在會幕前守所吩咐的，辦理帳幕的事...並守所吩咐以色列人的，辦理帳幕的事。守所吩咐表徵順服神命。
+  surfaces:
+  - phrase: 守所吩咐的
+  - phrase: 守所吩咐以色列人的
+  - phrase: 所吩咐的
+  target_path: link_folder/主題/守所吩咐的.md
+- name: 辦理帳幕的事
+  suggested_type: 主題
+  evidence: 民3:7,8 替他和會眾在會幕前守所吩咐的，辦理帳幕的事...並守所吩咐以色列人的，辦理帳幕的事。辦理帳幕事務為利未人核心職責。
+  surfaces:
+  - phrase: 辦理帳幕的事
+  - phrase: 辦理帳幕的事務
+  - phrase: 帳幕的事
+  target_path: link_folder/主題/辦理帳幕的事.md
+- name: 看守會幕的器具
+  suggested_type: 主題
+  evidence: 民3:8 又要看守會幕的器具，並守所吩咐以色列人的，辦理帳幕的事。看守器具為利未人職責。
+  surfaces:
+  - phrase: 看守會幕的器具
+  - phrase: 會幕的器具
+  - phrase: 器具
+  target_path: link_folder/主題/看守會幕的器具.md
+- name: 並守所吩咐以色列人的
+  suggested_type: 主題
+  evidence: 民3:8 並守所吩咐以色列人的，辦理帳幕的事。守所吩咐以色列人，即守神吩咐百姓的。
+  surfaces:
+  - phrase: 並守所吩咐以色列人的
+  - phrase: 守所吩咐以色列人的
+  - phrase: 所吩咐以色列人的
+  target_path: link_folder/主題/並守所吩咐以色列人的.md
+- name: 你要將利未人給亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:9 你要將利未人給亞倫和他的兒子，因為他們是從以色列人中選出來給他的。利未人歸屬祭司，協助祭司職分。
+  surfaces:
+  - phrase: 你要將利未人給亞倫和他的兒子
+  - phrase: 給亞倫和他的兒子
+  - phrase: 利未人給亞倫
+  target_path: link_folder/主題/你要將利未人給亞倫和他的兒子.md
+- name: 因為他們是從以色列人中選出來給他的
+  suggested_type: 主題
+  evidence: 民3:9 因為他們是從以色列人中選出來給他的。利未人蒙神揀選，歸屬祭司。
+  surfaces:
+  - phrase: 因為他們是從以色列人中選出來給他的
+  - phrase: 從以色列人中選出來給他的
+  - phrase: 選出來給他的
+  target_path: link_folder/主題/因為他們是從以色列人中選出來給他的.md
+- name: 你要囑咐亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:10 你要囑咐亞倫和他的兒子謹守自己祭司的職任。囑咐祭司謹守職任。
+  surfaces:
+  - phrase: 你要囑咐亞倫和他的兒子
+  - phrase: 囑咐亞倫
+  - phrase: 囑咐他的兒子
+  target_path: link_folder/主題/你要囑咐亞倫和他的兒子.md
+- name: 謹守自己祭司的職任
+  suggested_type: 主題
+  evidence: 民3:10 謹守自己祭司的職任。祭司職任須謹守，不可輕忽。
+  surfaces:
+  - phrase: 謹守自己祭司的職任
+  - phrase: 謹守
+  - phrase: 祭司的職任
+  target_path: link_folder/主題/謹守自己祭司的職任.md
+- name: 近前來的外人必被治死
+  suggested_type: 主題
+  evidence: 民3:10,38 近前來的外人必被治死...近前來的外人必被治死。非祭司擅入聖所必死。
+  surfaces:
+  - phrase: 近前來的外人必被治死
+  - phrase: 外人必被治死
+  - phrase: 外人
+  target_path: link_folder/主題/近前來的外人必被治死.md
+- name: 我從以色列人中揀選了利未人
+  suggested_type: 神學
+  evidence: 民3:12 我從以色列人中揀選了利未人，代替以色列人一切頭生的；利未人要歸我。神主權揀選利未人代替長子。
+  surfaces:
+  - phrase: 我從以色列人中揀選了利未人
+  - phrase: 揀選了利未人
+  - phrase: 從以色列人中揀選
+  target_path: link_folder/神學/我從以色列人中揀選了利未人.md
+- name: 代替以色列人一切頭生的
+  suggested_type: 神學
+  evidence: 民3:12,41,45 代替以色列人一切頭生的...代替以色列人所有頭生的...利未人代替以色列人所有頭生的。利未人代替長子預表基督代替罪人。
+  surfaces:
+  - phrase: 代替以色列人一切頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替以色列人一切頭生的.md
+- name: 利未人要歸我
+  suggested_type: 神學
+  evidence: 民3:12,13,45 利未人要歸我...利未人要歸我；我是耶和華。利未人完全歸神。
+  surfaces:
+  - phrase: 利未人要歸我
+  - phrase: 利未人要歸我
+  - phrase: 歸我
+  target_path: link_folder/神學/利未人要歸我.md
+- name: 因為凡頭生的是我的
+  suggested_type: 神學
+  evidence: 民3:13 因為凡頭生的是我的。神宣稱對頭生的主權。
+  surfaces:
+  - phrase: 因為凡頭生的是我的
+  - phrase: 凡頭生的是我的
+  - phrase: 凡頭生的
+  target_path: link_folder/神學/因為凡頭生的是我的.md
+- name: 我在埃及地擊殺一切頭生的那日
+  suggested_type: 事件
+  evidence: 民3:13 我在埃及地擊殺一切頭生的那日，就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我。逾越節審判為頭生歸神的基礎。
+  surfaces:
+  - phrase: 我在埃及地擊殺一切頭生的那日
+  - phrase: 擊殺一切頭生的那日
+  - phrase: 埃及地擊殺
+  target_path: link_folder/事件/我在埃及地擊殺一切頭生的那日.md
+- name: 就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我
+  suggested_type: 神學
+  evidence: 民3:13 就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我。分別為聖歸神，預表信徒分別為聖。
+  surfaces:
+  - phrase: 就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我
+  - phrase: 分別為聖歸我
+  - phrase: 分別為聖歸我
+  target_path: link_folder/神學/就把以色列中一切頭生的，連人帶牲畜都分別為聖歸我.md
+- name: 他們定要屬我
+  suggested_type: 神學
+  evidence: 民3:13 他們定要屬我。頭生歸神無例外。
+  surfaces:
+  - phrase: 他們定要屬我
+  - phrase: 定要屬我
+  - phrase: 屬我
+  target_path: link_folder/神學/他們定要屬我.md
+- name: 你要照利未人的宗族、家室數點他們
+  suggested_type: 主題
+  evidence: 民3:15 你要照利未人的宗族、家室數點他們。按宗族家室數點，建立家譜秩序。
+  surfaces:
+  - phrase: 你要照利未人的宗族、家室數點他們
+  - phrase: 照利未人的宗族、家室數點他們
+  - phrase: 宗族、家室數點
+  target_path: link_folder/主題/你要照利未人的宗族、家室數點他們.md
+- name: 凡一個月以外的男子都要數點
+  suggested_type: 主題
+  evidence: 民3:15 凡一個月以外的男子都要數點。一個月以上男丁皆數，生命價值不在年歲。
+  surfaces:
+  - phrase: 凡一個月以外的男子都要數點
+  - phrase: 一個月以外的男子
+  - phrase: 一個月以外
+  target_path: link_folder/主題/凡一個月以外的男子都要數點.md
+- name: 於是摩西照耶和華所吩咐的數點他們
+  suggested_type: 事件
+  evidence: 民3:16 於是摩西照耶和華所吩咐的數點他們。摩西順服執行神命。
+  surfaces:
+  - phrase: 於是摩西照耶和華所吩咐的數點他們
+  - phrase: 摩西照耶和華所吩咐的
+  - phrase: 數點他們
+  target_path: link_folder/事件/於是摩西照耶和華所吩咐的數點他們.md
+- name: 利未眾子的名字是革順、哥轄、米拉利
+  suggested_type: 人物
+  evidence: 民3:17 利未眾子的名字是革順、哥轄、米拉利。利未三子為三族始祖。
+  surfaces:
+  - phrase: 利未眾子的名字是革順、哥轄、米拉利
+  - phrase: 革順、哥轄、米拉利
+  - phrase: 利未眾子
+  target_path: link_folder/人物/利未眾子的名字是革順、哥轄、米拉利.md
+- name: 革順的兒子
+  suggested_type: 人物
+  evidence: 民3:18 革順的兒子，按著家室，是立尼、示每。革順二子為族長。
+  surfaces:
+  - phrase: 革順的兒子
+  - phrase: 革順的兒子，按著家室
+  - phrase: 立尼、示每
+  target_path: link_folder/人物/革順的兒子.md
+- name: 哥轄的兒子
+  suggested_type: 人物
+  evidence: 民3:19 哥轄的兒子，按著家室，是暗蘭、以斯哈、希伯倫、烏薛。哥轄四子為族長。
+  surfaces:
+  - phrase: 哥轄的兒子
+  - phrase: 哥轄的兒子，按著家室
+  - phrase: 暗蘭、以斯哈、希伯倫、烏薛
+  target_path: link_folder/人物/哥轄的兒子.md
+- name: 米拉利的兒子
+  suggested_type: 人物
+  evidence: 民3:20 米拉利的兒子，按著家室，是抹利、母示。米拉利二子為族長。
+  surfaces:
+  - phrase: 米拉利的兒子
+  - phrase: 米拉利的兒子，按著家室
+  - phrase: 抹利、母示
+  target_path: link_folder/人物/米拉利的兒子.md
+- name: 這些按著宗族是利未人的家室
+  suggested_type: 主題
+  evidence: 民3:20 這些按著宗族是利未人的家室。宗族家室建立利未人組織架構。
+  surfaces:
+  - phrase: 這些按著宗族是利未人的家室
+  - phrase: 按著宗族是利未人的家室
+  - phrase: 利未人的家室
+  target_path: link_folder/主題/這些按著宗族是利未人的家室.md
+- name: 屬革順的
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。這是革順的二族。革順二族為族長。
+  surfaces:
+  - phrase: 屬革順的
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/屬革順的.md
+- name: 立尼族
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。立尼族為革順長子族系。
+  surfaces:
+  - phrase: 立尼族
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/立尼族.md
+- name: 示每族
+  suggested_type: 人物
+  evidence: 民3:21 屬革順的，有立尼族、示每族。示每族為革順次子族系。
+  surfaces:
+  - phrase: 示每族
+  - phrase: 立尼族、示每族
+  - phrase: 革順的二族
+  target_path: link_folder/人物/示每族.md
+- name: 其中被數、從一個月以外所有的男子共有七千五百名
+  suggested_type: 主題
+  evidence: 民3:22 其中被數、從一個月以外所有的男子共有七千五百名。革順族人數7500。
+  surfaces:
+  - phrase: 其中被數、從一個月以外所有的男子共有七千五百名
+  - phrase: 七千五百名
+  - phrase: 一個月以外所有的男子
+  target_path: link_folder/主題/其中被數、從一個月以外所有的男子共有七千五百名.md
+- name: 這革順的二族要在帳幕後西邊安營
+  suggested_type: 主題
+  evidence: 民3:23 這革順的二族要在帳幕後西邊安營。革順族安營西邊，看守帳幕布幔。
+  surfaces:
+  - phrase: 這革順的二族要在帳幕後西邊安營
+  - phrase: 在帳幕後西邊安營
+  - phrase: 帳幕後西邊
+  target_path: link_folder/主題/這革順的二族要在帳幕後西邊安營.md
+- name: 拉伊勒的兒子以利雅薩作革順人宗族的首領
+  suggested_type: 人物
+  evidence: 民3:24 拉伊勒的兒子以利雅薩作革順人宗族的首領。以利雅薩為革順族長。
+  surfaces:
+  - phrase: 拉伊勒的兒子以利雅薩作革順人宗族的首領
+  - phrase: 拉伊勒的兒子以利雅薩
+  - phrase: 革順人宗族的首領
+  target_path: link_folder/人物/拉伊勒的兒子以利雅薩作革順人宗族的首領.md
+- name: 革順的子孫在會幕中所要看守的
+  suggested_type: 主題
+  evidence: 民3:25,26 革順的子孫在會幕中所要看守的，就是帳幕和罩棚，並罩棚的蓋與會幕的門簾，院子的帷子和門簾...並一切使用的繩子。革順族看守帳幕布幔繩索。
+  surfaces:
+  - phrase: 革順的子孫在會幕中所要看守的
+  - phrase: 帳幕和罩棚
+  - phrase: 罩棚的蓋
+  - phrase: 會幕的門簾
+  - phrase: 院子的帷子
+  - phrase: 門簾
+  - phrase: 繩子
+  target_path: link_folder/主題/革順的子孫在會幕中所要看守的.md
+- name: 屬哥轄的
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。這是哥轄的諸族。哥轄四族為族長。
+  surfaces:
+  - phrase: 屬哥轄的
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/屬哥轄的.md
+- name: 暗蘭族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。暗蘭族為哥轄長子族系。
+  surfaces:
+  - phrase: 暗蘭族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/暗蘭族.md
+- name: 以斯哈族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。以斯哈族為哥轄次子族系。
+  surfaces:
+  - phrase: 以斯哈族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/以斯哈族.md
+- name: 希伯倫族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。希伯倫族為哥轄三子族系。
+  surfaces:
+  - phrase: 希伯倫族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/希伯倫族.md
+- name: 烏薛族
+  suggested_type: 人物
+  evidence: 民3:27 屬哥轄的，有暗蘭族、以斯哈族、希伯倫族、烏薛族。烏薛族為哥轄四子族系。
+  surfaces:
+  - phrase: 烏薛族
+  - phrase: 暗蘭族、以斯哈族、希伯倫族、烏薛族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/人物/烏薛族.md
+- name: 這是哥轄的諸族
+  suggested_type: 主題
+  evidence: 民3:27 這是哥轄的諸族。哥轄四族總稱。
+  surfaces:
+  - phrase: 這是哥轄的諸族
+  - phrase: 哥轄的諸族
+  target_path: link_folder/主題/這是哥轄的諸族.md
+- name: 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名
+  suggested_type: 主題
+  evidence: 民3:28 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名。哥轄族人數8600，看守聖所核心器具。
+  surfaces:
+  - phrase: 按所有男子的數目，從一個月以外看守聖所的，共有八千六百名
+  - phrase: 八千六百名
+  - phrase: 一個月以外看守聖所的
+  target_path: link_folder/主題/按所有男子的數目，從一個月以外看守聖所的，共有八千六百名.md
+- name: 哥轄兒子的諸族要在帳幕的南邊安營
+  suggested_type: 主題
+  evidence: 民3:29 哥轄兒子的諸族要在帳幕的南邊安營。哥轄族安營南邊，看守聖所核心器具。
+  surfaces:
+  - phrase: 哥轄兒子的諸族要在帳幕的南邊安營
+  - phrase: 在帳幕的南邊安營
+  - phrase: 帳幕的南邊
+  target_path: link_folder/主題/哥轄兒子的諸族要在帳幕的南邊安營.md
+- name: 烏薛的兒子以利撒反作哥轄宗族家室的首領
+  suggested_type: 人物
+  evidence: 民3:30 烏薛的兒子以利撒反作哥轄宗族家室的首領。以利撒反為哥轄族長。
+  surfaces:
+  - phrase: 烏薛的兒子以利撒反作哥轄宗族家室的首領
+  - phrase: 烏薛的兒子以利撒反
+  - phrase: 哥轄宗族家室的首領
+  target_path: link_folder/人物/烏薛的兒子以利撒反作哥轄宗族家室的首領.md
+- name: 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物
+  suggested_type: 主題
+  evidence: 民3:31 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物。哥轄族看守聖所核心聖物。
+  surfaces:
+  - phrase: 他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物
+  - phrase: 約櫃
+  - phrase: 桌子
+  - phrase: 燈臺
+  - phrase: 兩座壇
+  - phrase: 聖所內使用的器皿
+  - phrase: 簾子
+  target_path: link_folder/主題/他們所要看守的是約櫃、桌子、燈臺、兩座壇與聖所內使用的器皿，並簾子和一切使用之物.md
+- name: 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖
+  suggested_type: 人物
+  evidence: 民3:32 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖，要監察那些看守聖所的人。以利亞撒為利未人總領袖。
+  surfaces:
+  - phrase: 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖
+  - phrase: 祭司亞倫的兒子以利亞撒
+  - phrase: 利未人眾首領的領袖
+  - phrase: 監察那些看守聖所的人
+  target_path: link_folder/人物/祭司亞倫的兒子以利亞撒作利未人眾首領的領袖.md
+- name: 要監察那些看守聖所的人
+  suggested_type: 主題
+  evidence: 民3:32 要監察那些看守聖所的人。以利亞撒監察利未人看守聖所。
+  surfaces:
+  - phrase: 要監察那些看守聖所的人
+  - phrase: 監察那些看守聖所的人
+  - phrase: 監察那些看守聖所的
+  target_path: link_folder/主題/要監察那些看守聖所的人.md
+- name: 屬米拉利的
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。這是米拉利的二族。米拉利二族為族長。
+  surfaces:
+  - phrase: 屬米拉利的
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/屬米拉利的.md
+- name: 抹利族
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。抹利族為米拉利長子族系。
+  surfaces:
+  - phrase: 抹利族
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/抹利族.md
+- name: 母示族
+  suggested_type: 人物
+  evidence: 民3:33 屬米拉利的，有抹利族、母示族。母示族為米拉利次子族系。
+  surfaces:
+  - phrase: 母示族
+  - phrase: 抹利族、母示族
+  - phrase: 米拉利的二族
+  target_path: link_folder/人物/母示族.md
+- name: 這是米拉利的二族
+  suggested_type: 主題
+  evidence: 民3:33 這是米拉利的二族。米拉利二族總稱。
+  surfaces:
+  - phrase: 這是米拉利的二族
+  - phrase: 米拉利的二族
+  target_path: link_folder/主題/這是米拉利的二族.md
+- name: 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名
+  suggested_type: 主題
+  evidence: 民3:34 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名。米拉利族人數6200。
+  surfaces:
+  - phrase: 他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名
+  - phrase: 六千二百名
+  - phrase: 一個月以外的
+  target_path: link_folder/主題/他們被數的，按所有男子的數目，從一個月以外的，共有六千二百名.md
+- name: 亞比亥的兒子蘇列作米拉利二宗族的首領
+  suggested_type: 人物
+  evidence: 民3:35 亞比亥的兒子蘇列作米拉利二宗族的首領。蘇列為米拉利族長。
+  surfaces:
+  - phrase: 亞比亥的兒子蘇列作米拉利二宗族的首領
+  - phrase: 亞比亥的兒子蘇列
+  - phrase: 米拉利二宗族的首領
+  target_path: link_folder/人物/亞比亥的兒子蘇列作米拉利二宗族的首領.md
+- name: 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具
+  suggested_type: 主題
+  evidence: 民3:36,37 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具，院子四圍的柱子、帶卯的座、橛子，和繩子。米拉利族看守帳幕結構骨架。
+  surfaces:
+  - phrase: 米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具
+  - phrase: 帳幕的板
+  - phrase: 閂
+  - phrase: 柱子
+  - phrase: 帶卯的座
+  - phrase: 帳幕一切所使用的器具
+  - phrase: 院子四圍的柱子
+  - phrase: 帶卯的座
+  - phrase: 橛子
+  - phrase: 繩子
+  target_path: link_folder/主題/米拉利子孫的職分是看守帳幕的板、閂、柱子、帶卯的座，和帳幕一切所使用的器具.md
+- name: 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子
+  suggested_type: 主題
+  evidence: 民3:38 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子。他們看守聖所，替以色列人守耶和華所吩咐的。近前來的外人必被治死。摩西亞倫安營東邊，守衛聖所入口。
+  surfaces:
+  - phrase: 在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子
+  - phrase: 在帳幕前東邊
+  - phrase: 向日出之地安營
+  - phrase: 摩西、亞倫，和亞倫的兒子
+  - phrase: 看守聖所
+  - phrase: 近前來的外人必被治死
+  target_path: link_folder/主題/在帳幕前東邊，向日出之地安營的是摩西、亞倫，和亞倫的兒子.md
+- name: 他們看守聖所，替以色列人守耶和華所吩咐的
+  suggested_type: 主題
+  evidence: 民3:38 他們看守聖所，替以色列人守耶和華所吩咐的。摩西亞倫守衛聖所，代百姓守神命。
+  surfaces:
+  - phrase: 他們看守聖所，替以色列人守耶和華所吩咐的
+  - phrase: 看守聖所
+  - phrase: 替以色列人守
+  - phrase: 耶和華所吩咐的
+  target_path: link_folder/主題/他們看守聖所，替以色列人守耶和華所吩咐的.md
+- name: 近前來的外人必被治死
+  suggested_type: 主題
+  evidence: 民3:38 近前來的外人必被治死。非祭司擅入聖所必死。
+  surfaces:
+  - phrase: 近前來的外人必被治死
+  - phrase: 外人必被治死
+  - phrase: 外人
+  target_path: link_folder/主題/近前來的外人必被治死.md
+- name: 凡被數的利未人
+  suggested_type: 主題
+  evidence: 民3:39 凡被數的利未人，就是摩西、亞倫照耶和華吩咐所數的，按著家室，從一個月以外的男子，共有二萬二千名。利未人總數22000。
+  surfaces:
+  - phrase: 凡被數的利未人
+  - phrase: 共有二萬二千名
+  - phrase: 一個月以外的男子
+  - phrase: 二萬二千名
+  target_path: link_folder/主題/凡被數的利未人.md
+- name: 就是摩西、亞倫照耶和華吩咐所數的
+  suggested_type: 事件
+  evidence: 民3:39 凡被數的利未人，就是摩西、亞倫照耶和華吩咐所數的。摩西亞倫順服執行神命。
+  surfaces:
+  - phrase: 就是摩西、亞倫照耶和華吩咐所數的
+  - phrase: 摩西、亞倫照耶和華吩咐所數的
+  - phrase: 照耶和華吩咐所數的
+  target_path: link_folder/事件/就是摩西、亞倫照耶和華吩咐所數的.md
+- name: 按著家室
+  suggested_type: 主題
+  evidence: 民3:39 按著家室，從一個月以外的男子，共有二萬二千名。按家室數點建立家譜。
+  surfaces:
+  - phrase: 按著家室
+  - phrase: 按著家室
+  - phrase: 家室
+  target_path: link_folder/主題/按著家室.md
+- name: 從一個月以外的男子
+  suggested_type: 主題
+  evidence: 民3:39 從一個月以外的男子，共有二萬二千名。利未人從一個月數起。
+  surfaces:
+  - phrase: 從一個月以外的男子
+  - phrase: 一個月以外的男子
+  - phrase: 一個月以外
+  target_path: link_folder/主題/從一個月以外的男子.md
+- name: 共有二萬二千名
+  suggested_type: 主題
+  evidence: 民3:39 共有二萬二千名。利未人總數22000。
+  surfaces:
+  - phrase: 共有二萬二千名
+  - phrase: 二萬二千名
+  - phrase: 總數
+  target_path: link_folder/主題/共有二萬二千名.md
+- name: 耶和華對摩西說
+  suggested_type: 主題
+  evidence: 民3:40,44 耶和華對摩西說...耶和華對摩西說。神直接向摩西啟示。
+  surfaces:
+  - phrase: 耶和華對摩西說
+  - phrase: 耶和華對摩西說
+  - phrase: 對摩西說
+  target_path: link_folder/主題/耶和華對摩西說.md
+- name: 你要從以色列人中數點一個月以外、凡頭生的男子
+  suggested_type: 主題
+  evidence: 民3:40 你要從以色列人中數點一個月以外、凡頭生的男子，把他們的名字記下。頭生男子單獨數點，與利未人比較。
+  surfaces:
+  - phrase: 你要從以色列人中數點一個月以外、凡頭生的男子
+  - phrase: 從以色列人中數點
+  - phrase: 一個月以外、凡頭生的男子
+  - phrase: 把他們的名字記下
+  target_path: link_folder/主題/你要從以色列人中數點一個月以外、凡頭生的男子.md
+- name: 把他們的名字記下
+  suggested_type: 主題
+  evidence: 民3:40 把他們的名字記下。記名建立家譜，確立身分。
+  surfaces:
+  - phrase: 把他們的名字記下
+  - phrase: 名字記下
+  - phrase: 記下
+  target_path: link_folder/主題/把他們的名字記下.md
+- name: 你要揀選利未人歸我
+  suggested_type: 神學
+  evidence: 民3:41 你要揀選利未人歸我，代替以色列人所有頭生的，也取利未人的牲畜代替以色列人的牲畜。利未人完全歸神。
+  surfaces:
+  - phrase: 你要揀選利未人歸我
+  - phrase: 揀選利未人歸我
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 取利未人的牲畜代替
+  target_path: link_folder/神學/你要揀選利未人歸我.md
+- name: 代替以色列人所有頭生的
+  suggested_type: 神學
+  evidence: 民3:41,45 代替以色列人所有頭生的...利未人代替以色列人所有頭生的。利未人完全代替長子。
+  surfaces:
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 代替以色列人所有頭生的
+  - phrase: 利未人代替
+  target_path: link_folder/神學/代替以色列人所有頭生的.md
+- name: 也取利未人的牲畜代替以色列人的牲畜
+  suggested_type: 神學
+  evidence: 民3:41 也取利未人的牲畜代替以色列人的牲畜。牲畜也同樣代替原則。
+  surfaces:
+  - phrase: 取利未人的牲畜代替以色列人的牲畜
+  - phrase: 利未人的牲畜
+  - phrase: 以色列人的牲畜
+  - phrase: 代替以色列人的牲畜
+  target_path: link_folder/神學/也取利未人的牲畜代替以色列人的牲畜.md
+- name: 利未人歸我
+  suggested_type: 神學
+  evidence: 民3:41,45 利未人歸我...利未人歸我。利未人完全歸神。
+  surfaces:
+  - phrase: 利未人歸我
+  - phrase: 利未人歸我
+  - phrase: 歸我
+  target_path: link_folder/神學/利未人歸我.md
+- name: 以色列人中頭生的男子比利未人多二百七十三個
+  suggested_type: 主題
+  evidence: 民3:46 以色列人中頭生的男子比利未人多二百七十三個。頭生男子超過利未人273。
+  surfaces:
+  - phrase: 以色列人中頭生的男子比利未人多二百七十三個
+  - phrase: 比利未人多二百七十三個
+  - phrase: 多二百七十三個
+  target_path: link_folder/主題/以色列人中頭生的男子比利未人多二百七十三個.md
+- name: 必當將他們贖出來
+  suggested_type: 主題
+  evidence: 民3:46 必當將他們贖出來。超額頭生男子須贖回。
+  surfaces:
+  - phrase: 必當將他們贖出來
+  - phrase: 贖出來
+  - phrase: 贖回
+  target_path: link_folder/主題/必當將他們贖出來.md
+- name: 你要按人丁，照聖所的平，每人取贖銀五舍客勒
+  suggested_type: 主題
+  evidence: 民3:47 你要按人丁，照聖所的平，每人取贖銀五舍客勒（一舍客勒是二十季拉）。贖銀標準：聖所平，5舍客勒/人。
+  surfaces:
+  - phrase: 你要按人丁，照聖所的平，每人取贖銀五舍客勒
+  - phrase: 按人丁
+  - phrase: 照聖所的平
+  - phrase: 每人取贖銀五舍客勒
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  target_path: link_folder/主題/你要按人丁，照聖所的平，每人取贖銀五舍客勒.md
+- name: 一舍客勒是二十季拉
+  suggested_type: 原文
+  evidence: 民3:47 一舍客勒是二十季拉。季拉為最小貨幣單位。
+  surfaces:
+  - phrase: 一舍客勒是二十季拉
+  - phrase: 二十季拉
+  - phrase: 一舍客勒
+  - phrase: 季拉
+  target_path: link_folder/原文/一舍客勒是二十季拉.md
+- name: 把那多餘之人的贖銀交給亞倫和他的兒子
+  suggested_type: 主題
+  evidence: 民3:48 把那多餘之人的贖銀交給亞倫和他的兒子。贖銀歸祭司。
+  surfaces:
+  - phrase: 把那多餘之人的贖銀交給亞倫和他的兒子
+  - phrase: 多餘之人的贖銀
+  - phrase: 交給亞倫和他的兒子
+  - phrase: 贖銀交給亞倫
+  target_path: link_folder/主題/把那多餘之人的贖銀交給亞倫和他的兒子.md
+- name: 於是摩西從那被利未人所贖以外的人取了贖銀
+  suggested_type: 事件
+  evidence: 民3:49 於是摩西從那被利未人所贖以外的人取了贖銀。摩西收取超額頭生男子贖銀。
+  surfaces:
+  - phrase: 於是摩西從那被利未人所贖以外的人取了贖銀
+  - phrase: 摩西從那被利未人所贖以外的人取了贖銀
+  - phrase: 取了贖銀
+  target_path: link_folder/事件/於是摩西從那被利未人所贖以外的人取了贖銀.md
+- name: 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒
+  suggested_type: 主題
+  evidence: 民3:50 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒。贖銀總額1365舍客勒。
+  surfaces:
+  - phrase: 從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒
+  - phrase: 一千三百六十五舍客勒
+  - phrase: 聖所的平
+  - phrase: 以色列人頭生的所取之銀
+  target_path: link_folder/主題/從以色列人頭生的所取之銀，按聖所的平，有一千三百六十五舍客勒.md
+- name: 摩西照耶和華的話把這贖銀給亞倫和他的兒子
+  suggested_type: 事件
+  evidence: 民3:51 摩西照耶和華的話把這贖銀給亞倫和他的兒子，正如耶和華所吩咐的。摩西順服分發贖銀。
+  surfaces:
+  - phrase: 摩西照耶和華的話把這贖銀給亞倫和他的兒子
+  - phrase: 摩西照耶和華的話
+  - phrase: 把這贖銀給亞倫和他的兒子
+  - phrase: 正如耶和華所吩咐的
+  target_path: link_folder/事件/摩西照耶和華的話把這贖銀給亞倫和他的兒子.md
+- name: 正如耶和華所吩咐的
+  suggested_type: 主題
+  evidence: 民3:51 正如耶和華所吩咐的。完全順服。
+  surfaces:
+  - phrase: 正如耶和華所吩咐的
+  - phrase: 正如耶和華所吩咐的
+  - phrase: 所吩咐的
+  target_path: link_folder/主題/正如耶和華所吩咐的.md
+D_new_candidate:
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民3:7,8,23,25,26,29,31,32,36,38 在會幕前...在會幕中...在帳幕後西邊...在會幕中...帳幕的南邊...在會幕中...在帳幕前東邊。會幕為神與人相會之所。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 會幕前
+  - phrase: 會幕中
+  - phrase: 帳幕
+  - phrase: 會幕的南邊
+  - phrase: 帳幕後西邊
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 耶和華曉諭摩西
+  suggested_type: 主題
+  evidence: 民3:1,5,11,14,40,44 耶和華曉諭摩西說...耶和華曉諭摩西說...耶和華在西乃的曠野曉諭摩西說...耶和華對摩西說。神直接向摩西啟示旨意。
+  surfaces:
+  - phrase: 耶和華曉諭摩西
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 耶和華對摩西說
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=事件，secondary=[]
+- name: 承接聖職
+  suggested_type: 主題
+  evidence: 民3:3 是摩西叫他們承接聖職供祭司職分的。承接聖職為神所命，非人自取。
+  surfaces:
+  - phrase: 承接聖職
+  - phrase: 供祭司職分
+  - phrase: 摩西叫他們
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 凡火
+  suggested_type: 主題
+  evidence: 民3:4 拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。凡火為未奉神命之火，預表人意事奉。
+  surfaces:
+  - phrase: 凡火
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 死在耶和華面前
+  suggested_type: 主題
+  evidence: 民3:4 拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。違背神命事奉的嚴重後果。
+  surfaces:
+  - phrase: 死在耶和華面前
+  - phrase: 死在耶和華面前了
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['事件']
+- name: 承接聖職
+  suggested_type: 主題
+  evidence: 民3:3 是摩西叫他們承接聖職供祭司職分的。承接聖職為神所命，非人自取。
+  surfaces:
+  - phrase: 承接聖職
+  - phrase: 承接聖職供祭司職分
+  - phrase: 摩西叫他們
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 凡火
+  suggested_type: 主題
+  evidence: 民3:4 拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。凡火為未奉神命之火，預表人意事奉。
+  surfaces:
+  - phrase: 凡火
+  - phrase: 獻凡火
+  - phrase: 死在耶和華面前
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 死在耶和華面前
+  suggested_type: 主題
+  evidence: 民3:4 拿答、亞比戶在西乃的曠野向耶和華獻凡火的時候就死在耶和華面前了。違背神命事奉的嚴重後果。
+  surfaces:
+  - phrase: 死在耶和華面前
+  - phrase: 死在耶和華面前了
+  - phrase: 死在耶和華面前了
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['事件']
+E_skip: []

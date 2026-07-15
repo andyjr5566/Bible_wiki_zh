@@ -1,0 +1,34 @@
+name: 摩西、亞倫、會眾首領照耶和華吩咐數點
+type: 事件
+secondary_types: []
+aliases:
+- 首領參與數點利未人
+status: formal
+definition: 民數記 4:34, 37, 41, 45 記載摩西、亞倫與會眾首領共同執行利未人三族（哥轄、革順、米拉利）的人口普查，遵照耶和華吩咐。
+development: 本章四次重複此公式化敘述，強調權威來源（耶和華）與執行主體（摩西、亞倫、首領）的合一。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 哥轄（v.34,37）、革順（v.38,41）、米拉利（v.42,45）三族數點均由摩西、亞倫、會眾首領照耶和華吩咐執行。
+  relation: 利未人普查的權威基礎與執行機制。
+related_entries:
+- 摩西
+- 亞倫
+- 會眾首領
+- 耶和華吩咐
+- 數點
+- 哥轄子孫被數
+- 革順子孫被數
+- 米拉利子孫被數
+- 利未人服事總人數統計
+sources:
+- 'BH: Numbers 4 — 利未人普查執行者（https://biblehub.com/numbers/4.htm）'
+created_from: numbers_4
+category: 事件
+trigger_sources:
+- 民數記 4:34
+- 民數記 4:37
+- 民數記 4:41
+- 民數記 4:45
+current_data: {}
+pending: false

@@ -1,0 +1,28 @@
+name: 季拉（gerah）
+type: 原文
+secondary_types: []
+aliases:
+- 基拉
+status: formal
+definition: 希伯來文「גרה」，最小貨幣單位，一舍客勒等於二十季拉（民 3:47）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 經文說明一舍客勒為二十季拉，作為贖銀換算依據。
+  relation: 提供贖銀計算的最小單位換算。
+related_entries:
+- 季拉
+- 聖所的平
+- 贖銀
+- 舍客勒
+sources:
+- '註解: 民數記 3 章 47 節（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記 3 章 47 節（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: 民數記 3 章 47 節（https://www.kingcomments.com/en/bible-studies/Num/3）'
+- '研讀: 民數記 3 章 47 節（https://biblehub.com/study/numbers/3.htm）'
+created_from: manual
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

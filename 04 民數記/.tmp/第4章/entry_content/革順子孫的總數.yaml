@@ -1,0 +1,31 @@
+name: 革順子孫的總數
+type: 主題
+secondary_types: []
+aliases:
+- 革順族總數
+status: formal
+definition: 見民數記 4:22, 38-41，指革順族按宗族、家室，從三十歲到五十歲凡前來任職在會幕辦事的男丁總數。經文記載被數的共有二千六百三十名（4:40）。
+development: 此數點屬於神命定的利未人服事普查之一環，確認革順族承擔會幕幔帳搬運任務的可用人力。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 革順子孫被數的，照著家室、宗族，從三十歲直到五十歲，凡前來任職在會幕裡辦事的，共有二千六百三十名。
+  relation: 本章記載革順族普查結果與人數統計。
+related_entries:
+- 革順
+- 數點
+- 宗族、家室
+- 三十歲到五十歲
+- 任職
+- 辦事
+- 革順子孫被數
+- 二千六百三十名
+- 摩西、亞倫、會眾首領照耶和華吩咐數點
+sources:
+- 'BH: Numbers 4:22,38-41 — 革順子孫的總數與普查結果（https://biblehub.com/numbers/4.htm）'
+created_from: numbers_4
+category: 主題
+trigger_sources:
+- numbers_4
+current_data: true
+pending: false

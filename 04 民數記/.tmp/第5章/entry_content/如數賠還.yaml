@@ -1,0 +1,27 @@
+name: 如數賠還
+type: 主題
+secondary_types: []
+aliases:
+- 全數賠償
+- 照數賠還
+status: formal
+definition: 犯罪虧負人時，須歸還原本虧負的金額。本章第 7 節規定「將所虧負人的，如數賠還」，為賠償條例的核心原則。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 犯罪者須承認罪，將虧負金額如數歸還受害人。
+  relation: 構成犯罪認罪賠償條例的基礎步驟，後接加上五分之一。
+related_entries:
+- 犯罪認罪賠償條例
+- 承認所犯的罪
+- 所虧負人的
+- 加上五分之一
+- 無親屬歸祭司
+- 贖罪
+sources:
+- '本章: 民數記 5 章（本章無來源 URL）'
+created_from: numbers_5
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,37 @@
+name: 無論男女
+type: 主題
+secondary_types: []
+aliases:
+- 男女皆同
+- 不分性別
+status: formal
+definition: 重複出現於本章兩大法條：一、驅逐不潔淨者出營（v.3）；二、犯罪認罪賠償條例（v.6）。強調神的律法在儀式潔淨與道德責任上，男女同負同受，無性別特權。
+development: v.3 針對儀式不潔（痲瘋、漏症、死屍），v.6 針對道德過犯（干犯耶和華）。前後呼應，顯示營地聖潔要求涵蓋身體與靈魂兩層面，且男女平等承擔責任。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: v.3 驅逐不潔淨者「無論男女」；v.6 犯罪認罪「無論男女」。
+  relation: 本章法律對象的普遍性宣告，奠定後續條例適用範圍。
+related_entries:
+- 以色列
+- 營外
+- 長大痲瘋
+- 因死屍不潔淨
+- 患漏症
+- 免得污穢
+- 這營是我所住的
+- 犯罪認罪賠償條例
+- 人所常犯的罪
+- 那人就有了罪
+- 承認所犯的罪
+- 如數賠還
+- 加上五分之一
+- 曉諭
+sources:
+- '本章經文: 民數記 5:3, 6（男女同受律法約束）'
+created_from: 民數記第5章研經整理
+category: 主題
+trigger_sources:
+- 民數記 5:3, 6
+current_data: {}
+pending: false

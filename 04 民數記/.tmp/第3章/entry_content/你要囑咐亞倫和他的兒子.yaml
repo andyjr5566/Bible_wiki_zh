@@ -1,0 +1,32 @@
+name: 你要囑咐亞倫和他的兒子
+type: 主題
+secondary_types: []
+aliases:
+- 囑咐亞倫家族
+status: formal
+definition: 此語出自民數記3:10，耶和華命摩西囑咐亞倫和他的兒子謹守自己祭司的職任，並警告近前來的外人必被治死。這強調祭司職分的專屬性與聖潔界限，只有亞倫家族被膏立者才能承接聖職，違者死罪。
+development: 此命令緊接利未人歸給亞倫之後，確立祭司權柄的排他性，並為後世祭司職分的傳承與界限立下法則。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 耶和華吩咐摩西囑咐亞倫和他的兒子謹守祭司職任，外人近前必被治死（3:10）。
+  relation: 本章將祭司職任的守護責任明確化，與利未人輔助服事形成「祭司主導、利未人協助」的雙層架構。
+related_entries:
+- 亞倫
+- 亞倫的兒子
+- 囑咐亞倫和他的兒子
+- 祭司的職任
+- 近前來的外人必被治死
+- 受膏的祭司
+- 供祭司職分
+sources:
+- '註解: 民數記3章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記3章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: King Comments on Numbers 3（https://www.kingcomments.com/en/bible-studies/Num/3）'
+- '研讀: Bible Hub Numbers 3 Study（https://biblehub.com/study/numbers/3.htm）'
+created_from: numbers_3_v10
+category: 主題
+trigger_sources:
+- bible_text
+current_data: true
+pending: false

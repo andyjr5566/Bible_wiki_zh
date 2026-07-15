@@ -1,0 +1,27 @@
+name: 旗號
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 經文多處（2、3、10、18、25節）提到各支派「各歸自己的纛下，在本族的旗號那裡」安營，旗號代表支派身分與軍隊編制。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 2
+  summary: 全章反覆強調各支派按旗號安營，構成四面營陣。
+  relation: 旗號是神所設立的秩序象徵，預表教會合一與分工。
+related_entries:
+- 纛
+- 旗號
+- 四面安營條例
+- 纛與旗號
+sources:
+- '註解: 民數記 2 章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT02.htm）'
+- '拾穗: 民數記 2 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT02.htm）'
+- '註解: 民數記 2 章註解（https://www.kingcomments.com/en/bible-studies/Num/2）'
+- '研讀: 民數記 2 章研讀（https://biblehub.com/study/numbers/2.htm）'
+created_from: 民數記 2
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

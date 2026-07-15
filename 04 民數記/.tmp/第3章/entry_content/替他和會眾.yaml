@@ -1,0 +1,30 @@
+name: 替他和會眾
+type: 主題
+secondary_types: []
+aliases:
+- 替亞倫和會眾
+status: formal
+definition: 利未人服事不僅針對亞倫，也替會眾（以色列全會眾）在會幕前守所吩咐的、辦理帳幕的事（民3:7）。體現利未人作中保角色，維繫神與百姓關係。
+development: 此中保服事預表基督作大祭司替信徒代求（來7:25），也預表信徒彼此服事（加5:13）。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 利未人替亞倫和會眾在會幕前守所吩咐的，辦理帳幕的事。
+  relation: 本章闡述利未人服事雙重對象（祭司與會眾）的經文。
+related_entries:
+- 亞倫
+- 以色列
+- 會眾
+- 利未人
+- 在會幕前
+- 守所吩咐的
+- 辦理帳幕的事
+sources:
+- '拾穗: 民數記3章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: KingComments民數記3章（https://www.kingcomments.com/en/bible-studies/Num/3）'
+created_from: Numbers 3
+category: 主題
+trigger_sources:
+- 民3:7
+current_data: true
+pending: false

@@ -1,0 +1,32 @@
+name: 守所吩咐以色列人的
+type: 主題
+secondary_types: []
+aliases:
+- 守所吩咐以色列人的
+status: formal
+definition: 指利未人奉命看守會幕器具，並遵守耶和華透過摩西吩咐以色列人關於帳幕事奉的條例（民3:8）。這體現利未人代以色列人守聖所職分的核心責任。
+development: 此詞語出現於民數記3章8節，屬於利未人職分描述的一部分。強調利未人服事的對象是耶和華的吩咐，而非單純服事亞倫。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 耶和華吩咐摩西使利未支派近前來服事亞倫，替他和會眾在會幕前守所吩咐的，辦理帳幕的事，並看守會幕器具，守所吩咐以色列人的。
+  relation: 本章確立利未人代替以色列人頭生歸耶和華，並負責會幕看守與搬運的職分基礎。
+related_entries:
+- 利未人
+- 亞倫
+- 摩西
+- 會幕
+- 守所吩咐的
+- 辦理帳幕的事
+- 看守會幕的器具
+sources:
+- '註解: 民數記3章8節利未人職分說明（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記3章利未人服事細節（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: 民數記3章利未人職任分工（https://www.kingcomments.com/en/bible-studies/Num/3）'
+- '研讀: 民數記3章經文研讀（https://biblehub.com/study/numbers/3.htm）'
+created_from: Numbers 3:8
+category: 主題
+trigger_sources:
+- Numbers 3:8
+current_data: true
+pending: false

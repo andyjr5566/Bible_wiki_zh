@@ -1,0 +1,27 @@
+name: 站在祭司亞倫面前
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 利未人被吩咐站在祭司亞倫面前，表示隸屬於亞倫祭司權柄下，接受指揮服事（民3:6）。體現祭司與利未人層級關係。
+development: 此站立姿態象徵服事待命，後來利未人分族看守帳幕各部分（民3:23,29,35），皆在祭司監督下。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 利未支派站在祭司亞倫面前好服事他。
+  relation: 本章確立利未人歸屬祭司體系的起始動作。
+related_entries:
+- 亞倫
+- 利未人
+- 近前來
+- 好服事他
+- 祭司亞倫的兒子以利亞撒作利未人眾首領的領袖
+sources:
+- '拾穗: 民數記3章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: KingComments民數記3章（https://www.kingcomments.com/en/bible-studies/Num/3）'
+created_from: Numbers 3
+category: 主題
+trigger_sources:
+- 民3:6
+current_data: true
+pending: false

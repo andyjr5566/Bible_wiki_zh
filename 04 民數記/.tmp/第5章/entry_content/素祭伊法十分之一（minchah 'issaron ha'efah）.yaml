@@ -1,0 +1,35 @@
+name: 素祭伊法十分之一（minchah 'issaron ha'efah）
+type: 原文
+secondary_types: []
+aliases:
+- 伊法十分之一素祭
+- 大麥麵伊法十分之一
+status: formal
+definition: 希伯來文 minchah 'issaron ha'efah（素祭、十分之一、伊法）。民數記5:15規定丈夫為妻帶來的供物：「大麥麵伊法十分之一」。伊法約
+  22 公升，十分之一約 2.2 公升。獨特規定：不可澆油、不可加乳香（v.15），因為是「疑恨的素祭、思念的素祭，使人思念罪孽」（v.15）。此素祭後由祭司搖祭、取一把燒壇為紀念（v.25-26）。
+development: 本章唯一指定用大麥（非細麵）、無油無乳香、稱「疑恨/思念素祭」的特殊素祭，專用於嫉妒條例，象徵審判的嚴肅與罪孽的思念。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 第15節指定丈夫帶「大麥麵伊法十分之一」作疑恨素祭，並禁油禁乳香；第25-26節祭司搖祭、取一把燒壇。
+  relation: 此素祭量度、材質、禁例獨特，專為苦水試驗設計，區別於常規素祭（利未記2章），凸顯「思念罪孽」的神學意義。
+related_entries:
+- 嫉妒素祭
+- 澆上油
+- 加上乳香
+- 大麥麵
+- 無油無乳香
+- 祭司獻素祭
+- 紀念素祭
+- 在耶和華面前獻上
+- 取一把
+- 在壇上燒
+sources:
+- '本章經文: 民數記 5:15,25-26（無 URL）'
+created_from: numbers_5
+category: 原文
+trigger_sources:
+- 民數記 5:15
+- 25-26
+current_data: true
+pending: false

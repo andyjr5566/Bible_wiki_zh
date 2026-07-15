@@ -1,0 +1,27 @@
+name: 親屬
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 指犯罪者賠償對象的法定受領人（民5:8）。經文規定「若沒有親屬可受所賠還的」，賠償款轉歸祭司。此處親屬為賠償債權的繼受者，體現族群互助與產權保障。
+development: 親屬制度確保賠償不致落空，若無親屬則由聖職體系接管，反映以色列社會「親屬救贖」與「聖所經濟」的雙重保障機制。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 犯罪賠償款優先歸親屬；無親屬時歸服事耶和華的祭司。
+  relation: 連結犯罪認罪賠償條例、如數賠還、加上五分之一、無親屬歸祭司、服事耶和華的祭司。
+related_entries:
+- 犯罪認罪賠償條例
+- 如數賠還
+- 加上五分之一
+- 無親屬歸祭司
+- 服事耶和華的祭司
+- 所虧負人的
+sources:
+- 民數記 5:8 — 親屬受賠償的經文規定（本章無來源 URL）
+created_from: Numbers 5
+category: 人物
+trigger_sources:
+- Numbers 5
+current_data: true
+pending: false

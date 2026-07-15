@@ -1,0 +1,26 @@
+name: 你也要將
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 見民數記 4:22，耶和華吩咐摩西「你也要將革順子孫的總數……」，承接前段對哥轄子孫的數點命令，擴展至革順族。此語標示神對利未人各族分別施行普查的連續性。
+development: 此短語作為過渡語句，將神的指示從哥轄族（4:1-20）延伸至革順族（4:22-28），顯示利未人服事秩序的系統性安排。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 耶和華吩咐摩西也要將革順子孫的總數照著宗族、家室數點。
+  relation: 本章神對利未人第二族群發出普查命令的起始語。
+related_entries:
+- 摩西
+- 革順
+- 耶和華曉諭摩西說
+- 數點
+- 宗族、家室
+sources:
+- 'BH: Numbers 4:22 — 你也要將革順子孫的總數（https://biblehub.com/numbers/4.htm）'
+created_from: numbers_4
+category: 主題
+trigger_sources:
+- numbers_4
+current_data: true
+pending: false

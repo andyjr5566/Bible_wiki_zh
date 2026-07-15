@@ -1,0 +1,32 @@
+name: 是摩西、亞倫、和以色列會眾首領數點的
+type: 事件
+secondary_types: []
+aliases:
+- 首領共同數點
+status: formal
+definition: 民數記 4:37, 41, 45 三族統計數字後的同源敘述，確認統計數字出自摩西、亞倫與以色列會眾首領之手。
+development: 與前條「照耶和華吩咐數點」互補，一強調神命，一強調人執行；三族各現一次，形成平行結構。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 哥轄（v.37）、革順（v.41）、米拉利（v.45）被數總數均註明出自摩西、亞倫、會眾首領。
+  relation: 統計數字的見證與歸屬聲明。
+related_entries:
+- 摩西
+- 亞倫
+- 會眾首領
+- 以色列
+- 數點
+- 哥轄子孫被數
+- 革順子孫被數
+- 米拉利子孫被數
+sources:
+- 'BH: Numbers 4 — 統計數字歸屬聲明（https://biblehub.com/numbers/4.htm）'
+created_from: numbers_4
+category: 事件
+trigger_sources:
+- 民數記 4:37
+- 民數記 4:41
+- 民數記 4:45
+current_data: {}
+pending: false

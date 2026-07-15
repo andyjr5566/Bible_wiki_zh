@@ -1,0 +1,31 @@
+name: 祭司獻素祭
+type: 主題
+secondary_types: []
+aliases:
+- 祭司代獻素祭
+- 祭司搖素祭
+status: formal
+definition: 祭司從婦人手中取嫉妒素祭，在耶和華面前搖一搖，拿到壇前，從中取一把作為紀念燒在壇上，然後叫婦人喝苦水（民5:25-26）。祭司作中保執行儀式，將素祭呈獻神前，啟動審判程序。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 祭司執行搖祭、提取紀念素祭焚燒、遞給婦人喝苦水的完整儀式動作。
+  relation: 祭司作為神任命的中介，執行嫉妒條例的關鍵儀式步驟，連結供物與審判。
+related_entries:
+- 祭司
+- 嫉妒素祭
+- 接過來
+- 在耶和華面前獻上
+- 搖一搖
+- 紀念素祭
+- 取一把
+- 在壇上燒
+- 叫婦人喝
+- 曉諭
+sources:
+- '本章經文: 民數記 5:25-26（無URL）'
+created_from: numbers_5
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

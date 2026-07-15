@@ -1,0 +1,24 @@
+name: 一舍客勒是二十季拉（shekel, gerah）
+type: 原文
+secondary_types: []
+aliases: []
+status: formal
+definition: 希伯來文「舍客勒」（shekel）等於二十「季拉」（gerah），本章說明贖銀單位換算（民3:47）。
+development: 此度量衡單位在舊約多處出現，為聖所貨幣制度基礎。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 定義舍客勒與季拉的換算關係。
+  relation: 本條目直接引用本章 47 節括號內的說明。
+related_entries:
+- 舍客勒
+- 季拉
+- 聖所的平
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm'
+- '研讀: https://biblehub.com/study/numbers/3.htm'
+created_from: 民數記 3
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,33 @@
+name: 會幕中
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 「會幕中」指會幕（帳幕）的內部空間，是神與摩西會面、曉諭命令的特定地點。民數記1:1記載「耶和華在西乃的曠野、會幕中曉諭摩西說」，標示神啟示發生的具體空間。
+development: 從出埃及記會幕建成後（出40:34-38），神的榮耀充滿會幕，成為神與摩西對話的固定處所；本章作為民數記首次啟示的地點標記，後續章節（如民7:89、12:4-5）多次重現此場景。
+accumulations:
+- book: 民數記
+  chapter: 1
+  summary: 經文開頭點明耶和華在西乃曠野的會幕中向摩西說話，啟動第一次人口普查。
+  relation: 作為神聖啟示的空間錨點，確立後續律法、指令皆從此處發出的神學意義。
+related_entries:
+- 會幕
+- 法櫃帳幕
+- 帳幕
+- 支搭帳棚
+- 會幕四圍安營條例
+- 守法櫃帳幕
+- 安營
+- 纛
+- 西乃的曠野
+sources:
+- '註解: 民數記1:1會幕中啟示背景（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm）'
+- '拾穗: 會幕作為神人會面之所（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT01.htm）'
+- '註解: KingComments on Numbers 1（https://www.kingcomments.com/en/bible-studies/Num/1）'
+- '研讀: BibleHub Numbers 1 Study（https://biblehub.com/study/numbers/1.htm）'
+created_from: Numbers 1:1
+category: 地點
+trigger_sources:
+- 民數記第1章
+current_data: {}
+pending: false

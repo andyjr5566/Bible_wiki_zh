@@ -1,0 +1,33 @@
+name: 火鑵（machtah）
+type: 原文
+secondary_types: []
+aliases:
+- 火鼎
+- 香爐
+- 火盤
+status: formal
+definition: 希伯來文 machtah（מַחְתָּה），指用於盛火、炭或香的火鼎/火鑵。民數記 4:14 列在銅壇器具中：「所用的一切器具，就是火鼎、肉鍤子、鏟子、盤子，一切屬壇的器具」。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 銅壇遮蓋前，需將火鼎等器具擺在壇上，再蒙上海狗皮、穿上杠。
+  relation: 屬銅壇器具，由哥轄子孫抬運，屬至聖之物範疇。
+related_entries:
+- 銅壇（燔祭壇）
+- 銅壇遮蓋
+- 哥轄
+- 哥轄子孫搬運至聖之物
+- 壇的一切器具
+- 叉子
+- 鏟子
+- 盆
+- 亞倫和他兒子包裹聖物
+- 把杠穿上
+sources:
+- 'BH: Numbers 4 — 火鼎/火鑵的經文位置（https://biblehub.com/numbers/4.htm）'
+created_from: Numbers 4
+category: 原文詞彙
+trigger_sources:
+- Numbers 4
+current_data: true
+pending: false

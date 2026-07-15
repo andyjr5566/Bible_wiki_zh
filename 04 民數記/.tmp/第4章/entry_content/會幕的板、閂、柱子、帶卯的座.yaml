@@ -1,0 +1,27 @@
+name: 會幕的板、閂、柱子、帶卯的座
+type: 主題
+secondary_types: []
+aliases:
+- 會幕板柱座
+status: formal
+definition: 指會幕結構的主要組件：板（立板）、閂（橫閂）、柱子（支撐柱）、帶卯的座（帶榫卯結構的銅座）。民數記 4:31 列為米拉利子孫搬運的職任範圍。
+development: 本章僅列舉名稱與歸屬職任，未述製造細節；製造規格見出埃及記 26:15-30、36-37。
+accumulations:
+- book: 民數記
+  chapter: 4
+  summary: 米拉利子孫被派抬會幕的板、閂、柱子、帶卯的座（v.31）。
+  relation: 米拉利族搬運職任的核心內容。
+related_entries:
+- 米拉利
+- 閂（橫閂）
+- 帶卯的銅座（院子柱子座）
+- 會幕的板
+- 米拉利子孫抬會幕板柱
+sources:
+- 'BH: Numbers 4 — 米拉利子孫職任列表（https://biblehub.com/numbers/4.htm）'
+created_from: numbers_4
+category: 主題
+trigger_sources:
+- 民數記 4:31
+current_data: {}
+pending: false

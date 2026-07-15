@@ -1,0 +1,42 @@
+name: 祭司祝福條例
+type: 主題
+secondary_types: []
+aliases:
+- 祭司祝福律例
+- 民數記六章祝福條例
+status: formal
+definition: 民數記6:22-27記載耶和華吩咐摩西告訴亞倫和他兒子：「你們要這樣為以色列人祝福」，並賜下三句祝福詞（三重祝福）。條例結尾強調：「他們要如此奉我的名為以色列人祝福；我也要賜福給他們」。
+development: 此條例確立祭司代表神向百姓宣告祝福的制度，成為以色列敬拜與基督教禮儀的核心祝福依據。
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 耶和華吩咐摩西傳達亞倫及其子孫為以色列人祝福的條例，內容為三重祝福
+  relation: 本章後半段核心主題，確立祭司祝福百姓的制度與詞文
+related_entries:
+- 亞倫祝福
+- 三重祝福
+- 摩西
+- 亞倫
+- 亞倫和他兒子（祭司）
+- 以色列
+- 耶和華對摩西說
+- 你告訴亞倫和他兒子
+- 你們要這樣為以色列人祝福
+- 說
+- 奉我的名
+- 給以色列人祝福
+- 我也要賜福給他們
+- 祝福
+- 賜福
+- 保護
+- 光照
+- 恩待
+- 仰臉
+- 平安
+sources:
+- 'BH: Numbers 6:22-27 — 祭司祝福條例（https://biblehub.com/numbers/6.htm）'
+created_from: 民數記第6章
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

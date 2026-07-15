@@ -1,0 +1,25 @@
+name: 以色列人中頭生的男子比利未人多二百七十三個
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 經文指出頭生男子總數超過利未人 273 人（民3:46），因此需以贖銀補足差額。
+development: 此差額直接引出每人五舍客勒的贖價規定。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 比較頭生男子與利未人數目，得出 273 人差額。
+  relation: 本條目對應本章 46 節的比較數據。
+related_entries:
+- 頭生
+- 利未人
+- 贖銀
+- 聖所的平
+sources:
+- '註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm'
+- '研讀: https://biblehub.com/study/numbers/3.htm'
+created_from: 民數記 3
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

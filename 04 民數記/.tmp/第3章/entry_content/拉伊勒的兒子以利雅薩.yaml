@@ -1,0 +1,25 @@
+name: 拉伊勒的兒子以利雅薩
+type: 人物
+secondary_types: []
+aliases:
+- 以利雅薩
+status: formal
+definition: 拉伊勒的兒子，作革順人宗族的首領，負責帶領革順家族在會幕西邊安營與看守帳幕罩棚等器物。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 記載以利雅薩為革順族首領（3:24）。
+  relation: 本章利未家族領導結構的一環。
+related_entries:
+- 革順
+- 拉伊勒
+- 利未三族分工
+- 這革順的二族要在帳幕後西邊安營
+sources:
+- '註解: 民數記 3 章革順族首領以利雅薩（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '研讀: Numbers 3 利未族長名單（https://biblehub.com/study/numbers/3.htm）'
+created_from: Numbers 3
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

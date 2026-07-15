@@ -1,0 +1,25 @@
+name: 蘇押（Zuar）
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 以薩迦支派族長拿坦業的父親。民數記第1章記載「蘇押的兒子拿坦業」為以薩迦支派的首領（民1:8）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 1
+  summary: 作為以薩迦支派族長拿坦業的父親被提及。
+  relation: 顯示支派族長的家系背景，屬於十二支派族長名單之一。
+related_entries:
+- 拿坦業（以薩迦族長）
+- 蘇押的兒子拿坦業
+- 十二支派族長名單
+- 族長
+sources:
+- '註解: 民數記第1章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm）'
+- '研讀: 民數記第1章研讀（https://biblehub.com/study/numbers/1.htm）'
+created_from: 民數記第1章
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

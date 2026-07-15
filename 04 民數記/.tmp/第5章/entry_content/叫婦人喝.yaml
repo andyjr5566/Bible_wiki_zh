@@ -1,0 +1,26 @@
+name: 叫婦人喝
+type: 主題
+secondary_types: []
+aliases:
+- 叫婦人喝
+status: formal
+definition: 指祭司命令嫌疑婦人飲下致咒詛的苦水，作為神聖審判儀式的核心環節（民5:24, 26, 27）。水進入腸裡後，若有罪則發生生理變化，若無罪則平安無事。
+accumulations:
+- book: 民數記
+  chapter: 5
+  summary: 祭司叫婦人喝致咒詛的苦水（5:24）；燒素祭後，又叫婦人喝這水（5:26）；喝了以後，水進入裡面變苦，若有罪則肚腹發脹、大腿消瘦（5:27）。
+  relation: 此為苦水試驗的執行點，將神的審判從屬靈領域轉化為可觀察的生理證據。
+related_entries:
+- 致咒詛的苦水
+- 進入腸裡
+- 使肚腹發脹
+- 使大腿消癟
+- 無辜釋放
+- 嫉妒條例
+sources:
+- '本章: 民數記第5章24, 26, 27節（無URL）'
+created_from: Numbers_5
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,35 @@
+name: 凡一個月以外的男子都要數點
+type: 主題
+secondary_types: []
+aliases:
+- 一個月以上男子數點
+- 利未人數點年齡
+status: formal
+definition: 民數記 3:15 耶和華吩咐：「凡一個月以外的男子都要數點。」利未人數點年齡門檻為一個月以上，不同於以色列人軍籍數點（二十歲以上，民 1:3）及利未人事奉數點（三十至五十歲，民
+  4:3）。一個月以上對應贖價條例（利 27:6，一個月至五歲男童估價五舍客勒），也呼應民 3:40-43 數點頭生男子贖價的基準。
+development: 年齡門檻反映利未人「屬神」的身分從出生滿月即確立，不待成年；後民 8:24-26 規定二十五歲進職、五十歲退職，實際事奉有年齡限制。
+accumulations:
+- book: 民數記
+  chapter: 3
+  summary: 利未人數點對象為一個月以上男子，共計二萬二千人（3:39），作為代替頭生者的基數。
+  relation: 本章數點標準，決定利未人總數與頭生者贖價計算基礎。
+related_entries:
+- 你要照利未人的宗族、家室數點他們
+- 利未人數點條例
+- 利未人
+- 頭生
+- 贖銀
+- 聖所的平
+- 季拉
+- 利未人總數與贖銀
+sources:
+- '註解: 民數記 3 章註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT03.htm）'
+- '拾穗: 民數記 3 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT03.htm）'
+- '註解: King Comments on Numbers 3（https://www.kingcomments.com/en/bible-studies/Num/3）'
+- '研讀: Bible Hub Numbers 3 Study（https://biblehub.com/study/numbers/3.htm）'
+created_from: numbers_3
+category: 主題
+trigger_sources:
+- bible_text
+current_data: true
+pending: false
