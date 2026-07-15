@@ -1,0 +1,28 @@
+name: 特別的願
+type: 主題
+secondary_types: []
+aliases:
+- 拿細耳人的願
+- 特別許願
+status: formal
+definition: 民數記 6:2 稱「許了特別的願，就是拿細耳人的願」，指人自願離俗歸耶和華，在離俗期間遵守禁酒、留長髮、不近死屍等條例。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 第二節定義特別的願即拿細耳人的願。
+  relation: 特別的願是本章所有條例的起點，規範了自願離俗歸主的具體內容與期限。
+related_entries:
+- 拿細耳人條例
+- 離俗
+- 拿細耳人禁酒
+- 拿細耳人留長髮
+- 拿細耳人不近死屍
+- 照他所許的願
+sources:
+- 'BH: Numbers 6 — 特別的願定義（https://biblehub.com/numbers/6.htm）'
+created_from: manual
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

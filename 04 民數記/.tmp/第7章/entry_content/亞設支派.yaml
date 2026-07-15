@@ -1,0 +1,22 @@
+name: 亞設支派
+type: 人物
+secondary_types: []
+aliases:
+- 亞設
+status: formal
+definition: 以色列十二支派之一，源於雅各八子亞設。民數記第7章記載其首領俄蘭的兒子帕結在第十日獻供物，供物規格與前諸支派完全一致。
+development: []
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 記載亞設支派首領帕結在第十日獻上奉獻壇之禮的供物。
+  relation: 十二支派依序奉獻的第十日代表。
+related_entries:
+- 帕結（亞設族長）
+- 俄蘭
+- 獻壇禮十二日奉獻
+- 各支派獻供物清單
+- 供物細目
+- 十二支派首領奉獻
+sources:
+- '聖經: 民數記 第7章 72-77節 （本章無來源 URL）'

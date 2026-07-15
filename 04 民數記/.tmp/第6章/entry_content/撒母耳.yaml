@@ -1,0 +1,25 @@
+name: 撒母耳
+type: 人物
+secondary_types: []
+aliases:
+- 撒母耳
+status: formal
+definition: 撒母耳是舊約先知、士師，其母哈拿許願將他終身歸給耶和華作拿細耳人（參撒母耳記上 1:11），這與民數記 6 章所規範的拿細耳人離俗條例相符，屬終身拿細耳人的典型例子。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 本章規定拿細耳人許願離俗的條例，為理解撒母耳終身離俗的背景依據。
+  relation: 提供拿細耳人條例的法律基礎，撒母耳的終身離俗屬此條例的特殊應用。
+related_entries:
+- 拿細耳人條例
+- 終身拿細耳人
+- 離俗
+- 特別的願
+sources:
+- 'BH: Numbers 6 — 拿細耳人條例（https://biblehub.com/numbers/6.htm）'
+created_from: manual
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

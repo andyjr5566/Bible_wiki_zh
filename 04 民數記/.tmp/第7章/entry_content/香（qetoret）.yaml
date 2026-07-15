@@ -1,0 +1,36 @@
+name: 香（qetoret）
+type: 原文
+secondary_types: []
+aliases:
+- 香
+status: formal
+definition: 希伯來文「qetoret」（香），指燒在金壇上的聖香，成分見出埃及記30:34-38。民數記第7章各支派首領獻供物時，每日獻一個金盂（重十舍客勒），盛滿了香（第14、20、26、32、38、44、50、56、62、68、74、80節），總計十二個金盂，金子共一百二十舍客勒（第84-86節）。香象徵聖徒的禱告（詩篇141:2；啟示錄5:8,
+  8:3-4），在會幕中由祭司早晚燒在金壇上（出埃及記30:7-8）。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 十二支派首領各獻一個金盂盛滿香，總重一百二十舍客勒，作為獻壇禮的一部分。
+  relation: 香與素祭（細麵調油）同獻，表達敬拜者禱告與生活同步獻上；十二支派同獻同量，彰顯合一敬拜，神記著行義的人。
+related_entries:
+- 素祭為祭司收入
+- 金杯
+- 聖所平
+- 獻壇禮
+- 供物
+- 十二支派首領奉獻
+- 獻壇禮十二日奉獻
+- 各支派獻供物清單
+- 供物細目
+- 供物總數統計
+- 出埃及記30
+- 詩篇141
+- 啟示錄5
+- 啟示錄8
+- 路加福音1
+sources:
+- 'BH: Numbers 7 — 香於獻壇禮中的獻上與統計（https://biblehub.com/numbers/7.htm）'
+created_from: numbers_7
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

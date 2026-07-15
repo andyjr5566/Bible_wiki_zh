@@ -1,0 +1,33 @@
+name: 乾葡萄（tsimmuqim）
+type: 原文
+secondary_types: []
+aliases:
+- 乾葡萄
+- 葡萄乾
+- 提子
+status: formal
+definition: 希伯來文 tsimmuqim（צִמֻּקִים），指曝乾脫水後的葡萄果實（即葡萄乾）。民數記 6:3 列為拿細耳人禁食之物，與鮮葡萄並列，表明離俗禁忌不因加工形式而解除。
+development: 古代近東以葡萄乾作糧食儲備與祭餅材料（撒上 25:18；30:12），本章將其納入禁忌，凸顯拿細耳人離俗的徹底性。
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 第 3 節與鮮葡萄同列禁食清單。
+  relation: 同屬「葡萄樹上結的」衍生產品，佐證第 4 節「自核至皮」的全面禁令。
+related_entries:
+- 鮮葡萄
+- 葡萄汁
+- 葡萄樹
+- 自核至皮
+- 拿細耳人禁酒
+- 離俗
+- 清酒
+- 濃酒
+- 醋
+sources:
+- 'BH: Numbers 6 — 乾葡萄禁令（https://biblehub.com/numbers/6.htm）'
+created_from: numbers_6
+category: 原文
+trigger_sources:
+- numbers_6
+current_data: {}
+pending: false

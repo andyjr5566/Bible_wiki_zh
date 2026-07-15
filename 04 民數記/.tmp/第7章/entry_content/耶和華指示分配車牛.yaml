@@ -1,0 +1,28 @@
+name: 耶和華指示分配車牛
+type: 主題
+secondary_types: []
+aliases:
+- 神指示分車牛
+- 耶和華吩咐摩西收車牛
+status: formal
+definition: 民數記 7:4-5 記載耶和華曉諭摩西收下首領們的車牛，作會幕之用，並照利未人所辦的事交給他們。神主權確認奉獻合宜，並指定分配原則：按利未各家族服事性質配備資源。
+development: 神的指示將人的自願奉獻納入神聖行政體系，確保資源分配符合聖所事奉實際需要，避免浪費或不公。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 耶和華吩咐摩西收下車牛，按利未人職任分配。
+  relation: 連接首領奉獻與摩西實際分配，確立「按所辦的事」分配資源的原則。
+related_entries:
+- 摩西
+- 利未人
+- 會幕
+- 篷子車
+- 管家職分
+- 合宜配搭
+sources:
+- 'BH: Numbers 7:4-5 — 耶和華指示分配車牛（https://biblehub.com/numbers/7.htm）'
+created_from: 民數記 7
+category: 主題
+trigger_sources: []
+current_data: true
+pending: false

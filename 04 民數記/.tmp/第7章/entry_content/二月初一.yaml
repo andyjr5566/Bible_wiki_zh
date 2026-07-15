@@ -1,0 +1,29 @@
+name: 二月初一
+type: 事件
+secondary_types: []
+aliases:
+- 二月一日
+status: formal
+definition: 希伯來曆第二月（西弗月）的第一日。本章未直接提及此日期，但民數記1:1、10:11記載二月初一有數點百姓、起行離開西乃山的事件。本章獻壇禮持續十二日（正月初一至十二日），結束於二月初一之前。
+development: 雖本章未明文提及二月初一，但作為民數記時間線的重要節點，補充說明本章事件（正月初一至十二日）發生於二月初一數點百姓、起行前往巴蘭曠野之前，構成西乃山駐營末期的敬拜高峰。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 本章獻壇禮十二日（正月初一至十二日）結束於二月初一之前。
+  relation: 提供本章事件在曠野時間線中的相對位置。
+related_entries:
+- 正月初一
+- 曠野
+- 西乃山
+- 民數記1
+- 民數記10
+- 會幕建成
+- 獻壇禮十二日奉獻
+- 二月初一
+sources:
+- 'BH: Numbers 7 — 獻壇禮時間線早於二月初一 (https://biblehub.com/numbers/7.htm)'
+created_from: 民數記 7
+category: 事件
+trigger_sources: []
+current_data: true
+pending: false

@@ -1,0 +1,28 @@
+name: 調油的細麵（solet belulah vashemen）
+type: 原文
+secondary_types: []
+aliases:
+- 調油細麵
+status: formal
+definition: 希伯來文 solet belulah vashemen（סֹלֶת בְּלוּלָה בַשֶּׁמֶן），意指「調油的細麵」。民數記第8章第8節規定利未人潔淨禮儀中，與公牛犢同獻的素祭須用「調油的細麵」，作為贖罪祭與燔祭的配搭獻祭。
+development: 本章作為利未人分別為聖儀式的素祭材料，調油的細麵與公牛犢贖罪祭、燔祭共同構成完整獻祭系統，體現「素祭配搭獻祭」的利未記獻祭邏輯在利未人就職禮中的應用。
+accumulations:
+- book: 民數記
+  chapter: 8
+  summary: 利未人潔淨禮儀中，與公牛犢同獻的素祭指定為調油的細麵
+  relation: 本章獻祭細節，顯示利未人就職禮遵循完整獻祭規範
+related_entries:
+- 公牛犢贖罪祭
+- 公牛犢燔祭
+- 素祭
+- 利未人
+- 潔淨利未人
+- 亞倫
+- 獻祭條例
+sources:
+- '本章經文: 民數記 8:8（無URL）'
+created_from: numbers_8
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

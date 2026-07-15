@@ -1,0 +1,29 @@
+name: 出埃及第二年正月初一
+type: 事件
+secondary_types: []
+aliases:
+- 出埃及二年正月一日
+status: formal
+definition: 以色列人出埃及後第二年第一月的第一日。根據出埃及記40:17，這是摩西立起帳幕的日子。本章第1節「摩西立完了帳幕」即指此日，也是首領奉獻車牛、獻壇禮開始的時間錨點。
+development: 這一天會幕建成、膏抹成聖，首領們奉獻六輛蓬子車十二隻牛，耶和華指示摩西分配給利未人。獻壇禮從這天起連續十二日，每日一支派獻供物。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 本章事件發生的時間背景，摩西立完帳幕抹膏成聖即在此日。
+  relation: 會幕建成、膏抹、首領奉獻車牛、獻壇禮開始的時間錨點。
+related_entries:
+- 會幕建成
+- 正月初一
+- 十二支派首領奉獻
+- 獻壇禮十二日奉獻
+- 耶和華指示分配車牛
+- 摩西分配車牛給利未人
+- 出埃及記40
+- 蓬子車
+sources:
+- 'BH: Numbers 7:1 — 時間背景：出埃及第二年正月初一 (https://biblehub.com/numbers/7.htm)'
+created_from: 民數記 7
+category: 事件
+trigger_sources: []
+current_data: true
+pending: false

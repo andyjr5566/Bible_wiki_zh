@@ -1,0 +1,27 @@
+name: 清酒（yayin）
+type: 原文
+secondary_types: []
+aliases:
+- 清酒
+status: formal
+definition: 希伯來文「יַיִן」（yayin），指發酵的葡萄酒。民數記 6:3 規定拿細耳人離俗期間不可喝清酒濃酒，也不可喝清酒濃酒做的醋。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 第三節列清酒為拿細耳人禁飲之物。
+  relation: 清酒是拿細耳人禁酒條例的主要對象，象徵世俗享樂，離俗者須完全遠離。
+related_entries:
+- 拿細耳人禁酒
+- 濃酒
+- 醋
+- 葡萄汁
+- 離俗
+- 特別的願
+sources:
+- 'BH: Numbers 6 — 清酒禁令（https://biblehub.com/numbers/6.htm）'
+created_from: manual
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

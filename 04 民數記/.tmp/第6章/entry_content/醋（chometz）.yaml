@@ -1,0 +1,31 @@
+name: 醋（chometz）
+type: 原文
+secondary_types: []
+aliases:
+- 醋
+status: formal
+definition: 希伯來文 chometz（חֹמֶץ），指酒類經二次發酵產生的酸性液體。民數記 6:3 明文禁止拿細耳人喝「清酒濃酒做的醋」，將醋視同酒類衍生品，同屬離俗期間的禁忌範圍。
+development: 經文以「做的醋」措辭，強調來源追溯；拉比文獻後來討論醋的定義是否包含非葡萄來源（如蘋果醋），但本章語境僅針對葡萄酒系醋。
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 第 3 節與清酒、濃酒並列為禁飲物。
+  relation: 展現離俗飲食禁忌的延伸性——不僅禁酒，亦禁酒的衍生製品。
+related_entries:
+- 清酒
+- 濃酒
+- 拿細耳人禁酒
+- 葡萄汁
+- 鮮葡萄
+- 乾葡萄
+- 葡萄樹
+- 自核至皮
+- 離俗
+sources:
+- 'BH: Numbers 6 — 醋的禁令（https://biblehub.com/numbers/6.htm）'
+created_from: numbers_6
+category: 原文
+trigger_sources:
+- numbers_6
+current_data: {}
+pending: false

@@ -1,0 +1,32 @@
+name: 西布倫支派
+type: 人物
+secondary_types: []
+aliases:
+- 西布倫
+status: formal
+definition: 民數記第7章第24-29節記載西布倫支派首領希倫的兒子以利押，在獻壇禮第三日獻上供物。供物規格與各支派同，包含銀盤、銀碗、金盂、燔祭、贖罪祭、平安祭。西布倫為雅各第六子利亞所生，曠野營於猶大營東側（民數記2章）。
+development: 經文以相同結構記載西布倫支派奉獻，凸顯十二支派同心合意、無分彼此地參與獻壇禮。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 記載西布倫支派首領以利押第三日獻供物細目。
+  relation: 獻壇禮十二日序列中的第三日，延續各支派同樣奉獻模式。
+related_entries:
+- 以利押（西布倫族長）
+- 希倫（Helon）
+- 首領
+- 獻壇禮
+- 十二支派首領奉獻
+- 各支派獻供物清單
+- 供物細目
+- 以薩迦支派
+- 流便支派
+- 猶大支派
+sources:
+- 'BH: Numbers 7:24-29 — 西布倫支派獻供（https://biblehub.com/numbers/7.htm）'
+created_from: numbers_7
+category: 人物
+trigger_sources:
+- numbers_7
+current_data: {}
+pending: false

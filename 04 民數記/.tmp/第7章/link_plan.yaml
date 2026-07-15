@@ -1,0 +1,2912 @@
+book: 民數記
+chapter: 7
+A_use_directly: []
+B_needs_update:
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 民7:89 就聽見有聲音從證據櫃上的施恩座上，從兩個基路伯中間出來，對他說話。CT：施恩座為神與人相會之所。KC：基路伯遮掩施恩座。BH：出埃及記25:17-22施恩座條例。
+  surfaces:
+  - phrase: 施恩座
+  - phrase: 證據櫃上
+  - phrase: 兩個基路伯中間
+  - phrase: 神與人相會
+  - phrase: 基路伯遮掩
+  - phrase: 出埃及記25:17-22
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 基路伯
+  suggested_type: 主題
+  evidence: 民7:89 從兩個基路伯中間出來。CT：基路伯表神榮耀守護。KC：基路伯遮掩施恩座。BH：出埃及記25:18-20基路伯條例。
+  surfaces:
+  - phrase: 基路伯
+  - phrase: 兩個基路伯
+  - phrase: 神榮耀守護
+  - phrase: 遮掩施恩座
+  - phrase: 出埃及記25:18-20
+  match_type: base
+  existing_title: 基路伯（施恩座）
+  existing_path: link_folder/主題/基路伯（施恩座）.md
+- name: 拿坦業
+  suggested_type: 人物
+  evidence: 民7:18 第二天是以薩迦支派的蘇押的兒子拿坦業。拿坦業為以薩迦族長。
+  surfaces:
+  - phrase: 拿坦業
+  - phrase: 蘇押的兒子
+  - phrase: 以薩迦支派
+  - phrase: 第二天
+  - phrase: 以薩迦族長
+  match_type: alias
+  existing_title: 拿坦業（以薩迦族長）
+  existing_path: link_folder/人物/拿坦業（以薩迦族長）.md
+- name: 以利押
+  suggested_type: 人物
+  evidence: 民7:24 第三天是西布倫支派的希倫的兒子以利押。以利押為西布倫族長。
+  surfaces:
+  - phrase: 以利押
+  - phrase: 希倫的兒子
+  - phrase: 西布倫支派
+  - phrase: 第三天
+  - phrase: 西布倫族長
+  match_type: alias
+  existing_title: 以利押（西布倫族長）
+  existing_path: link_folder/人物/以利押（西布倫族長）.md
+- name: 以利蓿
+  suggested_type: 人物
+  evidence: 民7:30 第四天是流便支派的示丟珥的兒子以利蓿。以利蓿為流便族長。
+  surfaces:
+  - phrase: 以利蓿
+  - phrase: 示丟珥的兒子
+  - phrase: 流便支派
+  - phrase: 第四天
+  - phrase: 流便族長
+  match_type: alias
+  existing_title: 以利蓿（流便族長）
+  existing_path: link_folder/人物/以利蓿（流便族長）.md
+- name: 示路蔑
+  suggested_type: 人物
+  evidence: 民7:36 第五天是西緬支派的蘇利沙代的兒子示路蔑。示路蔑為西緬族長。
+  surfaces:
+  - phrase: 示路蔑
+  - phrase: 蘇利沙代的兒子
+  - phrase: 西緬支派
+  - phrase: 第五天
+  - phrase: 西緬族長
+  match_type: alias
+  existing_title: 示路蔑（西緬族長）
+  existing_path: link_folder/人物/示路蔑（西緬族長）.md
+- name: 以利雅薩
+  suggested_type: 人物
+  evidence: 民7:42 第六天是迦得支派的俄蘭的兒子以利雅薩。以利雅薩為迦得族長。
+  surfaces:
+  - phrase: 以利雅薩
+  - phrase: 俄蘭的兒子
+  - phrase: 迦得支派
+  - phrase: 第六天
+  - phrase: 迦得族長
+  match_type: alias
+  existing_title: 拉伊勒的兒子以利雅薩
+  existing_path: link_folder/人物/拉伊勒的兒子以利雅薩.md
+- name: 以利沙瑪
+  suggested_type: 人物
+  evidence: 民7:48 第七天是以法蓮支派的亞米忽的兒子以利沙瑪。以利沙瑪為以法蓮族長。
+  surfaces:
+  - phrase: 以利沙瑪
+  - phrase: 亞米忽的兒子
+  - phrase: 以法蓮支派
+  - phrase: 第七天
+  - phrase: 以法蓮族長
+  match_type: alias
+  existing_title: 亞米忽的兒子以利沙瑪
+  existing_path: link_folder/人物/亞米忽的兒子以利沙瑪.md
+- name: 迦瑪列
+  suggested_type: 人物
+  evidence: 民7:54 第八天是瑪拿西支派的比大蓿的兒子迦瑪列。迦瑪列為瑪拿西族長。
+  surfaces:
+  - phrase: 迦瑪列
+  - phrase: 比大蓿的兒子
+  - phrase: 瑪拿西支派
+  - phrase: 第八天
+  - phrase: 瑪拿西族長
+  match_type: base
+  existing_title: 迦瑪列（瑪拿西族長）
+  existing_path: link_folder/人物/迦瑪列（瑪拿西族長）.md
+- name: 亞比但
+  suggested_type: 人物
+  evidence: 民7:60 第九天是便雅憫支派的基多尼的兒子亞比但。亞比但為便雅憫族長。
+  surfaces:
+  - phrase: 亞比但
+  - phrase: 基多尼的兒子
+  - phrase: 便雅憫支派
+  - phrase: 第九天
+  - phrase: 便雅憫族長
+  match_type: base
+  existing_title: 亞比但（便雅憫族長）
+  existing_path: link_folder/人物/亞比但（便雅憫族長）.md
+- name: 亞希以謝
+  suggested_type: 人物
+  evidence: 民7:66 第十天是但支派的亞米沙代的兒子亞希以謝。亞希以謝為但族長。
+  surfaces:
+  - phrase: 亞希以謝
+  - phrase: 亞米沙代的兒子
+  - phrase: 但支派
+  - phrase: 第十天
+  - phrase: 但族長
+  match_type: base
+  existing_title: 亞希以謝（但族長）
+  existing_path: link_folder/人物/亞希以謝（但族長）.md
+- name: 帕結
+  suggested_type: 人物
+  evidence: 民7:72 第十一天是亞設支派的俄蘭的兒子帕結。帕結為亞設族長。
+  surfaces:
+  - phrase: 帕結
+  - phrase: 俄蘭的兒子
+  - phrase: 亞設支派
+  - phrase: 第十一天
+  - phrase: 亞設族長
+  match_type: base
+  existing_title: 帕結（亞設族長）
+  existing_path: link_folder/人物/帕結（亞設族長）.md
+- name: 亞希拉
+  suggested_type: 人物
+  evidence: 民7:78 第十二天是拿弗他利支派的以南的兒子亞希拉。亞希拉為拿弗他利族長。
+  surfaces:
+  - phrase: 亞希拉
+  - phrase: 以南的兒子
+  - phrase: 拿弗他利支派
+  - phrase: 第十二天
+  - phrase: 拿弗他利族長
+  match_type: alias
+  existing_title: 以南的兒子亞希拉（Ahira ben Enan）
+  existing_path: link_folder/人物/以南的兒子亞希拉（Ahira ben Enan）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民7:1,4,6,89 摩西立完了帳幕...耶和華曉諭摩西說...於是摩西收了車和牛...摩西進會幕要與耶和華說話。摩西作為會幕建立者、條例執行者、與神面對面說話者。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 摩西立完了帳幕
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 摩西收了車和牛
+  - phrase: 摩西進會幕
+  - phrase: 與耶和華說話
+  - phrase: 面對面說話
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民7:8 他們都在祭司亞倫的兒子以他瑪手下。亞倫為大祭司，利未人在其兒子以他瑪手下服事。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 祭司亞倫
+  - phrase: 亞倫的兒子以他瑪
+  - phrase: 大祭司
+  - phrase: 利未人服事
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以他瑪
+  suggested_type: 人物
+  evidence: 民7:8 他們都在祭司亞倫的兒子以他瑪手下。以他瑪掌管革順米拉利二族事奉。
+  surfaces:
+  - phrase: 以他瑪
+  - phrase: 祭司亞倫的兒子以他瑪
+  - phrase: 手下
+  - phrase: 掌管革順米拉利
+  - phrase: 二族事奉
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
+- name: 利未人
+  suggested_type: 人物
+  evidence: 民7:5,6,7,8,9 都要照利未人所辦的事交給他們...交給利未人...交給他們...交給他們...都沒有交給哥轄子孫。利未人三族按職務得車牛分配。
+  surfaces:
+  - phrase: 利未人
+  - phrase: 照利未人所辦的事
+  - phrase: 交給利未人
+  - phrase: 三族
+  - phrase: 按職務分配
+  - phrase: 得車牛分配
+  match_type: exact
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 革順
+  suggested_type: 人物
+  evidence: 民7:7 把兩輛車，四隻牛，照革順子孫所辦的事交給他們。革順族得2車4牛運罩棚蓋。
+  surfaces:
+  - phrase: 革順
+  - phrase: 革順子孫
+  - phrase: 兩輛車
+  - phrase: 四隻牛
+  - phrase: 照革順子孫所辦的事
+  - phrase: 運罩棚蓋
+  match_type: exact
+  existing_title: 革順
+  existing_path: link_folder/人物/革順.md
+- name: 米拉利
+  suggested_type: 人物
+  evidence: 民7:8 又把四輛車，八隻牛，照米拉利子孫所辦的事交給他們。米拉利族得4車8牛運板柱座。
+  surfaces:
+  - phrase: 米拉利
+  - phrase: 米拉利子孫
+  - phrase: 四輛車
+  - phrase: 八隻牛
+  - phrase: 照米拉利子孫所辦的事
+  - phrase: 運板柱座
+  match_type: exact
+  existing_title: 米拉利
+  existing_path: link_folder/人物/米拉利.md
+- name: 哥轄
+  suggested_type: 人物
+  evidence: 民7:9 但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物。哥轄族抬至聖物不得用車。
+  surfaces:
+  - phrase: 哥轄
+  - phrase: 哥轄子孫
+  - phrase: 車與牛都沒有交給
+  - phrase: 他們辦的是聖所的事
+  - phrase: 在肩頭上抬聖物
+  - phrase: 不得用車
+  match_type: exact
+  existing_title: 哥轄
+  existing_path: link_folder/人物/哥轄.md
+- name: 成聖
+  suggested_type: 神學
+  evidence: 民7:1 使它成聖...都抹了，使它成聖。CT：成聖表分別為聖歸神。KC：膏抹使成聖。BH：出埃及記29:43-44榮耀使成聖。
+  surfaces:
+  - phrase: 成聖
+  - phrase: 使它成聖
+  - phrase: 分別為聖歸神
+  - phrase: 膏抹使成聖
+  - phrase: 榮耀使成聖
+  - phrase: 出埃及記29:43-44
+  match_type: exact
+  existing_title: 成聖
+  existing_path: link_folder/神學/成聖.md
+- name: 器具
+  suggested_type: 主題
+  evidence: 民7:1 又把其中的器具和壇，並壇上的器具，都抹了。器具包括約櫃、香壇、燈台、桌子、洗濯盆、祭壇等。
+  surfaces:
+  - phrase: 器具
+  - phrase: 其中的器具
+  - phrase: 壇上的器具
+  - phrase: 約櫃
+  - phrase: 香壇
+  - phrase: 燈台
+  - phrase: 桌子
+  - phrase: 洗濯盆
+  - phrase: 祭壇
+  match_type: exact
+  existing_title: 器具
+  existing_path: link_folder/主題/器具.md
+- name: 壇
+  suggested_type: 主題
+  evidence: 民7:1,10,11,88,89 又把其中的器具和壇...用膏抹壇的日子...為行奉獻壇的禮...平安祭...摩西進會幕。壇為獻祭中心、奉獻禮焦點。
+  surfaces:
+  - phrase: 壇
+  - phrase: 其中的器具和壇
+  - phrase: 用膏抹壇的日子
+  - phrase: 奉獻壇的禮
+  - phrase: 平安祭
+  - phrase: 獻祭中心
+  - phrase: 奉獻禮焦點
+  match_type: exact
+  existing_title: 壇
+  existing_path: link_folder/主題/壇.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 民7:2,10,11,12,84,89 以色列的眾首領...以色列首領...耶列首領...以色列人...以色列首領所獻的供物。條例針對全會眾。
+  surfaces:
+  - phrase: 以色列
+  - phrase: 以色列的眾首領
+  - phrase: 以色列首領
+  - phrase: 以色列人
+  - phrase: 全會眾
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 族長
+  suggested_type: 人物
+  evidence: 民7:2,12,18,24,30,36,42,48,54,60,66,72,78 就是各族的族長...猶大支派的亞米拿達的兒子拿順...以薩迦支派的蘇押的兒子拿坦業...十二支派族長依次獻供。
+  surfaces:
+  - phrase: 族長
+  - phrase: 各族的族長
+  - phrase: 十二支派族長
+  - phrase: 依次獻供
+  - phrase: 拿順
+  - phrase: 拿坦業
+  - phrase: 以利押
+  - phrase: 以利蓿
+  - phrase: 示路蔑
+  - phrase: 以利雅薩
+  - phrase: 以利沙瑪
+  - phrase: 迦瑪列
+  - phrase: 亞比但
+  - phrase: 亞希以謝
+  - phrase: 帕結
+  - phrase: 亞希拉
+  match_type: exact
+  existing_title: 族長
+  existing_path: link_folder/人物/族長.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 民7:1,89 摩西立完了帳幕...摩西進會幕。神在曠野會幕與摩西說話。
+  surfaces:
+  - phrase: 曠野
+  - phrase: 西乃曠野
+  - phrase: 神在曠野
+  - phrase: 會幕與摩西說話
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 民7:1 摩西立完了帳幕。神在西乃山指示建立會幕。
+  surfaces:
+  - phrase: 西乃山
+  - phrase: 神指示建立會幕
+  - phrase: 出埃及記40:17
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 民7:89 就聽見有聲音從證據櫃上的施恩座上，從兩個基路伯中間出來，對他說話。CT：施恩座為神與人相會之所。KC：基路伯遮掩施恩座。BH：出埃及記25:17-22施恩座條例。
+  surfaces:
+  - phrase: 施恩座
+  - phrase: 證據櫃上
+  - phrase: 兩個基路伯中間
+  - phrase: 神與人相會
+  - phrase: 基路伯遮掩
+  - phrase: 出埃及記25:17-22
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 基路伯
+  suggested_type: 主題
+  evidence: 民7:89 從兩個基路伯中間出來。CT：基路伯表神榮耀守護。KC：基路伯遮掩施恩座。BH：出埃及記25:18-20基路伯條例。
+  surfaces:
+  - phrase: 基路伯
+  - phrase: 兩個基路伯
+  - phrase: 神榮耀守護
+  - phrase: 遮掩施恩座
+  - phrase: 出埃及記25:18-20
+  match_type: base
+  existing_title: 基路伯（施恩座）
+  existing_path: link_folder/主題/基路伯（施恩座）.md
+- name: 亞米拿達
+  suggested_type: 人物
+  evidence: 民7:12 猶大支派的亞米拿達的兒子拿順。亞米拿達為拿順之父。
+  surfaces:
+  - phrase: 亞米拿達
+  - phrase: 亞米拿達的兒子
+  - phrase: 拿順之父
+  match_type: base
+  existing_title: 亞米拿達（Amminadab）
+  existing_path: link_folder/人物/亞米拿達（Amminadab）.md
+- name: 蘇押
+  suggested_type: 人物
+  evidence: 民7:18 以薩迦支派的蘇押的兒子拿坦業。蘇押為拿坦業之父。
+  surfaces:
+  - phrase: 蘇押
+  - phrase: 蘇押的兒子
+  - phrase: 拿坦業之父
+  match_type: base
+  existing_title: 蘇押（Zuar）
+  existing_path: link_folder/人物/蘇押（Zuar）.md
+- name: 希倫
+  suggested_type: 人物
+  evidence: 民7:24 西布倫支派的希倫的兒子以利押。希倫為以利押之父。
+  surfaces:
+  - phrase: 希倫
+  - phrase: 希倫的兒子
+  - phrase: 以利押之父
+  match_type: base
+  existing_title: 希倫（Helon）
+  existing_path: link_folder/人物/希倫（Helon）.md
+- name: 示丟珥
+  suggested_type: 人物
+  evidence: 民7:30 流便支派的示丟珥的兒子以利蓿。示丟珥為以利蓿之父。
+  surfaces:
+  - phrase: 示丟珥
+  - phrase: 示丟珥的兒子
+  - phrase: 以利蓿之父
+  match_type: base
+  existing_title: 示丟珥（Shedeur）
+  existing_path: link_folder/人物/示丟珥（Shedeur）.md
+- name: 蘇利沙代
+  suggested_type: 人物
+  evidence: 民7:36 西緬支派的蘇利沙代的兒子示路蔑。蘇利沙代為示路蔑之父。
+  surfaces:
+  - phrase: 蘇利沙代
+  - phrase: 蘇利沙代的兒子
+  - phrase: 示路蔑之父
+  match_type: base
+  existing_title: 蘇利沙代（Zurishaddai）
+  existing_path: link_folder/人物/蘇利沙代（Zurishaddai）.md
+- name: 俄蘭
+  suggested_type: 人物
+  evidence: 民7:42,72 迦得支派的俄蘭的兒子以利雅薩...亞設支派的俄蘭的兒子帕結。俄蘭為以利雅薩、帕結之父。
+  surfaces:
+  - phrase: 俄蘭
+  - phrase: 俄蘭的兒子
+  - phrase: 以利雅薩之父
+  - phrase: 帕結之父
+  match_type: exact
+  existing_title: 俄蘭
+  existing_path: link_folder/人物/俄蘭.md
+- name: 亞米忽
+  suggested_type: 人物
+  evidence: 民7:48 以法蓮支派的亞米忽的兒子以利沙瑪。亞米忽為以利沙瑪之父。
+  surfaces:
+  - phrase: 亞米忽
+  - phrase: 亞米忽的兒子
+  - phrase: 以利沙瑪之父
+  match_type: base
+  existing_title: 亞米忽（Ammihud）
+  existing_path: link_folder/人物/亞米忽（Ammihud）.md
+- name: 比大蓿
+  suggested_type: 人物
+  evidence: 民7:54 瑪拿西支派的比大蓿的兒子迦瑪列。比大蓿為迦瑪列之父。
+  surfaces:
+  - phrase: 比大蓿
+  - phrase: 比大蓿的兒子
+  - phrase: 迦瑪列之父
+  match_type: base
+  existing_title: 比大蓿（Pedahzur）
+  existing_path: link_folder/人物/比大蓿（Pedahzur）.md
+- name: 基多尼
+  suggested_type: 人物
+  evidence: 民7:60 便雅憫支派的基多尼的兒子亞比但。基多尼為亞比但之父。
+  surfaces:
+  - phrase: 基多尼
+  - phrase: 基多尼的兒子
+  - phrase: 亞比但之父
+  match_type: base
+  existing_title: 基多尼（Gideoni）
+  existing_path: link_folder/人物/基多尼（Gideoni）.md
+- name: 亞米沙代
+  suggested_type: 人物
+  evidence: 民7:66 但支派的亞米沙代的兒子亞希以謝。亞米沙代為亞希以謝之父。
+  surfaces:
+  - phrase: 亞米沙代
+  - phrase: 亞米沙代的兒子
+  - phrase: 亞希以謝之父
+  match_type: base
+  existing_title: 亞米沙代（Amishaddai）
+  existing_path: link_folder/人物/亞米沙代（Amishaddai）.md
+- name: 以南
+  suggested_type: 人物
+  evidence: 民7:78 拿弗他利支派的以南的兒子亞希拉。以南為亞希拉之父。
+  surfaces:
+  - phrase: 以南
+  - phrase: 以南的兒子
+  - phrase: 亞希拉之父
+  match_type: exact
+  existing_title: 以南
+  existing_path: link_folder/人物/以南.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 民7:12 猶大支派的亞米拿達的兒子拿順。猶大支派首領第一天獻供。
+  surfaces:
+  - phrase: 猶大支派
+  - phrase: 第一天
+  - phrase: 首領獻供
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 民7:66 但支派的亞米沙代的兒子亞希以謝。但支派第十天獻供。
+  surfaces:
+  - phrase: 但支派
+  - phrase: 第十天
+  - phrase: 首領獻供
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 供物
+  suggested_type: 主題
+  evidence: 民7:3,10,12,13,84,88 他們把自己的供物送到耶和華面前...眾首領就在壇前獻供物...這就是膏抹壇的日子，以色列首領所獻的供物。供物表感恩奉獻。
+  surfaces:
+  - phrase: 供物
+  - phrase: 自己的供物
+  - phrase: 送到耶和華面前
+  - phrase: 壇前獻供物
+  - phrase: 首領所獻的供物
+  - phrase: 感恩奉獻
+  match_type: exact
+  existing_title: 供物
+  existing_path: link_folder/主題/供物.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: 民7:13,14,19,20...85,86,87,88 銀盤重一百三十舍客勒，銀碗重七十舍客勒，金杯重十舍客勒。CT：舍客勒為貨幣單位。KC：聖所平統一度量。BH：出埃及記30:13聖所平。
+  surfaces:
+  - phrase: 舍客勒
+  - phrase: 重一百三十舍客勒
+  - phrase: 重七十舍客勒
+  - phrase: 重十舍客勒
+  - phrase: 貨幣單位
+  - phrase: 聖所平統一度量
+  - phrase: 出埃及記30:13
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+C_new_formal:
+- name: 會幕膏抹成聖
+  suggested_type: 主題
+  evidence: 民7:1 摩西立完了帳幕，就把帳幕用膏抹了，使它成聖，又把其中的器具和壇，並壇上的器具，都抹了，使它成聖。CT：帳幕表基督身體/教會，膏抹表聖靈塗抹分別為聖。KC：會幕膏抹與亞倫父子同進行。BH：出埃及記40:34-35神榮光充滿帳幕。
+  surfaces:
+  - phrase: 摩西立完了帳幕
+  - phrase: 用膏抹了
+  - phrase: 使它成聖
+  - phrase: 其中的器具
+  - phrase: 壇
+  - phrase: 壇上的器具
+  - phrase: 膏抹
+  - phrase: 聖靈塗抹
+  target_path: link_folder/主題/會幕膏抹成聖.md
+- name: 十二支派首領奉獻
+  suggested_type: 主題
+  evidence: 民7:2-3 當天，以色列的眾首領，就是各族的族長，都來奉獻...他們把自己的供物送到耶和華面前，就是六輛篷子車和十二隻公牛。CT：首領代表支派奉獻，表教會領袖帶頭奉獻。KC：每兩個首領一輛車，每首領一隻牛。BH：出埃及後第二年正月初一日。
+  surfaces:
+  - phrase: 以色列的眾首領
+  - phrase: 各族的族長
+  - phrase: 都來奉獻
+  - phrase: 六輛篷子車
+  - phrase: 十二隻公牛
+  - phrase: 每兩個首領奉獻一輛車
+  - phrase: 每首領奉獻一隻牛
+  - phrase: 奉到帳幕前
+  target_path: link_folder/主題/十二支派首領奉獻.md
+- name: 耶和華指示分配車牛
+  suggested_type: 主題
+  evidence: 民7:4-5 耶和華曉諭摩西說：你要收下這些，好作會幕的使用，都要照利未人所辦的事交給他們。CT：神悅納樂捐，指定用途。KC：照利未人職務分配。BH：彼前4:10-11神賜工具為管家職分。
+  surfaces:
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 收下這些
+  - phrase: 好作會幕的使用
+  - phrase: 照利未人所辦的事
+  - phrase: 交給他們
+  - phrase: 神悅納樂捐
+  - phrase: 指定用途
+  target_path: link_folder/主題/耶和華指示分配車牛.md
+- name: 摩西分配車牛給利未人
+  suggested_type: 主題
+  evidence: 民7:6-9 於是摩西收了車和牛，交給利未人...把兩輛車，四隻牛，照革順子孫所辦的事交給他們...又把四輛車，八隻牛，照米拉利子孫所辦的事交給他們...但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物。CT：按職務分配資源，哥轄族抬聖物不需車。KC：革順族2車4牛，米拉利族4車8牛。BH：大衛用車運約櫃害烏撒命（代上13）。
+  surfaces:
+  - phrase: 摩西收了車和牛
+  - phrase: 交給利未人
+  - phrase: 照革順子孫所辦的事
+  - phrase: 照米拉利子孫所辦的事
+  - phrase: 車與牛都沒有交給哥轄子孫
+  - phrase: 他們辦的是聖所的事
+  - phrase: 在肩頭上抬聖物
+  - phrase: 革順族
+  - phrase: 米拉利族
+  - phrase: 哥轄族
+  target_path: link_folder/主題/摩西分配車牛給利未人.md
+- name: 獻壇禮十二日奉獻
+  suggested_type: 主題
+  evidence: 民7:10-11 用膏抹壇的日子，首領都來行奉獻壇的禮...耶和華對摩西說：眾首領為行奉獻壇的禮，要每天一個首領來獻供物。CT：十二日連續奉獻，表完全感謝。KC：每天一個支派，安息日也不停。BH：十二代表完全，各支派同等責任。
+  surfaces:
+  - phrase: 用膏抹壇的日子
+  - phrase: 首領都來行奉獻壇的禮
+  - phrase: 眾首領就在壇前獻供物
+  - phrase: 耶和華對摩西說
+  - phrase: 每天一個首領來獻供物
+  - phrase: 十二日
+  - phrase: 完全感謝
+  - phrase: 同等責任
+  target_path: link_folder/主題/獻壇禮十二日奉獻.md
+- name: 各支派獻供物清單
+  suggested_type: 主題
+  evidence: 民7:12-83 猶大支派拿順...以薩迦支派拿坦業...西布倫支派以利押...流便支派以利蓿...西緬支派示路蔑...迦得支派以利雅薩...以法蓮支派以利沙瑪...瑪拿西支派迦瑪列...便雅憫支派亞比但...但支派亞希以謝...亞設支派帕結...拿弗他利支派亞希拉...各獻一樣供物。CT：十二支派同樣供物，表同等熱忱。KC：免除嫉妒自誇。BH：素祭為祭司收入重要來源。
+  surfaces:
+  - phrase: 猶大支派拿順
+  - phrase: 以薩迦支派拿坦業
+  - phrase: 西布倫支派以利押
+  - phrase: 流便支派以利蓿
+  - phrase: 西緬支派示路蔑
+  - phrase: 迦得支派以利雅薩
+  - phrase: 以法蓮支派以利沙瑪
+  - phrase: 瑪拿西支派迦瑪列
+  - phrase: 便雅憫支派亞比但
+  - phrase: 但支派亞希以謝
+  - phrase: 亞設支派帕結
+  - phrase: 拿弗他利支派亞希拉
+  - phrase: 各獻一樣供物
+  - phrase: 同等熱忱
+  - phrase: 免除嫉妒自誇
+  target_path: link_folder/主題/各支派獻供物清單.md
+- name: 供物細目
+  suggested_type: 主題
+  evidence: 民7:13-14,19-20... 每支派獻：一個銀盤、一個銀碗、一個金杯、一隻公牛犢、一隻公綿羊、一隻一歲公羊羔為燔祭、一隻公山羊為贖罪祭、兩隻公牛、五隻公綿羊、五隻公山羊、五隻一歲公羊羔為平安祭。CT：供物豐富表感恩豐盛。KC：燔祭贖罪祭平安祭素祭全備。BH：銀盤銀碗按聖所平。
+  surfaces:
+  - phrase: 一個銀盤
+  - phrase: 一個銀碗
+  - phrase: 一個金杯
+  - phrase: 一隻公牛犢
+  - phrase: 一隻公綿羊
+  - phrase: 一隻一歲公羊羔
+  - phrase: 燔祭
+  - phrase: 一隻公山羊
+  - phrase: 贖罪祭
+  - phrase: 兩隻公牛
+  - phrase: 五隻公綿羊
+  - phrase: 五隻公山羊
+  - phrase: 五隻一歲公羊羔
+  - phrase: 平安祭
+  - phrase: 銀盤銀碗按聖所平
+  - phrase: 素祭
+  target_path: link_folder/主題/供物細目.md
+- name: 供物總數統計
+  suggested_type: 主題
+  evidence: 民7:84-88 這就是膏抹壇的日子，以色列首領所獻的供物：銀盤十二個，銀碗十二個，金杯十二個...公牛十二隻，公綿羊十二隻，一歲公羊羔十二隻...公山羊十二隻...公牛二十四隻，公綿羊六十隻，公山羊六十隻，一歲公羊羔六十隻。CT：總數統計表神悅納各支派。KC：十二對應十二支派完全。BH：平安祭最多表感謝為主。
+  surfaces:
+  - phrase: 銀盤十二個
+  - phrase: 銀碗十二個
+  - phrase: 金杯十二個
+  - phrase: 公牛十二隻
+  - phrase: 公綿羊十二隻
+  - phrase: 一歲公羊羔十二隻
+  - phrase: 公山羊十二隻
+  - phrase: 公牛二十四隻
+  - phrase: 公綿羊六十隻
+  - phrase: 公山羊六十隻
+  - phrase: 一歲公羊羔六十隻
+  - phrase: 供物總數統計
+  - phrase: 十二支派完全
+  - phrase: 平安祭最多
+  target_path: link_folder/主題/供物總數統計.md
+- name: 摩西進會幕聽神說話
+  suggested_type: 事件
+  evidence: 民7:89 摩西進會幕要與耶和華說話，就聽見有聲音從證據櫃上的施恩座上，從兩個基路伯中間出來，對他說話。CT：摩西在會幕與神面對面說話。KC：施恩座上聲音表神恩典話語。BH：出埃及記25:22在施恩座上與你相會。
+  surfaces:
+  - phrase: 摩西進會幕
+  - phrase: 與耶和華說話
+  - phrase: 聽見有聲音
+  - phrase: 從證據櫃上的施恩座上
+  - phrase: 從兩個基路伯中間出來
+  - phrase: 對他說話
+  - phrase: 面對面說話
+  - phrase: 神恩典話語
+  - phrase: 出埃及記25:22
+  target_path: link_folder/事件/摩西進會幕聽神說話.md
+- name: 篷子車
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8 六輛篷子車...於是摩西收了車和牛...把兩輛車...又把四輛車。CT：篷子車為保護聖物在曠野風雨沙中。KC：蓬子車即駝轎。BH：以色列人從埃及得來（出12:36）。
+  surfaces:
+  - phrase: 篷子車
+  - phrase: 六輛篷子車
+  - phrase: 保護聖物
+  - phrase: 曠野風雨沙
+  - phrase: 駝轎
+  - phrase: 從埃及得來
+  - phrase: 出埃及記12:36
+  target_path: link_folder/原文/篷子車.md
+- name: 革順子孫得車牛
+  suggested_type: 主題
+  evidence: 民7:7 把兩輛車，四隻牛，照革順子孫所辦的事交給他們。CT：革順族辦罩棚蓋較輕需2車4牛。KC：革順族在以他瑪手下。BH：民4:24-28革順族職務。
+  surfaces:
+  - phrase: 革順子孫
+  - phrase: 兩輛車
+  - phrase: 四隻牛
+  - phrase: 照革順子孫所辦的事
+  - phrase: 交給他們
+  - phrase: 罩棚蓋較輕
+  - phrase: 以他瑪手下
+  - phrase: 民數記4:24-28
+  target_path: link_folder/主題/革順子孫得車牛.md
+- name: 米拉利子孫得車牛
+  suggested_type: 主題
+  evidence: 民7:8 又把四輛車，八隻牛，照米拉利子孫所辦的事交給他們。CT：米拉利族辦板柱座較重需4車8牛。KC：米拉利族在以他瑪手下。BH：民4:29-33米拉利族職務。
+  surfaces:
+  - phrase: 米拉利子孫
+  - phrase: 四輛車
+  - phrase: 八隻牛
+  - phrase: 照米拉利子孫所辦的事
+  - phrase: 交給他們
+  - phrase: 板柱座較重
+  - phrase: 以他瑪手下
+  - phrase: 民數記4:29-33
+  target_path: link_folder/主題/米拉利子孫得車牛.md
+- name: 哥轄子孫抬聖物
+  suggested_type: 主題
+  evidence: 民7:9 但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物。CT：哥轄族抬至聖物不可用車。KC：大衛用車運約櫃害烏撒命。BH：民4:15哥轄族抬聖物條例。
+  surfaces:
+  - phrase: 哥轄子孫
+  - phrase: 車與牛都沒有交給
+  - phrase: 他們辦的是聖所的事
+  - phrase: 在肩頭上抬聖物
+  - phrase: 不可用車
+  - phrase: 大衛用車運約櫃
+  - phrase: 烏撒
+  - phrase: 民數記4:15
+  target_path: link_folder/主題/哥轄子孫抬聖物.md
+- name: 納順
+  suggested_type: 人物
+  evidence: 民7:12 獻供物的，第一天是猶大支派的亞米拿達的兒子拿順。拿順為猶大族長，大衛王祖先。
+  surfaces:
+  - phrase: 拿順
+  - phrase: 亞米拿達的兒子
+  - phrase: 猶大支派
+  - phrase: 第一天
+  - phrase: 猶大族長
+  - phrase: 大衛王祖先
+  target_path: link_folder/人物/納順.md
+- name: 銀盤
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85 每支派一個銀盤，共十二個，每盤重一百三十舍客勒。CT：銀盤盛素祭表奉獻豐盛。KC：按聖所平。BH：民7:85銀盤十二個。
+  surfaces:
+  - phrase: 銀盤
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重一百三十舍客勒
+  - phrase: 盛素祭
+  - phrase: 按聖所平
+  - phrase: 民數記7:85
+  target_path: link_folder/原文/銀盤.md
+- name: 銀碗
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85 每支派一個銀碗，共十二個，每碗重七十舍客勒。CT：銀碗盛素祭表奉獻豐盛。KC：按聖所平。BH：民7:85銀碗十二個。
+  surfaces:
+  - phrase: 銀碗
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重七十舍客勒
+  - phrase: 盛素祭
+  - phrase: 按聖所平
+  - phrase: 民數記7:85
+  target_path: link_folder/原文/銀碗.md
+- name: 金杯
+  suggested_type: 原文
+  evidence: 民7:14,20,26...86 每支派一個金杯，共十二個，每杯重十舍客勒，盛滿香。CT：金杯盛香表禱告馨香。KC：按聖所平。BH：民7:86金杯十二個。
+  surfaces:
+  - phrase: 金杯
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重十舍客勒
+  - phrase: 盛滿香
+  - phrase: 禱告馨香
+  - phrase: 按聖所平
+  - phrase: 民數記7:86
+  target_path: link_folder/原文/金杯.md
+- name: 聖所平
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85,86,87,88 按聖所的平...銀盤重一百三十舍客勒，銀碗重七十舍客勒，金杯重十舍客勒。CT：聖所平為度量衡標準。KC：聖所平統一度量。BH：出埃及記30:13聖所平。
+  surfaces:
+  - phrase: 聖所的平
+  - phrase: 按聖所的平
+  - phrase: 度量衡標準
+  - phrase: 統一度量
+  - phrase: 出埃及記30:13
+  target_path: link_folder/原文/聖所平.md
+- name: 燔祭牲畜
+  suggested_type: 主題
+  evidence: 民7:15,17,21,23...87 每支派：一隻公牛犢、一隻公綿羊、一隻一歲公羊羔為燔祭。共公牛十二隻、公綿羊十二隻、一歲公羊羔十二隻。CT：燔祭表完全獻給神。KC：燔祭牲畜無殘疾。BH：利未記1章燔祭條例。
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 公牛犢
+  - phrase: 公綿羊
+  - phrase: 一歲公羊羔
+  - phrase: 共公牛十二隻
+  - phrase: 公綿羊十二隻
+  - phrase: 一歲公羊羔十二隻
+  - phrase: 完全獻給神
+  - phrase: 無殘疾
+  - phrase: 利未記1章
+  target_path: link_folder/主題/燔祭牲畜.md
+- name: 贖罪祭牲畜
+  suggested_type: 主題
+  evidence: 民7:16,22,28...87 每支派一隻公山羊為贖罪祭。共公山羊十二隻。CT：贖罪祭為無意之罪。KC：贖罪祭公山羊。BH：利未記4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 贖罪祭
+  - phrase: 公山羊
+  - phrase: 每支派一隻
+  - phrase: 共公山羊十二隻
+  - phrase: 無意之罪
+  - phrase: 利未記4-5章
+  target_path: link_folder/主題/贖罪祭牲畜.md
+- name: 平安祭牲畜
+  suggested_type: 主題
+  evidence: 民7:17,23,29...88 每支派：兩隻公牛、五隻公綿羊、五隻公山羊、五隻一歲公羊羔為平安祭。共公牛二十四隻、公綿羊六十隻、公山羊六十隻、一歲公羊羔六十隻。CT：平安祭表與神和好感謝。KC：平安祭最多表感謝為主。BH：利未記3章平安祭條例。
+  surfaces:
+  - phrase: 平安祭
+  - phrase: 兩隻公牛
+  - phrase: 五隻公綿羊
+  - phrase: 五隻公山羊
+  - phrase: 五隻一歲公羊羔
+  - phrase: 共公牛二十四隻
+  - phrase: 公綿羊六十隻
+  - phrase: 公山羊六十隻
+  - phrase: 一歲公羊羔六十隻
+  - phrase: 與神和好感謝
+  - phrase: 感謝為主
+  - phrase: 利未記3章
+  target_path: link_folder/主題/平安祭牲畜.md
+- name: 膏抹
+  suggested_type: 主題
+  evidence: 民7:1 就把帳幕用膏抹了，使它成聖，又把其中的器具和壇，並壇上的器具，都抹了，使它成聖。CT：膏抹表聖靈塗抹分別為聖。KC：會幕膏抹與亞倫父子同進行。BH：出埃及記40:9-11膏抹條例。
+  surfaces:
+  - phrase: 膏抹
+  - phrase: 用膏抹了
+  - phrase: 使它成聖
+  - phrase: 其中的器具
+  - phrase: 壇
+  - phrase: 壇上的器具
+  - phrase: 聖靈塗抹
+  - phrase: 分別為聖
+  - phrase: 出埃及記40:9-11
+  target_path: link_folder/主題/膏抹.md
+- name: 獻壇禮
+  suggested_type: 主題
+  evidence: 民7:10,11,84,88 用膏抹壇的日子，首領都來行奉獻壇的禮...這就是膏抹壇的日子，以色列首領所獻的供物。CT：獻壇禮十二日表完全感謝。KC：每天一個支派。BH：民7:84-88供物總數統計。
+  surfaces:
+  - phrase: 獻壇禮
+  - phrase: 用膏抹壇的日子
+  - phrase: 首領都來行
+  - phrase: 奉獻壇的禮
+  - phrase: 十二日
+  - phrase: 完全感謝
+  - phrase: 供物總數統計
+  - phrase: 民數記7:84-88
+  target_path: link_folder/主題/獻壇禮.md
+- name: 首領
+  suggested_type: 人物
+  evidence: 民7:2,3,10,11,12,84,88 以色列的眾首領...各族的族長...每兩個首領奉獻一輛車...首領都來行奉獻壇的禮...以色列首領所獻的供物。首領代表支派奉獻。
+  surfaces:
+  - phrase: 首領
+  - phrase: 眾首領
+  - phrase: 各族的族長
+  - phrase: 每兩個首領
+  - phrase: 首領都來行
+  - phrase: 以色列首領
+  - phrase: 代表支派奉獻
+  target_path: link_folder/人物/首領.md
+- name: 證據櫃
+  suggested_type: 主題
+  evidence: 民7:89 從證據櫃上的施恩座上。CT：約櫃稱證據櫃因存兩塊法版。KC：約櫃為神寶座。BH：出埃及記25:16把法版放在櫃裡。
+  surfaces:
+  - phrase: 證據櫃
+  - phrase: 約櫃
+  - phrase: 法版
+  - phrase: 神寶座
+  - phrase: 出埃及記25:16
+  target_path: link_folder/主題/證據櫃.md
+- name: 聲音
+  suggested_type: 主題
+  evidence: 民7:89 就聽見有聲音...對他說話。CT：神聲音表神話語啟示。KC：從施恩座發出表恩典話語。BH：希伯來書1:1-2神藉兒子曉諭我們。
+  surfaces:
+  - phrase: 聲音
+  - phrase: 有聲音
+  - phrase: 神話語啟示
+  - phrase: 恩典話語
+  - phrase: 希伯來書1:1-2
+  target_path: link_folder/主題/聲音.md
+- name: 對他說話
+  suggested_type: 主題
+  evidence: 民7:89 對他說話。CT：摩西與神面對面說話。KC：神主動啟示。BH：出埃及記33:11面對面說話。
+  surfaces:
+  - phrase: 對他說話
+  - phrase: 面對面說話
+  - phrase: 神主動啟示
+  - phrase: 出埃及記33:11
+  target_path: link_folder/主題/對他說話.md
+- name: 以薩迦支派
+  suggested_type: 人物
+  evidence: 民7:18 以薩迦支派的蘇押的兒子拿坦業。以薩迦支派第二天獻供。
+  surfaces:
+  - phrase: 以薩迦支派
+  - phrase: 第二天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/以薩迦支派.md
+- name: 西布倫支派
+  suggested_type: 人物
+  evidence: 民7:24 西布倫支派的希倫的兒子以利押。西布倫支派第三天獻供。
+  surfaces:
+  - phrase: 西布倫支派
+  - phrase: 第三天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/西布倫支派.md
+- name: 流便支派
+  suggested_type: 人物
+  evidence: 民7:30 流便支派的示丟珥的兒子以利蓿。流便支派第四天獻供。
+  surfaces:
+  - phrase: 流便支派
+  - phrase: 第四天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/流便支派.md
+- name: 西緬支派
+  suggested_type: 人物
+  evidence: 民7:36 西緬支派的蘇利沙代的兒子示路蔑。西緬支派第五天獻供。
+  surfaces:
+  - phrase: 西緬支派
+  - phrase: 第五天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/西緬支派.md
+- name: 迦得支派
+  suggested_type: 人物
+  evidence: 民7:42 迦得支派的俄蘭的兒子以利雅薩。迦得支派第六天獻供。
+  surfaces:
+  - phrase: 迦得支派
+  - phrase: 第六天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/迦得支派.md
+- name: 以法蓮支派
+  suggested_type: 人物
+  evidence: 民7:48 以法蓮支派的亞米忽的兒子以利沙瑪。以法蓮支派第七天獻供。
+  surfaces:
+  - phrase: 以法蓮支派
+  - phrase: 第七天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/以法蓮支派.md
+- name: 瑪拿西支派
+  suggested_type: 人物
+  evidence: 民7:54 瑪拿西支派的比大蓿的兒子迦瑪列。瑪拿西支派第八天獻供。
+  surfaces:
+  - phrase: 瑪拿西支派
+  - phrase: 第八天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/瑪拿西支派.md
+- name: 便雅憫支派
+  suggested_type: 人物
+  evidence: 民7:60 便雅憫支派的基多尼的兒子亞比但。便雅憫支派第九天獻供。
+  surfaces:
+  - phrase: 便雅憫支派
+  - phrase: 第九天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/便雅憫支派.md
+- name: 亞設支派
+  suggested_type: 人物
+  evidence: 民7:72 亞設支派的俄蘭的兒子帕結。亞設支派第十一天獻供。
+  surfaces:
+  - phrase: 亞設支派
+  - phrase: 第十一天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/亞設支派.md
+- name: 拿弗他利支派
+  suggested_type: 人物
+  evidence: 民7:78 拿弗他利支派的以南的兒子亞希拉。拿弗他利支派第十二天獻供。
+  surfaces:
+  - phrase: 拿弗他利支派
+  - phrase: 第十二天
+  - phrase: 首領獻供
+  target_path: link_folder/人物/拿弗他利支派.md
+- name: 同心合意
+  suggested_type: 神學
+  evidence: 民7:2,10,11,12 以色列的眾首領...都來奉獻...首領都來行奉獻壇的禮...第一天是猶大支派...CT：眾首領同心合意表教會合一。KC：十二支派同等熱忱。BH：詩篇133:1弟兄和睦同居。
+  surfaces:
+  - phrase: 同心合意
+  - phrase: 眾首領
+  - phrase: 都來奉獻
+  - phrase: 教會合一
+  - phrase: 十二支派同等熱忱
+  - phrase: 詩篇133:1
+  target_path: link_folder/神學/同心合意.md
+- name: 樂獻
+  suggested_type: 神學
+  evidence: 民7:2,3,10,11,12 都來奉獻...把自己的供物送到耶和華面前。CT：樂獻表愛主心。KC：有愛主的心。BH：林後9:7樂意奉獻。
+  surfaces:
+  - phrase: 樂獻
+  - phrase: 愛主心
+  - phrase: 有愛主的心
+  - phrase: 林後9:7
+  - phrase: 樂意奉獻
+  target_path: link_folder/神學/樂獻.md
+- name: 彼此幫助
+  suggested_type: 神學
+  evidence: 民7:3 每兩個首領奉獻一輛車，每首領奉獻一隻牛。CT：彼此幫助表肢體配搭。KC：合宜配搭完成神計畫。BH：羅馬書12:4-5肢體互相聯絡。
+  surfaces:
+  - phrase: 彼此幫助
+  - phrase: 每兩個首領
+  - phrase: 肢體配搭
+  - phrase: 合宜配搭
+  - phrase: 完成神計畫
+  - phrase: 羅馬書12:4-5
+  target_path: link_folder/神學/彼此幫助.md
+- name: 合宜配搭
+  suggested_type: 神學
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：以弗所書4:16全身靠著聯絡得合式。
+  surfaces:
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 全身靠著聯絡得合式
+  - phrase: 以弗所書4:16
+  target_path: link_folder/神學/合宜配搭.md
+- name: 神所賜工具
+  suggested_type: 神學
+  evidence: 民7:5 你要收下這些，好作會幕的使用。CT：神所賜工具只能用在神事上。KC：健康知識財富為管家使命。BH：彼前4:10-11管家職分。
+  surfaces:
+  - phrase: 神所賜工具
+  - phrase: 好作會幕的使用
+  - phrase: 只能用在神事上
+  - phrase: 管家使命
+  - phrase: 彼前4:10-11
+  target_path: link_folder/神學/神所賜工具.md
+- name: 管家職分
+  suggested_type: 神學
+  evidence: 民7:5 都要照利未人所辦的事交給他們。CT：我們為神管家管理神賜資源。KC：不可挪作私用。BH：路加福音16:1-13不義管家。
+  surfaces:
+  - phrase: 管家職分
+  - phrase: 管理神賜資源
+  - phrase: 不可挪作私用
+  - phrase: 路加福音16:1-13
+  - phrase: 不義管家
+  target_path: link_folder/神學/管家職分.md
+- name: 十二天
+  suggested_type: 主題
+  evidence: 民7:11,12,18,24,30,36,42,48,54,60,66,72,78 要每天一個首領來獻供物...第一天...第二天...第十二天。CT：十二天表完全感謝。KC：安息日也不停。BH：十二代表完全。
+  surfaces:
+  - phrase: 十二天
+  - phrase: 每天一個首領
+  - phrase: 第一天
+  - phrase: 第十二天
+  - phrase: 完全感謝
+  - phrase: 安息日也不停
+  - phrase: 十二代表完全
+  target_path: link_folder/主題/十二天.md
+- name: 安息日不停
+  suggested_type: 主題
+  evidence: 民7:11 要每天一個首領來獻供物。CT：奉獻不因安息日停止。KC：各首領大概也沒有停止。BH：丁良才註釋。
+  surfaces:
+  - phrase: 安息日不停
+  - phrase: 每天一個首領
+  - phrase: 奉獻不因安息日停止
+  - phrase: 丁良才註釋
+  target_path: link_folder/主題/安息日不停.md
+- name: 免除嫉妒自誇
+  suggested_type: 神學
+  evidence: 民7:12-83 各支派獻一樣供物。CT：同樣供物免除嫉妒自誇。KC：各首領所獻的都是一樣的。BH：丁良才註釋。
+  surfaces:
+  - phrase: 免除嫉妒自誇
+  - phrase: 各支派獻一樣供物
+  - phrase: 同樣供物
+  - phrase: 各首領所獻的都是一樣的
+  - phrase: 丁良才註釋
+  target_path: link_folder/神學/免除嫉妒自誇.md
+- name: 素祭為祭司收入
+  suggested_type: 神學
+  evidence: 民7:13,14,19,20... 素祭為祭司收入重要來源。CT：素祭表基督完美人生。KC：先講各族長獻上素祭，肯定此制度。BH：利未記2章素祭條例。
+  surfaces:
+  - phrase: 素祭為祭司收入
+  - phrase: 祭司收入重要來源
+  - phrase: 基督完美人生
+  - phrase: 肯定此制度
+  - phrase: 利未記2章
+  target_path: link_folder/神學/素祭為祭司收入.md
+- name: 平安祭最多
+  suggested_type: 神學
+  evidence: 民7:17,23,29...88 平安祭牲畜最多：公牛二十四隻、公綿羊六十隻...CT：平安祭最多表感謝為主。KC：實際上為奉獻壇的禮物是作為感謝而獻上的平安祭。BH：利未記3章平安祭條例。
+  surfaces:
+  - phrase: 平安祭最多
+  - phrase: 公牛二十四隻
+  - phrase: 公綿羊六十隻
+  - phrase: 感謝為主
+  - phrase: 奉獻壇的禮物
+  - phrase: 利未記3章
+  target_path: link_folder/神學/平安祭最多.md
+- name: 贖罪祭最少
+  suggested_type: 神學
+  evidence: 民7:16,22,28...87 每支派一隻公山羊為贖罪祭。CT：贖罪祭最少表承認自己是罪人。KC：暗示著他們在以色列百姓中不過是一個罪人。BH：利未記4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 贖罪祭最少
+  - phrase: 每支派一隻公山羊
+  - phrase: 承認自己是罪人
+  - phrase: 不過是一個罪人
+  - phrase: 利未記4-5章
+  target_path: link_folder/神學/贖罪祭最少.md
+- name: 神悅納奉獻
+  suggested_type: 神學
+  evidence: 民7:4,5,89 耶和華曉諭摩西說：你要收下這些...摩西進會幕要與耶和華說話，就聽見有聲音。CT：神悅納奉獻並與人說話。KC：神接受首領樂捐。BH：神同在表明悅納。
+  surfaces:
+  - phrase: 神悅納奉獻
+  - phrase: 收下這些
+  - phrase: 與耶和華說話
+  - phrase: 聽見有聲音
+  - phrase: 神同在表明悅納
+  target_path: link_folder/神學/神悅納奉獻.md
+- name: 神與人說話
+  suggested_type: 神學
+  evidence: 民7:89 摩西進會幕要與耶和華說話，就聽見有聲音...對他說話。CT：神在會幕與摩西面對面說話。KC：施恩座上聲音表神恩典話語。BH：出埃及記25:22在施恩座上與你相會。
+  surfaces:
+  - phrase: 神與人說話
+  - phrase: 摩西進會幕
+  - phrase: 與耶和華說話
+  - phrase: 聽見有聲音
+  - phrase: 面對面說話
+  - phrase: 出埃及記25:22
+  target_path: link_folder/神學/神與人說話.md
+- name: 會幕建成
+  suggested_type: 事件
+  evidence: 民7:1 摩西立完了帳幕，就把帳幕用膏抹了。CT：會幕建成神榮光充滿。KC：出埃及記40:17立完帳幕。BH：出埃及記40:34-35榮光充滿。
+  surfaces:
+  - phrase: 會幕建成
+  - phrase: 摩西立完了帳幕
+  - phrase: 神榮光充滿
+  - phrase: 出埃及記40:17
+  - phrase: 出埃及記40:34-35
+  target_path: link_folder/事件/會幕建成.md
+- name: 出埃及第二年正月初一
+  suggested_type: 事件
+  evidence: 民7:1,10 當天...用膏抹壇的日子。CT：出埃及後第二年正月初一日。KC：出埃及記40:17。BH：民數記1:1二月初一日數點人口。
+  surfaces:
+  - phrase: 出埃及第二年正月初一
+  - phrase: 當天
+  - phrase: 用膏抹壇的日子
+  - phrase: 出埃及記40:17
+  - phrase: 民數記1:1
+  target_path: link_folder/事件/出埃及第二年正月初一.md
+- name: 正月初一
+  suggested_type: 事件
+  evidence: 民7:1,10 當天...用膏抹壇的日子。CT：出埃及後第二年正月初一日。KC：出埃及記40:17。BH：民數記1:1二月初一日數點人口。
+  surfaces:
+  - phrase: 正月初一
+  - phrase: 出埃及後第二年
+  - phrase: 出埃及記40:17
+  - phrase: 民數記1:1
+  target_path: link_folder/事件/正月初一.md
+- name: 二月初一
+  suggested_type: 事件
+  evidence: 民7:1,10 當天...用膏抹壇的日子。CT：出埃及後第二年正月初一日。KC：出埃及記40:17。BH：民數記1:1二月初一日數點人口。
+  surfaces:
+  - phrase: 二月初一
+  - phrase: 數點人口
+  - phrase: 民數記1:1
+  - phrase: 正月初一建立會幕
+  target_path: link_folder/事件/二月初一.md
+- name: 篷子車
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8 六輛篷子車...於是摩西收了車和牛...把兩輛車...又把四輛車。CT：篷子車為保護聖物在曠野風雨沙中。KC：蓬子車即駝轎。BH：以色列人從埃及得來（出12:36）。
+  surfaces:
+  - phrase: 篷子車
+  - phrase: 六輛篷子車
+  - phrase: 保護聖物
+  - phrase: 曠野風雨沙
+  - phrase: 駝轎
+  - phrase: 從埃及得來
+  - phrase: 出埃及記12:36
+  target_path: link_folder/原文/篷子車.md
+- name: 蓬子車
+  suggested_type: 原文
+  evidence: 民7:3 六輛篷子車。CT：蓬子車即駝轎。KC：蓬子兩個字原文在賽66:20譯作轎字。BH：以賽亞書66:20。
+  surfaces:
+  - phrase: 蓬子車
+  - phrase: 駝轎
+  - phrase: 賽66:20譯作轎字
+  - phrase: 以賽亞書66:20
+  target_path: link_folder/原文/蓬子車.md
+- name: 一歲公羊羔
+  suggested_type: 原文
+  evidence: 民7:15,17,21,23... 每支派一隻一歲公羊羔為燔祭/平安祭。共一歲公羊羔十二隻/六十隻。CT：一歲公羊羔表基督無瑕疵。KC：一歲為壯年。BH：出埃及記12:5一歲公羊羔。
+  surfaces:
+  - phrase: 一歲公羊羔
+  - phrase: 燔祭牲
+  - phrase: 平安祭牲
+  - phrase: 共一歲公羊羔十二隻
+  - phrase: 六十隻
+  - phrase: 基督無瑕疵
+  - phrase: 壯年
+  - phrase: 出埃及記12:5
+  target_path: link_folder/原文/一歲公羊羔.md
+- name: 銀盤
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85 每支派一個銀盤，共十二個，每盤重一百三十舍客勒。CT：銀盤盛素祭表奉獻豐盛。KC：按聖所平。BH：民7:85銀盤十二個。
+  surfaces:
+  - phrase: 銀盤
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重一百三十舍客勒
+  - phrase: 盛素祭
+  - phrase: 按聖所平
+  - phrase: 民數記7:85
+  target_path: link_folder/原文/銀盤.md
+- name: 銀碗
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85 每支派一個銀碗，共十二個，每碗重七十舍客勒。CT：銀碗盛素祭表奉獻豐盛。KC：按聖所平。BH：民7:85銀碗十二個。
+  surfaces:
+  - phrase: 銀碗
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重七十舍客勒
+  - phrase: 盛素祭
+  - phrase: 按聖所平
+  - phrase: 民數記7:85
+  target_path: link_folder/原文/銀碗.md
+- name: 金杯
+  suggested_type: 原文
+  evidence: 民7:14,20,26...86 每支派一個金杯，共十二個，每杯重十舍客勒，盛滿香。CT：金杯盛香表禱告馨香。KC：按聖所平。BH：民7:86金杯十二個。
+  surfaces:
+  - phrase: 金杯
+  - phrase: 每支派一個
+  - phrase: 共十二個
+  - phrase: 重十舍客勒
+  - phrase: 盛滿香
+  - phrase: 禱告馨香
+  - phrase: 按聖所平
+  - phrase: 民數記7:86
+  target_path: link_folder/原文/金杯.md
+- name: 細麵調油
+  suggested_type: 原文
+  evidence: 民7:13,14,19,20... 每支派銀盤銀碗盛細麵調油為素祭。CT：細麵調油表基督完美人生。KC：素祭用細麵調油。BH：利未記2:1素祭條例。
+  surfaces:
+  - phrase: 細麵調油
+  - phrase: 盛細麵調油
+  - phrase: 素祭
+  - phrase: 基督完美人生
+  - phrase: 利未記2:1
+  target_path: link_folder/原文/細麵調油.md
+- name: 香
+  suggested_type: 原文
+  evidence: 民7:14,20,26...86 每支派金杯重十舍客勒，盛滿香。CT：香表禱告馨香。KC：金杯盛香。BH：詩篇141:2禱告如香。
+  surfaces:
+  - phrase: 香
+  - phrase: 盛滿香
+  - phrase: 禱告馨香
+  - phrase: 金杯盛香
+  - phrase: 詩篇141:2
+  target_path: link_folder/原文/香.md
+- name: 供物總數
+  suggested_type: 主題
+  evidence: 民7:84-88 這就是膏抹壇的日子，以色列首領所獻的供物：銀盤十二個，銀碗十二個，金杯十二個...公牛二十四隻，公綿羊六十隻，公山羊六十隻，一歲公羊羔六十隻。CT：總數統計表神悅納各支派。KC：十二對應十二支派完全。BH：平安祭最多表感謝為主。
+  surfaces:
+  - phrase: 供物總數
+  - phrase: 銀盤十二個
+  - phrase: 銀碗十二個
+  - phrase: 金杯十二個
+  - phrase: 公牛二十四隻
+  - phrase: 公綿羊六十隻
+  - phrase: 公山羊六十隻
+  - phrase: 一歲公羊羔六十隻
+  - phrase: 神悅納各支派
+  - phrase: 十二支派完全
+  - phrase: 平安祭最多
+  - phrase: 感謝為主
+  target_path: link_folder/主題/供物總數.md
+- name: 十二代表完全
+  suggested_type: 神學
+  evidence: 民7:11,12,18,24,30,36,42,48,54,60,66,72,78,84,85,86,87,88 要每天一個首領來獻供物...銀盤十二個，銀碗十二個，金杯十二個...公牛十二隻，公綿羊十二隻，一歲公羊羔十二隻，公山羊十二隻。
+    CT：十二代表完全。KC：十二支派完全感謝。BH：十二為完全數。
+  surfaces:
+  - phrase: 十二代表完全
+  - phrase: 每天一個首領
+  - phrase: 銀盤十二個
+  - phrase: 銀碗十二個
+  - phrase: 金杯十二個
+  - phrase: 公牛十二隻
+  - phrase: 公綿羊十二隻
+  - phrase: 一歲公羊羔十二隻
+  - phrase: 公山羊十二隻
+  - phrase: 十二支派完全感謝
+  - phrase: 十二為完全數
+  target_path: link_folder/神學/十二代表完全.md
+- name: 神記著行義的人
+  suggested_type: 神學
+  evidence: 民7:12-83 記錄各人的名字。CT：神記著每一個在神面前作善事和行義的人。KC：記錄了各人的名字。BH：瑪拉基書3:16紀念冊。
+  surfaces:
+  - phrase: 神記著行義的人
+  - phrase: 記錄各人的名字
+  - phrase: 在神面前作善事
+  - phrase: 行義的人
+  - phrase: 瑪拉基書3:16
+  - phrase: 紀念冊
+  target_path: link_folder/神學/神記著行義的人.md
+- name: 祭司收入
+  suggested_type: 神學
+  evidence: 民7:9,13,14,19,20... 素祭為祭司收入重要來源。CT：聖物歸祭司供養。KC：祭司無產業靠聖物。BH：民數記18:8-22祭司分。
+  surfaces:
+  - phrase: 祭司收入
+  - phrase: 素祭為祭司收入重要來源
+  - phrase: 聖物歸祭司供養
+  - phrase: 祭司無產業
+  - phrase: 靠聖物
+  - phrase: 民數記18:8-22
+  target_path: link_folder/神學/祭司收入.md
+- name: 祭司無產業
+  suggested_type: 神學
+  evidence: 民7:9,13,14,19,20... 祭司無產業靠聖物供養。CT：神為祭司產業。KC：利未人無分無業。BH：申命記10:9利未人無分。
+  surfaces:
+  - phrase: 祭司無產業
+  - phrase: 靠聖物供養
+  - phrase: 神為祭司產業
+  - phrase: 利未人無分無業
+  - phrase: 申命記10:9
+  target_path: link_folder/神學/祭司無產業.md
+- name: 利未人無分
+  suggested_type: 神學
+  evidence: 民7:5,6,7,8,9 都要照利未人所辦的事交給他們...利未人三族按職務得車牛分配。CT：利未人無地業，神為產業。KC：利未人分別為聖歸神。BH：申命記10:9利未人無分。
+  surfaces:
+  - phrase: 利未人無分
+  - phrase: 神為產業
+  - phrase: 利未人分別為聖歸神
+  - phrase: 申命記10:9
+  - phrase: 按職務得分配
+  target_path: link_folder/神學/利未人無分.md
+- name: 神為產業
+  suggested_type: 神學
+  evidence: 民7:5,9 照利未人所辦的事交給他們...因為他們辦的是聖所的事。CT：神為利未人/祭司產業。KC：利未人歸神。BH：民數記18:20我是你的產業。
+  surfaces:
+  - phrase: 神為產業
+  - phrase: 利未人歸神
+  - phrase: 辦聖所的事
+  - phrase: 民數記18:20
+  - phrase: 我是你的產業
+  target_path: link_folder/神學/神為產業.md
+- name: 聖所的事
+  suggested_type: 主題
+  evidence: 民7:9 因為他們辦的是聖所的事，在肩頭上抬聖物。CT：聖所事奉為最高職分。KC：哥轄族抬至聖物。BH：民數記4:4哥轄族辦聖所事。
+  surfaces:
+  - phrase: 聖所的事
+  - phrase: 辦的是聖所的事
+  - phrase: 在肩頭上抬聖物
+  - phrase: 最高職分
+  - phrase: 哥轄族
+  - phrase: 民數記4:4
+  target_path: link_folder/主題/聖所的事.md
+- name: 肩頭上抬
+  suggested_type: 主題
+  evidence: 民7:9 在肩頭上抬聖物。CT：肩頭抬表親身擔當責任。KC：大衛用車運約櫃害烏撒命。BH：民數記4:15哥轄族抬聖物條例。
+  surfaces:
+  - phrase: 肩頭上抬
+  - phrase: 親身擔當責任
+  - phrase: 大衛用車運約櫃
+  - phrase: 烏撒
+  - phrase: 民數記4:15
+  target_path: link_folder/主題/肩頭上抬.md
+- name: 大衛用車運約櫃
+  suggested_type: 事件
+  evidence: 民7:9 但車與牛都沒有交給哥轄子孫。CT：大衛用車運約櫃違背神命。KC：後來大衛因忘記了這吩咐，就害了烏撒的命。BH：代上13:7-10大衛運約櫃。
+  surfaces:
+  - phrase: 大衛用車運約櫃
+  - phrase: 違背神命
+  - phrase: 忘記吩咐
+  - phrase: 害了烏撒的命
+  - phrase: 代上13:7-10
+  target_path: link_folder/事件/大衛用車運約櫃.md
+- name: 烏撒
+  suggested_type: 人物
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：烏撒觸摸約櫃被擊殺。KC：烏撒為亞比拿達兒子。BH：撒下6:6-7烏撒被擊殺。
+  surfaces:
+  - phrase: 烏撒
+  - phrase: 觸摸約櫃
+  - phrase: 被擊殺
+  - phrase: 亞比拿達兒子
+  - phrase: 撒下6:6-7
+  target_path: link_folder/人物/烏撒.md
+- name: 亞比拿達
+  suggested_type: 人物
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：烏撒為亞比拿達兒子。KC：約櫃曾放在亞比拿達家。BH：撒上7:1約櫃在亞比拿達家。
+  surfaces:
+  - phrase: 亞比拿達
+  - phrase: 烏撒之父
+  - phrase: 約櫃曾放在亞比拿達家
+  - phrase: 撒上7:1
+  target_path: link_folder/人物/亞比拿達.md
+- name: 代上13
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：代上13記載大衛運約櫃。KC：大衛用車運約櫃。BH：歷代志上13章。
+  surfaces:
+  - phrase: 代上13
+  - phrase: 歷代志上13章
+  - phrase: 大衛運約櫃
+  - phrase: 烏撒被擊殺
+  target_path: link_folder/原文/代上13.md
+- name: 撒下6
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：撒下6記載烏撒被擊殺。KC：烏撒觸摸約櫃。BH：撒母耳記下6章。
+  surfaces:
+  - phrase: 撒下6
+  - phrase: 撒母耳記下6章
+  - phrase: 烏撒被擊殺
+  - phrase: 烏撒觸摸約櫃
+  target_path: link_folder/原文/撒下6.md
+- name: 撒上7
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：約櫃曾放在亞比拿達家。KC：撒上7:1約櫃在亞比拿達家。BH：撒母耳記上7章。
+  surfaces:
+  - phrase: 撒上7
+  - phrase: 撒母耳記上7章
+  - phrase: 約櫃在亞比拿達家
+  - phrase: 撒母耳記上7:1
+  target_path: link_folder/原文/撒上7.md
+- name: 利未記1
+  suggested_type: 原文
+  evidence: 民7:15,17,21,23...87 燔祭條例參利未記1章。CT：燔祭表完全獻給神。KC：燔祭牲畜無殘疾。BH：利未記1章燔祭條例。
+  surfaces:
+  - phrase: 利未記1
+  - phrase: 利未記1章
+  - phrase: 燔祭條例
+  - phrase: 完全獻給神
+  - phrase: 牲畜無殘疾
+  target_path: link_folder/原文/利未記1.md
+- name: 利未記2
+  suggested_type: 原文
+  evidence: 民7:13,14,19,20... 素祭條例參利未記2章。CT：素祭表基督完美人生。KC：素祭用細麵調油。BH：利未記2章素祭條例。
+  surfaces:
+  - phrase: 利未記2
+  - phrase: 利未記2章
+  - phrase: 素祭條例
+  - phrase: 基督完美人生
+  - phrase: 細麵調油
+  target_path: link_folder/原文/利未記2.md
+- name: 利未記3
+  suggested_type: 原文
+  evidence: 民7:17,23,29...88 平安祭條例參利未記3章。CT：平安祭表與神和好感謝。KC：平安祭最多表感謝為主。BH：利未記3章平安祭條例。
+  surfaces:
+  - phrase: 利未記3
+  - phrase: 利未記3章
+  - phrase: 平安祭條例
+  - phrase: 與神和好感謝
+  - phrase: 感謝為主
+  target_path: link_folder/原文/利未記3.md
+- name: 利未記4-5
+  suggested_type: 原文
+  evidence: 民7:16,22,28...87 贖罪祭條例參利未記4-5章。CT：贖罪祭為無意之罪。KC：贖罪祭公山羊。BH：利未記4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 利未記4-5
+  - phrase: 利未記4-5章
+  - phrase: 贖罪祭條例
+  - phrase: 無意之罪
+  - phrase: 贖罪祭公山羊
+  target_path: link_folder/原文/利未記4-5.md
+- name: 利未記23
+  suggested_type: 原文
+  evidence: 民7:17,23,29... 奠祭條例參利未記23章。CT：奠祭表基督生命澆奠。KC：平安祭配奠祭。BH：利未記23:13奠祭條例。
+  surfaces:
+  - phrase: 利未記23
+  - phrase: 利未記23章
+  - phrase: 奠祭條例
+  - phrase: 基督生命澆奠
+  - phrase: 平安祭配奠祭
+  - phrase: 利未記23:13
+  target_path: link_folder/原文/利未記23.md
+- name: 出埃及記12
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8 以色列人從埃及得來（出12:36）。CT：以色列人從埃及帶出金銀財物。KC：出埃及記12:35-36埃及人把金銀給以色列人。BH：出埃及記12章。
+  surfaces:
+  - phrase: 出埃及記12
+  - phrase: 出埃及記12章
+  - phrase: 出12:36
+  - phrase: 從埃及得來
+  - phrase: 埃及人把金銀給以色列人
+  - phrase: 出埃及記12:35-36
+  target_path: link_folder/原文/出埃及記12.md
+- name: 出埃及記25
+  suggested_type: 原文
+  evidence: 民7:89 施恩座條例參出埃及記25章。CT：施恩座為神與人相會之所。KC：基路伯遮掩施恩座。BH：出埃及記25:17-22施恩座條例。
+  surfaces:
+  - phrase: 出埃及記25
+  - phrase: 出埃及記25章
+  - phrase: 施恩座條例
+  - phrase: 神與人相會之所
+  - phrase: 基路伯遮掩
+  - phrase: 出埃及記25:17-22
+  target_path: link_folder/原文/出埃及記25.md
+- name: 出埃及記30
+  suggested_type: 原文
+  evidence: 民7:13,19,25...85,86,87,88 聖所平參出埃及記30章。CT：聖所平為度量衡標準。KC：聖所平統一度量。BH：出埃及記30:13聖所平。
+  surfaces:
+  - phrase: 出埃及記30
+  - phrase: 出埃及記30章
+  - phrase: 聖所平條例
+  - phrase: 度量衡標準
+  - phrase: 聖所平統一度量
+  - phrase: 出埃及記30:13
+  target_path: link_folder/原文/出埃及記30.md
+- name: 出埃及記40
+  suggested_type: 原文
+  evidence: 民7:1,10 摩西立完了帳幕...用膏抹壇的日子。CT：出埃及記40:17立完帳幕。KC：出埃及記40:9-11膏抹條例。BH：出埃及記40:34-35榮光充滿。
+  surfaces:
+  - phrase: 出埃及記40
+  - phrase: 出埃及記40章
+  - phrase: 立完帳幕
+  - phrase: 膏抹條例
+  - phrase: 榮光充滿
+  - phrase: 出埃及記40:17
+  - phrase: 出埃及記40:9-11
+  - phrase: 出埃及記40:34-35
+  target_path: link_folder/原文/出埃及記40.md
+- name: 民數記1
+  suggested_type: 原文
+  evidence: 民7:1,10 當天...用膏抹壇的日子。CT：民數記1:1二月初一日數點人口。KC：出埃及記40:17正月初一日立帳幕。BH：民數記1章。
+  surfaces:
+  - phrase: 民數記1
+  - phrase: 民數記1章
+  - phrase: 二月初一日
+  - phrase: 數點人口
+  - phrase: 正月初一立帳幕
+  - phrase: 出埃及記40:17
+  target_path: link_folder/原文/民數記1.md
+- name: 民數記4
+  suggested_type: 原文
+  evidence: 民7:5,7,8,9 照利未人所辦的事...革順子孫...米拉利子孫...哥轄子孫。CT：民數記4章利未人職務分配。KC：三族職務不同車牛分配不同。BH：民數記4章。
+  surfaces:
+  - phrase: 民數記4
+  - phrase: 民數記4章
+  - phrase: 利未人職務分配
+  - phrase: 三族職務不同
+  - phrase: 車牛分配不同
+  - phrase: 革順子孫
+  - phrase: 米拉利子孫
+  - phrase: 哥轄子孫
+  target_path: link_folder/原文/民數記4.md
+- name: 民數記18
+  suggested_type: 原文
+  evidence: 民7:9,13,14,19,20... 祭司分條例參民數記18章。CT：神為祭司產業。KC：祭司無產業靠聖物。BH：民數記18:8-22祭司分。
+  surfaces:
+  - phrase: 民數記18
+  - phrase: 民數記18章
+  - phrase: 祭司分條例
+  - phrase: 神為祭司產業
+  - phrase: 祭司無產業
+  - phrase: 靠聖物
+  - phrase: 民數記18:8-22
+  target_path: link_folder/原文/民數記18.md
+- name: 申命記10
+  suggested_type: 原文
+  evidence: 民7:5,9 利未人無分無業。CT：神為利未人產業。KC：利未人歸神。BH：申命記10:9利未人無分。
+  surfaces:
+  - phrase: 申命記10
+  - phrase: 申命記10章
+  - phrase: 利未人無分
+  - phrase: 神為利未人產業
+  - phrase: 利未人歸神
+  - phrase: 申命記10:9
+  target_path: link_folder/原文/申命記10.md
+- name: 彼前4
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：彼前4:10-11管家職分。
+  surfaces:
+  - phrase: 彼前4
+  - phrase: 彼前4章
+  - phrase: 管家職分
+  - phrase: 管理神賜資源
+  - phrase: 健康知識財富
+  - phrase: 彼前4:10-11
+  target_path: link_folder/原文/彼前4.md
+- name: 林後9
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：林後9:7樂意奉獻。
+  surfaces:
+  - phrase: 林後9
+  - phrase: 林後9章
+  - phrase: 樂意奉獻
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 林後9:7
+  target_path: link_folder/原文/林後9.md
+- name: 羅12
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：羅12:4-5肢體互相聯絡。
+  surfaces:
+  - phrase: 羅12
+  - phrase: 羅馬書12章
+  - phrase: 肢體互相聯絡
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 羅12:4-5
+  target_path: link_folder/原文/羅12.md
+- name: 弗4
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：弗4:16全身靠著聯絡得合式。
+  surfaces:
+  - phrase: 弗4
+  - phrase: 以弗所書4章
+  - phrase: 全身靠著聯絡得合式
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 弗4:16
+  target_path: link_folder/原文/弗4.md
+- name: 詩133
+  suggested_type: 原文
+  evidence: 民7:2,10,11,12 以色列的眾首領...都來奉獻...首領都來行奉獻壇的禮。CT：眾首領同心合意表教會合一。KC：十二支派同等熱忱。BH：詩133:1弟兄和睦同居。
+  surfaces:
+  - phrase: 詩133
+  - phrase: 詩篇133篇
+  - phrase: 弟兄和睦同居
+  - phrase: 眾首領同心合意
+  - phrase: 教會合一
+  - phrase: 十二支派同等熱忱
+  - phrase: 詩133:1
+  target_path: link_folder/原文/詩133.md
+- name: 詩141
+  suggested_type: 原文
+  evidence: 民7:14,20,26...86 每支派金杯重十舍客勒，盛滿香。CT：香表禱告馨香。KC：金杯盛香。BH：詩141:2禱告如香。
+  surfaces:
+  - phrase: 詩141
+  - phrase: 詩篇141篇
+  - phrase: 禱告如香
+  - phrase: 香表禱告馨香
+  - phrase: 金杯盛香
+  - phrase: 詩141:2
+  target_path: link_folder/原文/詩141.md
+- name: 瑪3
+  suggested_type: 原文
+  evidence: 民7:12-83 記錄各人的名字。CT：神記著每一個在神面前作善事和行義的人。KC：記錄了各人的名字。BH：瑪3:16紀念冊。
+  surfaces:
+  - phrase: 瑪3
+  - phrase: 瑪拉基書3章
+  - phrase: 紀念冊
+  - phrase: 神記著行義的人
+  - phrase: 記錄各人的名字
+  - phrase: 瑪3:16
+  target_path: link_folder/原文/瑪3.md
+- name: 希1
+  suggested_type: 原文
+  evidence: 民7:89 就聽見有聲音...對他說話。CT：神聲音表神話語啟示。KC：從施恩座發出表恩典話語。BH：來1:1-2神藉兒子曉諭我們。
+  surfaces:
+  - phrase: 希1
+  - phrase: 希伯來書1章
+  - phrase: 神藉兒子曉諭我們
+  - phrase: 神聲音
+  - phrase: 神話語啟示
+  - phrase: 恩典話語
+  - phrase: 來1:1-2
+  target_path: link_folder/原文/希1.md
+- name: 來3
+  suggested_type: 原文
+  evidence: 民7:1,5 摩西立完了帳幕...好作會幕的使用。CT：摩西在神家盡忠。KC：摩西為僕人，基督為兒子。BH：來3:1-6摩西基督對比。
+  surfaces:
+  - phrase: 希3
+  - phrase: 希伯來書3章
+  - phrase: 摩西在神家盡忠
+  - phrase: 摩西為僕人
+  - phrase: 基督為兒子
+  - phrase: 來3:1-6
+  target_path: link_folder/原文/來3.md
+- name: 來4
+  suggested_type: 原文
+  evidence: 民7:89 摩西進會幕要與耶和華說話。CT：摩西與神面對面說話。KC：信徒可坦然無懼進入恩座。BH：來4:16坦然無懼進前。
+  surfaces:
+  - phrase: 希4
+  - phrase: 希伯來書4章
+  - phrase: 摩西與神面對面說話
+  - phrase: 信徒坦然無懼
+  - phrase: 進入恩座
+  - phrase: 來4:16
+  target_path: link_folder/原文/來4.md
+- name: 來10
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：被聖靈膏抹分別為聖。KC：聖靈膏抹為印記。BH：來10:10一次獻上成聖。
+  surfaces:
+  - phrase: 希10
+  - phrase: 希伯來書10章
+  - phrase: 一次獻上成聖
+  - phrase: 聖靈膏抹
+  - phrase: 分別為聖
+  - phrase: 印記
+  - phrase: 來10:10
+  target_path: link_folder/原文/來10.md
+- name: 林前2
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈工作。CT：神的聖工與世上工作不一樣。KC：無法用世上智慧成就。BH：林前2:4,13;3:18-20屬靈智慧。
+  surfaces:
+  - phrase: 林前2
+  - phrase: 哥林多前書2章
+  - phrase: 屬靈智慧
+  - phrase: 神的聖工
+  - phrase: 世上工作不一樣
+  - phrase: 無法用世上智慧成就
+  - phrase: 林前2:4,13;3:18-20
+  target_path: link_folder/原文/林前2.md
+- name: 林前3
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈工作。CT：神的聖工與世上工作不一樣。KC：無法用世上智慧成就。BH：林前2:4,13;3:18-20屬靈智慧。
+  surfaces:
+  - phrase: 林前3
+  - phrase: 哥林多前書3章
+  - phrase: 屬靈智慧
+  - phrase: 神的聖工
+  - phrase: 世上工作不一樣
+  - phrase: 無法用世上智慧成就
+  - phrase: 林前2:4,13;3:18-20
+  target_path: link_folder/原文/林前3.md
+- name: 林前11
+  suggested_type: 原文
+  evidence: 民6:5 男人若有長頭髮，便是他的羞辱。CT：拿細耳人留長髮為神聖義務。KC：長髮表承認神主權。BH：林前11:14男人長髮羞辱。
+  surfaces:
+  - phrase: 林前11
+  - phrase: 哥林多前書11章
+  - phrase: 男人長髮羞辱
+  - phrase: 拿細耳人留長髮
+  - phrase: 承認神主權
+  - phrase: 林前11:14
+  target_path: link_folder/原文/林前11.md
+- name: 林前12
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：林前12:7-11,14-21恩賜多樣。
+  surfaces:
+  - phrase: 林前12
+  - phrase: 哥林多前書12章
+  - phrase: 恩賜多樣
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 林前12:7-11,14-21
+  target_path: link_folder/原文/林前12.md
+- name: 林後1
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：被聖靈膏抹分別為聖。KC：聖靈膏抹為印記。BH：林後1:21-22聖靈膏抹。
+  surfaces:
+  - phrase: 林後1
+  - phrase: 哥林多後書1章
+  - phrase: 聖靈膏抹
+  - phrase: 被聖靈膏抹
+  - phrase: 分別為聖
+  - phrase: 印記
+  - phrase: 林後1:21-22
+  target_path: link_folder/原文/林後1.md
+- name: 林後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人制度在耶穌基督裡已經廢止。CT：信徒事奉神不再是儀式乃是重生心靈。KC：舊約儀式在基督裡廢止。BH：林後3:6-11新約優於舊約。
+  surfaces:
+  - phrase: 林後3
+  - phrase: 哥林多後書3章
+  - phrase: 新約優於舊約
+  - phrase: 信徒事奉神
+  - phrase: 重生心靈
+  - phrase: 舊約儀式廢止
+  - phrase: 林後3:6-11
+  target_path: link_folder/原文/林後3.md
+- name: 林後9
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：林後9:7樂意奉獻。
+  surfaces:
+  - phrase: 林後9
+  - phrase: 哥林多後書9章
+  - phrase: 樂意奉獻
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 林後9:7
+  target_path: link_folder/原文/林後9.md
+- name: 加3
+  suggested_type: 原文
+  evidence: 民6:13 贖愆祭預表基督為我們成了咒詛。CT：基督為我們成了咒詛。KC：贖愆祭公羊預表基督。BH：加3:13基督救贖我們脫離律法咒詛。
+  surfaces:
+  - phrase: 加3
+  - phrase: 加拉太書3章
+  - phrase: 基督救贖我們脫離律法咒詛
+  - phrase: 基督為我們成了咒詛
+  - phrase: 贖愆祭公羊
+  - phrase: 預表基督
+  - phrase: 加3:13
+  target_path: link_folder/原文/加3.md
+- name: 加4
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：加4:4-5時候滿足神差遣兒子。
+  surfaces:
+  - phrase: 加4
+  - phrase: 加拉太書4章
+  - phrase: 時候滿足神差遣兒子
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 加4:4-5
+  target_path: link_folder/原文/加4.md
+- name: 加6
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：加6:2你們各人的重擔要互相擔當。
+  surfaces:
+  - phrase: 加6
+  - phrase: 加拉太書6章
+  - phrase: 你們各人的重擔要互相擔當
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 加6:2
+  target_path: link_folder/原文/加6.md
+- name: 弗2
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：弗2:6信徒以屬天身份生活。
+  surfaces:
+  - phrase: 弗2
+  - phrase: 以弗所書2章
+  - phrase: 信徒以屬天身份生活
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 弗2:6
+  target_path: link_folder/原文/弗2.md
+- name: 弗4
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：弗4:16全身靠著聯絡得合式。
+  surfaces:
+  - phrase: 弗4
+  - phrase: 以弗所書4章
+  - phrase: 全身靠著聯絡得合式
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 弗4:16
+  target_path: link_folder/原文/弗4.md
+- name: 弗5
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：弗5:8,9光明之子。
+  surfaces:
+  - phrase: 弗5
+  - phrase: 以弗所書5章
+  - phrase: 光明之子
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 弗5:8,9
+  target_path: link_folder/原文/弗5.md
+- name: 腓3
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：腓3:1,3,8以基督為至寶。
+  surfaces:
+  - phrase: 腓3
+  - phrase: 腓立比書3章
+  - phrase: 以基督為至寶
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 腓3:1,3,8
+  target_path: link_folder/原文/腓3.md
+- name: 腓4
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：腓4:4,10主裡常常喜樂。
+  surfaces:
+  - phrase: 腓4
+  - phrase: 腓立比書4章
+  - phrase: 主裡常常喜樂
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 腓4:4,10
+  target_path: link_folder/原文/腓4.md
+- name: 帖前5
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：帖前5:18凡事謝恩。
+  surfaces:
+  - phrase: 帖前5
+  - phrase: 帖撒羅尼迦前書5章
+  - phrase: 凡事謝恩
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 帖前5:18
+  target_path: link_folder/原文/帖前5.md
+- name: 帖後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：帖後3:4,15不服從真理者。
+  surfaces:
+  - phrase: 帖後3
+  - phrase: 帖撒羅尼迦後書3章
+  - phrase: 不服從真理者
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 帖後3:4,15
+  target_path: link_folder/原文/帖後3.md
+- name: 提前1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：提前1:16基督耶穌顯出忍耐。
+  surfaces:
+  - phrase: 提前1
+  - phrase: 提摩太前書1章
+  - phrase: 基督耶穌顯出忍耐
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 提前1:16
+  target_path: link_folder/原文/提前1.md
+- name: 提前4
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：提前4:10-11神是萬人的救主。
+  surfaces:
+  - phrase: 提前4
+  - phrase: 提摩太前書4章
+  - phrase: 神是萬人的救主
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 提前4:10-11
+  target_path: link_folder/原文/提前4.md
+- name: 提後2
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：提後2:4沒有人在當兵的時候纏累世務。
+  surfaces:
+  - phrase: 提後2
+  - phrase: 提摩太後書2章
+  - phrase: 沒有人在當兵的時候纏累世務
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 提後2:4
+  target_path: link_folder/原文/提後2.md
+- name: 彼前1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：彼前1:16你們要聖潔因我聖潔。
+  surfaces:
+  - phrase: 彼前1
+  - phrase: 彼得前書1章
+  - phrase: 你們要聖潔因我聖潔
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 彼前1:16
+  target_path: link_folder/原文/彼前1.md
+- name: 彼前4
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：彼前4:10-11管家職分。
+  surfaces:
+  - phrase: 彼前4
+  - phrase: 彼得前書4章
+  - phrase: 管家職分
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 彼前4:10-11
+  target_path: link_folder/原文/彼前4.md
+- name: 彼前5
+  suggested_type: 原文
+  evidence: 民6:5 不可用剃頭刀剃頭，要由髮綹長長了。CT：拿細耳人因為歸神為聖，所以有與世俗不同的價值標準。KC：長髮為神所賜，表生命能力。BH：彼前5:6所以你們要自卑，服在神大能的手下。
+  surfaces:
+  - phrase: 彼前5
+  - phrase: 彼得前書5章
+  - phrase: 所以你們要自卑，服在神大能的手下
+  - phrase: 拿細耳人歸神為聖
+  - phrase: 長髮表生命能力
+  - phrase: 彼前5:6
+  target_path: link_folder/原文/彼前5.md
+- name: 彼後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：彼後3:4,15不服從真理者。
+  surfaces:
+  - phrase: 彼後3
+  - phrase: 彼得後書3章
+  - phrase: 不服從真理者
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 彼後3:4,15
+  target_path: link_folder/原文/彼後3.md
+- name: 雅1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：雅1:27清潔沒有玷污的虔誠。
+  surfaces:
+  - phrase: 雅1
+  - phrase: 雅各書1章
+  - phrase: 清潔沒有玷污的虔誠
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 雅1:27
+  target_path: link_folder/原文/雅1.md
+- name: 雅4
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：雅4:4你們這些淫亂的人哪，豈不知與世俗為友就是與神為敵嗎？
+  surfaces:
+  - phrase: 雅4
+  - phrase: 雅各書4章
+  - phrase: 你們這些淫亂的人哪，豈不知與世俗為友就是與神為敵嗎？
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 離俗歸耶和華
+  - phrase: 雅4:4
+  target_path: link_folder/原文/雅4.md
+- name: 啟21
+  suggested_type: 原文
+  evidence: 民5:3 這營是我所住的。CT：教會為神聖殿。KC：神住在百姓中間。BH：啟21:3,27神要親自與他們同在，凡不潔淨的總不得進那城。
+  surfaces:
+  - phrase: 啟21
+  - phrase: 啟示錄21章
+  - phrase: 神要親自與他們同在
+  - phrase: 凡不潔淨的總不得進那城
+  - phrase: 教會為神聖殿
+  - phrase: 神住在百姓中間
+  - phrase: 啟21:3,27
+  target_path: link_folder/原文/啟21.md
+- name: 士13
+  suggested_type: 原文
+  evidence: 民6:5,13 參孫為終身拿細耳人（士13:5-14,16:17）。CT：參孫頭髮為見證，剃去則能力離開。KC：參孫、撒母耳、施洗約翰三大終身拿細耳人。BH：士師記13章。
+  surfaces:
+  - phrase: 士13
+  - phrase: 士師記13章
+  - phrase: 參孫為終身拿細耳人
+  - phrase: 頭髮為見證
+  - phrase: 剃去則能力離開
+  - phrase: 三大終身拿細耳人
+  - phrase: 士師記13:5-14,16:17
+  target_path: link_folder/原文/士13.md
+- name: 撒上1
+  suggested_type: 原文
+  evidence: 民6:5 撒母耳為終身拿細耳人（撒上1:11）。CT：撒母耳母親許願獻給神。KC：三大終身拿細耳人。BH：撒母耳記上1章。
+  surfaces:
+  - phrase: 撒上1
+  - phrase: 撒母耳記上1章
+  - phrase: 撒母耳為終身拿細耳人
+  - phrase: 母親許願獻給神
+  - phrase: 三大終身拿細耳人
+  - phrase: 撒母耳記上1:11
+  target_path: link_folder/原文/撒上1.md
+- name: 撒上7
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：約櫃曾放在亞比拿達家。KC：撒上7:1約櫃在亞比拿達家。BH：撒母耳記上7章。
+  surfaces:
+  - phrase: 撒上7
+  - phrase: 撒母耳記上7章
+  - phrase: 約櫃在亞比拿達家
+  - phrase: 撒母耳記上7:1
+  target_path: link_folder/原文/撒上7.md
+- name: 撒下6
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：烏撒觸摸約櫃被擊殺。KC：烏撒為亞比拿達兒子。BH：撒下6:6-7烏撒被擊殺。
+  surfaces:
+  - phrase: 撒下6
+  - phrase: 撒母耳記下6章
+  - phrase: 烏撒觸摸約櫃被擊殺
+  - phrase: 烏撒為亞比拿達兒子
+  - phrase: 撒下6:6-7
+  target_path: link_folder/原文/撒下6.md
+- name: 代上13
+  suggested_type: 原文
+  evidence: 民7:9 後來大衛因忘記了這吩咐，就害了烏撒的命。CT：代上13記載大衛運約櫃。KC：大衛用車運約櫃。BH：歷代志上13章。
+  surfaces:
+  - phrase: 代上13
+  - phrase: 歷代志上13章
+  - phrase: 大衛運約櫃
+  - phrase: 烏撒被擊殺
+  - phrase: 歷代志上13章
+  target_path: link_folder/原文/代上13.md
+- name: 王下7
+  suggested_type: 原文
+  evidence: 民5:1 本章和下一章仍是講以色列民預備離開西奈山登上旅程的事，主要記敘潔淨營地，凡不潔的都要與百姓分隔，住到營外的洞穴或曠野的帳幕中（參利13:46；王下7:3）。CT：不潔者住營外洞穴。KC：王下7:3四個長大痲瘋的人。BH：列王紀下7章。
+  surfaces:
+  - phrase: 王下7
+  - phrase: 列王紀下7章
+  - phrase: 四個長大痲瘋的人
+  - phrase: 不潔者住營外洞穴
+  - phrase: 利13:46
+  - phrase: 列王紀下7:3
+  target_path: link_folder/原文/王下7.md
+- name: 何3
+  suggested_type: 原文
+  evidence: 民6:3,4 何西阿書三1亦提到葡萄乾和葡萄餅，在豐饒崇拜的祭儀中使用。CT：葡萄為迦南主要產品，與豐饒崇拜有象徵關聯。KC：禁戒葡萄製品防微杜漸。BH：何西阿書3章。
+  surfaces:
+  - phrase: 何3
+  - phrase: 何西阿書3章
+  - phrase: 葡萄乾和葡萄餅
+  - phrase: 豐饒崇拜祭儀
+  - phrase: 葡萄為迦南主要產品
+  - phrase: 禁戒葡萄製品
+  - phrase: 何西阿書3:1
+  target_path: link_folder/原文/何3.md
+- name: 賽66
+  suggested_type: 原文
+  evidence: 民7:3 蓬子車...蓬子兩個字的原文，在賽六十六20節譯作轎字。CT：蓬子車即駝轎。KC：蓬子車為保護聖物。BH：以賽亞書66:20。
+  surfaces:
+  - phrase: 賽66
+  - phrase: 以賽亞書66章
+  - phrase: 蓬子車
+  - phrase: 駝轎
+  - phrase: 保護聖物
+  - phrase: 以賽亞書66:20
+  target_path: link_folder/原文/賽66.md
+- name: 路1
+  suggested_type: 原文
+  evidence: 民6:5 施洗約翰為終身拿細耳人（路1:15）。CT：施洗約翰從母腹被聖靈充滿。KC：三大終身拿細耳人。BH：路加福音1章。
+  surfaces:
+  - phrase: 路1
+  - phrase: 路加福音1章
+  - phrase: 施洗約翰為終身拿細耳人
+  - phrase: 母腹被聖靈充滿
+  - phrase: 三大終身拿細耳人
+  - phrase: 路加福音1:15
+  target_path: link_folder/原文/路1.md
+- name: 路7
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：路7:32-34人子來喫喝。
+  surfaces:
+  - phrase: 路7
+  - phrase: 路加福音7章
+  - phrase: 人子來喫喝
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 路7:32-34
+  target_path: link_folder/原文/路7.md
+- name: 路8
+  suggested_type: 原文
+  evidence: 民5:2 患漏症的...患漏症的指男女長期或間歇性從性器官流淌不正常的分泌物（參利15:2；路8:43-48）。CT：漏症表天然生命流露。KC：漏症預表污染他人之罪。BH：路加福音8:43-48血漏婦人。
+  surfaces:
+  - phrase: 路8
+  - phrase: 路加福音8章
+  - phrase: 血漏婦人
+  - phrase: 漏症表天然生命流露
+  - phrase: 漏症預表污染他人之罪
+  - phrase: 路加福音8:43-48
+  target_path: link_folder/原文/路8.md
+- name: 路9
+  suggested_type: 原文
+  evidence: 民6:5 不可用剃頭刀剃頭，要由髮綹長長了。CT：拿細耳人留長髮表承認神主權。KC：長髮為神所賜，表生命能力。BH：路9:24-25凡要救自己生命的必喪掉生命。
+  surfaces:
+  - phrase: 路9
+  - phrase: 路加福音9章
+  - phrase: 凡要救自己生命的必喪掉生命
+  - phrase: 拿細耳人留長髮
+  - phrase: 承認神主權
+  - phrase: 長髮表生命能力
+  - phrase: 路9:24-25
+  target_path: link_folder/原文/路9.md
+- name: 路14
+  suggested_type: 原文
+  evidence: 民6:6,7 在他離俗歸耶和華的一切日子，不可挨近死屍...他不可因他們使自己不潔淨。CT：不近死屍表效法神聖潔，寧遠離親屬。KC：拿細耳人比祭司更嚴格。BH：路14:26-27凡到我這裡來，不捨父母...不能作我的門徒。
+  surfaces:
+  - phrase: 路14
+  - phrase: 路加福音14章
+  - phrase: 凡到我這裡來，不捨父母...不能作我的門徒
+  - phrase: 不近死屍表效法神聖潔
+  - phrase: 拿細耳人比祭司更嚴格
+  - phrase: 路14:26-27
+  target_path: link_folder/原文/路14.md
+- name: 路17
+  suggested_type: 原文
+  evidence: 民5:2 主基督來到世上以後，把患者醫好，以徹底去除大痲瘋；叫死者復活以去除死亡（路17:12；8:40）。CT：基督醫治大痲瘋、叫死人復活。KC：消滅人與神隔絕障礙。BH：路加福音17:12十個大痲瘋人。
+  surfaces:
+  - phrase: 路17
+  - phrase: 路加福音17章
+  - phrase: 十個大痲瘋人
+  - phrase: 基督醫治大痲瘋
+  - phrase: 叫死人復活
+  - phrase: 消滅人與神隔絕障礙
+  - phrase: 路17:12
+  target_path: link_folder/原文/路17.md
+- name: 路19
+  suggested_type: 原文
+  evidence: 民5:7 承認所犯的罪：向對方承認自己的錯是為了求得對方原諒，也是為了承認神真理的正當性（路19:1-10）。CT：悔改就應同時面向人和神。KC：撒該悔改歸還四倍。BH：路加福音19:1-10撒該。
+  surfaces:
+  - phrase: 路19
+  - phrase: 路加福音19章
+  - phrase: 撒該悔改歸還四倍
+  - phrase: 悔改同時面向人和神
+  - phrase: 承認神真理正當性
+  - phrase: 路19:1-10
+  target_path: link_folder/原文/路19.md
+- name: 約1
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：耶穌基督被聖靈感孕，被聖靈膏抹。KC：道成肉身來到世上。BH：約1:14道成肉身住在我們中間。
+  surfaces:
+  - phrase: 約1
+  - phrase: 約翰福音1章
+  - phrase: 道成肉身住在我們中間
+  - phrase: 耶穌基督被聖靈感孕
+  - phrase: 被聖靈膏抹
+  - phrase: 約1:14
+  target_path: link_folder/原文/約1.md
+- name: 約3
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：耶穌基督被聖靈感孕，被聖靈膏抹。KC：道成肉身來到世上。BH：約3:2拉比，我們知道你是從神來的。
+  surfaces:
+  - phrase: 約3
+  - phrase: 約翰福音3章
+  - phrase: 拉比，我們知道你是從神來的
+  - phrase: 耶穌基督被聖靈感孕
+  - phrase: 被聖靈膏抹
+  - phrase: 約3:2
+  target_path: link_folder/原文/約3.md
+- name: 約8
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：耶穌雖然道成肉身來到世上，但始終是以屬天的身份事奉。KC：道成肉身來到世上。BH：約8:23我是從上面來的。
+  surfaces:
+  - phrase: 約8
+  - phrase: 約翰福音8章
+  - phrase: 我是從上面來的
+  - phrase: 耶穌道成肉身
+  - phrase: 以屬天身份事奉
+  - phrase: 約8:23
+  target_path: link_folder/原文/約8.md
+- name: 約17
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：信徒也應該效法耶穌基督，雖然生活在這個地上，但應以屬天的身份生活。KC：道成肉身來到世上。BH：約17:4,14信徒不屬世界。
+  surfaces:
+  - phrase: 約17
+  - phrase: 約翰福音17章
+  - phrase: 信徒不屬世界
+  - phrase: 效法耶穌基督
+  - phrase: 以屬天身份生活
+  - phrase: 約17:4,14
+  target_path: link_folder/原文/約17.md
+- name: 徒1
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：被聖靈膏抹是必須的。KC：作神的聖工被聖靈膏抹。BH：徒1:8聖靈降臨得著能力。
+  surfaces:
+  - phrase: 徒1
+  - phrase: 使徒行傳1章
+  - phrase: 聖靈降臨得著能力
+  - phrase: 被聖靈膏抹
+  - phrase: 作神的聖工
+  - phrase: 徒1:8
+  target_path: link_folder/原文/徒1.md
+- name: 徒10
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：耶穌基督被聖靈感孕，被聖靈膏抹。KC：道成肉身來到世上。BH：徒10:38神用聖靈膏抹耶穌。
+  surfaces:
+  - phrase: 徒10
+  - phrase: 使徒行傳10章
+  - phrase: 神用聖靈膏抹耶穌
+  - phrase: 耶穌基督被聖靈感孕
+  - phrase: 被聖靈膏抹
+  - phrase: 徒10:38
+  target_path: link_folder/原文/徒10.md
+- name: 徒18
+  suggested_type: 原文
+  evidence: 民6:13,18 保羅曾許拿細耳人願（徒18:18,21:23-24）。CT：保羅為弟兄緣故許願。KC：保羅在革林提剃頭，在耶路撒冷完成願。BH：使徒行傳18:18,21:23-24。
+  surfaces:
+  - phrase: 徒18
+  - phrase: 使徒行傳18章
+  - phrase: 保羅曾許拿細耳人願
+  - phrase: 為弟兄緣故許願
+  - phrase: 革林提剃頭
+  - phrase: 耶路撒冷完成願
+  - phrase: 徒18:18,21:23-24
+  target_path: link_folder/原文/徒18.md
+- name: 徒21
+  suggested_type: 原文
+  evidence: 民6:13,18 保羅曾許拿細耳人願（徒18:18,21:23-24）。CT：保羅為弟兄緣故許願。KC：保羅在革林提剃頭，在耶路撒冷完成願。BH：使徒行傳18:18,21:23-24。
+  surfaces:
+  - phrase: 徒21
+  - phrase: 使徒行傳21章
+  - phrase: 保羅曾許拿細耳人願
+  - phrase: 為弟兄緣故許願
+  - phrase: 革林提剃頭
+  - phrase: 耶路撒冷完成願
+  - phrase: 徒18:18,21:23-24
+  target_path: link_folder/原文/徒21.md
+- name: 羅1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：羅1:16福音是神的大能。
+  surfaces:
+  - phrase: 羅1
+  - phrase: 羅馬書1章
+  - phrase: 福音是神的大能
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 羅1:16
+  target_path: link_folder/原文/羅1.md
+- name: 羅6
+  suggested_type: 原文
+  evidence: 民5:2 因死屍不潔淨的：死亡是因罪的結果而產生的（羅6:23）。CT：死亡本身是不潔淨的。KC：與死屍接觸的一切自然都是不潔淨的。BH：羅6:23罪的工價乃是死。
+  surfaces:
+  - phrase: 羅6
+  - phrase: 羅馬書6章
+  - phrase: 罪的工價乃是死
+  - phrase: 死亡是因罪的結果
+  - phrase: 死亡本身是不潔淨的
+  - phrase: 與死屍接觸不潔淨
+  - phrase: 羅6:23
+  target_path: link_folder/原文/羅6.md
+- name: 羅7
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人制度在耶穌基督裡已經廢止。CT：信徒事奉神不再是儀式乃是重生心靈。KC：舊約儀式在基督裡廢止。BH：羅7:5,6脫離律法歸於基督。
+  surfaces:
+  - phrase: 羅7
+  - phrase: 羅馬書7章
+  - phrase: 脫離律法歸於基督
+  - phrase: 信徒事奉神
+  - phrase: 重生心靈
+  - phrase: 舊約儀式廢止
+  - phrase: 羅7:5,6
+  target_path: link_folder/原文/羅7.md
+- name: 羅12
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：羅12:1,2,4-5將身體獻上當作活祭。
+  surfaces:
+  - phrase: 羅12
+  - phrase: 羅馬書12章
+  - phrase: 將身體獻上當作活祭
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 羅12:1,2,4-5
+  target_path: link_folder/原文/羅12.md
+- name: 林前1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：林前1:16基督耶穌顯出忍耐。
+  surfaces:
+  - phrase: 林前1
+  - phrase: 哥林多前書1章
+  - phrase: 基督耶穌顯出忍耐
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 林前1:16
+  target_path: link_folder/原文/林前1.md
+- name: 林前3
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈工作。CT：神的聖工與世上工作不一樣。KC：無法用世上智慧成就。BH：林前2:4,13;3:18-20屬靈智慧。
+  surfaces:
+  - phrase: 林前3
+  - phrase: 哥林多前書3章
+  - phrase: 屬靈智慧
+  - phrase: 神的聖工
+  - phrase: 世上工作不一樣
+  - phrase: 無法用世上智慧成就
+  - phrase: 林前2:4,13;3:18-20
+  target_path: link_folder/原文/林前3.md
+- name: 林前5
+  suggested_type: 原文
+  evidence: 民5:1,2,3,4 教會中凡是會沾染別人的，會漏掉生命的，會叫人的靈性死亡的，都不可與他相交（參林前5:6-7,11）。CT：教會必須除去邪惡的舊酵。KC：教會中凡是會沾染別人的不可相交。BH：林前5:6-7,11除去舊酵。
+  surfaces:
+  - phrase: 林前5
+  - phrase: 哥林多前書5章
+  - phrase: 除去舊酵
+  - phrase: 教會必須除去邪惡舊酵
+  - phrase: 不可與他相交
+  - phrase: 林前5:6-7,11
+  target_path: link_folder/原文/林前5.md
+- name: 林前6
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：林前6:12,9:25,27凡事都可行但不都有益處。
+  surfaces:
+  - phrase: 林前6
+  - phrase: 哥林多前書6章
+  - phrase: 凡事都可行但不都有益處
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 林前6:12,9:25,27
+  target_path: link_folder/原文/林前6.md
+- name: 林前9
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：林前6:12,9:25,27凡事都可行但不都有益處。
+  surfaces:
+  - phrase: 林前9
+  - phrase: 哥林多前書9章
+  - phrase: 凡事都可行但不都有益處
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 林前6:12,9:25,27
+  target_path: link_folder/原文/林前9.md
+- name: 林前10
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：林前10:13神是信實的，不叫你們受試探過於所能受的。
+  surfaces:
+  - phrase: 林前10
+  - phrase: 哥林多前書10章
+  - phrase: 神是信實的，不叫你們受試探過於所能受的
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 林前10:13
+  target_path: link_folder/原文/林前10.md
+- name: 林前11
+  suggested_type: 原文
+  evidence: 民6:5 男人若有長頭髮，便是他的羞辱。CT：拿細耳人留長髮為神聖義務。KC：長髮表承認神主權。BH：林前11:14男人長髮羞辱。
+  surfaces:
+  - phrase: 林前11
+  - phrase: 哥林多前書11章
+  - phrase: 男人長髮羞辱
+  - phrase: 拿細耳人留長髮
+  - phrase: 承認神主權
+  - phrase: 林前11:14
+  target_path: link_folder/原文/林前11.md
+- name: 林前12
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：林前12:7-11,14-21恩賜多樣。
+  surfaces:
+  - phrase: 林前12
+  - phrase: 哥林多前書12章
+  - phrase: 恩賜多樣
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 林前12:7-11,14-21
+  target_path: link_folder/原文/林前12.md
+- name: 林前15
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：信徒也應該效法耶穌基督，雖然生活在這個地上，但應以屬天的身份生活。KC：道成肉身來到世上。BH：林前15:47-49屬天形像。
+  surfaces:
+  - phrase: 林前15
+  - phrase: 哥林多前書15章
+  - phrase: 屬天形像
+  - phrase: 效法耶穌基督
+  - phrase: 以屬天身份生活
+  - phrase: 林前15:47-49
+  target_path: link_folder/原文/林前15.md
+- name: 林後1
+  suggested_type: 原文
+  evidence: 民7:1 膏抹表聖靈塗抹分別為聖。CT：被聖靈膏抹分別為聖。KC：聖靈膏抹為印記。BH：林後1:21-22聖靈膏抹。
+  surfaces:
+  - phrase: 林後1
+  - phrase: 哥林多後書1章
+  - phrase: 聖靈膏抹
+  - phrase: 被聖靈膏抹
+  - phrase: 分別為聖
+  - phrase: 印記
+  - phrase: 林後1:21-22
+  target_path: link_folder/原文/林後1.md
+- name: 林後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人制度在耶穌基督裡已經廢止。CT：信徒事奉神不再是儀式乃是重生心靈。KC：舊約儀式在基督裡廢止。BH：林後3:6-11新約優於舊約。
+  surfaces:
+  - phrase: 林後3
+  - phrase: 哥林多後書3章
+  - phrase: 新約優於舊約
+  - phrase: 信徒事奉神
+  - phrase: 重生心靈
+  - phrase: 舊約儀式廢止
+  - phrase: 林後3:6-11
+  target_path: link_folder/原文/林後3.md
+- name: 林後9
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：林後9:7樂意奉獻。
+  surfaces:
+  - phrase: 林後9
+  - phrase: 哥林多後書9章
+  - phrase: 樂意奉獻
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 林後9:7
+  target_path: link_folder/原文/林後9.md
+- name: 加3
+  suggested_type: 原文
+  evidence: 民6:13 贖愆祭預表基督為我們成了咒詛。CT：基督為我們成了咒詛。KC：贖愆祭公羊預表基督。BH：加3:13基督救贖我們脫離律法咒詛。
+  surfaces:
+  - phrase: 加3
+  - phrase: 加拉太書3章
+  - phrase: 基督救贖我們脫離律法咒詛
+  - phrase: 基督為我們成了咒詛
+  - phrase: 贖愆祭公羊
+  - phrase: 預表基督
+  - phrase: 加3:13
+  target_path: link_folder/原文/加3.md
+- name: 加4
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：加4:4-5時候滿足神差遣兒子。
+  surfaces:
+  - phrase: 加4
+  - phrase: 加拉太書4章
+  - phrase: 時候滿足神差遣兒子
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 加4:4-5
+  target_path: link_folder/原文/加4.md
+- name: 加6
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：加6:2你們各人的重擔要互相擔當。
+  surfaces:
+  - phrase: 加6
+  - phrase: 加拉太書6章
+  - phrase: 你們各人的重擔要互相擔當
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 加6:2
+  target_path: link_folder/原文/加6.md
+- name: 弗2
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：弗2:6信徒以屬天身份生活。
+  surfaces:
+  - phrase: 弗2
+  - phrase: 以弗所書2章
+  - phrase: 信徒以屬天身份生活
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 弗2:6
+  target_path: link_folder/原文/弗2.md
+- name: 弗4
+  suggested_type: 原文
+  evidence: 民7:3,5 每兩個首領奉獻一輛車...都要照利未人所辦的事交給他們。CT：合宜配搭為神工作基本原則。KC：神工作藉配搭完成。BH：弗4:16全身靠著聯絡得合式。
+  surfaces:
+  - phrase: 弗4
+  - phrase: 以弗所書4章
+  - phrase: 全身靠著聯絡得合式
+  - phrase: 合宜配搭
+  - phrase: 神工作基本原則
+  - phrase: 藉配搭完成
+  - phrase: 弗4:16
+  target_path: link_folder/原文/弗4.md
+- name: 弗5
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：弗5:8,9光明之子。
+  surfaces:
+  - phrase: 弗5
+  - phrase: 以弗所書5章
+  - phrase: 光明之子
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 弗5:8,9
+  target_path: link_folder/原文/弗5.md
+- name: 腓3
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：腓3:1,3,8以基督為至寶。
+  surfaces:
+  - phrase: 腓3
+  - phrase: 腓立比書3章
+  - phrase: 以基督為至寶
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 腓3:1,3,8
+  target_path: link_folder/原文/腓3.md
+- name: 腓4
+  suggested_type: 原文
+  evidence: 民6:3 他就要遠離清酒濃酒。CT：作拿細耳人就是更深的在神面前分別為聖。KC：不貪世上快樂，乃以主為樂。BH：腓4:4,10主裡常常喜樂。
+  surfaces:
+  - phrase: 腓4
+  - phrase: 腓立比書4章
+  - phrase: 主裡常常喜樂
+  - phrase: 更深分別為聖
+  - phrase: 不貪世上快樂
+  - phrase: 以主為樂
+  - phrase: 腓4:4,10
+  target_path: link_folder/原文/腓4.md
+- name: 帖前5
+  suggested_type: 原文
+  evidence: 民7:2,3,10,11,12 樂獻與主。CT：奉獻出於神感動表感恩。KC：有愛主的心。BH：帖前5:18凡事謝恩。
+  surfaces:
+  - phrase: 帖前5
+  - phrase: 帖撒羅尼迦前書5章
+  - phrase: 凡事謝恩
+  - phrase: 奉獻出於神感動
+  - phrase: 表感恩
+  - phrase: 有愛主的心
+  - phrase: 帖前5:18
+  target_path: link_folder/原文/帖前5.md
+- name: 帖後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：帖後3:4,15不服從真理者。
+  surfaces:
+  - phrase: 帖後3
+  - phrase: 帖撒羅尼迦後書3章
+  - phrase: 不服從真理者
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 帖後3:4,15
+  target_path: link_folder/原文/帖後3.md
+- name: 提前1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：提前1:16基督耶穌顯出忍耐。
+  surfaces:
+  - phrase: 提前1
+  - phrase: 提摩太前書1章
+  - phrase: 基督耶穌顯出忍耐
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 提前1:16
+  target_path: link_folder/原文/提前1.md
+- name: 提前4
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：提前4:10-11神是萬人的救主。
+  surfaces:
+  - phrase: 提前4
+  - phrase: 提摩太前書4章
+  - phrase: 神是萬人的救主
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 提前4:10-11
+  target_path: link_folder/原文/提前4.md
+- name: 提後2
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：提後2:4沒有人在當兵的時候纏累世務。
+  surfaces:
+  - phrase: 提後2
+  - phrase: 提摩太後書2章
+  - phrase: 沒有人在當兵的時候纏累世務
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 提後2:4
+  target_path: link_folder/原文/提後2.md
+- name: 彼前1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人為許願離俗侍奉神的人。CT：神揀選人歸祂，要叫這些人都像祂。KC：拿細耳人制度在基督裡廢止。BH：彼前1:16你們要聖潔因我聖潔。
+  surfaces:
+  - phrase: 彼前1
+  - phrase: 彼得前書1章
+  - phrase: 你們要聖潔因我聖潔
+  - phrase: 神揀選人歸祂
+  - phrase: 拿細耳人制度廢止
+  - phrase: 彼前1:16
+  target_path: link_folder/原文/彼前1.md
+- name: 彼前4
+  suggested_type: 原文
+  evidence: 民7:5 好作會幕的使用。CT：我們為神管家管理神賜資源。KC：健康知識財富為管家使命。BH：彼前4:10-11管家職分。
+  surfaces:
+  - phrase: 彼前4
+  - phrase: 彼得前書4章
+  - phrase: 管家職分
+  - phrase: 為神管家
+  - phrase: 管理神賜資源
+  - phrase: 管家使命
+  - phrase: 彼前4:10-11
+  target_path: link_folder/原文/彼前4.md
+- name: 彼前5
+  suggested_type: 原文
+  evidence: 民6:5 不可用剃頭刀剃頭，要由髮綹長長了。CT：拿細耳人因為歸神為聖，所以有與世俗不同的價值標準。KC：長髮為神所賜，表生命能力。BH：彼前5:6所以你們要自卑，服在神大能的手下。
+  surfaces:
+  - phrase: 彼前5
+  - phrase: 彼得前書5章
+  - phrase: 所以你們要自卑，服在神大能的手下
+  - phrase: 拿細耳人歸神為聖
+  - phrase: 長髮表生命能力
+  - phrase: 彼前5:6
+  target_path: link_folder/原文/彼前5.md
+- name: 彼後3
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：彼後3:4,15不服從真理者。
+  surfaces:
+  - phrase: 彼後3
+  - phrase: 彼得後書3章
+  - phrase: 不服從真理者
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 彼後3:4,15
+  target_path: link_folder/原文/彼後3.md
+- name: 雅1
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：雅1:27清潔沒有玷污的虔誠。
+  surfaces:
+  - phrase: 雅1
+  - phrase: 雅各書1章
+  - phrase: 清潔沒有玷污的虔誠
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 與世俗為友就是與神為敵
+  - phrase: 雅1:27
+  target_path: link_folder/原文/雅1.md
+- name: 雅4
+  suggested_type: 原文
+  evidence: 民6:2 拿細耳人就是脫離世俗，完全歸向神的人。CT：與世俗為友就是與神為敵。KC：離俗歸耶和華。BH：雅4:4你們這些淫亂的人哪，豈不知與世俗為友就是與神為敵嗎？
+  surfaces:
+  - phrase: 雅4
+  - phrase: 雅各書4章
+  - phrase: 你們這些淫亂的人哪，豈不知與世俗為友就是與神為敵嗎？
+  - phrase: 脫離世俗
+  - phrase: 完全歸向神
+  - phrase: 離俗歸耶和華
+  - phrase: 雅4:4
+  target_path: link_folder/原文/雅4.md
+- name: 啟21
+  suggested_type: 原文
+  evidence: 民5:3 這營是我所住的。CT：教會為神聖殿。KC：神住在百姓中間。BH：啟21:3,27神要親自與他們同在，凡不潔淨的總不得進那城。
+  surfaces:
+  - phrase: 啟21
+  - phrase: 啟示錄21章
+  - phrase: 神要親自與他們同在
+  - phrase: 凡不潔淨的總不得進那城
+  - phrase: 教會為神聖殿
+  - phrase: 神住在百姓中間
+  - phrase: 啟21:3,27
+  target_path: link_folder/原文/啟21.md
+D_new_candidate:
+- name: 公牛
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8,15,17,21,23... 十二隻公牛...四隻牛...八隻牛...一隻公牛犢...公牛十二隻...公牛二十四隻。CT：公牛為重載獻祭牲畜。KC：每首領一隻牛，兩首領一輛車。BH：利未人搬運會幕用牛車。
+  surfaces:
+  - phrase: 公牛
+  - phrase: 十二隻公牛
+  - phrase: 四隻牛
+  - phrase: 八隻牛
+  - phrase: 一隻公牛犢
+  - phrase: 公牛十二隻
+  - phrase: 公牛二十四隻
+  - phrase: 重載獻祭
+  - phrase: 牲畜
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 素祭
+  suggested_type: 主題
+  evidence: 民7:13,14,19,20... 每支派：一個銀盤、一個銀碗、一個金杯，盛細麵調油為素祭。CT：素祭表基督完美人生。KC：素祭為祭司收入重要來源。BH：利未記2章素祭條例。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 銀盤
+  - phrase: 銀碗
+  - phrase: 金杯
+  - phrase: 盛細麵調油
+  - phrase: 基督完美人生
+  - phrase: 祭司收入
+  - phrase: 利未記2章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 奠祭
+  suggested_type: 主題
+  evidence: 民7:17,23,29... 照例獻上奠祭。CT：奠祭表基督生命澆奠。KC：平安祭配奠祭。BH：利未記23:13奠祭條例。
+  surfaces:
+  - phrase: 奠祭
+  - phrase: 照例獻上
+  - phrase: 基督生命澆奠
+  - phrase: 平安祭配奠祭
+  - phrase: 利未記23:13
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=文化，secondary=['神學']
+- name: 耶和華曉諭摩西
+  suggested_type: 主題
+  evidence: 民7:4,11,89 耶和華曉諭摩西說...耶和華對摩西說...摩西進會幕要與耶和華說話。神直接指示分配車牛、獻壇禮次序、在施恩座上說話。
+  surfaces:
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 耶和華對摩西說
+  - phrase: 神直接指示
+  - phrase: 分配車牛
+  - phrase: 獻壇禮次序
+  - phrase: 施恩座上說話
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=事件，secondary=[]
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民7:1,3,5,89 摩西立完了帳幕...奉到帳幕前...好作會幕的使用...摩西進會幕。會幕為神居所、奉獻場所、神說話處。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 帳幕
+  - phrase: 奉到帳幕前
+  - phrase: 好作會幕的使用
+  - phrase: 摩西進會幕
+  - phrase: 神居所
+  - phrase: 奉獻場所
+  - phrase: 神說話處
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 帳幕
+  suggested_type: 地點
+  evidence: 民7:1 摩西立完了帳幕，就把帳幕用膏抹了。帳幕為神與人相會之所。
+  surfaces:
+  - phrase: 帳幕
+  - phrase: 摩西立完了帳幕
+  - phrase: 用膏抹了
+  - phrase: 神與人相會之所
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 奉獻
+  suggested_type: 神學
+  evidence: 民7:2,3,10,11,12,84,88 都來奉獻...把自己的供物送到耶和華面前...首領都來行奉獻壇的禮...以色列首領所獻的供物。CT：奉獻出於神感動，表感恩。KC：樂獻與主，彼此幫助。BH：林後9:7樂意奉獻。
+  surfaces:
+  - phrase: 奉獻
+  - phrase: 都來奉獻
+  - phrase: 送到耶和華面前
+  - phrase: 行奉獻壇的禮
+  - phrase: 樂獻與主
+  - phrase: 彼此幫助
+  - phrase: 林後9:7
+  - phrase: 樂意奉獻
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=原文，secondary=[]
+- name: 公牛
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8,15,17,21,23... 十二隻公牛...四隻牛...八隻牛...一隻公牛犢...公牛十二隻...公牛二十四隻。CT：公牛為重載獻祭牲畜。KC：每首領一隻牛，兩首領一輛車。BH：利未人搬運會幕用牛車。
+  surfaces:
+  - phrase: 公牛
+  - phrase: 十二隻公牛
+  - phrase: 四隻牛
+  - phrase: 八隻牛
+  - phrase: 一隻公牛犢
+  - phrase: 公牛十二隻
+  - phrase: 公牛二十四隻
+  - phrase: 重載獻祭
+  - phrase: 牲畜
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 牛
+  suggested_type: 原文
+  evidence: 民7:3,6,7,8,15,17,21,23... 十二隻公牛...四隻牛...八隻牛...一隻公牛犢...公牛十二隻...公牛二十四隻。CT：牛為拉車獻祭牲畜。KC：每首領一隻牛。BH：利未人搬運會幕用牛車。
+  surfaces:
+  - phrase: 牛
+  - phrase: 十二隻公牛
+  - phrase: 四隻牛
+  - phrase: 八隻牛
+  - phrase: 一隻公牛犢
+  - phrase: 公牛十二隻
+  - phrase: 公牛二十四隻
+  - phrase: 拉車獻祭
+  - phrase: 牲畜
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 公牛犢
+  suggested_type: 原文
+  evidence: 民7:15,17,21,23... 每支派一隻公牛犢為燔祭。共公牛十二隻。CT：公牛犢為燔祭牲。KC：一歲公牛犢。BH：利未記1:3公牛燔祭。
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 每支派一隻
+  - phrase: 燔祭牲
+  - phrase: 共公牛十二隻
+  - phrase: 一歲公牛犢
+  - phrase: 利未記1:3
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 公綿羊
+  suggested_type: 原文
+  evidence: 民7:15,17,21,23... 每支派一隻公綿羊為燔祭/平安祭。共公綿羊十二隻/六十隻。CT：公綿羊為燔祭平安祭牲。KC：公綿羊無殘疾。BH：利未記1:10綿羊燔祭。
+  surfaces:
+  - phrase: 公綿羊
+  - phrase: 燔祭牲
+  - phrase: 平安祭牲
+  - phrase: 共公綿羊十二隻
+  - phrase: 六十隻
+  - phrase: 無殘疾
+  - phrase: 利未記1:10
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 公山羊
+  suggested_type: 原文
+  evidence: 民7:16,22,28...87,88 每支派一隻公山羊為贖罪祭/平安祭。共公山羊十二隻/六十隻。CT：公山羊為贖罪祭平安祭牲。KC：公山羊無殘疾。BH：利未記4:23公山羊贖罪祭。
+  surfaces:
+  - phrase: 公山羊
+  - phrase: 贖罪祭牲
+  - phrase: 平安祭牲
+  - phrase: 共公山羊十二隻
+  - phrase: 六十隻
+  - phrase: 無殘疾
+  - phrase: 利未記4:23
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 燔祭
+  suggested_type: 主題
+  evidence: 民7:15,17,21,23...87 每支派：一隻公牛犢、一隻公綿羊、一隻一歲公羊羔為燔祭。共公牛十二隻、公綿羊十二隻、一歲公羊羔十二隻。CT：燔祭表完全獻給神。KC：燔祭牲畜無殘疾。BH：利未記1章燔祭條例。
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 公牛犢
+  - phrase: 公綿羊
+  - phrase: 一歲公羊羔
+  - phrase: 共公牛十二隻
+  - phrase: 公綿羊十二隻
+  - phrase: 一歲公羊羔十二隻
+  - phrase: 完全獻給神
+  - phrase: 無殘疾
+  - phrase: 利未記1章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['制度', '互文']
+- name: 贖罪祭
+  suggested_type: 主題
+  evidence: 民7:16,22,28...87 每支派一隻公山羊為贖罪祭。共公山羊十二隻。CT：贖罪祭為無意之罪。KC：贖罪祭公山羊。BH：利未記4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 贖罪祭
+  - phrase: 公山羊
+  - phrase: 每支派一隻
+  - phrase: 共公山羊十二隻
+  - phrase: 無意之罪
+  - phrase: 利未記4-5章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=[]
+- name: 平安祭
+  suggested_type: 主題
+  evidence: 民7:17,23,29...88 每支派：兩隻公牛、五隻公綿羊、五隻公山羊、五隻一歲公羊羔為平安祭。共公牛二十四隻、公綿羊六十隻、公山羊六十隻、一歲公羊羔六十隻。
+    CT：平安祭表與神和好感謝。KC：平安祭最多表感謝為主。BH：利未記3章平安祭條例。
+  surfaces:
+  - phrase: 平安祭
+  - phrase: 兩隻公牛
+  - phrase: 五隻公綿羊
+  - phrase: 五隻公山羊
+  - phrase: 五隻一歲公羊羔
+  - phrase: 共公牛二十四隻
+  - phrase: 公綿羊六十隻
+  - phrase: 公山羊六十隻
+  - phrase: 一歲公羊羔六十隻
+  - phrase: 與神和好感謝
+  - phrase: 感謝為主
+  - phrase: 利未記3章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=神學，secondary=['背景']
+- name: 素祭
+  suggested_type: 主題
+  evidence: 民7:13,14,19,20... 每支派：一個銀盤、一個銀碗、一個金杯，盛細麵調油為素祭。CT：素祭表基督完美人生。KC：素祭為祭司收入重要來源。BH：利未記2章素祭條例。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 銀盤
+  - phrase: 銀碗
+  - phrase: 金杯
+  - phrase: 盛細麵調油
+  - phrase: 基督完美人生
+  - phrase: 祭司收入重要來源
+  - phrase: 利未記2章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 奠祭
+  suggested_type: 主題
+  evidence: 民7:17,23,29... 照例獻上奠祭。CT：奠祭表基督生命澆奠。KC：平安祭配奠祭。BH：利未記23:13奠祭條例。
+  surfaces:
+  - phrase: 奠祭
+  - phrase: 照例獻上
+  - phrase: 基督生命澆奠
+  - phrase: 平安祭配奠祭
+  - phrase: 利未記23:13
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=文化，secondary=['神學']
+E_skip: []

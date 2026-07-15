@@ -1,0 +1,30 @@
+name: 對他說話
+type: 主題
+secondary_types: []
+aliases:
+- 神與摩西說話
+status: formal
+definition: 民數記第7章第89節記載耶和華從施恩座、兩基路伯中間對摩西說話。這標誌著會幕啟用後，神正式透過摩西向以色列啟示旨意，是獻壇禮的屬靈高潮與目的。
+development: 經文將十二日奉獻儀式的終點定位於「神說話」，強調敬拜奉獻的終極目標是聽從神聲音、領受神話語。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 記載神在會幕中從施恩座對摩西說話。
+  relation: 獻壇禮結束，神主動啟示，確立摩西先知中保地位。
+related_entries:
+- 證據櫃
+- 施恩座
+- 基路伯（施恩座）
+- 摩西
+- 聲音
+- 耶和華
+- 神與人說話
+- 摩西進會幕聽神說話
+sources:
+- 'BH: Numbers 7:89 — 耶和華對摩西說話（https://biblehub.com/numbers/7-89.htm）'
+created_from: numbers_7
+category: 主題
+trigger_sources:
+- numbers_7
+current_data: {}
+pending: false

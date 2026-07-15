@@ -1,0 +1,29 @@
+name: 十二支派首領奉獻
+type: 主題
+secondary_types: []
+aliases:
+- 眾首領奉獻
+- 支派首領獻車牛
+status: formal
+definition: 民數記 7:2-3 記載以色列十二支派首領（各族族長）同心合意，自願奉獻六輛篷子車和十二隻公牛（每兩首領一車，每首領一牛），送到會幕前，為會幕事奉預備交通工具。
+development: 這是首領們自發性的集體奉獻，顯示各支派對會幕事奉的支持與合一，也為利未人運送會幕器具提供實際幫助。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 十二支派首領奉獻六輛篷子車、十二隻公牛給會幕使用。
+  relation: 此奉獻引發耶和華指示分配車牛，並啟動利未人按職任分工的運作模式。
+related_entries:
+- 首領
+- 以色列
+- 篷子車
+- 會幕
+- 利未人
+- 同心合意
+- 樂獻
+sources:
+- 'BH: Numbers 7:2-3 — 十二支派首領奉獻車牛（https://biblehub.com/numbers/7.htm）'
+created_from: 民數記 7
+category: 主題
+trigger_sources: []
+current_data: true
+pending: false

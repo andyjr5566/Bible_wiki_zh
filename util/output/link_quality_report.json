@@ -1,7 +1,7 @@
 {
-  "total_warnings": 57,
+  "total_warnings": 65,
   "critical_count": 0,
-  "warning_count": 57,
+  "warning_count": 65,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -48,6 +48,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "民數記/第6章.md",
+      "target": "搖祭",
+      "message": "同一 alias「搖祭」指向多個 target: 拿細耳人滿期獻祭, 搖祭的胸"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/亞伯拉罕.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 02 出埃及記/第32章"
@@ -63,6 +70,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
+      "target": "第7章",
+      "message": "同一 alias「第7章」指向多個 target: 02 出埃及記/第7章, 04 民數記/第7章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
     },
@@ -72,6 +86,13 @@
       "source": "link_folder/人物/亞倫.md",
       "target": "第24章",
       "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 03 利未記/第24章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫和他兒子（祭司）.md",
+      "target": "第6章",
+      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
     },
     {
       "type": "alias_target_conflict",
@@ -135,6 +156,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第5章",
       "message": "同一 alias「第5章」指向多個 target: 02 出埃及記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第7章",
+      "message": "同一 alias「第7章」指向多個 target: 02 出埃及記/第7章, 04 民數記/第7章"
     },
     {
       "type": "alias_target_conflict",
@@ -307,6 +335,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/主題/供物.md",
+      "target": "第7章",
+      "message": "同一 alias「第7章」指向多個 target: 03 利未記/第7章, 04 民數記/第7章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/主題/生養眾多與治理.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 01 創世記/第1章, 02 出埃及記/第1章"
@@ -338,6 +373,20 @@
       "source": "link_folder/原文/寄居的（ger）.md",
       "target": "第23章",
       "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 03 利未記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/王下7（Melakhim Bet 7）.md",
+      "target": "第7章",
+      "message": "同一 alias「第7章」指向多個 target: 04 民數記/第7章, 12 列王紀下/第7章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/路7（Loukas 7）.md",
+      "target": "第7章",
+      "message": "同一 alias「第7章」指向多個 target: 04 民數記/第7章, 42 路加福音/第7章"
     },
     {
       "type": "alias_target_conflict",
@@ -380,6 +429,13 @@
       "source": "link_folder/神學/聖靈內住.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/贖罪.md",
+      "target": "第6章",
+      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
     },
     {
       "type": "alias_target_conflict",

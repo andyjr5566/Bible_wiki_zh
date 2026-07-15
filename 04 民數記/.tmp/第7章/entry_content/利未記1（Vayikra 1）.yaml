@@ -1,0 +1,31 @@
+name: 利未記1（Vayikra 1）
+type: 原文
+secondary_types: []
+aliases:
+- 利未記第一章
+status: formal
+definition: 利未記第一章記載燔祭的條例，詳述以色列人將公牛、綿羊、山羊或鳥類作為燔祭獻給耶和華的程序，包括按手、宰殺、灑血、剖開、水洗、全獻焚燒等步驟，象徵獻祭者完全歸給神，作為馨香之氣被悅納。
+development: 本章確立燔祭為自願獻祭（1:3）與贖罪程序（1:4）的基礎，為後續諸祭條例奠定「完全獻上」的神學核心。
+accumulations:
+- book: 利未記
+  chapter: 1
+  summary: 燔祭條例，獻祭者按手歸一，祭司灑血焚燒，作為馨香之氣獻給耶和華。
+  relation: 本章核心內容，確立燔祭為完全獻上的基礎祭物。
+- book: 民數記
+  chapter: 7
+  summary: 各支派首領獻壇禮時，每日獻一隻公牛犢、一隻公綿羊、一隻一歲公羊羔作燔祭。
+  relation: 民數記7章記錄會幕啟用時十二支派首領按利未記1章條例獻上燔祭，驗證條例的實際執行。
+related_entries:
+- 燔祭牲畜
+- 供物
+- 壇
+- 成聖
+- 利未記2
+- 利未記3
+sources:
+- 'BH: Leviticus 1 — 燔祭條例（https://biblehub.com/leviticus/1.htm）'
+created_from: 民數記7章研經整理
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

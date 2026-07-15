@@ -1,0 +1,661 @@
+book: 民數記
+chapter: 8
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民8:1,5,20,22 耶和華曉諭摩西說...摩西、亞倫、以色列全會眾就照耶和華吩咐摩西...於是利未人進入會幕前辦事。摩西作為條例傳遞者和執行監督者。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 摩西、亞倫、以色列全會眾
+  - phrase: 照耶和華吩咐摩西
+  - phrase: 條例傳遞者
+  - phrase: 執行監督者
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民8:2,3,11,13,15,19,20,22 你告訴亞倫說...亞倫便這樣行...亞倫要將利未人在耶和華面前作搖祭...亞倫在耶和華面前將利未人作搖祭...我將利未人給亞倫和他兒子...摩西、亞倫、以色列全會眾。亞倫為大祭司，執行點燈、搖祭利未人、接受利未人歸屬。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 告訴亞倫說
+  - phrase: 亞倫便這樣行
+  - phrase: 亞倫要將利未人作搖祭
+  - phrase: 亞倫在耶和華面前
+  - phrase: 我將利未人給亞倫和他兒子
+  - phrase: 摩西、亞倫、以色列全會眾
+  - phrase: 大祭司
+  - phrase: 點燈
+  - phrase: 搖祭利未人
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 燈臺
+  suggested_type: 主題
+  evidence: 民8:2,3,4 你告訴亞倫說：點燈的時候...亞倫便這樣行。他點燈臺上的燈...這燈檯的做法是用金子錘出來的。CT：燈臺表基督/教會，金子錘出表經十字架煉製。KC：燈臺用一塊精金接連錘出。BH：出25:31-40燈臺條例。
+  surfaces:
+  - phrase: 燈臺
+  - phrase: 點燈
+  - phrase: 燈臺上的燈
+  - phrase: 用金子錘出來的
+  - phrase: 連座帶花
+  - phrase: 一塊精金
+  - phrase: 基督/教會
+  - phrase: 十字架煉製
+  - phrase: 出埃及記25:31-40
+  match_type: alias
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 利未人
+  suggested_type: 人物
+  evidence: 民8:6,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,26 你從以色列人中選出利未人來...將利未人奉到會幕前...亞倫要將利未人在耶和華面前作搖祭...利未人就歸我了...利未人要在會幕前辦事...於是利未人進入會幕前辦事。利未人代替長子歸神，事奉會幕。
+  surfaces:
+  - phrase: 利未人
+  - phrase: 選出利未人
+  - phrase: 奉到會幕前
+  - phrase: 作搖祭
+  - phrase: 利未人就歸我了
+  - phrase: 代替長子
+  - phrase: 事奉會幕
+  - phrase: 進入會幕前辦事
+  match_type: exact
+  existing_title: 利未人
+  existing_path: link_folder/人物/利未人.md
+- name: 以色列全會眾
+  suggested_type: 人物
+  evidence: 民8:9,10,11,19,20,22 招聚以色列全會眾...以色列人要按手在利未人頭上...以色列人中...摩西、亞倫、以色列全會眾就照耶和華吩咐摩西。會眾按手認同利未人代替長子。
+  surfaces:
+  - phrase: 以色列全會眾
+  - phrase: 招聚以色列全會眾
+  - phrase: 以色列人要按手
+  - phrase: 在利未人頭上
+  - phrase: 摩西、亞倫、以色列全會眾
+  - phrase: 照耶和華吩咐摩西
+  - phrase: 會眾按手
+  - phrase: 認同利未人
+  - phrase: 代替長子
+  match_type: exact
+  existing_title: 以色列全會眾
+  existing_path: link_folder/人物/以色列全會眾.md
+- name: 歸耶和華
+  suggested_type: 神學
+  evidence: 民8:11,14,16,18 使利未人歸耶和華...利未人就歸我了...因為他們是從以色列人中完全給我的...我將他們給亞倫和他兒子。CT：利未人完全歸神預表信徒完全歸基督。KC：利未人歸神再賜給亞倫。BH：民3:12-13利未人歸神。
+  surfaces:
+  - phrase: 歸耶和華
+  - phrase: 利未人就歸我了
+  - phrase: 完全給我的
+  - phrase: 我將他們給亞倫和他兒子
+  - phrase: 信徒完全歸基督
+  - phrase: 民數記3:12-13
+  match_type: alias
+  existing_title: 歸神
+  existing_path: link_folder/神學/歸神.md
+- name: 亞倫和他兒子
+  suggested_type: 人物
+  evidence: 民8:19,20,22 我將利未人給亞倫和他兒子...摩西、亞倫、以色列全會眾...於是利未人進入會幕前辦事。亞倫父子接受利未人歸屬，監督利未人事奉。
+  surfaces:
+  - phrase: 亞倫和他兒子
+  - phrase: 我將利未人給亞倫和他兒子
+  - phrase: 摩西、亞倫、以色列全會眾
+  - phrase: 接受利未人歸屬
+  - phrase: 監督利未人事奉
+  match_type: base
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 民8:1,5,23 耶和華曉諭摩西說...耶和華曉諭摩西說...耶和華曉諭摩西說。神在曠野向摩西啟示條例。
+  surfaces:
+  - phrase: 曠野
+  - phrase: 西乃曠野
+  - phrase: 神啟示條例
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 民8:1 耶和華曉諭摩西說。神在西乃山曉諭點燈法、潔淨利未人、任職年歲。
+  surfaces:
+  - phrase: 西乃山
+  - phrase: 神曉諭摩西
+  - phrase: 頒布條例
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 贖罪
+  suggested_type: 神學
+  evidence: 民8:12,19,21 你要獻一隻為贖罪祭...為以色列人贖罪...亞倫在耶和華面前將利未人作搖祭。CT：贖罪祭為生命中原有罪性。KC：非為犯罪行，乃為亞當遺傳罪性。BH：利4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 贖罪
+  - phrase: 贖罪祭
+  - phrase: 為以色列人贖罪
+  - phrase: 生命中原有罪性
+  - phrase: 亞當遺傳罪性
+  - phrase: 利未記4-5章
+  match_type: exact
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+- name: 頭生的
+  suggested_type: 主題
+  evidence: 民8:16,17,18 代替一切頭生的...以色列人中一切頭生的...利未人代替以色列人一切頭生的。CT：長子歸神基於逾越節救贖。KC：利未人代替長子預表基督代替罪人。BH：民3:12-13利未人代替長子。
+  surfaces:
+  - phrase: 頭生的
+  - phrase: 代替一切頭生的
+  - phrase: 以色列人中一切頭生的
+  - phrase: 長子歸神
+  - phrase: 逾越節救贖
+  - phrase: 基督代替罪人
+  - phrase: 民數記3:12-13
+  match_type: alias
+  existing_title: 頭生
+  existing_path: link_folder/主題/頭生.md
+C_new_formal:
+- name: 燈臺點燈條例
+  suggested_type: 主題
+  evidence: 民8:1-4 耶和華曉諭摩西說：你告訴亞倫說：點燈的時候，七盞燈都要向燈檯前面發光。亞倫便這樣行...這燈檯的做法是用金子錘出來的。CT：七盞燈向前發光表信徒在基督生命光中事奉。KC：燈光照向陳設餅桌，表神子民活在神臉光中。BH：燈臺用一塊精金錘出，表基督與教會經十字架煉製。
+  surfaces:
+  - phrase: 點燈
+  - phrase: 七盞燈
+  - phrase: 向燈檯前面發光
+  - phrase: 燈檯的做法
+  - phrase: 用金子錘出來
+  - phrase: 連座帶花
+  - phrase: 照耶和華所指示的樣式
+  target_path: link_folder/主題/燈臺點燈條例.md
+- name: 潔淨利未人條例
+  suggested_type: 主題
+  evidence: 民8:5-22 耶和華曉諭摩西說：你從以色列人中選出利未人來，潔淨他們...用除罪水彈在他們身上，又叫他們用剃頭刀刮全身，洗衣服，潔淨自己...將利未人奉到會幕前，招聚以色列全會眾。CT：潔淨利未人預表信徒分別為聖歸神。KC：除罪水、剃頭、洗衣三步驟。BH：利未人代替長子歸神。
+  surfaces:
+  - phrase: 選出利未人
+  - phrase: 潔淨他們
+  - phrase: 除罪水
+  - phrase: 彈在他們身上
+  - phrase: 剃頭刀刮全身
+  - phrase: 洗衣服
+  - phrase: 奉到會幕前
+  - phrase: 招聚以色列全會眾
+  - phrase: 按手
+  - phrase: 作搖祭
+  target_path: link_folder/主題/潔淨利未人條例.md
+- name: 利未人作搖祭
+  suggested_type: 主題
+  evidence: 民8:11,13,15,21 亞倫要將利未人在耶和華面前作搖祭...使利未人歸耶和華...利未人要在會幕前辦事...亞倫在耶和華面前將利未人作搖祭。CT：搖祭表獻給神再歸祭司使用。KC：利未人作活的搖祭歸神。BH：利未記7:30搖祭條例。
+  surfaces:
+  - phrase: 作搖祭
+  - phrase: 在耶和華面前
+  - phrase: 使利未人歸耶和華
+  - phrase: 利未人要在會幕前辦事
+  - phrase: 亞倫將利未人作搖祭
+  - phrase: 活的搖祭
+  target_path: link_folder/主題/利未人作搖祭.md
+- name: 利未人代替長子
+  suggested_type: 神學
+  evidence: 民8:16-18 因為他們是從以色列人中完全給我的，代替一切頭生的...我將他們給亞倫和他兒子，從以色列人中在會幕前辦事。CT：利未人代替長子預表基督代替罪人。KC：利未人完全歸神，再賜給亞倫。BH：民3:12-13利未人代替長子。
+  surfaces:
+  - phrase: 完全給我的
+  - phrase: 代替一切頭生的
+  - phrase: 我將他們給亞倫和他兒子
+  - phrase: 在會幕前辦事
+  - phrase: 為以色列人贖罪
+  - phrase: 免得以色列人挨近聖所遭災
+  target_path: link_folder/神學/利未人代替長子.md
+- name: 利未人任職年歲
+  suggested_type: 主題
+  evidence: 民8:23-26 耶和華曉諭摩西說：利未人從二十五歲以上要進入會幕前辦事...到了五十歲要退下不再辦事，只可在會幕前幫助弟兄看守所吩咐的。CT：25歲學徒，30歲正式任職，50歲退休輔助。KC：民4:3規定30-50歲，此處25歲開始學徒。BH：代上23:24大衛時期20歲任職。
+  surfaces:
+  - phrase: 從二十五歲以上
+  - phrase: 進入會幕前辦事
+  - phrase: 到了五十歲
+  - phrase: 退下不再辦事
+  - phrase: 幫助弟兄
+  - phrase: 看守所吩咐的
+  - phrase: 學徒期
+  - phrase: 正式任職
+  - phrase: 退休輔助
+  target_path: link_folder/主題/利未人任職年歲.md
+- name: 除罪水
+  suggested_type: 主題
+  evidence: 民8:7 潔淨他們當這樣行：用除罪水彈在他們身上。CT：除罪水表基督贖罪功效。KC：指除污穢水(民19:9)或洗濯盆水。BH：希伯來書9:13-14基督血潔淨良心。
+  surfaces:
+  - phrase: 除罪水
+  - phrase: 彈在他們身上
+  - phrase: 基督贖罪功效
+  - phrase: 除污穢水
+  - phrase: 洗濯盆水
+  - phrase: 希伯來書9:13-14
+  target_path: link_folder/主題/除罪水.md
+- name: 剃頭刮全身
+  suggested_type: 主題
+  evidence: 民8:7 又叫他們用剃頭刀刮全身，洗衣服，潔淨自己。CT：刮全身表對付天然成分和行為。KC：刮除全身細毛。BH：利未記14:8-9潔淨條例剃頭。
+  surfaces:
+  - phrase: 剃頭刀
+  - phrase: 刮全身
+  - phrase: 洗衣服
+  - phrase: 潔淨自己
+  - phrase: 對付天然成分
+  - phrase: 刮除細毛
+  - phrase: 利未記14:8-9
+  target_path: link_folder/主題/剃頭刮全身.md
+- name: 公牛犢燔祭
+  suggested_type: 主題
+  evidence: 民8:8,12 然後叫他們取一隻公牛犢，並同獻的素祭...利未人要按手在牛頭上，你要獻一隻為贖罪祭，一隻為燔祭。CT：公牛犢燔祭表基督完全獻給神。KC：燔祭牲畜無殘疾。BH：利未記1章燔祭條例。
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 燔祭
+  - phrase: 素祭
+  - phrase: 調油的細麵
+  - phrase: 按手在牛頭上
+  - phrase: 基督完全獻給神
+  - phrase: 利未記1章
+  target_path: link_folder/主題/公牛犢燔祭.md
+- name: 公牛犢贖罪祭
+  suggested_type: 主題
+  evidence: 民8:8,12 你要另取一隻公牛犢作贖罪祭...利未人要按手在牛頭上，你要獻一隻為贖罪祭。CT：贖罪祭為生命中原有罪性。KC：非為犯罪行，乃為亞當遺傳罪性。BH：利未記4-5章贖罪祭條例。
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 贖罪祭
+  - phrase: 另取一隻
+  - phrase: 生命中原有罪性
+  - phrase: 亞當遺傳罪性
+  - phrase: 利未記4-5章
+  target_path: link_folder/主題/公牛犢贖罪祭.md
+- name: 利未人歸耶和華
+  suggested_type: 神學
+  evidence: 民8:14,16,18 這樣，你就從以色列人中將利未人分別出來，利未人就歸我了...因為他們是從以色列人中完全給我的，代替一切頭生的...我將他們給亞倫和他兒子。CT：利未人完全歸神，預表信徒完全歸基督。KC：利未人歸神再賜給亞倫。BH：民3:12-13利未人歸神。
+  surfaces:
+  - phrase: 將利未人分別出來
+  - phrase: 利未人就歸我了
+  - phrase: 完全給我的
+  - phrase: 代替一切頭生的
+  - phrase: 我將他們給亞倫和他兒子
+  - phrase: 信徒完全歸基督
+  target_path: link_folder/神學/利未人歸耶和華.md
+- name: 為以色列人贖罪
+  suggested_type: 神學
+  evidence: 民8:19 我將利未人給亞倫和他兒子，從以色列人中在會幕前辦事，為以色列人贖罪，免得以色列人挨近聖所遭災。CT：利未人事奉為百姓贖罪。KC：利未人防止百姓因挨近聖所遭災。BH：民1:53利未人圍會幕營防止忿怒。
+  surfaces:
+  - phrase: 為以色列人贖罪
+  - phrase: 免得以色列人挨近聖所遭災
+  - phrase: 利未人事奉
+  - phrase: 防止百姓遭災
+  - phrase: 民數記1:53
+  target_path: link_folder/神學/為以色列人贖罪.md
+- name: 以色列人順服
+  suggested_type: 事件
+  evidence: 民8:20,22 摩西、亞倫、以色列全會眾就照耶和華吩咐摩西待利未人的一切規條待他們...於是利未人進入會幕前辦事。CT：完全順服神吩咐。KC：以色列人待利未人照規條。BH：民8:20,22雙重記載順服。
+  surfaces:
+  - phrase: 摩西、亞倫、以色列全會眾
+  - phrase: 照耶和華吩咐摩西
+  - phrase: 待利未人的一切規條
+  - phrase: 利未人進入會幕前辦事
+  - phrase: 完全順服
+  - phrase: 雙重記載順服
+  target_path: link_folder/事件/以色列人順服.md
+- name: 利未人退休輔助
+  suggested_type: 主題
+  evidence: 民8:25,26 到了五十歲要退下不再辦事，只可在會幕前幫助弟兄看守所吩咐的。CT：50歲退休不表停止事奉，轉為輔助。KC：退下不再辦事，但幫助弟兄看守。BH：代上23:24大衛時期20歲任職。
+  surfaces:
+  - phrase: 到了五十歲
+  - phrase: 退下不再辦事
+  - phrase: 幫助弟兄
+  - phrase: 看守所吩咐的
+  - phrase: 退休輔助
+  - phrase: 轉為輔助
+  - phrase: 代上23:24
+  target_path: link_folder/主題/利未人退休輔助.md
+- name: 七盞燈
+  suggested_type: 主題
+  evidence: 民8:2,3 七盞燈都要向燈檯前面發光...他點燈臺上的燈，使燈向前發光。CT：七盞燈表完全光照。KC：兩旁六盞照向中央，中間一盞向前。BH：出25:37七盞燈條例。
+  surfaces:
+  - phrase: 七盞燈
+  - phrase: 向燈檯前面發光
+  - phrase: 點燈臺上的燈
+  - phrase: 使燈向前發光
+  - phrase: 完全光照
+  - phrase: 照向中央
+  - phrase: 出埃及記25:37
+  target_path: link_folder/主題/七盞燈.md
+- name: 向前發光
+  suggested_type: 主題
+  evidence: 民8:2,3 七盞燈都要向燈檯前面發光...使燈向前發光。CT：燈光照向陳設餅桌，表神子民活在神臉光中。KC：燈光照著陳設餅，代表神子民永遠活在神臉光中。BH：利24:2-3燈要常常點著。
+  surfaces:
+  - phrase: 向前發光
+  - phrase: 向燈檯前面發光
+  - phrase: 使燈向前發光
+  - phrase: 燈光照向陳設餅桌
+  - phrase: 神子民活在神臉光中
+  - phrase: 燈要常常點著
+  - phrase: 利未記24:2-3
+  target_path: link_folder/主題/向前發光.md
+- name: 陳設餅桌
+  suggested_type: 主題
+  evidence: 民8:2 七盞燈都要向燈檯前面發光。CT：燈光照射十二個陳設餅，代表以色列十二支派。KC：燈光總是照著陳設餅。BH：出25:30陳設餅桌條例。
+  surfaces:
+  - phrase: 陳設餅桌
+  - phrase: 十二個陳設餅
+  - phrase: 以色列十二支派
+  - phrase: 燈光照著陳設餅
+  - phrase: 出埃及記25:30
+  target_path: link_folder/主題/陳設餅桌.md
+- name: 除罪水
+  suggested_type: 主題
+  evidence: 民8:7 用除罪水彈在他們身上。CT：除罪水表基督贖罪功效。KC：指除污穢水(民19:9)或洗濯盆水。BH：來9:13-14基督血潔淨良心。
+  surfaces:
+  - phrase: 除罪水
+  - phrase: 彈在他們身上
+  - phrase: 基督贖罪功效
+  - phrase: 除污穢水
+  - phrase: 洗濯盆水
+  - phrase: 希伯來書9:13-14
+  target_path: link_folder/主題/除罪水.md
+- name: 潔淨利未人
+  suggested_type: 主題
+  evidence: 民8:6,7,11,12,13,14,15,21 你從以色列人中選出利未人來，潔淨他們...潔淨他們當這樣行...亞倫要將利未人在耶和華面前作搖祭...利未人要在會幕前辦事...將利未人分別出來。CT：潔淨利未人預表信徒分別為聖歸神。KC：除罪水、剃頭、洗衣三步驟。BH：利未人代替長子歸神。
+  surfaces:
+  - phrase: 潔淨利未人
+  - phrase: 選出利未人
+  - phrase: 潔淨他們
+  - phrase: 作搖祭
+  - phrase: 在會幕前辦事
+  - phrase: 分別出來
+  - phrase: 信徒分別為聖
+  - phrase: 三步驟
+  - phrase: 代替長子
+  target_path: link_folder/主題/潔淨利未人.md
+- name: 代替長子
+  suggested_type: 神學
+  evidence: 民8:16,17,18 代替一切頭生的...我將他們給亞倫和他兒子...利未人代替以色列人一切頭生的。CT：利未人代替長子預表基督代替罪人。KC：利未人完全歸神，再賜給亞倫。BH：民3:12-13利未人代替長子。
+  surfaces:
+  - phrase: 代替長子
+  - phrase: 代替一切頭生的
+  - phrase: 利未人代替以色列人一切頭生的
+  - phrase: 基督代替罪人
+  - phrase: 完全歸神
+  - phrase: 再賜給亞倫
+  - phrase: 民數記3:12-13
+  target_path: link_folder/神學/代替長子.md
+- name: 為以色列人贖罪
+  suggested_type: 神學
+  evidence: 民8:19 為以色列人贖罪，免得以色列人挨近聖所遭災。CT：利未人事奉為百姓贖罪。KC：利未人防止百姓因挨近聖所遭災。BH：民1:53利未人圍會幕營防止忿怒。
+  surfaces:
+  - phrase: 為以色列人贖罪
+  - phrase: 免得以色列人挨近聖所遭災
+  - phrase: 利未人事奉
+  - phrase: 防止百姓遭災
+  - phrase: 民數記1:53
+  target_path: link_folder/神學/為以色列人贖罪.md
+- name: 任職年歲
+  suggested_type: 主題
+  evidence: 民8:24,25 利未人從二十五歲以上要進入會幕前辦事...到了五十歲要退下不再辦事。CT：25歲學徒，30歲正式任職(民4:3)，50歲退休輔助。KC：民4:3規定30-50歲，此處25歲開始學徒。BH：代上23:24大衛時期20歲任職。
+  surfaces:
+  - phrase: 任職年歲
+  - phrase: 從二十五歲以上
+  - phrase: 進入會幕前辦事
+  - phrase: 到了五十歲
+  - phrase: 退下不再辦事
+  - phrase: 學徒期
+  - phrase: 正式任職
+  - phrase: 退休輔助
+  - phrase: 民數記4:3
+  - phrase: 代上23:24
+  target_path: link_folder/主題/任職年歲.md
+- name: 幫助弟兄
+  suggested_type: 主題
+  evidence: 民8:26 只可在會幕前幫助弟兄看守所吩咐的。CT：退休不表停止事奉，轉為輔助。KC：退下不再辦事，但幫助弟兄看守。BH：代上23:24大衛時期20歲任職。
+  surfaces:
+  - phrase: 幫助弟兄
+  - phrase: 看守所吩咐的
+  - phrase: 退休輔助
+  - phrase: 轉為輔助
+  - phrase: 代上23:24
+  target_path: link_folder/主題/幫助弟兄.md
+- name: 燈檯
+  suggested_type: 主題
+  evidence: 民8:2,3,4 七盞燈都要向燈檯前面發光...這燈檯的做法是用金子錘出來的。CT：燈檯表基督/教會。KC：燈檯用一塊精金錘出。BH：出25:31燈檯條例。
+  surfaces:
+  - phrase: 燈檯
+  - phrase: 向燈檯前面發光
+  - phrase: 燈檯的做法
+  - phrase: 用金子錘出來的
+  - phrase: 連座帶花
+  - phrase: 一塊精金
+  - phrase: 出埃及記25:31
+  target_path: link_folder/主題/燈檯.md
+- name: 樣式
+  suggested_type: 主題
+  evidence: 民8:4 摩西製造燈檯，是照耶和華所指示的樣式。CT：照神樣式製造表順服神心意。KC：神在山上指示樣式(出25:40)。BH：出埃及記25:40照樣式製造。
+  surfaces:
+  - phrase: 樣式
+  - phrase: 照耶和華所指示的樣式
+  - phrase: 順服神心意
+  - phrase: 神在山上指示
+  - phrase: 出埃及記25:40
+  target_path: link_folder/主題/樣式.md
+- name: 選出利未人
+  suggested_type: 主題
+  evidence: 民8:6 你從以色列人中選出利未人來。CT：神揀選利未人代替長子。KC：利未人從以色列人中選出。BH：民3:12我從以色列人中揀選了利未人。
+  surfaces:
+  - phrase: 選出利未人
+  - phrase: 從以色列人中
+  - phrase: 神揀選
+  - phrase: 代替長子
+  - phrase: 民數記3:12
+  target_path: link_folder/主題/選出利未人.md
+- name: 彈
+  suggested_type: 主題
+  evidence: 民8:7 用除罪水彈在他們身上。CT：彈灑表贖罪功效應用。KC：噴出、灑、淋。BH：來9:13-14基督血潔淨良心。
+  surfaces:
+  - phrase: 彈
+  - phrase: 除罪水彈在他們身上
+  - phrase: 贖罪功效應用
+  - phrase: 噴出、灑、淋
+  - phrase: 希伯來書9:13-14
+  target_path: link_folder/主題/彈.md
+- name: 刮
+  suggested_type: 主題
+  evidence: 民8:7 用剃頭刀刮全身。CT：刮全身表對付天然成分。KC：消除、除去。BH：利14:8-9潔淨條例剃頭。
+  surfaces:
+  - phrase: 刮
+  - phrase: 刮全身
+  - phrase: 對付天然成分
+  - phrase: 消除、除去
+  - phrase: 利未記14:8-9
+  target_path: link_folder/主題/刮.md
+- name: 調油的細麵
+  suggested_type: 原文
+  evidence: 民8:8 就是調油的細麵。CT：調油表聖靈膏抹。KC：將磨細的生麵粉調和橄欖油。BH：利2:1素祭要調油。
+  surfaces:
+  - phrase: 調油的細麵
+  - phrase: 聖靈膏抹
+  - phrase: 磨細的生麵粉
+  - phrase: 調和橄欖油
+  - phrase: 利未記2:1
+  target_path: link_folder/原文/調油的細麵.md
+- name: 完全給我
+  suggested_type: 神學
+  evidence: 民8:16 因為他們是從以色列人中完全給我的。CT：利未人完全歸神。KC：利未人歸神再賜給亞倫。BH：民3:12利未人歸神。
+  surfaces:
+  - phrase: 完全給我
+  - phrase: 從以色列人中
+  - phrase: 利未人完全歸神
+  - phrase: 歸神再賜給亞倫
+  - phrase: 民數記3:12
+  target_path: link_folder/神學/完全給我.md
+- name: 在會幕前辦事
+  suggested_type: 主題
+  evidence: 民8:15,19,22,24,26 利未人要在會幕前辦事...在會幕前辦事...利未人進入會幕前辦事...進入會幕前辦事...在會幕前幫助弟兄。CT：會幕前為利未人事奉核心場所。KC：利未人事奉為百姓贖罪。BH：民1:53利未人圍會幕營。
+  surfaces:
+  - phrase: 在會幕前辦事
+  - phrase: 利未人要在會幕前辦事
+  - phrase: 進入會幕前辦事
+  - phrase: 幫助弟兄
+  - phrase: 事奉核心場所
+  - phrase: 為百姓贖罪
+  - phrase: 民數記1:53
+  target_path: link_folder/主題/在會幕前辦事.md
+- name: 免得遭災
+  suggested_type: 神學
+  evidence: 民8:19 免得以色列人挨近聖所遭災。CT：利未人事奉防止百姓因挨近聖所遭災。KC：利未人圍會幕營防止忿怒。BH：民1:53利未人圍會幕營防止忿怒。
+  surfaces:
+  - phrase: 免得遭災
+  - phrase: 挨近聖所遭災
+  - phrase: 利未人事奉防止
+  - phrase: 圍會幕營防止忿怒
+  - phrase: 民數記1:53
+  target_path: link_folder/神學/免得遭災.md
+- name: 照規條待他們
+  suggested_type: 主題
+  evidence: 民8:20 就照耶和華吩咐摩西待利未人的一切規條待他們。CT：完全順服神吩咐。KC：以色列人待利未人照規條。BH：民8:20,22雙重記載順服。
+  surfaces:
+  - phrase: 照規條待他們
+  - phrase: 照耶和華吩咐摩西
+  - phrase: 待利未人的一切規條
+  - phrase: 完全順服
+  - phrase: 雙重記載順服
+  target_path: link_folder/主題/照規條待他們.md
+- name: 進入會幕前
+  suggested_type: 主題
+  evidence: 民8:22 於是利未人進入會幕前辦事。CT：利未人正式開始事奉。KC：潔淨、搖祭、獻祭後進入事奉。BH：民8:22利未人進入會幕前。
+  surfaces:
+  - phrase: 進入會幕前
+  - phrase: 利未人進入會幕前辦事
+  - phrase: 正式開始事奉
+  - phrase: 潔淨、搖祭、獻祭後
+  - phrase: 民數記8:22
+  target_path: link_folder/主題/進入會幕前.md
+- name: 退下
+  suggested_type: 主題
+  evidence: 民8:25 到了五十歲要退下不再辦事。CT：50歲退休不表停止事奉，轉為輔助。KC：退下不再辦事，但幫助弟兄看守。BH：代上23:24大衛時期20歲任職。
+  surfaces:
+  - phrase: 退下
+  - phrase: 到了五十歲
+  - phrase: 不再辦事
+  - phrase: 退休輔助
+  - phrase: 轉為輔助
+  - phrase: 代上23:24
+  target_path: link_folder/主題/退下.md
+- name: 看守所吩咐的
+  suggested_type: 主題
+  evidence: 民8:26 只可在會幕前幫助弟兄看守所吩咐的。CT：退休後看守吩咐表堅守神話語。KC：幫助弟兄看守所吩咐的。BH：民3:7-8利未人看守所吩咐的。
+  surfaces:
+  - phrase: 看守所吩咐的
+  - phrase: 幫助弟兄
+  - phrase: 堅守神話語
+  - phrase: 民數記3:7-8
+  target_path: link_folder/主題/看守所吩咐的.md
+D_new_candidate:
+- name: 按手
+  suggested_type: 主題
+  evidence: 民8:10 將利未人奉到會幕前，招聚以色列全會眾。以色列人要按手在利未人頭上。CT：按手表認同與轉移。KC：會眾按手認同利未人代替長子。BH：利未記1:4按手歸主。
+  surfaces:
+  - phrase: 按手
+  - phrase: 在利未人頭上
+  - phrase: 認同與轉移
+  - phrase: 會眾按手
+  - phrase: 代替長子
+  - phrase: 利未記1:4
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 耶和華曉諭摩西
+  suggested_type: 主題
+  evidence: 民8:1,5,23 耶和華曉諭摩西說...耶和華曉諭摩西說...耶和華曉諭摩西說。神三次直接啟示：點燈法、潔淨利未人、任職年歲。
+  surfaces:
+  - phrase: 耶和華曉諭摩西說
+  - phrase: 神直接啟示
+  - phrase: 點燈法
+  - phrase: 潔淨利未人
+  - phrase: 任職年歲
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=事件，secondary=[]
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民8:9,10,11,13,15,19,22,24,26 將利未人奉到會幕前...在會幕前...在耶和華面前...利未人要在會幕前辦事...利未人進入會幕前辦事...在會幕前幫助弟兄。會幕為神同在之所、利未人事奉場所。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 會幕前
+  - phrase: 在耶和華面前
+  - phrase: 利未人要在會幕前辦事
+  - phrase: 進入會幕前辦事
+  - phrase: 幫助弟兄
+  - phrase: 神同在之所
+  - phrase: 事奉場所
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 按手
+  suggested_type: 主題
+  evidence: 民8:10,12 以色列人要按手在利未人頭上...利未人要按手在牛頭上。CT：按手表認同與轉移。KC：會眾按手認同利未人代替長子。BH：利1:4按手歸主。
+  surfaces:
+  - phrase: 按手
+  - phrase: 在利未人頭上
+  - phrase: 在牛頭上
+  - phrase: 認同與轉移
+  - phrase: 會眾按手
+  - phrase: 代替長子
+  - phrase: 利未記1:4
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 搖祭
+  suggested_type: 主題
+  evidence: 民8:11,13,15,21 亞倫要將利未人在耶和華面前作搖祭...亞倫在耶和華面前將利未人作搖祭。CT：搖祭表獻給神再歸祭司使用。KC：利未人作活的搖祭歸神。BH：利7:30搖祭條例。
+  surfaces:
+  - phrase: 搖祭
+  - phrase: 在耶和華面前
+  - phrase: 作搖祭
+  - phrase: 利未人作活的搖祭
+  - phrase: 歸神
+  - phrase: 利未記7:30
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+- name: 順服神吩咐
+  suggested_type: 神學
+  evidence: 民8:20,22 摩西、亞倫、以色列全會眾就照耶和華吩咐摩西待利未人的一切規條待他們...於是利未人進入會幕前辦事。CT：完全順服神吩咐。KC：以色列人待利未人照規條。BH：民8:20,22雙重記載順服。
+  surfaces:
+  - phrase: 順服神吩咐
+  - phrase: 照耶和華吩咐摩西
+  - phrase: 待利未人的一切規條
+  - phrase: 利未人進入會幕前辦事
+  - phrase: 完全順服
+  - phrase: 雙重記載順服
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=主題，secondary=[]
+- name: 潔淨
+  suggested_type: 神學
+  evidence: 民8:6,7,11,12,13,14,15,21 潔淨他們...潔淨他們當這樣行...作搖祭...利未人就歸我了...將利未人分別出來。CT：潔淨表分別為聖歸神。KC：除罪水、剃頭、洗衣三步驟。BH：利未人代替長子歸神。
+  surfaces:
+  - phrase: 潔淨
+  - phrase: 潔淨他們
+  - phrase: 分別為聖歸神
+  - phrase: 除罪水
+  - phrase: 剃頭
+  - phrase: 洗衣
+  - phrase: 三步驟
+  - phrase: 代替長子
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=原文，secondary=[]
+- name: 公牛犢
+  suggested_type: 原文
+  evidence: 民8:8,12 取一隻公牛犢...利未人要按手在牛頭上。CT：公牛犢表基督無瑕疵。KC：燔祭贖罪祭用公牛犢。BH：利1:3公牛燔祭。
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 取一隻公牛犢
+  - phrase: 按手在牛頭上
+  - phrase: 基督無瑕疵
+  - phrase: 燔祭贖罪祭
+  - phrase: 利未記1:3
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=文化，secondary=[]
+- name: 素祭
+  suggested_type: 主題
+  evidence: 民8:8 並同獻的素祭，就是調油的細麵。CT：素祭表基督完美人生。KC：素祭通常與燔祭或贖罪祭同獻。BH：利2章素祭條例。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 同獻的素祭
+  - phrase: 調油的細麵
+  - phrase: 基督完美人生
+  - phrase: 與燔祭或贖罪祭同獻
+  - phrase: 利未記2章
+  match_type: type_conflict
+  note: 分類衝突：候選=主題，既有=原文，secondary=[]
+E_skip: []

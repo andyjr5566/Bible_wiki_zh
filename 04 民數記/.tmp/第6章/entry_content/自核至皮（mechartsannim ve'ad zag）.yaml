@@ -1,0 +1,34 @@
+name: 自核至皮（mechartsannim ve'ad zag）
+type: 原文
+secondary_types: []
+aliases:
+- 自核至皮
+- 從核到皮
+- 連核帶皮
+status: formal
+definition: 希伯來文 mechartsannim ve'ad zag（מֵחַרְצַנִּים וְעַד זָג），字面「從葡萄核到葡萄皮」，民數記
+  6:4 用以形容葡萄樹產物的完整範圍——連果核、果皮等廢棄部位亦在禁食之列，強調禁忌無死角。
+development: 此詞組在舊約僅見於此，成為猶太律法界定「葡萄衍生物」邊界的經典依據；《米示拿·拿細耳人篇》第 6 章據此列舉 7 種葡萄部位皆禁。
+accumulations:
+- book: 民數記
+  chapter: 6
+  summary: 第 4 節定義禁忌範圍的極致表達。
+  relation: 將第 3 節具體清單（酒、醋、汁、鮮/乾葡萄）納入「葡萄樹上結的」整體框架，封堵漏洞。
+related_entries:
+- 葡萄樹
+- 鮮葡萄
+- 乾葡萄
+- 葡萄汁
+- 清酒
+- 濃酒
+- 醋
+- 拿細耳人禁酒
+- 離俗
+sources:
+- 'BH: Numbers 6 — 自核至皮的全面禁令（https://biblehub.com/numbers/6.htm）'
+created_from: numbers_6
+category: 原文
+trigger_sources:
+- numbers_6
+current_data: {}
+pending: false

@@ -1,0 +1,32 @@
+name: 以薩迦支派
+type: 人物
+secondary_types: []
+aliases:
+- 以薩迦
+status: formal
+definition: 民數記第7章第18-23節記載以薩迦支派首領蘇押的兒子拿坦業，在獻壇禮第二天獻上供物。供物內容與各支派完全相同：銀盤、銀碗、金盂、燔祭、贖罪祭、平安祭。以薩迦作為雅各第五子利亞的兒子，其支派在曠野行軍中位於東邊猶大營旁（民數記2章）。
+development: 經文以標準化格式呈現以薩迦支派奉獻，強調十二支派在獻壇禮中平等、合一、按序參與。
+accumulations:
+- book: 民數記
+  chapter: 7
+  summary: 記載以薩迦支派首領拿坦業第二天獻供物細目。
+  relation: 獻壇禮十二日序列中的第二天，展現支派代表性奉獻。
+related_entries:
+- 拿坦業（以薩迦族長）
+- 蘇押（Zuar）
+- 首領
+- 獻壇禮
+- 十二支派首領奉獻
+- 各支派獻供物清單
+- 供物細目
+- 猶大支派
+- 西布倫支派
+- 流便支派
+sources:
+- 'BH: Numbers 7:18-23 — 以薩迦支派獻供（https://biblehub.com/numbers/7.htm）'
+created_from: numbers_7
+category: 人物
+trigger_sources:
+- numbers_7
+current_data: {}
+pending: false

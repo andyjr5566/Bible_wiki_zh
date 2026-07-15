@@ -1,0 +1,29 @@
+name: 七盞燈
+type: 主題
+secondary_types: []
+aliases:
+- 七盞燈
+status: formal
+definition: 金燈臺上的七盞燈，神吩咐點燈時要使其向燈臺前面發光（民8:2）。象徵完全的光照與神同在的啟示，燈臺本身是用金子錘出來的，連座帶花都是錘出來的（民8:4）。
+development: 從神吩咐點燈規條（向前發光），到亞倫遵行，再到燈臺製作工藝與樣式的說明，構成燈臺點燈條例的完整背景。
+accumulations:
+- book: 民數記
+  chapter: 8
+  summary: 耶和華吩咐亞倫點燈，七盞燈都要向燈臺前面發光；燈臺是用金子錘出來的，照耶和華指示摩西的樣式（8:2-4）。
+  relation: 本章開頭獨立單元，確立燈臺點燈的神聖規條與器具聖潔性。
+related_entries:
+- 金燈臺
+- 亞倫
+- 向前發光
+- 燈臺點燈條例
+- 樣式
+- 燈檯
+sources:
+- 'BH: Numbers 8 — 七盞燈點燈規條（https://biblehub.com/numbers/8.htm）'
+created_from: numbers_8
+category: topic
+trigger_sources:
+- Numbers 8:2
+- Numbers 8:4
+current_data: true
+pending: false
