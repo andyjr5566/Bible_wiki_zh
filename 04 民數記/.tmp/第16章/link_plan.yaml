@@ -1,0 +1,294 @@
+book: 民數記
+chapter: 16
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民16:4,12-15,20-22,25-28,36-37,44-45 摩西聽見俯伏在地，召大坍亞比蘭不來，摩西甚發怒求神不收納供物，摩西亞倫俯伏代禱，摩西吩咐會眾離開可拉帳棚，摩西說若地開口吞滅他們就知這些人藐視耶和華，摩西吩咐以利亞撒收香爐，摩西亞倫來到會幕前代禱。四份註解均記載摩西作中保領袖面對背叛。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 摩西俯伏代禱
+  - phrase: 摩西甚發怒
+  - phrase: 中保領袖
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 民16:6-7,16-19,35-36,46-48 亞倫與可拉一黨各拿香爐在耶和華面前獻香，火燒滅獻香的人，亞倫兒子以利亞撒收香爐錘作包壇銅，亞倫拿香爐贖罪在死人活人中間站住瘟疫止住。四份註解均記載亞倫作大祭司被神揀選、贖罪。
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 大祭司
+  - phrase: 亞倫贖罪
+  - phrase: 神揀選祭司
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 可拉
+  suggested_type: 人物
+  evidence: 民16:1,8-11,19,32 利未曾孫哥轄孫子以斯哈兒子可拉，嫉妒亞倫祭司職分，聚集二百五十首領攻擊摩西亞倫。摩西對可拉說：你們這利未人還算小事嗎？神已叫你們親近祂辦會幕事，你們還要謀祭司職分。地開口吞滅可拉和屬他一切人。四份註解均記載可拉為背叛首領。
+  surfaces:
+  - phrase: 可拉
+  - phrase: 利未人可拉
+  - phrase: 謀祭司職分
+  - phrase: 背叛首領
+  match_type: alias
+  existing_title: 可拉的背叛（預告）
+  existing_path: link_folder/人物/可拉的背叛（預告）.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 民16:37-39 亞倫的兒子以利亞撒從火中拿出香爐，把火倒在壇外，將香爐錘作包壇的銅，為以色列人作記號。丁良才：以利亞撒作大祭司繼承者處理審判後事；啟導本：祭司職分傳承不斷。
+  surfaces:
+  - phrase: 以利亞撒
+  - phrase: 亞倫兒子
+  - phrase: 收香爐作記號
+  - phrase: 祭司職分傳承
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 香爐（machtah）
+  suggested_type: 原文
+  evidence: 民16:6,17,37-39 你們要拿香爐來。原文 מַחְתָּה (machtah) 意為火盤、香爐、盛火器。丁良才：香爐是祭司獻香專用器具；啟導本：僭越使用香爐等於僭越祭司職分。
+  surfaces:
+  - phrase: 香爐
+  - phrase: machtah
+  - phrase: 火盤
+  - phrase: 獻香器具
+  match_type: base
+  existing_title: 火鑵（machtah）
+  existing_path: link_folder/原文/火鑵（machtah）.md
+- name: 摩西代禱預表基督代禱
+  suggested_type: 互文
+  evidence: 民16:22 摩西亞倫俯伏代禱 → 來7:25 基督長遠活著替他們祈求，能以拯救到底。丁良才：中保代禱擋在破口前；啟導本：摩西預表基督完全中保。
+  surfaces:
+  - phrase: 摩西代禱
+  - phrase: 基督代禱
+  - phrase: 來7:25
+  - phrase: 完全中保
+  match_type: base
+  existing_title: 摩西代禱預表基督代禱（來7：25）
+  existing_path: link_folder/互文/摩西代禱預表基督代禱（來7：25）.md
+C_new_formal:
+- name: 可拉大坍亞比蘭安背叛摩西亞倫
+  suggested_type: 事件
+  evidence: 民16:1-3 利未曾孫可拉、流便子孫大坍亞比蘭、比勒兒子安，並二百五十個首領聚集攻擊摩西亞倫，說你們擅自專權，全會眾個個聖潔，耶和華在他們中間，你們為什麼自高超過耶和華的會眾。四份註解均記載此為祭司職分與領導權的背叛。
+  surfaces:
+  - phrase: 可拉一黨
+  - phrase: 大坍亞比蘭
+  - phrase: 二百五十個首領
+  - phrase: 擅自專權
+  - phrase: 全會眾個個聖潔
+  target_path: link_folder/事件/可拉大坍亞比蘭安背叛摩西亞倫.md
+- name: 摩西俯伏在地讓神表白
+  suggested_type: 事件
+  evidence: 民16:4-5 摩西聽見就俯伏在地，對可拉一黨說：到了早晨耶和華必指示誰是屬祂的、誰是聖潔的，祂所揀選的是誰必叫誰親近祂。丁良才：俯伏是謙卑不為自己表白；啟導本：讓神親自表明誰是真祭司。
+  surfaces:
+  - phrase: 摩西俯伏在地
+  - phrase: 早晨耶和華必指示
+  - phrase: 誰是屬祂的
+  - phrase: 神揀選誰
+  target_path: link_folder/事件/摩西俯伏在地讓神表白.md
+- name: 可拉一黨拿香爐在耶和華面前
+  suggested_type: 事件
+  evidence: 民16:6-7,16-19 可拉啊，你們要拿香爐來，明天在耶和華面前燒香。摩西說：你和你一黨並亞倫各拿香爐，共二百五十個，在耶和華面前獻香。四份註解均記載此為神設立的公開試驗。
+  surfaces:
+  - phrase: 拿香爐
+  - phrase: 在耶和華面前燒香
+  - phrase: 公開試驗
+  - phrase: 二百五十個香爐
+  target_path: link_folder/事件/可拉一黨拿香爐在耶和華面前.md
+- name: 摩西亞倫為會眾代禱
+  suggested_type: 事件
+  evidence: 民16:20-22 耶和華對摩西亞倫說：你們離開這會眾，我好在瞬間滅絕他們。摩西亞倫俯伏說：神啊，一個人犯罪，你豈要向全會眾發怒呢？四份註解均記載摩西亞倫作中保代禱擋在破口前。
+  surfaces:
+  - phrase: 摩西亞倫代禱
+  - phrase: 一個人犯罪
+  - phrase: 向全會眾發怒
+  - phrase: 中保擋在破口前
+  target_path: link_folder/事件/摩西亞倫為會眾代禱.md
+- name: 地開口吞滅可拉一黨
+  suggested_type: 事件
+  evidence: 民16:23-34 耶和華吩咐摩西告訴會眾離開可拉大坍亞比蘭帳棚。摩西說：若這些人死得與眾人一樣，不是耶和華打發我。地就開口吞滅他們和屬他們的人口、財物，連同可拉一黨全活活下陰間。四份註解均記載此為神親自審判背叛者。
+  surfaces:
+  - phrase: 地開口吞滅
+  - phrase: 活活下陰間
+  - phrase: 神親自審判
+  - phrase: 離開可拉帳棚
+  target_path: link_folder/事件/地開口吞滅可拉一黨.md
+- name: 火燒滅二百五十獻香的人
+  suggested_type: 事件
+  evidence: 民16:35 從耶和華那裡出來火，燒滅那二百五十個獻香的人。丁良才：獻香是祭司特權，僭越者被火審判；啟導本：神的火區分真假祭司。
+  surfaces:
+  - phrase: 火燒滅獻香的人
+  - phrase: 僭越祭司職分
+  - phrase: 神的火審判
+  target_path: link_folder/事件/火燒滅二百五十獻香的人.md
+- name: 香爐錘作包壇銅為記號
+  suggested_type: 事件
+  evidence: 民16:36-40 耶和華吩咐摩西告訴亞倫的兒子以利亞撒，把火中的香爐從火中拿出來，錘作包壇的銅，為以色列人作記號，免得外人僭越獻香。丁良才：銅壇記號警戒後人；啟導本：神審判的永久見證。
+  surfaces:
+  - phrase: 香爐錘作包壇銅
+  - phrase: 以色列人記號
+  - phrase: 免得外人僭越
+  - phrase: 永久見證
+  target_path: link_folder/事件/香爐錘作包壇銅為記號.md
+- name: 會眾抱怨摩西亞倫殺害耶和華百姓
+  suggested_type: 事件
+  evidence: 民16:41-42 以色列全會眾向摩西亞倫發怨言說：你們殺了耶和華的百姓。雲彩遮蓋會幕，耶和華榮光顯現。四份註解均記載百姓不分辨是非、反倒怪罪中保。
+  surfaces:
+  - phrase: 會眾發怨言
+  - phrase: 你們殺了耶和華百姓
+  - phrase: 雲彩遮蓋會幕
+  - phrase: 耶和華榮光顯現
+  target_path: link_folder/事件/會眾抱怨摩西亞倫殺害耶和華百姓.md
+- name: 瘟疫爆發亞倫拿香爐贖罪
+  suggested_type: 事件
+  evidence: 民16:43-50 摩西亞倫來到會幕前，耶和華說離開這會眾我好滅絕他們。摩西吩咐亞倫拿香爐盛火、加香，快到會眾那裡贖罪。亞倫跑到會眾中間，在死人活人中間站住，瘟疫就止住了。死於瘟疫的一萬四千七百人。四份註解均記載亞倫作大祭司在死人活人中間站立贖罪。
+  surfaces:
+  - phrase: 亞倫拿香爐贖罪
+  - phrase: 在死人活人中間站住
+  - phrase: 瘟疫止住
+  - phrase: 一萬四千七百人
+  - phrase: 大祭司贖罪
+  target_path: link_folder/事件/瘟疫爆發亞倫拿香爐贖罪.md
+- name: 神主權揀選祭司與領袖
+  suggested_type: 神學
+  evidence: 民16:5,7 耶和華必指示誰是屬祂的、誰是聖潔的，祂所揀選的是誰必叫誰親近祂。丁良才：祭司職分非人自取乃神揀選；啟導本：神主權高過人意願；串珠註釋：來5:4無人自取榮耀。
+  surfaces:
+  - phrase: 神主權揀選
+  - phrase: 誰是屬祂的
+  - phrase: 無人自取榮耀
+  - phrase: 祭司職分神揀選
+  target_path: link_folder/神學/神主權揀選祭司與領袖.md
+- name: 謙卑不為自己表白
+  suggested_type: 神學
+  evidence: 民16:4,22 摩西聽見俯伏在地；摩西亞倫俯伏說：神啊，一個人犯罪，你豈要向全會眾發怒。丁良才：摩西極其謙和不為自己伸冤；啟導本：中保不為自己辯護；串珠註釋：預表基督不為自己開口。
+  surfaces:
+  - phrase: 摩西俯伏在地
+  - phrase: 不為自己表白
+  - phrase: 中保代禱
+  - phrase: 預表基督
+  target_path: link_folder/神學/謙卑不為自己表白.md
+- name: 背叛神權柄的後果
+  suggested_type: 神學
+  evidence: 民16:30-33 地開口吞滅可拉一黨，火燒滅二百五十人，瘟疫殺死一萬四千七百人。丁良才：背叛神所立權柄後果嚴重；啟導本：神的審判公義徹底；串珠註釋：猶大書11節可拉的背叛。
+  surfaces:
+  - phrase: 背叛神權柄後果
+  - phrase: 地開口吞滅
+  - phrase: 火燒滅
+  - phrase: 瘟疫審判
+  - phrase: 猶大書11
+  target_path: link_folder/神學/背叛神權柄的後果.md
+- name: 大祭司在死人活人中間贖罪
+  suggested_type: 神學
+  evidence: 民16:47-48 亞倫拿香爐跑到會眾中間，在死人活人中間站住，瘟疫就止住了。丁良才：大祭司進入死蔭幽谷贖罪；啟導本：預表基督進入死亡權勢中拯救；串珠註釋：來2:14-15基督破壞掌死權的。
+  surfaces:
+  - phrase: 大祭司贖罪
+  - phrase: 在死人活人中間站住
+  - phrase: 預表基督
+  - phrase: 破壞掌死權的
+  target_path: link_folder/神學/大祭司在死人活人中間贖罪.md
+- name: 大坍亞比蘭
+  suggested_type: 人物
+  evidence: 民16:1,12-15,25-27,32 流便子孫以利押兒子大坍亞比蘭，拒絕摩西召喚說：你將我們從流奶與蜜之地領出來，要在曠野殺我們，還要自立為王嗎？摩西往大坍亞比蘭帳棚去，會眾離開他們帳棚，地開口吞滅大坍亞比蘭和屬他們的人。四份註解均記載流便支派失去長子名分心生不滿。
+  surfaces:
+  - phrase: 大坍亞比蘭
+  - phrase: 流便子孫
+  - phrase: 拒絕摩西召喚
+  - phrase: 失去長子名分
+  target_path: link_folder/人物/大坍亞比蘭.md
+- name: 吞滅（bala）
+  suggested_type: 原文
+  evidence: 民16:30,34 地開口吞滅他們。原文 בָּלַע (bala) 意為吞下、吞滅、毀滅。丁良才：地開口吞滅為神特有審判方式；啟導本：活活吞滅表徵完全毀滅。
+  surfaces:
+  - phrase: 吞滅
+  - phrase: bala
+  - phrase: 地開口
+  - phrase: 完全毀滅
+  target_path: link_folder/原文/吞滅（bala）.md
+- name: 可拉背叛預表猶大書警告
+  suggested_type: 互文
+  evidence: 民16:1-3 可拉背叛摩西亞倫 → 猶1:11 禍哉，他們走了該隱的道路，為利貪隨巴蘭的錯謬，在可拉的背叛中滅亡了。丁良才：可拉背叛為假教師警戒；啟導本：背叛神權柄者必滅亡。
+  surfaces:
+  - phrase: 可拉背叛
+  - phrase: 猶大書11
+  - phrase: 假教師警戒
+  - phrase: 背叛必滅亡
+  target_path: link_folder/互文/可拉背叛預表猶大書警告.md
+- name: 亞倫贖罪預表基督大祭司贖罪
+  suggested_type: 互文
+  evidence: 民16:47-48 亞倫在死人活人中間站住瘟疫止住 → 來2:14-15 基督藉著死破壞掌死權的魔鬼，釋放那些一生因怕死作奴僕的人。丁良才：大祭司進入死蔭幽谷預表基督；啟導本：基督在十字架贖罪平息神忿怒。
+  surfaces:
+  - phrase: 亞倫贖罪
+  - phrase: 基督大祭司
+  - phrase: 破壞掌死權的
+  - phrase: 平息神忿怒
+  target_path: link_folder/互文/亞倫贖罪預表基督大祭司贖罪.md
+- name: 神審判背叛預表末世審判
+  suggested_type: 互文
+  evidence: 民16:31-35 地開口吞滅、火燒滅 → 啟20:9-10 火從天上降下燒滅他們。丁良才：曠野審判預表末世火審；啟導本：神審判公義徹底。
+  surfaces:
+  - phrase: 地開口吞滅
+  - phrase: 火從天上降下
+  - phrase: 末世審判
+  - phrase: 神審判公義
+  target_path: link_folder/互文/神審判背叛預表末世審判.md
+- name: 可拉是否為利未人嫉妒祭司職分
+  suggested_type: 解經爭議
+  evidence: 民16:1,8-11 可拉是哥轄孫子以斯哈兒子，已有利未人職分，卻謀祭司職分。丁良才：可拉嫉妒哥轄長子烏薛兒子以利撒反作首領；啟導本：屬靈嫉妒最隱蔽；串珠註釋：可拉想超越神所定次序。
+  surfaces:
+  - phrase: 可拉嫉妒祭司職分
+  - phrase: 利未人職分
+  - phrase: 超越神所定次序
+  - phrase: 屬靈嫉妒
+  target_path: link_folder/解經爭議/可拉是否為利未人嫉妒祭司職分.md
+- name: 大坍亞比蘭拒絕摩西召喚是否故意悖逆
+  suggested_type: 解經爭議
+  evidence: 民16:12-14 摩西打發人召大坍亞比蘭，他們說：我們不上去。你將我們從流奶與蜜之地領出來，要在曠野殺我們，還要自立為王嗎？丁良才：流便支派失去長子名分心生不滿；啟導本：故意曲解摩西動機；串珠註釋：悖逆者總找藉口。
+  surfaces:
+  - phrase: 大坍亞比蘭拒絕召喚
+  - phrase: 曲解摩西動機
+  - phrase: 流便失去長子名分
+  - phrase: 故意悖逆
+  target_path: link_folder/解經爭議/大坍亞比蘭拒絕摩西召喚是否故意悖逆.md
+- name: 二百五十首領是否明知故犯
+  suggested_type: 解經爭議
+  evidence: 民16:2,17 二百五十個首領有名望選入會中的人，各拿香爐在耶和華面前獻香。丁良才：他們是首領應知祭司條例；啟導本：被可拉誘惑跟隨；串珠註釋：人多勢眾不代表真理。
+  surfaces:
+  - phrase: 二百五十首領明知故犯
+  - phrase: 被可拉誘惑
+  - phrase: 人多勢眾非真理
+  - phrase: 首領責任
+  target_path: link_folder/解經爭議/二百五十首領是否明知故犯.md
+D_new_candidate:
+- name: 會幕
+  suggested_type: 地點
+  evidence: 民16:9,18-19,42-43,50 可拉一黨在會幕門口獻香，雲彩遮蓋會幕耶和華榮光顯現，摩西亞倫來到會幕前代禱，亞倫跑到會幕前贖罪。四份註解均記載會幕為神顯現與審判之地。
+  surfaces:
+  - phrase: 會幕
+  - phrase: 會幕門口
+  - phrase: 耶和華榮光顯現
+  - phrase: 神顯現之地
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+- name: 陰間（Sheol）
+  suggested_type: 地點
+  evidence: 民16:30,33 地開口吞滅他們，他們和屬他們一切活活下陰間。丁良才：陰間為死人居所；啟導本：活活下陰間表徵完全隔絕神。
+  surfaces:
+  - phrase: 陰間
+  - phrase: Sheol
+  - phrase: 活活下陰間
+  - phrase: 完全隔絕神
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=原文，secondary=['背景']
+- name: 贖罪（kaphar）
+  suggested_type: 原文
+  evidence: 民16:46-47 摩西對亞倫說：拿香爐贖罪。原文 כָּפַר (kaphar) 意為遮蓋、贖罪、平息怒氣。丁良才：大祭司贖罪平息神怒；啟導本：預表基督贖罪平息神忿怒。
+  surfaces:
+  - phrase: 贖罪
+  - phrase: kaphar
+  - phrase: 平息怒氣
+  - phrase: 大祭司贖罪
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+E_skip: []
