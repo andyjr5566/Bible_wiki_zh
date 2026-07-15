@@ -6905,6 +6905,14 @@
       "加五分之一償還"
     ]
   },
+  "全會眾哭號發怨言": {
+    "path": "link_folder/事件/全會眾哭號發怨言.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "全會眾哭號發怨言",
+    "status": "formal",
+    "aliases": []
+  },
   "兩枝銀號條例": {
     "path": "link_folder/事件/兩枝銀號條例.md",
     "type": "事件",
@@ -6981,6 +6989,17 @@
     "title": "十探子報惡信使百姓膽怯",
     "status": "formal",
     "aliases": []
+  },
+  "十探子遭瘟疫而死": {
+    "path": "link_folder/事件/十探子遭瘟疫而死.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "十探子遭瘟疫而死",
+    "status": "formal",
+    "aliases": [
+      "十個探子死於瘟疫",
+      "報惡信探子被擊殺"
+    ]
   },
   "取下脂油": {
     "path": "link_folder/事件/取下脂油.md",
@@ -7217,6 +7236,17 @@
     "status": "formal",
     "aliases": []
   },
+  "成年人必死在曠野": {
+    "path": "link_folder/事件/成年人必死在曠野.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "成年人必死在曠野",
+    "status": "formal",
+    "aliases": [
+      "成年人倒斃曠野",
+      "二十歲以上必死曠野"
+    ]
+  },
   "我在埃及地擊殺一切頭生的那日": {
     "path": "link_folder/事件/我在埃及地擊殺一切頭生的那日.md",
     "type": "事件",
@@ -7331,6 +7361,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "摩西上山領石版",
+    "status": "formal",
+    "aliases": []
+  },
+  "摩西亞倫俯伏代求": {
+    "path": "link_folder/事件/摩西亞倫俯伏代求.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西亞倫俯伏代求",
     "status": "formal",
     "aliases": []
   },
@@ -7450,6 +7488,14 @@
       "摩西求神同行",
       "神應允同去"
     ]
+  },
+  "摩西為百姓代禱": {
+    "path": "link_folder/事件/摩西為百姓代禱.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西為百姓代禱",
+    "status": "formal",
+    "aliases": []
   },
   "摩西為米利暗代禱": {
     "path": "link_folder/事件/摩西為米利暗代禱.md",
@@ -7638,6 +7684,14 @@
       "帳幕立起",
       "會幕完成"
     ]
+  },
+  "會眾想拿石頭打死迦勒約書亞": {
+    "path": "link_folder/事件/會眾想拿石頭打死迦勒約書亞.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "會眾想拿石頭打死迦勒約書亞",
+    "status": "formal",
+    "aliases": []
   },
   "正月初一": {
     "path": "link_folder/事件/正月初一.md",
@@ -7854,6 +7908,17 @@
       "悲哀不佩戴妝飾"
     ]
   },
+  "百姓擅自上山被擊敗": {
+    "path": "link_folder/事件/百姓擅自上山被擊敗.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "百姓擅自上山被擊敗",
+    "status": "formal",
+    "aliases": [
+      "擅自上山遭敗",
+      "何珥瑪之敗"
+    ]
+  },
   "百姓歡呼俯伏敬拜": {
     "path": "link_folder/事件/百姓歡呼俯伏敬拜.md",
     "type": "事件",
@@ -7898,6 +7963,14 @@
       "Water from the Rock event"
     ]
   },
+  "神命百姓轉向紅海曠野": {
+    "path": "link_folder/事件/神命百姓轉向紅海曠野.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "神命百姓轉向紅海曠野",
+    "status": "formal",
+    "aliases": []
+  },
   "神指示築壇獻祭": {
     "path": "link_folder/事件/神指示築壇獻祭.md",
     "type": "事件",
@@ -7910,6 +7983,22 @@
       "築壇指示",
       "獻祭指示"
     ]
+  },
+  "神要擊殺百姓另立摩西為大國": {
+    "path": "link_folder/事件/神要擊殺百姓另立摩西為大國.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "神要擊殺百姓另立摩西為大國",
+    "status": "formal",
+    "aliases": []
+  },
+  "神赦免但定罪不信者": {
+    "path": "link_folder/事件/神赦免但定罪不信者.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "神赦免但定罪不信者",
+    "status": "formal",
+    "aliases": []
   },
   "神降臨西乃山": {
     "path": "link_folder/事件/神降臨西乃山.md",
@@ -8116,6 +8205,14 @@
       "耶和華曉諭摩西"
     ]
   },
+  "耶和華榮光在會幕顯現": {
+    "path": "link_folder/事件/耶和華榮光在會幕顯現.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華榮光在會幕顯現",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華豈看為美呢": {
     "path": "link_folder/事件/耶和華豈看為美呢.md",
     "type": "事件",
@@ -8221,6 +8318,22 @@
     "type": "事件",
     "secondary_types": [],
     "title": "迦勒勸勉百姓上去得地",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦勒得進迦南地": {
+    "path": "link_folder/事件/迦勒得進迦南地.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "迦勒得進迦南地",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦勒約書亞撕裂衣服勸勉": {
+    "path": "link_folder/事件/迦勒約書亞撕裂衣服勸勉.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "迦勒約書亞撕裂衣服勸勉",
     "status": "formal",
     "aliases": []
   },
@@ -10848,6 +10961,19 @@
       "神的冊"
     ]
   },
+  "應許之地流奶與蜜預表屬天基業（來 11：10, 16；彼前 1：4）": {
+    "path": "link_folder/互文/應許之地流奶與蜜預表屬天基業（來 11：10, 16；彼前 1：4）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "應許之地流奶與蜜預表屬天基業（來 11：10, 16；彼前 1：4）",
+    "status": "formal",
+    "aliases": [
+      "流奶與蜜預表屬天基業",
+      "迦南地預表天上產業"
+    ]
+  },
   "披戴基督（羅13：14）": {
     "path": "link_folder/互文/披戴基督（羅13：14）.md",
     "type": "互文",
@@ -11169,6 +11295,19 @@
     "status": "formal",
     "aliases": [
       "教會紀律與隔絕"
+    ]
+  },
+  "曠野漂流預表希伯來書警告（來 3：7-4：11）": {
+    "path": "link_folder/互文/曠野漂流預表希伯來書警告（來 3：7-4：11）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "曠野漂流預表希伯來書警告（來 3：7-4：11）",
+    "status": "formal",
+    "aliases": [
+      "曠野漂流預表",
+      "曠野一代預表希伯來書警告"
     ]
   },
   "書20：1-9": {
@@ -13848,6 +13987,19 @@
     "status": "formal",
     "aliases": [
       "迦勒約書亞信心報告預表基督徒得勝"
+    ]
+  },
+  "迦勒約書亞信心預表基督徒得勝（來 3-4；羅 8：37）": {
+    "path": "link_folder/互文/迦勒約書亞信心預表基督徒得勝（來 3-4；羅 8：37）.md",
+    "type": "互文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "迦勒約書亞信心預表基督徒得勝（來 3-4；羅 8：37）",
+    "status": "formal",
+    "aliases": [
+      "迦勒約書亞信心預表",
+      "迦勒約書亞得勝預表"
     ]
   },
   "迦南地流奶與蜜預表屬靈基業（民13：27；弗1：11）": {
@@ -17394,6 +17546,17 @@
     "aliases": [
       "一他連得",
       "他連得"
+    ]
+  },
+  "一日頂一年（yom tachat shanah）": {
+    "path": "link_folder/原文/一日頂一年（yom tachat shanah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "一日頂一年（yom tachat shanah）",
+    "status": "formal",
+    "aliases": [
+      "一日頂一年",
+      "一日頂一日"
     ]
   },
   "一歲公羊羔（ben shanah keves）": {
@@ -20949,6 +21112,17 @@
       "Phylacteries"
     ]
   },
+  "試探神十次（nissah aser）": {
+    "path": "link_folder/原文/試探神十次（nissah aser）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "試探神十次（nissah aser）",
+    "status": "formal",
+    "aliases": [
+      "試探神十次",
+      "試探耶和華十次"
+    ]
+  },
   "詩133（Tehillim 133）": {
     "path": "link_folder/原文/詩133（Tehillim 133）.md",
     "type": "原文",
@@ -21989,6 +22163,17 @@
     "status": "formal",
     "aliases": [
       "神的山何烈山"
+    ]
+  },
+  "何珥瑪": {
+    "path": "link_folder/地點/何珥瑪.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "何珥瑪",
+    "status": "formal",
+    "aliases": [
+      "荷珥瑪",
+      "Hormah"
     ]
   },
   "別是巴": {
@@ -25494,6 +25679,14 @@
       "三天黑暗"
     ]
   },
+  "一日頂一年原則": {
+    "path": "link_folder/神學/一日頂一年原則.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "一日頂一年原則",
+    "status": "formal",
+    "aliases": []
+  },
   "一百二十年的兩種解釋": {
     "path": "link_folder/神學/一百二十年的兩種解釋.md",
     "type": "神學",
@@ -26088,6 +26281,17 @@
       "祈禱"
     ]
   },
+  "代禱改變神審判": {
+    "path": "link_folder/神學/代禱改變神審判.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "代禱改變神審判",
+    "status": "formal",
+    "aliases": [
+      "摩西代禱轉移審判",
+      "代禱蒙神垂聽"
+    ]
+  },
   "以傷還傷（lex talionis）": {
     "path": "link_folder/神學/以傷還傷（lex talionis）.md",
     "type": "神學",
@@ -26297,6 +26501,17 @@
     "title": "信心的本質",
     "status": "formal",
     "aliases": []
+  },
+  "信心與不信的分水嶺": {
+    "path": "link_folder/神學/信心與不信的分水嶺.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "信心與不信的分水嶺",
+    "status": "formal",
+    "aliases": [
+      "信心與不信界線",
+      "迦勒約書亞與十探子對比"
+    ]
   },
   "信心與忍耐": {
     "path": "link_folder/神學/信心與忍耐.md",
@@ -27800,6 +28015,17 @@
       "treasured possession",
       "屬神的子民",
       "特別的產業"
+    ]
+  },
+  "屬肉體悔改非真悔改": {
+    "path": "link_folder/神學/屬肉體悔改非真悔改.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "屬肉體悔改非真悔改",
+    "status": "formal",
+    "aliases": [
+      "假悔改",
+      "肉體悔改"
     ]
   },
   "山上的樣式": {
@@ -29950,6 +30176,17 @@
     "title": "神的後悔與憂傷",
     "status": "formal",
     "aliases": []
+  },
+  "神的忍耐與公義並行": {
+    "path": "link_folder/神學/神的忍耐與公義並行.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的忍耐與公義並行",
+    "status": "formal",
+    "aliases": [
+      "忍耐與公義",
+      "神屬性:忍耐公義並存"
+    ]
   },
   "神的怒氣與審判": {
     "path": "link_folder/神學/神的怒氣與審判.md",
@@ -33389,6 +33626,17 @@
     "status": "formal",
     "aliases": []
   },
+  "十探子報惡信是否故意": {
+    "path": "link_folder/解經爭議/十探子報惡信是否故意.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "十探子報惡信是否故意",
+    "status": "formal",
+    "aliases": [
+      "十探子惡信動機",
+      "探子報告真實性爭議"
+    ]
+  },
   "古實女子是否為西坡拉": {
     "path": "link_folder/解經爭議/古實女子是否為西坡拉.md",
     "type": "解經爭議",
@@ -33635,6 +33883,17 @@
     "aliases": [
       "探子身分爭議",
       "十二探子首領問題"
+    ]
+  },
+  "摩西是否進過迦南地": {
+    "path": "link_folder/解經爭議/摩西是否進過迦南地.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "摩西是否進過迦南地",
+    "status": "formal",
+    "aliases": [
+      "摩西進迦南爭議",
+      "摩西得見應許地"
     ]
   },
   "摩西殺死埃及人的解經問題": {
@@ -34135,6 +34394,17 @@
     "title": "護衛長是否仍為波提乏",
     "status": "formal",
     "aliases": []
+  },
+  "迦勒何時進迦南地": {
+    "path": "link_folder/解經爭議/迦勒何時進迦南地.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "迦勒何時進迦南地",
+    "status": "formal",
+    "aliases": [
+      "迦勒進迦南時間",
+      "迦勒得地時間爭議"
+    ]
   },
   "迦勒底吾珥的位置": {
     "path": "link_folder/解經爭議/迦勒底吾珥的位置.md",
@@ -36739,6 +37009,12 @@
   "切成塊子": {
     "alias_of": "剝皮切塊"
   },
+  "十個探子死於瘟疫": {
+    "alias_of": "十探子遭瘟疫而死"
+  },
+  "報惡信探子被擊殺": {
+    "alias_of": "十探子遭瘟疫而死"
+  },
   "亞倫受膏的日子": {
     "alias_of": "受膏的日子"
   },
@@ -36771,6 +37047,12 @@
   },
   "彈在壇的旁邊": {
     "alias_of": "彈血"
+  },
+  "成年人倒斃曠野": {
+    "alias_of": "成年人必死在曠野"
+  },
+  "二十歲以上必死曠野": {
+    "alias_of": "成年人必死在曠野"
   },
   "埃及擊殺頭生事件": {
     "alias_of": "我在埃及地擊殺一切頭生的那日"
@@ -36984,6 +37266,12 @@
   },
   "悲哀不佩戴妝飾": {
     "alias_of": "百姓摘除妝飾表悔改"
+  },
+  "擅自上山遭敗": {
+    "alias_of": "百姓擅自上山被擊敗"
+  },
+  "何珥瑪之敗": {
+    "alias_of": "百姓擅自上山被擊敗"
   },
   "眾民一見就都歡呼俯伏在地": {
     "alias_of": "百姓歡呼俯伏敬拜"
@@ -37582,6 +37870,12 @@
   "神的冊": {
     "alias_of": "從冊上塗抹（生命冊）"
   },
+  "流奶與蜜預表屬天基業": {
+    "alias_of": "應許之地流奶與蜜預表屬天基業（來 11：10, 16；彼前 1：4）"
+  },
+  "迦南地預表天上產業": {
+    "alias_of": "應許之地流奶與蜜預表屬天基業（來 11：10, 16；彼前 1：4）"
+  },
   "披戴主耶穌基督": {
     "alias_of": "披戴基督（羅13：14）"
   },
@@ -37641,6 +37935,12 @@
   },
   "教會紀律與隔絕": {
     "alias_of": "教會紀律與隔絕（太18：15-17；林前5：1-13）"
+  },
+  "曠野漂流預表": {
+    "alias_of": "曠野漂流預表希伯來書警告（來 3：7-4：11）"
+  },
+  "曠野一代預表希伯來書警告": {
+    "alias_of": "曠野漂流預表希伯來書警告（來 3：7-4：11）"
   },
   "1 Corinthians 10:10": {
     "alias_of": "林前10：10 不要發怨言"
@@ -38139,6 +38439,12 @@
   },
   "迦勒約書亞信心報告預表基督徒得勝": {
     "alias_of": "迦勒約書亞信心報告預表基督徒得勝（民13：30；來3：14）"
+  },
+  "迦勒約書亞信心預表": {
+    "alias_of": "迦勒約書亞信心預表基督徒得勝（來 3-4；羅 8：37）"
+  },
+  "迦勒約書亞得勝預表": {
+    "alias_of": "迦勒約書亞信心預表基督徒得勝（來 3-4；羅 8：37）"
   },
   "迦南地流奶與蜜預表屬靈基業": {
     "alias_of": "迦南地流奶與蜜預表屬靈基業（民13：27；弗1：11）"
@@ -38754,6 +39060,12 @@
   },
   "他連得": {
     "alias_of": "一他連得精金（燈臺用金量）"
+  },
+  "一日頂一年": {
+    "alias_of": "一日頂一年（yom tachat shanah）"
+  },
+  "一日頂一日": {
+    "alias_of": "一日頂一年（yom tachat shanah）"
   },
   "一歲公羊羔": {
     "alias_of": "一歲公羊羔（ben shanah keves）"
@@ -40051,6 +40363,12 @@
   "Phylacteries": {
     "alias_of": "記號與經文"
   },
+  "試探神十次": {
+    "alias_of": "試探神十次（nissah aser）"
+  },
+  "試探耶和華十次": {
+    "alias_of": "試探神十次（nissah aser）"
+  },
   "詩133": {
     "alias_of": "詩133（Tehillim 133）"
   },
@@ -40410,6 +40728,12 @@
   },
   "神的山何烈山": {
     "alias_of": "何烈山"
+  },
+  "荷珥瑪": {
+    "alias_of": "何珥瑪"
+  },
+  "Hormah": {
+    "alias_of": "何珥瑪"
   },
   "Beersheba": {
     "alias_of": "別是巴"
@@ -41527,6 +41851,12 @@
   "祈禱": {
     "alias_of": "代求"
   },
+  "摩西代禱轉移審判": {
+    "alias_of": "代禱改變神審判"
+  },
+  "代禱蒙神垂聽": {
+    "alias_of": "代禱改變神審判"
+  },
   "以眼還眼以牙還牙": {
     "alias_of": "以傷還傷（lex talionis）"
   },
@@ -41580,6 +41910,12 @@
   },
   "庇護": {
     "alias_of": "保護"
+  },
+  "信心與不信界線": {
+    "alias_of": "信心與不信的分水嶺"
+  },
+  "迦勒約書亞與十探子對比": {
+    "alias_of": "信心與不信的分水嶺"
   },
   "俯伏在地": {
     "alias_of": "俯伏敬拜"
@@ -41973,6 +42309,12 @@
   },
   "特別的產業": {
     "alias_of": "屬我的子民"
+  },
+  "假悔改": {
+    "alias_of": "屬肉體悔改非真悔改"
+  },
+  "肉體悔改": {
+    "alias_of": "屬肉體悔改非真悔改"
   },
   "山上指示的樣式": {
     "alias_of": "山上的樣式"
@@ -42609,6 +42951,12 @@
   },
   "Right hand of God": {
     "alias_of": "神的右手"
+  },
+  "忍耐與公義": {
+    "alias_of": "神的忍耐與公義並行"
+  },
+  "神屬性:忍耐公義並存": {
+    "alias_of": "神的忍耐與公義並行"
   },
   "神的十三種屬性": {
     "alias_of": "神的性情宣告（耶和華有憐憫有恩典）"
@@ -43444,6 +43792,12 @@
   "創世記2章動物創造次序問題": {
     "alias_of": "創世記2章19節創造次序問題"
   },
+  "十探子惡信動機": {
+    "alias_of": "十探子報惡信是否故意"
+  },
+  "探子報告真實性爭議": {
+    "alias_of": "十探子報惡信是否故意"
+  },
   "摩西古實妻身分": {
     "alias_of": "古實女子是否為西坡拉"
   },
@@ -43533,6 +43887,12 @@
   },
   "十二探子首領問題": {
     "alias_of": "探子是否為各支派首領"
+  },
+  "摩西進迦南爭議": {
+    "alias_of": "摩西是否進過迦南地"
+  },
+  "摩西得見應許地": {
+    "alias_of": "摩西是否進過迦南地"
   },
   "摩西殺埃及人": {
     "alias_of": "摩西殺死埃及人的解經問題"
@@ -43665,6 +44025,12 @@
   },
   "耶和華使者的身分": {
     "alias_of": "耶和華的使者是否為神顯現"
+  },
+  "迦勒進迦南時間": {
+    "alias_of": "迦勒何時進迦南地"
+  },
+  "迦勒得地時間爭議": {
+    "alias_of": "迦勒何時進迦南地"
   },
   "吾珥的位置": {
     "alias_of": "迦勒底吾珥的位置"
