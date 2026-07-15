@@ -1,0 +1,274 @@
+book: 民數記
+chapter: 11
+A_use_directly: []
+B_needs_update:
+- name: 約書亞（嫩的兒子）
+  suggested_type: 人物
+  evidence: 民11:28 摩西的幫手，嫩的兒子約書亞，請求摩西禁止伊利達、米達說預言。摩西回應顯出屬靈胸襟。四份註解均記載此為約書亞早期事奉表現。
+  surfaces:
+  - phrase: 約書亞
+  - phrase: 嫩的兒子約書亞
+  - phrase: 摩西的幫手
+  match_type: base
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 基博羅哈他瓦
+  suggested_type: 地點
+  evidence: 民11:34 那地方便叫做基博羅哈他瓦，因為他們在那裡葬埋那起貪慾之心的人。丁良才：貪慾之人的墳墓。啟導本：貪婪者的墳場。
+  surfaces:
+  - phrase: 基博羅哈他瓦
+  - phrase: 貪慾之人的墳墓
+  match_type: exact
+  existing_title: 基博羅哈他瓦
+  existing_path: link_folder/地點/基博羅哈他瓦.md
+C_new_formal:
+- name: 他備拉火燒營邊
+  suggested_type: 事件
+  evidence: 民11:1-3 百姓發怨言，耶和華怒氣發作，火燒在營邊，摩西禱告火才熄滅。該地名他備拉（意為燒燬）。四份註解均確認此為神審判怨言的具體事件。
+  surfaces:
+  - phrase: 他備拉
+  - phrase: 火燒營邊
+  - phrase: 耶和華的火
+  target_path: link_folder/事件/他備拉火燒營邊.md
+- name: 哈洗錄安營
+  suggested_type: 事件
+  evidence: 民11:35 百姓從基博羅哈他瓦走到哈洗錄，就住在哈洗錄。丁良才、啟導本、串珠註釋均確認此為下一站安營地。
+  surfaces:
+  - phrase: 哈洗錄
+  - phrase: 住在哈洗錄
+  target_path: link_folder/事件/哈洗錄安營.md
+- name: 七十長老受靈
+  suggested_type: 事件
+  evidence: 民11:16-17,24-25 耶和華吩咐摩西招聚七十個長老到會幕前，將降在摩西身上的靈分賜他們，他們就受感說話。KingComments、丁良才、啟導本、串珠註釋均強調此為分擔摩西重任的制度建立。
+  surfaces:
+  - phrase: 七十個長老
+  - phrase: 受感說話
+  - phrase: 靈分賜他們
+  target_path: link_folder/事件/七十長老受靈.md
+- name: 伊利達、米達在營中說預言
+  suggested_type: 事件
+  evidence: 民11:26-29 有兩個人伊利達、米達留在營中，靈停在他們身上，他們在營中說預言。約書亞請求摩西禁止，摩西回應：惟願耶和華的百姓都受感說話。四份註解均記載此事件，KingComments
+    指出這預表新約五旬節聖靈澆灌。
+  surfaces:
+  - phrase: 伊利達
+  - phrase: 米達
+  - phrase: 在營中說預言
+  target_path: link_folder/事件/伊利達、米達在營中說預言.md
+- name: 摩西求死
+  suggested_type: 事件
+  evidence: 民11:10-15 摩西聽見百姓哭號，耶和華怒氣大發，摩西也不喜悅，向神訴苦：為何苦待僕人？求你立時將我殺了。丁良才、啟導本、串珠註釋、聖經精讀本均記載摩西領導壓力極大、願死不願見苦情。
+  surfaces:
+  - phrase: 摩西求死
+  - phrase: 立時將我殺了
+  - phrase: 不叫我見自己的苦情
+  target_path: link_folder/事件/摩西求死.md
+- name: 百姓貪慾要吃肉
+  suggested_type: 事件
+  evidence: 民11:4-6,18-20 閒雜人起貪慾，以色列人又哭號要吃肉，回憶埃及魚、黃瓜、西瓜、韭菜、蔥、蒜。神應允給肉吃一整月，直到從鼻孔噴出、厭惡為止。四份註解均詳細對比埃及飲食與嗎哪。
+  surfaces:
+  - phrase: 閒雜人
+  - phrase: 貪慾
+  - phrase: 要吃肉
+  - phrase: 埃及的魚
+  - phrase: 嗎哪以外並沒有別的東西
+  target_path: link_folder/事件/百姓貪慾要吃肉.md
+- name: 風颳鵪鶉
+  suggested_type: 事件
+  evidence: 民11:31 有風從耶和華颳起，把鵪鶉由海面颳來，飛散在營邊四圍，約有一天路程，離地二肘。丁良才、啟導本、串珠註釋、聖經精讀本均確認此為神超自然供應。
+  surfaces:
+  - phrase: 風從耶和華颳起
+  - phrase: 鵪鶉
+  - phrase: 離地面約有二肘
+  target_path: link_folder/事件/風颳鵪鶉.md
+- name: 神的怒氣與審判
+  suggested_type: 神學
+  evidence: 民11:1,10,33 耶和華聽見怨言怒氣發作（火燒營邊）；百姓哭號神怒氣大發；肉在牙齒間未嚼爛神怒氣向他們發作，用重災殃擊殺。四份註解均強調：神的聖潔不容怨言、貪慾，審判是公義的回應。
+  surfaces:
+  - phrase: 耶和華怒氣發作
+  - phrase: 神的怒氣
+  - phrase: 重災殃
+  target_path: link_folder/神學/神的怒氣與審判.md
+- name: 摩西的代禱與代求
+  suggested_type: 神學
+  evidence: 民11:2,11-15 火燒營邊百姓向摩西哀求，摩西禱告火才熄滅；摩西向神訴苦領導重擔，神回應設立七十長老分擔。KingComments：摩西作中保預表基督（來7:25）；詩106:23
+    摩西站在破口前，使神的忿怒不滅絕百姓。
+  surfaces:
+  - phrase: 摩西禱告
+  - phrase: 摩西訴苦
+  - phrase: 代求
+  target_path: link_folder/神學/摩西的代禱與代求.md
+- name: 聖靈分賜七十長老
+  suggested_type: 神學
+  evidence: 民11:17,25 耶和華將降在摩西身上的靈分賜七十長老，他們受感說話。KingComments：預表五旬節聖靈澆灌（徒2:1-4）；屬靈領導權的分享與團隊事奉模式。
+  surfaces:
+  - phrase: 靈分賜他們
+  - phrase: 受感說話
+  - phrase: 聖靈分賜
+  target_path: link_folder/神學/聖靈分賜七十長老.md
+- name: 百姓拒絕耶和華
+  suggested_type: 神學
+  evidence: 民11:20 耶和華說：你們厭棄住在你們中間的耶和華，在他面前哭號說：我們為何出了埃及呢！丁良才、啟導本、串珠註釋、聖經精讀本均指出：貪慾本質是拒絕神的同在與供應。
+  surfaces:
+  - phrase: 厭棄耶和華
+  - phrase: 為何出了埃及
+  - phrase: 拒絕神
+  target_path: link_folder/神學/百姓拒絕耶和華.md
+- name: 伊利達
+  suggested_type: 人物
+  evidence: 民11:26-29 留在營中的兩人之一，靈停在他身上，在營中說預言。約書亞請摩西禁止，摩西說：惟願耶和華的百姓都受感說話。四份註解均記載。
+  surfaces:
+  - phrase: 伊利達
+  - phrase: 在營中說預言
+  target_path: link_folder/人物/伊利達.md
+- name: 米達
+  suggested_type: 人物
+  evidence: 同上，與伊利達同為留在營中受靈說預言的兩人之一。
+  surfaces:
+  - phrase: 米達
+  - phrase: 在營中說預言
+  target_path: link_folder/人物/米達.md
+- name: 他備拉
+  suggested_type: 地點
+  evidence: 民11:3 那地方便叫做他備拉，因為耶和華的火燒在他們中間。丁良才：意為燒燬。啟導本：火燒營邊之地。
+  surfaces:
+  - phrase: 他備拉
+  - phrase: 火燒營邊之地
+  target_path: link_folder/地點/他備拉.md
+- name: 哈洗錄
+  suggested_type: 地點
+  evidence: 民11:35 百姓從基博羅哈他瓦走到哈洗錄，就住在哈洗錄。丁良才、啟導本、串珠註釋均確認此為下一站安營地。
+  surfaces:
+  - phrase: 哈洗錄
+  - phrase: 住在哈洗錄
+  target_path: link_folder/地點/哈洗錄.md
+- name: 怨言（mitlonen）
+  suggested_type: 原文
+  evidence: 民11:1 眾百姓發怨言（מִתְלֹנְנִים mitlonen），他們的惡語達到耶和華耳中。丁良才：原文意為抱怨、牢騷。啟導本：不滿的抱怨。
+  surfaces:
+  - phrase: 發怨言
+  - phrase: 惡語
+  target_path: link_folder/原文/怨言（mitlonen）.md
+- name: 貪慾（ta'avah）
+  suggested_type: 原文
+  evidence: 民11:4 閒雜人大起貪慾的心（תַּאֲוָה ta'avah）。丁良才：意為強烈渴望、貪戀。聖經精讀本：屬肉體的慾望。
+  surfaces:
+  - phrase: 貪慾
+  - phrase: 大起貪慾的心
+  target_path: link_folder/原文/貪慾（ta'avah）.md
+- name: 鵪鶉（selav）
+  suggested_type: 原文
+  evidence: 民11:31-32 風從耶和華颳起，把鵪鶉（שְׂלָו selav）颳來。丁良才：鵪鶉為候鳥，春秋遷徙經過西乃半島。神用風超自然預備。
+  surfaces:
+  - phrase: 鵪鶉
+  - phrase: 風颳來
+  target_path: link_folder/原文/鵪鶉（selav）.md
+- name: 摩西代禱熄滅神怒（詩106:23）
+  suggested_type: 互文
+  evidence: 民11:2 摩西禱告耶和華，火就熄了 → 詩106:23 摩西站在破口前，使神的忿怒不滅絕百姓。丁良才、KingComments 均引用此互文。
+  surfaces:
+  - phrase: 摩西禱告
+  - phrase: 火就熄了
+  - phrase: 詩106:23
+  target_path: link_folder/互文/摩西代禱熄滅神怒（詩106:23）.md
+- name: 聖靈分賜預表五旬節（徒2:1-4）
+  suggested_type: 互文
+  evidence: 民11:17,25 耶和華將靈分賜七十長老 → 徒2:1-4 五旬節聖靈澆灌，眾人受感說話。KingComments：民11章是舊約聖靈分賜的關鍵預表，預表新約教會聖靈普遍澆灌。
+  surfaces:
+  - phrase: 靈分賜他們
+  - phrase: 受感說話
+  - phrase: 徒2:1-4
+  target_path: link_folder/互文/聖靈分賜預表五旬節（徒2:1-4）.md
+- name: 基督作中保（來7:25）
+  suggested_type: 互文
+  evidence: 民11:2,11-15 摩西為百姓代求、訴苦 → 來7:25 基督長遠活著，替祂們祈求，能以拯救到底。KingComments：摩西在破口前代求，預表基督作完全的中保。
+  surfaces:
+  - phrase: 摩西代求
+  - phrase: 中保
+  - phrase: 來7:25
+  target_path: link_folder/互文/基督作中保（來7:25）.md
+- name: 百姓厭棄嗎哪（約6:31-35）
+  suggested_type: 互文
+  evidence: 民11:6 我們眼前並沒有別的東西，只有嗎哪 → 約6:31-35 眾人說：我們祖宗在曠野吃嗎哪，耶穌說：我是生命的糧。丁良才：嗎哪預表基督，厭棄嗎哪即厭棄基督。
+  surfaces:
+  - phrase: 嗎哪
+  - phrase: 生命的糧
+  - phrase: 約6:31-35
+  target_path: link_folder/互文/百姓厭棄嗎哪（約6:31-35）.md
+- name: 火燒營邊預表神審判（來12:29）
+  suggested_type: 互文
+  evidence: 民11:1 火燒在營邊 → 來12:29 我們的神乃是烈火。KingComments：神的聖潔如火，審判怨言不潔之事。
+  surfaces:
+  - phrase: 火燒營邊
+  - phrase: 烈火
+  target_path: link_folder/互文/火燒營邊預表神審判（來12:29）.md
+- name: 賀梅珥（homer）
+  suggested_type: 文化
+  evidence: 民11:32 至少的也取了十賀梅珥。丁良才：賀梅珥為乾量單位，約等於 220 公升或 10 伊法。十賀梅珥約 2200 公升，顯示極度貪婪。
+  surfaces:
+  - phrase: 十賀梅珥
+  - phrase: 乾量單位
+  target_path: link_folder/文化/賀梅珥（homer）.md
+- name: 七十長老制度起源
+  suggested_type: 歷史
+  evidence: 民11:16-17 耶和華吩咐招聚七十個長老，分擔摩西重任。丁良才：後來發展為公會（Sanhedrin）七十一人制度；出18 耶忒羅建議設立千夫長、百夫長等層級，此為屬靈領導層面的補充。
+  surfaces:
+  - phrase: 七十長老
+  - phrase: 公會起源
+  target_path: link_folder/歷史/七十長老制度起源.md
+- name: 七十長老是否包含伊利達、米達
+  suggested_type: 解經爭議
+  evidence: 民11:24-26 摩西招聚七十長老到會幕，伊利達、米達留在營中也受靈說預言。丁良才：七十長老已含伊利達、米達，只是他們未到會幕。啟導本：他們是七十長老之外額外受靈者。串珠註釋：七十長老是正式名單，伊利達、米達是特例。
+  surfaces:
+  - phrase: 留在營中
+  - phrase: 在營中說預言
+  target_path: link_folder/解經爭議/七十長老是否包含伊利達、米達.md
+- name: 約書亞請禁伊利達、米達說預言是否嫉妒
+  suggested_type: 解經爭議
+  evidence: 民11:28 約書亞說：請我主摩西禁止他們。摩西回應：你為我的緣故嫉妒人嗎？丁良才：約書亞維護摩西權威，非嫉妒；摩西胸懷寬廣，願眾人都受靈。KingComments：約書亞年輕領袖保護既有秩序，摩西屬靈眼光更遠。
+  surfaces:
+  - phrase: 請我主摩西禁止他們
+  - phrase: 你為我的緣故嫉妒人嗎
+  target_path: link_folder/解經爭議/約書亞請禁伊利達、米達說預言是否嫉妒.md
+- name: 神給肉吃一個月是恩典還是審判
+  suggested_type: 解經爭議
+  evidence: 民11:18-20 神說：你們要吃肉一整月，直到從鼻孔噴出、厭惡了。丁良才：這是恩典中的審判，給他們所求卻使他們厭惡；啟導本：神應允所求卻以此懲罰貪慾；串珠註釋：肉從鼻孔噴出為極度厭惡的誇張描寫。
+  surfaces:
+  - phrase: 吃一個整月
+  - phrase: 從鼻孔噴出
+  - phrase: 使你們厭惡了
+  target_path: link_folder/解經爭議/神給肉吃一個月是恩典還是審判.md
+- name: 閒雜人是誰（出12:38）
+  suggested_type: 解經爭議
+  evidence: 民11:4 百姓中間的閒雜人大起貪慾的心。丁良才：出12:38 有閒雜人隨著上去；可能是埃及人或其他外族人，見神蹟跟隨出埃及；啟導本：非以色列人，成了怨言煽動者。
+  surfaces:
+  - phrase: 閒雜人
+  - phrase: 大起貪慾的心
+  target_path: link_folder/解經爭議/閒雜人是誰（出12:38）.md
+D_new_candidate:
+- name: 基博羅哈他瓦（貪慾之人的墳墓）
+  suggested_type: 事件
+  evidence: 民11:31-34 風從耶和華颳起，把鵪鶉颳來，百姓貪婪捕取，肉在牙齒間尚未嚼爛，耶和華怒氣發作，用重災殃擊殺他們。該地名基博羅哈他瓦（貪慾之人的墳墓）。丁良才、啟導本、串珠註釋、聖經精讀本均詳細記載此審判。
+  surfaces:
+  - phrase: 基博羅哈他瓦
+  - phrase: 貪慾之人的墳墓
+  - phrase: 鵪鶉
+  - phrase: 重災殃
+  match_type: type_conflict
+  note: 分類衝突：候選=事件，既有=地點，secondary=[]
+- name: 嗎哪（man）
+  suggested_type: 原文
+  evidence: 民11:7-9 嗎哪彷彿芫荽子，好像珍珠。百姓收起來，磨推臼搗，煮在鍋中，做成餅，滋味好像新油。夜間露水降下，嗎哪也隨著降下。丁良才、啟導本均詳細描述嗎哪形狀、處理方式、口感。
+  surfaces:
+  - phrase: 嗎哪
+  - phrase: 芫荽子
+  - phrase: 珍珠
+  note: 名稱或 alias 有多重指向
+- name: 閒雜人（asafsuf）
+  suggested_type: 文化
+  evidence: 民11:4 他們中間的閒雜人（הָאֲסַפְסֻף asafsuf）大起貪慾的心。丁良才：指出埃及時跟隨的混雜群眾（出12:38），非以色列後裔，常煽動怨言。啟導本：混雜的外邦人。
+  surfaces:
+  - phrase: 閒雜人
+  - phrase: 混雜群眾
+  match_type: type_conflict
+  note: 分類衝突：候選=文化，既有=人物，secondary=[]
+E_skip: []

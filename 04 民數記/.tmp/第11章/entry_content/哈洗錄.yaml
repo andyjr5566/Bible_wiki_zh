@@ -1,0 +1,26 @@
+name: 哈洗錄
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 11:35 記載百姓從基博羅哈他瓦走到哈洗錄安營，作為曠野行程中的一站。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 11
+  summary: 百姓抵達哈洗錄安營。
+  relation: 記載行程地點。
+related_entries:
+- 哈洗錄安營
+- 基博羅哈他瓦
+- 百姓拒絕耶和華
+sources:
+- '註解: 哈洗錄地點記載（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT11.htm）'
+- '拾穗: 哈洗錄補充（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT11.htm）'
+- '註解: 王氏註解哈洗錄（https://www.kingcomments.com/en/bible-studies/Num/11）'
+- '研讀: Bible Hub 研讀（https://biblehub.com/study/numbers/11.htm）'
+created_from: ''
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

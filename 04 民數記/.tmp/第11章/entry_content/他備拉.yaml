@@ -1,0 +1,26 @@
+name: 他備拉
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 11:3 記載因耶和華的火燒在百姓中間，該地被命名為他備拉，意指「燒盡」或「火燒之地」。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 11
+  summary: 火燒營邊後命名為他備拉。
+  relation: 標記神審判的地點。
+related_entries:
+- 他備拉火燒營邊
+- 神的怒氣與審判
+- 百姓拒絕耶和華
+sources:
+- '註解: 他備拉地名由來（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT11.htm）'
+- '拾穗: 他備拉補充（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT11.htm）'
+- '註解: 王氏註解他備拉（https://www.kingcomments.com/en/bible-studies/Num/11）'
+- '研讀: Bible Hub 研讀（https://biblehub.com/study/numbers/11.htm）'
+created_from: ''
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false
