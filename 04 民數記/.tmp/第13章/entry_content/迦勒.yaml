@@ -1,0 +1,32 @@
+name: 迦勒
+type: 人物
+secondary_types: []
+aliases:
+- 迦勒（耶孚尼的兒子）
+status: formal
+definition: 迦勒是猶大支派的探子，耶孚尼的兒子（13:6）。他在探子回報時安撫百姓，宣告「我們立刻上去得那地吧！我們足能得勝」（13:30），展現堅定的信心，成為後來得地的關鍵人物。
+development: 迦勒與約書亞同為信心報告的代表，後在約書亞記14章得希伯崙為業。
+accumulations:
+- book: 民數記
+  chapter: 13
+  summary: 迦勒作為猶大支派探子，發表信心報告，鼓勵百姓進取迦南。
+  relation: 本章記載迦勒的名字、身分及信心行動。
+related_entries:
+- 十二探子
+- 迦勒勸勉百姓上去得地
+- 迦勒約書亞信心報告預表基督徒得勝
+- 何西阿改名約書亞
+sources:
+- '註解: 迦勒在民數記13章的角色（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT13.htm）'
+- '拾穗: 迦勒的信心見證（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT13.htm）'
+- '註解: 王氏註解迦勒（https://www.kingcomments.com/en/bible-studies/Num/13）'
+- '研讀: Bible Hub 迦勒條目（https://biblehub.com/study/numbers/13.htm）'
+created_from: manual
+category: 人物
+trigger_sources:
+- 註解
+- 拾穗
+- 註解
+- 研讀
+current_data: {}
+pending: false
