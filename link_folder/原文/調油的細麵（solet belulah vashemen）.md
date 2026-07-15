@@ -1,7 +1,8 @@
 ---
 type: 原文
 secondary_types: []
-aliases: []
+aliases:
+- 調油細麵
 status: formal
 source_scope: collected_only
 ---

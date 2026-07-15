@@ -1,10 +1,7 @@
 ---
 type: 原文
 secondary_types: []
-aliases:
-- 細麵調油
-- 調油細麵
-- 素祭麵
+aliases: []
 status: formal
 source_scope: collected_only
 ---

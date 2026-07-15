@@ -36,6 +36,7 @@ source_scope: collected_only
 - [[供物細目]]
 - [[供物總數統計]]
 - [[出埃及記30（Shemot 30）]]
+- [[詩141（Tehillim 141）]]
 - [[路加福音15章]]
 
 ## 來源依據

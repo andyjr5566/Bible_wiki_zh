@@ -1,7 +1,7 @@
 {
-  "total_warnings": 65,
+  "total_warnings": 69,
   "critical_count": 0,
-  "warning_count": 65,
+  "warning_count": 69,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -77,6 +77,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 04 民數記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
     },
@@ -93,6 +100,13 @@
       "source": "link_folder/人物/亞倫和他兒子（祭司）.md",
       "target": "第6章",
       "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫和他兒子（祭司）.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",
@@ -169,7 +183,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第8章",
-      "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 03 利未記/第8章"
+      "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",
@@ -321,6 +335,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/曠野.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 04 民數記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/聖所.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 02 出埃及記/第26章, 03 利未記/第26章"
@@ -436,6 +457,13 @@
       "source": "link_folder/神學/贖罪.md",
       "target": "第6章",
       "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/贖罪.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",

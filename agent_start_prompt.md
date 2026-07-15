@@ -44,6 +44,18 @@
    ```
    全 PASS（條件見 `scheme.md` §6）才 commit + push；回報只列結論數字與 D 類決策，不貼完整報告。
 
+7. **檔案完整性驗證**（commit 前的最後把關）
+   ```text
+   python util/check_chapter_files.py 【書名】 X
+   ```
+   依上述 1–6 的流程順序，逐一檢查每步驟該產生的主要檔案是否存在（`source_manifest.md`、
+   `link_candidates.yaml`、`link_plan.yaml`、`entry_content/*.yaml`、`verse_links.yaml`、
+   `chapter_content.yaml`、`第x章.md`、`link_updates.yaml`、`util/output/` 下的驗證報告）。
+   一旦某檔缺失，程式會停在第一個缺檔處並印出「該回到哪個動作續做」的具體指令
+   （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter.py`；缺 `link_updates.yaml`
+   → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面
+   的流程走完，直到本檢查全數 PASS 才 commit + push。
+
 ## 行為邊界（內容層，程式無法代勞）
 
 - 一切內容由已收集資料驅動：candidates、summary/relation、條目敘述都必須能對回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
