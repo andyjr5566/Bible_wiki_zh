@@ -1,23 +1,20 @@
 book: 出埃及記
 chapter: 40
 A_use_directly:
-- name: 雲彩（anan）
-  suggested_type: 原文
-  evidence: 出40:34-38 當時雲彩遮蓋會幕，耶和華的榮光就充滿了帳幕；摩西不能進會幕因為雲彩停在其上並且耶和華的榮光充滿了帳幕；每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：the
-    cloud, the symbol of God's presence, takes possession of the tabernacle；a mighty
-    moment occurs——God comes to dwell with His people。已有條目「雲彩（anan）」
+- name: 正月初一日
+  suggested_type: 事件
+  evidence: 出40:2,17 神吩咐摩西正月初一日立起帳幕；第二年正月初一日帳幕就立起來。CT靈意：表徵新生命帶來新的生活。KC：the moment
+    of its establishment heralds a new beginning——'the first day of the first month'。BH：this
+    timing aligns with the beginning of the Hebrew religious calendar (Nisan), marking
+    the anniversary of the Exodus from Egypt, symbolizing a new beginning。此為會幕立起的關鍵日期，具歷史與神學意義。建議新建條目
   surfaces:
-  - phrase: 雲彩
+  - phrase: 正月初一日
     verses:
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
+    - 2
+    - 17
   match_type: exact
-  existing_title: 雲彩（anan）
-  existing_path: link_folder/原文/雲彩（anan）.md
-B_needs_update:
+  existing_title: 正月初一日
+  existing_path: link_folder/事件/正月初一日.md
 - name: 法版（edut）
   suggested_type: 原文
   evidence: 出40:20 又把法版放在櫃裡。法版是神與以色列立約的見證（出25:16,21），放在約櫃內。已有條目「法版（edut）」
@@ -65,6 +62,22 @@ B_needs_update:
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 雲彩（anan）
+  suggested_type: 原文
+  evidence: 出40:34-38 當時雲彩遮蓋會幕，耶和華的榮光就充滿了帳幕；摩西不能進會幕因為雲彩停在其上並且耶和華的榮光充滿了帳幕；每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：the
+    cloud, the symbol of God's presence, takes possession of the tabernacle；a mighty
+    moment occurs——God comes to dwell with His people。已有條目「雲彩（anan）」
+  surfaces:
+  - phrase: 雲彩
+    verses:
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  match_type: exact
+  existing_title: 雲彩（anan）
+  existing_path: link_folder/原文/雲彩（anan）.md
 - name: 耶和華的榮光
   suggested_type: 神學
   evidence: 出40:34-35 耶和華的榮光就充滿了帳幕；摩西不能進會幕因為雲彩停在其上並且耶和華的榮光充滿了帳幕。KC：the glory of the
@@ -79,6 +92,88 @@ B_needs_update:
   match_type: exact
   existing_title: 耶和華的榮光
   existing_path: link_folder/神學/耶和華的榮光.md
+- name: 摩西不能進會幕
+  suggested_type: 神學
+  evidence: '出40:35 摩西不能進會幕；因為雲彩停在其上，並且耶和華的榮光充滿了帳幕。這是出埃及記極具張力的場景——神的榮光充滿帳幕，甚至摩西也無法進入。KC：a
+    mighty moment occurs, the goal of all previous work: God comes to dwell with His
+    people。此場景與王上8:10-11聖殿落成時同樣——祭司不能進殿因為耶和華的榮光充滿了殿。建議新建條目（神學類），具跨章累積價值'
+  surfaces:
+  - phrase: 摩西不能進會幕
+    verses:
+    - 35
+  match_type: exact
+  existing_title: 摩西不能進會幕
+  existing_path: link_folder/神學/摩西不能進會幕.md
+- name: 雲彩引導行程
+  suggested_type: 神學
+  evidence: 出40:36-38 每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：throughout
+    all their journeys the cloud of the LORD was on the tabernacle by day, and there
+    was fire in it by night, in the sight of all the house of Israel。BH：the cloud
+    and fire provided visible guidance, symbolizing God's continual presence and direction。已有條目「雲彩（anan）」和「神的引導與保護」可涵蓋
+  surfaces:
+  - phrase: 雲彩從帳幕收上去
+    verses:
+    - 36
+  - phrase: 雲彩若不收上去
+    verses:
+    - 37
+  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 雲彩引導行程
+  existing_path: link_folder/神學/雲彩引導行程.md
+- name: 膏抹成聖
+  suggested_type: 神學
+  evidence: 出40:9-15 用膏油把帳幕和其中所有的都抹上使帳幕和一切器具成聖；又要抹燔祭壇和一切器具使壇成聖就都成為至聖；要抹洗濯盆和盆座使盆成聖；要使亞倫和他兒子到會幕門口來用水洗身；要給亞倫穿上聖衣又膏他使他成聖可以給神供祭司的職分；又要使他兒子來給他們穿上內袍；怎樣膏他們的父親也要照樣膏他們使他們給神供祭司的職分；他們世世代代凡受膏的就永遠當祭司的職任。KC：the
+    often-repeated use of anointing oil recalls our incessant need for the grace and
+    guidance of the Holy Spirit, without Whom the nicest work is unacceptable to God。已有條目「承接聖職（分別為聖）」和「聖膏油」可涵蓋
+  surfaces:
+  - phrase: 用膏油把帳幕和其中所有的都抹上
+    verses:
+    - 9
+  - phrase: 膏他，使他成聖
+    verses:
+    - 13
+    - 15
+  match_type: exact
+  existing_title: 膏抹成聖
+  existing_path: link_folder/神學/膏抹成聖.md
+- name: 永遠當祭司的職任
+  suggested_type: 神學
+  evidence: 出40:15 他們世世代代凡受膏的，就永遠當祭司的職任。KC：their anointing will qualify them for a
+    perpetual priesthood throughout their generations。已有條目「亞倫的祭司譜系」可涵蓋
+  surfaces:
+  - phrase: 永遠當祭司的職任
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 永遠當祭司的職任
+  existing_path: link_folder/神學/永遠當祭司的職任.md
+- name: 摩西完了工
+  suggested_type: 事件
+  evidence: 出40:33 在帳幕和壇的四圍立了院帷，把院子的門簾掛上。這樣，摩西就完了工。KC：Thus Moses finished the work。此與創2:2「神完了祂創造的工」形成呼應——摩西完成會幕的工，神完成創造的工。BH：Moses'
+    completion of the tabernacle parallels God's completion of creation。建議新建互文條目「摩西完了工（出40：33）」或納入摩西條目累積
+  surfaces:
+  - phrase: 摩西就完了工
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 摩西完了工
+  existing_path: link_folder/事件/摩西完了工.md
+- name: 日間雲彩、夜間雲中有火
+  suggested_type: 神學
+  evidence: 出40:38 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火，在以色列全家的眼前。在他們所行的路上都是這樣。KC：the cloud of
+    the LORD was on the tabernacle by day, and there was fire in it by night, in the
+    sight of all the house of Israel。BH：the cloud and fire provided visible guidance
+    and protection。已有條目「雲彩（anan）」可涵蓋，或B類累積
+  surfaces:
+  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 日間雲彩、夜間雲中有火
+  existing_path: link_folder/神學/日間雲彩、夜間雲中有火.md
 - name: 山上的樣式
   suggested_type: 神學
   evidence: '出40:16,19,21,23,25,27,29,32 摩西這樣行都是照耶和華所吩咐他的（v16）；是照耶和華所吩咐他的（v19,21,23,25,27,29,32）。KC：the
@@ -156,88 +251,7 @@ B_needs_update:
   match_type: exact
   existing_title: 神的同在
   existing_path: link_folder/神學/神的同在.md
-C_new_formal:
-- name: 正月初一日
-  suggested_type: 事件
-  evidence: 出40:2,17 神吩咐摩西正月初一日立起帳幕；第二年正月初一日帳幕就立起來。CT靈意：表徵新生命帶來新的生活。KC：the moment
-    of its establishment heralds a new beginning——'the first day of the first month'。BH：this
-    timing aligns with the beginning of the Hebrew religious calendar (Nisan), marking
-    the anniversary of the Exodus from Egypt, symbolizing a new beginning。此為會幕立起的關鍵日期，具歷史與神學意義。建議新建條目
-  surfaces:
-  - phrase: 正月初一日
-    verses:
-    - 2
-    - 17
-  target_path: link_folder/事件/正月初一日.md
-- name: 摩西不能進會幕
-  suggested_type: 神學
-  evidence: '出40:35 摩西不能進會幕；因為雲彩停在其上，並且耶和華的榮光充滿了帳幕。這是出埃及記極具張力的場景——神的榮光充滿帳幕，甚至摩西也無法進入。KC：a
-    mighty moment occurs, the goal of all previous work: God comes to dwell with His
-    people。此場景與王上8:10-11聖殿落成時同樣——祭司不能進殿因為耶和華的榮光充滿了殿。建議新建條目（神學類），具跨章累積價值'
-  surfaces:
-  - phrase: 摩西不能進會幕
-    verses:
-    - 35
-  target_path: link_folder/神學/摩西不能進會幕.md
-- name: 雲彩引導行程
-  suggested_type: 神學
-  evidence: 出40:36-38 每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：throughout
-    all their journeys the cloud of the LORD was on the tabernacle by day, and there
-    was fire in it by night, in the sight of all the house of Israel。BH：the cloud
-    and fire provided visible guidance, symbolizing God's continual presence and direction。已有條目「雲彩（anan）」和「神的引導與保護」可涵蓋
-  surfaces:
-  - phrase: 雲彩從帳幕收上去
-    verses:
-    - 36
-  - phrase: 雲彩若不收上去
-    verses:
-    - 37
-  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
-    verses:
-    - 38
-  target_path: link_folder/神學/雲彩引導行程.md
-- name: 膏抹成聖
-  suggested_type: 神學
-  evidence: 出40:9-15 用膏油把帳幕和其中所有的都抹上使帳幕和一切器具成聖；又要抹燔祭壇和一切器具使壇成聖就都成為至聖；要抹洗濯盆和盆座使盆成聖；要使亞倫和他兒子到會幕門口來用水洗身；要給亞倫穿上聖衣又膏他使他成聖可以給神供祭司的職分；又要使他兒子來給他們穿上內袍；怎樣膏他們的父親也要照樣膏他們使他們給神供祭司的職分；他們世世代代凡受膏的就永遠當祭司的職任。KC：the
-    often-repeated use of anointing oil recalls our incessant need for the grace and
-    guidance of the Holy Spirit, without Whom the nicest work is unacceptable to God。已有條目「承接聖職（分別為聖）」和「聖膏油」可涵蓋
-  surfaces:
-  - phrase: 用膏油把帳幕和其中所有的都抹上
-    verses:
-    - 9
-  - phrase: 膏他，使他成聖
-    verses:
-    - 13
-    - 15
-  target_path: link_folder/神學/膏抹成聖.md
-- name: 永遠當祭司的職任
-  suggested_type: 神學
-  evidence: 出40:15 他們世世代代凡受膏的，就永遠當祭司的職任。KC：their anointing will qualify them for a
-    perpetual priesthood throughout their generations。已有條目「亞倫的祭司譜系」可涵蓋
-  surfaces:
-  - phrase: 永遠當祭司的職任
-    verses:
-    - 15
-  target_path: link_folder/神學/永遠當祭司的職任.md
-- name: 摩西完了工
-  suggested_type: 事件
-  evidence: 出40:33 在帳幕和壇的四圍立了院帷，把院子的門簾掛上。這樣，摩西就完了工。KC：Thus Moses finished the work。此與創2:2「神完了祂創造的工」形成呼應——摩西完成會幕的工，神完成創造的工。BH：Moses'
-    completion of the tabernacle parallels God's completion of creation。建議新建互文條目「摩西完了工（出40：33）」或納入摩西條目累積
-  surfaces:
-  - phrase: 摩西就完了工
-    verses:
-    - 33
-  target_path: link_folder/事件/摩西完了工.md
-- name: 日間雲彩、夜間雲中有火
-  suggested_type: 神學
-  evidence: 出40:38 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火，在以色列全家的眼前。在他們所行的路上都是這樣。KC：the cloud of
-    the LORD was on the tabernacle by day, and there was fire in it by night, in the
-    sight of all the house of Israel。BH：the cloud and fire provided visible guidance
-    and protection。已有條目「雲彩（anan）」可涵蓋，或B類累積
-  surfaces:
-  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
-    verses:
-    - 38
-  target_path: link_folder/神學/日間雲彩、夜間雲中有火.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
