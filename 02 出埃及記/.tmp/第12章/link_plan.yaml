@@ -1,0 +1,474 @@
+book: 出埃及記
+chapter: 12
+A_use_directly:
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1、43節；「耶和華在埃及地曉諭摩西、亞倫說」——逾越節條例的頒布
+  surfaces:
+  - phrase: 耶和華在埃及地曉諭
+    verses:
+    - 1
+  - phrase: 耶和華對摩西、亞倫說
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 1、21、28、31、35、50節；召集長老傳達逾越節之禮
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 1、28、31、50節；與摩西同領神的吩咐
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 29-31節；長子被擊殺；半夜召摩西亞倫
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 12、17、27、29-30、33、39-40、51節；受審判之地
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 12
+    - 17
+    - 27
+    - 29
+    - 30
+    - 33
+    - 39
+    - 40
+    - 51
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 23、25、28-29、36、42、48、50-51節；祂親自巡行、親自越過、親自領以色列人出來
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 23
+    - 25
+    - 28
+    - 29
+    - 36
+    - 42
+    - 48
+    - 50
+    - 51
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 亞筆月
+  suggested_type: 原文
+  evidence: 2節；「以本月為正月」——救贖重訂了以色列的曆法
+  surfaces:
+  - phrase: 以本月為正月
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 亞筆月
+  existing_path: link_folder/原文/亞筆月.md
+- name: 逾越節羔羊
+  suggested_type: 歷史
+  evidence: 3、6、21節；一家一隻、無殘疾、一歲公羊羔；初十取、十四黃昏宰
+  surfaces:
+  - phrase: 羊羔
+    verses:
+    - 3
+    - 6
+    - 21
+  match_type: exact
+  existing_title: 逾越節羔羊
+  existing_path: link_folder/歷史/逾越節羔羊.md
+- name: 逾越節血記
+  suggested_type: 歷史
+  evidence: 7節；血塗在門框門楣上——神保護的記號
+  surfaces:
+  - phrase: 血
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 逾越節血記
+  existing_path: link_folder/歷史/逾越節血記.md
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: 8、15、18、20、39節；無酵表分別為聖，也是被催逼離開的實錄
+  surfaces:
+  - phrase: 無酵餅
+    verses:
+    - 8
+    - 15
+    - 18
+    - 20
+    - 39
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+- name: 苦菜
+  suggested_type: 原文
+  evidence: 8節；記念在埃及為奴的苦
+  surfaces:
+  - phrase: 苦菜
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 苦菜
+  existing_path: link_folder/原文/苦菜.md
+- name: 逾越節的吃法
+  suggested_type: 歷史
+  evidence: 11節；腰間束帶、腳上穿鞋、手中拿杖、趕緊地吃——隨時可以出發的姿態
+  surfaces:
+  - phrase: 腰間束帶，腳上穿鞋，手中拿杖，趕緊地吃
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 逾越節的吃法
+  existing_path: link_folder/歷史/逾越節的吃法.md
+- name: 逾越（pasach）
+  suggested_type: 原文
+  evidence: 11、13、23、27節；「我一見這血，就越過你們去」——pasach 的字源神學
+  surfaces:
+  - phrase: 耶和華的逾越節
+    verses:
+    - 11
+  - phrase: 越過你們
+    verses:
+    - 13
+  - phrase: 越過
+    verses:
+    - 23
+  - phrase: 逾越節
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 逾越（pasach）
+  existing_path: link_folder/原文/逾越（pasach）.md
+- name: 耶和華敗壞埃及一切神
+  suggested_type: 歷史
+  evidence: 12節；十災的總結——這是與埃及諸神的爭戰
+  surfaces:
+  - phrase: 敗壞埃及一切的神
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 耶和華敗壞埃及一切神
+  existing_path: link_folder/歷史/耶和華敗壞埃及一切神.md
+- name: 知道我是耶和華
+  suggested_type: 神學
+  evidence: 12節；「我是耶和華」——審判與救贖都是為叫人認識祂
+  surfaces:
+  - phrase: 我是耶和華
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 知道我是耶和華
+  existing_path: link_folder/神學/知道我是耶和華.md
+- name: 災殃
+  suggested_type: 原文
+  evidence: 13節；「災殃必不臨到你們身上滅你們」——血記之下完全的保護
+  surfaces:
+  - phrase: 災殃
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 災殃
+  existing_path: link_folder/原文/災殃.md
+- name: 逾越節定為永遠定例
+  suggested_type: 歷史
+  evidence: 14節；「守為耶和華的節」——記念日成為節期
+  surfaces:
+  - phrase: 耶和華的節
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 逾越節定為永遠定例
+  existing_path: link_folder/歷史/逾越節定為永遠定例.md
+- name: 傳於後代
+  suggested_type: 神學
+  evidence: 14、17、24節；「世世代代永遠的定例」——救贖記憶的代代相傳
+  surfaces:
+  - phrase: 永遠的定例
+    verses:
+    - 14
+    - 17
+    - 24
+  match_type: exact
+  existing_title: 傳於後代
+  existing_path: link_folder/神學/傳於後代.md
+- name: 聖會
+  suggested_type: 文化
+  evidence: 16節；無酵節首日與第七日的聖會——工作止息、專一敬拜
+  surfaces:
+  - phrase: 聖會
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 聖會
+  existing_path: link_folder/文化/聖會.md
+- name: 無酵節
+  suggested_type: 歷史
+  evidence: 17節；七日之節，記念出埃及；與逾越節連成一組
+  surfaces:
+  - phrase: 無酵節
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 無酵節
+  existing_path: link_folder/歷史/無酵節.md
+- name: 以色列人的軍隊
+  suggested_type: 神學
+  evidence: 17、51節；出埃及不是潰散的奴隸，而是按軍隊編制的耶和華的軍隊
+  surfaces:
+  - phrase: 軍隊
+    verses:
+    - 17
+    - 51
+  match_type: exact
+  existing_title: 以色列人的軍隊
+  existing_path: link_folder/神學/以色列人的軍隊.md
+- name: 牛膝草
+  suggested_type: 原文
+  evidence: 22節；古代近東潔淨禮所用（利14:4-6；民19:18；詩51:7）
+  surfaces:
+  - phrase: 牛膝草
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 牛膝草
+  existing_path: link_folder/原文/牛膝草.md
+- name: 救贖
+  suggested_type: 神學
+  evidence: 27節；「越過以色列人的房屋，救了我們各家」
+  surfaces:
+  - phrase: 救了我們各家
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 救贖
+  existing_path: link_folder/神學/救贖.md
+- name: 長子之死
+  suggested_type: 歷史
+  evidence: 29節；從坐寶座的法老直到監裡之人的長子——上下全層
+  surfaces:
+  - phrase: 長子
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 長子之死
+  existing_path: link_folder/歷史/長子之死.md
+- name: 第十災（殺長子之災）
+  suggested_type: 歷史
+  evidence: 30節；「無一家不死一個人的」——空前絕後的大哀號
+  surfaces:
+  - phrase: 無一家不死一個人的
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 第十災（殺長子之災）
+  existing_path: link_folder/歷史/第十災（殺長子之災）.md
+- name: 法老召摩西
+  suggested_type: 歷史
+  evidence: 31節；曾說「不要再見我的面」（10:28），此時半夜主動召見
+  surfaces:
+  - phrase: 起來！連你們帶以色列人，從我民中出去
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 法老召摩西
+  existing_path: link_folder/歷史/法老召摩西.md
+- name: 出埃及為要事奉神
+  suggested_type: 神學
+  evidence: 31節；「去事奉耶和華吧」——法老終於照摩西所求的完全放行
+  surfaces:
+  - phrase: 去事奉耶和華
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 出埃及為要事奉神
+  existing_path: link_folder/神學/出埃及為要事奉神.md
+- name: 催逼離開
+  suggested_type: 歷史
+  evidence: 33、39節；「埃及人催促百姓」——11:1「催逼」預言的應驗
+  surfaces:
+  - phrase: 催促
+    verses:
+    - 33
+  - phrase: 催逼離開埃及
+    verses:
+    - 39
+  match_type: exact
+  existing_title: 催逼離開
+  existing_path: link_folder/歷史/催逼離開.md
+- name: 埃及人給以色列人財物
+  suggested_type: 歷史
+  evidence: 35-36節；向埃及人要金器銀器衣裳——創15:14 的應驗，日後成為會幕的材料
+  surfaces:
+  - phrase: 向埃及人要金器、銀器
+    verses:
+    - 35
+  - phrase: 埃及人的財物奪去了
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 埃及人給以色列人財物
+  existing_path: link_folder/歷史/埃及人給以色列人財物.md
+- name: 分別百姓
+  suggested_type: 神學
+  evidence: 36節；「耶和華叫百姓在埃及人眼前蒙恩」
+  surfaces:
+  - phrase: 蒙恩
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 分別百姓
+  existing_path: link_folder/神學/分別百姓.md
+- name: 蘭塞
+  suggested_type: 地點
+  evidence: 37節；出埃及的起點，以色列人為法老所建的積貨城（1:11）
+  surfaces:
+  - phrase: 蘭塞
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 蘭塞
+  existing_path: link_folder/地點/蘭塞.md
+- name: 疏割
+  suggested_type: 地點
+  evidence: 37節；出埃及後第一站，約在蘭塞東南
+  surfaces:
+  - phrase: 疏割
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 疏割
+  existing_path: link_folder/地點/疏割.md
+- name: 四百三十年
+  suggested_type: 原文
+  evidence: 40-41節；創15:13 預言的應驗；「正滿了四百三十年的那一天」
+  surfaces:
+  - phrase: 四百三十年
+    verses:
+    - 40
+    - 41
+  match_type: exact
+  existing_title: 四百三十年
+  existing_path: link_folder/原文/四百三十年.md
+- name: 神的主權與預定
+  suggested_type: 神學
+  evidence: 41節；「正滿了那一天」——神的日期分毫不差
+  surfaces:
+  - phrase: 耶和華的軍隊都從埃及地出來了
+    verses:
+    - 41
+  match_type: exact
+  existing_title: 神的主權與預定
+  existing_path: link_folder/神學/神的主權與預定.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: 42節；「這夜是耶和華的夜」——耶和華親自守夜領他們出來
+  surfaces:
+  - phrase: 埃及地
+    verses:
+    - 42
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
+- name: 逾越節條例（外邦人與寄居者）
+  suggested_type: 歷史
+  evidence: 43-51節；誰可以吃這羊羔——割禮是唯一的界線
+  surfaces:
+  - phrase: 逾越節的例是這樣
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 逾越節條例（外邦人與寄居者）
+  existing_path: link_folder/歷史/逾越節條例（外邦人與寄居者）.md
+- name: 基督預表（逾越節羔羊）
+  suggested_type: 神學
+  evidence: 46節；「羊羔的骨頭一根也不可折斷」——約19:36 直接應驗於十架上的基督
+  surfaces:
+  - phrase: 羊羔的骨頭一根也不可折斷
+    verses:
+    - 46
+  match_type: exact
+  existing_title: 基督預表（逾越節羔羊）
+  existing_path: link_folder/神學/基督預表（逾越節羔羊）.md
+- name: 逾越節
+  suggested_type: 歷史
+  evidence: 48節；以色列眾人世世代代該謹守的節期
+  surfaces:
+  - phrase: 守逾越節
+    verses:
+    - 48
+  match_type: exact
+  existing_title: 逾越節
+  existing_path: link_folder/歷史/逾越節.md
+- name: 創十五13 四百年寄居預言
+  suggested_type: 互文
+  evidence: 40-41節；四百三十年住在埃及，正應驗神對亞伯拉罕所說的
+  match_type: exact
+  existing_title: 創十五13 四百年寄居預言
+  existing_path: link_folder/互文/創十五13 四百年寄居預言.md
+- name: 創十五14 亞伯拉罕之約的財物應驗
+  suggested_type: 互文
+  evidence: 35-36節；「他們必帶著許多財物從那裡出來」
+  match_type: exact
+  existing_title: 創十五14 亞伯拉罕之約的財物應驗
+  existing_path: link_folder/互文/創十五14 亞伯拉罕之約的財物應驗.md
+- name: 詩七八51、一三六10 擊殺長子
+  suggested_type: 互文
+  evidence: 29節；詩篇兩次以擊殺長子為神救贖大能的記念
+  match_type: exact
+  existing_title: 詩七八51、一三六10 擊殺長子
+  existing_path: link_folder/互文/詩七八51、一三六10 擊殺長子.md
+- name: 約翰福音十九36 羔羊骨頭不折
+  suggested_type: 互文
+  evidence: 46節；「他的骨頭一根也不可折斷」——約翰直接引本節
+  match_type: exact
+  existing_title: 約翰福音十九36 羔羊骨頭不折
+  existing_path: link_folder/互文/約翰福音十九36 羔羊骨頭不折.md
+B_needs_update:
+- name: 閒雜人
+  suggested_type: 人物
+  evidence: 38節；原文作「混雜群」；與以色列人通婚的外邦人或趁機脫離法老轄制的外族奴隸
+  surfaces:
+  - phrase: 閒雜人
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 閒雜人
+  existing_path: link_folder/人物/閒雜人.md
+- name: 割禮作為立約記號
+  suggested_type: 主題
+  evidence: 44、48節；受割禮的奴僕與外人都可以吃——以色列是信仰的結合體，不是血緣的結合體
+  surfaces:
+  - phrase: 割禮
+    verses:
+    - 44
+    - 48
+  match_type: exact
+  existing_title: 割禮作為立約記號
+  existing_path: link_folder/主題/割禮作為立約記號.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 45節；「寄居的和雇工人都不可吃」——短居者（toshav）不同於48節長居的 ger
+  surfaces:
+  - phrase: 寄居的和雇工人
+    verses:
+    - 45
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

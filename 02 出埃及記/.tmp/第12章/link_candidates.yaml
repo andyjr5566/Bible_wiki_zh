@@ -161,6 +161,11 @@ candidates:
     evidence: 37節；出埃及後第一站，約在蘭塞東南
     surfaces:
       - {phrase: 疏割, verses: [37]}
+  - name: 閒雜人
+    type: 人物
+    evidence: 38節；原文作「混雜群」；與以色列人通婚的外邦人或趁機脫離法老轄制的外族奴隸
+    surfaces:
+      - {phrase: 閒雜人, verses: [38]}
   - name: 四百三十年
     type: 原文
     evidence: 40-41節；創15:13 預言的應驗；「正滿了四百三十年的那一天」
