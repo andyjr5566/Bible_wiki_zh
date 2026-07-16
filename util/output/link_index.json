@@ -7434,6 +7434,14 @@
       "大衛用車運約櫃"
     ]
   },
+  "大贖罪日（七月初十）": {
+    "path": "link_folder/事件/大贖罪日（七月初十）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "大贖罪日（七月初十）",
+    "status": "formal",
+    "aliases": []
+  },
   "天使引導應許": {
     "path": "link_folder/事件/天使引導應許.md",
     "type": "事件",
@@ -9130,6 +9138,17 @@
     "aliases": [
       "二年二月二十日起行",
       "民數記10:11起行"
+    ]
+  },
+  "第八日聖會（shemini atzeret）": {
+    "path": "link_folder/事件/第八日聖會（shemini atzeret）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "第八日聖會（shemini atzeret）",
+    "status": "formal",
+    "aliases": [
+      "第八日嚴肅會",
+      "Shemini Atzeret"
     ]
   },
   "築壇耶和華尼西": {
@@ -19772,6 +19791,14 @@
       "以法、欣"
     ]
   },
+  "伊法、欣度量衡（'ephah, hin）": {
+    "path": "link_folder/原文/伊法、欣度量衡（'ephah, hin）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "伊法、欣度量衡（'ephah, hin）",
+    "status": "formal",
+    "aliases": []
+  },
   "伊迦爾撒哈杜他": {
     "path": "link_folder/原文/伊迦爾撒哈杜他.md",
     "type": "原文",
@@ -19787,6 +19814,17 @@
     "title": "但（伸冤）",
     "status": "formal",
     "aliases": []
+  },
+  "住棚節總計獻祭（chag ha-sukkot kol ha-olah）": {
+    "path": "link_folder/原文/住棚節總計獻祭（chag ha-sukkot kol ha-olah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "住棚節總計獻祭（chag ha-sukkot kol ha-olah）",
+    "status": "formal",
+    "aliases": [
+      "住棚節獻祭總計",
+      "帳棚節總獻祭"
+    ]
   },
   "何3（Hoshea 3）": {
     "path": "link_folder/原文/何3（Hoshea 3）.md",
@@ -19955,6 +19993,17 @@
     "status": "formal",
     "aliases": [
       "公山羊贖罪祭"
+    ]
+  },
+  "公牛犢遞減獻祭（parim mitma'atim）": {
+    "path": "link_folder/原文/公牛犢遞減獻祭（parim mitma'atim）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "公牛犢遞減獻祭（parim mitma'atim）",
+    "status": "formal",
+    "aliases": [
+      "公牛遞減",
+      "住棚節公牛遞減"
     ]
   },
   "公牛贖罪祭（par chatat）": {
@@ -28878,6 +28927,17 @@
       "伸出的膀臂"
     ]
   },
+  "住棚節預表千禧年與神同住": {
+    "path": "link_folder/神學/住棚節預表千禧年與神同住.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "住棚節預表千禧年與神同住",
+    "status": "formal",
+    "aliases": [
+      "住棚節預表千禧年",
+      "帳棚節預表"
+    ]
+  },
   "你們要歸我為聖": {
     "path": "link_folder/神學/你們要歸我為聖.md",
     "type": "神學",
@@ -29625,6 +29685,17 @@
       "合一"
     ]
   },
+  "吹角節預表基督再來": {
+    "path": "link_folder/神學/吹角節預表基督再來.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "吹角節預表基督再來",
+    "status": "formal",
+    "aliases": [
+      "吹角節預表",
+      "角聲預表再來"
+    ]
+  },
   "咒罵父母": {
     "path": "link_folder/神學/咒罵父母.md",
     "type": "神學",
@@ -30077,6 +30148,17 @@
     "aliases": [
       "Davidic Covenant",
       "大衛之約"
+    ]
+  },
+  "大贖罪日預表基督永遠贖罪": {
+    "path": "link_folder/神學/大贖罪日預表基督永遠贖罪.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "大贖罪日預表基督永遠贖罪",
+    "status": "formal",
+    "aliases": [
+      "贖罪日預表基督",
+      "永遠贖罪預表"
     ]
   },
   "天使引導": {
@@ -34070,6 +34152,14 @@
       "聖會不作工",
       "聖會禁止勞碌"
     ]
+  },
+  "聖會不可作工": {
+    "path": "link_folder/神學/聖會不可作工.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖會不可作工",
+    "status": "formal",
+    "aliases": []
   },
   "聖潔": {
     "path": "link_folder/神學/聖潔.md",
@@ -40781,6 +40871,12 @@
   "民數記10:11起行": {
     "alias_of": "第二年二月二十日起行_民10-11"
   },
+  "第八日嚴肅會": {
+    "alias_of": "第八日聖會（shemini atzeret）"
+  },
+  "Shemini Atzeret": {
+    "alias_of": "第八日聖會（shemini atzeret）"
+  },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
   },
@@ -42878,6 +42974,12 @@
   "以法、欣": {
     "alias_of": "伊法、欣、羅馬度量衡（ephah, hin, Roman measures）"
   },
+  "住棚節獻祭總計": {
+    "alias_of": "住棚節總計獻祭（chag ha-sukkot kol ha-olah）"
+  },
+  "帳棚節總獻祭": {
+    "alias_of": "住棚節總計獻祭（chag ha-sukkot kol ha-olah）"
+  },
   "何西阿書 3": {
     "alias_of": "何3（Hoshea 3）"
   },
@@ -42940,6 +43042,12 @@
   },
   "公山羊贖罪祭": {
     "alias_of": "公山羊贖罪祭（se'ir izzim）"
+  },
+  "公牛遞減": {
+    "alias_of": "公牛犢遞減獻祭（parim mitma'atim）"
+  },
+  "住棚節公牛遞減": {
+    "alias_of": "公牛犢遞減獻祭（parim mitma'atim）"
   },
   "公牛贖罪祭": {
     "alias_of": "公牛贖罪祭（par chatat）"
@@ -45773,6 +45881,12 @@
   "伸出的膀臂": {
     "alias_of": "伸出來的膀臂"
   },
+  "住棚節預表千禧年": {
+    "alias_of": "住棚節預表千禧年與神同住"
+  },
+  "帳棚節預表": {
+    "alias_of": "住棚節預表千禧年與神同住"
+  },
   "歸主為聖": {
     "alias_of": "你們要歸我為聖"
   },
@@ -45953,6 +46067,12 @@
   "合一": {
     "alias_of": "同心合意"
   },
+  "吹角節預表": {
+    "alias_of": "吹角節預表基督再來"
+  },
+  "角聲預表再來": {
+    "alias_of": "吹角節預表基督再來"
+  },
   "約的咒詛": {
     "alias_of": "咒詛"
   },
@@ -46069,6 +46189,12 @@
   },
   "Davidic Covenant": {
     "alias_of": "大衛之約"
+  },
+  "贖罪日預表基督": {
+    "alias_of": "大贖罪日預表基督永遠贖罪"
+  },
+  "永遠贖罪預表": {
+    "alias_of": "大贖罪日預表基督永遠贖罪"
   },
   "天如鐵、地如銅": {
     "alias_of": "天如鐵地如銅"

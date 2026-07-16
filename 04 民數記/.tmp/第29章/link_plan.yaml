@@ -1,0 +1,149 @@
+book: 民數記
+chapter: 29
+A_use_directly: []
+B_needs_update:
+- name: 公山羊贖罪祭
+  suggested_type: 原文
+  evidence: 民29:5,11,16,19,22,25,28,31,34,38 各節期（月朔、吹角節、大贖罪日、住棚節七日、第八日）均獻公山羊一為贖罪祭。公山羊贖罪祭預表基督作贖罪祭（賽53:10、林後5:21）、為無知誤犯之罪遮蓋（利4-5章）、也是大贖罪日雙山羊之一（利16章）。
+  surfaces:
+  - phrase: 公山羊贖罪祭
+  - phrase: 贖罪祭預表基督
+  - phrase: 無知誤犯之罪
+  - phrase: 大贖罪日雙山羊
+  - phrase: 阿撒瀉勒羊
+  match_type: alias
+  existing_title: 公山羊贖罪祭（se'ir izzim）
+  existing_path: link_folder/原文/公山羊贖罪祭（se'ir izzim）.md
+- name: 素祭與奠酒祭
+  suggested_type: 原文
+  evidence: 民29:3,4,6,9,10,11,14,15,17,18,20,21,23,24,26,27,29,30,32,33,36,37 素祭用細麵調油（伊法十分之三至十分之一），奠酒祭用酒（欣半至四分之一）。素祭預表基督純全人性（細麵）與聖靈膏抹（油）；奠酒祭預表基督寶血傾流（太26:28）、保羅以命為奠酒祭（腓2:17）。
+  surfaces:
+  - phrase: 素祭
+  - phrase: 奠酒祭
+  - phrase: 細麵調油
+  - phrase: 伊法十分之三
+  - phrase: 欣半
+  - phrase: 基督純全人性
+  - phrase: 聖靈膏抹
+  - phrase: 寶血傾流
+  match_type: base
+  existing_title: 素祭與奠酒祭（minchah 與 nesekh）
+  existing_path: link_folder/原文/素祭與奠酒祭（minchah 與 nesekh）.md
+C_new_formal:
+- name: 大贖罪日（七月初十）
+  suggested_type: 事件
+  evidence: 民29:7-11 七月初十當聖會、刻苦己心、不作工。獻公牛犢一、公綿羊一、羊羔七（無殘疾），配細麵調油、奠酒祭；另獻公山羊一為贖罪祭，外加常獻燔祭。預表基督一次獻上自己成就永遠贖罪（來9:12、10:10）。
+  surfaces:
+  - phrase: 七月初十
+  - phrase: 大贖罪日
+  - phrase: 刻苦己心
+  - phrase: 贖罪祭
+  - phrase: 公山羊贖罪祭
+  target_path: link_folder/事件/大贖罪日（七月初十）.md
+- name: 吹角節預表基督再來
+  suggested_type: 神學
+  evidence: 民29:1 吹角節（猶太新年 Rosh Hashanah）吹角聲喚醒悔改，預表末世吹角：基督降臨（帖前4:16）、死人復活（林前15:52）、以色列聚集（太24:31）、神國度完全降臨。吹角聲是神主權宣告、審判警醒、拯救信號。
+  surfaces:
+  - phrase: 吹角節預表
+  - phrase: 末世吹角
+  - phrase: 基督再來吹角
+  - phrase: 死人復活
+  - phrase: 以色列聚集
+  target_path: link_folder/神學/吹角節預表基督再來.md
+- name: 大贖罪日預表基督永遠贖罪
+  suggested_type: 神學
+  evidence: 民29:7-11 大贖罪日大祭司進至聖所、獻公牛為己贖罪、獻公山羊為民贖罪、另一隻阿撒瀉勒羊送入曠野（利16章）。預表基督作大祭司、以自己寶血一次進入天上至聖所（來9:11-12）、成就永遠贖罪（來10:10）、除去罪孽（約1:29）。
+  surfaces:
+  - phrase: 大贖罪日預表
+  - phrase: 基督永遠贖罪
+  - phrase: 大祭司進至聖所
+  - phrase: 寶血一次獻上
+  - phrase: 除去罪孽
+  target_path: link_folder/神學/大贖罪日預表基督永遠贖罪.md
+- name: 住棚節預表千禧年與神同住
+  suggested_type: 神學
+  evidence: 民29:12-38 住棚節七天住棚、獻祭豐盛（公牛犢七十、羊羔九十八），第八日聖會。預表：(1) 千禧年萬國上耶路撒冷守住棚節（亞14:16-19）；(2)
+    神帳幕在人間（啟21:3）；(3) 基督作真棚幕（約1:14）；(4) 公牛犢七十預表七十國（創10章）得救。
+  surfaces:
+  - phrase: 住棚節預表
+  - phrase: 千禧年萬國朝拜
+  - phrase: 神帳幕在人間
+  - phrase: 基督真棚幕
+  - phrase: 七十國得救
+  target_path: link_folder/神學/住棚節預表千禧年與神同住.md
+- name: 公牛犢遞減獻祭
+  suggested_type: 原文
+  evidence: 民29:13-34 住棚節七日公牛犢每日遞減一：13、12、11、10、9、8、7，共70隻。七十在聖經代表列國（創10、路10:1）、完全數（7×10）。遞減預表列國歸主漸進、最終完全歸一（弗1:10）。
+  surfaces:
+  - phrase: 公牛犢遞減
+  - phrase: 七十隻公牛犢
+  - phrase: 列國歸主
+  - phrase: 完全數七十
+  - phrase: 漸進歸一
+  target_path: link_folder/原文/公牛犢遞減獻祭.md
+- name: 第八日聖會
+  suggested_type: 事件
+  evidence: 民29:35-38 住棚節後第八日（Shemini Atzeret）當聖會、不作工。獻公牛犢一、公綿羊一、羊羔七、公山羊一贖罪祭。第八日預表新天新地、永恆安息（來4:9）、神與人永遠同住（啟21:3）、不再有曠野漂流。
+  surfaces:
+  - phrase: 第八日聖會
+  - phrase: Shemini Atzeret
+  - phrase: 新天新地
+  - phrase: 永恆安息
+  - phrase: 神永遠同住
+  target_path: link_folder/事件/第八日聖會.md
+- name: 聖會不可作工
+  suggested_type: 神學
+  evidence: 民29:1,7,12,35 吹角節、大贖罪日、住棚節首日、第八日均當聖會、不可作工。聖會預表教會聚會（來10:25），不可作工預表安息在基督裡的救恩（來4:10），不靠自己努力得救，單靠信心進入神的安息。
+  surfaces:
+  - phrase: 聖會
+  - phrase: 不可作工
+  - phrase: 教會聚會
+  - phrase: 安息在基督裡
+  - phrase: 單靠信心
+  target_path: link_folder/神學/聖會不可作工.md
+- name: 伊法、欣度量衡
+  suggested_type: 原文
+  evidence: 民29:3,4,9,10,14,15,17,18,20,21,23,24,26,27,29,30,32,33,36,37 使用伊法（乾量，約22公升）、欣（液量，約3.5公升）。伊法十分之一約2.2公升，欣四分之一約0.88公升。精確度量預表神秩序、公義、信實（申25:13-16），也預表基督完全符合神公義標準。
+  surfaces:
+  - phrase: 伊法
+  - phrase: 欣
+  - phrase: 度量衡
+  - phrase: 神秩序公義
+  - phrase: 基督符合公義標準
+  target_path: link_folder/原文/伊法、欣度量衡.md
+- name: 住棚節總計獻祭
+  suggested_type: 原文
+  evidence: 民29:12-34 住棚節七日總計：公牛犢70、公綿羊14、羊羔98、公山羊7（贖罪祭），外加常獻燔祭。數字象徵：70=列國（創10）、14=雙重完全（7×2）、98=7×14、7=完全。預表萬國歸主、完全救贖、完全聖潔。
+  surfaces:
+  - phrase: 住棚節總計獻祭
+  - phrase: 七十公牛犢
+  - phrase: 十四公綿羊
+  - phrase: 九十八羊羔
+  - phrase: 七公山羊
+  - phrase: 萬國歸主
+  - phrase: 完全救贖
+  target_path: link_folder/原文/住棚節總計獻祭.md
+D_new_candidate:
+- name: 吹角節（七月初一）
+  suggested_type: 事件
+  evidence: 民29:1-6 七月初一日當聖會、不作工、吹角。獻公牛犢一、公綿羊一、一歲公羊羔七（無殘疾），配細麵調油、奠酒祭；另獻公山羊一為贖罪祭。這是月朔獻祭的加強版，預表基督再來吹角（太24:31、林前15:52、帖前4:16）。
+  surfaces:
+  - phrase: 七月初一日
+  - phrase: 吹角節
+  - phrase: 聖會
+  - phrase: 吹角
+  - phrase: 月朔獻祭加強版
+  match_type: type_conflict
+  note: 分類衝突：候選=事件，既有=歷史，secondary=[]
+- name: 住棚節（七月十五至廿一）
+  suggested_type: 事件
+  evidence: 民29:12-38 七月十五日起住棚節七天，首日、第八日聖會、不作工。每日獻祭遞減：首日公牛犢十三、公綿羊二、羊羔十四；次日公牛犢十二...至第七日公牛犢七；第八日公牛犢一、公綿羊一、羊羔七。每日配細麵調油、奠酒祭、公山羊贖罪祭。總計公牛犢七十、公綿羊十四、羊羔九十八、公山羊七。預表千禧年萬國朝拜（亞14:16）、神與人同住（啟21:3）。
+  surfaces:
+  - phrase: 七月十五日
+  - phrase: 住棚節
+  - phrase: 住棚節七天
+  - phrase: 第八日聖會
+  - phrase: 公牛犢遞減
+  - phrase: 七十隻公牛犢
+  note: 名稱或 alias 有多重指向
+E_skip: []
