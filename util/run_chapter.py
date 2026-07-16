@@ -764,9 +764,16 @@ def chapter_content_step(ctx, plan):
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
-        f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n\n"
-        f"organization（本章整理）是單一 markdown 字串（YAML 的 | 區塊），"
-        f"不可是巢狀物件或 YAML 陣列。\n\n"
+        f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n"
+        f"※ 條目名本身含逗號時「必須加引號」，例如 - \"信徒作祭司（彼前2：5,9）\"；"
+        f"不加引號會被 YAML 拆成兩個碎片節點，兩個都對不上條目而被靜靜丟掉，"
+        f"整個節點連同它的章節累積資料就消失了（程式會擋）。\n"
+        f"※ 互文分組的節點要帶小標題，讓人一眼知道那節在講什麼："
+        f"寫 [[出20：16|出20：16 第九誡不可作假見證]]，不要只寫 [[出20：16]]。\n\n"
+        f"organization（本章整理）是單一 markdown 字串，"
+        f"「一律用 YAML 的 | 字面區塊」，不可是巢狀物件或 YAML 陣列。\n"
+        f"※ 用單引號 scalar 會把單一換行折成空格，整張 mermaid／表格／callout "
+        f"會被擠成一行而無法渲染（程式會擋）。用 | 就不必在每列之間插空行。\n\n"
         f"【硬規格——程式會驗證，不符會退回重做】\n"
         f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
         f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
@@ -778,6 +785,17 @@ def chapter_content_step(ctx, plan):
         f"且目標只能取自本章可連條目："
         f"{'、'.join(allowed_links) or '（本章無可連條目）'}——不可連清單外的目標。\n"
         f"- 內容只能出自上面的經文與來源；整合重點而非搬運來源全文。\n"
+        f"- 表格儲存格內不可放帶別名的 wiki-link：[[目標|別名]] 在表格裡要跳脫成 "
+        f"\\|，渲染後變成 [[目標\\]] 斷鏈（程式會擋）。表格內請用不帶別名的 "
+        f"[[目標]]，或把連結寫在儲存格文字之後：文字（見 [[目標]]）。\n"
+        f"- 引述來源請「直接引原話」並標明是哪一家（CT／GT／KC／BH 或 GT 內的"
+        f"《丁道爾》《舊約背景註釋》《中文聖經註釋》《精讀本》等），不要改寫成"
+        f"「CT指出…」的轉述體，也不可把甲家的話掛到乙家名下——已知實例："
+        f"《舊約背景註釋》的古代近東材料被誤植為 KC、CT 的靈意註解被誤植為 KC。"
+        f"某一家在某處沒有說法，就不要替他生一個。\n"
+        f"- 各家彼此矛盾時要並陳，不要壓平成單一說法——例如出27 的壇，CT 說"
+        f"「表徵耶穌的十字架」，KC 卻明說「不那麼是說到十字架，而是說到主耶穌"
+        f"自己」，這種分歧本身就是重點。\n"
         f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
         f"【設計空間——你是本章筆記的設計者】\n"
         f"硬規格之內體裁自由。動筆前先讀完材料，判斷每段資訊的形狀，"
@@ -1007,6 +1025,97 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
 # --------------------------------------------------------------------------- #
 # P4 validate
 # --------------------------------------------------------------------------- #
+_LINK_RE = re.compile(r"\[\[([^\[\]\r\n]+)\]\]")
+
+
+def _strip_links(text):
+    """把 [[target|顯示詞]] 還原成顯示詞、[[target]] 還原成 target。"""
+    return _LINK_RE.sub(lambda m: m.group(1).split("|")[-1], text)
+
+
+def _scripture_tamper_errors(ctx, chapter_path):
+    """經文竄改偵測：渲染後的經文去掉連結，必須與 raw_scripture 逐字相同。
+
+    最嚴重的一類錯誤——出24 舊版為了讓 surface 對上條目名「山腳」，把經文
+    「在山下築一座壇」改成「在山腳築一座壇」。連結可以改，經文一個字都不能動。
+    """
+    try:
+        raw = ctx.raw_verses()
+    except FileNotFoundError:
+        return []
+    errors = []
+    for line in chapter_path.read_text(encoding="utf-8").splitlines():
+        # 經文區只在檔首（# 標題之後、地圖區塊／## 區段之前）；再往下的編號
+        # 是本章整理裡的清單，不可拿去比對。
+        if line.startswith("## ") or line.startswith("<!--") or line.startswith("---"):
+            break
+        m = re.match(r"^(\d+)\.\s(.*)$", line)
+        if not m:
+            continue
+        idx = int(m.group(1)) - 1
+        if not (0 <= idx < len(raw)):
+            continue
+        got, want = _strip_links(m.group(2)).strip(), raw[idx].strip()
+        if got != want:
+            errors.append(
+                f"{chapter_path.name}: 第{idx + 1}節經文與 raw_scripture 不符（經文不可改，"
+                f"對不上請改 surface）\n      raw：{want}\n      渲染：{got}"
+            )
+    return errors
+
+
+def _rendered_shape_errors(chapter_path):
+    """渲染自檢：抓 YAML 折行與表格內別名連結這兩個反覆出現的坑。"""
+    errors = []
+    text = chapter_path.read_text(encoding="utf-8")
+    for lineno, line in enumerate(text.splitlines(), 1):
+        # organization 用單引號 scalar 時，單一換行會被折成空格，整張 mermaid／
+        # 表格／callout 會擠成一行。organization 一律用 | 字面區塊即可避免。
+        if len(re.findall(r"-->", line)) >= 3 or re.search(r"^\s*```mermaid.*```", line):
+            errors.append(f"{chapter_path.name}:{lineno}: mermaid 被折成一行（organization 請用 YAML | 字面區塊）")
+        elif re.search(r">\s*\[!.*?>\s*>", line):
+            errors.append(f"{chapter_path.name}:{lineno}: callout 被折成一行（organization 請用 YAML | 字面區塊）")
+        # 合法的分隔列，剝掉 callout 的 "> " 前綴後整列只有 | - : 空白；
+        # 夾在一行裡還帶文字的，就是被折了
+        elif re.search(r"\|\s*:?-{3,}:?\s*\|", line) and not re.fullmatch(
+            r"[\s|:\-]+", re.sub(r"^\s*(>\s*)+", "", line).strip()
+        ):
+            errors.append(f"{chapter_path.name}:{lineno}: 表格被折成一行（organization 請用 YAML | 字面區塊）")
+        # 表格儲存格裡寫 [[target|alias]] 要跳脫成 \|，渲染後變成 [[target\]] 斷鏈
+        if re.search(r"\[\[[^\[\]\r\n]*\\\]\]", line):
+            errors.append(f"{chapter_path.name}:{lineno}: 表格內有帶別名的 wiki-link（\\| 會造成斷鏈，請改用不帶別名的連結）")
+    return errors
+
+
+def _split_node_errors(ctx):
+    """knowledge_nodes 被 YAML 逗號拆解偵測。
+
+    條目名含逗號卻沒加引號時（如「信徒作祭司（彼前2：5,9）」），YAML 會把它
+    拆成「信徒作祭司（彼前2：5」與「9）」兩個節點，兩個都對不上條目而被靜靜
+    丟掉——整個節點連同它的章節累積資料就這樣消失。實測出28/29/30/39 共 8 例。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    errors = []
+    for group, items in (data.get("knowledge_nodes") or {}).items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            s = str(item).strip()
+            # 碎片特徵：有右括號沒左括號，或整項就是個裸片段
+            if ("）" in s and "（" not in s) or (")" in s and "(" not in s):
+                errors.append(
+                    f"chapter_content.yaml: knowledge_nodes/{group} 的「{s}」看起來是被逗號拆開的碎片"
+                    f"——條目名含逗號時必須加引號，例如 - \"信徒作祭司（彼前2：5,9）\""
+                )
+    return errors
+
+
 def validate_step(ctx, written):
     _log("▶ P4 validate：結構驗證中…")
     errors = []
@@ -1017,11 +1126,14 @@ def validate_step(ctx, written):
             # Chapter files match "第N章.md" pattern, not just starting with "第"
             if re.fullmatch(r"第\d+章\.md", path.name):
                 errors.extend(vkb.validate_chapter(path))
+                errors.extend(_scripture_tamper_errors(ctx, path))
+                errors.extend(_rendered_shape_errors(path))
             else:
                 file_errors, _ = vkb.validate_file(path, strict=True)
                 errors.extend(file_errors)
     finally:
         vkb.ROOT = old_root
+    errors.extend(_split_node_errors(ctx))
     return errors
 
 
