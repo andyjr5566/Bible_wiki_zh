@@ -1,0 +1,189 @@
+book: 出埃及記
+chapter: 14
+candidates:
+  - name: 耶和華的話臨到
+    type: 神學
+    evidence: 1、15、26節；「耶和華曉諭摩西說」——全段的形式仍是先由神曉諭摩西，然後摩西吩咐百姓
+    surfaces:
+      - {phrase: 耶和華曉諭, verses: [1]}
+  - name: 摩西
+    type: 人物
+    evidence: 全章；受神曉諭、安慰百姓、兩次向海伸杖；末節被稱為「神的僕人」
+  - name: 比哈希錄
+    type: 地點
+    evidence: 2、9節；以色列人安營處；學者或以為名字意為「開掘之口」，可能指運河工程
+    surfaces:
+      - {phrase: 比哈希錄, verses: [2, 9]}
+  - name: 密奪
+    type: 地點
+    evidence: 2節；原文「守望塔」或「防堡」；埃及東界邊牆上的一座保障
+    surfaces:
+      - {phrase: 密奪, verses: [2]}
+  - name: 巴力洗分
+    type: 地點
+    evidence: 2、9節；原文「北方之主」——顯然是迦南神祇的廟宇，證實迦南宗教對埃及的影響
+    surfaces:
+      - {phrase: 巴力洗分, verses: [2, 9]}
+  - name: 海（紅海）
+    type: 地點
+    evidence: 2、21節；原文作「蘆葦海」；以色列人安營在密奪和海的中間
+    surfaces:
+      - {phrase: 海的中間, verses: [2]}
+      - {phrase: 海就成了乾地, verses: [21]}
+  - name: 海邊
+    type: 地點
+    evidence: 2節；「靠近海邊安營」——安營處就在密奪和巴力洗分兩座埃及防城之間
+    surfaces:
+      - {phrase: 靠近海邊安營, verses: [2]}
+  - name: 法老
+    type: 人物
+    evidence: 3、5-6、9-10、17-18、23、28節；預備車輛親自追趕；全軍覆沒
+  - name: 法老的心剛硬
+    type: 神學
+    evidence: 4、8、17節；「我要使法老的心剛硬」——CT 指神容許法老的心剛硬，實際是法老先變了心
+    surfaces:
+      - {phrase: 心剛硬, verses: [4, 8, 17]}
+  - name: 神的榮耀
+    type: 神學
+    evidence: 4、17-18節；「我便在法老和他全軍身上得榮耀」——三次重複，本章的主旋律
+    surfaces:
+      - {phrase: 得榮耀, verses: [4, 17, 18]}
+  - name: 埃及
+    type: 地點
+    evidence: 全章；追兵之地；也是以色列人回頭想望的地方
+    surfaces:
+      - {phrase: 埃及, verses: [4, 5, 7, 8, 9, 10, 11, 12, 13, 17, 18, 20, 23, 24, 25, 26, 27, 30, 31]}
+  - name: 耶和華
+    type: 神學
+    evidence: 4、8、10、13、21、24-27、30-31節；祂為以色列爭戰、親自推翻埃及人在海中
+    surfaces:
+      - {phrase: 耶和華, verses: [4, 8, 10, 13, 15, 18, 21, 24, 25, 26, 27, 30, 31]}
+  - name: 昂然無懼
+    type: 原文
+    evidence: 8節；原文作「高舉的手」（參民33:3）——不是像逃命的奴僕，乃是像神自由的百姓
+    surfaces:
+      - {phrase: 昂然無懼, verses: [8]}
+  - name: 以色列人的怨言
+    type: 歷史
+    evidence: 11-12節；出離埃及後以色列人的首宗埋怨事件；「服事埃及人比死在曠野還好」
+    surfaces:
+      - {phrase: 沒有墳地, verses: [11]}
+      - {phrase: 比死在曠野還好, verses: [12]}
+  - name: 信心與眼見
+    type: 神學
+    evidence: 10節；以色列人所看見的是環境、是現實——前有大海，後有追兵
+    surfaces:
+      - {phrase: 舉目看見, verses: [10]}
+  - name: 救恩
+    type: 神學
+    evidence: 13節；《丁道爾》指本節的「救恩」只含救命或戰勝的意思（參撒上14:45）
+    surfaces:
+      - {phrase: 救恩, verses: [13]}
+  - name: 耶和華的爭戰
+    type: 神學
+    evidence: 14、25節；「耶和華必為你們爭戰，你們只管靜默」；埃及人自己承認「耶和華為他們攻擊我們了」
+    surfaces:
+      - {phrase: 耶和華必為你們爭戰, verses: [14]}
+      - {phrase: 為他們攻擊我們了, verses: [25]}
+  - name: 摩西伸杖
+    type: 神學
+    evidence: 16、21、26-27節；摩西自己沒有分開海水的能力，只憑信心伸杖，神就作事
+    surfaces:
+      - {phrase: 你舉手向海伸杖, verses: [16]}
+      - {phrase: 摩西向海伸杖, verses: [21]}
+      - {phrase: 向海伸杖, verses: [26, 27]}
+  - name: 神的使者
+    type: 人物
+    evidence: 19節；CT 與《精讀本》都認為不是天使，而是神自己或道成肉身之前的基督
+    surfaces:
+      - {phrase: 神的使者, verses: [19]}
+  - name: 雲柱火柱
+    type: 歷史
+    evidence: 19-20、24節；從前導轉為後衛；一邊黑暗、一邊發光，終夜兩下不得相近
+    surfaces:
+      - {phrase: 雲柱, verses: [19, 20]}
+      - {phrase: 雲火柱, verses: [24]}
+  - name: 大東風
+    type: 原文
+    evidence: 21節；從沙漠吹來又乾又熱的風；神在蝗災（10:13）與約拿書4:8 也使用同樣的自然力量
+    surfaces:
+      - {phrase: 大東風, verses: [21]}
+  - name: 紅海分開
+    type: 歷史
+    evidence: 21-22節；「水便分開」——原文嚴格說是「劈開」或「在中間製造一個狹谷」
+    surfaces:
+      - {phrase: 水便分開, verses: [21]}
+  - name: 過紅海
+    type: 歷史
+    evidence: 22、29節；以色列人下海中走乾地——本章的核心事件
+    surfaces:
+      - {phrase: 以色列人下海中走乾地, verses: [22]}
+      - {phrase: 以色列人卻在海中走乾地, verses: [29]}
+  - name: 牆垣
+    type: 原文
+    evidence: 22、29節；《丁道爾》指這是喻象，與拉9:9 神使他們在以色列「有牆垣」同一個字
+    surfaces:
+      - {phrase: 牆垣, verses: [22, 29]}
+  - name: 晨更
+    type: 原文
+    evidence: 24節；凌晨二至六時；日出前天色最黑、警覺性最低，發動突擊慣常都在此刻
+    surfaces:
+      - {phrase: 晨更, verses: [24]}
+  - name: 審判
+    type: 神學
+    evidence: 27-28節；耶和華把埃及人推翻在海中；「連一個也沒有剩下」
+    surfaces:
+      - {phrase: 把他們推翻在海中, verses: [27]}
+      - {phrase: 連一個也沒有剩下, verses: [28]}
+  - name: 神必審判仇敵
+    type: 神學
+    evidence: 30節；「以色列人看見埃及人的死屍都在海邊了」——得著完全釋放的最佳寫照
+    surfaces:
+      - {phrase: 死屍都在海邊了, verses: [30]}
+  - name: 大能的手
+    type: 神學
+    evidence: 31節；「大事」原文的意思是「巨大的手」——與13章四次「大能的手」連貫
+    surfaces:
+      - {phrase: 所行的大事, verses: [31]}
+  - name: 敬畏與信服
+    type: 神學
+    evidence: 31節；本章的結論——「就敬畏耶和華，又信服他和他的僕人摩西」
+    surfaces:
+      - {phrase: 敬畏耶和華, verses: [31]}
+      - {phrase: 信服, verses: [31]}
+  - name: 受浸（洗禮）預表
+    type: 神學
+    evidence: 22、29-30節；林前10:1-2「都在雲裡海裡受浸歸了摩西」——過紅海預表信徒受浸
+  - name: 林前十1-2 受浸歸入摩西
+    type: 互文
+    evidence: 22節；保羅以過紅海為受浸歸入摩西（表徵基督）的預表
+  - name: 羅馬書七-八章對應
+    type: 互文
+    evidence: 10-14、29節；KC 以紅海前的掙扎對應羅7、上岸乾地對應羅8:1「不定罪」
+  - name: 來十一29 因信過紅海
+    type: 互文
+    evidence: 22節；「他們因著信過紅海如行乾地，埃及人試著要過去，就被吞滅了」
+  - name: 賽五十八8 耶和華作後盾
+    type: 互文
+    evidence: 19節；KC 引賽58:8「耶和華的榮光必作你的後盾」——祂既是前導也是後衛
+  - name: 賽四十三1-3 水中行走不漫過
+    type: 互文
+    evidence: 22節；KC 指末世大災難中的百姓要經歷同樣的試驗與同樣的拯救
+  - name: 詩七十七16-20 紅海記念
+    type: 互文
+    evidence: 24節；詩篇暗示此時神以大雷、閃電驚嚇埃及軍兵
+  - name: 詩一零六9 紅海乾地
+    type: 互文
+    evidence: 21-22節；詩篇以紅海乾地為神斥責紅海的作為
+  - name: 伯二十六12 攪動大海
+    type: 互文
+    evidence: 21節；KC 引伯26:12「他以能力攪動大海」
+  - name: 詩一三六15 法老軍兵推翻
+    type: 互文
+    evidence: 27節；《丁道爾》指「推翻」原文直譯是「抖掉」，詩136:15 用同一個字
+  - name: 民三十三7-8 行程記錄
+    type: 互文
+    evidence: 2節；民33:7 說比哈希錄在巴力洗分以東
+  - name: 創十五13-16 迦南應許
+    type: 互文
+    evidence: 30節；神拯救以色列人脫離埃及人的手——創15:14「我要懲罰他們所服事的那國」的應驗
