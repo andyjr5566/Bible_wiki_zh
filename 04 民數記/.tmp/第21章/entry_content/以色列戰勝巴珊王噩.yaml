@@ -1,0 +1,28 @@
+name: 以色列戰勝巴珊王噩
+type: 事件
+secondary_types: []
+aliases:
+- 以色列擊敗巴珊王噩
+- 以得來之戰
+status: formal
+definition: 以色列人轉向巴珊，在以得來與巴珊王噩及其眾民交戰，蒙耶和華應許得勝，殺盡噩與其子民，佔領其地（民21:33-35）。
+development: 以色列轉回向巴珊去，噩率眾在以得來交戰（21:33）。耶和華吩咐摩西勿怕，已將噩交在手中，要待他如待西宏（21:34）。以色列殺了噩、其子、其民，無一倖免，得了其地（21:35）。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 以色列在以得來擊敗巴珊王噩，全滅其軍民，佔領巴珊地。
+  relation: 繼征服亞摩利地後，進一步掌控約旦河東北部領土，完成約旦東岸主要敵國的清除。
+related_entries:
+- 巴珊王噩
+- 以得來
+- 巴珊
+- 以色列戰勝巴珊王噩互文
+- 摩西
+- 耶和華
+sources:
+- '本章經文: 民數記 21:33-35'
+created_from: numbers_21
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

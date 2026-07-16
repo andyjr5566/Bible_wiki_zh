@@ -1,0 +1,25 @@
+name: 以色列向耶和華發願毀滅迦南人
+type: 事件
+secondary_types: []
+aliases:
+- 以色列許願毀滅迦南
+status: formal
+definition: 以色列人向耶和華發願說：「你若將這民交付我手，我就把他們的城邑盡行毀滅」（民21:2）。耶和華應允，將迦南人交付以色列，他們便將迦南人與其城邑盡行毀滅，那地方便叫何珥瑪（意即「毀滅」）（民21:3）。
+development: 此願為回應亞拉得王攻擊所發，屬聖戰性質的毀滅奉獻（herem），神應允並賜勝。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 以色列因被擄掠而向神許願，神應允並賜勝，以色列毀滅迦南人與城邑，地名改為何珥瑪。
+  relation: 直接承接亞拉得王攻擊事件，展現聖戰神學與神對許願的回應。
+related_entries:
+- 亞拉得王攻擊以色列
+- 何珥山
+- 亞拉得王
+sources:
+- 'BH: Numbers 21:2-3 — 以色列發願毀滅迦南人（https://biblehub.com/numbers/21.htm）'
+created_from: numbers_21
+category: 事件
+trigger_sources:
+- 民數記21:2-3
+current_data: {}
+pending: false

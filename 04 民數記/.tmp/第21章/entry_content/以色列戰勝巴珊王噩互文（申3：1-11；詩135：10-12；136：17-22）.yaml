@@ -1,0 +1,38 @@
+name: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+type: 互文
+secondary_types: []
+aliases:
+- 以色列戰勝巴珊王噩互文
+status: formal
+definition: 民數記 21:33-35 記載以色列轉向巴珊，噩王在以得來交戰被擊殺，連同眾子、眾民無一倖免，以色列得其地。申命記 3:1-11 詳細補充噩的鐵床尺寸，強調他是利乏音人餘民，神將這「巨人之王」也交付以色列；詩篇
+  135:10-12、136:17-22 將擊殺噩與西宏並列，作為神擊殺「大君王、有名君王」的雙重見證，同樣嵌入「慈愛永遠長存」的敬拜脈絡。
+development: 從戰場報捷 → 律法書強調巨人之王的敗落 → 詩篇雙王並列讚美，凸顯神超越人力強權的主權。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 戰勝噩的簡潔記載，含地點以得來與完全毀滅（21:33-35）。
+  relation: 本章為原始戰報，提供互文網絡的歷史錨點。
+- book: 申命記
+  chapter: 3
+  summary: 詳細記載噩的鐵床與利乏音人身分（3:1-11）。
+  relation: 互文補充神學細節：神不僅勝常規君王，更勝代表遠古巨人勢力的噩。
+- book: 詩篇
+  chapter: 136
+  summary: 將擊殺西宏、噩並列於慈愛詠嘆中（136:17-22）。
+  relation: 互文確立雙王戰勝作為神永恆慈愛的雙重歷史見證。
+related_entries:
+- 以色列戰勝巴珊王噩
+- 巴珊王噩
+- 以得來
+- 巴珊
+- 以色列戰勝亞摩利王西宏互文
+- 亞摩利王西宏
+sources:
+- 'BH: Numbers 21:33-35 — 戰勝噩（https://biblehub.com/numbers/21.htm）'
+- 'BH: Deuteronomy 3:1-11 — 回顧戰勝噩（https://biblehub.com/deuteronomy/3.htm）'
+- 'BH: Psalm 136:17-22 — 詩篇中的雙王戰勝（https://biblehub.com/psalms/136.htm）'
+created_from: Numbers 21
+category: 互文
+trigger_sources: []
+current_data: true
+pending: false

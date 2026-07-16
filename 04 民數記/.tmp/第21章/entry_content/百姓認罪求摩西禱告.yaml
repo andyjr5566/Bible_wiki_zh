@@ -1,0 +1,25 @@
+name: 百姓認罪求摩西禱告
+type: 事件
+secondary_types: []
+aliases:
+- 百姓悔改求摩西代禱
+status: formal
+definition: 百姓到摩西那裡說：「我們怨讟耶和華和你，有罪了。求你禱告耶和華，叫這些蛇離開我們。」於是摩西為百姓禱告（民21:7）。這是曠野漂流中少見的主動認罪與尋求代禱，顯出審判達到效果。
+development: 面對死亡威脅，百姓承認得罪神與摩西，請求摩西代禱移除審判，摩西立即回應代禱。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 百姓因火蛇審判而認罪悔改，求摩西代禱，摩西為百姓禱告，神隨後指示銅蛇拯救之法。
+  relation: 連接審判與拯救，展現代禱者角色與神恩典的回應機制。
+related_entries:
+- 耶和華使火蛇咬百姓
+- 銅蛇掛在桿子上
+- 摩西
+sources:
+- 'BH: Numbers 21:7 — 百姓認罪求摩西禱告（https://biblehub.com/numbers/21.htm）'
+created_from: numbers_21
+category: 事件
+trigger_sources:
+- 民數記21:7
+current_data: {}
+pending: false

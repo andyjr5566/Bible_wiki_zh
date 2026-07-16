@@ -1,0 +1,27 @@
+name: 以色列在比珥向井歌唱
+type: 事件
+secondary_types: []
+aliases:
+- 比珥井歌唱
+- 以色列歌頌比珥井
+status: formal
+definition: 以色列人來到比珥（意即「井」），耶和華曾吩咐摩西招聚百姓給他們水喝（民21:16）。以色列人唱歌說：「井啊，湧上水來！你們要向這井歌唱。這井是首領和民中的尊貴人用圭用杖所挖所掘的」（民21:17-18）。這是曠野漂流中少見的主動歡唱，回應神的供應。
+development: 相對於米利巴爭閧，此處井水為神主動賜予、領袖共同挖掘，百姓以詩歌感恩，展現屬靈狀態的轉折。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 以色列在比珥得水，百姓歡唱頌讚，肯定領袖挖井與神供應，形成曠野敘事中罕見的正面敬拜場景。
+  relation: 承接行經摩押曠野，預表聖靈活水（約4:14, 7:37-39），與先前怨謗缺水形成對比。
+related_entries:
+- 比珥
+- 比珥（Beer）
+- 井預表聖靈活水
+- 摩西
+sources:
+- 'BH: Numbers 21:16-18 — 以色列在比珥向井歌唱（https://biblehub.com/numbers/21.htm）'
+created_from: numbers_21
+category: 事件
+trigger_sources:
+- 民數記21:16-18
+current_data: {}
+pending: false

@@ -1,0 +1,28 @@
+name: 銅蛇掛在桿子上
+type: 事件
+secondary_types: []
+aliases:
+- 銅蛇事件
+- 摩西舉起銅蛇
+status: formal
+definition: 耶和華吩咐摩西製造一條火蛇（銅蛇，nehushtan），掛在桿子上；凡被咬的，一望這蛇，就必得活（民21:8-9）。摩西照做，凡被蛇咬的，一望這銅蛇就活了。這是神主動提供的單方面拯救途徑，唯一條件是「仰望」。
+development: 神不除去蛇，卻在審判中提供拯救；銅蛇無毒、被舉起、須仰望，成為新約「人子被舉起」的核心預表（約3:14-15）。
+accumulations:
+- book: 民數記
+  chapter: 21
+  summary: 神指示摩西製銅蛇掛桿，被咬者仰望即得醫治，確立「因信仰望得生」的救恩模式。
+  relation: 回應摩西代禱，解決火蛇審判，並為新約救恩論奠定預表基礎。
+related_entries:
+- 百姓認罪求摩西禱告
+- 火蛇（saraph）
+- 銅蛇（nehushtan）
+- 銅蛇預表基督被舉起
+- 仰望銅蛇預表信心得救
+sources:
+- 'BH: Numbers 21:8-9 — 銅蛇掛在桿子上（https://biblehub.com/numbers/21.htm）'
+created_from: numbers_21
+category: 事件
+trigger_sources:
+- 民數記21:8-9
+current_data: {}
+pending: false

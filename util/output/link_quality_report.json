@@ -1,7 +1,7 @@
 {
-  "total_warnings": 87,
+  "total_warnings": 89,
   "critical_count": 0,
-  "warning_count": 87,
+  "warning_count": 89,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -30,6 +30,13 @@
       "source": "民數記/第14章.md",
       "target": "一日頂一年原則",
       "message": "同一 alias「一日頂一年原則」指向多個 target: 一日頂一年原則, 一日頂一年（yom tachat shanah）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第21章.md",
+      "target": "比珥",
+      "message": "同一 alias「比珥」指向多個 target: 以色列在比珥向井歌唱, 比珥"
     },
     {
       "type": "alias_target_conflict",
@@ -338,6 +345,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第25章",
       "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第21章",
+      "message": "同一 alias「第21章」指向多個 target: 03 利未記/第21章, 04 民數記/第21章"
     },
     {
       "type": "alias_target_conflict",
