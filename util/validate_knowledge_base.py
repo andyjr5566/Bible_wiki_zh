@@ -200,11 +200,13 @@ def validate_file(path, strict=False):
         )
         marker_keys = [(m.group("book"), int(m.group("chapter"))) for m in MARKER_RE.finditer(text)
                        if m.group("edge") == "start"]
+        # Normalize book names to canonical form for consistent sorting
+        normalized_marker_keys = [(canonical_book_name(book), chapter) for book, chapter in marker_keys]
         ordered_keys = sorted(
-            marker_keys,
+            normalized_marker_keys,
             key=lambda item: (BOOK_RANK.get(item[0], 999), item[1]),
         )
-        if marker_keys != ordered_keys:
+        if normalized_marker_keys != ordered_keys:
             errors.append(f"{relative}: 按書卷累積未依書卷、章次排序")
         if re.search(r"^###\s+.+?第\s*[一二三四五六七八九十廿百\d]+\s*章\s*$", text, re.M):
             errors.append(f"{relative}: 章次必須使用「### 書卷／#### 第N章」結構")

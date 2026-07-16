@@ -1,0 +1,28 @@
+name: 以利亞撒彈血向會幕前七次
+type: 事件
+secondary_types: []
+aliases:
+- 紅母牛血彈會幕七次
+status: formal
+definition: 祭司以利亞撒用指頭蘸牛血，向會幕前面彈七次（民19:4）。七次表完全，血指向會幕，表明潔淨權柄源於神同在處。
+development: 血未進聖所，只向會幕彈灑，與贖罪日大祭司進幔內灑血不同，顯示紅母牛儀式為「除污穢」而非「贖罪進前」，屬外圍潔淨儀式。
+accumulations:
+- book: 民數記
+  chapter: 19
+  summary: 以利亞撒蘸血向會幕前彈七次。
+  relation: 血的儀式動作，將祭牲生命獻於神面前，為後續焚燒與灰燼功效奠定血的根基。
+related_entries:
+- 以利亞撒
+- 以利亞撒牽母牛到營外宰殺
+- 紅母牛連皮帶肉血糞焚燒
+- 牛膝草灑水預表信心應用寶血
+sources:
+- '註解: 民數記19:4 彈血七次向會幕的神學含義（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT19.htm）'
+- '拾穗: 民數記19:4 七次表完全潔淨（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT19.htm）'
+- '註解: Numbers 19:4 Sprinkling blood seven times toward tabernacle（https://www.kingcomments.com/en/bible-studies/Num/19）'
+- '研讀: Numbers 19:4 Blood sprinkled seven times（https://biblehub.com/study/numbers/19.htm）'
+created_from: numbers_19_events
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

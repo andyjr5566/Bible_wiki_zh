@@ -1,0 +1,29 @@
+name: 香柏木牛膝草朱紅線丟入火中
+type: 事件
+secondary_types: []
+aliases:
+- 三樣物件投火
+status: formal
+definition: 祭司將香柏木、牛膝草、朱紅色線丟在燒牛的火中（民19:6）。三物同用於大麻風潔淨禮（利14），象徵潔淨、生命與贖罪的綜合功效。
+development: 香柏木表堅固不朽，牛膝草表卑微潔淨工具，朱紅線表贖罪之血色；三者投入火中，使灰燼帶有綜合象徵意義，成為後來調製除污穢水的關鍵成分。
+accumulations:
+- book: 民數記
+  chapter: 19
+  summary: 祭司把香柏木、牛膝草、朱紅線丟入燒牛火中。
+  relation: 賦予牛灰多重象徵意義，連結其他潔淨儀式（如麻風潔淨），形成聖經潔淨神學的互文網絡。
+related_entries:
+- 香柏木（erez）
+- 牛膝草
+- 紅母牛連皮帶肉血糞焚燒
+- 牛膝草灑水預表信心應用寶血
+- 紅母牛預表基督完全贖罪
+sources:
+- '註解: 民數記19:6 三樣物件投火的象徵意義（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT19.htm）'
+- '拾穗: 民數記19:6 與利未記14麻風潔淨儀式的平行（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT19.htm）'
+- '註解: Numbers 19:6 Cedar wood hyssop scarlet thrown into fire（https://www.kingcomments.com/en/bible-studies/Num/19）'
+- '研讀: Numbers 19:6 Cedar hyssop scarlet in the fire（https://biblehub.com/study/numbers/19.htm）'
+created_from: numbers_19_events
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

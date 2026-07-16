@@ -1,0 +1,29 @@
+name: 耶和華曉諭摩西亞倫紅母牛條例
+type: 事件
+secondary_types: []
+aliases:
+- 紅母牛條例頒布
+status: formal
+definition: 耶和華對摩西、亞倫說話，頒布律法中的一條律例，吩咐以色列人牽一隻沒有殘疾、未曾負軛、純紅的母牛來，作為除污穢的儀式基礎（民19:1-2）。
+development: 這是整章紅母牛條例的起始事件，確立了除污穢水的來源與法理依據，屬於祭儀律法中獨特的「條例」（chuqqah），強調順服神主權的規定。
+accumulations:
+- book: 民數記
+  chapter: 19
+  summary: 耶和華曉諭摩西亞倫，設立紅母牛條例，作為以色列會眾除污穢的永遠定例。
+  relation: 本章開端事件，奠定後續宰殺、焚燒、收灰、灑水等一連串潔淨儀式的神學基礎。
+related_entries:
+- 摩西
+- 亞倫
+- 以利亞撒牽母牛到營外宰殺
+- 紅母牛（parah adumah）
+- 除污穢水（mei niddah）
+sources:
+- '註解: 民數記19:1-2 紅母牛條例的頒布背景（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT19.htm）'
+- '拾穗: 民數記19:1-2 律例與典章的區別（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT19.htm）'
+- '註解: Numbers 19:1-2 The statute of the red heifer（https://www.kingcomments.com/en/bible-studies/Num/19）'
+- '研讀: Numbers 19:1-2 Red heifer ordinance introduction（https://biblehub.com/study/numbers/19.htm）'
+created_from: numbers_19_events
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false
