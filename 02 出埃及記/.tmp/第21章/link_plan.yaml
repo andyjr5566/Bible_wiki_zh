@@ -1,0 +1,425 @@
+book: 出埃及記
+chapter: 21
+A_use_directly:
+- name: 典章
+  suggested_type: 神學
+  evidence: 1節；CT：『典章』指據為審判的準則；本句乃是21至23章典章律例的序言
+  surfaces:
+  - phrase: 典章
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 典章（mishpatim）
+  suggested_type: 原文
+  evidence: 1節；原文字義「審判，公義，判決，量刑」；BH 指 mishpatim 常指判決或法律裁定
+  match_type: exact
+  existing_title: 典章（mishpatim）
+  existing_path: link_folder/原文/典章（mishpatim）.md
+- name: 約書
+  suggested_type: 神學
+  evidence: 1節；CT：本節的話是21至23章立約書的標題，說出這個約書的權威
+  match_type: exact
+  existing_title: 約書
+  existing_path: link_folder/神學/約書.md
+- name: 立約書
+  suggested_type: 背景
+  evidence: 1節；《中文聖經註釋》：約書尚包含禮儀的律例與有關社會道德的律例
+  match_type: exact
+  existing_title: 立約書
+  existing_path: link_folder/背景/立約書.md
+- name: 希伯來人
+  suggested_type: 人物
+  evidence: 2節；原文字義「來自遠處的人，過河的人」；《舊約背景註釋》指是指沒有地業、變得赤貧的以色列人
+  surfaces:
+  - phrase: 希伯來人
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 希伯來人
+  existing_path: link_folder/人物/希伯來人.md
+- name: 奴僕（ebed）
+  suggested_type: 原文
+  evidence: 2節；原文字義「奴隸，僕人」；指沒有人身自由的奴隸
+  surfaces:
+  - phrase: 作奴僕
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 奴僕（ebed）
+  existing_path: link_folder/原文/奴僕（ebed）.md
+- name: 自由（chophshi）
+  suggested_type: 原文
+  evidence: 2節；《丁道爾》指 chophshi 專指介乎「貴族」和「奴隸」間的社會階層，大概可譯作「得自由之人」
+  surfaces:
+  - phrase: 他可以自由
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 自由（chophshi）
+  existing_path: link_folder/原文/自由（chophshi）.md
+- name: 希伯來奴僕的律例
+  suggested_type: 事件
+  evidence: 1-6節；服事六年，第七年白白地出去；丁良才指當時沒有一個國這樣厚待奴僕
+  match_type: exact
+  existing_title: 希伯來奴僕的律例
+  existing_path: link_folder/事件/希伯來奴僕的律例.md
+- name: 審判官（elohim）
+  suggested_type: 原文
+  evidence: 6節；原文字義「審判官，統治者，神」；《丁道爾》指將「神」譯作「審判官」是解經，不是譯經
+  surfaces:
+  - phrase: 審判官
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 審判官（elohim）
+  existing_path: link_folder/原文/審判官（elohim）.md
+- name: 錐子穿耳
+  suggested_type: 原文
+  evidence: 6節；原文「錐子」尖鑽、「穿」鑽孔刺穿；CT 指開通耳朵含有『順服』之意（參詩40:6）
+  surfaces:
+  - phrase: 用錐子穿他的耳朵
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 錐子穿耳
+  existing_path: link_folder/原文/錐子穿耳.md
+- name: 穿耳的儀式
+  suggested_type: 背景
+  evidence: 5-6節；《舊約背景註釋》：入口是聖潔的地方，刺透耳垂直入門框，象徵式地將奴隸與那地方連在一起
+  surfaces:
+  - phrase: 靠近門框
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 穿耳的儀式
+  existing_path: link_folder/背景/穿耳的儀式.md
+- name: 永遠服事的奴僕
+  suggested_type: 神學
+  evidence: 6節；丁良才列出這僕人可作信徒預表的五層；KC 指這是主耶穌的圖畫
+  surfaces:
+  - phrase: 永遠服事主人
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 永遠服事的奴僕
+  existing_path: link_folder/神學/永遠服事的奴僕.md
+- name: 希伯來女僕的律例
+  suggested_type: 事件
+  evidence: 7-11節；婢女不可像男僕那樣出去；CT 指這條律例或許有其保護弱者的必要
+  match_type: exact
+  existing_title: 希伯來女僕的律例
+  existing_path: link_folder/事件/希伯來女僕的律例.md
+- name: 好合的事
+  suggested_type: 原文
+  evidence: 10節；原文字義「夫妻的權利和義務」；《啟導本》：中文譯為「好合」，既信且雅
+  surfaces:
+  - phrase: 好合的事
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 好合的事
+  existing_path: link_folder/原文/好合的事.md
+- name: 死刑的罪行
+  suggested_type: 神學
+  evidence: 12-17節；四種死罪：謀殺、打父母、拐帶人口、咒罵父母；《精讀本》指根據是創9:6
+  surfaces:
+  - phrase: 打人以致打死的
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 死刑的罪行
+  existing_path: link_folder/神學/死刑的罪行.md
+- name: 謀殺與誤殺的區分
+  suggested_type: 神學
+  evidence: 13-14節；《丁道爾》：這麼早就將蓄意殺人和誤殺分別處理，極是可圈可點
+  match_type: exact
+  existing_title: 謀殺與誤殺的區分
+  existing_path: link_folder/神學/謀殺與誤殺的區分.md
+- name: 埋伏
+  suggested_type: 原文
+  evidence: 13節；原文字義「埋伏等待」；CT 指不是蓄意謀殺對方，而是碰巧意外死在他的手中
+  surfaces:
+  - phrase: 埋伏著殺人
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 埋伏
+  existing_path: link_folder/原文/埋伏.md
+- name: 古代近東祭壇庇護
+  suggested_type: 背景
+  evidence: 13-14節；《丁道爾》：要作出懇求便要抓住祭壇突出的「角」；《舊約背景註釋》指這地方通常是祭壇或神殿
+  surfaces:
+  - phrase: 逃到我的壇那裡
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 古代近東祭壇庇護
+  existing_path: link_folder/背景/古代近東祭壇庇護.md
+- name: 拐帶人口
+  suggested_type: 神學
+  evidence: 16節；原文「拐帶」偷竊、偷走；KC 指這是一切偷盜形式中最壞的
+  surfaces:
+  - phrase: 拐帶人口
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 拐帶人口
+  existing_path: link_folder/神學/拐帶人口.md
+- name: 咒罵父母
+  suggested_type: 神學
+  evidence: 17節；《舊約背景註釋》指所犯的是以輕藐的態度對待父母，不是咒罵
+  surfaces:
+  - phrase: 咒罵父母的
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 咒罵父母
+  existing_path: link_folder/神學/咒罵父母.md
+- name: 傷害賠償的律例
+  suggested_type: 事件
+  evidence: 18-19節；賠償分兩項：耽誤的工夫，和將他全然醫好
+  surfaces:
+  - phrase: 若再能起來扶杖而出
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 傷害賠償的律例
+  existing_path: link_folder/事件/傷害賠償的律例.md
+- name: 出21：21「用錢買的」
+  suggested_type: 解經爭議
+  evidence: 21節；《丁道爾》：若是覺得這樣解釋對於主人仍是過於寬厚，便當將本節與26、27節的規限同看
+  surfaces:
+  - phrase: 因為是用錢買的
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 出21：21「用錢買的」
+  existing_path: link_folder/解經爭議/出21：21「用錢買的」.md
+- name: 傷害孕婦的律例
+  suggested_type: 事件
+  evidence: 22節；《啟導本》指原文也有「依推算來罰款」，即按胎兒的估計月分來推算
+  surfaces:
+  - phrase: 傷害有孕的婦人
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 傷害孕婦的律例
+  existing_path: link_folder/事件/傷害孕婦的律例.md
+- name: 出21：22與墮胎議題
+  suggested_type: 解經爭議
+  evidence: 22-23節；Cassuto 主張 yatsa 原意為「出生」而非「墮胎」；《丁道爾》指經文重點並不在此
+  surfaces:
+  - phrase: 甚至墜胎
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 出21：22與墮胎議題
+  existing_path: link_folder/解經爭議/出21：22與墮胎議題.md
+- name: 以眼還眼
+  suggested_type: 神學
+  evidence: 24節；法蘭士：用意不是去鼓勵復仇，而是言明懲處不得重於罪行本身
+  surfaces:
+  - phrase: 以眼還眼，以牙還牙，以手還手，以腳還腳
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 以眼還眼
+  existing_path: link_folder/神學/以眼還眼.md
+- name: 同態復仇法
+  suggested_type: 原文
+  evidence: 23-25節；拉丁文 lex talionis；《舊約背景註釋》指其原則是根據報應必須對稱和合理的觀念
+  match_type: exact
+  existing_title: 同態復仇法
+  existing_path: link_folder/原文/同態復仇法.md
+- name: 以眼還眼的適用範圍
+  suggested_type: 解經爭議
+  evidence: 23-25節；挪士指出這是引導法官作出判決的司法原則，不能作為人際關係的方針
+  surfaces:
+  - phrase: 以烙還烙，以傷還傷，以打還打
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 以眼還眼的適用範圍
+  existing_path: link_folder/解經爭議/以眼還眼的適用範圍.md
+- name: 牛觸死人的律例
+  suggested_type: 事件
+  evidence: 28-32節；牛須用石頭打死，肉不可吃；牛主是否有罪視乎他是否知情
+  surfaces:
+  - phrase: 牛若觸死男人或是女人
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 牛觸死人的律例
+  existing_path: link_folder/事件/牛觸死人的律例.md
+- name: 贖命的價銀
+  suggested_type: 原文
+  evidence: 30節；原文字義「生命的代價，贖金」；《精讀本》指這句話的希伯來語是「覆蓋罪刑」的意思
+  surfaces:
+  - phrase: 贖命的價銀
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 贖命的價銀
+  existing_path: link_folder/原文/贖命的價銀.md
+- name: 三十舍客勒
+  suggested_type: 互文
+  evidence: 32節；《丁道爾》指這是當時奴隸的標準身價；亞11:12 重現，太26:15 是猶大出賣基督的血價
+  surfaces:
+  - phrase: 三十舍客勒
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 三十舍客勒
+  existing_path: link_folder/互文/三十舍客勒.md
+- name: 古代近東井的構造
+  suggested_type: 背景
+  evidence: 33節；CT 指中東取水的井在井口上放有扁平石頭作遮蓋之用（參創29:2-3）
+  surfaces:
+  - phrase: 敞著井口
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 古代近東井的構造
+  existing_path: link_folder/背景/古代近東井的構造.md
+- name: 井口敞開的律例
+  suggested_type: 事件
+  evidence: 33-34節；CT：我們若疏忽，沒有防患於未然，就要負責任
+  match_type: exact
+  existing_title: 井口敞開的律例
+  existing_path: link_folder/事件/井口敞開的律例.md
+- name: 牛傷牛的律例
+  suggested_type: 事件
+  evidence: 35-36節；《中文聖經註釋》指死牛因為不是按神形像造的，所以活牛不必打死
+  surfaces:
+  - phrase: 這人的牛若傷了那人的牛
+    verses:
+    - 35
+  match_type: exact
+  existing_title: 牛傷牛的律例
+  existing_path: link_folder/事件/牛傷牛的律例.md
+- name: 古代近東奴隸制度
+  suggested_type: 背景
+  evidence: 2-6節；《舊約背景註釋》：以色列的奴隸法大致上比古代近東其他地方的人道
+  match_type: exact
+  existing_title: 古代近東奴隸制度
+  existing_path: link_folder/背景/古代近東奴隸制度.md
+- name: 古代近東法典比較
+  suggested_type: 背景
+  evidence: 全章；漢摩拉比法典將債奴的時限定為三年，出埃及記二十一2則是六年
+  match_type: exact
+  existing_title: 古代近東法典比較
+  existing_path: link_folder/背景/古代近東法典比較.md
+- name: 奴隸制度與聖經
+  suggested_type: 解經爭議
+  evidence: 2、21節；《丁道爾》：這種新的人道主義終於為奴隸制度敲響了喪鐘
+  match_type: exact
+  existing_title: 奴隸制度與聖經
+  existing_path: link_folder/解經爭議/奴隸制度與聖經.md
+- name: 律法與公義
+  suggested_type: 主題
+  evidence: 全章；《精讀本》：聖經中這種律例的根本精神是公義和慈悲
+  match_type: exact
+  existing_title: 律法與公義
+  existing_path: link_folder/主題/律法與公義.md
+- name: 人的尊嚴
+  suggested_type: 主題
+  evidence: 12-32節；《精讀本》指立約書的內容特點是強調了人類的尊嚴、追求萬民平等的思想
+  match_type: exact
+  existing_title: 人的尊嚴
+  existing_path: link_folder/主題/人的尊嚴.md
+- name: 奴僕與自由
+  suggested_type: 主題
+  evidence: 1-11、26-27節；CT：獲得自由需要付上代價；人人都願意得自由，但少有人願意付自由的代價
+  match_type: exact
+  existing_title: 奴僕與自由
+  existing_path: link_folder/主題/奴僕與自由.md
+- name: 基督為奴僕
+  suggested_type: 主題
+  evidence: 5-6、32節；KC 指希伯來奴僕的圖畫不難認出主耶穌；三十舍客勒也是神子被估價的價錢
+  match_type: exact
+  existing_title: 基督為奴僕
+  existing_path: link_folder/主題/基督為奴僕.md
+- name: 創9：6
+  suggested_type: 互文
+  evidence: 12節；KC 指一般規則是照著向挪亞所宣告的辦理——殺人者是侵犯了神的權利
+  match_type: exact
+  existing_title: 創9：6
+  existing_path: link_folder/互文/創9：6.md
+- name: 民35：9-34
+  suggested_type: 互文
+  evidence: 13節；誤殺者可逃往逃城，後來正式設立的制度
+  match_type: exact
+  existing_title: 民35：9-34
+  existing_path: link_folder/互文/民35：9-34.md
+- name: 逃城
+  suggested_type: 互文
+  evidence: 13節；神設下的一個地方，供誤殺者躲避報仇者的追殺
+  match_type: exact
+  existing_title: 逃城
+  existing_path: link_folder/互文/逃城.md
+- name: 詩40：6
+  suggested_type: 互文
+  evidence: 6節；「你已開通我的耳朵」；KC 指詩40 指向祂進入世界
+  match_type: exact
+  existing_title: 詩40：6
+  existing_path: link_folder/互文/詩40：6.md
+- name: 賽50：4-5
+  suggested_type: 互文
+  evidence: 6節；「主耶和華開通我的耳朵」；KC 指賽50 指向祂行過世界
+  match_type: exact
+  existing_title: 賽50：4-5
+  existing_path: link_folder/互文/賽50：4-5.md
+- name: 來10：5
+  suggested_type: 互文
+  evidence: 6節；七十士譯本把「你已開通我的耳朵」譯作「你曾給我預備了身體」
+  match_type: exact
+  existing_title: 來10：5
+  existing_path: link_folder/互文/來10：5.md
+- name: 腓2：6-7
+  suggested_type: 互文
+  evidence: 5-6節；基督取了奴僕的形像；KC 指祂在完全的愛裡甘心永遠作奴僕
+  match_type: exact
+  existing_title: 腓2：6-7
+  existing_path: link_folder/互文/腓2：6-7.md
+- name: 太5：38-39
+  suggested_type: 互文
+  evidence: 24-25節；主耶穌引用同態復仇法卻把它推深：不要與惡人作對
+  match_type: exact
+  existing_title: 太5：38-39
+  existing_path: link_folder/互文/太5：38-39.md
+- name: 太26：15
+  suggested_type: 互文
+  evidence: 32節；猶大賣主的價銀正是奴僕的身價三十塊錢
+  match_type: exact
+  existing_title: 太26：15
+  existing_path: link_folder/互文/太26：15.md
+- name: 亞11：12
+  suggested_type: 互文
+  evidence: 32節；《丁道爾》指這數目在亞11:12 重現，可能是以諷刺的態度暗指本節
+  match_type: exact
+  existing_title: 亞11：12
+  existing_path: link_folder/互文/亞11：12.md
+- name: 林前6：19-20
+  suggested_type: 互文
+  evidence: 3節；CT：我們不是自己的人，因為我們是重價買來的
+  match_type: exact
+  existing_title: 林前6：19-20
+  existing_path: link_folder/互文/林前6：19-20.md
+- name: 林前9：19
+  suggested_type: 互文
+  evidence: 5節；CT 引保羅：我雖是自由的，無人轄管；然而我甘心作了眾人的僕人
+  match_type: exact
+  existing_title: 林前9：19
+  existing_path: link_folder/互文/林前9：19.md
+- name: 羅14：13
+  suggested_type: 互文
+  evidence: 33-34節；KC 引：總不把絆腳跌人之物放在弟兄面前
+  match_type: exact
+  existing_title: 羅14：13
+  existing_path: link_folder/互文/羅14：13.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
