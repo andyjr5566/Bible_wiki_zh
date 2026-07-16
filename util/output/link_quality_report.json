@@ -1,7 +1,7 @@
 {
-  "total_warnings": 93,
+  "total_warnings": 94,
   "critical_count": 0,
-  "warning_count": 93,
+  "warning_count": 94,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -58,6 +58,13 @@
       "source": "民數記/第25章.md",
       "target": "哥斯比",
       "message": "同一 alias「哥斯比」指向多個 target: 哥斯比, 哥斯比（Cozbi）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第27章.md",
+      "target": "瑪拉、挪阿、曷拉、密迦、得撒",
+      "message": "同一 alias「瑪拉、挪阿、曷拉、密迦、得撒」指向多個 target: 西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）, 西羅非哈女兒求產業"
     },
     {
       "type": "alias_target_conflict",

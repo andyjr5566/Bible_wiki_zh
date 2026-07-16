@@ -7885,6 +7885,17 @@
       "拿弗他利支派人口普查"
     ]
   },
+  "按手傳承": {
+    "path": "link_folder/事件/按手傳承.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "按手傳承",
+    "status": "formal",
+    "aliases": [
+      "按手委任",
+      "按手授職"
+    ]
+  },
   "探子回來報告": {
     "path": "link_folder/事件/探子回來報告.md",
     "type": "事件",
@@ -7929,6 +7940,16 @@
     "status": "formal",
     "aliases": [
       "首領參與數點利未人"
+    ]
+  },
+  "摩西上亞巴琳山": {
+    "path": "link_folder/事件/摩西上亞巴琳山.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西上亞巴琳山",
+    "status": "formal",
+    "aliases": [
+      "摩西登亞巴琳山"
     ]
   },
   "摩西上山見神": {
@@ -8135,6 +8156,16 @@
     "aliases": [
       "摩西求神同行",
       "神應允同去"
+    ]
+  },
+  "摩西求神立繼任者": {
+    "path": "link_folder/事件/摩西求神立繼任者.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西求神立繼任者",
+    "status": "formal",
+    "aliases": [
+      "摩西禱告求繼任者"
     ]
   },
   "摩西為百姓代禱": {
@@ -9395,6 +9426,16 @@
     "status": "formal",
     "aliases": [
       "西緬族被數"
+    ]
+  },
+  "西羅非哈女兒求產業": {
+    "path": "link_folder/事件/西羅非哈女兒求產業.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "西羅非哈女兒求產業",
+    "status": "formal",
+    "aliases": [
+      "西羅非哈女兒來求產業"
     ]
   },
   "誤犯罪與故意犯罪分別處分": {
@@ -14866,6 +14907,17 @@
     "status": "formal",
     "aliases": []
   },
+  "親屬救贖預表（民27：8-11）": {
+    "path": "link_folder/互文/親屬救贖預表（民27：8-11）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "親屬救贖預表（民27：8-11）",
+    "status": "formal",
+    "aliases": [
+      "親屬救贖律例",
+      "產業繼承中的親屬救贖"
+    ]
+  },
   "詩118：14 耶和華是我的力量我的詩歌": {
     "path": "link_folder/互文/詩118：14 耶和華是我的力量我的詩歌.md",
     "type": "互文",
@@ -18436,6 +18488,17 @@
       "Hoshea"
     ]
   },
+  "約書亞被立為繼任者": {
+    "path": "link_folder/人物/約書亞被立為繼任者.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "約書亞被立為繼任者",
+    "status": "formal",
+    "aliases": [
+      "約書亞繼任摩西",
+      "繼任領袖約書亞"
+    ]
+  },
   "約瑟": {
     "path": "link_folder/人物/約瑟.md",
     "type": "人物",
@@ -18660,6 +18723,16 @@
     "aliases": [
       "西緬族",
       "西緬子孫"
+    ]
+  },
+  "西羅非哈": {
+    "path": "link_folder/人物/西羅非哈.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "西羅非哈",
+    "status": "formal",
+    "aliases": [
+      "Zelophehad"
     ]
   },
   "西羅非哈女兒": {
@@ -23009,6 +23082,14 @@
     "status": "formal",
     "aliases": []
   },
+  "西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）": {
+    "path": "link_folder/原文/西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）",
+    "status": "formal",
+    "aliases": []
+  },
   "親近（qarab）": {
     "path": "link_folder/原文/親近（qarab）.md",
     "type": "原文",
@@ -23869,6 +23950,17 @@
     "title": "亞嫩河",
     "status": "formal",
     "aliases": []
+  },
+  "亞巴琳山": {
+    "path": "link_folder/地點/亞巴琳山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞巴琳山",
+    "status": "formal",
+    "aliases": [
+      "Abarim Mountain",
+      "亞巴琳山脈"
+    ]
   },
   "亞拉臘山": {
     "path": "link_folder/地點/亞拉臘山.md",
@@ -31981,6 +32073,17 @@
     "status": "formal",
     "aliases": []
   },
+  "牧人意象": {
+    "path": "link_folder/神學/牧人意象.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "牧人意象",
+    "status": "formal",
+    "aliases": [
+      "牧羊人意象",
+      "無牧之羊"
+    ]
+  },
   "猶大的認罪與悔改": {
     "path": "link_folder/神學/猶大的認罪與悔改.md",
     "type": "神學",
@@ -32057,6 +32160,17 @@
     "title": "生命樹道路被把守",
     "status": "formal",
     "aliases": []
+  },
+  "產業繼承律例": {
+    "path": "link_folder/神學/產業繼承律例.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "產業繼承律例",
+    "status": "formal",
+    "aliases": [
+      "繼承律例",
+      "產業歸屬律法"
+    ]
   },
   "產業（nachalah）": {
     "path": "link_folder/神學/產業（nachalah）.md",
@@ -33869,6 +33983,17 @@
     "title": "聖靈",
     "status": "formal",
     "aliases": []
+  },
+  "聖靈充滿的領袖": {
+    "path": "link_folder/神學/聖靈充滿的領袖.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖靈充滿的領袖",
+    "status": "formal",
+    "aliases": [
+      "被聖靈充滿的領袖",
+      "心中有聖靈的領袖"
+    ]
   },
   "聖靈內住": {
     "path": "link_folder/神學/聖靈內住.md",
@@ -40090,6 +40215,12 @@
   "拿弗他利支派人口普查": {
     "alias_of": "拿弗他利支派被數點"
   },
+  "按手委任": {
+    "alias_of": "按手傳承"
+  },
+  "按手授職": {
+    "alias_of": "按手傳承"
+  },
   "營外焚燒": {
     "alias_of": "搬到營外燒"
   },
@@ -40098,6 +40229,9 @@
   },
   "首領參與數點利未人": {
     "alias_of": "摩西、亞倫、會眾首領照耶和華吩咐數點"
+  },
+  "摩西登亞巴琳山": {
+    "alias_of": "摩西上亞巴琳山"
   },
   "Moses goes up to God": {
     "alias_of": "摩西上山見神"
@@ -40164,6 +40298,9 @@
   },
   "神應允同去": {
     "alias_of": "摩西求神同去並蒙應允"
+  },
+  "摩西禱告求繼任者": {
+    "alias_of": "摩西求神立繼任者"
   },
   "摩西遵命數點": {
     "alias_of": "摩西照耶和華的吩咐數點他們"
@@ -40578,6 +40715,9 @@
   },
   "西緬族被數": {
     "alias_of": "西緬支派被數點"
+  },
+  "西羅非哈女兒來求產業": {
+    "alias_of": "西羅非哈女兒求產業"
   },
   "誤犯故意罪處分條例": {
     "alias_of": "誤犯罪與故意犯罪分別處分"
@@ -41626,6 +41766,12 @@
   "西緬利未受咒詛 (創49:5-7)": {
     "alias_of": "西緬利未受咒詛 (創49_5-7)"
   },
+  "親屬救贖律例": {
+    "alias_of": "親屬救贖預表（民27：8-11）"
+  },
+  "產業繼承中的親屬救贖": {
+    "alias_of": "親屬救贖預表（民27：8-11）"
+  },
   "Psalm 118:14": {
     "alias_of": "詩118：14 耶和華是我的力量我的詩歌"
   },
@@ -42259,6 +42405,12 @@
   "Hoshea": {
     "alias_of": "約書亞"
   },
+  "約書亞繼任摩西": {
+    "alias_of": "約書亞被立為繼任者"
+  },
+  "繼任領袖約書亞": {
+    "alias_of": "約書亞被立為繼任者"
+  },
   "Joseph": {
     "alias_of": "約瑟"
   },
@@ -42294,6 +42446,9 @@
   },
   "西緬子孫": {
     "alias_of": "西緬支派"
+  },
+  "Zelophehad": {
+    "alias_of": "西羅非哈"
   },
   "西羅非哈的女兒們": {
     "alias_of": "西羅非哈女兒"
@@ -44109,6 +44264,12 @@
   },
   "鵪鶉": {
     "alias_of": "鵪鶉（selav）"
+  },
+  "Abarim Mountain": {
+    "alias_of": "亞巴琳山"
+  },
+  "亞巴琳山脈": {
+    "alias_of": "亞巴琳山"
   },
   "Adullam": {
     "alias_of": "亞杜蘭"
@@ -46342,6 +46503,12 @@
   "營外燒公牛": {
     "alias_of": "營外焚燒公牛"
   },
+  "牧羊人意象": {
+    "alias_of": "牧人意象"
+  },
+  "無牧之羊": {
+    "alias_of": "牧人意象"
+  },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
   },
@@ -46362,6 +46529,12 @@
   },
   "樂意的奉獻": {
     "alias_of": "甘心樂意的奉獻"
+  },
+  "繼承律例": {
+    "alias_of": "產業繼承律例"
+  },
+  "產業歸屬律法": {
+    "alias_of": "產業繼承律例"
   },
   "產業": {
     "alias_of": "產業（nachalah）"
@@ -46851,6 +47024,12 @@
   },
   "聖潔神學": {
     "alias_of": "聖潔與分別為聖"
+  },
+  "被聖靈充滿的領袖": {
+    "alias_of": "聖靈充滿的領袖"
+  },
+  "心中有聖靈的領袖": {
+    "alias_of": "聖靈充滿的領袖"
   },
   "Holy Spirit Indwelling": {
     "alias_of": "聖靈內住"

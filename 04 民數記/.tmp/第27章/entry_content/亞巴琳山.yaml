@@ -1,0 +1,30 @@
+name: 亞巴琳山
+type: 地點
+secondary_types: []
+aliases:
+- Abarim Mountain
+- 亞巴琳山脈
+status: formal
+definition: 位於約旦河東岸、摩押平原對面的山脈（民27:12）。神命摩西上這山觀看迦南應許之地。摩西在此遠望後即歸到列祖那裡（去世）。包括尼波山、毗斯迦山等山峰（參申34:1）。象徵摩西事奉終點與應許之地視野的交接處。
+development: 本章作為摩西登山觀地、神宣告其死期的地點；後在申命記34章摩西實際登上尼波山（亞巴琳山脈一峰）去世。
+accumulations:
+- book: 民數記
+  chapter: 27
+  summary: 神命摩西上亞巴琳山觀看應許之地，並宣告摩西即將去世。
+  relation: 本章領導權交接的地理與神學場景。
+related_entries:
+- 摩西上亞巴琳山
+- 摩西求神立繼任者
+sources:
+- '逐節註解: 民數記27:12 亞巴琳山地理與意義（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT27.htm）'
+- '拾穗: 民數記27:12 摩西最後的眼光（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT27.htm）'
+- '研經註解: Numbers 27 - Mount Abarim（https://www.kingcomments.com/en/bible-studies/Num/27）'
+- '研經註解: Numbers 27 - Abarim Mountains（https://biblehub.com/study/numbers/27.htm）'
+created_from: numbers_27
+category: 地點
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false
