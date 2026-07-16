@@ -1,0 +1,26 @@
+name: 亞衲族
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記1:28記載探子回報「看見亞衲族的人」，形容其身材高大，使以色列人心生恐懼。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 作為迦南地原住民中的巨人族群，成為百姓不信、拒絕進地的藉口。
+  relation: 與亞摩利人、十二探子窺探迦南、以色列人不信拒絕進地等事件交織。
+related_entries:
+- 亞衲族
+- 亞摩利人
+- 以色列人不信拒絕進地
+- 十二探子窺探迦南
+sources:
+- '逐節註解: 申命記1章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm）'
+- '拾穗: 申命記1章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm）'
+- '研經註解: 申命記1章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/1）'
+created_from: 申命記1章
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

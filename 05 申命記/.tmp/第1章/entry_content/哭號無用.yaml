@@ -1,0 +1,24 @@
+name: 哭號無用
+type: 神學
+secondary_types: []
+aliases:
+- 哭號無用
+status: formal
+definition: 申命記 1:45‑46 描述百姓在被擊敗後回到耶和華面前哭號，但耶和華不聽他們的聲音，也不側耳，顯示悔改若非配合順服則無效。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 百姓哭號求神卻不被垂聽，神不因哭號而改變審判。
+  relation: 本章結尾強調神的公義與人順服的必要性。
+related_entries:
+- 轉回紅海路往曠野去
+- 在加低斯住了許多日子
+sources:
+- '拾穗: 申命記 1 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm）'
+- '研經註解: 申命記 1 章研經註解（https://biblehub.com/study/deuteronomy/1.htm）'
+created_from: manual
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

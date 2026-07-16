@@ -1,0 +1,24 @@
+name: 轉回紅海路往曠野去
+type: 事件
+secondary_types: []
+aliases:
+- 轉回紅海路往曠野去
+status: formal
+definition: 申命記 1:40 記載神命令以色列人轉回，從紅海的路往曠野去，因他們拒絕上去得地。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 神吩咐百姓轉回紅海路往曠野，作為對悖逆的管教。
+  relation: 本章標誌著以色列人進入曠野漂流四十年的起點。
+related_entries:
+- 以色列人擅自上山被擊敗
+- 哭號無用
+sources:
+- '逐節註解: 申命記 1 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm）'
+- '研經註解: 申命記 1 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/1）'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

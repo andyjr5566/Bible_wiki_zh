@@ -1,0 +1,29 @@
+name: 利巴嫩山
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記1:7將利巴嫩山列為神應許賜給以色列的地界之一，北至利巴嫩山、東至伯拉大河。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 作為應許之地北界的地標，顯示神賜地的廣闊。
+  relation: 標示神應許之地的地理範圍，連結亞摩利人、高原、山地等地名。
+related_entries:
+- 利巴嫩山
+- 伯拉大河
+- 南地
+- 亞摩利人
+- 亞拉巴
+- 高原
+- 山地
+sources:
+- '逐節註解: 申命記1章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm）'
+- '拾穗: 申命記1章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm）'
+- '研經註解: 申命記1章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/1）'
+created_from: 申命記1章
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

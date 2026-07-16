@@ -1,0 +1,28 @@
+name: 摩西在摩押地講律法
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記第1章記載摩西在約但河東摩押地向以色列眾人講述耶和華所吩咐的律法（申1:1-5）。
+development: 此事件為摩西在進入迦南前最後的教導，奠定後續律法重述的基礎。
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 摩西在摩押地向百姓講律法，回顧出埃及至今的歷程。
+  relation: 確立摩西作為中保傳遞神旨意的角色，開啟申命記全書的教導架構。
+related_entries:
+- 摩押地
+- 亞摩利王西宏
+- 巴珊王噩
+- 何烈山
+- 加低斯
+sources:
+- '逐節註解: 申命記第1章 (https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm)'
+- '拾穗: 申命記第1章 (https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm)'
+- '研經註解: 申命記第1章 (https://www.kingcomments.com/en/bible-studies/Deu/1)'
+- '研經註解: 申命記第1章 (https://biblehub.com/study/deuteronomy/1.htm)'
+created_from: ''
+category: ''
+trigger_sources: ''
+current_data: ''
+pending: ''

@@ -1,0 +1,27 @@
+name: 底撒哈
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記1:1記載底撒哈為摩西在約但河東曠野、巴蘭、陀弗、拉班、哈洗錄之間向以色列眾人說話的地理標記之一。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 列於摩西講道的地名序列中，顯示以色列人行經的曠野路線。
+  relation: 作為地理背景，佐證摩西在曠野向百姓傳達神命令的歷史場景。
+related_entries:
+- 巴蘭的曠野
+- 陀弗
+- 哈洗錄
+- 亞拉巴
+- 疏弗
+sources:
+- '逐節註解: 申命記1章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm）'
+- '拾穗: 申命記1章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm）'
+- '研經註解: 申命記1章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/1）'
+created_from: 申命記1章
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false
