@@ -1,0 +1,366 @@
+book: 出埃及記
+chapter: 18
+A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；迎接岳父、述說見證、獨自審判、聽從建議、立首領
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 米甸祭司
+  suggested_type: 背景
+  evidence: 1節；《舊約背景註釋》指葉忒羅被稱為米甸的祭司，而非某一神明的祭司
+  surfaces:
+  - phrase: 米甸祭司
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 米甸祭司
+  existing_path: link_folder/背景/米甸祭司.md
+- name: 葉忒羅
+  suggested_type: 人物
+  evidence: 1-2、5-6、9-10、12節；摩西的岳父；聽見神的作為便帶摩西妻兒來訪
+  surfaces:
+  - phrase: 葉忒羅
+    verses:
+    - 1
+    - 2
+    - 5
+    - 6
+    - 9
+    - 10
+    - 12
+  match_type: exact
+  existing_title: 葉忒羅
+  existing_path: link_folder/人物/葉忒羅.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1、8-9、25節；神的百姓；耶和華將以色列從埃及領出來
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 1
+    - 8
+    - 9
+    - 25
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 1、8-11節；祂將以色列從埃及領出來；葉忒羅說「耶和華比萬神都大」
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 8
+    - 9
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1、8-11節；為奴之地；葉忒羅在埃及人向百姓發狂傲的事上得知耶和華比萬神都大
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 1
+    - 8
+    - 9
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 西坡拉
+  suggested_type: 人物
+  evidence: 2-3節；摩西從前打發回去的妻子；《丁道爾》指「打發」在後期希伯來文有「離婚」之意，但此處不然
+  surfaces:
+  - phrase: 西坡拉
+    verses:
+    - 2
+    - 3
+  match_type: exact
+  existing_title: 西坡拉
+  existing_path: link_folder/人物/西坡拉.md
+- name: 革舜
+  suggested_type: 人物
+  evidence: 3節；長子；名義「我在外邦作了寄居的」
+  surfaces:
+  - phrase: 革舜
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 革舜
+  existing_path: link_folder/人物/革舜.md
+- name: 革舜（ sojourner ）
+  suggested_type: 原文
+  evidence: 3節；CT 指此名有兩種相反的意思：孤獨恥辱感，或對埃及不再有眷戀
+  surfaces:
+  - phrase: 我在外邦作了寄居的
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 革舜（ sojourner ）
+  existing_path: link_folder/原文/革舜（ sojourner ）.md
+- name: 以利以謝
+  suggested_type: 人物
+  evidence: 4節；次子；《丁道爾》指他在五經中僅此一次出現
+  surfaces:
+  - phrase: 以利以謝
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 以利以謝
+  existing_path: link_folder/人物/以利以謝.md
+- name: 以利以謝（ God is help ）
+  suggested_type: 原文
+  evidence: 4節；由希伯來文兩字複合：「以利」我的神＋「以謝」我的幫助
+  surfaces:
+  - phrase: 我父親的神幫助了我
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 以利以謝（ God is help ）
+  existing_path: link_folder/原文/以利以謝（ God is help ）.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 4、8、10節；「救我脫離法老的刀」——指摩西四十歲時從埃及逃往米甸的事（2:15）
+  surfaces:
+  - phrase: 法老
+    verses:
+    - 4
+    - 8
+    - 10
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 神的山
+  suggested_type: 地點
+  evidence: 5節；指西乃山，又稱何烈山（3:1）；《舊約背景註釋》：「神的山」被用作西乃山的稱號
+  surfaces:
+  - phrase: 神的山
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 神的山
+  existing_path: link_folder/地點/神的山.md
+- name: 古代近東岳父禮儀
+  suggested_type: 背景
+  evidence: 7節；《舊約背景註釋》指下拜表示尊敬、親吻面頰表示友誼——本節是兩者一併做出來的惟一案例
+  surfaces:
+  - phrase: 向他下拜，與他親嘴，彼此問安
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 古代近東岳父禮儀
+  existing_path: link_folder/背景/古代近東岳父禮儀.md
+- name: 神的拯救
+  suggested_type: 神學
+  evidence: 8-9節；摩西述說耶和華怎樣搭救他們；葉忒羅因這一切好處便甚歡喜
+  surfaces:
+  - phrase: 搭救
+    verses:
+    - 8
+  - phrase: 拯救
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 神的拯救
+  existing_path: link_folder/神學/神的拯救.md
+- name: 稱頌耶和華
+  suggested_type: 神學
+  evidence: 10節；「耶和華是應當稱頌的」——非以色列人作出的信仰宣告
+  surfaces:
+  - phrase: 稱頌
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 稱頌耶和華
+  existing_path: link_folder/神學/稱頌耶和華.md
+- name: 獻祭敬拜
+  suggested_type: 神學
+  evidence: 12節；葉忒羅把燔祭和平安祭獻給神
+  surfaces:
+  - phrase: 燔祭和平安祭
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 獻祭敬拜
+  existing_path: link_folder/神學/獻祭敬拜.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 12節；與以色列的眾長老都來了，與摩西的岳父在神面前吃飯
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以色列的眾長老
+  suggested_type: 人物
+  evidence: 12節；《中文聖經註釋》指他們在此可能作為以色列方面的立約代表
+  surfaces:
+  - phrase: 以色列的眾長老
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 以色列的眾長老
+  existing_path: link_folder/人物/以色列的眾長老.md
+- name: 審判與治理
+  suggested_type: 神學
+  evidence: 13、16、22、26節；摩西坐著審判百姓；《丁道爾》指「坐」與「站」是閃族律法術語，分別指「法官」和「當事人」
+  surfaces:
+  - phrase: 審判
+    verses:
+    - 13
+    - 22
+    - 26
+  - phrase: 施行審判
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 審判與治理
+  existing_path: link_folder/神學/審判與治理.md
+- name: 曠野審判制度
+  suggested_type: 背景
+  evidence: 13節；《舊約背景註釋》指審判官的座位是權柄的所在，通常設置在城門口
+  surfaces:
+  - phrase: 百姓從早到晚都站在摩西的左右
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 曠野審判制度
+  existing_path: link_folder/背景/曠野審判制度.md
+- name: 分層授權
+  suggested_type: 神學
+  evidence: 18、22節；「這事太重，你獨自一人辦理不了」；「他們也可以同當此任」
+  surfaces:
+  - phrase: 你獨自一人辦理不了
+    verses:
+    - 18
+  - phrase: 他們也可以同當此任
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 分層授權
+  existing_path: link_folder/神學/分層授權.md
+- name: 敬畏神、誠實、恨不義之財
+  suggested_type: 神學
+  evidence: 21節；揀選官員的資格；《丁道爾》指注重的是道德上而非智力上的條件
+  surfaces:
+  - phrase: 敬畏神、誠實無妄、恨不義之財
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 敬畏神、誠實、恨不義之財
+  existing_path: link_folder/神學/敬畏神、誠實、恨不義之財.md
+- name: 摩西立首領
+  suggested_type: 事件
+  evidence: 25節；摩西從以色列人中揀選了有才能的人，立他們為百姓的首領
+  surfaces:
+  - phrase: 立他們為百姓的首領
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 摩西立首領
+  existing_path: link_folder/事件/摩西立首領.md
+- name: 葉忒羅來訪
+  suggested_type: 事件
+  evidence: 5-7節；葉忒羅帶著摩西的妻子和兩個兒子來到神的山
+  match_type: exact
+  existing_title: 葉忒羅來訪
+  existing_path: link_folder/事件/葉忒羅來訪.md
+- name: 葉忒羅獻祭
+  suggested_type: 事件
+  evidence: 12節；亞倫和以色列的眾長老與摩西的岳父在神面前吃飯——《舊約背景註釋》指祭筵可使協議正式化
+  match_type: exact
+  existing_title: 葉忒羅獻祭
+  existing_path: link_folder/事件/葉忒羅獻祭.md
+- name: 摩西審判百姓
+  suggested_type: 事件
+  evidence: 13-16節；百姓來求問神；摩西在兩造之間施行審判，又叫他們知道神的律例和法度
+  match_type: exact
+  existing_title: 摩西審判百姓
+  existing_path: link_folder/事件/摩西審判百姓.md
+- name: 葉忒羅建議分層治理
+  suggested_type: 事件
+  evidence: 17-23節；「你這做的不好」——葉忒羅提出四方面建議
+  match_type: exact
+  existing_title: 葉忒羅建議分層治理
+  existing_path: link_folder/事件/葉忒羅建議分層治理.md
+- name: 葉忒羅返回本地
+  suggested_type: 事件
+  evidence: 27節；摩西讓他的岳父去，他就往本地去了
+  match_type: exact
+  existing_title: 葉忒羅返回本地
+  existing_path: link_folder/事件/葉忒羅返回本地.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 5節；神的山即西乃山，神在山頂上召見摩西（19:20）
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 何烈山
+  suggested_type: 地點
+  evidence: 5節；神的山又稱何烈山（3:1）；何烈山脈可能一直延伸到利非訂
+  match_type: exact
+  existing_title: 何烈山
+  existing_path: link_folder/地點/何烈山.md
+- name: 米甸地
+  suggested_type: 地點
+  evidence: 27節；葉忒羅的本地
+  match_type: exact
+  existing_title: 米甸地
+  existing_path: link_folder/地點/米甸地.md
+- name: 葉忒羅（ his abundance ）
+  suggested_type: 原文
+  evidence: 1節；原文字義「他的富裕」；CT 指這可能是他擔任祭司時的職稱，流珥才是本名
+  match_type: exact
+  existing_title: 葉忒羅（ his abundance ）
+  existing_path: link_folder/原文/葉忒羅（ his abundance ）.md
+- name: 西坡拉（ bird ）
+  suggested_type: 原文
+  evidence: 2節；原文字義「鳥兒」
+  match_type: exact
+  existing_title: 西坡拉（ bird ）
+  existing_path: link_folder/原文/西坡拉（ bird ）.md
+- name: 來7：1-3 麥基洗德
+  suggested_type: 互文
+  evidence: 1、12節；CT 以無族譜的麥基洗德為至高神的祭司，說明葉忒羅可能是事奉真神的
+  match_type: exact
+  existing_title: 來7：1-3 麥基洗德
+  existing_path: link_folder/互文/來7：1-3 麥基洗德.md
+- name: 徒6：1-7 選立執事
+  suggested_type: 互文
+  evidence: 21-25節；選立七執事處理日常事務，使使徒能專心祈禱傳道
+  match_type: exact
+  existing_title: 徒6：1-7 選立執事
+  existing_path: link_folder/互文/徒6：1-7 選立執事.md
+- name: 提前3：1-7 監督資格
+  suggested_type: 互文
+  evidence: 21節；《丁道爾》指新約對參與事奉之基督徒的要求大同小異
+  match_type: exact
+  existing_title: 提前3：1-7 監督資格
+  existing_path: link_folder/互文/提前3：1-7 監督資格.md
+- name: 多1：5-9 長老資格
+  suggested_type: 互文
+  evidence: 21節；長老的資格與葉忒羅所提四項條件相符
+  match_type: exact
+  existing_title: 多1：5-9 長老資格
+  existing_path: link_folder/互文/多1：5-9 長老資格.md
+- name: 彼前5：1-4 牧養群羊
+  suggested_type: 互文
+  evidence: 21節；KC 指這些資格可應用於教會牧者的事奉
+  match_type: exact
+  existing_title: 彼前5：1-4 牧養群羊
+  existing_path: link_folder/互文/彼前5：1-4 牧養群羊.md
+- name: 林前12：18 肢體安排
+  suggested_type: 互文
+  evidence: 18、22節；KC 引「神隨自己的意思把肢體俱各安排在身上」
+  match_type: exact
+  existing_title: 林前12：18 肢體安排
+  existing_path: link_folder/互文/林前12：18 肢體安排.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
