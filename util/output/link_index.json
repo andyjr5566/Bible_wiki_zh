@@ -6675,6 +6675,16 @@
     "status": "formal",
     "aliases": []
   },
+  "丈夫家中許願丈夫權柄": {
+    "path": "link_folder/事件/丈夫家中許願丈夫權柄.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "丈夫家中許願丈夫權柄",
+    "status": "formal",
+    "aliases": [
+      "丈夫家中許願夫權"
+    ]
+  },
   "三大節期律例": {
     "path": "link_folder/事件/三大節期律例.md",
     "type": "事件",
@@ -9489,6 +9499,16 @@
     "status": "formal",
     "aliases": [
       "西羅非哈女兒來求產業"
+    ]
+  },
+  "許願與起誓律例": {
+    "path": "link_folder/事件/許願與起誓律例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "許願與起誓律例",
+    "status": "formal",
+    "aliases": [
+      "許願起誓律例"
     ]
   },
   "誤犯罪與故意犯罪分別處分": {
@@ -19510,6 +19530,16 @@
     "status": "formal",
     "aliases": []
   },
+  "不可食言（lo yachel devaro）": {
+    "path": "link_folder/原文/不可食言（lo yachel devaro）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "不可食言（lo yachel devaro）",
+    "status": "formal",
+    "aliases": [
+      "不可食言"
+    ]
+  },
   "不潔淨到晚上（tame ad erev）": {
     "path": "link_folder/原文/不潔淨到晚上（tame ad erev）.md",
     "type": "原文",
@@ -20044,6 +20074,16 @@
     "status": "formal",
     "aliases": []
   },
+  "冒失話（nidrei shegagah）": {
+    "path": "link_folder/原文/冒失話（nidrei shegagah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "冒失話（nidrei shegagah）",
+    "status": "formal",
+    "aliases": [
+      "冒失話"
+    ]
+  },
   "冠冕（裹頭巾）": {
     "path": "link_folder/原文/冠冕（裹頭巾）.md",
     "type": "原文",
@@ -20186,6 +20226,16 @@
     "status": "formal",
     "aliases": [
       "Rephidim etymology"
+    ]
+  },
+  "刻苦約束自己（anah nephesh）": {
+    "path": "link_folder/原文/刻苦約束自己（anah nephesh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "刻苦約束自己（anah nephesh）",
+    "status": "formal",
+    "aliases": [
+      "刻苦約束自己"
     ]
   },
   "剃去毛髮（giluach）": {
@@ -22129,6 +22179,16 @@
     "title": "燔祭（olah）",
     "status": "formal",
     "aliases": []
+  },
+  "父女夫妻律例（chuqqim av uvat, ish ve'ishah）": {
+    "path": "link_folder/原文/父女夫妻律例（chuqqim av uvat, ish ve'ishah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "父女夫妻律例（chuqqim av uvat, ish ve'ishah）",
+    "status": "formal",
+    "aliases": [
+      "父女夫妻律例"
+    ]
   },
   "牆垣": {
     "path": "link_folder/原文/牆垣.md",
@@ -28121,6 +28181,26 @@
       "最後七天的寬限"
     ]
   },
+  "丈夫事後廢去擔當罪孽": {
+    "path": "link_folder/神學/丈夫事後廢去擔當罪孽.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "丈夫事後廢去擔當罪孽",
+    "status": "formal",
+    "aliases": [
+      "丈夫事後廢去"
+    ]
+  },
+  "丈夫天天默許堅定願誓": {
+    "path": "link_folder/神學/丈夫天天默許堅定願誓.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "丈夫天天默許堅定願誓",
+    "status": "formal",
+    "aliases": [
+      "丈夫天天默許"
+    ]
+  },
   "三一神同工": {
     "path": "link_folder/神學/三一神同工.md",
     "type": "神學",
@@ -29284,6 +29364,16 @@
       "出埃及的目的"
     ]
   },
+  "出嫁婦人許願丈夫權柄": {
+    "path": "link_folder/神學/出嫁婦人許願丈夫權柄.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "出嫁婦人許願丈夫權柄",
+    "status": "formal",
+    "aliases": [
+      "出嫁婦人許願夫權"
+    ]
+  },
   "分別善惡的樹": {
     "path": "link_folder/神學/分別善惡的樹.md",
     "type": "神學",
@@ -30280,6 +30370,16 @@
     "status": "formal",
     "aliases": []
   },
+  "女子許願父親權柄": {
+    "path": "link_folder/神學/女子許願父親權柄.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "女子許願父親權柄",
+    "status": "formal",
+    "aliases": [
+      "女子許願父權"
+    ]
+  },
   "如鷹背在翅膀上": {
     "path": "link_folder/神學/如鷹背在翅膀上.md",
     "type": "神學",
@@ -30465,6 +30565,16 @@
       "密雲中的降臨"
     ]
   },
+  "寡婦被休婦人許願自主": {
+    "path": "link_folder/神學/寡婦被休婦人許願自主.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "寡婦被休婦人許願自主",
+    "status": "formal",
+    "aliases": [
+      "寡婦被休婦人自主許願"
+    ]
+  },
   "審判": {
     "path": "link_folder/神學/審判.md",
     "type": "神學",
@@ -30580,6 +30690,16 @@
     "aliases": [
       "假悔改",
       "肉體悔改"
+    ]
+  },
+  "屬靈遮蓋權柄": {
+    "path": "link_folder/神學/屬靈遮蓋權柄.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "屬靈遮蓋權柄",
+    "status": "formal",
+    "aliases": [
+      "屬靈遮蓋權柄"
     ]
   },
   "山上的樣式": {
@@ -40148,6 +40268,9 @@
   "打發的橄欖油": {
     "alias_of": "點燈的油"
   },
+  "丈夫家中許願夫權": {
+    "alias_of": "丈夫家中許願丈夫權柄"
+  },
   "拒絕潔淨被剪除": {
     "alias_of": "不潔淨人不灑水被剪除"
   },
@@ -40990,6 +41113,9 @@
   },
   "西羅非哈女兒來求產業": {
     "alias_of": "西羅非哈女兒求產業"
+  },
+  "許願起誓律例": {
+    "alias_of": "許願與起誓律例"
   },
   "誤犯故意罪處分條例": {
     "alias_of": "誤犯罪與故意犯罪分別處分"
@@ -42866,6 +42992,9 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "不可食言": {
+    "alias_of": "不可食言（lo yachel devaro）"
+  },
   "不潔淨到晚上": {
     "alias_of": "不潔淨到晚上（tame ad erev）"
   },
@@ -43058,6 +43187,9 @@
   "公羊羔": {
     "alias_of": "公羊羔（kebes）"
   },
+  "冒失話": {
+    "alias_of": "冒失話（nidrei shegagah）"
+  },
   "冠冕": {
     "alias_of": "冠冕（裹頭巾）"
   },
@@ -43117,6 +43249,9 @@
   },
   "Rephidim etymology": {
     "alias_of": "利非訂（ repose ）"
+  },
+  "刻苦約束自己": {
+    "alias_of": "刻苦約束自己（anah nephesh）"
   },
   "剃去毛髮": {
     "alias_of": "剃去毛髮（giluach）"
@@ -43822,6 +43957,9 @@
   },
   "燈盞": {
     "alias_of": "燈盞（ner）"
+  },
+  "父女夫妻律例": {
+    "alias_of": "父女夫妻律例（chuqqim av uvat, ish ve'ishah）"
   },
   "金牌": {
     "alias_of": "牌子（冠冕牌）"
@@ -45641,6 +45779,12 @@
   "最後七天的寬限": {
     "alias_of": "七天的等候與最後寬限"
   },
+  "丈夫事後廢去": {
+    "alias_of": "丈夫事後廢去擔當罪孽"
+  },
+  "丈夫天天默許": {
+    "alias_of": "丈夫天天默許堅定願誓"
+  },
   "第六年三倍收成": {
     "alias_of": "三年土產"
   },
@@ -45971,6 +46115,9 @@
   "出埃及的目的": {
     "alias_of": "出埃及為要事奉神"
   },
+  "出嫁婦人許願夫權": {
+    "alias_of": "出嫁婦人許願丈夫權柄"
+  },
   "歌珊地無災": {
     "alias_of": "分別歌珊地"
   },
@@ -46232,6 +46379,9 @@
   "原福音": {
     "alias_of": "女人的後裔 (創3_15)"
   },
+  "女子許願父權": {
+    "alias_of": "女子許願父親權柄"
+  },
   "on eagles' wings": {
     "alias_of": "如鷹背在翅膀上"
   },
@@ -46288,6 +46438,9 @@
   },
   "密雲中的降臨": {
     "alias_of": "密雲"
+  },
+  "寡婦被休婦人自主許願": {
+    "alias_of": "寡婦被休婦人許願自主"
   },
   "審判全地的主行公義": {
     "alias_of": "審判全地的主豈不行公義"

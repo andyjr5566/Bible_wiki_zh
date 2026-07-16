@@ -1,7 +1,7 @@
 {
-  "total_warnings": 94,
+  "total_warnings": 95,
   "critical_count": 0,
-  "warning_count": 94,
+  "warning_count": 95,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -65,6 +65,13 @@
       "source": "民數記/第27章.md",
       "target": "瑪拉、挪阿、曷拉、密迦、得撒",
       "message": "同一 alias「瑪拉、挪阿、曷拉、密迦、得撒」指向多個 target: 西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）, 西羅非哈女兒求產業"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第30章.md",
+      "target": "默默不言",
+      "message": "同一 alias「默默不言」指向多個 target: 丈夫天天默許堅定願誓, 丈夫家中許願丈夫權柄"
     },
     {
       "type": "alias_target_conflict",
