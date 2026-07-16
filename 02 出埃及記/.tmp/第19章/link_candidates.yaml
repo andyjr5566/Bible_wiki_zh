@@ -1,0 +1,145 @@
+book: 出埃及記
+chapter: 19
+candidates:
+  - name: 以色列
+    type: 原文
+    evidence: 1、3、6節；出埃及地以後滿了三個月來到西乃的曠野
+  - name: 埃及
+    type: 地點
+    evidence: 1、4節；「我向埃及人所行的事，你們都看見了」
+    surfaces:
+      - {phrase: 埃及, verses: [1, 4]}
+  - name: 西乃的曠野
+    type: 地點
+    evidence: 1-2節；出埃及的第一個目標；從19:1 到民10:10 的所有事件都發生在此地
+    surfaces:
+      - {phrase: 西乃的曠野, verses: [1, 2]}
+  - name: 利非訂
+    type: 地點
+    evidence: 2節；到西乃山之前的最後一站
+    surfaces:
+      - {phrase: 利非訂, verses: [2]}
+  - name: 摩西
+    type: 人物
+    evidence: 全章；上山下山凡數次；為百姓與神之間的中保
+  - name: 耶和華
+    type: 神學
+    evidence: 3、7-11、16-24節；從山上呼喚摩西；在火中降於山上
+  - name: 如鷹背在翅膀上
+    type: 神學
+    evidence: 4節；申32:11-12「如鷹攪動巢窩，在雛鷹以上兩翅搧展，接取雛鷹，背在兩翼之上」
+    surfaces:
+      - {phrase: 如鷹將你們背在翅膀上, verses: [4]}
+  - name: 西乃之約
+    type: 神學
+    evidence: 5節；「遵守我的約」——即「摩西之約」；形式類似古代宗主與屬國的條約
+    surfaces:
+      - {phrase: 遵守我的約, verses: [5]}
+  - name: 屬我的子民
+    type: 神學
+    evidence: 5節；原文同一字在代上29:3 譯作「我自己積蓄的」——君王私有的特殊珍寶
+    surfaces:
+      - {phrase: 屬我的子民, verses: [5]}
+  - name: 祭司的國度
+    type: 神學
+    evidence: 6節；全民都有親近神並事奉神的特權；《丁道爾》指這句話舊約沒再出現過
+    surfaces:
+      - {phrase: 祭司的國度, verses: [6]}
+  - name: 聖潔的國民
+    type: 神學
+    evidence: 6節；「聖」最初無疑只有「奉獻」給神的意思，後來才加上道德意味
+    surfaces:
+      - {phrase: 聖潔的國民, verses: [6]}
+  - name: 以色列的眾長老
+    type: 人物
+    evidence: 7節；摩西召了民間的長老來，將耶和華所吩咐的話陳明——他們代表百姓接受立約的安排
+    surfaces:
+      - {phrase: 民間的長老, verses: [7]}
+  - name: 密雲
+    type: 神學
+    evidence: 9、16節；原文可譯「雲中最厚之處」；雲和黑暗經常是神臨在的象徵
+    surfaces:
+      - {phrase: 密雲, verses: [9, 16]}
+  - name: 自潔
+    type: 神學
+    evidence: 10、14、22節；包括洗衣服、禁慾；《舊約背景註釋》指自潔是使自己在禮儀上潔淨的一連串步驟
+    surfaces:
+      - {phrase: 自潔, verses: [10, 14, 22]}
+  - name: 百姓自潔三天
+    type: 事件
+    evidence: 15節；「到第三天要預備好了。不可親近女人」——一切必須專注於神的顯現
+    surfaces:
+      - {phrase: 不可親近女人, verses: [15]}
+  - name: 神的降臨
+    type: 神學
+    evidence: 11、20節；《丁道爾》指以色列從來沒有想像耶和華住在西乃山上，祂不過在此顯現而已
+    surfaces:
+      - {phrase: 降臨, verses: [11, 20]}
+  - name: 西乃山
+    type: 地點
+    evidence: 11、18、20、23節；學者提出的地點超過十二個之多；傳統為穆薩山
+    surfaces:
+      - {phrase: 西乃山, verses: [11, 20, 23]}
+      - {phrase: 西乃全山, verses: [18]}
+  - name: 山的界限
+    type: 神學
+    evidence: 12、23節；「定界限」可能包括設立欄杆或界繩之類的界標；因神降臨而變為聖潔
+    surfaces:
+      - {phrase: 界限, verses: [12, 23]}
+  - name: 角聲
+    type: 神學
+    evidence: 13、16、19節；原文 shofar；能吹奏幾個音調但不能奏出旋律，主要用途是傳信
+    surfaces:
+      - {phrase: 角聲, verses: [13, 16, 19]}
+  - name: 神在火中降臨
+    type: 神學
+    evidence: 18節；「耶和華在火中降於山上」；CT 指火焰僅使物體燒著，但不燒毀（參3:2）
+    surfaces:
+      - {phrase: 在火中降於山上, verses: [18]}
+  - name: 不可親近
+    type: 神學
+    evidence: 21、24節；「不可闖過來」原文含闖入、拆除、破壞之意
+    surfaces:
+      - {phrase: 不可闖過來, verses: [21, 24]}
+  - name: 亞倫
+    type: 人物
+    evidence: 24節；「你要和亞倫一同上來」——他將成為首位正式的大祭司
+  - name: 神降臨西乃山
+    type: 事件
+    evidence: 16-20節；雷轟、閃電、密雲、角聲、冒煙、震動——舊約最壯觀的神顯現
+  - name: 摩西上山見神
+    type: 事件
+    evidence: 3、20節；摩西到神那裡；耶和華召摩西上山頂，摩西就上去
+  - name: 以色列到達西乃山
+    type: 事件
+    evidence: 1-2節；出埃及旅程第一階段的完成——3:12「你將百姓從埃及領出來之後，你們必在這山上事奉我」的應驗
+  - name: 神的聖潔
+    type: 神學
+    evidence: 12-13、21-24節；山的界限、自潔的要求、不可闖過來的禁令——罪人不能隨意親近聖潔的神
+  - name: 西乃（多刺的）
+    type: 原文
+    evidence: 1節；「西乃」原文字義「多刺的」
+  - name: 西乃山的地理
+    type: 背景
+    evidence: 1-2節；《舊約背景註釋》列出三座可能性最高的山：穆薩山、塞巴珥山、辛比沙山
+  - name: 五旬節與律法頒布
+    type: 背景
+    evidence: 1節；猶太人傳統認為神是在五旬節（逾越節後第五十天）在西乃山上降下律法
+  - name: 古代近東立約儀式
+    type: 背景
+    evidence: 3-6節；《啟導本》指此約的文字和形式很像宗主與屬國訂立的條約
+  - name: 來12：18-24 西乃山與錫安山
+    type: 互文
+    evidence: 16-20節；希伯來書把西乃山（火焰、黑暗、暴風、角聲、恐懼）與錫安山（恩典）對比
+  - name: 彼前2：9 君尊的祭司
+    type: 互文
+    evidence: 5-6節；彼得直接引用本節宣告教會為「被揀選的族類、君尊的祭司、聖潔的國度、屬神的子民」
+  - name: 啟1：6 國民與祭司
+    type: 互文
+    evidence: 6節；基督「使我們成為國民，作他父神的祭司」
+  - name: 申32：11-12 如鷹攪動巢窩
+    type: 互文
+    evidence: 4節；KC 引此節解釋鷹的比喻——正如鷹確保雛鷹不掉落死亡
+  - name: 林後3：18 看見主的榮光
+    type: 互文
+    evidence: 21節；KC 指對信徒而言，神的榮耀不再令人害怕，因為我們在耶穌基督的面上看見它
