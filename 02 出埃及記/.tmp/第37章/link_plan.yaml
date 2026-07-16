@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 37
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 比撒列
   suggested_type: 人物
   evidence: 出37:1 比撒列用皂莢木做櫃。GT/丁良才：比撒列親自製造法櫃，無非因為約櫃是至聖的，不然就是比撒列指揮人做的。GT/精讀本：在聖物的具體製作過程中唯一提到的人物是比撒列，因為他是被選出來做櫃的人，可能是當時充滿神的智慧的最好的工匠。已有條目「比撒列（Bezalel）」
@@ -187,15 +186,6 @@ B_needs_update:
   match_type: exact
   existing_title: 精金
   existing_path: link_folder/主題/精金.md
-- name: 山上的樣式
-  suggested_type: 神學
-  evidence: 出37章全章 每一件器具的製作都嚴格依照神在山上指示的樣式（出25-30章）。GT/丁道爾：本段的安排依照建築工程的自然次序，材料經過小心而有系統的重整，並非無意識的重複。KC：after
-    the house is made, the furniture that will be placed in the house is made——first
-    the ark, followed by the mercy seat with the cherubim。已有條目「山上的樣式」
-  match_type: exact
-  existing_title: 山上的樣式
-  existing_path: link_folder/神學/山上的樣式.md
-C_new_formal:
 - name: 杏花杯球花（燈臺裝飾）
   suggested_type: 原文
   evidence: 出37:19-22 燈臺每枝上有三個杯形狀像杏花，有球有花；燈臺上有四個杯形狀像杏花有球有花；每兩個枝子以下有球與枝子接連一塊；球和枝子是接連一塊，都是一塊精金錘出來的。CT：杏花是早春開花，表徵復活的生命。GT/精讀本：枝子離開杆不能發光，信徒若離開基督同樣一事無成。KC：cups
@@ -212,7 +202,9 @@ C_new_formal:
     - 19
     - 20
     - 21
-  target_path: link_folder/原文/杏花杯球花（燈臺裝飾）.md
+  match_type: exact
+  existing_title: 杏花杯球花（燈臺裝飾）
+  existing_path: link_folder/原文/杏花杯球花（燈臺裝飾）.md
 - name: 一他連得精金（燈臺用金量）
   suggested_type: 原文
   evidence: 出37:24 他用精金一他連得做燈臺和燈臺的一切器具。一他連得約合34公斤，燈臺用金量極大，表徵教會（燈臺）在神眼中極為貴重。BH：a talent
@@ -221,6 +213,18 @@ C_new_formal:
   - phrase: 一他連得
     verses:
     - 24
-  target_path: link_folder/原文/一他連得精金（燈臺用金量）.md
+  match_type: exact
+  existing_title: 一他連得精金（燈臺用金量）
+  existing_path: link_folder/原文/一他連得精金（燈臺用金量）.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 出37章全章 每一件器具的製作都嚴格依照神在山上指示的樣式（出25-30章）。GT/丁道爾：本段的安排依照建築工程的自然次序，材料經過小心而有系統的重整，並非無意識的重複。KC：after
+    the house is made, the furniture that will be placed in the house is made——first
+    the ark, followed by the mercy seat with the cherubim。已有條目「山上的樣式」
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []

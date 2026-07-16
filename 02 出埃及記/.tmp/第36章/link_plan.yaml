@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 36
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 比撒列
   suggested_type: 人物
   evidence: 出36:1-2 比撒列和亞何利亞伯並一切心裡有智慧的蒙耶和華賜智慧聰明，都要照耶和華所吩咐的做工；摩西把他們一同召來。CT：比撒列是負總責的工頭（出35:30-33），名字意為「在神的庇蔭之下」。BH：Bezalel
@@ -351,17 +350,6 @@ B_needs_update:
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
-- name: 銅座（門簾柱座）
-  suggested_type: 主題
-  evidence: 出36:38 帳幕門簾的五根柱子有五個帶卯的座，是銅的。CT：門簾柱子用銅座（非銀座），與內幔柱子的銀座不同。需檢查是否已有獨立條目，或歸入「帶卯的銅座（院子柱子座）」
-  surfaces:
-  - phrase: 帶卯的座，是銅的
-    verses:
-    - 38
-  match_type: base
-  existing_title: 帶卯的銅座（院子柱子座）
-  existing_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
-C_new_formal:
 - name: 奉獻過剩與節制
   suggested_type: 神學
   evidence: 出36:4-7 凡做聖所一切工的智慧人各都離開他所做的工，來對摩西說百姓所拿來的富富有餘；摩西傳命在全營中宣告無論男女不必再為聖所拿什麼禮物來，這樣才攔住百姓不再拿禮物來；因為他們所有的材料夠做一切當做的物而且有餘。CT：這是出奇的禁令，無非是因為百姓蒙了赦免（出34:6），有感恩的心（路7:47）；教會缺乏之際理當鼓勵奉獻，但富富有餘之時就應攔住。GT/丁道爾：神子民領受了救恩和赦罪之愛，這是典型的回應；捨不得財寶而拖延未獻的人發現神已經用不著他們了，一定又失望又沮喪。KC：the
@@ -380,7 +368,19 @@ C_new_formal:
   - phrase: 材料夠做一切當做的物，而且有餘
     verses:
     - 7
-  target_path: link_folder/神學/奉獻過剩與節制.md
+  match_type: exact
+  existing_title: 奉獻過剩與節制
+  existing_path: link_folder/神學/奉獻過剩與節制.md
+- name: 銅座（門簾柱座）
+  suggested_type: 主題
+  evidence: 出36:38 帳幕門簾的五根柱子有五個帶卯的座，是銅的。CT：門簾柱子用銅座（非銀座），與內幔柱子的銀座不同。需檢查是否已有獨立條目，或歸入「帶卯的銅座（院子柱子座）」
+  surfaces:
+  - phrase: 帶卯的座，是銅的
+    verses:
+    - 38
+  match_type: base
+  existing_title: 帶卯的銅座（院子柱子座）
+  existing_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
 - name: 比撒列和亞何利亞伯的配搭
   suggested_type: 神學
   evidence: 出36:1-2 比撒列（猶大支派）和亞何利亞伯（但支派）同被召來帶領工匠。BH：Bezalel from Judah and Oholiab
@@ -392,7 +392,11 @@ C_new_formal:
     verses:
     - 1
     - 2
-  target_path: link_folder/神學/比撒列和亞何利亞伯的配搭.md
+  match_type: exact
+  existing_title: 比撒列和亞何利亞伯的配搭
+  existing_path: link_folder/神學/比撒列和亞何利亞伯的配搭.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate:
 - name: 藍色鈕扣（lula'ot tekhelet）
   suggested_type: 原文

@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 39
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 以弗得
   suggested_type: 原文
   evidence: 出39:2-7 用金線和藍色、紫色、朱紅色線並撚的細麻做以弗得；把金子錘成薄片剪出線來與藍紫朱紅線用巧匠的手工一同繡上；又為以弗得做兩條相連的肩帶接連在以弗得的兩頭；其上巧工織的帶子和以弗得一樣的做法用以束上與以弗得接連一塊；又琢出兩塊紅瑪瑙鑲在金槽上，按著以色列兒子的名字雕刻；將這兩塊寶石安在以弗得的兩條肩帶上為以色列人做紀念石。KC：a
@@ -135,6 +134,47 @@ B_needs_update:
   match_type: exact
   existing_title: 金線
   existing_path: link_folder/原文/金線.md
+- name: 鈴鐺與石榴（大祭司袍子）
+  suggested_type: 原文
+  evidence: 出39:24-26 在袍子底邊上用藍色紫色朱紅色線並撚的細麻做石榴；又用精金做鈴鐺，把鈴鐺釘在袍子周圍底邊上的石榴中間：一個鈴鐺一個石榴交替排列。CT：鈴鐺表徵見證，石榴表徵生命的豐盛。KC：bells
+    of pure gold between the pomegranates。BH：the alternating bells and pomegranates
+    symbolize the balance of proclamation and fruitfulness。建議新建條目
+  surfaces:
+  - phrase: 石榴
+    verses:
+    - 24
+    - 25
+    - 26
+  - phrase: 鈴鐺
+    verses:
+    - 25
+    - 26
+  match_type: exact
+  existing_title: 鈴鐺與石榴（大祭司袍子）
+  existing_path: link_folder/原文/鈴鐺與石榴（大祭司袍子）.md
+- name: 歸耶和華為聖
+  suggested_type: 神學
+  evidence: 出39:30-31 他用精金做聖冠上的牌，在上面按刻圖書之法刻著「歸耶和華為聖」；又用一條藍細帶子將牌繫在冠冕上。已有條目「聖潔」等可涵蓋，或B類累積至相關條目
+  surfaces:
+  - phrase: 歸耶和華為聖
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 歸耶和華為聖
+  existing_path: link_folder/神學/歸耶和華為聖.md
+- name: 摩西的祝福
+  suggested_type: 事件
+  evidence: 出39:42-43 這一切工作都是以色列人照耶和華所吩咐摩西做的；耶和華怎樣吩咐的他們就怎樣做了；摩西看見一切的工都做成了就給他們祝福。KC：Moses
+    observed that everything was made according to the example shown to him on the
+    mountain（Heb 8:5）；Moses blessed them——thus the Lord Jesus looks at all our work
+    and blesses us to the degree of all our obedience。此為會幕建造完工的總結場景，摩西以祝福回應百姓的順服。建議新建條目
+  surfaces:
+  - phrase: 摩西看見一切的工都做成了，就給他們祝福
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 摩西的祝福
+  existing_path: link_folder/事件/摩西的祝福.md
 - name: 山上的樣式
   suggested_type: 神學
   evidence: 出39:1,5,7,21,26,29,31,32,42,43 「是照耶和華所吩咐摩西的」在本章出現十次。KC：this chapter contains
@@ -201,41 +241,7 @@ B_needs_update:
   match_type: exact
   existing_title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
   existing_path: link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md
-C_new_formal:
-- name: 鈴鐺與石榴（大祭司袍子）
-  suggested_type: 原文
-  evidence: 出39:24-26 在袍子底邊上用藍色紫色朱紅色線並撚的細麻做石榴；又用精金做鈴鐺，把鈴鐺釘在袍子周圍底邊上的石榴中間：一個鈴鐺一個石榴交替排列。CT：鈴鐺表徵見證，石榴表徵生命的豐盛。KC：bells
-    of pure gold between the pomegranates。BH：the alternating bells and pomegranates
-    symbolize the balance of proclamation and fruitfulness。建議新建條目
-  surfaces:
-  - phrase: 石榴
-    verses:
-    - 24
-    - 25
-    - 26
-  - phrase: 鈴鐺
-    verses:
-    - 25
-    - 26
-  target_path: link_folder/原文/鈴鐺與石榴（大祭司袍子）.md
-- name: 歸耶和華為聖
-  suggested_type: 神學
-  evidence: 出39:30-31 他用精金做聖冠上的牌，在上面按刻圖書之法刻著「歸耶和華為聖」；又用一條藍細帶子將牌繫在冠冕上。已有條目「聖潔」等可涵蓋，或B類累積至相關條目
-  surfaces:
-  - phrase: 歸耶和華為聖
-    verses:
-    - 30
-  target_path: link_folder/神學/歸耶和華為聖.md
-- name: 摩西的祝福
-  suggested_type: 事件
-  evidence: 出39:42-43 這一切工作都是以色列人照耶和華所吩咐摩西做的；耶和華怎樣吩咐的他們就怎樣做了；摩西看見一切的工都做成了就給他們祝福。KC：Moses
-    observed that everything was made according to the example shown to him on the
-    mountain（Heb 8:5）；Moses blessed them——thus the Lord Jesus looks at all our work
-    and blesses us to the degree of all our obedience。此為會幕建造完工的總結場景，摩西以祝福回應百姓的順服。建議新建條目
-  surfaces:
-  - phrase: 摩西看見一切的工都做成了，就給他們祝福
-    verses:
-    - 43
-  target_path: link_folder/事件/摩西的祝福.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []

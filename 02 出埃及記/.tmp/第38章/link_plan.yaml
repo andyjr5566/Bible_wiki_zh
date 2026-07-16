@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 38
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 銅壇（燔祭壇）
   suggested_type: 主題
   evidence: 出38:1-7 用皂莢木做燔祭壇，是四方的，長五肘寬五肘高三肘；在壇的四拐角上做四個角與壇接連一塊，用銅把壇包裹；做壇上的盆、鏟子、盤子、肉鍤子、火鼎，一切器具用銅做；為壇做一個銅網安在壇四面的圍腰板以下，從下達到壇的半腰；為銅網的四角鑄四個環子作為穿杠的用處；用皂莢木做杠用銅包裹；把杠穿在壇兩旁的環子內用以抬壇，並用板做壇，壇是空的。CT靈意：皂莢木做燔祭壇表徵耶穌的十字架（來13:10-13）；四方的表徵耶穌公義且完全；銅表徵神的審判。KC：this
@@ -153,6 +152,17 @@ B_needs_update:
   match_type: exact
   existing_title: 橛子與繩子的預表
   existing_path: link_folder/神學/橛子與繩子的預表.md
+- name: 以他瑪
+  suggested_type: 人物
+  evidence: 出38:21 這是法櫃的帳幕中利未人所用物件的總數，是照摩西的吩咐，經祭司亞倫的兒子以他瑪的手數點的。以他瑪是亞倫的第四子（出6:23），在此首次以獨立角色出現——負責數點會幕一切物件的總數。KC：everything
+    is counted——to God every sacrifice, every contribution to the tabernacle is important。已有條目「以他瑪」或涵蓋於「亞倫的祭司譜系」
+  surfaces:
+  - phrase: 以他瑪
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
 - name: 比撒列
   suggested_type: 人物
   evidence: 出38:22-23 凡耶和華所吩咐摩西的都是猶大支派戶珥的孫子、烏利的兒子比撒列做的；與他同工的有但支派中亞希撒抹的兒子亞何利亞伯，他是雕刻匠，又是巧匠，又能用藍色紫色朱紅色線和細麻繡花。已有條目「比撒列（Bezalel）」
@@ -188,6 +198,30 @@ B_needs_update:
   match_type: exact
   existing_title: 舍客勒
   existing_path: link_folder/原文/舍客勒.md
+- name: 一比加
+  suggested_type: 原文
+  evidence: 出38:26 凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人，按聖所的平，每人出銀半舍客勒，就是一比加。一比加（beka）是半舍客勒的重量單位，源自希伯來文「分裂」之意。BH：a
+    beka a head, that is half a shekel。建議新建條目或納入舍客勒累積
+  surfaces:
+  - phrase: 一比加
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 一比加
+  existing_path: link_folder/原文/一比加.md
+- name: 六十萬零三千五百五十人
+  suggested_type: 事件
+  evidence: 出38:26 凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人。這是出埃及後第一次人口統計（民1章有更詳細的第二次），每人出銀半舍客勒作為會幕的贖價銀（出30:11-16）。KC：the
+    silver comes from those that are numbered——each of the numbered people has to
+    pay half a shekel；the sockets of the sanctuary are made from this silver——everyone
+    is part of the house of God on the same basis。建議新建條目或納入相關條目
+  surfaces:
+  - phrase: 六十萬零三千五百五十人
+    verses:
+    - 26
+  match_type: base
+  existing_title: 六十萬零三千五百五十人（出38：26）
+  existing_path: link_folder/事件/六十萬零三千五百五十人（出38：26）.md
 - name: 山上的樣式
   suggested_type: 神學
   evidence: 出38:22 凡耶和華所吩咐摩西的都是猶大支派戶珥的孫子、烏利的兒子比撒列做的。全章每一物件都嚴格依照神在山上指示的樣式（出27:1-19;
@@ -255,36 +289,6 @@ B_needs_update:
   match_type: exact
   existing_title: 銀子
   existing_path: link_folder/主題/銀子.md
-C_new_formal:
-- name: 以他瑪
-  suggested_type: 人物
-  evidence: 出38:21 這是法櫃的帳幕中利未人所用物件的總數，是照摩西的吩咐，經祭司亞倫的兒子以他瑪的手數點的。以他瑪是亞倫的第四子（出6:23），在此首次以獨立角色出現——負責數點會幕一切物件的總數。KC：everything
-    is counted——to God every sacrifice, every contribution to the tabernacle is important。已有條目「以他瑪」或涵蓋於「亞倫的祭司譜系」
-  surfaces:
-  - phrase: 以他瑪
-    verses:
-    - 21
-  target_path: link_folder/人物/以他瑪.md
-- name: 一比加
-  suggested_type: 原文
-  evidence: 出38:26 凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人，按聖所的平，每人出銀半舍客勒，就是一比加。一比加（beka）是半舍客勒的重量單位，源自希伯來文「分裂」之意。BH：a
-    beka a head, that is half a shekel。建議新建條目或納入舍客勒累積
-  surfaces:
-  - phrase: 一比加
-    verses:
-    - 26
-  target_path: link_folder/原文/一比加.md
-- name: 六十萬零三千五百五十人
-  suggested_type: 事件
-  evidence: 出38:26 凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人。這是出埃及後第一次人口統計（民1章有更詳細的第二次），每人出銀半舍客勒作為會幕的贖價銀（出30:11-16）。KC：the
-    silver comes from those that are numbered——each of the numbered people has to
-    pay half a shekel；the sockets of the sanctuary are made from this silver——everyone
-    is part of the house of God on the same basis。建議新建條目或納入相關條目
-  surfaces:
-  - phrase: 六十萬零三千五百五十人
-    verses:
-    - 26
-  target_path: link_folder/事件/六十萬零三千五百五十人.md
 - name: 金銀銅統計（出38：24-31）
   suggested_type: 事件
   evidence: 出38:24-31 為聖所一切工作使用所獻的金子有二十九他連得並七百三十舍客勒；銀子有一百他連得並一千七百七十五舍客勒；銅有七十他連得並二千四百舍客勒。KC：everything
@@ -300,7 +304,11 @@ C_new_formal:
   - phrase: 所獻的銅
     verses:
     - 29
-  target_path: link_folder/事件/金銀銅統計（出38：24-31）.md
+  match_type: exact
+  existing_title: 金銀銅統計（出38：24-31）
+  existing_path: link_folder/事件/金銀銅統計（出38：24-31）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate:
 - name: 婦女參與建造會幕
   suggested_type: 神學
