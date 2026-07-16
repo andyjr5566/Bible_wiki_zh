@@ -1,0 +1,26 @@
+name: 基內烈湖
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記34:11提到東界從示番下到亞延東邊的利比拉，又達到基尼烈湖的東邊，作為迦南地東界的地標。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 34
+  summary: 經文將基尼烈湖（即加利利海）列為東界的標誌。
+  relation: 作為迦南地界線的地理標記，確認應許之地的範圍。
+related_entries:
+- 東界（以難至鹽海）
+- 迦南地界線
+- 鹽海
+sources:
+- '逐節註解: 民數記34章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT34.htm）'
+- '拾穗: 民數記34章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT34.htm）'
+- '研經註解: KingComments 民數記34（https://www.kingcomments.com/en/bible-studies/Num/34）'
+- '研經註解: BibleHub 民數記34（https://biblehub.com/study/numbers/34.htm）'
+created_from: Numbers 34
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

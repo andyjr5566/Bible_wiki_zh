@@ -1,0 +1,313 @@
+book: 民數記
+chapter: 34
+A_use_directly: []
+B_needs_update:
+- name: 鹽海（死海）
+  suggested_type: 地點
+  evidence: 民34:3,12 南界從鹽海盡頭起、東界直到鹽海。鹽海即死海，地球最低點，鹽度極高，無生物存活。預表審判（創19:24-25）、與生命水對比（結47:8-9、啟22:1）。
+  surfaces:
+  - phrase: 鹽海
+  - phrase: 死海
+  - phrase: 地球最低點
+  - phrase: 審判預表
+  match_type: base
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 埃及小河
+  suggested_type: 地點
+  evidence: 民34:5 南界至埃及小河（瓦迪艾利許），為埃及與迦南天然分界。預表脫離世界（埃及）進入應許之地（林後6:17、加1:4）。
+  surfaces:
+  - phrase: 埃及小河
+  - phrase: 瓦迪艾利許
+  - phrase: 埃及與迦南分界
+  - phrase: 脫離世界
+  match_type: alias
+  existing_title: 埃及河的地理辨識
+  existing_path: link_folder/解經爭議/埃及河的地理辨識.md
+- name: 加低斯巴尼亞
+  suggested_type: 地點
+  evidence: 民34:4 南界經加低斯巴尼亞。探子惡報之地、百姓拒絕進迦南、神判四十年漂流（民13-14）。預表不信的後果、神公義審判與恩典並存（來3:16-19）。
+  surfaces:
+  - phrase: 加低斯巴尼亞
+  - phrase: 探子惡報
+  - phrase: 四十年漂流
+  - phrase: 不信後果
+  match_type: alias
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 何珥山
+  suggested_type: 地點
+  evidence: 民34:7-8 北界經何珥山。亞倫死於何珥山（民20:22-29、33:37-39），祭司職分傳給以利亞撒。預表舊約祭司職分終結、基督永遠祭司（來7:23-24）。
+  surfaces:
+  - phrase: 何珥山
+  - phrase: 亞倫死
+  - phrase: 祭司職分傳承
+  - phrase: 基督永遠祭司
+  match_type: exact
+  existing_title: 何珥山
+  existing_path: link_folder/地點/何珥山.md
+- name: 鹽海（死海）
+  suggested_type: 地點
+  evidence: 民34:3,12 南界從鹽海盡頭起、東界直到鹽海。鹽海即死海，地球最低點，鹽度極高，無生物存活。預表審判（創19:24-25）、與生命水對比（結47:8-9、啟22:1）。
+  surfaces:
+  - phrase: 鹽海
+  - phrase: 死海
+  - phrase: 地球最低點
+  - phrase: 審判預表
+  match_type: base
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 埃及小河
+  suggested_type: 地點
+  evidence: 民34:5 南界至埃及小河（瓦迪艾利許），為埃及與迦南天然分界。預表脫離世界（埃及）進入應許之地（林後6:17、加1:4）。
+  surfaces:
+  - phrase: 埃及小河
+  - phrase: 瓦迪艾利許
+  - phrase: 埃及與迦南分界
+  - phrase: 脫離世界
+  match_type: alias
+  existing_title: 埃及河的地理辨識
+  existing_path: link_folder/解經爭議/埃及河的地理辨識.md
+- name: 加低斯巴尼亞
+  suggested_type: 地點
+  evidence: 民34:4 南界經加低斯巴尼亞。探子惡報之地、百姓拒絕進迦南、神判四十年漂流（民13-14）。預表不信的後果、神公義審判與恩典並存（來3:16-19）。
+  surfaces:
+  - phrase: 加低斯巴尼亞
+  - phrase: 探子惡報
+  - phrase: 四十年漂流
+  - phrase: 不信後果
+  match_type: alias
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+C_new_formal:
+- name: 迦南地界線
+  suggested_type: 事件
+  evidence: 民34:1-12 耶和華曉諭摩西吩咐以色列人：你們進迦南地，那地要按四圍的邊界歸你們為業。詳細列舉南、西、北、東四界：南界從尋的曠野沿以東邊界、鹽海盡頭、亞克拉濱坡、尋、加低斯巴尼亞、哈薩亞達、亞斯門、埃及小河、直到大海；西界為大海；北界從大海經何珥山、哈馬口、西達達、西斐崙、哈薩以難、直到以難；東界從以難經示斐崙、利比亞、基內烈湖東岸、約但河、直到鹽海。丁良才：地界預表基督徒屬靈產業界限（弗1:11、彼前1:4）。
+  surfaces:
+  - phrase: 迦南地
+  - phrase: 四圍的邊界
+  - phrase: 歸你們為業
+  - phrase: 南界
+  - phrase: 西界
+  - phrase: 北界
+  - phrase: 東界
+  target_path: link_folder/事件/迦南地界線.md
+- name: 南界（尋的曠野至埃及小河）
+  suggested_type: 事件
+  evidence: 民34:3-5 南界從尋的曠野沿以東邊界、鹽海盡頭、亞克拉濱坡、尋、加低斯巴尼亞、哈薩亞達、亞斯門、埃及小河、直到大海。尋的曠野在西乃半島東北，加低斯巴尼亞為探子惡報之地，埃及小河（瓦迪艾利許）為埃及與迦南天然分界。丁良才：南界預表屬靈產業與世界分別（林後6:17）。
+  surfaces:
+  - phrase: 尋的曠野
+  - phrase: 以東邊界
+  - phrase: 鹽海盡頭
+  - phrase: 亞克拉濱坡
+  - phrase: 加低斯巴尼亞
+  - phrase: 哈薩亞達
+  - phrase: 亞斯門
+  - phrase: 埃及小河
+  target_path: link_folder/事件/南界（尋的曠野至埃及小河）.md
+- name: 西界（大海）
+  suggested_type: 事件
+  evidence: 民34:6 西界就是大海。大海即地中海，為迦南西界天然屏障，亦為航海貿易通道。丁良才：西界預表屬靈產業有神作保障（詩121:5-8）。
+  surfaces:
+  - phrase: 西界
+  - phrase: 大海
+  - phrase: 地中海
+  target_path: link_folder/事件/西界（大海）.md
+- name: 北界（何珥山至以難）
+  suggested_type: 事件
+  evidence: 民34:7-9 北界從大海經何珥山、哈馬口、西達達、西斐崙、哈薩以難、直到以難。何珥山在黎巴嫩山脈北端，哈馬口為進入敘利亞要道，以難在大馬色北方。丁良才：北界預表屬靈產業向著豐盛擴展（弗3:18-19）。
+  surfaces:
+  - phrase: 北界
+  - phrase: 何珥山
+  - phrase: 哈馬口
+  - phrase: 西達達
+  - phrase: 西斐崙
+  - phrase: 哈薩以難
+  - phrase: 以難
+  target_path: link_folder/事件/北界（何珥山至以難）.md
+- name: 東界（以難至鹽海）
+  suggested_type: 事件
+  evidence: 民34:10-12 東界從以難經示斐崙、利比亞、基內烈湖東岸、約但河、直到鹽海。示斐崙在約但河東、利比亞在基內烈湖東北、基內烈湖即加利利海、約但河為東界天然分界、鹽海即死海。丁良才：東界預表屬靈產業有基督寶血作根基（來9:12）。
+  surfaces:
+  - phrase: 東界
+  - phrase: 示斐崙
+  - phrase: 利比亞
+  - phrase: 基內烈湖
+  - phrase: 約但河
+  - phrase: 鹽海
+  - phrase: 死海
+  target_path: link_folder/事件/東界（以難至鹽海）.md
+- name: 按宗族拈鬮分地
+  suggested_type: 神學
+  evidence: 民34:13-15 摩西吩咐以色列人：你們要按宗族拈鬮承受這地，因耶和華吩咐將地分給九個半支派。流便、迦得、瑪拿西半支派已在約但河東得業。丁良才：拈鬮預表神主權分賜產業（箴16:33、徒1:26），九個半支派預表教會完全數（12-2.5=9.5）。
+  surfaces:
+  - phrase: 按宗族拈鬮
+  - phrase: 承受這地
+  - phrase: 九個半支派
+  - phrase: 約但河東
+  target_path: link_folder/神學/按宗族拈鬮分地.md
+- name: 分地首領名單
+  suggested_type: 人物
+  evidence: 民34:16-29 耶和華指定以利亞撒祭司、約書亞、各支派一個首領分地：猶大迦勒、西緬示母利、便雅憫以利達、但布基、約瑟瑪拿西漢尼業、以法蓮基木利、西布倫以利撒番、以薩迦帕鐵、亞設亞希忽、拿弗他利比大黑。丁良才：分地首領預表基督與使徒分賜恩賜（弗4:11-12）。
+  surfaces:
+  - phrase: 以利亞撒祭司
+  - phrase: 約書亞
+  - phrase: 迦勒
+  - phrase: 示母利
+  - phrase: 以利達
+  - phrase: 布基
+  - phrase: 漢尼業
+  - phrase: 基木利
+  - phrase: 以利撒番
+  - phrase: 帕鐵
+  - phrase: 亞希忽
+  - phrase: 比大黑
+  target_path: link_folder/人物/分地首領名單.md
+- name: 迦南地界線預表屬靈產業
+  suggested_type: 神學
+  evidence: 民34:1-12 迦南四界預表信徒屬靈產業：南界（與世界分別）、西界（神作保障）、北界（向豐盛擴展）、東界（基督寶血為根基）。丁良才：地界非地理線、乃屬靈界限（弗1:11、彼前1:4、西1:12）。
+  surfaces:
+  - phrase: 迦南地界線預表
+  - phrase: 屬靈產業界限
+  - phrase: 與世界分別
+  - phrase: 神作保障
+  - phrase: 向豐盛擴展
+  - phrase: 基督寶血為根基
+  target_path: link_folder/神學/迦南地界線預表屬靈產業.md
+- name: 拈鬮分地預表神主權
+  suggested_type: 神學
+  evidence: 民34:13 拈鬮分地，人謀算、神定奪（箴16:33）。拈鬮預表神主權分賜產業、教會按恩賜得分（林前12:11、弗4:7）。
+  surfaces:
+  - phrase: 拈鬮分地
+  - phrase: 神主權
+  - phrase: 按恩賜得分
+  - phrase: 教會產業
+  target_path: link_folder/神學/拈鬮分地預表神主權.md
+- name: 分地首領預表基督與使徒
+  suggested_type: 神學
+  evidence: 民34:16-29 以利亞撒、約書亞、十二支派首領分地，預表基督（大祭司）、聖靈（約書亞）、使徒（十二支派首領）分賜恩賜產業（弗4:11-12、徒1:8、林前12:28）。
+  surfaces:
+  - phrase: 以利亞撒
+  - phrase: 約書亞
+  - phrase: 分地首領
+  - phrase: 基督與使徒
+  - phrase: 分賜恩賜
+  target_path: link_folder/神學/分地首領預表基督與使徒.md
+- name: 約但河東二支派半
+  suggested_type: 事件
+  evidence: 民34:14-15 流便、迦得、瑪拿西半支派已在約但河東得業，不在拈鬮之列。丁良才：二支派半選擇約但河東，預表屬世信徒滿足今生、失去天上產業（來4:1-11、林前3:12-15）。
+  surfaces:
+  - phrase: 流便
+  - phrase: 迦得
+  - phrase: 瑪拿西半支派
+  - phrase: 約但河東
+  - phrase: 屬世信徒
+  target_path: link_folder/事件/約但河東二支派半.md
+- name: 基內烈湖
+  suggested_type: 地點
+  evidence: 民34:11 東界經基內烈湖東岸。基內烈湖即加利利海，耶穌多在湖邊傳道、行神蹟（太4:18、可1:16、約6:1）。湖名「基內烈」意為「琴」，形狀如琴。
+  surfaces:
+  - phrase: 基內烈湖
+  - phrase: 加利利海
+  - phrase: 加利利湖
+  - phrase: 琴形湖
+  target_path: link_folder/地點/基內烈湖.md
+- name: 亞克拉濱坡
+  suggested_type: 地點
+  evidence: 民34:4 南界經亞克拉濱坡（蠍子上坡），位於尼蓋夫北部，為古代商隊要道。預表屬靈爭戰中必經之路（申8:15、詩23:4）。
+  surfaces:
+  - phrase: 亞克拉濱坡
+  - phrase: 蠍子上坡
+  - phrase: 古代商隊要道
+  - phrase: 屬靈爭戰路
+  target_path: link_folder/地點/亞克拉濱坡.md
+- name: 哈馬口
+  suggested_type: 地點
+  evidence: 民34:8 北界經哈馬口。哈馬在敘利亞中部、奧龍特斯河畔，為進入美所波達米亞要道。所羅門曾建貯藏城於哈馬（代下8:4）。預表神國度向萬國擴展（賽2:2-3、太28:19）。
+  surfaces:
+  - phrase: 哈馬口
+  - phrase: 哈馬
+  - phrase: 奧龍特斯河
+  - phrase: 萬國擴展
+  target_path: link_folder/地點/哈馬口.md
+- name: 以難
+  suggested_type: 地點
+  evidence: 民34:9-10 北界盡頭、東界起點在以難。以難在大馬色北方、黑門山南麓，為北界東界交接點。預表屬靈產業完全、無缺漏（西2:10、弗1:3）。
+  surfaces:
+  - phrase: 以難
+  - phrase: 大馬色北方
+  - phrase: 黑門山南麓
+  - phrase: 產業完全
+  target_path: link_folder/地點/以難.md
+- name: 示斐崙
+  suggested_type: 地點
+  evidence: 民34:10-11 東界經示斐崙、利比亞。示斐崙在約但河東、基內烈湖南，為東界關鍵點。
+  surfaces:
+  - phrase: 示斐崙
+  - phrase: 約但河東
+  - phrase: 基內烈湖南
+  target_path: link_folder/地點/示斐崙.md
+- name: 利比亞
+  suggested_type: 地點
+  evidence: 民34:11 東界經利比亞。利比亞在基內烈湖東北、約但河東岸。
+  surfaces:
+  - phrase: 利比亞
+  - phrase: 基內烈湖東北
+  - phrase: 約但河東岸
+  - phrase: 基內烈湖東北
+  - phrase: 約但河東岸
+  target_path: link_folder/地點/利比亞.md
+- name: 基內烈湖
+  suggested_type: 地點
+  evidence: 民34:11 東界沿基內烈湖東岸。基內烈湖即加利利海，耶穌多在湖邊傳道、行神蹟（太4:18、可1:16、約6:1）。湖名「基內烈」意為「琴」，形狀如琴。
+  surfaces:
+  - phrase: 基內烈湖
+  - phrase: 加利利海
+  - phrase: 加利利湖
+  - phrase: 琴形湖
+  target_path: link_folder/地點/基內烈湖.md
+- name: 亞克拉濱坡
+  suggested_type: 地點
+  evidence: 民34:4 南界經亞克拉濱坡（蠍子上坡），位於尼蓋夫北部，為古代商隊要道。預表屬靈爭戰中必經之路（申8:15、詩23:4）。
+  surfaces:
+  - phrase: 亞克拉濱坡
+  - phrase: 蠍子上坡
+  - phrase: 古代商隊要道
+  - phrase: 屬靈爭戰路
+  target_path: link_folder/地點/亞克拉濱坡.md
+- name: 哈馬口
+  suggested_type: 地點
+  evidence: 民34:8 北界經哈馬口。哈馬在敘利亞中部、奧龍特斯河畔，為進入美索波達米亞要道。所羅門曾建貯藏城於哈馬（代下8:4）。預表神國度向萬國擴展（賽2:2-3、太28:19）。
+  surfaces:
+  - phrase: 哈馬口
+  - phrase: 哈馬
+  - phrase: 奧龍特斯河
+  - phrase: 萬國擴展
+  target_path: link_folder/地點/哈馬口.md
+- name: 以難
+  suggested_type: 地點
+  evidence: 民34:9-10 北界盡頭、東界起點在以難。以難在大馬色北方、黑門山南麓，為北界東界交接點。預表屬靈產業完全、無缺漏（西2:10、弗1:3）。
+  surfaces:
+  - phrase: 以難
+  - phrase: 大馬色北方
+  - phrase: 黑門山南麓
+  - phrase: 產業完全
+  target_path: link_folder/地點/以難.md
+- name: 示斐崙
+  suggested_type: 地點
+  evidence: 民34:10-11 東界經示斐崙、利比亞。示斐崙在約但河東、基內烈湖南，為東界關鍵點。
+  surfaces:
+  - phrase: 示斐崙
+  - phrase: 約但河東
+  - phrase: 基內烈湖南
+  target_path: link_folder/地點/示斐崙.md
+- name: 利比亞
+  suggested_type: 地點
+  evidence: 民34:11 東界經利比亞。利比亞在基內烈湖東北、約但河東岸。
+  surfaces:
+  - phrase: 利比亞
+  - phrase: 基內烈湖東北
+  - phrase: 約但河東岸
+  target_path: link_folder/地點/利比亞.md
+D_new_candidate: []
+E_skip: []

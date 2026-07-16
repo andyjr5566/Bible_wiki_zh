@@ -7299,6 +7299,16 @@
       "切成塊子"
     ]
   },
+  "北界（何珥山至以難）": {
+    "path": "link_folder/事件/北界（何珥山至以難）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "北界（何珥山至以難）",
+    "status": "formal",
+    "aliases": [
+      "北界"
+    ]
+  },
   "十二探子名單": {
     "path": "link_folder/事件/十二探子名單.md",
     "type": "事件",
@@ -7332,6 +7342,16 @@
     "aliases": [
       "十個探子死於瘟疫",
       "報惡信探子被擊殺"
+    ]
+  },
+  "南界（尋的曠野至埃及小河）": {
+    "path": "link_folder/事件/南界（尋的曠野至埃及小河）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "南界（尋的曠野至埃及小河）",
+    "status": "formal",
+    "aliases": [
+      "南界"
     ]
   },
   "取下脂油": {
@@ -8580,6 +8600,16 @@
       "朔祭"
     ]
   },
+  "東界（以難至鹽海）": {
+    "path": "link_folder/事件/東界（以難至鹽海）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "東界（以難至鹽海）",
+    "status": "formal",
+    "aliases": [
+      "東界"
+    ]
+  },
   "正月初一": {
     "path": "link_folder/事件/正月初一.md",
     "type": "事件",
@@ -9364,6 +9394,14 @@
     "status": "formal",
     "aliases": []
   },
+  "約但河東二支派半": {
+    "path": "link_folder/事件/約但河東二支派半.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "約但河東二支派半",
+    "status": "formal",
+    "aliases": []
+  },
   "約櫃在前尋找安歇處": {
     "path": "link_folder/事件/約櫃在前尋找安歇處.md",
     "type": "事件",
@@ -9658,6 +9696,16 @@
       "西布倫族被數"
     ]
   },
+  "西界（大海）": {
+    "path": "link_folder/事件/西界（大海）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "西界（大海）",
+    "status": "formal",
+    "aliases": [
+      "西界"
+    ]
+  },
   "西緬支派被數點": {
     "path": "link_folder/事件/西緬支派被數點.md",
     "type": "事件",
@@ -9758,6 +9806,16 @@
     "aliases": [
       "亞拉得王聽聞以色列來到",
       "迦南南地王聽聞"
+    ]
+  },
+  "迦南地界線": {
+    "path": "link_folder/事件/迦南地界線.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "迦南地界線",
+    "status": "formal",
+    "aliases": [
+      "迦南四境"
     ]
   },
   "迦得支派被數點": {
@@ -17105,6 +17163,17 @@
       "兒女們"
     ]
   },
+  "分地首領名單": {
+    "path": "link_folder/人物/分地首領名單.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "分地首領名單",
+    "status": "formal",
+    "aliases": [
+      "分地首領",
+      "分配產業首領"
+    ]
+  },
   "利乏音人": {
     "path": "link_folder/人物/利乏音人.md",
     "type": "人物",
@@ -24397,6 +24466,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞克拉濱坡": {
+    "path": "link_folder/地點/亞克拉濱坡.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞克拉濱坡",
+    "status": "formal",
+    "aliases": []
+  },
   "亞嫩河": {
     "path": "link_folder/地點/亞嫩河.md",
     "type": "地點",
@@ -24607,6 +24684,14 @@
       "Elim"
     ]
   },
+  "以難": {
+    "path": "link_folder/地點/以難.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以難",
+    "status": "formal",
+    "aliases": []
+  },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
     "type": "地點",
@@ -24734,6 +24819,14 @@
       "七之井"
     ]
   },
+  "利比亞": {
+    "path": "link_folder/地點/利比亞.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "利比亞",
+    "status": "formal",
+    "aliases": []
+  },
   "利河伯": {
     "path": "link_folder/地點/利河伯.md",
     "type": "地點",
@@ -24841,6 +24934,14 @@
     "status": "formal",
     "aliases": []
   },
+  "哈馬口": {
+    "path": "link_folder/地點/哈馬口.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哈馬口",
+    "status": "formal",
+    "aliases": []
+  },
   "哈麥": {
     "path": "link_folder/地點/哈麥.md",
     "type": "地點",
@@ -24881,6 +24982,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "埃色",
+    "status": "formal",
+    "aliases": []
+  },
+  "基內烈湖": {
+    "path": "link_folder/地點/基內烈湖.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基內烈湖",
     "status": "formal",
     "aliases": []
   },
@@ -25738,6 +25847,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "示拿地",
+    "status": "formal",
+    "aliases": []
+  },
+  "示斐崙": {
+    "path": "link_folder/地點/示斐崙.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "示斐崙",
     "status": "formal",
     "aliases": []
   },
@@ -29711,6 +29828,17 @@
       "分別出來"
     ]
   },
+  "分地首領預表基督與使徒": {
+    "path": "link_folder/神學/分地首領預表基督與使徒.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "分地首領預表基督與使徒",
+    "status": "formal",
+    "aliases": [
+      "首領預表基督",
+      "以利亞撒約書亞預表"
+    ]
+  },
   "分層授權": {
     "path": "link_folder/神學/分層授權.md",
     "type": "神學",
@@ -31521,6 +31649,17 @@
       "把血倒在壇腳"
     ]
   },
+  "拈鬮分地預表神主權": {
+    "path": "link_folder/神學/拈鬮分地預表神主權.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "拈鬮分地預表神主權",
+    "status": "formal",
+    "aliases": [
+      "拈鬮預表主權",
+      "分地主權"
+    ]
+  },
   "拉麥的一夫多妻": {
     "path": "link_folder/神學/拉麥的一夫多妻.md",
     "type": "神學",
@@ -31558,6 +31697,14 @@
       "撿了遺失的物上行詭詐",
       "侵佔遺失物"
     ]
+  },
+  "按宗族拈鬮分地": {
+    "path": "link_folder/神學/按宗族拈鬮分地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "按宗族拈鬮分地",
+    "status": "formal",
+    "aliases": []
   },
   "按家室拈鬮承受地業": {
     "path": "link_folder/神學/按家室拈鬮承受地業.md",
@@ -35262,6 +35409,17 @@
     "status": "formal",
     "aliases": [
       "迦南地流奶與蜜"
+    ]
+  },
+  "迦南地界線預表屬靈產業": {
+    "path": "link_folder/神學/迦南地界線預表屬靈產業.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "迦南地界線預表屬靈產業",
+    "status": "formal",
+    "aliases": [
+      "地界預表產業",
+      "迦南地預表"
     ]
   },
   "追討罪自父及子直到三四代": {
@@ -40823,11 +40981,17 @@
   "切成塊子": {
     "alias_of": "剝皮切塊"
   },
+  "北界": {
+    "alias_of": "北界（何珥山至以難）"
+  },
   "十個探子死於瘟疫": {
     "alias_of": "十探子遭瘟疫而死"
   },
   "報惡信探子被擊殺": {
     "alias_of": "十探子遭瘟疫而死"
+  },
+  "南界": {
+    "alias_of": "南界（尋的曠野至埃及小河）"
   },
   "亞倫受膏的日子": {
     "alias_of": "受膏的日子"
@@ -41195,6 +41359,9 @@
   "朔祭": {
     "alias_of": "月朔獻祭"
   },
+  "東界": {
+    "alias_of": "東界（以難至鹽海）"
+  },
   "元旦": {
     "alias_of": "正月初一"
   },
@@ -41552,6 +41719,9 @@
   "西布倫族被數": {
     "alias_of": "西布倫支派被數點"
   },
+  "西界": {
+    "alias_of": "西界（大海）"
+  },
   "西緬族被數": {
     "alias_of": "西緬支派被數點"
   },
@@ -41575,6 +41745,9 @@
   },
   "迦南南地王聽聞": {
     "alias_of": "迦南人亞拉得王聽聞"
+  },
+  "迦南四境": {
+    "alias_of": "迦南地界線"
   },
   "迦得族被數": {
     "alias_of": "迦得支派被數點"
@@ -42973,6 +43146,12 @@
   },
   "兒女們": {
     "alias_of": "兒女"
+  },
+  "分地首領": {
+    "alias_of": "分地首領名單"
+  },
+  "分配產業首領": {
+    "alias_of": "分地首領名單"
   },
   "Leah": {
     "alias_of": "利亞"
@@ -46625,6 +46804,12 @@
   "分別出來": {
     "alias_of": "分別百姓"
   },
+  "首領預表基督": {
+    "alias_of": "分地首領預表基督與使徒"
+  },
+  "以利亞撒約書亞預表": {
+    "alias_of": "分地首領預表基督與使徒"
+  },
   "Delegation of authority": {
     "alias_of": "分層授權"
   },
@@ -47134,6 +47319,12 @@
   },
   "把血倒在壇腳": {
     "alias_of": "抹血在壇四角、倒血在壇腳"
+  },
+  "拈鬮預表主權": {
+    "alias_of": "拈鬮分地預表神主權"
+  },
+  "分地主權": {
+    "alias_of": "拈鬮分地預表神主權"
   },
   "不潔淨不灑水被剪除預表": {
     "alias_of": "拒絕潔淨被剪除預表拒絕恩典滅亡"
@@ -48181,6 +48372,12 @@
   },
   "迦南地流奶與蜜": {
     "alias_of": "迦南地流奶與蜜的應許應驗"
+  },
+  "地界預表產業": {
+    "alias_of": "迦南地界線預表屬靈產業"
+  },
+  "迦南地預表": {
+    "alias_of": "迦南地界線預表屬靈產業"
   },
   "罪的跨代影響": {
     "alias_of": "追討罪自父及子直到三四代"
