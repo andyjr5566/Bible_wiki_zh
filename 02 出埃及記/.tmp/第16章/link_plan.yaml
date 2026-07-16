@@ -1,0 +1,369 @@
+book: 出埃及記
+chapter: 16
+A_use_directly:
+- name: 以琳
+  suggested_type: 地點
+  evidence: 1節；以琳雖好，有水有綠蔭，仍不能久留，必須啟程前行
+  surfaces:
+  - phrase: 以琳
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 以琳
+  existing_path: link_folder/地點/以琳.md
+- name: 汛的曠野
+  suggested_type: 地點
+  evidence: 1節；位於以琳和西乃中間；與尋的曠野（Zin）並非同一地區
+  surfaces:
+  - phrase: 汛的曠野
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 汛的曠野
+  existing_path: link_folder/地點/汛的曠野.md
+- name: 西乃
+  suggested_type: 地點
+  evidence: 1節；位於西乃半島南端；汛（sin）與西乃（sinay）在語言學上可能有關係
+  surfaces:
+  - phrase: 西乃
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 西乃
+  existing_path: link_folder/地點/西乃.md
+- name: 汛（ Sin thorn ）
+  suggested_type: 原文
+  evidence: 1節；原文字義「刺、黏土」；CT 指汛的曠野是一片長滿荊棘的曠野，難於找到食物
+  match_type: exact
+  existing_title: 汛（ Sin thorn ）
+  existing_path: link_folder/原文/汛（ Sin thorn ）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；受神曉諭、傳達收取嗎哪的規定、向不聽話的人發怒
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 2、6、9-10、33-34節；代摩西向全會眾說話；奉命把嗎哪放在法櫃前
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以色列人的怨言
+  suggested_type: 歷史
+  evidence: 2-3、8節；出埃及後第二次集體怨言；「你們的怨言不是向我們發的，乃是向耶和華發的」
+  surfaces:
+  - phrase: 發怨言
+    verses:
+    - 2
+  - phrase: 你們的怨言不是向我們發的，乃是向耶和華發的
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 以色列人的怨言
+  existing_path: link_folder/歷史/以色列人的怨言.md
+- name: 嗎哪
+  suggested_type: 主題
+  evidence: 4、31-35節；「糧食從天降給你們」；以色列家給它起名叫嗎哪
+  surfaces:
+  - phrase: 糧食從天降給你們
+    verses:
+    - 4
+  - phrase: 嗎哪
+    verses:
+    - 31
+    - 32
+    - 34
+    - 35
+  match_type: exact
+  existing_title: 嗎哪
+  existing_path: link_folder/主題/嗎哪.md
+- name: 神的試驗
+  suggested_type: 神學
+  evidence: 4節；丁良才指試驗有兩層：看他們肯不肯靠神、肯不肯遵神的法度
+  surfaces:
+  - phrase: 好試驗他們遵不遵我的法度
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 神的試驗
+  existing_path: link_folder/神學/神的試驗.md
+- name: 耶和華的榮光
+  suggested_type: 神學
+  evidence: 7、10節；神首次向以色列全會眾顯現——不是為滅他們，而是為叫他們認識祂是誰
+  surfaces:
+  - phrase: 耶和華的榮耀
+    verses:
+    - 7
+  - phrase: 耶和華的榮光在雲中顯現
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 耶和華的榮光
+  existing_path: link_folder/神學/耶和華的榮光.md
+- name: 鵪鶉遮營
+  suggested_type: 事件
+  evidence: 13節；鵪鶉是候鳥，三四月間北遷途經西乃半島，筋疲力盡時低飛易捕
+  surfaces:
+  - phrase: 鵪鶉飛來，遮滿了營
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 鵪鶉遮營
+  existing_path: link_folder/事件/鵪鶉遮營.md
+- name: 鵪鶉遷徙
+  suggested_type: 背景
+  evidence: 13節；《舊約背景註釋》：覓地棲息的鵪鶉曾經有壓沉小舟的記錄
+  surfaces:
+  - phrase: 早晨在營四圍的地上有露水
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 鵪鶉遷徙
+  existing_path: link_folder/背景/鵪鶉遷徙.md
+- name: 嗎哪的物理特性
+  suggested_type: 背景
+  evidence: 14、31節；如白霜的小圓物；樣子像芫荽子、顏色是白的、滋味如同攙蜜的薄餅
+  surfaces:
+  - phrase: 小圓物
+    verses:
+    - 14
+  - phrase: 樣子像芫荽子，顏色是白的，滋味如同攙蜜的薄餅
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 嗎哪的物理特性
+  existing_path: link_folder/背景/嗎哪的物理特性.md
+- name: 嗎哪（ What is it ）
+  suggested_type: 原文
+  evidence: 15節；原文 man hu 直譯「這是什麼」——「嗎哪」之名由此而來
+  surfaces:
+  - phrase: 這是什麼呢
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 嗎哪（ What is it ）
+  existing_path: link_folder/原文/嗎哪（ What is it ）.md
+- name: 天降嗎哪
+  suggested_type: 事件
+  evidence: 15節；「這就是耶和華給你們吃的食物」
+  surfaces:
+  - phrase: 這就是耶和華給你們吃的食物
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 天降嗎哪
+  existing_path: link_folder/事件/天降嗎哪.md
+- name: 俄梅珥（ omer ）
+  suggested_type: 原文
+  evidence: 16、18、22、32、36節；乾容量單位，約2.3公升；原指「一把麥」；伊法十分之一
+  surfaces:
+  - phrase: 俄梅珥
+    verses:
+    - 16
+    - 18
+    - 22
+    - 32
+    - 36
+  match_type: exact
+  existing_title: 俄梅珥（ omer ）
+  existing_path: link_folder/原文/俄梅珥（ omer ）.md
+- name: 林後8：13-15 多收的沒有餘少收的沒有缺
+  suggested_type: 互文
+  evidence: 18節；保羅引用此原則教導教會中信徒彼此的物質照顧
+  surfaces:
+  - phrase: 多收的也沒有餘，少收的也沒有缺
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 林後8：13-15 多收的沒有餘少收的沒有缺
+  existing_path: link_folder/互文/林後8：13-15 多收的沒有餘少收的沒有缺.md
+- name: 神的供應
+  suggested_type: 主題
+  evidence: 19-21節；不許留到早晨——每日倚靠；日頭一發熱就消化了
+  surfaces:
+  - phrase: 所收的，不許什麼人留到早晨
+    verses:
+    - 19
+  - phrase: 日頭一發熱，就消化了
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 神的供應
+  existing_path: link_folder/主題/神的供應.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 23、25-26、29節；「安息日」一詞在聖經中首次出現於此
+  surfaces:
+  - phrase: 安息日
+    verses:
+    - 23
+    - 25
+    - 26
+    - 29
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 安息日的設立
+  suggested_type: 神學
+  evidence: 23節；「明天是聖安息日，是向耶和華守的聖安息日」——原文另加了更有力的 shabbaton
+  surfaces:
+  - phrase: 明天是聖安息日
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 安息日的設立
+  existing_path: link_folder/神學/安息日的設立.md
+- name: 安息日收取規定
+  suggested_type: 事件
+  evidence: 22、24、30節；第六天收雙倍；留到早晨也不臭也沒有蟲子——解經家稱為「安息日的神蹟」
+  surfaces:
+  - phrase: 他們收了雙倍的食物
+    verses:
+    - 22
+  - phrase: 也不臭，裡頭也沒有蟲子
+    verses:
+    - 24
+  - phrase: 安息
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 安息日收取規定
+  existing_path: link_folder/事件/安息日收取規定.md
+- name: 安息日的前身
+  suggested_type: 背景
+  evidence: 5、29節；丁良才指本節顯明沒有傳律法以先，以色列人已經知道安息日的理（創2:1-3）
+  surfaces:
+  - phrase: 比每天所收的多一倍
+    verses:
+    - 5
+  - phrase: 耶和華既將安息日賜給你們
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 安息日的前身
+  existing_path: link_folder/背景/安息日的前身.md
+- name: 保存一俄梅珥嗎哪
+  suggested_type: 事件
+  evidence: 33-34節；盛在罐子裡存在耶和華面前，放在法櫃前存留
+  surfaces:
+  - phrase: 你拿一個罐子，盛一滿俄梅珥嗎哪
+    verses:
+    - 33
+  - phrase: 放在法櫃前存留
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 保存一俄梅珥嗎哪
+  existing_path: link_folder/事件/保存一俄梅珥嗎哪.md
+- name: 嗎哪預表基督
+  suggested_type: 神學
+  evidence: 4、14-15、31節；KC 與丁良才都系統性列出嗎哪預表基督的多個層面
+  match_type: exact
+  existing_title: 嗎哪預表基督
+  existing_path: link_folder/神學/嗎哪預表基督.md
+- name: 汛的曠野地理
+  suggested_type: 背景
+  evidence: 1節；《舊約背景註釋》：汛的曠野是西乃半島中西部的地區，大道在此轉向內陸
+  match_type: exact
+  existing_title: 汛的曠野地理
+  existing_path: link_folder/背景/汛的曠野地理.md
+- name: 聽命順從蒙醫治
+  suggested_type: 主題
+  evidence: 4、28節；「遵不遵我的法度」；「你們不肯守我的誡命和律法，要到幾時呢？」
+  match_type: exact
+  existing_title: 聽命順從蒙醫治
+  existing_path: link_folder/主題/聽命順從蒙醫治.md
+- name: 約6：31-35 耶穌是生命的糧
+  suggested_type: 互文
+  evidence: 4、15節；耶穌在迦百農會堂明確指出從天而降的嗎哪象徵生命之糧
+  match_type: exact
+  existing_title: 約6：31-35 耶穌是生命的糧
+  existing_path: link_folder/互文/約6：31-35 耶穌是生命的糧.md
+- name: 約6：51 我是從天上降下來的活糧
+  suggested_type: 互文
+  evidence: 4節；KC 指「從天上來的糧」正是指明主耶穌是誰
+  match_type: exact
+  existing_title: 約6：51 我是從天上降下來的活糧
+  existing_path: link_folder/互文/約6：51 我是從天上降下來的活糧.md
+- name: 啟2：17 隱藏的嗎哪
+  suggested_type: 互文
+  evidence: 33節；在天上，嗎哪作為賞賜要成為得勝者特別的食物
+  match_type: exact
+  existing_title: 啟2：17 隱藏的嗎哪
+  existing_path: link_folder/互文/啟2：17 隱藏的嗎哪.md
+- name: 來9：4 盛嗎哪的金罐
+  suggested_type: 互文
+  evidence: 33-34節；金罐後來被放入約櫃，與亞倫發芽的杖並兩塊約版同在
+  match_type: exact
+  existing_title: 來9：4 盛嗎哪的金罐
+  existing_path: link_folder/互文/來9：4 盛嗎哪的金罐.md
+- name: 詩78：24-25 天上的糧食
+  suggested_type: 互文
+  evidence: 4節；詩篇稱嗎哪為「天上的糧食」和「大能者的食物」
+  match_type: exact
+  existing_title: 詩78：24-25 天上的糧食
+  existing_path: link_folder/互文/詩78：24-25 天上的糧食.md
+- name: 申8：3 人活著不是單靠食物
+  suggested_type: 互文
+  evidence: 4節；嗎哪的屬靈教訓——耶穌在曠野受試探時引用此節（太4:4）
+  match_type: exact
+  existing_title: 申8：3 人活著不是單靠食物
+  existing_path: link_folder/互文/申8：3 人活著不是單靠食物.md
+- name: 腓2：14 不發怨言
+  suggested_type: 互文
+  evidence: 2節；CT 指「發怨言」是肉體的表現
+  match_type: exact
+  existing_title: 腓2：14 不發怨言
+  existing_path: link_folder/互文/腓2：14 不發怨言.md
+B_needs_update:
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1-2、6、9-10、15、17、31、35節；「以色列全會眾」——五經首次使用這個詞
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 1
+    - 2
+    - 6
+    - 9
+    - 10
+    - 15
+    - 17
+    - 31
+    - 35
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 1、3、6、32節；為奴之家；百姓所懷念的肉鍋所在
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 1
+    - 3
+    - 6
+    - 32
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 全章；聽見怨言、降下嗎哪、賜下安息日
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 迦南
+  suggested_type: 人物
+  evidence: 35節；以色列人吃嗎哪共四十年，直到進了迦南的境界（書5:12）
+  surfaces:
+  - phrase: 迦南
+    verses:
+    - 35
+  match_type: exact
+  existing_title: 迦南
+  existing_path: link_folder/人物/迦南.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
