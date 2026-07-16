@@ -1,0 +1,312 @@
+book: 出埃及記
+chapter: 17
+A_use_directly:
+- name: 汛的曠野
+  suggested_type: 地點
+  evidence: 1節；即神降嗎哪的地方（16:13-15）
+  surfaces:
+  - phrase: 汛的曠野
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 汛的曠野
+  existing_path: link_folder/地點/汛的曠野.md
+- name: 利非訂
+  suggested_type: 地點
+  evidence: 1、8節；到西乃山之前的最後一站；通常考證為西乃半島南部的利法伊德乾河
+  surfaces:
+  - phrase: 利非訂
+    verses:
+    - 1
+    - 8
+  match_type: exact
+  existing_title: 利非訂
+  existing_path: link_folder/地點/利非訂.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；被爭鬧、呼求耶和華、擊打磐石、山頂舉手、築壇
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 米利巴（ strife ）
+  suggested_type: 原文
+  evidence: 2、7節；原文字根 rib，含爭鬧、爭論、爭訟之意；《串珠》指帶有「尋找過失」及「爭辯」（在法庭內外）之意
+  surfaces:
+  - phrase: 爭鬧
+    verses:
+    - 2
+  - phrase: 米利巴
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 米利巴（ strife ）
+  existing_path: link_folder/原文/米利巴（ strife ）.md
+- name: 神的試驗
+  suggested_type: 神學
+  evidence: 2、7節；「為什麼試探耶和華呢」——KC 指特別之處不是神試驗百姓，而是百姓試驗神
+  surfaces:
+  - phrase: 試探耶和華
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 神的試驗
+  existing_path: link_folder/神學/神的試驗.md
+- name: 以色列人的怨言
+  suggested_type: 歷史
+  evidence: 3節；出埃及後第三次怨言；丁良才指以色列人的錯有四層
+  surfaces:
+  - phrase: 發怨言
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 以色列人的怨言
+  existing_path: link_folder/歷史/以色列人的怨言.md
+- name: 磐石出活水
+  suggested_type: 神學
+  evidence: 6節；「我必在何烈的磐石那裡，站在你面前」；從磐石裡必有水流出來
+  surfaces:
+  - phrase: 磐石
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 磐石出活水
+  existing_path: link_folder/神學/磐石出活水.md
+- name: 何烈
+  suggested_type: 地點
+  evidence: 6節；在聖經中常與「西乃」換用；《舊約背景註釋》指何烈最有可能是指西乃山一帶的地區而非某個地點
+  surfaces:
+  - phrase: 何烈
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 何烈
+  existing_path: link_folder/地點/何烈.md
+- name: 磐石預表基督
+  suggested_type: 神學
+  evidence: 6節；「你要擊打磐石」——丁良才：磐石比方耶穌有三層（只打一次、被打才出水、水比聖靈）
+  surfaces:
+  - phrase: 你要擊打磐石
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 磐石預表基督
+  existing_path: link_folder/神學/磐石預表基督.md
+- name: 磐石出水
+  suggested_type: 事件
+  evidence: 6節；摩西就在以色列的長老眼前這樣行了——長老作了最佳的見證人
+  surfaces:
+  - phrase: 從磐石裡必有水流出來
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 磐石出水
+  existing_path: link_folder/事件/磐石出水.md
+- name: 瑪撒（ temptation ）
+  suggested_type: 原文
+  evidence: 7節；原文字根 nasah，含試驗、試探、試煉之意；《丁道爾》指這字在希伯來語無善無惡
+  surfaces:
+  - phrase: 瑪撒
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 瑪撒（ temptation ）
+  existing_path: link_folder/原文/瑪撒（ temptation ）.md
+- name: 亞瑪力人
+  suggested_type: 人物
+  evidence: 8-9、16節；以掃之孫亞瑪力的後裔；原文含義「谷中居民」「好戰者」
+  surfaces:
+  - phrase: 亞瑪力人
+    verses:
+    - 8
+    - 9
+    - 10
+    - 16
+  match_type: exact
+  existing_title: 亞瑪力人
+  existing_path: link_folder/人物/亞瑪力人.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 9-10、13-14節；聖經中首次出場；原名何西阿；名義「耶和華是拯救」
+  surfaces:
+  - phrase: 約書亞
+    verses:
+    - 9
+    - 10
+    - 13
+    - 14
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 10、12節；與戶珥一同上山頂，扶著摩西的手
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 戶珥
+  suggested_type: 人物
+  evidence: 10、12節；在以色列人中地位僅次於摩西、亞倫（24:14）；猶太傳統說他是米利暗的丈夫
+  surfaces:
+  - phrase: 戶珥
+    verses:
+    - 10
+    - 12
+  match_type: exact
+  existing_title: 戶珥
+  existing_path: link_folder/人物/戶珥.md
+- name: 摩西舉手得勝
+  suggested_type: 事件
+  evidence: 11-12節；何時舉手以色列人就得勝，何時垂手亞瑪力人就得勝
+  surfaces:
+  - phrase: 摩西何時舉手，以色列人就得勝，何時垂手，亞瑪力人就得勝
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 摩西舉手得勝
+  existing_path: link_folder/事件/摩西舉手得勝.md
+- name: 亞瑪力
+  suggested_type: 人物
+  evidence: 13-14節；約書亞用刀殺了亞瑪力王和他的百姓；神要將亞瑪力的名號從天下全然塗抹
+  surfaces:
+  - phrase: 亞瑪力
+    verses:
+    - 13
+    - 14
+  match_type: exact
+  existing_title: 亞瑪力
+  existing_path: link_folder/人物/亞瑪力.md
+- name: 築壇耶和華尼西
+  suggested_type: 事件
+  evidence: 15節；摩西築壇獻祭，紀念得勝全在於神的能力
+  surfaces:
+  - phrase: 築了一座壇，起名叫耶和華尼西
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 築壇耶和華尼西
+  existing_path: link_folder/事件/築壇耶和華尼西.md
+- name: 耶和華尼西
+  suggested_type: 神學
+  evidence: 15節；「耶和華是我旌旗」——表明以色列全軍是在耶和華神的率領下爭戰得勝
+  surfaces:
+  - phrase: 耶和華是我旌旗
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 耶和華尼西
+  existing_path: link_folder/神學/耶和華尼西.md
+- name: 戰勝亞瑪力人
+  suggested_type: 事件
+  evidence: 13節；以色列人出埃及後面臨的第一次軍事攻擊，也是第一次自己爭戰
+  match_type: exact
+  existing_title: 戰勝亞瑪力人
+  existing_path: link_folder/事件/戰勝亞瑪力人.md
+- name: 利非訂（ repose ）
+  suggested_type: 原文
+  evidence: 1節；原文意「休息、安息之所」——CT 指卻因缺水而得不著安息
+  match_type: exact
+  existing_title: 利非訂（ repose ）
+  existing_path: link_folder/原文/利非訂（ repose ）.md
+- name: 耶和華尼西（ Jehovah Nissi ）
+  suggested_type: 原文
+  evidence: 15節；「尼西」原文有廣泛意義：船篷、旗號、信號、軍旗、徽章、標誌
+  match_type: exact
+  existing_title: 耶和華尼西（ Jehovah Nissi ）
+  existing_path: link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md
+- name: 利非訂地理
+  suggested_type: 背景
+  evidence: 1節；《丁道爾》指附近費蘭河的綠洲十分富庶，是全半島最好的土地——亞瑪力人的緊張是可以理解的
+  match_type: exact
+  existing_title: 利非訂地理
+  existing_path: link_folder/背景/利非訂地理.md
+- name: 何烈與西乃的關係
+  suggested_type: 背景
+  evidence: 6節；《丁道爾》稱這是另一個謎：「何烈」和「西乃」似乎可以交替使用
+  match_type: exact
+  existing_title: 何烈與西乃的關係
+  existing_path: link_folder/背景/何烈與西乃的關係.md
+- name: 林前10：4 靈磐石就是基督
+  suggested_type: 互文
+  evidence: 6節；保羅：「所喝的是出於隨他們的靈磐石，那磐石就是基督」
+  match_type: exact
+  existing_title: 林前10：4 靈磐石就是基督
+  existing_path: link_folder/互文/林前10：4 靈磐石就是基督.md
+- name: 詩78：15-16 磐石出水
+  suggested_type: 互文
+  evidence: 6節；詩篇回顧神在曠野裂開磐石，使水湧流如江河
+  match_type: exact
+  existing_title: 詩78：15-16 磐石出水
+  existing_path: link_folder/互文/詩78：15-16 磐石出水.md
+- name: 來3：8-9 硬著心不可像瑪撒
+  suggested_type: 互文
+  evidence: 7節；「不可硬著心，像在曠野試探的日子」——瑪撒成為後世的鑑戒
+  match_type: exact
+  existing_title: 來3：8-9 硬著心不可像瑪撒
+  existing_path: link_folder/互文/來3：8-9 硬著心不可像瑪撒.md
+- name: 申25：17-19 記念亞瑪力
+  suggested_type: 互文
+  evidence: 8、14節；亞瑪力人「趁你疲乏困倦，擊殺你儘後邊軟弱的人，並不敬畏神」
+  match_type: exact
+  existing_title: 申25：17-19 記念亞瑪力
+  existing_path: link_folder/互文/申25：17-19 記念亞瑪力.md
+- name: 約4：14 活水
+  suggested_type: 互文
+  evidence: 6節；耶穌所賜的水要在人裡頭成為泉源，直湧到永生
+  match_type: exact
+  existing_title: 約4：14 活水
+  existing_path: link_folder/互文/約4：14 活水.md
+- name: 約7：38-39 活水的江河
+  suggested_type: 互文
+  evidence: 6節；KC 指聖靈被比作「活水的江河」——磐石被擊打後聖靈才降臨
+  match_type: exact
+  existing_title: 約7：38-39 活水的江河
+  existing_path: link_folder/互文/約7：38-39 活水的江河.md
+- name: 賽53：4-5 磐石被擊打
+  suggested_type: 互文
+  evidence: 6節；「他誠然擔當我們的憂患……我們卻以為他受責罰，被神擊打苦待了」
+  match_type: exact
+  existing_title: 賽53：4-5 磐石被擊打
+  existing_path: link_folder/互文/賽53：4-5 磐石被擊打.md
+B_needs_update:
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1、5-8節；全會眾遵耶和華的吩咐按著站口往前行
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 1
+    - 5
+    - 6
+    - 7
+    - 8
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 1、4-7、14、16節；祂站在磐石那裡；祂起誓必世世代代和亞瑪力人爭戰
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 4
+    - 5
+    - 7
+    - 14
+    - 16
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 3節；「你為什麼將我們從埃及領出來」——每逢困境便忘記神的拯救
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
