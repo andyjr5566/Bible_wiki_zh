@@ -1,7 +1,34 @@
 book: 出埃及記
 chapter: 32
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 金牛犢事件
+  suggested_type: 事件
+  evidence: 出32:1-6 百姓見摩西遲延不下山，聚集到亞倫那裡要求造神像引路；亞倫收百姓耳上金環鑄成牛犢，宣告向耶和華守節，百姓次日獻燔祭平安祭，坐下吃喝、起來玩耍。CT：直接違反十誡第二誡「不可為自己雕刻偶像」，模仿埃及人拜牛神（Apis）習俗。GT：原文「神像」的動詞是複數形態，不能解作君尊複數，百姓要的是「眾神」而非單指耶和華；丁道爾指出這是性急與看得見之神的需要所致；舊約聖經背景註釋指出金牛犢崇拜所觸犯的是十誡第二誡（不可造偶像）而非第一誡（不可有別神），因百姓仍稱其為領他們出埃及的耶和華。KC：亞倫將牛犢的形狀賦予只有神才配得的尊榮，百姓忘記了神一切的神蹟（詩106:19-23）；林前10:6-7
+    保羅引此事警戒信徒不可效法以色列人貪戀惡事、拜偶像。BH：this act of idolatry directly violated the first
+    two commandments given by God (Exodus 20:3-4)
+  surfaces:
+  - phrase: 神像
+    verses:
+    - 1
+    - 4
+    - 8
+    - 23
+    - 31
+  - phrase: 牛犢
+    verses:
+    - 4
+    - 5
+    - 8
+    - 19
+    - 20
+    - 24
+    - 35
+  - phrase: 金像
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 金牛犢事件
+  existing_path: link_folder/事件/金牛犢事件.md
 - name: 亞倫
   suggested_type: 人物
   evidence: 出32:1-6,21-25,35 亞倫在百姓催逼下未求問神就自作主張，鑄造金牛犢、在牛犢前築壇、宣告守節；摩西下山責問時，亞倫推諉是百姓專於作惡，自己只是把金環扔進火中「這牛犢便出來了」。CT：亞倫是意志薄弱、順應民意過於堅守真理的領袖借鏡。GT：猶太人傳說戶珥曾抵擋百姓而被殺，故亞倫因懼怕而屈服（此說未必可靠）；亞倫「這牛犢便出來了」之語連三歲小孩都不會相信，其掩飾至少有三種可能：推卸責任、為同工戶珥掩護、或藉此反襯摩西品格之高貴。KC：亞倫將自己降為百姓的奴隸，代表百姓在神面前卻使自己受百姓擺佈。BH：his
@@ -33,6 +60,74 @@ B_needs_update:
   match_type: exact
   existing_title: 約書亞
   existing_path: link_folder/人物/約書亞.md
+- name: 摩西為百姓代求（金牛犢）
+  suggested_type: 互文
+  evidence: 出32:11-14,30-32 摩西兩次為犯罪的百姓向神代求：先求神不發烈怒、記念列祖之約，神就後悔不降禍；後更求神「倘或你肯赦免他們的罪……不然，求你從你所寫的冊上塗抹我的名」。CT：摩西的代求預表基督長遠活著替人代求（羅8:34、來7:25），甘心承擔罪過與賽53:12「他們的罪孽，他都擔當」相符。GT：摩西的代求有五種特色——切心實意、毫不為己、專求主榮、理由充足、大有功效；摩西求恩並非依賴百姓的善行，而是依賴神的尊名、榮耀、盟約。KC：摩西不能替百姓死，也不能為他們贖罪；唯有基督這位完全無罪的人才能真正替人贖罪。BH：Moses
+    acts as an intercessor, a role that foreshadows Christ's mediatory work (1 Timothy
+    2:5)
+  surfaces:
+  - phrase: 摩西便懇求耶和華
+    verses:
+    - 11
+  - phrase: 或者可以為你們贖罪
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 摩西為百姓代求（金牛犢）
+  existing_path: link_folder/互文/摩西為百姓代求（金牛犢）.md
+- name: 硬著頸項的百姓
+  suggested_type: 神學
+  evidence: 出32:9-10 耶和華對摩西說「我看這百姓真是硬著頸項的百姓」，欲向他們發烈怒滅絕之。CT/GT/BH：此為聖經慣用語，源自農夫喻像，形容不肯受人牽引駕馭的牛馬，日後屢次用以形容以色列的頑梗悖逆（出33:3,5、34:9、申9:6,13、10:16、代下30:8、36:13、詩75:5、耶17:23、徒7:51）
+  surfaces:
+  - phrase: 硬著頸項
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 硬著頸項的百姓
+  existing_path: link_folder/神學/硬著頸項的百姓.md
+- name: 摩西摔碎法版（廢約的象徵）
+  suggested_type: 事件
+  evidence: 出32:15-19 摩西手拿兩塊法版下山，挨近營前看見牛犢與跳舞的人，便發烈怒把兩塊版扔在山下摔碎了。CT：石版摔碎並非單純洩憤，而具禮儀上廢除盟約的象徵意義，因百姓已先違背十誡的約（申9:17
+    摩西自述此事）；神並未因此責備摩西，可見要緊的是律法的精意而非外面的規條字句。GT：摔碎法版表明以色列人與神立的約已完了；丁道爾指出摩西打碎石版正如百姓所行的相符，表示盟約既遭違背便宣告無效。舊約聖經背景註釋：打碎刻了立約條款的石版，是典型廢除盟約的象徵性行動
+  surfaces:
+  - phrase: 把兩塊版扔在山下摔碎了
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 摩西摔碎法版（廢約的象徵）
+  existing_path: link_folder/事件/摩西摔碎法版（廢約的象徵）.md
+- name: 利未人受聖職討罪
+  suggested_type: 事件
+  evidence: 出32:26-29 摩西站在營門中呼召「凡屬耶和華的，都要到我這裡來」，利未的子孫都到他那裡聚集，奉命各人殺弟兄同伴鄰舍，那天百姓中被殺的約有三千；摩西宣告「今天你們要自潔，歸耶和華為聖」。CT：此事是利未支派受聖職服事神的契機（申33:9
+    摩西祝福十二支派時尊榮利未人此舉）。GT：「自潔」原文直譯是「今天你們的手已滿了為神」，即受聖職之意（七十士譯本比照出28:41 按手將他們分別為聖而譯）；利未支派當時是摩西本族，這關係或使他們一直忠於摩西與耶和華。BH：the
+    Levites' loyalty here is rewarded later when they are chosen to serve in the tabernacle
+    (Numbers 3:5-10)
+  surfaces:
+  - phrase: 凡屬耶和華的，都要到我這裡來
+    verses:
+    - 26
+  - phrase: 利未的子孫
+    verses:
+    - 26
+    - 28
+  match_type: exact
+  existing_title: 利未人受聖職討罪
+  existing_path: link_folder/事件/利未人受聖職討罪.md
+- name: 從冊上塗抹（生命冊）
+  suggested_type: 互文
+  evidence: 出32:32-33 摩西求神「倘或你肯赦免他們的罪……不然，求你從你所寫的冊上塗抹我的名」，耶和華回答「誰得罪我，我就從我的冊上塗抹誰的名」。KC/CT：此「冊」即後來聖經中生命冊的概念（詩69:28「願他們從生命冊上被塗抹」、賽4:3、但12:1、路10:20、啟3:5、13:8），摩西甘願被塗抹以代贖百姓之罪的心志，預表基督替罪人受死（賽53:12）；但唯有基督才能真正成就代贖，摩西不能替百姓死。GT：舊約聖經背景註釋指出神明的帳簿在古美索不達米亞是很普遍的概念，簿上記載某人註定的命運和賞罰。BH：the
+    'book' likely refers to a divine record of those who belong to God, akin to Paul's
+    expression in Romans 9:3
+  surfaces:
+  - phrase: 從你所寫的冊上塗抹我的名
+    verses:
+    - 32
+  - phrase: 我就從我的冊上塗抹誰的名
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 從冊上塗抹（生命冊）
+  existing_path: link_folder/互文/從冊上塗抹（生命冊）.md
 - name: 亞伯拉罕
   suggested_type: 人物
   evidence: 出32:13 摩西代求時提及神向亞伯拉罕、以撒、以色列起誓應許後裔如天上的星那樣多、迦南地永遠為業。CT/GT：摩西懇求的根據不在百姓的善行，而在神向列祖所起的誓、立的約不能更改。已有條目「亞伯拉罕」
@@ -53,90 +148,7 @@ B_needs_update:
   match_type: exact
   existing_title: 以撒
   existing_path: link_folder/人物/以撒.md
-C_new_formal:
-- name: 金牛犢事件
-  suggested_type: 事件
-  evidence: 出32:1-6 百姓見摩西遲延不下山，聚集到亞倫那裡要求造神像引路；亞倫收百姓耳上金環鑄成牛犢，宣告向耶和華守節，百姓次日獻燔祭平安祭，坐下吃喝、起來玩耍。CT：直接違反十誡第二誡「不可為自己雕刻偶像」，模仿埃及人拜牛神（Apis）習俗。GT：原文「神像」的動詞是複數形態，不能解作君尊複數，百姓要的是「眾神」而非單指耶和華；丁道爾指出這是性急與看得見之神的需要所致；舊約聖經背景註釋指出金牛犢崇拜所觸犯的是十誡第二誡（不可造偶像）而非第一誡（不可有別神），因百姓仍稱其為領他們出埃及的耶和華。KC：亞倫將牛犢的形狀賦予只有神才配得的尊榮，百姓忘記了神一切的神蹟（詩106:19-23）；林前10:6-7
-    保羅引此事警戒信徒不可效法以色列人貪戀惡事、拜偶像。BH：this act of idolatry directly violated the first
-    two commandments given by God (Exodus 20:3-4)
-  surfaces:
-  - phrase: 神像
-    verses:
-    - 1
-    - 4
-    - 8
-    - 23
-    - 31
-  - phrase: 牛犢
-    verses:
-    - 4
-    - 5
-    - 8
-    - 19
-    - 20
-    - 24
-    - 35
-  - phrase: 金像
-    verses:
-    - 31
-  target_path: link_folder/事件/金牛犢事件.md
-- name: 摩西為百姓代求（金牛犢）
-  suggested_type: 互文
-  evidence: 出32:11-14,30-32 摩西兩次為犯罪的百姓向神代求：先求神不發烈怒、記念列祖之約，神就後悔不降禍；後更求神「倘或你肯赦免他們的罪……不然，求你從你所寫的冊上塗抹我的名」。CT：摩西的代求預表基督長遠活著替人代求（羅8:34、來7:25），甘心承擔罪過與賽53:12「他們的罪孽，他都擔當」相符。GT：摩西的代求有五種特色——切心實意、毫不為己、專求主榮、理由充足、大有功效；摩西求恩並非依賴百姓的善行，而是依賴神的尊名、榮耀、盟約。KC：摩西不能替百姓死，也不能為他們贖罪；唯有基督這位完全無罪的人才能真正替人贖罪。BH：Moses
-    acts as an intercessor, a role that foreshadows Christ's mediatory work (1 Timothy
-    2:5)
-  surfaces:
-  - phrase: 摩西便懇求耶和華
-    verses:
-    - 11
-  - phrase: 或者可以為你們贖罪
-    verses:
-    - 30
-  target_path: link_folder/互文/摩西為百姓代求（金牛犢）.md
-- name: 硬著頸項的百姓
-  suggested_type: 神學
-  evidence: 出32:9-10 耶和華對摩西說「我看這百姓真是硬著頸項的百姓」，欲向他們發烈怒滅絕之。CT/GT/BH：此為聖經慣用語，源自農夫喻像，形容不肯受人牽引駕馭的牛馬，日後屢次用以形容以色列的頑梗悖逆（出33:3,5、34:9、申9:6,13、10:16、代下30:8、36:13、詩75:5、耶17:23、徒7:51）
-  surfaces:
-  - phrase: 硬著頸項
-    verses:
-    - 9
-  target_path: link_folder/神學/硬著頸項的百姓.md
-- name: 摩西摔碎法版（廢約的象徵）
-  suggested_type: 事件
-  evidence: 出32:15-19 摩西手拿兩塊法版下山，挨近營前看見牛犢與跳舞的人，便發烈怒把兩塊版扔在山下摔碎了。CT：石版摔碎並非單純洩憤，而具禮儀上廢除盟約的象徵意義，因百姓已先違背十誡的約（申9:17
-    摩西自述此事）；神並未因此責備摩西，可見要緊的是律法的精意而非外面的規條字句。GT：摔碎法版表明以色列人與神立的約已完了；丁道爾指出摩西打碎石版正如百姓所行的相符，表示盟約既遭違背便宣告無效。舊約聖經背景註釋：打碎刻了立約條款的石版，是典型廢除盟約的象徵性行動
-  surfaces:
-  - phrase: 把兩塊版扔在山下摔碎了
-    verses:
-    - 19
-  target_path: link_folder/事件/摩西摔碎法版（廢約的象徵）.md
-- name: 利未人受聖職討罪
-  suggested_type: 事件
-  evidence: 出32:26-29 摩西站在營門中呼召「凡屬耶和華的，都要到我這裡來」，利未的子孫都到他那裡聚集，奉命各人殺弟兄同伴鄰舍，那天百姓中被殺的約有三千；摩西宣告「今天你們要自潔，歸耶和華為聖」。CT：此事是利未支派受聖職服事神的契機（申33:9
-    摩西祝福十二支派時尊榮利未人此舉）。GT：「自潔」原文直譯是「今天你們的手已滿了為神」，即受聖職之意（七十士譯本比照出28:41 按手將他們分別為聖而譯）；利未支派當時是摩西本族，這關係或使他們一直忠於摩西與耶和華。BH：the
-    Levites' loyalty here is rewarded later when they are chosen to serve in the tabernacle
-    (Numbers 3:5-10)
-  surfaces:
-  - phrase: 凡屬耶和華的，都要到我這裡來
-    verses:
-    - 26
-  - phrase: 利未的子孫
-    verses:
-    - 26
-    - 28
-  target_path: link_folder/事件/利未人受聖職討罪.md
-- name: 從冊上塗抹（生命冊）
-  suggested_type: 互文
-  evidence: 出32:32-33 摩西求神「倘或你肯赦免他們的罪……不然，求你從你所寫的冊上塗抹我的名」，耶和華回答「誰得罪我，我就從我的冊上塗抹誰的名」。KC/CT：此「冊」即後來聖經中生命冊的概念（詩69:28「願他們從生命冊上被塗抹」、賽4:3、但12:1、路10:20、啟3:5、13:8），摩西甘願被塗抹以代贖百姓之罪的心志，預表基督替罪人受死（賽53:12）；但唯有基督才能真正成就代贖，摩西不能替百姓死。GT：舊約聖經背景註釋指出神明的帳簿在古美索不達米亞是很普遍的概念，簿上記載某人註定的命運和賞罰。BH：the
-    'book' likely refers to a divine record of those who belong to God, akin to Paul's
-    expression in Romans 9:3
-  surfaces:
-  - phrase: 從你所寫的冊上塗抹我的名
-    verses:
-    - 32
-  - phrase: 我就從我的冊上塗抹誰的名
-    verses:
-    - 33
-  target_path: link_folder/互文/從冊上塗抹（生命冊）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
