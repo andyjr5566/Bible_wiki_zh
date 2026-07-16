@@ -1,0 +1,277 @@
+book: 民數記
+chapter: 22
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 以色列在摩押平原安營
+  suggested_type: 事件
+  evidence: 民22:1 以色列人起行，在摩押平原、約但河東，對著耶利哥安營。四份註解均記載此為進迦南前最後驛站。
+  surfaces:
+  - phrase: 摩押平原
+  - phrase: 約但河東
+  - phrase: 對著耶利哥
+  target_path: link_folder/事件/以色列在摩押平原安營.md
+- name: 巴勒看見以色列擊敗亞摩利人
+  suggested_type: 事件
+  evidence: 民22:2-3 以色列人向亞摩利人所行的一切事，西撥的兒子巴勒都看見了。摩押人因以色列民甚多，就大大懼怕，心內憂急。丁良才：當時的亞摩利人和巴珊人都比摩押人強大，但都一一被以色列人擊敗。
+  surfaces:
+  - phrase: 巴勒看見
+  - phrase: 摩押人懼怕
+  - phrase: 心內憂急
+  target_path: link_folder/事件/巴勒看見以色列擊敗亞摩利人.md
+- name: 巴勒差遣使者召巴蘭
+  suggested_type: 事件
+  evidence: 民22:5-6 他差遣使者往大河邊的毗奪去，到比珥的兒子巴蘭本鄉那裡，召巴蘭來，說：有一宗民從埃及出來，遮滿地面，與我對居。這民比我強盛，現在求你來為我咒詛他們。丁良才：巴勒企圖借助鬼魔超自然的能力。
+  surfaces:
+  - phrase: 差遣使者
+  - phrase: 毗奪
+  - phrase: 比珥的兒子巴蘭
+  - phrase: 求你來為我咒詛
+  target_path: link_folder/事件/巴勒差遣使者召巴蘭.md
+- name: 摩押米甸長老拿卦金見巴蘭
+  suggested_type: 事件
+  evidence: 民22:7 摩押的長老和米甸的長老手裡拿著卦金，到了巴蘭那裡，將巴勒的話都告訴了他。丁良才：卦金指求見的禮物；巴蘭表徵以敬虔為得利門路的神僕。
+  surfaces:
+  - phrase: 摩押的長老
+  - phrase: 米甸的長老
+  - phrase: 卦金
+  - phrase: 巴勒的話
+  target_path: link_folder/事件/摩押米甸長老拿卦金見巴蘭.md
+- name: 神禁止巴蘭同去咒詛
+  suggested_type: 事件
+  evidence: 民22:8-12 巴蘭說：你們今夜在這裡住宿，我必照耶和華所曉諭我的回報你們。神臨到巴蘭那裡，說：在你這裡的人都是誰？巴蘭回答說：是摩押王西撥的兒子巴勒打發人到我這裡來...神對巴蘭說：你不可同他們去，也不可咒詛那民，因為那民是蒙福的。丁良才：巴蘭是異教徒，可能風聞真神耶和華，把祂當成眾神之一。
+  surfaces:
+  - phrase: 今夜住宿
+  - phrase: 照耶和華所曉諭
+  - phrase: 神臨到巴蘭
+  - phrase: 不可同他們去
+  - phrase: 那民是蒙福的
+  target_path: link_folder/事件/神禁止巴蘭同去咒詛.md
+- name: 巴勒再差遣更多更尊貴的使臣
+  suggested_type: 事件
+  evidence: 民22:13-17 巴勒又差遣使臣，比先前的又多又尊貴。他們到了巴蘭那裡，對他說：西撥的兒子巴勒這樣說：求你不容什麼事攔阻你不到我這裡來，因為我必使你得極大的尊榮。丁良才：巴勒對巴蘭讚賞的話，顯出他受信任之深；但也隱示其人以沒有原則著名，只要有錢就可辦事。
+  surfaces:
+  - phrase: 又差遣使臣
+  - phrase: 比先前又多又尊貴
+  - phrase: 極大的尊榮
+  - phrase: 向我要什麼我就給你
+  target_path: link_folder/事件/巴勒再差遣更多更尊貴的使臣.md
+- name: 神允許巴蘭同去但只說神的話
+  suggested_type: 事件
+  evidence: 民22:18-20 巴蘭回答巴勒的臣僕說：巴勒就是將他滿屋的金銀給我，我行大事小事也不得越過耶和華─我神的命。現在我請你們今夜在這裡住宿，等我得知耶和華還要對我說什麼。當夜，神臨到巴蘭那裡，說：這些人若來召你，你就起來同他們去，你只要遵行我對你所說的話。丁良才：神允許巴蘭去，但限制他只能說神的話。
+  surfaces:
+  - phrase: 滿屋的金銀
+  - phrase: 不得越過耶和華的命
+  - phrase: 遵行我對你所說的話
+  target_path: link_folder/事件/神允許巴蘭同去但只說神的話.md
+- name: 巴蘭騎驢遇耶和華使者
+  suggested_type: 事件
+  evidence: 民22:21-35 巴蘭早晨起來，備上驢，和摩押的使臣一同去了。神因他去就發了怒；耶和華的使者站在路上敵擋他...驢看見耶和華的使者站在路上，手裡有拔出來的刀，就從路上跨進田間...耶和華叫驢開口，對巴蘭說：我向你行了什麼，你竟打我這三次呢？...當時，耶和華使巴蘭的眼目明亮，他就看見耶和華的使者站在路上，手裡有拔出來的刀，巴蘭便低頭俯伏在地。丁良才：巴蘭雖蒙神光照，仍屬肉體，貪圖卦金，神用驢開口責備他。
+  surfaces:
+  - phrase: 備上驢
+  - phrase: 神因他去就發了怒
+  - phrase: 耶和華的使者站在路上
+  - phrase: 驢看見耶和華的使者
+  - phrase: 耶和華叫驢開口
+  - phrase: 巴蘭的眼目明亮
+  target_path: link_folder/事件/巴蘭騎驢遇耶和華使者.md
+- name: 巴勒迎接巴蘭到基列胡瑣
+  suggested_type: 事件
+  evidence: 民22:36-39 巴勒聽見巴蘭來了，就往摩押京城去迎接他...巴勒對巴蘭說：我不是急急地打發人到你那裡去召你嗎？你為何不到我這裡來呢？我豈不能使你得尊榮嗎？巴蘭說：我已經到你這裡來了！現在我豈能擅自說什麼呢？神將什麼話傳給我，我就說什麼。丁良才：巴蘭宣稱只說神的話，但心仍貪圖卦金。
+  surfaces:
+  - phrase: 巴勒迎接巴蘭
+  - phrase: 基列胡瑣
+  - phrase: 我豈不能使你得尊榮
+  - phrase: 神將什麼話傳給我
+  target_path: link_folder/事件/巴勒迎接巴蘭到基列胡瑣.md
+- name: 巴勒獻牛羊巴蘭觀看以色列營
+  suggested_type: 事件
+  evidence: 民22:40-41 巴勒宰了牛羊，送給巴蘭和陪伴的使臣。到了早晨，巴勒領巴蘭到巴力的高處；巴蘭從那裡觀看以色列營的邊界。丁良才：巴勒試圖從高處觀看以色列，尋找咒詛的切入點。
+  surfaces:
+  - phrase: 宰了牛羊
+  - phrase: 送給巴蘭
+  - phrase: 巴力的高處
+  - phrase: 觀看以色列營的邊界
+  target_path: link_folder/事件/巴勒獻牛羊巴蘭觀看以色列營.md
+- name: 巴蘭預表假先知貪圖卦金
+  suggested_type: 神學
+  evidence: 民22:7,17-18 摩押的長老和米甸的長老手裡拿著卦金...巴勒就是將他滿屋的金銀給我，我行大事小事也不得越過耶和華─我神的命。丁良才：巴蘭表徵以敬虔為得利門路的神僕；彼得後書2:15-16
+    巴蘭愛不義之工價。
+  surfaces:
+  - phrase: 卦金
+  - phrase: 滿屋的金銀
+  - phrase: 不義之工價
+  - phrase: 假先知
+  target_path: link_folder/神學/巴蘭預表假先知貪圖卦金.md
+- name: 神主權超越咒詛祝福
+  suggested_type: 神學
+  evidence: 民22:6,12 因為我知道，你為誰祝福，誰就得福；你咒詛誰，誰就受咒詛...神對巴蘭說：你不可同他們去，也不可咒詛那民，因為那民是蒙福的。丁良才：咒詛與祝福的權柄屬於神，不屬於術士。
+  surfaces:
+  - phrase: 為誰祝福誰就得福
+  - phrase: 咒詛誰誰就受咒詛
+  - phrase: 那民是蒙福的
+  - phrase: 神主權
+  target_path: link_folder/神學/神主權超越咒詛祝福.md
+- name: 驢開口說話預表神奇妙拯救
+  suggested_type: 神學
+  evidence: 民22:28-30 耶和華叫驢開口，對巴蘭說：我向你行了什麼，你竟打我這三次呢？巴蘭對驢說：因為你戲弄我...驢對巴蘭說：我不是你從小時直到今日所騎的驢嗎？我素常向你這樣行過嗎？丁良才：神用最卑微的驢開口責備貪圖卦金的先知，顯明神的智慧勝過人的狡詐。
+  surfaces:
+  - phrase: 耶和華叫驢開口
+  - phrase: 打我這三次
+  - phrase: 素常向你這樣行過嗎
+  target_path: link_folder/神學/驢開口說話預表神奇妙拯救.md
+- name: 巴蘭眼目明亮看見耶和華使者
+  suggested_type: 神學
+  evidence: 民22:31 當時，耶和華使巴蘭的眼目明亮，他就看見耶和華的使者站在路上，手裡有拔出來的刀，巴蘭便低頭俯伏在地。丁良才：屬靈眼目唯有神能開啟，巴蘭雖蒙光照，心仍屬肉體。
+  surfaces:
+  - phrase: 耶和華使巴蘭的眼目明亮
+  - phrase: 看見耶和華的使者
+  - phrase: 低頭俯伏在地
+  target_path: link_folder/神學/巴蘭眼目明亮看見耶和華使者.md
+- name: 摩押王巴勒
+  suggested_type: 人物
+  evidence: 民22:2-4,10,16 以色列人向亞摩利人所行的一切事，西撥的兒子巴勒都看見了...那時西撥的兒子巴勒作摩押王...巴勒又差遣使臣，比先前的又多又尊貴...巴勒就是將他滿屋的金銀給我。丁良才：巴勒表徵屬肉體的人，對屬靈的信徒似友非友。
+  surfaces:
+  - phrase: 巴勒
+  - phrase: 西撥的兒子
+  - phrase: 摩押王
+  - phrase: 滿屋的金銀
+  target_path: link_folder/人物/摩押王巴勒.md
+- name: 摩押長老
+  suggested_type: 人物
+  evidence: 民22:7 摩押的長老和米甸的長老手裡拿著卦金，到了巴蘭那裡。丁良才：摩押長老代表摩押族群的決策層。
+  surfaces:
+  - phrase: 摩押的長老
+  - phrase: 米甸的長老
+  - phrase: 拿著卦金
+  target_path: link_folder/人物/摩押長老.md
+- name: 巴蘭的驢
+  suggested_type: 人物
+  evidence: 民22:21-30 巴蘭早晨起來，備上驢...驢看見耶和華的使者站在路上...耶和華叫驢開口，對巴蘭說：我向你行了什麼，你竟打我這三次呢？丁良才：神用最卑微的驢開口責備貪圖卦金的先知。
+  surfaces:
+  - phrase: 驢
+  - phrase: 備上驢
+  - phrase: 驢開口
+  - phrase: 打我這三次
+  target_path: link_folder/人物/巴蘭的驢.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: 民22:1 以色列人起行，在摩押平原、約但河東，對著耶利哥安營。丁良才：摩押平原位於死海的北面，約但河的東面，以色列人在此停留一段不短的日子。
+  surfaces:
+  - phrase: 摩押平原
+  - phrase: 約但河東
+  - phrase: 對著耶利哥
+  target_path: link_folder/地點/摩押平原.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 民22:1 對著耶利哥安營。丁良才：耶利哥平原就在摩押平原的對面，中間隔著約但河。
+  surfaces:
+  - phrase: 耶利哥
+  - phrase: 對著耶利哥
+  target_path: link_folder/地點/耶利哥.md
+- name: 毗奪
+  suggested_type: 地點
+  evidence: 民22:5 他差遣使者往大河邊的毗奪去，到比珥的兒子巴蘭本鄉那裡。丁良才：大河邊的毗奪指幼發拉底河西岸的一個小鎮(申23:4)。
+  surfaces:
+  - phrase: 毗奪
+  - phrase: 大河邊的毗奪
+  - phrase: 幼發拉底河西岸
+  target_path: link_folder/地點/毗奪.md
+- name: 巴力的高處
+  suggested_type: 地點
+  evidence: 民22:41 到了早晨，巴勒領巴蘭到巴力的高處；巴蘭從那裡觀看以色列營的邊界。丁良才：巴勒試圖從高處觀看以色列，尋找咒詛的切入點。
+  surfaces:
+  - phrase: 巴力的高處
+  - phrase: 觀看以色列營的邊界
+  target_path: link_folder/地點/巴力的高處.md
+- name: 基列胡瑣
+  suggested_type: 地點
+  evidence: 民22:39 巴蘭和巴勒同行，來到基列胡瑣。丁良才：基列胡瑣在摩押境內，巴勒迎接巴蘭之地。
+  surfaces:
+  - phrase: 基列胡瑣
+  - phrase: 摩押京城
+  target_path: link_folder/地點/基列胡瑣.md
+- name: 卦金（qesem）
+  suggested_type: 原文
+  evidence: 民22:7 摩押的長老和米甸的長老手裡拿著卦金。希伯來文 קֶסֶם (qesem) 意為占卜、占卜費用。丁良才：卦金指求見的禮物。
+  surfaces:
+  - phrase: 卦金
+  - phrase: qesem
+  - phrase: 占卜費用
+  target_path: link_folder/原文/卦金（qesem）.md
+- name: 巴勒召巴蘭咒詛以色列互文
+  suggested_type: 互文
+  evidence: 民22:6 求你來為我咒詛他們 → 申23:4-5 因為他們沒有拿餅和水在路上迎接你們，並且價錢雇了巴蘭咒詛你們 → 尼13:2 我們的神卻使咒詛變為祝福。丁良才：神將咒詛變為祝福，保護祂的百姓。
+  surfaces:
+  - phrase: 求你來為我咒詛
+  - phrase: 申23:4-5
+  - phrase: 尼13:2
+  - phrase: 咒詛變為祝福
+  target_path: link_folder/互文/巴勒召巴蘭咒詛以色列互文.md
+- name: 巴蘭愛不義之工價互文
+  suggested_type: 互文
+  evidence: 民22:17-18 巴勒就是將他滿屋的金銀給我 → 彼後2:15-16 他們捨棄正路，隨從巴蘭的路，巴蘭愛不義之工價 → 猶1:11 因為他們走了該隱的路，貪圖巴蘭錯謬的工價。丁良才：巴蘭成為貪圖不義之財的典型警戒。
+  surfaces:
+  - phrase: 滿屋的金銀
+  - phrase: 彼後2:15-16
+  - phrase: 猶1:11
+  - phrase: 不義之工價
+  target_path: link_folder/互文/巴蘭愛不義之工價互文.md
+- name: 神使驢開口責備巴蘭互文
+  suggested_type: 互文
+  evidence: 民22:28 耶和華叫驢開口 → 彼後2:16 那無聲的驢開口說話，攔阻先知的狂妄。丁良才：神用最卑微的驢開口責備貪圖卦金的先知。
+  surfaces:
+  - phrase: 耶和華叫驢開口
+  - phrase: 彼後2:16
+  - phrase: 攔阻先知的狂妄
+  target_path: link_folder/互文/神使驢開口責備巴蘭互文.md
+- name: 巴蘭是否真先知還是假先知
+  suggested_type: 解經爭議
+  evidence: 民22:8,18 巴蘭說：我必照耶和華所曉諭我的回報你們...巴勒就是將他滿屋的金銀給我，我行大事小事也不得越過耶和華─我神的命。丁良才：巴蘭是異教術士，風聞耶和華，非真先知。彼得後書2:15-16
+    稱為愛不義之工價。啟導本：巴蘭原為預表基督，後被人當作偶像拜。
+  surfaces:
+  - phrase: 照耶和華所曉諭
+  - phrase: 不得越過耶和華的命
+  - phrase: 異教術士
+  - phrase: 愛不義之工價
+  target_path: link_folder/解經爭議/巴蘭是否真先知還是假先知.md
+- name: 神是否改變心意允許巴蘭同去
+  suggested_type: 解經爭議
+  evidence: 民22:12,20 神對巴蘭說：你不可同他們去...當夜，神臨到巴蘭那裡，說：這些人若來召你，你就起來同他們去。丁良才：神許可的旨意(允許去)與神完美的旨意(不該去)有別。
+  surfaces:
+  - phrase: 不可同他們去
+  - phrase: 你就起來同他們去
+  - phrase: 神許可的旨意
+  - phrase: 神完美的旨意
+  target_path: link_folder/解經爭議/神是否改變心意允許巴蘭同去.md
+D_new_candidate:
+- name: 巴蘭
+  suggested_type: 人物
+  evidence: 民22:5,8,18,31 比珥的兒子巴蘭...巴蘭說：你們今夜在這裡住宿...巴蘭回答巴勒的臣僕說：巴勒就是將他滿屋的金銀給我...當時，耶和華使巴蘭的眼目明亮。丁良才：巴蘭表徵以敬虔為得利門路的神僕；彼得後書2:15-16
+    巴蘭愛不義之工價。
+  surfaces:
+  - phrase: 巴蘭
+  - phrase: 比珥的兒子巴蘭
+  - phrase: 異教術士
+  - phrase: 貪圖卦金
+  match_type: type_conflict
+  note: 分類衝突：候選=人物，既有=地點，secondary=[]
+- name: 耶和華的使者
+  suggested_type: 人物
+  evidence: 民22:22-35 神因他去就發了怒；耶和華的使者站在路上敵擋他...手裡有拔出來的刀...巴蘭便低頭俯伏在地。丁良才：耶和華的使者代表神的公義審判與攔阻。
+  surfaces:
+  - phrase: 耶和華的使者
+  - phrase: 站在路上敵擋
+  - phrase: 手裡有拔出來的刀
+  match_type: type_conflict
+  note: 分類衝突：候選=人物，既有=神學，secondary=[]
+- name: 巴蘭（Balaam）
+  suggested_type: 原文
+  evidence: 民22:5 比珥的兒子巴蘭。希伯來文 בִּלְעָם (Bil'am) 意為非我民、吞滅百姓。丁良才：巴蘭表徵以敬虔為得利門路的神僕。
+  surfaces:
+  - phrase: 巴蘭
+  - phrase: Bil'am
+  - phrase: 非我民
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=地點，secondary=[]
+E_skip: []

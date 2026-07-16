@@ -1,0 +1,30 @@
+name: 神允許巴蘭同去但只說神的話
+type: 事件
+secondary_types: []
+aliases:
+- 神許巴蘭同去限制言語
+status: formal
+definition: 當夜神臨到巴蘭說：「這些人若來召你，你就起來同他們去，你只要遵行我對你所說的話」（民22:20）。巴蘭早晨備驢與摩押使臣同去（民22:21）。神雖允許同行，但嚴格限制只能說神所賜的話。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 22
+  summary: 記載神在第二次求問中允許巴蘭同去，但附加「只說神的話」條件，顯示神主權掌控巴蘭言語。
+  relation: 解釋為何神先禁止後允許（神是否改變心意允許巴蘭同去），並預示後續巴蘭只能發出祝福而非咒詛。
+related_entries:
+- 巴勒再差遣更多更尊貴的使臣
+- 巴蘭騎驢遇耶和華使者
+- 神是否改變心意允許巴蘭同去
+- 神主權超越咒詛祝福
+sources:
+- '逐節註解: 民數記22:18-21 神允許巴蘭同去但只說神的話（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT22.htm）'
+- '拾穗: 民數記22:18-21 神有條件的許可（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT22.htm）'
+- '研經註解: Numbers 22:18-21 God permits Balaam to go but only speak His word（https://www.kingcomments.com/en/bible-studies/Num/22）'
+- '研經註解: Numbers 22:18-21 And Balaam answered and said to the servants of Balak, "Though
+  Balak were to give me his house full of silver and gold..."（https://biblehub.com/study/numbers/22.htm）'
+created_from: numbers_22
+category: 事件
+trigger_sources:
+- 民數記 22:18-21
+current_data: {}
+pending: false

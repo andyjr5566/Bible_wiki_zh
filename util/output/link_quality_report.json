@@ -1,7 +1,7 @@
 {
-  "total_warnings": 89,
+  "total_warnings": 95,
   "critical_count": 0,
-  "warning_count": 89,
+  "warning_count": 95,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -37,6 +37,48 @@
       "source": "民數記/第21章.md",
       "target": "比珥",
       "message": "同一 alias「比珥」指向多個 target: 以色列在比珥向井歌唱, 比珥"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+    },
+    {
+      "type": "short_word_link",
+      "severity": "warning",
+      "source": "民數記/第22章.md",
+      "target": "巴蘭的驢|驢",
+      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
     },
     {
       "type": "alias_target_conflict",

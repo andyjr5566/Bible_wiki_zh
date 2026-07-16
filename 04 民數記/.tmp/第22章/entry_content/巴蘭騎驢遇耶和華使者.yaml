@@ -1,0 +1,31 @@
+name: 巴蘭騎驢遇耶和華使者
+type: 事件
+secondary_types: []
+aliases:
+- 巴蘭驢遇天使
+status: formal
+definition: 神因巴蘭去而發怒，耶和華使者站在路上敵擋。巴蘭騎驢，驢三次看見使者手持拔出的刀而避讓（進田間、貼牆擠傷腳、臥在地上），巴蘭三次打驢。耶和華叫驢開口責備巴蘭，隨後開巴蘭眼目，看見使者站在路上。使者責備巴蘭行事偏僻，說若非驢避讓，早殺巴蘭存驢。巴蘭認罪，使者囑咐同去但只說神的話（民22:22-35）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 22
+  summary: 記載巴蘭在路上遭遇耶和華使者攔阻，驢三次避讓、開口說話、巴蘭眼目明亮看見使者，確認神對巴蘭言語的絕對掌控。
+  relation: 以神蹟介入保護神旨意，回應「巴蘭是否真先知還是假先知」爭議，並預表神奇妙拯救（驢開口說話預表神奇妙拯救）。
+related_entries:
+- 神允許巴蘭同去但只說神的話
+- 巴蘭的驢
+- 巴蘭眼目明亮看見耶和華使者
+- 驢開口說話預表神奇妙拯救
+- 神使驢開口責備巴蘭互文
+sources:
+- '逐節註解: 民數記22:22-35 巴蘭騎驢遇耶和華使者、驢開口、眼目明亮（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT22.htm）'
+- '拾穗: 民數記22:22-35 驢與天使的神蹟意義（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT22.htm）'
+- '研經註解: Numbers 22:22-35 The angel of the Lord opposes Balaam, the donkey speaks（https://www.kingcomments.com/en/bible-studies/Num/22）'
+- '研經註解: Numbers 22:22-35 But God''s anger was kindled because he went, and the angel
+  of the Lord took his stand in the way as his adversary（https://biblehub.com/study/numbers/22.htm）'
+created_from: numbers_22
+category: 事件
+trigger_sources:
+- 民數記 22:22-35
+current_data: {}
+pending: false
