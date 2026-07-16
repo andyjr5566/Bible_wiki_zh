@@ -46,13 +46,6 @@
       "message": "同一 alias「七壇獻祭」指向多個 target: 七壇（shiv'ah mizbechot）, 巴蘭築七壇獻祭"
     },
     {
-      "type": "short_word_link",
-      "severity": "warning",
-      "source": "民數記/第24章.md",
-      "target": "星出於雅各（彌賽亞）|星",
-      "message": "短詞 link 缺少來源支撐: [[星出於雅各（彌賽亞）]]，檢查是否為普通詞誤連"
-    },
-    {
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "民數記/第25章.md",
@@ -380,6 +373,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第21章",
       "message": "同一 alias「第21章」指向多個 target: 03 利未記/第21章, 04 民數記/第21章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第26章",
+      "message": "同一 alias「第26章」指向多個 target: 03 利未記/第26章, 04 民數記/第26章"
     },
     {
       "type": "alias_target_conflict",

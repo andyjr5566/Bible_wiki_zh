@@ -1,0 +1,33 @@
+name: 普查總數與分地指示
+type: 事件
+secondary_types: []
+aliases:
+- 以色列總人數統計
+- 分地原則指示
+status: formal
+definition: 民數記第26章51-56節記載，第二次普查以色列全會眾（二十歲以上、能出去打仗的男丁）總數為六十萬零一千七百三十名。隨後耶和華曉諭摩西，要按人名數目將地分給他們為業：人多的多分，人少的少分，但仍要拈鬮分地，按祖宗支派名字承受為業，按所拈的鬮、看人數多寡分給產業。
+development: 此總數與第一次普查（民數記1:46，六十萬零三千五百五十名）相近，減少一千八百二十名。顯示神在曠野四十年間保守以色列民族整體數量穩定。分地指示結合「按人數比例」與「拈鬮」兩原則，體現神主權與公義並重。
+accumulations:
+- book: 民數記
+  chapter: 26
+  summary: 給出第二次普查總數（六十萬零一千七百三十名），並記載神關於按人數比例與拈鬮分地的具體指示。
+  relation: 本章普查的總結性事件，直接連結應許之地的產業分配，為約書亞記分地記事鋪路。
+related_entries:
+- 摩西
+- 以利亞撒
+- 摩押平原
+- 瘟疫後第二次人口普查
+- 人口普查（mipqad）
+- 拈鬮分地（goral）
+- 第二次普查總數與第一次相近預表神信實
+sources:
+- '逐節註解: 民數記26:51-56 普查總數與分地指示詳解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT26.htm）'
+- '拾穗: 民數記26 總數對比與分地原則（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT26.htm）'
+- '研經註解(KC): Numbers 26 總數統計與分地律例（https://www.kingcomments.com/en/bible-studies/Num/26）'
+- '研經註解(BH): Numbers 26 以色列總人數與產業分配（https://biblehub.com/study/numbers/26.htm）'
+created_from: numbers_26
+category: 事件
+trigger_sources:
+- bible_text
+current_data: true
+pending: false

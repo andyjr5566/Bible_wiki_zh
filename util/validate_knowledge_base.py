@@ -177,9 +177,12 @@ def validate_file(path, strict=False):
             else:
                 before_marker = text[accumulation.start(1):match.start()]
                 parent_headings = re.findall(r"^###\s+(.+?)\s*$", before_marker, re.M)
-                if not parent_headings or parent_headings[-1] != key[0]:
+                # Normalize book names for comparison (strip "04 " prefix)
+                normalized_parent_headings = [canonical_book_name(h) for h in parent_headings]
+                normalized_key_book = canonical_book_name(key[0])
+                if not normalized_parent_headings or normalized_parent_headings[-1] != normalized_key_book:
                     errors.append(
-                        f"{relative}: {key[0]}第{key[1]}章不在「### {key[0]}」之下"
+                        f"{relative}: {key[0]}第{key[1]}章不在「### {normalized_key_book}」之下"
                     )
                 if not re.match(
                     rf"\s*####\s+(?:\[\[[^\]|]*\|)?第{key[1]}章(?:\]\])?\s*$", body, re.M):

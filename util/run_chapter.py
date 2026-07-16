@@ -1008,7 +1008,8 @@ def validate_step(ctx, written):
     vkb.ROOT = ctx.root
     try:
         for path in written:
-            if path.name.startswith("第") and path.suffix == ".md":
+            # Chapter files match "第N章.md" pattern, not just starting with "第"
+            if re.fullmatch(r"第\d+章\.md", path.name):
                 errors.extend(vkb.validate_chapter(path))
             else:
                 file_errors, _ = vkb.validate_file(path, strict=True)
