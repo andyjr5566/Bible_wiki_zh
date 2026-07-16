@@ -1,0 +1,23 @@
+name: 巴蘭比珥之子被殺
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 民數記 31:8 記載以色列人在攻擊米甸時，除了殺盡米甸五王外，又用刀殺了比珥的兒子巴蘭，顯示巴蘭因其先前的計謀導致以色列人犯罪而受審判。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 31
+  summary: 記載以色列人殺了米甸五王，並用刀殺了比珥的兒子巴蘭。
+  relation: 本章記載巴蘭之死，作為米甸受審判的一部分。
+related_entries:
+- 攻擊米甸報仇
+- 殺盡米甸男丁與五王
+sources:
+- '逐節註解: 民數記 31 章逐節解釋（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT31.htm）'
+- '研經註解: Numbers 31 Study（https://biblehub.com/study/numbers/31.htm）'
+created_from: 民數記 31
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false
