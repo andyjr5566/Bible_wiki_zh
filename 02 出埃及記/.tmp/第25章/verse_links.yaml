@@ -7,6 +7,9 @@ links:
 - verse: 2
   phrase: 禮物
   target: 禮物（terumah）
+- verse: 2
+  phrase: 甘心樂意
+  target: 甘心樂意的奉獻
 - verse: 3
   phrase: 禮物
   target: 禮物（terumah）
@@ -35,10 +38,13 @@ links:
   phrase: 基路伯
   target: 基路伯（施恩座）
 - verse: 19
+  phrase: 二基路伯
+  target: 基路伯（施恩座）
+- verse: 19
   phrase: 施恩座
   target: 施恩座
 - verse: 20
-  phrase: 基路伯
+  phrase: 二基路伯
   target: 基路伯（施恩座）
 - verse: 20
   phrase: 施恩座
@@ -50,10 +56,13 @@ links:
   phrase: 法版
   target: 法版（edut）
 - verse: 22
+  phrase: 法櫃
+  target: 約櫃
+- verse: 22
   phrase: 施恩座
   target: 施恩座
 - verse: 22
-  phrase: 基路伯
+  phrase: 二基路伯
   target: 基路伯（施恩座）
 - verse: 23
   phrase: 皂莢木
@@ -61,3 +70,27 @@ links:
 - verse: 28
   phrase: 皂莢木
   target: 皂莢木（atzei shittim）
+- verse: 31
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 32
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 33
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 34
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 35
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 37
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 38
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 39
+  phrase: 燈臺
+  target: 金燈臺

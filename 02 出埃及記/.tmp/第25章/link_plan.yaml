@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 25
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 摩西
   suggested_type: 人物
   match_type: exact
@@ -13,12 +12,84 @@ B_needs_update:
   match_type: exact
   existing_title: 西乃山
   existing_path: link_folder/地點/西乃山.md
+- name: 甘心樂意的奉獻
+  suggested_type: 神學
+  evidence: 凡甘心樂意的人可送禮物歸神作建聖所之用；奉獻動機須出於甘心非勉強（出25:2-3）
+  match_type: exact
+  existing_title: 甘心樂意的奉獻
+  existing_path: link_folder/神學/甘心樂意的奉獻.md
+- name: 神住在人間
+  suggested_type: 神學
+  evidence: 又當為我造聖所，使我可以住在他們中間，是建造會幕的核心理由（出25:8）
+  match_type: exact
+  existing_title: 神住在人間
+  existing_path: link_folder/神學/神住在人間.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 製造帳幕和其中一切器具都要照所指示的樣式，全書多次重複強調（出25:9,40）
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+- name: 會幕材料的豫表
+  suggested_type: 神學
+  evidence: 金、銀、銅、藍紫朱紅線、細麻、山羊毛、染紅公羊皮、海狗皮、皂莢木、油、香料、寶石，各按其性質豫表基督與救恩（出25:3-7）
+  match_type: exact
+  existing_title: 會幕材料的豫表
+  existing_path: link_folder/神學/會幕材料的豫表.md
 - name: 基路伯與火劍
   suggested_type: 神學
   evidence: 出25:18-20兩個金錘出的基路伯安在施恩座兩頭；既有條目「基路伯與火劍」已涵蓋創3:24基路伯把守生命樹道路，本章屬同一天使類屬的第二次聖經出現，累積本章資料而非另建新條目
   match_type: exact
   existing_title: 基路伯與火劍
   existing_path: link_folder/神學/基路伯與火劍.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: 皂莢木包精金所造，長二肘半寬高一肘半，內存法版，是立約見證（出25:10-16,21-22）
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: 精金所造約櫃蓋，神在此與摩西相會說話，是遮罪、施恩之處（出25:17,21-22）
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 基路伯（施恩座）
+  suggested_type: 主題
+  evidence: 兩個金錘出的基路伯，安在施恩座兩頭，高張翅膀相對遮掩施恩座（出25:18-20）；與既有條目「基路伯與火劍」（創3:24守護生命樹）為不同實體，各按最小穩定限定詞分檔
+  match_type: exact
+  existing_title: 基路伯（施恩座）
+  existing_path: link_folder/主題/基路伯（施恩座）.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  evidence: 皂莢木包精金所造，桌上常擺陳設餅在耶和華面前（出25:23-30）
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  evidence: 精金一塊錘出，六枝七盞，杏花杯球花裝飾，是聖所唯一光源（出25:31-39）
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 皂莢木（atzei shittim）
+  suggested_type: 原文
+  evidence: 產於西乃曠野的堅硬木材，用以製造約櫃、桌子、燈臺骨架與槓（出25:5,10,13,23,28）
+  match_type: exact
+  existing_title: 皂莢木（atzei shittim）
+  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 禮物（terumah）
+  suggested_type: 原文
+  evidence: 甘心奉獻歸神的供物，非強索之物（出25:2-3）
+  match_type: exact
+  existing_title: 禮物（terumah）
+  existing_path: link_folder/原文/禮物（terumah）.md
+- name: 法版（edut）
+  suggested_type: 原文
+  evidence: 刻十誡的兩塊石版，是神與人立約的見證（出25:16,21）
+  match_type: exact
+  existing_title: 法版（edut）
+  existing_path: link_folder/原文/法版（edut）.md
 - name: 約1：14
   suggested_type: 互文
   evidence: 道成肉身，支搭帳棚住在我們中間，對照出25:8神住在人間
@@ -31,110 +102,91 @@ B_needs_update:
   match_type: exact
   existing_title: 約6：31-35 耶穌是生命的糧
   existing_path: link_folder/互文/約6：31-35 耶穌是生命的糧.md
-C_new_formal:
-- name: 甘心樂意的奉獻
-  suggested_type: 神學
-  evidence: 凡甘心樂意的人可送禮物歸神作建聖所之用；奉獻動機須出於甘心非勉強（出25:2-3）
-  target_path: link_folder/神學/甘心樂意的奉獻.md
-- name: 神住在人間
-  suggested_type: 神學
-  evidence: 又當為我造聖所，使我可以住在他們中間，是建造會幕的核心理由（出25:8）
-  target_path: link_folder/神學/神住在人間.md
-- name: 山上的樣式
-  suggested_type: 神學
-  evidence: 製造帳幕和其中一切器具都要照所指示的樣式，全書多次重複強調（出25:9,40）
-  target_path: link_folder/神學/山上的樣式.md
-- name: 會幕材料的豫表
-  suggested_type: 神學
-  evidence: 金、銀、銅、藍紫朱紅線、細麻、山羊毛、染紅公羊皮、海狗皮、皂莢木、油、香料、寶石，各按其性質豫表基督與救恩（出25:3-7）
-  target_path: link_folder/神學/會幕材料的豫表.md
-- name: 約櫃
-  suggested_type: 主題
-  evidence: 皂莢木包精金所造，長二肘半寬高一肘半，內存法版，是立約見證（出25:10-16,21-22）
-  target_path: link_folder/主題/約櫃.md
-- name: 施恩座
-  suggested_type: 主題
-  evidence: 精金所造約櫃蓋，神在此與摩西相會說話，是遮罪、施恩之處（出25:17,21-22）
-  target_path: link_folder/主題/施恩座.md
-- name: 基路伯（施恩座）
-  suggested_type: 主題
-  evidence: 兩個金錘出的基路伯，安在施恩座兩頭，高張翅膀相對遮掩施恩座（出25:18-20）；與既有條目「基路伯與火劍」（創3:24守護生命樹）為不同實體，各按最小穩定限定詞分檔
-  target_path: link_folder/主題/基路伯（施恩座）.md
-- name: 陳設餅桌子
-  suggested_type: 主題
-  evidence: 皂莢木包精金所造，桌上常擺陳設餅在耶和華面前（出25:23-30）
-  target_path: link_folder/主題/陳設餅桌子.md
-- name: 金燈臺
-  suggested_type: 主題
-  evidence: 精金一塊錘出，六枝七盞，杏花杯球花裝飾，是聖所唯一光源（出25:31-39）
-  target_path: link_folder/主題/金燈臺.md
-- name: 皂莢木（atzei shittim）
-  suggested_type: 原文
-  evidence: 產於西乃曠野的堅硬木材，用以製造約櫃、桌子、燈臺骨架與槓（出25:5,10,13,23,28）
-  target_path: link_folder/原文/皂莢木（atzei shittim）.md
-- name: 禮物（terumah）
-  suggested_type: 原文
-  evidence: 甘心奉獻歸神的供物，非強索之物（出25:2-3）
-  target_path: link_folder/原文/禮物（terumah）.md
-- name: 法版（edut）
-  suggested_type: 原文
-  evidence: 刻十誡的兩塊石版，是神與人立約的見證（出25:16,21）
-  target_path: link_folder/原文/法版（edut）.md
 - name: 天上事的形狀和影像（來8：5）
   suggested_type: 互文
   evidence: 摩西謹慎照山上指示的樣式建造帳幕，對照出25:9,40
-  target_path: link_folder/互文/天上事的形狀和影像（來8：5）.md
+  match_type: exact
+  existing_title: 天上事的形狀和影像（來8：5）
+  existing_path: link_folder/互文/天上事的形狀和影像（來8：5）.md
 - name: 頭一層帳幕作現今的表樣（來9：8-9）
   suggested_type: 互文
   evidence: 頭一層帳幕仍存的時候，進入至聖所的路還未顯明，對照出25:8-9
-  target_path: link_folder/互文/頭一層帳幕作現今的表樣（來9：8-9）.md
+  match_type: exact
+  existing_title: 頭一層帳幕作現今的表樣（來9：8-9）
+  existing_path: link_folder/互文/頭一層帳幕作現今的表樣（來9：8-9）.md
 - name: 天上真帳幕的祭物（來9：11-12）
   suggested_type: 互文
   evidence: 基督作大祭司經過更大更全備的帳幕，成就永遠的救贖，對照出25:9
-  target_path: link_folder/互文/天上真帳幕的祭物（來9：11-12）.md
+  match_type: exact
+  existing_title: 天上真帳幕的祭物（來9：11-12）
+  existing_path: link_folder/互文/天上真帳幕的祭物（來9：11-12）.md
 - name: 天上真聖所（來9：23-24）
   suggested_type: 互文
   evidence: 地上帳幕是天上事物的複本，基督親自進入天上真聖所，對照出25:8-9
-  target_path: link_folder/互文/天上真聖所（來9：23-24）.md
+  match_type: exact
+  existing_title: 天上真聖所（來9：23-24）
+  existing_path: link_folder/互文/天上真聖所（來9：23-24）.md
 - name: 挽回祭（羅3：25）
   suggested_type: 互文
   evidence: 神設立耶穌作挽回祭，原文與施恩座同字，對照出25:17
-  target_path: link_folder/互文/挽回祭（羅3：25）.md
+  match_type: exact
+  existing_title: 挽回祭（羅3：25）
+  existing_path: link_folder/互文/挽回祭（羅3：25）.md
 - name: 耶穌以身體為殿（約2：19-21）
   suggested_type: 互文
   evidence: 耶穌以自己的身體為殿，對照出25:8-9
-  target_path: link_folder/互文/耶穌以身體為殿（約2：19-21）.md
+  match_type: exact
+  existing_title: 耶穌以身體為殿（約2：19-21）
+  existing_path: link_folder/互文/耶穌以身體為殿（約2：19-21）.md
 - name: 世界的光（約8：12）
   suggested_type: 互文
   evidence: 我是世界的光，跟從我的必得著生命的光，對照出25:31-37金燈臺
-  target_path: link_folder/互文/世界的光（約8：12）.md
+  match_type: exact
+  existing_title: 世界的光（約8：12）
+  existing_path: link_folder/互文/世界的光（約8：12）.md
 - name: 七個金燈臺的奧祕（啟1：20）
   suggested_type: 互文
   evidence: 七個金燈臺就是七個教會，對照出25:31-39
-  target_path: link_folder/互文/七個金燈臺的奧祕（啟1：20）.md
+  match_type: exact
+  existing_title: 七個金燈臺的奧祕（啟1：20）
+  existing_path: link_folder/互文/七個金燈臺的奧祕（啟1：20）.md
 - name: 精金之城（啟21：18）
   suggested_type: 互文
   evidence: 新耶路撒冷是精金所造，對照出25:11,24,31等處精金
-  target_path: link_folder/互文/精金之城（啟21：18）.md
+  match_type: exact
+  existing_title: 精金之城（啟21：18）
+  existing_path: link_folder/互文/精金之城（啟21：18）.md
 - name: 四活物的形象（結1：5-11）
   suggested_type: 互文
   evidence: 以西結所見基路伯異象，人面獸身有翅膀，對照出25:18-20
-  target_path: link_folder/互文/四活物的形象（結1：5-11）.md
+  match_type: exact
+  existing_title: 四活物的形象（結1：5-11）
+  existing_path: link_folder/互文/四活物的形象（結1：5-11）.md
 - name: 金燈臺與聖靈（亞4：1-6）
   suggested_type: 互文
   evidence: 撒迦利亞所見金燈臺異象，七盞燈是神的靈，對照出25:31-37
-  target_path: link_folder/互文/金燈臺與聖靈（亞4：1-6）.md
+  match_type: exact
+  existing_title: 金燈臺與聖靈（亞4：1-6）
+  existing_path: link_folder/互文/金燈臺與聖靈（亞4：1-6）.md
 - name: 不可摸約櫃（撒下6：6-7）
   suggested_type: 互文
   evidence: 烏撒摸約櫃遭擊殺，顯明約櫃的神聖不可直接觸碰，對照出25:14-15槓不可抽出
-  target_path: link_folder/互文/不可摸約櫃（撒下6：6-7）.md
+  match_type: exact
+  existing_title: 不可摸約櫃（撒下6：6-7）
+  existing_path: link_folder/互文/不可摸約櫃（撒下6：6-7）.md
 - name: 甘心樂意的奉獻（林後9：7）
   suggested_type: 互文
   evidence: 各人隨本心所酌定的，捐得樂意的人是神所喜愛的，對照出25:2甘心樂意的奉獻
-  target_path: link_folder/互文/甘心樂意的奉獻（林後9：7）.md
+  match_type: exact
+  existing_title: 甘心樂意的奉獻（林後9：7）
+  existing_path: link_folder/互文/甘心樂意的奉獻（林後9：7）.md
 - name: 聖殿中的基路伯（王上6：23-28）
   suggested_type: 互文
   evidence: 所羅門聖殿至聖所內兩個包金的基路伯，對照出25:18-20
-  target_path: link_folder/互文/聖殿中的基路伯（王上6：23-28）.md
+  match_type: exact
+  existing_title: 聖殿中的基路伯（王上6：23-28）
+  existing_path: link_folder/互文/聖殿中的基路伯（王上6：23-28）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
