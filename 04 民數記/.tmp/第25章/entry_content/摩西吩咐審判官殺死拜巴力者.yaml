@@ -1,0 +1,26 @@
+name: 摩西吩咐審判官殺死拜巴力者
+type: 事件
+secondary_types: []
+aliases:
+- 審判官殺拜巴力者
+status: formal
+definition: 摩西吩咐以色列審判官，凡與巴力毘珥連合的，各人要把他們殺了（民數記 25:5）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 25
+  summary: 記載摩西傳達神命令，命審判官處決拜巴力者。
+  relation: 緊接神吩咐懸掛族長，實際執行審判的步驟。
+related_entries:
+- 神吩咐摩西懸掛族長
+- 非尼哈以熱心止息瘟疫
+- 心利帶米甸女人哥斯比進亭子
+- 心利與哥斯比被殺
+sources:
+- '逐節註解: 民數記 25 章逐節解釋（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT25.htm）'
+- '研經註解: Numbers 25 Study（https://biblehub.com/study/numbers/25.htm）'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

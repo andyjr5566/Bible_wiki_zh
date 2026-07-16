@@ -1,0 +1,28 @@
+name: 巴蘭預言基提人苦害亞述希伯
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 巴蘭又題起第七首詩歌：哀哉，神行這事誰能得活？必有人乘船從基提界而來，苦害亞述、苦害希伯，他也必至沉淪（民24:23-24）。
+development: 基提人（指塞浦路斯/希臘海上勢力，後引申為羅馬）從海上而來征服亞述與希伯（迦勒底/巴比倫），但最終亦歸沉淪，呈現列國興衰在神主權下的循環。
+accumulations:
+- book: 民數記
+  chapter: 24
+  summary: 第七首詩歌：基提船隊苦害亞述希伯，最終亦沉淪。
+  relation: 結束巴蘭七首詩歌，展示神掌管列國興廢史觀。
+related_entries:
+- 基提
+- 基提（Kittim）
+- 亞述
+- 巴蘭預言以色列得摩押亞瑪力基尼地
+sources:
+- '逐節註解: 民數記24:23-24 基提船隊苦害亞述希伯（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT24.htm）'
+- '拾穗: 民數記24:23-24 基提人苦害亞述（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT24.htm）'
+- '研經註解: Numbers 24:23-24 Ships of Kittim afflict Asshur and Eber（https://www.kingcomments.com/en/bible-studies/Num/24）'
+- '研經註解: Numbers 24:23-24 Kittim ships against Assyria and Eber（https://biblehub.com/study/numbers/24.htm）'
+created_from: numbers_24
+category: 事件
+trigger_sources:
+- 民數記24:23-24
+current_data: {}
+pending: false

@@ -1,0 +1,29 @@
+name: 巴蘭見神喜悅賜福不求法術
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 巴蘭見耶和華喜歡賜福與以色列，不再像前兩次去求法術，卻面向曠野，表明他不再試圖用占卜手段操控神意，而是順服神的旨意發預言（民24:1）。
+development: 此事件標誌巴蘭從「求法術」的占卜者轉為「神的靈臨到」的先知口舌，顯示神主權掌控預言內容。
+accumulations:
+- book: 民數記
+  chapter: 24
+  summary: 巴蘭見神喜悅賜福以色列，不再求法術，面向曠野準備發預言。
+  relation: 本章預言序幕，顯示巴蘭態度轉變與神主權介入。
+related_entries:
+- 巴勒
+- 摩押平原
+- 曠野
+- 巴蘭舉目看見以色列按支派居住
+- 巴蘭是否真心順服神
+sources:
+- '逐節註解: 民數記24:1 巴蘭不再求法術（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT24.htm）'
+- '拾穗: 民數記24:1 巴蘭面向曠野（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT24.htm）'
+- '研經註解: Numbers 24:1 Balaam did not resort to divination（https://www.kingcomments.com/en/bible-studies/Num/24）'
+- '研經註解: Numbers 24:1 Balaam looked toward the wilderness（https://biblehub.com/study/numbers/24.htm）'
+created_from: numbers_24
+category: 事件
+trigger_sources:
+- 民數記24:1
+current_data: {}
+pending: false

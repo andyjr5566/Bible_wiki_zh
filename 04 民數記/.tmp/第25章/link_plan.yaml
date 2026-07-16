@@ -1,0 +1,312 @@
+book: 民數記
+chapter: 25
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民25:4-5 耶和華吩咐摩西說...摩西吩咐以色列的審判官說...四份註解均記載摩西作中保領袖執行神的審判。
+  surfaces:
+  - phrase: 摩西
+  - phrase: 中保領袖
+  - phrase: 執行神的審判
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 非尼哈
+  suggested_type: 人物
+  evidence: 民25:7-13 祭司亞倫的孫子，以利亞撒的兒子非尼哈看見了，就從會中起來，手裡拿著槍...便將以色列人和那女人由腹中刺透...耶和華曉諭摩西說：祭司亞倫的孫子，以利亞撒的兒子非尼哈，使我向以色列人所發的怒消了。
+    丁良才：非尼哈的熱心為神，止息了神的忿怒，得永遠祭司職任。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 亞倫的孫子
+  - phrase: 以利亞撒的兒子
+  - phrase: 槍
+  - phrase: 熱心為神
+  - phrase: 平安的約
+  match_type: exact
+  existing_title: 非尼哈
+  existing_path: link_folder/人物/非尼哈.md
+C_new_formal:
+- name: 以色列在什亭與摩押女子行淫
+  suggested_type: 事件
+  evidence: 民25:1-2 以色列人住在什亭，百姓與摩押女子行起淫亂。因為這女子叫百姓來，一同給他們的神獻祭，百姓就吃他們的祭物，跪拜他們的神。丁良才：什亭在摩押平原，為進迦南前最後驛站；淫亂與拜偶像並行。
+  surfaces:
+  - phrase: 什亭
+  - phrase: 摩押女子
+  - phrase: 行淫亂
+  - phrase: 給他們的神獻祭
+  - phrase: 吃他們的祭物
+  - phrase: 跪拜他們的神
+  target_path: link_folder/事件/以色列在什亭與摩押女子行淫.md
+- name: 以色列與巴力毘珥連合
+  suggested_type: 事件
+  evidence: 民25:3 以色列人與巴力毘珥連合，耶和華的怒氣就向以色列人發作。丁良才：巴力毘珥為摩押當地巴力崇拜，連合意指立約關係，屬靈姦淫。
+  surfaces:
+  - phrase: 巴力毘珥
+  - phrase: 連合
+  - phrase: 耶和華的怒氣
+  target_path: link_folder/事件/以色列與巴力毘珥連合.md
+- name: 神吩咐摩西懸掛族長
+  suggested_type: 事件
+  evidence: 民25:4 耶和華吩咐摩西說：將百姓中所有的族長在我面前對著日頭懸掛，使我向以色列人所發的怒氣可以消了。丁良才：公開處決領袖，顯明罪的嚴重與神公義的要求。
+  surfaces:
+  - phrase: 將族長懸掛
+  - phrase: 對著日頭
+  - phrase: 怒氣可以消了
+  target_path: link_folder/事件/神吩咐摩西懸掛族長.md
+- name: 摩西吩咐審判官殺死拜巴力者
+  suggested_type: 事件
+  evidence: 民25:5 摩西吩咐以色列的審判官說：凡屬你們的人，有與巴力毘珥連合的，你們各人要把他們殺了。丁良才：審判官執行公義，清除營中惡。
+  surfaces:
+  - phrase: 審判官
+  - phrase: 各人要把他們殺了
+  - phrase: 清除營中惡
+  target_path: link_folder/事件/摩西吩咐審判官殺死拜巴力者.md
+- name: 心利帶米甸女人哥斯比進亭子
+  suggested_type: 事件
+  evidence: 民25:6-8 摩西和以色列全會眾正在會幕門前哭泣的時候，誰知，有以色列中的一個人，當他們眼前，帶著一個米甸女人到他弟兄那裡去...非尼哈...手裡拿著槍，跟隨那以色列人進亭子裡去，便將以色列人和那女人由腹中刺透。丁良才：公開挑戰神的律法，非尼哈以熱心執行公義。
+  surfaces:
+  - phrase: 心利
+  - phrase: 哥斯比
+  - phrase: 米甸女人
+  - phrase: 進亭子
+  - phrase: 由腹中刺透
+  target_path: link_folder/事件/心利帶米甸女人哥斯比進亭子.md
+- name: 非尼哈以熱心止息瘟疫
+  suggested_type: 事件
+  evidence: 民25:8-9 非尼哈...手裡拿著槍，跟隨那以色列人進亭子裡去，便將以色列人和那女人由腹中刺透。這樣，在以色列人中瘟疫就止息了。那時遭瘟疫死的，有二萬四千人。丁良才：非尼哈的熱心為神，止息了神的忿怒。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 槍
+  - phrase: 瘟疫止息
+  - phrase: 二萬四千人
+  target_path: link_folder/事件/非尼哈以熱心止息瘟疫.md
+- name: 神賜非尼哈平安的約
+  suggested_type: 事件
+  evidence: 民25:10-13 耶和華曉諭摩西說：祭司亞倫的孫子，以利亞撒的兒子非尼哈，使我向以色列人所發的怒消了...我將我平安的約賜給他。這約要給他和他的後裔，作為永遠當祭司職任的約。丁良才：非尼哈的熱心換來永遠祭司職任的應許。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 平安的約
+  - phrase: 永遠當祭司職任
+  - phrase: 為神有忌邪的心
+  target_path: link_folder/事件/神賜非尼哈平安的約.md
+- name: 心利與哥斯比被殺
+  suggested_type: 事件
+  evidence: 民25:14-15 那與米甸女人一同被殺的以色列人，名叫心利，是撒路的兒子，是西緬一個宗族的首領。那被殺的米甸女人，名叫哥斯比，是蘇珥的女兒；這蘇珥是米甸一個宗族的首領。丁良才：領袖帶頭犯罪，受公義審判。
+  surfaces:
+  - phrase: 心利
+  - phrase: 哥斯比
+  - phrase: 西緬宗族首領
+  - phrase: 米甸宗族首領
+  target_path: link_folder/事件/心利與哥斯比被殺.md
+- name: 神吩咐擾害擊殺米甸人
+  suggested_type: 事件
+  evidence: 民25:16-18 耶和華曉諭摩西說：你要擾害米甸人，擊殺他們；因為他們用詭計擾害你們，在毘珥的事上和他們的姊妹、米甸首領的女兒哥斯比的事上，用這詭計誘惑了你們。
+  surfaces:
+  - phrase: 擾害米甸人
+  - phrase: 擊殺他們
+  - phrase: 用詭計誘惑
+  - phrase: 毘珥的事
+  target_path: link_folder/事件/神吩咐擾害擊殺米甸人.md
+- name: 非尼哈的熱心為神
+  suggested_type: 神學
+  evidence: 民25:11-13 非尼哈...使我向以色列人所發的怒消了；因他在他們中間，以我的忌邪為心，使我不在忌邪中把他們除滅。因此，你要說：我將我平安的約賜給他。丁良才：非尼哈的熱心為神，止息了神的忿怒，得永遠祭司職任。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 忌邪為心
+  - phrase: 平安的約
+  - phrase: 永遠祭司職任
+  target_path: link_folder/神學/非尼哈的熱心為神.md
+- name: 公開的罪與公開的審判
+  suggested_type: 神學
+  evidence: 民25:4-5 耶和華吩咐摩西說：將百姓中所有的族長在我面前對著日頭懸掛...摩西吩咐以色列的審判官說：凡屬你們的人，有與巴力毘珥連合的，你們各人要把他們殺了。丁良才：罪在公開場合犯，審判也在公開場合行，顯明神的聖潔與公義。
+  surfaces:
+  - phrase: 對著日頭懸掛
+  - phrase: 審判官
+  - phrase: 公開審判
+  - phrase: 神的聖潔與公義
+  target_path: link_folder/神學/公開的罪與公開的審判.md
+- name: 瘟疫作為神的審判
+  suggested_type: 神學
+  evidence: 民25:8-9 非尼哈...便將以色列人和那女人由腹中刺透。這樣，在以色列人中瘟疫就止息了。那時遭瘟疫死的，有二萬四千人。丁良才：瘟疫是神對拜偶像與姦淫的審判，非尼哈的行動止息了審判。
+  surfaces:
+  - phrase: 瘟疫
+  - phrase: 止息
+  - phrase: 二萬四千人
+  - phrase: 神的審判
+  target_path: link_folder/神學/瘟疫作為神的審判.md
+- name: 米甸人的詭計與毘珥之事
+  suggested_type: 神學
+  evidence: 民25:16-18 耶和華曉諭摩西說：你要擾害米甸人，擊殺他們；因為他們用詭計擾害你們，在毘珥的事上...用這詭計誘惑了你們。 丁良才：米甸人主動設謀誘惑以色列，神命令報應。
+  surfaces:
+  - phrase: 米甸人
+  - phrase: 用詭計
+  - phrase: 毘珥的事
+  - phrase: 擊殺米甸人
+  target_path: link_folder/神學/米甸人的詭計與毘珥之事.md
+- name: 心利
+  suggested_type: 人物
+  evidence: 民25:14 那與米甸女人一同被殺的以色列人，名叫心利，是撒路的兒子，是西緬一個宗族的首領。 丁良才：西緬宗族首領帶頭犯罪，受公義審判。
+  surfaces:
+  - phrase: 心利
+  - phrase: 西緬宗族首領
+  - phrase: 被殺
+  target_path: link_folder/人物/心利.md
+- name: 哥斯比
+  suggested_type: 人物
+  evidence: 民25:15 那被殺的米甸女人，名叫哥斯比，是蘇珥的女兒；這蘇珥是米甸一個宗族的首領。 丁良才：米甸宗族首領的女兒，作誘惑的工具。
+  surfaces:
+  - phrase: 哥斯比
+  - phrase: 米甸宗族首領的女兒
+  - phrase: 被殺
+  target_path: link_folder/人物/哥斯比.md
+- name: 米甸人
+  suggested_type: 人物
+  evidence: 民25:16-18 耶和華曉諭摩西說：你要擾害米甸人，擊殺他們；因為他們用詭計擾害你們，在毘珥的事上...用這詭計誘惑了你們。 丁良才：米甸人主動設謀誘惑以色列，神命令報應。
+  surfaces:
+  - phrase: 米甸人
+  - phrase: 用詭計
+  - phrase: 毘珥的事
+  - phrase: 擊殺米甸人
+  target_path: link_folder/人物/米甸人.md
+- name: 什亭
+  suggested_type: 地點
+  evidence: 民25:1 以色列人住在什亭。丁良才：什亭在摩押平原，為進迦南前最後驛站。
+  surfaces:
+  - phrase: 什亭
+  - phrase: 摩押平原
+  - phrase: 進迦南前最後驛站
+  target_path: link_folder/地點/什亭.md
+- name: 巴力毘珥
+  suggested_type: 地點
+  evidence: 民25:3 以色列人與巴力毘珥連合。丁良才：巴力毘珥為摩押當地巴力崇拜，連合意指立約關係，屬靈姦淫。
+  surfaces:
+  - phrase: 巴力毘珥
+  - phrase: 連合
+  - phrase: 屬靈姦淫
+  target_path: link_folder/地點/巴力毘珥.md
+- name: 會幕門前
+  suggested_type: 地點
+  evidence: 民25:6 摩西和以色列全會眾正在會幕門前哭泣。丁良才：會幕門前為神同在之處，百姓在此哭泣求憐憫。
+  surfaces:
+  - phrase: 會幕門前
+  - phrase: 哭泣
+  - phrase: 求憐憫
+  target_path: link_folder/地點/會幕門前.md
+- name: 心利（Zimri）
+  suggested_type: 原文
+  evidence: 民25:14 那與米甸女人一同被殺的以色列人，名叫心利。 希伯來文 זִמְרִי (Zimri) 意為我的音樂、讚美。丁良才：西緬宗族首領，卻帶頭犯罪。
+  surfaces:
+  - phrase: 心利
+  - phrase: Zimri
+  - phrase: 我的音樂
+  target_path: link_folder/原文/心利（Zimri）.md
+- name: 哥斯比（Cozbi）
+  suggested_type: 原文
+  evidence: 民25:15 那被殺的米甸女人，名叫哥斯比。 希伯來文 כָּזְבִּי (Cozbi) 意為虛謊、欺騙。丁良才：米甸宗族首領的女兒，作誘惑的工具。
+  surfaces:
+  - phrase: 哥斯比
+  - phrase: Cozbi
+  - phrase: 虛謊
+  target_path: link_folder/原文/哥斯比（Cozbi）.md
+- name: 毘珥（Peor）
+  suggested_type: 原文
+  evidence: 民25:3 以色列人與巴力毘珥連合。 希伯來文 פְּעוֹר (Peor) 意為開口、裂口。丁良才：毘珥為摩押地名，巴力毘珥為當地巴力崇拜。
+  surfaces:
+  - phrase: 毘珥
+  - phrase: Peor
+  - phrase: 開口
+  target_path: link_folder/原文/毘珥（Peor）.md
+- name: 非尼哈的熱心止息神的忿怒
+  suggested_type: 互文
+  evidence: 民25:11-13 非尼哈...使我向以色列人所發的怒消了...我將我平安的約賜給他 → 詩106:30-31 非尼哈站起來執行判斷，這就算為他的義
+    → 羅3:25-26 神設立耶穌作挽回祭，藉著信，憑他的血，顯明神的義。 丁良才：非尼哈的熱心預表基督的代贖，止息神的忿怒。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 平安的約
+  - phrase: 詩106:30-31
+  - phrase: 羅3:25-26
+  - phrase: 挽回祭
+  target_path: link_folder/互文/非尼哈的熱心止息神的忿怒.md
+- name: 公開的罪與公開的審判
+  suggested_type: 互文
+  evidence: 民25:4-5 將百姓中所有的族長在我面前對著日頭懸掛...各人要把他們殺了 → 申13:11 眾以色列人都要聽見害怕，就不再在你們中間行這樣惡事
+    → 徒5:11 眾教會和一切聽見的人都甚懼怕。 丁良才：公開審判使百姓懼怕，不再犯罪。
+  surfaces:
+  - phrase: 對著日頭懸掛
+  - phrase: 審判官
+  - phrase: 公開審判
+  - phrase: 徒5:11
+  target_path: link_folder/互文/公開的罪與公開的審判.md
+- name: 非尼哈的熱心預表基督的代贖
+  suggested_type: 互文
+  evidence: 民25:11-13 非尼哈...使我向以色列人所發的怒消了...我將我平安的約賜給他 → 來7:25 他既長遠活著，常為他們祈求，就能拯救到底
+    → 羅5:9 我們既靠著他的血稱義，就更要藉著他免去神的忿怒。 丁良才：非尼哈的熱心預表基督的代贖，止息神的忿怒。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 平安的約
+  - phrase: 來7:25
+  - phrase: 羅5:9
+  - phrase: 代贖
+  target_path: link_folder/互文/非尼哈的熱心預表基督的代贖.md
+- name: 公開的罪與公開的審判
+  suggested_type: 互文
+  evidence: 民25:4-5 將百姓中所有的族長在我面前對著日頭懸掛...各人要把他們殺了 → 申13:11 眾以色列人都要聽見害怕，就不再在你們中間行這樣惡事
+    → 徒5:11 眾教會和一切聽見的人都甚懼怕。 丁良才：公開審判使百姓懼怕，不再犯罪。
+  surfaces:
+  - phrase: 對著日頭懸掛
+  - phrase: 審判官
+  - phrase: 公開審判
+  - phrase: 徒5:11
+  target_path: link_folder/互文/公開的罪與公開的審判.md
+- name: 非尼哈的熱心預表基督的代贖
+  suggested_type: 互文
+  evidence: 民25:11-13 非尼哈...使我向以色列人所發的怒消了...我將我平安的約賜給他 → 來7:25 他既長遠活著，常為他們祈求，就能拯救到底
+    → 羅5:9 我們既靠著他的血稱義，就更要藉著他免去神的忿怒。 丁良才：非尼哈的熱心預表基督的代贖，止息神的忿怒。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 平安的約
+  - phrase: 來7:25
+  - phrase: 羅5:9
+  - phrase: 代贖
+  target_path: link_folder/互文/非尼哈的熱心預表基督的代贖.md
+- name: 公開的罪與公開的審判
+  suggested_type: 互文
+  evidence: 民25:4-5 將百姓中所有的族長在我面前對著日頭懸掛...各人要把他們殺了 → 申13:11 眾以色列人都要聽見害怕，就不再在你們中間行這樣惡事
+    → 徒5:11 眾教會和一切聽見的人都甚懼怕。 丁良才：公開審判使百姓懼怕，不再犯罪。
+  surfaces:
+  - phrase: 對著日頭懸掛
+  - phrase: 審判官
+  - phrase: 公開審判
+  - phrase: 徒5:11
+  target_path: link_folder/互文/公開的罪與公開的審判.md
+- name: 非尼哈是否真心為神還是為個人榮耀
+  suggested_type: 解經爭議
+  evidence: 民25:7-8 非尼哈...手裡拿著槍，跟隨那以色列人進亭子裡去，便將以色列人和那女人由腹中刺透。 丁良才：非尼哈的熱心為神，非出於私慾。啟導本：非尼哈的行動雖極端，卻蒙神悅納。串珠：非尼哈的熱心被算為義(詩106:30-31)。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: 槍
+  - phrase: 熱心為神
+  - phrase: 詩106:30-31
+  target_path: link_folder/解經爭議/非尼哈是否真心為神還是為個人榮耀.md
+- name: 神是否命令摩西懸掛族長還是審判官執行
+  suggested_type: 解經爭議
+  evidence: 民25:4-5 耶和華吩咐摩西說：將百姓中所有的族長在我面前對著日頭懸掛...摩西吩咐以色列的審判官說：凡屬你們的人，有與巴力毘珥連合的，你們各人要把他們殺了。
+    丁良才：神命令懸掛族長作警示，審判官執行具體審判。啟導本：神的命令針對領袖，審判官執行細節。
+  surfaces:
+  - phrase: 懸掛族長
+  - phrase: 審判官執行
+  - phrase: 神的命令
+  - phrase: 領袖受審判
+  target_path: link_folder/解經爭議/神是否命令摩西懸掛族長還是審判官執行.md
+D_new_candidate:
+- name: 非尼哈（Phinehas）
+  suggested_type: 原文
+  evidence: 民25:7 祭司亞倫的孫子，以利亞撒的兒子非尼哈。希伯來文 פִּינְחָס (Pinchas) 意為銅口、嘴邊有銅。丁良才：非尼哈的熱心為神，如銅般剛強。
+  surfaces:
+  - phrase: 非尼哈
+  - phrase: Pinchas
+  - phrase: 銅口
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=人物，secondary=[]
+E_skip: []

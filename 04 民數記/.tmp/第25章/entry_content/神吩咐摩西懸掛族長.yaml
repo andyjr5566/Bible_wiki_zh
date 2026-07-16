@@ -1,0 +1,26 @@
+name: 神吩咐摩西懸掛族長
+type: 事件
+secondary_types: []
+aliases:
+- 懸掛族長
+status: formal
+definition: 耶和華吩咐摩西將百姓中所有族長在日頭下懸掛，以消除向以色列人的怒氣（民數記 25:4）。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 25
+  summary: 記載神命令摩西公開懸掛族長作為審判。
+  relation: 為後續摩西吩咐審判官執行殺戮的背景。
+related_entries:
+- 以色列與巴力毘珥連合
+- 摩西吩咐審判官殺死拜巴力者
+- 非尼哈以熱心止息瘟疫
+- 神賜非尼哈平安的約
+sources:
+- '逐節註解: 民數記 25 章逐節解釋（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT25.htm）'
+- '拾穗: 民數記 25 章拾穗註釋（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT25.htm）'
+created_from: manual
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

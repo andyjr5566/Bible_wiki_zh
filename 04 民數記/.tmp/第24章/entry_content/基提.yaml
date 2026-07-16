@@ -1,0 +1,26 @@
+name: 基提
+type: 地點
+secondary_types: []
+aliases:
+- 基提
+status: formal
+definition: 民數記24:24提到「必有人乘船從基提界而來」，基提指地中海島嶼或沿海地區，後來泛指西方列國。
+development: ''
+accumulations:
+- book: 民數記
+  chapter: 24
+  summary: 巴蘭預言基提人將苦害亞述與希伯
+  relation: 作為末世列國審判的地理標記
+related_entries:
+- 巴蘭預言基提人苦害亞述希伯
+- 基提（Kittim）
+sources:
+- '逐節註解: 民數記24章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT24.htm）'
+- '拾穗: 民數記24章拾穗資料（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT24.htm）'
+- '研經註解: KingComments 民數記24研經（https://www.kingcomments.com/en/bible-studies/Num/24）'
+- '研經註解: BibleHub 民數記24研經（https://biblehub.com/study/numbers/24.htm）'
+created_from: manual
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

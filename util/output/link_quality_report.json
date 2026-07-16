@@ -1,7 +1,7 @@
 {
-  "total_warnings": 95,
+  "total_warnings": 93,
   "critical_count": 0,
-  "warning_count": 95,
+  "warning_count": 93,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -39,46 +39,32 @@
       "message": "同一 alias「比珥」指向多個 target: 以色列在比珥向井歌唱, 比珥"
     },
     {
-      "type": "short_word_link",
+      "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+      "source": "民數記/第23章.md",
+      "target": "七壇獻祭",
+      "message": "同一 alias「七壇獻祭」指向多個 target: 七壇（shiv'ah mizbechot）, 巴蘭築七壇獻祭"
     },
     {
       "type": "short_word_link",
       "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+      "source": "民數記/第24章.md",
+      "target": "星出於雅各（彌賽亞）|星",
+      "message": "短詞 link 缺少來源支撐: [[星出於雅各（彌賽亞）]]，檢查是否為普通詞誤連"
     },
     {
-      "type": "short_word_link",
+      "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+      "source": "民數記/第25章.md",
+      "target": "心利",
+      "message": "同一 alias「心利」指向多個 target: 心利, 心利（Zimri）"
     },
     {
-      "type": "short_word_link",
+      "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
-    },
-    {
-      "type": "short_word_link",
-      "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
-    },
-    {
-      "type": "short_word_link",
-      "severity": "warning",
-      "source": "民數記/第22章.md",
-      "target": "巴蘭的驢|驢",
-      "message": "短詞 link 缺少來源支撐: [[巴蘭的驢]]，檢查是否為普通詞誤連"
+      "source": "民數記/第25章.md",
+      "target": "哥斯比",
+      "message": "同一 alias「哥斯比」指向多個 target: 哥斯比, 哥斯比（Cozbi）"
     },
     {
       "type": "alias_target_conflict",
@@ -386,7 +372,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第25章",
-      "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章"
+      "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章, 04 民數記/第25章"
     },
     {
       "type": "alias_target_conflict",
