@@ -1,0 +1,350 @@
+book: 出埃及記
+chapter: 20
+A_use_directly:
+- name: 神頒布十誡
+  suggested_type: 事件
+  evidence: 1節；「神吩咐這一切的話說」——原文「話」與「吩咐」同字根，強調這些誡命是神啟示的話語
+  surfaces:
+  - phrase: 神吩咐這一切的話說
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 神頒布十誡
+  existing_path: link_folder/事件/神頒布十誡.md
+- name: 我是耶和華你的神
+  suggested_type: 神學
+  evidence: 2節；十誡的引言；丁良才指神不提創造者的權柄，乃提救贖者的憐憫和恩典
+  surfaces:
+  - phrase: 我是耶和華─你的神
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 我是耶和華你的神
+  existing_path: link_folder/神學/我是耶和華你的神.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 2節；「曾將你從埃及地為奴之家領出來」——律法一開始已經以恩典作為背景
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 除了我以外你不可有別的神
+  suggested_type: 神學
+  evidence: 3節；原文「在我面前」；《中文聖經註釋》指這複合字有「敵對」或「以上」之意
+  surfaces:
+  - phrase: 除了我以外，你不可有別的神
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 除了我以外你不可有別的神
+  existing_path: link_folder/神學/除了我以外你不可有別的神.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: 4節；第一誡說神是獨一無二的，第二誡說神是靈
+  surfaces:
+  - phrase: 不可為自己雕刻偶像
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 5、7、11節；頒賜十誡者；祂是忌邪的神
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: 5節；原文即「嫉妒的」；《丁道爾》建議譯作「熱心」更佳——所指的是排他性的個人關係受破壞時的行為
+  surfaces:
+  - phrase: 忌邪的神
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 追討罪自父及子直到三四代
+  suggested_type: 神學
+  evidence: 5節；《丁道爾》指這是典型閃族用語，是延續的意思，不必照字面計算
+  surfaces:
+  - phrase: 追討他的罪，自父及子，直到三四代
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 追討罪自父及子直到三四代
+  existing_path: link_folder/神學/追討罪自父及子直到三四代.md
+- name: 發慈愛直到千代
+  suggested_type: 神學
+  evidence: 6節；原文 hesed 是盟約典型的特徵之一；「千」如中文的「千秋萬載」，表示神慈愛之無限
+  surfaces:
+  - phrase: 愛我、守我誡命的，我必向他們發慈愛，直到千代
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 發慈愛直到千代
+  existing_path: link_folder/神學/發慈愛直到千代.md
+- name: 不可妄稱耶和華你神的名
+  suggested_type: 神學
+  evidence: 7節；《舊約背景註釋》指其用意是防止人濫用耶和華的名來作法或施咒
+  surfaces:
+  - phrase: 不可妄稱耶和華─你神的名
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 不可妄稱耶和華你神的名
+  existing_path: link_folder/神學/不可妄稱耶和華你神的名.md
+- name: 當記念安息日守為聖日
+  suggested_type: 神學
+  evidence: 8節；十誡中僅有此誡與第五誡是用正面命令「當」；《舊約背景註釋》指持守安息日在古代近東文化中沒有對應例證
+  surfaces:
+  - phrase: 當記念安息日，守為聖日
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 當記念安息日守為聖日
+  existing_path: link_folder/神學/當記念安息日守為聖日.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 10-11節；第七日是向耶和華當守的安息日；根據在神六日創造、第七日安息
+  surfaces:
+  - phrase: 安息日
+    verses:
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 當孝敬父母
+  suggested_type: 神學
+  evidence: 12節；十誡中唯一帶應許的誡命（弗6:2）；連接兩塊石版的轉捩點
+  surfaces:
+  - phrase: 當孝敬父母
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+- name: 不可殺人
+  suggested_type: 神學
+  evidence: 13節；原文 ratsach 頗為罕見，通常指暴力殺死一己的仇敵；「謀殺」是很恰當的譯法
+  surfaces:
+  - phrase: 不可殺人
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 不可殺人
+  existing_path: link_folder/神學/不可殺人.md
+- name: 不可姦淫
+  suggested_type: 神學
+  evidence: 14節；原文 na'aph；婚姻是神所設立的，神所配合的人不可分開
+  surfaces:
+  - phrase: 不可姦淫
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 不可姦淫
+  existing_path: link_folder/神學/不可姦淫.md
+- name: 不可偷盜
+  suggested_type: 神學
+  evidence: 15節；要求尊重神所託付給別人的財產
+  surfaces:
+  - phrase: 不可偷盜
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 不可偷盜
+  existing_path: link_folder/神學/不可偷盜.md
+- name: 不可作假見證陷害人
+  suggested_type: 神學
+  evidence: 16節；原意指在法庭上作不實的證供
+  surfaces:
+  - phrase: 不可作假見證陷害人
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 不可作假見證陷害人
+  existing_path: link_folder/神學/不可作假見證陷害人.md
+- name: 不可貪戀
+  suggested_type: 神學
+  evidence: 17節；原文 chamad；KC 指這誡命顯明罪的本質，把罪從我們內心深處揭露出來（羅7:7）
+  surfaces:
+  - phrase: 不可貪戀
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 不可貪戀
+  existing_path: link_folder/神學/不可貪戀.md
+- name: 百姓懼怕神的顯現
+  suggested_type: 事件
+  evidence: 18-19節；「眾百姓見雷轟、閃電、角聲、山上冒煙，就都發顫，遠遠的站立」
+  surfaces:
+  - phrase: 就都發顫，遠遠的站立
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 百姓懼怕神的顯現
+  existing_path: link_folder/事件/百姓懼怕神的顯現.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 19-22節；百姓求他作中保；他就挨近神所在的幽暗之中
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 神的降臨
+  suggested_type: 神學
+  evidence: 20節；「神降臨是要試驗你們」——含有積極目的的試驗
+  surfaces:
+  - phrase: 神降臨
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 神的降臨
+  existing_path: link_folder/神學/神的降臨.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 20節；CT 區分「敬畏」與「懼怕」——敬畏是怕得罪神，懼怕是單純對神的威嚴心存畏懼
+  surfaces:
+  - phrase: 敬畏他
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 摩西就近幽暗
+  suggested_type: 事件
+  evidence: 21節；「摩西就挨近神所在的幽暗之中」——『幽暗』形容神的住處（王上8:12）
+  surfaces:
+  - phrase: 摩西就挨近神所在的幽暗之中
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 摩西就近幽暗
+  existing_path: link_folder/事件/摩西就近幽暗.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 22節；「你要向以色列人這樣說」
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 神指示築壇獻祭
+  suggested_type: 事件
+  evidence: 24-26節；築土壇、不可用鑿成的石頭、不可用臺階
+  surfaces:
+  - phrase: 你要為我築土壇
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 神指示築壇獻祭
+  existing_path: link_folder/事件/神指示築壇獻祭.md
+- name: 土壇
+  suggested_type: 神學
+  evidence: 24-25節；KC 指土壇與石壇代表基督位格的兩面——土指祂是人子，石指祂是神子
+  surfaces:
+  - phrase: 不可用鑿成的石頭
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 土壇
+  existing_path: link_folder/神學/土壇.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: 24節；為向神感恩或還願而甘心獻上的火祭
+  surfaces:
+  - phrase: 燔祭和平安祭
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 十誡
+  suggested_type: 神學
+  evidence: 1-17節；丁良才列出十誡最要緊的三種證據：神親自曉諭、神親自寫在石版上、存在至聖所約櫃內
+  match_type: exact
+  existing_title: 十誡
+  existing_path: link_folder/神學/十誡.md
+- name: 十句話
+  suggested_type: 原文
+  evidence: 1節；希伯來人稱十誡為「十句話」；「十條誡」的名稱源出於出34:28
+  match_type: exact
+  existing_title: 十句話
+  existing_path: link_folder/原文/十句話.md
+- name: 十誡的條分法
+  suggested_type: 神學
+  evidence: 1-17節；三種條分法：猶太人、基督教傳統、改革教派；對應三七分與四六分
+  match_type: exact
+  existing_title: 十誡的條分法
+  existing_path: link_folder/神學/十誡的條分法.md
+- name: 定言式法律
+  suggested_type: 神學
+  evidence: 1-17節；《舊約背景註釋》指定言式法律在古代近東的法典中十分罕見
+  match_type: exact
+  existing_title: 定言式法律
+  existing_path: link_folder/神學/定言式法律.md
+- name: 倫理十誡
+  suggested_type: 神學
+  evidence: 1-17節；「倫理十誡」以別於34:17-26 的「敬拜十守則」
+  match_type: exact
+  existing_title: 倫理十誡
+  existing_path: link_folder/神學/倫理十誡.md
+- name: 敬拜十守則
+  suggested_type: 神學
+  evidence: 1-17節；《丁道爾》指出34:14-26 的主旨並非基本倫理原則，而是這些原則怎樣以宗教形式表達於外
+  match_type: exact
+  existing_title: 敬拜十守則
+  existing_path: link_folder/神學/敬拜十守則.md
+- name: 古代近東法典
+  suggested_type: 背景
+  evidence: 1-17節；漢摩拉比法典來自摩西之前幾百年，主要是判例法的例證
+  match_type: exact
+  existing_title: 古代近東法典
+  existing_path: link_folder/背景/古代近東法典.md
+- name: 宗主條約
+  suggested_type: 背景
+  evidence: 2節；《丁道爾》指這種自我宣告是一切盟約不可或缺的部分
+  match_type: exact
+  existing_title: 宗主條約
+  existing_path: link_folder/背景/宗主條約.md
+- name: 西乃山立約
+  suggested_type: 背景
+  evidence: 1-17節；《舊約背景註釋》指定言格式顯示十誡應當歸為盟約一類，不屬法律一類
+  match_type: exact
+  existing_title: 西乃山立約
+  existing_path: link_folder/背景/西乃山立約.md
+- name: 古代近東偶像崇拜
+  suggested_type: 背景
+  evidence: 4-5節；《舊約背景註釋》指古代近東人相信神明在偶像中以特殊的方式臨在
+  match_type: exact
+  existing_title: 古代近東偶像崇拜
+  existing_path: link_folder/背景/古代近東偶像崇拜.md
+- name: 古代近東祭壇
+  suggested_type: 背景
+  evidence: 24-26節；築壇的規定強調敬拜的簡樸與謙卑
+  match_type: exact
+  existing_title: 古代近東祭壇
+  existing_path: link_folder/背景/古代近東祭壇.md
+- name: 律法與恩典
+  suggested_type: 主題
+  evidence: 2節；KC：對信徒不是「行而活」，乃是「活而行」——義人必因信得生
+  match_type: exact
+  existing_title: 律法與恩典
+  existing_path: link_folder/主題/律法與恩典.md
+- name: 盟約
+  suggested_type: 主題
+  evidence: 1-17節；十誡又稱「約的話，就是十條誡」（34:28）
+  match_type: exact
+  existing_title: 盟約
+  existing_path: link_folder/主題/盟約.md
+- name: 敬拜
+  suggested_type: 主題
+  evidence: 22-26節；KC 指沒有人可以自己決定神該如何、在何處被敬拜
+  match_type: exact
+  existing_title: 敬拜
+  existing_path: link_folder/主題/敬拜.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
