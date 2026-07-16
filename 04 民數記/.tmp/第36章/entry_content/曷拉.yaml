@@ -1,0 +1,33 @@
+name: 曷拉
+type: 人物
+secondary_types: []
+aliases:
+- Hoglah (曷拉)
+status: formal
+definition: 西羅非哈的女兒之一，依民數記36:11嫁給伯叔的兒子，屬瑪拿西支派。
+development: 同姊妹們一同遵循條例嫁入同族。
+accumulations:
+- book: 民數記
+  chapter: 36
+  summary: 記載曷拉參與嫁同族事件。
+  relation: 本章為其生平事蹟的唯一經文記載。
+related_entries:
+- 西羅非哈
+- 西羅非哈女兒婚姻條例
+- 女兒得產業嫁同族
+- 得撒
+- 挪阿
+- 密迦
+sources:
+- '逐節註解: 民數記 36 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT36.htm）'
+- '拾穗: 民數記 36 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT36.htm）'
+- '研經註解: 民數記 36 章研經註解（https://www.kingcomments.com/en/bible-studies/Num/36）'
+- '研經註解: 民數記 36 章研經註解（https://biblehub.com/study/numbers/36.htm）'
+created_from: 民數記 36
+category: 人物
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

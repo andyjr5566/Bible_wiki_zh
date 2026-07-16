@@ -1,0 +1,32 @@
+name: 產業歸屬條例總結
+type: 事件
+secondary_types: []
+aliases:
+- 民數記36條例總結
+status: formal
+definition: 民數記36章對產業歸屬條例的總結性記載，重申各支派須守住祖產，女兒繼承產業須嫁同族。
+development: 本章作為整個產業歸屬法規的收尾，確認條例已頒布並執行。
+accumulations:
+- book: 民數記
+  chapter: 36
+  summary: 提供條例全貌的總結與確認。
+  relation: 本章為條例總結的經文出處。
+related_entries:
+- 西羅非哈女兒婚姻條例
+- 產業不可轉離族
+- 女兒得產業嫁同族
+- 西羅非哈
+- 瑪拿西
+sources:
+- '逐節註解: 民數記 36 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT36.htm）'
+- '拾穗: 民數記 36 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT36.htm）'
+- '研經註解: 民數記 36 章研經註解（https://www.kingcomments.com/en/bible-studies/Num/36）'
+- '研經註解: 民數記 36 章研經註解（https://biblehub.com/study/numbers/36.htm）'
+created_from: 民數記 36
+category: 事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

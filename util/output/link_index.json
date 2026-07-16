@@ -7535,6 +7535,16 @@
       "Manna from heaven"
     ]
   },
+  "女兒得產業嫁同族": {
+    "path": "link_folder/事件/女兒得產業嫁同族.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "女兒得產業嫁同族",
+    "status": "formal",
+    "aliases": [
+      "女兒繼承產業須嫁同族"
+    ]
+  },
   "安息年律例": {
     "path": "link_folder/事件/安息年律例.md",
     "type": "事件",
@@ -8918,6 +8928,16 @@
       "Water of Marah sweetened"
     ]
   },
+  "產業歸屬條例總結": {
+    "path": "link_folder/事件/產業歸屬條例總結.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "產業歸屬條例總結",
+    "status": "formal",
+    "aliases": [
+      "民數記36條例總結"
+    ]
+  },
   "用牛灰活水調製除污穢水": {
     "path": "link_folder/事件/用牛灰活水調製除污穢水.md",
     "type": "事件",
@@ -9724,6 +9744,17 @@
     "status": "formal",
     "aliases": [
       "西緬族被數"
+    ]
+  },
+  "西羅非哈女兒婚姻條例": {
+    "path": "link_folder/事件/西羅非哈女兒婚姻條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "西羅非哈女兒婚姻條例",
+    "status": "formal",
+    "aliases": [
+      "西羅非哈女兒婚姻法",
+      "民數記36條例"
     ]
   },
   "西羅非哈女兒求產業": {
@@ -17745,6 +17776,16 @@
     "status": "formal",
     "aliases": []
   },
+  "得撒": {
+    "path": "link_folder/人物/得撒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "得撒",
+    "status": "formal",
+    "aliases": [
+      "Tirzah (得撒)"
+    ]
+  },
   "心利": {
     "path": "link_folder/人物/心利.md",
     "type": "人物",
@@ -17991,6 +18032,16 @@
     "status": "formal",
     "aliases": []
   },
+  "挪阿": {
+    "path": "link_folder/人物/挪阿.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "挪阿",
+    "status": "formal",
+    "aliases": [
+      "Noah (挪阿)"
+    ]
+  },
   "提達": {
     "path": "link_folder/人物/提達.md",
     "type": "人物",
@@ -18154,6 +18205,16 @@
     "status": "formal",
     "aliases": [
       "Amram"
+    ]
+  },
+  "曷拉": {
+    "path": "link_folder/人物/曷拉.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "曷拉",
+    "status": "formal",
+    "aliases": [
+      "Hoglah (曷拉)"
     ]
   },
   "書亞的女兒": {
@@ -33088,6 +33149,17 @@
     "status": "formal",
     "aliases": []
   },
+  "產業不可轉離族": {
+    "path": "link_folder/神學/產業不可轉離族.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "產業不可轉離族",
+    "status": "formal",
+    "aliases": [
+      "產業不得轉移支派",
+      "產業歸屬原則"
+    ]
+  },
   "產業繼承律例": {
     "path": "link_folder/神學/產業繼承律例.md",
     "type": "神學",
@@ -41163,6 +41235,9 @@
   "Manna from heaven": {
     "alias_of": "天降嗎哪"
   },
+  "女兒繼承產業須嫁同族": {
+    "alias_of": "女兒得產業嫁同族"
+  },
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
   },
@@ -41604,6 +41679,9 @@
   "Water of Marah sweetened": {
     "alias_of": "瑪拉苦水變甜"
   },
+  "民數記36條例總結": {
+    "alias_of": "產業歸屬條例總結"
+  },
   "調製除污穢水": {
     "alias_of": "用牛灰活水調製除污穢水"
   },
@@ -41858,6 +41936,12 @@
   },
   "西緬族被數": {
     "alias_of": "西緬支派被數點"
+  },
+  "西羅非哈女兒婚姻法": {
+    "alias_of": "西羅非哈女兒婚姻條例"
+  },
+  "民數記36條例": {
+    "alias_of": "西羅非哈女兒婚姻條例"
   },
   "西羅非哈女兒來求產業": {
     "alias_of": "西羅非哈女兒求產業"
@@ -43389,6 +43473,9 @@
   "希伯倫族": {
     "alias_of": "希伯倫族（Chevron）"
   },
+  "Tirzah (得撒)": {
+    "alias_of": "得撒"
+  },
   "Zilpah": {
     "alias_of": "悉帕"
   },
@@ -43431,6 +43518,9 @@
   "Nahor": {
     "alias_of": "拿鶴"
   },
+  "Noah (挪阿)": {
+    "alias_of": "挪阿"
+  },
   "Moab": {
     "alias_of": "摩押"
   },
@@ -43457,6 +43547,9 @@
   },
   "Amram": {
     "alias_of": "暗蘭"
+  },
+  "Hoglah (曷拉)": {
+    "alias_of": "曷拉"
   },
   "Shua's daughter": {
     "alias_of": "書亞的女兒"
@@ -47897,6 +47990,12 @@
   },
   "樂意的奉獻": {
     "alias_of": "甘心樂意的奉獻"
+  },
+  "產業不得轉移支派": {
+    "alias_of": "產業不可轉離族"
+  },
+  "產業歸屬原則": {
+    "alias_of": "產業不可轉離族"
   },
   "繼承律例": {
     "alias_of": "產業繼承律例"
