@@ -1,7 +1,45 @@
 book: 出埃及記
 chapter: 31
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 比撒列
+  suggested_type: 人物
+  evidence: 出31:2-5 神提名召比撒列，猶大支派、戶珥的孫子、烏利的兒子，以靈充滿使他有智慧、聰明、知識，能做各樣的工：用金銀銅製造各物、刻寶石鑲嵌、雕刻木頭。GT：名字原文義「在神的蔭下／神的保護」，是聖經中第一位明確記載被神的靈充滿以完成特定工作的人；代下1:5
+    記其所製銅祭壇數百年後仍被提及；出35:30-35 再次記載其受召及教導他人。BH：Bezalel is the first person in the Bible
+    described as being filled with the Spirit of God for a specific task
+  surfaces:
+  - phrase: 比撒列
+    verses:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+  match_type: alias
+  existing_title: 比撒列（Bezalel）
+  existing_path: link_folder/人物/比撒列（Bezalel）.md
+- name: 亞何利亞伯
+  suggested_type: 人物
+  evidence: 出31:6 神分派但支派中、亞希撒抹的兒子亞何利亞伯與比撒列同工。CT/GT：名字原文義「父的帳棚」，七十士譯本作「父的神」，是比撒列的助手；GT引丁道爾：亞何利亞伯地位較不顯著，是古代西閃族語名字；出35:34、38:23
+    記其專精織布繡花之工
+  surfaces:
+  - phrase: 亞何利亞伯
+    verses:
+    - 6
+  match_type: alias
+  existing_title: 亞何利亞伯（Oholiab）
+  existing_path: link_folder/人物/亞何利亞伯（Oholiab）.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 出31:6 亞何利亞伯出自但支派。BH：the tribe of Dan is not one of the leading tribes
+    like Judah or Levi, this appointment reflects the inclusivity of God's work；代下2:13-14
+    所羅門聖殿工匠戶蘭亦母出但支派、父推羅人，顯明神恩典不限於顯著支派
+  surfaces:
+  - phrase: 但支派
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
 - name: 猶大支派
   suggested_type: 人物
   evidence: 出31:2 比撒列出自猶大支派，戶珥的孫子、烏利的兒子。GT：猶大支派為十二支派中君王世家（創49:8-10），與利未支派（祭司）、以法蓮支派（北國領導）同為聖經中佔顯著地位的三支派。已有條目「猶大支派」
@@ -52,40 +90,6 @@ B_needs_update:
   match_type: exact
   existing_title: 法版（edut）
   existing_path: link_folder/原文/法版（edut）.md
-C_new_formal:
-- name: 比撒列
-  suggested_type: 人物
-  evidence: 出31:2-5 神提名召比撒列，猶大支派、戶珥的孫子、烏利的兒子，以靈充滿使他有智慧、聰明、知識，能做各樣的工：用金銀銅製造各物、刻寶石鑲嵌、雕刻木頭。GT：名字原文義「在神的蔭下／神的保護」，是聖經中第一位明確記載被神的靈充滿以完成特定工作的人；代下1:5
-    記其所製銅祭壇數百年後仍被提及；出35:30-35 再次記載其受召及教導他人。BH：Bezalel is the first person in the Bible
-    described as being filled with the Spirit of God for a specific task
-  surfaces:
-  - phrase: 比撒列
-    verses:
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-  target_path: link_folder/人物/比撒列.md
-- name: 亞何利亞伯
-  suggested_type: 人物
-  evidence: 出31:6 神分派但支派中、亞希撒抹的兒子亞何利亞伯與比撒列同工。CT/GT：名字原文義「父的帳棚」，七十士譯本作「父的神」，是比撒列的助手；GT引丁道爾：亞何利亞伯地位較不顯著，是古代西閃族語名字；出35:34、38:23
-    記其專精織布繡花之工
-  surfaces:
-  - phrase: 亞何利亞伯
-    verses:
-    - 6
-  target_path: link_folder/人物/亞何利亞伯.md
-- name: 但支派
-  suggested_type: 人物
-  evidence: 出31:6 亞何利亞伯出自但支派。BH：the tribe of Dan is not one of the leading tribes
-    like Judah or Levi, this appointment reflects the inclusivity of God's work；代下2:13-14
-    所羅門聖殿工匠戶蘭亦母出但支派、父推羅人，顯明神恩典不限於顯著支派
-  surfaces:
-  - phrase: 但支派
-    verses:
-    - 6
-  target_path: link_folder/人物/但支派.md
 - name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
   suggested_type: 神學
   evidence: 出31:3,6 神以靈充滿比撒列使他有智慧、聰明、知識能做各樣的工，又使凡心裡有智慧的都增添智慧能做神所吩咐的。CT/GT/KC/BH：這是舊約中首次明確記載神以「靈」充滿人以完成特定工作恩賜（與結3:14、賽61:1、珥2:29、亞4:6並列句式），表明神的工作只能依靠神的靈與智慧完成（林前2:4-5,13），藝術與技藝天賦亦是出於神的恩賜（雅1:17）
@@ -96,7 +100,9 @@ C_new_formal:
   - phrase: 更使他們有智慧
     verses:
     - 6
-  target_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+  match_type: exact
+  existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
 - name: 神的指頭（路11:20）
   suggested_type: 互文
   evidence: 出31:18 兩塊法版是神用指頭寫的石版。GT 引《聖經難解經文詮釋手冊》《舊約聖經問題總解》：「神用指頭」是擬人法(anthropomorphism)表達神能力直接介入，並列出埃及8:19（埃及行法術的對法老說「這是神的手段」，原文亦作神的指頭）、但5:5,24（粉牆寫字之指頭）、路11:20（耶穌「我若靠著神的能力趕鬼」原文直譯即「神的指頭」）為平行用法，顯明神的能力貫穿舊新約
@@ -104,6 +110,10 @@ C_new_formal:
   - phrase: 指頭
     verses:
     - 18
-  target_path: link_folder/互文/神的指頭（路11:20）.md
+  match_type: normalized
+  existing_title: 神的指頭（路11：20）
+  existing_path: link_folder/互文/神的指頭（路11：20）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
