@@ -1,0 +1,412 @@
+book: 出埃及記
+chapter: 24
+A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；「上山」是本章一個重要字彙，共出現七次；惟獨摩西可以親近耶和華
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 1、9、14節；他和兩個兒子所代表的祭司可以上到山腰；摩西不在時與戶珥一同處理爭訟
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 拿答
+  suggested_type: 人物
+  evidence: 1、9節；原文字義「豐富的，慷慨的」；亞倫的長子，後因獻凡火被神燒滅
+  surfaces:
+  - phrase: 拿答
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 拿答
+  existing_path: link_folder/人物/拿答.md
+- name: 亞比戶
+  suggested_type: 人物
+  evidence: 1、9節；原文字義「他是父親」；亞倫的次子；《丁道爾》指他們在此出現更加證實了本段傳統的可靠性
+  surfaces:
+  - phrase: 亞比戶
+    verses:
+    - 1
+    - 9
+  match_type: exact
+  existing_title: 亞比戶
+  existing_path: link_folder/人物/亞比戶.md
+- name: 遠遠下拜
+  suggested_type: 神學
+  evidence: 1節；原文「遠遠的」意「保持距離」；KC 指這距離正是舊約中神與百姓關係的特徵
+  surfaces:
+  - phrase: 遠遠的下拜
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 遠遠下拜
+  existing_path: link_folder/神學/遠遠下拜.md
+- name: 下拜（shachah）
+  suggested_type: 原文
+  evidence: 1節；原文字義「下拜，俯伏」；可以越過山腳下四圍的界限，但距離山頂仍有一段路程
+  match_type: exact
+  existing_title: 下拜（shachah）
+  existing_path: link_folder/原文/下拜（shachah）.md
+- name: 親近（qarab）
+  suggested_type: 原文
+  evidence: 2節；原文字義「拉近，就近」；丁良才列出親近神的三個等次：摩西、長老、百姓
+  surfaces:
+  - phrase: 惟獨你可以親近耶和華
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 親近（qarab）
+  existing_path: link_folder/原文/親近（qarab）.md
+- name: 中保
+  suggested_type: 神學
+  evidence: 2節；CT 指摩西預表耶穌基督，祂是更美之約的中保、屬天的大祭司
+  surfaces:
+  - phrase: 他們卻不可親近
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 中保
+  existing_path: link_folder/神學/中保.md
+- name: 立約儀式
+  suggested_type: 事件
+  evidence: 3-8節；《中文聖經註釋》指這是追認約書的立約儀式
+  surfaces:
+  - phrase: 將耶和華的命令典章都述說與百姓聽
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 立約儀式
+  existing_path: link_folder/事件/立約儀式.md
+- name: 寫上（kathab）
+  suggested_type: 原文
+  evidence: 4節；CT 指寫在書上，並不是石版上，那是神用指頭寫的
+  surfaces:
+  - phrase: 將耶和華的命令都寫上
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 寫上（kathab）
+  existing_path: link_folder/原文/寫上（kathab）.md
+- name: 山腳
+  suggested_type: 地點
+  evidence: 4節；「清早起來，在山下築一座壇」；築壇是為著立約，因為若沒有流血，約就不能成立
+  surfaces:
+  - phrase: 山下
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 山腳
+  existing_path: link_folder/地點/山腳.md
+- name: 十二根柱子
+  suggested_type: 事件
+  evidence: 4節；CT 指是為著紀念和見證，它們代表以色列十二支派，全體都是與神立約的見證人
+  surfaces:
+  - phrase: 按以色列十二支派立十二根柱子
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 十二根柱子
+  existing_path: link_folder/事件/十二根柱子.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: 5節；原文字義「燔祭，升高」；是馨香的火祭，全然焚燒獻給神，以討神悅納
+  surfaces:
+  - phrase: 去獻燔祭
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: 5節；原文字義「平安祭，結盟的祭」；《舊約背景註釋》指立約儀式獻這種祭十分適宜，因為它是為參與者分享而設的
+  surfaces:
+  - phrase: 又向耶和華獻牛為平安祭
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 灑（zaraq）
+  suggested_type: 原文
+  evidence: 6節；原文字義「撒，澆在」；CT 指盛在盆中的血是為全體以色列人，灑在壇上的血是為神
+  surfaces:
+  - phrase: 將血一半盛在盆中，一半灑在壇上
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 灑（zaraq）
+  existing_path: link_folder/原文/灑（zaraq）.md
+- name: 約書（sefer habberith）
+  suggested_type: 原文
+  evidence: 7節；《丁道爾》指「約書」一名也是來自本節，專指以上幾章經文
+  surfaces:
+  - phrase: 又將約書念給百姓聽
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 約書（sefer habberith）
+  existing_path: link_folder/原文/約書（sefer habberith）.md
+- name: 遵行（asah）
+  suggested_type: 原文
+  evidence: 3、7節；原文雙字，首字「做，製作，行出」，次字「聽到，聽從」；KC 指第7節比第3節說得更強
+  surfaces:
+  - phrase: 我們都必遵行
+    verses:
+    - 3
+    - 7
+  match_type: exact
+  existing_title: 遵行（asah）
+  existing_path: link_folder/原文/遵行（asah）.md
+- name: 立約之血
+  suggested_type: 神學
+  evidence: 8節；《丁道爾》：十架上的基督不但和摩西一樣是盟約的中保，更是立約的犧牲
+  surfaces:
+  - phrase: 這是立約的血
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 立約之血
+  existing_path: link_folder/神學/立約之血.md
+- name: 西乃之約
+  suggested_type: 神學
+  evidence: 8節；「是耶和華按這一切話與你們立約的憑據」
+  surfaces:
+  - phrase: 是耶和華按這一切話與你們立約的憑據
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 西乃之約
+  existing_path: link_folder/神學/西乃之約.md
+- name: 長老上山見神
+  suggested_type: 事件
+  evidence: 9-11節；摩西、亞倫、拿答、亞比戶並七十長老都上了山
+  surfaces:
+  - phrase: 都上了山
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 長老上山見神
+  existing_path: link_folder/事件/長老上山見神.md
+- name: 看見神
+  suggested_type: 神學
+  evidence: 10-11節；CT 指這句話直接與「人不能看見神」相抵觸，並給出三種解法
+  surfaces:
+  - phrase: 他們看見以色列的神
+    verses:
+    - 10
+  - phrase: 他們觀看神
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 看見神
+  existing_path: link_folder/神學/看見神.md
+- name: 神的榮耀
+  suggested_type: 神學
+  evidence: 10、16-17節；CT：人在這裡所看見的，並不是神的本體，而是神所發的光輝和榮耀
+  surfaces:
+  - phrase: 他腳下彷彿有平鋪的藍寶石
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 神的榮耀
+  existing_path: link_folder/神學/神的榮耀.md
+- name: 榮耀（kabod）
+  suggested_type: 原文
+  evidence: 16-17節；原文字義「榮耀，富足，尊榮」；「停於」原文「定居，居留，駐紮」
+  surfaces:
+  - phrase: 耶和華的榮耀停於
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 榮耀（kabod）
+  existing_path: link_folder/原文/榮耀（kabod）.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 13節；原文字義「耶和華是拯救」；摩西的幫手；KC 指這是繼出17章之後第二次提到約書亞
+  surfaces:
+  - phrase: 約書亞
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 戶珥
+  suggested_type: 人物
+  evidence: 14節；原文字義「洞」；與亞倫在摩西不在時處理爭訟
+  surfaces:
+  - phrase: 戶珥
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 戶珥
+  existing_path: link_folder/人物/戶珥.md
+- name: 摩西上山領石版
+  suggested_type: 事件
+  evidence: 12-18節；「我要將石版並我所寫的律法和誡命賜給你，使你可以教訓百姓」
+  surfaces:
+  - phrase: 我要將石版並我所寫的律法和誡命賜給你
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 摩西上山領石版
+  existing_path: link_folder/事件/摩西上山領石版.md
+- name: 雲彩（anan）
+  suggested_type: 原文
+  evidence: 15-16節；原文字義「雲，雲層」；CT 指雲彩往往與神的榮耀和同在有關
+  surfaces:
+  - phrase: 有雲彩把山遮蓋
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 雲彩（anan）
+  existing_path: link_folder/原文/雲彩（anan）.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 16節；「耶和華的榮耀停於西乃山」；又稱神的山、何烈山
+  surfaces:
+  - phrase: 西乃山
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 烈火（esh okelah）
+  suggested_type: 原文
+  evidence: 17節；原文「烈」意「吞噬，燒毀」；因為我們的神乃是烈火（來12:29）
+  surfaces:
+  - phrase: 形狀如烈火
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 烈火（esh okelah）
+  existing_path: link_folder/原文/烈火（esh okelah）.md
+- name: 四十晝夜
+  suggested_type: 神學
+  evidence: 18節；CT 指在聖經中象徵神的試煉；表徵試驗和試煉
+  surfaces:
+  - phrase: 在山上四十晝夜
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 四十晝夜
+  existing_path: link_folder/神學/四十晝夜.md
+- name: 出19：8
+  suggested_type: 互文
+  evidence: 3節；KC 指出19:8 百姓是在還沒聽見耶和華要什麼之前就這樣說，如今聽了典章仍說同樣的話
+  match_type: exact
+  existing_title: 出19：8
+  existing_path: link_folder/互文/出19：8.md
+- name: 出19：12-13
+  suggested_type: 互文
+  evidence: 1-2節；山腳下四圍的界限，百姓不可越過
+  match_type: exact
+  existing_title: 出19：12-13
+  existing_path: link_folder/互文/出19：12-13.md
+- name: 出20：21
+  suggested_type: 互文
+  evidence: 1節；KC 指本段接續出20:21，中間的部分顯明摩西從耶和華所領受的內容
+  match_type: exact
+  existing_title: 出20：21
+  existing_path: link_folder/互文/出20：21.md
+- name: 出24：12
+  suggested_type: 互文
+  evidence: 12節；石版並神所寫的律法和誡命
+  match_type: exact
+  existing_title: 出24：12
+  existing_path: link_folder/互文/出24：12.md
+- name: 來9：18-22
+  suggested_type: 互文
+  evidence: 6-8節；若沒有流血，約就不能成立
+  match_type: exact
+  existing_title: 來9：18-22
+  existing_path: link_folder/互文/來9：18-22.md
+- name: 來9：19
+  suggested_type: 互文
+  evidence: 6-8節；KC 指按來9:19 所記，約書也被灑了血，本章未提
+  match_type: exact
+  existing_title: 來9：19
+  existing_path: link_folder/互文/來9：19.md
+- name: 來12：24
+  suggested_type: 互文
+  evidence: 8節；KC 指新約的血所帶來的是和好、赦免與祝福，與此形成對比
+  match_type: exact
+  existing_title: 來12：24
+  existing_path: link_folder/互文/來12：24.md
+- name: 彼前1：2
+  suggested_type: 互文
+  evidence: 8節；KC 引：蒙耶穌基督血所灑的
+  match_type: exact
+  existing_title: 彼前1：2
+  existing_path: link_folder/互文/彼前1：2.md
+- name: 來3：1-6
+  suggested_type: 互文
+  evidence: 2節；《精讀本》指這裡的摩西象徵人類的大祭司基督
+  match_type: exact
+  existing_title: 來3：1-6
+  existing_path: link_folder/互文/來3：1-6.md
+- name: 來10：19-20
+  suggested_type: 互文
+  evidence: 1-2節；CT 指通神之路已經開啟，新約眾信徒都可以親近神
+  match_type: exact
+  existing_title: 來10：19-20
+  existing_path: link_folder/互文/來10：19-20.md
+- name: 太26：28
+  suggested_type: 互文
+  evidence: 8節；「這是我立約的血，為多人流出來，使罪得赦」
+  match_type: exact
+  existing_title: 太26：28
+  existing_path: link_folder/互文/太26：28.md
+- name: 路22：20
+  suggested_type: 互文
+  evidence: 11節；立約筵席預表主的晚餐
+  match_type: exact
+  existing_title: 路22：20
+  existing_path: link_folder/互文/路22：20.md
+- name: 林前11：25
+  suggested_type: 互文
+  evidence: 8節；CT 指立約的血預表主耶穌在十字架上所流寶血，成就了新約
+  match_type: exact
+  existing_title: 林前11：25
+  existing_path: link_folder/互文/林前11：25.md
+- name: 結1：26-27
+  suggested_type: 互文
+  evidence: 10節；KC 指以西結看見類似的景象：寶座彷彿藍寶石
+  match_type: exact
+  existing_title: 結1：26-27
+  existing_path: link_folder/互文/結1：26-27.md
+- name: 申9：9-11
+  suggested_type: 互文
+  evidence: 18節；摩西在山上四十晝夜不吃飯不喝水
+  match_type: exact
+  existing_title: 申9：9-11
+  existing_path: link_folder/互文/申9：9-11.md
+- name: 申10：1-5
+  suggested_type: 互文
+  evidence: 12節；石版上所寫的僅有十條誡命
+  match_type: exact
+  existing_title: 申10：1-5
+  existing_path: link_folder/互文/申10：1-5.md
+- name: 王上18：31
+  suggested_type: 互文
+  evidence: 4節；以利亞照雅各子孫支派的數目取十二塊石頭
+  match_type: exact
+  existing_title: 王上18：31
+  existing_path: link_folder/互文/王上18：31.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate:
+- name: 以色列長老
+  suggested_type: 人物
+  evidence: 1、9、14節；《丁道爾》指七十人是個傳統的約數，可能代表十二支派，亦可能代表雅各的七十位子孫
+  surfaces:
+  - phrase: 以色列長老
+    verses:
+    - 1
+  match_type: type_conflict
+  note: 分類衝突：候選=人物，既有=文化，secondary=['歷史', '制度']
+E_skip: []
