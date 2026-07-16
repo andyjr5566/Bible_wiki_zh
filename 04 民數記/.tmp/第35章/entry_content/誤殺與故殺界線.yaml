@@ -1,0 +1,26 @@
+name: 誤殺與故殺界線
+type: 神學
+secondary_types: []
+aliases:
+- 誤殺與故殺界線
+status: formal
+definition: 民數記 35:16-24 區分故殺（使用鐵器、石頭、木器、懷恨推倒、埋伏、仇恨打擊）與誤殺（無仇恨、無預謀、無意擊中），作為審判與逃城保護的依據。
+development: 此界線決定報血者是否可殺、誤殺者是否可得逃城庇護。
+accumulations:
+- book: 民數記
+  chapter: 35
+  summary: 列舉故殺與誤殺的具體情形，提供會眾審判標準。
+  relation: 為逃城制度與報血者權限的神學基礎。
+related_entries:
+- 報血者
+- 逃城保護期限
+- 兩個見證人原則
+- 不可贖故殺人命
+sources:
+- '逐節註解: 民數記 35 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT35.htm）'
+- '拾穗: 民數記 35 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT35.htm）'
+created_from: 民數記 35
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

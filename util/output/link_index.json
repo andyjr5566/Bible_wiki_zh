@@ -7254,6 +7254,16 @@
       "利未人受聖職"
     ]
   },
+  "利未人四十八城": {
+    "path": "link_folder/事件/利未人四十八城.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人四十八城",
+    "status": "formal",
+    "aliases": [
+      "利未人四十八城"
+    ]
+  },
   "利未人從十分之一中獻舉祭給祭司": {
     "path": "link_folder/事件/利未人從十分之一中獻舉祭給祭司.md",
     "type": "事件",
@@ -9826,6 +9836,17 @@
     "status": "formal",
     "aliases": [
       "迦得族被數"
+    ]
+  },
+  "逃城六座": {
+    "path": "link_folder/事件/逃城六座.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "逃城六座",
+    "status": "formal",
+    "aliases": [
+      "六座逃城",
+      "避難城六座"
     ]
   },
   "進迦南地後獻祭條例": {
@@ -17421,6 +17442,17 @@
     "status": "formal",
     "aliases": []
   },
+  "報血者": {
+    "path": "link_folder/人物/報血者.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "報血者",
+    "status": "formal",
+    "aliases": [
+      "報血仇",
+      "報血者"
+    ]
+  },
   "塞特": {
     "path": "link_folder/人物/塞特.md",
     "type": "人物",
@@ -24950,6 +24982,16 @@
     "status": "formal",
     "aliases": []
   },
+  "哥蘭": {
+    "path": "link_folder/地點/哥蘭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哥蘭",
+    "status": "formal",
+    "aliases": [
+      "哥蘭"
+    ]
+  },
   "埃及": {
     "path": "link_folder/地點/埃及.md",
     "type": "地點",
@@ -24984,6 +25026,16 @@
     "title": "埃色",
     "status": "formal",
     "aliases": []
+  },
+  "基低斯": {
+    "path": "link_folder/地點/基低斯.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基低斯",
+    "status": "formal",
+    "aliases": [
+      "基低斯"
+    ]
   },
   "基內烈湖": {
     "path": "link_folder/地點/基內烈湖.md",
@@ -25360,6 +25412,16 @@
     "title": "押瑪",
     "status": "formal",
     "aliases": []
+  },
+  "拉末基列": {
+    "path": "link_folder/地點/拉末基列.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拉末基列",
+    "status": "formal",
+    "aliases": [
+      "拉末基列"
+    ]
   },
   "挪得": {
     "path": "link_folder/地點/挪得.md",
@@ -28815,6 +28877,16 @@
       "不可貪戀"
     ]
   },
+  "不可贖故殺人命": {
+    "path": "link_folder/神學/不可贖故殺人命.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可贖故殺人命",
+    "status": "formal",
+    "aliases": [
+      "不可贖故殺人命"
+    ]
+  },
   "不可進去看（ʾal-yābōʾû lirʾôt）": {
     "path": "link_folder/神學/不可進去看（ʾal-yābōʾû lirʾôt）.md",
     "type": "神學",
@@ -29680,6 +29752,16 @@
     "title": "全能的神（El Shaddai）",
     "status": "formal",
     "aliases": []
+  },
+  "兩個見證人原則": {
+    "path": "link_folder/神學/兩個見證人原則.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "兩個見證人原則",
+    "status": "formal",
+    "aliases": [
+      "兩個見證人原則"
+    ]
   },
   "公羊": {
     "path": "link_folder/神學/公羊.md",
@@ -30608,6 +30690,17 @@
     "status": "formal",
     "aliases": [
       "大祭司在死人活人中間贖罪"
+    ]
+  },
+  "大祭司死預表基督": {
+    "path": "link_folder/神學/大祭司死預表基督.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "大祭司死預表基督",
+    "status": "formal",
+    "aliases": [
+      "大祭司之死預表",
+      "受膏大祭司死預表"
     ]
   },
   "大祭司職分傳承": {
@@ -32459,6 +32552,16 @@
     "aliases": [
       "世世代代永遠的定例",
       "永得的分"
+    ]
+  },
+  "污染地土": {
+    "path": "link_folder/神學/污染地土.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "污染地土",
+    "status": "formal",
+    "aliases": [
+      "污染地土"
     ]
   },
   "污穢營地": {
@@ -35278,6 +35381,16 @@
     "status": "formal",
     "aliases": []
   },
+  "誤殺與故殺界線": {
+    "path": "link_folder/神學/誤殺與故殺界線.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "誤殺與故殺界線",
+    "status": "formal",
+    "aliases": [
+      "誤殺與故殺界線"
+    ]
+  },
   "誤犯有恩典故意無憐憫": {
     "path": "link_folder/神學/誤犯有恩典故意無憐憫.md",
     "type": "神學",
@@ -35433,6 +35546,27 @@
     "aliases": [
       "罪的跨代影響",
       "三四代的追討"
+    ]
+  },
+  "逃城保護期限": {
+    "path": "link_folder/神學/逃城保護期限.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逃城保護期限",
+    "status": "formal",
+    "aliases": [
+      "逃城保護期限"
+    ]
+  },
+  "逃城預表基督": {
+    "path": "link_folder/神學/逃城預表基督.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逃城預表基督",
+    "status": "formal",
+    "aliases": [
+      "逃城預表",
+      "城市避難所預表"
     ]
   },
   "逃避情慾": {
@@ -41752,6 +41886,12 @@
   "迦得族被數": {
     "alias_of": "迦得支派被數點"
   },
+  "六座逃城": {
+    "alias_of": "逃城六座"
+  },
+  "避難城六座": {
+    "alias_of": "逃城六座"
+  },
   "迦南地獻祭規定": {
     "alias_of": "進迦南地後獻祭條例"
   },
@@ -43212,6 +43352,9 @@
   },
   "Abidan": {
     "alias_of": "基多尼的兒子亞比但"
+  },
+  "報血仇": {
+    "alias_of": "報血者"
   },
   "大坍": {
     "alias_of": "大坍亞比蘭"
@@ -47005,6 +47148,12 @@
   "寄居者守逾越節同歸一律": {
     "alias_of": "外人寄居守逾越節同歸一例"
   },
+  "大祭司之死預表": {
+    "alias_of": "大祭司死預表基督"
+  },
+  "受膏大祭司死預表": {
+    "alias_of": "大祭司死預表基督"
+  },
   "大祭司繼承": {
     "alias_of": "大祭司職分傳承"
   },
@@ -48384,6 +48533,12 @@
   },
   "三四代的追討": {
     "alias_of": "追討罪自父及子直到三四代"
+  },
+  "逃城預表": {
+    "alias_of": "逃城預表基督"
+  },
+  "城市避難所預表": {
+    "alias_of": "逃城預表基督"
   },
   "我住在這營中": {
     "alias_of": "這營是我所住的"

@@ -1,7 +1,7 @@
 {
-  "total_warnings": 98,
+  "total_warnings": 99,
   "critical_count": 0,
-  "warning_count": 98,
+  "warning_count": 99,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -506,6 +506,13 @@
       "source": "link_folder/地點/希伯崙.md",
       "target": "第13章",
       "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 04 民數記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/希伯崙.md",
+      "target": "第35章",
+      "message": "同一 alias「第35章」指向多個 target: 01 創世記/第35章, 04 民數記/第35章"
     },
     {
       "type": "alias_target_conflict",

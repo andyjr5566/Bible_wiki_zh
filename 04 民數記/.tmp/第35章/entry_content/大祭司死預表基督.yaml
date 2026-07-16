@@ -1,0 +1,33 @@
+name: 大祭司死預表基督
+type: 神學
+secondary_types: []
+aliases:
+- 大祭司之死預表
+- 受膏大祭司死預表
+status: formal
+definition: 民數記 35:25, 28, 32 規定誤殺人者必須住在逃城「直等到受聖膏的大祭司死了」，大祭司死後誤殺人才可歸回產業。新約視此預表基督作大祭司（來
+  7-10 章），祂藉著自己的死成就永遠贖罪，使信徒從罪的刑罰中得釋放，進入永恆產業。
+development: 早期教父特土良、希波呂陀見大祭司之死預表基督受難；中世紀經院神學將其納入「典型論」；改教後加爾文、貝薩強調大祭司之死預表基督一次獻祭的完全性；現代聖約神學進一步闡述大祭司更換預表新約優於舊約。
+accumulations:
+- book: 民數記
+  chapter: 35
+  summary: 第 25, 28, 32 節三次提到「大祭司死了」作為誤殺人者得自由的條件，確立大祭司之死的法律效力。
+  relation: 本章將大祭司之死與逃城釋放機制綁定，為新約基督大祭司職分的贖罪功效提供預表基礎。
+related_entries:
+- 逃城預表基督
+- 逃城保護期限
+- 逃城六座
+- 大祭司
+sources:
+- '逐節註解: 民數記 35 章大祭司之死預表（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT35.htm）'
+- '拾穗: 民數記 35 章大祭司死的屬靈意義（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT35.htm）'
+- '研經註解: Numbers 35 大祭司之死與基督（https://www.kingcomments.com/en/bible-studies/Num/35）'
+- '研經註解: Numbers 35 大祭司死預表基督（https://biblehub.com/study/numbers/35.htm）'
+created_from: numbers_35
+category: theology
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

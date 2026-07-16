@@ -1,0 +1,26 @@
+name: 逃城保護期限
+type: 神學
+secondary_types: []
+aliases:
+- 逃城保護期限
+status: formal
+definition: 民數記 35:25-28 規定誤殺者須住在逃城，直等到受聖膏的大祭司死了，才可返回產業；若在大祭司死前離開逃城，報血者殺之不負罪。
+development: 大祭司之死象徵贖罪完成，結束庇護期。
+accumulations:
+- book: 民數記
+  chapter: 35
+  summary: 闡述誤殺者在逃城的居住期限與大祭司死亡的關鍵角色。
+  relation: 與大祭司死預表基督、逃城預表基督有神學連結。
+related_entries:
+- 報血者
+- 誤殺與故殺界線
+- 大祭司死預表基督
+- 逃城預表基督
+sources:
+- '逐節註解: 民數記 35 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT35.htm）'
+- '拾穗: 民數記 35 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT35.htm）'
+created_from: 民數記 35
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

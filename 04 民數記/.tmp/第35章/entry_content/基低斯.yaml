@@ -1,0 +1,26 @@
+name: 基低斯
+type: 地點
+secondary_types: []
+aliases:
+- 基低斯
+status: formal
+definition: 民數記 35:14 指明迦南地三座逃城之一，屬利未人四十八城，為誤殺者提供庇護。
+development: 作為迦南地逃城之一，完成六座逃城的分佈。
+accumulations:
+- book: 民數記
+  chapter: 35
+  summary: 列為迦南地三座逃城之一。
+  relation: 與哥蘭、拉末基列同屬逃城六座，屬利未人四十八城。
+related_entries:
+- 利未人四十八城
+- 逃城六座
+- 哥蘭
+- 拉末基列
+sources:
+- '逐節註解: 民數記 35 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT35.htm）'
+- '拾穗: 民數記 35 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT35.htm）'
+created_from: 民數記 35
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

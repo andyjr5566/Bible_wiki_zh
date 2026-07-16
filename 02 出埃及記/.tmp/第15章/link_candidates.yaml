@@ -1,0 +1,199 @@
+book: 出埃及記
+chapter: 15
+candidates:
+  - name: 摩西
+    type: 人物
+    evidence: 1、22、24-25節；作歌領唱；領以色列人往前行；為苦水呼求耶和華
+  - name: 耶和華
+    type: 神學
+    evidence: 全章；歌頌的對象；祂是戰士、是醫治者、必作王直到永永遠遠
+    surfaces:
+      - {phrase: 耶和華, verses: [1, 3, 4, 6, 11, 16, 17, 21, 25]}
+  - name: 摩西之歌
+    type: 神學
+    evidence: 1節；聖經中第一首記錄的歌；丁良才列出聖經十歌，本歌居首
+    surfaces:
+      - {phrase: 向耶和華唱歌, verses: [1]}
+  - name: 海（紅海）
+    type: 地點
+    evidence: 1、4-5、8、10、19、21-22節；原文「蘆葦海」；suph 有雙關語意
+    surfaces:
+      - {phrase: 投在海中, verses: [1, 21]}
+      - {phrase: 沉於紅海, verses: [4]}
+      - {phrase: 海中的深水凝結, verses: [8]}
+      - {phrase: 海就把他們淹沒, verses: [10]}
+      - {phrase: 從紅海往前行, verses: [22]}
+  - name: 耶和華是我的力量我的詩歌我的拯救
+    type: 神學
+    evidence: 2節；原文以簡稱 YH（Jah）稱神；詩118:14、賽12:2 直接引用
+    surfaces:
+      - {phrase: 耶和華是我的力量，我的詩歌，也成了我的拯救, verses: [2]}
+  - name: 耶和華是戰士
+    type: 神學
+    evidence: 3節；原文直譯「戰爭的人」；與「萬軍之耶和華」的稱號相連
+    surfaces:
+      - {phrase: 耶和華是戰士, verses: [3]}
+  - name: 法老
+    type: 人物
+    evidence: 4、19節；他的車輛、軍兵、特選的軍長都沉於紅海
+  - name: 神的右手
+    type: 神學
+    evidence: 6、12節；右手是拿武器的手；施展能力、摔碎仇敵、伸出使地吞滅
+    surfaces:
+      - {phrase: 你的右手, verses: [6]}
+      - {phrase: 你伸出右手, verses: [12]}
+  - name: 來12：29 我們的神乃是烈火
+    type: 互文
+    evidence: 7節；「你發出烈怒如火，燒滅他們像燒碎稭一樣」
+    surfaces:
+      - {phrase: 烈怒如火, verses: [7]}
+  - name: 審判
+    type: 神學
+    evidence: 7、10、12節；推翻起來攻擊神的；如鉛沉在大水之中；地便吞滅他們
+    surfaces:
+      - {phrase: 推翻那些起來攻擊你的, verses: [7]}
+      - {phrase: 如鉛沉在大水之中, verses: [10]}
+      - {phrase: 地便吞滅他們, verses: [12]}
+  - name: 神的慈愛引領
+    type: 神學
+    evidence: 13節；「憑慈愛」原文 hesed——舊約最偉大的盟約用辭之一
+    surfaces:
+      - {phrase: 你憑慈愛領了你所贖的百姓, verses: [13]}
+  - name: 神的聖所
+    type: 神學
+    evidence: 13、17節；13節原文出於牧人羊群所居之所，17節指錫安山的聖殿——兩字不同
+    surfaces:
+      - {phrase: 你的聖所, verses: [13]}
+      - {phrase: 你手所建立的聖所, verses: [17]}
+  - name: 非利士地
+    type: 地點
+    evidence: 14節；主前1188年非利士人抵達迦南前這地不可能有此名稱——各家據此討論成書年代
+    surfaces:
+      - {phrase: 非利士, verses: [14]}
+  - name: 以東
+    type: 地點
+    evidence: 15節；以掃的後代，住西珥山；原義為「紅」；族長（allupim）地位稍低於王
+    surfaces:
+      - {phrase: 以東, verses: [15]}
+  - name: 摩押
+    type: 人物
+    evidence: 15節；羅得的女兒所生的後裔；「英雄」原文直譯「公羊」
+    surfaces:
+      - {phrase: 摩押, verses: [15]}
+  - name: 迦南
+    type: 人物
+    evidence: 15節；「迦南的居民心都消化了」——書2:9-11 喇合的話正是這句的應驗
+    surfaces:
+      - {phrase: 迦南, verses: [15]}
+  - name: 耶和華作王
+    type: 神學
+    evidence: 18節；全詩的神學終點；民23:21、申33:5 也提到耶和華在以色列中為王
+    surfaces:
+      - {phrase: 耶和華必作王，直到永永遠遠, verses: [18]}
+  - name: 過紅海
+    type: 歷史
+    evidence: 19節；「惟有以色列人在海中走乾地」——與埃及人的結局截然相反
+    surfaces:
+      - {phrase: 惟有以色列人在海中走乾地, verses: [19]}
+  - name: 米利暗
+    type: 人物
+    evidence: 20-21節；聖經第一位被稱為女先知的人；彌6:4 與摩西、亞倫並列
+    surfaces:
+      - {phrase: 米利暗, verses: [20, 21]}
+  - name: 亞倫
+    type: 人物
+    evidence: 20節；「亞倫的姊姊」——丁良才指此稱法顯明本書是摩西所寫
+  - name: 米利暗之歌
+    type: 神學
+    evidence: 20-21節；與摩西之歌首句幾乎全同，只是動詞從陳述式改為祈使式
+    surfaces:
+      - {phrase: 女先知, verses: [20]}
+      - {phrase: 你們要歌頌耶和華, verses: [21]}
+  - name: 書珥的曠野
+    type: 地點
+    evidence: 22節；位於西乃半島西北角；民33:8 稱為以倘（伊坦）曠野
+    surfaces:
+      - {phrase: 書珥的曠野, verses: [22]}
+  - name: 書珥曠野三天無水
+    type: 背景
+    evidence: 22節；與3:18「走三天的路程祭祀耶和華」遙相呼應——事奉神原是艱苦難行的工作
+    surfaces:
+      - {phrase: 在曠野走了三天，找不著水, verses: [22]}
+  - name: 瑪拉
+    type: 地點
+    evidence: 23節；一般認為是蘇彝士灣北端以南約七十公里的安哈瓦拿（Ain Hawarah）
+    surfaces:
+      - {phrase: 到了瑪拉, verses: [23]}
+  - name: 瑪拉（ bitterness ）
+    type: 原文
+    evidence: 23節；原文意「苦」；得1:20 拿俄米自稱瑪拉；英文「沒藥」可能同一字根
+    surfaces:
+      - {phrase: 那地名叫瑪拉, verses: [23]}
+  - name: 以色列人的怨言
+    type: 歷史
+    evidence: 24節；丁良才數出以色列人至少還有七次怨言；林前10:10 以此警戒信徒
+    surfaces:
+      - {phrase: 百姓就向摩西發怨言, verses: [24]}
+  - name: 瑪拉苦水變甜
+    type: 事件
+    evidence: 25節；耶和華指示一棵樹，丟在水裡水就變甜——CT 指不是一種樹，乃是一棵樹
+    surfaces:
+      - {phrase: 耶和華指示他一棵樹, verses: [25]}
+      - {phrase: 水就變甜了, verses: [25]}
+  - name: 神的試驗
+    type: 神學
+    evidence: 25節；「在那裡試驗他們」——神藉所頒佈的律法和典章驗出以色列人的實際狀況
+    surfaces:
+      - {phrase: 在那裡試驗他們, verses: [25]}
+  - name: 聽命順從蒙醫治
+    type: 主題
+    evidence: 26節；「你若…我就…」的條件句式——神的醫治與子民的聽命順從相連
+    surfaces:
+      - {phrase: 你若留意聽耶和華, verses: [26]}
+  - name: 耶和華拉法
+    type: 神學
+    evidence: 26節；「我耶和華是醫治你的」——「醫治」的希伯來語指「醫生」
+    surfaces:
+      - {phrase: 耶和華是醫治你的, verses: [26]}
+  - name: 以琳
+    type: 地點
+    evidence: 27節；考證為蘇彝士灣沿海六十哩外的加蘭達珥乾河，至今仍是貝督因人主要歇息處
+    surfaces:
+      - {phrase: 他們到了以琳, verses: [27]}
+  - name: 以琳十二股水泉七十棵棕樹
+    type: 背景
+    evidence: 27節；十二對應十二支派、七十對應七十位長老；《丁道爾》則認為兩者都代表完美
+    surfaces:
+      - {phrase: 十二股水泉，七十棵棕樹, verses: [27]}
+  - name: 以琳綠洲
+    type: 事件
+    evidence: 27節；沙漠中的綠洲；先瑪拉後以琳——神教訓選民先苦後樂的定理
+    surfaces:
+      - {phrase: 在那裡的水邊安營, verses: [27]}
+  - name: 救恩
+    type: 神學
+    evidence: 2節；「也成了我的拯救」——這是14:13「看耶和華今天向你們所要施行的救恩」的應驗
+  - name: 啟15：2-4 羔羊之歌
+    type: 互文
+    evidence: 1節；啟15:3 唱神僕人摩西的歌和羔羊的歌——聖經最後一次提到歌
+  - name: 賽12：2 耶和華是我的力量我的詩歌
+    type: 互文
+    evidence: 2節；以賽亞直接引用本節
+  - name: 詩118：14 耶和華是我的力量我的詩歌
+    type: 互文
+    evidence: 2節；詩篇118:14 重複本節的概念
+  - name: 林前10：10 不要發怨言
+    type: 互文
+    evidence: 24節；保羅以以色列人在曠野的怨言警戒新約信徒
+  - name: 書珥
+    type: 地點
+    evidence: 22節；埃及文意為「牆」或「堡壘」，希伯來文則有「旅行」的含義
+  - name: 書珥（ wall ）
+    type: 原文
+    evidence: 22節；埃及自主前第二十世紀中葉起在此建造軍事堡壘，「書珥」之名可能由此而來
+  - name: 以琳（ trees ）
+    type: 原文
+    evidence: 27節；原文可解作「大樹」，也可意譯為「眾神」——曠野綠洲常被認作聖地
+  - name: 瑪拉苦水
+    type: 背景
+    evidence: 23節；那裡的水含有礦鹽，所以呈苦澀味
