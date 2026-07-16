@@ -1,7 +1,7 @@
 {
-  "total_warnings": 95,
+  "total_warnings": 96,
   "critical_count": 0,
-  "warning_count": 95,
+  "warning_count": 96,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -72,6 +72,13 @@
       "source": "民數記/第30章.md",
       "target": "默默不言",
       "message": "同一 alias「默默不言」指向多個 target: 丈夫天天默許堅定願誓, 丈夫家中許願丈夫權柄"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第32章.md",
+      "target": "希實本",
+      "message": "同一 alias「希實本」指向多個 target: 希實本, 建城與更名"
     },
     {
       "type": "alias_target_conflict",
