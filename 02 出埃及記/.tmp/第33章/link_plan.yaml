@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 33
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 亞伯拉罕
   suggested_type: 人物
   evidence: 出33:1 神吩咐摩西：我曾起誓應許亞伯拉罕、以撒、雅各，要將迦南地賜給你的後裔。已有條目「亞伯拉罕」
@@ -43,6 +42,16 @@ B_needs_update:
   match_type: exact
   existing_title: 耶和華的使者
   existing_path: link_folder/神學/耶和華的使者.md
+- name: 迦南七族（迦南地原住民）
+  suggested_type: 背景
+  evidence: 出33:2 神應許攆出迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人。CT/GT：撒瑪利亞抄本和七十士譯本均加上革迦撒人，合稱「迦南地七族」（參徒13:19）
+  surfaces:
+  - phrase: 迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 迦南七族（迦南地原住民）
+  existing_path: link_folder/背景/迦南七族（迦南地原住民）.md
 - name: 硬著頸項的百姓
   suggested_type: 神學
   evidence: 出33:3,5 神說「你們是硬著頸項的百姓，恐怕我在路上把你們滅絕」，因此不親自同去，只差遣使者。與出32:9 呼應。GT：神拒絕親自同行是為了保護百姓——若神太過接近悖逆犯罪的百姓，怒氣發作便會使他們滅亡（摩3:2「你們必受罰」正是因親近神反致追討更嚴）。已有候選/條目「硬著頸項的百姓」
@@ -64,6 +73,43 @@ B_needs_update:
   match_type: exact
   existing_title: 何烈山
   existing_path: link_folder/地點/何烈山.md
+- name: 百姓摘除妝飾表悔改
+  suggested_type: 事件
+  evidence: 出33:4-6 百姓聽見神不與他們同行的凶信就悲哀，沒有人佩戴妝飾；神吩咐他們摘下身上的妝飾，使祂可以知道怎樣待他們；以色列人從住何烈山以後就把身上的妝飾摘得乾淨。CT/GT：這些妝飾很可能與出32:2-4
+    鑄造金牛犢的金環同源（創35:2-4 除下耳環、換衣服與棄絕外邦神密切相關），神要他們徹底去除與偶像的關連；4節的不佩戴是百姓自發悲慟，5節下卻是神吩咐摘下以免再犯，兩者略有分別。BH：removing
+    jewelry demonstrates humility and penitence, connecting to the earlier incident
+    where jewelry was used to create the idol (Exodus 32:2-4)
+  surfaces:
+  - phrase: 沒有人佩戴妝飾
+    verses:
+    - 4
+  - phrase: 把身上的妝飾摘下來
+    verses:
+    - 5
+  - phrase: 把身上的妝飾摘得乾淨
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 百姓摘除妝飾表悔改
+  existing_path: link_folder/事件/百姓摘除妝飾表悔改.md
+- name: 摩西的臨時會幕（營外）
+  suggested_type: 事件
+  evidence: 出33:7-11 摩西將帳棚支搭在營外離營甚遠，稱為會幕，凡求問耶和華的就到那裡去；摩西進去時雲柱降下、耶和華與他面對面說話，百姓在自己帳棚門口下拜，約書亞留守不離開會幕。CT：此臨時會幕與後來按山上樣式建造、立於營中央的正式會幕（民2:2、出40:18-32）不同，是百姓因金牛犢事件被神暫時疏遠期間的權宜之所。GT：這是先知性質而非祭司性質的會幕，此處無獻祭亦無祭壇，由約書亞而非利未人管理，鼓勵個人操練敬虔——凡願意求問神的可直接前往。KC：摩西憑信心將此帳棚支搭在營外，象徵離開營（拜金牛犢的敗壞之地）才能親近神，來13:13
+    呼應信徒也當出到營外就近基督
+  surfaces:
+  - phrase: 摩西素常將帳棚支搭在營外
+    verses:
+    - 7
+  - phrase: 會幕
+    verses:
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 摩西的臨時會幕（營外）
+  existing_path: link_folder/事件/摩西的臨時會幕（營外）.md
 - name: 約書亞
   suggested_type: 人物
   evidence: 出33:11 摩西的幫手、嫩的兒子約書亞不離開會幕。GT：摩西沒有派亞倫和他的兒子看守此會幕，可能因他們在金牛犢的罪上有份，約書亞在此事上沒有關係。已有條目「約書亞」
@@ -99,6 +145,24 @@ B_needs_update:
   match_type: exact
   existing_title: 雲柱火柱
   existing_path: link_folder/歷史/雲柱火柱.md
+- name: 摩西求神同去並蒙應允
+  suggested_type: 事件
+  evidence: 出33:12-17 摩西求神指示要打發誰同去，並求神將祂的道指示他使他可以認識神；又求神想到這民是神的民；求神若不親自同去就不要領他們上去；神就應允「我必親自和你同去，使你得安息」。GT：原文摩西求「你的道」並非「話語」而是道路、方法、計畫、原則之意；十九至十七節這五節經文中「認識」一詞共出現六次；摩西求告的兩個平衡問題——你要打發誰同去、求你將你的道指示我——顯明他熱切期望神親自同去而非僅差派天使。BH：Moses'
+    plea highlights the importance of God's presence as a sign of His favor, distinguishing
+    Israel from all other peoples on earth
+  surfaces:
+  - phrase: 求你將你的道指示我
+    verses:
+    - 13
+  - phrase: 我必親自和你同去，使你得安息
+    verses:
+    - 14
+  - phrase: 你這所求的我也要行
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 摩西求神同去並蒙應允
+  existing_path: link_folder/事件/摩西求神同去並蒙應允.md
 - name: 神的榮耀
   suggested_type: 神學
   evidence: 出33:18-19,22 摩西求神顯出祂的榮耀，神應允要顯一切的恩慈、在摩西面前經過、宣告祂的名，又說「我的榮耀經過的時候」。CT：神的榮耀即神自己的彰顯，人無法用言詞形容，只能借「榮耀」稱之；摩西先前已同百姓見過神的榮耀（出16:7,10、19:18、24:16-17），此次卻是求見神本體。已有條目「神的榮耀」
@@ -126,64 +190,6 @@ B_needs_update:
   match_type: exact
   existing_title: 磐石預表基督
   existing_path: link_folder/神學/磐石預表基督.md
-C_new_formal:
-- name: 迦南七族（迦南地原住民）
-  suggested_type: 背景
-  evidence: 出33:2 神應許攆出迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人。CT/GT：撒瑪利亞抄本和七十士譯本均加上革迦撒人，合稱「迦南地七族」（參徒13:19）
-  surfaces:
-  - phrase: 迦南人、亞摩利人、赫人、比利洗人、希未人、耶布斯人
-    verses:
-    - 2
-  target_path: link_folder/背景/迦南七族（迦南地原住民）.md
-- name: 百姓摘除妝飾表悔改
-  suggested_type: 事件
-  evidence: 出33:4-6 百姓聽見神不與他們同行的凶信就悲哀，沒有人佩戴妝飾；神吩咐他們摘下身上的妝飾，使祂可以知道怎樣待他們；以色列人從住何烈山以後就把身上的妝飾摘得乾淨。CT/GT：這些妝飾很可能與出32:2-4
-    鑄造金牛犢的金環同源（創35:2-4 除下耳環、換衣服與棄絕外邦神密切相關），神要他們徹底去除與偶像的關連；4節的不佩戴是百姓自發悲慟，5節下卻是神吩咐摘下以免再犯，兩者略有分別。BH：removing
-    jewelry demonstrates humility and penitence, connecting to the earlier incident
-    where jewelry was used to create the idol (Exodus 32:2-4)
-  surfaces:
-  - phrase: 沒有人佩戴妝飾
-    verses:
-    - 4
-  - phrase: 把身上的妝飾摘下來
-    verses:
-    - 5
-  - phrase: 把身上的妝飾摘得乾淨
-    verses:
-    - 6
-  target_path: link_folder/事件/百姓摘除妝飾表悔改.md
-- name: 摩西的臨時會幕（營外）
-  suggested_type: 事件
-  evidence: 出33:7-11 摩西將帳棚支搭在營外離營甚遠，稱為會幕，凡求問耶和華的就到那裡去；摩西進去時雲柱降下、耶和華與他面對面說話，百姓在自己帳棚門口下拜，約書亞留守不離開會幕。CT：此臨時會幕與後來按山上樣式建造、立於營中央的正式會幕（民2:2、出40:18-32）不同，是百姓因金牛犢事件被神暫時疏遠期間的權宜之所。GT：這是先知性質而非祭司性質的會幕，此處無獻祭亦無祭壇，由約書亞而非利未人管理，鼓勵個人操練敬虔——凡願意求問神的可直接前往。KC：摩西憑信心將此帳棚支搭在營外，象徵離開營（拜金牛犢的敗壞之地）才能親近神，來13:13
-    呼應信徒也當出到營外就近基督
-  surfaces:
-  - phrase: 摩西素常將帳棚支搭在營外
-    verses:
-    - 7
-  - phrase: 會幕
-    verses:
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
-  target_path: link_folder/事件/摩西的臨時會幕（營外）.md
-- name: 摩西求神同去並蒙應允
-  suggested_type: 事件
-  evidence: 出33:12-17 摩西求神指示要打發誰同去，並求神將祂的道指示他使他可以認識神；又求神想到這民是神的民；求神若不親自同去就不要領他們上去；神就應允「我必親自和你同去，使你得安息」。GT：原文摩西求「你的道」並非「話語」而是道路、方法、計畫、原則之意；十九至十七節這五節經文中「認識」一詞共出現六次；摩西求告的兩個平衡問題——你要打發誰同去、求你將你的道指示我——顯明他熱切期望神親自同去而非僅差派天使。BH：Moses'
-    plea highlights the importance of God's presence as a sign of His favor, distinguishing
-    Israel from all other peoples on earth
-  surfaces:
-  - phrase: 求你將你的道指示我
-    verses:
-    - 13
-  - phrase: 我必親自和你同去，使你得安息
-    verses:
-    - 14
-  - phrase: 你這所求的我也要行
-    verses:
-    - 17
-  target_path: link_folder/事件/摩西求神同去並蒙應允.md
 - name: 神施恩憐憫的主權（羅9:15,18）
   suggested_type: 互文
   evidence: 出33:19 神說「我要恩待誰就恩待誰；要憐憫誰就憐憫誰」。KC：保羅在羅9:15,18 引此節回應那些控告神不公義的人——神是完全自由的主權者，按自己的旨意施恩或憐憫，不受任何外力轄制；神從不預定人受審判，人是因自己的緣故承受審判。GT：這話顯明神有主權，祂固然為萬事萬物定了定律，如有需要，祂有主權暫廢這定律，使某人不受其轄制
@@ -191,7 +197,9 @@ C_new_formal:
   - phrase: 我要恩待誰就恩待誰；要憐憫誰就憐憫誰
     verses:
     - 19
-  target_path: link_folder/互文/神施恩憐憫的主權（羅9:15,18）.md
+  match_type: normalized
+  existing_title: 神施恩憐憫的主權（羅9：15,18）
+  existing_path: link_folder/互文/神施恩憐憫的主權（羅9：15,18）.md
 - name: 不能看見神的面而存活
   suggested_type: 神學
   evidence: 出33:20 神說「你不能看見我的面，因為人見我的面不能存活」。CT：意指墮落的人類若非基督十字架救贖的遮蔽，不能在聖潔神的面光中存活；摩西所見僅是神的背（23節），要等到主顯現之日才得見祂的真體（約壹3:2）。GT：此節解釋了11節「面對面說話」、民12:8、出24:11、賽6:1等經文的意涵（參約14:9）；保羅也得了主特別的顯現和啟示（林後12:1-4），但仍論到神住在不能靠近的光裡（提前6:16）
@@ -202,6 +210,10 @@ C_new_formal:
   - phrase: 你就得見我的背，卻不得見我的面
     verses:
     - 23
-  target_path: link_folder/神學/不能看見神的面而存活.md
+  match_type: exact
+  existing_title: 不能看見神的面而存活
+  existing_path: link_folder/神學/不能看見神的面而存活.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
