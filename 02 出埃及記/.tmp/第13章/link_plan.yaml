@@ -1,0 +1,338 @@
+book: 出埃及記
+chapter: 13
+A_use_directly:
+- name: 耶和華的話臨到
+  suggested_type: 神學
+  evidence: 1節；「耶和華曉諭摩西說」——CT 指這表示 2-16 節的律法條例並非摩西自訂，乃出於神的命令
+  surfaces:
+  - phrase: 耶和華曉諭
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 耶和華的話臨到
+  existing_path: link_folder/神學/耶和華的話臨到.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 1、3、19節；受神曉諭、對百姓傳達、帶約瑟骸骨一同出埃及
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 頭生歸神為聖
+  suggested_type: 歷史
+  evidence: 2、12節；頭生的代表全體，既蒙救贖理當分別出來歸神
+  surfaces:
+  - phrase: 以色列中凡頭生的
+    verses:
+    - 2
+  - phrase: 一切頭生的
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 頭生歸神為聖
+  existing_path: link_folder/歷史/頭生歸神為聖.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: 2節；原文意為「唯獨為了神，區分開的」；《串珠》指可解作「獻上」或「將它當作屬神的」
+  surfaces:
+  - phrase: 要分別為聖歸我
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 3、9、14-17節；為奴之家；耶和華用大能的手將以色列人從那裡領出來
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 3
+    - 9
+    - 14
+    - 15
+    - 16
+    - 17
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 3、5-6、8-9、11-12、14-16、21節；全章的施救者與引領者
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 3
+    - 5
+    - 6
+    - 8
+    - 9
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 21
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 大能的手
+  suggested_type: 神學
+  evidence: 3、9、14、16節；四次重複「耶和華用大能的手將你從埃及領出來」——本章的節奏骨幹
+  surfaces:
+  - phrase: 大能的手
+    verses:
+    - 3
+    - 9
+    - 14
+    - 16
+  match_type: exact
+  existing_title: 大能的手
+  existing_path: link_folder/神學/大能的手.md
+- name: 亞筆月
+  suggested_type: 原文
+  evidence: 4節；古迦南人的月名，原意「青穗」；被擄後改稱尼散月（尼二1）
+  surfaces:
+  - phrase: 亞筆月
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 亞筆月
+  existing_path: link_folder/原文/亞筆月.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 5、11節；迦南人、赫人、亞摩利人、希未人、耶布斯人之地——本節未提比利洗人與革迦撒人
+  surfaces:
+  - phrase: 迦南人、赫人、亞摩利人、希未人、耶布斯人之地
+    verses:
+    - 5
+  - phrase: 迦南人之地
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 進迦南應許
+  suggested_type: 歷史
+  evidence: 5節；「向你的祖宗起誓應許給你」——指與亞伯拉罕、以撒、雅各所立的約
+  surfaces:
+  - phrase: 向你的祖宗起誓應許給你
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 進迦南應許
+  existing_path: link_folder/歷史/進迦南應許.md
+- name: 流奶與蜜之地
+  suggested_type: 神學
+  evidence: 5節；CT 指奶代表動物的精華，蜜代表植物的精華——物產豐富之地
+  surfaces:
+  - phrase: 流奶與蜜之地
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 流奶與蜜之地
+  existing_path: link_folder/神學/流奶與蜜之地.md
+- name: 無酵節重申
+  suggested_type: 歷史
+  evidence: 10節；「你每年要按著日期守這例」——年年守節，為的是有機會教導兒孫神大能的作為
+  surfaces:
+  - phrase: 每年要按著日期守這例
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 無酵節重申
+  existing_path: link_folder/歷史/無酵節重申.md
+- name: 記號與經文
+  suggested_type: 原文
+  evidence: 9、16節；手上作記號、額上作記念／經文——後世發展為經文匣（太23:5「佩戴的經文」）
+  surfaces:
+  - phrase: 記號
+    verses:
+    - 9
+    - 16
+  match_type: exact
+  existing_title: 記號與經文
+  existing_path: link_folder/原文/記號與經文.md
+- name: 驢用羊羔代贖
+  suggested_type: 原文
+  evidence: 13節；驢是以色列普遍使用的唯一不潔家畜，不能獻祭，故用羊羔代贖
+  surfaces:
+  - phrase: 用羊羔代贖
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 驢用羊羔代贖
+  existing_path: link_folder/原文/驢用羊羔代贖.md
+- name: 法老
+  suggested_type: 人物
+  evidence: 15、17節；幾乎不容以色列人去；容百姓去的時候神卻不領他們走近路
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 非利士地
+  suggested_type: 地點
+  evidence: 17節；沿地中海岸的大幹道，埃及稱為「賀如司之道」，設有重兵駐守
+  surfaces:
+  - phrase: 非利士地
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 非利士地
+  existing_path: link_folder/地點/非利士地.md
+- name: 神的主權與預定
+  suggested_type: 神學
+  evidence: 17節；「神卻不領他們從那裡走」——神知道百姓心裡未預備，按他們的實際情形帶領
+  surfaces:
+  - phrase: 神卻不領他們從那裡走
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 神的主權與預定
+  existing_path: link_folder/神學/神的主權與預定.md
+- name: 繞道而行
+  suggested_type: 歷史
+  evidence: 18節；原文「轉向、圍繞」；神領百姓迂迴而不走直路
+  surfaces:
+  - phrase: 繞道而行
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 繞道而行
+  existing_path: link_folder/歷史/繞道而行.md
+- name: 紅海曠野
+  suggested_type: 地點
+  evidence: 18節；原文作「蘆葦海」（Yam Suph），非今日的紅海；指蘇彝士灣與地中海之間的蘆葦沼澤地帶
+  surfaces:
+  - phrase: 紅海曠野
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 紅海曠野
+  existing_path: link_folder/地點/紅海曠野.md
+- name: 以色列人帶兵器
+  suggested_type: 歷史
+  evidence: 18節；奴隸工作時不可能有兵器；可能在工地拿或向埃及人索要（12:35-36）
+  surfaces:
+  - phrase: 帶著兵器
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 以色列人帶兵器
+  existing_path: link_folder/歷史/以色列人帶兵器.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 19節；臨終叫以色列人嚴嚴地起誓，要把骸骨帶上去
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 約瑟骸骨
+  suggested_type: 歷史
+  evidence: 19節；創50:25-26 的應驗；最終葬於示劍（書24:32）
+  surfaces:
+  - phrase: 骸骨
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 約瑟骸骨
+  existing_path: link_folder/歷史/約瑟骸骨.md
+- name: 疏割
+  suggested_type: 地點
+  evidence: 20節；原文字義「貨攤」；考據為圖米拉特乾河東端的馬斯庫塔遺址
+  surfaces:
+  - phrase: 疏割
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 疏割
+  existing_path: link_folder/地點/疏割.md
+- name: 以倘
+  suggested_type: 地點
+  evidence: 20節；原文字義「海邊」或「與他們同在」；在曠野邊，確實地點不詳
+  surfaces:
+  - phrase: 以倘
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 以倘
+  existing_path: link_folder/地點/以倘.md
+- name: 雲柱火柱
+  suggested_type: 歷史
+  evidence: 21-22節；神同在的表號；日間遮蔭、夜間光照保溫，兼具引領與保護
+  surfaces:
+  - phrase: 雲柱
+    verses:
+    - 21
+    - 22
+  - phrase: 火柱
+    verses:
+    - 21
+    - 22
+  match_type: exact
+  existing_title: 雲柱火柱
+  existing_path: link_folder/歷史/雲柱火柱.md
+- name: 創五十25 約瑟骸骨應許
+  suggested_type: 互文
+  evidence: 19節；約瑟臨終遺命「神必眷顧你們，你們要把我的骸骨從這裡一同帶上去」
+  match_type: exact
+  existing_title: 創五十25 約瑟骸骨應許
+  existing_path: link_folder/互文/創五十25 約瑟骸骨應許.md
+- name: 創十五13-16 迦南應許
+  suggested_type: 互文
+  evidence: 5、11節；神向亞伯拉罕起誓應許迦南地——本章兩次以此為守節與獻頭生的前提
+  match_type: exact
+  existing_title: 創十五13-16 迦南應許
+  existing_path: link_folder/互文/創十五13-16 迦南應許.md
+B_needs_update:
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: 6-7節；七日之久要吃無酵餅，四境之內不可見發酵的物
+  surfaces:
+  - phrase: 無酵餅
+    verses:
+    - 6
+    - 7
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: 8節；「這是因耶和華在我出埃及的時候為我所行的事」——父親對兒子的個人見證
+  surfaces:
+  - phrase: 我出埃及的時候
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
+- name: 利未人代替長子
+  suggested_type: 神學
+  evidence: 13節；長子要贖出來——民3:12 神揀選利未人代替以色列一切頭生的；民18:16 贖價五舍客勒
+  surfaces:
+  - phrase: 凡你兒子中頭生的都要贖出來
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 利未人代替長子
+  existing_path: link_folder/神學/利未人代替長子.md
+- name: 長子之死
+  suggested_type: 歷史
+  evidence: 15節；「耶和華就把埃及地所有頭生的，無論是人是牲畜，都殺了」——獻頭生與贖長子的緣由
+  surfaces:
+  - phrase: 所有頭生的
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 長子之死
+  existing_path: link_folder/歷史/長子之死.md
+- name: 以色列人的軍隊
+  suggested_type: 神學
+  evidence: 18節；原文作「列陣」——以色列人不是散兵游勇之逃命，是按軍隊編組出埃及
+  surfaces:
+  - phrase: 以色列人出埃及地
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 以色列人的軍隊
+  existing_path: link_folder/神學/以色列人的軍隊.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
