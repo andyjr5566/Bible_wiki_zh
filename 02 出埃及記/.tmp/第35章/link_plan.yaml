@@ -1,7 +1,6 @@
 book: 出埃及記
 chapter: 35
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 安息日
   suggested_type: 神學
   evidence: 出35:2-3 摩西重申六日要做工，第七日為聖日守為安息聖日，干犯者治死，當日不可在住處生火。CT：安息日是摩西之約的標誌（出31:15-16），摩西在宣布會幕建造樣式之前先重申此律，顯明其重要性優先於建造聖工本身。GT/丁道爾：安息日律法在此位於整段的開始，在出31章卻是該段落的結語，這是故意的安排，顯出即使百姓捲在建造帳幕的熱潮中，仍不可稍忘守聖日；「不可生火」是舊約僅見此處的獨特規定，可能針對建造聖所金工所用之火而發。已有條目「安息日」
@@ -98,6 +97,16 @@ B_needs_update:
   match_type: exact
   existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
   existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+- name: 橛子與繩子的預表
+  suggested_type: 神學
+  evidence: 出35:18 「帳幕的橛子並院子的橛子，和這兩處的繩子」。CT：橛子深埋地中人所不見，卻擔起支持會幕的工作，表徵甘願隱藏自己、高舉基督的事奉者；院子銅柱每根用兩條繩子固定，一內一外，表徵神雙份的大愛將人繫住，使人在基督的受苦與降卑上與祂聯合（腓3:10、彼前2:21、腓1:29）
+  surfaces:
+  - phrase: 帳幕的橛子並院子的橛子，和這兩處的繩子
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 橛子與繩子的預表
+  existing_path: link_folder/神學/橛子與繩子的預表.md
 - name: 會幕（帳幕整體）
   suggested_type: 主題
   evidence: 出35:11,18,21 摩西呼召眾人奉獻材料製作帳幕和帳幕的罩棚、蓋、鉤子、板、閂、柱子等，用以做會幕和其中一切的使用。KC/來3:5-6：摩西是神家中忠心的僕人，基督卻是超越摩西、治理這家的兒子。已有條目「會幕（帳幕整體）」
@@ -168,15 +177,6 @@ B_needs_update:
   match_type: exact
   existing_title: 胸牌（決斷胸牌）
   existing_path: link_folder/原文/胸牌（決斷胸牌）.md
-C_new_formal:
-- name: 橛子與繩子的預表
-  suggested_type: 神學
-  evidence: 出35:18 「帳幕的橛子並院子的橛子，和這兩處的繩子」。CT：橛子深埋地中人所不見，卻擔起支持會幕的工作，表徵甘願隱藏自己、高舉基督的事奉者；院子銅柱每根用兩條繩子固定，一內一外，表徵神雙份的大愛將人繫住，使人在基督的受苦與降卑上與祂聯合（腓3:10、彼前2:21、腓1:29）
-  surfaces:
-  - phrase: 帳幕的橛子並院子的橛子，和這兩處的繩子
-    verses:
-    - 18
-  target_path: link_folder/神學/橛子與繩子的預表.md
 - name: 婦女參與建造會幕
   suggested_type: 主題
   evidence: 出35:22,25-26 凡心裡樂意獻禮物的連男帶女都將金器獻上；凡心中有智慧的婦女親手紡線，把所紡的藍色、紫色、朱紅色線和細麻拿了來，凡有智慧心裡受感的婦女就紡山羊毛。GT：埃及國女人多紡線染布，男人多織布繡花；聖經精讀本指出「智慧的」一詞與10節男子的「智慧」是同一詞，神賜給婦女和男人同等的恩賜參與神的工作（路8:2-3、羅12:6-8、16:1）。丁道爾：模式再次擴闊，人人都有資格獻上禮物，即使本身沒技巧的人也不例外，女人可以紡線（箴31:13），官長帶來寶石香料（27-28節），人人有分建造聖所（弗4:16）
@@ -187,6 +187,10 @@ C_new_formal:
   - phrase: 凡有智慧、心裡受感的婦女
     verses:
     - 26
-  target_path: link_folder/主題/婦女參與建造會幕.md
+  match_type: exact
+  existing_title: 婦女參與建造會幕
+  existing_path: link_folder/主題/婦女參與建造會幕.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
