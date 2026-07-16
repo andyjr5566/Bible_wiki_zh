@@ -1,0 +1,25 @@
+name: 征服希實本王西宏
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記 2:24‑36 記載，神將亞摩利人希實本王西宏及其地交給以色列；神硬化西宏心，使他出戰，以色列在雅雜擊敗他，毀滅其一切城邑、婦女兒童，僅取牲畜財物為掠物，並佔領從亞嫩谷到基列全地。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 2
+  summary: 記載以色列征服希實本王西宏及其地
+  relation: 神硬化西宏心，使以色列得勝，並毀滅其城邑，取牲畜財物
+related_entries:
+- 神硬化西宏心
+- 聖戰毀滅原則
+- 亞嫩谷至基列全地得勝
+- 雅雜
+- 亞羅珥
+sources:
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT02.htm'
+- '研經註解: https://biblehub.com/study/deuteronomy/2.htm'
+created_from: 申命記 2
+trigger_sources: []
+current_data: {}
+pending: false

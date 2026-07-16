@@ -1,0 +1,27 @@
+name: 亞珥
+type: 地點
+secondary_types: []
+aliases:
+- Ar
+status: formal
+definition: 申命記 2:9、18 提到神將亞珥賜給羅得子孫（摩押人）為業，以色列不可擾害。
+development: 作為摩押邊界城市，彰顯神對列國產業的分配。
+accumulations:
+- book: 申命記
+  chapter: 2
+  summary: 記載神將亞珥賜給摩押人，以色列不可爭戰。
+  relation: 本章關於不可擾害摩押人的指示背景。
+related_entries:
+- 不可擾害摩押人
+sources:
+- '逐節註解: 申命記 2 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT02.htm）'
+- '拾穗: 申命記 2 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT02.htm）'
+- '研經註解: 申命記 2 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/2）'
+created_from: 申命記 2
+category: 地點
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

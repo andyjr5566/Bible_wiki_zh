@@ -1,0 +1,27 @@
+name: 以拉他
+type: 地點
+secondary_types: []
+aliases:
+- Elath
+status: formal
+definition: 申命記 2:8 記載以色列從西珥轉向摩押曠野時，經過以拉他。
+development: 作為紅海港口城市，見證以色列繞行西珥山的路線。
+accumulations:
+- book: 申命記
+  chapter: 2
+  summary: 記載以色列路經以拉他、以旬迦別。
+  relation: 本章行程記載中的地理節點。
+related_entries:
+- 以色列繞行西珥山
+sources:
+- '逐節註解: 申命記 2 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT02.htm）'
+- '拾穗: 申命記 2 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT02.htm）'
+- '研經註解: 申命記 2 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/2）'
+created_from: 申命記 2
+category: 地點
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

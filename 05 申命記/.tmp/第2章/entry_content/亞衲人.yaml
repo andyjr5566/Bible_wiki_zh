@@ -1,0 +1,29 @@
+name: 亞衲人
+type: 人物
+secondary_types: []
+aliases:
+- Anakim
+status: formal
+definition: 申命記 2:10-11、20-21 描述亞衲人為身材高大的巨人族群，以米人、散送冥被比擬為亞衲人。
+development: 作為利乏音人（利乏音）的代表，顯示神在征服過程中除滅巨人族群。
+accumulations:
+- book: 申命記
+  chapter: 2
+  summary: 記載以米人、散送冥像亞衲人一樣高大，後被神除滅。
+  relation: 本章將亞衲人作為巨人族群的典型，連結利乏音人與征服敵人。
+related_entries:
+- 以米人與利乏音人
+- 散送冥與利乏音人
+- 利乏音人
+sources:
+- '逐節註解: 申命記 2 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT02.htm）'
+- '拾穗: 申命記 2 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT02.htm）'
+- '研經註解: 申命記 2 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/2）'
+created_from: 申命記 2
+category: 人物
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

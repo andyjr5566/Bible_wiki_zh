@@ -1,0 +1,31 @@
+name: 亞嫩谷至基列全地得勝
+type: 事件
+secondary_types: []
+aliases:
+- Arnon to Gilead victory
+status: formal
+definition: 指以色列在申命記 2 章 24-36 節記載，神將亞摩利王西宏及其地交在以色列手中，以色列從亞嫩谷邊的亞羅珥直到基列全地均獲得勝利並佔領。
+development: 此事件標誌以色列開始進入應許地東側的征服，並展示神對敵人心硬化的主權。
+accumulations:
+- book: 申命記
+  chapter: 2
+  summary: 記載以色列過亞嫩谷、擊敗西宏、奪取從亞嫩谷至基列全地。
+  relation: 本章核心戰役，顯示神實現應許、將地賜給以色列。
+related_entries:
+- 征服希實本王西宏
+- 亞嫩谷
+- 基列
+- 雅博
+- 聖戰毀滅原則
+sources:
+- '逐節註解: 申命記 2 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT02.htm）'
+- '拾穗: 申命記 2 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT02.htm）'
+- '研經註解: 申命記 2 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/2）'
+created_from: 申命記 2
+category: 事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false
