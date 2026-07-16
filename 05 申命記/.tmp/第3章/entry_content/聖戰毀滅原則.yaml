@@ -1,0 +1,30 @@
+name: 聖戰毀滅原則
+type: 神學
+secondary_types: []
+aliases:
+- 聖戰毀滅
+- 赫蓮
+status: formal
+definition: 指耶和華命令以色列人在征服迦南時，將特定民族或城市「完全毀滅」（希伯來文 herem），不留活口、不取財物為己有，視為獻給神的當滅之物。本章記載以色列人對巴珊王噩之城邑執行此原則：「把有人煙的各城，連女人帶孩子，盡都毀滅」（申3:6），僅牲畜財物取為掠物（申3:7），顯示聖戰屬神主導，人不可貪圖私利。
+development: 申命記3章延續第2章對西宏的處理，再次展示聖戰毀滅原則在巴珊地的執行，強調「像從前待希實本王西宏一樣」（申3:6），確立進入迦南前的戰爭倫理基調。
+accumulations:
+- book: 申命記
+  chapter: 3
+  summary: 記載以色列滅巴珊王噩，將六十座城連婦女孩子盡行毀滅，僅取牲畜財物，展示聖戰毀滅原則的實際操作。
+  relation: 本章為聖戰毀滅原則在約但河東的第二個具體案例，作為進入迦南全地執行赫蓮的先例。
+related_entries:
+- 征服巴珊王噩
+- 亞珥歌伯全境
+- 睚珥得亞珥歌伯地
+- 二個半支派得約但河東地
+sources:
+- '逐節註解: 申命記3章6-7節聖戰毀滅原則說明（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT03.htm）'
+- '拾穗: 申命記3章毀滅與掠物的神學意義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT03.htm）'
+- '研經註解: 申命記3章herem概念與執行（https://www.kingcomments.com/en/bible-studies/Deu/3）'
+- '研經註解: 申命記3章聖戰模式分析（https://biblehub.com/study/deuteronomy/3.htm）'
+created_from: deuteronomy_3
+category: theology
+trigger_sources:
+- deuteronomy_3
+current_data: true
+pending: false
