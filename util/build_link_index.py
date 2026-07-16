@@ -9,6 +9,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from . import remediation
+except ImportError:
+    import remediation
+
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
 LINK_FOLDER = ROOT / "link_folder"
@@ -146,12 +151,25 @@ def build_index(link_folder=LINK_FOLDER, index_file=INDEX_FILE, root=ROOT, check
     if errors:
         for error in errors:
             print(f"❌ {error}")
+        remediation.print_fix_hints([(
+            "條目解析／索引衝突（多為 alias 撞名或多重指向）",
+            [
+                "看上方每條 ❌ 指名的條目：alias 與別的條目重名，或同一 alias 指向多個條目。",
+                "修對應 link_folder 條目的 aliases／type，或在 "
+                "_config/link_conflict_resolutions.yaml 明確指定歸屬。",
+                "改完重跑：python util/build_link_index.py",
+            ],
+        )])
         return False
 
     rendered = json.dumps(index, ensure_ascii=False, indent=2) + "\n"
     if check:
         if not index_file.exists() or index_file.read_text(encoding="utf-8") != rendered:
             print(f"❌ link index 不是最新：{index_file}")
+            remediation.print_fix_hints([(
+                "link_index.json 落後於 link_folder 實際內容（CI --check 模式）",
+                ["重建並提交索引：python util/build_link_index.py（不帶 --check）"],
+            )])
             return False
         print(f"✅ link index 已是最新：{index_file}")
     else:

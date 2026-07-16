@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import console
+import remediation
 from resolve_link_candidates import has_book_chapter_data
 from book_paths import canonical_book_name
 
@@ -78,6 +79,14 @@ def main():
             print(f"⚠️ 以下 {len(missing)} 個條目尚未補充{book}第{chapter}章資料：")
             for name, path in missing:
                 print(f"  - [[{name}]] → {path}")
+            remediation.print_fix_hints([(
+                f"章節引用了既有條目，但它們還沒補上{book}第{chapter}章的累積資料（B 類累積，流程步驟 4）",
+                [
+                    f"python util/link_updates.py prepare {book} {chapter}",
+                    "回經文與有效 raw text 填 link_updates.yaml 的 summary／relation，"
+                    "先 apply --dry-run 再 apply（重跑 apply 必須 0 變更）。",
+                ],
+            )])
             return 1
         print(f"✅ 所有 {len(existing)} 個既有條目都有{book}第{chapter}章資料。")
         return 0

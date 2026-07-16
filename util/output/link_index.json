@@ -7483,6 +7483,17 @@
       "Sabbath gathering rules"
     ]
   },
+  "安息日獻祭": {
+    "path": "link_folder/事件/安息日獻祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "安息日獻祭",
+    "status": "formal",
+    "aliases": [
+      "安息日燔祭",
+      "安息日加增獻祭"
+    ]
+  },
   "宰殺": {
     "path": "link_folder/事件/宰殺.md",
     "type": "事件",
@@ -8435,6 +8446,18 @@
       "會眾因無水聚集攻擊"
     ]
   },
+  "月朔獻祭": {
+    "path": "link_folder/事件/月朔獻祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "月朔獻祭",
+    "status": "formal",
+    "aliases": [
+      "月朔燔祭",
+      "新月獻祭",
+      "朔祭"
+    ]
+  },
   "正月初一": {
     "path": "link_folder/事件/正月初一.md",
     "type": "事件",
@@ -8455,6 +8478,17 @@
     "aliases": [
       "第二年正月初一日",
       "正月一日"
+    ]
+  },
+  "每日常獻燔祭": {
+    "path": "link_folder/事件/每日常獻燔祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "每日常獻燔祭",
+    "status": "formal",
+    "aliases": [
+      "常獻燔祭",
+      "每日燔祭"
     ]
   },
   "洗臟腑與腿": {
@@ -9515,6 +9549,18 @@
     "title": "逾越節第二年首次守節",
     "status": "formal",
     "aliases": []
+  },
+  "逾越節與無酵節獻祭": {
+    "path": "link_folder/事件/逾越節與無酵節獻祭.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "逾越節與無酵節獻祭",
+    "status": "formal",
+    "aliases": [
+      "逾越節獻祭",
+      "無酵節獻祭",
+      "逾越節無酵節燔祭"
+    ]
   },
   "道德與宗教的律例": {
     "path": "link_folder/事件/道德與宗教的律例.md",
@@ -19715,6 +19761,17 @@
       "奠祭用量"
     ]
   },
+  "伊法、欣、羅馬度量衡（ephah, hin, Roman measures）": {
+    "path": "link_folder/原文/伊法、欣、羅馬度量衡（ephah, hin, Roman measures）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "伊法、欣、羅馬度量衡（ephah, hin, Roman measures）",
+    "status": "formal",
+    "aliases": [
+      "伊法、欣、度量衡",
+      "以法、欣"
+    ]
+  },
   "伊迦爾撒哈杜他": {
     "path": "link_folder/原文/伊迦爾撒哈杜他.md",
     "type": "原文",
@@ -19888,6 +19945,16 @@
     "status": "formal",
     "aliases": [
       "兩隻潔淨活鳥"
+    ]
+  },
+  "公山羊贖罪祭（se'ir izzim）": {
+    "path": "link_folder/原文/公山羊贖罪祭（se'ir izzim）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "公山羊贖罪祭（se'ir izzim）",
+    "status": "formal",
+    "aliases": [
+      "公山羊贖罪祭"
     ]
   },
   "公牛贖罪祭（par chatat）": {
@@ -22526,6 +22593,16 @@
       "大麥麵伊法十分之一"
     ]
   },
+  "素祭與奠酒祭（minchah 與 nesekh）": {
+    "path": "link_folder/原文/素祭與奠酒祭（minchah 與 nesekh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "素祭與奠酒祭（minchah 與 nesekh）",
+    "status": "formal",
+    "aliases": [
+      "素祭奠酒祭"
+    ]
+  },
   "素祭（minchah）": {
     "path": "link_folder/原文/素祭（minchah）.md",
     "type": "原文",
@@ -23825,6 +23902,16 @@
     "status": "formal",
     "aliases": [
       "香"
+    ]
+  },
+  "馨香火祭（isheh reyach nichoach）": {
+    "path": "link_folder/原文/馨香火祭（isheh reyach nichoach）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "馨香火祭（isheh reyach nichoach）",
+    "status": "formal",
+    "aliases": [
+      "馨香祭"
     ]
   },
   "馨香的香（qetoret）": {
@@ -27938,6 +28025,18 @@
       "洪水前一百二十年"
     ]
   },
+  "七七節預表聖靈澆灌": {
+    "path": "link_folder/神學/七七節預表聖靈澆灌.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "七七節預表聖靈澆灌",
+    "status": "formal",
+    "aliases": [
+      "七七節神學",
+      "五旬節預表聖靈",
+      "莊稼初熟預表"
+    ]
+  },
   "七倍懲罰": {
     "path": "link_folder/神學/七倍懲罰.md",
     "type": "神學",
@@ -30176,6 +30275,17 @@
     "status": "formal",
     "aliases": []
   },
+  "安息日加倍獻祭預表安息": {
+    "path": "link_folder/神學/安息日加倍獻祭預表安息.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "安息日加倍獻祭預表安息",
+    "status": "formal",
+    "aliases": [
+      "安息日獻祭預表安息",
+      "安息日燔祭神學"
+    ]
+  },
   "安息日為立約記號": {
     "path": "link_folder/神學/安息日為立約記號.md",
     "type": "神學",
@@ -30446,6 +30556,17 @@
     "status": "formal",
     "aliases": [
       "希伯來人的神遇見了我們"
+    ]
+  },
+  "常獻燔祭預表基督": {
+    "path": "link_folder/神學/常獻燔祭預表基督.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "常獻燔祭預表基督",
+    "status": "formal",
+    "aliases": [
+      "每日燔祭預表基督",
+      "常獻燔祭基督論"
     ]
   },
   "常獻的素祭（祭司每日）": {
@@ -31423,6 +31544,17 @@
     "aliases": [
       "會幕材料的預表",
       "建造材料的屬靈意義"
+    ]
+  },
+  "月朔獻祭預表更新": {
+    "path": "link_folder/神學/月朔獻祭預表更新.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "月朔獻祭預表更新",
+    "status": "formal",
+    "aliases": [
+      "月朔獻祭神學",
+      "新月獻祭預表更新"
     ]
   },
   "有酵餅與平安祭": {
@@ -33928,6 +34060,17 @@
       "分別聖俗"
     ]
   },
+  "聖會不作工（miqra' qodesh lo ta'asu melakha）": {
+    "path": "link_folder/神學/聖會不作工（miqra' qodesh lo ta'asu melakha）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖會不作工（miqra' qodesh lo ta'asu melakha）",
+    "status": "formal",
+    "aliases": [
+      "聖會不作工",
+      "聖會禁止勞碌"
+    ]
+  },
   "聖潔": {
     "path": "link_folder/神學/聖潔.md",
     "type": "神學",
@@ -34620,6 +34763,18 @@
       "no hoof",
       "一蹄不留",
       "全人奉獻"
+    ]
+  },
+  "逾越節無酵節預表基督與聖潔": {
+    "path": "link_folder/神學/逾越節無酵節預表基督與聖潔.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逾越節無酵節預表基督與聖潔",
+    "status": "formal",
+    "aliases": [
+      "逾越節預表基督",
+      "無酵節預表聖潔",
+      "逾越節無酵節神學"
     ]
   },
   "逾越節羔羊骨頭不可折斷": {
@@ -40119,6 +40274,12 @@
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
   },
+  "安息日燔祭": {
+    "alias_of": "安息日獻祭"
+  },
+  "安息日加增獻祭": {
+    "alias_of": "安息日獻祭"
+  },
   "宰公牛": {
     "alias_of": "宰殺"
   },
@@ -40401,6 +40562,15 @@
   "會眾因無水聚集攻擊": {
     "alias_of": "會眾無水攻擊摩西亞倫"
   },
+  "月朔燔祭": {
+    "alias_of": "月朔獻祭"
+  },
+  "新月獻祭": {
+    "alias_of": "月朔獻祭"
+  },
+  "朔祭": {
+    "alias_of": "月朔獻祭"
+  },
   "元旦": {
     "alias_of": "正月初一"
   },
@@ -40412,6 +40582,12 @@
   },
   "正月一日": {
     "alias_of": "正月初一日"
+  },
+  "常獻燔祭": {
+    "alias_of": "每日常獻燔祭"
+  },
+  "每日燔祭": {
+    "alias_of": "每日常獻燔祭"
   },
   "流便族被數": {
     "alias_of": "流便支派被數點"
@@ -40727,6 +40903,15 @@
   },
   "迦南地獻祭規定": {
     "alias_of": "進迦南地後獻祭條例"
+  },
+  "逾越節獻祭": {
+    "alias_of": "逾越節與無酵節獻祭"
+  },
+  "無酵節獻祭": {
+    "alias_of": "逾越節與無酵節獻祭"
+  },
+  "逾越節無酵節燔祭": {
+    "alias_of": "逾越節與無酵節獻祭"
   },
   "金牛犢": {
     "alias_of": "金牛犢事件"
@@ -42687,6 +42872,12 @@
   "奠祭用量": {
     "alias_of": "伊法、欣、細麵、油、酒（'ephah, hin, solet, shemen, yayin）"
   },
+  "伊法、欣、度量衡": {
+    "alias_of": "伊法、欣、羅馬度量衡（ephah, hin, Roman measures）"
+  },
+  "以法、欣": {
+    "alias_of": "伊法、欣、羅馬度量衡（ephah, hin, Roman measures）"
+  },
   "何西阿書 3": {
     "alias_of": "何3（Hoshea 3）"
   },
@@ -42746,6 +42937,9 @@
   },
   "兩隻潔淨活鳥": {
     "alias_of": "兩隻潔淨活鳥（shtei tzipporim tehorot）"
+  },
+  "公山羊贖罪祭": {
+    "alias_of": "公山羊贖罪祭（se'ir izzim）"
   },
   "公牛贖罪祭": {
     "alias_of": "公牛贖罪祭（par chatat）"
@@ -43725,6 +43919,9 @@
   "大麥麵伊法十分之一": {
     "alias_of": "素祭伊法十分之一（minchah 'issaron ha'efah）"
   },
+  "素祭奠酒祭": {
+    "alias_of": "素祭與奠酒祭（minchah 與 nesekh）"
+  },
   "素祭": {
     "alias_of": "素祭（minchah）"
   },
@@ -44222,6 +44419,9 @@
   },
   "香": {
     "alias_of": "香（qetoret）"
+  },
+  "馨香祭": {
+    "alias_of": "馨香火祭（isheh reyach nichoach）"
   },
   "馨香的香": {
     "alias_of": "馨香的香（qetoret）"
@@ -45306,6 +45506,15 @@
   "洪水前一百二十年": {
     "alias_of": "一百二十年的兩種解釋"
   },
+  "七七節神學": {
+    "alias_of": "七七節預表聖靈澆灌"
+  },
+  "五旬節預表聖靈": {
+    "alias_of": "七七節預表聖靈澆灌"
+  },
+  "莊稼初熟預表": {
+    "alias_of": "七七節預表聖靈澆灌"
+  },
   "七倍懲罰原則": {
     "alias_of": "七倍懲罰"
   },
@@ -45906,6 +46115,12 @@
   "守耶和華吩咐": {
     "alias_of": "守耶和華的吩咐（雲彩引導下）"
   },
+  "安息日獻祭預表安息": {
+    "alias_of": "安息日加倍獻祭預表安息"
+  },
+  "安息日燔祭神學": {
+    "alias_of": "安息日加倍獻祭預表安息"
+  },
   "安息日約記": {
     "alias_of": "安息日為立約記號"
   },
@@ -45995,6 +46210,12 @@
   },
   "希伯來人的神遇見了我們": {
     "alias_of": "希伯來人的神"
+  },
+  "每日燔祭預表基督": {
+    "alias_of": "常獻燔祭預表基督"
+  },
+  "常獻燔祭基督論": {
+    "alias_of": "常獻燔祭預表基督"
   },
   "常獻的素祭": {
     "alias_of": "常獻的素祭（祭司每日）"
@@ -46301,6 +46522,12 @@
   },
   "建造材料的屬靈意義": {
     "alias_of": "會幕材料的豫表"
+  },
+  "月朔獻祭神學": {
+    "alias_of": "月朔獻祭預表更新"
+  },
+  "新月獻祭預表更新": {
+    "alias_of": "月朔獻祭預表更新"
   },
   "甘心樂意獻上": {
     "alias_of": "樂獻"
@@ -47010,6 +47237,12 @@
   "分別聖俗": {
     "alias_of": "聖俗"
   },
+  "聖會不作工": {
+    "alias_of": "聖會不作工（miqra' qodesh lo ta'asu melakha）"
+  },
+  "聖會禁止勞碌": {
+    "alias_of": "聖會不作工（miqra' qodesh lo ta'asu melakha）"
+  },
   "holy nation": {
     "alias_of": "聖潔的國民"
   },
@@ -47174,6 +47407,15 @@
   },
   "全人奉獻": {
     "alias_of": "連一蹄也不留下"
+  },
+  "逾越節預表基督": {
+    "alias_of": "逾越節無酵節預表基督與聖潔"
+  },
+  "無酵節預表聖潔": {
+    "alias_of": "逾越節無酵節預表基督與聖潔"
+  },
+  "逾越節無酵節神學": {
+    "alias_of": "逾越節無酵節預表基督與聖潔"
   },
   "順服雲彩引導": {
     "alias_of": "遵耶和華吩咐起行安營"

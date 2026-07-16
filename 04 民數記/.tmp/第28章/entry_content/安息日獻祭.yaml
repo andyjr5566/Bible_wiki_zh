@@ -1,0 +1,31 @@
+name: 安息日獻祭
+type: 事件
+secondary_types: []
+aliases:
+- 安息日燔祭
+- 安息日加增獻祭
+status: formal
+definition: 指民數記 28 章 9-10 節規定，每安息日除常獻燔祭外，另獻兩隻一歲無殘疾公羊羔，素祭用調油細麵伊法十分之二，奠祭照常。這是每安息日加增的燔祭，強調安息日獨特的聖別與獻上。
+development: 經文明確指出「那常獻的燔祭和同獻的奠祭在外」（10 節），顯示安息日獻祭是在每日常獻基礎上加倍（兩隻羊羔取代一隻），凸顯安息日的特別地位。
+accumulations:
+- book: 民數記
+  chapter: 28
+  summary: 規定安息日獻兩隻公羊羔，素祭伊法十分之二，奠祭照例，須在常獻燔祭之外另行獻上（9-10 節）。
+  relation: 以每日常獻燔祭為基準，安息日加倍獻祭，彰顯安息日的聖別性質。
+related_entries:
+- 每日常獻燔祭
+- 安息日加倍獻祭預表安息
+- 素祭與奠酒祭
+- 馨香火祭
+- 聖會不作工
+- 伊法、欣、羅馬度量衡
+sources:
+- '逐節註解: 民數記 28:9-10 安息日獻祭規定（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT28.htm）'
+- '拾穗: 民數記 28:9-10 安息日加增獻祭（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT28.htm）'
+- '研經註解: Numbers 28 Sabbath Offerings（https://www.kingcomments.com/en/bible-studies/Num/28）'
+- '研經註解: Numbers 28 Sabbath Burnt Offering（https://biblehub.com/study/numbers/28.htm）'
+created_from: numbers_28
+category: 事件
+trigger_sources: []
+current_data: true
+pending: false

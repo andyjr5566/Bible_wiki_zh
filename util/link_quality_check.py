@@ -27,8 +27,10 @@ from pathlib import Path
 
 try:
     from .book_paths import book_directory, existing_book_directories
+    from . import remediation
 except ImportError:
     from book_paths import book_directory, existing_book_directories
+    import remediation
 
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
@@ -279,6 +281,18 @@ def quality_check(book_name=None):
     else:
         print(f"  Result: PASS")
     print(f"{'='*60}\n")
+
+    if critical_count > 0:
+        remediation.print_fix_hints([(
+            "語意品質 critical（書卷/人物同名錯連、空 alias、短詞過度 link 等）",
+            [
+                "看上方每條 🔴 [CRITICAL] 的 message 與 → source 檔，手動修正該 WikiLink："
+                "書卷名要連書卷（[[何西阿書]] 而非 [[何西阿]]書）、補上或移除空 alias、"
+                "無來源支撐的 1–2 字普通詞不應 link。",
+                "若壞 link 出自章節內文，修 link_candidates 的 surfaces／候選後重跑該章；"
+                "改完重跑：python util/link_quality_check.py 【書名】",
+            ],
+        )])
 
     return report
 

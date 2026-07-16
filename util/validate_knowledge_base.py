@@ -12,9 +12,11 @@ import yaml
 try:
     from .book_paths import canonical_book_name, existing_book_directories
     from . import console
+    from . import remediation
 except ImportError:
     from book_paths import canonical_book_name, existing_book_directories
     import console
+    import remediation
 
 from build_link_index import (
     EXCLUDE_PARTS,
@@ -391,6 +393,49 @@ def validate(base=None):
     return errors, warnings
 
 
+def fix_hints_for(errors):
+    """依 errors 命中的類別，組出對應的修復指引（只放實際出現的類別）。"""
+    hints = []
+    if any("歧義裸 WikiLink" in e for e in errors):
+        hints.append((
+            "歧義裸 WikiLink：同名詞可指向多個條目，[[裸名]] 無法判定",
+            [
+                "把該行 [[裸名]] 改成完整 target：[[完整條目名|行文用詞]]。",
+                "同名候選見 _config/link_homonyms.yaml；章節內文一般由 run_chapter "
+                "程式化標注，若是它漏標，修 link_candidates 的 surfaces 後重跑該章。",
+            ],
+        ))
+    if any("保護區" in e for e in errors):
+        hints.append((
+            "既有正式條目的保護區被手動修改（累積資料只能經標記區寫入）",
+            [
+                "還原被改的保護區（git checkout 該檔），改走 B 類："
+                "python util/link_updates.py prepare 【書名】 X 再 apply。",
+            ],
+        ))
+    if any("link_homonyms.yaml 無法解析" in e for e in errors):
+        hints.append((
+            "_config/link_homonyms.yaml 格式錯誤",
+            ["依錯誤修正 YAML（homonyms 需為 mapping），再重跑本驗證。"],
+        ))
+    # 其餘結構／解析錯誤（frontmatter、H2 順序、來源標記…）：render 產物理應合規，
+    # 手改壞了才會出現——多屬程式或手動編輯的結構問題。
+    structural = [
+        e for e in errors
+        if not any(k in e for k in ("歧義裸 WikiLink", "保護區", "link_homonyms.yaml 無法解析"))
+    ]
+    if structural:
+        hints.append((
+            "條目／章節結構或來源標記違規",
+            [
+                "看上方每條 ❌ 的檔名與說明修正對應檔；render 程式產物理應合規，"
+                "出錯多為手動編輯破壞了模板／H2 順序／frontmatter。",
+                "若該檔是本次 run_chapter 產生的，刪掉重跑該章即可恢復合規結構。",
+            ],
+        ))
+    return hints
+
+
 def main():
     console.utf8_stdio()
     parser = argparse.ArgumentParser()
@@ -412,6 +457,8 @@ def main():
     for item in warnings:
         print(f"⚠️ {item}")
     print(f"結構驗證：{len(errors)} errors，{len(warnings)} warnings")
+    if errors:
+        remediation.print_fix_hints(fix_hints_for(errors))
     return 1 if errors else 0
 
 

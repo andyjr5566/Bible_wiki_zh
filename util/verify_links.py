@@ -35,8 +35,10 @@ except ImportError:
 
 try:
     from .build_link_index import collect_entries, load_resolutions, make_index
+    from . import remediation
 except ImportError:
     from build_link_index import collect_entries, load_resolutions, make_index
+    import remediation
 
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
@@ -631,8 +633,33 @@ def verify_links(book_name=None):
     print(f"  Result: {'FAIL' if has_error else 'PASS'}")
     print(f"  Report: {txt_path}")
     print(f"{'='*60}\n")
-    
+
+    if has_error:
+        remediation.print_fix_hints(_verify_fix_hints(report))
+
     return report
+
+
+def _verify_fix_hints(report):
+    """依 verify 報告命中的失敗類別組出修復指引（PENDING 屬正常，不列）。"""
+    hints = []
+    if report['broken_links_count'] > 0:
+        hints.append((
+            "BROKEN LINKS：target 條目不存在（非合法聖經章節、也不在 link_folder）",
+            [
+                "看上方每個 [[target]]：若是打錯條目名，改成正確全名；"
+                "若該條目確實該存在，補建或改用其別名。",
+                "若 target 是既有條目的別名卻沒被認出，補進該條目 aliases 或 "
+                "_config/link_conflict_resolutions.yaml，再 python util/build_link_index.py 重建索引。",
+                "改完重跑：python util/verify_links.py 【書名】",
+            ],
+        ))
+    if report['invalid_scripture_refs_count'] > 0:
+        hints.append((
+            "INVALID SCRIPTURE REFS：經文引用的章數超出該書卷實際範圍",
+            ["依上方 ERROR 提示的最大章數，修正引用該經文的檔案中的章數。"],
+        ))
+    return hints
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ from pathlib import Path
 import yaml
 
 import console
+import remediation
 from build_link_index import ROOT, collect_entries, load_resolutions
 from book_paths import book_directory
 
@@ -144,6 +145,13 @@ def check_due():
     while next_due <= count:
         if not any(next_due <= audited <= count for audited in audited_counts):
             print(f"❌ 已完成 {count} 章，缺少第 {next_due} 章里程碑全庫稽核")
+            remediation.print_fix_hints([(
+                f"每 {interval} 章一次的里程碑全庫稽核尚未產出",
+                [
+                    "產生全庫稽核報告：python util/audit_knowledge_base.py --all",
+                    "報告只提供人工線索、不授權自動改動；產出後重跑 --check-due。",
+                ],
+            )])
             return 1
         next_due += interval
 
@@ -153,6 +161,10 @@ def check_due():
             report = REPORT_DIR / f"book_audit_{book}.md"
             if not report.exists():
                 print(f"❌ {book}已完成全卷，缺少全卷稽核報告")
+                remediation.print_fix_hints([(
+                    f"{book}已完成全卷，但缺少全卷稽核報告",
+                    [f"產生全卷稽核報告：python util/audit_knowledge_base.py --book {book}"],
+                )])
                 return 1
     print(f"✅ 維護稽核未逾期；目前完成 {count} 章")
     return 0
