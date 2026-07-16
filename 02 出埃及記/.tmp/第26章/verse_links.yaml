@@ -5,6 +5,9 @@ links:
   phrase: 十幅幔子
   target: 十幅幔子（內層幕幔）
 - verse: 1
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 1
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 1
@@ -47,10 +50,13 @@ links:
   phrase: 染紅的公羊皮
   target: 染紅的公羊皮蓋子
 - verse: 14
+  phrase: 罩棚的蓋
+  target: 染紅的公羊皮蓋子
+- verse: 14
   phrase: 海狗皮
   target: 海狗皮頂蓋
 - verse: 14
-  phrase: 頂蓋
+  phrase: 罩棚上的頂蓋
   target: 海狗皮頂蓋
 - verse: 15
   phrase: 皂莢木
@@ -61,6 +67,9 @@ links:
 - verse: 17
   phrase: 板
   target: 皂莢木豎板
+- verse: 18
+  phrase: 帳幕的南面
+  target: 聖所
 - verse: 18
   phrase: 板
   target: 皂莢木豎板
@@ -125,10 +134,19 @@ links:
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 31
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 31
   phrase: 基路伯
   target: 基路伯（施恩座）
 - verse: 32
-  phrase: 包金的皂莢木柱子
+  phrase: 包金
+  target: 金子（包金）
+- verse: 32
+  phrase: 皂莢木
+  target: 皂莢木（atzei shittim）
+- verse: 32
+  phrase: 柱子
   target: 四根包金柱子（內幔柱）
 - verse: 33
   phrase: 法櫃
@@ -158,11 +176,20 @@ links:
   phrase: 桌子
   target: 陳設餅桌子
 - verse: 35
+  phrase: 帳幕的北面
+  target: 聖所
+- verse: 35
   phrase: 燈臺
   target: 金燈臺
+- verse: 35
+  phrase: 帳幕的南面
+  target: 聖所
 - verse: 36
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+- verse: 36
+  phrase: 撚的細麻
+  target: 撚的細麻
 - verse: 36
   phrase: 門簾
   target: 帳幕門簾
