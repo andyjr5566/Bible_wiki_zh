@@ -1,7 +1,299 @@
 book: 出埃及記
 chapter: 27
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: 出27:1-8 經文詳細描述用皂莢木做壇、用銅包裹、四角、銅網、銅環、槓等。CT/GT/KC/BH 均有詳細註解：銅壇預表基督十字架、銅表審判、角表拯救能力
+  surfaces:
+  - phrase: 壇
+    verses:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+  - phrase: 祭壇
+    verses:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+  - phrase: 銅壇
+    verses:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+  - phrase: 燔祭壇
+    verses:
+    - 1
+    - 8
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 壇的四角
+  suggested_type: 主題
+  evidence: 出27:2 經文記載壇的四拐角上做四個角，與壇接連一塊，用銅包裹。CT/KC/BH 註解：角表徵拯救能力(路1:69)、栓住祭牲(詩118:27)、護庇象徵(王上1:50)
+  surfaces:
+  - phrase: 角
+    verses:
+    - 2
+  - phrase: 四個角
+    verses:
+    - 2
+  - phrase: 壇的四角
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 壇的四角
+  existing_path: link_folder/主題/壇的四角.md
+- name: 壇的銅網
+  suggested_type: 主題
+  evidence: 出27:4-5 經文記載為壇做銅網，四角做四個銅環，安在壇四面的圍腰板以下，從下達到壇的半腰。CT/KC/BH 註解：銅網托住祭牲、幫助焚燒、表徵歡迎十字架對付
+  surfaces:
+  - phrase: 銅網
+    verses:
+    - 4
+    - 5
+  - phrase: 網
+    verses:
+    - 4
+    - 5
+  - phrase: 圍腰板
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 壇的銅網
+  existing_path: link_folder/主題/壇的銅網.md
+- name: 壇的銅環
+  suggested_type: 主題
+  evidence: 出27:4 經文記載銅網四角上做四個銅環，作為穿槓抬壇之用。KC/BH 註解：銅環用以穿杠抬壇，表徵到處高舉傳揚基督十字架
+  surfaces:
+  - phrase: 銅環
+    verses:
+    - 4
+  - phrase: 環
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 壇的銅環
+  existing_path: link_folder/主題/壇的銅環.md
+- name: 壇的槓（抬壇用）
+  suggested_type: 主題
+  evidence: 出27:6-7 經文記載用皂莢木做槓，用銅包裹，穿在壇兩旁的環子內抬壇。KC/BH 註解：槓表徵基督徒背負十字架、移動祭壇表徵福音傳揚
+  surfaces:
+  - phrase: 槓
+    verses:
+    - 6
+    - 7
+  - phrase: 抬壇
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 壇的槓（抬壇用）
+  existing_path: link_folder/主題/壇的槓（抬壇用）.md
+- name: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
+  suggested_type: 主題
+  evidence: 出27:3 經文列舉壇上一切器具都用銅做：盆(收灰)、鏟子(清灰)、盤子(盛血)、肉鍤子(插肉)、火鼎(盛火炭)。CT/KC/BH 註解：銅表審判、灰表經過火煉淨、器具為獻祭事工正常進行
+  surfaces:
+  - phrase: 盆
+    verses:
+    - 3
+  - phrase: 鏟子
+    verses:
+    - 3
+  - phrase: 盤子
+    verses:
+    - 3
+  - phrase: 肉鍤子
+    verses:
+    - 3
+  - phrase: 火鼎
+    verses:
+    - 3
+  - phrase: 器具
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
+  existing_path: link_folder/主題/壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）.md
+- name: 會幕院子
+  suggested_type: 主題
+  evidence: 出27:9-19 經文詳細描述院子南北長100肘、東西寬50肘、高5肘，帷子用撚的細麻，柱子、帶卯的銅座、銀鉤銀杆。KC/BH 註解：院子預表地上世界/基督/信徒，細麻表義行(啟19:8)，銅座表審判根基，銀杆表贖價聯結
+  surfaces:
+  - phrase: 院子
+    verses:
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+  - phrase: 會幕院子
+    verses:
+    - 9
+  - phrase: 帷子
+    verses:
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+  - phrase: 柱子
+    verses:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 17
+  - phrase: 帶卯的銅座
+    verses:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+  - phrase: 銀鉤
+    verses:
+    - 10
+    - 11
+    - 17
+  - phrase: 銀杆
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 會幕院子
+  existing_path: link_folder/主題/會幕院子.md
+- name: 院子門簾
+  suggested_type: 主題
+  evidence: 出27:16-17 經文記載院子門有簾子，長20肘，用藍色、紫色、朱紅色線和撚的細麻繡花織成，柱子四根，帶卯的座四個。KC/BH 註解：門簾預表基督是門(約10:7)，東邊門朝向罪人所在方向(創3:24)、也是日出方向(瑪4:2)
+  surfaces:
+  - phrase: 門簾
+    verses:
+    - 16
+  - phrase: 簾子
+    verses:
+    - 16
+    - 17
+  - phrase: 院子的門
+    verses:
+    - 16
+    - 17
+  match_type: exact
+  existing_title: 院子門簾
+  existing_path: link_folder/主題/院子門簾.md
+- name: 帶卯的銅座（院子柱子座）
+  suggested_type: 主題
+  evidence: 出27:10-11,12,14-15,17-18 經文多次提到院子柱子的帶卯銅座。KC/BH 註解：銅表審判，帶卯表穩固根基，院子柱子站在審判上
+  surfaces:
+  - phrase: 帶卯的銅座
+    verses:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 17
+    - 18
+  - phrase: 銅座
+    verses:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 17
+    - 18
+  - phrase: 帶卯的座
+    verses:
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+  match_type: exact
+  existing_title: 帶卯的銅座（院子柱子座）
+  existing_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
+- name: 銀杆（連絡柱子）
+  suggested_type: 主題
+  evidence: 出27:17 經文記載院子四圍一切柱子都用銀杆連絡。KC/BH 註解：銀表贖價，銀杆表信徒靠基督贖價聯結在一起
+  surfaces:
+  - phrase: 銀杆
+    verses:
+    - 17
+  - phrase: 連絡
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 銀杆（連絡柱子）
+  existing_path: link_folder/主題/銀杆（連絡柱子）.md
+- name: 清橄欖油（點燈用）
+  suggested_type: 主題
+  evidence: 出27:20-21 經文吩咐以色列人把為點燈搗成的清橄欖油拿來，使燈常常點著。CT/KC/BH 註解：橄欖油預表聖靈(約壹2:20)，搗成表基督受苦，常點燈表聖靈常在聖所光照
+  surfaces:
+  - phrase: 清橄欖油
+    verses:
+    - 20
+  - phrase: 橄欖油
+    verses:
+    - 20
+  - phrase: 點燈
+    verses:
+    - 20
+    - 21
+  - phrase: 燈常常點著
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 清橄欖油（點燈用）
+  existing_path: link_folder/主題/清橄欖油（點燈用）.md
+- name: 祭司經理燈（亞倫和他兒子）
+  suggested_type: 人物
+  evidence: 出27:21 經文記載亞倫和他兒子在會幕中法櫃前的幔外，從晚上到早晨經理這燈，作世世代代永遠的定例。KC/BH 註解：祭司職分預表信徒祭司職分(彼前2:5)，經理燈表事奉在聖靈光照下
+  surfaces:
+  - phrase: 亞倫
+    verses:
+    - 21
+  - phrase: 他兒子
+    verses:
+    - 21
+  - phrase: 經理
+    verses:
+    - 21
+  - phrase: 永遠的定例
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 祭司經理燈（亞倫和他兒子）
+  existing_path: link_folder/人物/祭司經理燈（亞倫和他兒子）.md
 - name: 皂莢木
   suggested_type: 原文
   evidence: 出27:1,6 經文記載壇和槓都用皂莢木。已有條目「皂莢木（atzei shittim）」。CT/KC/BH 註解：皂莢木表徵道成肉身的耶穌、堅固不朽壞的人性
@@ -160,276 +452,6 @@ B_needs_update:
   match_type: exact
   existing_title: 至聖所
   existing_path: link_folder/地點/至聖所.md
-C_new_formal:
-- name: 銅壇（燔祭壇）
-  suggested_type: 主題
-  evidence: 出27:1-8 經文詳細描述用皂莢木做壇、用銅包裹、四角、銅網、銅環、槓等。CT/GT/KC/BH 均有詳細註解：銅壇預表基督十字架、銅表審判、角表拯救能力
-  surfaces:
-  - phrase: 壇
-    verses:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-  - phrase: 祭壇
-    verses:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-  - phrase: 銅壇
-    verses:
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-  - phrase: 燔祭壇
-    verses:
-    - 1
-    - 8
-  target_path: link_folder/主題/銅壇（燔祭壇）.md
-- name: 壇的四角
-  suggested_type: 主題
-  evidence: 出27:2 經文記載壇的四拐角上做四個角，與壇接連一塊，用銅包裹。CT/KC/BH 註解：角表徵拯救能力(路1:69)、栓住祭牲(詩118:27)、護庇象徵(王上1:50)
-  surfaces:
-  - phrase: 角
-    verses:
-    - 2
-  - phrase: 四個角
-    verses:
-    - 2
-  - phrase: 壇的四角
-    verses:
-    - 2
-  target_path: link_folder/主題/壇的四角.md
-- name: 壇的銅網
-  suggested_type: 主題
-  evidence: 出27:4-5 經文記載為壇做銅網，四角做四個銅環，安在壇四面的圍腰板以下，從下達到壇的半腰。CT/KC/BH 註解：銅網托住祭牲、幫助焚燒、表徵歡迎十字架對付
-  surfaces:
-  - phrase: 銅網
-    verses:
-    - 4
-    - 5
-  - phrase: 網
-    verses:
-    - 4
-    - 5
-  - phrase: 圍腰板
-    verses:
-    - 5
-  target_path: link_folder/主題/壇的銅網.md
-- name: 壇的銅環
-  suggested_type: 主題
-  evidence: 出27:4 經文記載銅網四角上做四個銅環，作為穿槓抬壇之用。KC/BH 註解：銅環用以穿杠抬壇，表徵到處高舉傳揚基督十字架
-  surfaces:
-  - phrase: 銅環
-    verses:
-    - 4
-  - phrase: 環
-    verses:
-    - 4
-  target_path: link_folder/主題/壇的銅環.md
-- name: 壇的槓（抬壇用）
-  suggested_type: 主題
-  evidence: 出27:6-7 經文記載用皂莢木做槓，用銅包裹，穿在壇兩旁的環子內抬壇。KC/BH 註解：槓表徵基督徒背負十字架、移動祭壇表徵福音傳揚
-  surfaces:
-  - phrase: 槓
-    verses:
-    - 6
-    - 7
-  - phrase: 抬壇
-    verses:
-    - 7
-  target_path: link_folder/主題/壇的槓（抬壇用）.md
-- name: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
-  suggested_type: 主題
-  evidence: 出27:3 經文列舉壇上一切器具都用銅做：盆(收灰)、鏟子(清灰)、盤子(盛血)、肉鍤子(插肉)、火鼎(盛火炭)。CT/KC/BH 註解：銅表審判、灰表經過火煉淨、器具為獻祭事工正常進行
-  surfaces:
-  - phrase: 盆
-    verses:
-    - 3
-  - phrase: 鏟子
-    verses:
-    - 3
-  - phrase: 盤子
-    verses:
-    - 3
-  - phrase: 肉鍤子
-    verses:
-    - 3
-  - phrase: 火鼎
-    verses:
-    - 3
-  - phrase: 器具
-    verses:
-    - 3
-  target_path: link_folder/主題/壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）.md
-- name: 會幕院子
-  suggested_type: 主題
-  evidence: 出27:9-19 經文詳細描述院子南北長100肘、東西寬50肘、高5肘，帷子用撚的細麻，柱子、帶卯的銅座、銀鉤銀杆。KC/BH 註解：院子預表地上世界/基督/信徒，細麻表義行(啟19:8)，銅座表審判根基，銀杆表贖價聯結
-  surfaces:
-  - phrase: 院子
-    verses:
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-    - 19
-  - phrase: 會幕院子
-    verses:
-    - 9
-  - phrase: 帷子
-    verses:
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-  - phrase: 柱子
-    verses:
-    - 10
-    - 11
-    - 12
-    - 14
-    - 15
-    - 16
-    - 17
-  - phrase: 帶卯的銅座
-    verses:
-    - 10
-    - 11
-    - 12
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-  - phrase: 銀鉤
-    verses:
-    - 10
-    - 11
-    - 17
-  - phrase: 銀杆
-    verses:
-    - 17
-  target_path: link_folder/主題/會幕院子.md
-- name: 院子門簾
-  suggested_type: 主題
-  evidence: 出27:16-17 經文記載院子門有簾子，長20肘，用藍色、紫色、朱紅色線和撚的細麻繡花織成，柱子四根，帶卯的座四個。KC/BH 註解：門簾預表基督是門(約10:7)，東邊門朝向罪人所在方向(創3:24)、也是日出方向(瑪4:2)
-  surfaces:
-  - phrase: 門簾
-    verses:
-    - 16
-  - phrase: 簾子
-    verses:
-    - 16
-    - 17
-  - phrase: 院子的門
-    verses:
-    - 16
-    - 17
-  target_path: link_folder/主題/院子門簾.md
-- name: 帶卯的銅座（院子柱子座）
-  suggested_type: 主題
-  evidence: 出27:10-11,12,14-15,17-18 經文多次提到院子柱子的帶卯銅座。KC/BH 註解：銅表審判，帶卯表穩固根基，院子柱子站在審判上
-  surfaces:
-  - phrase: 帶卯的銅座
-    verses:
-    - 10
-    - 11
-    - 12
-    - 14
-    - 15
-    - 17
-    - 18
-  - phrase: 銅座
-    verses:
-    - 10
-    - 11
-    - 12
-    - 14
-    - 15
-    - 17
-    - 18
-  - phrase: 帶卯的座
-    verses:
-    - 10
-    - 11
-    - 12
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-  target_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
-- name: 銀杆（連絡柱子）
-  suggested_type: 主題
-  evidence: 出27:17 經文記載院子四圍一切柱子都用銀杆連絡。KC/BH 註解：銀表贖價，銀杆表信徒靠基督贖價聯結在一起
-  surfaces:
-  - phrase: 銀杆
-    verses:
-    - 17
-  - phrase: 連絡
-    verses:
-    - 17
-  target_path: link_folder/主題/銀杆（連絡柱子）.md
-- name: 清橄欖油（點燈用）
-  suggested_type: 主題
-  evidence: 出27:20-21 經文吩咐以色列人把為點燈搗成的清橄欖油拿來，使燈常常點著。CT/KC/BH 註解：橄欖油預表聖靈(約壹2:20)，搗成表基督受苦，常點燈表聖靈常在聖所光照
-  surfaces:
-  - phrase: 清橄欖油
-    verses:
-    - 20
-  - phrase: 橄欖油
-    verses:
-    - 20
-  - phrase: 點燈
-    verses:
-    - 20
-    - 21
-  - phrase: 燈常常點著
-    verses:
-    - 20
-  target_path: link_folder/主題/清橄欖油（點燈用）.md
-- name: 祭司經理燈（亞倫和他兒子）
-  suggested_type: 人物
-  evidence: 出27:21 經文記載亞倫和他兒子在會幕中法櫃前的幔外，從晚上到早晨經理這燈，作世世代代永遠的定例。KC/BH 註解：祭司職分預表信徒祭司職分(彼前2:5)，經理燈表事奉在聖靈光照下
-  surfaces:
-  - phrase: 亞倫
-    verses:
-    - 21
-  - phrase: 他兒子
-    verses:
-    - 21
-  - phrase: 經理
-    verses:
-    - 21
-  - phrase: 永遠的定例
-    verses:
-    - 21
-  target_path: link_folder/人物/祭司經理燈（亞倫和他兒子）.md
 - name: 銅壇與十字架（來13:10-13）
   suggested_type: 互文
   evidence: 來13:10-13 指出我們有祭壇，在營外燒祭物的身體，耶穌也在城門外受苦。KC/CT 註解：銅壇預表十字架，基督在城門外受苦成就贖罪
@@ -444,7 +466,9 @@ C_new_formal:
     - 6
     - 7
     - 8
-  target_path: link_folder/互文/銅壇與十字架（來13:10-13）.md
+  match_type: normalized
+  existing_title: 銅壇與十字架（來13：10-13）
+  existing_path: link_folder/互文/銅壇與十字架（來13：10-13）.md
 - name: 拯救的角（路1:69）
   suggested_type: 互文
   evidence: 路1:69 稱耶穌為「拯救的角」，呼應壇的四角。KC/CT 註解：壇的角預表基督拯救能力
@@ -452,7 +476,9 @@ C_new_formal:
   - phrase: 角
     verses:
     - 2
-  target_path: link_folder/互文/拯救的角（路1:69）.md
+  match_type: normalized
+  existing_title: 拯救的角（路1：69）
+  existing_path: link_folder/互文/拯救的角（路1：69）.md
 - name: 義行的細麻（啟19:8）
   suggested_type: 互文
   evidence: 啟19:8 「細麻衣就是聖徒所行的義」。KC/CT 註解：院子帷子用細麻預表信徒的義行
@@ -462,7 +488,9 @@ C_new_formal:
     - 9
     - 16
     - 18
-  target_path: link_folder/互文/義行的細麻（啟19:8）.md
+  match_type: normalized
+  existing_title: 義行的細麻（啟19：8）
+  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
 - name: 基督是門（約10:7）
   suggested_type: 互文
   evidence: 約10:7 耶穌說「我是門」。KC/BH 註解：院子門簾預表基督是唯一的門，東邊門朝向罪人方向(創3:24)
@@ -475,7 +503,9 @@ C_new_formal:
     verses:
     - 16
     - 17
-  target_path: link_folder/互文/基督是門（約10:7）.md
+  match_type: normalized
+  existing_title: 基督是門（約10：7）
+  existing_path: link_folder/互文/基督是門（約10：7）.md
 - name: 聖靈如橄欖油（約壹2:20）
   suggested_type: 互文
   evidence: 約壹2:20 「你們從聖者受了恩膏」。KC/CT 註解：點燈用的清橄欖油預表聖靈膏抹
@@ -487,7 +517,9 @@ C_new_formal:
     verses:
     - 20
     - 21
-  target_path: link_folder/互文/聖靈如橄欖油（約壹2:20）.md
+  match_type: normalized
+  existing_title: 聖靈如橄欖油（約壹2：20）
+  existing_path: link_folder/互文/聖靈如橄欖油（約壹2：20）.md
 - name: 信徒作祭司（彼前2:5,9）
   suggested_type: 互文
   evidence: 彼前2:5,9 信徒是聖潔的祭司、有君尊的祭司。KC/CT 註解：亞倫和兒子經理燈預表信徒祭司職分在聖靈光照下事奉
@@ -498,6 +530,10 @@ C_new_formal:
   - phrase: 祭司
     verses:
     - 21
-  target_path: link_folder/互文/信徒作祭司（彼前2:5,9）.md
+  match_type: normalized
+  existing_title: 信徒作祭司（彼前2：5,9）
+  existing_path: link_folder/互文/信徒作祭司（彼前2：5,9）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
