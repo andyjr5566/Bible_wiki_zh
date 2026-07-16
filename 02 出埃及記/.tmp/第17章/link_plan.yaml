@@ -1,6 +1,35 @@
 book: 出埃及記
 chapter: 17
 A_use_directly:
+- name: 以色列
+  suggested_type: 原文
+  evidence: 1、5-8節；全會眾遵耶和華的吩咐按著站口往前行
+  surfaces:
+  - phrase: 以色列
+    verses:
+    - 1
+    - 5
+    - 6
+    - 7
+    - 8
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 1、4-7、14、16節；祂站在磐石那裡；祂起誓必世世代代和亞瑪力人爭戰
+  surfaces:
+  - phrase: 耶和華
+    verses:
+    - 1
+    - 4
+    - 5
+    - 7
+    - 14
+    - 16
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
 - name: 汛的曠野
   suggested_type: 地點
   evidence: 1節；即神降嗎哪的地方（16:13-15）
@@ -61,6 +90,16 @@ A_use_directly:
   match_type: exact
   existing_title: 以色列人的怨言
   existing_path: link_folder/歷史/以色列人的怨言.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 3節；「你為什麼將我們從埃及領出來」——每逢困境便忘記神的拯救
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
 - name: 磐石出活水
   suggested_type: 神學
   evidence: 6節；「我必在何烈的磐石那裡，站在你面前」；從磐石裡必有水流出來
@@ -267,46 +306,7 @@ A_use_directly:
   match_type: exact
   existing_title: 賽53：4-5 磐石被擊打
   existing_path: link_folder/互文/賽53：4-5 磐石被擊打.md
-B_needs_update:
-- name: 以色列
-  suggested_type: 原文
-  evidence: 1、5-8節；全會眾遵耶和華的吩咐按著站口往前行
-  surfaces:
-  - phrase: 以色列
-    verses:
-    - 1
-    - 5
-    - 6
-    - 7
-    - 8
-  match_type: exact
-  existing_title: 以色列
-  existing_path: link_folder/原文/以色列.md
-- name: 耶和華
-  suggested_type: 神學
-  evidence: 1、4-7、14、16節；祂站在磐石那裡；祂起誓必世世代代和亞瑪力人爭戰
-  surfaces:
-  - phrase: 耶和華
-    verses:
-    - 1
-    - 4
-    - 5
-    - 7
-    - 14
-    - 16
-  match_type: exact
-  existing_title: 耶和華
-  existing_path: link_folder/神學/耶和華.md
-- name: 埃及
-  suggested_type: 地點
-  evidence: 3節；「你為什麼將我們從埃及領出來」——每逢困境便忘記神的拯救
-  surfaces:
-  - phrase: 埃及
-    verses:
-    - 3
-  match_type: exact
-  existing_title: 埃及
-  existing_path: link_folder/地點/埃及.md
+B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
