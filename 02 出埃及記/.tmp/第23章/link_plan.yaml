@@ -1,0 +1,767 @@
+book: 出埃及記
+chapter: 23
+A_use_directly:
+- name: 謠言（shema`）
+  suggested_type: 原文
+  evidence: 1節；原文雙字，首字「空虛，虛妄」，次字「報告，簡訊」；CT 指不實的傳言，在人群中產生毀謗中傷的作用
+  surfaces:
+  - phrase: 不可隨夥佈散謠言
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 謠言（shema`）
+  existing_path: link_folder/原文/謠言（shema`）.md
+- name: 聯手（shathaph）
+  suggested_type: 原文
+  evidence: 1節；原文雙字，首字「放置」，次字「人手」；《丁道爾》指「妄作見證」譯作「強暴的見證」更佳
+  surfaces:
+  - phrase: 不可與惡人連手妄作見證
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 聯手（shathaph）
+  existing_path: link_folder/原文/聯手（shathaph）.md
+- name: 隨眾（rab）
+  suggested_type: 原文
+  evidence: 2節；原文字義「許多，很多」；CT 指「隨眾」的原文可譯成「大多數」
+  surfaces:
+  - phrase: 不可隨眾行惡
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 隨眾（rab）
+  existing_path: link_folder/原文/隨眾（rab）.md
+- name: 屈枉（natah）
+  suggested_type: 原文
+  evidence: 2、6節；原文字義「折彎，傾斜」；『屈枉』表示作不實的見證，致使他人受損
+  surfaces:
+  - phrase: 作見證屈枉正直
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 屈枉（natah）
+  existing_path: link_folder/原文/屈枉（natah）.md
+- name: 出23：2-3隨眾與偏護窮人
+  suggested_type: 解經爭議
+  evidence: 3節；《丁道爾》指大部分編者將 dal「窮人」修正為 gadol「有勢力的人」，但這忽略了更微妙的試探
+  surfaces:
+  - phrase: 也不可在爭訟的事上偏護窮人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 出23：2-3隨眾與偏護窮人
+  existing_path: link_folder/解經爭議/出23：2-3隨眾與偏護窮人.md
+- name: 司法公正律例
+  suggested_type: 事件
+  evidence: 1-9節；《中文聖經註釋》指這段嚴格來說並不是律例，而是勸告人要維護正義
+  match_type: exact
+  existing_title: 司法公正律例
+  existing_path: link_folder/事件/司法公正律例.md
+- name: 司法公義
+  suggested_type: 神學
+  evidence: 6-8節；《精讀本》：要體現一個社會的正義與否，最重要的是司法部門應該體現神的公義
+  surfaces:
+  - phrase: 不可在窮人爭訟的事上屈枉正直
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 司法公義
+  existing_path: link_folder/神學/司法公義.md
+- name: 出23：4-5愛仇敵律例
+  suggested_type: 解經爭議
+  evidence: 4-5節；《精讀本》：「愛仇敵」不是新約的教訓，在舊約早已有此教訓
+  surfaces:
+  - phrase: 若遇見你仇敵的牛或驢失迷了路
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 出23：4-5愛仇敵律例
+  existing_path: link_folder/解經爭議/出23：4-5愛仇敵律例.md
+- name: 愛仇敵律例
+  suggested_type: 事件
+  evidence: 4-5節；總要牽回來交給他；不可走開，務要和驢主一同抬開重馱
+  surfaces:
+  - phrase: 若看見恨你人的驢壓臥在重馱之下
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 愛仇敵律例
+  existing_path: link_folder/事件/愛仇敵律例.md
+- name: 愛鄰舍與仇敵
+  suggested_type: 主題
+  evidence: 4-5節；CT：維護正義的人，要有神的心腸：降雨給義人，也給不義的人
+  surfaces:
+  - phrase: 務要和驢主一同抬開重馱
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 愛鄰舍與仇敵
+  existing_path: link_folder/主題/愛鄰舍與仇敵.md
+- name: 古代近東賄賂
+  suggested_type: 背景
+  evidence: 8節；《舊約背景註釋》指漢摩拉比法典對於擅改已封緘之判決的法官剝奪其職位
+  surfaces:
+  - phrase: 不可受賄賂
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 古代近東賄賂
+  existing_path: link_folder/背景/古代近東賄賂.md
+- name: 公義與真理
+  suggested_type: 主題
+  evidence: 7-8節；「因我必不以惡人為義」；賄賂能叫明眼人變瞎了，又能顛倒義人的話
+  surfaces:
+  - phrase: 因我必不以惡人為義
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 公義與真理
+  existing_path: link_folder/主題/公義與真理.md
+- name: 古代近東司法制度
+  suggested_type: 背景
+  evidence: 1-9節；《舊約背景註釋》指埃及《善辯之農夫》提醒法官作孤兒之父、寡婦之夫是他的責任
+  surfaces:
+  - phrase: 當遠離虛假的事
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 古代近東司法制度
+  existing_path: link_folder/背景/古代近東司法制度.md
+- name: 保護弱勢律例
+  suggested_type: 事件
+  evidence: 9節；CT 註：二十二21是對一般以色列人說的，而本節則是對審判官說的
+  surfaces:
+  - phrase: 不可欺壓
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 保護弱勢律例
+  existing_path: link_folder/事件/保護弱勢律例.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 9節；《丁道爾》指 ger 是「外僑」，不僅是「外邦人」而已；CT 指僑居本地的外國人
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 12節；《丁道爾》指命令和十誡相同，理由卻有分別——這裡是人道的理由
+  surfaces:
+  - phrase: 第七日要安息
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 古代近東寄居者保護
+  suggested_type: 背景
+  evidence: 9節；《丁道爾》指「寄居的心」原文 nephesh 在本節的意思似乎是「渴想和熱望」
+  surfaces:
+  - phrase: 知道寄居的心
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 古代近東寄居者保護
+  existing_path: link_folder/背景/古代近東寄居者保護.md
+- name: 關懷弱勢
+  suggested_type: 主題
+  evidence: 9、11節；因為你們在埃及地作過寄居的；使你民中的窮人有吃的
+  surfaces:
+  - phrase: 因為你們在埃及地作過寄居的
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 關懷弱勢
+  existing_path: link_folder/主題/關懷弱勢.md
+- name: 歇息（shamat）
+  suggested_type: 原文
+  evidence: 11節；原文字義「讓其掉下，使落下」；《丁道爾》指申15:1「豁免年」的名詞衍自這個動詞
+  surfaces:
+  - phrase: 只是第七年要叫地歇息
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 歇息（shamat）
+  existing_path: link_folder/原文/歇息（shamat）.md
+- name: 安息年
+  suggested_type: 神學
+  evidence: 10-11節；CT 列出神設立安息年的七樣用意；《丁道爾》指聖經只為休耕年提供了一個理由
+  surfaces:
+  - phrase: 六年你要耕種田地
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 安息年
+  existing_path: link_folder/神學/安息年.md
+- name: 安息年律例
+  suggested_type: 事件
+  evidence: 11節；使你民中的窮人有吃的；他們所剩下的，野獸可以吃
+  surfaces:
+  - phrase: 使你民中的窮人有吃的
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 安息年律例
+  existing_path: link_folder/事件/安息年律例.md
+- name: 古代近東安息年
+  suggested_type: 背景
+  evidence: 10-11節；《舊約背景註釋》指以色列的農夫可能是每年休耕田地的七分之一，而不是全年不耕種整片田地
+  surfaces:
+  - phrase: 野獸可以吃
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 古代近東安息年
+  existing_path: link_folder/背景/古代近東安息年.md
+- name: 安息（shabath）
+  suggested_type: 原文
+  evidence: 12節；原文字義「中止，休息」；「舒暢」原文「振作，恢復活力」
+  match_type: exact
+  existing_title: 安息（shabath）
+  existing_path: link_folder/原文/安息（shabath）.md
+- name: 安息日律例
+  suggested_type: 事件
+  evidence: 12節；《中文聖經註釋》指這律例說明要守安息日的原因不是紀念神創造，乃是人道的原因
+  surfaces:
+  - phrase: 使牛、驢可以歇息
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 安息日律例
+  existing_path: link_folder/事件/安息日律例.md
+- name: 古代近東安息日
+  suggested_type: 背景
+  evidence: 12節；《丁道爾》指奴隸和半奴隸身分的工人亦可趁機舒暢，這些人大概沒有宗教上的責任
+  surfaces:
+  - phrase: 並使你婢女的兒子和寄居的都可以舒暢
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 古代近東安息日
+  existing_path: link_folder/背景/古代近東安息日.md
+- name: 出23：13不可提別神名
+  suggested_type: 解經爭議
+  evidence: 13節；CT 指別處聖經常提到偶像假神的名字，故本句應指不可將假神和真神相提並論
+  surfaces:
+  - phrase: 別神的名，你不可提
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 出23：13不可提別神名
+  existing_path: link_folder/解經爭議/出23：13不可提別神名.md
+- name: 古代近東偶像崇拜
+  suggested_type: 背景
+  evidence: 13節；《舊約背景註釋》指古代近東的普遍習俗是在獻祭或進行日常事務時提說神祇的名號，藉以求福
+  surfaces:
+  - phrase: 也不可從你口中傳說
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 古代近東偶像崇拜
+  existing_path: link_folder/背景/古代近東偶像崇拜.md
+- name: 守節（chagag）
+  suggested_type: 原文
+  evidence: 14節；原文字義「守節期，朝聖」；《每日研經叢書》指節期（chag）一字實際上是「朝聖者的節日」之意
+  surfaces:
+  - phrase: 一年三次，你要向我守節
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 守節（chagag）
+  existing_path: link_folder/原文/守節（chagag）.md
+- name: 三大節期
+  suggested_type: 神學
+  evidence: 14-17節；除酵節、收割節、收藏節；《精讀本》指制定節期的目的在於教訓人們不僅過去被神救贖，至今仍是由於神而活著
+  match_type: exact
+  existing_title: 三大節期
+  existing_path: link_folder/神學/三大節期.md
+- name: 除酵（matsah）
+  suggested_type: 原文
+  evidence: 15節；原文字義「沒放酵」；「亞筆」原文「穀穗形成（初熟）」
+  surfaces:
+  - phrase: 你要守除酵節
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 除酵（matsah）
+  existing_path: link_folder/原文/除酵（matsah）.md
+- name: 三大節期律例
+  suggested_type: 事件
+  evidence: 15-16節；除酵節、收割節、收藏節；誰也不可空手朝見我
+  surfaces:
+  - phrase: 誰也不可空手朝見我
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 三大節期律例
+  existing_path: link_folder/事件/三大節期律例.md
+- name: 初熟（bikkurim）
+  suggested_type: 原文
+  evidence: 16、19節；原文字義「初熟的果子」；CT 指初熟之物和長子、頭生的牲畜一樣，原都是屬於神的
+  surfaces:
+  - phrase: 勞碌得來初熟之物
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 初熟（bikkurim）
+  existing_path: link_folder/原文/初熟（bikkurim）.md
+- name: 收藏（asaph）
+  suggested_type: 原文
+  evidence: 16節；原文首字「聚集，收集」，次字「收集，收成」；又稱住棚節，是猶太人最大的節期
+  surfaces:
+  - phrase: 要守收藏節
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 收藏（asaph）
+  existing_path: link_folder/原文/收藏（asaph）.md
+- name: 節期與紀念
+  suggested_type: 主題
+  evidence: 17節；一切的男丁要一年三次朝見主耶和華
+  surfaces:
+  - phrase: 一切的男丁要一年三次朝見主耶和華
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 節期與紀念
+  existing_path: link_folder/主題/節期與紀念.md
+- name: 古代近東三大節期
+  suggested_type: 背景
+  evidence: 14-17節；《丁道爾》指這些節期的用意可能是為了召集耶和華的軍隊，所以一切男丁都必須出席
+  surfaces:
+  - phrase: 又要守收割節
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 古代近東三大節期
+  existing_path: link_folder/背景/古代近東三大節期.md
+- name: 獻祭條例
+  suggested_type: 事件
+  evidence: 18-19節；不可將祭牲的血和有酵的餅一同獻上；不可將節上祭牲的脂油留到早晨
+  surfaces:
+  - phrase: 不可將我祭牲的血和有酵的餅一同獻上
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 獻祭條例
+  existing_path: link_folder/事件/獻祭條例.md
+- name: 出23：19不可用山羊羔母奶煮山羊羔
+  suggested_type: 解經爭議
+  evidence: 19節；CT 給二意：以母奶煮其子有殘忍之嫌；此乃迦南人異教徒祭祀習俗
+  surfaces:
+  - phrase: 不可用山羊羔母的奶煮山羊羔
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 出23：19不可用山羊羔母奶煮山羊羔
+  existing_path: link_folder/解經爭議/出23：19不可用山羊羔母奶煮山羊羔.md
+- name: 出23：20-23使者身分
+  suggested_type: 解經爭議
+  evidence: 20-23節；CT 指這使者表徵那將要來的基督；KC 指「我的名在他裡面」表明這位使者就是主耶穌
+  surfaces:
+  - phrase: 我差遣使者在你前面
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 出23：20-23使者身分
+  existing_path: link_folder/解經爭議/出23：20-23使者身分.md
+- name: 使者（mal'akh）
+  suggested_type: 原文
+  evidence: 20、23節；原文字義「使者，天使」；CT 指應當不是指一般的天使，而是「立約的使者」
+  surfaces:
+  - phrase: 我的使者要在你前面行
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 使者（mal'akh）
+  existing_path: link_folder/原文/使者（mal'akh）.md
+- name: 天使引導
+  suggested_type: 神學
+  evidence: 20節；「在路上保護你，領你到我所預備的地方去」
+  surfaces:
+  - phrase: 領你到我所預備的地方去
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 天使引導
+  existing_path: link_folder/神學/天使引導.md
+- name: 惹（marah）
+  suggested_type: 原文
+  evidence: 21節；原文字義「使悲苦，使發怒」；CT 指『不可惹祂』意指不可悖逆祂
+  surfaces:
+  - phrase: 不可惹
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 惹（marah）
+  existing_path: link_folder/原文/惹（marah）.md
+- name: 天使引導應許
+  suggested_type: 事件
+  evidence: 21-22節；祂是奉我名來的；你若實在聽從祂的話，我就向你的仇敵作仇敵
+  surfaces:
+  - phrase: 他是奉我名來的
+    verses:
+    - 21
+  - phrase: 我就向你的仇敵作仇敵
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 天使引導應許
+  existing_path: link_folder/事件/天使引導應許.md
+- name: 神的引導與保護
+  suggested_type: 主題
+  evidence: 20-23節；神差遣使者作神子民的開路先鋒，一路引領他們
+  surfaces:
+  - phrase: 在路上保護你
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 神的引導與保護
+  existing_path: link_folder/主題/神的引導與保護.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 23節；原文字義「消除，抹去，隱藏」；CT 指實際上後來以色列人並沒有將他們趕盡殺絕
+  surfaces:
+  - phrase: 我必將他們剪除
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 柱像（matsebah）
+  suggested_type: 原文
+  evidence: 24節；「打碎他們的柱像」；原文「盡行拆毀」為雙同字，意「廢除，破壞，推翻」
+  surfaces:
+  - phrase: 打碎他們的柱像
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 柱像（matsebah）
+  existing_path: link_folder/原文/柱像（matsebah）.md
+- name: 拆毀偶像律例
+  suggested_type: 事件
+  evidence: 24節；你不可跪拜他們的神，不可事奉牠，也不可效法他們的行為
+  surfaces:
+  - phrase: 卻要把神像盡行拆毀
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 拆毀偶像律例
+  existing_path: link_folder/事件/拆毀偶像律例.md
+- name: 專一事奉
+  suggested_type: 神學
+  evidence: 24-25節；CT：一個人不能侍奉兩個主
+  surfaces:
+  - phrase: 你們要事奉耶和華─你們的神
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 專一事奉
+  existing_path: link_folder/神學/專一事奉.md
+- name: 敬畏神與專一事奉
+  suggested_type: 主題
+  evidence: 24節；不可跪拜他們的神，不可事奉牠，也不可效法他們的行為
+  surfaces:
+  - phrase: 你不可跪拜他們的神
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 敬畏神與專一事奉
+  existing_path: link_folder/主題/敬畏神與專一事奉.md
+- name: 神賜福應許
+  suggested_type: 神學
+  evidence: 25-26節；祂必賜福與你的糧與你的水，也必從你們中間除去疾病
+  surfaces:
+  - phrase: 他必賜福與你的糧與你的水
+    verses:
+    - 25
+  - phrase: 我要使你滿了你年日的數目
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 神賜福應許
+  existing_path: link_folder/神學/神賜福應許.md
+- name: 黃蜂（tsirah）
+  suggested_type: 原文
+  evidence: 28節；原文字義「大黃蜂」；CT 指在此表徵超自然的災禍
+  surfaces:
+  - phrase: 我要打發黃蜂飛在你前面
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 黃蜂（tsirah）
+  existing_path: link_folder/原文/黃蜂（tsirah）.md
+- name: 征服迦南應許
+  suggested_type: 事件
+  evidence: 27-31節；我要使那裡的眾民在你面前驚駭，擾亂，又要使你一切仇敵轉背逃跑
+  surfaces:
+  - phrase: 又要使你一切仇敵轉背逃跑
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 征服迦南應許
+  existing_path: link_folder/事件/征服迦南應許.md
+- name: 漸漸（me'at me'at）
+  suggested_type: 原文
+  evidence: 30節；原文雙同字，意「少量，一點點」
+  surfaces:
+  - phrase: 我要漸漸地將他們從你面前攆出去
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 漸漸（me'at me'at）
+  existing_path: link_folder/原文/漸漸（me'at me'at）.md
+- name: 逐漸趕出
+  suggested_type: 神學
+  evidence: 29-30節；恐怕地成為荒涼，野地的獸多起來害你；等到你的人數加多，承受那地為業
+  surfaces:
+  - phrase: 恐怕地成為荒涼
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 逐漸趕出
+  existing_path: link_folder/神學/逐漸趕出.md
+- name: 出23：27-30逐漸趕出
+  suggested_type: 解經爭議
+  evidence: 29-30節；KC 指這是神的智慧：若快速趕出，百姓永無法一次耕作全地，地就成為荒場
+  surfaces:
+  - phrase: 等到你的人數加多，承受那地為業
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 出23：27-30逐漸趕出
+  existing_path: link_folder/解經爭議/出23：27-30逐漸趕出.md
+- name: 漸進性征服
+  suggested_type: 主題
+  evidence: 29-31節；我要定你的境界，從紅海直到非利士海，又從曠野直到大河
+  surfaces:
+  - phrase: 我要定你的境界
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 漸進性征服
+  existing_path: link_folder/主題/漸進性征服.md
+- name: 立約界限
+  suggested_type: 神學
+  evidence: 32節；不可和他們並他們的神立約
+  surfaces:
+  - phrase: 不可和他們並他們的神立約
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 立約界限
+  existing_path: link_folder/神學/立約界限.md
+- name: 出23：32-33立約禁令
+  suggested_type: 解經爭議
+  evidence: 32-33節；CT 指偶像假神不可能與人立約，故「和他們的神立約」意味著單方面發咒起誓
+  match_type: exact
+  existing_title: 出23：32-33立約禁令
+  existing_path: link_folder/解經爭議/出23：32-33立約禁令.md
+- name: 立約禁令
+  suggested_type: 事件
+  evidence: 33節；他們不可住在你的地上，恐怕他們使你得罪我
+  surfaces:
+  - phrase: 他們不可住在你的地上
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 立約禁令
+  existing_path: link_folder/事件/立約禁令.md
+- name: 網羅（moqesh）
+  suggested_type: 原文
+  evidence: 33節；原文字義「網羅，餌，引誘」；你若事奉他們的神，這必成為你的網羅
+  surfaces:
+  - phrase: 這必成為你的網羅
+    verses:
+    - 33
+  match_type: exact
+  existing_title: 網羅（moqesh）
+  existing_path: link_folder/原文/網羅（moqesh）.md
+- name: 古代近東立約
+  suggested_type: 背景
+  evidence: 32-33節；不可和迦南地的異教徒原住民立約，也不可和他們所拜的偶像假神立約
+  match_type: exact
+  existing_title: 古代近東立約
+  existing_path: link_folder/背景/古代近東立約.md
+- name: 出23：10-11安息年執行
+  suggested_type: 解經爭議
+  evidence: 10-11節；《中文聖經註釋》指從利26:34-35 可看出他們被擄是因未守安息年之例
+  match_type: exact
+  existing_title: 出23：10-11安息年執行
+  existing_path: link_folder/解經爭議/出23：10-11安息年執行.md
+- name: 出20：16
+  suggested_type: 互文
+  evidence: 1-3節；本段是第九誡「不可作假見證」的具體化條例
+  match_type: exact
+  existing_title: 出20：16
+  existing_path: link_folder/互文/出20：16.md
+- name: 出20：8-11
+  suggested_type: 互文
+  evidence: 12節；安息日之例基於第四誡，但這裡所提出的理由是以人道為基礎
+  match_type: exact
+  existing_title: 出20：8-11
+  existing_path: link_folder/互文/出20：8-11.md
+- name: 出22：21
+  suggested_type: 互文
+  evidence: 9節；丁良才：二十二21所說的是為百姓，在這裡是為審判官
+  match_type: exact
+  existing_title: 出22：21
+  existing_path: link_folder/互文/出22：21.md
+- name: 利19：15
+  suggested_type: 互文
+  evidence: 3、6節；不可偏護窮人，也不可重看有勢力的
+  match_type: exact
+  existing_title: 利19：15
+  existing_path: link_folder/互文/利19：15.md
+- name: 利19：16
+  suggested_type: 互文
+  evidence: 1節；不可隨夥佈散謠言
+  match_type: exact
+  existing_title: 利19：16
+  existing_path: link_folder/互文/利19：16.md
+- name: 利25：1-7
+  suggested_type: 互文
+  evidence: 10-11節；安息年地要歇息的詳例
+  match_type: exact
+  existing_title: 利25：1-7
+  existing_path: link_folder/互文/利25：1-7.md
+- name: 利25：20-22
+  suggested_type: 互文
+  evidence: 11節；神使第六年的出產有三倍
+  match_type: exact
+  existing_title: 利25：20-22
+  existing_path: link_folder/互文/利25：20-22.md
+- name: 申1：17
+  suggested_type: 互文
+  evidence: 6-8節；《精讀本》：證人和審判官不僅要體察民意，更重要的是要畏懼看不見的神
+  match_type: exact
+  existing_title: 申1：17
+  existing_path: link_folder/互文/申1：17.md
+- name: 申7：22
+  suggested_type: 互文
+  evidence: 29-30節；漸漸趕出免得野獸增多
+  match_type: exact
+  existing_title: 申7：22
+  existing_path: link_folder/互文/申7：22.md
+- name: 申23：6
+  suggested_type: 互文
+  evidence: 32節；丁良才：出23:4-5 論各人的仇敵，申23:6 論全國的仇敵
+  match_type: exact
+  existing_title: 申23：6
+  existing_path: link_folder/互文/申23：6.md
+- name: 太5：44
+  suggested_type: 互文
+  evidence: 4-5節；《丁道爾》指本節實際關心敵人的利益，和「愛你的仇敵」只有一線之差
+  match_type: exact
+  existing_title: 太5：44
+  existing_path: link_folder/互文/太5：44.md
+- name: 太7：13-14
+  suggested_type: 互文
+  evidence: 2節；《精讀本》：為了神公義的真理，有時我們要甘心忍受作孤獨的少數人
+  match_type: exact
+  existing_title: 太7：13-14
+  existing_path: link_folder/互文/太7：13-14.md
+- name: 太12：36-37
+  suggested_type: 互文
+  evidence: 1節；KC 引：凡人所說的閒話，當審判的日子必要句句供出來
+  match_type: exact
+  existing_title: 太12：36-37
+  existing_path: link_folder/互文/太12：36-37.md
+- name: 路6：35
+  suggested_type: 互文
+  evidence: 4-5節；《精讀本》：「愛仇敵」不是新約的教訓，在舊約早已有此教訓
+  match_type: exact
+  existing_title: 路6：35
+  existing_path: link_folder/互文/路6：35.md
+- name: 路12：24
+  suggested_type: 互文
+  evidence: 11節；《丁道爾》引：神供給烏鴉飲食
+  match_type: exact
+  existing_title: 路12：24
+  existing_path: link_folder/互文/路12：24.md
+- name: 路23：13-25
+  suggested_type: 互文
+  evidence: 6-8節；《精讀本》：耶穌基督也被喪失良心的審判官彼拉多判處了死刑
+  match_type: exact
+  existing_title: 路23：13-25
+  existing_path: link_folder/互文/路23：13-25.md
+- name: 羅12：20
+  suggested_type: 互文
+  evidence: 4節；KC 引：把炭火堆在他的頭上
+  match_type: exact
+  existing_title: 羅12：20
+  existing_path: link_folder/互文/羅12：20.md
+- name: 林前5：6-8
+  suggested_type: 互文
+  evidence: 18節；CT 指酵在聖經裡表徵罪和邪惡的教訓
+  match_type: exact
+  existing_title: 林前5：6-8
+  existing_path: link_folder/互文/林前5：6-8.md
+- name: 弗4：25
+  suggested_type: 互文
+  evidence: 1節；KC 引：棄絕謊言，各人與鄰舍說實話
+  match_type: exact
+  existing_title: 弗4：25
+  existing_path: link_folder/互文/弗4：25.md
+- name: 撒上8：3
+  suggested_type: 互文
+  evidence: 8節；《丁道爾》指撒母耳的兒子也在賄賂這件事上失敗
+  match_type: exact
+  existing_title: 撒上8：3
+  existing_path: link_folder/互文/撒上8：3.md
+- name: 加6：2
+  suggested_type: 互文
+  evidence: 5節；KC 引：你們各人的重擔要互相擔當
+  match_type: exact
+  existing_title: 加6：2
+  existing_path: link_folder/互文/加6：2.md
+- name: 腓2：4
+  suggested_type: 互文
+  evidence: 5節；KC 引：各人不要單顧自己的事，也要顧別人的事
+  match_type: exact
+  existing_title: 腓2：4
+  existing_path: link_folder/互文/腓2：4.md
+- name: 詩15：5
+  suggested_type: 互文
+  evidence: 8節；不放債取利、不受賄賂害無辜
+  match_type: exact
+  existing_title: 詩15：5
+  existing_path: link_folder/互文/詩15：5.md
+- name: 箴17：23
+  suggested_type: 互文
+  evidence: 8節；惡人收受賄賂顛倒公義
+  match_type: exact
+  existing_title: 箴17：23
+  existing_path: link_folder/互文/箴17：23.md
+- name: 賽5：23
+  suggested_type: 互文
+  evidence: 8節；收受賄賂顛倒義人
+  match_type: exact
+  existing_title: 賽5：23
+  existing_path: link_folder/互文/賽5：23.md
+- name: 彌3：9-11
+  suggested_type: 互文
+  evidence: 8節；審判官收賄賂、祭司教訓為利
+  match_type: exact
+  existing_title: 彌3：9-11
+  existing_path: link_folder/互文/彌3：9-11.md
+- name: 來4：9-10
+  suggested_type: 互文
+  evidence: 10-12節；另有一安息日的安息為神的子民存留
+  match_type: exact
+  existing_title: 來4：9-10
+  existing_path: link_folder/互文/來4：9-10.md
+- name: 西1：15
+  suggested_type: 互文
+  evidence: 20-21節；愛子是那不能看見之神的像
+  match_type: exact
+  existing_title: 西1：15
+  existing_path: link_folder/互文/西1：15.md
+B_needs_update: []
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
