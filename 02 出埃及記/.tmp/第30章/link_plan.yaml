@@ -1,7 +1,177 @@
 book: 出埃及記
 chapter: 30
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  evidence: 出30:1-10 經文詳細描述用皂莢木做燒香壇、用精金包裹、四角、金牙邊、金環、槓。CT/GT/KC/BH 註解：金香壇預表基督作大祭司代求(來7:25)、香表禱告(啟5:8)
+  surfaces:
+  - phrase: 燒香的壇
+    verses:
+    - 1
+  - phrase: 壇
+    verses:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+  - phrase: 香壇
+    verses:
+    - 1
+    - 7
+    - 8
+    - 9
+    - 10
+  - phrase: 金香壇
+    verses:
+    - 3
+    - 4
+    - 6
+    - 9
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 壇的四角（香壇）
+  suggested_type: 主題
+  evidence: 出30:2-3 經文記載香壇四角與壇接連一塊，用精金包裹。CT/KC/BH 註解：四角表徵基督代禱能力完全(來7:25)
+  surfaces:
+  - phrase: 角
+    verses:
+    - 2
+    - 3
+    - 10
+  - phrase: 四角
+    verses:
+    - 2
+    - 3
+  match_type: exact
+  existing_title: 壇的四角（香壇）
+  existing_path: link_folder/主題/壇的四角（香壇）.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  evidence: 出30:17-21 經文記載用銅做洗濯盆和盆座，放在會幕和壇中間，亞倫和兒子洗手洗腳免得死亡。 CT/GT/KC/BH 註解：洗濯盆預表基督話語潔淨(弗5:26)、信徒事奉前須潔淨
+  surfaces:
+  - phrase: 洗濯盆
+    verses:
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+  - phrase: 盆
+    verses:
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+  - phrase: 盆座
+    verses:
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+  - phrase: 洗手洗腳
+    verses:
+    - 19
+    - 20
+    - 21
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 聖膏油
+  suggested_type: 原文
+  evidence: 出30:22-33 經文詳細列出聖膏油配方：流質沒藥500舍客勒、香肉桂250、菖蒲250、桂皮500、橄欖油一欣。 CT/GT/KC/BH
+    註解：聖膏油預表聖靈膏抹(約壹2:20,27)、各成分表基督豐富屬性
+  surfaces:
+  - phrase: 聖膏油
+    verses:
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+  - phrase: 膏油
+    verses:
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+  - phrase: 沒藥
+    verses:
+    - 23
+  - phrase: 肉桂
+    verses:
+    - 23
+  - phrase: 菖蒲
+    verses:
+    - 23
+  - phrase: 桂皮
+    verses:
+    - 24
+  - phrase: 橄欖油
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
+- name: 聖香（清淨聖潔的香）
+  suggested_type: 原文
+  evidence: 出30:34-38 經文記載聖香配方：拿他弗、施喜列、喜利比拿、淨乳香各等分量，加鹽調和。 CT/GT/KC/BH 註解：聖香預表基督禱告生活、信徒禱告如香(啟5:8、8:3-4)
+  surfaces:
+  - phrase: 聖香
+    verses:
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  - phrase: 香
+    verses:
+    - 1
+    - 7
+    - 8
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  - phrase: 拿他弗
+    verses:
+    - 34
+  - phrase: 施喜列
+    verses:
+    - 34
+  - phrase: 喜利比拿
+    verses:
+    - 34
+  - phrase: 乳香
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 聖香（清淨聖潔的香）
+  existing_path: link_folder/原文/聖香（清淨聖潔的香）.md
 - name: 皂莢木
   suggested_type: 原文
   evidence: 出30:1,5 經文記載香壇和槓用皂莢木。已有條目「皂莢木（atzei shittim）」。CT/KC/BH 註解：皂莢木表徵基督堅固不朽壞的人性
@@ -13,6 +183,23 @@ B_needs_update:
   match_type: alias
   existing_title: 皂莢木（atzei shittim）
   existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+- name: 精金
+  suggested_type: 主題
+  evidence: 出30:3,4,5 經文記載香壇頂、四圍、四角、牙邊、環、槓都用精金包裹。KC/BH 註解：精金表神性純全、榮耀
+  surfaces:
+  - phrase: 精金
+    verses:
+    - 3
+    - 4
+    - 5
+  - phrase: 金
+    verses:
+    - 3
+    - 4
+    - 5
+  match_type: exact
+  existing_title: 精金
+  existing_path: link_folder/主題/精金.md
 - name: 銅
   suggested_type: 主題
   evidence: 出30:17,18,19,20,21 洗濯盆和盆座用銅。已有條目「銅」。KC/BH 註解：銅表審判
@@ -27,6 +214,38 @@ B_needs_update:
   match_type: exact
   existing_title: 銅
   existing_path: link_folder/主題/銅.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: 出30:7,10,19,20,21,30,31 經文多次提到亞倫和兒子燒香、贖罪、洗濯、受膏。已有條目「亞倫」、「亞倫的祭司譜系」
+  surfaces:
+  - phrase: 亞倫
+    verses:
+    - 7
+    - 10
+    - 19
+    - 20
+    - 21
+    - 30
+    - 31
+  - phrase: 他兒子
+    verses:
+    - 19
+    - 20
+    - 21
+    - 30
+    - 31
+  - phrase: 祭司
+    verses:
+    - 7
+    - 10
+    - 19
+    - 20
+    - 21
+    - 30
+    - 31
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
 - name: 山上的樣式
   suggested_type: 神學
   evidence: 出30:1-38 整章器具製作都照神指示，預表天上真實。已有條目「山上的樣式」、「天上真聖所（來9:23-24）」、「天上事的形狀和影像（來8:5）」。來8:5、9:23-24
@@ -201,54 +420,152 @@ B_needs_update:
   match_type: exact
   existing_title: 至聖所
   existing_path: link_folder/地點/至聖所.md
+- name: 基督代禱（來7:25）
+  suggested_type: 互文
+  evidence: 來7:25 指出基督能拯救到底、長遠活著替人代求。KC/CT 註解：金香壇預表基督在神施恩寶座前的代求
+  surfaces:
+  - phrase: 燒香
+    verses:
+    - 1
+    - 7
+    - 8
+  - phrase: 常燒的香
+    verses:
+    - 8
+  match_type: normalized
+  existing_title: 基督代禱（來7：25）
+  existing_path: link_folder/互文/基督代禱（來7：25）.md
+- name: 聖徒禱告如香（啟5:8, 8:3-4）
+  suggested_type: 互文
+  evidence: 啟5:8, 8:3-4 聖徒的禱告如香爐中的香。KC/CT 註解：燒香預表信徒禱告生活
+  surfaces:
+  - phrase: 香
+    verses:
+    - 1
+    - 7
+    - 8
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  - phrase: 燒香
+    verses:
+    - 1
+    - 7
+    - 8
+  match_type: normalized
+  existing_title: 聖徒禱告如香（啟5：8, 8：3-4）
+  existing_path: link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md
+- name: 贖價（基督作贖價）
+  suggested_type: 互文
+  evidence: 可10:45 基督捨命作多人的贖價。KC/CT 註解：半舍客勒贖價預表基督同等贖價、人人平等在神面前
+  surfaces:
+  - phrase: 贖價
+    verses:
+    - 12
+    - 15
+    - 16
+  - phrase: 半舍客勒
+    verses:
+    - 13
+    - 15
+  match_type: exact
+  existing_title: 贖價（基督作贖價）
+  existing_path: link_folder/互文/贖價（基督作贖價）.md
+- name: 話語潔淨（弗5:26）
+  suggested_type: 互文
+  evidence: 弗5:26 藉著話語藉著水洗淨教會。KC/CT 註解：洗濯盆預表基督話語潔淨、信徒事奉前須潔淨
+  surfaces:
+  - phrase: 洗濯
+    verses:
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+  - phrase: 洗手洗腳
+    verses:
+    - 19
+    - 20
+    - 21
+  match_type: alias
+  existing_title: 話語潔淨（弗5：26）
+  existing_path: link_folder/互文/話語潔淨（弗5：26）.md
+- name: 聖靈膏抹（約壹2:20,27）
+  suggested_type: 互文
+  evidence: 約壹2:20,27 信徒從聖者受恩膏。KC/CT 註解：聖膏油預表聖靈膏抹使人明白基督奧秘(林前2:6-8)
+  surfaces:
+  - phrase: 膏油
+    verses:
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+  - phrase: 聖膏油
+    verses:
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+  match_type: normalized
+  existing_title: 聖靈膏抹（約壹2：20,27）
+  existing_path: link_folder/互文/聖靈膏抹（約壹2：20,27）.md
+- name: 信徒禱告如香（啟5:8, 8:3-4）
+  suggested_type: 互文
+  evidence: 啟5:8, 8:3-4 聖徒禱告如香。KC/CT 註解：聖香預表基督禱告生活、信徒禱告如香
+  surfaces:
+  - phrase: 香
+    verses:
+    - 1
+    - 7
+    - 8
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  - phrase: 聖香
+    verses:
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+  match_type: normalized
+  existing_title: 信徒禱告如香（啟5：8, 8：3-4）
+  existing_path: link_folder/互文/信徒禱告如香（啟5：8, 8：3-4）.md
+B_needs_update:
+- name: 義行的細麻（啟19:8）
+  suggested_type: 互文
+  evidence: 啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
+  surfaces:
+  - phrase: 細麻
+    verses:
+    - 24
+  - phrase: 橄欖油
+    verses:
+    - 24
+  match_type: normalized
+  existing_title: 義行的細麻（啟19：8）
+  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
 C_new_formal:
-- name: 金香壇（香壇）
-  suggested_type: 主題
-  evidence: 出30:1-10 經文詳細描述用皂莢木做燒香壇、用精金包裹、四角、金牙邊、金環、槓。CT/GT/KC/BH 註解：金香壇預表基督作大祭司代求(來7:25)、香表禱告(啟5:8)
-  surfaces:
-  - phrase: 燒香的壇
-    verses:
-    - 1
-  - phrase: 壇
-    verses:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
-  - phrase: 香壇
-    verses:
-    - 1
-    - 7
-    - 8
-    - 9
-    - 10
-  - phrase: 金香壇
-    verses:
-    - 3
-    - 4
-    - 6
-    - 9
-  target_path: link_folder/主題/金香壇（香壇）.md
-- name: 壇的四角（香壇）
-  suggested_type: 主題
-  evidence: 出30:2-3 經文記載香壇四角與壇接連一塊，用精金包裹。CT/KC/BH 註解：四角表徵基督代禱能力完全(來7:25)
-  surfaces:
-  - phrase: 角
-    verses:
-    - 2
-    - 3
-    - 10
-  - phrase: 四角
-    verses:
-    - 2
-    - 3
-  target_path: link_folder/主題/壇的四角（香壇）.md
 - name: 金牙邊/金環/槓（香壇）
   suggested_type: 主題
   evidence: 出30:3-5 經文記載金牙邊防物滑落、金環穿槓抬壇。KC/BH 註解：牙邊表基督保守能力、槓表代禱涵蓋範圍
@@ -284,294 +601,5 @@ C_new_formal:
     verses:
     - 13
   target_path: link_folder/原文/半舍客勒（贖價/贖罪銀）.md
-- name: 洗濯盆（銅盆）
-  suggested_type: 主題
-  evidence: 出30:17-21 經文記載用銅做洗濯盆和盆座，放在會幕和壇中間，亞倫和兒子洗手洗腳免得死亡。 CT/GT/KC/BH 註解：洗濯盆預表基督話語潔淨(弗5:26)、信徒事奉前須潔淨
-  surfaces:
-  - phrase: 洗濯盆
-    verses:
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-  - phrase: 盆
-    verses:
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-  - phrase: 盆座
-    verses:
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-  - phrase: 洗手洗腳
-    verses:
-    - 19
-    - 20
-    - 21
-  target_path: link_folder/主題/洗濯盆（銅盆）.md
-- name: 聖膏油
-  suggested_type: 原文
-  evidence: 出30:22-33 經文詳細列出聖膏油配方：流質沒藥500舍客勒、香肉桂250、菖蒲250、桂皮500、橄欖油一欣。 CT/GT/KC/BH
-    註解：聖膏油預表聖靈膏抹(約壹2:20,27)、各成分表基督豐富屬性
-  surfaces:
-  - phrase: 聖膏油
-    verses:
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-  - phrase: 膏油
-    verses:
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-  - phrase: 沒藥
-    verses:
-    - 23
-  - phrase: 肉桂
-    verses:
-    - 23
-  - phrase: 菖蒲
-    verses:
-    - 23
-  - phrase: 桂皮
-    verses:
-    - 24
-  - phrase: 橄欖油
-    verses:
-    - 24
-  target_path: link_folder/原文/聖膏油.md
-- name: 聖香（清淨聖潔的香）
-  suggested_type: 原文
-  evidence: 出30:34-38 經文記載聖香配方：拿他弗、施喜列、喜利比拿、淨乳香各等分量，加鹽調和。 CT/GT/KC/BH 註解：聖香預表基督禱告生活、信徒禱告如香(啟5:8、8:3-4)
-  surfaces:
-  - phrase: 聖香
-    verses:
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  - phrase: 香
-    verses:
-    - 1
-    - 7
-    - 8
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  - phrase: 拿他弗
-    verses:
-    - 34
-  - phrase: 施喜列
-    verses:
-    - 34
-  - phrase: 喜利比拿
-    verses:
-    - 34
-  - phrase: 乳香
-    verses:
-    - 34
-  target_path: link_folder/原文/聖香（清淨聖潔的香）.md
-- name: 精金
-  suggested_type: 主題
-  evidence: 出30:3,4,5 經文記載香壇頂、四圍、四角、牙邊、環、槓都用精金包裹。KC/BH 註解：精金表神性純全、榮耀
-  surfaces:
-  - phrase: 精金
-    verses:
-    - 3
-    - 4
-    - 5
-  - phrase: 金
-    verses:
-    - 3
-    - 4
-    - 5
-  target_path: link_folder/主題/精金.md
-- name: 亞倫和他兒子（祭司）
-  suggested_type: 人物
-  evidence: 出30:7,10,19,20,21,30,31 經文多次提到亞倫和兒子燒香、贖罪、洗濯、受膏。已有條目「亞倫」、「亞倫的祭司譜系」
-  surfaces:
-  - phrase: 亞倫
-    verses:
-    - 7
-    - 10
-    - 19
-    - 20
-    - 21
-    - 30
-    - 31
-  - phrase: 他兒子
-    verses:
-    - 19
-    - 20
-    - 21
-    - 30
-    - 31
-  - phrase: 祭司
-    verses:
-    - 7
-    - 10
-    - 19
-    - 20
-    - 21
-    - 30
-    - 31
-  target_path: link_folder/人物/亞倫和他兒子（祭司）.md
-- name: 基督代禱（來7:25）
-  suggested_type: 互文
-  evidence: 來7:25 指出基督能拯救到底、長遠活著替人代求。KC/CT 註解：金香壇預表基督在神施恩寶座前的代求
-  surfaces:
-  - phrase: 燒香
-    verses:
-    - 1
-    - 7
-    - 8
-  - phrase: 常燒的香
-    verses:
-    - 8
-  target_path: link_folder/互文/基督代禱（來7:25）.md
-- name: 聖徒禱告如香（啟5:8, 8:3-4）
-  suggested_type: 互文
-  evidence: 啟5:8, 8:3-4 聖徒的禱告如香爐中的香。KC/CT 註解：燒香預表信徒禱告生活
-  surfaces:
-  - phrase: 香
-    verses:
-    - 1
-    - 7
-    - 8
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  - phrase: 燒香
-    verses:
-    - 1
-    - 7
-    - 8
-  target_path: link_folder/互文/聖徒禱告如香（啟5:8, 8:3-4）.md
-- name: 贖價（基督作贖價）
-  suggested_type: 互文
-  evidence: 可10:45 基督捨命作多人的贖價。KC/CT 註解：半舍客勒贖價預表基督同等贖價、人人平等在神面前
-  surfaces:
-  - phrase: 贖價
-    verses:
-    - 12
-    - 15
-    - 16
-  - phrase: 半舍客勒
-    verses:
-    - 13
-    - 15
-  target_path: link_folder/互文/贖價（基督作贖價）.md
-- name: 話語潔淨（弗5:26）
-  suggested_type: 互文
-  evidence: 弗5:26 藉著話語藉著水洗淨教會。KC/CT 註解：洗濯盆預表基督話語潔淨、信徒事奉前須潔淨
-  surfaces:
-  - phrase: 洗濯
-    verses:
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-  - phrase: 洗手洗腳
-    verses:
-    - 19
-    - 20
-    - 21
-  target_path: link_folder/互文/話語潔淨（弗5:26）.md
-- name: 聖靈膏抹（約壹2:20,27）
-  suggested_type: 互文
-  evidence: 約壹2:20,27 信徒從聖者受恩膏。KC/CT 註解：聖膏油預表聖靈膏抹使人明白基督奧秘(林前2:6-8)
-  surfaces:
-  - phrase: 膏油
-    verses:
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-  - phrase: 聖膏油
-    verses:
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-  target_path: link_folder/互文/聖靈膏抹（約壹2:20,27）.md
-- name: 信徒禱告如香（啟5:8, 8:3-4）
-  suggested_type: 互文
-  evidence: 啟5:8, 8:3-4 聖徒禱告如香。KC/CT 註解：聖香預表基督禱告生活、信徒禱告如香
-  surfaces:
-  - phrase: 香
-    verses:
-    - 1
-    - 7
-    - 8
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  - phrase: 聖香
-    verses:
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  target_path: link_folder/互文/信徒禱告如香（啟5:8, 8:3-4）.md
-- name: 義行的細麻（啟19:8）
-  suggested_type: 互文
-  evidence: 啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
-  surfaces:
-  - phrase: 細麻
-    verses:
-    - 24
-  - phrase: 橄欖油
-    verses:
-    - 24
-  target_path: link_folder/互文/義行的細麻（啟19:8）.md
 D_new_candidate: []
 E_skip: []
