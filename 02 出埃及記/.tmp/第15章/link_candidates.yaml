@@ -7,13 +7,11 @@ candidates:
   - name: 耶和華
     type: 神學
     evidence: 全章；歌頌的對象；祂是戰士、是醫治者、必作王直到永永遠遠
-    surfaces:
-      - {phrase: 耶和華, verses: [1, 3, 4, 6, 11, 16, 17, 21, 25]}
   - name: 摩西之歌
     type: 神學
     evidence: 1節；聖經中第一首記錄的歌；丁良才列出聖經十歌，本歌居首
     surfaces:
-      - {phrase: 向耶和華唱歌, verses: [1]}
+      - {phrase: 唱歌說, verses: [1]}
   - name: 海（紅海）
     type: 地點
     evidence: 1、4-5、8、10、19、21-22節；原文「蘆葦海」；suph 有雙關語意
@@ -133,7 +131,7 @@ candidates:
     type: 歷史
     evidence: 24節；丁良才數出以色列人至少還有七次怨言；林前10:10 以此警戒信徒
     surfaces:
-      - {phrase: 百姓就向摩西發怨言, verses: [24]}
+      - {phrase: 發怨言, verses: [24]}
   - name: 瑪拉苦水變甜
     type: 事件
     evidence: 25節；耶和華指示一棵樹，丟在水裡水就變甜——CT 指不是一種樹，乃是一棵樹
