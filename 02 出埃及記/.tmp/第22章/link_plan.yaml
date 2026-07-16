@@ -124,6 +124,12 @@ A_use_directly:
   match_type: exact
   existing_title: 審判官（elohim）
   existing_path: link_folder/原文/審判官（elohim）.md
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 11節；CT 指社治律中只有這一次提及耶和華，表示祂是聽聞誓言者
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
 - name: 借物賠償的律例
   suggested_type: 事件
   evidence: 14-15節；本主同在或是雇的則不必賠還
@@ -605,13 +611,7 @@ A_use_directly:
   match_type: exact
   existing_title: 啟13：1,11
   existing_path: link_folder/互文/啟13：1,11.md
-B_needs_update:
-- name: 耶和華
-  suggested_type: 神學
-  evidence: 11節；CT 指社治律中只有這一次提及耶和華，表示祂是聽聞誓言者
-  match_type: exact
-  existing_title: 耶和華
-  existing_path: link_folder/神學/耶和華.md
+B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

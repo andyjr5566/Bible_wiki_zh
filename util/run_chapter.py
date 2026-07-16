@@ -927,13 +927,19 @@ def _close_knowledge_nodes(chapter_content, mapping):
     nodes = render_chapter.coerce_knowledge_nodes(chapter_content.get("knowledge_nodes"))
     closed, dropped = {}, []
     for group, items in nodes.items():
-        resolved = []
+        resolved, seen = [], set()
         for item in items:
             title = _resolve_related(item, mapping)
-            if title and title not in resolved:
-                resolved.append(title)
-            elif title is None:
+            if title is None:
                 dropped.append(str(item))
+                continue
+            # 互文等分組要保留顯示用小標題（[[出20：16|出20：16 第九誡不可作假見證]]），
+            # 否則渲染成裸引用，讀者無從得知該節在講什麼。去重仍以條目本身為準。
+            alias = str(item).strip().partition("|")[2].strip()
+            entry = f"{title}|{alias}" if alias else title
+            if title not in seen:
+                seen.add(title)
+                resolved.append(entry)
         if resolved:
             closed[group] = resolved
     return dict(chapter_content, knowledge_nodes=closed), dropped
