@@ -1,0 +1,28 @@
+name: 何烈山火焰昏黑密雲
+type: 事件
+secondary_types: []
+aliases:
+- 何烈山神顯火焰昏黑密雲
+status: formal
+definition: 申命記 4:11 記載以色列人在何烈山腳下，看見山上有火焰沖天，並有昏黑、密雲、幽暗。這神顯場景彰顯耶和華的榮耀與威嚴，也作為禁止雕刻偶像的依據（v.15-16），因百姓未見神有何形像。
+development: 此事件與出埃及記 19:16-19 西奈山神顯平行，火、雲、震動象徵神的聖潔臨在；新約希伯來書 12:18-21 對比西奈山與錫安山，強調舊約的恐懼與新約的恩典。
+accumulations:
+- book: 申命記
+  chapter: 4
+  summary: 摩西回顧何烈山立約時的神顯現象：火焰、昏黑、密雲、幽暗，作為禁止偶像崇拜的歷史依據。
+  relation: 本章禁止偶像崇拜論證的歷史錨點，連結十誡頒布與神無形像的神學。
+related_entries:
+- 何烈山領受十誡
+- 禁止雕刻偶像
+- 神是烈火忌邪的神
+- 何烈山火焰昏黑密雲
+sources:
+- '逐節註解: 申命記 4:11 何烈山火焰昏黑密雲（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT04.htm）'
+- '研經註解: 申命記 4 章研經註解——何烈山神顯（https://www.kingcomments.com/en/bible-studies/Deu/4）'
+- '研經註解: 申命記 4 章研經註解——何烈山神顯（https://biblehub.com/study/deuteronomy/4.htm）'
+created_from: deuteronomy_4
+category: event
+trigger_sources:
+- deuteronomy_4
+current_data: true
+pending: false

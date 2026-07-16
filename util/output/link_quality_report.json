@@ -1,7 +1,7 @@
 {
-  "total_warnings": 83,
+  "total_warnings": 85,
   "critical_count": 0,
-  "warning_count": 83,
+  "warning_count": 85,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,20 @@
       "source": "申命記/第2章.md",
       "target": "撒烈溪",
       "message": "同一 alias「撒烈溪」指向多個 target: 撒烈溪, 過撒烈溪"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "申命記/第4章.md",
+      "target": "律例典章",
+      "message": "同一 alias「律例典章」指向多個 target: 律例典章, 摩西勸勉遵守律例典章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "申命記/第4章.md",
+      "target": "十條誡",
+      "message": "同一 alias「十條誡」指向多個 target: 何烈山領受十誡, 十誡是約"
     },
     {
       "type": "alias_target_conflict",

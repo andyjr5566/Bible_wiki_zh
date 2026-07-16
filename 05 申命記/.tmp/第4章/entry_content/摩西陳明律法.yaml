@@ -1,0 +1,31 @@
+name: 摩西陳明律法
+type: 事件
+secondary_types: []
+aliases:
+- 摩西陳明律法
+status: formal
+definition: 申命記 4:44-49 總結摩西在約但河東、伯毘珥對面的谷中，向以色列人陳明律法、法度、律例、典章的地點與背景。這段經文作為申命記第二篇講論（第
+  5-26 章）的引言，確立摩西作為中保傳遞神約法的權威地位。
+development: 此事件緊接逃城設立之後，標示從歷史回顧轉入律法詳細闡釋的過渡點，強調律法是在特定歷史地理脈絡中頒布的。
+accumulations:
+- book: 申命記
+  chapter: 4
+  summary: 經文記載摩西在約但河東向以色列人陳明律法的地點（伯毘珥對面谷中）與對象（出埃及後的以色列人）。
+  relation: 本章結尾段落，為後續十誡重述與律法詳解鋪陳舞台。
+related_entries:
+- 設立逃城
+- 伯毘珥對面谷中
+- 亞嫩谷至黑門山
+- 律例典章
+- 十誡是約
+sources:
+- '逐節註解: 申命記 4:44-49 摩西陳明律法的地點與背景（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT04.htm）'
+- '拾穗: 申命記 4:44-49 律法頒布的歷史定位（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT04.htm）'
+- '研經註解: Deuteronomy 4:44-49 Introduction to the Law（https://www.kingcomments.com/en/bible-studies/Deu/4）'
+- '研經註解: Deuteronomy 4:44-49 The Setting of the Law（https://biblehub.com/study/deuteronomy/4.htm）'
+created_from: deuteronomy_4
+category: 事件
+trigger_sources:
+- deuteronomy_4
+current_data: {}
+pending: false
