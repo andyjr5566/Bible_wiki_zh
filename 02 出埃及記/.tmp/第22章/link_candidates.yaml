@@ -56,7 +56,7 @@ candidates:
     type: 背景
     evidence: 7節；《啟導本》指在尚無銀行等金融機構的社會，外出旅行會把銀錢托鄰人代為保管
     surfaces:
-      - {phrase: 人若將銀錢或傢俱, verses: [7]}
+      - {phrase: 人若將銀錢或家具, verses: [7]}
   - name: 審判官（elohim）
     type: 原文
     evidence: 8-9節；原文與「神」字相同；《丁道爾》指就近神必然是「到聖所」的意思
@@ -95,7 +95,7 @@ candidates:
     type: 解經爭議
     evidence: 18節；蘇穎智指徒19:19 保羅並沒有宣判行邪術者死罪，反而將福音傳給他們
     surfaces:
-      - {phrase: 不可容她存活, verses: [18]}
+      - {phrase: 不可容他存活, verses: [18]}
   - name: 古代近東行邪術
     type: 背景
     evidence: 18節；《啟導本》指漢摩拉比法典有浸死行邪術者的規定
@@ -153,6 +153,11 @@ candidates:
   - name: 古代近東放債取利
     type: 背景
     evidence: 25節；《舊約背景註釋》指漢摩拉比規定利率不得超過百分之二十
+  - name: "當頭（`abot）"
+    type: 原文
+    evidence: 26節；原文字義「典當，抵押，綑綁」；CT 指借錢給窮人不可向他們要求抵押物品，即使自動抵押仍須日落前歸還
+    surfaces:
+      - {phrase: 作當頭, verses: [26]}
   - name: 古代近東當頭制度
     type: 背景
     evidence: 26-27節；《舊約背景註釋》記亞弗內揚出土主前七世紀銘刻，一個農工申訴外衣被人無理奪取
@@ -216,9 +221,6 @@ candidates:
   - name: 敬畏神
     type: 神學
     evidence: 28節；不可毀謗神，也不可毀謗百姓的官長——因為官長是神的用人
-  - name: 滅絕（herem）
-    type: 神學
-    evidence: 20節；祭祀別神者必要滅絕；《丁道爾》指迦南人要怎樣被以色列人殺盡，這人也要怎樣滅絕
   - name: 財產權
     type: 主題
     evidence: 1-15節；《啟導本》指這些法例旨在保障私有產權

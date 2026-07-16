@@ -1,0 +1,617 @@
+book: 出埃及記
+chapter: 22
+A_use_directly:
+- name: 偷（ganab）
+  suggested_type: 原文
+  evidence: 1節；原文字義「偷竊，拐帶，拿走」；《精讀本》指「拐賣」的希伯來語是「趁機偷盜」的意思
+  surfaces:
+  - phrase: 人若偷牛或羊
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 偷（ganab）
+  existing_path: link_folder/原文/偷（ganab）.md
+- name: 賠償原則
+  suggested_type: 神學
+  evidence: 1、4節；五牛賠一牛、四羊賠一羊；《丁道爾》指牛較有價值更難以置換
+  surfaces:
+  - phrase: 以五牛賠一牛，四羊賠一羊
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 賠償原則
+  existing_path: link_folder/神學/賠償原則.md
+- name: 賠償（shalem）
+  suggested_type: 原文
+  evidence: 3、5、6節；原文字義「賠償，回報」；KC 指偷竊不使人更富有，反使人更貧窮
+  surfaces:
+  - phrase: 總要賠還
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 賠償（shalem）
+  existing_path: link_folder/原文/賠償（shalem）.md
+- name: 出22：2-3自衛殺人的界限
+  suggested_type: 解經爭議
+  evidence: 2-3節；夜間殺賊無流血的罪，太陽出來則有；《丁道爾》：以色列的律法富於憐憫，即使賊人也有權益
+  surfaces:
+  - phrase: 就不能為他有流血的罪
+    verses:
+    - 2
+  - phrase: 若太陽已經出來，就為他有流血的罪
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 出22：2-3自衛殺人的界限
+  existing_path: link_folder/解經爭議/出22：2-3自衛殺人的界限.md
+- name: 古代近東自衛權
+  suggested_type: 背景
+  evidence: 2-3節；《舊約背景註釋》指漢摩拉比法典把已處死的竊賊屍體砌牆圍在他挖出來的洞中
+  surfaces:
+  - phrase: 遇見賊挖窟窿
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 古代近東自衛權
+  existing_path: link_folder/背景/古代近東自衛權.md
+- name: 偷竊賠償的律例
+  suggested_type: 事件
+  evidence: 1-4節；賠償額視贓物是否仍存活而定；賊若一無所有就要被賣
+  surfaces:
+  - phrase: 就要被賣，頂他所偷的物
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 偷竊賠償的律例
+  existing_path: link_folder/事件/偷竊賠償的律例.md
+- name: 古代近東偷竊賠償法
+  suggested_type: 背景
+  evidence: 1-4節；《舊約背景註釋》指漢摩拉比法典偷竊廟宇宮殿之物判死刑，出22:3 則從輕發落
+  surfaces:
+  - phrase: 他就要加倍賠還
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 古代近東偷竊賠償法
+  existing_path: link_folder/背景/古代近東偷竊賠償法.md
+- name: 財物受損的律例
+  suggested_type: 事件
+  evidence: 5-6節；放牲畜吃別人田產、點火焚燒荊棘致損，都要賠還
+  surfaces:
+  - phrase: 任憑牲畜上別人的田裡去吃
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 財物受損的律例
+  existing_path: link_folder/事件/財物受損的律例.md
+- name: 賠償與公義
+  suggested_type: 主題
+  evidence: 5節；「就必拿自己田間上好的和葡萄園上好的賠還」——賠償的價款必須超過對方的損失
+  surfaces:
+  - phrase: 就必拿自己田間上好的和葡萄園上好的賠還
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 賠償與公義
+  existing_path: link_folder/主題/賠償與公義.md
+- name: 受託看管的律例
+  suggested_type: 事件
+  evidence: 7-13節；受託保管財物一旦答應就須負保全的責任
+  surfaces:
+  - phrase: 交付鄰舍看守
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 受託看管的律例
+  existing_path: link_folder/事件/受託看管的律例.md
+- name: 古代近東受託制度
+  suggested_type: 背景
+  evidence: 7節；《啟導本》指在尚無銀行等金融機構的社會，外出旅行會把銀錢托鄰人代為保管
+  surfaces:
+  - phrase: 人若將銀錢或家具
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 古代近東受託制度
+  existing_path: link_folder/背景/古代近東受託制度.md
+- name: 審判官（elohim）
+  suggested_type: 原文
+  evidence: 8-9節；原文與「神」字相同；《丁道爾》指就近神必然是「到聖所」的意思
+  surfaces:
+  - phrase: 那家主必就近審判官
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 審判官（elohim）
+  existing_path: link_folder/原文/審判官（elohim）.md
+- name: 借物賠償的律例
+  suggested_type: 事件
+  evidence: 14-15節；本主同在或是雇的則不必賠還
+  surfaces:
+  - phrase: 人若向鄰舍借什麼
+    verses:
+    - 14
+  - phrase: 本是為雇價來的
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 借物賠償的律例
+  existing_path: link_folder/事件/借物賠償的律例.md
+- name: 引誘處女的律例
+  suggested_type: 事件
+  evidence: 16-17節；總要交出聘禮娶她為妻；父親決不肯則按處女的聘禮交出錢來
+  surfaces:
+  - phrase: 人若引誘沒有受聘的處女
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 引誘處女的律例
+  existing_path: link_folder/事件/引誘處女的律例.md
+- name: 聘禮（mohar）
+  suggested_type: 原文
+  evidence: 16-17節；《中文聖經註釋》指男方向女方家人所交的金錢和各種物件；申22:29 規定為五十舍客勒銀子
+  surfaces:
+  - phrase: 他總要交出聘禮
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 聘禮（mohar）
+  existing_path: link_folder/原文/聘禮（mohar）.md
+- name: 古代近東聘禮制度
+  suggested_type: 背景
+  evidence: 16-17節；《舊約背景註釋》指女子是否為處女、曾否結婚是聘禮多少的根據
+  surfaces:
+  - phrase: 按處女的聘禮，交出錢來
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 古代近東聘禮制度
+  existing_path: link_folder/背景/古代近東聘禮制度.md
+- name: 行邪術的女人（mekhashephah）
+  suggested_type: 原文
+  evidence: 18節；原文字義「女巫」；《中文聖經註釋》指舊約把占卜、觀兆、法術、巫術、交鬼、過陰都列入行邪術
+  surfaces:
+  - phrase: 行邪術的女人
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 行邪術的女人（mekhashephah）
+  existing_path: link_folder/原文/行邪術的女人（mekhashephah）.md
+- name: 出22：18行邪術的死刑
+  suggested_type: 解經爭議
+  evidence: 18節；蘇穎智指徒19:19 保羅並沒有宣判行邪術者死罪，反而將福音傳給他們
+  surfaces:
+  - phrase: 不可容他存活
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 出22：18行邪術的死刑
+  existing_path: link_folder/解經爭議/出22：18行邪術的死刑.md
+- name: 古代近東行邪術
+  suggested_type: 背景
+  evidence: 18節；《啟導本》指漢摩拉比法典有浸死行邪術者的規定
+  match_type: exact
+  existing_title: 古代近東行邪術
+  existing_path: link_folder/背景/古代近東行邪術.md
+- name: 古代近東人獸性行為
+  suggested_type: 背景
+  evidence: 19節；《舊約背景註釋》指這種行為在赫人法律中也在被禁之列
+  surfaces:
+  - phrase: 凡與獸淫合的
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 古代近東人獸性行為
+  existing_path: link_folder/背景/古代近東人獸性行為.md
+- name: 滅絕（charam）
+  suggested_type: 原文
+  evidence: 20節；原文字義「滅絕，毀滅，劈開」；《丁道爾》指犯這罪的人列為「稱聖當滅之物」
+  surfaces:
+  - phrase: 那人必要滅絕
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 滅絕（charam）
+  existing_path: link_folder/原文/滅絕（charam）.md
+- name: 專一敬拜
+  suggested_type: 神學
+  evidence: 20節；「祭祀別神，不單單祭祀耶和華的」——《丁道爾》指這只是從獻祭的角度解釋出20:3
+  surfaces:
+  - phrase: 祭祀別神，不單單祭祀耶和華的
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 專一敬拜
+  existing_path: link_folder/神學/專一敬拜.md
+- name: 道德與宗教的律例
+  suggested_type: 事件
+  evidence: 16-20節；《中文聖經註釋》指18-20節已改用普遍性的律例形式
+  match_type: exact
+  existing_title: 道德與宗教的律例
+  existing_path: link_folder/事件/道德與宗教的律例.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 21節；《丁道爾》指 ger 是「外僑」，不僅是「外邦人」而已；希伯來語另外有形容外邦人的字眼
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
+- name: 保護弱者的律例
+  suggested_type: 事件
+  evidence: 21-27節；寄居的、寡婦、孤兒、貧窮人——古代社會最無助的階層
+  surfaces:
+  - phrase: 不可苦待寡婦和孤兒
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 保護弱者的律例
+  existing_path: link_folder/事件/保護弱者的律例.md
+- name: 保護弱勢
+  suggested_type: 主題
+  evidence: 21-27節；《丁道爾》：以色列必須關顧窮乏無助的人，因為耶和華也關顧他們——這是祂的本性
+  surfaces:
+  - phrase: 因為你們在埃及地也作過寄居的
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 保護弱勢
+  existing_path: link_folder/主題/保護弱勢.md
+- name: 古代近東社會弱勢群體
+  suggested_type: 背景
+  evidence: 21-24節；《舊約背景註釋》指埃及《善辯之農夫》中原告稱審判官為「孤兒之父、寡婦之夫」
+  match_type: exact
+  existing_title: 古代近東社會弱勢群體
+  existing_path: link_folder/背景/古代近東社會弱勢群體.md
+- name: 神聽哀求
+  suggested_type: 神學
+  evidence: 23、27節；「他們向我一哀求，我總要聽他們的哀聲」——神是孤兒寡婦的保護者和伸冤者
+  surfaces:
+  - phrase: 我總要聽他們的哀聲
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 神聽哀求
+  existing_path: link_folder/神學/神聽哀求.md
+- name: 取利（neshek）
+  suggested_type: 原文
+  evidence: 25節；原文字義「利息，高利」；《丁道爾》指本節不但譴責高利貸，更反對向窮人收取任何利息
+  surfaces:
+  - phrase: 不可如放債的向他取利
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 取利（neshek）
+  existing_path: link_folder/原文/取利（neshek）.md
+- name: 出22：25取利禁令的範圍
+  suggested_type: 解經爭議
+  evidence: 25節；丁良才指這一條法律是論以色列人，不是論外邦人，也不是論到借款經商等事
+  surfaces:
+  - phrase: 我民中有貧窮人與你同住
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 出22：25取利禁令的範圍
+  existing_path: link_folder/解經爭議/出22：25取利禁令的範圍.md
+- name: 古代近東放債取利
+  suggested_type: 背景
+  evidence: 25節；《舊約背景註釋》指漢摩拉比規定利率不得超過百分之二十
+  match_type: exact
+  existing_title: 古代近東放債取利
+  existing_path: link_folder/背景/古代近東放債取利.md
+- name: 當頭（`abot）
+  suggested_type: 原文
+  evidence: 26節；原文字義「典當，抵押，綑綁」；CT 指借錢給窮人不可向他們要求抵押物品，即使自動抵押仍須日落前歸還
+  surfaces:
+  - phrase: 作當頭
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 當頭（`abot）
+  existing_path: link_folder/原文/當頭（`abot）.md
+- name: 古代近東當頭制度
+  suggested_type: 背景
+  evidence: 26-27節；《舊約背景註釋》記亞弗內揚出土主前七世紀銘刻，一個農工申訴外衣被人無理奪取
+  surfaces:
+  - phrase: 必在日落以先歸還他
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 古代近東當頭制度
+  existing_path: link_folder/背景/古代近東當頭制度.md
+- name: 恩惠
+  suggested_type: 神學
+  evidence: 27節；「他哀求我，我就應允，因為我是有恩惠的」——神的本性
+  surfaces:
+  - phrase: 因為我是有恩惠的
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 恩惠
+  existing_path: link_folder/神學/恩惠.md
+- name: 毀謗（qalal）
+  suggested_type: 原文
+  evidence: 28節；原文首字「藐視，小看」，次字「詛咒」；《舊約背景註釋》指本節可譯「神」也可譯「審判官」
+  surfaces:
+  - phrase: 不可毀謗神
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 毀謗（qalal）
+  existing_path: link_folder/原文/毀謗（qalal）.md
+- name: 初熟果子
+  suggested_type: 神學
+  evidence: 29節；「你要從你莊稼中的穀和酒醡中滴出來的酒拿來獻上，不可遲延」
+  surfaces:
+  - phrase: 拿來獻上，不可遲延
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 初熟果子
+  existing_path: link_folder/神學/初熟果子.md
+- name: 古代近東初熟果子奉獻
+  suggested_type: 背景
+  evidence: 29節；《舊約背景註釋》指這命令提醒人在封存收成之前首先作出奉獻
+  match_type: exact
+  existing_title: 古代近東初熟果子奉獻
+  existing_path: link_folder/背景/古代近東初熟果子奉獻.md
+- name: 頭生歸神
+  suggested_type: 神學
+  evidence: 29-30節；「你要將頭生的兒子歸給我」；CT 指長子因神的羔羊的血得蒙保守，故須分別為聖歸給神
+  surfaces:
+  - phrase: 你要將頭生的兒子歸給我
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 頭生歸神
+  existing_path: link_folder/神學/頭生歸神.md
+- name: 出22：29-30頭生歸神的方式
+  suggested_type: 解經爭議
+  evidence: 29-30節；頭生兒子以贖金贖出（民18:15-16），牛羊第八天歸神
+  surfaces:
+  - phrase: 七天當跟著母，第八天要歸給我
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 出22：29-30頭生歸神的方式
+  existing_path: link_folder/解經爭議/出22：29-30頭生歸神的方式.md
+- name: 古代近東頭生奉獻
+  suggested_type: 背景
+  evidence: 29節；《舊約背景註釋》指以色列的信仰禁止殺人獻祭，奉上牲口代替嬰孩
+  match_type: exact
+  existing_title: 古代近東頭生奉獻
+  existing_path: link_folder/背景/古代近東頭生奉獻.md
+- name: 聖潔（qodesh）
+  suggested_type: 原文
+  evidence: 31節；原文字義「分別，神聖」；《中文聖經註釋》指原文的聖潔有分別、隔別、離開的意義
+  surfaces:
+  - phrase: 你們要在我面前為聖潔的人
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 聖潔（qodesh）
+  existing_path: link_folder/原文/聖潔（qodesh）.md
+- name: 聖潔飲食
+  suggested_type: 主題
+  evidence: 31節；「田間被野獸撕裂牲畜的肉，你們不可吃，要丟給狗吃」
+  surfaces:
+  - phrase: 被野獸撕裂牲畜的肉，你們不可吃
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 聖潔飲食
+  existing_path: link_folder/主題/聖潔飲食.md
+- name: 古代近東飲食潔淨
+  suggested_type: 背景
+  evidence: 31節；《舊約背景註釋》指這是他們「分別出來」作神子民的表記
+  surfaces:
+  - phrase: 要丟給狗吃
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 古代近東飲食潔淨
+  existing_path: link_folder/背景/古代近東飲食潔淨.md
+- name: 禮儀的律例
+  suggested_type: 事件
+  evidence: 28-31節；《中文聖經註釋》指與神立約的人就要與一些事物分隔開來，藉以顯明是聖潔的
+  match_type: exact
+  existing_title: 禮儀的律例
+  existing_path: link_folder/事件/禮儀的律例.md
+- name: 約書
+  suggested_type: 神學
+  evidence: 全章；本章為約書典章的第二部分，延續第21章的案例式律法
+  match_type: exact
+  existing_title: 約書
+  existing_path: link_folder/神學/約書.md
+- name: 聖潔
+  suggested_type: 神學
+  evidence: 31節；CT 指神所要的原是靈性的聖潔，各樣的條例特為常常提醒他們遠離一切污穢
+  match_type: exact
+  existing_title: 聖潔
+  existing_path: link_folder/神學/聖潔.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 28節；不可毀謗神，也不可毀謗百姓的官長——因為官長是神的用人
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 財產權
+  suggested_type: 主題
+  evidence: 1-15節；《啟導本》指這些法例旨在保障私有產權
+  match_type: exact
+  existing_title: 財產權
+  existing_path: link_folder/主題/財產權.md
+- name: 聖潔生活
+  suggested_type: 主題
+  evidence: 28-31節；CT：聖潔在乎內心，不在乎外表；在乎動機，不在乎動作
+  match_type: exact
+  existing_title: 聖潔生活
+  existing_path: link_folder/主題/聖潔生活.md
+- name: 出20：15
+  suggested_type: 互文
+  evidence: 1-4節；KC 指本段是第八誡「不可偷盜」的應用
+  match_type: exact
+  existing_title: 出20：15
+  existing_path: link_folder/互文/出20：15.md
+- name: 路19：8
+  suggested_type: 互文
+  evidence: 1、4節；撒該四倍賠還，KC 與 BH 都指為本段賠償原則的新約實踐
+  match_type: exact
+  existing_title: 路19：8
+  existing_path: link_folder/互文/路19：8.md
+- name: 出21：2
+  suggested_type: 互文
+  evidence: 3節；賊若一無所有就要被賣，與希伯來奴僕條例銜接
+  match_type: exact
+  existing_title: 出21：2
+  existing_path: link_folder/互文/出21：2.md
+- name: 創31：39
+  suggested_type: 互文
+  evidence: 13節；雅各為拉班看守牲畜被野獸撕裂須賠償，與本段形成對比
+  match_type: exact
+  existing_title: 創31：39
+  existing_path: link_folder/互文/創31：39.md
+- name: 摩3：12
+  suggested_type: 互文
+  evidence: 13節；《丁道爾》引：出示屍骸的目的是要顯出牧人依然機警，及時阻止不被野獸吃掉
+  match_type: exact
+  existing_title: 摩3：12
+  existing_path: link_folder/互文/摩3：12.md
+- name: 申22：28-29
+  suggested_type: 互文
+  evidence: 16-17節；規定聘禮為五十舍客勒銀子，且終身不可休她
+  match_type: exact
+  existing_title: 申22：28-29
+  existing_path: link_folder/互文/申22：28-29.md
+- name: 創1：28
+  suggested_type: 互文
+  evidence: 19節；《舊約背景註釋》指人獸性行為違背了生養眾多的基本命令
+  match_type: exact
+  existing_title: 創1：28
+  existing_path: link_folder/互文/創1：28.md
+- name: 出20：3
+  suggested_type: 互文
+  evidence: 20節；《丁道爾》指本節只是從獻祭的角度解釋出20:3
+  match_type: exact
+  existing_title: 出20：3
+  existing_path: link_folder/互文/出20：3.md
+- name: 徒19：19
+  suggested_type: 互文
+  evidence: 18節；蘇穎智引：保羅並沒有宣判行邪術者死罪，反而使他們得救
+  match_type: exact
+  existing_title: 徒19：19
+  existing_path: link_folder/互文/徒19：19.md
+- name: 詩68：5
+  suggested_type: 互文
+  evidence: 22-24節；神在他的聖所作孤兒的父，作寡婦的伸冤者
+  match_type: exact
+  existing_title: 詩68：5
+  existing_path: link_folder/互文/詩68：5.md
+- name: 詩146：9
+  suggested_type: 互文
+  evidence: 21-27節；KC 引：神保護寄居的
+  match_type: exact
+  existing_title: 詩146：9
+  existing_path: link_folder/互文/詩146：9.md
+- name: 雅1：27
+  suggested_type: 互文
+  evidence: 22節；清潔沒有玷污的虔誠就是看顧在患難中的孤兒寡婦
+  match_type: exact
+  existing_title: 雅1：27
+  existing_path: link_folder/互文/雅1：27.md
+- name: 利19：18
+  suggested_type: 互文
+  evidence: 21-27節；BH 指「愛人如己」為本段保護弱者的基礎
+  match_type: exact
+  existing_title: 利19：18
+  existing_path: link_folder/互文/利19：18.md
+- name: 太6：25-34
+  suggested_type: 互文
+  evidence: 26-27節；BH 指不要憂慮衣食與本段神顧念窮人基本需要一致
+  match_type: exact
+  existing_title: 太6：25-34
+  existing_path: link_folder/互文/太6：25-34.md
+- name: 羅13：1-7
+  suggested_type: 互文
+  evidence: 28節；順服掌權者為本節的新約應用
+  match_type: exact
+  existing_title: 羅13：1-7
+  existing_path: link_folder/互文/羅13：1-7.md
+- name: 徒23：4-5
+  suggested_type: 互文
+  evidence: 28節；KC 指保羅引用本節向大祭司致歉
+  match_type: exact
+  existing_title: 徒23：4-5
+  existing_path: link_folder/互文/徒23：4-5.md
+- name: 民18：15-16
+  suggested_type: 互文
+  evidence: 29節；頭生的兒子以贖銀贖回
+  match_type: exact
+  existing_title: 民18：15-16
+  existing_path: link_folder/互文/民18：15-16.md
+- name: 來10：5
+  suggested_type: 互文
+  evidence: 29-30節；KC 與 BH 指基督以身體為祭，應驗頭生歸神的原則
+  match_type: exact
+  existing_title: 來10：5
+  existing_path: link_folder/互文/來10：5.md
+- name: 利11：44
+  suggested_type: 互文
+  evidence: 31節；「你們要成為聖潔」與本節平行
+  match_type: exact
+  existing_title: 利11：44
+  existing_path: link_folder/互文/利11：44.md
+- name: 利22：27
+  suggested_type: 互文
+  evidence: 30節；牛羊第八天歸神
+  match_type: exact
+  existing_title: 利22：27
+  existing_path: link_folder/互文/利22：27.md
+- name: 箴6：31
+  suggested_type: 互文
+  evidence: 1節；BH 引：賊七倍賠還
+  match_type: exact
+  existing_title: 箴6：31
+  existing_path: link_folder/互文/箴6：31.md
+- name: 弗4：28
+  suggested_type: 互文
+  evidence: 1-4節；偷竊者要親手做工，不再偷竊
+  match_type: exact
+  existing_title: 弗4：28
+  existing_path: link_folder/互文/弗4：28.md
+- name: 林前4：7
+  suggested_type: 互文
+  evidence: 14-15節；KC 引：你有什麼不是領受的呢？
+  match_type: exact
+  existing_title: 林前4：7
+  existing_path: link_folder/互文/林前4：7.md
+- name: 林後2：7-8
+  suggested_type: 互文
+  evidence: 6節；KC 引：管教達到目的就當止住，要向他顯明堅定不移的愛
+  match_type: exact
+  existing_title: 林後2：7-8
+  existing_path: link_folder/互文/林後2：7-8.md
+- name: 提前6：20
+  suggested_type: 互文
+  evidence: 7-13節；KC 引：要守住所託付你的
+  match_type: exact
+  existing_title: 提前6：20
+  existing_path: link_folder/互文/提前6：20.md
+- name: 啟13：1,11
+  suggested_type: 互文
+  evidence: 18-20節；KC 指兩獸上來，占卜術將在牠們身上達到頂點
+  match_type: exact
+  existing_title: 啟13：1,11
+  existing_path: link_folder/互文/啟13：1,11.md
+B_needs_update:
+- name: 耶和華
+  suggested_type: 神學
+  evidence: 11節；CT 指社治律中只有這一次提及耶和華，表示祂是聽聞誓言者
+  match_type: exact
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
