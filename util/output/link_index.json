@@ -4675,14 +4675,6 @@
     "secondary_types": [],
     "title": "第三隊往前行",
     "status": "formal",
-    "aliases": []
-  },
-  "第三隊往前行（民2-24）_old": {
-    "path": "link_folder/主題/第三隊往前行（民2-24）_old.md",
-    "type": "主題",
-    "secondary_types": [],
-    "title": "第三隊往前行（民2-24）_old",
-    "status": "formal",
     "aliases": [
       "第三隊"
     ]
@@ -20233,23 +20225,15 @@
       "Zerah"
     ]
   },
-  "護衛長_波提乏": {
-    "path": "link_folder/人物/護衛長_波提乏.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "護衛長_波提乏",
-    "status": "formal",
-    "aliases": [
-      "護衛長/波提乏"
-    ]
-  },
   "護衛長波提乏": {
     "path": "link_folder/人物/護衛長波提乏.md",
     "type": "人物",
     "secondary_types": [],
     "title": "護衛長波提乏",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "護衛長/波提乏"
+    ]
   },
   "赫人": {
     "path": "link_folder/人物/赫人.md",
@@ -20330,16 +20314,7 @@
     "status": "formal",
     "aliases": [
       "埃及王的酒政",
-      "酒政長"
-    ]
-  },
-  "酒政_酒政長": {
-    "path": "link_folder/人物/酒政_酒政長.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "酒政_酒政長",
-    "status": "formal",
-    "aliases": [
+      "酒政長",
       "酒政/酒政長"
     ]
   },
@@ -24726,14 +24701,6 @@
       "蒲草箱",
       "摩西的蒲草箱"
     ]
-  },
-  "蓬子車（ʿăgālôt）": {
-    "path": "link_folder/原文/蓬子車（ʿăgālôt）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "蓬子車（ʿăgālôt）",
-    "status": "formal",
-    "aliases": []
   },
   "藍細帶子（techelet）": {
     "path": "link_folder/原文/藍細帶子（techelet）.md",
@@ -44794,7 +44761,7 @@
     "alias_of": "第七天"
   },
   "第三隊": {
-    "alias_of": "第三隊往前行（民2-24）_old"
+    "alias_of": "第三隊往前行"
   },
   "出埃及第二年正月": {
     "alias_of": "第二年正月"
@@ -48523,7 +48490,7 @@
     "alias_of": "謝拉"
   },
   "護衛長/波提乏": {
-    "alias_of": "護衛長_波提乏"
+    "alias_of": "護衛長波提乏"
   },
   "迦勒(耶孚尼的兒子)": {
     "alias_of": "迦勒"
@@ -48538,7 +48505,7 @@
     "alias_of": "酒政"
   },
   "酒政/酒政長": {
-    "alias_of": "酒政_酒政長"
+    "alias_of": "酒政"
   },
   "以色列婦人的兒子(父親是埃及人)": {
     "alias_of": "閒雜人"
