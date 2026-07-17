@@ -23,6 +23,11 @@ source_scope: collected_only
 
 ### 利未記
 
+<!-- accumulation:利未記:1:start -->
+#### [[03 利未記/第1章|第1章]]
+- 本章重點：利1 是燔祭條例的本章，也是神講論獻祭時第一個講的祭。CT 給的原文字義：「『燔祭』火祭，上去，上升」；《串珠》：「『燔』字本指『上升之物』，它的特點就是整只祭牲都要燒在壇上作為馨香之祭上升給神。」全章分三級：牛（v3-9）、綿羊或山羊（v10-13）、斑鳩或雛鴿（v14-17），程序一致——按手、宰殺、灑血、切塊、水洗臟腑與腿、全燒（獻鳥則不行按手）。丁良才指出本章的「燒」字原文是「使之上升」，與利4:12、21 營外的「燒毀」不同：壇上的燒為著馨香上升，營外的燒毀表明神的震怒。
+- 與本章關聯：燔祭與其他祭的分別在「全燒」——《精讀本》：「這與其他祭（把祭物的一部分歸給祭司）不同，而是完全焚燒在神面前，只將祭牲的皮歸給祭司（7:8）。」KC 解釋神為何從燔祭講起而非贖罪祭：「For the sinner, the sin offering comes first... The burnt offering represents the Lord Jesus in His work on the cross to glorify God. That is why God begins with it, for this aspect of the work of His Son is most precious to His heart.」丁良才則給了燔祭與贖罪祭最簡潔的分工：「贖罪祭預表耶穌贖人的罪過，燔祭預表耶穌補人的不及。」須注意燔祭雖有「為他贖罪」（v4），但 KC 指出「燔祭並非為罪而獻」，《舊約聖經背景註釋》亦以「非贖罪的祭也需要按手」反對把燔祭的按手讀成罪的轉移。燔祭、素祭、平安祭同稱「馨香的火祭」，贖罪祭則不然。
+<!-- accumulation:利未記:1:end -->
 <!-- accumulation:利未記:6:start -->
 #### [[03 利未記/第6章|第6章]]
 - 本章重點：本章8-13節從祭司角度補充燔祭條例：燔祭放在壇柴上從晚上燒到天亮，壇火要常常燒著不可熄滅（三次強調）；祭司穿細麻衣收灰倒在壇旁，換衣後將灰拿到營外潔淨之處；每日早晨添柴、擺燔祭、燒平安祭脂油。BH: perpetual fire symbolizes God's continuous presence and ongoing need for atonement. CT: 火是神聖潔的表號，神與人交通的門路常常開著。KC: God wants His people to be constantly surrounded by the fragrance of the burnt offering, aware they are pleasing to God in the Beloved (Eph 1:6).

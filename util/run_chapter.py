@@ -1116,6 +1116,113 @@ def _split_node_errors(ctx):
     return errors
 
 
+_UNFILEABLE_RE = re.compile(r"[/\\]")
+
+
+def _unfileable_candidate_errors(ctx):
+    """候選名含斜線偵測——這種名字永遠不可能成為條目檔。
+
+    模型愛用斜線塞「合併名」：利1 的「鳥（斑鳩/雛鴿）」、利11 的「沙番/石獾
+    （shaphan）」、出29 的「搖祭/舉祭」。斜線在檔名裡是路徑分隔字元，
+    entry_content/<name>.yaml 根本建不出來，於是這個候選必定同時：
+    surfaces 連不上任何節、knowledge_nodes 對不上而被丟掉、該條目的本章累積
+    永遠不寫入、別的條目 related_entries 指向它而被移除——全部靜默。
+
+    實測全庫（創/出/利 117 章）14 筆全部 find_in_index=not_found，0 誤報；
+    利1 的斑鳩/雛鴿與利11 的沙番都已證實真的沒連上。冒號不列入：「信徒作祭司
+    （彼前2:5,9）」在檔名裡雖非法，但條目用全形「：」，normalize 後解析得到，
+    列入就是誤報。
+    """
+    payload = ctx.path("link_candidates.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    errors = []
+    for cand in data.get("candidates") or []:
+        if not isinstance(cand, dict):
+            continue
+        name = str(cand.get("name") or "").strip()
+        if not name or not _UNFILEABLE_RE.search(name):
+            continue
+        parts = [p for p in re.split(r"[/\\]", re.sub(r"[（(].*?[）)]", "", name)) if p.strip()]
+        hint = "、".join(parts[:3]) if len(parts) > 1 else name
+        errors.append(
+            f"link_candidates.yaml: 候選「{name}」含斜線，永遠不可能成為條目檔"
+            f"（entry_content/<名稱>.yaml 建不出來），surfaces、knowledge_nodes、"
+            f"本章累積會全部靜默失效。一個候選只能對一個條目——"
+            f"請拆成多筆（如：{hint}），或改用該條目的真實名稱。"
+        )
+    return errors
+
+
+_SECTION_VERSE_RE = re.compile(r"[（(]\s*v\s*(\d+)\s*(?:[-–~至]\s*(\d+))?\s*[）)]")
+
+
+def _verse_coverage_review(ctx):
+    """本章整理疑似漏掉整段經文——回報給人工看，不擋流程。
+
+    利1 的整理只寫到 v13，v14-17「若以鳥為燔祭」整段沒寫；利9 更嚴重，
+    v22-24「火從耶和華面前出來燒盡燔祭、眾民歡呼俯伏」這個全章高潮不見了。
+    三個閘門都過，因為沒有任何一關在看涵蓋率。
+
+    只在 organization 本來就用「### 標題（v3-9）」標號時才算，且只報連續 3 節
+    以上的缺漏。這仍是啟發式：出26 第一節標題沒帶節號卻確實寫了 v1-14，就會
+    誤報——所以走 manual_review 而不是 error，讓人瞄一眼就好，別擋 build。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    org = str(data.get("organization") or "")
+    headers = re.findall(r"^#{2,4}\s+.*$", org, re.M)
+    if not headers:
+        return []
+    # 有標題卻沒帶節號 → 無從判斷涵蓋，直接放過（出26 即此類）
+    if any(not _SECTION_VERSE_RE.search(h) for h in headers):
+        return []
+    spans = _SECTION_VERSE_RE.findall(org)
+    if not spans:
+        return []
+    try:
+        total = len(ctx.raw_verses())
+    except FileNotFoundError:
+        return []
+    if total <= 0:
+        return []
+    covered = set()
+    for start, end in spans:
+        s, e = int(start), int(end) if end else int(start)
+        if s > e:
+            s, e = e, s
+        covered |= set(range(s, min(e, total) + 1))
+    missing = sorted(set(range(1, total + 1)) - covered)
+    if not missing:
+        return []
+    runs, run = [], [missing[0]]
+    for v in missing[1:]:
+        if v == run[-1] + 1:
+            run.append(v)
+        else:
+            runs.append(run)
+            run = [v]
+    runs.append(run)
+    big = [r for r in runs if len(r) >= 3]
+    if not big:
+        return []
+    spans_txt = "、".join(f"v{r[0]}-{r[-1]}" for r in big)
+    return [
+        f"chapter_content：本章整理可能漏掉整段經文（{spans_txt}；本章共 {total} 節）。"
+        f"請確認這幾節是否真的沒寫——每段經文都該有對應的整理，不要只寫前面幾段就收尾。"
+        f"（若已併入鄰段敘述、只是標題沒帶節號，忽略即可）"
+    ]
+
+
 def validate_step(ctx, written):
     _log("▶ P4 validate：結構驗證中…")
     errors = []
@@ -1134,6 +1241,8 @@ def validate_step(ctx, written):
     finally:
         vkb.ROOT = old_root
     errors.extend(_split_node_errors(ctx))
+    errors.extend(_unfileable_candidate_errors(ctx))
+    ctx.manual_review.extend(_verse_coverage_review(ctx))
     return errors
 
 

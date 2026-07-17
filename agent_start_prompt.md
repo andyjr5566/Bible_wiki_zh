@@ -14,6 +14,7 @@
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
    - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。
    - 只放經文或有效 raw text 明確觸發的候選；分類用 `link_folder/` 現有資料夾名。
+   - **一個候選只能對一個條目，`name` 不可含斜線**。斜線在檔名裡是路徑分隔字元，`entry_content/<name>.yaml` 建不出來，該候選必定同時：surfaces 連不上任何節、knowledge_nodes 對不上而被丟掉、本章累積永遠不寫入、別的條目 related_entries 指向它而被移除——而且全部靜默，三個閘門照過。利1 的「鳥（斑鳩/雛鴿）」就是這樣讓 v14 的斑鳩、雛鴿完全沒連結；真實條目是 `文化/斑鳩.md` 與 `文化/雛鴿.md`，要拆成兩筆。想涵蓋多個詞用 `surfaces`，不要塞進 `name`。（validate 會擋）
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
    - 資料驅動判準見 `scheme.md` §3。
 
