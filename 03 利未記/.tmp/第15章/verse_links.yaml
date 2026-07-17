@@ -11,10 +11,16 @@ links:
   phrase: 曉諭以色列人
   target: 頒布漏症條例
 - verse: 2
-  phrase: 身患漏症
+  phrase: 患漏症
   target: 漏症（zav）
 - verse: 3
   phrase: 患漏症
+  target: 漏症（zav）
+- verse: 3
+  phrase: 下流的
+  target: 漏症（zav）
+- verse: 3
+  phrase: 止住的
   target: 漏症（zav）
 - verse: 4
   phrase: 床
@@ -32,7 +38,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 5
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 5
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 6
   phrase: 患漏症
@@ -41,7 +50,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 6
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 6
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 7
   phrase: 摸
@@ -53,7 +65,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 7
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 7
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 8
   phrase: 患漏症
@@ -62,7 +77,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 8
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 8
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 9
   phrase: 患漏症
@@ -77,7 +95,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 10
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 10
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 11
   phrase: 患漏症
@@ -89,7 +110,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 11
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 11
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 12
   phrase: 患漏症
@@ -104,32 +128,35 @@ links:
   phrase: 計算七天
   target: 計算七天（shiv'at yamim）
 - verse: 13
-  phrase: 活水
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 13
+  phrase: 用活水洗身
   target: 洗濯儀式的屬靈意義
 - verse: 14
   phrase: 第八天
   target: 第八天獻祭（yom ha-shemini）
 - verse: 14
-  phrase: 兩隻斑鳩
-  target: 第八天獻祭（yom ha-shemini）
-- verse: 14
-  phrase: 兩隻雛鴿
-  target: 第八天獻祭（yom ha-shemini）
-- verse: 14
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 15
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 15
-  phrase: 贖罪祭
-  target: 第八天獻祭（yom ha-shemini）
+  phrase: 罪
+  target: 罪如漏症：滲透、隔離、需神醫治
 - verse: 15
-  phrase: 燔祭
-  target: 第八天獻祭（yom ha-shemini）
+  phrase: 漏症
+  target: 漏症（zav）
+- verse: 16
+  phrase: 夢遺
+  target: 夢遺（mikreh lailah）
 - verse: 16
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
+- verse: 17
+  phrase: 精
+  target: 男女交合（shichvat zera）
 - verse: 17
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
@@ -144,10 +171,10 @@ links:
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 19
   phrase: 行經
-  target: 月經（niddah）
+  target: 月經與血漏的屬靈意義
 - verse: 19
-  phrase: 污穢七天
-  target: 月經（niddah）
+  phrase: 七天
+  target: 計算七天（shiv'at yamim）
 - verse: 19
   phrase: 摸
   target: 不潔淨的傳染與隔離
@@ -167,7 +194,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 21
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 21
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 22
   phrase: 摸
@@ -176,7 +206,10 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 22
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 22
+  phrase: 用水洗澡
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
 - verse: 23
   phrase: 床
@@ -197,14 +230,14 @@ links:
   phrase: 床
   target: 不潔淨的傳染與隔離
 - verse: 25
-  phrase: 經期以外
-  target: 血漏（zavah）
+  phrase: 經期
+  target: 月經（niddah）
 - verse: 25
   phrase: 患多日的血漏
   target: 血漏（zavah）
 - verse: 25
-  phrase: 經期過長
-  target: 血漏（zavah）
+  phrase: 漏症
+  target: 漏症（zav）
 - verse: 26
   phrase: 患漏症
   target: 漏症（zav）
@@ -214,6 +247,9 @@ links:
 - verse: 26
   phrase: 坐的物
   target: 不潔淨的傳染與隔離
+- verse: 26
+  phrase: 月經
+  target: 月經（niddah）
 - verse: 27
   phrase: 摸
   target: 不潔淨的傳染與隔離
@@ -221,8 +257,14 @@ links:
   phrase: 不潔淨到晚上
   target: 不潔淨到晚上（tame ad erev）
 - verse: 27
-  phrase: 洗衣服，用水洗澡
+  phrase: 洗衣服
   target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 27
+  phrase: 用水洗澡
+  target: 洗衣服用水洗澡（kibbus u-rechitzah）
+- verse: 28
+  phrase: 漏症
+  target: 漏症（zav）
 - verse: 28
   phrase: 計算七天
   target: 計算七天（shiv'at yamim）
@@ -230,29 +272,32 @@ links:
   phrase: 第八天
   target: 第八天獻祭（yom ha-shemini）
 - verse: 29
-  phrase: 兩隻斑鳩
-  target: 第八天獻祭（yom ha-shemini）
-- verse: 29
-  phrase: 兩隻雛鴿
-  target: 第八天獻祭（yom ha-shemini）
-- verse: 29
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 30
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 30
-  phrase: 贖罪祭
-  target: 第八天獻祭（yom ha-shemini）
+  phrase: 罪
+  target: 罪如漏症：滲透、隔離、需神醫治
 - verse: 30
-  phrase: 燔祭
-  target: 第八天獻祭（yom ha-shemini）
+  phrase: 血漏
+  target: 血漏（zavah）
 - verse: 31
-  phrase: 污穢死亡
+  phrase: 隔絕
+  target: 隔絕污穢（hivdil）
+- verse: 31
+  phrase: 玷污我的帳幕
   target: 隔絕污穢保護帳幕
 - verse: 32
   phrase: 患漏症
   target: 漏症（zav）
+- verse: 32
+  phrase: 夢遺
+  target: 夢遺（mikreh lailah）
+- verse: 33
+  phrase: 月經
+  target: 月經（niddah）
 - verse: 33
   phrase: 患漏症
   target: 漏症（zav）
