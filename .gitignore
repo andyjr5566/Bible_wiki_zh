@@ -1,0 +1,4 @@
+
+# embedding 索引：大型可重建二進位（build_embedding_index.py 產生），不入庫
+util/output/embedding_index.npz
+util/output/embedding_index.meta.json

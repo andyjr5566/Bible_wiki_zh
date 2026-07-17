@@ -60,18 +60,41 @@ def load_endpoints(path=ENDPOINTS_FILE):
     return data
 
 
+def _task_config(config, task):
+    """tasks.<task> 設定正規化：字串＝端點名；mapping＝{endpoint, model?, kind?}。
+
+    mapping 形式讓同一端點（如 litellm proxy）可依任務指定不同模型，
+    `kind: embedding` 標記非 chat 任務，供 test CLI 與 embed_texts 使用。
+    """
+    if not task:
+        return {}
+    raw = (config.get("tasks") or {}).get(task)
+    if raw is None:
+        return {}
+    if isinstance(raw, str):
+        return {"endpoint": raw}
+    if isinstance(raw, dict):
+        if not raw.get("endpoint"):
+            raise ModelError(f"tasks.{task} 是 mapping 時必須含 endpoint")
+        return dict(raw)
+    raise ModelError(f"tasks.{task} 格式錯誤：需為端點名字串或 mapping")
+
+
 def select_endpoint(name=None, config=None, task=None):
     """選端點，優先序：明確指定 → MODEL_ENDPOINT → 該 task 的 MODEL_ENDPOINT_<TASK>
     → tasks.<task>（設定檔）→ active。
 
     task 用來把「做條目」（entry）與「本章整理」（chapter）等內容任務分開指定
     端點，設定見 `_config/model_endpoints.yaml` 的 tasks 區塊；未列出的 task
-    或未傳 task 時退回 active。
+    或未傳 task 時退回 active。tasks 的值可以是 mapping（endpoint＋model＋kind），
+    其 model 只在最終選中的端點就是 task 設定的端點時才覆蓋——被明確指定或
+    環境變數切到別的端點時，用該端點自己的 model（env 覆蓋＝整組覆蓋）。
     """
     config = config or load_endpoints()
     endpoints = config["endpoints"]
+    task_cfg = _task_config(config, task)
     task_env = os.environ.get(f"{ENV_ENDPOINT}_{task.upper()}") if task else None
-    task_default = (config.get("tasks") or {}).get(task) if task else None
+    task_default = task_cfg.get("endpoint")
     chosen = (
         name or task_env or os.environ.get(ENV_ENDPOINT) or task_default
         or config["active"]
@@ -80,6 +103,10 @@ def select_endpoint(name=None, config=None, task=None):
         raise ModelError(f"未知端點「{chosen}」；可用：{', '.join(endpoints)}")
     endpoint = dict(endpoints[chosen])
     endpoint["name"] = chosen
+    if task_cfg.get("model") and chosen == task_default:
+        endpoint["model"] = task_cfg["model"]
+    if task_cfg.get("kind"):
+        endpoint["kind"] = task_cfg["kind"]
     return endpoint
 
 
@@ -148,6 +175,75 @@ def openai_runner(prompt, *, base_url=DEFAULT_OPENAI_BASE_URL,
         return data["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError) as exc:
         raise ModelError(f"回應格式非預期：{str(data)[:300]}") from exc
+
+
+def openai_embed_runner(texts, *, base_url=DEFAULT_OPENAI_BASE_URL,
+                        model=None, api_key=None, input_type=None, timeout=600):
+    """OpenAI 相容 /embeddings；texts → 向量列表（順序與輸入一致）。
+
+    input_type 是 NVIDIA 檢索模型的指令前綴（query／passage）：語料建索引用
+    passage、查詢用 query，兩者的向量空間不同，不可混。不帶 input_type 時
+    模型另給一組與兩者都近乎正交的向量，拿去做檢索相似度沒有意義。
+    """
+    url = base_url.rstrip("/") + "/embeddings"
+    payload = {"model": model, "input": list(texts)}
+    if input_type:
+        payload["input_type"] = input_type
+    body = json.dumps(payload).encode("utf-8")
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:300]
+        raise ModelError(f"呼叫 {url} 失敗：HTTP {exc.code} {detail}") from exc
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise ModelError(f"呼叫 {url} 失敗：{exc}") from exc
+    items = data.get("data") if isinstance(data, dict) else None
+    if not isinstance(items, list) or len(items) != len(texts):
+        raise ModelError(f"embeddings 回應格式非預期：{str(data)[:300]}")
+    try:
+        items = sorted(items, key=lambda item: item["index"])
+        return [item["embedding"] for item in items]
+    except (KeyError, TypeError) as exc:
+        raise ModelError(f"embeddings 回應格式非預期：{str(data)[:300]}") from exc
+
+
+def embed_texts(texts, *, task="embedding", endpoint_name=None, batch_size=64,
+                input_type=None, runner=None):
+    """把一批文字轉成向量；端點與模型依 tasks.<task> 路由。
+
+    回傳 list[list[float]]，順序與輸入一致；超過 batch_size 自動分批。
+    input_type（query／passage）交給 NVIDIA 檢索模型當指令前綴：建索引用
+    passage、查詢用 query，兩者不可混。type=claude 的端點做不了 embedding，
+    直接報錯。runner 可注入供測試。
+    """
+    texts = [str(text) for text in texts]
+    if not texts:
+        return []
+    if runner is None:
+        endpoint = select_endpoint(endpoint_name, task=task)
+        if endpoint.get("type", "openai") != "openai":
+            raise ModelError(
+                f"端點「{endpoint['name']}」type={endpoint.get('type')} 不支援 embeddings"
+            )
+        model = endpoint.get("model")
+        if not model:
+            raise ModelError(f"端點「{endpoint['name']}」未指定 embedding 模型")
+        base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
+        api_key = _endpoint_api_key(endpoint)
+        runner = lambda batch: openai_embed_runner(
+            batch, base_url=base_url, model=model, api_key=api_key,
+            input_type=input_type,
+        )
+    step = max(1, batch_size)
+    vectors = []
+    for start in range(0, len(texts), step):
+        vectors.extend(runner(texts[start:start + step]))
+    return vectors
 
 
 def _find_claude_cli():
@@ -272,8 +368,13 @@ def _cmd_list(_args):
     tasks = config.get("tasks") or {}
     if tasks:
         print("任務路由：")
-        for task, endpoint_name in tasks.items():
-            print(f"  {task} → {endpoint_name}")
+        for task, route in tasks.items():
+            if isinstance(route, dict):
+                model_part = f" / {route['model']}" if route.get("model") else ""
+                kind_part = f"（{route['kind']}）" if route.get("kind") else ""
+                print(f"  {task} → {route.get('endpoint')}{model_part}{kind_part}")
+            else:
+                print(f"  {task} → {route}")
     override = os.environ.get(ENV_ENDPOINT)
     if override:
         print(f"（MODEL_ENDPOINT 覆蓋中：{override}）")
@@ -292,6 +393,20 @@ def _cmd_use(args):
 
 def _cmd_test(args):
     endpoint = select_endpoint(args.name, task=args.task)
+    if endpoint.get("kind") == "embedding":
+        try:
+            vectors = embed_texts(
+                ["端點煙霧測試"], task=args.task, endpoint_name=args.name,
+                input_type="passage",
+            )
+        except ModelError as exc:
+            print(f"❌ {endpoint['name']} embedding 測試失敗：{exc}")
+            return 1
+        print(
+            f"✅ {endpoint['name']} embedding 正常："
+            f"模型 {endpoint.get('model')}，維度 {len(vectors[0])}"
+        )
+        return 0
     runner = make_runner(endpoint)
     prompt = (
         "只輸出下列 YAML（放在 ```yaml code block 內），不要任何其他文字：\n"

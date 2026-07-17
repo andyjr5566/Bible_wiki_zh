@@ -10,6 +10,7 @@ if str(UTIL_DIR) not in sys.path:
 import yaml
 
 from resolve_link_candidates import (
+    annotate_plan_semantically,
     base_name,
     build_plan_document,
     find_in_index,
@@ -112,6 +113,67 @@ class CandidateFormatEquivalenceTests(unittest.TestCase):
         self.assertEqual(set(md_item), set(yaml_item))
         for field in ("name", "suggested_type", "evidence"):
             self.assertEqual(md_item[field], yaml_item[field])
+
+
+class _FakeLookup:
+    """假的語義索引：依詞回傳預設近鄰，不碰網路。"""
+
+    def __init__(self, table):
+        self.table = table
+        self.calls = []
+
+    def query(self, text, top=3, exclude_title=None):
+        self.calls.append((text, exclude_title))
+        hits = [h for h in self.table.get(text, []) if h[0] != exclude_title]
+        return hits[:top]
+
+
+class SemanticHintTests(unittest.TestCase):
+    def _new_formal_plan(self):
+        return {
+            "A_use_directly": [], "B_needs_update": [],
+            "C_new_formal": [{"name": "不可搶奪鄰舍", "suggested_type": "神學",
+                              "clean_name": "不可搶奪鄰舍"}],
+            "D_new_candidate": [{"name": "怪東西", "suggested_type": "主題",
+                                 "clean_name": "怪東西"}],
+            "E_skip": [],
+        }
+
+    def test_hint_attached_above_threshold_only(self):
+        lookup = _FakeLookup({
+            "不可搶奪鄰舍": [
+                ("不可欺壓鄰舍搶奪與雇工工價", 0.55, {"type": "神學"}),
+                ("遠方雜訊條目", 0.30, {"type": "主題"}),
+            ],
+            "怪東西": [("不相關", 0.10, {"type": "主題"})],
+        })
+        plan = self._new_formal_plan()
+        annotate_plan_semantically(plan, lookup, threshold=0.40)
+        hint = plan["C_new_formal"][0]["semantic_hint"]
+        self.assertEqual(["不可欺壓鄰舍搶奪與雇工工價"], [h["title"] for h in hint])
+        self.assertEqual(0.55, hint[0]["score"])
+        # D 類近鄰全在門檻下 → 不加 hint 欄位
+        self.assertNotIn("semantic_hint", plan["D_new_candidate"][0])
+
+    def test_hint_flows_into_plan_document(self):
+        lookup = _FakeLookup({
+            "不可搶奪鄰舍": [("既有近似條目", 0.52, {"type": "神學"})],
+        })
+        plan = self._new_formal_plan()
+        annotate_plan_semantically(plan, lookup, threshold=0.40)
+        doc = build_plan_document(plan, "利未記", 19)
+        self.assertEqual(
+            "既有近似條目", doc["C_new_formal"][0]["semantic_hint"][0]["title"]
+        )
+
+    def test_a_and_b_buckets_are_not_annotated(self):
+        lookup = _FakeLookup({"甲": [("x", 0.9, {"type": "主題"})]})
+        plan = {
+            "A_use_directly": [{"name": "甲", "suggested_type": "主題"}],
+            "B_needs_update": [], "C_new_formal": [], "D_new_candidate": [], "E_skip": [],
+        }
+        annotate_plan_semantically(plan, lookup, threshold=0.40)
+        self.assertEqual([], lookup.calls)  # 只查 C／D，不查 A
 
 
 class SurfacesFieldTests(unittest.TestCase):

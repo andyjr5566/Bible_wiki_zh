@@ -36,6 +36,13 @@ VALID_TYPES = {
     "聖經神學", "制度", "事件",
 }
 
+# 語義近鄰提示的相似度門檻。對 nvidia/nemotron-3-embed-1b 的 query／passage
+# 非對稱空間全庫實測校準：純亂詞噪音上限約 0.24，真正的近似重複／同概念
+# 落在 0.42–0.57，兩者間有明顯間隙。取 0.40 收在真訊號帶下緣、穩壓過噪音。
+# 只用於「附註供人工判斷」，不是閘門——寧可多顯示讓人工駁回。換 embedding
+# 模型後這個數字失效，需重新校準（換模型也會強制重建索引）。
+SEMANTIC_HINT_THRESHOLD = 0.40
+
 
 def normalize_name(value):
     return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", value)).strip()
@@ -318,6 +325,31 @@ def resolve(candidates, index, book, chapter, root=ROOT, homonyms=None):
     return plan
 
 
+def annotate_plan_semantically(plan, lookup, threshold, top=3,
+                               keys=("C_new_formal", "D_new_candidate")):
+    """對即將新建（C）或待人工判斷（D）的候選，附上語義近鄰既有條目。
+
+    純附註：只在候選項目加 semantic_hint 欄位，不改分類、不建立或改動連結。
+    目的是揪出「字面對不上、意思卻與既有條目相同」的近似重複——這是 4300+
+    條目下字面比對看不見的靜默坑。門檻只用來過濾雜訊，非自動決策依據；
+    人工在 link_plan.yaml 的 D／C 區看到 hint 後自行判斷。
+
+    lookup 需具 query(text, top, exclude_title) → [(title, score, meta), ...]，
+    即 semantic_lookup.SemanticIndex。
+    """
+    for key in keys:
+        for item in plan.get(key, []):
+            name = item.get("clean_name") or item["name"]
+            hints = [
+                {"title": title, "score": round(score, 3), "type": entry.get("type", "")}
+                for title, score, entry in lookup.query(name, top=top, exclude_title=name)
+                if score >= threshold
+            ]
+            if hints:
+                item["semantic_hint"] = hints
+    return plan
+
+
 def write_plan(plan, book, chapter, root=ROOT):
     output_dir = book_directory(root, book) / ".tmp" / f"第{chapter}章"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -395,6 +427,8 @@ def build_plan_document(plan, book, chapter):
                     record["match_type"] = item["match_type"]
                 if item.get("note"):
                     record["note"] = item["note"]
+            if item.get("semantic_hint"):
+                record["semantic_hint"] = item["semantic_hint"]
             entries.append(record)
         document[key] = entries
     return document

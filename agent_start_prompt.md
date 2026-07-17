@@ -17,7 +17,8 @@
    - **一個候選只能對一個條目，`name` 不可含斜線**。斜線在檔名裡是路徑分隔字元，`entry_content/<name>.yaml` 建不出來，該候選必定同時：surfaces 連不上任何節、knowledge_nodes 對不上而被丟掉、本章累積永遠不寫入、別的條目 related_entries 指向它而被移除——而且全部靜默，三個閘門照過。利1 的「鳥（斑鳩/雛鴿）」就是這樣讓 v14 的斑鳩、雛鴿完全沒連結；真實條目是 `文化/斑鳩.md` 與 `文化/雛鴿.md`，要拆成兩筆。想涵蓋多個詞用 `surfaces`，不要塞進 `name`。（validate 會擋）
    - **`type` 只能是 `link_folder/` 底下真的存在的資料夾**：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議。自己造一個看起來很合理的分類（利10 的「祭禮」、民9 的「儀式」、民10 的「器具」）會靜默失效——resolver 認不得，只把候選降級成 `D_new_candidate` 並附一句 note「未知分類：X」，那是 plan 檔裡的一行字，不是錯誤，跑完照樣印「✅ 完成」，下場與斜線名完全相同。祭祀相關的歸 `主題`（制度）或 `原文`（術語），器物歸 `主題`／`文化`。（validate 會擋）
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
-   - 資料驅動判準見 `scheme.md` §3。
+   - **新建候選前先查語義近鄰**：4300+ 條目裡常有「措辭不同、意思相同」的既有條目，字面比對（resolver）看不出來，硬建就是近似重複（利19 的 7 個主題條目就是這樣被合併善後）。打算新建的候選名先跑 `python util/semantic_lookup.py "候選名"`，若高分近鄰是同一概念，改宣告成那個既有條目名（走 B 類累積），不要另開新條目。此為判斷輔助，不是硬規則——名稱雖近但確為不同概念仍照建。
+   - 資料驅動判準見 `scheme.md` §3；語義近鄰索引見 `scheme.md` §3.5。
 
 3. **跑 orchestrator**（結構、渲染、驗證全由程式處理）
    ```text
@@ -33,18 +34,21 @@
    回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，先 `apply --dry-run` 再 `apply`；重跑 apply 必須 0 變更。
 
 5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
+   - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。
 
 6. **收尾驗證與提交**
    ```text
    python util/build_fhl_maps.py
    python util/check_existing_links.py 【序號 書名】/第x章.md --missing
    python util/build_link_index.py
+   python util/build_embedding_index.py          # 增量更新語義索引（本章新條目要進索引，下一章才查得到）
    python util/validate_knowledge_base.py
    python util/link_quality_check.py 【書名】
    python util/verify_links.py 【書名】
    python util/audit_knowledge_base.py --check-due
    ```
    全 PASS（條件見 `scheme.md` §6）才 commit + push；回報只列結論數字與 D 類決策，不貼完整報告。
+   `build_embedding_index.py` 只重嵌新增／變動的條目（沿用其餘），耗時通常幾秒；embedding 端點不可用時整步可略過，不影響 commit gate（語義索引是輔助，非驗證關卡）。
 
 7. **檔案完整性驗證**（commit 前的最後把關）
    ```text

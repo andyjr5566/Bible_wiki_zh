@@ -24,7 +24,7 @@
   payload → markdown；frontmatter、H2 順序、accumulation 標記、alias 格式全由程式排版
 ```
 
-模型呼叫規約（`util/model_client.py`）：schema 驗證 + 具體錯誤回饋重試（上限 3 次）+ 失敗標記 manual_review。端點可切換（`_config/model_endpoints.yaml`；CLI `list|use|test`；API key 只放環境變數，經 `api_key_env` 引用，不寫進設定檔）。
+模型呼叫規約（`util/model_client.py`）：schema 驗證 + 具體錯誤回饋重試（上限 3 次）+ 失敗標記 manual_review。端點可切換（`_config/model_endpoints.yaml`；CLI `list|use|test`；API key 只放環境變數，經 `api_key_env` 引用，不寫進設定檔）。`tasks:` 把不同任務路由到不同端點與模型：值可為端點名字串，或 `{endpoint, model, kind}` mapping（同一端點依任務換模型）。目前 `entry`（條目，量大逐批）、`chapter`（本章整理，長篇）、`embedding`（語義索引，`kind: embedding`）各自指定。mapping 的 model 只在最終選中的端點就是該設定端點時生效；env 切到別的端點＝用該端點自己的 model。
 
 **決策記錄：模板不設 `_templates/` 資料夾。** 條目與章節的 markdown 結構直接寫在 render 程式內（有 round-trip 測試保證 `render(parse(x)) == x`）；設獨立模板檔會造成兩份真相。模型永遠看不到模板——這才是原則的重點。
 
@@ -82,7 +82,7 @@ scripture/
 | D | 同名／分類衝突、資料不足 | 人工判斷，不得自動建立或連結 |
 | E | 不應建 link | 純文字 |
 
-resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢木」命中「皂莢木（atzei shittim）」）→ 同名映射；歧義一律進 D。命中後核對分類相容（type 或 secondary_types），不相容進 D。
+resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢木」命中「皂莢木（atzei shittim）」）→ 同名映射；歧義一律進 D。命中後核對分類相容（type 或 secondary_types），不相容進 D。此序純字面，抓不到「措辭不同、意思相同」的近似重複——該缺口由 §3.5 語義近鄰索引以附註補上（不改分類，僅供人工判斷）。
 
 ### 3.4 條目內容原則
 
@@ -91,6 +91,19 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 - 相關條目只能指向已存在或同批建立的條目完整名稱；渲染前由程式閉合——裸經文引用（創3:24）改寫為對應互文條目全名，無對應者移除並回報。
 - 正式條目的 `定義`／`主題發展` 是保護區：每章任務只累積，不重寫（除非使用者要求）。
 - 候選條目（status: candidate）每卷完成後清理：多次引用者升級、重複者合併、長期無支撐者處置。
+
+### 3.5 語義近鄰索引（近似重複的防線）
+
+**要解決的問題**：字面比對（§3.3 resolver 比對序）只認得同名／alias／音譯基名，看不出「措辭不同、意思相同」。4300+ 條目下這是靜默坑——agent 把「不可搶奪鄰舍」當新候選，其實已有「不可欺壓鄰舍搶奪與雇工工價不過夜」，兩個閘門全過卻建出近似重複（利19 的 7 個主題條目即是善後案例）。
+
+**機制**：`build_embedding_index.py` 把每個條目的「標題＋分類＋別名＋定義＋主題發展＋相關條目＋累積摘要」嵌成向量存 `util/output/embedding_index.{npz,meta.json}`（增量更新，只重嵌變動條目）。`semantic_lookup.py` 以詞查最相似的既有條目。resolve 後程式自動對 C／D 候選查近鄰，寫進 `link_plan.yaml` 的 `semantic_hint`。
+
+**邊界（與整體原則一致：機械不可證者只提示、不裁決）**：
+
+- **純附註，不是閘門**：只加 `semantic_hint` 欄位供人工判斷，不改分類、不自動建立或連結、不擋 commit。相似度非機械可證，不升級為 error（呼應「加護欄前先全庫實測」的教訓）。
+- **降級不中斷**：索引缺失、模型不符、端點不通時整步靜默略過，主流程照跑。語義索引是輔助工具，不是資料流必要環節。
+- **與 embedding 模型綁定**：向量跨模型不可比，混用後相似度看似合理實為垃圾。meta 記錄模型名與維度，載入端比對現行設定，不符即拒用並要求 `--rebuild`（此為機械可證，故可硬擋）。
+- **門檻經全庫校準**：現用 `nvidia/nemotron-3-embed-1b`，query／passage 為非對稱向量空間（同句兩空間 cos≈0.6，故完全命中的絕對分也只 ~0.47）。實測噪音上限≈0.24、真近似落 0.42–0.57，取門檻 0.40（`resolve_link_candidates.SEMANTIC_HINT_THRESHOLD`）。換模型後此數失效須重新校準。索引一律用 `input_type=passage`、查詢用 `query`，不可混。
 
 ---
 

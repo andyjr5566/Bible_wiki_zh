@@ -27,9 +27,29 @@ active: local-4001
 # 拆成兩次獨立呼叫，各自可指定端點；省略的任務用 active 當預設。
 # 選擇順序：明確指定 → MODEL_ENDPOINT_<TASK> 環境變數 → MODEL_ENDPOINT
 # 環境變數 → 這裡的設定 → active。
+#
+# 任務的值有兩種寫法：
+#   entry: local-4000                  # 字串＝端點名，用端點預設 model
+#   embedding:                         # mapping＝同端點但換模型
+#     endpoint: local-4000
+#     model: nvidia/nemotron-3-embed-1b
+#     kind: embedding                  # 非 chat 任務要標 kind，test CLI 依此分流
+# mapping 的 model 只在「最終選中的端點＝這裡設定的端點」時生效；
+# 用環境變數切到別的端點時，以該端點自己的 model 為準（env 覆蓋＝整組覆蓋）。
 tasks:
-  entry: local-4000
-  chapter: local-4000
+  entry:                              # 條目：量大、逐批填 schema
+    endpoint: local-4000
+    model: nvidia/nemotron-3-ultra-550b-a55b
+  chapter:                            # 本章整理：單次、長篇整合寫作
+    endpoint: local-4000
+    model: nvidia/nemotron-3-ultra-550b-a55b
+  embedding:                          # 語義索引／查詢
+    endpoint: local-4000
+    model: nvidia/nemotron-3-embed-1b
+    kind: embedding
+# local-4000 proxy 可用的 chat 模型（換 entry／chapter 的 model 即可）：
+#   z-ai/glm-5.2、minimaxai/minimax-m3、deepseek-ai/deepseek-v4-pro、
+#   nvidia/nemotron-3-ultra-550b-a55b、minimaxai/minimax-m2.7
 
 endpoints:
   local-4000:

@@ -100,6 +100,25 @@ def _schema_hint(name):
 # --------------------------------------------------------------------------- #
 # P2 resolve
 # --------------------------------------------------------------------------- #
+def _annotate_semantic(plan):
+    """對 C／D 候選附語義近鄰提示；索引缺失或端點不通時降級略過，不擋流程。
+
+    純附註供人工在 link_plan.yaml 判斷近似重複，不改分類、不建連結。
+    """
+    try:
+        import semantic_lookup
+        lookup = semantic_lookup.SemanticIndex.load()
+    except Exception as exc:  # 索引未建、模型不符、端點不通都不該中斷主流程
+        _log(f"  （語義提示略過：{exc}）")
+        return
+    try:
+        resolver.annotate_plan_semantically(
+            plan, lookup, threshold=resolver.SEMANTIC_HINT_THRESHOLD
+        )
+    except Exception as exc:
+        _log(f"  （語義提示中途失敗，已略過：{exc}）")
+
+
 def resolve_step(ctx):
     plan_path = ctx.path("link_plan.yaml")
     if plan_path.exists():
@@ -109,6 +128,7 @@ def resolve_step(ctx):
     homonyms = resolver.load_homonyms() if ctx.homonyms is None else ctx.homonyms
     candidates = resolver.load_candidates(ctx.book, ctx.chapter, root=ctx.root)
     plan = resolver.resolve(candidates, index, ctx.book, ctx.chapter, root=ctx.root, homonyms=homonyms)
+    _annotate_semantic(plan)
     document = resolver.build_plan_document(plan, ctx.book, ctx.chapter)
     _write_yaml(plan_path, document)
     _log("✔ P2 resolve 完成")

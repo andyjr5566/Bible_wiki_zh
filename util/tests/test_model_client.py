@@ -15,6 +15,7 @@ from model_client import (
     ModelValidationError,
     _result_text,
     call_model,
+    embed_texts,
     extract_payload,
     load_endpoints,
     make_runner,
@@ -24,7 +25,15 @@ from model_client import (
 
 CONFIG = {
     "active": "local-4000",
-    "tasks": {"entry": "local-4001", "chapter": "claude-cli"},
+    "tasks": {
+        "entry": "local-4001",
+        "chapter": "claude-cli",
+        "embedding": {
+            "endpoint": "local-4000",
+            "model": "embed-model",
+            "kind": "embedding",
+        },
+    },
     "endpoints": {
         "local-4000": {"type": "openai", "base_url": "http://localhost:4000/v1", "model": "m-a"},
         "local-4001": {"type": "openai", "base_url": "http://localhost:4001/v1", "model": "m-b"},
@@ -147,6 +156,31 @@ class EndpointControllerTests(unittest.TestCase):
                 select_endpoint("local-4000", config=CONFIG, task="entry")["name"],
             )
 
+    def test_select_task_mapping_overrides_model_and_kind(self):
+        with patch.dict("os.environ", {}, clear=True):
+            endpoint = select_endpoint(config=CONFIG, task="embedding")
+        self.assertEqual("local-4000", endpoint["name"])
+        self.assertEqual("embed-model", endpoint["model"])
+        self.assertEqual("embedding", endpoint["kind"])
+        # 其他 task 選到同端點時不受 embedding 的 model 影響
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertEqual("m-a", select_endpoint(config=CONFIG)["model"])
+
+    def test_select_task_mapping_model_dropped_when_env_switches_endpoint(self):
+        with patch.dict(
+            "os.environ", {"MODEL_ENDPOINT_EMBEDDING": "local-4001"}, clear=True
+        ):
+            endpoint = select_endpoint(config=CONFIG, task="embedding")
+        # env 覆蓋＝整組覆蓋：用 local-4001 自己的 model
+        self.assertEqual("local-4001", endpoint["name"])
+        self.assertEqual("m-b", endpoint["model"])
+
+    def test_task_mapping_without_endpoint_raises(self):
+        broken = dict(CONFIG, tasks={"embedding": {"model": "x"}})
+        with patch.dict("os.environ", {}, clear=True):
+            with self.assertRaises(ModelError):
+                select_endpoint(config=broken, task="embedding")
+
     def test_make_runner_openai_posts_and_parses(self):
         endpoint = select_endpoint("local-4000", config=CONFIG)
         runner = make_runner(endpoint)
@@ -193,6 +227,54 @@ class EndpointControllerTests(unittest.TestCase):
             )
             with self.assertRaises(ModelError):
                 load_endpoints(path)
+
+
+class EmbedTextsTests(unittest.TestCase):
+    def test_batches_and_preserves_order(self):
+        calls = []
+
+        def fake_runner(batch):
+            calls.append(list(batch))
+            return [[float(len(text))] for text in batch]
+
+        vectors = embed_texts(
+            ["一", "二二", "三三三"], batch_size=2, runner=fake_runner
+        )
+        self.assertEqual([["一", "二二"], ["三三三"]], calls)
+        self.assertEqual([[1.0], [2.0], [3.0]], vectors)
+
+    def test_empty_input_returns_empty_without_calls(self):
+        def exploding_runner(_batch):
+            raise AssertionError("不應被呼叫")
+
+        self.assertEqual([], embed_texts([], runner=exploding_runner))
+
+    def test_claude_endpoint_rejected(self):
+        config = dict(
+            CONFIG,
+            tasks={"embedding": {"endpoint": "claude-cli", "kind": "embedding"}},
+        )
+        with patch.dict("os.environ", {}, clear=True):
+            with patch.object(model_client, "load_endpoints", return_value=config):
+                with self.assertRaises(ModelError):
+                    embed_texts(["x"], task="embedding")
+
+    def test_embed_runner_sorts_by_index(self):
+        def fake_urlopen(request, timeout=None):
+            body = json.loads(request.data.decode("utf-8"))
+            self.assertEqual("embed-model", body["model"])
+            return _FakeResponse({
+                "data": [
+                    {"index": 1, "embedding": [2.0]},
+                    {"index": 0, "embedding": [1.0]},
+                ]
+            })
+
+        with patch.object(model_client.urllib.request, "urlopen", fake_urlopen):
+            vectors = model_client.openai_embed_runner(
+                ["甲", "乙"], base_url="http://localhost:4000/v1", model="embed-model"
+            )
+        self.assertEqual([[1.0], [2.0]], vectors)
 
 
 if __name__ == "__main__":
