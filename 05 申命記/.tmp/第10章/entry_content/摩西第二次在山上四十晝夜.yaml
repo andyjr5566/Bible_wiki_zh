@@ -1,0 +1,27 @@
+name: 摩西第二次在山上四十晝夜
+type: 事件
+secondary_types: []
+aliases:
+- 摩西再上西乃山
+- 第二次四十晝夜
+status: formal
+definition: 摩西第二次在山上住了四十晝夜，耶和華應允不滅絕百姓（申10:10），對應出埃及記34:28重寫石版之事。
+development: 此事件強調摩西代禱的中保角色，與第一次上山（出24:18）形成對比，凸顯神恩典的延續。
+accumulations:
+- book: 申命記
+  chapter: 10
+  summary: 摩西再在山上四十晝夜，耶和華垂聽不滅絕百姓。
+  relation: 連結約櫃製作與神吩咐率領進地，展現摩西代求與神更新之約的關鍵時刻。
+related_entries:
+- 木櫃（aron）
+- 神吩咐摩西率領百姓進地
+sources:
+- '研經註解(BH): 申命記10:10摩西第二次四十晝夜代禱（https://biblehub.com/study/deuteronomy/10.htm）'
+- '逐節註解(CC): 申命記10:10摩西在山上四十晝夜的意義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT10.htm）'
+- '拾穗(CC): 申命記10:10摩西代禱與神的憐憫（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT10.htm）'
+- '研經註解(KC): 申命記10章摩西第二次上山的神學功能（https://www.kingcomments.com/en/bible-studies/Deu/10）'
+created_from: deuteronomy_10
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

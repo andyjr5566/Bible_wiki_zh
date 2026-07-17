@@ -1,0 +1,282 @@
+book: 申命記
+chapter: 10
+A_use_directly: []
+B_needs_update:
+- name: 兩塊石版（重刻十誡）
+  suggested_type: 原文
+  evidence: 經文第1-5節「你要鑿出兩塊石版，和先前的一樣……耶和華將那大會之日、在山上從火中所傳與你們的十條誡，照先前所寫的，寫在這版上」；ccbiblestudy
+    CT 指出先前石版是神預備、這次由摩西預備；KingComments 指出重寫法版象徵約的重建；BibleHub 連結出34:1、耶31:33。
+  surfaces:
+  - phrase: 兩塊石版
+    verses:
+    - 1
+    - 3
+  - phrase: 石版
+    verses:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  - phrase: 重刻十誡
+    verses:
+    - 4
+  - phrase: 十條誡
+    verses:
+    - 4
+  match_type: base
+  existing_title: 兩塊石版（約版）
+  existing_path: link_folder/原文/兩塊石版（約版）.md
+C_new_formal:
+- name: 木櫃（aron）
+  suggested_type: 原文
+  evidence: 經文第1、3、5節「又要做一木櫃」「我用皂莢木做了一櫃」「將版放在櫃中」；ccbiblestudy CT 指出木櫃即約櫃；KingComments
+    指出約櫃是神的寶座或腳凳；BibleHub 連結出25:10-16、民10:35。
+  surfaces:
+  - phrase: 木櫃
+    verses:
+    - 1
+    - 3
+    - 5
+  - phrase: 約櫃
+    verses:
+    - 1
+    - 3
+    - 5
+  target_path: link_folder/原文/木櫃（aron）.md
+- name: 亞倫之死與以利亞撒繼任
+  suggested_type: 事件
+  evidence: 經文第6節「以色列人從比錄·比尼·雅干起行，到了摩西拉。亞倫死在那裡，葬在那裡；他兒子以利亞撒接續他供祭司的職分」；ccbiblestudy
+    CT 指出亞倫死在摩西拉、以利亞撒繼任大祭司；KingComments 連結民20:22-29、申34:8。
+  surfaces:
+  - phrase: 亞倫死
+    verses:
+    - 6
+  - phrase: 以利亞撒接續他供祭司的職分
+    verses:
+    - 6
+  - phrase: 摩西拉
+    verses:
+    - 6
+  target_path: link_folder/事件/亞倫之死與以利亞撒繼任.md
+- name: 利未人分別為聖侍立
+  suggested_type: 事件
+  evidence: 經文第8-9節「那時，耶和華將利未支派分別出來，抬耶和華的約櫃，侍立在耶和華面前事奉他，奉耶和華的名祝福，直到今日」；ccbiblestudy
+    CT 指出利未人分別為聖抬約櫃、事奉神、奉神名祝福；KingComments 連結民3:5-13、18:1-7。
+  surfaces:
+  - phrase: 利未支派分別出來
+    verses:
+    - 8
+  - phrase: 抬耶和華的約櫃
+    verses:
+    - 8
+  - phrase: 侍立在耶和華面前事奉他
+    verses:
+    - 8
+  - phrase: 奉耶和華的名祝福
+    verses:
+    - 8
+  target_path: link_folder/事件/利未人分別為聖侍立.md
+- name: 摩西第二次在山上四十晝夜
+  suggested_type: 事件
+  evidence: 經文第10節「我仍在山上住了四十晝夜，像初次一樣；那次耶和華也應允我，不忍將你滅絕」；ccbiblestudy CT 指出摩西第二次四十晝夜禁食禱告；KingComments
+    連結出34:28、申9:18-29。
+  surfaces:
+  - phrase: 在山上住了四十晝夜
+    verses:
+    - 10
+  - phrase: 像初次一樣
+    verses:
+    - 10
+  - phrase: 耶和華也應允我
+    verses:
+    - 10
+  target_path: link_folder/事件/摩西第二次在山上四十晝夜.md
+- name: 神吩咐摩西率領百姓進地
+  suggested_type: 事件
+  evidence: 經文第11節「耶和華吩咐我說：你起來引導這百姓，使他們進去得我向他們列祖起誓應許所賜之地」；ccbiblestudy CT 指出神命令摩西起來引導百姓進迦南；KingComments
+    連結申1:8、3:28。
+  surfaces:
+  - phrase: 起來引導這百姓
+    verses:
+    - 11
+  - phrase: 進去得地
+    verses:
+    - 11
+  - phrase: 向列祖起誓應許所賜之地
+    verses:
+    - 11
+  target_path: link_folder/事件/神吩咐摩西率領百姓進地.md
+- name: 敬畏神、愛神、事奉神
+  suggested_type: 神學
+  evidence: 經文第12-13節「以色列啊，現在耶和華─你神向你所要的是什麼呢？只要你敬畏耶和華─你的神，遵行他的道，愛他，盡心盡性事奉他，遵守他的誡命律例」；ccbiblestudy
+    CT 指出敬畏、愛、事奉是神對以色列的核心要求；KingComments 連結申6:5、10:12、弥6:8。
+  surfaces:
+  - phrase: 敬畏耶和華你的神
+    verses:
+    - 12
+    - 20
+  - phrase: 遵行他的道
+    verses:
+    - 12
+  - phrase: 愛他
+    verses:
+    - 12
+  - phrase: 盡心盡性事奉他
+    verses:
+    - 12
+  - phrase: 遵守他的誡命律例
+    verses:
+    - 13
+  target_path: link_folder/神學/敬畏神、愛神、事奉神.md
+- name: 天地萬物屬神
+  suggested_type: 神學
+  evidence: 經文第14節「看哪，天和天上的天，地和地上所有的，都屬耶和華─你的神」；ccbiblestudy CT 指出神擁有全地的主權；KingComments
+    連結詩24:1、申4:39。
+  surfaces:
+  - phrase: 天和天上的天
+    verses:
+    - 14
+  - phrase: 地和地上所有的
+    verses:
+    - 14
+  - phrase: 都屬耶和華你的神
+    verses:
+    - 14
+  target_path: link_folder/神學/天地萬物屬神.md
+- name: 神揀選以色列（揀選恩典）
+  suggested_type: 神學
+  evidence: 經文第15節「耶和華但喜悅你的列祖，愛他們，從萬民中揀選他們的後裔，就是你們，像今日一樣」；ccbiblestudy CT 指出揀選不因人數多寡、乃因神的愛與守約；KingComments
+    連結申7:6-8、4:37。
+  surfaces:
+  - phrase: 喜悅你的列祖
+    verses:
+    - 15
+  - phrase: 從萬民中揀選
+    verses:
+    - 15
+  - phrase: 揀選他們的後裔
+    verses:
+    - 15
+  target_path: link_folder/神學/神揀選以色列（揀選恩典）.md
+- name: 除掉心裡的污穢、不可硬著頸項
+  suggested_type: 神學
+  evidence: 經文第16節「所以你們要將心裡的污穢除掉，不可再硬著頸項」；ccbiblestudy CT 指出心裡污穢指內心頑梗、硬著頸項指倔強悖逆；KingComments
+    連結申9:6、耶4:4、羅2:29。
+  surfaces:
+  - phrase: 將心裡的污穢除掉
+    verses:
+    - 16
+  - phrase: 不可再硬著頸項
+    verses:
+    - 16
+  - phrase: 心裡的污穢
+    verses:
+    - 16
+  - phrase: 硬著頸項
+    verses:
+    - 16
+  target_path: link_folder/神學/除掉心裡的污穢、不可硬著頸項.md
+- name: 神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）
+  suggested_type: 神學
+  evidence: 經文第17節「因為耶和華─你們的神─他是萬神之神，萬主之主，至大的神，大有能力，大而可畏，不以貌取人，也不受賄賂」；ccbiblestudy
+    CT 指出神的超越性與公義；KingComments 連結申3:24、7:21、10:17。
+  surfaces:
+  - phrase: 萬神之神
+    verses:
+    - 17
+  - phrase: 萬主之主
+    verses:
+    - 17
+  - phrase: 至大的神
+    verses:
+    - 17
+  - phrase: 大有能力
+    verses:
+    - 17
+  - phrase: 大而可畏
+    verses:
+    - 17
+  - phrase: 不以貌取人
+    verses:
+    - 17
+  - phrase: 不受賄賂
+    verses:
+    - 17
+  target_path: link_folder/神學/神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）.md
+- name: 神為孤兒寡婦伸冤、憐愛寄居者
+  suggested_type: 神學
+  evidence: 經文第18節「他為孤兒寡婦伸冤，又憐愛寄居的，賜給他衣食」；ccbiblestudy CT 指出神保護弱勢群體；KingComments 連結詩68:5、146:9、出22:21-24。
+  surfaces:
+  - phrase: 為孤兒寡婦伸冤
+    verses:
+    - 18
+  - phrase: 憐愛寄居的
+    verses:
+    - 18
+  - phrase: 賜給他衣食
+    verses:
+    - 18
+  target_path: link_folder/神學/神為孤兒寡婦伸冤、憐愛寄居者.md
+- name: 當憐愛寄居者（因你們在埃及也作過寄居的）
+  suggested_type: 神學
+  evidence: 經文第19節「所以你們要憐愛寄居的，因為你們在埃及地也作過寄居的」；ccbiblestudy CT 指出以色列在埃及作寄居者的經驗當成為憐愛寄居者的動力；KingComments
+    連結出22:21、利19:34。
+  surfaces:
+  - phrase: 憐愛寄居的
+    verses:
+    - 19
+  - phrase: 你們在埃及地也作過寄居的
+    verses:
+    - 19
+  target_path: link_folder/神學/當憐愛寄居者（因你們在埃及也作過寄居的）.md
+- name: 敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓
+  suggested_type: 神學
+  evidence: 經文第20節「你要敬畏耶和華─你的神，事奉他，專靠他，也要指著他的名起誓」；ccbiblestudy CT 指出敬畏、事奉、專靠、起誓是信仰的完整表達；KingComments
+    連結申6:13、10:20、太4:10。
+  surfaces:
+  - phrase: 敬畏耶和華你的神
+    verses:
+    - 20
+  - phrase: 事奉他
+    verses:
+    - 20
+  - phrase: 專靠他
+    verses:
+    - 20
+  - phrase: 指著他的名起誓
+    verses:
+    - 20
+  target_path: link_folder/神學/敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓.md
+- name: 神是你所讚美的、為你做了大而可畏的事
+  suggested_type: 神學
+  evidence: 經文第21節「他是你所讚美的，是你的神，為你做了那大而可畏的事，是你親眼所看見的」；ccbiblestudy CT 指出神的作為是讚美的根據；KingComments
+    連結詩106:2、申26:8。
+  surfaces:
+  - phrase: 他是你所讚美的
+    verses:
+    - 21
+  - phrase: 為你做了那大而可畏的事
+    verses:
+    - 21
+  - phrase: 親眼所看見
+    verses:
+    - 21
+  target_path: link_folder/神學/神是你所讚美的、為你做了大而可畏的事.md
+- name: 列祖七十人下埃及、神使你如天上星那樣多
+  suggested_type: 事件
+  evidence: 經文第22節「你的列祖七十人下埃及；現在耶和華─你的神使你如同天上的星那樣多」；ccbiblestudy CT 指出從七十人增多如星、應驗亞伯拉罕之約；KingComments
+    連結創46:27、出1:5、創15:5。
+  surfaces:
+  - phrase: 列祖七十人下埃及
+    verses:
+    - 22
+  - phrase: 如同天上的星那樣多
+    verses:
+    - 22
+  - phrase: 神使你增多
+    verses:
+    - 22
+  target_path: link_folder/事件/列祖七十人下埃及、神使你如天上星那樣多.md
+D_new_candidate: []
+E_skip: []

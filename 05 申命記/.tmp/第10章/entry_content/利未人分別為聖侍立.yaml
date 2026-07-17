@@ -1,0 +1,27 @@
+name: 利未人分別為聖侍立
+type: 事件
+secondary_types: []
+aliases:
+- 利未支派分別出來
+- 利未人侍立事奉
+status: formal
+definition: 耶和華將利未支派分別出來，抬約櫃、侍立事奉、奉神名祝福，且無地業、以耶和華為業（申10:8-9）。
+development: 此事件回顧西乃山金牛犢事件後（出32:26-29）利未人得蒙揀選的緣由，並確立其獨特宗教職能與產業安排。
+accumulations:
+- book: 申命記
+  chapter: 10
+  summary: 耶和華揀選利未支派抬約櫃、侍立事奉、奉名祝福，以耶和華為產業。
+  relation: 闡明利未人宗教特權的神學基礎，與約櫃、祭司職分共同構成敬拜體系。
+related_entries:
+- 木櫃（aron）
+- 亞倫之死與以利亞撒繼任
+sources:
+- '研經註解(BH): 申命記10:8-9利未人分別為聖的職責（https://biblehub.com/study/deuteronomy/10.htm）'
+- '逐節註解(CC): 申命記10:8-9利未人無分無業、以神為業（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT10.htm）'
+- '拾穗(CC): 申命記10:8-9利未人抬約櫃與侍立事奉（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT10.htm）'
+- '研經註解(KC): 申命記10章利未支派的揀選與職分（https://www.kingcomments.com/en/bible-studies/Deu/10）'
+created_from: deuteronomy_10
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false
