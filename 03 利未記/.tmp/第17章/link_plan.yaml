@@ -1,7 +1,185 @@
 book: 利未記
 chapter: 17
-A_use_directly: []
+A_use_directly:
+- name: 獻祭地點（meqom zebach）
+  suggested_type: 原文
+  evidence: 利17:3-4,8-9「若未曾牽到會幕門口...獻給耶和華為供物」；CT註解：集中獻祭於會幕門口，防止私設祭壇；BH：centralized
+    worship at Tent of Meeting
+  surfaces:
+  - phrase: 會幕門口
+  - phrase: 會幕前
+  - phrase: 獻給耶和華
+  match_type: exact
+  existing_title: 獻祭地點（meqom zebach）
+  existing_path: link_folder/原文/獻祭地點（meqom zebach）.md
+- name: 吃血禁令（issur dam）
+  suggested_type: 原文
+  evidence: 利17:10-14「你們都不可吃血...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：prohibition
+    of eating blood = respect for life
+  surfaces:
+  - phrase: 吃血
+  - phrase: 不可吃血
+  match_type: exact
+  existing_title: 吃血禁令（issur dam）
+  existing_path: link_folder/原文/吃血禁令（issur dam）.md
+- name: 集中獻祭條例
+  suggested_type: 主題
+  evidence: 利17:3-9「若未曾牽到會幕門口...流血的罪必歸到那人身上」；CT壹：本章為集中獻祭條例，防止私設祭壇；BH：centralized sacrifice
+    = prevent idolatry
+  surfaces:
+  - phrase: 集中獻祭
+  - phrase: 會幕門口獻祭
+  - phrase: 私設祭壇
+  match_type: exact
+  existing_title: 集中獻祭條例
+  existing_path: link_folder/主題/集中獻祭條例.md
+- name: 血代表生命與贖罪
+  suggested_type: 主題
+  evidence: 利17:11「因為活物的生命是在血中...血裡有生命，所以能贖罪」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：blood =
+    life = atonement
+  surfaces:
+  - phrase: 為你們的生命贖罪
+  match_type: exact
+  existing_title: 血代表生命與贖罪
+  existing_path: link_folder/主題/血代表生命與贖罪.md
+- name: 吃血禁令的屬靈意義
+  suggested_type: 主題
+  evidence: 利17:10-14；CT靈意註解：吃血表徵接受屬靈死亡，禁令教導敬畏生命；BH：eating blood = spiritual death
+  surfaces:
+  - phrase: 吃血的屬靈意義
+  match_type: exact
+  existing_title: 吃血禁令的屬靈意義
+  existing_path: link_folder/主題/吃血禁令的屬靈意義.md
+- name: 獵物處理條例
+  suggested_type: 主題
+  evidence: 利17:13「若打獵得了可吃的禽獸，必放出他的血來，用土掩蓋」；CT註解：用土掩蓋血表徵敬畏生命、歸還神；BH：covering blood
+    with earth = respect for life
+  surfaces:
+  - phrase: 打獵
+  - phrase: 放出他的血來
+  - phrase: 用土掩蓋
+  match_type: exact
+  existing_title: 獵物處理條例
+  existing_path: link_folder/主題/獵物處理條例.md
+- name: 外人同歸一律
+  suggested_type: 主題
+  evidence: 利17:8,10,12-13「或是寄居在他們中間的外人...同歸一律」；CT註解：外人同歸一律，神的律法不分民族；BH：same law for
+    native and stranger
+  surfaces:
+  - phrase: 寄居的外人
+  - phrase: 同歸一律
+  - phrase: 外人同歸一律
+  match_type: exact
+  existing_title: 外人同歸一律
+  existing_path: link_folder/主題/外人同歸一律.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 利17:1「耶和華對摩西說」
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 利17:2「你曉諭亞倫和他兒子並以色列眾人說」
+  surfaces:
+  - phrase: 亞倫
+  - phrase: 亞倫和他兒子
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 基督的寶血贖罪
+  suggested_type: 神學
+  evidence: 利17:11「我把這血賜給你們，可以在壇上為你們的生命贖罪」；CT靈意註解：基督的寶血一次成就永遠贖罪(來9:12)；BH：Christ's
+    blood = eternal atonement
+  surfaces:
+  - phrase: 所以能贖罪
+  match_type: exact
+  existing_title: 基督的寶血贖罪
+  existing_path: link_folder/神學/基督的寶血贖罪.md
+- name: 生命在血中
+  suggested_type: 神學
+  evidence: 利17:11,14「因為活物的生命是在血中」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the blood
+  surfaces:
+  - phrase: 生命是在血中
+  - phrase: 血裡有生命
+  match_type: exact
+  existing_title: 生命在血中
+  existing_path: link_folder/神學/生命在血中.md
+- name: 挪亞禁吃血（創9：4）
+  suggested_type: 互文
+  evidence: 利17:10-14；CT註解：挪亞時代已禁吃血，利未記重申此律；BH：Noahic covenant = blood prohibition
+  surfaces:
+  - phrase: 挪亞
+  - phrase: 創世記9章
+  match_type: exact
+  existing_title: 挪亞禁吃血（創9：4）
+  existing_path: link_folder/互文/挪亞禁吃血（創9：4）.md
+- name: 耶路撒冷會議禁吃血（徒15：20）
+  suggested_type: 互文
+  evidence: 利17:10-14；CT註解：使徒行傳15章決議外邦信徒也禁吃血；BH：Jerusalem Council = blood prohibition
+    for Gentiles
+  surfaces:
+  - phrase: 使徒行傳15章
+  - phrase: 耶路撒冷會議
+  match_type: exact
+  existing_title: 耶路撒冷會議禁吃血（徒15：20）
+  existing_path: link_folder/互文/耶路撒冷會議禁吃血（徒15：20）.md
+- name: 基督的血贖罪（來9：12-14）
+  suggested_type: 互文
+  evidence: 利17:11；CT註解：基督的血一次成就永遠贖罪；BH：Christ's blood = eternal redemption
+  surfaces:
+  - phrase: 希伯來書9章
+  - phrase: 基督的血
+  match_type: exact
+  existing_title: 基督的血贖罪（來9：12-14）
+  existing_path: link_folder/互文/基督的血贖罪（來9：12-14）.md
+- name: 基督的身體為帳幕（約1：14；來9：11）
+  suggested_type: 互文
+  evidence: 利17:4-5「會幕門口...獻給耶和華」；CT註解：基督是真帳幕，信徒藉著祂親近神；BH：Christ = true tabernacle
+  surfaces:
+  - phrase: 身體為帳幕
+  match_type: exact
+  existing_title: 基督的身體為帳幕（約1：14；來9：11）
+  existing_path: link_folder/互文/基督的身體為帳幕（約1：14；來9：11）.md
+- name: 頒布獻祭與禁血條例
+  suggested_type: 事件
+  evidence: 利17:1-16全章；CT壹：本章宣示集中獻祭與禁吃血的條例
+  surfaces:
+  - phrase: 耶和華對摩西說
+  - phrase: 曉諭亞倫和他兒子
+  match_type: exact
+  existing_title: 頒布獻祭與禁血條例
+  existing_path: link_folder/事件/頒布獻祭與禁血條例.md
+- name: 古代近東獻祭與血的觀念
+  suggested_type: 文化
+  evidence: 利17:7「不可再獻祭給他們行邪淫所隨從的鬼魔」；CT註解：古代近東視獻祭為餵養神明，以色列條例將醫療診斷納入祭司職分；BH：ancient
+    Near East viewed sacrifice as feeding gods
+  surfaces:
+  - phrase: 古代近東
+  match_type: exact
+  existing_title: 古代近東獻祭與血的觀念
+  existing_path: link_folder/文化/古代近東獻祭與血的觀念.md
 B_needs_update:
+- name: 血（dam）
+  suggested_type: 神學
+  evidence: 利17:10-14「凡吃血的...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the
+    blood = atonement
+  surfaces:
+  - phrase: 血
+  match_type: base
+  existing_title: 血
+  existing_path: link_folder/神學/血.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 利17:4,9,10,14「那人必從民中剪除」；CT註解：剪除指被社群除名或死刑，嚴重後果；BH：cut off = excommunication/death
+  surfaces:
+  - phrase: 剪除
+  - phrase: 從民中剪除
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
 - name: 平安祭（shelamim）
   suggested_type: 原文
   evidence: 利17:5「獻與耶和華為平安祭」；CT註解：平安祭表徵與神和好、團契；BH：peace offering = fellowship
@@ -20,192 +198,21 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭（olah）
   existing_path: link_folder/原文/燔祭（olah）.md
-- name: 摩西
-  suggested_type: 人物
-  evidence: 利17:1「耶和華對摩西說」
-  surfaces:
-  - phrase: 摩西
-  match_type: exact
-  existing_title: 摩西
-  existing_path: link_folder/人物/摩西.md
-- name: 亞倫
-  suggested_type: 人物
-  evidence: 利17:2「你曉諭亞倫和他兒子並以色列眾人說」
-  surfaces:
-  - phrase: 亞倫
-  - phrase: 亞倫和他兒子
-  match_type: exact
-  existing_title: 亞倫
-  existing_path: link_folder/人物/亞倫.md
 C_new_formal:
-- name: 獻祭地點（meqom zebach）
+- name: 鬼魔（se'irim）
   suggested_type: 原文
-  evidence: 利17:3-4,8-9「若未曾牽到會幕門口...獻給耶和華為供物」；CT註解：集中獻祭於會幕門口，防止私設祭壇；BH：centralized
-    worship at Tent of Meeting
-  surfaces:
-  - phrase: 會幕門口
-  - phrase: 會幕前
-  - phrase: 獻給耶和華
-  target_path: link_folder/原文/獻祭地點（meqom zebach）.md
-- name: 鬼魔/公山羊（se'irim）
-  suggested_type: 原文
-  evidence: 利17:7「不可再獻祭給他們行邪淫所隨從的鬼魔（原文作公山羊）」；CT註解：鬼魔指曠野惡魔，以色列人曾隨從；BH：goat demons =
-    wilderness demons
+  evidence: 利未記17:7 「他們不可再獻祭給他們行邪淫所隨從的鬼魔（原文作公山羊）」。丁良才：se'irim 原文作「公山羊」，「這是古時的埃及、希臘和羅馬人所敬拜之一種神的標號，這神像有公山羊的頭和下體，卻有人的身子（代下11:15，書24:14）」。李道生：「其原意是眾公山羊，乃為希臘、羅馬之林神，或稱為野山羊（賽13:21，34:14）……埃及人崇拜公山羊，為以色列人所知。」《舊約背景註釋》：「最有可能是指半人半獸（就如希臘神話中之羊人satyrlike），經常在野外或無人煙之處出沒的鬼魔。」《串珠》：「這種鬼魔相傳具羊形，故被稱為羊神，本是埃及的土地神。」「不可再獻祭」的「再」字，丁良才指出「顯明以色列人中先前曾有人獻了」。
   surfaces:
   - phrase: 鬼魔
-  - phrase: 公山羊
-  - phrase: 行邪淫
-  target_path: link_folder/原文/鬼魔／公山羊（se'irim）.md
-- name: 吃血禁令（issur dam）
+  target_path: link_folder/原文/鬼魔（se'irim）.md
+- name: 自死與撕裂之物（nevelah）
   suggested_type: 原文
-  evidence: 利17:10-14「你們都不可吃血...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：prohibition
-    of eating blood = respect for life
-  surfaces:
-  - phrase: 不可吃血
-  - phrase: 吃血
-  - phrase: 放出他的血來
-  - phrase: 用土掩蓋
-  target_path: link_folder/原文/吃血禁令（issur dam）.md
-- name: 自死/撕裂之物（nevelah/terefah）
-  suggested_type: 原文
-  evidence: 利17:15「凡吃自死的，或是被野獸撕裂的...必不潔淨到晚上」；CT註解：自死之物不潔淨，須洗濯等待；BH：carrion = temporary
-    uncleanness
+  evidence: 利未記17:15-16 「凡吃自死的，或是被野獸撕裂的……必不潔淨到晚上」。丁良才：「這是指著誤吃說的（利11:40注）……這些牲畜的血沒有流出或沒有流盡。」KC：吃這樣的動物，就是吃了「血沒有上過壇、也沒有照神吩咐的方式倒出來用土掩蓋」的動物。出22:31
+    吩咐把這樣的肉丟給狗吃；到了迦南，神讓以色列人將這樣的肉送給或賣給寄居的外邦人（申14:21）。丁良才並辨明兩處「寄居的」不同：本節指受了割禮入猶太教的外人，申14:21
+    指未受割禮的外人。
   surfaces:
   - phrase: 自死的
   - phrase: 被野獸撕裂的
-  - phrase: 不潔淨到晚上
-  target_path: link_folder/原文/自死／撕裂之物（nevelah/terefah）.md
-- name: 集中獻祭條例
-  suggested_type: 主題
-  evidence: 利17:3-9「若未曾牽到會幕門口...流血的罪必歸到那人身上」；CT壹：本章為集中獻祭條例，防止私設祭壇；BH：centralized sacrifice
-    = prevent idolatry
-  surfaces:
-  - phrase: 集中獻祭
-  - phrase: 會幕門口獻祭
-  - phrase: 私設祭壇
-  target_path: link_folder/主題/集中獻祭條例.md
-- name: 血代表生命與贖罪
-  suggested_type: 主題
-  evidence: 利17:11「因為活物的生命是在血中...血裡有生命，所以能贖罪」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：blood =
-    life = atonement
-  surfaces:
-  - phrase: 生命是在血中
-  - phrase: 血能贖罪
-  - phrase: 贖罪
-  target_path: link_folder/主題/血代表生命與贖罪.md
-- name: 吃血禁令的屬靈意義
-  suggested_type: 主題
-  evidence: 利17:10-14；CT靈意註解：吃血表徵接受屬靈死亡，禁令教導敬畏生命；BH：eating blood = spiritual death
-  surfaces:
-  - phrase: 不可吃血
-  - phrase: 吃血的屬靈意義
-  - phrase: 敬畏生命
-  target_path: link_folder/主題/吃血禁令的屬靈意義.md
-- name: 獵物處理條例
-  suggested_type: 主題
-  evidence: 利17:13「若打獵得了可吃的禽獸，必放出他的血來，用土掩蓋」；CT註解：用土掩蓋血表徵敬畏生命、歸還神；BH：covering blood
-    with earth = respect for life
-  surfaces:
-  - phrase: 放出他的血來
-  - phrase: 用土掩蓋
-  - phrase: 打獵
-  target_path: link_folder/主題/獵物處理條例.md
-- name: 自死/撕裂之物的潔淨條例
-  suggested_type: 主題
-  evidence: 利17:15-16「凡吃自死的...必不潔淨到晚上，都要洗衣服，用水洗身」；CT註解：洗衣洗身表徵對付行事為人、接受聖靈洗滌；BH：washing
-    = spiritual cleansing
-  surfaces:
-  - phrase: 不潔淨到晚上
-  - phrase: 洗衣服
-  - phrase: 用水洗身
-  target_path: link_folder/主題/自死／撕裂之物的潔淨條例.md
-- name: 外人同歸一律
-  suggested_type: 主題
-  evidence: 利17:8,10,12-13「或是寄居在他們中間的外人...同歸一律」；CT註解：外人同歸一律，神的律法不分民族；BH：same law for
-    native and stranger
-  surfaces:
-  - phrase: 寄居的外人
-  - phrase: 同歸一律
-  - phrase: 外人同歸一律
-  target_path: link_folder/主題/外人同歸一律.md
-- name: 基督的寶血贖罪
-  suggested_type: 神學
-  evidence: 利17:11「我把這血賜給你們，可以在壇上為你們的生命贖罪」；CT靈意註解：基督的寶血一次成就永遠贖罪(來9:12)；BH：Christ's
-    blood = eternal atonement
-  surfaces:
-  - phrase: 寶血
-  - phrase: 贖罪
-  - phrase: 基督的血
-  target_path: link_folder/神學/基督的寶血贖罪.md
-- name: 生命在血中
-  suggested_type: 神學
-  evidence: 利17:11,14「因為活物的生命是在血中」；CT靈意註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the blood
-  surfaces:
-  - phrase: 生命是在血中
-  - phrase: 血就是生命
-  target_path: link_folder/神學/生命在血中.md
-- name: 挪亞禁吃血（創9：4）
-  suggested_type: 互文
-  evidence: 利17:10-14；CT註解：挪亞時代已禁吃血，利未記重申此律；BH：Noahic covenant = blood prohibition
-  surfaces:
-  - phrase: 挪亞
-  - phrase: 創世記9章
-  target_path: link_folder/互文/挪亞禁吃血（創9：4）.md
-- name: 耶路撒冷會議禁吃血（徒15：20）
-  suggested_type: 互文
-  evidence: 利17:10-14；CT註解：使徒行傳15章決議外邦信徒也禁吃血；BH：Jerusalem Council = blood prohibition
-    for Gentiles
-  surfaces:
-  - phrase: 使徒行傳15章
-  - phrase: 耶路撒冷會議
-  target_path: link_folder/互文/耶路撒冷會議禁吃血（徒15：20）.md
-- name: 基督的血贖罪（來9：12-14）
-  suggested_type: 互文
-  evidence: 利17:11；CT註解：基督的血一次成就永遠贖罪；BH：Christ's blood = eternal redemption
-  surfaces:
-  - phrase: 希伯來書9章
-  - phrase: 基督的血
-  target_path: link_folder/互文/基督的血贖罪（來9：12-14）.md
-- name: 基督的身體為帳幕（約1：14；來9：11）
-  suggested_type: 互文
-  evidence: 利17:4-5「會幕門口...獻給耶和華」；CT註解：基督是真帳幕，信徒藉著祂親近神；BH：Christ = true tabernacle
-  surfaces:
-  - phrase: 約翰福音1章
-  - phrase: 希伯來書9章
-  - phrase: 真帳幕
-  target_path: link_folder/互文/基督的身體為帳幕（約1：14；來9：11）.md
-- name: 頒布獻祭與禁血條例
-  suggested_type: 事件
-  evidence: 利17:1-16全章；CT壹：本章宣示集中獻祭與禁吃血的條例
-  surfaces:
-  - phrase: 耶和華對摩西說
-  - phrase: 曉諭亞倫和他兒子
-  target_path: link_folder/事件/頒布獻祭與禁血條例.md
-- name: 古代近東獻祭與血的觀念
-  suggested_type: 文化
-  evidence: 利17:7「不可再獻祭給他們行邪淫所隨從的鬼魔」；CT註解：古代近東視獻祭為餵養神明，以色列條例將醫療診斷納入祭司職分；BH：ancient
-    Near East viewed sacrifice as feeding gods
-  surfaces:
-  - phrase: 古代近東
-  - phrase: 獻祭觀念
-  - phrase: 鬼魔
-  target_path: link_folder/文化/古代近東獻祭與血的觀念.md
-D_new_candidate:
-- name: 血（dam）
-  suggested_type: 原文
-  evidence: 利17:10-14「凡吃血的...因為活物的生命是在血中」；CT註解：血代表生命，神將血賜給人在壇上贖罪；BH：life is in the
-    blood = atonement
-  surfaces:
-  - phrase: 血
-  - phrase: 吃血
-  - phrase: 生命是在血中
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=神學，secondary=[]
-- name: 剪除（karat）
-  suggested_type: 原文
-  evidence: 利17:4,9,10,14「那人必從民中剪除」；CT註解：剪除指被社群除名或死刑，嚴重後果；BH：cut off = excommunication/death
-  surfaces:
-  - phrase: 剪除
-  - phrase: 從民中剪除
-  note: 名稱或 alias 有多重指向
+  target_path: link_folder/原文/自死與撕裂之物（nevelah）.md
+D_new_candidate: []
 E_skip: []
