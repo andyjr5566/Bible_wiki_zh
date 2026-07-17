@@ -1,0 +1,29 @@
+name: 奴僕不願意離開、刺耳歸主（自願永遠為奴）
+type: 事件
+secondary_types: []
+aliases:
+- 自願永遠為奴
+- 申命記15:16-17刺耳
+status: formal
+definition: 申命記 15:16-17 規定若奴僕在第七年說「我不願意離開你」，因愛主人與其家且在主人那裡很好，主人便拿錐子將奴僕耳朵在門上刺透，他便永遠為奴。婢女同例。這儀式在門框（家庭中心）公開進行，象徵自願委身、聽從主人聲音（耳朵）的永久契約關係。
+development: 出埃及記 21:5-6 同樣記載此儀式。詩篇 40:6「你開通我的耳朵」被七十士譯本譯為「你為我預備了身體」，希伯來書 10:5 引用應用在基督道成肉身甘心順服。保羅自稱「基督耶穌的奴僕」（羅
+  1:1, 腓 1:1）屬靈化此意象。古近東法律（漢摩拉比法典 §282）也有刺耳標記奴僕身分，但聖經賦予自願愛的神學意義。
+accumulations:
+- book: 申命記
+  chapter: 15
+  summary: 提供奴僕自願放棄自由、永遠委身主人的法律儀式，強調愛與選擇超越法定權利。
+  relation: 為希伯來奴僕釋放事件提供例外條款，展現約法中自由與愛的張力，呼應第 18 節「不可以為難事」的仁慈精神。
+related_entries:
+- 希伯來奴僕第七年得自由（豁免年釋放奴僕）
+- 希伯來奴僕服事六年、工價多加一倍（公平待遇）
+sources:
+- '研經註解: 申命記 15:16-17 自願永遠為奴的刺耳儀式（https://biblehub.com/study/deuteronomy/15.htm）'
+- '逐節註解: 申命記 15:16-17 刺耳儀式的象徵意義與法律效力（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm）'
+- '拾穗: 申命記 15 章愛超越自由的屬靈奧義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT15.htm）'
+- '研經註解: 申命記 15 章釋經講道大綱（https://www.kingcomments.com/en/bible-studies/Deu/15）'
+created_from: 申命記15章
+category: 事件
+trigger_sources:
+- '逐節註解: 申命記 15:16-17 刺耳儀式的象徵意義與法律效力（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm）'
+current_data: true
+pending: false

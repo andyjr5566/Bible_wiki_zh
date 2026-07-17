@@ -1,7 +1,7 @@
 {
-  "total_warnings": 139,
+  "total_warnings": 140,
   "critical_count": 0,
-  "warning_count": 139,
+  "warning_count": 140,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -352,6 +352,13 @@
       "source": "民數記/第6章.md",
       "target": "搖祭",
       "message": "同一 alias「搖祭」指向多個 target: 拿細耳人滿期獻祭, 搖祭的胸"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "申命記/第15章.md",
+      "target": "不可使他空手而去",
+      "message": "同一 alias「不可使他空手而去」指向多個 target: 希伯來奴僕服事六年、工價多加一倍（公平待遇）, 希伯來奴僕第七年得自由（豁免年釋放奴僕）"
     },
     {
       "type": "alias_target_conflict",
