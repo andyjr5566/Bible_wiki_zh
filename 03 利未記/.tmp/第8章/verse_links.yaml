@@ -8,8 +8,11 @@ links:
   phrase: 亞倫和他兒子
   target: 亞倫和他兒子（祭司）
 - verse: 2
+  phrase: 聖衣
+  target: 聖衣（祭司聖服）
+- verse: 2
   phrase: 膏油
-  target: 聖膏油
+  target: 膏油（聖膏油）
 - verse: 2
   phrase: 贖罪祭
   target: 贖罪祭
@@ -50,6 +53,9 @@ links:
   phrase: 烏陵和土明
   target: 烏陵和土明
 - verse: 9
+  phrase: 冠冕
+  target: 冠冕（裹頭巾）
+- verse: 9
   phrase: 摩西
   target: 摩西
 - verse: 10
@@ -57,19 +63,25 @@ links:
   target: 摩西
 - verse: 10
   phrase: 膏油
-  target: 聖膏油
+  target: 膏油（聖膏油）
 - verse: 10
   phrase: 帳幕
   target: 會幕（帳幕整體）
 - verse: 11
   phrase: 膏油
-  target: 聖膏油
+  target: 膏油（聖膏油）
+- verse: 11
+  phrase: 洗濯盆和盆座
+  target: 洗濯盆（銅盆）
 - verse: 12
   phrase: 膏油
-  target: 聖膏油
+  target: 膏油（聖膏油）
 - verse: 13
   phrase: 摩西
   target: 摩西
+- verse: 13
+  phrase: 裹頭巾
+  target: 冠冕（裹頭巾）
 - verse: 14
   phrase: 贖罪祭
   target: 贖罪祭
@@ -183,7 +195,7 @@ links:
   target: 摩西
 - verse: 30
   phrase: 膏油
-  target: 聖膏油
+  target: 膏油（聖膏油）
 - verse: 30
   phrase: 血
   target: 血

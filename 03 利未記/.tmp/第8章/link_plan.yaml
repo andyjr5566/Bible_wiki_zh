@@ -1,7 +1,41 @@
 book: 利未記
 chapter: 8
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 承接聖職之禮（millu'im）
+  suggested_type: 原文
+  evidence: '全章記載亞倫和他兒子承接聖職（祭司就職禮），照出29章吩咐執行。BH: consecration/ordination of Aaron
+    and his sons as priests. CT: 祭司承接聖職之禮。KC: the ordination offering is part of the
+    law of offerings.'
+  surfaces:
+  - phrase: 承接聖職
+  match_type: exact
+  existing_title: 承接聖職之禮（millu'im）
+  existing_path: link_folder/原文/承接聖職之禮（millu'im）.md
+- name: 招聚會眾到會幕門口
+  suggested_type: 事件
+  evidence: 'v3-4 招聚全會眾到會幕門口觀禮，見證祭司任職出於神。BH: assemble the whole congregation at entrance
+    to Tent of Meeting, emphasizing communal witness. CT: 為要觀禮以見證他們的任職出於神。KC: the
+    whole congregation witnesses the consecration.'
+  match_type: exact
+  existing_title: 招聚會眾到會幕門口
+  existing_path: link_folder/事件/招聚會眾到會幕門口.md
+- name: 用水洗了他們
+  suggested_type: 神學
+  evidence: 'v6 摩西帶亞倫和他兒子來，用水洗了他們（在洗濯盆處）。BH: washing with water symbolizes purification
+    and holiness before serving. CT: 表徵聖靈的洗淨（林前6:11）和話中之水的洗滌（弗5:26）。KC: washing speaks
+    of cleansing necessary for priestly service.'
+  match_type: exact
+  existing_title: 用水洗了他們
+  existing_path: link_folder/神學/用水洗了他們.md
+- name: 聖衣（祭司聖服）
+  suggested_type: 主題
+  evidence: 'v7-9 亞倫穿內袍、束腰帶、穿外袍、加以弗得、戴胸牌（放烏陵土明）、戴冠冕（釘金牌聖冠）。v13 亞倫兒子穿內袍、束腰帶、包裹頭巾。BH:
+    priestly garments symbolize holiness and set priests apart for sacred duties.
+    CT: 大祭司聖衣七件：內袍、腰帶、外袍、以弗得、胸牌、冠冕、金牌。KC: garments speak of the glories of Christ
+    as High Priest.'
+  match_type: exact
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
 - name: 以弗得（ephod）
   suggested_type: 原文
   evidence: 'v7 加上以弗得，用巧工織的帶子繫在身上。BH: ephod was distinctive priestly garment associated
@@ -24,14 +58,118 @@ B_needs_update:
   match_type: base
   existing_title: 烏陵和土明
   existing_path: link_folder/原文/烏陵和土明.md
-- name: 膏油（shemen hamishchah）
+- name: 金牌聖冠（nezer hakodesh）
   suggested_type: 原文
-  evidence: 'v10-12 摩西用膏油抹帳幕和其中所有使成聖；彈壇七次抹壇和器皿並洗濯盆盆座使成聖；倒膏油在亞倫頭上膏他使成聖。BH: anointing
-    oil signifies setting apart for holy purpose, consecration. CT: 膏油表徵聖靈。KC: anointing
-    oil speaks of the Holy Spirit''s empowerment.'
-  match_type: base
-  existing_title: 聖膏油
-  existing_path: link_folder/原文/聖膏油.md
+  evidence: 'v9 冠冕前面釘上金牌，就是聖冠，刻「歸耶和華為聖」（出28:36）。BH: gold plate inscribed "Holy to
+    the LORD" on front of turban. CT: 金牌表徵大祭司的聖潔與榮耀。KC: the holy diadem speaks of
+    the holiness of Christ as High Priest.'
+  match_type: exact
+  existing_title: 金牌聖冠（nezer hakodesh）
+  existing_path: link_folder/原文/金牌聖冠（nezer hakodesh）.md
+- name: 冠冕（裹頭巾）
+  suggested_type: 原文
+  evidence: 'v13 亞倫兒子穿內袍、束腰帶、包上裹頭巾（祭司頭飾，非大祭司冠冕）。BH: head coverings for priests. CT:
+    裹頭巾是祭司的頭飾，與大祭司冠冕不同。'
+  match_type: exact
+  existing_title: 冠冕（裹頭巾）
+  existing_path: link_folder/原文/冠冕（裹頭巾）.md
+- name: 彈膏油七次
+  suggested_type: 神學
+  evidence: 'v11 用膏油在壇上彈了七次——七表完全，彈七次表完全成聖。BH: sprinkling oil seven times symbolizes
+    complete consecration. CT: 七表徵完全，彈七次表完全成聖。KC: seven times speaks of the perfection
+    of consecration.'
+  match_type: exact
+  existing_title: 彈膏油七次
+  existing_path: link_folder/神學/彈膏油七次.md
+- name: 倒膏油在頭上
+  suggested_type: 神學
+  evidence: 'v12 把膏油倒在亞倫頭上膏他使成聖——大祭司受膏。BH: pouring oil on Aaron''s head signifies
+    anointing as high priest. CT: 倒膏油在頭上表徵聖靈豐滿的澆灌（詩133:2）。KC: Aaron is a picture of
+    the Lord Jesus as High Priest, anointed by God.'
+  match_type: exact
+  existing_title: 倒膏油在頭上
+  existing_path: link_folder/神學/倒膏油在頭上.md
+- name: 按手在贖罪祭公牛頭上
+  suggested_type: 神學
+  evidence: 'v14 亞倫和他兒子按手在贖罪祭公牛的頭上——聯合與替代。BH: laying hands on sin offering bull signifies
+    transfer of sin. CT: 按手表徵聯合與替代。KC: laying on of hands speaks of identification
+    with the offering.'
+  match_type: exact
+  existing_title: 按手在贖罪祭公牛頭上
+  existing_path: link_folder/神學/按手在贖罪祭公牛頭上.md
+- name: 抹血在壇四角
+  suggested_type: 神學
+  evidence: 'v15 摩西用指頭蘸血抹在壇上四角的周圍使壇潔淨，倒血在壇腳使壇成聖。BH: blood applied to horns of altar
+    for purification and consecration. CT: 抹血在壇四角表徵基督寶血的潔淨功效。KC: blood on altar horns
+    speaks of atonement covering all.'
+  match_type: exact
+  existing_title: 抹血在壇四角
+  existing_path: link_folder/神學/抹血在壇四角.md
+- name: 營外焚燒公牛
+  suggested_type: 神學
+  evidence: 'v17 惟有公牛連皮帶肉並糞用火燒在營外——贖罪祭牲全燒營外。BH: bull burned outside the camp signifies
+    complete removal of sin. CT: 營外焚燒表徵基督在營外受苦（來13:11-13）。KC: burning outside the
+    camp speaks of Christ suffering outside the gate.'
+  match_type: exact
+  existing_title: 營外焚燒公牛
+  existing_path: link_folder/神學/營外焚燒公牛.md
+- name: 全羊燒在壇上
+  suggested_type: 神學
+  evidence: 'v18-21 奉上燔祭公綿羊，按手、宰殺、灑血壇周圍、切塊、洗臟腑腿、全燒為馨香火祭。BH: whole ram burned as burnt
+    offering signifies total dedication. CT: 全羊燒在壇上表徵基督完全奉獻給神。KC: the burnt offering
+    speaks of Christ''s total devotion to God.'
+  match_type: exact
+  existing_title: 全羊燒在壇上
+  existing_path: link_folder/神學/全羊燒在壇上.md
+- name: 抹血在右耳垂、右手大拇指、右腳大拇指
+  suggested_type: 神學
+  evidence: 'v23-24 承接聖職之禮的羊血抹在亞倫和他兒子右耳垂、右手大拇指、右腳大拇指上——分別為聖聽從神、事奉神、行走神道路。BH: blood
+    applied to right ear, thumb, toe signifies consecration of hearing, doing, walking.
+    CT: 右耳垂表徵聽從神的話、右手大拇指表徵事奉神的工作、右腳大拇指表徵行走神的道路。KC: blood on ear/thumb/toe speaks of
+    the whole person consecrated to God.'
+  match_type: exact
+  existing_title: 抹血在右耳垂、右手大拇指、右腳大拇指
+  existing_path: link_folder/神學/抹血在右耳垂、右手大拇指、右腳大拇指.md
+- name: 搖祭在手上
+  suggested_type: 神學
+  evidence: 'v25-28 取脂油+右腿+無酵餅+油餅+薄餅放在亞倫和他兒子手上作搖祭，摩西取下燒在燔祭上——承接聖職的馨香火祭。BH: wave offering
+    placed in hands of Aaron and sons signifies their consecration offering. CT: 搖祭放在手上表徵承接聖職的奉獻。KC:
+    the wave offering speaks of Christ offered to God above all else.'
+  match_type: exact
+  existing_title: 搖祭在手上
+  existing_path: link_folder/神學/搖祭在手上.md
+- name: 搖胸歸摩西
+  suggested_type: 神學
+  evidence: 'v29 摩西拿羊的胸作搖祭，是承接聖職之禮歸摩西的分——摩西此次擔任祭司角色。BH: breast of ordination ram given
+    to Moses as his portion. CT: 摩西此次擔任祭司角色，得搖胸為分。KC: Moses acts as priest during
+    the consecration ceremony.'
+  match_type: exact
+  existing_title: 搖胸歸摩西
+  existing_path: link_folder/神學/搖胸歸摩西.md
+- name: 彈膏油和血在衣服上
+  suggested_type: 神學
+  evidence: 'v30 摩西取膏油和壇上的血彈在亞倫和他兒子並他們的衣服上，使人和衣服一同成聖。BH: sprinkling oil and blood
+    on garments consecrates both priests and their clothing. CT: 膏油和血彈在衣服上表徵聖靈和寶血一同使人成聖。KC:
+    oil and blood together speak of the Spirit and the cross consecrating the believer.'
+  match_type: exact
+  existing_title: 彈膏油和血在衣服上
+  existing_path: link_folder/神學/彈膏油和血在衣服上.md
+- name: 七天不可出會幕門
+  suggested_type: 神學
+  evidence: 'v33-35 七天不可出會幕的門，等到承接聖職的日子滿了；七天晝夜住在會幕門口，免得死亡。BH: seven days of consecration
+    signifies complete period of ordination. CT: 七天表徵完全的承接聖職過程。KC: seven days speaks
+    of the complete period of consecration.'
+  match_type: exact
+  existing_title: 七天不可出會幕門
+  existing_path: link_folder/神學/七天不可出會幕門.md
+- name: 煮肉在會幕門口吃
+  suggested_type: 神學
+  evidence: 'v31 把肉煮在會幕門口，在那裡吃，又吃承接聖職筐子裡的餅；剩下的肉和餅用火焚燒。BH: eating ordination meal at
+    tabernacle entrance signifies fellowship. CT: 在會幕門口吃表徵在神面前的交通。KC: eating at the
+    entrance speaks of fellowship with God.'
+  match_type: exact
+  existing_title: 煮肉在會幕門口吃
+  existing_path: link_folder/神學/煮肉在會幕門口吃.md
 - name: 亞倫和他兒子（祭司）
   suggested_type: 人物
   evidence: 全章核心：亞倫和他兒子承接聖職——洗濯、穿聖衣、受膏、獻祭、抹血、七天住在會幕。
@@ -63,12 +201,6 @@ B_needs_update:
   match_type: exact
   existing_title: 平安祭（shelamim）
   existing_path: link_folder/原文/平安祭（shelamim）.md
-- name: 膏油（shemen hamishchah）
-  suggested_type: 原文
-  evidence: v10-12 抹帳幕和器具、彈壇七次、倒膏油在亞倫頭上。v30 彈膏油和血在衣服上。
-  match_type: base
-  existing_title: 聖膏油
-  existing_path: link_folder/原文/聖膏油.md
 - name: 血（dam）
   suggested_type: 神學
   evidence: v15 抹血壇四角使壇潔淨；v19 灑血壇周圍；v23-24 抹血耳垂/拇指/腳趾；v30 彈血在衣服上。
@@ -111,6 +243,12 @@ B_needs_update:
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  evidence: v11 用膏油抹洗濯盆和盆座使成聖。v6 用水洗亞倫和他兒子（在洗濯盆處）。
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
 - name: 按手（samak）
   suggested_type: 原文
   evidence: v14 按手在贖罪祭公牛頭上；v18 按手在燔祭公綿羊頭上；v22 按手在承接聖職之禮羊頭上。
@@ -141,126 +279,21 @@ B_needs_update:
   match_type: base
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
-- name: 聖衣（bigdei kodesh）
+B_needs_update:
+- name: 膏油（shemen hamishchah）
   suggested_type: 原文
-  evidence: 'v7-9 亞倫穿內袍、束腰帶、穿外袍、加以弗得、戴胸牌（放烏陵土明）、戴冠冕（釘金牌聖冠）。v13 亞倫兒子穿內袍、束腰帶、包裹頭巾。BH:
-    priestly garments symbolize holiness and set priests apart for sacred duties.
-    CT: 大祭司聖衣七件：內袍、腰帶、外袍、以弗得、胸牌、冠冕、金牌。KC: garments speak of the glories of Christ
-    as High Priest.'
+  evidence: 'v10-12 摩西用膏油抹帳幕和其中所有使成聖；彈壇七次抹壇和器皿並洗濯盆盆座使成聖；倒膏油在亞倫頭上膏他使成聖。BH: anointing
+    oil signifies setting apart for holy purpose, consecration. CT: 膏油表徵聖靈。KC: anointing
+    oil speaks of the Holy Spirit''s empowerment.'
   match_type: base
-  existing_title: 聖衣（祭司聖服）
-  existing_path: link_folder/主題/聖衣（祭司聖服）.md
-- name: 裹頭巾
-  suggested_type: 文化
-  evidence: 'v13 亞倫兒子穿內袍、束腰帶、包上裹頭巾（祭司頭飾，非大祭司冠冕）。BH: head coverings for priests. CT:
-    裹頭巾是祭司的頭飾，與大祭司冠冕不同。'
-  match_type: base
-  existing_title: 冠冕（裹頭巾）
-  existing_path: link_folder/原文/冠冕（裹頭巾）.md
-- name: 洗濯盆
-  suggested_type: 器物
-  evidence: v11 用膏油抹洗濯盆和盆座使成聖。v6 用水洗亞倫和他兒子（在洗濯盆處）。
-  match_type: base
-  existing_title: 洗濯盆（銅盆）
-  existing_path: link_folder/主題/洗濯盆（銅盆）.md
-C_new_formal:
-- name: 承接聖職之禮（millu'im）
+  existing_title: 膏油（聖膏油）
+  existing_path: link_folder/原文/膏油（聖膏油）.md
+- name: 膏油（shemen hamishchah）
   suggested_type: 原文
-  evidence: '全章記載亞倫和他兒子承接聖職（祭司就職禮），照出29章吩咐執行。BH: consecration/ordination of Aaron
-    and his sons as priests. CT: 祭司承接聖職之禮。KC: the ordination offering is part of the
-    law of offerings.'
-  surfaces:
-  - phrase: 承接聖職
-  target_path: link_folder/原文/承接聖職之禮（millu'im）.md
-- name: 招聚會眾到會幕門口
-  suggested_type: 事件
-  evidence: 'v3-4 招聚全會眾到會幕門口觀禮，見證祭司任職出於神。BH: assemble the whole congregation at entrance
-    to Tent of Meeting, emphasizing communal witness. CT: 為要觀禮以見證他們的任職出於神。KC: the
-    whole congregation witnesses the consecration.'
-  target_path: link_folder/事件/招聚會眾到會幕門口.md
-- name: 用水洗了他們
-  suggested_type: 神學
-  evidence: 'v6 摩西帶亞倫和他兒子來，用水洗了他們（在洗濯盆處）。BH: washing with water symbolizes purification
-    and holiness before serving. CT: 表徵聖靈的洗淨（林前6:11）和話中之水的洗滌（弗5:26）。KC: washing speaks
-    of cleansing necessary for priestly service.'
-  target_path: link_folder/神學/用水洗了他們.md
-- name: 金牌聖冠（nezer hakodesh）
-  suggested_type: 原文
-  evidence: 'v9 冠冕前面釘上金牌，就是聖冠，刻「歸耶和華為聖」（出28:36）。BH: gold plate inscribed "Holy to
-    the LORD" on front of turban. CT: 金牌表徵大祭司的聖潔與榮耀。KC: the holy diadem speaks of
-    the holiness of Christ as High Priest.'
-  target_path: link_folder/原文/金牌聖冠（nezer hakodesh）.md
-- name: 彈膏油七次
-  suggested_type: 神學
-  evidence: 'v11 用膏油在壇上彈了七次——七表完全，彈七次表完全成聖。BH: sprinkling oil seven times symbolizes
-    complete consecration. CT: 七表徵完全，彈七次表完全成聖。KC: seven times speaks of the perfection
-    of consecration.'
-  target_path: link_folder/神學/彈膏油七次.md
-- name: 倒膏油在頭上
-  suggested_type: 神學
-  evidence: 'v12 把膏油倒在亞倫頭上膏他使成聖——大祭司受膏。BH: pouring oil on Aaron''s head signifies
-    anointing as high priest. CT: 倒膏油在頭上表徵聖靈豐滿的澆灌（詩133:2）。KC: Aaron is a picture of
-    the Lord Jesus as High Priest, anointed by God.'
-  target_path: link_folder/神學/倒膏油在頭上.md
-- name: 按手在贖罪祭公牛頭上
-  suggested_type: 神學
-  evidence: 'v14 亞倫和他兒子按手在贖罪祭公牛的頭上——聯合與替代。BH: laying hands on sin offering bull signifies
-    transfer of sin. CT: 按手表徵聯合與替代。KC: laying on of hands speaks of identification
-    with the offering.'
-  target_path: link_folder/神學/按手在贖罪祭公牛頭上.md
-- name: 抹血在壇四角
-  suggested_type: 神學
-  evidence: 'v15 摩西用指頭蘸血抹在壇上四角的周圍使壇潔淨，倒血在壇腳使壇成聖。BH: blood applied to horns of altar
-    for purification and consecration. CT: 抹血在壇四角表徵基督寶血的潔淨功效。KC: blood on altar horns
-    speaks of atonement covering all.'
-  target_path: link_folder/神學/抹血在壇四角.md
-- name: 營外焚燒公牛
-  suggested_type: 神學
-  evidence: 'v17 惟有公牛連皮帶肉並糞用火燒在營外——贖罪祭牲全燒營外。BH: bull burned outside the camp signifies
-    complete removal of sin. CT: 營外焚燒表徵基督在營外受苦（來13:11-13）。KC: burning outside the
-    camp speaks of Christ suffering outside the gate.'
-  target_path: link_folder/神學/營外焚燒公牛.md
-- name: 全羊燒在壇上
-  suggested_type: 神學
-  evidence: 'v18-21 奉上燔祭公綿羊，按手、宰殺、灑血壇周圍、切塊、洗臟腑腿、全燒為馨香火祭。BH: whole ram burned as burnt
-    offering signifies total dedication. CT: 全羊燒在壇上表徵基督完全奉獻給神。KC: the burnt offering
-    speaks of Christ''s total devotion to God.'
-  target_path: link_folder/神學/全羊燒在壇上.md
-- name: 抹血在右耳垂、右手大拇指、右腳大拇指
-  suggested_type: 神學
-  evidence: 'v23-24 承接聖職之禮的羊血抹在亞倫和他兒子右耳垂、右手大拇指、右腳大拇指上——分別為聖聽從神、事奉神、行走神道路。BH: blood
-    applied to right ear, thumb, toe signifies consecration of hearing, doing, walking.
-    CT: 右耳垂表徵聽從神的話、右手大拇指表徵事奉神的工作、右腳大拇指表徵行走神的道路。KC: blood on ear/thumb/toe speaks of
-    the whole person consecrated to God.'
-  target_path: link_folder/神學/抹血在右耳垂、右手大拇指、右腳大拇指.md
-- name: 搖祭在手上
-  suggested_type: 神學
-  evidence: 'v25-28 取脂油+右腿+無酵餅+油餅+薄餅放在亞倫和他兒子手上作搖祭，摩西取下燒在燔祭上——承接聖職的馨香火祭。BH: wave offering
-    placed in hands of Aaron and sons signifies their consecration offering. CT: 搖祭放在手上表徵承接聖職的奉獻。KC:
-    the wave offering speaks of Christ offered to God above all else.'
-  target_path: link_folder/神學/搖祭在手上.md
-- name: 搖胸歸摩西
-  suggested_type: 神學
-  evidence: 'v29 摩西拿羊的胸作搖祭，是承接聖職之禮歸摩西的分——摩西此次擔任祭司角色。BH: breast of ordination ram given
-    to Moses as his portion. CT: 摩西此次擔任祭司角色，得搖胸為分。KC: Moses acts as priest during
-    the consecration ceremony.'
-  target_path: link_folder/神學/搖胸歸摩西.md
-- name: 彈膏油和血在衣服上
-  suggested_type: 神學
-  evidence: 'v30 摩西取膏油和壇上的血彈在亞倫和他兒子並他們的衣服上，使人和衣服一同成聖。BH: sprinkling oil and blood
-    on garments consecrates both priests and their clothing. CT: 膏油和血彈在衣服上表徵聖靈和寶血一同使人成聖。KC:
-    oil and blood together speak of the Spirit and the cross consecrating the believer.'
-  target_path: link_folder/神學/彈膏油和血在衣服上.md
-- name: 七天不可出會幕門
-  suggested_type: 神學
-  evidence: 'v33-35 七天不可出會幕的門，等到承接聖職的日子滿了；七天晝夜住在會幕門口，免得死亡。BH: seven days of consecration
-    signifies complete period of ordination. CT: 七天表徵完全的承接聖職過程。KC: seven days speaks
-    of the complete period of consecration.'
-  target_path: link_folder/神學/七天不可出會幕門.md
-- name: 煮肉在會幕門口吃
-  suggested_type: 神學
-  evidence: 'v31 把肉煮在會幕門口，在那裡吃，又吃承接聖職筐子裡的餅；剩下的肉和餅用火焚燒。BH: eating ordination meal at
-    tabernacle entrance signifies fellowship. CT: 在會幕門口吃表徵在神面前的交通。KC: eating at the
-    entrance speaks of fellowship with God.'
-  target_path: link_folder/神學/煮肉在會幕門口吃.md
+  evidence: v10-12 抹帳幕和器具、彈壇七次、倒膏油在亞倫頭上。v30 彈膏油和血在衣服上。
+  match_type: base
+  existing_title: 膏油（聖膏油）
+  existing_path: link_folder/原文/膏油（聖膏油）.md
+C_new_formal: []
+D_new_candidate: []
 E_skip: []

@@ -17,8 +17,8 @@ candidates:
   evidence: 'v6 摩西帶亞倫和他兒子來，用水洗了他們（在洗濯盆處）。BH: washing with water symbolizes purification and holiness before serving. CT: 表徵聖靈的洗淨（林前6:11）和話中之水的洗滌（弗5:26）。KC: washing speaks of cleansing necessary for priestly service.'
 
 # === v7-9,13 穿上聖衣 ===
-- name: 聖衣（bigdei kodesh）
-  type: 原文
+- name: 聖衣（祭司聖服）
+  type: 主題
   evidence: 'v7-9 亞倫穿內袍、束腰帶、穿外袍、加以弗得、戴胸牌（放烏陵土明）、戴冠冕（釘金牌聖冠）。v13 亞倫兒子穿內袍、束腰帶、包裹頭巾。BH: priestly garments symbolize holiness and set priests apart for sacred duties. CT: 大祭司聖衣七件：內袍、腰帶、外袍、以弗得、胸牌、冠冕、金牌。KC: garments speak of the glories of Christ as High Priest.'
 
 - name: 以弗得（ephod）
@@ -37,8 +37,8 @@ candidates:
   type: 原文
   evidence: 'v9 冠冕前面釘上金牌，就是聖冠，刻「歸耶和華為聖」（出28:36）。BH: gold plate inscribed "Holy to the LORD" on front of turban. CT: 金牌表徵大祭司的聖潔與榮耀。KC: the holy diadem speaks of the holiness of Christ as High Priest.'
 
-- name: 裹頭巾
-  type: 文化
+- name: 冠冕（裹頭巾）
+  type: 原文
   evidence: 'v13 亞倫兒子穿內袍、束腰帶、包上裹頭巾（祭司頭飾，非大祭司冠冕）。BH: head coverings for priests. CT: 裹頭巾是祭司的頭飾，與大祭司冠冕不同。'
 
 # === v10-12 抹膏成聖 ===
@@ -151,8 +151,8 @@ candidates:
   type: 主題
   evidence: 'v3-4 會眾聚集會幕門口；v10 抹膏油使帳幕成聖；v31-35 煮肉在會幕門口吃、七天不可出會幕門。'
 
-- name: 洗濯盆
-  type: 器物
+- name: 洗濯盆（銅盆）
+  type: 主題
   evidence: 'v11 用膏油抹洗濯盆和盆座使成聖。v6 用水洗亞倫和他兒子（在洗濯盆處）。'
 
 - name: 按手（samak）
