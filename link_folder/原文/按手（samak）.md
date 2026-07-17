@@ -32,6 +32,11 @@ source_scope: collected_only
 - 與本章關聯：按手是燔祭蒙悅納與為人贖罪的必要程序，確立了獻祭者與祭牲間的替代關聯。
 <!-- accumulation:利未記:1:end -->
 
+<!-- accumulation:利未記:3:start -->
+#### [[03 利未記/第3章|第3章]]
+- 本章重點：利3:2、8、13 平安祭的三級都要「按手在供物的頭上」。CT：「表徵與祭物合而為一，在基督裡奉獻全人。」丁良才指出燔祭與平安祭相同的儀式有四：奉獻、按手、宰牲、灑血。
+- 與本章關聯：平安祭的按手為利1:4 的爭議提供了一個旁證。利1 的按手是否「把罪轉到祭牲身上」各家分歧，《舊約聖經背景註釋》即以「非贖罪的祭也需要按手」為由反對轉移說——利3 正是這樣一個非贖罪的祭：它是甘心獻的酬恩祭，卻同樣要按手。KC 在本章的讀法與利1 一致：「The laying on of hands is the sign of identification. The offeror identifies himself with the value of the animal.」——按手帶出的是聯合，而聯合使人能與神相交：「he can have fellowship with God because God sees him in the value of the offering.」
+<!-- accumulation:利未記:3:end -->
 <!-- accumulation:利未記:4:start -->
 #### [[03 利未記/第4章|第4章]]
 - 本章重點：本章詳述贖罪祭的條例，規定獻祭者（祭司、會眾長老、官長、平民）必須在耶和華面前按手在贖罪祭牲（公牛犢、公山羊、母山羊或綿羊羔）的頭上，再將祭牲宰殺。

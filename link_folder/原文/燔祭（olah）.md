@@ -34,6 +34,12 @@ source_scope: collected_only
 - 本章重點：利2 中燔祭雖非本章主題，卻是素祭的必要背景。丁良才：「素祭和燔祭原是相連的……因為這兩種祭都是獻心祭，故此素祭的條例接續燔祭的條例也是合宜的。」KC 指出兩者不可分：「a grain offering is always connected to a blood burnt offering」，理由是素祭無血、無贖罪之效——「Atonement can only happen through the blood」。《精讀本》同此：「素祭不能獨自獻上，一般與燔祭（9:17；出29:38-42）和平安祭（7:11-13）一同獻上。因此素祭也等於與血一同獻上。」惟《啟導本》認為素祭「似為可以單獨獻的祭」。
 - 與本章關聯：利1 與利2 的次序本身是一層啟示。KC：歷史上素祭（基督的生）在燔祭（基督的死）之先，但神先講燔祭——「The fact that the burnt offering is spoken of first and only then of the grain offering shows that it is impossible to understand anything about the life of the Lord Jesus without first seeing what His death means.」兩祭的份量處理也對應其內容：燔祭全燒（死是全然傾倒），素祭只燒一把（生是被紀念）。丁良才：素祭「所燒的，只是一把，大概是因為這祭所表示的不是注重耶穌為我們捨命，乃是注重耶穌聖潔無玷污的生活」。
 <!-- accumulation:利未記:2:end -->
+
+<!-- accumulation:利未記:3:start -->
+#### [[03 利未記/第3章|第3章]]
+- 本章重點：利3:5 平安祭的脂油要「燒在壇的燔祭上」——這是燔祭在利3 的角色：它是每日早晨先獻的底座。CT／丁良才：「祭司每天早晨先獻燔祭（利6:12），然後獻平安祭等其他的祭，故此處說燒在燔祭的上面。」《精讀本》：「平安祭（脂油和腰子）放在每天獻上的燔祭（出29:38,39；民28:3-8）上，一同獻上為馨香火祭。」
+- 與本章關聯：丁良才由這個「燒在燔祭上」的位置讀出次序神學：「平安祭燒在燔祭上，特要表明平安是本著贖罪及將自己全然獻與神而來的，獻這祭的人是已經蒙了神的悅納，與神相和（羅5:1）。」即：先有全然的獻上與贖罪，才有平安與相交——次序不能顛倒。丁良才另列出兩祭的三個差別：燔祭祭牲須是公的、須全燒（除皮）、不可吃；平安祭則公母皆可、只燒脂油與肥尾巴、祭司和獻祭者都可以吃。而相同的儀式有四：奉獻、按手、宰牲、灑血。KC 則注意到「燒在燔祭上」只見於牛群一段，不見於羊群。
+<!-- accumulation:利未記:3:end -->
 <!-- accumulation:利未記:6:start -->
 #### [[03 利未記/第6章|第6章]]
 - 本章重點：本章8-13節從祭司角度補充燔祭條例：燔祭放在壇柴上從晚上燒到天亮，壇火要常常燒著不可熄滅（三次強調）；祭司穿細麻衣收灰倒在壇旁，換衣後將灰拿到營外潔淨之處；每日早晨添柴、擺燔祭、燒平安祭脂油。BH: perpetual fire symbolizes God's continuous presence and ongoing need for atonement. CT: 火是神聖潔的表號，神與人交通的門路常常開著。KC: God wants His people to be constantly surrounded by the fragrance of the burnt offering, aware they are pleasing to God in the Beloved (Eph 1:6).

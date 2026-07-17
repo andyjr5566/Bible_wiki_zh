@@ -20,6 +20,9 @@ links:
   phrase: 宰
   target: 宰殺
 - verse: 2
+  phrase: 會幕門口
+  target: 會幕（帳幕整體）
+- verse: 2
   phrase: 亞倫
   target: 亞倫
 - verse: 2
@@ -77,6 +80,9 @@ links:
   phrase: 宰
   target: 宰殺
 - verse: 8
+  phrase: 會幕前
+  target: 會幕（帳幕整體）
+- verse: 8
   phrase: 亞倫的子孫
   target: 亞倫和他兒子（祭司）
 - verse: 8
@@ -130,6 +136,9 @@ links:
 - verse: 13
   phrase: 宰
   target: 宰殺
+- verse: 13
+  phrase: 會幕前
+  target: 會幕（帳幕整體）
 - verse: 13
   phrase: 亞倫的子孫
   target: 亞倫和他兒子（祭司）
