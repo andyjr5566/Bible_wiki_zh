@@ -1,0 +1,29 @@
+name: 攻城先宣告和睦（遠方之城可和好、效勞）
+type: 事件
+secondary_types: []
+aliases:
+- 宣告和睦
+- 遠方城市投降
+status: formal
+definition: 申命記 20:10-11, 15 規定以色列臨近攻打遠方之城（非迦南七族之城）時，先要宣告和睦。若城民回應和睦並開城，城內眾人必成為效勞的僕人服事以色列。此條例僅適用於「離你甚遠的各城，不是這些國民的城」（第
+  15 節），體現戰爭倫理：優先和平、保全性命、區分迦南審判與一般擴張戰爭。
+development: 此原則在約書亞記 9 章（基遍人詐降）與撒母耳記下 10:19（亞捫人求和）有實際操作回響；拉比律法（如《米示拿·桑赫德林篇》1:5）將「宣告和睦」視為戰爭的必要法律程序。
+accumulations:
+- book: 申命記
+  chapter: 20
+  summary: 經文 10-11, 15 節，攻打遠方非迦南城市，須先宣告和睦；若投降，居民成為效勞僕人。
+  relation: 為本章攻城法規的第一階段，區分「遠方之城」與「迦南之城」的不同待遇，若拒和則進入「不肯和好、圍困攻城」程序。
+related_entries:
+- 派軍長率領百姓
+- 不肯和好、圍困攻城（遠方之城可殺男丁、擄掠婦女孩子財物）
+- 迦南七族之城不可存留氣息（赫人、亞摩利人等）
+sources:
+- '研經註解: 申命記 20 章研經註解（https://biblehub.com/study/deuteronomy/20.htm）'
+- '逐節註解: 申命記 20 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT20.htm）'
+- '拾穗: 申命記 20 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT20.htm）'
+- '研經註解: 申命記 20 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/20）'
+created_from: deuteronomy_20
+category: narrative
+trigger_sources: []
+current_data: {}
+pending: false

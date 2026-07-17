@@ -1,7 +1,7 @@
 {
-  "total_warnings": 140,
+  "total_warnings": 137,
   "critical_count": 0,
-  "warning_count": 140,
+  "warning_count": 137,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -174,30 +174,9 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第12章.md",
-      "target": "行割禮",
-      "message": "同一 alias「行割禮」指向多個 target: 割禮之約, 割禮（milah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第12章.md",
-      "target": "聖所",
-      "message": "同一 alias「聖所」指向多個 target: 聖所, 聖所（miqdash）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第12章.md",
-      "target": "贖罪祭",
-      "message": "同一 alias「贖罪祭」指向多個 target: 贖罪祭, 贖罪祭（chatat）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第12章.md",
-      "target": "會幕門口",
-      "message": "同一 alias「會幕門口」指向多個 target: 聖所, 聖所（miqdash）"
+      "source": "利未記/第11章.md",
+      "target": "駱駝",
+      "message": "同一 alias「駱駝」指向多個 target: 駱駝, 駱駝成為家畜"
     },
     {
       "type": "alias_target_conflict",

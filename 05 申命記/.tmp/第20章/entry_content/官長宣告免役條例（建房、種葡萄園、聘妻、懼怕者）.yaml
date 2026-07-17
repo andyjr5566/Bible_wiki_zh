@@ -1,0 +1,29 @@
+name: 官長宣告免役條例（建房、種葡萄園、聘妻、懼怕者）
+type: 事件
+secondary_types: []
+aliases:
+- 免役條例
+- 戰前免役
+status: formal
+definition: 申命記 20:5-8 記載官長在祭司勸勉後，對百姓宣告四類免役條例：(1) 建造房屋尚未奉獻者；(2) 種葡萄園尚未享用其果子者；(3) 聘定妻尚未迎娶者；(4)
+  懼怕膽怯者。前三類關乎生命大事未完成，第四類防止恐懼傳染（「恐怕他弟兄的心消化，和他一樣」）。此條例體現神對個人生命與群體士氣的關顧。
+development: 此條例在士師記 7:3（基甸選兵）與歷代志上下的軍事動員中有應用回響；拉比文獻（如《米示拿·索塔篇》8 章）進一步細化奉獻房屋、享用果子、迎娶妻子的具體定義與期限。
+accumulations:
+- book: 申命記
+  chapter: 20
+  summary: 經文 5-8 節，官長宣告四類人可免除兵役：新房未奉獻、新園未享用、新妻未迎娶、心懼怕者。
+  relation: 緊接祭司勸勉之後，將神學信心轉化為具體行政措施，保障個人權益並維護軍隊士氣，為派軍長率領精兵做準備。
+related_entries:
+- 祭司勸勉百姓不要膽怯（神為你們爭戰）
+- 派軍長率領百姓
+- 出征作戰時不要怕（耶和華與你同在）
+sources:
+- '研經註解: 申命記 20 章研經註解（https://biblehub.com/study/deuteronomy/20.htm）'
+- '逐節註解: 申命記 20 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT20.htm）'
+- '拾穗: 申命記 20 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT20.htm）'
+- '研經註解: 申命記 20 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/20）'
+created_from: deuteronomy_20
+category: narrative
+trigger_sources: []
+current_data: {}
+pending: false
