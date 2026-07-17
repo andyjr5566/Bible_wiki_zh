@@ -1119,6 +1119,47 @@ def _split_node_errors(ctx):
 _UNFILEABLE_RE = re.compile(r"[/\\]")
 
 
+def _unknown_type_candidate_errors(ctx):
+    """候選 type 不是 link_folder 底下的真實資料夾——條目永遠建不出來。
+
+    合法 type 就是 link_folder/ 的資料夾名（主題、事件、互文、人物、原文、地點、
+    文化、歷史、神學、背景、解經爭議）。寫成別的（利10 的「祭禮」、民9 的
+    「儀式」、民10 的「器具」），resolver 認不得，只把它降級成 D_new_candidate
+    並附一句 note「未知分類：X」——那是 plan 檔裡的一行字，不是錯誤，跑完照樣
+    印「✅ 完成」。結果與斜線名同一個下場：條目沒建、surfaces 沒連上、
+    knowledge_nodes 對不上被丟掉、本章累積從未寫入，全部靜默。
+
+    利10 實際踩到：三個 type=祭禮 的候選全數蒸發，六道閘門一個都沒擋下來。
+    全庫掃描另有民9／民10 共 3 筆（儀式×2、器具×1），無誤報——判準是純機械的
+    集合比對，不涉推測，故列為 error 而非 manual_review。
+    """
+    payload = ctx.path("link_candidates.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    link_root = Path(ctx.root) / "link_folder"
+    if not link_root.is_dir():
+        return []
+    valid = sorted(p.name for p in link_root.iterdir() if p.is_dir())
+    errors = []
+    for cand in data.get("candidates") or []:
+        if not isinstance(cand, dict):
+            continue
+        name = str(cand.get("name") or "").strip()
+        ctype = str(cand.get("type") or "").strip()
+        if not name or not ctype or ctype in valid:
+            continue
+        errors.append(
+            f"link_candidates.yaml: 候選「{name}」的 type「{ctype}」不是 link_folder 底下的"
+            f"資料夾，條目建不出來（會靜默降級成 D_new_candidate）。"
+            f"合法值：{'、'.join(valid)}"
+        )
+    return errors
+
+
 def _unfileable_candidate_errors(ctx):
     """候選名含斜線偵測——這種名字永遠不可能成為條目檔。
 
@@ -1275,6 +1316,7 @@ def validate_step(ctx, written):
         vkb.ROOT = old_root
     errors.extend(_split_node_errors(ctx))
     errors.extend(_unfileable_candidate_errors(ctx))
+    errors.extend(_unknown_type_candidate_errors(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors

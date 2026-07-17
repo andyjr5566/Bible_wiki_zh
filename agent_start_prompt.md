@@ -15,6 +15,7 @@
    - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。
    - 只放經文或有效 raw text 明確觸發的候選；分類用 `link_folder/` 現有資料夾名。
    - **一個候選只能對一個條目，`name` 不可含斜線**。斜線在檔名裡是路徑分隔字元，`entry_content/<name>.yaml` 建不出來，該候選必定同時：surfaces 連不上任何節、knowledge_nodes 對不上而被丟掉、本章累積永遠不寫入、別的條目 related_entries 指向它而被移除——而且全部靜默，三個閘門照過。利1 的「鳥（斑鳩/雛鴿）」就是這樣讓 v14 的斑鳩、雛鴿完全沒連結；真實條目是 `文化/斑鳩.md` 與 `文化/雛鴿.md`，要拆成兩筆。想涵蓋多個詞用 `surfaces`，不要塞進 `name`。（validate 會擋）
+   - **`type` 只能是 `link_folder/` 底下真的存在的資料夾**：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議。自己造一個看起來很合理的分類（利10 的「祭禮」、民9 的「儀式」、民10 的「器具」）會靜默失效——resolver 認不得，只把候選降級成 `D_new_candidate` 並附一句 note「未知分類：X」，那是 plan 檔裡的一行字，不是錯誤，跑完照樣印「✅ 完成」，下場與斜線名完全相同。祭祀相關的歸 `主題`（制度）或 `原文`（術語），器物歸 `主題`／`文化`。（validate 會擋）
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
    - 資料驅動判準見 `scheme.md` §3。
 

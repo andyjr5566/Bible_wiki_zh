@@ -58,9 +58,15 @@ links:
 - verse: 6
   phrase: 以利亞撒、以他瑪
   target: 以利亞撒、以他瑪
+- verse: 6
+  phrase: 不可蓬頭散髮
+  target: 不可蓬頭散髮、撕裂衣裳
+- verse: 6
+  phrase: 不可撕裂衣裳
+  target: 不可蓬頭散髮、撕裂衣裳
 - verse: 7
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 不可出會幕的門
+  target: 不可蓬頭散髮、撕裂衣裳
 - verse: 7
   phrase: 耶和華的膏油
   target: 耶和華的膏油（shemen mishchat YHWH）
@@ -127,15 +133,6 @@ links:
 - verse: 19
   phrase: 燔祭
   target: 燔祭（olah）
-- verse: 19
-  phrase: 我又遇見這樣的災
-  target: 亞倫解釋今日獻贖罪祭燔祭仍遭禍
-- verse: 19
-  phrase: 若今天吃了贖罪祭，耶和華豈能看為美呢
-  target: 耶和華豈看為美呢
 - verse: 20
   phrase: 摩西
   target: 摩西
-- verse: 20
-  phrase: 便以為美
-  target: 摩西聽了便以為美
