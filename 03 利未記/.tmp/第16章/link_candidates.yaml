@@ -1,214 +1,143 @@
-book: "利未記"
+book: 利未記
 chapter: 16
 candidates:
-  # === 原文類（希伯來文關鍵字） ===
-  - name: "贖罪日（Yom Kippur）"
-    type: "原文"
-    evidence: "利16:29-34「這要作你們永遠的定例...一年一次為以色列人贖罪」；CT註解：大贖罪日是以色列宗教禮儀中最重要的節日；BH：Day of Atonement = most solemn day"
-    surfaces:
-      - "贖罪日"
-      - "大贖罪日"
-      - "七月初十日"
-  - name: "施恩座（kapporet）"
-    type: "原文"
-    evidence: "利16:2,13-15「櫃上的施恩座...香的煙雲遮掩法櫃上的施恩座...彈在施恩座的東面」；CT註解：施恩座是約櫃上的蓋板，具有遮蓋罪的功用；BH：mercy seat = atonement cover"
-    surfaces:
-      - "施恩座"
-      - "除罪蓋"
-      - "憐恤座"
-  - name: "阿撒瀉勒（Azazel）"
-    type: "原文"
-    evidence: "利16:8,10,26「一鬮歸與阿撒瀉勒...打發人送到曠野去，歸與阿撒瀉勒」；CT註解：阿撒瀉勒意為完全除去，指罪被完全除去或歸給撒但；BH：scapegoat = removal of sin"
-    surfaces:
-      - "阿撒瀉勒"
-      - "代罪羊"
-      - "送到曠野"
-  - name: "拈鬮（goral）"
-    type: "原文"
-    evidence: "利16:8-9「為那兩隻羊拈鬮，一鬮歸與耶和華，一鬮歸與阿撒瀉勒」；CT註解：拈鬮由神定規，顯明基督死而復活成就救贖大功；BH：casting lots = divine choice"
-    surfaces:
-      - "拈鬮"
-      - "鬮"
-  - name: "兩隻公山羊（shnei se'irim）"
-    type: "原文"
-    evidence: "利16:5,7-10,15-22「要從以色列會眾取兩隻公山羊為贖罪祭」；CT註解：兩隻羊是一個祭，預表基督死而復活雙重性工作；BH：two goats = Christ's death and resurrection"
-    surfaces:
-      - "兩隻公山羊"
-      - "兩隻羊"
-      - "公山羊"
-  - name: "公牛贖罪祭（par chatat）"
-    type: "原文"
-    evidence: "利16:3,6,11,14「要帶一隻公牛犢為贖罪祭...為自己和本家贖罪」；CT註解：大祭司先為自己和本家贖罪，預表基督為教會成就大功；BH：bull sin offering = priest's atonement"
-    surfaces:
-      - "公牛犢"
-      - "贖罪祭的公牛"
-      - "為自己和本家贖罪"
-  - name: "公綿羊燔祭（ayil olah）"
-    type: "原文"
-    evidence: "利16:3,5,24「一隻公綿羊為燔祭」；CT註解：燔祭表徵完全獻給神，馨香之氣上升；BH：ram burnt offering = total dedication"
-    surfaces:
-      - "公綿羊"
-      - "燔祭"
-  - name: "細麻布聖服（bigdei bad）"
-    type: "原文"
-    evidence: "利16:4,23-24「要穿上細麻布聖內袍...這都是聖服」；CT註解：細麻布表徵聖潔、謙卑，預表基督的義；BH：linen garments = holiness, humility"
-    surfaces:
-      - "細麻布聖內袍"
-      - "細麻布褲子"
-      - "細麻布帶子"
-      - "細麻布冠冕"
-      - "聖服"
-  - name: "香爐與香料（machtah u-ketoret）"
-    type: "原文"
-    evidence: "利16:12-13「拿香爐...盛滿火炭，又拿一捧搗細的香料...使香的煙雲遮掩法櫃上的施恩座」；CT註解：香的煙雲象徵基督代禱功效；BH：censer and incense = Christ's intercession"
-    surfaces:
-      - "香爐"
-      - "香料"
-      - "香的煙雲"
-      - "遮掩施恩座"
-  - name: "彈血七次（hizah sheva pe'amim）"
-    type: "原文"
-    evidence: "利16:14-15,19「用指頭彈在施恩座的東面...彈血七次」；CT註解：七次表徵完全，預表基督一次完全的灑血；BH：sprinkle seven times = complete atonement"
-    surfaces:
-      - "彈血七次"
-      - "七次"
-      - "施恩座東面"
-  - name: "按手承認罪孽（semikhah）"
-    type: "原文"
-    evidence: "利16:21「用兩隻手按在羊頭上，承認以色列人諸般的罪孽、過犯」；CT註解：按手轉移罪孽，預表基督擔當我們的罪；BH：laying on hands = transfer of sin"
-    surfaces:
-      - "按手"
-      - "承認罪孽"
-      - "歸在羊頭上"
-  - name: "曠野（midbar）"
-    type: "原文"
-    evidence: "利16:10,21-22「打發人送到曠野去...羊要擔當他們一切的罪孽，帶到無人之地」；CT註解：曠野象徵罪被完全除去，東離西有多遠；BH：wilderness = removal of sin"
-    surfaces:
-      - "曠野"
-      - "無人之地"
-      - "送到曠野"
-  - name: "大贖罪日條例（chukat Yom Kippur）"
-    type: "原文"
-    evidence: "利16:29-34「這要作你們永遠的定例...一年一次為以色列人贖罪」；CT註解：大贖罪日是永遠的定例，為全會眾贖罪；BH：permanent statute = annual atonement"
-    surfaces:
-      - "永遠的定例"
-      - "一年一次"
-      - "大贖罪日條例"
-
-  # === 主題類（神學概念） ===
-  - name: "大贖罪日儀式的兩階段"
-    type: "主題"
-    evidence: "利16:1-28；CT壹：第一階段營外宣告潔淨(1-9)，第二階段會幕內獻祭贖罪(10-32)；BH：two-stage cleansing = outside camp then before LORD"
-    surfaces:
-      - "大贖罪日儀式"
-      - "兩階段"
-      - "營外"
-      - "會幕內"
-  - name: "兩隻鳥/羊預表基督死而復活"
-    type: "主題"
-    evidence: "利16:5-10,20-22；CT靈意註解：一隻羊宰殺象徵基督死，一隻羊放生象徵基督復活(羅四25)；BH：two birds/goats = Christ's death and resurrection"
-    surfaces:
-      - "兩隻羊"
-      - "死而復活"
-      - "羅馬書4:25"
-  - name: "贖愆祭的獨特性"
-    type: "主題"
-    evidence: "利16:12-13；CT註解：贖愆祭牲是公羊羔、活搖、有同獻素祭、與油同獻、祭司自己搖、無罰金，八大不同；BH：guilt offering unique features = living wave offering with oil"
-    surfaces:
-      - "贖愆祭獨特"
-      - "活搖"
-      - "八大不同"
-  - name: "抹血抹油：完全潔淨與聖靈印記"
-    type: "主題"
-    evidence: "利16:14-18；CT靈意註解：血抹耳拇指拇趾表徵全身潔淨，油抹在血上表徵聖靈以寶血贖罪能力工作(弗一13)；BH：blood then oil = atonement then Spirit sealing"
-    surfaces:
-      - "抹血抹油"
-      - "右耳右手右腳"
-      - "聖靈印記"
-  - name: "罪如大痲瘋：滲透、隔離、需神醫治"
-    type: "神學"
-    evidence: "利16:16,21-22；CT靈意註解：大痲瘋表徵罪的滲透性、隔離性，唯有基督能醫治；BH：leprosy as type of sin = pervasive, isolating, only Christ heals"
-    surfaces:
-      - "罪"
-      - "大痲瘋表徵罪"
-      - "隔離"
-  - name: "基督作大祭司醫治大痲瘋"
-    type: "神學"
-    evidence: "利16:2-3,11-14；CT靈意註解：祭司察看預表基督作大祭司察看人心；耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role"
-    surfaces:
-      - "大祭司"
-      - "耶穌醫治痲瘋"
-      - "屬靈醫治"
-
-  # === 人物類 ===
-  - name: "摩西"
-    type: "人物"
-    evidence: "利16:1「耶和華曉諭摩西說」"
-    surfaces:
-      - "摩西"
-  - name: "亞倫"
-    type: "人物"
-    evidence: "利16:2,6,11-12「要告訴你哥哥亞倫...亞倫要把贖罪祭的公牛奉上」"
-    surfaces:
-      - "亞倫"
-      - "大祭司亞倫"
-  - name: "拿答、亞比戶"
-    type: "人物"
-    evidence: "利16:1「亞倫的兩個兒子近到耶和華面前死了」"
-    surfaces:
-      - "拿答"
-      - "亞比戶"
-      - "亞倫的兩個兒子"
-
-  # === 互文類 ===
-  - name: "米利暗患大痲瘋（民12：10-15）"
-    type: "互文"
-    evidence: "利16:1-2；CT註解：米利暗說摩西的不是，患大痲瘋被關鎖七天；BH：Miriam's leprosy = judgment for speaking against Moses"
-    surfaces:
-      - "米利暗"
-      - "民數記12章"
-  - name: "烏西雅王患大痲瘋（代下26：19-21）"
-    type: "互文"
-    evidence: "利16:1-2；CT註解：烏西雅王心高氣傲進聖殿燒香，患大痲瘋至死；BH：Uzziah's leprosy = pride judged"
-    surfaces:
-      - "烏西雅"
-      - "歷代志下26章"
-  - name: "乃縵患大痲瘋得醫治（王下5：1-14）"
-    type: "互文"
-    evidence: "利16:1-2；CT註解：乃縵順服以利沙吩咐在約旦河洗七次得潔淨；BH：Naaman's healing = obedience brings cleansing"
-    surfaces:
-      - "乃縵"
-      - "列王記下5章"
-  - name: "耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）"
-    type: "互文"
-    evidence: "利16:1-2；CT註解：耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role"
-    surfaces:
-      - "馬太福音8章"
-      - "馬可福音1章"
-      - "路加福音5章"
-      - "耶穌醫治痲瘋"
-  - name: "幔子裂開（太27：51；來10：19-20）"
-    type: "互文"
-    evidence: "利16:2；CT註解：主耶穌死時幔子裂為兩半，開了又新又活的路；BH：veil torn = access to God through Christ"
-    surfaces:
-      - "馬太福音27章"
-      - "希伯來書10章"
-      - "幔子裂開"
-
-  # === 事件類 ===
-  - name: "頒布大贖罪日條例"
-    type: "事件"
-    evidence: "利16:1-2「亞倫的兩個兒子...死了之後，耶和華曉諭摩西說...要告訴你哥哥亞倫」"
-    surfaces:
-      - "亞倫的兩個兒子死了"
-      - "耶和華曉諭摩西"
-      - "頒布條例"
-
-  # === 文化類 ===
-  - name: "古代近東贖罪觀與替罪羊概念"
-    type: "文化"
-    evidence: "利16:8-10；CT註解：赫人有將邪惡轉移到動物身上送走的儀式；美索不達米亞視動物為人的代替品；BH：ancient Near East viewed scapegoat rituals"
-    surfaces:
-      - "古代近東"
-      - "替罪羊"
-      - "阿撒瀉勒"
+- name: 贖罪日（Yom Kippur）
+  type: 原文
+  evidence: 利16:29-34「這要作你們永遠的定例...一年一次為以色列人贖罪」；CT註解：大贖罪日是以色列宗教禮儀中最重要的節日；BH：Day of Atonement = most solemn day
+  surfaces:
+  - 贖罪日
+  - 大贖罪日
+  - 七月初十日
+- name: 施恩座（kapporet）
+  type: 主題
+  evidence: 利16:2,13-15「櫃上的施恩座...香的煙雲遮掩法櫃上的施恩座...彈在施恩座的東面」；CT註解：施恩座是約櫃上的蓋板，具有遮蓋罪的功用；BH：mercy seat = atonement cover
+  surfaces:
+  - 施恩座
+  - 除罪蓋
+  - 憐恤座
+- name: 阿撒瀉勒（Azazel）
+  type: 原文
+  evidence: 利16:8,10,26「一鬮歸與阿撒瀉勒...打發人送到曠野去，歸與阿撒瀉勒」；CT註解：阿撒瀉勒意為完全除去，指罪被完全除去或歸給撒但；BH：scapegoat = removal of sin
+  surfaces:
+  - 阿撒瀉勒
+  - 歸與阿撒瀉勒
+- name: 拈鬮（goral）
+  type: 原文
+  evidence: 利16:8-9「為那兩隻羊拈鬮，一鬮歸與耶和華，一鬮歸與阿撒瀉勒」；CT註解：拈鬮由神定規，顯明基督死而復活成就救贖大功；BH：casting lots = divine choice
+  surfaces:
+  - 拈鬮
+  - 鬮
+- name: 兩隻公山羊（shnei se'irim）
+  type: 原文
+  evidence: 利16:5,7-10,15-22「要從以色列會眾取兩隻公山羊為贖罪祭」；CT註解：兩隻羊是一個祭，預表基督死而復活雙重性工作；BH：two goats = Christ's death and resurrection
+  surfaces:
+  - 兩隻公山羊
+  - 兩隻羊
+  - 公山羊
+- name: 公牛贖罪祭（par chatat）
+  type: 原文
+  evidence: 利16:3,6,11,14「要帶一隻公牛犢為贖罪祭...為自己和本家贖罪」；CT註解：大祭司先為自己和本家贖罪，預表基督為教會成就大功；BH：bull sin offering = priest's atonement
+  surfaces:
+  - 公牛犢
+  - 贖罪祭的公牛
+  - 為自己和本家贖罪
+- name: 公綿羊燔祭（ayil olah）
+  type: 原文
+  evidence: 利16:3,5,24「一隻公綿羊為燔祭」；CT註解：燔祭表徵完全獻給神，馨香之氣上升；BH：ram burnt offering = total dedication
+  surfaces:
+  - 公綿羊
+  - 燔祭
+- name: 細麻布聖服（bigdei bad）
+  type: 原文
+  evidence: 利16:4,23-24「要穿上細麻布聖內袍...這都是聖服」；CT註解：細麻布表徵聖潔、謙卑，預表基督的義；BH：linen garments = holiness, humility
+  surfaces:
+  - 細麻布聖內袍
+  - 細麻布褲子
+  - 細麻布帶子
+  - 細麻布冠冕
+  - 聖服
+- name: 香爐與香料（machtah u-ketoret）
+  type: 原文
+  evidence: 利16:12-13「拿香爐...盛滿火炭，又拿一捧搗細的香料...使香的煙雲遮掩法櫃上的施恩座」；CT註解：香的煙雲象徵基督代禱功效；BH：censer and incense = Christ's intercession
+  surfaces:
+  - 香爐
+  - 香料
+  - 香的煙雲
+  - 遮掩施恩座
+- name: 彈血七次（hizah sheva pe'amim）
+  type: 事件
+  evidence: 利16:14-15,19「用指頭彈在施恩座的東面...彈血七次」；CT註解：七次表徵完全，預表基督一次完全的灑血；BH：sprinkle seven times = complete atonement
+  surfaces:
+  - 彈血七次
+  - 七次
+  - 施恩座東面
+- name: 按手承認罪孽（semikhah）
+  type: 原文
+  evidence: 利16:21「用兩隻手按在羊頭上，承認以色列人諸般的罪孽、過犯」；CT註解：按手轉移罪孽，預表基督擔當我們的罪；BH：laying on hands = transfer of sin
+  surfaces:
+  - 按手
+  - 承認罪孽
+  - 歸在羊頭上
+- name: 曠野（midbar）
+  type: 地點
+  evidence: 利16:10,21-22「打發人送到曠野去...羊要擔當他們一切的罪孽，帶到無人之地」；CT註解：曠野象徵罪被完全除去，東離西有多遠；BH：wilderness = removal of sin
+  surfaces:
+  - 曠野
+  - 無人之地
+- name: 大贖罪日條例（chukat Yom Kippur）
+  type: 原文
+  evidence: 利16:29-34「這要作你們永遠的定例...一年一次為以色列人贖罪」；CT註解：大贖罪日是永遠的定例，為全會眾贖罪；BH：permanent statute = annual atonement
+  surfaces:
+  - 永遠的定例
+  - 一年一次
+  - 大贖罪日條例
+- name: 大贖罪日儀式的兩階段
+  type: 主題
+  evidence: 利16:1-28；CT壹：第一階段營外宣告潔淨(1-9)，第二階段會幕內獻祭贖罪(10-32)；BH：two-stage cleansing = outside camp then before LORD
+  surfaces:
+  - 大贖罪日儀式
+  - 兩階段
+  - 營外
+  - 會幕內
+- name: 兩隻鳥預表基督死而復活
+  type: 主題
+  evidence: 利16:5-10 兩隻公山羊是一個贖罪祭。丁良才：「這兩隻山羊是一個祭（5注），要表示基督因死而復活所成就之救人的大功，所以必須有兩隻（參十四4）」——利14:4-7 的兩隻鳥與本章的兩隻羊是同一個預表：一死一放，一血一自由。他並記猶太遺風：「這兩隻公山羊的大小、毛色和價格是必須一樣的（參十四4第二注）。」賈斯樂郝威：「第一隻公山羊被殺，牠的血被彈灑在施恩座上，表示基督為我們的罪代我們死並且流血……另一隻山羊……表示羊將以色列人的罪孽帶走（賽53:6）。」丁良才總結：「第一隻羊是表明贖罪的方法，第二隻羊是表示贖罪的結果（賽53:6、11-12，約1:29，來9:26、28，彼前2:24）。」
+  surfaces:
+  - 預表基督死而復活
+- name: 摩西
+  type: 人物
+  evidence: 利16:1「耶和華曉諭摩西說」
+  surfaces:
+  - 摩西
+- name: 亞倫
+  type: 人物
+  evidence: 利16:2,6,11-12「要告訴你哥哥亞倫...亞倫要把贖罪祭的公牛奉上」
+  surfaces:
+  - 亞倫
+  - 大祭司亞倫
+- name: 拿答、亞比戶
+  type: 人物
+  evidence: 利16:1「亞倫的兩個兒子近到耶和華面前死了」
+  surfaces:
+  - 拿答
+  - 亞比戶
+  - 亞倫的兩個兒子
+- name: 幔子裂開（太27：51；來10：19-20）
+  type: 互文
+  evidence: 利16:2；CT註解：主耶穌死時幔子裂為兩半，開了又新又活的路；BH：veil torn = access to God through Christ
+  surfaces:
+  - 馬太福音27章
+  - 希伯來書10章
+  - 幔子裂開
+- name: 頒布大贖罪日條例
+  type: 事件
+  evidence: 利16:1-2「亞倫的兩個兒子...死了之後，耶和華曉諭摩西說...要告訴你哥哥亞倫」
+  surfaces:
+  - 亞倫的兩個兒子死了
+  - 耶和華曉諭摩西
+  - 頒布條例
+- name: 古代近東贖罪觀與替罪羊概念
+  type: 文化
+  evidence: 利16:8-10；CT註解：赫人有將邪惡轉移到動物身上送走的儀式；美索不達米亞視動物為人的代替品；BH：ancient Near East viewed scapegoat rituals
+  surfaces:
+  - 替罪羊

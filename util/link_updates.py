@@ -163,7 +163,10 @@ def apply_updates(manifest, dry_run=False):
             else:
                 insertion = accumulation.end(1)
                 for heading in re.finditer(r"^###\s+(.+?)\s*$", section, re.M):
-                    heading_name = heading.group(1)
+                    # 標題可能是資料夾名（「04 民數記」——舊 bug 留下的損害，尚未全數併回）。
+                    # 不正規化就認不得它是民數記，利未記會被丟到檔尾，排在民數記後面，
+                    # validate 判「未依書卷排序」（主題/施恩座、地點/曠野 實際踩過）。
+                    heading_name = canonical_book_name(heading.group(1))
                     # 部分舊格式條目在「## 按書卷累積」下混有非書卷子標題
                     # （如 觸發來源／聖經出現／與目前整理書卷的關聯）；
                     # 只依實際書卷標題排序，略過非書卷標題以免插入位置跑掉。
