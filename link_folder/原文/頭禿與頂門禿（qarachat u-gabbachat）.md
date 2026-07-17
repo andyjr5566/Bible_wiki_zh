@@ -6,7 +6,6 @@ aliases:
 - 頂門禿
 - 禿頭
 - 禿頂
-- 頭禿與頂門禿
 status: formal
 source_scope: collected_only
 ---

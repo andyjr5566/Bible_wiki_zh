@@ -14,6 +14,9 @@ links:
   phrase: 香柏木
   target: 香柏木（erez）
 - verse: 4
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+- verse: 4
   phrase: 牛膝草
   target: 牛膝草
 - verse: 5
@@ -25,6 +28,9 @@ links:
 - verse: 6
   phrase: 香柏木
   target: 香柏木（erez）
+- verse: 6
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 6
   phrase: 牛膝草
   target: 牛膝草
@@ -43,9 +49,6 @@ links:
 - verse: 9
   phrase: 全身的毛
   target: 剃去毛髮（giluach）
-- verse: 12
-  phrase: 一隻公羊羔
-  target: 貧窮人的代替獻祭（dal）
 - verse: 12
   phrase: 贖愆祭
   target: 贖愆祭（asham）
@@ -93,13 +96,10 @@ links:
   target: 罪如大痲瘋：滲透、隔離、需神醫治
 - verse: 21
   phrase: 貧窮
-  target: 貧窮人的代替獻祭（dal）
+  target: 貧窮人的代替獻祭
 - verse: 21
   phrase: 不能預備夠數
-  target: 貧窮人的代替獻祭（dal）
-- verse: 21
-  phrase: 一隻公羊羔
-  target: 貧窮人的代替獻祭（dal）
+  target: 貧窮人的代替獻祭
 - verse: 21
   phrase: 贖愆祭
   target: 贖愆祭（asham）
@@ -152,9 +152,6 @@ links:
   phrase: 耶和華曉諭摩西
   target: 頒布大痲瘋潔淨條例
 - verse: 34
-  phrase: 迦南地
-  target: 房屋大痲瘋與迦南地
-- verse: 34
   phrase: 房屋中有大痲瘋
   target: 房屋大痲瘋（tzara'at ba-bayit）
 - verse: 49
@@ -163,6 +160,9 @@ links:
 - verse: 49
   phrase: 香柏木
   target: 香柏木（erez）
+- verse: 49
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 49
   phrase: 牛膝草
   target: 牛膝草
@@ -175,6 +175,9 @@ links:
 - verse: 51
   phrase: 牛膝草
   target: 牛膝草
+- verse: 51
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 51
   phrase: 活鳥
   target: 兩隻潔淨活鳥（shtei tzipporim tehorot）
@@ -196,6 +199,9 @@ links:
 - verse: 52
   phrase: 牛膝草
   target: 牛膝草
+- verse: 52
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
 - verse: 53
   phrase: 活鳥
   target: 兩隻潔淨活鳥（shtei tzipporim tehorot）
