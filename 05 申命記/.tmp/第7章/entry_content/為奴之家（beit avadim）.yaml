@@ -1,0 +1,25 @@
+name: 為奴之家（beit avadim）
+type: 原文
+secondary_types: []
+aliases:
+- 為奴之家
+status: formal
+definition: 希伯來文「בֵּית עֲבָדִים」（beit avadim），字面「奴隸之家」，申命記第7章8節提到神從「為奴之家」救贖以色列脫離埃及王法老的手，指埃及作為奴役之地。
+development: 此詞在舊約多處（如出埃及記13:3、申命記5:6）重複出現，成為救贖歷史的標誌性術語。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 神用大能的手從為奴之家救贖以色列脫離法老
+  relation: 直接引用原文術語，說明救贖出埃及的神學意義
+related_entries:
+- 脫離鐵爐
+- 埃及鐵爐
+- 神愛列祖揀選後裔
+sources:
+- '拾穗: 申命記第7章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm）'
+- '研經註解: 申命記第7章研經註解（https://biblehub.com/study/deuteronomy/7.htm）'
+created_from: 申命記第7章
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: []

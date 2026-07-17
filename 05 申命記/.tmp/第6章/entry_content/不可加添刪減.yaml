@@ -1,0 +1,33 @@
+name: 不可加添刪減
+type: 神學
+secondary_types: []
+aliases:
+- 不可增減神的話
+- 律法的完整性
+status: formal
+definition: 申命記核心神學原則：神的誡命不可增添，也不可刪減（申4:2；12:32[13:1]），要求對啟示之話語保持絕對忠信。本章v.17「要留意遵守耶和華─你們神所吩咐的誡命、法度、律例」，v.25「若照耶和華─我們神所吩咐的一切誡命謹守遵行，這就是我們的義了」，雖未用「加添刪減」字眼，卻以「留意遵守」、「一切誡命」、「謹守遵行」表達同一神學意圖：完全順服、不自作主張。
+development: 此原則貫穿聖經正典形成：摩西律法（申4:2）、先知書（耶26:2）、智慧文學（箴30:6）、新約啟示（啟22:18-19），構成「聖經充足性」教義的舊約根基；拉比傳統建立「圍籬律法」雖出於保護，卻有添加之虞；耶穌斥責法利賽人「離棄神的誡命，拘守人的吩咐」（可7:8）即針對此弊。
+accumulations:
+- book: 申命記
+  chapter: 6
+  summary: 經文要求「留意遵守……一切誡命、法度、律例」（v.17），並將「謹守遵行一切誡命」視為「義」（v.25），體現不可增減的順服邏輯。
+  relation: 本章作為示馬（vv.4-9）與誡命教導的核心段落，其「一切誡命」的整全性要求，直接對應「不可加添刪減」的正典原則。
+related_entries:
+- 律例典章
+- 遵守誡命得福長久
+- 保守心靈傳給子孫
+- 今日要知道耶和華是神
+sources:
+- '逐節註解: 申命記第6章逐節註解——謹守一切誡命的要求（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm）'
+- '拾穗: 申命記第6章拾穗——不可增減神的話語（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm）'
+- '研經註解: 申命記第6章研經註解——誡命的完整性與順服（https://www.kingcomments.com/en/bible-studies/Deu/6）'
+- '研經註解: 申命記第6章研經註解——律法的義與完全遵守（https://biblehub.com/study/deuteronomy/6.htm）'
+created_from: 申命記第6章研經
+category: 神學
+trigger_sources:
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm
+- https://www.kingcomments.com/en/bible-studies/Deu/6
+- https://biblehub.com/study/deuteronomy/6.htm
+current_data: completed
+pending: false

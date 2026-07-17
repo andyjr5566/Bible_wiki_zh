@@ -1,0 +1,32 @@
+name: 神領以色列進迦南
+type: 事件
+secondary_types: []
+aliases:
+- 神領以色列進迦南
+status: formal
+definition: 申命記第7章記載耶和華神領以色列進入迦南地，趕出七國的民（赫人、革迦撒人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人），並應許為他們爭戰、漸漸趕出敵人，使他們得地為業。
+development: 此事件展示神的主權與信實，屬於聖戰毀滅原則的一部分。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 記載神領以色列進迦南、趕出七國、應許爭戰與漸漸趕出
+  relation: 本章核心事件，奠定以色列得地的神學基礎
+related_entries:
+- 七國（迦南七族）
+- 聖戰毀滅原則
+- 漸漸趕出
+- 大而可畏的神
+- 耶和華為你爭戰
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm'
+- '研經註解: https://www.kingcomments.com/en/bible-studies/Deu/7'
+- '研經註解: https://biblehub.com/study/deuteronomy/7.htm'
+created_from: 申命記第7章
+category: 事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

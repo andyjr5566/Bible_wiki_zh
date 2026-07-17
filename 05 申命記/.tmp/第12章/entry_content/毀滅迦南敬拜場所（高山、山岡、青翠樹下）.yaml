@@ -1,0 +1,32 @@
+name: 毀滅迦南敬拜場所（高山、山岡、青翠樹下）
+type: 事件
+secondary_types:
+- 神學
+- 律法
+aliases:
+- 毀滅迦南敬拜場所
+- 毀壞高山祭壇
+status: formal
+definition: 耶和華命令以色列人進入迦南地後，必須徹底毀滅所有國民事奉神的場所，包括高山、小山、青翠樹下的祭壇、柱像、木偶（亞舍拉）、雕刻的神像，並將其名從那地方除滅（申12:2-3）。此行動旨在清除土地上的屬靈污染，為建立耶和華獨一的敬拜中心鋪路。
+development: 此命令緊接申命記12:1「律例典章」的引言，作為進地敬拜改革的第一步：先除舊，後立新（中央聖所）。
+accumulations:
+- book: 申命記
+  chapter: 12
+  summary: 神命令以色列人進入迦南後，必須徹底毀滅當地所有的偶像崇拜場所與設施，不可留存。
+  relation: 本章開啟敬拜律例的首要前提——清除異教污染，與第5節以降「耶和華揀選立名的地方」形成鮮明對比。
+related_entries:
+- 律例典章
+- 耶和華揀選立名的地方（中央聖所）
+- 不可照外邦人敬拜神的方式敬拜耶和華
+- 不可隨從被剪除國民的惡俗（不可事奉他們的神）
+sources:
+- '研經註解 (BibleHub): 申命記第12章第2-3節，毀滅迦南敬拜場所的命令與細節（https://biblehub.com/study/deuteronomy/12.htm）'
+- '逐節註解: 申命記12:2-3，關於高山、山岡、青翠樹下祭壇柱像木偶的毀壞方式（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT12.htm）'
+- '拾穗: 申命記12:2-3，屬靈爭戰視角下的毀滅偶像意義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT12.htm）'
+- '研經註解 (KingComments): 申命記12:1-3，律例典章引論與毀滅迦南敬拜的神學基礎（https://www.kingcomments.com/en/bible-studies/Deu/12）'
+created_from: 申命記第12章研經整理
+category: 事件
+trigger_sources:
+- 申12:2-3
+current_data: true
+pending: false

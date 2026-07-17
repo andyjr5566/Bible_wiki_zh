@@ -1,0 +1,33 @@
+name: 摩西不得過約但河
+type: 事件
+secondary_types: []
+aliases:
+- 摩西不能進迦南
+- 摩西死在約但河東
+status: formal
+definition: 指神因摩西在米利巴水觸犯祂的聖潔（民20:12；申32:51），宣判他不能帶領以色列過約但河進迦南（申3:23-27；4:21-22）。本章雖未直接記載此事，卻隱含摩西作為「中保」將誡命傳給即將過河的新一代（v.1），並在生命最後在知曉自己不得進地的情況下，仍忠心履行教導與立約更新的職責。
+development: 此事件在申命記成為全書的悲劇張力：摩西雖是律法的傳遞者，卻因不順服而無法進入應許；這預表律法本身無法領人進安息，須靠「耶和華的僕人」約書亞（預表基督）才能成就（來3:5-6；4:8-9）。
+accumulations:
+- book: 申命記
+  chapter: 6
+  summary: 摩西受命教導律例典章，使百姓「在所要過去得為業的地上遵行」（v.1），暗示教導者自己不在「過去」之列。
+  relation: 本章作為摩西最後遺囑的一部分，其教導的迫切性與權威性，部分源於他即將離世、無法親自帶領進地的現實。
+related_entries:
+- 約書亞接替摩西
+- 教導兒女
+- 遵守誡命得福長久
+- 專靠耶和華
+sources:
+- '逐節註解: 申命記第6章逐節註解——摩西傳遞誡命的權威背景（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm）'
+- '拾穗: 申命記第6章拾穗——代際傳承的迫切性（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm）'
+- '研經註解: 申命記第6章研經註解——摩西作為立約中保的角色（https://www.kingcomments.com/en/bible-studies/Deu/6）'
+- '研經註解: 申命記第6章研經註解——律法與應許的張力（https://biblehub.com/study/deuteronomy/6.htm）'
+created_from: 申命記第6章研經
+category: 事件
+trigger_sources:
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm
+- https://www.kingcomments.com/en/bible-studies/Deu/6
+- https://biblehub.com/study/deuteronomy/6.htm
+current_data: completed
+pending: false

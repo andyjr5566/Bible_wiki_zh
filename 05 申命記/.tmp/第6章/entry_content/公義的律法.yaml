@@ -1,0 +1,33 @@
+name: 公義的律法
+type: 神學
+secondary_types: []
+aliases:
+- 公義的典章
+- 律法的公義
+status: formal
+definition: 申命記4:8稱「有何大國，其律例典章盡如我今日所陳明在你們面前這律法這樣公義呢？」申命記第6章雖未用「公義」形容律法，但v.17-18要求「留意遵守誡命、法度、律例」，並「行耶和華眼中看為正、看為善的」；v.25更宣告「我們若照耶和華我們神所吩咐的一切誡命謹守遵行，這就是我們的義了」。此處「義」（tsedaqah）與「公義」同根，顯示律法本身具公義屬性，遵行律法即活出公義，並蒙神算為義。
+development: 此神學從申4:8的律法公義，經由申6:25的行為之義，對話保羅神學（羅10:5；加3:11-12）與雅各書（雅2:21-24），在「律法的義」與「信心的義」張力中，見證神公義標準的不變與基督成全的恩典。
+accumulations:
+- book: 申命記
+  chapter: 6
+  summary: 本章以「行正行善」（v.18）詮釋律法的公義內涵，並以「謹守遵行一切誡命...這就是我們的義」（v.25）確立遵行公義律法與得稱義的關聯，回應申4:8「律例典章...公義」的宣告。
+  relation: 第6章將「公義的律法」從抽象屬性（申4:8）轉化為具體的倫理要求（行正行善）與救恩論地位（算為義），構成申命記神學的核心張力點。
+related_entries:
+- 律例典章
+- 遵守誡命得福長久
+- 以色列的義
+- 不可偏離左右
+- 公義的律法
+sources:
+- '逐節註解: 申命記第6章17-18, 25節公義律法與遵行之義的釋經（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm）'
+- '拾穗: 申命記第6章律法公義屬性的神學反思（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm）'
+- '研經註解: 申命記第6章律法的公義與人的義（https://www.kingcomments.com/en/bible-studies/Deu/6）'
+- '研經註解: 申命記第6章公義律法的釋經分析（https://biblehub.com/study/deuteronomy/6.htm）'
+created_from: 申命記第6章
+category: 神學
+trigger_sources:
+- 申6:17-18
+- 申6:25
+- 申4:8
+current_data: {}
+pending: {}

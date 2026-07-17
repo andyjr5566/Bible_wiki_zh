@@ -1,0 +1,25 @@
+name: 指著神名起誓
+type: 神學
+secondary_types: []
+aliases:
+- 指著神名起誓
+status: formal
+definition: 申命記第7章雖未直接論及起誓，但第9節宣告耶和華是信實的神，守約施慈愛，奠定了以神名起誓的神學基礎——誓言的可靠性建立在神的信實上。
+development: 後續律法（如申6:13）明文規定「要指著耶和華你神的名起誓」。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 宣告耶和華是信實的神，守約施慈愛
+  relation: 為指著神名起誓提供神學根據
+related_entries:
+- 耶和華是獨一的主
+- 神的獨一性
+- 今日要知道耶和華是神
+sources:
+- '逐節註解: 申命記第7章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm）'
+- '研經註解: 申命記第7章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/7）'
+created_from: 申命記第7章
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: []

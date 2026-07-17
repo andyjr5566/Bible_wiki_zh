@@ -1,0 +1,28 @@
+name: 不可用山羊羔母的奶煮山羊羔
+type: 神學
+secondary_types: []
+aliases:
+- 煮山羊羔在母奶中禁令
+status: formal
+definition: 申命記 14:21b 禁止「不可用山羊羔母的奶煮山羊羔」。同見出埃及記 23:19、34:26。此禁令可能針對迦南宗教儀式（烏加列文獻提到以羊羔在母奶中煮作為生育祭儀），或單純強調「生命與死亡不混淆」（母奶為育命之源，不宜作烹煮幼崽之用）。放在飲食律例結尾，呼應「你是歸耶和華你神為聖潔的民」（v.21a）。
+development: 猶太傳統（米示拿 Hullin 8:1）由此衍生「奶肉分離」完整飲食規範（不同時食用、不同器具、等待間隔）。新約未延續此禮儀律，但「不可行惡事、卻要行善事」（羅
+  12:9）的分別原則長存。
+accumulations:
+- book: 申命記
+  chapter: 14
+  summary: 第 21 節下半，作為飲食律例的結尾禁令，緊接「自死的不可吃」與「聖潔的民」身分宣告。
+  relation: 此禁令屬「潔淨與不潔淨的食物」大框架下的特殊禮儀律，強調聖潔生活的細節與遠離異教習俗。
+related_entries:
+- 潔淨與不潔淨的食物（飲食律例）
+- 自死的不可吃（可給寄居者或賣與外人）
+- 聖潔的民
+sources:
+- '研經註解: 申命記 14 章研經註解（https://biblehub.com/study/deuteronomy/14.htm）'
+- '逐節註解: 申命記 14 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT14.htm）'
+- '拾穗: 申命記 14 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT14.htm）'
+- '研經註解: 申命記 14 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/14）'
+created_from: deuteronomy_14
+category: theology
+trigger_sources: []
+current_data: {}
+pending: false

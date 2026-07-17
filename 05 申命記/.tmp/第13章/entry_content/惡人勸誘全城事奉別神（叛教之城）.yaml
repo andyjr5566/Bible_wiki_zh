@@ -1,0 +1,33 @@
+name: 惡人勸誘全城事奉別神（叛教之城）
+type: 解經爭議
+secondary_types: []
+aliases:
+- 惡人勸誘全城
+- 叛教之城勸誘
+status: formal
+definition: 申命記 13 章 12-14 節描述：在耶和華賜給居住的城中，若有匪類從城中出來勾引居民去事奉素來不認識的別神，必須探聽、查究、細細訪問，若果然是真、準有這可憎惡的事行在中間，才可執行後續審判。此段強調調查程序的嚴謹性（探聽、查究、訪問），確認「叛教之城」事實成立的前提條件。
+development: 此段從個人、家庭擴大至社群層面的背道處理。要求「細細訪問」反映法律程序正義，避免誤判。猶太傳統（如《密西拿》Sanhedrin 1:5）據此發展出嚴格的審判程序，需經大公會定罪。
+accumulations:
+- book: 申命記
+  chapter: 13
+  summary: 經文 12-14 節定義叛教之城的來源（匪類勸誘）、調查步驟（探聽、查究、訪問）、確認標準（果然是真、準有此事）。
+  relation: 本章第三解經爭議單元，為後續「叛教之城必被毀滅」事件鋪設法律調查基礎。
+related_entries:
+- 假先知（先知或作夢的人勸誘事奉別神）
+- 叛教之城必被毀滅（叛教之城）
+- 惡人必被除滅（清除惡人）
+- 不可沾染當毀滅之物（潔淨自己）
+sources:
+- '研經註解: 申命記 13 章 12-14 節叛教之城的調查（https://biblehub.com/study/deuteronomy/13.htm）'
+- '逐節註解: 申命記 13:12-14 叛教之城的查證程序（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT13.htm）'
+- '拾穗: 申命記 13:12-14 城邑背道的查究（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT13.htm）'
+- '研經註解: 申命記 13 章叛教之城的律法（https://www.kingcomments.com/en/bible-studies/Deu/13）'
+created_from: 申命記 第13章
+category: 解經爭議
+trigger_sources:
+- https://biblehub.com/study/deuteronomy/13.htm
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT13.htm
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT13.htm
+- https://www.kingcomments.com/en/bible-studies/Deu/13
+current_data: {}
+pending: {}

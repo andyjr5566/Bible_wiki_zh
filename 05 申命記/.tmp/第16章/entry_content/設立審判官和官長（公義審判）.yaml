@@ -1,0 +1,28 @@
+name: 設立審判官和官長（公義審判）
+type: 事件
+secondary_types: []
+aliases:
+- 設立審判官
+- 設立官長
+status: formal
+definition: 耶和華吩咐在各城按支派設立審判官和官長，他們必須按公義審判，不偏袒、不收賄賂，追求至公至義，以便百姓存活承受地土。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 16
+  summary: 規定設立審判官與官長並要求公義審判
+  relation: 本章將司法公義作為社會穩定的基石
+related_entries:
+- 一年三次朝見（除酵節、七七節、住棚節）
+- 不可在壇旁栽樹木作木偶（禁止亞舍拉）
+- 不可為自己設立柱像（禁止立柱像）
+sources:
+- '研經註解: 申命記16章研經註解（https://biblehub.com/study/deuteronomy/16.htm）'
+- '逐節註解: 申命記16章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm）'
+- '拾穗: 申命記16章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT16.htm）'
+- '研經註解: 申命記16章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/16）'
+created_from: 申命記 16
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

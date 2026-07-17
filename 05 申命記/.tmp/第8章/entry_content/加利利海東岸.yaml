@@ -1,0 +1,25 @@
+name: 加利利海東岸
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記 8:7-8 描述應許之地「有河、有泉、有源，從山谷中流出水來」，加利利海東岸作為重要水系區域，符合經文對美地豐富水源的描繪。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 經文強調美地水源豐沛，河泉源源不絕。
+  relation: 本條目為地理位置，對應經文中關於美地水系的描述。
+related_entries:
+- 河、泉、源
+- 美地（迦南地）
+sources:
+- '逐節註解: 申命記 8 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記 8 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+- '研經註解: 申命記 8 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/8）'
+- '研經註解: 申命記 8 章研經註解（https://biblehub.com/study/deuteronomy/8.htm）'
+created_from: Deut 8
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

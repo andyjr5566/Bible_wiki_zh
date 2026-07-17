@@ -45,6 +45,12 @@ ROOT = UTIL_DIR.parent
 OUTPUT_DIR = UTIL_DIR / "output"
 LINK_FOLDER_PARENT = "link_folder"
 
+import unicodedata
+
+def normalize_name(value):
+    """只正規化 Unicode 與空白，不刪除具有語義的括號內容。"""
+    return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", str(value))).strip()
+
 # ========== 1. 聖經書卷章數資料 ==========
 
 BIBLE_BOOKS_FILE = ROOT / "_config" / "bible_books.json"
@@ -318,11 +324,12 @@ def build_registry(root_path, link_folders):
     )
     title_locations = {entry["title"]: entry["path"] for entry in entries}
     for entity_name, metadata in index.items():
-        existing_entities.add(entity_name)
+        normalized_name = normalize_name(entity_name)
+        existing_entities.add(normalized_name)
         canonical = metadata.get("alias_of", entity_name)
         location = title_locations.get(canonical)
         if location:
-            entity_locations[entity_name] = location
+            entity_locations[normalized_name] = location
     
     # 掃描章節檔
     existing_chapter_links = set()
@@ -333,8 +340,8 @@ def build_registry(root_path, link_folders):
                 continue
             if fname.stem.startswith('第') and (fname.stem.endswith('章') or fname.stem.endswith('篇')):
                 chapter = fname.stem
-                existing_chapter_links.add(f"{item.name} {chapter}")
-                existing_chapter_links.add(f"{item.name}/{chapter}")
+                existing_chapter_links.add(normalize_name(f"{item.name} {chapter}"))
+                existing_chapter_links.add(normalize_name(f"{item.name}/{chapter}"))
         
         # 舊架構
         for section in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
@@ -344,8 +351,8 @@ def build_registry(root_path, link_folders):
             for f in section_path.iterdir():
                 if f.suffix == '.md':
                     chapter = f.stem
-                    existing_chapter_links.add(f"{item.name} {chapter}")
-                    existing_chapter_links.add(f"{item.name} {chapter} {section}")
+                    existing_chapter_links.add(normalize_name(f"{item.name} {chapter}"))
+                    existing_chapter_links.add(normalize_name(f"{item.name} {chapter} {section}"))
     
     return existing_entities, entity_locations, existing_chapter_links
 
@@ -392,9 +399,10 @@ def scan_links(root_path, link_folders, book_name=None):
             entity = link.split('|')[0].strip()
             
             # 檢查是否在實體註冊表或章節檔中
+            normalized_entity = normalize_name(entity)
             if (
-                entity in existing_entities
-                or entity in existing_chapter_links
+                normalized_entity in existing_entities
+                or normalized_entity in existing_chapter_links
                 or is_existing_path_link(root_path, entity)
             ):
                 continue  # 正常連結

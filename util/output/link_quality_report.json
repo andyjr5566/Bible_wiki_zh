@@ -1,7 +1,7 @@
 {
-  "total_warnings": 137,
+  "total_warnings": 139,
   "critical_count": 0,
-  "warning_count": 137,
+  "warning_count": 139,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -174,16 +174,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第10章.md",
-      "target": "清酒、濃酒都不可喝",
-      "message": "同一 alias「清酒、濃酒都不可喝」指向多個 target: 祭司不可喝酒, 酒和濃酒（yayin veshekar）"
+      "source": "利未記/第12章.md",
+      "target": "行割禮",
+      "message": "同一 alias「行割禮」指向多個 target: 割禮之約, 割禮（milah）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "利未記/第12章.md",
-      "target": "潔淨",
-      "message": "同一 alias「潔淨」指向多個 target: 基督的救贖與潔淨, 產後潔淨（taharah）"
+      "target": "聖所",
+      "message": "同一 alias「聖所」指向多個 target: 聖所, 聖所（miqdash）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第12章.md",
+      "target": "贖罪祭",
+      "message": "同一 alias「贖罪祭」指向多個 target: 贖罪祭, 贖罪祭（chatat）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第12章.md",
+      "target": "會幕門口",
+      "message": "同一 alias「會幕門口」指向多個 target: 聖所, 聖所（miqdash）"
     },
     {
       "type": "alias_target_conflict",
@@ -202,9 +216,9 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第4章.md",
-      "target": "按手",
-      "message": "同一 alias「按手」指向多個 target: 按手, 按手（samak）"
+      "source": "利未記/第8章.md",
+      "target": "膏油",
+      "message": "同一 alias「膏油」指向多個 target: 聖膏油, 膏油（聖膏油）"
     },
     {
       "type": "alias_target_conflict",
@@ -212,13 +226,6 @@
       "source": "利未記/第9章.md",
       "target": "燔祭",
       "message": "同一 alias「燔祭」指向多個 target: 為百姓獻燔祭牛犢綿羊羔, 燔祭（olah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第9章.md",
-      "target": "耶和華的榮光",
-      "message": "同一 alias「耶和華的榮光」指向多個 target: 耶和華的榮光, 耶和華的榮光向百姓顯現"
     },
     {
       "type": "alias_target_conflict",
@@ -576,6 +583,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第12章",
+      "message": "同一 alias「第12章」指向多個 target: 02 出埃及記/第12章, 03 利未記/第12章"
     },
     {
       "type": "alias_target_conflict",

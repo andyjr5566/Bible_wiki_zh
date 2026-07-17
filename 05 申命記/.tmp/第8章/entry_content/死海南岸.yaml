@@ -1,0 +1,25 @@
+name: 死海南岸
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記 8:9 提到應許之地「石頭是鐵，山內可以挖銅」，這與死海南岸一帶富含鐵銅礦產的地理特徵相符，顯示神所賜美地包含豐富礦產資源。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 經文描述美地有鐵石與銅礦，暗示該區域（如死海南岸）具備礦產潛力。
+  relation: 本條目為地理位置，對應經文中關於美地礦產的描述。
+related_entries:
+- 鐵礦、銅礦
+- 美地（迦南地）
+sources:
+- '逐節註解: 申命記 8 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記 8 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+- '研經註解: 申命記 8 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/8）'
+- '研經註解: 申命記 8 章研經註解（https://biblehub.com/study/deuteronomy/8.htm）'
+created_from: Deut 8
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

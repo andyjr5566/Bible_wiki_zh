@@ -1,0 +1,27 @@
+name: 亞拉巴
+type: 地點
+secondary_types: []
+aliases:
+- 亞拉巴
+status: formal
+definition: 指約旦河谷及死海一帶的低窪平原，是以色列進迦南前所經過的曠野區域。
+development: 本章提到耶和華領以色列出埃及、進應許之地，亞拉巴為途經之地。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 經文回顧耶和華從埃及領出以色列，途經亞拉巴曠野進入迦南。
+  relation: 連結出埃及歷史與本章進地應許。
+related_entries:
+- 為奴之家
+- 脫離鐵爐
+- 領你進應許之地
+- 七國（迦南七族）
+- 大而可畏的神
+sources:
+- '逐節註解: 申命記 7 章歷史回顧（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm）'
+- '研經註解: 申命記 7 章地理歷史（https://biblehub.com/study/deuteronomy/7.htm）'
+created_from: manual
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

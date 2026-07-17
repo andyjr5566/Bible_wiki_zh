@@ -1,0 +1,31 @@
+name: 早晚背誦示馬（Shema）
+type: 原文
+secondary_types: []
+aliases:
+- 早晚背誦示馬
+status: formal
+definition: 申命記第7章未記載早晚背誦示馬（Shema）的命令；該習慣源於申6:7，本章不涉及。
+development: 本章著重於神的揀選、聖戰與順服誡命的福分，未提及每日背誦示馬的實踐。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 本章未提及早晚背誦示馬
+  relation: 無直接關聯
+related_entries:
+- 早晚背誦示馬
+- 示馬（以色列啊你要聽）
+- 教導兒女（家庭信仰教育）
+- 殷勤教訓兒女
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm'
+- '研經註解: https://www.kingcomments.com/en/bible-studies/Deu/7'
+- '研經註解: https://biblehub.com/study/deuteronomy/7.htm'
+created_from: 申命記第7章
+category: 原文
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

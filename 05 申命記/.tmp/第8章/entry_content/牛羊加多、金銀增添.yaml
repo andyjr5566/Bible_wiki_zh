@@ -1,0 +1,36 @@
+name: 牛羊加多、金銀增添
+type: 事件
+secondary_types: []
+aliases:
+- 牲畜增多
+- 財富增添
+status: formal
+definition: 指以色列得地後，牲畜與金銀大幅增加的經濟繁榮光景。本章 13 節：「你的牛羊加多，你的金銀增添，並你所有的全都加增」，作為飽足驕傲序列第三項，緊接「建造美好的房屋居住」。
+development: 申命記 28:1-14 列順服帶來的物質福氣（牛羊、金銀）；箴言 30:8-9 求神賜適度糧食，免得飽足不認識神。歷史上希西家向巴比倫使者誇示寶物（王下
+  20:12-19）即屬此類驕傲。新約警告財富的欺騙性（太 13:22；提前 6:9-10，17-19）。
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 第 13 節構成「吃飽→建屋→牲畜財富增」三階段遞進，第 14 節總結：「你就心高氣傲，忘記耶和華你的神」。
+  relation: 此事件與前兩項共同構成「飽足驕傲」鏈條，成為「謹慎免得忘記耶和華」（8:11）的具體警戒場景，並引出 17-18 節關於「得貨財力量」的神學辯正。
+related_entries:
+- 建造美好的房屋居住
+- 吃得飽足，就要稱頌耶和華你的神
+- 心高氣傲（驕傲）
+- 得貨財的力量
+- 不可忘記耶和華你的神
+- 管家職分
+- 為要堅定約
+sources:
+- '逐節註解: 申命記 8 章 13 節牛羊金銀增添釋義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記 8 章財富增長的屬靈試驗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+- '研經註解: 申命記 8 章物質福氣與屬靈危險（https://www.kingcomments.com/en/bible-studies/Deu/8）'
+- '研經註解: 申命記 8 章牲畜財富原文用法（https://biblehub.com/study/deuteronomy/8.htm）'
+created_from: deuteronomy_8
+category: 歷史事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

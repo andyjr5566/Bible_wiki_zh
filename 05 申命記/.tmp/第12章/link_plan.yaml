@@ -1,0 +1,280 @@
+book: 申命記
+chapter: 12
+A_use_directly: []
+B_needs_update:
+- name: 律例典章（神的律法）
+  suggested_type: 神學
+  evidence: 經文第1節「這就是你們一生在世上所當謹守遵行的律例典章」；ccbiblestudy CT 指出律例典章代表神全部律法和訓詞；KingComments
+    指出摩西不停地回顧出埃及事件與西奈山頒佈律法事件。
+  surfaces:
+  - phrase: 律例典章
+    verses:
+    - 1
+  - phrase: 律例
+    verses:
+    - 1
+  - phrase: 典章
+    verses:
+    - 1
+  match_type: base
+  existing_title: 律例典章
+  existing_path: link_folder/神學/律例典章.md
+C_new_formal:
+- name: 毀滅迦南敬拜場所（高山、山岡、青翠樹下）
+  suggested_type: 事件
+  evidence: 經文第2-3節「你們要毀壞那些國民事奉神的一切地方，就是在高山、山岡、青翠樹下所事奉的；要拆毀他們的壇，打碎他們的柱像，用火燒燬他們的木偶，砍下他們神像的名字」；ccbiblestudy
+    CT 指出要徹底毀滅迦南敬拜場所；KingComments 指出這是為了防止以色列人陷入偶像崇拜。
+  surfaces:
+  - phrase: 毀壞那些國民事奉神的一切地方
+    verses:
+    - 2
+  - phrase: 高山、山岡、青翠樹下
+    verses:
+    - 2
+  - phrase: 拆毀他們的壇
+    verses:
+    - 3
+  - phrase: 打碎他們的柱像
+    verses:
+    - 3
+  - phrase: 用火燒燬他們的木偶
+    verses:
+    - 3
+  - phrase: 砍下他們神像的名字
+    verses:
+    - 3
+  target_path: link_folder/事件/毀滅迦南敬拜場所（高山、山岡、青翠樹下）.md
+- name: 耶和華揀選立名的地方（中央聖所）
+  suggested_type: 神學
+  evidence: 經文第5、11、14、18、21、26節多次提到「耶和華你神從你們各支派中所選擇立為他名的居所」；ccbiblestudy CT 指出神揀選單一敬拜中心、防止分散敬拜；KingComments
+    指出這預表基督作為真聖殿。
+  surfaces:
+  - phrase: 耶和華你神所選擇立為他名的居所
+    verses:
+    - 5
+    - 11
+    - 14
+    - 18
+    - 21
+    - 26
+  - phrase: 耶和華揀選的地方
+    verses:
+    - 5
+    - 11
+    - 14
+    - 18
+    - 21
+    - 26
+  - phrase: 立為他名的居所
+    verses:
+    - 5
+    - 11
+    - 14
+    - 18
+    - 21
+    - 26
+  target_path: link_folder/神學/耶和華揀選立名的地方（中央聖所）.md
+- name: 獻祭只能在神揀選的地方（集中敬拜）
+  suggested_type: 神學
+  evidence: 經文第5-7、11、13-14、17-18、26-27節規定燔祭、平安祭、十分之一、舉祭、還願祭、甘心祭、頭生牛羊只能在神揀選的地方獻上；ccbiblestudy
+    CT 指出集中敬拜防止偶像崇拜；KingComments 指出這預表基督作為唯一祭壇。
+  surfaces:
+  - phrase: 你們要在那裡獻燔祭
+    verses:
+    - 6
+    - 11
+    - 13
+    - 14
+    - 17
+    - 18
+    - 26
+    - 27
+  - phrase: 獻平安祭
+    verses:
+    - 6
+    - 17
+    - 18
+  - phrase: 十分之一、舉祭、還願祭、甘心祭
+    verses:
+    - 6
+    - 11
+    - 17
+  - phrase: 牛群羊群中頭生的
+    verses:
+    - 6
+    - 17
+  target_path: link_folder/神學/獻祭只能在神揀選的地方（集中敬拜）.md
+- name: 不可照外邦人敬拜神的方式敬拜耶和華
+  suggested_type: 神學
+  evidence: 經文第4、30-31節「你們不可向耶和華你們的神這樣行……免得你們在他們面前陷入網羅，也不可訪問他們的神說：這些國民怎樣事奉他們的神，我也要照樣行」；ccbiblestudy
+    CT 指出不可混合外邦敬拜方式；KingComments 指出這是屬靈通姦。
+  surfaces:
+  - phrase: 不可向耶和華你們的神這樣行
+    verses:
+    - 4
+  - phrase: 不可訪問他們的神
+    verses:
+    - 30
+  - phrase: 我也要照樣行
+    verses:
+    - 30
+  target_path: link_folder/神學/不可照外邦人敬拜神的方式敬拜耶和華.md
+- name: 在各城可宰殺吃肉（非祭物之肉）
+  suggested_type: 神學
+  evidence: 經文第15、21-22節「只要你們心裡願意，就可以照耶和華你神所賜你的福氣，在你們各城裡宰殺喫肉……離你所住的地方太遠，就可以照我所吩咐你的，從耶和華賜給你的牛群羊群中取些宰了，在你們各城裡喫」；ccbiblestudy
+    CT 指出非祭物之肉可在各城食用；KingComments 指出這區分了祭物與普通食物。
+  surfaces:
+  - phrase: 在你們各城裡宰殺喫肉
+    verses:
+    - 15
+    - 21
+    - 22
+  - phrase: 離你所住的地方太遠
+    verses:
+    - 21
+  - phrase: 照我所吩咐你的
+    verses:
+    - 21
+  target_path: link_folder/神學/在各城可宰殺吃肉（非祭物之肉）.md
+- name: 聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方
+  suggested_type: 神學
+  evidence: 經文第17-18、26-27節「只是你分別為聖的物和你的還願祭、甘心祭，並牛群羊群中頭生的，你要帶到耶和華所選擇的地方去」；ccbiblestudy
+    CT 指出聖物不可在各城隨意處理；KingComments 指出這區分了聖物與普通食物。
+  surfaces:
+  - phrase: 分別為聖的物
+    verses:
+    - 17
+    - 26
+  - phrase: 還願祭
+    verses:
+    - 17
+    - 26
+  - phrase: 甘心祭
+    verses:
+    - 17
+    - 26
+  - phrase: 頭生的
+    verses:
+    - 17
+    - 26
+  target_path: link_folder/神學/聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方.md
+- name: 利未人不可被忽略（利未人無分無業）
+  suggested_type: 神學
+  evidence: 經文第12、18-19節「你們要謹慎，免得在你們住在地上一切的日子撇下利未人」；ccbiblestudy CT 指出利未人無分無業、耶和華是他們的產業；KingComments
+    指出這預表新約信徒互相供給。
+  surfaces:
+  - phrase: 撇下利未人
+    verses:
+    - 12
+    - 19
+  - phrase: 利未人在你們城裡無分無業
+    verses:
+    - 12
+    - 18
+  target_path: link_folder/神學/利未人不可被忽略（利未人無分無業）.md
+- name: 不可隨從被剪除國民的惡俗（不可事奉他們的神）
+  suggested_type: 神學
+  evidence: 經文第29-31節「耶和華你神將你要去趕出的國民從你面前剪除……你要謹慎，免得在他們除滅之後隨從他們的惡俗，陷入網羅，也不可訪問他們的神說：這些國民怎樣事奉他們的神，我也要照樣行」；ccbiblestudy
+    CT 指出不可混合外邦敬拜；KingComments 指出這是屬靈通姦。
+  surfaces:
+  - phrase: 不可在他們除滅之後隨從他們的惡俗
+    verses:
+    - 30
+  - phrase: 陷入網羅
+    verses:
+    - 30
+  - phrase: 不可訪問他們的神
+    verses:
+    - 30
+  - phrase: 將自己的兒女用火焚燒
+    verses:
+    - 31
+  target_path: link_folder/神學/不可隨從被剪除國民的惡俗（不可事奉他們的神）.md
+- name: 凡我所吩咐的都要謹守遵行、不可加添也不可刪減
+  suggested_type: 神學
+  evidence: 經文第32節「凡我所吩咐的，你們都要謹守遵行，不可加添，也不可刪減」；ccbiblestudy CT 指出神的話語完全、不可增減；KingComments
+    指出這預表基督成全律法。
+  surfaces:
+  - phrase: 凡我所吩咐的，你們都要謹守遵行
+    verses:
+    - 32
+  - phrase: 不可加添，也不可刪減
+    verses:
+    - 32
+  target_path: link_folder/神學/凡我所吩咐的都要謹守遵行、不可加添也不可刪減.md
+- name: 先知或作夢的人勸誘事奉別神（假先知）
+  suggested_type: 解經爭議
+  evidence: 經文第13:1-5節（屬申命記13章但常與12章連讀）「你們中間若起來一個先知或作夢的人，向你們顯出神蹟奇事，並勸誘你們去事奉別神」；ccbiblestudy
+    CT 指出神蹟不等於真理；KingComments 指出這是測試以色列人是否專心愛神。
+  surfaces:
+  - phrase: 先知或作夢的人
+    verses:
+    - 13
+    - 1
+  - phrase: 神蹟奇事
+    verses:
+    - 13
+    - 1
+  - phrase: 勸誘你們去事奉別神
+    verses:
+    - 13
+    - 2
+  target_path: link_folder/解經爭議/先知或作夢的人勸誘事奉別神（假先知）.md
+- name: 親屬勸誘事奉別神（至親勸誘）
+  suggested_type: 解經爭議
+  evidence: 經文第13:6-11節「你的弟兄、兒子、女兒、懷中的妻、或如同自己性命的朋友，若暗中勸誘你說：我們去事奉別神」；ccbiblestudy CT
+    指出親情不得凌駕真理；KingComments 指出這是最難的試驗。
+  surfaces:
+  - phrase: 你的弟兄、兒子、女兒、懷中的妻
+    verses:
+    - 13
+    - 6
+  - phrase: 如同自己性命的朋友
+    verses:
+    - 13
+    - 6
+  - phrase: 暗中勸誘
+    verses:
+    - 13
+    - 6
+  target_path: link_folder/解經爭議/親屬勸誘事奉別神（至親勸誘）.md
+- name: 惡人勸誘全城事奉別神（叛教之城）
+  suggested_type: 解經爭議
+  evidence: 經文第13:12-18節「你們的城邑中若有人出來，勸誘城內居民說：我們去事奉別神」；ccbiblestudy CT 指出集體叛教須徹底清除；KingComments
+    指出這預表教會紀律。
+  surfaces:
+  - phrase: 你們的城邑中若有人出來
+    verses:
+    - 13
+    - 12
+  - phrase: 勸誘城內居民說：我們去事奉別神
+    verses:
+    - 13
+    - 13
+  - phrase: 將那城擊殺、毀滅
+    verses:
+    - 13
+    - 15
+  target_path: link_folder/解經爭議/惡人勸誘全城事奉別神（叛教之城）.md
+D_new_candidate:
+- name: 不可吃血（血是生命）
+  suggested_type: 神學
+  evidence: 經文第16、23-25節「只是你們不可喫血，因為血是生命，不可將血與肉同喫。不可喫血，要倒在地上，如同倒水一樣」；ccbiblestudy
+    CT 指出血代表生命屬神；KingComments 指出這預表基督寶血贖罪。
+  surfaces:
+  - phrase: 不可喫血
+    verses:
+    - 16
+    - 23
+    - 24
+    - 25
+  - phrase: 血是生命
+    verses:
+    - 23
+  - phrase: 要倒在地上，如同倒水一樣
+    verses:
+    - 16
+    - 24
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=原文，secondary=[]
+E_skip: []

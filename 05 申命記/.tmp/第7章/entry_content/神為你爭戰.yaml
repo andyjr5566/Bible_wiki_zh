@@ -1,0 +1,32 @@
+name: 神為你爭戰
+type: 神學
+secondary_types: []
+aliases:
+- 神為你爭戰
+status: formal
+definition: 申命記7:18-22 強調耶和華神必為以色列爭戰，正如祂在埃及向法老所行的神蹟，並差遣黃蜂趕出敵人，顯明神是大而可畏的神，親自為百姓爭戰。
+development: 此神學主題貫穿聖戰毀滅原則，強調神的主動拯救與保護。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 記載神為以色列爭戰、差遣黃蜂、漸漸趕出敵人
+  relation: 本章核心神學宣告
+related_entries:
+- 神為你爭戰
+- 耶和華為你爭戰
+- 大而可畏的神
+- 聖戰毀滅原則
+- 漸漸趕出
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm'
+- '研經註解: https://www.kingcomments.com/en/bible-studies/Deu/7'
+- '研經註解: https://biblehub.com/study/deuteronomy/7.htm'
+created_from: 申命記第7章
+category: 神學
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

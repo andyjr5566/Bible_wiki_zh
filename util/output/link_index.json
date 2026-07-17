@@ -4953,16 +4953,6 @@
       "見證的櫃"
     ]
   },
-  "細麵": {
-    "path": "link_folder/主題/細麵.md",
-    "type": "主題",
-    "secondary_types": [],
-    "title": "細麵",
-    "status": "formal",
-    "aliases": [
-      "細麵伊法十分之一"
-    ]
-  },
   "終身拿細耳人": {
     "path": "link_folder/主題/終身拿細耳人.md",
     "type": "主題",
@@ -6677,6 +6667,14 @@
       "打發的橄欖油"
     ]
   },
+  "一年三次朝見（除酵節、七七節、住棚節）": {
+    "path": "link_folder/事件/一年三次朝見（除酵節、七七節、住棚節）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "一年三次朝見（除酵節、七七節、住棚節）",
+    "status": "formal",
+    "aliases": []
+  },
   "七十長老受靈": {
     "path": "link_folder/事件/七十長老受靈.md",
     "type": "事件",
@@ -6702,6 +6700,17 @@
     "title": "三大節期律例",
     "status": "formal",
     "aliases": []
+  },
+  "三年一次的十一奉獻（社會福利制度）": {
+    "path": "link_folder/事件/三年一次的十一奉獻（社會福利制度）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "三年一次的十一奉獻（社會福利制度）",
+    "status": "formal",
+    "aliases": [
+      "三年一次的十一奉獻",
+      "社會福利制度"
+    ]
   },
   "三座逃城": {
     "path": "link_folder/事件/三座逃城.md",
@@ -6770,6 +6779,17 @@
     "title": "井口敞開的律例",
     "status": "formal",
     "aliases": []
+  },
+  "亞倫之死與以利亞撒繼任": {
+    "path": "link_folder/事件/亞倫之死與以利亞撒繼任.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "亞倫之死與以利亞撒繼任",
+    "status": "formal",
+    "aliases": [
+      "亞倫之死與以利亞撒繼任",
+      "以利亞撒接續祭司職分"
+    ]
   },
   "亞倫向百姓舉手祝福": {
     "path": "link_folder/事件/亞倫向百姓舉手祝福.md",
@@ -7170,6 +7190,16 @@
       "何利人滅亡"
     ]
   },
+  "何烈山拜金牛犢": {
+    "path": "link_folder/事件/何烈山拜金牛犢.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "何烈山拜金牛犢",
+    "status": "formal",
+    "aliases": [
+      "何烈山金牛犢"
+    ]
+  },
   "何烈山火焰昏黑密雲": {
     "path": "link_folder/事件/何烈山火焰昏黑密雲.md",
     "type": "事件",
@@ -7349,6 +7379,29 @@
       "民數記三十三章路程"
     ]
   },
+  "列祖七十人下埃及、神使你如天上星那樣多": {
+    "path": "link_folder/事件/列祖七十人下埃及、神使你如天上星那樣多.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "列祖七十人下埃及、神使你如天上星那樣多",
+    "status": "formal",
+    "aliases": [
+      "列祖七十人下埃及",
+      "如天上星那樣多",
+      "以色列人口增多"
+    ]
+  },
+  "利未人分別為聖侍立": {
+    "path": "link_folder/事件/利未人分別為聖侍立.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "利未人分別為聖侍立",
+    "status": "formal",
+    "aliases": [
+      "利未支派分別出來",
+      "利未人侍立事奉"
+    ]
+  },
   "利未人受聖職討罪": {
     "path": "link_folder/事件/利未人受聖職討罪.md",
     "type": "事件",
@@ -7506,6 +7559,17 @@
     "status": "formal",
     "aliases": []
   },
+  "叛教之城必被毀滅（叛教之城）": {
+    "path": "link_folder/事件/叛教之城必被毀滅（叛教之城）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "叛教之城必被毀滅（叛教之城）",
+    "status": "formal",
+    "aliases": [
+      "叛教之城",
+      "城邑背道毀滅"
+    ]
+  },
   "召聚長老作見證": {
     "path": "link_folder/事件/召聚長老作見證.md",
     "type": "事件",
@@ -7643,6 +7707,14 @@
       "地裂吞滅可拉大坍亞比蘭"
     ]
   },
+  "埃及神蹟奇事（十災）": {
+    "path": "link_folder/事件/埃及神蹟奇事（十災）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "埃及神蹟奇事（十災）",
+    "status": "formal",
+    "aliases": []
+  },
   "外人守逾越節同歸一例": {
     "path": "link_folder/事件/外人守逾越節同歸一例.md",
     "type": "事件",
@@ -7650,6 +7722,26 @@
     "title": "外人守逾越節同歸一例",
     "status": "formal",
     "aliases": []
+  },
+  "大坍、亞比蘭被地吞滅（可拉黨叛逆）": {
+    "path": "link_folder/事件/大坍、亞比蘭被地吞滅（可拉黨叛逆）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "大坍、亞比蘭被地吞滅（可拉黨叛逆）",
+    "status": "formal",
+    "aliases": [
+      "大坍亞比蘭被吞"
+    ]
+  },
+  "大會的日子（西奈山大會）": {
+    "path": "link_folder/事件/大會的日子（西奈山大會）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "大會的日子（西奈山大會）",
+    "status": "formal",
+    "aliases": [
+      "西奈山大會"
+    ]
   },
   "大衛用車運約櫃（大衛違例用車運櫃）": {
     "path": "link_folder/事件/大衛用車運約櫃（大衛違例用車運櫃）.md",
@@ -7699,6 +7791,14 @@
     "aliases": [
       "女兒繼承產業須嫁同族"
     ]
+  },
+  "守逾越節（亞筆月、無酵餅、困苦餅）": {
+    "path": "link_folder/事件/守逾越節（亞筆月、無酵餅、困苦餅）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "守逾越節（亞筆月、無酵餅、困苦餅）",
+    "status": "formal",
+    "aliases": []
   },
   "安息年律例": {
     "path": "link_folder/事件/安息年律例.md",
@@ -7759,6 +7859,18 @@
     "aliases": [
       "出埃及救贖",
       "從為奴之家釋放"
+    ]
+  },
+  "將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上": {
+    "path": "link_folder/事件/將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上",
+    "status": "formal",
+    "aliases": [
+      "基利心山與以巴路山祝福咒詛",
+      "基利心山祝福",
+      "以巴路山咒詛"
     ]
   },
   "就是摩西、亞倫照耶和華吩咐所數的": {
@@ -8402,6 +8514,16 @@
       "摩西亞倫進入會幕又出來為百姓祝福"
     ]
   },
+  "摩西代禱（為百姓代求）": {
+    "path": "link_folder/事件/摩西代禱（為百姓代求）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西代禱（為百姓代求）",
+    "status": "formal",
+    "aliases": [
+      "摩西代禱"
+    ]
+  },
   "摩西俯伏在地讓神表白": {
     "path": "link_folder/事件/摩西俯伏在地讓神表白.md",
     "type": "事件",
@@ -8704,6 +8826,17 @@
       "揀選千夫長百夫長"
     ]
   },
+  "摩西第二次在山上四十晝夜": {
+    "path": "link_folder/事件/摩西第二次在山上四十晝夜.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "摩西第二次在山上四十晝夜",
+    "status": "formal",
+    "aliases": [
+      "摩西再上西乃山",
+      "第二次四十晝夜"
+    ]
+  },
   "摩西約櫃停住禱告": {
     "path": "link_folder/事件/摩西約櫃停住禱告.md",
     "type": "事件",
@@ -8935,6 +9068,27 @@
       "四十年試煉"
     ]
   },
+  "曠野悖逆（時常悖逆）": {
+    "path": "link_folder/事件/曠野悖逆（時常悖逆）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "曠野悖逆（時常悖逆）",
+    "status": "formal",
+    "aliases": [
+      "時常悖逆"
+    ]
+  },
+  "曠野生活（曠野漂流）": {
+    "path": "link_folder/事件/曠野生活（曠野漂流）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "曠野生活（曠野漂流）",
+    "status": "formal",
+    "aliases": [
+      "曠野漂流",
+      "四十年曠野生活"
+    ]
+  },
   "會幕建成": {
     "path": "link_folder/事件/會幕建成.md",
     "type": "事件",
@@ -9030,6 +9184,20 @@
       "米甸五王陣亡"
     ]
   },
+  "毀滅迦南敬拜場所（高山、山岡、青翠樹下）": {
+    "path": "link_folder/事件/毀滅迦南敬拜場所（高山、山岡、青翠樹下）.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "律法"
+    ],
+    "title": "毀滅迦南敬拜場所（高山、山岡、青翠樹下）",
+    "status": "formal",
+    "aliases": [
+      "毀滅迦南敬拜場所",
+      "毀壞高山祭壇"
+    ]
+  },
   "每日常獻燔祭": {
     "path": "link_folder/事件/每日常獻燔祭.md",
     "type": "事件",
@@ -9039,6 +9207,17 @@
     "aliases": [
       "常獻燔祭",
       "每日燔祭"
+    ]
+  },
+  "每逢三年的末一年（三年一次的十一奉獻）": {
+    "path": "link_folder/事件/每逢三年的末一年（三年一次的十一奉獻）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "每逢三年的末一年（三年一次的十一奉獻）",
+    "status": "formal",
+    "aliases": [
+      "三年一次十一奉獻",
+      "第三年十一奉獻"
     ]
   },
   "水從磐石流出": {
@@ -9565,6 +9744,17 @@
       "懸掛族長"
     ]
   },
+  "神吩咐摩西率領百姓進地": {
+    "path": "link_folder/事件/神吩咐摩西率領百姓進地.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "神吩咐摩西率領百姓進地",
+    "status": "formal",
+    "aliases": [
+      "耶和華吩咐摩西起行",
+      "進迦南地的命令"
+    ]
+  },
   "神吩咐擾害擊殺米甸人": {
     "path": "link_folder/事件/神吩咐擾害擊殺米甸人.md",
     "type": "事件",
@@ -9799,6 +9989,16 @@
     "title": "禮儀的律例",
     "status": "formal",
     "aliases": []
+  },
+  "立王的條例（王的條例）": {
+    "path": "link_folder/事件/立王的條例（王的條例）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "立王的條例（王的條例）",
+    "status": "formal",
+    "aliases": [
+      "王權規範"
+    ]
   },
   "立約儀式": {
     "path": "link_folder/事件/立約儀式.md",
@@ -10094,6 +10294,16 @@
     "status": "formal",
     "aliases": []
   },
+  "若耶和華擴張境界、再添三座逃城": {
+    "path": "link_folder/事件/若耶和華擴張境界、再添三座逃城.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "若耶和華擴張境界、再添三座逃城",
+    "status": "formal",
+    "aliases": [
+      "擴張境界加增逃城"
+    ]
+  },
   "葉忒羅來訪": {
     "path": "link_folder/事件/葉忒羅來訪.md",
     "type": "事件",
@@ -10277,6 +10487,17 @@
     "status": "formal",
     "aliases": [
       "西羅非哈女兒來求產業"
+    ]
+  },
+  "設立審判官和官長（公義審判）": {
+    "path": "link_folder/事件/設立審判官和官長（公義審判）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "設立審判官和官長（公義審判）",
+    "status": "formal",
+    "aliases": [
+      "設立審判官",
+      "設立官長"
     ]
   },
   "設立逃城": {
@@ -10472,6 +10693,18 @@
       "撒烈溪事件"
     ]
   },
+  "過約但河、進去得地、在那地居住、謹守遵行律例典章": {
+    "path": "link_folder/事件/過約但河、進去得地、在那地居住、謹守遵行律例典章.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "過約但河、進去得地、在那地居住、謹守遵行律例典章",
+    "status": "formal",
+    "aliases": [
+      "過約但河得地",
+      "進迦南地居住",
+      "謹守律例典章"
+    ]
+  },
   "道德與宗教的律例": {
     "path": "link_folder/事件/道德與宗教的律例.md",
     "type": "事件",
@@ -10600,6 +10833,16 @@
     "status": "formal",
     "aliases": [
       "門框經文、門楣經文匣"
+    ]
+  },
+  "難斷的案件要上到耶和華揀選的地方（中央法庭）": {
+    "path": "link_folder/事件/難斷的案件要上到耶和華揀選的地方（中央法庭）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "難斷的案件要上到耶和華揀選的地方（中央法庭）",
+    "status": "formal",
+    "aliases": [
+      "中央法庭制度"
     ]
   },
   "雲彩停住安營": {
@@ -17014,6 +17257,16 @@
       "亞倫後裔"
     ]
   },
+  "亞倫的罪（神向亞倫發怒）": {
+    "path": "link_folder/人物/亞倫的罪（神向亞倫發怒）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫的罪（神向亞倫發怒）",
+    "status": "formal",
+    "aliases": [
+      "亞倫的罪"
+    ]
+  },
   "亞大": {
     "path": "link_folder/人物/亞大.md",
     "type": "人物",
@@ -21060,6 +21313,20 @@
       "野兔"
     ]
   },
+  "兩塊石版（約版）": {
+    "path": "link_folder/原文/兩塊石版（約版）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "兩塊石版（約版）",
+    "status": "formal",
+    "aliases": [
+      "約版",
+      "兩塊石版",
+      "石版",
+      "luchot (לֻחֹת)",
+      "luach (לֻחַ)"
+    ]
+  },
   "兩隻公山羊（shnei se'irim）": {
     "path": "link_folder/原文/兩隻公山羊（shnei se'irim）.md",
     "type": "原文",
@@ -21613,6 +21880,16 @@
     "aliases": [
       "Kittim",
       "Chittim"
+    ]
+  },
+  "壁虎": {
+    "path": "link_folder/原文/壁虎.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "壁虎",
+    "status": "formal",
+    "aliases": [
+      "壁虎"
     ]
   },
   "士13": {
@@ -22327,17 +22604,6 @@
     "status": "formal",
     "aliases": []
   },
-  "按手": {
-    "path": "link_folder/原文/按手.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "按手",
-    "status": "formal",
-    "aliases": [
-      "按手",
-      "samakh"
-    ]
-  },
   "按手承認罪孽（semikhah）": {
     "path": "link_folder/原文/按手承認罪孽（semikhah）.md",
     "type": "原文",
@@ -22654,6 +22920,17 @@
     "aliases": [
       "亞舍拉",
       "木偶"
+    ]
+  },
+  "木櫃（aron）": {
+    "path": "link_folder/原文/木櫃（aron）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "木櫃（aron）",
+    "status": "formal",
+    "aliases": [
+      "木櫃",
+      "皂莢木櫃"
     ]
   },
   "未受割禮（arel）": {
@@ -23001,6 +23278,16 @@
       "Sin wilderness etymology"
     ]
   },
+  "沙番（shaphan）": {
+    "path": "link_folder/原文/沙番（shaphan）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "沙番（shaphan）",
+    "status": "formal",
+    "aliases": [
+      "沙番"
+    ]
+  },
   "油壺（kelei shamen）": {
     "path": "link_folder/原文/油壺（kelei shamen）.md",
     "type": "原文",
@@ -23033,6 +23320,14 @@
       "法勒原文字義",
       "法勒就是分的意思"
     ]
+  },
+  "法度律例典章": {
+    "path": "link_folder/原文/法度律例典章.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "法度律例典章",
+    "status": "formal",
+    "aliases": []
   },
   "法版（edut）": {
     "path": "link_folder/原文/法版（edut）.md",
@@ -23183,6 +23478,18 @@
     "title": "灑（zaraq）",
     "status": "formal",
     "aliases": []
+  },
+  "火毒（michveh）": {
+    "path": "link_folder/原文/火毒（michveh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "火毒（michveh）",
+    "status": "formal",
+    "aliases": [
+      "火毒",
+      "燒傷",
+      "燙傷"
+    ]
   },
   "火祭（isheh）": {
     "path": "link_folder/原文/火祭（isheh）.md",
@@ -23902,6 +24209,16 @@
       "argaman毯子"
     ]
   },
+  "細麵": {
+    "path": "link_folder/原文/細麵.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "細麵",
+    "status": "formal",
+    "aliases": [
+      "細麵"
+    ]
+  },
   "細麵調油（solet belulah vashamen）": {
     "path": "link_folder/原文/細麵調油（solet belulah vashamen）.md",
     "type": "原文",
@@ -23919,6 +24236,14 @@
     "aliases": [
       "細麻布聖服"
     ]
+  },
+  "經文匣（門楣經文）": {
+    "path": "link_folder/原文/經文匣（門楣經文）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "經文匣（門楣經文）",
+    "status": "formal",
+    "aliases": []
   },
   "經火潔淨（ʿābar bāʾēš）": {
     "path": "link_folder/原文/經火潔淨（ʿābar bāʾēš）.md",
@@ -24364,6 +24689,16 @@
     "aliases": [
       "蝗蟲",
       "螞蚱"
+    ]
+  },
+  "蝘蜓": {
+    "path": "link_folder/原文/蝘蜓.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "蝘蜓",
+    "status": "formal",
+    "aliases": [
+      "蝘蜓"
     ]
   },
   "蝙蝠（atallef）": {
@@ -25169,6 +25504,16 @@
       "佩謝爾"
     ]
   },
+  "雕（nesher）": {
+    "path": "link_folder/原文/雕（nesher）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "雕（nesher）",
+    "status": "formal",
+    "aliases": [
+      "雕"
+    ]
+  },
   "雲彩（anan）": {
     "path": "link_folder/原文/雲彩（anan）.md",
     "type": "原文",
@@ -25208,6 +25553,20 @@
     "status": "formal",
     "aliases": [
       "頭疥"
+    ]
+  },
+  "頭禿與頂門禿（qarachat u-gabbachat）": {
+    "path": "link_folder/原文/頭禿與頂門禿（qarachat u-gabbachat）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "頭禿與頂門禿（qarachat u-gabbachat）",
+    "status": "formal",
+    "aliases": [
+      "頭禿",
+      "頂門禿",
+      "禿頭",
+      "禿頂",
+      "頭禿與頂門禿"
     ]
   },
   "風與靈同字": {
@@ -25373,6 +25732,16 @@
     "title": "黃蜂（tsirah）",
     "status": "formal",
     "aliases": []
+  },
+  "鼬鼠": {
+    "path": "link_folder/原文/鼬鼠.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "鼬鼠",
+    "status": "formal",
+    "aliases": [
+      "鼬鼠"
+    ]
   },
   "亞克拉濱坡": {
     "path": "link_folder/地點/亞克拉濱坡.md",
@@ -27263,7 +27632,8 @@
     "status": "formal",
     "aliases": [
       "帳幕的北面",
-      "帳幕的南面"
+      "帳幕的南面",
+      "聖所(miqdash)"
     ]
   },
   "聖處（會幕院子）": {
@@ -27275,6 +27645,16 @@
     "aliases": [
       "聖處",
       "會幕的院子"
+    ]
+  },
+  "腳掌所踏之地都歸你們（從曠野、利巴嫩、伯拉大河、直到西海）": {
+    "path": "link_folder/地點/腳掌所踏之地都歸你們（從曠野、利巴嫩、伯拉大河、直到西海）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "腳掌所踏之地都歸你們（從曠野、利巴嫩、伯拉大河、直到西海）",
+    "status": "formal",
+    "aliases": [
+      "應許地疆界"
     ]
   },
   "至聖所": {
@@ -27439,6 +27819,16 @@
     "status": "formal",
     "aliases": []
   },
+  "迦南地與埃及地的對比（雨水滋潤 vs 腳澆灌）": {
+    "path": "link_folder/地點/迦南地與埃及地的對比（雨水滋潤 vs 腳澆灌）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦南地與埃及地的對比（雨水滋潤 vs 腳澆灌）",
+    "status": "formal",
+    "aliases": [
+      "迦南埃及對比"
+    ]
+  },
   "阿伯": {
     "path": "link_folder/地點/阿伯.md",
     "type": "地點",
@@ -27546,6 +27936,18 @@
     "title": "黑門山",
     "status": "formal",
     "aliases": []
+  },
+  "不可蓬頭散髮、撕裂衣裳": {
+    "path": "link_folder/文化/不可蓬頭散髮、撕裂衣裳.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "不可蓬頭散髮、撕裂衣裳",
+    "status": "formal",
+    "aliases": [
+      "不可蓬頭散髮",
+      "不可撕裂衣裳",
+      "祭司禁哀悼禮儀"
+    ]
   },
   "不吃大腿窩的筋": {
     "path": "link_folder/文化/不吃大腿窩的筋.md",
@@ -28761,7 +29163,8 @@
     "status": "formal",
     "aliases": [
       "camel domestication",
-      "駱駝"
+      "駱駝",
+      "駱駝(gamal)"
     ]
   },
   "七十長老制度起源": {
@@ -30112,6 +30515,17 @@
       "不要回頭看"
     ]
   },
+  "不可在壇旁栽樹木作木偶（禁止亞舍拉）": {
+    "path": "link_folder/神學/不可在壇旁栽樹木作木偶（禁止亞舍拉）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可在壇旁栽樹木作木偶（禁止亞舍拉）",
+    "status": "formal",
+    "aliases": [
+      "禁止亞舍拉",
+      "不可在壇旁栽樹木"
+    ]
+  },
   "不可妄稱耶和華你神的名": {
     "path": "link_folder/神學/不可妄稱耶和華你神的名.md",
     "type": "神學",
@@ -30140,6 +30554,17 @@
       "不可姦淫"
     ]
   },
+  "不可學習列國可憎惡的事（占卜、巫術等）": {
+    "path": "link_folder/神學/不可學習列國可憎惡的事（占卜、巫術等）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可學習列國可憎惡的事（占卜、巫術等）",
+    "status": "formal",
+    "aliases": [
+      "不可學習列國可憎惡的事",
+      "占卜巫術禁令"
+    ]
+  },
   "不可忘記耶和華": {
     "path": "link_folder/神學/不可忘記耶和華.md",
     "type": "神學",
@@ -30160,6 +30585,14 @@
     "aliases": [
       "謹守不忘"
     ]
+  },
+  "不可挪移鄰舍的地界（產業界石不可動）": {
+    "path": "link_folder/神學/不可挪移鄰舍的地界（產業界石不可動）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可挪移鄰舍的地界（產業界石不可動）",
+    "status": "formal",
+    "aliases": []
   },
   "不可擾害亞捫人": {
     "path": "link_folder/神學/不可擾害亞捫人.md",
@@ -30205,6 +30638,17 @@
       "離棄列國風俗"
     ]
   },
+  "不可敬拜別神（專心敬拜耶和華）": {
+    "path": "link_folder/神學/不可敬拜別神（專心敬拜耶和華）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可敬拜別神（專心敬拜耶和華）",
+    "status": "formal",
+    "aliases": [
+      "專心敬拜耶和華",
+      "不可事奉別神"
+    ]
+  },
   "不可殺人": {
     "path": "link_folder/神學/不可殺人.md",
     "type": "神學",
@@ -30219,6 +30663,38 @@
       "不可殺人"
     ]
   },
+  "不可沾染當毀滅之物（潔淨自己）": {
+    "path": "link_folder/神學/不可沾染當毀滅之物（潔淨自己）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可沾染當毀滅之物（潔淨自己）",
+    "status": "formal",
+    "aliases": [
+      "潔淨自己",
+      "不可取當毀滅之物"
+    ]
+  },
+  "不可為死人劃身、剃額（哀悼習俗）": {
+    "path": "link_folder/神學/不可為死人劃身、剃額（哀悼習俗）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可為死人劃身、剃額（哀悼習俗）",
+    "status": "formal",
+    "aliases": [
+      "哀悼習俗禁令"
+    ]
+  },
+  "不可為自己設立柱像（禁止立柱像）": {
+    "path": "link_folder/神學/不可為自己設立柱像（禁止立柱像）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可為自己設立柱像（禁止立柱像）",
+    "status": "formal",
+    "aliases": [
+      "禁止立柱像",
+      "不可設立柱像"
+    ]
+  },
   "不可為自己雕刻偶像": {
     "path": "link_folder/神學/不可為自己雕刻偶像.md",
     "type": "神學",
@@ -30231,6 +30707,31 @@
       "第二誡",
       "第二條誡命",
       "禁止偶像"
+    ]
+  },
+  "不可照外邦人敬拜神的方式敬拜耶和華": {
+    "path": "link_folder/神學/不可照外邦人敬拜神的方式敬拜耶和華.md",
+    "type": "神學",
+    "secondary_types": [
+      "敬拜",
+      "警戒",
+      "反混合主義"
+    ],
+    "title": "不可照外邦人敬拜神的方式敬拜耶和華",
+    "status": "formal",
+    "aliases": [
+      "不可效法外邦敬拜",
+      "反混合主義敬拜"
+    ]
+  },
+  "不可用山羊羔母的奶煮山羊羔": {
+    "path": "link_folder/神學/不可用山羊羔母的奶煮山羊羔.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可用山羊羔母的奶煮山羊羔",
+    "status": "formal",
+    "aliases": [
+      "煮山羊羔在母奶中禁令"
     ]
   },
   "不可褻瀆聖名要在以色列中成聖": {
@@ -30321,6 +30822,22 @@
     "aliases": [
       "拒絕偶像崇拜",
       "單一敬拜"
+    ]
+  },
+  "不可隨從被剪除國民的惡俗（不可事奉他們的神）": {
+    "path": "link_folder/神學/不可隨從被剪除國民的惡俗（不可事奉他們的神）.md",
+    "type": "神學",
+    "secondary_types": [
+      "警戒",
+      "屬靈爭戰",
+      "進地後試驗"
+    ],
+    "title": "不可隨從被剪除國民的惡俗（不可事奉他們的神）",
+    "status": "formal",
+    "aliases": [
+      "不可效法惡俗",
+      "進地後警戒",
+      "拒絕異教同化"
     ]
   },
   "不守誡命典章律例": {
@@ -30630,6 +31147,16 @@
     "title": "什一奉獻的起源",
     "status": "formal",
     "aliases": []
+  },
+  "今日將祝福與咒詛的話都陳明在你們面前": {
+    "path": "link_folder/神學/今日將祝福與咒詛的話都陳明在你們面前.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "今日將祝福與咒詛的話都陳明在你們面前",
+    "status": "formal",
+    "aliases": [
+      "祝福與咒詛的選擇"
+    ]
   },
   "今日所吩咐你的": {
     "path": "link_folder/神學/今日所吩咐你的.md",
@@ -31021,6 +31548,27 @@
       "必定滅亡"
     ]
   },
+  "你們是耶和華你們神的兒女（不可為死人劃身、剃額）": {
+    "path": "link_folder/神學/你們是耶和華你們神的兒女（不可為死人劃身、剃額）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "你們是耶和華你們神的兒女（不可為死人劃身、剃額）",
+    "status": "formal",
+    "aliases": [
+      "神的兒女身分"
+    ]
+  },
+  "你們是耶和華你們神的兒女（神的兒女身分）": {
+    "path": "link_folder/神學/你們是耶和華你們神的兒女（神的兒女身分）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "你們是耶和華你們神的兒女（神的兒女身分）",
+    "status": "formal",
+    "aliases": [
+      "神的兒女",
+      "耶和華的兒女"
+    ]
+  },
   "你們要歸我為聖": {
     "path": "link_folder/神學/你們要歸我為聖.md",
     "type": "神學",
@@ -31401,6 +31949,28 @@
     "status": "formal",
     "aliases": []
   },
+  "凡我所吩咐的都要謹守遵行、不可加添也不可刪減": {
+    "path": "link_folder/神學/凡我所吩咐的都要謹守遵行、不可加添也不可刪減.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "凡我所吩咐的都要謹守遵行、不可加添也不可刪減",
+    "status": "formal",
+    "aliases": [
+      "不可加添不可刪減",
+      "遵行神命不可增減",
+      "申命記十二章三十二節"
+    ]
+  },
+  "凡有翅膀爬行的物（昆蟲）": {
+    "path": "link_folder/神學/凡有翅膀爬行的物（昆蟲）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "凡有翅膀爬行的物（昆蟲）",
+    "status": "formal",
+    "aliases": [
+      "凡有翅膀爬行的物"
+    ]
+  },
   "凡火（陌生的火）": {
     "path": "link_folder/神學/凡火（陌生的火）.md",
     "type": "神學",
@@ -31537,6 +32107,16 @@
       "起誓應許之地"
     ]
   },
+  "初熟之物歸祭司（五穀、新酒、油、羊毛）": {
+    "path": "link_folder/神學/初熟之物歸祭司（五穀、新酒、油、羊毛）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "初熟之物歸祭司（五穀、新酒、油、羊毛）",
+    "status": "formal",
+    "aliases": [
+      "初熟之物歸祭司"
+    ]
+  },
   "初熟果子": {
     "path": "link_folder/神學/初熟果子.md",
     "type": "神學",
@@ -31565,6 +32145,31 @@
     "status": "formal",
     "aliases": []
   },
+  "利未人、寄居的、孤兒寡婦（社會關懷）": {
+    "path": "link_folder/神學/利未人、寄居的、孤兒寡婦（社會關懷）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "利未人、寄居的、孤兒寡婦（社會關懷）",
+    "status": "formal",
+    "aliases": [
+      "利未人、寄居的、孤兒寡婦"
+    ]
+  },
+  "利未人不可被忽略（利未人無分無業）": {
+    "path": "link_folder/神學/利未人不可被忽略（利未人無分無業）.md",
+    "type": "神學",
+    "secondary_types": [
+      "社會正義",
+      "祭司供養",
+      "約群體責任"
+    ],
+    "title": "利未人不可被忽略（利未人無分無業）",
+    "status": "formal",
+    "aliases": [
+      "照顧利未人",
+      "利未人供養"
+    ]
+  },
   "利未人代替長子": {
     "path": "link_folder/神學/利未人代替長子.md",
     "type": "神學",
@@ -31585,6 +32190,17 @@
     "aliases": [
       "利未人代替頭生",
       "利未人贖頭生"
+    ]
+  },
+  "利未人可來到耶和華揀選的地方事奉（同工得同酬）": {
+    "path": "link_folder/神學/利未人可來到耶和華揀選的地方事奉（同工得同酬）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "利未人可來到耶和華揀選的地方事奉（同工得同酬）",
+    "status": "formal",
+    "aliases": [
+      "利未人可來事奉",
+      "同工得同酬"
     ]
   },
   "利未人各按職任分派": {
@@ -31644,6 +32260,16 @@
     "status": "formal",
     "aliases": []
   },
+  "利未祭司無分無業、耶和華是他們的產業": {
+    "path": "link_folder/神學/利未祭司無分無業、耶和華是他們的產業.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "利未祭司無分無業、耶和華是他們的產業",
+    "status": "formal",
+    "aliases": [
+      "利未祭司無分無業"
+    ]
+  },
   "割禮之約": {
     "path": "link_folder/神學/割禮之約.md",
     "type": "神學",
@@ -31651,7 +32277,8 @@
     "title": "割禮之約",
     "status": "formal",
     "aliases": [
-      "割禮"
+      "割禮",
+      "割禮(milah)"
     ]
   },
   "割禮的意義": {
@@ -31728,6 +32355,16 @@
     "aliases": [
       "雅各十二子",
       "以色列十二支派起源"
+    ]
+  },
+  "十分取一（十一奉獻）": {
+    "path": "link_folder/神學/十分取一（十一奉獻）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "十分取一（十一奉獻）",
+    "status": "formal",
+    "aliases": [
+      "十一奉獻"
     ]
   },
   "十字架隊形": {
@@ -32105,6 +32742,22 @@
       "石壇"
     ]
   },
+  "在各城可宰殺吃肉（非祭物之肉）": {
+    "path": "link_folder/神學/在各城可宰殺吃肉（非祭物之肉）.md",
+    "type": "神學",
+    "secondary_types": [
+      "律法",
+      "生活規範",
+      "血的禁令"
+    ],
+    "title": "在各城可宰殺吃肉（非祭物之肉）",
+    "status": "formal",
+    "aliases": [
+      "非祭物宰殺",
+      "尋常吃肉",
+      "肉類食用自由"
+    ]
+  },
   "在曠野事奉神": {
     "path": "link_folder/神學/在曠野事奉神.md",
     "type": "神學",
@@ -32309,6 +32962,16 @@
     "title": "基路伯與火劍",
     "status": "formal",
     "aliases": []
+  },
+  "堅定祂向列祖起誓所應許的話": {
+    "path": "link_folder/神學/堅定祂向列祖起誓所應許的話.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "堅定祂向列祖起誓所應許的話",
+    "status": "formal",
+    "aliases": [
+      "神向列祖的應許"
+    ]
   },
   "堅定約": {
     "path": "link_folder/神學/堅定約.md",
@@ -32519,6 +33182,17 @@
     "title": "天地的主",
     "status": "formal",
     "aliases": []
+  },
+  "天地萬物屬神": {
+    "path": "link_folder/神學/天地萬物屬神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "天地萬物屬神",
+    "status": "formal",
+    "aliases": [
+      "天和天上的天屬神",
+      "地和地上所有的屬神"
+    ]
   },
   "天如鐵地如銅": {
     "path": "link_folder/神學/天如鐵地如銅.md",
@@ -32734,6 +33408,16 @@
       "守耶和華吩咐"
     ]
   },
+  "守誡命得地、膽壯": {
+    "path": "link_folder/神學/守誡命得地、膽壯.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "守誡命得地、膽壯",
+    "status": "formal",
+    "aliases": [
+      "守誡得地膽壯"
+    ]
+  },
   "安息": {
     "path": "link_folder/神學/安息.md",
     "type": "神學",
@@ -32933,6 +33617,14 @@
       "Judgment and governance"
     ]
   },
+  "寫在房屋門框上、城門上": {
+    "path": "link_folder/神學/寫在房屋門框上、城門上.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "寫在房屋門框上、城門上",
+    "status": "formal",
+    "aliases": []
+  },
   "寬以律己嚴以待人": {
     "path": "link_folder/神學/寬以律己嚴以待人.md",
     "type": "神學",
@@ -32940,6 +33632,16 @@
     "title": "寬以律己嚴以待人",
     "status": "formal",
     "aliases": []
+  },
+  "將話存在心內、留在意中、繫在手上為記號、戴在額上為經文": {
+    "path": "link_folder/神學/將話存在心內、留在意中、繫在手上為記號、戴在額上為經文.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "將話存在心內、留在意中、繫在手上為記號、戴在額上為經文",
+    "status": "formal",
+    "aliases": [
+      "經文 (Tephillin/Phylacteries)"
+    ]
   },
   "專一事奉": {
     "path": "link_folder/神學/專一事奉.md",
@@ -33366,6 +34068,14 @@
       "自滿自足"
     ]
   },
+  "必無一人能在你們面前站立得住、神使懼怕驚恐臨到居民": {
+    "path": "link_folder/神學/必無一人能在你們面前站立得住、神使懼怕驚恐臨到居民.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "必無一人能在你們面前站立得住、神使懼怕驚恐臨到居民",
+    "status": "formal",
+    "aliases": []
+  },
   "忌邪的神": {
     "path": "link_folder/神學/忌邪的神.md",
     "type": "神學",
@@ -33476,6 +34186,25 @@
       "歸回耶和華得憐憫"
     ]
   },
+  "惡人必被除滅（清除惡人）": {
+    "path": "link_folder/神學/惡人必被除滅（清除惡人）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "惡人必被除滅（清除惡人）",
+    "status": "formal",
+    "aliases": [
+      "清除惡人",
+      "除掉惡"
+    ]
+  },
+  "惡見證人以其謀害弟兄的方式被待（以命償命、以眼還眼）": {
+    "path": "link_folder/神學/惡見證人以其謀害弟兄的方式被待（以命償命、以眼還眼）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "惡見證人以其謀害弟兄的方式被待（以命償命、以眼還眼）",
+    "status": "formal",
+    "aliases": []
+  },
   "愛人如己": {
     "path": "link_folder/神學/愛人如己.md",
     "type": "神學",
@@ -33484,6 +34213,16 @@
     "status": "formal",
     "aliases": [
       "愛鄰如己"
+    ]
+  },
+  "愛耶和華你的神、常守祂的吩咐律例典章誡命": {
+    "path": "link_folder/神學/愛耶和華你的神、常守祂的吩咐律例典章誡命.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "愛耶和華你的神、常守祂的吩咐律例典章誡命",
+    "status": "formal",
+    "aliases": [
+      "愛神守誡"
     ]
   },
   "應許之地與西珥山的分離": {
@@ -33705,6 +34444,16 @@
     "aliases": [
       "不潔淨不灑水被剪除預表",
       "拒絕神潔淨方式滅亡"
+    ]
+  },
+  "拜偶像者必被治死（清除惡人）": {
+    "path": "link_folder/神學/拜偶像者必被治死（清除惡人）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "拜偶像者必被治死（清除惡人）",
+    "status": "formal",
+    "aliases": [
+      "清除拜偶像之惡"
     ]
   },
   "拾遺不報": {
@@ -34114,6 +34863,14 @@
       "將一切律例教訓他們"
     ]
   },
+  "教訓兒女（坐在家裡、行在路上、躺下、起來都要談論）": {
+    "path": "link_folder/神學/教訓兒女（坐在家裡、行在路上、躺下、起來都要談論）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "教訓兒女（坐在家裡、行在路上、躺下、起來都要談論）",
+    "status": "formal",
+    "aliases": []
+  },
   "敬拜十守則": {
     "path": "link_folder/神學/敬拜十守則.md",
     "type": "神學",
@@ -34167,6 +34924,18 @@
       "敬畏耶和華"
     ]
   },
+  "敬畏神、愛神、事奉神": {
+    "path": "link_folder/神學/敬畏神、愛神、事奉神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "敬畏神、愛神、事奉神",
+    "status": "formal",
+    "aliases": [
+      "敬畏神、愛神、事奉神",
+      "敬畏耶和華你的神",
+      "盡心盡性事奉"
+    ]
+  },
   "敬畏神、誠實、恨不義之財": {
     "path": "link_folder/神學/敬畏神、誠實、恨不義之財.md",
     "type": "神學",
@@ -34177,6 +34946,17 @@
       "Fear God",
       "truth",
       "hate dishonest gain"
+    ]
+  },
+  "敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓": {
+    "path": "link_folder/神學/敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓",
+    "status": "formal",
+    "aliases": [
+      "敬畏神的完整回應",
+      "獨一崇拜與絕對委身"
     ]
   },
   "敬畏耶和華的話": {
@@ -34227,6 +35007,14 @@
     "status": "formal",
     "aliases": []
   },
+  "日子在應許地上得以增多、如天覆地的日子那樣多": {
+    "path": "link_folder/神學/日子在應許地上得以增多、如天覆地的日子那樣多.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "日子在應許地上得以增多、如天覆地的日子那樣多",
+    "status": "formal",
+    "aliases": []
+  },
   "日間雲彩、夜間雲中有火": {
     "path": "link_folder/神學/日間雲彩、夜間雲中有火.md",
     "type": "神學",
@@ -34247,6 +35035,16 @@
     "aliases": [
       "雲彩火柱",
       "晝夜雲火"
+    ]
+  },
+  "早雨晚雨（秋雨春雨）": {
+    "path": "link_folder/神學/早雨晚雨（秋雨春雨）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "早雨晚雨（秋雨春雨）",
+    "status": "formal",
+    "aliases": [
+      "秋雨春雨"
     ]
   },
   "星出於雅各預表彌賽亞": {
@@ -34355,6 +35153,16 @@
     "aliases": [
       "條件式應許",
       "應許與順服"
+    ]
+  },
+  "有殘疾或惡病的牛羊不可獻給耶和華（潔淨祭物）": {
+    "path": "link_folder/神學/有殘疾或惡病的牛羊不可獻給耶和華（潔淨祭物）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "有殘疾或惡病的牛羊不可獻給耶和華（潔淨祭物）",
+    "status": "formal",
+    "aliases": [
+      "潔淨祭物規定"
     ]
   },
   "有酵餅與平安祭": {
@@ -34808,6 +35616,46 @@
     "status": "formal",
     "aliases": []
   },
+  "潔淨與不潔淨的水族（有翅有鱗）": {
+    "path": "link_folder/神學/潔淨與不潔淨的水族（有翅有鱗）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "潔淨與不潔淨的水族（有翅有鱗）",
+    "status": "formal",
+    "aliases": [
+      "水族潔淨標準"
+    ]
+  },
+  "潔淨與不潔淨的走獸（分蹄、倒嚼）": {
+    "path": "link_folder/神學/潔淨與不潔淨的走獸（分蹄、倒嚼）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "潔淨與不潔淨的走獸（分蹄、倒嚼）",
+    "status": "formal",
+    "aliases": [
+      "陸地動物潔淨標準"
+    ]
+  },
+  "潔淨與不潔淨的飛鳥": {
+    "path": "link_folder/神學/潔淨與不潔淨的飛鳥.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "潔淨與不潔淨的飛鳥",
+    "status": "formal",
+    "aliases": [
+      "飛鳥潔淨名單"
+    ]
+  },
+  "潔淨與不潔淨的食物（飲食律例）": {
+    "path": "link_folder/神學/潔淨與不潔淨的食物（飲食律例）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "潔淨與不潔淨的食物（飲食律例）",
+    "status": "formal",
+    "aliases": [
+      "飲食律例總綱"
+    ]
+  },
   "潔淨處": {
     "path": "link_folder/神學/潔淨處.md",
     "type": "神學",
@@ -35106,6 +35954,16 @@
       "生命靠神話語"
     ]
   },
+  "牲畜有草吃、吃得飽足": {
+    "path": "link_folder/神學/牲畜有草吃、吃得飽足.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "牲畜有草吃、吃得飽足",
+    "status": "formal",
+    "aliases": [
+      "牲畜飽足"
+    ]
+  },
   "猶大的認罪與悔改": {
     "path": "link_folder/神學/猶大的認罪與悔改.md",
     "type": "神學",
@@ -35113,6 +35971,21 @@
     "title": "猶大的認罪與悔改",
     "status": "formal",
     "aliases": []
+  },
+  "獻祭只能在神揀選的地方（集中敬拜）": {
+    "path": "link_folder/神學/獻祭只能在神揀選的地方（集中敬拜）.md",
+    "type": "神學",
+    "secondary_types": [
+      "律法",
+      "敬拜"
+    ],
+    "title": "獻祭只能在神揀選的地方（集中敬拜）",
+    "status": "formal",
+    "aliases": [
+      "集中敬拜",
+      "獻祭限制",
+      "單一聖所律法"
+    ]
   },
   "獻祭敬拜": {
     "path": "link_folder/神學/獻祭敬拜.md",
@@ -35260,6 +36133,17 @@
       "第五誡",
       "第五條誡命",
       "孝敬父母"
+    ]
+  },
+  "當憐愛寄居者（因你們在埃及也作過寄居的）": {
+    "path": "link_folder/神學/當憐愛寄居者（因你們在埃及也作過寄居的）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "當憐愛寄居者（因你們在埃及也作過寄居的）",
+    "status": "formal",
+    "aliases": [
+      "愛寄居者的命令",
+      "埃及寄居經驗的神學意義"
     ]
   },
   "當毀滅的物（赫蓮）": {
@@ -35614,6 +36498,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神從你們面前趕出國民、得他們的地": {
+    "path": "link_folder/神學/神從你們面前趕出國民、得他們的地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神從你們面前趕出國民、得他們的地",
+    "status": "formal",
+    "aliases": []
+  },
   "神必審判仇敵": {
     "path": "link_folder/神學/神必審判仇敵.md",
     "type": "神學",
@@ -35656,6 +36548,18 @@
       "神所賜工具"
     ]
   },
+  "神揀選以色列（揀選恩典）": {
+    "path": "link_folder/神學/神揀選以色列（揀選恩典）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神揀選以色列（揀選恩典）",
+    "status": "formal",
+    "aliases": [
+      "耶和華喜悅列祖",
+      "揀選以色列為後裔",
+      "純恩典揀選"
+    ]
+  },
   "神揀選後裔": {
     "path": "link_folder/神學/神揀選後裔.md",
     "type": "神學",
@@ -35686,6 +36590,17 @@
       "神保守人不犯罪"
     ]
   },
+  "神是你所讚美的、為你做了大而可畏的事": {
+    "path": "link_folder/神學/神是你所讚美的、為你做了大而可畏的事.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神是你所讚美的、為你做了大而可畏的事",
+    "status": "formal",
+    "aliases": [
+      "神作為讚美的對象",
+      "救恩大事記為讚美根基"
+    ]
+  },
   "神是烈火忌邪的神": {
     "path": "link_folder/神學/神是烈火忌邪的神.md",
     "type": "神學",
@@ -35711,6 +36626,17 @@
     "aliases": [
       "耶和華為你爭戰",
       "神是戰士"
+    ]
+  },
+  "神為孤兒寡婦伸冤、憐愛寄居者": {
+    "path": "link_folder/神學/神為孤兒寡婦伸冤、憐愛寄居者.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神為孤兒寡婦伸冤、憐愛寄居者",
+    "status": "formal",
+    "aliases": [
+      "神保護弱勢族群",
+      "神的公義與憐憫"
     ]
   },
   "神為產業": {
@@ -35848,6 +36774,20 @@
     "title": "神的同在與保護",
     "status": "formal",
     "aliases": []
+  },
+  "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）": {
+    "path": "link_folder/神學/神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）",
+    "status": "formal",
+    "aliases": [
+      "萬神之神",
+      "萬主之主",
+      "大而可畏",
+      "不以貌取人",
+      "不受賄賂"
+    ]
   },
   "神的引導與護理": {
     "path": "link_folder/神學/神的引導與護理.md",
@@ -36063,6 +37003,16 @@
     "aliases": [
       "祝福不可翻轉",
       "神賜福不可廢"
+    ]
+  },
+  "神的管教、威嚴、大能的手、伸出來的膀臂": {
+    "path": "link_folder/神學/神的管教、威嚴、大能的手、伸出來的膀臂.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的管教、威嚴、大能的手、伸出來的膀臂",
+    "status": "formal",
+    "aliases": [
+      "神的管教與大能"
     ]
   },
   "神的管教與鞭打": {
@@ -36435,6 +37385,16 @@
     "aliases": [
       "進會幕不可喝酒",
       "清酒濃酒都不可喝"
+    ]
+  },
+  "祭司應得的分（前腿、兩腮、胃）": {
+    "path": "link_folder/神學/祭司應得的分（前腿、兩腮、胃）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "祭司應得的分（前腿、兩腮、胃）",
+    "status": "formal",
+    "aliases": [
+      "祭司應得的分"
     ]
   },
   "祭司收入": {
@@ -36951,7 +37911,8 @@
     "title": "罪如大痲瘋：滲透、隔離、需神醫治",
     "status": "formal",
     "aliases": [
-      "罪如大痲瘋"
+      "罪如大痲瘋",
+      "罪的滲透與隔離"
     ]
   },
   "罪如漏症：滲透、隔離、需神醫治": {
@@ -37151,6 +38112,40 @@
       "Jehovah Rapha"
     ]
   },
+  "耶和華揀選利未人永遠奉祂名侍立事奉": {
+    "path": "link_folder/神學/耶和華揀選利未人永遠奉祂名侍立事奉.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華揀選利未人永遠奉祂名侍立事奉",
+    "status": "formal",
+    "aliases": [
+      "耶和華揀選利未人"
+    ]
+  },
+  "耶和華揀選立名的地方（中央聖所）": {
+    "path": "link_folder/神學/耶和華揀選立名的地方（中央聖所）.md",
+    "type": "神學",
+    "secondary_types": [
+      "敬拜",
+      "選民"
+    ],
+    "title": "耶和華揀選立名的地方（中央聖所）",
+    "status": "formal",
+    "aliases": [
+      "耶和華揀選之地",
+      "立名之居所"
+    ]
+  },
+  "耶和華揀選立名的居所（中央聖所）": {
+    "path": "link_folder/神學/耶和華揀選立名的居所（中央聖所）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華揀選立名的居所（中央聖所）",
+    "status": "formal",
+    "aliases": [
+      "耶和華揀選立名的居所"
+    ]
+  },
   "耶和華是忌邪的神": {
     "path": "link_folder/神學/耶和華是忌邪的神.md",
     "type": "神學",
@@ -37246,6 +38241,14 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華的怒氣、天閉塞不下雨、地不出產、速速滅亡": {
+    "path": "link_folder/神學/耶和華的怒氣、天閉塞不下雨、地不出產、速速滅亡.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華的怒氣、天閉塞不下雨、地不出產、速速滅亡",
+    "status": "formal",
+    "aliases": []
+  },
   "耶和華的手": {
     "path": "link_folder/神學/耶和華的手.md",
     "type": "神學",
@@ -37333,6 +38336,17 @@
     "status": "formal",
     "aliases": []
   },
+  "耶和華要興起一位先知像摩西（彌賽亞預言）": {
+    "path": "link_folder/神學/耶和華要興起一位先知像摩西（彌賽亞預言）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華要興起一位先知像摩西（彌賽亞預言）",
+    "status": "formal",
+    "aliases": [
+      "像摩西的先知",
+      "彌賽亞先知預言"
+    ]
+  },
   "耶和華豈有難成的事": {
     "path": "link_folder/神學/耶和華豈有難成的事.md",
     "type": "神學",
@@ -37353,6 +38367,16 @@
     "title": "耶和華賜福給你",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華賜福與你（順服帶來福分）": {
+    "path": "link_folder/神學/耶和華賜福與你（順服帶來福分）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "耶和華賜福與你（順服帶來福分）",
+    "status": "formal",
+    "aliases": [
+      "耶和華賜福與你"
+    ]
   },
   "聖俗": {
     "path": "link_folder/神學/聖俗.md",
@@ -37446,6 +38470,22 @@
       "聖潔神學"
     ]
   },
+  "聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方": {
+    "path": "link_folder/神學/聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方.md",
+    "type": "神學",
+    "secondary_types": [
+      "律法",
+      "獻祭條例",
+      "聖物管理"
+    ],
+    "title": "聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方",
+    "status": "formal",
+    "aliases": [
+      "聖物上呈",
+      "還願甘心祭規定",
+      "頭生獻祭"
+    ]
+  },
   "聖約子民與世界的界限": {
     "path": "link_folder/神學/聖約子民與世界的界限.md",
     "type": "神學",
@@ -37489,6 +38529,22 @@
     "type": "神學",
     "secondary_types": [],
     "title": "聖靈分賜七十長老",
+    "status": "formal",
+    "aliases": []
+  },
+  "聽從耶和華的話得蒙憐恤（順服得福）": {
+    "path": "link_folder/神學/聽從耶和華的話得蒙憐恤（順服得福）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聽從耶和華的話得蒙憐恤（順服得福）",
+    "status": "formal",
+    "aliases": []
+  },
+  "聽從誡命就蒙福、不聽從偏離道去事奉別神就受禍": {
+    "path": "link_folder/神學/聽從誡命就蒙福、不聽從偏離道去事奉別神就受禍.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聽從誡命就蒙福、不聽從偏離道去事奉別神就受禍",
     "status": "formal",
     "aliases": []
   },
@@ -37559,6 +38615,16 @@
     "title": "膏抹成聖",
     "status": "formal",
     "aliases": []
+  },
+  "自死的不可吃（可給寄居者或賣與外人）": {
+    "path": "link_folder/神學/自死的不可吃（可給寄居者或賣與外人）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "自死的不可吃（可給寄居者或賣與外人）",
+    "status": "formal",
+    "aliases": [
+      "自死的不可吃"
+    ]
   },
   "自潔": {
     "path": "link_folder/神學/自潔.md",
@@ -37866,6 +38932,25 @@
       "摩西之約"
     ]
   },
+  "見證人須兩三個口（不可憑一個人定案）": {
+    "path": "link_folder/神學/見證人須兩三個口（不可憑一個人定案）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "見證人須兩三個口（不可憑一個人定案）",
+    "status": "formal",
+    "aliases": []
+  },
+  "親屬勸誘也不得寬容（至親不得寬容）": {
+    "path": "link_folder/神學/親屬勸誘也不得寬容（至親不得寬容）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "親屬勸誘也不得寬容（至親不得寬容）",
+    "status": "formal",
+    "aliases": [
+      "至親不得寬容",
+      "親屬引誘不寬恕"
+    ]
+  },
   "親手獻祭": {
     "path": "link_folder/神學/親手獻祭.md",
     "type": "神學",
@@ -37873,6 +38958,16 @@
     "title": "親手獻祭",
     "status": "formal",
     "aliases": []
+  },
+  "親眼看見耶和華所做的一切大事": {
+    "path": "link_folder/神學/親眼看見耶和華所做的一切大事.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "親眼看見耶和華所做的一切大事",
+    "status": "formal",
+    "aliases": [
+      "親眼看見神大事"
+    ]
   },
   "角聲": {
     "path": "link_folder/神學/角聲.md",
@@ -37995,6 +39090,14 @@
       "誤殺與故殺界線"
     ]
   },
+  "誤殺與謀殺的區別（無心殺人 vs 恨人謀殺）": {
+    "path": "link_folder/神學/誤殺與謀殺的區別（無心殺人 vs 恨人謀殺）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "誤殺與謀殺的區別（無心殺人 vs 恨人謀殺）",
+    "status": "formal",
+    "aliases": []
+  },
   "誤犯有恩典故意無憐憫": {
     "path": "link_folder/神學/誤犯有恩典故意無憐憫.md",
     "type": "神學",
@@ -38004,6 +39107,14 @@
     "aliases": [
       "誤犯蒙恩故意被剪除"
     ]
+  },
+  "謀殺者不可在逃城存活（須交給報血仇者治死）": {
+    "path": "link_folder/神學/謀殺者不可在逃城存活（須交給報血仇者治死）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "謀殺者不可在逃城存活（須交給報血仇者治死）",
+    "status": "formal",
+    "aliases": []
   },
   "謀殺與誤殺的區分": {
     "path": "link_folder/神學/謀殺與誤殺的區分.md",
@@ -38043,6 +39154,24 @@
     "aliases": [
       "謹守誡命",
       "遵行道"
+    ]
+  },
+  "謹守遵行誡命、愛耶和華、行祂的道、專靠祂": {
+    "path": "link_folder/神學/謹守遵行誡命、愛耶和華、行祂的道、專靠祂.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "謹守遵行誡命、愛耶和華、行祂的道、專靠祂",
+    "status": "formal",
+    "aliases": []
+  },
+  "謹慎免得心中受迷惑、偏離正路、事奉敬拜別神": {
+    "path": "link_folder/神學/謹慎免得心中受迷惑、偏離正路、事奉敬拜別神.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "謹慎免得心中受迷惑、偏離正路、事奉敬拜別神",
+    "status": "formal",
+    "aliases": [
+      "謹慎免受迷惑"
     ]
   },
   "謹慎免得忘記": {
@@ -38110,7 +39239,9 @@
     "secondary_types": [],
     "title": "贖罪祭",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "贖罪祭(chatat)"
+    ]
   },
   "贖罪祭怎樣贖愆祭也是怎樣": {
     "path": "link_folder/神學/贖罪祭怎樣贖愆祭也是怎樣.md",
@@ -38139,6 +39270,16 @@
     "title": "赤身露體與羞恥",
     "status": "formal",
     "aliases": []
+  },
+  "迦南人的惡（國民的惡）": {
+    "path": "link_folder/神學/迦南人的惡（國民的惡）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "迦南人的惡（國民的惡）",
+    "status": "formal",
+    "aliases": [
+      "國民的惡"
+    ]
   },
   "迦南地流奶與蜜的應許應驗": {
     "path": "link_folder/神學/迦南地流奶與蜜的應許應驗.md",
@@ -38256,6 +39397,16 @@
       "趕出迦南居民",
       "毀滅迦南偶像",
       "征服迦南命令"
+    ]
+  },
+  "逾越節只能在神揀選的地方獻祭": {
+    "path": "link_folder/神學/逾越節只能在神揀選的地方獻祭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "逾越節只能在神揀選的地方獻祭",
+    "status": "formal",
+    "aliases": [
+      "逾越節獻祭地點"
     ]
   },
   "逾越節無酵節預表基督與聖潔": {
@@ -38486,6 +39637,18 @@
       "除去外邦神"
     ]
   },
+  "除掉心裡的污穢、不可硬著頸項": {
+    "path": "link_folder/神學/除掉心裡的污穢、不可硬著頸項.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "除掉心裡的污穢、不可硬著頸項",
+    "status": "formal",
+    "aliases": [
+      "受割禮的心",
+      "不可硬著頸項",
+      "內在悔改"
+    ]
+  },
   "除污穢水預表聖靈潔淨能力": {
     "path": "link_folder/神學/除污穢水預表聖靈潔淨能力.md",
     "type": "神學",
@@ -38517,6 +39680,17 @@
     "aliases": [
       "隨從別神",
       "事奉別神"
+    ]
+  },
+  "隨心所欲買牛羊、清酒濃酒（十一奉獻的喜樂）": {
+    "path": "link_folder/神學/隨心所欲買牛羊、清酒濃酒（十一奉獻的喜樂）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "隨心所欲買牛羊、清酒濃酒（十一奉獻的喜樂）",
+    "status": "formal",
+    "aliases": [
+      "隨心所欲買牛羊、清酒濃酒",
+      "十一奉獻的喜樂"
     ]
   },
   "雅各以掃和好": {
@@ -38570,6 +39744,16 @@
     "aliases": [
       "全軍無損",
       "米甸之戰零傷亡"
+    ]
+  },
+  "非因你的義（得地非因義）": {
+    "path": "link_folder/神學/非因你的義（得地非因義）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "非因你的義（得地非因義）",
+    "status": "formal",
+    "aliases": [
+      "得地非因義"
     ]
   },
   "非尼哈的熱心為神": {
@@ -39814,6 +40998,44 @@
     "status": "formal",
     "aliases": []
   },
+  "假先知的審判（擅自說話、奉別神名說話）": {
+    "path": "link_folder/解經爭議/假先知的審判（擅自說話、奉別神名說話）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "假先知的審判（擅自說話、奉別神名說話）",
+    "status": "formal",
+    "aliases": [
+      "假先知審判",
+      "先知試驗標準"
+    ]
+  },
+  "假先知（先知或作夢的人勸誘事奉別神）": {
+    "path": "link_folder/解經爭議/假先知（先知或作夢的人勸誘事奉別神）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "假先知（先知或作夢的人勸誘事奉別神）",
+    "status": "formal",
+    "aliases": [
+      "假先知",
+      "先知或作夢的人勸誘事奉別神"
+    ]
+  },
+  "先知或作夢的人勸誘事奉別神（假先知）": {
+    "path": "link_folder/解經爭議/先知或作夢的人勸誘事奉別神（假先知）.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "假先知",
+      "護教學"
+    ],
+    "title": "先知或作夢的人勸誘事奉別神（假先知）",
+    "status": "formal",
+    "aliases": [
+      "假先知誘惑",
+      "申命記13假先知",
+      "異夢誘惑"
+    ]
+  },
   "冒煙的爐與燒著的火把指什麼": {
     "path": "link_folder/解經爭議/冒煙的爐與燒著的火把指什麼.md",
     "type": "解經爭議",
@@ -40404,6 +41626,16 @@
     "aliases": [
       "從族人中剪除",
       "剪除出約民"
+    ]
+  },
+  "惡人勸誘全城事奉別神（叛教之城）": {
+    "path": "link_folder/解經爭議/惡人勸誘全城事奉別神（叛教之城）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "惡人勸誘全城事奉別神（叛教之城）",
+    "status": "formal",
+    "aliases": [
+      "惡人勸誘全城事奉別神"
     ]
   },
   "所多瑪的罪是什麼": {
@@ -41040,6 +42272,17 @@
       "耶和華使者的身分"
     ]
   },
+  "至親勸誘事奉別神（至親勸誘）": {
+    "path": "link_folder/解經爭議/至親勸誘事奉別神（至親勸誘）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "至親勸誘事奉別神（至親勸誘）",
+    "status": "formal",
+    "aliases": [
+      "至親勸誘",
+      "至親勸誘事奉別神"
+    ]
+  },
   "血郎的含義": {
     "path": "link_folder/解經爭議/血郎的含義.md",
     "type": "解經爭議",
@@ -41063,6 +42306,16 @@
     "title": "西羅非哈女兒繼承權是否適用所有情況（民26：33）",
     "status": "formal",
     "aliases": []
+  },
+  "親屬勸誘事奉別神（至親勸誘）": {
+    "path": "link_folder/解經爭議/親屬勸誘事奉別神（至親勸誘）.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "親屬勸誘事奉別神（至親勸誘）",
+    "status": "formal",
+    "aliases": [
+      "親屬勸誘事奉別神"
+    ]
   },
   "該隱妻子的來源": {
     "path": "link_folder/解經爭議/該隱妻子的來源.md",
@@ -43081,9 +44334,6 @@
   "見證的櫃": {
     "alias_of": "約櫃"
   },
-  "細麵伊法十分之一": {
-    "alias_of": "細麵"
-  },
   "終身歸主者": {
     "alias_of": "終身拿細耳人"
   },
@@ -43651,6 +44901,12 @@
   "丈夫家中許願夫權": {
     "alias_of": "丈夫家中許願丈夫權柄"
   },
+  "三年一次的十一奉獻": {
+    "alias_of": "三年一次的十一奉獻（社會福利制度）"
+  },
+  "社會福利制度": {
+    "alias_of": "三年一次的十一奉獻（社會福利制度）"
+  },
   "拒絕潔淨被剪除": {
     "alias_of": "不潔淨人不灑水被剪除"
   },
@@ -43668,6 +44924,9 @@
   },
   "二月一日": {
     "alias_of": "二月初一"
+  },
+  "以利亞撒接續祭司職分": {
+    "alias_of": "亞倫之死與以利亞撒繼任"
   },
   "亞倫舉手為百姓祝福": {
     "alias_of": "亞倫向百姓舉手祝福"
@@ -43804,6 +45063,9 @@
   "何利人滅亡": {
     "alias_of": "何利人被以掃子孫除滅"
   },
+  "何烈山金牛犢": {
+    "alias_of": "何烈山拜金牛犢"
+  },
   "何烈山神顯火焰昏黑密雲": {
     "alias_of": "何烈山火焰昏黑密雲"
   },
@@ -43840,6 +45102,21 @@
   "民數記三十三章路程": {
     "alias_of": "出埃及路程記載"
   },
+  "列祖七十人下埃及": {
+    "alias_of": "列祖七十人下埃及、神使你如天上星那樣多"
+  },
+  "如天上星那樣多": {
+    "alias_of": "列祖七十人下埃及、神使你如天上星那樣多"
+  },
+  "以色列人口增多": {
+    "alias_of": "列祖七十人下埃及、神使你如天上星那樣多"
+  },
+  "利未支派分別出來": {
+    "alias_of": "利未人分別為聖侍立"
+  },
+  "利未人侍立事奉": {
+    "alias_of": "利未人分別為聖侍立"
+  },
   "利未人討罪": {
     "alias_of": "利未人受聖職討罪"
   },
@@ -43869,6 +45146,12 @@
   },
   "亞倫受膏的日子": {
     "alias_of": "受膏的日子"
+  },
+  "叛教之城": {
+    "alias_of": "叛教之城必被毀滅（叛教之城）"
+  },
+  "城邑背道毀滅": {
+    "alias_of": "叛教之城必被毀滅（叛教之城）"
   },
   "摩西召亞倫和以色列眾長老": {
     "alias_of": "召聚長老作見證"
@@ -43906,6 +45189,12 @@
   "地裂吞滅可拉大坍亞比蘭": {
     "alias_of": "地開口吞滅可拉一黨"
   },
+  "大坍亞比蘭被吞": {
+    "alias_of": "大坍、亞比蘭被地吞滅（可拉黨叛逆）"
+  },
+  "西奈山大會": {
+    "alias_of": "大會的日子（西奈山大會）"
+  },
   "大衛用車運約櫃": {
     "alias_of": "大衛用車運約櫃（大衛違例用車運櫃）"
   },
@@ -43935,6 +45224,15 @@
   },
   "從為奴之家釋放": {
     "alias_of": "將你從埃及地為奴之家領出來"
+  },
+  "基利心山與以巴路山祝福咒詛": {
+    "alias_of": "將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上"
+  },
+  "基利心山祝福": {
+    "alias_of": "將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上"
+  },
+  "以巴路山咒詛": {
+    "alias_of": "將祝福的話陳明在基利心山上、咒詛的話陳明在以巴路山上"
   },
   "巴勒帶巴蘭上毘斯迦": {
     "alias_of": "巴勒不滿帶巴蘭往毘斯迦"
@@ -44098,6 +45396,9 @@
   "摩西亞倫進入會幕又出來為百姓祝福": {
     "alias_of": "摩西亞倫進會幕再出來祝福"
   },
+  "摩西代禱": {
+    "alias_of": "摩西代禱（為百姓代求）"
+  },
   "摩西俯伏聽命": {
     "alias_of": "摩西俯伏在地讓神表白"
   },
@@ -44197,6 +45498,12 @@
   "揀選千夫長百夫長": {
     "alias_of": "摩西立首領"
   },
+  "摩西再上西乃山": {
+    "alias_of": "摩西第二次在山上四十晝夜"
+  },
+  "第二次四十晝夜": {
+    "alias_of": "摩西第二次在山上四十晝夜"
+  },
   "約櫃安息禱告": {
     "alias_of": "摩西約櫃停住禱告"
   },
@@ -44284,6 +45591,15 @@
   "四十年試煉": {
     "alias_of": "曠野四十年試煉"
   },
+  "時常悖逆": {
+    "alias_of": "曠野悖逆（時常悖逆）"
+  },
+  "曠野漂流": {
+    "alias_of": "曠野生活（曠野漂流）"
+  },
+  "四十年曠野生活": {
+    "alias_of": "曠野生活（曠野漂流）"
+  },
   "帳幕立起": {
     "alias_of": "會幕建成"
   },
@@ -44329,11 +45645,23 @@
   "米甸五王陣亡": {
     "alias_of": "殺盡米甸男丁與五王"
   },
+  "毀滅迦南敬拜場所": {
+    "alias_of": "毀滅迦南敬拜場所（高山、山岡、青翠樹下）"
+  },
+  "毀壞高山祭壇": {
+    "alias_of": "毀滅迦南敬拜場所（高山、山岡、青翠樹下）"
+  },
   "常獻燔祭": {
     "alias_of": "每日常獻燔祭"
   },
   "每日燔祭": {
     "alias_of": "每日常獻燔祭"
+  },
+  "三年一次十一奉獻": {
+    "alias_of": "每逢三年的末一年（三年一次的十一奉獻）"
+  },
+  "第三年十一奉獻": {
+    "alias_of": "每逢三年的末一年（三年一次的十一奉獻）"
   },
   "磐石出水事件": {
     "alias_of": "水從磐石流出"
@@ -44509,6 +45837,12 @@
   "懸掛族長": {
     "alias_of": "神吩咐摩西懸掛族長"
   },
+  "耶和華吩咐摩西起行": {
+    "alias_of": "神吩咐摩西率領百姓進地"
+  },
+  "進迦南地的命令": {
+    "alias_of": "神吩咐摩西率領百姓進地"
+  },
   "擾害米甸人": {
     "alias_of": "神吩咐擾害擊殺米甸人"
   },
@@ -44574,6 +45908,9 @@
   },
   "祭司與燒牛者不潔淨": {
     "alias_of": "祭司燒牛人不潔淨到晚上"
+  },
+  "王權規範": {
+    "alias_of": "立王的條例（王的條例）"
   },
   "立起帳幕的日子": {
     "alias_of": "立起帳幕的那日（正月初一）"
@@ -44646,6 +45983,9 @@
   },
   "耶和華曉諭摩西": {
     "alias_of": "耶和華曉諭摩西（利6：1）"
+  },
+  "擴張境界加增逃城": {
+    "alias_of": "若耶和華擴張境界、再添三座逃城"
   },
   "Jethro's visit": {
     "alias_of": "葉忒羅來訪"
@@ -44734,6 +46074,12 @@
   "西羅非哈女兒來求產業": {
     "alias_of": "西羅非哈女兒求產業"
   },
+  "設立審判官": {
+    "alias_of": "設立審判官和官長（公義審判）"
+  },
+  "設立官長": {
+    "alias_of": "設立審判官和官長（公義審判）"
+  },
   "許願起誓律例": {
     "alias_of": "許願與起誓律例"
   },
@@ -44788,6 +46134,15 @@
   "撒烈溪事件": {
     "alias_of": "過撒烈溪"
   },
+  "過約但河得地": {
+    "alias_of": "過約但河、進去得地、在那地居住、謹守遵行律例典章"
+  },
+  "進迦南地居住": {
+    "alias_of": "過約但河、進去得地、在那地居住、謹守遵行律例典章"
+  },
+  "謹守律例典章": {
+    "alias_of": "過約但河、進去得地、在那地居住、謹守遵行律例典章"
+  },
   "金牛犢": {
     "alias_of": "金牛犢事件"
   },
@@ -44835,6 +46190,9 @@
   },
   "門框經文、門楣經文匣": {
     "alias_of": "門楣經文"
+  },
+  "中央法庭制度": {
+    "alias_of": "難斷的案件要上到耶和華揀選的地方（中央法庭）"
   },
   "雲彩停留安營": {
     "alias_of": "雲彩停住安營"
@@ -46048,6 +47406,9 @@
   "亞倫後裔": {
     "alias_of": "亞倫的祭司譜系"
   },
+  "亞倫的罪": {
+    "alias_of": "亞倫的罪（神向亞倫發怒）"
+  },
   "亞拉得迦南王": {
     "alias_of": "亞拉得王（Arad）"
   },
@@ -46870,6 +48231,21 @@
   "野兔": {
     "alias_of": "兔子（arnebet）"
   },
+  "約版": {
+    "alias_of": "兩塊石版（約版）"
+  },
+  "兩塊石版": {
+    "alias_of": "兩塊石版（約版）"
+  },
+  "石版": {
+    "alias_of": "兩塊石版（約版）"
+  },
+  "luchot (לֻחֹת)": {
+    "alias_of": "兩塊石版（約版）"
+  },
+  "luach (לֻחַ)": {
+    "alias_of": "兩塊石版（約版）"
+  },
   "兩隻公山羊": {
     "alias_of": "兩隻公山羊（shnei se'irim）"
   },
@@ -47320,11 +48696,14 @@
   "拈鬮": {
     "alias_of": "拈鬮（goral）"
   },
-  "samakh": {
-    "alias_of": "按手（samak）"
-  },
   "按手承認罪孽": {
     "alias_of": "按手承認罪孽（semikhah）"
+  },
+  "按手": {
+    "alias_of": "按手（samak）"
+  },
+  "samakh": {
+    "alias_of": "按手（samak）"
   },
   "machanah": {
     "alias_of": "按站（machanah）"
@@ -47433,6 +48812,12 @@
   },
   "木偶": {
     "alias_of": "木偶（亞舍拉）"
+  },
+  "木櫃": {
+    "alias_of": "木櫃（aron）"
+  },
+  "皂莢木櫃": {
+    "alias_of": "木櫃（aron）"
   },
   "未受割禮": {
     "alias_of": "未受割禮（arel）"
@@ -47575,6 +48960,9 @@
   "Sin wilderness etymology": {
     "alias_of": "汛（ Sin thorn ）"
   },
+  "沙番": {
+    "alias_of": "沙番（shaphan）"
+  },
   "油壺": {
     "alias_of": "油壺（kelei shamen）"
   },
@@ -47640,6 +49028,15 @@
   },
   "灑七次": {
     "alias_of": "灑七次（hizah sheva pe'amim）"
+  },
+  "火毒": {
+    "alias_of": "火毒（michveh）"
+  },
+  "燒傷": {
+    "alias_of": "火毒（michveh）"
+  },
+  "燙傷": {
+    "alias_of": "火毒（michveh）"
   },
   "火祭": {
     "alias_of": "火祭（isheh）"
@@ -48415,6 +49812,9 @@
   "佩謝爾": {
     "alias_of": "雕刻的偶像（佩謝爾）"
   },
+  "雕": {
+    "alias_of": "雕（nesher）"
+  },
   "革舜名字含義": {
     "alias_of": "革舜名字的由來"
   },
@@ -48423,6 +49823,21 @@
   },
   "頭疥": {
     "alias_of": "頭疥（neteq ba-rosh）"
+  },
+  "頭禿": {
+    "alias_of": "頭禿與頂門禿（qarachat u-gabbachat）"
+  },
+  "頂門禿": {
+    "alias_of": "頭禿與頂門禿（qarachat u-gabbachat）"
+  },
+  "禿頭": {
+    "alias_of": "頭禿與頂門禿（qarachat u-gabbachat）"
+  },
+  "禿頂": {
+    "alias_of": "頭禿與頂門禿（qarachat u-gabbachat）"
+  },
+  "頭禿與頂門禿": {
+    "alias_of": "頭禿與頂門禿（qarachat u-gabbachat）"
   },
   "香柏木": {
     "alias_of": "香柏木（erez）"
@@ -48838,11 +50253,17 @@
   "帳幕的南面": {
     "alias_of": "聖所"
   },
+  "聖所(miqdash)": {
+    "alias_of": "聖所"
+  },
   "聖處": {
     "alias_of": "聖處（會幕院子）"
   },
   "會幕的院子": {
     "alias_of": "聖處（會幕院子）"
+  },
+  "應許地疆界": {
+    "alias_of": "腳掌所踏之地都歸你們（從曠野、利巴嫩、伯拉大河、直到西海）"
   },
   "幔子內": {
     "alias_of": "至聖所"
@@ -48883,6 +50304,9 @@
   "錫安山": {
     "alias_of": "西雲山"
   },
+  "迦南埃及對比": {
+    "alias_of": "迦南地與埃及地的對比（雨水滋潤 vs 腳澆灌）"
+  },
   "陀弗": {
     "alias_of": "陀弗（Tophel）"
   },
@@ -48903,6 +50327,15 @@
   },
   "亞拉巴海": {
     "alias_of": "鹽海"
+  },
+  "不可蓬頭散髮": {
+    "alias_of": "不可蓬頭散髮、撕裂衣裳"
+  },
+  "不可撕裂衣裳": {
+    "alias_of": "不可蓬頭散髮、撕裂衣裳"
+  },
+  "祭司禁哀悼禮儀": {
+    "alias_of": "不可蓬頭散髮、撕裂衣裳"
   },
   "大腿窩筋禁忌": {
     "alias_of": "不吃大腿窩的筋"
@@ -49268,6 +50701,9 @@
     "alias_of": "駱駝成為家畜"
   },
   "駱駝": {
+    "alias_of": "駱駝成為家畜"
+  },
+  "駱駝(gamal)": {
     "alias_of": "駱駝成為家畜"
   },
   "七十長老起源": {
@@ -49693,6 +51129,12 @@
   "不要回頭看": {
     "alias_of": "不可回頭看"
   },
+  "禁止亞舍拉": {
+    "alias_of": "不可在壇旁栽樹木作木偶（禁止亞舍拉）"
+  },
+  "不可在壇旁栽樹木": {
+    "alias_of": "不可在壇旁栽樹木作木偶（禁止亞舍拉）"
+  },
   "第三誡": {
     "alias_of": "不可妄稱耶和華你神的名"
   },
@@ -49707,6 +51149,12 @@
   },
   "第七條誡命": {
     "alias_of": "不可姦淫"
+  },
+  "不可學習列國可憎惡的事": {
+    "alias_of": "不可學習列國可憎惡的事（占卜、巫術等）"
+  },
+  "占卜巫術禁令": {
+    "alias_of": "不可學習列國可憎惡的事（占卜、巫術等）"
   },
   "警戒忘記神": {
     "alias_of": "不可忘記耶和華"
@@ -49741,11 +51189,32 @@
   "離棄列國風俗": {
     "alias_of": "不可效法外邦惡俗"
   },
+  "專心敬拜耶和華": {
+    "alias_of": "不可敬拜別神（專心敬拜耶和華）"
+  },
+  "不可事奉別神": {
+    "alias_of": "不可敬拜別神（專心敬拜耶和華）"
+  },
   "第六誡": {
     "alias_of": "不可殺人"
   },
   "第六條誡命": {
     "alias_of": "不可殺人"
+  },
+  "潔淨自己": {
+    "alias_of": "不可沾染當毀滅之物（潔淨自己）"
+  },
+  "不可取當毀滅之物": {
+    "alias_of": "不可沾染當毀滅之物（潔淨自己）"
+  },
+  "哀悼習俗禁令": {
+    "alias_of": "不可為死人劃身、剃額（哀悼習俗）"
+  },
+  "禁止立柱像": {
+    "alias_of": "不可為自己設立柱像（禁止立柱像）"
+  },
+  "不可設立柱像": {
+    "alias_of": "不可為自己設立柱像（禁止立柱像）"
   },
   "第二誡": {
     "alias_of": "不可為自己雕刻偶像"
@@ -49755,6 +51224,15 @@
   },
   "禁止偶像": {
     "alias_of": "不可為自己雕刻偶像"
+  },
+  "不可效法外邦敬拜": {
+    "alias_of": "不可照外邦人敬拜神的方式敬拜耶和華"
+  },
+  "反混合主義敬拜": {
+    "alias_of": "不可照外邦人敬拜神的方式敬拜耶和華"
+  },
+  "煮山羊羔在母奶中禁令": {
+    "alias_of": "不可用山羊羔母的奶煮山羊羔"
   },
   "成聖與褻瀆聖名": {
     "alias_of": "不可褻瀆聖名要在以色列中成聖"
@@ -49797,6 +51275,15 @@
   },
   "單一敬拜": {
     "alias_of": "不可隨從別神"
+  },
+  "不可效法惡俗": {
+    "alias_of": "不可隨從被剪除國民的惡俗（不可事奉他們的神）"
+  },
+  "進地後警戒": {
+    "alias_of": "不可隨從被剪除國民的惡俗（不可事奉他們的神）"
+  },
+  "拒絕異教同化": {
+    "alias_of": "不可隨從被剪除國民的惡俗（不可事奉他們的神）"
   },
   "廢棄律法": {
     "alias_of": "不守誡命典章律例"
@@ -49860,6 +51347,9 @@
   },
   "馬太福音 4:4 引用經文": {
     "alias_of": "人活著不是單靠食物，乃是靠耶和華口裡所出的一切話"
+  },
+  "祝福與咒詛的選擇": {
+    "alias_of": "今日將祝福與咒詛的話都陳明在你們面前"
   },
   "今日吩咐": {
     "alias_of": "今日所吩咐你的"
@@ -49987,6 +51477,15 @@
   "必定滅亡": {
     "alias_of": "你們必定滅亡"
   },
+  "神的兒女身分": {
+    "alias_of": "你們是耶和華你們神的兒女（不可為死人劃身、剃額）"
+  },
+  "神的兒女": {
+    "alias_of": "你們是耶和華你們神的兒女（神的兒女身分）"
+  },
+  "耶和華的兒女": {
+    "alias_of": "你們是耶和華你們神的兒女（神的兒女身分）"
+  },
   "歸主為聖": {
     "alias_of": "你們要歸我為聖"
   },
@@ -50089,6 +51588,18 @@
   "我和我的百姓是邪惡的": {
     "alias_of": "公義與邪惡的對立"
   },
+  "不可加添不可刪減": {
+    "alias_of": "凡我所吩咐的都要謹守遵行、不可加添也不可刪減"
+  },
+  "遵行神命不可增減": {
+    "alias_of": "凡我所吩咐的都要謹守遵行、不可加添也不可刪減"
+  },
+  "申命記十二章三十二節": {
+    "alias_of": "凡我所吩咐的都要謹守遵行、不可加添也不可刪減"
+  },
+  "凡有翅膀爬行的物": {
+    "alias_of": "凡有翅膀爬行的物（昆蟲）"
+  },
   "出埃及的目的": {
     "alias_of": "出埃及為要事奉神"
   },
@@ -50122,6 +51633,18 @@
   "起誓應許之地": {
     "alias_of": "列祖起誓應許之地"
   },
+  "初熟之物歸祭司": {
+    "alias_of": "初熟之物歸祭司（五穀、新酒、油、羊毛）"
+  },
+  "利未人、寄居的、孤兒寡婦": {
+    "alias_of": "利未人、寄居的、孤兒寡婦（社會關懷）"
+  },
+  "照顧利未人": {
+    "alias_of": "利未人不可被忽略（利未人無分無業）"
+  },
+  "利未人供養": {
+    "alias_of": "利未人不可被忽略（利未人無分無業）"
+  },
   "利未人取代長子": {
     "alias_of": "利未人代替長子"
   },
@@ -50133,6 +51656,12 @@
   },
   "利未人贖頭生": {
     "alias_of": "利未人代替頭生歸神"
+  },
+  "利未人可來事奉": {
+    "alias_of": "利未人可來到耶和華揀選的地方事奉（同工得同酬）"
+  },
+  "同工得同酬": {
+    "alias_of": "利未人可來到耶和華揀選的地方事奉（同工得同酬）"
   },
   "利未人職任分工": {
     "alias_of": "利未人各按職任分派"
@@ -50152,7 +51681,13 @@
   "利未人無產業": {
     "alias_of": "利未人無分"
   },
+  "利未祭司無分無業": {
+    "alias_of": "利未祭司無分無業、耶和華是他們的產業"
+  },
   "割禮": {
+    "alias_of": "割禮之約"
+  },
+  "割禮(milah)": {
     "alias_of": "割禮之約"
   },
   "忙於工作無暇聽道": {
@@ -50169,6 +51704,9 @@
   },
   "以色列十二支派起源": {
     "alias_of": "十二支派起源"
+  },
+  "十一奉獻": {
+    "alias_of": "十分取一（十一奉獻）"
   },
   "Decalogue": {
     "alias_of": "十誡"
@@ -50257,6 +51795,15 @@
   "石壇": {
     "alias_of": "土壇"
   },
+  "非祭物宰殺": {
+    "alias_of": "在各城可宰殺吃肉（非祭物之肉）"
+  },
+  "尋常吃肉": {
+    "alias_of": "在各城可宰殺吃肉（非祭物之肉）"
+  },
+  "肉類食用自由": {
+    "alias_of": "在各城可宰殺吃肉（非祭物之肉）"
+  },
   "serve Me in the wilderness": {
     "alias_of": "在曠野事奉神"
   },
@@ -50323,6 +51870,9 @@
   "基督作為逾越節羔羊": {
     "alias_of": "基督預表（逾越節羔羊）"
   },
+  "神向列祖的應許": {
+    "alias_of": "堅定祂向列祖起誓所應許的話"
+  },
   "當面報應": {
     "alias_of": "報應恨他的人"
   },
@@ -50361,6 +51911,12 @@
   },
   "永遠贖罪預表": {
     "alias_of": "大贖罪日預表基督永遠贖罪"
+  },
+  "天和天上的天屬神": {
+    "alias_of": "天地萬物屬神"
+  },
+  "地和地上所有的屬神": {
+    "alias_of": "天地萬物屬神"
   },
   "天如鐵、地如銅": {
     "alias_of": "天如鐵地如銅"
@@ -50422,6 +51978,9 @@
   "守耶和華吩咐": {
     "alias_of": "守耶和華的吩咐（雲彩引導下）"
   },
+  "守誡得地膽壯": {
+    "alias_of": "守誡命得地、膽壯"
+  },
   "安息日獻祭預表安息": {
     "alias_of": "安息日加倍獻祭預表安息"
   },
@@ -50481,6 +52040,9 @@
   },
   "Judgment and governance": {
     "alias_of": "審判與治理"
+  },
+  "經文 (Tephillin/Phylacteries)": {
+    "alias_of": "將話存在心內、留在意中、繫在手上為記號、戴在額上為經文"
   },
   "緊貼耶和華": {
     "alias_of": "專靠耶和華"
@@ -50659,8 +52221,17 @@
   "歸回耶和華得憐憫": {
     "alias_of": "悔改蒙恩"
   },
+  "清除惡人": {
+    "alias_of": "惡人必被除滅（清除惡人）"
+  },
+  "除掉惡": {
+    "alias_of": "惡人必被除滅（清除惡人）"
+  },
   "愛鄰如己": {
     "alias_of": "愛人如己"
+  },
+  "愛神守誡": {
+    "alias_of": "愛耶和華你的神、常守祂的吩咐律例典章誡命"
   },
   "聖別": {
     "alias_of": "成聖"
@@ -50727,6 +52298,9 @@
   },
   "拒絕神潔淨方式滅亡": {
     "alias_of": "拒絕潔淨被剪除預表拒絕恩典滅亡"
+  },
+  "清除拜偶像之惡": {
+    "alias_of": "拜偶像者必被治死（清除惡人）"
   },
   "撿了遺失的物上行詭詐": {
     "alias_of": "拾遺不報"
@@ -50878,6 +52452,12 @@
   "敬畏耶和華": {
     "alias_of": "敬畏神"
   },
+  "敬畏耶和華你的神": {
+    "alias_of": "敬畏神、愛神、事奉神"
+  },
+  "盡心盡性事奉": {
+    "alias_of": "敬畏神、愛神、事奉神"
+  },
   "Fear God": {
     "alias_of": "敬畏神、誠實、恨不義之財"
   },
@@ -50886,6 +52466,12 @@
   },
   "hate dishonest gain": {
     "alias_of": "敬畏神、誠實、恨不義之財"
+  },
+  "敬畏神的完整回應": {
+    "alias_of": "敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓"
+  },
+  "獨一崇拜與絕對委身": {
+    "alias_of": "敬畏耶和華、事奉祂、專靠祂、指著祂的名起誓"
   },
   "懼怕耶和華這話": {
     "alias_of": "敬畏耶和華的話"
@@ -50910,6 +52496,9 @@
   },
   "晝夜雲火": {
     "alias_of": "日間雲彩夜間火（帳幕上）"
+  },
+  "秋雨春雨": {
+    "alias_of": "早雨晚雨（秋雨春雨）"
   },
   "in all the earth": {
     "alias_of": "普天下沒有像我的"
@@ -50943,6 +52532,9 @@
   },
   "應許與順服": {
     "alias_of": "有條件的應許"
+  },
+  "潔淨祭物規定": {
+    "alias_of": "有殘疾或惡病的牛羊不可獻給耶和華（潔淨祭物）"
   },
   "甘心樂意獻上": {
     "alias_of": "樂獻"
@@ -51088,6 +52680,18 @@
   "分別潔淨與不潔淨": {
     "alias_of": "潔淨不潔淨"
   },
+  "水族潔淨標準": {
+    "alias_of": "潔淨與不潔淨的水族（有翅有鱗）"
+  },
+  "陸地動物潔淨標準": {
+    "alias_of": "潔淨與不潔淨的走獸（分蹄、倒嚼）"
+  },
+  "飛鳥潔淨名單": {
+    "alias_of": "潔淨與不潔淨的飛鳥"
+  },
+  "飲食律例總綱": {
+    "alias_of": "潔淨與不潔淨的食物（飲食律例）"
+  },
   "潔淨地方": {
     "alias_of": "潔淨處"
   },
@@ -51175,6 +52779,18 @@
   "生命靠神話語": {
     "alias_of": "物質非生命主要依靠"
   },
+  "牲畜飽足": {
+    "alias_of": "牲畜有草吃、吃得飽足"
+  },
+  "集中敬拜": {
+    "alias_of": "獻祭只能在神揀選的地方（集中敬拜）"
+  },
+  "獻祭限制": {
+    "alias_of": "獻祭只能在神揀選的地方（集中敬拜）"
+  },
+  "單一聖所律法": {
+    "alias_of": "獻祭只能在神揀選的地方（集中敬拜）"
+  },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
   },
@@ -51237,6 +52853,12 @@
   },
   "孝敬父母": {
     "alias_of": "當孝敬父母"
+  },
+  "愛寄居者的命令": {
+    "alias_of": "當憐愛寄居者（因你們在埃及也作過寄居的）"
+  },
+  "埃及寄居經驗的神學意義": {
+    "alias_of": "當憐愛寄居者（因你們在埃及也作過寄居的）"
   },
   "當毀滅的物": {
     "alias_of": "當毀滅的物（赫蓮）"
@@ -51352,11 +52974,32 @@
   "列祖之約": {
     "alias_of": "神愛列祖揀選後裔"
   },
+  "耶和華喜悅列祖": {
+    "alias_of": "神揀選以色列（揀選恩典）"
+  },
+  "揀選以色列為後裔": {
+    "alias_of": "神揀選以色列（揀選恩典）"
+  },
+  "純恩典揀選": {
+    "alias_of": "神揀選以色列（揀選恩典）"
+  },
   "神保守人不犯罪": {
     "alias_of": "神攔阻人犯罪"
   },
+  "神作為讚美的對象": {
+    "alias_of": "神是你所讚美的、為你做了大而可畏的事"
+  },
+  "救恩大事記為讚美根基": {
+    "alias_of": "神是你所讚美的、為你做了大而可畏的事"
+  },
   "神是戰士": {
     "alias_of": "神為你爭戰"
+  },
+  "神保護弱勢族群": {
+    "alias_of": "神為孤兒寡婦伸冤、憐愛寄居者"
+  },
+  "神的公義與憐憫": {
+    "alias_of": "神為孤兒寡婦伸冤、憐愛寄居者"
   },
   "耶和華為產業": {
     "alias_of": "神為產業"
@@ -51375,6 +53018,21 @@
   },
   "Right hand of God": {
     "alias_of": "神的右手"
+  },
+  "萬神之神": {
+    "alias_of": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）"
+  },
+  "萬主之主": {
+    "alias_of": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）"
+  },
+  "大而可畏": {
+    "alias_of": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）"
+  },
+  "不以貌取人": {
+    "alias_of": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）"
+  },
+  "不受賄賂": {
+    "alias_of": "神的屬性（萬神之神、萬主之主、大有能力、大而可畏、不以貌取人、不受賄賂）"
   },
   "忍耐與公義": {
     "alias_of": "神的忍耐與公義並行"
@@ -51423,6 +53081,9 @@
   },
   "神賜福不可廢": {
     "alias_of": "神的祝福不可撤銷"
+  },
+  "神的管教與大能": {
+    "alias_of": "神的管教、威嚴、大能的手、伸出來的膀臂"
   },
   "God's holy dwelling": {
     "alias_of": "神的聖所"
@@ -51534,6 +53195,9 @@
   },
   "清酒濃酒都不可喝": {
     "alias_of": "祭司不可喝酒"
+  },
+  "祭司應得的分": {
+    "alias_of": "祭司應得的分（前腿、兩腮、胃）"
   },
   "祭司分得分": {
     "alias_of": "祭司收入"
@@ -51679,6 +53343,9 @@
   "罪如大痲瘋": {
     "alias_of": "罪如大痲瘋：滲透、隔離、需神醫治"
   },
+  "罪的滲透與隔離": {
+    "alias_of": "罪如大痲瘋：滲透、隔離、需神醫治"
+  },
   "補守逾越節羊羔骨頭不可折斷": {
     "alias_of": "羊羔骨頭不可折斷（補守）"
   },
@@ -51723,6 +53390,18 @@
   },
   "Jehovah Rapha": {
     "alias_of": "耶和華拉法"
+  },
+  "耶和華揀選利未人": {
+    "alias_of": "耶和華揀選利未人永遠奉祂名侍立事奉"
+  },
+  "耶和華揀選之地": {
+    "alias_of": "耶和華揀選立名的地方（中央聖所）"
+  },
+  "立名之居所": {
+    "alias_of": "耶和華揀選立名的地方（中央聖所）"
+  },
+  "耶和華揀選立名的居所": {
+    "alias_of": "耶和華揀選立名的居所（中央聖所）"
   },
   "Yahweh is my strength and my song and my salvation": {
     "alias_of": "耶和華是我的力量我的詩歌我的拯救"
@@ -51778,11 +53457,20 @@
   "耶和華之名": {
     "alias_of": "耶和華聖名的啟示"
   },
+  "像摩西的先知": {
+    "alias_of": "耶和華要興起一位先知像摩西（彌賽亞預言）"
+  },
+  "彌賽亞先知預言": {
+    "alias_of": "耶和華要興起一位先知像摩西（彌賽亞預言）"
+  },
   "耶和華豈有太奇妙的事": {
     "alias_of": "耶和華豈有難成的事"
   },
   "神豈有難成的事": {
     "alias_of": "耶和華豈有難成的事"
+  },
+  "耶和華賜福與你": {
+    "alias_of": "耶和華賜福與你（順服帶來福分）"
   },
   "聖的俗的": {
     "alias_of": "聖俗"
@@ -51823,6 +53511,15 @@
   "聖潔神學": {
     "alias_of": "聖潔與分別為聖"
   },
+  "聖物上呈": {
+    "alias_of": "聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方"
+  },
+  "還願甘心祭規定": {
+    "alias_of": "聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方"
+  },
+  "頭生獻祭": {
+    "alias_of": "聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方"
+  },
   "被聖靈充滿的領袖": {
     "alias_of": "聖靈充滿的領袖"
   },
@@ -51840,6 +53537,9 @@
   },
   "三樣情慾": {
     "alias_of": "肉體的情慾、眼目的情慾、今生的驕傲"
+  },
+  "自死的不可吃": {
+    "alias_of": "自死的不可吃（可給寄居者或賣與外人）"
   },
   "consecration": {
     "alias_of": "自潔"
@@ -51904,6 +53604,15 @@
   "摩西之約": {
     "alias_of": "西乃之約"
   },
+  "至親不得寬容": {
+    "alias_of": "親屬勸誘也不得寬容（至親不得寬容）"
+  },
+  "親屬引誘不寬恕": {
+    "alias_of": "親屬勸誘也不得寬容（至親不得寬容）"
+  },
+  "親眼看見神大事": {
+    "alias_of": "親眼看見耶和華所做的一切大事"
+  },
   "trumpet sound": {
     "alias_of": "角聲"
   },
@@ -51940,6 +53649,9 @@
   "遵行道": {
     "alias_of": "謹守遵行"
   },
+  "謹慎免受迷惑": {
+    "alias_of": "謹慎免得心中受迷惑、偏離正路、事奉敬拜別神"
+  },
   "謹慎不可忘記": {
     "alias_of": "謹慎免得忘記"
   },
@@ -51958,8 +53670,14 @@
   "加五分之一": {
     "alias_of": "賠還（歸還加五分之一）"
   },
+  "贖罪祭(chatat)": {
+    "alias_of": "贖罪祭"
+  },
   "贖罪祭與贖愆祭同一條例": {
     "alias_of": "贖罪祭怎樣贖愆祭也是怎樣"
+  },
+  "國民的惡": {
+    "alias_of": "迦南人的惡（國民的惡）"
   },
   "迦南地流奶與蜜": {
     "alias_of": "迦南地流奶與蜜的應許應驗"
@@ -52011,6 +53729,9 @@
   },
   "征服迦南命令": {
     "alias_of": "進迦南趕出居民毀滅偶像"
+  },
+  "逾越節獻祭地點": {
+    "alias_of": "逾越節只能在神揀選的地方獻祭"
   },
   "逾越節預表基督": {
     "alias_of": "逾越節無酵節預表基督與聖潔"
@@ -52099,6 +53820,15 @@
   "除去外邦神": {
     "alias_of": "除掉外邦神"
   },
+  "受割禮的心": {
+    "alias_of": "除掉心裡的污穢、不可硬著頸項"
+  },
+  "不可硬著頸項": {
+    "alias_of": "除掉心裡的污穢、不可硬著頸項"
+  },
+  "內在悔改": {
+    "alias_of": "除掉心裡的污穢、不可硬著頸項"
+  },
   "除污穢水聖靈預表": {
     "alias_of": "除污穢水預表聖靈潔淨能力"
   },
@@ -52117,6 +53847,12 @@
   "事奉別神": {
     "alias_of": "隨從別神事奉敬拜"
   },
+  "隨心所欲買牛羊、清酒濃酒": {
+    "alias_of": "隨心所欲買牛羊、清酒濃酒（十一奉獻的喜樂）"
+  },
+  "十一奉獻的喜樂": {
+    "alias_of": "隨心所欲買牛羊、清酒濃酒（十一奉獻的喜樂）"
+  },
   "雲彩停留不定": {
     "alias_of": "雲彩停留長短不定（兩天一月一年）"
   },
@@ -52131,6 +53867,9 @@
   },
   "米甸之戰零傷亡": {
     "alias_of": "零傷亡見證神保守"
+  },
+  "得地非因義": {
+    "alias_of": "非因你的義（得地非因義）"
   },
   "非尼哈熱心": {
     "alias_of": "非尼哈的熱心為神"
@@ -52417,6 +54156,27 @@
   "以實瑪利後裔": {
     "alias_of": "以實瑪利與阿拉伯族群的關係"
   },
+  "假先知審判": {
+    "alias_of": "假先知的審判（擅自說話、奉別神名說話）"
+  },
+  "先知試驗標準": {
+    "alias_of": "假先知的審判（擅自說話、奉別神名說話）"
+  },
+  "假先知": {
+    "alias_of": "假先知（先知或作夢的人勸誘事奉別神）"
+  },
+  "先知或作夢的人勸誘事奉別神": {
+    "alias_of": "假先知（先知或作夢的人勸誘事奉別神）"
+  },
+  "假先知誘惑": {
+    "alias_of": "先知或作夢的人勸誘事奉別神（假先知）"
+  },
+  "申命記13假先知": {
+    "alias_of": "先知或作夢的人勸誘事奉別神（假先知）"
+  },
+  "異夢誘惑": {
+    "alias_of": "先知或作夢的人勸誘事奉別神（假先知）"
+  },
   "冒煙爐與火把的意思": {
     "alias_of": "冒煙的爐與燒著的火把指什麼"
   },
@@ -52542,6 +54302,9 @@
   },
   "剪除出約民": {
     "alias_of": "從民中剪除的含義"
+  },
+  "惡人勸誘全城事奉別神": {
+    "alias_of": "惡人勸誘全城事奉別神（叛教之城）"
   },
   "所多瑪的罪": {
     "alias_of": "所多瑪的罪是什麼"
@@ -52725,6 +54488,15 @@
   },
   "耶和華使者的身分": {
     "alias_of": "耶和華的使者是否為神顯現"
+  },
+  "至親勸誘": {
+    "alias_of": "至親勸誘事奉別神（至親勸誘）"
+  },
+  "至親勸誘事奉別神": {
+    "alias_of": "至親勸誘事奉別神（至親勸誘）"
+  },
+  "親屬勸誘事奉別神": {
+    "alias_of": "親屬勸誘事奉別神（至親勸誘）"
   },
   "迦勒進迦南時間": {
     "alias_of": "迦勒何時進迦南地"

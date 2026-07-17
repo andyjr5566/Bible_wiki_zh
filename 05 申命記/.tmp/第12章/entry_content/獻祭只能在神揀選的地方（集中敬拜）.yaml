@@ -1,0 +1,38 @@
+name: 獻祭只能在神揀選的地方（集中敬拜）
+type: 神學
+secondary_types:
+- 律法
+- 敬拜
+aliases:
+- 集中敬拜
+- 獻祭限制
+- 單一聖所律法
+status: formal
+definition: 申命記12章嚴禁在各處隨意獻燔祭（v.13），規定一切獻祭——燔祭、平安祭、十分取一之物、舉祭、還願祭、甘心祭、牛群羊群頭生的——必須奉到耶和華揀選的地方（v.5-7,
+  11, 14, 17-18, 26-27）。平安祭的血要倒在壇上，肉可在神面前吃；燔祭連肉帶血全獻於壇上。此法確保敬拜純正、防止混合主義、維持國家宗教統一。
+development: 歷史上希西家、約西亞改革即本於此法（王下18, 23）；新約在基督裡實現屬靈集中敬拜（約4:21-24, 來13:10-15）。
+accumulations:
+- book: 申命記
+  chapter: 12
+  summary: 禁止在各處隨意獻燔祭，規定一切獻祭必須帶到耶和華揀選的地方，並詳細列舉祭物類別與處理方式。
+  relation: 核心神學命令，貫串本章v.5-28，與「在各城可宰殺吃肉」形成祭物與非祭物的界線。
+related_entries:
+- 耶和華揀選立名的地方（中央聖所）
+- 在各城可宰殺吃肉（非祭物之肉）
+- 聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方
+- 凡我所吩咐的都要謹守遵行、不可加添也不可刪減
+sources:
+- '研經註解 (BibleHub): 申命記第12章第13-14, 17-18, 26-27節，集中敬拜條文詳解（https://biblehub.com/study/deuteronomy/12.htm）'
+- '逐節註解: 申命記12:13-14, 17-18, 26-27，獻祭地點限制與祭物分類（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT12.htm）'
+- '拾穗: 申命記12:13-14, 26-27，集中敬拜屬靈功課：順服勝過便利（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT12.htm）'
+- '研經註解 (KingComments): 申命記12:13-28，單一聖所律法的神學意義與執行細節（https://www.kingcomments.com/en/bible-studies/Deu/12）'
+created_from: 申命記第12章研經整理
+category: 神學
+trigger_sources:
+- 申12:5-7
+- 11
+- 13-14
+- 17-18
+- 26-27
+current_data: true
+pending: false

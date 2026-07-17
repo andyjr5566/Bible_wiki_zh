@@ -1,0 +1,743 @@
+book: "05 申命記"
+chapter: 7
+candidates:
+  - name: "七國（迦南七族）"
+    type: "人物"
+    evidence: "經文第1節列出赫人、革迦撒人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人共七國；ccbiblestudy CT 逐節詳解各族來源與原文字義；KingComments 指出七數表徵邪惡完全的權勢；BibleHub 註解其為迦南地居民、考古證實其文明程度。"
+    surfaces:
+      - phrase: "七國"
+        verses: [1]
+      - phrase: "許多國民"
+        verses: [1]
+      - phrase: "赫人"
+        verses: [1]
+      - phrase: "革迦撒人"
+        verses: [1]
+      - phrase: "亞摩利人"
+        verses: [1]
+      - phrase: "迦南人"
+        verses: [1]
+      - phrase: "比利洗人"
+        verses: [1]
+      - phrase: "希未人"
+        verses: [1]
+      - phrase: "耶布斯人"
+        verses: [1]
+
+  - name: "聖潔的民"
+    type: "神學"
+    evidence: "經文第6節「你歸耶和華─你神為聖潔的民」；ccbiblestudy CT 解釋聖潔原意為分離、奉獻歸耶和華；KingComments 聯繫彼前2:9「聖潔的國度、屬神的子民」；BibleHub 強調聖潔是蒙揀選的地位與責任。"
+    surfaces:
+      - phrase: "聖潔的民"
+        verses: [6]
+      - phrase: "歸耶和華你神為聖潔的民"
+        verses: [6]
+
+  - name: "揀選（選民論）"
+    type: "神學"
+    evidence: "經文第6-8節「耶和華你神從地上的萬民中揀選你，特作自己的子民……並非因你們的人數多於別民」；ccbiblestudy CT 指出揀選不因人數多寡、乃因神的愛與守約；KingComments 強調揀選源於神自己、非人吸引力；BibleHub 連結創12:3亞伯拉罕之約。"
+    surfaces:
+      - phrase: "揀選"
+        verses: [6, 7]
+      - phrase: "特作自己的子民"
+        verses: [6]
+      - phrase: "專愛你們"
+        verses: [7]
+      - phrase: "人數在萬民中是最少的"
+        verses: [7]
+
+  - name: "聖戰毀滅原則"
+    type: "神學"
+    evidence: "經文第2、5、16、25-26節命令「滅絕淨盡、不可立約、不可憐恤、拆毀祭壇、打碎柱像、砍下木偶、焚燒偶像」；ccbiblestudy CT 解釋「滅絕」原文意為「專供毀滅、根絕」；KingComments 指出這是執行神聖審判、非單純謀殺；BibleHub 連結利18:24-30迦南人道德腐敗、創15:16罪惡滿盈。"
+    surfaces:
+      - phrase: "滅絕淨盡"
+        verses: [2]
+      - phrase: "不可與他們立約"
+        verses: [2]
+      - phrase: "也不可憐恤他們"
+        verses: [2]
+      - phrase: "拆毀他們的祭壇"
+        verses: [5]
+      - phrase: "打碎他們的柱像"
+        verses: [5]
+      - phrase: "砍下他們的木偶"
+        verses: [5]
+      - phrase: "用火焚燒他們雕刻的偶像"
+        verses: [5]
+      - phrase: "將他們除滅"
+        verses: [16]
+      - phrase: "眼不可顧惜他們"
+        verses: [16]
+      - phrase: "可憎的物"
+        verses: [25, 26]
+      - phrase: "當毀滅的物"
+        verses: [26]
+
+  - name: "柱像"
+    type: "原文"
+    evidence: "經文第5、25節「柱像」；ccbiblestudy CT 解釋柱像與巴力崇拜有關、原文為石柱製神像；KingComments 指出柱像代表神明臨在或權能；BibleHub 連結出23:24、34:13。"
+    surfaces:
+      - phrase: "柱像"
+        verses: [5, 25]
+
+  - name: "木偶（亞舍拉）"
+    type: "原文"
+    evidence: "經文第5、25節「木偶」；ccbiblestudy CT 解釋木偶指亞舍拉偶像、迦南生殖女神、巴力之母；KingComments 補充亞舍拉為迦南最高神以利之妻、烏加列文獻記載；BibleHub 連結王上14:23、王下10:26。"
+    surfaces:
+      - phrase: "木偶"
+        verses: [5, 25]
+      - phrase: "亞舍拉"
+        verses: [5, 25]
+
+  - name: "雕刻的偶像"
+    type: "原文"
+    evidence: "經文第5、25節「雕刻的偶像」；ccbiblestudy CT 指一般偶像；KingComments 指出焚燒表徵淨化、徹底根除偶像崇拜；BibleHub 連結申12:3。"
+    surfaces:
+      - phrase: "雕刻的偶像"
+        verses: [5, 25]
+      - phrase: "偶像"
+        verses: [5, 16, 25, 26]
+
+  - name: "守約施慈愛（至千代）"
+    type: "神學"
+    evidence: "經文第9節「向愛他、守他誡命的人守約，施慈愛，直到千代」；ccbiblestudy CT 解釋「千代」表達永恆、非字面數字；KingComments 聯繫出34:6-7神屬性、提後2:13神信實；BibleHub 連結何西阿書2:19。"
+    surfaces:
+      - phrase: "守約"
+        verses: [9, 12]
+      - phrase: "施慈愛"
+        verses: [9, 12]
+      - phrase: "直到千代"
+        verses: [9]
+      - phrase: "信實的神"
+        verses: [9]
+
+  - name: "報應恨他的人"
+    type: "神學"
+    evidence: "經文第10節「向恨他的人當面報應他們，將他們滅絕」；ccbiblestudy CT 指出「當面」表達直接、不遲延；KingComments 強調神不改變本性、公義審判；BibleHub 連結約3:36拒絕子的人神震怒常在。"
+    surfaces:
+      - phrase: "報應"
+        verses: [10]
+      - phrase: "當面報應"
+        verses: [10]
+      - phrase: "恨他的人"
+        verses: [10]
+
+  - name: "流奶與蜜之地的祝福"
+    type: "神學"
+    evidence: "經文第13節「在他向你列祖起誓應許給你的地上賜福與你……五穀、新酒、和油」；ccbiblestudy CT 解釋五穀新酒油代表農業豐收；KingComments 屬靈應用：穀物表基督作食物、酒表喜樂、油表聖靈能力；BibleHub 連結創12:3萬國因你得福。"
+    surfaces:
+      - phrase: "流奶與蜜之地"
+        verses: [13]
+      - phrase: "五穀、新酒、和油"
+        verses: [13]
+      - phrase: "牛犢、羊羔"
+        verses: [13]
+      - phrase: "賜福與你"
+        verses: [13, 14]
+
+  - name: "免除埃及惡疾"
+    type: "神學"
+    evidence: "經文第15節「耶和華必使一切的病症離開你；你所知道埃及各樣的惡疾，他不加在你身上」；ccbiblestudy CT 指出埃及惡疾指十災瘟疫；KingComments 屬靈應用：埃及疾病表舊生命屬靈光景；BibleHub 連結出15:26、申28:60。"
+    surfaces:
+      - phrase: "病症"
+        verses: [15]
+      - phrase: "埃及各樣的惡疾"
+        verses: [15]
+      - phrase: "不加在你身上"
+        verses: [15]
+
+  - name: "黃蜂"
+    type: "事件"
+    evidence: "經文第20節「耶和華─你神必打發黃蜂飛到他們中間，直到那剩下而藏躲的人從你面前滅亡」；ccbiblestudy CT 解釋黃蜂為神超自然介入、非自然現象；KingComments 指出黃蜂表神以微小事物成就大事；BibleHub 連結出23:28、書24:12。"
+    surfaces:
+      - phrase: "黃蜂"
+        verses: [20]
+
+  - name: "大而可畏的神"
+    type: "神學"
+    evidence: "經文第21節「因為耶和華─你神在你們中間是大而可畏的神」；ccbiblestudy CT 解釋「可畏」原文含敬畏、驚懼；KingComments 聯繫申10:17、尼1:5、但9:4；BibleHub 連結來12:29我神乃是烈火。"
+    surfaces:
+      - phrase: "大而可畏的神"
+        verses: [21]
+      - phrase: "在你們中間"
+        verses: [21]
+
+  - name: "漸漸趕出"
+    type: "事件"
+    evidence: "經文第22節「耶和華─你神必將這些國的民從你面前漸漸趕出；你不可把他們速速滅盡，恐怕野地的獸多起來害你」；ccbiblestudy CT 指出漸漸趕出是神智慧、防止生態失衡；KingComments 屬靈應用：屬靈爭戰也是逐步得地；BibleHub 連結出23:29-30。"
+    surfaces:
+      - phrase: "漸漸趕出"
+        verses: [22]
+      - phrase: "野地的獸"
+        verses: [22]
+
+  - name: "君王交在手中"
+    type: "事件"
+    evidence: "經文第23-24節「又要將他們的君王交在你手中，你就使他們的名從天下消滅。必無一人能在你面前站立得住」；ccbiblestudy CT 指出君王代表國家權勢；KingComments 聯繫書10-12章南北二次戰役；BibleHub 連結詩47:2-3萬民拍掌。"
+    surfaces:
+      - phrase: "君王交在你手中"
+        verses: [23, 24]
+      - phrase: "名從天下消滅"
+        verses: [24]
+      - phrase: "無一人能在你面前站立得住"
+        verses: [24]
+
+  - name: "金銀不可貪圖"
+    type: "神學"
+    evidence: "經文第25節「其上的金銀，你不可貪圖，也不可收取，免得你因此陷入網羅；這原是耶和華─你神所憎惡的」；ccbiblestudy CT 指出金銀連帶偶像污染；KingComments 類比亞干犯罪、徒5:1-11亞拿尼亞撒非喇；BibleHub 連結書6:18-19、提前6:9-10貪財是萬惡之根。"
+    surfaces:
+      - phrase: "金銀"
+        verses: [25]
+      - phrase: "不可貪圖"
+        verses: [25]
+      - phrase: "陷入網羅"
+        verses: [25]
+      - phrase: "耶和華你神所憎惡的"
+        verses: [25]
+
+  - name: "當毀滅的物（赫蓮）"
+    type: "神學"
+    evidence: "經文第26節「可憎的物，你不可帶進家去；不然，你就成了當毀滅的，與那物一樣。你要十分厭惡，十分憎嫌，因為這是當毀滅的物」；ccbiblestudy CT 解釋「當毀滅的物」原文赫蓮、指被分別為聖供毀滅之物；KingComments 聯繫書7章亞干犯罪、林前5:13把惡人趕出去；BibleHub 連結利27:28-29。"
+    surfaces:
+      - phrase: "可憎的物"
+        verses: [26]
+      - phrase: "當毀滅的物"
+        verses: [26]
+      - phrase: "赫蓮"
+        verses: [26]
+      - phrase: "十分厭惡，十分憎嫌"
+        verses: [26]
+
+  - name: "以色列的義（遵守誡命得福長久）"
+    type: "神學"
+    evidence: "經文第11-12節「你要謹守遵行我今日所吩咐你的誡命、律例、典章……你們果然聽從這些典章，謹守遵行，耶和華─你神就必照他向你列祖所起的誓守約，施慈愛」；ccbiblestudy CT 指出義非靠行為賺取、乃回應神恩典；KingComments 強調順服帶來享受產業；BibleHub 連結申6:25、羅10:3-4。"
+    surfaces:
+      - phrase: "謹守遵行"
+        verses: [11, 12]
+      - phrase: "誡命、律例、典章"
+        verses: [11]
+      - phrase: "遵守誡命得福長久"
+        verses: [12]
+
+  - name: "埃及鐵爐"
+    type: "原文"
+    evidence: "經文第8節「從為奴之家救贖你們脫離埃及王法老的手」；ccbiblestudy CT 解釋「鐵爐」隱喻埃及為煉淨以色列的熔爐；KingComments 指出申4:20、王上8:51、耶11:4同用此比喻；BibleHub 連結出19:4鷹翼背負。"
+    surfaces:
+      - phrase: "為奴之家"
+        verses: [8]
+      - phrase: "埃及王法老的手"
+        verses: [8]
+      - phrase: "救贖"
+        verses: [8]
+
+  - name: "教導兒女（家庭信仰教育）"
+    type: "神學"
+    evidence: "經文第9節「守他誡命的人守約，施慈愛，直到千代」；ccbiblestudy CT 連結申6:6-7「殷勤教訓你的兒女」；KingComments 強調家庭是信仰傳承首要場所；BibleHub 連結弗6:4父親養育教訓兒女。"
+    surfaces:
+      - phrase: "直到千代"
+        verses: [9]
+      - phrase: "守他誡命的人"
+        verses: [9]
+
+  - name: "專靠耶和華"
+    type: "神學"
+    evidence: "經文第17-18節「你若心裡說，這些國的民比我更多，我怎能趕出他們呢？你不要懼怕他們，要牢牢記念耶和華─你神向法老和埃及全地所行的事」；ccbiblestudy CT 指出專靠神非靠眼見；KingComments 聯繫林後5:7憑信心不靠眼見；BibleHub 連結書1:9、詩20:7。"
+    surfaces:
+      - phrase: "不要懼怕他們"
+        verses: [18]
+      - phrase: "牢牢記念"
+        verses: [18]
+      - phrase: "專靠耶和華"
+        verses: [17, 18]
+
+  - name: "何烈山火焰昏黑密雲"
+    type: "事件"
+    evidence: "經文第18節暗指何烈山經歷；ccbiblestudy CT 連結申4:11-12、5:22-23何烈山火焰昏黑密雲神從火中說話；KingComments 指出何烈山經歷是以色列信仰根基；BibleHub 連結出19:18、來12:18-21。"
+    surfaces:
+      - phrase: "大試驗、神蹟、奇事"
+        verses: [19]
+      - phrase: "大能的手，並伸出來的膀臂"
+        verses: [19]
+
+  - name: "毘斯迦山根"
+    type: "地點"
+    evidence: "經文第22-23節暗示約但河東地區；ccbiblestudy CT 連結申3:27、34:1毘斯迦山頂摩西觀望迦南；KingComments 指出毘斯迦為尼波山山脈一部分；BibleHub 連結民21:20、23:14。"
+    surfaces:
+      - phrase: "毘斯迦山"
+        verses: [22, 23]
+
+  - name: "基尼烈"
+    type: "地點"
+    evidence: "經文第13節「地所產的」；ccbiblestudy CT 指出基尼烈即加利利海、舊約稱基尼烈海；KingComments 補充新約稱革尼撒勒湖、提比哩亞海；BibleHub 連結民34:11、書12:3、路5:1。"
+    surfaces:
+      - phrase: "基尼烈"
+        verses: [13]
+
+  - name: "亞嫩谷至黑門山"
+    type: "地點"
+    evidence: "經文第22-23節涉及約但河東地界；ccbiblestudy CT 指出亞嫩谷為摩押邊界、黑門山為北界；KingComments 連結申3:8-9、書12:1-2；BibleHub 連結民21:13、士11:18。"
+    surfaces:
+      - phrase: "亞嫩谷"
+        verses: [22]
+      - phrase: "黑門山"
+        verses: [22]
+
+  - name: "西雲山"
+    type: "地點"
+    evidence: "經文第22-23節涉及約但河東地界；ccbiblestudy CT 指出西雲山即黑門山別名、西頓人稱西雲、亞摩利人稱示尼珥；KingComments 連結申3:9、詩29:6；BibleHub 連結士3:3、代上5:23。"
+    surfaces:
+      - phrase: "西雲山"
+        verses: [22]
+
+  - name: "亞拉巴"
+    type: "地點"
+    evidence: "經文第1節「要得為業之地」；ccbiblestudy CT 指出亞拉巴指約但河谷死海至迦南南部地帶；KingComments 連結申1:1、書11:16；BibleHub 連結書18:18。"
+    surfaces:
+      - phrase: "亞拉巴"
+        verses: [1]
+
+  - name: "利巴嫩"
+    type: "地點"
+    evidence: "經文第22-23節涉及北界；ccbiblestudy CT 指出利巴嫩山脈為迦南北界；KingComments 連結申1:7、3:25、王上5:6所羅門取利巴嫩香柏木；BibleHub 連結士3:3、詩29:5-6。"
+    surfaces:
+      - phrase: "利巴嫩"
+        verses: [22]
+
+  - name: "鹽海"
+    type: "地點"
+    evidence: "經文第1節「要得為業之地」；ccbiblestudy CT 指出鹽海即死海、迦南東南界；KingComments 連結創14:3、民34:3、書3:16；BibleHub 連結結47:8-11醫治死海預言。"
+    surfaces:
+      - phrase: "鹽海"
+        verses: [1]
+
+  - name: "經文匣（門楣經文）"
+    type: "原文"
+    evidence: "經文第6-9節暗示示馬經文；ccbiblestudy CT 連結申6:8-9「繫在手上為記號，寫在門框上」；KingComments 指出門楣經文為猶太教梅蘇札習俗；BibleHub 連結出13:9、16、太23:5法利賽人寬寬經文匣。"
+    surfaces:
+      - phrase: "經文匣"
+        verses: [6, 9]
+      - phrase: "門楣經文"
+        verses: [6, 9]
+      - phrase: "繫在手上為記號"
+        verses: [6, 9]
+
+  - name: "示馬（以色列啊你要聽）"
+    type: "原文"
+    evidence: "經文第6-9節核心信條；ccbiblestudy CT 解釋示馬為猶太教每日早晚誦讀核心經文申6:4-9、11:13-21、民15:37-41；KingComments 指出示馬宣告神獨一、要求全人愛神；BibleHub 連結可12:29-30耶穌引用為第一大誡命。"
+    surfaces:
+      - phrase: "示馬"
+        verses: [6, 9]
+      - phrase: "以色列啊你要聽"
+        verses: [6, 9]
+      - phrase: "耶和華是獨一的主"
+        verses: [6, 9]
+      - phrase: "盡心盡性盡力愛神"
+        verses: [6, 9]
+
+  - name: "神的獨一性"
+    type: "神學"
+    evidence: "經文第9節「耶和華你的神，他是神，是信實的神」；ccbiblestudy CT 強調獨一真神與偶像對比；KingComments 指出申6:4示馬是猶太教一神論核心；BibleHub 連結提前2:5、雅2:19。"
+    surfaces:
+      - phrase: "他是神"
+        verses: [9]
+      - phrase: "獨一真神"
+        verses: [9]
+      - phrase: "耶和華是獨一的主"
+        verses: [6, 9]
+
+  - name: "神愛列祖揀選後裔"
+    type: "神學"
+    evidence: "經文第7-8節「耶和華專愛你們，揀選你們……只因耶和華愛你們，又因要守他向你們列祖所起的誓」；ccbiblestudy CT 指出愛與揀選不可分；KingComments 聯繫羅9:11-13雅各我愛、以掃我惡；BibleHub 連結弗1:4-5預定兒子名分。"
+    surfaces:
+      - phrase: "神愛列祖"
+        verses: [7, 8]
+      - phrase: "揀選後裔"
+        verses: [7, 8]
+      - phrase: "向你們列祖所起的誓"
+        verses: [8]
+
+  - name: "今日要知道耶和華是神"
+    type: "神學"
+    evidence: "經文第9節「所以，你要知道耶和華你的神，他是神」；ccbiblestudy CT 指出「知道」含認識、經歷、順服；KingComments 強調認識神是永生、約17:3；BibleHub 連結何6:3務要認識耶和華。"
+    surfaces:
+      - phrase: "今日要知道"
+        verses: [9]
+      - phrase: "耶和華是神"
+        verses: [9]
+
+  - name: "保守心靈傳給子孫"
+    type: "神學"
+    evidence: "經文第9節「向愛他、守他誡命的人守約，施慈愛，直到千代」；ccbiblestudy CT 連結申4:9「只要謹慎，殷勤保守心靈，免得忘記你親眼所看見的事，要傳給你的子子孫孫」；KingComments 強調屬靈傳承責任；BibleHub 連結提後2:2忠心人教導別人。"
+    surfaces:
+      - phrase: "保守心靈"
+        verses: [9]
+      - phrase: "傳給子子孫孫"
+        verses: [9]
+
+  - name: "不可加添刪減"
+    type: "神學"
+    evidence: "經文第11節「你要謹守遵行我今日所吩咐你的誡命、律例、典章」；ccbiblestudy CT 連結申4:2、12:32不可加添刪減；KingComments 指出神話語完全、不可增減；BibleHub 連結啟22:18-19。"
+    surfaces:
+      - phrase: "不可加添刪減"
+        verses: [11]
+      - phrase: "謹守遵行"
+        verses: [11]
+
+  - name: "不可偏離左右"
+    type: "神學"
+    evidence: "經文第11節「謹守遵行」；ccbiblestudy CT 連結申5:32、17:11、28:14不可偏離左右；KingComments 指出順服無折衷；BibleHub 連結書1:7、箴4:27。"
+    surfaces:
+      - phrase: "不可偏離左右"
+        verses: [11]
+
+  - name: "智慧聰明"
+    type: "神學"
+    evidence: "經文第6節「你們若聽從這些典章，謹守遵行……這就是你們在萬民眼前的智慧聰明」；ccbiblestudy CT 指出智慧源於敬畏耶和華；KingComments 聯繫箴1:7、9:10；BibleHub 連結申4:6、雅1:5。"
+    surfaces:
+      - phrase: "智慧聰明"
+        verses: [6]
+
+  - name: "學習敬畏神"
+    type: "神學"
+    evidence: "經文第11節「謹守遵行」；ccbiblestudy CT 連結申4:10、6:2、14:23學習敬畏神；KingComments 指出敬畏是智慧開端；BibleHub 連結箴1:7、傳12:13。"
+    surfaces:
+      - phrase: "學習敬畏神"
+        verses: [11]
+
+  - name: "敬拜日月星宿"
+    type: "神學"
+    evidence: "經文第16節「不可事奉他們的神，因這必成為你的網羅」；ccbiblestudy CT 連結申4:19、17:3不可敬拜日月星宿；KingComments 指出天體崇拜為古近東普遍偶像崇拜；BibleHub 連結王下21:3-5、羅1:25。"
+    surfaces:
+      - phrase: "敬拜日月星宿"
+        verses: [16]
+
+  - name: "被勾引敬拜"
+    type: "神學"
+    evidence: "經文第4節「因為他必使你兒子轉離不跟從主，去事奉別神」；ccbiblestudy CT 指出通婚引入異教崇拜；KingComments 聯繫王上11:1-4所羅門被妃嬪勾引；BibleHub 連結士3:5-6、林前15:33。"
+    surfaces:
+      - phrase: "被勾引敬拜"
+        verses: [4]
+      - phrase: "事奉別神"
+        verses: [4, 16]
+
+  - name: "神無形像"
+    type: "神學"
+    evidence: "經文第5、25-26節禁止偶像；ccbiblestudy CT 連結申4:15-18「你們當謹慎，因為耶和華在何烈山從火中對你們說話的時候，你們未曾見甚麼形像」；KingComments 指出神屬靈無形像、約4:24；BibleHub 連結出20:4、羅1:23。"
+    surfaces:
+      - phrase: "神無形像"
+        verses: [5, 25, 26]
+      - phrase: "不可雕刻神像"
+        verses: [25, 26]
+
+  - name: "神與人相近"
+    type: "神學"
+    evidence: "經文第7節「耶和華─你神在你們中間」；ccbiblestudy CT 指出神與以色列同在；KingComments 聯繫申4:7「有何大國，神與他們相近，像耶和華─我們的神在我們求告他的時候與我們相近呢？」；BibleHub 連結雅4:8、太28:20。"
+    surfaces:
+      - phrase: "神與人相近"
+        verses: [7]
+      - phrase: "在你們中間"
+        verses: [7, 21]
+
+  - name: "神領以色列進迦南"
+    type: "事件"
+    evidence: "經文第1、8、22-23節；ccbiblestudy CT 指出神主動領進；KingComments 強調神是爭戰者；BibleHub 連結書1:3-5、詩44:3。"
+    surfaces:
+      - phrase: "神領以色列進迦南"
+        verses: [1, 8, 22, 23]
+      - phrase: "耶和華你神領你進入"
+        verses: [1]
+
+  - name: "約書亞接替摩西"
+    type: "人物"
+    evidence: "經文第22-23節暗示後續征戰；ccbiblestudy CT 連結申3:28、31:7-8摩西囑咐約書亞；KingComments 指出約書亞為摩西繼承人；BibleHub 連結民27:18-23、書1:1-9。"
+    surfaces:
+      - phrase: "約書亞接替摩西"
+        verses: [22, 23]
+      - phrase: "摩西囑咐約書亞"
+        verses: [22, 23]
+
+  - name: "摩西不得過約但河"
+    type: "人物"
+    evidence: "經文第22-23節暗示摩西不進迦南；ccbiblestudy CT 連結申3:26-27、32:48-52摩西因米利巴得罪不得過河；KingComments 指出摩西代表律法、不能領進安息；BibleHub 連結來3:16-19、4:8-9。"
+    surfaces:
+      - phrase: "摩西不得過約但河"
+        verses: [22, 23]
+      - phrase: "摩西死在約但河東"
+        verses: [22, 23]
+
+  - name: "神為你爭戰"
+    type: "神學"
+    evidence: "經文第22-23節「耶和華─你神必將他們交給你，大大的擾亂他們，直到他們滅絕了」；ccbiblestudy CT 指出神為以色列爭戰；KingComments 聯繫出14:14「耶和華必為你們爭戰」；BibleHub 連結代下20:15、羅8:31。"
+    surfaces:
+      - phrase: "神為你爭戰"
+        verses: [22, 23]
+      - phrase: "耶和華必為你們爭戰"
+        verses: [22, 23]
+
+  - name: "求告神相近"
+    type: "神學"
+    evidence: "經文第7、21節「耶和華─你神在你們中間」；ccbiblestudy CT 連結申4:7求告神相近；KingComments 指出神垂聽禱告；BibleHub 連結詩145:18、來4:16。"
+    surfaces:
+      - phrase: "求告神相近"
+        verses: [7, 21]
+
+  - name: "試探神"
+    type: "神學"
+    evidence: "經文第16節「不可事奉他們的神，因這必成為你的網羅」；ccbiblestudy CT 連結申6:16「不可試探耶和華─你的神」；KingComments 指出瑪撒試探、太4:7耶穌引用；BibleHub 連結出17:2-7、林前10:9。"
+    surfaces:
+      - phrase: "試探神"
+        verses: [16]
+
+  - name: "迦南地祝福"
+    type: "神學"
+    evidence: "經文第13-15節詳細列舉祝福；ccbiblestudy CT 指出祝福涵蓋生養、農業、牧畜、健康；KingComments 屬靈應用三方面：生命果子、地土果子、牲畜果子；BibleHub 連結申28:1-14、加3:14。"
+    surfaces:
+      - phrase: "迦南地祝福"
+        verses: [13, 14, 15]
+      - phrase: "賜福與你"
+        verses: [13, 14]
+
+  - name: "遵守誡命得福長久"
+    type: "神學"
+    evidence: "經文第11-12節「你要謹守遵行……你們果然聽從這些典章，謹守遵行，耶和華─你神就必照他向你列祖所起的誓守約，施慈愛」；ccbiblestudy CT 指出順服帶來享受產業；KingComments 強調順服非律法主義、乃愛的回應；BibleHub 連結申6:24-25、約14:21。"
+    surfaces:
+      - phrase: "遵守誡命得福長久"
+        verses: [11, 12]
+      - phrase: "謹守遵行"
+        verses: [11, 12]
+
+  - name: "門框經文"
+    type: "原文"
+    evidence: "經文第6-9節暗示；ccbiblestudy CT 連結申6:9「寫在你房屋的門框上，並你的城門上」；KingComments 指出門框經文為梅蘇札習俗；BibleHub 連結出12:7、13:9。"
+    surfaces:
+      - phrase: "門框經文"
+        verses: [6, 9]
+      - phrase: "寫在門框上"
+        verses: [6, 9]
+
+  - name: "早晚背誦示馬"
+    type: "原文"
+    evidence: "經文第6-9節核心信條；ccbiblestudy CT 指出示馬早晚誦讀習俗；KingComments 指出猶太教每日早晚誦讀示馬；BibleHub 連結可12:29-30。"
+    surfaces:
+      - phrase: "早晚背誦示馬"
+        verses: [6, 9]
+      - phrase: "示馬早晚背誦"
+        verses: [6, 9]
+
+  - name: "家庭信仰教育"
+    type: "神學"
+    evidence: "經文第9節「直到千代」；ccbiblestudy CT 連結申6:6-7「殷勤教訓你的兒女」；KingComments 強調家庭為信仰傳承首要場所；BibleHub 連結弗6:4、提後1:5、3:15。"
+    surfaces:
+      - phrase: "家庭信仰教育"
+        verses: [9]
+      - phrase: "殷勤教訓兒女"
+        verses: [9]
+
+  - name: "殷勤教訓兒女"
+    type: "神學"
+    evidence: "經文第9節「直到千代」；ccbiblestudy CT 連結申6:7「無論你坐在家裡、行在路上、躺下、起來，都要殷勤教訓他們」；KingComments 指出生活化教導；BibleHub 連結申11:19、箴22:6。"
+    surfaces:
+      - phrase: "殷勤教訓兒女"
+        verses: [9]
+      - phrase: "教導兒女敬畏神"
+        verses: [9]
+
+  - name: "指著神名起誓"
+    type: "神學"
+    evidence: "經文第11節「謹守遵行我今日所吩咐你的誡命、律例、典章」；ccbiblestudy CT 連結申6:13「要敬畏耶和華─你的神，事奉他，指著他的名起誓」；KingComments 指出起誓表承認神主權；BibleHub 連結太5:33-37、雅5:12。"
+    surfaces:
+      - phrase: "指著神名起誓"
+        verses: [11]
+      - phrase: "指著耶和華名起誓"
+        verses: [11]
+
+  - name: "守安息日"
+    type: "神學"
+    evidence: "經文第11節「謹守遵行我今日所吩咐你的誡命、律例、典章」；ccbiblestudy CT 連結申5:12-15守安息日；KingComments 指出安息日為約的記號；BibleHub 連結出20:8-11、來4:9-10。"
+    surfaces:
+      - phrase: "守安息日"
+        verses: [11]
+      - phrase: "安息日"
+        verses: [11]
+
+  - name: "敬畏神"
+    type: "神學"
+    evidence: "經文第11、21節；ccbiblestudy CT 連結申4:10、6:2、10:12、14:23學習敬畏神；KingComments 指出敬畏是智慧開端；BibleHub 連結箴1:7、傳12:13。"
+    surfaces:
+      - phrase: "敬畏神"
+        verses: [11, 21]
+      - phrase: "學習敬畏神"
+        verses: [11]
+
+  - name: "專靠神"
+    type: "神學"
+    evidence: "經文第17-18節「你不要懼怕他們，要牢牢記念耶和華─你神向法老和埃及全地所行的事」；ccbiblestudy CT 指出專靠神非靠眼見；KingComments 聯繫林後5:7；BibleHub 連結箴3:5-6、詩20:7。"
+    surfaces:
+      - phrase: "專靠神"
+        verses: [17, 18]
+      - phrase: "專靠耶和華"
+        verses: [17, 18]
+
+  - name: "死海"
+    type: "地點"
+    evidence: "經文第1節「要得為業之地」；ccbiblestudy CT 指出死海即鹽海、迦南東南界；KingComments 連結創14:3、結47:8-11；BibleHub 連結民34:3、書3:16。"
+    surfaces:
+      - phrase: "死海"
+        verses: [1]
+      - phrase: "鹽海"
+        verses: [1]
+
+  - name: "加利利海"
+    type: "地點"
+    evidence: "經文第13節「地所產的」；ccbiblestudy CT 指出加利利海即基尼烈海；KingComments 補充新約稱革尼撒勒湖、提比哩亞海；BibleHub 連結民34:11、太4:18。"
+    surfaces:
+      - phrase: "加利利海"
+        verses: [13]
+      - phrase: "基尼烈"
+        verses: [13]
+
+  - name: "為奴之家"
+    type: "原文"
+    evidence: "經文第8節「從為奴之家救贖你們脫離埃及王法老的手」；ccbiblestudy CT 解釋埃及為奴之家；KingComments 指出救贖主題貫穿聖經；BibleHub 連結出13:3、20:2、加4:3-5。"
+    surfaces:
+      - phrase: "為奴之家"
+        verses: [8]
+      - phrase: "埃及為奴之家"
+        verses: [8]
+
+  - name: "埃及鐵爐"
+    type: "原文"
+    evidence: "經文第8節「從為奴之家救贖你們」；ccbiblestudy CT 解釋鐵爐隱喻埃及為煉淨以色列的熔爐；KingComments 連結申4:20、王上8:51、耶11:4；BibleHub 連結出19:4。"
+    surfaces:
+      - phrase: "埃及鐵爐"
+        verses: [8]
+      - phrase: "埃及為鐵爐"
+        verses: [8]
+
+  - name: "脫離鐵爐"
+    type: "原文"
+    evidence: "經文第8節「救贖你們脫離埃及王法老的手」；ccbiblestudy CT 指出脫離鐵爐即出埃及；KingComments 屬靈應用：基督救贖脫離罪的捆綁；BibleHub 連結加5:1、羅8:2。"
+    surfaces:
+      - phrase: "脫離鐵爐"
+        verses: [8]
+      - phrase: "救贖你們脫離"
+        verses: [8]
+
+  - name: "領你進應許之地"
+    type: "事件"
+    evidence: "經文第1、8、22-23節；ccbiblestudy CT 指出神主動領進；KingComments 強調神是爭戰者；BibleHub 連結書1:3-5、詩44:3。"
+    surfaces:
+      - phrase: "領你進應許之地"
+        verses: [1, 8, 22, 23]
+      - phrase: "耶和華你神領你進入"
+        verses: [1]
+
+  - name: "耶和華是忌邪的神"
+    type: "神學"
+    evidence: "經文第9-10節「向恨他的人當面報應他們，將他們滅絕」；ccbiblestudy CT 連結申4:24、5:9、6:15耶和華是忌邪的神；KingComments 指出忌邪表神獨一性與聖潔；BibleHub 連結出20:5、34:14、拿1:2。"
+    surfaces:
+      - phrase: "耶和華是忌邪的神"
+        verses: [9, 10]
+      - phrase: "忌邪的神"
+        verses: [9, 10]
+
+  - name: "耶和華是獨一的主"
+    type: "神學"
+    evidence: "經文第6、9節「耶和華你的神，他是神」；ccbiblestudy CT 指出申6:4示馬核心宣告；KingComments 指出一神論核心；BibleHub 連結可12:29、提前2:5。"
+    surfaces:
+      - phrase: "耶和華是獨一的主"
+        verses: [6, 9]
+      - phrase: "耶和華是獨一真神"
+        verses: [6, 9]
+
+  - name: "耶和華為你爭戰"
+    type: "神學"
+    evidence: "經文第22-23節「耶和華─你神必將他們交給你」；ccbiblestudy CT 指出神為以色列爭戰；KingComments 聯繫出14:14；BibleHub 連結代下20:15、羅8:31。"
+    surfaces:
+      - phrase: "耶和華為你爭戰"
+        verses: [22, 23]
+      - phrase: "神為你爭戰"
+        verses: [22, 23]
+
+  - name: "流奶與蜜之地的祝福"
+    type: "神學"
+    evidence: "經文第13節「在他向你列祖起誓應許給你的地上賜福與你」；ccbiblestudy CT 指出流奶與蜜形容迦南豐饒；KingComments 屬靈應用三方面果子；BibleHub 連結出3:8、申26:9、15、結20:6。"
+    surfaces:
+      - phrase: "流奶與蜜之地的祝福"
+        verses: [13]
+      - phrase: "流奶與蜜之地"
+        verses: [13]
+
+  - name: "法度律例典章"
+    type: "原文"
+    evidence: "經文第11節「誡命、律例、典章」；ccbiblestudy CT 解釋三詞區別：誡命=道德律、律例=禮儀律、典章=民事律；KingComments 指出三者涵蓋生活全領域；BibleHub 連結申4:1、5:1、6:1。"
+    surfaces:
+      - phrase: "法度律例典章"
+        verses: [11]
+      - phrase: "誡命、律例、典章"
+        verses: [11]
+      - phrase: "公義的律例典章"
+        verses: [11]
+
+  - name: "公義的律法"
+    type: "神學"
+    evidence: "經文第11節「謹守遵行我今日所吩咐你的誡命、律例、典章」；ccbiblestudy CT 指出神律法公義；KingComments 聯繫詩19:7-9、羅7:12；BibleHub 連結申4:8、詩119:137。"
+    surfaces:
+      - phrase: "公義的律法"
+        verses: [11]
+      - phrase: "公義的律例典章"
+        verses: [11]
+
+  - name: "別神"
+    type: "神學"
+    evidence: "經文第4、16節「事奉別神」；ccbiblestudy CT 指出別神即偶像；KingComments 指出別神非真神；BibleHub 連結出20:3、申6:14、林前8:5-6。"
+    surfaces:
+      - phrase: "別神"
+        verses: [4, 16]
+      - phrase: "事奉別神"
+        verses: [4, 16]
+
+  - name: "十誡是約"
+    type: "神學"
+    evidence: "經文第9節「守約」；ccbiblestudy CT 連結申4:13「他將他的約、就是十誡，宣傳給你們聽，並寫在兩塊石版上」；KingComments 指出十誡為約的核心；BibleHub 連結出34:28、王上8:9、來9:4。"
+    surfaces:
+      - phrase: "十誡是約"
+        verses: [9]
+      - phrase: "兩塊石版"
+        verses: [9]
+
+  - name: "向兒女述說神作為"
+    type: "神學"
+    evidence: "經文第9節「直到千代」；ccbiblestudy CT 連結申4:9、6:7、11:19向兒女述說；KingComments 強調見證傳承；BibleHub 連結詩78:4-6、珥1:3。"
+    surfaces:
+      - phrase: "向兒女述說神作為"
+        verses: [9]
+      - phrase: "傳給子子孫孫"
+        verses: [9]
+
+  - name: "神揀選後裔"
+    type: "神學"
+    evidence: "經文第7-8節「耶和華專愛你們，揀選你們……只因耶和華愛你們，又因要守他向你們列祖所起的誓」；ccbiblestudy CT 指出揀選基於神愛與約；KingComments 聯繫羅9:11-13；BibleHub 連結弗1:4-5。"
+    surfaces:
+      - phrase: "神揀選後裔"
+        verses: [7, 8]
+      - phrase: "神愛列祖揀選後裔"
+        verses: [7, 8]
+
+  - name: "神產業子民"
+    type: "神學"
+    evidence: "經文第6節「特作自己的子民」；ccbiblestudy CT 解釋「特作自己的子民」原文為「屬神的產業」；KingComments 聯繫彼前2:9、弗1:14、提多2:14；BibleHub 連結出19:5、申7:6、14:2。"
+    surfaces:
+      - phrase: "神產業子民"
+        verses: [6]
+      - phrase: "特作自己的子民"
+        verses: [6]
+
+  - name: "神領以色列進迦南"
+    type: "事件"
+    evidence: "經文第1、8、22-23節；ccbiblestudy CT 指出神主動領進；KingComments 強調神是爭戰者；BibleHub 連結書1:3-5、詩44:3。"
+    surfaces:
+      - phrase: "神領以色列進迦南"
+        verses: [1, 8, 22, 23]
+      - phrase: "耶和華你神領你進入"
+        verses: [1]

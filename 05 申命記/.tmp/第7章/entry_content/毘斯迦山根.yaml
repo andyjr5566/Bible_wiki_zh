@@ -1,0 +1,29 @@
+name: 毘斯迦山根
+type: 地點
+secondary_types: []
+aliases:
+- 毘斯迦山根
+status: formal
+definition: 位於約旦河東側、摩押平原的山嶺，是摩西向以色列人宣講申命記時所在的地標之一（申 7:1‑26 背景地理）。
+development: 本章未直接提及該山名，但作為申命記整卷的地理背景，屬於摩西在約旦河東講道的區域。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 本章記載耶和華吩咐以色列進迦南、滅絕七國，地理背景包含約旦河東的山嶺如毘斯迦山根。
+  relation: 提供本章宣講地點的地理定位。
+related_entries:
+- 七國（迦南七族）
+- 聖潔的民
+- 揀選（選民論）
+- 聖戰毀滅原則
+- 漸漸趕出
+- 君王交在手中
+- 當毀滅的物（赫蓮）
+sources:
+- '逐節註解: 申命記 7 章地理背景（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm）'
+- '研經註解: 申命記 7 章地點說明（https://biblehub.com/study/deuteronomy/7.htm）'
+created_from: manual
+category: 地點
+trigger_sources: []
+current_data: {}
+pending: false

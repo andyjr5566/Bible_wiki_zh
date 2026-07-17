@@ -1,0 +1,33 @@
+name: 亞嫩谷至黑門山
+type: 地點
+secondary_types: []
+aliases:
+- 亞嫩河谷到黑門山
+- 應許之地疆域
+status: formal
+definition: 指以色列在約但河東所得基業的南北跨度：南起亞嫩河谷（Arnon Gorge，今穆吉布河谷），北至黑門山（Mount Hermon，申3:8-9；4:48；書12:1-2）。本章v.1、10、18-19所稱「所要過去得為業的地」與「向列祖起誓應許之地」，即包含這完整地理範圍。
+development: 這疆域描述在申命記重複出現（3:8-9；4:48），強調神應許的具體性與完整性；歷史書記載以色列確曾佔有此地（書12:1-2；士11:22），成為神信實的見證；後世先知以此為界描述理想國度（結47:15-20）。
+accumulations:
+- book: 申命記
+  chapter: 6
+  summary: 經文三次提到「地」（vv.1, 10, 18）並強調「向你列祖起誓應許」（v.10），此地即涵蓋亞嫩谷至黑門山的完整疆域。
+  relation: 本章將誡命的遵行（v.1）與得地的應許（vv.10, 18）緊密連結，地理疆域的具體性保證了立約應許非抽象口號，而是歷史性的產業。
+related_entries:
+- 毘斯迦山根
+- 西雲山
+- 神領以色列進迦南
+- 流奶與蜜之地
+sources:
+- '逐節註解: 申命記第6章逐節註解——應許之地的地理範圍（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm）'
+- '拾穗: 申命記第6章拾穗——從亞嫩谷到黑門山的產業（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm）'
+- '研經註解: 申命記第6章研經註解——疆界應許的神學確據（https://www.kingcomments.com/en/bible-studies/Deu/6）'
+- '研經註解: 申命記第6章研經註解——迦南地邊界的歷史實現（https://biblehub.com/study/deuteronomy/6.htm）'
+created_from: 申命記第6章研經
+category: 地點
+trigger_sources:
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT06.htm
+- https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT06.htm
+- https://www.kingcomments.com/en/bible-studies/Deu/6
+- https://biblehub.com/study/deuteronomy/6.htm
+current_data: completed
+pending: false

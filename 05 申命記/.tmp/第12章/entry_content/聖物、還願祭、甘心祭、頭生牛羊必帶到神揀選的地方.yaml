@@ -1,0 +1,38 @@
+name: 聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方
+type: 神學
+secondary_types:
+- 律法
+- 獻祭條例
+- 聖物管理
+aliases:
+- 聖物上呈
+- 還願甘心祭規定
+- 頭生獻祭
+status: formal
+definition: 申命記12章列舉必須帶到耶和華揀選之處、不可在各城私自食用的聖物清單：五穀新酒油的十分之一、牛群羊群頭生的、還願祭、甘心祭、手中的舉祭（v.6,
+  11, 17-18, 26-27）。這些聖物必須在耶和華面前、在祂揀選的地方，由獻祭者與家屬、僕婢、利未人一同吃、一同樂。燔祭連肉帶血全獻於壇；平安祭血倒壇上、肉可自吃。此規定強調聖物的神聖歸屬與敬拜的團體性、喜樂性。
+development: 利未記27章詳述各祭條例，申命記在集中敬拜框架下重申聖物處理地點與共餐對象，強調利未人參與。
+accumulations:
+- book: 申命記
+  chapter: 12
+  summary: 詳細列舉必須帶到中央聖所的聖物類別（十分之一、頭生、還願、甘心、舉祭），規定不可在各城私吃，必須在耶和華面前與利未人同樂。
+  relation: 具體執行「集中敬拜」的條文，將抽象原則轉化為可操作的獻祭清單與共餐規範。
+related_entries:
+- 耶和華揀選立名的地方（中央聖所）
+- 獻祭只能在神揀選的地方（集中敬拜）
+- 在各城可宰殺吃肉（非祭物之肉）
+- 利未人不可被忽略（利未人無分無業）
+sources:
+- '研經註解 (BibleHub): 申命記第12章第6, 11, 17-18, 26-27節，聖物清單與中央聖所處理規定（https://biblehub.com/study/deuteronomy/12.htm）'
+- '逐節註解: 申命記12:17-18, 26-27，聖物不可在城裡吃、必須帶到揀選之處的釋義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT12.htm）'
+- '拾穗: 申命記12:17-18，聖物共餐：敬拜的喜樂與群體的合一（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT12.htm）'
+- '研經註解 (KingComments): 申命記12:17-28，聖物歸屬權與利未人供養在集中敬拜中的體現（https://www.kingcomments.com/en/bible-studies/Deu/12）'
+created_from: 申命記第12章研經整理
+category: 神學
+trigger_sources:
+- 申12:6
+- 11
+- 17-18
+- 26-27
+current_data: true
+pending: false

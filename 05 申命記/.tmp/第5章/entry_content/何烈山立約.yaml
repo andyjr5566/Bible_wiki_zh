@@ -1,0 +1,26 @@
+name: 何烈山立約
+type: 事件
+secondary_types: []
+aliases:
+- 何烈山立約
+status: formal
+definition: 申命記 5:2‑4 記述耶和華在何烈山（西乃山）與以色列人面對面立約，並非與列祖亞伯拉罕、以撒、雅各立的，而是與當時在場的世代立約。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 5
+  summary: 耶和華在何烈山與以色列人立約，強調約的當事人是當代百姓。
+  relation: 本條目為十誡頒布的歷史與神學根基，連結摩西重申十誡的背景。
+related_entries:
+- 摩西重申十誡
+- 神從火中面對面說話
+- 百姓懼怕火不敢上山
+- 神願百姓存敬畏心謹守遵行
+sources:
+- '逐節註解: 申命記 5 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT05.htm）'
+- '拾穗: 申命記 5 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT05.htm）'
+created_from: 申命記 5
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

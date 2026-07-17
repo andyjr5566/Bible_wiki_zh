@@ -1,0 +1,31 @@
+name: 進去得地
+type: 事件
+secondary_types: []
+aliases: []
+status: formal
+definition: 以色列人進入並佔有神所應許的迦南地，申命記8:1「進去得耶和華向你們列祖起誓應許的那地」。
+development: 進去得地是曠野漂流後的歷史性事件，標誌約定的應驗。
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 第1節提到進去得地作為順服誡命的目標。
+  relation: 進去得地與存活、人數增多同為神應許的三重祝福。
+related_entries:
+- 存活、人數增多、進去得地
+- 列祖起誓應許之地
+- 美地（迦南地）
+- 引你經過曠野
+- 為你使水從磐石流出
+sources:
+- '逐節註解: 申命記8章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記8章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+- '研經註解: 申命記8章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/8）'
+- '研經註解: 申命記8章研經註解（https://biblehub.com/study/deuteronomy/8.htm）'
+created_from: Deuteronomy 8
+category: 事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

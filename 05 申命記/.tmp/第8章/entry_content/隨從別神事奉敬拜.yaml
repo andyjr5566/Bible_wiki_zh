@@ -1,0 +1,27 @@
+name: 隨從別神事奉敬拜
+type: 神學
+secondary_types: []
+aliases:
+- 隨從別神
+- 事奉別神
+status: formal
+definition: 申命記 8:19 警告若忘記神、隨從別神事奉敬拜，必定滅亡。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 忘記神而事奉別神的後果
+  relation: 顯示背約的嚴重後果，作為警戒
+related_entries:
+- 若忘記真神而去事奉別神，你必要滅亡
+- 隨從別神事奉敬拜
+- 你們必定滅亡
+- 列國滅亡作鑑戒
+sources:
+- '逐節註解: 申命記 8:19 隨從別神（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記 8 章 事奉別神的警告（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+created_from: 申命記 8
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

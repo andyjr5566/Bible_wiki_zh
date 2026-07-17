@@ -1,0 +1,26 @@
+name: 亞倫的罪（神向亞倫發怒）
+type: 人物
+secondary_types: []
+aliases:
+- 亞倫的罪
+status: formal
+definition: 申命記 9:20 記載耶和華向亞倫甚是發怒，要滅絕他，摩西為亞倫代禱得蒙保全。
+development: 顯示領袖也須承擔責任，神的忿怒可透過代禱得以轉消。
+accumulations:
+- book: 申命記
+  chapter: 9
+  summary: 經文 20 節描述神向亞倫發怒，摩西為他祈禱。
+  relation: 作為何烈山拜金牛犢事件中亞倫的具體罪責與摩西代禱的對象。
+related_entries:
+- 何烈山拜金牛犢
+- 摩西代禱（為百姓代求）
+sources:
+- '逐節註解: 申命記 9:20（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT09.htm）'
+- '拾穗: 申命記 9:20（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT09.htm）'
+- '研經註解: 申命記 9:20（https://www.kingcomments.com/en/bible-studies/Deu/9）'
+- '研經註解: 申命記 9:20（https://biblehub.com/study/deuteronomy/9.htm）'
+created_from: 申命記 9
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

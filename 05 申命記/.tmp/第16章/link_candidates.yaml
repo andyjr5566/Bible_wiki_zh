@@ -1,0 +1,126 @@
+book: "05 申命記"
+chapter: 16
+candidates:
+  - name: "守逾越節（亞筆月、無酵餅、困苦餅）"
+    type: "事件"
+    evidence: |
+      經文第1-8節「你要注意亞筆月，向耶和華─你的神守逾越節……七日之內要吃無酵餅，就是困苦餅」；ccbiblestudy CT 指出逾越節紀念出埃及、無酵餅代表急忙出埃及；KingComments 指出逾越節預表基督為逾越節羔羊。
+    surfaces:
+      - phrase: "注意亞筆月"
+        verses: [1]
+      - phrase: "守逾越節"
+        verses: [1]
+      - phrase: "無酵餅"
+        verses: [3, 8]
+      - phrase: "困苦餅"
+        verses: [3]
+      - phrase: "亞筆月夜間領你出埃及"
+        verses: [1]
+
+  - name: "逾越節只能在神揀選的地方獻祭"
+    type: "神學"
+    evidence: |
+      經文第2、5-6節「只當在耶和華─你神所選擇要立為他名的居所……晚上日落的時候，獻逾越節的祭」；ccbiblestudy CT 指出中央聖所防止分散敬拜；KingComments 指出這預表基督為真聖殿。
+    surfaces:
+      - phrase: "耶和華所選擇要立為他名的居所"
+        verses: [2, 6, 11, 15, 16]
+      - phrase: "晚上日落的時候獻逾越節的祭"
+        verses: [6]
+      - phrase: "不可在耶和華你神所賜的各城中獻逾越節的祭"
+        verses: [5]
+
+  - name: "無酵節（七日吃無酵餅）"
+    type: "事件"
+    evidence: |
+      經文第3-4、8節「七日之內要吃無酵餅……第七日要向耶和華─你的神守嚴肅會，不可做工」；ccbiblestudy CT 指出無酵餅代表急忙出埃及、也預表基督無罪；KingComments 指出無酵餅預表基督無罪之身。
+    surfaces:
+      - phrase: "七日之內要吃無酵餅"
+        verses: [3, 8]
+      - phrase: "無酵餅"
+        verses: [3, 8]
+      - phrase: "第七日要向耶和華你的神守嚴肅會"
+        verses: [8]
+
+  - name: "七七節（五旬節、收割初熟節）"
+    type: "事件"
+    evidence: |
+      經文第9-12節「你要計算七七日：從你開鐮收割禾稼時算起，共計七七日……你要照耶和華─你神所賜你的福，手裡拿著甘心祭，獻在耶和華─你神面前，守七七節」；ccbiblestudy CT 指出七七節感謝收割、預表聖靈澆灌；KingComments 指出這預表五旬節聖靈澆灌。
+    surfaces:
+      - phrase: "計算七七日"
+        verses: [9]
+      - phrase: "從你開鐮收割禾稼時算起"
+        verses: [9]
+      - phrase: "守七七節"
+        verses: [10]
+      - phrase: "手裡拿著甘心祭"
+        verses: [10]
+      - phrase: "在耶和華你神面前歡樂"
+        verses: [11]
+
+  - name: "住棚節（收藏節、七日住棚）"
+    type: "事件"
+    evidence: |
+      經文第13-15節「你把禾場的穀、酒醡的酒收藏以後，就要守住棚節七日……因為耶和華─你神在你一切的土產上和你手裡所辦的事上要賜福與你，你就非常地歡樂」；ccbiblestudy CT 指出住棚節紀念曠野漂流、預表千禧年安息；KingComments 指出這預表千禧年國度。
+    surfaces:
+      - phrase: "守住棚節七日"
+        verses: [13, 15]
+      - phrase: "你和你兒女、僕婢，並住在你城裡的利未人，以及寄居的與孤兒寡婦，都要歡樂"
+        verses: [14]
+      - phrase: "耶和華你神在你一切的土產上和你手裡所辦的事上要賜福與你"
+        verses: [15]
+
+  - name: "一年三次朝見（除酵節、七七節、住棚節）"
+    type: "事件"
+    evidence: |
+      經文第16節「你一切的男丁要在除酵節、七七節、住棚節，一年三次，在耶和華─你神所選擇的地方朝見他，卻不可空手朝見」；ccbiblestudy CT 指出三次朝見是以色列敬拜中心；KingComments 指出這預表基督徒朝見神。
+    surfaces:
+      - phrase: "一年三次"
+        verses: [16]
+      - phrase: "除酵節、七七節、住棚節"
+        verses: [16]
+      - phrase: "不可空手朝見"
+        verses: [16]
+      - phrase: "各人要按自己的力量，照耶和華你神所賜的福分，奉獻禮物"
+        verses: [17]
+
+  - name: "設立審判官和官長（公義審判）"
+    type: "事件"
+    evidence: |
+      經文第18-20節「你要在耶和華─你神所賜的各城裡，按著各支派設立審判官和官長。他們必按公義的審判判斷百姓。不可屈枉正直；不可看人的外貌。也不可受賄賂」；ccbiblestudy CT 指出公義審判是神的屬性；KingComments 指出這預表基督公義審判。
+    surfaces:
+      - phrase: "設立審判官和官長"
+        verses: [18]
+      - phrase: "按公義的審判判斷百姓"
+        verses: [18]
+      - phrase: "不可屈枉正直"
+        verses: [19]
+      - phrase: "不可看人的外貌"
+        verses: [19]
+      - phrase: "不可受賄賂"
+        verses: [19]
+      - phrase: "賄賂能叫智慧人的眼變瞎了"
+        verses: [19]
+      - phrase: "你要追求至公至義"
+        verses: [20]
+
+  - name: "不可在壇旁栽樹木作木偶（禁止亞舍拉）"
+    type: "神學"
+    evidence: |
+      經文第21節「你為耶和華─你的神築壇，不可在壇旁栽什麼樹木作為木偶」；ccbiblestudy CT 指出亞舍拉是迦南女神、神禁止混合敬拜；KingComments 指出這預表純正敬拜。
+    surfaces:
+      - phrase: "不可在壇旁栽什麼樹木作為木偶"
+        verses: [21]
+      - phrase: "木偶"
+        verses: [21]
+
+  - name: "不可為自己設立柱像（禁止立柱像）"
+    type: "神學"
+    evidence: |
+      經文第22節「也不可為自己設立柱像；這是耶和華─你神所恨惡的」；ccbiblestudy CT 指出柱像代表巴力崇拜、神恨惡偶像；KingComments 指出這預表純正敬拜。
+    surfaces:
+      - phrase: "不可為自己設立柱像"
+        verses: [22]
+      - phrase: "柱像"
+        verses: [22]
+      - phrase: "耶和華你神所恨惡的"
+        verses: [22]

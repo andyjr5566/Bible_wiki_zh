@@ -1,0 +1,25 @@
+name: 列祖（亞伯拉罕、以撒、雅各）
+type: 人物
+secondary_types: []
+aliases: []
+status: formal
+definition: 指亞伯拉罕（Abraham，אַבְרָהָם）、以撒（Isaac，יִצְחָק）、雅各（Jacob，יַעֲקֹב），申命記 8:1、18
+  提到神向列祖起誓應許之地並堅定約。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 第 1、18 節提到神向列祖起誓應許之地，並為堅定約。
+  relation: 作為約的對象，連結至「列祖起誓應許之地」、「神賜福為堅定約」。
+related_entries:
+- 列祖（亞伯拉罕、以撒、雅各）
+- 列祖起誓應許之地
+- 神賜福為堅定約
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm'
+- '研經註解: https://www.kingcomments.com/en/bible-studies/Deu/8'
+created_from: 申命記 8
+category: 人物
+trigger_sources: []
+current_data: {}
+pending: false

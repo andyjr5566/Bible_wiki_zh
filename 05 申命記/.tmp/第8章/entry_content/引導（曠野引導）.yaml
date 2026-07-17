@@ -1,0 +1,37 @@
+name: 引導（曠野引導）
+type: 事件
+secondary_types: []
+aliases:
+- 曠野引導
+- 神的引導
+status: formal
+definition: 指耶和華在曠野四十年中，以雲柱火柱、嗎哪供應、水從磐石、衣服不穿破腳不腫等具體方式，帶領以色列民前行。本章 2、15 節兩次提及「引導/引你經過」，強調神主動的看顧與管教同在。
+development: 出埃及記 13:21-22 記載雲柱火柱引導；民數記 9:15-23 詳述雲彩指引遷徙；新約視曠野引導為教會屬靈旅程預表（林前 10:1-11；來
+  3-4 章）。神的引導包含供應、管教、試驗，終極目的是帶進安息（應許之地/永生）。
+accumulations:
+- book: 申命記
+  chapter: 8
+  summary: 第 2 節「耶和華在曠野引導你這四十年」；第 15 節「引你經過那大而可怕的曠野」，將引導與苦煉、供應（水、嗎哪）並列。
+  relation: 曠野引導是本章歷史回顧的骨架，串聯苦煉（8:2-3）、供應（8:4, 15-16）、管教（8:5）與警戒（8:14-16），成為「不可忘記耶和華」的依據（8:11,
+    18）。
+related_entries:
+- 曠野四十年試煉
+- 曠野生活（曠野漂流）
+- 衣服沒有穿破，腳也沒有腫
+- 水從磐石流出
+- 饑餓帶來嗎哪供應
+- 大而可怕的曠野
+- 何烈山、加低斯（磐石出水兩次）
+sources:
+- '逐節註解: 申命記 8 章 2、15 節曠野引導釋義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT08.htm）'
+- '拾穗: 申命記 8 章神引導的方式與目的（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT08.htm）'
+- '研經註解: 申命記 8 章曠野引導神學意義（https://www.kingcomments.com/en/bible-studies/Deu/8）'
+- '研經註解: 申命記 8 章引導相關經文互注（https://biblehub.com/study/deuteronomy/8.htm）'
+created_from: deuteronomy_8
+category: 歷史事件
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

@@ -1,0 +1,30 @@
+name: 摩西不得過約但河
+type: 人物
+secondary_types: []
+aliases:
+- 摩西不得過約但河
+status: formal
+definition: 申命記第7章未記載摩西不得過約但河的情節；此事見於其他經文（如申3:26-27），本章不涉及。
+development: 本章著重於神的應許與聖戰，未提及摩西的個人命運。
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 本章未提及摩西不得過約但河
+  relation: 無直接關聯
+related_entries:
+- 摩西不得過約但河
+- 約書亞接替摩西
+- 神領以色列進迦南
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm'
+- '拾穗: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm'
+- '研經註解: https://www.kingcomments.com/en/bible-studies/Deu/7'
+- '研經註解: https://biblehub.com/study/deuteronomy/7.htm'
+created_from: 申命記第7章
+category: 人物
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: {}
+pending: false

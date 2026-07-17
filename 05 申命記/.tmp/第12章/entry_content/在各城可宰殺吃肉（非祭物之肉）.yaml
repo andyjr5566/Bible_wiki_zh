@@ -1,0 +1,35 @@
+name: 在各城可宰殺吃肉（非祭物之肉）
+type: 神學
+secondary_types:
+- 律法
+- 生活規範
+- 血的禁令
+aliases:
+- 非祭物宰殺
+- 尋常吃肉
+- 肉類食用自由
+status: formal
+definition: 當中央聖所離住處太遠，或百姓單純想吃肉時，可在各城按心意宰殺牛羊吃肉，如同吃羚羊、鹿一般（申12:15-16, 20-22）。潔淨與不潔淨人皆可同吃，不受禮儀潔淨限制。但嚴禁吃血，血要倒在地上如水（v.16,
+  23-25），因血是生命，屬於神。此條文區分「祭物之肉」（必在聖所）與「尋常食物之肉」（可在各城），解決距離聖所遠的生活需求，維持集中敬拜原則不被稀釋。
+development: 利未記17:3-9曾規定曠野期間宰殺牛羊山羊必須帶到會幕門口，申命記12因進地、境界擴張、聖所固定而修訂此法，顯示律法隨救史進程的牧養調適。
+accumulations:
+- book: 申命記
+  chapter: 12
+  summary: 允許在各城宰殺吃肉（非祭物），不分潔淨不潔淨人，但嚴守禁血條例；解決聖所距離遠的現實問題，同時維護生命屬神的神學。
+  relation: 與「獻祭只能在神揀選的地方」互補，劃清聖餐（祭物）與常餐（尋常肉）界線，保障集中敬拜可行性。
+related_entries:
+- 獻祭只能在神揀選的地方（集中敬拜）
+- 聖物、還願祭、甘心祭、頭生牛羊必帶到神揀選的地方
+- 利未人不可被忽略（利未人無分無業）
+sources:
+- '研經註解 (BibleHub): 申命記第12章第15-16, 20-25節，尋常宰殺吃肉與禁血條例（https://biblehub.com/study/deuteronomy/12.htm）'
+- '逐節註解: 申命記12:15-16, 20-22，非祭物肉類食用規定與利未記17章比較（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT12.htm）'
+- '拾穗: 申命記12:23-25，血是生命，禁血的屬靈意義與屬靈生命供應（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT12.htm）'
+- '研經註解 (KingComments): 申命記12:15-25，從曠野到迦南：食用律法的調適與禁血的永恆性（https://www.kingcomments.com/en/bible-studies/Deu/12）'
+created_from: 申命記第12章研經整理
+category: 神學
+trigger_sources:
+- 申12:15-16
+- 20-25
+current_data: true
+pending: false

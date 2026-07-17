@@ -1,0 +1,26 @@
+name: 敬拜日月星宿
+type: 神學
+secondary_types: []
+aliases: []
+status: formal
+definition: 申命記7:5,16,25 禁止敬拜迦南人的偶像、柱像、木偶與雕刻的神像，並警告不可被引誘去事奉日月星宿等受造之物，強調獨一敬拜耶和華。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 7
+  summary: 經文5,16,25節列舉拆毀偶像、不可事奉別神，隱含禁止敬拜日月星宿。
+  relation: 本條目從本章對偶像崇拜的嚴禁推導出對日月星宿敬拜的禁令。
+related_entries:
+- 敬拜日月星宿
+- 被勾引敬拜
+- 別神
+sources:
+- '逐節註解: 申命記7章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT07.htm）'
+- '拾穗: 申命記7章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT07.htm）'
+- '研經註解: 申命記7章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/7）'
+- '研經註解: 申命記7章研經註解（https://biblehub.com/study/deuteronomy/7.htm）'
+created_from: 申命記 7
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

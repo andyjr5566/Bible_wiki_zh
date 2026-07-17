@@ -1,208 +1,179 @@
-book: "利未記"
+book: 利未記
 chapter: 13
 candidates:
-  # === 原文類（希伯來文關鍵字） ===
-  - name: "大痲瘋（tzara'at）"
-    type: "原文"
-    evidence: "利13:2-3「在他肉皮上成了大痲瘋的災病」；CT註解：大痲瘋指各種皮膚病，不僅是漢生病；BH：skin disease = ritual impurity, not just Hansen's disease"
-    surfaces:
-      - "大痲瘋"
-      - "災病"
-      - "痲瘋"
-  - name: "祭司察看（kohen ra'ah）"
-    type: "原文"
-    evidence: "利13:3「祭司要察看肉皮上的災病」；CT註解：祭司兼任健康檢查員，屬靈與身體純全合一；BH：priest as health inspector and spiritual mediator"
-    surfaces:
-      - "祭司要察看"
-      - "祭司察看"
-      - "察看"
-  - name: "白毛（se'ar laban）"
-    type: "原文"
-    evidence: "利13:3「災病處的毛已經變白」；CT註解：白毛象徵死亡或腐敗，與健康皮膚的活力對比；BH：white hair = diagnostic criterion for severity"
-    surfaces:
-      - "毛已經變白"
-      - "白毛"
-      - "變白"
-  - name: "現象深於皮（ma'amar amok min ha'or）"
-    type: "原文"
-    evidence: "利13:3「災病的現象深於肉上的皮」；CT註解：深度象徵罪的滲透性，不只表面；BH：deeper than skin = pervasive sin"
-    surfaces:
-      - "現象深於皮"
-      - "深於皮"
-  - name: "關鎖七天（hispir shiv'at yamim）"
-    type: "原文"
-    evidence: "利13:4-5「祭司就要將有災病的人關鎖七天」；CT註解：七天象徵完全、觀察期；BH：isolation for seven days = period of assessment"
-    surfaces:
-      - "關鎖七天"
-      - "關鎖"
-      - "隔離七天"
-  - name: "癬（neteq）"
-    type: "原文"
-    evidence: "利13:6-7「原來是癬」；CT註解：癬為輕微皮膚病，非大痲瘋；BH：rash/scurf = non-contagious condition"
-    surfaces:
-      - "癬"
-      - "是癬"
-  - name: "瘡痕（shechin）"
-    type: "原文"
-    evidence: "利13:18-23「人的皮肉上若長瘡，卻治好了」；CT註解：瘡治好後留下白癤或紅白火斑；BH：boil = healed wound that may develop infection"
-    surfaces:
-      - "瘡"
-      - "長瘡"
-      - "治好了"
-  - name: "火毒/燒傷（michveh）"
-    type: "原文"
-    evidence: "利13:24-28「人的皮肉上若起了火毒」；CT註解：燒傷後出現紅白火斑；BH：burn = injury that may become diseased"
-    surfaces:
-      - "火毒"
-      - "燒傷"
-      - "火斑"
-  - name: "頭疥（neteq ba-rosh）"
-    type: "原文"
-    evidence: "利13:29-37「無論男女，若在頭上有災病，或是男人鬍鬚上有災病」；CT註解：頭疥為頭上或鬍鬚上的大痲瘋；BH：scalp/beard disease = specific location diagnosis"
-    surfaces:
-      - "頭疥"
-      - "頭上有災病"
-      - "鬍鬚上有災病"
-  - name: "白癬（bohaq）"
-    type: "原文"
-    evidence: "利13:38-39「皮肉上若起了火斑，就是白火斑，這是皮上發出的白癬，那人是潔淨了」；CT註解：白癬非大痲瘋，潔淨；BH：white spots = benign condition"
-    surfaces:
-      - "白癬"
-      - "白火斑"
-  - name: "頭禿/頂門禿（qareach/gabbach）"
-    type: "原文"
-    evidence: "利13:40-44「人頭上的髮若掉了，他不過是頭禿...頭禿處或是頂門禿處若有白中帶紅的災病，這就是大痲瘋」；CT註解：禿頭本身潔淨，但禿處長災病則不潔淨；BH：baldness = clean unless diseased"
-    surfaces:
-      - "頭禿"
-      - "頂門禿"
-      - "禿處"
-  - name: "大痲瘋人的衣服（beged tzara'at）"
-    type: "原文"
-    evidence: "利13:47-59「染了大痲瘋災病的衣服...要給祭司察看」；CT註解：衣服也會染大痲瘋，須焚燒或洗濯；BH：contaminated garments = must be burned or washed"
-    surfaces:
-      - "染了大痲瘋災病的衣服"
-      - "衣服"
-      - "羊毛衣服"
-      - "麻布衣服"
-      - "皮子"
-  - name: "蠶食的大痲瘋（pechet tzara'at）"
-    type: "原文"
-    evidence: "利13:51-52「這災病是蠶食的大痲瘋，都是不潔淨了」；CT註解：蠶食指擴散性強的災病；BH：spreading/malignant leprosy = must be burned"
-    surfaces:
-      - "蠶食的大痲瘋"
-      - "蠶食"
-
-  # === 主題類（神學概念） ===
-  - name: "大痲瘋條例與潔淨儀式"
-    type: "主題"
-    evidence: "利13:1-59全章；CT壹內容綱要：大痲瘋的察看條例、頭疥條例、衣服與房屋的大痲瘋條例；BH：Laws about Skin Diseases；KC：priestly diagnosis of skin diseases"
-    surfaces:
-      - "大痲瘋條例"
-      - "察看條例"
-      - "潔淨儀式"
-  - name: "祭司雙重角色：屬靈與醫療"
-    type: "主題"
-    evidence: "利13:2-3「要將他帶到祭司亞倫或亞倫作祭司的一個子孫面前」；CT註解：祭司兼任健康檢查員，屬靈與身體純全合一；BH：priest as health inspector and spiritual mediator"
-    surfaces:
-      - "帶到祭司"
-      - "祭司察看"
-      - "祭司定他為不潔淨"
-  - name: "不潔淨的傳染與隔離"
-    type: "主題"
-    evidence: "利13:4-8,45-46「祭司要定他為不潔淨...大痲瘋人的衣服要撕裂，也要蓬頭散髮，蒙著上唇，喊叫說：不潔淨了！不潔淨了！」；CT註解：不潔淨者獨居營外，防止傳染；BH：unclean person isolated outside camp"
-    surfaces:
-      - "不潔淨"
-      - "獨居營外"
-      - "撕裂衣服"
-      - "蓬頭散髮"
-      - "喊叫不潔淨"
-  - name: "大痲瘋痊癒的辨別（全身變白反潔淨）"
-    type: "主題"
-    evidence: "利13:12-13「大痲瘋若在皮上四外發散...祭司就要察看，全身的肉若長滿了大痲瘋，就要定那患災病的為潔淨」；CT註解：全身變白反而潔淨，悖論指向神恩典；BH：covered all white = clean paradox"
-    surfaces:
-      - "全身變白"
-      - "長滿了大痲瘋"
-      - "定他為潔淨"
-  - name: "衣服與皮子的大痲瘋條例"
-    type: "主題"
-    evidence: "利13:47-59「染了大痲瘋災病的衣服...若在衣服上...發散，這皮子無論當作何用，這災病是蠶食的大痲瘋，都是不潔淨了」；CT註解：衣服染病須焚燒或洗濯；BH：garments with leprosy = burn or wash"
-    surfaces:
-      - "衣服"
-      - "皮子"
-      - "發綠"
-      - "發紅"
-      - "焚燒"
-      - "洗濯"
-
-  # === 人物類 ===
-  - name: "摩西"
-    type: "人物"
-    evidence: "利13:1「耶和華曉諭摩西、亞倫說」"
-    surfaces:
-      - "摩西"
-  - name: "亞倫"
-    type: "人物"
-    evidence: "利13:1-2「耶和華曉諭摩西、亞倫說...要將他帶到祭司亞倫或亞倫作祭司的一個子孫面前」"
-    surfaces:
-      - "亞倫"
-      - "祭司亞倫"
-
-  # === 神學類 ===
-  - name: "罪如大痲瘋：滲透、隔離、需神醫治"
-    type: "神學"
-    evidence: "利13:3,45-46；CT靈意註解：大痲瘋表徵罪的滲透性、隔離性，唯有基督能醫治；BH：leprosy as type of sin = pervasive, isolating, only Christ heals"
-    surfaces:
-      - "罪"
-      - "大痲瘋表徵罪"
-      - "隔離"
-  - name: "基督作大祭司醫治大痲瘋"
-    type: "神學"
-    evidence: "利13:3,45-46；CT靈意註解：祭司察看預表基督作大祭司察看人心；耶穌醫治痲瘋病人(太8:1-4)象徵屬靈醫治；BH：Jesus healing lepers = spiritual cleansing"
-    surfaces:
-      - "耶穌醫治痲瘋"
-      - "大祭司"
-      - "屬靈醫治"
-
-  # === 互文類 ===
-  - name: "米利暗患大痲瘋（民12：10-15）"
-    type: "互文"
-    evidence: "利13:45-46；CT註解：米利暗說摩西的不是，患大痲瘋被關鎖七天；BH：Miriam's leprosy = judgment for speaking against Moses"
-    surfaces:
-      - "米利暗"
-      - "民數記12章"
-  - name: "烏西雅王患大痲瘋（代下26：19-21）"
-    type: "互文"
-    evidence: "利13:45-46；CT註解：烏西雅王心高氣傲進聖殿燒香，患大痲瘋至死；BH：Uzziah's leprosy = pride judged"
-    surfaces:
-      - "烏西雅"
-      - "歷代志下26章"
-  - name: "乃縵患大痲瘋得醫治（王下5：1-14）"
-    type: "互文"
-    evidence: "利13:3,45-46；CT註解：乃縵順服以利沙吩咐在約旦河洗七次得潔淨；BH：Naaman's healing = obedience brings cleansing"
-    surfaces:
-      - "乃縵"
-      - "列王記下5章"
-  - name: "耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）"
-    type: "互文"
-    evidence: "利13:3,45-46；CT註解：耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role"
-    surfaces:
-      - "馬太福音8章"
-      - "馬可福音1章"
-      - "路加福音5章"
-      - "耶穌醫治痲瘋"
-
-  # === 事件類 ===
-  - name: "頒布大痲瘋察看條例"
-    type: "事件"
-    evidence: "利13:1-2「耶和華曉諭摩西、亞倫說...人的肉皮上若長了癤子...就要將他帶到祭司面前」"
-    surfaces:
-      - "耶和華曉諭摩西亞倫"
-      - "頒布條例"
-
-  # === 文化類 ===
-  - name: "古代近東皮膚病與禮儀潔淨觀"
-    type: "文化"
-    evidence: "利13:2-3；CT註解：古代近東視皮膚病為神懲罰或不潔；以色列條例將醫療診斷納入祭司職分；BH：ancient Near East viewed skin disease as divine judgment"
-    surfaces:
-      - "古代近東"
-      - "皮膚病觀念"
+- name: 大痲瘋（tzara'at）
+  type: 原文
+  evidence: 利13:2-3「在他肉皮上成了大痲瘋的災病」；CT註解：大痲瘋指各種皮膚病，不僅是漢生病；BH：skin disease = ritual impurity, not just Hansen's disease
+  surfaces:
+  - 大痲瘋
+  - 災病
+  - 痲瘋
+- name: 祭司察看（kohen ra'ah）
+  type: 原文
+  evidence: 利13:3「祭司要察看肉皮上的災病」；CT註解：祭司兼任健康檢查員，屬靈與身體純全合一；BH：priest as health inspector and spiritual mediator
+  surfaces:
+  - 祭司察看
+  - 察看
+- name: 白毛（se'ar laban）
+  type: 原文
+  evidence: 利13:3「災病處的毛已經變白」；CT註解：白毛象徵死亡或腐敗，與健康皮膚的活力對比；BH：white hair = diagnostic criterion for severity
+  surfaces:
+  - 毛已經變白
+  - 白毛
+  - 變白
+- name: 現象深於皮（ma'amar amok min ha'or）
+  type: 原文
+  evidence: 利13:3「災病的現象深於肉上的皮」；CT註解：深度象徵罪的滲透性，不只表面；BH：deeper than skin = pervasive sin
+  surfaces:
+  - 現象深於皮
+  - 深於皮
+- name: 關鎖七天（hispir shiv'at yamim）
+  type: 原文
+  evidence: 利13:4-5「祭司就要將有災病的人關鎖七天」；CT註解：七天象徵完全、觀察期；BH：isolation for seven days = period of assessment
+  surfaces:
+  - 關鎖七天
+  - 關鎖
+  - 隔離七天
+- name: 癬（neteq）
+  type: 原文
+  evidence: 利13:6-7「原來是癬」；CT註解：癬為輕微皮膚病，非大痲瘋；BH：rash/scurf = non-contagious condition
+  surfaces:
+  - 癬
+  - 是癬
+- name: 瘡痕（shechin）
+  type: 原文
+  evidence: 利13:18-23「人的皮肉上若長瘡，卻治好了」；CT註解：瘡治好後留下白癤或紅白火斑；BH：boil = healed wound that may develop infection
+  surfaces:
+  - 瘡
+  - 長瘡
+  - 治好了
+- name: 火毒（michveh）
+  type: 原文
+  evidence: 利未記13:24-28 「人的皮肉上若起了火毒，火毒的瘀肉成了火斑」——丁良才：「或作『人的皮肉若被火燒』，文理譯本作『如人之膚為火所灼』。」《串珠》：「火毒」即疤痕。《精讀本》指出此段的意義：「大麻風在火毒中發出，暗示著大麻風有可能因其他病變發生。」判準與第一套檢驗法相同：火斑中的毛變白、現象深於皮即為不潔；若無白毛、不窪於皮、乃是發暗，就關鎖七天；火斑若在原處止住沒有發散，「不過是火毒的痕跡」，定為潔淨。KC
+    把火毒讀作易受刺激與惱怒：「若有事情惹惱我們，我們的反應是什麼？它可以走進內心的感覺裡，批評擴散開來，最後沒有一樣是好的。這種惱怒與苦毒的態度應當受審判。」
+  surfaces:
+  - 火毒
+- name: 頭疥（neteq ba-rosh）
+  type: 原文
+  evidence: 利13:29-37「無論男女，若在頭上有災病，或是男人鬍鬚上有災病」；CT註解：頭疥為頭上或鬍鬚上的大痲瘋；BH：scalp/beard disease = specific location diagnosis
+  surfaces:
+  - 頭疥
+  - 頭上有災病
+  - 鬍鬚上有災病
+- name: 白癬（bohaq）
+  type: 原文
+  evidence: 利13:38-39「皮肉上若起了火斑，就是白火斑，這是皮上發出的白癬，那人是潔淨了」；CT註解：白癬非大痲瘋，潔淨；BH：white spots = benign condition
+  surfaces:
+  - 白癬
+  - 白火斑
+- name: 頭禿與頂門禿
+  type: 原文
+  evidence: 利未記13:40-44 「人頭上的髮若掉了，他不過是頭禿，還是潔淨」；「他頂前若掉了頭髮，他不過是頂門禿，還是潔淨」。《精讀本》辨明兩詞：「根據原文頭禿有兩種：一種是『卡拉哈特』（qareach），指掉頭頂的頭髮（40節）；另一種是『嘎巴哈特』（gabbach），指掉了前部頭髮（41節）。這樣的禿頭是自然現象，是潔淨的。」丁良才補上文化背景：「以色列人以頭禿為羞，有時他們也以為頭禿是出於神的刑罰（王下2:23，賽3:17，耶48:37），但本節的意思說，人頭上的髮若掉了，未必是因長大痲瘋所致的。」《串珠》列為第五套檢驗法：「禿頭本身並非不潔淨，只是禿頭也和有頭髮的一樣，會患上嚴重的皮膚病。」禿處若有白中帶紅的災病，即為大痲瘋；丁良才指出此時「頭髮既是掉了，自然就沒有頭髮變白的現象」，故改看紅瘀肉與是否發散。
+  surfaces:
+  - 頭禿
+  - 頂門禿
+  - 禿處
+- name: 大痲瘋人的衣服（beged tzara'at）
+  type: 原文
+  evidence: 利13:47-59「染了大痲瘋災病的衣服...要給祭司察看」；CT註解：衣服也會染大痲瘋，須焚燒或洗濯；BH：contaminated garments = must be burned or washed
+  surfaces:
+  - 衣服
+  - 皮子
+- name: 蠶食的大痲瘋（pechet tzara'at）
+  type: 原文
+  evidence: 利13:51-52「這災病是蠶食的大痲瘋，都是不潔淨了」；CT註解：蠶食指擴散性強的災病；BH：spreading/malignant leprosy = must be burned
+  surfaces:
+  - 蠶食的大痲瘋
+  - 蠶食
+- name: 大痲瘋條例與潔淨儀式
+  type: 主題
+  evidence: 利13:1-59全章；CT壹內容綱要：大痲瘋的察看條例、頭疥條例、衣服與房屋的大痲瘋條例；BH：Laws about Skin Diseases；KC：priestly diagnosis of skin diseases
+  surfaces:
+  - 大痲瘋條例
+  - 察看條例
+  - 潔淨儀式
+- name: 祭司雙重角色：屬靈與醫療
+  type: 主題
+  evidence: 利13:2-3「要將他帶到祭司亞倫或亞倫作祭司的一個子孫面前」；CT註解：祭司兼任健康檢查員，屬靈與身體純全合一；BH：priest as health inspector and spiritual mediator
+  surfaces:
+  - 帶到祭司
+- name: 不潔淨的傳染與隔離
+  type: 主題
+  evidence: 利13:4-8,45-46「祭司要定他為不潔淨...大痲瘋人的衣服要撕裂，也要蓬頭散髮，蒙著上唇，喊叫說：不潔淨了！不潔淨了！」；CT註解：不潔淨者獨居營外，防止傳染；BH：unclean person isolated outside camp
+  surfaces:
+  - 不潔淨
+  - 獨居營外
+  - 撕裂衣服
+  - 蓬頭散髮
+  - 喊叫不潔淨
+- name: 大痲瘋痊癒的辨別（全身變白反潔淨）
+  type: 主題
+  evidence: 利13:12-13「大痲瘋若在皮上四外發散...祭司就要察看，全身的肉若長滿了大痲瘋，就要定那患災病的為潔淨」；CT註解：全身變白反而潔淨，悖論指向神恩典；BH：covered all white = clean paradox
+  surfaces:
+  - 全身變白
+  - 長滿了大痲瘋
+  - 定他為潔淨
+- name: 衣服與皮子的大痲瘋條例
+  type: 主題
+  evidence: 利13:47-59「染了大痲瘋災病的衣服...若在衣服上...發散，這皮子無論當作何用，這災病是蠶食的大痲瘋，都是不潔淨了」；CT註解：衣服染病須焚燒或洗濯；BH：garments with leprosy = burn or wash
+  surfaces:
+  - 經上
+  - 緯上
+- name: 摩西
+  type: 人物
+  evidence: 利13:1「耶和華曉諭摩西、亞倫說」
+  surfaces:
+  - 摩西
+- name: 亞倫
+  type: 人物
+  evidence: 利13:1-2「耶和華曉諭摩西、亞倫說...要將他帶到祭司亞倫或亞倫作祭司的一個子孫面前」
+  surfaces:
+  - 亞倫
+  - 祭司亞倫
+- name: 罪如大痲瘋：滲透、隔離、需神醫治
+  type: 神學
+  evidence: 利13:3,45-46；CT靈意註解：大痲瘋表徵罪的滲透性、隔離性，唯有基督能醫治；BH：leprosy as type of sin = pervasive, isolating, only Christ heals
+  surfaces:
+  - 罪
+  - 大痲瘋表徵罪
+  - 隔離
+- name: 基督作大祭司醫治大痲瘋
+  type: 神學
+  evidence: 利13:3,45-46；CT靈意註解：祭司察看預表基督作大祭司察看人心；耶穌醫治痲瘋病人(太8:1-4)象徵屬靈醫治；BH：Jesus healing lepers = spiritual cleansing
+  surfaces:
+  - 大祭司
+- name: 米利暗患大痲瘋（民12：10-15）
+  type: 互文
+  evidence: 利13:45-46；CT註解：米利暗說摩西的不是，患大痲瘋被關鎖七天；BH：Miriam's leprosy = judgment for speaking against Moses
+  surfaces:
+  - 米利暗
+  - 民數記12章
+- name: 烏西雅王患大痲瘋（代下26：19-21）
+  type: 互文
+  evidence: 利13:45-46；CT註解：烏西雅王心高氣傲進聖殿燒香，患大痲瘋至死；BH：Uzziah's leprosy = pride judged
+  surfaces:
+  - 烏西雅
+  - 歷代志下26章
+- name: 乃縵患大痲瘋得醫治（王下5：1-14）
+  type: 互文
+  evidence: 利13:3,45-46；CT註解：乃縵順服以利沙吩咐在約旦河洗七次得潔淨；BH：Naaman's healing = obedience brings cleansing
+  surfaces:
+  - 乃縵
+  - 列王記下5章
+- name: 耶穌醫治痲瘋病人（太8：1-4；可1：40-45；路5：12-16）
+  type: 互文
+  evidence: 利13:3,45-46；CT註解：耶穌伸手摸痲瘋病人說『我肯，你潔淨了吧』；BH：Jesus touches leper = fulfills priestly role
+  surfaces:
+  - 耶穌醫治痲瘋
+- name: 頒布大痲瘋察看條例
+  type: 事件
+  evidence: 利13:1-2「耶和華曉諭摩西、亞倫說...人的肉皮上若長了癤子...就要將他帶到祭司面前」
+  surfaces:
+  - 耶和華曉諭摩西亞倫
+  - 頒布條例
+- name: 古代近東皮膚病與禮儀潔淨觀
+  type: 文化
+  evidence: 利13:2-3；CT註解：古代近東視皮膚病為神懲罰或不潔；以色列條例將醫療診斷納入祭司職分；BH：ancient Near East viewed skin disease as divine judgment
+  surfaces:
+  - 古代近東
+  - 皮膚病觀念
