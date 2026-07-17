@@ -79,8 +79,8 @@ candidates:
     section: "祭禮"
     evidence: "v16-17 素祭剩下的必須在聖處不帶酵而吃，烤的時候不可攙酵。BH: leaven symbolizes sin and corruption; requirement signifies purity and holiness。CT: 無論是裡面的接受（吃）或是外面的接觸（烤），都不可有罪（酵）的成分。"
 
-  - name: "至聖（qodesh qodashim）"
-    type: "原文"
+  - name: "至聖"
+    type: "神學"
     section: "聖潔等級"
     evidence: "v17,25,29 素祭、贖罪祭、贖愆祭都是至聖的。BH: most holy signifies the highest level of sanctity, set apart for God。CT: 至聖的通指分別為聖歸給神的祭物和物件，雖蒙神賞賜給祭司享用，但仍視為至聖之物。"
 
@@ -116,8 +116,8 @@ candidates:
     evidence: "v22-23 祭司的素祭都要燒了，卻不可吃。BH: complete burning signifies total devotion and surrender to God。CT: 大祭司若吃自己所獻的，那祭就與沒有獻上一樣。KC: the Lord Jesus as High Priest in heaven is inseparable from His coming to earth and His life on earth for God。"
 
   # ========== v24-30 祭司獻贖罪祭的條例 ==========
-  - name: "贖罪祭（chatta't）"
-    type: "原文"
+  - name: "贖罪祭"
+    type: "神學"
     section: "祭禮"
     evidence: "v24-30 贖罪祭的條例：宰於燔祭牲處、祭司吃、血彈衣洗淨、瓦器打碎銅器擦磨、血入會幕者肉不可吃。BH: sin offering was crucial for atoning unintentional sins and restoring relationship with God。CT: 贖罪祭的祭牲作為代贖祭物，是分別出來獻給神的。"
 
@@ -158,12 +158,12 @@ candidates:
     evidence: "v9-13 燔祭的條例：壇火常燒、收灰、添柴。本章從祭司角度補充第一章獻祭者的角度。"
 
   - name: "平安祭（shelamim）"
-    type: "神學"
+    type: "原文"
     section: "祭禮"
     evidence: "v12 祭司在壇上燒平安祭牲的脂油。BH: peace offering symbolized fellowship and reconciliation with God。"
 
-  - name: "脂油（chelev）"
-    type: "神學"
+  - name: "脂油"
+    type: "主題"
     section: "祭禮"
     evidence: "v12 燒平安祭牲的脂油。CT: 表徵將上好的因著感恩獻給神。"
 
@@ -172,8 +172,8 @@ candidates:
     section: "祭禮"
     evidence: "v15 取素祭上所有的乳香燒在壇上。BH: frankincense symbolizes prayer and devotion rising to God。"
 
-  - name: "無殘疾（tamim）"
-    type: "原文"
+  - name: "無殘疾"
+    type: "神學"
     section: "祭禮"
     evidence: "v6 贖愆祭牲須是羊群中一隻沒有殘疾的公綿羊。"
 
@@ -197,8 +197,8 @@ candidates:
     section: "祭禮"
     evidence: "v15,21 馨香素祭的紀念、馨香的素祭。BH: pleasing aroma indicates God's acceptance and satisfaction with the offering。"
 
-  - name: "供物（qorban）"
-    type: "原文"
+  - name: "供物"
+    type: "主題"
     section: "祭禮"
     evidence: "v20 亞倫受膏的日子所要獻給耶和華的供物。"
 
@@ -207,13 +207,13 @@ candidates:
     section: "祭禮"
     evidence: "v7 祭司要在耶和華面前為他贖罪，他無論行了什麼事都必蒙赦免。"
 
-  - name: "會幕（ohel moed）"
-    type: "地點"
+  - name: "會幕（帳幕整體）"
+    type: "主題"
     section: "聖潔空間"
     evidence: "v16,26 在會幕的院子裡吃。v30 將血帶進會幕在聖所贖罪。"
 
   - name: "銅壇（燔祭壇）"
-    type: "器物"
+    type: "主題"
     section: "聖所器物"
     evidence: "v9-13 壇上的火、壇的柴、壇的旁邊。全章圍繞燔祭壇的運作。"
 

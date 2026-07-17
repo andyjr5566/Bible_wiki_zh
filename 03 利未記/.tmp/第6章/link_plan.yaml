@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 6
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 贖愆祭（asham）
   suggested_type: 原文
   evidence: 'v6-7 獻贖愆祭牲（無殘疾公綿羊）為侵犯鄰舍的罪贖罪；本章1-7節是第五章贖愆祭的延續，處理人際財物罪。BH: guilt offering
@@ -9,6 +8,82 @@ B_needs_update:
   match_type: exact
   existing_title: 贖愆祭（asham）
   existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 賠還（歸還加五分之一）
+  suggested_type: 神學
+  evidence: 'v4-5 犯罪者須歸還所搶奪/欺壓/侵佔/拾遺之物，如數歸還並另加五分之一，在查出有罪的日子交還本主。BH: restitution in
+    full + add a fifth (20%) served as penalty and deterrent。CT: 真正的悔改不僅在於言語，也在於實踐，結出與悔改相稱的果子（太3:8）。GT:
+    五分之一是罰金。'
+  match_type: exact
+  existing_title: 賠還（歸還加五分之一）
+  existing_path: link_folder/神學/賠還（歸還加五分之一）.md
+- name: 干犯耶和華（ma'al）
+  suggested_type: 原文
+  evidence: 'v2『若有人犯罪，干犯耶和華』——對鄰舍的欺騙、搶奪、欺壓等罪，本質上是對神不忠實。BH: sin is ultimately against
+    God, a breach of covenant。CT: 人任何得罪別人的事，都是干犯神的。KC: every sin against one''s neighbor
+    is in the first place a sin against God, unfaithfulness against Him。'
+  match_type: exact
+  existing_title: 干犯耶和華（ma'al）
+  existing_path: link_folder/原文/干犯耶和華（ma'al）.md
+- name: 交易上的詭詐
+  suggested_type: 神學
+  evidence: 'v2『在交易上行了詭詐』——買賣中的欺騙、舞弊、攙假、不公道的尺秤升斗。CT: 包括一切欺騙、投機、作偽、舞弊、攙假、冒牌及不公道的度量。GT:
+    用不正當的方法來營利，把不該得的東西變成自己所有的。'
+  match_type: exact
+  existing_title: 交易上的詭詐
+  existing_path: link_folder/神學/交易上的詭詐.md
+- name: 拾遺不報
+  suggested_type: 神學
+  evidence: 'v3『撿了遺失的物上行了詭詐，說謊起誓』——拾獲他人失物後否認或謊稱未見。CT: 基督徒不可以拾東西，拾起來也要去還人家。GT: 在遺失的物上，有許多人行了詭詐，有變作沒有，多變作少，好變作壞。'
+  match_type: exact
+  existing_title: 拾遺不報
+  existing_path: link_folder/神學/拾遺不報.md
+- name: 假誓
+  suggested_type: 神學
+  evidence: 'v3,5『說謊起誓』『因什麼物起了假誓』——以假誓掩蓋侵佔他人財物的事實。BH: swearing falsely, especially
+    in God''s name, was a serious offense, misusing the sacred name of the Lord。CT:
+    人起假誓乃是罪上加罪。'
+  match_type: exact
+  existing_title: 假誓
+  existing_path: link_folder/神學/假誓.md
+- name: 壇火常燒（不可熄滅）
+  suggested_type: 神學
+  evidence: 'v9,12,13 三次強調壇上的火要常常燒著、不可熄滅。BH: perpetual fire symbolizes God''s continuous
+    presence and ongoing need for atonement。CT: 火乃是神聖潔的表號；神與人交通的門路是常常開著的。KC: God wants
+    His people to be constantly surrounded by the fragrance of the burnt offering。'
+  match_type: exact
+  existing_title: 壇火常燒（不可熄滅）
+  existing_path: link_folder/神學/壇火常燒（不可熄滅）.md
+- name: 燔祭灰
+  suggested_type: 神學
+  evidence: 'v10-11 祭司收燔祭灰倒在壇旁，再換衣將灰拿到營外潔淨之處。CT: 灰表徵人天然生命的盡頭，不再改變；倒在東邊日出的方向表徵死不是結局，要帶進復活。KC:
+    the believer occupied with how perfectly the offering has been consumed, how perfectly
+    the Lord Jesus has done His work。'
+  match_type: exact
+  existing_title: 燔祭灰
+  existing_path: link_folder/神學/燔祭灰.md
+- name: 細麻布衣服（祭司服）
+  suggested_type: 文化
+  evidence: 'v10 祭司收灰時須穿細麻布衣服和褲子。BH: linen garments signify purity and holiness, essential
+    for approaching God。CT: 祭司供職時必須穿上祭司服（出28:40-41），遮掩下體免得擔罪而死。GT: 不問工作貴賤，只要是出乎神的差遣，同樣重要，同樣尊嚴。'
+  match_type: exact
+  existing_title: 細麻布衣服（祭司服）
+  existing_path: link_folder/文化/細麻布衣服（祭司服）.md
+- name: 營外潔淨之處
+  suggested_type: 地點
+  evidence: 'v11 祭司換衣後將灰拿到營外潔淨之處。BH: removal of ashes outside the camp highlights
+    the need to keep the camp pure。CT: 營外表徵世界；信徒當把身體獻上，活著事奉神（羅12:1）。KC: outside the
+    camp means to take a place of shame, openly admitting we have taken the side of
+    a rejected Lord。'
+  match_type: exact
+  existing_title: 營外潔淨之處
+  existing_path: link_folder/地點/營外潔淨之處.md
+- name: 添柴（每日早晨）
+  suggested_type: 神學
+  evidence: 'v12 祭司每日早晨在壇上燒柴，把燔祭擺上，燒平安祭牲的脂油。BH: daily addition of wood signifies regular
+    and disciplined approach in maintaining relationship with God。CT: 信徒早晨起來和晚上睡覺的時候，也當除去一切攔阻自己的事，把心中的火挑旺起來（羅12:11；提後1:6）。'
+  match_type: exact
+  existing_title: 添柴（每日早晨）
+  existing_path: link_folder/神學/添柴（每日早晨）.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: 'v14-18 素祭的條例：祭司取一把細麵+油+乳香燒為紀念，剩下的祭司在聖處不帶酵而吃。BH: grain offering represents
@@ -16,6 +91,125 @@ B_needs_update:
   match_type: exact
   existing_title: 素祭（minchah）
   existing_path: link_folder/原文/素祭（minchah）.md
+- name: 馨香素祭的紀念
+  suggested_type: 神學
+  evidence: 'v15 祭司取一把細麵、油和所有乳香燒在壇上，奉給耶和華為馨香素祭的紀念。BH: memorial portion signifies the
+    offering being wholly dedicated to God, a reminder of the covenant relationship。CT:
+    馨香指聞起來心曠神怡的氣味，讓神聞到而蒙悅納。'
+  match_type: exact
+  existing_title: 馨香素祭的紀念
+  existing_path: link_folder/神學/馨香素祭的紀念.md
+- name: 聖處（會幕院子）
+  suggested_type: 地點
+  evidence: 'v16,26 祭司吃祭物必須在聖處，即在會幕的院子裡。BH: holy place refers to a location set apart
+    for sacred purposes。CT: 會幕院內有燔祭壇和洗濯盆的地方，這院子稱聖是因為會幕是神的住處。KC: a holy place is where
+    natural thinking is not given room, everything directed toward God。'
+  match_type: exact
+  existing_title: 聖處（會幕院子）
+  existing_path: link_folder/地點/聖處（會幕院子）.md
+- name: 不帶酵（無酵）
+  suggested_type: 神學
+  evidence: 'v16-17 素祭剩下的必須在聖處不帶酵而吃，烤的時候不可攙酵。BH: leaven symbolizes sin and corruption;
+    requirement signifies purity and holiness。CT: 無論是裡面的接受（吃）或是外面的接觸（烤），都不可有罪（酵）的成分。'
+  match_type: exact
+  existing_title: 不帶酵（無酵）
+  existing_path: link_folder/神學/不帶酵（無酵）.md
+- name: 至聖
+  suggested_type: 神學
+  evidence: 'v17,25,29 素祭、贖罪祭、贖愆祭都是至聖的。BH: most holy signifies the highest level of
+    sanctity, set apart for God。CT: 至聖的通指分別為聖歸給神的祭物和物件，雖蒙神賞賜給祭司享用，但仍視為至聖之物。'
+  match_type: exact
+  existing_title: 至聖
+  existing_path: link_folder/神學/至聖.md
+- name: 摸祭成聖
+  suggested_type: 神學
+  evidence: 'v18,27 凡摸這些祭物的都要成為聖。BH: anything touching the offerings becomes holy,
+    underscoring the sacredness。CT: 因所獻的祭物是至聖的，故凡與祭物接觸過的人與物都成為聖。GT: 聖物具有傳染能力，但只限於直接接觸。'
+  match_type: exact
+  existing_title: 摸祭成聖
+  existing_path: link_folder/神學/摸祭成聖.md
+- name: 受膏的日子
+  suggested_type: 事件
+  evidence: 'v20 當亞倫受膏的日子，他和他子孫所要獻給耶和華的供物。BH: the anointing signifies consecration
+    and dedication to the priestly office。CT: 大約是正月初八日，就是大祭司就職的日子（八35）。KC: Aaron is
+    a picture of the Lord Jesus as High Priest, anointed by God。'
+  match_type: exact
+  existing_title: 受膏的日子
+  existing_path: link_folder/事件/受膏的日子.md
+- name: 常獻的素祭（祭司每日）
+  suggested_type: 神學
+  evidence: 'v20 細麵伊法十分之一，為常獻的素祭：早晨一半，晚上一半。BH: division into morning and evening highlights
+    continual worship and devotion。CT: 表徵每天早晚都要過獻身事奉神的生活。'
+  match_type: exact
+  existing_title: 常獻的素祭（祭司每日）
+  existing_path: link_folder/神學/常獻的素祭（祭司每日）.md
+- name: 伊法十分之一
+  suggested_type: 文化
+  evidence: 'v20 細麵伊法十分之一。BH: a tenth of an ephah is a specific measure, indicating
+    precision and orderliness in worship。CT: 約折合2.2公升的細麵。GT: 兩個祭的用量約是五杯麵粉。'
+  match_type: exact
+  existing_title: 伊法十分之一
+  existing_path: link_folder/文化/伊法十分之一.md
+- name: 鐵鏊（煎盤）
+  suggested_type: 文化
+  evidence: 'v21 要在鐵鏊上用油調和做成，調勻了烤好了分成塊子。BH: griddle indicates a method of preparation
+    common in ancient Near Eastern cultures。CT: 表徵與聖靈調和（調油）、受火煉的苦（烤）、十字架的破碎（分塊）。'
+  match_type: exact
+  existing_title: 鐵鏊（煎盤）
+  existing_path: link_folder/文化/鐵鏊（煎盤）.md
+- name: 祭司素祭全燒
+  suggested_type: 神學
+  evidence: 'v22-23 祭司的素祭都要燒了，卻不可吃。BH: complete burning signifies total devotion and
+    surrender to God。CT: 大祭司若吃自己所獻的，那祭就與沒有獻上一樣。KC: the Lord Jesus as High Priest in
+    heaven is inseparable from His coming to earth and His life on earth for God。'
+  match_type: exact
+  existing_title: 祭司素祭全燒
+  existing_path: link_folder/神學/祭司素祭全燒.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: 'v24-30 贖罪祭的條例：宰於燔祭牲處、祭司吃、血彈衣洗淨、瓦器打碎銅器擦磨、血入會幕者肉不可吃。BH: sin offering was
+    crucial for atoning unintentional sins and restoring relationship with God。CT:
+    贖罪祭的祭牲作為代贖祭物，是分別出來獻給神的。'
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 宰燔祭牲的地方
+  suggested_type: 地點
+  evidence: 'v25 要在耶和華面前、宰燔祭牲的地方宰贖罪祭牲。BH: shared location indicates interconnectedness
+    of different types of offerings。CT: 就是在燔祭壇的北邊（一11）。KC: whoever brings a sin offering
+    may also see that the Lord Jesus is also the burnt offering。'
+  match_type: exact
+  existing_title: 宰燔祭牲的地方
+  existing_path: link_folder/地點/宰燔祭牲的地方.md
+- name: 彈血洗衣（聖處洗淨）
+  suggested_type: 神學
+  evidence: 'v27 祭牲的血若彈在衣服上，所彈的那一件要在聖處洗淨。BH: blood of sacrifice was sacred; washing
+    in a holy place ensured respect for sacredness。CT: 表徵不可將基督的寶血當作平常看待。GT: 因為聖潔的血彈在了不潔的衣服上，若不洗淨，神的聖潔也因此被玷污。'
+  match_type: exact
+  existing_title: 彈血洗衣（聖處洗淨）
+  existing_path: link_folder/神學/彈血洗衣（聖處洗淨）.md
+- name: 瓦器打碎
+  suggested_type: 神學
+  evidence: 'v28 煮祭物的瓦器要打碎。BH: clay pot absorbed impurities and could not be cleansed,
+    must be destroyed。CT: 瓦器表徵人天然的生命，須十字架的破碎。GT: 瓦器會滲入油和味，清洗不掉，所以要打碎。'
+  match_type: exact
+  existing_title: 瓦器打碎
+  existing_path: link_folder/神學/瓦器打碎.md
+- name: 銅器擦磨涮淨
+  suggested_type: 神學
+  evidence: 'v28 若煮在銅器裡，銅器要擦磨，在水中涮淨。BH: bronze being non-porous could be cleansed
+    and reused。CT: 銅器表徵審判；基督已經滿足神公義的審判，信徒在基督裡面只要接受神話語的光照和話中之水的洗淨。'
+  match_type: exact
+  existing_title: 銅器擦磨涮淨
+  existing_path: link_folder/神學/銅器擦磨涮淨.md
+- name: 血入會幕的贖罪祭（肉不可吃）
+  suggested_type: 神學
+  evidence: 'v30 凡贖罪祭，若將血帶進會幕在聖所贖罪，那肉都不可吃，必用火焚燒。BH: prohibition underscores seriousness
+    of sin and sacredness of atonement。CT: 包括三種：大祭司的贖罪祭、全體會眾的贖罪祭、大贖罪日的贖罪祭。KC: when
+    the anointed priest or people have sinned, all are guilty and unfit to eat it。'
+  match_type: exact
+  existing_title: 血入會幕的贖罪祭（肉不可吃）
+  existing_path: link_folder/神學/血入會幕的贖罪祭（肉不可吃）.md
 - name: 亞倫和他兒子（祭司）
   suggested_type: 人物
   evidence: v9-10,14,16,18,20,22,25-26,29 全章反覆提及亞倫和他子孫（祭司）的職責與權利。
@@ -28,6 +222,19 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭（olah）
   existing_path: link_folder/原文/燔祭（olah）.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: 'v12 祭司在壇上燒平安祭牲的脂油。BH: peace offering symbolized fellowship and reconciliation
+    with God。'
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 脂油
+  suggested_type: 主題
+  evidence: 'v12 燒平安祭牲的脂油。CT: 表徵將上好的因著感恩獻給神。'
+  match_type: exact
+  existing_title: 脂油
+  existing_path: link_folder/主題/脂油.md
 - name: 乳香（levonah）
   suggested_type: 神學
   evidence: 'v15 取素祭上所有的乳香燒在壇上。BH: frankincense symbolizes prayer and devotion rising
@@ -35,6 +242,12 @@ B_needs_update:
   match_type: base
   existing_title: 乳香
   existing_path: link_folder/神學/乳香.md
+- name: 無殘疾
+  suggested_type: 神學
+  evidence: v6 贖愆祭牲須是羊群中一隻沒有殘疾的公綿羊。
+  match_type: exact
+  existing_title: 無殘疾
+  existing_path: link_folder/神學/無殘疾.md
 - name: 公綿羊（ayil）
   suggested_type: 文化
   evidence: 'v6 贖愆祭牲為無殘疾的公綿羊。BH: unblemished ram of proper value, foreshadowing Christ
@@ -49,217 +262,50 @@ B_needs_update:
   match_type: base
   existing_title: 血
   existing_path: link_folder/神學/血.md
+- name: 火祭（isheh）
+  suggested_type: 原文
+  evidence: 'v17-18 從所獻給我的火祭中賜給他們的分。CT: 祭物獻給神都須經火焚燒，故稱火祭。'
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/原文/火祭（isheh）.md
+- name: 馨香（reach nichoach）
+  suggested_type: 原文
+  evidence: 'v15,21 馨香素祭的紀念、馨香的素祭。BH: pleasing aroma indicates God''s acceptance and
+    satisfaction with the offering。'
+  match_type: exact
+  existing_title: 馨香（reach nichoach）
+  existing_path: link_folder/原文/馨香（reach nichoach）.md
+- name: 供物
+  suggested_type: 主題
+  evidence: v20 亞倫受膏的日子所要獻給耶和華的供物。
+  match_type: exact
+  existing_title: 供物
+  existing_path: link_folder/主題/供物.md
 - name: 贖罪（kipper）
   suggested_type: 神學
   evidence: v7 祭司要在耶和華面前為他贖罪，他無論行了什麼事都必蒙赦免。
   match_type: base
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
-- name: 至聖（qodesh qodashim）
-  suggested_type: 原文
-  evidence: 'v17,25,29 素祭、贖罪祭、贖愆祭都是至聖的。BH: most holy signifies the highest level of
-    sanctity, set apart for God。CT: 至聖的通指分別為聖歸給神的祭物和物件，雖蒙神賞賜給祭司享用，但仍視為至聖之物。'
-  match_type: type_conflict
-  existing_title: 至聖
-  existing_path: link_folder/神學/至聖.md
-  note: 分類衝突已解決：保留既有分類神學，不另建原文條目
-- name: 贖罪祭（chatta't）
-  suggested_type: 原文
-  evidence: 'v24-30 贖罪祭的條例：宰於燔祭牲處、祭司吃、血彈衣洗淨、瓦器打碎銅器擦磨、血入會幕者肉不可吃。BH: sin offering was
-    crucial for atoning unintentional sins and restoring relationship with God。CT:
-    贖罪祭的祭牲作為代贖祭物，是分別出來獻給神的。'
-  match_type: type_conflict
-  existing_title: 贖罪祭
-  existing_path: link_folder/神學/贖罪祭.md
-  note: 分類衝突已解決：保留既有分類神學，不另建原文條目
-- name: 平安祭（shelamim）
-  suggested_type: 神學
-  evidence: 'v12 祭司在壇上燒平安祭牲的脂油。BH: peace offering symbolized fellowship and reconciliation
-    with God。'
-  match_type: type_conflict
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
-  note: 分類衝突已解決：保留既有分類原文，不另建神學條目
-- name: 脂油（chelev）
-  suggested_type: 神學
-  evidence: 'v12 燒平安祭牲的脂油。CT: 表徵將上好的因著感恩獻給神。'
-  match_type: type_conflict
-  existing_title: 脂油
-  existing_path: link_folder/主題/脂油.md
-  note: 分類衝突已解決：保留既有分類主題，不另建神學條目
-- name: 無殘疾（tamim）
-  suggested_type: 原文
-  evidence: v6 贖愆祭牲須是羊群中一隻沒有殘疾的公綿羊。
-  match_type: type_conflict
-  existing_title: 無殘疾
-  existing_path: link_folder/神學/無殘疾.md
-  note: 分類衝突已解決：保留既有分類神學，不另建原文條目
-- name: 供物（qorban）
-  suggested_type: 原文
-  evidence: v20 亞倫受膏的日子所要獻給耶和華的供物。
-  match_type: type_conflict
-  existing_title: 供物
-  existing_path: link_folder/主題/供物.md
-  note: 分類衝突已解決：保留既有分類主題，不另建原文條目
-- name: 會幕（ohel moed）
-  suggested_type: 地點
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
   evidence: v16,26 在會幕的院子裡吃。v30 將血帶進會幕在聖所贖罪。
-  match_type: type_conflict
+  match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
-  note: 分類衝突已解決：保留既有分類主題，不另建地點條目
 - name: 銅壇（燔祭壇）
-  suggested_type: 器物
+  suggested_type: 主題
   evidence: v9-13 壇上的火、壇的柴、壇的旁邊。全章圍繞燔祭壇的運作。
-  match_type: type_conflict
+  match_type: exact
   existing_title: 銅壇（燔祭壇）
   existing_path: link_folder/主題/銅壇（燔祭壇）.md
-  note: 分類衝突已解決：保留既有分類主題，不另建器物條目
-C_new_formal:
-- name: 賠還（歸還加五分之一）
-  suggested_type: 神學
-  evidence: 'v4-5 犯罪者須歸還所搶奪/欺壓/侵佔/拾遺之物，如數歸還並另加五分之一，在查出有罪的日子交還本主。BH: restitution in
-    full + add a fifth (20%) served as penalty and deterrent。CT: 真正的悔改不僅在於言語，也在於實踐，結出與悔改相稱的果子（太3:8）。GT:
-    五分之一是罰金。'
-  target_path: link_folder/神學/賠還（歸還加五分之一）.md
-- name: 干犯耶和華（ma'al）
-  suggested_type: 原文
-  evidence: 'v2『若有人犯罪，干犯耶和華』——對鄰舍的欺騙、搶奪、欺壓等罪，本質上是對神不忠實。BH: sin is ultimately against
-    God, a breach of covenant。CT: 人任何得罪別人的事，都是干犯神的。KC: every sin against one''s neighbor
-    is in the first place a sin against God, unfaithfulness against Him。'
-  target_path: link_folder/原文/干犯耶和華（ma'al）.md
-- name: 交易上的詭詐
-  suggested_type: 神學
-  evidence: 'v2『在交易上行了詭詐』——買賣中的欺騙、舞弊、攙假、不公道的尺秤升斗。CT: 包括一切欺騙、投機、作偽、舞弊、攙假、冒牌及不公道的度量。GT:
-    用不正當的方法來營利，把不該得的東西變成自己所有的。'
-  target_path: link_folder/神學/交易上的詭詐.md
-- name: 拾遺不報
-  suggested_type: 神學
-  evidence: 'v3『撿了遺失的物上行了詭詐，說謊起誓』——拾獲他人失物後否認或謊稱未見。CT: 基督徒不可以拾東西，拾起來也要去還人家。GT: 在遺失的物上，有許多人行了詭詐，有變作沒有，多變作少，好變作壞。'
-  target_path: link_folder/神學/拾遺不報.md
-- name: 假誓
-  suggested_type: 神學
-  evidence: 'v3,5『說謊起誓』『因什麼物起了假誓』——以假誓掩蓋侵佔他人財物的事實。BH: swearing falsely, especially
-    in God''s name, was a serious offense, misusing the sacred name of the Lord。CT:
-    人起假誓乃是罪上加罪。'
-  target_path: link_folder/神學/假誓.md
-- name: 壇火常燒（不可熄滅）
-  suggested_type: 神學
-  evidence: 'v9,12,13 三次強調壇上的火要常常燒著、不可熄滅。BH: perpetual fire symbolizes God''s continuous
-    presence and ongoing need for atonement。CT: 火乃是神聖潔的表號；神與人交通的門路是常常開著的。KC: God wants
-    His people to be constantly surrounded by the fragrance of the burnt offering。'
-  target_path: link_folder/神學/壇火常燒（不可熄滅）.md
-- name: 燔祭灰
-  suggested_type: 神學
-  evidence: 'v10-11 祭司收燔祭灰倒在壇旁，再換衣將灰拿到營外潔淨之處。CT: 灰表徵人天然生命的盡頭，不再改變；倒在東邊日出的方向表徵死不是結局，要帶進復活。KC:
-    the believer occupied with how perfectly the offering has been consumed, how perfectly
-    the Lord Jesus has done His work。'
-  target_path: link_folder/神學/燔祭灰.md
-- name: 細麻布衣服（祭司服）
-  suggested_type: 文化
-  evidence: 'v10 祭司收灰時須穿細麻布衣服和褲子。BH: linen garments signify purity and holiness, essential
-    for approaching God。CT: 祭司供職時必須穿上祭司服（出28:40-41），遮掩下體免得擔罪而死。GT: 不問工作貴賤，只要是出乎神的差遣，同樣重要，同樣尊嚴。'
-  target_path: link_folder/文化/細麻布衣服（祭司服）.md
-- name: 營外潔淨之處
-  suggested_type: 地點
-  evidence: 'v11 祭司換衣後將灰拿到營外潔淨之處。BH: removal of ashes outside the camp highlights
-    the need to keep the camp pure。CT: 營外表徵世界；信徒當把身體獻上，活著事奉神（羅12:1）。KC: outside the
-    camp means to take a place of shame, openly admitting we have taken the side of
-    a rejected Lord。'
-  target_path: link_folder/地點/營外潔淨之處.md
-- name: 添柴（每日早晨）
-  suggested_type: 神學
-  evidence: 'v12 祭司每日早晨在壇上燒柴，把燔祭擺上，燒平安祭牲的脂油。BH: daily addition of wood signifies regular
-    and disciplined approach in maintaining relationship with God。CT: 信徒早晨起來和晚上睡覺的時候，也當除去一切攔阻自己的事，把心中的火挑旺起來（羅12:11；提後1:6）。'
-  target_path: link_folder/神學/添柴（每日早晨）.md
-- name: 馨香素祭的紀念
-  suggested_type: 神學
-  evidence: 'v15 祭司取一把細麵、油和所有乳香燒在壇上，奉給耶和華為馨香素祭的紀念。BH: memorial portion signifies the
-    offering being wholly dedicated to God, a reminder of the covenant relationship。CT:
-    馨香指聞起來心曠神怡的氣味，讓神聞到而蒙悅納。'
-  target_path: link_folder/神學/馨香素祭的紀念.md
-- name: 聖處（會幕院子）
-  suggested_type: 地點
-  evidence: 'v16,26 祭司吃祭物必須在聖處，即在會幕的院子裡。BH: holy place refers to a location set apart
-    for sacred purposes。CT: 會幕院內有燔祭壇和洗濯盆的地方，這院子稱聖是因為會幕是神的住處。KC: a holy place is where
-    natural thinking is not given room, everything directed toward God。'
-  target_path: link_folder/地點/聖處（會幕院子）.md
-- name: 不帶酵（無酵）
-  suggested_type: 神學
-  evidence: 'v16-17 素祭剩下的必須在聖處不帶酵而吃，烤的時候不可攙酵。BH: leaven symbolizes sin and corruption;
-    requirement signifies purity and holiness。CT: 無論是裡面的接受（吃）或是外面的接觸（烤），都不可有罪（酵）的成分。'
-  target_path: link_folder/神學/不帶酵（無酵）.md
-- name: 摸祭成聖
-  suggested_type: 神學
-  evidence: 'v18,27 凡摸這些祭物的都要成為聖。BH: anything touching the offerings becomes holy,
-    underscoring the sacredness。CT: 因所獻的祭物是至聖的，故凡與祭物接觸過的人與物都成為聖。GT: 聖物具有傳染能力，但只限於直接接觸。'
-  target_path: link_folder/神學/摸祭成聖.md
-- name: 受膏的日子
-  suggested_type: 事件
-  evidence: 'v20 當亞倫受膏的日子，他和他子孫所要獻給耶和華的供物。BH: the anointing signifies consecration
-    and dedication to the priestly office。CT: 大約是正月初八日，就是大祭司就職的日子（八35）。KC: Aaron is
-    a picture of the Lord Jesus as High Priest, anointed by God。'
-  target_path: link_folder/事件/受膏的日子.md
-- name: 常獻的素祭（祭司每日）
-  suggested_type: 神學
-  evidence: 'v20 細麵伊法十分之一，為常獻的素祭：早晨一半，晚上一半。BH: division into morning and evening highlights
-    continual worship and devotion。CT: 表徵每天早晚都要過獻身事奉神的生活。'
-  target_path: link_folder/神學/常獻的素祭（祭司每日）.md
-- name: 伊法十分之一
-  suggested_type: 文化
-  evidence: 'v20 細麵伊法十分之一。BH: a tenth of an ephah is a specific measure, indicating
-    precision and orderliness in worship。CT: 約折合2.2公升的細麵。GT: 兩個祭的用量約是五杯麵粉。'
-  target_path: link_folder/文化/伊法十分之一.md
-- name: 鐵鏊（煎盤）
-  suggested_type: 文化
-  evidence: 'v21 要在鐵鏊上用油調和做成，調勻了烤好了分成塊子。BH: griddle indicates a method of preparation
-    common in ancient Near Eastern cultures。CT: 表徵與聖靈調和（調油）、受火煉的苦（烤）、十字架的破碎（分塊）。'
-  target_path: link_folder/文化/鐵鏊（煎盤）.md
-- name: 祭司素祭全燒
-  suggested_type: 神學
-  evidence: 'v22-23 祭司的素祭都要燒了，卻不可吃。BH: complete burning signifies total devotion and
-    surrender to God。CT: 大祭司若吃自己所獻的，那祭就與沒有獻上一樣。KC: the Lord Jesus as High Priest in
-    heaven is inseparable from His coming to earth and His life on earth for God。'
-  target_path: link_folder/神學/祭司素祭全燒.md
-- name: 宰燔祭牲的地方
-  suggested_type: 地點
-  evidence: 'v25 要在耶和華面前、宰燔祭牲的地方宰贖罪祭牲。BH: shared location indicates interconnectedness
-    of different types of offerings。CT: 就是在燔祭壇的北邊（一11）。KC: whoever brings a sin offering
-    may also see that the Lord Jesus is also the burnt offering。'
-  target_path: link_folder/地點/宰燔祭牲的地方.md
-- name: 彈血洗衣（聖處洗淨）
-  suggested_type: 神學
-  evidence: 'v27 祭牲的血若彈在衣服上，所彈的那一件要在聖處洗淨。BH: blood of sacrifice was sacred; washing
-    in a holy place ensured respect for sacredness。CT: 表徵不可將基督的寶血當作平常看待。GT: 因為聖潔的血彈在了不潔的衣服上，若不洗淨，神的聖潔也因此被玷污。'
-  target_path: link_folder/神學/彈血洗衣（聖處洗淨）.md
-- name: 瓦器打碎
-  suggested_type: 神學
-  evidence: 'v28 煮祭物的瓦器要打碎。BH: clay pot absorbed impurities and could not be cleansed,
-    must be destroyed。CT: 瓦器表徵人天然的生命，須十字架的破碎。GT: 瓦器會滲入油和味，清洗不掉，所以要打碎。'
-  target_path: link_folder/神學/瓦器打碎.md
-- name: 銅器擦磨涮淨
-  suggested_type: 神學
-  evidence: 'v28 若煮在銅器裡，銅器要擦磨，在水中涮淨。BH: bronze being non-porous could be cleansed
-    and reused。CT: 銅器表徵審判；基督已經滿足神公義的審判，信徒在基督裡面只要接受神話語的光照和話中之水的洗淨。'
-  target_path: link_folder/神學/銅器擦磨涮淨.md
-- name: 血入會幕的贖罪祭（肉不可吃）
-  suggested_type: 神學
-  evidence: 'v30 凡贖罪祭，若將血帶進會幕在聖所贖罪，那肉都不可吃，必用火焚燒。BH: prohibition underscores seriousness
-    of sin and sacredness of atonement。CT: 包括三種：大祭司的贖罪祭、全體會眾的贖罪祭、大贖罪日的贖罪祭。KC: when
-    the anointed priest or people have sinned, all are guilty and unfit to eat it。'
-  target_path: link_folder/神學/血入會幕的贖罪祭（肉不可吃）.md
-- name: 火祭（isheh）
-  suggested_type: 原文
-  evidence: 'v17-18 從所獻給我的火祭中賜給他們的分。CT: 祭物獻給神都須經火焚燒，故稱火祭。'
-  target_path: link_folder/原文/火祭（isheh）.md
-- name: 馨香（reach nichoach）
-  suggested_type: 原文
-  evidence: 'v15,21 馨香素祭的紀念、馨香的素祭。BH: pleasing aroma indicates God''s acceptance and
-    satisfaction with the offering。'
-  target_path: link_folder/原文/馨香（reach nichoach）.md
 - name: 耶和華曉諭摩西
   suggested_type: 事件
   evidence: v1,8,19,24 四次『耶和華曉諭摩西說』，分段啟示贖愆祭續篇、燔祭條例、素祭條例、贖罪祭條例。
-  target_path: link_folder/事件/耶和華曉諭摩西.md
+  match_type: alias
+  existing_title: 耶和華曉諭摩西（利6：1）
+  existing_path: link_folder/事件/耶和華曉諭摩西（利6：1）.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
