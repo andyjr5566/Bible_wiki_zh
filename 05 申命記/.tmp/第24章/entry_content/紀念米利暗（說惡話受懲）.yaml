@@ -1,0 +1,26 @@
+name: 紀念米利暗（說惡話受懲）
+type: 事件
+secondary_types: []
+aliases:
+- 紀念米利暗
+- 米利暗受懲
+status: formal
+definition: 申命記 24:9 命令「當記念出埃及後，在路上，耶和華─你神向米利暗所行的事」。民數記 12 記載米利暗因說摩西的惡話而長大痲瘋，被隔離七日。此紀念提醒百姓謹守舌頭，不可輕慢神所立的領袖。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 24
+  summary: 提醒百姓紀念米利暗因說惡話受懲的事件，作為警戒。
+  relation: 強調言語的責任與對神所揀選領袖的尊重。
+related_entries:
+- 大痲瘋災病謹遵祭司指教
+sources:
+- '研經註解: 申命記 24 章研經註解（https://biblehub.com/study/deuteronomy/24.htm）'
+- '逐節註解: 申命記 24 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT24.htm）'
+- '拾穗: 申命記 24 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT24.htm）'
+- '研經註解: 申命記 24 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/24）'
+created_from: deuteronomy_24
+category: 事件
+trigger_sources: []
+current_data: {}
+pending: false

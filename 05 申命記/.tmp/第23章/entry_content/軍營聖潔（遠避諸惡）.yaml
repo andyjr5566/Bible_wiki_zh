@@ -1,0 +1,28 @@
+name: 軍營聖潔（遠避諸惡）
+type: 神學
+secondary_types: []
+aliases:
+- 軍營聖潔
+- 遠避諸惡
+status: formal
+definition: 申命記 23:9-14 規定出兵時軍營須保持聖潔：(1) 夢遺者須出營至日落洗澡才能回營；(2) 指定營外便所並攜帶鍬鏟土掩蓋糞便。理由是耶和華在營中行走，救護百姓、交付仇敵，營中不可有污穢，免得神轉離開。將軍事行動納入聖潔律典，強調神臨在是得勝關鍵。
+development: 此段將禮儀潔淨（利 15:16-18 夢遺規定）延伸至軍事語境，並加入衛生設施條例（鍬、掩蓋），兼具神學與公共衛生雙重功能。約書亞記 7
+  亞干犯罪導致艾城戰敗，印證營中污穢招致神離棄。
+accumulations:
+- book: 申命記
+  chapter: 23
+  summary: 規範軍營潔淨條例，連結神臨在與戰爭勝負。
+  relation: 為本章從會眾資格轉向社會倫理與軍事聖潔的過渡段落。
+related_entries:
+- 逃奴不可交還
+- 娼妓孌童所得不可獻殿
+sources:
+- '研經註解(BH): 申命記 23:9-14 軍營律法（https://biblehub.com/study/deuteronomy/23.htm）'
+- '逐節註解: 申命記 23:9-14 釋經（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT23.htm）'
+- '拾穗: 申命記 23:9-14 應用（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT23.htm）'
+- '研經註解(KC): 申命記 23 研讀（https://www.kingcomments.com/en/bible-studies/Deu/23）'
+created_from: deuteronomy_23
+category: 神學主題
+trigger_sources: []
+current_data: {}
+pending: false

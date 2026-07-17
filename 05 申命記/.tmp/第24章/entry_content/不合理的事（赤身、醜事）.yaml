@@ -1,0 +1,28 @@
+name: 不合理的事（赤身、醜事）
+type: 神學
+secondary_types: []
+aliases:
+- 不合理的事
+- 赤身
+- 醜事
+status: formal
+definition: 申命記 24:1 提到丈夫見妻子有「不合理的事」（希伯來文 ervat davar，意指「赤身的事」或「醜陋的事」），便可寫休書離婚。此詞語在猶太傳統中引發對離婚理由的討論，後來拉比學派對其解釋不一（如沙买學派寬鬆，希列學派嚴格）。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 24
+  summary: 列出離婚的條件「不合理的事」，作為休書簽發的依據。
+  relation: 為離婚法提供道德與法律界限，反映神對婚姻聖潔的重視。
+related_entries:
+- 休書（sefer keritut）
+- 前夫不可再娶被休之妻
+sources:
+- '研經註解: 申命記 24 章研經註解（https://biblehub.com/study/deuteronomy/24.htm）'
+- '逐節註解: 申命記 24 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT24.htm）'
+- '拾穗: 申命記 24 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT24.htm）'
+- '研經註解: 申命記 24 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/24）'
+created_from: deuteronomy_24
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

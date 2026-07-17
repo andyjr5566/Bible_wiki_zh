@@ -1,0 +1,188 @@
+book: 申命記
+chapter: 23
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 外腎受傷（閹割）
+  suggested_type: 原文
+  evidence: 經文第1節「凡外腎受傷的，或被閹割的，不可入耶和華的會」；ccbiblestudy CT 解釋外腎受傷指故意使睪丸受傷失去生殖能力，閹割指故意割除陰莖或睪丸；KingComments
+    指出這表徵生命的枯乾(參賽56:3)；BibleHub 連結利21:17-23祭司身體殘缺不可獻祭。
+  surfaces:
+  - phrase: 外腎受傷
+    verses:
+    - 1
+  - phrase: 被閹割
+    verses:
+    - 1
+  - phrase: 不可入耶和華的會
+    verses:
+    - 1
+  target_path: link_folder/原文/外腎受傷（閹割）.md
+- name: 私生子（非婚生子）
+  suggested_type: 神學
+  evidence: 經文第2節「私生子不可入耶和華的會；他的子孫，直到十代，也不可入耶和華的會」；ccbiblestudy CT 指出私生子指婚姻以外所生的兒女，是犯罪的產物，神不能接受；KingComments
+    指出神恨惡罪，一切從罪裡出來的事物都不能接受；BibleHub 連結利未記關於聖潔的條例。
+  surfaces:
+  - phrase: 私生子
+    verses:
+    - 2
+  - phrase: 他的子孫
+    verses:
+    - 2
+  - phrase: 直到十代
+    verses:
+    - 2
+  target_path: link_folder/神學/私生子（非婚生子）.md
+- name: 亞捫人摩押人不可入會
+  suggested_type: 神學
+  evidence: 經文第3-6節「亞捫人或是摩押人不可入耶和華的會；他們的子孫，雖過十代，也永不可入耶和華的會」；ccbiblestudy CT 解釋亞捫摩押是羅得與女兒亂倫所生，與以色列有血緣關係，但他們出埃及時不以食物水迎接，又雇巴蘭咒詛；KingComments
+    指出這不是民族恩怨，而是阻擋神的工作，站在神對頭地位；BibleHub 連結民22-24巴蘭咒詛變祝福。
+  surfaces:
+  - phrase: 亞捫人
+    verses:
+    - 3
+    - 4
+    - 5
+    - 6
+  - phrase: 摩押人
+    verses:
+    - 3
+    - 4
+    - 5
+    - 6
+  - phrase: 永不可入耶和華的會
+    verses:
+    - 3
+  - phrase: 雇了巴蘭
+    verses:
+    - 4
+  - phrase: 咒詛變為祝福
+    verses:
+    - 5
+  target_path: link_folder/神學/亞捫人摩押人不可入會.md
+- name: 以東人埃及人不可憎惡
+  suggested_type: 神學
+  evidence: 經文第7-8節「不可憎惡以東人，因為他是你的弟兄。不可憎惡埃及人，因為你在他的地上作過寄居的」；ccbiblestudy CT 指出以東人是以掃後裔有血緣關係，埃及人曾在飢荒時收留雅各一家；KingComments
+    指出將來埃及人必歸向耶和華(賽19:22)，科普特教會是中東最大基督徒族群；BibleHub 連結創36:9以東族譜、創47:11雅各移居埃及。
+  surfaces:
+  - phrase: 不可憎惡以東人
+    verses:
+    - 7
+  - phrase: 不可憎惡埃及人
+    verses:
+    - 7
+  - phrase: 第三代子孫可以入耶和華的會
+    verses:
+    - 8
+  target_path: link_folder/神學/以東人埃及人不可憎惡.md
+- name: 軍營聖潔（遠避諸惡）
+  suggested_type: 神學
+  evidence: 經文第9-14節「你出兵攻打仇敵，就要遠避諸惡...因為耶和華─你的神常在你營中行走」；ccbiblestudy CT 解釋軍營中要保持聖潔，神在營中行走救護；KingComments
+    指出營中聖潔預表新約信徒身體是聖靈殿(林前6:19-20)；BibleHub 連結弗6:10-18神的全副軍裝。
+  surfaces:
+  - phrase: 遠避諸惡
+    verses:
+    - 9
+  - phrase: 夢遺
+    verses:
+    - 10
+  - phrase: 便所
+    verses:
+    - 12
+    - 13
+  - phrase: 鍬
+    verses:
+    - 13
+  - phrase: 營理當聖潔
+    verses:
+    - 14
+  target_path: link_folder/神學/軍營聖潔（遠避諸惡）.md
+- name: 逃奴不可交還
+  suggested_type: 神學
+  evidence: 經文第15-16節「若有奴僕脫了主人的手，逃到你那裡，你不可將他交付他的主人」；ccbiblestudy CT 指出這保護逃奴的自由，體現神的憐憫；KingComments
+    指出這預表基督釋放被擄者(路4:18)；BibleHub 連結腓利門書阿尼西母逃奴得自由。
+  surfaces:
+  - phrase: 奴僕脫了主人的手
+    verses:
+    - 15
+  - phrase: 逃到你那裡
+    verses:
+    - 15
+  - phrase: 不可將他交付
+    verses:
+    - 15
+  - phrase: 不可欺負他
+    verses:
+    - 16
+  target_path: link_folder/神學/逃奴不可交還.md
+- name: 娼妓孌童所得不可獻殿
+  suggested_type: 神學
+  evidence: 經文第17-18節「以色列的女子中不可有妓女；以色列的男子中不可有孌童。娼妓所得的錢...不可帶入耶和華─你神的殿還願」；ccbiblestudy
+    CT 解釋妓女指廟妓、孌童指男妓，都是迦南宗教惡習；KingComments 指出這兩樣都是神所憎惡的，預表屬靈淫亂；BibleHub 連結何4:14、啟17:5大淫婦。
+  surfaces:
+  - phrase: 妓女
+    verses:
+    - 17
+  - phrase: 孌童
+    verses:
+    - 17
+  - phrase: 娼妓所得的錢
+    verses:
+    - 18
+  - phrase: 神所憎惡的
+    verses:
+    - 18
+  target_path: link_folder/神學/娼妓孌童所得不可獻殿.md
+- name: 借給弟兄不可取利
+  suggested_type: 神學
+  evidence: 經文第19-20節「你借給你弟兄的...都不可取利。借給外邦人可以取利」；ccbiblestudy CT 指出取利壓迫窮人，神命令弟兄間互助不取利；KingComments
+    指出這體現神的恩典經濟學，預表新約捨己愛人；BibleHub 連結出22:25、利25:35-37、太5:42借給人不拒絕。
+  surfaces:
+  - phrase: 不可取利
+    verses:
+    - 19
+    - 20
+  - phrase: 借給外邦人可以取利
+    verses:
+    - 20
+  - phrase: 神必賜福與你
+    verses:
+    - 20
+  target_path: link_folder/神學/借給弟兄不可取利.md
+- name: 許願償還不可遲延
+  suggested_type: 神學
+  evidence: 經文第21-23節「你向耶和華─你的神許願，償還不可遲延...你若不許願，倒無罪」；ccbiblestudy CT 指出許願是自願的，但許了就必須還，遲延就是得罪神；KingComments
+    指出耶穌教導不可起誓(太5:33-37)，心裡誠實就不需許願；BibleHub 連結傳5:4-5、民30:2許願條例。
+  surfaces:
+  - phrase: 許願
+    verses:
+    - 21
+    - 22
+    - 23
+  - phrase: 償還不可遲延
+    verses:
+    - 21
+  - phrase: 不許願倒無罪
+    verses:
+    - 22
+  target_path: link_folder/神學/許願償還不可遲延.md
+- name: 進鄰舍葡萄園田地條例
+  suggested_type: 神學
+  evidence: 經文第24-25節「你進了鄰舍的葡萄園，可以隨意吃飽了葡萄，只是不可裝在器皿中...不可用鐮刀割取禾稼」；ccbiblestudy CT 指出這保障窮人飢餓時的基本生存，又防止貪婪；KingComments
+    指出這體現神的供應與人的節制，預表屬靈飽足不屬貪婪；BibleHub 連結太12:1門徒摘穗子吃、路6:1-5。
+  surfaces:
+  - phrase: 進了鄰舍的葡萄園
+    verses:
+    - 24
+  - phrase: 隨意吃飽了葡萄
+    verses:
+    - 24
+  - phrase: 不可裝在器皿中
+    verses:
+    - 24
+  - phrase: 不可用鐮刀割取禾稼
+    verses:
+    - 25
+  target_path: link_folder/神學/進鄰舍葡萄園田地條例.md
+D_new_candidate: []
+E_skip: []

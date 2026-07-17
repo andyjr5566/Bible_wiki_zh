@@ -1,0 +1,27 @@
+name: 借貸當頭不可進家拿取
+type: 神學
+secondary_types: []
+aliases:
+- 借貸當頭不可進家
+- 當頭不可進家拿取
+status: formal
+definition: 申命記 24:10‑11 規定借貸時「不可進他家拿他的當頭」，債主須站在外面等候借貸人自行拿出當頭。此法保護借貸人居住隱私與尊嚴，防止強勢催債。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 24
+  summary: 禁止債主進入借貸人家中強取當頭，規定在門外等候。
+  relation: 體現神對弱勢借貸人權益的保障，促進公平借貸關係。
+related_entries:
+- 不可拿磨石作當頭
+- 窮人當頭不可留過夜
+sources:
+- '研經註解: 申命記 24 章研經註解（https://biblehub.com/study/deuteronomy/24.htm）'
+- '逐節註解: 申命記 24 章逐節註解（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT24.htm）'
+- '拾穗: 申命記 24 章拾穗（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT24.htm）'
+- '研經註解: 申命記 24 章研經註解（https://www.kingcomments.com/en/bible-studies/Deu/24）'
+created_from: deuteronomy_24
+category: 神學
+trigger_sources: []
+current_data: {}
+pending: false

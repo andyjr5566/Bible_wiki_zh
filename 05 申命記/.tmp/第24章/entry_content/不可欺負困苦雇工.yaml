@@ -1,0 +1,38 @@
+name: 不可欺負困苦雇工
+type: 神學
+secondary_types: []
+aliases:
+- 不可欺壓貧窮雇工
+- 當日給工價
+status: formal
+definition: 申命記 24:14-15 禁止欺負困苦窮乏的雇工，無論是以色列同胞或城裡寄居的外人。雇主必須在當日日落前給付工價，因為雇工貧窮，心裡仰望這工價；若拖延，雇工向耶和華呼求，雇主就必擔罪。這條例體現神對弱勢勞工的保護，強調公義與及時給付薪資的道德責任。
+development: 此條例在舊約律法中屬於社會公義範疇，與利未記 19:13「不可留下雇工的工價過夜直到早晨」平行。新約雅各書 5:4 亦引用此原則責備克扣工錢的富人。猶太傳統（如《米示拿》Bava
+  Metzia 9:11-12）詳細規定給付時限：日間工人可在夜間討薪，夜間工人可在日間討薪。
+accumulations:
+- book: 申命記
+  chapter: 24
+  summary: 第 14-15 節命令不可欺負困苦雇工，當日日落前必給工價，否則雇工向神呼求，雇主獲罪。
+  relation: 本章核心社會公義條文，保障弱勢勞工權益，彰顯神對貧窮人的眷顧。
+related_entries:
+- 不可因子殺父不可因父殺子
+- 不可向寄居孤兒屈枉正直
+- 記念在埃及作奴僕得救贖
+- 遺落捆留給寄居孤兒寡婦
+- 打橄欖樹枝上剩下的留給窮人
+- 摘葡萄園剩下的留給窮人
+- 窮人當頭不可留過夜
+- 借貸當頭不可進家拿取
+sources:
+- '研經註解: 申命記 24 章逐節釋義與神學主題（https://biblehub.com/study/deuteronomy/24.htm）'
+- '逐節註解: 申命記 24:14-15 雇工工價當日付清的規定（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT24.htm）'
+- '拾穗: 申命記 24 章社會公義法規的屬靈意義（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT24.htm）'
+- '研經註解: 申命記 24 章註解——保護弱勢群體的律法（https://www.kingcomments.com/en/bible-studies/Deu/24）'
+created_from: deuteronomy_24
+category: theology
+trigger_sources:
+- biblehub_deut24
+- ccb_CT24
+- ccb_GT24
+- kc_deut24
+current_data: {}
+pending: false

@@ -1,0 +1,28 @@
+name: 娼妓孌童所得不可獻殿
+type: 神學
+secondary_types: []
+aliases:
+- 娼妓所得不可獻殿
+- 孌童所得不可獻殿
+status: formal
+definition: 申命記 23:17-18 禁止以色列中有妓女（qedeshah，聖妓）與孌童（qadesh，男聖妓，原文「狗」keleb 為貶稱），並嚴禁將其所得帶入耶和華殿還願，因這兩樣都是耶和華所憎惡的。針對迦南生育崇拜的聖賣淫儀式，切斷淫亂收入污染聖殿敬拜。
+development: 列王記上 14:24、22:46；列王記下 23:7 記載約西亞除去聖殿中的男妓房。何西阿 4:14 譴責聖妓制度。新約啟示錄 21:8、22:15
+  將「行邪術、淫亂、殺人、拜偶像、並一切喜愛說謊話的」列為城外者，延續此聖潔原則。
+accumulations:
+- book: 申命記
+  chapter: 23
+  summary: 禁絕聖賣淫制度與其收入進入聖殿，維護敬拜純潔。
+  relation: 從社會弱勢保護轉向敬拜純潔，顯示聖潔涵蓋性倫理與財務誠信。
+related_entries:
+- 逃奴不可交還
+- 許願償還不可遲延
+sources:
+- '研經註解(BH): 申命記 23:17-18 聖妓與殿獻（https://biblehub.com/study/deuteronomy/23.htm）'
+- '逐節註解: 申命記 23:17-18 釋經（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT23.htm）'
+- '拾穗: 申命記 23:17-18 應用（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT23.htm）'
+- '研經註解(KC): 申命記 23 研讀（https://www.kingcomments.com/en/bible-studies/Deu/23）'
+created_from: deuteronomy_23
+category: 神學主題
+trigger_sources: []
+current_data: {}
+pending: false

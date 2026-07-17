@@ -14,26 +14,32 @@ links:
   phrase: 當孝敬父母
   target: 當孝敬父母
 - verse: 3
-  phrase: 安息日
+  phrase: 守我的安息日
   target: 安息日
 - verse: 4
   phrase: 偏向虛無的神
   target: 不可偏向虛無的神與鑄造神像
+- verse: 4
+  phrase: 鑄造神像
+  target: 不可偏向虛無的神與鑄造神像
+- verse: 5
+  phrase: 平安祭
+  target: 平安祭
 - verse: 7
   phrase: 可憎惡的
   target: 可憎（sheqets）
 - verse: 8
-  phrase: 剪除
+  phrase: 從民中剪除
   target: 剪除（kareth）
 - verse: 9
   phrase: 不可割盡田角
-  target: 留田角與遺落給窮人寄居者
+  target: 田角條例
 - verse: 9
   phrase: 遺落
   target: 田角條例
 - verse: 10
-  phrase: 寄居的
-  target: 寄居的（ger）
+  phrase: 留給窮人和寄居的
+  target: 田角條例
 - verse: 11
   phrase: 不可偷盜
   target: 不可偷盜欺騙說謊
@@ -51,7 +57,7 @@ links:
   target: 不可指神名起假誓褻瀆神名
 - verse: 13
   phrase: 不可搶奪
-  target: 不可欺壓鄰舍搶奪與雇工工價不過夜
+  target: 雇工工價
 - verse: 13
   phrase: 雇工人的工價
   target: 雇工工價
@@ -81,16 +87,22 @@ links:
   target: 不可搬弄是非與不可與鄰舍為敵置之於死
 - verse: 17
   phrase: 不可心裡恨你的弟兄
-  target: 不可心裡恨弟兄要指摘鄰舍免得擔罪
+  target: 指摘鄰舍
 - verse: 17
   phrase: 總要指摘你的鄰舍
-  target: 不可心裡恨弟兄要指摘鄰舍免得擔罪
+  target: 指摘鄰舍
+- verse: 17
+  phrase: 免得因他擔罪
+  target: 指摘鄰舍
 - verse: 18
   phrase: 不可報仇
   target: 不可報仇埋怨要愛人如己
 - verse: 18
   phrase: 不可埋怨
   target: 不可報仇埋怨要愛人如己
+- verse: 18
+  phrase: 愛人如己
+  target: 愛人如己
 - verse: 19
   phrase: 異類配合
   target: 混雜條例
@@ -99,7 +111,7 @@ links:
   target: 混雜條例
 - verse: 19
   phrase: 不可用兩樣攙雜的料做衣服
-  target: 禁止混雜條例（牲畜種地衣服）
+  target: 混雜條例
 - verse: 20
   phrase: 婢女許配了丈夫
   target: 婢女許配未贖身行淫條例
@@ -108,13 +120,13 @@ links:
   target: 婢女許配未贖身行淫條例
 - verse: 21
   phrase: 贖愆祭
-  target: 婢女許配未贖身行淫條例
+  target: 贖愆祭（asham）
 - verse: 21
   phrase: 公綿羊
-  target: 婢女許配未贖身行淫條例
+  target: 贖愆祭（asham）
 - verse: 22
   phrase: 贖愆祭
-  target: 婢女許配未贖身行淫條例
+  target: 贖愆祭（asham）
 - verse: 23
   phrase: 迦南地
   target: 迦南地
@@ -123,13 +135,13 @@ links:
   target: 未受割禮（arel）
 - verse: 26
   phrase: 不可吃帶血的物
-  target: 不可吃帶血的物與法術觀兆
+  target: 法術與觀兆
 - verse: 26
   phrase: 不可用法術
-  target: 不可吃帶血的物與法術觀兆
+  target: 法術與觀兆
 - verse: 26
   phrase: 不可觀兆
-  target: 不可吃帶血的物與法術觀兆
+  target: 法術與觀兆
 - verse: 28
   phrase: 不可為死人用刀劃身
   target: 不可為死人用刀劃身與刺花紋
@@ -138,19 +150,22 @@ links:
   target: 不可為死人用刀劃身與刺花紋
 - verse: 29
   phrase: 不可辱沒你的女兒
-  target: 不可辱沒女兒使為娼妓
+  target: 賣淫
 - verse: 29
   phrase: 使他為娼妓
-  target: 不可辱沒女兒使為娼妓
+  target: 賣淫
 - verse: 30
-  phrase: 安息日
+  phrase: 守我的安息日
   target: 安息日
 - verse: 30
-  phrase: 聖所
+  phrase: 敬我的聖所
   target: 聖所
 - verse: 31
-  phrase: 巫術
-  target: 占卜
+  phrase: 交鬼
+  target: 不可偏向交鬼行巫術的
+- verse: 31
+  phrase: 行巫術
+  target: 不可偏向交鬼行巫術的
 - verse: 31
   phrase: 求問他們
   target: 不可偏向交鬼行巫術的
@@ -179,13 +194,16 @@ links:
   phrase: 斗
   target: 度量衡
 - verse: 36
-  phrase: 升
+  phrase: 公道天平
   target: 度量衡
 - verse: 36
-  phrase: 斗
+  phrase: 公道法碼
   target: 度量衡
 - verse: 36
-  phrase: 秤
+  phrase: 公道升斗
+  target: 度量衡
+- verse: 36
+  phrase: 公道秤
   target: 度量衡
 - verse: 36
   phrase: 埃及地

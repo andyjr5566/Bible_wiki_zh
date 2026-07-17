@@ -1,376 +1,47 @@
 {
-  "total_warnings": 137,
+  "total_warnings": 91,
   "critical_count": 0,
-  "warning_count": 137,
+  "warning_count": 91,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第30章.md",
-      "target": "拉班",
-      "message": "同一 alias「拉班」指向多個 target: 拉班, 牧羊與牲畜繁殖"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第32章.md",
-      "target": "大腿窩",
-      "message": "同一 alias「大腿窩」指向多個 target: 大腿窩的筋, 雅各大腿窩扭傷的屬靈意義"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第34章.md",
-      "target": "示劍",
-      "message": "同一 alias「示劍」指向多個 target: 示劍（哈抹之子）, 示劍（城）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伊勒伯特利",
-      "message": "同一 alias「伊勒伯特利」指向多個 target: 伊勒伯特利, 伯特利的神"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伯特利之神",
-      "message": "同一 alias「伯特利之神」指向多個 target: 伊勒伯特利, 伯特利的神"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "便雅憫",
-      "message": "同一 alias「便雅憫」指向多個 target: 便雅憫, 便雅憫名字含義"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第37章.md",
-      "target": "夢",
-      "message": "同一 alias「夢」指向多個 target: 古代近東夢文化, 約瑟的夢"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第39章.md",
-      "target": "司獄",
-      "message": "同一 alias「司獄」指向多個 target: 司獄, 耶和華使約瑟在司獄眼前蒙恩"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "安城",
-      "message": "同一 alias「安城」指向多個 target: 安城, 安城（赫利阿坡利斯）太陽神崇拜"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "波提非拉",
-      "message": "同一 alias「波提非拉」指向多個 target: 波提非拉, 波提非拉（太陽神所賜）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "亞西納",
-      "message": "同一 alias「亞西納」指向多個 target: 亞西納, 亞西納（屬內特女神）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "瑪拿西",
-      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "以法蓮",
-      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第45章.md",
-      "target": "以色列",
-      "message": "同一 alias「以色列」指向多個 target: 雅各, 饒恕與和好"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第12章.md",
-      "target": "逾越節",
-      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "瑪拉",
-      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "以琳",
-      "message": "同一 alias「以琳」指向多個 target: 以琳, 以琳綠洲"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第17章.md",
-      "target": "亞瑪力人",
-      "message": "同一 alias「亞瑪力人」指向多個 target: 亞瑪力, 亞瑪力人"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第22章.md",
-      "target": "聖潔",
-      "message": "同一 alias「聖潔」指向多個 target: 聖潔, 聖潔（qodesh）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第27章.md",
-      "target": "銅壇",
-      "message": "同一 alias「銅壇」指向多個 target: 銅壇與十字架（來13：10-13）, 銅壇（燔祭壇）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第28章.md",
-      "target": "亞倫",
-      "message": "同一 alias「亞倫」指向多個 target: 亞倫, 大祭司基督（來4：14-15）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第29章.md",
-      "target": "贖罪祭",
-      "message": "同一 alias「贖罪祭」指向多個 target: 基督作贖罪祭, 贖罪祭"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第11章.md",
-      "target": "駱駝",
-      "message": "同一 alias「駱駝」指向多個 target: 駱駝, 駱駝成為家畜"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第18章.md",
-      "target": "行經不潔淨",
-      "message": "同一 alias「行經不潔淨」指向多個 target: 月經（niddah）, 行經不潔淨時的禁令"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第23章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日為節期基礎"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第8章.md",
-      "target": "膏油",
-      "message": "同一 alias「膏油」指向多個 target: 聖膏油, 膏油（聖膏油）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第9章.md",
-      "target": "燔祭",
-      "message": "同一 alias「燔祭」指向多個 target: 為百姓獻燔祭牛犢綿羊羔, 燔祭（olah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第11章.md",
-      "target": "閒雜人",
-      "message": "同一 alias「閒雜人」指向多個 target: 百姓貪慾要吃肉（貪慾事件）, 閒雜人是誰（出12：38）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第13章.md",
-      "target": "巴蘭的曠野",
-      "message": "同一 alias「巴蘭的曠野」指向多個 target: 巴蘭的曠野, 耶和華曉諭摩西差遣探子"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第14章.md",
-      "target": "迦勒",
-      "message": "同一 alias「迦勒」指向多個 target: 迦勒, 迦勒得進迦南地"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第14章.md",
-      "target": "一日頂一年原則",
-      "message": "同一 alias「一日頂一年原則」指向多個 target: 一日頂一年原則, 一日頂一年（yom tachat shanah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第21章.md",
-      "target": "比珥",
-      "message": "同一 alias「比珥」指向多個 target: 以色列在比珥向井歌唱, 比珥"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第23章.md",
-      "target": "七壇獻祭",
-      "message": "同一 alias「七壇獻祭」指向多個 target: 七壇（shiv'ah mizbechot）, 巴蘭築七壇獻祭"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第25章.md",
-      "target": "心利",
-      "message": "同一 alias「心利」指向多個 target: 心利, 心利（Zimri）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第25章.md",
-      "target": "哥斯比",
-      "message": "同一 alias「哥斯比」指向多個 target: 哥斯比, 哥斯比（Cozbi）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第27章.md",
-      "target": "瑪拉、挪阿、曷拉、密迦、得撒",
-      "message": "同一 alias「瑪拉、挪阿、曷拉、密迦、得撒」指向多個 target: 西羅非哈女兒名字（瑪拉 Machlah、挪阿 No'ah、曷拉 Choglah、密迦 Milcah、得撒 Tirtzah）, 西羅非哈女兒求產業"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第30章.md",
-      "target": "默默不言",
-      "message": "同一 alias「默默不言」指向多個 target: 丈夫天天默許堅定願誓, 丈夫家中許願丈夫權柄"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第32章.md",
-      "target": "希實本",
-      "message": "同一 alias「希實本」指向多個 target: 希實本, 建城與更名"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第3章.md",
-      "target": "拿答",
-      "message": "同一 alias「拿答」指向多個 target: 亞倫家族祭司職分, 拿答"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第3章.md",
-      "target": "亞比戶",
-      "message": "同一 alias「亞比戶」指向多個 target: 亞倫家族祭司職分, 亞比戶"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第3章.md",
-      "target": "以利亞撒",
-      "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的兒子以利亞撒, 以利亞撒"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第3章.md",
-      "target": "以他瑪",
-      "message": "同一 alias「以他瑪」指向多個 target: 亞倫的兒子以他瑪, 以他瑪"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第4章.md",
-      "target": "耶和華曉諭摩西",
-      "message": "同一 alias「耶和華曉諭摩西」指向多個 target: 摩西, 耶和華曉諭摩西說"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第5章.md",
-      "target": "長大痲瘋",
-      "message": "同一 alias「長大痲瘋」指向多個 target: 痲瘋, 長大痲瘋"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "民數記/第6章.md",
-      "target": "搖祭",
-      "message": "同一 alias「搖祭」指向多個 target: 拿細耳人滿期獻祭, 搖祭的胸"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第15章.md",
+      "source": "05 申命記/第15章.md",
       "target": "不可使他空手而去",
       "message": "同一 alias「不可使他空手而去」指向多個 target: 希伯來奴僕服事六年、工價多加一倍（公平待遇）, 希伯來奴僕第七年得自由（豁免年釋放奴僕）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "申命記/第2章.md",
+      "source": "05 申命記/第2章.md",
       "target": "撒烈溪",
       "message": "同一 alias「撒烈溪」指向多個 target: 撒烈溪, 過撒烈溪"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "申命記/第4章.md",
+      "source": "05 申命記/第4章.md",
       "target": "律例典章",
       "message": "同一 alias「律例典章」指向多個 target: 律例典章, 摩西勸勉遵守律例典章"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "申命記/第4章.md",
+      "source": "05 申命記/第4章.md",
       "target": "十條誡",
       "message": "同一 alias「十條誡」指向多個 target: 何烈山領受十誡, 十誡是約"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "申命記/第5章.md",
+      "source": "05 申命記/第5章.md",
       "target": "何烈山",
       "message": "同一 alias「何烈山」指向多個 target: 何烈山, 何烈山立約"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "申命記/第6章.md",
+      "source": "05 申命記/第6章.md",
       "target": "流奶與蜜之地",
       "message": "同一 alias「流奶與蜜之地」指向多個 target: 流奶與蜜之地, 流奶與蜜之地的祝福"
     },
@@ -415,6 +86,13 @@
       "source": "link_folder/人物/亞倫.md",
       "target": "第12章",
       "message": "同一 alias「第12章」指向多個 target: 02 出埃及記/第12章, 04 民數記/第12章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第15章",
+      "message": "同一 alias「第15章」指向多個 target: 02 出埃及記/第15章, 03 利未記/第15章"
     },
     {
       "type": "alias_target_conflict",

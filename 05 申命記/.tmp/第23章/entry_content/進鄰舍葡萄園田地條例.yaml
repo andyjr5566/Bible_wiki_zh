@@ -1,0 +1,29 @@
+name: 進鄰舍葡萄園田地條例
+type: 神學
+secondary_types: []
+aliases:
+- 鄰舍葡萄園條例
+- 田地拾穗權
+status: formal
+definition: 申命記 23:24-25 允許進入鄰舍葡萄園吃飽葡萄、田地用手摘穗，但不可裝器皿帶走、不可用鐮刀收割。平衡貧窮者溫飽需求與產權保護，體現「愛鄰如己」（利
+  19:18）的具體化。耶穌門徒在安息日掐穗吃穗事件（太 12:1-8；可 2:23-28；路 6:1-5）即引用此原則。
+development: 利未記 19:9-10、23:22 規定留下田邊與拾穗給窮人寄居者。路得記 2 路得在波阿斯田地拾穗為實例。此條例在猶太律法中發展為「工人吃葡萄/穀物權」（Bava
+  Metzia 7:1-6），保障勞動者基本需求。
+accumulations:
+- book: 申命記
+  chapter: 23
+  summary: 規範鄰里間食物取用界線，兼顧慈悲與產權。
+  relation: 本章結尾條例，將聖潔倫理延伸至日常鄰里經濟互動，呼應全章「你們要聖潔」的生活化呈現。
+related_entries:
+- 借給弟兄不可取利
+- 逃奴不可交還
+sources:
+- '研經註解(BH): 申命記 23:24-25 鄰里權利（https://biblehub.com/study/deuteronomy/23.htm）'
+- '逐節註解: 申命記 23:24-25 釋經（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT23.htm）'
+- '拾穗: 申命記 23:24-25 應用（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT23.htm）'
+- '研經註解(KC): 申命記 23 研讀（https://www.kingcomments.com/en/bible-studies/Deu/23）'
+created_from: deuteronomy_23
+category: 神學主題
+trigger_sources: []
+current_data: {}
+pending: false

@@ -29,7 +29,7 @@ source_scope: collected_only
 
 ## 相關條目
 
-- [[亞拉巴（Arabah）]]
+- [[亞拉巴]]
 - [[疏弗（Suph）]]
 - [[底撒哈]]
 - [[巴蘭的曠野]]
