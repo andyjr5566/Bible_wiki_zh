@@ -1177,7 +1177,9 @@ def _table_alias_link_review(ctx):
         return []
     hits = []
     for lineno, line in enumerate(str(data.get("organization") or "").splitlines(), 1):
-        s = line.strip()
+        # callout 裡的表格列長成 "> | ... |"，要先剝掉 "> " 前綴才認得出來——
+        # 漏掉這一步的話，寫在 callout 裡的表格就檢查不到（利7 實際踩過）。
+        s = re.sub(r"^\s*(>\s*)+", "", line).strip()
         if s.startswith("|") and s.endswith("|") and re.search(r"\[\[[^\]\r\n]*\|", s):
             hits.append(f"organization 第 {lineno} 行：{s[:40]}")
     if not hits:
