@@ -1158,6 +1158,37 @@ def _unfileable_candidate_errors(ctx):
     return errors
 
 
+def _table_alias_link_review(ctx):
+    """表格列裡帶別名的 wiki-link——Obsidian 會把 | 當成欄位分隔，整列表格裂開。
+
+    `| [[復活盼望|復活信心]] |` 在 Obsidian 裡會被切成兩欄，表格顯示就壞了。
+    verify_links 抓不到（md 檔裡連結字面完好、目標也存在），三道閘門全過，
+    壞的只有版面。實測創／出／利 117 章共 14 例，全在表格列上。
+
+    修法是把表格格裡的連結改成不帶別名（`[[復活盼望]]`）。因為這是版面問題、
+    且渲染器行為隨 Obsidian 版本可能不同，走 manual_review 不擋 build。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    hits = []
+    for lineno, line in enumerate(str(data.get("organization") or "").splitlines(), 1):
+        s = line.strip()
+        if s.startswith("|") and s.endswith("|") and re.search(r"\[\[[^\]\r\n]*\|", s):
+            hits.append(f"organization 第 {lineno} 行：{s[:40]}")
+    if not hits:
+        return []
+    return [
+        "chapter_content：表格列裡有帶別名的 wiki-link（Obsidian 會把 | 當欄位分隔，"
+        "表格會裂開）。請把表格格裡的連結改成不帶別名，例如 [[復活盼望]]。\n      "
+        + "\n      ".join(hits[:6])
+    ]
+
+
 _SECTION_VERSE_RE = re.compile(r"[（(]\s*v\s*(\d+)\s*(?:[-–~至]\s*(\d+))?\s*[）)]")
 
 
@@ -1243,6 +1274,7 @@ def validate_step(ctx, written):
     errors.extend(_split_node_errors(ctx))
     errors.extend(_unfileable_candidate_errors(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
+    ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors
 
 
