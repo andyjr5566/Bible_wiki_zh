@@ -20,8 +20,14 @@ links:
   phrase: 分蹄
   target: 分蹄（mafris parsah）
 - verse: 4
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 4
   phrase: 不潔淨
   target: 不潔淨（tame）
+- verse: 5
+  phrase: 沙番
+  target: 沙番（shaphan）
 - verse: 5
   phrase: 倒嚼
   target: 倒嚼（ma'aleh gerah）
@@ -79,12 +85,21 @@ links:
 - verse: 13
   phrase: 以為可憎
   target: 可憎（sheqets）
+- verse: 14
+  phrase: 鷹
+  target: 雕（nesher）
 - verse: 15
   phrase: 烏鴉
   target: 烏鴉（oreb）
 - verse: 16
   phrase: 鴕鳥
   target: 鴕鳥（bat ya'anah）
+- verse: 16
+  phrase: 鷹
+  target: 雕（nesher）
+- verse: 17
+  phrase: 鷹
+  target: 雕（nesher）
 - verse: 19
   phrase: 蝙蝠
   target: 蝙蝠（atallef）
@@ -154,6 +169,15 @@ links:
 - verse: 29
   phrase: 不潔淨
   target: 不潔淨（tame）
+- verse: 29
+  phrase: 鼬鼠
+  target: 鼬鼠
+- verse: 30
+  phrase: 壁虎
+  target: 壁虎
+- verse: 30
+  phrase: 蝘蜓
+  target: 蝘蜓
 - verse: 31
   phrase: 爬物
   target: 爬物與污穢的屬靈意義

@@ -1,240 +1,214 @@
-book: "利未記"
+book: 利未記
 chapter: 11
 candidates:
-  # === 原文類（希伯來文關鍵字） ===
-  - name: "分蹄（mafris parsah）"
-    type: "原文"
-    evidence: "利11:3「凡蹄分兩瓣」；CT註解：分蹄表徵行動有分別；BH：split hoof completely divided"
-    surfaces:
-      - "蹄分兩瓣"
-      - "分蹄"
-  - name: "倒嚼（ma'aleh gerah）"
-    type: "原文"
-    evidence: "利11:3「倒嚼」；CT註解：倒嚼表徵反覆思想神的話(參路二19)；BH：chews the cud"
-    surfaces:
-      - "倒嚼"
-      - "反芻"
-  - name: "可憎（sheqets）"
-    type: "原文"
-    evidence: "利11:10-13,20,23,41-42「以為可憎」；CT註解：可憎指禁戒不吃；BH：detestable/abomination"
-    surfaces:
-      - "可憎"
-      - "以為可憎"
-  - name: "不潔淨（tame）"
-    type: "原文"
-    evidence: "利11:4-8,24-31,39-40「不潔淨」；CT註解：不潔淨指不可吃、不可摸；BH：unclean"
-    surfaces:
-      - "不潔淨"
-      - "不潔"
-  - name: "聖潔（qadosh）"
-    type: "原文"
-    evidence: "利11:44-45「你們要成為聖潔，因為我是聖潔的」；CT註解：聖潔原意分離、分別為聖歸給神"
-    surfaces:
-      - "聖潔"
-      - "成為聖潔"
-
-  # === 主題類（神學概念） ===
-  - name: "潔淨與不潔淨的飲食條例"
-    type: "主題"
-    evidence: "利11:1-47全章；CT壹內容綱要【食物潔與不潔的條例】九大段；BH：Clean and Unclean Animals；KC：food prescriptions for all Israelites"
-    surfaces:
-      - "食物條例"
-      - "潔淨不潔淨條例"
-  - name: "分蹄倒嚼的屬靈意義"
-    type: "主題"
-    evidence: "利11:3；CT靈意註解：分蹄表徵行動有分別、倒嚼表徵反覆思想神的話；BH：split hoof = separation/discernment, chewing cud = meditation on God's Word；KC：chewing the cud = think about what we take in spiritually, divided hoof = stability in walk"
-    surfaces:
-      - "分蹄倒嚼"
-  - name: "翅與鱗的屬靈意義"
-    type: "主題"
-    evidence: "利11:9-12；CT靈意註解：翅表徵在世俗中行動自由、鱗表徵與世俗有分別(參林後六17)；BH：fins = power to swim against current, scales = protection against wrong influences"
-    surfaces:
-      - "有翅有鱗"
-      - "翅與鱗"
-  - name: "蹦跳昆蟲的屬靈意義"
-    type: "主題"
-    evidence: "利11:21-22；CT靈意註解：表徵活在地上卻能過超越屬地生活的人；BH：jointed legs for jumping = move above the earth；KC：locusts = food of John the Baptist, move above earth over long distance"
-    surfaces:
-      - "蹦跳"
-      - "有足有腿"
-  - name: "爬物與污穢的屬靈意義"
-    type: "主題"
-    evidence: "利11:29-31,41-43；CT靈意註解：表徵與邪靈污鬼有關係的人(參結八10)；BH：swarming things = identified with earth, resemble serpent (satan)；KC：mole = secret things, chameleon = adapt to any situation"
-    surfaces:
-      - "爬物"
-      - "地上的爬物"
-  - name: "不潔淨傳染與潔淨儀式"
-    type: "主題"
-    evidence: "利11:24-40；CT註解：摸死屍不潔淨到晚上、洗衣服、瓦器打破、泉源池子例外、種子乾濕之分；BH：touching carcass = unclean until evening, earthen vessel must be broken, living water cannot become unclean"
-    surfaces:
-      - "不潔淨傳染"
-      - "摸死屍"
-      - "洗衣服"
-      - "打破瓦器"
-  - name: "聖潔的呼召與分別為聖"
-    type: "主題"
-    evidence: "利11:44-47；CT話中之光：神要百姓分別為聖、遠離污穢；BH：consecrate yourselves, be holy for I am holy；KC：reason for laws = holiness of the LORD, we must be holy as He is holy"
-    surfaces:
-      - "要成為聖潔"
-      - "分別出來"
-      - "我是聖潔的"
-
-  # === 人物類 ===
-  - name: "摩西"
-    type: "人物"
-    evidence: "利11:1「耶和華對摩西、亞倫說」；CT文意註解：從本章起神向摩西亞倫兩人說話，因亞倫已正式就任大祭司"
-    surfaces:
-      - "摩西"
-  - name: "亞倫"
-    type: "人物"
-    evidence: "利11:1「耶和華對摩西、亞倫說」；CT文意註解：亞倫已正式就任大祭司(參九22-24)"
-    surfaces:
-      - "亞倫"
-  - name: "施洗約翰"
-    type: "人物"
-    evidence: "利11:22「蝗蟲…你們都可以吃」；CT註解：施洗約翰也曾吃蝗蟲(太三4)；KC：locusts formed the food of John the baptist (Mk 1:6)"
-    surfaces:
-      - "約翰"
-      - "施洗約翰"
-
-  # === 原文動物類（經文明確列出的動物） ===
-  - name: "駱駝（gamal）"
-    type: "原文"
-    evidence: "利11:4「駱駝因為倒嚼不分蹄，就與你們不潔淨」；CT註解：表徵能說不能行的人(參太二十三3)；BH：camel chews cud but no divided hoof"
-    surfaces:
-      - "駱駝"
-  - name: "沙番/石獾（shaphan）"
-    type: "原文"
-    evidence: "利11:5「沙番因為倒嚼不分蹄，就與你們不潔淨」；CT原文字義：沙番即石獾；GT註解：沙番即蹄兔(hyrax)，咀嚼動作像反芻但非真反芻"
-    surfaces:
-      - "沙番"
-      - "石獾"
-      - "蹄兔"
-  - name: "兔子（arnebet）"
-    type: "原文"
-    evidence: "利11:6「兔子因為倒嚼不分蹄，就與你們不潔淨」；CT註解：兔子只似乎倒嚼，神律例按眾目所見規定；GT註解：兔子非真反芻，但嘴部動作類似"
-    surfaces:
-      - "兔子"
-  - name: "豬（chazir）"
-    type: "原文"
-    evidence: "利11:7「豬因為蹄分兩瓣，卻不倒嚼，就與你們不潔淨」；CT靈意註解：表徵只有敬虔外貌卻背了敬虔實意的人(參提後三5)；BH：pig divides hoof but does not chew cud"
-    surfaces:
-      - "豬"
-  - name: "鷹/雕（nesher）"
-    type: "原文"
-    evidence: "利11:13「雕、狗頭雕、紅頭雕」；CT原文字義：雕即鷹、禿鷹；BH：eagle = symbol of strength but unclean due to carrion diet；KC：eagle and vulture = birds of prey living at expense of death of others"
-    surfaces:
-      - "雕"
-      - "鷹"
-      - "禿鷹"
-  - name: "烏鴉（oreb）"
-    type: "原文"
-    evidence: "利11:15「烏鴉與其類」；CT註解：烏鴉吃腐肉(參創八7)；GT註解：神使烏鴉供養以利亞(王上十七4-6)"
-    surfaces:
-      - "烏鴉"
-  - name: "鴕鳥（bat ya'anah）"
-    type: "原文"
-    evidence: "利11:16「鴕鳥、夜鷹、魚鷹、鷹與其類」；CT註解：鴕鳥體型巨大有翅不能飛；GT註解：鴕鳥住曠野不伏卵借日光熱力孵蛋(伯三十九13-18)"
-    surfaces:
-      - "鴕鳥"
-  - name: "蝙蝠（atallef）"
-    type: "原文"
-    evidence: "利11:19「戴鵀與蝙蝠」；CT話中之光：蝙蝠像鳥非鳥像鼠非鼠的兩面派，神討厭教會中兩面派；BH：bat = only mammal in bird list, nocturnal, caves/darkness"
-    surfaces:
-      - "蝙蝠"
-  - name: "蝗蟲（arbeh）"
-    type: "原文"
-    evidence: "利11:22「其中有蝗蟲、螞蚱、蟋蟀與其類；蚱蜢與其類」；CT註解：蝗蟲後腿長強壯能蹦跳；GT註解：施洗約翰以此為食；BH：locusts = have jointed legs for jumping"
-    surfaces:
-      - "蝗蟲"
-      - "螞蚱"
-      - "蟋蟀"
-      - "蚱蜢"
-  - name: "鼬鼠/黃鼠狼"
-    type: "原文"
-    evidence: "利11:29「鼬鼠、鼫鼠、蜥蜴與其類」；CT文意註解：鼬鼠指黃鼠狼；BH：mole = lives underground, closed off from daylight"
-    surfaces:
-      - "鼬鼠"
-      - "黃鼠狼"
-  - name: "壁虎/守宮"
-    type: "原文"
-    evidence: "利11:30「壁虎、龍子、守宮、蛇醫、蝘蜓」；CT註解：壁虎即蛤蚧，守宮是壁虎一種；BH：gecko, lizard, chameleon"
-    surfaces:
-      - "壁虎"
-      - "守宮"
-      - "蝘蜓"
-  - name: "變色龍/蝘蜓"
-    type: "原文"
-    evidence: "利11:30「蝘蜓〔或譯：角鴟〕」；CT註解：蝘蜓指一種壁虎；BH：chameleon = changes color to adapt；KC：chameleon = behaves like a chameleon, adapts to any situation"
-    surfaces:
-      - "蝘蜓"
-      - "變色龍"
-
-  # === 神學類 ===
-  - name: "聖潔與分別為聖"
-    type: "神學"
-    evidence: "利11:44-45「我是耶和華你們的神；所以你們要成為聖潔，因為我是聖潔的」；CT話中之光：神的旨意是叫我們成為聖潔(參帖前四3；彼前一15)；KC：Because He is holy, we must be holy too (1Pet 1:15-16)"
-    surfaces:
-      - "聖潔"
-      - "分別為聖"
-  - name: "死與不潔淨的關聯"
-    type: "神學"
-    evidence: "利11:8,24-25,31,39-40「死的…不潔淨」；CT靈意註解：屍體和死亡像徵罪惡；BH：death = result of sin, carcass = unclean；KC：death is result of sin, everything contrary to God's holiness must be avoided"
-    surfaces:
-      - "死的"
-      - "屍體"
-  - name: "活水與聖靈"
-    type: "神學"
-    evidence: "利11:36「泉源或是聚水的池子仍是潔淨」；CT靈意註解：流動的活水表徵聖靈的充滿(參約七38-39)；BH：living water = Word of God made alive by Spirit；KC：Living water cannot become unclean, rivers of living water flow from innermost being (Jn 7:38)"
-    surfaces:
-      - "泉源"
-      - "聚水的池子"
-      - "活水"
-
-  # === 互文類 ===
-  - name: "潔淨不潔淨條例（創7：2-3）"
-    type: "互文"
-    evidence: "利11:46-47；CT註解：洪水以前就已有動物潔不潔之分(創七2-3)；GT註解：挪亞時代根據是否適合獻祭區分；BH：distinction traces to Noah's time (Gen 7:2)"
-    surfaces:
-      - "挪亞"
-      - "創世記7章"
-  - name: "彼得異象廢除飲食條例（徒10：9-16）"
-    type: "互文"
-    evidence: "利11:47；CT話中之光：今天不受希伯來規條支配，但原則必須注意(參林前十31)；GT註解：基督已成全舊約律法(徒10:9-16；羅14:14)；BH：Peter's vision expands understanding, all foods clean；KC：God has cleansed all animals (Acts 10:9-16)"
-    surfaces:
-      - "彼得異象"
-      - "使徒行傳10章"
-  - name: "保羅論食物不潔淨（羅14：14）"
-    type: "互文"
-    evidence: "利11:47；CT話中之光：入口的不能污穢人(參可七15)；BH：Jesus declared all foods clean (Mark 7:18-19)；KC：nothing is unclean in itself (Rom 14:14a)"
-    surfaces:
-      - "羅馬書14章"
-      - "馬可福音7章"
-  - name: "以色列人分別為聖（利20：24-26）"
-    type: "互文"
-    evidence: "利11:44-45；CT話中之光：神把以色列人從萬民中分別出來(參利二十24-26)；KC：Our position as sons for God sets the standards for our food (Deu 14:1)"
-    surfaces:
-      - "利未記20章"
-      - "申命記14章"
-
-  # === 事件類 ===
-  - name: "頒布潔淨不潔淨條例"
-    type: "事件"
-    evidence: "利11:1-47全章；CT壹：本章為食物潔與不潔的條例；BH：The LORD spoke again to Moses and Aaron；KC：This chapter gives the food prescriptions for all Israelites"
-    surfaces:
-      - "頒布條例"
-      - "神吩咐摩西亞倫"
-
-  # === 文化類 ===
-  - name: "古代近東飲食習慣與以色列差異"
-    type: "文化"
-    evidence: "利11:2-23；GT註解：美索不達米亞有食物短期遭禁例子，巴比倫神祇只接受某種牲畜為祭，但無凌駕一切系統；可吃動物名單大致符合古代近東飲食慣例"
-    surfaces:
-      - "古代近東"
-      - "飲食習慣"
-  - name: "猶太教潔淨飲食傳統"
-    type: "文化"
-    evidence: "利11:47；CT話中之光：猶太人竭力保守原著(利11:42肚字字母在摩西五經正中)；GT註解：遵守條例的猶太人較外邦人少生疾病、壽命較長"
-    surfaces:
-      - "猶太教"
-      - "潔淨飲食"
+- name: 分蹄（mafris parsah）
+  type: 原文
+  evidence: 利11:3「凡蹄分兩瓣」；CT註解：分蹄表徵行動有分別；BH：split hoof completely divided
+  surfaces:
+  - 蹄分兩瓣
+  - 分蹄
+- name: 倒嚼（ma'aleh gerah）
+  type: 原文
+  evidence: 利11:3「倒嚼」；CT註解：倒嚼表徵反覆思想神的話(參路二19)；BH：chews the cud
+  surfaces:
+  - 倒嚼
+  - 反芻
+- name: 可憎（sheqets）
+  type: 原文
+  evidence: 利11:10-13,20,23,41-42「以為可憎」；CT註解：可憎指禁戒不吃；BH：detestable/abomination
+  surfaces:
+  - 可憎
+  - 以為可憎
+- name: 不潔淨（tame）
+  type: 原文
+  evidence: 利11:4-8,24-31,39-40「不潔淨」；CT註解：不潔淨指不可吃、不可摸；BH：unclean
+  surfaces:
+  - 不潔淨
+  - 不潔
+- name: 潔淨與不潔淨的飲食條例
+  type: 主題
+  evidence: 利11:1-47全章；CT壹內容綱要【食物潔與不潔的條例】九大段；BH：Clean and Unclean Animals；KC：food prescriptions for all Israelites
+  surfaces:
+  - 食物條例
+  - 潔淨不潔淨條例
+- name: 分蹄倒嚼的屬靈意義
+  type: 主題
+  evidence: 利11:3；CT靈意註解：分蹄表徵行動有分別、倒嚼表徵反覆思想神的話；BH：split hoof = separation/discernment, chewing cud = meditation on God's Word；KC：chewing the cud = think about what we take in spiritually, divided hoof =
+    stability in walk
+  surfaces:
+  - 分蹄倒嚼
+- name: 翅與鱗的屬靈意義
+  type: 主題
+  evidence: 利11:9-12；CT靈意註解：翅表徵在世俗中行動自由、鱗表徵與世俗有分別(參林後六17)；BH：fins = power to swim against current, scales = protection against wrong influences
+  surfaces:
+  - 有翅有鱗
+  - 翅與鱗
+- name: 蹦跳昆蟲的屬靈意義
+  type: 主題
+  evidence: 利11:21-22；CT靈意註解：表徵活在地上卻能過超越屬地生活的人；BH：jointed legs for jumping = move above the earth；KC：locusts = food of John the Baptist, move above earth over long distance
+  surfaces:
+  - 蹦跳
+  - 有足有腿
+- name: 爬物與污穢的屬靈意義
+  type: 主題
+  evidence: 利11:29-31,41-43；CT靈意註解：表徵與邪靈污鬼有關係的人(參結八10)；BH：swarming things = identified with earth, resemble serpent (satan)；KC：mole = secret things, chameleon = adapt to any situation
+  surfaces:
+  - 爬物
+  - 地上的爬物
+- name: 不潔淨傳染與潔淨儀式
+  type: 主題
+  evidence: 利11:24-40；CT註解：摸死屍不潔淨到晚上、洗衣服、瓦器打破、泉源池子例外、種子乾濕之分；BH：touching carcass = unclean until evening, earthen vessel must be broken, living water cannot become unclean
+  surfaces:
+  - 不潔淨傳染
+  - 摸死屍
+  - 洗衣服
+  - 打破瓦器
+- name: 聖潔的呼召與分別為聖
+  type: 主題
+  evidence: 利11:44-47；CT話中之光：神要百姓分別為聖、遠離污穢；BH：consecrate yourselves, be holy for I am holy；KC：reason for laws = holiness of the LORD, we must be holy as He is holy
+  surfaces:
+  - 要成為聖潔
+  - 分別出來
+  - 我是聖潔的
+- name: 摩西
+  type: 人物
+  evidence: 利11:1「耶和華對摩西、亞倫說」；CT文意註解：從本章起神向摩西亞倫兩人說話，因亞倫已正式就任大祭司
+  surfaces:
+  - 摩西
+- name: 亞倫
+  type: 人物
+  evidence: 利11:1「耶和華對摩西、亞倫說」；CT文意註解：亞倫已正式就任大祭司(參九22-24)
+  surfaces:
+  - 亞倫
+- name: 施洗約翰
+  type: 人物
+  evidence: 利11:22「蝗蟲…你們都可以吃」；CT註解：施洗約翰也曾吃蝗蟲(太三4)；KC：locusts formed the food of John the baptist (Mk 1:6)
+  surfaces:
+  - 約翰
+  - 施洗約翰
+- name: 駱駝（gamal）
+  type: 文化
+  evidence: 利11:4「駱駝因為倒嚼不分蹄，就與你們不潔淨」；CT註解：表徵能說不能行的人(參太二十三3)；BH：camel chews cud but no divided hoof
+  surfaces:
+  - 駱駝
+- name: 沙番（shaphan）
+  type: 原文
+  evidence: 利未記11:5 沙番因為倒嚼不分蹄，就與你們不潔淨。丁良才：「這是希伯來文的原音，或作山鼠，是一種兔類的動物，常住在磐石的孔穴中」（詩104:18，箴30:26）。《啟導本》：從希伯來文 shaphan 音譯，一般認為就是今天的「蹄兔」，和兔子一般大小，尾小耳短，毛呈棕黃色，形狀似土撥鼠，足有軟掌，便於在岩石間跳躍行走。《串珠》：普遍認為是石獾——敘利亞岩石間的一種哺乳類動物。《雷氏》：石獾，是一種嚙齒動物，由於牠的口部不斷地運動，所以給人一種倒嚼的印象。
+  surfaces:
+  - 沙番
+- name: 兔子（arnebet）
+  type: 原文
+  evidence: 利11:6「兔子因為倒嚼不分蹄，就與你們不潔淨」；CT註解：兔子只似乎倒嚼，神律例按眾目所見規定；GT註解：兔子非真反芻，但嘴部動作類似
+  surfaces:
+  - 兔子
+- name: 豬（chazir）
+  type: 原文
+  evidence: 利11:7「豬因為蹄分兩瓣，卻不倒嚼，就與你們不潔淨」；CT靈意註解：表徵只有敬虔外貌卻背了敬虔實意的人(參提後三5)；BH：pig divides hoof but does not chew cud
+  surfaces:
+  - 豬
+- name: 雕（nesher）
+  type: 原文
+  evidence: 利未記11:13 雀鳥中你們當以為可憎、不可吃的乃是：雕、狗頭雕、紅頭雕。丁良才：「鵰」文理譯本作「鷹」，原文和伯39:27、箴30:19 之「鷹」字原文一樣；伯39:29、太24:28 顯明鷹吃肉食，故此是不潔的。「狗頭鵰」按原文的意思解為破骨者，因為常把別的鳥獸吃剩的骨頭擋到空中、擲在地上摔碎，便吃其中的骨髓。「紅頭雕」多食魚類，當最饑的時候也是吃爛魚的。KC：這些猛禽如雕與兀鷹，靠別的生物的死存活。
+  surfaces:
+  - 雕
+  - 鷹
+- name: 烏鴉（oreb）
+  type: 原文
+  evidence: 利11:15「烏鴉與其類」；CT註解：烏鴉吃腐肉(參創八7)；GT註解：神使烏鴉供養以利亞(王上十七4-6)
+  surfaces:
+  - 烏鴉
+- name: 鴕鳥（bat ya'anah）
+  type: 原文
+  evidence: 利11:16「鴕鳥、夜鷹、魚鷹、鷹與其類」；CT註解：鴕鳥體型巨大有翅不能飛；GT註解：鴕鳥住曠野不伏卵借日光熱力孵蛋(伯三十九13-18)
+  surfaces:
+  - 鴕鳥
+- name: 蝙蝠（atallef）
+  type: 原文
+  evidence: 利11:19「戴鵀與蝙蝠」；CT話中之光：蝙蝠像鳥非鳥像鼠非鼠的兩面派，神討厭教會中兩面派；BH：bat = only mammal in bird list, nocturnal, caves/darkness
+  surfaces:
+  - 蝙蝠
+- name: 蝗蟲（arbeh）
+  type: 原文
+  evidence: 利11:22「其中有蝗蟲、螞蚱、蟋蟀與其類；蚱蜢與其類」；CT註解：蝗蟲後腿長強壯能蹦跳；GT註解：施洗約翰以此為食；BH：locusts = have jointed legs for jumping
+  surfaces:
+  - 蝗蟲
+  - 螞蚱
+  - 蟋蟀
+  - 蚱蜢
+- name: 鼬鼠
+  type: 原文
+  evidence: 利未記11:29 地上爬物與你們不潔淨的乃是這些：鼬鼠、鼫鼠、蜥蜴與其類。KC 於此位置作 mole（鼴鼠），教訓最為明確：「這動物住在地底下，與日光隔絕。牠教導我們：不該做那些見不得白日之光的隱密事」——參林後4:2「我們已經棄絕了那些因羞恥而隱藏的事」、弗5:11-12「不要參與那暗昧無益的事……因為他們暗中所行的，就是提起來也是可恥的」。
+  surfaces:
+  - 鼬鼠
+- name: 壁虎
+  type: 原文
+  evidence: 利未記11:30 壁虎、龍子、守宮、蛇醫、蝘蜓。丁良才：「壁虎」文理譯本作「蛤蚧」。《聖經精讀本》：壁虎身體淺綠色，尾巴也是綠色；守宮是壁虎的一種，非常小；蝘蜓也是壁虎的一種。
+  surfaces:
+  - 壁虎
+- name: 蝘蜓
+  type: 原文
+  evidence: 利未記11:30 壁虎、龍子、守宮、蛇醫、蝘蜓。《聖經精讀本》：蝘蜓也是壁虎的一種。KC 於此位置作 chameleon（變色龍），並給了明確教訓：「牠能適應任何處境、與任何人攀談，正如變色龍能改變顏色來配合周遭環境。若我們在信徒中間表現得合宜，到了世界中卻調整自己的行為、只為與世界保持朋友關係，就很容易在牠身上認出自己。」
+  surfaces:
+  - 蝘蜓
+- name: 聖潔與分別為聖
+  type: 神學
+  evidence: 利11:44-45「我是耶和華你們的神；所以你們要成為聖潔，因為我是聖潔的」；CT話中之光：神的旨意是叫我們成為聖潔(參帖前四3；彼前一15)；KC：Because He is holy, we must be holy too (1Pet 1:15-16)
+  surfaces:
+  - 聖潔
+  - 分別為聖
+- name: 死與不潔淨的關聯
+  type: 神學
+  evidence: 利11:8,24-25,31,39-40「死的…不潔淨」；CT靈意註解：屍體和死亡像徵罪惡；BH：death = result of sin, carcass = unclean；KC：death is result of sin, everything contrary to God's holiness must be avoided
+  surfaces:
+  - 死的
+  - 屍體
+- name: 活水與聖靈
+  type: 神學
+  evidence: 利11:36「泉源或是聚水的池子仍是潔淨」；CT靈意註解：流動的活水表徵聖靈的充滿(參約七38-39)；BH：living water = Word of God made alive by Spirit；KC：Living water cannot become unclean, rivers of living water flow from innermost being
+    (Jn 7:38)
+  surfaces:
+  - 泉源
+  - 聚水的池子
+  - 活水
+- name: 潔淨不潔淨條例（創7：2-3）
+  type: 互文
+  evidence: 利11:46-47；CT註解：洪水以前就已有動物潔不潔之分(創七2-3)；GT註解：挪亞時代根據是否適合獻祭區分；BH：distinction traces to Noah's time (Gen 7:2)
+  surfaces:
+  - 挪亞
+  - 創世記7章
+- name: 彼得異象廢除飲食條例（徒10：9-16）
+  type: 互文
+  evidence: 利11:47；CT話中之光：今天不受希伯來規條支配，但原則必須注意(參林前十31)；GT註解：基督已成全舊約律法(徒10:9-16；羅14:14)；BH：Peter's vision expands understanding, all foods clean；KC：God has cleansed all animals (Acts 10:9-16)
+  surfaces:
+  - 彼得異象
+  - 使徒行傳10章
+- name: 保羅論食物不潔淨（羅14：14）
+  type: 互文
+  evidence: 利11:47；CT話中之光：入口的不能污穢人(參可七15)；BH：Jesus declared all foods clean (Mark 7:18-19)；KC：nothing is unclean in itself (Rom 14:14a)
+  surfaces:
+  - 羅馬書14章
+  - 馬可福音7章
+- name: 以色列人分別為聖（利20：24-26）
+  type: 互文
+  evidence: 利11:44-45；CT話中之光：神把以色列人從萬民中分別出來(參利二十24-26)；KC：Our position as sons for God sets the standards for our food (Deu 14:1)
+  surfaces:
+  - 利未記20章
+  - 申命記14章
+- name: 頒布潔淨不潔淨條例
+  type: 事件
+  evidence: 利11:1-47全章；CT壹：本章為食物潔與不潔的條例；BH：The LORD spoke again to Moses and Aaron；KC：This chapter gives the food prescriptions for all Israelites
+  surfaces:
+  - 頒布條例
+  - 神吩咐摩西亞倫
+- name: 古代近東飲食習慣與以色列差異
+  type: 文化
+  evidence: 利11:2-23；GT註解：美索不達米亞有食物短期遭禁例子，巴比倫神祇只接受某種牲畜為祭，但無凌駕一切系統；可吃動物名單大致符合古代近東飲食慣例
+  surfaces:
+  - 古代近東
+  - 飲食習慣
+- name: 猶太教潔淨飲食傳統
+  type: 文化
+  evidence: 利11:47；CT話中之光：猶太人竭力保守原著(利11:42肚字字母在摩西五經正中)；GT註解：遵守條例的猶太人較外邦人少生疾病、壽命較長
+  surfaces:
+  - 猶太教
+  - 潔淨飲食

@@ -8,10 +8,10 @@ from pathlib import Path
 import yaml
 
 try:
-    from .book_paths import BOOK_NUMBERS, book_directory, chapter_link
+    from .book_paths import BOOK_NUMBERS, book_directory, canonical_book_name, chapter_link
     from . import console
 except ImportError:
-    from book_paths import BOOK_NUMBERS, book_directory, chapter_link
+    from book_paths import BOOK_NUMBERS, book_directory, canonical_book_name, chapter_link
     import console
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -96,6 +96,17 @@ def apply_updates(manifest, dry_run=False):
     book, chapter = data.get("book"), data.get("chapter")
     if not book or not isinstance(chapter, int):
         raise ValueError("manifest 缺少合法 book/chapter")
+    # manifest 的 book 有時寫成資料夾名（「03 利未記」）而非書卷名（「利未記」）。
+    # 這裡的 book 會直接寫進累積標記與 H3 標題，不正規化就會在條目裡另開一節
+    # 「### 03 利未記」，與既有的「### 利未記」並存互不相認：check_existing_links
+    # 找不到累積、validate_knowledge_base 抱怨排序、下次重跑又寫一份。
+    # 全庫已有 175 個條目被這樣切成兩半（摩西.md 同時有「### 利未記」與「### 03 利未記」）。
+    book = canonical_book_name(book)
+    if book not in BOOK_NUMBERS:
+        raise ValueError(
+            f"manifest 的 book「{data.get('book')}」不是合法書卷名；"
+            f"應為 _config/bible_books.json 裡的書卷名（如「利未記」），不是資料夾名"
+        )
     changed = 0
     for update in data.get("updates", []):
         missing = validate_update(update)
