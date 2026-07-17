@@ -20,8 +20,11 @@ links:
   phrase: 山羊
   target: 山羊
 - verse: 6
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 耶和華面前
+  target: 會幕（帳幕整體）
+- verse: 6
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 6
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -38,11 +41,14 @@ links:
   phrase: 雛鴿
   target: 雛鴿
 - verse: 7
+  phrase: 耶和華面前
+  target: 會幕（帳幕整體）
+- verse: 7
   phrase: 贖愆祭
   target: 贖愆祭（asham）
 - verse: 7
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 作贖罪祭
+  target: 贖罪祭
 - verse: 7
   phrase: 燔祭
   target: 燔祭（olah）
@@ -50,14 +56,14 @@ links:
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 8
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 8
   phrase: 揪下頭來
   target: 宰殺
 - verse: 9
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 9
   phrase: 血
   target: 血
@@ -92,8 +98,8 @@ links:
   phrase: 細麵伊法十分之一
   target: 細麵
 - verse: 11
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 12
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -101,8 +107,8 @@ links:
   phrase: 燒在壇上
   target: 燒在壇上
 - verse: 12
-  phrase: 贖罪
-  target: 贖罪
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 13
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -117,7 +123,7 @@ links:
   target: 細麵
 - verse: 13
   phrase: 素祭
-  target: 素祭
+  target: 素祭（minchah）
 - verse: 15
   phrase: 聖所的舍客勒
   target: 聖所的舍客勒
@@ -133,6 +139,9 @@ links:
 - verse: 15
   phrase: 公綿羊
   target: 公綿羊
+- verse: 15
+  phrase: 耶和華面前
+  target: 會幕（帳幕整體）
 - verse: 16
   phrase: 償還
   target: 償還加五分之一
@@ -178,3 +187,6 @@ links:
 - verse: 19
   phrase: 贖愆祭
   target: 贖愆祭（asham）
+- verse: 19
+  phrase: 耶和華面前
+  target: 會幕（帳幕整體）

@@ -9,8 +9,8 @@ candidates:
       - {phrase: "供物", verses: [6, 7, 11, 15, 18]}
       - {phrase: "獻...為贖愆祭", verses: [6, 7, 11, 15, 18]}
 
-  - name: "贖罪祭（chatta't）"
-    type: "原文"
+  - name: "贖罪祭"
+    type: "神學"
     evidence: "v6、9「一隻作贖罪祭」，希伯來文 chatta't。KC 指出贖愆祭與贖罪祭常配合獻上，贖罪祭處理罪的性質，贖愆祭處理罪的後果。"
     surfaces:
       - "贖罪祭"
@@ -59,8 +59,8 @@ candidates:
     surfaces:
       - "祭司"
 
-  - name: "會幕"
-    type: "地點"
+  - name: "會幕（帳幕整體）"
+    type: "主題"
     evidence: "v6、9、11、16「帶到耶和華面前」、「壇的旁邊」、「壇的腳那裡」。BH 指出會幕為神與人相會之處，預表基督「支搭帳棚住在我們中間」（約1:14）。"
     surfaces:
       - "耶和華面前"
@@ -123,7 +123,7 @@ candidates:
       - "雛鴿"
 
   - name: "細麵"
-    type: "主題"
+    type: "原文"
     evidence: "v11「細麵伊法十分之一為贖罪祭」，與素祭同例。KC 指出細麵表基督完美人性。"
     surfaces:
       - "細麵"
@@ -186,7 +186,7 @@ candidates:
       - "燔祭壇"
 
   - name: "素祭"
-    type: "主題"
+    type: "原文"
     evidence: "利未記2章素祭條例，v11、13 與贖愆祭相關。KC 指出素祭表基督完美人性（細麵）、聖靈膏抹（油）、禱告（乳香）。"
     surfaces:
       - "素祭"
@@ -200,17 +200,12 @@ candidates:
       - "火祭"
 
   - name: "平安祭"
-    type: "主題"
+    type: "神學"
     evidence: "利未記3章平安祭條例，與贖愆祭同為獻祭制度一部分。KC 指出平安祭表基督成就與神與人之平安（西1:20）。"
     surfaces:
       - "平安祭"
       - "酬恩祭"
 
-  - name: "贖罪祭"
-    type: "原文"
-    evidence: "利未記4章贖罪祭條例，v6、9「一隻作贖罪祭」。KC 指出贖罪祭為誤犯罪而設。"
-    surfaces:
-      - "贖罪祭"
 
   - name: "鹽約"
     type: "神學"
