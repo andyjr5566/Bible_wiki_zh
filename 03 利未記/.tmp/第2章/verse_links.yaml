@@ -107,11 +107,14 @@ links:
   phrase: 素祭
   target: 素祭（minchah）
 - verse: 8
+  phrase: 耶和華面前
+  target: 會幕（帳幕整體）
+- verse: 8
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 8
-  phrase: 壇
-  target: 壇
+  phrase: 壇前
+  target: 會幕（帳幕整體）
 - verse: 9
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -199,3 +202,6 @@ links:
 - verse: 16
   phrase: 乳香
   target: 乳香
+- verse: 16
+  phrase: 焚燒
+  target: 燒在壇上
