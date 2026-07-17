@@ -1,0 +1,41 @@
+---
+type: 神學
+secondary_types: []
+aliases:
+- 私生子
+- 非婚生子
+status: formal
+source_scope: collected_only
+---
+
+# 私生子（非婚生子）（mamzēr）
+
+## 定義
+
+希伯來文 mamzēr（מַמְזֵר），指非合法婚姻關係所生之子（如姦淫、亂倫）。申命記 23:2 規定私生子及其子孫至十代不可入耶和華的會，強調立約共同體的血統純潔與婚姻聖潔。
+
+## 按書卷累積
+
+### 申命記
+
+<!-- accumulation:申命記:23:start -->
+#### [[05 申命記/第23章|第23章]]
+- 本章重點：列為不可入會之第二條，限制延續十代。
+- 與本章關聯：與外腎受傷同屬會眾資格限制，但屬血統/倫理範疇而非生理。
+<!-- accumulation:申命記:23:end -->
+
+## 主題發展
+
+猶太律法傳統（Mishnah Yevamot）將 mamzēr 限定為聖經禁止之性關係所生；拉比文獻討論其身分繼承與贖回問題。新約無直接引用，但加拉太書 4:22-31 象徵性對比「按肉體生」與「按應許生」。
+
+## 相關條目
+
+- [[外腎受傷（閹割）（petsu'a dakkā）]]
+- [[亞捫人摩押人不可入會]]
+
+## 來源依據
+
+- 研經註解(BH): 申命記 23:2 字義與神學（<https://biblehub.com/study/deuteronomy/23.htm>）
+- 逐節註解: 申命記 23:2 釋經（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT23.htm>）
+- 拾穗: 申命記 23:2 應用（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT23.htm>）
+- 研經註解(KC): 申命記 23 研讀（<https://www.kingcomments.com/en/bible-studies/Deu/23>）

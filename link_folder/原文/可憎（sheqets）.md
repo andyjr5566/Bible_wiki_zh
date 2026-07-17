@@ -3,7 +3,6 @@ type: 原文
 secondary_types: []
 aliases:
 - 可憎
-- 可憎惡的
 status: formal
 source_scope: collected_only
 ---
