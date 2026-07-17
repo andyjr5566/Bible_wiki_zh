@@ -30,7 +30,7 @@ source_scope: collected_only
 ## 相關條目
 
 - [[以得來]]
-- [[亞斯他錄（Ashtaroth）]]
+- [[亞斯她錄（Ashtaroth）]]
 - [[亞珥歌伯全境（All the region of Argob）]]
 - [[征服巴珊王噩]]
 - [[二個半支派得約但河東地]]
