@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 44439,
+  "valid_links_count": 46032,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 266,
+  "pending_scripture_refs_count": 265,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -102,12 +102,12 @@
       "chapter": 2
     },
     {
-      "entity": "但7:9-10",
+      "entity": "27 但以理書/第7章",
       "book": "但以理書",
       "chapter": 7
     },
     {
-      "entity": "27 但以理書/第7章",
+      "entity": "但7:9-10",
       "book": "但以理書",
       "chapter": 7
     },
@@ -197,22 +197,22 @@
       "chapter": 16
     },
     {
-      "entity": "出19:9,16",
-      "book": "出埃及記",
-      "chapter": 19
-    },
-    {
       "entity": "出19:5-6",
       "book": "出埃及記",
       "chapter": 19
     },
     {
-      "entity": "出24:7",
+      "entity": "出19:9,16",
+      "book": "出埃及記",
+      "chapter": 19
+    },
+    {
+      "entity": "出24:3",
       "book": "出埃及記",
       "chapter": 24
     },
     {
-      "entity": "出24:3",
+      "entity": "出24:7",
       "book": "出埃及記",
       "chapter": 24
     },
@@ -222,17 +222,17 @@
       "chapter": 31
     },
     {
-      "entity": "出33:18-23",
-      "book": "出埃及記",
-      "chapter": 33
-    },
-    {
       "entity": "出33:9-10",
       "book": "出埃及記",
       "chapter": 33
     },
     {
-      "entity": "出34:1-4,28",
+      "entity": "出33:18-23",
+      "book": "出埃及記",
+      "chapter": 33
+    },
+    {
+      "entity": "出34:1-4",
       "book": "出埃及記",
       "chapter": 34
     },
@@ -242,7 +242,7 @@
       "chapter": 34
     },
     {
-      "entity": "出34:1-4",
+      "entity": "出34:1-4,28",
       "book": "出埃及記",
       "chapter": 34
     },
@@ -357,12 +357,7 @@
       "chapter": 10
     },
     {
-      "entity": "林前11:25",
-      "book": "哥林多前書",
-      "chapter": 11
-    },
-    {
-      "entity": "46 哥林多前書/第11章",
+      "entity": "林前11:23-26",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -372,7 +367,12 @@
       "chapter": 11
     },
     {
-      "entity": "林前11:23-26",
+      "entity": "46 哥林多前書/第11章",
+      "book": "哥林多前書",
+      "chapter": 11
+    },
+    {
+      "entity": "林前11:25",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -492,12 +492,12 @@
       "chapter": 7
     },
     {
-      "entity": "來8:10, 10:16",
+      "entity": "來8:10",
       "book": "希伯來書",
       "chapter": 8
     },
     {
-      "entity": "58 希伯來書/第8章",
+      "entity": "來8:10, 10:16",
       "book": "希伯來書",
       "chapter": 8
     },
@@ -507,32 +507,12 @@
       "chapter": 8
     },
     {
-      "entity": "來8:10",
+      "entity": "58 希伯來書/第8章",
       "book": "希伯來書",
       "chapter": 8
     },
     {
-      "entity": "來9:18-22",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:11-12",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
       "entity": "58 希伯來書/第9章",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:12,24",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:15",
       "book": "希伯來書",
       "chapter": 9
     },
@@ -552,9 +532,44 @@
       "chapter": 9
     },
     {
+      "entity": "來9:18-22",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
       "entity": "來9:12",
       "book": "希伯來書",
       "chapter": 9
+    },
+    {
+      "entity": "來9:12,24",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:11-12",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:15",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來10:10",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "來10:22",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "來10:16",
+      "book": "希伯來書",
+      "chapter": 10
     },
     {
       "entity": "來10:5-10",
@@ -577,27 +592,12 @@
       "chapter": 10
     },
     {
-      "entity": "來10:16",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
-      "entity": "來10:22",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
-      "entity": "來10:10",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
       "entity": "58 希伯來書/第11章",
       "book": "希伯來書",
       "chapter": 11
     },
     {
-      "entity": "來12:24",
+      "entity": "來12:22-24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -612,12 +612,12 @@
       "chapter": 12
     },
     {
-      "entity": "來12:18-24",
+      "entity": "來12:24",
       "book": "希伯來書",
       "chapter": 12
     },
     {
-      "entity": "來12:22-24",
+      "entity": "來12:18-24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -642,12 +642,12 @@
       "chapter": 5
     },
     {
-      "entity": "彼前1:7",
+      "entity": "彼前1:2",
       "book": "彼得前書",
       "chapter": 1
     },
     {
-      "entity": "彼前1:2",
+      "entity": "彼前1:7",
       "book": "彼得前書",
       "chapter": 1
     },
@@ -682,12 +682,12 @@
       "chapter": 1
     },
     {
-      "entity": "撒上15:22",
+      "entity": "09 撒母耳記上/第15章",
       "book": "撒母耳記上",
       "chapter": 15
     },
     {
-      "entity": "09 撒母耳記上/第15章",
+      "entity": "撒上15:22",
       "book": "撒母耳記上",
       "chapter": 15
     },
@@ -832,22 +832,12 @@
       "chapter": 0
     },
     {
-      "entity": "05 申命記/第7章",
-      "book": "申命記",
-      "chapter": 7
-    },
-    {
-      "entity": "05 申命記/第8章",
-      "book": "申命記",
-      "chapter": 8
-    },
-    {
-      "entity": "05 申命記/第9章",
+      "entity": "申9:9-11",
       "book": "申命記",
       "chapter": 9
     },
     {
-      "entity": "申9:9-11",
+      "entity": "05 申命記/第9章",
       "book": "申命記",
       "chapter": 9
     },
@@ -972,12 +962,12 @@
       "chapter": 15
     },
     {
-      "entity": "書24:16-24",
+      "entity": "06 約書亞記/第24章",
       "book": "約書亞記",
       "chapter": 24
     },
     {
-      "entity": "06 約書亞記/第24章",
+      "entity": "書24:16-24",
       "book": "約書亞記",
       "chapter": 24
     },
@@ -997,12 +987,17 @@
       "chapter": 5
     },
     {
-      "entity": "約1:18",
+      "entity": "約1:14",
       "book": "約翰福音",
       "chapter": 1
     },
     {
-      "entity": "約1:14",
+      "entity": "43 約翰福音/第1章",
+      "book": "約翰福音",
+      "chapter": 1
+    },
+    {
+      "entity": "約1:18",
       "book": "約翰福音",
       "chapter": 1
     },
@@ -1267,12 +1262,12 @@
       "chapter": 0
     },
     {
-      "entity": "雅1:22",
+      "entity": "59 雅各書/第1章",
       "book": "雅各書",
       "chapter": 1
     },
     {
-      "entity": "59 雅各書/第1章",
+      "entity": "雅1:22",
       "book": "雅各書",
       "chapter": 1
     },
@@ -1292,12 +1287,12 @@
       "chapter": 3
     },
     {
-      "entity": "40 馬太福音/第4章",
+      "entity": "太4:2",
       "book": "馬太福音",
       "chapter": 4
     },
     {
-      "entity": "太4:2",
+      "entity": "40 馬太福音/第4章",
       "book": "馬太福音",
       "chapter": 4
     },
@@ -1341,6 +1336,13 @@
   "details": {
     "broken": {},
     "pending": {
+      "01 創世記/第28章.md": [
+        [
+          "43 約翰福音/第1章",
+          "約翰福音",
+          1
+        ]
+      ],
       "link_folder/主題/人的方法與神的應許.md": [
         [
           "23 以賽亞書/第28章",
@@ -2055,18 +2057,6 @@
           "05 申命記/第11章",
           "申命記",
           11
-        ],
-        [
-          "05 申命記/第7章",
-          "申命記",
-          7
-        ]
-      ],
-      "link_folder/互文/申命記8章.md": [
-        [
-          "05 申命記/第8章",
-          "申命記",
-          8
         ]
       ],
       "link_folder/互文/申命記十章.md": [
@@ -2621,11 +2611,6 @@
         ]
       ],
       "link_folder/人物/革迦撒人.md": [
-        [
-          "05 申命記/第7章",
-          "申命記",
-          7
-        ],
         [
           "06 約書亞記/第3章",
           "約書亞記",
