@@ -1,0 +1,29 @@
+name: 伯毘珥（Beth-peor）
+type: 地點
+secondary_types: []
+aliases:
+- 伯毘珥
+- 毘珥廟/毘珥殿
+status: formal
+definition: 位於約但河東、毘斯迦山附近的地名（申3:29），意為「毘珥廟/殿」。以色列人在擊敗巴珊王噩後，住在伯毘珥對面的谷中，作為摩西最後講論與交棒約書亞的地理背景。
+development: 伯毘珥作為摩西生命最後階段的駐紮地，見證了以色列從征服約但河東到準備進迦南的過渡時刻。
+accumulations:
+- book: 申命記
+  chapter: 3
+  summary: 記載以色列人住在伯毘珥對面的谷中，作為本章結尾的地理定點。
+  relation: 本章以伯毘珥為地標，標示摩西完成征服敘事、交棒約書亞、被拒進迦南後的駐紮地。
+related_entries:
+- 摩西
+- 約書亞
+- 毘斯迦山
+- 約書亞被立為繼任者
+- 摩西是否進過迦南地
+- 耶和華的爭戰
+sources:
+- 申命記 3:29 — 以色列住在伯毘珥對面的谷中（本章經文）
+created_from: 申命記第3章
+category: 地點
+trigger_sources:
+- 申命記 3:29
+current_data: true
+pending: false

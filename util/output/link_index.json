@@ -17495,6 +17495,17 @@
     "status": "formal",
     "aliases": []
   },
+  "基述人（Geshurites）": {
+    "path": "link_folder/人物/基述人（Geshurites）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "基述人（Geshurites）",
+    "status": "formal",
+    "aliases": [
+      "基述人",
+      "基述居民"
+    ]
+  },
   "報血者": {
     "path": "link_folder/人物/報血者.md",
     "type": "人物",
@@ -18622,6 +18633,17 @@
     "status": "formal",
     "aliases": []
   },
+  "瑪吉（Machir）": {
+    "path": "link_folder/人物/瑪吉（Machir）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "瑪吉（Machir）",
+    "status": "formal",
+    "aliases": [
+      "瑪吉",
+      "基列的得主"
+    ]
+  },
   "瑪哈拉": {
     "path": "link_folder/人物/瑪哈拉.md",
     "type": "人物",
@@ -18662,6 +18684,17 @@
     "status": "formal",
     "aliases": []
   },
+  "瑪迦人（Maacathites）": {
+    "path": "link_folder/人物/瑪迦人（Maacathites）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "瑪迦人（Maacathites）",
+    "status": "formal",
+    "aliases": [
+      "瑪迦人",
+      "瑪迦居民"
+    ]
+  },
   "甲摩尼人": {
     "path": "link_folder/人物/甲摩尼人.md",
     "type": "人物",
@@ -18669,6 +18702,17 @@
     "title": "甲摩尼人",
     "status": "formal",
     "aliases": []
+  },
+  "睚珥（瑪拿西的子孫）": {
+    "path": "link_folder/人物/睚珥（瑪拿西的子孫）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "睚珥（瑪拿西的子孫）",
+    "status": "formal",
+    "aliases": [
+      "睚珥",
+      "雅伊珥"
+    ]
   },
   "督工的": {
     "path": "link_folder/人物/督工的.md",
@@ -19952,6 +19996,18 @@
     "aliases": [
       "不潔淨",
       "污穢"
+    ]
+  },
+  "主耶和華（Adonai YHWH）": {
+    "path": "link_folder/原文/主耶和華（Adonai YHWH）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "主耶和華（Adonai YHWH）",
+    "status": "formal",
+    "aliases": [
+      "主耶和華",
+      "Adonai YHWH",
+      "主YHWH"
     ]
   },
   "乾的兩個希伯來字": {
@@ -24802,6 +24858,18 @@
     "status": "formal",
     "aliases": []
   },
+  "亞珥歌伯（Argob）": {
+    "path": "link_folder/地點/亞珥歌伯（Argob）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞珥歌伯（Argob）",
+    "status": "formal",
+    "aliases": [
+      "亞珥歌伯",
+      "利乏音人之地",
+      "哈倭特睚珥"
+    ]
+  },
   "亞珥（Ar）": {
     "path": "link_folder/地點/亞珥（Ar）.md",
     "type": "地點",
@@ -25049,6 +25117,17 @@
     "title": "伯拉大河",
     "status": "formal",
     "aliases": []
+  },
+  "伯毘珥（Beth-peor）": {
+    "path": "link_folder/地點/伯毘珥（Beth-peor）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯毘珥（Beth-peor）",
+    "status": "formal",
+    "aliases": [
+      "伯毘珥",
+      "毘珥廟/毘珥殿"
+    ]
   },
   "伯特利": {
     "path": "link_folder/地點/伯特利.md",
@@ -25715,6 +25794,18 @@
     "status": "formal",
     "aliases": []
   },
+  "拉巴（Rabbah）": {
+    "path": "link_folder/地點/拉巴（Rabbah）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拉巴（Rabbah）",
+    "status": "formal",
+    "aliases": [
+      "拉巴",
+      "亞捫人的拉巴",
+      "Rabbah"
+    ]
+  },
   "拉末基列": {
     "path": "link_folder/地點/拉末基列.md",
     "type": "地點",
@@ -25797,6 +25888,17 @@
     "aliases": [
       "撒烈溪",
       "Zered"
+    ]
+  },
+  "撒迦（Salecah）": {
+    "path": "link_folder/地點/撒迦（Salecah）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒迦（Salecah）",
+    "status": "formal",
+    "aliases": [
+      "撒迦",
+      "巴珊邊界城"
     ]
   },
   "曠野": {
@@ -26575,6 +26677,18 @@
     "title": "麥比拉洞",
     "status": "formal",
     "aliases": []
+  },
+  "黑門山（Hermon）": {
+    "path": "link_folder/地點/黑門山（Hermon）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "黑門山（Hermon）",
+    "status": "formal",
+    "aliases": [
+      "黑門山",
+      "西連(西頓名)",
+      "示尼珥(亞摩利名)"
+    ]
   },
   "不可蓬頭散髮、撕裂衣裳": {
     "path": "link_folder/文化/不可蓬頭散髮、撕裂衣裳.md",
@@ -43784,6 +43898,12 @@
   "Abidan": {
     "alias_of": "基多尼的兒子亞比但"
   },
+  "基述人": {
+    "alias_of": "基述人（Geshurites）"
+  },
+  "基述居民": {
+    "alias_of": "基述人（Geshurites）"
+  },
   "報血仇": {
     "alias_of": "報血者"
   },
@@ -43969,6 +44089,24 @@
   },
   "Er": {
     "alias_of": "珥"
+  },
+  "瑪吉": {
+    "alias_of": "瑪吉（Machir）"
+  },
+  "基列的得主": {
+    "alias_of": "瑪吉（Machir）"
+  },
+  "瑪迦人": {
+    "alias_of": "瑪迦人（Maacathites）"
+  },
+  "瑪迦居民": {
+    "alias_of": "瑪迦人（Maacathites）"
+  },
+  "睚珥": {
+    "alias_of": "睚珥（瑪拿西的子孫）"
+  },
+  "雅伊珥": {
+    "alias_of": "睚珥（瑪拿西的子孫）"
   },
   "taskmasters": {
     "alias_of": "督工的"
@@ -44227,6 +44365,15 @@
   },
   "污穢": {
     "alias_of": "不潔淨（tame）"
+  },
+  "主耶和華": {
+    "alias_of": "主耶和華（Adonai YHWH）"
+  },
+  "Adonai YHWH": {
+    "alias_of": "主耶和華（Adonai YHWH）"
+  },
+  "主YHWH": {
+    "alias_of": "主耶和華（Adonai YHWH）"
   },
   "乾葡萄": {
     "alias_of": "乾葡萄（tsimmuqim）"
@@ -46043,6 +46190,15 @@
   "Ashteroth Karnaim": {
     "alias_of": "亞特律加寧"
   },
+  "亞珥歌伯": {
+    "alias_of": "亞珥歌伯（Argob）"
+  },
+  "利乏音人之地": {
+    "alias_of": "亞珥歌伯（Argob）"
+  },
+  "哈倭特睚珥": {
+    "alias_of": "亞珥歌伯（Argob）"
+  },
   "亞珥": {
     "alias_of": "亞珥（Ar）"
   },
@@ -46108,6 +46264,12 @@
   },
   "Bethlehem": {
     "alias_of": "伯利恆"
+  },
+  "伯毘珥": {
+    "alias_of": "伯毘珥（Beth-peor）"
+  },
+  "毘珥廟/毘珥殿": {
+    "alias_of": "伯毘珥（Beth-peor）"
   },
   "拉億": {
     "alias_of": "但"
@@ -46220,6 +46382,15 @@
   "巴蘭": {
     "alias_of": "巴蘭的曠野"
   },
+  "拉巴": {
+    "alias_of": "拉巴（Rabbah）"
+  },
+  "亞捫人的拉巴": {
+    "alias_of": "拉巴（Rabbah）"
+  },
+  "Rabbah": {
+    "alias_of": "拉巴（Rabbah）"
+  },
   "Moriah": {
     "alias_of": "摩利亞地"
   },
@@ -46231,6 +46402,12 @@
   },
   "Zered": {
     "alias_of": "撒烈溪（Zered）"
+  },
+  "撒迦": {
+    "alias_of": "撒迦（Salecah）"
+  },
+  "巴珊邊界城": {
+    "alias_of": "撒迦（Salecah）"
   },
   "Wilderness of Shur": {
     "alias_of": "書珥的曠野"
@@ -46411,6 +46588,15 @@
   },
   "亞拉巴海": {
     "alias_of": "鹽海"
+  },
+  "黑門山": {
+    "alias_of": "黑門山（Hermon）"
+  },
+  "西連(西頓名)": {
+    "alias_of": "黑門山（Hermon）"
+  },
+  "示尼珥(亞摩利名)": {
+    "alias_of": "黑門山（Hermon）"
   },
   "不可蓬頭散髮": {
     "alias_of": "不可蓬頭散髮、撕裂衣裳"

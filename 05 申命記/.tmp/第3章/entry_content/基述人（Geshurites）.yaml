@@ -1,0 +1,27 @@
+name: 基述人（Geshurites）
+type: 人物
+secondary_types: []
+aliases:
+- 基述人
+- 基述居民
+status: formal
+definition: 居住在巴珊地區北部邊界的族群，睚珥佔領亞珥歌伯全境時，其疆界達到基述人的交界（申3:14）。基述人後來未被以色列趕出，仍住在以色列中（書13:13）。
+development: 基述人作為巴珊北鄰族群，其邊界成為以色列得地的標誌之一。
+accumulations:
+- book: 申命記
+  chapter: 3
+  summary: 記載睚珥佔領亞珥歌伯，疆界直到基述人的交界。
+  relation: 本章以基述人交界作為睚珥得地北界的地標。
+related_entries:
+- 睚珥（瑪拿西的子孫）
+- 亞珥歌伯
+- 瑪迦人
+- 瑪拿西支派
+sources:
+- 申命記 3:14 — 基述人交界作為睚珥得地北界（本章經文）
+created_from: 申命記第3章
+category: 人物
+trigger_sources:
+- 申命記 3:14
+current_data: true
+pending: false

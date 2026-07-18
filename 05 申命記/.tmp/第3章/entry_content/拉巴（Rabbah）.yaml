@@ -1,0 +1,28 @@
+name: 拉巴（Rabbah）
+type: 地點
+secondary_types: []
+aliases:
+- 拉巴
+- 亞捫人的拉巴
+- Rabbah
+status: formal
+definition: 亞捫人的首都拉巴（申3:11），巴珊王噩的鐵床（長九肘、寬四肘）存放於此，作為利乏音人體型巨大的實物見證。
+development: 拉巴雖屬亞捫人領地，但保存著巴珊王噩的鐵床，成為利乏音人遺跡的重要考古見證點，佐證申命記對巨人族群的記載。
+accumulations:
+- book: 申命記
+  chapter: 3
+  summary: 記載巴珊王噩的鐵床現存於亞捫人的拉巴。
+  relation: 本章以拉巴為噩王鐵床的存放地，間接證實利乏音人（噩王）的歷史真實性與體型傳說。
+related_entries:
+- 巴珊王噩
+- 利乏音人
+- 亞捫人
+- 以色列戰勝巴珊王噩
+sources:
+- 申命記 3:11 — 噩王鐵床存放於亞捫人的拉巴（本章經文）
+created_from: 申命記第3章
+category: 地點
+trigger_sources:
+- 申命記 3:11
+current_data: true
+pending: false
