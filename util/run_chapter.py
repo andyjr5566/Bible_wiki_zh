@@ -27,12 +27,13 @@ try:
 except ImportError:
     from book_paths import book_directory, canonical_book_name
 
+import remediation
 import render_chapter
 import render_entry
 import resolve_link_candidates as resolver
 import source_excerpts
 import validate_knowledge_base as vkb
-from model_client import ModelValidationError, call_model
+from model_client import ModelError, ModelValidationError, call_model
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_DIR = ROOT / "_config" / "schemas"
@@ -142,13 +143,20 @@ def resolve_step(ctx):
 # --------------------------------------------------------------------------- #
 # 模型步驟共用：resume + call_model + 寫檔；失敗記入 manual_review
 # --------------------------------------------------------------------------- #
-def _model_step(ctx, out_path, prompt, validate, label, normalize=None, task=None):
+def _model_step(ctx, out_path, prompt, validate, label, normalize=None, task=None,
+                extract=None):
     if out_path.exists():
         return _read_yaml(out_path)
     try:
-        payload = call_model(prompt, validate=validate, runner=ctx.runner, label=label, task=task)
+        payload = call_model(prompt, validate=validate, runner=ctx.runner, label=label,
+                             task=task, extract=extract)
     except ModelValidationError as exc:
         ctx.manual_review.append(str(exc))
+        return None
+    except ModelError as exc:
+        # 端點／runner 基礎設施失敗：走 manual_review 而非 traceback——
+        # resume 特性讓「修好端點重跑同一指令」就是完整的復原路徑
+        ctx.manual_review.append(f"{label}：端點呼叫失敗（{exc}）——檢查端點後重跑即可續作")
         return None
     if normalize:
         payload = normalize(payload)
@@ -761,6 +769,40 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
     return validate
 
 
+ORG_DELIM = "===ORGANIZATION==="
+
+
+def _extract_chapter_payload(text):
+    """M6 線上格式：YAML 頭（book/chapter/knowledge_nodes）＋分隔線＋裸 markdown。
+
+    根治「把長 markdown 塞進 YAML 字串」的整類序列化失敗：模型不再做任何
+    YAML 跳脫（| 區塊、值首 > 撞 block scalar 等），organization 由程式
+    原文接走組進 payload——模型不碰結構的原則落實到線上格式本身。
+    找不到分隔線時退回舊式整份 YAML 解析（相容一次寫對的模型與既有測試）。
+    """
+    from model_client import extract_payload  # 延遲取用，維持可注入測試
+    if ORG_DELIM in text:
+        head, organization = text.split(ORG_DELIM, 1)
+        payload = extract_payload(head)
+        if not isinstance(payload, dict):
+            raise ModelError("分隔線前段必須是含 book/chapter/knowledge_nodes 的 YAML 物件")
+        organization = organization.strip()
+        fenced = re.match(r"^```[A-Za-z]*\n([\s\S]*)\n```\s*$", organization)
+        if fenced:  # 模型違規把整段包進圍欄：剝最外層（貪婪比對保住內部 mermaid 圍欄）
+            organization = fenced.group(1).strip()
+        if not organization:
+            raise ModelError(f"{ORG_DELIM} 之後沒有本章整理內容")
+        payload["organization"] = organization
+        return payload
+    payload = extract_payload(text)
+    if isinstance(payload, dict) and payload.get("organization"):
+        return payload
+    raise ModelError(
+        f"缺少「{ORG_DELIM}」分隔線：knowledge_nodes 的 YAML 與本章整理的裸 "
+        "markdown 必須用它隔開（見輸出格式）"
+    )
+
+
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
     if not out_path.exists():
@@ -794,10 +836,9 @@ def chapter_content_step(ctx, plan):
         f"整個節點連同它的章節累積資料就消失了（程式會擋）。\n"
         f"※ 互文分組的節點要帶小標題，讓人一眼知道那節在講什麼："
         f"寫 [[出20：16|出20：16 第九誡不可作假見證]]，不要只寫 [[出20：16]]。\n\n"
-        f"organization（本章整理）是單一 markdown 字串，"
-        f"「一律用 YAML 的 | 字面區塊」，不可是巢狀物件或 YAML 陣列。\n"
-        f"※ 用單引號 scalar 會把單一換行折成空格，整張 mermaid／表格／callout "
-        f"會被擠成一行而無法渲染（程式會擋）。用 | 就不必在每列之間插空行。\n\n"
+        f"organization（本章整理）用「裸 markdown」直接寫在分隔線之後"
+        f"（輸出格式見文末）——不是 YAML 欄位、不用縮排、不用任何跳脫，"
+        f"mermaid／表格／callout 照一般 markdown 寫即可。\n\n"
         f"【硬規格——程式會驗證，不符會退回重做】\n"
         f"- 依本章段落結構分成至少 {min_sections} 個小節，每小節以「### 標題（vX-Y）」"
         f"開頭；最後可加一個跨章脈絡／預表整理的主題小節。\n"
@@ -821,10 +862,16 @@ def chapter_content_step(ctx, plan):
         f"「表徵耶穌的十字架」，KC 卻明說「不那麼是說到十字架，而是說到主耶穌"
         f"自己」，這種分歧本身就是重點。\n"
         f"- 不要寫「參考資料」清單——程式會自動附上來源 URL。\n\n"
-        f"【設計空間——你是本章筆記的設計者】\n"
-        f"硬規格之內體裁自由。動筆前先讀完材料，判斷每段資訊的形狀，"
-        f"不要預設所有資訊都該寫成散文——不同形狀的知識用不同形式：\n"
-        f"若rawdata含流程／階層／對照，至少嘗試一種對應視覺形式呈現，散文只是其中一種。\n"
+        f"【設計空間——你是本章筆記的設計者，圖表優先】\n"
+        f"硬規格之內體裁自由，但預設立場是「能用圖表就用圖表」：動筆前先讀完材料，"
+        f"逐段判斷資訊的形狀；凡材料是流程、路線、對照、階層、關係、時間軸的形狀，"
+        f"一律用對應的 mermaid／表格呈現——只有純敘事、純解經論述這類"
+        f"沒有結構形狀的材料才整段散文。"
+        f"一章寫完若一張圖表都沒有，幾乎可以肯定是漏判了材料形狀，回頭重新檢查。\n"
+        f"※ 但圖表不折抵份量：硬規格的總字數與散文主幹下限必須先由連貫的散文敘述"
+        f"滿足（小節數也一樣），圖表是加在主幹之上的呈現層——正確做法是"
+        f"「散文寫足整合敘述＋同一材料的結構面另以圖表呈現」，"
+        f"不是「用圖表代替散文」。\n"
         f"- 理解與整合（沿經文脈絡串起各來源解讀）→ 散文，這是主幹。\n"
         f"- 比較與對照（多項並列、新舊呼應、尺寸規格、來源間差異、重複模式）"
         f"→ markdown 表格或短編號清單。\n"
@@ -847,13 +894,17 @@ def chapter_content_step(ctx, plan):
         f"不是為了裝飾；本章若沒有合適形狀的材料，整段散文完全正當。\n"
         f"【禁用】![[]] 嵌入、mermaid 以外的程式碼區塊、#標籤、HTML——"
         f"會重複條目內文、破壞頁面或污染 vault。\n\n"
-        f"【輸出格式，極重要】只輸出 YAML，且 book/chapter/knowledge_nodes/organization "
-        f"必須是最上層欄位——不可在外面再包一層 chapter_content 或任何其他 key。範例：\n"
+        f"【輸出格式，極重要】輸出分成兩段，中間用單獨一行「{ORG_DELIM}」隔開：\n"
+        f"第一段：只含 book/chapter/knowledge_nodes 的 YAML（可放 ```yaml 圍欄內），"
+        f"不可多包一層 key，也不要放 organization。\n"
+        f"第二段：本章整理的 markdown 原文，從分隔線下一行直接開始——"
+        f"不是 YAML、不用縮排或跳脫，可自由使用 mermaid 圍欄、表格、callout；"
+        f"不要把整段再包進任何程式碼圍欄。範例：\n"
         f"```yaml\nbook: {ctx.book}\nchapter: {ctx.chapter}\n"
-        f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n"
-        f"organization: |\n  ### 標題一（v1-6）\n"
-        f"  文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…\n\n"
-        f"  ### 標題二（v7-13）\n  文字…\n```\n"
+        f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n```\n"
+        f"{ORG_DELIM}\n### 標題一（v1-6）\n"
+        f"文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…\n\n"
+        f"### 標題二（v7-13）\n文字…\n\n"
         f"{_schema_hint('chapter_content.schema.json')}"
     )
 
@@ -866,6 +917,7 @@ def chapter_content_step(ctx, plan):
         ctx, out_path, prompt,
         validate=_chapter_payload_validator(len(raw_verses), allowed_links),
         label="chapter_content", normalize=_normalize, task="chapter",
+        extract=_extract_chapter_payload,
     )
     return _inject_references(ctx, out_path, payload)
 
@@ -1369,6 +1421,81 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
     }
 
 
+def _manual_review_hints(items, book, chapter):
+    """把 manual_review 訊息對症翻成「怎麼修、跑什麼」的教學提示。
+
+    check_chapter_files 缺檔會教「回哪步續做」，manual_review 原本卻只丟
+    錯誤不教修法——agent 面對「重試 3 次仍不合格」時最需要的是下一步指令。
+    每類問題只提示一次；resume 特性（已完成步驟不重做）是所有修法的前提。
+    """
+    rerun = f"python util/run_chapter.py {book} {chapter}"
+    hints, seen = [], set()
+
+    def add(key, problem, actions):
+        if key not in seen:
+            seen.add(key)
+            hints.append((problem, actions))
+
+    for item in items:
+        if item.startswith("chapter_content：") and "不合格" in item:
+            add("m6", "chapter_content 模型多次輸出不合格（常見：organization 沒用「| 區塊」、值首裸露 >／[、外層多包一層 key）", [
+                f"換端點只重做 M6（斷點續跑，其餘不重做）：MODEL_ENDPOINT_CHAPTER=claude-cli {rerun}",
+                "可先驗端點：python util/model_client.py test --task chapter",
+            ])
+        elif item.startswith("entry_content:") and "不合格" in item:
+            add("m3", "個別條目 payload 多次不合格", [
+                f"直接重跑（resume 只補失敗的條目）：{rerun}",
+                f"持續失敗就換端點：MODEL_ENDPOINT_ENTRY=claude-cli {rerun}",
+            ])
+        elif item.startswith("entry_content:") and "跳過以免覆蓋" in item:
+            add("overwrite", "候選與既有條目同名且對方已有其他章累積（覆蓋保護擋下）", [
+                "此候選其實該歸 B 累積：確認即把它視為既有條目（無需新建），"
+                f"刪 link_plan.yaml 後重跑讓 resolver 重新歸類：{rerun}",
+                "若確為同名不同實體：兩者都要加最小穩定限定詞並登記 _config/link_homonyms.yaml（scheme §3.2）",
+            ])
+        elif item.startswith("verse_links：同一經文詞指向多個條目"):
+            add("ambiguous", "經文詞歧義（推導出多個條目），整詞未連結", [
+                "在 link_candidates.yaml 為正確目標宣告 surfaces 裁決（宣告優先於推導；"
+                "同詞多義用 {phrase, verses} 限定節次）",
+                f"改完刪 verse_links.yaml 與 第{chapter}章.md 再重跑：{rerun}",
+            ])
+        elif item.startswith("verse_links：候選宣告的 surfaces 未連上"):
+            add("surface", "宣告的 surfaces 沒連上任何節", [
+                "核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；"
+                "若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可",
+                f"改完刪 verse_links.yaml 與 第{chapter}章.md 再重跑：{rerun}",
+            ])
+        elif item.startswith("knowledge_nodes：無對應條目"):
+            add("nodes", "knowledge_nodes 有節點對不上任何條目（已自動移除）", [
+                "核對 chapter_content.yaml 的節點名：須為條目完整名稱；名稱含逗號必須加引號防 YAML 拆分",
+                f"確實該連的：修 chapter_content.yaml 後刪 第{chapter}章.md 重跑渲染：{rerun}；確非條目則忽略",
+            ])
+        elif item.startswith("chapter：knowledge_nodes 閉合後全空"):
+            add("empty", "條目大量缺漏導致章節未渲染", [
+                f"先依上方提示補齊 entry_content 失敗的條目，再重跑：{rerun}",
+            ])
+        elif item.startswith("related_entries:"):
+            add("related", "related_entries 有目標無對應條目（已自動移除，僅通知）", [
+                "被移除的若是應存在的條目：檢查拼寫或先建檔再重跑該條目；否則無需動作",
+            ])
+        elif "漏掉整段經文" in item:
+            add("coverage", "本章整理可能漏了某段經文的整理", [
+                "真漏寫：在 chapter_content.yaml 的 organization 補「### 小節（vX-Y）」段"
+                f"（內容須出自經文與有效來源），刪 第{chapter}章.md 重跑渲染：{rerun}",
+                "已併入鄰段、只是標題沒帶節號：忽略即可",
+            ])
+        elif "表格" in item:
+            add("table", "表格內帶別名的 wiki-link 會斷鏈", [
+                "改為不帶別名的 [[目標]]，或把連結移到儲存格文字之後；"
+                f"修 chapter_content.yaml 後刪 第{chapter}章.md 重跑渲染：{rerun}",
+            ])
+        else:
+            add("other", "未歸類的人工決策點", [
+                "對照 agent_start_prompt.md 步驟5 與 scheme.md §3 的判斷邊界處理",
+            ])
+    return hints
+
+
 def main():
     for stream in (sys.stdout, sys.stderr):
         reconfigure = getattr(stream, "reconfigure", None)
@@ -1390,6 +1517,9 @@ def main():
         print("⚠️ 需人工處理：")
         for item in result["manual_review"]:
             print(f"   - {item}")
+        remediation.print_fix_hints(
+            _manual_review_hints(result["manual_review"], args.book, args.chapter)
+        )
     if result["errors"]:
         print("❌ 結構驗證未過：")
         for item in result["errors"]:

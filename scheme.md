@@ -18,7 +18,9 @@
   link_plan.yaml         A–E 分類（resolver 產生）
   entry_content/*.yaml   C 類新條目 payload（模型批量填寫，每批 5 條）
   verse_links.yaml       經文 wiki-link（程式掃描產生，不呼叫模型）
-  chapter_content.yaml   本章知識節點＋本章整理（模型填寫）
+  chapter_content.yaml   本章知識節點＋本章整理（模型填寫；線上格式為
+                         「YAML 頭＋===ORGANIZATION=== 分隔的裸 markdown」，
+                         由程式組裝——模型不做 YAML 跳脫，杜絕長文塞字串的整類失敗）
   link_updates.yaml      B 類累積（agent 填 summary/relation）
 呈現層（程式）render_entry.py / render_chapter.py
   payload → markdown；frontmatter、H2 順序、accumulation 標記、alias 格式全由程式排版

@@ -324,20 +324,25 @@ def _retry_prompt(base_prompt, previous_output, errors):
 
 
 def call_model(prompt, *, validate=None, retries=3, runner=None, label="task",
-                retry_delay=5, task=None):
+                retry_delay=5, task=None, extract=None):
     """呼叫模型並取得通過驗證的 payload；失敗上限後丟 ModelValidationError。
 
     task（如 "entry"／"chapter"）在未明確傳入 runner 時，交給
     select_endpoint 依 `_config/model_endpoints.yaml` 的 tasks 對照選端點，
     讓「做條目」與「本章整理」可各自指定端點。
+
+    extract 可注入自訂抽取器（文字 → payload dict；失敗丟 ModelError），
+    供非純 YAML 的線上格式使用（如 M6 的「YAML 頭＋裸 markdown」協定）；
+    預設為 extract_payload。
     """
     runner = runner or active_runner(task=task)
+    extract = extract or extract_payload
     current_prompt = prompt
     last_errors = ["未取得任何有效輸出"]
     for _ in range(max(1, retries)):
         last_output = runner(current_prompt)
         try:
-            payload = extract_payload(last_output)
+            payload = extract(last_output)
         except ModelError as exc:
             message = str(exc)
             if "YAML" in message:

@@ -705,5 +705,45 @@ class RelatedEntriesClosureTests(unittest.TestCase):
             self.assertEqual([], ctx.manual_review)  # 自我引用靜默去除，不吵人
 
 
+class ChapterExtractorTests(unittest.TestCase):
+    """M6 線上格式：YAML 頭＋===ORGANIZATION=== 裸 markdown（程式組裝）。"""
+
+    def test_two_part_protocol(self):
+        text = (
+            "```yaml\nbook: 申命記\nchapter: 2\n"
+            "knowledge_nodes:\n  神學: [耶和華的爭戰]\n```\n"
+            "===ORGANIZATION===\n### 甲（v1-8）\n\n內文與 mermaid 圖。"
+        )
+        payload = run_chapter._extract_chapter_payload(text)
+        self.assertEqual("申命記", payload["book"])
+        self.assertTrue(payload["organization"].startswith("### 甲"))
+
+    def test_outer_fence_stripped_inner_mermaid_kept(self):
+        text = (
+            "book: x\nchapter: 1\nknowledge_nodes: {神學: [a]}\n"
+            "===ORGANIZATION===\n```markdown\n### 乙\n\n"
+            "```mermaid\nflowchart\n```\n內文\n```"
+        )
+        payload = run_chapter._extract_chapter_payload(text)
+        self.assertTrue(payload["organization"].startswith("### 乙"))
+        self.assertIn("mermaid", payload["organization"])
+
+    def test_legacy_full_yaml_still_accepted(self):
+        text = (
+            "book: x\nchapter: 1\nknowledge_nodes: {神學: [a]}\n"
+            "organization: |\n  ### 丙\n  文"
+        )
+        payload = run_chapter._extract_chapter_payload(text)
+        self.assertTrue(payload["organization"].strip().startswith("### 丙"))
+
+    def test_missing_delimiter_and_organization_errors(self):
+        from model_client import ModelError
+        with self.assertRaises(ModelError) as ctx:
+            run_chapter._extract_chapter_payload(
+                "book: x\nchapter: 1\nknowledge_nodes: {神學: [a]}"
+            )
+        self.assertIn("ORGANIZATION", str(ctx.exception))
+
+
 if __name__ == "__main__":
     unittest.main()
