@@ -334,19 +334,23 @@ def annotate_plan_semantically(plan, lookup, threshold, top=3,
     條目下字面比對看不見的靜默坑。門檻只用來過濾雜訊，非自動決策依據；
     人工在 link_plan.yaml 的 D／C 區看到 hint 後自行判斷。
 
-    lookup 需具 query(text, top, exclude_title) → [(title, score, meta), ...]，
-    即 semantic_lookup.SemanticIndex。
+    lookup 需具 query_vectors(texts, top) → 每個查詢的 [(title, score, meta),
+    ...]，即 semantic_lookup.SemanticIndex。所有候選「一次批量」查詢——
+    embedding 端點若有節流（如 12 秒/請求），逐項查會被放大成分鐘級等待。
     """
-    for key in keys:
-        for item in plan.get(key, []):
-            name = item.get("clean_name") or item["name"]
-            hints = [
-                {"title": title, "score": round(score, 3), "type": entry.get("type", "")}
-                for title, score, entry in lookup.query(name, top=top, exclude_title=name)
-                if score >= threshold
-            ]
-            if hints:
-                item["semantic_hint"] = hints
+    items = [item for key in keys for item in plan.get(key, [])]
+    if not items:
+        return plan
+    names = [item.get("clean_name") or item["name"] for item in items]
+    results = lookup.query_vectors(names, top=top + 1)  # +1 容納同名命中被濾掉
+    for item, name, hits in zip(items, names, results):
+        hints = [
+            {"title": title, "score": round(score, 3), "type": entry.get("type", "")}
+            for title, score, entry in hits
+            if title != name and score >= threshold
+        ][:top]
+        if hints:
+            item["semantic_hint"] = hints
     return plan
 
 

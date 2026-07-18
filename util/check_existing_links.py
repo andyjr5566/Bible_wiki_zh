@@ -89,6 +89,7 @@ def main():
             )])
             return 1
         print(f"✅ 所有 {len(existing)} 個既有條目都有{book}第{chapter}章資料。")
+        print("結論：PASS")
         return 0
 
     for name, path in existing:

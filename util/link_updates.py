@@ -200,17 +200,31 @@ def main():
     prepare_parser.add_argument("book")
     prepare_parser.add_argument("chapter")
     apply_parser = sub.add_parser("apply")
-    apply_parser.add_argument("manifest", type=Path)
+    apply_parser.add_argument(
+        "target", nargs="+",
+        help="「書名 章」（與 prepare 同形式），或 link_updates.yaml 路徑",
+    )
     apply_parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     try:
         if args.command == "prepare":
             prepare(args.book, args.chapter)
         else:
-            apply_updates(
-                args.manifest if args.manifest.is_absolute() else ROOT / args.manifest,
-                args.dry_run,
-            )
+            # 與 prepare 同形式的「書名 章」是主要用法；manifest 路徑保留相容
+            if len(args.target) == 2 and args.target[1].isdigit():
+                book = canonical_book_name(args.target[0])
+                manifest = (
+                    book_directory(ROOT, book) / ".tmp"
+                    / f"第{int(args.target[1])}章" / "link_updates.yaml"
+                )
+            elif len(args.target) == 1:
+                manifest = Path(args.target[0])
+                if not manifest.is_absolute():
+                    manifest = ROOT / manifest
+            else:
+                print("❌ apply 用法：apply 書名 章 [--dry-run]，或 apply <manifest路徑>")
+                return 2
+            apply_updates(manifest, args.dry_run)
     except (OSError, ValueError, yaml.YAMLError) as exc:
         print(f"❌ {exc}")
         return 1

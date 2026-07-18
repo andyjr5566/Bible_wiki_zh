@@ -644,6 +644,8 @@ def verify_links(book_name=None):
 
     if has_error:
         remediation.print_fix_hints(_verify_fix_hints(report))
+    else:
+        print("結論：PASS")
 
     return report
 

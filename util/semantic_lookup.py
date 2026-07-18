@@ -171,14 +171,37 @@ def candidate_query_text(candidate):
     return "\n".join(parts)
 
 
+def _lexical_preview(name, link_index, homonyms):
+    """預覽 resolver 對候選名的字面解析結果。
+
+    回傳 (說明文字, 是否值得注意)。語義報告只看得到「像不像」，看不到
+    resolver 實際會把候選連到哪——alias 錯登（安密巴 aliases 誤含以實各谷）
+    會靜默把候選導向錯誤條目，兩個閘門都不會叫。在報告裡預覽字面解析，
+    讓這種意外在跑 orchestrator 之前就穿幫。
+    """
+    _, options = resolver.homonym_options(name, homonyms)
+    if options:
+        targets = "、".join(option["target"] for option in options)
+        return f"同名詞需人工選擇（將歸 D）：{targets}", True
+    match_type, entry, title = resolver.find_in_index(name, link_index)
+    if match_type == "conflict":
+        return "名稱或 alias 多重指向（將歸 D）", True
+    if entry:
+        if match_type == "alias" and resolver.base_name(title) != resolver.base_name(name):
+            return (f"經 alias 導向「{title}」——名稱不同，請確認確為同一實體", True)
+        return f"對上既有「{title}」（{match_type}，將歸 A/B 累積）", False
+    return "無字面對應 → 新建（C）", False
+
+
 def candidate_report(book, chapter, top=3, root=ROOT, index=None,
-                     threshold=None):
+                     threshold=None, link_index=None, homonyms=None):
     """對整章 link_candidates 產生語義近鄰報告，寫入 .tmp/第x章/。
 
-    兩節：（1）對全庫索引查近鄰——⚠ 只標「top-1、非同實體、分類相容、
-    ≥ threshold（預設 REPORT_FLAG_FLOOR）」；（2）候選互查——全新章節裡
-    兩個同概念候選在索引查不到（都還不存在），只有彼此比對能抓，
-    ⚠ 標 ≥ INTRA_FLAG_FLOOR 的配對。校準依據見兩常數註解。
+    每個候選三種資訊：（1）字面解析預覽——resolver 實際會對到哪
+    （alias 導向不同名條目時特別標出）；（2）語義近鄰——⚠ 標「top-1、
+    非同實體、分類相容、≥ threshold」，ⓘ 標「top-1 高分但分類不相容」
+    （同實體常跨分類，如 火柱雲柱[主題]→雲柱火柱[歷史]，值得人工看）；
+    （3）候選互查——⚠ 標 ≥ INTRA_FLAG_FLOOR 的配對。校準見常數註解。
     回傳 (report_path, 候選數, 有 ⚠ 的候選數＋互查配對數)。只寫報告檔，
     不改動 candidates 或任何條目——判斷與改名永遠是人工的事。
     """
@@ -190,14 +213,20 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
         book_directory(root, canonical) / ".tmp" / f"第{chapter}章" / REPORT_FILENAME
     )
     index = index or SemanticIndex.load()
+    if link_index is None:
+        link_index = resolver.load_index()
+    if homonyms is None:
+        homonyms = resolver.load_homonyms()
     lines = [
         f"# 候選語義近鄰報告：{canonical} 第{chapter}章",
         "",
         f"- 索引模型：{index.meta.get('model')}｜{len(index.entries)} 條｜"
-        f"⚠＝top-1 非同實體、分類相容、≥ {threshold}",
+        f"⚠＝top-1 非同實體、分類相容、≥ {threshold}｜ⓘ＝top-1 高分但分類不相容",
         "- 查詢文本＝候選名＋分類＋evidence＋surfaces。本報告僅輔助分類判斷：",
         "  ⚠ 近鄰若與候選**同概念** → 把候選名改成該既有條目名（resolver 會歸 A/B 累積）；",
+        "  ⓘ 多為跨分類的同實體（改名時分類也用既有條目的）或事件↔主角這類鄰居；",
         "  名稱雖近但**確為不同概念** → 照建，不受此報告限制。其餘近鄰只是脈絡。",
+        "  「字面解析」列 resolver 實際會對到哪——標「請確認」者務必人工核實。",
         "",
     ]
     flagged = 0
@@ -211,15 +240,23 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
             base = resolver.base_name(name)
             suggested = candidate.get("suggested_type")
             lines.append(f"## {name}（{suggested or '?'}）")
+            preview, attention = _lexical_preview(name, link_index, homonyms)
+            lines.append(f"字面解析：{'⚠ ' if attention else ''}{preview}")
             for rank, (title, score, entry) in enumerate(hits):
                 mark = ""
                 note_extra = ""
                 if resolver.base_name(title) == base:
                     note_extra = "；resolver 可自動對上（同名／裸名）"
-                elif (rank == 0 and score >= threshold
-                      and (not suggested or resolver.type_compatible(suggested, entry))):
-                    mark = " ⚠"
-                    flagged += 1
+                elif rank == 0 and score >= threshold:
+                    if not suggested or resolver.type_compatible(suggested, entry):
+                        mark = " ⚠"
+                        flagged += 1
+                    else:
+                        mark = " ⓘ"
+                        note_extra = (
+                            f"；分類不相容（{suggested}→{entry.get('type', '?')}），"
+                            "若確為同實體請人工確認"
+                        )
                 lines.append(
                     f"- {score:.3f}{mark} {title}（{entry.get('type', '?')}{note_extra}）"
                 )

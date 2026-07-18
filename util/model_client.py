@@ -339,7 +339,16 @@ def call_model(prompt, *, validate=None, retries=3, runner=None, label="task",
         try:
             payload = extract_payload(last_output)
         except ModelError as exc:
-            last_errors = [str(exc)]
+            message = str(exc)
+            if "YAML" in message:
+                # 實測慘案：模型把 organization 的值直接以「> [!quote]」開頭，
+                # > 被當成 block scalar 記號，三次重試都撞同一面牆。
+                message += (
+                    "；提示：多行 markdown 欄位必須寫成 literal block——"
+                    "「欄位名: |」後換行、內容整段縮排兩格；值的第一行"
+                    "不可裸露 >、[、| 等 YAML 語法字元（callout 請放進 | 區塊內）"
+                )
+            last_errors = [message]
             current_prompt = _retry_prompt(prompt, last_output, last_errors)
             continue
         errors = list(validate(payload)) if validate else []

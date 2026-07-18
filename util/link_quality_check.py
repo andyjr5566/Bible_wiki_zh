@@ -293,6 +293,8 @@ def quality_check(book_name=None):
                 "改完重跑：python util/link_quality_check.py 【書名】",
             ],
         )])
+    else:
+        print("結論：PASS")
 
     return report
 

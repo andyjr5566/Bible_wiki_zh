@@ -122,10 +122,9 @@ class _FakeLookup:
         self.table = table
         self.calls = []
 
-    def query(self, text, top=3, exclude_title=None):
-        self.calls.append((text, exclude_title))
-        hits = [h for h in self.table.get(text, []) if h[0] != exclude_title]
-        return hits[:top]
+    def query_vectors(self, texts, top=3):
+        self.calls.append(list(texts))
+        return [self.table.get(text, [])[:top] for text in texts]
 
 
 class SemanticHintTests(unittest.TestCase):

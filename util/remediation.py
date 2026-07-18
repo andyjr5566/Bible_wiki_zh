@@ -25,6 +25,9 @@ def format_fix_hints(hints):
         for action in actions:
             lines.append(f"      → {action}")
     lines.append("  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。")
+    # 最後一行固定是一行式結論：修復教學很長，agent 慣用 tail 看結果，
+    # 錯誤本體被教學推出視窗就會誤讀；FAIL 固定收尾，tail -1 永遠可信。
+    lines.append("結論：FAIL（錯誤本體見上方清單）")
     return "\n".join(lines)
 
 

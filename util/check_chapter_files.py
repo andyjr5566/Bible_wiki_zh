@@ -193,9 +193,11 @@ def main():
             print(f"❌ 缺檔：{label}")
             print(f"   → 請從此動作續做：{resume_hint}")
             print("   完成後依 agent_start_prompt.md 流程順序繼續往下一步，直到本檢查全數通過。")
+            print("結論：FAIL（缺口見上）")
             return 1
         print(f"✅ {label}")
     print("✅ 全部主要檔案齊備，流程完整。")
+    print("結論：PASS")
     return 0
 
 

@@ -154,7 +154,7 @@ class CandidateReportTests(unittest.TestCase):
                 [("不相關", 0.15, {"type": "神學"})],
             ])
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.40
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.40
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(2, total)
@@ -184,7 +184,7 @@ class CandidateReportTests(unittest.TestCase):
                 [("皂莢木（atzei shittim）", 0.70, {"type": "原文"})],  # 裸名命中
             ])
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(0, flagged)  # 同實體命中不算「待改名」
@@ -208,7 +208,7 @@ class CandidateReportTests(unittest.TestCase):
                 ("高分兄弟條目", 0.70, {"type": "主題"}),     # top2 高分但不標
             ]])
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(0, flagged)
@@ -236,7 +236,7 @@ class CandidateReportTests(unittest.TestCase):
                 [("既有主題條目", 0.70, {"type": "主題", "secondary_types": []})],
             ])
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(1, flagged)  # 只有分類相容的那筆
@@ -258,9 +258,41 @@ class CandidateReportTests(unittest.TestCase):
                 [("雅博", 0.77, {"type": "原文", "secondary_types": ["地點"]})],
             ])
             _, _, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
             )
         self.assertEqual(1, flagged)
+
+    def test_lexical_preview_flags_alias_redirect(self):
+        """alias 導向不同名條目（安密巴誤含以實各谷型）要標「請確認」。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [
+                        {"name": "以實各谷", "type": "地點"},
+                        {"name": "獨立新候選", "type": "主題"},
+                    ],
+                }, allow_unicode=True),
+            )
+            link_index = {
+                "安密巴": {"title": "安密巴", "type": "地點",
+                           "path": "link_folder/地點/安密巴.md",
+                           "aliases": ["以實各谷"]},
+                "以實各谷": {"alias_of": "安密巴"},
+            }
+            low = {"type": "地點", "secondary_types": []}
+            fake = _FakeIndex([[("someplace", 0.2, low)], [("x", 0.2, low)]])
+            path, _, _ = candidate_report(
+                "創世記", 1, root=root, index=fake,
+                link_index=link_index, homonyms={}, threshold=0.60,
+            )
+            content = path.read_text(encoding="utf-8")
+        self.assertIn("經 alias 導向「安密巴」", content)
+        self.assertIn("請確認", content)
+        self.assertIn("無字面對應 → 新建（C）", content)
 
     def test_intra_pair_flagged_and_dup_name_noted(self):
         """候選互查：≥門檻的配對要標 ⚠，同名重複候選另註。"""
@@ -291,7 +323,7 @@ class CandidateReportTests(unittest.TestCase):
                 matrix=matrix,
             )
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(1, flagged)  # 索引近鄰全低分，只有互查一對

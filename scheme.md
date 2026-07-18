@@ -96,7 +96,7 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 
 **要解決的問題**：字面比對（§3.3 resolver 比對序）只認得同名／alias／音譯基名，看不出「措辭不同、意思相同」。
 
-**機制**（兩道，先報告後附註）：`build_embedding_index.py` 把每個條目的「標題＋分類＋別名＋定義＋主題發展＋相關條目＋累積摘要」嵌成向量存 `util/output/embedding_index.{npz,meta.json}`（增量更新，只重嵌變動條目）。（1）候選定稿前：`semantic_lookup.py --candidates 書名 章` 把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢批量比對，寫 `.tmp/第x章/candidate_similarity.md` 報告，agent 據此決定改名（歸 A/B）或照建——這是主要防線，發生在建條目之前。（2）resolve 時：程式自動對 C／D 候選查近鄰寫進 `link_plan.yaml` 的 `semantic_hint`，當第二道安全網。
+**機制**（兩道，先報告後附註）：`build_embedding_index.py` 把每個條目的「標題＋分類＋別名＋定義＋主題發展＋相關條目＋累積摘要」嵌成向量存 `util/output/embedding_index.{npz,meta.json}`（增量更新，只重嵌變動條目）。（1）候選定稿前：`semantic_lookup.py --candidates 書名 章` 把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢批量比對，寫 `.tmp/第x章/candidate_similarity.md` 報告——每候選並附**字面解析預覽**（resolver 實際對到哪；alias 導向不同名條目時標「請確認」，攔截 alias 錯登造成的靜默錯連）與 **ⓘ 標記**（top-1 高分但分類不相容，常是跨分類同實體）。agent 據此決定改名（歸 A/B）或照建——這是主要防線，發生在建條目之前。（2）resolve 時：程式自動對 C／D 候選查近鄰寫進 `link_plan.yaml` 的 `semantic_hint`，當第二道安全網。
 
 **邊界（與整體原則一致：機械不可證者只提示、不裁決）**：
 

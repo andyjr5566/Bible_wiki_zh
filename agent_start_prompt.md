@@ -19,8 +19,9 @@
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
    - **候選寫齊後跑語義近鄰報告**（候選定稿前必經，check_chapter_files 會驗報告存在）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
-     程式把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢、一次批量比對全庫索引，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告兩節都要看：
-     - **對全庫的 ⚠**（top-1 高分、resolver 字面對不上、分類相容）：與候選**同概念**（措辭不同、意思相同）→ 把候選名改成該既有條目名（resolver 會歸 A/B 走累積），不要另建近似重複；名稱雖近但**確為不同概念** → 照建。標「resolver 可自動對上」的近鄰不用處理。
+     程式把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢、一次批量比對全庫索引，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告三種資訊都要看：
+     - **字面解析預覽**：resolver 實際會把候選對到哪（同名／裸名／alias／新建）。標「請確認」的多半是 alias 導向不同名條目——alias 登記錯誤會把候選靜默導去錯的條目（實例：安密巴 aliases 誤含以實各谷），這裡是唯一的事前攔截點。
+     - **對全庫的 ⚠／ⓘ**：⚠（top-1 高分、字面對不上、分類相容）→ 與候選**同概念**（措辭不同、意思相同）就把候選名改成該既有條目名（resolver 會歸 A/B 走累積），不要另建近似重複；確為不同概念則照建。ⓘ（top-1 高分但分類不相容）→ 常是跨分類的同實體（火柱雲柱[主題]→雲柱火柱[歷史]），確認後連分類一起改用既有條目的。標「resolver 可自動對上」的近鄰不用處理。
      - **候選互查的 ⚠**（本章兩個候選彼此相似 ≥0.8）：新章的條目彼此都還不在索引裡，「兩個候選其實同概念」只有互查抓得到——考慮合併成一個候選（另一個詞用 surfaces 涵蓋），或確認確為兩事再照建。
      報告是分類輔助，不是硬規則；evidence 寫得越具體（含經文引句），近鄰越準。
    - 資料驅動判準見 `scheme.md` §3；語義近鄰索引見 `scheme.md` §3.5。
@@ -36,7 +37,12 @@
    ```text
    python util/link_updates.py prepare 【書名】 X
    ```
-   回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，先 `apply --dry-run` 再 `apply`；重跑 apply 必須 0 變更。
+   回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，然後：
+   ```text
+   python util/link_updates.py apply 【書名】 X --dry-run
+   python util/link_updates.py apply 【書名】 X
+   ```
+   重跑 apply 必須 0 變更。
 
 5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
    - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。

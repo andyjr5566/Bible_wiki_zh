@@ -459,6 +459,8 @@ def main():
     print(f"結構驗證：{len(errors)} errors，{len(warnings)} warnings")
     if errors:
         remediation.print_fix_hints(fix_hints_for(errors))
+    else:
+        print("結論：PASS")
     return 1 if errors else 0
 
 
