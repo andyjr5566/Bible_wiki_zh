@@ -1,50 +1,8 @@
 {
-  "total_warnings": 91,
+  "total_warnings": 86,
   "critical_count": 0,
-  "warning_count": 91,
+  "warning_count": 86,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第15章.md",
-      "target": "不可使他空手而去",
-      "message": "同一 alias「不可使他空手而去」指向多個 target: 希伯來奴僕服事六年、工價多加一倍（公平待遇）, 希伯來奴僕第七年得自由（豁免年釋放奴僕）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第2章.md",
-      "target": "撒烈溪",
-      "message": "同一 alias「撒烈溪」指向多個 target: 撒烈溪, 過撒烈溪"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第4章.md",
-      "target": "律例典章",
-      "message": "同一 alias「律例典章」指向多個 target: 律例典章, 摩西勸勉遵守律例典章"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第4章.md",
-      "target": "十條誡",
-      "message": "同一 alias「十條誡」指向多個 target: 何烈山領受十誡, 十誡是約"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第5章.md",
-      "target": "何烈山",
-      "message": "同一 alias「何烈山」指向多個 target: 何烈山, 何烈山立約"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "05 申命記/第6章.md",
-      "target": "流奶與蜜之地",
-      "message": "同一 alias「流奶與蜜之地」指向多個 target: 流奶與蜜之地, 流奶與蜜之地的祝福"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -342,6 +300,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 04 民數記/第1章, 05 申命記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/比利洗人.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 06 約書亞記/第3章"
@@ -408,6 +373,13 @@
       "source": "link_folder/人物/雅各.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 02 出埃及記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/雅各.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 05 申命記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -632,13 +604,6 @@
       "source": "link_folder/神學/重生.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 59 雅各書/第1章, 60 彼得前書/第1章"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "link_folder/互文/申命記22_28-29 強姦者娶被害女子律法.md",
-      "target": "第22章",
-      "message": "同一 alias「第22章」指向多個 target: 02 出埃及記/第22章, 05 申命記/第22章"
     }
   ]
 }

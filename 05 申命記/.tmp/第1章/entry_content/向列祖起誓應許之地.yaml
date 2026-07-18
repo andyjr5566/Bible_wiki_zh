@@ -1,0 +1,26 @@
+name: 向列祖起誓應許之地
+type: 主題
+secondary_types: []
+aliases:
+- 向列祖起誓應許之地
+status: formal
+definition: 申命記 1:8 宣告「耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許賜給他們和他們後裔為業之地」。此處強調神以起誓方式確立迦南地為產業，彰顯約的不可更改性，並成為後續進取迦南的神學基礎。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 經文明確指出神向列祖起誓應許之地，作為以色列進佔迦南的依據。
+  relation: 本條目為主題研究，連結列祖之約與後續得地歷程。
+related_entries:
+- 亞伯拉罕
+- 以撒
+- 雅各
+- 美地
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm'
+- '研經註解: https://biblehub.com/study/deuteronomy/1.htm'
+created_from: 申命記 1
+category: 主題
+trigger_sources: []
+current_data: {}
+pending: false

@@ -1,0 +1,26 @@
+name: 講律法（ba'ar）
+type: 原文
+secondary_types: []
+aliases:
+- 講律法
+- ba'ar
+status: formal
+definition: 希伯來文動詞 בָּאַר (ba'ar) 原意「挖掘、說明、使明瞭」。申命記 1:5 「摩西在約但河東的摩押地講律法說」，指摩西詳細闡釋、解釋耶和華的律法，使百姓明白遵行。
+development: ''
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: 經文記載摩西在摩押地「講律法」，啟動第二次律法頒布。
+  relation: 本條目為原文詞彙研究，連結摩西教導與公義審判的背景。
+related_entries:
+- 摩西
+- 摩押地
+- 公義審判
+sources:
+- '逐節註解: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm'
+- '研經註解: https://biblehub.com/study/deuteronomy/1.htm'
+created_from: 申命記 1
+category: 原文
+trigger_sources: []
+current_data: {}
+pending: false

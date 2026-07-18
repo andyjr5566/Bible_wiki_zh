@@ -1,0 +1,295 @@
+book: 申命記
+chapter: 1
+A_use_directly:
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: v1,7；CT：約但河流域從加利利海到阿卡巴灣的河谷地帶，死海又名亞拉巴海
+  match_type: alias
+  existing_title: 亞拉巴（Aravah）
+  existing_path: link_folder/地點/亞拉巴（Aravah）.md
+- name: 亞斯她錄
+  suggested_type: 地點
+  evidence: v4；BH：噩的都城之一，迦南女神亞斯她錄崇拜中心；華爾頓：埃及亞述文獻多次提及
+  match_type: alias
+  existing_title: 亞斯她錄（Ashtaroth）
+  existing_path: link_folder/地點/亞斯她錄（Ashtaroth）.md
+- name: 大而可怕的曠野
+  suggested_type: 地點
+  evidence: v19 經過那大而可怕的曠野；GT：北西奈荒漠，今名意為流浪（Et-Tih）珥的曠野
+  match_type: exact
+  existing_title: 大而可怕的曠野
+  existing_path: link_folder/地點/大而可怕的曠野.md
+- name: 神起誓惡世代不得見美地
+  suggested_type: 事件
+  evidence: v34-35 耶和華發怒起誓：這惡世代連一個也不得見美地；民14:26-35
+  match_type: exact
+  existing_title: 神起誓惡世代不得見美地
+  existing_path: link_folder/事件/神起誓惡世代不得見美地.md
+- name: 出埃及第四十年十一月初一日
+  suggested_type: 事件
+  evidence: v3 摩西講律法的日期；CT：摩西死前約一個月；本書唯一記載的日期
+  match_type: exact
+  existing_title: 出埃及第四十年十一月初一日
+  existing_path: link_folder/事件/出埃及第四十年十一月初一日.md
+- name: 十一天的路程與三十八年飄流
+  suggested_type: 主題
+  evidence: v2 十一天的路程；CT 靈意：卻花了三十八年，不信服神的話必然枉費光陰
+  match_type: exact
+  existing_title: 十一天的路程與三十八年飄流
+  existing_path: link_folder/主題/十一天的路程與三十八年飄流.md
+- name: 神如父撫養兒子
+  suggested_type: 神學
+  evidence: v31 神撫養你們如同人撫養兒子一般；KC 引徒13:18、賽66:13
+  match_type: exact
+  existing_title: 神如父撫養兒子
+  existing_path: link_folder/神學/神如父撫養兒子.md
+- name: 審判是屬乎神的
+  suggested_type: 神學
+  evidence: v17 不可懼怕人，因為審判是屬乎神的；KC：審判官四條件；精讀本：審判官是神的代言人
+  match_type: exact
+  existing_title: 審判是屬乎神的
+  existing_path: link_folder/神學/審判是屬乎神的.md
+- name: 專心跟從耶和華
+  suggested_type: 神學
+  evidence: v36 迦勒專心跟從我，原文意完全跟在我後面；KC：迦勒名意 wholehearted
+  match_type: exact
+  existing_title: 專心跟從耶和華
+  existing_path: link_folder/神學/專心跟從耶和華.md
+- name: 美地
+  suggested_type: 主題
+  evidence: v25,35 耶和華所賜的是美地；KC：「美地」一詞在本書出現約十次；GT：即流奶與蜜之地
+  match_type: exact
+  existing_title: 美地
+  existing_path: link_folder/主題/美地.md
+- name: 不知善惡的兒女
+  suggested_type: 神學
+  evidence: v39 今日不知善惡的兒女必進入那地；啟導本：道德上無辨別力，不涉不信之罪
+  match_type: exact
+  existing_title: 不知善惡的兒女
+  existing_path: link_folder/神學/不知善惡的兒女.md
+- name: 講律法（ba'ar）
+  suggested_type: 原文
+  evidence: v5 「講」希伯來文 ba'ar 意為明確闡明、講解；精讀本：非傳新律法，乃解析使適用於應許地
+  match_type: exact
+  existing_title: 講律法（ba'ar）
+  existing_path: link_folder/原文/講律法（ba'ar）.md
+- name: 後裔如天上的星
+  suggested_type: 主題
+  evidence: v10 你們今日像天上的星那樣多；GT：應驗創15:5 對亞伯拉罕的應許
+  surfaces:
+  - phrase: 天上的星
+  match_type: exact
+  existing_title: 後裔如天上的星
+  existing_path: link_folder/主題/後裔如天上的星.md
+- name: 向列祖起誓應許之地
+  suggested_type: 主題
+  evidence: v8,35 起誓應許賜給列祖和後裔為業之地；創15:18；GT：本節範圍與應許亞伯拉罕的相符
+  match_type: exact
+  existing_title: 向列祖起誓應許之地
+  existing_path: link_folder/主題/向列祖起誓應許之地.md
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1-46 全章講者；出埃及第四十年十一月初一日在摩押地講律法（v3,5）
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞摩利王西宏
+  suggested_type: 人物
+  evidence: v4 那時他已經擊殺了住希實本的亞摩利王西宏
+  match_type: exact
+  existing_title: 亞摩利王西宏
+  existing_path: link_folder/人物/亞摩利王西宏.md
+- name: 巴珊王噩
+  suggested_type: 人物
+  evidence: v4 住以得來、亞斯她錄的巴珊王噩
+  match_type: exact
+  existing_title: 巴珊王噩
+  existing_path: link_folder/人物/巴珊王噩.md
+- name: 迦勒
+  suggested_type: 人物
+  evidence: v36 惟有耶孚尼的兒子迦勒必得看見，因為他專心跟從我
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: v38 嫩的兒子約書亞必得進入那地；你要勉勵他
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 亞衲族人（Anaqim）
+  suggested_type: 原文
+  evidence: v28 並且我們在那裡看見亞衲族的人；GT：身量高大的巨人族（民13:33）
+  surfaces:
+  - phrase: 亞衲族
+  match_type: exact
+  existing_title: 亞衲族人（Anaqim）
+  existing_path: link_folder/原文/亞衲族人（Anaqim）.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: v8 耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: v8 列祖起誓應許之對象
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: v8 列祖起誓應許之對象
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: v7,19-20,27,44 亞摩利人的山地；如蜂擁追趕以色列人
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: v7 沿海一帶迦南人的地
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 何烈山
+  suggested_type: 地點
+  evidence: v2,6,19 耶和華在何烈山曉諭；CT：何烈山指整條山脈，其中一峰稱西乃山
+  match_type: exact
+  existing_title: 何烈山
+  existing_path: link_folder/地點/何烈山.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: v2,19 到了加低斯巴尼亞；v46 在加低斯住了許多日子；CT：尋的曠野綠洲、打發探子之處
+  surfaces:
+  - phrase: 加低斯巴尼亞
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 西珥山
+  suggested_type: 地點
+  evidence: v2 經過西珥山；v44 在西珥殺退你們；串珠：以東人所住山地
+  surfaces:
+  - phrase: 西珥
+  match_type: exact
+  existing_title: 西珥山
+  existing_path: link_folder/地點/西珥山.md
+- name: 希實本
+  suggested_type: 地點
+  evidence: v4 住希實本的亞摩利王西宏；啟導本：亞摩利人首邑
+  match_type: exact
+  existing_title: 希實本
+  existing_path: link_folder/地點/希實本.md
+- name: 以得來
+  suggested_type: 地點
+  evidence: v4；啟導本：或為離宮所在，加利利海東岸45公里
+  match_type: exact
+  existing_title: 以得來
+  existing_path: link_folder/地點/以得來.md
+- name: 摩押地
+  suggested_type: 地點
+  evidence: v5 摩西在約但河東的摩押地講律法；CT：指亞拉巴的中南部
+  match_type: exact
+  existing_title: 摩押地
+  existing_path: link_folder/地點/摩押地.md
+- name: 何珥瑪
+  suggested_type: 地點
+  evidence: v44 殺退你們直到何珥瑪；CT：雙關語，原意庇護所轉為完全毀滅之所在
+  match_type: exact
+  existing_title: 何珥瑪
+  existing_path: link_folder/地點/何珥瑪.md
+- name: 伯拉大河
+  suggested_type: 地點
+  evidence: v7 又到伯拉大河；GT：即幼發拉底河，應許地北界
+  match_type: exact
+  existing_title: 伯拉大河
+  existing_path: link_folder/地點/伯拉大河.md
+- name: 南地
+  suggested_type: 地點
+  evidence: v7 亞拉巴、山地、高原、南地；BH：Negev，別是巴以南乾地
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: v40 從紅海的路往曠野去；啟導本：原文蘆葦海，此處指阿卡巴灣
+  surfaces:
+  - phrase: 紅海
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+- name: 耶和華曉諭摩西差遣探子
+  suggested_type: 事件
+  evidence: v22-25 百姓求先打發人窺探，選十二人每支派一人，到以實各谷；民13
+  match_type: exact
+  existing_title: 耶和華曉諭摩西差遣探子
+  existing_path: link_folder/事件/耶和華曉諭摩西差遣探子.md
+- name: 全會眾哭號發怨言
+  suggested_type: 事件
+  evidence: v26-28 不肯上去、帳棚內發怨言說耶和華恨我們、弟兄使我們的心消化；民14
+  match_type: exact
+  existing_title: 全會眾哭號發怨言
+  existing_path: link_folder/事件/全會眾哭號發怨言.md
+- name: 百姓擅自上山被擊敗
+  suggested_type: 事件
+  evidence: v41-44 擅自上山地，亞摩利人如蜂擁追趕，在西珥殺退直到何珥瑪；民14:39-45
+  match_type: exact
+  existing_title: 百姓擅自上山被擊敗
+  existing_path: link_folder/事件/百姓擅自上山被擊敗.md
+- name: 摩西立首領
+  suggested_type: 事件
+  evidence: v13-15 立首領為官長、千夫長、百夫長、五十夫長、十夫長；出18 葉忒羅獻策
+  match_type: exact
+  existing_title: 摩西立首領
+  existing_path: link_folder/事件/摩西立首領.md
+- name: 耶和華的爭戰
+  suggested_type: 神學
+  evidence: v30 在你們前面行的耶和華你們的神必為你們爭戰，正如在埃及和曠野所行
+  match_type: exact
+  existing_title: 耶和華的爭戰
+  existing_path: link_folder/神學/耶和華的爭戰.md
+- name: 雲柱火柱
+  suggested_type: 歷史
+  evidence: v33 夜間在火柱裡日間在雲柱裡指示當行的路；出13:21
+  surfaces:
+  - phrase: 火柱
+  - phrase: 雲柱
+  match_type: exact
+  existing_title: 雲柱火柱
+  existing_path: link_folder/歷史/雲柱火柱.md
+- name: 公義審判
+  suggested_type: 神學
+  evidence: v16-17 按公義判斷、不可看外貌、不可分貴賤；精讀本：與利19:15 同一原則
+  match_type: exact
+  existing_title: 公義審判
+  existing_path: link_folder/神學/公義審判.md
+- name: 敬畏神、誠實、恨不義之財
+  suggested_type: 神學
+  evidence: v13,15 有智慧、有見識、為眾人所認識；啟導本：與出18:21 合為六條件；參提前3:1-13
+  match_type: exact
+  existing_title: 敬畏神、誠實、恨不義之財
+  existing_path: link_folder/神學/敬畏神、誠實、恨不義之財.md
+- name: 信心與眼見
+  suggested_type: 神學
+  evidence: CT 靈訓要義：窺探表徵眼見（v22）、眼見使人失去信心（v26,28）、不憑信心者倒斃曠野（v32,35）
+  match_type: exact
+  existing_title: 信心與眼見
+  existing_path: link_folder/神學/信心與眼見.md
+C_new_formal:
+- name: 以實各谷
+  suggested_type: 地點
+  evidence: v24 到以實各谷窺探那地；CT：近希伯崙、串束之意、盛產果實
+  target_path: link_folder/地點/以實各谷.md
+  semantic_hint:
+  - title: 以實各
+    score: 0.47
+    type: 人物
+  - title: 王谷
+    score: 0.4
+    type: 地點
+D_new_candidate: []
+E_skip: []
