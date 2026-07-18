@@ -43,6 +43,14 @@ class CheckChapterFilesTests(unittest.TestCase):
             _, _, hint = checks[1]
             self.assertIn("source_manifest.md", hint)
 
+    def _write_synced_embedding_index(self, root):
+        """空條目庫（link_index={}）對空索引＝同步。"""
+        _write(
+            root / "util" / "output" / "embedding_index.meta.json",
+            '{"model": "test-embed", "dim": 4, "entries": []}',
+        )
+        _write(root / "util" / "output" / "embedding_index.npz", "dummy")
+
     def test_all_major_files_present_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
@@ -50,6 +58,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
             _write(tmp_dir / "source_manifest.md", "manifest")
             _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(tmp_dir / "candidate_similarity.md", "# 報告")
             _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
             _write(tmp_dir / "verse_links.yaml", "links")
             _write(tmp_dir / "chapter_content.yaml", "content")
@@ -58,10 +67,45 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(root / "util" / "output" / "link_quality_report.json", "{}")
             _write(root / "util" / "output" / "verify_report.json", "{}")
             _write(root / "util" / "output" / "verify_result.txt", "ok")
+            self._write_synced_embedding_index(root)
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             failed = [label for label, ok, _ in checks if not ok]
             self.assertEqual([], failed)
+
+    def test_missing_similarity_report_fails_step2(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            report_check = next(c for c in checks if "candidate_similarity" in c[0])
+            self.assertFalse(report_check[1])
+            self.assertIn("--candidates", report_check[2])
+
+    def test_stale_embedding_index_fails_final_check(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            # link_index 有一條，meta 是空的 → 1 條未入索引
+            _write(
+                root / "util" / "output" / "link_index.json",
+                '{"甲": {"title": "甲", "type": "主題", "path": "link_folder/主題/甲.md", "aliases": []}}',
+            )
+            self._write_synced_embedding_index(root)
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            embed_check = next(c for c in checks if "embedding" in c[0])
+            self.assertFalse(embed_check[1])
+            self.assertIn("build_embedding_index", embed_check[2])
+
+    def test_absent_embedding_index_fails_with_bootstrap_hint(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            embed_check = next(c for c in checks if "embedding" in c[0])
+            self.assertFalse(embed_check[1])
+            self.assertIn("索引不存在", embed_check[2])
 
     def test_entry_content_count_dedupes_plan_names(self):
         """C_new_formal 計畫可能同名重複（run_chapter.py 建 entry 前會去重）。"""

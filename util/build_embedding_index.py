@@ -13,6 +13,8 @@
   python util/build_embedding_index.py            # 增量更新（新增／變更／刪除）
   python util/build_embedding_index.py --rebuild  # 全量重建
   python util/build_embedding_index.py --status   # 顯示索引狀態，不動任何檔
+  python util/build_embedding_index.py --check    # 驗證索引與條目庫同步（雜湊比對，
+                                                  # 不打網路；過期＝exit 1，是收尾閘門）
 """
 import argparse
 import hashlib
@@ -214,6 +216,7 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
                 "title": title,
                 "path": link_index[title].get("path", ""),
                 "type": link_index[title].get("type", ""),
+                "secondary_types": link_index[title].get("secondary_types", []),
                 "hash": hashes[title],
             }
             for title in titles
@@ -225,6 +228,65 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
         json.dumps(meta, ensure_ascii=False), encoding="utf-8"
     )
     print(f"✅ 索引已寫入：{VECTORS_FILE.name}（{len(titles)} 條、{dim} 維）")
+    return 0
+
+
+def stale_summary(root=ROOT):
+    """比對索引 meta 與現行條目庫（純雜湊，不打網路、不讀端點設定）。
+
+    回傳 {"model", "total", "changed": [...], "removed": [...]}；
+    索引檔不存在回 None。供 --check 與 check_chapter_files 判斷
+    「本章新增／修改的條目是否已進索引」——這是機械可證的同步檢查，
+    與相似度判斷（不可證、只附註）分屬兩事。
+    """
+    root = Path(root)
+    output = root / "util" / "output"
+    meta_file = output / "embedding_index.meta.json"
+    vectors_file = output / "embedding_index.npz"
+    link_index_file = output / "link_index.json"
+    if not (meta_file.exists() and vectors_file.exists()):
+        return None
+    meta = json.loads(meta_file.read_text(encoding="utf-8"))
+    link_index = load_link_index(link_index_file)
+    stored = {item["title"]: item["hash"] for item in meta.get("entries", [])}
+    changed = [
+        title for title, entry in link_index.items()
+        if stored.get(title) != _hash(entry_embed_text(title, entry, root=root))
+    ]
+    removed = [title for title in stored if title not in link_index]
+    return {
+        "model": meta.get("model"),
+        "total": len(link_index),
+        "changed": changed,
+        "removed": removed,
+    }
+
+
+def check(root=ROOT):
+    summary = stale_summary(root)
+    if summary is None:
+        print("❌ embedding 索引不存在；請跑 python util/build_embedding_index.py（首次全量建立）")
+        return 1
+    try:
+        current = embedding_model()
+    except ModelError as exc:
+        print(f"❌ 無法讀 tasks.embedding 設定：{exc}")
+        return 1
+    if current != summary["model"]:
+        print(
+            f"❌ 索引模型「{summary['model']}」與設定「{current}」不符；"
+            "請跑 python util/build_embedding_index.py --rebuild"
+        )
+        return 1
+    changed, removed = summary["changed"], summary["removed"]
+    if changed or removed:
+        sample = "、".join(changed[:5]) or "、".join(removed[:5])
+        print(
+            f"❌ 索引過期：{len(changed)} 條未入索引或已變更、{len(removed)} 條已刪除"
+            f"（如：{sample}）；請跑 python util/build_embedding_index.py（增量，通常數秒）"
+        )
+        return 1
+    print(f"✅ 索引與條目庫同步（{summary['total']} 條、模型 {current}）")
     return 0
 
 
@@ -261,8 +323,14 @@ def main():
     parser = argparse.ArgumentParser(description="建立／更新 embedding 索引")
     parser.add_argument("--rebuild", action="store_true", help="忽略既有索引全量重建")
     parser.add_argument("--status", action="store_true", help="只顯示索引狀態")
+    parser.add_argument(
+        "--check", action="store_true",
+        help="驗證索引與條目庫同步（雜湊比對，不打網路）；過期 exit 1",
+    )
     args = parser.parse_args()
     try:
+        if args.check:
+            return check()
         if args.status:
             return status()
         return build(rebuild=args.rebuild)

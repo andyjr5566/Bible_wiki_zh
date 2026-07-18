@@ -100,11 +100,15 @@ def _schema_hint(name):
 # --------------------------------------------------------------------------- #
 # P2 resolve
 # --------------------------------------------------------------------------- #
-def _annotate_semantic(plan):
+def _annotate_semantic(plan, ctx):
     """對 C／D 候選附語義近鄰提示；索引缺失或端點不通時降級略過，不擋流程。
 
     純附註供人工在 link_plan.yaml 判斷近似重複，不改分類、不建連結。
+    ctx.runner 有注入（測試用假模型）時整步跳過——附註要打真 embedding
+    端點，測試不該碰網路。
     """
+    if ctx.runner is not None:
+        return
     try:
         import semantic_lookup
         lookup = semantic_lookup.SemanticIndex.load()
@@ -128,7 +132,7 @@ def resolve_step(ctx):
     homonyms = resolver.load_homonyms() if ctx.homonyms is None else ctx.homonyms
     candidates = resolver.load_candidates(ctx.book, ctx.chapter, root=ctx.root)
     plan = resolver.resolve(candidates, index, ctx.book, ctx.chapter, root=ctx.root, homonyms=homonyms)
-    _annotate_semantic(plan)
+    _annotate_semantic(plan, ctx)
     document = resolver.build_plan_document(plan, ctx.book, ctx.chapter)
     _write_yaml(plan_path, document)
     _log("✔ P2 resolve 完成")
@@ -617,8 +621,8 @@ def _org_requirements(verse_count):
     門檻只管份量，不管體裁——創8 那種散文混表格／編號清單的呈現是允許的，
     格式隨 rawdata 的材料性質調整。
     """
-    min_sections = 1 #3 if verse_count >= 15 else 2
-    min_chars = 200#max(400, min(1500, verse_count * 40))
+    min_sections = 3 if verse_count >= 15 else 2
+    min_chars = max(400, min(1500, verse_count * 40))
     return min_sections, min_chars
 
 
@@ -1122,7 +1126,8 @@ def _split_node_errors(ctx):
     except yaml.YAMLError:
         return []
     errors = []
-    for group, items in (data.get("knowledge_nodes") or {}).items():
+    nodes = render_chapter.coerce_knowledge_nodes(data.get("knowledge_nodes"))
+    for group, items in nodes.items():
         if not isinstance(items, list):
             continue
         for item in items:

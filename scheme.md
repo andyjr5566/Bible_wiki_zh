@@ -94,16 +94,17 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 
 ### 3.5 語義近鄰索引（近似重複的防線）
 
-**要解決的問題**：字面比對（§3.3 resolver 比對序）只認得同名／alias／音譯基名，看不出「措辭不同、意思相同」。4300+ 條目下這是靜默坑——agent 把「不可搶奪鄰舍」當新候選，其實已有「不可欺壓鄰舍搶奪與雇工工價不過夜」，兩個閘門全過卻建出近似重複（利19 的 7 個主題條目即是善後案例）。
+**要解決的問題**：字面比對（§3.3 resolver 比對序）只認得同名／alias／音譯基名，看不出「措辭不同、意思相同」。
 
-**機制**：`build_embedding_index.py` 把每個條目的「標題＋分類＋別名＋定義＋主題發展＋相關條目＋累積摘要」嵌成向量存 `util/output/embedding_index.{npz,meta.json}`（增量更新，只重嵌變動條目）。`semantic_lookup.py` 以詞查最相似的既有條目。resolve 後程式自動對 C／D 候選查近鄰，寫進 `link_plan.yaml` 的 `semantic_hint`。
+**機制**（兩道，先報告後附註）：`build_embedding_index.py` 把每個條目的「標題＋分類＋別名＋定義＋主題發展＋相關條目＋累積摘要」嵌成向量存 `util/output/embedding_index.{npz,meta.json}`（增量更新，只重嵌變動條目）。（1）候選定稿前：`semantic_lookup.py --candidates 書名 章` 把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢批量比對，寫 `.tmp/第x章/candidate_similarity.md` 報告，agent 據此決定改名（歸 A/B）或照建——這是主要防線，發生在建條目之前。（2）resolve 時：程式自動對 C／D 候選查近鄰寫進 `link_plan.yaml` 的 `semantic_hint`，當第二道安全網。
 
 **邊界（與整體原則一致：機械不可證者只提示、不裁決）**：
 
-- **純附註，不是閘門**：只加 `semantic_hint` 欄位供人工判斷，不改分類、不自動建立或連結、不擋 commit。相似度非機械可證，不升級為 error（呼應「加護欄前先全庫實測」的教訓）。
-- **降級不中斷**：索引缺失、模型不符、端點不通時整步靜默略過，主流程照跑。語義索引是輔助工具，不是資料流必要環節。
+- **純附註，不是閘門**：相似結果只供人工判斷（報告與 `semantic_hint` 皆然），不改分類、不自動建立或連結、不擋 commit。相似度非機械可證，不升級為 error（呼應「加護欄前先全庫實測」的教訓）。
+- **降級不中斷**：resolve 的 `semantic_hint` 在索引缺失、模型不符、端點不通時靜默略過，主流程照跑。
+- **同步是機械可證，故硬擋**：「索引有沒有跟上條目庫」與「相似度像不像」不同——前者可用雜湊比對證明。`build_embedding_index.py --check` 與 `check_chapter_files.py` 在收尾驗證索引同步（不打網路），過期即 FAIL 並給補救指令；漏跑的下場是下一章的近鄰報告查不到本章新條目，靜默且延後爆發，所以必須擋。
 - **與 embedding 模型綁定**：向量跨模型不可比，混用後相似度看似合理實為垃圾。meta 記錄模型名與維度，載入端比對現行設定，不符即拒用並要求 `--rebuild`（此為機械可證，故可硬擋）。
-- **門檻經全庫校準**：現用 `nvidia/nemotron-3-embed-1b`，query／passage 為非對稱向量空間（同句兩空間 cos≈0.6，故完全命中的絕對分也只 ~0.47）。實測噪音上限≈0.24、真近似落 0.42–0.57，取門檻 0.40（`resolve_link_candidates.SEMANTIC_HINT_THRESHOLD`）。換模型後此數失效須重新校準。索引一律用 `input_type=passage`、查詢用 `query`，不可混。
+- **⚠ 規則經跨卷實測校準（含全新章節模擬）**：現用 `nvidia/nemotron-3-embed-1b`，query／passage 為非對稱向量空間（同句兩空間 cos≈0.6，絕對分數整體偏低）。候選報告的 ⚠ 標「**top-1、非同實體**（resolver `base_name` 對不上）、**分類相容**（`type_compatible`，含 secondary_types）、**≥0.60**」的近鄰（`semantic_lookup.REPORT_FLAG_FLOOR`）。校準過程（跨 5 卷 151 候選）：絕對門檻不可行——條例密集章的兄弟條目彼此 0.6–0.75，0.55 會標 93%；真改名／重複對（含勘誤刪掉的舊名、`剪除（kareth）→從民中剪除（karet）` 這種字面構不著的）全以 top-1 出現且 ≥0.68；再用遮罩模擬「本章條目尚不存在」的全新章節（真實使用情境），僅 top-1 規則標 42%（FP 主力＝事件候選→其主角人物／地點的跨分類鄰居），加分類相容條件降到 17% 且不損失真對。**候選互查**（同報告第二節）另補全新章節的盲區：兩個同概念候選在索引裡都查不到，只有彼此比對能抓（申13 的兩對章內重複 0.84–0.90 即實例）；query-query 空間實測真重複 ≥0.84、相關但不同 ≤0.78，取 `INTRA_FLAG_FLOOR=0.80`。resolver 附註用裸名查詢，另行校準 `SEMANTIC_HINT_THRESHOLD=0.40`（裸名噪音上限≈0.24、真近似 0.42–0.57）。換 embedding 模型後以上全部失效須重新校準。索引一律用 `input_type=passage`、查詢用 `query`，不可混。
 
 ---
 
@@ -143,6 +144,7 @@ raw_scripture + 有效 raw_data
 ```text
 check_existing_links.py 【序號 書名】/第x章.md --missing   # 章節連結完整
 build_link_index.py                                        # 索引可重現（CI 用 --check）
+build_embedding_index.py --check                           # 語義索引與條目庫同步（雜湊比對，不打網路）
 validate_knowledge_base.py                                 # ERRORS=0（新增檔違規為 blocking）
 link_quality_check.py 【書名】                              # CRITICAL=0
 verify_links.py 【書名】                                    # BROKEN=0, INVALID=0, UNKNOWN=0（PENDING_SCRIPTURE_REFS 可存在）

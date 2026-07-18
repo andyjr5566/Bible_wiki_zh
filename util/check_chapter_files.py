@@ -47,6 +47,29 @@ def _plan_unique_name_count(plan, key):
     return len({e["name"] for e in plan.get(key) or [] if isinstance(e, dict) and e.get("name")})
 
 
+def _embedding_index_synced(root):
+    """embedding 索引是否與條目庫同步（純雜湊比對，不打網路）。
+
+    回傳 (ok, 說明)。這是機械可證的同步檢查：漏跑 build_embedding_index
+    的下場是「下一章的候選近鄰報告查不到本章新條目」，靜默且延後爆發，
+    所以在此硬擋。與相似度判斷（不可證、只附註）分屬兩事。
+    """
+    try:
+        try:
+            from .build_embedding_index import stale_summary
+        except ImportError:
+            from build_embedding_index import stale_summary
+    except Exception as exc:  # numpy 未裝等環境問題也要能給出可讀訊息
+        return False, f"無法載入 build_embedding_index：{exc}"
+    summary = stale_summary(root)
+    if summary is None:
+        return False, "索引不存在（首次請跑 python util/build_embedding_index.py 全量建立）"
+    changed, removed = summary["changed"], summary["removed"]
+    if changed or removed:
+        return False, f"{len(changed)} 條未入索引或已變更、{len(removed)} 條已刪除"
+    return True, ""
+
+
 def build_checks(book, chapter, root=ROOT):
     canonical = canonical_book_name(book)
     book_dir = book_directory(root, book)
@@ -66,6 +89,7 @@ def build_checks(book, chapter, root=ROOT):
     )
     link_updates_ok = updates_expected == 0 or (tmp / "link_updates.yaml").exists()
     run_chapter_cmd = f"python util/run_chapter.py {canonical} {chapter}"
+    embedding_ok, embedding_detail = _embedding_index_synced(root)
 
     return [
         (
@@ -86,6 +110,12 @@ def build_checks(book, chapter, root=ROOT):
             (tmp / "link_candidates.yaml").exists(),
             "從步驟2「建 link_candidates.yaml」開始：依 _config/schemas/link_candidates.schema.json "
             f"逐節核對經文與有效 raw text，寫 {tmp / 'link_candidates.yaml'}。",
+        ),
+        (
+            "步驟2｜candidate_similarity.md（候選語義近鄰報告）",
+            (tmp / "candidate_similarity.md").exists(),
+            f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}，"
+            "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。",
         ),
         (
             "步驟3｜link_plan.yaml（P2 resolve）",
@@ -134,6 +164,13 @@ def build_checks(book, chapter, root=ROOT):
             "步驟6｜util/output/verify_report.json ＋ verify_result.txt",
             (output_dir / "verify_report.json").exists() and (output_dir / "verify_result.txt").exists(),
             f"從步驟6繼續：python util/verify_links.py {canonical} && python util/audit_knowledge_base.py --check-due",
+        ),
+        (
+            "步驟6｜embedding 語義索引同步",
+            embedding_ok,
+            f"（{embedding_detail}）從步驟6續做：python util/build_link_index.py，"
+            "再 python util/build_embedding_index.py（增量，通常數秒）——"
+            "本章新條目沒進索引，下一章的候選近鄰報告就查不到它們。",
         ),
     ]
 
