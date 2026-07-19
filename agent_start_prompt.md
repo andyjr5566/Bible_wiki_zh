@@ -49,7 +49,8 @@
 
 6. **模型產出後的勘誤複核（run_chapter／link_updates 跑完、commit 前必做）**：`run_chapter.py` 的 M3（entry_content）與 M6（chapter_content 本章整理）、以及 `link_updates.py` 填的 summary／relation，都是模型依 prompt 一次生成，不是人工逐句核對過的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
    - 抓法同 §「內容勘誤」四類高風險：模型是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
-   - 發現有誤：直接改 `chapter_content.yaml`／`entry_content/*.yaml`／`link_updates.yaml` 裡的 `organization`／`summary`／`relation` 文字，**同步改對應的 `第x章.md` 與已寫入的 `link_folder/**.md`**（兩邊要一致，不能只改其中一邊），不必整段重新呼叫模型重跑。
+   - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml`（本章整理）或 `entry_content/*.yaml`（新建條目，注意是 `definition`／`development` 欄，不是 `.md` 的段落）裡的文字後，重跑 `python util/run_chapter.py 【書名】 X` 讓 render 重新產出 markdown——**只改渲染後的 `第x章.md`／`link_folder/**.md` 而不改 yaml，下次任何重跑都會被 render 覆蓋回錯的舊內容**（實測踩過：申4 鐵爐條目只改了 `.md` 沒改 yaml，重跑就打回原形）。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`（不是 run_chapter）。
+   - `run_chapter.py` 已會在改動 `link_candidates.yaml` 時**自動作廢並重生下游**（link_plan／entry_content／verse_links／chapter_content），不必再手動刪中間檔；但改 `entry_content/*.yaml`／`chapter_content.yaml` 本身後，直接重跑即可讓 render 帶出新內容。
    - 順手複查既有條目：本章若累積到的既有條目本身帶著更早期的錯（例如某地名被錯記成同音異義的另一地名），連同勘誤一併修正，並在 relation 裡註明勘誤依據，不要默默改。
    - 這一步做完才進入下一步收尾驗證；驗證閘門不會幫你抓這類語意錯誤。
 

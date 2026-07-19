@@ -13,10 +13,18 @@
 模型呼叫走 util.model_client.call_model（預設 shell 到 claude -p）；runner
 可注入，讓整條流程能以假模型單元測試。P1 來源抓取與 P5 commit 屬側效步驟，
 交由既有 util 腳本與人工 gate，不在本檔自動執行。
+
+斷點續跑靠「輸出檔存在就跳過」，所以改了上游 link_candidates.yaml 卻沿用照舊
+生成的 link_plan.yaml 會靜默套用過期結果。開跑前的 _invalidate_stale 以內容雜湊
+比對 pipeline_state.json，偵測到上游改動就連鎖刪除下游中間產物（link_plan／
+entry_content／verse_links／chapter_content）強制重生——改 candidates 後直接重跑
+即可，不必再手動刪中間檔。
 """
 import argparse
+import hashlib
 import json
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -122,6 +130,108 @@ def _annotate_semantic(plan, ctx):
         )
     except Exception as exc:
         _log(f"  （語義提示中途失敗，已略過：{exc}）")
+
+
+# --------------------------------------------------------------------------- #
+# 依賴鏈作廢（stale invalidation）
+#
+# 斷點續跑只看「輸出檔存在與否」，不看上游有沒有變——所以改了 link_candidates.yaml
+# 卻只刪 verse_links／第x章.md 重跑，會沿用照舊 candidates 生成的 link_plan.yaml，
+# 靜默套用過期結果（實測踩過：刪 surfaces 後重跑警告不變，得連 link_plan.yaml 一起
+# 手動刪才生效）。這裡用內容雜湊（非 mtime，不受 git／複製／時鐘影響）把「上游改動
+# → 自動作廢下游」做成程式：每步跑完把各節點指紋存進 pipeline_state.json，下次開跑
+# 先比對，指紋變了就連鎖刪除其全部下游輸出，強制重生。首次無基線時視為乾淨、不動任何
+# 既有章節。
+# --------------------------------------------------------------------------- #
+_PIPELINE_STATE_FILE = "pipeline_state.json"
+
+# (輸出節點, [上游輸入節點...])，已按上游→下游拓撲排序。
+#
+# 只列「會斷點續跑（輸出檔存在就跳過）」的 .tmp 中間產物——這些才會 stale。
+# render 產出的 第x章.md／條目 .md 不在此列：render_step 每跑必重寫它們，不會沿用
+# 舊檔（且 第x章.md 的 build_fhl_maps 地圖區塊靠 render 讀舊檔保留，刪了反而遺失），
+# 所以無需、也不應把它們納入作廢——中間產物一被作廢重生，render 自然帶出正確結果。
+_PIPELINE_STAGES = (
+    ("link_plan.yaml", ("link_candidates.yaml", "link_candidates.md")),
+    ("entry_content", ("link_plan.yaml",)),
+    ("verse_links.yaml", ("link_plan.yaml",)),
+    ("chapter_content.yaml", ("link_plan.yaml",)),
+)
+_PIPELINE_NODES = (
+    "link_candidates.yaml", "link_candidates.md", "link_plan.yaml",
+    "entry_content", "verse_links.yaml", "chapter_content.yaml",
+)
+
+
+def _node_path(ctx, key):
+    return ctx.path(key)
+
+
+def _node_fingerprint(path):
+    """內容指紋：檔案→sha256；目錄→其 *.yaml 的檔名+雜湊清單再雜湊；不存在→None。"""
+    if path.is_dir():
+        parts = [
+            f"{f.name}:{hashlib.sha256(f.read_bytes()).hexdigest()}"
+            for f in sorted(path.glob("*.yaml"))
+        ]
+        return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest() if parts else None
+    if path.exists():
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    return None
+
+
+def _remove_node(path):
+    """刪除輸出節點（檔案或目錄）；回傳是否真的刪了東西。"""
+    if path.is_dir():
+        shutil.rmtree(path)
+        return True
+    if path.exists():
+        path.unlink()
+        return True
+    return False
+
+
+def _invalidate_stale(ctx):
+    """比對上游指紋，連鎖作廢已過期的下游輸出。run_chapter 開頭呼叫。"""
+    state_path = ctx.path(_PIPELINE_STATE_FILE)
+    prev = {}
+    if state_path.exists():
+        try:
+            loaded = json.loads(state_path.read_text(encoding="utf-8"))
+            if isinstance(loaded, dict):
+                prev = loaded
+        except (ValueError, OSError):
+            prev = {}
+    dirty, removed = set(), []
+    for out_key, inputs in _PIPELINE_STAGES:
+        stale = False
+        for inp in inputs:
+            if inp in dirty:              # 上游已被作廢 → 本節點必須跟著重生
+                stale = True
+                break
+            # inp not in prev＝沒有基線（首次採樣）→ 視為乾淨，不作廢既有輸出
+            if inp in prev and _node_fingerprint(_node_path(ctx, inp)) != prev[inp]:
+                stale = True
+                break
+        if stale:
+            dirty.add(out_key)
+            if _remove_node(_node_path(ctx, out_key)):
+                removed.append(out_key)
+    if removed:
+        _log("⟳ 偵測到上游改動，已自動作廢下游並將重生：" + "、".join(removed))
+    return removed
+
+
+def _save_pipeline_state(ctx):
+    """把當前各節點指紋存檔，作為下次跑的比對基線。run_chapter 結尾呼叫。"""
+    state = {}
+    for key in _PIPELINE_NODES:
+        fp = _node_fingerprint(_node_path(ctx, key))
+        if fp is not None:
+            state[key] = fp
+    ctx.path(_PIPELINE_STATE_FILE).write_text(
+        json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
 
 def resolve_step(ctx):
@@ -1440,12 +1550,14 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
     ctx = ChapterContext(
         book, chapter, root=root, runner=runner, index=index, homonyms=homonyms
     )
+    _invalidate_stale(ctx)
     plan = resolve_step(ctx)
     entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
     verse_links = verse_links_step(ctx, plan)
     chapter_content = chapter_content_step(ctx, plan)
     written = render_step(ctx, entry_payloads, verse_links, chapter_content, plan=plan)
     errors = validate_step(ctx, written)
+    _save_pipeline_state(ctx)
     return {
         "written": written,
         "errors": errors,
@@ -1483,20 +1595,20 @@ def _manual_review_hints(items, book, chapter):
         elif item.startswith("entry_content:") and "跳過以免覆蓋" in item:
             add("overwrite", "候選與既有條目同名且對方已有其他章累積（覆蓋保護擋下）", [
                 "此候選其實該歸 B 累積：確認即把它視為既有條目（無需新建），"
-                f"刪 link_plan.yaml 後重跑讓 resolver 重新歸類：{rerun}",
+                f"從 link_candidates.yaml 移除該候選後直接重跑（改 candidates 會自動作廢下游）：{rerun}",
                 "若確為同名不同實體：兩者都要加最小穩定限定詞並登記 _config/link_homonyms.yaml（scheme §3.2）",
             ])
         elif item.startswith("verse_links：同一經文詞指向多個條目"):
             add("ambiguous", "經文詞歧義（推導出多個條目），整詞未連結", [
                 "在 link_candidates.yaml 為正確目標宣告 surfaces 裁決（宣告優先於推導；"
                 "同詞多義用 {phrase, verses} 限定節次）",
-                f"改完刪 verse_links.yaml 與 第{chapter}章.md 再重跑：{rerun}",
+                f"改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：{rerun}",
             ])
         elif item.startswith("verse_links：候選宣告的 surfaces 未連上"):
             add("surface", "宣告的 surfaces 沒連上任何節", [
                 "核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；"
                 "若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可",
-                f"改完刪 verse_links.yaml 與 第{chapter}章.md 再重跑：{rerun}",
+                f"改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：{rerun}",
             ])
         elif item.startswith("knowledge_nodes：無對應條目"):
             add("nodes", "knowledge_nodes 有節點對不上任何條目（已自動移除）", [

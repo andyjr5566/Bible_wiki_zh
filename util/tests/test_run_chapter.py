@@ -159,6 +159,58 @@ class OrchestratorTests(unittest.TestCase):
             self.assertIn("entry_content", entry_notes[0])
             self.assertFalse((root / "link_folder" / "原文" / f"{ENTRY_NAME}.md").exists())
 
+    def _candidates_path(self, root):
+        return root / "02 出埃及記" / ".tmp" / "第26章" / "link_candidates.yaml"
+
+    def test_editing_candidates_invalidates_downstream(self):
+        # 坑：改了 link_candidates.yaml 後重跑，斷點續跑卻沿用照舊 candidates 生成的
+        # link_plan.yaml 及其下游（verse_links／chapter_content／第x章.md），靜默套用
+        # 過期結果。這裡驗證：改動 candidates → 下游自動作廢並重生（模型被重新呼叫）。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            plan_path = root / "02 出埃及記" / ".tmp" / "第26章" / "link_plan.yaml"
+            self.assertTrue(plan_path.exists())
+
+            # 改動 candidates 的內容（宣告 surfaces）——指紋改變
+            cand = self._candidates_path(root)
+            data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+            data["candidates"][0]["surfaces"] = ["施恩座"]
+            cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+            calls = []
+
+            def counting_runner(prompt):
+                calls.append(prompt)
+                return fake_runner(prompt)
+
+            result = run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=counting_runner, index={}, homonyms={},
+            )
+            self.assertEqual([], result["errors"])
+            # 下游被作廢 → 模型被重新呼叫（若沒作廢，resume 會是 0 次呼叫）
+            self.assertTrue(calls, "改了 candidates 後應重新呼叫模型（下游已作廢重生）")
+            self.assertTrue((root / "02 出埃及記" / "第26章.md").exists())
+
+    def test_untouched_candidates_still_resume(self):
+        # 反向護欄：沒改 candidates 時，作廢機制不得誤刪，resume 必須照舊生效
+        # （不呼叫模型）。避免自動作廢變成「每跑必重生」。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+
+            def exploding_runner(prompt):
+                raise AssertionError("candidates 未改動，作廢機制不該觸發重生／呼叫模型")
+
+            result = run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=exploding_runner, index={}, homonyms={},
+            )
+            self.assertEqual([], result["errors"])
+
 
 class MatchPayloadTests(unittest.TestCase):
     def test_accepts_translit_suffix(self):
