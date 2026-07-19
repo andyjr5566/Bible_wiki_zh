@@ -1,0 +1,29 @@
+name: 不可偏離左右
+type: 神學
+secondary_types: []
+aliases:
+- 不偏左右
+- 嚴守誡命
+status: formal
+definition: 見於申命記5:32（及5:33），為摩西在重述十誡（5:6-21）與何烈山立約經歷（5:2-5, 22-31）後，對以色列眾人發出的總結性勸勉。命令百姓「照耶和華─你們神所吩咐的謹守遵行，不可偏離左右」。此語以「左右」為隱喻，強調神誡命為唯一正道，不可隨意增減或轉向人為的偏差。緊接第33節應許遵行者「可以存活得福，並使你們的日子在所要承受的地上得以長久」，將嚴格順服與立約祝福（承受地業、生命長久）直接掛鉤，呼應第29節「存敬畏心、常遵守誡命」的神學邏輯。
+accumulations:
+- book: 申命記
+  chapter: 5
+  summary: 摩西總結十誡頒布與立約經歷，命令百姓謹守遵行神的吩咐，不可偏離左右，好叫他們存活得福、在承受之地日子長久。
+  relation: 本章結論性神學命令，將十誡內化為生活行為準則，強調順服之路的單一性與祝福的條件性。
+related_entries:
+- 摩西
+- 十誡
+- 西乃之約
+- 惟願他們存這樣的心敬畏我
+sources:
+- '逐節註解: 申命記5:32-33不可偏離左右與順服得福的應許（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT05.htm）'
+- '拾穗: 申命記5:32謹守遵行不可偏離左右（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT05.htm）'
+- '研經註解: 申命記第5章第32-33節順服之路與生命應許（https://www.kingcomments.com/en/bible-studies/Deu/5）'
+- '研經註解: 申命記5:32-33不可偏離左右的命令與應許（https://biblehub.com/study/deuteronomy/5.htm）'
+created_from: deuteronomy_5
+category: theology
+trigger_sources:
+- deuteronomy_5
+current_data: {}
+pending: false
