@@ -1057,6 +1057,17 @@
     "status": "formal",
     "aliases": []
   },
+  "立約的鹽": {
+    "path": "link_folder/主題/立約的鹽.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "立約的鹽",
+    "status": "formal",
+    "aliases": [
+      "鹽約",
+      "素祭加鹽"
+    ]
+  },
   "節期與紀念": {
     "path": "link_folder/主題/節期與紀念.md",
     "type": "主題",
@@ -1092,6 +1103,26 @@
     "aliases": [
       "法櫃",
       "見證的櫃"
+    ]
+  },
+  "素祭不可有酵與蜜": {
+    "path": "link_folder/主題/素祭不可有酵與蜜.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "素祭不可有酵與蜜",
+    "status": "formal",
+    "aliases": [
+      "無酵無蜜條例"
+    ]
+  },
+  "素祭的五種形式": {
+    "path": "link_folder/主題/素祭的五種形式.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "素祭的五種形式",
+    "status": "formal",
+    "aliases": [
+      "素祭五樣式"
     ]
   },
   "羅得的世俗選擇與後果": {
@@ -1184,6 +1215,17 @@
     "title": "腹中相爭",
     "status": "formal",
     "aliases": []
+  },
+  "至聖的供物（聖與至聖之分）": {
+    "path": "link_folder/主題/至聖的供物（聖與至聖之分）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "至聖的供物（聖與至聖之分）",
+    "status": "formal",
+    "aliases": [
+      "至聖供物",
+      "聖與至聖區別"
+    ]
   },
   "荊棘與蒺藜": {
     "path": "link_folder/主題/荊棘與蒺藜.md",
@@ -11297,6 +11339,16 @@
     "status": "formal",
     "aliases": []
   },
+  "紀念份": {
+    "path": "link_folder/原文/紀念份.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "紀念份",
+    "status": "formal",
+    "aliases": [
+      "紀念的部分"
+    ]
+  },
   "約書（sefer habberith）": {
     "path": "link_folder/原文/約書（sefer habberith）.md",
     "type": "原文",
@@ -11323,6 +11375,18 @@
       "紅瑪瑙",
       "紀念石",
       "條紋瑪瑙"
+    ]
+  },
+  "素祭（minchah）": {
+    "path": "link_folder/原文/素祭（minchah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "素祭（minchah）",
+    "status": "formal",
+    "aliases": [
+      "穀物祭"
     ]
   },
   "網羅": {
@@ -21783,6 +21847,12 @@
   "God's provision": {
     "alias_of": "神的供應"
   },
+  "鹽約": {
+    "alias_of": "立約的鹽"
+  },
+  "素祭加鹽": {
+    "alias_of": "立約的鹽"
+  },
   "純金": {
     "alias_of": "精金"
   },
@@ -21791,6 +21861,12 @@
   },
   "見證的櫃": {
     "alias_of": "約櫃"
+  },
+  "無酵無蜜條例": {
+    "alias_of": "素祭不可有酵與蜜"
+  },
+  "素祭五樣式": {
+    "alias_of": "素祭的五種形式"
   },
   "聖衣": {
     "alias_of": "聖衣（祭司聖服）"
@@ -21809,6 +21885,12 @@
   },
   "束腰帶": {
     "alias_of": "腰帶（繡花腰帶）"
+  },
+  "至聖供物": {
+    "alias_of": "至聖的供物（聖與至聖之分）"
+  },
+  "聖與至聖區別": {
+    "alias_of": "至聖的供物（聖與至聖之分）"
   },
   "藍色線": {
     "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"
@@ -23820,6 +23902,9 @@
   "爭鬧": {
     "alias_of": "米利巴（ strife ）"
   },
+  "紀念的部分": {
+    "alias_of": "紀念份"
+  },
   "紅瑪瑙": {
     "alias_of": "紅瑪瑙（紀念石）"
   },
@@ -23828,6 +23913,9 @@
   },
   "條紋瑪瑙": {
     "alias_of": "紅瑪瑙（紀念石）"
+  },
+  "穀物祭": {
+    "alias_of": "素祭（minchah）"
   },
   "yqš": {
     "alias_of": "網羅"
