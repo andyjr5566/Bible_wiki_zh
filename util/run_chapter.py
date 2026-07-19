@@ -18,7 +18,10 @@
 生成的 link_plan.yaml 會靜默套用過期結果。開跑前的 _invalidate_stale 以內容雜湊
 比對 pipeline_state.json，偵測到上游改動就連鎖刪除下游中間產物（link_plan／
 entry_content／verse_links／chapter_content）強制重生——改 candidates 後直接重跑
-即可，不必再手動刪中間檔。
+即可，不必再手動刪中間檔。entry_content 另有一路：它可能在 M3 步驟本次補齊失敗
+條目、或被人工在跑前補改而晚定型，而 verse_links／chapter_content 讀它的 aliases／
+新建條目清單，故 entry_content_step 之後另有 _invalidate_after_entry 再比對一次、
+作廢這兩個下游——「晚建的條目連不上經文／本章整理」的老坑就此自動化。
 """
 import argparse
 import hashlib
@@ -191,17 +194,22 @@ def _remove_node(path):
     return False
 
 
-def _invalidate_stale(ctx):
-    """比對上游指紋，連鎖作廢已過期的下游輸出。run_chapter 開頭呼叫。"""
+def _load_pipeline_state(ctx):
+    """讀上次跑完存的指紋基線；缺檔或壞檔回空 dict。"""
     state_path = ctx.path(_PIPELINE_STATE_FILE)
-    prev = {}
     if state_path.exists():
         try:
             loaded = json.loads(state_path.read_text(encoding="utf-8"))
             if isinstance(loaded, dict):
-                prev = loaded
+                return loaded
         except (ValueError, OSError):
-            prev = {}
+            pass
+    return {}
+
+
+def _invalidate_stale(ctx):
+    """比對上游指紋，連鎖作廢已過期的下游輸出。run_chapter 開頭呼叫。"""
+    prev = _load_pipeline_state(ctx)
     dirty, removed = set(), []
     for out_key, inputs in _PIPELINE_STAGES:
         stale = False
@@ -219,6 +227,28 @@ def _invalidate_stale(ctx):
                 removed.append(out_key)
     if removed:
         _log("⟳ 偵測到上游改動，已自動作廢下游並將重生：" + "、".join(removed))
+    return removed
+
+
+def _invalidate_after_entry(ctx):
+    """entry_content 在本次跑結束其步驟後才定型（M3 本次補齊失敗條目，或人工在跑前
+    手改／補了 payload）；verse_links 讀條目 aliases、chapter_content 讀本章新建條目
+    清單當白名單，兩者若沿用上一輪的舊檔就漏掉晚定型的條目。開頭的 _invalidate_stale
+    比對不到這種變化（它在 entry_content_step 之前跑），故在 entry_content_step 之後
+    再比對一次 entry_content 指紋與基線，變了就作廢這兩個下游。呼叫點在 M3 之後、M5
+    之前。"""
+    prev = _load_pipeline_state(ctx)
+    if "entry_content" not in prev:  # 無基線（首次）→ 不作廢
+        return []
+    if _node_fingerprint(_node_path(ctx, "entry_content")) == prev["entry_content"]:
+        return []  # entry_content 未變
+    removed = []
+    for key in ("verse_links.yaml", "chapter_content.yaml"):
+        if _remove_node(_node_path(ctx, key)):
+            removed.append(key)
+    if removed:
+        _log("⟳ 偵測到 entry_content 變動（晚補／編輯條目），已自動作廢下游並將重生："
+             + "、".join(removed))
     return removed
 
 
@@ -1553,6 +1583,7 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
     _invalidate_stale(ctx)
     plan = resolve_step(ctx)
     entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
+    _invalidate_after_entry(ctx)
     verse_links = verse_links_step(ctx, plan)
     chapter_content = chapter_content_step(ctx, plan)
     written = render_step(ctx, entry_payloads, verse_links, chapter_content, plan=plan)

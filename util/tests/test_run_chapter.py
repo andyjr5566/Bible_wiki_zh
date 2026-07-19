@@ -211,6 +211,51 @@ class OrchestratorTests(unittest.TestCase):
             )
             self.assertEqual([], result["errors"])
 
+    def test_editing_entry_content_invalidates_verse_and_chapter(self):
+        # 老坑：晚建／補改的條目 payload，verse_links（讀 aliases）與 chapter_content
+        # （讀新建條目白名單）沿用舊檔就漏掉它。candidates 沒動、開頭作廢比對不到，
+        # 靠 entry_content_step 之後的 _invalidate_after_entry 補作廢這兩個下游。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            entry_yaml = (root / "02 出埃及記" / ".tmp" / "第26章"
+                          / "entry_content" / f"{ENTRY_NAME}.yaml")
+            self.assertTrue(entry_yaml.exists())
+            verse_links = root / "02 出埃及記" / ".tmp" / "第26章" / "verse_links.yaml"
+            chapter_content = root / "02 出埃及記" / ".tmp" / "第26章" / "chapter_content.yaml"
+            self.assertTrue(verse_links.exists() and chapter_content.exists())
+
+            # 模擬「補改條目 payload」：加一個別名——指紋改變（candidates 沒動）
+            payload = yaml.safe_load(entry_yaml.read_text(encoding="utf-8"))
+            payload["aliases"] = list(payload.get("aliases") or []) + ["蔽罪座"]
+            entry_yaml.write_text(
+                yaml.safe_dump(payload, allow_unicode=True, sort_keys=False),
+                encoding="utf-8",
+            )
+
+            calls = []
+
+            def counting_runner(prompt):
+                calls.append(prompt)
+                return fake_runner(prompt)
+
+            result = run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=counting_runner, index={}, homonyms={},
+            )
+            self.assertEqual([], result["errors"])
+            # chapter_content 被作廢 → M6 重新呼叫模型；entry 本身 resume 不重呼叫
+            self.assertTrue(
+                any("chapter_content payload" in p for p in calls),
+                "改了 entry_content 後 chapter_content 應重生（M6 重新呼叫模型）",
+            )
+            self.assertFalse(
+                any("entry_content payload" in p for p in calls),
+                "entry payload 已存在，不該重新呼叫模型重建",
+            )
+            self.assertTrue(verse_links.exists() and chapter_content.exists())
+
 
 class MatchPayloadTests(unittest.TestCase):
     def test_accepts_translit_suffix(self):
