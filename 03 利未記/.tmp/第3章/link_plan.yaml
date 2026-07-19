@@ -1,0 +1,170 @@
+book: 利未記
+chapter: 3
+A_use_directly:
+- name: 平安祭
+  suggested_type: 神學
+  evidence: '利3:1-17 全章核心主題；CT: 平安祭條例、獻牛/羊/山羊的規定；GT: 平安祭預表基督成就和平；KC: 平安祭是自願獻祭、表達感恩與相交；BH:
+    平安祭預表基督是我們的平安（弗2:14）'
+  surfaces:
+  - phrase: 平安祭
+  - phrase: 酬恩
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 按手（samak）
+  suggested_type: 原文
+  evidence: '利3:2,8,13 獻祭者按手在供物頭上；CT: 按手表示獻祭人與祭牲合而為一；KC: 按手表達『把自己與這祭物認同、合為一』'
+  surfaces:
+  - phrase: 按手
+  match_type: exact
+  existing_title: 按手（samak）
+  existing_path: link_folder/原文/按手（samak）.md
+- name: 灑血
+  suggested_type: 主題
+  evidence: '利3:2,8,13 亞倫子孫把血灑在壇周圍；CT: 灑血是祭司的工作；KC: 血灑在壇周圍表徵基督寶血遮蓋一切罪過；BH: 血說明贖罪、赦免和除去罪（來9:22）'
+  surfaces:
+  - phrase: 把血灑在壇的周圍
+  match_type: alias
+  existing_title: 灑血（zaraq）
+  existing_path: link_folder/主題/灑血（zaraq）.md
+- name: 脂油
+  suggested_type: 原文
+  evidence: '利3:3-5,9-11,14-16 詳細列舉獻給耶和華的脂油：蓋臟的脂油、臟上所有的脂油、兩個腰子和腰子上的脂油、肝上的網子；CT: 脂油即肥肉，是牲畜體內最肥美上好的部分，要燒在壇上歸神享用；KC:
+    獻上脂油表徵奉獻生命的豐盛與最好的給神；BH: 脂油代表基督完全奉獻的內在能量，只有神能完全鑑賞'
+  surfaces:
+  - phrase: 脂油
+  - phrase: 蓋臟的脂油
+  - phrase: 臟上所有的脂油
+  match_type: alias
+  existing_title: 脂油（chelev）
+  existing_path: link_folder/原文/脂油（chelev）.md
+- name: 腰子
+  suggested_type: 原文
+  evidence: '利3:4,10,15 兩個腰子和腰子上的脂油，就是靠腰兩旁的脂油；CT: 希伯來人認為腰子、肝上的網子代表人感情的中樞；BH: 腰子是智慧的圖畫，能分辨善惡；腰子上的脂油說明基督在分辨善惡上完美的感覺'
+  surfaces:
+  - phrase: 腰子
+  - phrase: 兩個腰子
+  - phrase: 腰子上的脂油
+  match_type: alias
+  existing_title: 腰子（kilyah）
+  existing_path: link_folder/原文/腰子（kilyah）.md
+- name: 肝上的網子
+  suggested_type: 原文
+  evidence: '利3:4,10,15 肝上的網子和腰子，一概取下；CT: 肝上的網子或作『肝葉』，乃指肝上的脂油，其狀似網；BH: 肝在聖經以外三次出現（箴7:23、哀2:11、結21:21）都顯示方向感缺失，基督的方向是父的眼目'
+  surfaces:
+  - phrase: 肝上的網子
+  match_type: alias
+  existing_title: 肝上的網子（yoteret ha-kaved）
+  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+- name: 肥尾巴
+  suggested_type: 原文
+  evidence: '利3:9 綿羊的整肥尾巴都要在靠近脊骨處取下；CT: 巴勒斯坦一帶所產的羊羔，尾巴特別肥大，脂肪最多，故獻為供物；BH: 巴勒斯坦地主要品種之東方綿羊的肥尾巴，可重達48至73磅'
+  surfaces:
+  - phrase: 肥尾巴
+  - phrase: 整肥尾巴
+  - phrase: 肥尾巴都要在靠近脊骨處取下
+  match_type: alias
+  existing_title: 肥尾巴（alyah）
+  existing_path: link_folder/原文/肥尾巴（alyah）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: '利3:5,16 獻與耶和華為馨香的火祭；KC: 平安祭是神所欣悅的奉獻；BH: 基督的犧牲被描述為馨香的供獻（弗5:2）'
+  surfaces:
+  - phrase: 馨香的火祭
+  - phrase: 馨香火祭的食物
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+- name: 無殘疾
+  suggested_type: 主題
+  evidence: '利3:1,6 牛群/羊群中獻的，必用沒有殘疾的；CT: 所獻的供物應為無瑕疵的家畜；KC: 表徵奉獻給神的，必須是完好的；BH: 預表基督是無瑕疵無玷污的羔羊（彼前1:19）'
+  surfaces:
+  - phrase: 沒有殘疾的
+  match_type: alias
+  existing_title: 無殘疾（tamim）
+  existing_path: link_folder/主題/無殘疾（tamim）.md
+- name: 火祭
+  suggested_type: 主題
+  evidence: '利3:3,5,9,11,14,16 將脂油作為火祭獻給耶和華；CT: 火祭指經火焚燒；KC: 火祭表徵完全奉獻給神；BH: 火祭預表基督完全的犧牲'
+  surfaces:
+  - phrase: 火祭
+  - phrase: 獻給耶和華為火祭
+  match_type: alias
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: '利3:2,8,13 宰於會幕門口/會幕前；CT: 會幕門口是獻祭的地點；KC: 會幕門口是神與人相會的地方'
+  surfaces:
+  - phrase: 會幕門口
+  - phrase: 會幕前
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+- name: 亞倫的子孫
+  suggested_type: 人物
+  evidence: '利3:2,5,8,11,13,16 亞倫子孫作祭司的，要把血灑在壇的周圍/把這些燒在壇上；CT: 亞倫子孫是祭司，負責灑血和燒祭；KC:
+    祭司是中保，預表基督大祭司的職分'
+  surfaces:
+  - phrase: 亞倫子孫
+  - phrase: 亞倫的子孫
+  - phrase: 祭司
+  match_type: exact
+  existing_title: 亞倫的子孫
+  existing_path: link_folder/人物/亞倫的子孫.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: '利3:5 亞倫的子孫要把這些燒在壇的燔祭上；CT: 祭司每天早晨先獻燔祭，然後獻平安祭等其他的祭，故此處說燒在燔祭的上面；KC: 平安祭燒在燔祭上，特要表明平安是本著贖罪及將自己全然獻與神而來的'
+  surfaces:
+  - phrase: 燔祭
+  - phrase: 壇的燔祭上
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 搖祭
+  suggested_type: 原文
+  evidence: '利3:9-10 胸要作搖祭；KC: 搖祭表徵將祭物在神面前搖動，表示獻給神又領回來'
+  match_type: alias
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 舉祭
+  suggested_type: 原文
+  evidence: '利3:9-10 右腿要作舉祭；KC: 舉祭表徵將祭物高舉獻給神'
+  match_type: alias
+  existing_title: 舉祭（terumah）
+  existing_path: link_folder/原文/舉祭（terumah）.md
+- name: 綿羊
+  suggested_type: 主題
+  evidence: '利3:7 若獻一隻羊羔為供物；CT: 羊羔即綿羊；KC: 綿羊預表基督的溫順'
+  surfaces:
+  - phrase: 羊羔
+  match_type: exact
+  existing_title: 綿羊
+  existing_path: link_folder/主題/綿羊.md
+- name: 永遠的定例
+  suggested_type: 神學
+  evidence: '利3:17 在你們一切的住處，脂油和血都不可吃；這要成為你們世世代代永遠的定例；CT: 這是永遠的定例；KC: 神保留脂油和血的權利，因為生命在血中'
+  surfaces:
+  - phrase: 永遠的定例
+  - phrase: 世世代代永遠的定例
+  match_type: alias
+  existing_title: 永遠的定例（chuqqat olam）
+  existing_path: link_folder/神學/永遠的定例（chuqqat olam）.md
+- name: 脂油和血都不可吃
+  suggested_type: 神學
+  evidence: '利3:17 脂油和血都不可吃；CT: 獻上的或不獻之牛羊的脂油和血都不可吃；KC: 承認所有生物的生命都屬於神，嚴格禁止使用脂油和血'
+  surfaces:
+  - phrase: 脂油和血都不可吃
+  match_type: exact
+  existing_title: 脂油和血都不可吃
+  existing_path: link_folder/神學/脂油和血都不可吃.md
+B_needs_update:
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: '利3:9 從平安祭中，將火祭獻給耶和華；KC: 平安祭包括素祭（七11-13），表達感恩與奉獻'
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
