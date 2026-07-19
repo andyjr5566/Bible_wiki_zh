@@ -6254,6 +6254,17 @@
       "鋪設"
     ]
   },
+  "鐵爐（埃及為奴的比喻）": {
+    "path": "link_folder/主題/鐵爐（埃及為奴的比喻）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "鐵爐（埃及為奴的比喻）",
+    "status": "formal",
+    "aliases": [
+      "埃及鐵爐",
+      "鐵爐比喻"
+    ]
+  },
   "長大痲瘋": {
     "path": "link_folder/主題/長大痲瘋.md",
     "type": "主題",
@@ -26008,6 +26019,16 @@
       "Pi-hahiroth"
     ]
   },
+  "比悉（Bezer）": {
+    "path": "link_folder/地點/比悉（Bezer）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "比悉（Bezer）",
+    "status": "formal",
+    "aliases": [
+      "比悉"
+    ]
+  },
   "比東": {
     "path": "link_folder/地點/比東.md",
     "type": "地點",
@@ -29212,6 +29233,16 @@
       "第八誡",
       "第八條誡命",
       "不可偷盜"
+    ]
+  },
+  "不可加添也不可刪減": {
+    "path": "link_folder/神學/不可加添也不可刪減.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不可加添也不可刪減",
+    "status": "formal",
+    "aliases": [
+      "不可增減神的話"
     ]
   },
   "不可回頭看": {
@@ -35800,6 +35831,17 @@
     "status": "formal",
     "aliases": []
   },
+  "被擄分散與悔改歸回的預言": {
+    "path": "link_folder/神學/被擄分散與悔改歸回的預言.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "被擄分散與悔改歸回的預言",
+    "status": "formal",
+    "aliases": [
+      "被擄歸回預言",
+      "分散與歸回"
+    ]
+  },
   "褻瀆神的名": {
     "path": "link_folder/神學/褻瀆神的名.md",
     "type": "神學",
@@ -41306,6 +41348,12 @@
   "鋪設": {
     "alias_of": "鋪上"
   },
+  "埃及鐵爐": {
+    "alias_of": "鐵爐（埃及為奴的比喻）"
+  },
+  "鐵爐比喻": {
+    "alias_of": "鐵爐（埃及為奴的比喻）"
+  },
   "橫閂": {
     "alias_of": "閂（橫閂）"
   },
@@ -46430,6 +46478,9 @@
   "Pi-hahiroth": {
     "alias_of": "比哈希錄"
   },
+  "比悉": {
+    "alias_of": "比悉（Bezer）"
+  },
   "Pithom": {
     "alias_of": "比東"
   },
@@ -47383,6 +47434,9 @@
   },
   "第八條誡命": {
     "alias_of": "不可偷盜"
+  },
+  "不可增減神的話": {
+    "alias_of": "不可加添也不可刪減"
   },
   "不要回頭看": {
     "alias_of": "不可回頭看"
@@ -49261,6 +49315,12 @@
   },
   "血入會幕的贖罪祭": {
     "alias_of": "血入會幕的贖罪祭（肉不可吃）"
+  },
+  "被擄歸回預言": {
+    "alias_of": "被擄分散與悔改歸回的預言"
+  },
+  "分散與歸回": {
+    "alias_of": "被擄分散與悔改歸回的預言"
   },
   "Sinai Covenant": {
     "alias_of": "西乃之約"

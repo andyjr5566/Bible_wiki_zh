@@ -47,7 +47,13 @@
 5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
    - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。
 
-6. **收尾驗證與提交**
+6. **模型產出後的勘誤複核（run_chapter／link_updates 跑完、commit 前必做）**：`run_chapter.py` 的 M3（entry_content）與 M6（chapter_content 本章整理）、以及 `link_updates.py` 填的 summary／relation，都是模型依 prompt 一次生成，不是人工逐句核對過的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
+   - 抓法同 §「內容勘誤」四類高風險：模型是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
+   - 發現有誤：直接改 `chapter_content.yaml`／`entry_content/*.yaml`／`link_updates.yaml` 裡的 `organization`／`summary`／`relation` 文字，**同步改對應的 `第x章.md` 與已寫入的 `link_folder/**.md`**（兩邊要一致，不能只改其中一邊），不必整段重新呼叫模型重跑。
+   - 順手複查既有條目：本章若累積到的既有條目本身帶著更早期的錯（例如某地名被錯記成同音異義的另一地名），連同勘誤一併修正，並在 relation 裡註明勘誤依據，不要默默改。
+   - 這一步做完才進入下一步收尾驗證；驗證閘門不會幫你抓這類語意錯誤。
+
+7. **收尾驗證與提交**
    ```text
    python util/build_fhl_maps.py
    python util/check_existing_links.py 【序號 書名】/第x章.md --missing
@@ -61,7 +67,7 @@
    全 PASS（條件見 `scheme.md` §6）才 commit + push；回報只列結論數字與 D 類決策，不貼完整報告。
    `build_embedding_index.py` 必須在 `build_link_index.py` 之後跑：它只重嵌新增／變動的條目（沿用其餘），耗時通常幾秒。**這步不可略過**——本章新條目沒進索引，下一章的候選近鄰報告就查不到它們，而且是靜默失效；步驟7 的 check_chapter_files 會用雜湊比對驗證索引同步（`build_embedding_index.py --check` 可單獨驗，不打網路）。
 
-7. **檔案完整性驗證**（commit 前的最後把關）
+8. **檔案完整性驗證**（commit 前的最後把關）
    ```text
    python util/check_chapter_files.py 【書名】 X
    ```
@@ -77,6 +83,7 @@
 ## 行為邊界（內容層，程式無法代勞）
 
 - 一切內容由已收集資料驅動：candidates、summary/relation、條目敘述都必須能對回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
+- **run_chapter／link_updates 產出後，agent 必須以四來源為基準逐條複核，不可假設模型一次生成的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
 - **英文來源（KingComments、BibleHub）引用時要譯成繁體中文**，不可整段貼英文原文——本檔開頭已訂「所有輸出用繁體中文」。譯文仍要保留引號與出處（KC：「燔祭一切的價值，就彷彿轉到了他、就是獻祭者身上。」），不要因為要翻譯就退回「KC 指出…」的摘要體。只有在原文用字本身就是重點時（如原文區分 'to burn' 與 'to offer up in smoke'）才以括號附註原文。
 - 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
 - 檔案改名一律用 `python util/rename_markdown.py <src> <dst> [--dry-run]`（會同步全庫 WikiLink）。
