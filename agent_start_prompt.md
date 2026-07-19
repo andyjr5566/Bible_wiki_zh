@@ -9,7 +9,8 @@
    - 每個補充來源（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL（禁止硬猜），執行：
      `python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"`
      已存在的 raw_data 檔直接沿用，不加 `--overwrite`。
-   - 檢查每份 raw text 是否為本章有效內容（404／目錄頁／亂碼／無關＝無效），寫 `source_manifest.md`（表格欄位：來源｜類型｜URL｜raw_data 檔案｜狀態）。狀態 OK 者才會被程式使用；無效來源照實記錄。
+   - **不要手寫 `source_manifest.md`**，改用：`python util/build_source_manifest.py 【書名】 X`（位址規則在 `_config/source_catalog.json`，新書卷先補一列 cc_folder／kc／en）。它依規則產生四來源、raw_data 路徑一律帶 `raw_data/` 前綴，並依檔案是否存在標 OK／缺檔。標「缺檔」就先 `crawl_bible_text.py` 補爬。
+   - run_chapter 的 M3／M6 生成前會檢查來源讀得到；manifest 宣告 OK 卻讀不到任何 raw_data 檔就丟 `SourceError` 中止（防止空來源生成）。照訊息修 manifest 或補 raw_data 再重跑。
 
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
    - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。

@@ -90,6 +90,11 @@ class OrchestratorTests(unittest.TestCase):
         )
         for group in ("原文", "神學"):
             (root / "link_folder" / group).mkdir(parents=True)
+        # M3/M6 的來源護欄要求 manifest 宣告的 raw_data 檔案實際存在
+        (root / "raw_data").mkdir(parents=True, exist_ok=True)
+        (root / "raw_data" / "biblehub_study_exodus_26.txt").write_text(
+            "BH：施恩座（kapporet）是法櫃的蓋子，神與人相會之處。", encoding="utf-8"
+        )
         tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
         tmp_dir.mkdir(parents=True)
         (tmp_dir / "source_manifest.md").write_text(MANIFEST, encoding="utf-8")

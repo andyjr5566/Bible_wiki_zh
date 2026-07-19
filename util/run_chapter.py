@@ -554,6 +554,9 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     owners = _alias_owners(index, planned_names, payloads)
     if pending:
         _log(f"▶ M3 entry_content：{len(pending)} 個條目待建（每批 {batch_size} 個）")
+    if pending:
+        # 護欄：真的要呼叫模型前，確認來源讀得到；空來源會讓模型杜撰條目內容
+        source_excerpts.require_sources(ctx.path("source_manifest.md"), ctx.root)
     last_errors = {}
     for round_num in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
         failed, feedback = [], None
@@ -970,6 +973,8 @@ def _extract_chapter_payload(text):
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
     if not out_path.exists():
+        # 護欄：本章整理要呼叫模型前，確認來源讀得到；空來源會讓模型杜撰註釋
+        source_excerpts.require_sources(ctx.path("source_manifest.md"), ctx.root)
         _log("▶ M6 chapter_content：本章整理呼叫模型中…")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))

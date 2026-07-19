@@ -1,0 +1,8 @@
+{
+  "_note": "各書卷四來源的位址規則，供 util/build_source_manifest.py 程式化產生 source_manifest.md。cc_folder=ccbiblestudy 資料夾（前導數字＝檔名前綴，章號補零兩位）；kc=KingComments 縮寫（章號不補零）；en=BibleHub／raw_data 用的英文小寫（章號不補零）。新增書卷時照樣補一列即可。",
+  "創世記":   {"cc_folder": "01Gen",  "kc": "Gen", "en": "genesis"},
+  "出埃及記": {"cc_folder": "02Exo",  "kc": "Exo", "en": "exodus"},
+  "利未記":   {"cc_folder": "03Lev",  "kc": "Lev", "en": "leviticus"},
+  "民數記":   {"cc_folder": "04Num",  "kc": "Num", "en": "numbers"},
+  "申命記":   {"cc_folder": "05Deut", "kc": "Deu", "en": "deuteronomy"}
+}

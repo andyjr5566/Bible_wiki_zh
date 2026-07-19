@@ -35,13 +35,64 @@ def _manifest_rows(manifest_path):
     return rows
 
 
+class SourceError(RuntimeError):
+    """source_manifest 宣告了 OK 來源、但實際讀不到任何 raw_data 檔時拋出。
+
+    最典型成因：manifest 第4欄漏寫 `raw_data/` 前綴（裸檔名），舊版 parse_manifest
+    會靜默丟棄整列 → M3/M6 拿到空來源、模型只能憑訓練知識杜撰註釋。此例外讓這種
+    「閘門全過但內容其實沒讀到來源」的靜默失效當場爆出來。
+    """
+
+
 def parse_manifest(manifest_path, root):
-    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。"""
-    return [
-        (label, Path(root) / rel_path)
-        for label, _kind, _url, rel_path in _manifest_rows(manifest_path)
-        if rel_path.startswith("raw_data") and rel_path.endswith(".txt")
-    ]
+    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。
+
+    第4欄可寫 `raw_data/xxx.txt` 或裸檔名 `xxx.txt`（裸檔名一律歸到 raw_data/ 下）。
+    非 raw_data 的 .txt（如 raw_scripture/… 的經文本文列）不算註釋來源，略過。
+    """
+    root = Path(root)
+    sources = []
+    for label, _kind, _url, rel_path in _manifest_rows(manifest_path):
+        if not rel_path.endswith(".txt"):
+            continue
+        parts = Path(rel_path).parts
+        if parts and parts[0] == "raw_data":
+            resolved = root / Path(rel_path)
+        elif len(parts) == 1:  # 裸檔名 → 補 raw_data/ 前綴
+            resolved = root / "raw_data" / parts[0]
+        else:  # 其它相對路徑（raw_scripture/… 經文本文等）不是註釋來源
+            continue
+        sources.append((label, resolved))
+    return sources
+
+
+def require_sources(manifest_path, root):
+    """M3/M6 生成前的護欄：回傳可用來源；宣告了 OK 來源卻一個都讀不到就報錯。
+
+    回傳存在於磁碟的 [(label, Path)]。若 manifest 宣告了 OK 來源、但解析後沒有
+    任何檔案存在，拋 SourceError 並指明最可能的成因與修法——避免模型在空來源下
+    生成、卻一路通過結構閘門（申命記 1-6 的杜撰註釋即此因）。
+    """
+    declared = parse_manifest(manifest_path, root)
+    present = [(label, path) for label, path in declared if Path(path).exists()]
+    if declared and not present:
+        sample = declared[0][1]
+        raise SourceError(
+            f"source_manifest.md 宣告了 {len(declared)} 個 OK 來源，但解析後沒有任何"
+            f"檔案存在（例：{sample}）。最可能成因：manifest 第4欄漏寫 raw_data/ "
+            f"前綴或檔名有誤，raw_data 尚未爬取。M3/M6 需要來源全文，已中止以免"
+            f"用空來源杜撰內容。請用 util/build_source_manifest.py 重新產生 manifest，"
+            f"或確認 raw_data/ 下有對應 .txt 後重跑。\n  manifest：{manifest_path}"
+        )
+    missing = [path for label, path in declared if not Path(path).exists()]
+    if missing:
+        joined = "、".join(str(p.name) for p in missing)
+        raise SourceError(
+            f"source_manifest.md 有 {len(missing)} 個 OK 來源檔讀不到：{joined}。"
+            f"部分來源缺檔會讓該來源的觀點在 M3/M6 靜默消失。請補齊 raw_data 或把"
+            f"該列狀態改為非 OK 後重跑。\n  manifest：{manifest_path}"
+        )
+    return present
 
 
 def manifest_urls(manifest_path):
