@@ -10024,6 +10024,16 @@
     "status": "formal",
     "aliases": []
   },
+  "供物（qorban）": {
+    "path": "link_folder/原文/供物（qorban）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "供物（qorban）",
+    "status": "formal",
+    "aliases": [
+      "各耳板"
+    ]
+  },
   "便俄尼名字含義": {
     "path": "link_folder/原文/便俄尼名字含義.md",
     "type": "原文",
@@ -17315,6 +17325,17 @@
       "祭司的職分"
     ]
   },
+  "沒有殘疾的祭牲": {
+    "path": "link_folder/神學/沒有殘疾的祭牲.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "沒有殘疾的祭牲",
+    "status": "formal",
+    "aliases": [
+      "無瑕疵的祭牲",
+      "完全的祭牲"
+    ]
+  },
   "法老心剛硬": {
     "path": "link_folder/神學/法老心剛硬.md",
     "type": "神學",
@@ -17481,6 +17502,17 @@
     "status": "formal",
     "aliases": [
       "全燔祭"
+    ]
+  },
+  "燔祭祭牲的貧富分級": {
+    "path": "link_folder/神學/燔祭祭牲的貧富分級.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "燔祭祭牲的貧富分級",
+    "status": "formal",
+    "aliases": [
+      "三級燔祭",
+      "供物分級"
     ]
   },
   "父親偏愛與家庭破裂": {
@@ -19705,6 +19737,17 @@
     "title": "古代近東當頭制度",
     "status": "formal",
     "aliases": []
+  },
+  "古代近東的獻祭與燔祭習俗": {
+    "path": "link_folder/背景/古代近東的獻祭與燔祭習俗.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的獻祭與燔祭習俗",
+    "status": "formal",
+    "aliases": [
+      "古近東獻祭背景",
+      "燔祭古近東平行"
+    ]
   },
   "古代近東社會弱勢群體": {
     "path": "link_folder/背景/古代近東社會弱勢群體.md",
@@ -23429,6 +23472,9 @@
   "何西阿三章": {
     "alias_of": "何3（Hoshea 3）"
   },
+  "各耳板": {
+    "alias_of": "供物（qorban）"
+  },
   "便俄尼": {
     "alias_of": "便俄尼名字含義"
   },
@@ -25376,6 +25422,12 @@
   "祭司的職分": {
     "alias_of": "永遠當祭司的職任"
   },
+  "無瑕疵的祭牲": {
+    "alias_of": "沒有殘疾的祭牲"
+  },
+  "完全的祭牲": {
+    "alias_of": "沒有殘疾的祭牲"
+  },
   "hardening of Pharaoh's heart": {
     "alias_of": "法老心剛硬"
   },
@@ -25435,6 +25487,12 @@
   },
   "全燔祭": {
     "alias_of": "燔祭"
+  },
+  "三級燔祭": {
+    "alias_of": "燔祭祭牲的貧富分級"
+  },
+  "供物分級": {
+    "alias_of": "燔祭祭牲的貧富分級"
   },
   "Sacrifice and worship": {
     "alias_of": "獻祭敬拜"
@@ -25984,6 +26042,12 @@
   },
   "漢摩拉比法典": {
     "alias_of": "古代近東法典"
+  },
+  "古近東獻祭背景": {
+    "alias_of": "古代近東的獻祭與燔祭習俗"
+  },
+  "燔祭古近東平行": {
+    "alias_of": "古代近東的獻祭與燔祭習俗"
   },
   "古代祭壇": {
     "alias_of": "古代近東祭壇"

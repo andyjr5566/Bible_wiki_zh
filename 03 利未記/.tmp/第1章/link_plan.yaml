@@ -1,0 +1,156 @@
+book: 利未記
+chapter: 1
+A_use_directly: []
+B_needs_update:
+- name: 燔祭
+  suggested_type: 神學
+  evidence: 利1章通篇為燔祭條例，v3,4,6,9,10,12,13,14,17反覆出現「燔祭」。CT/GT/KC/BH均以此為核心：燔祭全然焚燒歸神，預表基督完全獻上自己（弗5:2；來10:5-10）。既有條目「燔祭」已累積創8、創22、出20、出29，本章是利未記正式祭禮制度的核心條例。
+  surfaces:
+  - phrase: 燔祭
+    verses:
+    - 3
+    - 4
+    - 6
+    - 9
+    - 10
+    - 12
+    - 13
+    - 14
+    - 17
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 按手（samak）
+  suggested_type: 原文
+  evidence: 利1:4「他要按手在燔祭牲的頭上，燔祭便蒙悅納，為他贖罪」。既有條目「按手（samak）」的定義與來源依據已明確預留利未記1章的獻祭程序，尚未累積。CT：按手表示獻祭的人與所獻的祭牲合而為一；KC：按手用意是與祭牲認同。
+  surfaces:
+  - phrase: 按手
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 按手（samak）
+  existing_path: link_folder/原文/按手（samak）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: v9,13,17「獻與耶和華為馨香的火祭」。既有條目「馨香之氣」源自創8:21，主題發展預期擴及利未記各祭。CT/GT均解「馨香」為神悅納祭物與獻祭者之心的擬人化描寫。
+  surfaces:
+  - phrase: 馨香
+    verses:
+    - 9
+    - 13
+    - 17
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v5,7,8,9,11,12,13,15,16,17多次出現「壇」，含壇的方位（北邊宰殺v11、東邊倒灰v16）與四面配置的實際使用場景。既有條目「銅壇（燔祭壇）」已累積出27、出38構造細節，本章補其獻祭時的實際使用方式與方位安排。
+  surfaces:
+  - phrase: 壇
+    verses:
+    - 5
+    - 7
+    - 8
+    - 9
+    - 11
+    - 12
+    - 13
+    - 15
+    - 16
+    - 17
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: v3,5「會幕門口」為獻祭牲、灑血之處。既有條目「會幕門口」已累積出29，本章補獻燔祭的地點功能。
+  surfaces:
+  - phrase: 會幕門口
+    verses:
+    - 3
+    - 5
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: v5,7,8,11「亞倫子孫作祭司的」「祭司亞倫的子孫」，v9,12,13,15,17泛稱「祭司」。GT明確指出宰殺祭牲是獻祭之人的工作，奉血灑血則是祭司的工作——本章首次清楚劃分獻祭者與祭司的職責分工。
+  surfaces:
+  - phrase: 亞倫子孫
+    verses:
+    - 5
+    - 8
+    - 11
+  - phrase: 祭司亞倫的子孫
+    verses:
+    - 7
+  - phrase: 祭司
+    verses:
+    - 9
+    - 12
+    - 13
+    - 15
+    - 17
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 血的尊重
+  suggested_type: 神學
+  evidence: v5,11,15記載血的灑血/流血儀式。GT明確引利17:11解釋v5：「血中有生命，故能夠贖罪」，與既有條目「血的尊重」（創9:4）主張的「生命在血中」神學一致，且該條目已預列利未記17章為待累積聖經出現，本章補血在燔祭儀式中的贖罪功能一環。
+  surfaces:
+  - phrase: 血
+    verses:
+    - 5
+    - 11
+    - 15
+  match_type: exact
+  existing_title: 血的尊重
+  existing_path: link_folder/神學/血的尊重.md
+C_new_formal:
+- name: 供物（qorban）
+  suggested_type: 原文
+  evidence: v2,3,10,14反覆出現「供物」。CT/GT/BH/啟導本/雷氏研讀本均獨立解釋原文字根 qorban（קָרְבָּן）意為「攜近」，指攜近祭壇獻給神的禮物；GT並指出這是人藉以親近神的東西，是理解利未記五祭的關鍵原文詞彙，值得建立原文條目供後續章節累積。
+  surfaces:
+  - phrase: 供物
+    verses:
+    - 2
+    - 3
+    - 10
+    - 14
+  target_path: link_folder/原文/供物（qorban）.md
+- name: 沒有殘疾的祭牲
+  suggested_type: 神學
+  evidence: v3,10「沒有殘疾的公牛」「沒有殘疾的公羊」。CT：預表主耶穌的完全無過，神為主耶穌預備了一個身體、無保留無瑕疵完全獻給神（來九14；十5~10）；啟導本：完美的才可代贖有罪與不完全的人。此要求貫穿利未記獻祭條例（後續利22:17-25等再現），值得建立神學條目追蹤。
+  surfaces:
+  - phrase: 沒有殘疾
+    verses:
+    - 3
+    - 10
+  target_path: link_folder/神學/沒有殘疾的祭牲.md
+- name: 燔祭祭牲的貧富分級
+  suggested_type: 神學
+  evidence: v3公牛、v10綿羊或山羊、v14斑鳩或雛鴿，三級祭牲依獻祭者財力遞減。啟導本：「各人按著各人的貧富可以隨意供獻，財主有時獻許多的燔祭，但最貧窮的人也有可獻的」；KC：貧窮但獻上鳥的人所獻上的一樣是「馨香的火祭」，神悅納的不看祭物大小而看甘心的程度；串珠：富者獻牛犢、中等家庭獻羊、窮人獻飛禽。此分級制度後續在利5:7-13贖罪祭、利12:8產婦祭、利14:21-22痲瘋潔淨祭中重複出現，並在路2:24瑪利亞約瑟獻兩隻雛鴿呼應，值得建立神學條目追蹤貧富平等蒙悅納的主題。
+  target_path: link_folder/神學/燔祭祭牲的貧富分級.md
+  semantic_hint:
+  - title: 燔祭（olah）
+    score: 0.433
+    type: 原文
+  - title: 燔祭
+    score: 0.431
+    type: 神學
+- name: 古代近東的獻祭與燔祭習俗
+  suggested_type: 背景
+  evidence: GT／《舊約聖經背景註釋》對v1-2、v3多處補充古代近東比較材料：古代近東祭司也宣稱儀式來自神明，但利未記自稱為神的啟示這點特殊；獻祭最早證據來自主前第四千年紀美索不達米亞烏拜德時代的祭壇；蘇美文學顯示獻祭原是使人可以食肉的儀式化屠宰；敘利亞（烏加列、阿拉拉赫）與安那托利亞（赫人）文獻證實燔祭習俗，但埃及和美索不達米亞至今未發現獻燔祭的證據；公牛雖貴重但因牛群僅需少數公牛維持繁殖，故公牛較適於獻祭。此為理解利未記獻祭制度在古代近東脈絡中特殊性的重要背景資料。
+  target_path: link_folder/背景/古代近東的獻祭與燔祭習俗.md
+  semantic_hint:
+  - title: 古代近東祭壇
+    score: 0.534
+    type: 背景
+  - title: 燔祭
+    score: 0.53
+    type: 神學
+  - title: 古代近東婚姻習俗
+    score: 0.529
+    type: 歷史
+D_new_candidate: []
+E_skip: []
