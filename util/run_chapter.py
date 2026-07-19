@@ -645,6 +645,30 @@ def _org_wikilink_targets(organization):
     }
 
 
+def _org_bare_created_link_errors(org_text, allowed_links, created_names):
+    """散文用「本章新建條目的裸名」連結，而該條目實建成帶後綴全名——
+    只靠 alias 巧合才不斷鏈，且與知識節點清單的全名不一致（申3 實例：
+    散文寫 [[黑門山]]、實建條目卻是 [[黑門山（Hermon）]]）。
+
+    這道規則機械可證且全庫實測 0 誤報：跨章既有條目引用（散文合法連別章
+    條目）不具「裸名對不上白名單、但『裸名（…）』正是本章實建條目」這個特徵，
+    所以不受影響——別把它擴成「散文只能連本章條目」的嚴格版（那會誤報 42 章
+    合法跨章連結）。表格內不能帶別名，改寫 [[全名]]；散文寫 [[全名|裸名]]。
+    """
+    unknown = _org_wikilink_targets(org_text) - set(allowed_links or [])
+    errors = []
+    for bare in sorted(unknown):
+        for full in created_names:
+            if full.startswith(f"{bare}（") or full.startswith(f"{bare}("):
+                errors.append(
+                    f"散文用裸名 [[{bare}]] 連本章新建條目，須改為 "
+                    f"[[{full}|{bare}]]（表格格內用 [[{full}]]）"
+                    f"——裸名只靠 alias 巧合解析，與知識節點的全名不一致"
+                )
+                break
+    return errors
+
+
 _ORG_NON_PROSE_RE = re.compile(r"^\s*(?:#{1,6}\s|>|\||[-*+]\s|\d+[.、)]\s?)")
 
 
@@ -919,6 +943,15 @@ def chapter_content_step(ctx, plan):
         label="chapter_content", normalize=_normalize, task="chapter",
         extract=_extract_chapter_payload,
     )
+    # 手寫／resume 的 payload 不會經過 call_model 的 validate（_model_step 對既有檔
+    # 直接回傳），勘誤／人工撰寫路徑因此整個繞過上面的連結白名單檢查。這裡對最終
+    # payload 補跑「裸名連本章新條目」這道 0 誤報硬規則，讓人工路徑也守得住。
+    if payload is not None:
+        org = render_chapter.coerce_organization(payload.get("organization"))
+        org, _ = render_chapter.split_references(org)
+        org_text, _ = _org_split_fences(org)
+        for err in _org_bare_created_link_errors(org_text, allowed_links, created):
+            ctx.manual_review.append(f"chapter_content：{err}")
     return _inject_references(ctx, out_path, payload)
 
 

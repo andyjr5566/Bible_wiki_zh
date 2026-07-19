@@ -1,50 +1,8 @@
 {
-  "total_warnings": 93,
+  "total_warnings": 87,
   "critical_count": 0,
-  "warning_count": 93,
+  "warning_count": 87,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "亞珥歌伯",
-      "message": "同一 alias「亞珥歌伯」指向多個 target: 亞珥歌伯, 亞珥歌伯（Argob）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "黑門山",
-      "message": "同一 alias「黑門山」指向多個 target: 黑門山, 黑門山（Hermon）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "基述人",
-      "message": "同一 alias「基述人」指向多個 target: 基述人, 基述人（Geshurites）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "瑪迦人",
-      "message": "同一 alias「瑪迦人」指向多個 target: 瑪迦人, 瑪迦人（Maacathites）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "瑪吉",
-      "message": "同一 alias「瑪吉」指向多個 target: 瑪吉, 瑪吉（Machir）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第3章.md",
-      "target": "伯毘珥",
-      "message": "同一 alias「伯毘珥」指向多個 target: 伯毘珥, 伯毘珥（Beth-peor）"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

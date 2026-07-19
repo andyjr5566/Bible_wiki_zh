@@ -745,5 +745,44 @@ class ChapterExtractorTests(unittest.TestCase):
         self.assertIn("ORGANIZATION", str(ctx.exception))
 
 
+class BareCreatedLinkGuardTest(unittest.TestCase):
+    """散文用「本章新建條目裸名」連結的收窄檢查——申3 實例（黑門山 vs 黑門山（Hermon））。
+
+    這道護欄補 _model_step 對既有檔跳過驗證的洞：手寫／勘誤路徑的 chapter_content
+    也要守住。收窄到「裸名對不上白名單、但『裸名（…）』正是本章實建條目」——
+    全庫實測 0 誤報，跨章既有條目引用不受影響。
+    """
+
+    CREATED = ["黑門山（Hermon）", "亞珥歌伯（Argob）", "瑪吉（Machir）"]
+    ALLOWED = ["巴珊", "摩西"] + CREATED  # A/B 既有 + 本章實建全名
+
+    def test_bare_name_of_created_entry_flagged(self):
+        org = "摩西過[[黑門山]]，把[[亞珥歌伯]]給[[瑪吉]]。"
+        errs = run_chapter._org_bare_created_link_errors(org, self.ALLOWED, self.CREATED)
+        self.assertEqual(len(errs), 3)
+        self.assertTrue(all("本章新建條目" in e for e in errs))
+        joined = "\n".join(errs)
+        self.assertIn("[[黑門山（Hermon）|黑門山]]", joined)
+
+    def test_full_name_links_pass(self):
+        org = "摩西過[[黑門山（Hermon）|黑門山]]，安置[[瑪吉（Machir）]]。"
+        self.assertEqual(
+            run_chapter._org_bare_created_link_errors(org, self.ALLOWED, self.CREATED), []
+        )
+
+    def test_cross_chapter_reference_not_flagged(self):
+        # 散文合法連別章既有條目／經文——不具「裸名（…）是本章實建」特徵，不可誤報
+        org = "呼應[[亞伯拉罕之約的應驗]]，參[[43 約翰福音/第1章]]、[[雅博]]。"
+        self.assertEqual(
+            run_chapter._org_bare_created_link_errors(org, self.ALLOWED, self.CREATED), []
+        )
+
+    def test_no_created_entries_is_noop(self):
+        org = "摩西過[[黑門山]]。"
+        self.assertEqual(
+            run_chapter._org_bare_created_link_errors(org, ["巴珊"], []), []
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
