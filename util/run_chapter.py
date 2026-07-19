@@ -347,7 +347,10 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
         f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
         f"- type 欄位必須正好是該條目的分類（如 原文、神學），不是詞性——不可寫 word、noun。\n"
         f"- name：原文類用「中文（希伯來音譯）」，其餘用簡明中文；切勿把分類當音譯"
-        f"寫成「X（原文）」。找不到音譯就用裸中文名。\n"
+        f"寫成「X（原文）」。音譯拼寫必須是上述來源文字中實際出現過的；"
+        f"來源沒給音譯就用裸中文名，不可憑聖經知識自行補配。\n"
+        f"- definition 裡的希伯來字母寫法／音譯同樣必須出現在上述來源中，"
+        f"來源沒給就不要寫（程式會逐字驗證希伯來字母的出處，查無出處會退回）。\n"
         f"- status 一律 formal。accumulations 是「物件陣列」，每項含 book、chapter、"
         f"summary、relation 四欄，且至少含本章（{ctx.book} 第{ctx.chapter}章）一筆、同章只給一筆。\n"
         f"- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）："
@@ -444,6 +447,32 @@ def _entry_alias_errors(entry, payload, owners):
     return errors
 
 
+def _strip_conflicting_aliases(entry, payload, owners):
+    """撞名的 alias 直接從 payload 剔除，回傳 [(alias, owner)] 供通知。
+
+    利2 實例：模型幫「素祭（minchah）」配 alias「禮物」（撞「禮物（terumah）」）、
+    「紀念份」配「記念」（撞「記念我的約」），錯誤回饋重試兩輪模型照配不誤，
+    整批條目跟著卡住。alias 是程式層的索引輔助資料、不是內容——衝突的 alias
+    唯一正解就是移除，與其叫模型重做（實測會反覆失敗、白燒呼叫），不如程式
+    直接剔除＋manual_review 通知，比照 related_entries「無對應條目，已移除」
+    的既有先例。判斷邏輯與 _entry_alias_errors 同一套，僅把「報錯」換成「動手」。
+    """
+    own = {
+        render_entry.safe_name(str(payload.get("name", ""))),
+        render_entry.safe_name(entry["name"]),
+    }
+    kept, dropped = [], []
+    for alias in payload.get("aliases") or []:
+        owner = owners.get(render_entry.safe_name(str(alias)))
+        if owner and owner not in own:
+            dropped.append((str(alias), owner))
+        else:
+            kept.append(alias)
+    if dropped:
+        payload["aliases"] = kept
+    return dropped
+
+
 def _alias_owners(index, planned_names, payloads):
     """名稱／alias（safe_name 後）→ 擁有者條目名，供 alias 衝突驗證。
 
@@ -500,7 +529,12 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
         verrs = render_entry.validate_payload(payload, known_types=known)
         verrs.extend(_entry_source_errors(payload, allowed_urls, url_kinds))
         if owners is not None:
-            verrs.extend(_entry_alias_errors(entry, payload, owners))
+            # 撞名 alias 程式直接剔除（不再退回模型重試——實測模型會反覆配回來）
+            for alias, owner in _strip_conflicting_aliases(entry, payload, owners):
+                ctx.manual_review.append(
+                    f"entry_content:{entry['name']}：alias「{alias}」已屬於條目"
+                    f"「{owner}」，已自動移除（僅通知，無需動作）"
+                )
         if verrs:
             errors[entry["name"]] = "；".join(verrs)
             continue
@@ -852,7 +886,55 @@ def _mermaid_type(body):
     return ""
 
 
-def _chapter_payload_validator(verse_count, allowed_links=None):
+def _allowed_alias_map(ctx, allowed_links):
+    """alias → 白名單條目全名（只收白名單條目的別名，供 M6 連結自動改寫）。
+
+    既有條目（A/B）的 alias 取自全庫索引；C 類新條目尚未進索引，其 aliases
+    從本章 entry_content payload 檔取得。alias 本身也是白名單條目名時不收
+    （不存在改寫需求，且避免自我覆蓋）。
+    """
+    allowed = set(allowed_links or [])
+    if not allowed:
+        return {}
+    amap = {}
+    index = ctx.index if ctx.index is not None else resolver.load_index()
+    for key, info in (index or {}).items():
+        if isinstance(info, dict):
+            owner = info.get("alias_of")
+            if owner and owner in allowed and key not in allowed:
+                amap[key] = owner
+    for name, aliases in _payload_aliases(ctx).items():
+        if name in allowed:
+            for alias in aliases:
+                if alias not in allowed:
+                    amap.setdefault(alias, name)
+    return amap
+
+
+def _rewrite_alias_links(organization, alias_map):
+    """[[alias]]／[[alias|顯示]] → [[全名|alias]]／[[全名|顯示]]。
+
+    利2 實例：M6 模型寫 [[鹽約]]，鹽約是白名單條目「立約的鹽」的合法 alias——
+    resolver 與 verify_links 都認得，Obsidian 卻不認（alias 不解析連結目標），
+    渲染出去就是斷鏈；而白名單驗證把它當未知目標退回重試，模型多輪照寫。
+    alias→全名 對照既已在索引裡，這是機械可證的改寫，程式直接代勞。
+    帶 #／^ 錨點的目標不改寫（改寫會丟錨點，此情形交白名單驗證照常報錯）。
+    """
+    def repl(match):
+        inner = match.group(1)
+        target, sep, display = inner.partition("|")
+        target = target.strip()
+        if "#" in target or "^" in target:
+            return match.group(0)
+        owner = alias_map.get(target)
+        if not owner:
+            return match.group(0)
+        return f"[[{owner}|{display if sep else target}]]"
+
+    return _ORG_WIKILINK_RE.sub(repl, organization)
+
+
+def _chapter_payload_validator(verse_count, allowed_links=None, alias_map=None):
     """份量門檻＋散文主幹門檻＋（allowed_links 給定時）wiki-link 白名單檢查。
 
     體裁自由（表格／清單／callout／高亮／mermaid 圖表隨材料用），但兩頭有欄杆：
@@ -865,6 +947,12 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
 
     def validate(payload):
         errors = render_chapter.validate_chapter_content(payload)
+        if alias_map and isinstance(payload.get("organization"), str):
+            # 目標是白名單條目 alias 的連結，先機械改寫成 [[全名|原詞]] 再驗——
+            # 這類「resolver 認得、Obsidian 不認得」的連結退回模型重試也修不好
+            payload["organization"] = _rewrite_alias_links(
+                payload["organization"], alias_map
+            )
         organization, _ = render_chapter.split_references(
             render_chapter.coerce_organization(payload.get("organization"))
         )
@@ -924,7 +1012,9 @@ def _chapter_payload_validator(verse_count, allowed_links=None):
                 errors.append(
                     f"organization 的 wiki-link 目標不在本章可連清單："
                     f"{'、'.join(unknown)}——只能連本章條目的完整名稱，"
-                    f"行文用詞不同時寫 [[完整條目名|行文用詞]]"
+                    f"行文用詞不同時寫 [[完整條目名|行文用詞]]；"
+                    f"清單裡沒有對應條目的概念，去掉 [[ ]] 用純文字寫即可，"
+                    f"不要硬造連結目標"
                 )
             if not targets:
                 errors.append(
@@ -1017,7 +1107,12 @@ def chapter_content_step(ctx, plan):
         f"- 這是 Obsidian 筆記庫：行文首次提到本章條目時用 wiki-link 連結，"
         f"用詞不同寫 [[完整條目名|行文用詞]]，之後再提不必重連；至少要有一個連結，"
         f"且目標只能取自本章可連條目："
-        f"{'、'.join(allowed_links) or '（本章無可連條目）'}——不可連清單外的目標。\n"
+        f"{'、'.join(allowed_links) or '（本章無可連條目）'}——不可連清單外的目標；"
+        f"清單裡沒有對應條目的概念（vault 裡存在與否都一樣），"
+        f"直接用純文字提及即可，不要加 [[ ]]。\n"
+        f"- 所有輸出用繁體中文：引用英文來源（KingComments、BibleHub）時必須"
+        f"譯成繁體中文再以「」直接引，不可整段貼英文原文；只有原文用字本身是"
+        f"重點時，才以括號附註原文詞。\n"
         f"- 內容只能出自上面的經文與來源；整合重點而非搬運來源全文。\n"
         f"- 表格儲存格內不可放帶別名的 wiki-link：[[目標|別名]] 在表格裡要跳脫成 "
         f"\\|，渲染後變成 [[目標\\]] 斷鏈（程式會擋）。表格內請用不帶別名的 "
@@ -1084,7 +1179,9 @@ def chapter_content_step(ctx, plan):
 
     payload = _model_step(
         ctx, out_path, prompt,
-        validate=_chapter_payload_validator(len(raw_verses), allowed_links),
+        validate=_chapter_payload_validator(
+            len(raw_verses), allowed_links, _allowed_alias_map(ctx, allowed_links)
+        ),
         label="chapter_content", normalize=_normalize, task="chapter",
         extract=_extract_chapter_payload,
     )
@@ -1454,6 +1551,156 @@ def _unfileable_candidate_errors(ctx):
     return errors
 
 
+_HEBREW_RUN_RE = re.compile(r"[א-ת][א-ת֑-ׇװ-״]*")
+_HEBREW_MARKS_RE = re.compile(r"[֑-ׇ]")
+
+
+def _chapter_source_corpus(ctx):
+    """本章四來源 raw 檔＋經文的合併全文（不截斷），供「出處查證」類檢查比對。
+
+    讀不到 manifest 或任何來源檔（如純測試環境）→ 回 None，相關檢查不啟用。
+    刻意不用 full_source_text（它對大章節會等比截斷，截掉的部分會造成假性
+    「查無出處」誤報），直接讀原檔。
+    """
+    manifest = ctx.path("source_manifest.md")
+    if not manifest.exists():
+        return None
+    try:
+        sources = source_excerpts.parse_manifest(manifest, ctx.root)
+    except Exception:
+        return None
+    parts = []
+    for _label, path in sources:
+        if Path(path).exists():
+            parts.append(Path(path).read_text(encoding="utf-8"))
+    if not parts:
+        return None
+    try:
+        parts.append("\n".join(ctx.raw_verses()))
+    except FileNotFoundError:
+        pass
+    return "\n".join(parts)
+
+
+def _unsourced_hebrew_errors(ctx):
+    """payload 裡的希伯來字母必須在本章 raw 來源出現過——查無出處＝憑訓練知識補配。
+
+    利1「沒有殘疾的祭牲」被塞入查無出處的 tāmîm、利2「素祭（minchah）」definition
+    被塞入來源沒給的希伯來字母 מִנְחָה——模型（有時是人工）會幫原文類條目配上
+    「反正是對的」的希伯來寫法，但鐵律是「內容只能出自 rawdata」，音譯／字母
+    寫法也不例外。比對前先去除注音符號（niqqud，U+0591–U+05C7），來源給無注音
+    形式、payload 寫注音形式（或反過來）不算錯。
+
+    判準是純機械的子字串比對（字母序列在／不在來源裡），不涉推測，故列 error。
+    全庫實測（93 個 .tmp 章節）命中 18 筆、0 誤報——逐一 grep 證實對應 raw 檔
+    連一個希伯來字元都沒有（創47 מטה、出28-30 祭司聖衣／膏油／香的原文、
+    利1 קרבן），全是同一失敗模式的歷史真陽性，已循勘誤路徑修除。
+    """
+    corpus = _chapter_source_corpus(ctx)
+    if corpus is None:
+        return []
+    corpus_stripped = _HEBREW_MARKS_RE.sub("", corpus)
+    targets = [ctx.path("link_candidates.yaml"), ctx.path("chapter_content.yaml")]
+    out_dir = ctx.path("entry_content")
+    if out_dir.exists():
+        targets.extend(sorted(out_dir.glob("*.yaml")))
+    errors = []
+    for path in targets:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for run in sorted(set(_HEBREW_RUN_RE.findall(text))):
+            stripped = _HEBREW_MARKS_RE.sub("", run)
+            if stripped and stripped not in corpus_stripped:
+                errors.append(
+                    f"{path.name}: 希伯來字「{run}」在本章來源與經文中查無出處——"
+                    f"來源沒給的原文寫法不可寫入（即使拼寫正確），請整段拔除，"
+                    f"只保留來源實際出現的形式"
+                )
+    return errors
+
+
+_LATIN_SUFFIX_RE = re.compile(r"[（(]([A-Za-z][A-Za-z' \-]*[A-Za-z])[）)]\s*$")
+
+
+def _strip_diacritics(text):
+    import unicodedata
+    decomposed = unicodedata.normalize("NFD", text)
+    return "".join(ch for ch in decomposed if unicodedata.category(ch) != "Mn")
+
+
+def _transliteration_review(ctx):
+    """本章「新建」原文類條目名的括號音譯，在本章來源查無出處——提醒人工複核，不擋 build。
+
+    利2 候選「紀念份（azkarah）」：四來源只給英文 memorial portion，azkarah 是
+    寫候選的人憑工具書常識補配的。M3 prompt 已改為「音譯必須取自來源」，這裡是
+    事後攔截網。比對前兩邊都做 NFD 去變音符號＋轉小寫（tāmîm → tamim）。
+
+    只查 link_plan 的 C 類（本章新建）：B 類候選沿用既有條目名（利2 累積
+    「供物（qorban）」時，qorban 的出處在建立它的利1，不必在利2 的來源重現），
+    全查會把每一次 B 類累積都誤報一遍（全庫實測：出35-40 皂莢木、利2-4 供物／
+    按手全是這類）。C 類限定後，全庫命中皆為「建立當章來源就查無此拼寫」的
+    真陽性或拼寫變體（atzei shittim vs ʿăṣê šiṭṭîm）——變體無法機械排除，
+    故走 manual_review 不走 error。
+    """
+    corpus = _chapter_source_corpus(ctx)
+    if corpus is None:
+        return []
+    plan_path = ctx.path("link_plan.yaml")
+    if not plan_path.exists():
+        return []
+    try:
+        plan = yaml.safe_load(plan_path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    new_names = [
+        str(e.get("name") or "") for e in plan.get("C_new_formal") or []
+        if isinstance(e, dict)
+    ]
+    if not new_names:
+        return []
+    corpus_norm = _strip_diacritics(corpus).lower()
+    names = []
+    cand_path = ctx.path("link_candidates.yaml")
+    if cand_path.exists():
+        try:
+            data = yaml.safe_load(cand_path.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError:
+            data = {}
+        for cand in data.get("candidates") or []:
+            if (isinstance(cand, dict)
+                    and str(cand.get("type", "")).strip() == "原文"
+                    and str(cand.get("name") or "") in new_names):
+                names.append(("link_candidates.yaml", str(cand.get("name") or "")))
+    out_dir = ctx.path("entry_content")
+    if out_dir.exists():
+        for path in sorted(out_dir.glob("*.yaml")):
+            data = _read_yaml(path)
+            if not isinstance(data, dict) or str(data.get("type", "")).strip() != "原文":
+                continue
+            title = str(data.get("name") or "")
+            # 條目實建名可能帶音譯後綴（計畫「皂莢木」→ 實建「皂莢木（atzei shittim）」）
+            if any(title == n or title.startswith(f"{n}（") or title.startswith(f"{n}(")
+                   for n in new_names):
+                names.append((path.name, title))
+    hits = []
+    for where, name in names:
+        match = _LATIN_SUFFIX_RE.search(name.strip())
+        if not match:
+            continue
+        token = _strip_diacritics(match.group(1)).lower()
+        if token and token not in corpus_norm:
+            hits.append(f"{where}: 「{name}」的音譯「{match.group(1)}」")
+    if not hits:
+        return []
+    return [
+        "本章新建原文類名稱的括號音譯在本章來源查無出處（可能是憑聖經知識補配的）："
+        + "、".join(hits[:6])
+        + "——請逐一確認來源是否真的給過這個拼寫；沒給就改用裸中文名"
+        "（拼寫變體如 matzah/matsah 屬誤報，忽略即可）"
+    ]
+
+
 def _table_alias_link_review(ctx):
     """表格列裡帶別名的 wiki-link——Obsidian 會把 | 當成欄位分隔，整列表格裂開。
 
@@ -1572,6 +1819,8 @@ def validate_step(ctx, written):
     errors.extend(_split_node_errors(ctx))
     errors.extend(_unfileable_candidate_errors(ctx))
     errors.extend(_unknown_type_candidate_errors(ctx))
+    errors.extend(_unsourced_hebrew_errors(ctx))
+    ctx.manual_review.extend(_transliteration_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors

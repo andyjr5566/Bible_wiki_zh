@@ -86,6 +86,10 @@ def manifest_path_for(book, chapter, root=ROOT):
 
 
 def main(argv=None):
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure:
+            reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="程式化產生章節 source_manifest.md")
     parser.add_argument("book")
     parser.add_argument("chapter", type=int)

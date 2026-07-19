@@ -886,5 +886,147 @@ class BareCreatedLinkGuardTest(unittest.TestCase):
         )
 
 
+class StripConflictingAliasTests(unittest.TestCase):
+    """撞名 alias 程式直接剔除（利2 實例：素祭 配 alias 禮物，錯誤回饋重試也修不好）。"""
+
+    def test_conflicting_alias_is_stripped_and_reported(self):
+        # 真實 link_index 的 alias 是頂層 key（{'禮物': {'alias_of': '禮物（terumah）'}}）
+        owners = run_chapter._alias_owners(
+            {"禮物（terumah）": {"title": "禮物（terumah）"},
+             "禮物": {"alias_of": "禮物（terumah）"}},
+            set(), {},
+        )
+        entry = {"name": "素祭（minchah）", "suggested_type": "原文"}
+        payload = {"name": "素祭（minchah）", "aliases": ["穀物祭", "禮物"]}
+        dropped = run_chapter._strip_conflicting_aliases(entry, payload, owners)
+        self.assertEqual([("禮物", "禮物（terumah）")], dropped)
+        self.assertEqual(["穀物祭"], payload["aliases"])
+
+    def test_own_bare_name_alias_is_kept(self):
+        owners = run_chapter._alias_owners({}, {"皂莢木"}, {})
+        entry = {"name": "皂莢木", "suggested_type": "原文"}
+        payload = {"name": "皂莢木（atzei shittim）", "aliases": ["皂莢木"]}
+        self.assertEqual([], run_chapter._strip_conflicting_aliases(entry, payload, owners))
+        self.assertEqual(["皂莢木"], payload["aliases"])
+
+
+class RewriteAliasLinksTests(unittest.TestCase):
+    """M6 連結目標是白名單條目 alias → 機械改寫全名（利2 實例：[[鹽約]]）。"""
+
+    AMAP = {"鹽約": "立約的鹽"}
+
+    def test_bare_alias_link_rewritten_with_display(self):
+        out = run_chapter._rewrite_alias_links("見[[鹽約]]的意義。", self.AMAP)
+        self.assertEqual("見[[立約的鹽|鹽約]]的意義。", out)
+
+    def test_alias_link_with_display_keeps_display(self):
+        out = run_chapter._rewrite_alias_links("見[[鹽約|鹽的約]]。", self.AMAP)
+        self.assertEqual("見[[立約的鹽|鹽的約]]。", out)
+
+    def test_non_alias_targets_untouched(self):
+        text = "見[[立約的鹽]]與[[別的目標]]。"
+        self.assertEqual(text, run_chapter._rewrite_alias_links(text, self.AMAP))
+
+    def test_anchored_target_not_rewritten(self):
+        text = "見[[鹽約#段落]]。"
+        self.assertEqual(text, run_chapter._rewrite_alias_links(text, self.AMAP))
+
+    def test_validator_applies_rewrite_before_whitelist_check(self):
+        organization = (
+            "### 甲（v1）\n\n" + ("內容甲。" * 60) + f"其中[[鹽約]]是重點。\n\n"
+            "### 乙（v2）\n\n" + ("內容乙。" * 60)
+        )
+        payload = {
+            "book": "利未記", "chapter": 2,
+            "knowledge_nodes": {"主題": ["立約的鹽"]},
+            "organization": organization,
+        }
+        validate = run_chapter._chapter_payload_validator(
+            2, ["立約的鹽"], {"鹽約": "立約的鹽"}
+        )
+        self.assertEqual([], validate(payload))
+        self.assertIn("[[立約的鹽|鹽約]]", payload["organization"])
+
+
+class UnsourcedHebrewTests(unittest.TestCase):
+    """payload 希伯來字母必須在本章來源出現過（利1 tāmîm／利2 מִנְחָה 同型錯）。"""
+
+    RAW_WITH_HEBREW = "BH：素祭原文 מנחה 意為禮物。"
+    RAW_WITHOUT_HEBREW = "BH：the grain offering, minchah in Hebrew, is a gift."
+
+    def _ctx(self, tmp, raw_data_text, payload_definition):
+        root = Path(tmp)
+        (root / "raw_scripture" / "利未記").mkdir(parents=True)
+        (root / "raw_scripture" / "利未記" / "第2章.txt").write_text(
+            "若有人獻素祭。\n", encoding="utf-8"
+        )
+        (root / "raw_data").mkdir()
+        (root / "raw_data" / "biblehub_study_leviticus_2.txt").write_text(
+            raw_data_text, encoding="utf-8"
+        )
+        (root / "03 利未記" / ".tmp" / "第2章" / "entry_content").mkdir(parents=True)
+        (root / "03 利未記" / ".tmp" / "第2章" / "source_manifest.md").write_text(
+            "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+            "|------|-----|-----|--------------|------|\n"
+            "| BibleHub Study | BH | https://biblehub.com/study/leviticus/2.htm "
+            "| raw_data/biblehub_study_leviticus_2.txt | OK |\n",
+            encoding="utf-8",
+        )
+        (root / "03 利未記" / ".tmp" / "第2章" / "entry_content" / "素祭.yaml").write_text(
+            yaml.safe_dump(
+                {"name": "素祭（minchah）", "type": "原文",
+                 "definition": payload_definition},
+                allow_unicode=True,
+            ),
+            encoding="utf-8",
+        )
+        return run_chapter.ChapterContext("利未記", 2, root=root, index={}, homonyms={})
+
+    def test_unsourced_hebrew_is_flagged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 מִנְחָה 意為禮物。")
+            errors = run_chapter._unsourced_hebrew_errors(ctx)
+            self.assertEqual(1, len(errors))
+            self.assertIn("מִנְחָה", errors[0])
+
+    def test_sourced_hebrew_passes_despite_niqqud_difference(self):
+        # 來源給無注音 מנחה、payload 寫注音 מִנְחָה → 去注音後同字，不可誤報
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITH_HEBREW, "希伯來文 מִנְחָה 意為禮物。")
+            self.assertEqual([], run_chapter._unsourced_hebrew_errors(ctx))
+
+    def test_no_hebrew_anywhere_is_silent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 minchah 意為禮物。")
+            self.assertEqual([], run_chapter._unsourced_hebrew_errors(ctx))
+
+    def test_transliteration_review_flags_unsourced_latin_suffix(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "說明。")
+            ch_dir = Path(tmp) / "03 利未記" / ".tmp" / "第2章"
+            (ch_dir / "link_candidates.yaml").write_text(
+                yaml.safe_dump({"book": "利未記", "chapter": 2, "candidates": [
+                    {"name": "紀念份（azkarah）", "type": "原文"},
+                    {"name": "素祭（minchah）", "type": "原文"},
+                    {"name": "供物（qorban）", "type": "原文"},
+                ]}, allow_unicode=True),
+                encoding="utf-8",
+            )
+            # 只查 C 類新建：供物（qorban）是 B 類沿用既有條目名，不可誤報
+            (ch_dir / "link_plan.yaml").write_text(
+                yaml.safe_dump({"book": "利未記", "chapter": 2,
+                                "B_needs_update": [{"name": "供物（qorban）"}],
+                                "C_new_formal": [{"name": "紀念份（azkarah）"},
+                                                 {"name": "素祭（minchah）"}]},
+                               allow_unicode=True),
+                encoding="utf-8",
+            )
+            notes = run_chapter._transliteration_review(ctx)
+            self.assertEqual(1, len(notes))
+            self.assertIn("azkarah", notes[0])
+            self.assertNotIn("素祭（minchah）", notes[0])  # minchah 在來源裡，不可誤報
+            self.assertNotIn("qorban", notes[0])  # B 類沿用既有條目名，不查
+
+
 if __name__ == "__main__":
     unittest.main()

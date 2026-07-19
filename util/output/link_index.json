@@ -223,6 +223,17 @@
       "細麻內袍"
     ]
   },
+  "公牛犢（par ben baqar）": {
+    "path": "link_folder/主題/公牛犢（par ben baqar）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "公牛犢（par ben baqar）",
+    "status": "formal",
+    "aliases": [
+      "公牛",
+      "牛犢"
+    ]
+  },
   "公義與真理": {
     "path": "link_folder/主題/公義與真理.md",
     "type": "主題",
@@ -892,6 +903,28 @@
     "status": "formal",
     "aliases": []
   },
+  "灑血（zaraq）": {
+    "path": "link_folder/主題/灑血（zaraq）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "灑血（zaraq）",
+    "status": "formal",
+    "aliases": [
+      "灑血",
+      "潑血"
+    ]
+  },
+  "火祭（isheh）": {
+    "path": "link_folder/主題/火祭（isheh）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "火祭（isheh）",
+    "status": "formal",
+    "aliases": [
+      "火祭",
+      "獻與耶和華的火祭"
+    ]
+  },
   "烏鴉與鴿子的象徵": {
     "path": "link_folder/主題/烏鴉與鴿子的象徵.md",
     "type": "主題",
@@ -904,6 +937,29 @@
     "aliases": [
       "洪水中的烏鴉與鴿子",
       "放烏鴉與三次放鴿子"
+    ]
+  },
+  "無殘疾（tamim）": {
+    "path": "link_folder/主題/無殘疾（tamim）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "無殘疾（tamim）",
+    "status": "formal",
+    "aliases": [
+      "無殘疾",
+      "完全",
+      "無瑕疵"
+    ]
+  },
+  "營外焚燒（machutz la-machaneh saraf）": {
+    "path": "link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "營外焚燒（machutz la-machaneh saraf）",
+    "status": "formal",
+    "aliases": [
+      "營外燒燬",
+      "營外焚燒祭牲"
     ]
   },
   "父母偏愛": {
@@ -938,6 +994,17 @@
     "status": "formal",
     "aliases": [
       "帳幕的豎板"
+    ]
+  },
+  "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）": {
+    "path": "link_folder/主題/皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）",
+    "status": "formal",
+    "aliases": [
+      "公牛餘體",
+      "祭牲全體"
     ]
   },
   "盟約": {
@@ -1123,6 +1190,17 @@
     "status": "formal",
     "aliases": [
       "素祭五樣式"
+    ]
+  },
+  "綿羊": {
+    "path": "link_folder/主題/綿羊.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "綿羊",
+    "status": "formal",
+    "aliases": [
+      "羊羔",
+      "綿羊羔"
     ]
   },
   "羅得的世俗選擇與後果": {
@@ -1570,6 +1648,17 @@
     "title": "饑荒",
     "status": "formal",
     "aliases": []
+  },
+  "香壇（mizbeach ha-qetoret）": {
+    "path": "link_folder/主題/香壇（mizbeach ha-qetoret）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "香壇（mizbeach ha-qetoret）",
+    "status": "formal",
+    "aliases": [
+      "金香壇",
+      "內壇"
+    ]
   },
   "鹽柱": {
     "path": "link_folder/主題/鹽柱.md",
@@ -7797,6 +7886,22 @@
       "祭司"
     ]
   },
+  "亞倫子孫": {
+    "path": "link_folder/人物/亞倫子孫.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫子孫",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞倫的子孫": {
+    "path": "link_folder/人物/亞倫的子孫.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞倫的子孫",
+    "status": "formal",
+    "aliases": []
+  },
   "亞倫的祭司譜系": {
     "path": "link_folder/人物/亞倫的祭司譜系.md",
     "type": "人物",
@@ -8229,6 +8334,17 @@
       "Nephilim"
     ]
   },
+  "全會眾（kol ha-edah）": {
+    "path": "link_folder/人物/全會眾（kol ha-edah）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "全會眾（kol ha-edah）",
+    "status": "formal",
+    "aliases": [
+      "會眾",
+      "以色列全會眾"
+    ]
+  },
   "利乏音人": {
     "path": "link_folder/人物/利乏音人.md",
     "type": "人物",
@@ -8265,6 +8381,17 @@
     "status": "formal",
     "aliases": [
       "Rebekah"
+    ]
+  },
+  "受膏的祭司（mashiach kohen）": {
+    "path": "link_folder/人物/受膏的祭司（mashiach kohen）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "受膏的祭司（mashiach kohen）",
+    "status": "formal",
+    "aliases": [
+      "受膏祭司",
+      "大祭司"
     ]
   },
   "可拉的背叛（預告）": {
@@ -10141,6 +10268,18 @@
       "催逼驅趕"
     ]
   },
+  "內臟（qereb）": {
+    "path": "link_folder/原文/內臟（qereb）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "內臟（qereb）",
+    "status": "formal",
+    "aliases": [
+      "內臟",
+      "臟腑",
+      "蓋臟"
+    ]
+  },
   "典章（mishpatim）": {
     "path": "link_folder/原文/典章（mishpatim）.md",
     "type": "原文",
@@ -11488,6 +11627,30 @@
     "status": "formal",
     "aliases": []
   },
+  "肝上的網子（yoteret ha-kaved）": {
+    "path": "link_folder/原文/肝上的網子（yoteret ha-kaved）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "肝上的網子（yoteret ha-kaved）",
+    "status": "formal",
+    "aliases": [
+      "肝上的網子",
+      "肝葉",
+      "肝臟網膜"
+    ]
+  },
+  "肥尾巴（alyah）": {
+    "path": "link_folder/原文/肥尾巴（alyah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "肥尾巴（alyah）",
+    "status": "formal",
+    "aliases": [
+      "肥尾巴",
+      "整肥尾巴",
+      "羊尾脂"
+    ]
+  },
   "胸牌（決斷胸牌）": {
     "path": "link_folder/原文/胸牌（決斷胸牌）.md",
     "type": "原文",
@@ -11497,6 +11660,30 @@
     "aliases": [
       "決斷胸牌",
       "breastpiece of judgment"
+    ]
+  },
+  "脂油（chelev）": {
+    "path": "link_folder/原文/脂油（chelev）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "脂油（chelev）",
+    "status": "formal",
+    "aliases": [
+      "脂油",
+      "板油",
+      "脂肪"
+    ]
+  },
+  "腰子（kilyah）": {
+    "path": "link_folder/原文/腰子（kilyah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "腰子（kilyah）",
+    "status": "formal",
+    "aliases": [
+      "腰子",
+      "腎",
+      "兩個腰子"
     ]
   },
   "膏油（聖膏油）": {
@@ -12987,6 +13174,17 @@
       "蘆葦海"
     ]
   },
+  "潔淨之地（maqom tahor）": {
+    "path": "link_folder/地點/潔淨之地（maqom tahor）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "潔淨之地（maqom tahor）",
+    "status": "formal",
+    "aliases": [
+      "倒灰之所",
+      "營外潔淨處"
+    ]
+  },
   "王谷": {
     "path": "link_folder/地點/王谷.md",
     "type": "地點",
@@ -13858,6 +14056,18 @@
     "status": "formal",
     "aliases": []
   },
+  "山羊": {
+    "path": "link_folder/文化/山羊.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "山羊",
+    "status": "formal",
+    "aliases": [
+      "山羊",
+      "公山羊",
+      "母山羊"
+    ]
+  },
   "工價與雇約": {
     "path": "link_folder/文化/工價與雇約.md",
     "type": "文化",
@@ -13935,6 +14145,18 @@
     "status": "formal",
     "aliases": [
       "ovens and kneading bowls"
+    ]
+  },
+  "牛群": {
+    "path": "link_folder/文化/牛群.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "牛群",
+    "status": "formal",
+    "aliases": [
+      "牛群",
+      "群畜",
+      "牧畜"
     ]
   },
   "磚窯": {
@@ -17389,6 +17611,18 @@
       "祭司的職分"
     ]
   },
+  "永遠的定例（chuqqat olam）": {
+    "path": "link_folder/神學/永遠的定例（chuqqat olam）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "永遠的定例（chuqqat olam）",
+    "status": "formal",
+    "aliases": [
+      "永遠的定例",
+      "永遠條例",
+      "世世代代定例"
+    ]
+  },
   "沒有殘疾的祭牲": {
     "path": "link_folder/神學/沒有殘疾的祭牲.md",
     "type": "神學",
@@ -18922,6 +19156,28 @@
       "三樣情慾"
     ]
   },
+  "脂油不可吃（脂油の禁令）": {
+    "path": "link_folder/神學/脂油不可吃（脂油の禁令）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "脂油不可吃（脂油の禁令）",
+    "status": "formal",
+    "aliases": [
+      "脂油不可吃",
+      "禁吃脂油"
+    ]
+  },
+  "脂油和血都不可吃": {
+    "path": "link_folder/神學/脂油和血都不可吃.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "脂油和血都不可吃",
+    "status": "formal",
+    "aliases": [
+      "禁食脂油血",
+      "脂油血禁例"
+    ]
+  },
   "膏抹成聖": {
     "path": "link_folder/神學/膏抹成聖.md",
     "type": "神學",
@@ -19050,6 +19306,17 @@
       "蒙靈充滿的智慧恩賜"
     ]
   },
+  "血不可吃（血の禁令）": {
+    "path": "link_folder/神學/血不可吃（血の禁令）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "血不可吃（血の禁令）",
+    "status": "formal",
+    "aliases": [
+      "血不可吃",
+      "禁吃血"
+    ]
+  },
   "血氣與應許之對比": {
     "path": "link_folder/神學/血氣與應許之對比.md",
     "type": "神學",
@@ -19158,6 +19425,19 @@
     "status": "formal",
     "aliases": []
   },
+  "誤犯（shagagah）": {
+    "path": "link_folder/神學/誤犯（shagagah）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "誤犯（shagagah）",
+    "status": "formal",
+    "aliases": [
+      "誤犯",
+      "無心之失",
+      "非故意的罪",
+      "過失之罪"
+    ]
+  },
   "謀殺與誤殺的區分": {
     "path": "link_folder/神學/謀殺與誤殺的區分.md",
     "type": "神學",
@@ -19220,6 +19500,17 @@
     "title": "赤身露體與羞恥",
     "status": "formal",
     "aliases": []
+  },
+  "赦免（salach）": {
+    "path": "link_folder/神學/赦免（salach）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "赦免（salach）",
+    "status": "formal",
+    "aliases": [
+      "蒙赦免",
+      "罪得赦免"
+    ]
   },
   "追討罪自父及子直到三四代": {
     "path": "link_folder/神學/追討罪自父及子直到三四代.md",
@@ -21670,6 +21961,12 @@
   "細麻內袍": {
     "alias_of": "內袍（雜色內袍）"
   },
+  "公牛": {
+    "alias_of": "公牛犢（par ben baqar）"
+  },
+  "牛犢": {
+    "alias_of": "公牛犢（par ben baqar）"
+  },
   "山羊毛幔子": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
   },
@@ -21829,14 +22126,47 @@
   "搗成的清橄欖油": {
     "alias_of": "清橄欖油（點燈用）"
   },
+  "灑血": {
+    "alias_of": "灑血（zaraq）"
+  },
+  "潑血": {
+    "alias_of": "灑血（zaraq）"
+  },
+  "火祭": {
+    "alias_of": "火祭（isheh）"
+  },
+  "獻與耶和華的火祭": {
+    "alias_of": "火祭（isheh）"
+  },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
   "放烏鴉與三次放鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
   },
+  "無殘疾": {
+    "alias_of": "無殘疾（tamim）"
+  },
+  "完全": {
+    "alias_of": "無殘疾（tamim）"
+  },
+  "無瑕疵": {
+    "alias_of": "無殘疾（tamim）"
+  },
+  "營外燒燬": {
+    "alias_of": "營外焚燒（machutz la-machaneh saraf）"
+  },
+  "營外焚燒祭牲": {
+    "alias_of": "營外焚燒（machutz la-machaneh saraf）"
+  },
   "帳幕的豎板": {
     "alias_of": "皂莢木豎板"
+  },
+  "公牛餘體": {
+    "alias_of": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）"
+  },
+  "祭牲全體": {
+    "alias_of": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）"
   },
   "covenant": {
     "alias_of": "盟約"
@@ -21867,6 +22197,12 @@
   },
   "素祭五樣式": {
     "alias_of": "素祭的五種形式"
+  },
+  "羊羔": {
+    "alias_of": "綿羊"
+  },
+  "綿羊羔": {
+    "alias_of": "綿羊"
   },
   "聖衣": {
     "alias_of": "聖衣（祭司聖服）"
@@ -21993,6 +22329,12 @@
   },
   "擺陳設餅的桌子": {
     "alias_of": "陳設餅桌子"
+  },
+  "金香壇": {
+    "alias_of": "香壇（mizbeach ha-qetoret）"
+  },
+  "內壇": {
+    "alias_of": "香壇（mizbeach ha-qetoret）"
   },
   "Elim oasis": {
     "alias_of": "以琳綠洲"
@@ -23239,6 +23581,12 @@
   "Nephilim": {
     "alias_of": "偉人"
   },
+  "會眾": {
+    "alias_of": "全會眾（kol ha-edah）"
+  },
+  "以色列全會眾": {
+    "alias_of": "全會眾（kol ha-edah）"
+  },
   "Leah": {
     "alias_of": "利亞"
   },
@@ -23247,6 +23595,12 @@
   },
   "Rebekah": {
     "alias_of": "利百加"
+  },
+  "受膏祭司": {
+    "alias_of": "受膏的祭司（mashiach kohen）"
+  },
+  "大祭司": {
+    "alias_of": "受膏的祭司（mashiach kohen）"
   },
   "可拉": {
     "alias_of": "可拉的背叛（預告）"
@@ -23577,6 +23931,15 @@
   },
   "催逼驅趕": {
     "alias_of": "催逼"
+  },
+  "內臟": {
+    "alias_of": "內臟（qereb）"
+  },
+  "臟腑": {
+    "alias_of": "內臟（qereb）"
+  },
+  "蓋臟": {
+    "alias_of": "內臟（qereb）"
   },
   "冠冕": {
     "alias_of": "冠冕（裹頭巾）"
@@ -23944,11 +24307,47 @@
   "聘金": {
     "alias_of": "聘金與禮物"
   },
+  "肝上的網子": {
+    "alias_of": "肝上的網子（yoteret ha-kaved）"
+  },
+  "肝葉": {
+    "alias_of": "肝上的網子（yoteret ha-kaved）"
+  },
+  "肝臟網膜": {
+    "alias_of": "肝上的網子（yoteret ha-kaved）"
+  },
+  "肥尾巴": {
+    "alias_of": "肥尾巴（alyah）"
+  },
+  "整肥尾巴": {
+    "alias_of": "肥尾巴（alyah）"
+  },
+  "羊尾脂": {
+    "alias_of": "肥尾巴（alyah）"
+  },
   "決斷胸牌": {
     "alias_of": "胸牌（決斷胸牌）"
   },
   "breastpiece of judgment": {
     "alias_of": "胸牌（決斷胸牌）"
+  },
+  "脂油": {
+    "alias_of": "脂油（chelev）"
+  },
+  "板油": {
+    "alias_of": "脂油（chelev）"
+  },
+  "脂肪": {
+    "alias_of": "脂油（chelev）"
+  },
+  "腰子": {
+    "alias_of": "腰子（kilyah）"
+  },
+  "腎": {
+    "alias_of": "腰子（kilyah）"
+  },
+  "兩個腰子": {
+    "alias_of": "腰子（kilyah）"
   },
   "anointing oil": {
     "alias_of": "膏油（聖膏油）"
@@ -24295,6 +24694,12 @@
   "蘆葦海": {
     "alias_of": "海（紅海）"
   },
+  "倒灰之所": {
+    "alias_of": "潔淨之地（maqom tahor）"
+  },
+  "營外潔淨處": {
+    "alias_of": "潔淨之地（maqom tahor）"
+  },
   "二軍兵": {
     "alias_of": "瑪哈念"
   },
@@ -24574,6 +24979,12 @@
   "特拉芬": {
     "alias_of": "家神像_特拉芬"
   },
+  "公山羊": {
+    "alias_of": "山羊"
+  },
+  "母山羊": {
+    "alias_of": "山羊"
+  },
   "兄終弟及婚姻": {
     "alias_of": "弟續兄孀制度"
   },
@@ -24582,6 +24993,12 @@
   },
   "ovens and kneading bowls": {
     "alias_of": "爐灶和摶麵盆"
+  },
+  "群畜": {
+    "alias_of": "牛群"
+  },
+  "牧畜": {
+    "alias_of": "牛群"
   },
   "燒窯": {
     "alias_of": "磚窯"
@@ -25510,6 +25927,15 @@
   "祭司的職分": {
     "alias_of": "永遠當祭司的職任"
   },
+  "永遠的定例": {
+    "alias_of": "永遠的定例（chuqqat olam）"
+  },
+  "永遠條例": {
+    "alias_of": "永遠的定例（chuqqat olam）"
+  },
+  "世世代代定例": {
+    "alias_of": "永遠的定例（chuqqat olam）"
+  },
   "無瑕疵的祭牲": {
     "alias_of": "沒有殘疾的祭牲"
   },
@@ -25915,6 +26341,18 @@
   "三樣情慾": {
     "alias_of": "肉體的情慾、眼目的情慾、今生的驕傲"
   },
+  "脂油不可吃": {
+    "alias_of": "脂油不可吃（脂油の禁令）"
+  },
+  "禁吃脂油": {
+    "alias_of": "脂油不可吃（脂油の禁令）"
+  },
+  "禁食脂油血": {
+    "alias_of": "脂油和血都不可吃"
+  },
+  "脂油血禁例": {
+    "alias_of": "脂油和血都不可吃"
+  },
   "consecration": {
     "alias_of": "自潔"
   },
@@ -25948,6 +26386,12 @@
   "蒙靈充滿的智慧恩賜": {
     "alias_of": "蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）"
   },
+  "血不可吃": {
+    "alias_of": "血不可吃（血の禁令）"
+  },
+  "禁吃血": {
+    "alias_of": "血不可吃（血の禁令）"
+  },
   "Sinai Covenant": {
     "alias_of": "西乃之約"
   },
@@ -25975,8 +26419,26 @@
   "remember my covenant": {
     "alias_of": "記念我的約"
   },
+  "誤犯": {
+    "alias_of": "誤犯（shagagah）"
+  },
+  "無心之失": {
+    "alias_of": "誤犯（shagagah）"
+  },
+  "非故意的罪": {
+    "alias_of": "誤犯（shagagah）"
+  },
+  "過失之罪": {
+    "alias_of": "誤犯（shagagah）"
+  },
   "贖罪祭(chatat)": {
     "alias_of": "贖罪祭"
+  },
+  "蒙赦免": {
+    "alias_of": "赦免（salach）"
+  },
+  "罪得赦免": {
+    "alias_of": "赦免（salach）"
   },
   "罪的跨代影響": {
     "alias_of": "追討罪自父及子直到三四代"

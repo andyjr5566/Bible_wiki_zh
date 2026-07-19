@@ -18,6 +18,7 @@
    - **一個候選只能對一個條目，`name` 不可含斜線**。斜線在檔名裡是路徑分隔字元，`entry_content/<name>.yaml` 建不出來，該候選必定同時：surfaces 連不上任何節、knowledge_nodes 對不上而被丟掉、本章累積永遠不寫入、別的條目 related_entries 指向它而被移除——而且全部靜默，三個閘門照過。想涵蓋多個詞用 `surfaces`，不要塞進 `name`。（validate 會擋）
    - **`type` 只能是 `link_folder/` 底下真的存在的資料夾**：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議。自己造一個看起來很合理的分類（利10 的「祭禮」、民9 的「儀式」、民10 的「器具」）會靜默失效——resolver 認不得，只把候選降級成 `D_new_candidate` 並附一句 note「未知分類：X」，那是 plan 檔裡的一行字，不是錯誤，跑完照樣印「✅ 完成」，下場與斜線名完全相同。祭祀相關的歸 `主題`（制度）或 `原文`（術語），器物歸 `主題`／`文化`。（validate 會擋）
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
+   - **原文類候選名的括號音譯必須是本章來源實際出現過的拼寫**（先 `grep -i` raw_data 確認）；來源沒給音譯就用裸中文名，不可憑聖經工具書常識補配（利2「紀念份（azkarah）」實例：來源只給英文 memorial portion）。希伯來字母寫法同理，且更嚴：P4 validate 對候選檔／entry_content／chapter_content 逐字驗證希伯來字母的出處，查無出處＝error 擋 build（全庫實測抓到創47/出28-30/利1 共 18 筆歷史真陽性、0 誤報）；本章新建原文類名稱的拉丁音譯查無出處＝manual_review 提醒（拼寫變體無法機械排除）。
    - **候選寫齊後跑語義近鄰報告**（候選定稿前必經，check_chapter_files 會驗報告存在）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
      程式把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢、一次批量比對全庫索引，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告三種資訊都要看：
@@ -33,6 +34,8 @@
    python util/run_chapter.py 【書名】 X
    ```
    程式會：解析候選（A–E 類）→ 批量請模型填條目 payload → 程式化標注經文 wiki-link → 模型填本章整理 → 渲染全部 markdown → 結構驗證。模型端點用 `python util/model_client.py list|use|test` 檢查或切換。
+   - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」），模型會反覆重試到放棄。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗，不再退回模型重試。
+   - **M3 的 alias 撞名不再硬失敗**：模型配的 alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，不再把整個條目退回模型重做——實測錯誤回饋重試兩輪模型照配不誤，只會白燒呼叫。
 
 4. **B 類累積**（既有條目補本章資料）
    ```text
@@ -52,6 +55,7 @@
    - 抓法同 §「內容勘誤」四類高風險：模型是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
    - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml`（本章整理）或 `entry_content/*.yaml`（新建條目，注意是 `definition`／`development` 欄，不是 `.md` 的段落）裡的文字後，重跑 `python util/run_chapter.py 【書名】 X` 讓 render 重新產出 markdown——**只改渲染後的 `第x章.md`／`link_folder/**.md` 而不改 yaml，下次任何重跑都會被 render 覆蓋回錯的舊內容**（實測踩過：申4 鐵爐條目只改了 `.md` 沒改 yaml，重跑就打回原形）。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`（不是 run_chapter）。
    - `run_chapter.py` 已會在改動 `link_candidates.yaml` 時**自動作廢並重生下游**（link_plan／entry_content／verse_links／chapter_content），不必再手動刪中間檔；但改 `entry_content/*.yaml`／`chapter_content.yaml` 本身後，直接重跑即可讓 render 帶出新內容。
+   - **改 `entry_content/*.yaml` 會連帶作廢 `chapter_content.yaml`**：即使只是修一兩句勘誤，`run_chapter.py` 偵測到 entry_content 變動就會自動作廢並重新生成 `verse_links.yaml` 與 `chapter_content.yaml`——包含你已經手動改好的本章整理，也會被模型重新生成的版本整段覆蓋掉（利1實測踩過：改一個 entry_content 的錯誤引註，手動修好的 organization 被整段換掉兩次）。修完 entry_content 後，要重新檢查（甚至可能要重寫或重新複核）`chapter_content.yaml`，不能假設它沒受影響。
    - 順手複查既有條目：本章若累積到的既有條目本身帶著更早期的錯（例如某地名被錯記成同音異義的另一地名），連同勘誤一併修正，並在 relation 裡註明勘誤依據，不要默默改。
    - 這一步做完才進入下一步收尾驗證；驗證閘門不會幫你抓這類語意錯誤。
 
