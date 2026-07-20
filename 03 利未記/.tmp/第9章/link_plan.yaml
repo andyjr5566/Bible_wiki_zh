@@ -1,0 +1,175 @@
+book: 利未記
+chapter: 9
+A_use_directly: []
+B_needs_update:
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 全章主角，第八天首次以正式大祭司身分親自獻上贖罪祭、燔祭、平安祭（v7-24）
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: v9,12,18「亞倫的兒子把血奉給他」，祭司體系首次實際運作，兒子輔助大祭司獻祭
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1,6,7,23 摩西召集、吩咐、與亞倫一同進入會幕
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以色列的眾長老
+  suggested_type: 人物
+  evidence: v1「摩西召了亞倫和他兒子，並以色列的眾長老來」
+  match_type: exact
+  existing_title: 以色列的眾長老
+  existing_path: link_folder/人物/以色列的眾長老.md
+- name: 全會眾（kol ha-edah）
+  suggested_type: 人物
+  evidence: v5「全會眾都近前來，站在耶和華面前」
+  match_type: exact
+  existing_title: 全會眾（kol ha-edah）
+  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
+- name: 承接聖職（分別為聖）
+  suggested_type: 神學
+  evidence: v1「到了第八天」緊接八33,35七天承接聖職之禮期滿的翌日，是禮儀完成後祭司正式就職視事的延續
+  match_type: exact
+  existing_title: 承接聖職（分別為聖）
+  existing_path: link_folder/神學/承接聖職（分別為聖）.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: v7,10,21「都照耶和華所吩咐的」「是照耶和華所吩咐摩西的」「都是照摩西所吩咐的」在本章重複三次
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+- name: 耶和華的榮光
+  suggested_type: 神學
+  evidence: v4,6,23「因為今天耶和華要向你們顯現」「耶和華的榮光就要向你們顯現」「耶和華的榮光就向眾民顯現」
+  match_type: exact
+  existing_title: 耶和華的榮光
+  existing_path: link_folder/神學/耶和華的榮光.md
+- name: 神在火中降臨
+  suggested_type: 神學
+  evidence: v24「有火從耶和華面前出來，在壇上燒盡燔祭和脂油」
+  match_type: exact
+  existing_title: 神在火中降臨
+  existing_path: link_folder/神學/神在火中降臨.md
+- name: 下拜（shachah）
+  suggested_type: 原文
+  evidence: v24「眾民一見，就都歡呼，俯伏在地」
+  match_type: exact
+  existing_title: 下拜（shachah）
+  existing_path: link_folder/原文/下拜（shachah）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v2,3,8-11,15 亞倫先為自己、後為百姓所獻的贖罪祭
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v2,3,12-14,16 為亞倫和為百姓所獻的燔祭
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: v4,18-21 為百姓所獻的平安祭（公牛和公綿羊）
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v4,17「並取調油的素祭」「他又奉上素祭，從其中取一滿把，燒在壇上」
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 無殘疾（tamim）
+  suggested_type: 主題
+  evidence: v2,3「都要沒有殘疾的」兩次出現
+  match_type: exact
+  existing_title: 無殘疾（tamim）
+  existing_path: link_folder/主題/無殘疾（tamim）.md
+- name: 公牛犢（par ben baqar）
+  suggested_type: 主題
+  evidence: v2「你當取牛群中的一隻公牛犢作贖罪祭」
+  match_type: exact
+  existing_title: 公牛犢（par ben baqar）
+  existing_path: link_folder/主題/公牛犢（par ben baqar）.md
+- name: 山羊
+  suggested_type: 文化
+  evidence: v3「你們當取一隻公山羊作贖罪祭」
+  match_type: exact
+  existing_title: 山羊
+  existing_path: link_folder/文化/山羊.md
+- name: 灑血（zaraq）
+  suggested_type: 主題
+  evidence: v12,18「他就灑在壇的周圍」兩次出現
+  match_type: exact
+  existing_title: 灑血（zaraq）
+  existing_path: link_folder/主題/灑血（zaraq）.md
+- name: 脂油（chelev）
+  suggested_type: 原文
+  evidence: v10,19,20「脂油」三次出現於贖罪祭、平安祭
+  match_type: exact
+  existing_title: 脂油（chelev）
+  existing_path: link_folder/原文/脂油（chelev）.md
+- name: 腰子（kilyah）
+  suggested_type: 原文
+  evidence: v10,19「腰子」兩次出現
+  match_type: exact
+  existing_title: 腰子（kilyah）
+  existing_path: link_folder/原文/腰子（kilyah）.md
+- name: 肝上的網子（yoteret ha-kaved）
+  suggested_type: 原文
+  evidence: v10,19「肝上取的網子」「肝上的網子」
+  match_type: exact
+  existing_title: 肝上的網子（yoteret ha-kaved）
+  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+- name: 肥尾巴（alyah）
+  suggested_type: 原文
+  evidence: v19「公牛和公綿羊的脂油、肥尾巴」
+  match_type: exact
+  existing_title: 肥尾巴（alyah）
+  existing_path: link_folder/原文/肥尾巴（alyah）.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: v21「胸和右腿，亞倫當作搖祭，在耶和華面前搖一搖」
+  match_type: exact
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v8,9,12,13,17,20 全章反覆以壇為獻祭焚燒之處
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: v5「他們把摩西所吩咐的，帶到會幕前；全會眾都近前來，站在耶和華面前」
+  surfaces:
+  - phrase: 會幕前
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+- name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+  suggested_type: 主題
+  evidence: v11「又用火將肉和皮燒在營外」，為祭司自己所獻贖罪祭不可食用、須全焚
+  match_type: exact
+  existing_title: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+  existing_path: link_folder/主題/皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）.md
+- name: 營外焚燒（machutz la-machaneh saraf）
+  suggested_type: 主題
+  evidence: v11「用火將肉和皮燒在營外」
+  match_type: exact
+  existing_title: 營外焚燒（machutz la-machaneh saraf）
+  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+C_new_formal:
+- name: 舉手祝福（祭司祝福百姓）
+  suggested_type: 神學
+  evidence: v22-23「亞倫向百姓舉手，為他們祝福」「摩西、亞倫進入會幕，又出來為百姓祝福」，祭司體系正式運作後的第一個職事動作，KC指出此預表基督升天前舉手祝福門徒（路24:50）
+  target_path: link_folder/神學/舉手祝福（祭司祝福百姓）.md
+D_new_candidate: []
+E_skip: []

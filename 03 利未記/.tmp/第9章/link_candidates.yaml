@@ -1,0 +1,89 @@
+book: 利未記
+chapter: 9
+candidates:
+  - name: 亞倫
+    type: 人物
+    evidence: 全章主角，第八天首次以正式大祭司身分親自獻上贖罪祭、燔祭、平安祭（v7-24）
+  - name: 亞倫和他兒子（祭司）
+    type: 人物
+    evidence: v9,12,18「亞倫的兒子把血奉給他」，祭司體系首次實際運作，兒子輔助大祭司獻祭
+  - name: 摩西
+    type: 人物
+    evidence: v1,6,7,23 摩西召集、吩咐、與亞倫一同進入會幕
+  - name: 以色列的眾長老
+    type: 人物
+    evidence: v1「摩西召了亞倫和他兒子，並以色列的眾長老來」
+  - name: 全會眾（kol ha-edah）
+    type: 人物
+    evidence: v5「全會眾都近前來，站在耶和華面前」
+  - name: 承接聖職（分別為聖）
+    type: 神學
+    evidence: v1「到了第八天」緊接八33,35七天承接聖職之禮期滿的翌日，是禮儀完成後祭司正式就職視事的延續
+  - name: 山上的樣式
+    type: 神學
+    evidence: v7,10,21「都照耶和華所吩咐的」「是照耶和華所吩咐摩西的」「都是照摩西所吩咐的」在本章重複三次
+  - name: 耶和華的榮光
+    type: 神學
+    evidence: v4,6,23「因為今天耶和華要向你們顯現」「耶和華的榮光就要向你們顯現」「耶和華的榮光就向眾民顯現」
+  - name: 神在火中降臨
+    type: 神學
+    evidence: v24「有火從耶和華面前出來，在壇上燒盡燔祭和脂油」
+  - name: 下拜（shachah）
+    type: 原文
+    evidence: v24「眾民一見，就都歡呼，俯伏在地」
+  - name: 贖罪祭
+    type: 神學
+    evidence: v2,3,8-11,15 亞倫先為自己、後為百姓所獻的贖罪祭
+  - name: 燔祭（olah）
+    type: 原文
+    evidence: v2,3,12-14,16 為亞倫和為百姓所獻的燔祭
+  - name: 平安祭（shelamim）
+    type: 原文
+    evidence: v4,18-21 為百姓所獻的平安祭（公牛和公綿羊）
+  - name: 素祭（minchah）
+    type: 原文
+    evidence: v4,17「並取調油的素祭」「他又奉上素祭，從其中取一滿把，燒在壇上」
+  - name: 無殘疾（tamim）
+    type: 主題
+    evidence: v2,3「都要沒有殘疾的」兩次出現
+  - name: 公牛犢（par ben baqar）
+    type: 主題
+    evidence: v2「你當取牛群中的一隻公牛犢作贖罪祭」
+  - name: 山羊
+    type: 文化
+    evidence: v3「你們當取一隻公山羊作贖罪祭」
+  - name: 灑血（zaraq）
+    type: 主題
+    evidence: v12,18「他就灑在壇的周圍」兩次出現
+  - name: 脂油（chelev）
+    type: 原文
+    evidence: v10,19,20「脂油」三次出現於贖罪祭、平安祭
+  - name: 腰子（kilyah）
+    type: 原文
+    evidence: v10,19「腰子」兩次出現
+  - name: 肝上的網子（yoteret ha-kaved）
+    type: 原文
+    evidence: v10,19「肝上取的網子」「肝上的網子」
+  - name: 肥尾巴（alyah）
+    type: 原文
+    evidence: v19「公牛和公綿羊的脂油、肥尾巴」
+  - name: 搖祭（tenufah）
+    type: 原文
+    evidence: v21「胸和右腿，亞倫當作搖祭，在耶和華面前搖一搖」
+  - name: 銅壇（燔祭壇）
+    type: 主題
+    evidence: v8,9,12,13,17,20 全章反覆以壇為獻祭焚燒之處
+  - name: 會幕門口
+    type: 地點
+    surfaces:
+      - 會幕前
+    evidence: v5「他們把摩西所吩咐的，帶到會幕前；全會眾都近前來，站在耶和華面前」
+  - name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+    type: 主題
+    evidence: v11「又用火將肉和皮燒在營外」，為祭司自己所獻贖罪祭不可食用、須全焚
+  - name: 營外焚燒（machutz la-machaneh saraf）
+    type: 主題
+    evidence: v11「用火將肉和皮燒在營外」
+  - name: 舉手祝福（祭司祝福百姓）
+    type: 神學
+    evidence: v22-23「亞倫向百姓舉手，為他們祝福」「摩西、亞倫進入會幕，又出來為百姓祝福」，祭司體系正式運作後的第一個職事動作，KC指出此預表基督升天前舉手祝福門徒（路24:50）
