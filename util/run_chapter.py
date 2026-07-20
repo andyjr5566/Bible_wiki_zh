@@ -934,6 +934,41 @@ def _rewrite_alias_links(organization, alias_map):
     return _ORG_WIKILINK_RE.sub(repl, organization)
 
 
+def _intertext_missing_subtitle_errors(payload):
+    """knowledge_nodes/互文 的裸經文引用必須帶顯示用小標題——機械檢查，非提示。
+
+    使用者原話：「互文分組要保留顯示用小標題，要用程式檢查，沒有就報錯，
+    不然用 prompt 提醒都沒有效」。M6 prompt 早已這樣要求（見上方輸出格式
+    說明），但模型不可靠遵守，利9/利10 全庫掃描過的唯二真實漏網（利10：3、
+    出29：20）都出在這個位置——光靠提示形同沒有把關。
+
+    判準：條目名本身若已含描述文字（如「來12：18-24 西乃山與錫安山」），
+    BARE_SCRIPTURE_REF_RE 不會命中，不需要另外的別名，照樣放行；只有「純
+    書卷章節」（如「利10：3」「出29：20」）沒有帶 | 別名時才報錯——全庫
+    100 章 chapter_content.yaml 掃描僅 2 個真陽性、0 個誤報。
+    """
+    nodes = render_chapter.coerce_knowledge_nodes(payload.get("knowledge_nodes"))
+    items = nodes.get("互文")
+    if not isinstance(items, list):
+        return []
+    errors = []
+    for item in items:
+        inner = str(item).strip()
+        wrapped = re.fullmatch(r"\[\[(.+?)\]\]", inner)
+        if wrapped:
+            inner = wrapped.group(1)
+        name, _, alias = inner.partition("|")
+        name = name.strip()
+        if not alias.strip() and render_entry.BARE_SCRIPTURE_REF_RE.match(name):
+            errors.append(
+                f"knowledge_nodes/互文 的「{name}」是裸經文引用，缺少顯示用小標題"
+                f"（讀者不點開連結就不知道那節在講什麼）：寫成"
+                f"「{name}|{name} <那節在講什麼>」，例如"
+                f"「出20：16|出20：16 第九誡不可作假見證」"
+            )
+    return errors
+
+
 def _chapter_payload_validator(verse_count, allowed_links=None, alias_map=None):
     """份量門檻＋散文主幹門檻＋（allowed_links 給定時）wiki-link 白名單檢查。
 
@@ -947,6 +982,7 @@ def _chapter_payload_validator(verse_count, allowed_links=None, alias_map=None):
 
     def validate(payload):
         errors = render_chapter.validate_chapter_content(payload)
+        errors.extend(_intertext_missing_subtitle_errors(payload))
         if alias_map and isinstance(payload.get("organization"), str):
             # 目標是白名單條目 alias 的連結，先機械改寫成 [[全名|原詞]] 再驗——
             # 這類「resolver 認得、Obsidian 不認得」的連結退回模型重試也修不好
@@ -1306,7 +1342,14 @@ def _close_knowledge_nodes(chapter_content, mapping):
                 continue
             # 互文等分組要保留顯示用小標題（[[出20：16|出20：16 第九誡不可作假見證]]），
             # 否則渲染成裸引用，讀者無從得知該節在講什麼。去重仍以條目本身為準。
-            alias = str(item).strip().partition("|")[2].strip()
+            # 模型偶爾自己把 item 包成 [[名稱|別名]]（而非純字串）；render_knowledge_nodes
+            # 之後仍會再包一層 [[ ]]，若不先剝掉這層外殼，尾端的 ]] 會滲進 alias，
+            # 渲染成 [[標題|別名]]]] 的雙重右括號斷鏈（利9/利10 實例）。
+            inner = str(item).strip()
+            wrapped = re.fullmatch(r"\[\[(.+?)\]\]", inner)
+            if wrapped:
+                inner = wrapped.group(1)
+            alias = inner.partition("|")[2].strip()
             entry = f"{title}|{alias}" if alias else title
             if title not in seen:
                 seen.add(title)
@@ -1437,6 +1480,15 @@ def _rendered_shape_errors(chapter_path):
         # 表格儲存格裡寫 [[target|alias]] 要跳脫成 \|，渲染後變成 [[target\]] 斷鏈
         if re.search(r"\[\[[^\[\]\r\n]*\\\]\]", line):
             errors.append(f"{chapter_path.name}:{lineno}: 表格內有帶別名的 wiki-link（\\| 會造成斷鏈，請改用不帶別名的連結）")
+        # 四個連續右括號＝wiki-link 被重複包裹一層（利9/利10 實例：knowledge_nodes
+        # 項目本身已寫成 [[名稱|別名]]，render_knowledge_nodes 又外包一層 [[ ]]）。
+        # 這個組合不存在合法用法，純語法檢查、無需人工判斷。
+        if "]]]]" in line:
+            errors.append(
+                f"{chapter_path.name}:{lineno}: wiki-link 出現四個連續右括號（]]]]），"
+                f"通常是 chapter_content.yaml 的 knowledge_nodes 項目本身已寫成完整 "
+                f"[[名稱|別名]] 又被程式重複包裹一層——改成裸名稱或 名稱|別名（不含外層 [[ ]]）後重跑渲染"
+            )
     return errors
 
 
