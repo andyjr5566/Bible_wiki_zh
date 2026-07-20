@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 20242,
+  "valid_links_count": 20273,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 263,
+  "pending_scripture_refs_count": 262,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -102,12 +102,12 @@
       "chapter": 2
     },
     {
-      "entity": "但7:9-10",
+      "entity": "27 但以理書/第7章",
       "book": "但以理書",
       "chapter": 7
     },
     {
-      "entity": "27 但以理書/第7章",
+      "entity": "但7:9-10",
       "book": "但以理書",
       "chapter": 7
     },
@@ -222,12 +222,12 @@
       "chapter": 31
     },
     {
-      "entity": "出33:18-23",
+      "entity": "出33:9-10",
       "book": "出埃及記",
       "chapter": 33
     },
     {
-      "entity": "出33:9-10",
+      "entity": "出33:18-23",
       "book": "出埃及記",
       "chapter": 33
     },
@@ -312,11 +312,6 @@
       "chapter": 7
     },
     {
-      "entity": "03 利未記/第13章",
-      "book": "利未記",
-      "chapter": 13
-    },
-    {
       "entity": "03 利未記/第14章",
       "book": "利未記",
       "chapter": 14
@@ -332,12 +327,12 @@
       "chapter": 16
     },
     {
-      "entity": "03 利未記/第17章",
+      "entity": "利未記17:11",
       "book": "利未記",
       "chapter": 17
     },
     {
-      "entity": "利未記17:11",
+      "entity": "03 利未記/第17章",
       "book": "利未記",
       "chapter": 17
     },
@@ -427,7 +422,7 @@
       "chapter": 10
     },
     {
-      "entity": "林前11:23-26",
+      "entity": "林前11:26",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -437,7 +432,7 @@
       "chapter": 11
     },
     {
-      "entity": "林前11:26",
+      "entity": "林前11:23-26",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -452,17 +447,17 @@
       "chapter": 3
     },
     {
+      "entity": "啟1:7",
+      "book": "啟示錄",
+      "chapter": 1
+    },
+    {
       "entity": "啟1:13-16",
       "book": "啟示錄",
       "chapter": 1
     },
     {
       "entity": "啟1:14",
-      "book": "啟示錄",
-      "chapter": 1
-    },
-    {
-      "entity": "啟1:7",
       "book": "啟示錄",
       "chapter": 1
     },
@@ -547,16 +542,6 @@
       "chapter": 7
     },
     {
-      "entity": "58 希伯來書/第8章",
-      "book": "希伯來書",
-      "chapter": 8
-    },
-    {
-      "entity": "來8:10, 10:16",
-      "book": "希伯來書",
-      "chapter": 8
-    },
-    {
       "entity": "來8:10",
       "book": "希伯來書",
       "chapter": 8
@@ -567,32 +552,17 @@
       "chapter": 8
     },
     {
-      "entity": "58 希伯來書/第9章",
+      "entity": "來8:10, 10:16",
       "book": "希伯來書",
-      "chapter": 9
+      "chapter": 8
+    },
+    {
+      "entity": "58 希伯來書/第8章",
+      "book": "希伯來書",
+      "chapter": 8
     },
     {
       "entity": "來9:13-22",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:12",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:24",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:4",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:15",
       "book": "希伯來書",
       "chapter": 9
     },
@@ -607,7 +577,42 @@
       "chapter": 9
     },
     {
+      "entity": "來9:12",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "58 希伯來書/第9章",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:4",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:24",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來9:15",
+      "book": "希伯來書",
+      "chapter": 9
+    },
+    {
+      "entity": "來10:5-10",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
       "entity": "58 希伯來書/第10章",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "來10:22",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -617,22 +622,12 @@
       "chapter": 10
     },
     {
-      "entity": "來10:10",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
       "entity": "來10:16",
       "book": "希伯來書",
       "chapter": 10
     },
     {
-      "entity": "來10:5-10",
-      "book": "希伯來書",
-      "chapter": 10
-    },
-    {
-      "entity": "來10:22",
+      "entity": "來10:10",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -647,12 +642,12 @@
       "chapter": 12
     },
     {
-      "entity": "來12:18-24",
+      "entity": "來12:22-24",
       "book": "希伯來書",
       "chapter": 12
     },
     {
-      "entity": "來12:22-24",
+      "entity": "來12:18-24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -912,12 +907,12 @@
       "chapter": 30
     },
     {
-      "entity": "申31:9,24-26",
+      "entity": "申31:9",
       "book": "申命記",
       "chapter": 31
     },
     {
-      "entity": "申31:9",
+      "entity": "申31:9,24-26",
       "book": "申命記",
       "chapter": 31
     },
@@ -1257,12 +1252,12 @@
       "chapter": 0
     },
     {
-      "entity": "雅1:22",
+      "entity": "59 雅各書/第1章",
       "book": "雅各書",
       "chapter": 1
     },
     {
-      "entity": "59 雅各書/第1章",
+      "entity": "雅1:22",
       "book": "雅各書",
       "chapter": 1
     },
@@ -1282,12 +1277,12 @@
       "chapter": 3
     },
     {
-      "entity": "太4:2",
+      "entity": "40 馬太福音/第4章",
       "book": "馬太福音",
       "chapter": 4
     },
     {
-      "entity": "40 馬太福音/第4章",
+      "entity": "太4:2",
       "book": "馬太福音",
       "chapter": 4
     },
@@ -1327,11 +1322,6 @@
     "broken": {},
     "pending": {
       "03 利未記/全書目錄及綱要.md": [
-        [
-          "03 利未記/第13章",
-          "利未記",
-          13
-        ],
         [
           "03 利未記/第14章",
           "利未記",
