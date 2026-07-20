@@ -1,0 +1,133 @@
+book: 利未記
+chapter: 10
+A_use_directly: []
+B_needs_update:
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 全章核心人物，兩子因獻凡火死亡（v1-2）、神親自曉諭他祭司禁酒定例（v8-11）、為未吃贖罪祭肉向摩西辯解（v16-20）
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 拿答
+  suggested_type: 人物
+  evidence: v1-2「亞倫的兒子拿答、亞比戶各拿自己的香爐……獻上凡火……就有火從耶和華面前出來，把他們燒滅」
+  match_type: exact
+  existing_title: 拿答
+  existing_path: link_folder/人物/拿答.md
+- name: 亞比戶
+  suggested_type: 人物
+  evidence: v1-2 與拿答一同獻凡火被火燒滅，死在耶和華面前
+  match_type: exact
+  existing_title: 亞比戶
+  existing_path: link_folder/人物/亞比戶.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: v6,12,16 摩西吩咐亞倫和他兒子以利亞撒、以他瑪不可為死去的兄長哀哭；v16-17摩西因贖罪祭肉被焚燒向以利亞撒、以他瑪發怒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 以他瑪
+  suggested_type: 人物
+  evidence: 同以利亞撒，v6,12,16-19 全程與以利亞撒並列受摩西吩咐與責問
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
+- name: 亞倫的祭司譜系
+  suggested_type: 人物
+  evidence: 本章拿答、亞比戶因獻凡火死亡，僅剩以利亞撒、以他瑪二子承接祭司職分，是亞倫祭司譜系的關鍵轉折
+  match_type: exact
+  existing_title: 亞倫的祭司譜系
+  existing_path: link_folder/人物/亞倫的祭司譜系.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章主導事件處理：解釋神的懲罰（v3）、指揮抬屍（v4-5）、吩咐禁哀悼禁出會幕（v6-7）、轉達禁酒定例（v8-11）、提醒祭司當得的分（v12-15）、追查並發怒（v16-18）、接受亞倫解釋（v19-20）
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 親近（qarab）
+  suggested_type: 原文
+  evidence: v3「這就是耶和華所說：我在親近我的人中要顯為聖」
+  match_type: exact
+  existing_title: 親近（qarab）
+  existing_path: link_folder/原文/親近（qarab）.md
+- name: 利10：3
+  suggested_type: 互文
+  evidence: v3 全節本身即此互文條目的核心經文：「我在親近我的人中要顯為聖；在眾民面前，我要得榮耀」
+  match_type: exact
+  existing_title: 利10：3
+  existing_path: link_folder/互文/利10：3.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v12「你們獻給耶和華火祭中所剩的素祭，要在壇旁不帶酵而吃，因為是至聖的」
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: v14-15「所搖的胸，所舉的腿……因為這些是從以色列人平安祭中給你」
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: v14-15「所搖的胸」「當搖祭，在耶和華面前搖一搖」
+  match_type: exact
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 至聖的供物（聖與至聖之分）
+  suggested_type: 主題
+  evidence: v12「因為是至聖的」；v13「你的分和你兒子的分」；v17「這贖罪祭既是至聖的，主又給了你們」
+  match_type: exact
+  existing_title: 至聖的供物（聖與至聖之分）
+  existing_path: link_folder/主題/至聖的供物（聖與至聖之分）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v16-20 摩西尋找作贖罪祭的公山羊、發現被焚燒、質問以利亞撒以他瑪、亞倫辯解、摩西接受
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 膏油（聖膏油）
+  suggested_type: 原文
+  evidence: v7「因為耶和華的膏油在你們的身上」，是亞倫和剩下兒子不可出會幕門的理由
+  match_type: exact
+  existing_title: 膏油（聖膏油）
+  existing_path: link_folder/原文/膏油（聖膏油）.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v12,16,19 承接聖職期間常獻的燔祭與百姓所獻的燔祭
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+C_new_formal:
+- name: 凡火
+  suggested_type: 主題
+  evidence: v1「在耶和華面前獻上凡火，是耶和華沒有吩咐他們的」，指非取自燔祭壇聖火的火，是本章核心事件起因
+  target_path: link_folder/主題/凡火.md
+- name: 祭司不可為死人哀哭（居喪條例）
+  suggested_type: 主題
+  evidence: v6-7「不可蓬頭散髮，也不可撕裂衣裳，免得你們死亡……你們也不可出會幕的門，恐怕你們死亡，因為耶和華的膏油在你們的身上」
+  target_path: link_folder/主題/祭司不可為死人哀哭（居喪條例）.md
+- name: 祭司禁酒的定例
+  suggested_type: 主題
+  evidence: v9「你和你兒子進會幕的時候，清酒、濃酒都不可喝，免得你們死亡；這要作你們世世代代永遠的定例」
+  target_path: link_folder/主題/祭司禁酒的定例.md
+- name: 聖俗潔淨不潔淨的分別
+  suggested_type: 神學
+  evidence: v10-11「使你們可以將聖的、俗的，潔淨的、不潔淨的，分別出來；又使你們可以將耶和華藉摩西曉諭以色列人的一切律例教訓他們」
+  target_path: link_folder/神學/聖俗潔淨不潔淨的分別.md
+  semantic_hint:
+  - title: 潔淨與不潔淨
+    score: 0.459
+    type: 神學
+  - title: 聖潔（qodesh）
+    score: 0.436
+    type: 原文
+  - title: 潔淨與不潔淨的早期區分
+    score: 0.434
+    type: 主題
+- name: 米沙利和以利撒反
+  suggested_type: 人物
+  evidence: v4-5「摩西召了亞倫叔父烏薛的兒子米沙利、以利撒反來……於是二人上前來，把他們穿著袍子抬到營外」
+  target_path: link_folder/人物/米沙利和以利撒反.md
+D_new_candidate: []
+E_skip: []

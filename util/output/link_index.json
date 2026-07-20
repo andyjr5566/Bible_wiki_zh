@@ -268,6 +268,16 @@
     "status": "formal",
     "aliases": []
   },
+  "凡火": {
+    "path": "link_folder/主題/凡火.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "凡火",
+    "status": "formal",
+    "aliases": [
+      "凡火"
+    ]
+  },
   "刀劍": {
     "path": "link_folder/主題/刀劍.md",
     "type": "主題",
@@ -1180,6 +1190,28 @@
     "title": "神與亞伯蘭立約",
     "status": "formal",
     "aliases": []
+  },
+  "祭司不可為死人哀哭（居喪條例）": {
+    "path": "link_folder/主題/祭司不可為死人哀哭（居喪條例）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "祭司不可為死人哀哭（居喪條例）",
+    "status": "formal",
+    "aliases": [
+      "祭司居喪條例",
+      "祭司不可哀哭"
+    ]
+  },
+  "祭司禁酒的定例": {
+    "path": "link_folder/主題/祭司禁酒的定例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "祭司禁酒的定例",
+    "status": "formal",
+    "aliases": [
+      "祭司禁酒",
+      "祭司不得飲酒"
+    ]
   },
   "稱妻說謊": {
     "path": "link_folder/主題/稱妻說謊.md",
@@ -9382,6 +9414,17 @@
     "title": "米戶雅利",
     "status": "formal",
     "aliases": []
+  },
+  "米沙利和以利撒反": {
+    "path": "link_folder/人物/米沙利和以利撒反.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "米沙利和以利撒反",
+    "status": "formal",
+    "aliases": [
+      "米沙利",
+      "以利撒反"
+    ]
   },
   "米甸": {
     "path": "link_folder/人物/米甸.md",
@@ -19263,6 +19306,17 @@
       "神豈有難成的事"
     ]
   },
+  "聖俗潔淨不潔淨的分別": {
+    "path": "link_folder/神學/聖俗潔淨不潔淨的分別.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "聖俗潔淨不潔淨的分別",
+    "status": "formal",
+    "aliases": [
+      "聖俗分別",
+      "潔淨不潔淨分別"
+    ]
+  },
   "聖潔": {
     "path": "link_folder/神學/聖潔.md",
     "type": "神學",
@@ -22394,6 +22448,18 @@
   "God's provision": {
     "alias_of": "神的供應"
   },
+  "祭司居喪條例": {
+    "alias_of": "祭司不可為死人哀哭（居喪條例）"
+  },
+  "祭司不可哀哭": {
+    "alias_of": "祭司不可為死人哀哭（居喪條例）"
+  },
+  "祭司禁酒": {
+    "alias_of": "祭司禁酒的定例"
+  },
+  "祭司不得飲酒": {
+    "alias_of": "祭司禁酒的定例"
+  },
   "鹽約": {
     "alias_of": "立約的鹽"
   },
@@ -23956,6 +24022,12 @@
   },
   "Miriam": {
     "alias_of": "米利暗"
+  },
+  "米沙利": {
+    "alias_of": "米沙利和以利撒反"
+  },
+  "以利撒反": {
+    "alias_of": "米沙利和以利撒反"
   },
   "Jochebed": {
     "alias_of": "約基別"
@@ -26566,6 +26638,12 @@
   },
   "神豈有難成的事": {
     "alias_of": "耶和華豈有難成的事"
+  },
+  "聖俗分別": {
+    "alias_of": "聖俗潔淨不潔淨的分別"
+  },
+  "潔淨不潔淨分別": {
+    "alias_of": "聖俗潔淨不潔淨的分別"
   },
   "holy nation": {
     "alias_of": "聖潔的國民"
