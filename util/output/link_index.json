@@ -1,4 +1,15 @@
 {
+  "不潔淨雀鳥（二十種可憎飛禽）": {
+    "path": "link_folder/主題/不潔淨雀鳥（二十種可憎飛禽）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "不潔淨雀鳥（二十種可憎飛禽）",
+    "status": "formal",
+    "aliases": [
+      "二十種可憎飛禽",
+      "不潔淨鳥類"
+    ]
+  },
   "五十個金鉤（vavei zahav）": {
     "path": "link_folder/主題/五十個金鉤（vavei zahav）.md",
     "type": "主題",
@@ -289,6 +300,16 @@
     "status": "formal",
     "aliases": []
   },
+  "分蹄倒嚼（潔淨走獸的判準）": {
+    "path": "link_folder/主題/分蹄倒嚼（潔淨走獸的判準）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "分蹄倒嚼（潔淨走獸的判準）",
+    "status": "formal",
+    "aliases": [
+      "分蹄倒嚼"
+    ]
+  },
   "利百加不孕": {
     "path": "link_folder/主題/利百加不孕.md",
     "type": "主題",
@@ -377,6 +398,17 @@
     "status": "formal",
     "aliases": [
       "內幔柱"
+    ]
+  },
+  "地上爬物（八種不潔爬蟲）": {
+    "path": "link_folder/主題/地上爬物（八種不潔爬蟲）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "地上爬物（八種不潔爬蟲）",
+    "status": "formal",
+    "aliases": [
+      "八種不潔爬蟲",
+      "地上爬物"
     ]
   },
   "基土拉的地位": {
@@ -842,6 +874,17 @@
     "aliases": [
       "帳幕",
       "會幕"
+    ]
+  },
+  "有翅有鱗（潔淨水族的判準）": {
+    "path": "link_folder/主題/有翅有鱗（潔淨水族的判準）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "有翅有鱗（潔淨水族的判準）",
+    "status": "formal",
+    "aliases": [
+      "有翅有鱗",
+      "潔淨水族標準"
     ]
   },
   "染紅的公羊皮蓋子": {
@@ -1580,6 +1623,17 @@
     "title": "赤身露體不羞恥",
     "status": "formal",
     "aliases": []
+  },
+  "蹦跳的蝗蟲類（潔淨昆蟲）": {
+    "path": "link_folder/主題/蹦跳的蝗蟲類（潔淨昆蟲）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "蹦跳的蝗蟲類（潔淨昆蟲）",
+    "status": "formal",
+    "aliases": [
+      "潔淨昆蟲",
+      "蝗蟲類"
+    ]
   },
   "遮羞": {
     "path": "link_folder/主題/遮羞.md",
@@ -11251,6 +11305,18 @@
       "Sin wilderness etymology"
     ]
   },
+  "沙番（shaphan）": {
+    "path": "link_folder/原文/沙番（shaphan）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "沙番（shaphan）",
+    "status": "formal",
+    "aliases": [
+      "沙番",
+      "石獾",
+      "岩獾"
+    ]
+  },
   "治理與管理": {
     "path": "link_folder/原文/治理與管理.md",
     "type": "原文",
@@ -14497,6 +14563,17 @@
     "title": "護衛長",
     "status": "formal",
     "aliases": []
+  },
+  "豬與異教祭祀的關聯": {
+    "path": "link_folder/文化/豬與異教祭祀的關聯.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "豬與異教祭祀的關聯",
+    "status": "formal",
+    "aliases": [
+      "豬的不潔淨",
+      "豬與異教"
+    ]
   },
   "迦南廟妓風俗": {
     "path": "link_folder/文化/迦南廟妓風俗.md",
@@ -22175,6 +22252,12 @@
       "餅和酒預表"
     ]
   },
+  "二十種可憎飛禽": {
+    "alias_of": "不潔淨雀鳥（二十種可憎飛禽）"
+  },
+  "不潔淨鳥類": {
+    "alias_of": "不潔淨雀鳥（二十種可憎飛禽）"
+  },
   "金鉤": {
     "alias_of": "五十個金鉤（vavei zahav）"
   },
@@ -22220,6 +22303,9 @@
   "牛犢": {
     "alias_of": "公牛犢（par ben baqar）"
   },
+  "分蹄倒嚼": {
+    "alias_of": "分蹄倒嚼（潔淨走獸的判準）"
+  },
   "山羊毛幔子": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
   },
@@ -22246,6 +22332,12 @@
   },
   "內幔柱": {
     "alias_of": "四根包金柱子（內幔柱）"
+  },
+  "八種不潔爬蟲": {
+    "alias_of": "地上爬物（八種不潔爬蟲）"
+  },
+  "地上爬物": {
+    "alias_of": "地上爬物（八種不潔爬蟲）"
   },
   "榮耀的基路伯": {
     "alias_of": "基路伯（施恩座）"
@@ -22369,6 +22461,12 @@
   },
   "會幕": {
     "alias_of": "會幕（帳幕整體）"
+  },
+  "有翅有鱗": {
+    "alias_of": "有翅有鱗（潔淨水族的判準）"
+  },
+  "潔淨水族標準": {
+    "alias_of": "有翅有鱗（潔淨水族的判準）"
   },
   "公羊皮蓋": {
     "alias_of": "染紅的公羊皮蓋子"
@@ -22546,6 +22644,12 @@
   },
   "內褲": {
     "alias_of": "褲子（細麻布褲子）"
+  },
+  "潔淨昆蟲": {
+    "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
+  },
+  "蝗蟲類": {
+    "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
   },
   "遮眼": {
     "alias_of": "遮羞"
@@ -24434,6 +24538,15 @@
   "Sin wilderness etymology": {
     "alias_of": "汛（ Sin thorn ）"
   },
+  "沙番": {
+    "alias_of": "沙番（shaphan）"
+  },
+  "石獾": {
+    "alias_of": "沙番（shaphan）"
+  },
+  "岩獾": {
+    "alias_of": "沙番（shaphan）"
+  },
   "法勒原文字義": {
     "alias_of": "法勒名字與分地"
   },
@@ -25348,6 +25461,12 @@
   },
   "和解禮物": {
     "alias_of": "解恨之禮"
+  },
+  "豬的不潔淨": {
+    "alias_of": "豬與異教祭祀的關聯"
+  },
+  "豬與異教": {
+    "alias_of": "豬與異教祭祀的關聯"
   },
   "廟妓": {
     "alias_of": "迦南廟妓風俗"
