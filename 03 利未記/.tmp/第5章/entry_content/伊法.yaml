@@ -1,0 +1,29 @@
+name: 伊法
+type: 原文
+secondary_types: []
+aliases: []
+status: formal
+definition: 利未記5:11提到的容量單位，「伊法十分之一」約等於22公升的十分之一，即2.2公升（或約2.2升）。細麵贖罪祭的量度即以此為準。伊法是古代以色列常用的乾量單位，聖所使用標準伊法。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 第11節規定細麵贖罪祭的分量為「伊法十分之一」，作為最低階獻祭的具體度量標準。
+  relation: 伊法提供本章細麵贖罪祭的量度基準，確保獻祭分量的公平與統一。
+related_entries:
+- 細麵
+- 供物（qorban）
+- 舍客勒
+sources:
+- '逐節註解: 利未記第五章註解——利五11原文字義「伊法約22公升」（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+- '拾穗: 利未記第五章拾穗——利五11細麵伊法十分之一（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT05.htm）'
+- '研經註解: Leviticus 5:11 a tenth of an ephah（https://www.kingcomments.com/en/bible-studies/Lev/5）'
+- '研經註解: Leviticus 5:11 an ephah（https://biblehub.com/study/leviticus/5.htm）'
+created_from: 利未記第5章
+category: 原文
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

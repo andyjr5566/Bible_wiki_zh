@@ -1,0 +1,31 @@
+name: 雛鴿
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: 利未記5:7、11與斑鳩並列，作為貧窮人獻贖愆祭的替代祭物。若力量不夠獻羊羔，可帶兩隻斑鳩或兩隻雛鴿；若連兩隻鳥也買不起，則改獻細麵。雛鴿同樣一隻作贖罪祭，一隻作燔祭，獻祭儀式同斑鳩。
+development: ''
+accumulations:
+- book: 利未記
+  chapter: 5
+  summary: 第7、11節將雛鴿與斑鳩同等視為第二級贖愆祭祭物，反映神對經濟弱勢者的體恤。
+  relation: 雛鴿是本章分級獻祭制度的一部分，確保人人都能依照能力獻祭贖罪。
+related_entries:
+- 贖愆祭（asham）
+- 斑鳩
+- 供物（qorban）
+- 亞倫和他兒子（祭司）
+- 血
+sources:
+- '逐節註解: 利未記第五章註解——利五7、11文意註解（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT05.htm）'
+- '拾穗: 利未記第五章拾穗——利五7、11兩隻斑鳩或兩隻雛鴿（https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT05.htm）'
+- '研經註解: Leviticus 5:7 two turtledoves or two young pigeons（https://www.kingcomments.com/en/bible-studies/Lev/5）'
+- '研經註解: Leviticus 5:7 If, however, he cannot afford a lamb（https://biblehub.com/study/leviticus/5.htm）'
+created_from: 利未記第5章
+category: 主題
+trigger_sources:
+- 逐節註解
+- 拾穗
+- 研經註解
+current_data: true
+pending: false

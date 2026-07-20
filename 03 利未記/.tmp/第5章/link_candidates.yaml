@@ -1,0 +1,222 @@
+book: 利未記
+chapter: 5
+candidates:
+- name: 贖愆祭（asham）
+  type: 原文
+  evidence:
+  - 本章14-19節正式引入贖愆祭（asham），與贖罪祭（chatat）不同：贖愆祭針對具體的過犯行為，且須附加賠償（加五分之一）。CT 指出贖愆祭英文名 Trespass
+    Offering，對付罪行（複數），而贖罪祭對付罪性（單數）。BH 註：The guilt offering, or asham in Hebrew, was
+    required for certain unintentional sins or when restitution was needed. KC 則稱
+    The guilt offering is more about the deed that is done and the satisfaction to
+    the LORD.
+  - GT 丁良才詳列贖罪祭與贖愆祭五個不同處：(1)贖愆祭只為個人；(2)贖愆祭只有公綿羊一種祭物；(3)贖愆祭血只灑壇周圍；(4)贖愆祭須償還加五分之一；(5)贖愆祭預表耶穌償還人因罪所虧損的。
+  surfaces:
+  - 贖愆祭
+  - 贖愆祭牲
+- name: 公綿羊
+  type: 主題
+  evidence:
+  - '贖愆祭的唯一指定祭物是「沒有殘疾的公綿羊」（v15, v18）。CT：「贖愆祭牲常是公綿羊」。GT 丁良才：「贖愆祭只有一種祭物，就是公羊，也多是公綿羊」。KC:
+    The prescribed animal as a guilt offering is a ram. There is no talk of any other
+    kind of offering. This indicates that this offering is the same for everyone.'
+  - 'BH: The requirement for an unblemished ram signifies the need for purity and
+    perfection in offerings to God.'
+  surfaces:
+  - 公綿羊
+  - 公羊
+- name: 斑鳩
+  type: 主題
+  evidence:
+  - 窮人無力獻羊羔時，可用兩隻斑鳩或兩隻雛鴿替代（v7）。CT：「本來窮人獻燔祭只要一隻鳥，但獻贖愆祭需要兩隻鳥，因為獻鳥時不能分開脂油和肉。」GT：「人獻鳥為燔祭的時候只用獻一隻斑鳩或一隻雛鴿，但獻斑鳩或雛鴿為贖罪祭的時候就必須有兩隻。」
+  surfaces:
+  - 斑鳩
+- name: 雛鴿
+  type: 主題
+  evidence:
+  - '與斑鳩同為窮人替代祭物（v7）。BH: Turtledoves and pigeons were common in the region, and their
+    use in sacrifices is also seen in the New Testament, such as in Luke 2:24, where
+    Mary and Joseph offer birds at the temple.'
+  surfaces:
+  - 雛鴿
+- name: 細麵
+  type: 主題
+  evidence:
+  - '極貧窮者可用細麵伊法十分之一為贖罪祭（v11），不可加油和乳香。CT：「伊法十分之一約2.2公升的細麵，其價值低於兩隻鳥，是為優待貧窮人的做法。」KC:
+    It is exceptional that a non-bloody trip serves for atonement. This speaks of
+    someone who has very little awareness of the work of the Lord Jesus.'
+  - GT：「神在此是特要體恤最貧窮的人，獻細麵為贖罪祭是一種特別優待的辦法。」
+  surfaces:
+  - 細麵
+- name: 伊法
+  type: 原文
+  evidence:
+  - '伊法（ephah）為乾量單位，十分之一伊法約2.2公升（v11）。CT 註：「伊法約22公升」。BH: A tenth of an ephah is approximately
+    2.2 liters or about 2 quarts.'
+  surfaces:
+  - 伊法
+  - 伊法十分之一
+- name: 冒失發誓
+  type: 主題
+  evidence:
+  - '第四種須獻贖罪祭的罪：「嘴裡冒失發誓，要行惡，要行善」（v4）。CT：「有口無心，口裡所作誓願，不是出於內心所願。」GT 丁良才詳解：「人冒失發誓，或因遇危急如耶弗他；或因生氣並事急如掃羅和大衛；因高興如希律；因妒恨如猶太人。」KC:
+    Someone sins and charges guilt when he speaks hastily and overconfidently. This
+    is failure in self-control. BH: This phrase addresses the human tendency to speak
+    impulsively without considering the consequences.'
+  surfaces:
+  - 冒失發誓
+  - 冒失起誓
+- name: 污穢
+  type: 主題
+  evidence:
+  - '第二、三種須獻贖罪祭的罪涉及「不潔的物」（v2）和「別人的污穢」（v3）。CT：「凡觸犯不潔之條例的人」。GT：「不潔不是指道德和良心上的不潔，是指宗教儀式上的不潔。」KC:
+    There are two forms in becoming uncleanness. The first is by touching the carcass
+    of unclean animals. That represents death in the world around us. BH: The concept
+    of uncleanness is central to the holiness code in Leviticus, emphasizing the separation
+    between the holy and the common.'
+  surfaces:
+  - 污穢
+  - 不潔的物
+  - 別人的污穢
+- name: 母綿羊
+  type: 主題
+  evidence:
+  - '平民贖罪祭可用「母羊」（v6），即母綿羊或母山羊。CT：「羊群中的母羊，或是一隻羊羔，或是一隻山羊」。KC: a female from the flock,
+    a lamb or a goat as a sin trip. 母綿羊與公綿羊（贖愆祭專用）有別。'
+  surfaces:
+  - 母綿羊
+  - 母羊
+- name: 贖罪祭
+  type: 原文
+  evidence:
+  - 本章1-13節延續贖罪祭條例，補充三種須獻贖罪祭的具體罪行（匿事不報、沾染污穢、冒失發誓），以及按經濟能力分級的祭物（羊→兩鳥→細麵）。CT 指出本章贖罪祭與贖愆祭交叉出現，須先釐清。GT
+    丁良才認為本章1-13節當歸於第四章。
+  surfaces:
+  - 贖罪祭
+- name: 燔祭
+  type: 原文
+  evidence:
+  - '窮人獻兩鳥時，第二隻作燔祭（v7, v10），「照例獻第二隻為燔祭」。KC: The burnt trip, for which the second bird
+    must be prepared, serves as a substitute for the fat of the larger sin trips.
+    GT：「那作燔祭的一隻是按一14至17節的條例獻的。」'
+  surfaces:
+  - 燔祭
+- name: 認罪
+  type: 主題
+  evidence:
+  - 'v5 首次明文規定獻祭前必須「承認所犯的罪」。CT：「一旦發覺自己有罪，就要向神認罪。」GT：「有罪的人大概在獻祭以前要先承認他的罪。」KC: Confession
+    means that sin is called by name. BH: Confession is a critical step in the process
+    of atonement.'
+  surfaces:
+  - 承認所犯的罪
+- name: 賠償（shalem）
+  type: 原文
+  evidence:
+  - '贖愆祭的核心特徵：「因在聖物上的差錯要償還，另外加五分之一」（v16）。CT：「須折價賠償所虧欠的部分；外加五分之一」。KC: The guilt must
+    not only be confessed, but also paid back, with an additional amount of one fifth.
+    BH: Restitution involves compensating for the loss or damage caused, by adding
+    a fifth of its value.'
+  surfaces:
+  - 償還
+  - 賠償
+  - 加五分之一
+- name: 誤犯（shagagah）
+  type: 原文
+  evidence:
+  - 'v15-18 重複「誤犯了罪」「誤行的那錯事」。CT：「誤犯的罪包括誤吃聖物、不獻初熟之物、不納十分之一等」。KC: It is assumed it happens
+    unintentionally. Yet we can become guilty if we do not keep an eye on the fact
+    that everything belongs to the Lord. BH: The idea that one can sin without awareness
+    underscores the holiness of God.'
+  surfaces:
+  - 誤犯
+  - 誤犯了罪
+- name: 赦免（salach）
+  type: 原文
+  evidence:
+  - 'v10, 13, 16, 18 四次重複「他必蒙赦免」。CT：「經過祭司為他獻祭之後，就蒙神赦免。」KC: There is forgiveness on
+    the basis of the trip. BH: Forgiveness is the ultimate goal of the atonement process.'
+  surfaces:
+  - 蒙赦免
+  - 必蒙赦免
+- name: 血
+  type: 主題
+  evidence:
+  - 'v9 鳥血的處理：「把些贖罪祭牲的血彈在壇的旁邊，剩下的血要流在壇的腳那裡」。GT：「贖罪祭之鳥的血不多，因此難以灑在壇的周圍，只須彈在壇的旁邊。」BH:
+    Sprinkling blood on the altar side signifies purification and consecration.'
+  surfaces:
+  - 血
+  - 彈血
+- name: 銅壇（燔祭壇）
+  type: 地點
+  evidence:
+  - v9 血彈在「壇的旁邊」、流在「壇的腳那裡」——此處的壇指銅壇（燔祭壇），因鳥類贖罪祭的血不帶入會幕。GT：「贖罪祭之鳥的血……只須彈在壇的旁邊」。
+  surfaces:
+  - 壇的旁邊
+  - 壇的腳
+- name: 火祭（isheh）
+  type: 原文
+  evidence:
+  - v12 祭司取一把細麵「按獻給耶和華火祭的條例燒在壇上」。CT：「火祭的條例指完全用火燒化，成為馨香之氣，獻給神享用。」
+  surfaces:
+  - 火祭
+- name: 馨香之氣
+  type: 主題
+  evidence:
+  - v12 細麵燒在壇上，「按獻給耶和華火祭的條例」——火祭即馨香之氣獻給神。KC 論脂油：the fat which is sacrificed and which
+    is a soothing aroma to the LORD.
+  surfaces:
+  - 馨香
+- name: 紀念份
+  type: 原文
+  evidence:
+  - v12 祭司「取出自己的一把來作為紀念」。CT：「這一把是為獻祭之用，其餘的細麵則歸給祭司享用。」GT：「所取出的一把是燒在壇上作為紀念。」
+  surfaces:
+  - 紀念
+  - 一把
+- name: 供物（qorban）
+  type: 原文
+  evidence:
+  - v11 窮人「帶供物來，就是細麵伊法十分之一為贖罪祭」。CT：「供物」指奉獻物。
+  surfaces:
+  - 供物
+- name: 無殘疾（tamim）
+  type: 原文
+  evidence:
+  - 'v15, 18 贖愆祭的公綿羊必須「沒有殘疾」。CT：「所有的祭牲都不可有殘疾」。KC: a ram without defect. BH: The requirement
+    for an unblemished ram signifies the need for purity and perfection.'
+  surfaces:
+  - 沒有殘疾
+- name: 舍客勒
+  type: 原文
+  evidence:
+  - 'v15 贖愆祭牲的估價「按聖所的舍客勒拿銀子」。CT：「聖所的舍客勒指當時在聖所內使用的砝碼，每一舍客勒約折合十一點五公克」。GT：「猶太傳統解釋一隻羊羔價值至少兩舍客勒」。KC:
+    The valuation in silver by shekels refers to the price the Lord Jesus paid on
+    the cross.'
+  surfaces:
+  - 舍客勒
+  - 聖所的舍客勒
+- name: 祭司
+  type: 人物
+  evidence:
+  - '本章祭司角色貫穿全章：獻祭、贖罪、估價、取一把紀念、吃剩餘的麵。CT：「祭司指代表人獻祭給神的聖職人物」。KC: The priest shall make
+    atonement on his behalf for his sin. BH: The priest acted as a mediator between
+    the people and God.'
+  surfaces:
+  - 祭司
+- name: 脂油（chelev）
+  type: 原文
+  evidence:
+  - 'v7-10 獻鳥時因鳥無脂油，故以第二隻鳥作燔祭代替脂油焚燒。KC: The sin trip is a horrible thing for God,
+    but the fat is not. But there is no fat on a bird. That is why the second bird
+    is destined as a burnt trip.'
+  surfaces:
+  - 脂油
+- name: 聖物
+  type: 主題
+  evidence:
+  - 'v15「人若在耶和華的聖物上誤犯了罪」。CT 詳列聖物相關的罪：誤吃聖物、不獻初熟之物、不納十分之一、不贖頭生的等。KC: When we become
+    unfaithful to the LORD holy things we can think of taking away something that
+    is set apart for Him. BH: The LORD holy things refers to items or practices set
+    apart for worship, such as trips, tithes, or sacred rituals.'
+  surfaces:
+  - 聖物
+  - 耶和華的聖物

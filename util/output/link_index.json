@@ -234,6 +234,14 @@
       "牛犢"
     ]
   },
+  "公綿羊": {
+    "path": "link_folder/主題/公綿羊.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "公綿羊",
+    "status": "formal",
+    "aliases": []
+  },
   "公義與真理": {
     "path": "link_folder/主題/公義與真理.md",
     "type": "主題",
@@ -249,6 +257,14 @@
       "神學"
     ],
     "title": "六日創造與信徒重生經歷",
+    "status": "formal",
+    "aliases": []
+  },
+  "冒失發誓": {
+    "path": "link_folder/主題/冒失發誓.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "冒失發誓",
     "status": "formal",
     "aliases": []
   },
@@ -744,6 +760,14 @@
     "status": "formal",
     "aliases": []
   },
+  "斑鳩": {
+    "path": "link_folder/主題/斑鳩.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "斑鳩",
+    "status": "formal",
+    "aliases": []
+  },
   "施恩座": {
     "path": "link_folder/主題/施恩座.md",
     "type": "主題",
@@ -831,11 +855,27 @@
     "status": "formal",
     "aliases": []
   },
+  "母綿羊": {
+    "path": "link_folder/主題/母綿羊.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "母綿羊",
+    "status": "formal",
+    "aliases": []
+  },
   "求告耶和華的名": {
     "path": "link_folder/主題/求告耶和華的名.md",
     "type": "主題",
     "secondary_types": [],
     "title": "求告耶和華的名",
+    "status": "formal",
+    "aliases": []
+  },
+  "污穢": {
+    "path": "link_folder/主題/污穢.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "污穢",
     "status": "formal",
     "aliases": []
   },
@@ -1192,6 +1232,14 @@
       "素祭五樣式"
     ]
   },
+  "細麵": {
+    "path": "link_folder/主題/細麵.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "細麵",
+    "status": "formal",
+    "aliases": []
+  },
   "綿羊": {
     "path": "link_folder/主題/綿羊.md",
     "type": "主題",
@@ -1234,6 +1282,20 @@
     "title": "聖潔飲食",
     "status": "formal",
     "aliases": []
+  },
+  "聖物": {
+    "path": "link_folder/主題/聖物.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學",
+      "儀式"
+    ],
+    "title": "聖物",
+    "status": "formal",
+    "aliases": [
+      "聖物",
+      "耶和華的聖物"
+    ]
   },
   "聖經第一場戰爭": {
     "path": "link_folder/主題/聖經第一場戰爭.md",
@@ -1347,6 +1409,16 @@
     "status": "formal",
     "aliases": []
   },
+  "血": {
+    "path": "link_folder/主題/血.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "血",
+    "status": "formal",
+    "aliases": [
+      "血"
+    ]
+  },
   "血祭與素祭": {
     "path": "link_folder/主題/血祭與素祭.md",
     "type": "主題",
@@ -1401,6 +1473,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "該隱的後代與無神文化",
+    "status": "formal",
+    "aliases": []
+  },
+  "認罪": {
+    "path": "link_folder/主題/認罪.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "認罪",
     "status": "formal",
     "aliases": []
   },
@@ -1622,6 +1702,14 @@
       "歷史"
     ],
     "title": "雅各騙取祝福",
+    "status": "formal",
+    "aliases": []
+  },
+  "雛鴿": {
+    "path": "link_folder/主題/雛鴿.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "雛鴿",
     "status": "formal",
     "aliases": []
   },
@@ -10148,6 +10236,14 @@
       "伊勒伯特利"
     ]
   },
+  "伊法": {
+    "path": "link_folder/原文/伊法.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "伊法",
+    "status": "formal",
+    "aliases": []
+  },
   "伊迦爾撒哈杜他": {
     "path": "link_folder/原文/伊迦爾撒哈杜他.md",
     "type": "原文",
@@ -11933,6 +12029,20 @@
     "title": "贖命的價銀",
     "status": "formal",
     "aliases": []
+  },
+  "贖愆祭（asham）": {
+    "path": "link_folder/原文/贖愆祭（asham）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "贖愆祭（asham）",
+    "status": "formal",
+    "aliases": [
+      "贖愆祭",
+      "愆祭",
+      "賠償祭"
+    ]
   },
   "起泡的瘡": {
     "path": "link_folder/原文/起泡的瘡.md",
@@ -22204,6 +22314,9 @@
   "綿羊羔": {
     "alias_of": "綿羊"
   },
+  "耶和華的聖物": {
+    "alias_of": "聖物"
+  },
   "聖衣": {
     "alias_of": "聖衣（祭司聖服）"
   },
@@ -24405,6 +24518,15 @@
   },
   "以賽亞六十六章": {
     "alias_of": "賽66（Yeshayahu 66）"
+  },
+  "贖愆祭": {
+    "alias_of": "贖愆祭（asham）"
+  },
+  "愆祭": {
+    "alias_of": "贖愆祭（asham）"
+  },
+  "賠償祭": {
+    "alias_of": "贖愆祭（asham）"
   },
   "shechin": {
     "alias_of": "起泡的瘡"
