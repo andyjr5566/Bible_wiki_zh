@@ -1,8 +1,29 @@
 {
-  "total_warnings": 21,
+  "total_warnings": 24,
   "critical_count": 0,
-  "warning_count": 21,
+  "warning_count": 24,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "燔祭",
+      "message": "同一 alias「燔祭」指向多個 target: 燔祭, 燔祭（olah）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "平安祭",
+      "message": "同一 alias「平安祭」指向多個 target: 平安祭, 平安祭（shelamim）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "剪除",
+      "message": "同一 alias「剪除」指向多個 target: 剪除（kareth）, 從民中剪除的含義"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

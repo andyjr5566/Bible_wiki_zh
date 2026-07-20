@@ -1,0 +1,395 @@
+book: 利未記
+chapter: 7
+A_use_directly: []
+B_needs_update:
+- name: 贖愆祭（asham）
+  suggested_type: 原文
+  evidence: 'v1「贖愆祭的條例乃是如此：這祭是至聖的」；v2-5宰殺地點同燔祭、血灑壇周圍、脂油焚壇；v7「贖罪祭怎樣，贖愆祭也是怎樣，兩個祭是一個條例。獻贖愆祭贖罪的祭司要得這祭物」。
+
+    CT：「贖愆祭的條例乃是如此，這祭是至聖的——意指祭司對百姓所犯零零碎碎的罪行，該獻的贖愆祭，其規定如下所述」；「兩個祭是一個條例——罪性和罪行是表裡的兩面，我們對付罪行也得對付罪性」。
+
+    GT丁良才：「贖愆祭有五樣和贖罪祭不同之處：(一)表意不同……(二)性質不同，獻贖愆祭多有罰金……(三)用血不同，贖愆祭牲的血要灑在壇的周圍……不是（像贖罪祭牲的血）抹在壇的四角上。(四)祭牲不同，贖愆祭的祭牲只用公綿羊……(五)條例不同」。
+
+    KC：「Here we find the actual description of the guilt offering...there is the aspect
+    of compensation in the foreground, while here it is about the priestly contribution.」
+
+    本章1-10節補足利5:14-6:7未詳述的贖愆祭祭司操作程序（宰殺、灑血、焚脂、祭司分配）。'
+  match_type: exact
+  existing_title: 贖愆祭（asham）
+  existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: 'v7「贖罪祭怎樣，贖愆祭也是怎樣，兩個祭是一個條例。獻贖愆祭贖罪的祭司要得這祭物」；v37「這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例」。
+
+    CT：「意指兩種祭都是同樣的規定」；「唯獨為祭司和全會眾所獻的贖罪祭牲，因須全部焚燒（參四1~21），故例外」。
+
+    GT《聖經精讀本》：「兩個祭歸給祭司的份一樣。這裡贖罪祭指官長和百姓所獻的，祭司和全會眾所獻的應全部焚燒」。
+
+    本章7節明確宣告贖罪祭與贖愆祭「是一個條例」，將利4、6章已立法的贖罪祭祭司分配規則直接套用於贖愆祭，並在v37總結列名中再次確認其為五祭之一。'
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: 'v11「人獻與耶和華平安祭的條例乃是這樣」；v12「他若為感謝獻上，就要用調油的無酵餅和抹油的無酵薄餅，並用油調勻細麵做的餅，與感謝祭一同獻上」；v13「要用有酵的餅和為感謝獻的平安祭，與供物一同獻上」；v15「為感謝獻平安祭牲的肉，要在獻的日子吃，一點不可留到早晨」；v16「若所獻的是為還願，或是甘心獻的，必在獻祭的日子吃，所剩下的第二天也可以吃」；v17-18「但所剩下的祭肉，到第三天要用火焚燒；第三天若吃了平安祭的肉，這祭必不蒙悅納……反為可憎嫌的，吃這祭肉的，就必擔當他的罪孽」。
+
+    CT：「『平安祭』此名詞在希伯來文表示『和好』或『福祉』。此祭為一私人的獻祭，所獻的可為感謝、還願或甘心獻的（15~16節），表明獻祭者對神的感恩，虔敬與奉獻，並藉此顯明神與人及人與鄰舍的和諧關係」。
+
+    GT丁良才：「平安祭是因三個緣故獻的：(一)為感謝……(二)為許願……(三)甘心獻（不是因什麼特別的緣故）」；「要用有酵的餅——這些餅所表示的就是獻祭的人雖因耶穌得與神和好，自己卻未曾完全，這些有酵的餅是不可燒在祭壇上的」；對v18「反為可憎嫌的」說明：獻祭的人若不遵守獻祭的條例，所獻的不會被神承認，神不僅不悅納，反而厭惡。
+
+    GT《啟導本》：「關於『平安祭』，在三1～17已有規定。本節到21節為應歸給神、祭司和獻祭的人的那一部分的補充。平安祭可以為還願的感恩祭，也可以作甘心獻的感謝祭（16節），是所有的祭中獻的人可以分享祭物的祭」。
+
+    KC：「The peace offering is a fellowship offering, which is represented for us in
+    the Table of the Lord (1Cor 10:15-21)」；「A votive or freewill offering may be eaten
+    the next day...This is an offering that has a more sustainable character than
+    the offering of thanksgiving」；「But even then it is not so that we can move forward
+    for a long time with what we have seen of the Lord Jesus. That is what verses
+    17-18 have to say to us」。
+
+    BH：「The two-day limit can be seen as a type of Christ, who was in the grave for
+    two days and rose on the third, signifying the completion and perfection of His
+    sacrifice」。
+
+    本章11-21節是利3章平安祭條例的正式補充篇，首次明確區分感謝祭、還願祭、甘心祭三種子類型與各自食用期限——感謝祭當日吃完、還願/甘心祭可留至次日，第三天必焚燒且吃者「擔當罪孽」，構成平安祭獨有的時間性聖潔規範。'
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: 'v11-21同上；v28-34「你們要從平安祭中把右腿作舉祭，奉給祭司……我從以色列人的平安祭中，取了這搖的胸和舉的腿給祭司亞倫和他子孫，作他們從以色列人中所永得的分」。
+
+    CT《串珠聖經註釋》：「平安祭是在各祭中唯一准許獻祭者分享的（11-21）。耶和華的分是燒在壇上的脂油（22-25），祭司的分（30-34）包括搖的胸和舉的腿，其餘所有的肉則歸獻祭者」。
+
+    KC：「The peace offering is a festival sacrifice (Psa 118:27)...Our joy and happiness
+    are always based on the work of the Lord Jesus, and that is also what God rejoices
+    in」。'
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: 'v30「他親手獻給耶和華的火祭，就是脂油和胸，要帶來，好把胸在耶和華面前作搖祭，搖一搖」；v34「取了這搖的胸……給祭司亞倫和他子孫，作他們從以色列人中所永得的分」。
+
+    CT：「唯獨平安祭牲的胸被搖了……在耶和華面前被搖的祭物有七樣：(一)平安祭的胸（本節）……」。
+
+    GT《聖經精讀本》：「搖祭: 源於希伯來語『努帕』，意為『搖』。祭司把祭物拿在手上在耶和華壇前前後搖動（出29:24）」。
+
+    KC：「The breast is where the heart is. The breast speaks of the love of the Lord
+    Jesus. A priest is particularly concerned about this」。
+
+    本章正式規定搖祭專指平安祭「胸」的部分，歸亞倫和他子孫永得的分，呼應出29章承接聖職之搖祭。'
+  match_type: exact
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 舉祭（terumah）
+  suggested_type: 原文
+  evidence: 'v14「從各樣的供物中，他要把一個餅獻給耶和華為舉祭，是要歸給灑平安祭牲血的祭司」；v32-33「你們要從平安祭中把右腿作舉祭，奉給祭司。亞倫子孫中，獻平安祭牲血和脂油的，要得這右腿為分」。
+
+    CT：「『舉祭』，指將手中的祭物，垂直向上舉起，上下擺動，表示獻給神。有人說，搖祭是水平方向前後擺動，與舉祭形成『十字架』狀態」。
+
+    GT《舊約聖經背景註釋》：「傳統譯作『舉祭』（heave offering）的字，新國際本作『捐獻』，指捐贈的禮物……此類物件的擁有權經非正式的步驟，從私人轉屬神明」。
+
+    KC：「the right thigh, which speaks of the strength and perseverance we see in the
+    way the Lord Jesus has gone」。
+
+    本章正式規定舉祭涵蓋餅（各樣供物取一個）與平安祭右腿兩類，皆歸祭司享用。'
+  match_type: exact
+  existing_title: 舉祭（terumah）
+  existing_path: link_folder/原文/舉祭（terumah）.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 'v20「人若不潔淨而吃了，這人必從民中剪除」；v21「吃了獻與耶和華平安祭的肉，這人必從民中剪除」；v25「無論何人吃了獻給耶和華當火祭牲畜的脂油，那人必從民中剪除」；v27「無論是誰吃血，那人必從民中剪除」——本章四次重複此刑罰公式。
+
+    CT：「『從民中剪除』指從營中被逐出，不被視為神的子民」。
+
+    GT《利未記雷氏研讀本》：「『剪除』就是排除在以色列條例的做法和保護以外，即被逐出以色列民的群體之外」。
+
+    BH：「Being ''cut off'' from the people of Israel is a severe penalty, indicating
+    either excommunication or, in some interpretations, death. This punishment highlights
+    the seriousness of maintaining ritual purity」。
+
+    本章「剪除」四次適用於：不潔而吃平安祭肉（v20-21）、吃脂油（v25）、吃血（v27），是利未記中「剪除」公式最集中出現的段落，補充出23:23「神將迦南人剪除」的滅族義以外的「逐出選民」義。'
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 從民中剪除的含義
+  suggested_type: 解經爭議
+  evidence: 'v20-21,25,27同上四次「必從民中剪除」。
+
+    CT：「『從民中剪除』指從營中被逐出，不被視為神的子民」（傾向逐出說）。
+
+    GT《利未記雷氏研讀本》：「『剪除』就是排除在以色列條例的做法和保護以外，即被逐出以色列民的群體之外」（傾向逐出說）。
+
+    BH：「Being ''cut off'' from the people of Israel is a severe penalty, indicating
+    either excommunication or, in some interpretations, death」（並陳逐出與死亡兩說）。
+
+    GT《啟導本》：「本章規定凡違例食脂油與血的必從民中剪除（指死亡或被逐）」（同樣並陳兩說，不作定論）。
+
+    本章是既有條目「從民中剪除的含義」（原僅錨定創17:14割禮背約一例）延伸適用的重要段落：創17:14是單一情境（拒受割禮），利未記7章則四次密集使用同一公式於不同違例情境（吃不潔祭肉、吃脂油、吃血），各家註釋對「死亡」或「逐出」仍未有定論，顯示這是貫穿摩西五經、持續存在的解經爭議，不因情境不同而有更明確答案。'
+  match_type: exact
+  existing_title: 從民中剪除的含義
+  existing_path: link_folder/解經爭議/從民中剪除的含義.md
+- name: 脂油（chelev）
+  suggested_type: 原文
+  evidence: 'v23「你曉諭以色列人說：牛的脂油、綿羊的脂油、山羊的脂油，你們都不可吃」；v24「自死的和被野獸撕裂的，那脂油可以做別的使用，只是你們萬不可吃」；v25「無論何人吃了獻給耶和華當火祭牲畜的脂油，那人必從民中剪除」。
+
+    CT：「脂油是牲畜上好的部分，是專為神保留的」；「『做別的使用』指日常生活中的用途，例如燈油、潤滑油等」。
+
+    GT《啟導本》：「在希伯來人的思想中，脂油為祭物最好的部分，應屬耶和華神。因此任何動物的脂油偶都不可吃，只有自死和被野獸撕裂的才可作他用，例如燒在毒蛇的洞口，把蛇趕走」；「而脂油可引起心臟病，例如血管硬化或膽固醇過多症等」（禁食脂油的保健理由）。
+
+    本章23-25節將脂油禁令從利3:17「祭牲脂油不可吃」擴大到一切牛羊脂油（不限於被獻為祭者），並補充自死/被野獸撕裂之脂油例外可作他用。'
+  match_type: exact
+  existing_title: 脂油（chelev）
+  existing_path: link_folder/原文/脂油（chelev）.md
+- name: 血不可吃（血の禁令）
+  suggested_type: 神學
+  evidence: 'v26「在你們一切的住處，無論是雀鳥的血是野獸的血，你們都不可吃」；v27「無論是誰吃血，那人必從民中剪除」。
+
+    CT：「這禁令比禁止吃脂油的條例所包括的更寬，因為神雖禁止人吃牛羊的脂油，卻准吃羚羊與鹿等野獸的脂油，但本節的禁令是無論什麼血，連雀鳥和野獸的血，都是絕對不可吃的」。
+
+    GT《啟導本》：「動物與鳥類的血都不可吃，因為血是活物的生命所寄（十七11）。生命既為神所給，只可以歸還給祂，人不可以佔有」。
+
+    BH：「The prohibition against consuming blood is a recurring theme in the Mosaic
+    Law...This command underscores the belief that life belongs to God」。
+
+    本章將利3:17「脂油和血都不可吃」的禁令具體擴大到雀鳥與野獸之血、涵蓋一切住處，並首次明訂違者「必從民中剪除」的刑罰，銜接利17:10-14的完整血禁條例。'
+  match_type: exact
+  existing_title: 血不可吃（血の禁令）
+  existing_path: link_folder/神學/血不可吃（血の禁令）.md
+- name: 血的尊重
+  suggested_type: 神學
+  evidence: 'v26-27同上。
+
+    GT《啟導本》：「本節（22節）至27節的規定不限祭司，也為全民應守的條例……生命既為神所給，只可以歸還給祂，人不可以佔有」。
+
+    本章上承創9:4「肉帶著血、那就是他的生命，不可吃」的挪亞條例，下接利17:10-14「活物的生命是在血中」的完整神學闡述，是「血代表生命、歸神主權」這條發展線在利未記中段的關鍵重申，並首度明訂剪除刑罰將此原則具體立法化。'
+  match_type: exact
+  existing_title: 血的尊重
+  existing_path: link_folder/神學/血的尊重.md
+- name: 脂油和血都不可吃
+  suggested_type: 神學
+  evidence: 'v23-27整段：「牛的脂油、綿羊的脂油、山羊的脂油，你們都不可吃……在你們一切的住處，無論是雀鳥的血是野獸的血，你們都不可吃」。
+
+    GT《啟導本》：「本章規定凡違例食脂油與血的必從民中剪除（指死亡或被逐）……禁止吃脂油與血還有保健的理由。血雖然為健康所需，也含有病菌，吃了可以染上多種疾病。而脂油可引起心臟病」。
+
+    BH：「God watches over His people to appropriate too much of the offering. The provision
+    that it is forbidden to eat fat and blood comes after the peace offering...the
+    life (blood) and the inner strength (fat) belong entirely to Him」。
+
+    本章正是利3:17預告「後續利未記7、17章詳細規範」中的第一次兌現：22-27節將脂油血雙重禁令從「總則宣告」擴充為具體適用範圍（牛羊山羊脂油、雀鳥野獸血、一切住處）與明確刑罰（剪除）。'
+  match_type: exact
+  existing_title: 脂油和血都不可吃
+  existing_path: link_folder/神學/脂油和血都不可吃.md
+- name: 至聖的供物（聖與至聖之分）
+  suggested_type: 主題
+  evidence: 'v1「這祭是至聖的」（贖愆祭）；v6「祭司中的男丁都可以吃這祭物；要在聖處吃，是至聖的」。
+
+    CT：「『這祭是至聖的』：意指贖愆祭和贖罪祭一樣，乃是至聖的」；「『要在聖處吃』：『聖處』指會幕的院子之內；『至聖的』乃形容祭物」。
+
+    本章1、6節將利2、6章已確立的「至聖供物」分類原則套用於贖愆祭，確認五祭中贖罪祭、贖愆祭、素祭同屬至聖等級，僅限祭司在聖處食用；與之相對，平安祭（11-21節）屬「聖」而非「至聖」，獻祭者本人可在潔淨處與家人分享——本章恰好並列呈現兩種等級供物的對比。'
+  match_type: exact
+  existing_title: 至聖的供物（聖與至聖之分）
+  existing_path: link_folder/主題/至聖的供物（聖與至聖之分）.md
+- name: 供物（qorban）
+  suggested_type: 原文
+  evidence: 'v14「從各樣的供物中，他要把一個餅獻給耶和華為舉祭」；v13「要用有酵的餅和為感謝獻的平安祭，與供物一同獻上」；v29「獻平安祭給耶和華的，要從平安祭中取些來奉給耶和華」；v37-38「這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例……就是他在西乃曠野吩咐以色列人獻供物給耶和華之日所說的」。
+
+    本章末（v38）以「供物」一詞總結全部五祭，呼應利1章供物首次出現時「凡獻給神、使人得以親近祂的，皆稱供物」的定義，是利1-7章供物條例的收束用法。'
+  match_type: exact
+  existing_title: 供物（qorban）
+  existing_path: link_folder/原文/供物（qorban）.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: 'v9-10「凡在爐中烤的素祭和煎盤中做的，並鐵鏊上做的，都要歸那獻祭的祭司。凡素祭，無論是油調和的是乾的，都要歸亞倫的子孫，大家均分」；v12-13感謝祭須同獻三種餅（皆素祭同類的餅）。
+
+    CT：「素祭有爐烤、煎盤做、鐵鏊烙三種（參二4~10）做法」；「都要歸那獻祭的祭司——因素祭僅須焚燒一把細麵（參二2），其餘所做的餅都歸祭司」。
+
+    本章9-10節補上利2、6章素祭條例之外「祭司如何分配不同做法之素祭餅」的細節（烤製者歸主祭祭司獨得，生的細麵則眾祭司均分），12-14節則說明素祭餅如何伴隨平安祭感謝祭獻上。'
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: 'v8「獻燔祭的祭司，無論為誰奉獻，要親自得他所獻那燔祭牲的皮」；v37「這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例」。
+
+    CT：「獻為燔祭的祭牲，除皮以外全被燒在壇上，這皮要歸與獻這祭的祭司」；「神在伊甸園給亞當夏娃作衣服所用的皮子，大概是被獻之祭牲的皮子（創三21注），獻燔祭的祭司要得他所獻之祭牲的皮，或者是從此傳起的」。
+
+    GT《舊約聖經背景註釋》：「按本節祭牲的皮也歸祭司所有。從巴比倫至整個地中海地區，都找得著這習慣的例證」。
+
+    本章8節補上利1章燔祭條例未提及的細節——燔祭牲的皮（除皮以外全燒於壇上）歸獻祭祭司所有，GT並將此追溯至創3:21神為亞當夏娃做皮衣的傳統淵源。'
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: 'v37「這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例，並承接聖職的禮」——本章總結跋語首列燔祭為五祭之首；v8「獻燔祭的祭司，無論為誰奉獻，要親自得他所獻那燔祭牲的皮」。
+
+    本章8節與37節的「燔祭」用法呼應利1章已確立之燔祭條例（全然焚燒歸神），37節總結句將燔祭列在五祭之首，延續利1章「燔祭是五祭之首、正式制度化」的結構意義。'
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 素祭不可有酵與蜜
+  suggested_type: 主題
+  evidence: 'v13「要用有酵的餅和為感謝獻的平安祭，與供物一同獻上」——與利2:11-12「素祭都不可有酵」形成對比例外。
+
+    GT丁良才問題改正：「當以色列人為感謝向神獻上平安祭時，要用有酵的餅和為感謝的平安祭，與供物一同獻上，舊約聖經中所有獻給神的素祭都要用無酵餅，這裏用有酵餅乃是表示獻祭的人自己是有罪的，不配蒙神的恩典……因此不能因為感謝祭中獻上有酵餅，就認為酵是好的。這有酵餅只限用於平安祭」。
+
+    GT《聖經精讀本》：「有酵餅不能獻在耶和華的祭壇上(2:12)，只與其他無酵餅一同用作慶祝的食物」。
+
+    本章13節是利2:11-12「素祭不可有酵」規定唯一的例外情境：感謝祭伴隨的有酵餅並非燒在壇上的素祭本身，而是與供物一同獻上、供人食用的部分，不違反「不可燒一點酵當作火祭」的核心禁令。'
+  match_type: exact
+  existing_title: 素祭不可有酵與蜜
+  existing_path: link_folder/主題/素祭不可有酵與蜜.md
+- name: 承接聖職（分別為聖）
+  suggested_type: 神學
+  evidence: 'v35-36「這是從耶和華火祭中，作亞倫受膏的分和他子孫受膏的分，正在摩西叫他們前來給耶和華供祭司職分的日子……就是在摩西膏他們的日子，耶和華吩咐以色列人給他們的。這是他們世世代代永得的分」；v37「並承接聖職的禮」。
+
+    CT：「『受膏的分』指祭司承接聖職時受膏行禮如儀（參出二十九29），從所獻火祭中所該得的分」；「『供祭司職分的日子』就是開始承接聖職的日子」。
+
+    GT丁良才：「神在出二十九1至46節中已經將祭司承接聖職的禮曉諭摩西，在本書六19至23節中又加了些條例」。
+
+    本章35-37節將出29章承接聖職之禮與利未記祭司之分的規定正式連結，確認搖祭胸、舉祭腿是「摩西膏立亞倫和他子孫」當日起便設立的永久供給。'
+  match_type: exact
+  existing_title: 承接聖職（分別為聖）
+  existing_path: link_folder/神學/承接聖職（分別為聖）.md
+- name: 火祭（isheh）
+  suggested_type: 主題
+  evidence: 'v5「祭司要在壇上焚燒，為獻給耶和華的火祭，是贖愆祭」；v25「無論何人吃了獻給耶和華當火祭牲畜的脂油」；v30「他親手獻給耶和華的火祭，就是脂油和胸，要帶來」；v35「這是從耶和華火祭中，作亞倫受膏的分」。
+
+    CT：「『火祭』指經火焚燒所獻的祭」。
+
+    本章火祭一詞四次出現，涵蓋贖愆祭焚脂（v5）、被禁食的火祭牲畜脂油（v25）、平安祭焚脂與搖祭（v30）、祭司永得的分之總稱（v35），是本章串連五祭「焚燒歸神」共同本質的關鍵詞。'
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 灑血（zaraq）
+  suggested_type: 主題
+  evidence: 'v2「人在哪裡宰燔祭牲，也要在那裡宰贖愆祭牲；其血，祭司要灑在壇的周圍」。
+
+    CT：「『其血，祭司要灑在壇的周圍』——宰殺祭牲是獻祭之人的工作，但灑血則屬祭司的工作」。
+
+    GT丁良才：「贖罪祭牲的血和贖愆祭牲之血的用法不同，這大概是因為贖罪祭是注重祭牲替獻祭的人受死；贖愆祭卻是注重賠償罪所致的虧損……贖愆祭牲的血卻只灑在壇的周圍（本節），像燔祭、和平安祭的血一樣」。
+
+    本章2節確認贖愆祭灑血方式與燔祭、平安祭相同（灑壇周圍），有別於贖罪祭抹壇角、倒壇腳的儀式，補充利4章已建立之「灑血儀式因祭別而異」的體系。'
+  match_type: exact
+  existing_title: 灑血（zaraq）
+  existing_path: link_folder/主題/灑血（zaraq）.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: "v6「祭司中的男丁都可以吃這祭物」；v9-10「都要歸那獻祭的祭司……都要歸亞倫的子孫，大家均分」；v31「但胸要歸亞倫和他的子孫」；v34「給祭司亞倫和他子孫，作他們從以色列人中所永得的分」；v35-36「作亞倫受膏的分和他子孫受膏的分……這是他們世世代代永得的分」。\n\
+    本章1-38節通篇規定祭司（亞倫和他子孫）在五祭中應得的份——皮、烤製素祭餅、生素祭均分、搖祭胸、舉祭腿，是全章的分配主體。\nsurfaces:\n  -\
+    \ 祭司中的男丁\n  - 亞倫的子孫\n  - 祭司亞倫和他子孫"
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 污穢
+  suggested_type: 主題
+  evidence: 'v19「挨了污穢物的肉就不可吃，要用火焚燒」；v21「有人摸了什麼不潔淨的物，或是人的不潔淨，或是不潔淨的牲畜，或是不潔可憎之物，吃了獻與耶和華平安祭的肉，這人必從民中剪除」。
+
+    CT：「意指祭肉不可接觸到污穢之物，若不小心接觸了，連容許吃祭肉的人也不可吃，必須用火焚燒」；「『不潔淨的物』指器物或衣服的不潔淨，如碰觸到動物屍體；『人的不潔淨』指人碰觸到不潔淨之物」。
+
+    本章21節「有人摸了什麼不潔淨的物……吃了獻與耶和華平安祭的肉，這人必從民中剪除」與利5:2-3「摸不潔之物」「摸別人的污穢」須獻贖愆祭的規定，是同一「污穢」概念在不同祭別中的延伸適用——利5章規定誤犯者的補贖之道，本章則規定明知不潔仍吃祭肉者的剪除刑罰。'
+  match_type: exact
+  existing_title: 污穢
+  existing_path: link_folder/主題/污穢.md
+- name: 摸聖物成聖
+  suggested_type: 神學
+  evidence: '本章雖未直接使用「摸…成聖」句式，但v19-21「挨了污穢物的肉就不可吃……人若不潔淨而吃了，這人必從民中剪除」與利6:18,27「摸這些祭物的，都要成為聖」構成同一「聖物接觸傳染性」原則的鏡像規定——利6章講「潔淨的人／物觸聖物即成聖」，本章則反向規定「不潔的人／物觸聖物（吃祭肉）即玷污並招致剪除」，兩者互為聖潔傳染性原則的正反兩面。
+
+    CT：「至於不獻與神之牛羊的肉，無論是潔淨人或不潔淨的人都可以吃……吃平安祭的人必須潔淨，正如平安祭的肉必須潔淨一樣」。'
+  match_type: exact
+  existing_title: 摸聖物成聖
+  existing_path: link_folder/神學/摸聖物成聖.md
+- name: 永遠當祭司的職任
+  suggested_type: 神學
+  evidence: 'v34「作他們從以色列人中所永得的分」；v36「這是他們世世代代永得的分」。
+
+    CT：「『永得的分』意指劃分出來指定給祭司做他們永遠該得的分」。
+
+    本章34、36節兩度確認祭司（亞倫和他子孫）從平安祭所得的搖祭胸、舉祭腿，是「世世代代永得的分」，與出40章「世世代代凡受膏的，就永遠當祭司的職任」的應許相呼應，將祭司永久職任具體落實在祭物分配制度上。'
+  match_type: exact
+  existing_title: 永遠當祭司的職任
+  existing_path: link_folder/神學/永遠當祭司的職任.md
+- name: 皮衣與血祭
+  suggested_type: 神學
+  evidence: 'v8「獻燔祭的祭司，無論為誰奉獻，要親自得他所獻那燔祭牲的皮」。
+
+    GT丁良才：「神在伊甸園給亞當夏娃作衣服所用的皮子，大概是被獻之祭牲的皮子（創三21注），獻燔祭的祭司要得他所獻之祭牲的皮，或者是從此傳起的」。
+
+    GT丁良才進一步指出：「以色列人用牲畜的皮作褥子、鞋、和衣服等（創三21，來十一37）」。
+
+    本章8節祭司得燔祭牲之皮的規定，GT明確溯源至創3:21神為亞當夏娃所製皮衣的傳統，是「必須有牲畜流血才能遮蓋」神學在利未記祭司實務中的延續呼應。'
+  match_type: exact
+  existing_title: 皮衣與血祭
+  existing_path: link_folder/神學/皮衣與血祭.md
+- name: 腰子（kilyah）
+  suggested_type: 原文
+  evidence: 'v4「兩個腰子和腰子上的脂油，就是靠腰兩旁的脂油，並肝上的網子和腰子，一概取下」。
+
+    本章重複利3、4章已確立之贖愆祭脂油清單，將腰子及其脂油列入贖愆祭須焚燒獻神的部位，與平安祭（利3章）、贖罪祭（利4章）採用同一清單。'
+  match_type: exact
+  existing_title: 腰子（kilyah）
+  existing_path: link_folder/原文/腰子（kilyah）.md
+- name: 肝上的網子（yoteret ha-kaved）
+  suggested_type: 原文
+  evidence: 'v4同上，「並肝上的網子和腰子，一概取下」。
+
+    CT：「『肝上的網子』或作『肝葉』，乃指肝上的脂油，其狀似網」。
+
+    本章確認肝上的網子在贖愆祭中同樣須取下焚燒，與平安祭、贖罪祭一致，是利未記中此部位第三次（利3、4、7章）出現於祭牲脂油清單。'
+  match_type: exact
+  existing_title: 肝上的網子（yoteret ha-kaved）
+  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+- name: 肥尾巴（alyah）
+  suggested_type: 原文
+  evidence: 'v3「又要將肥尾巴和蓋臟的脂油」——本節屬贖愆祭條例（1-10節）。
+
+    CT：「取下脂油為要焚燒獻給神」。
+
+    重要更正：現有條目「肥尾巴（alyah）」主題發展欄記載「安息祭、贖愆祭不列肥尾巴」，與本節經文「又要將肥尾巴和蓋臟的脂油」（明確屬贖愆祭段落1-10節）直接矛盾——贖愆祭實際上與平安祭綿羊同樣須獻上肥尾巴，此為既有條目誤植待更正之處。'
+  match_type: exact
+  existing_title: 肥尾巴（alyah）
+  existing_path: link_folder/原文/肥尾巴（alyah）.md
+- name: 贖價（基督作贖價）（來9：22）
+  suggested_type: 互文
+  evidence: 'v2「其血，祭司要灑在壇的周圍」。
+
+    CT：「按著律法，凡物差不多都是用血潔淨的；若不流血，罪就不得赦免了（來九22）」。
+
+    本章2節祭司灑贖愆祭血於壇周圍，CT直接引來9:22申明血祭赦罪的新約原理，與既有條目（出29章承接聖職贖罪祭血）同一互文脈絡的延伸引用。'
+  match_type: exact
+  existing_title: 贖價（基督作贖價）（來9：22）
+  existing_path: link_folder/互文/贖價（基督作贖價）（來9：22）.md
+C_new_formal:
+- name: 常以頌讚為祭（來13：15）
+  suggested_type: 互文
+  evidence: 'v12,15平安祭之感謝祭。
+
+    CT：「來十三15節曾以這祭為比喻說：『我們應當靠著耶穌，常常以頌贊為祭獻給神』」。
+
+    KC：「God expects us to ''continually offer up a sacrifice of praise to God, that
+    is, the fruit of lips that give thanks to His name'' (Heb 13:15) while living
+    on earth」。
+
+    本章感謝祭（平安祭子類之一）被CT與KC不約而同引來13:15類比為新約信徒「常獻頌讚為祭」的屬靈原型，是本章平安祭條例最主要的新約互文引註。'
+  target_path: link_folder/互文/常以頌讚為祭（來13：15）.md
+  semantic_hint:
+  - title: 每日獻祭（常獻燔祭）
+    score: 0.534
+    type: 神學
+  - title: 壇火常燒不熄滅
+    score: 0.511
+    type: 主題
+  - title: 獻祭敬拜
+    score: 0.504
+    type: 神學
+- name: 近東泥版跋語格式
+  suggested_type: 背景
+  evidence: 'v37-38「這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例，並承接聖職的禮，都是耶和華在西乃山所吩咐摩西的，就是他在西乃曠野吩咐以色列人獻供物給耶和華之日所說的」。
+
+    GT《啟導本》：「這兩節為1～7章所講五種祭的條例的綜述，所用形式為中東、米所波大米一帶泥版的跋，也就是作者寫在文末的『書後序』，包括1.題目（『耶和華所吩咐摩西的』）；2.作者（摩西）；3.寫作日期（他在西奈曠野吩咐以色列人獻供物給耶和華之日所說的）；4.內容綜述（『這就是燔祭、素祭、贖罪祭、贖愆祭和平安祭的條例』），相當於泥版的跋中所記泥版的數目」；「這種寫跋的形式流行於巴比倫時代，早於摩西不過百年，當為在埃及受有良好教育的摩西所熟悉。他採用這個形式來寫一個極重要的獻祭條例便很自然了」。
+
+    利未記1-7章以此近東文書慣用的「跋語」形式作結，顯示摩西採用當代通行的文書格式記錄神所頒布的獻祭條例，是利未記文本形式與古代近東文化背景相接的具體例證。'
+  target_path: link_folder/背景/近東泥版跋語格式.md
+D_new_candidate: []
+E_skip: []
