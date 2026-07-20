@@ -1,0 +1,66 @@
+book: 利未記
+chapter: 12
+A_use_directly:
+- name: 產婦不潔原因之爭（原罪說與血液不潔說）
+  suggested_type: 解經爭議
+  evidence: CT/KC 傾向「婦人產後不潔表徵全人類一出生就是不潔」的原罪讀法；GT《啟導本》明確反駁：此說不能解釋何以獻贖罪祭的是產婦而非新嬰；GT《舊約背景註釋》進一步指出「這裡並沒有需贖之罪，只有在壇上被清除的不潔」，主張贖罪祭實為「潔淨祭」
+  match_type: exact
+  existing_title: 產婦不潔原因之爭（原罪說與血液不潔說）
+  existing_path: link_folder/解經爭議/產婦不潔原因之爭（原罪說與血液不潔說）.md
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華對摩西說」，本章條例由摩西單獨領受（不同於利11同時對摩西亞倫兩人說話）
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 割禮之約
+  suggested_type: 神學
+  evidence: v3「第八天，要給嬰孩行割禮」；GT 丁良才註：以色列人的嬰孩受割禮，是顯明這嬰孩在神與亞伯拉罕所立的約上有份（創17:13，羅4:11）
+  match_type: exact
+  existing_title: 割禮之約
+  existing_path: link_folder/神學/割禮之約.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v6,8「她要把一歲的羊羔為燔祭」；GT 丁良才註：此處燔祭列在贖罪祭前，表示婦人因神的慈悲將自己獻給神
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v6,7,8「一隻雛鴿或是一隻斑鳩為贖罪祭」；祭司獻上為她贖罪，她的血源就潔淨了
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 斑鳩
+  suggested_type: 主題
+  evidence: v6,8「一隻雛鴿或是一隻斑鳩為贖罪祭」；力量不夠獻羊羔者可取兩隻斑鳩代替
+  match_type: exact
+  existing_title: 斑鳩
+  existing_path: link_folder/主題/斑鳩.md
+- name: 雛鴿
+  suggested_type: 主題
+  evidence: v6,8 與斑鳩並列，貧窮產婦以兩隻雛鴿代替一羊羔一鳥的組合
+  match_type: exact
+  existing_title: 雛鴿
+  existing_path: link_folder/主題/雛鴿.md
+- name: 燔祭祭牲的貧富分級
+  suggested_type: 神學
+  evidence: v8「她的力量若不夠獻一隻羊羔，她就要取兩隻斑鳩或是兩隻雛鴿」，與利1、5章按力量分級獻祭同一原則
+  match_type: exact
+  existing_title: 燔祭祭牲的貧富分級
+  existing_path: link_folder/神學/燔祭祭牲的貧富分級.md
+C_new_formal:
+- name: 產婦生產潔淨條例（男四十女八十天）
+  suggested_type: 主題
+  evidence: v2-8 全章核心：生男孩不潔七天、家居三十三天共四十天；生女孩不潔兩個七天、家居六十六天共八十天，滿了潔淨的日子獻燔祭與贖罪祭
+  surfaces:
+  - phrase: 家居三十三天
+    verses:
+    - 4
+  - phrase: 家居六十六天
+    verses:
+    - 5
+  target_path: link_folder/主題/產婦生產潔淨條例（男四十女八十天）.md
+D_new_candidate: []
+E_skip: []
