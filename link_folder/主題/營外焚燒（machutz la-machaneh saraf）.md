@@ -1,0 +1,45 @@
+---
+type: 主題
+secondary_types: []
+aliases:
+- 營外燒燬
+- 營外焚燒祭牲
+status: formal
+source_scope: collected_only
+---
+
+# 營外焚燒（machutz la-machaneh saraf）
+
+## 定義
+
+利未記4章中，受膏祭司（v.11-12）與全會眾（v.21）贖罪祭，除血與脂油外，祭牲其餘部分（皮、肉、頭、腿、臟、腑、糞）須「搬到營外潔淨之地、倒灰之所，用火燒在柴上」。這表徵罪污穢不可留在神營中，須徹底除去，預表基督在耶路撒冷城門外受苦（來13:11-13），信徒也當出到營外就了祂去忍受凌辱（來13:13）。
+
+## 按書卷累積
+
+### 利未記
+
+<!-- accumulation:利未記:4:start -->
+#### [[03 利未記/第4章|第4章]]
+- 本章重點：祭司與會眾贖罪祭牲皮肉頭腿臟腑糞全焚於營外潔淨之地倒灰之所。
+- 與本章關聯：本章贖罪祭獨特處理方式，預表基督城外受死與信徒出營跟隨。
+<!-- accumulation:利未記:4:end -->
+
+## 主題發展
+
+從舊約贖罪祭牲營外焚燒潔淨神營，發展至新約基督城外受死成就贖罪，呼召信徒出營歸主、與世界分別（來13:11-14）。
+
+## 相關條目
+
+- [[受膏的祭司（mashiach kohen）]]
+- [[全會眾（kol ha-edah）]]
+- [[贖罪祭]]
+- [[潔淨之地（maqom tahor）]]
+- [[皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）]]
+- [[赦免（salach）]]
+
+## 來源依據
+
+- 逐節註解: 利未記4:11-12,21 文意註解——全公牛搬到營外潔淨之地焚燒（<https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT04.htm>）
+- 拾穗: 利未記4:11-12,21 拾穗——營外焚燒預表基督城外受死（<https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT04.htm>）
+- 研經註解: Leviticus 4:11-12,21 Study——公牛餘體在營外焚燒（<https://biblehub.com/study/leviticus/4.htm>）
+- 研經註解: Leviticus 4——KingComments 公牛在營外焚燒（<https://www.kingcomments.com/en/bible-studies/Lev/4>）
