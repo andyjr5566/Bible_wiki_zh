@@ -10,6 +10,8 @@ Usage:
   python util/check_chapter_files.py 【書名】 X
 """
 import argparse
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -23,6 +25,80 @@ except ImportError:
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
+
+_ACCUM_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
+
+
+def _git_lines_z(root, *args):
+    """跑 git 並以 NUL 分隔解析輸出（避開 core.quotepath 對中文路徑的轉義）。
+
+    呼叫端須自行把 -z 放在 pathspec（--）之前——放在 args 尾端會被 git
+    當成檔名（實測踩過：三個注入測試檔全數漏抓）。
+    """
+    try:
+        proc = subprocess.run(
+            ["git", *args], cwd=root, capture_output=True, check=True
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return [p for p in proc.stdout.decode("utf-8", "replace").split("\0") if p]
+
+
+def untracked_entry_findings(root, book, chapter):
+    """git 未追蹤的 link_folder 條目檔——「commit 漏了 git add」的攔截網。
+
+    利3／4 實例：run_chapter 實建的新條目 .md 沒進當時的 commit（訊息還寫
+    「新建條目：0個」），以未追蹤狀態晾了兩天才被發現。判準機械可證，
+    以條目檔內的 accumulation 標記歸屬章節：
+    - 標記指向的章節已 commit（該章 第N章.md 已被 git 追蹤）→ 該章 commit
+      漏了它 = error（回傳 errors）
+    - 標記只含本章 → 本章工作產物，commit 時必須一併 git add（回傳 pending）
+    - 標記只含其他未 commit 章節 → 可能是他 agent 進行中的工作，僅提示（notes）
+    - 無任何標記 → 無法歸屬 = error（正常管線產的條目一定有建立章的標記）
+    回傳 (errors, pending, notes)；git 不可用（非 repo 等）時全部回空，不誤擋。
+    """
+    canonical = canonical_book_name(book)
+    untracked = _git_lines_z(root, "status", "--porcelain", "--untracked-files=all",
+                             "-z", "--", "link_folder")
+    if untracked is None:
+        return [], [], []
+    paths = [line[3:] for line in untracked
+             if line.startswith("?? ") and line.endswith(".md")]
+    if not paths:
+        return [], [], []
+    tracked = set(_git_lines_z(root, "ls-files", "-z") or [])
+    errors, pending, notes = [], [], []
+    for rel in sorted(paths):
+        try:
+            text = (root / rel).read_text(encoding="utf-8")
+        except OSError:
+            errors.append(f"{rel}：讀不到檔案內容，請人工確認")
+            continue
+        refs = {(b, int(c)) for b, c in _ACCUM_RE.findall(text)}
+        if not refs:
+            errors.append(f"{rel}：無累積標記、無法歸屬章節，請人工確認來源後補 git add 或移除")
+            continue
+        committed_elsewhere = []
+        for b, c in sorted(refs):
+            if (b, c) == (canonical, chapter):
+                continue
+            try:
+                ch_md = book_directory(root, b) / f"第{c}章.md"
+            except (OSError, ValueError):
+                continue
+            rel_md = ch_md.relative_to(root).as_posix()
+            if rel_md in tracked:
+                committed_elsewhere.append(f"{b}第{c}章")
+        if committed_elsewhere:
+            errors.append(
+                f"{rel}：屬已 commit 的 {'、'.join(committed_elsewhere)}，"
+                f"當時的 commit 漏了 git add 此檔——驗證內容後補提交"
+            )
+        elif (canonical, chapter) in refs:
+            pending.append(rel)
+        else:
+            notes.append(f"{rel}：屬其他進行中章節（{'、'.join(f'{b}第{c}章' for b, c in sorted(refs))}），不擋本章")
+    return errors, pending, notes
 
 
 def _load_yaml(path):
@@ -196,6 +272,21 @@ def main():
             print("結論：FAIL（缺口見上）")
             return 1
         print(f"✅ {label}")
+
+    canonical = canonical_book_name(args.book)
+    errors, pending, notes = untracked_entry_findings(ROOT, args.book, args.chapter)
+    for note in notes:
+        print(f"ℹ️ {note}")
+    if pending:
+        print(f"📋 本章產出、commit 時必須一併 git add 的未追蹤條目檔（{len(pending)} 個）：")
+        for rel in pending:
+            print(f"   {rel}")
+    if errors:
+        print("❌ 發現漏提交的條目檔（先前章節 commit 時漏了 git add）：")
+        for err in errors:
+            print(f"   {err}")
+        print("結論：FAIL（漏提交檔案見上）")
+        return 1
     print("✅ 全部主要檔案齊備，流程完整。")
     print("結論：PASS")
     return 0

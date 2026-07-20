@@ -53,6 +53,7 @@
 
 6. **模型產出後的勘誤複核（run_chapter／link_updates 跑完、commit 前必做）**：`run_chapter.py` 的 M3（entry_content）與 M6（chapter_content 本章整理）、以及 `link_updates.py` 填的 summary／relation，都是模型依 prompt 一次生成，不是人工逐句核對過的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
    - 抓法同 §「內容勘誤」四類高風險：模型是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
+   - P4 已有兩道 manual_review 輔助（利4／利6 實錯做成的，只提醒不擋 build，人工複核仍是主力）：①本章整理行文／表格裡查無出處的拉丁音譯（M6 每次重新生成都可能在新位置編一個，改 entry_content 觸發重生後要整份重查）；②引句掛名來源查無、卻在別家 raw 檔逐字找到＝誤植嫌疑（GT 是丁良才／啟導本／串珠／背景註釋等多家合訂本，最常被錯拆成「BH」；兩邊都查無的引句多半是英文來源的中譯，機器不可驗，仍要人工比對）。
    - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml`（本章整理）或 `entry_content/*.yaml`（新建條目，注意是 `definition`／`development` 欄，不是 `.md` 的段落）裡的文字後，重跑 `python util/run_chapter.py 【書名】 X` 讓 render 重新產出 markdown——**只改渲染後的 `第x章.md`／`link_folder/**.md` 而不改 yaml，下次任何重跑都會被 render 覆蓋回錯的舊內容**（實測踩過：申4 鐵爐條目只改了 `.md` 沒改 yaml，重跑就打回原形）。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`（不是 run_chapter）。
    - `run_chapter.py` 已會在改動 `link_candidates.yaml` 時**自動作廢並重生下游**（link_plan／entry_content／verse_links／chapter_content），不必再手動刪中間檔；但改 `entry_content/*.yaml`／`chapter_content.yaml` 本身後，直接重跑即可讓 render 帶出新內容。
    - **改 `entry_content/*.yaml` 會連帶作廢 `chapter_content.yaml`**：即使只是修一兩句勘誤，`run_chapter.py` 偵測到 entry_content 變動就會自動作廢並重新生成 `verse_links.yaml` 與 `chapter_content.yaml`——包含你已經手動改好的本章整理，也會被模型重新生成的版本整段覆蓋掉（利1實測踩過：改一個 entry_content 的錯誤引註，手動修好的 organization 被整段換掉兩次）。修完 entry_content 後，要重新檢查（甚至可能要重寫或重新複核）`chapter_content.yaml`，不能假設它沒受影響。
@@ -85,6 +86,10 @@
    （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter.py`；缺 `link_updates.yaml`
    → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面
    的流程走完，直到本檢查全數 PASS 才 commit + push。
+   本檢查最後會掃 git 未追蹤的 `link_folder/**.md`（利3／4 曾漏 git add 新建條目、
+   commit 訊息還寫「新建條目：0個」）：列為「本章待 git add」的檔案 commit 時**必須
+   一併加入**；標為「屬已 commit 章節」的是先前漏提交＝FAIL，驗證內容後補提交。
+   **staging 完建議再跑一次 `git status` 對照清單，不要只信 commit 訊息裡的數字。**
 
 ## 行為邊界（內容層，程式無法代勞）
 

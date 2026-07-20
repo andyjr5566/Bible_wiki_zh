@@ -1089,6 +1089,8 @@ def chapter_content_step(ctx, plan):
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
+        f"分組名只能用既有分類：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議"
+        f"——不可自創「儀式」「祭物」「預表」之類的新分組（依各節點所屬條目的實際分類歸組）。\n"
         f"只列值得跨章累積的核心節點，不重列所有經文 link。{created_hint}\n"
         f"※ 條目名本身含逗號時「必須加引號」，例如 - \"信徒作祭司（彼前2：5,9）\"；"
         f"不加引號會被 YAML 拆成兩個碎片節點，兩個都對不上條目而被靜靜丟掉，"
@@ -1701,6 +1703,164 @@ def _transliteration_review(ctx):
     ]
 
 
+_ORGN_FENCE_RE = re.compile(r"```.*?```", re.S)
+_ORGN_WIKI_RE = re.compile(r"\[\[[^\]]*\]\]")
+_ORGN_URL_RE = re.compile(r"https?://\S+")
+_ORGN_CALLOUT_RE = re.compile(r"\[![\w\-]+\]")
+_ORGN_TOKEN_RE = re.compile(r"[A-Za-zʾʿ][A-Za-zʾʿ'’\-]{2,}")
+_ORGN_LABELS = {"ct", "gt", "kc", "bh", "kingcomments", "biblehub"}
+
+
+def _orgn_transliteration_review(ctx):
+    """本章整理（organization）自由文字裡查無出處的拉丁音譯——manual_review。
+
+    既有兩道音譯護欄只查「候選名括號」與「entry definition」，抓不到 M6 在
+    本章整理的行文或總結表格裡替既有條目補配的音譯（利6 實測：第一輪表格塞
+    chatta't／qodesh qodashim，改 entry_content 觸發重生後第二輪又在行文憑空
+    寫出 maal ma'al——每次 M6 重新生成都可能在新位置再犯）。
+
+    防誤報設計（全庫實測 91 章定案）：
+    - 剝掉 fenced code、wiki-link、URL、callout 標記（[!note] 之類——第一版
+      沒剝，note/quote/question 誤報 63 章）再抽 token；
+    - token 屬全庫任何條目名／alias 的拉丁部分 → 放行（對應 B 類累積「出處
+      在建立章、不必在本章重現」的既有規則；link_index.json 讀不到則整個
+      檢查停用，不硬猜）；
+    - 其餘 token（NFD 去變音＋lower）比對本章四來源＋經文全文，查無 → 提醒。
+    誤報清完後全庫命中 13 章 27 token，抽查 9 個（含拼寫變體交叉）皆為
+    創／出歷史真陽性；拼寫變體無法機械排除，故走 manual_review 不走 error。
+    """
+    corpus = _chapter_source_corpus(ctx)
+    if corpus is None:
+        return []
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    index_path = ctx.root / "util" / "output" / "link_index.json"
+    if not index_path.exists():
+        return []
+    try:
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+
+    def _norm(token):
+        return _strip_diacritics(token).lower().replace("’", "'").strip("'-")
+
+    whitelist = set()
+    for name, meta in index.items():
+        for source in [str(name)] + [str(a) for a in (meta or {}).get("aliases") or []]:
+            whitelist.update(_norm(t) for t in _ORGN_TOKEN_RE.findall(source))
+    text = str(data.get("organization") or "")
+    text = _ORGN_CALLOUT_RE.sub(
+        "", _ORGN_URL_RE.sub("", _ORGN_WIKI_RE.sub("", _ORGN_FENCE_RE.sub("", text))))
+    corpus_norm = _strip_diacritics(corpus).lower().replace("’", "'")
+    hits = []
+    for token in sorted(set(_ORGN_TOKEN_RE.findall(text))):
+        norm = _norm(token)
+        if len(norm) < 3 or norm in _ORGN_LABELS or norm in whitelist:
+            continue
+        if norm not in corpus_norm:
+            hits.append(token)
+    if not hits:
+        return []
+    return [
+        "本章整理的行文／表格裡有查無出處的拉丁音譯："
+        + "、".join(hits[:8])
+        + "——M6 常替既有條目補配訓練知識裡的音譯（利6 兩輪實例），"
+        "請 grep 本章 raw_data 確認；來源沒給就從 chapter_content.yaml 拔除後重跑 render"
+        "（拼寫變體屬誤報，忽略即可）"
+    ]
+
+
+_QUOTE_ATTR_RE = re.compile(r"(CT|GT|KC|BH|KingComments|BibleHub)[^「\n]{0,25}「([^」]+)」")
+_QUOTE_SPLIT_RE = re.compile(r"[…⋯]+|\.\.\.")
+_QUOTE_WS_RE = re.compile(r"\s+")
+_QUOTE_LABEL_CANON = {"KingComments": "KC", "BibleHub": "BH"}
+
+
+def _source_label_of(path_str):
+    s = str(path_str).lower()
+    if "_ct_" in s:
+        return "CT"
+    if "_gt_" in s:
+        return "GT"
+    if "kingcomments" in s:
+        return "KC"
+    if "biblehub" in s:
+        return "BH"
+    return None
+
+
+def _quote_attribution_review(ctx):
+    """引句出處交叉比對——掛名來源查無、卻在別的來源逐字找到＝疑似誤植。
+
+    利6 實測：M6 把 CT《話中之光》引羅12:11 的內容講成 BH 說的、把 GT
+    丁良才對 v22 的解釋講成 KC 說的——引句本身存在，只是掛錯家，三道
+    結構閘門全過。GT 是多家合訂本（丁良才／啟導本／精讀本／背景註釋／
+    串珠），最常被模型錯拆成獨立的「BH」。
+
+    防誤報設計（全庫實測 91 章定案，命中 5 章、抽查利未記 4 筆全為真陽性）：
+    - 引句以 ……／… 切片段、去空白後取 ≥10 字者比對；
+    - 片段落在掛名來源 raw 檔（哪怕只有一段）→ pass（拼接引句常跨段落）；
+    - 掛名來源全查無、且至少一段在其他來源逐字命中 → 提醒；
+    - 四來源都查無 → 不報——KC/BH 引句是英文的中譯，機械不可驗，
+      全報會把每一句合法翻譯引句淹成誤報。
+    """
+    corpus = _chapter_source_corpus(ctx)
+    if corpus is None:
+        return []
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    manifest = ctx.path("source_manifest.md")
+    try:
+        sources = source_excerpts.parse_manifest(manifest, ctx.root)
+    except Exception:
+        return []
+    files_by_label = {}
+    for _label, path in sources:
+        label = _source_label_of(path)
+        if label and Path(path).exists():
+            files_by_label[label] = _QUOTE_WS_RE.sub(
+                "", Path(path).read_text(encoding="utf-8"))
+    if len(files_by_label) < 2:
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    hits = []
+    for m in _QUOTE_ATTR_RE.finditer(str(data.get("organization") or "")):
+        label = _QUOTE_LABEL_CANON.get(m.group(1), m.group(1))
+        quote = m.group(2)
+        frags = [_QUOTE_WS_RE.sub("", f) for f in _QUOTE_SPLIT_RE.split(quote)]
+        frags = [f for f in frags if len(f) >= 10]
+        if not frags or label not in files_by_label:
+            continue
+        own = files_by_label[label]
+        if any(f in own for f in frags):
+            continue
+        wrong = sorted({
+            other for f in frags
+            for other, text in files_by_label.items()
+            if other != label and f in text
+        })
+        if wrong:
+            hits.append(f"掛名{label}、實出{'/'.join(wrong)}：「{quote[:30]}…」")
+    if not hits:
+        return []
+    return [
+        "本章整理的引句疑似掛錯來源（掛名來源查無、卻在別家 raw 檔逐字找到）："
+        + "；".join(hits[:5])
+        + "——請回 raw_data 確認正主（GT 合訂本要細分丁良才／啟導本／串珠／"
+        "背景註釋哪一家）後改 chapter_content.yaml 重跑 render"
+    ]
+
+
 def _table_alias_link_review(ctx):
     """表格列裡帶別名的 wiki-link——Obsidian 會把 | 當成欄位分隔，整列表格裂開。
 
@@ -1821,6 +1981,8 @@ def validate_step(ctx, written):
     errors.extend(_unknown_type_candidate_errors(ctx))
     errors.extend(_unsourced_hebrew_errors(ctx))
     ctx.manual_review.extend(_transliteration_review(ctx))
+    ctx.manual_review.extend(_orgn_transliteration_review(ctx))
+    ctx.manual_review.extend(_quote_attribution_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors
@@ -1913,6 +2075,20 @@ def _manual_review_hints(items, book, chapter):
                 "真漏寫：在 chapter_content.yaml 的 organization 補「### 小節（vX-Y）」段"
                 f"（內容須出自經文與有效來源），刪 第{chapter}章.md 重跑渲染：{rerun}",
                 "已併入鄰段、只是標題沒帶節號：忽略即可",
+            ])
+        elif item.startswith("本章整理的行文／表格裡有查無出處的拉丁音譯"):
+            add("orgn-translit", "本章整理疑有憑訓練知識補配的音譯（來源查無出處）", [
+                "逐一 grep 本章 raw_data 四來源確認拼寫是否真的出現過；"
+                "來源沒給就從 chapter_content.yaml 的 organization 拔除該音譯"
+                f"（改用中文原詞），刪 第{chapter}章.md 重跑渲染：{rerun}",
+                "拼寫變體（如 matzah/matsah）屬誤報，確認後忽略即可",
+            ])
+        elif item.startswith("本章整理的引句疑似掛錯來源"):
+            add("quote-attr", "引句疑似掛錯來源（來源誤植嫌疑）", [
+                "回 raw_data 確認引句真正的出處家（GT 合訂本要細分是丁良才／啟導本／"
+                "串珠／背景註釋哪一家），改 chapter_content.yaml 的掛名後"
+                f"刪 第{chapter}章.md 重跑渲染：{rerun}",
+                "引句確實出自掛名來源、只是拼接跨段落者屬誤報，確認後忽略即可",
             ])
         elif "表格" in item:
             add("table", "表格內帶別名的 wiki-link 會斷鏈", [
