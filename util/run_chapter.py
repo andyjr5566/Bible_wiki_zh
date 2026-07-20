@@ -1861,6 +1861,50 @@ def _quote_attribution_review(ctx):
     ]
 
 
+_UNKNOWN_LABEL_RE = re.compile(r"(?<![A-Za-z])([A-Z]{2,4})(?![A-Za-z])[^「\n]{0,20}[：「]")
+_KNOWN_SOURCE_LABELS = {"CT", "GT", "KC", "BH"}
+# 全庫實測（97章 ## 本章整理 全掃）唯一命中的四個非標籤誤報，允許清單：
+# YHWH（神名音譯）、NGS/RV（原文字根或譯本縮寫，非本管線來源）、AM（"I AM WHO I AM" 引句切字）。
+_UNKNOWN_LABEL_ALLOWLIST = {"YHWH", "NGS", "RV", "AM"}
+
+
+def _unknown_source_label_review(ctx):
+    """本章整理裡「疑似來源標籤：「引句」」句式，但標籤不是 CT/GT/KC/BH 之一——manual_review。
+
+    利7 實測：M6 把 CT《話中之光》的內容七處掛成「CCB」（推測是把 ccbiblestudy.org
+    網域名和來源標籤搞混）——這類假標籤不在 _QUOTE_ATTR_RE 的四家白名單裡，
+    完全不會被 _quote_attribution_review 檢查到（掛名比對邏輯要求 label 屬於
+    files_by_label 才會進一步找出處，未知 label 直接跳過），三道結構閘門也照樣過。
+
+    防誤報設計：只抓「全大寫 2-4 字母、前後不連其他英文字母、後面 20 字內接
+    ：或「」的樣式（全庫 97 章 ## 本章整理 掃描只命中 4 個非標籤誤報，已列入
+    allowlist）。刻意不比對更寬鬆的大小寫混合 token——那類多是希伯來音譯或
+    人名（France、Cassuto、shelamim…），全庫掃描誤報破百，不可行。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    text = str(data.get("organization") or "")
+    hits = sorted({
+        m.group(1) for m in _UNKNOWN_LABEL_RE.finditer(text)
+        if m.group(1) not in _KNOWN_SOURCE_LABELS
+        and m.group(1) not in _UNKNOWN_LABEL_ALLOWLIST
+    })
+    if not hits:
+        return []
+    return [
+        "本章整理裡有疑似來源標籤、但不是 CT/GT/KC/BH 之一："
+        + "、".join(hits[:6])
+        + "——請確認這是不是模型自創的假標籤（利7「CCB」實例：混淆網域名與來源代號，"
+        "內容實出 CT）；若是真的縮寫（如 RV、NEB 等譯本名）可忽略，是假標籤就回 raw_data "
+        "找正主後改 chapter_content.yaml 重跑 render"
+    ]
+
+
 def _table_alias_link_review(ctx):
     """表格列裡帶別名的 wiki-link——Obsidian 會把 | 當成欄位分隔，整列表格裂開。
 
@@ -1983,6 +2027,7 @@ def validate_step(ctx, written):
     ctx.manual_review.extend(_transliteration_review(ctx))
     ctx.manual_review.extend(_orgn_transliteration_review(ctx))
     ctx.manual_review.extend(_quote_attribution_review(ctx))
+    ctx.manual_review.extend(_unknown_source_label_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors
