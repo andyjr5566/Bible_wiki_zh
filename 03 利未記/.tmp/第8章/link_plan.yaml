@@ -1,0 +1,235 @@
+book: 利未記
+chapter: 8
+A_use_directly: []
+B_needs_update:
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: 全章主角，摩西為亞倫和他兒子行承接聖職之禮（v2, 6-36）
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: v7-9,12「給亞倫穿上內袍……又把膏油倒在亞倫的頭上膏他」，亞倫個人受膏立為大祭司
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章由摩西親自主持整個承接聖職禮儀，並在此禮中臨時擔任祭司角色（v6-30）；v29「歸摩西的分」
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 全會眾（kol ha-edah）
+  suggested_type: 人物
+  evidence: v3-5「又招聚會眾到會幕門口……於是會眾聚集在會幕門口」，觀禮見證亞倫受召
+  match_type: exact
+  existing_title: 全會眾（kol ha-edah）
+  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
+- name: 受膏的祭司（mashiach kohen）
+  suggested_type: 人物
+  evidence: v12「又把膏油倒在亞倫的頭上膏他，使他成聖」，亞倫是唯一在就職時受澆灌膏油者，區別於其子只受彈血彈油
+  match_type: exact
+  existing_title: 受膏的祭司（mashiach kohen）
+  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
+- name: 承接聖職（分別為聖）
+  suggested_type: 神學
+  evidence: 全章即出29章承接聖職禮儀的歷史實行；v33,35「你們七天不可出會幕的門……因為主叫你們七天承接聖職」
+  match_type: exact
+  existing_title: 承接聖職（分別為聖）
+  existing_path: link_folder/神學/承接聖職（分別為聖）.md
+- name: 膏抹成聖
+  suggested_type: 神學
+  evidence: v10-12「摩西用膏油抹帳幕……使他成聖」「又用膏油在壇上彈了七次……使他成聖」「又把膏油倒在亞倫的頭上膏他，使他成聖」；v30再以膏油血彈祭司衣服使其成聖
+  match_type: exact
+  existing_title: 膏抹成聖
+  existing_path: link_folder/神學/膏抹成聖.md
+- name: 山上的樣式
+  suggested_type: 神學
+  evidence: 「都是照耶和華所吩咐摩西的」在本章重複七次（v9,13,17,21,29,34,36），是出25-40章「照樣式」公式在利未記的延續實行
+  match_type: exact
+  existing_title: 山上的樣式
+  existing_path: link_folder/神學/山上的樣式.md
+- name: 洗身（水洗）
+  suggested_type: 神學
+  evidence: v6「摩西帶了亞倫和他兒子來，用水洗了他們」
+  match_type: exact
+  existing_title: 洗身（水洗）
+  existing_path: link_folder/神學/洗身（水洗）.md
+- name: 聖衣（祭司聖服）
+  suggested_type: 主題
+  evidence: v7-9,13「給亞倫穿上內袍……又給他戴上胸牌……把冠冕戴在他頭上」「給他們穿上內袍，束上腰帶，包上裹頭巾」
+  match_type: exact
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 以弗得
+  suggested_type: 原文
+  evidence: v7「又加上以弗得，用其上巧工織的帶子把以弗得繫在他身上」
+  match_type: exact
+  existing_title: 以弗得
+  existing_path: link_folder/原文/以弗得.md
+- name: 胸牌（決斷胸牌）
+  suggested_type: 原文
+  evidence: v8「又給他戴上胸牌，把烏陵和土明放在胸牌內」
+  match_type: exact
+  existing_title: 胸牌（決斷胸牌）
+  existing_path: link_folder/原文/胸牌（決斷胸牌）.md
+- name: 烏陵和土明
+  suggested_type: 原文
+  evidence: v8「把烏陵和土明放在胸牌內」
+  match_type: exact
+  existing_title: 烏陵和土明
+  existing_path: link_folder/原文/烏陵和土明.md
+- name: 冠冕（裹頭巾）
+  suggested_type: 原文
+  evidence: v9「把冠冕戴在他頭上」；v13「包上裹頭巾」（亞倫兒子戴無金牌的裹頭巾）
+  match_type: exact
+  existing_title: 冠冕（裹頭巾）
+  existing_path: link_folder/原文/冠冕（裹頭巾）.md
+- name: 內袍（雜色內袍）
+  suggested_type: 主題
+  evidence: v7「給亞倫穿上內袍」；v13「給他們穿上內袍」
+  match_type: exact
+  existing_title: 內袍（雜色內袍）
+  existing_path: link_folder/主題/內袍（雜色內袍）.md
+- name: 外袍（以弗得的外袍）
+  suggested_type: 主題
+  evidence: v7「穿上外袍，又加上以弗得」
+  match_type: exact
+  existing_title: 外袍（以弗得的外袍）
+  existing_path: link_folder/主題/外袍（以弗得的外袍）.md
+- name: 腰帶（繡花腰帶）
+  suggested_type: 主題
+  evidence: v7「束上腰帶」；v13「束上腰帶」
+  match_type: exact
+  existing_title: 腰帶（繡花腰帶）
+  existing_path: link_folder/主題/腰帶（繡花腰帶）.md
+- name: 牌子（冠冕牌）
+  suggested_type: 原文
+  evidence: v9「在冠冕的前面釘上金牌，就是聖冠」
+  match_type: exact
+  existing_title: 牌子（冠冕牌）
+  existing_path: link_folder/原文/牌子（冠冕牌）.md
+- name: 膏油（聖膏油）
+  suggested_type: 原文
+  evidence: v2,10-12,30「膏油」多次出現，用以抹帳幕、壇、亞倫使其成聖
+  match_type: exact
+  existing_title: 膏油（聖膏油）
+  existing_path: link_folder/原文/膏油（聖膏油）.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  evidence: v11「並洗濯盆和盆座，使他成聖」
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v11,15-21 壇上彈膏油、抹血、燒脂油、獻燔祭，皆指燔祭壇
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 按手（samak）
+  suggested_type: 原文
+  evidence: v14,18,22「亞倫和他兒子按手在……頭上」三次出現於贖罪祭、燔祭、承接聖職之祭
+  match_type: exact
+  existing_title: 按手（samak）
+  existing_path: link_folder/原文/按手（samak）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v14-17 為亞倫和他兒子所獻的贖罪祭公牛
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v18-21 第一隻公綿羊獻為燔祭，「把全羊燒在壇上為馨香的燔祭」
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 脂油（chelev）
+  suggested_type: 原文
+  evidence: v16,25「取臟上所有的脂油」「取脂油和肥尾巴」
+  match_type: exact
+  existing_title: 脂油（chelev）
+  existing_path: link_folder/原文/脂油（chelev）.md
+- name: 肝上的網子（yoteret ha-kaved）
+  suggested_type: 原文
+  evidence: v16,25「肝上的網子」兩次出現
+  match_type: exact
+  existing_title: 肝上的網子（yoteret ha-kaved）
+  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+- name: 腰子（kilyah）
+  suggested_type: 原文
+  evidence: v16,25「兩個腰子與腰子上的脂油」
+  match_type: exact
+  existing_title: 腰子（kilyah）
+  existing_path: link_folder/原文/腰子（kilyah）.md
+- name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+  suggested_type: 主題
+  evidence: v17「惟有公牛，連皮帶肉並糞，用火燒在營外」
+  match_type: exact
+  existing_title: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+  existing_path: link_folder/主題/皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）.md
+- name: 營外焚燒（machutz la-machaneh saraf）
+  suggested_type: 主題
+  evidence: v17「用火燒在營外」
+  match_type: exact
+  existing_title: 營外焚燒（machutz la-machaneh saraf）
+  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+- name: 灑血（zaraq）
+  suggested_type: 主題
+  evidence: v19,24「摩西把血灑在壇的周圍」兩次出現
+  match_type: exact
+  existing_title: 灑血（zaraq）
+  existing_path: link_folder/主題/灑血（zaraq）.md
+- name: 火祭（isheh）
+  suggested_type: 主題
+  evidence: v21,28「是獻給耶和華的火祭」「獻給耶和華馨香的火祭」
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: v21,28「為馨香的燔祭」「馨香的火祭」
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+- name: 肥尾巴（alyah）
+  suggested_type: 原文
+  evidence: v25「取脂油和肥尾巴」
+  match_type: exact
+  existing_title: 肥尾巴（alyah）
+  existing_path: link_folder/原文/肥尾巴（alyah）.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: v22-29 第二隻公綿羊為「承接聖職之禮的羊」，屬平安祭的特殊形式
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: v27,29「把這一切放在亞倫的手上和他兒子的手上作搖祭」「摩西拿羊的胸作為搖祭」
+  match_type: exact
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 至聖的供物（聖與至聖之分）
+  suggested_type: 主題
+  evidence: v31-32 肉和餅只限亞倫和他兒子在會幕門口吃，剩下的必須用火焚燒，不可留到次日
+  match_type: exact
+  existing_title: 至聖的供物（聖與至聖之分）
+  existing_path: link_folder/主題/至聖的供物（聖與至聖之分）.md
+- name: 出29：20
+  suggested_type: 互文
+  evidence: v23-24「摩西把些血抹在亞倫的右耳垂上和右手的大拇指上，並右腳的大拇指上」正是出29:20命令的歷史實行
+  match_type: exact
+  existing_title: 出29：20
+  existing_path: link_folder/互文/出29：20.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: v3,4,31,33,35 全章多次以會幕門口為獻祭與吃祭肉、七日駐留之地
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []

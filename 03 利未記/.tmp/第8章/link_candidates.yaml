@@ -1,0 +1,117 @@
+book: 利未記
+chapter: 8
+candidates:
+  - name: 亞倫和他兒子（祭司）
+    type: 人物
+    evidence: 全章主角，摩西為亞倫和他兒子行承接聖職之禮（v2, 6-36）
+  - name: 亞倫
+    type: 人物
+    evidence: v7-9,12「給亞倫穿上內袍……又把膏油倒在亞倫的頭上膏他」，亞倫個人受膏立為大祭司
+  - name: 摩西
+    type: 人物
+    evidence: 全章由摩西親自主持整個承接聖職禮儀，並在此禮中臨時擔任祭司角色（v6-30）；v29「歸摩西的分」
+  - name: 全會眾（kol ha-edah）
+    type: 人物
+    evidence: v3-5「又招聚會眾到會幕門口……於是會眾聚集在會幕門口」，觀禮見證亞倫受召
+  - name: 受膏的祭司（mashiach kohen）
+    type: 人物
+    evidence: v12「又把膏油倒在亞倫的頭上膏他，使他成聖」，亞倫是唯一在就職時受澆灌膏油者，區別於其子只受彈血彈油
+  - name: 承接聖職（分別為聖）
+    type: 神學
+    evidence: 全章即出29章承接聖職禮儀的歷史實行；v33,35「你們七天不可出會幕的門……因為主叫你們七天承接聖職」
+  - name: 膏抹成聖
+    type: 神學
+    evidence: v10-12「摩西用膏油抹帳幕……使他成聖」「又用膏油在壇上彈了七次……使他成聖」「又把膏油倒在亞倫的頭上膏他，使他成聖」；v30再以膏油血彈祭司衣服使其成聖
+  - name: 山上的樣式
+    type: 神學
+    evidence: 「都是照耶和華所吩咐摩西的」在本章重複七次（v9,13,17,21,29,34,36），是出25-40章「照樣式」公式在利未記的延續實行
+  - name: 洗身（水洗）
+    type: 神學
+    evidence: v6「摩西帶了亞倫和他兒子來，用水洗了他們」
+  - name: 聖衣（祭司聖服）
+    type: 主題
+    evidence: v7-9,13「給亞倫穿上內袍……又給他戴上胸牌……把冠冕戴在他頭上」「給他們穿上內袍，束上腰帶，包上裹頭巾」
+  - name: 以弗得
+    type: 原文
+    evidence: v7「又加上以弗得，用其上巧工織的帶子把以弗得繫在他身上」
+  - name: 胸牌（決斷胸牌）
+    type: 原文
+    evidence: v8「又給他戴上胸牌，把烏陵和土明放在胸牌內」
+  - name: 烏陵和土明
+    type: 原文
+    evidence: v8「把烏陵和土明放在胸牌內」
+  - name: 冠冕（裹頭巾）
+    type: 原文
+    evidence: v9「把冠冕戴在他頭上」；v13「包上裹頭巾」（亞倫兒子戴無金牌的裹頭巾）
+  - name: 內袍（雜色內袍）
+    type: 主題
+    evidence: v7「給亞倫穿上內袍」；v13「給他們穿上內袍」
+  - name: 外袍（以弗得的外袍）
+    type: 主題
+    evidence: v7「穿上外袍，又加上以弗得」
+  - name: 腰帶（繡花腰帶）
+    type: 主題
+    evidence: v7「束上腰帶」；v13「束上腰帶」
+  - name: 牌子（冠冕牌）
+    type: 原文
+    evidence: v9「在冠冕的前面釘上金牌，就是聖冠」
+  - name: 膏油（聖膏油）
+    type: 原文
+    evidence: v2,10-12,30「膏油」多次出現，用以抹帳幕、壇、亞倫使其成聖
+  - name: 洗濯盆（銅盆）
+    type: 主題
+    evidence: v11「並洗濯盆和盆座，使他成聖」
+  - name: 銅壇（燔祭壇）
+    type: 主題
+    evidence: v11,15-21 壇上彈膏油、抹血、燒脂油、獻燔祭，皆指燔祭壇
+  - name: 按手（samak）
+    type: 原文
+    evidence: v14,18,22「亞倫和他兒子按手在……頭上」三次出現於贖罪祭、燔祭、承接聖職之祭
+  - name: 贖罪祭
+    type: 神學
+    evidence: v14-17 為亞倫和他兒子所獻的贖罪祭公牛
+  - name: 燔祭（olah）
+    type: 原文
+    evidence: v18-21 第一隻公綿羊獻為燔祭，「把全羊燒在壇上為馨香的燔祭」
+  - name: 脂油（chelev）
+    type: 原文
+    evidence: v16,25「取臟上所有的脂油」「取脂油和肥尾巴」
+  - name: 肝上的網子（yoteret ha-kaved）
+    type: 原文
+    evidence: v16,25「肝上的網子」兩次出現
+  - name: 腰子（kilyah）
+    type: 原文
+    evidence: v16,25「兩個腰子與腰子上的脂油」
+  - name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+    type: 主題
+    evidence: v17「惟有公牛，連皮帶肉並糞，用火燒在營外」
+  - name: 營外焚燒（machutz la-machaneh saraf）
+    type: 主題
+    evidence: v17「用火燒在營外」
+  - name: 灑血（zaraq）
+    type: 主題
+    evidence: v19,24「摩西把血灑在壇的周圍」兩次出現
+  - name: 火祭（isheh）
+    type: 主題
+    evidence: v21,28「是獻給耶和華的火祭」「獻給耶和華馨香的火祭」
+  - name: 馨香之氣
+    type: 神學
+    evidence: v21,28「為馨香的燔祭」「馨香的火祭」
+  - name: 肥尾巴（alyah）
+    type: 原文
+    evidence: v25「取脂油和肥尾巴」
+  - name: 平安祭（shelamim）
+    type: 原文
+    evidence: v22-29 第二隻公綿羊為「承接聖職之禮的羊」，屬平安祭的特殊形式
+  - name: 搖祭（tenufah）
+    type: 原文
+    evidence: v27,29「把這一切放在亞倫的手上和他兒子的手上作搖祭」「摩西拿羊的胸作為搖祭」
+  - name: 至聖的供物（聖與至聖之分）
+    type: 主題
+    evidence: v31-32 肉和餅只限亞倫和他兒子在會幕門口吃，剩下的必須用火焚燒，不可留到次日
+  - name: 出29：20
+    type: 互文
+    evidence: v23-24「摩西把些血抹在亞倫的右耳垂上和右手的大拇指上，並右腳的大拇指上」正是出29:20命令的歷史實行
+  - name: 會幕門口
+    type: 地點
+    evidence: v3,4,31,33,35 全章多次以會幕門口為獻祭與吃祭肉、七日駐留之地
