@@ -1913,6 +1913,103 @@ def _quote_attribution_review(ctx):
     ]
 
 
+# GT《子來源》…「引句」：模型明確點名 GT 的哪一家子來源
+_GT_SUBSOURCE_RE = re.compile(r"GT《([^》]+)》[^「\n]{0,15}「([^」]{6,})」")
+# raw 檔段落末尾的出處標記：──／－－（兩種破折號）＋可選作者名＋《書名》
+_GT_MARKER_RE = re.compile(r"[─－]{2,}\s*([^─－《\n]{0,20})《([^》]+)》")
+_GT_FRAG_SPLIT_RE = re.compile(r"[…⋯]+|\.\.\.|[，,、。；;：]")
+
+
+def _gt_name_norm(s):
+    """子來源名正規化：去「聖經」「註/注」差異與括號空白，供寬鬆比對。"""
+    return (
+        str(s).replace("聖經", "").replace("《", "").replace("》", "")
+        .replace("註", "注").replace(" ", "").strip()
+    )
+
+
+def _gt_names_match(claimed, author, label):
+    """模型掛名 vs raw 標記的作者／書名是否相容（任一方向子字串即算相容）。"""
+    c = _gt_name_norm(claimed)
+    a = _gt_name_norm(author)
+    l = _gt_name_norm(label)
+    comb = a + l
+    if not c:
+        return True
+    return (
+        (c in comb) or (comb and comb in c)
+        or (a and (a in c or c in a))
+        or (l and (l in c or c in l))
+    )
+
+
+def _gt_subsource_review(ctx):
+    """GT 合訂本子來源掛名比對——模型點名「GT《X》」但引句實出 GT 另一子來源＝疑似誤植。
+
+    利6 已把「跨家誤植」（CT 話當 BH 說）做成 _quote_attribution_review，但 GT
+    自身是丁良才／啟導本／精讀本／背景註釋／串珠／雷氏／丁道爾等六七家的合訂
+    本，模型常在 GT 內部張冠李戴：利4 把丁良才的話掛成「丁道爾」、利8 把丁良才
+    掛成「啟導本」、利10 把啟導本掛成「丁良才」、把舊約背景註釋掛成「BH」。這
+    層 _quote_attribution_review 完全看不到（它只驗 label 屬 CT/GT/KC/BH 哪一
+    家，不細分 GT 內部）。
+
+    做法：GT raw 檔每段末尾都帶「──作者《書名》」出處標記；把模型「GT《X》『引
+    句』」裡的引句切片段，在 GT raw 找到後往下取第一個出處標記，與掛名 X 寬鬆
+    比對，不符＝提醒。引句是模型改寫、raw 找不到逐字片段者不報（不誣賴改寫）。
+
+    防誤報設計（全庫 100 章 chapter_content.yaml 實測）：命中 11 筆可解析引句、
+    10 筆掛名相符放行、1 筆真陽性（利4 丁道爾實為丁良才）、0 誤報；引句經改寫
+    無法在 raw 定位的 5 筆不報（走 manual_review 只提醒可查證者）。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    manifest = ctx.path("source_manifest.md")
+    if not payload.exists() or not manifest.exists():
+        return []
+    try:
+        sources = source_excerpts.parse_manifest(manifest, ctx.root)
+    except Exception:
+        return []
+    gt_path = next(
+        (p for _l, p in sources if _source_label_of(p) == "GT" and Path(p).exists()),
+        None,
+    )
+    if gt_path is None:
+        return []
+    gt_ws = _QUOTE_WS_RE.sub("", Path(gt_path).read_text(encoding="utf-8"))
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    hits = []
+    for m in _GT_SUBSOURCE_RE.finditer(str(data.get("organization") or "")):
+        claimed, quote = m.group(1), m.group(2)
+        if "[[" in quote:  # 引句欄殘留 wiki-link，不是真引句
+            continue
+        frags = [_QUOTE_WS_RE.sub("", f) for f in _GT_FRAG_SPLIT_RE.split(quote)]
+        frags = [f for f in frags if len(f) >= 8]
+        actual = None
+        for frag in frags:
+            idx = gt_ws.find(frag)
+            if idx == -1:
+                continue
+            mk = _GT_MARKER_RE.search(gt_ws, idx)
+            if mk:
+                actual = (mk.group(1).strip(), mk.group(2).strip())
+                break
+        if actual and not _gt_names_match(claimed, *actual):
+            author, label = actual
+            attribution = f"{author}《{label}》" if author else f"《{label}》"
+            hits.append(f"掛名 GT《{claimed}》、實出 GT {attribution}：「{quote[:25]}…」")
+    if not hits:
+        return []
+    return [
+        "本章整理的 GT 子來源掛名疑似有誤（引句在 GT raw 逐字找到，但緊接的出處"
+        "標記是另一子來源）：" + "；".join(hits[:5])
+        + "——GT 是丁良才／啟導本／精讀本／背景註釋／串珠等合訂本，請核對後改"
+        " chapter_content.yaml 重跑 render"
+    ]
+
+
 _UNKNOWN_LABEL_RE = re.compile(r"(?<![A-Za-z])([A-Z]{2,4})(?![A-Za-z])[^「\n]{0,20}[：「]")
 _KNOWN_SOURCE_LABELS = {"CT", "GT", "KC", "BH"}
 # 全庫實測（97章 ## 本章整理 全掃）唯一命中的四個非標籤誤報，允許清單：
@@ -2079,6 +2176,7 @@ def validate_step(ctx, written):
     ctx.manual_review.extend(_transliteration_review(ctx))
     ctx.manual_review.extend(_orgn_transliteration_review(ctx))
     ctx.manual_review.extend(_quote_attribution_review(ctx))
+    ctx.manual_review.extend(_gt_subsource_review(ctx))
     ctx.manual_review.extend(_unknown_source_label_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
