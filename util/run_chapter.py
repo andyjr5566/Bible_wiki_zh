@@ -1522,6 +1522,91 @@ def _split_node_errors(ctx):
     return errors
 
 
+def _node_title_map(ctx):
+    """驗證期重建「裸名／別名 → 條目全名」對照，供知識節點合併偵測比對。
+
+    與 render 期 _related_title_map 同源（全庫索引含 alias＋本章 A/B 既有條目
+    ＋本章實建 payload 名），差別在 validate_step 手上沒有 plan／created_names，
+    改從 link_plan.yaml 與 entry_content/ 直接讀回。
+    """
+    index = ctx.index if ctx.index is not None else resolver.load_index()
+    mapping = {}
+    for key, info in (index or {}).items():
+        if isinstance(info, dict):
+            title = info.get("alias_of") or info.get("title") or key
+        else:
+            title = key
+        mapping[render_entry.safe_name(key)] = title
+    plan_path = ctx.path("link_plan.yaml")
+    plan = _read_yaml(plan_path) if plan_path.exists() else {}
+    for category in ("A_use_directly", "B_needs_update"):
+        for e in (plan or {}).get(category, []) or []:
+            if not isinstance(e, dict):
+                continue
+            title = e.get("existing_title") or e.get("name")
+            if not title:
+                continue
+            mapping[render_entry.safe_name(e.get("name") or title)] = title
+            mapping[render_entry.safe_name(title)] = title
+    out_dir = ctx.path("entry_content")
+    if out_dir.exists():
+        for p in sorted(out_dir.glob("*.yaml")):
+            payload = _read_yaml(p)
+            name = payload.get("name") if isinstance(payload, dict) else None
+            if name:
+                mapping[render_entry.safe_name(name)] = name
+    return mapping
+
+
+def _merged_node_errors(ctx):
+    """knowledge_nodes 單一清單項用頓號把兩個條目名黏成一項偵測。
+
+    模型偶爾把兩個不同實體寫成一項（利11 實例：「摩西、亞倫和他兒子（祭司）」
+    當成一個節點），整項對不上任何條目，_close_knowledge_nodes 只會報一句籠統
+    的「無對應條目，已移除」，把「摩西」與「亞倫…」兩個節點連同各自的本章
+    累積一起靜靜丟掉。_split_node_errors 抓的是「有右括號沒左括號」的逗號碎片，
+    抓不到兩邊括號都完整的頓號合併，故另立一道。
+
+    判準嚴格：整項對不上任何條目、但以「、」拆開後 ≥2 段各自對得上真實條目，
+    才判為合併——藉此放行「肉體的情慾、眼目的情慾、今生的驕傲」這類名字本身
+    就帶頓號的合法條目（整項對得上就跳過）。純機械集合比對，故列 error。
+    """
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    mapping = _node_title_map(ctx)
+    errors = []
+    nodes = render_chapter.coerce_knowledge_nodes(data.get("knowledge_nodes"))
+    for group, items in nodes.items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            s = str(item).strip()
+            if _resolve_related(s, mapping) is not None:
+                continue  # 整項本身就是合法條目名（可能帶頓號）
+            inner = s
+            wrapped = re.fullmatch(r"\[\[(.+?)\]\]", inner)
+            if wrapped:
+                inner = wrapped.group(1)
+            inner = inner.partition("|")[0].strip()
+            if "、" not in inner:
+                continue
+            parts = [p.strip() for p in inner.split("、") if p.strip()]
+            resolved = [p for p in parts if _resolve_related(p, mapping) is not None]
+            if len(resolved) >= 2:
+                errors.append(
+                    f"chapter_content.yaml: knowledge_nodes/{group} 的「{s}」把 "
+                    f"{len(resolved)} 個條目（{'、'.join(resolved)}）用頓號黏成一項"
+                    f"——整項對不上任何條目會被靜默丟棄，連同各自的本章累積一起"
+                    f"消失。請拆成獨立清單項目，一項一個條目名。"
+                )
+    return errors
+
+
 _UNFILEABLE_RE = re.compile(r"[/\\]")
 
 
@@ -2054,6 +2139,66 @@ def _unknown_source_label_review(ctx):
     ]
 
 
+_FAKE_INTERP_TERMS = (
+    # 教父／改教／中世紀具名人物
+    "奧古斯丁", "耶柔米", "傑柔米", "俄利根", "特土良", "屈梭多模",
+    "阿奎那", "亞奎那", "加爾文", "慈運理", "衛斯理", "馬丁路德",
+    # 猶太解經權威／經典
+    "拉希", "拉姆班", "伊本以斯拉", "邁蒙尼德", "米示拿", "塔木德", "他勒目",
+    # 現代學者（英文與音譯）
+    "Wenham", "Hartley", "Milgrom", "Kaiser", "Keil", "Delitzsch",
+    "溫漢", "哈特利", "哈特萊", "米爾格羅姆",
+    # 解經史分期用語
+    "教父時期", "早期猶太解經", "早期猶太傳統", "宗教改革", "中世紀",
+    "經院", "現代學者", "現代學界",
+)
+
+
+def _fabricated_interp_history_review(ctx):
+    """解經爭議條目的定義／主題發展被塞進查無出處的解經史——提醒人工複核。
+
+    利12／利13 實測：type=解經爭議 且 evidence 描述雙方交鋒時，M3／M6 會替條目
+    develop 出一段查無出處的解經史分期（早期猶太解經／教父時期＋奧古斯丁／
+    宗教改革＋加爾文／現代學者 Wenham、Milgrom…），四來源完全沒提。判準是
+    「條目文字含具名學者／經典／分期用語，但該詞在本章四來源與經文查無出處」
+    ——來源若真的引了加爾文，該詞會出現在來源裡，就不會誤報；反之全屬杜撰。
+
+    關鍵詞比對是啟發式（可能漏抓新造名字），且解經史屬自由文字、非鐵律，故列
+    manual_review 提醒而非 error。全庫既有 132 個解經爭議條目掃描，僅民9／
+    逾越節等 3 個「民/申拆除後待重做」條目命中，全是同一杜撰模式的真陽性，
+    已完成書卷（創／出／利）的合格條目無一誤中。
+    """
+    corpus = _chapter_source_corpus(ctx)
+    if corpus is None:
+        return []
+    corpus_flat = re.sub(r"\s+", "", corpus)
+    out_dir = ctx.path("entry_content")
+    if not out_dir.exists():
+        return []
+    notes = []
+    for path in sorted(out_dir.glob("*.yaml")):
+        payload = _read_yaml(path)
+        if not isinstance(payload, dict):
+            continue
+        types = [payload.get("type")] + list(payload.get("secondary_types") or [])
+        if "解經爭議" not in types:
+            continue
+        text_flat = re.sub(
+            r"\s+", "",
+            "".join(str(payload.get(f) or "") for f in ("definition", "development")),
+        )
+        hits = [t for t in _FAKE_INTERP_TERMS
+                if t in text_flat and re.sub(r"\s+", "", t) not in corpus_flat]
+        if hits:
+            notes.append(
+                f"entry_content:{payload.get('name')}（解經爭議）：定義／主題發展疑似"
+                f"杜撰解經史——「{'、'.join(hits)}」在本章四來源與經文查無出處。解經"
+                f"爭議條目只能陳述四來源實際記載的立場，不可自行編造解經史分期或補上"
+                f"來源沒提的學者／教父／改教人物，請逐一核對來源，查無出處者整段拔除。"
+            )
+    return notes
+
+
 def _table_alias_link_review(ctx):
     """表格列裡帶別名的 wiki-link——Obsidian 會把 | 當成欄位分隔，整列表格裂開。
 
@@ -2170,6 +2315,7 @@ def validate_step(ctx, written):
     finally:
         vkb.ROOT = old_root
     errors.extend(_split_node_errors(ctx))
+    errors.extend(_merged_node_errors(ctx))
     errors.extend(_unfileable_candidate_errors(ctx))
     errors.extend(_unknown_type_candidate_errors(ctx))
     errors.extend(_unsourced_hebrew_errors(ctx))
@@ -2178,6 +2324,7 @@ def validate_step(ctx, written):
     ctx.manual_review.extend(_quote_attribution_review(ctx))
     ctx.manual_review.extend(_gt_subsource_review(ctx))
     ctx.manual_review.extend(_unknown_source_label_review(ctx))
+    ctx.manual_review.extend(_fabricated_interp_history_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
     return errors

@@ -1028,5 +1028,122 @@ class UnsourcedHebrewTests(unittest.TestCase):
             self.assertNotIn("qorban", notes[0])  # B 類沿用既有條目名，不查
 
 
+class MergedNodeErrorsTests(unittest.TestCase):
+    """knowledge_nodes 用頓號把兩個條目名黏成一項（利11 摩西、亞倫…實例）。
+    判準嚴格：整項對不上、拆開後 ≥2 段各自對得上真實條目才判合併。"""
+
+    INDEX = {
+        "摩西": {},
+        "亞倫和他兒子（祭司）": {},
+        "污穢": {},
+        "肉體的情慾、眼目的情慾、今生的驕傲": {},
+    }
+
+    def _ctx(self, tmp, nodes):
+        root = Path(tmp)
+        ch = root / "03 利未記" / ".tmp" / "第11章"
+        ch.mkdir(parents=True)
+        (ch / "chapter_content.yaml").write_text(
+            yaml.safe_dump({"book": "利未記", "chapter": 11,
+                            "knowledge_nodes": nodes, "organization": "x"},
+                           allow_unicode=True),
+            encoding="utf-8",
+        )
+        return run_chapter.ChapterContext("利未記", 11, root=root,
+                                          index=self.INDEX, homonyms={})
+
+    def test_merged_two_entries_flagged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, {"人物": ["摩西、亞倫和他兒子（祭司）"]})
+            errors = run_chapter._merged_node_errors(ctx)
+            self.assertEqual(1, len(errors))
+            self.assertIn("摩西", errors[0])
+            self.assertIn("亞倫和他兒子（祭司）", errors[0])
+
+    def test_legit_name_with_dunhao_passes(self):
+        # 名字本身帶頓號的合法條目（整項對得上）→ 不可誤報
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, {"神學": ["肉體的情慾、眼目的情慾、今生的驕傲"]})
+            self.assertEqual([], run_chapter._merged_node_errors(ctx))
+
+    def test_only_one_resolvable_part_passes(self):
+        # 帶頓號但只有 1 段對得上（另一段查無）→ 不報
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, {"主題": ["污穢、某個不存在的東西"]})
+            self.assertEqual([], run_chapter._merged_node_errors(ctx))
+
+    def test_separate_items_pass(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, {"人物": ["摩西", "亞倫和他兒子（祭司）"]})
+            self.assertEqual([], run_chapter._merged_node_errors(ctx))
+
+
+class FabricatedInterpHistoryReviewTests(unittest.TestCase):
+    """解經爭議條目 development/definition 塞入來源查無的解經史（利12/利13 實例）。
+    來源缺席才報，來源真的引了該學者則不報。"""
+
+    def _ctx(self, tmp, raw_data_text, definition="", development="",
+             entry_type="解經爭議"):
+        root = Path(tmp)
+        (root / "raw_scripture" / "利未記").mkdir(parents=True)
+        (root / "raw_scripture" / "利未記" / "第13章.txt").write_text(
+            "人的肉皮上若長了大痲瘋。\n", encoding="utf-8")
+        (root / "raw_data").mkdir()
+        (root / "raw_data" / "ccbiblestudy_GT_leviticus_13.txt").write_text(
+            raw_data_text, encoding="utf-8")
+        ch = root / "03 利未記" / ".tmp" / "第13章"
+        (ch / "entry_content").mkdir(parents=True)
+        (ch / "source_manifest.md").write_text(
+            "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+            "|------|-----|-----|--------------|------|\n"
+            "| 拾穗 | GT | https://www.ccbiblestudy.org/x "
+            "| raw_data/ccbiblestudy_GT_leviticus_13.txt | OK |\n",
+            encoding="utf-8")
+        (ch / "entry_content" / "爭議.yaml").write_text(
+            yaml.safe_dump({"name": "大痲瘋是否等同於罪的懲罰之爭",
+                            "type": entry_type, "secondary_types": [],
+                            "definition": definition, "development": development},
+                           allow_unicode=True),
+            encoding="utf-8")
+        return run_chapter.ChapterContext("利未記", 13, root=root,
+                                          index={}, homonyms={})
+
+    def test_fabricated_history_flagged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(
+                tmp, "GT 談大痲瘋的潔淨條例與屬靈教訓。",
+                development="早期猶太解經視為刑罰；宗教改革時加爾文強調神主權；"
+                            "現代學者 Wenham、Milgrom 從近東潔淨觀重構。")
+            notes = run_chapter._fabricated_interp_history_review(ctx)
+            self.assertEqual(1, len(notes))
+            self.assertIn("加爾文", notes[0])
+            self.assertIn("Wenham", notes[0])
+
+    def test_source_grounded_scholar_passes(self):
+        # 來源真的引了加爾文 → 該詞在語料裡，不誤報
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(
+                tmp, "GT 引加爾文說大痲瘋是神主權的彰顯。",
+                development="KC 引加爾文的觀點。")
+            self.assertEqual(
+                [], run_chapter._fabricated_interp_history_review(ctx))
+
+    def test_non_dispute_type_not_scanned(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(
+                tmp, "GT 談潔淨條例。",
+                development="宗教改革時加爾文強調神主權。", entry_type="主題")
+            self.assertEqual(
+                [], run_chapter._fabricated_interp_history_review(ctx))
+
+    def test_only_source_positions_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(
+                tmp, "GT 聖經精讀本提醒不可反推每病例必有罪；CT 靈意解讀。",
+                development="CT/KC 傾向靈意解讀，GT 提醒因果不可反推，二者分屬不同層次。")
+            self.assertEqual(
+                [], run_chapter._fabricated_interp_history_review(ctx))
+
+
 if __name__ == "__main__":
     unittest.main()
