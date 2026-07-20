@@ -1,0 +1,225 @@
+book: 利未記
+chapter: 4
+A_use_directly:
+- name: 受膏的祭司
+  suggested_type: 人物
+  evidence: '利4:3,5,16 大祭司犯罪獻公牛犢；CT: 受膏的祭司指大祭司、犯罪使百姓陷在罪裡；KC: 大祭司代表百姓、其罪有群體性；BH: 大祭司預表基督、但基督無罪一次獻上永遠成聖'
+  surfaces:
+  - phrase: 受膏的祭司
+  match_type: base
+  existing_title: 受膏的祭司（mashiach kohen）
+  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
+- name: 公牛犢
+  suggested_type: 主題
+  evidence: '利4:3,14 大祭司與全會眾獻公牛犢；CT: 公牛犢指兩歲公牛、份量最重；KC: 公牛預表基督大能贖罪；BH: 公牛為最高等級贖罪祭供物'
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 公牛
+  match_type: base
+  existing_title: 公牛犢（par ben baqar）
+  existing_path: link_folder/主題/公牛犢（par ben baqar）.md
+- name: 營外焚燒
+  suggested_type: 主題
+  evidence: '利4:11-12,21 全公牛搬到營外潔淨之地倒灰之所焚燒；CT: 營外預表基督在城門外受苦（來13:11-13）；KC: 營外焚燒表神震怒、基督被神離棄；BH:
+    營外潔淨地預表各各他、基督在營外成就贖罪'
+  surfaces:
+  - phrase: 營外
+  - phrase: 營外潔淨之地
+  - phrase: 搬到營外燒了
+  match_type: base
+  existing_title: 營外焚燒（machutz la-machaneh saraf）
+  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+- name: 全會眾
+  suggested_type: 人物
+  evidence: '利4:13-21 以色列全會眾誤犯罪獻公牛犢；CT: 全會眾指以色列全體、長老代表按手；KC: 會眾罪與大祭司罪相等、須帶血入聖所；BH:
+    全會眾贖罪祭預表教會集體認罪'
+  surfaces:
+  - phrase: 全會眾
+  - phrase: 會眾
+  - phrase: 以色列全會眾
+  match_type: base
+  existing_title: 全會眾（kol ha-edah）
+  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
+- name: 赦免
+  suggested_type: 神學
+  evidence: '利4:20,26,31,35 他們必蒙赦免；CT: 贖罪後蒙赦免；KC: 神信實公義赦免我們的罪（約壹1:9）'
+  surfaces:
+  - phrase: 蒙赦免
+  - phrase: 赦免
+  match_type: base
+  existing_title: 赦免（salach）
+  existing_path: link_folder/神學/赦免（salach）.md
+- name: 潔淨之地
+  suggested_type: 地點
+  evidence: '利4:12 搬到營外潔淨之地、倒灰之所；CT: 潔淨之地指倒灰處、處理聖物之所；KC: 預表各各他、基督在城外受苦'
+  surfaces:
+  - phrase: 潔淨之地
+  - phrase: 倒灰之所
+  match_type: base
+  existing_title: 潔淨之地（maqom tahor）
+  existing_path: link_folder/地點/潔淨之地（maqom tahor）.md
+- name: 誤犯
+  suggested_type: 神學
+  evidence: '利4:2,13,22,27 若有人誤犯了一件；CT: 誤犯指無心所犯、非故意悖逆；KC: 故意犯罪贖罪祭無效（民15:30-31；來10:26）'
+  surfaces:
+  - phrase: 誤犯
+  - phrase: 誤犯了罪
+  match_type: alias
+  existing_title: 誤犯（shagagah）
+  existing_path: link_folder/神學/誤犯（shagagah）.md
+B_needs_update:
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: '利4:1-35 全章核心主題；CT: 贖罪祭條例、四等級供物、灑血儀式、營外焚燒；GT: 贖罪祭四等級、誤犯之罪、贖罪祭預表基督；KC:
+    贖罪祭為無意之罪、按身份分級、血帶入聖所；BH: 贖罪祭預表基督完全贖罪（來10:10-14）'
+  surfaces:
+  - phrase: 贖罪祭
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 按手（samak）
+  suggested_type: 原文
+  evidence: '利4:4,15,24,29,33 獻祭者/長老按手在祭牲頭上；CT: 按手表示獻祭人與祭牲合而為一、罪孽轉移；KC: 按手表達『把自己與這祭物認同、合為一』；BH:
+    按手是罪孽轉移至祭牲的關鍵動作'
+  surfaces:
+  - phrase: 按手
+  match_type: exact
+  existing_title: 按手（samak）
+  existing_path: link_folder/原文/按手（samak）.md
+- name: 灑血（zaraq）
+  suggested_type: 主題
+  evidence: '利4:6,17 彈血七次於幔子前；利4:7,18,25,30,34 抹血於壇角、倒血於壇腳；CT: 灑血是贖罪祭特點、表避、表徵遮蓋罪行；KC:
+    血灑在幔子前、抹香壇角、倒燔祭壇腳；BH: 血代表生命、灑血七次表完全贖罪'
+  surfaces:
+  - phrase: 彈血
+  - phrase: 抹血
+  - phrase: 倒血
+  match_type: exact
+  existing_title: 灑血（zaraq）
+  existing_path: link_folder/主題/灑血（zaraq）.md
+- name: 脂油（chelev）
+  suggested_type: 原文
+  evidence: '利4:8-10,19,26,31,35 取下脂油、腰子、肝網焚燒；CT: 脂油即肥肉、最肥美部分、燒在壇上歸神；KC: 脂油焚燒為馨香火祭；BH:
+    脂油代表基督完全奉獻的內在能量'
+  surfaces:
+  - phrase: 脂油
+  - phrase: 所有的脂油
+  - phrase: 蓋臟的脂油
+  - phrase: 臟上所有的脂油
+  match_type: exact
+  existing_title: 脂油（chelev）
+  existing_path: link_folder/原文/脂油（chelev）.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: '利4:4,14,18,24,29,33 牽牛/羊到會幕門口宰殺；CT: 會幕門口有銅壇、是獻祭地點；KC: 會幕門口是神與人相會之處'
+  surfaces:
+  - phrase: 會幕門口
+  - phrase: 會幕前
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+- name: 內幔（隔聖所至聖所的幔子）
+  suggested_type: 主題
+  evidence: '利4:6,17 彈血七次對著聖所幔子；CT: 幔子內有法櫃施恩座、彈血向著至聖所；KC: 幔子隔開聖所與至聖所、血彈在神面前；BH: 幔子預表基督肉身、撕裂開啟新活路（來10:20）'
+  surfaces:
+  - phrase: 幔子
+  - phrase: 聖所的幔子
+  match_type: exact
+  existing_title: 內幔（隔聖所至聖所的幔子）
+  existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  evidence: '利4:7,18 抹血於香壇四角；CT: 香壇在幔子前、表禱告；KC: 香壇四角抹血表基督寶血贖罪功效蒙神悅納；BH: 香壇代表禱告、血抹其上表代禱蒙垂聽'
+  surfaces:
+  - phrase: 香壇
+  - phrase: 耶和華面前壇
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: '利4:7,18,25,30,34 倒血於燔祭壇腳、抹血於壇角；CT: 燔祭壇在會幕門口、血倒壇腳表獻上全生命；KC: 燔祭壇北邊宰燔祭牲、贖罪祭血抹其角；BH:
+    燔祭壇為贖罪中心、血倒其基表基督傾倒生命'
+  surfaces:
+  - phrase: 燔祭壇
+  - phrase: 壇的腳
+  - phrase: 壇的四角
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 以色列的眾長老
+  suggested_type: 人物
+  evidence: '利4:15 會中的長老按手在牛頭上；CT: 長老代表全會眾；KC: 長老按手表百姓罪轉到公牛身上'
+  surfaces:
+  - phrase: 長老
+  - phrase: 會中的長老
+  match_type: exact
+  existing_title: 以色列的眾長老
+  existing_path: link_folder/人物/以色列的眾長老.md
+- name: 以色列人的官長
+  suggested_type: 人物
+  evidence: '利4:22-26 官長犯罪獻公山羊；CT: 官長指各級首領/王、與神有特殊關係；KC: 官長罪較重、獻公山羊份量次於公牛；BH: 官長預表領袖責任重大'
+  surfaces:
+  - phrase: 官長
+  match_type: exact
+  existing_title: 以色列人的官長
+  existing_path: link_folder/人物/以色列人的官長.md
+- name: 山羊
+  suggested_type: 文化
+  evidence: '利4:23,28 官長獻公山羊、平民可獻母山羊；CT: 公山羊毛長而卷、專作贖罪祭；KC: 公山羊預表基督擔當罪孽'
+  surfaces:
+  - phrase: 公山羊
+  - phrase: 山羊
+  - phrase: 母山羊
+  match_type: exact
+  existing_title: 山羊
+  existing_path: link_folder/文化/山羊.md
+- name: 綿羊
+  suggested_type: 主題
+  evidence: '利4:32-35 平民可獻母綿羊；CT: 綿羊羔即母綿羊、須燒肥尾巴；KC: 羔羊預表基督溫順無瑕'
+  surfaces:
+  - phrase: 綿羊羔
+  - phrase: 母羊
+  - phrase: 羊羔
+  match_type: exact
+  existing_title: 綿羊
+  existing_path: link_folder/主題/綿羊.md
+- name: 無殘疾（tamim）
+  suggested_type: 主題
+  evidence: '利4:3,14,23,28,32 所有贖罪祭牲必無殘疾；CT: 表徵奉獻給神的必須完好；KC: 預表基督聖潔無玷污（來7:26）'
+  surfaces:
+  - phrase: 沒有殘疾的
+  match_type: exact
+  existing_title: 無殘疾（tamim）
+  existing_path: link_folder/主題/無殘疾（tamim）.md
+- name: 贖罪
+  suggested_type: 神學
+  evidence: '利4:20,26,31,35 祭司為他們贖罪、他們必蒙赦免；CT: 須先贖罪才能蒙赦免；KC: 贖罪祭預表基督代贖（林後5:21）；BH:
+    贖罪祭指向基督一次獻上永遠成聖（來10:10-14）'
+  surfaces:
+  - phrase: 贖罪
+  - phrase: 為他們贖罪
+  - phrase: 為他贖了
+  match_type: exact
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+- name: 腰子（kilyah）
+  suggested_type: 原文
+  evidence: '利4:9 腰子和腰子上的脂油；CT: 腰子代表人感情中樞；BH: 腰子是智慧圖畫、基督分辨善惡完美感覺'
+  surfaces:
+  - phrase: 腰子
+  - phrase: 兩個腰子
+  match_type: exact
+  existing_title: 腰子（kilyah）
+  existing_path: link_folder/原文/腰子（kilyah）.md
+- name: 肝上的網子（yoteret ha-kaved）
+  suggested_type: 原文
+  evidence: '利4:9 肝上的網子和腰子一概取下；CT: 肝上的網子或作肝葉、狀似網；BH: 肝在經文外三次顯示方向感缺失、基督方向是父的眼目'
+  surfaces:
+  - phrase: 肝上的網子
+  match_type: exact
+  existing_title: 肝上的網子（yoteret ha-kaved）
+  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
