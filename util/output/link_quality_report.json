@@ -1,7 +1,7 @@
 {
-  "total_warnings": 45,
+  "total_warnings": 46,
   "critical_count": 0,
-  "warning_count": 45,
+  "warning_count": 46,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -163,6 +163,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第20章",
       "message": "同一 alias「第20章」指向多個 target: 02 出埃及記/第20章, 03 利未記/第20章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第24章",
+      "message": "同一 alias「第24章」指向多個 target: 02 出埃及記/第24章, 03 利未記/第24章"
     },
     {
       "type": "alias_target_conflict",
