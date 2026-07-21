@@ -1,0 +1,27 @@
+▶ M3 entry_content：8 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/1（8 條目）呼叫模型中…
+Traceback (most recent call last):
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2480, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2459, in main
+    result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2343, in run_chapter
+    entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 607, in entry_content_step
+    results, errors = _run_entry_batch(
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 514, in _run_entry_batch
+    results = call_model(
+              ^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 343, in call_model
+    last_output = runner(current_prompt)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 126, in <lambda>
+    return lambda prompt: claude_runner(prompt, model=model, effort=effort)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 269, in claude_runner
+    raise ModelError("找不到 claude CLI；請確認 Claude Code 已安裝於 PATH")
+model_client.ModelError: 找不到 claude CLI；請確認 Claude Code 已安裝於 PATH

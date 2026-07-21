@@ -1,0 +1,29 @@
+▶ P2 resolve：利未記 第15章 連結計畫產生中…
+✔ P2 resolve 完成
+▶ M3 entry_content：8 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/1（8 條目）呼叫模型中…
+  · entry_content 第 2 輪 批次 1/1（8 條目）呼叫模型中…
+▶ M5 verse_links：程式化標注中…
+▶ M6 chapter_content：本章整理呼叫模型中…
+▶ P3 render：產生 markdown 中…
+▶ P4 validate：結構驗證中…
+✅ 完成：寫入 9 檔，新增條目 8
+⚠️ 需人工處理：
+   - verse_links：候選宣告的 surfaces 未連上任何節（不在經文或被長詞覆蓋）：所坐之物
+   - knowledge_nodes：無對應條目，已移除：摩西、亞倫和他兒子（祭司）
+   - 本章整理的行文／表格裡有查無出處的拉丁音譯：badal、zav——M6 常替既有條目補配訓練知識裡的音譯（利6 兩輪實例），請 grep 本章 raw_data 確認；來源沒給就從 chapter_content.yaml 拔除後重跑 render（拼寫變體屬誤報，忽略即可）
+
+🔧 如何修復（依上方每條錯誤對症處理）：
+  • 宣告的 surfaces 沒連上任何節
+      → 核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可
+      → 改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：python util/run_chapter.py 利未記 15
+  • knowledge_nodes 有節點對不上任何條目（已自動移除）
+      → 核對 chapter_content.yaml 的節點名：須為條目完整名稱；名稱含逗號必須加引號防 YAML 拆分
+      → 確實該連的：修 chapter_content.yaml 後刪 第15章.md 重跑渲染：python util/run_chapter.py 利未記 15；確非條目則忽略
+  • 本章整理疑有憑訓練知識補配的音譯（來源查無出處）
+      → 逐一 grep 本章 raw_data 四來源確認拼寫是否真的出現過；來源沒給就從 chapter_content.yaml 的 organization 拔除該音譯（改用中文原詞），刪 第15章.md 重跑渲染：python util/run_chapter.py 利未記 15
+      → 拼寫變體（如 matzah/matsah）屬誤報，確認後忽略即可
+  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。
+結論：FAIL（錯誤本體見上方清單）
+❌ 結構驗證未過：
+   - chapter_content.yaml: knowledge_nodes/人物 的「摩西、亞倫和他兒子（祭司）」把 2 個條目（摩西、亞倫和他兒子（祭司））用頓號黏成一項——整項對不上任何條目會被靜默丟棄，連同各自的本章累積一起消失。請拆成獨立清單項目，一項一個條目名。

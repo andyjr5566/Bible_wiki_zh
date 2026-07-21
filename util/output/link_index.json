@@ -571,6 +571,14 @@
       "藍色外袍"
     ]
   },
+  "夢遺與交合的潔淨條例": {
+    "path": "link_folder/主題/夢遺與交合的潔淨條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "夢遺與交合的潔淨條例",
+    "status": "formal",
+    "aliases": []
+  },
   "大痲瘋得潔淨的條例（人）": {
     "path": "link_folder/主題/大痲瘋得潔淨的條例（人）.md",
     "type": "主題",
@@ -616,6 +624,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "大腿底下起誓",
+    "status": "formal",
+    "aliases": []
+  },
+  "女人行經的不潔條例": {
+    "path": "link_folder/主題/女人行經的不潔條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "女人行經的不潔條例",
     "status": "formal",
     "aliases": []
   },
@@ -793,6 +809,14 @@
     "aliases": [
       "心中正直手上清潔"
     ]
+  },
+  "患漏症者接觸物件的傳染條例": {
+    "path": "link_folder/主題/患漏症者接觸物件的傳染條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "患漏症者接觸物件的傳染條例",
+    "status": "formal",
+    "aliases": []
   },
   "患痲瘋者的哀悼記號（獨居營外）": {
     "path": "link_folder/主題/患痲瘋者的哀悼記號（獨居營外）.md",
@@ -1070,6 +1094,14 @@
     "aliases": [
       "搗成的清橄欖油"
     ]
+  },
+  "漏症痊癒的潔淨條例": {
+    "path": "link_folder/主題/漏症痊癒的潔淨條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "漏症痊癒的潔淨條例",
+    "status": "formal",
+    "aliases": []
   },
   "漸漸的墮落": {
     "path": "link_folder/主題/漸漸的墮落.md",
@@ -1657,6 +1689,14 @@
     "aliases": [
       "血"
     ]
+  },
+  "血漏（女人非經期出血的不潔條例）": {
+    "path": "link_folder/主題/血漏（女人非經期出血的不潔條例）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "血漏（女人非經期出血的不潔條例）",
+    "status": "formal",
+    "aliases": []
   },
   "血祭與素祭": {
     "path": "link_folder/主題/血祭與素祭.md",
@@ -4677,6 +4717,16 @@
     "title": "太7：13-14",
     "status": "formal",
     "aliases": []
+  },
+  "太9：20-22 血漏婦人摸主衣繸得痊癒": {
+    "path": "link_folder/互文/太9：20-22 血漏婦人摸主衣繸得痊癒.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太9：20-22 血漏婦人摸主衣繸得痊癒",
+    "status": "formal",
+    "aliases": [
+      "血漏婦人得醫治"
+    ]
   },
   "寧錄與敵基督": {
     "path": "link_folder/互文/寧錄與敵基督.md",
@@ -11606,6 +11656,16 @@
     "status": "formal",
     "aliases": []
   },
+  "漏症（身患漏症的條例）": {
+    "path": "link_folder/原文/漏症（身患漏症的條例）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "漏症（身患漏症的條例）",
+    "status": "formal",
+    "aliases": [
+      "漏症"
+    ]
+  },
   "漸漸（me'at me'at）": {
     "path": "link_folder/原文/漸漸（me'at me'at）.md",
     "type": "原文",
@@ -12622,6 +12682,16 @@
       "Sheol",
       "陰府",
       "死人住處"
+    ]
+  },
+  "隔絕（與污穢分別）": {
+    "path": "link_folder/原文/隔絕（與污穢分別）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "隔絕（與污穢分別）",
+    "status": "formal",
+    "aliases": [
+      "隔絕"
     ]
   },
   "隨眾（rab）": {
@@ -23586,6 +23656,9 @@
   "太六24": {
     "alias_of": "太6：24"
   },
+  "血漏婦人得醫治": {
+    "alias_of": "太9：20-22 血漏婦人摸主衣繸得痊癒"
+  },
   "希伯來書12:5-11 神管教兒女": {
     "alias_of": "希伯來書12_5-11 神管教兒女"
   },
@@ -24921,6 +24994,9 @@
   "活水": {
     "alias_of": "活水（潔淨儀式用）"
   },
+  "漏症": {
+    "alias_of": "漏症（身患漏症的條例）"
+  },
   "火蛇": {
     "alias_of": "火蛇（saraph）"
   },
@@ -25274,6 +25350,9 @@
   },
   "死人住處": {
     "alias_of": "陰間（Sheol）"
+  },
+  "隔絕": {
+    "alias_of": "隔絕（與污穢分別）"
   },
   "Jabbok": {
     "alias_of": "雅博"

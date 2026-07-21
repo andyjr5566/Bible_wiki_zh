@@ -323,8 +323,9 @@ _ENTRY_EXAMPLE = (
     "      summary: 本章對此條目的重點\n"
     "      relation: 與本章的神學關聯\n"
     "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用\n"
-    "  sources:                        # 每項含實際來源 URL（取自本章來源清單）\n"
-    "    - 'BH: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
+    "  sources:                        # 每項含實際來源 URL（取自本章來源清單）；標籤必須是"
+    "「逐節註解／拾穗／研經註解」等來源清單類型名稱，不可用 CT/GT/KC/BH 這類縮寫\n"
+    "    - '研經註解: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
 )
 
 

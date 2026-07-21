@@ -1,7 +1,7 @@
 {
-  "total_warnings": 35,
+  "total_warnings": 36,
   "critical_count": 0,
-  "warning_count": 35,
+  "warning_count": 36,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -121,6 +121,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第14章",
       "message": "同一 alias「第14章」指向多個 target: 02 出埃及記/第14章, 03 利未記/第14章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第15章",
+      "message": "同一 alias「第15章」指向多個 target: 02 出埃及記/第15章, 03 利未記/第15章"
     },
     {
       "type": "alias_target_conflict",

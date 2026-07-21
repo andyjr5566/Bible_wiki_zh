@@ -1,0 +1,24 @@
+▶ P3 render：產生 markdown 中…
+▶ P4 validate：結構驗證中…
+✅ 完成：寫入 8 檔，新增條目 8
+⚠️ 需人工處理：
+   - entry_content:太9：20-22 血漏婦人摸主衣繸得痊癒：既有條目已含其他章節累積，跳過以免覆蓋（應歸 B 累積）
+   - knowledge_nodes：無對應條目，已移除：夢遺、月經、潔淨禮、不潔淨傳染、會幕聖潔、摩西亞倫受命頒布條例、男人漏症潔淨禮、女人血漏潔淨禮、漏症 (zov)、活水 (mayim chayim)、瓦器 (kli cheres)、木器 (kli ets)、古代近東不潔觀、希伯來曆日落算新日、利未記聖潔法典、聖潔與分別、肉體生命的污穢、基督寶血預表、會幕同在的保護、淋病與尿道血吸蟲病、古代衛生條例、漏症具體病理、正常生理為何列為不潔、新約視角下的廢止與延續
+   - 本章整理的行文／表格裡有查無出處的拉丁音譯：originates、zov——M6 常替既有條目補配訓練知識裡的音譯（利6 兩輪實例），請 grep 本章 raw_data 確認；來源沒給就從 chapter_content.yaml 拔除後重跑 render（拼寫變體屬誤報，忽略即可）
+   - 本章整理的引句疑似掛錯來源（掛名來源查無、卻在別家 raw 檔逐字找到）：掛名GT、實出CT：「不論窮富，均以鳥隻為祭物…」；掛名KC、實出GT：「耶穌的大愛，象那女人的信心一樣，超越了一切律法的禁忌與限制…」；掛名KC、實出GT：「神的帳幕是聖潔的，凡親近神的人也就必須聖潔……連我們的軟弱和…」——請回 raw_data 確認正主（GT 合訂本要細分丁良才／啟導本／串珠／背景註釋哪一家）後改 chapter_content.yaml 重跑 render
+
+🔧 如何修復（依上方每條錯誤對症處理）：
+  • 候選與既有條目同名且對方已有其他章累積（覆蓋保護擋下）
+      → 此候選其實該歸 B 累積：確認即把它視為既有條目（無需新建），從 link_candidates.yaml 移除該候選後直接重跑（改 candidates 會自動作廢下游）：python util/run_chapter.py 利未記 15
+      → 若確為同名不同實體：兩者都要加最小穩定限定詞並登記 _config/link_homonyms.yaml（scheme §3.2）
+  • knowledge_nodes 有節點對不上任何條目（已自動移除）
+      → 核對 chapter_content.yaml 的節點名：須為條目完整名稱；名稱含逗號必須加引號防 YAML 拆分
+      → 確實該連的：修 chapter_content.yaml 後刪 第15章.md 重跑渲染：python util/run_chapter.py 利未記 15；確非條目則忽略
+  • 本章整理疑有憑訓練知識補配的音譯（來源查無出處）
+      → 逐一 grep 本章 raw_data 四來源確認拼寫是否真的出現過；來源沒給就從 chapter_content.yaml 的 organization 拔除該音譯（改用中文原詞），刪 第15章.md 重跑渲染：python util/run_chapter.py 利未記 15
+      → 拼寫變體（如 matzah/matsah）屬誤報，確認後忽略即可
+  • 引句疑似掛錯來源（來源誤植嫌疑）
+      → 回 raw_data 確認引句真正的出處家（GT 合訂本要細分是丁良才／啟導本／串珠／背景註釋哪一家），改 chapter_content.yaml 的掛名後刪 第15章.md 重跑渲染：python util/run_chapter.py 利未記 15
+      → 引句確實出自掛名來源、只是拼接跨段落者屬誤報，確認後忽略即可
+  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。
+結論：FAIL（錯誤本體見上方清單）
