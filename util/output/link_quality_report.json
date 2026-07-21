@@ -1,7 +1,7 @@
 {
-  "total_warnings": 43,
+  "total_warnings": 44,
   "critical_count": 0,
-  "warning_count": 43,
+  "warning_count": 44,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -268,6 +268,13 @@
       "source": "link_folder/神學/神的同在.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 02 出埃及記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/聖潔.md",
+      "target": "第22章",
+      "message": "同一 alias「第22章」指向多個 target: 02 出埃及記/第22章, 03 利未記/第22章"
     },
     {
       "type": "alias_target_conflict",
