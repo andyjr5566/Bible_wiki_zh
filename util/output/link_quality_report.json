@@ -1,7 +1,7 @@
 {
-  "total_warnings": 36,
+  "total_warnings": 37,
   "critical_count": 0,
-  "warning_count": 36,
+  "warning_count": 37,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -51,6 +51,13 @@
       "source": "link_folder/人物/亞倫.md",
       "target": "第10章",
       "message": "同一 alias「第10章」指向多個 target: 02 出埃及記/第10章, 03 利未記/第10章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第16章",
+      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 03 利未記/第16章"
     },
     {
       "type": "alias_target_conflict",
