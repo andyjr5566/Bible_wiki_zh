@@ -36,13 +36,13 @@ active: local-4001
 #     kind: embedding                  # 非 chat 任務要標 kind，test CLI 依此分流
 # mapping 的 model 只在「最終選中的端點＝這裡設定的端點」時生效；
 # 用環境變數切到別的端點時，以該端點自己的 model 為準（env 覆蓋＝整組覆蓋）。
-tasks:
+tasks: 
   entry:                              # 條目：量大、逐批填 schema
     endpoint: local-4000
-    model: nvidia/nemotron-3-ultra-550b-a55b
+    model: z-ai/glm-5.2
   chapter:                            # 本章整理：單次、長篇整合寫作
     endpoint: local-4000
-    model: nvidia/nemotron-3-ultra-550b-a55b
+    model: z-ai/glm-5.2
   embedding:                          # 語義索引／查詢
     endpoint: local-4000
     model: nvidia/nemotron-3-embed-1b

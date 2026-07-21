@@ -1,0 +1,67 @@
+⟳ 偵測到上游改動，已自動作廢下游並將重生：link_plan.yaml
+▶ P2 resolve：利未記 第23章 連結計畫產生中…
+✔ P2 resolve 完成
+▶ M3 entry_content：5 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/1（5 條目）呼叫模型中…
+Traceback (most recent call last):
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 170, in openai_runner
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\urllib\request.py", line 1352, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\http\client.py", line 286, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andyj_adknr2z\AppData\Local\Programs\Python\Python311-arm64\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2481, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2460, in main
+    result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 2344, in run_chapter
+    entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 608, in entry_content_step
+    results, errors = _run_entry_batch(
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\run_chapter.py", line 515, in _run_entry_batch
+    results = call_model(
+              ^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 343, in call_model
+    last_output = runner(current_prompt)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 131, in <lambda>
+    return lambda prompt: openai_runner(
+                          ^^^^^^^^^^^^^^
+  File "C:\Obsidian\Hermes\scripture\util\model_client.py", line 173, in openai_runner
+    raise ModelError(f"呼叫 {url} 失敗：{exc}") from exc
+model_client.ModelError: 呼叫 http://localhost:4000/v1/chat/completions 失敗：timed out
