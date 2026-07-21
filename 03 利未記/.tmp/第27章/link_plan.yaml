@@ -1,0 +1,175 @@
+book: 利未記
+chapter: 27
+A_use_directly: []
+B_needs_update:
+- name: 許願
+  suggested_type: 文化
+  evidence: v2「人還特許的願，被許的人要按你所估的價值歸給耶和華」——全章總冒。GT串珠：本章與上章的聯繫可能是在思想方面，上章論及神向子民的「許願」，本章則論及以色列民向神許願的律例；人通常比較容易在危急或困難時候向神許願，而事後卻後悔甚至不願還願，聖經對這種行徑多次提出警告（申23:21-22；箴20:25；傳5:4-5）；GT丁良才：許願的要理——人在許願上是十分自由的（申二十三22），不可冒失許願，既許了願就必須償還——本章是利未記全卷許願條例最完整詳盡的頒布之處，累積於既有條目
+  surfaces:
+  - phrase: 人還特許的願，被許的人要按你所估的價值歸給耶和華
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 許願
+  existing_path: link_folder/文化/許願.md
+- name: 十分之一
+  suggested_type: 原文
+  evidence: v30-33「地上所有的，無論是地上的種子是樹上的果子，十分之一是耶和華的，是歸給耶和華為聖的...凡牛群羊群中，一切從杖下經過的，每第十隻要歸給耶和華為聖」。GT丁良才：在摩西的律法上，本處以前沒有提到十分之一的條例，但自古以來，敬畏神的人就已經按十分之一捐給神（創十四20，二十八22）；GT啟導本：舊約律法中提到三種什一奉獻——從每年的出產中拿十分之一奉獻給利未人（30-33節；民十八21）——本章是利未記中十一奉獻條例的正式頒布，累積於既有條目
+  surfaces:
+  - phrase: 十分之一是耶和華的，是歸給耶和華為聖的
+    verses:
+    - 30
+  - phrase: 凡牛群羊群中，一切從杖下經過的，每第十隻要歸給耶和華為聖
+    verses:
+    - 32
+  match_type: exact
+  existing_title: 十分之一
+  existing_path: link_folder/原文/十分之一.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: v3-7,16,25 多次以舍客勒為估價單位——五十舍客勒、三十舍客勒、二十舍客勒、十舍客勒、五舍客勒、三舍客勒、十五舍客勒；v25「凡你所估定的價銀都要按著聖所的平：二十季拉為一舍客勒」。GT丁良才：「聖所的平」是估價的標準，由於當時度量衡標準不一，故要指定某一標準；GT《聖經精讀本》：舍客勒是測量重量的貨幣單位，有三種——只在聖所通用的舍客勒、一般人通用的舍客勒、王室使用的舍客勒——本章是利未記中舍客勒估價系統最集中完整的展示，累積於既有條目
+  surfaces:
+  - phrase: 二十季拉為一舍客勒
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 滅絕（herem）
+  suggested_type: 神學
+  evidence: v28-29「但一切永獻的，就是人從他所有永獻給耶和華的，無論是人，是牲畜，是他承受為業的地，都不可賣，也不可贖。凡永獻的是歸給耶和華為至聖。凡從人中當滅的都不可贖，必被治死」。CT〔話中之光〕：「獻」指「隔離、受咒詛」，獻給神的物是被交在神的手中受神的咒詛，而不是為神分別為聖的意思，「永獻」與「當滅」在希伯來文均用herem一字，指歸與神不能取回之物；GT啟導本：在以色列人歷史上，神指定某些戰利品或俘虜要完全歸祂，人不可佔有（書六17），亞干的罪招神烈怒，正是因為取了永獻之物（書七10-26）——本章是利未記中herem永獻／當滅條例的正式頒布，累積於既有條目
+  surfaces:
+  - phrase: 但一切永獻的，就是人從他所有永獻給耶和華的
+    verses:
+    - 28
+  - phrase: 凡從人中當滅的都不可贖，必被治死
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 滅絕（herem）
+  existing_path: link_folder/神學/滅絕（herem）.md
+- name: 頭生歸神
+  suggested_type: 神學
+  evidence: v26「惟獨牲畜中頭生的，無論是牛是羊，既歸耶和華，誰也不可再分別為聖，因為這是耶和華的」。GT丁良才：頭生的公牛、公羊原是屬耶和華的（出十三2，二十二29-30），所以不得再將這頭生的牲畜分別為聖；KC：The
+    firstborn of animals belongs to the LORD anyway, without a vow (Exo 13:2). It
+    is not just a voluntary matter（已譯：頭生的牲畜本來就屬耶和華，不需另外許願，這不只是自願之事）——本章重申頭生的牲畜是既定歸神之物，不可再作許願的對象，累積於既有條目
+  surfaces:
+  - phrase: 惟獨牲畜中頭生的，無論是牛是羊，既歸耶和華，誰也不可再分別為聖
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 頭生歸神
+  existing_path: link_folder/神學/頭生歸神.md
+- name: 頭生歸神為聖
+  suggested_type: 歷史
+  evidence: v26-27「若是不潔淨的牲畜生的，就要按你所估定的價值加上五分之一贖回；若不贖回，就要按你所估定的價值賣了」。GT丁良才：先前神曾吩咐以色列人用羊羔贖驢，若不代贖，就要打折他的頸項（出十三13，三十四20），神將這條例略加更改推廣，使這條例包括一切不潔淨之頭生的牲畜，神准物主用銀贖回，也准祭司賣與別人——本章補充出埃及記13章頭生條例中，不潔淨牲畜頭生者的贖回程序細節，累積於既有條目
+  surfaces:
+  - phrase: 若是不潔淨的牲畜生的，就要按你所估定的價值加上五分之一贖回
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 頭生歸神為聖
+  existing_path: link_folder/歷史/頭生歸神為聖.md
+- name: 三十舍客勒
+  suggested_type: 互文
+  evidence: v4「若是女人，你要估定三十舍客勒」。GT丁良才：女人的工價，不如男人的工價高，所以祭司所估定的贖價也不一樣，三十舍客勒本是奴婢的代價（出二十一32），也是猶大賣耶穌所得之價銀的數目（太二十七9）；KC：According
+    to His age, the Lord Jesus had to be valued at fifty shekels. However, the estimate
+    on which He is valued is only thirty shekels of silver (Zec 11:12-13)（已譯：按年齡，主耶穌本當估價五十舍客勒，但祂被估定的價銀卻只有三十舍客勒，這是人的估價，神卻按祂的真實價值將祂升為至高）——本章女人估價三十舍客勒與既有條目所記奴僕身價、猶大賣主價銀的互文脈絡相連，累積於既有條目
+  surfaces:
+  - phrase: 若是女人，你要估定三十舍客勒
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 三十舍客勒
+  existing_path: link_folder/互文/三十舍客勒.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華對摩西說」；v34「這就是耶和華在西乃山為以色列人所吩咐摩西的命令」——本章（也是利未記全書）首尾皆以摩西為中介
+  surfaces:
+  - phrase: 耶和華對摩西說
+    verses:
+    - 1
+  - phrase: 這就是耶和華在西乃山為以色列人所吩咐摩西的命令
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+C_new_formal:
+- name: 許願獻人估價表（年齡性別分級）
+  suggested_type: 主題
+  evidence: v3-8 完整估價表——男20-60歲50舍客勒、女30舍客勒；5-20歲男20女10舍客勒；1月-5歲男5女3舍客勒；60歲以上男15女10舍客勒；貧窮者由祭司按力量估價。GT啟導本：估價的標準按聖所的平估，一個男人值五十舍客勒銀子，銀子付給祭司，為聖所的經費，女人許願侍奉估定為三十舍客勒，可能因體力不若男子；GT《舊約聖經背景註釋》：決定那奉獻在聖殿事奉之人贖身的相對數額，所根據的條件有四：年齡、性別、工作能力、付款能力，其背後的假設，是成年男子從二十至六十歲勞工的總值是五十舍客勒——這是利未記中結構最工整的年齡性別估價系統，適合以表格呈現
+  surfaces:
+  - phrase: 你估定的，從二十歲到六十歲的男人，要按聖所的平，估定價銀五十舍客勒
+    verses:
+    - 3
+  - phrase: 若是從六十歲以上，男人你要估定十五舍客勒，女人估定十舍客勒
+    verses:
+    - 7
+  target_path: link_folder/主題/許願獻人估價表（年齡性別分級）.md
+- name: 貧窮人由祭司按力量估價
+  suggested_type: 主題
+  evidence: v8「他若貧窮，不能照你所估定的價，就要把他帶到祭司面前，祭司要按許願人的力量估定他的價」。CT〔話中之光〕：如果許願的人因貧窮不能擔當所定的贖價，照神的憐憫，「按許願人的力量」估定贖價，由祭司作出適當判斷，顯明向神的奉獻並不在於金額，乃在於內心的誠實；BH：The
+    law ensured that financial inability did not prevent someone from fulfilling their
+    vow, reflecting God's justice and mercy. This principle is echoed in the New Testament,
+    where Jesus emphasizes the value of the widow's mite (Mark 12:41-44)（已譯：律法確保財力不足者不致無法還願，反映神的公義與憐憫，此原則呼應新約耶穌論寡婦小錢的教訓）——這是本章估價系統中體恤貧窮者的彈性條款
+  surfaces:
+  - phrase: 他若貧窮，不能照你所估定的價，就要把他帶到祭司面前，祭司要按許願人的力量估定他的價
+    verses:
+    - 8
+  target_path: link_folder/主題/貧窮人由祭司按力量估價.md
+  semantic_hint:
+  - title: 燔祭祭牲的貧富分級
+    score: 0.461
+    type: 神學
+  - title: 貧窮人的潔淨條例（大痲瘋）
+    score: 0.401
+    type: 主題
+- name: 奉獻牲畜不可更換條例
+  suggested_type: 主題
+  evidence: v9-13「所許的若是牲畜...凡這一類獻給耶和華的，都要成為聖。人不可改換，也不可更換，或是好的換壞的，或是壞的換好的。若以牲畜更換牲畜，所許的與所換的都要成為聖」。GT丁良才：「改換」和「更換」兩樣動字的意思是相同的，因為希伯來的文法常用兩樣的字重複一樣的意思，特要叫人加意注重所論的事；GT《聖經精讀本》：這是為了防止感情衝動或不作分辨的許願，我們不能隨便更改與人的約定，與神的約定更應該謹慎——本章對奉獻牲畜設下最嚴格的不可更換條例，一旦更換兩隻牲畜都要成聖
+  surfaces:
+  - phrase: 人不可改換，也不可更換，或是好的換壞的，或是壞的換好的
+    verses:
+    - 10
+  target_path: link_folder/主題/奉獻牲畜不可更換條例.md
+  semantic_hint:
+  - title: 獻祭條例
+    score: 0.456
+    type: 事件
+- name: 奉獻房屋估價贖回條例
+  suggested_type: 主題
+  evidence: v14-15「人將房屋分別為聖，歸給耶和華，祭司就要估定價值。房屋是好是壞，祭司怎樣估定，就要以怎樣為定...若要贖回房屋，就必在你所估定的價值以外加上五分之一，房屋仍舊歸他」。KC：In
+    Leviticus 14, a house can be leprous, which is negative. Here it can be consecrated
+    to God, which is positive（已譯：利未記十四章房屋可能染上痲瘋，那是消極的；此處房屋卻可以分別為聖歸神，那是積極的）——本章與利未記十四章房屋大痲瘋條例形成同一主題（房屋的聖俗狀態）正反兩面的呼應
+  surfaces:
+  - phrase: 人將房屋分別為聖，歸給耶和華，祭司就要估定價值
+    verses:
+    - 14
+  target_path: link_folder/主題/奉獻房屋估價贖回條例.md
+- name: 奉獻田地的複雜計算（承受之地與買來之地的差別）
+  suggested_type: 主題
+  evidence: v16-25 承受為業之地按撒種多少估價（16-21節，一賀梅珥大麥地估五十舍客勒，按距禧年年數增減，若不贖回到禧年歸祭司為業）；所買非承受為業之地（22-24節，估價推算到禧年，到禧年歸回原賣主）。GT丁良才：本節至24節是論人將所買的地獻與神，這樣的地到禧年必歸原主，未到禧年以前，原主仍有贖回這地的權利，與先前無異（二十五23-28）；GT《舊約聖經背景註釋》：物業估價和支配時又需顧慮到的因素，還有禧年的問題，惟有屬於業主但沒有贖回的地，才會至終成為祭司的永久產業——與利未記二十五章禧年地業贖回條例緊密相連，卻因奉獻對象是神而衍生出承受地與買來地兩種截然不同的最終歸屬
+  surfaces:
+  - phrase: 你要按這地撒種多少估定價值，若撒大麥一賀梅珥，要估價五十舍客勒
+    verses:
+    - 16
+  - phrase: 他若將所買的一塊地，不是承受為業的，分別為聖歸給耶和華
+    verses:
+    - 22
+  target_path: link_folder/主題/奉獻田地的複雜計算（承受之地與買來之地的差別）.md
+- name: 加五分之一贖回原則
+  suggested_type: 主題
+  evidence: v13,15,19,27,31 五次重複「加上五分之一」的贖回加價規則——贖回奉獻的牲畜（13）、房屋（15）、田地（19）、不潔頭生牲畜（27）、十分之一（31）。GT丁良才：祭司估定價值是要叫人隨意來買，物主也可以贖回，但物主要贖的時候，須在所估定的價值以外另加五分之一，這無非是叫人小心，不冒失許願（五16注，箴二十25）；BH：This
+    additional cost serves as a deterrent against making rash vows and emphasizes
+    the sanctity of commitments made to the Lord（已譯：這額外的成本作為輕率許願的嚇阻，並彰顯向耶和華所許承諾的神聖性）——這是本章貫穿五種不同奉獻對象、反覆出現的統一贖價公式
+  surfaces:
+  - phrase: 他若一定要贖回，就要在你所估定的價值以外加上五分之一
+    verses:
+    - 13
+  - phrase: 人若要贖這十分之一的什麼物，就要加上五分之一
+    verses:
+    - 31
+  target_path: link_folder/主題/加五分之一贖回原則.md
+D_new_candidate: []
+E_skip: []
