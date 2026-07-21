@@ -1,0 +1,126 @@
+book: 利未記
+chapter: 17
+A_use_directly: []
+B_needs_update:
+- name: 血的尊重
+  suggested_type: 神學
+  evidence: 10-14節；凡以色列家中的人或寄居的外人若吃什麼血，神必向那人變臉，把他從民中剪除，因活物的生命在血中，血在壇上為人的生命贖罪。既有條目「血的尊重」（創9:4起累積，已累積利1、利7）主題發展欄本已預留「下接利17:10-14『活物的生命是在血中』的完整神學闡述」——本章正是這條神學發展線的核心章節：v11「因為活物的生命是在血中。我把這血賜給你們，可以在壇上為你們的生命贖罪；因血裡有生命，所以能贖罪」為全書對此命題最完整的陳述。GT啟導本：宰殺動物必須先放血或洗淨才可吃，血中含細胞、養料、抗生素、賀爾蒙，是健康之源；GT丁良才：此禁令可追溯到挪亞時代（創9:4），原因有三——與異教吃血吸取精華的風俗分別、保持獻祭血的象徵意義、保護子民免受疾病傳染；GT《舊約聖經背景註釋》：因當時的人相信生命的精華在血中，所以血在獻祭儀式中能有淨化作用
+  surfaces:
+  - phrase: 若吃什麼血
+    verses:
+    - 10
+  - phrase: 活物的生命是在血中
+    verses:
+    - 11
+  - phrase: 因血裡有生命，所以能贖罪
+    verses:
+    - 11
+  - phrase: 凡吃了血的，必被剪除
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 血的尊重
+  existing_path: link_folder/神學/血的尊重.md
+- name: 基督徒是否可吃血
+  suggested_type: 解經爭議
+  evidence: GT丁良才於v12註解明確引用：「使徒們也曾擬定禁止在外邦中的信徒吃血和勒死的牲畜（徒十五3、20、22-29，二十一25）」；KC同章亦引：「頭一批基督徒也被告知這是永遠的誡命（Acts
+    15:28-29），吃血或血腸依然是被禁止的」。既有條目「基督徒是否可吃血」的「舊約背景」欄已預留「摩西律法重申：吃血者被『從民中剪除』（利十七10-11）」——本章正是該解經爭議的舊約根源章節，補上本章條例原文與GT對新約使徒會議關聯的具體引句
+  match_type: exact
+  existing_title: 基督徒是否可吃血
+  existing_path: link_folder/解經爭議/基督徒是否可吃血.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華對摩西說」
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: v2「你曉諭亞倫和他兒子並以色列眾人說」；v6祭司負責把血灑在會幕門口耶和華的壇上、焚燒脂油
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 會幕門口
+  suggested_type: 地點
+  evidence: 4, 5, 6, 9節；私宰祭牲須帶到會幕門口獻與耶和華為平安祭，違者從民中剪除
+  match_type: exact
+  existing_title: 會幕門口
+  existing_path: link_folder/地點/會幕門口.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  evidence: 4, 9, 10, 14節；本章四次以「從民中剪除」作為違反獻祭集中條例、拜鬼魔、吃血條例的懲罰
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 從民中剪除的含義
+  suggested_type: 解經爭議
+  evidence: v9 GT《舊約背景註釋》：一般接受的看法認為此用語反映神會施行合適懲罰的信念，「不是說要對犯人採取任何司法或社會性的行動，而是靜待神的作為」；本章「剪除」的四次重複用例（4,9,10,14節）為既有解經爭議條目補充範例，探討是人為死刑、社群放逐，還是神親自介入的審判
+  match_type: exact
+  existing_title: 從民中剪除的含義
+  existing_path: link_folder/解經爭議/從民中剪除的含義.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: 5, 6節；私宰祭牲須牽到會幕門口交祭司獻為平安祭，血灑壇上、脂油焚燒。GT丁良才：「平安祭」原文有「和好」或「福祉」之意，可為感謝、還願或甘心獻的，表明獻祭者對神的感恩、虔敬與奉獻，並顯明神與人及人與鄰舍的和諧關係
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: v6「把脂油焚燒，獻給耶和華為馨香的祭」——祭司職分下私宰祭牲條例的具體執行
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+C_new_formal:
+- name: 私宰祭牲須獻為平安祭的條例
+  suggested_type: 主題
+  evidence: 3-7節；凡以色列家中的人宰公牛、綿羊羔或山羊，不拘營內營外，若未牽到會幕門口獻給耶和華為供物，流血的罪必歸到那人身上，要從民中剪除。GT串珠：此例大概只實行於曠野時期全會眾集中一地時，進迦南後居所分散礙難執行，另頒新律例取代（申12:20-28）；GT丁良才：立此條例因以色列家中有人將田野所宰牲畜獻給鬼魔（5,7節），神要幫助他們脫離這惡習
+  surfaces:
+  - phrase: 不拘宰於營內營外
+    verses:
+    - 3
+  - phrase: 流血的罪必歸到那人身上
+    verses:
+    - 4
+  target_path: link_folder/主題/私宰祭牲須獻為平安祭的條例.md
+  semantic_hint:
+  - title: 平安祭
+    score: 0.533
+    type: 神學
+  - title: 平安祭（shelamim）
+    score: 0.521
+    type: 原文
+  - title: 燔祭
+    score: 0.41
+    type: 神學
+- name: 鬼魔（se'irim，公山羊）
+  suggested_type: 原文
+  evidence: v7「他們不可再獻祭給他們行邪淫所隨從的鬼魔（原文作公山羊）」。GT李道生：原文字音是Seirim，其原意是眾公山羊，乃希臘羅馬之林神或稱野山羊（賽13:21，34:14），相傳隨從酒神、耳長銳、鼻扁短、具山羊尾，性似獸而好色，埃及人崇拜公山羊為以色列人所知；GT《舊約背景註釋》：最可能是指半人半獸（如希臘神話羊人satyrlike），經常在野外或無人煙之處出沒的鬼魔；GT丁良才：這是埃及、希臘、羅馬人所敬拜之神的標號，有公山羊頭和下體、人的身子（代下11:15；書24:14；結20:17，23:3,8,19,21,27）
+  surfaces:
+  - phrase: 行邪淫所隨從的鬼魔
+    verses:
+    - 7
+  target_path: link_folder/原文/鬼魔（se'irim，公山羊）.md
+- name: 打獵放血用土掩蓋
+  suggested_type: 主題
+  evidence: v13「凡以色列人，或是寄居在他們中間的外人，若打獵得了可吃的禽獸，必放出他的血來，用土掩蓋」。GT丁良才：有人以為留血在地面使地污穢、不雅觀且有礙衛生，也有人以為神使地生出活物（創1:24），用土掩蓋或表歸土之意；申12:16,24用「倒在地上，如同倒水一樣」的說法與本節用土掩蓋相合
+  surfaces:
+  - phrase: 打獵得了可吃的禽獸
+    verses:
+    - 13
+  - phrase: 用土掩蓋
+    verses:
+    - 13
+  target_path: link_folder/主題/打獵放血用土掩蓋.md
+- name: 吃自死或被撕裂之物的潔淨條例
+  suggested_type: 主題
+  evidence: 15-16節；凡吃自死的或是被野獸撕裂的，無論本地人是寄居的，必不潔淨到晚上，都要洗衣服用水洗身，若不洗就必擔當他的罪孽。GT丁良才：這是指潔淨可吃的牲畜，因其血未流出或未流盡；CT靈意：自死就是殺身成仁，並不能贖人的罪，主耶穌乃是神把祂壓傷所以祂能贖罪；被野獸撕裂就是被野蠻人所殺，主耶穌不是被野蠻人所殺，乃是祂在十字架上為神所審判，所以祂的流血能贖罪
+  surfaces:
+  - phrase: 凡吃自死的，或是被野獸撕裂的
+    verses:
+    - 15
+  - phrase: 就必擔當他的罪孽
+    verses:
+    - 16
+  target_path: link_folder/主題/吃自死或被撕裂之物的潔淨條例.md
+D_new_candidate: []
+E_skip: []

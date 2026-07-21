@@ -413,6 +413,14 @@
       "耳拇指大拇趾禮儀"
     ]
   },
+  "吃自死或被撕裂之物的潔淨條例": {
+    "path": "link_folder/主題/吃自死或被撕裂之物的潔淨條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "吃自死或被撕裂之物的潔淨條例",
+    "status": "formal",
+    "aliases": []
+  },
   "嗎哪": {
     "path": "link_folder/主題/嗎哪.md",
     "type": "主題",
@@ -894,6 +902,14 @@
       "房屋痲瘋條例",
       "房屋發黴潔淨法"
     ]
+  },
+  "打獵放血用土掩蓋": {
+    "path": "link_folder/主題/打獵放血用土掩蓋.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "打獵放血用土掩蓋",
+    "status": "formal",
+    "aliases": []
   },
   "拈鬮定羊的歸屬": {
     "path": "link_folder/主題/拈鬮定羊的歸屬.md",
@@ -1469,6 +1485,14 @@
       "祭司禁酒",
       "祭司不得飲酒"
     ]
+  },
+  "私宰祭牲須獻為平安祭的條例": {
+    "path": "link_folder/主題/私宰祭牲須獻為平安祭的條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "私宰祭牲須獻為平安祭的條例",
+    "status": "formal",
+    "aliases": []
   },
   "稱妻說謊": {
     "path": "link_folder/主題/稱妻說謊.md",
@@ -12861,6 +12885,16 @@
     "aliases": [
       "我們是弟兄",
       "弟兄泛指男性親屬"
+    ]
+  },
+  "鬼魔（se'irim，公山羊）": {
+    "path": "link_folder/原文/鬼魔（se'irim，公山羊）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "鬼魔（se'irim，公山羊）",
+    "status": "formal",
+    "aliases": [
+      "鬼魔"
     ]
   },
   "黃蜂（tsirah）": {
@@ -25556,6 +25590,9 @@
   },
   "弟兄泛指男性親屬": {
     "alias_of": "骨肉原文作弟兄"
+  },
+  "鬼魔": {
+    "alias_of": "鬼魔（se'irim，公山羊）"
   },
   "Adullam": {
     "alias_of": "亞杜蘭"

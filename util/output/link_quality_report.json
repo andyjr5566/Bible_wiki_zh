@@ -1,7 +1,7 @@
 {
-  "total_warnings": 37,
+  "total_warnings": 39,
   "critical_count": 0,
-  "warning_count": 37,
+  "warning_count": 39,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -139,6 +139,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 03 利未記/第17章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/比利洗人.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 06 約書亞記/第3章"
@@ -261,6 +268,13 @@
       "source": "link_folder/神學/馨香之氣.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 01 創世記/第8章, 03 利未記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/解經爭議/從民中剪除的含義.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 01 創世記/第17章, 03 利未記/第17章"
     }
   ]
 }

@@ -1,0 +1,16 @@
+▶ M3 entry_content：4 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/1（4 條目）呼叫模型中…
+▶ M5 verse_links：程式化標注中…
+▶ M6 chapter_content：本章整理呼叫模型中…
+▶ P3 render：產生 markdown 中…
+▶ P4 validate：結構驗證中…
+✅ 完成：寫入 5 檔，新增條目 4
+⚠️ 需人工處理：
+   - verse_links：候選宣告的 surfaces 未連上任何節（不在經文或被長詞覆蓋）：凡吃了血的必被剪除
+
+🔧 如何修復（依上方每條錯誤對症處理）：
+  • 宣告的 surfaces 沒連上任何節
+      → 核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可
+      → 改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：python util/run_chapter.py 利未記 17
+  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。
+結論：FAIL（錯誤本體見上方清單）
