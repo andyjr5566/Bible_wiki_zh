@@ -1,0 +1,21 @@
+▶ P2 resolve：利未記 第20章 連結計畫產生中…
+✔ P2 resolve 完成
+▶ M3 entry_content：3 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/1（3 條目）呼叫模型中…
+▶ M5 verse_links：程式化標注中…
+▶ M6 chapter_content：本章整理呼叫模型中…
+▶ P3 render：產生 markdown 中…
+▶ P4 validate：結構驗證中…
+✅ 完成：寫入 3 檔，新增條目 3
+⚠️ 需人工處理：
+   - verse_links：候選宣告的 surfaces 未連上任何節（不在經文或被長詞覆蓋）：婦人有月經，若與她同房
+   - chapter_content：端點呼叫失敗（呼叫 http://localhost:4000/v1/chat/completions 失敗：timed out）——檢查端點後重跑即可續作
+
+🔧 如何修復（依上方每條錯誤對症處理）：
+  • 宣告的 surfaces 沒連上任何節
+      → 核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可
+      → 改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：python util/run_chapter.py 利未記 20
+  • 未歸類的人工決策點
+      → 對照 agent_start_prompt.md 步驟5 與 scheme.md §3 的判斷邊界處理
+  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。
+結論：FAIL（錯誤本體見上方清單）

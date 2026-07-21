@@ -1,0 +1,165 @@
+book: 利未記
+chapter: 20
+A_use_directly: []
+B_needs_update:
+- name: 不可偏向交鬼行巫術的
+  suggested_type: 主題
+  evidence: 6, 27節；人偏向交鬼的和行巫術的，隨他們行邪淫，神要把他從民中剪除；無論男女，是交鬼的或行巫術的，總要治死他們，人必用石頭把他們打死。與利19:31同一禁令，本章增補死刑（石刑）的具體執行。GT丁良才：本節提到女人或有兩個緣故——交鬼的多是女人（出22:18；撒上28:7；徒16:16），施刑時人對女人多生哀憐之心；比方掃羅王求問交鬼的婦人（代上10:13-14）
+  surfaces:
+  - phrase: 人偏向交鬼的和行巫術的
+    verses:
+    - 6
+  - phrase: 是交鬼的或行巫術的，總要治死他們
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 不可偏向交鬼行巫術的
+  existing_path: link_folder/主題/不可偏向交鬼行巫術的.md
+- name: 咒罵父母
+  suggested_type: 神學
+  evidence: v9「凡咒罵父母的，總要治死他；他咒罵了父母，他的罪（原文作血）要歸到他身上」。GT丁良才：孝敬父母是人道中最要緊的本分，神把孝敬父母列在一切對人應守的誡命之前（出20:12-17），也是第一條帶應許的誡命（弗6:2）；GT《舊約聖經背景註釋》：學者研究顯示所犯的其實是以輕藐的態度對待父母，不限於出聲咒罵，必定包括出21:15不可毆打父母的禁令，是第五誡「當孝敬父母」的反面
+  surfaces:
+  - phrase: 凡咒罵父母的，總要治死他
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 咒罵父母
+  existing_path: link_folder/神學/咒罵父母.md
+- name: 不可姦淫
+  suggested_type: 神學
+  evidence: v10「與鄰舍之妻行淫的，姦夫淫婦都必治死」，與利18:20、出20:14同一誡命，本章增補死刑處分
+  surfaces:
+  - phrase: 與鄰舍之妻行淫的，姦夫淫婦都必治死
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 不可姦淫
+  existing_path: link_folder/神學/不可姦淫.md
+- name: 近親性關係的十二項條例
+  suggested_type: 主題
+  evidence: 11, 12, 17, 19節；與繼母行淫（11，同利18:8）、與兒婦同房（12，同利18:15）、娶姊妹彼此見了下體（17，同利18:9，本章增補「必在本民的眼前被剪除」的公開刑罰）、露姨母姑母的下體（19，同利18:12-13）。本章對照利18章逐項增補具體治罪：11-12節「總要把他們二人治死」，17、19節「必擔當自己的罪孽」（罪責較輕，未明訂死刑）。GT串珠：「露…下體」這術語只在利18、20章出現，摩西五經其餘各處均無此語，可見兩章關係密切
+  surfaces:
+  - phrase: 與繼母行淫的，就是羞辱了他父親
+    verses:
+    - 11
+  - phrase: 與兒婦同房的，總要把他們二人治死
+    verses:
+    - 12
+  - phrase: 不可露姨母或是姑母的下體
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 近親性關係的十二項條例
+  existing_path: link_folder/主題/近親性關係的十二項條例.md
+- name: 不可與男人苟合可憎惡的事
+  suggested_type: 主題
+  evidence: v13「人若與男人苟合，像與女人一樣，他們二人行了可憎的事，總要把他們治死」，與利18:22同一禁令，本章增補死刑處分
+  surfaces:
+  - phrase: 人若與男人苟合，像與女人一樣
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 不可與男人苟合可憎惡的事
+  existing_path: link_folder/主題/不可與男人苟合可憎惡的事.md
+- name: 不可與獸淫合逆性的事
+  suggested_type: 主題
+  evidence: 15-16節「人若與獸淫合，總要治死他，也要殺那獸。女人若與獸親近，與牠淫合…總要把他們治死」，與利18:23同一禁令，本章增補：人與獸皆治死
+  surfaces:
+  - phrase: 人若與獸淫合，總要治死他，也要殺那獸
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 不可與獸淫合逆性的事
+  existing_path: link_folder/主題/不可與獸淫合逆性的事.md
+- name: 不可與經期婦人親近
+  suggested_type: 主題
+  evidence: v18「婦人有月經，若與她同房，露了她的下體…二人必從民中剪除」，與利18:19同一禁令，本章增補剪除刑罰。GT丁良才：本節是論明知故犯的，利15:24是論無意犯了的
+  surfaces:
+  - phrase: 婦人有月經，若與他同房
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 不可與經期婦人親近
+  existing_path: link_folder/主題/不可與經期婦人親近.md
+- name: 你們要聖潔因為我是聖潔的
+  suggested_type: 神學
+  evidence: 7-8, 26節；「所以你們要自潔成聖，因為我是耶和華你們的神」「你們要謹守遵行我的律例；我是叫你們成聖的耶和華」「你們要歸我為聖，因為我耶和華是聖的」，與利19:2、11:44-45同一refrain三度重現於本章首尾。GT丁良才：以色列人只能因遵行神的命令成聖，一面遠離外邦人的可憎惡習，一面彰顯神的聖潔；GT精讀本：宣告聖潔從神而來，只有神才是人成為聖潔的根源，人不能靠自己達到聖潔
+  surfaces:
+  - phrase: 所以你們要自潔成聖
+    verses:
+    - 7
+  - phrase: 我是叫你們成聖的耶和華
+    verses:
+    - 8
+  - phrase: 你們要歸我為聖，因為我─耶和華是聖的
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 你們要聖潔因為我是聖潔的
+  existing_path: link_folder/神學/你們要聖潔因為我是聖潔的.md
+- name: 玷污自己也玷污地
+  suggested_type: 神學
+  evidence: v22「所以，你們要謹守遵行我一切的律例典章，免得我領你們去住的那地把你們吐出」，與利18:24-28同一神學主題，本章重申此為22-26節的總勸勉
+  surfaces:
+  - phrase: 免得我領你們去住的那地把你們吐出
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 玷污自己也玷污地
+  existing_path: link_folder/神學/玷污自己也玷污地.md
+- name: 潔淨與不潔淨的早期區分
+  suggested_type: 主題
+  evidence: v25「所以，你們要把潔淨和不潔淨的禽獸分別出來；不可因我給你們分為不潔淨的禽獸，或是滋生在地上的活物，使自己成為可憎惡的」。GT串珠：明顯是指利11章關於飲食的律例，其主要目的乃是在以色列人和迦南人中間劃出清楚的分界線；GT丁良才：以色列人若這樣行，就必與別國常有分別，比方但以理和他的朋友（但1:8）
+  surfaces:
+  - phrase: 你們要把潔淨和不潔淨的禽獸分別出來
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 潔淨與不潔淨的早期區分
+  existing_path: link_folder/主題/潔淨與不潔淨的早期區分.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華對摩西說」
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+C_new_formal:
+- name: 摩洛獻兒女治死條例（含知情連坐）
+  suggested_type: 主題
+  evidence: 2-5節；凡把兒女獻給摩洛的，本地人要用石頭把他打死；本地人若佯為不見不把他治死，神就要向這人和他的家變臉，把他和一切隨他行邪淫的人都從民中剪除。與利18:21同一禁令，本章增補具體死刑執行方式與旁觀者知情不報的連帶責任。GT丁良才：以色列人處決犯人時將他們帶到營外，見證人先下手，然後眾民也下手用石頭打死（申17:7），神叫眾民在除罪的事上有份，為要叫他們受警誡；GT《舊約背景註釋》：這是團體性死刑，每個人都要參與為淨化禮，倘若社群佯為不見，神便要自己施行懲罰
+  surfaces:
+  - phrase: 總要治死他；本地人要用石頭把他打死
+    verses:
+    - 2
+  - phrase: 本地人若佯為不見，不把他治死
+    verses:
+    - 4
+  target_path: link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md
+  semantic_hint:
+  - title: 不可使兒女經火歸摩洛
+    score: 0.45
+    type: 主題
+- name: 娶妻並娶其母用火焚燒的大惡條例
+  suggested_type: 主題
+  evidence: v14「人若娶妻，並娶其母，便是大惡，要把這三人用火焚燒，使你們中間免去大惡」。GT丁良才：按以色列人的律法，用火焚燒犯人時，通常先用石頭打死或用繩索絞死，然後才用火焚燒，比方亞干（書7:25）；此火刑與利21:9祭司女兒行淫用火焚燒同屬最嚴厲的刑罰
+  surfaces:
+  - phrase: 人若娶妻，並娶其母，便是大惡
+    verses:
+    - 14
+  - phrase: 要把這三人用火焚燒
+    verses:
+    - 14
+  target_path: link_folder/主題/娶妻並娶其母用火焚燒的大惡條例.md
+- name: 無子女而死的刑罰
+  suggested_type: 神學
+  evidence: 20-21節；與伯叔之妻同房、娶弟兄之妻，二人要擔當自己的罪，必無子女而死。GT丁良才：有注釋家以為是二人必不生育，也有以為所生子女必在他們未死以前去世；GT《舊約背景註釋》：有兒女等於老來有人照顧、死後有人埋葬，並將家庭延伸到下一代，無後就是家庭被剪除，並有老來死後孤苦的危險——這是比死刑略輕、卻仍是神親自介入的懲罰
+  surfaces:
+  - phrase: 二人要擔當自己的罪，必無子女而死
+    verses:
+    - 20
+  - phrase: 二人必無子女
+    verses:
+    - 21
+  target_path: link_folder/神學/無子女而死的刑罰.md
+D_new_candidate: []
+E_skip: []
