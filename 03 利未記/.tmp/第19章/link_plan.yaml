@@ -1,0 +1,305 @@
+book: 利未記
+chapter: 19
+A_use_directly: []
+B_needs_update:
+- name: 當孝敬父母
+  suggested_type: 神學
+  evidence: v3「你們各人都當孝敬父母，也要守我的安息日」。GT丁良才：孝敬父母是十誡的第五誡，且是第一條帶應許的誡命（弗6:2）；本句「孝敬」原文與申6:2,13「敬畏」相同，與出20:12「孝敬」原文不同；GT啟導本：父母是天父在地上的代表，應受充分尊敬，新約重述此命令（弗6:1-4；提前5:4）
+  surfaces:
+  - phrase: 你們各人都當孝敬父母
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 3, 30節；「也要守我的安息日」「你們要守我的安息日，敬我的聖所」，是十誡第四誡的重申
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: v4「你們不可偏向虛無的神，也不可為自己鑄造神像」，第二誡的重申。GT丁良才：「虛無的神」四字在摩西五經只記過兩次（本節、二十六1），保羅指此說「我們知道偶像在世上算不得什麼」（林前8:4）；GT精讀本：不可雕刻偶像的誡命表明除神以外不能視其他為絕對，使人擁有正確的價值觀
+  surfaces:
+  - phrase: 你們不可偏向虛無的神
+    verses:
+    - 4
+  - phrase: 也不可為自己鑄造神像
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: 5-8節；獻平安祭要獻得可蒙悅納，當天和第二天要吃完，留到第三天必用火焚燒，第三天再吃即為可憎惡，凡吃的人必擔當罪孽被剪除。GT丁良才：為感謝而獻的平安祭不可留到次日早晨，為還願或甘心獻的平安祭不可留到第三天；本段重申利7:15-18的條例，嚴禁獻祭染異教色彩
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 不可偷盜
+  suggested_type: 神學
+  evidence: v11「你們不可偷盜，不可欺騙，也不可彼此說謊」，第八誡的重申，與欺騙、說謊並列。GT丁良才：偷盜包括不正常運用權位謀利、剋扣工資、不正當買賣斤兩不足、拐賣人口等一切在別人不知情下使人受損己身得利的行為
+  surfaces:
+  - phrase: 你們不可偷盜
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 不可偷盜
+  existing_path: link_folder/神學/不可偷盜.md
+- name: 不可妄稱耶和華你神的名
+  suggested_type: 神學
+  evidence: v12「不可指著我的名起假誓，褻瀆你神的名」，第三誡的延伸。GT丁良才：本節不禁止起誓，只禁止起假誓；撒謊是罪，起假誓是更大的罪——從貪心（9-10節未提防）到偷竊欺騙（11節）到起假誓遮蓋（12節），一樣的罪往往生出許多的罪來
+  surfaces:
+  - phrase: 不可指著我的名起假誓
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 不可妄稱耶和華你神的名
+  existing_path: link_folder/神學/不可妄稱耶和華你神的名.md
+- name: 利19：18
+  suggested_type: 互文
+  evidence: v18「不可報仇，也不可埋怨你本國的子民，卻要愛人如己」。既有條目「利19：18」由出埃及記21-22章賠償律例建立，主題發展欄已預留「新約中基督引用利19:18為第二大誡命（太22:39），愛人如己成為新約倫理的核心」——本章正是此節本身的出處章節。GT啟導本：「愛人如己」是舊約中最特出且高超的一條律法，耶穌基督引此為人倫關係的總綱（太19:19；22:39；可12:31；路10:27），愛的對象不僅本族人也包括寄居的外族人（34節）；GT丁良才：猶太先師希勒回答「何為律法要旨」說「你不願意人怎樣待你，你也不要怎樣待人」，但主耶穌用積極的話說「你們願意人怎樣待你們，你們也要怎樣待人」（太7:12）；此節在新約亦見羅13:9、加5:14、雅2:8
+  surfaces:
+  - phrase: 不可報仇
+    verses:
+    - 18
+  - phrase: 卻要愛人如己
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 利19：18
+  existing_path: link_folder/互文/利19：18.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華對摩西說」
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 血的尊重
+  suggested_type: 神學
+  evidence: v26「你們不可吃帶血的物」，延續利17章「血中有生命」的神學，本章置於法術觀兆等外邦風俗禁令之首，GT丁良才：有人以為本句在此處是指著關係古時行邪術或拜偶像的風俗說的（參結33:25）
+  surfaces:
+  - phrase: 你們不可吃帶血的物
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 血的尊重
+  existing_path: link_folder/神學/血的尊重.md
+C_new_formal:
+- name: 你們要聖潔因為我是聖潔的
+  suggested_type: 神學
+  evidence: v2「你曉諭以色列全會眾說：你們要聖潔，因為我耶和華你們的神是聖潔的」，全章總綱。GT丁良才：本句在摩西五經中只記在此處和出12:3，顯明神以這律法要略是何等要緊；GT啟導本：第十七章教訓百姓在飲食上要聖潔，十八章和二十章論倫常上要聖潔，本章教訓他們在交接上要聖潔；KC：利未記十八章多屬消極（分別脫離惡），本章兼有積極（分別歸向神）——這是關乎全體神子民的日常生活，不僅是亞倫父子的祭司職分
+  surfaces:
+  - phrase: 你們要聖潔，因為我耶和華─你們的神是聖潔的
+    verses:
+    - 2
+  target_path: link_folder/神學/你們要聖潔因為我是聖潔的.md
+  semantic_hint:
+  - title: 神的聖潔
+    score: 0.537
+    type: 神學
+  - title: 聖潔
+    score: 0.536
+    type: 神學
+  - title: 聖潔（qodesh）
+    score: 0.526
+    type: 原文
+- name: 田角拾穗顧念窮人的條例
+  suggested_type: 主題
+  evidence: v9-10「在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的。不可摘盡葡萄園的果子，也不可拾取葡萄園所掉的果子；要留給窮人和寄居的」。GT丁良才：猶太人傳說收割時至少要留下六十分之一；GT啟導本：這條例使以色列人得三個教訓——所得為業之地不是自己的乃是神的（二十五23）、不可有貪婪吝嗇為己的心、快樂時正是施捨的好機會；路得記二章記載波阿斯遵行此例讓路得得拾穗
+  surfaces:
+  - phrase: 不可割盡田角
+    verses:
+    - 9
+  - phrase: 也不可拾取所遺落的
+    verses:
+    - 9
+  - phrase: 要留給窮人和寄居的
+    verses:
+    - 10
+  target_path: link_folder/主題/田角拾穗顧念窮人的條例.md
+- name: 不可欺壓鄰舍雇工工價不可過夜
+  suggested_type: 主題
+  evidence: v13「不可欺壓你的鄰舍，也不可搶奪他的物。雇工人的工價，不可在你那裡過夜，留到早晨」。GT丁良才：雇工人多因貧窮不敢與主人強求工價，免得觸怒失去工作機會，聖經屢次提到這事要保護工人（申24:14-15；耶22:13；瑪3:5）；GT精讀本：工人在一天工作結束時非常渴望得到工價，雇主應理解工人的心情
+  surfaces:
+  - phrase: 不可欺壓你的鄰舍
+    verses:
+    - 13
+  - phrase: 雇工人的工價，不可在你那裡過夜，留到早晨
+    verses:
+    - 13
+  target_path: link_folder/主題/不可欺壓鄰舍雇工工價不可過夜.md
+- name: 不可咒罵聾子絆倒瞎子
+  suggested_type: 主題
+  evidence: v14「不可咒罵聾子，也不可將絆腳石放在瞎子面前，只要敬畏你的神」。GT丁良才：咒罵那不能聽見、不能表白自己心事的人是惡事；本節教訓是叫人不可趁人軟弱缺乏時佔便宜或陷害他（參二十五17,36,43）；GT精讀本：隨便咒詛耳聾的人、給看不見的人設置障礙，等於嘲笑看顧他們之神的慈愛
+  surfaces:
+  - phrase: 不可咒罵聾子
+    verses:
+    - 14
+  - phrase: 不可將絆腳石放在瞎子面前
+    verses:
+    - 14
+  target_path: link_folder/主題/不可咒罵聾子絆倒瞎子.md
+- name: 審判不可行不義按公義審判
+  suggested_type: 主題
+  evidence: 15, 35節；「你們施行審判，不可行不義；不可偏護窮人，也不可重看有勢力的人，只要按著公義審判你的鄰舍」；35節重申於度量衡上。GT丁良才：不可因犯法的人貧窮就衛護他，也不可因富足有勢力就偏重他，更不可收受賄賂以致斷案不公；GT精讀本：暗示神在末後審判的日子必按公義施行審判
+  surfaces:
+  - phrase: 你們施行審判，不可行不義
+    verses:
+    - 15
+  - phrase: 只要按著公義審判你的鄰舍
+    verses:
+    - 15
+  target_path: link_folder/主題/審判不可行不義按公義審判.md
+  semantic_hint:
+  - title: 審判全地的主豈不行公義
+    score: 0.413
+    type: 神學
+- name: 不可搬弄是非不可與鄰舍為敵
+  suggested_type: 主題
+  evidence: v16「不可在民中往來搬弄是非，也不可與鄰舍為敵，置之於死（原文作流他的血）」。GT丁良才：猶太人解釋本節含兩層意思——不可把無辜人因假見證置於死地，也不可因明知真情卻不肯作見證而置之於死（見死不救也是一項大罪）
+  surfaces:
+  - phrase: 不可在民中往來搬弄是非
+    verses:
+    - 16
+  target_path: link_folder/主題/不可搬弄是非不可與鄰舍為敵.md
+- name: 不可心裡恨弟兄總要指摘鄰舍
+  suggested_type: 主題
+  evidence: v17「不可心裡恨你的弟兄；總要指摘你的鄰舍，免得因他擔罪」。GT丁良才：鄰舍若有錯不可袖手旁觀，總要指摘他叫他知道自己的錯，不然自己就因他擔罪（弗5:11；提前5:20-22）；GT精讀本：耶穌說恨弟兄就等於殺人（太5:21-22）
+  surfaces:
+  - phrase: 不可心裡恨你的弟兄
+    verses:
+    - 17
+  - phrase: 總要指摘你的鄰舍，免得因他擔罪
+    verses:
+    - 17
+  target_path: link_folder/主題/不可心裡恨弟兄總要指摘鄰舍.md
+- name: 不可使異類混雜（牲畜種子衣料）
+  suggested_type: 主題
+  evidence: v19「不可叫你的牲畜與異類配合；不可用兩樣攙雜的種種你的地，也不可用兩樣攙雜的料做衣服穿在身上」。GT丁良才：神創造萬物都是各從其類（創1:11-12,21,24-25），凡從異類配合而生的動物都不能生育；GT精讀本：新約保羅同一屬靈原則說「義和不義有什麼相交呢？光明和黑暗有什麼相通呢？」（林後6:14-16），教訓不要把耶和華信仰和世俗信仰混雜
+  surfaces:
+  - phrase: 不可叫你的牲畜與異類配合
+    verses:
+    - 19
+  - phrase: 不可用兩樣攙雜的料做衣服穿在身上
+    verses:
+    - 19
+  target_path: link_folder/主題/不可使異類混雜（牲畜種子衣料）.md
+- name: 婢女行淫的贖愆祭條例
+  suggested_type: 主題
+  evidence: 20-22節；婢女許配了丈夫還沒被贖得釋放，人若與她行淫，二人受刑罰卻不治死，因婢女還沒得自由；那人要獻贖愆祭公綿羊，祭司為他贖罪，罪就蒙赦免。GT丁良才：按猶太傳說那女人要挨鞭打四十下，男人也同樣受罰；至於已許配自由女子若行淫，二人要用石頭治死（申22:23-24），本條例的較輕刑罰顯明婢女還沒有得自由的特殊處境
+  surfaces:
+  - phrase: 婢女許配了丈夫，還沒有被贖、得釋放
+    verses:
+    - 20
+  - phrase: 那人要把贖愆祭，就是一隻公綿羊牽到會幕門口、耶和華面前
+    verses:
+    - 21
+  target_path: link_folder/主題/婢女行淫的贖愆祭條例.md
+  semantic_hint:
+  - title: 產婦生產潔淨條例（男四十女八十天）
+    score: 0.459
+    type: 主題
+  - title: 贖愆祭（asham）
+    score: 0.454
+    type: 原文
+  - title: 贖罪祭
+    score: 0.45
+    type: 神學
+- name: 迦南地栽種果樹頭三年果子如未受割禮的條例
+  suggested_type: 主題
+  evidence: 23-25節；到了迦南地栽種果樹，三年之久果子如未受割禮不可吃，第四年果子全成聖用以讚美耶和華，第五年才可吃樹上的果子好叫樹結果子更多。GT丁良才：果樹在前三年結果太早會使樹受傷，故將所結果子趁小的時候剪去；GT《舊約背景註釋》：最初三年必須小心栽培修剪，樹木才能正當長成保證豐收，第四年出產奉獻給神為祭，第五年起主人可以吃樹上的果子
+  surfaces:
+  - phrase: 就要以所結的果子如未受割禮的一樣
+    verses:
+    - 23
+  - phrase: 但第四年所結的果子全要成為聖，用以讚美耶和華
+    verses:
+    - 24
+  target_path: link_folder/主題/迦南地栽種果樹頭三年果子如未受割禮的條例.md
+  semantic_hint:
+  - title: 迦南地
+    score: 0.485
+    type: 地點
+  - title: 迦南人
+    score: 0.46
+    type: 人物
+  - title: 迦南
+    score: 0.434
+    type: 人物
+- name: 不可行法術觀兆
+  suggested_type: 主題
+  evidence: v26「你們不可吃帶血的物；不可用法術，也不可觀兆」。GT丁良才：這是論外邦人的風俗，若不是神所准的，就不會有意外事臨到，人靠邪靈改善命運或用法術得知未來都是枉然；GT《舊約背景註釋》：查看祭牲內臟、分析兆頭、從自然現象解讀未來都屬占卜，聖經譴責這種行徑因它與耶和華是全能的神、不受命運操縱的觀念相違背
+  surfaces:
+  - phrase: 不可用法術，也不可觀兆
+    verses:
+    - 26
+  target_path: link_folder/主題/不可行法術觀兆.md
+- name: 不可效法外邦喪儀習俗（剃髮劃身刺花紋）
+  suggested_type: 主題
+  evidence: 27-28節；頭的周圍不可剃，鬍鬚的周圍不可損壞，不可為死人用刀劃身，也不可在身上刺花紋。GT丁良才：拜偶像的人剃頭周圍只留頂上頭髮；希伯來人以鬍鬚為妝飾，損壞人的鬍鬚是極大淩辱；王上18:28顯明用刀自割自刺是外邦祭儀表示憂傷兼有敬邪神的意思；GT《舊約背景註釋》：禁止修剪頭與鬍鬚周圍的字眼與9-10節「不可割盡田角」相同，兩者都和奉獻有關——一個給窮人一個給神
+  surfaces:
+  - phrase: 頭的周圍
+    verses:
+    - 27
+  - phrase: 不可為死人用刀劃身，也不可在身上刺花紋
+    verses:
+    - 28
+  target_path: link_folder/主題/不可效法外邦喪儀習俗（剃髮劃身刺花紋）.md
+- name: 不可辱沒女兒使她為娼妓
+  suggested_type: 主題
+  evidence: v29「不可辱沒你的女兒，使她為娼妓，恐怕地上的人專向淫亂，地就滿了大惡」。GT丁良才：這原是指著獻女兒給亞斯他錄神為娼妓的惡風俗說的，以色列人屢次受引誘敬拜這神；GT啟導本：兩性關係須保持在正式婚姻體制內，不可要自己的女兒當娼妓，損害她女性的聖潔，也引致社會淫亂之風
+  surfaces:
+  - phrase: 不可辱沒你的女兒，使他為娼妓
+    verses:
+    - 29
+  target_path: link_folder/主題/不可辱沒女兒使她為娼妓.md
+  semantic_hint:
+  - title: 羅得提出交出女兒如何評價
+    score: 0.408
+    type: 解經爭議
+- name: 不可偏向交鬼行巫術的
+  suggested_type: 主題
+  evidence: v31「不可偏向那些交鬼的和行巫術的；不可求問他們，以致被他們玷污了」。GT丁良才：人與邪鬼交接，就不能和神交接，因為沾染了邪靈的污穢（林前10:20-21；林後6:14-17）；比方掃羅王求問隱多珥交鬼婦人（撒上28:7）、亞哈謝（王下1:2-4）、瑪拿西（代下33:6）
+  surfaces:
+  - phrase: 不可偏向那些交鬼的和行巫術的
+    verses:
+    - 31
+  target_path: link_folder/主題/不可偏向交鬼行巫術的.md
+- name: 尊敬老人
+  suggested_type: 主題
+  evidence: v32「在白髮的人面前，你要站起來；也要尊敬老人，又要敬畏你的神」。GT啟導本：老年人在東方一向受特別尊敬，他們的經驗與智慧為社會的財富，信徒對神和對老年人都有尊敬的責任，不可輕忽
+  surfaces:
+  - phrase: 在白髮的人面前，你要站起來
+    verses:
+    - 32
+  - phrase: 也要尊敬老人
+    verses:
+    - 32
+  target_path: link_folder/主題/尊敬老人.md
+- name: 善待寄居的外人愛他如己
+  suggested_type: 主題
+  evidence: 33-34節；若有外人在你們國中和你同居，就不可欺負他，要看他如本地人一樣，並要愛他如己，因為你們在埃及地也作過寄居的。GT丁良才：此條例是要以色列人待寄居的和待本族人一樣；GT啟導本：以色列人也曾做過僑民——先受過優待要知感謝神恩，後受過苦待要避免苦待外僑
+  surfaces:
+  - phrase: 就不可欺負他
+    verses:
+    - 33
+  - phrase: 你們要看他如本地人一樣，並要愛他如己
+    verses:
+    - 34
+  target_path: link_folder/主題/善待寄居的外人愛他如己.md
+  semantic_hint:
+  - title: 寄居的（ger）
+    score: 0.436
+    type: 原文
+- name: 公道天平法碼升斗
+  suggested_type: 主題
+  evidence: 35-36節「在尺、秤、升、斗上也是如此。要用公道天平、公道法碼、公道升斗、公道秤」。GT丁良才：不公平的事是神所憎惡的（申25:13-15；結45:10,12；何12:7-8；摩8:5；彌6:10-11；箴11:1,16:11,20:10,23）；GT《舊約背景註釋》：漢摩拉比法典規定用五穀或銀子還債都要用標準的量和衡，違者輕則財物充公重則處死
+  surfaces:
+  - phrase: 要用公道天平、公道法碼、公道升斗、公道秤
+    verses:
+    - 36
+  target_path: link_folder/主題/公道天平法碼升斗.md
+D_new_candidate: []
+E_skip: []

@@ -1,0 +1,23 @@
+▶ P2 resolve：利未記 第19章 連結計畫產生中…
+✔ P2 resolve 完成
+▶ M3 entry_content：17 個條目待建（每批 10 個）
+  · entry_content 第 1 輪 批次 1/2（10 條目）呼叫模型中…
+  · entry_content 第 1 輪 批次 2/2（7 條目）呼叫模型中…
+▶ M5 verse_links：程式化標注中…
+▶ M6 chapter_content：本章整理呼叫模型中…
+▶ P3 render：產生 markdown 中…
+▶ P4 validate：結構驗證中…
+✅ 完成：寫入 18 檔，新增條目 17
+⚠️ 需人工處理：
+   - verse_links：候選宣告的 surfaces 未連上任何節（不在經文或被長詞覆蓋）：不可辱沒你的女兒，使她為娼妓、頭的周圍不可剃
+   - 本章整理的引句疑似掛錯來源（掛名來源查無、卻在別家 raw 檔逐字找到）：掛名KC、實出CT/GT：「義和不義有什麼相交呢？光明和黑暗有什麼相通呢？…」——請回 raw_data 確認正主（GT 合訂本要細分丁良才／啟導本／串珠／背景註釋哪一家）後改 chapter_content.yaml 重跑 render
+
+🔧 如何修復（依上方每條錯誤對症處理）：
+  • 宣告的 surfaces 沒連上任何節
+      → 核對 phrase 是否為本章經文的逐字子字串（全半形、標點）；若該詞已被更長的候選詞覆蓋屬正常，刪去該宣告即可
+      → 改完 link_candidates.yaml 直接重跑（會自動作廢 link_plan／verse_links 等下游重生）：python util/run_chapter.py 利未記 19
+  • 引句疑似掛錯來源（來源誤植嫌疑）
+      → 回 raw_data 確認引句真正的出處家（GT 合訂本要細分是丁良才／啟導本／串珠／背景註釋哪一家），改 chapter_content.yaml 的掛名後刪 第19章.md 重跑渲染：python util/run_chapter.py 利未記 19
+      → 引句確實出自掛名來源、只是拼接跨段落者屬誤報，確認後忽略即可
+  修好後，重跑本檢查（及其後續步驟）直到通過才 commit。
+結論：FAIL（錯誤本體見上方清單）
