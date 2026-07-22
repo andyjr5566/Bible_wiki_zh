@@ -593,7 +593,7 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         # 護欄：真的要呼叫模型前，確認來源讀得到；空來源會讓模型杜撰條目內容
         source_excerpts.require_sources(ctx.path("source_manifest.md"), ctx.root)
     last_errors = {}
-    for round_num in range(2):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
+    for round_num in range(4):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
         failed, feedback = [], None
         total_batches = (len(pending) + batch_size - 1) // batch_size
         for batch_num, start in enumerate(range(0, len(pending), batch_size), 1):
@@ -823,6 +823,19 @@ def _org_wikilink_targets(organization):
     }
 
 
+def _org_unknown_link_targets(org_text, allowed_links, alias_map=None):
+    """organization 的 wiki-link 目標中，既不在白名單、也不是白名單條目別名者。
+
+    白名單＝本章可連條目（A/B 既有＋C 實建）；別名（alias_map 的鍵）解析到白名單
+    條目，屬合法連結（_rewrite_alias_links 會把 [[別名]] 改寫成 [[全名|別名]]），
+    扣掉它們才不會把合法別名連結誤判為未知目標。抽成函式供 fresh 的
+    _chapter_payload_validator 與 resume/勘誤路徑的 _org_link_whitelist_review 共用，
+    確保兩條路徑用同一套判準。"""
+    targets = _org_wikilink_targets(org_text)
+    known = set(allowed_links or []) | set(alias_map or {})
+    return sorted(targets - known)
+
+
 def _org_bare_created_link_errors(org_text, allowed_links, created_names):
     """散文用「本章新建條目的裸名」連結，而該條目實建成帶後綴全名——
     只靠 alias 巧合才不斷鏈，且與知識節點清單的全名不一致（申3 實例：
@@ -1044,7 +1057,7 @@ def _chapter_payload_validator(verse_count, allowed_links=None, alias_map=None):
                 )
         if allowed_links:
             targets = _org_wikilink_targets(org_text)
-            unknown = sorted(targets - set(allowed_links))
+            unknown = _org_unknown_link_targets(org_text, allowed_links, alias_map)
             if unknown:
                 errors.append(
                     f"organization 的 wiki-link 目標不在本章可連清單："
@@ -2298,6 +2311,71 @@ def _verse_coverage_review(ctx):
     ]
 
 
+def _reconstruct_allowed_links(ctx):
+    """從 link_plan.yaml（A/B existing_title）＋ entry_content/*.yaml（本章實建 C）
+    重建 M6 白名單，供 validate_step 在 resume／人工編輯路徑補驗連結目標。
+
+    與 chapter_content_step 建 allowed_links（[run_chapter.py] 本章可連清單）同源，
+    只是 validate_step 手上沒有 plan／created_names，改從磁碟讀回。"""
+    plan_path = ctx.path("link_plan.yaml")
+    plan = _read_yaml(plan_path) if plan_path.exists() else {}
+    existing_titles = [
+        e.get("existing_title") or e.get("name")
+        for key in ("A_use_directly", "B_needs_update")
+        for e in (plan or {}).get(key, []) or []
+        if isinstance(e, dict) and (e.get("existing_title") or e.get("name"))
+    ]
+    created = []
+    out_dir = ctx.path("entry_content")
+    if out_dir.exists():
+        for p in sorted(out_dir.glob("*.yaml")):
+            data = _read_yaml(p)
+            if isinstance(data, dict) and data.get("name"):
+                created.append(data["name"])
+    return list(dict.fromkeys([t for t in existing_titles if t] + created))
+
+
+def _org_link_whitelist_review(ctx):
+    """M6 白名單補驗：本章整理的 wiki-link 目標須為本章可連條目或其別名——否則斷鏈／連別章。
+
+    fresh 路徑的 _chapter_payload_validator 已擋此類、不合格會退回模型重試；但
+    resume／勘誤路徑（chapter_content.yaml 已存在 → _model_step 直接回傳、跳過
+    validate）完全繞過這道白名單。人工在勘誤時新引入的壞連結會靜默通過 run_chapter，
+    只剩 verify_links 能補抓（該閘門常被漏跑，見 memory）。這裡對最終
+    chapter_content.yaml 補驗一次，判準與 fresh 路徑共用 _org_unknown_link_targets，
+    讓兩條路徑守同一道欄杆。
+
+    走 manual_review 不走 error：resume 路徑無法自動重生（硬擋沒有自動補救），且偶有
+    「人工刻意連別章既有條目」的情形（本章整理慣例只連本章條目、跨章改純文字），交
+    人工判斷比硬擋合適；與姊妹規則 _org_bare_created_link_errors 同一 severity。"""
+    payload = ctx.path("chapter_content.yaml")
+    if not payload.exists():
+        return []
+    try:
+        data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return []
+    if not isinstance(data, dict):
+        return []
+    allowed_links = _reconstruct_allowed_links(ctx)
+    if not allowed_links:
+        return []
+    org = render_chapter.coerce_organization(data.get("organization"))
+    org, _ = render_chapter.split_references(org)
+    org_text, _ = _org_split_fences(org)
+    alias_map = _allowed_alias_map(ctx, allowed_links)
+    unknown = _org_unknown_link_targets(org_text, allowed_links, alias_map)
+    if not unknown:
+        return []
+    return [
+        "本章整理的 wiki-link 目標不在本章可連清單（A/B 既有＋C 實建條目或其別名）："
+        + "、".join(unknown)
+        + "——可能是勘誤時打錯字的斷鏈，或想連別章條目（本章整理慣例只連本章條目，跨章"
+        "請改純文字或確認該條目確實存在）。修 chapter_content.yaml 的 organization 後"
+        f"刪 第{ctx.chapter}章.md 重跑 render。"
+    ]
+
+
 def validate_step(ctx, written):
     _log("▶ P4 validate：結構驗證中…")
     errors = []
@@ -2328,6 +2406,7 @@ def validate_step(ctx, written):
     ctx.manual_review.extend(_fabricated_interp_history_review(ctx))
     ctx.manual_review.extend(_verse_coverage_review(ctx))
     ctx.manual_review.extend(_table_alias_link_review(ctx))
+    ctx.manual_review.extend(_org_link_whitelist_review(ctx))
     return errors
 
 
@@ -2432,6 +2511,12 @@ def _manual_review_hints(items, book, chapter):
                 "串珠／背景註釋哪一家），改 chapter_content.yaml 的掛名後"
                 f"刪 第{chapter}章.md 重跑渲染：{rerun}",
                 "引句確實出自掛名來源、只是拼接跨段落者屬誤報，確認後忽略即可",
+            ])
+        elif item.startswith("本章整理的 wiki-link 目標不在本章可連清單"):
+            add("org-whitelist", "本章整理有連到清單外的 wiki-link（斷鏈或跨章）", [
+                "勘誤時打錯字的斷鏈：修 chapter_content.yaml 的 organization 連結目標；",
+                "本章沒有對應條目的概念：去掉 [[ ]] 用純文字，或確認要連的既有條目全名；"
+                f"改完刪 第{chapter}章.md 重跑渲染：{rerun}",
             ])
         elif "表格" in item:
             add("table", "表格內帶別名的 wiki-link 會斷鏈", [

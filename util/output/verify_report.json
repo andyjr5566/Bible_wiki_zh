@@ -1,7 +1,7 @@
 {
-  "valid_links_count": 21300,
+  "valid_links_count": 21321,
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 258,
+  "pending_scripture_refs_count": 248,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -65,11 +65,6 @@
       "entity": "23 以賽亞書/第28章",
       "book": "以賽亞書",
       "chapter": 28
-    },
-    {
-      "entity": "賽53：6",
-      "book": "以賽亞書",
-      "chapter": 53
     },
     {
       "entity": "23 以賽亞書/第53章",
@@ -222,16 +217,6 @@
       "chapter": 24
     },
     {
-      "entity": "出25：17-22",
-      "book": "出埃及記",
-      "chapter": 25
-    },
-    {
-      "entity": "出30：10",
-      "book": "出埃及記",
-      "chapter": 30
-    },
-    {
       "entity": "出31:18",
       "book": "出埃及記",
       "chapter": 31
@@ -247,17 +232,17 @@
       "chapter": 33
     },
     {
-      "entity": "出34:1-4",
-      "book": "出埃及記",
-      "chapter": 34
-    },
-    {
       "entity": "出34:1",
       "book": "出埃及記",
       "chapter": 34
     },
     {
       "entity": "出34:1-4,28",
+      "book": "出埃及記",
+      "chapter": 34
+    },
+    {
+      "entity": "出34:1-4",
       "book": "出埃及記",
       "chapter": 34
     },
@@ -327,11 +312,6 @@
       "chapter": 7
     },
     {
-      "entity": "利10：1-2",
-      "book": "利未記",
-      "chapter": 10
-    },
-    {
       "entity": "利未記17:11",
       "book": "利未記",
       "chapter": 17
@@ -372,7 +352,7 @@
       "chapter": 10
     },
     {
-      "entity": "林前11:26",
+      "entity": "46 哥林多前書/第11章",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -382,7 +362,7 @@
       "chapter": 11
     },
     {
-      "entity": "46 哥林多前書/第11章",
+      "entity": "林前11:26",
       "book": "哥林多前書",
       "chapter": 11
     },
@@ -397,12 +377,12 @@
       "chapter": 3
     },
     {
-      "entity": "啟1:13-16",
+      "entity": "啟1:7",
       "book": "啟示錄",
       "chapter": 1
     },
     {
-      "entity": "啟1:7",
+      "entity": "啟1:13-16",
       "book": "啟示錄",
       "chapter": 1
     },
@@ -482,24 +462,14 @@
       "chapter": 1
     },
     {
-      "entity": "來7:25",
-      "book": "希伯來書",
-      "chapter": 7
-    },
-    {
       "entity": "58 希伯來書/第7章",
       "book": "希伯來書",
       "chapter": 7
     },
     {
-      "entity": "來8:10, 10:16",
+      "entity": "來7:25",
       "book": "希伯來書",
-      "chapter": 8
-    },
-    {
-      "entity": "58 希伯來書/第8章",
-      "book": "希伯來書",
-      "chapter": 8
+      "chapter": 7
     },
     {
       "entity": "來8:10",
@@ -512,7 +482,17 @@
       "chapter": 8
     },
     {
-      "entity": "來9:11-12",
+      "entity": "58 希伯來書/第8章",
+      "book": "希伯來書",
+      "chapter": 8
+    },
+    {
+      "entity": "來8:10, 10:16",
+      "book": "希伯來書",
+      "chapter": 8
+    },
+    {
+      "entity": "來9:4",
       "book": "希伯來書",
       "chapter": 9
     },
@@ -522,12 +502,7 @@
       "chapter": 9
     },
     {
-      "entity": "來9:12",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9：11-12",
+      "entity": "來9:13-22",
       "book": "希伯來書",
       "chapter": 9
     },
@@ -542,27 +517,17 @@
       "chapter": 9
     },
     {
-      "entity": "來9:4",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
-      "entity": "來9:13-22",
-      "book": "希伯來書",
-      "chapter": 9
-    },
-    {
       "entity": "來9:15",
       "book": "希伯來書",
       "chapter": 9
     },
     {
-      "entity": "來10:22",
+      "entity": "來9:12",
       "book": "希伯來書",
-      "chapter": 10
+      "chapter": 9
     },
     {
-      "entity": "58 希伯來書/第10章",
+      "entity": "來10:16",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -572,7 +537,12 @@
       "chapter": 10
     },
     {
-      "entity": "來10:16",
+      "entity": "來10:19-22",
+      "book": "希伯來書",
+      "chapter": 10
+    },
+    {
+      "entity": "58 希伯來書/第10章",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -582,7 +552,7 @@
       "chapter": 10
     },
     {
-      "entity": "來10:19-22",
+      "entity": "來10:22",
       "book": "希伯來書",
       "chapter": 10
     },
@@ -592,17 +562,7 @@
       "chapter": 11
     },
     {
-      "entity": "來12:18-24",
-      "book": "希伯來書",
-      "chapter": 12
-    },
-    {
       "entity": "58 希伯來書/第12章",
-      "book": "希伯來書",
-      "chapter": 12
-    },
-    {
-      "entity": "來12:22-24",
       "book": "希伯來書",
       "chapter": 12
     },
@@ -612,9 +572,14 @@
       "chapter": 12
     },
     {
-      "entity": "來13：11-12",
+      "entity": "來12:18-24",
       "book": "希伯來書",
-      "chapter": 13
+      "chapter": 12
+    },
+    {
+      "entity": "來12:22-24",
+      "book": "希伯來書",
+      "chapter": 12
     },
     {
       "entity": "58 希伯來書/第13章",
@@ -637,12 +602,12 @@
       "chapter": 5
     },
     {
-      "entity": "彼前1:7",
+      "entity": "60 彼得前書/第1章",
       "book": "彼得前書",
       "chapter": 1
     },
     {
-      "entity": "60 彼得前書/第1章",
+      "entity": "彼前1:7",
       "book": "彼得前書",
       "chapter": 1
     },
@@ -815,11 +780,6 @@
       "entity": "04 民數記/第11章",
       "book": "民數記",
       "chapter": 11
-    },
-    {
-      "entity": "民29：7-11",
-      "book": "民數記",
-      "chapter": 29
     },
     {
       "entity": "申命記",
@@ -1012,11 +972,6 @@
       "chapter": 2
     },
     {
-      "entity": "羅3：25",
-      "book": "羅馬書",
-      "chapter": 3
-    },
-    {
       "entity": "45 羅馬書/第4章",
       "book": "羅馬書",
       "chapter": 4
@@ -1120,11 +1075,6 @@
       "entity": "19 詩篇/第89章",
       "book": "詩篇",
       "chapter": 89
-    },
-    {
-      "entity": "詩103：12",
-      "book": "詩篇",
-      "chapter": 103
     },
     {
       "entity": "19 詩篇/第106章",
@@ -1252,12 +1202,12 @@
       "chapter": 3
     },
     {
-      "entity": "太4:2",
+      "entity": "40 馬太福音/第4章",
       "book": "馬太福音",
       "chapter": 4
     },
     {
-      "entity": "40 馬太福音/第4章",
+      "entity": "太4:2",
       "book": "馬太福音",
       "chapter": 4
     },
@@ -1301,53 +1251,6 @@
   "details": {
     "broken": {},
     "pending": {
-      "03 利未記/第16章.md": [
-        [
-          "來13：11-12",
-          "希伯來書",
-          13
-        ],
-        [
-          "來9：11-12",
-          "希伯來書",
-          9
-        ],
-        [
-          "出25：17-22",
-          "出埃及記",
-          25
-        ],
-        [
-          "出30：10",
-          "出埃及記",
-          30
-        ],
-        [
-          "利10：1-2",
-          "利未記",
-          10
-        ],
-        [
-          "民29：7-11",
-          "民數記",
-          29
-        ],
-        [
-          "羅3：25",
-          "羅馬書",
-          3
-        ],
-        [
-          "詩103：12",
-          "詩篇",
-          103
-        ],
-        [
-          "賽53：6",
-          "以賽亞書",
-          53
-        ]
-      ],
       "link_folder/主題/人的方法與神的應許.md": [
         [
           "23 以賽亞書/第28章",
@@ -1551,11 +1454,6 @@
       ],
       "link_folder/事件/摩西上山領石版.md": [
         [
-          "來9:11-12",
-          "希伯來書",
-          9
-        ],
-        [
           "出31:18",
           "出埃及記",
           31
@@ -1722,11 +1620,6 @@
         ]
       ],
       "link_folder/互文/出20：21.md": [
-        [
-          "來9:11-12",
-          "希伯來書",
-          9
-        ],
         [
           "來9:24",
           "希伯來書",

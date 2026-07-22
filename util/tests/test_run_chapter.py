@@ -1145,5 +1145,75 @@ class FabricatedInterpHistoryReviewTests(unittest.TestCase):
                 [], run_chapter._fabricated_interp_history_review(ctx))
 
 
+class OrgLinkWhitelistReviewTests(unittest.TestCase):
+    """M6 白名單補驗——resume／勘誤路徑（chapter_content.yaml 已存在，_model_step
+    跳過 validate）新引入的壞連結，validate_step 要補抓，判準與 fresh 路徑共用
+    _org_unknown_link_targets。走 manual_review 不擋 build。
+    """
+
+    # B 類既有「約櫃」（別名 法櫃）、C 類實建「內幔」（payload 別名 至聖所的幔子）
+    INDEX = {"約櫃": {"title": "約櫃", "aliases": ["法櫃"]}, "法櫃": {"alias_of": "約櫃"}}
+    PLAN = {"B_needs_update": [{"name": "約櫃", "existing_title": "約櫃"}],
+            "C_new_formal": [{"name": "內幔", "suggested_type": "原文"}]}
+    PAYLOADS = [{"name": "內幔", "aliases": ["至聖所的幔子"]}]
+
+    def _ctx(self, tmp, organization):
+        root = Path(tmp)
+        (root / "raw_scripture" / "出埃及記").mkdir(parents=True)
+        (root / "raw_scripture" / "出埃及記" / "第26章.txt").write_text(
+            "經文一。\n", encoding="utf-8"
+        )
+        ch = root / "02 出埃及記" / ".tmp" / "第26章"
+        (ch / "entry_content").mkdir(parents=True)
+        (root / "link_folder").mkdir(exist_ok=True)
+        (ch / "link_plan.yaml").write_text(
+            yaml.safe_dump(self.PLAN, allow_unicode=True), encoding="utf-8"
+        )
+        for p in self.PAYLOADS:
+            (ch / "entry_content" / f"{p['name']}.yaml").write_text(
+                yaml.safe_dump(p, allow_unicode=True), encoding="utf-8"
+            )
+        (ch / "chapter_content.yaml").write_text(
+            yaml.safe_dump(
+                {"book": "出埃及記", "chapter": 26,
+                 "knowledge_nodes": {"神學": ["內幔"]},
+                 "organization": organization},
+                allow_unicode=True,
+            ),
+            encoding="utf-8",
+        )
+        return run_chapter.ChapterContext(
+            "出埃及記", 26, root=root, index=self.INDEX, homonyms={}
+        )
+
+    def test_bad_link_is_flagged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, "### 標題（v1）\n見 [[內幔]] 與別章的 [[逾越節]]。")
+            notes = run_chapter._org_link_whitelist_review(ctx)
+            self.assertEqual(1, len(notes))
+            self.assertIn("逾越節", notes[0])
+            self.assertNotIn("內幔", notes[0])
+
+    def test_full_name_and_aliases_pass(self):
+        # 全名、A/B 別名（法櫃→約櫃）、C payload 別名（至聖所的幔子→內幔）都不誤報
+        org = "### 標題（v1）\n[[內幔]]、[[約櫃]]、[[法櫃]]、[[至聖所的幔子]] 皆合法。"
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, org)
+            self.assertEqual([], run_chapter._org_link_whitelist_review(ctx))
+
+    def test_link_inside_mermaid_is_ignored(self):
+        # mermaid 圍欄內的 [[內幔]] 不算連結（與 fresh 路徑一致，圍欄先剝掉）
+        org = "### 標題（v1）\n說明連 [[內幔]]。\n```mermaid\nflowchart TD\n  A[[逾越節]]\n```"
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, org)
+            self.assertEqual([], run_chapter._org_link_whitelist_review(ctx))
+
+    def test_missing_chapter_content_is_noop(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, "### 標題（v1）\n見 [[內幔]]。")
+            (Path(tmp) / "02 出埃及記" / ".tmp" / "第26章" / "chapter_content.yaml").unlink()
+            self.assertEqual([], run_chapter._org_link_whitelist_review(ctx))
+
+
 if __name__ == "__main__":
     unittest.main()
