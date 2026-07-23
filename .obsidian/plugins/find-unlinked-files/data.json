@@ -1,5 +1,5 @@
 {
-  "outputFileName": "orphaned files output",
+  "outputFileName": "util/output/orphaned files output",
   "disableWorkingLinks": false,
   "directoriesToIgnore": [
     "link_folder/"
@@ -14,9 +14,12 @@
   "unresolvedLinksIgnoreDirectories": true,
   "unresolvedLinksOutputFileName": "util/output/broken links output",
   "unresolvedLinksDirectoriesToIgnore": [
-    ""
+    "util/"
   ],
-  "unresolvedLinksFilesToIgnore": [],
+  "unresolvedLinksFilesToIgnore": [
+    "README.md",
+    "agent_start_prompt.md"
+  ],
   "unresolvedLinksFileTypesToIgnore": [],
   "unresolvedLinksLinksToIgnore": [],
   "unresolvedLinksTagsToIgnore": [],

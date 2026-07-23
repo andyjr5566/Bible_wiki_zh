@@ -375,274 +375,285 @@ def is_existing_path_link(root_path, target):
     return candidate.is_file()
 
 
-# ========== 6. 掃描 wiki-link ==========
+# ========== 6. 離線 broken 掃描（直接讀磁碟，模擬 Obsidian 解析）==========
+#
+# 判定 BROKEN 的規則與 Obsidian 的 find-unresolved-link 一致：wiki-link 目標必須對得上
+# **確切的檔名 stem 或 vault 相對路徑**；**不解析 frontmatter alias**（這正是舊版
+# verify_links 用 alias 註冊表會放行 [[按手]] 的盲區）。
+#
+# 直接讀磁碟而不驅動 Obsidian 有三個好處：(1) 不受 Obsidian metadataCache 對外部編輯的
+# 延遲影響（Windows 下改完檔、快取不會即時更新，曾造成假 broken）；(2) 不必開著 Obsidian；
+# (3) 不會每跑一次就在 Obsidian 開一個輸出分頁。判定結果與 Obsidian 逐條一致。
 
-def scan_links(root_path, link_folders, book_name=None):
-    """掃描所有 wiki-link，回傳四類分類結果"""
-    broken_links = {}       # 真正破損
-    pending_refs = {}       # 合法未來書卷引用
-    invalid_refs = {}       # 不合法聖經引用
-    unknown_links = {}      # 無法判斷
+BOOK_CHAPTER_SRC_BOOK_RE = re.compile(r"^\d+\s+(?P<book>.+)/第\d+(?:章|篇)$")
 
-    books_to_scan = []
-    if book_name:
-        books_to_scan = [(book_name, book_directory(root_path, book_name))]
-    else:
-        books_to_scan = list(existing_book_directories(root_path))
+BOOK_INDEX_STEM = "全書目錄及綱要"
 
-    existing_entities, entity_locations, existing_chapter_links = build_registry(root_path, link_folders)
 
-    def process_content(content, source_key):
-        """處理一個檔案的內容，分類所有 wiki-link"""
-        links = WIKILINK_RE.findall(content)
-        for link in links:
-            entity = link.split('|')[0].strip()
-            
-            # 檢查是否在實體註冊表或章節檔中
-            normalized_entity = normalize_name(entity)
-            if (
-                normalized_entity in existing_entities
-                or normalized_entity in existing_chapter_links
-                or is_existing_path_link(root_path, entity)
-            ):
-                continue  # 正常連結
-            
-            # 檢查是否為聖經章節引用
-            scripture = classify_scripture_ref(entity)
-            if scripture is not None:
-                cat, book, chapter = scripture
-                if cat == "pending":
-                    pending_refs.setdefault(source_key, set()).add(
-                        (entity, book, chapter)
-                    )
-                elif cat == "invalid":
-                    invalid_refs.setdefault(source_key, set()).add(
-                        (entity, book, chapter)
-                    )
-                continue
-            
-            # 不屬於上述任何分類 → broken
-            broken_links.setdefault(source_key, set()).add(entity)
+def build_resolution_sets(root_path):
+    """全庫 .md 的檔名 stem 與 vault 相對路徑（去 .md），作為連結解析基準。
 
-    # 掃描書卷資料夾
-    for book, book_path in books_to_scan:
-        if not book_path.is_dir():
+    含 alias 的 frontmatter **不納入**——Obsidian 的 unresolved 判定亦不認 alias。
+    """
+    stems, relpaths = set(), set()
+    for f in root_path.rglob("*.md"):
+        rel = str(f.relative_to(root_path)).replace("\\", "/")
+        if rel.startswith(".tmp/") or "/.tmp/" in rel:
             continue
+        stems.add(f.stem)
+        relpaths.add(rel[:-3])
+    return stems, relpaths
 
-        for item in book_path.iterdir():
-            if item.name.startswith('.'):
+
+def _is_tmp(root_path, f):
+    p = str(f.relative_to(root_path)).replace("\\", "/")
+    return p.startswith(".tmp/") or "/.tmp/" in p
+
+
+def scope_source_files(root_path):
+    """要檢查的來源檔：link_folder 全部 + 書卷章（排除「全書目錄及綱要」與 .tmp 管線暫存）。"""
+    files = []
+    lf = root_path / LINK_FOLDER_PARENT
+    if lf.exists():
+        files.extend(f for f in lf.rglob("*.md") if not _is_tmp(root_path, f))
+    for _, directory in existing_book_directories(root_path):
+        for f in directory.rglob("*.md"):
+            if f.stem == BOOK_INDEX_STEM or _is_tmp(root_path, f):
                 continue
-            if item.is_file() and item.suffix == '.md':
-                try:
-                    content = item.read_text(encoding='utf-8')
-                except (UnicodeDecodeError, Exception):
-                    continue
-                process_content(content, f"{book_path.name}/{item.name}")
+            files.append(f)
+    return files
 
-            elif item.is_dir() and item.name in ['經文', '註解', '拾穗', '解說', '背景', '綱要', '交叉參照']:
-                for f in item.iterdir():
-                    if f.suffix != '.md':
-                        continue
-                    try:
-                        content = f.read_text(encoding='utf-8')
-                    except (UnicodeDecodeError, Exception):
-                        continue
-                    process_content(content, f"{book_path.name}/{item.name}/{f.name}")
 
-    # 掃描 link_folder
-    for folder in link_folders:
-        folder_path = root_path / LINK_FOLDER_PARENT / folder
-        if not folder_path.exists():
+def scan_disk_broken_entries(root_path, stems, relpaths):
+    """掃 in-scope 來源檔，回傳無法解析的 wiki-link：[(target, [sources...]), ...]。"""
+    result = {}
+    for f in scope_source_files(root_path):
+        rel = str(f.relative_to(root_path)).replace("\\", "/")[:-3]
+        try:
+            content = f.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
             continue
-        for f in folder_path.iterdir():
-            if f.suffix != '.md':
+        for raw in WIKILINK_RE.findall(content):
+            target = raw.split("|")[0].split("#")[0].strip()
+            if not target:
                 continue
-            try:
-                content = f.read_text(encoding='utf-8')
-            except (UnicodeDecodeError, Exception):
+            if target in stems or target in relpaths:
+                continue  # Obsidian 解析得到 → 不算 broken
+            srcs = result.setdefault(target, [])
+            if rel not in srcs:
+                srcs.append(rel)
+    return list(result.items())
+
+
+def source_in_book(src, canonical_book):
+    """--book 過濾：該來源是否屬指定書卷；link_folder 一律納入（與舊版 --book 一致）。"""
+    s = src.split("#", 1)[0].strip()
+    if s.startswith(LINK_FOLDER_PARENT + "/"):
+        return True
+    m = BOOK_CHAPTER_SRC_BOOK_RE.match(s)
+    if not m:
+        return False
+    return canonical_book_name(m.group("book")) == canonical_book
+
+
+def existing_chapter_set(root_path):
+    """回傳實際存在的 (正規化書卷名, 章號) 集合，用來區分『未來章節』與『已存在但連結格式錯』。"""
+    result = set()
+    for book, directory in existing_book_directories(root_path):
+        for fname in directory.iterdir():
+            if fname.suffix != ".md":
                 continue
-            process_content(content, f"{LINK_FOLDER_PARENT}/{folder}/{f.name}")
+            m = re.match(r"^第(\d+)(?:章|篇)$", fname.stem)
+            if m:
+                result.add((book, int(m.group(1))))
+    return result
 
-    return broken_links, pending_refs, invalid_refs
 
+def classify_broken_target(target, node_basenames, existing_chapters):
+    """把一個無法解析的 target 分類。
 
-# ========== 7. 輸出報告 ==========
+    回傳 dict，category 為：
+      pending  — 合法未來『章節級』聖經引用（書卷未建、章數合法、無節號）。資訊性，不算錯。
+      invalid  — 聖經引用章數超出書卷範圍，須修。
+      broken   — 其餘一律須處理（拆連結、補 md 或改名）。
+    """
+    t = target.strip()
+    has_verse_colon = ("：" in t) or (":" in t)
 
-def build_report(broken_links, pending_refs, invalid_refs, root_path, link_folders):
-    """產生 4 類輸出報告"""
-    # 收集 unique entities
-    all_broken = set()
-    for links_set in broken_links.values():
-        all_broken.update(links_set)
-    
-    all_pending = set()
-    for refs_set in pending_refs.values():
-        for entity, book, chapter in refs_set:
-            all_pending.add((entity, book, chapter))
-    
-    all_invalid = set()
-    for refs_set in invalid_refs.values():
-        for entity, book, chapter in refs_set:
-            all_invalid.add((entity, book, chapter))
-    
-    # 計算總 valid 連結數
-    total_valid_link_occurrences = 0
-    # 略估：從已索引的檔案中估算 valid 數量，這裡先掃一次
-    existing_entities, _, existing_chapter_links = build_registry(root_path, link_folders)
-    all_valid_targets = existing_entities | existing_chapter_links
-    
-    for item in root_path.iterdir():
-        if item.is_dir() and item.name not in [LINK_FOLDER_PARENT] + link_folders:
-            for f in item.rglob('*.md'):
-                if f.name.startswith('.'):
-                    continue
-                try:
-                    content = f.read_text(encoding='utf-8')
-                    links = WIKILINK_RE.findall(content)
-                    for link in links:
-                        entity = link.split('|')[0].strip()
-                        if entity in all_valid_targets or is_existing_path_link(root_path, entity):
-                            total_valid_link_occurrences += 1
-                except:
-                    pass
-    
-    for folder in link_folders:
-        folder_path = root_path / LINK_FOLDER_PARENT / folder
-        if not folder_path.exists():
-            continue
-        for f in folder_path.rglob('*.md'):
-            try:
-                content = f.read_text(encoding='utf-8')
-                links = WIKILINK_RE.findall(content)
-                for link in links:
-                    entity = link.split('|')[0].strip()
-                    if entity in all_valid_targets or is_existing_path_link(root_path, entity):
-                        total_valid_link_occurrences += 1
-            except:
-                pass
-    
-    # 儲存 JSON 報告
-    report = {
-        "valid_links_count": total_valid_link_occurrences,
-        "broken_links_count": len(all_broken),
-        "pending_scripture_refs_count": len(all_pending),
-        "invalid_scripture_refs_count": len(all_invalid),
-        "unknown_links_count": 0,  # 目前暫時沒有獨立 unknown 分類
-        "broken_links": sorted(list(all_broken)),
-        "pending_scripture_refs": sorted(
-            [{"entity": e, "book": b, "chapter": c} for e, b, c in all_pending],
-            key=lambda x: (x["book"], x["chapter"])
-        ),
-        "invalid_scripture_refs": sorted(
-            [{"entity": e, "book": b, "chapter": c} for e, b, c in all_invalid],
-            key=lambda x: (x["book"], x["chapter"])
-        ),
-        "details": {
-            "broken": {k: sorted(list(v)) for k, v in sorted(broken_links.items())},
-            "pending": {k: sorted([(e, b, c) for e, b, c in v]) for k, v in sorted(pending_refs.items())},
-            "invalid": {k: sorted([(e, b, c) for e, b, c in v]) for k, v in sorted(invalid_refs.items())},
+    # 半形冒號、但全形冒號版本正好是真檔名 → 只是冒號打錯，改冒號即可
+    if ":" in t:
+        fullwidth = t.replace(":", "：")
+        if fullwidth in node_basenames:
+            return {
+                "category": "broken",
+                "subtype": "冒號半形應改全形（節點已存在，改冒號即可）",
+            }
+
+    sci = classify_scripture_ref(t)
+    if sci is not None:
+        cat, book, chapter = sci
+        if cat == "invalid":
+            return {
+                "category": "invalid",
+                "book": book,
+                "chapter": chapter,
+                "subtype": f"章數超出範圍（{book} 最多 {BIBLE_BOOKS.get(book, '?')} 章）",
+            }
+        # cat == "pending"
+        if not has_verse_colon:
+            if (book, chapter) in existing_chapters:
+                return {
+                    "category": "broken",
+                    "subtype": "連結格式錯誤（該章已存在，應改用 [[NN 書卷/第X章]]）",
+                }
+            return {"category": "pending", "book": book, "chapter": chapter}
+        return {
+            "category": "broken",
+            "subtype": "節級經文引用無對應節點（拆連結、改指章節或建節點）",
         }
-    }
-    
+
+    return {"category": "broken", "subtype": "缺條目/節點（建 md 或改正名稱）"}
+
+
+# ========== 7. 報告輸出 ==========
+
+
+def _has_error(report):
+    return (
+        report["broken_links_count"] > 0
+        or report["invalid_scripture_refs_count"] > 0
+        or report["unknown_links_count"] > 0
+    )
+
+
+def _write_reports(report):
+    """寫出 verify_report.json 與 verify_result.txt（check_chapter_files 只檢查存在）。"""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    report_path = OUTPUT_DIR / "verify_report.json"
-    with open(report_path, 'w', encoding='utf-8') as f:
-        json.dump(report, f, ensure_ascii=False, indent=2)
-    
-    # 人類可讀輸出
-    txt_path = OUTPUT_DIR / "verify_result.txt"
-    with open(txt_path, 'w', encoding='utf-8') as f:
-        f.write("=" * 60 + "\n")
-        f.write("  Wiki-Link Verification Report\n")
-        f.write("=" * 60 + "\n\n")
-        f.write(f"  VALID LINKS:           {total_valid_link_occurrences:>5}\n")
-        f.write(f"  BROKEN LINKS:          {len(all_broken):>5}\n")
-        f.write(f"  PENDING SCRIPTURE REFS:{len(all_pending):>5}\n")
-        f.write(f"  INVALID SCRIPTURE REFS:{len(all_invalid):>5}\n")
-        f.write(f"  UNKNOWN LINKS:         {0:>5}\n\n")
-        
-        if all_broken:
-            f.write("--- BROKEN LINKS (must fix) ---\n")
-            for entity in sorted(all_broken):
-                f.write(f"  [[{entity}]]\n")
-            f.write("\n")
-        
-        if all_pending:
-            f.write("--- PENDING SCRIPTURE REFS (info only) ---\n")
-            for entity, book, chapter in sorted(all_pending, key=lambda x: (x[1], x[2])):
-                f.write(f"  [[{entity}]] → valid future {book} chapter {chapter} reference\n")
-            f.write("\n")
-        
-        if all_invalid:
-            f.write("--- INVALID SCRIPTURE REFS (must fix) ---\n")
-            for entity, book, chapter in sorted(all_invalid, key=lambda x: (x[1], x[2])):
-                f.write(f"  [[{entity}]] → ERROR: {book} only has {BIBLE_BOOKS.get(book, '?')} chapters\n")
-            f.write("\n")
-        
-        if all_broken or all_invalid:
-            f.write("Result: FAIL (broken or invalid refs found)\n")
-        else:
-            f.write("Result: PASS\n")
-    
-    return report, txt_path
+    (OUTPUT_DIR / "verify_report.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+    lines = []
+    lines.append("=" * 60)
+    lines.append("  Wiki-Link 驗證報告（離線掃描，模擬 Obsidian 解析）")
+    lines.append("=" * 60)
+    lines.append("")
+    lines.append(f"  BROKEN LINKS:           {report['broken_links_count']:>5}")
+    lines.append(f"  PENDING SCRIPTURE REFS: {report['pending_scripture_refs_count']:>5}")
+    lines.append(f"  INVALID SCRIPTURE REFS: {report['invalid_scripture_refs_count']:>5}")
+    lines.append(f"  UNKNOWN LINKS:          {report['unknown_links_count']:>5}")
+    lines.append("")
+
+    if report["broken_links"]:
+        lines.append("--- BROKEN LINKS (must fix：拆連結或補 md) ---")
+        for item in report["broken_links"]:
+            srcs = "、".join(item["sources"][:6])
+            more = " …" if len(item["sources"]) > 6 else ""
+            lines.append(f"  [[{item['entity']}]]  〔{item['subtype']}〕")
+            lines.append(f"      ← {srcs}{more}")
+        lines.append("")
+
+    if report["invalid_scripture_refs"]:
+        lines.append("--- INVALID SCRIPTURE REFS (must fix) ---")
+        for item in report["invalid_scripture_refs"]:
+            lines.append(f"  [[{item['entity']}]]  〔{item['subtype']}〕")
+        lines.append("")
+
+    if report["pending_scripture_refs"]:
+        lines.append("--- PENDING SCRIPTURE REFS (info only：未來章節) ---")
+        for ref in report["pending_scripture_refs"]:
+            lines.append(
+                f"  [[{ref['entity']}]] → 合法未來引用 {ref['book']} 第{ref['chapter']}章"
+            )
+        lines.append("")
+
+    lines.append("Result: " + ("FAIL" if _has_error(report) else "PASS"))
+    (OUTPUT_DIR / "verify_result.txt").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8"
+    )
+
+
+def _print_summary(report):
+    print()
+    print("=" * 60)
+    print("  Wiki-Link 驗證（離線掃描，模擬 Obsidian 解析）")
+    print("=" * 60)
+    print(f"  BROKEN LINKS:           {report['broken_links_count']:>5}")
+    print(f"  PENDING SCRIPTURE REFS: {report['pending_scripture_refs_count']:>5}")
+    print(f"  INVALID SCRIPTURE REFS: {report['invalid_scripture_refs_count']:>5}")
+    print(f"  UNKNOWN LINKS:          {report['unknown_links_count']:>5}")
+    print()
+    for item in report["broken_links"][:40]:
+        print(f"  [[{item['entity']}]]  〔{item['subtype']}〕")
+    if len(report["broken_links"]) > 40:
+        print(f"  ... 還有 {len(report['broken_links']) - 40} 筆，詳見 verify_result.txt")
+    for item in report["invalid_scripture_refs"]:
+        print(f"  [INVALID] [[{item['entity']}]]  〔{item['subtype']}〕")
+    print()
+    print(f"  Result: {'FAIL' if _has_error(report) else 'PASS'}")
+    print(f"  Report: {OUTPUT_DIR / 'verify_result.txt'}")
+    print("=" * 60)
 
 
 # ========== 8. Main ==========
 
-def verify_links(book_name=None):
-    """主入口"""
-    root_path = ROOT
-    
-    # 動態取得 link_folder 下的所有資料夾
-    link_folders = get_link_folders(root_path)
-    
-    broken_links, pending_refs, invalid_refs = scan_links(
-        root_path, link_folders, book_name
-    )
-    
-    report, txt_path = build_report(broken_links, pending_refs, invalid_refs, root_path, link_folders)
-    
-    # 顯示摘要到 stdout
-    print(f"\n{'='*60}")
-    print(f"  Wiki-Link Verification Report")
-    print(f"{'='*60}")
-    print(f"  VALID LINKS:           {report['valid_links_count']:>5}")
-    print(f"  BROKEN LINKS:          {report['broken_links_count']:>5}")
-    print(f"  PENDING SCRIPTURE REFS:{report['pending_scripture_refs_count']:>5}")
-    print(f"  INVALID SCRIPTURE REFS:{report['invalid_scripture_refs_count']:>5}")
-    print(f"  UNKNOWN LINKS:         {report['unknown_links_count']:>5}")
-    print()
-    
-    if report['broken_links']:
-        print("--- BROKEN LINKS (must fix) ---")
-        for entity in report['broken_links']:
-            print(f"  [[{entity}]]")
-        print()
-    
-    if report['pending_scripture_refs']:
-        print("--- PENDING SCRIPTURE REFS (info only) ---")
-        for ref in report['pending_scripture_refs'][:10]:
-            print(f"  [[{ref['entity']}]] → valid future {ref['book']} ch.{ref['chapter']}")
-        if len(report['pending_scripture_refs']) > 10:
-            print(f"  ... and {len(report['pending_scripture_refs']) - 10} more")
-        print()
-    
-    if report['invalid_scripture_refs']:
-        print("--- INVALID SCRIPTURE REFS (must fix) ---")
-        for ref in report['invalid_scripture_refs']:
-            print(f"  [[{ref['entity']}]] → ERROR: {ref['book']} max {BIBLE_BOOKS.get(ref['book'], '?')} ch.")
-        print()
-    
-    has_error = (
-        report['broken_links_count'] > 0
-        or report['invalid_scripture_refs_count'] > 0
-        or report['unknown_links_count'] > 0
-    )
-    print(f"  Result: {'FAIL' if has_error else 'PASS'}")
-    print(f"  Report: {txt_path}")
-    print(f"{'='*60}\n")
 
-    if has_error:
+def verify_links(book_name=None):
+    """主入口：離線掃描 in-scope 檔的 wiki-link → 套聖經知識分流 → 產報告。"""
+    root_path = ROOT
+    canonical = canonical_book_name(book_name) if book_name else None
+
+    stems, relpaths = build_resolution_sets(root_path)
+    existing_chapters = existing_chapter_set(root_path)
+    entries = scan_disk_broken_entries(root_path, stems, relpaths)
+
+    broken_items, pending_items, invalid_items = [], [], []
+    for target, sources in entries:
+        scoped = sources
+        if canonical is not None:
+            scoped = [s for s in sources if source_in_book(s, canonical)]
+            if not scoped:
+                continue
+
+        cls = classify_broken_target(target, stems, existing_chapters)
+        if cls["category"] == "pending":
+            pending_items.append(
+                {"entity": target, "book": cls["book"], "chapter": cls["chapter"]}
+            )
+        elif cls["category"] == "invalid":
+            invalid_items.append(
+                {
+                    "entity": target,
+                    "book": cls["book"],
+                    "chapter": cls["chapter"],
+                    "subtype": cls["subtype"],
+                    "sources": scoped,
+                }
+            )
+        else:
+            broken_items.append(
+                {"entity": target, "subtype": cls["subtype"], "sources": scoped}
+            )
+
+    broken_items.sort(key=lambda x: x["entity"])
+    invalid_items.sort(key=lambda x: (x["book"], x["chapter"]))
+    pending_items.sort(key=lambda x: (x["book"], x["chapter"]))
+
+    report = {
+        "source": "offline-disk-scan",
+        "broken_links_count": len(broken_items),
+        "pending_scripture_refs_count": len(pending_items),
+        "invalid_scripture_refs_count": len(invalid_items),
+        "unknown_links_count": 0,
+        "broken_links": broken_items,
+        "pending_scripture_refs": pending_items,
+        "invalid_scripture_refs": invalid_items,
+    }
+
+    _write_reports(report)
+    _print_summary(report)
+
+    if _has_error(report):
         remediation.print_fix_hints(_verify_fix_hints(report))
     else:
         print("結論：PASS")
@@ -653,21 +664,21 @@ def verify_links(book_name=None):
 def _verify_fix_hints(report):
     """依 verify 報告命中的失敗類別組出修復指引（PENDING 屬正常，不列）。"""
     hints = []
-    if report['broken_links_count'] > 0:
+    if report["broken_links_count"] > 0:
         hints.append((
-            "BROKEN LINKS：target 條目不存在（非合法聖經章節、也不在 link_folder）",
+            "BROKEN LINKS：wiki-link 目標對不到任何檔名（每條都要修掉或刪掉）",
             [
-                "看上方每個 [[target]]：若是打錯條目名，改成正確全名；"
-                "若該條目確實該存在，補建或改用其別名。",
-                "若 target 是既有條目的別名卻沒被認出，補進該條目 aliases 或 "
-                "_config/link_conflict_resolutions.yaml，再 python util/build_link_index.py 重建索引。",
-                "改完重跑：python util/verify_links.py 【書名】",
+                "缺條目/節點：建對應 md，或把 [[錯名]] 改成正確條目全名（含斜線／括號的名字多半要改指底線真檔名）。",
+                "冒號半形應改全形：把引用處的半形冒號 : 改成全形 ：（節點已存在）。",
+                "節級經文引用無節點：不建節點就把 [[ ]] 拆成純文字，或改指整章／既有節點。",
+                "連結格式錯誤：改用 [[NN 書卷/第X章]] 正確格式（該章已存在）。",
+                "改完直接重跑：python util/verify_links.py 【書名】",
             ],
         ))
-    if report['invalid_scripture_refs_count'] > 0:
+    if report["invalid_scripture_refs_count"] > 0:
         hints.append((
             "INVALID SCRIPTURE REFS：經文引用的章數超出該書卷實際範圍",
-            ["依上方 ERROR 提示的最大章數，修正引用該經文的檔案中的章數。"],
+            ["依上方 subtype 提示的最大章數，修正引用該經文的檔案中的章數。"],
         ))
     return hints
 
@@ -675,23 +686,18 @@ def _verify_fix_hints(report):
 if __name__ == "__main__":
     import sys
     import console
+
     console.utf8_stdio()
     target_book = None
-    if len(sys.argv) > 1:
-        if sys.argv[1].startswith('--book='):
-            target_book = sys.argv[1][7:]
-        else:
-            target_book = sys.argv[1]
+    for arg in sys.argv[1:]:
+        if arg.startswith("--book="):
+            target_book = arg[7:]
+        elif not arg.startswith("--"):
+            target_book = arg
     result = verify_links(target_book)
-    has_error = (
-        result["broken_links_count"] > 0
-        or result["invalid_scripture_refs_count"] > 0
-        or result["unknown_links_count"] > 0
-    )
-    sys.exit(1 if has_error else 0)
+    sys.exit(1 if _has_error(result) else 0)
 
-'''
-example usage:
-  python util/verify_links.py
-  python util/verify_links.py --book=創世記
-'''
+
+# example usage:
+#   python util/verify_links.py            # 離線驗證全庫（不需開 Obsidian）
+#   python util/verify_links.py 出埃及記

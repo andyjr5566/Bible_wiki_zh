@@ -48,7 +48,7 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
   python util/build_embedding_index.py
   python util/validate_knowledge_base.py
   python util/link_quality_check.py {書名}
-  python util/verify_links.py {書名}          ← 傳「書卷名」不是路徑，否則 crash
+  python util/verify_links.py {書名}          ← 離線掃描（不需開 Obsidian）；用 Obsidian 解析規則（確切檔名、不認 alias）抓 broken，逮得到 [[按手]] 這類 alias 漏網之魚
   python util/audit_knowledge_base.py --check-due
   python util/check_chapter_files.py {書名} {X}
   commit 前跑 git status，把它列的「本章待 git add」新建 link_folder/**.md 一併加入；
