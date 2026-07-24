@@ -11,10 +11,14 @@
             "id": "827c09d1823685c3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "04 民數記/第3章.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "第3章"
             }
           }
         ]
@@ -152,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "04 民數記/第3章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "第3章 的大綱"
             }
           }
         ],
@@ -180,33 +185,34 @@
   },
   "active": "827c09d1823685c3",
   "lastOpenFiles": [
-    "util/output/broken links output.md",
+    "04 民數記/第2章.md",
+    "04 民數記/第3章.md",
+    "link_folder/文化/贖銀五舍客勒.md",
+    "link_folder/事件/利未三族分工.md",
+    "04 民數記/第1章.md",
+    "link_folder/主題/安營與纛.md",
+    "link_folder/人物/以法蓮.md",
+    "link_folder/事件/行軍次序.md",
+    "agent_start_prompt.md",
+    "link_folder/事件/十二族長協助數點.md",
+    "link_folder/主題/外人近前來必被治死.md",
+    "link_folder/主題/二十歲以外能打仗的.md",
+    "link_folder/主題/家室與宗族.md",
+    "link_folder/人物/利未支派.md",
+    "link_folder/事件/數點民數.md",
+    "scheme.md",
+    "link_folder/人物/王的囚犯.md",
+    "link_folder/地點/監獄（王的囚犯被囚之處）.md",
+    "link_folder/地點/瑣珥.md",
+    "link_folder/地點/會幕門口.md",
+    "link_folder/地點/洗扁.md",
+    "link_folder/地點/耶路撒冷.md",
+    "link_folder/地點/埃及.md",
+    "link_folder/互文/羅12：1.md",
+    "02 出埃及記/第20章.md",
+    "link_folder/互文/創15：1.md",
     "link_folder/原文/燔祭（olah）.md.tmp.20908.b7991f63f6c0",
     "專案流程說明.md.tmp.20908.016e14d5073b",
-    "util/output/orphaned files output.md",
-    "orphaned files output.md",
-    "util/output/dup_triage.md",
-    "link_folder/互文/法勒斯出生與雅各以掃出生對照.md",
-    "link_folder/原文/七十的屬靈意義.md",
-    "link_folder/互文/亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）.md",
-    "link_folder/事件/十二根柱子.md",
-    "02 出埃及記/第24章.md",
-    "link_folder/互文/膳長被掛木架預表基督受咒詛.md",
-    "01 創世記/第40章.md",
-    "link_folder/歷史/掛在木頭上_懸屍示眾.md",
-    "link_folder/人物/大衛.md",
-    "link_folder/神學/重生.md",
-    "link_folder/神學/萬國同源.md",
-    "link_folder/人物/寧錄.md",
-    "empty files.md",
-    "before_task.md",
-    "agent_start_prompt.md",
-    "專案流程說明.md",
-    "files without tags.md",
-    "link_folder/解經爭議/迦勒底吾珥的位置.md",
-    "link_folder/互文/利19.md",
-    "link_folder/互文/約5.md",
-    "link_folder/互文/約5：44.md",
     "未命名.base",
     "02 出埃及記/第25章.md.tmp.35848.ebcf011b9f0a",
     "02 出埃及記/第20章.md.tmp.35848.3048576a9f24",
