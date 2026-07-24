@@ -1,0 +1,89 @@
+book: 民數記
+chapter: 4
+candidates:
+  - name: 摩西
+    type: 人物
+  - name: 亞倫
+    type: 人物
+  - name: 以利亞撒
+    type: 人物
+  - name: 以他瑪
+    type: 人物
+  - name: 哥轄子孫
+    type: 人物
+    evidence: v2, 4, 15, 17, 34，利未次子後代，負責搬運至聖物
+  - name: 革順子孫
+    type: 人物
+    evidence: v22, 24, 28, 38，利未長子後代，負責抬會幕幔子與覆蓋物
+  - name: 米拉利子孫
+    type: 人物
+    evidence: v29, 31, 33, 42，利未幼子後代，負責抬會幕板、閂、柱子與座等骨架
+  - name: 利未三族分工
+    type: 事件
+  - name: 數點利未任職男子
+    type: 事件
+    evidence: v2-3, 22-23, 29-30, 34-49，第二次數點利未人，統計30至50歲在會幕任職辦事的男子共8580名
+  - name: 會幕（帳幕整體）
+    type: 主題
+  - name: 約櫃
+    type: 主題
+    evidence: v5-6，至聖物，用幔子、海狗皮與純藍色毯子遮蓋後穿槓抬運
+  - name: 陳設餅桌子
+    type: 主題
+    evidence: v7-8，鋪藍色毯子、擺常設的餅與器具，再蒙朱紅色毯子與海狗皮
+  - name: 金燈臺
+    type: 主題
+    evidence: v9-10，用藍色毯子遮蓋，包在海狗皮裡，放在抬架上
+  - name: 金香壇（香壇）
+    type: 主題
+    evidence: v11，金壇上鋪藍色毯子，蒙海狗皮，把槓穿上
+  - name: 銅壇（燔祭壇）
+    type: 主題
+    evidence: v13-14，收去壇上的灰，鋪紫色毯子，擺屬壇器具，蒙海狗皮穿槓
+  - name: 海狗皮頂蓋
+    type: 主題
+    surfaces:
+      - 海狗皮
+  - name: 內幔（隔聖所至聖所的幔子）
+    type: 主題
+    surfaces:
+      - 遮掩櫃的幔子
+  - name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+    type: 主題
+    surfaces:
+      - 純藍色的毯子
+      - 藍色毯子
+      - 朱紅色的毯子
+      - 紫色毯子
+  - name: 三十歲直到五十歲（利未人任職年齡）
+    type: 主題
+    evidence: v3, 23, 30, 35, 39, 43, 47，利未人正式在會幕辦事與負重任的成熟壯年時期
+  - name: 按名指定
+    type: 主題
+    evidence: v32，米拉利子孫所抬的骨架與器具按名指定分派，提高效率與明確職責
+  - name: 抬架（會幕器具搬運）
+    type: 主題
+    evidence: v10, 12, 15，無槓聖所器具包紮後放在抬架（carrying frame）上抬運
+  - name: 不可摸聖物
+    type: 神學
+    evidence: v15，哥轄子孫只可抬不可觸摸聖物，違者治死；表徵事奉邊界與聖潔敬畏
+  - name: 不可觀看聖所
+    type: 神學
+    evidence: v20，哥轄子孫連片時不可進去觀看聖所，免得死亡；保護人免受神聖榮耀擊殺
+  - name: 祭司統轄事奉
+    type: 神學
+    evidence: v28, 33，革順與米拉利子孫在祭司以他瑪手下分派看守，哥轄由以利亞撒監督，展現層層負責的事奉秩序
+  - name: 不可摸約櫃（撒下6：6-7）
+    type: 互文
+  - name: 利未人任職年齡的差異
+    type: 解經爭議
+    evidence: v3（30歲）、民8:24（25歲）、拉3:8/代上23:24（20歲）之年齡規定調和與歷史發展
+  - name: 抬約櫃的槓是否可抽出來
+    type: 解經爭議
+    evidence: 出25:15（槓不可抽出來）與民4:6（把槓穿上/調整系緊）之難題解釋
+  - name: 辦事（melakah）
+    type: 原文
+    evidence: v3 GT難解經文記載 melakah 專指會幕正式任職辦事
+  - name: 工作（baabodath）
+    type: 原文
+    evidence: v3 GT難解經文記載 baabodath 指會幕勞作或學徒時期工作

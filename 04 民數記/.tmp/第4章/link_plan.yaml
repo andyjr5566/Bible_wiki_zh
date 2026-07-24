@@ -1,0 +1,183 @@
+book: 民數記
+chapter: 4
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以利亞撒
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 以他瑪
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
+- name: 利未三族分工
+  suggested_type: 事件
+  match_type: exact
+  existing_title: 利未三族分工
+  existing_path: link_folder/事件/利未三族分工.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: v5-6，至聖物，用幔子、海狗皮與純藍色毯子遮蓋後穿槓抬運
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  evidence: v7-8，鋪藍色毯子、擺常設的餅與器具，再蒙朱紅色毯子與海狗皮
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  evidence: v9-10，用藍色毯子遮蓋，包在海狗皮裡，放在抬架上
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  evidence: v11，金壇上鋪藍色毯子，蒙海狗皮，把槓穿上
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v13-14，收去壇上的灰，鋪紫色毯子，擺屬壇器具，蒙海狗皮穿槓
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 海狗皮頂蓋
+  suggested_type: 主題
+  surfaces:
+  - phrase: 海狗皮
+  match_type: exact
+  existing_title: 海狗皮頂蓋
+  existing_path: link_folder/主題/海狗皮頂蓋.md
+- name: 內幔（隔聖所至聖所的幔子）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 遮掩櫃的幔子
+  match_type: exact
+  existing_title: 內幔（隔聖所至聖所的幔子）
+  existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
+- name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 純藍色的毯子
+  - phrase: 藍色毯子
+  - phrase: 朱紅色的毯子
+  - phrase: 紫色毯子
+  match_type: exact
+  existing_title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md
+- name: 不可摸約櫃（撒下6：6-7）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 不可摸約櫃（撒下6：6-7）
+  existing_path: link_folder/互文/不可摸約櫃（撒下6：6-7）.md
+C_new_formal:
+- name: 哥轄子孫
+  suggested_type: 人物
+  evidence: v2, 4, 15, 17, 34，利未次子後代，負責搬運至聖物
+  target_path: link_folder/人物/哥轄子孫.md
+- name: 革順子孫
+  suggested_type: 人物
+  evidence: v22, 24, 28, 38，利未長子後代，負責抬會幕幔子與覆蓋物
+  target_path: link_folder/人物/革順子孫.md
+- name: 米拉利子孫
+  suggested_type: 人物
+  evidence: v29, 31, 33, 42，利未幼子後代，負責抬會幕板、閂、柱子與座等骨架
+  target_path: link_folder/人物/米拉利子孫.md
+- name: 數點利未任職男子
+  suggested_type: 事件
+  evidence: v2-3, 22-23, 29-30, 34-49，第二次數點利未人，統計30至50歲在會幕任職辦事的男子共8580名
+  target_path: link_folder/事件/數點利未任職男子.md
+- name: 三十歲直到五十歲（利未人任職年齡）
+  suggested_type: 主題
+  evidence: v3, 23, 30, 35, 39, 43, 47，利未人正式在會幕辦事與負重任的成熟壯年時期
+  target_path: link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md
+  semantic_hint:
+  - title: 利未支派
+    score: 0.513
+    type: 人物
+  - title: 利未
+    score: 0.454
+    type: 人物
+  - title: 利未人受聖職討罪
+    score: 0.449
+    type: 事件
+- name: 按名指定
+  suggested_type: 主題
+  evidence: v32，米拉利子孫所抬的骨架與器具按名指定分派，提高效率與明確職責
+  target_path: link_folder/主題/按名指定.md
+- name: 抬架（會幕器具搬運）
+  suggested_type: 主題
+  evidence: v10, 12, 15，無槓聖所器具包紮後放在抬架（carrying frame）上抬運
+  target_path: link_folder/主題/抬架（會幕器具搬運）.md
+- name: 不可摸聖物
+  suggested_type: 神學
+  evidence: v15，哥轄子孫只可抬不可觸摸聖物，違者治死；表徵事奉邊界與聖潔敬畏
+  target_path: link_folder/神學/不可摸聖物.md
+  semantic_hint:
+  - title: 不可摸約櫃（撒下6：6-7）
+    score: 0.422
+    type: 互文
+  - title: 摸聖物成聖
+    score: 0.417
+    type: 神學
+- name: 不可觀看聖所
+  suggested_type: 神學
+  evidence: v20，哥轄子孫連片時不可進去觀看聖所，免得死亡；保護人免受神聖榮耀擊殺
+  target_path: link_folder/神學/不可觀看聖所.md
+- name: 祭司統轄事奉
+  suggested_type: 神學
+  evidence: v28, 33，革順與米拉利子孫在祭司以他瑪手下分派看守，哥轄由以利亞撒監督，展現層層負責的事奉秩序
+  target_path: link_folder/神學/祭司統轄事奉.md
+- name: 利未人任職年齡的差異
+  suggested_type: 解經爭議
+  evidence: v3（30歲）、民8:24（25歲）、拉3:8/代上23:24（20歲）之年齡規定調和與歷史發展
+  target_path: link_folder/解經爭議/利未人任職年齡的差異.md
+  semantic_hint:
+  - title: 利未支派
+    score: 0.507
+    type: 人物
+  - title: 利未
+    score: 0.434
+    type: 人物
+  - title: 利未三族分工
+    score: 0.43
+    type: 事件
+- name: 抬約櫃的槓是否可抽出來
+  suggested_type: 解經爭議
+  evidence: 出25:15（槓不可抽出來）與民4:6（把槓穿上/調整系緊）之難題解釋
+  target_path: link_folder/解經爭議/抬約櫃的槓是否可抽出來.md
+  semantic_hint:
+  - title: 壇的槓（抬壇用）
+    score: 0.41
+    type: 主題
+- name: 辦事（melakah）
+  suggested_type: 原文
+  evidence: v3 GT難解經文記載 melakah 專指會幕正式任職辦事
+  target_path: link_folder/原文/辦事（melakah）.md
+- name: 工作（baabodath）
+  suggested_type: 原文
+  evidence: v3 GT難解經文記載 baabodath 指會幕勞作或學徒時期工作
+  target_path: link_folder/原文/工作（baabodath）.md
+D_new_candidate: []
+E_skip: []

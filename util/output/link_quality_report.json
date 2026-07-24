@@ -1,7 +1,7 @@
 {
-  "total_warnings": 50,
+  "total_warnings": 55,
   "critical_count": 0,
-  "warning_count": 50,
+  "warning_count": 55,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,13 @@
       "source": "link_folder/人物/亞伯拉罕.md",
       "target": "第32章",
       "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 02 出埃及記/第32章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 02 出埃及記/第4章, 04 民數記/第4章"
     },
     {
       "type": "alias_target_conflict",
@@ -72,6 +79,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 04 民數記/第3章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 02 出埃及記/第4章, 04 民數記/第4章"
     },
     {
       "type": "alias_target_conflict",
@@ -244,9 +258,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/主題/內幔（隔聖所至聖所的幔子）.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 03 利未記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/主題/生養眾多與治理.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 01 創世記/第1章, 02 出埃及記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/金香壇（香壇）.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 03 利未記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/銅壇（燔祭壇）.md",
+      "target": "第4章",
+      "message": "同一 alias「第4章」指向多個 target: 03 利未記/第4章, 04 民數記/第4章"
     },
     {
       "type": "alias_target_conflict",
