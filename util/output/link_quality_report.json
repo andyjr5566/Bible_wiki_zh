@@ -1,36 +1,8 @@
 {
-  "total_warnings": 51,
+  "total_warnings": 49,
   "critical_count": 0,
-  "warning_count": 51,
+  "warning_count": 49,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第25章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "燔祭",
-      "message": "同一 alias「燔祭」指向多個 target: 燔祭, 燔祭（olah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "平安祭",
-      "message": "同一 alias「平安祭」指向多個 target: 平安祭, 平安祭（shelamim）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "剪除",
-      "message": "同一 alias「剪除」指向多個 target: 剪除（kareth）, 從民中剪除的含義"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -202,6 +174,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/流便.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/烏利亞.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 10 撒母耳記下/第11章, 13 歷代志上/第11章"
@@ -282,6 +261,13 @@
       "source": "link_folder/神學/亞伯拉罕之約.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 03 利未記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/十二支派起源.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
     },
     {
       "type": "alias_target_conflict",

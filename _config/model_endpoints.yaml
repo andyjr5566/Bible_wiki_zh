@@ -20,7 +20,7 @@
 #
 # 不要把 API key 寫進本檔。需要金鑰時用 api_key_env 指向環境變數名稱。
 
-active: local-4001
+active: local-4000
 
 # 任務 → 端點路由：run_chapter.py 把「做條目」（M3 entry_content，量大、
 # 逐批填 schema）與「本章整理」（M6 chapter_content，單次、長篇整合寫作）

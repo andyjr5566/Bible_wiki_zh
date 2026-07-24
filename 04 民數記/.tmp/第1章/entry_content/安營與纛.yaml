@@ -1,0 +1,35 @@
+name: 安營與纛
+type: 主題
+secondary_types: []
+aliases:
+- 營盤佈局
+- 旗幟與安營
+status: formal
+definition: 民數記 1:52-53 規定以色列人「照他們的軍隊，各歸本營，各歸本纛」安營；利未人則「在法櫃帳幕的四圍安營」。此為後續民數記 2 章四面營盤（東猶大、南流便、西以法蓮、北但）與會幕中心佈局的依據。「纛」指支派旗幟/軍旗，象徵身分、秩序與神中心的群體生活。
+  GT 背景註釋指出軍營呈方形是這時代埃及的慣例，君王位居受保護的中央；埃及軍兵每個部隊以神祇為名、旗幟之上都有所屬神祇的標記，因此假定每個支派都有象徵該支派事物在其纛上是理所當然的事。
+development: 營盤秩序體現「神在百姓中間居住」的神學；BH 指出纛預表信徒聚集在基督的旗幟之下（來12:1-2），也呼應以賽亞書11:10「耶西的根立作萬民的大旗」。
+accumulations:
+- book: 民數記
+  chapter: 1
+  summary: 確立以色列人按軍隊、營、纛安營；利未人環繞帳幕安營的原則。
+  relation: 本章為第 2 章詳細營盤圖與行軍次序鋪墊。
+related_entries:
+- 利未支派
+- 數點民數
+- 以色列人的軍隊
+- 會幕（帳幕整體）
+- 西乃的曠野
+sources:
+- '逐節註解: 民數記第一章註解 — 安營與纛、利未人四圍安營（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT01.htm）'
+- '拾穗: 民數記第一章拾穗 — 營盤分組、纛的意義、埃及軍制背景（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT01.htm）'
+- '研經註解: Numbers 1 — 安營秩序、旗幟、神中心佈局（https://www.kingcomments.com/en/bible-studies/Num/1）'
+- '研經註解: Numbers 1 — 營盤結構、纛的象徵、利未人位置（https://biblehub.com/study/numbers/1.htm）'
+created_from: numbers_1
+category: 主題
+trigger_sources:
+- ccbiblestudy_CT
+- ccbiblestudy_GT
+- KingComments
+- BibleHub
+current_data: true
+pending: false
