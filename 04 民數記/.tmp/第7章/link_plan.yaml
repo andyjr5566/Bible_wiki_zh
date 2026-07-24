@@ -1,0 +1,121 @@
+book: 民數記
+chapter: 7
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以他瑪
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
+- name: 革順子孫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 革順子孫
+  existing_path: link_folder/人物/革順子孫.md
+- name: 米拉利子孫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 米拉利子孫
+  existing_path: link_folder/人物/米拉利子孫.md
+- name: 哥轄子孫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 哥轄子孫
+  existing_path: link_folder/人物/哥轄子孫.md
+- name: 燔祭（olah）
+  suggested_type: 原文
+  evidence: v15, 87「作燔祭的，共有公牛十二隻…」。
+  match_type: exact
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v16, 87「作贖罪祭的公山羊十二隻…」。
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 平安祭（shelamim）
+  suggested_type: 原文
+  evidence: v17, 88「作平安祭的，共有公牛二十四隻…」。
+  match_type: exact
+  existing_title: 平安祭（shelamim）
+  existing_path: link_folder/原文/平安祭（shelamim）.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v13, 87「盛滿了調油的細麵作素祭…」。
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 施恩座
+  suggested_type: 主題
+  evidence: v89「法櫃的施恩座以上」。
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+C_new_formal:
+- name: 拿順
+  suggested_type: 人物
+  target_path: link_folder/人物/拿順.md
+- name: 奉獻篷車與牛（利未人搬運分工）
+  suggested_type: 事件
+  evidence: v1-9，以色列眾首領奉獻六輛篷子車與十二隻公牛；摩西分配給革順子孫兩車四牛、米拉利子孫四車八牛，但哥轄子孫無車牛。CT：照職務負荷分配，神備辦所需。GT：首領同心合意樂獻。KC：spiritual
+    wisdom in facilitating God's service.
+  surfaces:
+  - phrase: 六輛篷子車和十二隻公牛
+  - phrase: 車與牛
+  target_path: link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md
+- name: 肩頭抬聖物（哥轄子孫）
+  suggested_type: 主題
+  evidence: v9「但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物」。CT：高舉主的服事需親自付代價。GT：大衛用車拉約櫃招致烏撒之死（撒下6:6-7）。KC：heavenly
+    things must be carried on the shoulders with fear and trembling.
+  surfaces:
+  - phrase: 在肩頭上抬聖物
+  target_path: link_folder/主題/肩頭抬聖物（哥轄子孫）.md
+- name: 奉獻壇之禮（十二支派首領奉獻）
+  suggested_type: 事件
+  evidence: v10-88，用膏抹壇的日子，十二支派首領一連十二天每天一位前來行奉獻壇之禮，獻上銀盤、銀碗、金盂（盛滿香）及四大祭物（燔祭、贖罪祭、平安祭、素祭）。CT：代表全民熱誠感恩與神人關係的建立。KC：voluntary
+    offering out of love for the altar and the LORD.
+  surfaces:
+  - phrase: 奉獻壇的禮
+  - phrase: 獻壇之禮
+  target_path: link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md
+- name: 按日獻供物（十二天奉獻禮）
+  suggested_type: 主題
+  evidence: v11, 12-83「要每天一個首領來獻供物」，神不嫌繁瑣詳細記載每位首領與供物。CT：神極其看重並逐一數點個人與支派的奉獻，絕不輕忽。GT：各支派在敬拜神的事上責任平等。KC：God
+    gives His full personal attention to every single giver.
+  surfaces:
+  - phrase: 每天一個首領來獻供物
+  target_path: link_folder/主題/按日獻供物（十二天奉獻禮）.md
+- name: 金盂盛滿了香（祈禱與事奉）
+  suggested_type: 主題
+  evidence: v14, 20...86「一個金盂，重十舍客勒，盛滿了香」。CT：金盂表徵神性與信心，香表徵眾聖徒真誠的祈禱（啟5:8）。GT：奉獻連同禱告昇華，蒙神極大悅納。KC：sweet
+    fragrance of Christ and prayers of saints.
+  surfaces:
+  - phrase: 盛滿了香
+  - phrase: 金盂盛滿了香
+  target_path: link_folder/主題/金盂盛滿了香（祈禱與事奉）.md
+- name: 聖所的平（捨客勒標準）
+  suggested_type: 文化
+  evidence: v13, 85, 86「都是按聖所的平」。CT：聖所舍客勒法碼為度量標準，表徵事奉與奉獻必須按神的法規與真理標準。GT：公允確切的神聖度量衡。
+  surfaces:
+  - phrase: 聖所的平
+  target_path: link_folder/文化/聖所的平（捨客勒標準）.md
+- name: 二基路伯中間說話的聲音（施恩座微聲）
+  suggested_type: 神學
+  evidence: v89「摩西進會幕要與耶和華說話的時候，聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音」。CT：奉獻的高峰是神對人說話與親密交通（出25:22）。GT：神住民中間的明證。KC：God
+    shares His deep thoughts in the quietness of the sanctuary after devotion.
+  surfaces:
+  - phrase: 二基路伯中間有與他說話的聲音
+  target_path: link_folder/神學/二基路伯中間說話的聲音（施恩座微聲）.md
+D_new_candidate: []
+E_skip: []

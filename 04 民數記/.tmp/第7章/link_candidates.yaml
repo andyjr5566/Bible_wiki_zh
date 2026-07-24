@@ -1,0 +1,93 @@
+book: 民數記
+chapter: 7
+candidates:
+  # ── 人物 ──
+  - name: 摩西
+    type: 人物
+
+  - name: 亞倫
+    type: 人物
+
+  - name: 以他瑪
+    type: 人物
+
+  - name: 革順子孫
+    type: 人物
+
+  - name: 米拉利子孫
+    type: 人物
+
+  - name: 哥轄子孫
+    type: 人物
+
+  - name: 拿順
+    type: 人物
+
+  # ── 車牛奉獻與利未分工（vv.1-9）──
+  - name: 奉獻篷車與牛（利未人搬運分工）
+    type: 事件
+    evidence: v1-9，以色列眾首領奉獻六輛篷子車與十二隻公牛；摩西分配給革順子孫兩車四牛、米拉利子孫四車八牛，但哥轄子孫無車牛。CT：照職務負荷分配，神備辦所需。GT：首領同心合意樂獻。KC：spiritual wisdom in facilitating God's service.
+    surfaces:
+      - 六輛篷子車和十二隻公牛
+      - 車與牛
+
+  - name: 肩頭抬聖物（哥轄子孫）
+    type: 主題
+    evidence: v9「但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物」。CT：高舉主的服事需親自付代價。GT：大衛用車拉約櫃招致烏撒之死（撒下6:6-7）。KC：heavenly things must be carried on the shoulders with fear and trembling.
+    surfaces:
+      - 在肩頭上抬聖物
+
+  # ── 十二支派首領行奉獻壇之禮（vv.10-88）──
+  - name: 奉獻壇之禮（十二支派首領奉獻）
+    type: 事件
+    evidence: v10-88，用膏抹壇的日子，十二支派首領一連十二天每天一位前來行奉獻壇之禮，獻上銀盤、銀碗、金盂（盛滿香）及四大祭物（燔祭、贖罪祭、平安祭、素祭）。CT：代表全民熱誠感恩與神人關係的建立。KC：voluntary offering out of love for the altar and the LORD.
+    surfaces:
+      - 奉獻壇的禮
+      - 獻壇之禮
+
+  - name: 按日獻供物（十二天奉獻禮）
+    type: 主題
+    evidence: v11, 12-83「要每天一個首領來獻供物」，神不嫌繁瑣詳細記載每位首領與供物。CT：神極其看重並逐一數點個人與支派的奉獻，絕不輕忽。GT：各支派在敬拜神的事上責任平等。KC：God gives His full personal attention to every single giver.
+    surfaces:
+      - 每天一個首領來獻供物
+
+  - name: 金盂盛滿了香（祈禱與事奉）
+    type: 主題
+    evidence: v14, 20...86「一個金盂，重十舍客勒，盛滿了香」。CT：金盂表徵神性與信心，香表徵眾聖徒真誠的祈禱（啟5:8）。GT：奉獻連同禱告昇華，蒙神極大悅納。KC：sweet fragrance of Christ and prayers of saints.
+    surfaces:
+      - 盛滿了香
+      - 金盂盛滿了香
+
+  - name: 聖所的平（捨客勒標準）
+    type: 文化
+    evidence: v13, 85, 86「都是按聖所的平」。CT：聖所舍客勒法碼為度量標準，表徵事奉與奉獻必須按神的法規與真理標準。GT：公允確切的神聖度量衡。
+    surfaces:
+      - 聖所的平
+
+  # ── 神在施恩座說話（v.89）──
+  - name: 二基路伯中間說話的聲音（施恩座微聲）
+    type: 神學
+    evidence: v89「摩西進會幕要與耶和華說話的時候，聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音」。CT：奉獻的高峰是神對人說話與親密交通（出25:22）。GT：神住民中間的明證。KC：God shares His deep thoughts in the quietness of the sanctuary after devotion.
+    surfaces:
+      - 二基路伯中間有與他說話的聲音
+
+  # ── 既有祭物與主題條例 ──
+  - name: 燔祭（olah）
+    type: 原文
+    evidence: v15, 87「作燔祭的，共有公牛十二隻…」。
+
+  - name: 贖罪祭
+    type: 神學
+    evidence: v16, 87「作贖罪祭的公山羊十二隻…」。
+
+  - name: 平安祭（shelamim）
+    type: 原文
+    evidence: v17, 88「作平安祭的，共有公牛二十四隻…」。
+
+  - name: 素祭（minchah）
+    type: 原文
+    evidence: v13, 87「盛滿了調油的細麵作素祭…」。
+
+  - name: 施恩座
+    type: 主題
+    evidence: v89「法櫃的施恩座以上」。

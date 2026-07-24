@@ -1,0 +1,46 @@
+book: 民數記
+chapter: 9
+A_use_directly: []
+B_needs_update:
+- name: 日間雲彩、夜間雲中有火
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 日間雲彩、夜間雲中有火
+  existing_path: link_folder/神學/日間雲彩、夜間雲中有火.md
+- name: 雲彩引導行程
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 雲彩引導行程
+  existing_path: link_folder/神學/雲彩引導行程.md
+C_new_formal:
+- name: 補行逾越節
+  suggested_type: 歷史
+  target_path: link_folder/歷史/補行逾越節.md
+  semantic_hint:
+  - title: 逾越節
+    score: 0.522
+    type: 歷史
+  - title: 希西家守二月逾越節（代下三十）
+    score: 0.462
+    type: 互文
+  - title: 逾越（pasach）
+    score: 0.462
+    type: 原文
+- name: 死屍不潔
+  suggested_type: 神學
+  target_path: link_folder/神學/死屍不潔.md
+  semantic_hint:
+  - title: 不可挨近死屍（拿細耳人的潔淨）
+    score: 0.485
+    type: 主題
+  - title: 民19：11-13
+    score: 0.476
+    type: 互文
+  - title: 吃自死或被撕裂之物的潔淨條例
+    score: 0.413
+    type: 主題
+- name: 遠方行路
+  suggested_type: 文化
+  target_path: link_folder/文化/遠方行路.md
+D_new_candidate: []
+E_skip: []
