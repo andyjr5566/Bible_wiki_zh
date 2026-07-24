@@ -1,0 +1,86 @@
+book: 民數記
+chapter: 3
+A_use_directly: []
+B_needs_update:
+- name: 利未支派
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 亞倫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 亞倫的祭司譜系
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫的祭司譜系
+  existing_path: link_folder/人物/亞倫的祭司譜系.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 拿答
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 拿答
+  existing_path: link_folder/人物/拿答.md
+- name: 亞比戶
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞比戶
+  existing_path: link_folder/人物/亞比戶.md
+- name: 以利亞撒
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 以他瑪
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以他瑪
+  existing_path: link_folder/人物/以他瑪.md
+- name: 凡火
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 凡火
+  existing_path: link_folder/主題/凡火.md
+- name: 外人近前來必被治死
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 外人近前來必被治死
+  existing_path: link_folder/主題/外人近前來必被治死.md
+- name: 十二支派起源
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 十二支派起源
+  existing_path: link_folder/神學/十二支派起源.md
+- name: 利未人代替長子
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 利未人代替長子
+  existing_path: link_folder/神學/利未人代替長子.md
+C_new_formal:
+- name: 利未三族分工
+  suggested_type: 事件
+  target_path: link_folder/事件/利未三族分工.md
+  semantic_hint:
+  - title: 利未支派
+    score: 0.543
+    type: 人物
+  - title: 利未
+    score: 0.501
+    type: 人物
+  - title: 利未人受聖職討罪
+    score: 0.445
+    type: 事件
+- name: 贖銀五舍客勒
+  suggested_type: 文化
+  surfaces:
+  - phrase: 贖銀
+  - phrase: 五舍客勒
+  target_path: link_folder/文化/贖銀五舍客勒.md
+D_new_candidate: []
+E_skip: []
