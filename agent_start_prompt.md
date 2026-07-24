@@ -36,6 +36,7 @@
    程式會：解析候選（A–E 類）→ 批量請模型填條目 payload → 程式化標注經文 wiki-link → 模型填本章整理 → 渲染全部 markdown → 結構驗證。模型端點用 `python util/model_client.py list|use|test` 檢查或切換。
    - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」），模型會反覆重試到放棄。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗，不再退回模型重試。
    - **M3 的 alias 撞名不再硬失敗**：模型配的 alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，不再把整個條目退回模型重做——實測錯誤回饋重試兩輪模型照配不誤，只會白燒呼叫。
+   - **人工模式（agent 當模型、零 API）**：使用者指示「用 run_chapter_manual」時，本步驟改為四段：`python util/run_chapter_manual.py prompts 【書名】 X`（落地 M3/M6 實際 prompt 與來源清單）→ agent 讀**來源原檔全文**依 prompt 規格手寫 `.tmp/第x章/entry_content/*.yaml`（條目寫齊後重跑 prompts 重生 M6 prompt）與 `chapter_content.yaml` → `check`（fresh 路徑同套驗證）→ `run`（原版 orchestrator＋guard，模型步驟被觸發＝報錯）。其餘步驟（1、2、4–8）完全相同；步驟6 的複核不可因「內容是自己寫的」而省略。事後修改 `.tmp` 內容的維護流程見 `agent_maintenance_prompt.md`。
 
 4. **B 類累積**（既有條目補本章資料）
    ```text

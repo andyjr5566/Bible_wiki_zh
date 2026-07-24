@@ -137,6 +137,16 @@
     "status": "formal",
     "aliases": []
   },
+  "不潔之人出到營外": {
+    "path": "link_folder/主題/不潔之人出到營外.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "不潔之人出到營外",
+    "status": "formal",
+    "aliases": [
+      "出營外"
+    ]
+  },
   "不潔淨雀鳥（二十種可憎飛禽）": {
     "path": "link_folder/主題/不潔淨雀鳥（二十種可憎飛禽）.md",
     "type": "主題",
@@ -1776,6 +1786,17 @@
     "status": "formal",
     "aliases": []
   },
+  "疑恨的素祭（大麥面不加油乳香）": {
+    "path": "link_folder/主題/疑恨的素祭（大麥面不加油乳香）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "疑恨的素祭（大麥面不加油乳香）",
+    "status": "formal",
+    "aliases": [
+      "疑恨的素祭",
+      "思念的素祭"
+    ]
+  },
   "百倍收成": {
     "path": "link_folder/主題/百倍收成.md",
     "type": "主題",
@@ -2222,6 +2243,17 @@
     "aliases": [
       "至聖供物",
       "聖與至聖區別"
+    ]
+  },
+  "致咒詛的苦水（試驗不貞的儀式）": {
+    "path": "link_folder/主題/致咒詛的苦水（試驗不貞的儀式）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "致咒詛的苦水（試驗不貞的儀式）",
+    "status": "formal",
+    "aliases": [
+      "致咒詛的苦水",
+      "苦水"
     ]
   },
   "荊棘與蒺藜": {
@@ -3216,6 +3248,14 @@
       "瑪拉苦水變甜神蹟",
       "Water of Marah sweetened"
     ]
+  },
+  "疑恨條例": {
+    "path": "link_folder/事件/疑恨條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "疑恨條例",
+    "status": "formal",
+    "aliases": []
   },
   "百姓懼怕神的顯現": {
     "path": "link_folder/事件/百姓懼怕神的顯現.md",
@@ -15975,6 +16015,14 @@
       "在聖地脫鞋"
     ]
   },
+  "蓬頭散髮（表羞辱與蒙罪嫌）": {
+    "path": "link_folder/文化/蓬頭散髮（表羞辱與蒙罪嫌）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "蓬頭散髮（表羞辱與蒙罪嫌）",
+    "status": "formal",
+    "aliases": []
+  },
   "解恨之禮": {
     "path": "link_folder/文化/解恨之禮.md",
     "type": "文化",
@@ -22061,6 +22109,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東神明裁判（致咒詛苦水的背景比較）": {
+    "path": "link_folder/背景/古代近東神明裁判（致咒詛苦水的背景比較）.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東神明裁判（致咒詛苦水的背景比較）",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東祭壇": {
     "path": "link_folder/背景/古代近東祭壇.md",
     "type": "背景",
@@ -23718,6 +23774,14 @@
       "耶和華使者的身分"
     ]
   },
+  "致咒詛苦水儀式是否迷信之爭": {
+    "path": "link_folder/解經爭議/致咒詛苦水儀式是否迷信之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "致咒詛苦水儀式是否迷信之爭",
+    "status": "formal",
+    "aliases": []
+  },
   "血郎的含義": {
     "path": "link_folder/解經爭議/血郎的含義.md",
     "type": "解經爭議",
@@ -24024,6 +24088,9 @@
   },
   "節期中的數目七": {
     "alias_of": "七是節期中最要緊的數目"
+  },
+  "出營外": {
+    "alias_of": "不潔之人出到營外"
   },
   "二十種可憎飛禽": {
     "alias_of": "不潔淨雀鳥（二十種可憎飛禽）"
@@ -24496,6 +24563,12 @@
   "生產潔淨禮": {
     "alias_of": "產婦生產潔淨條例（男四十女八十天）"
   },
+  "疑恨的素祭": {
+    "alias_of": "疑恨的素祭（大麥面不加油乳香）"
+  },
+  "思念的素祭": {
+    "alias_of": "疑恨的素祭（大麥面不加油乳香）"
+  },
   "帳幕的豎板": {
     "alias_of": "皂莢木豎板"
   },
@@ -24606,6 +24679,12 @@
   },
   "聖與至聖區別": {
     "alias_of": "至聖的供物（聖與至聖之分）"
+  },
+  "致咒詛的苦水": {
+    "alias_of": "致咒詛的苦水（試驗不貞的儀式）"
+  },
+  "苦水": {
+    "alias_of": "致咒詛的苦水（試驗不貞的儀式）"
   },
   "藍色線": {
     "alias_of": "藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）"

@@ -1,7 +1,7 @@
 {
-  "total_warnings": 55,
+  "total_warnings": 62,
   "critical_count": 0,
-  "warning_count": 55,
+  "warning_count": 62,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -86,6 +86,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第4章",
       "message": "同一 alias「第4章」指向多個 target: 02 出埃及記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 02 出埃及記/第5章, 04 民數記/第5章"
     },
     {
       "type": "alias_target_conflict",
@@ -265,9 +272,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/主題/污穢.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/主題/生養眾多與治理.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 01 創世記/第1章, 02 出埃及記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/聖物.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/認罪.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
     },
     {
       "type": "alias_target_conflict",
@@ -286,9 +314,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/原文/伊法.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/原文/初熟（bikkurim）.md",
       "target": "第23章",
       "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 03 利未記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/紀念份.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/贖愆祭（asham）.md",
+      "target": "第5章",
+      "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
     },
     {
       "type": "alias_target_conflict",

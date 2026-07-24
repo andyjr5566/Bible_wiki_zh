@@ -1,0 +1,143 @@
+book: 民數記
+chapter: 5
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 大痲瘋（tsara'at，皮膚病診斷條例）
+  suggested_type: 原文
+  evidence: v2「長大痲瘋的」；GT：指皮膚病，不必太久便可治好（参利13章）；BH：leprosy，可引伸為sin's defiling nature
+  match_type: exact
+  existing_title: 大痲瘋（tsara'at，皮膚病診斷條例）
+  existing_path: link_folder/原文/大痲瘋（tsara'at，皮膚病診斷條例）.md
+- name: 漏症（身患漏症的條例）
+  suggested_type: 原文
+  evidence: v2「患漏症的」；CT：指男女長期或間歇性從性器官流淌不正常的分泌物；GT：指長時期的性器官漏病（參利15章）
+  match_type: exact
+  existing_title: 漏症（身患漏症的條例）
+  existing_path: link_folder/原文/漏症（身患漏症的條例）.md
+- name: 認罪
+  suggested_type: 主題
+  evidence: v7「他要承認所犯的罪」；CT靈意：不僅要向人認罪，還要向神認罪；GT：向對方承認自己的錯是為了求得對方原諒，也是為了承認神真理的正當性（路19:1-10）
+  match_type: exact
+  existing_title: 認罪
+  existing_path: link_folder/主題/認罪.md
+- name: 加五分之一贖回原則
+  suggested_type: 主題
+  evidence: v7「另外加上五分之一，也歸與所虧負的人」；CT：作為額外的懲罰性賠償；GT《精讀本》：包含著賠償的意思，呈現神的公義；BH：add a fifth
+    (20%) as a deterrent and an acknowledgment of inconvenience suffered by the wronged
+    party
+  match_type: exact
+  existing_title: 加五分之一贖回原則
+  existing_path: link_folder/主題/加五分之一贖回原則.md
+- name: 贖愆祭（asham）
+  suggested_type: 原文
+  evidence: v8「那為他贖罪的公羊」；CT：指利6章所吩咐的贖愆祭；GT：在賠還之外還須獻贖愆祭，兩者不可混淆
+  match_type: exact
+  existing_title: 贖愆祭（asham）
+  existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 舉祭（terumah）
+  suggested_type: 原文
+  evidence: v9「所奉給祭司的舉祭都要歸與祭司」；CT：將手中祭物垂直向上舉起，上下擺動，表示獻給神，獻祭後歸祭司享用（參利7:14）
+  match_type: exact
+  existing_title: 舉祭（terumah）
+  existing_path: link_folder/原文/舉祭（terumah）.md
+- name: 聖物
+  suggested_type: 主題
+  evidence: v9-10「以色列人一切的聖物中，所奉給祭司的舉祭」「各人所分別為聖的物…都要歸給祭司」；CT：分別出來歸給神為聖的祭物和祭牲
+  match_type: exact
+  existing_title: 聖物
+  existing_path: link_folder/主題/聖物.md
+- name: 忌邪（嫉妒）
+  suggested_type: 原文
+  evidence: v14「疑恨的心」（原文 qin'ah：妒忌、狂熱）；GT：丈夫因家庭的和睦所懷有的疑心並不構成罪；KC：jealousy here is
+    not a negative characteristic but a justified feeling belonging to sincere love
+    when the object does not show love in return.
+  surfaces:
+  - phrase: 疑恨的心
+  match_type: exact
+  existing_title: 忌邪（嫉妒）
+  existing_path: link_folder/原文/忌邪（嫉妒）.md
+- name: 搖祭（tenufah）
+  suggested_type: 原文
+  evidence: v25「在耶和華面前搖一搖」；CT：前後擺動的儀式動作；本章的疑恨素祭被搖一搖，是搖祭用於非平安祭脈絡的特例
+  match_type: exact
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 紀念份
+  suggested_type: 原文
+  evidence: v26「又要從素祭中取出一把，作為這事的紀念，燒在壇上」；CT：將這事向神陳明；GT《精讀本》：指作為獻給「神的證據」
+  match_type: exact
+  existing_title: 紀念份
+  existing_path: link_folder/原文/紀念份.md
+- name: 伊法
+  suggested_type: 原文
+  evidence: v15「大麥麵伊法十分之一」；GT：十分之一伊法約折合2.2公升
+  match_type: exact
+  existing_title: 伊法
+  existing_path: link_folder/原文/伊法.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  evidence: v17「聖水」——CT：意指從洗濯盆取出來的水（出30:18）；GT：祭司進聖所或到壇前洗手腳用（出30:19-21）；GT《精讀本》：象徵潔淨信徒靈魂的活水
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 污穢
+  suggested_type: 主題
+  evidence: v2-3，全章以「不潔」「污穢」為核心主題；神住在營中，不能容許任何污穢（v3 「免得污穢他們的營」）；CT：污穢的三種類型與靈意；GT（串珠）：不潔不單指污垢，也包括死亡、罪及身體的反常現象
+  match_type: exact
+  existing_title: 污穢
+  existing_path: link_folder/主題/污穢.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v15、v18、v25-26，疑恨的素祭用大麥面伊法十分之一，不加油乳香，為素祭的特殊形式；CT：素祭原本要澆上油並加上乳香（利2:1），贖罪祭不須（利5:11）；本章的疑恨素祭屬於特殊的贖罪性素祭
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+C_new_formal:
+- name: 不潔之人出到營外
+  suggested_type: 主題
+  evidence: v2-4，凡長大痲瘋的、患漏症的、因死屍不潔淨的，無論男女一律出到營外；理由是「這營是我所住的」（v3）——神同住的聖潔要求。GT：不潔不僅指污垢，也包括死亡、罪及身體反常現象；CT：三種不潔的靈意：罪性顯露、天然生命流露、沾染屬靈死亡。KC：三種污穢的屬靈對應——會傳播的罪、從人流向他人的罪、由接觸非生命事物而來的污穢。
+  surfaces:
+  - phrase: 出營外
+  target_path: link_folder/主題/不潔之人出到營外.md
+- name: 疑恨的素祭（大麥面不加油乳香）
+  suggested_type: 主題
+  evidence: v15「帶著大麥麵伊法十分之一作供物，不可澆上油，也不可加上乳香；因為這是疑恨的素祭，是思念的素祭，使人思念罪孽」。CT：大麥面較便宜，表示不齒其行為；不加油乳香與贖罪祭相同（利5:11）。GT《串珠》：大麥面不另加油和乳香，表明獻者的不潔和悲哀贖罪的心態；疑恨的素祭是在壇前燒一把，宣告神的同在（v26）。KC：a
+    grain offering of barley meal, the lowest kind, showing the Lord Jesus in His
+    deepest humiliation; no oil (Holy Spirit) nor frankincense (pleasure) as God cannot
+    have pleasure in injustice.
+  surfaces:
+  - phrase: 疑恨的素祭
+  - phrase: 思念的素祭
+  target_path: link_folder/主題/疑恨的素祭（大麥面不加油乳香）.md
+- name: 致咒詛的苦水（試驗不貞的儀式）
+  suggested_type: 主題
+  evidence: v17-24，27-28，祭司以洗濯盆聖水盛在瓦器裡，加入帳幕地上的塵土，寫咒詛字句抹入水中，婦人發誓後喝下；若有罪則肚腹發脹、大腿消瘦；若清潔則免受災且要懷孕。GT《串珠》：致咒詛的水非苦澀，而是後果苦——祭司以「致咒詛的苦水」刻劃警戒婚姻不貞與疑恨。BH：the
+    bitter water is a mixture of holy water and dust from the Tabernacle floor, symbolizing
+    the presence and judgment of God. CT：苦水不指滋味苦，而是後果導致咒詛之苦。
+  surfaces:
+  - phrase: 致咒詛的苦水
+  - phrase: 苦水
+  target_path: link_folder/主題/致咒詛的苦水（試驗不貞的儀式）.md
+- name: 疑恨條例
+  suggested_type: 事件
+  evidence: vv.11-31 整段，丈夫疑妻行淫卻無見證人時，以疑恨的素祭和致咒詛苦水在耶和華面前釋疑的整體流程；GT：儀式有三要素——象徵、動作及含義；使儀式有效的是全能的神，而非咒詛的苦水本身有魔術能力。
+  target_path: link_folder/事件/疑恨條例.md
+- name: 蓬頭散髮（表羞辱與蒙罪嫌）
+  suggested_type: 文化
+  evidence: v18「祭司要叫那婦人蓬頭散髮」；CT：表示若果屬實，乃是羞辱自己的行為，因頭髮是女人的榮耀（林前11:15）；GT《串珠》：婦人要採取哀哭的姿態（GT《背景》）；GT《精讀本》：女人的頭象徵著男人（林前11:3），蓬頭散髮是羞辱男人也是羞辱自己的行為
+  target_path: link_folder/文化/蓬頭散髮（表羞辱與蒙罪嫌）.md
+- name: 古代近東神明裁判（致咒詛苦水的背景比較）
+  suggested_type: 背景
+  evidence: BH v23-24：「神明裁判」指透過某種通常危險的機制，把被告放在神的手中——神若插手保護，即宣告清白；古代近東大部分神明裁判牽涉水、火、毒藥等危險，本段不施法術，只是製造供神作出回應的環境，故女子是假定清白直到環境證明相反。漢摩拉比法律亦包括類似案例，女子在河中接受神明裁判。GT（難解經文）：馬里文獻提到神明喝飲混和了城門泥土的水以約束神明履行誓言。GT（串珠）：真正使儀式有效的仍然是全能的神，以色列人不會以為咒詛的苦水本身有魔術能力。
+  target_path: link_folder/背景/古代近東神明裁判（致咒詛苦水的背景比較）.md
+- name: 致咒詛苦水儀式是否迷信之爭
+  suggested_type: 解經爭議
+  evidence: GT（難題篇）v11-31：兩種立場。①肯定立場：神所用的超自然方法，與人的惡毒苦刑截然不同，水本無害，神的干涉使其有效；是仁愛的方法，免除許多無辜婦女被虐待的冤屈（李道生）。②科學解釋立場：引起的原因是屬靈或心理上的作用，有罪婦人因罪惡感可產生「假性懷孕」腹脹（身心關係，psychosomatic）；苦水如測謊器，無辜女人不會有後果（賈斯樂郝威）。GT《啟導本》：以後聖經未再提到此法。
+  target_path: link_folder/解經爭議/致咒詛苦水儀式是否迷信之爭.md
+D_new_candidate: []
+E_skip: []
