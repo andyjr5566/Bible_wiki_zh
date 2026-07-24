@@ -1,0 +1,32 @@
+book: 民數記
+chapter: 10
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 銀號
+  suggested_type: 文化
+  target_path: link_folder/文化/銀號.md
+  semantic_hint:
+  - title: 銀號形制（直筒喇叭口）
+    score: 0.535
+    type: 文化
+  - title: 銀號製作工藝（錘出法）
+    score: 0.464
+    type: 文化
+  - title: 銀號與主再來天使吹號（太24：31）
+    score: 0.454
+    type: 互文
+- name: 拔營起行
+  suggested_type: 歷史
+  target_path: link_folder/歷史/拔營起行.md
+- name: 巴蘭的曠野
+  suggested_type: 地點
+  target_path: link_folder/地點/巴蘭的曠野.md
+- name: 何巴
+  suggested_type: 人物
+  target_path: link_folder/人物/何巴.md
+- name: 約櫃前行與停住的宣告
+  suggested_type: 神學
+  target_path: link_folder/神學/約櫃前行與停住的宣告.md
+D_new_candidate: []
+E_skip: []
