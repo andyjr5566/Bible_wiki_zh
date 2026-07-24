@@ -1,0 +1,152 @@
+book: 民數記
+chapter: 8
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以色列人
+  suggested_type: 人物
+  match_type: alias
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 利未人
+  suggested_type: 人物
+  evidence: v6-26，神揀選利未人代替以色列人一切頭生的，歸給神辦會幕的事。CT：利未人代表所有信徒被神分別出來服事。GT：利未人的奉獻與潔淨。KC：Levites
+    represent believers completely dedicated to God.
+  surfaces:
+  - phrase: 利未人
+  match_type: alias
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 燈臺
+  suggested_type: 主題
+  evidence: v1-4，點燈的時候，七盞燈都要向燈臺前面發光，用金子錘出來的。CT：燈臺預表基督是世界的光，也預表教會作為金燈臺發光。GT：光照在神面前。KC：The
+    lampstand signifies Christ and His church shining the divine light.
+  surfaces:
+  - phrase: 燈臺
+  match_type: alias
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 素祭(minchah)
+  suggested_type: 原文
+  evidence: v8，同獻的素祭，調油的細麵。CT：預表基督完美無瑕的為人生活。
+  surfaces:
+  - phrase: 素祭
+  match_type: normalized
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v8, 12，一隻公牛犢作贖罪祭，為利未人贖罪。CT：對付罪性。
+  surfaces:
+  - phrase: 贖罪祭
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 燔祭(olah)
+  suggested_type: 原文
+  evidence: v12，一隻作燔祭。CT：完全奉獻給神。
+  surfaces:
+  - phrase: 燔祭
+  match_type: normalized
+  existing_title: 燔祭（olah）
+  existing_path: link_folder/原文/燔祭（olah）.md
+- name: 搖祭(tenufah)
+  suggested_type: 原文
+  evidence: v11, 13, 15, 21，將利未人當作搖祭奉給耶和華。CT：搖祭預表復活的生命。利未人如同死而復活獻給神。GT：搖祭是在神面前搖一搖。
+  surfaces:
+  - phrase: 搖祭
+  match_type: normalized
+  existing_title: 搖祭（tenufah）
+  existing_path: link_folder/原文/搖祭（tenufah）.md
+- name: 聖所
+  suggested_type: 地點
+  evidence: v19，免得他們挨近聖所，有災殃臨到他們中間。
+  surfaces:
+  - phrase: 聖所
+  match_type: exact
+  existing_title: 聖所
+  existing_path: link_folder/地點/聖所.md
+C_new_formal:
+- name: 除罪水
+  suggested_type: 主題
+  evidence: v7，潔淨利未人時，用除罪水彈在他們身上。CT：預表基督流血和聖靈的洗淨。GT：對付外面的罪污。KC：Water of purifying
+    represents the washing of water by the Word.
+  surfaces:
+  - phrase: 除罪水
+  target_path: link_folder/主題/除罪水.md
+- name: 剃頭刀
+  suggested_type: 主題
+  evidence: v7，用剃頭刀刮全身。CT：預表對付肉體和天然的生命。
+  surfaces:
+  - phrase: 剃頭刀
+  target_path: link_folder/主題/剃頭刀.md
+- name: 埃及地
+  suggested_type: 地點
+  evidence: v17，神在埃及地擊殺一切頭生的那天，將他們分別為聖。
+  surfaces:
+  - phrase: 埃及地
+  target_path: link_folder/地點/埃及地.md
+  semantic_hint:
+  - title: 埃及河
+    score: 0.434
+    type: 地點
+  - title: 埃及
+    score: 0.421
+    type: 地點
+  - title: 埃及河的地理辨識
+    score: 0.417
+    type: 解經爭議
+- name: 潔淨(maqom tahor)
+  suggested_type: 神學
+  evidence: v6, 7, 15, 21，潔淨利未人。CT：事奉神的人必須先得潔淨。
+  surfaces:
+  - phrase: 潔淨
+  - phrase: 潔淨自己
+  target_path: link_folder/神學/潔淨(maqom tahor).md
+  semantic_hint:
+  - title: 潔淨之地（maqom tahor）
+    score: 0.431
+    type: 地點
+D_new_candidate:
+- name: 耶和華
+  suggested_type: 人物
+  match_type: type_conflict
+  note: 分類衝突：候選=人物，既有=神學，secondary=[]
+  semantic_hint:
+  - title: 耶和華神的名字
+    score: 0.501
+    type: 神學
+  - title: 耶和華我是
+    score: 0.478
+    type: 神學
+  - title: 耶和華聖名的啟示
+    score: 0.475
+    type: 神學
+- name: 按手(samak)
+  suggested_type: 神學
+  evidence: v10, 12，以色列人按手在利未人頭上，利未人按手在牛頭上。CT：按手代表聯合（identification）和聯合。以色列人與利未人聯合，利未人與祭牲聯合。
+  surfaces:
+  - phrase: 按手
+  match_type: type_conflict
+  note: 分類衝突：候選=神學，既有=原文，secondary=[]
+  semantic_hint:
+  - title: 按手（samak）
+    score: 0.427
+    type: 原文
+- name: 會幕
+  suggested_type: 地點
+  evidence: v15, 19, 22, 24, 26，利未人進去辦會幕的事。
+  surfaces:
+  - phrase: 會幕
+  match_type: type_conflict
+  note: 分類衝突：候選=地點，既有=主題，secondary=[]
+E_skip: []

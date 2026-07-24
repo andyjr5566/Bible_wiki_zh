@@ -572,6 +572,14 @@
       "全身剃髮"
     ]
   },
+  "剃頭刀": {
+    "path": "link_folder/主題/剃頭刀.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "剃頭刀",
+    "status": "formal",
+    "aliases": []
+  },
   "剃頭刀不可過頭（拿細耳人長髮）": {
     "path": "link_folder/主題/剃頭刀不可過頭（拿細耳人長髮）.md",
     "type": "主題",
@@ -1413,6 +1421,16 @@
       "按手禮"
     ]
   },
+  "按日獻供物（十二天奉獻禮）": {
+    "path": "link_folder/主題/按日獻供物（十二天奉獻禮）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "按日獻供物（十二天奉獻禮）",
+    "status": "formal",
+    "aliases": [
+      "每天一個首領來獻供物"
+    ]
+  },
   "挖井": {
     "path": "link_folder/主題/挖井.md",
     "type": "主題",
@@ -2245,6 +2263,17 @@
     "status": "formal",
     "aliases": []
   },
+  "肩頭抬聖物（哥轄子孫）": {
+    "path": "link_folder/主題/肩頭抬聖物（哥轄子孫）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "肩頭抬聖物（哥轄子孫）",
+    "status": "formal",
+    "aliases": [
+      "在肩頭上抬聖物",
+      "肩頭上抬"
+    ]
+  },
   "腰帶（繡花腰帶）": {
     "path": "link_folder/主題/腰帶（繡花腰帶）.md",
     "type": "主題",
@@ -2620,6 +2649,17 @@
       "七盞燈金燈臺"
     ]
   },
+  "金盂盛滿了香（祈禱與事奉）": {
+    "path": "link_folder/主題/金盂盛滿了香（祈禱與事奉）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "金盂盛滿了香（祈禱與事奉）",
+    "status": "formal",
+    "aliases": [
+      "盛滿了香",
+      "金盂盛滿了香"
+    ]
+  },
   "金香壇（香壇）": {
     "path": "link_folder/主題/金香壇（香壇）.md",
     "type": "主題",
@@ -2720,6 +2760,14 @@
       "院子的門簾",
       "會幕院子的門簾"
     ]
+  },
+  "除罪水": {
+    "path": "link_folder/主題/除罪水.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "除罪水",
+    "status": "formal",
+    "aliases": []
   },
   "陳設餅桌子": {
     "path": "link_folder/主題/陳設餅桌子.md",
@@ -3004,6 +3052,28 @@
     "status": "formal",
     "aliases": [
       "Manna from heaven"
+    ]
+  },
+  "奉獻壇之禮（十二支派首領奉獻）": {
+    "path": "link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "奉獻壇之禮（十二支派首領奉獻）",
+    "status": "formal",
+    "aliases": [
+      "奉獻壇的禮",
+      "獻壇之禮"
+    ]
+  },
+  "奉獻篷車與牛（利未人搬運分工）": {
+    "path": "link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "奉獻篷車與牛（利未人搬運分工）",
+    "status": "formal",
+    "aliases": [
+      "六輛篷子車和十二隻公牛",
+      "車與牛"
     ]
   },
   "安息年律例": {
@@ -10317,6 +10387,16 @@
     "status": "formal",
     "aliases": []
   },
+  "拿順": {
+    "path": "link_folder/人物/拿順.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "拿順",
+    "status": "formal",
+    "aliases": [
+      "拿順(亞米拿達的兒子)"
+    ]
+  },
   "拿鶴": {
     "path": "link_folder/人物/拿鶴.md",
     "type": "人物",
@@ -14459,6 +14539,14 @@
     "status": "formal",
     "aliases": []
   },
+  "埃及地": {
+    "path": "link_folder/地點/埃及地.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "埃及地",
+    "status": "formal",
+    "aliases": []
+  },
   "埃及河": {
     "path": "link_folder/地點/埃及河.md",
     "type": "地點",
@@ -16080,6 +16168,16 @@
       "異教耳環"
     ]
   },
+  "聖所的平（捨客勒標準）": {
+    "path": "link_folder/文化/聖所的平（捨客勒標準）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "聖所的平（捨客勒標準）",
+    "status": "formal",
+    "aliases": [
+      "聖所的平"
+    ]
+  },
   "聖會": {
     "path": "link_folder/文化/聖會.md",
     "type": "文化",
@@ -17576,6 +17674,16 @@
     "title": "中保",
     "status": "formal",
     "aliases": []
+  },
+  "二基路伯中間說話的聲音（施恩座微聲）": {
+    "path": "link_folder/神學/二基路伯中間說話的聲音（施恩座微聲）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "二基路伯中間說話的聲音（施恩座微聲）",
+    "status": "formal",
+    "aliases": [
+      "二基路伯中間有與他說話的聲音"
+    ]
   },
   "五個人追趕一百人（蒙福的軍事應許）": {
     "path": "link_folder/神學/五個人追趕一百人（蒙福的軍事應許）.md",
@@ -19756,6 +19864,14 @@
     "type": "神學",
     "secondary_types": [],
     "title": "滅絕（herem）",
+    "status": "formal",
+    "aliases": []
+  },
+  "潔淨(maqom tahor)": {
+    "path": "link_folder/神學/潔淨(maqom tahor).md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "潔淨(maqom tahor)",
     "status": "formal",
     "aliases": []
   },
@@ -24555,6 +24671,9 @@
   "按手禮": {
     "alias_of": "按手認罪（承認罪孽轉移）"
   },
+  "每天一個首領來獻供物": {
+    "alias_of": "按日獻供物（十二天奉獻禮）"
+  },
   "搗細香料": {
     "alias_of": "搗細香料遮掩施恩座"
   },
@@ -24780,6 +24899,12 @@
   "Obedience brings healing": {
     "alias_of": "聽命順從蒙醫治"
   },
+  "在肩頭上抬聖物": {
+    "alias_of": "肩頭抬聖物（哥轄子孫）"
+  },
+  "肩頭上抬": {
+    "alias_of": "肩頭抬聖物（哥轄子孫）"
+  },
   "繡花腰帶": {
     "alias_of": "腰帶（繡花腰帶）"
   },
@@ -24903,6 +25028,12 @@
   "七盞燈金燈臺": {
     "alias_of": "金燈臺"
   },
+  "盛滿了香": {
+    "alias_of": "金盂盛滿了香（祈禱與事奉）"
+  },
+  "金盂盛滿了香": {
+    "alias_of": "金盂盛滿了香（祈禱與事奉）"
+  },
   "燒香的壇": {
     "alias_of": "金香壇（香壇）"
   },
@@ -24992,6 +25123,18 @@
   },
   "Manna from heaven": {
     "alias_of": "天降嗎哪"
+  },
+  "奉獻壇的禮": {
+    "alias_of": "奉獻壇之禮（十二支派首領奉獻）"
+  },
+  "獻壇之禮": {
+    "alias_of": "奉獻壇之禮（十二支派首領奉獻）"
+  },
+  "六輛篷子車和十二隻公牛": {
+    "alias_of": "奉獻篷車與牛（利未人搬運分工）"
+  },
+  "車與牛": {
+    "alias_of": "奉獻篷車與牛（利未人搬運分工）"
   },
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
@@ -26318,6 +26461,9 @@
   },
   "伯沙巴": {
     "alias_of": "拔示巴"
+  },
+  "拿順(亞米拿達的兒子)": {
+    "alias_of": "拿順"
   },
   "Nahor": {
     "alias_of": "拿鶴"
@@ -27780,6 +27926,9 @@
   "異教耳環": {
     "alias_of": "耳環作異教護身符"
   },
+  "聖所的平": {
+    "alias_of": "聖所的平（捨客勒標準）"
+  },
   "miqra qodesh": {
     "alias_of": "聖會"
   },
@@ -28250,6 +28399,9 @@
   },
   "人見神面不能存活": {
     "alias_of": "不能看見神的面而存活"
+  },
+  "二基路伯中間有與他說話的聲音": {
+    "alias_of": "二基路伯中間說話的聲音（施恩座微聲）"
   },
   "五個人追趕一百人": {
     "alias_of": "五個人追趕一百人（蒙福的軍事應許）"

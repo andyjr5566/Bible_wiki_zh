@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 180,
+  "pending_scripture_refs_count": 181,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -630,6 +630,11 @@
       "entity": "62 約翰一書/第5章",
       "book": "約翰一書",
       "chapter": 5
+    },
+    {
+      "entity": "43 約翰福音/第1章",
+      "book": "約翰福音",
+      "chapter": 1
     },
     {
       "entity": "43 約翰福音/第3章",
