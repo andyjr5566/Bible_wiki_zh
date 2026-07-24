@@ -65,6 +65,16 @@
     "status": "formal",
     "aliases": []
   },
+  "不可挨近死屍（拿細耳人的潔淨）": {
+    "path": "link_folder/主題/不可挨近死屍（拿細耳人的潔淨）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "不可挨近死屍（拿細耳人的潔淨）",
+    "status": "formal",
+    "aliases": [
+      "不可挨近死屍"
+    ]
+  },
   "不可搬弄是非不可與鄰舍為敵": {
     "path": "link_folder/主題/不可搬弄是非不可與鄰舍為敵.md",
     "type": "主題",
@@ -251,6 +261,16 @@
     "title": "亞伯蘭的愛心與勇氣",
     "status": "formal",
     "aliases": []
+  },
+  "亞倫的祝福（祭司祝福）": {
+    "path": "link_folder/主題/亞倫的祝福（祭司祝福）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "亞倫的祝福（祭司祝福）",
+    "status": "formal",
+    "aliases": [
+      "亞倫的祝福"
+    ]
   },
   "人的尊嚴": {
     "path": "link_folder/主題/人的尊嚴.md",
@@ -550,6 +570,17 @@
     "aliases": [
       "剃毛儀式",
       "全身剃髮"
+    ]
+  },
+  "剃頭刀不可過頭（拿細耳人長髮）": {
+    "path": "link_folder/主題/剃頭刀不可過頭（拿細耳人長髮）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "剃頭刀不可過頭（拿細耳人長髮）",
+    "status": "formal",
+    "aliases": [
+      "不可用剃頭刀剃頭",
+      "離俗的頭"
     ]
   },
   "割禮作為立約記號": {
@@ -2502,6 +2533,17 @@
     "status": "formal",
     "aliases": []
   },
+  "遠離葡萄樹與酒": {
+    "path": "link_folder/主題/遠離葡萄樹與酒.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "遠離葡萄樹與酒",
+    "status": "formal",
+    "aliases": [
+      "遠離清酒濃酒",
+      "自核至皮"
+    ]
+  },
   "遮羞": {
     "path": "link_folder/主題/遮羞.md",
     "type": "主題",
@@ -2719,6 +2761,17 @@
     "title": "雛鴿",
     "status": "formal",
     "aliases": []
+  },
+  "離俗歸耶和華": {
+    "path": "link_folder/主題/離俗歸耶和華.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "離俗歸耶和華",
+    "status": "formal",
+    "aliases": [
+      "離俗歸神",
+      "離俗"
+    ]
   },
   "非利士人的嫉妒": {
     "path": "link_folder/主題/非利士人的嫉妒.md",
@@ -3013,6 +3066,16 @@
     "status": "formal",
     "aliases": []
   },
+  "意外沾染死屍與重新潔淨條例": {
+    "path": "link_folder/事件/意外沾染死屍與重新潔淨條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "意外沾染死屍與重新潔淨條例",
+    "status": "formal",
+    "aliases": [
+      "先前的日子要歸徒然"
+    ]
+  },
   "愛仇敵律例": {
     "path": "link_folder/事件/愛仇敵律例.md",
     "type": "事件",
@@ -3038,6 +3101,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "拆毀偶像律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿細耳人滿期還俗條例": {
+    "path": "link_folder/事件/拿細耳人滿期還俗條例.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "拿細耳人滿期還俗條例",
     "status": "formal",
     "aliases": []
   },
@@ -12298,6 +12369,16 @@
     "status": "formal",
     "aliases": []
   },
+  "平安（shalom）": {
+    "path": "link_folder/原文/平安（shalom）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "平安（shalom）",
+    "status": "formal",
+    "aliases": [
+      "賜你平安"
+    ]
+  },
   "底拿名字含義": {
     "path": "link_folder/原文/底拿名字含義.md",
     "type": "原文",
@@ -12400,6 +12481,17 @@
     "title": "拿弗他利（角力）",
     "status": "formal",
     "aliases": []
+  },
+  "拿細耳人（nazir）": {
+    "path": "link_folder/原文/拿細耳人（nazir）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "拿細耳人（nazir）",
+    "status": "formal",
+    "aliases": [
+      "拿細耳",
+      "拿細耳人的願"
+    ]
   },
   "按手（samak）": {
     "path": "link_folder/原文/按手（samak）.md",
@@ -21150,6 +21242,17 @@
     "status": "formal",
     "aliases": []
   },
+  "臉光照（神的容面）": {
+    "path": "link_folder/神學/臉光照（神的容面）.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "臉光照（神的容面）",
+    "status": "formal",
+    "aliases": [
+      "他的臉光照你",
+      "臉光照"
+    ]
+  },
   "自潔": {
     "path": "link_folder/神學/自潔.md",
     "type": "神學",
@@ -24089,6 +24192,9 @@
   "節期中的數目七": {
     "alias_of": "七是節期中最要緊的數目"
   },
+  "不可挨近死屍": {
+    "alias_of": "不可挨近死屍（拿細耳人的潔淨）"
+  },
   "出營外": {
     "alias_of": "不潔之人出到營外"
   },
@@ -24136,6 +24242,9 @@
   },
   "為所多瑪代求": {
     "alias_of": "亞伯拉罕為所多瑪代求"
+  },
+  "亞倫的祝福": {
+    "alias_of": "亞倫的祝福（祭司祝福）"
   },
   "賣給外人贖回條例": {
     "alias_of": "以色列人賣給外人的贖回條例"
@@ -24190,6 +24299,12 @@
   },
   "全身剃髮": {
     "alias_of": "剃全身毛髮（潔淨禮）"
+  },
+  "不可用剃頭刀剃頭": {
+    "alias_of": "剃頭刀不可過頭（拿細耳人長髮）"
+  },
+  "離俗的頭": {
+    "alias_of": "剃頭刀不可過頭（拿細耳人長髮）"
   },
   "加上五分之一": {
     "alias_of": "加五分之一贖回原則"
@@ -24752,6 +24867,12 @@
   "蝗蟲類": {
     "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
   },
+  "遠離清酒濃酒": {
+    "alias_of": "遠離葡萄樹與酒"
+  },
+  "自核至皮": {
+    "alias_of": "遠離葡萄樹與酒"
+  },
   "遮眼": {
     "alias_of": "遮羞"
   },
@@ -24830,6 +24951,12 @@
   "擺陳設餅的桌子": {
     "alias_of": "陳設餅桌子"
   },
+  "離俗歸神": {
+    "alias_of": "離俗歸耶和華"
+  },
+  "離俗": {
+    "alias_of": "離俗歸耶和華"
+  },
   "Elim oasis": {
     "alias_of": "以琳綠洲"
   },
@@ -24868,6 +24995,9 @@
   },
   "Sabbath gathering rules": {
     "alias_of": "安息日收取規定"
+  },
+  "先前的日子要歸徒然": {
+    "alias_of": "意外沾染死屍與重新潔淨條例"
   },
   "Defeat of Amalek": {
     "alias_of": "戰勝亞瑪力人"
@@ -26588,6 +26718,9 @@
   "希伯來人名稱": {
     "alias_of": "希伯與希伯來名稱"
   },
+  "賜你平安": {
+    "alias_of": "平安（shalom）"
+  },
   "後裔如塵沙": {
     "alias_of": "後裔如地上的塵沙"
   },
@@ -26614,6 +26747,12 @@
   },
   "所多瑪聲聞於神": {
     "alias_of": "所多瑪罪惡的呼喊"
+  },
+  "拿細耳": {
+    "alias_of": "拿細耳人（nazir）"
+  },
+  "拿細耳人的願": {
+    "alias_of": "拿細耳人（nazir）"
   },
   "按手": {
     "alias_of": "按手（samak）"
@@ -29050,6 +29189,12 @@
   },
   "禁吃脂油": {
     "alias_of": "脂油和血都不可吃"
+  },
+  "他的臉光照你": {
+    "alias_of": "臉光照（神的容面）"
+  },
+  "臉光照": {
+    "alias_of": "臉光照（神的容面）"
   },
   "consecration": {
     "alias_of": "自潔"

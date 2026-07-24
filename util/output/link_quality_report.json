@@ -1,7 +1,7 @@
 {
-  "total_warnings": 62,
+  "total_warnings": 65,
   "critical_count": 0,
-  "warning_count": 62,
+  "warning_count": 65,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -335,9 +335,23 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/原文/素祭（minchah）.md",
+      "target": "第6章",
+      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/原文/贖愆祭（asham）.md",
       "target": "第5章",
       "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/贖愆祭（asham）.md",
+      "target": "第6章",
+      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
     },
     {
       "type": "alias_target_conflict",
@@ -408,6 +422,13 @@
       "source": "link_folder/神學/聖靈內住.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/贖罪祭.md",
+      "target": "第6章",
+      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
     },
     {
       "type": "alias_target_conflict",

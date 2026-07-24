@@ -1,0 +1,104 @@
+book: 民數記
+chapter: 6
+candidates:
+  # ── 人物 ──
+  - name: 摩西
+    type: 人物
+
+  - name: 亞倫
+    type: 人物
+
+  # ── 拿細耳人的願與條例（vv.1-12）──
+  - name: 拿細耳人（nazir）
+    type: 原文
+    evidence: v2「拿細耳人的願（拿細耳就是歸主的意思）」；Heb. nazir（離俗、分別為聖、冠冕）。CT：脫離世俗、完全歸向神的人。GT：包括特別願與終身願（如參孫、撒母耳、施洗約翰）。KC：separated to the LORD; Christ is the true Nazirite. BH：consecrated or separated one.
+    surfaces:
+      - 拿細耳人
+
+  - name: 離俗歸耶和華
+    type: 主題
+    evidence: v2, 5, 6, 8, 12「離俗歸耶和華」；CT：更深更徹底的分別為聖，脫離屬地原則與感情，活出屬天生活。KC：separation to the LORD in heart and life.
+    surfaces:
+      - 離俗歸耶和華
+      - 離俗歸神
+      - 離俗
+
+  - name: 遠離葡萄樹與酒
+    type: 主題
+    evidence: v3-4「遠離清酒濃酒…不可喝葡萄汁，不可吃鮮葡萄和乾葡萄…自核至皮都不可吃」。CT：葡萄果與酒能麻醉精神，拿細耳人防微杜漸，戒絕一切屬地肉體的享樂與罪的導火線。KC：renouncing earthly joy and natural rights to set God as the supreme joy. BH：total separation from the vine.
+    surfaces:
+      - 遠離清酒濃酒
+      - 自核至皮
+
+  - name: 剃頭刀不可過頭（拿細耳人長髮）
+    type: 主題
+    evidence: v5「不可用剃頭刀剃頭，要由髮綹長長了…離俗歸神的憑據是在他頭上」（v7）。CT：甘心為主忍受羞辱（林前11:14），順服神的權柄與頭。KC：long hair represents giving up earthly authority to take the place of total submission to God; hair as the secret of strength (Samson).
+    surfaces:
+      - 不可用剃頭刀剃頭
+      - 離俗的頭
+
+  - name: 不可挨近死屍（拿細耳人的潔淨）
+    type: 主題
+    evidence: v6-7「不可挨近死屍。他的父母或是弟兄姊妹死了的時候，他不可因他們使自己不潔淨」。CT：神最厭惡死亡（罪的結果），拿細耳人的要求比祭司更嚴格（利21:1-3），斷絕肉體感情，讓神居首位。KC：death is defilement; separation from spiritual death.
+    surfaces:
+      - 不可挨近死屍
+
+  - name: 意外沾染死屍與重新潔淨條例
+    type: 事件
+    evidence: v9-12，若身邊有人猝死沾染頭，第7日剃頭，第8日獻兩隻鳥（贖罪祭與燔祭），並牽一歲公羊羔作贖愆祭，先前的日子歸徒然（void days）。CT：即便被動沾染亦屬失落，須認罪並重新開始。KC：unforeseen defilement requires sacrifice and restarting; previous days are void.
+    surfaces:
+      - 先前的日子要歸徒然
+
+  # ── 滿期還俗條例（vv.13-21）──
+  - name: 拿細耳人滿期還俗條例
+    type: 事件
+    evidence: v13-21，滿了離俗日子到會幕門口獻公羊羔作燔祭、母羊羔作贖罪祭、公綿羊作平安祭，並一筐無酵餅、素祭與奠祭；在會幕門口剃頭將頭髮放在平安祭火上燒，祭司搖一搖已煮的前腿與無酵餅（搖祭），之後方可喝酒。CT：將羞辱的長髮在平安祭火上燒，在恩典中恢復榮美；喝酒表表徵享受神國度的喜樂（太26:29）。KC：the hair burned on the peace offering fire shows the immense value God places on voluntary dedication.
+
+  - name: 燔祭（olah）
+    type: 原文
+    evidence: v11, 14, 16「一隻沒有殘疾、一歲的公羊羔作燔祭」；CT：完全獻給神。
+
+  - name: 贖罪祭
+    type: 神學
+    evidence: v11, 14, 16「一隻沒有殘疾、一歲的母羊羔作贖罪祭」；CT：滿足神聖潔的要求。
+
+  - name: 贖愆祭（asham）
+    type: 原文
+    evidence: v12「牽一隻一歲的公羊羔來作贖愆祭」；CT：處理零碎行為得罪神與不潔的過犯。
+
+  - name: 平安祭（shelamim）
+    type: 原文
+    evidence: v14, 17, 18「一隻沒有殘疾的公綿羊作平安祭」；CT：神與人及人與鄰舍和諧相處的感謝還願祭。
+
+  - name: 素祭（minchah）
+    type: 原文
+    evidence: v15, 17「同獻的素祭」；CT：無酵調油與抹油無酵餅，表徵基督聖潔無瑕疵的人性。
+
+  - name: 奠祭（nesek）
+    type: 原文
+    evidence: v15, 17「同獻的奠祭」；CT：澆酒為祭，表徵傾倒生命服事神。
+
+  - name: 搖祭（tenufah）
+    type: 原文
+    evidence: v20「祭司要拿這些作為搖祭，在耶和華面前搖一搖」；CT：已煮的公羊左腿與無酵餅搖一搖歸給祭司。
+
+  - name: 舉祭（terumah）
+    type: 原文
+    evidence: v20「與所搖的胸、所舉的腿同為聖物，歸給祭司」。
+
+  # ── 亞倫的祝福（vv.22-27）──
+  - name: 亞倫的祝福（祭司祝福）
+    type: 主題
+    evidence: v22-27「願耶和華賜福給你，保護你；願耶和華使他的臉光照你，賜恩給你；願耶和華向你仰臉，賜你平安」。CT：神樂意將名字加在百姓身上向人傾倒祝福；三組祝福隱含聖父保護、聖子光照賜恩、聖靈仰臉賜平安的三一神做工。GT：新約祝禱與大祭司祝福相通（林後13:14）。KC：sevenfold blessing invoking the triune God upon His consecrated people.
+
+  - name: 臉光照（神的容面）
+    type: 神學
+    evidence: v25「願耶和華使他的臉光照你」；CT：神的面光帶來救恩與恩典；GT：世人得著福音光照（林後4:4）。BH：divine favor and presence shining upon believers.
+    surfaces:
+      - 他的臉光照你
+
+  - name: 平安（shalom）
+    type: 原文
+    evidence: v26「願耶和華向你仰臉，賜你平安」；Heb. shalom（平安、健全、興旺、和好）。CT：聖靈所賜的真平安，非客觀環境所能影響。BH：wholeness, well-being, and peace through God.
+    surfaces:
+      - 賜你平安
