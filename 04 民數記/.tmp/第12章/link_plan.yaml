@@ -1,0 +1,99 @@
+book: 民數記
+chapter: 12
+A_use_directly:
+- name: 古實女子
+  suggested_type: 人物
+  evidence: 第1節：「摩西娶了古實女子為妻。米利暗和亞倫因他所娶的古實女子就毀謗他。」古實女子身分長年受到討論，有解經認為是米甸人西坡拉（古珊境內的土著稱號），另一面認為是摩西在埃及武裝起兵時或曠野時期另行續娶或結配的衣索比亞族非裔新娘；見證超越族群血脈的神約婚姻與引發內部家族忌妒的導火線。
+  surfaces:
+  - phrase: 古實女子
+  match_type: exact
+  existing_title: 古實女子
+  existing_path: link_folder/人物/古實女子.md
+- name: 摩西娶古實女子的解經爭議
+  suggested_type: 解經爭議
+  evidence: 第1節記綠米利暗和亞倫把「摩西娶古實女子」作為公開對抗和批駁他神職地位的理由。古代釋經界對這個理由的動機展開極多推求：無論是西坡拉離群重生嫉妒，或是因為非裔民族膚色而激發狹隘民族主議；深入探索此事件為何掩飾了他們爭奪先知最高宣傳主權的野心。
+  match_type: exact
+  existing_title: 摩西娶古實女子的解經爭議
+  existing_path: link_folder/解經爭議/摩西娶古實女子的解經爭議.md
+- name: 摩西為人極其謙和（民12：3）
+  suggested_type: 神學
+  evidence: 第3節極端特殊地銘錄了：「摩西為人極其謙和，勝過世上的眾人。」當遇到至親同兄姊的無理挑釁與挑戰權威時，他不發言抗訴或辯論反擊，而是完全沉靜忍辱投托天地審判的主耶和華；顯現神僕人在受委屈處於極限下超自然的柔和溫靜信實靈貌。
+  match_type: exact
+  existing_title: 摩西為人極其謙和（民12：3）
+  existing_path: link_folder/神學/摩西為人極其謙和（民12：3）.md
+- name: 摩西在神全家盡忠（民12：7）
+  suggested_type: 互文
+  evidence: 第7節：「我的僕人摩西不是這樣；他是在我全家盡忠的。」神以無尚肯定讚詠摩西於全聖以色列家裡事工的無私與極真忠貞；這句話貫通歲月，直接成為新約希伯來書第3章2至5節的絕地引證與精準對象：對望恩主耶穌基督非止如使眾忠順、更是堂皇聖子統領經營神愛家園的高遠主宰榮冠。
+  surfaces:
+  - phrase: 在我全家盡忠
+  match_type: exact
+  existing_title: 摩西在神全家盡忠（民12：7）
+  existing_path: link_folder/互文/摩西在神全家盡忠（民12：7）.md
+- name: 神與摩西面對面明說
+  suggested_type: 神學
+  evidence: 第8節：「我要與他面對面說話，乃是明說，不用謎語，並且他必見我的形像。」展現摩西作為頒授國度聖典的中保使首、具備完全超出世俗眾生與其他普世先知的頂峰面對面密約溝通地位，無需借用含糊猜謎、而是親聆明音親睹主光的殊勝聖域。
+  surfaces:
+  - phrase: 面對面說話
+  - phrase: 明說
+  match_type: exact
+  existing_title: 神與摩西面對面明說
+  existing_path: link_folder/神學/神與摩西面對面明說.md
+B_needs_update:
+- name: 米利暗
+  suggested_type: 人物
+  evidence: 第1節與第4-15節記載米利暗與亞倫一同毀謗摩西，嗣後在會幕門口承受神嚴厲審判長大痲瘋，經摩西懇切代求與神下令在營外關鎖七天後，得以醫治歸回；展現全族最早期女性領導先知於曠野生活中的人性弱點、傲慢教訓與恢復恩寵。
+  surfaces:
+  - phrase: 米利暗
+  match_type: exact
+  existing_title: 米利暗
+  existing_path: link_folder/人物/米利暗.md
+- name: 先知
+  suggested_type: 主題
+  evidence: 第6節：「耶和華說：你們且聽我的話：你們中間若有先知，我耶和華必在異象中向他顯現，在夢中與他說話。」神明確宣告其啟示之通軌，對普通先知乃採取隱秘的夢境與心靈異象灌輸之法，勾勒出先知體系與默示等級的根底標準。
+  surfaces:
+  - phrase: 先知
+  match_type: exact
+  existing_title: 先知
+  existing_path: link_folder/主題/先知.md
+- name: 大痲瘋（tsara'at，皮膚病診斷條例）
+  suggested_type: 原文
+  evidence: 第10節記載會幕神仙榮雲騰身移離、便立降神罰：「不料，米利暗長了大痲瘋，有雪那樣白。」展現出嚴重具神罰意味之傳染性皮癬疾惡在抗命挑戰主僕使長命定之人心頭降下的駭厲事況。
+  surfaces:
+  - phrase: 大痲瘋
+  match_type: exact
+  existing_title: 大痲瘋（tsara'at，皮膚病診斷條例）
+  existing_path: link_folder/原文/大痲瘋（tsara'at，皮膚病診斷條例）.md
+- name: 大痲瘋是否等同於罪的懲罰之爭
+  suggested_type: 解經爭議
+  evidence: 米利暗因為說反言背毀摩西而立馬罹染「勝雪一般浩白」大痲瘋的大史證，正是釋典爭執痲瘋常態是否牽出特定天懲大厄的重要教材；與潔淨之法雙線映現了聖性懲管與赦原的公義至範。
+  match_type: exact
+  existing_title: 大痲瘋是否等同於罪的懲罰之爭
+  existing_path: link_folder/解經爭議/大痲瘋是否等同於罪的懲罰之爭.md
+- name: 患痲瘋者的哀悼記號（獨居營外）
+  suggested_type: 主題
+  evidence: 第14至15節：「耶和華對摩西說：...現在要把她在營外關鎖七天，然後才可以領她進來。於是米利暗關鎖在營外七天。」儘管她是王國核心開闢天命母執，一旦蒙上惡疾染穢便難逃公規、必須遭斥放退居至邊疆隔離七日盡度潔身期；彰揚神之法則毫無看人面容的公允權極。
+  surfaces:
+  - phrase: 在營外關鎖七天
+  - phrase: 關鎖在營外七天
+  match_type: exact
+  existing_title: 患痲瘋者的哀悼記號（獨居營外）
+  existing_path: link_folder/主題/患痲瘋者的哀悼記號（獨居營外）.md
+- name: 哈洗錄
+  suggested_type: 地點
+  evidence: 第16節記載事起至終解決休平、百姓始克出動發營：「以後百姓從哈洗錄起行...」哈洗錄乃為眾民從吃貪死亡悲事中脫出身走停留、遭遇本朝叛語修愈再往前征行的休致旅地。
+  surfaces:
+  - phrase: 哈洗錄
+  match_type: exact
+  existing_title: 哈洗錄
+  existing_path: link_folder/地點/哈洗錄.md
+- name: 巴蘭的曠野
+  suggested_type: 地點
+  evidence: 第16節終說以色列大眾從哈洗錄安平動身後：「在巴蘭的曠野安營。」位於西乃山西北部向迦南邊原過渡的大範圍乾沙苦嶺，成了即將開往差派十二探子前鋒與演化長期漂流大劫的新主戰場。
+  surfaces:
+  - phrase: 巴蘭的曠野
+  match_type: exact
+  existing_title: 巴蘭的曠野
+  existing_path: link_folder/地點/巴蘭的曠野.md
+C_new_formal: []
+D_new_candidate: []
+E_skip: []
