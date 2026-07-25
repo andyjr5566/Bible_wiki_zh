@@ -1,0 +1,82 @@
+book: 民數記
+chapter: 20
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 女先知米利暗卒於加低斯為肉體軟弱與領袖管教見證
+  suggested_type: 事件
+  target_path: link_folder/事件/女先知米利暗卒於加低斯為肉體軟弱與領袖管教見證.md
+  semantic_hint:
+  - title: 米利暗
+    score: 0.52
+    type: 人物
+  - title: 米利暗之歌
+    score: 0.46
+    type: 神學
+- name: 以色列人缺水爭鬧與摩西負氣杖擊磐石兩下之失
+  suggested_type: 事件
+  target_path: link_folder/事件/以色列人缺水爭鬧與摩西負氣杖擊磐石兩下之失.md
+  semantic_hint:
+  - title: 磐石出水
+    score: 0.591
+    type: 事件
+  - title: 以色列人的怨言
+    score: 0.542
+    type: 歷史
+  - title: 磐石出活水
+    score: 0.533
+    type: 神學
+- name: 米利巴水之地顯神至聖與禁止摩西進加南之地威名
+  suggested_type: 神學
+  target_path: link_folder/神學/米利巴水之地顯神至聖與禁止摩西進加南之地威名.md
+  semantic_hint:
+  - title: 米利巴（ strife ）
+    score: 0.528
+    type: 原文
+  - title: 米甸地
+    score: 0.477
+    type: 地點
+  - title: 迦南地
+    score: 0.452
+    type: 地點
+- name: 以東王斷然拒絕摩西行使大道經界並遣重兵驅逐
+  suggested_type: 歷史
+  target_path: link_folder/歷史/以東王斷然拒絕摩西行使大道經界並遣重兵驅逐.md
+  semantic_hint:
+  - title: 以東
+    score: 0.478
+    type: 地點
+  - title: 摩西在耶和華面前自辯清白與拒受甘禮
+    score: 0.436
+    type: 神學
+  - title: 大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許
+    score: 0.431
+    type: 事件
+- name: 摩西和亞倫當會眾前面登陟以東疆域邊旁何珥山頂
+  suggested_type: 地點
+  target_path: link_folder/地點/摩西和亞倫當會眾前面登陟以東疆域邊旁何珥山頂.md
+  semantic_hint:
+  - title: 神的山
+    score: 0.535
+    type: 地點
+  - title: 何烈山
+    score: 0.529
+    type: 地點
+  - title: 摩西上山見神
+    score: 0.511
+    type: 事件
+- name: 大祭司亞倫歸宿列祖並移奪聖衣給繼業者以利亞撒
+  suggested_type: 神學
+  target_path: link_folder/神學/大祭司亞倫歸宿列祖並移奪聖衣給繼業者以利亞撒.md
+  semantic_hint:
+  - title: 以利亞撒
+    score: 0.586
+    type: 人物
+  - title: 聖衣（祭司聖服）
+    score: 0.567
+    type: 主題
+  - title: 亞倫和他兒子（祭司）
+    score: 0.542
+    type: 人物
+D_new_candidate: []
+E_skip: []
