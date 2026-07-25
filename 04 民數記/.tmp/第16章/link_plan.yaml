@@ -1,0 +1,148 @@
+book: 民數記
+chapter: 16
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 可拉大坍亞比蘭等領首聯合的大反亂
+  suggested_type: 事件
+  evidence: 記述利未支派哥轄人的後嗣可拉，夥同流便支派的大坍、亞比蘭和安，帶領二百五十名赫赫有名的以色列黨魁長者公然串聯起禍，群攻摩西與亞倫的靈性管治地位。
+  surfaces:
+  - phrase: 以斯哈的兒子可拉
+  - phrase: 大坍、亞比蘭
+  - phrase: 二百五十個首領
+  target_path: link_folder/事件/可拉大坍亞比蘭等領首聯合的大反亂.md
+- name: 全會眾的聖潔宣示與對代表主職之挑釁
+  suggested_type: 神學
+  evidence: 叛逆領導以全會眾皆屬靈性聖潔、蒙耶和華同在為口號，打著追求平等信仰解放的旗幟，強橫指責摩西和亞倫出於自傲超越耶和華的大聚會與神旨選定。
+  surfaces:
+  - phrase: 全會眾個個既是聖潔
+  - phrase: 你們為什麼自高
+  - phrase: 超過耶和華的會眾呢
+  target_path: link_folder/神學/全會眾的聖潔宣示與對代表主職之挑釁.md
+  semantic_hint:
+  - title: 全會眾（kol ha-edah）
+    score: 0.451
+    type: 人物
+- name: 利未職分的尊嚴與越權追求祭司職分
+  suggested_type: 神學
+  evidence: 摩西向可拉等利未子孫嚴肅辨明，上帝特將他們拔擢侍立於大堂前擔侍供奉職能已為厚重的榮美至高祝福，如今心生不滿甚至窺伺亞倫獨掌的大祭司職位就是公然敵擋施與選派的耶和華。
+  surfaces:
+  - phrase: 以色列的神從以色列會中將你們分別出來
+  - phrase: 你們還要求祭司的職任嗎
+  - phrase: 這豈為小事
+  target_path: link_folder/神學/利未職分的尊嚴與越權追求祭司職分.md
+  semantic_hint:
+  - title: 利未
+    score: 0.491
+    type: 人物
+  - title: 利未支派
+    score: 0.473
+    type: 人物
+  - title: 利未人受聖職討罪
+    score: 0.466
+    type: 事件
+- name: 大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許
+  suggested_type: 事件
+  evidence: 流便子民大坍和亞比蘭公開抗拒摩西招喚出面的正言，放縱反語侮罵埃及才是真正長成奶蜜處，控言導走荒野是為了施愚害死群眾，並且痛諷領軍使人心受屈成盲，徹底把主信與呼籲採在底層。
+  surfaces:
+  - phrase: 我們不上去
+  - phrase: 難道你要剜這些人的眼睛嗎
+  - phrase: 你將我們從流奶與蜜之地領上來
+  target_path: link_folder/事件/大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許.md
+- name: 摩西在耶和華面前自辯清白與拒受甘禮
+  suggested_type: 神學
+  evidence: 遇此深毒無理的指責與誣控，摩西懷大震恨義怒轉臉朝上帝禱請，切痛表白一生率領毫無貪扣人財，從無強取過平民一隻短身負役驢匹，更從未施手凌害傷禍過人，懇呼至仁神主徹拒逆軍的虛飾犧供。
+  surfaces:
+  - phrase: 求你不要享受他們的供物
+  - phrase: 我並沒有奪過他們一匹驢
+  - phrase: 也沒有害過他們一個人
+  target_path: link_folder/神學/摩西在耶和華面前自辯清白與拒受甘禮.md
+  semantic_hint:
+  - title: 摩西
+    score: 0.517
+    type: 人物
+  - title: 摩西為人極其謙和（民12：3）
+    score: 0.508
+    type: 神學
+  - title: 被拒絕的拯救者摩西
+    score: 0.506
+    type: 互文
+- name: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  suggested_type: 事件
+  evidence: 摩西發布曠世預言宣明若非主選，天意自無聲；一旦上神施作造奇新功使砂礫荒原爆成裂壑深淵將其群眷全財活墜入下界幽穴，即證悖逆屬實。果即話終聲定，厚石破底把全戶叛軍無聲葬入冷晦泉深。
+  surfaces:
+  - phrase: 把他們和他們的家眷
+  - phrase: 活活地墜落陰間
+  - phrase: 他們腳下的地就開了口
+  target_path: link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md
+- name: 耶和華的烈火將兩百五十個拿香爐者徹底毀滅
+  suggested_type: 事件
+  evidence: 與地層破張雙首並出者，便是二百五十名妄舉私香爐對陣爭奪成奉祭聖威的有名巨佐，遭耶和華雷庭正義殿中降發的純白神火吞襲消盡，嚴厲申明凡非神定後嗣皆不堪高踏祭職榮廷。
+  surfaces:
+  - phrase: 有火從耶和華那裡出來
+  - phrase: 燒滅了那獻香的二百五十個人
+  target_path: link_folder/事件/耶和華的烈火將兩百五十個拿香爐者徹底毀滅.md
+  semantic_hint:
+  - title: 烈火（esh okelah）
+    score: 0.499
+    type: 原文
+  - title: 凡火
+    score: 0.462
+    type: 主題
+  - title: 拿答
+    score: 0.46
+    type: 人物
+- name: 香爐被鍛釘為包裝壇上的銅片與長遠鑑誡
+  suggested_type: 文化
+  evidence: 雖焚滅罪狂逆兵，但因供上聖堂之金屬香器本身已定作聖歸；神敕命把這大串遺世銅器奮手痛敲成一塊塊緊密輝朗金屬薄片牢牢釘包上獻火外壇，讓來往瞻禮之後世代輩子警悟僭越慘痛災局。
+  surfaces:
+  - phrase: 用以包壇
+  - phrase: 叫人錘成片子
+  - phrase: 給以色列人作記號
+  target_path: link_folder/文化/香爐被鍛釘為包裝壇上的銅片與長遠鑑誡.md
+  semantic_hint:
+  - title: 銅壇（燔祭壇）
+    score: 0.429
+    type: 主題
+  - title: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
+    score: 0.426
+    type: 主題
+  - title: 壇的槓（抬壇用）
+    score: 0.407
+    type: 主題
+- name: 次日會眾猛發埋怨招致耶和華天譴大瘟疫
+  suggested_type: 事件
+  evidence: 親擊滅門之警未過一朝，愚狂迷狂的大批人流竟然復聚圍攏，荒唐痛駡是神使殺絕良材，引至真神光雲激發狂電譴懲，瞬刻大面病殃如海潮衝刷掃過人群造成鉅禍萬餘喪生。
+  surfaces:
+  - phrase: 第二天，以色列全會眾都向摩西、亞倫發怨言
+  - phrase: 你們殺了耶和華的百姓了
+  - phrase: 瘟疫在百姓中已經發作了
+  target_path: link_folder/事件/次日會眾猛發埋怨招致耶和華天譴大瘟疫.md
+  semantic_hint:
+  - title: 以色列人的怨言
+    score: 0.444
+    type: 歷史
+  - title: 報惡信之人的瘟疫與存活者
+    score: 0.411
+    type: 事件
+- name: 亞倫拿著香爐站在死人與活人中間祈禱救恩代濟
+  suggested_type: 神學
+  evidence: 浩難之急摩西立呼年老祭神長官亞倫抓挑香壇殘露熱灰並狂灑聖香疾跑撲入奔殃散亂人海；大司靈孤獨無阻力駐在活屍與血殍兩重邊線深訴祈恕，當局怒病應咒而定，高聳長留神子親作長隨保贖中保之至極投影。
+  surfaces:
+  - phrase: 他站在活人死人中間
+  - phrase: 瘟疫就止住了
+  - phrase: 為他們贖罪
+  - phrase: 拿你的香爐
+  target_path: link_folder/神學/亞倫拿著香爐站在死人與活人中間祈禱救恩代濟.md
+  semantic_hint:
+  - title: 基督代禱（來7：25）
+    score: 0.466
+    type: 互文
+  - title: 聖徒禱告如香（啟5：8, 8：3-4）
+    score: 0.424
+    type: 互文
+  - title: 信徒禱告如香（啟5：8, 8：3-4）
+    score: 0.413
+    type: 互文
+D_new_candidate: []
+E_skip: []
