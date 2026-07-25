@@ -1,0 +1,65 @@
+book: 民數記
+chapter: 21
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪
+  suggested_type: 歷史
+  target_path: link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md
+  semantic_hint:
+  - title: 迦南大敗直到何珥瑪
+    score: 0.455
+    type: 歷史
+  - title: 耶和華的得勝
+    score: 0.445
+    type: 神學
+  - title: 戰勝亞瑪力人
+    score: 0.434
+    type: 事件
+- name: 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人
+  suggested_type: 事件
+  target_path: link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md
+  semantic_hint:
+  - title: 以色列人的怨言
+    score: 0.494
+    type: 歷史
+  - title: 火蛇（saraph）
+    score: 0.476
+    type: 原文
+  - title: 百姓厭棄嗎哪（約6：31-35）
+    score: 0.451
+    type: 互文
+- name: 摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治
+  suggested_type: 神學
+  target_path: link_folder/神學/摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治.md
+  semantic_hint:
+  - title: 銅蛇（nehushtan）
+    score: 0.623
+    type: 原文
+  - title: 杖變蛇的神蹟
+    score: 0.516
+    type: 神學
+  - title: 銅蛇是否後來成了偶像
+    score: 0.472
+    type: 解經爭議
+- name: 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯
+  suggested_type: 地點
+  target_path: link_folder/地點/以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯.md
+  semantic_hint:
+  - title: 雅博
+    score: 0.453
+    type: 原文
+  - title: 雅博渡口
+    score: 0.428
+    type: 地點
+  - title: 亞衲族與偉人拿非林
+    score: 0.406
+    type: 背景
+- name: 比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌
+  suggested_type: 事件
+  target_path: link_folder/事件/比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌.md
+- name: 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土
+  suggested_type: 歷史
+  target_path: link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md
+D_new_candidate: []
+E_skip: []
