@@ -1,0 +1,101 @@
+book: 民數記
+chapter: 17
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 十二支派首領之杖按著名冊交付驗證
+  suggested_type: 事件
+  evidence: 神指示摩西從十二支派的所有首領按派別取回常行手杖各一根，且寫上宗主本人真實名字，表徵眾子嗣率土以誠投奔至天王法櫃前，領受上天主宰對於真祭掌位歸屬之無瑕裁度。
+  surfaces:
+  - phrase: 從他們手下取杖
+  - phrase: 共取十二根
+  - phrase: 將各人的名字寫在各人的杖上
+  target_path: link_folder/事件/十二支派首領之杖按著名冊交付驗證.md
+  semantic_hint:
+  - title: 十二族長協助數點
+    score: 0.44
+    type: 事件
+  - title: 奉獻壇之禮（十二支派首領奉獻）
+    score: 0.411
+    type: 事件
+- name: 把亞倫之名簽寫在利未之杖上的授命標記
+  suggested_type: 神學
+  evidence: 雖亞倫本生於利未眾子次系哥轄，神依然特別告明需把亞倫二字題上利未本族名仗。此舉宣告大祭司職位絕並非仰借屬世人間的世仇奪戰，而是直接仰借永主親旨定下不容旁人窺爭的核心代表權杖。
+  surfaces:
+  - phrase: 將亞倫的名字寫在利未的杖上
+  - phrase: 各族長必有一根杖
+  target_path: link_folder/神學/把亞倫之名簽寫在利未之杖上的授命標記.md
+  semantic_hint:
+  - title: 亞倫
+    score: 0.441
+    type: 人物
+  - title: 利未
+    score: 0.419
+    type: 人物
+  - title: 利未人受聖職討罪
+    score: 0.415
+    type: 事件
+- name: 存於見證會殿前等候神使出枯長生苞結杏的奇顯
+  suggested_type: 事件
+  evidence: 十二手杖存留於無人染指的見證至聖所法櫃殿庭，僅隔一身夕刻，當世間一木垂沉死地，神宣告只有天獲者才擁新芽。翌展唯獨亞倫枯杖接連綻出芽蒂、抽苞敷蕊且垂現出珍貴白聖熱果結了成熟的杏子。
+  surfaces:
+  - phrase: 存在會幕內法櫃前
+  - phrase: 我所揀選的那人，他的杖必發芽
+  - phrase: 亞倫的杖已經發了芽
+  target_path: link_folder/事件/存於見證會殿前等候神使出枯長生苞結杏的奇顯.md
+- name: 亞倫發芽熟杏之杖表徵經歷死地步入復活生命力
+  suggested_type: 神學
+  evidence: 枯杖復生意涵上帝把活天活能直灌深竭死性；開綻春白杏仁暗寓主之留心看護與復活初熟成神威！說明一切服主侍領不得倚重私心或血氣世謀，而須走入死地而發放極光不死復活生機，成就得罪與盼望。
+  surfaces:
+  - phrase: 生了花苞，開了花，結了熟杏
+  - phrase: 從耶和華面前拿出來
+  target_path: link_folder/神學/亞倫發芽熟杏之杖表徵經歷死地步入復活生命力.md
+  semantic_hint:
+  - title: 亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）
+    score: 0.554
+    type: 互文
+  - title: 亞倫的杖吞了術士的杖
+    score: 0.437
+    type: 歷史
+  - title: 亞倫拿著香爐站在死人與活人中間祈禱救恩代濟
+    score: 0.407
+    type: 神學
+- name: 亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒
+  suggested_type: 文化
+  evidence: 依神聖諭亞倫的神果靈丈未被取走散亡，反而久藏存置於會幕見證神匣前面當作鐵血守信旗表。讓未來千萬徒嗣敬畏仰視，將抗官奪位與私縱的逆怨埋言自耳間永遠平止，免遭神罰身陷黃沙。
+  surfaces:
+  - phrase: 把亞倫的杖還放在法櫃前
+  - phrase: 給這些背叛之子留作記號
+  - phrase: 向我發的怨言止息
+  target_path: link_folder/文化/亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒.md
+  semantic_hint:
+  - title: 法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）
+    score: 0.533
+    type: 互文
+  - title: 約櫃
+    score: 0.487
+    type: 主題
+  - title: 亞倫
+    score: 0.479
+    type: 人物
+- name: 凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡
+  suggested_type: 神學
+  evidence: 當合族群黎親見枯棒開杏的聖潔大功，原本高狂企拿香爐爭職的心態頓受駭悚痛批！深徹悔覺如妄借不潔舊人擅近王之聖殿祭務，唯取殺身刑死之報，正式建立進深聖恩須依持天命中保和自省謙恭之千禧法則。
+  surfaces:
+  - phrase: 我們死啦
+  - phrase: 我們滅亡啦
+  - phrase: 凡挨近耶和華帳幕的是必死的
+  - phrase: 我們都要死亡嗎
+  target_path: link_folder/神學/凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡.md
+  semantic_hint:
+  - title: 外人近前來必被治死
+    score: 0.485
+    type: 主題
+  - title: 會幕門口
+    score: 0.446
+    type: 地點
+  - title: 不可親近
+    score: 0.446
+    type: 神學
+D_new_candidate: []
+E_skip: []
