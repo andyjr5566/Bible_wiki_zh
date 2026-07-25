@@ -1,0 +1,126 @@
+book: 民數記
+chapter: 13
+A_use_directly: []
+B_needs_update:
+- name: 約書亞（原名何西阿）
+  suggested_type: 人物
+  evidence: 第8、16節揭示屬以法蓮支派的代表為「嫩的兒子何西阿」，摩西特別將他更名為「約書亞」（意即耶和華是拯救）。作為摩西長期的得力助手與未來引領整個以色列新生代攻取大地的元帥，此新名字不僅標明神愛至尊的拯救，更象徵他自成聖君召的偉大變革與靈名賜名。
+  surfaces:
+  - phrase: 約書亞
+  - phrase: 何西阿
+  match_type: base
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 流奶與蜜之地
+  suggested_type: 神學
+  evidence: 第27節全體回歸報復摩西時同口盛譽：「我們到了你所打發我們去的那地，果然是流奶與蜜之地。」詞以豐美奶蜜具體寫照天地孕靈極富、滋育萬物歡泰的高遠恩膏；屬靈真髓指示這方疆土即基督恩惠富藏與天上極致安寧的豐盈國域。
+  surfaces:
+  - phrase: 流奶與蜜之地
+  match_type: exact
+  existing_title: 流奶與蜜之地
+  existing_path: link_folder/神學/流奶與蜜之地.md
+C_new_formal:
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 第6節提及猶大支派耶孚尼的兒子迦勒。在第30節，當群眾因報告慌亂時，迦勒在摩西面前站出安撫百姓，雄壯宣告「我們立刻上去得那地吧！我們足能得勝」，顯現專心跟從主、只仰望全能神而不顧念肉眼巨難的專一堅定至高信心。
+  surfaces:
+  - phrase: 迦勒
+  target_path: link_folder/人物/迦勒.md
+- name: 十二探子窺探迦南地
+  suggested_type: 事件
+  evidence: 第1至25節詳細銘記摩西遵行神許可，從以色列十二支派中各遴選一名年輕壯年主將族長，從巴蘭曠野沿南地直登北方高山地帶，歷經整整四十晝夜全境走訪、徹底考察地質肥瘠、防衛設施與民情威態的聖史紀錄。
+  target_path: link_folder/事件/十二探子窺探迦南地.md
+  semantic_hint:
+  - title: 迦南地
+    score: 0.47
+    type: 地點
+  - title: 迦南人
+    score: 0.447
+    type: 人物
+  - title: 迦南人與比利洗人
+    score: 0.413
+    type: 歷史
+- name: 加低斯巴尼亞事件
+  suggested_type: 歷史
+  evidence: 第26節起記述探子完成歷時四十天的偵探後，折返「巴蘭曠野的加低斯」（即加低斯巴尼亞）向全眾報告。此次關鍵歷史分水嶺會眾卻棄信畏苦，輕聽十名惡信業主，釀成以色列民族在沙漠漫長流浪飄移三十八年的曠野大災浩劫悲劇。
+  target_path: link_folder/歷史/加低斯巴尼亞事件.md
+- name: 以實各谷的一掛葡萄
+  suggested_type: 主題
+  evidence: 第23至24節銘記探子在正值七月葡萄初熟時抵達「以實各谷」，親自動刀伐取一根豐茂浩大、需「兩個人用杠抬著」的壯碩大棒巨型葡萄並攜上石榴與無花果；這掛累累重果成為迦南天邑的具體憑徵，深深表徵與基督耶穌連結內永恆浩博不休的豐富生命力流奶果園與豫嘗天福。
+  surfaces:
+  - phrase: 以實各谷
+  - phrase: 一掛葡萄
+  target_path: link_folder/主題/以實各谷的一掛葡萄.md
+  semantic_hint:
+  - title: 以實各
+    score: 0.454
+    type: 人物
+  - title: 葡萄樹與真葡萄樹_約15_1
+    score: 0.412
+    type: 互文
+- name: 亞衲族與偉人拿非林
+  suggested_type: 背景
+  evidence: 第22、28與33節記載南地希伯崙住著令人驚心顫動的「亞衲族人亞希幔、示篩、撻買」，且目擊了古代魁梧恐怖的「偉人（即拿非林巨種後任）」。這些巨大高傲的當地猛民與難度天牢般的高聳城堡，成為天然血氣眼中阻攔神選軍征剿大地的致命重阻。
+  surfaces:
+  - phrase: 亞衲族
+  - phrase: 亞衲族人
+  - phrase: 偉人
+  target_path: link_folder/背景/亞衲族與偉人拿非林.md
+  semantic_hint:
+  - title: 偉人
+    score: 0.492
+    type: 人物
+- name: 自認如蚱蜢的不信態勢
+  suggested_type: 神學
+  evidence: 第33節十個沮喪探子向全體宣告了充滿哀悼軟弱的比重：「據我們看，自己就如蚱蜢一樣；據他們看，我們也是如此。」這種落於心境極致崩盤與屬地自卑的光景，深入指露若不藉神聖信心視事而單向以肉體血眼較量天敵難題，便會陷無力倒伏於魔障之虞而大輕忽主救恩大能。
+  target_path: link_folder/神學/自認如蚱蜢的不信態勢.md
+- name: 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議
+  suggested_type: 解經爭議
+  evidence: 針對第3節與26節記載探子是自「巴蘭的曠野（或加低斯）」出發，然而申命記等別卷書中常指定「加低斯巴尼亞」（或民20:1之尋的曠野），聖經學者如艾基斯指出巴蘭大荒漠為跨向依拉夫港東北至以南遼遠地域，加低斯極樂園自包覆在巴蘭嶺土內，彼此敘事和諧互賴無偽。
+  target_path: link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md
+- name: 何西阿與約書亞改名時機與字意之解經爭議
+  suggested_type: 解經爭議
+  evidence: 第16節申明「摩西就稱嫩的兒子何西阿為約書亞」，但《出埃及記》早於17章與24章即直稱約書亞；丁良才、艾基斯與《精讀本》皆深證兩名皆出自共同字根
+    yasa'（拯救），且因出埃及記屬四十載飄零晚年執筆回首之所成，沿用晚年耳熟宣用之聖譽定名乃文筆自然通途。
+  target_path: link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md
+  semantic_hint:
+  - title: 約書亞
+    score: 0.492
+    type: 人物
+  - title: 撒發那忒巴內亞名字含義
+    score: 0.47
+    type: 解經爭議
+  - title: 雅各改名以色列
+    score: 0.438
+    type: 歷史
+- name: 南地與希伯崙
+  suggested_type: 地點
+  evidence: 第17與22節記探子遵循路線由大漠荒陵入迦南之極南邊塞「南地」（尼吉乾荒坡）高溯山谷到了「希伯崙」，經中讚注「希伯倫城被建造比埃及的鎖安城早七年」，凸顯此處乃列王名邦起源與先祖信心地契約發始地，更存戴著亞拉古城雄踞抗爭的新血誓師考驗。
+  surfaces:
+  - phrase: 南地
+  - phrase: 希伯崙
+  - phrase: 鎖安城
+  target_path: link_folder/地點/南地與希伯崙.md
+  semantic_hint:
+  - title: 南地
+    score: 0.548
+    type: 地點
+  - title: 希伯崙
+    score: 0.457
+    type: 地點
+- name: 窺探迦南起因為神命或民意的解經爭議
+  suggested_type: 解經爭議
+  evidence: 第1、2節以「耶和華曉諭摩西說：你打發人去窺探我所賜給以色列人的迦南地」作為行動發動序文，然申命記一章22節卻剖斷是全會眾出於疑畏向摩西先請願打發偵車。解讀界（丁良才、精讀本等）明澈判曉：事件實為民懷不信顧猶，上帝並非以雷令反對而係任憑以寬厚試行，借實察之旅考煉選眾真性是否堅托神訓的大教育恩政。
+  target_path: link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md
+  semantic_hint:
+  - title: 摩西娶古實女子的解經爭議
+    score: 0.486
+    type: 解經爭議
+  - title: 摩洛（Molech）身分之爭
+    score: 0.446
+    type: 解經爭議
+  - title: 致咒詛苦水儀式是否迷信之爭
+    score: 0.444
+    type: 解經爭議
+D_new_candidate: []
+E_skip: []
