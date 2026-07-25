@@ -1,0 +1,170 @@
+book: 民數記
+chapter: 15
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 進迦南地後的獻祭定例與神愛恩慈
+  suggested_type: 主題
+  evidence: 神在宣示曠野流浪的嚴厲懲罰與管教之後，立刻開啟『到了我所賜給你們居住的地』的心一獻祭定例，重申美地應許不因百姓暫時叛逆而徹底取消，揭示神終極的恩慈與得勝希望。
+  surfaces:
+  - phrase: 到了我所賜給你們居住的地
+  - phrase: 進去的那地
+  target_path: link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md
+  semantic_hint:
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.467
+    type: 背景
+  - title: 迦南地
+    score: 0.464
+    type: 地點
+  - title: 甘心樂意的奉獻
+    score: 0.463
+    type: 神學
+- name: 燔祭平安祭同獻的素祭與奠祭比例
+  suggested_type: 神學
+  evidence: 獻供物時不單獻火祭或和平的祭生，更須依綿羊羔、公綿羊、公牛而同獻指定升合比例的細麵與油調和之素祭及奠祭之酒，預表基督馨香完全的人性美德、聖靈充滿以及自我傾倒的生命獻身。
+  surfaces:
+  - phrase: 調和作素祭
+  - phrase: 作奠祭
+  - phrase: 奠祭的酒
+  - phrase: 馨香之祭
+  - phrase: 馨香的火祭
+  target_path: link_folder/神學/燔祭平安祭同獻的素祭與奠祭比例.md
+  semantic_hint:
+  - title: 平安祭
+    score: 0.557
+    type: 神學
+  - title: 燔祭
+    score: 0.547
+    type: 神學
+  - title: 平安祭（shelamim）
+    score: 0.52
+    type: 原文
+- name: 本地人與寄居者同歸一例的律法精神
+  suggested_type: 神學
+  evidence: 神再三向會眾重申本地以色列人與在眾人中寄居的外人，在神面前都歸同一法規與典章，凸顯恩典面前律法之平等，更預表福音向普世天下人開放以及恩約對世居者之包容性。
+  surfaces:
+  - phrase: 同居的外人都歸一例
+  - phrase: 一樣的條例
+  - phrase: 一樣的典章
+  target_path: link_folder/神學/本地人與寄居者同歸一例的律法精神.md
+  semantic_hint:
+  - title: 寄居的與本地人同歸一例
+    score: 0.483
+    type: 主題
+- name: 初熟的麥子磨麵作餅作為舉祭
+  suggested_type: 神學
+  evidence: 當民吃那地的糧食時，必須將初熟的麥子磨麵做餅如同舉禾場的舉祭垂直獻給神，藉此長保知恩恩懷，認知地的一切盈餘與平安豐裕全然皆出於施恩主權的榮耀拯救與賜福，且指涉基督為初熟之果。
+  surfaces:
+  - phrase: 初熟的麥子
+  - phrase: 做餅當舉祭奉獻
+  - phrase: 舉禾場的舉祭
+  target_path: link_folder/神學/初熟的麥子磨麵作餅作為舉祭.md
+  semantic_hint:
+  - title: 初熟（bikkurim）
+    score: 0.554
+    type: 原文
+  - title: 初熟果子
+    score: 0.486
+    type: 神學
+  - title: 素祭（minchah）
+    score: 0.401
+    type: 原文
+- name: 全會眾誤行過錯與大眾贖罪定例
+  suggested_type: 神學
+  evidence: 會眾中因集體無心忽略與認知落差致使不守命令犯大罪時，需由長老獻上一隻公牛犢作燔祭調素祭並公山羊作贖罪祭，凸顯對過咎之覺察不單單以除罪止盡，更要藉燔祭全心歸回神意欲的引領。
+  surfaces:
+  - phrase: 若有誤行，是會眾所不知道的
+  - phrase: 誤行
+  - phrase: 為以色列全會眾贖罪
+  - phrase: 必蒙赦免
+  target_path: link_folder/神學/全會眾誤行過錯與大眾贖罪定例.md
+  semantic_hint:
+  - title: 全會眾（kol ha-edah）
+    score: 0.493
+    type: 人物
+  - title: 誤犯（shagagah）
+    score: 0.446
+    type: 神學
+- name: 個人誤犯過錯與一歲母山羊贖罪祭
+  suggested_type: 神學
+  evidence: 任何人一旦因不知而單獨違逆了神的律例，獲之當日即需呈上一歲純潔母山羊行除罪儀禮，並依信仰靠祭司在神面前代求解贖而得享平安安息與真實在上帝庇衛下深切神聖憐恤與饒恕。
+  surfaces:
+  - phrase: 若有一個人誤犯了罪
+  - phrase: 一歲的母山羊作贖罪祭
+  - phrase: 為他贖罪
+  target_path: link_folder/神學/個人誤犯過錯與一歲母山羊贖罪祭.md
+  semantic_hint:
+  - title: 山羊
+    score: 0.499
+    type: 文化
+  - title: 誤犯（shagagah）
+    score: 0.495
+    type: 神學
+  - title: 贖愆祭（asham）
+    score: 0.452
+    type: 原文
+- name: 擅敢行事與褻瀆耶和華的剪除處分
+  suggested_type: 神學
+  evidence: 面對高傲宣明挑戰主權與恩命之明知故犯且狂妄違抗不服者，神宣布極度嚴肅判定—此等妄行等於破壞並侮慢主格，藐視命令與言語的大逆者必定需從神選民的榮耀之契中遭到懲絕除尽。
+  surfaces:
+  - phrase: 擅敢行事的
+  - phrase: 褻瀆了耶和華
+  - phrase: 必從民中剪除
+  - phrase: 藐視耶和華的言語
+  - phrase: 違背耶和華的命令
+  - phrase: 罪孽要歸到他身上
+  target_path: link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md
+  semantic_hint:
+  - title: 剪除（kareth）
+    score: 0.473
+    type: 原文
+  - title: 從民中剪除的含義
+    score: 0.434
+    type: 解經爭議
+  - title: 不潔淨被剪除預表拒絕恩典滅亡（來10：26-29）
+    score: 0.405
+    type: 互文
+- name: 曠野安息日撿柴事件與神明告處決
+  suggested_type: 事件
+  evidence: 記載以眾在野遇見一人於安息聖日為一己欲生火而蓄意收集柴草，領袖將之關監尋求聖諦指示，進而獲神明確宣示以石頭在營外治死的司法判決，為防護救贖安息免受藐視留下萬代借鏡與肅然警誡。
+  surfaces:
+  - phrase: 在安息日撿柴
+  - phrase: 撿柴
+  - phrase: 當怎樣辦他，還沒有指明
+  - phrase: 營外用石頭把他打死
+  - phrase: 用石頭打死他
+  target_path: link_folder/事件/曠野安息日撿柴事件與神明告處決.md
+  semantic_hint:
+  - title: 曠野飄流四十年
+    score: 0.412
+    type: 歷史
+- name: 衣服邊的繸子與藍細帶子
+  suggested_type: 文化
+  evidence: 神飭令所有會民在長袍衣緣角落縫製明顯整齊之繸子且加上極為刺眼警醒的蔚藍天朝色緞條，使生活步行衣飾成為流動警醒碑記，使人看見就立然想起與永生天上長遠相守並受天度恩約束約縛之本分為榮。
+  surfaces:
+  - phrase: 衣服邊上做繸子
+  - phrase: 底邊的繸子上
+  - phrase: 釘一根藍細帶子
+  - phrase: 佩帶這繸子
+  target_path: link_folder/文化/衣服邊的繸子與藍細帶子.md
+- name: 不隨從己心眼目行邪淫與成為聖潔
+  suggested_type: 神學
+  evidence: 人心中最危險之失腳在於偏憑自己自戀愚頑意志與眼相色誘迷戀亂闖致成背棄上神的屬靈偷食；配用警示飾紋正是使人在眼底回頭銘記耶和華訓喻神諭，掙開物欲自恣魔咒而成全分別為聖歸給施救造父。
+  surfaces:
+  - phrase: 不隨從自己的心意、眼目行邪淫
+  - phrase: 成為聖潔
+  - phrase: 歸與你們的神
+  target_path: link_folder/神學/不隨從己心眼目行邪淫與成為聖潔.md
+  semantic_hint:
+  - title: 你們要聖潔因為我是聖潔的
+    score: 0.438
+    type: 神學
+  - title: 聖潔生活
+    score: 0.432
+    type: 主題
+  - title: 神的聖潔
+    score: 0.432
+    type: 神學
+D_new_candidate: []
+E_skip: []
