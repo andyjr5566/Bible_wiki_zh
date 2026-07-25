@@ -1,46 +1,96 @@
 book: 民數記
 chapter: 9
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 日間雲彩、夜間雲中有火
   suggested_type: 神學
+  evidence: 從晚上到早晨，雲彩在帳幕上形狀如火，象徵神的同在與引導。
+  surfaces:
+  - phrase: 雲彩
+  - phrase: 火
   match_type: exact
   existing_title: 日間雲彩、夜間雲中有火
   existing_path: link_folder/神學/日間雲彩、夜間雲中有火.md
 - name: 雲彩引導行程
   suggested_type: 神學
+  evidence: 以色列人完全根據雲彩的收上與停住來決定起行或安營，全然順服神的指示。
+  surfaces:
+  - phrase: 起行
+  - phrase: 安營
+  - phrase: 住營
   match_type: exact
   existing_title: 雲彩引導行程
   existing_path: link_folder/神學/雲彩引導行程.md
-C_new_formal:
-- name: 補行逾越節
+B_needs_update:
+- name: 逾越節
   suggested_type: 歷史
-  target_path: link_folder/歷史/補行逾越節.md
-  semantic_hint:
-  - title: 逾越節
-    score: 0.522
-    type: 歷史
-  - title: 希西家守二月逾越節（代下三十）
-    score: 0.462
-    type: 互文
-  - title: 逾越（pasach）
-    score: 0.462
-    type: 原文
+  evidence: 正月十四日黃昏的時候，以色列人在西乃的曠野守逾越節，記念神的拯救。
+  match_type: exact
+  existing_title: 逾越節
+  existing_path: link_folder/歷史/逾越節.md
+- name: 西乃的曠野
+  suggested_type: 地點
+  evidence: 以色列人出埃及地以後，第二年正月，神在此吩咐摩西守逾越節。
+  match_type: exact
+  existing_title: 西乃的曠野
+  existing_path: link_folder/地點/西乃的曠野.md
 - name: 死屍不潔
   suggested_type: 神學
-  target_path: link_folder/神學/死屍不潔.md
-  semantic_hint:
-  - title: 不可挨近死屍（拿細耳人的潔淨）
-    score: 0.485
-    type: 主題
-  - title: 民19：11-13
-    score: 0.476
-    type: 互文
-  - title: 吃自死或被撕裂之物的潔淨條例
-    score: 0.413
-    type: 主題
+  evidence: 有人因接觸死屍而不潔淨，按禮儀規定不能在正月守逾越節。
+  match_type: exact
+  existing_title: 死屍不潔
+  existing_path: link_folder/神學/死屍不潔.md
+- name: 補行逾越節
+  suggested_type: 歷史
+  evidence: 神特別恩准因死屍不潔或在遠方行路的人，可以在二月十四日補守逾越節。
+  match_type: exact
+  existing_title: 補行逾越節
+  existing_path: link_folder/歷史/補行逾越節.md
 - name: 遠方行路
   suggested_type: 文化
-  target_path: link_folder/文化/遠方行路.md
+  evidence: 身在遠方而無法趕回參與正月逾越節的以色列人，被允許在二月補行。
+  match_type: exact
+  existing_title: 遠方行路
+  existing_path: link_folder/文化/遠方行路.md
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: 守逾越節時必須與羊羔同吃的食品，不可有酵。
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+- name: 苦菜
+  suggested_type: 原文
+  evidence: 守逾越節時必須與羊羔同吃，記念在埃及受奴役的痛苦。
+  match_type: exact
+  existing_title: 苦菜
+  existing_path: link_folder/原文/苦菜.md
+- name: 逾越節羔羊
+  suggested_type: 歷史
+  evidence: 逾越節獻的羊羔，一點不可留到早晨，且骨頭一根也不可折斷。
+  surfaces:
+  - phrase: 羊羔
+  match_type: exact
+  existing_title: 逾越節羔羊
+  existing_path: link_folder/歷史/逾越節羔羊.md
+- name: 剪除(kareth)
+  suggested_type: 原文
+  evidence: 若有人潔淨且未行路，卻推辭不守逾越節，那人必須從民中剪除，擔當自己的罪。
+  match_type: normalized
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+- name: 寄居的與本地人同歸一例
+  suggested_type: 主題
+  evidence: 外人若願意向耶和華守逾越節，其律例典章與本地人同歸一例。
+  surfaces:
+  - phrase: 寄居的
+  - phrase: 外人
+  - phrase: 寄居
+  match_type: exact
+  existing_title: 寄居的與本地人同歸一例
+  existing_path: link_folder/主題/寄居的與本地人同歸一例.md
+C_new_formal:
+- name: 法櫃的帳幕
+  suggested_type: 地點
+  evidence: 立起帳幕那日，雲彩遮蓋這帳幕，表示神的同在。
+  target_path: link_folder/地點/法櫃的帳幕.md
 D_new_candidate: []
 E_skip: []

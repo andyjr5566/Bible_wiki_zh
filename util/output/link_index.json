@@ -9936,6 +9936,16 @@
     "status": "formal",
     "aliases": []
   },
+  "何巴": {
+    "path": "link_folder/人物/何巴.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "何巴",
+    "status": "formal",
+    "aliases": [
+      "米甸人流珥的兒子何巴"
+    ]
+  },
   "便亞米": {
     "path": "link_folder/人物/便亞米.md",
     "type": "人物",
@@ -14767,6 +14777,16 @@
     "status": "formal",
     "aliases": []
   },
+  "巴蘭的曠野": {
+    "path": "link_folder/地點/巴蘭的曠野.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴蘭的曠野",
+    "status": "formal",
+    "aliases": [
+      "巴蘭曠野"
+    ]
+  },
   "希伯來人之地": {
     "path": "link_folder/地點/希伯來人之地.md",
     "type": "地點",
@@ -15043,6 +15063,18 @@
       "非利士地的道路",
       "Way of the Philistines",
       "Derech Eretz Plishtim"
+    ]
+  },
+  "法櫃的帳幕": {
+    "path": "link_folder/地點/法櫃的帳幕.md",
+    "type": "地點",
+    "secondary_types": [
+      "物品"
+    ],
+    "title": "法櫃的帳幕",
+    "status": "formal",
+    "aliases": [
+      "法櫃的帳棚"
     ]
   },
   "波提乏的家": {
@@ -16291,6 +16323,25 @@
     "status": "formal",
     "aliases": []
   },
+  "遠方行路": {
+    "path": "link_folder/文化/遠方行路.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "遠方行路",
+    "status": "formal",
+    "aliases": []
+  },
+  "銀號": {
+    "path": "link_folder/文化/銀號.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "銀號",
+    "status": "formal",
+    "aliases": [
+      "兩枝號",
+      "銀號筒"
+    ]
+  },
   "銀號形制（直筒喇叭口）": {
     "path": "link_folder/文化/銀號形制（直筒喇叭口）.md",
     "type": "文化",
@@ -16828,6 +16879,17 @@
       "拉結墓碑"
     ]
   },
+  "拔營起行": {
+    "path": "link_folder/歷史/拔營起行.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "拔營起行",
+    "status": "formal",
+    "aliases": [
+      "往前行",
+      "起行"
+    ]
+  },
   "掛在木頭上_懸屍示眾": {
     "path": "link_folder/歷史/掛在木頭上_懸屍示眾.md",
     "type": "歷史",
@@ -17215,6 +17277,14 @@
       "flies",
       "成群的蒼蠅之災"
     ]
+  },
+  "補行逾越節": {
+    "path": "link_folder/歷史/補行逾越節.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "補行逾越節",
+    "status": "formal",
+    "aliases": []
   },
   "迦南人與比利洗人": {
     "path": "link_folder/歷史/迦南人與比利洗人.md",
@@ -19662,6 +19732,14 @@
     "status": "formal",
     "aliases": []
   },
+  "死屍不潔": {
+    "path": "link_folder/神學/死屍不潔.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "死屍不潔",
+    "status": "formal",
+    "aliases": []
+  },
   "死的三層": {
     "path": "link_folder/神學/死的三層.md",
     "type": "神學",
@@ -20916,6 +20994,17 @@
     "title": "約書",
     "status": "formal",
     "aliases": []
+  },
+  "約櫃前行與停住的宣告": {
+    "path": "link_folder/神學/約櫃前行與停住的宣告.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "約櫃前行與停住的宣告",
+    "status": "formal",
+    "aliases": [
+      "摩西的宣告",
+      "約櫃往前行的禱告"
+    ]
   },
   "約瑟的夢（應驗）": {
     "path": "link_folder/神學/約瑟的夢（應驗）.md",
@@ -26372,6 +26461,9 @@
   "官長": {
     "alias_of": "以色列人的官長"
   },
+  "米甸人流珥的兒子何巴": {
+    "alias_of": "何巴"
+  },
   "Ben-Ammi": {
     "alias_of": "便亞米"
   },
@@ -27533,6 +27625,9 @@
   "Baal-zephon": {
     "alias_of": "巴力洗分"
   },
+  "巴蘭曠野": {
+    "alias_of": "巴蘭的曠野"
+  },
   "Moriah": {
     "alias_of": "摩利亞地"
   },
@@ -27583,6 +27678,9 @@
   },
   "Derech Eretz Plishtim": {
     "alias_of": "沿海大道（Via Maris）"
+  },
+  "法櫃的帳棚": {
+    "alias_of": "法櫃的帳幕"
   },
   "紅海": {
     "alias_of": "海（紅海）"
@@ -27965,6 +28063,12 @@
   "shrine prostitute": {
     "alias_of": "迦南廟妓風俗"
   },
+  "兩枝號": {
+    "alias_of": "銀號"
+  },
+  "銀號筒": {
+    "alias_of": "銀號"
+  },
   "frogs sacred in Egypt": {
     "alias_of": "青蛙為埃及聖物"
   },
@@ -28108,6 +28212,12 @@
   },
   "拉結墓碑": {
     "alias_of": "拉結之墓"
+  },
+  "往前行": {
+    "alias_of": "拔營起行"
+  },
+  "起行": {
+    "alias_of": "拔營起行"
   },
   "掛在木頭上/懸屍示眾": {
     "alias_of": "掛在木頭上_懸屍示眾"
@@ -29203,6 +29313,12 @@
   },
   "摩西在米甸的預備": {
     "alias_of": "米甸曠野對摩西的預備"
+  },
+  "摩西的宣告": {
+    "alias_of": "約櫃前行與停住的宣告"
+  },
+  "約櫃往前行的禱告": {
+    "alias_of": "約櫃前行與停住的宣告"
   },
   "約瑟的兩個夢": {
     "alias_of": "約瑟的夢（應驗）"
