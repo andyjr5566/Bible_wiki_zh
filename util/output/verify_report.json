@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 180,
+  "pending_scripture_refs_count": 179,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -500,11 +500,6 @@
       "entity": "14 歷代志下/第30章",
       "book": "歷代志下",
       "chapter": 30
-    },
-    {
-      "entity": "04 民數記/第11章",
-      "book": "民數記",
-      "chapter": 11
     },
     {
       "entity": "申命記",

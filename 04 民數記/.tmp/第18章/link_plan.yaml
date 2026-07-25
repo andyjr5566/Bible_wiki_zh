@@ -1,0 +1,85 @@
+book: 民數記
+chapter: 18
+A_use_directly: []
+B_needs_update: []
+C_new_formal:
+- name: 祭司與利未人聯合承擔干犯聖所與神職的重任
+  suggested_type: 神學
+  target_path: link_folder/神學/祭司與利未人聯合承擔干犯聖所與神職的重任.md
+  semantic_hint:
+  - title: 亞倫和他兒子（祭司）
+    score: 0.49
+    type: 人物
+  - title: 利未職分的尊嚴與越權追求祭司職分
+    score: 0.477
+    type: 神學
+  - title: 利未人受聖職討罪
+    score: 0.458
+    type: 事件
+- name: 上帝給予大祭司的特別賞賜與供職責任
+  suggested_type: 神學
+  target_path: link_folder/神學/上帝給予大祭司的特別賞賜與供職責任.md
+  semantic_hint:
+  - title: 亞倫和他兒子（祭司）
+    score: 0.475
+    type: 人物
+  - title: 受膏的祭司（mashiach kohen）
+    score: 0.463
+    type: 人物
+  - title: 至高神的祭司
+    score: 0.453
+    type: 神學
+- name: 舉祭與搖祭為受膏祭司子孫永得的鹽約與永至
+  suggested_type: 文化
+  target_path: link_folder/文化/舉祭與搖祭為受膏祭司子孫永得的鹽約與永至.md
+  semantic_hint:
+  - title: 搖祭（tenufah）
+    score: 0.54
+    type: 原文
+  - title: 永遠當祭司的職任
+    score: 0.528
+    type: 神學
+  - title: 立約的鹽
+    score: 0.512
+    type: 主題
+- name: 耶和華為祭司在死寂人境唯一的無地之分與永世產業
+  suggested_type: 神學
+  target_path: link_folder/神學/耶和華為祭司在死寂人境唯一的無地之分與永世產業.md
+  semantic_hint:
+  - title: 永遠當祭司的職任
+    score: 0.513
+    type: 神學
+  - title: 亞倫和他兒子（祭司）
+    score: 0.453
+    type: 人物
+  - title: 祭司不可為死人哀哭（居喪條例）
+    score: 0.434
+    type: 主題
+- name: 收受以色列全地出產十分之一作為會幕服役之代償賞回
+  suggested_type: 文化
+  target_path: link_folder/文化/收受以色列全地出產十分之一作為會幕服役之代償賞回.md
+  semantic_hint:
+  - title: 十分之一
+    score: 0.457
+    type: 原文
+  - title: 會幕（帳幕整體）
+    score: 0.442
+    type: 主題
+  - title: 埃及人給以色列人財物
+    score: 0.432
+    type: 歷史
+- name: 利未人自十分之一中向神獻呈至佳十分之一奉為至聖供物
+  suggested_type: 神學
+  target_path: link_folder/神學/利未人自十分之一中向神獻呈至佳十分之一奉為至聖供物.md
+  semantic_hint:
+  - title: 十分之一
+    score: 0.608
+    type: 原文
+  - title: 至聖的供物（聖與至聖之分）
+    score: 0.577
+    type: 主題
+  - title: 利未支派
+    score: 0.545
+    type: 人物
+D_new_candidate: []
+E_skip: []
