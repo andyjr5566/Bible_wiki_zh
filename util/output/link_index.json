@@ -9910,6 +9910,17 @@
     "status": "formal",
     "aliases": []
   },
+  "伊利達與米達": {
+    "path": "link_folder/人物/伊利達與米達.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "伊利達與米達",
+    "status": "formal",
+    "aliases": [
+      "伊利達",
+      "米達"
+    ]
+  },
   "但支派": {
     "path": "link_folder/人物/但支派.md",
     "type": "人物",
@@ -14253,6 +14264,14 @@
       "Timnah"
     ]
   },
+  "他備拉": {
+    "path": "link_folder/地點/他備拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "他備拉",
+    "status": "formal",
+    "aliases": []
+  },
   "以倘": {
     "path": "link_folder/地點/以倘.md",
     "type": "地點",
@@ -14517,6 +14536,16 @@
     "status": "formal",
     "aliases": []
   },
+  "哈洗錄": {
+    "path": "link_folder/地點/哈洗錄.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哈洗錄",
+    "status": "formal",
+    "aliases": [
+      "Hazeroth"
+    ]
+  },
   "哈腓拉": {
     "path": "link_folder/地點/哈腓拉.md",
     "type": "地點",
@@ -14608,6 +14637,18 @@
     "title": "基列山",
     "status": "formal",
     "aliases": []
+  },
+  "基博羅哈他瓦": {
+    "path": "link_folder/地點/基博羅哈他瓦.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "基博羅哈他瓦",
+    "status": "formal",
+    "aliases": [
+      "貪慾之塚"
+    ]
   },
   "基悉": {
     "path": "link_folder/地點/基悉.md",
@@ -19420,6 +19461,14 @@
     "aliases": [
       "神差遣摩西"
     ]
+  },
+  "摩西的靈命低谷與重擔求死": {
+    "path": "link_folder/神學/摩西的靈命低谷與重擔求死.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "摩西的靈命低谷與重擔求死",
+    "status": "formal",
+    "aliases": []
   },
   "摩西認同受苦的神子民": {
     "path": "link_folder/神學/摩西認同受苦的神子民.md",
@@ -26461,6 +26510,12 @@
   "官長": {
     "alias_of": "以色列人的官長"
   },
+  "伊利達": {
+    "alias_of": "伊利達與米達"
+  },
+  "米達": {
+    "alias_of": "伊利達與米達"
+  },
   "米甸人流珥的兒子何巴": {
     "alias_of": "何巴"
   },
@@ -27595,8 +27650,14 @@
   "糧倉城": {
     "alias_of": "各城（積貨城）"
   },
+  "Hazeroth": {
+    "alias_of": "哈洗錄"
+  },
   "Kiriath-arba": {
     "alias_of": "基列亞巴"
+  },
+  "貪慾之塚": {
+    "alias_of": "基博羅哈他瓦"
   },
   "Chezib": {
     "alias_of": "基悉"

@@ -1,0 +1,132 @@
+book: 民數記
+chapter: 11
+A_use_directly: []
+B_needs_update:
+- name: 閒雜人
+  suggested_type: 人物
+  evidence: 第4節：「他們中間的閒雜人大起貪慾的心；以色列人又哭嚎說：誰給我們肉吃呢？」此指當初隨同以色列人一道逃離埃及的外族搭車者或混雜族裔；他們缺乏真實聖約根基與對神的確信，遇難則心生懷舊，鼓動及蠱惑整體選民墜入貪慾沉淪中。
+  surfaces:
+  - phrase: 閒雜人
+  match_type: exact
+  existing_title: 閒雜人
+  existing_path: link_folder/人物/閒雜人.md
+- name: 閒雜人是誰（出12：38）
+  suggested_type: 解經爭議
+  evidence: 第4節明確指出曠野哭嚎、厭棄天降糧食的騷亂首要發動源為「閒雜人」。針對其具體族屬與靈性象徵，研經學者深入比對出埃及記第12章，闡釋其中混雜了未真正割禮信從埃及與混血移民，象徵教會與屬靈群體內部隱伏的混雜世界情慾因素。
+  match_type: exact
+  existing_title: 閒雜人是誰（出12：38）
+  existing_path: link_folder/解經爭議/閒雜人是誰（出12：38）.md
+- name: 嗎哪
+  suggested_type: 主題
+  evidence: 第6-9節：「現在我們的心血枯乾了，除了這嗎哪以外，在我們眼前並沒有別的。...這嗎哪彷彿芫荽子，又好像珍珠。」天降嗎哪為神持續供應聖民於乾曠沙漠保全性命的核心恩膏，代表長居神主權下之專一神聖維持和對天上靈糧的仰望。
+  surfaces:
+  - phrase: 嗎哪
+  match_type: exact
+  existing_title: 嗎哪
+  existing_path: link_folder/主題/嗎哪.md
+- name: 嗎哪的物理特性
+  suggested_type: 背景
+  evidence: 第7-9節詳盡紀實了嗎哪的天然構造與烹煮調配特色：「彷彿芫荽子，又好像珍珠。百姓周圍行走，把嗎哪收起來，或用磨石磨，或用臼搗，在鍋裡煮，又做成餅，滋味好像新油...」提供了關於恩雨食糧精細的外形、白如冰霜、晶瑩若真珠與芳味美甘的古籍印證。
+  match_type: exact
+  existing_title: 嗎哪的物理特性
+  existing_path: link_folder/背景/嗎哪的物理特性.md
+- name: 百姓厭棄嗎哪（約6：31-35）
+  suggested_type: 互文
+  evidence: 第6節記錄選民口出狂言：「現在我們的心血枯乾了，除了這嗎哪以外，在我們眼前並沒有別的。」此種貪鄙世俗腥香與輕看天養主食的靈性背叛，深刻遙指新約約翰福音第六章群眾僅尋獵壞死物慾與排拒耶穌為天上永生活命之糧的屬靈對稱。
+  match_type: exact
+  existing_title: 百姓厭棄嗎哪（約6：31-35）
+  existing_path: link_folder/互文/百姓厭棄嗎哪（約6：31-35）.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第16節：「耶和華對摩西說：你從以色列的長老中召集七十個人...」各支派依氏族長幼宗分所尊仰之元老與首長，在此轉化為具有國家管治共力之法定職位者。
+  surfaces:
+  - phrase: 以色列的長老
+  - phrase: 長老
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 七十長老制度起源
+  suggested_type: 歷史
+  evidence: 第16-17、24-25節載錄耶和華俯准解免摩西一身肩護的全族大擔，正式於會幕周圍創設召集七十位長老承接恩澤靈能的典示治理架構；這不僅為古以色列王邦中樞組織的關鍵起步，更常被推認是日後猶太最高聖會「公會（Sanhedrin）」精神與法制雛形的本源。
+  match_type: exact
+  existing_title: 七十長老制度起源
+  existing_path: link_folder/歷史/七十長老制度起源.md
+- name: 聖靈
+  suggested_type: 神學
+  evidence: 第17、25、29節申明耶和華親自「把降與他（摩西）身上的靈分給那七十個長老，靈停在他們身上的時候，他們就受感說話」，呈現出聖靈超越性、傳染式與施為性的賜命職責與大能作為。
+  surfaces:
+  - phrase: 靈
+  - phrase: 神的靈
+  match_type: exact
+  existing_title: 聖靈
+  existing_path: link_folder/神學/聖靈.md
+- name: 聖靈分賜預表五旬節（徒2：1-4）
+  suggested_type: 互文
+  evidence: 第25節神將單賦摩西的大靈擴向七十牧翁，暨第29節摩西深情宣說：「惟願耶和華的百姓都受感說話，願耶和華把他的靈降在他們身上！」此先知性偉大心願至真穿透歲月，精闢對照且預言了新約五旬節聖靈大澆灌全民皆作靈神住所的救世美殿。
+  match_type: exact
+  existing_title: 聖靈分賜預表五旬節（徒2：1-4）
+  existing_path: link_folder/互文/聖靈分賜預表五旬節（徒2：1-4）.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第28節：「摩西的助手，嫩的兒子約書亞，就是摩西所揀選的一個人，說：請我主摩西禁止他們。」年輕的約書亞基於守護摩西核心權柄與制度規條的赤心，向師表提出制裁干犯者的建言，反印出聖神大老超卓廣大的氣度與屬天視界。
+  surfaces:
+  - phrase: 約書亞
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 鵪鶉遷徙
+  suggested_type: 背景
+  evidence: 第31-32節記載海風颳動將盛量鵪鶉送降以色列圍營左右；歷史地理考察釋義，春申時期地中海與亞喀巴灣地區本有大宗飛鳥涉越遷徙之習；耶和華調動並急加壯大此種天道巨象，以應酬乃至制裁人慾求狂妄之慾血渴望。
+  match_type: exact
+  existing_title: 鵪鶉遷徙
+  existing_path: link_folder/背景/鵪鶉遷徙.md
+- name: 鵪鶉遮營
+  suggested_type: 事件
+  evidence: 第31-33節記載鵪鶉厚厚如雨落滿會眾家陣邊際，「一天的路程…高約兩肘」，百姓貪昧不眠收獵甚至鋪滿地皮；但當「肉在他們牙齒之間尚未嚼爛，耶和華的怒氣就向他們發作，用最重的災殃擊殺了他們。」展示出貪念肆心雖臨快足卻立即牽翻天威災禍的反諷結局。
+  surfaces:
+  - phrase: 鵪鶉
+  match_type: exact
+  existing_title: 鵪鶉遮營
+  existing_path: link_folder/事件/鵪鶉遮營.md
+C_new_formal:
+- name: 他備拉
+  suggested_type: 地點
+  evidence: 第1-3節：「眾民發怨言，他們的惡語達到耶和華的耳中...耶和華的火便在他們中間焚燒...人就叫那地方為他備拉，因為耶和華的火在他們中間焚燒。」他備拉字義為「焚燒」，為以色列人在曠野初次集體抱怨受神猛烈審判之址，彰顯神的公義聖潔容不得褻瀆威榮的怨言。
+  surfaces:
+  - phrase: 他備拉
+  target_path: link_folder/地點/他備拉.md
+- name: 摩西的靈命低谷與重擔求死
+  suggested_type: 神學
+  evidence: 第10-15節記載摩西因百姓痛哭無度，感同重任壓頂如肩負滿街嬰崽難支，極度絕望之際懇請急呼：「你若這樣待我，我若在你眼前蒙恩，求你立時將我殺了，不叫我見自己的苦楚。」顯明無私領袖在肉軀與壓力之至端奔走時深廣的情緒磨耗與人性倚賴祈求。
+  target_path: link_folder/神學/摩西的靈命低谷與重擔求死.md
+  semantic_hint:
+  - title: 摩西
+    score: 0.513
+    type: 人物
+  - title: 摩西為百姓代求（金牛犢）
+    score: 0.47
+    type: 互文
+  - title: 擔子
+    score: 0.466
+    type: 神學
+- name: 伊利達與米達
+  suggested_type: 人物
+  evidence: 第26-27節：「但有兩個人留在營裡，一個名叫伊利達，一個名叫米達。他們本在那些被錄的人中...靈停在他們身上，他們就在營裡受感說話。」這對並未即刻赴往會幕壇場卻仍無減享有真神灌施說話權益的兩老，見證神恩無限、跨越凡人組織地域隔礙與場域鎖錮的絕對自主。
+  surfaces:
+  - phrase: 伊利達
+  - phrase: 米達
+  target_path: link_folder/人物/伊利達與米達.md
+- name: 基博羅哈他瓦
+  suggested_type: 地點
+  evidence: 第34節：「人就叫那地方為基博羅哈他瓦，因為他們在那裡葬埋那起貪慾的人。」名字語源原義是「貪慾之塚」或「埋慾深冢」，為此場神明賞賜狂歡驟轉作送命地獄場景的慘定紀念館。
+  surfaces:
+  - phrase: 基博羅哈他瓦
+  target_path: link_folder/地點/基博羅哈他瓦.md
+- name: 哈洗錄
+  suggested_type: 地點
+  evidence: 第35節：「百姓從基博羅哈他瓦起行，到哈洗錄，就住在哈洗錄。」為西乃大漠向東或北出駕的隨序長安綠野處，為經歷焚營與埋骨悲劫過後，剩者重拾修整暫寧的歷史宿所。
+  surfaces:
+  - phrase: 哈洗錄
+  target_path: link_folder/地點/哈洗錄.md
+D_new_candidate: []
+E_skip: []
