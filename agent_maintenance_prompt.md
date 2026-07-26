@@ -4,6 +4,78 @@
 `.tmp/第x章/` 的內容（M3 條目、M6 本章整理、候選、B 類累積），要怎麼把修改正確地
 落到渲染後的 `第x章.md` 與 `link_folder/**.md`。
 
+## 你的角色：最後內容把關者
+
+你維護的章節是**其他 agent 先產出的**。你的任務是**勘誤與補充，不是重跑流程**——
+舊版對的部分保留、錯的才改，不為改而改。三件工作內容，每章都做：
+
+### 1. 擴充 link_candidates（依 rawdata）
+
+rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 payload 必填欄
+（accumulations、sources）。經文裡的關鍵詞沒連結 → 補 surface。常見坑：
+
+- **斜線候選名**建不出 `entry_content/<name>.yaml`，整鏈靜默失效。
+- **surface 衝突**（兩候選搶同詞）要判 ambiguous；原文候選拿經文本義詞、主題候選拿詮釋詞。
+- **type 必須對得上既有資料夾**（動手前先 Glob 確認）；對不上會 fork 重複條目。
+- 和合本女性主詞用「他」不用「她」——surface 寫「她」會對不上經文（「未連上任何節」先查這個）。
+
+### 2. 勘誤所有 link 與條目內容
+
+拿舊版每個事實性斷言去 rawdata 對，高風險四類優先查：**數字、全稱詞、來源誤植、
+對照類敘述**。要抓的錯型：杜撰引述（掛在某家名下但該家沒說）、被來源明確反駁的說法、
+被壓扁的爭議（還原成點名可查的各家並陳）、整段經文缺漏、異章污染（候選從別章照抄）。
+
+- 改候選名／type 後**務必回頭同步 `chapter_content.yaml` 裡的手寫連結**：resolver 認裸名、
+  Obsidian 不認——這是「兩閘門全過卻斷鏈」的老坑。改條目名走 `rename_markdown.py`（見情境 B）。
+- 找不到出處 → 刪；講反／講過頭 → 改正並在 commit 訊息或 relation 註明勘誤依據，不默默改。
+
+**「勘誤所有 link」包含逐個條目的 md 本體，不只本章整理**——這是最常被跳過的一步：
+
+- 逐個打開本章每個相關條目（`link_folder/**/*.md`），讀 **定義／按書卷累積（本章那筆
+  summary＋relation）／來源依據**，對回 rawdata。章整理裡抓到的錯，同型幾乎一定也潛伏在
+  條目裡（創1 實例：「把復造說整片掛給 CT/GT」在 organization 與 4 個條目都有；
+  「神說出現 8 次」的數字錯在條目）。修完章整理，回頭用同一批判準掃過所有條目。
+- **結構完整性 ≠ 內容正確**：`check_existing_links --missing` 零流失、type 對得上資料夾、
+  surface 連得上節、候選全 `A_use_directly`——這些**只驗結構**，全過也不代表定義／累積的
+  文字沒有杜撰、誤植、壓平、數字錯。內容勘誤要另外逐條讀 md 對 rawdata，不能靠閘門代勞。
+- 改法：本章 only、未被他章累積的條目 → 情境 E 直接改 md（render 不重生 A 類條目，
+  編輯持久）；已被他章累積 → 定義勘誤直接改 md、累積 summary／relation 走 link_updates。
+- 收尾**機械複掃**：改完用 grep 掃全庫同型字串（例：被壓平的來源名 `CT/GT`）確認本卷本章
+  清零，但要排除別卷別章的合法用法（來源依據列雙檔、兩家都確實這麼說）。
+
+**別只維護既有候選——要問「rawdata 有沒有值得跨章累積、卻沒有條目的概念」**：勘誤既有的
+同時，把 candidate/entry 覆蓋率對 rawdata 重新推導一遍（B/C/D 為空≠已完備，只代表沒人動過）。
+高來源密度卻沒有節點的主題（創1 實例：舊約背景註釋整章鋪陳「與古代近東創世神話的對比」
+——非爭戰創造、宇宙功用觀、人為受造中心非眾神奴隸、天體去神化——卻無對應條目）就補建
+（見工作內容 1 與情境 C 的新增候選＋payload）。
+
+### 3. 勘誤本章整理（M6）與條目（M3）的內容與格式
+
+**寫任何內容前，先讀對應的生產 prompt 當規格書**（勘誤補寫的內容必須同樣合格）：
+
+- **M6 本章整理**：`util/run_chapter.py` 的 `chapter_content_step`（約 1135–1225 行，
+  `你是聖經研經資料整理員…chapter_content payload`）。
+- **M3 條目內容**：同檔 `_batch_entry_prompt`（約 341–369 行）。
+
+兩份 prompt 的硬規格摘要（細節以 prompt 為準）：
+
+- **結構**：`### 標題（vX-Y）` 小節數達下限；**散文敘述是主幹（≥ 總字數一半）**，
+  表格／callout 只是補充，不可反客為主。
+- **內容**：直接引原話「」並標對哪一家（CT／GT／KC／BH 或 GT 內各家），不張冠李戴、
+  某家沒說就別替他生一個；矛盾並陳不壓平；英文來源譯成繁中不貼原文；只出自經文與來源。
+- **圖表優先**：材料是流程／路線／對照／階層／關係／時間軸的形狀 → 對應 mermaid／表格；
+  但圖表不折抵散文份量（字數與小節下限先由散文滿足）。
+- **格式硬規**：`organization` 用 YAML `|` 字面區塊；mermaid 節點 `A["標籤"]`、圖內不放
+  `[[ ]]`；表格內不放帶別名連結（`\|` 斷鏈）；`knowledge_nodes` 寫裸名或 `名稱|小標題`、
+  **不自己包 `[[ ]]`**（雙重括號 bug）；wiki-link 白名單＝本章 A/B/C 條目，清單外用純文字；
+  禁 `![[]]`／HTML／`#標籤`／參考資料清單。
+- **M3 額外**：type 是分類不是詞性；音譯與希伯來字母必須在來源實際出現過（護欄會逐字驗、
+  查無出處退回）；互文條目 name 用「標題（經文）」；accumulations 是物件陣列含
+  book／chapter／summary／relation，至少含本章一筆。
+
+改完之後照下面「對照表」跑對應指令落地。**流程加固**：同一個錯出現第二次才做成護欄
+（機械可證→error、啟發式→manual_review），且加護欄前先懂流程、要全庫實測 0 誤報。
+
 ## 三條前提原則
 
 1. **Source of truth 是 `.tmp/第x章/` 的 yaml，不是渲染出來的 markdown。**
@@ -72,6 +144,30 @@
    Obsidian 不認——這是「兩閘門全過卻斷鏈」的老坑）。
 6. 候選有實質增刪時，照 `agent_start_prompt.md` 步驟2 重跑
    `python util/semantic_lookup.py --candidates 【書名】 X` 更新近鄰報告。
+
+**新增一個全新條目（rawdata 有值得累積、卻沒節點的概念）——完整流程與兩個坑：**
+
+1. `link_candidates.yaml` 加候選（`name`／`type`／`evidence`）。**主題節點可不給 surface**
+   （像「六日復造的結構」「三位一體…」），只在 knowledge_nodes 與 organization 連結、不動
+   verse_links——這是最低風險做法；要連經文特定詞才給 surface。
+2. `prompts 【書名】 X --confirm-stale` → resolve 把新候選分類為 `C_new_formal`。
+3. 手寫 `entry_content/<name>.yaml`（欄位照 `_ENTRY_EXAMPLE`：name／type／status／definition／
+   development／accumulations〔含本章一筆〕／related_entries〔限本章條目〕／sources；
+   原文類 name 用「中文（音譯）」且音譯要在來源出現過）。**不必再重跑 prompts**——白名單
+   驗證（`_reconstruct_allowed_links`）直接讀 `entry_content/*.yaml`，payload 在就認得。
+4. 重寫 `chapter_content.yaml`：加 knowledge_node（歸對分組）＋在 organization 首次提及處
+   加 `[[新條目名|行文詞]]`。
+5. **坑一（會刪掉你剛寫的 payload）**：若該章之前 `run` 過，`pipeline_state.json` 存的是
+   舊 baseline；`run` 開頭的 `_invalidate_stale` 會判 link_candidates 變了 → 連鎖刪除
+   link_plan／entry_content／chapter_content。**對策：`run` 前先刪 `pipeline_state.json`**
+   （它只是作廢比對基線，`run` 結尾會重建）——刪掉後「無基線＝視為乾淨」，run 直接用磁碟
+   現有產物 render，不會毀掉手寫 payload。先 `check`（唯讀、安全）確認 payload 合格，再刪
+   state、`run`。
+6. **坑二（新增條目後索引沒跟上）**：`run` 完務必依序
+   `python util/build_link_index.py` → `python util/build_embedding_index.py`（見收尾驗證；
+   embedding 需 local-4000 proxy 的 `/v1/embeddings`，會靜默失效，跑完看有無「已嵌入 N/N」）。
+7. 閘門：`check_existing_links --missing`（條目數應+新增數）、`validate_knowledge_base`、
+   `verify_links 【書名】`。
 
 ### D. 改 B 類累積（link_updates.yaml）
 
