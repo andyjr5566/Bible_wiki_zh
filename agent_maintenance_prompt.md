@@ -202,6 +202,58 @@ python util/verify_links.py 【書名】
 - 大改（等同重做該章）→ 照 `agent_start_prompt.md` 步驟7–8 全套閘門。
 
 閘門吃**書卷名不是路徑**（`verify_links.py 民數記`）；別用 `grep -c` 判斷通過。
+`check_accumulation_orphans.py` 要帶書卷名（或 `--all`）；`check_existing_links.py` 帶
+`第x章.md` 路徑＋`--missing`（回報「N 個既有條目都有本章資料」＝零流失）。
+
+## 實戰要點（開場先讀，少走冤枉路）
+
+這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**四來源全讀 → 機械掃描（下 A）
+→ 逐條目讀＋高風險四類勘誤 → 覆蓋率重推（下 B）→ 驗 M6 → 閘門 → 分兩 commit（勘誤／覆蓋）**。
+
+### A. 每章開場的機械掃描——查無出處的希伯來字母／音譯（work item 2 最有效的第一刀）
+
+**護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` 的 payload，從不掃已渲染的 `link_folder/**.md`。**
+舊版→新版遷移的舊條目被判 A 類原樣保留、沒有 entry_content、護欄一次都沒驗過——遷移前塞的
+希伯來字母全數潛伏至今。創2 實測：39 條目中 **14 條**定義帶希伯來字母（安息 שבת／亞當 אדם／
+五條地名等），去 niqqud 後比對**整個 raw_data 語料**確認一個都不在任何來源（拼寫多正確，仍照
+鐵律拔除）。
+
+- 掃法：Python 抽 `[֐-׿]+`、去 niqqud（U+0591–U+05C7）後在整個 `raw_data/*.txt`
+  子字串比對；查無出處＝拔希伯來字母，**保留來源實際出現的拉丁音譯**（KC/BH/GT 給的
+  Pishon/Havilah/shabbat/bara/nephesh/ezer/kenegdo… 要留；查無出處的 avad/shamar/qadesh/
+  tov va-ra/perat 連拉丁一起拔、改用來源給的中文字義）。
+- 拉丁音譯要用**詞界** grep：`grep -oiE "\b(token)\b" raw_data/*.txt`——子字串比對會把 `perat`
+  誤配 cooperation/temperate 而假放行。音譯可能出處在別章（Chavah 在 BH 創3、qadesh 只在
+  出12），要對「該條目實際累積的章」判斷，不是只看本章。
+- **坑：`grep -oP '[\x{0590}-\x{05FF}]'` 在本環境 Git Bash 回傳假 0，一定要用 Python 掃**。
+  可複用腳本在 scratchpad：`heb_scan.py`（列哪些條目有希伯來）／`heb_source_check.py`（每條
+  Hebrew 對全語料查出處＋列該條目累積哪些章）／`translit_scan.py`（抽 `*斜體*` 拉丁音譯查語料）。
+
+### B. 覆蓋率重推——把「高來源密度卻沒節點」的主題補成既有條目的新章累積（B 類）
+
+情境 C 講的是「新增全新條目」；更常見的是**既有條目要吃本章的新累積**（例：ch1 建的
+「與古代近東創世神話的對比」，ch2 的《舊約背景註釋》又有造人／安息／生命樹的近東對比高密度
+材料）。既有條目＋新章累積，resolve 會判 **B_needs_update**（不是 A）；M6 白名單含 A＋B，可在
+本章整理連結。完整命令序列與兩個坑：
+
+1. `link_candidates.yaml` 加候選（`name`／`type`／`evidence`；主題／背景節點**不給 surface**，
+   風險最低）。
+2. **坑一：`resolve_step` 若 `link_plan.yaml` 已存在就直接回傳、不重算**（run_chapter.py:268）
+   ——只刪 `pipeline_state.json` 不夠，新候選不會進 plan。要**同時刪 `link_plan.yaml`**。
+3. **坑二：保住手寫的 M6**——`_invalidate_stale` 見 link_candidates 變了會連鎖刪
+   chapter_content。對策同情境 C 步驟5：**先刪 `pipeline_state.json`（無基線＝視為乾淨、不作廢）**，
+   再刪 `link_plan.yaml`，再 `prompts`。prompts 會重生 link_plan（新候選落 B_needs_update）、
+   但因無基線不動 chapter_content。動前先確認 `.tmp` 已 commit（那就是備份）。
+4. 改 `chapter_content.yaml`：加 knowledge_node（歸對分組）＋在 organization 首次提及處加
+   `[[條目名｜行文詞]]`（連結目標要在 A/B 白名單內，check 會驗）。
+5. 改 `link_updates.yaml`：加該條目一筆 `title/path/summary/relation`（summary/relation 逐句
+   對回四來源）。
+6. `check` → `run`（render 出 `第x章.md`）→ `python util/link_updates.py apply 【書名】 x --dry-run`
+   確認**只動這一個新條目檔**（其餘冪等）→ 去 `--dry-run` 實跑 → 再 apply 一次必須 0 變更。
+7. 閘門：`check_existing_links 第x章.md --missing`（條目數應 +1）、`validate_knowledge_base`、
+   `verify_links 【書名】`、`check_accumulation_orphans 【書名】`。
+8. **正常現象**：`run` 會把手寫的 organization `|` 字面區塊 re-dump 成單引號折行式——渲染輸出
+   相同、內容不變，不用回改。
 
 ## 提交
 
