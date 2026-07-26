@@ -293,7 +293,13 @@ A_use_directly:
   match_type: exact
   existing_title: 啟示錄22章生命樹恢復
   existing_path: link_folder/互文/啟示錄22章生命樹恢復.md
-B_needs_update: []
+B_needs_update:
+- name: 與古代近東創世神話的對比
+  suggested_type: 背景
+  evidence: 17、20、24節；GT《舊約背景註釋》指出第3章延續近東對比——勞苦上《埃努瑪埃利什》以人被造為奴隸替神做厭倦的工為造人宗旨，創世記卻指人本受造管理萬物、勞苦是墮落結果（3:17）；起名上《埃努瑪埃利什》以天地未有名字起筆再一一命名（3:20）；把守生命樹的基路伯可與新亞述印章守護聖樹的複合生物參照（3:24）
+  match_type: exact
+  existing_title: 與古代近東創世神話的對比
+  existing_path: link_folder/背景/與古代近東創世神話的對比.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
