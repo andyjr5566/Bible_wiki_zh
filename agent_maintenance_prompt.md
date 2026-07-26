@@ -255,6 +255,21 @@ python util/verify_links.py 【書名】
 8. **正常現象**：`run` 會把手寫的 organization `|` 字面區塊 re-dump 成單引號折行式——渲染輸出
    相同、內容不變，不用回改。
 
+### C. 重跑 render 前先驗「chapter_content 節點 vs 已渲染 md 節點」是否失步（遷移遺留 bug）
+
+`render_knowledge_nodes` **只讀 chapter_content.yaml 的 knowledge_nodes**，不做累積反查。遷移遺留
+的坑：不少章的 `第x章.md` 節點清單比 yaml 多出幾個節點——這些節點是「已被本章累積（entry 有
+`accumulation:書卷:x`）、且已在 md 連回」的合法條目，但 yaml 漏列。**現況閘門會過**（md 有回連），
+可是**一旦為別的原因重跑 render，這些節點會連同 md 回連一起被刪 → 立刻變成等量的累積孤兒**（創3
+實測 4 個：彌賽亞／亞當作舊造元首／耶和華神的名字／神的命令與自由意志）。
+
+- 重跑 render 前先比對：`grep '^- \[\[' 第x章.md`（本章知識節點區）與 chapter_content.yaml 的
+  knowledge_nodes；md 有、yaml 無的，逐一確認該 entry 是否真有本章累積（合法）——是就**補進
+  yaml 對應分組**（位置對回 md）再 render，別讓它們掉。
+- 這些節點常「有累積、卻不在 link_candidates／link_updates」（累積是更早的流程或手寫留下的）；
+  補進 knowledge_nodes 即可（節點清單不吃白名單，不必硬做成候選），link_updates.py apply 不會動
+  它們（apply 只碰 link_updates.yaml 內的條目）。
+
 ## 提交
 
 - 一次維護一 commit，訊息寫清楚改了什麼、依據哪個來源；staging 用明確檔名
