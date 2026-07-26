@@ -189,6 +189,24 @@ A_use_directly:
   existing_title: 創世記9章洪水後准吃肉
   existing_path: link_folder/互文/創世記9章洪水後准吃肉.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 與古代近東創世神話的對比
+  suggested_type: 背景
+  evidence: 1-31節；GT《舊約背景註釋》逐段對比創1與埃努瑪埃利什等近東神話（非爭戰創造、宇宙功用觀、人為受造中心非眾神奴隸、天體與海獸去神化）
+  target_path: link_folder/背景/與古代近東創世神話的對比.md
+  semantic_hint:
+  - title: 古代近東洪水故事中的放鳥情節
+    score: 0.54
+    type: 背景
+  - title: 古代近東法典比較
+    score: 0.518
+    type: 背景
+  - title: 古代近東偶像崇拜
+    score: 0.487
+    type: 背景
+- name: 穹蒼（raqia）
+  suggested_type: 原文
+  evidence: 6-8節；BH 指原文 raqia（空氣／穹蒼），GT 丁道爾、雷氏、舊約背景註釋論三層宇宙觀與諸水之間的分隔
+  target_path: link_folder/原文/穹蒼（raqia）.md
 D_new_candidate: []
 E_skip: []
