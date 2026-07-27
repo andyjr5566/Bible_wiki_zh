@@ -4,7 +4,7 @@ candidates:
   - name: 約瑟
     type: 人物
     evidence: 全章；在監中伺候二臣、為他們解夢、求酒政記念他
-  - name: 酒政_酒政長
+  - name: 酒政
     type: 人物
     evidence: 1-2、5、9、13、20-21、23節；掌王的飲料，夢見葡萄枝，三日官復原職，卻忘了約瑟
     surfaces:
@@ -12,7 +12,7 @@ candidates:
   - name: 膳長
     type: 人物
     evidence: 1-2、5、16、20、22節；主理王的膳食，夢見三筐白餅，三日被掛木頭上
-  - name: 護衛長_波提乏
+  - name: 護衛長波提乏
     type: 人物
     evidence: 3-4節；把二臣交給約瑟伺候
     surfaces:
@@ -23,6 +23,8 @@ candidates:
   - name: 埃及
     type: 地點
     evidence: 1節；埃及王的酒政和膳長得罪其主
+    surfaces:
+      - {phrase: 埃及, verses: [1, 5]}
   - name: 監_監牢_坑
     type: 地點
     evidence: 3、14-15節；護衛長府內的監，約瑟被囚之地（15節原文另作「坑、地牢」）

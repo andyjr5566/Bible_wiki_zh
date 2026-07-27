@@ -2,11 +2,8 @@ book: 創世記
 chapter: 40
 links:
 - verse: 1
-  phrase: 埃及
-  target: 埃及
-- verse: 1
-  phrase: 酒政
-  target: 酒政_酒政長
+  phrase: 埃及王的酒政
+  target: 酒政
 - verse: 1
   phrase: 膳長
   target: 膳長
@@ -15,13 +12,13 @@ links:
   target: 法老
 - verse: 2
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 2
   phrase: 膳長
   target: 膳長
 - verse: 3
   phrase: 護衛長
-  target: 護衛長_波提乏
+  target: 護衛長波提乏
 - verse: 3
   phrase: 監
   target: 監_監牢_坑
@@ -30,16 +27,13 @@ links:
   target: 約瑟
 - verse: 4
   phrase: 護衛長
-  target: 護衛長_波提乏
+  target: 護衛長波提乏
 - verse: 4
   phrase: 約瑟
   target: 約瑟
 - verse: 5
-  phrase: 埃及
-  target: 埃及
-- verse: 5
-  phrase: 酒政
-  target: 酒政_酒政長
+  phrase: 埃及王的酒政
+  target: 酒政
 - verse: 5
   phrase: 膳長
   target: 膳長
@@ -57,7 +51,7 @@ links:
   target: 解夢出於神
 - verse: 9
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 9
   phrase: 約瑟
   target: 約瑟
@@ -96,7 +90,7 @@ links:
   target: 法老
 - verse: 13
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 14
   phrase: 法老
   target: 法老
@@ -156,13 +150,13 @@ links:
   target: 生日筵席
 - verse: 20
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 20
   phrase: 膳長
   target: 膳長
 - verse: 21
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 21
   phrase: 法老
   target: 法老
@@ -174,7 +168,7 @@ links:
   target: 約瑟
 - verse: 23
   phrase: 酒政
-  target: 酒政_酒政長
+  target: 酒政
 - verse: 23
   phrase: 約瑟
   target: 約瑟

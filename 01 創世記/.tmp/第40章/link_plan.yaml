@@ -7,7 +7,7 @@ A_use_directly:
   match_type: exact
   existing_title: 約瑟
   existing_path: link_folder/人物/約瑟.md
-- name: 酒政_酒政長
+- name: 酒政
   suggested_type: 人物
   evidence: 1-2、5、9、13、20-21、23節；掌王的飲料，夢見葡萄枝，三日官復原職，卻忘了約瑟
   surfaces:
@@ -22,15 +22,15 @@ A_use_directly:
     - 21
     - 23
   match_type: exact
-  existing_title: 酒政_酒政長
-  existing_path: link_folder/人物/酒政_酒政長.md
+  existing_title: 酒政
+  existing_path: link_folder/人物/酒政.md
 - name: 膳長
   suggested_type: 人物
   evidence: 1-2、5、16、20、22節；主理王的膳食，夢見三筐白餅，三日被掛木頭上
   match_type: exact
   existing_title: 膳長
   existing_path: link_folder/人物/膳長.md
-- name: 護衛長_波提乏
+- name: 護衛長波提乏
   suggested_type: 人物
   evidence: 3-4節；把二臣交給約瑟伺候
   surfaces:
@@ -39,8 +39,8 @@ A_use_directly:
     - 3
     - 4
   match_type: exact
-  existing_title: 護衛長_波提乏
-  existing_path: link_folder/人物/護衛長_波提乏.md
+  existing_title: 護衛長波提乏
+  existing_path: link_folder/人物/護衛長波提乏.md
 - name: 法老
   suggested_type: 人物
   evidence: 2、7、11、13-14、17、19-21節；埃及王，生日設筵，成就二夢
@@ -50,6 +50,11 @@ A_use_directly:
 - name: 埃及
   suggested_type: 地點
   evidence: 1節；埃及王的酒政和膳長得罪其主
+  surfaces:
+  - phrase: 埃及
+    verses:
+    - 1
+    - 5
   match_type: exact
   existing_title: 埃及
   existing_path: link_folder/地點/埃及.md
