@@ -269,6 +269,16 @@ python util/verify_links.py 【書名】
 - 這些節點常「有累積、卻不在 link_candidates／link_updates」（累積是更早的流程或手寫留下的）；
   補進 knowledge_nodes 即可（節點清單不吃白名單，不必硬做成候選），link_updates.py apply 不會動
   它們（apply 只碰 link_updates.yaml 內的條目）。
+- **注意**：補進 knowledge_nodes ≠ 可以在 organization 連 `[[ ]]`。節點清單不吃白名單，
+  organization 吃。這類節點在散文裡要用純文字（創12 實測：補了 7 個節點，其中 4 個一寫成
+  `[[ ]]` 就被 check 擋）。
+- **規模是可以量出來的，別憑印象**：創世記全卷掃描（2026-07-27）13-50章有 **28 章失步、
+  共漏列 105 個節點**，最嚴重的創14 漏 15 個（麥基洗德的豫表、什一奉獻的起源、耶路撒冷、
+  死海……）、創17 漏 8、創34 漏 8。已一次補平並 commit。**新書卷開工時先跑一次全卷掃描**，
+  比逐章才發現省事得多。scratchpad 兩支可複用腳本：`node_desync.py <書卷資料夾> [起] [迄]`
+  只報告；`sync_nodes.py <書卷資料夾> <起> <迄> [--apply]` 依 md 現況把節點與分組寫回 yaml
+  （只改 knowledge_nodes 區塊，organization 的折行風格不動；先 dry-run 看有沒有
+  「yaml 有而 md 無」的反向差異，有的話要手動判斷再決定）。
 
 ### D. 舊章的 chapter_content.yaml 可能藏著「check 會擋」的白名單外連結
 
