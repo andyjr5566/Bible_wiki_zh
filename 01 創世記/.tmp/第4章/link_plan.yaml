@@ -242,6 +242,34 @@ A_use_directly:
   existing_title: 猶大書該隱的道路
   existing_path: link_folder/互文/猶大書該隱的道路.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 古代近東血仇制度
+  suggested_type: 背景
+  evidence: 14-15節該隱懼怕「凡遇見我的必殺我」；GT《舊約背景註釋》〈血仇〉專段論家族宿怨、以眼還眼原則、維護家族聲譽的親屬責任；BH 把神立記號連到民三十五章逃城制度
+  target_path: link_folder/背景/古代近東血仇制度.md
+  semantic_hint:
+  - title: 古代近東奴隸制度
+    score: 0.474
+    type: 背景
+  - title: 古代近東婚姻習俗
+    score: 0.425
+    type: 歷史
+  - title: 古代近東法典
+    score: 0.421
+    type: 背景
+- name: 神不偏待人與看不中該隱
+  suggested_type: 解經爭議
+  evidence: 5節「看不中該隱和他的供物」；GT 賈斯樂郝威《聖經難解經文詮釋手冊》｛命題12｝專門處理此節與羅二11、申十17「神不偏待人」的張力
+  target_path: link_folder/解經爭議/神不偏待人與看不中該隱.md
+  semantic_hint:
+  - title: 神看顧失寵者
+    score: 0.459
+    type: 神學
+  - title: 神的護理
+    score: 0.434
+    type: 神學
+  - title: 神尋找罪人
+    score: 0.432
+    type: 神學
 D_new_candidate: []
 E_skip: []
