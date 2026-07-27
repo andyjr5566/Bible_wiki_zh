@@ -1,21 +1,19 @@
-book: 創世記
-chapter: 13
-updates:
-- title: 亞伯拉罕之約
-  path: link_folder/神學/亞伯拉罕之約.md
-  summary: 羅得離開後，神吩咐亞伯蘭向四方觀看，應許把所見之地賜給他和後裔直到永遠，並使後裔如地上塵沙不可數算。
-  relation: 第13章擴展第12章的土地與大國應許，又命亞伯蘭縱橫走遍此地；當時他仍以寄居者身分支搭帳棚，尚未實際統治全地。
-  sources: [經文, 創世記第十三章註解, 創世記第十三章拾穗, Kingcomments, BibleHub Study]
-  source_files: [raw_scripture/創世記/第13章.txt, raw_data/ccbiblestudy_CT_genesis_13.txt, raw_data/ccbiblestudy_GT_genesis_13.txt, raw_data/kingcomments_genesis_13.txt, raw_data/biblehub_study_genesis_13.txt]
-- title: 帳棚與祭壇
-  path: link_folder/主題/帳棚與祭壇.md
-  summary: 亞伯蘭回到伯特利與艾之間從前支搭帳棚、築壇之處，再次求告耶和華；後來搬到希伯崙幔利的橡樹旁居住並築壇。
-  relation: 本章以帳棚標示亞伯蘭持續遷徙寄居，以祭壇和求告標示他對神應許的敬拜回應；羅得則漸漸移近所多瑪，未記築壇。
-  sources: [經文, 創世記第十三章註解, 創世記第十三章拾穗, Kingcomments, BibleHub Study]
-  source_files: [raw_scripture/創世記/第13章.txt, raw_data/ccbiblestudy_CT_genesis_13.txt, raw_data/ccbiblestudy_GT_genesis_13.txt, raw_data/kingcomments_genesis_13.txt, raw_data/biblehub_study_genesis_13.txt]
-- title: 羅得的世俗選擇與後果
-  path: link_folder/主題/羅得的世俗選擇與後果.md
-  summary: 羅得看見約但河平原水源豐富，選擇全平原向東遷移，住在平原城邑並漸漸把帳棚挪到所多瑪。
-  relation: 敘事立即補充所多瑪人罪大惡極，後續第14、19章又記羅得被擄與城市受審判；來源據此評價他的選擇只顧眼前利益。
-  sources: [經文, 創世記第十三章註解, 創世記第十三章拾穗, Kingcomments, BibleHub Study]
-  source_files: [raw_scripture/創世記/第13章.txt, raw_data/ccbiblestudy_CT_genesis_13.txt, raw_data/ccbiblestudy_GT_genesis_13.txt, raw_data/kingcomments_genesis_13.txt, raw_data/biblehub_study_genesis_13.txt]
+"book": "創世記"
+"chapter": !!int "13"
+"updates":
+- "title": "比利洗人"
+  "path": "link_folder/人物/比利洗人.md"
+  "summary": "第7節記「當時，迦南人與比利洗人在那地居住」，緊接著才說亞伯蘭的牧人和羅得的牧人相爭。GT《串珠聖經註釋》註明比利洗人是「住在迦南地的一個部落」；GT《創世記雷氏研讀本》指這族在後續經文中一再出現（申七1-4；士一1-7、三5-6；王上九20-21；拉九1），並與創三十四30 相參。"
+  "relation": "比利洗人在本章不是行動者，而是見證人。經文把他們與迦南人同時擺進畫面，作用是提醒讀者：亞伯蘭與羅得並非獨占這塊地，兩家牧人爭水草時，當地既有的族群正在旁邊看著。KC 與中文註釋據此提出的倫理閱讀——寄居者的內鬨會在外邦人面前損害見證——正是建立在第7節這個並置上。"
+- "title": "求告耶和華的名"
+  "path": "link_folder/主題/求告耶和華的名.md"
+  "summary": "第4節記亞伯蘭回到伯特利與艾之間「他起先築壇的地方」，在那裡又求告耶和華的名。這是創世記中此語繼創四26、十二8 之後再次出現，而且明說是回到同一座壇的舊址。GT《聖經精讀本──創世記註解》把它讀作亞伯蘭痛心悔改自己在埃及的行為，以讚美和感恩之心獻上禱告、決意重新開始（詩十八49；五十15）。"
+  "relation": "本章讓這個主題多了一層「恢復」的意思。前面幾次求告是初到之地的立約回應，這一次卻是偏離埃及之後回頭補上的——經文用第3、4兩節反覆指明地點是「從前」「起先」的舊址，把恢復寫成一個具體的地理動作，而不是心情。KC 由此說，我們若偏離而蒙主指明，就必須回到最後與主同在的那個地方。"
+- "title": "瑣珥"
+  "path": "link_folder/地點/瑣珥.md"
+  "summary": "第10節記羅得舉目看見約但河的全平原「直到瑣珥，都是滋潤的」，瑣珥在此是平原水源豐沛之地的南端界標。GT《創世記雷氏研讀本》指瑣珥是位於死海南端的小城（另參創十四8；十九20-23）；GT《啟導本聖經創世記註釋》指出瑣珥的名就是創十四2 的比拉。"
+  "relation": "瑣珥在本章只是視野的邊界，還沒有故事；但這個界標把羅得所看見的範圍量了出來——他一眼望盡的，正是日後所多瑪、蛾摩拉受審判的整片平原。同一個地名到創十九章再出現時，身分已經完全翻轉：從羅得所貪看的富饒盡頭，變成他逃命時懇求容他躲進去的小城。"
+- "title": "蛾摩拉"
+  "path": "link_folder/地點/蛾摩拉.md"
+  "summary": "第10節在描寫約但河平原的滋潤時特別加註「那地在耶和華未滅所多瑪、蛾摩拉以先」。蛾摩拉在本章不是事件現場，而是一個時間標記，說明羅得所看見的肥沃是毀滅以前的景況。GT 丁良才《創世紀註釋》即據此說：可見所多瑪、蛾摩拉未滅以前那地是極肥沃的。"
+  "relation": "這句插話是本章敘事上最尖銳的一手：作者把結局先透露給讀者，再讓羅得在不知情中做選擇。蛾摩拉與所多瑪並列出現，使第10節的「滋潤」與第13節的「罪大惡極」形成同一片土地的兩面——羅得眼中的富饒，讀者眼中已是一片被判定要毀滅的風景。"

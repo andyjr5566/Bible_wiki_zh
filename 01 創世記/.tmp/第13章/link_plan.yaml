@@ -74,6 +74,16 @@ A_use_directly:
   match_type: exact
   existing_title: 骨肉原文作弟兄
   existing_path: link_folder/原文/骨肉原文作弟兄.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 7節「當時，迦南人與比利洗人在那地居住」；GT 背景註釋指其為當地已定居的族群，亞伯蘭與羅得並非獨占土地
+  surfaces:
+  - phrase: 迦南人
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
 - name: 約但河
   suggested_type: 地點
   evidence: 10-11節全平原直到瑣珥，水源充足
@@ -148,7 +158,79 @@ A_use_directly:
   match_type: exact
   existing_title: 信心與世俗的對比
   existing_path: link_folder/主題/信心與世俗的對比.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 7節與迦南人並列住在那地；GT《串珠聖經註釋》「住在迦南地的一個部落」；《創世記雷氏研讀本》列出其在申七1-4、士一1-7、王上九20-21等處的後續出現
+  surfaces:
+  - phrase: 比利洗人
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 求告耶和華的名
+  suggested_type: 主題
+  evidence: 4節亞伯蘭在起先築壇之處重新求告耶和華的名；GT《聖經精讀本》讀作痛心悔改埃及行為、以讚美感恩重新開始
+  surfaces:
+  - phrase: 求告耶和華的名
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 求告耶和華的名
+  existing_path: link_folder/主題/求告耶和華的名.md
+- name: 瑣珥
+  suggested_type: 地點
+  evidence: 10節「直到瑣珥」為平原範圍的南端界標；GT《創世記雷氏研讀本》指其為死海南端小城；《啟導本》指瑣珥即十四2的比拉
+  surfaces:
+  - phrase: 瑣珥
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 瑣珥
+  existing_path: link_folder/地點/瑣珥.md
+- name: 蛾摩拉
+  suggested_type: 地點
+  evidence: 10節與所多瑪並列，經文明說平原的滋潤是「在耶和華未滅所多瑪、蛾摩拉以先」的景況
+  surfaces:
+  - phrase: 蛾摩拉
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 蛾摩拉
+  existing_path: link_folder/地點/蛾摩拉.md
+C_new_formal:
+- name: 艾
+  suggested_type: 地點
+  evidence: 3節「到了伯特利和艾的中間」；BH 指艾字義為「廢墟」，與伯特利「神的家」形成對照，並是日後約書亞征迦南的重要地點
+  surfaces:
+  - phrase: 伯特利和艾的中間
+    verses:
+    - 3
+  target_path: link_folder/地點/艾.md
+- name: 面東定向的左右方位
+  suggested_type: 背景
+  evidence: 9節「你向左，我就向右」；GT 丁良才《創世紀註釋》說明以色列人按面向日出定方向，東為前、西為後、南為右、北為左，故「向左」即向北、「向右」即向南
+  surfaces:
+  - phrase: 你向左，我就向右
+    verses:
+    - 9
+  target_path: link_folder/背景/面東定向的左右方位.md
+- name: 往東遷移
+  suggested_type: 主題
+  evidence: 11節羅得往東遷移；BH 指創世記中「往東」常與離開神的同在相連；GT 背景註釋指約但河為迦南東界，羅得遷平原城邑等於離開迦南地
+  surfaces:
+  - phrase: 往東遷移
+    verses:
+    - 11
+  target_path: link_folder/主題/往東遷移.md
+- name: 走遍全地與土地所有權
+  suggested_type: 背景
+  evidence: 17節「你起來，縱橫走遍這地」；BH 指走遍土地是古代近東取得所有權的象徵行為（書一3）；GT《創世記雷氏研讀本》指18節「搬了帳棚」直譯為一直遷移帳棚，展示對應許地的所有權
+  surfaces:
+  - phrase: 縱橫走遍這地
+    verses:
+    - 17
+  target_path: link_folder/背景/走遍全地與土地所有權.md
 D_new_candidate: []
 E_skip: []

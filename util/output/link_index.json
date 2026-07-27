@@ -1217,6 +1217,14 @@
       "大祭司贖罪禮"
     ]
   },
+  "往東遷移": {
+    "path": "link_folder/主題/往東遷移.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "往東遷移",
+    "status": "formal",
+    "aliases": []
+  },
   "律法與公義": {
     "path": "link_folder/主題/律法與公義.md",
     "type": "主題",
@@ -15646,6 +15654,14 @@
       "幔子內"
     ]
   },
+  "艾": {
+    "path": "link_folder/地點/艾.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "艾",
+    "status": "formal",
+    "aliases": []
+  },
   "蘭塞": {
     "path": "link_folder/地點/蘭塞.md",
     "type": "地點",
@@ -23565,6 +23581,14 @@
     "status": "formal",
     "aliases": []
   },
+  "走遍全地與土地所有權": {
+    "path": "link_folder/背景/走遍全地與土地所有權.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "走遍全地與土地所有權",
+    "status": "formal",
+    "aliases": []
+  },
   "近東泥版跋語格式": {
     "path": "link_folder/背景/近東泥版跋語格式.md",
     "type": "背景",
@@ -23600,6 +23624,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "金鐲",
+    "status": "formal",
+    "aliases": []
+  },
+  "面東定向的左右方位": {
+    "path": "link_folder/背景/面東定向的左右方位.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "面東定向的左右方位",
     "status": "formal",
     "aliases": []
   },
