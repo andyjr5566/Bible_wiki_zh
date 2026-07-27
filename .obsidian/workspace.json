@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8b30c7334bbdd58a",
+        "id": "4b3a0391fa6cc67b",
         "type": "tabs",
         "children": [
           {
-            "id": "827c09d1823685c3",
+            "id": "d0b3f11024b8a66d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04 民數記/第14章.md",
+                "file": "01 創世記/第3章.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第14章"
+              "title": "第3章"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04 民數記/第14章.md",
+                "file": "01 創世記/第3章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第14章 的大綱"
+              "title": "第3章 的大綱"
             }
           }
         ],
@@ -180,47 +180,49 @@
       "daily-notes:開啟今天的每日筆記": false,
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
-      "bases:建立新的 base": false
+      "bases:建立新的 base": false,
+      "chinese-converter:简繁转换": false
     }
   },
-  "active": "827c09d1823685c3",
+  "active": "d0b3f11024b8a66d",
   "lastOpenFiles": [
-    "04 民數記/第15章.md",
-    "link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md",
-    "link_folder/文化/衣服邊的繸子與藍細帶子.md",
-    "link_folder/神學/燔祭平安祭同獻的素祭與奠祭比例.md",
-    "link_folder/神學/本地人與寄居者同歸一例的律法精神.md",
-    "link_folder/事件/曠野安息日撿柴事件與神明告處決.md",
-    "link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md",
-    "link_folder/神學/初熟的麥子磨麵作餅作為舉祭.md",
-    "link_folder/神學/全會眾誤行過錯與大眾贖罪定例.md",
-    "link_folder/神學/個人誤犯過錯與一歲母山羊贖罪祭.md",
-    "link_folder/神學/不隨從己心眼目行邪淫與成為聖潔.md",
-    "04 民數記/第13章.md",
-    "04 民數記/第14章.md",
-    "link_folder/歷史/迦南大敗直到何珥瑪.md",
-    "link_folder/互文/試探神十次.md",
-    "link_folder/主題/耶和華的榮光與會幕的及時顯現.md",
-    "link_folder/解經爭議/神公義追討與禍延子孫的釋經探討.md",
-    "link_folder/歷史/曠野飄流四十年.md",
-    "link_folder/神學/摩西代求與神的豐盛慈愛.md",
-    "link_folder/神學/專心跟從主與另一個心志.md",
-    "link_folder/事件/報惡信之人的瘟疫與存活者.md",
-    "link_folder/事件/假意悔改與冒死擅自作戰.md",
-    "link_folder/神學/仇敵是我們的食物.md",
-    "04 民數記/第12章.md",
-    "link_folder/互文/摩西在神全家盡忠（民12：7）.md",
-    "link_folder/人物/米利暗.md",
-    "link_plan_dump.txt",
-    "util/__pycache__/run_chapter_manual.cpython-311.pyc",
-    "run_chap2.txt",
-    "run_chap.txt",
-    "inv.txt",
-    "whitelist.txt",
-    "chapter7_sample.txt",
-    "agent_start_prompt.md.tmp.39012.a5aa46aa4cdd",
-    "util/run_chapter_manual.py",
-    "link_folder/原文/燔祭（olah）.md.tmp.20908.b7991f63f6c0",
+    "appendix/website/創世記/起初_Masterpiece.html",
+    "appendix/website/創世記/起初glm.html",
+    "appendix/website/創世記/起初_sunnet.html",
+    "appendix/website/創世記/index.html",
+    "appendix/website/創世記/assets/readme.md",
+    "appendix/website/創世記/assets/particles.js",
+    "appendix/website/創世記/assets/svgs.js",
+    "appendix/website/創世記/assets/audio.js",
+    "appendix/website/創世記/assets/style.css",
+    "appendix/website/創世記/assets",
+    "appendix/website/創世記/genesis.html",
+    "agent_maintenance_prompt.md.tmp.20696.7239cc3463d3",
+    "01 創世記/全書目錄及綱要.md",
+    "01 創世記/第1章.md",
+    "01 創世記/第16章.md",
+    "01 創世記/第9章.md",
+    "創世記9章洪水後準喫肉.md",
+    "01 創世記/第2章.md",
+    "link_folder/互文/約翰福音19章肋旁血和水.md",
+    "01 創世記/第3章.md",
+    "link_folder/背景/與古代近東創世神話的對比.md",
+    "link_folder/原文/穹蒼（raqia）.md",
+    "01 創世記/第4章.md",
+    "link_folder/神學/創造（從無到有）.md",
+    "專案流程說明.md",
+    "appendix/website/創世記/未命名.canvas",
+    "util/output/audits/full_audit_138.md",
+    "04 民數記/第21章.md",
+    "link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md",
+    "link_folder/事件/比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌.md",
+    "link_folder/神學/摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治.md",
+    "link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md",
+    "link_folder/地點/以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯.md",
+    "link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md",
+    "04 民數記/第18章.md",
+    "04 民數記/第20章.md",
+    "link_folder/神學/米利巴水之地顯神至聖與禁止摩西進加南之地威名.md",
     "Pasted image 20260718214611.png",
     "Pasted image 20260718214549.png",
     "appendix/fhl_maps/images/208_208_王下表八.jpg",

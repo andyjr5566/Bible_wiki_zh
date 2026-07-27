@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>太初 · 創世紀史詩</title>
+<meta name="description" content="從太初的黑暗到光，從宇宙到伊甸園，從亞當夏娃到該隱亞伯塞特——一個以光與暗為語言的創世紀捲動史詩。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-display: 'Noto Serif TC', serif;
+  --font-body: 'Noto Sans TC', sans-serif;
+  --ease-epic: cubic-bezier(.16, .84, .44, 1);
+  --parchment: #EDE3D0;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-snap-type: y proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #4a4438 transparent;
+}
+
+body {
+  margin: 0;
+  background: #05060B;
+  color: var(--parchment);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+canvas#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 1.4s ease;
+  opacity: 1;
+}
+
+/* ---------- chrome: progress / brand / nav rail ---------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 255, 255, .06);
+  z-index: 50;
+}
+.progress .fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #F4D58D, #E8896B);
+}
+
+.brand {
+  position: fixed;
+  top: 20px;
+  left: 22px;
+  z-index: 40;
+  font-family: var(--font-display);
+  font-size: .72rem;
+  letter-spacing: .4em;
+  opacity: .5;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.rail {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.rail button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(237, 227, 208, .22);
+  border: 1px solid rgba(237, 227, 208, .4);
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition: background .3s, box-shadow .3s, transform .3s;
+}
+.rail button::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  opacity: 0;
+  transition: opacity .25s;
+  background: rgba(5, 6, 11, .88);
+  padding: 5px 11px;
+  border-radius: 3px;
+  pointer-events: none;
+  font-family: var(--font-body);
+}
+.rail button:hover, .rail button:focus-visible { transform: scale(1.3); }
+.rail button:hover::after, .rail button:focus-visible::after { opacity: 1; }
+.rail button.active {
+  background: #F4D58D;
+  border-color: #F4D58D;
+  box-shadow: 0 0 8px 2px rgba(244, 213, 141, .65);
+}
+.rail button:focus-visible {
+  outline: 2px solid var(--parchment);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .rail, .brand { display: none; }
+}
+
+/* ---------- scene base & palettes ---------- */
+main { position: relative; z-index: 1; }
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 110px 22px 90px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene1  { --accent: #8d8d8d; --accent-bright: #e0e0e0; }
+.scene2  { --accent: #ffe082; --accent-bright: #fff8e1; }
+.scene3  { --accent: #80deea; --accent-bright: #e0f7fa; }
+.scene4  { --accent: #a5d6a7; --accent-bright: #e8f5e9; }
+.scene5  { --accent: #66bb6a; --accent-bright: #c8e6c9; }
+.scene6  { --accent: #ffca28; --accent-bright: #fff9c4; }
+.scene7  { --accent: #4dd0e1; --accent-bright: #e0f7fa; }
+.scene8  { --accent: #ffb74d; --accent-bright: #ffe0b2; }
+.scene9  { --accent: #ffcc80; --accent-bright: #fff3e0; }
+.scene10 { --accent: #81c784; --accent-bright: #f1f8e9; }
+.scene11 { --accent: #f48fb1; --accent-bright: #fce4ec; }
+.scene12 { --accent: #aed581; --accent-bright: #f1f8e9; }
+.scene13 { --accent: #e57373; --accent-bright: #ffebee; }
+.scene14 { --accent: #ff8a65; --accent-bright: #fbe9e7; }
+.scene15 { --accent: #b0bec5; --accent-bright: #eceff1; }
+.scene16 { --accent: #bcaaa4; --accent-bright: #efebe9; }
+.scene17 { --accent: #ffe082; --accent-bright: #fff8e1; }
+
+.tag {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .66rem;
+  letter-spacing: .32em;
+  padding: .42em 1.05em;
+  border: 1px solid currentColor;
+  color: var(--accent, var(--parchment));
+  opacity: 0;
+  border-radius: 2px;
+  animation: tagFade .8s ease .15s forwards;
+}
+
+.stage {
+  position: relative;
+  width: min(92vw, 760px);
+  height: clamp(220px, 38vh, 420px);
+  margin-bottom: 1.5rem;
+  color: var(--accent, var(--parchment));
+}
+
+.text { max-width: 640px; position: relative; }
+
+.narration {
+  font-size: .94rem;
+  letter-spacing: .05em;
+  opacity: 0;
+  color: var(--accent, var(--parchment));
+  margin: 0 0 .8rem;
+  transform: translateY(14px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.in-view .narration { opacity: .72; transform: translateY(0); }
+
+.verse {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.6vw, 2rem);
+  line-height: 1.85;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1.1s ease .15s, transform 1.1s ease .15s;
+  min-height: 1.6em;
+}
+.in-view .verse { opacity: 1; transform: translateY(0); }
+
+.detail {
+  font-size: .84rem;
+  line-height: 1.9;
+  opacity: 0;
+  max-width: 34ch;
+  margin: 1rem auto 0;
+  color: var(--accent, var(--parchment));
+  transform: translateY(10px);
+  transition: opacity 1s ease .6s, transform 1s ease .6s;
+}
+.in-view .detail { opacity: .62; transform: translateY(0); }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: .68rem;
+  letter-spacing: .32em;
+  opacity: .4;
+  animation: scrollCue 2.4s ease-in-out infinite;
+}
+
+/* ---------- 神說 ignition block ---------- */
+.god-said {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  letter-spacing: .32em;
+  opacity: .85;
+  margin: 0 0 .55rem;
+  min-height: 1.6em;
+}
+.command {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+  margin: 0 0 .5rem;
+  min-height: 1.4em;
+}
+.fulfilled {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.55rem, 3.8vw, 2.6rem);
+  margin: .3rem 0 .8rem;
+  opacity: 0;
+  transform: scale(.85);
+  text-shadow: 0 0 26px currentColor;
+  color: var(--accent-bright, #FFF6DE);
+}
+.ignite .fulfilled { animation: snap .65s var(--ease-epic) forwards; }
+
+.flash {
+  position: absolute;
+  inset: -45%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-bright, #FFF6DE) 0%, rgba(255,255,255,.4) 30%, transparent 68%);
+  opacity: 0;
+  pointer-events: none;
+}
+.ignite .flash { animation: flashPulse 1s ease-out forwards; }
+.scene.soft .flash { background: radial-gradient(circle, var(--accent-bright, #FFF6DE) 0%, transparent 62%); }
+.scene.soft.ignite .flash { animation: flashPulse 1.5s ease-out forwards; }
+
+/* ---------- particle / figure system ---------- */
+.figure-wrap { position: absolute; }
+.p-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 8px 2px currentColor;
+  color: var(--particle-color, var(--parchment));
+  background: var(--particle-color, var(--parchment));
+  animation-name: driftIn, twinkle;
+  animation-duration: .9s, var(--tw, 3s);
+  animation-timing-function: var(--ease-epic), ease-in-out;
+  animation-delay: var(--delay, 0s), var(--twd, 0s);
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, none;
+  animation-play-state: paused, paused;
+  transform: translate(var(--dx, 0), var(--dy, 0)) scale(.3);
+}
+.in-view .p-dot { animation-play-state: running, running; }
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-bright, #fff), var(--accent, #ccc) 60%, transparent 78%);
+  box-shadow: 0 0 10px 2px currentColor;
+  color: var(--accent, #ccc);
+  opacity: 0;
+  animation-name: hop, growIn;
+  animation-duration: 2.4s, .7s;
+  animation-timing-function: ease-in-out, var(--ease-epic);
+  animation-delay: 0s, var(--delay, 0s);
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: none, forwards;
+  animation-play-state: paused, paused;
+}
+.in-view .orb { animation-play-state: running, running; }
+
+/* ---------- fx: burst (Day 1) ---------- */
+.core {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 26%; aspect-ratio: 1/1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(.4);
+  background: radial-gradient(circle, var(--accent-bright, #fff), var(--accent, #ccc) 55%, transparent 75%);
+  box-shadow: 0 0 60px 20px var(--accent, #ccc);
+  opacity: 0;
+  transition: opacity 1.1s ease, transform 1.1s var(--ease-epic);
+}
+.in-view .core { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+.rays {
+  position: absolute; inset: 0;
+  background: conic-gradient(from 0deg, transparent 0deg, var(--accent, #ccc) 8deg, transparent 16deg, transparent 60deg, var(--accent, #ccc) 68deg, transparent 76deg, transparent 140deg, var(--accent, #ccc) 148deg, transparent 156deg, transparent 220deg, var(--accent, #ccc) 228deg, transparent 236deg, transparent 300deg, var(--accent, #ccc) 308deg, transparent 316deg);
+  opacity: 0; mix-blend-mode: screen;
+  animation: spin 30s linear infinite; animation-play-state: paused;
+  transition: opacity 1s ease;
+}
+.in-view .rays { opacity: .32; animation-play-state: running; }
+
+/* ---------- fx: sky split (Day 2) ---------- */
+.sky-top, .sky-bottom {
+  position: absolute; left: 0; right: 0; height: 52%;
+  transition: transform 1.4s var(--ease-epic);
+}
+.sky-top { top: 0; background: linear-gradient(180deg, #05070d, #0a1a24); transform: translateY(-3%); }
+.sky-bottom { bottom: 0; background: linear-gradient(180deg, #0d3140, #123b33); transform: translateY(3%); }
+.in-view .sky-top { transform: translateY(-10%); }
+.in-view .sky-bottom { transform: translateY(10%); }
+
+.horizon-glow {
+  position: absolute; left: 8%; right: 8%; top: 50%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-bright, #fff), transparent);
+  transform: translateY(-50%) scaleX(0); opacity: 0;
+  transition: transform 1.2s .4s var(--ease-epic), opacity .8s .4s;
+}
+.in-view .horizon-glow { transform: translateY(-50%) scaleX(1); opacity: .9; }
+
+/* ---------- fx: land / sea (Day 3a) ---------- */
+.water { position: absolute; left: 0; right: 0; bottom: 0; height: 70%; background: linear-gradient(180deg, #0d3140, #1a5245); }
+.land {
+  position: absolute; left: -6%; right: -6%; bottom: 0; height: 40%;
+  background: linear-gradient(180deg, #3a5230, #22331b);
+  clip-path: polygon(0% 60%, 10% 40%, 25% 55%, 40% 30%, 55% 50%, 70% 25%, 85% 45%, 100% 35%, 100% 100%, 0% 100%);
+  transform: translateY(65%);
+  transition: transform 1.6s var(--ease-epic);
+}
+.in-view .land { transform: translateY(0); }
+
+/* ---------- fx: plants / trees / Eden ---------- */
+.tree { position: absolute; bottom: 6%; }
+.trunk {
+  position: absolute; bottom: 0; left: 50%; width: 8px; height: 0;
+  background: linear-gradient(180deg, #5b3d23, #3a2716);
+  transform: translateX(-50%);
+  transition: height 1s var(--ease-epic) .2s;
+}
+.in-view .trunk { height: 38%; }
+
+.canopy {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent-bright, #7cb342), var(--accent, #2e7d32) 70%, #1b5e20);
+  transform: scale(0);
+  transition: transform .8s var(--ease-epic);
+}
+.in-view .canopy { transform: scale(1); }
+
+.sprout {
+  position: absolute; bottom: 0; width: 4px; height: 0;
+  background: var(--accent, #81c784); border-radius: 2px 2px 0 0;
+  transition: height .8s var(--ease-epic);
+}
+.in-view .sprout { height: 35px; }
+
+/* ---------- fx: sun & moon ---------- */
+.sun {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, #fff7d6 0%, #ffd54f 50%, #ff8f00 80%, transparent 100%);
+  box-shadow: 0 0 60px 15px rgba(255, 213, 79, .6);
+  opacity: 0; transform: scale(.5);
+  transition: opacity 1.2s, transform 1.2s var(--ease-epic);
+}
+.in-view .sun { opacity: 1; transform: scale(1); }
+
+.moon {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e0e0e0 60%, #b0bec5 100%);
+  box-shadow: 0 0 35px 8px rgba(255, 255, 255, .5);
+  opacity: 0; transform: scale(.5);
+  transition: opacity 1.2s .3s, transform 1.2s .3s var(--ease-epic);
+}
+.in-view .moon { opacity: 1; transform: scale(1); }
+
+/* ---------- fx: sea life & birds ---------- */
+.fish {
+  position: absolute; width: 14px; height: 6px; background: currentColor;
+  border-radius: 50% 50% 0 50%; opacity: 0;
+  animation: fishSwim linear infinite;
+}
+.bird {
+  position: absolute; width: 12px; height: 8px;
+  border-top: 2px solid currentColor; border-right: 2px solid currentColor;
+  transform: rotate(-45deg); opacity: 0;
+  animation: birdFly linear infinite;
+}
+.in-view .fish, .in-view .bird { opacity: .8; }
+
+@keyframes fishSwim {
+  0% { transform: translateX(-20px) translateY(0); }
+  50% { transform: translateX(min(80vw, 700px)) translateY(-15px); }
+  100% { transform: translateX(min(95vw, 800px)) translateY(0); }
+}
+@keyframes birdFly {
+  0% { transform: translateX(-20px) translateY(0) rotate(-45deg); }
+  50% { transform: translateX(min(80vw, 700px)) translateY(-25px) rotate(-35deg); }
+  100% { transform: translateX(min(95vw, 800px)) translateY(0) rotate(-45deg); }
+}
+
+/* ---------- fx: breath / river / serpent / fruit / crack / exile / altars / beam ---------- */
+.breath {
+  position: absolute; top: 15%; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 80px; border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-bright, #fff), transparent 70%);
+  opacity: 0; animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { opacity: .1; transform: translateX(-50%) scale(.8); }
+  50% { opacity: .8; transform: translateX(-50%) scale(1.3); }
+}
+
+.river { position: absolute; bottom: 10%; width: 100%; height: 60px; color: var(--accent, #4dd0e1); }
+.river-svg, .snake-svg, .path-svg { width: 100%; height: 100%; }
+
+.snake {
+  position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+  width: 260px; height: 70px; color: var(--accent, #81c784); opacity: 0;
+  transition: opacity 1s;
+}
+.in-view .snake { opacity: .85; }
+
+.fruit-glow {
+  position: absolute; top: 22%; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #ff5252; box-shadow: 0 0 25px 8px #ff5252;
+  opacity: 0; transition: opacity 1.2s .5s;
+}
+.in-view .fruit-glow { opacity: .9; }
+
+.fruit {
+  position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%) scale(0);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff5252, #b71c1c);
+  box-shadow: 0 0 30px #ff1744; transition: transform 1s var(--ease-epic);
+}
+.in-view .fruit { transform: translate(-50%, -50%) scale(1); }
+
+.crack {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(255, 23, 68, .25) 100%);
+  opacity: 0; transition: opacity 1.5s;
+}
+.in-view .crack { opacity: 1; }
+
+.pillar {
+  position: absolute; bottom: 0; width: 24px; height: 0;
+  background: linear-gradient(180deg, #424242, #1b1b1b);
+  transition: height 1.2s var(--ease-epic);
+}
+.in-view .pillar { height: 75%; }
+
+.lintel {
+  position: absolute; top: 25%; height: 20px; background: #333;
+  opacity: 0; transition: opacity 1s .8s;
+}
+.in-view .lintel { opacity: 1; }
+
+.sword {
+  position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%) scaleY(0);
+  width: 4px; height: 160px; background: linear-gradient(180deg, #ffffff, #ff1744);
+  box-shadow: 0 0 30px 6px #ff1744; transition: transform 1s 1s var(--ease-epic);
+}
+.in-view .sword { transform: translate(-50%, -50%) scaleY(1); }
+
+.altar {
+  position: absolute; bottom: 0; width: 60px; height: 0;
+  background: #3e2723; border-top: 4px solid #8d6e63;
+  transition: height .8s var(--ease-epic);
+}
+.in-view .altar { height: 45px; }
+
+.smoke-particle {
+  position: absolute; border-radius: 50%; background: rgba(239, 108, 0, .4);
+  filter: blur(4px); opacity: 0; animation: smokeRise 3s infinite;
+}
+.smoke-particle.dark { background: rgba(66, 66, 66, .6); }
+@keyframes smokeRise {
+  0% { transform: translateY(0) scale(.5); opacity: 0; }
+  50% { opacity: .8; }
+  100% { transform: translateY(-120px) scale(2.2); opacity: 0; }
+}
+
+.grief {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle, transparent 40%, rgba(183, 28, 28, .15) 100%);
+  opacity: 0; transition: opacity 1.5s;
+}
+.in-view .grief { opacity: 1; }
+
+.path-wrap { position: absolute; bottom: 10%; width: 100%; height: 100px; color: var(--accent, #8d6e63); }
+
+.beam {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 100%;
+  background: linear-gradient(180deg, rgba(255, 248, 225, .4) 0%, rgba(255, 224, 178, .05) 100%);
+  opacity: 0; transition: opacity 1.5s ease;
+}
+.in-view .beam { opacity: 1; }
+
+/* ---------- keyframes ---------- */
+@keyframes tagFade { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes scrollCue { 0%, 100% { transform: translate(-50%, 0); opacity: .3; } 50% { transform: translate(-50%, 8px); opacity: .8; } }
+@keyframes snap { 0% { opacity: 0; transform: scale(.8); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes flashPulse { 0% { opacity: 0; transform: scale(.2); } 30% { opacity: 1; } 100% { opacity: 0; transform: scale(1.8); } }
+@keyframes driftIn { 0% { opacity: 0; } 100% { opacity: .85; transform: translate(0, 0) scale(1); } }
+@keyframes twinkle { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes growIn { from { opacity: 0; transform: scale(.2); } to { opacity: .9; transform: scale(1); } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="fill" id="progressFill"></div></div>
+<div class="brand">太初 · 創世紀</div>
+<nav class="rail" id="rail"></nav>
+<canvas id="stars"></canvas>
+<main id="main"></main>
+
+<script>
+(function(){
+"use strict";
+
+const SCENES = [
+  { id:'s1', cls:'scene1', label:'序幕', tag:'創世記 1:1-2', star:1, fx:null, type:'typed',
+    narration:'沒有光，沒有形狀，沒有時間；只有神的靈，運行在深淵之上。',
+    verse:'起初，神創造天地。地是空虛混沌，淵面黑暗；神的靈運行在水面上。',
+    scrollCue:true },
+  { id:'s2', cls:'scene2', label:'光', tag:'創世記 1:3-5', star:.35, fx:'burst', type:'ignite',
+    godSaid:'神說：', command:'要有光', fulfilled:'就有了光。',
+    detail:'神看光是好的，就把光暗分開；稱光為晝，稱暗為夜。有晚上，有早晨，這是頭一日。' },
+  { id:'s3', cls:'scene3', label:'穹蒼', tag:'創世記 1:6-8', star:.5, fx:'skysplit', type:'ignite',
+    godSaid:'神說：', command:'諸水之間要有空氣', fulfilled:'就有了空氣。',
+    detail:'神稱空氣為天。水從空氣以下、空氣以上分開了。有晚上，有早晨，是第二日。' },
+  { id:'s4', cls:'scene4', label:'陸海', tag:'創世記 1:9-10', star:.3, fx:'landrise', type:'ignite',
+    godSaid:'神說：', command:'天下的水要聚在一處，使旱地露出來', fulfilled:'事就這樣成了。',
+    detail:'神稱旱地為地，稱水的聚處為海。神看著是好的。' },
+  { id:'s5', cls:'scene5', label:'植物', tag:'創世記 1:11-13', star:.2, fx:'plants', type:'ignite',
+    godSaid:'神說：', command:'地要發生青草、結種子的菜蔬、結果子的樹木', fulfilled:'事就這樣成了。',
+    detail:'地就發生了青草和菜蔬，各從其類；並結果子的樹木，各從其類。神看著是好的。' },
+  { id:'s6', cls:'scene6', label:'日月星', tag:'創世記 1:14-19', star:.6, fx:'sunmoon', type:'ignite',
+    godSaid:'神說：', command:'天上要有光體，可以分晝夜，作記號，定節令、日子、年歲', fulfilled:'就有了光體。',
+    detail:'神造了兩個大光，大的管晝，小的管夜，又造眾星，就是天上的星辰。' },
+  { id:'s7', cls:'scene7', label:'生命', tag:'創世記 1:20-23', star:.3, fx:'sealife', type:'ignite',
+    godSaid:'神說：', command:'水要多多滋生有生命的物，要有雀鳥飛在天空之中', fulfilled:'事就這樣成了。',
+    detail:'神就造出大魚和水中各樣活物、各從其類，又造出各樣飛鳥，各從其類。神看著是好的。' },
+  { id:'s8', cls:'scene8', label:'走獸', tag:'創世記 1:24-25', star:.2, fx:'creatures', type:'ignite',
+    godSaid:'神說：', command:'地要生出活物來，各從其類：牲畜、昆蟲、野獸', fulfilled:'事就這樣成了。',
+    detail:'神造出野獸、牲畜、地上一切昆蟲，各從其類。神看著是好的。' },
+  { id:'s9', cls:'scene9', label:'造人', tag:'創世記 1:26-27；2:7', star:.35, fx:'dustman', type:'ignite',
+    godSaid:'神說：', command:'我們要照著我們的形像、按著我們的樣式造人', fulfilled:'神就照自己的形像造人，造男造女。',
+    detail:'耶和華神用地上的塵土造人，將生氣吹在他鼻孔裡，他就成了有靈的活人。' },
+  { id:'s10', cls:'scene10', label:'伊甸', tag:'創世記 2:8-9, 15', star:.25, fx:'eden', type:'plain',
+    narration:'神將所造的人，安置在為他預備的園子裡。',
+    verse:'耶和華神在東方的伊甸立了一個園子，把所造的人安置在那裡……又使他修理看守。',
+    detail:'園子當中有生命樹，和分別善惡的樹。' },
+  { id:'s11', cls:'scene11', label:'夏娃', tag:'創世記 2:18, 21-23', star:.3, fx:'dustwoman', type:'soft',
+    godSaid:'耶和華神說：', command:'那人獨居不好，我要為他造一個配偶幫助他', fulfilled:'耶和華神使他沉睡，就用他的肋骨造成一個女人。',
+    detail:'那人說：這是我骨中的骨、肉中的肉，可以稱她為女人，因為她是從男人身上取出來的。' },
+  { id:'s12', cls:'scene12', label:'試探', tag:'創世記 3:1-5', star:.25, fx:'serpent', type:'plain',
+    narration:'耶和華神所造的，惟有蛇比田野一切的活物更狡猾。',
+    verse:'蛇對女人說：神豈是真說、不許你們吃園中所有樹上的果子嗎？……你們不一定死；你們吃的日子眼睛就明亮了，能如神知道善惡。' },
+  { id:'s13', cls:'scene13', label:'禁果', tag:'創世記 3:6-7', star:.2, fx:'fruitbite', type:'plain',
+    narration:'於是女人見那棵樹的果子好作食物，也悅人的眼目，且是可喜愛的，能使人有智慧。',
+    verse:'就摘下果子來吃了，又給她丈夫，她丈夫也吃了。二人的眼睛就明亮了，才知道自己是赤身露體。' },
+  { id:'s14', cls:'scene14', label:'逐出', tag:'創世記 3:22-24', star:.3, fx:'exile', type:'plain',
+    narration:'耶和華神說：那人已經與我們相似，能知道善惡；現在恐怕他伸手又摘生命樹的果子吃，就永遠活著。',
+    verse:'耶和華神便打發他出伊甸園去……又在伊甸園的東邊安設基路伯和四面轉動發火焰的劍，要把守生命樹的道路。' },
+  { id:'s15', cls:'scene15', label:'祭殺', tag:'創世記 4:3-8', star:.25, fx:'altars', type:'plain',
+    narration:'該隱拿地裡的出產為供物獻給耶和華，亞伯也將羊群中頭生的獻上。耶和華看中了亞伯和他的供物，只是看不中該隱和他的供物；該隱就大大地發怒。',
+    verse:'該隱與他兄弟亞伯說話的時候，二人正在田間。該隱起來打他兄弟亞伯，把它殺了。' },
+  { id:'s16', cls:'scene16', label:'流離', tag:'創世記 4:10-16', star:.3, fx:'wander', type:'plain',
+    narration:'耶和華說：你兄弟的血，有聲音從地裡向我哀告。',
+    verse:'地開了口，從你手裡接受你兄弟的血，你必從這地受咒詛；你必流離飄蕩在地上。該隱就離開耶和華的面，去住在伊甸東邊挪得之地。' },
+  { id:'s17', cls:'scene17', label:'塞特', tag:'創世記 4:25-26', star:.5, fx:'seth', type:'soft',
+    godSaid:'亞當又與妻子同房，', command:'她就生了一個兒子，起名叫塞特', fulfilled:'那時候，人才求告耶和華的名。',
+    detail:'塞特的意思說：神另給我立了一個兒子，代替被該隱所殺的亞伯。塞特也生了一個兒子，起名叫以挪士。' }
+];
+
+const main = document.getElementById('main');
+const rail = document.getElementById('rail');
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+SCENES.forEach((sc, idx) => {
+  const section = document.createElement('section');
+  section.id = sc.id;
+  section.className = 'scene ' + sc.cls + (sc.type === 'ignite' ? ' ignite-type' : sc.type === 'soft' ? ' soft ignite-type' : '');
+  section.dataset.star = sc.star;
+
+  const tag = el('div', 'tag', sc.tag);
+  section.appendChild(tag);
+
+  const stage = el('div', 'stage');
+  stage.style.setProperty('--particle-color', 'var(--accent-bright)');
+  if(sc.fx) stage.dataset.fx = sc.fx;
+  stage.appendChild(el('div', 'flash'));
+  section.appendChild(stage);
+
+  const text = el('div', 'text');
+  if(sc.type === 'ignite' || sc.type === 'soft'){
+    const godSaid = el('p', 'god-said', sc.godSaid);
+    godSaid.dataset.text = sc.godSaid;
+    const command = el('p', 'command', sc.command);
+    command.dataset.text = sc.command;
+    const fulfilled = el('p', 'fulfilled', sc.fulfilled);
+    text.appendChild(godSaid);
+    text.appendChild(command);
+    text.appendChild(fulfilled);
+    if(sc.detail){
+      const detail = el('p', 'detail', sc.detail);
+      text.appendChild(detail);
+    }
+  } else {
+    if(sc.narration){
+      text.appendChild(el('p', 'narration', sc.narration));
+    }
+    const verse = el('h2', 'verse', '「' + sc.verse + '」');
+    verse.dataset.text = '「' + sc.verse + '」';
+    if(sc.type === 'typed') verse.dataset.typed = '1';
+    text.appendChild(verse);
+    if(sc.detail){
+      text.appendChild(el('p', 'detail', sc.detail));
+    }
+  }
+  section.appendChild(text);
+
+  if(sc.scrollCue){
+    section.appendChild(el('div', 'scroll-cue', '向下捲動 ↓'));
+  }
+
+  main.appendChild(section);
+
+  const dot = document.createElement('button');
+  dot.type = 'button';
+  dot.dataset.label = (idx+1) + ' · ' + sc.label;
+  dot.setAttribute('aria-label', '前往場景：' + sc.label);
+  dot.addEventListener('click', () => {
+    document.getElementById(sc.id).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  rail.appendChild(dot);
+});
+
+const dots = Array.from(rail.children);
+const sections = Array.from(document.querySelectorAll('.scene'));
+const starCanvas = document.getElementById('stars');
+
+/* ---------------------------------------------------------------------
+   星空背景
+--------------------------------------------------------------------- */
+const ctx = starCanvas.getContext('2d');
+let stars = [];
+
+function resizeStars(){
+  const dpr = window.devicePixelRatio || 1;
+  starCanvas.width = innerWidth * dpr;
+  starCanvas.height = innerHeight * dpr;
+  starCanvas.style.width = innerWidth + 'px';
+  starCanvas.style.height = innerHeight + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const n = Math.floor((innerWidth * innerHeight) / 9000);
+  stars = Array.from({length:n}, () => ({
+    x: Math.random()*innerWidth, y: Math.random()*innerHeight,
+    r: Math.random()*1.3 + .2, p: Math.random()*Math.PI*2, s: Math.random()*.02 + .008
+  }));
+}
+
+let tFrame = 0;
+function starLoop(){
+  tFrame += 1;
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  ctx.fillStyle = '#EDE3D0';
+  for(const st of stars){
+    const a = .35 + .65*Math.abs(Math.sin(tFrame*st.s + st.p));
+    ctx.globalAlpha = a;
+    ctx.beginPath();
+    ctx.arc(st.x, st.y, st.r, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(starLoop);
+}
+addEventListener('resize', resizeStars);
+resizeStars();
+starLoop();
+
+/* ---------------------------------------------------------------------
+   粒子 / 人形（塵土聚合）產生器
+--------------------------------------------------------------------- */
+function rand(a,b){ return a + Math.random()*(b-a); }
+
+function inHuman(x, y, pose){
+  if(pose === 'lie'){ const nx = y, ny = 1 - x; x = nx; y = ny; }
+  if(pose === 'kneel'){ y = y / 0.72; if(y > 1) return false; }
+  if(Math.hypot(x-0.5, y-0.09) < 0.075) return true;
+  if(y >= 0.15 && y < 0.55){
+    const t = (y-0.15)/0.4;
+    const halfw = 0.16 - 0.045*t;
+    if(Math.abs(x-0.5) < halfw) return true;
+  }
+  if(y >= 0.5 && y < 0.97){
+    if(Math.abs(x-0.5-0.09) < 0.065 || Math.abs(x-0.5+0.09) < 0.065) return true;
+  }
+  if(y >= 0.18 && y < 0.5){
+    const t = (y-0.18)/0.32;
+    const armL = 0.5 - 0.17 - 0.05*t;
+    const armR = 0.5 + 0.17 + 0.05*t;
+    if(Math.abs(x-armL) < 0.035 || Math.abs(x-armR) < 0.035) return true;
+  }
+  return false;
+}
+
+function buildFigure(stage, opts){
+  const o = Object.assign({ pose:'stand', count:90, left:'50%', bottom:'2%', boxW:150, boxH:320, dustRange:90, scale:1 }, opts);
+  const wrap = document.createElement('div');
+  wrap.className = 'figure-wrap';
+  wrap.style.left = o.left;
+  wrap.style.bottom = o.bottom;
+  wrap.style.width = (o.boxW*o.scale) + 'px';
+  wrap.style.height = (o.boxH*o.scale) + 'px';
+  wrap.style.transform = 'translateX(-50%)';
+  let placed = 0, tries = 0;
+  while(placed < o.count && tries < o.count*50){
+    tries++;
+    const x = Math.random(), y = Math.random();
+    if(inHuman(x, y, o.pose)){
+      placed++;
+      const d = document.createElement('span');
+      d.className = 'p-dot';
+      d.style.left = (x*100) + '%';
+      d.style.top = (y*100) + '%';
+      d.style.setProperty('--dx', rand(-o.dustRange, o.dustRange) + 'px');
+      d.style.setProperty('--dy', rand(-o.dustRange, o.dustRange) + 'px');
+      d.style.setProperty('--delay', rand(0, .7).toFixed(2) + 's');
+      d.style.setProperty('--tw', rand(2, 4).toFixed(2) + 's');
+      d.style.setProperty('--twd', rand(0, 2).toFixed(2) + 's');
+      const size = rand(2, 5);
+      d.style.width = d.style.height = size + 'px';
+      wrap.appendChild(d);
+    }
+  }
+  stage.appendChild(wrap);
+  return wrap;
+}
+
+/* ---------------------------------------------------------------------
+   場景 FX 建構器
+--------------------------------------------------------------------- */
+function sineSVG(cls, opts){
+  const o = Object.assign({ w:700, h:120, amp:18, cycles:4, points:60 }, opts);
+  let d = '';
+  for(let i=0; i<=o.points; i++){
+    const x = o.w*i/o.points;
+    const y = o.h/2 + Math.sin(i/o.points*Math.PI*2*o.cycles)*o.amp;
+    d += (i===0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
+  }
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox', `0 0 ${o.w} ${o.h}`);
+  svg.setAttribute('preserveAspectRatio','none');
+  svg.classList.add(cls);
+  const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+  path.setAttribute('d', d.trim());
+  path.setAttribute('fill','none');
+  path.setAttribute('stroke','currentColor');
+  path.setAttribute('stroke-width','4');
+  path.setAttribute('stroke-linecap','round');
+  path.setAttribute('stroke-linejoin','round');
+  svg.appendChild(path);
+  return {svg, path};
+}
+
+function treeHTML(cls, leftPct, opts){
+  opts = opts || {};
+  const scale = opts.scale || 1;
+  const canopies = opts.canopies || [
+    {w:90,h:90,x:-45,b:70,d:0},
+    {w:70,h:70,x:-72,b:50,d:.15},
+    {w:70,h:70,x:2,b:50,d:.25}
+  ];
+  let html = `<div class="tree ${cls||''}" style="left:${leftPct};transform:scale(${scale})"><div class="trunk"></div>`;
+  canopies.forEach(c => {
+    html += `<div class="canopy" style="width:${c.w}px;height:${c.h}px;left:${c.x}px;bottom:${c.b}px;transition-delay:${c.d}s"></div>`;
+  });
+  html += `</div>`;
+  return html;
+}
+
+const fxBuilders = {
+  burst(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="rays"></div><div class="core"></div>');
+  },
+  skysplit(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="sky-top"></div><div class="sky-bottom"></div><div class="horizon-glow"></div>');
+  },
+  landrise(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="water"></div><div class="land"></div>');
+  },
+  plants(stage){
+    stage.insertAdjacentHTML('beforeend', treeHTML('', '26%') + treeHTML('', '66%', {scale:.72, canopies:[{w:80,h:80,x:-40,b:60,d:.1}]}));
+    for(let i=0;i<12;i++){
+      const s = document.createElement('div');
+      s.className = 'sprout';
+      s.style.left = rand(4,94) + '%';
+      s.style.transitionDelay = rand(0,.7).toFixed(2) + 's';
+      stage.appendChild(s);
+    }
+  },
+  sunmoon(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="sun" style="width:120px;height:120px;left:16%;bottom:18%"></div><div class="moon" style="width:70px;height:70px;right:18%;top:12%"></div>');
+    for(let i=0;i<36;i++){
+      const d = document.createElement('span');
+      d.className = 'p-dot';
+      d.style.left = rand(0,100) + '%';
+      d.style.top = rand(0,55) + '%';
+      d.style.setProperty('--dx', rand(-30,30) + 'px');
+      d.style.setProperty('--dy', rand(-30,30) + 'px');
+      d.style.setProperty('--delay', rand(0,1).toFixed(2) + 's');
+      d.style.setProperty('--tw', rand(2,4).toFixed(2) + 's');
+      d.style.setProperty('--twd', rand(0,2).toFixed(2) + 's');
+      const size = rand(1,3);
+      d.style.width = d.style.height = size + 'px';
+      stage.appendChild(d);
+    }
+  },
+  sealife(stage){
+    for(let i=0;i<7;i++){
+      const f = document.createElement('div');
+      f.className = 'fish';
+      f.style.bottom = rand(6,32) + '%';
+      f.style.left = '0';
+      f.style.animationDuration = rand(5,8).toFixed(2) + 's';
+      f.style.animationDelay = rand(0,3).toFixed(2) + 's';
+      f.style.transitionDelay = rand(0,.5).toFixed(2) + 's';
+      stage.appendChild(f);
+    }
+    for(let i=0;i<6;i++){
+      const b = document.createElement('div');
+      b.className = 'bird';
+      b.style.top = rand(4,26) + '%';
+      b.style.left = '0';
+      b.style.animationDuration = rand(6,9).toFixed(2) + 's';
+      b.style.animationDelay = rand(0,3).toFixed(2) + 's';
+      b.style.transitionDelay = rand(0,.5).toFixed(2) + 's';
+      stage.appendChild(b);
+    }
+  },
+  creatures(stage){
+    for(let i=0;i<16;i++){
+      const o = document.createElement('div');
+      const size = rand(10,30);
+      o.className = 'orb';
+      o.style.width = o.style.height = size + 'px';
+      o.style.left = rand(2,90) + '%';
+      o.style.bottom = rand(4,16) + '%';
+      o.style.setProperty('--delay', rand(0,.8).toFixed(2) + 's');
+      o.style.animationDuration = rand(1.8,3.2).toFixed(2) + 's,.7s';
+      stage.appendChild(o);
+    }
+  },
+  dustman(stage){
+    buildFigure(stage, {pose:'stand', count:120, left:'50%', bottom:'2%', boxW:160, boxH:340});
+    stage.insertAdjacentHTML('beforeend', '<div class="breath"></div>');
+  },
+  eden(stage){
+    stage.insertAdjacentHTML('beforeend',
+      treeHTML('life', '26%', {canopies:[{w:100,h:100,x:-50,b:78,d:0}]}) +
+      treeHTML('knowledge', '64%', {canopies:[{w:92,h:92,x:-46,b:72,d:.1}]})
+    );
+    const riverWrap = document.createElement('div');
+    riverWrap.className = 'river';
+    const {svg} = sineSVG('river-svg', {w:700,h:60,amp:14,cycles:3,points:50});
+    riverWrap.appendChild(svg);
+    stage.appendChild(riverWrap);
+    for(let i=0;i<16;i++){
+      const f = document.createElement('span');
+      f.className = 'p-dot';
+      f.style.left = rand(0,100) + '%';
+      f.style.top = rand(38,88) + '%';
+      f.style.setProperty('--dx', rand(-24,24) + 'px');
+      f.style.setProperty('--dy', rand(-24,24) + 'px');
+      f.style.setProperty('--delay', rand(0,1).toFixed(2) + 's');
+      f.style.setProperty('--tw', rand(2,4).toFixed(2) + 's');
+      f.style.setProperty('--twd', rand(0,2).toFixed(2) + 's');
+      const size = rand(2,4);
+      f.style.width = f.style.height = size + 'px';
+      stage.appendChild(f);
+    }
+  },
+  dustwoman(stage){
+    buildFigure(stage, {pose:'lie', count:60, left:'30%', bottom:'4%', boxW:230, boxH:110, dustRange:60});
+    buildFigure(stage, {pose:'stand', count:90, left:'72%', bottom:'2%', boxW:130, boxH:300});
+  },
+  serpent(stage){
+    stage.insertAdjacentHTML('beforeend',
+      treeHTML('knowledge', '50%', {canopies:[{w:110,h:110,x:-55,b:80,d:0}]}) +
+      '<div class="fruit-glow"></div>'
+    );
+    const snakeWrap = document.createElement('div');
+    snakeWrap.className = 'snake';
+    const {svg} = sineSVG('snake-svg', {w:260,h:70,amp:16,cycles:3,points:40});
+    snakeWrap.appendChild(svg);
+    stage.appendChild(snakeWrap);
+  },
+  fruitbite(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="fruit"></div><div class="crack"></div>');
+  },
+  exile(stage){
+    stage.insertAdjacentHTML('beforeend',
+      '<div class="pillar" style="left:22%"></div><div class="pillar" style="right:22%"></div>' +
+      '<div class="lintel" style="left:20%;right:20%"></div><div class="sword"></div>'
+    );
+    buildFigure(stage, {pose:'stand', count:36, left:'62%', bottom:'2%', boxW:70, boxH:170, dustRange:20});
+    buildFigure(stage, {pose:'stand', count:36, left:'74%', bottom:'2%', boxW:60, boxH:150, dustRange:20});
+  },
+  altars(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="altar" style="left:20%"></div><div class="altar" style="right:20%"></div><div class="grief"></div>');
+    function smoke(leftPct, dark){
+      for(let i=0;i<10;i++){
+        const p = document.createElement('div');
+        p.className = 'smoke-particle' + (dark ? ' dark' : '');
+        p.style.left = leftPct;
+        p.style.bottom = '18%';
+        p.style.width = p.style.height = rand(8,18) + 'px';
+        p.style.animationDelay = rand(0,3).toFixed(2) + 's';
+        p.style.marginLeft = rand(-10,10) + 'px';
+        stage.appendChild(p);
+      }
+    }
+    smoke('22%', false);
+    smoke('78%', true);
+    buildFigure(stage, {pose:'stand', count:30, left:'22%', bottom:'2%', boxW:50, boxH:130, dustRange:16});
+    buildFigure(stage, {pose:'stand', count:30, left:'78%', bottom:'2%', boxW:50, boxH:130, dustRange:16});
+  },
+  wander(stage){
+    const wrap = document.createElement('div');
+    wrap.className = 'path-wrap';
+    const {svg} = sineSVG('path-svg', {w:700,h:120,amp:8,cycles:2,points:50});
+    wrap.appendChild(svg);
+    stage.appendChild(wrap);
+    buildFigure(stage, {pose:'stand', count:44, left:'18%', bottom:'6%', boxW:70, boxH:170, dustRange:20});
+  },
+  seth(stage){
+    stage.insertAdjacentHTML('beforeend', '<div class="beam"></div>');
+    buildFigure(stage, {pose:'kneel', count:90, left:'50%', bottom:'4%', boxW:190, boxH:230});
+  }
+};
+
+document.querySelectorAll('.stage[data-fx]').forEach(stage => {
+  const fn = fxBuilders[stage.dataset.fx];
+  if(fn) fn(stage);
+});
+
+/* ---------------------------------------------------------------------
+   打字機效果與點燃動效
+--------------------------------------------------------------------- */
+function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+function typeInto(elm, text, speed){
+  return new Promise(resolve => {
+    if(!elm || !text){ resolve(); return; }
+    elm.textContent = '';
+    let i = 0;
+    (function step(){
+      if(i <= text.length){
+        elm.textContent = text.slice(0, i);
+        i++;
+        setTimeout(step, speed);
+      } else resolve();
+    })();
+  });
+}
+
+function revealPaths(section){
+  section.querySelectorAll('.river-svg path, .snake-svg path, .path-svg path').forEach(p => {
+    try{
+      const len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      if(!p.dataset.drawn){
+        p.style.strokeDashoffset = len;
+        requestAnimationFrame(() => {
+          p.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(.16,.84,.44,1)';
+          p.style.strokeDashoffset = '0';
+        });
+        p.dataset.drawn = '1';
+      } else {
+        p.style.strokeDashoffset = '0';
+      }
+    }catch(e){}
+  });
+}
+
+async function runIgnite(section){
+  const godSaid = section.querySelector('.god-said');
+  const command = section.querySelector('.command');
+  if(godSaid) await typeInto(godSaid, godSaid.dataset.text, 55);
+  await wait(180);
+  if(command) await typeInto(command, command.dataset.text, 62);
+  await wait(140);
+  section.classList.add('ignite', 'in-view');
+  revealPaths(section);
+}
+
+async function runTyped(section){
+  const verse = section.querySelector('.verse[data-typed]');
+  section.classList.add('in-view');
+  if(verse) await typeInto(verse, verse.dataset.text, 42);
+  revealPaths(section);
+}
+
+function runPlain(section){
+  requestAnimationFrame(() => section.classList.add('in-view'));
+  revealPaths(section);
+}
+
+/* ---------------------------------------------------------------------
+   IntersectionObserver 監控進場
+--------------------------------------------------------------------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const sec = entry.target;
+    if(entry.isIntersecting && entry.intersectionRatio >= 0.4){
+      starCanvas.style.opacity = sec.dataset.star || .4;
+      if(!sec.dataset.armed){
+        sec.dataset.armed = '1';
+        if(sec.classList.contains('ignite-type')) runIgnite(sec);
+        else if(sec.dataset.hasTyped) runTyped(sec);
+        else runPlain(sec);
+      } else {
+        sec.classList.add('in-view');
+        if(sec.classList.contains('ignite-type')) sec.classList.add('ignite');
+        revealPaths(sec);
+      }
+    } else {
+      sec.classList.remove('in-view');
+      sec.classList.remove('ignite');
+    }
+  });
+}, { threshold:[0, .4, .6] });
+
+sections.forEach(sec => {
+  if(sec.querySelector('.verse[data-typed]')) sec.dataset.hasTyped = '1';
+  io.observe(sec);
+});
+
+/* ---------------------------------------------------------------------
+   捲動進度條與導覽點監控
+--------------------------------------------------------------------- */
+const progressFill = document.getElementById('progressFill');
+let ticking = false;
+
+function onScroll(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const frac = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    progressFill.style.width = (frac*100) + '%';
+    let closest = 0, closestDist = Infinity;
+    const centerY = scrollY + innerHeight/2;
+    sections.forEach((sec, i) => {
+      const mid = sec.offsetTop + sec.offsetHeight/2;
+      const dist = Math.abs(mid - centerY);
+      if(dist < closestDist){ closestDist = dist; closest = i; }
+    });
+    dots.forEach((d,i) => d.classList.toggle('active', i === closest));
+    ticking = false;
+  });
+}
+
+addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+})();
+</script>
+</body>
+</html>
