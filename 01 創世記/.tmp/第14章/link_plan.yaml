@@ -403,7 +403,17 @@ A_use_directly:
   match_type: exact
   existing_title: 麥基洗德的身分
   existing_path: link_folder/解經爭議/麥基洗德的身分.md
-B_needs_update: []
+B_needs_update:
+- name: 面東定向的左右方位
+  suggested_type: 背景
+  evidence: 15節「大馬色左邊的何把」；GT 丁良才《創世紀註釋》註「左邊就是北邊」並回指創十三9 的方位慣例；呂振中譯直接作「大馬色北邊」
+  surfaces:
+  - phrase: 左邊
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 面東定向的左右方位
+  existing_path: link_folder/背景/面東定向的左右方位.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
