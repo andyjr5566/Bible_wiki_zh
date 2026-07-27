@@ -2014,8 +2014,16 @@ def _quote_attribution_review(ctx):
 
 # GT《子來源》…「引句」：模型明確點名 GT 的哪一家子來源
 _GT_SUBSOURCE_RE = re.compile(r"GT《([^》]+)》[^「\n]{0,15}「([^」]{6,})」")
-# raw 檔段落末尾的出處標記：──／－－（兩種破折號）＋可選作者名＋《書名》
-_GT_MARKER_RE = re.compile(r"[─－]{2,}\s*([^─－《\n]{0,20})《([^》]+)》")
+# raw 檔段落末尾的出處標記：破折號 ＋可選作者名＋《書名》。
+# 破折號字元類必須涵蓋 raw 實際用的全部碼位——U+2500 BOX DRAWINGS、U+FF0D FULLWIDTH
+# HYPHEN 之外，ccbiblestudy 大量使用 U+2015 HORIZONTAL BAR 與 U+2014 EM DASH（尤以
+# 《聖經精讀本》《舊約背景註釋》為然）。舊版只收前兩者，全庫 187 個 GT raw 檔漏認
+# 3,940／15,076 個標記（26%）；漏認的後果不是漏報而是**誤報**——search 會略過真正
+# 的標記，往下抓到另一家的標記，於是把掛名正確的引句判成張冠李戴（創5 實測 4 筆）。
+_GT_MARKER_RE = re.compile(
+    r"[─－‒–—―]{2,}\s*"
+    r"([^─－‒–—―《\n]{0,20})《([^》]+)》"
+)
 _GT_FRAG_SPLIT_RE = re.compile(r"[…⋯]+|\.\.\.|[，,、。；;：]")
 
 
