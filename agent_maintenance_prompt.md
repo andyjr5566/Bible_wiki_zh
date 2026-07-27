@@ -270,6 +270,32 @@ python util/verify_links.py 【書名】
   補進 knowledge_nodes 即可（節點清單不吃白名單，不必硬做成候選），link_updates.py apply 不會動
   它們（apply 只碰 link_updates.yaml 內的條目）。
 
+### D. 舊章的 chapter_content.yaml 可能藏著「check 會擋」的白名單外連結
+
+遷移／舊版產出的章從沒跑過現行 `check`。創9 實測：organization 裡有
+`[[洪水範圍的爭論|第7章洪水地理範圍]]`，該條目不在本章 A/B/C 白名單 →
+一跑 `check` 就 FAIL。**修法不是直接刪連結**：先看該條目有沒有本章累積
+（`grep 'accumulation:書卷:x:start' <該條目.md>`）——
+
+- **有累積**（創9 就是）→ 把它補進 `knowledge_nodes` 的對應分組。節點清單不吃
+  白名單，補進去 md 就會連回，`check` 過、`check_accumulation_orphans` 也過。
+  只把散文連結改成純文字而不補節點，會立刻多一個孤兒累積（實測 0→1→0）。
+- **沒累積** → 才是真的斷鏈／跨章連結，改純文字。
+
+順序上這是 A（機械掃描）之後、`run` 之前就該做的一步：**每章第一次 `check`
+必然會把這類舊帳一次吐出來，不要以為是自己剛改壞的**。
+
+### E. GT 掛名護欄的兩種假報，先判型再動手
+
+`_gt_subsource_review` 與 `_quote_attribution_review` 都可能誤報，動筆改掛名前先
+`grep` raw 確認正主（見 memory `gt-subsource-guard-dash-codepoints`）：
+
+- `_QUOTE_ATTR_RE` 抓的是標籤後 **25 字內的第一個「」**。若行文在真引句之前先引了
+  一段經文、或前一句剛提過別家標籤，護欄會抓錯配對。對策是讓「GT《X》」後緊接的
+  第一個「」就是該家的引句，或把前一個標籤推到 25 字之外。
+- `_GT_MARKER_RE` 的破折號字元類原本漏 U+2015／U+2014（2026-07-27 已修）；若日後
+  又見「掛名正確卻被判誤植」，先查 raw 段末標記用的是哪個碼位。
+
 ## 提交
 
 - 一次維護一 commit，訊息寫清楚改了什麼、依據哪個來源；staging 用明確檔名
