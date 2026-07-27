@@ -226,7 +226,29 @@ A_use_directly:
   match_type: exact
   existing_title: 迦南咒詛的種族主義誤用
   existing_path: link_folder/解經爭議/迦南咒詛的種族主義誤用.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 古代近東奴隸制度
+  suggested_type: 背景
+  evidence: 25節；艾基斯指'ebed 在此指政治上從屬外國勢力，並列舉埃及、蘇默、巴比倫、亞述、腓尼基等有歷史記錄的國家全部都有奴隸，奴隸制如商業稅制廟宇崇拜是古代文化不可分割的一部份
+  match_type: exact
+  existing_title: 古代近東奴隸制度
+  existing_path: link_folder/背景/古代近東奴隸制度.md
+- name: 奴隸制度與聖經
+  suggested_type: 解經爭議
+  evidence: 25節；艾基斯處理「這些咒詛是否奴隸制度的開始、神是否贊同奴隸制」，答以摩西律法六年得自由（出二十一2-7）、「王的僕人」為榮譽稱銜、新約視信主奴僕為真正弟兄
+  match_type: exact
+  existing_title: 奴隸制度與聖經
+  existing_path: link_folder/解經爭議/奴隸制度與聖經.md
+- name: 族長祝福的不可更改性
+  suggested_type: 主題
+  evidence: 24-27節；《舊約背景註釋》〈族長的宣告〉列創二十四60、二十七27-29、39-40、四十八15-16、四十九1-28 為同類，並指人相信這種宣告能影響歷史發展與個人命運
+  match_type: exact
+  existing_title: 族長祝福的不可更改性
+  existing_path: link_folder/主題/族長祝福的不可更改性.md
+C_new_formal:
+- name: 漸進式的啟示
+  suggested_type: 神學
+  evidence: 3節；賈斯樂郝威〈命題27〉以創一29 只准菜蔬、創九3 才准吃肉為例，指先前的命令為後來的命令所取代，而實質道德標準未變（神的本性不變）
+  target_path: link_folder/神學/漸進式的啟示.md
 D_new_candidate: []
 E_skip: []
