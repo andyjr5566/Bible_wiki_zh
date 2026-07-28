@@ -1,3 +1,69 @@
 book: 民數記
 chapter: 19
-links: []
+links:
+  - verse: 2
+    phrase: "沒有殘疾、未曾負軛、純紅的母牛"
+    target: "無殘疾與未曾負軛的紅母牛"
+  - verse: 3
+    phrase: "以利亞撒"
+    target: "以利亞撒"
+  - verse: 3
+    phrase: "營外"
+    target: "營外焚燒（machutz la-machaneh saraf）"
+  - verse: 4
+    phrase: "以利亞撒"
+    target: "以利亞撒"
+  - verse: 4
+    phrase: "向會幕前面彈七次"
+    target: "向會幕前彈紅母牛的血七次"
+  - verse: 6
+    phrase: "香柏木"
+    target: "香柏木（潔淨儀式用）"
+  - verse: 6
+    phrase: "牛膝草"
+    target: "牛膝草"
+  - verse: 6
+    phrase: "朱紅色線"
+    target: "香柏木、牛膝草與朱紅線"
+  - verse: 9
+    phrase: "除污穢的水"
+    target: "除污穢的水"
+  - verse: 11
+    phrase: "摸了人死屍的"
+    target: "死屍不潔"
+  - verse: 12
+    phrase: "第三天"
+    target: "第三日"
+  - verse: 12
+    phrase: "第七天"
+    target: "第三日與第七日的除污穢禮儀"
+  - verse: 13
+    phrase: "玷污了耶和華的帳幕"
+    target: "玷污耶和華的聖所與帳幕"
+  - verse: 13
+    phrase: "從以色列中剪除"
+    target: "剪除（kareth）"
+  - verse: 13
+    phrase: "除污穢的水"
+    target: "除污穢的水"
+  - verse: 17
+    phrase: "活水"
+    target: "活水（潔淨儀式用）"
+  - verse: 18
+    phrase: "牛膝草"
+    target: "牛膝草"
+  - verse: 19
+    phrase: "第三天和第七天"
+    target: "第三日與第七日的除污穢禮儀"
+  - verse: 20
+    phrase: "從會中剪除"
+    target: "剪除（kareth）"
+  - verse: 20
+    phrase: "玷污了耶和華的聖所"
+    target: "玷污耶和華的聖所與帳幕"
+  - verse: 20
+    phrase: "除污穢的水"
+    target: "除污穢的水"
+  - verse: 21
+    phrase: "除污穢水"
+    target: "除污穢的水"

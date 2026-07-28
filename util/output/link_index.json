@@ -2928,17 +2928,6 @@
       "Elim oasis"
     ]
   },
-  "以色列人缺水爭鬧與摩西負氣杖擊磐石兩下之失": {
-    "path": "link_folder/事件/以色列人缺水爭鬧與摩西負氣杖擊磐石兩下之失.md",
-    "type": "事件",
-    "secondary_types": [
-      "神學",
-      "歷史"
-    ],
-    "title": "以色列人缺水爭鬧與摩西負氣杖擊磐石兩下之失",
-    "status": "formal",
-    "aliases": []
-  },
   "以色列到達西乃山": {
     "path": "link_folder/事件/以色列到達西乃山.md",
     "type": "事件",
@@ -3190,17 +3179,6 @@
       "車與牛"
     ]
   },
-  "女先知米利暗卒於加低斯為肉體軟弱與領袖管教見證": {
-    "path": "link_folder/事件/女先知米利暗卒於加低斯為肉體軟弱與領袖管教見證.md",
-    "type": "事件",
-    "secondary_types": [
-      "歷史",
-      "人物"
-    ],
-    "title": "女先知米利暗卒於加低斯為肉體軟弱與領袖管教見證",
-    "status": "formal",
-    "aliases": []
-  },
   "存於見證會殿前等候神使出枯長生苞結杏的奇顯": {
     "path": "link_folder/事件/存於見證會殿前等候神使出枯長生苞結杏的奇顯.md",
     "type": "事件",
@@ -3388,6 +3366,17 @@
       "摩西摔碎兩塊法版"
     ]
   },
+  "摩西擊打磐石兩下": {
+    "path": "link_folder/事件/摩西擊打磐石兩下.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "摩西擊打磐石兩下",
+    "status": "formal",
+    "aliases": []
+  },
   "摩西求神同去並蒙應允": {
     "path": "link_folder/事件/摩西求神同去並蒙應允.md",
     "type": "事件",
@@ -3514,8 +3503,7 @@
     "path": "link_folder/事件/比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌.md",
     "type": "事件",
     "secondary_types": [
-      "神學",
-      "地點"
+      "歷史"
     ],
     "title": "比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌",
     "status": "formal",
@@ -3584,7 +3572,6 @@
     "path": "link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md",
     "type": "事件",
     "secondary_types": [
-      "神學",
       "歷史"
     ],
     "title": "百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人",
@@ -3703,6 +3690,17 @@
     "aliases": [
       "Altar Jehovah Nissi"
     ]
+  },
+  "米利暗卒於加低斯": {
+    "path": "link_folder/事件/米利暗卒於加低斯.md",
+    "type": "事件",
+    "secondary_types": [
+      "歷史",
+      "人物"
+    ],
+    "title": "米利暗卒於加低斯",
+    "status": "formal",
+    "aliases": []
   },
   "耶和華的烈火將兩百五十個拿香爐者徹底毀滅": {
     "path": "link_folder/事件/耶和華的烈火將兩百五十個拿香爐者徹底毀滅.md",
@@ -14577,8 +14575,7 @@
     "path": "link_folder/地點/以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯.md",
     "type": "地點",
     "secondary_types": [
-      "歷史",
-      "事件"
+      "歷史"
     ],
     "title": "以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯",
     "status": "formal",
@@ -14675,6 +14672,19 @@
     "status": "formal",
     "aliases": [
       "神的山何烈山"
+    ]
+  },
+  "何珥山": {
+    "path": "link_folder/地點/何珥山.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "何珥山",
+    "status": "formal",
+    "aliases": [
+      "以東疆業旁邊的何珥山"
     ]
   },
   "別是巴": {
@@ -15172,17 +15182,6 @@
       "歷史"
     ],
     "title": "摩押地",
-    "status": "formal",
-    "aliases": []
-  },
-  "摩西和亞倫當會眾前面登陟以東疆域邊旁何珥山頂": {
-    "path": "link_folder/地點/摩西和亞倫當會眾前面登陟以東疆域邊旁何珥山頂.md",
-    "type": "地點",
-    "secondary_types": [
-      "事件",
-      "歷史"
-    ],
-    "title": "摩西和亞倫當會眾前面登陟以東疆域邊旁何珥山頂",
     "status": "formal",
     "aliases": []
   },
@@ -16852,7 +16851,6 @@
     "path": "link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md",
     "type": "歷史",
     "secondary_types": [
-      "地點",
       "事件"
     ],
     "title": "亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪",
@@ -16909,14 +16907,14 @@
     "status": "formal",
     "aliases": []
   },
-  "以東王斷然拒絕摩西行使大道經界並遣重兵驅逐": {
-    "path": "link_folder/歷史/以東王斷然拒絕摩西行使大道經界並遣重兵驅逐.md",
+  "以東王拒絕以色列人假道": {
+    "path": "link_folder/歷史/以東王拒絕以色列人假道.md",
     "type": "歷史",
     "secondary_types": [
-      "地點",
-      "事件"
+      "事件",
+      "地點"
     ],
-    "title": "以東王斷然拒絕摩西行使大道經界並遣重兵驅逐",
+    "title": "以東王拒絕以色列人假道",
     "status": "formal",
     "aliases": []
   },
@@ -17281,7 +17279,6 @@
     "path": "link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md",
     "type": "歷史",
     "secondary_types": [
-      "神學",
       "事件"
     ],
     "title": "戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土",
@@ -18279,6 +18276,17 @@
     "status": "formal",
     "aliases": []
   },
+  "亞倫卒於何珥山與祭司職任更替": {
+    "path": "link_folder/神學/亞倫卒於何珥山與祭司職任更替.md",
+    "type": "神學",
+    "secondary_types": [
+      "事件",
+      "文化"
+    ],
+    "title": "亞倫卒於何珥山與祭司職任更替",
+    "status": "formal",
+    "aliases": []
+  },
   "亞倫拿著香爐站在死人與活人中間祈禱救恩代濟": {
     "path": "link_folder/神學/亞倫拿著香爐站在死人與活人中間祈禱救恩代濟.md",
     "type": "神學",
@@ -19145,6 +19153,17 @@
       "在曠野守節"
     ]
   },
+  "在米利巴未將耶和華尊為聖": {
+    "path": "link_folder/神學/在米利巴未將耶和華尊為聖.md",
+    "type": "神學",
+    "secondary_types": [
+      "事件",
+      "主題"
+    ],
+    "title": "在米利巴未將耶和華尊為聖",
+    "status": "formal",
+    "aliases": []
+  },
   "地不可永賣（地權屬神）": {
     "path": "link_folder/神學/地不可永賣（地權屬神）.md",
     "type": "神學",
@@ -19278,17 +19297,6 @@
     "type": "神學",
     "secondary_types": [],
     "title": "大淵的泉源與天上的窗戶",
-    "status": "formal",
-    "aliases": []
-  },
-  "大祭司亞倫歸宿列祖並移奪聖衣給繼業者以利亞撒": {
-    "path": "link_folder/神學/大祭司亞倫歸宿列祖並移奪聖衣給繼業者以利亞撒.md",
-    "type": "神學",
-    "secondary_types": [
-      "人物",
-      "事件"
-    ],
-    "title": "大祭司亞倫歸宿列祖並移奪聖衣給繼業者以利亞撒",
     "status": "formal",
     "aliases": []
   },
@@ -21686,17 +21694,6 @@
       "第六年三倍出產",
       "信心試驗"
     ]
-  },
-  "米利巴水之地顯神至聖與禁止摩西進加南之地威名": {
-    "path": "link_folder/神學/米利巴水之地顯神至聖與禁止摩西進加南之地威名.md",
-    "type": "神學",
-    "secondary_types": [
-      "事件",
-      "歷史"
-    ],
-    "title": "米利巴水之地顯神至聖與禁止摩西進加南之地威名",
-    "status": "formal",
-    "aliases": []
   },
   "米利暗之歌": {
     "path": "link_folder/神學/米利暗之歌.md",
@@ -28486,6 +28483,9 @@
   },
   "神的山何烈山": {
     "alias_of": "何烈山"
+  },
+  "以東疆業旁邊的何珥山": {
+    "alias_of": "何珥山"
   },
   "Beersheba": {
     "alias_of": "別是巴"

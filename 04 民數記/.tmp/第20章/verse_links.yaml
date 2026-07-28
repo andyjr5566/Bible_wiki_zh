@@ -1,3 +1,60 @@
 book: 民數記
 chapter: 20
-links: []
+links:
+  - verse: 1
+    phrase: "加低斯"
+    target: "加低斯"
+  - verse: 1
+    phrase: "米利暗"
+    target: "米利暗"
+  - verse: 2
+    phrase: "亞倫"
+    target: "亞倫"
+  - verse: 8
+    phrase: "磐石"
+    target: "磐石出水"
+  - verse: 11
+    phrase: "用杖擊打磐石兩下"
+    target: "摩西擊打磐石兩下"
+  - verse: 12
+    phrase: "尊我為聖"
+    target: "在米利巴未將耶和華尊為聖"
+  - verse: 13
+    phrase: "米利巴"
+    target: "米利巴（ strife ）"
+  - verse: 14
+    phrase: "加低斯"
+    target: "加低斯"
+  - verse: 14
+    phrase: "以東"
+    target: "以東"
+  - verse: 18
+    phrase: "以東"
+    target: "以東"
+  - verse: 21
+    phrase: "以東王不肯容以色列人從他的境界過去"
+    target: "以東王拒絕以色列人假道"
+  - verse: 22
+    phrase: "何珥山"
+    target: "何珥山"
+  - verse: 23
+    phrase: "以東"
+    target: "以東"
+  - verse: 23
+    phrase: "亞倫"
+    target: "亞倫"
+  - verse: 24
+    phrase: "米利巴"
+    target: "米利巴（ strife ）"
+  - verse: 25
+    phrase: "以利亞撒"
+    target: "以利亞撒"
+  - verse: 26
+    phrase: "把亞倫的聖衣脫下來，給他的兒子以利亞撒穿上；亞倫必死在那裡"
+    target: "亞倫卒於何珥山與祭司職任更替"
+  - verse: 28
+    phrase: "以利亞撒"
+    target: "以利亞撒"
+  - verse: 29
+    phrase: "亞倫"
+    target: "亞倫"
