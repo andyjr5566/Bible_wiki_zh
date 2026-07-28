@@ -1,31 +1,7 @@
 book: 民數記
 chapter: 18
-A_use_directly:
-- name: 擔當干犯聖所與祭司職任的罪孽
-  suggested_type: 神學
-  match_type: exact
-  existing_title: 擔當干犯聖所與祭司職任的罪孽
-  existing_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
-- name: 祭司與利未人的職任為神之賞賜
-  suggested_type: 神學
-  match_type: exact
-  existing_title: 祭司與利未人的職任為神之賞賜
-  existing_path: link_folder/神學/祭司與利未人的職任為神之賞賜.md
-- name: 耶和華是事奉者的業與分
-  suggested_type: 神學
-  match_type: exact
-  existing_title: 耶和華是事奉者的業與分
-  existing_path: link_folder/神學/耶和華是事奉者的業與分.md
-- name: 利未人的什一奉獻
-  suggested_type: 神學
-  match_type: exact
-  existing_title: 利未人的什一奉獻
-  existing_path: link_folder/神學/利未人的什一奉獻.md
-- name: 古代近東以什一奉獻為神職薪酬
-  suggested_type: 文化
-  match_type: exact
-  existing_title: 古代近東以什一奉獻為神職薪酬
-  existing_path: link_folder/文化/古代近東以什一奉獻為神職薪酬.md
+A_use_directly: []
+B_needs_update:
 - name: 立約的鹽
   suggested_type: 主題
   match_type: exact
@@ -51,7 +27,6 @@ A_use_directly:
   match_type: exact
   existing_title: 贖銀五舍客勒
   existing_path: link_folder/文化/贖銀五舍客勒.md
-B_needs_update:
 - name: 利未支派
   suggested_type: 人物
   match_type: exact
@@ -67,6 +42,21 @@ B_needs_update:
   match_type: exact
   existing_title: 永遠當祭司的職任
   existing_path: link_folder/神學/永遠當祭司的職任.md
-C_new_formal: []
+C_new_formal:
+- name: 擔當干犯聖所與祭司職任的罪孽
+  suggested_type: 神學
+  target_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
+- name: 祭司與利未人的職任為神之賞賜
+  suggested_type: 神學
+  target_path: link_folder/神學/祭司與利未人的職任為神之賞賜.md
+- name: 耶和華是事奉者的業與分
+  suggested_type: 神學
+  target_path: link_folder/神學/耶和華是事奉者的業與分.md
+- name: 利未人的什一奉獻
+  suggested_type: 神學
+  target_path: link_folder/神學/利未人的什一奉獻.md
+- name: 古代近東以什一奉獻為神職薪酬
+  suggested_type: 文化
+  target_path: link_folder/文化/古代近東以什一奉獻為神職薪酬.md
 D_new_candidate: []
 E_skip: []
