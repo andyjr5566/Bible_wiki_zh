@@ -88,6 +88,14 @@ B_needs_update:
   match_type: exact
   existing_title: 鵪鶉遮營
   existing_path: link_folder/事件/鵪鶉遮營.md
+- name: 哈洗錄
+  suggested_type: 地點
+  evidence: 第35節：「百姓從基博羅哈他瓦起行，到哈洗錄，就住在哈洗錄。」為西乃大漠向東或北出發之順序留宿地，是經歷管教審判後，百姓獲得重新整頓與駐泊的場所。
+  surfaces:
+  - phrase: 哈洗錄
+  match_type: exact
+  existing_title: 哈洗錄
+  existing_path: link_folder/地點/哈洗錄.md
 C_new_formal:
 - name: 他備拉
   suggested_type: 地點
@@ -122,11 +130,5 @@ C_new_formal:
   surfaces:
   - phrase: 基博羅哈他瓦
   target_path: link_folder/地點/基博羅哈他瓦.md
-- name: 哈洗錄
-  suggested_type: 地點
-  evidence: 第35節：「百姓從基博羅哈他瓦起行，到哈洗錄，就住在哈洗錄。」為西乃大漠向東或北出駕的隨序長安綠野處，為經歷焚營與埋骨悲劫過後，剩者重拾修整暫寧的歷史宿所。
-  surfaces:
-  - phrase: 哈洗錄
-  target_path: link_folder/地點/哈洗錄.md
 D_new_candidate: []
 E_skip: []
