@@ -16091,6 +16091,17 @@
       "古埃及貿易"
     ]
   },
+  "向會幕前彈紅母牛的血七次": {
+    "path": "link_folder/文化/向會幕前彈紅母牛的血七次.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "向會幕前彈紅母牛的血七次",
+    "status": "formal",
+    "aliases": []
+  },
   "哈妥爾（Hathor）": {
     "path": "link_folder/文化/哈妥爾（Hathor）.md",
     "type": "文化",
@@ -16321,17 +16332,6 @@
       "客西達 (錢幣單位)"
     ]
   },
-  "宰殺燒牛的血彈會幕前方七次作贖罪見證": {
-    "path": "link_folder/文化/宰殺燒牛的血彈會幕前方七次作贖罪見證.md",
-    "type": "文化",
-    "secondary_types": [
-      "神學",
-      "主題"
-    ],
-    "title": "宰殺燒牛的血彈會幕前方七次作贖罪見證",
-    "status": "formal",
-    "aliases": []
-  },
   "家神像_特拉芬": {
     "path": "link_folder/文化/家神像_特拉芬.md",
     "type": "文化",
@@ -16348,17 +16348,6 @@
     "type": "文化",
     "secondary_types": [],
     "title": "寡婦衣裳",
-    "status": "formal",
-    "aliases": []
-  },
-  "將香柏木與牛膝草及朱紅線同入純紅牛薪火中": {
-    "path": "link_folder/文化/將香柏木與牛膝草及朱紅線同入純紅牛薪火中.md",
-    "type": "文化",
-    "secondary_types": [
-      "神學",
-      "主題"
-    ],
-    "title": "將香柏木與牛膝草及朱紅線同入純紅牛薪火中",
     "status": "formal",
     "aliases": []
   },
@@ -16508,6 +16497,17 @@
     "status": "formal",
     "aliases": []
   },
+  "第三日與第七日的除污穢禮儀": {
+    "path": "link_folder/文化/第三日與第七日的除污穢禮儀.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "第三日與第七日的除污穢禮儀",
+    "status": "formal",
+    "aliases": []
+  },
   "管家（管理家務）": {
     "path": "link_folder/文化/管家（管理家務）.md",
     "type": "文化",
@@ -16626,17 +16626,6 @@
       "敬拜"
     ],
     "title": "許願",
-    "status": "formal",
-    "aliases": []
-  },
-  "誤碰屍毒致七日不潔與第三及第七天除穢程序": {
-    "path": "link_folder/文化/誤碰屍毒致七日不潔與第三及第七天除穢程序.md",
-    "type": "文化",
-    "secondary_types": [
-      "神學",
-      "主題"
-    ],
-    "title": "誤碰屍毒致七日不潔與第三及第七天除穢程序",
     "status": "formal",
     "aliases": []
   },
@@ -16765,6 +16754,17 @@
       "歷史"
     ],
     "title": "香料乳香沒藥貿易",
+    "status": "formal",
+    "aliases": []
+  },
+  "香柏木、牛膝草與朱紅線": {
+    "path": "link_folder/文化/香柏木、牛膝草與朱紅線.md",
+    "type": "文化",
+    "secondary_types": [
+      "神學",
+      "主題"
+    ],
+    "title": "香柏木、牛膝草與朱紅線",
     "status": "formal",
     "aliases": []
   },
@@ -20649,6 +20649,17 @@
     "status": "formal",
     "aliases": []
   },
+  "無殘疾與未曾負軛的紅母牛": {
+    "path": "link_folder/神學/無殘疾與未曾負軛的紅母牛.md",
+    "type": "神學",
+    "secondary_types": [
+      "文化",
+      "主題"
+    ],
+    "title": "無殘疾與未曾負軛的紅母牛",
+    "status": "formal",
+    "aliases": []
+  },
   "無花果葉與皮衣": {
     "path": "link_folder/神學/無花果葉與皮衣.md",
     "type": "神學",
@@ -20735,22 +20746,22 @@
       "Sacrifice and worship"
     ]
   },
-  "玷污自己也玷污地": {
-    "path": "link_folder/神學/玷污自己也玷污地.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "玷污自己也玷污地",
-    "status": "formal",
-    "aliases": []
-  },
-  "玷污造主帳棚怠隳潔淨典例者得自大聚會剪除": {
-    "path": "link_folder/神學/玷污造主帳棚怠隳潔淨典例者得自大聚會剪除.md",
+  "玷污耶和華的聖所與帳幕": {
+    "path": "link_folder/神學/玷污耶和華的聖所與帳幕.md",
     "type": "神學",
     "secondary_types": [
       "文化",
       "主題"
     ],
-    "title": "玷污造主帳棚怠隳潔淨典例者得自大聚會剪除",
+    "title": "玷污耶和華的聖所與帳幕",
+    "status": "formal",
+    "aliases": []
+  },
+  "玷污自己也玷污地": {
+    "path": "link_folder/神學/玷污自己也玷污地.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "玷污自己也玷污地",
     "status": "formal",
     "aliases": []
   },
@@ -21753,17 +21764,6 @@
     "status": "formal",
     "aliases": []
   },
-  "純紅沒有殘疾且未曾負軛母牛為除罪救贖表徵": {
-    "path": "link_folder/神學/純紅沒有殘疾且未曾負軛母牛為除罪救贖表徵.md",
-    "type": "神學",
-    "secondary_types": [
-      "文化",
-      "主題"
-    ],
-    "title": "純紅沒有殘疾且未曾負軛母牛為除罪救贖表徵",
-    "status": "formal",
-    "aliases": []
-  },
   "細羅 (創49_10)": {
     "path": "link_folder/神學/細羅 (創49_10).md",
     "type": "神學",
@@ -22488,17 +22488,6 @@
       "過失之罪"
     ]
   },
-  "調製除污穢之活水為以色列無期限永遠贖愆法規": {
-    "path": "link_folder/神學/調製除污穢之活水為以色列無期限永遠贖愆法規.md",
-    "type": "神學",
-    "secondary_types": [
-      "文化",
-      "主題"
-    ],
-    "title": "調製除污穢之活水為以色列無期限永遠贖愆法規",
-    "status": "formal",
-    "aliases": []
-  },
   "謀殺與誤殺的區分": {
     "path": "link_folder/神學/謀殺與誤殺的區分.md",
     "type": "神學",
@@ -22678,6 +22667,17 @@
       "除掉偶像",
       "除去外邦神"
     ]
+  },
+  "除污穢的水": {
+    "path": "link_folder/神學/除污穢的水.md",
+    "type": "神學",
+    "secondary_types": [
+      "文化",
+      "主題"
+    ],
+    "title": "除污穢的水",
+    "status": "formal",
+    "aliases": []
   },
   "陳設餅十二個餅預表以色列十二支派": {
     "path": "link_folder/神學/陳設餅十二個餅預表以色列十二支派.md",

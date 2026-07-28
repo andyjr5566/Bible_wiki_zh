@@ -1,63 +1,102 @@
 book: 民數記
 chapter: 19
 A_use_directly: []
-B_needs_update: []
-C_new_formal:
-- name: 純紅沒有殘疾且未曾負軛母牛為除罪救贖表徵
+B_needs_update:
+- name: 營外焚燒（machutz la-machaneh saraf）
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 營外焚燒（machutz la-machaneh saraf）
+  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+- name: 牛膝草
+  suggested_type: 原文
+  match_type: exact
+  existing_title: 牛膝草
+  existing_path: link_folder/原文/牛膝草.md
+- name: 香柏木（潔淨儀式用）
+  suggested_type: 文化
+  match_type: exact
+  existing_title: 香柏木（潔淨儀式用）
+  existing_path: link_folder/文化/香柏木（潔淨儀式用）.md
+- name: 活水（潔淨儀式用）
+  suggested_type: 原文
+  match_type: exact
+  existing_title: 活水（潔淨儀式用）
+  existing_path: link_folder/原文/活水（潔淨儀式用）.md
+- name: 死屍不潔
   suggested_type: 神學
-  target_path: link_folder/神學/純紅沒有殘疾且未曾負軛母牛為除罪救贖表徵.md
+  match_type: exact
+  existing_title: 死屍不潔
+  existing_path: link_folder/神學/死屍不潔.md
+- name: 第三日
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 第三日
+  existing_path: link_folder/神學/第三日.md
+- name: 剪除（kareth）
+  suggested_type: 原文
+  match_type: exact
+  existing_title: 剪除（kareth）
+  existing_path: link_folder/原文/剪除（kareth）.md
+C_new_formal:
+- name: 無殘疾與未曾負軛的紅母牛
+  suggested_type: 神學
+  target_path: link_folder/神學/無殘疾與未曾負軛的紅母牛.md
   semantic_hint:
   - title: 沒有殘疾的祭牲
-    score: 0.493
+    score: 0.415
     type: 神學
-  - title: 無殘疾（tamim）
-    score: 0.459
-    type: 主題
-  - title: 公牛犢（par ben baqar）
-    score: 0.437
-    type: 主題
-- name: 宰殺燒牛的血彈會幕前方七次作贖罪見證
-  suggested_type: 文化
-  target_path: link_folder/文化/宰殺燒牛的血彈會幕前方七次作贖罪見證.md
+- name: 除污穢的水
+  suggested_type: 神學
+  target_path: link_folder/神學/除污穢的水.md
   semantic_hint:
-  - title: 彈血於施恩座與壇（大祭司一年一度贖罪禮）
-    score: 0.485
+  - title: 除罪水
+    score: 0.419
     type: 主題
-  - title: 公牛犢（par ben baqar）
-    score: 0.456
-    type: 主題
-  - title: 彈油七次（潔淨禮）
-    score: 0.454
-    type: 主題
-- name: 將香柏木與牛膝草及朱紅線同入純紅牛薪火中
+- name: 向會幕前彈紅母牛的血七次
   suggested_type: 文化
-  target_path: link_folder/文化/將香柏木與牛膝草及朱紅線同入純紅牛薪火中.md
+  target_path: link_folder/文化/向會幕前彈紅母牛的血七次.md
+  semantic_hint:
+  - title: 彈油七次（潔淨禮）
+    score: 0.42
+    type: 主題
+  - title: 彈血於施恩座與壇（大祭司一年一度贖罪禮）
+    score: 0.413
+    type: 主題
+- name: 香柏木、牛膝草與朱紅線
+  suggested_type: 文化
+  target_path: link_folder/文化/香柏木、牛膝草與朱紅線.md
   semantic_hint:
   - title: 香柏木（潔淨儀式用）
-    score: 0.433
+    score: 0.436
     type: 文化
-- name: 調製除污穢之活水為以色列無期限永遠贖愆法規
-  suggested_type: 神學
-  target_path: link_folder/神學/調製除污穢之活水為以色列無期限永遠贖愆法規.md
-  semantic_hint:
-  - title: 活水（潔淨儀式用）
-    score: 0.429
-    type: 原文
-- name: 誤碰屍毒致七日不潔與第三及第七天除穢程序
-  suggested_type: 文化
-  target_path: link_folder/文化/誤碰屍毒致七日不潔與第三及第七天除穢程序.md
-  semantic_hint:
-  - title: 意外沾染死屍與重新潔淨條例
-    score: 0.428
-    type: 事件
-  - title: 第三天第七天預表復活與完全（林前15：4；來10：10）
-    score: 0.418
-    type: 互文
-  - title: 營外七天等候（潔淨禮）
-    score: 0.407
+  - title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+    score: 0.409
     type: 主題
-- name: 玷污造主帳棚怠隳潔淨典例者得自大聚會剪除
+- name: 第三日與第七日的除污穢禮儀
+  suggested_type: 文化
+  target_path: link_folder/文化/第三日與第七日的除污穢禮儀.md
+  semantic_hint:
+  - title: 第三天第七天預表復活與完全（林前15：4；來10：10）
+    score: 0.471
+    type: 互文
+  - title: 彈油七次（潔淨禮）
+    score: 0.402
+    type: 主題
+  - title: 營外七天等候（潔淨禮）
+    score: 0.401
+    type: 主題
+- name: 玷污耶和華的聖所與帳幕
   suggested_type: 神學
-  target_path: link_folder/神學/玷污造主帳棚怠隳潔淨典例者得自大聚會剪除.md
+  target_path: link_folder/神學/玷污耶和華的聖所與帳幕.md
+  semantic_hint:
+  - title: 聖所
+    score: 0.56
+    type: 地點
+  - title: 會幕（帳幕整體）
+    score: 0.534
+    type: 主題
+  - title: 法櫃的帳幕
+    score: 0.514
+    type: 地點
 D_new_candidate: []
 E_skip: []
