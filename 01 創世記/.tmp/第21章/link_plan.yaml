@@ -1,6 +1,12 @@
 book: 創世記
 chapter: 21
 A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 2-34節；百歲得以撒、遵命打發夏甲、與亞比米勒立約（舊檔連 亞伯蘭 為改名前條目，本章事件在創17改名後，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
 - name: 撒拉
   suggested_type: 人物
   evidence: 1-12節；蒙眷顧生子、喜笑頌讚、要求趕出使女之子
@@ -47,13 +53,6 @@ A_use_directly:
   match_type: exact
   existing_title: 耶和華永生神
   existing_path: link_folder/神學/耶和華永生神.md
-B_needs_update:
-- name: 亞伯拉罕
-  suggested_type: 人物
-  evidence: 2-34節；百歲得以撒、遵命打發夏甲、與亞比米勒立約（舊檔連 亞伯蘭 為改名前條目，本章事件在創17改名後，統一連 亞伯拉罕）
-  match_type: exact
-  existing_title: 亞伯拉罕
-  existing_path: link_folder/人物/亞伯拉罕.md
 - name: 加拉太書四章
   suggested_type: 互文
   evidence: 加四22-31以撒夏甲寓意兩約，引用本章「把使女和她兒子趕出去」
@@ -72,6 +71,94 @@ B_needs_update:
   match_type: exact
   existing_title: 「以撒」名字含義
   existing_path: link_folder/原文/「以撒」名字含義.md
-C_new_formal: []
+B_needs_update:
+- name: 巴蘭的曠野
+  suggested_type: 地點
+  evidence: 21節；以實瑪利成年後所住之地。四來源對位置說法不一（丁良才「迦南南邊的大曠野」、啟導本「西奈半島北部」、串珠「基低斯東南」、雷氏「西乃半島的東北面」、背景註釋「西乃沙漠東北部、在以東的西面」）
+  surfaces:
+  - phrase: 巴蘭的曠野
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 巴蘭的曠野
+  existing_path: link_folder/地點/巴蘭的曠野.md
+- name: 非各
+  suggested_type: 人物
+  evidence: 22、32節；亞比米勒的軍長。丁良才指出創26:26另有一非各，故可能是尊號而非人名
+  surfaces:
+  - phrase: 非各
+    verses:
+    - 22
+    - 32
+  match_type: exact
+  existing_title: 非各
+  existing_path: link_folder/人物/非各.md
+- name: 神的使者
+  suggested_type: 人物
+  evidence: 17節；從天上呼叫夏甲。丁良才記摩西五經只有四次用「神的使者」這稱呼，其他多稱「耶和華的使者」
+  surfaces:
+  - phrase: 神的使者
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 神的使者
+  existing_path: link_folder/人物/神的使者.md
+- name: 非利士人
+  suggested_type: 地點
+  evidence: 32、34節；亞比米勒與非各回非利士地，亞伯拉罕在非利士人的地寄居多日
+  surfaces:
+  - phrase: 非利士人
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 非利士人
+  existing_path: link_folder/地點/非利士人.md
+- name: 古代近東立約
+  suggested_type: 背景
+  evidence: 22-32節；牛羊為立約之物、贈禮表示講和拒禮表示不和（王上15:19；賽30:6；39:1）、七隻母羊羔作挖井證據、指著神起誓
+  match_type: exact
+  existing_title: 古代近東立約
+  existing_path: link_folder/背景/古代近東立約.md
+- name: 古代近東割禮背景
+  suggested_type: 背景
+  evidence: 4節；背景註釋論第八日等候期的功用（斷定嬰兒能否養活、產後不潔期利12:1-3），精讀本比較埃及與埃提阿伯割禮的迷信動機
+  match_type: exact
+  existing_title: 古代近東割禮背景
+  existing_path: link_folder/背景/古代近東割禮背景.md
+C_new_formal:
+- name: 垂絲柳樹
+  suggested_type: 背景
+  evidence: 33節；背景註釋詳述其形態與用途、精讀本論其長壽象徵約的穩固、丁良才記古人以所栽的樹為立約證據、雷氏「直譯是聖柳樹」
+  surfaces:
+  - phrase: 垂絲柳樹
+    verses:
+    - 33
+  target_path: link_folder/背景/垂絲柳樹.md
+- name: 戲笑
+  suggested_type: 原文
+  evidence: 9節；與「以撒」同字根的加強形式，雷氏指此用語另見創19:14、39:14-17
+  surfaces:
+  - phrase: 戲笑
+    verses:
+    - 9
+  target_path: link_folder/原文/戲笑.md
+  semantic_hint:
+  - title: 戲言
+    score: 0.402
+    type: 主題
+- name: 亞伯拉罕時代是否已有非利士人
+  suggested_type: 解經爭議
+  evidence: 32、34節；背景註釋今名古用說、啟導本與雷氏早期通商說、艾基斯考古反駁說、賈斯樂郝威命題40存而不論
+  target_path: link_folder/解經爭議/亞伯拉罕時代是否已有非利士人.md
+  semantic_hint:
+  - title: 非利士人
+    score: 0.567
+    type: 地點
+  - title: 非利士地
+    score: 0.475
+    type: 地點
+  - title: 非利士人出自迦斯路希或迦斐託
+    score: 0.461
+    type: 解經爭議
 D_new_candidate: []
 E_skip: []
