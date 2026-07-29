@@ -31,6 +31,12 @@ A_use_directly:
   match_type: exact
   existing_title: 拉班
   existing_path: link_folder/人物/拉班.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 46節；以掃所娶女子的民族，使利百加厭煩
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
 - name: 以撒的眼睛昏花
   suggested_type: 主題
   evidence: 1節；老年目盲，倚賴觸覺嗅覺而被騙
@@ -167,12 +173,20 @@ A_use_directly:
   existing_title: 以掃輕看長子名分
   existing_path: link_folder/主題/以掃輕看長子名分.md
 B_needs_update:
-- name: 赫人
-  suggested_type: 人物
-  evidence: 46節；以掃所娶女子的民族，使利百加厭煩
+- name: 努斯泥板與家神像
+  suggested_type: 歷史
+  evidence: 37節；精讀本引努斯泥版說明族長正式的祝福即使只是口頭，也具法律效力、法庭認可，這是以撒不能收回祝福的制度背景
   match_type: exact
-  existing_title: 赫人
-  existing_path: link_folder/人物/赫人.md
-C_new_formal: []
+  existing_title: 努斯泥板與家神像
+  existing_path: link_folder/歷史/努斯泥板與家神像.md
+C_new_formal:
+- name: 以掃所得的是福還是禍
+  suggested_type: 解經爭議
+  evidence: 39-40節；和合本「地上的肥土必為你所住」CT 直指與原文意思完全相反、雷氏作「必遠離肥土」、啟導本主張仍應作「必為」而以語氣區分、精讀本判為變相咒詛
+  target_path: link_folder/解經爭議/以掃所得的是福還是禍.md
+  semantic_hint:
+  - title: 創世記27章以掃所得祝福
+    score: 0.403
+    type: 互文
 D_new_candidate: []
 E_skip: []
