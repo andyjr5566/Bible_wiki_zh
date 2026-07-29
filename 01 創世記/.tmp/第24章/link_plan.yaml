@@ -1,6 +1,12 @@
 book: 創世記
 chapter: 24
 A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-9節；年老蒙福，囑老僕人起誓為以撒在本族娶妻（舊檔未連，本次補全）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
 - name: 以撒
   suggested_type: 人物
   evidence: 4、14、62-67節；南地田間默想，迎娶利百加得安慰
@@ -133,12 +139,42 @@ A_use_directly:
   existing_title: 千萬人的母
   existing_path: link_folder/主題/千萬人的母.md
 B_needs_update:
-- name: 亞伯拉罕
-  suggested_type: 人物
-  evidence: 1-9節；年老蒙福，囑老僕人起誓為以撒在本族娶妻（舊檔未連，本次補全）
+- name: 駱駝成為家畜
+  suggested_type: 文化
+  evidence: 10-11、19-20、61節；背景註釋〈駱駝的馴養〉與〈駱駝的飲量〉兩專段，與該條目原有的「駱駝為主前十二世紀才馴服」說法直接相衝，值得並陳
   match_type: exact
-  existing_title: 亞伯拉罕
-  existing_path: link_folder/人物/亞伯拉罕.md
-C_new_formal: []
+  existing_title: 駱駝成為家畜
+  existing_path: link_folder/文化/駱駝成為家畜.md
+C_new_formal:
+- name: 古代近東的神諭機制
+  suggested_type: 背景
+  evidence: 12-21、42-48節；背景註釋〈創二十四12～21 神諭機制〉論是非題式求問、烏陵土明、士六36-40 與撒上六7-12 的平行；並解釋「給水喝＝否、主動打水＝是」的設計
+  target_path: link_folder/背景/古代近東的神諭機制.md
+  semantic_hint:
+  - title: 古代近東偶像崇拜
+    score: 0.483
+    type: 背景
+  - title: 古代近東以什一奉獻為神職薪酬
+    score: 0.459
+    type: 文化
+  - title: 古代近東婚姻習俗
+    score: 0.446
+    type: 歷史
+- name: 蒙臉帕子
+  suggested_type: 文化
+  evidence: 65節；背景註釋〈創二十四62～66 蒙臉帕子〉新娘結婚時蒙臉、已婚婦人則否、便尼哈桑壁畫與中亞述法律的差異；丁良才、串珠、雷氏、精讀本各有說法
+  surfaces:
+  - phrase: 帕子
+    verses:
+    - 65
+  target_path: link_folder/文化/蒙臉帕子.md
+- name: 慈愛誠實
+  suggested_type: 原文
+  evidence: 27、49節；BH 註「慈愛」為 chesed、「誠實」為 emet，是立約用語；串珠指第49節回應第27節——神以慈愛誠實待亞伯拉罕，僕人也求利百加家人以慈愛誠實待他主人
+  surfaces:
+  - phrase: 慈愛誠實
+    verses:
+    - 49
+  target_path: link_folder/原文/慈愛誠實.md
 D_new_candidate: []
 E_skip: []

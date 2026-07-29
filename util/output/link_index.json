@@ -12729,6 +12729,14 @@
     "status": "formal",
     "aliases": []
   },
+  "慈愛誠實": {
+    "path": "link_folder/原文/慈愛誠實.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "慈愛誠實",
+    "status": "formal",
+    "aliases": []
+  },
   "成群": {
     "path": "link_folder/原文/成群.md",
     "type": "原文",
@@ -16548,6 +16556,14 @@
       "在聖地脫鞋"
     ]
   },
+  "蒙臉帕子": {
+    "path": "link_folder/文化/蒙臉帕子.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "蒙臉帕子",
+    "status": "formal",
+    "aliases": []
+  },
   "蓬頭散髮（表羞辱與蒙罪嫌）": {
     "path": "link_folder/文化/蓬頭散髮（表羞辱與蒙罪嫌）.md",
     "type": "文化",
@@ -16751,8 +16767,7 @@
     "status": "formal",
     "aliases": [
       "camel domestication",
-      "駱駝",
-      "駱駝(gamal)"
+      "駱駝"
     ]
   },
   "七十長老制度起源": {
@@ -23084,6 +23099,14 @@
       "燔祭古近東平行"
     ]
   },
+  "古代近東的神諭機制": {
+    "path": "link_folder/背景/古代近東的神諭機制.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的神諭機制",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東社會弱勢群體": {
     "path": "link_folder/背景/古代近東社會弱勢群體.md",
     "type": "背景",
@@ -28863,9 +28886,6 @@
     "alias_of": "駱駝成為家畜"
   },
   "駱駝": {
-    "alias_of": "駱駝成為家畜"
-  },
-  "駱駝(gamal)": {
     "alias_of": "駱駝成為家畜"
   },
   "七十長老起源": {
