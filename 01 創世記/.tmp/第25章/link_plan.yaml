@@ -1,6 +1,12 @@
 book: 創世記
 chapter: 25
 A_use_directly:
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 1-11節；娶基土拉、分產給以撒、175歲氣絕而死葬麥比拉洞（舊檔 v9 連 亞伯蘭，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
 - name: 基土拉
   suggested_type: 人物
   evidence: 1-4節；亞伯拉罕續娶之妾，生六子成阿拉伯諸族之祖
@@ -35,6 +41,12 @@ A_use_directly:
   match_type: exact
   existing_title: 以實瑪利
   existing_path: link_folder/人物/以實瑪利.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 9-10節；亞伯拉罕與撒拉同葬之處
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
 - name: 幔利
   suggested_type: 地點
   evidence: 9節；麥比拉洞所在，即希伯崙
@@ -47,6 +59,12 @@ A_use_directly:
   match_type: exact
   existing_title: 赫人
   existing_path: link_folder/人物/赫人.md
+- name: 瑣轄
+  suggested_type: 人物
+  evidence: 9節；以弗崙之父
+  match_type: exact
+  existing_title: 瑣轄
+  existing_path: link_folder/人物/瑣轄.md
 - name: 以弗崙
   suggested_type: 人物
   evidence: 9節；麥比拉田原主
@@ -93,6 +111,12 @@ A_use_directly:
   match_type: exact
   existing_title: 亞述
   existing_path: link_folder/地點/亞述.md
+- name: 利百加
+  suggested_type: 人物
+  evidence: 20-28節；巴旦亞蘭彼土利之女，不孕蒙應允生雙子
+  match_type: exact
+  existing_title: 利百加
+  existing_path: link_folder/人物/利百加.md
 - name: 四十歲的意義
   suggested_type: 神學
   evidence: 20節以撒娶妻正四十歲；四十為試煉數目
@@ -205,6 +229,16 @@ A_use_directly:
   match_type: exact
   existing_title: 長子名分
   existing_path: link_folder/主題/長子名分.md
+- name: 以掃輕看長子名分
+  suggested_type: 主題
+  evidence: 34節；為一碗紅湯賣了名分，貪戀世俗（來12:16）
+  surfaces:
+  - phrase: 以掃輕看了他長子的名分
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 以掃輕看長子名分
+  existing_path: link_folder/主題/以掃輕看長子名分.md
 - name: 亞伯拉罕之約
   suggested_type: 神學
   evidence: 全章傳承：一切給以撒，庶子分產東遷，約歸應許之子
@@ -230,40 +264,42 @@ A_use_directly:
   existing_title: 神的揀選
   existing_path: link_folder/神學/神的揀選.md
 B_needs_update:
-- name: 亞伯拉罕
-  suggested_type: 人物
-  evidence: 1-11節；娶基土拉、分產給以撒、175歲氣絕而死葬麥比拉洞（舊檔 v9 連 亞伯蘭，統一連 亞伯拉罕）
+- name: 古代近東妾與繼承權
+  suggested_type: 文化
+  evidence: 1、6節；華爾頓〈創二十五1～4 妾〉妾即次等的妻子、通常沒有陪嫁妝奩故子女無繼承優先權、正妻無子時父親可從庶出眾子指定繼承人；艾基斯與賈斯樂郝威命題45
+    從 'issah 與 pileges 兩字調和創25:1 與代上1:32
   match_type: exact
-  existing_title: 亞伯拉罕
-  existing_path: link_folder/人物/亞伯拉罕.md
-- name: 麥比拉洞
+  existing_title: 古代近東妾與繼承權
+  existing_path: link_folder/文化/古代近東妾與繼承權.md
+- name: 東方人之地
   suggested_type: 地點
-  evidence: 9-10節；亞伯拉罕與撒拉同葬之處
+  evidence: 6節「打發他們離開他的兒子以撒，往東方去」；華爾頓〈創二十五6 東方〉希伯來語克丹（qedem）可能是方向也可能是地名，辛奴亥故事提到克丹地在比布羅斯附近，別處指以色列東緣沙漠地帶的居民（士六3；賽十一14）
   match_type: exact
-  existing_title: 麥比拉洞
-  existing_path: link_folder/地點/麥比拉洞.md
-- name: 瑣轄
-  suggested_type: 人物
-  evidence: 9節；以弗崙之父
-  match_type: exact
-  existing_title: 瑣轄
-  existing_path: link_folder/人物/瑣轄.md
-- name: 利百加
-  suggested_type: 人物
-  evidence: 20-28節；巴旦亞蘭彼土利之女，不孕蒙應允生雙子
-  match_type: exact
-  existing_title: 利百加
-  existing_path: link_folder/人物/利百加.md
-- name: 以掃輕看長子名分
-  suggested_type: 主題
-  evidence: 34節；為一碗紅湯賣了名分，貪戀世俗（來12:16）
+  existing_title: 東方人之地
+  existing_path: link_folder/地點/東方人之地.md
+C_new_formal:
+- name: 紅豆湯
+  suggested_type: 背景
+  evidence: 29-34節；串珠與 CT 註為中東極便宜的扁豆與米混煮的紅色稀粥，啟導本指紅豆是巴勒斯坦常見扁豆類、當地主要糧食（撒下十七28；結四9），華爾頓〈創二十五29～30
+    雅各熬湯〉推斷此事發生在牧營而非家中
   surfaces:
-  - phrase: 以掃輕看了他長子的名分
+  - phrase: 紅豆湯
     verses:
     - 34
-  match_type: exact
-  existing_title: 以掃輕看長子名分
-  existing_path: link_folder/主題/以掃輕看長子名分.md
-C_new_formal: []
+  target_path: link_folder/背景/紅豆湯.md
+- name: 古代近東的命名
+  suggested_type: 文化
+  evidence: 25-26、30節；華爾頓〈創二十五24～26 為子女起名〉起名是大事、人相信名字能影響命運、名字往往是雙關語而意思未必如此（雅各與「腳跟」諧音卻不是那個意思）
+  target_path: link_folder/文化/古代近東的命名.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.446
+    type: 歷史
+  - title: 古代近東法典
+    score: 0.413
+    type: 背景
+  - title: 列國表的古代地理與現代族群
+    score: 0.405
+    type: 解經爭議
 D_new_candidate: []
 E_skip: []
