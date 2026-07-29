@@ -13,6 +13,12 @@ A_use_directly:
   match_type: exact
   existing_title: 以撒
   existing_path: link_folder/人物/以撒.md
+- name: 耶和華的使者
+  suggested_type: 神學
+  evidence: 11、15節兩次從天上呼叫；12、16節顯明即耶和華自己
+  match_type: exact
+  existing_title: 耶和華的使者
+  existing_path: link_folder/神學/耶和華的使者.md
 - name: 拿鶴
   suggested_type: 人物
   evidence: 20-24節；密迦生八子、流瑪生四子的家譜
@@ -63,12 +69,30 @@ A_use_directly:
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
+- name: 清早起來
+  suggested_type: 主題
+  evidence: 3節；得命令後立即順服，不遲延
+  match_type: exact
+  existing_title: 清早起來
+  existing_path: link_folder/主題/清早起來.md
+- name: 第三日
+  suggested_type: 神學
+  evidence: 4節；心中承受煎熬後得回愛子，豫表第三日復活（來十一19）
+  match_type: exact
+  existing_title: 第三日
+  existing_path: link_folder/神學/第三日.md
 - name: 敬畏神
   suggested_type: 神學
   evidence: 12節原文「極其怕神」；不留下獨生子
   match_type: exact
   existing_title: 敬畏神
   existing_path: link_folder/神學/敬畏神.md
+- name: 公羊
+  suggested_type: 神學
+  evidence: 13節兩角扣在稠密小樹中，獻為燔祭代替其子
+  match_type: exact
+  existing_title: 公羊
+  existing_path: link_folder/神學/公羊.md
 - name: 耶和華以勒
   suggested_type: 神學
   evidence: 14節 Yahweh Yireh；耶和華必預備
@@ -94,30 +118,78 @@ A_use_directly:
   existing_title: 亞伯拉罕豫表父神
   existing_path: link_folder/神學/亞伯拉罕豫表父神.md
 B_needs_update:
-- name: 耶和華的使者
+- name: 密迦
+  suggested_type: 人物
+  evidence: 20、23節；拿鶴之妻，為他生八子，其中彼土利生利百加。本章是密迦最早出現之處
+  match_type: exact
+  existing_title: 密迦
+  existing_path: link_folder/人物/密迦.md
+- name: 亞蘭人
+  suggested_type: 人物
+  evidence: 21節「亞蘭的父親基母利」；BH 指此把拿鶴家族與亞蘭人連上，亞蘭人在舊約中屢與以色列往來
+  match_type: exact
+  existing_title: 亞蘭人
+  existing_path: link_folder/人物/亞蘭人.md
+C_new_formal:
+- name: 古代近東獻兒女為祭
+  suggested_type: 背景
+  evidence: 1-2、12節；背景註釋論豐饒神祇索取出產一部分、腓尼基與布匿（迦太基）文獻的兒童祭儀式；丁良才記基色城邱壇與房屋基址下裝嬰孩朽骨的陶罐；賈斯樂郝威命題41與艾基斯處理與利十八21、二十2
+    禁令的關係
+  target_path: link_folder/背景/古代近東獻兒女為祭.md
+  semantic_hint:
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.582
+    type: 背景
+  - title: 古代近東以什一奉獻為神職薪酬
+    score: 0.562
+    type: 文化
+  - title: 古代近東婚姻習俗
+    score: 0.505
+    type: 歷史
+- name: 驢
+  suggested_type: 背景
+  evidence: 3、5節；背景註釋〈創二十二3 驢子的馴養〉主前三五○○年左右馴養野驢、能忍受重擔和長期缺水、長途旅程與貨運倚重驢子
+  surfaces:
+  - phrase: 驢
+    verses:
+    - 3
+    - 5
+  target_path: link_folder/背景/驢.md
+- name: 指著自己起誓
   suggested_type: 神學
-  evidence: 11、15節兩次從天上呼叫；12、16節顯明即耶和華自己
-  match_type: exact
-  existing_title: 耶和華的使者
-  existing_path: link_folder/神學/耶和華的使者.md
-- name: 清早起來
-  suggested_type: 主題
-  evidence: 3節；得命令後立即順服，不遲延
-  match_type: exact
-  existing_title: 清早起來
-  existing_path: link_folder/主題/清早起來.md
-- name: 第三日
-  suggested_type: 神學
-  evidence: 4節；心中承受煎熬後得回愛子，豫表第三日復活（來十一19）
-  match_type: exact
-  existing_title: 第三日
-  existing_path: link_folder/神學/第三日.md
-- name: 公羊
-  suggested_type: 神學
-  evidence: 13節兩角扣在稠密小樹中，獻為燔祭代替其子
-  match_type: exact
-  existing_title: 公羊
-  existing_path: link_folder/神學/公羊.md
-C_new_formal: []
+  evidence: 16節；丁良才記以色列人一切好處都藉這誓而來（創二十四7、二十六3、五十24；出十三5；路一73；徒七17）；串珠與精讀本論神因沒有比自己更大的只能指著自己起誓（來六13-17）
+  surfaces:
+  - phrase: 指著自己起誓
+    verses:
+    - 16
+  target_path: link_folder/神學/指著自己起誓.md
+- name: 因行為稱義（雅二21-24）
+  suggested_type: 互文
+  evidence: 9-12節；丁良才引雅二21-24「藉著他的行為就顯出他的信心」；KC 引雅二21-22 說信心與行為並行、因行為信心得成全
+  target_path: link_folder/互文/因行為稱義（雅二21-24）.md
+  semantic_hint:
+  - title: 因信稱義
+    score: 0.438
+    type: 神學
+  - title: 約4：21-24
+    score: 0.422
+    type: 互文
+  - title: 雅各
+    score: 0.41
+    type: 人物
+- name: 神能叫人從死裡復活（來十一17-19）
+  suggested_type: 互文
+  evidence: 5、8節；四來源一致以來十一17-19 解釋亞伯拉罕對僕人說「就回到你們這裡來」與對以撒說「神必自己預備」；KC 指希伯來書十一章唯獨對亞伯拉罕記下他「心裡想」什麼
+  target_path: link_folder/互文/神能叫人從死裡復活（來十一17-19）.md
+  semantic_hint:
+  - title: 神對人的呼召
+    score: 0.447
+    type: 神學
+  - title: 亞倫發芽熟杏之杖表徵經歷死地步入復活生命力
+    score: 0.427
+    type: 神學
+  - title: 亞伯拉罕以撒雅各的神是活人的神
+    score: 0.418
+    type: 互文
 D_new_candidate: []
 E_skip: []
