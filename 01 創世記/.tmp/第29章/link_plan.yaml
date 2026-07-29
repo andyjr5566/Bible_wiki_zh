@@ -214,6 +214,17 @@ A_use_directly:
   existing_title: 「猶大」名字含義
   existing_path: link_folder/原文/「猶大」名字含義.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 利亞的眼睛沒有神氣
+  suggested_type: 解經爭議
+  evidence: 17節；CT 與串珠讀為雙眼缺乏神采（當時以眼睛神采為審美標準），雷氏另提弱視之可能，華爾頓卻指這字「一般來說其實是正面的用語，含有纖巧、敏感、溫柔、清秀的意思」，精讀本則說利亞並非不漂亮、只是拉結更美——同一個字被讀成缺陷與優點兩極
+  target_path: link_folder/解經爭議/利亞的眼睛沒有神氣.md
+  semantic_hint:
+  - title: 「利亞」名字含義
+    score: 0.571
+    type: 原文
+  - title: 利亞
+    score: 0.456
+    type: 人物
 D_new_candidate: []
 E_skip: []
