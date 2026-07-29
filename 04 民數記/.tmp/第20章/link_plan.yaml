@@ -1,42 +1,7 @@
 book: 民數記
 chapter: 20
 A_use_directly: []
-B_needs_update:
-- name: 亞倫
-  suggested_type: 人物
-  match_type: exact
-  existing_title: 亞倫
-  existing_path: link_folder/人物/亞倫.md
-- name: 以利亞撒
-  suggested_type: 人物
-  match_type: exact
-  existing_title: 以利亞撒
-  existing_path: link_folder/人物/以利亞撒.md
-- name: 以東
-  suggested_type: 地點
-  match_type: exact
-  existing_title: 以東
-  existing_path: link_folder/地點/以東.md
-- name: 加低斯
-  suggested_type: 地點
-  match_type: exact
-  existing_title: 加低斯
-  existing_path: link_folder/地點/加低斯.md
-- name: 磐石出水
-  suggested_type: 事件
-  match_type: exact
-  existing_title: 磐石出水
-  existing_path: link_folder/事件/磐石出水.md
-- name: 米利巴（ strife ）
-  suggested_type: 原文
-  match_type: exact
-  existing_title: 米利巴（ strife ）
-  existing_path: link_folder/原文/米利巴（ strife ）.md
-- name: 米利暗
-  suggested_type: 人物
-  match_type: exact
-  existing_title: 米利暗
-  existing_path: link_folder/人物/米利暗.md
+B_needs_update: []
 C_new_formal:
 - name: 米利暗卒於加低斯
   suggested_type: 事件
