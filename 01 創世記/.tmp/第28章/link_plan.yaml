@@ -55,6 +55,18 @@ A_use_directly:
   match_type: exact
   existing_title: 尼拜約
   existing_path: link_folder/人物/尼拜約.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 1、6、8節；以撒囑咐不可娶迦南的女子，因其拜偶像
+  surfaces:
+  - phrase: 迦南
+    verses:
+    - 1
+    - 6
+    - 8
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
 - name: 巴旦亞蘭
   suggested_type: 地點
   evidence: 2、5-7節；亞蘭平原，拉班居地，雅各娶妻之地
@@ -158,18 +170,12 @@ A_use_directly:
   existing_title: 十分之一
   existing_path: link_folder/原文/十分之一.md
 B_needs_update:
-- name: 迦南人
+- name: 亞蘭人
   suggested_type: 人物
-  evidence: 1、6、8節；以撒囑咐不可娶迦南的女子，因其拜偶像
-  surfaces:
-  - phrase: 迦南
-    verses:
-    - 1
-    - 6
-    - 8
+  evidence: 5節「亞蘭人彼土利的兒子拉班」；華爾頓《創世記背景註釋》在此有專段論亞蘭人來源的疑難——族長記述之後好幾個世紀才出現於亞述王表，用「亞蘭人」稱亞伯拉罕與雅各的親族，指的是亞蘭尚未凝聚成國家以前散居上美索不達米亞的部落
   match_type: exact
-  existing_title: 迦南人
-  existing_path: link_folder/人物/迦南人.md
+  existing_title: 亞蘭人
+  existing_path: link_folder/人物/亞蘭人.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
