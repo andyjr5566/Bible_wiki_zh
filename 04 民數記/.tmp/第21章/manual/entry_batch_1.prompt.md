@@ -1,6 +1,14 @@
-你是聖經研經資料整理員。唯一任務：為 民數記 第21章填寫 chapter_content payload（本章知識節點 + 本章整理）。
+你是聖經研經資料整理員，並且輸出以繁體中文為主。任務：一次為以下 6 個 link_folder 條目各填一份 entry_content payload。
 
-【經文】
+【要寫的條目】（括號內是分類，不是名稱的一部分）
+- 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪（分類：歷史）
+- 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人（分類：事件）
+- 摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治（分類：神學）
+- 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯（分類：地點）
+- 比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌（分類：事件）
+- 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土（分類：歷史）
+
+【本章經文（民數記 第21章）】
 1. 住南地的迦南人亞拉得王，聽說以色列人從亞他林路來，就和以色列人爭戰，擄了他們幾個人。
 2. 以色列人向耶和華發願說：你若將這民交付我手，我就把他們的城邑盡行毀滅。
 3. 耶和華應允了以色列人，把迦南人交付他們，他們就把迦南人和迦南人的城邑盡行毀滅。那地方的名便叫何珥瑪（何珥瑪就是毀滅的意思）。
@@ -37,7 +45,7 @@
 34. 耶和華對摩西說：不要怕他！因我已將他和他的眾民，並他的地，都交在你手中；你要待他像從前待住希實本的亞摩利王西宏一般。
 35. 於是他們殺了他和他的眾子，並他的眾民，沒有留下一個，就得了他的地。
 
-【本章全部來源】
+【本章全部來源）】
 【ccbiblestudy CT】
 民數記第二十一章註解
 
@@ -1496,58 +1504,31 @@ And they took possession of his land.
 
 The taking of Og's land marks a significant step in the Israelites' journey to the Promised Land. Bashan, known for its fertile land and strong cities, became part of the inheritance for the tribes of Israel. This act of taking possession is a fulfillment of God's covenant promises to Abraham, Isaac, and Jacob, and it prefigures the ultimate inheritance believers receive through Christ. The land serves as a type of the eternal rest and kingdom that God promises to His people.
 
-【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：
-  神學: [會幕, 神的同在]
-  原文: [皂莢木（atzei shittim）]
-分組名只能用既有分類：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議——不可自創「儀式」「祭物」「預表」之類的新分組（依各節點所屬條目的實際分類歸組）。
-只列值得跨章累積的核心節點，不重列所有經文 link。
-※ 條目名本身含逗號時「必須加引號」，例如 - "信徒作祭司（彼前2：5,9）"；不加引號會被 YAML 拆成兩個碎片節點，兩個都對不上條目而被靜靜丟掉，整個節點連同它的章節累積資料就消失了（程式會擋）。
-※ 互文分組的節點要帶小標題，讓人一眼知道那節在講什麼：寫 [[出20：16|出20：16 第九誡不可作假見證]]，不要只寫 [[出20：16]]。
+【規則】
+- 所有陳述須能對應經文或上述來源；未提及者不得寫入。
+- type 欄位必須正好是該條目的分類（如 原文、神學），不是詞性——不可寫 word、noun。
+- name：原文類用「中文（希伯來音譯）」，其餘用簡明中文；切勿把分類當音譯寫成「X（原文）」。音譯拼寫必須是上述來源文字中實際出現過的；來源沒給音譯就用裸中文名，不可憑聖經知識自行補配。
+- definition 裡的希伯來字母寫法／音譯同樣必須出現在上述來源中，來源沒給就不要寫（程式會逐字驗證希伯來字母的出處，查無出處會退回）。
+- status 一律 formal。accumulations 是「物件陣列」，每項含 book、chapter、summary、relation 四欄，且至少含本章（民數記 第21章）一筆、同章只給一筆。
+- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）：以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）, 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）, 銅蛇被毀滅預表除去偶像（王下18：4）, 何珥山, 以東, 亞捫人, 摩押, 火蛇（saraph）, 銅蛇（nehushtan）, 亞摩利人, 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪, 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人, 摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治, 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯, 比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌, 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土。
+- sources 每項格式「標籤: 位置說明（URL）」，標籤與 URL 必須成對取自本章來源：逐節註解: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT21.htm；拾穗: https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT21.htm；研經註解: https://www.kingcomments.com/en/bible-studies/Num/21；研經註解: https://biblehub.com/study/numbers/21.htm——標籤寫錯對應（如 KC 標籤配 CT 的 URL）視為錯誤。
+- 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，例如「天上真聖所（來9：23-24）」；括號內保留原經文、冒號用全形「：」。
+- 每個 payload 的 name 必須能對回上面清單（可加音譯後綴）。
 
-organization（本章整理）用「裸 markdown」直接寫在分隔線之後（輸出格式見文末）——不是 YAML 欄位、不用縮排、不用任何跳脫，mermaid／表格／callout 照一般 markdown 寫即可。
+【輸出格式範例——照此結構輸出一個 YAML 陣列】
+- name: 施恩座（kapporet）        # 原文類用「中文（希伯來音譯）」；勿寫成「施恩座（原文）」
+  type: 原文                      # 必須是該條目的分類，不是詞性；不可寫 word/noun
+  secondary_types: []
+  aliases: [施恩座]
+  status: formal
+  definition: 希伯來文 kapporet，法櫃的蓋子……（完整說明原文、字義與本章用法）
+  accumulations:                  # 物件陣列，非字串；每項四個欄位
+    - book: 出埃及記
+      chapter: 27
+      summary: 本章對此條目的重點
+      relation: 與本章的神學關聯
+  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用
+  sources:                        # 每項含實際來源 URL（取自本章來源清單）；標籤必須是「逐節註解／拾穗／研經註解」等來源清單類型名稱，不可用 CT/GT/KC/BH 這類縮寫
+    - '研經註解: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'
 
-【硬規格——程式會驗證，不符會退回重做】
-- 依本章段落結構分成至少 3 個小節，每小節以「### 標題（vX-Y）」開頭；最後可加一個跨章脈絡／預表整理的主題小節。
-- 全文合計 ≥1400 字，其中散文敘述至少 700 字——沿經文脈絡整合各來源觀點的連貫敘述是主幹，表格、清單、callout 都是它的補充，不可把大半內容包進表格或 callout。
-- 這是 Obsidian 筆記庫：行文首次提到本章條目時用 wiki-link 連結，用詞不同寫 [[完整條目名|行文用詞]]，之後再提不必重連；至少要有一個連結，且目標只能取自本章可連條目：以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）、以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）、銅蛇被毀滅預表除去偶像（王下18：4）、何珥山、以東、亞捫人、摩押、火蛇（saraph）、銅蛇（nehushtan）、亞摩利人——不可連清單外的目標；清單裡沒有對應條目的概念（vault 裡存在與否都一樣），直接用純文字提及即可，不要加 [[ ]]。
-- 所有輸出用繁體中文：引用英文來源（KingComments、BibleHub）時必須譯成繁體中文再以「」直接引，不可整段貼英文原文；只有原文用字本身是重點時，才以括號附註原文詞。
-- 內容只能出自上面的經文與來源；整合重點而非搬運來源全文。
-- 表格儲存格內不可放帶別名的 wiki-link：[[目標|別名]] 在表格裡要跳脫成 \|，渲染後變成 [[目標\]] 斷鏈（程式會擋）。表格內請用不帶別名的 [[目標]]，或把連結寫在儲存格文字之後：文字（見 [[目標]]）。
-- 引述來源請「直接引原話」並標明是哪一家（CT／GT／KC／BH 或 GT 內的《丁道爾》《舊約背景註釋》《中文聖經註釋》《精讀本》等），不要改寫成「CT指出…」的轉述體，也不可把甲家的話掛到乙家名下——已知實例：《舊約背景註釋》的古代近東材料被誤植為 KC、CT 的靈意註解被誤植為 KC。某一家在某處沒有說法，就不要替他生一個。
-- 各家彼此矛盾時要並陳，不要壓平成單一說法——例如出27 的壇，CT 說「表徵耶穌的十字架」，KC 卻明說「不那麼是說到十字架，而是說到主耶穌自己」，這種分歧本身就是重點。
-- 不要寫「參考資料」清單——程式會自動附上來源 URL。
-
-【設計空間——你是本章筆記的設計者，圖表優先】
-硬規格之內體裁自由，但預設立場是「能用圖表就用圖表」：動筆前先讀完材料，逐段判斷資訊的形狀；凡材料是流程、路線、對照、階層、關係、時間軸的形狀，一律用對應的 mermaid／表格呈現——只有純敘事、純解經論述這類沒有結構形狀的材料才整段散文。一章寫完若一張圖表都沒有，幾乎可以肯定是漏判了材料形狀，回頭重新檢查。
-※ 但圖表不折抵份量：硬規格的總字數與散文主幹下限必須先由連貫的散文敘述滿足（小節數也一樣），圖表是加在主幹之上的呈現層——正確做法是「散文寫足整合敘述＋同一材料的結構面另以圖表呈現」，不是「用圖表代替散文」。
-- 理解與整合（沿經文脈絡串起各來源解讀）→ 散文，這是主幹。
-- 比較與對照（多項並列、新舊呼應、尺寸規格、來源間差異、重複模式）→ markdown 表格或短編號清單。
-- 流程與因果（獻祭步驟、制度建立、事件因果鏈）→ mermaid flowchart。
-- 時間與發展（事件推進、跨章年代脈絡）→ mermaid timeline。
-- 分類與階層（神學概念展開、支派分組、家譜樹）→ mermaid mindmap 或 flowchart 樹狀。
-- 關係與空間（人物關係網、行程路線、空間配置）→ mermaid graph／flowchart。
-- 對答與往返（人與神的對話交涉、代求）→ mermaid sequenceDiagram。
-- 補充與旁註 → callout：[!quote] 收來源關鍵引句、[!note]／[!info] 標「這是來源解讀、非經文明言」的分辨、[!important] 突顯本章樞紐、[!question] 留懸而未決的問題；補充性長內容可用可摺疊的「> [!example]- 標題」預設收合。
-- 關鍵詞句可用 ==高亮==。
-mermaid 技術規格：圖型限 flowchart、graph、timeline、mindmap、sequenceDiagram；節點標籤一律用雙引號包住（如 A["燔祭壇"]）以免特殊字元破圖；圖內放不了 wiki-link，關鍵詞仍要在行文中連結；圖旁配散文說明，不可只丟一張圖。
-唯一原則：形式服務材料——用某個手法是因為材料是那個形狀，不是為了裝飾；本章若沒有合適形狀的材料，整段散文完全正當。
-【禁用】![[]] 嵌入、mermaid 以外的程式碼區塊、#標籤、HTML——會重複條目內文、破壞頁面或污染 vault。
-
-【輸出格式，極重要】輸出分成兩段，中間用單獨一行「===ORGANIZATION===」隔開：
-第一段：只含 book/chapter/knowledge_nodes 的 YAML（可放 ```yaml 圍欄內），不可多包一層 key，也不要放 organization。
-第二段：本章整理的 markdown 原文，從分隔線下一行直接開始——不是 YAML、不用縮排或跳脫，可自由使用 mermaid 圍欄、表格、callout；不要把整段再包進任何程式碼圍欄。範例：
-```yaml
-book: 民數記
-chapter: 21
-knowledge_nodes:
-  神學: [山上的樣式]
-  原文: [皂莢木（atzei shittim）]
-```
-===ORGANIZATION===
-### 標題一（v1-6）
-文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…
-
-### 標題二（v7-13）
-文字…
-
-payload 欄位：book, chapter, knowledge_nodes, organization, references。詳見 _config/schemas/chapter_content.schema.json。
+【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），不要任何說明文字。欄位定義見 payload 欄位：name, type, secondary_types, aliases, status, definition, development, accumulations, related_entries, sources, created_from, category, trigger_sources, current_data, pending。詳見 _config/schemas/entry_content.schema.json。

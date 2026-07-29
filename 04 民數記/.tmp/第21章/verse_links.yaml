@@ -1,51 +1,57 @@
 book: 民數記
 chapter: 21
 links:
-  - verse: 1
-    phrase: 亞拉得王
-    target: 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪
-  - verse: 3
-    phrase: 何珥瑪
-    target: 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪
-  - verse: 4
-    phrase: 何珥山
-    target: 何珥山
-  - verse: 4
-    phrase: 以東
-    target: 以東
-  - verse: 5
-    phrase: 厭惡這淡薄的食物
-    target: 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人
-  - verse: 6
-    phrase: 火蛇
-    target: 火蛇（saraph）
-  - verse: 8
-    phrase: 一望這蛇，就必得活
-    target: 摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治
-  - verse: 9
-    phrase: 銅蛇
-    target: 銅蛇（nehushtan）
-  - verse: 11
-    phrase: 以耶亞巴琳
-    target: 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯
-  - verse: 11
-    phrase: 摩押
-    target: 摩押
-  - verse: 16
-    phrase: 比珥
-    target: 比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌
-  - verse: 21
-    phrase: 亞摩利人
-    target: 亞摩利人
-  - verse: 24
-    phrase: 以色列人用刀殺了他，得了他的地
-    target: 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土
-  - verse: 24
-    phrase: 亞捫人
-    target: 亞捫人
-  - verse: 26
-    phrase: 希實本是亞摩利王西宏的京城
-    target: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
-  - verse: 33
-    phrase: 巴珊王噩
-    target: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+- verse: 4
+  phrase: 何珥山
+  target: 何珥山
+- verse: 4
+  phrase: 以東地
+  target: 以東
+- verse: 6
+  phrase: 火蛇
+  target: 火蛇（saraph）
+- verse: 8
+  phrase: 火蛇
+  target: 火蛇（saraph）
+- verse: 9
+  phrase: 銅蛇
+  target: 銅蛇（nehushtan）
+- verse: 11
+  phrase: 摩押
+  target: 摩押
+- verse: 13
+  phrase: 摩押
+  target: 摩押
+- verse: 13
+  phrase: 亞摩利人
+  target: 亞摩利人
+- verse: 15
+  phrase: 摩押
+  target: 摩押
+- verse: 20
+  phrase: 摩押
+  target: 摩押
+- verse: 21
+  phrase: 亞摩利人
+  target: 亞摩利人
+- verse: 24
+  phrase: 亞捫人
+  target: 亞捫人
+- verse: 25
+  phrase: 亞摩利人
+  target: 亞摩利人
+- verse: 26
+  phrase: 摩押
+  target: 摩押
+- verse: 28
+  phrase: 摩押
+  target: 摩押
+- verse: 29
+  phrase: 摩押
+  target: 摩押
+- verse: 31
+  phrase: 亞摩利人
+  target: 亞摩利人
+- verse: 32
+  phrase: 亞摩利人
+  target: 亞摩利人
