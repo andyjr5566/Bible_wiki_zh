@@ -72,6 +72,20 @@ A_use_directly:
   existing_title: 米斯巴
   existing_path: link_folder/原文/米斯巴.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 神為何祝福行詭詐的雅各與拉結
+  suggested_type: 解經爭議
+  evidence: 20、32節；GT 賈斯樂郝威《聖經難解經文詮釋手冊》命題54、命題55 兩問——雅各欺騙拉班神為何仍祝福他、拉結偷神像又騙拉班神為何祝福她
+  target_path: link_folder/解經爭議/神為何祝福行詭詐的雅各與拉結.md
+  semantic_hint:
+  - title: 雅各騙取祝福
+    score: 0.661
+    type: 主題
+  - title: 詭詐
+    score: 0.631
+    type: 主題
+  - title: 雅各
+    score: 0.629
+    type: 人物
 D_new_candidate: []
 E_skip: []
