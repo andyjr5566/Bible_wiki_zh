@@ -14685,14 +14685,6 @@
       "七之井"
     ]
   },
-  "利河伯": {
-    "path": "link_folder/地點/利河伯.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "利河伯",
-    "status": "formal",
-    "aliases": []
-  },
   "利河伯（大河邊）": {
     "path": "link_folder/地點/利河伯（大河邊）.md",
     "type": "地點",
@@ -14829,14 +14821,6 @@
     "type": "地點",
     "secondary_types": [],
     "title": "埃及河",
-    "status": "formal",
-    "aliases": []
-  },
-  "埃色": {
-    "path": "link_folder/地點/埃色.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "埃色",
     "status": "formal",
     "aliases": []
   },
@@ -15513,14 +15497,6 @@
       "巴拉塔遺址"
     ]
   },
-  "示巴": {
-    "path": "link_folder/地點/示巴.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "示巴",
-    "status": "formal",
-    "aliases": []
-  },
   "示拿": {
     "path": "link_folder/地點/示拿.md",
     "type": "地點",
@@ -15689,14 +15665,6 @@
       "Wilderness of Sinai",
       "西乃曠野"
     ]
-  },
-  "西提拿": {
-    "path": "link_folder/地點/西提拿.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "西提拿",
-    "status": "formal",
-    "aliases": []
   },
   "西珥": {
     "path": "link_folder/地點/西珥.md",
@@ -23839,6 +23807,14 @@
       "歷史"
     ],
     "title": "以掃三位妻子名單差異",
+    "status": "formal",
+    "aliases": []
+  },
+  "以掃有幾個妻子": {
+    "path": "link_folder/解經爭議/以掃有幾個妻子.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "以掃有幾個妻子",
     "status": "formal",
     "aliases": []
   },

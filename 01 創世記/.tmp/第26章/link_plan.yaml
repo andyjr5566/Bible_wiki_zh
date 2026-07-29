@@ -241,7 +241,21 @@ A_use_directly:
   existing_title: 埃及
   existing_path: link_folder/地點/埃及.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 以掃有幾個妻子
+  suggested_type: 解經爭議
+  evidence: 34節與創36:2-3 的名單對不上；賈斯樂郝威命題50 主張共四妻（猶滴、以倫之女巴實抹又名亞大、亞拿之女阿何利巴瑪、以實瑪利之女巴實抹），艾基斯《舊約聖經難題彙編》給出更長的重建並解釋以東地重名的文化特色；啟導本則提出「可能出於抄錄的錯誤，或同一人而有不同的名字」
+  target_path: link_folder/解經爭議/以掃有幾個妻子.md
+  semantic_hint:
+  - title: 以掃娶外邦女子
+    score: 0.52
+    type: 主題
+  - title: 以掃三位妻子名單差異
+    score: 0.484
+    type: 解經爭議
+  - title: 亞大
+    score: 0.467
+    type: 人物
 D_new_candidate:
 - name: 神的信實
   suggested_type: 主題
