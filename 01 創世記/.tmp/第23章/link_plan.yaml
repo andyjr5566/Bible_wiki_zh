@@ -7,12 +7,24 @@ A_use_directly:
   match_type: exact
   existing_title: 撒拉
   existing_path: link_folder/人物/撒拉.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 2-20節；哀慟哭號後起來購地葬妻（舊檔 v2 連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
 - name: 基列亞巴
   suggested_type: 地點
   evidence: 2節；希伯崙古稱，字義四方城
   match_type: exact
   existing_title: 基列亞巴
   existing_path: link_folder/地點/基列亞巴.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 2、19節；撒拉死葬之地，後為族長祖墳
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
 - name: 赫人
   suggested_type: 人物
   evidence: 3-20節；地主民族，交易的見證群體
@@ -29,53 +41,6 @@ A_use_directly:
   match_type: exact
   existing_title: 寄居者身份
   existing_path: link_folder/主題/寄居者身份.md
-- name: 以弗崙
-  suggested_type: 人物
-  evidence: 8-17節；瑣轄之子，表面贈地實則高價的談判
-  match_type: exact
-  existing_title: 以弗崙
-  existing_path: link_folder/人物/以弗崙.md
-- name: 麥比拉洞
-  suggested_type: 地點
-  evidence: 9、17-19節；字義「雙倍」，族長家族墳地
-  match_type: exact
-  existing_title: 麥比拉洞
-  existing_path: link_folder/地點/麥比拉洞.md
-- name: 銀子
-  suggested_type: 主題
-  evidence: 16節買賣通用的銀子平了四百舍客勒
-  surfaces:
-  - phrase: 銀子
-    verses:
-    - 16
-  match_type: exact
-  existing_title: 銀子
-  existing_path: link_folder/主題/銀子.md
-- name: 墳地
-  suggested_type: 神學
-  evidence: 4-20節；應許地的初熟果子，惟一永久產業竟是墳地
-  match_type: exact
-  existing_title: 墳地
-  existing_path: link_folder/神學/墳地.md
-- name: 復活盼望
-  suggested_type: 主題
-  evidence: 全章；埋葬連於復活，埋葬是撒種（林前十五3-4）
-  match_type: exact
-  existing_title: 復活盼望
-  existing_path: link_folder/主題/復活盼望.md
-B_needs_update:
-- name: 亞伯拉罕
-  suggested_type: 人物
-  evidence: 2-20節；哀慟哭號後起來購地葬妻（舊檔 v2 連 亞伯蘭 為改名前條目，統一連 亞伯拉罕）
-  match_type: exact
-  existing_title: 亞伯拉罕
-  existing_path: link_folder/人物/亞伯拉罕.md
-- name: 希伯崙
-  suggested_type: 地點
-  evidence: 2、19節；撒拉死葬之地，後為族長祖墳
-  match_type: exact
-  existing_title: 希伯崙
-  existing_path: link_folder/地點/希伯崙.md
 - name: 死人
   suggested_type: 主題
   evidence: 4、6、8、13節埋葬我的死人；死人必須埋葬
@@ -89,12 +54,34 @@ B_needs_update:
   match_type: exact
   existing_title: 死人
   existing_path: link_folder/主題/死人.md
+- name: 以弗崙
+  suggested_type: 人物
+  evidence: 8-17節；瑣轄之子，表面贈地實則高價的談判
+  match_type: exact
+  existing_title: 以弗崙
+  existing_path: link_folder/人物/以弗崙.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 9、17-19節；字義「雙倍」，族長家族墳地
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
 - name: 四百舍客勒
   suggested_type: 文化
   evidence: 15-16節；對照大衛50舍客勒、耶利米17舍客勒，估價甚高
   match_type: exact
   existing_title: 四百舍客勒
   existing_path: link_folder/文化/四百舍客勒.md
+- name: 銀子
+  suggested_type: 主題
+  evidence: 16節買賣通用的銀子平了四百舍客勒
+  surfaces:
+  - phrase: 銀子
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 銀子
+  existing_path: link_folder/主題/銀子.md
 - name: 樹木
   suggested_type: 主題
   evidence: 17節田間四圍的樹木都定準歸與亞伯拉罕
@@ -107,6 +94,63 @@ B_needs_update:
   match_type: exact
   existing_title: 城門口交易
   existing_path: link_folder/文化/城門口交易.md
-C_new_formal: []
+- name: 墳地
+  suggested_type: 神學
+  evidence: 4-20節；應許地的初熟果子，惟一永久產業竟是墳地
+  match_type: exact
+  existing_title: 墳地
+  existing_path: link_folder/神學/墳地.md
+- name: 復活盼望
+  suggested_type: 主題
+  evidence: 全章；埋葬連於復活，埋葬是撒種（林前十五3-4）
+  match_type: exact
+  existing_title: 復活盼望
+  existing_path: link_folder/主題/復活盼望.md
+B_needs_update:
+- name: 幔利
+  suggested_type: 地點
+  evidence: 17、19節「麥比拉、幔利前」「幔利就是希伯崙」；本章是幔利與希伯崙、麥比拉三名並列最完整的一處
+  surfaces:
+  - phrase: 幔利
+    verses:
+    - 17
+    - 19
+  match_type: exact
+  existing_title: 幔利
+  existing_path: link_folder/地點/幔利.md
+- name: 瑣轄
+  suggested_type: 人物
+  evidence: 8節「瑣轄的兒子以弗崙」；CT 註其原文字義為「白的」，艾基斯指以弗崙與瑣轄都是閃族迦南名字
+  surfaces:
+  - phrase: 瑣轄
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 瑣轄
+  existing_path: link_folder/人物/瑣轄.md
+C_new_formal:
+- name: 古代近東安葬習俗
+  suggested_type: 背景
+  evidence: 4-5、19節；背景註釋〈創二十三4～5 安葬的習俗〉遊牧民族的第二次安葬與鄉村文化的塚室；精讀本論哀慟哭號是葬禮儀式（撒下3:31；21:10）與「埋葬」源自「挖」；KC
+    論這是聖經第一次記載埋葬
+  target_path: link_folder/背景/古代近東安葬習俗.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.518
+    type: 歷史
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.466
+    type: 背景
+  - title: 古代近東祭壇庇護
+    score: 0.456
+    type: 背景
+- name: 尊大的王子
+  suggested_type: 原文
+  evidence: 6節；CT 註原文字義為「神的王子，有神威的王子」，呂振中譯作「有神威的族長」，BH 作「神所揀選的」
+  surfaces:
+  - phrase: 尊大的王子
+    verses:
+    - 6
+  target_path: link_folder/原文/尊大的王子.md
 D_new_candidate: []
 E_skip: []
