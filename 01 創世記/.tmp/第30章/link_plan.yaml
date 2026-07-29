@@ -43,16 +43,16 @@ A_use_directly:
   match_type: exact
   existing_title: 流便
   existing_path: link_folder/人物/流便.md
-- name: 但（審判）
-  suggested_type: 人物
+- name: 「但」名字含義
+  suggested_type: 原文
   evidence: 6節；辟拉長子，拉結取名，意伸冤
   surfaces:
   - phrase: 但
     verses:
     - 6
   match_type: exact
-  existing_title: 但（審判）
-  existing_path: link_folder/人物/但（審判）.md
+  existing_title: 「但」名字含義
+  existing_path: link_folder/原文/「但」名字含義.md
 - name: 拿弗他利（相爭）
   suggested_type: 人物
   evidence: 8節；辟拉次子，拉結取名，意相爭、角力
@@ -103,7 +103,7 @@ A_use_directly:
   match_type: exact
   existing_title: 西布倫（同住）
   existing_path: link_folder/人物/西布倫（同住）.md
-- name: 底拿（審判）
+- name: 底拿名字含義
   suggested_type: 原文
   evidence: 21節；利亞之女，與但同字源，意審判，伏筆創34章
   surfaces:
@@ -111,8 +111,8 @@ A_use_directly:
     verses:
     - 21
   match_type: exact
-  existing_title: 底拿（審判）
-  existing_path: link_folder/原文/底拿（審判）.md
+  existing_title: 底拿名字含義
+  existing_path: link_folder/原文/底拿名字含義.md
 - name: 約瑟（增添）
   suggested_type: 人物
   evidence: 24節；拉結長子，意增添／除去，神除去拉結羞恥
