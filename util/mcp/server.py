@@ -74,6 +74,42 @@ _CHAPTER_ARTIFACTS = {
 _ENTRY_ARTIFACT_RE = re.compile(r"^entry_content/[^/\\]+\.yaml$")
 _MANUAL_ENTRY_PROMPT_RE = re.compile(r"^manual/entry_batch_\d+\.prompt\.md$")
 
+# --- lint_chapter_content rules -------------------------------------------------
+# Each rule below was measured against the whole corpus (2,694 rendered md files)
+# before being promoted to an error: mechanically decidable rules with zero false
+# positives become errors, heuristics stay warnings.
+_ALIAS_LINK_RE = re.compile(r"\[\[[^\]\[|]+\|[^\]\[|]+\]\]")
+_EMBED_RE = re.compile(r"!\[\[")
+_HASHTAG_RE = re.compile(r"(?:(?<=\s)|^)#[^\s#\[\]()（）,，。、]{1,30}")
+_REFERENCE_HEADING_RE = re.compile(r"^\s{0,3}#{1,6}\s*參考(?:資料|書目)\s*$")
+_HTML_TAG_RE = re.compile(
+    r"</?(?:div|span|br|img|table|tr|td|th|p|b|i|u|font|center|hr)\b[^>]*>", re.I
+)
+_PROCESS_NOTE_RE = re.compile(r"舊版|本次維護|先前版本|待確認事項|本次補上|應並陳")
+_SELF_WRAPPED_NODE_RE = re.compile(r"^\s*-\s*\[\[.+\]\]\s*$")
+_MERMAID_OPEN_RE = re.compile(r"^\s*```\s*mermaid\b")
+_FENCE_RE = re.compile(r"^\s*```")
+_MERMAID_BARE_LABEL_RE = re.compile(
+    r"[A-Za-z_][A-Za-z0-9_]*\s*[\[(]\s*(?!\")[^\"\]\)]*[　-鿿][^\"\]\)]*[\])]"
+)
+
+# --- scan_unsourced_tokens patterns ---------------------------------------------
+_HEBREW_RUN_RE = re.compile(r"[֐-׿]+")
+_NIQQUD_RE = re.compile(r"[֑-ׇ]")
+_PAREN_LATIN_RE = re.compile(r"[（(]\s*([A-Za-z][A-Za-z'’\-./ ]{1,34})\s*[)）]")
+_ITALIC_LATIN_RE = re.compile(r"\*([A-Za-z][A-Za-z'’\-]{2,24})\*")
+# Source labels and translation sigla are not transliterations.
+_TRANSLITERATION_IGNORE = {
+    "CT", "GT", "KC", "BH", "BibleHub", "BibleHub Study", "KingComments",
+    "ESV", "KJV", "NIV", "NASB", "NKJV", "RSV", "ASV", "LXX", "MT",
+}
+# Frequent simplified-only characters; the corpus is Traditional Chinese throughout.
+_SIMPLIFIED_CHARS = set(
+    "贯东车马门问间见觉学国图书写与来对时机样条种类经过还这发现产业内长关无爱应变风飞"
+    "离归乡个们么为没说话让给头买卖乐会体点热当权义军师杀击斗农岁职员团结灵进电记讲论"
+    "证据历称举义乱亲价众优伟传伤伦优侧俭债倾偿储儿"
+)
+
 
 def _error(message: str, **details: Any) -> Dict[str, Any]:
     return {"success": False, "error": message, **details}
@@ -467,17 +503,65 @@ def lint_chapter_content(text: str, content_kind: str = "markdown") -> Dict[str,
         return _error("content_kind 只能是 markdown 或 yaml")
     errors, warnings = [], []
     in_mermaid = False
+    in_fence = False
+    in_knowledge_nodes = False
     for number, line in enumerate(text.splitlines(), 1):
-        if line.strip().startswith("```mermaid"):
+        if _MERMAID_OPEN_RE.match(line):
             in_mermaid = True
+            in_fence = True
             continue
-        if in_mermaid and line.strip().startswith("```"):
+        if in_fence and _FENCE_RE.match(line):
+            in_fence = False
             in_mermaid = False
             continue
-        if in_mermaid and ("[[" in line or "]]" in line):
-            errors.append(f"第 {number} 行 Mermaid 圖內不可放 [[wiki-link]]")
-    if in_mermaid:
-        errors.append("Mermaid 程式碼區塊未關閉")
+        if in_mermaid:
+            if "[[" in line or "]]" in line:
+                errors.append(f"第 {number} 行 Mermaid 圖內不可放 [[wiki-link]]")
+            elif _MERMAID_BARE_LABEL_RE.search(line):
+                warnings.append(
+                    f'第 {number} 行 Mermaid 節點標籤未加引號，建議寫成 A["標籤"]'
+                )
+            continue
+        if in_fence:
+            continue
+
+        if _EMBED_RE.search(line):
+            errors.append(f"第 {number} 行不可使用 ![[ ]] 嵌入語法")
+        if _HTML_TAG_RE.search(line):
+            errors.append(f"第 {number} 行不可使用 HTML 標籤")
+        if _REFERENCE_HEADING_RE.match(line):
+            errors.append(f"第 {number} 行不可放參考資料／參考書目清單")
+        stripped = line.strip()
+        is_table_row = stripped.startswith("|") and stripped.count("|") >= 2
+        if is_table_row and _ALIAS_LINK_RE.search(line):
+            errors.append(f"第 {number} 行表格內不可放帶別名連結（| 會斷開儲存格）")
+        if _PROCESS_NOTE_RE.search(line):
+            errors.append(
+                f"第 {number} 行出現流程註記（舊版／本次維護／先前版本／待確認事項／應並陳），"
+                "正文只寫研經內容，勘誤依據寫在 commit 訊息或 relation"
+            )
+        for match in _HASHTAG_RE.finditer(line):
+            token = match.group(0)
+            if re.fullmatch(r"#+", token):
+                continue
+            errors.append(f"第 {number} 行不可使用 #標籤（{token}）")
+            break
+
+        if content_kind == "yaml":
+            if re.match(r"^knowledge_nodes\s*:", line):
+                in_knowledge_nodes = True
+                continue
+            if in_knowledge_nodes:
+                if line and not line.startswith((" ", "\t", "-")):
+                    in_knowledge_nodes = False
+                elif _SELF_WRAPPED_NODE_RE.match(line):
+                    errors.append(
+                        f"第 {number} 行 knowledge_nodes 不可自己包 [[ ]]（雙重括號 bug），"
+                        "寫裸名或 名稱|小標題"
+                    )
+
+    if in_mermaid or in_fence:
+        errors.append("程式碼區塊未關閉")
     if content_kind == "yaml":
         try:
             yaml.safe_load(text)
@@ -605,6 +689,181 @@ def apply_chapter_link_updates(book: str, chapter: int, preview_token: str) -> D
         return _error(str(exc))
 
 
+def _chapter_node_files(canonical: str, chapter: int) -> tuple[List[Path], List[str]]:
+    """Resolve a chapter's knowledge_nodes to rendered entry files plus the chapter md."""
+    _canonical, directory, tmp = _chapter_context(canonical, chapter)
+    payload = tmp / "chapter_content.yaml"
+    if not payload.is_file():
+        raise FileNotFoundError("缺 chapter_content.yaml；先完成 M6 payload 再掃描")
+    data = yaml.safe_load(payload.read_text(encoding="utf-8")) or {}
+    names = [
+        str(node).split("|")[0].strip()
+        for group in (data.get("knowledge_nodes") or {}).values()
+        for node in (group or [])
+    ]
+    index = {
+        path.stem: path
+        for path in (ROOT_DIR / "link_folder").glob("*/*.md")
+    }
+    files, missing = [], []
+    for name in names:
+        target = index.get(name)
+        if target is None:
+            missing.append(name)
+        else:
+            files.append(target)
+    chapter_md = directory / f"第{chapter}章.md"
+    if chapter_md.is_file():
+        files.append(chapter_md)
+    return files, missing
+
+
+def _raw_corpus() -> str:
+    parts = []
+    for path in sorted((ROOT_DIR / "raw_data").glob("*.txt")):
+        parts.append(path.read_text(encoding="utf-8", errors="ignore"))
+    return "".join(parts)
+
+
+@mcp.tool()
+def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True) -> Dict[str, Any]:
+    """Flag Hebrew letters, Latin transliterations and simplified characters with no source.
+
+    Every token found in this chapter's knowledge_node entries and its rendered
+    markdown is checked against the whole ``raw_data/`` corpus.  Hebrew runs are
+    compared after stripping niqqud; Latin tokens use word-boundary matching so
+    that ``perat`` does not falsely match ``temperate``.  A flag means the token
+    appears nowhere in any source — under the content rule it must be removed,
+    not merely reworded.  This tool reads only; it never edits.
+    """
+    try:
+        canonical = _canonical_book(book)
+        files, missing_nodes = _chapter_node_files(canonical, chapter)
+    except (OSError, ValueError, yaml.YAMLError) as exc:
+        return _error(str(exc))
+
+    raw = _raw_corpus()
+    if not raw:
+        return _error("raw_data/ 讀不到任何來源檔，無法判斷出處")
+
+    hebrew, latin, simplified = [], [], []
+    for path in files:
+        relative = _relative_to_root(path)
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for run in sorted(set(_HEBREW_RUN_RE.findall(text))):
+            stripped = _NIQQUD_RE.sub("", run)
+            if stripped and stripped not in raw:
+                hebrew.append({"file": relative, "token": run})
+        candidates = set(_PAREN_LATIN_RE.findall(text)) | set(_ITALIC_LATIN_RE.findall(text))
+        for token in sorted(candidates):
+            token = token.strip()
+            if not token or token in _TRANSLITERATION_IGNORE:
+                continue
+            if re.search(r"\b" + re.escape(token) + r"\b", raw, re.IGNORECASE):
+                continue
+            # A compound such as "Peniel / Penuel" is sourced when every word is.
+            words = [word for word in re.split(r"[^A-Za-z']+", token) if word]
+            if words and all(
+                re.search(r"\b" + re.escape(word) + r"\b", raw, re.IGNORECASE) for word in words
+            ):
+                if include_warnings:
+                    simplified_note = {
+                        "file": relative,
+                        "token": token,
+                        "note": "整串查無出處，但每個字詞單獨都有出處（多為 raw 換行造成），請人工確認寫法",
+                    }
+                    latin.append(simplified_note)
+                continue
+            latin.append({"file": relative, "token": token})
+        found = sorted(set(text) & _SIMPLIFIED_CHARS)
+        if found:
+            simplified.append({"file": relative, "characters": "".join(found)})
+
+    hard = [item for item in latin if "note" not in item]
+    return {
+        "success": True,
+        "book": canonical,
+        "chapter": chapter,
+        "files_scanned": len(files),
+        "nodes_without_markdown": missing_nodes,
+        "unsourced_hebrew": hebrew,
+        "unsourced_latin": hard,
+        "latin_needing_review": [item for item in latin if "note" in item],
+        "simplified_characters": simplified,
+        "flag_count": len(hebrew) + len(hard) + len(simplified),
+        "advice": (
+            "查無出處＝刪除音譯或希伯來字母，改用來源實際給的中文字義；"
+            "護欄只掃 .tmp payload，本工具補掃已渲染的 link_folder 條目。"
+        ),
+    }
+
+
+def _run_gate(script: str, *args: str, timeout: int = 300) -> Dict[str, Any]:
+    cmd = [sys.executable, str(UTIL_DIR / script), *args]
+    try:
+        proc = subprocess.run(
+            cmd, cwd=ROOT_DIR, capture_output=True, text=True, encoding="utf-8", timeout=timeout
+        )
+    except subprocess.TimeoutExpired:
+        return {"gate": script, "passed": False, "error": f"逾時（{timeout} 秒）"}
+    stdout = proc.stdout.strip()
+    tail = "\n".join(stdout.splitlines()[-6:])
+    passed = proc.returncode == 0 and "結論：FAIL" not in stdout
+    return {
+        "gate": " ".join([script, *args]),
+        "passed": passed,
+        "returncode": proc.returncode,
+        "tail": tail,
+        "stderr": proc.stderr.strip()[-500:],
+    }
+
+
+@mcp.tool()
+def run_gates(book: str, chapter: Optional[int] = None, rebuild_index: bool = False) -> Dict[str, Any]:
+    """Run the repository's closing gates and report each verdict separately.
+
+    Covers ``validate_knowledge_base``, ``verify_links``, ``check_accumulation_orphans``
+    and — when ``chapter`` is given — ``check_existing_links --missing``.  Set
+    ``rebuild_index`` to run ``build_link_index`` then ``build_embedding_index``
+    first, which is required after adding, renaming or deleting entries because a
+    stale index makes the orphan check report false failures.  Passing gates prove
+    structure only; content faithfulness still needs a source-by-source review.
+    """
+    try:
+        canonical = _canonical_book(book)
+    except ValueError as exc:
+        return _error(str(exc))
+
+    results: List[Dict[str, Any]] = []
+    if rebuild_index:
+        results.append(_run_gate("build_link_index.py"))
+        results.append(_run_gate("build_embedding_index.py"))
+    results.append(_run_gate("validate_knowledge_base.py"))
+    results.append(_run_gate("verify_links.py", canonical))
+    if chapter is not None:
+        try:
+            _canonical, directory, _tmp = _chapter_context(canonical, chapter)
+        except ValueError as exc:
+            return _error(str(exc))
+        chapter_md = f"{directory.name}/第{chapter}章.md"
+        results.append(_run_gate("check_existing_links.py", chapter_md, "--missing"))
+    results.append(_run_gate("check_accumulation_orphans.py", canonical))
+
+    failed = [item["gate"] for item in results if not item["passed"]]
+    return {
+        "success": True,
+        "book": canonical,
+        "chapter": chapter,
+        "passed": not failed,
+        "failed_gates": failed,
+        "results": results,
+        "advice": (
+            "閘門全綠只是可以開始檢查內容的前提，不是完工判準；"
+            "工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓閘門變色。"
+        ),
+    }
+
+
 @mcp.prompt("biblical_chapter_sop")
 def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
     """MCP-assisted new-chapter SOP; the repository prompt remains authoritative."""
@@ -615,9 +874,10 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
 2. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
 3. M3/M6 **只走人工零 API 流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。不要用 `run_chapter.py` 生成 M3/M6。
-4. `lint_chapter_content` 只是格式提示；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
+4. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
+4b. 渲染後跑 `scan_unsourced_tokens`——護欄只掃 `.tmp` payload，這一支補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對整個 raw_data 語料）。
 5. B 類累積必須先核對 `link_updates.yaml` 與來源，再 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
-6. 最後仍照 `agent_start_prompt.md` 執行 build index／embedding、驗證、稽核與 `check_chapter_files.py`，全部 PASS 才提交。
+6. 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門；其餘稽核仍照 `agent_start_prompt.md`。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
 """
 
 
@@ -632,6 +892,8 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 - 修改 M3／M6 時固定走零 API：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。
+- 渲染後跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支補掃 `link_folder` 條目與章節 md 裡查無出處的希伯來字母與拉丁音譯（對整個 raw_data 語料做詞界比對）。查無出處＝刪，不是改寫。
+- 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門。**閘門全綠不是完工判準，只是可以開始檢查內容的前提**——工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓任何閘門變色；一章若 `link_folder/` 改動數為 0，回報要明寫「本章 N 個條目全部讀過、無錯可改」。
 - 此 MCP 不授權跳過 `agent_maintenance_prompt.md` 的內容勘誤、link index／embedding 同步、驗證與稽核。
 """
 
