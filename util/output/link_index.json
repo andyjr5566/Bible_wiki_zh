@@ -13035,20 +13035,6 @@
     "status": "formal",
     "aliases": []
   },
-  "毗努伊勒 (神的面)": {
-    "path": "link_folder/原文/毗努伊勒 (神的面).md",
-    "type": "原文",
-    "secondary_types": [
-      "地點",
-      "神學"
-    ],
-    "title": "毗努伊勒 (神的面)",
-    "status": "formal",
-    "aliases": [
-      "Peniel",
-      "Penuel"
-    ]
-  },
   "氣忿忿": {
     "path": "link_folder/原文/氣忿忿.md",
     "type": "原文",
@@ -14267,21 +14253,6 @@
     "title": "隨眾（rab）",
     "status": "formal",
     "aliases": []
-  },
-  "雅博": {
-    "path": "link_folder/原文/雅博.md",
-    "type": "原文",
-    "secondary_types": [
-      "地點",
-      "神學"
-    ],
-    "title": "雅博",
-    "status": "formal",
-    "aliases": [
-      "Jabbok",
-      "雅博河",
-      "摔跤河"
-    ]
   },
   "雲彩（anan）": {
     "path": "link_folder/原文/雲彩（anan）.md",
@@ -15774,21 +15745,6 @@
     "title": "麥比拉洞",
     "status": "formal",
     "aliases": []
-  },
-  "不吃大腿窩的筋": {
-    "path": "link_folder/文化/不吃大腿窩的筋.md",
-    "type": "文化",
-    "secondary_types": [
-      "歷史",
-      "神學"
-    ],
-    "title": "不吃大腿窩的筋",
-    "status": "formal",
-    "aliases": [
-      "大腿窩筋禁忌",
-      "挑筋教",
-      "不食坐骨神經"
-    ]
   },
   "二十舍客勒銀子": {
     "path": "link_folder/文化/二十舍客勒銀子.md",
@@ -22981,6 +22937,14 @@
       "岳父接待禮儀"
     ]
   },
+  "古代近東扣留以求福": {
+    "path": "link_folder/背景/古代近東扣留以求福.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東扣留以求福",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東接待客旅禮儀": {
     "path": "link_folder/背景/古代近東接待客旅禮儀.md",
     "type": "背景",
@@ -27868,12 +27832,6 @@
   "非法殺人": {
     "alias_of": "殺人（ratsach）"
   },
-  "Peniel": {
-    "alias_of": "毗努伊勒 (神的面)"
-  },
-  "Penuel": {
-    "alias_of": "毗努伊勒 (神的面)"
-  },
   "怒氣燃燒": {
     "alias_of": "氣忿忿"
   },
@@ -28285,15 +28243,6 @@
   "隔絕": {
     "alias_of": "隔絕（與污穢分別）"
   },
-  "Jabbok": {
-    "alias_of": "雅博"
-  },
-  "雅博河": {
-    "alias_of": "雅博"
-  },
-  "摔跤河": {
-    "alias_of": "雅博"
-  },
   "露下體": {
     "alias_of": "露下體（euphemism，亂倫委婉語）"
   },
@@ -28587,15 +28536,6 @@
   },
   "亞拉巴海": {
     "alias_of": "鹽海"
-  },
-  "大腿窩筋禁忌": {
-    "alias_of": "不吃大腿窩的筋"
-  },
-  "挑筋教": {
-    "alias_of": "不吃大腿窩的筋"
-  },
-  "不食坐骨神經": {
-    "alias_of": "不吃大腿窩的筋"
   },
   "Apis": {
     "alias_of": "亞皮斯（Apis）"

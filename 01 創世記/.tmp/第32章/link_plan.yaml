@@ -139,6 +139,20 @@ A_use_directly:
   existing_title: 以色列
   existing_path: link_folder/原文/以色列.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 古代近東扣留以求福
+  suggested_type: 背景
+  evidence: 26節；GT 華爾頓《創世記背景註釋》〈創三十二24～26 扣留以求福〉赫人儀式文獻記女神凱巴特（Khebat）與王搏鬥時被王扣留，接下來得勝者是誰的討論導致王請求賜福
+  target_path: link_folder/背景/古代近東扣留以求福.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.436
+    type: 歷史
+  - title: 古代近東祭壇庇護
+    score: 0.428
+    type: 背景
+  - title: 古代近東以什一奉獻為神職薪酬
+    score: 0.428
+    type: 文化
 D_new_candidate: []
 E_skip: []
