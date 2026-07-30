@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/mcp.json",
+  "mcpServers": {
+    "hermes-scripture": {
+      "command": "C:/Users/andyj_adknr2z/AppData/Local/hermes/hermes-agent/venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "util.mcp.server"
+      ],
+      "cwd": "c:/Obsidian/Hermes/scripture"
+    }
+  }
+}
