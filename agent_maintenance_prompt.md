@@ -101,6 +101,23 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
    （`.tmp/第x章/manual/sources.md` 或 `source_manifest.md` 列的 raw_data 檔）；
    新增的引句、經文引註、音譯都要先 grep raw_data 確認出處。
 
+## MCP 輔助（可用時；M3／M6 固定零 API）
+
+連上 `Hermes-Scripture-MCP` 時，先用 `get_chapter_status` 看管線缺口；用
+`read_chapter_artifact` 讀白名單內的 `.tmp` payload／prompt、用 `read_chapter_source`
+讀本章經文或 manifest 宣告為 OK 的來源、用 `search_wiki_entries`／`read_wiki_entry` 核對
+既有條目與 alias。這些工具有路徑白名單，不能用來讀任意檔案。
+
+維護 M3／M6 時，MCP 路徑和本檔的人工模式相同：手寫 yaml 後呼叫
+`check_manual_payloads`（唯讀，不會改寫 alias）→ `render_manual_chapter`；改
+`entry_content` 且 chapter_content 已同步時才設 `keep_chapter=true`。候選變動前先呼叫
+`prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單，確認後才設為 true。
+這些工具實際只會使用 `util/run_chapter_manual.py`，絕不呼叫模型端點。
+
+B 類累積保持既有紀律：`preview_chapter_link_updates` → 人工核對 summary／relation 與
+來源 → 將 token 傳給 `apply_chapter_link_updates` → 再 preview 必須 0 變更。MCP 不得用來
+跳過本檔要求的逐條內容勘誤、索引同步或收尾驗證。
+
 ## 對照表：改了什麼 → 跑什麼
 
 | 修改的檔案 | 之後跑 | 說明 |

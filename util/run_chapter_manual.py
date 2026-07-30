@@ -287,7 +287,7 @@ def _check_entries(ctx, plan, problems, warnings):
         warnings.append("尚缺 payload 的 C 類候選：" + "、".join(pending))
 
 
-def _check_chapter(ctx, problems, warnings):
+def _check_chapter(ctx, problems, warnings, rewrite_aliases=True):
     cc_path = ctx.path("chapter_content.yaml")
     if not cc_path.exists():
         warnings.append("chapter_content.yaml 尚未撰寫")
@@ -311,11 +311,13 @@ def _check_chapter(ctx, problems, warnings):
     before = payload.get("organization")
     for err in validator(payload):
         problems.append(f"chapter_content.yaml: {err}")
-    if payload.get("organization") != before:
+    if payload.get("organization") != before and rewrite_aliases:
         # validator 內的 _rewrite_alias_links 把 [[alias]] 機械改寫成 [[全名|alias]]
         # ——fresh 路徑會把改寫後版本落檔，這裡比照回寫
         rc._write_yaml(cc_path, payload)
         warnings.append("organization 的 [[alias]] 已機械改寫為 [[全名|alias]] 並回寫檔案")
+    elif payload.get("organization") != before:
+        warnings.append("organization 有可機械改寫的 [[alias]]；本次 --no-rewrite 未寫檔")
     for err in rc._split_node_errors(ctx) + rc._merged_node_errors(ctx):
         problems.append(err)
 
@@ -339,7 +341,7 @@ def cmd_check(args):
         return 1
     plan = rc._read_yaml(plan_path) or {}
     _check_entries(ctx, plan, problems, warnings)
-    _check_chapter(ctx, problems, warnings)
+    _check_chapter(ctx, problems, warnings, rewrite_aliases=not args.no_rewrite)
     # 高風險早篩：查無出處的希伯來字母（P4 也會擋）與音譯複核（P4 也會提醒）
     problems.extend(rc._unsourced_hebrew_errors(ctx))
     warnings.extend(rc._transliteration_review(ctx))
@@ -433,6 +435,10 @@ def main():
     p_prompts.add_argument("--confirm-stale", action="store_true",
                            help="上游改動會刪手寫 payload 時，確認照刪")
     p_check = sub.add_parser("check", help="以 fresh 路徑同套驗證檢查手寫 payload")
+    p_check.add_argument(
+        "--no-rewrite", action="store_true",
+        help="只檢查，不把 organization 的合法 alias 連結機械回寫為全名",
+    )
     p_run = sub.add_parser("run", help="跑原版 orchestrator（M5/P3/P4）；缺 payload 即報錯")
     p_run.add_argument("--keep-chapter", action="store_true",
                        help="entry_content 變動後保留手寫 chapter_content，只重生 verse_links")

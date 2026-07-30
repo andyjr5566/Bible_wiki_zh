@@ -2,6 +2,24 @@
 
 處理書卷章節時，流程由程式主導（`util/run_chapter.py`），你只負責「準備輸入、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。
 
+## MCP 輔助（可用時；不取代本流程）
+
+連上 `Hermes-Scripture-MCP` 時，可用 `get_chapter_status` 看目前缺口、
+`search_wiki_entries`／`read_wiki_entry` 查正式條目與 alias、`read_chapter_artifact`／
+`read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、四來源
+內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
+
+**經 MCP 處理 M3／M6 時，一律走零 API 的人工模式**：
+`prepare_manual_payload_prompts` → 手寫 M3 `entry_content/*.yaml` → 再 prepare 取得更新的
+M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
+`render_manual_chapter`。這條路實際執行的是 `util/run_chapter_manual.py`，不可以 MCP
+工具偷換成 `run_chapter.py` 的模型生成。`lint_chapter_content` 只是格式提示；M3/M6 的
+結構閘門是 `check_manual_payloads`，內容正確性仍須逐條對四來源。
+
+B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updates.yaml` 與來源 →
+帶 preview token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。它不取代本檔
+步驟 6 的內容複核或步驟 7–8 的最終驗證。
+
 ## 每章流程
 
 1. **準備來源**（章節的 `.tmp` 資料夾：`【序號 書名】/.tmp/第x章/`）

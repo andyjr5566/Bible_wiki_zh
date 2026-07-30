@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """準備並安全套用 link_folder 的章節累積資料。"""
 import argparse
+import os
 import re
 import sys
+import tempfile
 from pathlib import Path
 
 import yaml
@@ -90,106 +92,179 @@ def validate_update(update):
     return [key for key in required_text if not str(update.get(key, "")).strip()]
 
 
-def apply_updates(manifest, dry_run=False):
-    console.utf8_stdio()
+def _entry_path(root, raw_path):
+    """Resolve an update target, allowing only Markdown entries in link_folder."""
+    if not isinstance(raw_path, str) or not raw_path.strip():
+        raise ValueError("更新項目的 path 必須是非空字串")
+    relative = Path(raw_path)
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError(f"不合法的條目路徑：{raw_path}")
+    root = Path(root).resolve()
+    link_root = (root / "link_folder").resolve()
+    path = (root / relative).resolve()
+    if path.suffix.lower() != ".md" or not path.is_relative_to(link_root):
+        raise ValueError(f"更新目標必須是 link_folder/ 內的 .md 條目：{raw_path}")
+    if not path.is_file():
+        raise ValueError(f"找不到條目檔案：{raw_path}")
+    return path
+
+
+def _updated_text(text, book, chapter, update, path):
+    """Return one entry's rendered accumulation update without writing it."""
+    start = f"<!-- accumulation:{book}:{chapter}:start -->"
+    end = f"<!-- accumulation:{book}:{chapter}:end -->"
+    block = render_block(book, chapter, update)
+    if start in text:
+        pattern = re.compile(re.escape(start) + r"[\s\S]*?" + re.escape(end))
+        new_text, count = pattern.subn(block, text, count=1)
+        if count != 1:
+            raise ValueError(f"{path}: 累積標記損壞")
+        return new_text
+
+    accumulation = re.search(
+        r"^## 按書卷累積\s*$([\s\S]*?)(?=^## (?:主題發展|相關條目|來源依據)\s*$)",
+        text, re.M,
+    )
+    if not accumulation:
+        accumulation = re.search(r"^## 按書卷累積\s*$([\s\S]*)", text, re.M)
+    if not accumulation:
+        raise ValueError(f"{path}: 找不到合法的按書卷累積區")
+    section = accumulation.group(1)
+    book_heading = re.search(rf"^###\s+{re.escape(book)}\s*$", section, re.M)
+    if book_heading:
+        following = section[book_heading.end():]
+        next_book = re.search(r"^###\s+", following, re.M)
+        book_end = (
+            accumulation.start(1) + book_heading.end()
+            + (next_book.start() if next_book else len(following))
+        )
+        insertion = book_end
+        for marker in re.finditer(
+            rf"^<!-- accumulation:{re.escape(book)}:(\d+):start -->",
+            section[book_heading.end():(book_heading.end() + (next_book.start() if next_book else len(following)))],
+            re.M,
+        ):
+            if int(marker.group(1)) > chapter:
+                insertion = accumulation.start(1) + book_heading.end() + marker.start()
+                break
+        return text[:insertion].rstrip() + "\n\n" + block + "\n" + text[insertion:].lstrip("\n")
+
+    insertion = accumulation.end(1)
+    for heading in re.finditer(r"^###\s+(.+?)\s*$", section, re.M):
+        heading_name = canonical_book_name(heading.group(1))
+        if BOOK_ALIASES.get(heading_name, heading_name) not in BOOK_NUMBERS:
+            continue
+        if book_rank(heading_name) > book_rank(book):
+            insertion = accumulation.start(1) + heading.start()
+            break
+    group = f"### {book}\n\n{block}"
+    return (
+        text[:insertion].rstrip()
+        + "\n\n"
+        + group
+        + "\n\n"
+        + text[insertion:].lstrip()
+    )
+
+
+def preview_updates(manifest):
+    """Validate every update and return all proposed file changes without writing."""
+    manifest = Path(manifest)
     data = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
+    if not isinstance(data, dict):
+        raise ValueError("manifest 頂層必須是物件")
     book, chapter = data.get("book"), data.get("chapter")
-    if not book or not isinstance(chapter, int):
+    if not book or not isinstance(chapter, int) or chapter < 1:
         raise ValueError("manifest 缺少合法 book/chapter")
-    # manifest 的 book 有時寫成資料夾名（「03 利未記」）而非書卷名（「利未記」）。
-    # 這裡的 book 會直接寫進累積標記與 H3 標題，不正規化就會在條目裡另開一節
-    # 「### 03 利未記」，與既有的「### 利未記」並存互不相認：check_existing_links
-    # 找不到累積、validate_knowledge_base 抱怨排序、下次重跑又寫一份。
-    # 全庫已有 175 個條目被這樣切成兩半（摩西.md 同時有「### 利未記」與「### 03 利未記」）。
     book = canonical_book_name(book)
     if book not in BOOK_NUMBERS:
         raise ValueError(
             f"manifest 的 book「{data.get('book')}」不是合法書卷名；"
             f"應為 _config/bible_books.json 裡的書卷名（如「利未記」），不是資料夾名"
         )
-    changed = 0
-    for update in data.get("updates", []):
+    updates = data.get("updates", [])
+    if not isinstance(updates, list):
+        raise ValueError("manifest 的 updates 必須是清單")
+
+    root = ROOT.resolve()
+    operations = []
+    for update in updates:
+        if not isinstance(update, dict):
+            raise ValueError("updates 的每一項必須是物件")
         missing = validate_update(update)
         if missing:
             raise ValueError(f"{update.get('title', '?')} 缺少欄位：{', '.join(missing)}")
-        root = ROOT.resolve()
-        path = (ROOT / update["path"]).resolve()
-        if not path.exists() or (path != root and root not in path.parents):
-            raise ValueError(f"不合法的條目路徑：{path}")
+        path = _entry_path(root, update["path"])
         text = path.read_text(encoding="utf-8")
-        start = f"<!-- accumulation:{book}:{chapter}:start -->"
-        end = f"<!-- accumulation:{book}:{chapter}:end -->"
-        block = render_block(book, chapter, update)
-        if start in text:
-            pattern = re.compile(re.escape(start) + r"[\s\S]*?" + re.escape(end))
-            new_text, count = pattern.subn(block, text, count=1)
-            if count != 1:
-                raise ValueError(f"{path}: 累積標記損壞")
-        else:
-            # Try to locate the accumulation section.  The canonical end
-            # boundary is ``## 主題發展``; if that is missing (older entries
-            # may only have ``## 相關條目`` or ``## 來源依據``), fall back to
-            # the next available H2 heading after ``## 按書卷累積``.
-            accumulation = re.search(
-                r"^## 按書卷累積\s*$([\s\S]*?)(?=^## (?:主題發展|相關條目|來源依據)\s*$)",
-                text, re.M,
-            )
-            if not accumulation:
-                # Last resort: grab everything from ``## 按書卷累積`` to EOF
-                accumulation = re.search(
-                    r"^## 按書卷累積\s*$([\s\S]*)", text, re.M
-                )
-            if not accumulation:
-                raise ValueError(f"{path}: 找不到合法的按書卷累積區")
-            section = accumulation.group(1)
-            book_heading = re.search(rf"^###\s+{re.escape(book)}\s*$", section, re.M)
-            if book_heading:
-                following = section[book_heading.end():]
-                next_book = re.search(r"^###\s+", following, re.M)
-                book_end = (
-                    accumulation.start(1) + book_heading.end()
-                    + (next_book.start() if next_book else len(following))
-                )
-                insertion = book_end
-                for marker in re.finditer(
-                    rf"^<!-- accumulation:{re.escape(book)}:(\d+):start -->",
-                    section[book_heading.end():(book_heading.end() + (next_book.start() if next_book else len(following)))],
-                    re.M,
-                ):
-                    if int(marker.group(1)) > chapter:
-                        insertion = accumulation.start(1) + book_heading.end() + marker.start()
-                        break
-                new_text = text[:insertion].rstrip() + "\n\n" + block + "\n" + text[insertion:].lstrip("\n")
-            else:
-                insertion = accumulation.end(1)
-                for heading in re.finditer(r"^###\s+(.+?)\s*$", section, re.M):
-                    # 標題可能是資料夾名（「04 民數記」——舊 bug 留下的損害，尚未全數併回）。
-                    # 不正規化就認不得它是民數記，利未記會被丟到檔尾，排在民數記後面，
-                    # validate 判「未依書卷排序」（主題/施恩座、地點/曠野 實際踩過）。
-                    heading_name = canonical_book_name(heading.group(1))
-                    # 部分舊格式條目在「## 按書卷累積」下混有非書卷子標題
-                    # （如 觸發來源／聖經出現／與目前整理書卷的關聯）；
-                    # 只依實際書卷標題排序，略過非書卷標題以免插入位置跑掉。
-                    if BOOK_ALIASES.get(heading_name, heading_name) not in BOOK_NUMBERS:
-                        continue
-                    if book_rank(heading_name) > book_rank(book):
-                        insertion = accumulation.start(1) + heading.start()
-                        break
-                group = f"### {book}\n\n{block}"
-                new_text = (
-                    text[:insertion].rstrip()
-                    + "\n\n"
-                    + group
-                    + "\n\n"
-                    + text[insertion:].lstrip()
-                )
-        if new_text != text:
-            changed += 1
-            if not dry_run:
-                path.write_text(new_text, encoding="utf-8")
-            print(f"{'預覽' if dry_run else '更新'}：{update['path']}")
-    print(f"✅ {'預覽' if dry_run else '套用'}完成：{changed} 個檔案")
-    return changed
+        new_text = _updated_text(text, book, chapter, update, path)
+        operations.append({
+            "path": path,
+            "relative_path": path.relative_to(root).as_posix(),
+            "title": str(update["title"]),
+            "before": text,
+            "after": new_text,
+        })
+    return {"book": book, "chapter": chapter, "operations": operations}
+
+
+def _stage_text(path, text):
+    fd, name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    with os.fdopen(fd, "w", encoding="utf-8", newline="") as handle:
+        handle.write(text)
+    return Path(name)
+
+
+def _commit_operations(changes):
+    """Stage all files before replacing any; attempt rollback on an OS failure."""
+    staged = []
+    replaced = []
+    try:
+        for operation in changes:
+            staged.append((operation, _stage_text(operation["path"], operation["after"])))
+        for operation, staged_path in staged:
+            os.replace(staged_path, operation["path"])
+            replaced.append(operation)
+    except OSError as exc:
+        rollback_errors = []
+        for operation in reversed(replaced):
+            try:
+                rollback = _stage_text(operation["path"], operation["before"])
+                os.replace(rollback, operation["path"])
+            except OSError as rollback_exc:
+                rollback_errors.append(str(rollback_exc))
+        detail = "；".join(rollback_errors)
+        raise OSError(
+            "累積更新寫入失敗；已嘗試還原先前已替換的檔案"
+            + (f"（還原另有錯誤：{detail}）" if detail else "")
+        ) from exc
+    finally:
+        for _, staged_path in staged:
+            try:
+                staged_path.unlink(missing_ok=True)
+            except OSError:
+                pass
+
+
+def apply_updates(manifest, dry_run=False, reporter=print):
+    """Apply fully prevalidated updates with staged per-file replacements.
+
+    ``reporter`` keeps CLI feedback out of MCP's stdout JSON-RPC transport.
+    Pass ``None`` to suppress line-by-line output.
+    """
+    # CLI callers retain the repository's UTF-8 console guard.  MCP passes a
+    # custom collector, so its JSON-RPC stdout is never reconfigured or used.
+    if reporter is print:
+        console.utf8_stdio()
+    preview = preview_updates(manifest)
+    changes = [item for item in preview["operations"] if item["after"] != item["before"]]
+    if not dry_run and changes:
+        _commit_operations(changes)
+    if reporter:
+        action = "預覽" if dry_run else "更新"
+        for operation in changes:
+            reporter(f"{action}：{operation['relative_path']}")
+        reporter(f"✅ {'預覽' if dry_run else '套用'}完成：{len(changes)} 個檔案")
+    return len(changes)
 
 
 def main():

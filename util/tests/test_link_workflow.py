@@ -165,6 +165,66 @@ class UpdateTests(unittest.TestCase):
             ]
             self.assertIn("#### [[01 創世記/第1章|第1章]]", accumulation)
 
+    def test_preview_is_read_only_and_rejects_non_entry_targets(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "人物" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            original = "# 測試\n\n## 按書卷累積\n\n## 主題發展\n"
+            entry_path.write_text(original, encoding="utf-8")
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "創世記",
+                "chapter": 1,
+                "updates": [{
+                    "title": "測試", "path": "link_folder/人物/測試.md",
+                    "summary": "新資料", "relation": "測試關聯",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+            self.assertEqual(1, len(preview["operations"]))
+            self.assertEqual(original, entry_path.read_text(encoding="utf-8"))
+
+            manifest.write_text(yaml.safe_dump({
+                "book": "創世記",
+                "chapter": 1,
+                "updates": [{
+                    "title": "測試", "path": "README.md",
+                    "summary": "新資料", "relation": "測試關聯",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                with self.assertRaisesRegex(ValueError, "link_folder"):
+                    link_updates.preview_updates(manifest)
+
+    def test_failed_prevalidation_does_not_write_an_earlier_update(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "人物" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            original = "# 測試\n\n## 按書卷累積\n\n## 主題發展\n"
+            entry_path.write_text(original, encoding="utf-8")
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "創世記",
+                "chapter": 1,
+                "updates": [
+                    {
+                        "title": "測試", "path": "link_folder/人物/測試.md",
+                        "summary": "新資料", "relation": "測試關聯",
+                    },
+                    {
+                        "title": "壞資料", "path": "link_folder/人物/不存在.md",
+                        "summary": "不應寫入", "relation": "不應寫入",
+                    },
+                ],
+            }, allow_unicode=True), encoding="utf-8")
+            with patch("link_updates.ROOT", root):
+                with self.assertRaisesRegex(ValueError, "找不到條目檔案"):
+                    apply_updates(manifest, reporter=None)
+            self.assertEqual(original, entry_path.read_text(encoding="utf-8"))
+
     def test_apply_inserts_new_book_group_in_canonical_order(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
