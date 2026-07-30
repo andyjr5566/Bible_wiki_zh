@@ -25,7 +25,7 @@ export default function Navbar({ audioOn, onToggleAudio }) {
           </div>
           <div className="hidden md:flex gap-6">
             {sections.map(s => (
-              <a key={s.id} href={#} className="text-parchment/70 hover:text-gold-divine transition-colors text-sm font-serif">
+              <a key={s.id} href={`#${s.id}`} className="text-parchment/70 hover:text-gold-divine transition-colors text-sm font-serif">
                 {s.label}
               </a>
             ))}
@@ -35,7 +35,7 @@ export default function Navbar({ audioOn, onToggleAudio }) {
           </button>
         </div>
         <div className="h-0.5 bg-wood-primary">
-          <div className="h-full bg-gold-divine transition-all duration-150" style={{ width: ${progress * 100}% }} />
+          <div className="h-full bg-gold-divine transition-all duration-150" style={{ width: `${progress * 100}%` }} />
         </div>
       </nav>
     </>

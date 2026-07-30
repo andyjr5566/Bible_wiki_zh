@@ -224,6 +224,7 @@ class RunGatesTests(unittest.TestCase):
 
         with patch.object(server, "_run_gate", fake_gate):
             result = server.run_gates("創世記", 1)
+        self.assertFalse(result["success"])
         self.assertFalse(result["passed"])
         self.assertEqual(result["failed_gates"], ["check_accumulation_orphans.py 創世記"])
         self.assertIn("check_existing_links.py", calls)
@@ -238,6 +239,7 @@ class RunGatesTests(unittest.TestCase):
 
         with patch.object(server, "_run_gate", fake_gate):
             result = server.run_gates("創世記", rebuild_index=True)
+        self.assertTrue(result["success"])
         self.assertTrue(result["passed"])
         self.assertEqual(calls[:2], ["build_link_index.py", "build_embedding_index.py"])
         self.assertNotIn("check_existing_links.py", calls)

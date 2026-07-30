@@ -1,5 +1,5 @@
 ﻿import { motion } from 'framer-motion'
-import { Dove, Rainbow } from 'lucide-react'
+import { Bird, Rainbow } from 'lucide-react'
 import RainbowCanvas from '../Canvas/RainbowCanvas'
 
 export default function PeaceSection() {
@@ -16,7 +16,7 @@ export default function PeaceSection() {
           transition={{ duration: 1 }}
           className="flex justify-center gap-4 mb-6"
         >
-          <Dove size={40} className="text-parchment" />
+          <Bird size={40} className="text-parchment" />
           <Rainbow size={40} className="text-gold-divine" />
         </motion.div>
         <motion.h2

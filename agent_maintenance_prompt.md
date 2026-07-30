@@ -118,6 +118,11 @@ B 類累積保持既有紀律：`preview_chapter_link_updates` → 人工核對 
 來源 → 將 token 傳給 `apply_chapter_link_updates` → 再 preview 必須 0 變更。MCP 不得用來
 跳過本檔要求的逐條內容勘誤、索引同步或收尾驗證。
 
+render 後可用 `scan_unsourced_tokens` 補掃舊 A 類條目從未被 payload 護欄覆蓋的希伯來字母、
+拉丁音譯與簡體字。它掃的是**全庫** raw_data：報出是強力刪除線索；未報出不代表該詞來自
+本章或該條目實際累積來源，仍要以 manifest／累積章節核對。`run_gates` 只執行部分核心
+機械閘門，且 `verify_links` 會更新驗證報告；它不取代本檔的完整收尾驗證。
+
 ## 對照表：改了什麼 → 跑什麼
 
 | 修改的檔案 | 之後跑 | 說明 |

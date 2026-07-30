@@ -727,14 +727,16 @@ def _raw_corpus() -> str:
 
 @mcp.tool()
 def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True) -> Dict[str, Any]:
-    """Flag Hebrew letters, Latin transliterations and simplified characters with no source.
+    """Globally flag Hebrew letters, Latin transliterations and simplified characters.
 
     Every token found in this chapter's knowledge_node entries and its rendered
-    markdown is checked against the whole ``raw_data/`` corpus.  Hebrew runs are
-    compared after stripping niqqud; Latin tokens use word-boundary matching so
-    that ``perat`` does not falsely match ``temperate``.  A flag means the token
-    appears nowhere in any source — under the content rule it must be removed,
-    not merely reworded.  This tool reads only; it never edits.
+    markdown is checked against the whole ``raw_data/`` corpus, not only the
+    source files for this chapter or entry. Hebrew runs are compared after
+    stripping niqqud; Latin tokens use word-boundary matching so that ``perat``
+    does not falsely match ``temperate``. A flag means the token appears nowhere
+    in the local corpus and is a strong removal signal. No flag does *not* prove
+    the token came from this entry's actual accumulated sources. This tool reads
+    only; it never edits.
     """
     try:
         canonical = _canonical_book(book)
@@ -793,6 +795,7 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
         "flag_count": len(hebrew) + len(hard) + len(simplified),
         "advice": (
             "查無出處＝刪除音譯或希伯來字母，改用來源實際給的中文字義；"
+            "未報出不等於本章／該條目實際來源有出處，仍須依 manifest 與累積章節人工核對；"
             "護欄只掃 .tmp payload，本工具補掃已渲染的 link_folder 條目。"
         ),
     }
@@ -851,7 +854,7 @@ def run_gates(book: str, chapter: Optional[int] = None, rebuild_index: bool = Fa
 
     failed = [item["gate"] for item in results if not item["passed"]]
     return {
-        "success": True,
+        "success": not failed,
         "book": canonical,
         "chapter": chapter,
         "passed": not failed,
@@ -875,7 +878,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 2. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
 3. M3/M6 **只走人工零 API 流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。不要用 `run_chapter.py` 生成 M3/M6。
 4. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
-4b. 渲染後跑 `scan_unsourced_tokens`——護欄只掃 `.tmp` payload，這一支補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對整個 raw_data 語料）。
+4b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 5. B 類累積必須先核對 `link_updates.yaml` 與來源，再 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
 6. 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門；其餘稽核仍照 `agent_start_prompt.md`。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
 """
@@ -892,7 +895,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 - 修改 M3／M6 時固定走零 API：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。
-- 渲染後跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支補掃 `link_folder` 條目與章節 md 裡查無出處的希伯來字母與拉丁音譯（對整個 raw_data 語料做詞界比對）。查無出處＝刪，不是改寫。
+- 渲染後可跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支以**整個** raw_data 語料補掃。報出＝查無任何本地來源的強力刪除線索；未報出**不**證明它在本章／該條目實際累積來源出現，仍要按 manifest 與累積章節核對。
 - 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門。**閘門全綠不是完工判準，只是可以開始檢查內容的前提**——工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓任何閘門變色；一章若 `link_folder/` 改動數為 0，回報要明寫「本章 N 個條目全部讀過、無錯可改」。
 - 此 MCP 不授權跳過 `agent_maintenance_prompt.md` 的內容勘誤、link index／embedding 同步、驗證與稽核。
 """

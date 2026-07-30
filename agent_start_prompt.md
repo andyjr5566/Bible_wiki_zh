@@ -20,6 +20,11 @@ B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updat
 帶 preview token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。它不取代本檔
 步驟 6 的內容複核或步驟 7–8 的最終驗證。
 
+M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯來字母、拉丁音譯與
+簡體字；它比對的是**全庫** raw_data，報出是強力刪除線索，未報出卻不代表該詞出自本章或
+該條目實際累積來源，仍要按 manifest／累積章節核對。`run_gates` 只包裝部分核心機械閘門，
+會更新驗證報告（`rebuild_index=true` 時也更新索引）；不得視為步驟 7–8 的完整替代品。
+
 ## 每章流程
 
 1. **準備來源**（章節的 `.tmp` 資料夾：`【序號 書名】/.tmp/第x章/`）

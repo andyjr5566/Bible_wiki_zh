@@ -14,8 +14,8 @@
 | `read_chapter_artifact` | 只讀取白名單內的 `.tmp/第X章` payload／manual prompt。 | 否 |
 | `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源。 | 否 |
 | `lint_chapter_content` | 對**傳入文字**做 M6／M3 格式檢查，不讀任何路徑。 | 否 |
-| `scan_unsourced_tokens` | 掃該章節點條目與渲染 md，找查無出處的希伯來字母／拉丁音譯／簡體字。 | 否 |
-| `run_gates` | 跑收尾四閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL。 | 是（僅 `rebuild_index=true` 時重建索引） |
+| `scan_unsourced_tokens` | 以全庫 raw_data 補掃該章節點條目與渲染 md 的希伯來字母／拉丁音譯／簡體字。 | 否 |
+| `run_gates` | 跑核心收尾閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL。 | 是，`verify_links` 會更新報告；rebuild 時另更新索引 |
 | `prepare_manual_payload_prompts` | 執行 `run_chapter_manual.py prompts` 產出手寫 M3/M6 prompt。 | 是，可能在確認後作廢過期 payload |
 | `check_manual_payloads` | 執行 `run_chapter_manual.py check --no-rewrite`；缺 M3/M6 payload 會明確判為 incomplete。 | 否 |
 | `render_manual_chapter` | 驗證通過後執行 `run_chapter_manual.py run`。 | 是，render／產生 verse links |
@@ -37,8 +37,7 @@ M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 
 ## 內容勘誤：兩個工具能幫到哪、幫不到哪
 
-`lint_chapter_content` 驗的是格式硬規，每一條在升為 error 前都對全庫 2,694 個渲染 md 實測過
-0 誤報（機械可證→error、啟發式→warning）：
+`lint_chapter_content` 驗的是格式硬規，每一條在升為 error 前都對全庫 md 實測（機械可證→error、啟發式→warning）：
 
 | 規則 | 判定 |
 | --- | --- |
@@ -50,11 +49,13 @@ M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 | `knowledge_nodes` 自己包 `[[ ]]`（`content_kind="yaml"`） | error |
 | Mermaid 節點標籤未加引號 | warning |
 
-`scan_unsourced_tokens` 驗的是「這個音譯／希伯來字母在來源裡出現過嗎」：把該章
+`scan_unsourced_tokens` 是**全庫快速補掃**，不是本章來源證明：它把該章
 `knowledge_nodes` 解析成 `link_folder/**.md` 加上渲染後的章節 md，逐一對整個
 `raw_data/` 語料比對。希伯來字串去 niqqud 後比對；拉丁音譯用**詞界**比對，避免
 `perat` 被 `temperate` 誤配。整串查無出處但每個字詞單獨都有出處的（多為 raw 換行
-造成，如 `Chalcolithic Age`），另放進 `latin_needing_review` 不計入 flag。
+造成，如 `Chalcolithic Age`），另放進 `latin_needing_review` 不計入 flag。**有 flag**
+表示全庫語料都找不到，是強力刪除線索；**沒有 flag** 只表示別處可能出現過，仍必須依
+本章 manifest 與該條目實際累積的章節來源核對。
 
 **這一支補的是護欄的已知盲區**：`run_chapter.py` 的 `_unsourced_hebrew_errors` 只掃
 `.tmp` 的 payload，從不掃已渲染的 `link_folder/**.md`——舊版遷移的 A 類條目沒有
