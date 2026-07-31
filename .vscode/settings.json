@@ -43,6 +43,10 @@
         "https://biblehub.com": {
             "approveRequest": true,
             "approveResponse": false
+        },
+        "https://andyjr5566.github.io": true,
+        "https://www.arksearch.com": {
+            "approveRequest": true
         }
     },
     "chat.agent.maxRequests": 99999999,
