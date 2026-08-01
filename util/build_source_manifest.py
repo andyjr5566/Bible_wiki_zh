@@ -36,13 +36,20 @@ def _load_catalog():
 
 def source_rows(book, chapter, *, root=ROOT):
     """回傳四來源列 [(來源, 類型, URL, raw_data 相對路徑, 檔案是否存在)]。"""
+    import book_paths
     catalog = _load_catalog()
-    if book not in catalog:
+    canonical = book_paths.canonical_book_name(book)
+    matched_key = None
+    for k in catalog:
+        if k == book or book_paths.canonical_book_name(k) == canonical:
+            matched_key = k
+            break
+    if not matched_key:
         raise KeyError(
             f"_config/source_catalog.json 沒有「{book}」的位址規則。"
             f"請先在該檔補一列（cc_folder／kc／en），再重新產生 manifest。"
         )
-    meta = catalog[book]
+    meta = catalog[matched_key]
     cc_folder = meta["cc_folder"]
     num = "".join(c for c in cc_folder if c.isdigit())  # 01Gen → 01
     kc = meta["kc"]

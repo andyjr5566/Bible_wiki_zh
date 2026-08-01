@@ -31,6 +31,7 @@
 """
 import argparse
 import json
+import re
 import sys
 
 import yaml
@@ -184,7 +185,8 @@ def cmd_prompts(args):
 
     cap_entry = PromptCapture(manual_dir, "entry_batch")
     ctx.runner = cap_entry
-    rc.entry_content_step(ctx, plan)
+    batch_size = args.batch_size if getattr(args, "batch_size", None) is not None else 99999
+    rc.entry_content_step(ctx, plan, batch_size=batch_size)
     cap_chapter = PromptCapture(manual_dir, "chapter_content")
     ctx.runner = cap_chapter
     rc.chapter_content_step(ctx, plan)
@@ -307,6 +309,20 @@ def _check_chapter(ctx, problems, warnings, rewrite_aliases=True):
         )
     allowed_links = rc._reconstruct_allowed_links(ctx)
     alias_map = rc._allowed_alias_map(ctx, allowed_links)
+    org_str = payload.get("organization")
+    if isinstance(org_str, str) and rewrite_aliases and allowed_links:
+        allowed_set = set(allowed_links)
+        def _strip_link(match):
+            full = match.group(0)
+            target = match.group(1).split("|")[0].strip()
+            display = match.group(1).split("|")[1].strip() if "|" in match.group(1) else target
+            return full if target in allowed_set else display
+        stripped_org = re.sub(r"\[\[([^\]]+)\]\]", _strip_link, org_str)
+        if stripped_org != org_str:
+            payload["organization"] = stripped_org
+            rc._write_yaml(cc_path, payload)
+            warnings.append("organization 中的非白名單連結 [[...]] 已自動剝離為純文字並回寫檔案")
+
     validator = rc._chapter_payload_validator(len(ctx.raw_verses()), allowed_links, alias_map)
     before = payload.get("organization")
     for err in validator(payload):
@@ -434,6 +450,8 @@ def main():
     p_prompts = sub.add_parser("prompts", help="產出 M3/M6 實際 prompt 檔（不呼叫模型）")
     p_prompts.add_argument("--confirm-stale", action="store_true",
                            help="上游改動會刪手寫 payload 時，確認照刪")
+    p_prompts.add_argument("--batch-size", type=int, default=None,
+                           help="指定 M3 prompt 批次大小（預設為全不分批，全部合併入單一 prompt 檔）")
     p_check = sub.add_parser("check", help="以 fresh 路徑同套驗證檢查手寫 payload")
     p_check.add_argument(
         "--no-rewrite", action="store_true",

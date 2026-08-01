@@ -39,8 +39,9 @@ try:
     from . import resolve_link_candidates as resolver
 except ImportError:
     from model_client import ModelError, embed_texts, select_endpoint
-    from build_embedding_index import META_FILE, VECTORS_FILE
+    import book_paths
     from book_paths import book_directory, canonical_book_name
+    from build_embedding_index import META_FILE, VECTORS_FILE
     import resolve_link_candidates as resolver
 
 QUERY_INPUT_TYPE = "query"
@@ -217,6 +218,26 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
         link_index = resolver.load_index()
     if homonyms is None:
         homonyms = resolver.load_homonyms()
+
+    for c in candidates:
+        stype = c.get("suggested_type") or c.get("type")
+        if stype and stype not in resolver.VALID_TYPES:
+            raise ValueError(
+                f"candidates 條目「{c.get('name')}」的 type「{stype}」不是合法分類！"
+                f"必須是 link_folder/ 下的合法資料夾之一：{resolver.VALID_TYPES}"
+            )
+
+    raw_path = ROOT / "raw_scripture" / canonical / f"第{chapter}章.txt"
+    scripture_text = raw_path.read_text(encoding="utf-8") if raw_path.exists() else ""
+    surface_warnings = []
+    if scripture_text:
+        for c in candidates:
+            for s in c.get("surfaces") or []:
+                if isinstance(s, dict) and s.get("phrase"):
+                    phrase = s["phrase"]
+                    if phrase not in scripture_text:
+                        surface_warnings.append(f"  - 條目「{c['name']}」的 surface「{phrase}」未出現在本章經文中")
+
     lines = [
         f"# 候選語義近鄰報告：{canonical} 第{chapter}章",
         "",
@@ -229,6 +250,13 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
         "  「字面解析」列 resolver 實際會對到哪——標「請確認」者務必人工核實。",
         "",
     ]
+    if surface_warnings:
+        lines.append("⚠️ 【經文匹配警示】下列 surfaces 未在本章經文中找到逐字匹配（若非經文詞請自 link_candidates.yaml 刪除）：")
+        lines.extend(surface_warnings)
+        lines.append("")
+        for w in surface_warnings:
+            print(f"⚠️ {w.strip()}")
+
     flagged = 0
     if not candidates:
         lines.append("（本章 link_candidates 為空）")
