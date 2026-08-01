@@ -10,6 +10,7 @@ if str(UTIL_DIR) not in sys.path:
     sys.path.insert(0, str(UTIL_DIR))
 
 from appendix.website import build as website_build
+from appendix.fhl_maps import build as fhl_maps_build
 import build_appendix_links
 import validate_knowledge_base
 import normalize_format
@@ -44,13 +45,14 @@ class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
         original = (
             "# 創世記 第6章\n\n"
             "1. 經文節1。\n\n"
+            "---\n\n"
+            "## 本章知識節點\n\n"
+            "## 本章整理\n\n正文。\n\n"
             "<!-- appendix-links:start -->\n"
-            "## 相關資源\n\n"
+            "## 附錄\n\n"
             "### 互動網站\n"
             "- [舊連結](old.html)\n"
-            "<!-- appendix-links:end -->\n\n"
-            "---\n\n"
-            "## 本章知識節點\n"
+            "<!-- appendix-links:end -->\n"
         )
         with tempfile.NamedTemporaryFile("w+", suffix=".md", encoding="utf-8", delete=False) as tf:
             tf.write(original)
@@ -59,27 +61,13 @@ class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
         try:
             synced = build_appendix_links.sync_chapter(tf_path, [])
             self.assertNotIn("<!-- appendix-links:start -->", synced)
-            self.assertNotIn("## 相關資源", synced)
-            self.assertIn("# 創世記 第6章\n\n1. 經文節1。\n\n---\n\n## 本章知識節點", synced)
+            self.assertNotIn("## 附錄", synced)
+            self.assertIn("## 本章整理\n\n正文。", synced)
         finally:
             tf_path.unlink(missing_ok=True)
 
-    def test_sync_chapter_missing_divider_raises_value_error(self):
-        """若章節檔找不到經文後的分隔線，應拋出明確 ValueError 訊息。"""
-        bad_chapter = "# 創世記 第6章\n\n1. 經文節1。\n\n## 本章知識節點\n"
-        with tempfile.NamedTemporaryFile("w+", suffix=".md", encoding="utf-8", delete=False) as tf:
-            tf.write(bad_chapter)
-            tf_path = Path(tf.name)
-
-        try:
-            with self.assertRaises(ValueError) as cm:
-                build_appendix_links.sync_chapter(tf_path, ["### 互動網站\n- [test](a.html)"])
-            self.assertIn("找不到經文正文後的分隔線", str(cm.exception))
-        finally:
-            tf_path.unlink(missing_ok=True)
-
-    def test_both_fhl_maps_and_appendix_links_coexist(self):
-        """驗證 ## 相關地圖 與 ## 相關資源 並存時之順序與獨立維護。"""
+    def test_old_fhl_map_links_migrated_to_appendix_links(self):
+        """驗證舊有的 fhl-map-links 區塊會被自動清理並遷移至末尾的 appendix-links 區塊。"""
         original = (
             "# 創世記 第6章\n\n"
             "1. 經文節1。\n\n"
@@ -88,23 +76,25 @@ class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
             "- [[appendix/fhl_maps/maps/006|〈創圖一〉]]\n"
             "<!-- fhl-map-links:end -->\n\n"
             "---\n\n"
-            "## 本章知識節點\n"
+            "## 本章知識節點\n\n"
+            "## 本章整理\n\n正文。\n"
         )
-        sections = ["### 互動網站\n- [3D導覽](app.html)"]
+        sections = [
+            "### 相關地圖\n- [[appendix/fhl_maps/maps/006|〈創圖一〉]]",
+            "### 互動網站\n- [3D導覽](app.html)",
+        ]
         with tempfile.NamedTemporaryFile("w+", suffix=".md", encoding="utf-8", delete=False) as tf:
             tf.write(original)
             tf_path = Path(tf.name)
 
         try:
             synced = build_appendix_links.sync_chapter(tf_path, sections)
-            self.assertIn("<!-- fhl-map-links:start -->", synced)
+            self.assertNotIn("<!-- fhl-map-links:start -->", synced)
             self.assertIn("<!-- appendix-links:start -->", synced)
 
-            # 驗證結構順序：地圖 -> 資源 -> 分隔線
-            map_idx = synced.find("## 相關地圖")
-            res_idx = synced.find("## 相關資源")
-            rule_idx = synced.find("---")
-            self.assertTrue(map_idx < res_idx < rule_idx)
+            org_idx = synced.find("## 本章整理")
+            res_idx = synced.find("## 附錄")
+            self.assertTrue(org_idx < res_idx)
         finally:
             tf_path.unlink(missing_ok=True)
 
@@ -116,16 +106,16 @@ class AppendixValidationEdgeCaseTests(unittest.TestCase):
         content = (
             f"# 創世記 第6章\n\n"
             f"{verses}\n\n"
-            "<!-- appendix-links:start -->\n"
-            "## 相關資源\n\n"
-            "### 互動網站\n"
-            "- [測試](a.html)\n"
-            "<!-- appendix-links:start -->\n\n"
             "---\n\n"
             "## 本章知識節點\n\n"
             "### 主題\n- [[創世記]]\n\n"
             "---\n\n"
-            "## 本章整理\n\n正文\n"
+            "## 本章整理\n\n正文\n\n"
+            "<!-- appendix-links:start -->\n"
+            "## 附錄\n\n"
+            "### 互動網站\n"
+            "- [測試](a.html)\n"
+            "<!-- appendix-links:start -->\n"
         )
         test_dir = ROOT_DIR / ".tmp" / "01 創世記"
         test_dir.mkdir(parents=True, exist_ok=True)
@@ -134,22 +124,22 @@ class AppendixValidationEdgeCaseTests(unittest.TestCase):
 
         try:
             errors = validate_knowledge_base.validate_chapter(tf_path)
-            self.assertTrue(any("相關資源必須由單一 appendix-links 區塊管理" in err for err in errors))
+            self.assertTrue(any("附錄必須由單一 appendix-links 區塊管理" in err for err in errors))
         finally:
             tf_path.unlink(missing_ok=True)
 
-    def test_appendix_placed_after_rule_fails_validation(self):
-        """測試 ## 相關資源 若被誤放於分隔線 --- 之後時 validate_knowledge_base 報錯。"""
+    def test_appendix_placed_before_organization_fails_validation(self):
+        """測試 ## 附錄 若被誤放於「本章整理」之前時 validate_knowledge_base 報錯。"""
         verses = "\n".join(f"{i}. 經文節{i}。" for i in range(1, 23))
         content = (
             f"# 創世記 第6章\n\n"
             f"{verses}\n\n"
-            "---\n\n"
             "<!-- appendix-links:start -->\n"
-            "## 相關資源\n\n"
+            "## 附錄\n\n"
             "### 互動網站\n"
             "- [測試](a.html)\n"
             "<!-- appendix-links:end -->\n\n"
+            "---\n\n"
             "## 本章知識節點\n\n"
             "### 主題\n- [[創世記]]\n\n"
             "---\n\n"
@@ -162,7 +152,7 @@ class AppendixValidationEdgeCaseTests(unittest.TestCase):
 
         try:
             errors = validate_knowledge_base.validate_chapter(tf_path)
-            self.assertTrue(any("相關資源必須位於經文正文後、第一條分隔線前" in err or "H2 必須依序為" in err for err in errors))
+            self.assertTrue(any("附錄必須位於本章整理之後" in err or "H2 必須依序為" in err for err in errors))
         finally:
             tf_path.unlink(missing_ok=True)
 

@@ -241,11 +241,15 @@ def validate_chapter(path):
     allowed_headings = (
         ["本章知識節點", "本章整理"],
         ["相關地圖", "本章知識節點", "本章整理"],
+        ["本章知識節點", "本章整理", "附錄"],
+        ["相關地圖", "本章知識節點", "本章整理", "附錄"],
+        ["本章知識節點", "本章整理", "相關資源"],
+        ["相關地圖", "本章知識節點", "本章整理", "相關資源"],
     )
     if headings not in allowed_headings:
         errors.append(
             f"{path.relative_to(ROOT)}: H2 必須依序為"
-            "（可選）相關地圖、本章知識節點、本章整理"
+            "（可選）相關地圖、本章知識節點、本章整理、（可選）附錄"
         )
     if "相關地圖" in headings:
         start = text.count("<!-- fhl-map-links:start -->")
@@ -263,6 +267,19 @@ def validate_chapter(path):
         if not (last_verse < map_position < first_rule):
             errors.append(
                 f"{path.relative_to(ROOT)}: 相關地圖必須位於經文正文後、第一條分隔線前"
+            )
+    if "附錄" in headings or "相關資源" in headings:
+        start = text.count("<!-- appendix-links:start -->")
+        end = text.count("<!-- appendix-links:end -->")
+        if start != 1 or end != 1:
+            errors.append(
+                f"{path.relative_to(ROOT)}: 附錄必須由單一 appendix-links 區塊管理"
+            )
+        res_position = max(text.find("## 附錄"), text.find("## 相關資源"))
+        org_position = text.find("## 本章整理")
+        if org_position >= 0 and res_position < org_position:
+            errors.append(
+                f"{path.relative_to(ROOT)}: 附錄必須位於本章整理之後"
             )
     knowledge_match = re.search(
         r"^## 本章知識節點\s*$([\s\S]*?)(?=^## 本章整理\s*$)", text, re.M

@@ -87,7 +87,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
 
 7. **收尾驗證與提交**
    ```text
-   python util/build_fhl_maps.py
+   python util/build_appendix_links.py
    python util/check_existing_links.py 【序號 書名】/第x章.md --missing
    python util/build_link_index.py
    python util/build_embedding_index.py          # 增量更新語義索引（本章新條目要進索引，下一章才查得到）

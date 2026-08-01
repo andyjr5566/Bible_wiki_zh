@@ -164,7 +164,7 @@ def build_checks(book, chapter, root=ROOT):
         entry_dir.is_dir() and len(list(entry_dir.glob("*.yaml"))) >= entries_expected
     )
     link_updates_ok = updates_expected == 0 or (tmp / "link_updates.yaml").exists()
-    run_chapter_cmd = f"python util/run_chapter.py {canonical} {chapter}"
+    run_chapter_cmd = f"python util/run_chapter_manual.py {canonical} {chapter}"
     embedding_ok, embedding_detail = _embedding_index_synced(root)
 
     return [
@@ -228,7 +228,7 @@ def build_checks(book, chapter, root=ROOT):
         (
             "步驟6｜util/output/link_index.json",
             (output_dir / "link_index.json").exists(),
-            "從步驟6「收尾驗證」開始：python util/build_fhl_maps.py && python util/check_existing_links.py "
+            "從步驟6「收尾驗證」開始：python util/build_appendix_links.py && python util/check_existing_links.py "
             f"{book_dir.name}/第{chapter}章.md --missing && python util/build_link_index.py",
         ),
         (

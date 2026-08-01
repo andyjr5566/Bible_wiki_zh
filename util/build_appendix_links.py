@@ -23,18 +23,23 @@ APPENDIX_DIR = ROOT / "appendix"
 
 CHAPTER_BLOCK_START = "<!-- appendix-links:start -->"
 CHAPTER_BLOCK_END = "<!-- appendix-links:end -->"
-BLOCK_RE = re.compile(
+
+FHL_MAP_BLOCK_RE = re.compile(
+    rf"\n*{re.escape('<!-- fhl-map-links:start -->')}.*?"
+    rf"{re.escape('<!-- fhl-map-links:end -->')}\n*",
+    re.DOTALL,
+)
+APPENDIX_BLOCK_RE = re.compile(
     rf"\n*{re.escape(CHAPTER_BLOCK_START)}.*?"
     rf"{re.escape(CHAPTER_BLOCK_END)}\n*",
     re.DOTALL,
 )
 
-# 排除非 general 附錄外掛的內部資料夾
-EXCLUDE_CATEGORIES = {"fhl_maps"}
+EXCLUDE_CATEGORIES = set()
 
 
 def load_category_plugins() -> list[dict]:
-    """動態載入 appendix/* 下的 plugin。"""
+    """動態載入 appendix/* 下的所有 plugin（包含 fhl_maps, website 等）。"""
     plugins = []
     if not APPENDIX_DIR.exists():
         return plugins
@@ -57,15 +62,19 @@ def load_category_plugins() -> list[dict]:
 
 
 def collect_all_appendix_sections() -> dict[str, list[str]]:
-    """收集所有 plugin 產出的 Markdown 段落。
-
-    回傳: {"創世記/第6章": ["### 互動網站\n- [挪亞方舟...](...)"]}
-    """
+    """收集所有 plugin 產出的 Markdown 段落。"""
     plugins = load_category_plugins()
     sections_by_chapter: dict[str, list[str]] = defaultdict(list)
 
     for plugin in plugins:
         mod = plugin["module"]
+        # 先執行 plugin 內建的檔案/索引建置程序（若有）
+        if hasattr(mod, "build_maps_and_indexes"):
+            try:
+                mod.build_maps_and_indexes()
+            except Exception as exc:
+                print(f"⚠️ [{plugin['name']}] 建置索引時發生提示：{exc}")
+
         if hasattr(mod, "scan_all_entries"):
             entries = mod.scan_all_entries()
             category_title = getattr(mod, "CATEGORY_NAME", plugin["name"])
@@ -74,44 +83,34 @@ def collect_all_appendix_sections() -> dict[str, list[str]]:
                     continue
                 lines = [f"### {category_title}"]
                 for item in items:
-                    lines.append(f"- [{item['title']}]({item['path']})")
+                    if item.get("is_wikilink"):
+                        lines.append(f"- [[{item['path']}|{item['title']}]]")
+                    else:
+                        lines.append(f"- [{item['title']}]({item['path']})")
                 sections_by_chapter[ch_key].append("\n".join(lines))
     return sections_by_chapter
 
 
 def chapter_appendix_block(sections: list[str]) -> str:
     """產出整塊包含 start/end HTML 標籤的附錄 Markdown 區塊。"""
-    lines = [CHAPTER_BLOCK_START, "## 相關資源", ""]
+    lines = [CHAPTER_BLOCK_START, "## 附錄", ""]
     lines.append("\n\n".join(sections))
     lines.append(CHAPTER_BLOCK_END)
     return "\n".join(lines)
 
 
 def sync_chapter(path: Path, sections: list[str]) -> str:
-    """將附錄區塊動態注入或刪除至章節 Markdown 中。"""
+    """將附錄區塊動態注入或刪除至章節 Markdown 末尾（本章整理之後）。"""
     text = path.read_text(encoding="utf-8")
-    text = BLOCK_RE.sub("\n\n", text)
+    text = FHL_MAP_BLOCK_RE.sub("\n\n", text)
+    text = APPENDIX_BLOCK_RE.sub("\n\n", text)
+    text = text.rstrip()
+
     if not sections:
-        return text
+        return text + "\n"
 
     block = chapter_appendix_block(sections)
-    lines = text.splitlines()
-
-    saw_verse = False
-    insert_at = None
-    for index, line in enumerate(lines):
-        if re.match(r"^\d+\.\s", line):
-            saw_verse = True
-        elif saw_verse and line.strip() == "---":
-            insert_at = index
-            break
-
-    if insert_at is None:
-        raise ValueError(f"找不到經文正文後的分隔線：{path}")
-
-    before = "\n".join(lines[:insert_at]).rstrip()
-    after = "\n".join(lines[insert_at:]).lstrip()
-    return f"{before}\n\n{block}\n\n{after}\n"
+    return f"{text}\n\n{block}\n"
 
 
 def write_or_check(path: Path, content: str, check: bool, changed: list[Path]):

@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
-from util import build_fhl_maps
+from appendix.fhl_maps import build as build_fhl_maps
 from util import optimize_fhl_map_images
 
 UTIL_DIR = Path(__file__).resolve().parents[1]
@@ -51,33 +51,26 @@ class ScriptureReferenceTests(unittest.TestCase):
         self.assertFalse(optimize_fhl_map_images.should_adopt(1000, 901, 0.10))
 
 
+import build_appendix_links
+
+
 class ChapterSyncTests(unittest.TestCase):
     def test_block_is_inserted_before_first_rule_and_is_idempotent(self):
-        record = {
-            "gid": "011",
-            "heading": "〈創圖六〉北方四王攻打南方五王",
-        }
-        original = "# 創世記 第14章\n\n1. 經文。\n\n---\n\n## 本章知識節點\n"
+        sections = ["### 相關地圖\n- [[appendix/fhl_maps/maps/011|〈創圖六〉北方四王攻打南方五王]]"]
+        original = "# 創世記 第14章\n\n1. 經文。\n\n---\n\n## 本章知識節點\n\n## 本章整理\n\n正文。\n"
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "第14章.md"
             path.write_text(original, encoding="utf-8")
-            first = build_fhl_maps.sync_chapter(
-                path, [{"gid": "011", "refs": ["創14:1-16"]}], {"011": record}
-            )
+            first = build_appendix_links.sync_chapter(path, sections)
             path.write_text(first, encoding="utf-8")
-            second = build_fhl_maps.sync_chapter(
-                path, [{"gid": "011", "refs": ["創14:1-16"]}], {"011": record}
-            )
+            second = build_appendix_links.sync_chapter(path, sections)
 
         self.assertEqual(first, second)
-        self.assertLess(first.index("## 相關地圖"), first.index("---"))
-        self.assertEqual(first.count(build_fhl_maps.CHAPTER_BLOCK_START), 1)
+        self.assertIn("## 附錄", first)
+        self.assertIn("<!-- appendix-links:start -->", first)
 
     def test_normalizer_preserves_managed_map_section(self):
-        record = {
-            "gid": "011",
-            "heading": "〈創圖六〉北方四王攻打南方五王",
-        }
+        sections = ["### 相關地圖\n- [[appendix/fhl_maps/maps/011|〈創圖六〉北方四王攻打南方五王]]"]
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "創世記" / "第14章.md"
             path.parent.mkdir()
@@ -87,37 +80,32 @@ class ChapterSyncTests(unittest.TestCase):
                 "## 本章整理\n\n整理。\n",
                 encoding="utf-8",
             )
-            synced = build_fhl_maps.sync_chapter(
-                path, [{"gid": "011", "refs": ["創14:1-16"]}], {"011": record}
-            )
+            synced = build_appendix_links.sync_chapter(path, sections)
             path.write_text(synced, encoding="utf-8")
             normalized = normalize_format.normalize_chapter(path)
 
-        self.assertIn(build_fhl_maps.CHAPTER_BLOCK_START, normalized)
-        self.assertLess(
-            normalized.index("## 相關地圖"),
-            normalized.index("## 本章知識節點"),
+        self.assertIn("<!-- appendix-links:start -->", normalized)
+        self.assertGreater(
+            normalized.index("## 附錄"),
+            normalized.index("## 本章整理"),
         )
 
     def test_validator_accepts_managed_map_section_after_scripture(self):
-        record = {
-            "gid": "011",
-            "heading": "〈創圖六〉北方四王攻打南方五王",
-        }
+        sections = ["### 相關地圖\n- [[appendix/fhl_maps/maps/011|〈創圖六〉北方四王攻打南方五王]]"]
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             chapter_dir = root / "創世記"
             chapter_dir.mkdir()
             path = chapter_dir / "第14章.md"
+            verses = "\n".join(f"{i}. 經文節{i}。" for i in range(1, 25))
             base = (
-                "# 創世記 第14章\n\n1. 經文。\n\n---\n\n"
+                "# 創世記 第14章\n\n"
+                f"{verses}\n\n---\n\n"
                 "## 本章知識節點\n\n- [[測試]]\n\n"
                 "## 本章整理\n\n整理。\n"
             )
             path.write_text(base, encoding="utf-8")
-            synced = build_fhl_maps.sync_chapter(
-                path, [{"gid": "011", "refs": ["創14:1-16"]}], {"011": record}
-            )
+            synced = build_appendix_links.sync_chapter(path, sections)
             path.write_text(synced, encoding="utf-8")
             with patch.object(validate_knowledge_base, "ROOT", root):
                 errors = validate_knowledge_base.validate_chapter(path)

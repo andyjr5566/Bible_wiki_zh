@@ -220,7 +220,7 @@ def render_knowledge_nodes(nodes):
     return "\n\n".join(parts)
 
 
-def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map_block=""):
+def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map_block="", appendix_block=""):
     book = verse_links_payload.get("book") or chapter_content.get("book")
     chapter = verse_links_payload.get("chapter") or chapter_content.get("chapter")
     if raw_verses is None:
@@ -251,6 +251,8 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
     if references:
         organization_block += "\n\n**參考資料**\n" + "\n".join(references)
     blocks.append(organization_block)
+    if appendix_block.strip():
+        blocks.append(appendix_block.strip())
     return "\n\n".join(blocks).rstrip() + "\n"
 
 
