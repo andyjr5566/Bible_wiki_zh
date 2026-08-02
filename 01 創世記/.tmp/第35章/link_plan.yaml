@@ -379,7 +379,18 @@ A_use_directly:
   match_type: exact
   existing_title: 便俄尼名字含義
   existing_path: link_folder/原文/便俄尼名字含義.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 摩利橡樹
+  suggested_type: 背景
+  evidence: 4節；華爾頓《創世記背景註釋》創三十五4〔埋在橡樹底下〕指埋藏神像與耳環的示劍聖樹「創世記十二6，約書亞記二十四23～27，士師記九6、37所提及的，可能也是這棵樹」；並說明聖木在當時通俗宗教中的角色與迦南豐饒崇拜的關聯，同時坦承澄清其作用的考古與文學遺跡少之又少
+  match_type: exact
+  existing_title: 摩利橡樹
+  existing_path: link_folder/背景/摩利橡樹.md
+C_new_formal:
+- name: 古代生產的危險
+  suggested_type: 背景
+  evidence: 16-19節；華爾頓創三十五16～18〔難產而死〕「難產而死在古時並不罕見」，巴比倫咒語文學有保佑母嬰平安的咒語、針對邪靈拉馬什圖；GT《聖經精讀本》創卅五17
+    列拉結艱難的三個可能原因；BH 創35:17 指古代近東生產常導致母或子死亡；CT 創卅五16 註「生產是傾倒生命，所以是很痛苦的事」
+  target_path: link_folder/背景/古代生產的危險.md
 D_new_candidate: []
 E_skip: []
