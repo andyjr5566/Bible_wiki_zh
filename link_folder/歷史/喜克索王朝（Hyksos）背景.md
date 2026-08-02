@@ -17,7 +17,7 @@ source_scope: collected_only
 ### 創世記
 <!-- accumulation:創世記:39:start -->
 #### [[01 創世記/第39章|第39章]]
-- 本章重點：CT註解指出本章法老可能為喜克索三世（主前1878-1843），波提乏為埃及本土護衛長，此一埃及本土官員服事外族王朝的張力，為約瑟進入埃及權力核心提供歷史語境。
+- 本章重點：本章法老的身分，CT 與 GT 給的答案相反，年代卻相同。CT 在創卅九1 下推算「此『法老』可能是喜克索(Hyksos)三世(主前1878~1843)」，並據此讀第1節「有一個埃及人」為刻意的區別——「因喜克索王朝並非埃及人」；GT《創世記雷氏研讀本》用同一組年代卻指名另一位：「他極可能是塞索提斯三世（Sesostris III），他在主前1878至1843年執政」——那是第十二王朝的埃及本土法老。GT《聖經精讀本》同樣把年代定在「B.C.1898年12王朝時代」。換言之，兩家指的是同一段年代，對法老是否埃及本土人的判斷卻正好相反，而 CT 的整個「埃及本土官員服事外族王朝」的張力讀法，正建立在他那一邊的認定上。
 - 與本章關聯：外族王朝統治下，埃及本土護衛長掌管王的囚犯，約瑟由此進入國家機器核心層。
 <!-- accumulation:創世記:39:end -->
 
@@ -34,4 +34,7 @@ source_scope: collected_only
 
 ## 來源依據
 
-- 創世記39:1
+- 創世記 39章 CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT39.htm
+- 創世記 39章 GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT39.htm
+- 創世記 39章 KC: https://www.kingcomments.com/en/bible-studies/Gen/39
+- 創世記 39章 BH: https://biblehub.com/study/genesis/39.htm
