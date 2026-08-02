@@ -1,6 +1,12 @@
 book: 創世記
 chapter: 34
 A_use_directly:
+- name: 利亞
+  suggested_type: 人物
+  evidence: 1節；底拿之母
+  match_type: exact
+  existing_title: 利亞
+  existing_path: link_folder/人物/利亞.md
 - name: 雅各
   suggested_type: 人物
   evidence: 全章；聽見女兒受辱卻閉口不言，事後只顧自身臭名
@@ -162,12 +168,23 @@ A_use_directly:
   existing_title: 雅各閉口不言的屬靈狀態
   existing_path: link_folder/解經爭議/雅各閉口不言的屬靈狀態.md
 B_needs_update:
-- name: 利亞
-  suggested_type: 人物
-  evidence: 1節；底拿之母
+- name: 古代近東割禮背景
+  suggested_type: 背景
+  evidence: 13-24節；華爾頓《創世記背景註釋》創三十四13～17 指割禮在古代近東作為青春期、豐饒崇拜或結婚禮儀雖普及卻未達所有人奉行，示劍人受割禮確實可取得通婚資格；成人手術頗為痛楚，足使男丁失去活動能力數日
   match_type: exact
-  existing_title: 利亞
-  existing_path: link_folder/人物/利亞.md
-C_new_formal: []
+  existing_title: 古代近東割禮背景
+  existing_path: link_folder/背景/古代近東割禮背景.md
+- name: 古代近東聘禮制度
+  suggested_type: 背景
+  evidence: 11-12、25-29節；華爾頓指聘金與禮物按婚姻有利程度而定、努斯文獻典型聘金約三十至四十舍客勒銀子；又指談判主題本是「何為合適的補償」，底拿兄弟卻認為全城性命財貨才算合適（伊里亞德為奪回海倫圍攻特洛伊之平行）
+  match_type: exact
+  existing_title: 古代近東聘禮制度
+  existing_path: link_folder/背景/古代近東聘禮制度.md
+C_new_formal:
+- name: 西乃之前的普世道德規範
+  suggested_type: 背景
+  evidence: 7節；華爾頓〔普世規範的概念〕指對不正當和暴力性行為的禁戒「並非起源於西乃」，當代行為準則近似西乃律法，共有普世性的道德感和正義感；BH 同節指這反映「certain
+    actions as inherently wrong」的普遍認知；CT 註「不該做的事」指不容許有這樣的事發生
+  target_path: link_folder/背景/西乃之前的普世道德規範.md
 D_new_candidate: []
 E_skip: []
