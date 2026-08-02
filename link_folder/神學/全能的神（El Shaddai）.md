@@ -99,4 +99,33 @@ GT 丁良才給的理由最直接：「神用這話，為要激發亞伯蘭的�
 
 ## 來源依據
 
-- ccbiblestudy 註解、拾穗
+### 創世記 第17章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT17.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT17.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/17
+- BH: https://biblehub.com/study/genesis/17.htm
+### 創世記 第28章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT28.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT28.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/28
+- BH: https://biblehub.com/study/genesis/28.htm
+### 創世記 第35章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT35.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT35.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/35
+- BH: https://biblehub.com/study/genesis/35.htm
+### 創世記 第43章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT43.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT43.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/43
+- BH: https://biblehub.com/study/genesis/43.htm
+### 創世記 第48章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT48.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT48.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/48
+- BH: https://biblehub.com/study/genesis/48.htm
+### 創世記 第49章
+- CT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT49.htm
+- GT: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT49.htm
+- KC: https://www.kingcomments.com/en/bible-studies/Gen/49
+- BH: https://biblehub.com/study/genesis/49.htm
