@@ -182,7 +182,28 @@ A_use_directly:
   match_type: exact
   existing_title: 溫泉或騾子（創36：24）
   existing_path: link_folder/原文/溫泉或騾子（創36：24）.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 15節；KC 指出在這一章滿是咒詛的世系中仍有恩典的例子——第15節的基納斯，而書十四6 稱迦勒為基尼洗族人，迦勒是基納斯的後裔，因此生為以東人並非無望（士3:9）
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+C_new_formal:
+- name: 約伯記與以東地的關聯
+  suggested_type: 解經爭議
+  evidence: 11、15、28、33節；CT 創卅六11 指以利法與提幔兩名也見於約伯記（伯二11）、第28節烏斯是約伯出身地（伯一1），因此約伯記很可能發生在以東地；GT《串珠聖經註釋》註提幔為約伯友人以利法來處、烏斯為約伯祖居；GT
+    李道生《舊約聖經問題總解》另提有人認為以東王約巴可能就是約伯，但明言未確知；GT 華爾頓稱烏斯號稱約伯本鄉
+  target_path: link_folder/解經爭議/約伯記與以東地的關聯.md
+  semantic_hint:
+  - title: 提幔
+    score: 0.495
+    type: 地點
+  - title: 東方人之地
+    score: 0.489
+    type: 地點
+  - title: 以東
+    score: 0.47
+    type: 地點
 D_new_candidate: []
 E_skip: []
