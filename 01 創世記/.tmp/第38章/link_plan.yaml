@@ -223,6 +223,12 @@ A_use_directly:
   existing_title: 他瑪比猶大更有義
   existing_path: link_folder/神學/他瑪比猶大更有義.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 他瑪被判燒死的刑罰問題
+  suggested_type: 解經爭議
+  evidence: 24節；華爾頓《創世記背景註釋》創三十八24〔處死娼妓〕「娼妓和淫婦的刑罰通常是用石頭打死（申二十二23～24）。他瑪被判燒死很是罕見。在其他地方，只有祭司女兒行淫和亂倫（利二十14），才規定判處這刑」；GT
+    丁良才《創世紀註釋》詳細比較後判「猶太所定的刑罰比摩西的律法更加嚴厲」；GT《聖經精讀本》與《串珠聖經註釋》同樣指出火刑僅適用於母女共同通姦（利20:14）或祭司之女行淫（利21:9）；CT
+    則註「後來火燒淫婦成為合法的刑罰（參利廿一9）」
+  target_path: link_folder/解經爭議/他瑪被判燒死的刑罰問題.md
 D_new_candidate: []
 E_skip: []
