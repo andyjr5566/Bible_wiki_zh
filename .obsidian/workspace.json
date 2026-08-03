@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 創世記/第38章.md",
+                "file": "01 創世記/第34章.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第38章"
+              "title": "第34章"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 創世記/第38章.md",
+                "file": "01 創世記/第34章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第38章 的大綱"
+              "title": "第34章 的大綱"
             }
           }
         ],
@@ -185,6 +185,34 @@
   },
   "active": "d0b3f11024b8a66d",
   "lastOpenFiles": [
+    "01 創世記/第48章.md",
+    "01 創世記/第50章.md",
+    "01 創世記/第49章.md",
+    "util/__pycache__/check_source_read.cpython-311.pyc",
+    "util/run_chapter_manual.py.tmp.11832.37856a4467bb",
+    "util/check_source_read.py",
+    "link_folder/人物/流便.md",
+    "link_folder/互文/西緬利未受咒詛 (創49_5-7).md",
+    "01 創世記/第42章.md",
+    "link_folder/解經爭議/各歸各城或使民為奴.md",
+    "link_folder/人物/家宰（約瑟的管家）.md",
+    "01 創世記/第43章.md",
+    "agent_start_prompt.md",
+    "agent_maintenance_prompt.md",
+    "link_folder/原文/斬斷你的頭_從你將你的頭抬起來.md",
+    "01 創世記/第40章.md",
+    "01 創世記/第11章.md",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/QEfIvK.png",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/lib.min.js.下載",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/js",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/jquery.maskMoney.js.下載",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/game.min.js.下載",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/game.css",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files/bundle.min.js.下載",
+    "appendix/website/出埃及記/Tabernacle – A Digital Sanctuary by Cardanont_files",
+    "link_folder/解經爭議/他拉生亞伯蘭的年齡與離開哈蘭年代.md",
+    "01 創世記/第39章.md",
+    "01 創世記/第38章.md",
     "link_folder/解經爭議/他瑪被判燒死的刑罰問題.md",
     "01 創世記/第37章.md",
     "01 創世記/第35章.md",
@@ -194,33 +222,6 @@
     "link_folder/背景/古代生產的危險.md",
     "link_folder/背景/西乃之前的普世道德規範.md",
     "04 民數記/第22章.md",
-    "04 民數記/第21章.md",
-    "util/_tmp_val_chapter22.py",
-    "appendix/fhl_maps/maps/037.md",
-    "util/_tmp_val_entries_22.py",
-    "appendix/fhl_maps/maps/049.md",
-    "appendix/fhl_maps/maps/039.md",
-    "03 利未記/第6章.md",
-    "03 利未記/第12章.md",
-    "03 利未記/第5章.md",
-    "03 利未記/全書目錄及綱要.md",
-    "04 民數記/第13章.md",
-    "appendix/fhl_maps/maps/021.md",
-    "04 民數記/第16章.md",
-    "04 民數記/第23章.md",
-    "appendix/fhl_maps/__pycache__/build.cpython-311.pyc",
-    "appendix/fhl_maps/__pycache__",
-    "appendix/fhl_maps/build.py",
-    "link_folder/神學/斷沒有法術可以害雅各.md",
-    "link_folder/神學/雅各的塵土.md",
-    "link_folder/神學/野牛之力.md",
-    "link_folder/神學/義人之死.md",
-    "link_folder/神學/神非人必不致說謊.md",
-    "update_chat_models.py",
-    "appendix/website/創世記/第6章/noahs-ark-3d-explorer.html.tmp.27756.763874f18e36",
-    "appendix/website/創世記/第6章/noahs-ark-3d-explorer.html.tmp.27756.b82c336980f2",
-    "appendix/website/創世記/第6章/noahs-ark-3d-explorer.html.tmp.27756.f10ad5d753d4",
-    "appendix/website/創世記/第6章/noahs-ark-3d-explorer.html.tmp.27756.4a39b720cdd0",
     "appendix/website/創世記/第6章/Gemini_Generated_Image_rmpm2jrmpm2jrmpm.png",
     "appendix/website/創世記/未命名.canvas",
     "Pasted image 20260718214611.png",
@@ -230,7 +231,6 @@
     "appendix/fhl_maps/images/206_206_王上表八.jpg",
     "appendix/fhl_maps/images/205_205_王上表六.jpg",
     "appendix/fhl_maps/images/204_204_民表一d.GIF",
-    "appendix/fhl_maps/images/203_203_民表一c.jpg",
-    "appendix/fhl_maps/images/202_202_民表一b.GIF"
+    "appendix/fhl_maps/images/203_203_民表一c.jpg"
   ]
 }
