@@ -95,7 +95,20 @@ A_use_directly:
   match_type: exact
   existing_title: 陰間（Sheol）
   existing_path: link_folder/原文/陰間（Sheol）.md
-B_needs_update: []
+B_needs_update:
+- name: 家宰（約瑟的管家）
+  suggested_type: 人物
+  evidence: 1-2、4-6、12節；奉約瑟之命把銀杯藏進便雅憫口袋、追上眾兄弟宣告指控、從年長的搜到年幼的
+  surfaces:
+  - phrase: 家宰
+    verses:
+    - 1
+    - 4
+    - 6
+    - 12
+  match_type: exact
+  existing_title: 家宰（約瑟的管家）
+  existing_path: link_folder/人物/家宰（約瑟的管家）.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
