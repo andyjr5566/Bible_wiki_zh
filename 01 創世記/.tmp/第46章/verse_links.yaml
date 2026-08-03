@@ -7,6 +7,9 @@ links:
 - verse: 1
   phrase: 別是巴
   target: 別是巴
+- verse: 1
+  phrase: 他父親以撒的神
+  target: 亞伯拉罕之約
 - verse: 2
   phrase: 以色列
   target: 雅各
@@ -16,6 +19,9 @@ links:
 - verse: 3
   phrase: 埃及
   target: 埃及
+- verse: 3
+  phrase: 成為大族
+  target: 亞伯拉罕之約
 - verse: 4
   phrase: 我要和你同下埃及去，也必定帶你上來
   target: 神的護理
@@ -50,8 +56,8 @@ links:
   phrase: 埃及
   target: 埃及
 - verse: 8
-  phrase: 埃及
-  target: 埃及
+  phrase: 來到埃及的以色列人
+  target: 十二支派起源
 - verse: 8
   phrase: 雅各
   target: 雅各
@@ -142,6 +148,9 @@ links:
 - verse: 31
   phrase: 迦南地
   target: 迦南地
+- verse: 32
+  phrase: 牧羊的人
+  target: 埃及人厭惡牧羊人
 - verse: 33
   phrase: 法老
   target: 法老
