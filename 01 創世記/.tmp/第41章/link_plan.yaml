@@ -114,6 +114,9 @@ A_use_directly:
   - phrase: 兩年
     verses:
     - 1
+  - phrase: 三十歲
+    verses:
+    - 46
   match_type: exact
   existing_title: 試煉後的榮耀
   existing_path: link_folder/神學/試煉後的榮耀.md
@@ -142,6 +145,9 @@ A_use_directly:
   suggested_type: 神學
   evidence: 33-34節；約瑟建議揀選有聰明有智慧的人，又派官員分層管理
   surfaces:
+  - phrase: 有聰明有智慧
+    verses:
+    - 33
   - phrase: 官員
     verses:
     - 34
@@ -302,7 +308,17 @@ A_use_directly:
   match_type: exact
   existing_title: 以法蓮（使之昌盛）
   existing_path: link_folder/原文/以法蓮（使之昌盛）.md
-B_needs_update: []
+B_needs_update:
+- name: 解夢出於神
+  suggested_type: 神學
+  evidence: 16、25、28、32節；約瑟在法老面前說「這不在乎我，神必將平安的話回答法老」，與40:8「解夢不是出於神嗎」同一宣告
+  surfaces:
+  - phrase: 這不在乎我
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 解夢出於神
+  existing_path: link_folder/神學/解夢出於神.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

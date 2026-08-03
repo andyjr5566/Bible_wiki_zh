@@ -56,16 +56,23 @@ candidates:
     evidence: 1節；「過了兩年」——神量定苦難的日期，時候滿足纔提拔他的僕人（詩105:17-21）
     surfaces:
       - {phrase: 兩年, verses: [1]}
+      - {phrase: 三十歲, verses: [46]}
   - name: 豐年與荒年的神聖節奏
     type: 神學
     evidence: 5-7、22-27節；麥子七穗與七個枯穗，豫表七豐年與七荒年，皆由神命定
     surfaces:
       - {phrase: 麥子, verses: [5, 22]}
       - {phrase: 穗子, verses: [5, 6, 7, 22, 23, 24, 26, 27]}
+  - name: 解夢出於神
+    type: 神學
+    evidence: 16、25、28、32節；約瑟在法老面前說「這不在乎我，神必將平安的話回答法老」，與40:8「解夢不是出於神嗎」同一宣告
+    surfaces:
+      - {phrase: 這不在乎我, verses: [16]}
   - name: 智慧與治理
     type: 神學
     evidence: 33-34節；約瑟建議揀選有聰明有智慧的人，又派官員分層管理
     surfaces:
+      - {phrase: 有聰明有智慧, verses: [33]}
       - {phrase: 官員, verses: [34]}
   - name: 神的靈在人身上
     type: 神學
