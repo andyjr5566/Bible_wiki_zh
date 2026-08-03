@@ -145,7 +145,27 @@ A_use_directly:
   match_type: exact
   existing_title: 約瑟骸骨葬於示劍
   existing_path: link_folder/歷史/約瑟骸骨葬於示劍.md
-B_needs_update: []
+B_needs_update:
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 24節；「領你們從這地上去，到他起誓所應許給亞伯拉罕、以撒、雅各之地」——GT《聖經精讀本》指以色列三大族長代表選民與神立約，這份應許成為日後百姓祈求憐憫的根據
+  surfaces:
+  - phrase: 他起誓所應許給亞伯拉罕、以撒、雅各之地
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 悔改與良心的覺醒
+  suggested_type: 神學
+  evidence: 15-18節；父親一死，哥哥們就怕約瑟報復，打發人求饒恕，又親自俯伏說「我們是你的僕人」；GT《聖經精讀本》指這是對多坍事件（37:18-28）的真實悔改
+  surfaces:
+  - phrase: 或者約瑟懷恨我們
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 悔改與良心的覺醒
+  existing_path: link_folder/神學/悔改與良心的覺醒.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
