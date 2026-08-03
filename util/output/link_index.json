@@ -10388,6 +10388,14 @@
       "大衛王"
     ]
   },
+  "家宰（約瑟的管家）": {
+    "path": "link_folder/人物/家宰（約瑟的管家）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "家宰（約瑟的管家）",
+    "status": "formal",
+    "aliases": []
+  },
   "密迦": {
     "path": "link_folder/人物/密迦.md",
     "type": "人物",
@@ -11641,14 +11649,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "「信耶和華」的意義",
-    "status": "formal",
-    "aliases": []
-  },
-  "「全能的神」原文": {
-    "path": "link_folder/原文/「全能的神」原文.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "「全能的神」原文",
     "status": "formal",
     "aliases": []
   },
@@ -16029,21 +16029,6 @@
     "title": "埃及人搬運物件頂在頭上",
     "status": "formal",
     "aliases": []
-  },
-  "埃及人的飲食分席": {
-    "path": "link_folder/文化/埃及人的飲食分席.md",
-    "type": "文化",
-    "secondary_types": [
-      "歷史",
-      "背景"
-    ],
-    "title": "埃及人的飲食分席",
-    "status": "formal",
-    "aliases": [
-      "埃及人不與希伯來人同席",
-      "埃及人的飲食禁忌",
-      "分席"
-    ]
   },
   "埃及印璽戒指代表權柄": {
     "path": "link_folder/文化/埃及印璽戒指代表權柄.md",
@@ -28597,15 +28582,6 @@
   },
   "埃及人所憎惡的祭牲": {
     "alias_of": "埃及人厭惡的祭牲"
-  },
-  "埃及人不與希伯來人同席": {
-    "alias_of": "埃及人的飲食分席"
-  },
-  "埃及人的飲食禁忌": {
-    "alias_of": "埃及人的飲食分席"
-  },
-  "分席": {
-    "alias_of": "埃及人的飲食分席"
   },
   "Nut": {
     "alias_of": "埃及的天候之神"

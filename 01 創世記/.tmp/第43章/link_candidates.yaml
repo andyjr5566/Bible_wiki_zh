@@ -38,12 +38,22 @@ candidates:
     evidence: 14節；雅各求「全能的神」（El Shaddai）使眾子蒙憐憫，把一切交託神
     surfaces:
       - {phrase: 全能的神, verses: [14]}
-  - name: 埃及人的飲食分席
-    type: 文化
+  - name: 埃及不與希伯來人同席
+    type: 歷史
     evidence: 32節；擺三席——埃及人不可和希伯來人一同吃飯，那原是埃及人所厭惡的
     surfaces:
       - {phrase: 埃及人另擺了一席, verses: [32]}
       - {phrase: 埃及人不可和希伯來人一同吃飯, verses: [32]}
+  - name: 家宰（約瑟的管家）
+    type: 人物
+    evidence: 16-17、19、23-24節；領兄弟們進屋、安撫他們、釋放西緬、給水洗腳；背景註釋指這是備受信任的職位
+    surfaces:
+      - {phrase: 家宰, verses: [16, 19]}
+  - name: 悔改與良心的覺醒
+    type: 神學
+    evidence: 18節；恩慈的接待反而使他們害怕，以為要「找我們的錯縫」——有虧的良心把恩典讀成威脅
+    surfaces:
+      - {phrase: 找我們的錯縫, verses: [18]}
   - name: 對兄弟的試驗
     type: 神學
     evidence: 34節；便雅憫所得的比別人多五倍——刻意優待，試看哥哥們是否仍存嫉妒
