@@ -241,7 +241,69 @@ A_use_directly:
   match_type: exact
   existing_title: 法老與希律殺害男嬰的對照
   existing_path: link_folder/互文/法老與希律殺害男嬰的對照.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 尼羅河
+  suggested_type: 地點
+  evidence: 22節；「你們都要丟在河裡」——KC 說尼羅河象徵屬地屬世的祝福；丁良才記埃及人拜尼羅河為神、河中鱷魚極多
+  match_type: exact
+  existing_title: 尼羅河
+  existing_path: link_folder/地點/尼羅河.md
+- name: 歌珊地
+  suggested_type: 地點
+  evidence: 7、11節；「滿了那地」CT／GT 中文聖經註釋均指歌珊；比東蘭塞靠近以色列人所住的歌珊地
+  match_type: exact
+  existing_title: 歌珊地
+  existing_path: link_folder/地點/歌珊地.md
+- name: 希伯來人（族群稱呼）
+  suggested_type: 文化
+  evidence: 15、16、19節；CT「希伯來是外邦人稱呼以色列人的名稱」；《舊約背景註釋》記阿皮魯人（'Apiru）曾被蘭塞二世徵為築城奴工
+  surfaces:
+  - phrase: 希伯來
+    verses:
+    - 15
+    - 16
+    - 19
+  match_type: exact
+  existing_title: 希伯來人（族群稱呼）
+  existing_path: link_folder/文化/希伯來人（族群稱呼）.md
+- name: 法老預表撒但
+  suggested_type: 神學
+  evidence: 8、11節；CT 靈意註解「埃及王法老預表這世界的王撒但」（約12:31；弗2:2）；KC 稱撒但為「這世界的神」（林後4:4）
+  match_type: exact
+  existing_title: 法老預表撒但
+  existing_path: link_folder/神學/法老預表撒但.md
+- name: 啟示錄12章古蛇撒但
+  suggested_type: 互文
+  evidence: 22節；KC 引啟12:4b「龍就站在那將要生產的婦人面前」；CT 話中之光引啟12:4-5
+  match_type: exact
+  existing_title: 啟示錄12章古蛇撒但
+  existing_path: link_folder/互文/啟示錄12章古蛇撒但.md
+- name: 「河」是否專指尼羅河
+  suggested_type: 解經爭議
+  evidence: 22節；《丁道爾》說此字源自埃及語、所指的是尼羅河；《中文聖經註釋》說以色列人講「河」指幼發拉底、埃及人講河必指尼羅河
+  surfaces:
+  - phrase: 河裡
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 「河」是否專指尼羅河
+  existing_path: link_folder/解經爭議/「河」是否專指尼羅河.md
+C_new_formal:
+- name: 許克所斯人（Hyksos）
+  suggested_type: 歷史
+  evidence: 8節；CT、GT 啟導本／精讀本／舊約背景註釋／每日研經叢書、BH 都以許克所斯（Hyksos）王朝的興替解釋「不認識約瑟的新王」
+  target_path: link_folder/歷史/許克所斯人（Hyksos）.md
+  semantic_hint:
+  - title: 喜克索王朝（Hyksos）背景
+    score: 0.445
+    type: 歷史
+- name: 收生婆的回話是否說謊
+  suggested_type: 解經爭議
+  evidence: 19-21節；CT 說「聖經並沒有表明這話是說謊或是事實」；賈斯樂郝威、艾基斯、靈修版、KC 各給不同判斷
+  surfaces:
+  - phrase: 收生婆還沒有到，他們已經生產了
+    verses:
+    - 19
+  target_path: link_folder/解經爭議/收生婆的回話是否說謊.md
 D_new_candidate: []
 E_skip: []

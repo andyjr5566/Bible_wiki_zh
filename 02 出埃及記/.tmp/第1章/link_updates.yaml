@@ -4,132 +4,168 @@ updates:
 - title: 雅各
   path: link_folder/人物/雅各.md
   summary: 出埃及記以雅各眾子攜家眷下埃及作開端，承接創世記末段；雅各一家在埃及由七十人發展為強盛民族。
-  relation: 雅各既是十二支派的父祖，也是神向亞伯拉罕、以撒所立之約的承受者；本章顯示應許跨過父祖死亡而繼續成就。
+  relation: CT 指出1至5節是創46:8-27 的綜述，「《創世記》可視為前書，《出埃及記》則可視為後書」；GT《中文聖經註釋》記「雅各」原義有「跟蹤」「詭謀篡奪」「排擠」或「抓住」等含意（創25:26，27:35-36），而以色列是他在雅博渡口與神較力後蒙賜的名。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 約瑟
   path: link_folder/人物/約瑟.md
-  summary: 約瑟早已在埃及，後與弟兄及同代人相繼去世；他曾有的地位與功績也不再受新王尊重。
-  relation: 「不認識約瑟」標誌埃及政策由接納轉為壓迫，並使創世記中的保全之地成為出埃及記中的奴役之地。
+  summary: 約瑟早已在埃及（5節），後與弟兄及同代人相繼去世（6節）；新王「不認識約瑟」（8節）。
+  relation: CT 說「不認識」意指「對他的才幹和政績並不賞識，即不尊重他」；KC 說那位使全埃及得活命、為那民族行了那麼多善事的人竟被全然忘記（徒7:18）；GT《聖經精讀本》則認為新王是有意否定「有閃族血統並與喜克索斯王朝有著密切聯繫的約瑟的業績」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 流便
   path: link_folder/人物/流便.md
-  summary: 流便列在隨雅各下埃及的眾子之首；來源指出他雖為長子，卻因先前的罪失去長子名分。
-  relation: 本章名單把流便放回以色列家族與十二支派的共同歷史中。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 流便列在隨雅各下埃及的眾子之首（2節）；名字原義是「看哪！我生了一個兒子」（創29:32）。
+  relation: CT 指出他「原是長子，因犯淫亂的罪而失去長子的名分」（創35:22；49:3-4）；BH 記長子的名分後來歸了約瑟的兒子（代上5:1-2），其支派定居約但河東的牧地。GT《中文聖經註釋》另記因中文譯名不雅，現代中文譯本改稱呂便。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 西緬
   path: link_folder/人物/西緬.md
-  summary: 西緬列於隨雅各進入埃及的眾子名單，是利亞所生的兒子之一。
-  relation: 他的名字見證出埃及敘事所拯救的民族，源自雅各具體的家庭與支派。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 西緬列於隨雅各進入埃及的眾子名單（2節），是利亞所生的第二子；名字原義「神聽見」（創29:33）。
+  relation: GT《中文聖經註釋》記他曾與利未因妹妹受欺而報復殺人（創34:25），「故後裔不興旺，並且散居在別支派受同化」（創49:5-7）；BH 說這支派終被猶大吸收而失去獨立身分，摩西的祝福（申33）沒有提到西緬。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 利未
   path: link_folder/人物/利未.md
-  summary: 利未列於進入埃及的眾子中；來源特別指出摩西與亞倫將由利未支派而出。
-  relation: 第1章先交代利未的父祖位置，為後文神從受壓迫群體中興起摩西與亞倫預備家譜背景。
-  sources: [CT, GT, KC]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt]
+  summary: 利未列於進入埃及的眾子中（2節）；名字原義「聯合」，或作「這次我丈夫可要戀住我了」（創29:34）。
+  relation: CT 指出摩西和亞倫從他而出，「後來利未支派被分別出來作祭司事奉神」（民3:5-10）；GT《中文聖經註釋》記他與西緬合謀殺人，令父親不悅而後裔要分散（創49:5-7），但利未人後來成了服事神的特選支派；BH 記這支派沒有領土產業，卻得散在各地的城邑（民35:1-8），並以利未祭司職分為基督的預表（來4:14-16）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 猶大（雅各之子）
   path: link_folder/人物/猶大（雅各之子）.md
-  summary: 猶大列在隨雅各下埃及的眾子中；來源並從後來的救贖歷史指出君王與彌賽亞支系由他而出。
-  relation: 猶大支系也在法老壓迫與殺嬰命令下蒙保守，救贖歷史沒有被埃及王中斷。
+  summary: 猶大列在隨雅各下埃及的眾子中（2節）；名字原義「讚美」（創29:35；49:8）。
+  relation: CT 說主耶穌從他而出（太1:3、16）；GT《中文聖經註釋》記他曾救約瑟不被兄弟殺害（創37:26-27），並承受了父親最大的祝福（創49:8-10）；BH 說這支派最顯赫，出了大衛與耶穌，應驗權杖不離猶大的預言（創49:10），地業包括後來的耶路撒冷。
   sources: [CT, GT, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 以薩迦（價值）
   path: link_folder/人物/以薩迦（價值）.md
-  summary: 以薩迦列於雅各眾子名單，是利亞所生的兒子之一。
-  relation: 他的後裔與其他支派一同在埃及繁衍，也一同承受強迫勞役。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 以薩迦列於雅各眾子名單（3節），是利亞所生的第五子；CT 的原文字義作「獎賞，報償，工價，有價值的」。
+  relation: GT《中文聖經註釋》指名字原義可隨字根而異，作「賞報」或「僱價」（創30:18），並說五經除雅各的祝福（創49:14-15）與後裔名單（創46:13）外沒有記載他的事跡；BH 記其地業在耶斯列谷的肥沃地帶，代上12:32 說以薩迦人通達時務、知道以色列所當行的。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 西布倫（同住）
   path: link_folder/人物/西布倫（同住）.md
-  summary: 西布倫列於雅各眾子名單，是利亞所生的兒子之一。
-  relation: 本章以他的名字保存十二支派在埃及共同生活、受苦與增長的家族根源。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 西布倫列於雅各眾子名單（3節），是利亞所生的第六子；名字原義隨字根可作「尊敬」「領袖」或「同住」（創30:20）。
+  relation: GT《中文聖經註釋》指出代上4至8章記各支派後裔時甚至沒有列出西布倫的後裔，「大概在編輯歷代志的時候，這個支派已經給其他支派所同化了」；BH 記其地業在迦南北部近加利利海，通往貿易路線，賽9:1-2 把西布倫地與彌賽亞的降臨相連。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 便雅憫
   path: link_folder/人物/便雅憫.md
-  summary: 便雅憫列於隨雅各下埃及的眾子名單，是拉結所生、約瑟的同母弟弟。
-  relation: 便雅憫後裔與全以色列一同由寄居家族成為人數眾多的民族。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 便雅憫列於隨雅各下埃及的眾子名單（3節），是拉結所生、約瑟的同母弟弟；名字意思是「右手的兒子」。
+  relation: GT《中文聖經註釋》說以色列人論方向以面向東方為準，右手在南，故也可解作「南方的兒子」，並記拉結難產後先起名便俄尼（苦難／厄運的兒子），雅各卻叫他便雅憫（創35:16-18）；BH 記其族人是左手便利、甩石不差毫髮的勇士（士20:16），使徒保羅也出於這支派（腓3:5）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 但（審判）
   path: link_folder/人物/但（審判）.md
-  summary: 但列於雅各眾子名單，是拉結的使女辟拉所生。
-  relation: 本章的「但」是雅各之子而非後來的地名，故以限定詞條目保留人物身分。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 但列於雅各眾子名單（4節），是拉結的使女辟拉所生；CT 的原文字義作「審判官，審判，伸冤」。
+  relation: GT《中文聖經註釋》記名字原義是「審判」、延伸為「伸冤」（創30:6），並說五經除雅各的祝福（創49:16-18）與提到其兒子（創46:23）外，沒有但的事跡之記述；BH 記這支派後來遷往北部近地中海一帶，該位置使他們易陷偶像崇拜（士18）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 拿弗他利
   path: link_folder/人物/拿弗他利.md
-  summary: 拿弗他利列於雅各眾子名單，是辟拉所生。
-  relation: 他的後裔與全以色列一同經歷人口增長、埃及壓迫與神的保守。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 拿弗他利列於雅各眾子名單（4節），是辟拉所生的第二子；CT 的原文字義作「相爭，格鬥者，我的摔跤」。
+  relation: GT《中文聖經註釋》記原義是「格鬥者」或「相爭」（創30:8），並說五經除雅各的祝福（創49:21）與後裔名單（創46:24）外沒有論到他的事跡；BH 記其地業在加利利肥沃之區，日後應驗賽9:1-2 大光照在加利利的預言。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 迦得（萬幸）
   path: link_folder/人物/迦得（萬幸）.md
-  summary: 迦得列於雅各眾子名單，是利亞的使女悉帕所生。
-  relation: 本章將他的支派納入由七十人繁衍成大族、又在埃及受苦的共同歷史。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 迦得列於雅各眾子名單（4節），是利亞的使女悉帕所生；名字原義是「萬幸」（創30:11）。
+  relation: GT《中文聖經註釋》指出「這也是一個幸運之神的名字，中文把它繙成『時運』」（賽65:11），並說五經對迦得的事跡沒有甚麼記載；BH 記其地業在約但河東的牧地，該區常是戰線前沿，故迦得人須是強悍的戰士（代上12:8）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 亞設（有福）
   path: link_folder/人物/亞設（有福）.md
-  summary: 亞設列於雅各眾子名單，是悉帕所生。
-  relation: 亞設後裔與其餘支派一同見證神使以色列生養眾多的應許。
-  sources: [CT, GT]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+  summary: 亞設列於雅各眾子名單（4節），是悉帕所生的第二子；名字原義是「有福的」（創30:13）。
+  relation: CT 的原文字義作「有福的，快樂的」，GT《中文聖經註釋》說五經除雅各的祝福（創49:20）與後裔名單（創46:17）外沒有記述他的事跡；BH 記其地業在迦南北岸、盛產橄欖油之區，正應驗創49:20，並把亞設的豐盛看作基督裡屬靈豐盛的預表。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 法老
   path: link_folder/人物/法老.md
-  summary: 新王不再尊重約瑟，因恐懼以色列人口與潛在軍事威脅，先以苦役限制他們，再命收生婆及全民殺害男嬰。
-  relation: 法老在本章代表埃及王權對神應許的正面抵抗；他的計策逐步升級，卻不能阻止以色列增長。
+  summary: 新王不再尊重約瑟，因恐懼以色列人口與潛在軍事威脅，先以苦役限制他們，再命收生婆及全民殺害男嬰；經文自始至終沒有給他名字。
+  relation: CT 指出他在第9節的話「是言過其實」，並把他控制人口的理由歸為三項；GT《中文聖經註釋》說「法老」不是人名而是尊稱，埃及文的 Pr`o 原義是大殿，主前二千年前後專指王宮，到亞門諾斐斯四世才用為對埃及王的尊稱；CT 的靈意註解則以法老預表這世界的王撒但（約12:31；弗2:2）。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 埃及
   path: link_folder/地點/埃及.md
   summary: 埃及由保存雅各家的避難地轉為奴役之地；王權利用以色列人建城、製磚與田間勞作，又把尼羅河變為殺害男嬰的工具。
-  relation: 本章揭示以色列在埃及寄居、繁衍和受壓迫的處境，為神後續施行拯救建立舞台。
+  relation: GT《中文聖經註釋》記埃及「位於地中海之南，紅海之西的非洲北部古國」，原文用雙數字尾「因為是由上埃及和下埃及聯合而成的」；CT 的原文字義作「雙，雙重難關」。KC 則把埃及讀成撒但所轄的世界圖像：人在其中服役，「不論自覺與否，都在幫他建造他的國度」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 古代收生婆
   path: link_folder/文化/古代收生婆.md
-  summary: 施弗拉與普阿受命在希伯來婦人生產時殺死男嬰，卻因敬畏神而存留孩子性命；來源討論產凳與收生婆的專業角色。
-  relation: 收生婆原可成為王權控制生育的工具，卻利用自己的職分保全生命，成為本章抵抗殺戮命令的關鍵人物。
+  summary: 施弗拉與普阿受命在希伯來婦人生產時殺死男嬰，卻因敬畏神而存留孩子性命（15-21節）。
+  relation: GT《舊約背景註釋》說收生婆「還是受孕、娠妊、生產、育嬰，這整個過程的顧問」，古時女子蹲著或跪著生產、用小凳子石頭磚頭支撐；CT 的背景註解指「臨盆」原文直譯是「兩塊石頭」或「兩個圓形轉輪」，KC 的腳註並指這字與耶18:3 陶匠的「輪」同字。CT 與 GT《啟導本》都認為兩人應是收生婆的主管。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 積貨城制度
   path: link_folder/歷史/積貨城制度.md
-  summary: 以色列人在督工轄制下為法老建造比東和蘭塞兩座積貨城，用於儲存糧食、軍需並服務行政與邊防。
-  relation: 創世記中積貨制度曾在饑荒中保存生命，本章卻顯示同類國家設施被強權以奴役勞動建造。
+  summary: 以色列人在督工轄制下為法老建造比東和蘭塞兩座積貨城（11節）。
+  relation: CT 說積貨城「原是為儲藏糧食、武器和軍需品的城堡，也被作為地區的行政中心」；GT 華爾頓《出埃及記背景注釋》提醒「並不表示這些城市單獨作儲備糧穀之用。積貨城是各區的地理和活動中心，可能也是省會」；GT《中文聖經註釋》記七十士譯本把它繙為「要塞城」，是「發號施令和供給軍需的所在地」，不是貨倉。創世記中曾在饑荒中保存生命的積貨制度，在本章成了奴役勞動的產物。
   sources: [CT, GT, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 以色列
   path: link_folder/原文/以色列.md
   summary: 「以色列的眾子」起初指雅各的兒子與家族，至第9節已被法老稱為一個人數眾多、力量強盛的「以色列民」。
-  relation: 本章呈現「以色列」由個人蒙賜之名、家族稱呼，逐漸成為一個民族共同身分。
+  relation: GT《中文聖經註釋》記「以色列」按原文字根可含「神的太子」「與神一同治理」「他要如神的管理」或「與神較力得勝」等意義；GT《丁道爾聖經註釋》指出第1節「是五經最後一次以『以色列的眾子』之名，來形容雅各的直系親屬。今後這名號便成為父系的集合稱謂，形容神的全部子民」；KC 則說「以色列的眾子」描述神眼中他們的地位，「與雅各一同」則描述他們實際的光景。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 十二支派起源
   path: link_folder/神學/十二支派起源.md
   summary: 第1至5節重列雅各眾子，按母親身分與長幼次序列名，約瑟因已在埃及而另於第5節提及。
-  relation: 名單把出埃及的民族與創世記中的父祖家族直接相連，表明十二支派不是抽象群體，而是同一約民的延續。
+  relation: CT 說明排列規則：「利亞和拉結之兒子的名字記在先（按著長幼的次序），婢女的兒子列在後（也是按著長幼的次序）」，本段只列十一個名字，約瑟所生的以法蓮和瑪拿西歸在雅各名下（創48:16）；GT《聖經精讀本》說重記十二子的兩個理由是「將來擔當出埃及任務的以色列民都是從這個十二個支派中誕生的」，以及重申神給列祖的應許同樣賜給後裔。
   sources: [CT, GT, KC]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt]
 - title: 生養眾多與治理
   path: link_folder/主題/生養眾多與治理.md
-  summary: 以色列人生養、繁茂、增多、強盛並遍滿那地；來源注意第7節密集使用繁殖詞語，呼應創世記的創造祝福與父祖應許。
-  relation: 神的賜福在異地與政權壓迫下仍繼續運行，法老越想限制人口，百姓反而越發增多。
+  summary: 第7節連用一串動詞：以色列人生養眾多、並且繁茂、極其強盛、滿了那地。
+  relation: GT《丁道爾聖經註釋》指「希伯來原文故意重複創世記一章21、22節所用的三個動詞」，並把這種增長「詮釋為神對被造之物所應許的祝福」；GT《中文聖經註釋》把三個層次分開——「生養眾多」指數量，「繁茂」兼指質量的好，「極其強盛」形容其精壯；GT《聖經精讀本》說作者連續四次重複同一動詞，是要體現這壯大「不是自然性的，而是神根據約所賜的祝福」（創12:2；46:3）。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 敬畏神
   path: link_folder/神學/敬畏神.md
-  summary: 施弗拉與普阿因敬畏神，不照埃及王命令殺死男嬰；神厚待她們並使她們成立家室。
-  relation: 敬畏神在本章表現為把神的權柄置於君王之上，並在職業責任中保護無辜生命。
+  summary: 施弗拉與普阿因敬畏神，不照埃及王命令殺死男嬰；神厚待她們並使她們成立家室（17、20-21節）。
+  relation: 經文兩次給的理由都只有這一項。CT 說神厚待她們「是因為她們敬畏神……而不是因為她們說謊話欺騙法老」，並把判準寫成「敬畏神的人，以神的意旨為其生活行為的最高準則」；GT《中文聖經註釋》說「敬畏是信心深切的表現」，收生婆敬畏神即表明她們對神有深切的信賴；GT 引傳8:12「敬畏神的，就是在祂面前敬畏的人，終久必得福樂」作註腳。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
 - title: 雅各家七十人與七十五人
   path: link_folder/解經爭議/雅各家七十人與七十五人.md
-  summary: 本章依希伯來文本說從雅各而生的共有七十人；使徒行傳7章則說七十五人，來源以不同文本傳統與計算範圍說明差異。
-  relation: 出埃及記1章是七十人傳統的直接經文之一，也把這個小家族與後來人口強盛的民族並列。
+  summary: 第5節依希伯來文本說「凡從雅各而生的，共有七十人」，徒7:14 則說七十五人。
+  relation: CT 算法是六十六人（創46:26）加約瑟、他在埃及所生的兩個兒子與雅各本人，七十五人則再加瑪拿西的一兒一孫與以法蓮的二兒一孫（民26:29、36-37）；GT 丁良才算為雅各、十二子、女兒底拿、五十一個孫子、孫女西拉與四個曾孫；GT《丁道爾聖經註釋》說「七十」可能是概略整數或有神聖象徵的數字；GT《聖經精讀本》指這個數目與創世記10章列國的數目相同（申32:8），BH 也說七十常象徵完全或神聖秩序（申10:22）。
   sources: [CT, GT, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
+- title: 尼羅河
+  path: link_folder/地點/尼羅河.md
+  summary: 第22節法老吩咐眾民把以色列人所生的男孩都丟在河裡，這條河就是尼羅河。
+  relation: KC 說「尼羅河象徵屬地、屬世的祝福。埃及一切的祝福都歸於尼羅河」；GT《每日研經叢書》指尼羅河「是埃及最大神靈之一」，法老的命令等於「就讓那神靈自己決定他們的生死吧」；GT 丁良才推想兩個緣故——埃及人「以嬰孩為奉獻河神（或鱷魚神）的祭物」，以及河中鱷魚極多，屍體未經腐爛就被吞吃；BH 則讀出翻轉：這條生命之源成了死亡之地。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
+- title: 歌珊地
+  path: link_folder/地點/歌珊地.md
+  summary: 第7節「滿了那地」與第11節的比東、蘭塞都與以色列人所住的歌珊地有關。
+  relation: CT 說「滿了那地」指遍佈歌珊地（創47:6），比東與蘭塞則「靠近當時以色列人所住的歌珊地」；GT《丁道爾聖經註釋》認為「滿了那地」可能指歌珊，「亦有可能是自然的誇飾，指埃及全地」；GT《每日研經叢書》則主張「必須理解為指歌珊。沒有絲毫證據證明以色列人與埃及的其他地區有關聯」；GT《聖經精讀本》另指埃及王懼怕以色列人，是因為他們「居住在國家的戰略要地歌珊」，怕他們成為外族侵略的跳板。
+  sources: [CT, GT]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]
+- title: 希伯來人（族群稱呼）
+  path: link_folder/文化/希伯來人（族群稱呼）.md
+  summary: 第15、16、19節三次以「希伯來」稱呼以色列人——希伯來的收生婆、希伯來婦人、希伯來婦人與埃及婦人不同。
+  relation: CT 說「希伯來」「是外邦人稱呼以色列人的名稱」，其原文字義為「渡過這邊，渡過河，從遠處來的，作客的」；GT 丁良才同說這是外邦人對以色列民的稱呼（參創14:13）。GT《舊約背景註釋》另記蘭塞二世徵召築城奴工時，其中有「阿皮魯人（'Apiru，主前第二千年紀用這名字來形容離鄉背井的人）」，並說「這名字應該會被用來形容希伯來人，以及其他的人種」；GT《中文聖經註釋》也提到法老亞門諾斐斯二世曾在亞洲擄哈皮魯人到埃及為國奴。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt, raw_data/biblehub_study_exodus_1.txt]
+- title: 法老預表撒但
+  path: link_folder/神學/法老預表撒但.md
+  summary: CT 的靈意註解與 KC 都把本章的法老讀為撒但的圖像：他忌諱神子民增多、以勞役轄制他們、又要殺害他們中的男孩。
+  relation: CT 說「約瑟預表基督；埃及王法老預表這世界的王撒但」（約12:31；弗2:2），並把全章的靈訓要義排成「撒但的忌諱」「撒但的計謀」「神暗中的保守與賜福」三段；KC 用的是同一組稱呼——撒但是「這世界的神」（林後4:4）、主耶穌稱他為「這世界的王」（約12:31）——並說「撒但把世人扣在奴役之中」，人在其中不論自覺與否都在幫他建造國度。
+  sources: [CT, KC]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt]
+- title: 啟示錄12章古蛇撒但
+  path: link_folder/互文/啟示錄12章古蛇撒但.md
+  summary: 第22節法老命全民把男孩丟在河裡，KC 與 CT 都把這道命令接到啟示錄12章的大龍。
+  relation: KC 說在希律和法老的作為裡看見撒但——那條龍的作為，並直引「龍就站在那將要生產的婦人面前，等她生產之後，要吞吃她的孩子」（啟12:4b）；CT 沒有提希律，而是把男孩與女孩讀成兩種信徒：「撒但想盡辦法要除滅靈性剛強的信徒（男孩所象徵的，參啟12:4-5）；至於靈性軟弱的信徒（女孩所象徵的），則以迷惑的手段來對付。」
+  sources: [CT, KC]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/kingcomments_exodus_1.txt]
+- title: 「河」是否專指尼羅河
+  path: link_folder/解經爭議/「河」是否專指尼羅河.md
+  summary: 第22節「你們都要丟在河裏」的「河」，CT 指出原文是單數，指尼羅河。
+  relation: GT《丁道爾聖經註釋》說這個希伯來字「是個外來語。這字源自埃及語，所指的是至重要的河，亦即是尼羅河」，並舉「蘆荻」「青蛙」等同屬埃及語的詞彙為旁證；GT《中文聖經註釋》給出判別法——以色列人講「河」特別是「大河」時指幼發拉底，「但當埃及人講河的時候，必然是指尼羅河」，而歌珊在三角洲一帶，故這命令也包括尼羅河的支流，但不包含西乃半島北端的埃及河；GT《串珠聖經註釋》同判為「尼羅河或其支流」。
+  sources: [CT, GT]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_1.txt, raw_data/ccbiblestudy_GT_exodus_1.txt]

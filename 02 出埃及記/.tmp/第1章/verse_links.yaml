@@ -104,6 +104,9 @@ links:
   phrase: 做苦工
   target: 埃及的強迫勞役與製磚
 - verse: 15
+  phrase: 希伯來
+  target: 希伯來人（族群稱呼）
+- verse: 15
   phrase: 收生婆
   target: 古代收生婆
 - verse: 15
@@ -115,6 +118,9 @@ links:
 - verse: 15
   phrase: 埃及
   target: 埃及
+- verse: 16
+  phrase: 希伯來
+  target: 希伯來人（族群稱呼）
 - verse: 17
   phrase: 敬畏神
   target: 敬畏神
@@ -131,8 +137,14 @@ links:
   phrase: 法老
   target: 法老
 - verse: 19
+  phrase: 希伯來
+  target: 希伯來人（族群稱呼）
+- verse: 19
   phrase: 埃及
   target: 埃及
+- verse: 19
+  phrase: 收生婆還沒有到，他們已經生產了
+  target: 收生婆的回話是否說謊
 - verse: 20
   phrase: 以色列人
   target: 以色列
@@ -145,3 +157,6 @@ links:
 - verse: 22
   phrase: 以色列人
   target: 以色列
+- verse: 22
+  phrase: 河裡
+  target: 「河」是否專指尼羅河

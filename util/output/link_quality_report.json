@@ -1,70 +1,84 @@
 {
-  "total_warnings": 78,
+  "total_warnings": 80,
   "critical_count": 0,
-  "warning_count": 78,
+  "warning_count": 80,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第14章.md",
-      "target": "示拿",
-      "message": "同一 alias「示拿」指向多個 target: 示拿, 示拿地"
+      "source": "出埃及記/第12章.md",
+      "target": "逾越節",
+      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第25章.md",
-      "target": "亞蘭人",
-      "message": "同一 alias「亞蘭人」指向多個 target: 亞蘭, 亞蘭人"
+      "source": "出埃及記/第15章.md",
+      "target": "瑪拉",
+      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第30章.md",
-      "target": "底拿",
-      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿名字含義"
+      "source": "出埃及記/第15章.md",
+      "target": "以琳",
+      "message": "同一 alias「以琳」指向多個 target: 以琳, 以琳綠洲"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伊勒伯特利",
-      "message": "同一 alias「伊勒伯特利」指向多個 target: 伊勒伯特利, 伯特利的神"
+      "source": "出埃及記/第17章.md",
+      "target": "亞瑪力人",
+      "message": "同一 alias「亞瑪力人」指向多個 target: 亞瑪力, 亞瑪力人"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伯特利之神",
-      "message": "同一 alias「伯特利之神」指向多個 target: 伊勒伯特利, 伯特利的神"
+      "source": "出埃及記/第22章.md",
+      "target": "聖潔",
+      "message": "同一 alias「聖潔」指向多個 target: 聖潔, 聖潔（qodesh）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第36章.md",
-      "target": "亞瑪力",
-      "message": "同一 alias「亞瑪力」指向多個 target: 亞瑪力, 亞瑪力人"
+      "source": "出埃及記/第23章.md",
+      "target": "安息年",
+      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第37章.md",
-      "target": "以實瑪利人",
-      "message": "同一 alias「以實瑪利人」指向多個 target: 以實瑪利, 以實瑪利人"
+      "source": "出埃及記/第23章.md",
+      "target": "安息日",
+      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日律例"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "瑪拿西",
-      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
+      "source": "出埃及記/第27章.md",
+      "target": "銅壇",
+      "message": "同一 alias「銅壇」指向多個 target: 銅壇與十字架（來13：10-13）, 銅壇（燔祭壇）"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "以法蓮",
-      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
+      "source": "出埃及記/第28章.md",
+      "target": "亞倫",
+      "message": "同一 alias「亞倫」指向多個 target: 亞倫, 大祭司基督（來4：14-15）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第29章.md",
+      "target": "贖罪祭",
+      "message": "同一 alias「贖罪祭」指向多個 target: 基督作贖罪祭, 贖罪祭"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第6章.md",
+      "target": "以利亞撒",
+      "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的祭司譜系, 以利亞撒"
     },
     {
       "type": "alias_target_conflict",
