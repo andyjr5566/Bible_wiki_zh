@@ -3,43 +3,61 @@ chapter: 47
 updates:
 - title: 雅各
   path: link_folder/人物/雅各.md
-  summary: 雅各兩次祝福法老，稱自己一百三十年的寄居生涯又少又苦；他在埃及再活十七年，臨終要求約瑟起誓將他歸葬列祖之地。
-  relation: 雅各在埃及蒙供養卻不以埃及為永久歸宿，歸葬要求顯示他仍持守土地應許。
+  summary: 雅各被領到法老面前，一見面就給法老祝福，離開前再祝福一次（7、10節）；他自陳「我寄居在世的年日是一百三十歲，我平生的年日又少又苦，不及我列祖早在世寄居的年日」（9節）。他在埃及又住了十七年，享年一百四十七歲；臨終叫約瑟把手放在他大腿底下起誓，不將他葬在埃及（28-31節）。
+  relation: CT 指出雅各覲見法老「沒有向他求甚麼，反而給他祝福」，並讀出他一生的翻轉——「雅各從前想盡辦法求取別人的祝福（27:19），如今卻是為別人祝福」。GT《聖經精讀本》說明他憑什麼能祝福：舊約時期族長的祝福權根據神和亞伯拉罕之間的生死之約（12:3），族長也肩負家庭的祭司。至於「又苦」，GT 丁良才數了九樣（以掃的怨恨、拉班的欺哄、底拿被辱、拉結去世、流便不孝、約瑟被害、猶大行淫、西緬被囚、幼子離家）；KC 指出另一面——他的年日之所以又少又苦，是因為他沒有接受耶和華的引導，總是走自己的路；GT《聖經精讀本》則說這些歲月在神的護理下成為養育、試煉、成聖的過程。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 約瑟
   path: link_folder/人物/約瑟.md
-  summary: 約瑟使父家正式定居歌珊並按人口奉養；他在饑荒中收取銀子、牲畜、土地與勞役，供給種子並制定五分之一常例。
-  relation: 約瑟同時管理父家生存與埃及糧政，把所得交給法老，並承諾依父命將雅各歸葬迦南。
+  summary: 約瑟進去告訴法老全家已到歌珊，並從弟兄中挑出五個人引他們去見法老（1-2節）；他遵法老的命把蘭塞境內的地給父親和弟兄作產業，又照各家的人口奉養他們（11-12節）。饑荒中他依序以糧食收取銀子、牲畜、田地與勞役歸法老，供給種子並定下五分之一的常例（13-26節）。末了他向父親起誓，必將他帶出埃及歸葬（29-31節）。
+  relation: CT 說約瑟挑的是外表體面且具有口才者，GT《聖經精讀本》則說埃及人認為「五」在數字中最有意義，可見約瑟「一切都精心而機智地作了準備」。CT 並指出第12節「照各家的人口奉養」表示嚴格管制糧食的供需，「使他們既無匱乏之虞，又不至於浪費珍貴有限的資源」。KC 由此看見約瑟的照顧「顧到老的少的、大的小的，各人都得著他所需要的，沒有一個被忘記」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 法老
   path: link_folder/人物/法老.md
-  summary: 法老批准雅各家住歌珊並可派能人管理王室牲畜；饑荒政策使銀子、牲畜、土地和百姓勞役集中歸他，並取得五分之一收成。
-  relation: 法老提供避難地與行政授權，也成為埃及資產和土地集中後的所有者。
+  summary: 法老問約瑟的弟兄「你們以何事為業」，隨即准他們住在國中最好的地——歌珊地，並說「你若知道他們中間有甚麼能人，就派他們看管我的牲畜」（3-6節）。饑荒政策使銀子、牲畜、土地和百姓的勞役集中歸他，並取得五分之一收成；惟有祭司的地不歸法老，因祭司有他所給的常俸（14-26節）。
+  relation: GT《聖經精讀本》從政治面讀這件事：歌珊地肥沃、又是埃及邊境的戰略要塞，「法老爽快地把如此重要的地方讓給異國人，可以看出他對約瑟的絕對信任，以及約瑟不可忽略的影響力」。CT 與 GT《串珠聖經註釋》指「能人」是善於牧養牲畜的人，串珠並說法老願意委派他們出任官職。祭司的豁免則反映埃及的制度：GT《舊約背景註釋》說埃及祭司「往往集中了頗大的政治勢力……不少法老都覺得有逢迎他們的必要」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 埃及
   path: link_folder/地點/埃及.md
-  summary: 雅各家在歌珊定居增多；埃及其他地區在饑荒中經歷銀子、牲畜與土地轉歸法老，形成五分之一常例。
-  relation: 埃及同時成為以色列家蒙保全之地與王權藉饑荒集中土地的場域。
+  summary: 饑荒甚大，埃及地和迦南地的人都餓昏了（13節）；埃及全地的銀子、牲畜與田地依序歸了法老，百姓成為佃農，收成的五分之一納王（14-26節）。同一段時間，以色列人住在埃及的歌珊地，在那裡置了產業，並且生育甚多（27節）。
+  relation: 同一場饑荒在埃及造成兩種相反的結果。GT《聖經精讀本》指出約瑟卓越的儲糧政策與他所制定的土地法、納稅法「使埃及的王權和國庫更加堅固」，並說在救贖史的開展過程中，埃及作為逃城為選民提供了休養生息之地（太2:13-15）——這也是埃及在歷史中沒有被完全消滅（結29:14-16）、雖然微弱卻能維持其命脈（賽19:22）的原因，但神對埃及的祝福「終究是為了保護選民而有的護理」。BH 則就第14節指出，財富與權力向法老集中的趨勢，日後將成為以色列人受奴役的背景。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 迦南地
   path: link_folder/地點/迦南地.md
-  summary: 迦南同受嚴重饑荒，銀子也因糴糧流入法老宮；雅各要求死後離開埃及，歸葬列祖所在之地。
-  relation: 迦南目前缺糧，仍是雅各認定與神應許相連的歸葬之地。
+  summary: 迦南地饑荒甚大，僕人的羊群沒有草吃，雅各家因此下埃及寄居（4節）；迦南地的銀子也因糴糧流入法老的宮（14節）。雅各臨終要約瑟起誓，不將他葬在埃及，而要帶出去「葬在他們所葬的地方」（29-30節）。
+  relation: 迦南此刻是無草無糧之地，卻仍是雅各認定與應許相連的歸宿。GT 丁良才給出他不肯葬在埃及的兩個理由：他相信他的後裔必得迦南地為業；他要使他的子孫知道，埃及不是他們常住的地方。GT《串珠聖經註釋》同說：雅各定意不在埃及地埋葬，因他相信神必實現應許，把迦南地賜給他子孫為業。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 神的護理
   path: link_folder/神學/神的護理.md
-  summary: 饑荒仍遍及埃及與迦南時，約瑟按人口奉養父家；以色列人在歌珊置產、生育增多，雅各晚年也得與約瑟同住十七年。
-  relation: 全家保存與繁衍延續神在別是巴所應許的「在埃及成為大族」。
+  summary: 饑荒仍遍及埃及與迦南、全地都絕了糧時，約瑟照各家的人口奉養父家（12-13節）；以色列人在歌珊置了產業、生育甚多，雅各晚年也得與約瑟同住十七年（27-28節）。
+  relation: GT《聖經精讀本》把這一章放進更長的線裡：本段是「出埃及事件的出發點」，人類的歷史、尤其選民的歷史全過程，「都在神滿有主權的計畫下一步步周密地進行」；儘管約瑟的兄弟們希望只住到饑荒結束（4節），神卻按照創15:13-16 的預言把居住期限延長到四百三十年（出12:40；加3:17）。GT 丁良才則指出第27節的「生育甚多」正是應驗創46:3 的話（並見出1:7）。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
 - title: 大腿底下起誓
   path: link_folder/主題/大腿底下起誓.md
-  summary: 雅各要求約瑟把手放在他大腿底下，以慈愛和誠實承諾不將他葬在埃及。
-  relation: 這種鄭重起誓方式呼應亞伯拉罕差遣老僕為以撒娶妻，兩次都涉及家族應許的延續。
+  summary: 雅各死期臨近，叫了約瑟來說：「請你把手放在我大腿底下，用慈愛和誠實待我，請你不要將我葬在埃及」；約瑟向他起了誓（29-31節）。
+  relation: 這是聖經記載此種起誓方式的第二處，前一處是亞伯拉罕差遣老僕為以撒娶妻（24:2）。CT 說手所接觸的部位靠近生殖器官，「意味著若違背誓言，就會遭受絕後的報應」；GT《創世記雷氏研讀本》說「大腿」是生殖器官的委婉說法；GT《聖經精讀本》說這種「大腿骨誓約」是古代常用的作法，象徵誓約的嚴肅和神聖。兩次起誓的內容都關乎家族應許的延續——一次是後裔從何處娶妻，一次是先祖葬在哪一塊地。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
+- title: 蘭塞
+  path: link_folder/地點/蘭塞.md
+  summary: 約瑟遵著法老的命，把埃及國最好的地，「就是蘭塞境內的地」，給他父親和弟兄居住，作為產業（11節）。
+  relation: 各家一致指出這是後起的地名。CT 說「蘭塞」乃摩西時代的歌珊地名，係因數百年後統治埃及的法老蘭塞二世（主前1290-1224）而得名；GT《串珠聖經註釋》說蘭塞即歌珊，在創世記作者的時候歌珊改稱為蘭塞；GT《創世記雷氏研讀本》說名字出現在這裏「目的是讓讀者知道所談及的是那個地區」；GT《啟導本聖經創世記註釋》另記它又叫「瑣安田」（詩78:12）。GT《舊約背景註釋》補上地理與族群背景：這個位於尼羅河三角洲東北部的地區據悉其居民是閃族人，主前十八至十六世紀是許克所斯活動的中心，此地又稱泰尼斯地區，希伯來奴隸日後在此建築積貨城比東和蘭塞（出1:11）；蘭塞二世的名字出現在此「可能是今名古用的案例」。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
+- title: 麥比拉洞
+  path: link_folder/地點/麥比拉洞.md
+  summary: 雅各臨終對約瑟說：「我與我祖我父同睡的時候，你要將我帶出埃及，葬在他們所葬的地方」，約瑟答「我必遵著你的命而行」，並向他起了誓（30-31節）。
+  relation: CT 指明「他們所葬的地方」就是迦南地希伯崙的麥比拉洞（23:19；25:8-9；35:27-29）；GT《串珠聖經註釋》同說亞伯拉罕和以撒也埋在那裡（25:9；35:29）。GT《聖經精讀本》讀出這囑咐的兩層用意：對列祖表示自己的情意，並期望後裔不要留戀埃及地的安逸、要仰望立約之地。GT《舊約背景註釋》則說明家塚的社會功能：「家塚一旦設立，就有了每個人都要與全體家人同葬的傳統；這樣做不但構成代與代之間的聯繫，更進一步加強家族對墳墓所在地所有權的證據。」
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 「以色列人住在埃及的歌珊地，他們在那裏置了產業，並且生育甚多」（27節）。
+  relation: GT 丁良才指出「生育甚多」正是應驗創46:3 的話（並見出1:7；12:37）。GT《聖經精讀本》把兩個應許一起算進來：這既成就了十七年前雅各移居埃及時的應許（46:3），也成就了二百五十多年前亞伯拉罕移居迦南時的應許（12:2）。精讀本另據創15:13-16 說明這段寄居的期限：儘管約瑟的兄弟們希望只住到饑荒結束（4節），神卻按照預言把居住期限延長到四百三十年（出12:40；加3:17），直到迦南地罪惡滿盈為止。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_genesis_47.txt, raw_data/ccbiblestudy_GT_genesis_47.txt, raw_data/kingcomments_genesis_47.txt, raw_data/biblehub_study_genesis_47.txt]

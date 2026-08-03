@@ -88,7 +88,42 @@ A_use_directly:
   match_type: exact
   existing_title: 床頭或杖頭
   existing_path: link_folder/解經爭議/床頭或杖頭.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 蘭塞
+  suggested_type: 地點
+  evidence: 11節；「就是蘭塞境內的地」——CT／GT 各家一致指這是摩西時代對歌珊地的稱呼，因數百年後的法老蘭塞二世而得名；GT《舊約背景註釋》另指此地位於尼羅河三角洲東北部，是許克所斯活動的中心
+  surfaces:
+  - phrase: 蘭塞境內的地
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 蘭塞
+  existing_path: link_folder/地點/蘭塞.md
+- name: 麥比拉洞
+  suggested_type: 地點
+  evidence: 30節；「葬在他們所葬的地方」——CT 與 GT《串珠聖經註釋》《聖經精讀本》都指明是迦南地希伯崙的麥比拉洞（23:19-20；25:9；35:29）
+  match_type: exact
+  existing_title: 麥比拉洞
+  existing_path: link_folder/地點/麥比拉洞.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 27節；「生育甚多」——GT 丁良才指這是應驗46:3 的話，GT《聖經精讀本》並上溯到12:2 亞伯拉罕移居迦南時的應許；《精讀本》另據15:13-16
+    說明居住期限延長到四百三十年（出12:40；加3:17）
+  surfaces:
+  - phrase: 生育甚多
+    verses:
+    - 27
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+C_new_formal:
+- name: 各歸各城或使民為奴
+  suggested_type: 解經爭議
+  evidence: 21節；馬所拉本作「都各歸各城」，七十士譯本與武加大譯本作「使各人都成為奴隸」；CT／啟導本／串珠並列兩讀，《聖經精讀本》明說後者「不正確」
+  surfaces:
+  - phrase: 都各歸各城
+    verses:
+    - 21
+  target_path: link_folder/解經爭議/各歸各城或使民為奴.md
 D_new_candidate: []
 E_skip: []
