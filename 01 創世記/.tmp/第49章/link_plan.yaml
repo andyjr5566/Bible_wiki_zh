@@ -106,7 +106,68 @@ A_use_directly:
   match_type: exact
   existing_title: 十二支派起源
   existing_path: link_folder/神學/十二支派起源.md
-B_needs_update: []
+B_needs_update:
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 13節；「西布倫必住在海口，必成為停船的海口；他的境界必延到西頓」——CT 指其地將靠近地中海，GT《串珠》指西頓是腓尼基人的首府
+  surfaces:
+  - phrase: 西布倫
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 14-15節；「以薩迦是個強壯的驢，臥在羊圈之中」「便低肩背重，成為服苦的僕人」——CT 指其地在約但河谷西北部土地肥美，卻安於現狀
+  surfaces:
+  - phrase: 以薩迦
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 但（審判）
+  suggested_type: 人物
+  evidence: 16-17節；「但必判斷他的民」——名字字義即「審判」；「但必作道上的蛇，路中的虺」——CT 與 GT 都連到士18 但支派引入偶像
+  surfaces:
+  - phrase: 但
+    verses:
+    - 16
+    - 17
+  match_type: exact
+  existing_title: 但（審判）
+  existing_path: link_folder/人物/但（審判）.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 19節；「迦得必被敵軍追逼，他卻要追逼他們的腳跟」——CT 指其地在約但河東，先受侵擾後能制伏敵人（代上5:18-22）
+  surfaces:
+  - phrase: 迦得
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 20節；「亞設之地必出肥美的糧食，且出君王的美味」——CT 指其地靠近地中海、農地肥沃；GT《精讀本》連到王上5:11 供給所羅門王
+  surfaces:
+  - phrase: 亞設
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 21節；「拿弗他利是被釋放的母鹿；他出嘉美的言語」——CT 指其步履靈活矯捷（詩18:33），GT《精讀本》連到底波拉與巴拉之歌（士5章）
+  surfaces:
+  - phrase: 拿弗他利
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

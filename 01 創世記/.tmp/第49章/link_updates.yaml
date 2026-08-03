@@ -1,15 +1,235 @@
 book: 創世記
 chapter: 49
 updates:
-- {title: 雅各, path: link_folder/人物/雅各.md, summary: 雅各臨終召聚眾子，按各人及其後代支派宣告日後之事，重申歸葬麥比拉後安然離世。, relation: 祝福兼含往事評價、支派命運與應許傳承，是雅各信仰與家族領導的最後行動。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 流便, path: link_folder/人物/流便.md, summary: 流便本有長子尊榮和權力，卻因污穢父床、性情如滾沸之水而不得居首位。, relation: 他的長子領導地位轉離，說明天然次序不能抵消個人行為的後果。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 西緬, path: link_folder/人物/西緬.md, summary: 西緬與利未因示劍事件中的暴怒殘忍受責，後裔被宣告分散在以色列中。, relation: 西緬後來在猶大境內得地，沒有形成獨立連片的大產業。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 利未, path: link_folder/人物/利未.md, summary: 利未與西緬因示劍屠殺被宣告散住以色列地中。, relation: 利未後裔後來蒙召事奉並散居各支派城邑，使分散在新處境中成為教導與祭司服事的安排。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 猶大（雅各之子）, path: link_folder/人物/猶大（雅各之子）.md, summary: 猶大得弟兄讚美、勝敵、獅子威勢與持續王權的祝福，並連到細羅及萬民歸順。, relation: 家族領導與王權歸猶大，後由大衛王朝及彌賽亞盼望進一步發展。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 約瑟, path: link_folder/人物/約瑟.md, summary: 約瑟被比作泉旁多結果子的枝子；雖受弓箭手逼迫，卻因雅各的大能者站立並承受天、地與生育之福。, relation: 祝福總結其受苦、蒙神堅固和藉以法蓮瑪拿西廣得產業的生命軌跡。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 便雅憫, path: link_folder/人物/便雅憫.md, summary: 便雅憫被比作早晚撕掠分物的狼。, relation: 資料通常把此意象連到便雅憫支派後來著名的戰士和強悍爭戰傳統。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 麥比拉洞, path: link_folder/地點/麥比拉洞.md, summary: 雅各臨終指定葬在麥比拉洞，並列出亞伯拉罕撒拉、以撒利百加和利亞已葬於此。, relation: 麥比拉是族長合法購得並實際持有的迦南產業，也是家族墓地和土地應許的記號。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 迦南地, path: link_folder/地點/迦南地.md, summary: 雅各雖死於埃及，仍要求葬在迦南幔利前的麥比拉田間洞中。, relation: 歸葬選擇再次表明埃及是暫居地，迦南才與列祖所得應許相連。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 十二支派起源, path: link_folder/神學/十二支派起源.md, summary: 雅各對眾子的宣告被經文統稱為對以色列十二支派按各人福分所作的祝福。, relation: 個人品格與往事在詩歌中延伸為後代支派的地理、政治、經濟和爭戰特徵。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 全能的神（El Shaddai）, path: link_folder/神學/全能的神（El Shaddai）.md, summary: 雅各在約瑟的祝福中稱神為全能者，祈求祂賜下天、地與生育乳養的福。, relation: 全能者在此是能以全面豐盛成就族長祝福的神。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
-- {title: 神的護理, path: link_folder/神學/神的護理.md, summary: 約瑟雖被弓箭手苦害逼迫，弓仍堅硬、手仍健壯，因力量來自雅各的大能者、以色列的牧者與磐石。, relation: 祝福把約瑟在敵意中得保守及結果眾多歸於神持續的扶助。, sources: [CT, GT, KC, BH], source_files: [raw_data/ccbiblestudy_CT_genesis_49.txt, raw_data/ccbiblestudy_GT_genesis_49.txt, raw_data/kingcomments_genesis_49.txt, raw_data/biblehub_study_genesis_49.txt]}
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 雅各叫齊兒子們說「我好把你們日後必遇的事告訴你們」（1-2節），逐一宣告十二子的將來（3-27節）；經文總結說「這一切是以色列的十二支派……都是按著各人的福分，為他們祝福」（28節）。最後他囑咐葬在麥比拉洞（29-32節），「就把腳收在床上，氣絕而死，歸到列祖那裡去了」（33節）。
+  relation: CT 指出「日後的事」包含以色列人出埃及、進迦南、分配地、建國度等整個歷史，甚至包括有關彌賽亞的預言，而雅各此時「是被神的靈感動作先知」。GT《啟導本聖經創世記註釋》說第2至27節是全卷創世記最長的一篇詩歌。CT 另注意到第2節的兩個名字各有其位：「雅各」指他是生育的父親，「以色列」指他說話的地位。GT 丁良才說第33節的「歸他列祖那裡去」是指靈魂歸到陰間，不是指屍首埋於墳墓，因為下一章才記載他過了七十天被埋葬的事。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 「流便哪，你是我的長子，是我力量強壯的時候生的，本當大有尊榮，權力超眾；但你放縱情慾，滾沸如水，必不得居首位，因為你上了你父親的床，污穢了我的榻」（3-4節）。
+  relation: CT 的背景註解說明失去的是什麼：猶太人特別重視長子的名分，它有三大特權——雙份的產業、家族的首領（君王）職分、家族的祭司職分。應驗的證據，CT 與 GT 丁良才、雷氏都指向同一件事：在流便的後裔中沒有出過任何著名的士師、先知或官長（士5:15-16）。GT《聖經精讀本》補上曠野時期的例外也不算數：流便支派雖出過大坍和亞比蘭，但他們與可拉黨一同反對摩西，終被滅亡（民16章；申11:6）。GT《串珠聖經註釋》說「滾沸如水」是「描寫流便放任，像洪流不受管制」。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 西緬
+  path: link_folder/人物/西緬.md
+  summary: 「西緬和利未是弟兄；他們的刀劍是殘忍的器具……他們的怒氣暴烈可咒；他們的忿恨殘忍可詛。我要使他們分居在雅各家裡，散住在以色列地中」（5-7節）。
+  relation: CT 指這是說他們用刀劍殺了示劍全城的人（34:25-29），並提醒雅各「不是咒詛他們的『人』，而是咒詛他們的『性情和行為』」。應驗方面，CT 說西緬支派只能在猶大支派的境內得著地業（書19:1-9）；GT 丁良才補上兩點：西緬支派後來成了最小的支派（民26:14），而摩西為以色列人祝福的時候（申33章）並沒有提到這支派。GT《聖經精讀本》說在曠野行軍中西緬支派的人越來越減少。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 利未
+  path: link_folder/人物/利未.md
+  summary: 利未與西緬同受「分居在雅各家裡，散住在以色列地中」的宣告（5-7節）。
+  relation: 同一句宣告在利未身上的結果與西緬不同。CT 說利未散住在以色列人地業中的四十八座城及其四圍的郊野（書21:41）。GT 丁良才把轉折點說出來：利未支派也果然住在以色列人的眾支派中，「神卻將這咒詛變為幸福」（出32:25-29；申33:8-11）。KC 說明轉折的機制：因著分散，他們得以進到全民中間，好把神的律法教訓全民。GT 賈斯樂郝威《聖經難解經文詮釋手冊》正面處理「雅各咒詛利未、摩西卻祝福利未」的表面矛盾：「這兩個宣告（咒詛和祝福）之間並沒有矛盾」——利未的後裔就如雅各所言分散在以色列各地，卻成為神命定的祭司支派。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 猶大（雅各之子）
+  path: link_folder/人物/猶大（雅各之子）.md
+  summary: 「猶大啊，你弟兄們必讚美你……圭必不離猶大，杖必不離他兩腳之間，直等細羅（就是賜平安者）來到，萬民都必歸順」（8-12節）。
+  relation: CT 指出「猶大」的字義就是「讚美」，而長子名分中家族領導者的地位之所以歸他，是因為長子流便放縱情慾、二三子西緬和利未殘忍可詛；後來猶大支派的大衛開創了猶大王朝（撒下5:4-5）。GT《聖經精讀本》給猶大受讚美的兩個理由：他忘我的品德（43:9；44:18-34），以及將來的君王權威。KC 注意到語氣的驟變：雅各論到猶大只說可稱讚的事，與前三個兒子成了極大的對比。至於「細羅」，各家譯法不一（賜平安者／那應得的人／示羅／貢物），但共同的主軸是猶大王權的延續與萬民歸順者的來到。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 約瑟
+  path: link_folder/人物/約瑟.md
+  summary: 「約瑟是多結果子的樹枝，是泉旁多結果的枝子，他的枝條探出牆外」（22節）；「弓箭手將他苦害，向他射箭，逼迫他；但他的弓仍舊堅硬……這是因以色列的牧者，以色列的磐石，就是雅各的大能者」（23-24節）；末了是天上、地裡、生產乳養的三重福（25-26節）。
+  relation: CT 指出「多結果子」的應驗：當摩西的時候，屬約瑟的以法蓮和瑪拿西兩個支派合計人數比以色列任何一個支派都多（民26:28-34）。GT 丁良才把「弓箭手」對回具體的人：他的哥哥們（創37章）與波提乏的妻子。KC 用一個比喻說明第24節的「因」：像小孩要提起父親沉重的箱子，他自己提不動，卻因父親的大手包著他的手一同提起而提起來了。CT 另指出「與弟兄迥別」的原文與「拿細耳人」同字，故兼有兩義——成就高過弟兄們，以及分別為聖歸給神；KC 說主耶穌是那真正的拿細耳人。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 便雅憫
+  path: link_folder/人物/便雅憫.md
+  summary: 「便雅憫是個撕掠的狼，早晨要吃他所抓的，晚上要分他所奪的」（27節）。
+  relation: CT 說這是讚許便雅憫支派的戰鬥精神，他們曾多次出了著名的爭戰勇士（士3:15-30；20:21、25；代上12:2）。GT《啟導本聖經創世記註釋》把同一種兇暴指向士師記19至21章。GT《聖經精讀本》則列出這支派對以色列歷史的貢獻：士師以笏、第一個王掃羅、掃羅的兒子約拿單、以斯帖、末底改，以及新約時代的保羅。KC 把約瑟與便雅憫合起來讀：約瑟是基督受苦與高升的圖畫，便雅憫是基督帶著權能榮耀再來、在地上掌權的圖畫。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 麥比拉洞
+  path: link_folder/地點/麥比拉洞.md
+  summary: 雅各囑咐眾子：「你們要將我葬在赫人以弗崙田間的洞裡，與我祖我父在一處，就是在迦南地幔利前，麥比拉田間的洞」，並細數已葬在那裡的人——亞伯拉罕與撒拉、以撒與利百加，以及利亞（29-32節）。
+  relation: CT 指出這是族長合法購得的產業：「那洞和田，是亞伯拉罕向赫人以弗崙買來為業，作墳地的」（創23章）。CT 並注意到一處聖經他處未載的資料：以撒之死別處有記（35:28-29）卻未記葬處，至於利百加和利亞，連她們何時死亡都未見記載——本章是唯一的線索。GT《啟導本聖經創世記註釋》同說利亞死在迦南的事「只在此處簡略提到」。KC 讀出這囑咐的性質：雅各重述他先前所說的（47:30），這清楚顯明他對復活的信心，也顯明神是復活的神。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 迦南地
+  path: link_folder/地點/迦南地.md
+  summary: 雅各雖死在埃及，卻囑咐要葬在「迦南地幔利前，麥比拉田間的洞」（29-32節）。
+  relation: 歸葬的選擇再次把埃及定位為暫居地。GT《聖經精讀本》給出雅各特別關心葬地的兩個原因：讓兒子們記住以色列民族的根，並讓他們確信神要恢復迦南地的應許。GT《串珠聖經註釋》同說：他的遺囑表明他深信後代必會按神的應許重返迦南地。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 十二支派起源
+  path: link_folder/神學/十二支派起源.md
+  summary: 「這一切是以色列的十二支派；這也是他們的父親對他們所說的話，為他們所祝的福，都是按著各人的福分，為他們祝福」（28節）。
+  relation: CT 指出兩件事：雅各臨死的時候，以色列十二個支派已經擺明在那裡了；而「他們之中有些人，按表面看，似乎不是祝福，而是責備，但聖經仍認為這是他們的福分」。GT《聖經精讀本》列出雅各預言的判準：把兒子們一貫的行為牢記在心、各自在救贖史中要擔當的使命、一切根據神的安排、不從個人角度而基於對後裔影響的角度；它並把這條線拉到新約——舊約的以色列十二支派演變成新約基督的十二個門徒，最後形成神國的十二個根基（啟21:14）。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 全能的神（El Shaddai）
+  path: link_folder/神學/全能的神（El Shaddai）.md
+  summary: 「你父親的神必幫助你，那全能者必將天上所有的福，地裡所藏的福，以及生產乳養的福，都賜給你」（25節）。
+  relation: CT 解釋這三重的福：「生產乳養」的原文是「母腹和胸奶」，母腹是為生產，胸奶是為乳養；整體指天候與地利之福，包括雨水、甘露、泉源、礦藏、農產、畜牧。GT《聖經精讀本》分得更細：天上所有的福指早晨的露水、適量的雨水與陽光，地裡所藏的福指使土地肥沃的泉水——「常年乾旱的巴勒斯坦地帶，豐富的水是最大的祝福」，生產乳養的福則指順產及多產帶來多子多孫。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 神的護理
+  path: link_folder/神學/神的護理.md
+  summary: 「但他的弓仍舊堅硬，他的手健壯敏捷；這是因以色列的牧者，以色列的磐石，就是雅各的大能者」（24節）。
+  relation: CT 說本節指大能的神是約瑟力量的泉源，惟有順從祂的引導（「牧者」）並全心依靠祂（「磐石」），才得以屹立不為仇敵所害。GT《啟導本聖經創世記註釋》指出「牧者」「磐石」「雅各的大能者」都指全能的神，並說雅各是「從約瑟如日中天的現在，追溯到他往日所受的痛苦，但將一切都歸於神的大能的作為」。GT《聖經精讀本》說約瑟能力的源泉，正是把族長雅各從患難中拯救出來的全能神。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files:
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 西布倫（同住）
+  path: link_folder/人物/西布倫（同住）.md
+  summary: 「西布倫必住在海口，必成為停船的海口；他的境界必延到西頓」（13節）。
+  relation: CT 說這預表西布倫支派的居住地將靠近地中海，「他們要吸取海裡的豐富，並沙中所藏的珍寶」（申33:18-19），並指西布倫地將成為基督福音的起源地（太4:15-16）。GT《串珠聖經註釋》說西頓是腓尼基人的首府，位於今天黎巴嫩境內，並說這支派「善於經營航運事業」。GT《舊約背景註釋》補上一個地理限制：以色列沿岸缺乏天然的海港，因此對他們而言大海不過是疆界，「惟有北面沿海地區的人，才有發展航海技術的機會」。GT《聖經精讀本》指出這段預言過了約450年才藉拈鬮的方式實現（民26:55；書19:10-16）。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: &id001
+  - raw_data/ccbiblestudy_CT_genesis_49.txt
+  - raw_data/ccbiblestudy_GT_genesis_49.txt
+  - raw_data/kingcomments_genesis_49.txt
+  - raw_data/biblehub_study_genesis_49.txt
+- title: 以薩迦（價值）
+  path: link_folder/人物/以薩迦（價值）.md
+  summary: 「以薩迦是個強壯的驢，臥在羊圈之中。他以安靜為佳，以肥地為美，便低肩背重，成為服苦的僕人」（14-15節）。
+  relation: CT 說以薩迦支派所分得的土地在約但河谷的西北部（書19:17-23），土地肥美、物產豐富，但他們可能沒有設法趕出境內的迦南人而安於現狀。GT 丁良才說得更簡：「這支派的人因著地土肥美而心裡知足，就失去了自治的心，致逐漸地被人欺壓。」GT《舊約背景註釋》從動物習性補一條：驢子有時頑強而性惰，可能會在最不合宜之處突然坐倒下來。GT 賈斯樂郝威指出應驗的時點：主前732年提革拉毘列色三世併吞以薩迦的地業納入亞述版圖（王下15:29；賽9:1）。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: *id001
+- title: 但（審判）
+  path: link_folder/人物/但（審判）.md
+  summary: 「但必判斷他的民，作以色列支派之一。但必作道上的蛇，路中的虺，咬傷馬蹄，使騎馬的墜落於後」（16-17節）；緊接著是雅各的一聲歎息：「耶和華啊，我向來等候你的救恩」（18節）。
+  relation: CT 指出「但」的字義就是「判斷」，第16節意即他的後裔要作士師——但支派出了一位有名的士師參孫（士13:2、24；15:20）。第17節則轉向另一面：CT 說但的後裔走上暴力和奸詐的路，將米迦的神像帶到但城另成立敬拜中心（士18:27-31）。GT《串珠聖經註釋》讀出其中的反諷：法官主要的特色應是公正，「而雅各卻用詭計狡猾的蛇描寫但，實是絕大諷刺」。GT《聖經精讀本》記下兩條可考的線索：但支派是拜偶像的發起人（士18:18；王上12:29-30），而啟7:5-8 的受印名單中沒有但支派；初期教父愛任紐、奧古斯丁、安波羅修據此推想敵基督將從但支派出現。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: *id001
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 「迦得必被敵軍追逼，他卻要追逼他們的腳跟」（19節）。
+  relation: CT 說這是指他們先被敵人追逼、後來卻反過來追逼敵人，描述失敗後重獲勝利：迦得支派分得的土地在約但河東邊（書13:24-28），經常受到侵襲（士10:8），但當他們強盛時就會把敵人制伏（代上5:18-22）。GT 丁良才說追逼他們的是亞拉伯的敵軍；GT《啟導本聖經創世記註釋》說與南邊的摩押人為鄰；GT《串珠聖經註釋》說是從沙漠來的米甸和摩押人。GT《創世記雷氏研讀本》歸納：迦得定居在約但河東後很容易受到攻擊，因此他們需要強壯的戰士。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: *id001
+- title: 亞設（有福）
+  path: link_folder/人物/亞設（有福）.md
+  summary: 「亞設之地必出肥美的糧食，且出君王的美味」（20節）。
+  relation: CT 說亞設支派分得的土地靠近地中海（書19:24-31），農地肥沃、物產豐盛，並指出「且出君王的美味」亦可譯為「將有美食供奉君王」，表示所出產的糧食品質最佳美（王上4:7）。GT《串珠聖經註釋》說這支派居住在迦密山以北的東海岸，以豐富出產馳名，「連帝王的美食也由亞設支派供應」。GT《聖經精讀本》指出應驗的時點：所羅門時代，他們用肥沃土地出產的食物供給王（王上5:11）。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: *id001
+- title: 拿弗他利
+  path: link_folder/人物/拿弗他利.md
+  summary: 「拿弗他利是被釋放的母鹿；他出嘉美的言語」（21節）。
+  relation: CT 說「被釋放的母鹿」指其步履靈活矯捷（詩18:33），後來拿弗他利支派的人曾在爭戰中有出色的表現（士4:6、16）；GT 丁良才更直接：母鹿就是「善於打仗之人」的標幟。GT《聖經精讀本》把兩句話分開對應：前半預言他們是敏捷矯健的戰士（可由擊退迦南王耶賓看出，士4:1-9），後半預言他們「將以驚人的善辯和美妙的歌聲打動人心」，可由底波拉與拿弗他利後裔巴拉的歌聲看出（士5章）。GT《串珠聖經註釋》另記一種讀法：不少學者建議把21節加上不同的響音而譯作「拿弗他利是一棵高大的松樹，生髮出美麗的嫩芽」。
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
+  source_files: *id001
