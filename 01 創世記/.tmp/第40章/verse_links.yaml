@@ -7,6 +7,9 @@ links:
 - verse: 1
   phrase: 膳長
   target: 膳長
+- verse: 1
+  phrase: 得罪
+  target: 酒政和膳長得罪法老的具體原因
 - verse: 2
   phrase: 法老
   target: 法老
@@ -89,6 +92,9 @@ links:
   phrase: 法老
   target: 法老
 - verse: 13
+  phrase: 提你出監
+  target: 提你出監_抬起頭
+- verse: 13
   phrase: 酒政
   target: 酒政
 - verse: 14
@@ -133,6 +139,9 @@ links:
 - verse: 19
   phrase: 法老
   target: 法老
+- verse: 19
+  phrase: 斬斷你的頭
+  target: 斬斷你的頭_從你將你的頭抬起來
 - verse: 19
   phrase: 木頭
   target: 掛在木頭上_懸屍示眾

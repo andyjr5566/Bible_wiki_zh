@@ -49,12 +49,7 @@ A_use_directly:
   existing_path: link_folder/人物/法老.md
 - name: 埃及
   suggested_type: 地點
-  evidence: 1節；埃及王的酒政和膳長得罪其主
-  surfaces:
-  - phrase: 埃及
-    verses:
-    - 1
-    - 5
+  evidence: 1、5節；埃及王的酒政和膳長得罪其主（經文中的「埃及」二字均被更長的候選詞「埃及王的酒政」覆蓋，故不宣告 surface）
   match_type: exact
   existing_title: 埃及
   existing_path: link_folder/地點/埃及.md
@@ -99,6 +94,42 @@ A_use_directly:
   match_type: exact
   existing_title: 葡萄樹_葡萄_杯
   existing_path: link_folder/神學/葡萄樹_葡萄_杯.md
+- name: 提你出監_抬起頭
+  suggested_type: 原文
+  evidence: 13節；原文直譯「法老必抬起你的頭」，與19節對膳長的同一成語生死雙關
+  surfaces:
+  - phrase: 提你出監
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 提你出監_抬起頭
+  existing_path: link_folder/原文/提你出監_抬起頭.md
+- name: 斬斷你的頭_從你將你的頭抬起來
+  suggested_type: 原文
+  evidence: 19節；原文直譯「法老必從你將你的頭抬起來」，即斬首
+  surfaces:
+  - phrase: 斬斷你的頭
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 斬斷你的頭_從你將你的頭抬起來
+  existing_path: link_folder/原文/斬斷你的頭_從你將你的頭抬起來.md
+- name: 酒政和膳長得罪法老的具體原因
+  suggested_type: 解經爭議
+  evidence: 1節；經文只說「得罪」，來源對罪名分歧（毒殺謀反／職務失誤／控罪未查清前軟禁）
+  surfaces:
+  - phrase: 得罪
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 酒政和膳長得罪法老的具體原因
+  existing_path: link_folder/解經爭議/酒政和膳長得罪法老的具體原因.md
+- name: 神的主權與人的責任
+  suggested_type: 神學
+  evidence: 20-22節；KC 就「為什麼一個蒙恩、一個受審」長篇並陳神的揀選與人的責任兩面，明言二者只有神能連起來
+  match_type: exact
+  existing_title: 神的主權與人的責任
+  existing_path: link_folder/神學/神的主權與人的責任.md
 - name: 三根枝子
   suggested_type: 原文
   evidence: 10、12節；三根枝子就是三天

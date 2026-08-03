@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 179,
+  "pending_scripture_refs_count": 178,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -845,11 +845,6 @@
       "entity": "34 那鴻書/第1章",
       "book": "那鴻書",
       "chapter": 1
-    },
-    {
-      "entity": "30 阿摩司書/第6章",
-      "book": "阿摩司書",
-      "chapter": 6
     },
     {
       "entity": "雅各書",
