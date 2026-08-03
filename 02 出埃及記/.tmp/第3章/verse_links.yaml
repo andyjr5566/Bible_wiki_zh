@@ -5,8 +5,14 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 1
+  phrase: 米甸祭司
+  target: 米甸祭司
+- verse: 1
   phrase: 葉忒羅
   target: 葉忒羅
+- verse: 1
+  phrase: 神的山
+  target: 神的山
 - verse: 1
   phrase: 何烈山
   target: 何烈山
@@ -184,6 +190,9 @@ links:
 - verse: 18
   phrase: 埃及
   target: 埃及
+- verse: 18
+  phrase: 希伯來人
+  target: 希伯來人（族群稱呼）
 - verse: 18
   phrase: 走三天的路程
   target: 曠野三天路程與獻祭要求

@@ -1,107 +1,69 @@
 book: 出埃及記
 chapter: 3
-source_set: &sources [CT, GT, KC, BH]
-source_file_set: &source_files [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
 updates:
-- title: 神聽見百姓的哀求
-  path: link_folder/神學/神聽見百姓的哀求.md
-  summary: 神再次宣告以色列人的哀聲達到祂面前，祂已聽見督工之下的呼喊，也看見埃及人的欺壓。
-  relation: 第2章記哀聲上達於神，第3章則把神的聽見展開為下來拯救、差遣摩西與領百姓進入應許地的行動。
-  sources: *sources
-  source_files: *source_files
-- title: 摩西
-  path: link_folder/人物/摩西.md
-  summary: 摩西牧養葉忒羅羊群到了何烈山，在燃燒卻不燒毀的荊棘前蒙神呼召，受差遣去見法老並領以色列人出埃及。
-  relation: 四十年前摩西自行施救失敗，如今使命由神主動發起；神以「我必與你同在」回答他「我是甚麼人」的疑問。
-  sources: *sources
-  source_files: *source_files
-- title: 法老
-  path: link_folder/人物/法老.md
-  summary: 神差摩西和以色列長老去見埃及王，預告法老不肯容百姓離開，直到神以大能的手和奇事攻擊埃及。
-  relation: 法老的抵抗早在摩西回埃及前已被神知道，後續衝突將顯明神的主權不是被法老的剛硬打亂。
-  sources: *sources
-  source_files: *source_files
-- title: 以色列
-  path: link_folder/原文/以色列.md
-  summary: 神稱受苦的以色列為「我的百姓」，看見、聽見並知道他們的痛苦，差摩西把他們從埃及領出。
-  relation: 以色列的民族身分在本章進一步成為與耶和華立約、被祂認領並蒙召事奉祂的百姓身分。
-  sources: *sources
-  source_files: *source_files
-- title: 亞伯拉罕
-  path: link_folder/人物/亞伯拉罕.md
-  summary: 神向摩西自稱亞伯拉罕、以撒、雅各的神，並以父祖之神的身分應許領後裔進入迦南。
-  relation: 神對亞伯拉罕的應許跨越世代，成為差遣摩西、賜地與拯救以色列的根基。
-  sources: *sources
-  source_files: *source_files
-- title: 以撒
-  path: link_folder/人物/以撒.md
-  summary: 神自稱以撒的神，與亞伯拉罕、雅各並列，顯明同一盟約在父祖世代間延續。
-  relation: 耶穌後來引用本章說神是活人的神；以撒雖已離世，仍在神的盟約與復活盼望中被提名。
-  sources: *sources
-  source_files: *source_files
-- title: 雅各
-  path: link_folder/人物/雅各.md
-  summary: 神自稱雅各的神；正在埃及受苦的民族正是雅各後裔，神要照父祖應許領他們出來。
-  relation: 雅各家進埃及的歷史在此轉向出埃及，顯明神沒有因年代久遠而放棄祂給雅各的應許。
-  sources: *sources
-  source_files: *source_files
-- title: 迦南人
-  path: link_folder/人物/迦南人.md
-  summary: 神應許把以色列領到流奶與蜜之地，並列出迦南人等當地群體。
-  relation: 迦南人代表應許地現有居民之一，使「美好寬闊之地」同時帶有未來進入與衝突的歷史現實。
-  sources: *sources
-  source_files: *source_files
-- title: 赫人
-  path: link_folder/人物/赫人.md
-  summary: 赫人列於神所應許之地的居民名單，與迦南人、亞摩利人等並列。
-  relation: 本章延續創世記已出現的赫人背景，將其置於以色列未來承受迦南的應許中。
-  sources: *sources
-  source_files: *source_files
-- title: 亞摩利人
-  path: link_folder/人物/亞摩利人.md
-  summary: 亞摩利人列於迦南地居民名單，是神應許領以色列前往之地的群體之一。
-  relation: 創世記15章曾提亞摩利人的罪孽尚未滿盈，本章則宣告以色列將離開埃及、走向那地。
-  sources: *sources
-  source_files: *source_files
-- title: 希未人
-  path: link_folder/歷史/希未人.md
-  summary: 希未人列於應許地六族名單，是以色列將要進入之地的既有居民。
-  relation: 本章的群體列表提供迦南並非空地的背景，也預告後續征服與立約警告。
-  sources: *sources
-  source_files: *source_files
-- title: 耶布斯人
-  path: link_folder/人物/耶布斯人.md
-  summary: 耶布斯人是本章應許地居民名單的最後一族，後來與耶路撒冷地區密切相關。
-  relation: 其列名把父祖所得的賜地應許推向以色列全族日後進入迦南的歷史。
-  sources: *sources
-  source_files: *source_files
-- title: 埃及
-  path: link_folder/地點/埃及.md
-  summary: 神看見埃及人欺壓以色列，宣告要下來拯救，並預告以奇事攻擊埃及，使百姓蒙恩且不空手離去。
-  relation: 埃及在本章既是奴役之地，也是神將公開施行審判與救贖、顯明自己聖名的舞台。
-  sources: *sources
-  source_files: *source_files
-- title: 耶和華的使者
-  path: link_folder/神學/耶和華的使者.md
-  summary: 耶和華的使者在荊棘火焰中向摩西顯現，隨後敘事直接說耶和華與神從荊棘中呼叫並說話。
-  relation: 使者與耶和華／神之間緊密而交疊的表達，是理解舊約神顯現與使者身分的重要經文。
-  sources: *sources
-  source_files: *source_files
-- title: 耶和華的使者是否為神顯現
-  path: link_folder/解經爭議/耶和華的使者是否為神顯現.md
-  summary: 第2節稱耶和華的使者顯現，第4節起卻由耶和華與神直接說話；來源因此有神顯現、受差使者及基督預顯等不同理解。
-  relation: 本章支持使者以神權柄說話的特殊身分，但「必然是道成肉身前的基督」屬基督教神學推論，不是經文直接命名。
-  sources: *sources
-  source_files: *source_files
-- title: 神的同在
-  path: link_folder/神學/神的同在.md
-  summary: 摩西問自己何能去見法老，神沒有列舉摩西資格，而是應許「我必與你同在」，並以日後在何烈山事奉為證據。
-  relation: 差遣的充分根基不在摩西自我能力，而在差遣者的同在；這也反轉他四十年前憑己力施救的方式。
-  sources: *sources
-  source_files: *source_files
-- title: 神的記念
-  path: link_folder/神學/神的記念.md
-  summary: 神啟示自己是父祖的神，並說「耶和華」是祂直到永遠的名、直到萬代的記念。
-  relation: 第2章神記念盟約而採取行動，第3章則把「記念」連到祂永恆的聖名與世代相傳的身分。
-  sources: *sources
-  source_files: *source_files
+- title: 基尼人
+  path: link_folder/人物/基尼人.md
+  summary: 第1節稱摩西的岳父為「米甸祭司葉忒羅」，士1:16 卻稱他為基尼人。
+  relation: GT《中文聖經註釋》認為兩個說法可以並存：「摩西的岳父在種族上屬米甸人，在職業上屬基尼人」——基尼人按原文是從該隱而來的，他們住帳棚牧養牲畜，也彈琴吹簫遊行各處替人打造銅鐵利器，因此「考古學家和歷史學家都以基尼人為執掌銅匠鐵匠這職業的人，而不是一個種族」。該書並用這一點回頭解釋2:17——牧羊人敢趕走這祭司的女兒，是因為「她們不屬當地的人，水井沒有她們的分兒」。
+  sources: [CT, GT]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt]
+- title: 神的山
+  path: link_folder/地點/神的山.md
+  summary: 第1節「到了神的山，就是何烈山」；第12節神以「你們必在這山上事奉我」作為打發摩西的證據。
+  relation: CT 說「神的山是後來的稱呼，取這名起因於神在這山上召見摩西並降律法」；GT 丁良才記神在這山上三次向人顯現——向摩西、向以色列人（18:5）、向以利亞（王上19:8）；GT《舊約背景註釋》則說摩西這樣描述它「最有可能是他意識到以後幾章所發生的事件，使這山得到了新的地位；不是因為這裡發生過什麼事，或有什麼迷信的理由」，並記古代世界相信山是神明居住的所在。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 迦南七族（迦南地原住民）
+  path: link_folder/背景/迦南七族（迦南地原住民）.md
+  summary: 第8節與第17節列出迦南人、赫人、亞摩利人、比利洗人、希未人、耶布斯人六族；CT 指加上革迦撒人共稱迦南七族（申7:1）。
+  relation: GT《舊約背景註釋》坦承材料不均：「所列六組迦南居民的頭三個十分有名，有關後三個的資料卻少而又少」；比利洗人「究竟是種族還是社會階層（住在無城牆地點的人），至今未有定論」，而比利洗人、希未人、耶布斯人「都沒有在聖經以外出現」。GT《中文聖經註釋》逐族給出歷史：迦南原義「低地」；赫的原義是「恐怖」；亞摩利原義「山地居民」；比利洗原義「鄉村」或「田舍」，大概是以農為業的人而不是一個種族；希未人可能是何利人（「穴居」）的變體；耶布斯的原義是「打榖場」或「被賤踏」。該書並記七十士譯本與撒瑪利亞抄本在比利洗人之後加上「革迦撒人」。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 希伯來人（族群稱呼）
+  path: link_folder/文化/希伯來人（族群稱呼）.md
+  summary: 第18節神吩咐摩西與長老對埃及王說「耶和華希伯來人的神遇見了我們」。
+  relation: GT《舊約背景註釋》指出這個稱號「完全侷限在出埃及的記述中」，而「希伯來人」一語對以色列人來說「一般只是對外人使用的自稱」；部分學者因此認為它就是同時代古籍所提及的阿皮魯或哈比魯人——「不是種族的名稱，而是社會用語，指離鄉背井的人」。CT 記其原文字義是「過河之人，來自對岸遠處的人」；GT《串珠聖經註釋》說這名稱「對法老來說比較容易明白」（5:3；7:16；9:1,13）；KC 說在這名字裡，耶和華顯明祂的百姓是一群客旅。
+  sources: [CT, GT, KC]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt]
+- title: 荊棘與蒺藜
+  path: link_folder/主題/荊棘與蒺藜.md
+  summary: 第2節耶和華的使者從荊棘裡火焰中向摩西顯現，荊棘被火燒著卻沒有燒毀。
+  relation: CT 讀荊棘為受咒詛的產物：「荊棘是人犯罪後受神咒詛的產物（創3:18）」，因此預表「神要使用人，在人身上得著彰顯，卻不耗用人天然的成分」。GT 丁良才記另一種讀法：「有注釋家以為這荊棘是被輕看欺曆之以色列人的標記（士9:15；申7:7）。神的威嚴雖在他們中間顯現，卻沒有滅絕他們」，並對比神顯現「沒有在高大的橡樹上或香柏樹上，乃從平常的荊棘中」（賽53:1-3；腓2:6-8）。GT《聖經精讀本》指這是西乃曠野常見的刺槐；KC 則說荊棘代表人的本相，也代表在埃及火爐中的以色列全民。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 米甸祭司
+  path: link_folder/背景/米甸祭司.md
+  summary: 第1節「摩西牧養他岳父米甸祭司葉忒羅的羊群」——這是本章對葉忒羅身分的唯一描述。
+  relation: 名字的問題各家有解。GT 丁良才《出埃及記註釋》列出流珥、葉忒羅、何巴三名的四種解法並判「大約第一解法最確」——流珥是岳父，葉忒羅與何巴是妻兄，因為原文那個字「意思和中國的『親戚』二字相同，不說明是什麼親戚」；GT《舊約背景註釋》的處理相近：「流珥可能是祖父兼族長，葉忒羅才是西坡拉的父親……何巴是葉忒羅的兒子，摩西的內兄。」GT《中文聖經註釋》另從稱謂著手：葉特羅來自 Jether（「豐富」「有餘」「卓越」「握有主權」），Jethro 是它的第三人稱單數，「古代與米甸相鄰的拿巴提人稱其酋長，就是用 Jethro」——相當於「陛下」。GT 李道生記葉忒羅「是亞伯拉罕的後裔，敬拜耶和華為神」。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 摩西領羊群往曠野的後面去，到了神的山，就是何烈山（1節）；神在此從荊棘火焰中向他顯現並差遣他。
+  relation: 何烈原義「不毛之地」或「乾旱之地」，西乃則是「叢林密佈」（GT《中文聖經註釋》）。它與西乃山的關係，GT《聖經精讀本》列出三說並指今人推測是西乃半島最南端、海拔2,291米的耶別姆沙（Jebel Musa）；GT《串珠聖經註釋》說「其確實位置不詳」；GT《中文聖經註釋》則說可以確定的只有一點——「這神的山必然是在西乃半島之內」。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 葉忒羅
+  path: link_folder/人物/葉忒羅.md
+  summary: 摩西為岳父米甸祭司葉忒羅牧養羊群（1節）；2:18 稱他流珥，民10:29 又出現何巴。
+  relation: CT 認為流珥可能已死，由長子葉忒羅繼承米甸祭司之職並為一家之主，故摩西稱他為岳父（4:18；18:1）。GT 丁良才列出四種解法並判第一說最確——流珥是岳父，葉忒羅與何巴是妻兄；GT《舊約背景註釋》則說流珥可能是祖父兼族長、葉忒羅才是西坡拉的父親。名字的字義，CT 作「豐富，有餘，卓越，握有主權，大人」；GT《中文聖經註釋》說 Jethro 是 Jether 的第三人稱單數，是古代對酋長的尊稱，相當於「陛下」。GT 李道生記他敬拜耶和華為神，摩西回埃及是經他許可的（4:18），後來又為摩西獻策設立百姓的首領（18:13-16）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 曠野三天路程與獻祭要求
+  path: link_folder/解經爭議/曠野三天路程與獻祭要求.md
+  summary: 神吩咐摩西與長老向埃及王請求「容我們往曠野去，走三天的路程，為要祭祀耶和華我們的神」（18節）。
+  relation: 是否為權宜之計，各家立場不一。GT 丁良才：「這不是欺哄法老，乃是先要由求小恩入手，好讓法老越發顯出他的忍心來。」GT《中文聖經註釋》把問題直接提出——「是神教人作『政客』的『政治話』，抑是神要藉此向人證明埃及王的剛硬？」——並自答為後者。GT《舊約背景註釋》給的是務實的背景：這是為期三日的朝聖旅程，「通常包括來回各一天的路程，加上一整天的宗教典禮。法老的拒絕，使他的罪名中，加上了迫害宗教一項」。GT《啟導本聖經腳註》則說「不一定要用三天，但求能離開埃及一段距離」；KC 把三這個數字連到主耶穌的死與復活。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 出埃及時取得埃及財物
+  path: link_folder/解經爭議/出埃及時取得埃及財物.md
+  summary: 神應許以色列人不至於空手而去，並吩咐各婦女向鄰舍要金器銀器和衣裳，「這樣你們就把埃及人的財物奪去了」（21-22節）。
+  relation: 爭議集中在兩個字。GT 艾基斯《舊約聖經難題彙編》指英譯作「借」的原文 sa'al 通常解作「問、求取、請求」，只有出22:14、王下4:3、6:5 三處有「借」的意思，本節並無暫時借用的含義；GT《丁道爾聖經註釋》同判「埃及人的飾物當然不是『借』，而是『要』（或『問』）來的；我們不必在道德上憤慨不平」。至於「奪去」，艾基斯指其字根意為把某人從危險中取去、搶奪或拯救，不是戰場上的掠奪（那要用 salal）；GT《中文聖經註釋》更提出一個逆轉的讀法——原文直譯是「你們就搶救了埃及人」，並主張21節的「蒙恩」也應譯作「我要叫這民在埃及人眼前有恩典」。CT 補上用途：索取金器銀器是為日後建造會幕的材料（25:2-9）。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/kingcomments_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 神吩咐摩西去招聚以色列的長老，並與他們一同去見埃及王（16、18節）。
+  relation: GT 丁良才指出「這是聖書中頭一次提到以色列人的長老」，並說神要摩西先見長老「好作他們的代表」（4:29、31）。CT 說長老「指年長富有智慧和經驗，能夠排解疑難和糾紛，為眾百姓所信賴，足堪擔當重任的以色列人領袖」；GT《啟導本聖經腳註》記原文為「有須的人」。GT《中文聖經註釋》說明產生方式：「這裏所講的選，當然不像今日競選公職的選，乃是大家公認年歲較長，有德行和智慧的人來擔任的」；GT《舊約背景註釋》則指出實際效力——「百姓要摩西得到眾長老的認可，才會接納他作為領袖」。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_3.txt, raw_data/ccbiblestudy_GT_exodus_3.txt, raw_data/biblehub_study_exodus_3.txt]

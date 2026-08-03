@@ -225,7 +225,67 @@ A_use_directly:
   match_type: exact
   existing_title: 出埃及時取得埃及財物
   existing_path: link_folder/解經爭議/出埃及時取得埃及財物.md
-B_needs_update: []
+- name: 耶和華的使者是否為神顯現
+  suggested_type: 解經爭議
+  evidence: 2、4節；第2節說「耶和華的使者」顯現，第4節說「耶和華神……呼叫」——《丁道爾》說「使者」只是神臨在的敬稱，KC 與《精讀本》則主張是道成肉身前的基督
+  match_type: exact
+  existing_title: 耶和華的使者是否為神顯現
+  existing_path: link_folder/解經爭議/耶和華的使者是否為神顯現.md
+- name: 神看見聽見知道並下來拯救
+  suggested_type: 神學
+  evidence: 7-8節；丁良才數出四句憐憫的話——我實在看見了、我也聽見了、我原知道、我要救他們
+  match_type: exact
+  existing_title: 神看見聽見知道並下來拯救
+  existing_path: link_folder/神學/神看見聽見知道並下來拯救.md
+- name: 亞伯拉罕以撒雅各的神是活人的神
+  suggested_type: 互文
+  evidence: 6節；主耶穌以本節證明死人復活（太22:32；可12:26；路20:37-38）
+  match_type: exact
+  existing_title: 亞伯拉罕以撒雅各的神是活人的神
+  existing_path: link_folder/互文/亞伯拉罕以撒雅各的神是活人的神.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 1節；何烈山即西乃山；何烈原義「不毛之地」，西乃是「叢林密佈」；兩名關係各家有三種見解
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+B_needs_update:
+- name: 基尼人
+  suggested_type: 人物
+  evidence: 1節；士1:16 稱摩西的岳父為基尼人，本章與2章卻說他是米甸人；《中文聖經註釋》判他在種族上屬米甸人、在職業上屬基尼人
+  match_type: exact
+  existing_title: 基尼人
+  existing_path: link_folder/人物/基尼人.md
+- name: 神的山
+  suggested_type: 地點
+  evidence: 1、12節；「到了神的山，就是何烈山」；這名是後來的稱呼，因神屢次在這山上向人顯現
+  match_type: exact
+  existing_title: 神的山
+  existing_path: link_folder/地點/神的山.md
+- name: 迦南七族（迦南地原住民）
+  suggested_type: 背景
+  evidence: 8、17節；迦南人、赫人、亞摩利人、比利洗人、希未人、耶布斯人；加上革迦撒人共稱迦南七族（申7:1）
+  match_type: exact
+  existing_title: 迦南七族（迦南地原住民）
+  existing_path: link_folder/背景/迦南七族（迦南地原住民）.md
+- name: 希伯來人（族群稱呼）
+  suggested_type: 文化
+  evidence: 18節；「耶和華希伯來人的神遇見了我們」——這稱號完全侷限在出埃及的記述中；「希伯來人」意為過河的人
+  match_type: exact
+  existing_title: 希伯來人（族群稱呼）
+  existing_path: link_folder/文化/希伯來人（族群稱呼）.md
+- name: 荊棘與蒺藜
+  suggested_type: 主題
+  evidence: 2節；CT 指荊棘是人犯罪後受神咒詛的產物（創3:18）；丁良才記有注釋家以為荊棘是被輕看欺凌之以色列人的標記
+  match_type: exact
+  existing_title: 荊棘與蒺藜
+  existing_path: link_folder/主題/荊棘與蒺藜.md
+- name: 米甸祭司
+  suggested_type: 背景
+  evidence: 1節；「他岳父米甸祭司葉忒羅」；祭司通常也是一族的族長
+  match_type: exact
+  existing_title: 米甸祭司
+  existing_path: link_folder/背景/米甸祭司.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

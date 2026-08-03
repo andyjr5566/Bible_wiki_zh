@@ -1,7 +1,7 @@
 {
-  "total_warnings": 80,
+  "total_warnings": 81,
   "critical_count": 0,
-  "warning_count": 80,
+  "warning_count": 81,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -366,6 +366,13 @@
       "source": "link_folder/主題/聖物.md",
       "target": "第5章",
       "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/荊棘與蒺藜.md",
+      "target": "第3章",
+      "message": "同一 alias「第3章」指向多個 target: 01 創世記/第3章, 02 出埃及記/第3章"
     },
     {
       "type": "alias_target_conflict",
