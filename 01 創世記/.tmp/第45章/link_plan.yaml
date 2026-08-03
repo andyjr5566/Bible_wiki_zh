@@ -68,6 +68,16 @@ A_use_directly:
   match_type: exact
   existing_title: 餘民與大施拯救
   existing_path: link_folder/神學/餘民與大施拯救.md
+- name: 饒恕與和好
+  suggested_type: 神學
+  evidence: 15、24節；與眾弟兄親嘴抱著哭，並叮嚀「你們不要在路上相爭」
+  surfaces:
+  - phrase: 不要在路上相爭
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 饒恕與和好
+  existing_path: link_folder/神學/饒恕與和好.md
 - name: 神的護理
   suggested_type: 神學
   evidence: 8節；「差我到這裡來的不是你們，乃是神」
@@ -102,7 +112,17 @@ A_use_directly:
   match_type: exact
   existing_title: 埃及車輛與遷徙
   existing_path: link_folder/文化/埃及車輛與遷徙.md
-B_needs_update: []
+B_needs_update:
+- name: 悔改與良心的覺醒
+  suggested_type: 神學
+  evidence: 5節；約瑟兩次聽見他們「自憂自恨」（42:21-22；44:16），精讀本並以哥哥們已真正悔改，作為約瑟此刻願意相認的第一個理由
+  surfaces:
+  - phrase: 自憂自恨
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 悔改與良心的覺醒
+  existing_path: link_folder/神學/悔改與良心的覺醒.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []
