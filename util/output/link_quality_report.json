@@ -1,7 +1,7 @@
 {
-  "total_warnings": 110,
+  "total_warnings": 78,
   "critical_count": 0,
-  "warning_count": 110,
+  "warning_count": 78,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -20,65 +20,9 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第26章.md",
-      "target": "埃色",
-      "message": "同一 alias「埃色」指向多個 target: 埃色, 埃色（相爭）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第26章.md",
-      "target": "西提拿",
-      "message": "同一 alias「西提拿」指向多個 target: 西提拿, 西提拿（為敵）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第26章.md",
-      "target": "利河伯",
-      "message": "同一 alias「利河伯」指向多個 target: 利河伯, 利河伯（寬闊）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第26章.md",
-      "target": "示巴",
-      "message": "同一 alias「示巴」指向多個 target: 示巴, 示巴（起誓、豐盛）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第30章.md",
-      "target": "拿弗他利",
-      "message": "同一 alias「拿弗他利」指向多個 target: 拿弗他利, 拿弗他利（相爭）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
       "source": "創世記/第30章.md",
       "target": "底拿",
-      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿（審判）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第30章.md",
-      "target": "拉班",
-      "message": "同一 alias「拉班」指向多個 target: 拉班, 牧羊與牲畜繁殖"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第32章.md",
-      "target": "大腿窩",
-      "message": "同一 alias「大腿窩」指向多個 target: 大腿窩的筋, 雅各大腿窩扭傷的屬靈意義"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第34章.md",
-      "target": "示劍",
-      "message": "同一 alias「示劍」指向多個 target: 示劍（哈抹之子）, 示劍（城）"
+      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿名字含義"
     },
     {
       "type": "alias_target_conflict",
@@ -97,13 +41,6 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "便雅憫",
-      "message": "同一 alias「便雅憫」指向多個 target: 便雅憫, 便雅憫名字含義"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
       "source": "創世記/第36章.md",
       "target": "亞瑪力",
       "message": "同一 alias「亞瑪力」指向多個 target: 亞瑪力, 亞瑪力人"
@@ -112,43 +49,8 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "創世記/第37章.md",
-      "target": "夢",
-      "message": "同一 alias「夢」指向多個 target: 古代近東夢文化, 約瑟的夢"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第37章.md",
       "target": "以實瑪利人",
       "message": "同一 alias「以實瑪利人」指向多個 target: 以實瑪利, 以實瑪利人"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第39章.md",
-      "target": "司獄",
-      "message": "同一 alias「司獄」指向多個 target: 司獄, 耶和華使約瑟在司獄眼前蒙恩"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "安城",
-      "message": "同一 alias「安城」指向多個 target: 安城, 安城（赫利阿坡利斯）太陽神崇拜"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "波提非拉",
-      "message": "同一 alias「波提非拉」指向多個 target: 波提非拉, 波提非拉（太陽神所賜）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "亞西納",
-      "message": "同一 alias「亞西納」指向多個 target: 亞西納, 亞西納（屬內特女神）"
     },
     {
       "type": "alias_target_conflict",
@@ -163,118 +65,6 @@
       "source": "創世記/第41章.md",
       "target": "以法蓮",
       "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第45章.md",
-      "target": "以色列",
-      "message": "同一 alias「以色列」指向多個 target: 雅各, 饒恕與和好"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第12章.md",
-      "target": "逾越節",
-      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "瑪拉",
-      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "以琳",
-      "message": "同一 alias「以琳」指向多個 target: 以琳, 以琳綠洲"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第17章.md",
-      "target": "亞瑪力人",
-      "message": "同一 alias「亞瑪力人」指向多個 target: 亞瑪力, 亞瑪力人"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第22章.md",
-      "target": "聖潔",
-      "message": "同一 alias「聖潔」指向多個 target: 聖潔, 聖潔（qodesh）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第27章.md",
-      "target": "銅壇",
-      "message": "同一 alias「銅壇」指向多個 target: 銅壇與十字架（來13：10-13）, 銅壇（燔祭壇）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第28章.md",
-      "target": "亞倫",
-      "message": "同一 alias「亞倫」指向多個 target: 亞倫, 大祭司基督（來4：14-15）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第29章.md",
-      "target": "贖罪祭",
-      "message": "同一 alias「贖罪祭」指向多個 target: 基督作贖罪祭, 贖罪祭"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第6章.md",
-      "target": "以利亞撒",
-      "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的祭司譜系, 以利亞撒"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第25章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "燔祭",
-      "message": "同一 alias「燔祭」指向多個 target: 燔祭, 燔祭（olah）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "平安祭",
-      "message": "同一 alias「平安祭」指向多個 target: 平安祭, 平安祭（shelamim）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "剪除",
-      "message": "同一 alias「剪除」指向多個 target: 剪除（kareth）, 從民中剪除的含義"
     },
     {
       "type": "alias_target_conflict",
@@ -730,20 +520,6 @@
       "source": "link_folder/神學/聖靈內住.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "link_folder/神學/贖罪祭.md",
-      "target": "第6章",
-      "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "link_folder/神學/贖罪祭.md",
-      "target": "第8章",
-      "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",

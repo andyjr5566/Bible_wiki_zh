@@ -53,7 +53,7 @@ A_use_directly:
   match_type: exact
   existing_title: 「但」名字含義
   existing_path: link_folder/原文/「但」名字含義.md
-- name: 拿弗他利（相爭）
+- name: 拿弗他利
   suggested_type: 人物
   evidence: 8節；辟拉次子，拉結取名，意相爭、角力
   surfaces:
@@ -61,8 +61,8 @@ A_use_directly:
     verses:
     - 8
   match_type: exact
-  existing_title: 拿弗他利（相爭）
-  existing_path: link_folder/人物/拿弗他利（相爭）.md
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
 - name: 迦得（萬幸）
   suggested_type: 人物
   evidence: 11節；悉帕長子，利亞取名，意萬幸、幸運

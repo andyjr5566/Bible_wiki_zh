@@ -10572,14 +10572,6 @@
     "status": "formal",
     "aliases": []
   },
-  "拿弗他利（相爭）": {
-    "path": "link_folder/人物/拿弗他利（相爭）.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "拿弗他利（相爭）",
-    "status": "formal",
-    "aliases": []
-  },
   "拿瑪": {
     "path": "link_folder/人物/拿瑪.md",
     "type": "人物",
@@ -24110,6 +24102,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "司獄是否即護衛長",
+    "status": "formal",
+    "aliases": []
+  },
+  "各歸各城或使民為奴": {
+    "path": "link_folder/解經爭議/各歸各城或使民為奴.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "各歸各城或使民為奴",
     "status": "formal",
     "aliases": []
   },
