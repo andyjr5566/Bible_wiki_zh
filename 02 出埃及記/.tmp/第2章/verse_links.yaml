@@ -10,12 +10,30 @@ links:
 - verse: 3
   phrase: 蒲草箱
   target: 蒲草箱與方舟同字
+- verse: 3
+  phrase: 石漆和石油
+  target: 古代埃及的蒲草與防水籃
+- verse: 3
+  phrase: 河邊
+  target: 尼羅河
 - verse: 5
   phrase: 法老的女兒
   target: 法老的女兒
+- verse: 5
+  phrase: 河邊
+  target: 尼羅河
+- verse: 6
+  phrase: 希伯來人
+  target: 希伯來人（族群稱呼）
 - verse: 7
   phrase: 法老的女兒
   target: 法老的女兒
+- verse: 7
+  phrase: 希伯來
+  target: 希伯來人（族群稱呼）
+- verse: 7
+  phrase: 奶媽
+  target: 古代近東的乳母與收養
 - verse: 8
   phrase: 法老的女兒
   target: 法老的女兒
@@ -31,9 +49,24 @@ links:
 - verse: 11
   phrase: 摩西
   target: 摩西
+- verse: 11
+  phrase: 埃及
+  target: 埃及
+- verse: 11
+  phrase: 希伯來人
+  target: 希伯來人（族群稱呼）
+- verse: 12
+  phrase: 就把埃及人打死了
+  target: 摩西殺死埃及人的解經問題
+- verse: 13
+  phrase: 希伯來人
+  target: 希伯來人（族群稱呼）
 - verse: 14
   phrase: 誰立你作我們的首領和審判官呢
   target: 被拒絕的拯救者摩西
+- verse: 14
+  phrase: 埃及
+  target: 埃及
 - verse: 14
   phrase: 摩西
   target: 摩西
@@ -47,6 +80,9 @@ links:
   phrase: 米甸地
   target: 米甸地
 - verse: 16
+  phrase: 井旁
+  target: 井權與牧羊取水規矩
+- verse: 16
   phrase: 米甸的祭司
   target: 流珥（米甸祭司）
 - verse: 17
@@ -55,6 +91,9 @@ links:
 - verse: 18
   phrase: 流珥
   target: 流珥（米甸祭司）
+- verse: 19
+  phrase: 埃及
+  target: 埃及
 - verse: 21
   phrase: 摩西
   target: 摩西
@@ -73,6 +112,9 @@ links:
 - verse: 22
   phrase: 寄居的
   target: 寄居身分
+- verse: 23
+  phrase: 埃及
+  target: 埃及
 - verse: 23
   phrase: 以色列人
   target: 以色列

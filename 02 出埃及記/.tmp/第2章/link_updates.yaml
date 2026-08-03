@@ -3,73 +3,133 @@ chapter: 2
 updates:
 - title: 利未
   path: link_folder/人物/利未.md
-  summary: 摩西生於利未家，父母雙方都屬利未支派；後文家譜顯示暗蘭出自哥轄家。
-  relation: 拯救者從受奴役的以色列支派內部興起，利未家背景也為摩西與亞倫日後的事奉身分奠定家譜基礎。
+  summary: 摩西生於利未家，父母雙方都屬利未支派（1節）；6:16-20 記父親暗蘭是哥轄的兒子，母親約基別是利未的女兒。
+  relation: CT 指出約基別是哥轄的幼妹，「所以他們夫婦兩人的關係是姑母和姪兒，這種婚姻後來被摩西律法所禁止」（利18:12）；GT《啟導本聖經腳註》另記有古卷作「堂姐妹」。BH 說這個利未血統確立了摩西的祭司背景，預示他日後作神與以色列之間的中保。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 以色列
-  path: link_folder/原文/以色列.md
-  summary: 埃及王死後，以色列人仍在苦工下歎息哀求；神聽見、看顧並知道他們的苦情。
-  relation: 本章末段把摩西個人經歷重新連到整個以色列民族，神對父祖之約的記念將帶出全族的拯救。
+- title: 暗蘭
+  path: link_folder/人物/暗蘭.md
+  summary: 第1節「有一個利未家的人」即摩西的父親暗蘭（6:20），利未之子哥轄的兒子。
+  relation: CT 與 GT 丁良才都從經文不提父母名字推斷作者：「本節沒有明白提說摩西父母的名字，暗示本書的作者正是他們的兒子摩西」；丁良才說「若是別人寫這一節，大概就不能不提他們的名字」。GT《中文聖經註釋》並指出第2節起就不再提到丈夫，敘事的重心轉到婦女身上。
+  sources: [CT, GT]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt]
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 摩西出生後被藏三個月，藉蒲草箱、姊姊、生母及法老女兒的行動存活；四十歲時因殺死欺壓希伯來人的埃及人而逃往米甸，娶西坡拉並生革舜。
+  relation: GT《舊約背景註釋》記他在法老家中所受的教育包括文學、書寫、戰事、外語與雄辯；KC 說前四十年造就的是「說話行事都有才能」的人（徒7:22），後四十年神要把他造成「為人極其謙和，勝過世上的眾人」的人（民12:3）——「工作能藉著摩西作成以前，必須先有一個工作作在摩西裡面。」GT 丁良才並列出摩西預表基督為救主的三層與四種職分。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 亞伯拉罕
-  path: link_folder/人物/亞伯拉罕.md
-  summary: 神聽見百姓哀聲時，記念祂與亞伯拉罕、以撒、雅各所立的約。
-  relation: 亞伯拉罕雖早已去世，神給他的後裔、土地與賜福應許仍是出埃及行動的盟約根基。
+- title: 米利暗
+  path: link_folder/人物/米利暗.md
+  summary: 米利暗遠遠站著觀察摩西的遭遇（4節），適時向法老女兒提出找奶媽的建議，使約基別能合法且有工價地乳養親生兒子。
+  relation: CT 說第8節的「童女」按原文指尚未屆結婚年齡的年輕女子，故米利暗可能比摩西大十來歲；GT《中文聖經註釋》說她遠遠站著是為了看守保護，也為「不時可以進前提供飲食和清潔」，甚至不時轉換地點。CT 評她那句「為你奶這孩子，可以不可以？」「非常有智慧，暗示這孩子的所有權屬於發現人」；KC 說她「支持父母的心意，也被神用來成就祂為摩西所定的計畫」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 以撒
-  path: link_folder/人物/以撒.md
-  summary: 神記念與亞伯拉罕、以撒、雅各所立的約；以撒是父祖應許延續的第二代。
-  relation: 本章藉列出三位父祖，強調拯救以色列是神世代信實地履行同一盟約。
+- title: 約基別
+  path: link_folder/人物/約基別.md
+  summary: 約基別見摩西俊美就藏了他三個月，不能再藏時以抹了石漆和石油的蒲草箱把他擱在河邊蘆荻中；米利暗的安排使她成為受僱的奶媽。
+  relation: GT《中文聖經註釋》說藏三個月「是一件很不容易的事。因為是違背王命」，而這行動「不單是出於做父母的天性……乃是出於信心」（來11:23）；同書並指第3節原文是「她取了……」，撒瑪利亞抄本作「他母親取了……」。KC 說「信心從不缺乏辦法」，並讀出這個動作的分量：「約基別把摩西放進箱子裡的時候，她是把一整個民族放進那箱子裡，救了一整個民族。」CT 與 GT《聖經精讀本》都強調哺乳期由生母教養，是摩西日後沒有被埃及文化同化的原因。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 雅各
-  path: link_folder/人物/雅各.md
-  summary: 神記念與雅各及其父祖所立的約；正在埃及受苦的以色列人正是雅各家繁衍的後裔。
-  relation: 雅各一家因饑荒進入埃及的故事，在本章轉入神按約領其後裔離開奴役的階段。
+- title: 法老的女兒
+  path: link_folder/人物/法老的女兒.md
+  summary: 法老的女兒下到河邊洗澡，發現蒲草箱中哭泣的嬰孩，憐憫他、安排乳養、收為兒子，並按「從水裡拉出來」給他起名摩西。
+  relation: 她的身分各家推測不一：CT 從原文推斷她是當時法老惟一的女兒，並記她後來曾攝政、最後被同父異母的弟弟篡位而名字被從紀念碑抹除；GT《啟導本聖經腳註》與《聖經精讀本》主哈謝修特（夏西布斯女王），GT 李道生作海師普撒，GT《靈修版聖經註釋》並列赫詩蘇特公主與蘭塞二世的女兒，GT《中文聖經註釋》則拒絕列名，理由是旁經、他勒目、約瑟夫與優西比烏所給的名字「都不能在埃及的歷史文件中得到佐證」。GT《舊約背景註釋》另提醒「法老的女兒不一定是有權有勢的」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
 - title: 法老
   path: link_folder/人物/法老.md
-  summary: 法老的殺嬰命令形成摩西出生的危機；其女兒卻收養摩西。摩西殺死欺壓希伯來人的埃及人後，法老又尋索要殺他。
-  relation: 法老的宮廷一面執行壓迫，一面在神的護理下成為養育未來拯救者的地方；其權勢仍不能阻止神的計畫。
+  summary: 法老的殺嬰命令形成摩西出生的危機，其女兒卻收養摩西；摩西殺死埃及人後，法老又想殺他（15節）。第23節記這位埃及王死了。
+  relation: CT 推想法老聽見後並未立即下手，「可能他有顧慮」；GT 丁良才說「顯明法老雖有王權，還在摩西的事上為難，因為摩西所站的地位甚是尊貴的」；GT《聖經精讀本》則說摩西具王族身分，殺人事件「不單是個人性的，而且是向埃及人挑戰的民族性行為」。GT《舊約背景註釋》指這位法老與第23節死去的王身分同樣不能確定，「大部分學者相信他若非杜得模西士三世，就是蘭塞二世」。KC 則說神「嘲弄了法老一切的權勢」——祂用法老的惡命把摩西送進法老自己的宮廷。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 流珥（米甸祭司）
+  path: link_folder/人物/流珥（米甸祭司）.md
+  summary: 流珥是米甸的祭司、七個女兒的父親；他責問女兒為何撇下幫助她們的人，請摩西來吃飯，接納他同住並把西坡拉嫁給他。
+  relation: 「流珥」意為「神的朋友」。CT 列出四種解法處理他與「葉忒羅」的關係，並列四個理由認為他事奉的是獨一真神——祝福用以色列人慣用的 Shalom（4:18；18:23）、女兒懂得行割禮（4:24-26）、稱頌耶和華並獻燔祭與平安祭（18:11-12）、聖經也稱麥基洗德為至高神的祭司（來7:1-3）。GT《中文聖經註釋》另提出地域性的解釋：南方文獻稱「流珥」，北方文獻尊稱「葉特羅」（意為「陛下」），並指20至21節三次只說「那人」而不提名字。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 西坡拉
+  path: link_folder/人物/西坡拉.md
+  summary: 西坡拉是流珥七個女兒之一，在摩西定居米甸後嫁給他，後來生下革舜。
+  relation: CT 的原文字義作「鳥，女歌者」；GT《丁道爾聖經註釋》說這是一種小鳥的名字，「可以譯作『唱顫音之鳥』，或是較為無禮的譯法，則作『唧唧喳喳的鳥』」，並與拉結（「母羊」）、利亞（「小母牛」）並列；GT《啟導本聖經腳註》說米甸人幕天席地，「用大自然生物給子女命名，相當普遍」。BH 指這樁婚姻是摩西被米甸社群正式接納的表記，並預告她日後為兒子行割禮的關鍵行動（4:24-26）。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 革舜（摩西之子）
+  path: link_folder/人物/革舜（摩西之子）.md
+  summary: 西坡拉生子後，摩西給他起名革舜，並以自己在外邦作寄居者說明這名字（22節）。
+  relation: 名字的指向各家讀法相反。GT《中文聖經註釋》說原文由 Ger（客旅）與 Shom（那裡）組成，而「那裡」不是米甸而是埃及——摩西藉此表明他對王子的地位、對埃及那「京華」已經沒有興趣；CT 兩讀並列（表達孤獨與恥辱感／表明對埃及不再有眷戀）；GT《串珠聖經註釋》與 KC 則讀出相反的一面，說這名字顯出他仍渴望回到自己同胞當中。GT《啟導本聖經腳註》另記士18:30：革舜的兒子約拿單和他的子孫一直是但支派的祭司；GT《聖經精讀本》記摩西在逃亡歲月中有革舜與以利以謝兩個兒子（徒7:29；18:4）。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 亞伯拉罕
+  path: link_folder/人物/亞伯拉罕.md
+  summary: 神聽見百姓哀聲時，記念祂與亞伯拉罕、以撒、雅各所立的約（24節）。
+  relation: GT《啟導本聖經腳註》給出這約的經文出處（創15:17-18；17:7,19；26:24；35:11-12）；GT《中文聖經註釋》說與亞伯拉罕所立的約記在創17:5-8，「包含使他的子孫繁多，獲得迦南地永遠為業。神也必作亞伯拉罕和他後裔的神」。BH 指這一節把出埃及敘事接回創世記的列祖應許，並延伸到那位使萬國得福的後裔（加3:16）。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 以撒
+  path: link_folder/人物/以撒.md
+  summary: 神記念與亞伯拉罕、以撒、雅各所立的約（24節）；以撒是父祖應許延續的第二代。
+  relation: GT《中文聖經註釋》指出「與以撒所立的約，是依據與亞伯拉罕所立的約而來的」（創17:19；26:24）；BH 說列出三位列祖，是把出埃及放進神世代守約的敘事裡。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 神記念與亞伯拉罕、以撒、雅各所立的約（24節）；在埃及受苦的以色列人正是雅各家繁衍的後裔。
+  relation: GT《中文聖經註釋》說「與雅各所立的約，也是依據與亞伯拉罕所立的約而來的」（創35:11-12），並指這句話是第二章承上接下的關鍵語；CT 說這約是「神必永遠作他們後裔的神之約」（創15:18；17:5-8,19；26:24；35:11-12）。
+  sources: [CT, GT]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt]
+- title: 以色列
+  path: link_folder/原文/以色列.md
+  summary: 埃及王死後，以色列人仍在苦工下歎息哀求；神聽見、記念、看顧並知道他們的苦情（23-25節）。
+  relation: CT 數出23至24節用四個不同的字眼形容以色列人的痛苦（歎息、哀求、哀聲、哀聲），24至25節則用四個不同的字眼表達神的回應（聽見、記念、看顧、知道）；GT 丁良才把它排成「歎息——默然，哀求——出聲」的對照。KC 注意到經文並沒有說百姓是向神呼求的，但那哀聲「達於神」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
 - title: 埃及
   path: link_folder/地點/埃及.md
-  summary: 摩西在埃及出生、於王宮長大，又因認同希伯來同胞並殺死埃及人而逃離；多年後埃及王死，奴役卻仍持續。
-  relation: 埃及既提供摩西王室教育，也是他必須離開的壓迫體制；本章把敘事由埃及轉向米甸，再以百姓哀聲帶回埃及。
+  summary: 摩西在埃及王宮長大、又因殺埃及人逃離埃及（10-15節）；第23節記埃及王死了，以色列人仍在苦工下哀求。
+  relation: GT《舊約背景註釋》記在法老家中長大所受的訓練——文學、書寫、戰事、外語與雄辯，並舉《善辯之農夫》說明埃及人何等推崇辯才；同書並指出「埃及人有很重的民族自尊，視外人為次等民族。因此外人殺死埃及人是很嚴重的罪行」。GT《中文聖經註釋》另記三角洲地帶除近河處外都是沙土，因為那地區不下雨，種植靠尼羅河泛濫灌溉——這正是摩西能迅速把屍體埋在沙土裡的原因。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 井權與牧羊取水規矩
-  path: link_folder/背景/井權與牧羊取水規矩.md
-  summary: 流珥的七個女兒打水飲羊時被牧羊人趕走，摩西出面幫助並替她們的羊群打水。
-  relation: 古代井旁常涉及稀缺水源、先後次序與群體權力；摩西在此再次保護受欺壓者，但以服務和援助而非殺人解決。
-  sources: [CT, GT, KC, BH]
-  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
-- title: 神保守救贖計畫中的生命
-  path: link_folder/神學/神保守救贖計畫中的生命.md
-  summary: 摩西的父母藏他三個月，母親以蒲草箱安置他，米利暗守望，法老女兒動憐憫並雇用其生母乳養，使他在殺嬰令下存活。
-  relation: 第1章的收生婆保全男嬰，第2章則具體追蹤一位將成為拯救者的孩子如何藉多位婦女與神的護理蒙保守。
+- title: 尼羅河
+  path: link_folder/地點/尼羅河.md
+  summary: 約基別把蒲草箱擱在河邊的蘆荻中（3節），法老的女兒下到河邊洗澡而發現他（5節）——法老要用來滅絕男嬰的河，成了摩西獲救的地方。
+  relation: GT 丁良才說「埃及人以尼羅河為聖河，故此在尼羅河中洗澡也包括敬神的意思」；GT《聖經精讀本》說得更具體——埃及人把這條河視為神聖的河，「在這條河上特別劃出一個區域讓女人們洗澡」，婦女認為藉尼羅河的力量能夠多多生育、長壽，而「摩西的母親熟知這些事情，所以可能是經過周密的計畫才開始了行動」。GT《啟導本聖經腳註》同說有地位的婦女常來河畔洗澡；CT 說蒲草是生長在尼羅河沼澤地帶的植物，可高達四、五公尺。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 希伯來人（族群稱呼）
+  path: link_folder/文化/希伯來人（族群稱呼）.md
+  summary: 法老的女兒說「這是希伯來人的一個孩子」（6節），米利暗提議「在希伯來婦人中叫一個奶媽來」（7節），摩西看見埃及人打「希伯來人的一個弟兄」（11節）。
+  relation: 她如何認出這是希伯來孩子，兩家所列理由不同：GT 丁良才給兩個——「埃及人不必將孩子丟在河內」與「希伯來人與埃及人的面貌不同」；CT 給三個，多出「摩西身上可能有受割禮的記號」。GT《中文聖經註釋》另指出當時以色列人在與外族人談話時仍自稱「希伯來人」；而米甸的女子看摩西的服飾與言語，也只說「有一個埃及人救我們」（19節），可見這個族群標記在外表上是可辨的。
+  sources: [CT, GT, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 米甸地
+  path: link_folder/地點/米甸地.md
+  summary: 摩西躲避法老逃往米甸（15節），在井旁幫助流珥的女兒，後與流珥同住、娶西坡拉並生革舜。
+  relation: CT 說米甸位於巴勒斯坦之南、阿卡巴海灣東部的曠野，米甸人源自亞伯拉罕的庶子，與希伯來人有遠親關係（創25:2）。GT《舊約背景註釋》給的範圍較寬：從外約但和尼革地區到西乃半島北部都有他們的足跡，「然而最有充分證據顯明是米甸人中心地點的，卻是阿拉伯半島西北部的亞喀巴灣東面地區」。GT《每日研經叢書》由此推出一個限制：因為他們是半遊牧民族，「我們不能確知這裏所指的地區，也不能有信心地用它來作我們認明西乃山的根據」。CT 另列出米甸成為預備之地的三個理由：米甸人敬拜獨一真神（18:12）、可學曠野生存技能、藉遊牧學習牧養羊群。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
 - title: 寄居身分
   path: link_folder/神學/寄居身分.md
-  summary: 摩西為兒子取名革舜，解釋自己在外邦作了寄居者；他離開埃及王宮後，在米甸有家卻仍意識到自身流離身分。
-  relation: 革舜之名把摩西個人的寄居經驗，連於父祖及以色列全族在異地寄居的共同歷史。
+  summary: 摩西為兒子取名革舜，說「因我在外邦作了寄居的」（22節）。
+  relation: GT《中文聖經註釋》讀為安定：革舜的原文是「在那裡作了客旅」，而「那裡」指埃及不指米甸，因此這名字表明摩西已把米甸當作自己的家；GT《串珠聖經註釋》與 KC 則讀為未了：這名字「顯出摩西很渴望回到自己同胞當中」，可見他即使身在外邦也沒有忘記他的百姓。CT 兩讀並列——或是表達孤獨與恥辱感，或是表明對埃及不再有眷戀。
+  sources: [CT, GT, KC, BH]
+  source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
+- title: 神聽見百姓的哀求
+  path: link_folder/神學/神聽見百姓的哀求.md
+  summary: 埃及王雖已更替，以色列的奴役沒有停止；百姓因作苦工發出的哀聲上達於神（23節）。
+  relation: CT 說新王登基通常會大赦天下，「但本句顯示新王仍舊欺壓以色列人，使得他們因希望破滅，而改向神歎息哀求」；GT《中文聖經註釋》指原文在此重述了「因作苦工」，正譯應為「他們因作苦工的哀聲達於神」，目的是要把苦工彰顯出來。KC 注意到經文並沒有說百姓是向神呼求的——這一點後來才由摩西說出（民20:16）。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
 - title: 神的記念
   path: link_folder/神學/神的記念.md
-  summary: 以色列人的哀聲達到神面前，神記念與亞伯拉罕、以撒、雅各所立的約，隨即看顧並知道他們的苦情。
-  relation: 神的「記念」不是先前遺忘，而是按盟約開始採取拯救行動；第23至25節為下一章呼召摩西作神學轉折。
+  summary: 神聽見以色列人的哀聲，就記念祂與亞伯拉罕、以撒、雅各所立的約，隨即看顧並知道他們的苦情（24-25節）。
+  relation: KC：「當神『記念』的時候，意思是祂斷定行動的時候到了」；GT《聖經精讀本》說希伯來文的「記念」不是指忘記一段時間後突然想起，「而是指時常記在心裡的狀態」（尼5:19；詩25:7）；GT《串珠聖經註釋》說它表示神「並且會將約付諸實行」。GT《中文聖經註釋》指原文的記念「不但是在心中記得，也有常常重現眼前的含意」，並說第25節的「知道」原文有「深切體驗」的意義（創4:1 譯作「同房」）。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]
 - title: 亞伯拉罕之約
   path: link_folder/神學/亞伯拉罕之約.md
-  summary: 神聽見以色列人的哀聲後，記念祂與亞伯拉罕、以撒、雅各所立的約。
-  relation: 出埃及不是孤立的政治解放，而是神忠於父祖之約、使後裔得地並成為祂百姓的行動。
+  summary: 神聽見以色列人的哀聲後，記念祂與亞伯拉罕、以撒、雅各所立的約（24節）。
+  relation: GT《丁道爾聖經註釋》把這一節放進全書的骨架：「即使在焚燒荊棘的異象之前，敘述者已把從埃及得拯救的事件，毫不含糊地放在對列祖應許的背景之中了。在古以色列的眼中，整個救恩史可以歸納為『應許和成就』：神應許、神記念、神施行拯救。」GT《中文聖經註釋》說明其結構——與亞伯拉罕的約包含子孫繁多、得迦南地永遠為業、神必作他們的神，而與以撒、與雅各的約都依據它而來。KC 說神關切祂百姓的苦難並著手改變，「而祂這樣做的根基，在於祂與列祖所立的約」。
   sources: [CT, GT, KC, BH]
   source_files: [raw_data/ccbiblestudy_CT_exodus_2.txt, raw_data/ccbiblestudy_GT_exodus_2.txt, raw_data/kingcomments_exodus_2.txt, raw_data/biblehub_study_exodus_2.txt]

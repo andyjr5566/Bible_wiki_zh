@@ -176,7 +176,147 @@ A_use_directly:
   match_type: exact
   existing_title: 亞伯拉罕之約
   existing_path: link_folder/神學/亞伯拉罕之約.md
-B_needs_update: []
-C_new_formal: []
+- name: 埃及
+  suggested_type: 地點
+  evidence: 11-15、23節；摩西在埃及王宮長大、殺埃及人後逃離；埃及王死了以色列人仍作苦工
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 暗蘭
+  suggested_type: 人物
+  evidence: 1節；「有一個利未家的人」即摩西的父親暗蘭（6:20），哥轄的兒子
+  match_type: exact
+  existing_title: 暗蘭
+  existing_path: link_folder/人物/暗蘭.md
+- name: 古代埃及的蒲草與防水籃
+  suggested_type: 文化
+  evidence: 3節；抹上石漆和石油；蒲草可造船造紙（賽18:2），蒲草捆重疊三層加石漆便不漏水
+  surfaces:
+  - phrase: 石漆和石油
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 古代埃及的蒲草與防水籃
+  existing_path: link_folder/文化/古代埃及的蒲草與防水籃.md
+- name: 井權與牧羊取水規矩
+  suggested_type: 背景
+  evidence: 16-17、19節；打滿了槽要飲父親的群羊；牧羊人把她們趕走——中東水源稀少，井有一定的取水規矩
+  surfaces:
+  - phrase: 井旁
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 井權與牧羊取水規矩
+  existing_path: link_folder/背景/井權與牧羊取水規矩.md
+- name: 摩西的希伯來與埃及雙重身分
+  suggested_type: 背景
+  evidence: 10-11、19節；作了法老女兒的兒子，卻出去到他弟兄那裡；米甸女子稱他「有一個埃及人」
+  match_type: exact
+  existing_title: 摩西的希伯來與埃及雙重身分
+  existing_path: link_folder/背景/摩西的希伯來與埃及雙重身分.md
+- name: 摩西認同受苦的神子民
+  suggested_type: 神學
+  evidence: 11節；「他出去到他弟兄那裡，看他們的重擔」——來11:24-26 稱這是信心的選擇
+  match_type: exact
+  existing_title: 摩西認同受苦的神子民
+  existing_path: link_folder/神學/摩西認同受苦的神子民.md
+- name: 摩西憑己力施救與神的時間
+  suggested_type: 神學
+  evidence: 12節；「他左右觀看，見沒有人，就把埃及人打死了」——KC 說這顯出肉體在摩西身上活躍
+  match_type: exact
+  existing_title: 摩西憑己力施救與神的時間
+  existing_path: link_folder/神學/摩西憑己力施救與神的時間.md
+- name: 米甸曠野對摩西的預備
+  suggested_type: 神學
+  evidence: 15-22節；四十年牧羊；KC 說工作能藉著摩西作成以前，必須先有工作作在摩西裡面
+  match_type: exact
+  existing_title: 米甸曠野對摩西的預備
+  existing_path: link_folder/神學/米甸曠野對摩西的預備.md
+- name: 神保守救贖計畫中的生命
+  suggested_type: 神學
+  evidence: 3-10節；法老要用河除滅男嬰，同一條河卻成為摩西被發現、被保存、進入王宮的途徑
+  match_type: exact
+  existing_title: 神保守救贖計畫中的生命
+  existing_path: link_folder/神學/神保守救贖計畫中的生命.md
+- name: 革舜名字的由來
+  suggested_type: 原文
+  evidence: 22節；Ger（客旅、寄居的）與 Shom（那裡）；「那裡」指埃及而非米甸
+  match_type: exact
+  existing_title: 革舜名字的由來
+  existing_path: link_folder/原文/革舜名字的由來.md
+- name: 摩西殺死埃及人的解經問題
+  suggested_type: 解經爭議
+  evidence: 12節；來11:24-27 稱為信心，KC 與 CT 卻指出他看人看環境、憑血氣行事
+  surfaces:
+  - phrase: 就把埃及人打死了
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 摩西殺死埃及人的解經問題
+  existing_path: link_folder/解經爭議/摩西殺死埃及人的解經問題.md
+- name: 流珥葉忒羅與何巴的稱謂關係
+  suggested_type: 解經爭議
+  evidence: 18節；本章稱流珥，3:1／18:1 稱葉忒羅；CT 列出四種解法
+  match_type: exact
+  existing_title: 流珥葉忒羅與何巴的稱謂關係
+  existing_path: link_folder/解經爭議/流珥葉忒羅與何巴的稱謂關係.md
+B_needs_update:
+- name: 尼羅河
+  suggested_type: 地點
+  evidence: 3、5節；蒲草箱擱在河邊的蘆荻中；法老的女兒來到河邊洗澡——埃及人視尼羅河為聖河
+  surfaces:
+  - phrase: 河邊
+    verses:
+    - 3
+    - 5
+  match_type: exact
+  existing_title: 尼羅河
+  existing_path: link_folder/地點/尼羅河.md
+- name: 希伯來人（族群稱呼）
+  suggested_type: 文化
+  evidence: 6-7、11、13節；「這是希伯來人的一個孩子」「希伯來婦人」「希伯來人的一個弟兄」——外邦人對以色列人的稱呼
+  surfaces:
+  - phrase: 希伯來
+    verses:
+    - 6
+    - 7
+    - 11
+    - 13
+  match_type: exact
+  existing_title: 希伯來人（族群稱呼）
+  existing_path: link_folder/文化/希伯來人（族群稱呼）.md
+C_new_formal:
+- name: 古代近東的棄嬰與逃亡故事
+  suggested_type: 背景
+  evidence: 3、15節；《撒珥根誕生傳奇》《坎納什與札珥帕雙城記》《辛奴亥的故事》——舊約背景註釋與中文聖經註釋都以之為平行材料
+  target_path: link_folder/背景/古代近東的棄嬰與逃亡故事.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.433
+    type: 歷史
+  - title: 古代近東祭壇庇護
+    score: 0.429
+    type: 背景
+  - title: 古代近東代理孕母安排
+    score: 0.426
+    type: 背景
+- name: 古代近東的乳母與收養
+  suggested_type: 文化
+  evidence: 7-10節；找乳母乳養嬰孩直到斷奶是貴族慣例；乳母是受薪的法定監護人，正式收養在斷奶之後舉行
+  surfaces:
+  - phrase: 奶媽
+    verses:
+    - 7
+  target_path: link_folder/文化/古代近東的乳母與收養.md
+  semantic_hint:
+  - title: 古代近東代理孕母安排
+    score: 0.526
+    type: 背景
+  - title: 古代收生婆
+    score: 0.45
+    type: 文化
+  - title: 古代近東婚姻習俗
+    score: 0.447
+    type: 歷史
 D_new_candidate: []
 E_skip: []
