@@ -148,7 +148,89 @@ A_use_directly:
   match_type: exact
   existing_title: 出埃及為要事奉神
   existing_path: link_folder/神學/出埃及為要事奉神.md
+- name: 第十災（殺長子之災）
+  suggested_type: 歷史
+  evidence: 1、4-7節；CT 靈訓要義「對付埃及的眾神之神，即法老自己」
+  match_type: exact
+  existing_title: 第十災（殺長子之災）
+  existing_path: link_folder/歷史/第十災（殺長子之災）.md
+- name: 長子之死
+  suggested_type: 歷史
+  evidence: 5節；GT 丁良才「法老既然除滅了神的長子，神也要除滅法老的長子（4:22-23）」
+  match_type: exact
+  existing_title: 長子之死
+  existing_path: link_folder/歷史/長子之死.md
+- name: 分別百姓
+  suggested_type: 神學
+  evidence: 7節；GT《啟導本》「說明住在歌珊地的以色列人，在這場大災中所受的與埃及人不同。參八22及九4」
+  match_type: exact
+  existing_title: 分別百姓
+  existing_path: link_folder/神學/分別百姓.md
+- name: 埃及人給以色列人財物
+  suggested_type: 歷史
+  evidence: 2-3節；GT 丁良才「神使以色列人向埃及人要金銀器皿有兩個緣故：作他們的工價、後來要造會幕」
+  match_type: exact
+  existing_title: 埃及人給以色列人財物
+  existing_path: link_folder/歷史/埃及人給以色列人財物.md
+- name: 催逼離開
+  suggested_type: 歷史
+  evidence: 1節；GT《啟導本》「他要像打發不要了的新婦一樣，給她厚禮送她走」
+  match_type: exact
+  existing_title: 催逼離開
+  existing_path: link_folder/歷史/催逼離開.md
+- name: 摩西氣忿忿離開法老
+  suggested_type: 歷史
+  evidence: 8節；KC「這一次法老沒有機會把摩西趕走，而是摩西自己離去」
+  match_type: exact
+  existing_title: 摩西氣忿忿離開法老
+  existing_path: link_folder/歷史/摩西氣忿忿離開法老.md
+- name: 創十五14 亞伯拉罕之約的財物應驗
+  suggested_type: 互文
+  evidence: 2節；BH 指出向鄰舍要金器銀器應驗了神對亞伯拉罕的預言（創15:14）
+  match_type: exact
+  existing_title: 創十五14 亞伯拉罕之約的財物應驗
+  existing_path: link_folder/互文/創十五14 亞伯拉罕之約的財物應驗.md
+- name: 詩七八51、一三六10 擊殺長子
+  suggested_type: 互文
+  evidence: 4-5節；KC 引詩78:51、136:10 指出詩篇以擊殺長子回顧這一夜
+  match_type: exact
+  existing_title: 詩七八51、一三六10 擊殺長子
+  existing_path: link_folder/互文/詩七八51、一三六10 擊殺長子.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 摩西看為極大
+  suggested_type: 人物
+  evidence: 3節；GT 中文聖經註釋、丁良才、啟導本、串珠、精讀本、丁道爾、賈斯樂郝威〈命題16〉與 KC、BH 九處材料集中在這一節
+  surfaces:
+  - phrase: 看為極大
+    verses:
+    - 3
+  target_path: link_folder/人物/摩西看為極大.md
+  semantic_hint:
+  - title: 摩西為人極其謙和（民12：3）
+    score: 0.493
+    type: 神學
+  - title: 摩西
+    score: 0.464
+    type: 人物
+  - title: 摩西代求與神的豐盛慈愛
+    score: 0.434
+    type: 神學
+- name: 約到半夜
+  suggested_type: 原文
+  evidence: 4節；GT《丁道爾》「『約在』似乎表示在時間上頗為模糊。但希伯來文卻沒有模糊的意思，『正在半夜』才是正確的翻譯」
+  surfaces:
+  - phrase: 約到半夜
+    verses:
+    - 4
+  target_path: link_folder/原文/約到半夜.md
+- name: 第11章的敘事次序
+  suggested_type: 解經爭議
+  evidence: 1-8節；CT、丁良才、串珠、中文聖經註釋、精讀本、丁道爾六家都指出 1-3 節是插句、4-8 節接續 10:29
+  target_path: link_folder/解經爭議/第11章的敘事次序.md
+  semantic_hint:
+  - title: 第10章多種方言與第11章一種語言
+    score: 0.442
+    type: 解經爭議
 D_new_candidate: []
 E_skip: []
