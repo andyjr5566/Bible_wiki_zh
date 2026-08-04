@@ -12814,7 +12814,6 @@
     "title": "摸得著的黑暗",
     "status": "formal",
     "aliases": [
-      "yāmēsh",
       "摸得著",
       "palpable darkness",
       "可摸的黑暗"
@@ -13529,7 +13528,6 @@
     "title": "網羅",
     "status": "formal",
     "aliases": [
-      "yqš",
       "陷害",
       "誘餌",
       "snare"
@@ -16116,10 +16114,10 @@
     "status": "formal",
     "aliases": [
       "Ra",
-      "Amon-Re",
-      "Amun-Re",
+      "Amon~Re",
       "埃及太陽神",
-      "國神"
+      "亞孟─銳",
+      "亞曼拉"
     ]
   },
   "奠酒": {
@@ -17963,6 +17961,17 @@
       "第十誡",
       "第十條誡命",
       "不可貪戀"
+    ]
+  },
+  "不肯自卑": {
+    "path": "link_folder/神學/不肯自卑.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "不肯自卑",
+    "status": "formal",
+    "aliases": [
+      "自卑",
+      "你在我面前不肯自卑要到幾時呢"
     ]
   },
   "不能看見神的面而存活": {
@@ -27797,9 +27806,6 @@
   "摩西名字含義": {
     "alias_of": "摩西名字的由來"
   },
-  "yāmēsh": {
-    "alias_of": "摸得著的黑暗"
-  },
   "摸得著": {
     "alias_of": "摸得著的黑暗"
   },
@@ -28021,9 +28027,6 @@
   },
   "穀物祭": {
     "alias_of": "素祭（minchah）"
-  },
-  "yqš": {
-    "alias_of": "網羅"
   },
   "陷害": {
     "alias_of": "網羅"
@@ -28697,16 +28700,16 @@
   "Ra": {
     "alias_of": "太陽神Ra（Amon-Re）"
   },
-  "Amon-Re": {
-    "alias_of": "太陽神Ra（Amon-Re）"
-  },
-  "Amun-Re": {
+  "Amon~Re": {
     "alias_of": "太陽神Ra（Amon-Re）"
   },
   "埃及太陽神": {
     "alias_of": "太陽神Ra（Amon-Re）"
   },
-  "國神": {
+  "亞孟─銳": {
+    "alias_of": "太陽神Ra（Amon-Re）"
+  },
+  "亞曼拉": {
     "alias_of": "太陽神Ra（Amon-Re）"
   },
   "奠祭": {
@@ -29239,6 +29242,12 @@
   },
   "第十條誡命": {
     "alias_of": "不可貪戀"
+  },
+  "自卑": {
+    "alias_of": "不肯自卑"
+  },
+  "你在我面前不肯自卑要到幾時呢": {
+    "alias_of": "不肯自卑"
   },
   "人見神面不能存活": {
     "alias_of": "不能看見神的面而存活"

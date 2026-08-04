@@ -187,7 +187,7 @@ A_use_directly:
   existing_path: link_folder/原文/東風與西風.md
 - name: 摸得著的黑暗
   suggested_type: 原文
-  evidence: 15、21節；蝗蟲遮天使「地都黑暗了」；黑暗之災「似乎摸得著」（yames）
+  evidence: 15、21節；蝗蟲遮天使「地都黑暗了」；黑暗之災「似乎摸得著」——CT 原文字義作「感覺，摸索」
   surfaces:
   - phrase: 黑暗了
     verses:
@@ -261,7 +261,53 @@ A_use_directly:
   match_type: exact
   existing_title: 再見面必死
   existing_path: link_folder/歷史/再見面必死.md
-B_needs_update: []
-C_new_formal: []
+- name: 歌珊地
+  suggested_type: 地點
+  evidence: 23節；「惟有以色列人家中都有亮光」——GT《啟導本》指出有光的不只歌珊地，凡以色列人住的房屋都有
+  match_type: exact
+  existing_title: 歌珊地
+  existing_path: link_folder/地點/歌珊地.md
+- name: 代求
+  suggested_type: 神學
+  evidence: 16-18節；法老求「使我脫離這一次的死亡」，摩西離開法老去求耶和華；CT 指出這次沒有等到出城才求
+  match_type: exact
+  existing_title: 代求
+  existing_path: link_folder/神學/代求.md
+- name: 法老四次妥協
+  suggested_type: 歷史
+  evidence: 8-11、24節；CT 明指第8節是「法老第三次的妥協」、第24節是「法老第四次的妥協」
+  match_type: exact
+  existing_title: 法老四次妥協
+  existing_path: link_folder/歷史/法老四次妥協.md
+- name: 太陽神Ra（Amon-Re）
+  suggested_type: 文化
+  evidence: 21-23節；GT《啟導本》「埃及人信奉的太陽神『銳』（Ra）現在一點用處也沒有」；《舊約背景註釋》作「亞孟─銳（Amon~Re）」
+  match_type: exact
+  existing_title: 太陽神Ra（Amon-Re）
+  existing_path: link_folder/文化/太陽神Ra（Amon-Re）.md
+- name: 東風（西洛可、卡姆辛）
+  suggested_type: 歷史
+  evidence: 13、21節；GT《啟導本》記喀新風（Khamsin）為五十天風，並保留「不能肯定就是這種風」
+  match_type: exact
+  existing_title: 東風（西洛可、卡姆辛）
+  existing_path: link_folder/歷史/東風（西洛可、卡姆辛）.md
+B_needs_update:
+- name: 十災
+  suggested_type: 歷史
+  evidence: 29節；GT 丁良才「埃及十災顯明五種意思」——神的權柄、主民的幸福、法老的固執、惡人的結局、眾人的警誡
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: 19節；蝗蟲被西風吹入紅海。GT《中文聖經註釋》「原文的紅海是『蘆葦海』，而不是紅海」；《啟導本》記原文作 yam sup，並推測是蘇彝士灣至地中海之間的湖泊沼澤
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+C_new_formal:
+- name: 不肯自卑
+  suggested_type: 神學
+  evidence: 3節；GT《中文聖經註釋》「原文自卑是低頭，並可作敬拜的含義」；丁良才列神忍耐罪人直到的四件事；CT「自卑是體認自己無何可誇，而自我壓低的姿態」
+  target_path: link_folder/神學/不肯自卑.md
 D_new_candidate: []
 E_skip: []
