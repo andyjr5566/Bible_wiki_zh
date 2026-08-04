@@ -36,6 +36,7 @@ import sys
 
 import yaml
 
+import check_prompt_read
 import check_source_read
 import run_chapter as rc
 from model_client import ModelError, ModelValidationError
@@ -359,6 +360,8 @@ def cmd_check(args):
     plan = rc._read_yaml(plan_path) or {}
     # 四來源全讀的機械閘門：沒有逐字回執就擋下（見 util/check_source_read.py 檔頭）
     problems.extend(check_source_read.check(args.book, args.chapter))
+    # Prompt 規格檔全讀的機械閘門：沒有 Prompt 逐字回執就擋下（見 util/check_prompt_read.py 檔頭）
+    problems.extend(check_prompt_read.check(args.book, args.chapter))
     _check_entries(ctx, plan, problems, warnings)
     _check_chapter(ctx, problems, warnings, rewrite_aliases=not args.no_rewrite)
     # 高風險早篩：查無出處的希伯來字母（P4 也會擋）與音譯複核（P4 也會提醒）

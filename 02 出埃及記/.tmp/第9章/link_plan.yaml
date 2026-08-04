@@ -228,17 +228,155 @@ A_use_directly:
   match_type: exact
   existing_title: 摩西的代求
   existing_path: link_folder/神學/摩西的代求.md
-- name: 法老第二次轉硬
+- name: 法老第三次轉硬
   suggested_type: 歷史
-  evidence: 34節；「見雨和雹與雷止住，就越發犯罪」
+  evidence: 34節；「見雨和雹與雷止住，就越發犯罪」——繼8:15、8:32 之後第三次收回承諾
   surfaces:
   - phrase: 法老見雨和雹與雷止住，就越發犯罪
     verses:
     - 34
   match_type: exact
-  existing_title: 法老第二次轉硬
-  existing_path: link_folder/歷史/法老第二次轉硬.md
-B_needs_update: []
-C_new_formal: []
+  existing_title: 法老第三次轉硬
+  existing_path: link_folder/歷史/法老第三次轉硬.md
+- name: 第五災：畜疫之災
+  suggested_type: 歷史
+  evidence: 1-7節；CT 靈訓要義「第五災──畜疫之災：對付埃及的牛神」
+  match_type: exact
+  existing_title: 第五災：畜疫之災
+  existing_path: link_folder/歷史/第五災：畜疫之災.md
+- name: 第六災：瘡災
+  suggested_type: 歷史
+  evidence: 8-12節；CT 靈訓要義「第六災──瘡災：對付埃及的醫治之神」
+  match_type: exact
+  existing_title: 第六災：瘡災
+  existing_path: link_folder/歷史/第六災：瘡災.md
+- name: 第七災：雹災
+  suggested_type: 歷史
+  evidence: 13-35節；CT 靈訓要義「第七災──雹災：對付埃及的天候神」
+  match_type: exact
+  existing_title: 第七災：雹災
+  existing_path: link_folder/歷史/第七災：雹災.md
+- name: 炭疽（anthrax）
+  suggested_type: 原文
+  evidence: 3節；CT「許多聖經學者認為可能是炭疽(anthrax)病」；GT《舊約背景註釋》《丁道爾》同
+  match_type: exact
+  existing_title: 炭疽（anthrax）
+  existing_path: link_folder/原文/炭疽（anthrax）.md
+- name: 希伯來（Hebrew）
+  suggested_type: 原文
+  evidence: 1、13節；CT 原文字義「過河的人，來自遠方的人」；KC「一個希伯來人是地上的客旅」
+  match_type: exact
+  existing_title: 希伯來（Hebrew）
+  existing_path: link_folder/原文/希伯來（Hebrew）.md
+- name: 哈妥爾（Hathor）
+  suggested_type: 文化
+  evidence: 1-7節；GT《舊約背景註釋》「埃及愛神哈妥爾（Hathor）以母牛的形式出現」
+  match_type: exact
+  existing_title: 哈妥爾（Hathor）
+  existing_path: link_folder/文化/哈妥爾（Hathor）.md
+- name: 亞皮斯（Apis）
+  suggested_type: 文化
+  evidence: 1-7節；GT《舊約背景註釋》聖牛死後薰屍、有石棺、葬於墓城；BH 指其象徵生育與力量
+  match_type: exact
+  existing_title: 亞皮斯（Apis）
+  existing_path: link_folder/文化/亞皮斯（Apis）.md
+- name: 埃及的醫治之神
+  suggested_type: 文化
+  evidence: 8-12節；BH 指瘡災直接挑戰 Imhotep 與 Sekhmet；CT 靈訓要義「對付埃及的醫治之神」
+  match_type: exact
+  existing_title: 埃及的醫治之神
+  existing_path: link_folder/文化/埃及的醫治之神.md
+- name: 埃及的天候之神
+  suggested_type: 文化
+  evidence: 13-35節；BH 指雹災挑戰天空女神 Nut 與風暴神 Set；CT 靈訓要義「對付埃及的天候神」
+  match_type: exact
+  existing_title: 埃及的天候之神
+  existing_path: link_folder/文化/埃及的天候之神.md
+- name: 駱駝成為家畜
+  suggested_type: 文化
+  evidence: 3節；GT《中文聖經註釋》「駱駝成為家畜，則是主前十二世紀以後由米甸人首先馴服的事」
+  match_type: exact
+  existing_title: 駱駝成為家畜
+  existing_path: link_folder/文化/駱駝成為家畜.md
+- name: 歌珊地
+  suggested_type: 地點
+  evidence: 26節；「惟獨以色列人所住的歌珊地沒有冰雹」
+  match_type: exact
+  existing_title: 歌珊地
+  existing_path: link_folder/地點/歌珊地.md
+- name: 雅尼和佯庇
+  suggested_type: 人物
+  evidence: 11節；KC 指出行法術的雅尼和佯庇自己也生瘡（提後3:9）
+  match_type: exact
+  existing_title: 雅尼和佯庇
+  existing_path: link_folder/人物/雅尼和佯庇.md
+- name: 羅馬書 9-17（神興起法老）
+  suggested_type: 互文
+  evidence: 16節；KC 與 GT《丁道爾》都指出保羅在羅9:17 引用本節
+  match_type: exact
+  existing_title: 羅馬書 9-17（神興起法老）
+  existing_path: link_folder/互文/羅馬書 9-17（神興起法老）.md
+- name: 撒母耳記上 15-24（掃羅認罪）
+  suggested_type: 互文
+  evidence: 27節；KC 與 BH 都以掃羅的「我有罪了」對照法老的認罪
+  match_type: exact
+  existing_title: 撒母耳記上 15-24（掃羅認罪）
+  existing_path: link_folder/互文/撒母耳記上 15-24（掃羅認罪）.md
+- name: 路加福音 15-18（浪子認罪）
+  suggested_type: 互文
+  evidence: 27節；KC 以大衛與浪子的同一句話對照法老、掃羅、猶大
+  match_type: exact
+  existing_title: 路加福音 15-18（浪子認罪）
+  existing_path: link_folder/互文/路加福音 15-18（浪子認罪）.md
+- name: 約伯記 38-22-23（神所存留的冰雹）
+  suggested_type: 互文
+  evidence: 18、22-25節；KC「神把冰雹存留，為打仗和爭戰的日子」
+  match_type: exact
+  existing_title: 約伯記 38-22-23（神所存留的冰雹）
+  existing_path: link_folder/互文/約伯記 38-22-23（神所存留的冰雹）.md
+- name: 啟示錄 16-21（末世大冰雹）
+  suggested_type: 互文
+  evidence: 22-26節；KC 指末世世界也要被大冰雹擊打
+  match_type: exact
+  existing_title: 啟示錄 16-21（末世大冰雹）
+  existing_path: link_folder/互文/啟示錄 16-21（末世大冰雹）.md
+B_needs_update:
+- name: 十災
+  suggested_type: 歷史
+  evidence: 13節；CT「第一至第九災可分成三組，每組的首災，即第一(七15)、第四(八20)和第七災(九13)，神都吩咐摩西清早起來去見法老」；GT《中文聖經註釋》「九災三三循環之說」
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+C_new_formal:
+- name: 埃及的牲畜「幾乎」都死了
+  suggested_type: 解經爭議
+  evidence: 6節與19-25節的張力；GT 中「幾乎」為和合本譯者所加、丁良才三解、賈斯樂郝威〈命題15〉、丁道爾「修辭而非數學」四家並陳
+  target_path: link_folder/解經爭議/埃及的牲畜「幾乎」都死了.md
+  semantic_hint:
+  - title: 第五災：畜疫之災
+    score: 0.452
+    type: 歷史
+  - title: 埃及人厭惡的祭牲
+    score: 0.425
+    type: 文化
+  - title: 第五災：重重的瘟疫
+    score: 0.423
+    type: 神學
+- name: 爐灰的出處
+  suggested_type: 解經爭議
+  evidence: 8節；GT《舊約背景註釋》否定磚窯說並提焚燒死畜屍骸、KC 主張磚窯象徵壓迫的火爐、GT《丁道爾》主張「煤煙」、GT《中文聖經註釋》主張燒窯的固體灰——四說並陳
+  target_path: link_folder/解經爭議/爐灰的出處.md
+- name: 雷轟即神的聲音
+  suggested_type: 神學
+  evidence: 23、28節；GT《串珠》《丁道爾》《精讀本》都指出「雷轟」原文直譯是「神的聲音」
+  target_path: link_folder/神學/雷轟即神的聲音.md
+- name: 明天：神留給悔改的空檔
+  suggested_type: 神學
+  evidence: 5、18節；GT《中文聖經註釋》「祂說話的時間，和定了的時候之間，總是有空檔的」；《啟導本》《精讀本》《丁道爾》並論
+  target_path: link_folder/神學/明天：神留給悔改的空檔.md
+  semantic_hint:
+  - title: 悔改
+    score: 0.436
+    type: 神學
 D_new_candidate: []
 E_skip: []

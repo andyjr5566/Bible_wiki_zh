@@ -20,6 +20,9 @@ links:
   phrase: 田間
   target: 田間
 - verse: 3
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 3
   phrase: 重重的瘟疫
   target: 第五災：重重的瘟疫
 - verse: 4
@@ -31,6 +34,9 @@ links:
 - verse: 5
   phrase: 耶和華
   target: 耶和華
+- verse: 5
+  phrase: 明天
+  target: 明天：神留給悔改的空檔
 - verse: 6
   phrase: 耶和華
   target: 耶和華
@@ -56,8 +62,8 @@ links:
   phrase: 亞倫
   target: 亞倫
 - verse: 8
-  phrase: 爐灰
-  target: 磚窯
+  phrase: 幾捧爐灰
+  target: 爐灰的出處
 - verse: 8
   phrase: 法老
   target: 法老
@@ -116,6 +122,9 @@ links:
   phrase: 使我的名傳遍天下
   target: 神大能與名的傳遍
 - verse: 18
+  phrase: 到明天約在這時候
+  target: 明天：神留給悔改的空檔
+- verse: 18
   phrase: 埃及
   target: 埃及
 - verse: 19
@@ -149,6 +158,9 @@ links:
   phrase: 耶和華
   target: 耶和華
 - verse: 23
+  phrase: 打雷
+  target: 雷轟即神的聲音
+- verse: 23
   phrase: 埃及
   target: 埃及
 - verse: 24
@@ -178,6 +190,9 @@ links:
 - verse: 27
   phrase: 耶和華是公義的；我和我的百姓是邪惡的
   target: 公義與邪惡的對立
+- verse: 28
+  phrase: 雷轟
+  target: 雷轟即神的聲音
 - verse: 28
   phrase: 耶和華
   target: 耶和華
@@ -213,7 +228,7 @@ links:
   target: 摩西的代求
 - verse: 34
   phrase: 法老見雨和雹與雷止住，就越發犯罪
-  target: 法老第二次轉硬
+  target: 法老第三次轉硬
 - verse: 35
   phrase: 法老
   target: 法老
