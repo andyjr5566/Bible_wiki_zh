@@ -151,7 +151,8 @@ def main() -> int:
             if args.save_html:
                 (args.save_html / f"{stem}.html").write_bytes(raw)
             source, text = clean_bytes(f"{stem}.html", raw)
-            output.write_text(text, encoding="utf-8", newline="\n")
+            with output.open("w", encoding="utf-8", newline="\n") as f:
+                f.write(text)
             print(f"ok    {url} -> {output} [{source}, {len(text):,} chars]")
         except (OSError, ValueError, urllib.error.URLError) as exc:
             failures += 1

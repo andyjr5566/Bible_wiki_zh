@@ -251,7 +251,24 @@ def normalize_text(text: str) -> str:
     return "\n".join(lines)
 
 
-def extract_ccb(root: Node) -> str:
+def filter_ccb_text(text: str, is_gt: bool = True) -> str:
+    lines = []
+    for line in text.splitlines():
+        s = line.strip()
+        # 移除 〔呂振中譯〕 列
+        if re.match(r"^〔呂振中譯〕.*$", s):
+            continue
+        if is_gt:
+            # GT：保留 【章:節】 標題，僅移除後方的 「經文...」
+            m = re.match(r"^(【[^】]+】)\s*「.*」$", s)
+            if m:
+                lines.append(m.group(1))
+                continue
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def extract_ccb(root: Node, is_gt: bool = True) -> str:
     content = root.find(class_="WordSection1") or root.find(tag="body") or root
     text = normalize_text(node_text(content))
     lines = text.splitlines()
@@ -267,7 +284,43 @@ def extract_ccb(root: Node) -> str:
         if any(pattern in line for pattern in footer_patterns):
             lines = lines[:index]
             break
-    return normalize_text("\n".join(lines))
+    cleaned = normalize_text("\n".join(lines))
+    return filter_ccb_text(cleaned, is_gt=is_gt)
+
+
+def filter_kc_text(text: str) -> str:
+    lines = text.splitlines()
+    new_lines = []
+    i = 0
+    n = len(lines)
+    while i < n:
+        line = lines[i]
+        new_lines.append(line)
+        s = line.strip()
+        m_heading = re.match(r"^(\d+)\s*(?:-\s*(\d+))?\s+[A-Z]", s)
+        if m_heading:
+            start_v = int(m_heading.group(1))
+            end_v = int(m_heading.group(2)) if m_heading.group(2) else start_v
+            i += 1
+            while i < n and not lines[i].strip():
+                new_lines.append(lines[i])
+                i += 1
+            curr_v = start_v
+            while i < n:
+                ls = lines[i].strip()
+                if not ls:
+                    break
+                m_verse = re.match(r"^(\d+)\s+[A-Z“\"']", ls)
+                if m_verse:
+                    v_num = int(m_verse.group(1))
+                    if start_v <= v_num <= end_v or v_num == curr_v + 1 or v_num == curr_v:
+                        curr_v = v_num
+                        i += 1
+                        continue
+                break
+            continue
+        i += 1
+    return normalize_text("\n".join(new_lines))
 
 
 def extract_kingcomments(root: Node) -> str:
@@ -291,12 +344,15 @@ def extract_kingcomments(root: Node) -> str:
         raise ValueError("KingComments chapter body was not found")
 
     # The top jump buttons repeat every section heading, so omit them.
+    # Omit scripture verse blocks (class bg-body-dark or col-md-3).
     for node in list(page_content.walk()):
-        if "goto-title" in node.classes and node.parent:
-            node.parent.children.remove(node)
+        if ("goto-title" in node.classes or "bg-body-dark" in node.classes or "col-md-3" in node.classes) and node.parent:
+            if node in node.parent.children:
+                node.parent.children.remove(node)
 
     body = normalize_text(node_text(page_content))
-    return normalize_text("\n\n".join(title_parts + [body]))
+    cleaned = normalize_text("\n\n".join(title_parts + [body]))
+    return filter_kc_text(cleaned)
 
 
 def extract_biblehub(root: Node) -> str:
@@ -328,12 +384,16 @@ def clean_bytes(name: str, raw: bytes, source: str = "auto") -> tuple[str, str]:
     parser = TreeParser()
     parser.feed(decode_html(raw))
     detected = detect_source(Path(name), parser.root, source)
-    extractors = {
-        "ccb": extract_ccb,
-        "kingcomments": extract_kingcomments,
-        "biblehub": extract_biblehub,
-    }
-    text = extractors[detected](parser.root)
+    if detected == "ccb":
+        lname = name.lower()
+        is_gt = "gt" in lname or not ("ct" in lname)
+        text = extract_ccb(parser.root, is_gt=is_gt)
+    elif detected == "kingcomments":
+        text = extract_kingcomments(parser.root)
+    elif detected == "biblehub":
+        text = extract_biblehub(parser.root)
+    else:
+        text = extract_ccb(parser.root)
     if len(text) < 100:
         raise ValueError(f"extracted text is unexpectedly short ({len(text)} characters)")
     return detected, text + "\n"
