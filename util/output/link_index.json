@@ -16262,6 +16262,14 @@
     "status": "formal",
     "aliases": []
   },
+  "火石刀": {
+    "path": "link_folder/文化/火石刀.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "火石刀",
+    "status": "formal",
+    "aliases": []
+  },
   "爐灶和摶麵盆": {
     "path": "link_folder/文化/爐灶和摶麵盆.md",
     "type": "文化",
@@ -22121,14 +22129,6 @@
     "type": "神學",
     "secondary_types": [],
     "title": "血的尊重",
-    "status": "formal",
-    "aliases": []
-  },
-  "血郎": {
-    "path": "link_folder/神學/血郎.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "血郎",
     "status": "formal",
     "aliases": []
   },

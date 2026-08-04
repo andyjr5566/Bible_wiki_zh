@@ -194,7 +194,57 @@ A_use_directly:
   match_type: exact
   existing_title: 以色列的眾長老
   existing_path: link_folder/人物/以色列的眾長老.md
-B_needs_update: []
-C_new_formal: []
+- name: 手長大痲瘋的神蹟
+  suggested_type: 神學
+  evidence: 6-8節；第二個神蹟；《舊約背景註釋》指這病在聖經中一貫是對僭妄的處罰
+  match_type: exact
+  existing_title: 手長大痲瘋的神蹟
+  existing_path: link_folder/神學/手長大痲瘋的神蹟.md
+- name: 水變血的神蹟
+  suggested_type: 神學
+  evidence: 9節；第三個神蹟；不當場施行、也沒有還原的一步；十災的先聲
+  match_type: exact
+  existing_title: 水變血的神蹟
+  existing_path: link_folder/神學/水變血的神蹟.md
+- name: 神對人的呼召
+  suggested_type: 神學
+  evidence: 全章；丁良才所數五次推辭的第三至第五次與神逐一的回應
+  match_type: exact
+  existing_title: 神對人的呼召
+  existing_path: link_folder/神學/神對人的呼召.md
+- name: 神的權柄與能力
+  suggested_type: 神學
+  evidence: 3-4、6-7、11-12、17節；三個神蹟與「誰造人的口呢」的宣告
+  match_type: exact
+  existing_title: 神的權柄與能力
+  existing_path: link_folder/神學/神的權柄與能力.md
+- name: 割禮之約
+  suggested_type: 神學
+  evidence: 24-26節；摩西未給兒子行割禮而遭遇死亡威脅；創17:9-14 立約記號
+  match_type: exact
+  existing_title: 割禮之約
+  existing_path: link_folder/神學/割禮之約.md
+B_needs_update:
+- name: 先知
+  suggested_type: 主題
+  evidence: 15-16節；「你要以他當作口，他要以你當作神」——《中文聖經註釋》《串珠》都指這正是神與先知的關係；《丁道爾》指「指教」與妥拉同字根
+  match_type: exact
+  existing_title: 先知
+  existing_path: link_folder/主題/先知.md
+- name: 長子名分
+  suggested_type: 主題
+  evidence: 22-23節；CT 列古時長子四項特權；BH 論古代近東長子得雙份產業並作家中領袖；神的長子以色列與法老的長子相對
+  match_type: exact
+  existing_title: 長子名分
+  existing_path: link_folder/主題/長子名分.md
+C_new_formal:
+- name: 火石刀
+  suggested_type: 文化
+  evidence: 25節；西坡拉拿一塊火石割下陽皮；《舊約背景註釋》指金屬工具普及後仍以火石行割禮、書5:2 同用；《丁道爾》說石刀是未受人手污染的天然物體
+  surfaces:
+  - phrase: 火石
+    verses:
+    - 25
+  target_path: link_folder/文化/火石刀.md
 D_new_candidate: []
 E_skip: []

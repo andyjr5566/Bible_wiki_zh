@@ -1,8 +1,71 @@
 {
-  "total_warnings": 81,
+  "total_warnings": 94,
   "critical_count": 0,
-  "warning_count": 81,
+  "warning_count": 94,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第14章.md",
+      "target": "示拿",
+      "message": "同一 alias「示拿」指向多個 target: 示拿, 示拿地"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第25章.md",
+      "target": "亞蘭人",
+      "message": "同一 alias「亞蘭人」指向多個 target: 亞蘭, 亞蘭人"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第30章.md",
+      "target": "底拿",
+      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿名字含義"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第35章.md",
+      "target": "伊勒伯特利",
+      "message": "同一 alias「伊勒伯特利」指向多個 target: 伊勒伯特利, 伯特利的神"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第35章.md",
+      "target": "伯特利之神",
+      "message": "同一 alias「伯特利之神」指向多個 target: 伊勒伯特利, 伯特利的神"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第36章.md",
+      "target": "亞瑪力",
+      "message": "同一 alias「亞瑪力」指向多個 target: 亞瑪力, 亞瑪力人"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第37章.md",
+      "target": "以實瑪利人",
+      "message": "同一 alias「以實瑪利人」指向多個 target: 以實瑪利, 以實瑪利人"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第41章.md",
+      "target": "瑪拿西",
+      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第41章.md",
+      "target": "以法蓮",
+      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -79,6 +142,34 @@
       "source": "出埃及記/第6章.md",
       "target": "以利亞撒",
       "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的祭司譜系, 以利亞撒"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第25章.md",
+      "target": "安息年",
+      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "燔祭",
+      "message": "同一 alias「燔祭」指向多個 target: 燔祭, 燔祭（olah）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "平安祭",
+      "message": "同一 alias「平安祭」指向多個 target: 平安祭, 平安祭（shelamim）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "利未記/第7章.md",
+      "target": "剪除",
+      "message": "同一 alias「剪除」指向多個 target: 剪除（kareth）, 從民中剪除的含義"
     },
     {
       "type": "alias_target_conflict",
