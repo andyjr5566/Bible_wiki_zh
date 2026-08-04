@@ -1,6 +1,12 @@
 book: 出埃及記
 chapter: 6
 A_use_directly:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章；領受七重應許；兩次以「拙口笨舌」推辭
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
 - name: 耶和華我是
   suggested_type: 神學
   evidence: 2、6-8、29節；本章三次「我是耶和華」（2、6、29）；6-8節首尾呼應如同簽名蓋章
@@ -41,6 +47,12 @@ A_use_directly:
   match_type: exact
   existing_title: 救贖goel
   existing_path: link_folder/神學/救贖goel.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 13、20、23、25-27節；摩西的哥哥；祭司家族的先祖
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
 - name: 可拉的背叛（預告）
   suggested_type: 人物
   evidence: 21、24節；以斯哈之子；後來領導叛亂（民16），但眾子未受株連（民26:10-11）
@@ -84,12 +96,6 @@ B_needs_update:
   match_type: exact
   existing_title: 耶和華的話臨到
   existing_path: link_folder/神學/耶和華的話臨到.md
-- name: 摩西
-  suggested_type: 人物
-  evidence: 全章；領受七重應許；兩次以「拙口笨舌」推辭
-  match_type: exact
-  existing_title: 摩西
-  existing_path: link_folder/人物/摩西.md
 - name: 法老
   suggested_type: 人物
   evidence: 1、11-13、27、29-30節；神要使他把以色列人趕出他的地
@@ -187,12 +193,16 @@ B_needs_update:
   match_type: exact
   existing_title: 寄居身分
   existing_path: link_folder/神學/寄居身分.md
-- name: 迦南
-  suggested_type: 人物
-  evidence: 4節；神應許賜給列祖後裔的地；15節另有迦南女子的兒子掃羅
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 4、8節；神應許賜給列祖後裔的地；丁良才指「迦南地」含兩種疆界（從西頓到迦薩／從埃及河到伯拉大河）
+  surfaces:
+  - phrase: 迦南地
+    verses:
+    - 4
   match_type: exact
-  existing_title: 迦南
-  existing_path: link_folder/人物/迦南.md
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
 - name: 埃及
   suggested_type: 地點
   evidence: 5-7、11、13、26-28節；苦待以色列人之地
@@ -212,16 +222,10 @@ B_needs_update:
   existing_path: link_folder/神學/擔子.md
 - name: 拙口笨舌
   suggested_type: 原文
-  evidence: 12、30節；原文直譯「未受割禮的嘴唇」（aral sifotayim）
+  evidence: 12、30節；原文直譯「未受割禮的嘴唇」（CT 原文字義：未受割禮的、有包皮的＋嘴唇、語言）
   match_type: exact
   existing_title: 拙口笨舌
   existing_path: link_folder/原文/拙口笨舌.md
-- name: 亞倫
-  suggested_type: 人物
-  evidence: 13、20、23、25-27節；摩西的哥哥；祭司家族的先祖
-  match_type: exact
-  existing_title: 亞倫
-  existing_path: link_folder/人物/亞倫.md
 - name: 流便
   suggested_type: 人物
   evidence: 14節；以色列長子；族譜只列一代

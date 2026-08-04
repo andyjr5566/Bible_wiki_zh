@@ -41,8 +41,8 @@ links:
   phrase: 寄居
   target: 寄居身分
 - verse: 4
-  phrase: 迦南
-  target: 迦南
+  phrase: 迦南地
+  target: 迦南地
 - verse: 5
   phrase: 以色列人
   target: 以色列
@@ -148,9 +148,6 @@ links:
 - verse: 15
   phrase: 西緬
   target: 西緬
-- verse: 15
-  phrase: 迦南
-  target: 迦南
 - verse: 16
   phrase: 利未
   target: 利未

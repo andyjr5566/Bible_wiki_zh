@@ -59,9 +59,11 @@ candidates:
     evidence: 4節；列祖在迦南只是寄居的客旅，不曾真正擁有那地（來11:9）
     surfaces:
       - {phrase: 寄居, verses: [4]}
-  - name: 迦南
-    type: 人物
-    evidence: 4節；神應許賜給列祖後裔的地；15節另有迦南女子的兒子掃羅
+  - name: 迦南地
+    type: 地點
+    evidence: 4、8節；神應許賜給列祖後裔的地；丁良才指「迦南地」含兩種疆界（從西頓到迦薩／從埃及河到伯拉大河）
+    surfaces:
+      - {phrase: 迦南地, verses: [4]}
   - name: 埃及
     type: 地點
     evidence: 5-7、11、13、26-28節；苦待以色列人之地
@@ -85,7 +87,7 @@ candidates:
       - {phrase: 重擔, verses: [6, 7]}
   - name: 拙口笨舌
     type: 原文
-    evidence: 12、30節；原文直譯「未受割禮的嘴唇」（aral sifotayim）
+    evidence: 12、30節；原文直譯「未受割禮的嘴唇」（CT 原文字義：未受割禮的、有包皮的＋嘴唇、語言）
   - name: 亞倫
     type: 人物
     evidence: 13、20、23、25-27節；摩西的哥哥；祭司家族的先祖
