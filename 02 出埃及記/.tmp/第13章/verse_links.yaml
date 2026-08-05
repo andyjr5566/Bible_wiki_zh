@@ -17,8 +17,8 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 3
-  phrase: 埃及
-  target: 埃及
+  phrase: 從埃及為奴之家出來
+  target: 為奴之家
 - verse: 3
   phrase: 耶和華
   target: 耶和華
@@ -44,8 +44,8 @@ links:
   phrase: 無酵餅
   target: 無酵餅
 - verse: 6
-  phrase: 耶和華
-  target: 耶和華
+  phrase: 到第七日要向耶和華守節
+  target: 第七日向耶和華守節
 - verse: 7
   phrase: 無酵餅
   target: 無酵餅
@@ -56,7 +56,7 @@ links:
   phrase: 我出埃及的時候
   target: 出埃及
 - verse: 9
-  phrase: 記號
+  phrase: 手上作記號
   target: 記號與經文
 - verse: 9
   phrase: 耶和華
@@ -80,8 +80,14 @@ links:
   phrase: 一切頭生的
   target: 頭生歸神為聖
 - verse: 12
-  phrase: 耶和華
-  target: 耶和華
+  phrase: 歸給耶和華
+  target: 歸給耶和華
+- verse: 12
+  phrase: 公的都要屬耶和華
+  target: 歸給耶和華
+- verse: 13
+  phrase: 頭生的驢
+  target: 驢用羊羔代贖
 - verse: 13
   phrase: 用羊羔代贖
   target: 驢用羊羔代贖
@@ -95,8 +101,8 @@ links:
   phrase: 大能的手
   target: 大能的手
 - verse: 14
-  phrase: 埃及
-  target: 埃及
+  phrase: 埃及為奴之家
+  target: 為奴之家
 - verse: 15
   phrase: 法老
   target: 法老
@@ -110,7 +116,10 @@ links:
   phrase: 所有頭生的
   target: 長子之死
 - verse: 16
-  phrase: 記號
+  phrase: 手上作記號
+  target: 記號與經文
+- verse: 16
+  phrase: 額上作經文
   target: 記號與經文
 - verse: 16
   phrase: 耶和華
@@ -125,8 +134,8 @@ links:
   phrase: 法老
   target: 法老
 - verse: 17
-  phrase: 非利士地
-  target: 非利士地
+  phrase: 非利士地的道路
+  target: 沿海大道（Via Maris）
 - verse: 17
   phrase: 神卻不領他們從那裡走
   target: 神的主權與預定
@@ -134,16 +143,16 @@ links:
   phrase: 埃及
   target: 埃及
 - verse: 18
-  phrase: 繞道而行
+  phrase: 神領百姓繞道而行
   target: 繞道而行
 - verse: 18
-  phrase: 紅海曠野
+  phrase: 紅海曠野的路
   target: 紅海曠野
 - verse: 18
   phrase: 以色列人出埃及地
   target: 以色列人的軍隊
 - verse: 18
-  phrase: 帶著兵器
+  phrase: 都帶著兵器上去
   target: 以色列人帶兵器
 - verse: 19
   phrase: 摩西
@@ -158,7 +167,7 @@ links:
   phrase: 疏割
   target: 疏割
 - verse: 20
-  phrase: 以倘
+  phrase: 曠野邊的以倘
   target: 以倘
 - verse: 21
   phrase: 耶和華

@@ -1771,6 +1771,20 @@
       "獻與耶和華的火祭"
     ]
   },
+  "為奴之家": {
+    "path": "link_folder/主題/為奴之家.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史",
+      "神學"
+    ],
+    "title": "為奴之家",
+    "status": "formal",
+    "aliases": [
+      "埃及為奴之家",
+      "從埃及為奴之家出來"
+    ]
+  },
   "烏鴉與鴿子的象徵": {
     "path": "link_folder/主題/烏鴉與鴿子的象徵.md",
     "type": "主題",
@@ -13036,6 +13050,20 @@
     "status": "formal",
     "aliases": []
   },
+  "歸給耶和華": {
+    "path": "link_folder/原文/歸給耶和華.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學",
+      "解經爭議"
+    ],
+    "title": "歸給耶和華",
+    "status": "formal",
+    "aliases": [
+      "公的都要屬耶和華",
+      "使之經過"
+    ]
+  },
   "殺人（ratsach）": {
     "path": "link_folder/原文/殺人（ratsach）.md",
     "type": "原文",
@@ -13934,15 +13962,15 @@
     "path": "link_folder/原文/記號與經文.md",
     "type": "原文",
     "secondary_types": [
-      "禮儀",
-      "猶太傳統"
+      "文化",
+      "歷史"
     ],
     "title": "記號與經文",
     "status": "formal",
     "aliases": [
-      "Tefillin",
-      "經匣",
-      "Phylacteries"
+      "手上作記號",
+      "額上作經文",
+      "經文匣"
     ]
   },
   "詩篇51篇": {
@@ -14334,12 +14362,15 @@
     "path": "link_folder/原文/驢用羊羔代贖.md",
     "type": "原文",
     "secondary_types": [
-      "禮儀",
-      "律例"
+      "文化",
+      "神學"
     ],
     "title": "驢用羊羔代贖",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "頭生的驢",
+      "打折頸項"
+    ]
   },
   "骨中的骨，肉中的肉": {
     "path": "link_folder/原文/骨中的骨，肉中的肉.md",
@@ -14474,11 +14505,13 @@
     "path": "link_folder/地點/以倘.md",
     "type": "地點",
     "secondary_types": [
-      "地理"
+      "背景"
     ],
     "title": "以倘",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "曠野邊的以倘"
+    ]
   },
   "以得臺": {
     "path": "link_folder/地點/以得臺.md",
@@ -15299,15 +15332,14 @@
     "path": "link_folder/地點/沿海大道（Via Maris）.md",
     "type": "地點",
     "secondary_types": [
-      "地理",
-      "路線"
+      "背景",
+      "歷史"
     ],
     "title": "沿海大道（Via Maris）",
     "status": "formal",
     "aliases": [
       "非利士地的道路",
-      "Way of the Philistines",
-      "Derech Eretz Plishtim"
+      "Via Maris"
     ]
   },
   "法櫃的帳幕": {
@@ -15551,11 +15583,14 @@
     "path": "link_folder/地點/紅海曠野.md",
     "type": "地點",
     "secondary_types": [
-      "地理"
+      "背景",
+      "解經爭議"
     ],
     "title": "紅海曠野",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "紅海曠野的路"
+    ]
   },
   "耶路撒冷": {
     "path": "link_folder/地點/耶路撒冷.md",
@@ -15742,17 +15777,14 @@
     "path": "link_folder/地點/非利士地.md",
     "type": "地點",
     "secondary_types": [
-      "神學",
       "歷史",
-      "原文"
+      "背景"
     ],
     "title": "非利士地",
     "status": "formal",
     "aliases": [
-      "Philistia",
       "非利士",
-      "非利士人的地",
-      "巴勒斯坦地"
+      "非利士人的地"
     ]
   },
   "鹽海": {
@@ -16854,11 +16886,14 @@
     "path": "link_folder/歷史/以色列人帶兵器.md",
     "type": "歷史",
     "secondary_types": [
-      "軍事"
+      "背景"
     ],
     "title": "以色列人帶兵器",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "都帶著兵器上去",
+      "列陣而行"
+    ]
   },
   "以色列人的怨言": {
     "path": "link_folder/歷史/以色列人的怨言.md",
@@ -17340,12 +17375,14 @@
     "path": "link_folder/歷史/無酵節重申.md",
     "type": "歷史",
     "secondary_types": [
-      "禮儀",
-      "節期"
+      "文化",
+      "神學"
     ],
     "title": "無酵節重申",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "無酵節的重申"
+    ]
   },
   "牧人與獵人生活差異": {
     "path": "link_folder/歷史/牧人與獵人生活差異.md",
@@ -17396,6 +17433,19 @@
     "aliases": [
       "糧倉制度",
       "備荒制度"
+    ]
+  },
+  "第七日向耶和華守節": {
+    "path": "link_folder/歷史/第七日向耶和華守節.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "第七日向耶和華守節",
+    "status": "formal",
+    "aliases": [
+      "到第七日要向耶和華守節",
+      "向耶和華守的節"
     ]
   },
   "第七災：雹災": {
@@ -17495,12 +17545,13 @@
     "path": "link_folder/歷史/約瑟骸骨.md",
     "type": "歷史",
     "secondary_types": [
-      "應許",
-      "人物"
+      "互文"
     ],
     "title": "約瑟骸骨",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "把我的骸骨一同帶上去"
+    ]
   },
   "約瑟骸骨葬於示劍": {
     "path": "link_folder/歷史/約瑟骸骨葬於示劍.md",
@@ -17527,12 +17578,13 @@
     "path": "link_folder/歷史/繞道而行.md",
     "type": "歷史",
     "secondary_types": [
-      "神學",
-      "護理"
+      "神學"
     ],
     "title": "繞道而行",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "神領百姓繞道而行"
+    ]
   },
   "耶和華敗壞埃及一切神": {
     "path": "link_folder/歷史/耶和華敗壞埃及一切神.md",
@@ -17645,12 +17697,13 @@
     "path": "link_folder/歷史/進迦南應許.md",
     "type": "歷史",
     "secondary_types": [
-      "應許",
       "神學"
     ],
     "title": "進迦南應許",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "領你進迦南人之地"
+    ]
   },
   "逾越節": {
     "path": "link_folder/歷史/逾越節.md",
@@ -17830,24 +17883,27 @@
     "path": "link_folder/歷史/雲柱火柱.md",
     "type": "歷史",
     "secondary_types": [
-      "神學",
-      "顯現"
+      "神學"
     ],
     "title": "雲柱火柱",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "雲柱",
+      "火柱"
+    ]
   },
   "頭生歸神為聖": {
     "path": "link_folder/歷史/頭生歸神為聖.md",
     "type": "歷史",
     "secondary_types": [
       "神學",
-      "禮儀"
+      "文化"
     ],
     "title": "頭生歸神為聖",
     "status": "formal",
     "aliases": [
-      "頭生的歸神為聖"
+      "頭生的歸神為聖",
+      "分別為聖歸我"
     ]
   },
   "黑暗之災": {
@@ -19178,11 +19234,14 @@
     "path": "link_folder/神學/大能的手.md",
     "type": "神學",
     "secondary_types": [
-      "屬性"
+      "歷史"
     ],
     "title": "大能的手",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "大能的手",
+      "用大能的手領出來"
+    ]
   },
   "大能的手與出埃及神蹟": {
     "path": "link_folder/神學/大能的手與出埃及神蹟.md",
@@ -24087,6 +24146,20 @@
       "不認識約瑟的新王"
     ]
   },
+  "出埃及的年代": {
+    "path": "link_folder/解經爭議/出埃及的年代.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "歷史",
+      "背景"
+    ],
+    "title": "出埃及的年代",
+    "status": "formal",
+    "aliases": [
+      "出埃及日期",
+      "早期說與晚期說"
+    ]
+  },
   "列國表的古代地理與現代族群": {
     "path": "link_folder/解經爭議/列國表的古代地理與現代族群.md",
     "type": "解經爭議",
@@ -25814,6 +25887,12 @@
   },
   "獻與耶和華的火祭": {
     "alias_of": "火祭（isheh）"
+  },
+  "埃及為奴之家": {
+    "alias_of": "為奴之家"
+  },
+  "從埃及為奴之家出來": {
+    "alias_of": "為奴之家"
   },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"
@@ -28029,6 +28108,12 @@
   "神使用風": {
     "alias_of": "東風與西風"
   },
+  "公的都要屬耶和華": {
+    "alias_of": "歸給耶和華"
+  },
+  "使之經過": {
+    "alias_of": "歸給耶和華"
+  },
   "ratsach": {
     "alias_of": "殺人（ratsach）"
   },
@@ -28302,13 +28387,13 @@
   "zakar": {
     "alias_of": "記念（zakar）"
   },
-  "Tefillin": {
+  "手上作記號": {
     "alias_of": "記號與經文"
   },
-  "經匣": {
+  "額上作經文": {
     "alias_of": "記號與經文"
   },
-  "Phylacteries": {
+  "經文匣": {
     "alias_of": "記號與經文"
   },
   "詩51": {
@@ -28446,6 +28531,12 @@
   "Gershom etymology": {
     "alias_of": "革舜（ sojourner ）"
   },
+  "頭生的驢": {
+    "alias_of": "驢用羊羔代贖"
+  },
+  "打折頸項": {
+    "alias_of": "驢用羊羔代贖"
+  },
   "我們是弟兄": {
     "alias_of": "骨肉原文作弟兄"
   },
@@ -28475,6 +28566,9 @@
   },
   "Timnah": {
     "alias_of": "亭拿（猶大）"
+  },
+  "曠野邊的以倘": {
+    "alias_of": "以倘"
   },
   "以得台": {
     "alias_of": "以得臺"
@@ -28617,10 +28711,7 @@
   "非利士地的道路": {
     "alias_of": "沿海大道（Via Maris）"
   },
-  "Way of the Philistines": {
-    "alias_of": "沿海大道（Via Maris）"
-  },
-  "Derech Eretz Plishtim": {
+  "Via Maris": {
     "alias_of": "沿海大道（Via Maris）"
   },
   "法櫃的帳棚": {
@@ -28674,6 +28765,9 @@
   "Jordan River": {
     "alias_of": "約旦河"
   },
+  "紅海曠野的路": {
+    "alias_of": "紅海曠野"
+  },
   "帳幕的北面": {
     "alias_of": "聖所"
   },
@@ -28716,16 +28810,10 @@
   "Seir": {
     "alias_of": "西珥山"
   },
-  "Philistia": {
-    "alias_of": "非利士地"
-  },
   "非利士": {
     "alias_of": "非利士地"
   },
   "非利士人的地": {
-    "alias_of": "非利士地"
-  },
-  "巴勒斯坦地": {
     "alias_of": "非利士地"
   },
   "亞拉巴海": {
@@ -29016,6 +29104,12 @@
   "亞倫的蛇吞了術士的蛇": {
     "alias_of": "亞倫的杖吞了術士的杖"
   },
+  "都帶著兵器上去": {
+    "alias_of": "以色列人帶兵器"
+  },
+  "列陣而行": {
+    "alias_of": "以色列人帶兵器"
+  },
   "收藏節": {
     "alias_of": "住棚節（利23節期規定）"
   },
@@ -29202,11 +29296,20 @@
   "七日除酵節": {
     "alias_of": "無酵節"
   },
+  "無酵節的重申": {
+    "alias_of": "無酵節重申"
+  },
   "糧倉制度": {
     "alias_of": "積貨城制度"
   },
   "備荒制度": {
     "alias_of": "積貨城制度"
+  },
+  "到第七日要向耶和華守節": {
+    "alias_of": "第七日向耶和華守節"
+  },
+  "向耶和華守的節": {
+    "alias_of": "第七日向耶和華守節"
   },
   "立帳幕之日": {
     "alias_of": "第二年正月初一立帳幕"
@@ -29231,6 +29334,12 @@
   },
   "饑荒土地政策": {
     "alias_of": "約瑟的饑荒土地政策"
+  },
+  "把我的骸骨一同帶上去": {
+    "alias_of": "約瑟骸骨"
+  },
+  "神領百姓繞道而行": {
+    "alias_of": "繞道而行"
   },
   "敗壞埃及神": {
     "alias_of": "耶和華敗壞埃及一切神"
@@ -29273,6 +29382,9 @@
   },
   "成群的蒼蠅之災": {
     "alias_of": "蠅災"
+  },
+  "領你進迦南人之地": {
+    "alias_of": "進迦南應許"
   },
   "Passover": {
     "alias_of": "逾越節"
@@ -29334,7 +29446,16 @@
   "雅各以掃關係": {
     "alias_of": "雅各與以掃的恩怨"
   },
+  "雲柱": {
+    "alias_of": "雲柱火柱"
+  },
+  "火柱": {
+    "alias_of": "雲柱火柱"
+  },
   "頭生的歸神為聖": {
+    "alias_of": "頭生歸神為聖"
+  },
+  "分別為聖歸我": {
     "alias_of": "頭生歸神為聖"
   },
   "第九災": {
@@ -29630,6 +29751,9 @@
   },
   "基督作為逾越節羔羊": {
     "alias_of": "基督預表（逾越節羔羊）"
+  },
+  "用大能的手領出來": {
+    "alias_of": "大能的手"
   },
   "神伸手攻擊埃及": {
     "alias_of": "大能的手與出埃及神蹟"
@@ -30854,6 +30978,12 @@
   },
   "不認識約瑟的新王": {
     "alias_of": "出埃及時期法老的身份"
+  },
+  "出埃及日期": {
+    "alias_of": "出埃及的年代"
+  },
+  "早期說與晚期說": {
+    "alias_of": "出埃及的年代"
   },
   "列國表與現代民族": {
     "alias_of": "列國表的古代地理與現代族群"

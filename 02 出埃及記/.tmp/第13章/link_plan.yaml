@@ -131,6 +131,17 @@ A_use_directly:
   match_type: exact
   existing_title: 流奶與蜜之地
   existing_path: link_folder/神學/流奶與蜜之地.md
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: 6-7節；七日之久要吃無酵餅，四境之內不可見發酵的物
+  surfaces:
+  - phrase: 無酵餅
+    verses:
+    - 6
+    - 7
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
 - name: 無酵節重申
   suggested_type: 歷史
   evidence: 10節；「你每年要按著日期守這例」——年年守節，為的是有機會教導兒孫神大能的作為
@@ -141,14 +152,19 @@ A_use_directly:
   match_type: exact
   existing_title: 無酵節重申
   existing_path: link_folder/歷史/無酵節重申.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: 8節；「這是因耶和華在我出埃及的時候為我所行的事」——父親對兒子的個人見證
+  surfaces:
+  - phrase: 我出埃及的時候
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
 - name: 記號與經文
   suggested_type: 原文
   evidence: 9、16節；手上作記號、額上作記念／經文——後世發展為經文匣（太23:5「佩戴的經文」）
-  surfaces:
-  - phrase: 記號
-    verses:
-    - 9
-    - 16
   match_type: exact
   existing_title: 記號與經文
   existing_path: link_folder/原文/記號與經文.md
@@ -162,19 +178,35 @@ A_use_directly:
   match_type: exact
   existing_title: 驢用羊羔代贖
   existing_path: link_folder/原文/驢用羊羔代贖.md
+- name: 利未人代替長子
+  suggested_type: 神學
+  evidence: 13節；長子要贖出來——民3:12 神揀選利未人代替以色列一切頭生的；民18:16 贖價五舍客勒
+  surfaces:
+  - phrase: 凡你兒子中頭生的都要贖出來
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 利未人代替長子
+  existing_path: link_folder/神學/利未人代替長子.md
 - name: 法老
   suggested_type: 人物
   evidence: 15、17節；幾乎不容以色列人去；容百姓去的時候神卻不領他們走近路
   match_type: exact
   existing_title: 法老
   existing_path: link_folder/人物/法老.md
+- name: 長子之死
+  suggested_type: 歷史
+  evidence: 15節；「耶和華就把埃及地所有頭生的，無論是人是牲畜，都殺了」——獻頭生與贖長子的緣由
+  surfaces:
+  - phrase: 所有頭生的
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 長子之死
+  existing_path: link_folder/歷史/長子之死.md
 - name: 非利士地
   suggested_type: 地點
   evidence: 17節；沿地中海岸的大幹道，埃及稱為「賀如司之道」，設有重兵駐守
-  surfaces:
-  - phrase: 非利士地
-    verses:
-    - 17
   match_type: exact
   existing_title: 非利士地
   existing_path: link_folder/地點/非利士地.md
@@ -191,30 +223,28 @@ A_use_directly:
 - name: 繞道而行
   suggested_type: 歷史
   evidence: 18節；原文「轉向、圍繞」；神領百姓迂迴而不走直路
-  surfaces:
-  - phrase: 繞道而行
-    verses:
-    - 18
   match_type: exact
   existing_title: 繞道而行
   existing_path: link_folder/歷史/繞道而行.md
 - name: 紅海曠野
   suggested_type: 地點
   evidence: 18節；原文作「蘆葦海」（Yam Suph），非今日的紅海；指蘇彝士灣與地中海之間的蘆葦沼澤地帶
-  surfaces:
-  - phrase: 紅海曠野
-    verses:
-    - 18
   match_type: exact
   existing_title: 紅海曠野
   existing_path: link_folder/地點/紅海曠野.md
+- name: 以色列人的軍隊
+  suggested_type: 神學
+  evidence: 18節；原文作「列陣」——以色列人不是散兵游勇之逃命，是按軍隊編組出埃及
+  surfaces:
+  - phrase: 以色列人出埃及地
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 以色列人的軍隊
+  existing_path: link_folder/神學/以色列人的軍隊.md
 - name: 以色列人帶兵器
   suggested_type: 歷史
   evidence: 18節；奴隸工作時不可能有兵器；可能在工地拿或向埃及人索要（12:35-36）
-  surfaces:
-  - phrase: 帶著兵器
-    verses:
-    - 18
   match_type: exact
   existing_title: 以色列人帶兵器
   existing_path: link_folder/歷史/以色列人帶兵器.md
@@ -247,10 +277,6 @@ A_use_directly:
 - name: 以倘
   suggested_type: 地點
   evidence: 20節；原文字義「海邊」或「與他們同在」；在曠野邊，確實地點不詳
-  surfaces:
-  - phrase: 以倘
-    verses:
-    - 20
   match_type: exact
   existing_title: 以倘
   existing_path: link_folder/地點/以倘.md
@@ -269,6 +295,36 @@ A_use_directly:
   match_type: exact
   existing_title: 雲柱火柱
   existing_path: link_folder/歷史/雲柱火柱.md
+- name: 為奴之家
+  suggested_type: 主題
+  evidence: 3、14節；《聖經精讀本》指這是對埃及的別稱，以後常常使用（20:2；申5:6；6:12），目的在於讓百姓紀念在埃及悲慘的生活並感謝救贖之恩
+  match_type: exact
+  existing_title: 為奴之家
+  existing_path: link_folder/主題/為奴之家.md
+- name: 第七日向耶和華守節
+  suggested_type: 歷史
+  evidence: 6節；KC 指這是聖經第一次稱它為「向耶和華守的節」；丁良才另記猶太人守尼散月二十一日為過紅海的紀念日
+  match_type: exact
+  existing_title: 第七日向耶和華守節
+  existing_path: link_folder/歷史/第七日向耶和華守節.md
+- name: 歸給耶和華
+  suggested_type: 原文
+  evidence: 12節；《串珠》指原文直譯是「使之越過某些事物」，這字常形容異教徒把兒女獻給外邦神（王下16:3；23:10）；丁道爾主張應譯作「使之經（火）」
+  match_type: exact
+  existing_title: 歸給耶和華
+  existing_path: link_folder/原文/歸給耶和華.md
+- name: 出埃及的年代
+  suggested_type: 解經爭議
+  evidence: 17-18節；《靈修版》列出早期（主前1446-1445）與晚期（主前1300-1220）兩說，前者依王上6:1 的四百八十年，後者依比東與蘭塞兩城之名
+  match_type: exact
+  existing_title: 出埃及的年代
+  existing_path: link_folder/解經爭議/出埃及的年代.md
+- name: 沿海大道（Via Maris）
+  suggested_type: 地點
+  evidence: 17節；BH 指「非利士地的道路」就是後世所稱的 Via Maris；《舊約聖經背景註釋》指埃及人稱經西乃半島北部的部分為賀如司之道，並且嚴力防守
+  match_type: exact
+  existing_title: 沿海大道（Via Maris）
+  existing_path: link_folder/地點/沿海大道（Via Maris）.md
 - name: 創五十25 約瑟骸骨應許
   suggested_type: 互文
   evidence: 19節；約瑟臨終遺命「神必眷顧你們，你們要把我的骸骨從這裡一同帶上去」
@@ -281,58 +337,7 @@ A_use_directly:
   match_type: exact
   existing_title: 創十五13-16 迦南應許
   existing_path: link_folder/互文/創十五13-16 迦南應許.md
-B_needs_update:
-- name: 無酵餅
-  suggested_type: 原文
-  evidence: 6-7節；七日之久要吃無酵餅，四境之內不可見發酵的物
-  surfaces:
-  - phrase: 無酵餅
-    verses:
-    - 6
-    - 7
-  match_type: exact
-  existing_title: 無酵餅
-  existing_path: link_folder/原文/無酵餅.md
-- name: 出埃及
-  suggested_type: 歷史
-  evidence: 8節；「這是因耶和華在我出埃及的時候為我所行的事」——父親對兒子的個人見證
-  surfaces:
-  - phrase: 我出埃及的時候
-    verses:
-    - 8
-  match_type: exact
-  existing_title: 出埃及
-  existing_path: link_folder/歷史/出埃及.md
-- name: 利未人代替長子
-  suggested_type: 神學
-  evidence: 13節；長子要贖出來——民3:12 神揀選利未人代替以色列一切頭生的；民18:16 贖價五舍客勒
-  surfaces:
-  - phrase: 凡你兒子中頭生的都要贖出來
-    verses:
-    - 13
-  match_type: exact
-  existing_title: 利未人代替長子
-  existing_path: link_folder/神學/利未人代替長子.md
-- name: 長子之死
-  suggested_type: 歷史
-  evidence: 15節；「耶和華就把埃及地所有頭生的，無論是人是牲畜，都殺了」——獻頭生與贖長子的緣由
-  surfaces:
-  - phrase: 所有頭生的
-    verses:
-    - 15
-  match_type: exact
-  existing_title: 長子之死
-  existing_path: link_folder/歷史/長子之死.md
-- name: 以色列人的軍隊
-  suggested_type: 神學
-  evidence: 18節；原文作「列陣」——以色列人不是散兵游勇之逃命，是按軍隊編組出埃及
-  surfaces:
-  - phrase: 以色列人出埃及地
-    verses:
-    - 18
-  match_type: exact
-  existing_title: 以色列人的軍隊
-  existing_path: link_folder/神學/以色列人的軍隊.md
+B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

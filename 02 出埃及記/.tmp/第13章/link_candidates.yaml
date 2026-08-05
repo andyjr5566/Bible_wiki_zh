@@ -74,8 +74,6 @@ candidates:
   - name: 記號與經文
     type: 原文
     evidence: 9、16節；手上作記號、額上作記念／經文——後世發展為經文匣（太23:5「佩戴的經文」）
-    surfaces:
-      - {phrase: 記號, verses: [9, 16]}
   - name: 驢用羊羔代贖
     type: 原文
     evidence: 13節；驢是以色列普遍使用的唯一不潔家畜，不能獻祭，故用羊羔代贖
@@ -97,8 +95,6 @@ candidates:
   - name: 非利士地
     type: 地點
     evidence: 17節；沿地中海岸的大幹道，埃及稱為「賀如司之道」，設有重兵駐守
-    surfaces:
-      - {phrase: 非利士地, verses: [17]}
   - name: 神的主權與預定
     type: 神學
     evidence: 17節；「神卻不領他們從那裡走」——神知道百姓心裡未預備，按他們的實際情形帶領
@@ -107,13 +103,9 @@ candidates:
   - name: 繞道而行
     type: 歷史
     evidence: 18節；原文「轉向、圍繞」；神領百姓迂迴而不走直路
-    surfaces:
-      - {phrase: 繞道而行, verses: [18]}
   - name: 紅海曠野
     type: 地點
     evidence: 18節；原文作「蘆葦海」（Yam Suph），非今日的紅海；指蘇彝士灣與地中海之間的蘆葦沼澤地帶
-    surfaces:
-      - {phrase: 紅海曠野, verses: [18]}
   - name: 以色列人的軍隊
     type: 神學
     evidence: 18節；原文作「列陣」——以色列人不是散兵游勇之逃命，是按軍隊編組出埃及
@@ -122,8 +114,6 @@ candidates:
   - name: 以色列人帶兵器
     type: 歷史
     evidence: 18節；奴隸工作時不可能有兵器；可能在工地拿或向埃及人索要（12:35-36）
-    surfaces:
-      - {phrase: 帶著兵器, verses: [18]}
   - name: 約瑟
     type: 人物
     evidence: 19節；臨終叫以色列人嚴嚴地起誓，要把骸骨帶上去
@@ -140,14 +130,27 @@ candidates:
   - name: 以倘
     type: 地點
     evidence: 20節；原文字義「海邊」或「與他們同在」；在曠野邊，確實地點不詳
-    surfaces:
-      - {phrase: 以倘, verses: [20]}
   - name: 雲柱火柱
     type: 歷史
     evidence: 21-22節；神同在的表號；日間遮蔭、夜間光照保溫，兼具引領與保護
     surfaces:
       - {phrase: 雲柱, verses: [21, 22]}
       - {phrase: 火柱, verses: [21, 22]}
+  - name: 為奴之家
+    type: 主題
+    evidence: 3、14節；《聖經精讀本》指這是對埃及的別稱，以後常常使用（20:2；申5:6；6:12），目的在於讓百姓紀念在埃及悲慘的生活並感謝救贖之恩
+  - name: 第七日向耶和華守節
+    type: 歷史
+    evidence: 6節；KC 指這是聖經第一次稱它為「向耶和華守的節」；丁良才另記猶太人守尼散月二十一日為過紅海的紀念日
+  - name: 歸給耶和華
+    type: 原文
+    evidence: 12節；《串珠》指原文直譯是「使之越過某些事物」，這字常形容異教徒把兒女獻給外邦神（王下16:3；23:10）；丁道爾主張應譯作「使之經（火）」
+  - name: 出埃及的年代
+    type: 解經爭議
+    evidence: 17-18節；《靈修版》列出早期（主前1446-1445）與晚期（主前1300-1220）兩說，前者依王上6:1 的四百八十年，後者依比東與蘭塞兩城之名
+  - name: 沿海大道（Via Maris）
+    type: 地點
+    evidence: 17節；BH 指「非利士地的道路」就是後世所稱的 Via Maris；《舊約聖經背景註釋》指埃及人稱經西乃半島北部的部分為賀如司之道，並且嚴力防守
   - name: 創五十25 約瑟骸骨應許
     type: 互文
     evidence: 19節；約瑟臨終遺命「神必眷顧你們，你們要把我的骸骨從這裡一同帶上去」
