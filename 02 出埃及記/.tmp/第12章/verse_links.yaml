@@ -12,10 +12,19 @@ links:
   target: 亞倫
 - verse: 2
   phrase: 以本月為正月
-  target: 亞筆月
+  target: 以本月為正月
+- verse: 2
+  phrase: 為一年之首
+  target: 以本月為正月
 - verse: 3
-  phrase: 羊羔
-  target: 逾越節羔羊
+  phrase: 按著父家取羊羔
+  target: 一家一隻
+- verse: 3
+  phrase: 一家一隻
+  target: 一家一隻
+- verse: 6
+  phrase: 在黃昏的時候
+  target: 在黃昏的時候
 - verse: 6
   phrase: 羊羔
   target: 逾越節羔羊
@@ -33,7 +42,7 @@ links:
   target: 逾越節的吃法
 - verse: 11
   phrase: 耶和華的逾越節
-  target: 逾越（pasach）
+  target: 逾越（Pesach）
 - verse: 12
   phrase: 埃及
   target: 埃及
@@ -45,7 +54,7 @@ links:
   target: 知道我是耶和華
 - verse: 13
   phrase: 越過你們
-  target: 逾越（pasach）
+  target: 逾越（Pesach）
 - verse: 13
   phrase: 災殃
   target: 災殃
@@ -58,6 +67,9 @@ links:
 - verse: 15
   phrase: 無酵餅
   target: 無酵餅
+- verse: 15
+  phrase: 從以色列中剪除
+  target: 從以色列中剪除
 - verse: 16
   phrase: 聖會
   target: 聖會
@@ -82,6 +94,9 @@ links:
 - verse: 19
   phrase: 寄居的
   target: 寄居的（ger）
+- verse: 19
+  phrase: 從以色列的會中剪除
+  target: 從以色列中剪除
 - verse: 20
   phrase: 無酵餅
   target: 無酵餅
@@ -92,17 +107,26 @@ links:
   phrase: 羊羔
   target: 逾越節羔羊
 - verse: 21
-  phrase: 逾越
-  target: 逾越（pasach）
+  phrase: 逾越節
+  target: 逾越節
 - verse: 22
   phrase: 牛膝草
   target: 牛膝草
+- verse: 22
+  phrase: 誰也不可出自己的房門
+  target: 誰也不可出自己的房門
+- verse: 22
+  phrase: 直到早晨
+  target: 誰也不可出自己的房門
 - verse: 23
   phrase: 耶和華
   target: 耶和華
 - verse: 23
   phrase: 越過
-  target: 逾越（pasach）
+  target: 逾越（Pesach）
+- verse: 23
+  phrase: 滅命的
+  target: 滅命的
 - verse: 24
   phrase: 永遠的定例
   target: 傳於後代
@@ -139,6 +163,9 @@ links:
 - verse: 29
   phrase: 法老
   target: 法老
+- verse: 29
+  phrase: 盡都殺了
+  target: 神為何擊殺埃及眾長子
 - verse: 30
   phrase: 法老
   target: 法老
@@ -169,6 +196,9 @@ links:
 - verse: 33
   phrase: 催促
   target: 催逼離開
+- verse: 34
+  phrase: 摶麵盆
+  target: 爐灶和摶麵盆
 - verse: 35
   phrase: 摩西
   target: 摩西
@@ -190,6 +220,9 @@ links:
 - verse: 37
   phrase: 疏割
   target: 疏割
+- verse: 37
+  phrase: 步行的男人約有六十萬
+  target: 六十萬人的數目
 - verse: 38
   phrase: 閒雜人
   target: 閒雜人

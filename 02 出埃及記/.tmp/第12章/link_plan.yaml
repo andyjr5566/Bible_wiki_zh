@@ -71,10 +71,6 @@ A_use_directly:
 - name: 亞筆月
   suggested_type: 原文
   evidence: 2節；「以本月為正月」——救贖重訂了以色列的曆法
-  surfaces:
-  - phrase: 以本月為正月
-    verses:
-    - 2
   match_type: exact
   existing_title: 亞筆月
   existing_path: link_folder/原文/亞筆月.md
@@ -134,9 +130,9 @@ A_use_directly:
   match_type: exact
   existing_title: 逾越節的吃法
   existing_path: link_folder/歷史/逾越節的吃法.md
-- name: 逾越（pasach）
+- name: 逾越（Pesach）
   suggested_type: 原文
-  evidence: 11、13、23、27節；「我一見這血，就越過你們去」——pasach 的字源神學
+  evidence: 11、13、23、27節；「我一見這血，就越過你們去」——名詞與動詞同一個字，第13節是全本舊約對這節期名字惟一的解釋
   surfaces:
   - phrase: 耶和華的逾越節
     verses:
@@ -147,12 +143,9 @@ A_use_directly:
   - phrase: 越過
     verses:
     - 23
-  - phrase: 逾越節
-    verses:
-    - 27
   match_type: exact
-  existing_title: 逾越（pasach）
-  existing_path: link_folder/原文/逾越（pasach）.md
+  existing_title: 逾越（Pesach）
+  existing_path: link_folder/原文/逾越（Pesach）.md
 - name: 耶和華敗壞埃及一切神
   suggested_type: 歷史
   evidence: 12節；十災的總結——這是與埃及諸神的爭戰
@@ -268,7 +261,7 @@ A_use_directly:
   existing_path: link_folder/歷史/長子之死.md
 - name: 第十災（殺長子之災）
   suggested_type: 歷史
-  evidence: 30節；「無一家不死一個人的」——空前絕後的大哀號
+  evidence: 30節；「無一家不死一個人的」——丁良才指這是囫圇話，有些家頭生的是女兒或長子早已去世
   surfaces:
   - phrase: 無一家不死一個人的
     verses:
@@ -352,6 +345,16 @@ A_use_directly:
   match_type: exact
   existing_title: 疏割
   existing_path: link_folder/地點/疏割.md
+- name: 閒雜人
+  suggested_type: 人物
+  evidence: 38節；原文作「混雜群」；與以色列人通婚的外邦人或趁機脫離法老轄制的外族奴隸
+  surfaces:
+  - phrase: 閒雜人
+    verses:
+    - 38
+  match_type: exact
+  existing_title: 閒雜人
+  existing_path: link_folder/人物/閒雜人.md
 - name: 四百三十年
   suggested_type: 原文
   evidence: 40-41節；創15:13 預言的應驗；「正滿了四百三十年的那一天」
@@ -393,6 +396,27 @@ A_use_directly:
   match_type: exact
   existing_title: 逾越節條例（外邦人與寄居者）
   existing_path: link_folder/歷史/逾越節條例（外邦人與寄居者）.md
+- name: 割禮作為立約記號
+  suggested_type: 主題
+  evidence: 44、48節；受割禮的奴僕與外人都可以吃——以色列是信仰的結合體，不是血緣的結合體
+  surfaces:
+  - phrase: 割禮
+    verses:
+    - 44
+    - 48
+  match_type: exact
+  existing_title: 割禮作為立約記號
+  existing_path: link_folder/主題/割禮作為立約記號.md
+- name: 寄居的（ger）
+  suggested_type: 原文
+  evidence: 45節；「寄居的和雇工人都不可吃」——短居者（toshav）不同於48節長居的 ger
+  surfaces:
+  - phrase: 寄居的和雇工人
+    verses:
+    - 45
+  match_type: exact
+  existing_title: 寄居的（ger）
+  existing_path: link_folder/原文/寄居的（ger）.md
 - name: 基督預表（逾越節羔羊）
   suggested_type: 神學
   evidence: 46節；「羊羔的骨頭一根也不可折斷」——約19:36 直接應驗於十架上的基督
@@ -413,6 +437,101 @@ A_use_directly:
   match_type: exact
   existing_title: 逾越節
   existing_path: link_folder/歷史/逾越節.md
+- name: 以本月為正月
+  suggested_type: 主題
+  evidence: 2節；「為一年之首」——救贖把以色列的曆法重新起算；丁良才留下完整的月表與置閏規矩，中文聖經註釋另記春曆與秋曆的分野
+  match_type: exact
+  existing_title: 以本月為正月
+  existing_path: link_folder/主題/以本月為正月.md
+- name: 一家一隻
+  suggested_type: 主題
+  evidence: 3-4節；逾越節以家庭為單位，人少的與鄰舍共取一隻——CT 靈意註解讀為救恩臨到每一個家庭（徒16:31）
+  surfaces:
+  - phrase: 一家一隻
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 一家一隻
+  existing_path: link_folder/主題/一家一隻.md
+- name: 在黃昏的時候
+  suggested_type: 原文
+  evidence: 6節；原文直譯「在兩個黃昏之間」，確實時刻猶太學者並無定論；啟導本列出三說，法利賽人與約瑟夫取最後一說
+  surfaces:
+  - phrase: 在黃昏的時候
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 在黃昏的時候
+  existing_path: link_folder/原文/在黃昏的時候.md
+- name: 從以色列中剪除
+  suggested_type: 原文
+  evidence: 15、19節；違犯無酵節條例的處分——是逐出團體還是死刑，各家不同；丁道爾以死海古卷愛色尼派的作法作對照
+  surfaces:
+  - phrase: 從以色列中剪除
+    verses:
+    - 15
+  - phrase: 從以色列的會中剪除
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 從以色列中剪除
+  existing_path: link_folder/原文/從以色列中剪除.md
+- name: 誰也不可出自己的房門
+  suggested_type: 主題
+  evidence: 22節；整夜留在血記之下才得保護；丁道爾以逃城為比、中文聖經註釋以守除夕夜為比
+  surfaces:
+  - phrase: 誰也不可出自己的房門
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 誰也不可出自己的房門
+  existing_path: link_folder/主題/誰也不可出自己的房門.md
+- name: 滅命的
+  suggested_type: 神學
+  evidence: 23節；「不容滅命的進你們的房屋」——這一位是神自己、是使者、還是別的，各家看法不一
+  surfaces:
+  - phrase: 滅命的
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 滅命的
+  existing_path: link_folder/神學/滅命的.md
+- name: 神為何擊殺埃及眾長子
+  suggested_type: 解經爭議
+  evidence: 29節；賈斯樂郝威〈命題17〉與艾基斯兩則難題彙編都處理「埃及百姓是否無辜」這一問
+  surfaces:
+  - phrase: 盡都殺了
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 神為何擊殺埃及眾長子
+  existing_path: link_folder/解經爭議/神為何擊殺埃及眾長子.md
+- name: 法老長子之死的埃及旁證
+  suggested_type: 歷史
+  evidence: 29節；艾基斯以杜得模西士四世的「夢的石碑」推論他原非長子，為法老長子早死留下旁證
+  match_type: exact
+  existing_title: 法老長子之死的埃及旁證
+  existing_path: link_folder/歷史/法老長子之死的埃及旁證.md
+- name: 爐灶和摶麵盆
+  suggested_type: 文化
+  evidence: 34節；百姓把摶麵盆包在衣服中扛在肩頭上帶走——舊約背景註釋說明這是運送已摶好麵團最簡易的辦法
+  surfaces:
+  - phrase: 摶麵盆
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 爐灶和摶麵盆
+  existing_path: link_folder/文化/爐灶和摶麵盆.md
+- name: 六十萬人的數目
+  suggested_type: 解經爭議
+  evidence: 37節；「步行的男人約有六十萬」——舊約背景註釋列出多條質疑並提出「千」可譯作「部隊」，丁道爾與精讀本各有取捨
+  surfaces:
+  - phrase: 步行的男人約有六十萬
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 六十萬人的數目
+  existing_path: link_folder/解經爭議/六十萬人的數目.md
 - name: 創十五13 四百年寄居預言
   suggested_type: 互文
   evidence: 40-41節；四百三十年住在埃及，正應驗神對亞伯拉罕所說的
@@ -437,38 +556,7 @@ A_use_directly:
   match_type: exact
   existing_title: 約翰福音十九36 羔羊骨頭不折
   existing_path: link_folder/互文/約翰福音十九36 羔羊骨頭不折.md
-B_needs_update:
-- name: 閒雜人
-  suggested_type: 人物
-  evidence: 38節；原文作「混雜群」；與以色列人通婚的外邦人或趁機脫離法老轄制的外族奴隸
-  surfaces:
-  - phrase: 閒雜人
-    verses:
-    - 38
-  match_type: exact
-  existing_title: 閒雜人
-  existing_path: link_folder/人物/閒雜人.md
-- name: 割禮作為立約記號
-  suggested_type: 主題
-  evidence: 44、48節；受割禮的奴僕與外人都可以吃——以色列是信仰的結合體，不是血緣的結合體
-  surfaces:
-  - phrase: 割禮
-    verses:
-    - 44
-    - 48
-  match_type: exact
-  existing_title: 割禮作為立約記號
-  existing_path: link_folder/主題/割禮作為立約記號.md
-- name: 寄居的（ger）
-  suggested_type: 原文
-  evidence: 45節；「寄居的和雇工人都不可吃」——短居者（toshav）不同於48節長居的 ger
-  surfaces:
-  - phrase: 寄居的和雇工人
-    verses:
-    - 45
-  match_type: exact
-  existing_title: 寄居的（ger）
-  existing_path: link_folder/原文/寄居的（ger）.md
+B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

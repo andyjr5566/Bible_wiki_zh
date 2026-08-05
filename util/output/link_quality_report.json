@@ -1,15 +1,8 @@
 {
-  "total_warnings": 83,
+  "total_warnings": 82,
   "critical_count": 0,
-  "warning_count": 83,
+  "warning_count": 82,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第12章.md",
-      "target": "逾越節",
-      "message": "同一 alias「逾越節」指向多個 target: 逾越節, 逾越（pasach）"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
