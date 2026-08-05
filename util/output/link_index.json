@@ -12586,16 +12586,6 @@
     "status": "formal",
     "aliases": []
   },
-  "密奪 (Migdol)": {
-    "path": "link_folder/原文/密奪 (Migdol).md",
-    "type": "原文",
-    "secondary_types": [
-      "地名"
-    ],
-    "title": "密奪 (Migdol)",
-    "status": "formal",
-    "aliases": []
-  },
   "審判官（elohim）": {
     "path": "link_folder/原文/審判官（elohim）.md",
     "type": "原文",
@@ -12633,16 +12623,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "工作（baabodath）",
-    "status": "formal",
-    "aliases": []
-  },
-  "巴力洗分 (Baal-zephon)": {
-    "path": "link_folder/原文/巴力洗分 (Baal-zephon).md",
-    "type": "原文",
-    "secondary_types": [
-      "地名"
-    ],
-    "title": "巴力洗分 (Baal-zephon)",
     "status": "formal",
     "aliases": []
   },
@@ -12974,9 +12954,7 @@
     "secondary_types": [],
     "title": "昂然無懼",
     "status": "formal",
-    "aliases": [
-      "chamushim"
-    ]
+    "aliases": []
   },
   "晨更": {
     "path": "link_folder/原文/晨更.md",
@@ -13082,16 +13060,6 @@
     "type": "原文",
     "secondary_types": [],
     "title": "毀謗（qalal）",
-    "status": "formal",
-    "aliases": []
-  },
-  "比哈希錄 (Pi-hahiroth)": {
-    "path": "link_folder/原文/比哈希錄 (Pi-hahiroth).md",
-    "type": "原文",
-    "secondary_types": [
-      "地名"
-    ],
-    "title": "比哈希錄 (Pi-hahiroth)",
     "status": "formal",
     "aliases": []
   },
@@ -14131,6 +14099,16 @@
       "路加福音 9",
       "路加第九章"
     ]
+  },
+  "車兵長": {
+    "path": "link_folder/原文/車兵長.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "車兵長",
+    "status": "formal",
+    "aliases": []
   },
   "辦事（melakah）": {
     "path": "link_folder/原文/辦事（melakah）.md",
@@ -16936,6 +16914,19 @@
     "aliases": [
       "催逼放人",
       "從不容到催逼"
+    ]
+  },
+  "六百輛特選的車": {
+    "path": "link_folder/歷史/六百輛特選的車.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "背景"
+    ],
+    "title": "六百輛特選的車",
+    "status": "formal",
+    "aliases": [
+      "特選的車"
     ]
   },
   "再見面必死": {
@@ -25034,6 +25025,20 @@
     "status": "formal",
     "aliases": []
   },
+  "紅海指的是哪個海": {
+    "path": "link_folder/解經爭議/紅海指的是哪個海.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "地點",
+      "背景"
+    ],
+    "title": "紅海指的是哪個海",
+    "status": "formal",
+    "aliases": [
+      "蘆葦海的位置",
+      "過海地點"
+    ]
+  },
   "羅得女兒亂倫敘事是否表示贊同": {
     "path": "link_folder/解經爭議/羅得女兒亂倫敘事是否表示贊同.md",
     "type": "解經爭議",
@@ -25168,6 +25173,18 @@
     "status": "formal",
     "aliases": [
       "贖罪日禁食難題"
+    ]
+  },
+  "車輪脫落": {
+    "path": "link_folder/解經爭議/車輪脫落.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "車輪脫落",
+    "status": "formal",
+    "aliases": [
+      "使他們的車輪脫落"
     ]
   },
   "迦勒底吾珥的位置": {
@@ -28078,9 +28095,6 @@
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
-  "chamushim": {
-    "alias_of": "昂然無懼"
-  },
   "Shur etymology": {
     "alias_of": "書珥（ wall ）"
   },
@@ -29121,6 +29135,9 @@
   },
   "從不容到催逼": {
     "alias_of": "催逼離開"
+  },
+  "特選的車": {
+    "alias_of": "六百輛特選的車"
   },
   "摩西與法老最終破裂": {
     "alias_of": "再見面必死"
@@ -31192,6 +31209,12 @@
   "雅各弓刀所得之地": {
     "alias_of": "約瑟多得的一分地"
   },
+  "蘆葦海的位置": {
+    "alias_of": "紅海指的是哪個海"
+  },
+  "過海地點": {
+    "alias_of": "紅海指的是哪個海"
+  },
   "聖經是否贊同羅得女兒亂倫": {
     "alias_of": "羅得女兒亂倫敘事是否表示贊同"
   },
@@ -31224,6 +31247,9 @@
   },
   "贖罪日禁食難題": {
     "alias_of": "贖罪日禁食起始日的難題（第九日或第十日）"
+  },
+  "使他們的車輪脫落": {
+    "alias_of": "車輪脫落"
   },
   "吾珥的位置": {
     "alias_of": "迦勒底吾珥的位置"

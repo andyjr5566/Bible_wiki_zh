@@ -421,7 +421,63 @@ A_use_directly:
   match_type: exact
   existing_title: 創十五13-16 迦南應許
   existing_path: link_folder/互文/創十五13-16 迦南應許.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 六十萬人的數目
+  suggested_type: 解經爭議
+  evidence: 21-29節；賈斯樂郝威〈命題18〉以民1:45-46 的約兩百萬人推算過海時間；《精讀本》另估通道寬度至少一海里、並算失去「60多萬壯丁」對埃及經濟的損失
+  match_type: exact
+  existing_title: 六十萬人的數目
+  existing_path: link_folder/解經爭議/六十萬人的數目.md
+- name: 出埃及的年代
+  suggested_type: 解經爭議
+  evidence: 6、18、27-28節；《精讀本》指本章法老為阿孟和蒂世；《丁道爾》反對用木乃伊斷定日期；《靈修版》說埃及史料闕如
+  match_type: exact
+  existing_title: 出埃及的年代
+  existing_path: link_folder/解經爭議/出埃及的年代.md
+- name: 哈妥爾（Hathor）
+  suggested_type: 文化
+  evidence: 2節；《中文聖經註釋》指比哈希錄可能是埃及文「女神 Hathor 的殿」被錯讀成希伯來文的 Pi-hairoth
+  match_type: exact
+  existing_title: 哈妥爾（Hathor）
+  existing_path: link_folder/文化/哈妥爾（Hathor）.md
+C_new_formal:
+- name: 車兵長
+  suggested_type: 原文
+  evidence: 7節；原文作「第三人」——《啟導本》《串珠》《中文聖經註釋》丁良才四家都在解這個官階
+  surfaces:
+  - phrase: 車兵長
+    verses:
+    - 7
+  target_path: link_folder/原文/車兵長.md
+- name: 六百輛特選的車
+  suggested_type: 歷史
+  evidence: 7節；《舊約背景註釋》給戰車單位量級與加低斯之役 2500 輛；《丁道爾》另提「支隊」與象徵讀法；《精讀本》引示撒的 1000 輛
+  surfaces:
+  - phrase: 六百輛特選的車
+    verses:
+    - 7
+  target_path: link_folder/歷史/六百輛特選的車.md
+- name: 車輪脫落
+  suggested_type: 解經爭議
+  evidence: 25節；原文「取下」艱澀，各家分作「脫落」「堵塞／纏住」「懲罰／指責」三讀，《丁道爾》另給調和說
+  surfaces:
+  - phrase: 車輪脫落
+    verses:
+    - 25
+  target_path: link_folder/解經爭議/車輪脫落.md
+- name: 紅海指的是哪個海
+  suggested_type: 解經爭議
+  evidence: 2、21節；《啟導本》長註、賈斯樂郝威〈命題18〉、《丁道爾》、《中文聖經註釋》緒論、《舊約背景註釋》五處各給不同水域
+  target_path: link_folder/解經爭議/紅海指的是哪個海.md
+  semantic_hint:
+  - title: 海（紅海）
+    score: 0.597
+    type: 地點
+  - title: 紅海曠野
+    score: 0.494
+    type: 地點
+  - title: 詩一零六9 紅海乾地
+    score: 0.464
+    type: 互文
 D_new_candidate: []
 E_skip: []
