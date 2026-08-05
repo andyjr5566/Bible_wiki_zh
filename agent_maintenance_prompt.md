@@ -108,6 +108,13 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 讀本章經文或 manifest 宣告為 OK 的來源、用 `search_wiki_entries`／`read_wiki_entry` 核對
 既有條目與 alias。這些工具有路徑白名單，不能用來讀任意檔案。
 
+本檔引用的 `util/*.py` 也都有 MCP 對應：`build_source_manifest`、`build_candidate_similarity`、
+`model_client`、`sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
+`check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
+`audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates` 與
+`rename_markdown`。`run_chapter` 這個 MCP 名稱固定走 `run_chapter_manual.py run`，不會呼叫模型版
+`run_chapter.py`；需要寫入的工具仍依 MCP 回傳的確認要求執行。
+
 維護 M3／M6 時，MCP 路徑和本檔的人工模式相同：手寫 yaml 後呼叫
 `check_manual_payloads`（唯讀，不會改寫 alias）→ `render_manual_chapter`；改
 `entry_content` 且 chapter_content 已同步時才設 `keep_chapter=true`。候選變動前先呼叫

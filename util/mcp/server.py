@@ -14,6 +14,7 @@ import json
 import re
 import subprocess
 import sys
+import urllib.parse
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -275,6 +276,64 @@ def _run_manual(command: str, canonical: str, chapter: int, *options: str) -> Di
     }
 
 
+def _run_util_command(script: str, *args: str, timeout: int = 300) -> Dict[str, Any]:
+    """Run one existing util CLI without exposing its stdout to MCP stdio."""
+    script_path = UTIL_DIR / script
+    if not script_path.is_file():
+        return _error(f"找不到 util 程式：{script}")
+    cmd = [sys.executable, str(script_path), *(str(arg) for arg in args)]
+    try:
+        proc = subprocess.run(
+            cmd,
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=max(1, min(int(timeout), 900)),
+        )
+    except subprocess.TimeoutExpired:
+        return _error(
+            f"{script} 執行逾時（{timeout} 秒）",
+            command=" ".join(cmd),
+        )
+    except OSError as exc:
+        return _error(f"無法執行 {script}：{exc}", command=" ".join(cmd))
+    return {
+        "success": proc.returncode == 0,
+        "returncode": proc.returncode,
+        "stdout": proc.stdout.strip()[-30_000:],
+        "stderr": proc.stderr.strip()[-10_000:],
+        "command": " ".join(cmd),
+    }
+
+
+def _safe_subdir(relative_path: str, allowed_root: Path) -> Path:
+    """Resolve a user-provided directory while keeping it below ``allowed_root``."""
+    if not isinstance(relative_path, str) or not relative_path.strip():
+        raise ValueError("資料夾路徑不可為空")
+    relative = Path(relative_path)
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError("不允許絕對路徑或 .. 路徑跳脫")
+    resolved = (ROOT_DIR / relative).resolve()
+    if not _is_under(resolved, allowed_root):
+        raise ValueError(f"資料夾必須位於 {_relative_to_root(allowed_root)} 之下")
+    return resolved
+
+
+def _safe_repo_path(raw_path: str, *, must_exist: bool = False) -> Path:
+    if not isinstance(raw_path, str) or not raw_path.strip():
+        raise ValueError("路徑不可為空")
+    path = Path(raw_path)
+    if path.is_absolute() or ".." in path.parts:
+        raise ValueError("不允許絕對路徑或 .. 路徑跳脫")
+    resolved = (ROOT_DIR / path).resolve()
+    if not _is_under(resolved, ROOT_DIR):
+        raise ValueError("路徑不可超出專案根目錄")
+    if must_exist and not resolved.exists():
+        raise FileNotFoundError(f"找不到檔案或資料夾：{raw_path}")
+    return resolved
+
+
 def _link_update_manifest(canonical: str, chapter: int) -> Path:
     _canonical, _directory, tmp = _chapter_context(canonical, chapter)
     manifest = tmp / "link_updates.yaml"
@@ -315,6 +374,319 @@ def _update_preview(canonical: str, chapter: int) -> Dict[str, Any]:
         "change_count": sum(item["will_change"] for item in changes),
         "entries": changes,
     }
+
+
+@mcp.tool()
+def crawl_bible_source(
+    url: str,
+    output_filename: str,
+    output_path: str = "raw_data",
+    overwrite: bool = False,
+    timeout: int = 30,
+) -> Dict[str, Any]:
+    """Fetch one explicit source URL into a safe ``raw_data`` subdirectory.
+
+    This is the MCP equivalent of ``crawl_bible_text.py URL --output_path
+    raw_data --output_filename ...``.  It never crawls a site broadly and does
+    not overwrite an existing file unless ``overwrite`` is explicitly true.
+    """
+    try:
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            raise ValueError("url 必須是完整的 http(s) URL")
+        if not isinstance(output_filename, str) or not output_filename.strip():
+            raise ValueError("output_filename 不可為空")
+        filename = Path(output_filename)
+        if filename.name != output_filename or filename.name in {"", ".", ".."}:
+            raise ValueError("output_filename 必須是單一檔名，不可包含路徑")
+        if filename.suffix.lower() != ".txt":
+            filename = filename.with_name(filename.name + ".txt")
+        output_dir = _safe_subdir(output_path, ROOT_DIR / "raw_data")
+        target = output_dir / filename.name
+        if target.exists() and not overwrite:
+            return _error(
+                f"輸出檔已存在：{_relative_to_root(target)}；需要 overwrite=true 才會覆寫",
+                path=_relative_to_root(target),
+            )
+        args = [url, "--output_path", output_path, "--output_filename", filename.name]
+        if overwrite:
+            args.append("--overwrite")
+        result = _run_util_command(
+            "crawl_bible_text.py", *args, timeout=max(10, min(int(timeout), 180))
+        )
+        result.update({"url": url, "path": _relative_to_root(target)})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> Dict[str, Any]:
+    """Generate or validate the canonical four-source ``source_manifest.md``."""
+    try:
+        canonical, _directory, tmp = _chapter_context(book, chapter)
+        args = [canonical, str(chapter)]
+        if check_only:
+            args.append("--check")
+        result = _run_util_command("build_source_manifest.py", *args)
+        result.update({
+            "book": canonical,
+            "chapter": chapter,
+            "manifest": _relative_to_root(tmp / "source_manifest.md"),
+            "check_only": check_only,
+        })
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def build_candidate_similarity(book: str, chapter: int, top: int = 3) -> Dict[str, Any]:
+    """Run ``semantic_lookup.py --candidates`` and write the human-review report."""
+    try:
+        canonical, _directory, tmp = _chapter_context(book, chapter)
+        bounded_top = max(3, min(int(top), 10))
+        result = _run_util_command(
+            "semantic_lookup.py", "--candidates", canonical, str(chapter),
+            "--top", str(bounded_top), timeout=300,
+        )
+        result.update({
+            "book": canonical,
+            "chapter": chapter,
+            "report": _relative_to_root(tmp / "candidate_similarity.md"),
+            "top": bounded_top,
+        })
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def model_client(
+    action: str,
+    endpoint: Optional[str] = None,
+    task: Optional[str] = None,
+    confirm: bool = False,
+) -> Dict[str, Any]:
+    """List, test, or explicitly select a configured model endpoint.
+
+    ``use`` changes ``_config/model_endpoints.yaml`` and therefore requires
+    ``confirm=true``.  This tool never runs generation; ``test`` only performs
+    the endpoint smoke test implemented by ``util/model_client.py``.
+    """
+    if action not in {"list", "test", "use"}:
+        return _error("action 必須是 list、test 或 use")
+    if action == "use" and not confirm:
+        return _error("切換 active endpoint 會寫入設定，請明確傳入 confirm=true")
+    if action == "use" and not endpoint:
+        return _error("action=use 必須提供 endpoint")
+    if action == "list" and (endpoint or task):
+        return _error("action=list 不接受 endpoint 或 task")
+    if action == "use" and task:
+        return _error("action=use 不接受 task")
+    args = [action]
+    if endpoint:
+        args.append(endpoint)
+    if task:
+        args.extend(["--task", task])
+    result = _run_util_command("model_client.py", *args, timeout=120)
+    result.update({"action": action, "endpoint": endpoint, "task": task})
+    return result
+
+
+@mcp.tool()
+def sync_link_index(check_only: bool = False) -> Dict[str, Any]:
+    """Build or reproducibility-check the canonical link index."""
+    args = ["--check"] if check_only else []
+    return _run_util_command("build_link_index.py", *args)
+
+
+@mcp.tool()
+def check_existing_links(book: str, chapter: int, missing_only: bool = True) -> Dict[str, Any]:
+    """Check chapter links against existing entries and optional chapter data."""
+    try:
+        canonical, directory, _tmp = _chapter_context(book, chapter)
+        chapter_file = directory / f"第{chapter}章.md"
+        if not _is_under(chapter_file, ROOT_DIR):
+            raise ValueError("章節檔案不可超出專案根目錄")
+        args = [_relative_to_root(chapter_file)]
+        if missing_only:
+            args.append("--missing")
+        result = _run_util_command("check_existing_links.py", *args)
+        result.update({"book": canonical, "chapter": chapter, "missing_only": missing_only})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def sync_embedding_index(
+    rebuild: bool = False,
+    check_only: bool = False,
+    status_only: bool = False,
+) -> Dict[str, Any]:
+    """Incrementally build, rebuild, check, or inspect the embedding index."""
+    if sum(bool(value) for value in (rebuild, check_only, status_only)) > 1:
+        return _error("rebuild、check_only、status_only 只能選一個")
+    args: List[str] = []
+    if rebuild:
+        args.append("--rebuild")
+    elif check_only:
+        args.append("--check")
+    elif status_only:
+        args.append("--status")
+    return _run_util_command("build_embedding_index.py", *args, timeout=600)
+
+
+@mcp.tool()
+def build_appendix_links(check_only: bool = False) -> Dict[str, Any]:
+    """Synchronize rendered appendix blocks, or check whether they are stale."""
+    args = ["--check"] if check_only else []
+    return _run_util_command("build_appendix_links.py", *args, timeout=300)
+
+
+@mcp.tool()
+def validate_knowledge_base(base: Optional[str] = None, report: Optional[str] = None) -> Dict[str, Any]:
+    """Run the structural knowledge-base validator and optionally write its JSON report."""
+    args: List[str] = []
+    if base:
+        if any(char in base for char in "\r\n"):
+            return _error("base 不可包含換行")
+        args.append(f"--base={base}")
+    if report:
+        report_path = Path(report)
+        if report_path.is_absolute() or ".." in report_path.parts or report_path.name != report:
+            return _error("report 只能是 util/output 下的單一檔名")
+        args.append(f"--report={report}")
+    return _run_util_command("validate_knowledge_base.py", *args, timeout=300)
+
+
+@mcp.tool()
+def check_link_quality(book: Optional[str] = None) -> Dict[str, Any]:
+    """Run the link-quality report for the whole vault or one canonical book."""
+    try:
+        args = [] if book is None else [_canonical_book(book)]
+    except ValueError as exc:
+        return _error(str(exc))
+    return _run_util_command("link_quality_check.py", *args, timeout=300)
+
+
+@mcp.tool()
+def verify_links(book: Optional[str] = None) -> Dict[str, Any]:
+    """Run the offline broken-link and scripture-reference verifier."""
+    try:
+        args = [] if book is None else [_canonical_book(book)]
+    except ValueError as exc:
+        return _error(str(exc))
+    return _run_util_command("verify_links.py", *args, timeout=300)
+
+
+@mcp.tool()
+def audit_knowledge_base(
+    mode: str = "check_due",
+    book: Optional[str] = None,
+    checkpoint: int = 10,
+    confirm: bool = False,
+) -> Dict[str, Any]:
+    """Check audit cadence, or explicitly generate a book/full-vault audit report."""
+    if mode not in {"check_due", "book", "all"}:
+        return _error("mode 必須是 check_due、book 或 all")
+    if mode == "check_due":
+        if book is not None:
+            return _error("mode=check_due 不接受 book")
+        args = ["--check-due"]
+    elif not confirm:
+        return _error("產生稽核報告會寫入檔案，請明確傳入 confirm=true")
+    elif mode == "book":
+        if not book:
+            return _error("mode=book 必須提供 book")
+        try:
+            args = ["--book", _canonical_book(book)]
+        except ValueError as exc:
+            return _error(str(exc))
+    else:
+        if book is not None:
+            return _error("mode=all 不接受 book")
+        try:
+            checkpoint_value = int(checkpoint)
+        except (TypeError, ValueError):
+            return _error("checkpoint 必須是正整數")
+        if checkpoint_value < 1:
+            return _error("checkpoint 必須是正整數")
+        args = ["--all", "--checkpoint", str(checkpoint_value)]
+    return _run_util_command("audit_knowledge_base.py", *args, timeout=600)
+
+
+@mcp.tool()
+def check_chapter_files(book: str, chapter: int) -> Dict[str, Any]:
+    """Check that every required artefact in the start workflow exists."""
+    try:
+        canonical, _directory, _tmp = _chapter_context(book, chapter)
+        result = _run_util_command("check_chapter_files.py", canonical, str(chapter), timeout=180)
+        result.update({"book": canonical, "chapter": chapter})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def prepare_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
+    """Create the B-category ``link_updates.yaml`` skeleton without applying edits."""
+    try:
+        canonical, _directory, tmp = _chapter_context(book, chapter)
+        manifest = tmp / "link_updates.yaml"
+        if manifest.exists():
+            return _error(
+                f"link_updates.yaml 已存在，拒絕覆蓋：{_relative_to_root(manifest)}",
+                path=_relative_to_root(manifest),
+            )
+        result = _run_util_command("link_updates.py", "prepare", canonical, str(chapter), timeout=180)
+        result.update({"book": canonical, "chapter": chapter, "manifest": _relative_to_root(manifest)})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def run_chapter(book: str, chapter: int, keep_chapter: bool = False) -> Dict[str, Any]:
+    """Compatibility entry point that always runs ``run_chapter_manual.py run``.
+
+    The model-powered ``util/run_chapter.py`` is intentionally not exposed by
+    MCP.  M3/M6 remain a human-written, zero-API workflow.
+    """
+    return render_manual_chapter(book, chapter, keep_chapter=keep_chapter)
+
+
+@mcp.tool()
+def rename_markdown(
+    source: str,
+    destination: str,
+    dry_run: bool = True,
+    confirm: bool = False,
+) -> Dict[str, Any]:
+    """Preview or explicitly perform safe Markdown/WikiLink renaming.
+
+    A real rename requires both ``dry_run=false`` and ``confirm=true``.  This
+    covers the maintenance boundary command while preventing accidental bulk
+    rewrites from an ambiguous agent call.
+    """
+    if not dry_run and not confirm:
+        return _error("正式改名會修改 vault，請同時傳入 dry_run=false、confirm=true")
+    try:
+        source_path = _safe_repo_path(source, must_exist=True)
+        destination_path = _safe_repo_path(destination)
+        if destination_path == ROOT_DIR:
+            raise ValueError("destination 不可為專案根目錄")
+        if not _is_under(destination_path, ROOT_DIR):
+            raise ValueError("destination 不可超出專案根目錄")
+        result = _run_util_command(
+            "rename_markdown.py", source, destination,
+            *( ["--dry-run"] if dry_run else [] ), timeout=600,
+        )
+        result.update({"source": _relative_to_root(source_path), "destination": _relative_to_root(destination_path), "dry_run": dry_run})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
 
 
 @mcp.tool()
@@ -875,12 +1247,14 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四來源內容複核或收尾閘門。
 
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
-2. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
-3. M3/M6 **只走人工零 API 流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。不要用 `run_chapter.py` 生成 M3/M6。
-4. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
-4b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
-5. B 類累積必須先核對 `link_updates.yaml` 與來源，再 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
-6. 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門；其餘稽核仍照 `agent_start_prompt.md`。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
+2. 來源準備可用 `crawl_bible_source`、`build_source_manifest`、`build_candidate_similarity`；模型端點可用 `model_client`，但 `use` 必須明確確認。
+3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
+4. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
+5. M3/M6 **只走人工零 API 流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。不要用 `run_chapter.py` 生成 M3/M6。
+6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
+6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
+7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
+8. 收尾可用 `run_gates(book, chapter, rebuild_index=True)` 作核心機械閘門；它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
 """
 
 
@@ -892,6 +1266,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 以 `agent_maintenance_prompt.md` 為完整且優先的規格。先讀四來源並逐條勘誤；結構通過不等於內容正確。
 
 - 先用 `get_chapter_status` 看目前管線狀態，用 `read_chapter_artifact` 讀受限的 `.tmp` payload，用 `search_wiki_entries`／`read_wiki_entry` 核對既有條目與 aliases。
+- 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。
 - 修改 M3／M6 時固定走零 API：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。

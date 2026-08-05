@@ -21,6 +21,22 @@
 | `render_manual_chapter` | 驗證通過後執行 `run_chapter_manual.py run`。 | 是，render／產生 verse links |
 | `preview_chapter_link_updates` | 驗證 B 類累積更新並產生一次性 preview token。 | 否 |
 | `apply_chapter_link_updates` | 只套用 token 對應的預覽；預覽或目標檔改變後 token 立即失效。 | 是 |
+| `crawl_bible_source` | 對單一明確 URL 呼叫 `crawl_bible_text.py`，輸出限制在 `raw_data/`。 | 是（不覆寫預設） |
+| `build_source_manifest` | 產生或檢查四來源 `source_manifest.md`。 | 是（check-only 否） |
+| `build_candidate_similarity` | 呼叫 `semantic_lookup.py --candidates` 產生人工判讀報告。 | 是 |
+| `model_client` | 對應 `model_client.py list|test|use`；`use` 必須 `confirm=true`。 | `use` 會寫入 |
+| `sync_link_index` | 對應 `build_link_index.py`，可選 `check_only`。 | 是（check-only 否） |
+| `check_existing_links` | 對應 `check_existing_links.py ... --missing`。 | 否 |
+| `sync_embedding_index` | 對應 `build_embedding_index.py` 的增量、重建、check、status 模式。 | 增量／重建會寫入 |
+| `build_appendix_links` | 對應 `build_appendix_links.py`，同步或檢查附錄區塊。 | 同步會寫入 |
+| `validate_knowledge_base` | 對應結構驗證，可選 Git base／JSON report。 | report 會寫入 |
+| `check_link_quality` | 對應 `link_quality_check.py`，可指定書卷。 | 會更新報告 |
+| `verify_links` | 對應 `verify_links.py` 的離線連結與經文引用檢查。 | 會更新報告 |
+| `audit_knowledge_base` | 對應 `audit_knowledge_base.py --check-due/--book/--all`；產生報告需確認。 | 報告會寫入 |
+| `check_chapter_files` | 對應 `check_chapter_files.py 書名 X`。 | 否 |
+| `prepare_chapter_link_updates` | 對應 `link_updates.py prepare`，已存在 manifest 時拒絕覆寫。 | 是 |
+| `run_chapter` | 相容名稱，但固定轉到 `run_chapter_manual.py run`；MCP 不暴露模型版 `run_chapter.py`。 | 是 |
+| `rename_markdown` | 對應 `rename_markdown.py`；預設 dry-run，正式改名需 `confirm=true`。 | 正式改名會寫入 |
 
 ## M3／M6：固定走人工模式
 

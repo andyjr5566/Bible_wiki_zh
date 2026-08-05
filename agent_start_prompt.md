@@ -9,6 +9,15 @@
 `read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、四來源
 內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
 
+本檔下面列出的 `util/*.py` 都有對應 MCP 工具：來源抓取用 `crawl_bible_source`，manifest 用
+`build_source_manifest`，候選報告用 `build_candidate_similarity`，模型端點用 `model_client`；
+索引與收尾檢查依序用 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
+`check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
+`audit_knowledge_base`、`check_chapter_files`。B 類先用 `prepare_chapter_link_updates`，再沿用
+下方的 preview/token apply 工具。`run_chapter` 是 MCP 的相容名稱，但固定走
+`run_chapter_manual.py`；MCP 不會呼叫模型版 `run_chapter.py`。改名使用 `rename_markdown`
+（預設 dry-run；正式執行必須明確確認）。
+
 **經 MCP 處理 M3／M6 時，一律走零 API 的人工模式**：
 `prepare_manual_payload_prompts` → 手寫 M3 `entry_content/*.yaml` → 再 prepare 取得更新的
 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
