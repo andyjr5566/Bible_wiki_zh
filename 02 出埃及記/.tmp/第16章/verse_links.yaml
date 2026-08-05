@@ -46,9 +46,6 @@ links:
 - verse: 4
   phrase: 好試驗他們遵不遵我的法度
   target: 神的試驗
-- verse: 5
-  phrase: 比每天所收的多一倍
-  target: 安息日的前身
 - verse: 6
   phrase: 摩西
   target: 摩西
@@ -122,9 +119,6 @@ links:
   phrase: 以色列人
   target: 以色列
 - verse: 15
-  phrase: 這是什麼呢
-  target: 嗎哪（ What is it ）
-- verse: 15
   phrase: 摩西
   target: 摩西
 - verse: 15
@@ -135,13 +129,13 @@ links:
   target: 耶和華
 - verse: 16
   phrase: 俄梅珥
-  target: 俄梅珥（ omer ）
+  target: 俄梅珥
 - verse: 17
   phrase: 以色列人
   target: 以色列
 - verse: 18
   phrase: 俄梅珥
-  target: 俄梅珥（ omer ）
+  target: 俄梅珥
 - verse: 18
   phrase: 多收的也沒有餘，少收的也沒有缺
   target: 林後8：13-15 多收的沒有餘少收的沒有缺
@@ -162,7 +156,7 @@ links:
   target: 安息日收取規定
 - verse: 22
   phrase: 俄梅珥
-  target: 俄梅珥（ omer ）
+  target: 俄梅珥
 - verse: 22
   phrase: 摩西
   target: 摩西
@@ -200,8 +194,11 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 29
-  phrase: 耶和華既將安息日賜給你們
-  target: 安息日的前身
+  phrase: 耶和華
+  target: 耶和華
+- verse: 29
+  phrase: 安息日
+  target: 安息日
 - verse: 30
   phrase: 安息
   target: 安息日收取規定
@@ -222,7 +219,7 @@ links:
   target: 耶和華
 - verse: 32
   phrase: 俄梅珥
-  target: 俄梅珥（ omer ）
+  target: 俄梅珥
 - verse: 32
   phrase: 嗎哪
   target: 嗎哪
@@ -267,4 +264,4 @@ links:
   target: 迦南
 - verse: 36
   phrase: 俄梅珥
-  target: 俄梅珥（ omer ）
+  target: 俄梅珥

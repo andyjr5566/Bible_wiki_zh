@@ -12201,11 +12201,11 @@
       "右手之子"
     ]
   },
-  "俄梅珥（ omer ）": {
-    "path": "link_folder/原文/俄梅珥（ omer ）.md",
+  "俄梅珥": {
+    "path": "link_folder/原文/俄梅珥.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "俄梅珥（ omer ）",
+    "title": "俄梅珥",
     "status": "formal",
     "aliases": [
       "Omer"
@@ -12383,17 +12383,6 @@
     "title": "哈抹名字含義",
     "status": "formal",
     "aliases": []
-  },
-  "嗎哪（ What is it ）": {
-    "path": "link_folder/原文/嗎哪（ What is it ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "嗎哪（ What is it ）",
-    "status": "formal",
-    "aliases": [
-      "Manna etymology",
-      "What is it"
-    ]
   },
   "四十的屬靈意義": {
     "path": "link_folder/原文/四十的屬靈意義.md",
@@ -13057,18 +13046,6 @@
     "title": "汗流滿面才得糊口",
     "status": "formal",
     "aliases": []
-  },
-  "汛（ Sin thorn ）": {
-    "path": "link_folder/原文/汛（ Sin thorn ）.md",
-    "type": "原文",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "汛（ Sin thorn ）",
-    "status": "formal",
-    "aliases": [
-      "Sin wilderness etymology"
-    ]
   },
   "沙番（shaphan）": {
     "path": "link_folder/原文/沙番（shaphan）.md",
@@ -18970,7 +18947,7 @@
     "title": "嗎哪預表基督",
     "status": "formal",
     "aliases": [
-      "Manna as type of Christ"
+      "嗎哪預表主耶穌"
     ]
   },
   "四十晝夜": {
@@ -19389,7 +19366,7 @@
     "title": "安息日的設立",
     "status": "formal",
     "aliases": [
-      "Establishment of the Sabbath"
+      "安息日的首次啟示"
     ]
   },
   "定言式法律": {
@@ -23259,18 +23236,6 @@
     "status": "formal",
     "aliases": []
   },
-  "安息日的前身": {
-    "path": "link_folder/背景/安息日的前身.md",
-    "type": "背景",
-    "secondary_types": [
-      "神學"
-    ],
-    "title": "安息日的前身",
-    "status": "formal",
-    "aliases": [
-      "Precursor to Sabbath"
-    ]
-  },
   "宗主條約": {
     "path": "link_folder/背景/宗主條約.md",
     "type": "背景",
@@ -23350,18 +23315,6 @@
     "title": "歌斐木",
     "status": "formal",
     "aliases": []
-  },
-  "汛的曠野地理": {
-    "path": "link_folder/背景/汛的曠野地理.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "汛的曠野地理",
-    "status": "formal",
-    "aliases": [
-      "Geography of Wilderness of Sin"
-    ]
   },
   "洪水全程時間軸": {
     "path": "link_folder/背景/洪水全程時間軸.md",
@@ -24309,6 +24262,18 @@
     "aliases": [
       "含看見挪亞赤身",
       "含對挪亞赤身的反應"
+    ]
+  },
+  "嗎哪是不是自然產物": {
+    "path": "link_folder/解經爭議/嗎哪是不是自然產物.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "嗎哪是不是自然產物",
+    "status": "formal",
+    "aliases": [
+      "嗎哪的自然解釋"
     ]
   },
   "四十天降雨與一百五十天水勢": {
@@ -27869,7 +27834,7 @@
     "alias_of": "便雅憫名字含義"
   },
   "Omer": {
-    "alias_of": "俄梅珥（ omer ）"
+    "alias_of": "俄梅珥"
   },
   "驅趕": {
     "alias_of": "催逼"
@@ -27900,12 +27865,6 @@
   },
   "aseret hadevarim": {
     "alias_of": "十句話"
-  },
-  "Manna etymology": {
-    "alias_of": "嗎哪（ What is it ）"
-  },
-  "What is it": {
-    "alias_of": "嗎哪（ What is it ）"
   },
   "430年": {
     "alias_of": "四百三十年"
@@ -28086,9 +28045,6 @@
   },
   "憤怒離開": {
     "alias_of": "氣忿忿"
-  },
-  "Sin wilderness etymology": {
-    "alias_of": "汛（ Sin thorn ）"
   },
   "沙番": {
     "alias_of": "沙番（shaphan）"
@@ -29668,7 +29624,7 @@
   "賽53受苦僕人": {
     "alias_of": "受苦僕人 (賽53)"
   },
-  "Manna as type of Christ": {
+  "嗎哪預表主耶穌": {
     "alias_of": "嗎哪預表基督"
   },
   "伯特利復興": {
@@ -29755,7 +29711,7 @@
   "鷹的翅膀": {
     "alias_of": "如鷹背在翅膀上"
   },
-  "Establishment of the Sabbath": {
+  "安息日的首次啟示": {
     "alias_of": "安息日的設立"
   },
   "apodictic law": {
@@ -30754,9 +30710,6 @@
   "Physical properties of manna": {
     "alias_of": "嗎哪的物理特性"
   },
-  "Precursor to Sabbath": {
-    "alias_of": "安息日的前身"
-  },
   "suzerainty treaty": {
     "alias_of": "宗主條約"
   },
@@ -30780,9 +30733,6 @@
   },
   "以色列審判制度": {
     "alias_of": "曠野審判制度"
-  },
-  "Geography of Wilderness of Sin": {
-    "alias_of": "汛的曠野地理"
   },
   "挪亞洪水時間軸": {
     "alias_of": "洪水全程時間軸"
@@ -30963,6 +30913,9 @@
   },
   "含對挪亞赤身的反應": {
     "alias_of": "含看見父親赤身的含義"
+  },
+  "嗎哪的自然解釋": {
+    "alias_of": "嗎哪是不是自然產物"
   },
   "四十天與一百五十天": {
     "alias_of": "四十天降雨與一百五十天水勢"

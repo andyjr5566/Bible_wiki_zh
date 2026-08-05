@@ -1,7 +1,7 @@
 {
-  "total_warnings": 82,
+  "total_warnings": 85,
   "critical_count": 0,
-  "warning_count": 82,
+  "warning_count": 85,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -16,6 +16,27 @@
       "source": "出埃及記/第15章.md",
       "target": "瑪拉",
       "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉苦水變甜"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第16章.md",
+      "target": "你們的怨言不是向我們發的，乃是向耶和華發的",
+      "message": "同一 alias「你們的怨言不是向我們發的，乃是向耶和華發的」指向多個 target: 以色列人的怨言, 耶和華"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第16章.md",
+      "target": "安息日",
+      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日的設立"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第16章.md",
+      "target": "鵪鶉",
+      "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
     },
     {
       "type": "alias_target_conflict",
