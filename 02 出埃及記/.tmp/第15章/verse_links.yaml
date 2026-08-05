@@ -107,9 +107,6 @@ links:
   phrase: 亞倫
   target: 亞倫
 - verse: 20
-  phrase: 女先知
-  target: 米利暗之歌
-- verse: 20
   phrase: 米利暗
   target: 米利暗
 - verse: 21
@@ -130,15 +127,9 @@ links:
 - verse: 22
   phrase: 書珥的曠野
   target: 書珥的曠野
-- verse: 22
-  phrase: 在曠野走了三天，找不著水
-  target: 書珥曠野三天無水
 - verse: 23
   phrase: 到了瑪拉
   target: 瑪拉
-- verse: 23
-  phrase: 那地名叫瑪拉
-  target: 瑪拉（ bitterness ）
 - verse: 24
   phrase: 摩西
   target: 摩西
@@ -169,9 +160,3 @@ links:
 - verse: 27
   phrase: 他們到了以琳
   target: 以琳
-- verse: 27
-  phrase: 十二股水泉，七十棵棕樹
-  target: 以琳十二股水泉七十棵棕樹
-- verse: 27
-  phrase: 在那裡的水邊安營
-  target: 以琳綠洲

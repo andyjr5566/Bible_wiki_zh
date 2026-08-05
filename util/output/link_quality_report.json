@@ -7,15 +7,15 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "出埃及記/第15章.md",
-      "target": "瑪拉",
-      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉（ bitterness ）"
+      "target": "書珥",
+      "message": "同一 alias「書珥」指向多個 target: 書珥, 書珥的曠野"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "出埃及記/第15章.md",
-      "target": "以琳",
-      "message": "同一 alias「以琳」指向多個 target: 以琳, 以琳綠洲"
+      "target": "瑪拉",
+      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉苦水變甜"
     },
     {
       "type": "alias_target_conflict",

@@ -2963,19 +2963,6 @@
     "status": "formal",
     "aliases": []
   },
-  "以琳綠洲": {
-    "path": "link_folder/事件/以琳綠洲.md",
-    "type": "事件",
-    "secondary_types": [
-      "地點",
-      "神學"
-    ],
-    "title": "以琳綠洲",
-    "status": "formal",
-    "aliases": [
-      "Elim oasis"
-    ]
-  },
   "以色列到達西乃山": {
     "path": "link_folder/事件/以色列到達西乃山.md",
     "type": "事件",
@@ -11865,6 +11852,19 @@
       "他連得"
     ]
   },
+  "一棵樹": {
+    "path": "link_folder/原文/一棵樹.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學",
+      "事件"
+    ],
+    "title": "一棵樹",
+    "status": "formal",
+    "aliases": [
+      "瑪拉的樹"
+    ]
+  },
   "一比加": {
     "path": "link_folder/原文/一比加.md",
     "type": "原文",
@@ -12057,19 +12057,6 @@
     "title": "以法蓮（使之昌盛）",
     "status": "formal",
     "aliases": []
-  },
-  "以琳（ trees ）": {
-    "path": "link_folder/原文/以琳（ trees ）.md",
-    "type": "原文",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "以琳（ trees ）",
-    "status": "formal",
-    "aliases": [
-      "Elim etymology",
-      "trees"
-    ]
   },
   "以色列": {
     "path": "link_folder/原文/以色列.md",
@@ -12966,19 +12953,6 @@
     "status": "formal",
     "aliases": []
   },
-  "書珥（ wall ）": {
-    "path": "link_folder/原文/書珥（ wall ）.md",
-    "type": "原文",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "書珥（ wall ）",
-    "status": "formal",
-    "aliases": [
-      "Shur etymology",
-      "wall"
-    ]
-  },
   "杏花杯球花（燈臺裝飾）": {
     "path": "link_folder/原文/杏花杯球花（燈臺裝飾）.md",
     "type": "原文",
@@ -13366,19 +13340,6 @@
     "aliases": [
       "列王紀下 7",
       "王下七章"
-    ]
-  },
-  "瑪拉（ bitterness ）": {
-    "path": "link_folder/原文/瑪拉（ bitterness ）.md",
-    "type": "原文",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "瑪拉（ bitterness ）",
-    "status": "formal",
-    "aliases": [
-      "Marah etymology",
-      "bitterness"
     ]
   },
   "瑪拿西（使之忘了）": {
@@ -16229,6 +16190,19 @@
     "aliases": [
       "奠祭",
       "澆奠"
+    ]
+  },
+  "女先知": {
+    "path": "link_folder/文化/女先知.md",
+    "type": "文化",
+    "secondary_types": [
+      "人物",
+      "背景"
+    ],
+    "title": "女先知",
+    "status": "formal",
+    "aliases": [
+      "女預言家"
     ]
   },
   "婚宴與剪羊毛風俗": {
@@ -21853,9 +21827,8 @@
     "title": "耶和華拉法",
     "status": "formal",
     "aliases": [
-      "Yahweh Rapha",
-      "耶和華是醫治者",
-      "Jehovah Rapha"
+      "Jehovah-Rapha",
+      "耶和華是醫治者"
     ]
   },
   "耶和華是事奉者的業與分": {
@@ -22769,19 +22742,6 @@
     "status": "formal",
     "aliases": []
   },
-  "以琳十二股水泉七十棵棕樹": {
-    "path": "link_folder/背景/以琳十二股水泉七十棵棕樹.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點",
-      "原文"
-    ],
-    "title": "以琳十二股水泉七十棵棕樹",
-    "status": "formal",
-    "aliases": [
-      "Twelve springs and seventy palm trees at Elim"
-    ]
-  },
   "伊甸園四河": {
     "path": "link_folder/背景/伊甸園四河.md",
     "type": "背景",
@@ -23383,19 +23343,6 @@
       "以色列審判制度"
     ]
   },
-  "書珥曠野三天無水": {
-    "path": "link_folder/背景/書珥曠野三天無水.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點",
-      "歷史"
-    ],
-    "title": "書珥曠野三天無水",
-    "status": "formal",
-    "aliases": [
-      "Three days without water in Shur"
-    ]
-  },
   "歌斐木": {
     "path": "link_folder/背景/歌斐木.md",
     "type": "背景",
@@ -23460,19 +23407,6 @@
     "title": "牧羊與牲畜繁殖",
     "status": "formal",
     "aliases": []
-  },
-  "瑪拉苦水": {
-    "path": "link_folder/背景/瑪拉苦水.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點",
-      "原文"
-    ],
-    "title": "瑪拉苦水",
-    "status": "formal",
-    "aliases": [
-      "Bitter waters of Marah"
-    ]
   },
   "空虛混沌的原意": {
     "path": "link_folder/背景/空虛混沌的原意.md",
@@ -24335,6 +24269,18 @@
     "status": "formal",
     "aliases": []
   },
+  "十二與七十是否有象徵意義": {
+    "path": "link_folder/解經爭議/十二與七十是否有象徵意義.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "十二與七十是否有象徵意義",
+    "status": "formal",
+    "aliases": [
+      "十二股水泉七十棵棕樹"
+    ]
+  },
   "司獄是否即護衛長": {
     "path": "link_folder/解經爭議/司獄是否即護衛長.md",
     "type": "解經爭議",
@@ -24606,6 +24552,19 @@
     "status": "formal",
     "aliases": [
       "摩洛身分之爭"
+    ]
+  },
+  "摩西之歌的分段與年代": {
+    "path": "link_folder/解經爭議/摩西之歌的分段與年代.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "摩西之歌的分段與年代",
+    "status": "formal",
+    "aliases": [
+      "海之歌的年代",
+      "摩西之歌的結構"
     ]
   },
   "摩西娶古實女子的解經爭議": {
@@ -26250,9 +26209,6 @@
   "離俗": {
     "alias_of": "離俗歸耶和華"
   },
-  "Elim oasis": {
-    "alias_of": "以琳綠洲"
-  },
   "Israel arrives at Sinai": {
     "alias_of": "以色列到達西乃山"
   },
@@ -27822,6 +27778,9 @@
   "他連得": {
     "alias_of": "一他連得精金（燈臺用金量）"
   },
+  "瑪拉的樹": {
+    "alias_of": "一棵樹"
+  },
   "beka": {
     "alias_of": "一比加"
   },
@@ -27866,12 +27825,6 @@
   },
   "ephod": {
     "alias_of": "以弗得"
-  },
-  "Elim etymology": {
-    "alias_of": "以琳（ trees ）"
-  },
-  "trees": {
-    "alias_of": "以琳（ trees ）"
   },
   "Israel": {
     "alias_of": "以色列"
@@ -28095,12 +28048,6 @@
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
-  "Shur etymology": {
-    "alias_of": "書珥（ wall ）"
-  },
-  "wall": {
-    "alias_of": "書珥（ wall ）"
-  },
   "杏花": {
     "alias_of": "杏花杯球花（燈臺裝飾）"
   },
@@ -28238,12 +28185,6 @@
   },
   "王下七章": {
     "alias_of": "王下7（Melakhim Bet 7）"
-  },
-  "Marah etymology": {
-    "alias_of": "瑪拉（ bitterness ）"
-  },
-  "bitterness": {
-    "alias_of": "瑪拉（ bitterness ）"
   },
   "Massah": {
     "alias_of": "瑪撒（ temptation ）"
@@ -28997,6 +28938,9 @@
   },
   "澆奠": {
     "alias_of": "奠酒"
+  },
+  "女預言家": {
+    "alias_of": "女先知"
   },
   "客西達 (錢幣單位)": {
     "alias_of": "客西達錢幣單位"
@@ -30432,13 +30376,10 @@
   "耶和華名的宣告": {
     "alias_of": "耶和華我是"
   },
-  "Yahweh Rapha": {
+  "Jehovah-Rapha": {
     "alias_of": "耶和華拉法"
   },
   "耶和華是醫治者": {
-    "alias_of": "耶和華拉法"
-  },
-  "Jehovah Rapha": {
     "alias_of": "耶和華拉法"
   },
   "Yahweh is my strength and my song and my salvation": {
@@ -30729,9 +30670,6 @@
   "五旬節與西乃": {
     "alias_of": "五旬節與律法頒布"
   },
-  "Twelve springs and seventy palm trees at Elim": {
-    "alias_of": "以琳十二股水泉七十棵棕樹"
-  },
   "伊甸四河": {
     "alias_of": "伊甸園四河"
   },
@@ -30843,9 +30781,6 @@
   "以色列審判制度": {
     "alias_of": "曠野審判制度"
   },
-  "Three days without water in Shur": {
-    "alias_of": "書珥曠野三天無水"
-  },
   "Geography of Wilderness of Sin": {
     "alias_of": "汛的曠野地理"
   },
@@ -30860,9 +30795,6 @@
   },
   "地容不下牧群": {
     "alias_of": "牧人水草與土地承載"
-  },
-  "Bitter waters of Marah": {
-    "alias_of": "瑪拉苦水"
   },
   "節期獻祭條例": {
     "alias_of": "節期祭物詳情另見民數記28-29章"
@@ -31023,6 +30955,9 @@
   "創世記2章動物創造次序問題": {
     "alias_of": "創世記2章19節創造次序問題"
   },
+  "十二股水泉七十棵棕樹": {
+    "alias_of": "十二與七十是否有象徵意義"
+  },
   "含看見挪亞赤身": {
     "alias_of": "含看見父親赤身的含義"
   },
@@ -31112,6 +31047,12 @@
   },
   "摩洛身分之爭": {
     "alias_of": "摩洛（Molech）身分之爭"
+  },
+  "海之歌的年代": {
+    "alias_of": "摩西之歌的分段與年代"
+  },
+  "摩西之歌的結構": {
+    "alias_of": "摩西之歌的分段與年代"
   },
   "摩西殺埃及人": {
     "alias_of": "摩西殺死埃及人的解經問題"
