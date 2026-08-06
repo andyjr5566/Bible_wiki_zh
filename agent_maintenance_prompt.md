@@ -115,6 +115,9 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 `rename_markdown`。`run_chapter` 這個 MCP 名稱固定走 `run_chapter_manual.py run`，不會呼叫模型版
 `run_chapter.py`；需要寫入的工具仍依 MCP 回傳的確認要求執行。
 
+大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
+tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之外的另一層設定。
+
 維護 M3／M6 時，MCP 路徑和本檔的人工模式相同：手寫 yaml 後呼叫
 `check_manual_payloads`（唯讀，不會改寫 alias）→ `render_manual_chapter`；改
 `entry_content` 且 chapter_content 已同步時才設 `keep_chapter=true`。候選變動前先呼叫

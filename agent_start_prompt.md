@@ -18,6 +18,9 @@
 `run_chapter_manual.py`；MCP 不會呼叫模型版 `run_chapter.py`。改名使用 `rename_markdown`
 （預設 dry-run；正式執行必須明確確認）。
 
+大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
+tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之外的另一層設定。
+
 **經 MCP 處理 M3／M6 時，一律走零 API 的人工模式**：
 `prepare_manual_payload_prompts` → 手寫 M3 `entry_content/*.yaml` → 再 prepare 取得更新的
 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →

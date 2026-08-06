@@ -1173,7 +1173,11 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
     }
 
 
-def _run_gate(script: str, *args: str, timeout: int = 300) -> Dict[str, Any]:
+_MIN_GATE_TIMEOUT_SECONDS = 600
+_MAX_GATE_TIMEOUT_SECONDS = 900
+
+
+def _run_gate(script: str, *args: str, timeout: int = _MAX_GATE_TIMEOUT_SECONDS) -> Dict[str, Any]:
     cmd = [sys.executable, str(UTIL_DIR / script), *args]
     try:
         proc = subprocess.run(
@@ -1194,7 +1198,12 @@ def _run_gate(script: str, *args: str, timeout: int = 300) -> Dict[str, Any]:
 
 
 @mcp.tool()
-def run_gates(book: str, chapter: Optional[int] = None, rebuild_index: bool = False) -> Dict[str, Any]:
+def run_gates(
+    book: str,
+    chapter: Optional[int] = None,
+    rebuild_index: bool = False,
+    timeout_seconds: int = _MAX_GATE_TIMEOUT_SECONDS,
+) -> Dict[str, Any]:
     """Run the repository's closing gates and report each verdict separately.
 
     Covers ``validate_knowledge_base``, ``verify_links``, ``check_accumulation_orphans``
@@ -1203,32 +1212,45 @@ def run_gates(book: str, chapter: Optional[int] = None, rebuild_index: bool = Fa
     first, which is required after adding, renaming or deleting entries because a
     stale index makes the orphan check report false failures.  Passing gates prove
     structure only; content faithfulness still needs a source-by-source review.
+
+    ``timeout_seconds`` applies to each child gate and must be 600–900 seconds.
+    The MCP client should give the whole tool call a matching 600000–900000 ms
+    timeout; that outer timeout is controlled by the caller, not this server.
     """
     try:
         canonical = _canonical_book(book)
     except ValueError as exc:
         return _error(str(exc))
+    if isinstance(timeout_seconds, bool):
+        return _error("timeout_seconds 必須是 600–900 之間的秒數")
+    try:
+        gate_timeout = int(timeout_seconds)
+    except (TypeError, ValueError):
+        return _error("timeout_seconds 必須是 600–900 之間的秒數")
+    if not _MIN_GATE_TIMEOUT_SECONDS <= gate_timeout <= _MAX_GATE_TIMEOUT_SECONDS:
+        return _error("timeout_seconds 必須是 600–900 之間的秒數")
 
     results: List[Dict[str, Any]] = []
     if rebuild_index:
-        results.append(_run_gate("build_link_index.py"))
-        results.append(_run_gate("build_embedding_index.py"))
-    results.append(_run_gate("validate_knowledge_base.py"))
-    results.append(_run_gate("verify_links.py", canonical))
+        results.append(_run_gate("build_link_index.py", timeout=gate_timeout))
+        results.append(_run_gate("build_embedding_index.py", timeout=gate_timeout))
+    results.append(_run_gate("validate_knowledge_base.py", timeout=gate_timeout))
+    results.append(_run_gate("verify_links.py", canonical, timeout=gate_timeout))
     if chapter is not None:
         try:
             _canonical, directory, _tmp = _chapter_context(canonical, chapter)
         except ValueError as exc:
             return _error(str(exc))
         chapter_md = f"{directory.name}/第{chapter}章.md"
-        results.append(_run_gate("check_existing_links.py", chapter_md, "--missing"))
-    results.append(_run_gate("check_accumulation_orphans.py", canonical))
+        results.append(_run_gate("check_existing_links.py", chapter_md, "--missing", timeout=gate_timeout))
+    results.append(_run_gate("check_accumulation_orphans.py", canonical, timeout=gate_timeout))
 
     failed = [item["gate"] for item in results if not item["passed"]]
     return {
         "success": not failed,
         "book": canonical,
         "chapter": chapter,
+        "timeout_seconds": gate_timeout,
         "passed": not failed,
         "failed_gates": failed,
         "results": results,
@@ -1254,7 +1276,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
-8. 收尾可用 `run_gates(book, chapter, rebuild_index=True)` 作核心機械閘門；它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
+8. 收尾可用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 作核心機械閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
 """
 
 
@@ -1271,7 +1293,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。
 - 渲染後可跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支以**整個** raw_data 語料補掃。報出＝查無任何本地來源的強力刪除線索；未報出**不**證明它在本章／該條目實際累積來源出現，仍要按 manifest 與累積章節核對。
-- 收尾用 `run_gates(book, chapter, rebuild_index=True)` 一次跑完索引重建與四道閘門。**閘門全綠不是完工判準，只是可以開始檢查內容的前提**——工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓任何閘門變色；一章若 `link_folder/` 改動數為 0，回報要明寫「本章 N 個條目全部讀過、無錯可改」。
+- 收尾用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 一次跑完索引重建與四道閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。**閘門全綠不是完工判準，只是可以開始檢查內容的前提**——工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓任何閘門變色；一章若 `link_folder/` 改動數為 0，回報要明寫「本章 N 個條目全部讀過、無錯可改」。
 - 此 MCP 不授權跳過 `agent_maintenance_prompt.md` 的內容勘誤、link index／embedding 同步、驗證與稽核。
 """
 

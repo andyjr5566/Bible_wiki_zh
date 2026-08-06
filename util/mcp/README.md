@@ -15,7 +15,7 @@
 | `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源。 | 否 |
 | `lint_chapter_content` | 對**傳入文字**做 M6／M3 格式檢查，不讀任何路徑。 | 否 |
 | `scan_unsourced_tokens` | 以全庫 raw_data 補掃該章節點條目與渲染 md 的希伯來字母／拉丁音譯／簡體字。 | 否 |
-| `run_gates` | 跑核心收尾閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL。 | 是，`verify_links` 會更新報告；rebuild 時另更新索引 |
+| `run_gates` | 跑核心收尾閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL；每個 gate 可用 `timeout_seconds=600..900`。 | 是，`verify_links` 會更新報告；rebuild 時另更新索引 |
 | `prepare_manual_payload_prompts` | 執行 `run_chapter_manual.py prompts` 產出手寫 M3/M6 prompt。 | 是，可能在確認後作廢過期 payload |
 | `check_manual_payloads` | 執行 `run_chapter_manual.py check --no-rewrite`；缺 M3/M6 payload 會明確判為 incomplete。 | 否 |
 | `render_manual_chapter` | 驗證通過後執行 `run_chapter_manual.py run`。 | 是，render／產生 verse links |
@@ -103,6 +103,7 @@ entry_content，護欄一次都沒驗過。
 - 不接受絕對路徑或 `..`；不能藉工具讀取 workspace 外的內容。
 - `read_wiki_entry` 不接受任意 repo 檔案；`.tmp` 只能經 `read_chapter_artifact` 的白名單讀取。
 - stdio transport 的 stdout 保留給 MCP JSON-RPC。底層 CLI 的文字輸出會被捕捉並結構化回傳，不能直接污染 protocol。
+- 大型 corpus 執行 `run_gates` 時，MCP client 的整體 tool-call timeout 也要設為 `600000–900000` ms；這和 server 內部每個 gate 的 `timeout_seconds=600..900` 是兩層不同設定。
 
 ## 設定
 
