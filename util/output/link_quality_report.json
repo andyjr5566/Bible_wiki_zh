@@ -1,7 +1,7 @@
 {
-  "total_warnings": 84,
+  "total_warnings": 85,
   "critical_count": 0,
-  "warning_count": 84,
+  "warning_count": 85,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -37,6 +37,13 @@
       "source": "出埃及記/第16章.md",
       "target": "鵪鶉",
       "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第18章.md",
+      "target": "革舜",
+      "message": "同一 alias「革舜」指向多個 target: 革舜名字的由來, 革舜（摩西之子）"
     },
     {
       "type": "alias_target_conflict",

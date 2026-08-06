@@ -85,46 +85,6 @@ A_use_directly:
   match_type: exact
   existing_title: 西坡拉
   existing_path: link_folder/人物/西坡拉.md
-- name: 革舜
-  suggested_type: 人物
-  evidence: 3節；長子；名義「我在外邦作了寄居的」
-  surfaces:
-  - phrase: 革舜
-    verses:
-    - 3
-  match_type: exact
-  existing_title: 革舜
-  existing_path: link_folder/人物/革舜.md
-- name: 革舜（ sojourner ）
-  suggested_type: 原文
-  evidence: 3節；CT 指此名有兩種相反的意思：孤獨恥辱感，或對埃及不再有眷戀
-  surfaces:
-  - phrase: 我在外邦作了寄居的
-    verses:
-    - 3
-  match_type: exact
-  existing_title: 革舜（ sojourner ）
-  existing_path: link_folder/原文/革舜（ sojourner ）.md
-- name: 以利以謝
-  suggested_type: 人物
-  evidence: 4節；次子；《丁道爾》指他在五經中僅此一次出現
-  surfaces:
-  - phrase: 以利以謝
-    verses:
-    - 4
-  match_type: exact
-  existing_title: 以利以謝
-  existing_path: link_folder/人物/以利以謝.md
-- name: 以利以謝（ God is help ）
-  suggested_type: 原文
-  evidence: 4節；由希伯來文兩字複合：「以利」我的神＋「以謝」我的幫助
-  surfaces:
-  - phrase: 我父親的神幫助了我
-    verses:
-    - 4
-  match_type: exact
-  existing_title: 以利以謝（ God is help ）
-  existing_path: link_folder/原文/以利以謝（ God is help ）.md
 - name: 法老
   suggested_type: 人物
   evidence: 4、8、10節；「救我脫離法老的刀」——指摩西四十歲時從埃及逃往米甸的事（2:15）
@@ -170,26 +130,6 @@ A_use_directly:
   match_type: exact
   existing_title: 神的拯救
   existing_path: link_folder/神學/神的拯救.md
-- name: 稱頌耶和華
-  suggested_type: 神學
-  evidence: 10節；「耶和華是應當稱頌的」——非以色列人作出的信仰宣告
-  surfaces:
-  - phrase: 稱頌
-    verses:
-    - 10
-  match_type: exact
-  existing_title: 稱頌耶和華
-  existing_path: link_folder/神學/稱頌耶和華.md
-- name: 獻祭敬拜
-  suggested_type: 神學
-  evidence: 12節；葉忒羅把燔祭和平安祭獻給神
-  surfaces:
-  - phrase: 燔祭和平安祭
-    verses:
-    - 12
-  match_type: exact
-  existing_title: 獻祭敬拜
-  existing_path: link_folder/神學/獻祭敬拜.md
 - name: 亞倫
   suggested_type: 人物
   evidence: 12節；與以色列的眾長老都來了，與摩西的岳父在神面前吃飯
@@ -206,21 +146,6 @@ A_use_directly:
   match_type: exact
   existing_title: 以色列的眾長老
   existing_path: link_folder/人物/以色列的眾長老.md
-- name: 審判與治理
-  suggested_type: 神學
-  evidence: 13、16、22、26節；摩西坐著審判百姓；《丁道爾》指「坐」與「站」是閃族律法術語，分別指「法官」和「當事人」
-  surfaces:
-  - phrase: 審判
-    verses:
-    - 13
-    - 22
-    - 26
-  - phrase: 施行審判
-    verses:
-    - 16
-  match_type: exact
-  existing_title: 審判與治理
-  existing_path: link_folder/神學/審判與治理.md
 - name: 曠野審判制度
   suggested_type: 背景
   evidence: 13節；《舊約背景註釋》指審判官的座位是權柄的所在，通常設置在城門口
@@ -231,19 +156,6 @@ A_use_directly:
   match_type: exact
   existing_title: 曠野審判制度
   existing_path: link_folder/背景/曠野審判制度.md
-- name: 分層授權
-  suggested_type: 神學
-  evidence: 18、22節；「這事太重，你獨自一人辦理不了」；「他們也可以同當此任」
-  surfaces:
-  - phrase: 你獨自一人辦理不了
-    verses:
-    - 18
-  - phrase: 他們也可以同當此任
-    verses:
-    - 22
-  match_type: exact
-  existing_title: 分層授權
-  existing_path: link_folder/神學/分層授權.md
 - name: 敬畏神、誠實、恨不義之財
   suggested_type: 神學
   evidence: 21節；揀選官員的資格；《丁道爾》指注重的是道德上而非智力上的條件
@@ -273,12 +185,20 @@ A_use_directly:
 - name: 葉忒羅獻祭
   suggested_type: 事件
   evidence: 12節；亞倫和以色列的眾長老與摩西的岳父在神面前吃飯——《舊約背景註釋》指祭筵可使協議正式化
+  surfaces:
+  - phrase: 燔祭和平安祭
+    verses:
+    - 12
   match_type: exact
   existing_title: 葉忒羅獻祭
   existing_path: link_folder/事件/葉忒羅獻祭.md
 - name: 摩西審判百姓
   suggested_type: 事件
   evidence: 13-16節；百姓來求問神；摩西在兩造之間施行審判，又叫他們知道神的律例和法度
+  surfaces:
+  - phrase: 施行審判
+    verses:
+    - 16
   match_type: exact
   existing_title: 摩西審判百姓
   existing_path: link_folder/事件/摩西審判百姓.md
@@ -300,30 +220,12 @@ A_use_directly:
   match_type: exact
   existing_title: 西乃山
   existing_path: link_folder/地點/西乃山.md
-- name: 何烈山
-  suggested_type: 地點
-  evidence: 5節；神的山又稱何烈山（3:1）；何烈山脈可能一直延伸到利非訂
-  match_type: exact
-  existing_title: 何烈山
-  existing_path: link_folder/地點/何烈山.md
 - name: 米甸地
   suggested_type: 地點
   evidence: 27節；葉忒羅的本地
   match_type: exact
   existing_title: 米甸地
   existing_path: link_folder/地點/米甸地.md
-- name: 葉忒羅（ his abundance ）
-  suggested_type: 原文
-  evidence: 1節；原文字義「他的富裕」；CT 指這可能是他擔任祭司時的職稱，流珥才是本名
-  match_type: exact
-  existing_title: 葉忒羅（ his abundance ）
-  existing_path: link_folder/原文/葉忒羅（ his abundance ）.md
-- name: 西坡拉（ bird ）
-  suggested_type: 原文
-  evidence: 2節；原文字義「鳥兒」
-  match_type: exact
-  existing_title: 西坡拉（ bird ）
-  existing_path: link_folder/原文/西坡拉（ bird ）.md
 - name: 來7：1-3 麥基洗德
   suggested_type: 互文
   evidence: 1、12節；CT 以無族譜的麥基洗德為至高神的祭司，說明葉忒羅可能是事奉真神的
@@ -342,12 +244,6 @@ A_use_directly:
   match_type: exact
   existing_title: 提前3：1-7 監督資格
   existing_path: link_folder/互文/提前3：1-7 監督資格.md
-- name: 多1：5-9 長老資格
-  suggested_type: 互文
-  evidence: 21節；長老的資格與葉忒羅所提四項條件相符
-  match_type: exact
-  existing_title: 多1：5-9 長老資格
-  existing_path: link_folder/互文/多1：5-9 長老資格.md
 - name: 彼前5：1-4 牧養群羊
   suggested_type: 互文
   evidence: 21節；KC 指這些資格可應用於教會牧者的事奉
@@ -360,7 +256,79 @@ A_use_directly:
   match_type: exact
   existing_title: 林前12：18 肢體安排
   existing_path: link_folder/互文/林前12：18 肢體安排.md
-B_needs_update: []
-C_new_formal: []
+- name: 以利以謝（摩西之子）
+  suggested_type: 人物
+  evidence: 4節；次子；《中文聖經註釋》拆解「以利」＋「以謝」＝「我的神是我的幫助」；《丁道爾》指他在五經中僅此一次出現
+  surfaces:
+  - phrase: 以利以謝
+    verses:
+    - 4
+  - phrase: 我父親的神幫助了我
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 以利以謝（摩西之子）
+  existing_path: link_folder/人物/以利以謝（摩西之子）.md
+B_needs_update:
+- name: 革舜（摩西之子）
+  suggested_type: 人物
+  evidence: 3節；長子；摩西說「我在外邦作了寄居的」——CT 指此名有兩種相反的意思
+  surfaces:
+  - phrase: 革舜
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 革舜（摩西之子）
+  existing_path: link_folder/人物/革舜（摩西之子）.md
+- name: 革舜名字的由來
+  suggested_type: 原文
+  evidence: 3節；CT 兩讀並列（在米甸寄居的孤獨恥辱／對埃及不再眷戀）；BH 指字根 ger 意為「外人」或「寄居者」
+  surfaces:
+  - phrase: 我在外邦作了寄居的
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 革舜名字的由來
+  existing_path: link_folder/原文/革舜名字的由來.md
+- name: 流珥葉忒羅與何巴的稱謂關係
+  suggested_type: 解經爭議
+  evidence: 1、27節；CT 列三名的分屬（流珥本名／葉忒羅職稱／何巴內兄），並從v27與民10:29-32推論葉忒羅與何巴並非同一人
+  match_type: exact
+  existing_title: 流珥葉忒羅與何巴的稱謂關係
+  existing_path: link_folder/解經爭議/流珥葉忒羅與何巴的稱謂關係.md
+C_new_formal:
+- name: 葉忒羅的建議是不是出於神
+  suggested_type: 解經爭議
+  evidence: 19、23-24節；CT〔靈意註解〕判為「肉體的辦法」，KC 指經文只說摩西照岳父的話行、沒有神的吩咐，《中文聖經註釋》卻以「神也這樣吩咐你」為歷史真實的證據
+  target_path: link_folder/解經爭議/葉忒羅的建議是不是出於神.md
+  semantic_hint:
+  - title: 葉忒羅建議分層治理
+    score: 0.449
+    type: 事件
+  - title: 葉忒羅
+    score: 0.403
+    type: 人物
+- name: 出18：12 的筵席是立約還是感恩
+  suggested_type: 解經爭議
+  evidence: 12節；《中文聖經註釋》主張是兩族立約、《啟導本》主張可能簽訂友好條約、《舊約背景註釋》主張「本段比較合乎」感謝祭
+  target_path: link_folder/解經爭議/出18：12 的筵席是立約還是感恩.md
+  semantic_hint:
+  - title: 立約儀式
+    score: 0.516
+    type: 事件
+  - title: 獻祭敬拜
+    score: 0.512
+    type: 神學
+  - title: 立約
+    score: 0.504
+    type: 主題
+- name: 基尼說與摩西信仰的來源
+  suggested_type: 解經爭議
+  evidence: 12節；《丁道爾》介紹「米甸說／基尼說」——摩西的神名與敬拜方式學自米甸遠親——並與《中文聖經註釋》一同反駁
+  target_path: link_folder/解經爭議/基尼說與摩西信仰的來源.md
+  semantic_hint:
+  - title: 基尼人
+    score: 0.552
+    type: 人物
 D_new_candidate: []
 E_skip: []

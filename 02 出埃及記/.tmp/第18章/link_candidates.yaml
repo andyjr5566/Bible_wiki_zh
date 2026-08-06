@@ -34,26 +34,6 @@ candidates:
     evidence: 2-3節；摩西從前打發回去的妻子；《丁道爾》指「打發」在後期希伯來文有「離婚」之意，但此處不然
     surfaces:
       - {phrase: 西坡拉, verses: [2, 3]}
-  - name: 革舜
-    type: 人物
-    evidence: 3節；長子；名義「我在外邦作了寄居的」
-    surfaces:
-      - {phrase: 革舜, verses: [3]}
-  - name: 革舜（ sojourner ）
-    type: 原文
-    evidence: 3節；CT 指此名有兩種相反的意思：孤獨恥辱感，或對埃及不再有眷戀
-    surfaces:
-      - {phrase: 我在外邦作了寄居的, verses: [3]}
-  - name: 以利以謝
-    type: 人物
-    evidence: 4節；次子；《丁道爾》指他在五經中僅此一次出現
-    surfaces:
-      - {phrase: 以利以謝, verses: [4]}
-  - name: 以利以謝（ God is help ）
-    type: 原文
-    evidence: 4節；由希伯來文兩字複合：「以利」我的神＋「以謝」我的幫助
-    surfaces:
-      - {phrase: 我父親的神幫助了我, verses: [4]}
   - name: 法老
     type: 人物
     evidence: 4、8、10節；「救我脫離法老的刀」——指摩西四十歲時從埃及逃往米甸的事（2:15）
@@ -75,16 +55,6 @@ candidates:
     surfaces:
       - {phrase: 搭救, verses: [8]}
       - {phrase: 拯救, verses: [9]}
-  - name: 稱頌耶和華
-    type: 神學
-    evidence: 10節；「耶和華是應當稱頌的」——非以色列人作出的信仰宣告
-    surfaces:
-      - {phrase: 稱頌, verses: [10]}
-  - name: 獻祭敬拜
-    type: 神學
-    evidence: 12節；葉忒羅把燔祭和平安祭獻給神
-    surfaces:
-      - {phrase: 燔祭和平安祭, verses: [12]}
   - name: 亞倫
     type: 人物
     evidence: 12節；與以色列的眾長老都來了，與摩西的岳父在神面前吃飯
@@ -93,23 +63,11 @@ candidates:
     evidence: 12節；《中文聖經註釋》指他們在此可能作為以色列方面的立約代表
     surfaces:
       - {phrase: 以色列的眾長老, verses: [12]}
-  - name: 審判與治理
-    type: 神學
-    evidence: 13、16、22、26節；摩西坐著審判百姓；《丁道爾》指「坐」與「站」是閃族律法術語，分別指「法官」和「當事人」
-    surfaces:
-      - {phrase: 審判, verses: [13, 22, 26]}
-      - {phrase: 施行審判, verses: [16]}
   - name: 曠野審判制度
     type: 背景
     evidence: 13節；《舊約背景註釋》指審判官的座位是權柄的所在，通常設置在城門口
     surfaces:
       - {phrase: 百姓從早到晚都站在摩西的左右, verses: [13]}
-  - name: 分層授權
-    type: 神學
-    evidence: 18、22節；「這事太重，你獨自一人辦理不了」；「他們也可以同當此任」
-    surfaces:
-      - {phrase: 你獨自一人辦理不了, verses: [18]}
-      - {phrase: 他們也可以同當此任, verses: [22]}
   - name: 敬畏神、誠實、恨不義之財
     type: 神學
     evidence: 21節；揀選官員的資格；《丁道爾》指注重的是道德上而非智力上的條件
@@ -126,9 +84,13 @@ candidates:
   - name: 葉忒羅獻祭
     type: 事件
     evidence: 12節；亞倫和以色列的眾長老與摩西的岳父在神面前吃飯——《舊約背景註釋》指祭筵可使協議正式化
+    surfaces:
+      - {phrase: 燔祭和平安祭, verses: [12]}
   - name: 摩西審判百姓
     type: 事件
     evidence: 13-16節；百姓來求問神；摩西在兩造之間施行審判，又叫他們知道神的律例和法度
+    surfaces:
+      - {phrase: 施行審判, verses: [16]}
   - name: 葉忒羅建議分層治理
     type: 事件
     evidence: 17-23節；「你這做的不好」——葉忒羅提出四方面建議
@@ -138,18 +100,9 @@ candidates:
   - name: 西乃山
     type: 地點
     evidence: 5節；神的山即西乃山，神在山頂上召見摩西（19:20）
-  - name: 何烈山
-    type: 地點
-    evidence: 5節；神的山又稱何烈山（3:1）；何烈山脈可能一直延伸到利非訂
   - name: 米甸地
     type: 地點
     evidence: 27節；葉忒羅的本地
-  - name: 葉忒羅（ his abundance ）
-    type: 原文
-    evidence: 1節；原文字義「他的富裕」；CT 指這可能是他擔任祭司時的職稱，流珥才是本名
-  - name: 西坡拉（ bird ）
-    type: 原文
-    evidence: 2節；原文字義「鳥兒」
   - name: 來7：1-3 麥基洗德
     type: 互文
     evidence: 1、12節；CT 以無族譜的麥基洗德為至高神的祭司，說明葉忒羅可能是事奉真神的
@@ -159,12 +112,37 @@ candidates:
   - name: 提前3：1-7 監督資格
     type: 互文
     evidence: 21節；《丁道爾》指新約對參與事奉之基督徒的要求大同小異
-  - name: 多1：5-9 長老資格
-    type: 互文
-    evidence: 21節；長老的資格與葉忒羅所提四項條件相符
   - name: 彼前5：1-4 牧養群羊
     type: 互文
     evidence: 21節；KC 指這些資格可應用於教會牧者的事奉
   - name: 林前12：18 肢體安排
     type: 互文
     evidence: 18、22節；KC 引「神隨自己的意思把肢體俱各安排在身上」
+  - name: 革舜（摩西之子）
+    type: 人物
+    evidence: 3節；長子；摩西說「我在外邦作了寄居的」——CT 指此名有兩種相反的意思
+    surfaces:
+      - {phrase: 革舜, verses: [3]}
+  - name: 革舜名字的由來
+    type: 原文
+    evidence: 3節；CT 兩讀並列（在米甸寄居的孤獨恥辱／對埃及不再眷戀）；BH 指字根 ger 意為「外人」或「寄居者」
+    surfaces:
+      - {phrase: 我在外邦作了寄居的, verses: [3]}
+  - name: 以利以謝（摩西之子）
+    type: 人物
+    evidence: 4節；次子；《中文聖經註釋》拆解「以利」＋「以謝」＝「我的神是我的幫助」；《丁道爾》指他在五經中僅此一次出現
+    surfaces:
+      - {phrase: 以利以謝, verses: [4]}
+      - {phrase: 我父親的神幫助了我, verses: [4]}
+  - name: 流珥葉忒羅與何巴的稱謂關係
+    type: 解經爭議
+    evidence: 1、27節；CT 列三名的分屬（流珥本名／葉忒羅職稱／何巴內兄），並從v27與民10:29-32推論葉忒羅與何巴並非同一人
+  - name: 葉忒羅的建議是不是出於神
+    type: 解經爭議
+    evidence: 19、23-24節；CT〔靈意註解〕判為「肉體的辦法」，KC 指經文只說摩西照岳父的話行、沒有神的吩咐，《中文聖經註釋》卻以「神也這樣吩咐你」為歷史真實的證據
+  - name: 出18：12 的筵席是立約還是感恩
+    type: 解經爭議
+    evidence: 12節；《中文聖經註釋》主張是兩族立約、《啟導本》主張可能簽訂友好條約、《舊約背景註釋》主張「本段比較合乎」感謝祭
+  - name: 基尼說與摩西信仰的來源
+    type: 解經爭議
+    evidence: 12節；《丁道爾》介紹「米甸說／基尼說」——摩西的神名與敬拜方式學自米甸遠親——並與《中文聖經註釋》一同反駁

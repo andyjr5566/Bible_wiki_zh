@@ -3359,7 +3359,8 @@
     "status": "formal",
     "aliases": [
       "Moses judging the people",
-      "摩西獨自審判"
+      "摩西獨自審判",
+      "審判與治理"
     ]
   },
   "摩西就近幽暗": {
@@ -3430,15 +3431,12 @@
     "path": "link_folder/事件/摩西立首領.md",
     "type": "事件",
     "secondary_types": [
-      "歷史",
-      "神學"
+      "歷史"
     ],
     "title": "摩西立首領",
     "status": "formal",
     "aliases": [
-      "Moses appoints leaders",
-      "摩西設立首領",
-      "揀選千夫長百夫長"
+      "Moses appoints leaders"
     ]
   },
   "摩西舉手得勝": {
@@ -3724,8 +3722,8 @@
     "title": "葉忒羅來訪",
     "status": "formal",
     "aliases": [
-      "Jethro's visit",
-      "葉忒羅探訪摩西"
+      "Jethro visits Moses",
+      "葉忒羅探望摩西"
     ]
   },
   "葉忒羅建議分層治理": {
@@ -3740,21 +3738,22 @@
     "aliases": [
       "Jethro's counsel",
       "葉忒羅的建議",
-      "分層負責建議"
+      "分層負責建議",
+      "分層授權"
     ]
   },
   "葉忒羅獻祭": {
     "path": "link_folder/事件/葉忒羅獻祭.md",
     "type": "事件",
     "secondary_types": [
-      "神學",
-      "歷史"
+      "神學"
     ],
     "title": "葉忒羅獻祭",
     "status": "formal",
     "aliases": [
       "Jethro's sacrifice",
-      "葉忒羅獻祭與團契"
+      "稱頌耶和華",
+      "獻祭敬拜"
     ]
   },
   "葉忒羅返回本地": {
@@ -3766,8 +3765,7 @@
     "title": "葉忒羅返回本地",
     "status": "formal",
     "aliases": [
-      "Jethro returns home",
-      "葉忒羅離去"
+      "Jethro returns home"
     ]
   },
   "行軍次序": {
@@ -5684,18 +5682,6 @@
     "title": "士2：14",
     "status": "formal",
     "aliases": []
-  },
-  "多1：5-9 長老資格": {
-    "path": "link_folder/互文/多1：5-9 長老資格.md",
-    "type": "互文",
-    "secondary_types": [
-      "神學"
-    ],
-    "title": "多1：5-9 長老資格",
-    "status": "formal",
-    "aliases": [
-      "Titus 1:5-9 Elder qualifications"
-    ]
   },
   "大祭司基督（來4：14-15）": {
     "path": "link_folder/互文/大祭司基督（來4：14-15）.md",
@@ -9991,6 +9977,18 @@
     "status": "formal",
     "aliases": []
   },
+  "以利以謝（摩西之子）": {
+    "path": "link_folder/人物/以利以謝（摩西之子）.md",
+    "type": "人物",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "以利以謝（摩西之子）",
+    "status": "formal",
+    "aliases": [
+      "Eliezer"
+    ]
+  },
   "以利法": {
     "path": "link_folder/人物/以利法.md",
     "type": "人物",
@@ -11574,16 +11572,6 @@
       "非尼哈 (亞倫孫)"
     ]
   },
-  "革舜": {
-    "path": "link_folder/人物/革舜.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "革舜",
-    "status": "formal",
-    "aliases": [
-      "Gershom"
-    ]
-  },
   "革舜（摩西之子）": {
     "path": "link_folder/人物/革舜（摩西之子）.md",
     "type": "人物",
@@ -12008,16 +11996,6 @@
     "title": "亞西納（屬內特女神）",
     "status": "formal",
     "aliases": []
-  },
-  "以利以謝（ God is help ）": {
-    "path": "link_folder/原文/以利以謝（ God is help ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "以利以謝（ God is help ）",
-    "status": "formal",
-    "aliases": [
-      "Eliezer etymology"
-    ]
   },
   "以弗得": {
     "path": "link_folder/原文/以弗得.md",
@@ -13745,16 +13723,6 @@
       "bitter herbs"
     ]
   },
-  "葉忒羅（ his abundance ）": {
-    "path": "link_folder/原文/葉忒羅（ his abundance ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "葉忒羅（ his abundance ）",
-    "status": "formal",
-    "aliases": [
-      "Jethro etymology"
-    ]
-  },
   "蒲草箱與方舟同字": {
     "path": "link_folder/原文/蒲草箱與方舟同字.md",
     "type": "原文",
@@ -13803,16 +13771,6 @@
     "status": "formal",
     "aliases": [
       "Sinai etymology"
-    ]
-  },
-  "西坡拉（ bird ）": {
-    "path": "link_folder/原文/西坡拉（ bird ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "西坡拉（ bird ）",
-    "status": "formal",
-    "aliases": [
-      "Zipporah etymology"
     ]
   },
   "西提拿（為敵）": {
@@ -14233,16 +14191,6 @@
     "status": "formal",
     "aliases": [
       "革舜名字含義"
-    ]
-  },
-  "革舜（ sojourner ）": {
-    "path": "link_folder/原文/革舜（ sojourner ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "革舜（ sojourner ）",
-    "status": "formal",
-    "aliases": [
-      "Gershom etymology"
     ]
   },
   "風與靈同字": {
@@ -18692,16 +18640,6 @@
       "分別出來"
     ]
   },
-  "分層授權": {
-    "path": "link_folder/神學/分層授權.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "分層授權",
-    "status": "formal",
-    "aliases": [
-      "Delegation of authority"
-    ]
-  },
   "初熟果子": {
     "path": "link_folder/神學/初熟果子.md",
     "type": "神學",
@@ -19426,16 +19364,6 @@
     "status": "formal",
     "aliases": []
   },
-  "審判與治理": {
-    "path": "link_folder/神學/審判與治理.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "審判與治理",
-    "status": "formal",
-    "aliases": [
-      "Judgment and governance"
-    ]
-  },
   "寬以律己嚴以待人": {
     "path": "link_folder/神學/寬以律己嚴以待人.md",
     "type": "神學",
@@ -20070,9 +19998,7 @@
     "title": "敬畏神、誠實、恨不義之財",
     "status": "formal",
     "aliases": [
-      "Fear God",
-      "truth",
-      "hate dishonest gain"
+      "領袖的四項資格"
     ]
   },
   "敬畏耶和華的話": {
@@ -20603,16 +20529,6 @@
     "title": "猶大的認罪與悔改",
     "status": "formal",
     "aliases": []
-  },
-  "獻祭敬拜": {
-    "path": "link_folder/神學/獻祭敬拜.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "獻祭敬拜",
-    "status": "formal",
-    "aliases": [
-      "Sacrifice and worship"
-    ]
   },
   "玷污耶和華的聖所與帳幕": {
     "path": "link_folder/神學/玷污耶和華的聖所與帳幕.md",
@@ -21470,16 +21386,6 @@
       "種與收",
       "收割惡果",
       "人種的是什麼收的也是什麼"
-    ]
-  },
-  "稱頌耶和華": {
-    "path": "link_folder/神學/稱頌耶和華.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "稱頌耶和華",
-    "status": "formal",
-    "aliases": [
-      "Bless the LORD"
     ]
   },
   "立約之血": {
@@ -22929,14 +22835,12 @@
     "path": "link_folder/背景/古代近東岳父禮儀.md",
     "type": "背景",
     "secondary_types": [
-      "文化",
-      "歷史"
+      "文化"
     ],
     "title": "古代近東岳父禮儀",
     "status": "formal",
     "aliases": [
-      "古代近東岳父與女婿關係",
-      "岳父接待禮儀"
+      "古代近東見面禮"
     ]
   },
   "古代近東扣留以求福": {
@@ -23260,13 +23164,14 @@
     "type": "背景",
     "secondary_types": [
       "歷史",
-      "神學"
+      "文化"
     ],
     "title": "曠野審判制度",
     "status": "formal",
     "aliases": [
       "曠野司法制度",
-      "以色列審判制度"
+      "以色列審判制度",
+      "千夫長百夫長"
     ]
   },
   "歌斐木": {
@@ -23858,6 +23763,18 @@
       "出17:16 異文"
     ]
   },
+  "出18：12 的筵席是立約還是感恩": {
+    "path": "link_folder/解經爭議/出18：12 的筵席是立約還是感恩.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "出18：12 的筵席是立約還是感恩",
+    "status": "formal",
+    "aliases": [
+      "在神面前吃飯的意義"
+    ]
+  },
   "出21：21「用錢買的」": {
     "path": "link_folder/解經爭議/出21：21「用錢買的」.md",
     "type": "解經爭議",
@@ -24299,6 +24216,19 @@
     "status": "formal",
     "aliases": [
       "原文無「幾乎」二字"
+    ]
+  },
+  "基尼說與摩西信仰的來源": {
+    "path": "link_folder/解經爭議/基尼說與摩西信仰的來源.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "基尼說與摩西信仰的來源",
+    "status": "formal",
+    "aliases": [
+      "米甸說",
+      "基尼說"
     ]
   },
   "基督徒是否可吃血": {
@@ -25045,6 +24975,18 @@
     "title": "致咒詛苦水儀式是否迷信之爭",
     "status": "formal",
     "aliases": []
+  },
+  "葉忒羅的建議是不是出於神": {
+    "path": "link_folder/解經爭議/葉忒羅的建議是不是出於神.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "葉忒羅的建議是不是出於神",
+    "status": "formal",
+    "aliases": [
+      "葉忒羅的建議是否合乎屬靈原則"
+    ]
   },
   "血郎的含義": {
     "path": "link_folder/解經爭議/血郎的含義.md",
@@ -26243,6 +26185,9 @@
   "摩西獨自審判": {
     "alias_of": "摩西審判百姓"
   },
+  "審判與治理": {
+    "alias_of": "摩西審判百姓"
+  },
   "摩西進入幽暗": {
     "alias_of": "摩西就近幽暗"
   },
@@ -26271,12 +26216,6 @@
     "alias_of": "摩西的臨時會幕（營外）"
   },
   "Moses appoints leaders": {
-    "alias_of": "摩西立首領"
-  },
-  "摩西設立首領": {
-    "alias_of": "摩西立首領"
-  },
-  "揀選千夫長百夫長": {
     "alias_of": "摩西立首領"
   },
   "Moses raised hands": {
@@ -26351,10 +26290,10 @@
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
   },
-  "Jethro's visit": {
+  "Jethro visits Moses": {
     "alias_of": "葉忒羅來訪"
   },
-  "葉忒羅探訪摩西": {
+  "葉忒羅探望摩西": {
     "alias_of": "葉忒羅來訪"
   },
   "Jethro's counsel": {
@@ -26366,16 +26305,19 @@
   "分層負責建議": {
     "alias_of": "葉忒羅建議分層治理"
   },
+  "分層授權": {
+    "alias_of": "葉忒羅建議分層治理"
+  },
   "Jethro's sacrifice": {
     "alias_of": "葉忒羅獻祭"
   },
-  "葉忒羅獻祭與團契": {
+  "稱頌耶和華": {
+    "alias_of": "葉忒羅獻祭"
+  },
+  "獻祭敬拜": {
     "alias_of": "葉忒羅獻祭"
   },
   "Jethro returns home": {
-    "alias_of": "葉忒羅返回本地"
-  },
-  "葉忒羅離去": {
     "alias_of": "葉忒羅返回本地"
   },
   "起行次序": {
@@ -26680,9 +26622,6 @@
   },
   "門(約10:7)": {
     "alias_of": "基督是門（約10：7）"
-  },
-  "Titus 1:5-9 Elder qualifications": {
-    "alias_of": "多1：5-9 長老資格"
   },
   "基督為大祭司": {
     "alias_of": "大祭司基督（來4：14-15）"
@@ -27443,6 +27382,9 @@
   "以利亞撒 (亞倫子)": {
     "alias_of": "以利亞撒"
   },
+  "Eliezer": {
+    "alias_of": "以利以謝（摩西之子）"
+  },
   "Ishmaelites": {
     "alias_of": "以實瑪利人"
   },
@@ -27707,9 +27649,6 @@
   "非尼哈 (亞倫孫)": {
     "alias_of": "非尼哈"
   },
-  "Gershom": {
-    "alias_of": "革舜"
-  },
   "麥基洗得": {
     "alias_of": "麥基洗德"
   },
@@ -27784,9 +27723,6 @@
   },
   "Nisan": {
     "alias_of": "亞筆月"
-  },
-  "Eliezer etymology": {
-    "alias_of": "以利以謝（ God is help ）"
   },
   "ephod": {
     "alias_of": "以弗得"
@@ -28274,9 +28210,6 @@
   "bitter herbs": {
     "alias_of": "苦菜"
   },
-  "Jethro etymology": {
-    "alias_of": "葉忒羅（ his abundance ）"
-  },
   "蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
@@ -28285,9 +28218,6 @@
   },
   "Sinai etymology": {
     "alias_of": "西乃（多刺的）"
-  },
-  "Zipporah etymology": {
-    "alias_of": "西坡拉（ bird ）"
   },
   "zakar": {
     "alias_of": "記念（zakar）"
@@ -28432,9 +28362,6 @@
   },
   "革舜名字含義": {
     "alias_of": "革舜名字的由來"
-  },
-  "Gershom etymology": {
-    "alias_of": "革舜（ sojourner ）"
   },
   "頭生的驢": {
     "alias_of": "驢用羊羔代贖"
@@ -29591,9 +29518,6 @@
   "分別出來": {
     "alias_of": "分別百姓"
   },
-  "Delegation of authority": {
-    "alias_of": "分層授權"
-  },
   "利未人取代長子": {
     "alias_of": "利未人代替長子"
   },
@@ -29744,9 +29668,6 @@
   "神的公義與審判": {
     "alias_of": "審判全地的主豈不行公義"
   },
-  "Judgment and governance": {
-    "alias_of": "審判與治理"
-  },
   "考驗兄弟": {
     "alias_of": "對兄弟的試驗"
   },
@@ -29888,13 +29809,7 @@
   "敬畏耶和華": {
     "alias_of": "敬畏神"
   },
-  "Fear God": {
-    "alias_of": "敬畏神、誠實、恨不義之財"
-  },
-  "truth": {
-    "alias_of": "敬畏神、誠實、恨不義之財"
-  },
-  "hate dishonest gain": {
+  "領袖的四項資格": {
     "alias_of": "敬畏神、誠實、恨不義之財"
   },
   "懼怕耶和華這話": {
@@ -30052,9 +29967,6 @@
   },
   "供物分級": {
     "alias_of": "燔祭祭牲的貧富分級"
-  },
-  "Sacrifice and worship": {
-    "alias_of": "獻祭敬拜"
   },
   "甘心樂意": {
     "alias_of": "甘心樂意的奉獻"
@@ -30256,9 +30168,6 @@
   },
   "人種的是什麼收的也是什麼": {
     "alias_of": "種與收的法則"
-  },
-  "Bless the LORD": {
-    "alias_of": "稱頌耶和華"
   },
   "畜疫之災": {
     "alias_of": "第五災：重重的瘟疫"
@@ -30665,10 +30574,7 @@
   "同父異母婚姻背景": {
     "alias_of": "古代近東同父異母婚姻"
   },
-  "古代近東岳父與女婿關係": {
-    "alias_of": "古代近東岳父禮儀"
-  },
-  "岳父接待禮儀": {
+  "古代近東見面禮": {
     "alias_of": "古代近東岳父禮儀"
   },
   "古代近東待客禮儀": {
@@ -30732,6 +30638,9 @@
     "alias_of": "曠野審判制度"
   },
   "以色列審判制度": {
+    "alias_of": "曠野審判制度"
+  },
+  "千夫長百夫長": {
     "alias_of": "曠野審判制度"
   },
   "挪亞洪水時間軸": {
@@ -30872,6 +30781,9 @@
   "出17:16 異文": {
     "alias_of": "出17：16「寶座」還是「旌旗」"
   },
+  "在神面前吃飯的意義": {
+    "alias_of": "出18：12 的筵席是立約還是感恩"
+  },
   "以色列奪取埃及財物": {
     "alias_of": "出埃及時取得埃及財物"
   },
@@ -30940,6 +30852,12 @@
   },
   "原文無「幾乎」二字": {
     "alias_of": "埃及的牲畜「幾乎」都死了"
+  },
+  "米甸說": {
+    "alias_of": "基尼說與摩西信仰的來源"
+  },
+  "基尼說": {
+    "alias_of": "基尼說與摩西信仰的來源"
   },
   "大痲瘋與罪的關係": {
     "alias_of": "大痲瘋是否等同於罪的懲罰之爭"
@@ -31147,6 +31065,9 @@
   },
   "耶和華使者的身分": {
     "alias_of": "耶和華的使者是否為神顯現"
+  },
+  "葉忒羅的建議是否合乎屬靈原則": {
+    "alias_of": "葉忒羅的建議是不是出於神"
   },
   "贖罪日禁食難題": {
     "alias_of": "贖罪日禁食起始日的難題（第九日或第十日）"
