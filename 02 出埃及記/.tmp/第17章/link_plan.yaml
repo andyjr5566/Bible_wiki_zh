@@ -57,7 +57,7 @@ A_use_directly:
   match_type: exact
   existing_title: 摩西
   existing_path: link_folder/人物/摩西.md
-- name: 米利巴（ strife ）
+- name: 米利巴（Meribah）
   suggested_type: 原文
   evidence: 2、7節；原文字根 rib，含爭鬧、爭論、爭訟之意；《串珠》指帶有「尋找過失」及「爭辯」（在法庭內外）之意
   surfaces:
@@ -68,8 +68,8 @@ A_use_directly:
     verses:
     - 7
   match_type: exact
-  existing_title: 米利巴（ strife ）
-  existing_path: link_folder/原文/米利巴（ strife ）.md
+  existing_title: 米利巴（Meribah）
+  existing_path: link_folder/原文/米利巴（Meribah）.md
 - name: 神的試驗
   suggested_type: 神學
   evidence: 2、7節；「為什麼試探耶和華呢」——KC 指特別之處不是神試驗百姓，而是百姓試驗神
@@ -100,16 +100,6 @@ A_use_directly:
   match_type: exact
   existing_title: 埃及
   existing_path: link_folder/地點/埃及.md
-- name: 磐石出活水
-  suggested_type: 神學
-  evidence: 6節；「我必在何烈的磐石那裡，站在你面前」；從磐石裡必有水流出來
-  surfaces:
-  - phrase: 磐石
-    verses:
-    - 6
-  match_type: exact
-  existing_title: 磐石出活水
-  existing_path: link_folder/神學/磐石出活水.md
 - name: 何烈
   suggested_type: 地點
   evidence: 6節；在聖經中常與「西乃」換用；《舊約背景註釋》指何烈最有可能是指西乃山一帶的地區而非某個地點
@@ -137,10 +127,13 @@ A_use_directly:
   - phrase: 從磐石裡必有水流出來
     verses:
     - 6
+  - phrase: 磐石
+    verses:
+    - 6
   match_type: exact
   existing_title: 磐石出水
   existing_path: link_folder/事件/磐石出水.md
-- name: 瑪撒（ temptation ）
+- name: 瑪撒（Massah）
   suggested_type: 原文
   evidence: 7節；原文字根 nasah，含試驗、試探、試煉之意；《丁道爾》指這字在希伯來語無善無惡
   surfaces:
@@ -148,8 +141,8 @@ A_use_directly:
     verses:
     - 7
   match_type: exact
-  existing_title: 瑪撒（ temptation ）
-  existing_path: link_folder/原文/瑪撒（ temptation ）.md
+  existing_title: 瑪撒（Massah）
+  existing_path: link_folder/原文/瑪撒（Massah）.md
 - name: 亞瑪力人
   suggested_type: 人物
   evidence: 8-9、16節；以掃之孫亞瑪力的後裔；原文含義「谷中居民」「好戰者」
@@ -240,30 +233,6 @@ A_use_directly:
   match_type: exact
   existing_title: 戰勝亞瑪力人
   existing_path: link_folder/事件/戰勝亞瑪力人.md
-- name: 利非訂（ repose ）
-  suggested_type: 原文
-  evidence: 1節；原文意「休息、安息之所」——CT 指卻因缺水而得不著安息
-  match_type: exact
-  existing_title: 利非訂（ repose ）
-  existing_path: link_folder/原文/利非訂（ repose ）.md
-- name: 耶和華尼西（ Jehovah Nissi ）
-  suggested_type: 原文
-  evidence: 15節；「尼西」原文有廣泛意義：船篷、旗號、信號、軍旗、徽章、標誌
-  match_type: exact
-  existing_title: 耶和華尼西（ Jehovah Nissi ）
-  existing_path: link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md
-- name: 利非訂地理
-  suggested_type: 背景
-  evidence: 1節；《丁道爾》指附近費蘭河的綠洲十分富庶，是全半島最好的土地——亞瑪力人的緊張是可以理解的
-  match_type: exact
-  existing_title: 利非訂地理
-  existing_path: link_folder/背景/利非訂地理.md
-- name: 何烈與西乃的關係
-  suggested_type: 背景
-  evidence: 6節；《丁道爾》稱這是另一個謎：「何烈」和「西乃」似乎可以交替使用
-  match_type: exact
-  existing_title: 何烈與西乃的關係
-  existing_path: link_folder/背景/何烈與西乃的關係.md
 - name: 林前10：4 靈磐石就是基督
   suggested_type: 互文
   evidence: 6節；保羅：「所喝的是出於隨他們的靈磐石，那磐石就是基督」
@@ -306,7 +275,35 @@ A_use_directly:
   match_type: exact
   existing_title: 賽53：4-5 磐石被擊打
   existing_path: link_folder/互文/賽53：4-5 磐石被擊打.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 西乃山的地理
+  suggested_type: 背景
+  evidence: 1、6節；利非訂與何烈的地望之爭——《啟導本》《丁道爾》《舊約背景註釋》主南部，《中文聖經註釋》據亞瑪力地與米利巴主北部
+  match_type: exact
+  existing_title: 西乃山的地理
+  existing_path: link_folder/背景/西乃山的地理.md
+- name: 何西阿與約書亞改名時機與字意之解經爭議
+  suggested_type: 解經爭議
+  evidence: 9節；《丁道爾》指出「嚴格來說，這時他仍然使用舊名何西阿」，改名顯然是到了加低斯才發生（民13:16）
+  match_type: exact
+  existing_title: 何西阿與約書亞改名時機與字意之解經爭議
+  existing_path: link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md
+C_new_formal:
+- name: 瑪撒米利巴是一次還是兩次
+  suggested_type: 解經爭議
+  evidence: 7節；《丁道爾》主張兩次事件不必合併、《中文聖經註釋》主張口傳混雜、《舊約背景註釋》說兩名同指利非訂一地、丁良才與李道生列出兩次的差異
+  target_path: link_folder/解經爭議/瑪撒米利巴是一次還是兩次.md
+- name: 摩西舉手的意思
+  suggested_type: 解經爭議
+  evidence: 11節；禱告（丁良才、《丁道爾》）／作戰信號（《丁道爾》、《舊約背景註釋》）／起誓（《丁道爾》）三種讀法，《串珠》另保留「經文沒有提及禱告」
+  target_path: link_folder/解經爭議/摩西舉手的意思.md
+- name: 出17：16「寶座」還是「旌旗」
+  suggested_type: 解經爭議
+  evidence: 16節；《丁道爾》主張以 ne{s 取代 ke{s 修正馬索拉經文，BH 與《精讀本》按「寶座」讀
+  target_path: link_folder/解經爭議/出17：16「寶座」還是「旌旗」.md
+- name: 摩西寫在書上
+  suggested_type: 背景
+  evidence: 14節；《丁道爾》指這是出埃及記中少數清楚提到當時有材料付諸文字的段落之一，並猜測是已佚失的「耶和華戰記」；CT、《啟導本》、《串珠》各有補充
+  target_path: link_folder/背景/摩西寫在書上.md
 D_new_candidate: []
 E_skip: []

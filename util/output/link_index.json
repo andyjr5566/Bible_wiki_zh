@@ -3619,7 +3619,8 @@
     "title": "磐石出水",
     "status": "formal",
     "aliases": [
-      "Water from the Rock event"
+      "Water from the Rock",
+      "磐石出活水"
     ]
   },
   "神指示築壇獻祭": {
@@ -12288,16 +12289,6 @@
     "status": "formal",
     "aliases": []
   },
-  "利非訂（ repose ）": {
-    "path": "link_folder/原文/利非訂（ repose ）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "利非訂（ repose ）",
-    "status": "formal",
-    "aliases": [
-      "Rephidim etymology"
-    ]
-  },
   "剪除（kareth）": {
     "path": "link_folder/原文/剪除（kareth）.md",
     "type": "原文",
@@ -13327,15 +13318,15 @@
     "status": "formal",
     "aliases": []
   },
-  "瑪撒（ temptation ）": {
-    "path": "link_folder/原文/瑪撒（ temptation ）.md",
+  "瑪撒（Massah）": {
+    "path": "link_folder/原文/瑪撒（Massah）.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "瑪撒（ temptation ）",
+    "title": "瑪撒（Massah）",
     "status": "formal",
     "aliases": [
       "Massah",
-      "試探"
+      "瑪撒"
     ]
   },
   "用肚子行走，終身吃土": {
@@ -13461,14 +13452,15 @@
     "status": "formal",
     "aliases": []
   },
-  "米利巴（ strife ）": {
-    "path": "link_folder/原文/米利巴（ strife ）.md",
+  "米利巴（Meribah）": {
+    "path": "link_folder/原文/米利巴（Meribah）.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "米利巴（ strife ）",
+    "title": "米利巴（Meribah）",
     "status": "formal",
     "aliases": [
       "Meribah",
+      "米利巴",
       "爭鬧"
     ]
   },
@@ -13562,19 +13554,6 @@
     "title": "網羅（moqesh）",
     "status": "formal",
     "aliases": []
-  },
-  "耶和華尼西（ Jehovah Nissi ）": {
-    "path": "link_folder/原文/耶和華尼西（ Jehovah Nissi ）.md",
-    "type": "原文",
-    "secondary_types": [
-      "神學"
-    ],
-    "title": "耶和華尼西（ Jehovah Nissi ）",
-    "status": "formal",
-    "aliases": [
-      "Jehovah Nissi",
-      "耶和華是我旌旗"
-    ]
   },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
@@ -14580,7 +14559,8 @@
     "title": "何烈",
     "status": "formal",
     "aliases": [
-      "Horeb"
+      "Horeb",
+      "何烈與西乃的關係"
     ]
   },
   "何烈山": {
@@ -14633,7 +14613,8 @@
     "title": "利非訂",
     "status": "formal",
     "aliases": [
-      "Rephidim"
+      "Rephidim",
+      "利非訂地理"
     ]
   },
   "加低斯": {
@@ -20787,18 +20768,6 @@
       "頸項剛硬"
     ]
   },
-  "磐石出活水": {
-    "path": "link_folder/神學/磐石出活水.md",
-    "type": "神學",
-    "secondary_types": [
-      "互文"
-    ],
-    "title": "磐石出活水",
-    "status": "formal",
-    "aliases": [
-      "Water from the Rock"
-    ]
-  },
   "磐石預表基督": {
     "path": "link_folder/神學/磐石預表基督.md",
     "type": "神學",
@@ -21767,11 +21736,14 @@
   "耶和華尼西": {
     "path": "link_folder/神學/耶和華尼西.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "原文"
+    ],
     "title": "耶和華尼西",
     "status": "formal",
     "aliases": [
-      "The LORD is my Banner"
+      "The LORD is my Banner",
+      "耶和華是我旌旗"
     ]
   },
   "耶和華我是": {
@@ -22734,18 +22706,6 @@
       "伊甸河流"
     ]
   },
-  "何烈與西乃的關係": {
-    "path": "link_folder/背景/何烈與西乃的關係.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "何烈與西乃的關係",
-    "status": "formal",
-    "aliases": [
-      "Horeb and Sinai relationship"
-    ]
-  },
   "光體作記號定節令": {
     "path": "link_folder/背景/光體作記號定節令.md",
     "type": "背景",
@@ -22790,18 +22750,6 @@
     "aliases": [
       "創世記列國表",
       "Table of Nations"
-    ]
-  },
-  "利非訂地理": {
-    "path": "link_folder/背景/利非訂地理.md",
-    "type": "背景",
-    "secondary_types": [
-      "地點"
-    ],
-    "title": "利非訂地理",
-    "status": "formal",
-    "aliases": [
-      "Geography of Rephidim"
     ]
   },
   "十匹駱駝": {
@@ -23267,6 +23215,19 @@
     "title": "摩利橡樹",
     "status": "formal",
     "aliases": []
+  },
+  "摩西寫在書上": {
+    "path": "link_folder/背景/摩西寫在書上.md",
+    "type": "背景",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "摩西寫在書上",
+    "status": "formal",
+    "aliases": [
+      "耶和華戰記",
+      "出17:14 書寫命令"
+    ]
   },
   "摩西的希伯來與埃及雙重身分": {
     "path": "link_folder/背景/摩西的希伯來與埃及雙重身分.md",
@@ -23883,6 +23844,18 @@
     "aliases": [
       "冒煙爐與火把的意思",
       "火爐火把與立約"
+    ]
+  },
+  "出17：16「寶座」還是「旌旗」": {
+    "path": "link_folder/解經爭議/出17：16「寶座」還是「旌旗」.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "出17：16「寶座」還是「旌旗」",
+    "status": "formal",
+    "aliases": [
+      "出17:16 異文"
     ]
   },
   "出21：21「用錢買的」": {
@@ -24553,6 +24526,18 @@
       "摩西殺埃及人"
     ]
   },
+  "摩西舉手的意思": {
+    "path": "link_folder/解經爭議/摩西舉手的意思.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "摩西舉手的意思",
+    "status": "formal",
+    "aliases": [
+      "舉手的三種讀法"
+    ]
+  },
   "撒發那忒巴內亞名字含義": {
     "path": "link_folder/解經爭議/撒發那忒巴內亞名字含義.md",
     "type": "解經爭議",
@@ -24717,6 +24702,18 @@
     "aliases": [
       "幾捧爐灰",
       "煤煙"
+    ]
+  },
+  "瑪撒米利巴是一次還是兩次": {
+    "path": "link_folder/解經爭議/瑪撒米利巴是一次還是兩次.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "瑪撒米利巴是一次還是兩次",
+    "status": "formal",
+    "aliases": [
+      "出17與民20是不是同一件事"
     ]
   },
   "產婦不潔原因之爭（原罪說與血液不潔說）": {
@@ -26327,7 +26324,10 @@
   "百姓自潔預備": {
     "alias_of": "百姓自潔三天"
   },
-  "Water from the Rock event": {
+  "Water from the Rock": {
+    "alias_of": "磐石出水"
+  },
+  "磐石出活水": {
     "alias_of": "磐石出水"
   },
   "築壇指示": {
@@ -27860,9 +27860,6 @@
   "禮冠": {
     "alias_of": "冠冕（裹頭巾）"
   },
-  "Rephidim etymology": {
-    "alias_of": "利非訂（ repose ）"
-  },
   "aseret hadevarim": {
     "alias_of": "十句話"
   },
@@ -28143,10 +28140,10 @@
     "alias_of": "王下7（Melakhim Bet 7）"
   },
   "Massah": {
-    "alias_of": "瑪撒（ temptation ）"
+    "alias_of": "瑪撒（Massah）"
   },
-  "試探": {
-    "alias_of": "瑪撒（ temptation ）"
+  "瑪撒": {
+    "alias_of": "瑪撒（Massah）"
   },
   "皂莢木": {
     "alias_of": "皂莢木（atzei shittim）"
@@ -28176,10 +28173,13 @@
     "alias_of": "禮物（terumah）"
   },
   "Meribah": {
-    "alias_of": "米利巴（ strife ）"
+    "alias_of": "米利巴（Meribah）"
+  },
+  "米利巴": {
+    "alias_of": "米利巴（Meribah）"
   },
   "爭鬧": {
-    "alias_of": "米利巴（ strife ）"
+    "alias_of": "米利巴（Meribah）"
   },
   "紀念的部分": {
     "alias_of": "紀念份"
@@ -28210,12 +28210,6 @@
   },
   "snare": {
     "alias_of": "網羅"
-  },
-  "Jehovah Nissi": {
-    "alias_of": "耶和華尼西（ Jehovah Nissi ）"
-  },
-  "耶和華是我旌旗": {
-    "alias_of": "耶和華尼西（ Jehovah Nissi ）"
   },
   "聖香": {
     "alias_of": "聖香（清淨聖潔的香）"
@@ -28517,6 +28511,9 @@
   "Horeb": {
     "alias_of": "何烈"
   },
+  "何烈與西乃的關係": {
+    "alias_of": "何烈"
+  },
   "神的山何烈山": {
     "alias_of": "何烈山"
   },
@@ -28530,6 +28527,9 @@
     "alias_of": "別是巴"
   },
   "Rephidim": {
+    "alias_of": "利非訂"
+  },
+  "利非訂地理": {
     "alias_of": "利非訂"
   },
   "加低斯巴尼亞": {
@@ -30104,9 +30104,6 @@
   "頸項剛硬": {
     "alias_of": "硬著頸項的百姓"
   },
-  "Water from the Rock": {
-    "alias_of": "磐石出活水"
-  },
   "Rock as type of Christ": {
     "alias_of": "磐石預表基督"
   },
@@ -30321,6 +30318,9 @@
     "alias_of": "耶和華使法老的心剛硬"
   },
   "The LORD is my Banner": {
+    "alias_of": "耶和華尼西"
+  },
+  "耶和華是我旌旗": {
     "alias_of": "耶和華尼西"
   },
   "我是耶和華": {
@@ -30635,9 +30635,6 @@
   "伊甸河流": {
     "alias_of": "伊甸園四河"
   },
-  "Horeb and Sinai relationship": {
-    "alias_of": "何烈與西乃的關係"
-  },
   "出埃及記的書名": {
     "alias_of": "出埃及記書名的由來"
   },
@@ -30649,9 +30646,6 @@
   },
   "Table of Nations": {
     "alias_of": "列國表"
-  },
-  "Geography of Rephidim": {
-    "alias_of": "利非訂地理"
   },
   "使女代主母生子": {
     "alias_of": "古代近東代理孕母安排"
@@ -30721,6 +30715,12 @@
   },
   "宗教曆與民事曆": {
     "alias_of": "宗教曆與民事曆兩種曆法"
+  },
+  "耶和華戰記": {
+    "alias_of": "摩西寫在書上"
+  },
+  "出17:14 書寫命令": {
+    "alias_of": "摩西寫在書上"
   },
   "摩西的雙重身分": {
     "alias_of": "摩西的希伯來與埃及雙重身分"
@@ -30869,6 +30869,9 @@
   "火爐火把與立約": {
     "alias_of": "冒煙的爐與燒著的火把指什麼"
   },
+  "出17:16 異文": {
+    "alias_of": "出17：16「寶座」還是「旌旗」"
+  },
   "以色列奪取埃及財物": {
     "alias_of": "出埃及時取得埃及財物"
   },
@@ -31010,6 +31013,9 @@
   "摩西殺埃及人": {
     "alias_of": "摩西殺死埃及人的解經問題"
   },
+  "舉手的三種讀法": {
+    "alias_of": "摩西舉手的意思"
+  },
   "方舟能否容納各類動物": {
     "alias_of": "方舟容納動物的可行性"
   },
@@ -31054,6 +31060,9 @@
   },
   "煤煙": {
     "alias_of": "爐灰的出處"
+  },
+  "出17與民20是不是同一件事": {
+    "alias_of": "瑪撒米利巴是一次還是兩次"
   },
   "產婦不潔原因": {
     "alias_of": "產婦不潔原因之爭（原罪說與血液不潔說）"
