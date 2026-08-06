@@ -2972,8 +2972,7 @@
     "title": "以色列到達西乃山",
     "status": "formal",
     "aliases": [
-      "Israel arrives at Sinai",
-      "到達西乃山"
+      "arrival at Sinai"
     ]
   },
   "保存一俄梅珥嗎哪": {
@@ -3325,8 +3324,7 @@
     "title": "摩西上山見神",
     "status": "formal",
     "aliases": [
-      "Moses goes up to God",
-      "摩西上西乃山"
+      "Moses ascends the mountain"
     ]
   },
   "摩西上山領石版": {
@@ -3594,20 +3592,6 @@
       "悲哀不佩戴妝飾"
     ]
   },
-  "百姓自潔三天": {
-    "path": "link_folder/事件/百姓自潔三天.md",
-    "type": "事件",
-    "secondary_types": [
-      "神學",
-      "歷史"
-    ],
-    "title": "百姓自潔三天",
-    "status": "formal",
-    "aliases": [
-      "consecration of the people",
-      "百姓自潔預備"
-    ]
-  },
   "磐石出水": {
     "path": "link_folder/事件/磐石出水.md",
     "type": "事件",
@@ -3638,14 +3622,12 @@
     "path": "link_folder/事件/神降臨西乃山.md",
     "type": "事件",
     "secondary_types": [
-      "神學",
-      "歷史"
+      "神學"
     ],
     "title": "神降臨西乃山",
     "status": "formal",
     "aliases": [
-      "the LORD descends on Sinai",
-      "耶和華降臨西乃山"
+      "theophany at Sinai"
     ]
   },
   "神頒布十誡": {
@@ -13763,16 +13745,6 @@
     "status": "formal",
     "aliases": []
   },
-  "西乃（多刺的）": {
-    "path": "link_folder/原文/西乃（多刺的）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "西乃（多刺的）",
-    "status": "formal",
-    "aliases": [
-      "Sinai etymology"
-    ]
-  },
   "西提拿（為敵）": {
     "path": "link_folder/原文/西提拿（為敵）.md",
     "type": "原文",
@@ -19420,7 +19392,9 @@
   "屬我的子民": {
     "path": "link_folder/神學/屬我的子民.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "原文"
+    ],
     "title": "屬我的子民",
     "status": "formal",
     "aliases": [
@@ -19443,7 +19417,9 @@
   "山的界限": {
     "path": "link_folder/神學/山的界限.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "文化"
+    ],
     "title": "山的界限",
     "status": "formal",
     "aliases": [
@@ -21329,7 +21305,9 @@
   "祭司的國度": {
     "path": "link_folder/神學/祭司的國度.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "原文"
+    ],
     "title": "祭司的國度",
     "status": "formal",
     "aliases": [
@@ -21870,7 +21848,9 @@
   "聖潔的國民": {
     "path": "link_folder/神學/聖潔的國民.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "原文"
+    ],
     "title": "聖潔的國民",
     "status": "formal",
     "aliases": [
@@ -21952,11 +21932,14 @@
   "自潔": {
     "path": "link_folder/神學/自潔.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "文化"
+    ],
     "title": "自潔",
     "status": "formal",
     "aliases": [
-      "consecration"
+      "consecration",
+      "百姓自潔三天"
     ]
   },
   "自潔與更換衣裳": {
@@ -22134,15 +22117,16 @@
     "title": "西乃之約",
     "status": "formal",
     "aliases": [
-      "Sinai Covenant",
-      "Mosaic Covenant",
-      "摩西之約"
+      "摩西之約",
+      "西乃山之約"
     ]
   },
   "角聲": {
     "path": "link_folder/神學/角聲.md",
     "type": "神學",
-    "secondary_types": [],
+    "secondary_types": [
+      "文化"
+    ],
     "title": "角聲",
     "status": "formal",
     "aliases": [
@@ -22559,14 +22543,12 @@
     "path": "link_folder/背景/五旬節與律法頒布.md",
     "type": "背景",
     "secondary_types": [
-      "歷史",
-      "文化"
+      "歷史"
     ],
     "title": "五旬節與律法頒布",
     "status": "formal",
     "aliases": [
-      "Pentecost and the giving of the Law",
-      "五旬節與西乃"
+      "律法頒布的日期"
     ]
   },
   "井權與牧羊取水規矩": {
@@ -22990,20 +22972,6 @@
     "status": "formal",
     "aliases": []
   },
-  "古代近東立約儀式": {
-    "path": "link_folder/背景/古代近東立約儀式.md",
-    "type": "背景",
-    "secondary_types": [
-      "文化",
-      "歷史"
-    ],
-    "title": "古代近東立約儀式",
-    "status": "formal",
-    "aliases": [
-      "ancient Near Eastern covenant ceremony",
-      "古代立約儀式"
-    ]
-  },
   "古代近東聘禮制度": {
     "path": "link_folder/背景/古代近東聘禮制度.md",
     "type": "背景",
@@ -23097,7 +23065,7 @@
     "title": "宗主條約",
     "status": "formal",
     "aliases": [
-      "suzerainty treaty",
+      "宗主與屬國的條約",
       "赫人條約"
     ]
   },
@@ -23775,6 +23743,18 @@
       "在神面前吃飯的意義"
     ]
   },
+  "出19 的來源批判與擬人法之爭": {
+    "path": "link_folder/解經爭議/出19 的來源批判與擬人法之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "出19 的來源批判與擬人法之爭",
+    "status": "formal",
+    "aliases": [
+      "神典與祭典之爭"
+    ]
+  },
   "出21：21「用錢買的」": {
     "path": "link_folder/解經爭議/出21：21「用錢買的」.md",
     "type": "解經爭議",
@@ -24257,6 +24237,18 @@
     "title": "奴隸制度與聖經",
     "status": "formal",
     "aliases": []
+  },
+  "如鷹背在翅膀上是鷹還是兀鷲": {
+    "path": "link_folder/解經爭議/如鷹背在翅膀上是鷹還是兀鷲.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "如鷹背在翅膀上是鷹還是兀鷲",
+    "status": "formal",
+    "aliases": [
+      "鷹還是兀鷲"
+    ]
   },
   "寧錄的在耶和華面前": {
     "path": "link_folder/解經爭議/寧錄的在耶和華面前.md",
@@ -24995,6 +24987,18 @@
     "title": "血郎的含義",
     "status": "formal",
     "aliases": []
+  },
+  "西乃山是不是活火山": {
+    "path": "link_folder/解經爭議/西乃山是不是活火山.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "西乃山是不是活火山",
+    "status": "formal",
+    "aliases": [
+      "火山說"
+    ]
   },
   "西緬利未報復是否合乎公義": {
     "path": "link_folder/解經爭議/西緬利未報復是否合乎公義.md",
@@ -26113,10 +26117,7 @@
   "離俗": {
     "alias_of": "離俗歸耶和華"
   },
-  "Israel arrives at Sinai": {
-    "alias_of": "以色列到達西乃山"
-  },
-  "到達西乃山": {
+  "arrival at Sinai": {
     "alias_of": "以色列到達西乃山"
   },
   "Preserving an omer of manna": {
@@ -26167,10 +26168,7 @@
   "Defeat of Amalek": {
     "alias_of": "戰勝亞瑪力人"
   },
-  "Moses goes up to God": {
-    "alias_of": "摩西上山見神"
-  },
-  "摩西上西乃山": {
+  "Moses ascends the mountain": {
     "alias_of": "摩西上山見神"
   },
   "摩西就完了工": {
@@ -26257,12 +26255,6 @@
   "悲哀不佩戴妝飾": {
     "alias_of": "百姓摘除妝飾表悔改"
   },
-  "consecration of the people": {
-    "alias_of": "百姓自潔三天"
-  },
-  "百姓自潔預備": {
-    "alias_of": "百姓自潔三天"
-  },
   "Water from the Rock": {
     "alias_of": "磐石出水"
   },
@@ -26275,10 +26267,7 @@
   "獻祭指示": {
     "alias_of": "神指示築壇獻祭"
   },
-  "the LORD descends on Sinai": {
-    "alias_of": "神降臨西乃山"
-  },
-  "耶和華降臨西乃山": {
+  "theophany at Sinai": {
     "alias_of": "神降臨西乃山"
   },
   "十誡頒布": {
@@ -28215,9 +28204,6 @@
   },
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
-  },
-  "Sinai etymology": {
-    "alias_of": "西乃（多刺的）"
   },
   "zakar": {
     "alias_of": "記念（zakar）"
@@ -30340,6 +30326,9 @@
   "consecration": {
     "alias_of": "自潔"
   },
+  "百姓自潔三天": {
+    "alias_of": "自潔"
+  },
   "自潔更衣": {
     "alias_of": "自潔與更換衣裳"
   },
@@ -30391,13 +30380,10 @@
   "禁吃血": {
     "alias_of": "血不可吃（血の禁令）"
   },
-  "Sinai Covenant": {
-    "alias_of": "西乃之約"
-  },
-  "Mosaic Covenant": {
-    "alias_of": "西乃之約"
-  },
   "摩西之約": {
+    "alias_of": "西乃之約"
+  },
+  "西乃山之約": {
     "alias_of": "西乃之約"
   },
   "trumpet sound": {
@@ -30529,10 +30515,7 @@
   "復和": {
     "alias_of": "饒恕與和好"
   },
-  "Pentecost and the giving of the Law": {
-    "alias_of": "五旬節與律法頒布"
-  },
-  "五旬節與西乃": {
+  "律法頒布的日期": {
     "alias_of": "五旬節與律法頒布"
   },
   "伊甸四河": {
@@ -30601,16 +30584,10 @@
   "築壇傳統": {
     "alias_of": "古代近東祭壇"
   },
-  "ancient Near Eastern covenant ceremony": {
-    "alias_of": "古代近東立約儀式"
-  },
-  "古代立約儀式": {
-    "alias_of": "古代近東立約儀式"
-  },
   "Physical properties of manna": {
     "alias_of": "嗎哪的物理特性"
   },
-  "suzerainty treaty": {
+  "宗主與屬國的條約": {
     "alias_of": "宗主條約"
   },
   "赫人條約": {
@@ -30784,6 +30761,9 @@
   "在神面前吃飯的意義": {
     "alias_of": "出18：12 的筵席是立約還是感恩"
   },
+  "神典與祭典之爭": {
+    "alias_of": "出19 的來源批判與擬人法之爭"
+  },
   "以色列奪取埃及財物": {
     "alias_of": "出埃及時取得埃及財物"
   },
@@ -30864,6 +30844,9 @@
   },
   "痲瘋是否為神懲罰": {
     "alias_of": "大痲瘋是否等同於罪的懲罰之爭"
+  },
+  "鷹還是兀鷲": {
+    "alias_of": "如鷹背在翅膀上是鷹還是兀鷲"
   },
   "寧錄建造巴別塔": {
     "alias_of": "寧錄與巴別塔的關係"
@@ -31068,6 +31051,9 @@
   },
   "葉忒羅的建議是否合乎屬靈原則": {
     "alias_of": "葉忒羅的建議是不是出於神"
+  },
+  "火山說": {
+    "alias_of": "西乃山是不是活火山"
   },
   "贖罪日禁食難題": {
     "alias_of": "贖罪日禁食起始日的難題（第九日或第十日）"
