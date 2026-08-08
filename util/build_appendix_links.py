@@ -13,9 +13,14 @@ from pathlib import Path
 try:
     from .book_paths import book_directory
     from . import console
+    from .render_chapter import (
+        CHAPTER_NAV_END,
+        CHAPTER_NAV_START,
+    )
 except ImportError:
     from book_paths import book_directory
     import console
+    from render_chapter import CHAPTER_NAV_END, CHAPTER_NAV_START
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,6 +37,11 @@ FHL_MAP_BLOCK_RE = re.compile(
 APPENDIX_BLOCK_RE = re.compile(
     rf"\n*{re.escape(CHAPTER_BLOCK_START)}.*?"
     rf"{re.escape(CHAPTER_BLOCK_END)}\n*",
+    re.DOTALL,
+)
+CHAPTER_NAV_BLOCK_RE = re.compile(
+    rf"\n*{re.escape(CHAPTER_NAV_START)}.*?"
+    rf"{re.escape(CHAPTER_NAV_END)}\n*",
     re.DOTALL,
 )
 
@@ -104,13 +114,23 @@ def sync_chapter(path: Path, sections: list[str]) -> str:
     text = path.read_text(encoding="utf-8")
     text = FHL_MAP_BLOCK_RE.sub("\n\n", text)
     text = APPENDIX_BLOCK_RE.sub("\n\n", text)
+    navigation_matches = list(CHAPTER_NAV_BLOCK_RE.finditer(text))
+    navigation = navigation_matches[0].group(0).strip() if navigation_matches else ""
+    text = CHAPTER_NAV_BLOCK_RE.sub("\n\n", text)
     text = text.rstrip()
 
-    if not sections:
-        return text + "\n"
+    if navigation:
+        heading = re.search(r"^# .+$", text, re.MULTILINE)
+        if heading:
+            body = text[heading.end():].lstrip("\n")
+            text = f"{text[:heading.end()]}\n\n{navigation}\n\n{body}".rstrip()
 
-    block = chapter_appendix_block(sections)
-    return f"{text}\n\n{block}\n"
+    if sections:
+        block = chapter_appendix_block(sections)
+        text = f"{text}\n\n{block}"
+    if navigation:
+        text = f"{text}\n\n{navigation}"
+    return text.rstrip() + "\n"
 
 
 def write_or_check(path: Path, content: str, check: bool, changed: list[Path]):

@@ -54,7 +54,7 @@ def _strip_links(text):
 class RenderChapterTests(unittest.TestCase):
     def test_only_specified_occurrence_is_linked(self):
         rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
-        verse1 = rendered.splitlines()[2]  # H1, blank, then "1. ..."
+        verse1 = next(line for line in rendered.splitlines() if line.startswith("1. "))
         # 第一個「幔子」被連、alias 格式正確；第二個「這些幔子」保持純文字
         self.assertIn("十幅[[幔子（yeriah）|幔子]]做[[帳幕]]", verse1)
         self.assertIn("這些幔子要用", verse1)
@@ -75,6 +75,35 @@ class RenderChapterTests(unittest.TestCase):
         headings = [line[3:] for line in rendered.splitlines() if line.startswith("## ")]
         self.assertEqual(["本章知識節點", "本章整理"], headings)
         self.assertIn("### 神學\n- [[會幕]]\n- [[帳幕]]", rendered)
+
+    def test_navigation_is_rendered_at_top_and_bottom(self):
+        rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
+        navigation = (
+            "<!-- chapter-navigation:start -->\n"
+            "| [前一章](第25章.md) | [回目錄](全書目錄及綱要.md) | [下一章](第27章.md) |\n"
+            "| :--- | :---: | ---: |\n"
+            "<!-- chapter-navigation:end -->"
+        )
+        self.assertEqual(2, rendered.count(navigation))
+        self.assertLess(rendered.index(navigation), rendered.index("1. "))
+        self.assertTrue(rendered.rstrip().endswith(navigation))
+
+    def test_navigation_hides_missing_boundary_links(self):
+        first = dict(VERSE_LINKS, book="創世記", chapter=1)
+        first_content = dict(CHAPTER_CONTENT, book="創世記", chapter=1)
+        rendered = render_chapter(first, first_content, raw_verses=RAW)
+        self.assertIn(
+            "|  | [回目錄](全書目錄及綱要.md) | [下一章](第2章.md) |", rendered
+        )
+        self.assertNotIn("前一章", rendered)
+
+        last = dict(VERSE_LINKS, book="路得記", chapter=4)
+        last_content = dict(CHAPTER_CONTENT, book="路得記", chapter=4)
+        rendered = render_chapter(last, last_content, raw_verses=RAW)
+        self.assertIn(
+            "| [前一章](第3章.md) | [回目錄](全書目錄及綱要.md) |  |", rendered
+        )
+        self.assertNotIn("下一章", rendered)
 
     def test_payload_is_idempotent_through_parse(self):
         rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
@@ -160,7 +189,7 @@ class VerseLinkValidationTests(unittest.TestCase):
             {"book": "出埃及記", "chapter": 26, "links": links},
             CHAPTER_CONTENT, raw_verses=RAW,
         )
-        verse1 = rendered.splitlines()[2]
+        verse1 = next(line for line in rendered.splitlines() if line.startswith("1. "))
         self.assertEqual(2, verse1.count("[[幔子]]"))
 
     def test_verse_out_of_range_is_rejected(self):
@@ -179,7 +208,7 @@ class VerseLinkValidationTests(unittest.TestCase):
             {"book": "出埃及記", "chapter": 26, "links": links},
             CHAPTER_CONTENT, raw_verses=RAW,
         )
-        verse1 = rendered.splitlines()[2]
+        verse1 = next(line for line in rendered.splitlines() if line.startswith("1. "))
         self.assertIn("[[a|幔子做]]", verse1)
         self.assertNotIn("[[b|", verse1)
 

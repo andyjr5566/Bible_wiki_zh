@@ -31,6 +31,13 @@ BOOK_CHAPTERS = json.loads(
 MAP_BLOCK_RE = re.compile(
     r"<!-- fhl-map-links:start -->[\s\S]*?<!-- fhl-map-links:end -->"
 )
+CHAPTER_NAV_START = "<!-- chapter-navigation:start -->"
+CHAPTER_NAV_END = "<!-- chapter-navigation:end -->"
+CHAPTER_NAV_BLOCK_RE = re.compile(
+    rf"\n*{re.escape(CHAPTER_NAV_START)}.*?"
+    rf"{re.escape(CHAPTER_NAV_END)}\n*",
+    re.DOTALL,
+)
 
 
 def load_raw_verses(book, chapter):
@@ -220,6 +227,31 @@ def render_knowledge_nodes(nodes):
     return "\n\n".join(parts)
 
 
+def render_chapter_navigation(book, chapter):
+    """產生本章頁面頂端／底端的前後章與目錄導覽列。"""
+    canonical = canonical_book_name(book)
+    total = BOOK_CHAPTERS.get(canonical)
+    if total is None:
+        raise ValueError(f"未知書卷：{book}")
+
+    previous = f"[前一章](第{chapter - 1}章.md)" if chapter > 1 else ""
+    catalog = "[回目錄](全書目錄及綱要.md)"
+    following = f"[下一章](第{chapter + 1}章.md)" if chapter < total else ""
+
+    # 使用 Markdown 表格的欄位對齊，避免 HTML 標籤或帶 | 的 WikiLink
+    # 別名觸發章節內容的格式護欄。
+    navigation_table = "\n".join(
+        [
+            f"| {previous} | {catalog} | {following} |",
+            "| :--- | :---: | ---: |",
+        ]
+    )
+
+    return "\n".join(
+        [CHAPTER_NAV_START, navigation_table, CHAPTER_NAV_END]
+    )
+
+
 def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map_block="", appendix_block=""):
     book = verse_links_payload.get("book") or chapter_content.get("book")
     chapter = verse_links_payload.get("chapter") or chapter_content.get("chapter")
@@ -241,7 +273,8 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
         str(r).strip() for r in (chapter_content.get("references") or []) if str(r).strip()
     ] or inline_refs
 
-    blocks = [f"# {canonical_book_name(book)} 第{chapter}章", scripture]
+    navigation = render_chapter_navigation(book, chapter)
+    blocks = [f"# {canonical_book_name(book)} 第{chapter}章", navigation, scripture]
     if map_block.strip():
         blocks.append(map_block.strip())
     blocks.append("---")
@@ -253,6 +286,7 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
     blocks.append(organization_block)
     if appendix_block.strip():
         blocks.append(appendix_block.strip())
+    blocks.append(navigation)
     return "\n\n".join(blocks).rstrip() + "\n"
 
 
@@ -292,15 +326,19 @@ def _count_before(raw, phrase, start):
 
 def parse_chapter(text):
     """章節主檔 markdown → (verse_links_payload, chapter_content, map_block)。"""
-    heading = re.search(r"^#\s+(.+?)\s+第(\d+)章\s*$", text, re.M)
+    # 導覽列是渲染期 UI，不屬於 verse_links／chapter_content payload；
+    # 尤其底端導覽列不能被誤收進「本章整理」或參考資料。
+    content = CHAPTER_NAV_BLOCK_RE.sub("\n\n", text)
+
+    heading = re.search(r"^#\s+(.+?)\s+第(\d+)章\s*$", content, re.M)
     book = canonical_book_name(heading.group(1)) if heading else ""
     chapter = int(heading.group(2)) if heading else 0
 
-    map_match = MAP_BLOCK_RE.search(text)
+    map_match = MAP_BLOCK_RE.search(content)
     map_block = map_match.group(0) if map_match else ""
 
-    knowledge = text.find("## 本章知識節點")
-    scripture_zone = text[:knowledge] if knowledge >= 0 else text
+    knowledge = content.find("## 本章知識節點")
+    scripture_zone = content[:knowledge] if knowledge >= 0 else content
     if map_block:
         scripture_zone = scripture_zone.replace(map_block, "")
 
@@ -319,7 +357,7 @@ def parse_chapter(text):
 
     nodes = {}
     node_match = re.search(
-        r"^## 本章知識節點\s*$([\s\S]*?)(?=^## 本章整理\s*$)", text, re.M
+        r"^## 本章知識節點\s*$([\s\S]*?)(?=^## 本章整理\s*$)", content, re.M
     )
     if node_match:
         for group_match in re.finditer(
@@ -332,7 +370,7 @@ def parse_chapter(text):
             if targets:
                 nodes[group_match.group(1).strip()] = targets
 
-    organization_match = re.search(r"^## 本章整理\s*$([\s\S]+)$", text, re.M)
+    organization_match = re.search(r"^## 本章整理\s*$([\s\S]+)$", content, re.M)
     organization = organization_match.group(1).strip() if organization_match else ""
     organization, references = split_references(organization)
 

@@ -40,6 +40,30 @@ class AppendixWebsiteBuildEdgeCaseTests(unittest.TestCase):
 
 
 class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
+    def test_navigation_stays_at_document_end_after_appendix_sync(self):
+        original = (
+            "# 創世記 第6章\n\n"
+            "1. 經文節1。\n\n"
+            "---\n\n"
+            "## 本章知識節點\n\n"
+            "## 本章整理\n\n正文。\n\n"
+            "<!-- chapter-navigation:start -->\n"
+            "[[第5章|前一章]]　[[全書目錄及綱要|回目錄]]　[[第7章|下一章]]\n"
+            "<!-- chapter-navigation:end -->\n"
+        )
+        with tempfile.NamedTemporaryFile("w+", suffix=".md", encoding="utf-8", delete=False) as tf:
+            tf.write(original)
+            tf_path = Path(tf.name)
+
+        try:
+            synced = build_appendix_links.sync_chapter(
+                tf_path, ["### 互動網站\n- [導覽](app.html)"]
+            )
+            self.assertTrue(synced.rstrip().endswith("<!-- chapter-navigation:end -->"))
+            self.assertLess(synced.index("## 附錄"), synced.rindex("<!-- chapter-navigation:start -->"))
+        finally:
+            tf_path.unlink(missing_ok=True)
+
     def test_sync_chapter_removal_when_sections_empty(self):
         """當附錄資源清單為空時，應清理既有的 appendix-links 區塊。"""
         original = (
