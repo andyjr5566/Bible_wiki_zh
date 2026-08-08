@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""章節製作 orchestrator：程式主導、模型只填 payload。
+"""章節製作 orchestrator：程式主導，內容一律由人工 payload 提供。
 
 流程（每步以 .tmp/第x章/ 內的檔案存在與否斷點續跑）：
 
   P2 resolve         link_candidates(.yaml/.md) → link_plan.yaml            （程式）
-  M3 entry_content   每個 C 類條目呼叫模型填 payload → schema 驗證 → 重試   （模型）
+  M3 entry_content   讀取人工填寫的 C 類 payload → schema 驗證                 （人工）
   M5 verse_links     程式化標注（不呼叫模型）：逐節掃描可連詞、長詞優先、同節不重疊  (程式）
-  M6 chapter_content 呼叫模型填知識節點 + 本章整理                          （模型）
+  M6 chapter_content 讀取人工填寫的 chapter_content.yaml                  （人工）
   P3 render          render_entry / render_chapter 產生 markdown            （程式）
   P4 validate        validate_knowledge_base 結構驗證                       （程式）
 
-模型呼叫走 util.model_client.call_model（預設 shell 到 claude -p）；runner
-可注入，讓整條流程能以假模型單元測試。P1 來源抓取與 P5 commit 屬側效步驟，
-交由既有 util 腳本與人工 gate，不在本檔自動執行。
+本檔已停用外部模型／API 呼叫。只有由 manual wrapper 或測試注入的本地 runner
+可以通過驗證；直接執行本檔會拒絕，以免意外觸發外部端點。P1 來源抓取與 P5 commit
+屬側效步驟，交由既有 util 腳本與人工 gate，不在本檔自動執行。
 
 斷點續跑靠「輸出檔存在就跳過」，所以改了上游 link_candidates.yaml 卻沿用照舊
 生成的 link_plan.yaml 會靜默套用過期結果。開跑前的 _invalidate_stale 以內容雜湊
@@ -51,8 +51,28 @@ SCHEMA_DIR = ROOT / "_config" / "schemas"
 
 
 def _log(message):
-    """進度訊息印到 stderr——模型呼叫可能單次卡數分鐘，讓終端機不要整段空白。"""
+    """進度訊息印到 stderr，讓長時間的檔案驗證不會讓終端機整段空白。"""
     print(message, file=sys.stderr, flush=True)
+
+
+API_DISABLED = True
+
+
+def _call_model(prompt, *, validate, runner, label, task=None, extract=None):
+    """Use only an injected local runner; never select the default API runner."""
+    if API_DISABLED and runner is None:
+        raise ModelError(
+            "run_chapter.py 的模型/API 路徑已停用；請使用 run_chapter_manual.py prompts/check/run，"
+            "由人工填寫 M3/M6 payload。"
+        )
+    return call_model(
+        prompt,
+        validate=validate,
+        runner=runner,
+        label=label,
+        task=task,
+        extract=extract,
+    )
 
 
 class ChapterContext:
@@ -60,7 +80,7 @@ class ChapterContext:
         self.book = canonical_book_name(book)
         self.chapter = int(chapter)
         self.root = Path(root)
-        self.runner = runner  # None → model_client 預設 claude runner
+        self.runner = runner  # 只接受 manual wrapper／測試注入的本地 runner
         self.index = index  # None → resolver 讀真實 link_index.json
         self.homonyms = homonyms
         self.tmp = book_directory(self.root, book) / ".tmp" / f"第{self.chapter}章"
@@ -281,22 +301,22 @@ def resolve_step(ctx):
 
 
 # --------------------------------------------------------------------------- #
-# 模型步驟共用：resume + call_model + 寫檔；失敗記入 manual_review
+# payload runner 共用：resume + 驗證 + 寫檔；失敗記入 manual_review
 # --------------------------------------------------------------------------- #
 def _model_step(ctx, out_path, prompt, validate, label, normalize=None, task=None,
                 extract=None):
     if out_path.exists():
         return _read_yaml(out_path)
     try:
-        payload = call_model(prompt, validate=validate, runner=ctx.runner, label=label,
-                             task=task, extract=extract)
+        payload = _call_model(prompt, validate=validate, runner=ctx.runner, label=label,
+                              task=task, extract=extract)
     except ModelValidationError as exc:
         ctx.manual_review.append(str(exc))
         return None
     except ModelError as exc:
-        # 端點／runner 基礎設施失敗：走 manual_review 而非 traceback——
-        # resume 特性讓「修好端點重跑同一指令」就是完整的復原路徑
-        ctx.manual_review.append(f"{label}：端點呼叫失敗（{exc}）——檢查端點後重跑即可續作")
+        # runner 基礎設施失敗：走 manual_review 而非 traceback；
+        # resume 特性讓修正 payload 後重跑同一指令即可續作
+        ctx.manual_review.append(f"{label}：payload runner 執行失敗（{exc}）——修正後重跑即可續作")
         return None
     if normalize:
         payload = normalize(payload)
@@ -517,7 +537,7 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
         ctx, batch, allowed_related, sources_text, raw_text, feedback, source_urls
     )
     try:
-        results = call_model(
+        results = _call_model(
             prompt,
             validate=lambda p: [] if isinstance(p, list) and p else ["需回傳非空的 payload 陣列"],
             runner=ctx.runner, label="entry_batch", task="entry",
@@ -595,7 +615,7 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
     if pending:
         _log(f"▶ M3 entry_content：{len(pending)} 個條目待建（每批 {batch_size} 個）")
     if pending:
-        # 護欄：真的要呼叫模型前，確認來源讀得到；空來源會讓模型杜撰條目內容
+        # 護欄：讀取 payload 前確認來源讀得到，避免空來源下產生無依據內容
         source_excerpts.require_sources(ctx.path("source_manifest.md"), ctx.root)
     last_errors = {}
     for round_num in range(4):  # 一輪批量 + 一輪（帶錯誤回饋的）重做
@@ -608,7 +628,7 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
                             for e in batch if e["name"] in last_errors]
             _log(
                 f"  · entry_content 第 {round_num + 1} 輪 批次 {batch_num}/{total_batches}"
-                f"（{len(batch)} 條目）呼叫模型中…"
+                f"（{len(batch)} 條目）讀取人工 payload 中…"
             )
             results, errors = _run_entry_batch(
                 ctx, batch, allowed_related, sources_text, raw_text, known,
@@ -1118,9 +1138,9 @@ def _extract_chapter_payload(text):
 def chapter_content_step(ctx, plan):
     out_path = ctx.path("chapter_content.yaml")
     if not out_path.exists():
-        # 護欄：本章整理要呼叫模型前，確認來源讀得到；空來源會讓模型杜撰註釋
+        # 護欄：讀取本章整理 payload 前確認來源讀得到，避免空來源下產生無依據內容
         source_excerpts.require_sources(ctx.path("source_manifest.md"), ctx.root)
-        _log("▶ M6 chapter_content：本章整理呼叫模型中…")
+        _log("▶ M6 chapter_content：讀取人工 payload 中…")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
     sources_text = source_excerpts.full_source_text(ctx.sources())
@@ -2428,6 +2448,11 @@ def validate_step(ctx, written):
 # --------------------------------------------------------------------------- #
 def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None,
                 entry_limit=None):
+    if runner is None and API_DISABLED:
+        raise ModelError(
+            "run_chapter.py 的模型/API 路徑已停用；請使用 run_chapter_manual.py prompts/check/run，"
+            "由人工填寫 M3/M6 payload。"
+        )
     ctx = ChapterContext(
         book, chapter, root=root, runner=runner, index=index, homonyms=homonyms
     )
@@ -2455,7 +2480,7 @@ def _manual_review_hints(items, book, chapter):
     錯誤不教修法——agent 面對「重試 3 次仍不合格」時最需要的是下一步指令。
     每類問題只提示一次；resume 特性（已完成步驟不重做）是所有修法的前提。
     """
-    rerun = f"python util/run_chapter.py {book} {chapter}"
+    rerun = f"python util/run_chapter_manual.py run {book} {chapter}"
     hints, seen = [], set()
 
     def add(key, problem, actions):
@@ -2465,14 +2490,13 @@ def _manual_review_hints(items, book, chapter):
 
     for item in items:
         if item.startswith("chapter_content：") and "不合格" in item:
-            add("m6", "chapter_content 模型多次輸出不合格（常見：organization 沒用「| 區塊」、值首裸露 >／[、外層多包一層 key）", [
-                f"換端點只重做 M6（斷點續跑，其餘不重做）：MODEL_ENDPOINT_CHAPTER=claude-cli {rerun}",
-                "可先驗端點：python util/model_client.py test --task chapter",
+            add("m6", "chapter_content payload 多次驗證不合格（常見：organization 沒用「| 區塊」、值首裸露 >／[、外層多包一層 key）", [
+                f"修正 chapter_content.yaml 後重跑人工流程（保留已完成步驟）：{rerun}",
             ])
         elif item.startswith("entry_content:") and "不合格" in item:
             add("m3", "個別條目 payload 多次不合格", [
                 f"直接重跑（resume 只補失敗的條目）：{rerun}",
-                f"持續失敗就換端點：MODEL_ENDPOINT_ENTRY=claude-cli {rerun}",
+                f"持續失敗就回到 prompts 重新取得規格並手寫 payload：python util/run_chapter_manual.py prompts {book} {chapter}",
             ])
         elif item.startswith("entry_content:") and "跳過以免覆蓋" in item:
             add("overwrite", "候選與既有條目同名且對方已有其他章累積（覆蓋保護擋下）", [
@@ -2556,7 +2580,7 @@ def main():
     args = parser.parse_args()
     try:
         result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries)
-    except (OSError, ValueError, yaml.YAMLError) as exc:
+    except (ModelError, OSError, ValueError, yaml.YAMLError) as exc:
         print(f"❌ {exc}")
         return 1
     print(f"✅ 完成：寫入 {len(result['written'])} 檔，新增條目 {result['entry_count']}")

@@ -651,8 +651,8 @@ def prepare_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
 def run_chapter(book: str, chapter: int, keep_chapter: bool = False) -> Dict[str, Any]:
     """Compatibility entry point that always runs ``run_chapter_manual.py run``.
 
-    The model-powered ``util/run_chapter.py`` is intentionally not exposed by
-    MCP.  M3/M6 remain a human-written, zero-API workflow.
+    M3/M6 remain a human-written workflow; this entry point never selects an
+    external content generator.
     """
     return render_manual_chapter(book, chapter, keep_chapter=keep_chapter)
 
@@ -1269,10 +1269,10 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四來源內容複核或收尾閘門。
 
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
-2. 來源準備可用 `crawl_bible_source`、`build_source_manifest`、`build_candidate_similarity`；模型端點可用 `model_client`，但 `use` 必須明確確認。
+2. 來源準備可用 `crawl_bible_source`、`build_source_manifest`、`build_candidate_similarity`。
 3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
 4. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
-5. M3/M6 **只走人工零 API 流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。不要用 `run_chapter.py` 生成 M3/M6。
+5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。
 6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
@@ -1282,14 +1282,14 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 
 @mcp.prompt("biblical_maintenance_sop")
 def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
-    """MCP-assisted maintenance SOP with the same zero-API M3/M6 discipline."""
+    """MCP-assisted maintenance SOP with the same manual M3/M6 discipline."""
     return f"""# Hermes Scripture 維護：{book} 第 {chapter} 章（MCP 輔助）
 
 以 `agent_maintenance_prompt.md` 為完整且優先的規格。先讀四來源並逐條勘誤；結構通過不等於內容正確。
 
 - 先用 `get_chapter_status` 看目前管線狀態，用 `read_chapter_artifact` 讀受限的 `.tmp` payload，用 `search_wiki_entries`／`read_wiki_entry` 核對既有條目與 aliases。
 - 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。
-- 修改 M3／M6 時固定走零 API：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
+- 修改 M3／M6 時固定走人工流程：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。
 - 渲染後可跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支以**整個** raw_data 語料補掃。報出＝查無任何本地來源的強力刪除線索；未報出**不**證明它在本章／該條目實際累積來源出現，仍要按 manifest 與累積章節核對。

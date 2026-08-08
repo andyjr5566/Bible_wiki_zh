@@ -1,5 +1,5 @@
 你要完成【{書名} 第{X}章】知識連結流程的前半段——只做到 link_candidates.yaml
-定稿＋語義近鄰報告，不要往下跑 run_chapter.py（步驟3以後留給下一手）。
+定稿＋語義近鄰報告，不要往下跑 run_chapter_manual.py（步驟3以後留給下一手）。
 
 治理規範：完整讀 C:\Obsidian\Hermes\scripture\agent_start_prompt.md 步驟1–2，一切照它走；
 所有輸出用繁體中文（英文來源 KC/BH 引用要譯不要貼原文）。

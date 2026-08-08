@@ -48,7 +48,7 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
   範圍（2026-08 實測：「摩西」累積 49 筆橫跨三卷，development 卻只寫出埃及記第2章）。
   凡是本章要累積進去的既有條目，若累積筆數明顯偏多（`python util/check_development_staleness.py
   <書卷>` 列出候選），要打開來看 development 是不是只覆蓋首建那卷／那章——是的話就依現有
-  累積表（已審過、有出處）重新綜整，不是重跑模型；development 只收「跨書卷／跨章的主題
+  累積表（已審過、有出處）重新綜整，不是重新套用自動生成；development 只收「跨書卷／跨章的主題
   遞進」，同一段經文內的字義辯論屬於 definition，不要塞錯欄位。`link_updates.py apply` 套用
   時累積跨過門檻會自動印提醒，別忽略。
 
@@ -62,9 +62,9 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 
 **寫任何內容前，先讀對應的生產 prompt 當規格書**（勘誤補寫的內容必須同樣合格）：
 
-- **M6 本章整理**：`util/run_chapter.py` 的 `chapter_content_step`（約 1135–1225 行，
-  `你是聖經研經資料整理員…chapter_content payload`）。
-- **M3 條目內容**：同檔 `_batch_entry_prompt`（約 341–369 行）。
+- **M6 本章整理**：以 `util/run_chapter_manual.py prompts` 落地的 chapter_content prompt
+  （`你是聖經研經資料整理員…chapter_content payload`）為規格。
+- **M3 條目內容**：以同一批 prompts 落地的 entry payload 規格為準。
 
 兩份 prompt 的硬規格摘要（細節以 prompt 為準）：
 
@@ -103,14 +103,14 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 1. **Source of truth 是 `.tmp/第x章/` 的 yaml，不是渲染出來的 markdown。**
    只改 `第x章.md` 或 `link_folder/**.md` 而不改 yaml，下次重跑 render 就被覆蓋回舊內容
    （申4 鐵爐實測）。唯一例外見下方「既有條目 md 的地位」。
-2. **零 API**：重跑一律用 `util/run_chapter_manual.py`（`check` → `run`），不用
-   `run_chapter.py`——manual 版是原版 orchestrator 加 guard runner（模型步驟被觸發＝
-   直接報錯）與作廢預警，護欄完全相同。`link_updates.py` 本來就不呼叫模型，照原版用。
+2. **人工重跑**：重跑一律用 `util/run_chapter_manual.py`（`check` → `run`）。它沿用
+   原版 orchestrator 的結構護欄與作廢預警；缺少人工 payload 時直接報錯。`link_updates.py`
+   照原版用。
 3. **內容鐵律不因維護而放鬆**：修改後的文字仍必須能對回經文與本章四來源
    （`.tmp/第x章/manual/sources.md` 或 `source_manifest.md` 列的 raw_data 檔）；
    新增的引句、經文引註、音譯都要先 grep raw_data 確認出處。
 
-## MCP 輔助（可用時；M3／M6 固定零 API）
+## MCP 輔助（可用時；M3／M6 固定人工內容）
 
 連上 `Hermes-Scripture-MCP` 時，先用 `get_chapter_status` 看管線缺口；用
 `read_chapter_artifact` 讀白名單內的 `.tmp` payload／prompt、用 `read_chapter_source`
@@ -118,13 +118,13 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 既有條目與 alias。這些工具有路徑白名單，不能用來讀任意檔案。
 
 本檔引用的 `util/*.py` 也都有 MCP 對應：`build_source_manifest`、`build_candidate_similarity`、
-`model_client`、`sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
+`sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
 `audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates` 與
 `rename_markdown`。`check_accumulation_orphans.py`（反向孤兒累積）與
 `check_development_staleness.py`（development 落後累積成長候選清單，見上方「勘誤所有
-link 與條目內容」一節）目前無 MCP 對應，直接用 Bash 跑。`run_chapter` 這個 MCP 名稱固定走 `run_chapter_manual.py run`，不會呼叫模型版
-`run_chapter.py`；需要寫入的工具仍依 MCP 回傳的確認要求執行。
+link 與條目內容」一節）目前無 MCP 對應，直接用 Bash 跑。`run_chapter` 這個 MCP 名稱固定走
+`run_chapter_manual.py run` 的人工流程；需要寫入的工具仍依 MCP 回傳的確認要求執行。
 
 大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
 tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之外的另一層設定。
@@ -133,7 +133,7 @@ tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之
 `check_manual_payloads`（唯讀，不會改寫 alias）→ `render_manual_chapter`；改
 `entry_content` 且 chapter_content 已同步時才設 `keep_chapter=true`。候選變動前先呼叫
 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單，確認後才設為 true。
-這些工具實際只會使用 `util/run_chapter_manual.py`，絕不呼叫模型端點。
+這些工具實際只會使用 `util/run_chapter_manual.py` 的人工流程。
 
 B 類累積保持既有紀律：`preview_chapter_link_updates` → 人工核對 summary／relation 與
 來源 → 將 token 傳給 `apply_chapter_link_updates` → 再 preview 必須 0 變更。MCP 不得用來
@@ -175,8 +175,7 @@ render 後可用 `scan_unsourced_tokens` 補掃舊 A 類條目從未被 payload 
 修條目的 definition／development／accumulations／sources 等欄位：
 
 - 改完：`check` → `run --keep-chapter`。不帶 `--keep-chapter` 時 run 會擋下並說明
-  （原版行為是作廢 verse_links＋chapter_content 重找模型生成；人工模式沒有模型，
-  作廢＝刪掉你手寫的本章整理）。
+  （原版行為是作廢 verse_links＋chapter_content；人工流程中這代表刪掉你手寫的本章整理）。
 - `--keep-chapter` 的前提是「本章整理不受這次條目修改影響」——若改了條目**名稱**或
   **aliases**，chapter_content 的 knowledge_nodes／organization 連結可能跟著要改，
   先改好再 `check`（白名單驗證會抓）。
@@ -313,7 +312,8 @@ python util/verify_links.py 【書名】
 
 1. `link_candidates.yaml` 加候選（`name`／`type`／`evidence`；主題／背景節點**不給 surface**，
    風險最低）。
-2. **坑一：`resolve_step` 若 `link_plan.yaml` 已存在就直接回傳、不重算**（run_chapter.py:268）
+2. **坑一：`resolve_step` 若 `link_plan.yaml` 已存在就直接回傳、不重算**（見
+   `util/run_chapter_manual.py` 所使用的 resolver 實作）
    ——只刪 `pipeline_state.json` 不夠，新候選不會進 plan。要**同時刪 `link_plan.yaml`**。
 3. **坑二：保住手寫的 M6**——`_invalidate_stale` 見 link_candidates 變了會連鎖刪
    chapter_content。對策同情境 C 步驟5：**先刪 `pipeline_state.json`（無基線＝視為乾淨、不作廢）**，

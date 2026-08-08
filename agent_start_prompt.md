@@ -1,6 +1,6 @@
 # Agent Start Prompt
 
-處理書卷章節時，流程由程式主導（`util/run_chapter.py`），你只負責「準備輸入、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。
+處理書卷章節時，流程由 `util/run_chapter_manual.py` 與人工 payload 共同主導；你負責「準備輸入、讀來源、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。
 
 ## MCP 輔助（可用時；不取代本流程）
 
@@ -10,22 +10,22 @@
 內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
 
 本檔下面列出的 `util/*.py` 都有對應 MCP 工具：來源抓取用 `crawl_bible_source`，manifest 用
-`build_source_manifest`，候選報告用 `build_candidate_similarity`，模型端點用 `model_client`；
+`build_source_manifest`，候選報告用 `build_candidate_similarity`；
 索引與收尾檢查依序用 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
 `audit_knowledge_base`、`check_chapter_files`。B 類先用 `prepare_chapter_link_updates`，再沿用
 下方的 preview/token apply 工具。`run_chapter` 是 MCP 的相容名稱，但固定走
-`run_chapter_manual.py`；MCP 不會呼叫模型版 `run_chapter.py`。改名使用 `rename_markdown`
+`run_chapter_manual.py`；MCP 與本檔都只走人工 payload。改名使用 `rename_markdown`
 （預設 dry-run；正式執行必須明確確認）。
 
 大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
 tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之外的另一層設定。
 
-**經 MCP 處理 M3／M6 時，一律走零 API 的人工模式**：
+**經 MCP 處理 M3／M6 時，一律走人工模式**：
 `prepare_manual_payload_prompts` → 手寫 M3 `entry_content/*.yaml` → 再 prepare 取得更新的
 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
 `render_manual_chapter`。這條路實際執行的是 `util/run_chapter_manual.py`，不可以 MCP
-工具偷換成 `run_chapter.py` 的模型生成。`lint_chapter_content` 只是格式提示；M3/M6 的
+工具偷換成自動生成。`lint_chapter_content` 只是格式提示；M3/M6 的
 結構閘門是 `check_manual_payloads`，內容正確性仍須逐條對四來源。
 
 B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updates.yaml` 與來源 →
@@ -63,15 +63,17 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
      報告是分類輔助，不是硬規則；evidence 寫得越具體（含經文引句），近鄰越準。
    - 資料驅動判準見 `scheme.md` §3；語義近鄰索引見 `scheme.md` §3.5。
 
-3. **跑 orchestrator**（結構、渲染、驗證全由程式處理）
+3. **跑人工 orchestrator**（M3/M6 手寫，結構、渲染、驗證由程式處理）
    ```text
    python util/build_link_index.py
-   python util/run_chapter.py 【書名】 X
+   python util/run_chapter_manual.py prompts 【書名】 X
    ```
-   程式會：解析候選（A–E 類）→ 批量請模型填條目 payload → 程式化標注經文 wiki-link → 模型填本章整理 → 渲染全部 markdown → 結構驗證。模型端點用 `python util/model_client.py list|use|test` 檢查或切換。
-   - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」），模型會反覆重試到放棄。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗，不再退回模型重試。
-   - **M3 的 alias 撞名不再硬失敗**：模型配的 alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，不再把整個條目退回模型重做——實測錯誤回饋重試兩輪模型照配不誤，只會白燒呼叫。
-   - **人工模式（agent 當模型、零 API）**：使用者指示「用 run_chapter_manual」時，本步驟改為四段：`python util/run_chapter_manual.py prompts 【書名】 X`（落地 M3/M6 實際 prompt 與來源清單）→ agent 讀**來源原檔全文**依 prompt 規格手寫 `.tmp/第x章/entry_content/*.yaml`（條目寫齊後重跑 prompts 重生 M6 prompt）與 `chapter_content.yaml` → `check`（fresh 路徑同套驗證）→ `run`（原版 orchestrator＋guard，模型步驟被觸發＝報錯）。其餘步驟（1、2、4–8）完全相同；步驟6 的複核不可因「內容是自己寫的」而省略。事後修改 `.tmp` 內容的維護流程見 `agent_maintenance_prompt.md`。
+   `prompts` 會落地 M3/M6 的實際 prompt 與來源清單；agent 必須讀來源原檔全文，手寫
+   `.tmp/第x章/entry_content/*.yaml` 與 `chapter_content.yaml`。條目寫齊後重跑 `prompts`
+   更新 M6 prompt，再依序執行 `check`、`run`；`run` 只做 M5/P3/P4，若缺 payload 會直接報錯，不會自動產生內容。
+   - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」）。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗。
+   - **M3 的 alias 撞名不再硬失敗**：alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，保留其餘人工 payload 供修正。
+   - **人工內容流程**：本步驟固定依四段執行：`python util/run_chapter_manual.py prompts 【書名】 X`（落地 M3/M6 實際 prompt 與來源清單）→ agent 讀**來源原檔全文**依 prompt 規格手寫 `.tmp/第x章/entry_content/*.yaml`（條目寫齊後重跑 prompts 更新 M6 prompt）與 `chapter_content.yaml` → `check`（fresh 路徑同套驗證）→ `run`（只做既定的渲染與驗證步驟）。其餘步驟（1、2、4–8）完全相同；步驟6 的複核不可因「內容是自己寫的」而省略。事後修改 `.tmp` 內容的維護流程見 `agent_maintenance_prompt.md`。
 
 4. **B 類累積**（既有條目補本章資料）
    ```text
@@ -87,13 +89,12 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
 5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
    - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。
 
-6. **模型產出後的勘誤複核（run_chapter／link_updates 跑完、commit 前必做）**：`run_chapter.py` 的 M3（entry_content）與 M6（chapter_content 本章整理）、以及 `link_updates.py` 填的 summary／relation，都是模型依 prompt 一次生成，不是人工逐句核對過的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
-   - 抓法同 §「內容勘誤」四類高風險：模型是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
+6. **M3/M6 與 B 類內容的勘誤複核（commit 前必做）**：手寫的 `entry_content`、`chapter_content`，以及 `link_updates.py` 填的 summary／relation，都不是程式能證明正確的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
+   - 抓法同 §「內容勘誤」四類高風險：內容是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
    - P4 已有數道 manual_review 輔助（實錯做成的，只提醒不擋 build，人工複核仍是主力）：①本章整理行文／表格裡查無出處的拉丁音譯（M6 每次重新生成都可能在新位置編一個，改 entry_content 觸發重生後要整份重查）；②引句掛名來源查無、卻在別家 raw 檔逐字找到＝誤植嫌疑（GT 是丁良才／啟導本／串珠／背景註釋等多家合訂本，最常被錯拆成「BH」；兩邊都查無的引句多半是英文來源的中譯，機器不可驗，仍要人工比對）；③**解經爭議類條目的「主題發展／定義」被塞進查無出處的解經史**（利12／利13 實錯：`type=解經爭議` 且 evidence 描述雙方交鋒時，M3／M6 會 develop 出一段來源根本沒提的解經史分期——早期猶太解經／教父時期＋奧古斯丁／宗教改革＋加爾文／現代學者 Wenham、Milgrom…；判準是「條目含具名學者／經典／分期用語、但該詞在本章四來源與經文查無出處」）。解經爭議條目只能陳述四來源實際記載的立場，不可自行編造解經史或補上來源沒提的學者／教父／改教人物；報到時逐一 `grep` raw_data 核對，查無出處者整段拔除。
    - P4 另有一道 error 級機械護欄（利11 實錯做成）：**knowledge_nodes 單一清單項用頓號把兩個條目名黏成一項**（利11「摩西、亞倫和他兒子（祭司）」當一個節點）——整項對不上任何條目會被靜默丟棄，連同各自的本章累積一起消失，而 `_split_node_errors` 只抓「有右括號沒左括號」的逗號碎片、抓不到兩邊括號都完整的頓號合併。判準嚴格（整項對不上、但拆開後 ≥2 段各自對得上真實條目才判為合併，放行「肉體的情慾、眼目的情慾、今生的驕傲」這類名字本身帶頓號的合法條目），故列 error；報到時拆成獨立清單項目，一項一個條目名。
-   - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml`（本章整理）或 `entry_content/*.yaml`（新建條目，注意是 `definition`／`development` 欄，不是 `.md` 的段落）裡的文字後，重跑 `python util/run_chapter.py 【書名】 X` 讓 render 重新產出 markdown——**只改渲染後的 `第x章.md`／`link_folder/**.md` 而不改 yaml，下次任何重跑都會被 render 覆蓋回錯的舊內容**（實測踩過：申4 鐵爐條目只改了 `.md` 沒改 yaml，重跑就打回原形）。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`（不是 run_chapter）。
-   - `run_chapter.py` 已會在改動 `link_candidates.yaml` 時**自動作廢並重生下游**（link_plan／entry_content／verse_links／chapter_content），不必再手動刪中間檔；但改 `entry_content/*.yaml`／`chapter_content.yaml` 本身後，直接重跑即可讓 render 帶出新內容。
-   - **改 `entry_content/*.yaml` 會連帶作廢 `chapter_content.yaml`**：即使只是修一兩句勘誤，`run_chapter.py` 偵測到 entry_content 變動就會自動作廢並重新生成 `verse_links.yaml` 與 `chapter_content.yaml`——包含你已經手動改好的本章整理，也會被模型重新生成的版本整段覆蓋掉（利1實測踩過：改一個 entry_content 的錯誤引註，手動修好的 organization 被整段換掉兩次）。修完 entry_content 後，要重新檢查（甚至可能要重寫或重新複核）`chapter_content.yaml`，不能假設它沒受影響。
+   - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml` 或 `entry_content/*.yaml` 後，重跑 `python util/run_chapter_manual.py check` → `run` 讓 render 重新產出 markdown——**只改渲染後的 markdown 而不改 yaml，下次 render 會覆蓋回錯的舊內容**。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`。
+   - 改動 `link_candidates.yaml` 後要重跑 `python util/run_chapter_manual.py prompts`，確認過期清單後再手寫缺少的 payload；改 `entry_content/*.yaml` 後則重新 `check`，必要時重跑 `prompts` 取得新的白名單。
    - 順手複查既有條目：本章若累積到的既有條目本身帶著更早期的錯（例如某地名被錯記成同音異義的另一地名），連同勘誤一併修正，並在 relation 裡註明勘誤依據，不要默默改。
    - 這一步做完才進入下一步收尾驗證；驗證閘門不會幫你抓這類語意錯誤。
 
@@ -120,7 +121,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    `verse_links.yaml`、`chapter_content.yaml`、`第x章.md`、`link_updates.yaml`、
    `util/output/` 下的驗證報告），最後以雜湊比對驗證 embedding 語義索引與條目庫同步。
    一旦某檔缺失，程式會停在第一個缺檔處並印出「該回到哪個動作續做」的具體指令
-   （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter.py`；缺 `link_updates.yaml`
+   （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter_manual.py prompts`；缺 `link_updates.yaml`
    → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面
    的流程走完，直到本檢查全數 PASS 才 commit + push。
    本檢查最後會掃 git 未追蹤的 `link_folder/**.md`（利3／4 曾漏 git add 新建條目、
@@ -131,7 +132,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
 ## 行為邊界（內容層，程式無法代勞）
 
 - 一切內容由已收集資料驅動：candidates、summary/relation、條目敘述都必須能對回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
-- **run_chapter／link_updates 產出後，agent 必須以四來源為基準逐條複核，不可假設模型一次生成的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
+- **run_chapter／link_updates 產出後，agent 必須以四來源為基準逐條複核，不可假設自動產出的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
 - **英文來源（KingComments、BibleHub）引用時要譯成繁體中文**，不可整段貼英文原文——本檔開頭已訂「所有輸出用繁體中文」。譯文仍要保留引號與出處（KC：「燔祭一切的價值，就彷彿轉到了他、就是獻祭者身上。」），不要因為要翻譯就退回「KC 指出…」的摘要體。只有在原文用字本身就是重點時（如原文區分 'to burn' 與 'to offer up in smoke'）才以括號附註原文。
 - 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
 - 檔案改名一律用 `python util/rename_markdown.py <src> <dst> [--dry-run]`（會同步全庫 WikiLink）。

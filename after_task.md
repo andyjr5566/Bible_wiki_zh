@@ -27,7 +27,8 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
 
 步驟3–4：
   python util/build_link_index.py
-  python util/run_chapter.py {書名} {X}
+  python util/run_chapter_manual.py prompts {書名} {X}
+  （依落地 prompt 手寫 entry_content/*.yaml 與 chapter_content.yaml，接著 check → run）
   python util/link_updates.py prepare {書名} {X}
   → 回經文與四來源原文填 link_updates.yaml 的 summary/relation（繁中）
   python util/link_updates.py apply {書名} {X} --dry-run
@@ -37,8 +38,8 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
   逐條把「本章整理、新建條目、B類累積」回四來源核對，抓四類錯——
   來源誤植、全稱詞/方向性誤讀、腦補的經文交叉引註、查無出處的格言式總結句。
   source of truth 是 .tmp 裡的 yaml（chapter_content.yaml / entry_content/*.yaml），
-  不是渲染出的 .md；改 yaml 後重跑 run_chapter 讓 render 帶出。
-  改 entry_content 會連帶作廢並重生 chapter_content——本章整理要重查一遍。
+  不是渲染出的 .md；改 yaml 後重跑 run_chapter_manual.py check → run 讓 render 帶出。
+  改 entry_content 後先 check；若本章整理同步受影響，重跑 prompts 重新取得規格再修正。
   解經爭議類條目只能陳述四來源實際立場，不可自編解經史/學者/教父。
 
 步驟7–8 收尾（全 PASS 才 commit）：

@@ -82,6 +82,11 @@ def fake_runner(prompt):
 
 
 class OrchestratorTests(unittest.TestCase):
+    def test_default_api_runner_is_disabled(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaises(run_chapter.ModelError):
+                run_chapter.run_chapter("出埃及記", 26, root=Path(directory))
+
     def _make_vault(self, tmp):
         root = Path(tmp)
         (root / "raw_scripture" / "出埃及記").mkdir(parents=True)
