@@ -1,26 +1,29 @@
 book: 出埃及記
 chapter: 20
 A_use_directly:
-- name: 神頒布十誡
-  suggested_type: 事件
-  evidence: 1節；「神吩咐這一切的話說」——原文「話」與「吩咐」同字根，強調這些誡命是神啟示的話語
-  surfaces:
-  - phrase: 神吩咐這一切的話說
-    verses:
-    - 1
+- name: 摩西
+  suggested_type: 人物
+  evidence: 19-22節；百姓求他作中保；他就挨近神所在的幽暗之中
   match_type: exact
-  existing_title: 神頒布十誡
-  existing_path: link_folder/事件/神頒布十誡.md
-- name: 我是耶和華你的神
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 耶和華
   suggested_type: 神學
-  evidence: 2節；十誡的引言；丁良才指神不提創造者的權柄，乃提救贖者的憐憫和恩典
-  surfaces:
-  - phrase: 我是耶和華─你的神
-    verses:
-    - 2
+  evidence: 5、7、11節；頒賜十誡者；祂是忌邪的神
   match_type: exact
-  existing_title: 我是耶和華你的神
-  existing_path: link_folder/神學/我是耶和華你的神.md
+  existing_title: 耶和華
+  existing_path: link_folder/神學/耶和華.md
+- name: 以色列
+  suggested_type: 原文
+  evidence: 22節；「你要向以色列人這樣說」
+  match_type: exact
+  existing_title: 以色列
+  existing_path: link_folder/原文/以色列.md
+- name: 西乃山
+  suggested_type: 地點
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
 - name: 埃及
   suggested_type: 地點
   evidence: 2節；「曾將你從埃及地為奴之家領出來」——律法一開始已經以恩典作為背景
@@ -31,6 +34,46 @@ A_use_directly:
   match_type: exact
   existing_title: 埃及
   existing_path: link_folder/地點/埃及.md
+- name: 十誡
+  suggested_type: 神學
+  evidence: 1-17節；丁良才列出十誡最要緊的三種證據：神親自曉諭、神親自寫在石版上、存在至聖所約櫃內
+  match_type: exact
+  existing_title: 十誡
+  existing_path: link_folder/神學/十誡.md
+- name: 十誡的條分法
+  suggested_type: 神學
+  evidence: 1-17節；三種條分法：猶太人、基督教傳統、改革教派；對應三七分與四六分
+  match_type: exact
+  existing_title: 十誡的條分法
+  existing_path: link_folder/神學/十誡的條分法.md
+- name: 定言式法律
+  suggested_type: 神學
+  evidence: 1-17節；《舊約背景註釋》指定言式法律在古代近東的法典中十分罕見
+  match_type: exact
+  existing_title: 定言式法律
+  existing_path: link_folder/神學/定言式法律.md
+- name: 倫理十誡
+  suggested_type: 神學
+  evidence: 1-17節；「倫理十誡」以別於34:17-26 的「敬拜十守則」
+  match_type: exact
+  existing_title: 倫理十誡
+  existing_path: link_folder/神學/倫理十誡.md
+- name: 敬拜十守則
+  suggested_type: 神學
+  evidence: 1-17節；《丁道爾》指出34:14-26 的主旨並非基本倫理原則，而是這些原則怎樣以宗教形式表達於外
+  match_type: exact
+  existing_title: 敬拜十守則
+  existing_path: link_folder/神學/敬拜十守則.md
+- name: 我是耶和華你的神
+  suggested_type: 神學
+  evidence: 2節；十誡的引言；丁良才指神不提創造者的權柄，乃提救贖者的憐憫和恩典
+  surfaces:
+  - phrase: 我是耶和華─你的神
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 我是耶和華你的神
+  existing_path: link_folder/神學/我是耶和華你的神.md
 - name: 除了我以外你不可有別的神
   suggested_type: 神學
   evidence: 3節；原文「在我面前」；《中文聖經註釋》指這複合字有「敵對」或「以上」之意
@@ -51,12 +94,6 @@ A_use_directly:
   match_type: exact
   existing_title: 不可為自己雕刻偶像
   existing_path: link_folder/神學/不可為自己雕刻偶像.md
-- name: 耶和華
-  suggested_type: 神學
-  evidence: 5、7、11節；頒賜十誡者；祂是忌邪的神
-  match_type: exact
-  existing_title: 耶和華
-  existing_path: link_folder/神學/耶和華.md
 - name: 忌邪的神
   suggested_type: 神學
   evidence: 5節；原文即「嫉妒的」；《丁道爾》建議譯作「熱心」更佳——所指的是排他性的個人關係受破壞時的行為
@@ -178,22 +215,6 @@ A_use_directly:
   match_type: exact
   existing_title: 不可貪戀
   existing_path: link_folder/神學/不可貪戀.md
-- name: 百姓懼怕神的顯現
-  suggested_type: 事件
-  evidence: 18-19節；「眾百姓見雷轟、閃電、角聲、山上冒煙，就都發顫，遠遠的站立」
-  surfaces:
-  - phrase: 就都發顫，遠遠的站立
-    verses:
-    - 18
-  match_type: exact
-  existing_title: 百姓懼怕神的顯現
-  existing_path: link_folder/事件/百姓懼怕神的顯現.md
-- name: 摩西
-  suggested_type: 人物
-  evidence: 19-22節；百姓求他作中保；他就挨近神所在的幽暗之中
-  match_type: exact
-  existing_title: 摩西
-  existing_path: link_folder/人物/摩西.md
 - name: 神的降臨
   suggested_type: 神學
   evidence: 20節；「神降臨是要試驗你們」——含有積極目的的試驗
@@ -214,32 +235,6 @@ A_use_directly:
   match_type: exact
   existing_title: 敬畏神
   existing_path: link_folder/神學/敬畏神.md
-- name: 摩西就近幽暗
-  suggested_type: 事件
-  evidence: 21節；「摩西就挨近神所在的幽暗之中」——『幽暗』形容神的住處（王上8:12）
-  surfaces:
-  - phrase: 摩西就挨近神所在的幽暗之中
-    verses:
-    - 21
-  match_type: exact
-  existing_title: 摩西就近幽暗
-  existing_path: link_folder/事件/摩西就近幽暗.md
-- name: 以色列
-  suggested_type: 原文
-  evidence: 22節；「你要向以色列人這樣說」
-  match_type: exact
-  existing_title: 以色列
-  existing_path: link_folder/原文/以色列.md
-- name: 神指示築壇獻祭
-  suggested_type: 事件
-  evidence: 24-26節；築土壇、不可用鑿成的石頭、不可用臺階
-  surfaces:
-  - phrase: 你要為我築土壇
-    verses:
-    - 24
-  match_type: exact
-  existing_title: 神指示築壇獻祭
-  existing_path: link_folder/事件/神指示築壇獻祭.md
 - name: 土壇
   suggested_type: 神學
   evidence: 24-25節；KC 指土壇與石壇代表基督位格的兩面——土指祂是人子，石指祂是神子
@@ -250,6 +245,12 @@ A_use_directly:
   match_type: exact
   existing_title: 土壇
   existing_path: link_folder/神學/土壇.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: BH 討論獻祭規定
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 平安祭
   suggested_type: 神學
   evidence: 24節；為向神感恩或還願而甘心獻上的火祭
@@ -260,42 +261,372 @@ A_use_directly:
   match_type: exact
   existing_title: 平安祭
   existing_path: link_folder/神學/平安祭.md
-- name: 十誡
+- name: 神的聖潔
   suggested_type: 神學
-  evidence: 1-17節；丁良才列出十誡最要緊的三種證據：神親自曉諭、神親自寫在石版上、存在至聖所約櫃內
+  evidence: BH 討論不可用臺階免得露出下體
   match_type: exact
-  existing_title: 十誡
-  existing_path: link_folder/神學/十誡.md
+  existing_title: 神的聖潔
+  existing_path: link_folder/神學/神的聖潔.md
+- name: 申5：6-21
+  suggested_type: 互文
+  evidence: CT/GT/KC/BH 全來源引用申命記十誡平行經文
+  match_type: exact
+  existing_title: 申5：6-21
+  existing_path: link_folder/互文/申5：6-21.md
+- name: 太22：36-39
+  suggested_type: 互文
+  evidence: CT 引用最大誡命
+  match_type: exact
+  existing_title: 太22：36-39
+  existing_path: link_folder/互文/太22：36-39.md
+- name: 太5：17
+  suggested_type: 互文
+  evidence: BH 引用耶穌成全律法
+  match_type: exact
+  existing_title: 太5：17
+  existing_path: link_folder/互文/太5：17.md
+- name: 太5：21-22
+  suggested_type: 互文
+  evidence: BH 引用耶穌論殺人與怒氣
+  match_type: exact
+  existing_title: 太5：21-22
+  existing_path: link_folder/互文/太5：21-22.md
+- name: 太5：27-28
+  suggested_type: 互文
+  evidence: BH 引用耶穌論姦淫與淫念
+  match_type: exact
+  existing_title: 太5：27-28
+  existing_path: link_folder/互文/太5：27-28.md
+- name: 太12：34-37
+  suggested_type: 互文
+  evidence: BH 引用言語反映內心
+  match_type: exact
+  existing_title: 太12：34-37
+  existing_path: link_folder/互文/太12：34-37.md
+- name: 可2：27-28
+  suggested_type: 互文
+  evidence: BH 引用安息日為人設立
+  match_type: exact
+  existing_title: 可2：27-28
+  existing_path: link_folder/互文/可2：27-28.md
+- name: 約4：24
+  suggested_type: 互文
+  evidence: BH 引用用心靈和誠實敬拜
+  match_type: exact
+  existing_title: 約4：24
+  existing_path: link_folder/互文/約4：24.md
+- name: 羅2：15
+  suggested_type: 互文
+  evidence: CT 引用律法功用刻在人心
+  match_type: exact
+  existing_title: 羅2：15
+  existing_path: link_folder/互文/羅2：15.md
+- name: 加3：19
+  suggested_type: 互文
+  evidence: CT 引用天使傳律法
+  match_type: exact
+  existing_title: 加3：19
+  existing_path: link_folder/互文/加3：19.md
+- name: 弗6：2-3
+  suggested_type: 互文
+  evidence: BH 引用孝敬父母的應許
+  match_type: exact
+  existing_title: 弗6：2-3
+  existing_path: link_folder/互文/弗6：2-3.md
+- name: 來4：9-10
+  suggested_type: 互文
+  evidence: BH 引用安息日的終末應驗
+  match_type: exact
+  existing_title: 來4：9-10
+  existing_path: link_folder/互文/來4：9-10.md
+- name: 詩一百十九96
+  suggested_type: 互文
+  evidence: GT 引用誡命的寬廣
+  match_type: exact
+  existing_title: 詩一百十九96
+  existing_path: link_folder/互文/詩一百十九96.md
+- name: 林前十19-20
+  suggested_type: 互文
+  evidence: GT 引用拜偶像與鬼魔
+  match_type: exact
+  existing_title: 林前十19-20
+  existing_path: link_folder/互文/林前十19-20.md
+- name: 約壹5：21
+  suggested_type: 互文
+  evidence: GT 引用遠避偶像
+  match_type: exact
+  existing_title: 約壹5：21
+  existing_path: link_folder/互文/約壹5：21.md
+- name: 腓3：19
+  suggested_type: 互文
+  evidence: GT 引用以肚腹為神
+  match_type: exact
+  existing_title: 腓3：19
+  existing_path: link_folder/互文/腓3：19.md
+- name: 西3：5
+  suggested_type: 互文
+  evidence: GT 引用貪婪如拜偶像
+  match_type: exact
+  existing_title: 西3：5
+  existing_path: link_folder/互文/西3：5.md
+- name: 太6：24
+  suggested_type: 互文
+  evidence: GT 引用不能事奉神又事奉瑪門
+  match_type: exact
+  existing_title: 太6：24
+  existing_path: link_folder/互文/太6：24.md
+- name: 耶31：33
+  suggested_type: 互文
+  evidence: BH 引用律法寫在心上
+  match_type: exact
+  existing_title: 耶31：33
+  existing_path: link_folder/互文/耶31：33.md
+- name: 加5：1
+  suggested_type: 互文
+  evidence: BH 引用基督裡的自由
+  match_type: exact
+  existing_title: 加5：1
+  existing_path: link_folder/互文/加5：1.md
+- name: 林後11：2
+  suggested_type: 互文
+  evidence: GT 引用神那樣的嫉妒
+  match_type: exact
+  existing_title: 林後11：2
+  existing_path: link_folder/互文/林後11：2.md
+- name: 結18：1-4
+  suggested_type: 互文
+  evidence: GT 引用個人責任
+  match_type: exact
+  existing_title: 結18：1-4
+  existing_path: link_folder/互文/結18：1-4.md
+- name: 結18：20
+  suggested_type: 互文
+  evidence: GT 引用個人擔罪
+  match_type: exact
+  existing_title: 結18：20
+  existing_path: link_folder/互文/結18：20.md
+- name: 申24：16
+  suggested_type: 互文
+  evidence: GT 引用不可因父殺子
+  match_type: exact
+  existing_title: 申24：16
+  existing_path: link_folder/互文/申24：16.md
+- name: 耶31：29-30
+  suggested_type: 互文
+  evidence: GT 引用不再因父罪酸牙
+  match_type: exact
+  existing_title: 耶31：29-30
+  existing_path: link_folder/互文/耶31：29-30.md
+- name: 啟4：5
+  suggested_type: 互文
+  evidence: BH 引用雷轟閃電
+  match_type: exact
+  existing_title: 啟4：5
+  existing_path: link_folder/互文/啟4：5.md
+- name: 賽6：5
+  suggested_type: 互文
+  evidence: BH 引用聖潔神的臨在使人懼怕
+  match_type: exact
+  existing_title: 賽6：5
+  existing_path: link_folder/互文/賽6：5.md
+- name: 路5：8
+  suggested_type: 互文
+  evidence: BH 引用彼得遇見神聖
+  match_type: exact
+  existing_title: 路5：8
+  existing_path: link_folder/互文/路5：8.md
+- name: 提前2：5
+  suggested_type: 互文
+  evidence: BH 引用基督為中保
+  match_type: exact
+  existing_title: 提前2：5
+  existing_path: link_folder/互文/提前2：5.md
+- name: 來4：16
+  suggested_type: 互文
+  evidence: BH 引用坦然無懼到施恩座
+  match_type: exact
+  existing_title: 來4：16
+  existing_path: link_folder/互文/來4：16.md
+- name: 創15：1
+  suggested_type: 互文
+  evidence: BH 引用不要懼怕
+  match_type: exact
+  existing_title: 創15：1
+  existing_path: link_folder/互文/創15：1.md
+- name: 路1：30
+  suggested_type: 互文
+  evidence: BH 引用不要懼怕
+  match_type: exact
+  existing_title: 路1：30
+  existing_path: link_folder/互文/路1：30.md
+- name: 創22
+  suggested_type: 互文
+  evidence: BH 引用亞伯拉罕試驗
+  match_type: exact
+  existing_title: 創22
+  existing_path: link_folder/互文/創22.md
+- name: 箴9：10
+  suggested_type: 互文
+  evidence: BH 引用敬畏耶和華是智慧開端
+  match_type: exact
+  existing_title: 箴9：10
+  existing_path: link_folder/互文/箴9：10.md
+- name: 箴16：6
+  suggested_type: 互文
+  evidence: BH 引用敬畏神遠離惡事
+  match_type: exact
+  existing_title: 箴16：6
+  existing_path: link_folder/互文/箴16：6.md
+- name: 出33：20
+  suggested_type: 互文
+  evidence: BH 引用不能見神面而存活
+  match_type: exact
+  existing_title: 出33：20
+  existing_path: link_folder/互文/出33：20.md
+- name: 詩97：2
+  suggested_type: 互文
+  evidence: BH 引用密雲幽暗環繞神
+  match_type: exact
+  existing_title: 詩97：2
+  existing_path: link_folder/互文/詩97：2.md
+- name: 太27：45
+  suggested_type: 互文
+  evidence: BH 引用十字架黑暗
+  match_type: exact
+  existing_title: 太27：45
+  existing_path: link_folder/互文/太27：45.md
+- name: 約1：14
+  suggested_type: 互文
+  evidence: BH 引用道成肉身
+  match_type: exact
+  existing_title: 約1：14
+  existing_path: link_folder/互文/約1：14.md
+- name: 出29：45-46
+  suggested_type: 互文
+  evidence: BH 引用神住在百姓中間
+  match_type: exact
+  existing_title: 出29：45-46
+  existing_path: link_folder/互文/出29：45-46.md
+- name: 太3：17
+  suggested_type: 互文
+  evidence: BH 引用天上有聲音
+  match_type: exact
+  existing_title: 太3：17
+  existing_path: link_folder/互文/太3：17.md
+- name: 約3：31-34
+  suggested_type: 互文
+  evidence: BH 引用從天上來的
+  match_type: exact
+  existing_title: 約3：31-34
+  existing_path: link_folder/互文/約3：31-34.md
+- name: 創12：7
+  suggested_type: 互文
+  evidence: BH 引用亞伯拉罕築壇
+  match_type: exact
+  existing_title: 創12：7
+  existing_path: link_folder/互文/創12：7.md
+- name: 弗2：14-16
+  suggested_type: 互文
+  evidence: BH 引用基督成就和平
+  match_type: exact
+  existing_title: 弗2：14-16
+  existing_path: link_folder/互文/弗2：14-16.md
+- name: 約1：29
+  suggested_type: 互文
+  evidence: BH 引用神的羔羊
+  match_type: exact
+  existing_title: 約1：29
+  existing_path: link_folder/互文/約1：29.md
+- name: 申12：5
+  suggested_type: 互文
+  evidence: BH 引用神立名居所
+  match_type: exact
+  existing_title: 申12：5
+  existing_path: link_folder/互文/申12：5.md
+- name: 約4：21-24
+  suggested_type: 互文
+  evidence: BH 引用用心靈誠實敬拜
+  match_type: exact
+  existing_title: 約4：21-24
+  existing_path: link_folder/互文/約4：21-24.md
+- name: 弗1：3
+  suggested_type: 互文
+  evidence: BH 引用屬靈福氣
+  match_type: exact
+  existing_title: 弗1：3
+  existing_path: link_folder/互文/弗1：3.md
+- name: 羅12：1
+  suggested_type: 互文
+  evidence: BH 引用活祭
+  match_type: exact
+  existing_title: 羅12：1
+  existing_path: link_folder/互文/羅12：1.md
+- name: 利10：3
+  suggested_type: 互文
+  evidence: BH 引用神在親近人中顯為聖
+  match_type: exact
+  existing_title: 利10：3
+  existing_path: link_folder/互文/利10：3.md
+- name: 創9：20-23
+  suggested_type: 互文
+  evidence: BH 引用挪亞赤身
+  match_type: exact
+  existing_title: 創9：20-23
+  existing_path: link_folder/互文/創9：20-23.md
+- name: 出28：42-43
+  suggested_type: 互文
+  evidence: BH 引用祭司褲子
+  match_type: exact
+  existing_title: 出28：42-43
+  existing_path: link_folder/互文/出28：42-43.md
 - name: 十句話
   suggested_type: 原文
   evidence: 1節；希伯來人稱十誡為「十句話」；「十條誡」的名稱源出於出34:28
   match_type: exact
   existing_title: 十句話
   existing_path: link_folder/原文/十句話.md
-- name: 十誡的條分法
-  suggested_type: 神學
-  evidence: 1-17節；三種條分法：猶太人、基督教傳統、改革教派；對應三七分與四六分
+- name: 除了我以外
+  suggested_type: 原文
+  evidence: CT 討論原文含義「敵對」或「以上」
   match_type: exact
-  existing_title: 十誡的條分法
-  existing_path: link_folder/神學/十誡的條分法.md
-- name: 定言式法律
-  suggested_type: 神學
-  evidence: 1-17節；《舊約背景註釋》指定言式法律在古代近東的法典中十分罕見
+  existing_title: 除了我以外
+  existing_path: link_folder/原文/除了我以外.md
+- name: 忌邪（嫉妒）
+  suggested_type: 原文
+  evidence: CT/GT 討論 qanna 的含義
   match_type: exact
-  existing_title: 定言式法律
-  existing_path: link_folder/神學/定言式法律.md
-- name: 倫理十誡
-  suggested_type: 神學
-  evidence: 1-17節；「倫理十誡」以別於34:17-26 的「敬拜十守則」
+  existing_title: 忌邪（嫉妒）
+  existing_path: link_folder/原文/忌邪（嫉妒）.md
+- name: 妄稱
+  suggested_type: 原文
+  evidence: BH 討論第三誡原文含義
   match_type: exact
-  existing_title: 倫理十誡
-  existing_path: link_folder/神學/倫理十誡.md
-- name: 敬拜十守則
-  suggested_type: 神學
-  evidence: 1-17節；《丁道爾》指出34:14-26 的主旨並非基本倫理原則，而是這些原則怎樣以宗教形式表達於外
+  existing_title: 妄稱
+  existing_path: link_folder/原文/妄稱.md
+- name: 「記念」與「守」
+  suggested_type: 原文
+  evidence: BH 討論第四誡原文含義
   match_type: exact
-  existing_title: 敬拜十守則
-  existing_path: link_folder/神學/敬拜十守則.md
+  existing_title: 「記念」與「守」
+  existing_path: link_folder/原文/「記念」與「守」.md
+- name: 殺人（ratsach）
+  suggested_type: 原文
+  evidence: BH 討論第六誡原文含義（非法殺人）
+  match_type: exact
+  existing_title: 殺人（ratsach）
+  existing_path: link_folder/原文/殺人（ratsach）.md
+- name: 姦淫
+  suggested_type: 原文
+  evidence: BH 討論第七誡原文含義
+  match_type: exact
+  existing_title: 姦淫
+  existing_path: link_folder/原文/姦淫.md
+- name: 貪戀
+  suggested_type: 原文
+  evidence: BH 討論第十誡原文含義（內心慾望）
+  match_type: exact
+  existing_title: 貪戀
+  existing_path: link_folder/原文/貪戀.md
 - name: 古代近東法典
   suggested_type: 背景
   evidence: 1-17節；漢摩拉比法典來自摩西之前幾百年，主要是判例法的例證
@@ -326,6 +657,46 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東祭壇
   existing_path: link_folder/背景/古代近東祭壇.md
+- name: 神頒布十誡
+  suggested_type: 事件
+  evidence: 1節；「神吩咐這一切的話說」——原文「話」與「吩咐」同字根，強調這些誡命是神啟示的話語
+  surfaces:
+  - phrase: 神吩咐這一切的話說
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 神頒布十誡
+  existing_path: link_folder/事件/神頒布十誡.md
+- name: 百姓懼怕神的顯現
+  suggested_type: 事件
+  evidence: 18-19節；「眾百姓見雷轟、閃電、角聲、山上冒煙，就都發顫，遠遠的站立」
+  surfaces:
+  - phrase: 就都發顫，遠遠的站立
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 百姓懼怕神的顯現
+  existing_path: link_folder/事件/百姓懼怕神的顯現.md
+- name: 摩西就近幽暗
+  suggested_type: 事件
+  evidence: 21節；「摩西就挨近神所在的幽暗之中」——『幽暗』形容神的住處（王上8:12）
+  surfaces:
+  - phrase: 摩西就挨近神所在的幽暗之中
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 摩西就近幽暗
+  existing_path: link_folder/事件/摩西就近幽暗.md
+- name: 神指示築壇獻祭
+  suggested_type: 事件
+  evidence: 24-26節；築土壇、不可用鑿成的石頭、不可用臺階
+  surfaces:
+  - phrase: 你要為我築土壇
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 神指示築壇獻祭
+  existing_path: link_folder/事件/神指示築壇獻祭.md
 - name: 律法與恩典
   suggested_type: 主題
   evidence: 2節；KC：對信徒不是「行而活」，乃是「活而行」——義人必因信得生
@@ -344,7 +715,25 @@ A_use_directly:
   match_type: exact
   existing_title: 敬拜
   existing_path: link_folder/主題/敬拜.md
-B_needs_update: []
+B_needs_update:
+- name: 來2：2
+  suggested_type: 互文
+  evidence: CT 引用天使傳律法
+  match_type: exact
+  existing_title: 來2：2
+  existing_path: link_folder/互文/來2：2.md
+- name: 創26：25
+  suggested_type: 互文
+  evidence: BH 引用以撒築壇
+  match_type: exact
+  existing_title: 創26：25
+  existing_path: link_folder/互文/創26：25.md
+- name: 創35：7
+  suggested_type: 互文
+  evidence: BH 引用雅各築壇
+  match_type: exact
+  existing_title: 創35：7
+  existing_path: link_folder/互文/創35：7.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

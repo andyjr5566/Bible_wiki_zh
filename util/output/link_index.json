@@ -11796,6 +11796,16 @@
     "status": "formal",
     "aliases": []
   },
+  "「記念」與「守」": {
+    "path": "link_folder/原文/「記念」與「守」.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "「記念」與「守」",
+    "status": "formal",
+    "aliases": []
+  },
   "「野驢」的隱喻": {
     "path": "link_folder/原文/「野驢」的隱喻.md",
     "type": "原文",
@@ -12283,9 +12293,7 @@
     ],
     "title": "十句話",
     "status": "formal",
-    "aliases": [
-      "aseret hadevarim"
-    ]
+    "aliases": []
   },
   "取利（neshek）": {
     "path": "link_folder/原文/取利（neshek）.md",
@@ -12463,30 +12471,28 @@
     "status": "formal",
     "aliases": []
   },
-  "妄稱（vain）": {
-    "path": "link_folder/原文/妄稱（vain）.md",
+  "妄稱": {
+    "path": "link_folder/原文/妄稱.md",
     "type": "原文",
     "secondary_types": [
       "神學"
     ],
-    "title": "妄稱（vain）",
+    "title": "妄稱",
     "status": "formal",
     "aliases": [
-      "shav",
       "虛妄"
     ]
   },
-  "姦淫（na'aph）": {
-    "path": "link_folder/原文/姦淫（na'aph）.md",
+  "姦淫": {
+    "path": "link_folder/原文/姦淫.md",
     "type": "原文",
     "secondary_types": [
       "神學"
     ],
-    "title": "姦淫（na'aph）",
+    "title": "姦淫",
     "status": "formal",
     "aliases": [
-      "na'aph",
-      "姦淫"
+      "通姦"
     ]
   },
   "守節（chagag）": {
@@ -13761,18 +13767,6 @@
     "status": "formal",
     "aliases": []
   },
-  "記念（zakar）": {
-    "path": "link_folder/原文/記念（zakar）.md",
-    "type": "原文",
-    "secondary_types": [
-      "神學"
-    ],
-    "title": "記念（zakar）",
-    "status": "formal",
-    "aliases": [
-      "zakar"
-    ]
-  },
   "記號與經文": {
     "path": "link_folder/原文/記號與經文.md",
     "type": "原文",
@@ -13816,17 +13810,16 @@
     "status": "formal",
     "aliases": []
   },
-  "貪戀（chamad）": {
-    "path": "link_folder/原文/貪戀（chamad）.md",
+  "貪戀": {
+    "path": "link_folder/原文/貪戀.md",
     "type": "原文",
     "secondary_types": [
       "神學"
     ],
-    "title": "貪戀（chamad）",
+    "title": "貪戀",
     "status": "formal",
     "aliases": [
-      "chamad",
-      "貪戀"
+      "渴望"
     ]
   },
   "賠償（shalem）": {
@@ -14081,17 +14074,17 @@
     "status": "formal",
     "aliases": []
   },
-  "除了我以外（`al-pa{na{y）": {
-    "path": "link_folder/原文/除了我以外（`al-pa{na{y）.md",
+  "除了我以外": {
+    "path": "link_folder/原文/除了我以外.md",
     "type": "原文",
     "secondary_types": [
       "神學"
     ],
-    "title": "除了我以外（`al-pa{na{y）",
+    "title": "除了我以外",
     "status": "formal",
     "aliases": [
-      "al-panay",
-      "在我面前"
+      "在我面前",
+      "當我的面"
     ]
   },
   "除酵（matsah）": {
@@ -27785,9 +27778,6 @@
   "禮冠": {
     "alias_of": "冠冕（裹頭巾）"
   },
-  "aseret hadevarim": {
-    "alias_of": "十句話"
-  },
   "430年": {
     "alias_of": "四百三十年"
   },
@@ -27824,17 +27814,11 @@
   "筋": {
     "alias_of": "大腿窩的筋"
   },
-  "shav": {
-    "alias_of": "妄稱（vain）"
-  },
   "虛妄": {
-    "alias_of": "妄稱（vain）"
+    "alias_of": "妄稱"
   },
-  "na'aph": {
-    "alias_of": "姦淫（na'aph）"
-  },
-  "姦淫": {
-    "alias_of": "姦淫（na'aph）"
+  "通姦": {
+    "alias_of": "姦淫"
   },
   "希伯來人 (過河的人)": {
     "alias_of": "希伯來人_過河的人"
@@ -28205,9 +28189,6 @@
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
   },
-  "zakar": {
-    "alias_of": "記念（zakar）"
-  },
   "手上作記號": {
     "alias_of": "記號與經文"
   },
@@ -28220,11 +28201,8 @@
   "詩51": {
     "alias_of": "詩篇51篇"
   },
-  "chamad": {
-    "alias_of": "貪戀（chamad）"
-  },
-  "貪戀": {
-    "alias_of": "貪戀（chamad）"
+  "渴望": {
+    "alias_of": "貪戀"
   },
   "以賽亞書 66": {
     "alias_of": "賽66（Yeshayahu 66）"
@@ -28325,11 +28303,11 @@
   "銅蛇": {
     "alias_of": "銅蛇（nehushtan）"
   },
-  "al-panay": {
-    "alias_of": "除了我以外（`al-pa{na{y）"
-  },
   "在我面前": {
-    "alias_of": "除了我以外（`al-pa{na{y）"
+    "alias_of": "除了我以外"
+  },
+  "當我的面": {
+    "alias_of": "除了我以外"
   },
   "Sheol": {
     "alias_of": "陰間（Sheol）"

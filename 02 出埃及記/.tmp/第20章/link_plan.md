@@ -93,11 +93,11 @@
 - [[十句話]] → link_folder/原文/十句話.md（來源行=98；依據：GT 希伯來人稱十誡為「十句話」）
 - [[除了我以外（`al-pa{na{y）]] → link_folder/原文/除了我以外（`al-pa{na{y）.md（來源行=99；依據：CT 討論原文含義「敵對」或「以上」）
 - [[忌邪（嫉妒）]] → link_folder/原文/忌邪（嫉妒）.md（來源行=100；依據：CT/GT 討論 qanna 的含義）
-- [[妄稱（vain）]] → link_folder/原文/妄稱（vain）.md（來源行=101；依據：BH 討論第三誡原文含義）
-- [[記念（zakar）]] → link_folder/原文/記念（zakar）.md（來源行=102；依據：BH 討論第四誡原文含義）
+- [[妄稱]] → link_folder/原文/妄稱（vain）.md（來源行=101；依據：BH 討論第三誡原文含義）
+- [[「記念」與「守」]] → link_folder/原文/記念（zakar）.md（來源行=102；依據：BH 討論第四誡原文含義）
 - [[殺人（ratsach）]] → link_folder/原文/殺人（ratsach）.md（來源行=103；依據：BH 討論第六誡原文含義（非法殺人））
-- [[姦淫（na'aph）]] → link_folder/原文/姦淫（na'aph）.md（來源行=104；依據：BH 討論第七誡原文含義）
-- [[貪戀（chamad）]] → link_folder/原文/貪戀（chamad）.md（來源行=105；依據：BH 討論第十誡原文含義（內心慾望））
+- [[姦淫]] → link_folder/原文/姦淫（na'aph）.md（來源行=104；依據：BH 討論第七誡原文含義）
+- [[貪戀]] → link_folder/原文/貪戀（chamad）.md（來源行=105；依據：BH 討論第十誡原文含義（內心慾望））
 - [[古代近東法典]] → link_folder/背景/古代近東法典.md（來源行=108；依據：GT/BH 討論漢摩拉比法典與定言式法律）
 - [[宗主條約]] → link_folder/背景/宗主條約.md（來源行=109；依據：GT/BH 討論十誡與古代國際條約的結構相似性）
 - [[西乃山立約]] → link_folder/背景/西乃山立約.md（來源行=110；依據：GT/BH 討論西乃之約的歷史背景）
