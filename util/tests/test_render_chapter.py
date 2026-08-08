@@ -80,7 +80,7 @@ class RenderChapterTests(unittest.TestCase):
         rendered = render_chapter(VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW)
         navigation = (
             "<!-- chapter-navigation:start -->\n"
-            "| [前一章](第25章.md) | [回目錄](全書目錄及綱要.md) | [下一章](第27章.md) |\n"
+            "| [前一章](../02%20出埃及記/第25章.md) | [回目錄](../02%20出埃及記/全書目錄及綱要.md) | [下一章](../02%20出埃及記/第27章.md) |\n"
             "| :--- | :---: | ---: |\n"
             "<!-- chapter-navigation:end -->"
         )
@@ -93,7 +93,7 @@ class RenderChapterTests(unittest.TestCase):
         first_content = dict(CHAPTER_CONTENT, book="創世記", chapter=1)
         rendered = render_chapter(first, first_content, raw_verses=RAW)
         self.assertIn(
-            "|  | [回目錄](全書目錄及綱要.md) | [下一章](第2章.md) |", rendered
+            "|  | [回目錄](../01%20創世記/全書目錄及綱要.md) | [下一章](../01%20創世記/第2章.md) |", rendered
         )
         self.assertNotIn("前一章", rendered)
 
@@ -101,7 +101,7 @@ class RenderChapterTests(unittest.TestCase):
         last_content = dict(CHAPTER_CONTENT, book="路得記", chapter=4)
         rendered = render_chapter(last, last_content, raw_verses=RAW)
         self.assertIn(
-            "| [前一章](第3章.md) | [回目錄](全書目錄及綱要.md) |  |", rendered
+            "| [前一章](../08%20路得記/第3章.md) | [回目錄](../08%20路得記/全書目錄及綱要.md) |  |", rendered
         )
         self.assertNotIn("下一章", rendered)
 

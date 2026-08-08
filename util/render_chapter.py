@@ -20,9 +20,9 @@ from pathlib import Path
 import yaml
 
 try:
-    from .book_paths import book_directory, canonical_book_name
+    from .book_paths import book_directory, canonical_book_name, ordered_book_dir_name
 except ImportError:
-    from book_paths import book_directory, canonical_book_name
+    from book_paths import book_directory, canonical_book_name, ordered_book_dir_name
 
 ROOT = Path(__file__).resolve().parent.parent
 BOOK_CHAPTERS = json.loads(
@@ -234,9 +234,18 @@ def render_chapter_navigation(book, chapter):
     if total is None:
         raise ValueError(f"未知書卷：{book}")
 
-    previous = f"[前一章](第{chapter - 1}章.md)" if chapter > 1 else ""
-    catalog = "[回目錄](全書目錄及綱要.md)"
-    following = f"[下一章](第{chapter + 1}章.md)" if chapter < total else ""
+    # 每卷都有同名的「第1章、第2章……」。連到網站時不能只給檔名，
+    # 必須從本章資料夾回到 content 根目錄，再指定完整書卷資料夾；
+    # 空格以 URL 形式編碼，Quartz 才會產生正確的網站 slug。
+    book_folder = ordered_book_dir_name(canonical).replace(" ", "%20")
+    link_prefix = f"../{book_folder}/"
+    previous = (
+        f"[前一章]({link_prefix}第{chapter - 1}章.md)" if chapter > 1 else ""
+    )
+    catalog = f"[回目錄]({link_prefix}全書目錄及綱要.md)"
+    following = (
+        f"[下一章]({link_prefix}第{chapter + 1}章.md)" if chapter < total else ""
+    )
 
     # 使用 Markdown 表格的欄位對齊，避免 HTML 標籤或帶 | 的 WikiLink
     # 別名觸發章節內容的格式護欄。
