@@ -40,7 +40,7 @@
     },
     "development": {
       "type": "string",
-      "description": "（formal 選填，對應 H2「主題發展」）跨經卷的主題遞進或預表發展。留空則不輸出此區。"
+      "description": "（formal 選填，對應 H2「主題發展」）跨經卷／跨書卷的主題遞進或預表發展——內容必須指向不同的書卷或卷內跨越多章的軌跡，不可只是同一段經文的字義／詞源／各家詮釋辯論（那屬於 definition）；也不可逐句重述 accumulations 已有的某一筆 summary／relation（累積表是逐章資料，這裡是把資料串成一條線）。條目累積量隨後續章節持續成長，development／related_entries／sources 卻只在條目首建時寫定——每次此條目被後續章節累積時，若累積已跨book或累積筆數明顯增加，應一併檢查並重寫本欄使其反映目前的完整累積範圍，不可放著不管。留空則不輸出此區；沒有跨卷可寫的內容時留空優於硬湊。"
     },
     "accumulations": {
       "type": "array",

@@ -167,6 +167,26 @@ def _updated_text(text, book, chapter, update, path):
     )
 
 
+DEVELOPMENT_STALE_THRESHOLD = 7
+_ACCUM_BLOCK_RE = re.compile(r"<!-- accumulation:[^:]+:\d+:start -->")
+
+
+def _development_stale_hint(before_text, after_text):
+    """累積區塊數剛跨過門檻、或門檻之上又新增時，提醒回頭補 development。
+
+    只是提醒（manual_review 性質），不擋 apply：development 是否真的落後累積成長
+    要人工讀過才能判斷（見 util/check_development_staleness.py 的討論），這裡只
+    用區塊數當機械觸發點，避免每次套用都重複洗版同一句提醒。
+    """
+    count = len(_ACCUM_BLOCK_RE.findall(after_text))
+    if count <= DEVELOPMENT_STALE_THRESHOLD:
+        return None
+    prev_count = len(_ACCUM_BLOCK_RE.findall(before_text))
+    if prev_count == count:
+        return None  # 這次套用沒有新增累積區塊，不是本次改動造成的
+    return count
+
+
 def preview_updates(manifest):
     """Validate every update and return all proposed file changes without writing."""
     manifest = Path(manifest)
@@ -263,6 +283,13 @@ def apply_updates(manifest, dry_run=False, reporter=print):
         action = "預覽" if dry_run else "更新"
         for operation in changes:
             reporter(f"{action}：{operation['relative_path']}")
+            hint_count = _development_stale_hint(operation["before"], operation["after"])
+            if hint_count is not None:
+                reporter(
+                    f"   ℹ️ {operation['relative_path']} 累積已達 {hint_count} 筆——"
+                    "建議順手檢查 development／related_entries／sources 是否已跟上"
+                    "目前的累積範圍（不只停留在條目首建那一卷/那一章）"
+                )
         reporter(f"✅ {'預覽' if dry_run else '套用'}完成：{len(changes)} 個檔案")
     return len(changes)
 

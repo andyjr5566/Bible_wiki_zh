@@ -42,6 +42,15 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
   編輯持久）；已被他章累積 → 定義勘誤直接改 md、累積 summary／relation 走 link_updates。
 - 收尾**機械複掃**：改完用 grep 掃全庫同型字串（例：被壓平的來源名 `CT/GT`）確認本卷本章
   清零，但要排除別卷別章的合法用法（來源依據列雙檔、兩家都確實這麼說）。
+- **development 落後累積成長**：條目的 `definition`／`development`／`related_entries`／`sources`
+  只在條目首建那章寫定，之後每章只靠 `link_updates.py` 補「按書卷累積」的逐章區塊，
+  不會回頭碰這四欄——累積量隨後續章節持續成長，development 卻可能停在條目剛建立時的舊
+  範圍（2026-08 實測：「摩西」累積 49 筆橫跨三卷，development 卻只寫出埃及記第2章）。
+  凡是本章要累積進去的既有條目，若累積筆數明顯偏多（`python util/check_development_staleness.py
+  <書卷>` 列出候選），要打開來看 development 是不是只覆蓋首建那卷／那章——是的話就依現有
+  累積表（已審過、有出處）重新綜整，不是重跑模型；development 只收「跨書卷／跨章的主題
+  遞進」，同一段經文內的字義辯論屬於 definition，不要塞錯欄位。`link_updates.py apply` 套用
+  時累積跨過門檻會自動印提醒，別忽略。
 
 **別只維護既有候選——要問「rawdata 有沒有值得跨章累積、卻沒有條目的概念」**：勘誤既有的
 同時，把 candidate/entry 覆蓋率對 rawdata 重新推導一遍（B/C/D 為空≠已完備，只代表沒人動過）。
@@ -112,7 +121,9 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 `model_client`、`sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
 `audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates` 與
-`rename_markdown`。`run_chapter` 這個 MCP 名稱固定走 `run_chapter_manual.py run`，不會呼叫模型版
+`rename_markdown`。`check_accumulation_orphans.py`（反向孤兒累積）與
+`check_development_staleness.py`（development 落後累積成長候選清單，見上方「勘誤所有
+link 與條目內容」一節）目前無 MCP 對應，直接用 Bash 跑。`run_chapter` 這個 MCP 名稱固定走 `run_chapter_manual.py run`，不會呼叫模型版
 `run_chapter.py`；需要寫入的工具仍依 MCP 回傳的確認要求執行。
 
 大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
