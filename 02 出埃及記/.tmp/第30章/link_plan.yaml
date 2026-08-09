@@ -27,12 +27,6 @@ A_use_directly:
     - 8
     - 9
     - 10
-  - phrase: 金香壇
-    verses:
-    - 3
-    - 4
-    - 6
-    - 9
   match_type: exact
   existing_title: 金香壇（香壇）
   existing_path: link_folder/主題/金香壇（香壇）.md
@@ -52,6 +46,29 @@ A_use_directly:
   match_type: exact
   existing_title: 壇的四角（香壇）
   existing_path: link_folder/主題/壇的四角（香壇）.md
+- name: 半舍客勒（贖罪銀）
+  suggested_type: 原文
+  evidence: 出30:11-16 經文規定被數的人各出半舍客勒作贖價，富足不可多出、貧窮不可少出。CT/GT/KC/BH 註解：半舍客勒預表基督同等贖價、人人平等在神面前
+  surfaces:
+  - phrase: 半舍客勒
+    verses:
+    - 13
+    - 15
+  - phrase: 贖價
+    verses:
+    - 12
+    - 15
+    - 16
+  - phrase: 贖罪銀
+    verses:
+    - 15
+    - 16
+  - phrase: 舍客勒
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 半舍客勒（贖罪銀）
+  existing_path: link_folder/原文/半舍客勒（贖罪銀）.md
 - name: 洗濯盆（銅盆）
   suggested_type: 主題
   evidence: 出30:17-21 經文記載用銅做洗濯盆和盆座，放在會幕和壇中間，亞倫和兒子洗手洗腳免得死亡。 CT/GT/KC/BH 註解：洗濯盆預表基督話語潔淨(弗5:26)、信徒事奉前須潔淨
@@ -140,13 +157,6 @@ A_use_directly:
   suggested_type: 原文
   evidence: 出30:34-38 經文記載聖香配方：拿他弗、施喜列、喜利比拿、淨乳香各等分量，加鹽調和。 CT/GT/KC/BH 註解：聖香預表基督禱告生活、信徒禱告如香(啟5:8、8:3-4)
   surfaces:
-  - phrase: 聖香
-    verses:
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
   - phrase: 香
     verses:
     - 1
@@ -180,7 +190,7 @@ A_use_directly:
     verses:
     - 1
     - 5
-  match_type: alias
+  match_type: exact
   existing_title: 皂莢木
   existing_path: link_folder/原文/皂莢木.md
 - name: 精金
@@ -287,41 +297,6 @@ A_use_directly:
     - 36
     - 37
     - 38
-  - phrase: 照著
-    verses:
-    - 1
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
@@ -331,27 +306,6 @@ A_use_directly:
     註解：會幕=神與人會面之處、基督和教會的預表(弗2:20-21)
   surfaces:
   - phrase: 會幕
-    verses:
-    - 6
-    - 7
-    - 8
-    - 16
-    - 18
-    - 19
-    - 20
-    - 21
-    - 26
-    - 27
-    - 28
-    - 29
-    - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-  - phrase: 帳幕
     verses:
     - 6
     - 7
@@ -400,26 +354,9 @@ A_use_directly:
     - 34
     - 35
     - 36
-  - phrase: 幔外
-    verses:
-    - 6
   match_type: exact
   existing_title: 聖所
   existing_path: link_folder/地點/聖所.md
-- name: 至聖所
-  suggested_type: 地點
-  evidence: 出30:6,10 暗示幔子內為至聖所（法櫃、施恩座所在）。已有條目「至聖所」
-  surfaces:
-  - phrase: 至聖所
-    verses:
-    - 6
-    - 10
-  - phrase: 幔子內
-    verses:
-    - 6
-  match_type: exact
-  existing_title: 至聖所
-  existing_path: link_folder/地點/至聖所.md
 - name: 基督代禱（來7:25）
   suggested_type: 互文
   evidence: 來7:25 指出基督能拯救到底、長遠活著替人代求。KC/CT 註解：金香壇預表基督在神施恩寶座前的代求
@@ -527,79 +464,132 @@ A_use_directly:
   match_type: normalized
   existing_title: 聖靈膏抹（約壹2：20,27）
   existing_path: link_folder/互文/聖靈膏抹（約壹2：20,27）.md
-- name: 信徒禱告如香（啟5:8, 8:3-4）
-  suggested_type: 互文
-  evidence: 啟5:8, 8:3-4 聖徒禱告如香。KC/CT 註解：聖香預表基督禱告生活、信徒禱告如香
-  surfaces:
-  - phrase: 香
-    verses:
-    - 1
-    - 7
-    - 8
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  - phrase: 聖香
-    verses:
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-  match_type: normalized
-  existing_title: 信徒禱告如香（啟5：8, 8：3-4）
-  existing_path: link_folder/互文/信徒禱告如香（啟5：8, 8：3-4）.md
-B_needs_update:
-- name: 義行的細麻（啟19:8）
-  suggested_type: 互文
-  evidence: 啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
-  surfaces:
-  - phrase: 細麻
-    verses:
-    - 24
-  - phrase: 橄欖油
-    verses:
-    - 24
-  match_type: normalized
-  existing_title: 義行的細麻（啟19：8）
-  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
-C_new_formal:
-- name: 金牙邊/金環/槓（香壇）
-  suggested_type: 主題
-  evidence: 出30:3-5 經文記載金牙邊防物滑落、金環穿槓抬壇。KC/BH 註解：牙邊表基督保守能力、槓表代禱涵蓋範圍
-  surfaces:
-  - phrase: 牙邊
-    verses:
-    - 3
-  - phrase: 金環
-    verses:
-    - 4
-  - phrase: 槓
-    verses:
-    - 5
-  target_path: link_folder/主題/金牙邊/金環/槓（香壇）.md
-- name: 半舍客勒（贖價/贖罪銀）
+- name: 舍客勒
   suggested_type: 原文
-  evidence: 出30:11-16 經文規定被數的人各出半舍客勒作贖價，富足不可多出、貧窮不可少出。CT/GT/KC/BH 註解：半舍客勒預表基督同等贖價、人人平等在神面前
+  evidence: 出30:13「每人要按聖所的平，拿銀子半舍客勒；這半舍客勒是奉給耶和華的禮物（一舍客勒是二十季拉）」，另 v23-24 的香料也「都按著聖所的平」計量。本章是「聖所的舍客勒」這個標準第一次被定義的地方。CT：「『聖所的平』原文是聖所的舍客勒，指當時在聖所內使用的砝碼，在收取奉獻物、贖罪銀時，作為度量的標準，每一舍客勒約折合十一點五公克。」GT《丁道爾》指出它與通用舍客勒輕重不同，「根據《他勒目》，前者即『推羅舍客勒』」；GT《舊約背景註釋》給出考古法碼的實測範圍「在九又十分之三至十又二分之一克之間」，並註明季拉「是來自亞喀得語的借詞」，為二十分之一舍客勒、約半克。此條目累積創24、出21、出38、利5、利27、民3，卻缺出30
+    這一筆定義章。
   surfaces:
-  - phrase: 半舍客勒
-    verses:
-    - 13
-    - 15
-  - phrase: 贖價
-    verses:
-    - 12
-    - 15
-    - 16
-  - phrase: 贖罪銀
-    verses:
-    - 15
-    - 16
   - phrase: 舍客勒
     verses:
     - 13
-  target_path: link_folder/原文/半舍客勒（贖價/贖罪銀）.md
+    - 15
+    - 23
+    - 24
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 剪除
+  suggested_type: 原文
+  evidence: 出30:33、38 兩次「這人要從民中剪除」——一次針對私製聖膏油或把膏油抹在別人身上的，一次針對仿製聖香「為要聞香味的」。CT 把兩處的刑度講明：「都必須處死。」GT《中文聖經註釋》則譯為逐出神子民之外，並指出「別人」的原文與出29:33
+    的「外人」是同一個字。此條目累積七章，卻缺出30 這一組——而本章是「剪除」第一次被用來保護配方（而非行為）的地方。
+  surfaces:
+  - phrase: 剪除
+    verses:
+    - 33
+    - 38
+  match_type: exact
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
+- name: 立約的鹽
+  suggested_type: 主題
+  evidence: 出30:35「你要用這些加上鹽，按做香之法做成清淨聖潔的香。」加鹽的用意各家分兩路：GT《丁道爾》偏實用——「即加上氯化鈉，或許能夠助長燃燒。這樣做亦可能因為食鹽有防腐功效」，同時承認象徵的可能——「一切祭物都包括了鹽，鹽本身亦能保證盟約（利2:13）」，並指出民18:19
+    與代下13:5 的「鹽約」即「可靠的約」；GT《中文聖經註釋》兩面都取：「加鹽亦有實用的意義，因可易燒，且發白煙」，而「鹽約，就是為肉用鹽醃後永不朽壞或廢壞的意思」；GT《精讀本》則說「在香上加上鹽是為了保存其香味……聖經中的鹽象徵了神不變的約」。CT
+    讀為「鹽能防腐，表徵基督保守的能力」。此條目累積利2、民18，缺出30 這一筆——而聖香是鹽在正典中第一次出現在祭儀配方裡。
+  surfaces:
+  - phrase: 鹽
+    verses:
+    - 35
+  match_type: exact
+  existing_title: 立約的鹽
+  existing_path: link_folder/主題/立約的鹽.md
+- name: 凡火
+  suggested_type: 主題
+  evidence: 出30:9「在這壇上不可奉上異樣的香。」GT《啟導本》直接把它與利10 的凡火並列為敬拜的兩條禁令：「聖經中有兩條關乎敬拜的禁令：1.不可燒『異樣的香』（三十9）；2.不可獻『凡火』（利十1）。」CT
+    的話中之光也並列同樣兩條，並解為「不可隨著自己的情慾禱告」與「不可出自天然的熱心」；GT《精讀本》說異樣的香「是沒有照34-38節中的神的提示製作的香」，象徵「不能隨著我們的情欲禱告（雅4:3）」。此條目累積利10、民3，缺出30
+    這一筆——而本章正是那條與凡火配對的禁令的出處。
+  match_type: exact
+  existing_title: 凡火
+  existing_path: link_folder/主題/凡火.md
+- name: 大贖罪日（Yom Kippur）條例
+  suggested_type: 歷史
+  evidence: 出30:10「亞倫一年一次要在壇的角上行贖罪之禮……作為世世代代的定例。」CT 與 GT《啟導本》都指明「一年一次」是七月十日的贖罪日（利16:29-30；23:27）。GT《舊約背景註釋》描述當日的動作：「大祭司當日要進到聖幕裡面，在金壇上燒香。當日特獻之祭的血也要點在香壇角上，使這個至聖的壇和流通其上的香，與全國之罪有潔淨的需要相連。」GT《丁道爾》更指出這一節在批判學上的份量：「本節極之重要，因為它在不經意間提到贖罪日的禮儀，此外贖罪日只在利未記（利23:27）出現，以致不少學者視之為後期發明的新節日。」此條目目前只累積利16，缺出30
+    這一筆最早、也是關鍵的旁證。
+  match_type: exact
+  existing_title: 大贖罪日（Yom Kippur）條例
+  existing_path: link_folder/歷史/大贖罪日（Yom Kippur）條例.md
+- name: 壇成為至聖與挨著壇的都成為聖
+  suggested_type: 解經爭議
+  evidence: 出30:29「要使這些物成為聖，好成為至聖；凡挨著的都成為聖。」與出29:37 的爭議完全同型，而本章多了一個關鍵旁證：GT《丁道爾》主張聖潔確實可藉接觸傳遞，並舉出兩處經文——「本節描述的情形與出埃及記十九章12節一樣，『聖潔』藉觸摸傳達，摸著的人必須死亡（祭司除外）。撒母耳記下六章7節烏撒的故事就是這原則的實例。」CT
+    則把範圍限在事奉的人身上：「意指靠近並使用或搬運神聖器物的祭司和利未人都成為聖。」出29 的爭議因此在出30 得到一個更強的支點，也得到一個更嚴的限定。
+  surfaces:
+  - phrase: 挨著
+    verses:
+    - 29
+  match_type: exact
+  existing_title: 壇成為至聖與挨著壇的都成為聖
+  existing_path: link_folder/解經爭議/壇成為至聖與挨著壇的都成為聖.md
+- name: 香料乳香沒藥貿易
+  suggested_type: 文化
+  evidence: 出30:23-24 聖膏油用流質的沒藥、香肉桂、菖蒲、桂皮；30:34 聖香用拿他弗、施喜列、喜利比拿與淨乳香——全部都是進口貨。GT《舊約背景註釋》點出產地與商道：「膏油所列的香料全部都是進口的貨物，價錢應當很高，並且十分珍貴。這些香料有些來自阿拉伯南部（沒藥）、印度和斯里蘭卡（肉桂），有些則經固有的海陸商道從遠方（耶6:20曾經提及，和合本作『菖蒲』的香蔗）運來。」GT《丁道爾》的說法相同：「香料大多是商旅自遠方運來，有些甚至是印度的出產；阿拉伯不但是香料產地，更是香料貿易的中心。」此條目累積創37、利2，缺出30
+    這一筆用量最大的記載。
+  surfaces:
+  - phrase: 香料
+    verses:
+    - 23
+    - 34
+  match_type: exact
+  existing_title: 香料乳香沒藥貿易
+  existing_path: link_folder/文化/香料乳香沒藥貿易.md
+- name: 搗細香料遮掩施恩座
+  suggested_type: 主題
+  evidence: 出30:36「這香要取點搗得極細，放在會幕內法櫃前，我要在那裡與你相會。」利16:12-13 大祭司帶進幔內的「搗細的香料」正出於這條規定。GT《中文聖經註釋》說明這批搗細的香不只燒在金壇上，也「為摩西和其後的大祭司與神相會之處，即至聖所中法櫃前撒散之用」，並給了一個很實際的理由：至聖所內無燈無光，「灑在施恩座上的牲血日久會發臭引來蚊蠅，極需這聖香予以調和並驅除蚊蚋蒼蠅」。CT
+    則讀為「表徵禱告須靠著聖靈，隨時多方（弗6:18）」。此條目目前只累積利16，缺這條規定的出處。
+  surfaces:
+  - phrase: 搗得極細
+    verses:
+    - 36
+  match_type: exact
+  existing_title: 搗細香料遮掩施恩座
+  existing_path: link_folder/主題/搗細香料遮掩施恩座.md
+- name: 數點民數
+  suggested_type: 事件
+  evidence: 出30:11-16 是數點人口的條例：被數的人要各出半舍客勒為自己的生命贖價，「免得數的時候在他們中間有災殃」。GT《中文聖經註釋》指出以色列人在正典中三次被數（民1-2、民26、撒下24），主要目的是統計二十歲以上能出去打仗的人；GT《啟導本》認為出30
+    這一次「可能只是預先作的一次統計，為了收集贖銀來建造會幕（出38:25-27）」，而民1 的正式統計是在會幕建立一個月之後。此條目目前只累積民1，缺這條條例的出處。
+  match_type: exact
+  existing_title: 數點民數
+  existing_path: link_folder/事件/數點民數.md
+- name: 古代近東的人口統計
+  suggested_type: 背景
+  evidence: 出30:12「你數的時候，他們各人要為自己的生命把贖價奉給耶和華，免得數的時候在他們中間有災殃。」為何數點人口會招致災殃，GT《舊約背景註釋》給了一整則古代近東的背景：「早至主前二五○○年的埃卜拉版片，人口統計已經為古代近東政府提供實際的用處。百姓不能領會其中的益處，因為它能導致加稅和徵召壯丁作充軍或強逼勞工之用。從這個角度看，難怪普遍信念視人口統計為不吉利或冒犯神的根源。美索不達米亞的馬里文獻（主前十八世紀）描述有人逃入深山，來避免被數點。」同一則註釋另指出以色列的作法有其陰暗面：「若不全體接受統計，就會受到災殃和冒犯神」，但男丁繳費被數之後「過去」，「是象徵他們接受了供應聖幕建造和維持需要的責任」。GT《串珠》也指出這條規定「反映一個古代的思想，就是懼怕人口統計（可參撒下24章）；可能古人認為只有神自己才應知道人口的總數」。這組材料在本章密度極高，卻沒有對應節點。
+  match_type: exact
+  existing_title: 古代近東的人口統計
+  existing_path: link_folder/背景/古代近東的人口統計.md
+- name: 香壇的位置與歸屬之爭
+  suggested_type: 解經爭議
+  evidence: 出30:6「要把壇放在法櫃前的幔子外，對著法櫃上的施恩座。」香壇究竟屬於聖所還是至聖所，各家不一致。GT《啟導本》主張它可歸入至聖所：香壇在聖所內，「但隔著幔子，對正至聖所內的施恩座，因此可算作至聖所的物品（來9:3-4）」。GT《丁道爾》卻明確判低那個讀法：「香壇立於會幕裡面的『聖所』，但在將至聖所分隔開來的幔子前面（來9:4說，香壇在幔子後面、約櫃旁邊，可能性較低）。」GT《中文聖經註釋》則從器物的相對位置說它在聖所內「靠幔子的正中位置，與聖所中的其他兩器物鼎足三立」，並由此推出「金香壇比其他兩器物有更重要的地位」。爭議的關鍵在來9:3-4
+    怎麼讀，而經文本身只說「幔子外」。
+  match_type: exact
+  existing_title: 香壇的位置與歸屬之爭
+  existing_path: link_folder/解經爭議/香壇的位置與歸屬之爭.md
+- name: 異樣的香與香壇的禁令
+  suggested_type: 主題
+  evidence: 出30:9「在這壇上不可奉上異樣的香，不可獻燔祭、素祭，也不可澆上奠祭。」一節之內三道禁令。CT 說明「異樣的香」的所指：「指不嚴格遵守配製的材料和方法所做的香」，而後三項是說「金香壇不可用來燒祭牲和祭物，也不可用來澆酒獻奠祭」。GT《精讀本》把界線畫在功能上：「這句話教訓他們，香壇只能用來燒香，像獻燔祭、素祭、澆奠祭，這種儀式是應該在外面的燔祭壇上進行。」GT《中文聖經註釋》另指出現代中文譯本把「異樣的香」譯為「違禁的香」。BH
+    也把這條禁令連到利10:1-2 拿答亞比戶獻凡火的下場。三道禁令合起來界定了香壇的唯一用途，卻沒有對應節點。
+  surfaces:
+  - phrase: 異樣的香
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 異樣的香與香壇的禁令
+  existing_path: link_folder/主題/異樣的香與香壇的禁令.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: 出30:6「就是我要與你相會的地方」、30:36「放在會幕內法櫃前，我要在那裡與你相會」。本章兩次把「相會」與香連在一起：香壇正對施恩座，搗細的香又要撒在法櫃前。GT《精讀本》為此加了一個限定：不能據此認為神只臨在會幕，「因為神是無所不在的神。所以在這裡我們可以看出，神想通過會幕這個具體的場所，與自己的百姓進行更直接的交通」。此條目已有出30
+    累積，卻不在候選內，M6 因此連不到它。
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []

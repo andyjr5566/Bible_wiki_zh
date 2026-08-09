@@ -49,6 +49,9 @@ links:
 - verse: 9
   phrase: 壇
   target: 金香壇（香壇）
+- verse: 9
+  phrase: 異樣的香
+  target: 異樣的香與香壇的禁令
 - verse: 10
   phrase: 亞倫
   target: 亞倫和他兒子（祭司）
@@ -58,15 +61,9 @@ links:
 - verse: 10
   phrase: 角
   target: 壇的四角（香壇）
-- verse: 12
-  phrase: 贖價
-  target: 贖價（基督作贖價）
-- verse: 13
-  phrase: 半舍客勒
-  target: 贖價（基督作贖價）
-- verse: 15
-  phrase: 半舍客勒
-  target: 贖價（基督作贖價）
+- verse: 16
+  phrase: 贖罪銀
+  target: 半舍客勒（贖罪銀）
 - verse: 16
   phrase: 會幕
   target: 會幕（帳幕整體）
@@ -95,6 +92,9 @@ links:
   phrase: 亞倫
   target: 亞倫和他兒子（祭司）
 - verse: 23
+  phrase: 香料
+  target: 香料乳香沒藥貿易
+- verse: 23
   phrase: 沒藥
   target: 聖膏油
 - verse: 23
@@ -106,21 +106,33 @@ links:
 - verse: 24
   phrase: 桂皮
   target: 聖膏油
+- verse: 24
+  phrase: 橄欖油
+  target: 聖膏油
 - verse: 26
   phrase: 會幕
   target: 會幕（帳幕整體）
 - verse: 28
   phrase: 洗濯盆和盆座
   target: 洗濯盆（銅盆）
+- verse: 29
+  phrase: 挨著
+  target: 壇成為至聖與挨著壇的都成為聖
 - verse: 30
   phrase: 亞倫和他的兒子
   target: 亞倫和他兒子（祭司）
 - verse: 30
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 33
+  phrase: 剪除
+  target: 剪除
 - verse: 34
   phrase: 吩咐
   target: 山上的樣式
+- verse: 34
+  phrase: 香料
+  target: 香料乳香沒藥貿易
 - verse: 34
   phrase: 拿他弗
   target: 聖香（清淨聖潔的香）
@@ -134,8 +146,17 @@ links:
   phrase: 乳香
   target: 聖香（清淨聖潔的香）
 - verse: 35
+  phrase: 鹽
+  target: 立約的鹽
+- verse: 35
   phrase: 清淨聖潔的香
   target: 聖香（清淨聖潔的香）
 - verse: 36
+  phrase: 搗得極細
+  target: 搗細香料遮掩施恩座
+- verse: 36
   phrase: 會幕
   target: 會幕（帳幕整體）
+- verse: 38
+  phrase: 剪除
+  target: 剪除

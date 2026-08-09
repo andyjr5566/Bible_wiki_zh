@@ -1,7 +1,7 @@
 {
-  "total_warnings": 83,
+  "total_warnings": 84,
   "critical_count": 0,
-  "warning_count": 83,
+  "warning_count": 84,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -72,6 +72,13 @@
       "source": "出埃及記/第28章.md",
       "target": "分別為聖",
       "message": "同一 alias「分別為聖」指向多個 target: 山上的樣式, 承接聖職（分別為聖）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第30章.md",
+      "target": "半舍客勒",
+      "message": "同一 alias「半舍客勒」指向多個 target: 半舍客勒（贖罪銀）, 贖價（基督作贖價）"
     },
     {
       "type": "alias_target_conflict",
