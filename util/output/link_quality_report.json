@@ -63,8 +63,8 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "出埃及記/第27章.md",
-      "target": "銅壇",
-      "message": "同一 alias「銅壇」指向多個 target: 銅壇與十字架（來13：10-13）, 銅壇（燔祭壇）"
+      "target": "圍腰板",
+      "message": "同一 alias「圍腰板」指向多個 target: 壇的圍腰板, 壇的銅網"
     },
     {
       "type": "alias_target_conflict",
