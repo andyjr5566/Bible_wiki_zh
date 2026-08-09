@@ -1,7 +1,7 @@
 book: 出埃及記
 chapter: 23
 A_use_directly:
-- name: 謠言（shema`）
+- name: 謠言
   suggested_type: 原文
   evidence: 1節；原文雙字，首字「空虛，虛妄」，次字「報告，簡訊」；CT 指不實的傳言，在人群中產生毀謗中傷的作用
   surfaces:
@@ -9,9 +9,9 @@ A_use_directly:
     verses:
     - 1
   match_type: exact
-  existing_title: 謠言（shema`）
-  existing_path: link_folder/原文/謠言（shema`）.md
-- name: 聯手（shathaph）
+  existing_title: 謠言
+  existing_path: link_folder/原文/謠言.md
+- name: 聯手
   suggested_type: 原文
   evidence: 1節；原文雙字，首字「放置」，次字「人手」；《丁道爾》指「妄作見證」譯作「強暴的見證」更佳
   surfaces:
@@ -19,9 +19,9 @@ A_use_directly:
     verses:
     - 1
   match_type: exact
-  existing_title: 聯手（shathaph）
-  existing_path: link_folder/原文/聯手（shathaph）.md
-- name: 隨眾（rab）
+  existing_title: 聯手
+  existing_path: link_folder/原文/聯手.md
+- name: 隨眾
   suggested_type: 原文
   evidence: 2節；原文字義「許多，很多」；CT 指「隨眾」的原文可譯成「大多數」
   surfaces:
@@ -29,9 +29,9 @@ A_use_directly:
     verses:
     - 2
   match_type: exact
-  existing_title: 隨眾（rab）
-  existing_path: link_folder/原文/隨眾（rab）.md
-- name: 屈枉（natah）
+  existing_title: 隨眾
+  existing_path: link_folder/原文/隨眾.md
+- name: 屈枉
   suggested_type: 原文
   evidence: 2、6節；原文字義「折彎，傾斜」；『屈枉』表示作不實的見證，致使他人受損
   surfaces:
@@ -39,8 +39,8 @@ A_use_directly:
     verses:
     - 2
   match_type: exact
-  existing_title: 屈枉（natah）
-  existing_path: link_folder/原文/屈枉（natah）.md
+  existing_title: 屈枉
+  existing_path: link_folder/原文/屈枉.md
 - name: 出23：2-3隨眾與偏護窮人
   suggested_type: 解經爭議
   evidence: 3節；《丁道爾》指大部分編者將 dal「窮人」修正為 gadol「有勢力的人」，但這忽略了更微妙的試探
@@ -144,9 +144,9 @@ A_use_directly:
   - phrase: 寄居的
     verses:
     - 9
-  match_type: exact
-  existing_title: 寄居的（ger）
-  existing_path: link_folder/原文/寄居的（ger）.md
+  match_type: base
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
 - name: 安息日
   suggested_type: 神學
   evidence: 12節；《丁道爾》指命令和十誡相同，理由卻有分別——這裡是人道的理由
@@ -177,7 +177,7 @@ A_use_directly:
   match_type: exact
   existing_title: 關懷弱勢
   existing_path: link_folder/主題/關懷弱勢.md
-- name: 歇息（shamat）
+- name: 歇息
   suggested_type: 原文
   evidence: 11節；原文字義「讓其掉下，使落下」；《丁道爾》指申15:1「豁免年」的名詞衍自這個動詞
   surfaces:
@@ -185,8 +185,8 @@ A_use_directly:
     verses:
     - 11
   match_type: exact
-  existing_title: 歇息（shamat）
-  existing_path: link_folder/原文/歇息（shamat）.md
+  existing_title: 歇息
+  existing_path: link_folder/原文/歇息.md
 - name: 安息年
   suggested_type: 神學
   evidence: 10-11節；CT 列出神設立安息年的七樣用意；《丁道爾》指聖經只為休耕年提供了一個理由
@@ -217,12 +217,12 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東安息年
   existing_path: link_folder/背景/古代近東安息年.md
-- name: 安息（shabath）
+- name: 安息（第七日的歇息）
   suggested_type: 原文
   evidence: 12節；原文字義「中止，休息」；「舒暢」原文「振作，恢復活力」
   match_type: exact
-  existing_title: 安息（shabath）
-  existing_path: link_folder/原文/安息（shabath）.md
+  existing_title: 安息（第七日的歇息）
+  existing_path: link_folder/原文/安息（第七日的歇息）.md
 - name: 安息日律例
   suggested_type: 事件
   evidence: 12節；《中文聖經註釋》指這律例說明要守安息日的原因不是紀念神創造，乃是人道的原因
@@ -263,7 +263,7 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東偶像崇拜
   existing_path: link_folder/背景/古代近東偶像崇拜.md
-- name: 守節（chagag）
+- name: 守節
   suggested_type: 原文
   evidence: 14節；原文字義「守節期，朝聖」；《每日研經叢書》指節期（chag）一字實際上是「朝聖者的節日」之意
   surfaces:
@@ -271,15 +271,15 @@ A_use_directly:
     verses:
     - 14
   match_type: exact
-  existing_title: 守節（chagag）
-  existing_path: link_folder/原文/守節（chagag）.md
+  existing_title: 守節
+  existing_path: link_folder/原文/守節.md
 - name: 三大節期
   suggested_type: 神學
   evidence: 14-17節；除酵節、收割節、收藏節；《精讀本》指制定節期的目的在於教訓人們不僅過去被神救贖，至今仍是由於神而活著
   match_type: exact
   existing_title: 三大節期
   existing_path: link_folder/神學/三大節期.md
-- name: 除酵（matsah）
+- name: 除酵
   suggested_type: 原文
   evidence: 15節；原文字義「沒放酵」；「亞筆」原文「穀穗形成（初熟）」
   surfaces:
@@ -287,8 +287,8 @@ A_use_directly:
     verses:
     - 15
   match_type: exact
-  existing_title: 除酵（matsah）
-  existing_path: link_folder/原文/除酵（matsah）.md
+  existing_title: 除酵
+  existing_path: link_folder/原文/除酵.md
 - name: 三大節期律例
   suggested_type: 事件
   evidence: 15-16節；除酵節、收割節、收藏節；誰也不可空手朝見我
@@ -299,7 +299,7 @@ A_use_directly:
   match_type: exact
   existing_title: 三大節期律例
   existing_path: link_folder/事件/三大節期律例.md
-- name: 初熟（bikkurim）
+- name: 初熟
   suggested_type: 原文
   evidence: 16、19節；原文字義「初熟的果子」；CT 指初熟之物和長子、頭生的牲畜一樣，原都是屬於神的
   surfaces:
@@ -307,9 +307,9 @@ A_use_directly:
     verses:
     - 16
   match_type: exact
-  existing_title: 初熟（bikkurim）
-  existing_path: link_folder/原文/初熟（bikkurim）.md
-- name: 收藏（asaph）
+  existing_title: 初熟
+  existing_path: link_folder/原文/初熟.md
+- name: 收藏
   suggested_type: 原文
   evidence: 16節；原文首字「聚集，收集」，次字「收集，收成」；又稱住棚節，是猶太人最大的節期
   surfaces:
@@ -317,8 +317,8 @@ A_use_directly:
     verses:
     - 16
   match_type: exact
-  existing_title: 收藏（asaph）
-  existing_path: link_folder/原文/收藏（asaph）.md
+  existing_title: 收藏
+  existing_path: link_folder/原文/收藏.md
 - name: 節期與紀念
   suggested_type: 主題
   evidence: 17節；一切的男丁要一年三次朝見主耶和華
@@ -369,7 +369,7 @@ A_use_directly:
   match_type: exact
   existing_title: 出23：20-23使者身分
   existing_path: link_folder/解經爭議/出23：20-23使者身分.md
-- name: 使者（mal'akh）
+- name: 使者
   suggested_type: 原文
   evidence: 20、23節；原文字義「使者，天使」；CT 指應當不是指一般的天使，而是「立約的使者」
   surfaces:
@@ -377,8 +377,8 @@ A_use_directly:
     verses:
     - 23
   match_type: exact
-  existing_title: 使者（mal'akh）
-  existing_path: link_folder/原文/使者（mal'akh）.md
+  existing_title: 使者
+  existing_path: link_folder/原文/使者.md
 - name: 天使引導
   suggested_type: 神學
   evidence: 20節；「在路上保護你，領你到我所預備的地方去」
@@ -389,7 +389,7 @@ A_use_directly:
   match_type: exact
   existing_title: 天使引導
   existing_path: link_folder/神學/天使引導.md
-- name: 惹（marah）
+- name: 惹
   suggested_type: 原文
   evidence: 21節；原文字義「使悲苦，使發怒」；CT 指『不可惹祂』意指不可悖逆祂
   surfaces:
@@ -397,8 +397,8 @@ A_use_directly:
     verses:
     - 21
   match_type: exact
-  existing_title: 惹（marah）
-  existing_path: link_folder/原文/惹（marah）.md
+  existing_title: 惹
+  existing_path: link_folder/原文/惹.md
 - name: 天使引導應許
   suggested_type: 事件
   evidence: 21-22節；祂是奉我名來的；你若實在聽從祂的話，我就向你的仇敵作仇敵
@@ -422,7 +422,7 @@ A_use_directly:
   match_type: exact
   existing_title: 神的引導與保護
   existing_path: link_folder/主題/神的引導與保護.md
-- name: 剪除（kareth）
+- name: 剪除
   suggested_type: 原文
   evidence: 23節；原文字義「消除，抹去，隱藏」；CT 指實際上後來以色列人並沒有將他們趕盡殺絕
   surfaces:
@@ -430,9 +430,9 @@ A_use_directly:
     verses:
     - 23
   match_type: exact
-  existing_title: 剪除（kareth）
-  existing_path: link_folder/原文/剪除（kareth）.md
-- name: 柱像（matsebah）
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
+- name: 柱像
   suggested_type: 原文
   evidence: 24節；「打碎他們的柱像」；原文「盡行拆毀」為雙同字，意「廢除，破壞，推翻」
   surfaces:
@@ -440,8 +440,8 @@ A_use_directly:
     verses:
     - 24
   match_type: exact
-  existing_title: 柱像（matsebah）
-  existing_path: link_folder/原文/柱像（matsebah）.md
+  existing_title: 柱像
+  existing_path: link_folder/原文/柱像.md
 - name: 拆毀偶像律例
   suggested_type: 事件
   evidence: 24節；你不可跪拜他們的神，不可事奉牠，也不可效法他們的行為
@@ -485,7 +485,7 @@ A_use_directly:
   match_type: exact
   existing_title: 神賜福應許
   existing_path: link_folder/神學/神賜福應許.md
-- name: 黃蜂（tsirah）
+- name: 黃蜂
   suggested_type: 原文
   evidence: 28節；原文字義「大黃蜂」；CT 指在此表徵超自然的災禍
   surfaces:
@@ -493,8 +493,8 @@ A_use_directly:
     verses:
     - 28
   match_type: exact
-  existing_title: 黃蜂（tsirah）
-  existing_path: link_folder/原文/黃蜂（tsirah）.md
+  existing_title: 黃蜂
+  existing_path: link_folder/原文/黃蜂.md
 - name: 征服迦南應許
   suggested_type: 事件
   evidence: 27-31節；我要使那裡的眾民在你面前驚駭，擾亂，又要使你一切仇敵轉背逃跑
@@ -505,7 +505,7 @@ A_use_directly:
   match_type: exact
   existing_title: 征服迦南應許
   existing_path: link_folder/事件/征服迦南應許.md
-- name: 漸漸（me'at me'at）
+- name: 漸漸
   suggested_type: 原文
   evidence: 30節；原文雙同字，意「少量，一點點」
   surfaces:
@@ -513,8 +513,8 @@ A_use_directly:
     verses:
     - 30
   match_type: exact
-  existing_title: 漸漸（me'at me'at）
-  existing_path: link_folder/原文/漸漸（me'at me'at）.md
+  existing_title: 漸漸
+  existing_path: link_folder/原文/漸漸.md
 - name: 逐漸趕出
   suggested_type: 神學
   evidence: 29-30節；恐怕地成為荒涼，野地的獸多起來害你；等到你的人數加多，承受那地為業
@@ -571,7 +571,7 @@ A_use_directly:
   match_type: exact
   existing_title: 立約禁令
   existing_path: link_folder/事件/立約禁令.md
-- name: 網羅（moqesh）
+- name: 網羅
   suggested_type: 原文
   evidence: 33節；原文字義「網羅，餌，引誘」；你若事奉他們的神，這必成為你的網羅
   surfaces:
@@ -579,8 +579,8 @@ A_use_directly:
     verses:
     - 33
   match_type: exact
-  existing_title: 網羅（moqesh）
-  existing_path: link_folder/原文/網羅（moqesh）.md
+  existing_title: 網羅
+  existing_path: link_folder/原文/網羅.md
 - name: 古代近東立約
   suggested_type: 背景
   evidence: 32-33節；不可和迦南地的異教徒原住民立約，也不可和他們所拜的偶像假神立約
@@ -725,12 +725,6 @@ A_use_directly:
   match_type: exact
   existing_title: 腓2：4
   existing_path: link_folder/互文/腓2：4.md
-- name: 詩15：5
-  suggested_type: 互文
-  evidence: 8節；不放債取利、不受賄賂害無辜
-  match_type: exact
-  existing_title: 詩15：5
-  existing_path: link_folder/互文/詩15：5.md
 - name: 箴17：23
   suggested_type: 互文
   evidence: 8節；惡人收受賄賂顛倒公義
@@ -755,12 +749,6 @@ A_use_directly:
   match_type: exact
   existing_title: 來4：9-10
   existing_path: link_folder/互文/來4：9-10.md
-- name: 西1：15
-  suggested_type: 互文
-  evidence: 20-21節；愛子是那不能看見之神的像
-  match_type: exact
-  existing_title: 西1：15
-  existing_path: link_folder/互文/西1：15.md
 B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
