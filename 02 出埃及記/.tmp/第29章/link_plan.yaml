@@ -49,7 +49,7 @@ A_use_directly:
   match_type: exact
   existing_title: 洗身（水洗）
   existing_path: link_folder/神學/洗身（水洗）.md
-- name: 膏油（聖膏油）
+- name: 聖膏油
   suggested_type: 原文
   evidence: 出29:7,21,29 經文記載把膏油倒在亞倫頭上膏他，又把膏油和壇上的血彈在亞倫和衣服上。已有條目「聖膏油」。CT/GT/KC/BH 註解：膏油預表聖靈膏抹(約壹2:20,27)
   surfaces:
@@ -65,7 +65,7 @@ A_use_directly:
     verses:
     - 21
     - 29
-  match_type: base
+  match_type: exact
   existing_title: 聖膏油
   existing_path: link_folder/原文/聖膏油.md
 - name: 贖罪祭
@@ -161,12 +161,6 @@ A_use_directly:
     verses:
     - 39
     - 41
-  - phrase: 一歲羊羔
-    verses:
-    - 38
-    - 39
-    - 41
-    - 42
   match_type: exact
   existing_title: 每日獻祭（常獻燔祭）
   existing_path: link_folder/神學/每日獻祭（常獻燔祭）.md
@@ -219,9 +213,6 @@ A_use_directly:
   - phrase: 說話
     verses:
     - 42
-  - phrase: 以榮耀成聖
-    verses:
-    - 43
   match_type: exact
   existing_title: 神與人相會（耶和華面前）
   existing_path: link_folder/神學/神與人相會（耶和華面前）.md
@@ -347,13 +338,6 @@ A_use_directly:
     - 21
     - 29
     - 30
-  - phrase: 聖服
-    verses:
-    - 5
-    - 8
-    - 21
-    - 29
-    - 30
   - phrase: 內袍
     verses:
     - 5
@@ -385,6 +369,18 @@ A_use_directly:
   match_type: exact
   existing_title: 聖衣（祭司聖服）
   existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 贖價（基督作贖價）（來9：22）
+  suggested_type: 互文
+  evidence: 出29:12,14,36 贖罪祭預表基督作贖價。可10:45 基督捨命作多人的贖價。KC/CT 註解：贖罪祭預表基督作終極贖價
+  surfaces:
+  - phrase: 贖罪
+    verses:
+    - 12
+    - 14
+    - 36
+  match_type: exact
+  existing_title: 贖價（基督作贖價）（來9：22）
+  existing_path: link_folder/互文/贖價（基督作贖價）（來9：22）.md
 - name: 信徒作祭司（彼前2:5,9）
   suggested_type: 互文
   evidence: 出29:1,4,9,44,45,46 亞倫和兒子供祭司職分預表信徒祭司體系。彼前2:5,9 信徒是聖潔祭司、有君尊祭司。KC/CT 註解：亞倫兒子預表信徒祭司職分
@@ -425,21 +421,6 @@ A_use_directly:
 - name: 披戴基督（羅13:14）
   suggested_type: 互文
   evidence: 出29:5,8,21,29,30 穿聖衣預表披戴基督。羅13:14 總要披戴主耶穌基督。KC/CT 註解：祭司聖衣就是耶穌基督、祂是我們榮耀華美
-  surfaces:
-  - phrase: 聖衣
-    verses:
-    - 5
-    - 8
-    - 21
-    - 29
-    - 30
-  - phrase: 穿
-    verses:
-    - 5
-    - 8
-    - 21
-    - 29
-    - 30
   match_type: normalized
   existing_title: 披戴基督（羅13：14）
   existing_path: link_folder/互文/披戴基督（羅13：14）.md
@@ -463,21 +444,6 @@ A_use_directly:
 - name: 義行的細麻（啟19:8）
   suggested_type: 互文
   evidence: 出29:5,8,39,42 細麻內袍褲子預表信徒義行。啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
-  surfaces:
-  - phrase: 細麻
-    verses:
-    - 5
-    - 8
-    - 39
-    - 42
-  - phrase: 內袍
-    verses:
-    - 5
-    - 8
-    - 39
-  - phrase: 褲子
-    verses:
-    - 42
   match_type: normalized
   existing_title: 義行的細麻（啟19：8）
   existing_path: link_folder/互文/義行的細麻（啟19：8）.md
@@ -485,12 +451,9 @@ A_use_directly:
   suggested_type: 互文
   evidence: 出29:30 烏陵土明預表基督作神智慧。林前1:30 基督成了我們的智慧。KC/CT 註解：烏陵土明預表基督作神的智慧、引導
   surfaces:
-  - phrase: 烏陵和土明
+  - phrase: 細麵
     verses:
-    - 30
-  - phrase: 決斷
-    verses:
-    - 30
+    - 40
   match_type: normalized
   existing_title: 基督作智慧（林前1：30）
   existing_path: link_folder/互文/基督作智慧（林前1：30）.md
@@ -607,16 +570,6 @@ A_use_directly:
     - 44
     - 45
     - 46
-  - phrase: 帳幕
-    verses:
-    - 4
-    - 11
-    - 32
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
@@ -627,208 +580,68 @@ A_use_directly:
   - phrase: 聖所
     verses:
     - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-    - 39
-    - 40
-    - 41
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
-  - phrase: 會幕中
-    verses:
-    - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-    - 39
-    - 40
-    - 41
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
   match_type: exact
   existing_title: 聖所
   existing_path: link_folder/地點/聖所.md
-- name: 至聖所
-  suggested_type: 地點
-  evidence: 出29:30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46 暗示至聖所是神同在最濃厚處。已有條目「至聖所」
-  surfaces:
-  - phrase: 至聖所
-    verses:
-    - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-    - 39
-    - 40
-    - 41
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
-  - phrase: 幔子內
-    verses:
-    - 30
-    - 31
-    - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
-    - 39
-    - 40
-    - 41
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
-  match_type: exact
-  existing_title: 至聖所
-  existing_path: link_folder/地點/至聖所.md
-B_needs_update:
-- name: 贖價（基督作贖價）
-  suggested_type: 互文
-  evidence: 出29:12,14,36 贖罪祭預表基督作贖價。可10:45 基督捨命作多人的贖價。KC/CT 註解：贖罪祭預表基督作終極贖價
-  surfaces:
-  - phrase: 贖罪
-    verses:
-    - 12
-    - 14
-    - 36
-  - phrase: 贖價
-    verses:
-    - 12
-    - 14
-    - 36
-  match_type: exact
-  existing_title: 贖價（基督作贖價）
-  existing_path: link_folder/互文/贖價（基督作贖價）.md
-C_new_formal:
-- name: 搖祭/舉祭
-  suggested_type: 神學
-  evidence: 出29:24,26,27,28 經文記載搖祭的胸和舉祭的腿歸亞倫和兒子。CT/GT/KC/BH 註解：搖祭舉祭表獻上歸神、又蒙神賜回享用、預表基督復活升天
+- name: 搖祭
+  suggested_type: 原文
+  evidence: 出29:24、26、27 脂油、右腿與三種餅放在亞倫父子手上「在耶和華面前搖一搖」作搖祭；公綿羊的胸也搖作搖祭。CT 定義動作：「『搖祭』指呈平面前後搖動」；GT《舊約背景註釋》對「搖」的譯法提出異議，主張作「抬祭」更妥；GT《精讀本》指出它「不是祭祀的種類而是方法」。原候選名「搖祭/舉祭」含斜線，建不出
+    payload，已拆開。
   surfaces:
   - phrase: 搖祭
     verses:
     - 24
     - 26
     - 27
-    - 28
-  - phrase: 舉祭
-    verses:
-    - 27
-    - 28
   - phrase: 搖一搖
     verses:
     - 24
     - 26
-  - phrase: 胸
-    verses:
-    - 24
-    - 26
-    - 27
-  - phrase: 腿
+  match_type: exact
+  existing_title: 搖祭
+  existing_path: link_folder/原文/搖祭.md
+- name: 舉祭
+  suggested_type: 原文
+  evidence: 出29:27-28 承接聖職之公綿羊的右腿是舉祭，與搖祭的胸一同成為亞倫和他子孫永得的分。GT 引丁良才：「『舉』就是向上舉起」；GT《精讀本》指其適用範圍遠超祭肉，涵蓋土產、十一奉獻、酒與油（民18:8,19,24-29；尼10:39）。
+  surfaces:
+  - phrase: 舉祭
     verses:
     - 27
     - 28
-  target_path: link_folder/神學/搖祭/舉祭.md
-- name: 素祭/奠祭
-  suggested_type: 神學
-  evidence: 出29:40,41 經文記載每日獻祭配素祭(細麵伊法十分之一、搗成油一欣四分之一)和奠祭(酒一欣四分之一)。CT/GT/KC/BH 註解：素祭預表基督純全人性、奠祭預表基督流血
+  match_type: exact
+  existing_title: 舉祭
+  existing_path: link_folder/原文/舉祭.md
+- name: 奠酒
+  suggested_type: 文化
+  evidence: 出29:40-41 每日晨昏的羊羔要配「酒一欣四分之一作為奠祭」。GT《精讀本》：奠祭「同火祭、搖祭、舉祭一樣是祭祀的一種方法」，原文是「倒」「傾注」的意思；GT《舊約背景註釋》指出「飯前澆奠是普通的家常習俗。每日的祭承襲了這個儀式，作為神與百姓共享的立約筵宴」。
   surfaces:
-  - phrase: 素祭
-    verses:
-    - 40
-    - 41
   - phrase: 奠祭
     verses:
     - 40
     - 41
+  match_type: exact
+  existing_title: 奠酒
+  existing_path: link_folder/文化/奠酒.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: 出29:40-41 每日燔祭要與「細麵伊法十分之一與搗成的油一欣四分之一調和」同獻，黃昏那隻「照著早晨的素祭和奠祭的禮辦理」。CT：「『素祭』指用細麵調油的混和物，作為祭物獻給神」；GT《丁道爾》指素祭與奠酒「是附屬的祭，與祭牲同獻。背後的想法大概是要將完整的燔祭獻給神，便當包括日常飲食的基本元素（肉、餅、酒）」。此條目累積利2-10
+    與民5-8，卻缺出29 這一筆首次與常獻燔祭連結的記載。
+  surfaces:
+  - phrase: 素祭
+    verses:
+    - 41
   - phrase: 細麵
     verses:
-    - 2
     - 40
-  - phrase: 油
-    verses:
-    - 2
-    - 40
-  - phrase: 酒
-    verses:
-    - 40
-    - 41
-  target_path: link_folder/神學/素祭/奠祭.md
-- name: 血抹壇角/灑血
-  suggested_type: 神學
-  evidence: 出29:12,16,20,21 經文詳細記載血的儀式：抹壇四角、倒壇腳、灑壇周圍、抹右耳垂/大拇指/大腳趾、彈在衣服上。CT/GT/KC/BH
-    註解：血預表基督寶血贖罪、潔淨、分別為聖
-  surfaces:
-  - phrase: 血
-    verses:
-    - 12
-    - 16
-    - 20
-    - 21
-  - phrase: 抹
-    verses:
-    - 12
-    - 20
-  - phrase: 灑
-    verses:
-    - 16
-    - 21
-  - phrase: 壇角
-    verses:
-    - 12
-  - phrase: 壇腳
-    verses:
-    - 12
-  - phrase: 右耳垂
-    verses:
-    - 20
-  - phrase: 大拇指
-    verses:
-    - 20
-  - phrase: 大腳趾
-    verses:
-    - 20
-  target_path: link_folder/神學/血抹壇角/灑血.md
-- name: 無酵餅/調油餅/薄餅
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 無酵餅
   suggested_type: 原文
-  evidence: 出29:2,23,24,32,34 經文記載無酵餅、調油無酵餅、抹油薄餅作為承接聖職禮儀的餅。CT/GT/KC/BH 註解：無酵表無罪/無偽、油表聖靈、薄餅表靈敏
+  evidence: 出29:2、23、32、34 承接聖職要備「無酵餅和調油的無酵餅，與抹油的無酵薄餅」，裝在筐子裡帶來；23 節各取一個與脂油右腿同搖，其餘由祭司在會幕門口吃，留到早晨的要用火燒了。CT：「『無酵餅』指不可經過發酵的程序……酵在聖經裡代表罪惡」；GT
+    引丁良才列出三樣餅；GT《舊約背景註釋》另指出「提供無酵餅、調油無酵餅、抹油無酵薄餅的含義已不可考」。此條目目前只累積出12、出13 與民9，缺祭司就職這一組用法。
   surfaces:
   - phrase: 無酵餅
-    verses:
-    - 2
-    - 23
-    - 24
-    - 32
-    - 34
-  - phrase: 調油餅
     verses:
     - 2
     - 23
@@ -836,14 +649,155 @@ C_new_formal:
     verses:
     - 2
     - 23
-    - 24
   - phrase: 筐子
     verses:
-    - 2
     - 3
     - 23
-    - 24
-    - 32
-  target_path: link_folder/原文/無酵餅/調油餅/薄餅.md
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+- name: 脂油
+  suggested_type: 原文
+  evidence: 出29:13、22 蓋臟的脂油、肝上的網子、兩個腰子和腰子上的脂油都要燒在壇上；承接聖職的公綿羊另加脂油和肥尾巴。CT：「『脂油』是祭牲身上上好的部分」；GT《舊約背景註釋》從美索不達米亞的占卜慣例反襯以色列的作法：肝「可以用來占卜（這是美索不達米亞的慣例）」，在此卻要一併燒在壇上。此條目累積利3-9，缺出29
+    這一筆——而 KC 對贖罪祭脂油的讀法（營外焚燒的祭牲中惟獨脂油上壇）正出於本章。
+  surfaces:
+  - phrase: 脂油
+    verses:
+    - 13
+    - 22
+  - phrase: 肥尾巴
+    verses:
+    - 22
+  - phrase: 網子
+    verses:
+    - 13
+    - 22
+  match_type: exact
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: 出29 中壇出現十八次：血抹壇的四角、倒在壇腳（12）、灑在壇的周圍（16、20）、脂油與全羊燒在壇上（13、18、25）、七天為壇獻贖罪祭並用膏抹壇使壇成聖（36-37）、每日晨昏獻在壇上（38）。GT《串珠》指出壇「是出於人手所造，故最初被視為『不潔』，需要獻上贖罪祭，並用膏抹壇，使之成聖」；GT《丁道爾》同樣說「可能因為這壇是人手所作，因此算為『不潔』。不像二十章24、25節指定的石壇或土壇，用的是天然材料」。此條目累積出27、出38
+    與利民各章，卻缺出29 這一筆壇本身被贖罪、被膏、成為至聖的記載。
+  surfaces:
+  - phrase: 壇
+    verses:
+    - 12
+    - 13
+    - 16
+    - 18
+    - 20
+    - 21
+    - 25
+    - 36
+    - 37
+    - 38
+    - 44
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 營外焚燒
+  suggested_type: 主題
+  evidence: 出29:14「只是公牛的皮、肉、糞，都要用火燒在營外。這牛是贖罪祭。」GT《精讀本》：以色列的營「是神臨在的場所，不能使其被玷污，所以把擔當人類罪行的祭物，在營外火燒。這象徵了日後耶穌基督將背負人類的罪，釘死在耶路撒冷城外（來13:11-13）」；GT《舊約背景註釋》從潔淨規例說明：這些部分「已到受污染，不宜再作食物或其他用途」。CT
+    也從此推出「我們也當出到營外，就了祂去，忍受祂所受的凌辱（來13:13）」。此條目累積利4-16 與民19，缺出29 這一筆最早的規定。
+  surfaces:
+  - phrase: 營外
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 營外焚燒
+  existing_path: link_folder/主題/營外焚燒.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 出29 全章的第二人稱「你」都是摩西：他要使亞倫父子成聖（1）、帶他們到會幕門口洗身（4）、給他們穿衣戴冠（5-6）、把膏油倒在亞倫頭上（7）、宰祭牲抹血（11-12、20）、把祭物放在他們手上搖一搖再接過來燒（24-25），連公羊的胸都「可以作你的分」（26）。GT
+    引丁良才點名：「『你』——就是摩西，他代替神直到祭司被分派完了」；GT《中文聖經註釋》由此推論「摩西本身就從神自己領受了這祭司的職分」。摩西條目累積橫跨四卷四十餘章，卻缺出29
+    這一筆他實際執行祭司職事的記載。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 摩西代行祭司職分
+  suggested_type: 主題
+  evidence: 出29 的主禮者是摩西而非亞倫：GT 引丁良才在10 節指出「『你』——就是摩西，他代替神直到祭司被分派完了」，在25 節又說「摩西雖然已經將祭司的職分歸給亞倫（24），他還要行完分派的一切禮節」，在24
+    節描述他「將自己的手放在亞倫和他兒子的手下，將他們的手前後平搖……這樣將自己所供之祭司的職分，完全歸於亞倫和他的後裔」。GT《中文聖經註釋》把這件事講成一個神學命題：「摩西既受神吩咐要膏立亞倫和他兒子為祭司，則摩西本身就從神自己領受了這祭司的職分。事實上，本書廿四章在記敘立約的事上……摩西已經執行祭司的職分了。」GT《舊約背景註釋》從儀式的角度證實：「摩西安排和執行分別為聖的儀式，所擔任的是祭司的職責，今後這責任要落在亞倫和他的子孫身上」，並注意到「摩西也留下一份祭肉，因為他的角色是主持典禮的祭司（26節）」。
+  match_type: exact
+  existing_title: 摩西代行祭司職分
+  existing_path: link_folder/主題/摩西代行祭司職分.md
+- name: 血抹右耳垂與手腳大拇指
+  suggested_type: 主題
+  evidence: 出29:20「取點血抹在亞倫的右耳垂上和他兒子的右耳垂上，又抹在他們右手的大拇指上和右腳的大拇指上。」六份材料都有說法：CT 逐一對應——右耳垂「表徵今後耳朵全為聽從神的話」、右手大拇指「表徵今後雙手全都為神作工」、右腳大拇指「表徵今後雙腳全都為神行走道路」；GT
+    引丁良才最短：「『右耳』——聽主的話。『右手』——做主的工。『右腳』——行主的道」；GT《丁道爾》另從殘缺的角度切入：「失去手拇指和腳拇趾是無能和無用的代表（士一6），將之獻給神，就是將全副精力獻上的意思」，並把耳垂連到「耳號」——「似乎是永久為奴者自甘順服的記號」（出21:6）；GT《舊約背景註釋》：「血怎樣令祭壇合神所用，亦同樣可以用來選派祭司的各樣器官：聽神的話、用手獻祭、用腳領人崇拜」；GT《中文聖經註釋》指出同一套動作也用在大痲瘋得潔淨時（利14:14-17），但在祭司身上另有分別為聖的意義；KC：「我們的全人都被主耶穌的血分別為聖。」
+  surfaces:
+  - phrase: 右耳垂
+    verses:
+    - 20
+  - phrase: 大拇指
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 血抹右耳垂與手腳大拇指
+  existing_path: link_folder/主題/血抹右耳垂與手腳大拇指.md
+- name: 壇成為至聖與挨著壇的都成為聖
+  suggested_type: 解經爭議
+  evidence: 出29:37「要潔淨壇七天，使壇成聖，壇就成為至聖。凡挨著壇的都成為聖。」末句怎麼讀，各家分歧。一種讀法是聖潔可藉接觸傳遞：GT《串珠》直說這「暗示『成聖』這本質可藉接觸而感染到」；GT《舊約背景註釋》同意並補上反面的顧慮——「因著祭壇超然的聖潔程度（僅次於聖幕的至聖所），任何與它發生接觸的物件都變得聖潔。同樣，防止不潔的人或物觸摸祭壇也十分重要，免得其聖潔遭受損失或污染」；CT
+    也說「凡是就近祭壇的人和物，也因著祭壇成為至聖，祭司和祭物也自然成為聖」。另一種讀法把它當作資格要求：GT 引丁良才譯為「都必須成為聖，意思說，凡不聖凜的都不可挨近壇」——不是挨著就變聖，而是不聖的不准挨近。GT《中文聖經註釋》則把範圍從物擴及人：這話「不單指與祭壇連接的物件……似乎也還暗示在祭壇前事奉的祭司，也因祭壇的成聖而都成聖（請參看結43:18-26）」。
+  surfaces:
+  - phrase: 成為至聖
+    verses:
+    - 37
+  - phrase: 挨著壇
+    verses:
+    - 37
+  match_type: exact
+  existing_title: 壇成為至聖與挨著壇的都成為聖
+  existing_path: link_folder/解經爭議/壇成為至聖與挨著壇的都成為聖.md
+- name: 按手
+  suggested_type: 原文
+  evidence: 出29:10、15、19 三隻祭牲每一隻在被宰之前，亞倫和他兒子都要按手在牠的頭上。GT《串珠》：「『按手』：代表認同，祭牲之死相等於獻祭者之死」；GT
+    引丁良才拆成四層（祭司的罪歸於公牛、公牛的義歸於祭司、公牛代替祭司死、祭司代替公牛活）；GT《精讀本》整理出跨兩約的按手譜系。此條目已有出29 累積，卻不在候選內，organization
+    因此連不上。
+  surfaces:
+  - phrase: 按手
+    verses:
+    - 10
+    - 15
+    - 19
+  match_type: exact
+  existing_title: 按手
+  existing_path: link_folder/原文/按手.md
+- name: 贖罪
+  suggested_type: 神學
+  evidence: 出29:33「他們吃那些贖罪之物」、29:36「每天要獻公牛一隻為贖罪祭。你潔淨壇的時候，壇就潔淨了」。GT《啟導本》給原文 kaphar
+    並指出舊約祭物「只能暫時遮蓋人的罪」；GT《丁道爾》以 kuppar 與施恩座同字根，主張譯作「遮蓋罪之物」並區分 propitiate 與 expiate。此條目已有出29
+    累積卻不在候選內。
+  match_type: exact
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+- name: 基督作贖罪祭
+  suggested_type: 神學
+  evidence: 出29:10-14、36-37 公牛作贖罪祭，皮肉糞在營外焚燒。GT《精讀本》指出這「象徵了日後耶穌基督將背負人類的罪，釘死在耶路撒冷城外（來13:11-13）」。此條目已有出29
+    累積卻不在候選內。
+  match_type: exact
+  existing_title: 基督作贖罪祭
+  existing_path: link_folder/神學/基督作贖罪祭.md
+- name: 神的榮耀
+  suggested_type: 神學
+  evidence: 出29:43「我要在那裡與以色列人相會，會幕就要因我的榮耀成為聖。」GT《中文聖經註釋》：聖幕與壇之所以成聖「並非因本身的華麗或貴重，乃因神的臨在。神的榮耀在那裏，那裏就有神的臨在」。此條目已有出29
+    累積卻不在候選內。
+  surfaces:
+  - phrase: 榮耀
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 神的榮耀
+  existing_path: link_folder/神學/神的榮耀.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: 出29:45-46「我要住在以色列人中間，作他們的神……為要住在他們中間。」GT《丁道爾》把這兩節讀成整段的頂點：「本段以一句有力的聲明作結，說明神的心意是要住在祂子民中間……因此本節就是以上經文的總綱和巔峰。」此條目已有出29
+    累積卻不在候選內。
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+B_needs_update: []
+C_new_formal: []
 D_new_candidate: []
 E_skip: []
