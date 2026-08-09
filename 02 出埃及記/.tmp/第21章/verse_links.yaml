@@ -9,19 +9,19 @@ links:
   target: 希伯來人
 - verse: 2
   phrase: 作奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 2
   phrase: 他可以自由
-  target: 自由（chophshi）
+  target: 自由
 - verse: 5
   phrase: 奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 5
   phrase: 自由
-  target: 自由（chophshi）
+  target: 自由
 - verse: 6
   phrase: 審判官
-  target: 審判官（elohim）
+  target: 審判官
 - verse: 6
   phrase: 靠近門框
   target: 穿耳的儀式
@@ -54,7 +54,7 @@ links:
   target: 傷害賠償的律例
 - verse: 20
   phrase: 奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 21
   phrase: 因為是用錢買的
   target: 出21：21「用錢買的」
@@ -72,25 +72,31 @@ links:
   target: 以眼還眼的適用範圍
 - verse: 26
   phrase: 奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 26
   phrase: 自由
-  target: 自由（chophshi）
+  target: 自由
 - verse: 27
   phrase: 奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 27
   phrase: 自由
-  target: 自由（chophshi）
+  target: 自由
 - verse: 28
   phrase: 牛若觸死男人或是女人
   target: 牛觸死人的律例
+- verse: 28
+  phrase: 用石頭打死那牛
+  target: 石刑
+- verse: 29
+  phrase: 用石頭打死那牛
+  target: 石刑
 - verse: 30
   phrase: 贖命的價銀
   target: 贖命的價銀
 - verse: 32
   phrase: 奴僕
-  target: 奴僕（ebed）
+  target: 奴僕
 - verse: 32
   phrase: 三十舍客勒
   target: 三十舍客勒
