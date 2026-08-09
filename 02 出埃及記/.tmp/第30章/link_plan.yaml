@@ -174,15 +174,15 @@ A_use_directly:
   existing_path: link_folder/原文/聖香（清淨聖潔的香）.md
 - name: 皂莢木
   suggested_type: 原文
-  evidence: 出30:1,5 經文記載香壇和槓用皂莢木。已有條目「皂莢木（atzei shittim）」。CT/KC/BH 註解：皂莢木表徵基督堅固不朽壞的人性
+  evidence: 出30:1,5 經文記載香壇和槓用皂莢木。已有條目「皂莢木」。CT/KC/BH 註解：皂莢木表徵基督堅固不朽壞的人性
   surfaces:
   - phrase: 皂莢木
     verses:
     - 1
     - 5
   match_type: alias
-  existing_title: 皂莢木（atzei shittim）
-  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
 - name: 精金
   suggested_type: 主題
   evidence: 出30:3,4,5 經文記載香壇頂、四圍、四角、牙邊、環、槓都用精金包裹。KC/BH 註解：精金表神性純全、榮耀

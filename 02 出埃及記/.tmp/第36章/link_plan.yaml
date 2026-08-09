@@ -128,7 +128,7 @@ A_use_directly:
   match_type: exact
   existing_title: 十一幅山羊毛幔子（罩棚）
   existing_path: link_folder/主題/十一幅山羊毛幔子（罩棚）.md
-- name: 五十個金鉤（vavei zahav）
+- name: 五十個金鉤
   suggested_type: 主題
   evidence: 出36:13 又做五十個金鉤，使幔子相連，這才成了一個帳幕。CT靈意：金表神性；五十個金鉤表徵神性的能力促成完美的聯結。已有條目「五十個金鉤（vavei
     zahav）」
@@ -137,8 +137,8 @@ A_use_directly:
     verses:
     - 13
   match_type: exact
-  existing_title: 五十個金鉤（vavei zahav）
-  existing_path: link_folder/主題/五十個金鉤（vavei zahav）.md
+  existing_title: 五十個金鉤
+  existing_path: link_folder/主題/五十個金鉤.md
 - name: 五十個銅鉤
   suggested_type: 主題
   evidence: 出36:18 又做五十個銅鉤，使罩棚連成一個。已有條目「五十個銅鉤」
@@ -322,11 +322,11 @@ A_use_directly:
   match_type: exact
   existing_title: 撚的細麻
   existing_path: link_folder/原文/撚的細麻.md
-- name: 皂莢木（atzei shittim）
+- name: 皂莢木
   suggested_type: 原文
   evidence: 出36:20,31,36 豎板、閂、內幔柱子均用皂莢木製作。BH：acacia wood was chosen for its durability
     and resistance to decay, making it ideal for the harsh desert environment；it is
-    native to the Sinai region。已有條目「皂莢木（atzei shittim）」
+    native to the Sinai region。已有條目「皂莢木」
   surfaces:
   - phrase: 皂莢木
     verses:
@@ -334,8 +334,8 @@ A_use_directly:
     - 31
     - 36
   match_type: exact
-  existing_title: 皂莢木（atzei shittim）
-  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
 - name: 山上的樣式
   suggested_type: 神學
   evidence: 出36:1 都要照耶和華所吩咐的做工。CT：所有事奉神的人都要遵照神的旨意行事，並不是自己想要做甚麼就做甚麼；神工人的才幹必須是在神的旨意中發揮恩賜。KC：no
@@ -398,7 +398,7 @@ A_use_directly:
 B_needs_update: []
 C_new_formal: []
 D_new_candidate:
-- name: 藍色鈕扣（lula'ot tekhelet）
+- name: 藍色鈕扣
   suggested_type: 原文
   evidence: 出36:11-12 在相連的幔子末幅邊上做藍色的鈕扣，每邊五十個，兩兩相對。CT靈意：藍色的鈕扣表徵屬天的聯結。已有條目「藍色鈕扣（lula'ot
     tekhelet）」
@@ -426,7 +426,7 @@ D_new_candidate:
     - 36
   match_type: type_conflict
   note: 分類衝突：候選=原文，既有=主題，secondary=[]
-- name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+- name: 藍色、紫色、朱紅色線
   suggested_type: 原文
   evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻和藍色、紫色、朱紅色線製造。CT靈意：藍色線表徵屬天（出24:10）；紫色線表徵君尊；朱紅色線表徵流血犧牲。BH：blue
     symbolized the heavens and divine revelation, purple was a color of royalty and

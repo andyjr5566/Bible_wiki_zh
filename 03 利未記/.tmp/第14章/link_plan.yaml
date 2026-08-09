@@ -2,7 +2,7 @@ book: 利未記
 chapter: 14
 A_use_directly: []
 B_needs_update:
-- name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+- name: 藍色、紫色、朱紅色線
   suggested_type: 主題
   evidence: 4, 6, 49, 51-52節；本章單獨使用朱紅色線（無藍紫二色），與香柏木、牛膝草、兩鳥同綁用於潔淨大痲瘋患者及房屋的儀式，用途從既有條目累積的會幕織物染料延伸為潔淨禮的材料。GT丁良才：朱紅色線即絨線，重一舍客勒，為綁牛膝草在香柏木上作刷子用；精讀本：象徵血即耶穌基督寶血的能力和救恩（書2:18）；BH：scarlet
     represents sin and the blood required for atonement
@@ -15,8 +15,8 @@ B_needs_update:
     - 51
     - 52
   match_type: exact
-  existing_title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
-  existing_path: link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
 - name: 摩西
   suggested_type: 人物
   evidence: v1「耶和華曉諭摩西說」（1-32節人的潔淨條例）、v33「耶和華曉諭摩西、亞倫說」（33-53節房屋的潔淨條例）

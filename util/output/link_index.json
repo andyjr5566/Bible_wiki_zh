@@ -1808,6 +1808,16 @@
       "從埃及為奴之家出來"
     ]
   },
+  "為榮耀為華美（聖衣的目的）": {
+    "path": "link_folder/主題/為榮耀為華美（聖衣的目的）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "為榮耀為華美（聖衣的目的）",
+    "status": "formal",
+    "aliases": [
+      "為榮耀,為華美"
+    ]
+  },
   "烏鴉與鴿子的象徵": {
     "path": "link_folder/主題/烏鴉與鴿子的象徵.md",
     "type": "主題",
@@ -22891,6 +22901,14 @@
     "status": "formal",
     "aliases": []
   },
+  "古代近東的祭司": {
+    "path": "link_folder/背景/古代近東的祭司.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的祭司",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東社會弱勢群體": {
     "path": "link_folder/背景/古代近東社會弱勢群體.md",
     "type": "背景",
@@ -24765,6 +24783,14 @@
       "雅博摔跤對手"
     ]
   },
+  "祭司聖衣的件數之爭": {
+    "path": "link_folder/解經爭議/祭司聖衣的件數之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "祭司聖衣的件數之爭",
+    "status": "formal",
+    "aliases": []
+  },
   "窺探迦南起因為神命或民意的解經爭議": {
     "path": "link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md",
     "type": "解經爭議",
@@ -25800,6 +25826,9 @@
   },
   "從埃及為奴之家出來": {
     "alias_of": "為奴之家"
+  },
+  "為榮耀,為華美": {
+    "alias_of": "為榮耀為華美（聖衣的目的）"
   },
   "洪水中的烏鴉與鴿子": {
     "alias_of": "烏鴉與鴿子的象徵"

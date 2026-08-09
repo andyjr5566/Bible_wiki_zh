@@ -233,17 +233,17 @@ A_use_directly:
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
-- name: 皂莢木（atzei shittim）
+- name: 皂莢木
   suggested_type: 原文
-  evidence: 出38:1,6 燔祭壇和抬壇的杠用皂莢木製作。已有條目「皂莢木（atzei shittim）」
+  evidence: 出38:1,6 燔祭壇和抬壇的杠用皂莢木製作。已有條目「皂莢木」
   surfaces:
   - phrase: 皂莢木
     verses:
     - 1
     - 6
   match_type: exact
-  existing_title: 皂莢木（atzei shittim）
-  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
 - name: 銅
   suggested_type: 主題
   evidence: 出38:2-8,10-12,14-15,17,19-20,29-31 壇包銅、壇的器具用銅、銅網用銅、洗濯盆和盆座用銅、院子柱子帶卯的座用銅、門簾柱子座用銅、橛子用銅；所獻的銅有七十他連得並二千四百舍客勒。CT靈意：銅表徵神的審判。KC：bronze。已有條目「銅」

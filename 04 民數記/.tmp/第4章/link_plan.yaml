@@ -76,7 +76,7 @@ B_needs_update:
   match_type: exact
   existing_title: 內幔（隔聖所至聖所的幔子）
   existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
-- name: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
+- name: 藍色、紫色、朱紅色線
   suggested_type: 主題
   surfaces:
   - phrase: 純藍色的毯子
@@ -84,8 +84,8 @@ B_needs_update:
   - phrase: 朱紅色的毯子
   - phrase: 紫色毯子
   match_type: exact
-  existing_title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
-  existing_path: link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
 - name: 不可摸約櫃（撒下6：6-7）
   suggested_type: 互文
   match_type: exact

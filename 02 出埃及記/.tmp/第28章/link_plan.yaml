@@ -94,16 +94,6 @@ A_use_directly:
     - 33
     - 34
     - 35
-  - phrase: 金鈴鐺
-    verses:
-    - 33
-    - 34
-    - 35
-  - phrase: 石榴
-    verses:
-    - 33
-    - 34
-    - 35
   match_type: exact
   existing_title: 外袍（以弗得的外袍）
   existing_path: link_folder/主題/外袍（以弗得的外袍）.md
@@ -378,9 +368,9 @@ A_use_directly:
     - 8
     - 15
     - 33
-  match_type: base
-  existing_title: 藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）
-  existing_path: link_folder/主題/藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）.md
+  match_type: exact
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
 - name: 撚的細麻
   suggested_type: 原文
   evidence: 出28:5,6,8,15,39,42 經文多處用撚的細麻做聖衣、內袍、褲子。 已有條目「撚的細麻」。CT/GT/KC/BH 註解：細麻表潔白聖潔(啟19:8)、基督純潔人性
@@ -445,20 +435,6 @@ A_use_directly:
   suggested_type: 神學
   evidence: 出28:1-43 整章聖衣製作都照神指示，預表天上真實。已有條目「山上的樣式」、「天上真聖所（來9:23-24）」、「天上事的形狀和影像（來8:5）」。來8:5、9:23-24
     指出地上帳幕是天上真聖所的影兒/副本
-  surfaces:
-  - phrase: 聖衣
-    verses:
-    - 2
-    - 3
-    - 4
-    - 40
-    - 41
-    - 42
-    - 43
-  - phrase: 分別為聖
-    verses:
-    - 3
-    - 41
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
@@ -514,49 +490,24 @@ A_use_directly:
 - name: 大祭司基督（來4:14-15）
   suggested_type: 互文
   evidence: 來4:14-15 指出耶穌是大祭司，能體恤軟弱。KC/CT 註解：亞倫預表基督作大祭司、按麥基洗德等次(來7:17)
-  surfaces:
-  - phrase: 大祭司
-    verses:
-    - 1
-    - 3
-    - 4
-    - 41
-    - 43
   match_type: normalized
   existing_title: 大祭司基督（來4：14-15）
   existing_path: link_folder/互文/大祭司基督（來4：14-15）.md
+- name: 信徒作祭司（彼前2:5,9）
+  suggested_type: 互文
+  evidence: 彼前2:5,9 信徒是聖潔的祭司、有君尊的祭司。KC/CT 註解：亞倫兒子預表信徒祭司職分、穿聖衣表披戴基督(羅13:14)
+  match_type: normalized
+  existing_title: 信徒作祭司（彼前2：5,9）
+  existing_path: link_folder/互文/信徒作祭司（彼前2：5,9）.md
 - name: 披戴基督（羅13:14）
   suggested_type: 互文
   evidence: 羅13:14 吩咐披戴主耶穌基督。KC/CT 註解：祭司聖衣就是耶穌基督、祂是我們的榮耀華美、公義聖潔
-  surfaces:
-  - phrase: 聖衣
-    verses:
-    - 2
-    - 3
-    - 4
-    - 40
-    - 41
-    - 42
-    - 43
-  - phrase: 穿聖服
-    verses:
-    - 4
-    - 41
   match_type: normalized
   existing_title: 披戴基督（羅13：14）
   existing_path: link_folder/互文/披戴基督（羅13：14）.md
 - name: 烏陵土明與神引導（來5:1-4）
   suggested_type: 互文
   evidence: 來5:1-4 論大祭司為百姓獻祭、能體恤無知誤謬。KC/CT 註解：烏陵土明預表基督作智慧、神引導
-  surfaces:
-  - phrase: 烏陵和土明
-    verses:
-    - 30
-  - phrase: 決斷
-    verses:
-    - 15
-    - 29
-    - 30
   match_type: normalized
   existing_title: 烏陵土明與神引導（來5：1-4）
   existing_path: link_folder/互文/烏陵土明與神引導（來5：1-4）.md
@@ -573,62 +524,132 @@ A_use_directly:
   match_type: normalized
   existing_title: 聖靈膏抹（約壹2：20,27）
   existing_path: link_folder/互文/聖靈膏抹（約壹2：20,27）.md
+- name: 義行的細麻（啟19:8）
+  suggested_type: 互文
+  evidence: 啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
+  match_type: normalized
+  existing_title: 義行的細麻（啟19：8）
+  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
 - name: 基督作智慧（林前1:30）
   suggested_type: 互文
   evidence: 林前1:30 基督成了我們的智慧。KC/CT 註解：烏陵土明預表基督作神的智慧、引導
-  surfaces:
-  - phrase: 烏陵和土明
-    verses:
-    - 30
-  - phrase: 決斷
-    verses:
-    - 15
-    - 29
-    - 30
   match_type: normalized
   existing_title: 基督作智慧（林前1：30）
   existing_path: link_folder/互文/基督作智慧（林前1：30）.md
 B_needs_update:
-- name: 信徒作祭司（彼前2:5,9）
-  suggested_type: 互文
-  evidence: 彼前2:5,9 信徒是聖潔的祭司、有君尊的祭司。KC/CT 註解：亞倫兒子預表信徒祭司職分、穿聖衣表披戴基督(羅13:14)
+- name: 鈴鐺與石榴（大祭司袍子）
+  suggested_type: 原文
+  evidence: 出28:33-35 外袍周圍底邊「一個金鈴鐺一個石榴」交錯排列，亞倫供職時「袍上的響聲必被聽見，使他不至於死亡」。本章是出39:24-26
+    製作記載的原始規定。GT《精讀本》列出金鈴鐺的四種解釋（宣佈律法／有旋律的讚美／祭司的權威／警誡謹慎的態度）並判定第四種最恰當；GT《中文聖經註釋》說明鈴響是叫外面的人知道大祭司仍活著；CT
+    說明響聲是為讓會幕外的人確認大祭司未突然倒地死亡。
   surfaces:
-  - phrase: 祭司
+  - phrase: 石榴
     verses:
-    - 1
-    - 3
-    - 4
-    - 41
-    - 43
-  - phrase: 供祭司職分
+    - 33
+    - 34
+  - phrase: 金鈴鐺
     verses:
-    - 1
-    - 3
-    - 4
-    - 41
-    - 43
-  match_type: normalized
-  existing_title: 信徒作祭司（彼前2：5,9）
-  existing_path: link_folder/互文/信徒作祭司（彼前2：5,9）.md
-- name: 義行的細麻（啟19:8）
-  suggested_type: 互文
-  evidence: 啟19:8 細麻衣就是聖徒所行的義。KC/CT 註解：祭司細麻內袍預表信徒在基督裡的義行
+    - 33
+    - 34
+  match_type: exact
+  existing_title: 鈴鐺與石榴（大祭司袍子）
+  existing_path: link_folder/原文/鈴鐺與石榴（大祭司袍子）.md
+- name: 聖衣（祭司聖服）
+  suggested_type: 主題
+  evidence: 出28:2-4「你要給你哥哥亞倫做聖衣為榮耀，為華美」，並列出所要做的六件：胸牌、以弗得、外袍、雜色的內袍、冠冕、腰帶。本章是聖衣制度的原始規定，出29
+    的穿戴、出39 的製作、利8 的就職禮都回指本章。GT《丁道爾》：這些衣服是聖的「即從其他事物中分別出來」；GT 引丁良才說明「聖服」之名的由來是「專為敬拜神，不作別的用」。
   surfaces:
-  - phrase: 細麻
+  - phrase: 聖衣
     verses:
-    - 5
-    - 6
-    - 8
-    - 15
-    - 39
-    - 42
-  - phrase: 內袍
+    - 2
+  - phrase: 聖服
     verses:
-    - 39
+    - 4
+  match_type: exact
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 承接聖職（分別為聖）
+  suggested_type: 神學
+  evidence: 出28:3「使他分別為聖，可以給我供祭司的職分」、28:41「又要膏他們，將他們分別為聖，好給我供祭司的職分」。本章給出承接聖職的三個動作——穿戴聖衣、受膏、分別為聖——出29
+    才詳述其禮儀。GT《中文聖經註釋》指出製衣的人也必須是神用智慧的靈充滿的才有資格。
+  surfaces:
+  - phrase: 分別為聖
+    verses:
+    - 3
+    - 41
+  match_type: exact
+  existing_title: 承接聖職（分別為聖）
+  existing_path: link_folder/神學/承接聖職（分別為聖）.md
+- name: 擔當干犯聖所與祭司職任的罪孽
+  suggested_type: 神學
+  evidence: 出28:38「這牌必在亞倫的額上，亞倫要擔當干犯聖物條例的罪孽……使他們可以在耶和華面前蒙悅納」、28:43「在聖所供職的時候必穿上，免得擔罪而死」。民18:1
+    的「擔當干犯聖所的罪孽」在本章已具雛形：大祭司藉額上的金牌承擔以色列人聖禮物上的過犯。GT 引丁良才：祭司供職若不穿與聖職相稱的衣服「就必惹動神的震怒；定要受神的懲罰」。
+  surfaces:
+  - phrase: 擔當干犯聖物條例的罪孽
+    verses:
+    - 38
+  - phrase: 擔罪
+    verses:
+    - 43
+  match_type: exact
+  existing_title: 擔當干犯聖所與祭司職任的罪孽
+  existing_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
+- name: 古代近東的神諭機制
+  suggested_type: 背景
+  evidence: 出28:30 烏陵和土明放在決斷的胸牌裡。GT《舊約背景註釋》〈出二十八30〉指出以是非題求問神明是古代近東廣為人知的作法，舉巴比倫的塔米圖（tamitu）文獻、美索不達米亞的石子占卜（psephomancy）與亞述文獻中連續抽出同色石塊三次才算確認的作法為比對，並指出烏陵和土明「並不像其他占卜方法，具有不良的意味」。創24
+    的求問記號已是同一機制，本章是它在祭司制度中的正式安置。
+  match_type: exact
+  existing_title: 古代近東的神諭機制
+  existing_path: link_folder/背景/古代近東的神諭機制.md
+- name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  suggested_type: 神學
+  evidence: 出28:3「又要吩咐一切心中有智慧的，就是我用智慧的靈所充滿的，給亞倫做衣服」——這是出埃及記首次出現「智慧的靈所充滿」的說法，早於出31
+    點名比撒列與亞何利亞伯。GT《精讀本》指出「智慧的靈」即聖靈，並列出舊約中受靈的四類人（王、先知、士師、祭司），對比新約聖靈降臨在每一位基督徒身上。
+  match_type: exact
+  existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+C_new_formal:
+- name: 古代近東的祭司
+  suggested_type: 背景
+  evidence: 出28:1 亞倫和他的兒子被分別出來供祭司的職分。GT《舊約背景註釋》〈出二十八1 古代近東的祭司〉整段鋪陳：祭司是古代近東所有文化共有的發展，只有貝督因部落沒有專人擔任；祭司自幼在廟中受教育、地位常世襲；他們是文盲社會中極少數識字的人，因而兼掌占卜；階級由高而低為大祭司、中等祭司、樂師、廟役，大祭司的勢力「有時堪與君王匹敵」。
+  target_path: link_folder/背景/古代近東的祭司.md
+  semantic_hint:
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.521
+    type: 背景
+  - title: 古代近東祭壇
+    score: 0.51
+    type: 背景
+  - title: 古代近東以什一奉獻為神職薪酬
+    score: 0.506
+    type: 文化
+- name: 為榮耀為華美（聖衣的目的）
+  suggested_type: 主題
+  evidence: 出28:2、40 兩次以「為榮耀，為華美」說明聖衣的目的（大祭司一次、眾祭司一次）。CT 給原文字義「榮耀，富足，尊榮」與「榮美，燦爛，榮耀」，並解為神性／人性的彰顯；GT《丁道爾》指出這是聖經對聖衣含義唯一的解釋，「除此以外，聖經再無解釋個別衣物含義之處」；GT《精讀本》從事奉本身立論；GT
+    引丁良才指出神也以眾祭司的白衣為榮耀為華美；BH 亦反覆以 glory／beauty 申說。
+  surfaces:
+  - phrase: 為榮耀，為華美
+    verses:
+    - 2
     - 40
-  match_type: normalized
-  existing_title: 義行的細麻（啟19：8）
-  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
-C_new_formal: []
+  target_path: link_folder/主題/為榮耀為華美（聖衣的目的）.md
+  semantic_hint:
+  - title: 聖衣（祭司聖服）
+    score: 0.484
+    type: 主題
+  - title: 披戴基督（羅13：14）
+    score: 0.434
+    type: 互文
+  - title: 義行的細麻（啟19：8）
+    score: 0.403
+    type: 互文
+- name: 祭司聖衣的件數之爭
+  suggested_type: 解經爭議
+  evidence: 出28:4、39-43 列出的衣物，各家統計不一。GT 引丁良才作「眾祭司的衣服共有四件：褲子、內袍、大帶、裹頭巾」，「大祭司的衣服多四件：外袍、以弗得、胸牌、金牌」，另計大贖罪日穿的一套細麻衣；GT《精讀本》則作「大祭司所穿的七件衣服（胸牌、以弗得、外袍、內袍、金牌、冠冕、腰帶）和普通祭司所穿的三件衣服（內袍、頭巾、腰帶）」，並主張細麻布褲子「是沒有受膏的普通衣服」而不列入。分歧的軸心在褲子算不算聖衣。
+  target_path: link_folder/解經爭議/祭司聖衣的件數之爭.md
+  semantic_hint:
+  - title: 聖衣（祭司聖服）
+    score: 0.508
+    type: 主題
 D_new_candidate: []
 E_skip: []
