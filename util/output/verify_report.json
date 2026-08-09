@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 178,
+  "pending_scripture_refs_count": 177,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -540,11 +540,6 @@
       "entity": "05 申命記/第21章",
       "book": "申命記",
       "chapter": 21
-    },
-    {
-      "entity": "申28",
-      "book": "申命記",
-      "chapter": 28
     },
     {
       "entity": "05 申命記/第30章",

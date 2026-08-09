@@ -38,7 +38,7 @@ source_scope: collected_only
 
 - [[十幅幔子（內層幕幔）]]
 - [[五十個金鉤（vavei zahav）]]
-- [[藍色、紫色、朱紅色線（tekhelet, argaman, tola'at shani）]]
+- [[藍色、紫色、朱紅色線]]
 - [[會幕（帳幕整體）]]
 
 ## 來源依據

@@ -72,24 +72,24 @@ A_use_directly:
   match_type: exact
   existing_title: 金燈臺
   existing_path: link_folder/主題/金燈臺.md
-- name: 皂莢木（atzei shittim）
+- name: 皂莢木
   suggested_type: 原文
   evidence: 產於西乃曠野的堅硬木材，用以製造約櫃、桌子、燈臺骨架與槓（出25:5,10,13,23,28）
   match_type: exact
-  existing_title: 皂莢木（atzei shittim）
-  existing_path: link_folder/原文/皂莢木（atzei shittim）.md
-- name: 禮物（terumah）
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
+- name: 禮物
   suggested_type: 原文
   evidence: 甘心奉獻歸神的供物，非強索之物（出25:2-3）
   match_type: exact
-  existing_title: 禮物（terumah）
-  existing_path: link_folder/原文/禮物（terumah）.md
-- name: 法版（edut）
+  existing_title: 禮物
+  existing_path: link_folder/原文/禮物.md
+- name: 法版
   suggested_type: 原文
   evidence: 刻十誡的兩塊石版，是神與人立約的見證（出25:16,21）
   match_type: exact
-  existing_title: 法版（edut）
-  existing_path: link_folder/原文/法版（edut）.md
+  existing_title: 法版
+  existing_path: link_folder/原文/法版.md
 - name: 約1：14
   suggested_type: 互文
   evidence: 道成肉身，支搭帳棚住在我們中間，對照出25:8神住在人間

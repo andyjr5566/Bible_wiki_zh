@@ -6,25 +6,58 @@ links:
   target: 摩西
 - verse: 2
   phrase: 禮物
-  target: 禮物（terumah）
+  target: 禮物
 - verse: 2
   phrase: 甘心樂意
   target: 甘心樂意的奉獻
 - verse: 3
   phrase: 禮物
-  target: 禮物（terumah）
+  target: 禮物
+- verse: 4
+  phrase: 藍色、紫色、朱紅色線
+  target: 藍色、紫色、朱紅色線
+- verse: 4
+  phrase: 細麻
+  target: 撚的細麻
+- verse: 5
+  phrase: 海狗皮
+  target: 海狗皮頂蓋
 - verse: 5
   phrase: 皂莢木
-  target: 皂莢木（atzei shittim）
+  target: 皂莢木
+- verse: 7
+  phrase: 紅瑪瑙
+  target: 紅瑪瑙（紀念石）
+- verse: 7
+  phrase: 以弗得
+  target: 以弗得
+- verse: 7
+  phrase: 胸牌
+  target: 胸牌（決斷胸牌）
+- verse: 8
+  phrase: 聖所
+  target: 聖所
+- verse: 8
+  phrase: 住在他們中間
+  target: 神住在人間
+- verse: 9
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
+- verse: 9
+  phrase: 所指示你的樣式
+  target: 山上的樣式
 - verse: 10
   phrase: 皂莢木
-  target: 皂莢木（atzei shittim）
+  target: 皂莢木
+- verse: 11
+  phrase: 精金
+  target: 精金
 - verse: 13
   phrase: 皂莢木
-  target: 皂莢木（atzei shittim）
+  target: 皂莢木
 - verse: 16
   phrase: 法版
-  target: 法版（edut）
+  target: 法版
 - verse: 17
   phrase: 施恩座
   target: 施恩座
@@ -54,7 +87,7 @@ links:
   target: 施恩座
 - verse: 21
   phrase: 法版
-  target: 法版（edut）
+  target: 法版
 - verse: 22
   phrase: 法櫃
   target: 約櫃
@@ -62,20 +95,32 @@ links:
   phrase: 施恩座
   target: 施恩座
 - verse: 22
-  phrase: 二基路伯
-  target: 基路伯（施恩座）
+  phrase: 二基路伯中間
+  target: 二基路伯中間說話的聲音（施恩座微聲）
 - verse: 23
   phrase: 皂莢木
-  target: 皂莢木（atzei shittim）
+  target: 皂莢木
 - verse: 28
   phrase: 皂莢木
-  target: 皂莢木（atzei shittim）
+  target: 皂莢木
+- verse: 29
+  phrase: 奠酒
+  target: 奠酒
+- verse: 30
+  phrase: 陳設餅
+  target: 陳設餅十二個餅預表以色列十二支派
 - verse: 31
   phrase: 燈臺
   target: 金燈臺
+- verse: 31
+  phrase: 錘出來
+  target: 銀號製作工藝（錘出法）
 - verse: 32
   phrase: 燈臺
   target: 金燈臺
+- verse: 33
+  phrase: 杏花
+  target: 杏花杯球花（燈臺裝飾）
 - verse: 33
   phrase: 燈臺
   target: 金燈臺
@@ -94,3 +139,6 @@ links:
 - verse: 39
   phrase: 燈臺
   target: 金燈臺
+- verse: 39
+  phrase: 精金一他連得
+  target: 一他連得精金（燈臺用金量）
