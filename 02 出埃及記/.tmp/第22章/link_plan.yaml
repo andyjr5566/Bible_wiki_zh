@@ -1,7 +1,7 @@
 book: 出埃及記
 chapter: 22
 A_use_directly:
-- name: 偷（ganab）
+- name: 偷
   suggested_type: 原文
   evidence: 1節；原文字義「偷竊，拐帶，拿走」；《精讀本》指「拐賣」的希伯來語是「趁機偷盜」的意思
   surfaces:
@@ -9,8 +9,8 @@ A_use_directly:
     verses:
     - 1
   match_type: exact
-  existing_title: 偷（ganab）
-  existing_path: link_folder/原文/偷（ganab）.md
+  existing_title: 偷
+  existing_path: link_folder/原文/偷.md
 - name: 賠償原則
   suggested_type: 神學
   evidence: 1、4節；五牛賠一牛、四羊賠一羊；《丁道爾》指牛較有價值更難以置換
@@ -21,7 +21,7 @@ A_use_directly:
   match_type: exact
   existing_title: 賠償原則
   existing_path: link_folder/神學/賠償原則.md
-- name: 賠償（shalem）
+- name: 賠償
   suggested_type: 原文
   evidence: 3、5、6節；原文字義「賠償，回報」；KC 指偷竊不使人更富有，反使人更貧窮
   surfaces:
@@ -29,8 +29,8 @@ A_use_directly:
     verses:
     - 3
   match_type: exact
-  existing_title: 賠償（shalem）
-  existing_path: link_folder/原文/賠償（shalem）.md
+  existing_title: 賠償
+  existing_path: link_folder/原文/賠償.md
 - name: 出22：2-3自衛殺人的界限
   suggested_type: 解經爭議
   evidence: 2-3節；夜間殺賊無流血的罪，太陽出來則有；《丁道爾》：以色列的律法富於憐憫，即使賊人也有權益
@@ -114,7 +114,7 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東受託制度
   existing_path: link_folder/背景/古代近東受託制度.md
-- name: 審判官（elohim）
+- name: 審判官
   suggested_type: 原文
   evidence: 8-9節；原文與「神」字相同；《丁道爾》指就近神必然是「到聖所」的意思
   surfaces:
@@ -122,8 +122,8 @@ A_use_directly:
     verses:
     - 8
   match_type: exact
-  existing_title: 審判官（elohim）
-  existing_path: link_folder/原文/審判官（elohim）.md
+  existing_title: 審判官
+  existing_path: link_folder/原文/審判官.md
 - name: 耶和華
   suggested_type: 神學
   evidence: 11節；CT 指社治律中只有這一次提及耶和華，表示祂是聽聞誓言者
@@ -173,7 +173,7 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東聘禮制度
   existing_path: link_folder/背景/古代近東聘禮制度.md
-- name: 行邪術的女人（mekhashephah）
+- name: 行邪術的女人
   suggested_type: 原文
   evidence: 18節；原文字義「女巫」；《中文聖經註釋》指舊約把占卜、觀兆、法術、巫術、交鬼、過陰都列入行邪術
   surfaces:
@@ -181,8 +181,8 @@ A_use_directly:
     verses:
     - 18
   match_type: exact
-  existing_title: 行邪術的女人（mekhashephah）
-  existing_path: link_folder/原文/行邪術的女人（mekhashephah）.md
+  existing_title: 行邪術的女人
+  existing_path: link_folder/原文/行邪術的女人.md
 - name: 出22：18行邪術的死刑
   suggested_type: 解經爭議
   evidence: 18節；蘇穎智指徒19:19 保羅並沒有宣判行邪術者死罪，反而將福音傳給他們
@@ -209,7 +209,7 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東人獸性行為
   existing_path: link_folder/背景/古代近東人獸性行為.md
-- name: 滅絕（charam）
+- name: 滅絕
   suggested_type: 原文
   evidence: 20節；原文字義「滅絕，毀滅，劈開」；《丁道爾》指犯這罪的人列為「稱聖當滅之物」
   surfaces:
@@ -217,8 +217,8 @@ A_use_directly:
     verses:
     - 20
   match_type: exact
-  existing_title: 滅絕（charam）
-  existing_path: link_folder/原文/滅絕（charam）.md
+  existing_title: 滅絕
+  existing_path: link_folder/原文/滅絕.md
 - name: 專一敬拜
   suggested_type: 神學
   evidence: 20節；「祭祀別神，不單單祭祀耶和華的」——《丁道爾》指這只是從獻祭的角度解釋出20:3
@@ -235,7 +235,7 @@ A_use_directly:
   match_type: exact
   existing_title: 道德與宗教的律例
   existing_path: link_folder/事件/道德與宗教的律例.md
-- name: 寄居的（ger）
+- name: 寄居的
   suggested_type: 原文
   evidence: 21節；《丁道爾》指 ger 是「外僑」，不僅是「外邦人」而已；希伯來語另外有形容外邦人的字眼
   surfaces:
@@ -243,8 +243,8 @@ A_use_directly:
     verses:
     - 21
   match_type: exact
-  existing_title: 寄居的（ger）
-  existing_path: link_folder/原文/寄居的（ger）.md
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
 - name: 保護弱者的律例
   suggested_type: 事件
   evidence: 21-27節；寄居的、寡婦、孤兒、貧窮人——古代社會最無助的階層
@@ -281,7 +281,7 @@ A_use_directly:
   match_type: exact
   existing_title: 神聽哀求
   existing_path: link_folder/神學/神聽哀求.md
-- name: 取利（neshek）
+- name: 取利
   suggested_type: 原文
   evidence: 25節；原文字義「利息，高利」；《丁道爾》指本節不但譴責高利貸，更反對向窮人收取任何利息
   surfaces:
@@ -289,8 +289,8 @@ A_use_directly:
     verses:
     - 25
   match_type: exact
-  existing_title: 取利（neshek）
-  existing_path: link_folder/原文/取利（neshek）.md
+  existing_title: 取利
+  existing_path: link_folder/原文/取利.md
 - name: 出22：25取利禁令的範圍
   suggested_type: 解經爭議
   evidence: 25節；丁良才指這一條法律是論以色列人，不是論外邦人，也不是論到借款經商等事
@@ -307,7 +307,7 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東放債取利
   existing_path: link_folder/背景/古代近東放債取利.md
-- name: 當頭（`abot）
+- name: 當頭
   suggested_type: 原文
   evidence: 26節；原文字義「典當，抵押，綑綁」；CT 指借錢給窮人不可向他們要求抵押物品，即使自動抵押仍須日落前歸還
   surfaces:
@@ -315,8 +315,8 @@ A_use_directly:
     verses:
     - 26
   match_type: exact
-  existing_title: 當頭（`abot）
-  existing_path: link_folder/原文/當頭（`abot）.md
+  existing_title: 當頭
+  existing_path: link_folder/原文/當頭.md
 - name: 古代近東當頭制度
   suggested_type: 背景
   evidence: 26-27節；《舊約背景註釋》記亞弗內揚出土主前七世紀銘刻，一個農工申訴外衣被人無理奪取
@@ -337,7 +337,7 @@ A_use_directly:
   match_type: exact
   existing_title: 恩惠
   existing_path: link_folder/神學/恩惠.md
-- name: 毀謗（qalal）
+- name: 毀謗
   suggested_type: 原文
   evidence: 28節；原文首字「藐視，小看」，次字「詛咒」；《舊約背景註釋》指本節可譯「神」也可譯「審判官」
   surfaces:
@@ -345,8 +345,8 @@ A_use_directly:
     verses:
     - 28
   match_type: exact
-  existing_title: 毀謗（qalal）
-  existing_path: link_folder/原文/毀謗（qalal）.md
+  existing_title: 毀謗
+  existing_path: link_folder/原文/毀謗.md
 - name: 初熟果子
   suggested_type: 神學
   evidence: 29節；「你要從你莊稼中的穀和酒醡中滴出來的酒拿來獻上，不可遲延」
@@ -389,16 +389,6 @@ A_use_directly:
   match_type: exact
   existing_title: 古代近東頭生奉獻
   existing_path: link_folder/背景/古代近東頭生奉獻.md
-- name: 聖潔（qodesh）
-  suggested_type: 原文
-  evidence: 31節；原文字義「分別，神聖」；《中文聖經註釋》指原文的聖潔有分別、隔別、離開的意義
-  surfaces:
-  - phrase: 你們要在我面前為聖潔的人
-    verses:
-    - 31
-  match_type: exact
-  existing_title: 聖潔（qodesh）
-  existing_path: link_folder/原文/聖潔（qodesh）.md
 - name: 聖潔飲食
   suggested_type: 主題
   evidence: 31節；「田間被野獸撕裂牲畜的肉，你們不可吃，要丟給狗吃」
@@ -557,12 +547,6 @@ A_use_directly:
   match_type: exact
   existing_title: 民18：15-16
   existing_path: link_folder/互文/民18：15-16.md
-- name: 來10：5
-  suggested_type: 互文
-  evidence: 29-30節；KC 與 BH 指基督以身體為祭，應驗頭生歸神的原則
-  match_type: exact
-  existing_title: 來10：5
-  existing_path: link_folder/互文/來10：5.md
 - name: 利11：44
   suggested_type: 互文
   evidence: 31節；「你們要成為聖潔」與本節平行
@@ -611,7 +595,32 @@ A_use_directly:
   match_type: exact
   existing_title: 啟13：1,11
   existing_path: link_folder/互文/啟13：1,11.md
-B_needs_update: []
+B_needs_update:
+- name: 來10：5
+  suggested_type: 互文
+  evidence: 29-30節；KC 與 BH 指基督以身體為祭，應驗頭生歸神的原則
+  match_type: exact
+  existing_title: 來10：5
+  existing_path: link_folder/互文/來10：5.md
 C_new_formal: []
-D_new_candidate: []
+D_new_candidate:
+- name: 聖潔
+  suggested_type: 原文
+  evidence: 31節；原文字義「分別，神聖」；《中文聖經註釋》指原文的聖潔有分別、隔別、離開的意義
+  surfaces:
+  - phrase: 你們要在我面前為聖潔的人
+    verses:
+    - 31
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=[]
+  semantic_hint:
+  - title: 聖潔（qodesh）
+    score: 0.504
+    type: 原文
+  - title: 神的聖潔
+    score: 0.424
+    type: 神學
+  - title: 聖潔生活
+    score: 0.408
+    type: 主題
 E_skip: []

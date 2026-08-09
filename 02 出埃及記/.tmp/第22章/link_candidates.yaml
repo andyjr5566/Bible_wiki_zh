@@ -1,7 +1,7 @@
 book: 出埃及記
 chapter: 22
 candidates:
-  - name: 偷（ganab）
+  - name: 偷
     type: 原文
     evidence: 1節；原文字義「偷竊，拐帶，拿走」；《精讀本》指「拐賣」的希伯來語是「趁機偷盜」的意思
     surfaces:
@@ -11,7 +11,7 @@ candidates:
     evidence: 1、4節；五牛賠一牛、四羊賠一羊；《丁道爾》指牛較有價值更難以置換
     surfaces:
       - {phrase: 以五牛賠一牛，四羊賠一羊, verses: [1]}
-  - name: 賠償（shalem）
+  - name: 賠償
     type: 原文
     evidence: 3、5、6節；原文字義「賠償，回報」；KC 指偷竊不使人更富有，反使人更貧窮
     surfaces:
@@ -57,7 +57,7 @@ candidates:
     evidence: 7節；《啟導本》指在尚無銀行等金融機構的社會，外出旅行會把銀錢托鄰人代為保管
     surfaces:
       - {phrase: 人若將銀錢或家具, verses: [7]}
-  - name: 審判官（elohim）
+  - name: 審判官
     type: 原文
     evidence: 8-9節；原文與「神」字相同；《丁道爾》指就近神必然是「到聖所」的意思
     surfaces:
@@ -86,7 +86,7 @@ candidates:
     evidence: 16-17節；《舊約背景註釋》指女子是否為處女、曾否結婚是聘禮多少的根據
     surfaces:
       - {phrase: 按處女的聘禮，交出錢來, verses: [17]}
-  - name: 行邪術的女人（mekhashephah）
+  - name: 行邪術的女人
     type: 原文
     evidence: 18節；原文字義「女巫」；《中文聖經註釋》指舊約把占卜、觀兆、法術、巫術、交鬼、過陰都列入行邪術
     surfaces:
@@ -104,7 +104,7 @@ candidates:
     evidence: 19節；《舊約背景註釋》指這種行為在赫人法律中也在被禁之列
     surfaces:
       - {phrase: 凡與獸淫合的, verses: [19]}
-  - name: 滅絕（charam）
+  - name: 滅絕
     type: 原文
     evidence: 20節；原文字義「滅絕，毀滅，劈開」；《丁道爾》指犯這罪的人列為「稱聖當滅之物」
     surfaces:
@@ -117,7 +117,7 @@ candidates:
   - name: 道德與宗教的律例
     type: 事件
     evidence: 16-20節；《中文聖經註釋》指18-20節已改用普遍性的律例形式
-  - name: 寄居的（ger）
+  - name: 寄居的
     type: 原文
     evidence: 21節；《丁道爾》指 ger 是「外僑」，不僅是「外邦人」而已；希伯來語另外有形容外邦人的字眼
     surfaces:
@@ -140,7 +140,7 @@ candidates:
     evidence: 23、27節；「他們向我一哀求，我總要聽他們的哀聲」——神是孤兒寡婦的保護者和伸冤者
     surfaces:
       - {phrase: 我總要聽他們的哀聲, verses: [23]}
-  - name: 取利（neshek）
+  - name: 取利
     type: 原文
     evidence: 25節；原文字義「利息，高利」；《丁道爾》指本節不但譴責高利貸，更反對向窮人收取任何利息
     surfaces:
@@ -153,7 +153,7 @@ candidates:
   - name: 古代近東放債取利
     type: 背景
     evidence: 25節；《舊約背景註釋》指漢摩拉比規定利率不得超過百分之二十
-  - name: "當頭（`abot）"
+  - name: "當頭"
     type: 原文
     evidence: 26節；原文字義「典當，抵押，綑綁」；CT 指借錢給窮人不可向他們要求抵押物品，即使自動抵押仍須日落前歸還
     surfaces:
@@ -168,7 +168,7 @@ candidates:
     evidence: 27節；「他哀求我，我就應允，因為我是有恩惠的」——神的本性
     surfaces:
       - {phrase: 因為我是有恩惠的, verses: [27]}
-  - name: 毀謗（qalal）
+  - name: 毀謗
     type: 原文
     evidence: 28節；原文首字「藐視，小看」，次字「詛咒」；《舊約背景註釋》指本節可譯「神」也可譯「審判官」
     surfaces:
@@ -194,7 +194,7 @@ candidates:
   - name: 古代近東頭生奉獻
     type: 背景
     evidence: 29節；《舊約背景註釋》指以色列的信仰禁止殺人獻祭，奉上牲口代替嬰孩
-  - name: 聖潔（qodesh）
+  - name: 聖潔
     type: 原文
     evidence: 31節；原文字義「分別，神聖」；《中文聖經註釋》指原文的聖潔有分別、隔別、離開的意義
     surfaces:
