@@ -45,13 +45,13 @@ A_use_directly:
   match_type: exact
   existing_title: 遠遠下拜
   existing_path: link_folder/神學/遠遠下拜.md
-- name: 下拜（shachah）
+- name: 下拜
   suggested_type: 原文
   evidence: 1節；原文字義「下拜，俯伏」；可以越過山腳下四圍的界限，但距離山頂仍有一段路程
   match_type: exact
-  existing_title: 下拜（shachah）
-  existing_path: link_folder/原文/下拜（shachah）.md
-- name: 親近（qarab）
+  existing_title: 下拜
+  existing_path: link_folder/原文/下拜.md
+- name: 親近
   suggested_type: 原文
   evidence: 2節；原文字義「拉近，就近」；丁良才列出親近神的三個等次：摩西、長老、百姓
   surfaces:
@@ -59,8 +59,8 @@ A_use_directly:
     verses:
     - 2
   match_type: exact
-  existing_title: 親近（qarab）
-  existing_path: link_folder/原文/親近（qarab）.md
+  existing_title: 親近
+  existing_path: link_folder/原文/親近.md
 - name: 中保
   suggested_type: 神學
   evidence: 2節；CT 指摩西預表耶穌基督，祂是更美之約的中保、屬天的大祭司
@@ -81,7 +81,7 @@ A_use_directly:
   match_type: exact
   existing_title: 立約儀式
   existing_path: link_folder/事件/立約儀式.md
-- name: 寫上（kathab）
+- name: 寫上
   suggested_type: 原文
   evidence: 4節；CT 指寫在書上，並不是石版上，那是神用指頭寫的
   surfaces:
@@ -89,8 +89,8 @@ A_use_directly:
     verses:
     - 4
   match_type: exact
-  existing_title: 寫上（kathab）
-  existing_path: link_folder/原文/寫上（kathab）.md
+  existing_title: 寫上
+  existing_path: link_folder/原文/寫上.md
 - name: 山腳
   suggested_type: 地點
   evidence: 4節；「清早起來，在山下築一座壇」；築壇是為著立約，因為若沒有流血，約就不能成立
@@ -131,7 +131,7 @@ A_use_directly:
   match_type: exact
   existing_title: 平安祭（shelamim）
   existing_path: link_folder/原文/平安祭（shelamim）.md
-- name: 灑（zaraq）
+- name: 灑
   suggested_type: 原文
   evidence: 6節；原文字義「撒，澆在」；CT 指盛在盆中的血是為全體以色列人，灑在壇上的血是為神
   surfaces:
@@ -139,19 +139,9 @@ A_use_directly:
     verses:
     - 6
   match_type: exact
-  existing_title: 灑（zaraq）
-  existing_path: link_folder/原文/灑（zaraq）.md
-- name: 約書（sefer habberith）
-  suggested_type: 原文
-  evidence: 7節；《丁道爾》指「約書」一名也是來自本節，專指以上幾章經文
-  surfaces:
-  - phrase: 又將約書念給百姓聽
-    verses:
-    - 7
-  match_type: exact
-  existing_title: 約書（sefer habberith）
-  existing_path: link_folder/原文/約書（sefer habberith）.md
-- name: 遵行（asah）
+  existing_title: 灑
+  existing_path: link_folder/原文/灑.md
+- name: 遵行
   suggested_type: 原文
   evidence: 3、7節；原文雙字，首字「做，製作，行出」，次字「聽到，聽從」；KC 指第7節比第3節說得更強
   surfaces:
@@ -160,8 +150,8 @@ A_use_directly:
     - 3
     - 7
   match_type: exact
-  existing_title: 遵行（asah）
-  existing_path: link_folder/原文/遵行（asah）.md
+  existing_title: 遵行
+  existing_path: link_folder/原文/遵行.md
 - name: 立約之血
   suggested_type: 神學
   evidence: 8節；《丁道爾》：十架上的基督不但和摩西一樣是盟約的中保，更是立約的犧牲
@@ -215,7 +205,7 @@ A_use_directly:
   match_type: exact
   existing_title: 神的榮耀
   existing_path: link_folder/神學/神的榮耀.md
-- name: 榮耀（kabod）
+- name: 榮耀
   suggested_type: 原文
   evidence: 16-17節；原文字義「榮耀，富足，尊榮」；「停於」原文「定居，居留，駐紮」
   surfaces:
@@ -223,8 +213,8 @@ A_use_directly:
     verses:
     - 16
   match_type: exact
-  existing_title: 榮耀（kabod）
-  existing_path: link_folder/原文/榮耀（kabod）.md
+  existing_title: 榮耀
+  existing_path: link_folder/原文/榮耀.md
 - name: 約書亞
   suggested_type: 人物
   evidence: 13節；原文字義「耶和華是拯救」；摩西的幫手；KC 指這是繼出17章之後第二次提到約書亞
@@ -255,7 +245,7 @@ A_use_directly:
   match_type: exact
   existing_title: 摩西上山領石版
   existing_path: link_folder/事件/摩西上山領石版.md
-- name: 雲彩（anan）
+- name: 雲彩
   suggested_type: 原文
   evidence: 15-16節；原文字義「雲，雲層」；CT 指雲彩往往與神的榮耀和同在有關
   surfaces:
@@ -263,8 +253,8 @@ A_use_directly:
     verses:
     - 15
   match_type: exact
-  existing_title: 雲彩（anan）
-  existing_path: link_folder/原文/雲彩（anan）.md
+  existing_title: 雲彩
+  existing_path: link_folder/原文/雲彩.md
 - name: 西乃山
   suggested_type: 地點
   evidence: 16節；「耶和華的榮耀停於西乃山」；又稱神的山、何烈山
@@ -275,7 +265,7 @@ A_use_directly:
   match_type: exact
   existing_title: 西乃山
   existing_path: link_folder/地點/西乃山.md
-- name: 烈火（esh okelah）
+- name: 烈火
   suggested_type: 原文
   evidence: 17節；原文「烈」意「吞噬，燒毀」；因為我們的神乃是烈火（來12:29）
   surfaces:
@@ -283,8 +273,8 @@ A_use_directly:
     verses:
     - 17
   match_type: exact
-  existing_title: 烈火（esh okelah）
-  existing_path: link_folder/原文/烈火（esh okelah）.md
+  existing_title: 烈火
+  existing_path: link_folder/原文/烈火.md
 - name: 四十晝夜
   suggested_type: 神學
   evidence: 18節；CT 指在聖經中象徵神的試煉；表徵試驗和試煉
@@ -398,7 +388,15 @@ A_use_directly:
   existing_title: 王上18：31
   existing_path: link_folder/互文/王上18：31.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 藍寶石
+  suggested_type: 文化
+  evidence: 10節；CT：『藍寶石』是神寶座的形像（參結一26）；《舊約聖經背景註釋》：砌成這個裝飾華麗之路面的，最有可能是天青石（經商旅自阿富汗運來）；《丁道爾》引挪士指這種鋪道美索不達米亞特別常見
+  target_path: link_folder/文化/藍寶石.md
+- name: 石版
+  suggested_type: 文化
+  evidence: 12節；《舊約聖經背景註釋》：古代近東的慣例，是將重要文件、法典銘刻於石；CT 指石版上所寫的僅有十條誡命（參申四13）；《丁道爾》：譯作「石版，即律法和誡命」更佳
+  target_path: link_folder/文化/石版.md
 D_new_candidate:
 - name: 以色列長老
   suggested_type: 人物
@@ -409,4 +407,27 @@ D_new_candidate:
     - 1
   match_type: type_conflict
   note: 分類衝突：候選=人物，既有=文化，secondary=['歷史', '制度']
+  semantic_hint:
+  - title: 以色列的長老
+    score: 0.697
+    type: 文化
+  - title: 以色列的眾長老
+    score: 0.64
+    type: 人物
+  - title: 七十長老制度起源
+    score: 0.512
+    type: 歷史
+- name: 約書
+  suggested_type: 原文
+  evidence: 7節；《丁道爾》指「約書」一名也是來自本節，專指以上幾章經文
+  surfaces:
+  - phrase: 又將約書念給百姓聽
+    verses:
+    - 7
+  match_type: type_conflict
+  note: 分類衝突：候選=原文，既有=神學，secondary=['背景']
+  semantic_hint:
+  - title: 約書（sefer habberith）
+    score: 0.437
+    type: 原文
 E_skip: []

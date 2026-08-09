@@ -18,7 +18,7 @@ links:
   target: 遠遠下拜
 - verse: 2
   phrase: 惟獨你可以親近耶和華
-  target: 親近（qarab）
+  target: 親近
 - verse: 2
   phrase: 他們卻不可親近
   target: 中保
@@ -30,13 +30,13 @@ links:
   target: 立約儀式
 - verse: 3
   phrase: 我們都必遵行
-  target: 遵行（asah）
+  target: 遵行
 - verse: 4
   phrase: 摩西
   target: 摩西
 - verse: 4
   phrase: 將耶和華的命令都寫上
-  target: 寫上（kathab）
+  target: 寫上
 - verse: 4
   phrase: 山下
   target: 山腳
@@ -54,19 +54,16 @@ links:
   target: 摩西
 - verse: 6
   phrase: 將血一半盛在盆中，一半灑在壇上
-  target: 灑（zaraq）
-- verse: 7
-  phrase: 又將約書念給百姓聽
-  target: 約書（sefer habberith）
+  target: 灑
 - verse: 7
   phrase: 我們都必遵行
-  target: 遵行（asah）
+  target: 遵行
 - verse: 8
   phrase: 摩西
   target: 摩西
 - verse: 8
   phrase: 灑
-  target: 灑（zaraq）
+  target: 灑
 - verse: 8
   phrase: 這是立約的血
   target: 立約之血
@@ -123,25 +120,25 @@ links:
   target: 摩西
 - verse: 15
   phrase: 有雲彩把山遮蓋
-  target: 雲彩（anan）
+  target: 雲彩
 - verse: 16
   phrase: 耶和華的榮耀停於
-  target: 榮耀（kabod）
+  target: 榮耀
 - verse: 16
   phrase: 西乃山
   target: 西乃山
 - verse: 16
   phrase: 雲彩
-  target: 雲彩（anan）
+  target: 雲彩
 - verse: 16
   phrase: 摩西
   target: 摩西
 - verse: 17
   phrase: 榮耀
-  target: 榮耀（kabod）
+  target: 榮耀
 - verse: 17
   phrase: 形狀如烈火
-  target: 烈火（esh okelah）
+  target: 烈火
 - verse: 18
   phrase: 摩西
   target: 摩西
