@@ -22620,6 +22620,17 @@
     "status": "formal",
     "aliases": []
   },
+  "亞舍拉（木偶）": {
+    "path": "link_folder/背景/亞舍拉（木偶）.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "亞舍拉（木偶）",
+    "status": "formal",
+    "aliases": [
+      "木偶",
+      "亞舍拉"
+    ]
+  },
   "亞衲族與偉人拿非林": {
     "path": "link_folder/背景/亞衲族與偉人拿非林.md",
     "type": "背景",
@@ -24604,6 +24615,14 @@
       "罩棚是否另成一層"
     ]
   },
+  "本章是否另有一套十誡": {
+    "path": "link_folder/解經爭議/本章是否另有一套十誡.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "本章是否另有一套十誡",
+    "status": "formal",
+    "aliases": []
+  },
   "死刑與創世記9章6節": {
     "path": "link_folder/解經爭議/死刑與創世記9章6節.md",
     "type": "解經爭議",
@@ -24643,6 +24662,14 @@
       "法勒時代的分裂",
       "那時人就分地居住"
     ]
+  },
+  "法版上的字是誰寫的": {
+    "path": "link_folder/解經爭議/法版上的字是誰寫的.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "法版上的字是誰寫的",
+    "status": "formal",
+    "aliases": []
   },
   "法老身份（許克所斯時期 vs 第十二王朝）": {
     "path": "link_folder/解經爭議/法老身份（許克所斯時期 vs 第十二王朝）.md",
@@ -24895,6 +24922,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "祭司聖衣的件數之爭",
+    "status": "formal",
+    "aliases": []
+  },
+  "禍延三四代": {
+    "path": "link_folder/解經爭議/禍延三四代.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "禍延三四代",
     "status": "formal",
     "aliases": []
   },
@@ -30696,6 +30731,12 @@
   },
   "律法頒布的日期": {
     "alias_of": "五旬節與律法頒布"
+  },
+  "木偶": {
+    "alias_of": "亞舍拉（木偶）"
+  },
+  "亞舍拉": {
+    "alias_of": "亞舍拉（木偶）"
   },
   "伊甸四河": {
     "alias_of": "伊甸園四河"
