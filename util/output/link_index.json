@@ -1084,6 +1084,14 @@
       "紡線的婦女"
     ]
   },
+  "安息日與會幕工程的關係": {
+    "path": "link_folder/主題/安息日與會幕工程的關係.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "安息日與會幕工程的關係",
+    "status": "formal",
+    "aliases": []
+  },
   "安慰與安息": {
     "path": "link_folder/主題/安慰與安息.md",
     "type": "主題",
@@ -4653,14 +4661,6 @@
     "status": "formal",
     "aliases": []
   },
-  "出24：12": {
-    "path": "link_folder/互文/出24：12.md",
-    "type": "互文",
-    "secondary_types": [],
-    "title": "出24：12",
-    "status": "formal",
-    "aliases": []
-  },
   "出25：17-22": {
     "path": "link_folder/互文/出25：17-22.md",
     "type": "互文",
@@ -7626,6 +7626,14 @@
     "aliases": [
       "厭棄嗎哪"
     ]
+  },
+  "石版的應許（出24：12）": {
+    "path": "link_folder/互文/石版的應許（出24：12）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "石版的應許（出24：12）",
+    "status": "formal",
+    "aliases": []
   },
   "神七次對雅各說話": {
     "path": "link_folder/互文/神七次對雅各說話.md",
@@ -10886,6 +10894,14 @@
       "神學"
     ],
     "title": "流珥（米甸祭司）",
+    "status": "formal",
+    "aliases": []
+  },
+  "烏利": {
+    "path": "link_folder/人物/烏利.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "烏利",
     "status": "formal",
     "aliases": []
   },
@@ -23450,6 +23466,14 @@
     "aliases": [
       "三天路程是否為欺騙"
     ]
+  },
+  "主日與安息日的關係之爭": {
+    "path": "link_folder/解經爭議/主日與安息日的關係之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "主日與安息日的關係之爭",
+    "status": "formal",
+    "aliases": []
   },
   "二月逾越節是否只有一天、不必除酵": {
     "path": "link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md",

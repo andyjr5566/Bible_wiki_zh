@@ -8,6 +8,9 @@ links:
   phrase: 戶珥
   target: 戶珥
 - verse: 2
+  phrase: 烏利
+  target: 烏利
+- verse: 2
   phrase: 比撒列
   target: 比撒列（Bezalel）
 - verse: 3
@@ -25,21 +28,33 @@ links:
 - verse: 13
   phrase: 安息日
   target: 安息日
+- verse: 13
+  phrase: 成為聖
+  target: 分別為聖
 - verse: 14
-  phrase: 安息日
-  target: 安息日
+  phrase: 守安息日
+  target: 當記念安息日守為聖日
+- verse: 14
+  phrase: 治死
+  target: 從民中剪除的含義
+- verse: 14
+  phrase: 剪除
+  target: 剪除
 - verse: 15
   phrase: 安息聖日
   target: 安息日
+- verse: 15
+  phrase: 治死
+  target: 從民中剪除的含義
 - verse: 16
-  phrase: 安息日
-  target: 安息日
+  phrase: 守安息日
+  target: 當記念安息日守為聖日
+- verse: 18
+  phrase: 西乃山
+  target: 西乃山
 - verse: 18
   phrase: 法版
-  target: 法版（edut）
+  target: 法版
 - verse: 18
   phrase: 指頭
   target: 神的指頭（路11：20）
-- verse: 18
-  phrase: 石版
-  target: 法版（edut）
