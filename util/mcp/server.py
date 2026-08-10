@@ -690,6 +690,169 @@ def rename_markdown(
 
 
 @mcp.tool()
+def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Dict[str, Any]:
+    """Verify the A0 read-receipt gate: ``.tmp/第X章/read_log.md`` against the four raw sources.
+
+    Requires every source to have >=3 verbatim quotes, with at least one quote
+    falling in the file's last third (proves the source was read to the end,
+    not skimmed). This is the mandatory first gate before touching any yaml or
+    md for a chapter — call it before any candidate/errata work, not after.
+    ``strict_lines`` additionally checks the registered per-source line counts.
+    """
+    try:
+        canonical, _directory, _tmp = _chapter_context(book, chapter)
+        args = [canonical, str(chapter)] + (["--strict-lines"] if strict_lines else [])
+        result = _run_util_command("check_source_read.py", *args, timeout=60)
+        result.update({"book": canonical, "chapter": chapter, "strict_lines": strict_lines})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def check_accumulation_orphans(book: Optional[str] = None, scan_all: bool = False) -> Dict[str, Any]:
+    """Find entries that declare an ``accumulation:book:chapter`` block the chapter never links back to.
+
+    The three closing gates (verify_links, check_existing_links, run_gates)
+    only check the forward direction chapter -> entry; a reverse orphan is a
+    valid link with real content that a reader can still never reach, and none
+    of them will flag it. Fix by adding a `[[link]]` in the chapter's prose, by
+    removing the entry's accumulation block if the concept is not actually in
+    that chapter, or by ``merge_entries`` if the chapter links the entry's
+    alias/old name instead of its current title. Exactly one of ``book`` or
+    ``scan_all=true`` is required.
+    """
+    if bool(book) == bool(scan_all):
+        return _error("必須恰好指定 book 或 scan_all=true 其中一個")
+    try:
+        if scan_all:
+            args = ["--all"]
+            canonical = None
+        else:
+            canonical = _canonical_book(book)
+            args = [canonical]
+    except ValueError as exc:
+        return _error(str(exc))
+    result = _run_util_command("check_accumulation_orphans.py", *args, timeout=300)
+    result.update({"book": canonical, "scan_all": scan_all})
+    return result
+
+
+@mcp.tool()
+def find_duplicate_entries(threshold: float = 0.90, include_intentional: bool = False) -> Dict[str, Any]:
+    """Report existing near-duplicate entries via the embedding index (read-only, no merging).
+
+    Wraps ``embedding_dup_report.py --json``: pairwise cosine similarity over
+    the *existing* corpus, not new candidates (use ``build_candidate_similarity``
+    for that). Flags: SAME (same type, same bracket-stripped base name — likely
+    a real duplicate, e.g. today's 雲彩引導行程/日間雲彩、夜間雲中有火/雲柱火柱
+    triangle), SUBSTRING (one title contains the other), OLD (``_old`` migration
+    残渣), INTENTIONAL (different type, same base name — usually a deliberate
+    dual entry such as a 地點 and a 原文 sharing a bare name; excluded unless
+    ``include_intentional=true``). A pair above threshold is a *candidate* for
+    human review and ``merge_entries``, never an automatic merge. Requires an
+    up-to-date embedding index — run ``sync_embedding_index`` first if entries
+    changed since the last build.
+    """
+    try:
+        threshold_value = float(threshold)
+    except (TypeError, ValueError):
+        return _error("threshold 必須是數字")
+    if not 0.5 <= threshold_value <= 0.999:
+        return _error("threshold 必須介於 0.5–0.999 之間")
+    # --out writes the full report to disk; large corpora exceed the 30k-char
+    # stdout capture in _run_util_command, which would silently truncate the
+    # JSON from the front and break parsing.
+    report_path = UTIL_DIR / "output" / "duplicate_entries.json"
+    args = ["--threshold", str(threshold_value), "--out", str(report_path)]
+    if include_intentional:
+        args.append("--include-intentional")
+    result = _run_util_command("embedding_dup_report.py", *args, timeout=180)
+    if not result["success"] or not report_path.is_file():
+        return result
+    try:
+        payload = json.loads(report_path.read_text(encoding="utf-8"))
+    except (ValueError, OSError) as exc:
+        return _error(f"報告寫入但無法解析：{exc}", report=_relative_to_root(report_path))
+    payload.update({
+        "success": True,
+        "include_intentional": include_intentional,
+        "pair_count": len(payload.get("pairs", [])),
+        "report": _relative_to_root(report_path),
+        "advice": "SAME 旗標最值得先看；確定要合併時用 merge_entries(dry_run=true) 先預覽。",
+    })
+    return payload
+
+
+@mcp.tool()
+def merge_entries(
+    loser: str,
+    winner: str,
+    dry_run: bool = True,
+    confirm: bool = False,
+    keep_loser_alias: bool = True,
+    keep_definition: str = "winner",
+) -> Dict[str, Any]:
+    """Preview or execute a safe duplicate-entry merge: loser is folded into winner and deleted.
+
+    Wraps ``util/merge_entries.py``. Unions accumulations (dedup by 書卷/章),
+    aliases, secondary_types, related_entries and sources; loser's own name is
+    kept as a winner alias unless ``keep_loser_alias=false``. Every ``[[loser]]``
+    wikilink across the whole vault is redirected to ``[[winner]]`` via
+    ``rename_markdown`` (aliased links like ``[[loser|顯示字]]`` keep their
+    display text). definition/development are a protected zone: if both sides
+    have different content, winner's is kept and a warning is returned instead
+    of silently discarding loser's (pass ``keep_definition="loser"`` only when
+    loser's content is the richer one). Only supports ``status: formal`` entries
+    on both sides. A real merge requires both ``dry_run=false`` and
+    ``confirm=true``, matching the ``rename_markdown`` safety boundary.
+
+    This tool does **not** touch three things — check them by hand after merging:
+    1. Bare ``[[X]]`` lines (no leading ``- ``) in winner's 相關條目 are dropped
+       by the parser and lost; compare against the pre-merge file and restore.
+    2. Chapter ``.tmp/*.yaml`` (link_candidates/link_plan/link_updates/
+       verse_links) still reference loser's old name and path — a later
+       ``run_chapter_manual.py run`` will treat it as an unresolved new
+       candidate unless you rename these entries by hand.
+    3. Two same-(book,chapter) accumulation blocks get concatenated with '；'
+       by the renderer — usually needs a human rewrite into one coherent block.
+    Afterwards run ``sync_link_index`` then ``sync_embedding_index``.
+    """
+    if keep_definition not in {"winner", "loser"}:
+        return _error("keep_definition 只能是 winner 或 loser")
+    if not dry_run and not confirm:
+        return _error("正式合併會修改 vault，請同時傳入 dry_run=false、confirm=true")
+    try:
+        loser_path = _safe_repo_path(loser, must_exist=True)
+        winner_path = _safe_repo_path(winner, must_exist=True)
+        link_root = ROOT_DIR / "link_folder"
+        if loser_path.suffix.lower() != ".md" or winner_path.suffix.lower() != ".md":
+            raise ValueError("loser／winner 必須是 .md 條目檔")
+        if not _is_under(loser_path, link_root) or not _is_under(winner_path, link_root):
+            raise ValueError("loser／winner 必須位於 link_folder 之下")
+        if loser_path == winner_path:
+            raise ValueError("loser 與 winner 不可相同")
+        args = [
+            str(loser_path.relative_to(ROOT_DIR)).replace("\\", "/"),
+            str(winner_path.relative_to(ROOT_DIR)).replace("\\", "/"),
+        ]
+        if dry_run:
+            args.append("--dry-run")
+        if not keep_loser_alias:
+            args.append("--no-keep-alias")
+        args.extend(["--keep-definition", keep_definition])
+        result = _run_util_command("merge_entries.py", *args, timeout=180)
+        result.update({
+            "loser": _relative_to_root(loser_path),
+            "winner": _relative_to_root(winner_path),
+            "dry_run": dry_run,
+        })
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
 def get_chapter_status(book: str, chapter: int) -> Dict[str, Any]:
     """Read-only chapter workflow status from the repository's canonical checks.
 
@@ -1268,6 +1431,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 
 以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四來源內容複核或收尾閘門。
 
+0. 讀完四來源、寫好 `.tmp/第X章/read_log.md` 後，用 `check_source_read` 驗證 A0 讀取回執；未過不准動任何 yaml/md。
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
 2. 來源準備可用 `crawl_bible_source`、`build_source_manifest`、`build_candidate_similarity`。
 3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
@@ -1277,6 +1441,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
 8. 收尾可用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 作核心機械閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
+9. 新建候選前可用 `find_duplicate_entries` 掃一次全庫既有近似重複；`check_accumulation_orphans(book)` 可單獨驗證條目累積是否都有章節連回（`run_gates` 已含此項，此為單獨快查用）。若真的找到重複，用 `merge_entries` 合併，見 `biblical_maintenance_sop` 的合併步驟。
 """
 
 
@@ -1295,6 +1460,8 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 - 渲染後可跑 `scan_unsourced_tokens`：護欄（`_unsourced_hebrew_errors`）只掃 `.tmp` payload，舊版遷移的 A 類條目沒有 entry_content、一次都沒被驗過；這一支以**整個** raw_data 語料補掃。報出＝查無任何本地來源的強力刪除線索；未報出**不**證明它在本章／該條目實際累積來源出現，仍要按 manifest 與累積章節核對。
 - 收尾用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 一次跑完索引重建與四道閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。**閘門全綠不是完工判準，只是可以開始檢查內容的前提**——工作內容 1（擴充候選）與 2（逐條目對 rawdata 勘誤）不會讓任何閘門變色；一章若 `link_folder/` 改動數為 0，回報要明寫「本章 N 個條目全部讀過、無錯可改」。
 - 此 MCP 不授權跳過 `agent_maintenance_prompt.md` 的內容勘誤、link index／embedding 同步、驗證與稽核。
+- 型別分岔／近似重複條目（同一概念被拆成 2-4 個只有 type 不同的條目）：先 `find_duplicate_entries` 找出全庫既有重複對（SAME 旗標優先看，INTENTIONAL 是蓄意雙條目不要動），確認後 `merge_entries(loser, winner, dry_run=true)` 預覽，核對報告無誤才 `dry_run=false, confirm=true` 執行。合併只做安全重導＋刪檔，三件事仍要人工收尾：winner 的裸行 `[[X]]` 相關條目會被丟棄需比對補回、受影響章節的 `.tmp/*.yaml`（candidates/plan/updates/verse_links）要手動改成 winner 的名字與路徑、同章兩邊累積會被「；」硬接需重寫成一段。收尾一律 `sync_link_index` → `sync_embedding_index`。
+- `check_accumulation_orphans(book)` 可在改動條目累積後單獨驗證「條目→章節」反方向連結是否完整；`run_gates` 已包含此項，此為不跑其他閘門的單獨快查。
 """
 
 

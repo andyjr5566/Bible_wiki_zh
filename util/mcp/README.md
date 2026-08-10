@@ -37,6 +37,10 @@
 | `prepare_chapter_link_updates` | 對應 `link_updates.py prepare`，已存在 manifest 時拒絕覆寫。 | 是 |
 | `run_chapter` | 相容名稱，但固定轉到 `run_chapter_manual.py run`；MCP 不暴露模型版 `run_chapter.py`。 | 是 |
 | `rename_markdown` | 對應 `rename_markdown.py`；預設 dry-run，正式改名需 `confirm=true`。 | 正式改名會寫入 |
+| `check_source_read` | 對應 A0 讀取回執閘門 `check_source_read.py`；開工前先過。 | 否 |
+| `check_accumulation_orphans` | 對應反向孤兒累積檢查；`book` 或 `scan_all=true` 二選一。 | 否 |
+| `find_duplicate_entries` | 對應 `embedding_dup_report.py --json`，回報全庫既有近似重複條目對，只出報告。 | 會更新 `util/output/duplicate_entries.json` |
+| `merge_entries` | 對應 `merge_entries.py`；預設 dry-run，正式合併需 `confirm=true`。 | 正式合併會寫入（見下方三個手動收尾項） |
 
 ## M3／M6：固定走人工模式
 
@@ -79,6 +83,26 @@ entry_content，護欄一次都沒驗過。
 
 兩者都**不驗內容忠實性**：杜撰的交叉引註、掛錯家的引句、被壓平的爭議、異章污染，
 仍然只能逐條開條目對 rawdata 讀。`agent_maintenance_prompt.md` 的三件工作沒有工具化。
+
+## 重複條目：先找、再合併
+
+`find_duplicate_entries` 用既有 embedding 索引兩兩比對**全庫已存在**的條目（與
+`build_candidate_similarity` 不同——那支比對的是**新候選**對舊條目）。SAME 旗標
+（同分類、去括號後同裸名）最值得先看；INTENTIONAL（不同分類同裸名，如「示巴」
+地點 vs 「示巴（起誓、豐盛）」原文）預設不列出，是蓄意雙條目不是重複。
+
+確認要合併後用 `merge_entries(loser, winner, dry_run=true)` 先看報告（累積筆數、
+重導連結數、alias 變化、定義/主題發展衝突警告），再 `dry_run=false, confirm=true`
+正式執行。它只做「安全重導＋刪檔」，以下三件事仍要人工收尾：
+
+1. winner 條目「相關條目」若寫成裸行 `[[X]]`（沒有 `- ` 項目符號）會在合併時被
+   解析器丟棄——合併前後比對一次，把消失的相關條目補回。
+2. 該章 `.tmp/*.yaml`（`link_candidates`／`link_plan`／`link_updates`／
+   `verse_links`）不會自動更新，仍指著被刪的舊名字與路徑；否則下次
+   `render_manual_chapter` 會把它當成解不到的新候選。
+3. 同一 (書卷,章) 若兩邊都有累積，渲染時只是用「；」硬接成一段，通常要人工重寫。
+
+合併完成後依序 `sync_link_index` → `sync_embedding_index`。
 
 ## B 類累積：先預覽才套用
 
