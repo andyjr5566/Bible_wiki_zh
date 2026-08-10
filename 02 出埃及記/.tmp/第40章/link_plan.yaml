@@ -62,7 +62,7 @@ A_use_directly:
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
-- name: 雲彩（anan）
+- name: 雲彩
   suggested_type: 原文
   evidence: 出40:34-38 當時雲彩遮蓋會幕，耶和華的榮光就充滿了帳幕；摩西不能進會幕因為雲彩停在其上並且耶和華的榮光充滿了帳幕；每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：the
     cloud, the symbol of God's presence, takes possession of the tabernacle；a mighty
@@ -76,8 +76,8 @@ A_use_directly:
     - 37
     - 38
   match_type: exact
-  existing_title: 雲彩（anan）
-  existing_path: link_folder/原文/雲彩（anan）.md
+  existing_title: 雲彩
+  existing_path: link_folder/原文/雲彩.md
 - name: 耶和華的榮光
   suggested_type: 神學
   evidence: 出40:34-35 耶和華的榮光就充滿了帳幕；摩西不能進會幕因為雲彩停在其上並且耶和華的榮光充滿了帳幕。KC：the glory of the
@@ -111,15 +111,7 @@ A_use_directly:
     was fire in it by night, in the sight of all the house of Israel。BH：the cloud
     and fire provided visible guidance, symbolizing God's continual presence and direction。已有條目「雲彩（anan）」和「神的引導與保護」可涵蓋
   surfaces:
-  - phrase: 雲彩從帳幕收上去
-    verses:
-    - 36
-  - phrase: 雲彩若不收上去
-    verses:
-    - 37
-  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
-    verses:
-    - 38
+  - phrase: 每逢雲彩從帳幕收上去
   match_type: exact
   existing_title: 雲彩引導行程
   existing_path: link_folder/神學/雲彩引導行程.md
@@ -251,7 +243,160 @@ A_use_directly:
   match_type: exact
   existing_title: 神的同在
   existing_path: link_folder/神學/神的同在.md
+- name: 約櫃
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把櫃抬進帳幕
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 施恩座
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把施恩座安在櫃上
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 內幔（隔聖所至聖所的幔子）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 掛上遮掩櫃的幔子
+  match_type: exact
+  existing_title: 內幔（隔聖所至聖所的幔子）
+  existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把桌子安在會幕內
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把燈臺安在會幕內
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把金壇安在會幕內
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 香壇的位置與歸屬之爭
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 在幔子前
+  match_type: exact
+  existing_title: 香壇的位置與歸屬之爭
+  existing_path: link_folder/解經爭議/香壇的位置與歸屬之爭.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 安設燔祭壇
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把洗濯盆安在會幕和壇的中間
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 會幕院子
+  suggested_type: 主題
+  surfaces:
+  - phrase: 在帳幕和壇的四圍立了院帷
+  match_type: exact
+  existing_title: 會幕院子
+  existing_path: link_folder/主題/會幕院子.md
+- name: 帳幕門簾
+  suggested_type: 主題
+  surfaces:
+  - phrase: 掛上帳幕的門簾
+  match_type: exact
+  existing_title: 帳幕門簾
+  existing_path: link_folder/主題/帳幕門簾.md
+- name: 聖膏油
+  suggested_type: 原文
+  surfaces:
+  - phrase: 膏油
+  match_type: exact
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
+- name: 聖衣（祭司聖服）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 給亞倫穿上聖衣
+  match_type: exact
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 皂莢木豎板
+  suggested_type: 主題
+  surfaces:
+  - phrase: 安上帶卯的座，立上板
+  match_type: exact
+  existing_title: 皂莢木豎板
+  existing_path: link_folder/主題/皂莢木豎板.md
+- name: 閂（橫閂）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 穿上閂
+  match_type: exact
+  existing_title: 閂（橫閂）
+  existing_path: link_folder/主題/閂（橫閂）.md
+- name: 十一幅山羊毛幔子（罩棚）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 在帳幕以上搭罩棚
+  match_type: exact
+  existing_title: 十一幅山羊毛幔子（罩棚）
+  existing_path: link_folder/主題/十一幅山羊毛幔子（罩棚）.md
+- name: 海狗皮頂蓋
+  suggested_type: 主題
+  surfaces:
+  - phrase: 把罩棚的頂蓋蓋在其上
+  match_type: exact
+  existing_title: 海狗皮頂蓋
+  existing_path: link_folder/主題/海狗皮頂蓋.md
+- name: 西乃山
+  suggested_type: 地點
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 第二年正月初一立帳幕
+  suggested_type: 歷史
+  match_type: exact
+  existing_title: 第二年正月初一立帳幕
+  existing_path: link_folder/歷史/第二年正月初一立帳幕.md
 B_needs_update: []
-C_new_formal: []
+C_new_formal:
+- name: 摩西在本章是自己獻祭還是叫人獻
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 在壇上燒了馨香料做的香
+  target_path: link_folder/解經爭議/摩西在本章是自己獻祭還是叫人獻.md
+  semantic_hint:
+  - title: 摩西在耶和華面前自辯清白與拒受甘禮
+    score: 0.579
+    type: 神學
+  - title: 摩西的呼召與差遣
+    score: 0.575
+    type: 神學
+  - title: 摩西
+    score: 0.553
+    type: 人物
+- name: 會幕立起的日期與時間表
+  suggested_type: 背景
+  surfaces:
+  - phrase: 第二年正月初一日
+  target_path: link_folder/背景/會幕立起的日期與時間表.md
+  semantic_hint:
+  - title: 第二年正月初一立帳幕
+    score: 0.449
+    type: 歷史
 D_new_candidate: []
 E_skip: []

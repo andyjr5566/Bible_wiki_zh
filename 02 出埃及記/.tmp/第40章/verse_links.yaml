@@ -7,12 +7,48 @@ links:
 - verse: 2
   phrase: 帳幕
   target: 會幕（帳幕整體）
+- verse: 3
+  phrase: 法櫃
+  target: 約櫃
+- verse: 3
+  phrase: 幔子
+  target: 內幔（隔聖所至聖所的幔子）
+- verse: 4
+  phrase: 燈臺
+  target: 金燈臺
+- verse: 5
+  phrase: 金壇
+  target: 金香壇（香壇）
+- verse: 5
+  phrase: 法櫃
+  target: 約櫃
+- verse: 5
+  phrase: 掛上帳幕的門簾
+  target: 帳幕門簾
+- verse: 6
+  phrase: 燔祭壇
+  target: 銅壇（燔祭壇）
+- verse: 7
+  phrase: 把洗濯盆安在會幕和壇的中間
+  target: 洗濯盆（銅盆）
+- verse: 8
+  phrase: 門簾
+  target: 帳幕門簾
 - verse: 9
   phrase: 用膏油把帳幕和其中所有的都抹上
   target: 膏抹成聖
+- verse: 10
+  phrase: 燔祭壇
+  target: 銅壇（燔祭壇）
+- verse: 11
+  phrase: 洗濯盆和盆座
+  target: 洗濯盆（銅盆）
 - verse: 12
   phrase: 亞倫和他兒子
   target: 亞倫和他兒子（祭司）
+- verse: 13
+  phrase: 給亞倫穿上聖衣
+  target: 聖衣（祭司聖服）
 - verse: 13
   phrase: 膏他，使他成聖
   target: 膏抹成聖
@@ -33,7 +69,7 @@ links:
   target: 山上的樣式
 - verse: 17
   phrase: 第二年正月初一日
-  target: 正月初一日
+  target: 會幕立起的日期與時間表
 - verse: 17
   phrase: 帳幕
   target: 會幕（帳幕整體）
@@ -43,33 +79,54 @@ links:
 - verse: 18
   phrase: 帳幕
   target: 會幕（帳幕整體）
+- verse: 18
+  phrase: 安上帶卯的座，立上板
+  target: 皂莢木豎板
+- verse: 18
+  phrase: 穿上閂
+  target: 閂（橫閂）
 - verse: 19
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 在帳幕以上搭罩棚
+  target: 十一幅山羊毛幔子（罩棚）
+- verse: 19
+  phrase: 把罩棚的頂蓋蓋在其上
+  target: 海狗皮頂蓋
 - verse: 19
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 20
   phrase: 法版
   target: 法版
+- verse: 20
+  phrase: 把施恩座安在櫃上
+  target: 施恩座
 - verse: 21
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 把櫃抬進帳幕
+  target: 約櫃
+- verse: 21
+  phrase: 掛上遮掩櫃的幔子
+  target: 內幔（隔聖所至聖所的幔子）
+- verse: 21
+  phrase: 法櫃
+  target: 約櫃
 - verse: 21
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 22
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 把桌子安在會幕內
+  target: 陳設餅桌子
 - verse: 22
   phrase: 帳幕
   target: 會幕（帳幕整體）
+- verse: 22
+  phrase: 幔子
+  target: 內幔（隔聖所至聖所的幔子）
 - verse: 23
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 24
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 把燈臺安在會幕內
+  target: 金燈臺
 - verse: 24
   phrase: 帳幕
   target: 會幕（帳幕整體）
@@ -77,23 +134,32 @@ links:
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 26
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 把金壇安在會幕內
+  target: 金香壇（香壇）
+- verse: 26
+  phrase: 幔子
+  target: 內幔（隔聖所至聖所的幔子）
+- verse: 27
+  phrase: 在壇上燒了馨香料做的香
+  target: 摩西在本章是自己獻祭還是叫人獻
 - verse: 27
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 28
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 掛上帳幕的門簾
+  target: 帳幕門簾
 - verse: 29
   phrase: 帳幕
   target: 會幕（帳幕整體）
+- verse: 29
+  phrase: 安設燔祭壇
+  target: 銅壇（燔祭壇）
 - verse: 29
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 30
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 把洗濯盆安在會幕和壇的中間
+  target: 洗濯盆（銅盆）
 - verse: 31
   phrase: 摩西
   target: 摩西
@@ -101,14 +167,17 @@ links:
   phrase: 是照耶和華所吩咐他的
   target: 山上的樣式
 - verse: 33
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 在帳幕和壇的四圍立了院帷
+  target: 會幕院子
+- verse: 33
+  phrase: 門簾
+  target: 帳幕門簾
 - verse: 33
   phrase: 摩西就完了工
   target: 摩西完了工
 - verse: 34
   phrase: 雲彩
-  target: 雲彩（anan）
+  target: 雲彩
 - verse: 34
   phrase: 會幕
   target: 會幕（帳幕整體）
@@ -120,7 +189,7 @@ links:
   target: 摩西不能進會幕
 - verse: 35
   phrase: 雲彩
-  target: 雲彩（anan）
+  target: 雲彩
 - verse: 35
   phrase: 耶和華的榮光
   target: 耶和華的榮光
@@ -128,17 +197,14 @@ links:
   phrase: 帳幕
   target: 會幕（帳幕整體）
 - verse: 36
-  phrase: 雲彩從帳幕收上去
+  phrase: 每逢雲彩從帳幕收上去
   target: 雲彩引導行程
 - verse: 37
-  phrase: 雲彩若不收上去
-  target: 雲彩引導行程
+  phrase: 雲彩
+  target: 雲彩
 - verse: 37
   phrase: 雲彩收上去
   target: 雲彩引導行程
 - verse: 38
-  phrase: 雲彩
-  target: 雲彩（anan）
-- verse: 38
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
+  target: 日間雲彩、夜間雲中有火

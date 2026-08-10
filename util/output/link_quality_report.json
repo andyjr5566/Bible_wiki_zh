@@ -1,7 +1,7 @@
 {
-  "total_warnings": 86,
+  "total_warnings": 87,
   "critical_count": 0,
-  "warning_count": 86,
+  "warning_count": 87,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -86,6 +86,13 @@
       "source": "出埃及記/第37章.md",
       "target": "以便抬壇",
       "message": "同一 alias「以便抬壇」指向多個 target: 基督代禱（來7：25）, 壇的槓（抬壇用）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "出埃及記/第40章.md",
+      "target": "膏油",
+      "message": "同一 alias「膏油」指向多個 target: 聖膏油, 膏抹成聖"
     },
     {
       "type": "alias_target_conflict",
