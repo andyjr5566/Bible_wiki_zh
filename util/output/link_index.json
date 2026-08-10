@@ -541,6 +541,14 @@
       "凡火"
     ]
   },
+  "出35-40 逐字複述出25-31": {
+    "path": "link_folder/主題/出35-40 逐字複述出25-31.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "出35-40 逐字複述出25-31",
+    "status": "formal",
+    "aliases": []
+  },
   "刀劍": {
     "path": "link_folder/主題/刀劍.md",
     "type": "主題",
@@ -12648,6 +12656,16 @@
       "從以色列的會中剪除"
     ]
   },
+  "心裡有智慧": {
+    "path": "link_folder/原文/心裡有智慧.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "心裡有智慧",
+    "status": "formal",
+    "aliases": [
+      "心中有智慧"
+    ]
+  },
   "忌邪（嫉妒）": {
     "path": "link_folder/原文/忌邪（嫉妒）.md",
     "type": "原文",
@@ -24342,6 +24360,14 @@
       "鷹還是兀鷲"
     ]
   },
+  "安息日不可生火": {
+    "path": "link_folder/解經爭議/安息日不可生火.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "安息日不可生火",
+    "status": "formal",
+    "aliases": []
+  },
   "寧錄的在耶和華面前": {
     "path": "link_folder/解經爭議/寧錄的在耶和華面前.md",
     "type": "解經爭議",
@@ -28070,6 +28096,9 @@
   },
   "從以色列的會中剪除": {
     "alias_of": "從以色列中剪除"
+  },
+  "心中有智慧": {
+    "alias_of": "心裡有智慧"
   },
   "arob": {
     "alias_of": "成群"
