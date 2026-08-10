@@ -2603,6 +2603,16 @@
     "status": "formal",
     "aliases": []
   },
+  "認識神的道": {
+    "path": "link_folder/主題/認識神的道.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "認識神的道",
+    "status": "formal",
+    "aliases": [
+      "你的道"
+    ]
+  },
   "誰也不可出自己的房門": {
     "path": "link_folder/主題/誰也不可出自己的房門.md",
     "type": "主題",
@@ -19588,6 +19598,16 @@
     "status": "formal",
     "aliases": []
   },
+  "我按你的名認識你": {
+    "path": "link_folder/神學/我按你的名認識你.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "我按你的名認識你",
+    "status": "formal",
+    "aliases": [
+      "按你的名認識你"
+    ]
+  },
   "我是耶和華你的神": {
     "path": "link_folder/神學/我是耶和華你的神.md",
     "type": "神學",
@@ -24797,6 +24817,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神是否改變進迦南的心意": {
+    "path": "link_folder/解經爭議/神是否改變進迦南的心意.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "神是否改變進迦南的心意",
+    "status": "formal",
+    "aliases": []
+  },
   "神是否暫時忘記了挪亞": {
     "path": "link_folder/解經爭議/神是否暫時忘記了挪亞.md",
     "type": "解經爭議",
@@ -26138,6 +26166,9 @@
   },
   "人的奉獻": {
     "alias_of": "許願獻人估價表（年齡性別分級）"
+  },
+  "你的道": {
+    "alias_of": "認識神的道"
   },
   "直到早晨": {
     "alias_of": "誰也不可出自己的房門"
@@ -29837,6 +29868,9 @@
   },
   "約瑟哥哥們的認罪": {
     "alias_of": "悔改與良心的覺醒"
+  },
+  "按你的名認識你": {
+    "alias_of": "我按你的名認識你"
   },
   "十誡引言": {
     "alias_of": "我是耶和華你的神"
