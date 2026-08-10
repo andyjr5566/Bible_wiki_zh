@@ -61,12 +61,18 @@ A_use_directly:
     women's mirror gives a complete image but is not a means to change what is wrong——the
     mirror of the Word of God does give a means to change。已有條目「洗濯盆（銅盆）」
   surfaces:
-  - phrase: 洗濯盆
-    verses:
-    - 8
+  - phrase: 洗濯盆和盆座
   match_type: exact
   existing_title: 洗濯盆（銅盆）
   existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 婦女參與建造會幕
+  suggested_type: 主題
+  evidence: 出38:8 洗濯盆和盆座是用會幕門前伺候的婦人之鏡子做的。CT：這班婦人乃是在會幕門口敬拜神的；她們獻上鏡子說明了她們有屬靈的分辨能力，認識了真實的妝飾乃是在生命中獻上真實的敬拜；人必須棄絕一切的肉體，纔能在聖潔的妝飾下敬拜。KC：women
+    on various occasions give an essential contribution to the work of God；the mirror
+    which caresses their pride is handed in to make the laver——it has cost them something。已有條目「婦女參與建造會幕」
+  match_type: exact
+  existing_title: 婦女參與建造會幕
+  existing_path: link_folder/主題/婦女參與建造會幕.md
 - name: 會幕院子
   suggested_type: 主題
   evidence: 出38:9-20 做帳幕的院子：南面用撚的細麻做帷子寬一百肘，柱子二十根帶卯的銅座二十個，柱子的鉤子和杆子用銀子做；北面同樣；西面帷子寬五十肘柱子十根帶卯的座十個；東面寬五十肘，門兩邊各有帷子十五肘柱子三根帶卯的座三個；院子四面的帷子都是用撚的細麻做的；柱子帶卯的座是銅的，鉤子和杆子是銀的，柱頂用銀子包，一切柱子用銀杆連絡；院子的門簾以繡花的手工用藍色紫色朱紅色線和撚的細麻織的，寬二十肘高五肘；帷子的柱子四根帶卯的銅座四個，鉤子和杆子是銀的，柱頂用銀子包。KC：the
@@ -163,24 +169,24 @@ A_use_directly:
   match_type: exact
   existing_title: 以他瑪
   existing_path: link_folder/人物/以他瑪.md
-- name: 比撒列
+- name: 比撒列（Bezalel）
   suggested_type: 人物
   evidence: 出38:22-23 凡耶和華所吩咐摩西的都是猶大支派戶珥的孫子、烏利的兒子比撒列做的；與他同工的有但支派中亞希撒抹的兒子亞何利亞伯，他是雕刻匠，又是巧匠，又能用藍色紫色朱紅色線和細麻繡花。已有條目「比撒列（Bezalel）」
   surfaces:
   - phrase: 比撒列
     verses:
     - 22
-  match_type: alias
+  match_type: exact
   existing_title: 比撒列（Bezalel）
   existing_path: link_folder/人物/比撒列（Bezalel）.md
-- name: 亞何利亞伯
+- name: 亞何利亞伯（Oholiab）
   suggested_type: 人物
   evidence: 出38:23 與比撒列同工的有亞何利亞伯，他是雕刻匠，又是巧匠，又能用藍色紫色朱紅色線和細麻繡花。已有條目「亞何利亞伯（Oholiab）」
   surfaces:
   - phrase: 亞何利亞伯
     verses:
     - 23
-  match_type: alias
+  match_type: exact
   existing_title: 亞何利亞伯（Oholiab）
   existing_path: link_folder/人物/亞何利亞伯（Oholiab）.md
 - name: 舍客勒
@@ -209,7 +215,7 @@ A_use_directly:
   match_type: exact
   existing_title: 一比加
   existing_path: link_folder/原文/一比加.md
-- name: 六十萬零三千五百五十人
+- name: 六十萬零三千五百五十人（出38：26）
   suggested_type: 事件
   evidence: 出38:26 凡過去歸那些被數之人的，從二十歲以外，有六十萬零三千五百五十人。這是出埃及後第一次人口統計（民1章有更詳細的第二次），每人出銀半舍客勒作為會幕的贖價銀（出30:11-16）。KC：the
     silver comes from those that are numbered——each of the numbered people has to
@@ -219,7 +225,7 @@ A_use_directly:
   - phrase: 六十萬零三千五百五十人
     verses:
     - 26
-  match_type: base
+  match_type: exact
   existing_title: 六十萬零三千五百五十人（出38：26）
   existing_path: link_folder/事件/六十萬零三千五百五十人（出38：26）.md
 - name: 山上的樣式
@@ -307,18 +313,165 @@ A_use_directly:
   match_type: exact
   existing_title: 金銀銅統計（出38：24-31）
   existing_path: link_folder/事件/金銀銅統計（出38：24-31）.md
-B_needs_update: []
-C_new_formal: []
-D_new_candidate:
-- name: 婦女參與建造會幕
-  suggested_type: 神學
-  evidence: 出38:8 洗濯盆和盆座是用會幕門前伺候的婦人之鏡子做的。CT：這班婦人乃是在會幕門口敬拜神的；她們獻上鏡子說明了她們有屬靈的分辨能力，認識了真實的妝飾乃是在生命中獻上真實的敬拜；人必須棄絕一切的肉體，纔能在聖潔的妝飾下敬拜。KC：women
-    on various occasions give an essential contribution to the work of God；the mirror
-    which caresses their pride is handed in to make the laver——it has cost them something。已有條目「婦女參與建造會幕」
+- name: 壇的圍腰板
+  suggested_type: 主題
   surfaces:
-  - phrase: 會幕門前伺候的婦人之鏡子
-    verses:
-    - 8
-  match_type: type_conflict
-  note: 分類衝突：候選=神學，既有=主題，secondary=['事奉']
+  - phrase: 圍腰板
+  match_type: exact
+  existing_title: 壇的圍腰板
+  existing_path: link_folder/主題/壇的圍腰板.md
+- name: 壇的槓（抬壇用）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 用以抬壇
+  match_type: exact
+  existing_title: 壇的槓（抬壇用）
+  existing_path: link_folder/主題/壇的槓（抬壇用）.md
+- name: 壇的銅環
+  suggested_type: 主題
+  surfaces:
+  - phrase: 鑄四個環子
+  match_type: exact
+  existing_title: 壇的銅環
+  existing_path: link_folder/主題/壇的銅環.md
+- name: 拯救的角（路1：69）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 與壇接連一塊
+  match_type: exact
+  existing_title: 拯救的角（路1：69）
+  existing_path: link_folder/互文/拯救的角（路1：69）.md
+- name: 撚的細麻
+  suggested_type: 原文
+  surfaces:
+  - phrase: 撚的細麻
+  match_type: exact
+  existing_title: 撚的細麻
+  existing_path: link_folder/原文/撚的細麻.md
+- name: 藍色、紫色、朱紅色線
+  suggested_type: 主題
+  surfaces:
+  - phrase: 藍色、紫色、朱紅色線
+  match_type: exact
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
+- name: 銅壇與十字架（來13：10-13）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 是四方的
+  match_type: exact
+  existing_title: 銅壇與十字架（來13：10-13）
+  existing_path: link_folder/互文/銅壇與十字架（來13：10-13）.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 帳幕的院子
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 基督是門（約10：7）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 門這邊的帷子十五肘
+  match_type: exact
+  existing_title: 基督是門（約10：7）
+  existing_path: link_folder/互文/基督是門（約10：7）.md
+- name: 半舍客勒（贖罪銀）
+  suggested_type: 原文
+  surfaces:
+  - phrase: 每人出銀半舍客勒
+  match_type: exact
+  existing_title: 半舍客勒（贖罪銀）
+  existing_path: link_folder/原文/半舍客勒（贖罪銀）.md
+- name: 數點民數
+  suggested_type: 事件
+  surfaces:
+  - phrase: 凡過去歸那些被數之人的
+  match_type: exact
+  existing_title: 數點民數
+  existing_path: link_folder/事件/數點民數.md
+- name: 古代近東的人口統計
+  suggested_type: 背景
+  surfaces:
+  - phrase: 從二十歲以外
+  match_type: exact
+  existing_title: 古代近東的人口統計
+  existing_path: link_folder/背景/古代近東的人口統計.md
+- name: 搖祭
+  suggested_type: 原文
+  surfaces:
+  - phrase: 按聖所的平
+  match_type: exact
+  existing_title: 搖祭
+  existing_path: link_folder/原文/搖祭.md
+- name: 猶大支派
+  suggested_type: 人物
+  surfaces:
+  - phrase: 猶大支派
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 但支派
+  suggested_type: 人物
+  surfaces:
+  - phrase: 但支派
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 話語潔淨（弗5：26）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 話語潔淨（弗5：26）
+  existing_path: link_folder/互文/話語潔淨（弗5：26）.md
+- name: 利未支派
+  suggested_type: 人物
+  surfaces:
+  - phrase: 利未人所用物件
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 神的同在
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+B_needs_update: []
+C_new_formal:
+- name: 會幕門前伺候的婦人是誰
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 會幕門前伺候的婦人之鏡子做的
+  target_path: link_folder/解經爭議/會幕門前伺候的婦人是誰.md
+  semantic_hint:
+  - title: 婦女參與建造會幕
+    score: 0.403
+    type: 主題
+- name: 會幕金銀銅重量的換算分歧
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 二十九他連得並七百三十舍客勒
+  target_path: link_folder/解經爭議/會幕金銀銅重量的換算分歧.md
+  semantic_hint:
+  - title: 金銀銅統計（出38：24-31）
+    score: 0.508
+    type: 事件
+  - title: 一他連得精金（燈臺用金量）
+    score: 0.402
+    type: 原文
+- name: 壇是空的：祭壇本身還是壇的基座
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 並用板做壇；壇是空的
+  target_path: link_folder/解經爭議/壇是空的：祭壇本身還是壇的基座.md
+  semantic_hint:
+  - title: 上壇的坡道
+    score: 0.478
+    type: 背景
+  - title: 土壇
+    score: 0.442
+    type: 神學
+  - title: 古代近東祭壇
+    score: 0.419
+    type: 背景
+D_new_candidate: []
 E_skip: []

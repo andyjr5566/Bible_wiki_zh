@@ -7,9 +7,15 @@ links:
 - verse: 1
   phrase: 燔祭壇
   target: 銅壇（燔祭壇）
+- verse: 1
+  phrase: 是四方的
+  target: 銅壇與十字架（來13：10-13）
 - verse: 2
   phrase: 壇的四拐角上做四個角
   target: 壇的四角
+- verse: 2
+  phrase: 與壇接連一塊
+  target: 拯救的角（路1：69）
 - verse: 2
   phrase: 銅
   target: 銅
@@ -28,9 +34,15 @@ links:
 - verse: 4
   phrase: 銅網
   target: 壇的銅網
+- verse: 4
+  phrase: 圍腰板
+  target: 壇的圍腰板
 - verse: 5
   phrase: 銅網
   target: 壇的銅網
+- verse: 5
+  phrase: 鑄四個環子
+  target: 壇的銅環
 - verse: 6
   phrase: 皂莢木
   target: 皂莢木
@@ -40,15 +52,27 @@ links:
 - verse: 7
   phrase: 壇
   target: 銅壇（燔祭壇）
+- verse: 7
+  phrase: 用以抬壇
+  target: 壇的槓（抬壇用）
+- verse: 7
+  phrase: 並用板做壇；壇是空的
+  target: 壇是空的：祭壇本身還是壇的基座
 - verse: 8
   phrase: 銅
   target: 銅
 - verse: 8
   phrase: 洗濯盆和盆座
   target: 洗濯盆（銅盆）
+- verse: 8
+  phrase: 會幕門前伺候的婦人之鏡子做的
+  target: 會幕門前伺候的婦人是誰
 - verse: 9
   phrase: 帳幕的院子
-  target: 會幕院子
+  target: 會幕（帳幕整體）
+- verse: 9
+  phrase: 撚的細麻
+  target: 撚的細麻
 - verse: 10
   phrase: 帶卯的銅座
   target: 帶卯的銅座（院子柱子座）
@@ -83,11 +107,17 @@ links:
   phrase: 院子
   target: 會幕院子
 - verse: 14
+  phrase: 門這邊的帷子十五肘
+  target: 基督是門（約10：7）
+- verse: 14
   phrase: 帶卯的座
   target: 帶卯的銅座（院子柱子座）
 - verse: 16
   phrase: 院子
   target: 會幕院子
+- verse: 16
+  phrase: 撚的細麻
+  target: 撚的細麻
 - verse: 17
   phrase: 帶卯的座
   target: 帶卯的銅座（院子柱子座）
@@ -109,6 +139,12 @@ links:
 - verse: 18
   phrase: 院子的門簾
   target: 院子門簾
+- verse: 18
+  phrase: 藍色、紫色、朱紅色線
+  target: 藍色、紫色、朱紅色線
+- verse: 18
+  phrase: 撚的細麻
+  target: 撚的細麻
 - verse: 19
   phrase: 帶卯的銅座
   target: 帶卯的銅座（院子柱子座）
@@ -119,6 +155,9 @@ links:
   phrase: 銀子
   target: 銀子
 - verse: 20
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
+- verse: 20
   phrase: 橛子
   target: 橛子與繩子的預表
 - verse: 20
@@ -128,35 +167,65 @@ links:
   phrase: 銅
   target: 銅
 - verse: 21
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
+- verse: 21
+  phrase: 利未人所用物件
+  target: 利未支派
+- verse: 21
   phrase: 以他瑪
   target: 以他瑪
 - verse: 22
   phrase: 凡耶和華所吩咐摩西的
   target: 山上的樣式
 - verse: 22
+  phrase: 猶大支派
+  target: 猶大支派
+- verse: 22
   phrase: 比撒列
   target: 比撒列（Bezalel）
 - verse: 23
+  phrase: 但支派
+  target: 但支派
+- verse: 23
   phrase: 亞何利亞伯
   target: 亞何利亞伯（Oholiab）
+- verse: 23
+  phrase: 藍色、紫色、朱紅色線
+  target: 藍色、紫色、朱紅色線
 - verse: 24
   phrase: 所獻的金子
   target: 金銀銅統計（出38：24-31）
 - verse: 24
-  phrase: 舍客勒
-  target: 舍客勒
+  phrase: 按聖所的平
+  target: 搖祭
+- verse: 24
+  phrase: 二十九他連得並七百三十舍客勒
+  target: 會幕金銀銅重量的換算分歧
 - verse: 25
   phrase: 所出的銀子
   target: 金銀銅統計（出38：24-31）
 - verse: 25
+  phrase: 按聖所的平
+  target: 搖祭
+- verse: 25
   phrase: 舍客勒
   target: 舍客勒
+- verse: 26
+  phrase: 凡過去歸那些被數之人的
+  target: 數點民數
+- verse: 26
+  phrase: 從二十歲以外
+  target: 古代近東的人口統計
 - verse: 26
   phrase: 六十萬零三千五百五十人
   target: 六十萬零三千五百五十人（出38：26）
 - verse: 26
-  phrase: 舍客勒
-  target: 舍客勒
+  phrase: 按聖所的平
+  target: 搖祭
+- verse: 26
+  phrase: 每人出銀半舍客勒
+  target: 半舍客勒（贖罪銀）
 - verse: 26
   phrase: 一比加
   target: 一比加
@@ -185,6 +254,9 @@ links:
   phrase: 銅
   target: 銅
 - verse: 30
+  phrase: 會幕
+  target: 會幕（帳幕整體）
+- verse: 30
   phrase: 帶卯的座
   target: 帶卯的銅座（院子柱子座）
 - verse: 30
@@ -193,6 +265,9 @@ links:
 - verse: 31
   phrase: 帶卯的座
   target: 帶卯的銅座（院子柱子座）
+- verse: 31
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
 - verse: 31
   phrase: 橛子
   target: 橛子與繩子的預表
