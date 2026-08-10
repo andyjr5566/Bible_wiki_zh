@@ -1,14 +1,14 @@
 book: 出埃及記
 chapter: 37
 A_use_directly:
-- name: 比撒列
+- name: 比撒列（Bezalel）
   suggested_type: 人物
   evidence: 出37:1 比撒列用皂莢木做櫃。GT/丁良才：比撒列親自製造法櫃，無非因為約櫃是至聖的，不然就是比撒列指揮人做的。GT/精讀本：在聖物的具體製作過程中唯一提到的人物是比撒列，因為他是被選出來做櫃的人，可能是當時充滿神的智慧的最好的工匠。已有條目「比撒列（Bezalel）」
   surfaces:
   - phrase: 比撒列
     verses:
     - 1
-  match_type: alias
+  match_type: exact
   existing_title: 比撒列（Bezalel）
   existing_path: link_folder/人物/比撒列（Bezalel）.md
 - name: 約櫃
@@ -154,8 +154,7 @@ A_use_directly:
 - name: 皂莢木
   suggested_type: 原文
   evidence: 出37:1,4,10,15,25,28 約櫃、杠、陳設餅桌子、香壇及其杠均用皂莢木製作。BH：acacia wood is durable
-    and resistant to decay, symbolizing the enduring nature of God's covenant。已有條目「皂莢木（atzei
-    shittim）」
+    and resistant to decay, symbolizing the enduring nature of God's covenant。已有條目「皂莢木」
   surfaces:
   - phrase: 皂莢木
     verses:
@@ -224,7 +223,118 @@ A_use_directly:
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
-B_needs_update: []
-C_new_formal: []
+B_needs_update:
+- name: 香壇的位置與歸屬之爭
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 是四方的
+  match_type: exact
+  existing_title: 香壇的位置與歸屬之爭
+  existing_path: link_folder/解經爭議/香壇的位置與歸屬之爭.md
+- name: 抬約櫃的槓是否可抽出來
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 以便抬櫃
+  match_type: exact
+  existing_title: 抬約櫃的槓是否可抽出來
+  existing_path: link_folder/解經爭議/抬約櫃的槓是否可抽出來.md
+- name: 壇的槓（抬壇用）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 以便抬壇
+  match_type: exact
+  existing_title: 壇的槓（抬壇用）
+  existing_path: link_folder/主題/壇的槓（抬壇用）.md
+- name: 銀號製作工藝（錘出法）
+  suggested_type: 文化
+  surfaces:
+  - phrase: 錘出來的
+  match_type: exact
+  existing_title: 銀號製作工藝（錘出法）
+  existing_path: link_folder/文化/銀號製作工藝（錘出法）.md
+- name: 奠酒
+  suggested_type: 文化
+  surfaces:
+  - phrase: 奠酒的瓶和爵
+  match_type: exact
+  existing_title: 奠酒
+  existing_path: link_folder/文化/奠酒.md
+- name: 出35-40 逐字複述出25-31
+  suggested_type: 主題
+  surfaces:
+  - phrase: 長二肘半，寬一肘半，高一肘半
+  match_type: exact
+  existing_title: 出35-40 逐字複述出25-31
+  existing_path: link_folder/主題/出35-40 逐字複述出25-31.md
+- name: 神的同在
+  suggested_type: 神學
+  surfaces:
+  - phrase: 臉對臉
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 挽回祭（羅3：25）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 安在施恩座的兩頭
+  match_type: exact
+  existing_title: 挽回祭（羅3：25）
+  existing_path: link_folder/互文/挽回祭（羅3：25）.md
+- name: 世界的光（約8：12）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 七個燈盞
+  match_type: exact
+  existing_title: 世界的光（約8：12）
+  existing_path: link_folder/互文/世界的光（約8：12）.md
+- name: 基督代禱（來7：25）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 兩根橫撐
+  match_type: exact
+  existing_title: 基督代禱（來7：25）
+  existing_path: link_folder/互文/基督代禱（來7：25）.md
+- name: 聖徒禱告如香（啟5：8, 8：3-4）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 又按做香之法
+  match_type: exact
+  existing_title: 聖徒禱告如香（啟5：8, 8：3-4）
+  existing_path: link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 安在牙子邊以下
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+C_new_formal:
+- name: 比撒列作櫃與申10：3 的張力
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 用皂莢木做櫃
+  target_path: link_folder/解經爭議/比撒列作櫃與申10：3 的張力.md
+  semantic_hint:
+  - title: 約櫃
+    score: 0.456
+    type: 主題
+  - title: 比撒列（Bezalel）
+    score: 0.449
+    type: 人物
+  - title: 申10：1-5
+    score: 0.425
+    type: 互文
+- name: 燈臺的杯是燈盞還是承花盤
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 這燈臺的座和幹
+  target_path: link_folder/解經爭議/燈臺的杯是燈盞還是承花盤.md
+  semantic_hint:
+  - title: 杏花杯球花（燈臺裝飾）
+    score: 0.473
+    type: 原文
+  - title: 金燈臺
+    score: 0.413
+    type: 主題
 D_new_candidate: []
 E_skip: []

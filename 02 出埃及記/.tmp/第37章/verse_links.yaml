@@ -5,11 +5,11 @@ links:
   phrase: 比撒列
   target: 比撒列（Bezalel）
 - verse: 1
-  phrase: 皂莢木
-  target: 皂莢木
+  phrase: 用皂莢木做櫃
+  target: 比撒列作櫃與申10：3 的張力
 - verse: 1
-  phrase: 櫃
-  target: 約櫃
+  phrase: 長二肘半，寬一肘半，高一肘半
+  target: 出35-40 逐字複述出25-31
 - verse: 2
   phrase: 精金
   target: 精金
@@ -22,6 +22,9 @@ links:
 - verse: 5
   phrase: 櫃
   target: 約櫃
+- verse: 5
+  phrase: 以便抬櫃
+  target: 抬約櫃的槓是否可抽出來
 - verse: 6
   phrase: 精金
   target: 精金
@@ -29,11 +32,14 @@ links:
   phrase: 施恩座
   target: 施恩座
 - verse: 7
+  phrase: 錘出
+  target: 銀號製作工藝（錘出法）
+- verse: 7
   phrase: 基路伯
   target: 基路伯（施恩座）
 - verse: 7
-  phrase: 施恩座
-  target: 施恩座
+  phrase: 安在施恩座的兩頭
+  target: 挽回祭（羅3：25）
 - verse: 8
   phrase: 基路伯
   target: 基路伯（施恩座）
@@ -49,6 +55,9 @@ links:
 - verse: 9
   phrase: 施恩座
   target: 施恩座
+- verse: 9
+  phrase: 臉對臉
+  target: 神的同在
 - verse: 10
   phrase: 皂莢木
   target: 皂莢木
@@ -79,12 +88,18 @@ links:
 - verse: 16
   phrase: 桌子
   target: 陳設餅桌子
+- verse: 16
+  phrase: 奠酒的瓶和爵
+  target: 奠酒
 - verse: 17
   phrase: 精金
   target: 精金
 - verse: 17
   phrase: 燈臺
   target: 金燈臺
+- verse: 17
+  phrase: 這燈臺的座和幹
+  target: 燈臺的杯是燈盞還是承花盤
 - verse: 17
   phrase: 杯
   target: 杏花杯球花（燈臺裝飾）
@@ -94,6 +109,9 @@ links:
 - verse: 17
   phrase: 花
   target: 杏花杯球花（燈臺裝飾）
+- verse: 17
+  phrase: 錘出來的
+  target: 銀號製作工藝（錘出法）
 - verse: 18
   phrase: 燈臺
   target: 金燈臺
@@ -127,12 +145,18 @@ links:
 - verse: 22
   phrase: 精金
   target: 精金
+- verse: 22
+  phrase: 錘出來的
+  target: 銀號製作工藝（錘出法）
 - verse: 23
   phrase: 精金
   target: 精金
 - verse: 23
   phrase: 燈臺
   target: 金燈臺
+- verse: 23
+  phrase: 七個燈盞
+  target: 世界的光（約8：12）
 - verse: 23
   phrase: 花
   target: 杏花杯球花（燈臺裝飾）
@@ -152,6 +176,9 @@ links:
   phrase: 香壇
   target: 金香壇（香壇）
 - verse: 25
+  phrase: 是四方的
+  target: 香壇的位置與歸屬之爭
+- verse: 25
   phrase: 壇的四角
   target: 壇的四角（香壇）
 - verse: 26
@@ -160,9 +187,21 @@ links:
 - verse: 26
   phrase: 壇的四角
   target: 壇的四角（香壇）
+- verse: 27
+  phrase: 安在牙子邊以下
+  target: 會幕（帳幕整體）
+- verse: 27
+  phrase: 兩根橫撐
+  target: 基督代禱（來7：25）
+- verse: 27
+  phrase: 以便抬壇
+  target: 壇的槓（抬壇用）
 - verse: 28
   phrase: 皂莢木
   target: 皂莢木
+- verse: 29
+  phrase: 又按做香之法
+  target: 聖徒禱告如香（啟5：8, 8：3-4）
 - verse: 29
   phrase: 聖膏油
   target: 聖膏油
