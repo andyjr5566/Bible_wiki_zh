@@ -196,14 +196,14 @@ A_use_directly:
   match_type: exact
   existing_title: 山上的樣式
   existing_path: link_folder/神學/山上的樣式.md
-- name: 比撒列
+- name: 比撒列（Bezalel）
   suggested_type: 人物
   evidence: 出39:1 比撒列用藍色紫色朱紅色線做精緻的衣服。已有條目「比撒列（Bezalel）」
   surfaces:
   - phrase: 比撒列
     verses:
     - 1
-  match_type: alias
+  match_type: exact
   existing_title: 比撒列（Bezalel）
   existing_path: link_folder/人物/比撒列（Bezalel）.md
 - name: 會幕（帳幕整體）
@@ -218,16 +218,9 @@ A_use_directly:
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
-- name: 皂莢木
-  suggested_type: 原文
-  evidence: 出39章 以弗得、胸牌等聖衣的製作涉及多種材料，皂莢木在會幕器具中廣泛使用（出36-38章）。已有條目「皂莢木」
-  match_type: exact
-  existing_title: 皂莢木
-  existing_path: link_folder/原文/皂莢木.md
 - name: 藍色、紫色、朱紅色線
   suggested_type: 主題
-  evidence: 出39:1-3,5,8,24,29 以弗得、胸牌、外袍石榴、腰帶均用藍色紫色朱紅色線。已有條目「藍色、紫色、朱紅色線（tekhelet, argaman,
-    tola'at shani）」
+  evidence: 出39:1-3,5,8,24,29 以弗得、胸牌、外袍石榴、腰帶均用藍色紫色朱紅色線。已有條目「藍色、紫色、朱紅色線」
   surfaces:
   - phrase: 藍色、紫色、朱紅色線
     verses:
@@ -241,7 +234,197 @@ A_use_directly:
   match_type: exact
   existing_title: 藍色、紫色、朱紅色線
   existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
-B_needs_update: []
-C_new_formal: []
+- name: 亞倫
+  suggested_type: 人物
+  surfaces:
+  - phrase: 又為亞倫做聖衣
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 撚的細麻
+  suggested_type: 原文
+  surfaces:
+  - phrase: 撚的細麻
+  match_type: exact
+  existing_title: 撚的細麻
+  existing_path: link_folder/原文/撚的細麻.md
+- name: 精金
+  suggested_type: 主題
+  surfaces:
+  - phrase: 精金
+  match_type: exact
+  existing_title: 精金
+  existing_path: link_folder/主題/精金.md
+- name: 紅瑪瑙（紀念石）
+  suggested_type: 原文
+  surfaces:
+  - phrase: 又琢出兩塊紅瑪瑙
+  match_type: exact
+  existing_title: 紅瑪瑙（紀念石）
+  existing_path: link_folder/原文/紅瑪瑙（紀念石）.md
+- name: 烏陵和土明
+  suggested_type: 原文
+  match_type: exact
+  existing_title: 烏陵和土明
+  existing_path: link_folder/原文/烏陵和土明.md
+- name: 祭司聖衣的件數之爭
+  suggested_type: 解經爭議
+  match_type: exact
+  existing_title: 祭司聖衣的件數之爭
+  existing_path: link_folder/解經爭議/祭司聖衣的件數之爭.md
+- name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  suggested_type: 神學
+  surfaces:
+  - phrase: 用巧匠的手工一同繡上
+  match_type: exact
+  existing_title: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
+  existing_path: link_folder/神學/蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）.md
+- name: 聖所
+  suggested_type: 地點
+  surfaces:
+  - phrase: 在聖所用以供職
+  match_type: exact
+  existing_title: 聖所
+  existing_path: link_folder/地點/聖所.md
+- name: 大祭司基督（來4：14-15）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 顏色全是藍的
+  match_type: exact
+  existing_title: 大祭司基督（來4：14-15）
+  existing_path: link_folder/互文/大祭司基督（來4：14-15）.md
+- name: 義行的細麻（啟19：8）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 用織成的細麻布
+  match_type: exact
+  existing_title: 義行的細麻（啟19：8）
+  existing_path: link_folder/互文/義行的細麻（啟19：8）.md
+- name: 神的同在
+  suggested_type: 神學
+  surfaces:
+  - phrase: 帳幕，就是會幕
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 約櫃
+  suggested_type: 主題
+  surfaces:
+  - phrase: 法櫃和櫃的槓
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 施恩座
+  suggested_type: 主題
+  surfaces:
+  - phrase: 施恩座
+  match_type: exact
+  existing_title: 施恩座
+  existing_path: link_folder/主題/施恩座.md
+- name: 陳設餅桌子
+  suggested_type: 主題
+  surfaces:
+  - phrase: 桌子和桌子的一切器具並陳設餅
+  match_type: exact
+  existing_title: 陳設餅桌子
+  existing_path: link_folder/主題/陳設餅桌子.md
+- name: 金燈臺
+  suggested_type: 主題
+  surfaces:
+  - phrase: 精金的燈臺
+  match_type: exact
+  existing_title: 金燈臺
+  existing_path: link_folder/主題/金燈臺.md
+- name: 金香壇（香壇）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 金壇
+  match_type: exact
+  existing_title: 金香壇（香壇）
+  existing_path: link_folder/主題/金香壇（香壇）.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 銅壇和壇上的銅網
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 洗濯盆和盆座
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+- name: 會幕院子
+  suggested_type: 主題
+  surfaces:
+  - phrase: 院子的帷子和柱子
+  match_type: exact
+  existing_title: 會幕院子
+  existing_path: link_folder/主題/會幕院子.md
+- name: 內幔（隔聖所至聖所的幔子）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 遮掩櫃的幔子
+  match_type: exact
+  existing_title: 內幔（隔聖所至聖所的幔子）
+  existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
+- name: 聖膏油
+  suggested_type: 原文
+  surfaces:
+  - phrase: 膏油
+  match_type: exact
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
+- name: 聖香（清淨聖潔的香）
+  suggested_type: 原文
+  surfaces:
+  - phrase: 馨香的香料
+  match_type: exact
+  existing_title: 聖香（清淨聖潔的香）
+  existing_path: link_folder/原文/聖香（清淨聖潔的香）.md
+- name: 橛子與繩子的預表
+  suggested_type: 神學
+  surfaces:
+  - phrase: 繩子、橛子
+  match_type: exact
+  existing_title: 橛子與繩子的預表
+  existing_path: link_folder/神學/橛子與繩子的預表.md
+B_needs_update:
+- name: 皂莢木
+  suggested_type: 原文
+  evidence: 出39章 以弗得、胸牌等聖衣的製作涉及多種材料，皂莢木在會幕器具中廣泛使用（出36-38章）。已有條目「皂莢木」
+  match_type: exact
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
+C_new_formal:
+- name: 「是照耶和華所吩咐摩西的」重複幾次之爭
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 凡耶和華所吩咐摩西的，以色列人都照樣做了
+  target_path: link_folder/解經爭議/「是照耶和華所吩咐摩西的」重複幾次之爭.md
+  semantic_hint:
+  - title: 出35-40 逐字複述出25-31
+    score: 0.572
+    type: 主題
+  - title: 耶和華的話臨到
+    score: 0.551
+    type: 神學
+  - title: 容我的百姓去
+    score: 0.515
+    type: 神學
+- name: 會幕竣工與創造的呼應
+  suggested_type: 神學
+  surfaces:
+  - phrase: 摩西看見一切的工都做成了
+  target_path: link_folder/神學/會幕竣工與創造的呼應.md
+  semantic_hint:
+  - title: 摩西完了工
+    score: 0.482
+    type: 事件
+  - title: 會幕（帳幕整體）
+    score: 0.428
+    type: 主題
 D_new_candidate: []
 E_skip: []

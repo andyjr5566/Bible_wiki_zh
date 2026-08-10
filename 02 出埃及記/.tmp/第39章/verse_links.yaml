@@ -8,8 +8,11 @@ links:
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
 - verse: 1
-  phrase: 聖衣
-  target: 聖衣（祭司聖服）
+  phrase: 在聖所用以供職
+  target: 聖所
+- verse: 1
+  phrase: 又為亞倫做聖衣
+  target: 亞倫
 - verse: 1
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
@@ -20,11 +23,17 @@ links:
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
 - verse: 2
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 2
   phrase: 以弗得
   target: 以弗得
 - verse: 3
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
+- verse: 3
+  phrase: 用巧匠的手工一同繡上
+  target: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
 - verse: 4
   phrase: 以弗得
   target: 以弗得
@@ -35,11 +44,20 @@ links:
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
 - verse: 5
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 5
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
+- verse: 6
+  phrase: 又琢出兩塊紅瑪瑙
+  target: 紅瑪瑙（紀念石）
 - verse: 7
   phrase: 以弗得
   target: 以弗得
+- verse: 7
+  phrase: 紀念石
+  target: 紅瑪瑙（紀念石）
 - verse: 7
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
@@ -52,6 +70,9 @@ links:
 - verse: 8
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
+- verse: 8
+  phrase: 撚的細麻
+  target: 撚的細麻
 - verse: 9
   phrase: 胸牌
   target: 胸牌（決斷胸牌）
@@ -61,12 +82,18 @@ links:
 - verse: 11
   phrase: 寶石
   target: 十二寶石（胸牌寶石）
+- verse: 13
+  phrase: 紅瑪瑙
+  target: 紅瑪瑙（紀念石）
 - verse: 14
   phrase: 寶石
   target: 十二寶石（胸牌寶石）
 - verse: 15
   phrase: 胸牌
   target: 胸牌（決斷胸牌）
+- verse: 15
+  phrase: 精金
+  target: 精金
 - verse: 16
   phrase: 胸牌
   target: 胸牌（決斷胸牌）
@@ -94,12 +121,21 @@ links:
 - verse: 22
   phrase: 以弗得的外袍
   target: 外袍（以弗得的外袍）
+- verse: 22
+  phrase: 顏色全是藍的
+  target: 大祭司基督（來4：14-15）
 - verse: 24
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
 - verse: 24
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 24
   phrase: 石榴
   target: 鈴鐺與石榴（大祭司袍子）
+- verse: 25
+  phrase: 精金
+  target: 精金
 - verse: 25
   phrase: 鈴鐺
   target: 鈴鐺與石榴（大祭司袍子）
@@ -116,6 +152,12 @@ links:
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
 - verse: 27
+  phrase: 用織成的細麻布
+  target: 義行的細麻（啟19：8）
+- verse: 27
+  phrase: 亞倫
+  target: 亞倫
+- verse: 27
   phrase: 內袍
   target: 內袍（雜色內袍）
 - verse: 28
@@ -125,17 +167,26 @@ links:
   phrase: 裹頭巾
   target: 冠冕（裹頭巾）
 - verse: 28
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 28
   phrase: 褲子
   target: 褲子（細麻布褲子）
 - verse: 29
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
 - verse: 29
+  phrase: 撚的細麻
+  target: 撚的細麻
+- verse: 29
   phrase: 腰帶
   target: 腰帶（繡花腰帶）
 - verse: 29
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
+- verse: 30
+  phrase: 精金
+  target: 精金
 - verse: 30
   phrase: 聖冠上的牌
   target: 歸耶和華為聖
@@ -149,23 +200,65 @@ links:
   phrase: 是照耶和華所吩咐摩西的
   target: 山上的樣式
 - verse: 32
-  phrase: 帳幕
-  target: 會幕（帳幕整體）
+  phrase: 帳幕，就是會幕
+  target: 神的同在
 - verse: 32
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 凡耶和華所吩咐摩西的，以色列人都照樣做了
+  target: 「是照耶和華所吩咐摩西的」重複幾次之爭
 - verse: 33
   phrase: 帳幕
   target: 會幕（帳幕整體）
+- verse: 34
+  phrase: 遮掩櫃的幔子
+  target: 內幔（隔聖所至聖所的幔子）
+- verse: 35
+  phrase: 法櫃和櫃的槓
+  target: 約櫃
+- verse: 35
+  phrase: 施恩座
+  target: 施恩座
+- verse: 36
+  phrase: 桌子和桌子的一切器具並陳設餅
+  target: 陳設餅桌子
+- verse: 37
+  phrase: 精金的燈臺
+  target: 金燈臺
+- verse: 38
+  phrase: 金壇
+  target: 金香壇（香壇）
+- verse: 38
+  phrase: 膏油
+  target: 聖膏油
+- verse: 38
+  phrase: 馨香的香料
+  target: 聖香（清淨聖潔的香）
 - verse: 38
   phrase: 會幕
   target: 會幕（帳幕整體）
+- verse: 39
+  phrase: 銅壇和壇上的銅網
+  target: 銅壇（燔祭壇）
+- verse: 39
+  phrase: 洗濯盆和盆座
+  target: 洗濯盆（銅盆）
+- verse: 40
+  phrase: 院子的帷子和柱子
+  target: 會幕院子
+- verse: 40
+  phrase: 繩子、橛子
+  target: 橛子與繩子的預表
 - verse: 40
   phrase: 帳幕
   target: 會幕（帳幕整體）
 - verse: 40
   phrase: 會幕
   target: 會幕（帳幕整體）
+- verse: 41
+  phrase: 亞倫
+  target: 亞倫
+- verse: 41
+  phrase: 聖所
+  target: 聖所
 - verse: 41
   phrase: 聖衣
   target: 聖衣（祭司聖服）
