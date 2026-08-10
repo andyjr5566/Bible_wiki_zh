@@ -72,11 +72,17 @@ candidates:
   - phrase: 摩西不能進會幕
     verses:
     - 35
-- name: 雲彩引導行程
-  type: 神學
-  evidence: 出40:36-38 每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。KC：throughout all their journeys the cloud of the LORD was on the tabernacle by day, and there was fire in it by night, in the sight of all the house of Israel。BH：the cloud and fire provided visible guidance, symbolizing God's continual presence and direction。已有條目「雲彩（anan）」和「神的引導與保護」可涵蓋
+- name: 雲柱火柱
+  type: 歷史
+  evidence: 出40:36-38 每逢雲彩從帳幕收上去以色列人就起程前往；雲彩若不收上去他們就不起程直等到雲彩收上去；日間耶和華的雲彩是在帳幕以上，夜間雲中有火在以色列全家的眼前，在他們所行的路上都是這樣。GT 丁良才指明它的身分：「『雲彩』——就是領以色列人出埃及的雲柱（出13:20-22）。」CT〔靈意註解〕：表徵聖靈又感動、引導、幫助教會；〔話中之光〕沒有聖靈的印證，就沒有行動。BH：雲彩即舍吉拿榮光，最早見於出13:21-22，其升起就是神要百姓起行的指示。已有條目「雲柱火柱」（出13、14、33 累積），本章為 B 類累積
   surfaces:
   - phrase: 每逢雲彩從帳幕收上去
+  - phrase: 雲彩收上去
+    verses:
+    - 37
+  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
+    verses:
+    - 38
 - name: 膏抹成聖
   type: 神學
   evidence: 出40:9-15 用膏油把帳幕和其中所有的都抹上使帳幕和一切器具成聖；又要抹燔祭壇和一切器具使壇成聖就都成為至聖；要抹洗濯盆和盆座使盆成聖；要使亞倫和他兒子到會幕門口來用水洗身；要給亞倫穿上聖衣又膏他使他成聖可以給神供祭司的職分；又要使他兒子來給他們穿上內袍；怎樣膏他們的父親也要照樣膏他們使他們給神供祭司的職分；他們世世代代凡受膏的就永遠當祭司的職任。KC：the often-repeated use of anointing oil recalls our incessant need for the grace and guidance of the Holy Spirit, without Whom the nicest work is unacceptable to God。已有條目「承接聖職（分別為聖）」和「聖膏油」可涵蓋
@@ -102,13 +108,6 @@ candidates:
   - phrase: 摩西就完了工
     verses:
     - 33
-- name: 日間雲彩、夜間雲中有火
-  type: 神學
-  evidence: 出40:38 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火，在以色列全家的眼前。在他們所行的路上都是這樣。KC：the cloud of the LORD was on the tabernacle by day, and there was fire in it by night, in the sight of all the house of Israel。BH：the cloud and fire provided visible guidance and protection。已有條目「雲彩（anan）」可涵蓋，或B類累積
-  surfaces:
-  - phrase: 日間，耶和華的雲彩是在帳幕以上；夜間，雲中有火
-    verses:
-    - 38
 - name: 山上的樣式
   type: 神學
   evidence: '出40:16,19,21,23,25,27,29,32 摩西這樣行都是照耶和華所吩咐他的（v16）；是照耶和華所吩咐他的（v19,21,23,25,27,29,32）。KC：the starting point keeps coming back: to do everything as the LORD has commanded and not to act according to one''s own insight。已有條目「山上的樣式」'

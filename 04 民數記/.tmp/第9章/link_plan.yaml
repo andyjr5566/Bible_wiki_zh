@@ -67,25 +67,18 @@ A_use_directly:
   match_type: exact
   existing_title: 寄居的與本地人同歸一例
   existing_path: link_folder/主題/寄居的與本地人同歸一例.md
-- name: 日間雲彩、夜間雲中有火
-  suggested_type: 神學
-  evidence: 從晚上到早晨，雲彩在帳幕上形狀如火，象徵神的同在與引導。
+- name: 雲柱火柱
+  suggested_type: 歷史
+  evidence: 從晚上到早晨，雲彩在帳幕上形狀如火，象徵神的同在與引導；以色列人完全根據雲彩的收上與停住來決定起行或安營，全然順服神的指示。
   surfaces:
   - phrase: 雲彩
   - phrase: 火
-  match_type: exact
-  existing_title: 日間雲彩、夜間雲中有火
-  existing_path: link_folder/神學/日間雲彩、夜間雲中有火.md
-- name: 雲彩引導行程
-  suggested_type: 神學
-  evidence: 以色列人完全根據雲彩的收上與停住來決定起行或安營，全然順服神的指示。
-  surfaces:
   - phrase: 起行
   - phrase: 安營
   - phrase: 住營
   match_type: exact
-  existing_title: 雲彩引導行程
-  existing_path: link_folder/神學/雲彩引導行程.md
+  existing_title: 雲柱火柱
+  existing_path: link_folder/歷史/雲柱火柱.md
 B_needs_update: []
 C_new_formal: []
 D_new_candidate: []
