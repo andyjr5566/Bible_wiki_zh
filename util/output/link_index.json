@@ -763,6 +763,16 @@
       "地上爬物"
     ]
   },
+  "坐下吃喝起來玩耍": {
+    "path": "link_folder/主題/坐下吃喝起來玩耍.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "坐下吃喝起來玩耍",
+    "status": "formal",
+    "aliases": [
+      "坐下吃喝,起來玩耍"
+    ]
+  },
   "城內住宅與鄉間房屋贖回條例的差異": {
     "path": "link_folder/主題/城內住宅與鄉間房屋贖回條例的差異.md",
     "type": "主題",
@@ -3751,6 +3761,14 @@
     "type": "事件",
     "secondary_types": [],
     "title": "米利暗卒於加低斯",
+    "status": "formal",
+    "aliases": []
+  },
+  "耶和華擊打百姓的瘟疫": {
+    "path": "link_folder/事件/耶和華擊打百姓的瘟疫.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "耶和華擊打百姓的瘟疫",
     "status": "formal",
     "aliases": []
   },
@@ -25586,6 +25604,9 @@
   },
   "地上爬物": {
     "alias_of": "地上爬物（八種不潔爬蟲）"
+  },
+  "坐下吃喝,起來玩耍": {
+    "alias_of": "坐下吃喝起來玩耍"
   },
   "城內住宅條例": {
     "alias_of": "城內住宅與鄉間房屋贖回條例的差異"
