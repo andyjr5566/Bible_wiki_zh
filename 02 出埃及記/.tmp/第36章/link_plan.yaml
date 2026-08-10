@@ -1,7 +1,7 @@
 book: 出埃及記
 chapter: 36
 A_use_directly:
-- name: 比撒列
+- name: 比撒列（Bezalel）
   suggested_type: 人物
   evidence: 出36:1-2 比撒列和亞何利亞伯並一切心裡有智慧的蒙耶和華賜智慧聰明，都要照耶和華所吩咐的做工；摩西把他們一同召來。CT：比撒列是負總責的工頭（出35:30-33），名字意為「在神的庇蔭之下」。BH：Bezalel
     from Judah and Oholiab from Dan represent the unity of Israel's tribes。已有條目「比撒列（Bezalel）」
@@ -11,10 +11,10 @@ A_use_directly:
     - 1
     - 2
     - 8
-  match_type: alias
+  match_type: exact
   existing_title: 比撒列（Bezalel）
   existing_path: link_folder/人物/比撒列（Bezalel）.md
-- name: 亞何利亞伯
+- name: 亞何利亞伯（Oholiab）
   suggested_type: 人物
   evidence: 出36:1-2 亞何利亞伯與比撒列同被召來帶領工匠開工。CT：亞何利亞伯是比撒列的副手，協助管理建造會幕的事工（出35:34-35），名字意為「父親的帳幕」。已有條目「亞何利亞伯（Oholiab）」
   surfaces:
@@ -22,7 +22,7 @@ A_use_directly:
     verses:
     - 1
     - 2
-  match_type: alias
+  match_type: exact
   existing_title: 亞何利亞伯（Oholiab）
   existing_path: link_folder/人物/亞何利亞伯（Oholiab）.md
 - name: 蒙靈充滿的智慧恩賜（比撒列、亞何利亞伯）
@@ -54,12 +54,7 @@ A_use_directly:
   - phrase: 甘心獻的禮物
     verses:
     - 3
-  - phrase: 富富有餘
-    verses:
-    - 5
-  - phrase: 攔住百姓不再拿禮物來
-    verses:
-    - 6
+  - phrase: 百姓每早晨還把
   match_type: exact
   existing_title: 甘心樂意的奉獻
   existing_path: link_folder/神學/甘心樂意的奉獻.md
@@ -100,14 +95,7 @@ A_use_directly:
   - phrase: 十幅幔子
     verses:
     - 8
-  - phrase: 幔子
-    verses:
-    - 8
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
+  - phrase: 使幔子相連
   match_type: exact
   existing_title: 十幅幔子（內層幕幔）
   existing_path: link_folder/主題/十幅幔子（內層幕幔）.md
@@ -130,8 +118,7 @@ A_use_directly:
   existing_path: link_folder/主題/十一幅山羊毛幔子（罩棚）.md
 - name: 五十個金鉤
   suggested_type: 主題
-  evidence: 出36:13 又做五十個金鉤，使幔子相連，這才成了一個帳幕。CT靈意：金表神性；五十個金鉤表徵神性的能力促成完美的聯結。已有條目「五十個金鉤（vavei
-    zahav）」
+  evidence: 出36:13 又做五十個金鉤，使幔子相連，這才成了一個帳幕。CT靈意：金表神性；五十個金鉤表徵神性的能力促成完美的聯結。已有條目「五十個金鉤」
   surfaces:
   - phrase: 五十個金鉤
     verses:
@@ -149,6 +136,20 @@ A_use_directly:
   match_type: exact
   existing_title: 五十個銅鉤
   existing_path: link_folder/主題/五十個銅鉤.md
+- name: 藍色鈕扣
+  suggested_type: 主題
+  evidence: 出36:11-12 在相連的幔子末幅邊上做藍色的鈕扣，每邊五十個，兩兩相對。CT靈意：藍色的鈕扣表徵屬天的聯結。已有條目「藍色鈕扣」
+  surfaces:
+  - phrase: 藍色的鈕扣
+    verses:
+    - 11
+  - phrase: 五十個鈕扣
+    verses:
+    - 12
+    - 17
+  match_type: exact
+  existing_title: 藍色鈕扣
+  existing_path: link_folder/主題/藍色鈕扣.md
 - name: 染紅的公羊皮蓋子
   suggested_type: 主題
   evidence: 出36:19 並用染紅的公羊皮做罩棚的蓋。KC：the covering of rams' skins dyed red has everything
@@ -189,9 +190,6 @@ A_use_directly:
   - phrase: 皂莢木做帳幕的豎板
     verses:
     - 20
-  - phrase: 豎板
-    verses:
-    - 20
   - phrase: 板
     verses:
     - 21
@@ -208,6 +206,21 @@ A_use_directly:
   match_type: exact
   existing_title: 皂莢木豎板
   existing_path: link_folder/主題/皂莢木豎板.md
+- name: 銀座（帶卯的銀座）
+  suggested_type: 主題
+  evidence: 出36:24,26,30,36 每塊豎板底下兩個帶卯的銀座，南面四十個、北面四十個、西面十六個；內幔柱子也鑄四個帶卯的銀座。GT：榫起到讓板堅實地插入銀座的作用，信徒因著基督的救贖建造神的聖殿——教會。BH：silver
+    often symbolizes redemption in the Bible；the forty bases suggest a foundation
+    of redemption。已有條目「銀座（帶卯的銀座）」
+  surfaces:
+  - phrase: 帶卯的銀座
+    verses:
+    - 24
+    - 26
+    - 30
+    - 36
+  match_type: exact
+  existing_title: 銀座（帶卯的銀座）
+  existing_path: link_folder/主題/銀座（帶卯的銀座）.md
 - name: 拐角板（雙板）
   suggested_type: 主題
   evidence: 出36:28-29 帳幕後面的拐角做板兩塊，板的下半截是雙的、上半截是整的，直到第一個環子。BH：the corners were crucial
@@ -266,10 +279,7 @@ A_use_directly:
   - phrase: 織幔子
     verses:
     - 35
-  - phrase: 幔子
-    verses:
-    - 35
-    - 36
+  - phrase: 為幔子做
   match_type: exact
   existing_title: 內幔（隔聖所至聖所的幔子）
   existing_path: link_folder/主題/內幔（隔聖所至聖所的幔子）.md
@@ -308,6 +318,20 @@ A_use_directly:
   match_type: exact
   existing_title: 五根包金柱子（門簾柱）
   existing_path: link_folder/主題/五根包金柱子（門簾柱）.md
+- name: 藍色、紫色、朱紅色線
+  suggested_type: 主題
+  evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻和藍色、紫色、朱紅色線製造。CT靈意：藍色線表徵屬天（出24:10）；紫色線表徵君尊；朱紅色線表徵流血犧牲。BH：blue
+    symbolized the heavens and divine revelation, purple was a color of royalty and
+    wealth, and scarlet represented sacrifice and atonement。已有條目「藍色、紫色、朱紅色線」
+  surfaces:
+  - phrase: 藍色、紫色、朱紅色線
+    verses:
+    - 8
+    - 35
+    - 37
+  match_type: exact
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
 - name: 撚的細麻
   suggested_type: 原文
   evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻製造。CT：撚的細麻指用手撚的細麻線織成的布幔。KC：fine twisted linen。BH：finely
@@ -322,6 +346,18 @@ A_use_directly:
   match_type: exact
   existing_title: 撚的細麻
   existing_path: link_folder/原文/撚的細麻.md
+- name: 基路伯（施恩座）
+  suggested_type: 主題
+  evidence: 出36:8,35 十幅幔子和內幔上均以巧匠的手工繡上基路伯。CT靈意：巧匠的手工表徵聖靈的工作；繡表徵受苦的管教；基路伯表徵彰顯神的榮耀。BH：cherubim
+    are angelic beings often associated with the presence of God（Gen 3:24; Ezek 10）。已有條目「基路伯（施恩座）」——注意：此處基路伯是繡於幔子上，非施恩座上的基路伯，但可能同一條目涵蓋
+  surfaces:
+  - phrase: 基路伯
+    verses:
+    - 8
+    - 35
+  match_type: exact
+  existing_title: 基路伯（施恩座）
+  existing_path: link_folder/主題/基路伯（施恩座）.md
 - name: 皂莢木
   suggested_type: 原文
   evidence: 出36:20,31,36 豎板、閂、內幔柱子均用皂莢木製作。BH：acacia wood was chosen for its durability
@@ -371,14 +407,14 @@ A_use_directly:
   match_type: exact
   existing_title: 奉獻過剩與節制
   existing_path: link_folder/神學/奉獻過剩與節制.md
-- name: 銅座（門簾柱座）
+- name: 帶卯的銅座（院子柱子座）
   suggested_type: 主題
   evidence: 出36:38 帳幕門簾的五根柱子有五個帶卯的座，是銅的。CT：門簾柱子用銅座（非銀座），與內幔柱子的銀座不同。需檢查是否已有獨立條目，或歸入「帶卯的銅座（院子柱子座）」
   surfaces:
   - phrase: 帶卯的座，是銅的
     verses:
     - 38
-  match_type: base
+  match_type: exact
   existing_title: 帶卯的銅座（院子柱子座）
   existing_path: link_folder/主題/帶卯的銅座（院子柱子座）.md
 - name: 比撒列和亞何利亞伯的配搭
@@ -395,60 +431,73 @@ A_use_directly:
   match_type: exact
   existing_title: 比撒列和亞何利亞伯的配搭
   existing_path: link_folder/神學/比撒列和亞何利亞伯的配搭.md
+- name: 兩榫相對（榫卯接合）
+  suggested_type: 文化
+  surfaces:
+  - phrase: 每塊有兩榫相對
+  match_type: exact
+  existing_title: 兩榫相對（榫卯接合）
+  existing_path: link_folder/文化/兩榫相對（榫卯接合）.md
+- name: 神的同在
+  suggested_type: 神學
+  surfaces:
+  - phrase: 為做聖所並聖所使用之工
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 心裡有智慧
+  suggested_type: 原文
+  surfaces:
+  - phrase: 凡心裡有智慧做工的
+  match_type: exact
+  existing_title: 心裡有智慧
+  existing_path: link_folder/原文/心裡有智慧.md
+- name: 出35-40 逐字複述出25-31
+  suggested_type: 主題
+  surfaces:
+  - phrase: 每幅幔子長二十八肘，寬四肘
+  match_type: exact
+  existing_title: 出35-40 逐字複述出25-31
+  existing_path: link_folder/主題/出35-40 逐字複述出25-31.md
+- name: 豎板是木板還是骨架
+  suggested_type: 解經爭議
+  surfaces:
+  - phrase: 每塊長十肘，寬一肘半
+  match_type: exact
+  existing_title: 豎板是木板還是骨架
+  existing_path: link_folder/解經爭議/豎板是木板還是骨架.md
+- name: 板上的金環（套閂）
+  suggested_type: 主題
+  surfaces:
+  - phrase: 板上的金環
+  match_type: exact
+  existing_title: 板上的金環（套閂）
+  existing_path: link_folder/主題/板上的金環（套閂）.md
+- name: 基督是門（約10：7）
+  suggested_type: 互文
+  surfaces:
+  - phrase: 用繡花的手工織
+  match_type: exact
+  existing_title: 基督是門（約10：7）
+  existing_path: link_folder/互文/基督是門（約10：7）.md
+- name: 面東定向的左右方位
+  suggested_type: 背景
+  surfaces:
+  - phrase: 就是北面
+  match_type: exact
+  existing_title: 面東定向的左右方位
+  existing_path: link_folder/背景/面東定向的左右方位.md
 B_needs_update: []
-C_new_formal: []
-D_new_candidate:
-- name: 藍色鈕扣
-  suggested_type: 原文
-  evidence: 出36:11-12 在相連的幔子末幅邊上做藍色的鈕扣，每邊五十個，兩兩相對。CT靈意：藍色的鈕扣表徵屬天的聯結。已有條目「藍色鈕扣（lula'ot
-    tekhelet）」
+C_new_formal:
+- name: 本章「他」字指誰
+  suggested_type: 解經爭議
   surfaces:
-  - phrase: 藍色的鈕扣
-    verses:
-    - 11
-  - phrase: 五十個鈕扣
-    verses:
-    - 12
-    - 17
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=主題，secondary=[]
-- name: 銀座（帶卯的銀座）
-  suggested_type: 原文
-  evidence: 出36:24,26,30,36 每塊豎板底下兩個帶卯的銀座，南面四十個、北面四十個、西面十六個；內幔柱子也鑄四個帶卯的銀座。GT：榫起到讓板堅實地插入銀座的作用，信徒因著基督的救贖建造神的聖殿——教會。BH：silver
-    often symbolizes redemption in the Bible；the forty bases suggest a foundation
-    of redemption。已有條目「銀座（帶卯的銀座）」
+  - phrase: 他使這五幅幔子幅幅相連
+  target_path: link_folder/解經爭議/本章「他」字指誰.md
+- name: 中閂從這一頭通到那一頭的難題
+  suggested_type: 解經爭議
   surfaces:
-  - phrase: 帶卯的銀座
-    verses:
-    - 24
-    - 26
-    - 30
-    - 36
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=主題，secondary=[]
-- name: 藍色、紫色、朱紅色線
-  suggested_type: 原文
-  evidence: 出36:8,35,37 十幅幔子、內幔、門簾均用撚的細麻和藍色、紫色、朱紅色線製造。CT靈意：藍色線表徵屬天（出24:10）；紫色線表徵君尊；朱紅色線表徵流血犧牲。BH：blue
-    symbolized the heavens and divine revelation, purple was a color of royalty and
-    wealth, and scarlet represented sacrifice and atonement。已有條目「藍色、紫色、朱紅色線（tekhelet,
-    argaman, tola'at shani）」
-  surfaces:
-  - phrase: 藍色、紫色、朱紅色線
-    verses:
-    - 8
-    - 35
-    - 37
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=主題，secondary=[]
-- name: 基路伯（keruv）
-  suggested_type: 原文
-  evidence: 出36:8,35 十幅幔子和內幔上均以巧匠的手工繡上基路伯。CT靈意：巧匠的手工表徵聖靈的工作；繡表徵受苦的管教；基路伯表徵彰顯神的榮耀。BH：cherubim
-    are angelic beings often associated with the presence of God（Gen 3:24; Ezek 10）。已有條目「基路伯（施恩座）」——注意：此處基路伯是繡於幔子上，非施恩座上的基路伯，但可能同一條目涵蓋
-  surfaces:
-  - phrase: 基路伯
-    verses:
-    - 8
-    - 35
-  match_type: type_conflict
-  note: 分類衝突：候選=原文，既有=主題，secondary=[]
+  - phrase: 從這一頭通到那一頭
+  target_path: link_folder/解經爭議/中閂從這一頭通到那一頭的難題.md
+D_new_candidate: []
 E_skip: []
