@@ -112,6 +112,15 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    全 PASS（條件見 `scheme.md` §6）才 commit + push；回報只列結論數字與 D 類決策，不貼完整報告。
    `build_embedding_index.py` 必須在 `build_link_index.py` 之後跑：它只重嵌新增／變動的條目（沿用其餘），耗時通常幾秒。**這步不可略過**——本章新條目沒進索引，下一章的候選近鄰報告就查不到它們，而且是靜默失效；步驟7 的 check_chapter_files 會用雜湊比對驗證索引同步（`build_embedding_index.py --check` 可單獨驗，不打網路）。
 
+若本次同時修改 `appendix/website/**` 的互動網站，先在 repository 根目錄執行網站自己的 production build，再同步附錄索引：
+
+```text
+python appendix/website/build.py --build --deploy-dir .tmp/website-deploy
+python util/build_appendix_links.py
+```
+
+`build_appendix_links.py` 會動態載入網站 plugin 的 `scan_all_entries()`；它只應讀取已產生的 `dist/index.html` 與靜態 HTML，不會在索引階段自行執行 npm。Vite 章節的根目錄 `index.html` 是開發入口，附錄連結應指向 `dist/index.html`；部署目錄只供靜態主機發布。靜態 HTML 章節則維持原檔案入口。
+
 8. **檔案完整性驗證**（commit 前的最後把關）
    ```text
    python util/check_chapter_files.py 【書名】 X
