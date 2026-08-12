@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""把整章來源（raw_data 全文）餵給模型，維持原版 scheme「全部資料直接餵進去」。
+"""Formal source identities, full-source loading, and prompt context policy.
 
-不做關鍵詞切片；來源清單以章節的 source_manifest.md 為準（只用狀態 OK 的
-檔案）。大章節（§9）以字數預算護欄粗略等比截斷，避免 context 爆掉。
+``raw_data`` and ``source_manifest.md`` remain the complete source of truth.
+Prompt construction is a separate layer: injected runners may request full
+source context, while the manual workflow references already-read commentary
+and embeds only deterministic task-aware STEP projections.
 """
 import re
+from dataclasses import dataclass
 from pathlib import Path
 
 MANIFEST_ROW_RE = re.compile(r"^\|(.+)\|\s*$")
@@ -13,6 +16,80 @@ MANIFEST_ROW_RE = re.compile(r"^\|(.+)\|\s*$")
 LARGE_VERSES = 60
 LARGE_TOTAL_CHARS = 250_000
 LARGE_SINGLE_CHARS = 120_000
+STRUCTURED_TOTAL_CHARS = 120_000
+
+FULL = "full"
+MANUAL_PROJECTED = "manual_projected"
+
+_SOURCE_SPECS = {
+    "CT": {
+        "identity": "ccbiblestudy CT", "kind": "逐節註解",
+        "aliases": ("CT", "華人基督徒查經資料"),
+    },
+    "GT": {
+        "identity": "ccbiblestudy GT", "kind": "拾穗",
+        "aliases": ("GT", "聖經精讀本"),
+    },
+    "KC": {
+        "identity": "KingComments", "kind": "研經註解",
+        "aliases": ("KC", "KingComments"),
+    },
+    "BH": {
+        "identity": "BibleHub Study", "kind": "研經註解",
+        "aliases": ("BH", "BibleHub", "BibleHub Study"),
+    },
+    "STEP": {
+        "identity": "STEP Bible", "kind": "原文資料",
+        "aliases": ("STEP", "STEP Bible"),
+    },
+}
+
+
+@dataclass(frozen=True)
+class SourceIdentity:
+    """One manifest source with canonical citation identity and legacy aliases."""
+
+    key: str
+    manifest_label: str
+    manifest_kind: str
+    identity: str
+    kind: str
+    url: str
+    path: Path
+    aliases: tuple[str, ...]
+
+    @property
+    def canonical_label(self) -> str:
+        return f"{self.kind}（{self.identity}）"
+
+    @property
+    def is_structured(self) -> bool:
+        return self.kind == "原文資料" or self.key == "STEP"
+
+    @property
+    def accepted_labels(self) -> tuple[str, ...]:
+        labels = [
+            self.canonical_label,
+            self.identity,
+            self.kind,
+            self.manifest_kind,
+            *self.aliases,
+        ]
+        # Bare 研經註解 is historically widespread.  It is accepted only after
+        # the validator has already matched the exact manifest URL to this
+        # identity; new prompts always emit the unambiguous canonical label.
+        return tuple(dict.fromkeys(labels))
+
+
+@dataclass(frozen=True)
+class PromptContext:
+    """Rendered prompt context plus exact data needed for before/after metrics."""
+
+    text: str
+    legacy_full_text: str
+    policy: str
+    commentary_omitted: tuple[dict, ...] = ()
+    step_metrics: tuple[dict, ...] = ()
 
 
 def _manifest_rows(manifest_path):
@@ -35,6 +112,106 @@ def _manifest_rows(manifest_path):
     return rows
 
 
+def _source_key(label: str, kind: str, url: str, rel_path: str) -> str:
+    """Infer a stable source identity from all manifest fields, including legacy manifests."""
+    joined = " ".join((label, kind, url, rel_path)).casefold()
+    if "stepbible" in joined or "step bible" in joined or kind == "原文資料":
+        return "STEP"
+    if "kingcomments" in joined or re.search(r"(?:^|\W)kc(?:$|\W)", joined):
+        return "KC"
+    if "biblehub" in joined or re.search(r"(?:^|\W)bh(?:$|\W)", joined):
+        return "BH"
+    if ("ccbiblestudy" in joined and re.search(r"(?:_|/|\b)ct(?:_|\d|\b)", joined)) \
+            or kind in {"CT", "逐節註解"}:
+        return "CT"
+    if ("ccbiblestudy" in joined and re.search(r"(?:_|/|\b)gt(?:_|\d|\b)", joined)) \
+            or kind in {"GT", "拾穗"}:
+        return "GT"
+    return "OTHER"
+
+
+def _resolve_raw_path(root: Path, rel_path: str) -> Path | None:
+    if not rel_path.endswith(".txt"):
+        return None
+    parts = Path(rel_path).parts
+    if parts and parts[0] == "raw_data":
+        return root / Path(rel_path)
+    if len(parts) == 1:
+        return root / "raw_data" / parts[0]
+    return None
+
+
+def manifest_source_identities(manifest_path, root=None) -> list[SourceIdentity]:
+    """Return the single canonical identity/type/URL mapping for all OK sources."""
+    manifest_path = Path(manifest_path)
+    if root is None:
+        # The project manifest is normally <root>/<book>/.tmp/第X章/source_manifest.md.
+        root = manifest_path
+        for _ in range(4):
+            root = root.parent
+    root = Path(root)
+    identities = []
+    for label, manifest_kind, url, rel_path in _manifest_rows(manifest_path):
+        resolved = _resolve_raw_path(root, rel_path)
+        if resolved is None:
+            continue
+        key = _source_key(label, manifest_kind, url, rel_path)
+        spec = _SOURCE_SPECS.get(key)
+        if spec:
+            identity = spec["identity"]
+            kind = spec["kind"]
+            aliases = tuple(spec["aliases"])
+        else:
+            identity = label
+            kind = manifest_kind
+            aliases = ()
+        identities.append(SourceIdentity(
+            key=key,
+            manifest_label=label,
+            manifest_kind=manifest_kind,
+            identity=identity,
+            kind=kind,
+            url=url,
+            path=resolved,
+            aliases=aliases,
+        ))
+    return identities
+
+
+def parse_source_citation_label(text: str) -> str | None:
+    """Extract the bounded label before a source citation's first colon."""
+    text = str(text).strip().strip("\"'")
+    positions = [position for position in (text.find(":"), text.find("：")) if position >= 0]
+    if not positions:
+        return None
+    label = text[:min(positions)].strip()
+    if not label or len(label) > 100 or "\n" in label or "\r" in label:
+        return None
+    return label
+
+
+def source_label_matches(identity: SourceIdentity, label: str) -> bool:
+    """Accept canonical labels and audited legacy labels without weakening identity checks."""
+    normalized = str(label).strip()
+    if normalized in identity.accepted_labels:
+        return True
+    # Historic payloads used labels such as "創世記 43章 CT".  Only a known
+    # terminal identity alias is accepted; arbitrary free text is not.
+    for alias in identity.aliases:
+        if re.search(rf"(?:^|\s){re.escape(alias)}$", normalized, re.I):
+            return True
+    return False
+
+
+def canonical_source_list(manifest_path, root=None) -> list[tuple[str, str]]:
+    """Canonical prompt/validator labels and URLs from one shared mapping."""
+    return [
+        (identity.canonical_label, identity.url)
+        for identity in manifest_source_identities(manifest_path, root)
+        if identity.url.startswith("http")
+    ]
+
+
 class SourceError(RuntimeError):
     """source_manifest 宣告了 OK 來源、但實際讀不到任何 raw_data 檔時拋出。
 
@@ -46,20 +223,13 @@ class SourceError(RuntimeError):
 
 def manifest_records(manifest_path, root):
     """Return OK raw-data records as ``(label, kind, url, Path)`` tuples."""
-    root = Path(root)
-    records = []
-    for label, kind, url, rel_path in _manifest_rows(manifest_path):
-        if not rel_path.endswith(".txt"):
-            continue
-        parts = Path(rel_path).parts
-        if parts and parts[0] == "raw_data":
-            resolved = root / Path(rel_path)
-        elif len(parts) == 1:
-            resolved = root / "raw_data" / parts[0]
-        else:
-            continue
-        records.append((label, kind, url, resolved))
-    return records
+    return [
+        # Preserve the public loader's historical manifest label.  Canonical
+        # prompt labels and validation still come from SourceIdentity; callers
+        # that only read files do not need a surprise label migration.
+        (item.manifest_label, item.kind, item.url, item.path)
+        for item in manifest_source_identities(manifest_path, root)
+    ]
 
 
 def parse_manifest(manifest_path, root):
@@ -114,43 +284,229 @@ def manifest_urls(manifest_path):
 
 
 def manifest_kind_urls(manifest_path):
-    """讀 source_manifest.md，回傳 [(類型, url)]（僅狀態 OK 且 URL 為 http(s)）。
+    """Return canonical ``[(kind（identity）, URL)]`` citation choices.
 
-    類型欄可含註釋類型與「原文資料」；條目 sources 的「標籤: 位置說明（URL）」
-    以此驗證標籤與 URL 成對（出25 實例：模型寫 KC 標籤卻附 CT 的 URL）。
+    This is kept as the public compatibility name, but no longer returns the
+    ambiguous kind alone: KingComments and BibleHub both use ``研經註解``.
     """
-    return [
-        (kind, url)
-        for _label, kind, url, _rel_path in _manifest_rows(manifest_path)
-        if url.startswith("http")
-    ]
+    return canonical_source_list(manifest_path)
+
+
+def _coerce_source(source):
+    if isinstance(source, SourceIdentity):
+        return source.identity, source.kind, source.path
+    if len(source) == 2:
+        label, path = source
+        path = Path(path)
+        joined = f"{label} {path.name}".casefold()
+        kind = "原文資料" if "stepbible" in joined or "step bible" in joined else "commentary"
+        return label, kind, path
+    if len(source) == 4:
+        label, kind, _url, path = source
+        return label, kind, Path(path)
+    raise ValueError(f"不支援的 source record：{source!r}")
 
 
 def _read_all(sources):
     texts = []
-    for label, path in sources:
+    for source in sources:
+        label, kind, path = _coerce_source(source)
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8").strip()
         if text:
-            texts.append((label, text))
+            texts.append((label, kind, text))
     return texts
 
 
-def full_source_text(sources, *, char_budget=LARGE_TOTAL_CHARS):
-    """所有 OK 來源的全文（依來源標籤分組）。
+def _budgeted_texts(texts, budget):
+    total = sum(len(text) for _label, _kind, text in texts)
+    output = []
+    for label, kind, text in texts:
+        if total > budget:
+            keep = max(1000, int(len(text) * budget / total))
+            text = text[:keep] + "\n…（此 prompt context 達預算上限；正式 raw source 未截斷）"
+        output.append((label, kind, text))
+    return output
 
-    超過預算時各來源等比截斷（大章節護欄）；一般章節不截斷、全文餵入。
+
+def full_source_text(
+    sources, *, char_budget=LARGE_TOTAL_CHARS,
+    structured_char_budget=STRUCTURED_TOTAL_CHARS,
+):
+    """Full prompt mode with independent commentary/structured budgets.
+
+    A large structured STEP file can no longer shrink CT/GT/KC/BH prose.  This
+    affects prompt context only; every formal ``raw_data`` file remains intact.
     """
     texts = _read_all(sources)
-    total = sum(len(text) for _, text in texts)
+    commentary = [item for item in texts if item[1] != "原文資料"]
+    structured = [item for item in texts if item[1] == "原文資料"]
+    budgeted = _budgeted_texts(commentary, char_budget)
+    budgeted.extend(_budgeted_texts(structured, structured_char_budget))
     chunks = []
-    for label, text in texts:
-        if total > char_budget:
-            keep = max(1000, int(len(text) * char_budget / total))
-            text = text[:keep] + "\n…（大章節截斷，其餘見分段）"
+    for label, _kind, text in budgeted:
         chunks.append(f"【{label}】\n{text}")
     return "\n\n".join(chunks)
+
+
+def _legacy_combined_source_text(sources, *, char_budget=LARGE_TOTAL_CHARS):
+    """Reproduce the pre-Phase-2 all-source budget for benchmark metrics only.
+
+    This deliberately keeps the retired behavior isolated from live prompt
+    construction: STEP size could proportionally shrink commentary here.  It
+    exists so ``prompt_metrics.json`` compares against the real former prompt,
+    rather than against the new independent-budget FULL policy.
+    """
+    texts = []
+    for source in sources:
+        if isinstance(source, SourceIdentity):
+            label, path = source.manifest_label, source.path
+        else:
+            label, _kind, path = _coerce_source(source)
+        if path.exists():
+            body = path.read_text(encoding="utf-8").strip()
+            if body:
+                texts.append((label, body))
+    total = sum(len(body) for _label, body in texts)
+    chunks = []
+    for label, body in texts:
+        if total > char_budget:
+            keep = max(1000, int(len(body) * char_budget / total))
+            body = body[:keep] + "\n…（大章節截斷，其餘見分段）"
+        chunks.append(f"【{label}】\n{body}")
+    return "\n\n".join(chunks)
+
+
+def render_source_reading_plan(manifest_path, root) -> str:
+    """Human-readable manual workflow plan: prose read, STEP machine validate."""
+    root = Path(root)
+    identities = manifest_source_identities(manifest_path, root)
+    commentary = [item for item in identities if not item.is_structured]
+    structured = [item for item in identities if item.is_structured]
+    lines = [
+        "# Source reading plan",
+        "",
+        "所有正式來源都完整保留於 raw_data，並納入 provenance／validation。",
+        "",
+        "## 必須由 Agent 全文閱讀",
+        "",
+    ]
+    for item in commentary:
+        relative = item.path.relative_to(root).as_posix()
+        lines.extend([
+            f"### {item.canonical_label}",
+            f"- path: {relative}",
+            f"- url: {item.url}",
+            "- validation: human/agent full-read receipt（3 段逐字引句，至少 1 段在後 1/3）",
+            "",
+        ])
+    if not commentary:
+        lines.extend(["- （本章 manifest 沒有 OK commentary）", ""])
+    lines.extend([
+        "## Structured original-language source",
+        "",
+    ])
+    for item in structured:
+        relative = item.path.relative_to(root).as_posix()
+        lines.extend([
+            f"### {item.canonical_label}",
+            f"- path: {relative}",
+            f"- url: {item.url}",
+            "- validation: deterministic machine gate（解析、book/chapter、verse coverage、word/Strong/morphology/original script、SHA-256）",
+            "- 使用方式: M3/M6 prompt 會提供 task-aware compact projection；需要更多細節時執行 `python util/step_context.py 書名 章 --verses 範圍`。",
+            "- 不要求 Agent 為 read receipt 人工逐詞通讀完整 STEP rows；完整 raw source 仍須通過 machine validation。",
+            "",
+        ])
+    if not structured:
+        lines.extend(["- （本章 manifest 沒有 OK STEP 原文資料）", ""])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _manual_reference_block(identities, root):
+    lines = [
+        "## 本章 Commentary Sources",
+        "",
+        "你已依 manual/sources.md 全文閱讀以下正式 commentary；本 prompt 不重複內嵌原文全文。",
+    ]
+    for item in identities:
+        if item.is_structured:
+            continue
+        lines.extend([
+            f"- {item.canonical_label}",
+            f"  path: {item.path.relative_to(root).as_posix()}",
+            f"  URL: {item.url}",
+        ])
+    lines.extend([
+        "",
+        "所有 commentary 敘述仍必須忠於上述已全文閱讀來源；不得以摘要或關鍵字 grep 取代全文閱讀。",
+    ])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_prompt_context(
+    manifest_path,
+    root,
+    *,
+    policy=FULL,
+    step_verses=None,
+):
+    """Build one policy-controlled source context without changing source truth."""
+    root = Path(root)
+    identities = manifest_source_identities(manifest_path, root)
+    present = [item for item in identities if item.path.is_file()]
+    legacy = _legacy_combined_source_text(present)
+    if policy == FULL:
+        current_full = full_source_text(present)
+        return PromptContext(
+            text=current_full, legacy_full_text=legacy, policy=policy
+        )
+    if policy != MANUAL_PROJECTED:
+        raise ValueError(f"未知 source context policy：{policy}")
+
+    try:
+        try:
+            from . import step_context
+        except ImportError:
+            import step_context
+        projections = []
+        step_metrics = []
+        for item in present:
+            if not item.is_structured:
+                continue
+            projection = step_context.project_step_source(item.path, verses=step_verses)
+            projections.append(projection.text)
+            step_metrics.append({
+                "source": item.path.relative_to(root).as_posix(),
+                "raw_chars": projection.raw_chars,
+                "raw_bytes": projection.raw_bytes,
+                "projected_chars": projection.projected_chars,
+                "projected_bytes": projection.projected_bytes,
+                "occurrences": projection.occurrence_count,
+                "lexicon_entries": projection.lexicon_count,
+                "selected_verses": list(projection.selected_verses),
+            })
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise SourceError(f"STEP prompt projection 失敗；不得靜默省略原文證據：{exc}") from exc
+
+    omitted = tuple({
+        "label": item.canonical_label,
+        "path": item.path.relative_to(root).as_posix(),
+        "chars": len(item.path.read_text(encoding="utf-8")),
+        "bytes": item.path.stat().st_size,
+    } for item in present if not item.is_structured)
+    text = _manual_reference_block(present, root)
+    if projections:
+        text += "\n\n" + "\n\n".join(projections)
+    else:
+        text += "\n\n## STEP Bible task projection\n- （本章沒有 OK STEP 原文資料）\n"
+    return PromptContext(
+        text=text,
+        legacy_full_text=legacy,
+        policy=policy,
+        commentary_omitted=omitted,
+        step_metrics=tuple(step_metrics),
+    )
 
 
 def is_large_chapter(sources, raw_verses):
@@ -158,6 +514,12 @@ def is_large_chapter(sources, raw_verses):
     if len(raw_verses) > LARGE_VERSES:
         return True
     texts = _read_all(sources)
-    if any(len(text) > LARGE_SINGLE_CHARS for _, text in texts):
+    if any(len(text) > LARGE_SINGLE_CHARS for _, _kind, text in texts):
         return True
-    return sum(len(text) for _, text in texts) > LARGE_TOTAL_CHARS
+    commentary_total = sum(
+        len(text) for _label, kind, text in texts if kind != "原文資料"
+    )
+    structured_total = sum(
+        len(text) for _label, kind, text in texts if kind == "原文資料"
+    )
+    return commentary_total > LARGE_TOTAL_CHARS or structured_total > STRUCTURED_TOTAL_CHARS

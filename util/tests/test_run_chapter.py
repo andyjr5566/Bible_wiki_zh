@@ -547,9 +547,74 @@ class EntrySourceLabelTests(unittest.TestCase):
     def test_matching_label_passes(self):
         self.assertEqual([], self._errors([f"CT: 出埃及記第26章 — 說明（{self.CT_URL}）"]))
 
-    def test_free_form_label_is_not_restricted(self):
-        # 標籤不是 manifest 已知類型（如舊式 ccbiblestudy.org 寫法）→ 只驗 URL
-        self.assertEqual([], self._errors([f"ccbiblestudy 註解: 說明（{self.CT_URL}）"]))
+    def test_free_form_label_is_rejected(self):
+        # Canonical/legacy 白名單以外的自由標籤不可再繞過 identity 驗證。
+        errors = self._errors([f"ccbiblestudy 註解: 說明（{self.CT_URL}）"])
+        self.assertEqual(1, len(errors))
+        self.assertIn("標籤", errors[0])
+
+
+class CanonicalEntrySourceLabelTests(unittest.TestCase):
+    """Canonical type(identity) mapping and audited legacy aliases share one validator."""
+
+    URLS = {
+        "CT": "https://example.test/ct",
+        "GT": "https://example.test/gt",
+        "KC": "https://example.test/kc",
+        "BH": "https://example.test/bh",
+        "STEP": "https://example.test/step",
+    }
+
+    def setUp(self):
+        specs = {
+            "CT": ("ccbiblestudy CT", "逐節註解", "ccbiblestudy CT", ("CT",)),
+            "GT": ("ccbiblestudy GT", "拾穗", "ccbiblestudy GT", ("GT",)),
+            "KC": ("KingComments", "研經註解", "KingComments", ("KC",)),
+            "BH": ("BibleHub Study", "研經註解", "BibleHub Study", ("BH",)),
+            "STEP": ("STEP Bible", "原文資料", "STEP Bible", ("STEP",)),
+        }
+        self.identities = []
+        for key, (label, kind, identity, aliases) in specs.items():
+            self.identities.append(run_chapter.source_excerpts.SourceIdentity(
+                key=key,
+                manifest_label=label,
+                manifest_kind=kind,
+                identity=identity,
+                kind=kind,
+                url=self.URLS[key],
+                path=Path(f"raw_data/{key}.txt"),
+                aliases=aliases,
+            ))
+
+    def _errors(self, label, url_key):
+        payload = dict(ENTRY_PAYLOAD, sources=[f"{label}: 說明（{self.URLS[url_key]}）"])
+        return run_chapter._entry_source_errors(
+            payload,
+            list(self.URLS.values()),
+            source_identities=self.identities,
+        )
+
+    def test_unique_commentary_types_match_only_their_url(self):
+        self.assertEqual([], self._errors("逐節註解", "CT"))
+        self.assertTrue(self._errors("逐節註解", "BH"))
+        self.assertEqual([], self._errors("拾穗", "GT"))
+        self.assertTrue(self._errors("拾穗", "KC"))
+
+    def test_shared_commentary_type_is_canonicalized_but_bare_legacy_is_allowed(self):
+        label = "研經註解（KingComments）"
+        self.assertEqual([], self._errors(label, "KC"))
+        self.assertTrue(self._errors(label, "BH"))
+        # Audited historical payloads used the ambiguous kind alone.  The
+        # exact manifest URL supplies identity, but new prompts never emit it.
+        self.assertEqual([], self._errors("研經註解", "KC"))
+
+    def test_step_identity_cannot_be_paired_with_commentary_url(self):
+        self.assertEqual([], self._errors("原文資料", "STEP"))
+        self.assertEqual([], self._errors("STEP Bible", "STEP"))
+        self.assertTrue(self._errors("STEP Bible", "BH"))
+
+    def test_audited_legacy_kc_alias_passes(self):
+        self.assertEqual([], self._errors("KC", "KC"))
 
 
 class EntryAliasConflictTests(unittest.TestCase):

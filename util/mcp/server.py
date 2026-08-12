@@ -55,6 +55,7 @@ from check_chapter_files import build_checks
 import extract_stepbible as step_extractor
 import link_updates
 import source_excerpts
+import step_context
 
 
 mcp = FastMCP("Hermes-Scripture-MCP")
@@ -72,6 +73,8 @@ _CHAPTER_ARTIFACTS = {
     "link_updates.yaml",
     "manual/sources.md",
     "manual/chapter_content.prompt.md",
+    "manual/prompt_metrics.json",
+    "step_source_receipt.json",
 }
 _ENTRY_ARTIFACT_RE = re.compile(r"^entry_content/[^/\\]+\.yaml$")
 _MANUAL_ENTRY_PROMPT_RE = re.compile(r"^manual/entry_batch_\d+\.prompt\.md$")
@@ -757,13 +760,14 @@ def rename_markdown(
 
 @mcp.tool()
 def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Dict[str, Any]:
-    """Verify ``read_log.md`` against every OK formal source in the manifest.
+    """Run the source-kind-aware read/validation gate.
 
-    Requires every source to have >=3 verbatim quotes, with at least one quote
-    falling in the file's last third (proves the source was read to the end,
-    not skimmed). This is the mandatory first gate before touching any yaml or
-    md for a chapter — call it before any candidate/errata work, not after.
-    ``strict_lines`` additionally checks the registered per-source line counts.
+    Each OK commentary needs >=3 verbatim ``read_log.md`` quotes, including one
+    from the final third.  STEP needs no human row-by-row receipt; its complete
+    raw file is parsed and validated for reference/coverage/words/Strong/
+    morphology/original script and SHA-256. This is the mandatory first gate
+    before candidate/errata work. ``strict_lines`` additionally checks the
+    registered commentary line counts.
     """
     try:
         canonical, _directory, _tmp = _chapter_context(book, chapter)
@@ -1090,6 +1094,69 @@ def read_chapter_source(
             return result
         return _error("source 不在本章 manifest 的 OK 清單", available_sources=choices)
     except (OSError, ValueError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def query_step_context(
+    book: str,
+    chapter: int,
+    verses: Optional[str] = None,
+    strong: Optional[str] = None,
+    word: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Query compact deterministic context from this chapter's formal STEP TXT.
+
+    ``verses`` accepts values such as ``1-3,5``.  ``strong`` matches the exact
+    Extended Strong (for example H1254A), and ``word`` searches original text,
+    transliteration, or the brief lexicon.  The root and source are fixed: this
+    tool reads only the STEP file declared by the chapter manifest (or the
+    canonical local raw file when no chapter manifest exists), never the web.
+    """
+    try:
+        canonical = _canonical_book(book)
+        chapter = int(chapter)
+        if chapter < 1:
+            raise ValueError("chapter 必須是正整數")
+        selected = step_context.parse_verse_spec(verses) if verses else None
+        path = step_context.find_formal_step_source(
+            ROOT_DIR, canonical, chapter, verses=selected
+        )
+        scripture = ROOT_DIR / "raw_scripture" / canonical / f"第{chapter}章.txt"
+        scripture_count = (
+            len(scripture.read_text(encoding="utf-8").splitlines())
+            if scripture.is_file() else None
+        )
+        receipt = step_context.validate_step_source(
+            path,
+            expected_book=canonical,
+            expected_chapter=chapter,
+            scripture_verse_count=scripture_count,
+        )
+        projection = step_context.project_step_source(
+            path, verses=selected, strong=strong, word=word
+        )
+        return {
+            "success": True,
+            "book": canonical,
+            "chapter": chapter,
+            "source": _relative_to_root(path),
+            "verses": sorted(selected) if selected else None,
+            "strong": strong,
+            "word": word,
+            "context": projection.text,
+            "metrics": {
+                "raw_chars": projection.raw_chars,
+                "raw_bytes": projection.raw_bytes,
+                "projected_chars": projection.projected_chars,
+                "projected_bytes": projection.projected_bytes,
+                "occurrences": projection.occurrence_count,
+                "lexicon_entries": projection.lexicon_count,
+                "selected_verses": list(projection.selected_verses),
+            },
+            "validation": receipt,
+        }
+    except (OSError, UnicodeError, TypeError, ValueError) as exc:
         return _error(str(exc))
 
 
@@ -1495,14 +1562,14 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
     """MCP-assisted new-chapter SOP; the repository prompt remains authoritative."""
     return f"""# Hermes Scripture：{book} 第 {chapter} 章（MCP 輔助）
 
-以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四套註釋＋STEP 原文資料的內容複核或收尾閘門。
+以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四套註釋全文閱讀、STEP machine validation 或收尾閘門。
 
-0. 讀完 manifest 中所有 OK 正式來源、寫好 `.tmp/第X章/read_log.md` 後，用 `check_source_read` 驗證 A0 讀取回執；未過不准動任何 yaml/md。
+0. 全文讀 manifest 中四套 OK commentary、寫好 `.tmp/第X章/read_log.md`；STEP 完整 raw 不做人工逐詞回執，由 `check_source_read` machine-validate 並寫 receipt。兩路未過都不准動內容 yaml/md。
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
 2. 四套註釋用 `crawl_bible_source`；STEP 原文資料用 `extract_stepbible`；再用 `build_source_manifest`，候選近鄰用 `build_candidate_similarity`。
 3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
 4. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
-5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。
+5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 依 `manual/sources.md` 全文讀四套 commentary、確認 STEP receipt → 讀 M3 task projection（細查用 `query_step_context`）→ 手寫 entry payload → 再 prepare 取得更新後 M6 chapter projection → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。Prompt 不重貼 commentary raw body。
 6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對 manifest 正式來源。STEP 只支持語言事實，不算 commentary 共識票；lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
@@ -1516,7 +1583,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
     """MCP-assisted maintenance SOP with the same manual M3/M6 discipline."""
     return f"""# Hermes Scripture 維護：{book} 第 {chapter} 章（MCP 輔助）
 
-以 `agent_maintenance_prompt.md` 為完整且優先的規格。先讀 manifest 中四套註釋與 STEP 原文資料並逐條勘誤；STEP 不是第五套註釋、不計入註釋共識，lexicon／morphology 不可越界推出語境義或神學結論。結構通過不等於內容正確。
+以 `agent_maintenance_prompt.md` 為完整且優先的規格。先全文讀 manifest 中四套註釋；STEP 完整 raw 走 machine gate，寫作時讀 projection／按需 query。STEP 不是第五套註釋、不計入註釋共識，lexicon／morphology 不可越界推出語境義或神學結論。結構通過不等於內容正確。
 
 - 先用 `get_chapter_status` 看目前管線狀態，用 `read_chapter_artifact` 讀受限的 `.tmp` payload，用 `search_wiki_entries`／`read_wiki_entry` 核對既有條目與 aliases。
 - 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。

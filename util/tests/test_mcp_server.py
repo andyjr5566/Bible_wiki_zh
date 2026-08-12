@@ -124,6 +124,55 @@ class StepExtractorToolTests(unittest.TestCase):
         self.assertFalse(result["success"])
         run.assert_not_called()
 
+
+class StepContextToolTests(unittest.TestCase):
+    @staticmethod
+    def _write_step(root):
+        ref = server.step_extractor.parse_reference("Genesis 1")
+        word = server.step_extractor.WordEntry(
+            reference="Gen.1.1", position=1, word="בָּרָא", transliteration="bārāʾ",
+            gloss="created", strongs_raw="H1254A", strongs=["H1254A"],
+            main_strong="H1254A", morphology_raw="V-Qal-3ms",
+            morphology="V-Qal-3ms", lexicon_short="create",
+        )
+        path = root / "raw_data" / "stepbible_genesis_1.txt"
+        path.parent.mkdir(parents=True)
+        path.write_text(
+            server.step_extractor.render_markdown(ref, {1: [word]}, False),
+            encoding="utf-8",
+        )
+        return path
+
+    def test_queries_validated_local_projection_by_verse_and_exact_strong(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.query_step_context(
+                    "創世記", 1, verses="1", strong="H1254A"
+                )
+        self.assertTrue(result["success"], result)
+        self.assertEqual("PASS", result["validation"]["status"])
+        self.assertEqual(1, result["metrics"]["occurrences"])
+        self.assertIn("בָּרָא", result["context"])
+
+    def test_existing_manifest_cannot_be_bypassed_by_unlisted_raw_step(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| CT | 逐節註解 | https://x/ct | raw_data/ct.txt | OK |\n",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.query_step_context("創世記", 1)
+        self.assertFalse(result["success"])
+        self.assertIn("未宣告 OK STEP", result["error"])
+
     def test_tool_does_not_overwrite_without_explicit_flag(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

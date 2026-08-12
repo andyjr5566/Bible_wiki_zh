@@ -5,8 +5,9 @@
 
   python util/run_chapter_manual.py prompts 民數記 5
       P2 resolve ＋ 把 M3/M6 的「實際 prompt」（白名單、字數門檻、來源 URL 對照
-      都已代入本章值）落地到 .tmp/第5章/manual/*.prompt.md，並列出來源原檔路徑
-      （agent 應讀原檔全文，不要只讀 prompt 內的截斷 excerpt）。不呼叫模型。
+      都已代入本章值）落地到 .tmp/第5章/manual/*.prompt.md，並產生 source-kind-aware
+      sources.md：四套 commentary 由 agent 讀原檔全文；STEP 全檔走 machine gate，
+      prompt 只帶 task-aware projection。另寫 prompt_metrics.json。不呼叫模型。
 
   （agent 依 prompt 規格手寫 .tmp/第5章/entry_content/<name>.yaml；條目寫齊後
     重跑 prompts 重生 chapter_content.prompt.md——白名單含實建條目名——再手寫
@@ -140,10 +141,12 @@ class PromptCapture:
     （帶 FEEDBACK_MARKER）不落地，每批只留第一輪乾淨版。
     """
 
-    def __init__(self, out_dir, stem):
+    def __init__(self, out_dir, stem, ctx=None):
         self.out_dir = out_dir
         self.stem = stem
+        self.ctx = ctx
         self.written = []
+        self.metrics = []
 
     def __call__(self, prompt):
         if FEEDBACK_MARKER not in prompt:
@@ -155,6 +158,35 @@ class PromptCapture:
             path.write_text(prompt, encoding="utf-8")
             if path not in self.written:
                 self.written.append(path)
+                snapshot = getattr(self.ctx, "_last_prompt_context", None) if self.ctx else None
+                before_prompt = prompt
+                if snapshot and snapshot.text in prompt:
+                    before_prompt = prompt.replace(
+                        snapshot.text, snapshot.legacy_full_text, 1
+                    )
+                    old_heading = (
+                        "【本章全部來源）】" if self.stem == "entry_batch"
+                        else "【本章全部來源】"
+                    )
+                    before_prompt = before_prompt.replace(
+                        "【本章來源 context】", old_heading, 1
+                    )
+                self.metrics.append({
+                    "stage": self.stem,
+                    "path": path.name,
+                    "before": {
+                        "chars": len(before_prompt),
+                        "bytes": len(before_prompt.encode("utf-8")),
+                    },
+                    "after": {
+                        "chars": len(prompt),
+                        "bytes": len(prompt.encode("utf-8")),
+                    },
+                    "commentary_bodies_omitted": list(
+                        snapshot.commentary_omitted if snapshot else ()
+                    ),
+                    "step": list(snapshot.step_metrics if snapshot else ()),
+                })
         raise ModelValidationError(CAPTURE_MSG)
 
 
@@ -169,29 +201,58 @@ def cmd_prompts(args):
         print("確認要作廢請加 --confirm-stale；不想作廢就先還原上游改動。")
         return 1
     _require_sources(ctx)
-    rc._invalidate_stale(ctx)
-    plan = rc.resolve_step(ctx)  # runner 尚未注入 → 語義附註照常嘗試（端點不通自動略過）
 
+    # Always leave the reading plan first.  If STEP validation fails below,
+    # the Agent can still see the exact formal paths to repair, while stale
+    # prompt/metrics files cannot be mistaken for current output.
     manual_dir = ctx.path(PROMPT_DIR)
-    if manual_dir.exists():
-        for old in manual_dir.glob("*.prompt.md"):
-            old.unlink()
     manual_dir.mkdir(parents=True, exist_ok=True)
-    # 來源原檔路徑：prompt 內的 sources_text 對大章節會等比截斷，agent 要讀原檔全文
+    for old in manual_dir.glob("*.prompt.md"):
+        old.unlink()
+    metrics_path = manual_dir / "prompt_metrics.json"
+    if metrics_path.exists():
+        metrics_path.unlink()
     (manual_dir / "sources.md").write_text(
-        "agent 應讀下列來源「原檔全文」（prompt 內嵌的版本對大章節會截斷）：\n\n"
-        + "\n".join(f"- {label}：{path}" for label, path in ctx.sources())
-        + "\n",
+        rc.source_excerpts.render_source_reading_plan(
+            ctx.path("source_manifest.md"), ctx.root
+        ),
         encoding="utf-8",
     )
 
-    cap_entry = PromptCapture(manual_dir, "entry_batch")
+    step_problems, _step_receipts = check_source_read.validate_structured_sources(
+        ctx.book, ctx.chapter, root=ctx.root, write_receipt=True
+    )
+    if step_problems:
+        raise SourceError(
+            "STEP machine validation 未通過；不產生可能缺漏原文證據的 M3/M6 prompt：\n  - "
+            + "\n  - ".join(step_problems)
+        )
+    rc._invalidate_stale(ctx)
+    plan = rc.resolve_step(ctx)  # runner 尚未注入 → 語義附註照常嘗試（端點不通自動略過）
+
+    cap_entry = PromptCapture(manual_dir, "entry_batch", ctx=ctx)
     ctx.runner = cap_entry
     batch_size = args.batch_size if getattr(args, "batch_size", None) is not None else 99999
-    rc.entry_content_step(ctx, plan, batch_size=batch_size)
-    cap_chapter = PromptCapture(manual_dir, "chapter_content")
+    rc.entry_content_step(
+        ctx, plan, batch_size=batch_size,
+        source_context_policy=rc.source_excerpts.MANUAL_PROJECTED,
+    )
+    cap_chapter = PromptCapture(manual_dir, "chapter_content", ctx=ctx)
     ctx.runner = cap_chapter
-    rc.chapter_content_step(ctx, plan)
+    rc.chapter_content_step(
+        ctx, plan, source_context_policy=rc.source_excerpts.MANUAL_PROJECTED,
+    )
+
+    prompt_metrics = {
+        "version": 1,
+        "book": ctx.book,
+        "chapter": ctx.chapter,
+        "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+        "prompts": cap_entry.metrics + cap_chapter.metrics,
+    }
+    metrics_path.write_text(
+        json.dumps(prompt_metrics, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     # dump 過程的假性 manual_review（批次「失敗」與 M6 的 CAPTURE_MSG）不是真問題
     leftovers = [
@@ -205,6 +266,29 @@ def cmd_prompts(args):
     print(f"   來源清單：{manual_dir / 'sources.md'}")
     for path in cap_entry.written + cap_chapter.written:
         print(f"   prompt：{path}")
+    print(f"   metrics：{metrics_path}")
+    for metric in prompt_metrics["prompts"]:
+        before = metric["before"]
+        after = metric["after"]
+        reduction = (1 - after["chars"] / before["chars"]) * 100 if before["chars"] else 0
+        print(
+            f"   {metric['path']}：before {before['chars']} chars/{before['bytes']} bytes；"
+            f"after {after['chars']} chars/{after['bytes']} bytes；reduction {reduction:.1f}%"
+        )
+        for omitted in metric["commentary_bodies_omitted"]:
+            print(
+                f"     omitted {omitted['label']}：{omitted['chars']} chars/"
+                f"{omitted['bytes']} bytes（{omitted['path']}）"
+            )
+        for step in metric["step"]:
+            step_reduction = (
+                (1 - step["projected_chars"] / step["raw_chars"]) * 100
+                if step["raw_chars"] else 0
+            )
+            print(
+                f"     STEP {step['raw_chars']}→{step['projected_chars']} chars "
+                f"({step_reduction:.1f}% reduction), verses={step['selected_verses']}"
+            )
     if pending:
         print(f"   待寫條目 payload（{len(pending)} 個）→ {ctx.path('entry_content')}\\<name>.yaml：")
         for name in pending:
@@ -230,9 +314,10 @@ def cmd_prompts(args):
 # --------------------------------------------------------------------------- #
 def _check_entries(ctx, plan, problems, warnings):
     known = ctx.known_types()
-    source_urls = rc.source_excerpts.manifest_kind_urls(ctx.path("source_manifest.md"))
-    allowed_urls = [url for _, url in source_urls]
-    url_kinds = {url: kind for kind, url in source_urls}
+    source_identities = rc.source_excerpts.manifest_source_identities(
+        ctx.path("source_manifest.md"), ctx.root
+    )
+    allowed_urls = [item.url for item in source_identities if item.url.startswith("http")]
 
     payload_list = []
     out_dir = ctx.path("entry_content")
@@ -273,7 +358,9 @@ def _check_entries(ctx, plan, problems, warnings):
             continue
         matched_ids.add(id(payload))
         errs = rc.render_entry.validate_payload(payload, known_types=known)
-        errs.extend(rc._entry_source_errors(payload, allowed_urls, url_kinds))
+        errs.extend(rc._entry_source_errors(
+            payload, allowed_urls, source_identities=source_identities
+        ))
         # fresh 路徑對撞名 alias 是自動剔除＋通知；人工路徑報出來讓 agent 自己改
         errs.extend(rc._entry_alias_errors(entry, payload, owners))
         if errs:
@@ -358,7 +445,7 @@ def cmd_check(args):
         print("❌ 尚無 link_plan.yaml——先跑 prompts")
         return 1
     plan = rc._read_yaml(plan_path) or {}
-    # manifest 所有 OK 正式來源全讀閘門：沒有逐字回執就擋下
+    # source-kind-aware gate：commentary 驗全文逐字回執；STEP 驗完整結構與 receipt。
     problems.extend(check_source_read.check(args.book, args.chapter))
     # Prompt 規格檔全讀的機械閘門：沒有 Prompt 逐字回執就擋下（見 util/check_prompt_read.py 檔頭）
     problems.extend(check_prompt_read.check(args.book, args.chapter))

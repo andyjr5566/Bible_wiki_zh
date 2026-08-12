@@ -43,6 +43,7 @@ import render_chapter
 import render_entry
 import resolve_link_candidates as resolver
 import source_excerpts
+import step_context
 import validate_knowledge_base as vkb
 from model_client import ModelError, ModelValidationError, call_model
 
@@ -354,9 +355,8 @@ _ENTRY_EXAMPLE = (
     "      summary: 本章對此條目的重點\n"
     "      relation: 與本章的神學關聯\n"
     "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用\n"
-    "  sources:                        # 每項含實際來源 URL（取自本章來源清單）；標籤必須是"
-    "「逐節註解／拾穗／研經註解／原文資料」等來源清單類型名稱，不可用 CT/GT/KC/BH 這類縮寫\n"
-    "    - '研經註解: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
+    "  sources:                        # 每項含實際來源 URL；新 payload 一律用下方 canonical identity 標籤\n"
+    "    - '研經註解（BibleHub Study）: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
 )
 
 
@@ -374,7 +374,7 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
         f"各填一份 entry_content payload。\n\n"
         f"【要寫的條目】（括號內是分類，不是名稱的一部分）\n{listing}\n\n"
         f"【本章經文（{ctx.book} 第{ctx.chapter}章）】\n{raw_text}\n\n"
-        f"【本章全部來源）】\n{sources_text}\n\n"
+        f"【本章來源 context】\n{sources_text}\n\n"
         f"【規則】\n"
         f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
         f"{STEP_USAGE_RULES}"
@@ -427,10 +427,10 @@ def _match_payload(entry, results):
     return None
 
 
-_SOURCE_LABEL_RE = re.compile(r"^\s*([A-Z]{2,4})\s*[:：]")
+_SOURCE_LABEL_RE = re.compile(r"^\s*([^:：\r\n]{1,100})\s*[:：]")
 
 
-def _entry_source_errors(payload, allowed_urls, url_kinds=None):
+def _entry_source_errors(payload, allowed_urls, url_kinds=None, source_identities=None):
     """formal 條目 sources 每項必須含本章 source_manifest 的其中一個 URL，
     且可辨識的行首標籤須與該 URL 的 manifest 類型一致。
 
@@ -442,6 +442,8 @@ def _entry_source_errors(payload, allowed_urls, url_kinds=None):
     if not allowed_urls or payload.get("status") != "formal":
         return []
     url_kinds = url_kinds or {}
+    source_identities = list(source_identities or [])
+    identity_by_url = {item.url: item for item in source_identities}
     errors = []
     for source in payload.get("sources") or []:
         text = str(source)
@@ -452,13 +454,28 @@ def _entry_source_errors(payload, allowed_urls, url_kinds=None):
                 f"URL 取自：{'、'.join(allowed_urls)}"
             )
             continue
-        kind = url_kinds.get(hit)
-        label = _SOURCE_LABEL_RE.match(text)
-        if kind and label and label.group(1) != kind:
+        label = source_excerpts.parse_source_citation_label(text)
+        if not label:
             errors.append(
-                f"sources「{text}」標籤「{label.group(1)}」與 URL 不符：該 URL 屬 {kind}，"
-                f"請改用正確標籤或換成 {label.group(1)} 的 URL"
+                f"sources「{text}」缺少可辨識標籤；格式必須是「canonical 標籤: 位置說明（URL）」"
             )
+            continue
+        identity = identity_by_url.get(hit)
+        if identity and not source_excerpts.source_label_matches(identity, label):
+            errors.append(
+                f"sources「{text}」標籤「{label}」與 URL identity 不符：該 URL 必須使用 "
+                f"{identity.canonical_label}（舊資料可用已稽核 legacy alias）"
+            )
+            continue
+        # Compatibility path for callers/tests that still provide only URL→kind.
+        kind = url_kinds.get(hit)
+        if not identity and kind and label != kind:
+            match = _SOURCE_LABEL_RE.match(text)
+            parsed = match.group(1).strip() if match else label
+            if parsed != kind:
+                errors.append(
+                    f"sources「{text}」標籤「{parsed}」與 URL 不符：該 URL 屬 {kind}"
+                )
     return errors
 
 
@@ -539,7 +556,8 @@ def _register_alias_owner(owners, payload):
 
 
 def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
-                     feedback=None, source_urls=None, owners=None):
+                     feedback=None, source_urls=None, owners=None,
+                     source_identities=None):
     """回傳 (通過驗證的 payloads, 各條目的失敗原因)。失敗原因供下一輪回饋模型。
 
     owners（名稱／alias → 擁有者）為可變 dict：payload 通過驗證即登記其名稱
@@ -565,7 +583,9 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
             errors[entry["name"]] = "找不到對應此條目的 payload（name 需能對回清單）"
             continue
         verrs = render_entry.validate_payload(payload, known_types=known)
-        verrs.extend(_entry_source_errors(payload, allowed_urls, url_kinds))
+        verrs.extend(_entry_source_errors(
+            payload, allowed_urls, url_kinds, source_identities=source_identities
+        ))
         if owners is not None:
             # 撞名 alias 程式直接剔除（不再退回模型重試——實測模型會反覆配回來）
             for alias, owner in _strip_conflicting_aliases(entry, payload, owners):
@@ -582,11 +602,14 @@ def _run_entry_batch(ctx, batch, allowed_related, sources_text, raw_text, known,
     return matched, errors
 
 
-def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
+def entry_content_step(
+    ctx, plan, limit=None, batch_size=BATCH_SIZE,
+    source_context_policy=source_excerpts.FULL,
+):
     out_dir = ctx.path("entry_content")
     known = ctx.known_types()
-    raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(ctx.raw_verses(), 1))
-    sources_text = source_excerpts.full_source_text(ctx.sources())
+    raw_verses = ctx.raw_verses()
+    raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
     # 候選去重：計畫可能同名重複（柱子×2、銀座×2…），否則各批各建一次會產生重複條目
     seen_names = set()
     c_entries = [e for e in plan.get("C_new_formal", [])
@@ -598,8 +621,14 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         for e in plan.get(key, [])
     ]
     allowed_related = list(dict.fromkeys(existing_titles + [e["name"] for e in c_entries]))
-    # (類型, url) 成對供 prompt 與標籤↔URL 驗證；包含註釋類型與 STEP「原文資料」
-    source_urls = source_excerpts.manifest_kind_urls(ctx.path("source_manifest.md"))
+    # canonical identity/type/URL 單一 mapping 同時供 prompt 與 validator。
+    source_identities = source_excerpts.manifest_source_identities(
+        ctx.path("source_manifest.md"), ctx.root
+    )
+    source_urls = [
+        (item.canonical_label, item.url)
+        for item in source_identities if item.url.startswith("http")
+    ]
     if limit is not None:
         c_entries = c_entries[:limit]
 
@@ -635,6 +664,21 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         total_batches = (len(pending) + batch_size - 1) // batch_size
         for batch_num, start in enumerate(range(0, len(pending), batch_size), 1):
             batch = pending[start:start + batch_size]
+            step_verses = None
+            if source_context_policy == source_excerpts.MANUAL_PROJECTED:
+                selection = step_context.select_candidate_verses(
+                    batch, range(1, len(raw_verses) + 1)
+                )
+                step_verses = selection.verses
+                for warning in selection.warnings:
+                    notice = f"M3 STEP projection：{warning}"
+                    if notice not in ctx.manual_review:
+                        ctx.manual_review.append(notice)
+            prompt_context = source_excerpts.build_prompt_context(
+                ctx.path("source_manifest.md"), ctx.root,
+                policy=source_context_policy, step_verses=step_verses,
+            )
+            ctx._last_prompt_context = prompt_context
             if last_errors:
                 feedback = [f"{e['name']}：{last_errors[e['name']]}"
                             for e in batch if e["name"] in last_errors]
@@ -643,8 +687,8 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
                 f"（{len(batch)} 條目）讀取人工 payload 中…"
             )
             results, errors = _run_entry_batch(
-                ctx, batch, allowed_related, sources_text, raw_text, known,
-                feedback, source_urls, owners
+                ctx, batch, allowed_related, prompt_context.text, raw_text, known,
+                feedback, source_urls, owners, source_identities
             )
             for entry in batch:
                 payload = results.get(entry["name"])
@@ -1147,7 +1191,9 @@ def _extract_chapter_payload(text):
     )
 
 
-def chapter_content_step(ctx, plan):
+def chapter_content_step(
+    ctx, plan, source_context_policy=source_excerpts.FULL,
+):
     out_path = ctx.path("chapter_content.yaml")
     if not out_path.exists():
         # 護欄：讀取本章整理 payload 前確認來源讀得到，避免空來源下產生無依據內容
@@ -1155,7 +1201,12 @@ def chapter_content_step(ctx, plan):
         _log("▶ M6 chapter_content：讀取人工 payload 中…")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
-    sources_text = source_excerpts.full_source_text(ctx.sources())
+    prompt_context = source_excerpts.build_prompt_context(
+        ctx.path("source_manifest.md"), ctx.root,
+        policy=source_context_policy,
+    )
+    ctx._last_prompt_context = prompt_context
+    sources_text = prompt_context.text
     created = list(getattr(ctx, "created_entry_names", []))
     created_hint = (
         f"\n本章新建條目（knowledge_nodes 若引用請用完整名稱）：{', '.join(created)}"
@@ -1172,7 +1223,7 @@ def chapter_content_step(ctx, plan):
     prompt = (
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
-        f"【本章全部來源】\n{sources_text}\n\n"
+        f"【本章來源 context】\n{sources_text}\n\n"
         f"【STEP 原文資料使用邊界】\n{STEP_USAGE_RULES}\n"
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"

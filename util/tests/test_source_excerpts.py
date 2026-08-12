@@ -9,8 +9,10 @@ if str(UTIL_DIR) not in sys.path:
 
 from source_excerpts import (
     SourceError,
+    canonical_source_list,
     full_source_text,
     is_large_chapter,
+    manifest_source_identities,
     manifest_urls,
     parse_manifest,
     require_sources,
@@ -60,6 +62,23 @@ class ManifestTests(unittest.TestCase):
             self.assertEqual(2, len(sources))
             for _label, path in sources:
                 self.assertEqual("raw_data", path.parent.name)
+
+    def test_canonical_identity_disambiguates_shared_commentary_kind(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "source_manifest.md"
+            manifest.write_text("""\
+| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |
+|---|---|---|---|---|
+| KingComments | 研經註解 | https://x/kc | raw_data/kc.txt | OK |
+| BibleHub Study | 研經註解 | https://x/bh | raw_data/bh.txt | OK |
+""", encoding="utf-8")
+            identities = manifest_source_identities(manifest, root)
+            self.assertEqual(["KC", "BH"], [item.key for item in identities])
+            self.assertEqual([
+                ("研經註解（KingComments）", "https://x/kc"),
+                ("研經註解（BibleHub Study）", "https://x/bh"),
+            ], canonical_source_list(manifest, root))
 
 
 class RequireSourcesTests(unittest.TestCase):
@@ -123,6 +142,38 @@ class FullSourceTests(unittest.TestCase):
 
     def test_missing_files_are_skipped(self):
         self.assertEqual("", full_source_text([("X", Path("nope.txt"))]))
+
+    def test_large_step_uses_independent_budget_and_does_not_shrink_commentary(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            commentary = root / "ct.txt"
+            structured = root / "step.txt"
+            commentary.write_text("C" * 2000 + "COMMENTARY_TAIL", encoding="utf-8")
+            structured.write_text("S" * 10000, encoding="utf-8")
+            text = full_source_text(
+                [
+                    ("CT", "逐節註解", "https://x/ct", commentary),
+                    ("STEP", "原文資料", "https://x/step", structured),
+                ],
+                char_budget=3000,
+                structured_char_budget=20,
+            )
+            self.assertIn("COMMENTARY_TAIL", text)
+            self.assertIn("正式 raw source 未截斷", text)
+
+    def test_legacy_two_tuple_step_is_still_classified_as_structured(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            commentary = root / "ct.txt"
+            step = root / "stepbible_genesis_1.txt"
+            commentary.write_text("C" * 1500 + "COMMENTARY_TAIL", encoding="utf-8")
+            step.write_text("S" * 10000, encoding="utf-8")
+            text = full_source_text(
+                [("CT", commentary), ("STEP Bible", step)],
+                char_budget=2000,
+                structured_char_budget=20,
+            )
+            self.assertIn("COMMENTARY_TAIL", text)
 
 
 class LargeChapterTests(unittest.TestCase):

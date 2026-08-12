@@ -14,9 +14,10 @@
 - manifest 一律用程式產生，不要手寫：
     python util/build_source_manifest.py 【{書名}】 {X}
   標「缺檔」的來源先依狀態提示補 `crawl` 或 `extract` 再重跑，直到五個正式來源都 OK。
+- 來源 gate 依 kind 分流：四套 commentary 全文閱讀並在 `.tmp/第{X}章/read_log.md` 留三段逐字引句（至少一段在後 1/3）；STEP 全 raw 由 `python util/check_source_read.py 【{書名}】 {X}` deterministic parser 驗證並留 machine receipt，不做人工逐詞回執。需要原文細節用 `python util/step_context.py 【{書名}】 {X} --verses ...`。
 
 ## 步驟2：建 link_candidates.yaml（這是你唯一要做判斷的地方）
-- manifest 中所有 OK 正式來源全部讀完才動筆，只放經文或有效 raw text 明確觸發的候選。
+- manifest 中四套 OK commentary 全部讀完、STEP machine gate PASS 後才動筆，只放經文或有效 raw text 明確觸發的候選。
 - 格式依 _config/schemas/link_candidates.schema.json；分類 type 只能用
   link_folder/ 底下真實存在的資料夾名（主題、事件、互文、人物、原文、地點、
   文化、歷史、神學、背景、解經爭議）——自己造分類會靜默失效，不是報錯。

@@ -9,6 +9,10 @@
 `read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、manifest 正式來源
 內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
 
+STEP 深查用 `query_step_context`（book/chapter＋verses／exact Strong／word），或 CLI
+`python util/step_context.py 書名 章 --verses 1-3`；只讀本章 manifest 宣告的本地正式 STEP，
+不查網路或其他章。
+
 本檔下面列出的 `util/*.py` 都有對應 MCP 工具：註釋抓取用 `crawl_bible_source`、STEP 原文擷取用
 `extract_stepbible`，manifest 用
 `build_source_manifest`，候選報告用 `build_candidate_similarity`；
@@ -27,7 +31,9 @@ tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之
 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
 `render_manual_chapter`。這條路實際執行的是 `util/run_chapter_manual.py`，不可以 MCP
 工具偷換成自動生成。`lint_chapter_content` 只是格式提示；M3/M6 的
-結構閘門是 `check_manual_payloads`，內容正確性仍須逐條對 manifest 中所有 OK 正式來源。
+結構閘門是 `check_manual_payloads`。內容正確性仍須逐條回到 manifest 正式來源：四套
+commentary 已由 Agent 全文閱讀；STEP 全 raw 由 machine gate 驗證，Agent 使用 prompt projection
+與按需 query 核對語言事實。
 
 B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updates.yaml` 與來源 →
 帶 preview token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。它不取代本檔
@@ -48,6 +54,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - STEP 原文資料用：`python util/extract_stepbible.py "【書名】 X" --data_path .stepbible_data --output_path raw_data --download`。它只下載該書卷所需 tagged text、lexicon、morphology 檔到 gitignored cache，再輸出 canonical `stepbible_*.txt`。
    - **不要手寫 `source_manifest.md`**，改用：`python util/build_source_manifest.py 【書名】 X`（四套註釋位址規則在 `_config/source_catalog.json`；STEP 的 66 卷檔名契約在 extractor）。它產生四套註釋＋STEP 原文資料列，raw_data 路徑一律帶 `raw_data/` 前綴。缺註釋依提示用 crawler；缺 STEP 依提示用 extractor。
    - run_chapter 的 M3／M6 生成前會檢查來源讀得到；manifest 宣告 OK 卻讀不到任何 raw_data 檔就丟 `SourceError` 中止（防止空來源生成）。照訊息修 manifest 或補 raw_data 再重跑。
+   - **來源驗證分流**：CT／GT／KingComments／BibleHub 必須全文閱讀，在 `.tmp/第x章/read_log.md` 各留三段逐字引句（至少一段出自後 1/3）；STEP 不寫人工逐詞引句，改由 `python util/check_source_read.py 【書名】 X` 正式 parser 驗 book/chapter、verse coverage、word rows、Strong、morphology、原文字元與 SHA-256，receipt 寫入 `step_source_receipt.json`。兩路都 PASS 才動內容。
 
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
    - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。
@@ -71,12 +78,15 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    python util/build_link_index.py
    python util/run_chapter_manual.py prompts 【書名】 X
    ```
-   `prompts` 會落地 M3/M6 的實際 prompt 與來源清單；agent 必須讀來源原檔全文，手寫
+   `prompts` 會落地 `manual/sources.md`、M3/M6 實際 prompt 與 `prompt_metrics.json`。Agent
+   必須依 sources.md 全文讀四套 commentary 並完成 read_log；STEP 全 raw 由 machine gate 驗證，
+   M3 prompt 只帶 batch evidence/surfaces 對應節次的 compact projection，M6 帶章級 compact
+   projection。需要更多原文時用 `step_context.py`／`query_step_context`。手寫
    `.tmp/第x章/entry_content/*.yaml` 與 `chapter_content.yaml`。條目寫齊後重跑 `prompts`
    更新 M6 prompt，再依序執行 `check`、`run`；`run` 只做 M5/P3/P4，若缺 payload 會直接報錯，不會自動產生內容。
    - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」）。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗。
    - **M3 的 alias 撞名不再硬失敗**：alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，保留其餘人工 payload 供修正。
-   - **人工內容流程**：本步驟固定依四段執行：`python util/run_chapter_manual.py prompts 【書名】 X`（落地 M3/M6 實際 prompt 與來源清單）→ agent 讀**來源原檔全文**依 prompt 規格手寫 `.tmp/第x章/entry_content/*.yaml`（條目寫齊後重跑 prompts 更新 M6 prompt）與 `chapter_content.yaml` → `check`（fresh 路徑同套驗證）→ `run`（只做既定的渲染與驗證步驟）。其餘步驟（1、2、4–8）完全相同；步驟6 的複核不可因「內容是自己寫的」而省略。事後修改 `.tmp` 內容的維護流程見 `agent_maintenance_prompt.md`。
+   - **人工內容流程**：`prompts` → 依 `sources.md` 全文讀四套 commentary、完成 `read_log.md`，確認 STEP machine receipt PASS → 讀 M3 projection、必要時 query STEP、手寫 `entry_content/*.yaml` → 條目寫齊後重跑 prompts 更新 M6 → 讀 M6 projection、必要時 query、手寫 `chapter_content.yaml` → `check` → `run`。manual prompt 不再複製四套 commentary 全文；這是避免重讀，不是摘要或降低全文閱讀要求。其餘步驟（1、2、4–8）不變；步驟6 不可省略。事後維護見 `agent_maintenance_prompt.md`。
 
 4. **B 類累積**（既有條目補本章資料）
    ```text

@@ -13,6 +13,7 @@
 | `read_wiki_entry` | 只讀取索引中的 `link_folder/**/*.md` 條目。 | 否 |
 | `read_chapter_artifact` | 只讀取白名單內的 `.tmp/第X章` payload／manual prompt。 | 否 |
 | `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源。 | 否 |
+| `query_step_context` | 只查本章 manifest 宣告的本地 STEP；支援 verses/range、exact Extended Strong、word，回傳 compact projection＋machine receipt。 | 否 |
 | `lint_chapter_content` | 對**傳入文字**做 M6／M3 格式檢查，不讀任何路徑。 | 否 |
 | `scan_unsourced_tokens` | 以全庫 raw_data 補掃該章節點條目與渲染 md 的希伯來字母／拉丁音譯／簡體字。 | 否 |
 | `run_gates` | 跑核心收尾閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL；每個 gate 可用 `timeout_seconds=600..900`。 | 是，`verify_links` 會更新報告；rebuild 時另更新索引 |
@@ -47,14 +48,15 @@
 
 M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 
-1. `prepare_manual_payload_prompts`
-2. 讀 manifest 指定的完整來源，手寫 `entry_content/*.yaml`（M3）
-3. 再次 `prepare_manual_payload_prompts`，取得包含實建條目白名單的 M6 prompt
-4. 手寫 `chapter_content.yaml`
-5. `check_manual_payloads`
-6. `render_manual_chapter`
+1. `prepare_manual_payload_prompts`，取得 `manual/sources.md`、M3/M6 prompt 與 `prompt_metrics.json`
+2. 全文讀 CT／GT／KingComments／BibleHub，完成 `read_log.md`；STEP 全 raw 由 machine receipt 驗證
+3. 讀 M3 task-aware STEP projection；需要更多原文時用 `query_step_context`；手寫 `entry_content/*.yaml`
+4. 再次 `prepare_manual_payload_prompts`，取得包含實建條目白名單的 M6 prompt
+5. 讀 M6 chapter compact projection、必要時 query，手寫 `chapter_content.yaml`
+6. `check_manual_payloads`
+7. `render_manual_chapter`
 
-`check_manual_payloads` 是唯讀的；它不會把 alias 連結回寫檔案。任何內容敘述仍須人工對回經文與有效 raw_data。STEP 是原文證據層，不是第五套 commentary：可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域；不得算入四套註釋的共識票。Lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
+`check_manual_payloads` 是唯讀的；它不會把 alias 連結回寫檔案。任何內容敘述仍須人工對回經文與正式來源。Prompt 不再複製已全文讀過的 commentary body；這不是摘要或降低閱讀要求。STEP 是原文證據層，不是第五套 commentary：完整 raw source 經 deterministic machine gate，prompt projection 的 lexicon 依 exact Extended Strong 去重、每個 occurrence 保留 morphology code；不得算入四套註釋的共識票。Lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
 
 ## 內容勘誤：兩個工具能幫到哪、幫不到哪
 

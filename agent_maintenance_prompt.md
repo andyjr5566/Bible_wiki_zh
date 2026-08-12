@@ -267,10 +267,10 @@ python util/verify_links.py 【書名】
 
 ## 實戰要點（開場先讀，少走冤枉路）
 
-這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**manifest 所有 OK 正式來源全讀 → 機械掃描（下 A）
+這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**四套 OK commentary 全讀＋STEP machine gate → 機械掃描（下 A）
 → 逐條目讀＋高風險四類勘誤 → 覆蓋率重推（下 B）→ 驗 M6 → 閘門 → 分兩 commit（勘誤／覆蓋）**。
 
-### A0. 開工第一件事：所有 OK 正式來源全讀，並登記讀取回執（沒過不准動任何檔）
+### A0. 開工第一件事：commentary 全讀＋STEP machine gate（沒過不准動任何檔）
 
 **歷史事故（當時仍是四來源且尚未加閘門）：**「四來源全讀」曾是規格裡唯一沒有閘門的硬規格，所以最先縮水。2026-08-03 實測：
 創48 的 BH、創49 的 KC 與 BH、創50 的 GT 後半／KC／BH 只做了關鍵字 grep 就往下寫，
@@ -279,15 +279,13 @@ python util/verify_links.py 【書名】
 
 因此加了機械閘門，**順序不可調換**：
 
-1. 讀完 `source_manifest.md` 中每個 OK 正式來源的**原檔全文**（目前含四套註釋＋STEP；不是 prompt 內嵌的截斷版，不是 grep）。
-2. 寫 `.tmp/第x章/read_log.md`：每個來源登記行數與**三段逐字引句**，
-   其中**至少一段必須出自該檔後三分之一**。格式見 `util/check_source_read.py` 檔頭。
-3. `python util/check_source_read.py 【書名】 X` 要 PASS。它已掛進
+1. 讀完 `source_manifest.md` 中四套 OK prose commentary 的**原檔全文**（不是 prompt 摘要、不是 grep）。
+2. 寫 `.tmp/第x章/read_log.md`：每個 commentary 登記行數與**三段逐字引句**，其中**至少一段必須出自該檔後三分之一**。STEP 不做人工逐詞引句；完整 raw 檔由 formal parser machine-validate，receipt 寫 `step_source_receipt.json`。
+3. `python util/check_source_read.py 【書名】 X` 要同時回報 commentary receipt 與 STEP machine validation PASS。它已掛進
    `run_chapter_manual.py` 的 `check`——沒過就擋下，render 跑不了。
 4. **回執通過以前，不要動任何 yaml／md。** 邊讀邊寫就是抄近路發生的縫隙。
 
-只 grep 幾個關鍵字湊不出後段引句，這正是本閘門要擋的東西。引句要逐字抄（實測即抓到
-兩處「差不多但不精確」的轉錄）。
+只 grep 幾個關鍵字湊不出 commentary 後段引句，這正是本閘門要擋的東西。引句要逐字抄（實測即抓到兩處「差不多但不精確」的轉錄）。STEP 改驗證方式而非免驗；寫作時讀 task-aware projection，細查用 `step_context.py`／MCP `query_step_context`。
 
 ### A. 每章開場的機械掃描——查無出處的希伯來字母／音譯（work item 2 最有效的第一刀）
 

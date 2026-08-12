@@ -273,6 +273,18 @@ class WordEntry:
     lexicon_full: str = ""
 
 
+@dataclass
+class StepDocument:
+    """Structured form of one canonical rendered STEP TXT source."""
+
+    reference: Reference
+    verses: dict[int, list[WordEntry]]
+
+
+class StepFormatError(ValueError):
+    """Raised when a rendered STEP TXT file violates its formal format."""
+
+
 # ---------------------------------------------------------------------------
 # Utility
 # ---------------------------------------------------------------------------
@@ -930,7 +942,14 @@ def render_markdown(
         ])
 
         for w in words:
-            morph = w.morphology or w.morphology_raw
+            # Keep both the canonical compact code and its human-readable
+            # expansion in the formal source.  Prompt projections can retain
+            # the exact per-occurrence code without repeating the expansion
+            # hundreds of times; on-demand/raw reads still expose both.
+            if w.morphology_raw and w.morphology and w.morphology_raw != w.morphology:
+                morph = f"{w.morphology_raw} — {w.morphology}"
+            else:
+                morph = w.morphology_raw or w.morphology
             lex = w.lexicon_short
             if w.lexicon_word and w.lexicon_word != clean_original_for_display(w.word):
                 lex_head = w.lexicon_word
@@ -978,6 +997,168 @@ def render_markdown(
         ])
 
     return "\n".join(out).rstrip() + "\n"
+
+
+_STEP_TITLE_RE = re.compile(r"^# STEP Bible\s+[—-]\s+(.+?)\s*$")
+_STEP_VERSE_HEADING_RE = re.compile(r"^##\s+(.+?)\s+(\d+):(\d+)\s*$")
+_STEP_TABLE_HEADER = (
+    "#", "原文", "Transliteration", "Context gloss", "Strong",
+    "Morphology", "Brief lexicon",
+)
+
+
+def _parse_markdown_table_row(line: str) -> list[str]:
+    """Parse one renderer-owned Markdown row, preserving escaped separators.
+
+    This is the inverse of :func:`markdown_escape_table`, not a general-purpose
+    Markdown parser.  Keeping it beside the renderer gives the STEP TXT format
+    one tested parser instead of ad-hoc ``split('|')`` consumers.
+    """
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        raise StepFormatError(f"STEP table row 缺少首尾 |：{line[:80]}")
+    body = stripped[1:-1]
+    cells: list[str] = []
+    current: list[str] = []
+    index = 0
+    while index < len(body):
+        char = body[index]
+        if char == "\\" and index + 1 < len(body) and body[index + 1] == "|":
+            current.append("|")
+            index += 2
+            continue
+        if char == "|":
+            cells.append("".join(current).strip())
+            current = []
+        else:
+            current.append(char)
+        index += 1
+    cells.append("".join(current).strip())
+    return cells
+
+
+def parse_rendered_markdown_text(text: str) -> StepDocument:
+    """Parse the canonical ``render_markdown`` TXT representation.
+
+    The rendered TXT is the formal chapter source kept in ``raw_data``.  Prompt
+    projections and machine validation use this strict state-machine parser so
+    they do not depend on the optional upstream dataset cache.
+    """
+    lines = text.splitlines()
+    title_line = next((line.strip() for line in lines if line.strip()), "")
+    title_match = _STEP_TITLE_RE.match(title_line)
+    if not title_match:
+        raise StepFormatError("STEP TXT 缺少合法的 '# STEP Bible — 書卷 章[:範圍]' 標題")
+    try:
+        reference = parse_reference(title_match.group(1))
+    except ValueError as exc:
+        raise StepFormatError(f"STEP TXT 標題 reference 無法解析：{exc}") from exc
+
+    verses: dict[int, list[WordEntry]] = {}
+    current_verse: Optional[int] = None
+    expecting_separator = False
+    in_word_table = False
+    seen_headings: set[int] = set()
+
+    for line_number, raw_line in enumerate(lines, 1):
+        line = raw_line.strip()
+        heading = _STEP_VERSE_HEADING_RE.match(line)
+        if heading:
+            try:
+                heading_ref = parse_reference(
+                    f"{heading.group(1)} {heading.group(2)}:{heading.group(3)}"
+                )
+            except ValueError as exc:
+                raise StepFormatError(
+                    f"第 {line_number} 行 verse heading 無法解析：{exc}"
+                ) from exc
+            if (heading_ref.code != reference.code
+                    or heading_ref.chapter != reference.chapter):
+                raise StepFormatError(
+                    f"第 {line_number} 行 verse heading 與標題書卷／章不一致"
+                )
+            current_verse = int(heading.group(3))
+            if current_verse in seen_headings:
+                raise StepFormatError(f"重複 verse heading：{current_verse}")
+            seen_headings.add(current_verse)
+            verses[current_verse] = []
+            expecting_separator = False
+            in_word_table = False
+            continue
+
+        if current_verse is None:
+            continue
+        if line.startswith("| # |"):
+            cells = tuple(_parse_markdown_table_row(line))
+            if cells != _STEP_TABLE_HEADER:
+                raise StepFormatError(
+                    f"第 {line_number} 行 STEP 欄位不符 canonical schema：{cells}"
+                )
+            expecting_separator = True
+            in_word_table = False
+            continue
+        if expecting_separator:
+            separator = _parse_markdown_table_row(line)
+            if len(separator) != len(_STEP_TABLE_HEADER) or not all(
+                    re.fullmatch(r":?-{3,}:?", cell) for cell in separator):
+                raise StepFormatError(f"第 {line_number} 行 STEP table separator 不合法")
+            expecting_separator = False
+            in_word_table = True
+            continue
+        if not in_word_table or not line.startswith("|"):
+            continue
+
+        cells = _parse_markdown_table_row(line)
+        if len(cells) != len(_STEP_TABLE_HEADER):
+            raise StepFormatError(
+                f"第 {line_number} 行 STEP word row 欄數應為 7，實際 {len(cells)}"
+            )
+        try:
+            position = int(cells[0])
+        except ValueError as exc:
+            raise StepFormatError(
+                f"第 {line_number} 行 STEP word position 不是整數：{cells[0]}"
+            ) from exc
+        strongs = extract_strongs(cells[4])
+        main_strong = choose_main_strong(strongs)
+        morphology_cell = cells[5]
+        if " — " in morphology_cell:
+            morphology_raw, morphology = morphology_cell.split(" — ", 1)
+        else:
+            # Phase-1 formal files stored only the expanded value.  Preserve
+            # compatibility: it remains a valid exact morphology value even
+            # though it is less compact in projections than a native code.
+            morphology_raw = morphology = morphology_cell
+        verses[current_verse].append(WordEntry(
+            reference=f"{reference.code}.{reference.chapter}.{current_verse}",
+            position=position,
+            word=cells[1],
+            transliteration=cells[2],
+            gloss=cells[3],
+            strongs_raw=cells[4],
+            strongs=strongs,
+            main_strong=main_strong,
+            morphology_raw=morphology_raw,
+            morphology=morphology,
+            lexicon_short=cells[6],
+        ))
+
+    if not verses:
+        raise StepFormatError("STEP TXT 沒有任何合法 verse heading")
+    if expecting_separator:
+        raise StepFormatError("STEP TXT table header 後缺少 separator row")
+    empty = [verse for verse, words in verses.items() if not words]
+    if empty:
+        raise StepFormatError(f"STEP TXT verse heading 沒有 word rows：{empty}")
+    return StepDocument(reference=reference, verses=verses)
+
+
+def parse_rendered_markdown(path: Path | str) -> StepDocument:
+    """Read and parse one canonical STEP TXT file from disk."""
+    path = Path(path)
+    return parse_rendered_markdown_text(
+        path.read_text(encoding="utf-8-sig", errors="strict")
+    )
 
 
 def render_json(

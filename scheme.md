@@ -131,7 +131,7 @@ raw_scripture + 有效 raw_data
 - `link_plan` 只決定「用哪個條目、放哪、什麼類別」；寫內容一律回到 raw text 與經文，不得依 plan 編內容。
 - 本章整理（organization）是「### 小節（vX-Y）」分段的整合性散文並標明出處（CT指出…），份量門檻隨章節長度由程式驗證；章節「參考資料」由程式從 source_manifest 注入 OK 來源 URL，模型不手寫。
 - 經文本文只取自 `raw_scripture`，render_chapter 逐字對齊；wiki-link 由程式掃描已知詞彙套用（子字串保證、長詞優先、目標閉合），模型不再手寫經文區。已知詞彙＝候選名＋條目全名＋括號前裸名＋條目 aliases（A/B 取全庫索引、C 取本章 payload）＋候選宣告的 `surfaces`——經文用條目全名與 aliases 都對不上的簡稱時（桌子→陳設餅桌子），在 link_candidates 為該候選宣告 surfaces；同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 幕幔、v31-33 內幔）。同一詞推導出多個條目＝歧義，整詞不連並記 manual_review（宣告的 surfaces 優先於推導，可用來裁決）。
-- 來源全文直接餵給模型（不切片）；超大章節由程式等比截斷（§7）。
+- 正式 raw source 全文保留且可追溯，但 prompt context 與 source truth 分層。Injected/default runner 可用 `FULL`；manual runner 已由 Agent 全文讀四套 commentary，prompt 只放引用；STEP 放 deterministic task projection。FULL 模式的 commentary／structured budget 彼此獨立，STEP 變大不再擠壓 commentary。
 - 累積標記 `<!-- accumulation:{書}:{章}:start/end -->` 由程式生成與定位；同書卷一個 `### 標題`、章次依序排列，重跑冪等。
 
 ---
@@ -172,9 +172,7 @@ python -m unittest discover -s util/tests                  # 工具測試（CI �
   `extract_stepbible.py "書名 章" --data_path .stepbible_data --output_path raw_data --download`
   擷取成 canonical `raw_data/stepbible_{english_book}_{chapter}.txt`。兩路都先落地再讀本地檔；
   禁止硬猜 URL，已存在不覆寫（MCP 正式覆寫需明確 `overwrite=true`）。
-- `build_source_manifest.py` 純依磁碟現況產生四套註釋＋STEP 列，不下載資料。所有狀態 OK 的
-  正式來源都走同一個 `source_excerpts` loader、同一個 `check_source_read.py` 全讀回執閘門，
-  並進入 manual M3/M6 prompt；STEP 缺檔用 extractor 補，註釋缺檔用 crawler 補。
+- `build_source_manifest.py` 純依磁碟現況產生四套註釋＋STEP 列，不下載資料。所有狀態 OK 的正式來源都完整進 provenance／validation，但 gate 依 kind 分流：四套 commentary 走 Agent 全文閱讀＋三段逐字引句（含後 1/3）的 `read_log.md`；STEP 走 formal parser 的 book/chapter、verse coverage、word/Strong/morphology/original script、SHA-256 machine receipt。Manual M3/M6 只重用 commentary 閱讀結果與 STEP projection；STEP 缺檔用 extractor 補，註釋缺檔用 crawler 補。
 - STEP 原始資料來自 [STEP Bible](https://www.stepbible.org/) 的
   [STEPBible-Data](https://github.com/STEPBible/STEPBible-Data)，依 CC BY 4.0 使用；
   `raw_data/stepbible_*.txt` 是衍生擷取檔，必須保留 STEP Bible 與 CC BY 4.0 歸屬。

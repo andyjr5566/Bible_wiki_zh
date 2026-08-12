@@ -29,7 +29,9 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
 步驟3–4：
   python util/build_link_index.py
   python util/run_chapter_manual.py prompts {書名} {X}
-  （依落地 prompt 手寫 entry_content/*.yaml 與 chapter_content.yaml，接著 check → run）
+  （依 manual/sources.md 全文讀 CT/GT/KC/BH 並完成 read_log；STEP 全 raw 看 machine receipt，
+   M3/M6 讀 task-aware projection，細查用 step_context.py/query_step_context；再手寫 payload、check → run。
+   prompt 不再重複內嵌四套 commentary 全文。）
   python util/link_updates.py prepare {書名} {X}
   → 回經文與 manifest 正式來源填 link_updates.yaml 的 summary/relation（繁中）
   python util/link_updates.py apply {書名} {X} --dry-run
