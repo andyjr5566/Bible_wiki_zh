@@ -68,12 +68,12 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v2,3,12-14,16 為亞倫和為百姓所獻的燔祭
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 平安祭（shelamim）
   suggested_type: 原文
   evidence: v4,18-21 為百姓所獻的平安祭（公牛和公綿羊）

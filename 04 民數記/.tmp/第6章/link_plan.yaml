@@ -12,12 +12,12 @@ B_needs_update:
   match_type: exact
   existing_title: 亞倫
   existing_path: link_folder/人物/亞倫.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v11, 14, 16「一隻沒有殘疾、一歲的公羊羔作燔祭」；CT：完全獻給神。
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 贖罪祭
   suggested_type: 神學
   evidence: v11, 14, 16「一隻沒有殘疾、一歲的母羊羔作贖罪祭」；CT：滿足神聖潔的要求。

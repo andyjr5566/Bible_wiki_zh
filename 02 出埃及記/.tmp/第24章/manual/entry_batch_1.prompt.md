@@ -1071,7 +1071,7 @@ The glory that Moses enters seems to be a consuming fire for the Israelites. Her
 - definition 裡的希伯來字母寫法／音譯同樣必須出現在上述來源中，來源沒給就不要寫（程式會逐字驗證希伯來字母的出處，查無出處會退回）。
 - status 一律 formal。accumulations 是「物件陣列」，每項含 book、chapter、summary、relation 四欄，且至少含本章（出埃及記 第24章）一筆、同章只給一筆。
 - development（選填）只收「跨書卷／跨章的主題遞進或預表發展」；同一段經文內的字義、詞源、各家詮釋辯論寫進 definition，不要塞進 development；也不要逐句重述某一筆 accumulations 已有的 summary／relation——沒有真正跨卷的內容就留空，不要硬湊。若此條目是既有條目（已有其他章節的 accumulations），development 必須反映目前全部已累積的範圍，不能只停留在最早那一章／那一卷。
-- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）：摩西, 亞倫, 拿答, 亞比戶, 遠遠下拜, 下拜, 親近, 中保, 立約儀式, 寫上, 山腳, 十二根柱子, 燔祭（olah）, 平安祭（shelamim）, 灑, 遵行, 立約之血, 西乃之約, 長老上山見神, 看見神, 神的榮耀, 榮耀, 約書亞, 戶珥, 摩西上山領石版, 雲彩, 西乃山, 烈火, 四十晝夜, 出19：8, 出19：12-13, 出20：21, 出24：12, 來9：18-22, 來9：19, 來12：24, 彼前1：2, 來3：1-6, 來10：19-20, 太26：28, 路22：20, 林前11：25, 結1：26-27, 申9：9-11, 申10：1-5, 王上18：31, 藍寶石, 石版。
+- related_entries 只能從此清單選（用完整條目名，不可用「創3:24」這類裸經文引用）：摩西, 亞倫, 拿答, 亞比戶, 遠遠下拜, 下拜, 親近, 中保, 立約儀式, 寫上, 山腳, 十二根柱子, 燔祭, 平安祭（shelamim）, 灑, 遵行, 立約之血, 西乃之約, 長老上山見神, 看見神, 神的榮耀, 榮耀, 約書亞, 戶珥, 摩西上山領石版, 雲彩, 西乃山, 烈火, 四十晝夜, 出19：8, 出19：12-13, 出20：21, 出24：12, 來9：18-22, 來9：19, 來12：24, 彼前1：2, 來3：1-6, 來10：19-20, 太26：28, 路22：20, 林前11：25, 結1：26-27, 申9：9-11, 申10：1-5, 王上18：31, 藍寶石, 石版。
 - sources 每項格式「標籤: 位置說明（URL）」，標籤與 URL 必須成對取自本章來源：BH: https://biblehub.com/study/exodus/24.htm；CT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT24.htm；GT: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT24.htm；KC: https://www.kingcomments.com/en/bible-studies/Exo/24——標籤寫錯對應（如 KC 標籤配 CT 的 URL）視為錯誤。
 - 互文類條目 name 不可只有經文引用，須用「簡短標題（經文）」，例如「天上真聖所（來9：23-24）」；括號內保留原經文、冒號用全形「：」。
 - 每個 payload 的 name 必須能對回上面清單（可加音譯後綴）。

@@ -46,14 +46,14 @@ B_needs_update:
   match_type: exact
   existing_title: 會幕（帳幕整體）
   existing_path: link_folder/主題/會幕（帳幕整體）.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: 第10節：「在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號...」快樂日、節期及月朔奉獻燔祭時皆需吹銀號，作為在耶和華面前的紀念。
   surfaces:
   - phrase: 燔祭
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 平安祭（shelamim）
   suggested_type: 原文
   evidence: 第10節：「...獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。」平安祭表達與神並百姓互相比鄰的團契歡慶，伴隨吹號更顯敬拜的感恩與神聖榮耀。

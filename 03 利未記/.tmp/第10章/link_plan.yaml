@@ -92,12 +92,12 @@ B_needs_update:
   match_type: exact
   existing_title: 膏油（聖膏油）
   existing_path: link_folder/原文/膏油（聖膏油）.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v12,16,19 承接聖職期間常獻的燔祭與百姓所獻的燔祭
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 C_new_formal:
 - name: 凡火
   suggested_type: 主題

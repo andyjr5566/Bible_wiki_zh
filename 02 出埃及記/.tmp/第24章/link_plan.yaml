@@ -111,7 +111,7 @@ A_use_directly:
   match_type: exact
   existing_title: 十二根柱子
   existing_path: link_folder/事件/十二根柱子.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: 5節；原文字義「燔祭，升高」；是馨香的火祭，全然焚燒獻給神，以討神悅納
   surfaces:
@@ -119,8 +119,8 @@ A_use_directly:
     verses:
     - 5
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 平安祭（shelamim）
   suggested_type: 原文
   evidence: 5節；原文字義「平安祭，結盟的祭」；《舊約背景註釋》指立約儀式獻這種祭十分適宜，因為它是為參與者分享而設的

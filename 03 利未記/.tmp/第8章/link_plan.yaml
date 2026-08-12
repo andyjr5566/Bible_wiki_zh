@@ -140,12 +140,12 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v18-21 第一隻公綿羊獻為燔祭，「把全羊燒在壇上為馨香的燔祭」
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 脂油（chelev）
   suggested_type: 原文
   evidence: v16,25「取臟上所有的脂油」「取脂油和肥尾巴」

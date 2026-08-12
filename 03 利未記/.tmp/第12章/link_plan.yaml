@@ -20,12 +20,12 @@ B_needs_update:
   match_type: exact
   existing_title: 割禮之約
   existing_path: link_folder/神學/割禮之約.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v6,8「她要把一歲的羊羔為燔祭」；GT 丁良才註：此處燔祭列在贖罪祭前，表示婦人因神的慈悲將自己獻給神
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 贖罪祭
   suggested_type: 神學
   evidence: v6,7,8「一隻雛鴿或是一隻斑鳩為贖罪祭」；祭司獻上為她贖罪，她的血源就潔淨了

@@ -32,12 +32,12 @@ B_needs_update:
   match_type: exact
   existing_title: 哥轄子孫
   existing_path: link_folder/人物/哥轄子孫.md
-- name: 燔祭（olah）
+- name: 燔祭
   suggested_type: 原文
   evidence: v15, 87「作燔祭的，共有公牛十二隻…」。
   match_type: exact
-  existing_title: 燔祭（olah）
-  existing_path: link_folder/原文/燔祭（olah）.md
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
 - name: 贖罪祭
   suggested_type: 神學
   evidence: v16, 87「作贖罪祭的公山羊十二隻…」。

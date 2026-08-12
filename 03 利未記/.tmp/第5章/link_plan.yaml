@@ -225,7 +225,7 @@ D_new_candidate:
   match_type: type_conflict
   note: 分類衝突：候選=原文，既有=神學，secondary=['制度', '互文']
   semantic_hint:
-  - title: 燔祭（olah）
+  - title: 燔祭
     score: 0.532
     type: 原文
   - title: 古代近東的獻祭與燔祭習俗

@@ -13216,14 +13216,6 @@
       "無酵的餅"
     ]
   },
-  "燔祭（olah）": {
-    "path": "link_folder/原文/燔祭（olah）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "燔祭（olah）",
-    "status": "formal",
-    "aliases": []
-  },
   "牆垣": {
     "path": "link_folder/原文/牆垣.md",
     "type": "原文",
@@ -20509,7 +20501,8 @@
     "title": "燔祭",
     "status": "formal",
     "aliases": [
-      "全燔祭"
+      "全燔祭",
+      "燔祭(olah)"
     ]
   },
   "燔祭平安祭同獻的素祭與奠祭比例": {
@@ -30261,6 +30254,9 @@
     "alias_of": "燃燒卻不燒毀的荊棘"
   },
   "全燔祭": {
+    "alias_of": "燔祭"
+  },
+  "燔祭(olah)": {
     "alias_of": "燔祭"
   },
   "三級燔祭": {
