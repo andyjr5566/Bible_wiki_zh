@@ -358,7 +358,7 @@ def cmd_check(args):
         print("❌ 尚無 link_plan.yaml——先跑 prompts")
         return 1
     plan = rc._read_yaml(plan_path) or {}
-    # 四來源全讀的機械閘門：沒有逐字回執就擋下（見 util/check_source_read.py 檔頭）
+    # manifest 所有 OK 正式來源全讀閘門：沒有逐字回執就擋下
     problems.extend(check_source_read.check(args.book, args.chapter))
     # Prompt 規格檔全讀的機械閘門：沒有 Prompt 逐字回執就擋下（見 util/check_prompt_read.py 檔頭）
     problems.extend(check_prompt_read.check(args.book, args.chapter))

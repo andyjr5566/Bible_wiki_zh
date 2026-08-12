@@ -6,14 +6,17 @@
 
 ## 步驟1：準備來源
 - 經文本地應已有：raw_scripture/{標準書名}/第{X}章.txt（缺檔就停，回報使用者，不要自己編）
-- 四來源（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL
+- 四套註釋（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL
   （禁止硬猜），缺檔才用 crawl_bible_text.py 補爬；已存在的 raw_data 直接沿用。
+- STEP 原文資料缺檔時執行：
+    python util/extract_stepbible.py "【{書名}】 {X}" --data_path .stepbible_data --output_path raw_data --download
+  STEP 是原文證據層，不是第五套註釋；lexicon 義域／morphology 不可直接當語境義／神學結論。
 - manifest 一律用程式產生，不要手寫：
     python util/build_source_manifest.py 【{書名}】 {X}
-  標「缺檔」的來源要先補爬再重跑，直到四來源都 OK。
+  標「缺檔」的來源先依狀態提示補 `crawl` 或 `extract` 再重跑，直到五個正式來源都 OK。
 
 ## 步驟2：建 link_candidates.yaml（這是你唯一要做判斷的地方）
-- 四來源全部讀完才動筆，只放經文或有效 raw text 明確觸發的候選。
+- manifest 中所有 OK 正式來源全部讀完才動筆，只放經文或有效 raw text 明確觸發的候選。
 - 格式依 _config/schemas/link_candidates.schema.json；分類 type 只能用
   link_folder/ 底下真實存在的資料夾名（主題、事件、互文、人物、原文、地點、
   文化、歷史、神學、背景、解經爭議）——自己造分類會靜默失效，不是報錯。
@@ -22,6 +25,8 @@
   {phrase, verses} 限定節次。
 - 原文類候選的括號音譯／希伯來字母，必須是本章來源實際出現過的拼寫
   （grep -i raw_data 確認），來源沒給就用裸中文名，不可憑常識補配。
+- STEP 可觸發原文候選，但仍須有研究／跨章累積／實質內容價值；不得替每個功能詞、詞形或
+  Strong 編號批量建頁，Strong 編號不是 wiki ID。四套註釋的共識計數不得把 STEP 算一票。
 
 候選寫齊後，定稿前必跑語義近鄰報告：
     python util/semantic_lookup.py --candidates 【{書名}】 {X}

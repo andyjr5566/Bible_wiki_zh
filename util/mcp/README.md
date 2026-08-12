@@ -2,7 +2,7 @@
 
 這個 server 是既有章節流程的安全介面，不是另一套 workflow。內容規格仍以
 [`agent_start_prompt.md`](../../agent_start_prompt.md) 與
-[`agent_maintenance_prompt.md`](../../agent_maintenance_prompt.md) 為準；MCP 不會代替四來源勘誤或最終驗證。
+[`agent_maintenance_prompt.md`](../../agent_maintenance_prompt.md) 為準；MCP 不會代替 manifest 正式來源勘誤或最終驗證。
 
 ## 工具
 
@@ -22,7 +22,8 @@
 | `preview_chapter_link_updates` | 驗證 B 類累積更新並產生一次性 preview token。 | 否 |
 | `apply_chapter_link_updates` | 只套用 token 對應的預覽；預覽或目標檔改變後 token 立即失效。 | 是 |
 | `crawl_bible_source` | 對單一明確 URL 呼叫 `crawl_bible_text.py`，輸出限制在 `raw_data/`。 | 是（不覆寫預設） |
-| `build_source_manifest` | 產生或檢查四來源 `source_manifest.md`。 | 是（check-only 否） |
+| `extract_stepbible` | 由固定的 `.stepbible_data/` 擷取單章／節範圍到 canonical `raw_data/stepbible_*.txt`；可只下載所需官方檔。 | 是（不覆寫預設） |
+| `build_source_manifest` | 產生或檢查四套註釋＋STEP 原文資料的 `source_manifest.md`。 | 是（check-only 否） |
 | `build_candidate_similarity` | 呼叫 `semantic_lookup.py --candidates` 產生人工判讀報告。 | 是 |
 | `model_client` | 對應 `model_client.py list|test|use`；`use` 必須 `confirm=true`。 | `use` 會寫入 |
 | `sync_link_index` | 對應 `build_link_index.py`，可選 `check_only`。 | 是（check-only 否） |
@@ -53,7 +54,7 @@ M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 5. `check_manual_payloads`
 6. `render_manual_chapter`
 
-`check_manual_payloads` 是唯讀的；它不會把 alias 連結回寫檔案。任何內容敘述仍須人工對回經文與有效 raw_data。
+`check_manual_payloads` 是唯讀的；它不會把 alias 連結回寫檔案。任何內容敘述仍須人工對回經文與有效 raw_data。STEP 是原文證據層，不是第五套 commentary：可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域；不得算入四套註釋的共識票。Lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
 
 ## 內容勘誤：兩個工具能幫到哪、幫不到哪
 

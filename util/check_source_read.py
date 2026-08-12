@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""四來源「全讀」的機械閘門——把自我宣告換成可逐字驗證的回執。
+"""manifest 中所有 OK 正式來源的「全讀」機械閘門。
 
 背景：agent_maintenance_prompt.md 實戰要點 F 記過一次教訓——規格裡可機械驗證的
-部分都有閘門（verify_links／validate_knowledge_base…），跑完會亮綠燈；「四來源全讀」
+部分都有閘門（verify_links／validate_knowledge_base…），跑完會亮綠燈；「正式來源全讀」
 沒有閘門，於是注意力流向會發亮的那些，通讀那條靜靜縮水，而四道閘門照樣全綠。
 2026-08-03 再次復發：創48 的 BH、創49 的 KC 與 BH、創50 的 GT 後半／KC／BH 只做了
 關鍵字 grep 就往下寫，漏掉整批材料（KC 創49 對中間六支派的末世解讀、GT 創50 丁良才
 的約瑟預表基督對照表、BH 創48 的猶太祝福傳統）。
 
-作法：每章在 `.tmp/第x章/read_log.md` 登記四個來源，每個要給
+作法：每章在 `.tmp/第x章/read_log.md` 登記 manifest 中每個 OK 正式來源，每個要給
   - 檔名（對得上 source_manifest 宣告的 raw_data 檔）
   - 三段逐字引句，其中**至少一段必須出自該檔後三分之一**
 逐字比對 raw_data 原檔；對不上、缺來源、或三段都擠在前段，一律 FAIL。
@@ -42,20 +42,30 @@ MIN_QUOTE_LEN = 8
 TAIL_FRACTION = 2.0 / 3.0
 
 
-def _chapter_dir(book: str, chapter: int) -> Path:
-    for folder in sorted(ROOT.iterdir()):
+def _chapter_dir(book: str, chapter: int, root: Path = ROOT) -> Path:
+    for folder in sorted(Path(root).iterdir()):
         if folder.is_dir() and folder.name.endswith(f" {book}"):
             return folder / ".tmp" / f"第{chapter}章"
     raise SystemExit(f"❌ 找不到書卷資料夾：{book}")
 
 
-def _manifest_sources(chapter_dir: Path) -> list[str]:
-    """讀 source_manifest.md 宣告的 raw_data 檔（只取帶 raw_data/ 前綴的路徑）。"""
+def _manifest_sources(chapter_dir: Path, root: Path = ROOT) -> list[str]:
+    """讀 manifest 中所有狀態 OK 且屬 raw_data 的正式來源。"""
     manifest = chapter_dir / "source_manifest.md"
-    if not manifest.exists():
+    try:
+        try:
+            from . import source_excerpts
+        except ImportError:
+            import source_excerpts
+        paths = source_excerpts.parse_manifest(manifest, root)
+    except (OSError, ValueError):
         return []
-    text = manifest.read_text(encoding="utf-8", errors="ignore")
-    found = re.findall(r"raw_data/[A-Za-z0-9_\-.]+\.txt", text)
+    found = []
+    for _label, path in paths:
+        try:
+            found.append(Path(path).relative_to(root).as_posix())
+        except ValueError:
+            continue
     return list(dict.fromkeys(found))
 
 
@@ -99,17 +109,18 @@ def _quote_position(raw_lines: list[str], quote: str) -> int | None:
     return len(raw_lines)
 
 
-def check(book: str, chapter: int, strict_lines: bool = False) -> list[str]:
-    chapter_dir = _chapter_dir(book, chapter)
+def check(book: str, chapter: int, strict_lines: bool = False, *, root: Path = ROOT) -> list[str]:
+    root = Path(root)
+    chapter_dir = _chapter_dir(book, chapter, root)
     log_path = chapter_dir / "read_log.md"
     if not log_path.exists():
         return [
-            f"缺 {log_path.relative_to(ROOT).as_posix()}——四來源尚未登記讀取回執。"
-            "先把四個來源原檔全讀完，再依 check_source_read.py 檔頭的格式登記。"
+            f"缺 {log_path.relative_to(root).as_posix()}——正式來源尚未登記讀取回執。"
+            "先把 manifest 中所有 OK 原檔全讀完，再依 check_source_read.py 檔頭格式登記。"
         ]
 
     problems: list[str] = []
-    declared = _manifest_sources(chapter_dir)
+    declared = _manifest_sources(chapter_dir, root)
     logged = _parse_log(log_path)
 
     for src in declared:
@@ -117,7 +128,7 @@ def check(book: str, chapter: int, strict_lines: bool = False) -> list[str]:
             problems.append(f"read_log.md 沒有登記來源：{src}")
 
     for src, info in logged.items():
-        raw_path = ROOT / src
+        raw_path = root / src
         if not raw_path.exists():
             problems.append(f"{src}：raw_data 檔不存在")
             continue
@@ -149,7 +160,7 @@ def check(book: str, chapter: int, strict_lines: bool = False) -> list[str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="驗證本章四來源的讀取回執")
+    parser = argparse.ArgumentParser(description="驗證本章所有 OK 正式來源的讀取回執")
     parser.add_argument("book")
     parser.add_argument("chapter", type=int)
     parser.add_argument("--strict-lines", action="store_true", help="併驗登記的行數")
@@ -162,7 +173,11 @@ def main() -> int:
             print(f"   - {item}")
         print("結論：FAIL")
         return 1
-    print(f"✅ {args.book} 第{args.chapter}章：四來源讀取回執通過（每個來源均有後段逐字引句）")
+    count = len(_manifest_sources(_chapter_dir(args.book, args.chapter), ROOT))
+    print(
+        f"✅ {args.book} 第{args.chapter}章：{count} 個 OK 正式來源讀取回執通過"
+        "（每個來源均有後段逐字引句）"
+    )
     print("結論：PASS")
     return 0
 

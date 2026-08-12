@@ -177,8 +177,9 @@ def build_checks(book, chapter, root=ROOT):
         (
             "步驟1｜source_manifest.md",
             (tmp / "source_manifest.md").exists(),
-            "從步驟1「準備來源」繼續：對每個補充來源（CT/GT/KC/BH）以既有記錄或目錄頁確認 URL 後跑 "
-            "crawl_bible_text.py 抓 raw_data，查核每份 raw text 是否為本章有效內容，寫 "
+            "從步驟1「準備來源」繼續：四套註釋（CT/GT/KC/BH）用 crawl_bible_text.py，"
+            "STEP 原文資料用 extract_stepbible.py；查核每份 raw text 是否為本章有效內容後，"
+            "再用 build_source_manifest.py 寫 "
             f"{tmp / 'source_manifest.md'}。",
         ),
         (

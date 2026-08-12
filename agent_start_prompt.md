@@ -6,10 +6,11 @@
 
 連上 `Hermes-Scripture-MCP` 時，可用 `get_chapter_status` 看目前缺口、
 `search_wiki_entries`／`read_wiki_entry` 查正式條目與 alias、`read_chapter_artifact`／
-`read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、四來源
+`read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、manifest 正式來源
 內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
 
-本檔下面列出的 `util/*.py` 都有對應 MCP 工具：來源抓取用 `crawl_bible_source`，manifest 用
+本檔下面列出的 `util/*.py` 都有對應 MCP 工具：註釋抓取用 `crawl_bible_source`、STEP 原文擷取用
+`extract_stepbible`，manifest 用
 `build_source_manifest`，候選報告用 `build_candidate_similarity`；
 索引與收尾檢查依序用 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
@@ -26,7 +27,7 @@ tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之
 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
 `render_manual_chapter`。這條路實際執行的是 `util/run_chapter_manual.py`，不可以 MCP
 工具偷換成自動生成。`lint_chapter_content` 只是格式提示；M3/M6 的
-結構閘門是 `check_manual_payloads`，內容正確性仍須逐條對四來源。
+結構閘門是 `check_manual_payloads`，內容正確性仍須逐條對 manifest 中所有 OK 正式來源。
 
 B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updates.yaml` 與來源 →
 帶 preview token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。它不取代本檔
@@ -41,10 +42,11 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
 
 1. **準備來源**（章節的 `.tmp` 資料夾：`【序號 書名】/.tmp/第x章/`）
    - 經文已在本地：`raw_scripture/{標準書名}/第{章}.txt`（缺檔即停，回報使用者）。
-   - 每個補充來源（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL（禁止硬猜），執行：
+   - 四套註釋（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL（禁止硬猜），執行：
      `python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"`
      已存在的 raw_data 檔直接沿用，不加 `--overwrite`。
-   - **不要手寫 `source_manifest.md`**，改用：`python util/build_source_manifest.py 【書名】 X`（位址規則在 `_config/source_catalog.json`，新書卷先補一列 cc_folder／kc／en）。它依規則產生四來源、raw_data 路徑一律帶 `raw_data/` 前綴，並依檔案是否存在標 OK／缺檔。標「缺檔」就先 `crawl_bible_text.py` 補爬。
+   - STEP 原文資料用：`python util/extract_stepbible.py "【書名】 X" --data_path .stepbible_data --output_path raw_data --download`。它只下載該書卷所需 tagged text、lexicon、morphology 檔到 gitignored cache，再輸出 canonical `stepbible_*.txt`。
+   - **不要手寫 `source_manifest.md`**，改用：`python util/build_source_manifest.py 【書名】 X`（四套註釋位址規則在 `_config/source_catalog.json`；STEP 的 66 卷檔名契約在 extractor）。它產生四套註釋＋STEP 原文資料列，raw_data 路徑一律帶 `raw_data/` 前綴。缺註釋依提示用 crawler；缺 STEP 依提示用 extractor。
    - run_chapter 的 M3／M6 生成前會檢查來源讀得到；manifest 宣告 OK 卻讀不到任何 raw_data 檔就丟 `SourceError` 中止（防止空來源生成）。照訊息修 manifest 或補 raw_data 再重跑。
 
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
@@ -54,6 +56,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - **`type` 只能是 `link_folder/` 底下真的存在的資料夾**：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議。自己造一個看起來很合理的分類（利10 的「祭禮」、民9 的「儀式」、民10 的「器具」）會靜默失效——resolver 認不得，只把候選降級成 `D_new_candidate` 並附一句 note「未知分類：X」，那是 plan 檔裡的一行字，不是錯誤，跑完照樣印「✅ 完成」，下場與斜線名完全相同。祭祀相關的歸 `主題`（制度）或 `原文`（術語），器物歸 `主題`／`文化`。（validate 會擋）
    - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
    - **原文類候選名的括號音譯必須是本章來源實際出現過的拼寫**（先 `grep -i` raw_data 確認）；來源沒給音譯就用裸中文名，不可憑聖經工具書常識補配（利2「紀念份（azkarah）」實例：來源只給英文 memorial portion）。希伯來字母寫法同理，且更嚴：P4 validate 對候選檔／entry_content／chapter_content 逐字驗證希伯來字母的出處，查無出處＝error 擋 build（全庫實測抓到創47/出28-30/利1 共 18 筆歷史真陽性、0 誤報）；本章新建原文類名稱的拉丁音譯查無出處＝manual_review 提醒（拼寫變體無法機械排除）。
+   - **STEP 的使用邊界**：它是原文證據層，不是第五套 commentary。可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域，但 lexicon 只是可能義域，不等於本節必然語境義；morphology 也不自行推出神學結論。STEP 可觸發原文候選，仍只收有研究／跨章累積／實質內容價值者；不為每個功能詞、詞形或 Strong 編號批量建頁，Strong 不是 wiki ID。比較 CT／GT／KC／BH 的共識時不得把 STEP 算一票。
    - **候選寫齊後跑語義近鄰報告**（候選定稿前必經，check_chapter_files 會驗報告存在）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
      程式把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢、一次批量比對全庫索引，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告三種資訊都要看：
@@ -89,9 +92,9 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
 5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
    - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。
 
-6. **M3/M6 與 B 類內容的勘誤複核（commit 前必做）**：手寫的 `entry_content`、`chapter_content`，以及 `link_updates.py` 填的 summary／relation，都不是程式能證明正確的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對四來源原文：
+6. **M3/M6 與 B 類內容的勘誤複核（commit 前必做）**：手寫的 `entry_content`、`chapter_content`，以及 `link_updates.py` 填的 summary／relation，都不是程式能證明正確的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對 manifest 正式來源：
    - 抓法同 §「內容勘誤」四類高風險：內容是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
-   - P4 已有數道 manual_review 輔助（實錯做成的，只提醒不擋 build，人工複核仍是主力）：①本章整理行文／表格裡查無出處的拉丁音譯（M6 每次重新生成都可能在新位置編一個，改 entry_content 觸發重生後要整份重查）；②引句掛名來源查無、卻在別家 raw 檔逐字找到＝誤植嫌疑（GT 是丁良才／啟導本／串珠／背景註釋等多家合訂本，最常被錯拆成「BH」；兩邊都查無的引句多半是英文來源的中譯，機器不可驗，仍要人工比對）；③**解經爭議類條目的「主題發展／定義」被塞進查無出處的解經史**（利12／利13 實錯：`type=解經爭議` 且 evidence 描述雙方交鋒時，M3／M6 會 develop 出一段來源根本沒提的解經史分期——早期猶太解經／教父時期＋奧古斯丁／宗教改革＋加爾文／現代學者 Wenham、Milgrom…；判準是「條目含具名學者／經典／分期用語、但該詞在本章四來源與經文查無出處」）。解經爭議條目只能陳述四來源實際記載的立場，不可自行編造解經史或補上來源沒提的學者／教父／改教人物；報到時逐一 `grep` raw_data 核對，查無出處者整段拔除。
+   - P4 已有數道 manual_review 輔助（實錯做成的，只提醒不擋 build，人工複核仍是主力）：①本章整理行文／表格裡查無出處的拉丁音譯（M6 每次重新生成都可能在新位置編一個，改 entry_content 觸發重生後要整份重查）；②引句掛名來源查無、卻在別家 raw 檔逐字找到＝誤植嫌疑（GT 是丁良才／啟導本／串珠／背景註釋等多家合訂本，最常被錯拆成「BH」；兩邊都查無的引句多半是英文來源的中譯，機器不可驗，仍要人工比對）；③**解經爭議類條目的「主題發展／定義」被塞進查無出處的解經史**（利12／利13 實錯：`type=解經爭議` 且 evidence 描述雙方交鋒時，M3／M6 會 develop 出一段來源根本沒提的解經史分期；判準是「條目含具名學者／經典／分期用語、但該詞在本章正式來源與經文查無出處」）。解經爭議條目只能陳述四套註釋實際記載的立場，不可自行編造解經史；STEP 僅可補語言事實，不得被當成第五家解經立場。
    - P4 另有一道 error 級機械護欄（利11 實錯做成）：**knowledge_nodes 單一清單項用頓號把兩個條目名黏成一項**（利11「摩西、亞倫和他兒子（祭司）」當一個節點）——整項對不上任何條目會被靜默丟棄，連同各自的本章累積一起消失，而 `_split_node_errors` 只抓「有右括號沒左括號」的逗號碎片、抓不到兩邊括號都完整的頓號合併。判準嚴格（整項對不上、但拆開後 ≥2 段各自對得上真實條目才判為合併，放行「肉體的情慾、眼目的情慾、今生的驕傲」這類名字本身帶頓號的合法條目），故列 error；報到時拆成獨立清單項目，一項一個條目名。
    - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml` 或 `entry_content/*.yaml` 後，重跑 `python util/run_chapter_manual.py check` → `run` 讓 render 重新產出 markdown——**只改渲染後的 markdown 而不改 yaml，下次 render 會覆蓋回錯的舊內容**。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`。
    - 改動 `link_candidates.yaml` 後要重跑 `python util/run_chapter_manual.py prompts`，確認過期清單後再手寫缺少的 payload；改 `entry_content/*.yaml` 後則重新 `check`，必要時重跑 `prompts` 取得新的白名單。
@@ -141,7 +144,7 @@ python util/build_appendix_links.py
 ## 行為邊界（內容層，程式無法代勞）
 
 - 一切內容由已收集資料驅動：candidates、summary/relation、條目敘述都必須能對回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
-- **run_chapter／link_updates 產出後，agent 必須以四來源為基準逐條複核，不可假設自動產出的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
+- **run_chapter／link_updates 產出後，agent 必須以 manifest 正式來源為基準逐條複核，不可假設產出的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
 - **英文來源（KingComments、BibleHub）引用時要譯成繁體中文**，不可整段貼英文原文——本檔開頭已訂「所有輸出用繁體中文」。譯文仍要保留引號與出處（KC：「燔祭一切的價值，就彷彿轉到了他、就是獻祭者身上。」），不要因為要翻譯就退回「KC 指出…」的摘要體。只有在原文用字本身就是重點時（如原文區分 'to burn' 與 'to offer up in smoke'）才以括號附註原文。
 - 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
 - 檔案改名一律用 `python util/rename_markdown.py <src> <dst> [--dry-run]`（會同步全庫 WikiLink）。

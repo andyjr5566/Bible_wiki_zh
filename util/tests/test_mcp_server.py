@@ -91,6 +91,52 @@ class ManualCompletionTests(unittest.TestCase):
             self.assertTrue(any("chapter_content.yaml" in item for item in missing))
 
 
+class StepExtractorToolTests(unittest.TestCase):
+    def test_tool_uses_fixed_safe_paths_and_canonical_filename(self):
+        calls = []
+
+        def fake_run(script, *args, timeout=300):
+            calls.append((script, args, timeout))
+            return {"success": True, "returncode": 0, "stdout": "", "stderr": ""}
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "raw_data").mkdir()
+            with patch.object(server, "ROOT_DIR", root), patch.object(server, "_run_util_command", fake_run):
+                result = server.extract_stepbible(
+                    "約翰福音", 1, verse_start=1, verse_end=5, download=True
+                )
+        self.assertTrue(result["success"])
+        self.assertEqual("raw_data/stepbible_john_1_1-5.txt", result["path"])
+        script, args, timeout = calls[0]
+        self.assertEqual("extract_stepbible.py", script)
+        self.assertIn("約翰福音 1:1-5", args)
+        self.assertIn(".stepbible_data", args)
+        self.assertIn("raw_data", args)
+        self.assertIn("--download", args)
+        self.assertLessEqual(timeout, 900)
+
+    def test_tool_rejects_bad_range_before_running(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with patch.object(server, "ROOT_DIR", root), patch.object(server, "_run_util_command") as run:
+                result = server.extract_stepbible("創世記", 1, verse_start=5, verse_end=1)
+        self.assertFalse(result["success"])
+        run.assert_not_called()
+
+    def test_tool_does_not_overwrite_without_explicit_flag(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "raw_data" / "stepbible_genesis_1.txt"
+            target.parent.mkdir()
+            target.write_text("existing", encoding="utf-8")
+            with patch.object(server, "ROOT_DIR", root), patch.object(server, "_run_util_command") as run:
+                result = server.extract_stepbible("創世記", 1)
+        self.assertFalse(result["success"])
+        self.assertIn("overwrite=true", result["error"])
+        run.assert_not_called()
+
+
 class MCPUpdateTokenTests(unittest.TestCase):
     def test_apply_rejects_a_preview_token_when_target_changed(self):
         with tempfile.TemporaryDirectory() as directory:

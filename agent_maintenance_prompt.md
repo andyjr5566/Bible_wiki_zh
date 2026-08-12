@@ -16,6 +16,8 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 
 - **斜線候選名**建不出 `entry_content/<name>.yaml`，整鏈靜默失效。
 - **surface 衝突**（兩候選搶同詞）要判 ambiguous；原文候選拿經文本義詞、主題候選拿詮釋詞。
+- **STEP 只觸發有研究／跨章累積／實質內容價值的原文候選**；不可替每個功能詞、詞形或
+  Strong 編號批量建頁，Strong 編號不是 wiki ID。
 - **type 必須對得上既有資料夾**（動手前先 Glob 確認）；對不上會 fork 重複條目。
 - 和合本女性主詞用「他」不用「她」——surface 寫「她」會對不上經文（「未連上任何節」先查這個）。
 
@@ -72,6 +74,9 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
   表格／callout 只是補充，不可反客為主。
 - **內容**：直接引原話「」並標對哪一家（CT／GT／KC／BH 或 GT 內各家），不張冠李戴、
   某家沒說就別替他生一個；矛盾並陳不壓平；英文來源譯成繁中不貼原文；只出自經文與來源。
+- **STEP 邊界**：STEP 是原文證據層，不是第五套 commentary；可支持詞形、lemma、Strong、
+  morphology、context gloss 與 lexicon 義域，但不算 commentary 共識票。Lexicon 是可能義域，
+  不等於本節必然語境義；morphology 也不自行推出神學結論。語言事實與註釋解讀分開寫。
 - **圖表優先**：材料是流程／路線／對照／階層／關係／時間軸的形狀 → 對應 mermaid／表格；
   但圖表不折抵散文份量（字數與小節下限先由散文滿足）。
 - **格式硬規**：`organization` 用 YAML `|` 字面區塊；mermaid 節點 `A["標籤"]`、圖內不放
@@ -106,7 +111,7 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 2. **人工重跑**：重跑一律用 `util/run_chapter_manual.py`（`check` → `run`）。它沿用
    原版 orchestrator 的結構護欄與作廢預警；缺少人工 payload 時直接報錯。`link_updates.py`
    照原版用。
-3. **內容鐵律不因維護而放鬆**：修改後的文字仍必須能對回經文與本章四來源
+3. **內容鐵律不因維護而放鬆**：修改後的文字仍必須能對回經文與本章 manifest 的所有 OK 正式來源
    （`.tmp/第x章/manual/sources.md` 或 `source_manifest.md` 列的 raw_data 檔）；
    新增的引句、經文引註、音譯都要先 grep raw_data 確認出處。
 
@@ -117,7 +122,7 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 讀本章經文或 manifest 宣告為 OK 的來源、用 `search_wiki_entries`／`read_wiki_entry` 核對
 既有條目與 alias。這些工具有路徑白名單，不能用來讀任意檔案。
 
-本檔引用的 `util/*.py` 也都有 MCP 對應：`build_source_manifest`、`build_candidate_similarity`、
+本檔引用的 `util/*.py` 也都有 MCP 對應：`extract_stepbible`、`build_source_manifest`、`build_candidate_similarity`、
 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
 `audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates` 與
@@ -262,19 +267,19 @@ python util/verify_links.py 【書名】
 
 ## 實戰要點（開場先讀，少走冤枉路）
 
-這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**四來源全讀 → 機械掃描（下 A）
+這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**manifest 所有 OK 正式來源全讀 → 機械掃描（下 A）
 → 逐條目讀＋高風險四類勘誤 → 覆蓋率重推（下 B）→ 驗 M6 → 閘門 → 分兩 commit（勘誤／覆蓋）**。
 
-### A0. 開工第一件事：四來源全讀，並登記讀取回執（沒過不准動任何檔）
+### A0. 開工第一件事：所有 OK 正式來源全讀，並登記讀取回執（沒過不准動任何檔）
 
-**「四來源全讀」是規格裡唯一沒有閘門的硬規格，所以它會第一個縮水。** 2026-08-03 實測：
+**歷史事故（當時仍是四來源且尚未加閘門）：**「四來源全讀」曾是規格裡唯一沒有閘門的硬規格，所以最先縮水。2026-08-03 實測：
 創48 的 BH、創49 的 KC 與 BH、創50 的 GT 後半／KC／BH 只做了關鍵字 grep 就往下寫，
 漏掉整批材料（KC 創49 把中間六支派讀成一條連續的末世預言線、GT 創50 丁良才的約瑟預表
 基督對照表、BH 創48 的猶太祝福傳統），而四道閘門每章全綠。
 
 因此加了機械閘門，**順序不可調換**：
 
-1. 讀完四個來源**原檔全文**（不是 prompt 內嵌的截斷版，不是 grep）。
+1. 讀完 `source_manifest.md` 中每個 OK 正式來源的**原檔全文**（目前含四套註釋＋STEP；不是 prompt 內嵌的截斷版，不是 grep）。
 2. 寫 `.tmp/第x章/read_log.md`：每個來源登記行數與**三段逐字引句**，
    其中**至少一段必須出自該檔後三分之一**。格式見 `util/check_source_read.py` 檔頭。
 3. `python util/check_source_read.py 【書名】 X` 要 PASS。它已掛進
@@ -322,7 +327,7 @@ python util/verify_links.py 【書名】
 4. 改 `chapter_content.yaml`：加 knowledge_node（歸對分組）＋在 organization 首次提及處加
    `[[條目名｜行文詞]]`（連結目標要在 A/B 白名單內，check 會驗）。
 5. 改 `link_updates.yaml`：加該條目一筆 `title/path/summary/relation`（summary/relation 逐句
-   對回四來源）。
+   對回 manifest 正式來源；若陳述 commentary 共識，只計 CT／GT／KC／BH，不計 STEP）。
 6. `check` → `run`（render 出 `第x章.md`）→ `python util/link_updates.py apply 【書名】 x --dry-run`
    確認**只動這一個新條目檔**（其餘冪等）→ 去 `--dry-run` 實跑 → 再 apply 一次必須 0 變更。
 7. 閘門：`check_existing_links 第x章.md --missing`（條目數應 +1）、`validate_knowledge_base`、

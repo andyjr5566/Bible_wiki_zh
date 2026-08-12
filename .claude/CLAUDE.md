@@ -63,3 +63,11 @@ Only use Read when you need exact raw content to edit a specific line.
 `run_pipeline` auto-queries all indexed repos. Use `repos: ["alias"]` to scope.
 Use `index_status` to discover available repo aliases.
 <!-- /vexp -->
+
+## Hermes Scripture current source architecture
+
+- Each production chapter uses four commentary sources (CT, GT, KingComments, BibleHub Study) plus one STEP Bible original-language evidence file. STEP is not a fifth commentary and never counts as a commentary-consensus vote.
+- Prepare commentary with `util/crawl_bible_text.py`; prepare STEP with `util/extract_stepbible.py "書名 章" --data_path .stepbible_data --output_path raw_data --download`; then regenerate the manifest with `util/build_source_manifest.py`.
+- The manifest, `source_excerpts`, `check_source_read.py`, and manual M3/M6 prompts share one generic OK-source path. Every OK source, including STEP, must be read in full and recorded in `read_log.md`.
+- STEP lexical meanings are possible ranges, not automatic contextual meanings; morphology does not itself prove theology. STEP may trigger only research-worthy original-language candidates—never bulk pages for function words/forms, and Strong numbers are not wiki IDs.
+- `raw_data/stepbible_*.txt` derives from STEP Bible / STEPBible-Data under CC BY 4.0 and must retain attribution. The repository's own Apache-2.0 license does not replace that upstream license.

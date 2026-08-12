@@ -52,6 +52,7 @@ if str(UTIL_DIR) not in sys.path:
 
 from book_paths import BOOK_NUMBERS, book_directory, canonical_book_name
 from check_chapter_files import build_checks
+import extract_stepbible as step_extractor
 import link_updates
 import source_excerpts
 
@@ -421,8 +422,73 @@ def crawl_bible_source(
 
 
 @mcp.tool()
+def extract_stepbible(
+    book: str,
+    chapter: int,
+    verse_start: Optional[int] = None,
+    verse_end: Optional[int] = None,
+    download: bool = False,
+    full_definitions: bool = False,
+    overwrite: bool = False,
+    timeout: int = 300,
+) -> Dict[str, Any]:
+    """Extract one STEP Bible chapter/range into the canonical ``raw_data`` TXT file.
+
+    Input and output roots are fixed to ``.stepbible_data`` and ``raw_data``;
+    callers cannot supply filesystem paths. Existing output is protected unless
+    ``overwrite=true``. ``download=true`` fetches only the official OT/NT tagged
+    text, lexicon and morphology files required for this reference.
+    """
+    try:
+        canonical = _canonical_book(book)
+        chapter = int(chapter)
+        if chapter < 1:
+            raise ValueError("chapter 必須大於 0")
+        filename = step_extractor.stepbible_filename(
+            canonical, chapter, verse_start, verse_end, extension=".txt"
+        )
+        target = (ROOT_DIR / "raw_data" / filename).resolve()
+        if not _is_under(target, ROOT_DIR / "raw_data"):
+            raise ValueError("STEP 輸出路徑不可超出 raw_data")
+        if target.exists() and not overwrite:
+            return _error(
+                f"輸出檔已存在：{_relative_to_root(target)}；需要 overwrite=true 才會覆寫",
+                path=_relative_to_root(target),
+            )
+        if verse_start is None:
+            reference = f"{canonical} {chapter}"
+        else:
+            end = int(verse_end if verse_end is not None else verse_start)
+            reference = f"{canonical} {chapter}:{int(verse_start)}-{end}"
+        args = [
+            reference,
+            "--data_path", ".stepbible_data",
+            "--output_path", "raw_data",
+            "--format", "txt",
+        ]
+        if download:
+            args.append("--download")
+        if full_definitions:
+            args.append("--full-definitions")
+        result = _run_util_command(
+            "extract_stepbible.py", *args, timeout=max(30, min(int(timeout), 900))
+        )
+        result.update({
+            "book": canonical,
+            "chapter": chapter,
+            "verse_start": verse_start,
+            "verse_end": verse_end,
+            "download": download,
+            "path": _relative_to_root(target),
+        })
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
 def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> Dict[str, Any]:
-    """Generate or validate the canonical four-source ``source_manifest.md``."""
+    """Generate or validate the four-commentary + STEP ``source_manifest.md``."""
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
         args = [canonical, str(chapter)]
@@ -691,7 +757,7 @@ def rename_markdown(
 
 @mcp.tool()
 def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Dict[str, Any]:
-    """Verify the A0 read-receipt gate: ``.tmp/第X章/read_log.md`` against the four raw sources.
+    """Verify ``read_log.md`` against every OK formal source in the manifest.
 
     Requires every source to have >=3 verbatim quotes, with at least one quote
     falling in the file's last third (proves the source was read to the end,
@@ -1429,15 +1495,15 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
     """MCP-assisted new-chapter SOP; the repository prompt remains authoritative."""
     return f"""# Hermes Scripture：{book} 第 {chapter} 章（MCP 輔助）
 
-以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四來源內容複核或收尾閘門。
+以 `agent_start_prompt.md` 為完整且優先的規格。本 MCP 只降低查找、手寫 M3/M6 驗證與 B 類套用的操作風險，不能取代四套註釋＋STEP 原文資料的內容複核或收尾閘門。
 
-0. 讀完四來源、寫好 `.tmp/第X章/read_log.md` 後，用 `check_source_read` 驗證 A0 讀取回執；未過不准動任何 yaml/md。
+0. 讀完 manifest 中所有 OK 正式來源、寫好 `.tmp/第X章/read_log.md` 後，用 `check_source_read` 驗證 A0 讀取回執；未過不准動任何 yaml/md。
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
-2. 來源準備可用 `crawl_bible_source`、`build_source_manifest`、`build_candidate_similarity`。
+2. 四套註釋用 `crawl_bible_source`；STEP 原文資料用 `extract_stepbible`；再用 `build_source_manifest`，候選近鄰用 `build_candidate_similarity`。
 3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
 4. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
 5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 讀 manifest 指定的完整來源（`read_chapter_source` 可安全讀取）→ 手寫 entry payload（M3）→ 再 prepare 取得更新後 M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。
-6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對四來源。
+6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對 manifest 正式來源。STEP 只支持語言事實，不算 commentary 共識票；lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
 7. B 類累積先用 `prepare_chapter_link_updates`，再核對 `link_updates.yaml` 與來源，接著 `preview_chapter_link_updates`，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
 8. 收尾可用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 作核心機械閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
@@ -1450,7 +1516,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
     """MCP-assisted maintenance SOP with the same manual M3/M6 discipline."""
     return f"""# Hermes Scripture 維護：{book} 第 {chapter} 章（MCP 輔助）
 
-以 `agent_maintenance_prompt.md` 為完整且優先的規格。先讀四來源並逐條勘誤；結構通過不等於內容正確。
+以 `agent_maintenance_prompt.md` 為完整且優先的規格。先讀 manifest 中四套註釋與 STEP 原文資料並逐條勘誤；STEP 不是第五套註釋、不計入註釋共識，lexicon／morphology 不可越界推出語境義或神學結論。結構通過不等於內容正確。
 
 - 先用 `get_chapter_status` 看目前管線狀態，用 `read_chapter_artifact` 讀受限的 `.tmp` payload，用 `search_wiki_entries`／`read_wiki_entry` 核對既有條目與 aliases。
 - 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。

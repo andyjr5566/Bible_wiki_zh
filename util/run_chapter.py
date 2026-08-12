@@ -329,6 +329,17 @@ def _model_step(ctx, out_path, prompt, validate, label, normalize=None, task=Non
 # --------------------------------------------------------------------------- #
 BATCH_SIZE = 10
 
+STEP_USAGE_RULES = (
+    "- STEP Bible 是原文證據層，不是第五套 commentary：可直接支持本章詞形、lemma、"
+    "Strong 編號、morphology、context gloss 與 lexicon 義域等語言事實；不得把它算成"
+    "CT／GT／KC／BH 的註釋共識票。\n"
+    "- Lexicon 是可能義域，不等於本節必然語境義；morphology 是語法形態，不會自行"
+    "推出神學結論。語言事實與註釋家的解讀必須分開表述，神學判斷仍須由經文脈絡或"
+    "註釋來源支持。\n"
+    "- STEP 可以觸發原文候選，但只建立有研究價值、跨章累積價值或實質內容的概念；"
+    "不得因每個功能詞、詞形或 Strong 編號批量建頁，Strong 編號也不是 wiki 條目 ID。\n"
+)
+
 
 _ENTRY_EXAMPLE = (
     "- name: 施恩座（kapporet）        # 原文類用「中文（希伯來音譯）」；勿寫成「施恩座（原文）」\n"
@@ -344,7 +355,7 @@ _ENTRY_EXAMPLE = (
     "      relation: 與本章的神學關聯\n"
     "  related_entries: [法櫃（aron）]  # 只能取自下方允許清單；不可用裸經文引用\n"
     "  sources:                        # 每項含實際來源 URL（取自本章來源清單）；標籤必須是"
-    "「逐節註解／拾穗／研經註解」等來源清單類型名稱，不可用 CT/GT/KC/BH 這類縮寫\n"
+    "「逐節註解／拾穗／研經註解／原文資料」等來源清單類型名稱，不可用 CT/GT/KC/BH 這類縮寫\n"
     "    - '研經註解: Exodus 27 — 施恩座的字義與位置（https://biblehub.com/study/exodus/27.htm）'\n"
 )
 
@@ -366,6 +377,7 @@ def _batch_entry_prompt(ctx, batch, allowed_related, sources_text, raw_text,
         f"【本章全部來源）】\n{sources_text}\n\n"
         f"【規則】\n"
         f"- 所有陳述須能對應經文或上述來源；未提及者不得寫入。\n"
+        f"{STEP_USAGE_RULES}"
         f"- type 欄位必須正好是該條目的分類（如 原文、神學），不是詞性——不可寫 word、noun。\n"
         f"- name：原文類用「中文（希伯來音譯）」，其餘用簡明中文；切勿把分類當音譯"
         f"寫成「X（原文）」。音譯拼寫必須是上述來源文字中實際出現過的；"
@@ -420,7 +432,7 @@ _SOURCE_LABEL_RE = re.compile(r"^\s*([A-Z]{2,4})\s*[:：]")
 
 def _entry_source_errors(payload, allowed_urls, url_kinds=None):
     """formal 條目 sources 每項必須含本章 source_manifest 的其中一個 URL，
-    且行首標籤（BH/CT/GT/KC）須與該 URL 的 manifest 類型一致。
+    且可辨識的行首標籤須與該 URL 的 manifest 類型一致。
 
     manifest 無 URL（如純測試環境）時不啟用；經文引據寫進 definition／
     accumulations，sources 只放可回溯的來源出處。標籤↔URL 驗證（出25 實例：
@@ -586,7 +598,7 @@ def entry_content_step(ctx, plan, limit=None, batch_size=BATCH_SIZE):
         for e in plan.get(key, [])
     ]
     allowed_related = list(dict.fromkeys(existing_titles + [e["name"] for e in c_entries]))
-    # (類型, url) 成對供 prompt 與標籤↔URL 驗證；類型即模型該寫的標籤（BH/CT/GT/KC）
+    # (類型, url) 成對供 prompt 與標籤↔URL 驗證；包含註釋類型與 STEP「原文資料」
     source_urls = source_excerpts.manifest_kind_urls(ctx.path("source_manifest.md"))
     if limit is not None:
         c_entries = c_entries[:limit]
@@ -1161,6 +1173,7 @@ def chapter_content_step(ctx, plan):
         f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
         f"【本章全部來源】\n{sources_text}\n\n"
+        f"【STEP 原文資料使用邊界】\n{STEP_USAGE_RULES}\n"
         f"【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列"
         f"（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：\n"
         f"  神學: [會幕, 神的同在]\n  原文: [皂莢木（atzei shittim）]\n"
@@ -1194,11 +1207,13 @@ def chapter_content_step(ctx, plan):
         f"- 表格儲存格內不可放帶別名的 wiki-link：[[目標|別名]] 在表格裡要跳脫成 "
         f"\\|，渲染後變成 [[目標\\]] 斷鏈（程式會擋）。表格內請用不帶別名的 "
         f"[[目標]]，或把連結寫在儲存格文字之後：文字（見 [[目標]]）。\n"
-        f"- 引述來源請「直接引原話」並標明是哪一家（CT／GT／KC／BH 或 GT 內的"
+        f"- 引述註釋請「直接引原話」並標明是哪一家（CT／GT／KC／BH 或 GT 內的"
         f"《丁道爾》《舊約背景註釋》《中文聖經註釋》《精讀本》等），不要改寫成"
         f"「CT指出…」的轉述體，也不可把甲家的話掛到乙家名下——已知實例："
         f"《舊約背景註釋》的古代近東材料被誤植為 KC、CT 的靈意註解被誤植為 KC。"
         f"某一家在某處沒有說法，就不要替他生一個。\n"
+        f"STEP 的詞形、Strong、morphology、context gloss 或 lexicon 義域請明標為 STEP"
+        f"語言資料，不要寫成某位註釋家的觀點，也不要把它加入『多家一致』的計數。\n"
         f"- 各家彼此矛盾時要並陳，不要壓平成單一說法——例如出27 的壇，CT 說"
         f"「表徵耶穌的十字架」，KC 卻明說「不那麼是說到十字架，而是說到主耶穌"
         f"自己」，這種分歧本身就是重點。\n"
@@ -1733,22 +1748,25 @@ _HEBREW_RUN_RE = re.compile(r"[א-ת][א-ת֑-ׇװ-״]*")
 _HEBREW_MARKS_RE = re.compile(r"[֑-ׇ]")
 
 
-def _chapter_source_corpus(ctx):
-    """本章四來源 raw 檔＋經文的合併全文（不截斷），供「出處查證」類檢查比對。
+def _chapter_source_corpus(ctx, *, commentary_only=False):
+    """本章 manifest OK raw 檔＋經文全文，供「出處查證」類檢查比對。
 
     讀不到 manifest 或任何來源檔（如純測試環境）→ 回 None，相關檢查不啟用。
     刻意不用 full_source_text（它對大章節會等比截斷，截掉的部分會造成假性
-    「查無出處」誤報），直接讀原檔。
+    「查無出處」誤報），直接讀原檔。``commentary_only`` 用於解經立場檢查，
+    會排除 STEP「原文資料」，避免把它誤當第五套註釋。
     """
     manifest = ctx.path("source_manifest.md")
     if not manifest.exists():
         return None
     try:
-        sources = source_excerpts.parse_manifest(manifest, ctx.root)
+        records = source_excerpts.manifest_records(manifest, ctx.root)
     except Exception:
         return None
     parts = []
-    for _label, path in sources:
+    for _label, kind, _url, path in records:
+        if commentary_only and kind == "原文資料":
+            continue
         if Path(path).exists():
             parts.append(Path(path).read_text(encoding="utf-8"))
     if not parts:
@@ -1810,7 +1828,7 @@ def _strip_diacritics(text):
 def _transliteration_review(ctx):
     """本章「新建」原文類條目名的括號音譯，在本章來源查無出處——提醒人工複核，不擋 build。
 
-    利2 候選「紀念份（azkarah）」：四來源只給英文 memorial portion，azkarah 是
+    利2 候選「紀念份（azkarah）」：當時的四套註釋只給英文 memorial portion，azkarah 是
     寫候選的人憑工具書常識補配的。M3 prompt 已改為「音譯必須取自來源」，這裡是
     事後攔截網。比對前兩邊都做 NFD 去變音符號＋轉小寫（tāmîm → tamim）。
 
@@ -1901,7 +1919,7 @@ def _orgn_transliteration_review(ctx):
     - token 屬全庫任何條目名／alias 的拉丁部分 → 放行（對應 B 類累積「出處
       在建立章、不必在本章重現」的既有規則；link_index.json 讀不到則整個
       檢查停用，不硬猜）；
-    - 其餘 token（NFD 去變音＋lower）比對本章四來源＋經文全文，查無 → 提醒。
+    - 其餘 token（NFD 去變音＋lower）比對本章正式來源＋經文全文，查無 → 提醒。
     誤報清完後全庫命中 13 章 27 token，抽查 9 個（含拼寫變體交叉）皆為
     創／出歷史真陽性；拼寫變體無法機械排除，故走 manual_review 不走 error。
     """
@@ -1983,7 +2001,7 @@ def _quote_attribution_review(ctx):
     - 引句以 ……／… 切片段、去空白後取 ≥10 字者比對；
     - 片段落在掛名來源 raw 檔（哪怕只有一段）→ pass（拼接引句常跨段落）；
     - 掛名來源全查無、且至少一段在其他來源逐字命中 → 提醒；
-    - 四來源都查無 → 不報——KC/BH 引句是英文的中譯，機械不可驗，
+    - 四套註釋都查無 → 不報——KC/BH 引句是英文的中譯，機械不可驗，
       全報會把每一句合法翻譯引句淹成誤報。
     """
     corpus = _chapter_source_corpus(ctx)
@@ -2206,8 +2224,8 @@ def _fabricated_interp_history_review(ctx):
 
     利12／利13 實測：type=解經爭議 且 evidence 描述雙方交鋒時，M3／M6 會替條目
     develop 出一段查無出處的解經史分期（早期猶太解經／教父時期＋奧古斯丁／
-    宗教改革＋加爾文／現代學者 Wenham、Milgrom…），四來源完全沒提。判準是
-    「條目文字含具名學者／經典／分期用語，但該詞在本章四來源與經文查無出處」
+    宗教改革＋加爾文／現代學者 Wenham、Milgrom…），四套註釋完全沒提。判準是
+    「條目文字含具名學者／經典／分期用語，但該詞在本章四套註釋與經文查無出處」
     ——來源若真的引了加爾文，該詞會出現在來源裡，就不會誤報；反之全屬杜撰。
 
     關鍵詞比對是啟發式（可能漏抓新造名字），且解經史屬自由文字、非鐵律，故列
@@ -2215,7 +2233,7 @@ def _fabricated_interp_history_review(ctx):
     逾越節等 3 個「民/申拆除後待重做」條目命中，全是同一杜撰模式的真陽性，
     已完成書卷（創／出／利）的合格條目無一誤中。
     """
-    corpus = _chapter_source_corpus(ctx)
+    corpus = _chapter_source_corpus(ctx, commentary_only=True)
     if corpus is None:
         return []
     corpus_flat = re.sub(r"\s+", "", corpus)
@@ -2239,8 +2257,8 @@ def _fabricated_interp_history_review(ctx):
         if hits:
             notes.append(
                 f"entry_content:{payload.get('name')}（解經爭議）：定義／主題發展疑似"
-                f"杜撰解經史——「{'、'.join(hits)}」在本章四來源與經文查無出處。解經"
-                f"爭議條目只能陳述四來源實際記載的立場，不可自行編造解經史分期或補上"
+                f"杜撰解經史——「{'、'.join(hits)}」在本章四套註釋與經文查無出處。解經"
+                f"爭議條目只能陳述四套註釋實際記載的立場，不可自行編造解經史分期或補上"
                 f"來源沒提的學者／教父／改教人物，請逐一核對來源，查無出處者整段拔除。"
             )
     return notes
@@ -2537,7 +2555,7 @@ def _manual_review_hints(items, book, chapter):
             ])
         elif item.startswith("本章整理的行文／表格裡有查無出處的拉丁音譯"):
             add("orgn-translit", "本章整理疑有憑訓練知識補配的音譯（來源查無出處）", [
-                "逐一 grep 本章 raw_data 四來源確認拼寫是否真的出現過；"
+                "逐一核對本章 manifest 所有 OK 正式來源，確認拼寫是否真的出現過；"
                 "來源沒給就從 chapter_content.yaml 的 organization 拔除該音譯"
                 f"（改用中文原詞），刪 第{chapter}章.md 重跑渲染：{rerun}",
                 "拼寫變體（如 matzah/matsah）屬誤報，確認後忽略即可",

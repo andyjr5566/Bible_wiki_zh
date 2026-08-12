@@ -5,20 +5,22 @@
 `raw_data/` 前綴（裸檔名），`source_excerpts.parse_manifest` 舊版會靜默丟棄整列，
 M3/M6 於是拿到空來源、模型只能憑訓練知識杜撰註釋，卻一路通過結構閘門
 （申命記 1-6 即此因）。本工具依 `_config/source_catalog.json` 的位址規則產生
-四來源列，raw_data 路徑一律帶 `raw_data/` 前綴，狀態依 raw_data 檔是否存在標記。
+四套註釋列，再依 `extract_stepbible.stepbible_filename` 的單一檔名契約加入 STEP
+原文資料列；raw_data 路徑一律帶 `raw_data/` 前綴，狀態依檔案是否存在標記。
 
 用法：
     python util/build_source_manifest.py 申命記 6
     python util/build_source_manifest.py 申命記 6 --print      # 只印不寫檔
     python util/build_source_manifest.py 申命記 6 --check      # 驗證既有 manifest 格式正確
 
-四來源與位址規則（章號：ccbiblestudy 補零兩位，KC／BibleHub 不補零）：
+四套註釋與位址規則（章號：ccbiblestudy 補零兩位，KC／BibleHub 不補零）：
     CT  https://www.ccbiblestudy.org/Old%20Testament/{cc_folder}/{num}CT{ch:02d}.htm
     GT  https://www.ccbiblestudy.org/Old%20Testament/{cc_folder}/{num}GT{ch:02d}.htm
     KC  https://www.kingcomments.com/en/bible-studies/{kc}/{ch}
     BH  https://biblehub.com/study/{en}/{ch}.htm
 raw_data 檔名：ccbiblestudy_CT_{en}_{ch}.txt / ccbiblestudy_GT_{en}_{ch}.txt /
-              kingcomments_{en}_{ch}.txt / biblehub_study_{en}_{ch}.txt
+              kingcomments_{en}_{ch}.txt / biblehub_study_{en}_{ch}.txt /
+              stepbible_{english_canonical}_{ch}.txt
 """
 import argparse
 import json
@@ -35,8 +37,12 @@ def _load_catalog():
 
 
 def source_rows(book, chapter, *, root=ROOT):
-    """回傳四來源列 [(來源, 類型, URL, raw_data 相對路徑, 檔案是否存在)]。"""
-    import book_paths
+    """回傳四套註釋＋STEP 原文資料列及其檔案狀態。"""
+    try:
+        from . import book_paths, extract_stepbible
+    except ImportError:
+        import book_paths
+        import extract_stepbible
     catalog = _load_catalog()
     canonical = book_paths.canonical_book_name(book)
     matched_key = None
@@ -65,6 +71,8 @@ def source_rows(book, chapter, *, root=ROOT):
          f"kingcomments_{en}_{ch}.txt"),
         ("BibleHub Study", "研經註解", f"https://biblehub.com/study/{en}/{ch}.htm",
          f"biblehub_study_{en}_{ch}.txt"),
+        ("STEP Bible", "原文資料", "https://github.com/STEPBible/STEPBible-Data",
+         extract_stepbible.stepbible_filename(canonical, ch)),
     ]
     rows = []
     for label, kind, url, fname in specs:
@@ -81,7 +89,12 @@ def render_manifest(book, chapter, *, root=ROOT):
         "|------|------|-----|---------------|------|",
     ]
     for label, kind, url, rel, exists in rows:
-        status = "OK" if exists else "缺檔（raw_data 未爬取）"
+        if exists:
+            status = "OK"
+        elif label == "STEP Bible":
+            status = "缺檔（需 extract_stepbible.py）"
+        else:
+            status = "缺檔（需 crawl_bible_text.py）"
         lines.append(f"| {label} | {kind} | {url} | {rel} | {status} |")
     return "\n".join(lines) + "\n"
 
@@ -132,7 +145,11 @@ def main(argv=None):
     print(f"✅ 已產生 {out}")
     missing = [line for line in content.splitlines() if "缺檔" in line]
     if missing:
-        print(f"⚠ 有 {len(missing)} 個來源 raw_data 尚未爬取，請先 crawl_bible_text.py 再跑 run_chapter。")
+        print(
+            f"⚠ 有 {len(missing)} 個來源 raw_data 尚未準備；"
+            "註釋用 crawl_bible_text.py，STEP 原文資料用 extract_stepbible.py，"
+            "補齊後再跑 run_chapter。"
+        )
     return 0
 
 

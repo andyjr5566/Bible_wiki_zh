@@ -44,26 +44,32 @@ class SourceError(RuntimeError):
     """
 
 
-def parse_manifest(manifest_path, root):
-    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。
-
-    第4欄可寫 `raw_data/xxx.txt` 或裸檔名 `xxx.txt`（裸檔名一律歸到 raw_data/ 下）。
-    非 raw_data 的 .txt（如 raw_scripture/… 的經文本文列）不算註釋來源，略過。
-    """
+def manifest_records(manifest_path, root):
+    """Return OK raw-data records as ``(label, kind, url, Path)`` tuples."""
     root = Path(root)
-    sources = []
-    for label, _kind, _url, rel_path in _manifest_rows(manifest_path):
+    records = []
+    for label, kind, url, rel_path in _manifest_rows(manifest_path):
         if not rel_path.endswith(".txt"):
             continue
         parts = Path(rel_path).parts
         if parts and parts[0] == "raw_data":
             resolved = root / Path(rel_path)
-        elif len(parts) == 1:  # 裸檔名 → 補 raw_data/ 前綴
+        elif len(parts) == 1:
             resolved = root / "raw_data" / parts[0]
-        else:  # 其它相對路徑（raw_scripture/… 經文本文等）不是註釋來源
+        else:
             continue
-        sources.append((label, resolved))
-    return sources
+        records.append((label, kind, url, resolved))
+    return records
+
+
+def parse_manifest(manifest_path, root):
+    """讀 source_manifest.md，回傳 [(label, Path)]（僅狀態含 OK 的來源）。
+
+    第4欄可寫 `raw_data/xxx.txt` 或裸檔名 `xxx.txt`（裸檔名一律歸到 raw_data/ 下）。
+    非 raw_data 的 .txt（如 raw_scripture/… 的經文本文列）不算正式補充來源，略過。
+    """
+    return [(label, path) for label, _kind, _url, path
+            in manifest_records(manifest_path, root)]
 
 
 def require_sources(manifest_path, root):
@@ -80,7 +86,7 @@ def require_sources(manifest_path, root):
         raise SourceError(
             f"source_manifest.md 宣告了 {len(declared)} 個 OK 來源，但解析後沒有任何"
             f"檔案存在（例：{sample}）。最可能成因：manifest 第4欄漏寫 raw_data/ "
-            f"前綴或檔名有誤，raw_data 尚未爬取。M3/M6 需要來源全文，已中止以免"
+            f"前綴或檔名有誤，raw_data 尚未準備。M3/M6 需要來源全文，已中止以免"
             f"用空來源杜撰內容。請用 util/build_source_manifest.py 重新產生 manifest，"
             f"或確認 raw_data/ 下有對應 .txt 後重跑。\n  manifest：{manifest_path}"
         )
@@ -110,8 +116,8 @@ def manifest_urls(manifest_path):
 def manifest_kind_urls(manifest_path):
     """讀 source_manifest.md，回傳 [(類型, url)]（僅狀態 OK 且 URL 為 http(s)）。
 
-    類型欄是 BH/CT/GT/KC 簡稱；條目 sources 的「標籤: 位置說明（URL）」以此
-    驗證標籤與 URL 成對（出25 實例：模型寫 KC 標籤卻附 CT 的 URL）。
+    類型欄可含註釋類型與「原文資料」；條目 sources 的「標籤: 位置說明（URL）」
+    以此驗證標籤與 URL 成對（出25 實例：模型寫 KC 標籤卻附 CT 的 URL）。
     """
     return [
         (kind, url)

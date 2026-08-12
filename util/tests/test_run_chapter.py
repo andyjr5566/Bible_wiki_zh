@@ -1000,6 +1000,30 @@ class UnsourcedHebrewTests(unittest.TestCase):
             ctx = self._ctx(tmp, self.RAW_WITH_HEBREW, "希伯來文 מִנְחָה 意為禮物。")
             self.assertEqual([], run_chapter._unsourced_hebrew_errors(ctx))
 
+    def test_step_in_this_chapter_manifest_can_source_hebrew(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 מִנְחָה 意為禮物。")
+            root = Path(tmp)
+            (root / "raw_data" / "stepbible_leviticus_2.txt").write_text(
+                "# STEP Bible\nמנחה | minchah | H4503 | Noun\n", encoding="utf-8"
+            )
+            manifest = root / "03 利未記" / ".tmp" / "第2章" / "source_manifest.md"
+            with manifest.open("a", encoding="utf-8") as handle:
+                handle.write(
+                    "| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data "
+                    "| raw_data/stepbible_leviticus_2.txt | OK |\n"
+                )
+            self.assertEqual([], run_chapter._unsourced_hebrew_errors(ctx))
+
+    def test_step_from_an_unlisted_chapter_does_not_source_hebrew(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 מִנְחָה 意為禮物。")
+            (Path(tmp) / "raw_data" / "stepbible_genesis_1.txt").write_text(
+                "מנחה appears elsewhere", encoding="utf-8"
+            )
+            errors = run_chapter._unsourced_hebrew_errors(ctx)
+            self.assertEqual(1, len(errors))
+
     def test_no_hebrew_anywhere_is_silent(self):
         with tempfile.TemporaryDirectory() as tmp:
             ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 minchah 意為禮物。")
@@ -1132,6 +1156,24 @@ class FabricatedInterpHistoryReviewTests(unittest.TestCase):
                 development="KC 引加爾文的觀點。")
             self.assertEqual(
                 [], run_chapter._fabricated_interp_history_review(ctx))
+
+    def test_step_is_not_treated_as_commentary_support(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(
+                tmp, "GT 談大痲瘋的潔淨條例。",
+                development="加爾文認為這是神主權的彰顯。")
+            root = Path(tmp)
+            step_path = root / "raw_data" / "stepbible_leviticus_13.txt"
+            step_path.write_text("lexicon note mentions 加爾文", encoding="utf-8")
+            manifest = root / "03 利未記" / ".tmp" / "第13章" / "source_manifest.md"
+            with manifest.open("a", encoding="utf-8") as handle:
+                handle.write(
+                    "| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data "
+                    "| raw_data/stepbible_leviticus_13.txt | OK |\n"
+                )
+            notes = run_chapter._fabricated_interp_history_review(ctx)
+            self.assertEqual(1, len(notes))
+            self.assertIn("加爾文", notes[0])
 
     def test_non_dispute_type_not_scanned(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -38,7 +38,8 @@
 scripture/
 ├── scheme.md / agent_start_prompt.md / refactor_guidelines.md
 ├── raw_scripture/{標準書名}/第{章}.txt     # 本地經文，每行一節，不得改寫
-├── raw_data/                               # 來源純文字快取（crawl_bible_text.py 產物）
+├── raw_data/                               # 註釋 crawl 與 STEP extract 的正式來源文字
+├── .stepbible_data/                        # STEP 官方資料集可重建快取（gitignored）
 ├── _config/                                # bible_books、schemas、homonyms、endpoints、maintenance
 ├── util/                                   # 全部工具；輸出在 util/output/
 ├── appendix/fhl_maps/                      # FHL 地圖資料；筆記由 build_fhl_maps.py 生成
@@ -65,6 +66,8 @@ scripture/
 - 普通詞不 link；來源賦予特殊意義時 link 完整概念短語（`[[屬靈淫亂]]` 而非 `[[淫亂]]`）。
 - 新條目內出現的新詞不自動長出第二層條目，仍須各自通過上述判準。
 - 不設每章條目數上限，也不因人物看似普通而先驗排除——只由已收集資料決定。
+- STEP 可直接觸發原文候選，但候選仍須有研究價值、跨章累積價值或足以成篇的實質內容；
+  不為每個功能詞、詞形或 Strong 編號批量建頁，Strong 編號是資料欄位，不是 wiki ID。
 
 ### 3.2 命名與 alias 語義
 
@@ -90,6 +93,9 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 
 - 定義要完整說明原文、字義與本章用法，不吝嗇篇幅；一切陳述可對回來源。
 - 來源依據每項格式「標籤: 位置說明（URL）」，URL 取自本章 source_manifest 的 OK 來源（程式驗證）。
+- STEP 支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域等語言事實；
+  lexicon 是可能義域而非本節自動語境義，morphology 也不自行證明神學結論。語言事實與
+  commentary 解讀要分開寫；統計 CT／GT／KC／BH 的共識或分歧時，STEP 不得算一票。
 - 相關條目只能指向已存在或同批建立的條目完整名稱；渲染前由程式閉合——裸經文引用（創3:24）改寫為對應互文條目全名，無對應者移除並回報。
 - 正式條目的 `定義`／`主題發展` 是保護區：每章任務只累積，不重寫（除非使用者要求）。
 - 候選條目（status: candidate）每卷完成後清理：多次引用者升級、重複者合併、長期無支撐者處置。
@@ -160,8 +166,18 @@ python -m unittest discover -s util/tests                  # 工具測試（CI �
 
 ## 7. 來源規約
 
-- 來源：ccbiblestudy（CT 註解／GT 拾穗）、KingComments（KC）、BibleHub Study（BH）、使用者指定。
-- 一律先 `crawl_bible_text.py` 轉 `raw_data/*.txt` 再讀本地檔；禁止直接抓網頁進 context 整理、禁止硬猜 URL、已存在不 `--overwrite`。
+- 正式來源分兩層：四套 commentary（ccbiblestudy CT／GT、KingComments KC、BibleHub Study BH）
+  與 STEP Bible 原文證據層。STEP 不是第五套 commentary，也不參與 commentary 共識票數。
+- Commentary 一律先用 `crawl_bible_text.py` 轉成 `raw_data/*.txt`；STEP 一律用
+  `extract_stepbible.py "書名 章" --data_path .stepbible_data --output_path raw_data --download`
+  擷取成 canonical `raw_data/stepbible_{english_book}_{chapter}.txt`。兩路都先落地再讀本地檔；
+  禁止硬猜 URL，已存在不覆寫（MCP 正式覆寫需明確 `overwrite=true`）。
+- `build_source_manifest.py` 純依磁碟現況產生四套註釋＋STEP 列，不下載資料。所有狀態 OK 的
+  正式來源都走同一個 `source_excerpts` loader、同一個 `check_source_read.py` 全讀回執閘門，
+  並進入 manual M3/M6 prompt；STEP 缺檔用 extractor 補，註釋缺檔用 crawler 補。
+- STEP 原始資料來自 [STEP Bible](https://www.stepbible.org/) 的
+  [STEPBible-Data](https://github.com/STEPBible/STEPBible-Data)，依 CC BY 4.0 使用；
+  `raw_data/stepbible_*.txt` 是衍生擷取檔，必須保留 STEP Bible 與 CC BY 4.0 歸屬。
 - URL 模式：
   `https://www.ccbiblestudy.org/{Old|New}%20Testament/{卷代碼}/{卷號}{CT|GT}{章2位}.htm`
   `https://www.kingcomments.com/en/bible-studies/{KC_slug}/{章}`
