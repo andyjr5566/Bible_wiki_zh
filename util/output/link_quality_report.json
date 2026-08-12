@@ -1,7 +1,7 @@
 {
-  "total_warnings": 76,
+  "total_warnings": 77,
   "critical_count": 0,
-  "warning_count": 76,
+  "warning_count": 77,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -470,7 +470,7 @@
       "severity": "warning",
       "source": "link_folder/神學/燔祭.md",
       "target": "第8章",
-      "message": "同一 alias「第8章」指向多個 target: 01 創世記/第8章, 03 利未記/第8章"
+      "message": "同一 alias「第8章」指向多個 target: 01 創世記/第8章, 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",
@@ -478,6 +478,13 @@
       "source": "link_folder/神學/燔祭.md",
       "target": "第6章",
       "message": "同一 alias「第6章」指向多個 target: 03 利未記/第6章, 04 民數記/第6章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/燔祭.md",
+      "target": "第10章",
+      "message": "同一 alias「第10章」指向多個 target: 03 利未記/第10章, 04 民數記/第10章"
     },
     {
       "type": "alias_target_conflict",

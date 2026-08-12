@@ -7,9 +7,15 @@ links:
 - verse: 1
   phrase: 供物
   target: 供物（qorban）
+- verse: 1
+  phrase: 細麵
+  target: 細麵
 - verse: 2
   phrase: 亞倫子孫作祭司
   target: 亞倫和他兒子（祭司）
+- verse: 2
+  phrase: 細麵
+  target: 細麵
 - verse: 2
   phrase: 作為紀念
   target: 紀念份
@@ -28,15 +34,24 @@ links:
 - verse: 4
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 4
+  phrase: 細麵
+  target: 細麵
 - verse: 5
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 5
+  phrase: 細麵
+  target: 細麵
 - verse: 6
   phrase: 素祭
   target: 素祭（minchah）
 - verse: 7
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 7
+  phrase: 細麵
+  target: 細麵
 - verse: 8
   phrase: 素祭
   target: 素祭（minchah）
@@ -75,7 +90,7 @@ links:
   target: 素祭不可有酵與蜜
 - verse: 12
   phrase: 初熟
-  target: 初熟（bikkurim）
+  target: 初熟
 - verse: 12
   phrase: 供物
   target: 供物（qorban）
@@ -93,7 +108,7 @@ links:
   target: 立約的鹽
 - verse: 14
   phrase: 初熟
-  target: 初熟（bikkurim）
+  target: 初熟
 - verse: 14
   phrase: 素祭
   target: 素祭（minchah）
