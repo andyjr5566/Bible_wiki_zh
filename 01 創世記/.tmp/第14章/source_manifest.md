@@ -6,3 +6,4 @@
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Gen/14 | raw_data/kingcomments_genesis_14.txt | OK |
 | ccbiblestudy | CT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT14.htm | raw_data/ccbiblestudy_CT_genesis_14.txt | OK |
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT14.htm | raw_data/ccbiblestudy_GT_genesis_14.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_genesis_14.txt | OK |

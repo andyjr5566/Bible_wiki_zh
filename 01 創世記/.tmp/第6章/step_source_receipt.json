@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_6.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 305,
+      "first": "Gen 6:1",
+      "last": "Gen 6:22",
+      "sha256": "49e8462f76a9b80a57235b11c5b161b67cba651bb6f8ffd14670affd6374bbb5",
+      "bytes": 57679,
+      "chars": 50457,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

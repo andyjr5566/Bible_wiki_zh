@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "mode": "dry-run",
+  "book": "出埃及記",
+  "chapters_expected": 40,
+  "chapters_selected": [
+    1
+  ],
+  "chapters_processed": 1,
+  "generated": 0,
+  "would_generate": 1,
+  "reused": 0,
+  "failed": 0,
+  "step_validation_pass": 1,
+  "manifest_updated": 0,
+  "manifest_would_update": 1,
+  "manifest_ready": 1,
+  "receipt_generated": 0,
+  "receipt_would_generate": 1,
+  "receipt_ready": 1,
+  "step_verses": 22,
+  "step_words": 240,
+  "step_raw_bytes": 48242,
+  "duration_seconds": 2.264,
+  "wall_behavior": "single process; official STEP cache reused; no commentary crawl; no M3/M6/render",
+  "safety": {
+    "before": {
+      "production_chapters": {
+        "count": 1,
+        "bytes": 28823,
+        "aggregate_sha256": "7b2c1c7bac132aa758f50ac1cb823efb1d6382e48f56e2131bb8098f3f2ba1e2"
+      },
+      "link_folder_markdown": {
+        "count": 2602,
+        "bytes": 7887606,
+        "aggregate_sha256": "2f3569c6301f3dec6cc328694da0956f5afa6329eb86f4922c81802f8b7a7fa5"
+      },
+      "commentary_raw": {
+        "count": 4,
+        "bytes": 153347,
+        "aggregate_sha256": "1d753cf82315f9be526c1bddba74504dda3df16a7729f2788064ff91f43935bc"
+      },
+      "existing_commentary_read_logs": {
+        "count": 1,
+        "bytes": 1071,
+        "aggregate_sha256": "346bf1813c257976e41555f84baef8fd7551058284d7d85ac275440643dfc2c2"
+      }
+    },
+    "after": {
+      "production_chapters": {
+        "count": 1,
+        "bytes": 28823,
+        "aggregate_sha256": "7b2c1c7bac132aa758f50ac1cb823efb1d6382e48f56e2131bb8098f3f2ba1e2"
+      },
+      "link_folder_markdown": {
+        "count": 2602,
+        "bytes": 7887606,
+        "aggregate_sha256": "2f3569c6301f3dec6cc328694da0956f5afa6329eb86f4922c81802f8b7a7fa5"
+      },
+      "commentary_raw": {
+        "count": 4,
+        "bytes": 153347,
+        "aggregate_sha256": "1d753cf82315f9be526c1bddba74504dda3df16a7729f2788064ff91f43935bc"
+      },
+      "existing_commentary_read_logs": {
+        "count": 1,
+        "bytes": 1071,
+        "aggregate_sha256": "346bf1813c257976e41555f84baef8fd7551058284d7d85ac275440643dfc2c2"
+      }
+    },
+    "byte_identical": true,
+    "differences": []
+  },
+  "errors": [],
+  "chapters": [
+    {
+      "chapter": 1,
+      "source": "raw_data/stepbible_exodus_1.txt",
+      "action": "would-generate",
+      "validation": "PASS",
+      "manifest": "would-update",
+      "receipt": "would-write",
+      "verses": 22,
+      "words": 240,
+      "bytes": 48242,
+      "sha256": "080e79497bf9d77bda968b52757f44bb18096dbf240cc39b37ccc88786d4d542"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 30,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_30.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 30,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 43,
+      "words": 560,
+      "first": "Gen 30:1",
+      "last": "Gen 30:43",
+      "sha256": "5a560ceadb608010d10b81bf826c874a3185cab30e516344d749194c429e3f68",
+      "bytes": 110262,
+      "chars": 96948,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

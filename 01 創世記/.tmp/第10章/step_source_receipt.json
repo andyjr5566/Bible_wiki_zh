@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_10.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 287,
+      "first": "Gen 10:1",
+      "last": "Gen 10:32",
+      "sha256": "6bd333d3ce2abe2a06ae875dfb2a8ea61934b3fd638ff94d021a51bf3d9eb6d1",
+      "bytes": 53978,
+      "chars": 46744,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

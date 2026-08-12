@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_22.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 379,
+      "first": "Exo 22:1",
+      "last": "Exo 22:31",
+      "sha256": "e792bea23b9748586bb0f1ecb6325834d80ca0a10412b368b95445325b103463",
+      "bytes": 72986,
+      "chars": 64349,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

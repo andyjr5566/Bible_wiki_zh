@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_1.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 240,
+      "first": "Exo 1:1",
+      "last": "Exo 1:22",
+      "sha256": "080e79497bf9d77bda968b52757f44bb18096dbf240cc39b37ccc88786d4d542",
+      "bytes": 48242,
+      "chars": 42157,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

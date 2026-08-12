@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 21,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_21.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 36,
+      "words": 433,
+      "first": "Exo 21:1",
+      "last": "Exo 21:36",
+      "sha256": "516e9d925aa1827bbce5cbc9efee37badff92bd4ff66d9f07ca053448cf7e3f7",
+      "bytes": 84727,
+      "chars": 74840,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

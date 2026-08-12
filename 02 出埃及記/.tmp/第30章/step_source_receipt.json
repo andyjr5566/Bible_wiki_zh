@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 30,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_30.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 30,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 38,
+      "words": 468,
+      "first": "Exo 30:1",
+      "last": "Exo 30:38",
+      "sha256": "95a5cc887813e8fd01843258987668ed3fedaa8e57ffeb840c70d7ab4e26c400",
+      "bytes": 90462,
+      "chars": 79124,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

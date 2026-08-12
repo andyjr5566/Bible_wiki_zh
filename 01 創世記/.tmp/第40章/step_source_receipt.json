@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 40,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_40.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 312,
+      "first": "Gen 40:1",
+      "last": "Gen 40:23",
+      "sha256": "93d47243cec74574941edcb81ac1ac75b8a461ff8701779ec123eb85d4aedf85",
+      "bytes": 60302,
+      "chars": 52720,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

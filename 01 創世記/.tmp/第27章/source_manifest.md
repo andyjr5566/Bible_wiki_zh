@@ -6,3 +6,4 @@
 | ccbiblestudy GT | GT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT27.htm | raw_data/ccbiblestudy_GT_genesis_27.txt | OK |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/gen/27 | raw_data/kingcomments_genesis_27.txt | OK |
 | BibleHub Study | BH | https://biblehub.com/study/genesis/27.htm | raw_data/biblehub_study_genesis_27.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_genesis_27.txt | OK |

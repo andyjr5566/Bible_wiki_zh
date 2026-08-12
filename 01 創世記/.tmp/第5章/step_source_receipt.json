@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_5.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 365,
+      "first": "Gen 5:1",
+      "last": "Gen 5:32",
+      "sha256": "1f850c8539ef9a9f5136d3e9eb65721f0d6f730291489d0d39eeb6ccf5cb3f7f",
+      "bytes": 69321,
+      "chars": 60313,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

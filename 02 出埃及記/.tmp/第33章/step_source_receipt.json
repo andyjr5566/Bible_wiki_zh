@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 33,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_33.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 33,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 354,
+      "first": "Exo 33:1",
+      "last": "Exo 33:23",
+      "sha256": "4ab0c743db747022103bcec56fb249a282c1b04dc0a909d285bb2c2c0918ea53",
+      "bytes": 68728,
+      "chars": 60514,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

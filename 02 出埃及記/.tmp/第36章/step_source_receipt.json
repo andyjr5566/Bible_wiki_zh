@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 36,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_36.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 38,
+      "words": 514,
+      "first": "Exo 36:1",
+      "last": "Exo 36:38",
+      "sha256": "6da1c0dc4b4be67c2ac6b7f147240047e26204a08b5528e7925d88a2d33adb2e",
+      "bytes": 98362,
+      "chars": 84958,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

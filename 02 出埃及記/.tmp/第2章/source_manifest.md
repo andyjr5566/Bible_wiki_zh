@@ -6,3 +6,4 @@
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/2 | raw_data/kingcomments_exodus_2.txt | OK |
 | ccbiblestudy | CT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT02.htm | raw_data/ccbiblestudy_CT_exodus_2.txt | OK |
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT02.htm | raw_data/ccbiblestudy_GT_exodus_2.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_2.txt | OK |

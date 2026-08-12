@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_20.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 312,
+      "first": "Exo 20:1",
+      "last": "Exo 20:26",
+      "sha256": "4e4b91384acfbbf9253443c0e98cfdb49ca65b4c8141bc33e2a88e98d27286b5",
+      "bytes": 59719,
+      "chars": 52200,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -6,3 +6,4 @@
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT14.htm | raw_data/ccbiblestudy_GT_exodus_14.txt | OK |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/14 | raw_data/kingcomments_exodus_14.txt | OK |
 | BibleHub Study | BH | https://biblehub.com/study/exodus/14.htm | raw_data/biblehub_study_exodus_14.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_14.txt | OK |

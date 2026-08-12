@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_3.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 347,
+      "first": "Gen 3:1",
+      "last": "Gen 3:24",
+      "sha256": "573cc2808701b2646630d898cbfbf1c1d81a781958899f2f8d0f111f8a2a0a80",
+      "bytes": 67628,
+      "chars": 59240,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

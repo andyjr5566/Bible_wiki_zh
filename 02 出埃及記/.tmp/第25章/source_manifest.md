@@ -6,3 +6,4 @@
 | ccbiblestudy 註解 | CT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT25.htm | raw_data/ccbiblestudy_CT_exodus_25.txt | ✅ OK (20,535 chars) |
 | ccbiblestudy 拾穗 | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT25.htm | raw_data/ccbiblestudy_GT_exodus_25.txt | ✅ OK (28,687 chars) |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/25 | raw_data/kingcomments_exodus_25.txt | ✅ OK (13,836 chars) |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_25.txt | OK |

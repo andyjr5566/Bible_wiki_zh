@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_32.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 441,
+      "first": "Gen 32:1",
+      "last": "Gen 32:32",
+      "sha256": "e54dfad317e2e9d4a39ab6bfdb573231d60dec4d4f213da8761ce604dfae8c1d",
+      "bytes": 85284,
+      "chars": 74725,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

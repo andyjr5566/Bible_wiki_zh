@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_1.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 434,
+      "first": "Gen 1:1",
+      "last": "Gen 1:31",
+      "sha256": "0e21fa9b052e0989e82bc160db9df003d4849604e84cf87c3d18e1e1b8facda4",
+      "bytes": 83828,
+      "chars": 73322,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

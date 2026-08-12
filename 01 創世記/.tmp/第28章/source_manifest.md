@@ -6,3 +6,4 @@
 | ccbiblestudy GT | GT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT28.htm | raw_data/ccbiblestudy_GT_genesis_28.txt | OK |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Gen/28 | raw_data/kingcomments_genesis_28.txt | OK |
 | BibleHub Study | BH | https://biblehub.com/study/genesis/28.htm | raw_data/biblehub_study_genesis_28.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_genesis_28.txt | OK |

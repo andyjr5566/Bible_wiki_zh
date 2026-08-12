@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 39,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_39.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 39,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 347,
+      "first": "Gen 39:1",
+      "last": "Gen 39:23",
+      "sha256": "dea54d9f2375cf0bcb590fac2b5e5f0f29d87c0e0ba4294f8de1884b8c7e0b18",
+      "bytes": 68747,
+      "chars": 60541,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

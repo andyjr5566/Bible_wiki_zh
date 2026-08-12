@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_25.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 405,
+      "first": "Gen 25:1",
+      "last": "Gen 25:34",
+      "sha256": "748a7fe70db4780c201a288dacf55e4db26d2f12418ff755143a7113d22c7f4c",
+      "bytes": 76501,
+      "chars": 66431,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

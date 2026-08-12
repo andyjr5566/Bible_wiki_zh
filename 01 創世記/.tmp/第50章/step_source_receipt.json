@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 50,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_50.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 50,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 375,
+      "first": "Gen 50:1",
+      "last": "Gen 50:26",
+      "sha256": "b990362c0005f85a0d8b8652713d08ae0ea7a0e315965adcb1f3a3679e01321e",
+      "bytes": 71806,
+      "chars": 62858,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

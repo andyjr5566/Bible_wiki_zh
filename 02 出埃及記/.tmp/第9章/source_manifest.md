@@ -6,6 +6,7 @@
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exodus/09GT01.htm | raw_data/ccbiblestudy_GT_exodus_9.txt | OK |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/9 | raw_data/kingcomments_exodus_9.txt | OK |
 | BibleHub Study | BH | https://biblehub.com/study/exodus/9.htm | raw_data/biblehub_study_exodus_9.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_9.txt | OK |
 
 說明：
 - 本章 35 節；四份來源已於前次 session 爬取確認有效。

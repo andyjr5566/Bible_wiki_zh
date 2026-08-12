@@ -6,3 +6,4 @@
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Gen/37 | raw_data/kingcomments_genesis_37.txt | OK |
 | ccbiblestudy | CT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT37.htm | raw_data/ccbiblestudy_CT_genesis_37.txt | OK |
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT37.htm | raw_data/ccbiblestudy_GT_genesis_37.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_genesis_37.txt | OK |

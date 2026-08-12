@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 38,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_38.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 38,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 412,
+      "first": "Exo 38:1",
+      "last": "Exo 38:31",
+      "sha256": "29d3b3c41f372cfdf231814c0943255925cb48876c033142a514e952733c9da6",
+      "bytes": 79243,
+      "chars": 68445,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

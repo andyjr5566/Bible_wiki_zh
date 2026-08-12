@@ -270,6 +270,8 @@ python util/verify_links.py 【書名】
 這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**四套 OK commentary 全讀＋STEP machine gate → 機械掃描（下 A）
 → 逐條目讀＋高風險四類勘誤 → 覆蓋率重推（下 B）→ 驗 M6 → 閘門 → 分兩 commit（勘誤／覆蓋）**。
 
+**既有 Phase A 狀態（2026-08-13）：**創世記 1–50、出埃及記 1–40 的 STEP raw、manifest 第五列與 machine receipt 已補齊；這是來源基礎設施 enrichment，不代表重開兩卷生命週期，也不要因此重跑 M3／M6／render／links 或硬補不存在的歷史 commentary read logs。`reports/step_audit/` 只是人工勘誤佇列，不可據此自動改 production。利未記／民數記不做預先 backfill，等實際正式校讀時逐章整合 STEP。
+
 ### A0. 開工第一件事：commentary 全讀＋STEP machine gate（沒過不准動任何檔）
 
 **歷史事故（當時仍是四來源且尚未加閘門）：**「四來源全讀」曾是規格裡唯一沒有閘門的硬規格，所以最先縮水。2026-08-03 實測：

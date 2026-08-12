@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 34,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_34.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 538,
+      "first": "Exo 34:1",
+      "last": "Exo 34:35",
+      "sha256": "48da9bb0c17a6976a9bd984b2f0004f885856b039a543cbc2aff346995e793be",
+      "bytes": 101545,
+      "chars": 88902,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

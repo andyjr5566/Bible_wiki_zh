@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_10.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 497,
+      "first": "Exo 10:1",
+      "last": "Exo 10:29",
+      "sha256": "9abcf5c691e70124c64b8a7ba764256ef2522c1e2121a5ebf20dba87af0edead",
+      "bytes": 91504,
+      "chars": 80127,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

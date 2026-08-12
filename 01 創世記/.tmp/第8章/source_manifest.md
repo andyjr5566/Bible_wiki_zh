@@ -6,3 +6,4 @@
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Gen/8 | raw_data/kingcomments_genesis_8.txt | OK |
 | ccbiblestudy | CT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT08.htm | raw_data/ccbiblestudy_CT_genesis_8.txt | OK |
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT08.htm | raw_data/ccbiblestudy_GT_genesis_8.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_genesis_8.txt | OK |

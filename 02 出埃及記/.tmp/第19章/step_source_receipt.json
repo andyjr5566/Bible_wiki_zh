@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_19.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 375,
+      "first": "Exo 19:1",
+      "last": "Exo 19:25",
+      "sha256": "3a38050806e7bf963cb34f942983e619f5ec4a228191d37bf0896bbc36ef24ec",
+      "bytes": 70892,
+      "chars": 62242,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

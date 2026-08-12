@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_17.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 355,
+      "first": "Gen 17:1",
+      "last": "Gen 17:27",
+      "sha256": "f443f93a85888c9fcb50d500de5de14e61b29087d2501c957860b08bc5281204",
+      "bytes": 69966,
+      "chars": 61230,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_24.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 252,
+      "first": "Exo 24:1",
+      "last": "Exo 24:18",
+      "sha256": "d59d228fae15f78f6273aa1a80b06ac12b770e1709d7e6718cee19d3eaf1b075",
+      "bytes": 48530,
+      "chars": 42331,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

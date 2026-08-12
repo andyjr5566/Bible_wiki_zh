@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 36,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_36.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 43,
+      "words": 487,
+      "first": "Gen 36:1",
+      "last": "Gen 36:43",
+      "sha256": "0a34a56fe3e7f3ee5b5ff00e8637ffe94b88e54d31ed54ba807a37d045119923",
+      "bytes": 87627,
+      "chars": 75483,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

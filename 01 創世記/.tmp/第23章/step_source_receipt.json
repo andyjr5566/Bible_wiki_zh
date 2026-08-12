@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_23.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 275,
+      "first": "Gen 23:1",
+      "last": "Gen 23:20",
+      "sha256": "55c83f8869f2a80eabdf5f7e52fc13101b815e807358d415f52b5a768f3a8b8b",
+      "bytes": 52268,
+      "chars": 45694,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

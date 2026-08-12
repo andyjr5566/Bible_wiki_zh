@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 41,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_41.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 41,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 57,
+      "words": 776,
+      "first": "Gen 41:1",
+      "last": "Gen 41:57",
+      "sha256": "d1b9a30085a08f494f4c2910464451505605558bb9f1308c751c556a608d3423",
+      "bytes": 146652,
+      "chars": 127842,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

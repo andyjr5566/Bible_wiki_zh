@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_24.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 67,
+      "words": 918,
+      "first": "Gen 24:1",
+      "last": "Gen 24:67",
+      "sha256": "82c8f0388bdcf32cfce920faff4af5fdbf0016ce1ae54ece97e72b35427464c2",
+      "bytes": 183416,
+      "chars": 161261,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_7.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 332,
+      "first": "Gen 7:1",
+      "last": "Gen 7:24",
+      "sha256": "2c370eb185d2a2526202d8a1d4dbd97ea2ab3f73eab6d3fedbf40a84ad186961",
+      "bytes": 61453,
+      "chars": 53522,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

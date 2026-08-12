@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 37,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_37.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 37,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 366,
+      "first": "Exo 37:1",
+      "last": "Exo 37:29",
+      "sha256": "b327e8bba9f32b88b6d2ffdef9a369afa64d21521c683fe01c5c7f360691d886",
+      "bytes": 70237,
+      "chars": 61031,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

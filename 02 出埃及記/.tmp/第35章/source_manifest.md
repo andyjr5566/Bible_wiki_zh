@@ -6,3 +6,4 @@
 | ccbiblestudy 註解 | CT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT35.htm | raw_data/ccbiblestudy_CT_exodus_35.txt | ✅ OK |
 | ccbiblestudy 拾穗 | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT35.htm | raw_data/ccbiblestudy_GT_exodus_35.txt | ✅ OK |
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/35 | raw_data/kingcomments_exodus_35.txt | ✅ OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_35.txt | OK |

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_19.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 38,
+      "words": 563,
+      "first": "Gen 19:1",
+      "last": "Gen 19:38",
+      "sha256": "065873590c3777ee771fbed48fafebe5cd7808ab8d44cb0fe202448009a4c1e2",
+      "bytes": 109279,
+      "chars": 95916,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

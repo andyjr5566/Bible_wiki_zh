@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "mode": "dry-run",
+  "book": "創世記",
+  "chapters_expected": 50,
+  "chapters_selected": [
+    1
+  ],
+  "chapters_processed": 1,
+  "generated": 0,
+  "would_generate": 1,
+  "reused": 0,
+  "failed": 0,
+  "step_validation_pass": 1,
+  "manifest_updated": 0,
+  "manifest_would_update": 1,
+  "manifest_ready": 1,
+  "receipt_generated": 0,
+  "receipt_would_generate": 1,
+  "receipt_ready": 1,
+  "step_verses": 31,
+  "step_words": 434,
+  "step_raw_bytes": 83828,
+  "duration_seconds": 2.298,
+  "wall_behavior": "single process; official STEP cache reused; no commentary crawl; no M3/M6/render",
+  "safety": {
+    "before": {
+      "production_chapters": {
+        "count": 1,
+        "bytes": 16095,
+        "aggregate_sha256": "191fdcef9e1fcba514289bc7bcb27a572b3d2ed531c84e1f49dd12f25b530ae7"
+      },
+      "link_folder_markdown": {
+        "count": 2602,
+        "bytes": 7887606,
+        "aggregate_sha256": "2f3569c6301f3dec6cc328694da0956f5afa6329eb86f4922c81802f8b7a7fa5"
+      },
+      "commentary_raw": {
+        "count": 4,
+        "bytes": 174129,
+        "aggregate_sha256": "9e451cd058098db60aca98e676892c49c1c16951a5bcddfdcc9a39e79b498698"
+      },
+      "existing_commentary_read_logs": {
+        "count": 0,
+        "bytes": 0,
+        "aggregate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "after": {
+      "production_chapters": {
+        "count": 1,
+        "bytes": 16095,
+        "aggregate_sha256": "191fdcef9e1fcba514289bc7bcb27a572b3d2ed531c84e1f49dd12f25b530ae7"
+      },
+      "link_folder_markdown": {
+        "count": 2602,
+        "bytes": 7887606,
+        "aggregate_sha256": "2f3569c6301f3dec6cc328694da0956f5afa6329eb86f4922c81802f8b7a7fa5"
+      },
+      "commentary_raw": {
+        "count": 4,
+        "bytes": 174129,
+        "aggregate_sha256": "9e451cd058098db60aca98e676892c49c1c16951a5bcddfdcc9a39e79b498698"
+      },
+      "existing_commentary_read_logs": {
+        "count": 0,
+        "bytes": 0,
+        "aggregate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "byte_identical": true,
+    "differences": []
+  },
+  "errors": [],
+  "chapters": [
+    {
+      "chapter": 1,
+      "source": "raw_data/stepbible_genesis_1.txt",
+      "action": "would-generate",
+      "validation": "PASS",
+      "manifest": "would-update",
+      "receipt": "would-write",
+      "verses": 31,
+      "words": 434,
+      "bytes": 83828,
+      "sha256": "0e21fa9b052e0989e82bc160db9df003d4849604e84cf87c3d18e1e1b8facda4"
+    }
+  ]
+}

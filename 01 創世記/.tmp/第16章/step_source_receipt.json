@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_16.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 223,
+      "first": "Gen 16:1",
+      "last": "Gen 16:16",
+      "sha256": "03457e8e59da09b908a15df59a7f6a6f13d1288605d84743e2a138998d9e6b45",
+      "bytes": 42436,
+      "chars": 37090,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_14.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 341,
+      "first": "Gen 14:1",
+      "last": "Gen 14:24",
+      "sha256": "522dca8d7c41bb31c8d39c059aa9a1210552e1970ab59dadf09d96b15b93d94a",
+      "bytes": 63176,
+      "chars": 54733,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

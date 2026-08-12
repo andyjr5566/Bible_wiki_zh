@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 18,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_18.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 437,
+      "first": "Gen 18:1",
+      "last": "Gen 18:33",
+      "sha256": "69500587835e262f6e68a9feae06ad2d2fd749ebb25efdd9456255eb63a483a6",
+      "bytes": 85713,
+      "chars": 74945,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

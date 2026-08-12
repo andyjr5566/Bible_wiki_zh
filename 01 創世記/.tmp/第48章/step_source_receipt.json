@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 48,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_48.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 350,
+      "first": "Gen 48:1",
+      "last": "Gen 48:22",
+      "sha256": "617dc60c666ce3b047bf305f9ea3dcf2e25efad682a0f8a030b015ff630678bc",
+      "bytes": 68109,
+      "chars": 59622,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

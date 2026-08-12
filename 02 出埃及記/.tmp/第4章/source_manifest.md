@@ -6,3 +6,4 @@
 | KingComments | KC | https://www.kingcomments.com/en/bible-studies/Exo/4 | raw_data/kingcomments_exodus_4.txt | OK |
 | ccbiblestudy | CT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT04.htm | raw_data/ccbiblestudy_CT_exodus_4.txt | OK |
 | ccbiblestudy | GT | https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT04.htm | raw_data/ccbiblestudy_GT_exodus_4.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_exodus_4.txt | OK |

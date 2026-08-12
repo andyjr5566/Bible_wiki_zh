@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 29,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_29.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 29,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 471,
+      "first": "Gen 29:1",
+      "last": "Gen 29:35",
+      "sha256": "59eb68946ee66d5f567aa95b8cfe188dc95137053865babe73b65a7acbcade8a",
+      "bytes": 89867,
+      "chars": 79105,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,1690 @@
+# 創世記 STEP Original-Language Audit
+
+- chapters: 50
+- production files scanned: 1083
+- claims detected: 294
+- STEP verses / words: 1533 / 20614
+
+| Classification | Count |
+|---|---:|
+| PASS | 19 |
+| REVIEW_LOW | 68 |
+| REVIEW_MEDIUM | 0 |
+| REVIEW_HIGH | 0 |
+| UNVERIFIABLE | 193 |
+| INTERPRETIVE | 14 |
+
+> Boundary: STEP directly verifies spelling, occurrence, Strong and high-confidence morphology. It does not decide contextual meaning, exegesis or theology.
+
+## REVIEW queue
+
+### REVIEW_HIGH (0)
+
+- （none）
+
+### REVIEW_MEDIUM (0)
+
+- （none）
+
+### REVIEW_LOW (68)
+
+- **01 創世記/第17章.md:88 — 全能的神與約的重申（1-8節）**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — Shaddai
+  - STEP: Gen 17:1 #16 שַׁדַּ֔י | sha.Dai | H7706 | HNpt
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第19章.md:111 — 集體性暴力與羅得的提議（4-11節）**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — yada
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第19章.md:114 — 集體性暴力與羅得的提議（4-11節）**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — yada
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:90 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:91 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:95 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — Elohim
+  - STEP: Gen 1:1 #3 אֱלֹהִ֑ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:2 #10 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:3 #2 אֱלֹהִ֖ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #2 אֱלֹהִ֛ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #8 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:118 — 前三日：神以話語分別、命名、立界（v3-13）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — raqia
+  - STEP: Gen 1:6 #4 רָקִ֖יעַ | ra.Ki.a' | H7549 | HNcmsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第1章.md:189 — 跨章脈絡：創造的節奏、預表與應用**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:190 — 跨章脈絡：創造的節奏、預表與應用**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — asah
+  - STEP: Gen 1:31 #6 עָשָׂ֔ה | 'a.Sah | H6213H | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第1章.md:193 — 跨章脈絡：創造的節奏、預表與應用**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第27章.md:105 — 以撒欲祝福以掃（1-4節）**
+  - chapter ownership: (27,)
+  - type / claim: transliteration — berakah
+  - STEP: Gen 27:36 #20 בְּרָכָֽה\׃ | be.ra.Khah | H1293 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第40章.md:152 — 四、「求你記念我」（14-15節）**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — chesed
+  - STEP: Gen 40:14 #11 חָ֑סֶד | Cha.sed | H2617A | HNcmsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第4章.md:93 — 一、兩個兒子與兩種職業（1-2節）**
+  - chapter ownership: (4,)
+  - type / claim: transliteration — qayin
+  - STEP: Gen 4:1 #9 קַ֔יִן | Ka.yin | H7014B | HNpm; Gen 4:3 #5 קַ֜יִן | Ka.yin | H7014B | HNpm; Gen 4:5 #2 קַ֥יִן | Ka.yin | H7014B | HNpm; Gen 4:6 #4 קָ֑יִן | Ka.yin | H7014B | HNpm; Gen 4:8 #2 קַ֖יִן | Ka.yin | H7014B | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第4章.md:93 — 一、兩個兒子與兩種職業（1-2節）**
+  - chapter ownership: (4,)
+  - type / claim: transliteration — qaniti
+  - STEP: Gen 4:1 #11 קָנִ֥יתִי | ka.Ni.ti | H7069 | HVqp1cs
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第8章.md:89 — 神記念，水勢漸退（1-5節）**
+  - chapter ownership: (8,)
+  - type / claim: transliteration — ruach
+  - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **01 創世記/第8章.md:136 — 出方舟與新造生活（15-19節）**
+  - chapter ownership: (8,)
+  - type / claim: transliteration — ruach
+  - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/主題/長子名分.md:64 — 創27：名分與祝福是兩件事**
+  - chapter ownership: (25, 27, 48)
+  - type / claim: transliteration — bekorah
+  - STEP: Gen 25:32 #10 בְּכֹרָֽה\׃ | be.kho.Rah | H1062 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/長子名分.md:64 — 創27：名分與祝福是兩件事**
+  - chapter ownership: (25, 27, 48)
+  - type / claim: transliteration — berakah
+  - STEP: Gen 27:36 #20 בְּרָכָֽה\׃ | be.ra.Khah | H1293 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/雅各騙取祝福.md:48 — [[01 創世記/第27章|第27章]]**
+  - chapter ownership: (27,)
+  - type / claim: transliteration — berakah
+  - STEP: Gen 27:36 #20 בְּרָכָֽה\׃ | be.ra.Khah | H1293 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/亞瑪力.md:13 — 定義**
+  - chapter ownership: (36,)
+  - type / claim: transliteration — Amalek
+  - STEP: Gen 36:12 #10 עֲמָלֵ֑ק | 'a.ma.Lek | H6002H | HNpm; Gen 36:16 #6 עֲמָלֵ֑ק | 'a.ma.Lek | H6002H | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/人物/以挪士.md:13 — 定義**
+  - chapter ownership: (4, 5)
+  - type / claim: transliteration — Enosh
+  - STEP: Gen 4:26 #9 אֱנ֑וֹשׁ | 'e.No.osh | H583 | HNpm; Gen 5:6 #9 אֱנֽוֹשׁ\׃ | 'e.No.osh | H583 | HNpm; Gen 5:7 #6 אֱנ֔וֹשׁ | 'e.No.osh | H583 | HNpm; Gen 5:9 #2 אֱנ֖וֹשׁ | 'e.No.osh | H583 | HNpm; Gen 5:10 #2 אֱנ֗וֹשׁ | 'e.No.osh | H583 | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/夏娃.md:13 — 定義**
+  - chapter ownership: (2, 3, 4)
+  - type / claim: transliteration — Chavah
+  - STEP: Gen 3:20 #5 חַוָּ֑ה | cha.Vah | H2332 | HNpf; Gen 4:1 #4 חַוָּ֣ה | cha.Vah | H2332 | HNpf
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/人物/夏娃.md:79 — 來源依據**
+  - chapter ownership: (2, 3, 4)
+  - type / claim: transliteration — Chavah
+  - STEP: Gen 3:20 #5 חַוָּ֑ה | cha.Vah | H2332 | HNpf; Gen 4:1 #4 חַוָּ֣ה | cha.Vah | H2332 | HNpf
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/人物/夏甲.md:13 — 定義**
+  - chapter ownership: (16, 21, 25)
+  - type / claim: transliteration — Hagar
+  - STEP: Gen 16:1 #11 הָגָֽר\׃ | ha.Gar | H1904 | HNpf; Gen 16:3 #6 הָגָ֤ר | ha.Gar | H1904 | HNpf; Gen 16:4 #3 הָגָ֖ר | ha.Gar | H1904 | HNpf; Gen 16:8 #2 הָגָ֞ר | ha.Gar | H1904 | HNpf; Gen 16:15 #2 הָגָ֛ר | ha.Gar | H1904 | HNpf
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/人物/拉麥（塞特族）.md:13 — 定義**
+  - chapter ownership: (5,)
+  - type / claim: transliteration — lemek
+  - STEP: Gen 5:26 #6 לֶ֔מֶךְ | Le.mekh | H3929H | HNpm; Gen 5:28 #2 לֶ֕מֶךְ | Le.mekh | H3929H | HNpm; Gen 5:30 #2 לֶ֗מֶךְ | Le.mekh | H3929H | HNpm; Gen 5:31 #4 לֶ֔מֶךְ | Le.mekh | H3929H | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/拿鶴.md:14 — 定義**
+  - chapter ownership: (22, 24, 29)
+  - type / claim: transliteration — Nahor
+  - STEP: Gen 24:10 #19 נָחֽוֹר\׃ | na.Chor | H5152H | HNpm; Gen 24:15 #15 נָח֖וֹר | na.Chor | H5152H | HNpm; Gen 24:47 #11 נָח֔וֹר | na.Chor | H5152H | HNpm; Gen 29:5 #7 נָח֑וֹר | na.Chor | H5152H | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/該隱.md:13 — 定義**
+  - chapter ownership: (4,)
+  - type / claim: transliteration — Qayin
+  - STEP: Gen 4:1 #9 קַ֔יִן | Ka.yin | H7014B | HNpm; Gen 4:3 #5 קַ֜יִן | Ka.yin | H7014B | HNpm; Gen 4:5 #2 קַ֥יִן | Ka.yin | H7014B | HNpm; Gen 4:6 #4 קָ֑יִן | Ka.yin | H7014B | HNpm; Gen 4:8 #2 קַ֖יִן | Ka.yin | H7014B | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/雅列.md:13 — 定義**
+  - chapter ownership: (5,)
+  - type / claim: transliteration — yered
+  - STEP: Gen 5:16 #6 יֶ֔רֶד | Ye.red | H3382G | HNpm; Gen 5:18 #2 יֶ֕רֶד | Ye.red | H3382G | HNpm; Gen 5:19 #2 יֶ֗רֶד | Ye.red | H3382G | HNpm; Gen 5:20 #4 יֶ֔רֶד | Ye.red | H3382G | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「亞伯拉罕」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — Avraham
+  - STEP: Gen 17:5 #9 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:9 #4 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:15 #4 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:17 #2 אַבְרָהָ֛ם | 'av.ra.Ham | H85 | HNpm; Gen 17:18 #2 אַבְרָהָ֖ם | 'av.ra.Ham | H85 | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「亞伯拉罕」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — Avram
+  - STEP: Gen 17:1 #2 אַבְרָ֔ם | 'av.Ram | H87 | HNpm; Gen 17:1 #11 אַבְרָ֗ם | 'av.Ram | H87 | HNpm; Gen 17:3 #2 אַבְרָ֖ם | 'av.Ram | H87 | HNpm; Gen 17:5 #6 אַבְרָ֑ם | 'av.Ram | H87 | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「以實瑪利」名字含義.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: transliteration — Yishma'el
+  - STEP: Gen 16:11 #11 יִשְׁמָעֵ֔אל | yish.ma.'El | H3458G | HNpm; Gen 16:15 #12 יִשְׁמָעֵֽאל\׃ | yish.ma.'El | H3458G | HNpm; Gen 16:16 #10 יִשְׁמָעֵ֖אל | yish.ma.'El | H3458G | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「撒冷」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Shalem
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「撒冷」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Shalom
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「撒冷」名字含義.md:41 — 字義分析**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Shalom
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「撒冷」名字含義.md:42 — 字義分析**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Shalem
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「撒拉」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — Sarah
+  - STEP: Gen 17:15 #13 שָׂרָ֖ה | sa.Rah | H8283 | HNpf; Gen 17:17 #13 שָׂרָ֔ה | sa.Rah | H8283 | HNpf; Gen 17:19 #4 שָׂרָ֣ה | sa.Rah | H8283 | HNpf; Gen 17:21 #9 שָׂרָה֙ | sa.Rah | H8283 | HNpf
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/「撒拉」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — Sarai
+  - STEP: Gen 17:15 #5 שָׂרַ֣י | sa.Rai | H8297 | HNpf; Gen 17:15 #11 שָׂרָ֑י | sa.Rai | H8297 | HNpf
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/名字含義與諧音.md:23 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Asher
+  - STEP: Gen 30:2 #9 אֲשֶׁר\־ | 'a.Sher- | H834A | HTr; Gen 30:13 #10 אָשֵֽׁר\׃ | 'a.Sher | H836 | HNpm; Gen 30:18 #6 אֲשֶׁר\־ | 'a.Sher- | H834A | HTr; Gen 30:26 #6 אֲשֶׁ֨ר | 'a.Sher | H834A | HTr; Gen 30:26 #16 אֲשֶׁ֥ר | 'a.Sher | H834A | HTr
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/名字含義與諧音.md:25 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Zebulun
+  - STEP: Gen 30:20 #19 זְבֻלֽוּן\׃ | ze.vu.Lun | H2074 | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/法勒名字與分地.md:13 — 定義**
+  - chapter ownership: (10,)
+  - type / claim: transliteration — Peleg
+  - STEP: Gen 10:25 #7 פֶּ֗לֶג | Pe.leg | H6389 | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/示劍名字含義.md:36 — 字義**
+  - chapter ownership: (12, 33, 34)
+  - type / claim: transliteration — Shechem
+  - STEP: Gen 33:18 #5 שְׁכֶ֗ם | she.Khem | H7927G | HNpl; Gen 33:19 #13 שְׁכֶ֑ם | she.Khem | H7927H | HNpm; Gen 34:2 #3 שְׁכֶ֧ם | she.Khem | H7927H | HNpm; Gen 34:4 #2 שְׁכֶ֔ם | she.Khem | H7927H | HNpm; Gen 34:6 #4 שְׁכֶ֖ם | she.Khem | H7927H | HNpm
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/穹蒼（raqia）.md:9 — 穹蒼（raqia）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — raqia
+  - STEP: Gen 1:6 #4 רָקִ֖יעַ | ra.Ki.a' | H7549 | HNcmsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/穹蒼（raqia）.md:36 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — raqia
+  - STEP: Gen 1:6 #4 רָקִ֖יעַ | ra.Ki.a' | H7549 | HNcmsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/約瑟（增添／除去）.md:14 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — yosef
+  - STEP: Gen 30:24 #4 יוֹסֵ֖ף | yo.Sef | H3130G | HNpm; Gen 30:24 #6 יֹסֵ֧ף | yo.Sef | H3254H | HVhj3ms; Gen 30:25 #6 יוֹסֵ֑ף | yo.Sef | H3130G | HNpm
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/原文/風與靈同字.md:13 — 定義**
+  - chapter ownership: (8,)
+  - type / claim: transliteration — ruach
+  - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/地點/伊甸.md:13 — 定義**
+  - chapter ownership: (2, 3, 4)
+  - type / claim: transliteration — Eden
+  - STEP: Gen 2:15 #8 עֵ֔דֶן | 'E.den | H5731B | HNpl; Gen 3:23 #5 עֵ֑דֶן | 'E.den | H5731B | HNpl; Gen 3:24 #7 עֵ֜דֶן | 'E.den | H5731B | HNpl; Gen 4:16 #9 עֵֽדֶן\׃ | 'E.den | H5731B | HNpl
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/地點/基拉耳.md:14 — 定義**
+  - chapter ownership: (20, 26)
+  - type / claim: transliteration — Gerar
+  - STEP: Gen 26:17 #6 גְּרָ֖ר | ge.Rar | H1642 | HNpl; Gen 26:20 #3 גְרָ֗ר | ge.Rar | H1642 | HNpl; Gen 20:2 #11 גְּרָ֔ר | ge.Rar | H1642 | HNpl
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/地點/基訓.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Gihon
+  - STEP: Gen 2:13 #4 גִּיח֑וֹן | gi.Chon | H1521 | HNpl
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/巴列.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: transliteration — Bered
+  - STEP: Gen 16:14 #12 בָּֽרֶד\׃ | Ba.red | H1260G | HNpl
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/比遜.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Pishon
+  - STEP: Gen 2:11 #3 פִּישׁ֑וֹן | pi.Shon | H6376 | HNpl
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/地點/示劍（城）.md:25 — [[01 創世記/第33章|第33章]]**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — Salem
+  - STEP: Gen 33:18 #3 שָׁלֵ֜ם | sha.Lem | H8003 | HAamsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/示劍（城）.md:62 — 一個「平平安安」**
+  - chapter ownership: (12, 33, 34, 35, 37)
+  - type / claim: transliteration — Salem
+  - STEP: Gen 33:18 #3 שָׁלֵ֜ם | sha.Lem | H8003 | HAamsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/文化/客西達錢幣單位.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — Kesitahs
+  - STEP: Gen 33:19 #15 קְשִׂיטָֽה\׃ | ke.si.Tah | H7192 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/文化/客西達錢幣單位.md:20 — [[01 創世記/第33章|第33章]]**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — Kesitahs
+  - STEP: Gen 33:19 #15 קְשִׂיטָֽה\׃ | ke.si.Tah | H7192 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/文化/客西達錢幣單位.md:54 — 來源依據**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — Kesitahs
+  - STEP: Gen 33:19 #15 קְשִׂיטָֽה\׃ | ke.si.Tah | H7192 | HNcfsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/三位一體在創造中的隱現.md:28 — 與目前整理書卷的關聯**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — Elohim
+  - STEP: Gen 1:1 #3 אֱלֹהִ֑ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:2 #10 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:3 #2 אֱלֹהִ֖ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #2 אֱלֹהִ֛ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #8 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/創造（從無到有）.md:13 — 定義**
+  - chapter ownership: (1, 2)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms; Gen 2:3 #14 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/創造（從無到有）.md:59 — 來源依據**
+  - chapter ownership: (1, 2)
+  - type / claim: transliteration — bara
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms; Gen 2:3 #14 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/看顧人的神（El Roi）.md:9 — 看顧人的神（El Roi）**
+  - chapter ownership: (16,)
+  - type / claim: transliteration — El Roi
+  - STEP: Gen 16:13 #7 אֵ֣ל | el | H410G | HNcmsc; Gen 16:13 #8 רֳאִ֑י | ro.'I | H7210 | HNcmsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/看顧人的神（El Roi）.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: transliteration — El Roi
+  - STEP: Gen 16:13 #7 אֵ֣ל | el | H410G | HNcmsc; Gen 16:13 #8 רֳאִ֑י | ro.'I | H7210 | HNcmsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/神的應許應驗.md:35 — 本章應驗了哪一句**
+  - chapter ownership: (33, 35)
+  - type / claim: transliteration — Salem
+  - STEP: Gen 33:18 #3 שָׁלֵ֜ם | sha.Lem | H8003 | HAamsa
+  - reason: one-character spelling/romanization difference from a STEP transliteration
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/神的軍兵.md:30 — 它們是誰**
+  - chapter ownership: (32,)
+  - type / claim: transliteration — machaneh
+  - STEP: Gen 32:2 #5 מַחֲנֵ֥ה | ma.cha.Neh | H4264 | HNcfsc
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/神學/神的面.md:12 — 定義**
+  - chapter ownership: (32,)
+  - type / claim: transliteration — panim
+  - STEP: Gen 32:30 #9 פָּנִ֣ים | pa.Nim | H6440H | HNcmpa; Gen 32:30 #11 פָּנִ֔ים | pa.Nim | H6440H | HNcmpa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/背景/空虛混沌的原意.md:55 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — tohu
+  - STEP: Gen 1:2 #3 תֹ֙הוּ֙ | to.hu | H8414 | HNcmsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/解經爭議/創世記1章第1-2節間隔問題.md:54 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — tohu
+  - STEP: Gen 1:2 #3 תֹ֙הוּ֙ | to.hu | H8414 | HNcmsa
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/解經爭議/所多瑪的罪是什麼.md:22 — [[01 創世記/第19章|第19章]]**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — yada
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/解經爭議/所多瑪的罪是什麼.md:33 — 這是一場有正式兩造的爭論**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — yada
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+- **link_folder/解經爭議/所多瑪的罪是什麼.md:35 — 這是一場有正式兩造的爭論**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — yada
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: matches STEP after conservative diacritic/punctuation normalization
+  - manual action: confirm the spelling variant; no automatic content change
+
+### UNVERIFIABLE (193)
+
+- **01 創世記/第17章.md:88 — 全能的神與約的重申（1-8節）**
+  - chapter ownership: (17,)
+  - type / claim: transliteration — El Shaddai
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第19章.md:111 — 集體性暴力與羅得的提議（4-11節）**
+  - chapter ownership: (19,)
+  - type / claim: lexical_meaning — 城中各處的男人「連老帶少」圍住房子，要求羅得交出訪客「任我們所為」。原文動詞 *yada* 一般意為「認識」，但在性關係語境也可作委婉語；第8節用女兒「未曾認識男人」的平行表達，加上暴民威脅和強行破門，表明此處是集體性侵意圖，不是單純想結識陌生人（詳見[[所多瑪的罪是什麼]]）。
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第19章.md:114 — 集體性暴力與羅得的提議（4-11節）**
+  - chapter ownership: (19,)
+  - type / claim: lexical_meaning — 這一點在解經上是有正式爭論的，而 GT 賈斯樂郝威《聖經難解經文詮釋手冊》在〈命題37〉裡把兩造都擺了出來。反方主張所多瑪的罪是「待客冷漠」而非性侵：理由是迦南習俗要保障外來人在家作客的安全，因此羅得才說「不要向他們作甚麼」；而希伯來文的「認識」（yada）本身並不含性的意味（詩一三九1）。賈斯樂郝威承認 yada 一字確實不必然指性關係，但列出六項上下文證據支持性侵的讀法：這個字在創世記十二次用例中有十次指性關係（如創四1、25）；本章第8節用同一個字描述兩個女兒「還是處女」；字義取決於上下文，而創十八20 已說此城罪惡甚重；第7節羅得稱之為「這惡事」，與「想認識一下」不相稱；若暴民所求與性無關，羅得提出以處女的女兒替代就無從解釋；且神在創十八16-33 已先宣告要毀城，可見所懲罰的是既有的罪，而非他們尚未犯下的待客冷漠。
+  - STEP: Gen 19:33 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms; Gen 19:35 #13 יָדַ֥ע | ya.Da' | H3045 | HVqp3ms
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第1章.md:101 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — tohu wabohu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第1章.md:101 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: lexical_meaning — 第2節「[[空虛混沌的原意|空虛混沌]]」（*tohu wabohu*）如何解，是本章第一個
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第1章.md:171 — 第六日的高峰：按神形像造人、治理託付與食物（v26-31）**
+  - chapter ownership: (1,)
+  - type / claim: morphology — noun, plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第22章.md:143 — 神的祝福（15-18節）**
+  - chapter ownership: (22,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第25章.md:102 — 亞伯拉罕的晚年與分產（1-6節）**
+  - chapter ownership: (25,)
+  - type / claim: transliteration — pileges
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第25章.md:102 — 亞伯拉罕的晚年與分產（1-6節）**
+  - chapter ownership: (25,)
+  - type / claim: lexical_meaning — 「妻」與「妾」的落差有法律內容（[[古代近東妾與繼承權]]）。GT 華爾頓《創世記背景註釋》說明妾即次等的妻子，通常沒有陪嫁妝奩，因此她們的兒女沒有分受遺產的優先權利；正妻沒有兒子時，父親可以從庶出的眾子中指定一人為繼承人，否則他們能否獲分家業就完全倚靠婚約的規定——第5至6節的安排正是照這套規則走的。GT 艾基斯《舊約聖經難題彙編》從用字上調和創二十五1 的「妻」（'issah）與代上一32 的「妾」（pileges）：第5節既明說神視以撒為嗣子，第6節又把基土拉之子歸入「庶出的眾子」，可見 pileges 的意思是——基土拉雖是亞伯拉罕暮年唯一的合法妻子，但與撒拉相比地位次要。GT 賈斯樂郝威《聖經難解經文詮釋手冊》在〈命題45〉給的解法相近：希伯來文的「妻子」一詞也可單指「女人」，而創二十五1 開頭的動詞意為「再加上」，因此本節宜讀作亞伯拉罕又娶了一個女子為妾。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第27章.md:105 — 以撒欲祝福以掃（1-4節）**
+  - chapter ownership: (27,)
+  - type / claim: transliteration — bekorah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第28章.md:83 — 約的承接與離家（1-9節）**
+  - chapter ownership: (28,)
+  - type / claim: transliteration — El Shaddai
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第33章.md:130 — 雅各與以掃的和好（1-11節）**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — minchah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第40章.md:152 — 四、「求你記念我」（14-15節）**
+  - chapter ownership: (40,)
+  - type / claim: lexical_meaning — 約瑟求酒政「記念我……救我出這[[監_監牢_坑|監牢]]」。他所求的「施恩與我」，BH 指出用的是希伯來文的 *chesed*——那是盟約裡忠實不變的愛，也就是說，約瑟求的不只是一個順手的人情，而是守信到底的相待。他自述「我實在是從[[希伯來人之地]]被拐來的」：GT《串珠聖經註釋》說第15節的「拐」原作「綁架」，正指哥哥們出賣他一事；精讀本則說明「希伯來人」字面意思是「過來的人」，以色列人向別族介紹自己時用它（創43:32；拿1:9），別族稱呼以色列人時也用它（出2:6）——約瑟這樣自報身分，是因他沒有忘記自己是亞伯拉罕的後裔、立約的百姓。丁良才另提一種讀法：約瑟不說迦南地，「大概因為他輕看那些拜偶像的迦南人，不願意被人看作迦南人」。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第41章.md:159 — 一、「過了兩年」——神量定苦難的日期（1-8節）**
+  - chapter ownership: (41,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第44章.md:134 — 二、「神已經查出僕人的罪孽了」（14-17節）**
+  - chapter ownership: (44,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第46章.md:105 — 一、他為什麼要在別是巴獻祭？（1-4節）**
+  - chapter ownership: (46,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第46章.md:121 — 一、他為什麼要在別是巴獻祭？（1-4節）**
+  - chapter ownership: (46,)
+  - type / claim: morphology — noun
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第48章.md:128 — 二、三個名字，一位神（8-16節）**
+  - chapter ownership: (48,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **01 創世記/第49章.md:142 — 二、猶大：圭必不離（8-12節）**
+  - chapter ownership: (49,)
+  - type / claim: transliteration — shay
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/基土拉的地位.md:45 — 兩處經文的兩個字**
+  - chapter ownership: (25,)
+  - type / claim: transliteration — ishshah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/基土拉的地位.md:45 — 兩處經文的兩個字**
+  - chapter ownership: (25,)
+  - type / claim: lexical_meaning — GT 賈斯樂郝威《聖經難解經文詮釋手冊》〈命題45〉走的是另一條路：希伯來文的「妻子」（ishshah）也可以表示「女人」的意思，因此這個字不一定要解釋為「妻子」；而創二十五1 開頭的動詞 vayoseph 意為「再加上」，考慮到創二十四67 已明說撒拉是亞伯拉罕的妻子而後來她死了，本節「不能解釋為亞伯拉罕又增添了妻子」。他的結論是：適當的解讀應該是亞伯拉罕又娶了一個女子成為他的妾。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/主題/強暴.md:13 — 定義**
+  - chapter ownership: (6,)
+  - type / claim: transliteration — hamas
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/後裔的應許.md:40 — 主題發展**
+  - chapter ownership: (15,)
+  - type / claim: morphology — plural, singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/主題/族長祝福的不可更改性.md:38 — [[01 創世記/第27章|第27章]]**
+  - chapter ownership: (27,)
+  - type / claim: transliteration — bekorah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/雅各騙取祝福.md:48 — [[01 創世記/第27章|第27章]]**
+  - chapter ownership: (27,)
+  - type / claim: transliteration — bekorah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/互文/以掃貪戀世俗（來12：16）.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — bebēlos
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/互文/加拉太書三章.md:38 — 主題發展**
+  - chapter ownership: (15,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/亞瑪力.md:13 — 定義**
+  - chapter ownership: (36,)
+  - type / claim: lexical_meaning — 亞瑪力（Amalek）是以掃的兒子以利法與妾亭納所生的兒子（創36:12），亞瑪力人的始祖。GT《中文聖經註釋》說「按聖經的傳統，亞瑪力人屬以東族，是以掃的兒子以利法的妾亭納所生的兒子的後人（見創卅六12、16）」，並給了名字的三個可能字義：「谷中居民」、「好戰者」或「生事者」；CT 給的原文字義是「山谷的居住者」。到了出17:13-14、16，「亞瑪力」已用作整個民族的代稱——約書亞殺的是「亞瑪力王和他的百姓」，神要塗抹的是「亞瑪力的名號」。KC 指出亞瑪力是撒但藉肉體軟弱攻擊信徒的圖畫，並點出他的出身：他是以掃的孫子，而以掃在希伯來書12:16被稱為「貪戀世俗的人」。
+  - STEP: Gen 36:12 #10 עֲמָלֵ֑ק | 'a.ma.Lek | H6002H | HNpm; Gen 36:16 #6 עֲמָלֵ֑ק | 'a.ma.Lek | H6002H | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/亞當.md:13 — 定義**
+  - chapter ownership: (2, 3, 4, 5)
+  - type / claim: lexical_meaning — 希伯來文 *Adam*，意思是「人」或「紅土」。神用地上的塵土造人，將生氣吹在鼻孔裡，他就成了有靈的活人，名叫亞當。
+  - STEP: Gen 2:7 #5 הָֽ/אָדָ֗ם | Adam | H120H | HTd/Ncmsa; Gen 2:7 #14 הָֽ/אָדָ֖ם | Adam | H120H | HTd/Ncmsa; Gen 2:8 #10 הָֽ/אָדָ֖ם | Adam | H120H | HTd/Ncmsa; Gen 2:15 #5 הָֽ/אָדָ֑ם | Adam | H120H | HTd/Ncmsa; Gen 2:16 #5 הָֽ/אָדָ֖ם | Adam | H120H | HTd/Ncmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/亞當.md:83 — 來源依據**
+  - chapter ownership: (2, 3, 4, 5)
+  - type / claim: transliteration — nephesh
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/人.md:61 — 來源依據**
+  - chapter ownership: (1, 2)
+  - type / claim: transliteration — imago Dei
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/以弗崙.md:13 — 定義**
+  - chapter ownership: (23, 25)
+  - type / claim: transliteration — Ephron
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/以弗崙.md:13 — 定義**
+  - chapter ownership: (23, 25)
+  - type / claim: lexical_meaning — 以弗崙（Ephron），赫人，[[瑣轄]]之子，擁有幔利前的麥比拉洞及其周圍田地。CT 註其原文字義為「強壯」。創世記第23章中，他作為田主與亞伯拉罕交易，最終以四百舍客勒銀子把整塊田連洞賣給亞伯拉罕作墳地；創二十五9 再次以「赫人瑣轄的兒子以弗崙的田」指認這塊墓地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/以挪士.md:13 — 定義**
+  - chapter ownership: (4, 5)
+  - type / claim: lexical_meaning — 希伯來文 *Enosh*，意思是「脆弱必死的人」。塞特的兒子。聖經記載「那時候，人才求告耶和華的名」，標誌人類敬拜的開始。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/便亞米.md:48 — 與族名的關係**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — ammi
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/便亞米.md:48 — 與族名的關係**
+  - chapter ownership: (19,)
+  - type / claim: lexical_meaning — 創19:38 稱他為「現今亞捫人的始祖」。要分清楚的是族名與人名不是同一個構詞：CT 給「亞捫」的字義是「含糊的，先天的，忠誠的」，李道生取「先天的」；而便亞米這個人名的核心是 *ammi*（我的族人／親屬）。亞捫人日後長期與以色列為敵（詳見[[亞捫人]]），申二三3-4 因此定下他們永不可入耶和華會的例。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/偉人.md:13 — 定義**
+  - chapter ownership: (6,)
+  - type / claim: transliteration — Nephilim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/偉人.md:27 — 主題發展**
+  - chapter ownership: (6,)
+  - type / claim: transliteration — Nephilim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/利百加.md:14 — 定義**
+  - chapter ownership: (22, 24, 25, 26, 27, 28, 29, 35)
+  - type / claim: transliteration — Rebekah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/利百加.md:14 — 定義**
+  - chapter ownership: (22, 24, 25, 26, 27, 28, 29, 35)
+  - type / claim: lexical_meaning — 利百加（Rebekah），彼土利之女、拿鶴的孫女，密迦是她的祖母。她在創世記二十二22-23 的拿鶴家譜中首次出現，後來成為以撒的妻子（創二十四），生以掃與雅各（創二十五21-26）。CT 註其原文字義為「逗人歡喜，以美迷人」，並讀她為教會的豫表——神為祂兒子所預備的新婦。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/塞特.md:13 — 定義**
+  - chapter ownership: (4, 5)
+  - type / claim: transliteration — Seth
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/塞特.md:13 — 定義**
+  - chapter ownership: (4, 5)
+  - type / claim: lexical_meaning — 希伯來文 *Seth*，意思是「設立、代替」。亞當和夏娃的第三子，神另立他代替亞伯，成為敬虔後裔的源頭。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/夏娃.md:13 — 定義**
+  - chapter ownership: (2, 3, 4)
+  - type / claim: lexical_meaning — 希伯來文 *Chavah*，意思是「生命」或「眾生的母親」。夏娃是神用亞當的肋骨所造的女人，是眾生之母。
+  - STEP: Gen 3:20 #5 חַוָּ֑ה | cha.Vah | H2332 | HNpf; Gen 4:1 #4 חַוָּ֣ה | cha.Vah | H2332 | HNpf
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/夏甲.md:13 — 定義**
+  - chapter ownership: (16, 21, 25)
+  - type / claim: lexical_meaning — 夏甲（Hagar），埃及人，撒萊的使女。CT 註其原文字義為「飄泊，寄居的，逃跑」——三個義項恰好對上她在本章的遭遇。撒萊因不育將夏甲給亞伯蘭為妾，夏甲生子以實瑪利。保羅在加四23-25 以她豫表律法之約。
+  - STEP: Gen 16:1 #11 הָגָֽר\׃ | ha.Gar | H1904 | HNpf; Gen 16:3 #6 הָגָ֤ר | ha.Gar | H1904 | HNpf; Gen 16:4 #3 הָגָ֖ר | ha.Gar | H1904 | HNpf; Gen 16:8 #2 הָגָ֞ר | ha.Gar | H1904 | HNpf; Gen 16:15 #2 הָגָ֛ר | ha.Gar | H1904 | HNpf
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/希伯來人.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Eber
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/希伯來人.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — 「希伯來人」的原文字義，CT 在創十四13 與出二十一2 兩處都作「來自遠處的人，過河的人」。這個稱呼首次出現在創世記十四章13節，用來稱呼亞伯蘭，指從大河那邊過來的人；BH 在創十四下另指這名稱可能與先祖希伯（Eber）有關。到了出埃及記二十一2，同一個詞已經轉為族群內部的身分用語——GT《舊約聖經背景註釋》指它在此「是指沒有地業、變得赤貧的以色列人」，而 GT《丁道爾聖經註釋》正是抓住這一點說明本章奴僕條例的立足點：主人和奴隸「同為『希伯來人』」。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/底拿.md:22 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/底拿.md:38 — 創30：唯一被記名的女兒**
+  - chapter ownership: (30, 34)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/拿鶴.md:14 — 定義**
+  - chapter ownership: (22, 24, 29)
+  - type / claim: lexical_meaning — 拿鶴（Nahor），亞伯蘭的兄弟，他拉的兒子。亞伯蘭出哈蘭時，拿鶴留在哈蘭。他的妻子密迦為他生了八個兒子，妾流瑪另生四子，共十二子（創二十二20-24）；孫女[[利百加]]後來成為以撒的妻子。CT 註「拿鶴」的原文字義為「鼾睡」。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/瑪拿西.md:13 — 定義**
+  - chapter ownership: (41, 48, 50)
+  - type / claim: transliteration — nashah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/瑪拿西.md:13 — 定義**
+  - chapter ownership: (41, 48, 50)
+  - type / claim: lexical_meaning — 「瑪拿西」是約瑟長子，母親是亞西納（創41:51, 46:20）。CT 的原文字義作「使之忘了，忘記」；BH 指出這名字出自希伯來文動詞 *nashah*（忘記）。約瑟解釋：「神使我忘了一切的困苦和我父的全家」（創41:51）。後成為以色列十二支派之一（以法蓮、瑪拿西雙支派取代約瑟）。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/甲摩尼人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: transliteration — Kadmonites
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/甲摩尼人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — 甲摩尼人（Kadmonites），迦南地原住民之一，原文可能意為「東方人」。是神應許之地中居住的十族之一。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/神的使者.md:48 — 「遇見」是怎麼遇見的**
+  - chapter ownership: (21, 32)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/耶布斯人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: transliteration — Jebusites
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/耶布斯人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — 耶布斯人（Jebusites），迦南地原住民之一，原文可能意為「被踐踏者」或「打穀場」。居住在耶路撒冷附近的山区，耶路撒冷原名耶布斯。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/該隱.md:13 — 定義**
+  - chapter ownership: (4,)
+  - type / claim: lexical_meaning — 希伯來文 *Qayin*，意思是「得著」。亞當和夏娃的長子，是人類歷史上第一個殺人者。以種地為業，因獻祭不被神看中而嫉妒弟弟亞伯，將他殺死。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/護衛長波提乏.md:14 — 定義**
+  - chapter ownership: (39, 40, 41)
+  - type / claim: transliteration — Potiphar
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/護衛長波提乏.md:14 — 定義**
+  - chapter ownership: (39, 40, 41)
+  - type / claim: lexical_meaning — 創世記40:3-4中將酒政膳長交給約瑟的「護衛長」，即創37:36、39:1的波提乏（Potiphar），法老的內臣、護衛長（隊長）。希伯來原文意為「屠殺長官/衛隊長」，掌管王宮衛隊與王的囚犯。**司獄是否即護衛長本人，來源並不一致，兩家的說法相反**：CT 在創卅九21 下說「『司獄』若不是指護衛長本人（參四十4），就是指他的助手」——兩可而未定；GT《聖經精讀本》則明說「司獄：護衛長波提乏的手下高官，監獄主管，監督囚犯」——是下屬而非同一人。可以確定的是這座監獄屬護衛長職權範圍、專關押王的囚犯（20節）。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/赫人.md:13 — 定義**
+  - chapter ownership: (15, 23, 25, 26, 27)
+  - type / claim: transliteration — Hittites
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/赫人.md:13 — 定義**
+  - chapter ownership: (15, 23, 25, 26, 27)
+  - type / claim: lexical_meaning — 赫人（Hittites），迦南地的住民之一，CT 註「赫」的原文字義為「恐怖」。創十15 記赫是迦南的兒子，因此聖經譜系把迦南的赫人算作含的後裔；另有一支以小亞細亞（今土耳其安那托利亞）為中心的赫人帝國，是古代近東的強國。兩者是否同源，來源並未取得一致（見主題發展）。他們在創世記中最完整的一次出現是第23章——亞伯拉罕向赫人以弗崙買下麥比拉洞。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/雅列.md:13 — 定義**
+  - chapter ownership: (5,)
+  - type / claim: lexical_meaning — 「雅列」（英譯 Jared）原文字義，CT 作「卑下，向下流出」；GT《丁道爾聖經註釋》另提一說——雅列（yered）「可能意為『世代相傳』」，並指此字與創四18該隱線的「以拿」並不相像；BH 作「下降」。瑪勒列的兒子，以諾的父親。活了九百六十二歲。
+  - STEP: Gen 5:16 #6 יֶ֔רֶד | Ye.red | H3382G | HNpm; Gen 5:18 #2 יֶ֕רֶד | Ye.red | H3382G | HNpm; Gen 5:19 #2 יֶ֗רֶד | Ye.red | H3382G | HNpm; Gen 5:20 #4 יֶ֔רֶד | Ye.red | H3382G | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/雅各.md:143 — [[01 創世記/第46章|第46章]]**
+  - chapter ownership: (46,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/雅各.md:155 — [[01 創世記/第48章|第48章]]**
+  - chapter ownership: (48,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/非各.md:13 — 定義**
+  - chapter ownership: (21, 26)
+  - type / claim: transliteration — Phicol
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/非各.md:13 — 定義**
+  - chapter ownership: (21, 26)
+  - type / claim: lexical_meaning — 非各（Phicol），亞比米勒的軍長。CT 註其原文字義為「健壯，口詞超群，指揮，統率」。他兩次出現在族長敘事中：創世記二十一22、32 隨亞比米勒到別是巴與**亞伯拉罕**立約，創世記二十六26 又隨亞比米勒與**以撒**立約。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/人物/革迦撒人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: transliteration — Girgashites
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/人物/革迦撒人.md:13 — 定義**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — 革迦撒人（Girgashites），迦南地原住民之一，原文可能意為「異邦人行近」。是神應許之地中居住的十族之一。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「亞伯拉罕」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: lexical_meaning — 「亞伯拉罕」（Avraham）希伯來文意為「多國之父」或「萬民之父」。原名「亞伯蘭」（Avram）意為「高舉之父」或「尊貴的父」。神將自己名中的一個字母（he）加进去，表明人惟有靠神才能成事。
+  - STEP: Gen 17:5 #9 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:9 #4 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:15 #4 אַבְרָהָ֔ם | 'av.ra.Ham | H85 | HNpm; Gen 17:17 #2 אַבְרָהָ֛ם | 'av.ra.Ham | H85 | HNpm; Gen 17:18 #2 אַבְרָהָ֖ם | 'av.ra.Ham | H85 | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「以實瑪利」名字含義.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: lexical_meaning — 「以實瑪利」（Yishma'el）希伯來文意為「神聽見」或「願神聽見」。耶和華使者對夏甲說：「可以給他起名叫以實瑪利，因為耶和華聽見了你的苦情。」
+  - STEP: Gen 16:11 #11 יִשְׁמָעֵ֔אל | yish.ma.'El | H3458G | HNpm; Gen 16:15 #12 יִשְׁמָעֵֽאל\׃ | yish.ma.'El | H3458G | HNpm; Gen 16:16 #10 יִשְׁמָעֵ֖אל | yish.ma.'El | H3458G | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「但」名字含義.md:12 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: lexical_meaning — 希伯來文「但」（Dan），字義為「審判、辯護、伸冤」。名字意為「審判」、「神判斷了我」。創30:6 拉結藉使女辟拉得子，說「神伸了我的冤，也聽了我的聲音，賜我一個兒子」，遂為他起名叫但。與「底拿」同源，同屬「審判/伸冤」字族。
+  - STEP: Gen 30:6 #15 דָּֽן\׃ | Dan | H1835H | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「便亞米」名字含義.md:27 — 主題發展**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — ammi
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「便亞米」名字含義.md:42 — 四家的譯法排開來**
+  - chapter ownership: (19,)
+  - type / claim: transliteration — ammi
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「希伯來人」的意義.md:17 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Habiru
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「希伯來人」的意義.md:35 — [[01 創世記/第14章|第14章]]**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Habiru
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「希伯來人」的意義.md:53 — 三說如何並存**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Ebel
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「希伯來人」的意義.md:69 — 來源依據**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Ebel
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「庇耳拉海萊」名字含義.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: transliteration — Beer Lahai Roi
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「庇耳拉海萊」名字含義.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: lexical_meaning — 「庇耳拉海萊」（Beer Lahai Roi）希伯來文意為「那看顧我的永活者之井」或「見了神仍活著之人的井」。夏甲在此井旁遇見耶和華使者後命名。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「撒冷」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — 「撒冷」（希伯來文 *Shalem* / *Shalom*）意為「平安」（peace）、完全、和好。[[麥基洗德]]作撒冷王，即「平安之王」。希伯來書七2將「撒冷王」解釋為「平安王」。
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「撒冷」名字含義.md:42 — 字義分析**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — - *Shalem* 的字根含義：完整、完滿、和平
+  - STEP: Gen 14:18 #4 שָׁלֵ֔ם | sha.Lem | H8004 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「撒冷」名字含義.md:44 — 字義分析**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Yerushalayim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「撒拉」名字含義.md:13 — 定義**
+  - chapter ownership: (17,)
+  - type / claim: lexical_meaning — 「撒拉」（Sarah）希伯來文意為「公主」或「多國之母」。原名「撒萊」（Sarai）意為「我的公主」或「高舉的」。改名顯示她將生應許之子，並作「多國之母」。
+  - STEP: Gen 17:15 #13 שָׂרָ֖ה | sa.Rah | H8283 | HNpf; Gen 17:17 #13 שָׂרָ֔ה | sa.Rah | H8283 | HNpf; Gen 17:19 #4 שָׂרָ֣ה | sa.Rah | H8283 | HNpf; Gen 17:21 #9 שָׂרָה֙ | sa.Rah | H8283 | HNpf; Gen 17:15 #5 שָׂרַ֣י | sa.Rai | H8297 | HNpf
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/「麥基洗德」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Malki-Tsedeq
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「麥基洗德」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — malki
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/「麥基洗德」名字含義.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — tsedeq
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/三根枝子.md:33 — 相關條目**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — cupbearer
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/三筐白餅.md:32 — 相關條目**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — baker
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/亞比米勒名字與王號.md:13 — 定義**
+  - chapter ownership: (20,)
+  - type / claim: transliteration — Abimelech
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/以薩迦（報酬）.md:14 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — issachar
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/以薩迦（報酬）.md:14 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: lexical_meaning — 希伯來文「以薩迦」(issachar)意為「價值」、「工價」、「報酬」、「獎賞」。利亞為自己所生的第五個兒子（雅各的第九個兒子）取名以薩迦，說：「神給了我價值，因為我把使女給了我丈夫。」（創三十18）
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/伊利伊羅伊以色列 (神、以色列神).md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — El-Elohe-Israel
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/十分之一.md:13 — 定義**
+  - chapter ownership: (14, 28)
+  - type / claim: transliteration — tithe
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/名字含義與諧音.md:21 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Naphtali
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/名字含義與諧音.md:24 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Issachar
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/名字含義與諧音.md:26 — [[01 創世記/第30章|第30章]]**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Joseph
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/底拿名字含義.md:12 — 定義**
+  - chapter ownership: (30, 34)
+  - type / claim: lexical_meaning — 「底拿」原文字根意為「審判、辯護、伸冤」。名字意為「審判了」、「復仇」、「得伸冤」。與「但」（Dan）同源——創30:6 拉結藉使女辟拉得子時說「神伸了我的冤，也聽了我的聲音，賜我一個兒子」，因此起名叫但；創30:21 利亞所生的女兒名底拿，延續同一個「神審判／伸冤」的字族。
+  - STEP: Gen 30:6 #15 דָּֽן\׃ | Dan | H1835H | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/拿弗他利（角力）.md:12 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: transliteration — Naphtali
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/拿弗他利（角力）.md:12 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: lexical_meaning — 希伯來文「拿弗他利」（Naphtali）意為「我的摔跤」、「角力」、「大大的相爭」。此名由拉結為使女辟拉所生的第二個兒子（雅各的第六個兒子）取的名字，表達拉結相信自己與姊姊利亞的激烈競爭中已經得勝。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/摔跤.md:12 — 定義**
+  - chapter ownership: (32,)
+  - type / claim: transliteration — abaq
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/摔跤.md:12 — 定義**
+  - chapter ownership: (32,)
+  - type / claim: lexical_meaning — 希伯來文「亞巴克」（abaq），意為「摔跤」、「扭打」、「纏鬥」。創32:24「有一個人來和他摔跤」、何12:4「與天使摔跤」。與雅博河名諧音（創32:22），文學上構成雙關。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/敗壞與毀滅的文字呼應.md:13 — 定義**
+  - chapter ownership: (6,)
+  - type / claim: transliteration — shachath
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/敗壞與毀滅的文字呼應.md:13 — 定義**
+  - chapter ownership: (6,)
+  - type / claim: lexical_meaning — GT所收丁道爾註釋指出，創世記6章11至13節的「敗壞」與「毀滅」可由同一希伯來字根 *shachath* 表達。文字上的呼應形成審判性的反轉：人與地已被罪敗壞，神遂宣告使這敗壞的世界遭毀滅。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/治理與管理.md:13 — 定義**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — kavash
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/治理與管理.md:13 — 定義**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — radah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/瑪拿西（使之忘了）.md:13 — 定義**
+  - chapter ownership: (41,)
+  - type / claim: transliteration — nashah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/瑪拿西（使之忘了）.md:13 — 定義**
+  - chapter ownership: (41,)
+  - type / claim: lexical_meaning — 「瑪拿西」意為「使之忘了、忘記」（CT 原文字義）；BH 指出這名字出自希伯來文動詞 *nashah*（忘記）。約瑟為長子命名時說：「神使我忘了一切的困苦和我父的全家」（創41:51）。GT《串珠聖經註釋》解為：約瑟藉長子的名字，表明神已使他忘記多年的苦難以及在父家所遭遇的一切。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/示劍名字含義.md:12 — 定義**
+  - chapter ownership: (12, 33, 34)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/原文/示劍名字含義.md:36 — 字義**
+  - chapter ownership: (12, 33, 34)
+  - type / claim: lexical_meaning — BH 指出示劍（Shechem）意為「肩」，並推測這與它的地理位置有關——它坐落在以巴路山和基利心山之間，形如兩山之間的肩背。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/示劍名字含義.md:48 — 這個名字在正典裡的份量**
+  - chapter ownership: (12, 33, 34)
+  - type / claim: transliteration — Sen-Usert III
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/米斯巴.md:12 — 定義**
+  - chapter ownership: (31,)
+  - type / claim: transliteration — Watchtower
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/米斯巴.md:12 — 定義**
+  - chapter ownership: (31,)
+  - type / claim: lexical_meaning — 希伯來語「米斯巴」，意為「瞭望塔」（Watchtower）或「鑒察」。創31:49「又叫米斯巴，意思說：我們彼此離別以後，願耶和華在你我中間鑒察」。拉班補充此名於迦累得之上，作為神監察雙方立約的呼召。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/膳長_baker.md:4 — 膳長_baker**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — baker
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/膳長_baker.md:31 — 相關條目**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — cupbearer
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/迦得（幸運）.md:12 — 定義**
+  - chapter ownership: (30,)
+  - type / claim: lexical_meaning — 希伯來文「迦得」（Gad）意為幸運、萬幸、軍隊。此名由利亞為使女悉帕所生的第一個兒子（雅各的第七個兒子）取的名字，表達利亞在停育後再次得子的喜悅和感恩。
+  - STEP: Gen 30:11 #7 גָּֽד\׃ | Gad | H1410G | HNpm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/原文/通事（傳譯員）.md:13 — 定義**
+  - chapter ownership: (42,)
+  - type / claim: transliteration — interpreter
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/酒政_cupbearer.md:4 — 酒政_cupbearer**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — cupbearer
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/酒政_cupbearer.md:31 — 相關條目**
+  - chapter ownership: (40,)
+  - type / claim: transliteration — baker
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/陰間（Sheol）.md:9 — 陰間（Sheol）**
+  - chapter ownership: (42, 44)
+  - type / claim: transliteration — Sheol
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/原文/陰間（Sheol）.md:13 — 定義**
+  - chapter ownership: (42, 44)
+  - type / claim: transliteration — Sheol
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/亞拉臘山.md:49 — 地理背景**
+  - chapter ownership: (8,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/地點/伊甸.md:13 — 定義**
+  - chapter ownership: (2, 3, 4)
+  - type / claim: lexical_meaning — 伊甸（*Eden*）意思是「喜悅」或「最高的喜悅」。神在東方伊甸立園，將人安置其中。
+  - STEP: Gen 2:15 #8 עֵ֔דֶן | 'E.den | H5731B | HNpl; Gen 3:23 #5 עֵ֑דֶן | 'E.den | H5731B | HNpl; Gen 3:24 #7 עֵ֜דֶן | 'E.den | H5731B | HNpl; Gen 4:16 #9 עֵֽדֶן\׃ | 'E.den | H5731B | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/別是巴.md:16 — 定義**
+  - chapter ownership: (21, 22, 26, 28, 46)
+  - type / claim: transliteration — Beersheba
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/古實.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Cush
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/古實.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 古實（*Cush*）意思是「黑色」或「黑暗」。基訓河環繞古實全地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/哈腓拉.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Havilah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/哈腓拉.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 哈腓拉（*Havilah*）意思是「沙地」。比遜河環繞哈腓拉全地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/哈蘭.md:75 — 名字與地望**
+  - chapter ownership: (11, 12, 24, 28, 29, 30)
+  - type / claim: transliteration — padanu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/哈蘭.md:75 — 名字與地望**
+  - chapter ownership: (11, 12, 24, 28, 29, 30)
+  - type / claim: transliteration — harranu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/哈蘭.md:75 — 名字與地望**
+  - chapter ownership: (11, 12, 24, 28, 29, 30)
+  - type / claim: lexical_meaning — CT 註「哈蘭」的原文字義為「多山的，山居者，他們的焚燒」，並指出哈蘭即巴旦亞蘭（創二七43；二八2）。GT《舊約背景註釋》從語言學上把兩個名字連起來：在亞喀得語中，巴旦努（padanu）和哈蘭努（harranu）都是「途徑」「道路」的意思——因此「巴旦亞蘭」若不是指美索不達米亞北部一帶（即創二四10 的「兩河的亞蘭」），就可能是哈蘭的別名。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/基拉耳.md:14 — 定義**
+  - chapter ownership: (20, 26)
+  - type / claim: lexical_meaning — 基拉耳（Gerar），非利士人的古城。原文意為「停止地、寄居地、反芻、反復思想、被拖曳而去」。位於加低斯和書珥中間，迦薩以南約16公里。亞伯拉罕和以撒都曾寄居此地。
+  - STEP: Gen 26:17 #6 גְּרָ֖ר | ge.Rar | H1642 | HNpl; Gen 26:20 #3 גְרָ֗ר | ge.Rar | H1642 | HNpl; Gen 20:2 #11 גְּרָ֔ר | ge.Rar | H1642 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/基訓.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 基訓（*Gihon*）意思是「湧流」或「突破」。第二道河，環繞古實全地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/巴列.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: lexical_meaning — 巴列（Bered），原文意為「雹」或「種子之地」。位於加低斯附近，與加低斯一同作為庇耳拉海萊井的位置參考。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/庇耳拉海萊.md:13 — 定義**
+  - chapter ownership: (16, 24, 25)
+  - type / claim: transliteration — Beer-lahai-roi
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/庇耳拉海萊.md:13 — 定義**
+  - chapter ownership: (16, 24, 25)
+  - type / claim: lexical_meaning — 庇耳拉海萊（Beer-lahai-roi），原文意為「那看顧我的永活者之井」。夏甲在此井旁遇見耶和華使者，稱神為「看顧人的神」。位於加低斯和巴列中間。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/底格里斯.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Hiddekel
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/底格里斯.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 底格里斯（*Hiddekel*）意思是「箭」或「迅速」。第三道河，流在亞述的東邊。原文又譯「希底結」。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/挪得.md:13 — 定義**
+  - chapter ownership: (4,)
+  - type / claim: lexical_meaning — 希伯來文 *Nod*，意思是「飄蕩、流離」。該隱殺亞伯後，離開耶和華的面，去住在伊甸東邊挪得之地。
+  - STEP: Gen 4:16 #7 נ֖וֹד | Nod | H5113 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/摩利亞地.md:15 — 定義**
+  - chapter ownership: (22,)
+  - type / claim: transliteration — Moriah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/摩利亞地.md:15 — 定義**
+  - chapter ownership: (22,)
+  - type / claim: lexical_meaning — 摩利亞地（Moriah），亞伯拉罕奉命帶以撒前往獻祭之地（創二十二2）。CT 註其原文字義為「神預備，神看顧」，GT 李道生《舊約聖經問題總解》作「耶和華看到」。聖經中「摩利亞」另一次出現是代下三1，指所羅門建殿的所在；傳統據此把兩處視為同一地，並進而把各各他與之相連，但這個辨識的證據強度在來源之間差別很大（見主題發展）。無論位置為何，本章使它成為「耶和華以勒」之名的來源地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/書珥.md:13 — 定義**
+  - chapter ownership: (16, 20, 25)
+  - type / claim: lexical_meaning — 書珥（Shur），原文意為「牆」或「堡壘」。位於埃及邊界附近的曠野地區，在蘇伊士運河東，別是巴以南，通往埃及的大路上。
+  - STEP: Gen 16:7 #11 שֽׁוּר\׃ | Shur | H7793 | HNpl; Gen 25:18 #4 שׁ֗וּר | Shur | H7793 | HNpl; Gen 20:1 #10 שׁ֑וּר | Shur | H7793 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/書珥.md:60 — 名字本身就是線索**
+  - chapter ownership: (16, 20, 25)
+  - type / claim: lexical_meaning — CT 給的原文字義是「牆，壁壘」。GT《舊約背景註釋》〈創二十1 加低斯和書珥〉把這個字義直接連到具體對象：書珥「可能是指尼羅河三角洲東部地區埃及要塞的『城牆』」——**這正是書珥（shur）一語的原義**。
+  - STEP: Gen 16:7 #11 שֽׁוּר\׃ | Shur | H7793 | HNpl; Gen 25:18 #4 שׁ֗וּר | Shur | H7793 | HNpl; Gen 20:1 #10 שׁ֑וּר | Shur | H7793 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/比遜.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 比遜（*Pishon*）意思是「自由流淌」或「滿溢」。第一道河，環繞哈腓拉全地。
+  - STEP: Gen 2:11 #3 פִּישׁ֑וֹן | pi.Shon | H6376 | HNpl
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/疏割.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — Succoth
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/地點/疏割.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: lexical_meaning — 希伯來文「疏割」（Succoth）意為「棚」、「帳棚」、「窩」（創33:17）。位於約但河東、雅博河北約16公里的山谷地帶（書13:27；士8:4-16），後屬迦得支派。考古學家依埃及示撒石碑及銅石器時代至鐵器時代II期文物，將其遺址比定為代爾阿拉遺址。雅各與以掃和好後未隨以掃往西珥，改往北至疏割，蓋房搭棚、長住數年（女兒底拿從6-7歲長到亭亭玉立，暗示住了十年左右），乃雅各回迦南後首個長期停留地。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/地點/示劍（城）.md:25 — [[01 創世記/第33章|第33章]]**
+  - chapter ownership: (33,)
+  - type / claim: lexical_meaning — - 本章重點：雅各從巴旦亞蘭平安回迦南，在示劍城東支帳棚（18節）；用一百客西達銀子向哈抹子孫買地（19節）；築壇命名「伊利伊羅伊以色列」（神、以色列的神，20節）。「平平安安」原文與「撒冷」（Salem）同字根，見證神保守應許（創28:15）。但雅各未上伯特利（神指定之地、創31:13），久居示劍導致底拿被污事件（創34）。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/文化/古代送禮習俗 (賄賂-禮貌-表達愛).md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — minchah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/文化/古代送禮習俗 (賄賂-禮貌-表達愛).md:56 — 兩句對照的話**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — minchah
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/文化/家神像_特拉芬.md:14 — 定義**
+  - chapter ownership: (31, 35)
+  - type / claim: transliteration — teraphim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/歷史/喜克索王朝（Hyksos）背景.md:9 — 喜克索王朝（Hyksos）背景**
+  - chapter ownership: (39, 46)
+  - type / claim: transliteration — Hyksos
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/歷史/東風（西洛可、卡姆辛）.md:35 — 主題發展**
+  - chapter ownership: (41,)
+  - type / claim: transliteration — yam suf
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/歷史/東風（西洛可、卡姆辛）.md:37 — 主題發展**
+  - chapter ownership: (41,)
+  - type / claim: transliteration — khamsin
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/歷史/東風（西洛可、卡姆辛）.md:37 — 主題發展**
+  - chapter ownership: (41,)
+  - type / claim: transliteration — yāmēsh
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/三位一體在創造中的隱現.md:23 — 聖經出現**
+  - chapter ownership: (1,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/神學/三位一體在創造中的隱現.md:54 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/神學/以掃貪戀世俗與外在和好的落差.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: transliteration — bebēlos
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/全能的神（El Shaddai）.md:9 — 全能的神（El Shaddai）**
+  - chapter ownership: (17, 28, 35, 43, 48, 49)
+  - type / claim: transliteration — El Shaddai
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/全能的神（El Shaddai）.md:13 — 定義**
+  - chapter ownership: (17, 28, 35, 43, 48, 49)
+  - type / claim: transliteration — El Shaddai
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/全能的神（El Shaddai）.md:13 — 定義**
+  - chapter ownership: (17, 28, 35, 43, 48, 49)
+  - type / claim: lexical_meaning — 「全能的神」（El Shaddai）是神在創世記十七章對亞伯拉罕的自稱。原文可能意為「全有」、「全豐」、「站在山上的全能者」。舊約出現48次，在約伯記使用最頻繁（31次）。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/基路伯與火劍.md:13 — 定義**
+  - chapter ownership: (3,)
+  - type / claim: transliteration — Cherubim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/天地的主.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — Qoneh shamayim wa'arets
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/天地的主.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — 「天地的主」（希伯來文 *Qoneh shamayim wa'arets*），直譯為「天地的創造者」或「天地的擁有者」。「Qoneh」可譯為「造作者」、「買贖者」或「擁有者」，表明神是天地的創造者和全權的主宰。此稱號在聖經中首次出現於[[麥基洗德]]對[[亞伯蘭]]的祝福中。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/女人的後裔.md:41 — 神學意義／研讀意義**
+  - chapter ownership: (3,)
+  - type / claim: morphology — singular
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/神學/安息.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — shabbat
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/安息.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 神在第七日歇了祂創造的工作而安息。原文 *shabbat*，是「安息日」的字根。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/安息.md:56 — 來源依據**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Shabbat
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/安息.md:56 — 來源依據**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — - BibleHub Study Genesis 2:1-3：*Shabbat* 的字根意義、安息作為人的模型
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/安息日.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — shabbat
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/安息日.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — 神在第七日賜福、把這日「定為聖日」（分別為聖、歸神為聖），因為神在這日歇了創造之工安息了。原文 *shabbat* 是「安息日」的字根。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/安息日.md:105 — 來源依據**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — Shabbat
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/安息日.md:105 — 來源依據**
+  - chapter ownership: (2,)
+  - type / claim: lexical_meaning — - BibleHub Study Genesis 2:3：*Shabbat* 的字根意義、安息作為人的模型
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/彌賽亞.md:12 — 定義**
+  - chapter ownership: (3, 49)
+  - type / claim: hebrew — מָשִׁיחַ
+  - STEP: no direct STEP occurrence
+  - reason: normalized Hebrew spelling is outside the owned chapter occurrences and has no direct word/Strong anchor
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **link_folder/神學/彌賽亞.md:12 — 定義**
+  - chapter ownership: (3, 49)
+  - type / claim: transliteration — Christos
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/形像與樣式.md:60 — 來源依據**
+  - chapter ownership: (1, 5)
+  - type / claim: transliteration — imago Dei
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/恩典的首次出現.md:41 — 神學意義／研讀意義**
+  - chapter ownership: (6,)
+  - type / claim: lexical_meaning — - 「恩」（chen）：GT《創世記雷氏研讀本》給了最完整的字義說明——「『恩』（恩惠）或寵愛。希伯來文是 chen，字根的意思是『彎曲或彎腰』，因而指在上者給在下者賜予不配得的恩寵。這字詞有時用在救贖之上（耶三一2；亞一二10）。**這裏是這字第一次出現的地方。**」BH 也說這是聖經第一次提到恩典。CT 則只給原文字義「恩惠，恩寵，喜愛」，沒有作「首次出現」的斷言——引用時勿把這一點掛到 CT 名下
+  - STEP: Gen 6:8 #3 חֵ֖ן | chen | H2580 | HNcmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/敬畏以撒的神.md:36 — 一個只出現在創世記的稱呼**
+  - chapter ownership: (31, 32)
+  - type / claim: transliteration — Pachad
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/敬畏以撒的神.md:36 — 一個只出現在創世記的稱呼**
+  - chapter ownership: (31, 32)
+  - type / claim: lexical_meaning — BH 從字義補充：這個「敬畏」（Pachad）是帶敬畏的尊稱，反映以撒與神的關係是以敬畏與順服為特徵；並把它接到箴九10「敬畏耶和華是智慧的開端」。CT 註其原文字義為「懼怕，戰抖」。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/敬畏以撒的神.md:40 — 雅各為什麼用這個名而不用別的**
+  - chapter ownership: (31, 32)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/神學/有靈的活人.md:13 — 定義**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — nephesh
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/有靈的活人.md:58 — 來源依據**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — nephesh
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/看顧人的神（El Roi）.md:13 — 定義**
+  - chapter ownership: (16,)
+  - type / claim: lexical_meaning — 「看顧人的神」（El Roi）是夏甲給耶和華的名字，原文意為「看顧人的神」。這是舊約中惟一人給神起名的例證，表明神連最卑賤的人也照管。
+  - STEP: Gen 16:13 #7 אֵ֣ל | el | H410G | HNcmsc; Gen 16:13 #8 רֳאִ֑י | ro.'I | H7210 | HNcmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/神的後悔與憂傷.md:50 — 神學意義／研讀意義**
+  - chapter ownership: (6,)
+  - type / claim: transliteration — nacham
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/神的護理.md:52 — [[01 創世記/第48章|第48章]]**
+  - chapter ownership: (48,)
+  - type / claim: transliteration — goel
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/神的護理.md:75 — 護理也走人的決定與人的腳步**
+  - chapter ownership: (42, 43, 45, 46, 47, 48, 49, 50)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/神學/神的靈的角色.md:13 — 定義**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — Ruach Elohim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/神的靈的角色.md:53 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — Ruach Elohim
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/耶和華豈有難成的事.md:16 — 定義**
+  - chapter ownership: (18,)
+  - type / claim: transliteration — pālā'
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/耶和華豈有難成的事.md:16 — 定義**
+  - chapter ownership: (18,)
+  - type / claim: lexical_meaning — 創世記十八章14節的核心信心宣告。原文作「耶和華豈有太奇妙（pālā')的事嗎？」，pālā' 意為「超越常理、奇妙、不可測度」。神用反問方式強調：在祂沒有難成的事。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/至高的神.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: transliteration — El Elyon
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/神學/至高的神.md:13 — 定義**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — 「至高的神」（希伯來文 *El Elyon*），意為「最高的神」或「至高者」。此名稱強調神超越一切權勢與神明，是宇宙間最高的主宰。在創世記十四章中，[[麥基洗德]]以此稱號為[[亞伯蘭]]祝福，亞伯蘭亦以此稱號向所多瑪王起誓。
+  - STEP: no direct STEP occurrence
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/背景/空虛混沌的原意.md:13 — 定義**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — tohu wa-bohu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/背景/空虛混沌的原意.md:55 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bohu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/解經爭議/創世記1章第1-2節間隔問題.md:54 — 來源依據**
+  - chapter ownership: (1,)
+  - type / claim: transliteration — bohu
+  - STEP: no direct STEP occurrence
+  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+
+### INTERPRETIVE (14)
+
+- **01 創世記/第1章.md:90 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: lexical_interpretation — 第一重顛覆（詳見該條目）。BH 指出希伯來文 *bara*（[[創造（從無到有）|創造]]）
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第1章.md:91 — 起初的創造與未成形的地（v1-2）**
+  - chapter ownership: (1,)
+  - type / claim: lexical_interpretation — 「專用於神的作為」，含 *ex nihilo*（從無到有）之意；GT 引丁道爾指出 *bara* 的主詞在
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第1章.md:189 — 跨章脈絡：創造的節奏、預表與應用**
+  - chapter ownership: (1,)
+  - type / claim: lexical_interpretation — 貫穿全章，*bara*（從無到有的創造）其實只出現三次，精確標記三重飛躍——這是 CT、GT
+  - STEP: Gen 1:1 #2 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #8 בָּרָ֣א | ba.Ra' | H1254A | HVqp3ms; Gen 1:27 #12 בָּרָ֥א | ba.Ra' | H1254A | HVqp3ms
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第27章.md:105 — 以撒欲祝福以掃（1-4節）**
+  - chapter ownership: (27,)
+  - type / claim: lexical_interpretation — 以撒年老[[以撒的眼睛昏花|眼睛昏花]]——在應用上，屬靈的辨識力也隨之衰退，看不清神所看的（KC）。他想祝福以掃，儘管神早已啟示「大的要服事小的」（創25:23），也儘管以掃已賣了長子名分——這出於他對[[野味]]的偏愛（[[以撒偏愛以掃]]；創25:28）。「祝福」（berakah）與「長子名分」（bekorah）原文發音相近，以撒想把名分給以掃，是不尊重神的旨意。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第33章.md:130 — 雅各與以掃的和好（1-11節）**
+  - chapter ownership: (33,)
+  - type / claim: lexical_interpretation — 「禮物」（minchah）原文與「福分」（創27:35）同字——雅各藉此把當年詭計奪來的「福分」歸還給哥哥（CT／GT／啟導本）。收禮象徵和好確立、放棄報復（書9:14-15）。雅各說「我見了你的面，如同見了神的面」（10節）——KC 質疑這是把神的榮耀歸給一個「貪戀世俗的人」（來12:16）；CT 則解為：所得罪、所虧欠之人的面，就如同神的面。他又承認「[[神的恩典與保護|神恩待我，使我充足]]」——正是申8:18「得貨財的力量是他給你的」；兒女也是神的賞賜（5節）。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第8章.md:89 — 神記念，水勢漸退（1-5節）**
+  - chapter ownership: (8,)
+  - type / claim: lexical_interpretation — 「神叫風吹地」中的希伯來文 *ruach* 也可指「靈」。在本句語境中，它直接描述使水退去的[[風與靈同字|風]]；CT、GT與BibleHub則把它與創1:2神的靈運行在水面上相照，視為再創造。CT更以神的記念、方舟及風分別連於父、子、靈的救恩工作，稱為[[三一神同工]]。這是基督教神學式的豫表閱讀，不是說希伯來文一句話明列三個位格。
+  - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/互文/以掃貪戀世俗（來12：16）.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: lexical_interpretation — 希伯來書12:16稱以掃為「貪戀世俗的人」（ESV: "unholy person"；KJV: "profane person"；原文 *bebēlos* = 非聖的、褻瀆的、屬世的）。雖創33章以掃展現極佳和好姿態（跑來擁抱、稱兄弟、拒禮、提議護送），新約作者從其「為一點紅湯出賣長子名分」（創25:29-34）定性其屬靈本質：看重眼見物質、輕視屬天產業、無屬靈鑑賞力。創33章和好乃神共同恩典（箴21:1「王心在耶和華手中」），非以掃內在屬靈生命更新。來12:17進一步說以掃「後來雖極力尋找悔改的機會、卻得不著、因他哭泣、卻不能使心意回轉」——悔改非單靠情感淚水、需神恩賜。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/人物/拉麥（塞特族）.md:13 — 定義**
+  - chapter ownership: (5,)
+  - type / claim: lexical_interpretation — 「拉麥」（英譯 Lamech）原文字義，CT 作「健壯的，有能力的，野性的」；BH 作「有能力的」或「剛強的」。GT《丁道爾聖經註釋》則坦言「拉麥（lemek）一名的意思，我們找不著什麼根據」，但注意到「同有此名的兩人，所說過的話都流傳於後世，該隱族的人留下高傲自誇之言（四23等），塞特族的人則留下渴望之言」。瑪土撒拉的兒子，挪亞的父親。塞特系的第九代先祖。共活七百七十七歲——BH 指出 777 在聖經數字象徵中常代表完全或神聖的完美。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/文化/古代送禮習俗 (賄賂-禮貌-表達愛).md:56 — 兩句對照的話**
+  - chapter ownership: (33,)
+  - type / claim: lexical_interpretation — - *minchah* 語義演變：貢物 → 供物 → 福分 → 基督獻祭預表
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/神學/三位一體在創造中的隱現.md:28 — 與目前整理書卷的關聯**
+  - chapter ownership: (1,)
+  - type / claim: lexical_interpretation — 1:1 的「神」原文為複數（*Elohim*），1:26 的「我們」為複數，暗示三位一體參與創造。子神是創造的媒介（約一3；西一16；來一1-2），聖靈運行其上。
+  - STEP: Gen 1:1 #3 אֱלֹהִ֑ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:2 #10 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:3 #2 אֱלֹהִ֖ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #2 אֱלֹהִ֛ים | 'E.lo.Him | H430G | HNcmpa; Gen 1:4 #8 אֱלֹהִ֔ים | 'E.lo.Him | H430G | HNcmpa
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/神學/以掃貪戀世俗與外在和好的落差.md:13 — 定義**
+  - chapter ownership: (33,)
+  - type / claim: lexical_interpretation — 希伯來書12:16稱以掃為「貪戀世俗的人」（ESV: "unholy person"；KJV: "profane person"；中譯多作「輕看長子名分的人」「貪戀世俗的人」）。原文 *bebēlos* 意為「非聖的、褻瀆的、屬世的」。雖創33章以掃展現慷慨寬恕（跑來擁抱、稱兄弟、拒禮、提議護送），新約作者從其「為一點紅湯出賣長子名分」（創25:29-34）定性其屬靈本質：看重眼見物質、輕視屬天產業、無屬靈鑑賞力。創33章的和好行為出於神共同恩典（箴21:1「王心在耶和華手中」），非以掃內在屬靈生命更新。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/神學/基路伯與火劍.md:13 — 定義**
+  - chapter ownership: (3,)
+  - type / claim: lexical_interpretation — 基路伯（*Cherubim*）是守護神榮耀和聖潔的天使。四面轉動發火燄的劍象徵神的公義，把守生命樹的道路。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/神學/彌賽亞.md:12 — 定義**
+  - chapter ownership: (3, 49)
+  - type / claim: lexical_interpretation — 希伯來文 *Māšîaḥ* (מָשִׁיחַ)「受膏者」，希臘文 *Christos* (Χριστός)「基督」。指神所膏立的救贖者、王、祭司、先知三重職分完美結合者。舊約預表（亞倫祭司、大衛王、摩西先知），新約在耶穌基督成就。
+  - STEP: no direct STEP occurrence
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/神學/神的軍兵.md:30 — 它們是誰**
+  - chapter ownership: (32,)
+  - type / claim: lexical_interpretation — BH 從字義補充：「營」（machaneh）在希伯來文帶有軍事營地的含意，象徵神的保護；這反映神作為戰士的形象，是出十五3 已有的主題。
+  - STEP: Gen 32:2 #5 מַחֲנֵ֥ה | ma.cha.Neh | H4264 | HNcfsc
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+
+## Safety
+
+No production chapter, link_folder, commentary raw, or commentary read-log content was modified.

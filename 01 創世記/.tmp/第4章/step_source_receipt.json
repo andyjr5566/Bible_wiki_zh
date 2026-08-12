@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_genesis_4.txt",
+      "book": "Genesis",
+      "book_code": "Gen",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 343,
+      "first": "Gen 4:1",
+      "last": "Gen 4:26",
+      "sha256": "6731d03e5d51a69b1a87a17a367a8e12e86b2ca1fb2b7d957db8a9a239392240",
+      "bytes": 64759,
+      "chars": 56904,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

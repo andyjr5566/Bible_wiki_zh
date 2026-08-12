@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "出埃及記",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_exodus_17.txt",
+      "book": "Exodus",
+      "book_code": "Exo",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 246,
+      "first": "Exo 17:1",
+      "last": "Exo 17:16",
+      "sha256": "902a5f915ea172a22f575269f4209cf3b6bb4ec215215f4813a994ac6d9a4772",
+      "bytes": 46648,
+      "chars": 40790,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
