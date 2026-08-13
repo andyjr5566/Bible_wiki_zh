@@ -1,7 +1,7 @@
 {
-  "total_warnings": 99,
+  "total_warnings": 83,
   "critical_count": 0,
-  "warning_count": 99,
+  "warning_count": 83,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -65,118 +65,6 @@
       "source": "創世記/第41章.md",
       "target": "以法蓮",
       "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "書珥",
-      "message": "同一 alias「書珥」指向多個 target: 書珥, 書珥的曠野"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第15章.md",
-      "target": "瑪拉",
-      "message": "同一 alias「瑪拉」指向多個 target: 瑪拉, 瑪拉苦水變甜"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第16章.md",
-      "target": "你們的怨言不是向我們發的，乃是向耶和華發的",
-      "message": "同一 alias「你們的怨言不是向我們發的，乃是向耶和華發的」指向多個 target: 以色列人的怨言, 耶和華"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第16章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日的設立"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第16章.md",
-      "target": "鵪鶉",
-      "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第18章.md",
-      "target": "革舜",
-      "message": "同一 alias「革舜」指向多個 target: 革舜名字的由來, 革舜（摩西之子）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第23章.md",
-      "target": "安息日",
-      "message": "同一 alias「安息日」指向多個 target: 安息日, 安息日律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第27章.md",
-      "target": "圍腰板",
-      "message": "同一 alias「圍腰板」指向多個 target: 壇的圍腰板, 壇的銅網"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第28章.md",
-      "target": "分別為聖",
-      "message": "同一 alias「分別為聖」指向多個 target: 山上的樣式, 承接聖職（分別為聖）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第33章.md",
-      "target": "好像人與朋友說話一般",
-      "message": "同一 alias「好像人與朋友說話一般」指向多個 target: 亞伯拉罕為神的朋友, 面對面見神"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第37章.md",
-      "target": "以便抬壇",
-      "message": "同一 alias「以便抬壇」指向多個 target: 基督代禱（來7：25）, 壇的槓（抬壇用）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第40章.md",
-      "target": "膏油",
-      "message": "同一 alias「膏油」指向多個 target: 聖膏油, 膏抹成聖"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "出埃及記/第6章.md",
-      "target": "以利亞撒",
-      "message": "同一 alias「以利亞撒」指向多個 target: 亞倫的祭司譜系, 以利亞撒"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第25章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "剪除",
-      "message": "同一 alias「剪除」指向多個 target: 剪除, 從民中剪除的含義"
     },
     {
       "type": "alias_target_conflict",
