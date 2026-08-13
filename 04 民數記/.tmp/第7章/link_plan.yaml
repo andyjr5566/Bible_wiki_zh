@@ -44,12 +44,12 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: v17, 88「作平安祭的，共有公牛二十四隻…」。
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v13, 87「盛滿了調油的細麵作素祭…」。

@@ -1,3 +1,5 @@
+寫作方式 必須是要對一般大眾看得懂的 
+
 # Agent Maintenance Prompt（維護既有章節與 link_folder 條目）
 
 新章製作照 `agent_start_prompt.md` 走。本檔管的是**維護**：章節做完之後，回頭修改

@@ -1,3 +1,5 @@
+寫作方式 必須是要對一般大眾看得懂的 
+
 # Agent Start Prompt
 
 處理書卷章節時，流程由 `util/run_chapter_manual.py` 與人工 payload 共同主導；你負責「準備輸入、讀來源、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。

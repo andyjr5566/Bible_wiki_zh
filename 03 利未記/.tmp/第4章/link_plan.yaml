@@ -86,7 +86,7 @@ B_needs_update:
   match_type: exact
   existing_title: 按手（samak）
   existing_path: link_folder/原文/按手（samak）.md
-- name: 灑血（zaraq）
+- name: 灑血
   suggested_type: 主題
   evidence: '利4:6,17 彈血七次於幔子前；利4:7,18,25,30,34 抹血於壇角、倒血於壇腳；CT: 灑血是贖罪祭特點、表避、表徵遮蓋罪行；KC:
     血灑在幔子前、抹香壇角、倒燔祭壇腳；BH: 血代表生命、灑血七次表完全贖罪'
@@ -95,8 +95,8 @@ B_needs_update:
   - phrase: 抹血
   - phrase: 倒血
   match_type: exact
-  existing_title: 灑血（zaraq）
-  existing_path: link_folder/主題/灑血（zaraq）.md
+  existing_title: 灑血
+  existing_path: link_folder/主題/灑血.md
 - name: 脂油（chelev）
   suggested_type: 原文
   evidence: '利4:8-10,19,26,31,35 取下脂油、腰子、肝網焚燒；CT: 脂油即肥肉、最肥美部分、燒在壇上歸神；KC: 脂油焚燒為馨香火祭；BH:
@@ -203,23 +203,23 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
-- name: 腰子（kilyah）
+- name: 腰子
   suggested_type: 原文
   evidence: '利4:9 腰子和腰子上的脂油；CT: 腰子代表人感情中樞；BH: 腰子是智慧圖畫、基督分辨善惡完美感覺'
   surfaces:
   - phrase: 腰子
   - phrase: 兩個腰子
   match_type: exact
-  existing_title: 腰子（kilyah）
-  existing_path: link_folder/原文/腰子（kilyah）.md
-- name: 肝上的網子（yoteret ha-kaved）
+  existing_title: 腰子
+  existing_path: link_folder/原文/腰子.md
+- name: 肝上的網子
   suggested_type: 原文
   evidence: '利4:9 肝上的網子和腰子一概取下；CT: 肝上的網子或作肝葉、狀似網；BH: 肝在經文外三次顯示方向感缺失、基督方向是父的眼目'
   surfaces:
   - phrase: 肝上的網子
   match_type: exact
-  existing_title: 肝上的網子（yoteret ha-kaved）
-  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
+  existing_title: 肝上的網子
+  existing_path: link_folder/原文/肝上的網子.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

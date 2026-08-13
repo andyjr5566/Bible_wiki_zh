@@ -74,12 +74,12 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: v4,18-21 為百姓所獻的平安祭（公牛和公綿羊）
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v4,17「並取調油的素祭」「他又奉上素祭，從其中取一滿把，燒在壇上」
@@ -104,36 +104,36 @@ B_needs_update:
   match_type: exact
   existing_title: 山羊
   existing_path: link_folder/文化/山羊.md
-- name: 灑血（zaraq）
+- name: 灑血
   suggested_type: 主題
   evidence: v12,18「他就灑在壇的周圍」兩次出現
   match_type: exact
-  existing_title: 灑血（zaraq）
-  existing_path: link_folder/主題/灑血（zaraq）.md
+  existing_title: 灑血
+  existing_path: link_folder/主題/灑血.md
 - name: 脂油（chelev）
   suggested_type: 原文
   evidence: v10,19,20「脂油」三次出現於贖罪祭、平安祭
   match_type: exact
   existing_title: 脂油（chelev）
   existing_path: link_folder/原文/脂油（chelev）.md
-- name: 腰子（kilyah）
+- name: 腰子
   suggested_type: 原文
   evidence: v10,19「腰子」兩次出現
   match_type: exact
-  existing_title: 腰子（kilyah）
-  existing_path: link_folder/原文/腰子（kilyah）.md
-- name: 肝上的網子（yoteret ha-kaved）
+  existing_title: 腰子
+  existing_path: link_folder/原文/腰子.md
+- name: 肝上的網子
   suggested_type: 原文
   evidence: v10,19「肝上取的網子」「肝上的網子」
   match_type: exact
-  existing_title: 肝上的網子（yoteret ha-kaved）
-  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
-- name: 肥尾巴（alyah）
+  existing_title: 肝上的網子
+  existing_path: link_folder/原文/肝上的網子.md
+- name: 肥尾巴
   suggested_type: 原文
   evidence: v19「公牛和公綿羊的脂油、肥尾巴」
   match_type: exact
-  existing_title: 肥尾巴（alyah）
-  existing_path: link_folder/原文/肥尾巴（alyah）.md
+  existing_title: 肥尾巴
+  existing_path: link_folder/原文/肥尾巴.md
 - name: 搖祭（tenufah）
   suggested_type: 原文
   evidence: v21「胸和右腿，亞倫當作搖祭，在耶和華面前搖一搖」

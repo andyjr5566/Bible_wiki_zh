@@ -152,18 +152,18 @@ B_needs_update:
   match_type: exact
   existing_title: 脂油（chelev）
   existing_path: link_folder/原文/脂油（chelev）.md
-- name: 肝上的網子（yoteret ha-kaved）
+- name: 肝上的網子
   suggested_type: 原文
   evidence: v16,25「肝上的網子」兩次出現
   match_type: exact
-  existing_title: 肝上的網子（yoteret ha-kaved）
-  existing_path: link_folder/原文/肝上的網子（yoteret ha-kaved）.md
-- name: 腰子（kilyah）
+  existing_title: 肝上的網子
+  existing_path: link_folder/原文/肝上的網子.md
+- name: 腰子
   suggested_type: 原文
   evidence: v16,25「兩個腰子與腰子上的脂油」
   match_type: exact
-  existing_title: 腰子（kilyah）
-  existing_path: link_folder/原文/腰子（kilyah）.md
+  existing_title: 腰子
+  existing_path: link_folder/原文/腰子.md
 - name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
   suggested_type: 主題
   evidence: v17「惟有公牛，連皮帶肉並糞，用火燒在營外」
@@ -176,12 +176,12 @@ B_needs_update:
   match_type: exact
   existing_title: 營外焚燒（machutz la-machaneh saraf）
   existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
-- name: 灑血（zaraq）
+- name: 灑血
   suggested_type: 主題
   evidence: v19,24「摩西把血灑在壇的周圍」兩次出現
   match_type: exact
-  existing_title: 灑血（zaraq）
-  existing_path: link_folder/主題/灑血（zaraq）.md
+  existing_title: 灑血
+  existing_path: link_folder/主題/灑血.md
 - name: 火祭（isheh）
   suggested_type: 主題
   evidence: v21,28「是獻給耶和華的火祭」「獻給耶和華馨香的火祭」
@@ -194,18 +194,18 @@ B_needs_update:
   match_type: exact
   existing_title: 馨香之氣
   existing_path: link_folder/神學/馨香之氣.md
-- name: 肥尾巴（alyah）
+- name: 肥尾巴
   suggested_type: 原文
   evidence: v25「取脂油和肥尾巴」
   match_type: exact
-  existing_title: 肥尾巴（alyah）
-  existing_path: link_folder/原文/肥尾巴（alyah）.md
-- name: 平安祭（shelamim）
+  existing_title: 肥尾巴
+  existing_path: link_folder/原文/肥尾巴.md
+- name: 平安祭
   suggested_type: 原文
   evidence: v22-29 第二隻公綿羊為「承接聖職之禮的羊」，屬平安祭的特殊形式
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 搖祭（tenufah）
   suggested_type: 原文
   evidence: v27,29「把這一切放在亞倫的手上和他兒子的手上作搖祭」「摩西拿羊的胸作為搖祭」

@@ -30,12 +30,12 @@ B_needs_update:
   match_type: exact
   existing_title: 贖愆祭（asham）
   existing_path: link_folder/原文/贖愆祭（asham）.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: v14, 17, 18「一隻沒有殘疾的公綿羊作平安祭」；CT：神與人及人與鄰舍和諧相處的感謝還願祭。
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v15, 17「同獻的素祭」；CT：無酵調油與抹油無酵餅，表徵基督聖潔無瑕疵的人性。

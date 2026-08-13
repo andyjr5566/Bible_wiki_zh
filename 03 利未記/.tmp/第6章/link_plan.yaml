@@ -68,16 +68,16 @@ B_needs_update:
   match_type: exact
   existing_title: 銅壇（燔祭壇）
   existing_path: link_folder/主題/銅壇（燔祭壇）.md
-- name: 亞倫子孫
+- name: 亞倫和他兒子（祭司）
   suggested_type: 人物
-  evidence: v9「你要吩咐亞倫和他的子孫說」；v14「亞倫的子孫要在壇前把這祭獻在耶和華面前」；v16「所剩下的，亞倫和他子孫要吃」；v18「亞倫子孫中的男丁都要吃這一分」；v20「他和他子孫」；v25「你對亞倫和他的子孫說」——本章8-30節祭司條例的執行主體。
+  evidence: v9「你要吩咐亞倫和他的子孫說」；v14「亞倫的子孫要在壇前把這祭獻在耶和華面前」；v16「所剩下的，亞倫和他子孫要吃」；v18「亞倫和他兒子（祭司）中的男丁都要吃這一分」；v20「他和他子孫」；v25「你對亞倫和他的子孫說」——本章8-30節祭司條例的執行主體。
   surfaces:
   - phrase: 亞倫和他的子孫
   - phrase: 他和他子孫
   - phrase: 亞倫子孫中的男丁
   match_type: exact
-  existing_title: 亞倫子孫
-  existing_path: link_folder/人物/亞倫子孫.md
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
 - name: 脂油（chelev）
   suggested_type: 原文
   evidence: v12「在其上燒平安祭牲的脂油」。
@@ -110,15 +110,15 @@ B_needs_update:
   match_type: exact
   existing_title: 至聖的供物（聖與至聖之分）
   existing_path: link_folder/主題/至聖的供物（聖與至聖之分）.md
-- name: 永遠的定例（chuqqat olam）
+- name: 永遠的定例
   suggested_type: 神學
   evidence: v18「直到萬代，作他們永得的分」；v22「要全燒給耶和華。這是永遠的定例」。
   surfaces:
   - phrase: 永遠的定例
   - phrase: 永得的分
   match_type: exact
-  existing_title: 永遠的定例（chuqqat olam）
-  existing_path: link_folder/神學/永遠的定例（chuqqat olam）.md
+  existing_title: 永遠的定例
+  existing_path: link_folder/神學/永遠的定例.md
 - name: 受膏的祭司（mashiach kohen）
   suggested_type: 人物
   evidence: v20「當亞倫受膏的日子」；v22「亞倫的子孫中，接續他為受膏的祭司，要把這素祭獻上」。
@@ -198,7 +198,7 @@ C_new_formal:
   target_path: link_folder/主題/壇火常燒不熄滅.md
 - name: 摸聖物成聖
   suggested_type: 神學
-  evidence: 'v18「凡獻給耶和華的火祭，亞倫子孫中的男丁都要吃這一分，直到萬代，作他們永得的分。摸這些祭物的，都要成為聖」；v27「凡摸這祭肉的要成為聖」——兩處重複同一原則。
+  evidence: 'v18「凡獻給耶和華的火祭，亞倫和他兒子（祭司）中的男丁都要吃這一分，直到萬代，作他們永得的分。摸這些祭物的，都要成為聖」；v27「凡摸這祭肉的要成為聖」——兩處重複同一原則。
 
     KC：「The grain offering offered as a fire offering has a sanctifying effect: ''Whoever
     touches them will become consecrated.'' Everything that comes into connection

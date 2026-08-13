@@ -58,12 +58,12 @@ B_needs_update:
   match_type: exact
   existing_title: 從民中剪除的含義
   existing_path: link_folder/解經爭議/從民中剪除的含義.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: 5, 6節；私宰祭牲須牽到會幕門口交祭司獻為平安祭，血灑壇上、脂油焚燒。GT丁良才：「平安祭」原文有「和好」或「福祉」之意，可為感謝、還願或甘心獻的，表明獻祭者對神的感恩、虔敬與奉獻，並顯明神與人及人與鄰舍的和諧關係
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 馨香之氣
   suggested_type: 神學
   evidence: v6「把脂油焚燒，獻給耶和華為馨香的祭」——祭司職分下私宰祭牲條例的具體執行
@@ -86,7 +86,7 @@ C_new_formal:
   - title: 平安祭
     score: 0.533
     type: 神學
-  - title: 平安祭（shelamim）
+  - title: 平安祭
     score: 0.521
     type: 原文
   - title: 燔祭

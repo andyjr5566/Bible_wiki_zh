@@ -2212,7 +2212,9 @@ def _gt_subsource_review(ctx):
 
 
 _UNKNOWN_LABEL_RE = re.compile(r"(?<![A-Za-z])([A-Z]{2,4})(?![A-Za-z])[^「\n]{0,20}[：「]")
-_KNOWN_SOURCE_LABELS = {"CT", "GT", "KC", "BH"}
+# STEP 是 manifest 宣告的正式來源（原文證據層），與四套 commentary 同列合法標籤；
+# 它不是 commentary 共識票，但在本章整理裡標註「STEP …：「…」」是正當寫法，不該判成自創假標籤。
+_KNOWN_SOURCE_LABELS = {"CT", "GT", "KC", "BH", "STEP"}
 # 全庫實測（97章 ## 本章整理 全掃）唯一命中的四個非標籤誤報，允許清單：
 # YHWH（神名音譯）、NGS/RV（原文字根或譯本縮寫，非本管線來源）、AM（"I AM WHO I AM" 引句切字）。
 _UNKNOWN_LABEL_ALLOWLIST = {"YHWH", "NGS", "RV", "AM"}
@@ -2247,7 +2249,7 @@ def _unknown_source_label_review(ctx):
     if not hits:
         return []
     return [
-        "本章整理裡有疑似來源標籤、但不是 CT/GT/KC/BH 之一："
+        "本章整理裡有疑似來源標籤、但不是 CT/GT/KC/BH/STEP 之一："
         + "、".join(hits[:6])
         + "——請確認這是不是模型自創的假標籤（利7「CCB」實例：混淆網域名與來源代號，"
         "內容實出 CT）；若是真的縮寫（如 RV、NEB 等譯本名）可忽略，是假標籤就回 raw_data "

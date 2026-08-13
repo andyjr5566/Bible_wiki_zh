@@ -40,7 +40,7 @@ source_scope: collected_only
 - [[無殘疾（tamim）]]
 - [[贖罪]]
 - [[按手]]
-- [[灑血（zaraq）]]
+- [[灑血]]
 
 ## 來源依據
 

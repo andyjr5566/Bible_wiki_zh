@@ -3,7 +3,7 @@ chapter: 10
 A_use_directly:
 - name: 銀號
   suggested_type: 文化
-  evidence: 第2節：「你要用銀子做兩枝號，都要錘出來的，用以招聚會眾，並叫眾營起行。」神吩咐摩西用純銀錘出兩枝號，交由亞倫子孫作祭司的吹奏。這號用以招聚全會眾或首領，與引導各營按部就班起行，為以色列曠野行軍的重要信號與儀禮器物。
+  evidence: 第2節：「你要用銀子做兩枝號，都要錘出來的，用以招聚會眾，並叫眾營起行。」神吩咐摩西用純銀錘出兩枝號，交由亞倫和他兒子（祭司）作祭司的吹奏。這號用以招聚全會眾或首領，與引導各營按部就班起行，為以色列曠野行軍的重要信號與儀禮器物。
   surfaces:
   - phrase: 號
   match_type: exact
@@ -54,14 +54,14 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: 第10節：「...獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。」平安祭表達與神並百姓互相比鄰的團契歡慶，伴隨吹號更顯敬拜的感恩與神聖榮耀。
   surfaces:
   - phrase: 平安祭
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 法櫃的帳幕
   suggested_type: 地點
   evidence: 第11節：「第二年二月二十日，雲彩從法櫃的帳幕收上去。」指停靠有法櫃的聖幕，雲彩自幕上收起是神賜發前進信號的啟動標誌。

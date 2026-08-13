@@ -686,6 +686,37 @@ class KnowledgeNodesClosureTests(unittest.TestCase):
         self.assertEqual(["全部都不存在"], dropped)
 
 
+class UnknownSourceLabelTests(unittest.TestCase):
+    """假來源標籤護欄：CCB 類自創標籤要抓；STEP 是 manifest 正式來源，不可誤判。"""
+
+    def _review(self, organization):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            tmp = root / "03 利未記" / ".tmp" / "第3章"
+            tmp.mkdir(parents=True)
+            (tmp / "chapter_content.yaml").write_text(
+                yaml.safe_dump({"organization": organization}, allow_unicode=True),
+                encoding="utf-8",
+            )
+            ctx = run_chapter.ChapterContext(
+                "利未記", 3, root=root, index={}, homonyms={}
+            )
+            return run_chapter._unknown_source_label_review(ctx)
+
+    def test_fabricated_label_is_flagged(self):
+        hits = self._review("CCB 註解說：「這是話中之光的內容」")
+        self.assertTrue(hits)
+        self.assertIn("CCB", hits[0])
+
+    def test_step_label_is_not_flagged(self):
+        self.assertEqual([], self._review("STEP 不能證明的：「內在能力」是 KC 的解讀"))
+        self.assertEqual([], self._review("STEP 能直接證實的語言事實：「he will lean」"))
+
+    def test_four_commentary_labels_are_not_flagged(self):
+        for label in ("CT", "GT", "KC", "BH"):
+            self.assertEqual([], self._review(f"{label} 說：「這是引句」"))
+
+
 class ChapterDepthTests(unittest.TestCase):
     """本章整理需達份量門檻：### 小節＋整合性散文（出25 重做太薄的教訓）；
     給定白名單時 wiki-link 只能連本章條目、且至少要有一個（出34 零連結的教訓）；

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_3.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 249,
+      "first": "Lev 3:1",
+      "last": "Lev 3:17",
+      "sha256": "f103624a8f1d444a94d962401417dcb22610fa8a21e799f33c0179632882c5bd",
+      "bytes": 46615,
+      "chars": 40707,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

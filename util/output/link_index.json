@@ -1235,6 +1235,29 @@
       "帶卯的座"
     ]
   },
+  "平安祭的三類（感謝祭、還願祭、甘心祭）": {
+    "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "平安祭的三類（感謝祭、還願祭、甘心祭）",
+    "status": "formal",
+    "aliases": [
+      "感謝祭",
+      "還願祭",
+      "甘心祭"
+    ]
+  },
+  "平安祭的聚餐（神人同席）": {
+    "path": "link_folder/主題/平安祭的聚餐（神人同席）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "平安祭的聚餐（神人同席）",
+    "status": "formal",
+    "aliases": [
+      "祭筵",
+      "獻祭聚餐"
+    ]
+  },
   "弟兄賣身為奴不可像奴僕看待": {
     "path": "link_folder/主題/弟兄賣身為奴不可像奴僕看待.md",
     "type": "主題",
@@ -1806,16 +1829,13 @@
     "status": "formal",
     "aliases": []
   },
-  "灑血（zaraq）": {
-    "path": "link_folder/主題/灑血（zaraq）.md",
+  "灑血": {
+    "path": "link_folder/主題/灑血.md",
     "type": "主題",
     "secondary_types": [],
-    "title": "灑血（zaraq）",
+    "title": "灑血",
     "status": "formal",
-    "aliases": [
-      "灑血",
-      "潑血"
-    ]
+    "aliases": []
   },
   "火祭（isheh）": {
     "path": "link_folder/主題/火祭（isheh）.md",
@@ -9708,17 +9728,9 @@
     "status": "formal",
     "aliases": [
       "亞倫和他的兒子",
-      "祭司"
-    ]
-  },
-  "亞倫子孫": {
-    "path": "link_folder/人物/亞倫子孫.md",
-    "type": "人物",
-    "secondary_types": [],
-    "title": "亞倫子孫",
-    "status": "formal",
-    "aliases": [
-      "亞倫的子孫"
+      "祭司",
+      "亞倫的子孫",
+      "亞倫子孫"
     ]
   },
   "亞倫的祭司譜系": {
@@ -12210,14 +12222,13 @@
       "催逼驅趕"
     ]
   },
-  "內臟（qereb）": {
-    "path": "link_folder/原文/內臟（qereb）.md",
+  "內臟": {
+    "path": "link_folder/原文/內臟.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "內臟（qereb）",
+    "title": "內臟",
     "status": "formal",
     "aliases": [
-      "內臟",
       "臟腑",
       "蓋臟"
     ]
@@ -12604,14 +12615,6 @@
     "status": "formal",
     "aliases": []
   },
-  "平安祭（shelamim）": {
-    "path": "link_folder/原文/平安祭（shelamim）.md",
-    "type": "原文",
-    "secondary_types": [],
-    "title": "平安祭（shelamim）",
-    "status": "formal",
-    "aliases": []
-  },
   "平安（shalom）": {
     "path": "link_folder/原文/平安（shalom）.md",
     "type": "原文",
@@ -12790,9 +12793,7 @@
     "secondary_types": [],
     "title": "搖祭",
     "status": "formal",
-    "aliases": [
-      "搖祭"
-    ]
+    "aliases": []
   },
   "摔跤": {
     "path": "link_folder/原文/摔跤.md",
@@ -13559,28 +13560,24 @@
     "status": "formal",
     "aliases": []
   },
-  "肝上的網子（yoteret ha-kaved）": {
-    "path": "link_folder/原文/肝上的網子（yoteret ha-kaved）.md",
+  "肝上的網子": {
+    "path": "link_folder/原文/肝上的網子.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "肝上的網子（yoteret ha-kaved）",
+    "title": "肝上的網子",
     "status": "formal",
     "aliases": [
-      "肝上的網子",
-      "肝葉",
-      "肝臟網膜"
+      "肝葉"
     ]
   },
-  "肥尾巴（alyah）": {
-    "path": "link_folder/原文/肥尾巴（alyah）.md",
+  "肥尾巴": {
+    "path": "link_folder/原文/肥尾巴.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "肥尾巴（alyah）",
+    "title": "肥尾巴",
     "status": "formal",
     "aliases": [
-      "肥尾巴",
-      "整肥尾巴",
-      "羊尾脂"
+      "整肥尾巴"
     ]
   },
   "胸牌（決斷胸牌）": {
@@ -13601,19 +13598,17 @@
     "title": "脂油",
     "status": "formal",
     "aliases": [
-      "脂油",
       "板油",
       "脂肪"
     ]
   },
-  "腰子（kilyah）": {
-    "path": "link_folder/原文/腰子（kilyah）.md",
+  "腰子": {
+    "path": "link_folder/原文/腰子.md",
     "type": "原文",
     "secondary_types": [],
-    "title": "腰子（kilyah）",
+    "title": "腰子",
     "status": "formal",
     "aliases": [
-      "腰子",
       "腎",
       "兩個腰子"
     ]
@@ -13642,9 +13637,7 @@
     "secondary_types": [],
     "title": "舉祭",
     "status": "formal",
-    "aliases": [
-      "舉祭"
-    ]
+    "aliases": []
   },
   "舍吉拿（shekinah）": {
     "path": "link_folder/原文/舍吉拿（shekinah）.md",
@@ -16111,7 +16104,6 @@
     "title": "山羊",
     "status": "formal",
     "aliases": [
-      "山羊",
       "公山羊",
       "母山羊"
     ]
@@ -16220,7 +16212,6 @@
     "title": "牛群",
     "status": "formal",
     "aliases": [
-      "牛群",
       "群畜",
       "牧畜"
     ]
@@ -19464,8 +19455,7 @@
     "title": "平安祭",
     "status": "formal",
     "aliases": [
-      "shelamim",
-      "平安祭"
+      "shelamim"
     ]
   },
   "彌賽亞": {
@@ -20268,17 +20258,13 @@
       "祭司的職分"
     ]
   },
-  "永遠的定例（chuqqat olam）": {
-    "path": "link_folder/神學/永遠的定例（chuqqat olam）.md",
+  "永遠的定例": {
+    "path": "link_folder/神學/永遠的定例.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "永遠的定例（chuqqat olam）",
+    "title": "永遠的定例",
     "status": "formal",
-    "aliases": [
-      "永遠的定例",
-      "永遠條例",
-      "世世代代定例"
-    ]
+    "aliases": []
   },
   "沒有殘疾的祭牲": {
     "path": "link_folder/神學/沒有殘疾的祭牲.md",
@@ -25894,6 +25880,21 @@
   "帶卯的座": {
     "alias_of": "帶卯的銅座（院子柱子座）"
   },
+  "感謝祭": {
+    "alias_of": "平安祭的三類（感謝祭、還願祭、甘心祭）"
+  },
+  "還願祭": {
+    "alias_of": "平安祭的三類（感謝祭、還願祭、甘心祭）"
+  },
+  "甘心祭": {
+    "alias_of": "平安祭的三類（感謝祭、還願祭、甘心祭）"
+  },
+  "祭筵": {
+    "alias_of": "平安祭的聚餐（神人同席）"
+  },
+  "獻祭聚餐": {
+    "alias_of": "平安祭的聚餐（神人同席）"
+  },
   "不可嚴嚴轄管": {
     "alias_of": "弟兄賣身為奴不可像奴僕看待"
   },
@@ -26052,12 +26053,6 @@
   },
   "兩隻潔淨活鳥禮儀": {
     "alias_of": "潔淨痲瘋者的兩鳥儀式"
-  },
-  "灑血": {
-    "alias_of": "灑血（zaraq）"
-  },
-  "潑血": {
-    "alias_of": "灑血（zaraq）"
   },
   "火祭": {
     "alias_of": "火祭（isheh）"
@@ -27635,7 +27630,10 @@
     "alias_of": "亞倫和他兒子（祭司）"
   },
   "亞倫的子孫": {
-    "alias_of": "亞倫子孫"
+    "alias_of": "亞倫和他兒子（祭司）"
+  },
+  "亞倫子孫": {
+    "alias_of": "亞倫和他兒子（祭司）"
   },
   "Aaronic priesthood": {
     "alias_of": "亞倫的祭司譜系"
@@ -28069,14 +28067,11 @@
   "催逼驅趕": {
     "alias_of": "催逼"
   },
-  "內臟": {
-    "alias_of": "內臟（qereb）"
-  },
   "臟腑": {
-    "alias_of": "內臟（qereb）"
+    "alias_of": "內臟"
   },
   "蓋臟": {
-    "alias_of": "內臟（qereb）"
+    "alias_of": "內臟"
   },
   "冠冕": {
     "alias_of": "冠冕（裹頭巾）"
@@ -28423,23 +28418,11 @@
   "聘金": {
     "alias_of": "聘金與禮物"
   },
-  "肝上的網子": {
-    "alias_of": "肝上的網子（yoteret ha-kaved）"
-  },
   "肝葉": {
-    "alias_of": "肝上的網子（yoteret ha-kaved）"
-  },
-  "肝臟網膜": {
-    "alias_of": "肝上的網子（yoteret ha-kaved）"
-  },
-  "肥尾巴": {
-    "alias_of": "肥尾巴（alyah）"
+    "alias_of": "肝上的網子"
   },
   "整肥尾巴": {
-    "alias_of": "肥尾巴（alyah）"
-  },
-  "羊尾脂": {
-    "alias_of": "肥尾巴（alyah）"
+    "alias_of": "肥尾巴"
   },
   "決斷胸牌": {
     "alias_of": "胸牌（決斷胸牌）"
@@ -28453,14 +28436,11 @@
   "脂肪": {
     "alias_of": "脂油"
   },
-  "腰子": {
-    "alias_of": "腰子（kilyah）"
-  },
   "腎": {
-    "alias_of": "腰子（kilyah）"
+    "alias_of": "腰子"
   },
   "兩個腰子": {
-    "alias_of": "腰子（kilyah）"
+    "alias_of": "腰子"
   },
   "膳長 (baker)": {
     "alias_of": "膳長_baker"
@@ -30174,15 +30154,6 @@
   },
   "祭司的職分": {
     "alias_of": "永遠當祭司的職任"
-  },
-  "永遠的定例": {
-    "alias_of": "永遠的定例（chuqqat olam）"
-  },
-  "永遠條例": {
-    "alias_of": "永遠的定例（chuqqat olam）"
-  },
-  "世世代代定例": {
-    "alias_of": "永遠的定例（chuqqat olam）"
   },
   "無瑕疵的祭牲": {
     "alias_of": "沒有殘疾的祭牲"

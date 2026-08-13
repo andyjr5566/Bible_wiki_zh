@@ -35,7 +35,7 @@ source_scope: collected_only
 - [[全會眾（kol ha-edah）]]
 - [[以色列人的官長]]
 - [[按手]]
-- [[灑血（zaraq）]]
+- [[灑血]]
 
 ## 來源依據
 

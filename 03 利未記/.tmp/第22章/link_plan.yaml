@@ -34,12 +34,12 @@ B_needs_update:
   match_type: exact
   existing_title: 沒有殘疾的祭牲
   existing_path: link_folder/神學/沒有殘疾的祭牲.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: 21, 29-30節；凡從牛群或羊群中將平安祭獻給耶和華，為要還特許的願或作甘心獻的，所獻必純全無殘疾才蒙悅納；獻感謝祭給耶和華要獻得可蒙悅納，要當天吃一點不可留到早晨
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 剪除（kareth）
   suggested_type: 原文
   evidence: v3「那人必在我面前剪除」。GT丁良才：注意「在我面前」四個字，摩西五經中只在此處有這說法，別處是說從民中剪除，有注釋家以為神必親自從祂面前剪除那人，如同剪除拿答、亞比戶一樣（十12）

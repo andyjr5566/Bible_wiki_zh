@@ -62,12 +62,12 @@ B_needs_update:
   match_type: exact
   existing_title: 素祭（minchah）
   existing_path: link_folder/原文/素祭（minchah）.md
-- name: 平安祭（shelamim）
+- name: 平安祭
   suggested_type: 原文
   evidence: v14-15「所搖的胸，所舉的腿……因為這些是從以色列人平安祭中給你」
   match_type: exact
-  existing_title: 平安祭（shelamim）
-  existing_path: link_folder/原文/平安祭（shelamim）.md
+  existing_title: 平安祭
+  existing_path: link_folder/原文/平安祭.md
 - name: 搖祭（tenufah）
   suggested_type: 原文
   evidence: v14-15「所搖的胸」「當搖祭，在耶和華面前搖一搖」

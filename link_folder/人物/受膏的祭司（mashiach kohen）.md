@@ -53,7 +53,7 @@ source_scope: collected_only
 - [[營外焚燒]]
 - [[全會眾（kol ha-edah）]]
 - [[按手]]
-- [[灑血（zaraq）]]
+- [[灑血]]
 - [[脂油]]
 - [[無殘疾（tamim）]]
 
