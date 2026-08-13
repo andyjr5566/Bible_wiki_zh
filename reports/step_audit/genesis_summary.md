@@ -2,23 +2,23 @@
 
 - chapters: 50
 - production files scanned: 1083
-- claims detected: 1887
+- claims detected: 2207
 - STEP verses / words: 1533 / 20614
 
 | Classification | Count |
 |---|---:|
-| PASS | 1543 |
+| PASS | 1835 |
 | REVIEW_LOW | 87 |
-| REVIEW_MEDIUM | 1 |
-| REVIEW_HIGH | 14 |
-| UNVERIFIABLE | 204 |
-| INTERPRETIVE | 38 |
+| REVIEW_MEDIUM | 6 |
+| REVIEW_HIGH | 20 |
+| UNVERIFIABLE | 219 |
+| INTERPRETIVE | 40 |
 
 > Boundary: STEP directly verifies spelling, occurrence, Strong and high-confidence morphology. It does not decide contextual meaning, exegesis or theology.
 
 ## REVIEW queue
 
-### REVIEW_HIGH (14)
+### REVIEW_HIGH (20)
 
 - **01 創世記/第1章.md:91 — 起初的創造與未成形的地（v1-2）**
   - chapter ownership: (1,)
@@ -28,14 +28,8 @@
   - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
 - **01 創世記/第4章.md:119 — 三、罪伏在門前：殺人以前的最後呼召（6-7節）**
   - chapter ownership: (4,)
-  - type / claim: morphology — qal, perfect, imperfect, participle, noun, masculine, feminine, singular
+  - type / claim: morphology — participle, noun, masculine, feminine, singular
   - STEP: Gen 4:7 #9 חַטָּ֣את | cha.Tat | H2403B | HNcfsa; Gen 4:7 #10 רֹבֵ֑ץ | ro.Vetz | H7257 | HVqrmsa; Gen 4:7 #12 תְּשׁ֣וּקָת֔/וֹ | te.Shu.ka.T/o | H8669 | HNcfsc/Sp3ms; Gen 4:7 #14 תִּמְשָׁל\־ | tim.shol- | H4910 | HVqi2ms
-  - reason: explicit morphology attributes conflict with anchored STEP morphology
-  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
-- **01 創世記/第4章.md:178 — 六、塞特與求告耶和華的名（25-26節）**
-  - chapter ownership: (4,)
-  - type / claim: morphology — qal, hophal, perfect, infinitive
-  - STEP: Gen 4:26 #11 הוּחַ֔ל | hu.Chal | H2490C | HVHp3ms; Gen 4:26 #12 לִ/קְרֹ֖א | li/k.Ro' | H7121G | HR/Vqcc; Gen 4:26 #13 בְּ/שֵׁ֥ם | be./Shem | H8034 | HR/Ncmsc; Gen 4:1 #14 יְהוָֽה\׃ | Yah.weh | H3068G | HNpt; Gen 4:3 #9 לַֽ/יהוָֽה\׃ | la./Yah.weh | H3068G | HR/Npt
   - reason: explicit morphology attributes conflict with anchored STEP morphology
   - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
 - **01 創世記/第5章.md:94 — 二、格式與它的三次中斷（3-32節）**
@@ -50,18 +44,36 @@
   - STEP: no direct STEP occurrence
   - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
   - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
-- **01 創世記/第8章.md:91 — 神記念，水勢漸退（1-5節）**
-  - chapter ownership: (8,)
-  - type / claim: morphology — qal, plural
-  - STEP: Gen 8:4 #1 וַ/תָּ֤נַח | va./Ta.nach | H5117 | Hc/Vqw3fs; Gen 8:4 #10 הָרֵ֥י | ha.Rei | H2022G | HNcmpc; Gen 8:4 #11 אֲרָרָֽט\׃ | 'a.ra.Rat | H780 | HNpl
+- **01 創世記/第9章.md:100 — 一、新世界裡的祝福與限制（1-7節）**
+  - chapter ownership: (9,)
+  - type / claim: hebrew — מִלְאוּ
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **01 創世記/第9章.md:100 — 一、新世界裡的祝福與限制（1-7節）**
+  - chapter ownership: (9,)
+  - type / claim: hebrew — רְבוּ
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **01 創世記/第9章.md:204 — 十、「奴僕的奴僕」到底是什麼身分？（25節）**
+  - chapter ownership: (9,)
+  - type / claim: morphology — noun, plural, singular
+  - STEP: Gen 9:25 #4 עֶ֥בֶד | 'E.ved | H5650 | HNcmsc; Gen 9:25 #5 עֲבָדִ֖ים | 'a.va.Dim | H5650 | HNcmpa; Gen 9:26 #8 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa; Gen 9:27 #9 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa
   - reason: explicit morphology attributes conflict with anchored STEP morphology
   - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
-- **01 創世記/第8章.md:145 — 築壇、燔祭與馨香（20-21節）**
-  - chapter ownership: (8,)
-  - type / claim: morphology — hiphil, plural
-  - STEP: Gen 8:20 #3 מִזְבֵּ֖חַ | miz.Be.ach | H4196 | HNcmsa; Gen 8:20 #14 בַּ/מִּזְבֵּֽחַ\׃ | ba./miz.Be.ach | H4196 | HRd/Ncmsa; Gen 8:20 #12 וַ/יַּ֥עַל | va/i.Ya.'al | H5927I | Hc/Vhw3ms; Gen 8:20 #13 עֹלֹ֖ת | 'o.Lot | H5930A | HNcfpa
-  - reason: explicit morphology attributes conflict with anchored STEP morphology
-  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/人物/寧錄.md:30 — [[01 創世記/第10章|第10章]]**
+  - chapter ownership: (10,)
+  - type / claim: hebrew — גִּבֹּר־צַיִד
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **link_folder/人物/寧錄.md:101 — 來源依據**
+  - chapter ownership: (10, 14)
+  - type / claim: hebrew — גִּבֹּר־צַיִד
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
 - **link_folder/神學/死亡的普遍性.md:13 — 定義**
   - chapter ownership: (5,)
   - type / claim: hebrew — וַיָּמֹֽת
@@ -104,13 +116,67 @@
   - STEP: Gen 8:21 #1 וַ/יָּ֣רַח | va/i.Ya.rach | H7306 | Hc/Vhw3ms; Gen 8:21 #4 רֵ֣יחַ | Rei.ach | H7381 | HNcmsc; Gen 8:21 #5 הַ/נִּיחֹחַ֒ | ha./ni.cho.aCh | H5207 | HTd/Ncmsa
   - reason: claimed Strong conflicts with the STEP word anchored on the same line
   - manual action: manually inspect the word-to-Strong pairing; do not auto-rewrite
+- **link_folder/背景/古代近東奴隸制度.md:21 — [[01 創世記/第9章|第9章]]**
+  - chapter ownership: (9,)
+  - type / claim: morphology — noun, plural, singular
+  - STEP: Gen 9:25 #4 עֶ֥בֶד | 'E.ved | H5650 | HNcmsc; Gen 9:25 #5 עֲבָדִ֖ים | 'a.va.Dim | H5650 | HNcmpa; Gen 9:26 #8 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa; Gen 9:27 #9 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa
+  - reason: explicit morphology attributes conflict with anchored STEP morphology
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/解經爭議/寧錄的在耶和華面前.md:56 — 來源依據**
+  - chapter ownership: (10,)
+  - type / claim: hebrew — גִּבֹּר־צַיִד
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **link_folder/解經爭議/寧錄還是亞述建造尼尼微.md:21 — [[01 創世記/第10章|第10章]]**
+  - chapter ownership: (10,)
+  - type / claim: hebrew — מִן־הָאָרֶץ
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
+- **link_folder/解經爭議/寧錄還是亞述建造尼尼微.md:40 — 來源依據**
+  - chapter ownership: (10,)
+  - type / claim: hebrew — מִן־הָאָרֶץ
+  - STEP: no direct STEP occurrence
+  - reason: Hebrew spelling is absent, while another word/Strong on the same line resolves in STEP
+  - manual action: manually verify the spelling and its chapter/verse ownership only if this global lemma is meant to claim a local occurrence
 
-### REVIEW_MEDIUM (1)
+### REVIEW_MEDIUM (6)
 
+- **01 創世記/第12章.md:107 — 四、[[帳棚與祭壇]]（6-9節）**
+  - chapter ownership: (12,)
+  - type / claim: transliteration — terebinth
+  - STEP: Gen 12:6 #8 אֵל֣וֹן | 'e.Lon | H436H | HNcmsc; Gen 12:1 #14 אַרְאֶֽ/ךָּ\׃ | 'ar.'E./ka | H7200G | HVhi1cs/Sp2ms; Gen 12:7 #1 וַ/יֵּרָ֤א | va/i.ye.Ra' | H7200G | Hc/VNw3ms; Gen 12:7 #15 הַ/נִּרְאֶ֥ה | ha./nir.'Eh | H7200G | HTd/VNrmsa; Gen 12:12 #3 יִרְא֤וּ | yir.'U | H7200G | HVqi3mp
+  - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第2章.md:108 — 二、塵土原本沒有生命，直到神親自吹氣（4-7節）**
+  - chapter ownership: (2,)
+  - type / claim: transliteration — adamah
+  - STEP: Gen 2:5 #19 וְ/אָדָ֣ם | ve./'a.Dam | H120G | HC/Ncmsa; Gen 2:7 #5 הָֽ/אָדָ֗ם | ha./'a.Dam | H120H | HTd/Ncmsa; Gen 2:7 #14 הָֽ/אָדָ֖ם | ha./'a.Dam | H120H | HTd/Ncmsa; Gen 2:8 #10 הָֽ/אָדָ֖ם | ha./'a.Dam | H120H | HTd/Ncmsa; Gen 2:15 #5 הָֽ/אָדָ֑ם | ha./'a.Dam | H120H | HTd/Ncmsa
+  - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第4章.md:144 — 四、第一宗謀殺與神的追問（8-16節）**
+  - chapter ownership: (4,)
+  - type / claim: transliteration — oth
+  - STEP: Gen 4:15 #13 א֔וֹת | 'ot | H226H | HNcfsa
+  - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第4章.md:174 — 六、塞特與求告耶和華的名（25-26節）**
+  - chapter ownership: (4,)
+  - type / claim: transliteration — Seth
+  - STEP: Gen 4:25 #11 שֵׁ֑ת | Shet | H8352 | HNpm; Gen 4:25 #13 שָֽׁת\־ | shat- | H7896I | HVqp3ms; Gen 4:26 #1 וּ/לְ/שֵׁ֤ת | u/l./Shet | H8352 | HC/R/Npm
+  - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
 - **01 創世記/第5章.md:86 — 一、家譜的體裁與功能（1-2節）**
   - chapter ownership: (5,)
   - type / claim: transliteration — toledoth
-  - STEP: Gen 5:1 #1 זֶ֣ה | zeh | H2088 | HTm; Gen 5:29 #6 זֶ֠ה | zeh | H2088 | HTm; Gen 5:1 #2 סֵ֔פֶר | Se.fer | H5612H | HNcmsc; Gen 5:1 #3 תּוֹלְדֹ֖ת | tol.Dot | H8435 | HNcfpc; Gen 5:1 #4 אָדָ֑ם | 'a.Dam | H121G | HNpm
+  - STEP: Gen 5:1 #2 סֵ֔פֶר | Se.fer | H5612H | HNcmsc; Gen 5:1 #3 תּוֹלְדֹ֖ת | tol.Dot | H8435 | HNcfpc
+  - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
+  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第5章.md:141 — 六、拉麥命名挪亞（28-31節）**
+  - chapter ownership: (5,)
+  - type / claim: transliteration — Noah
+  - STEP: Gen 5:29 #4 נֹ֖חַ | No.ach | H5146 | HNpm; Gen 5:30 #6 נֹ֔חַ | No.ach | H5146 | HNpm; Gen 5:32 #2 נֹ֕חַ | No.ach | H5146 | HNpm; Gen 5:32 #8 נֹ֔חַ | No.ach | H5146 | HNpm; Gen 5:29 #7 יְנַחֲמֵ֤/נוּ | ye.na.cha.Me./nu | H5162G | HVpi3ms/Sp1bp
   - reason: explicit transliteration is absent while another word/Strong on the line resolves in STEP
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
 
@@ -194,13 +260,13 @@
   - STEP: Gen 4:26 #9 אֱנ֑וֹשׁ | 'e.No.osh | H583 | HNpm
   - reason: one-character spelling/romanization difference from a STEP transliteration
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
-- **01 創世記/第8章.md:89 — 神記念，水勢漸退（1-5節）**
+- **01 創世記/第8章.md:89 — 一、神記念，大水漸漸退去（1-5節）**
   - chapter ownership: (8,)
   - type / claim: transliteration — ruach
   - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
   - reason: matches STEP after conservative diacritic/punctuation normalization
   - manual action: confirm the spelling variant; no automatic content change
-- **01 創世記/第8章.md:136 — 出方舟與新造生活（15-19節）**
+- **01 創世記/第8章.md:136 — 四、走出方舟與全新的生活（15-19節）**
   - chapter ownership: (8,)
   - type / claim: transliteration — ruach
   - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
@@ -639,8 +705,38 @@
   - reason: matches STEP after conservative diacritic/punctuation normalization
   - manual action: confirm the spelling variant; no automatic content change
 
-### UNVERIFIABLE (204)
+### UNVERIFIABLE (219)
 
+- **01 創世記/第11章.md:103 — 神的回應與「巴別」的雙關語**
+  - chapter ownership: (11,)
+  - type / claim: lexical_meaning — 原文資料顯示，第9節把城市的名字 בָּבֶל（巴別，H894）和動詞 בָּלַל（變亂，H1101A）放在同一個句子裡，形成了一種聲音上的互相呼應。「分散」這個詞，前後也使用了同一個字根 פּוּץ（H6327A）：在第4節，這是人類最害怕發生的事；到了第8和第9節，這卻成了神實際執行在他們身上的結果。
+  - STEP: Gen 11:9 #5 בָּבֶ֔ל | ba.Vel | H894 | HNpl; Gen 11:7 #3 וְ/נָבְלָ֥ה | ve./na.ve.Lah | H1101A | HC/Vqc1cp; Gen 11:9 #8 בָּלַ֥ל | ba.Lal | H1101A | HVqp3ms; Gen 11:4 #13 נָפ֖וּץ | na.Futz | H6327A | HVqi1cp; Gen 11:8 #1 וַ/יָּ֨פֶץ | va/i.Ya.fetz | H6327A | Hc/Vhw3ms
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第12章.md:93 — 二、[[亞伯拉罕之約]]的七層應許（1-3節）**
+  - chapter ownership: (12,)
+  - type / claim: lexical_meaning — 原文資料讓第2、3節的語氣變得更加清楚。第2節最後原文的意思不只是說亞伯蘭會蒙福，而是神直接吩咐他「你要成為一個祝福」。第3節中文聖經都翻譯作「咒詛」，但在原文裡其實用了兩個不同的動詞：別人對亞伯蘭的咒詛是 קָלַל（H7043，意思是輕看、貶低），而神對那些人的回應則是 אָרַר（H779，這是真正的咒詛）。這兩個不同的字眼，把這個約裡面的保護機制說得非常具體：亞伯蘭得到的福氣會流向萬族，而那些敢輕慢他的人，將要面對神親自的出手。
+  - STEP: Gen 12:3 #3 וּ/מְקַלֶּלְ/ךָ֖ | u./me.ka.lel./Cha | H7043 | HC/Vprmsc/Sp2ms; Gen 12:3 #4 אָאֹ֑ר | 'a.'Or | H779 | HVqi1cs
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第14章.md:177 — 麥基洗德：撒冷王與至高神祭司（17-20節）**
+  - chapter ownership: (14,)
+  - type / claim: lexical_meaning — 第19至20節以同一個「祝福」字根 בָּרַךְ（H1288）連成三句：麥基洗德「祝福」亞伯蘭，宣告亞伯蘭「蒙福」，再宣告賜下勝利的至高神「當受稱頌」。祝福不是停在亞伯蘭身上，最後回到賜福與得勝的神。
+  - STEP: Gen 14:19 #1 וַֽ/יְבָרְכֵ֖/הוּ | va/y.va.re.Khe./hu | H1288 | Hc/Vpw3ms/Sp3ms; Gen 14:19 #3 בָּר֤וּךְ | ba.Rukh | H1288 | HVqsmsa; Gen 14:20 #1 וּ/בָרוּךְ֙ | u./va.ruKh | H1288 | HC/Vqsmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第15章.md:115 — 無子、家業與親生後嗣（2-5節）**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — 第3至4節連續三次使用同一個表示「承受／作後嗣」的字根 יָרַשׁ（H3423G）：亞伯蘭先說誰將承受家業，神便回答這人不會作他的後嗣，本身所生的才會作他的後嗣。這樣的重複讓神的回答緊扣亞伯蘭真正擔心的繼承問題。
+  - STEP: Gen 15:3 #11 יוֹרֵ֥שׁ | yo.Resh | H3423G | HVqrmsa; Gen 15:4 #7 יִֽירָשְׁ/ךָ֖ | yi.ra.she./Kha | H3423G | HVqi3ms/Sp2ms; Gen 15:4 #15 יִֽירָשֶֽׁ/ךָ\׃ | Yi.ra.She./kha | H3423G | HVqi3ms/Sp2ms; Gen 15:7 #14 לְ/רִשְׁתָּֽ/הּ\׃ | le./rish.Ta/h | H3423H | HR/Vqcc/Sp3fs; Gen 15:8 #7 אִֽירָשֶֽׁ/נָּה\׃ | 'I.ra.She./nah | H3423H | HVqi1cs/Sp3fs
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第15章.md:129 — 求確據與切約儀式（7-12節）**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — 第7節神說領亞伯蘭出吾珥，是要他「承受」這地；第8節亞伯蘭隨即用同一字根（H3423H）問，怎能知道自己必「承受」這地。他不是另換話題，而是直接抓住神剛說的應許求確據。
+  - STEP: Gen 15:7 #14 לְ/רִשְׁתָּֽ/הּ\׃ | le./rish.Ta/h | H3423H | HR/Vqcc/Sp3fs; Gen 15:8 #7 אִֽירָשֶֽׁ/נָּה\׃ | 'I.ra.She./nah | H3423H | HVqi1cs/Sp3fs
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **01 創世記/第17章.md:88 — 全能的神與約的重申（1-8節）**
   - chapter ownership: (17,)
   - type / claim: transliteration — El Shaddai
@@ -701,18 +797,18 @@
   - STEP: no direct STEP occurrence
   - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
-- **01 創世記/第2章.md:108 — 二、塵土沒有生命，直到神親自吹氣（4-7節）**
-  - chapter ownership: (2,)
-  - type / claim: transliteration — adamah
-  - STEP: no direct STEP occurrence
-  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
-  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
 - **01 創世記/第33章.md:130 — 雅各與以掃的和好（1-11節）**
   - chapter ownership: (33,)
   - type / claim: transliteration — minchah
   - STEP: no direct STEP occurrence
   - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第3章.md:87 — 一、蛇的誘惑與對神話語的扭曲（1-5節）**
+  - chapter ownership: (3,)
+  - type / claim: lexical_meaning — 蛇一開口就問：「神豈是真說……」，牠並沒有直接否認神的存在，而是先讓人對神的話產生懷疑，甚至懷疑神是不是真的對他們好。牠把神原本慷慨的允許，扭曲成了嚴苛的限制；接著，牠又把神警告的「必定死」，改成了「不一定死」；最後，牠用「像神一樣能知道善惡」來挑起人心裡的驕傲。第1節原文稱這條蛇為 נָחָשׁ，「狡猾」這個字則是 עָרוּם，在這裡帶有一種精明、機警又狡詐的意思（H5175、H6175）。CT 從相關字根和發音的聯想，進一步補充了這個字帶有邪術、占卜和引誘的味道。
+  - STEP: Gen 3:1 #1 וְ/הַ/נָּחָשׁ֙ | ve./ha./na.Chash | H5175 | HC/Td/Ncmsa; Gen 3:2 #4 הַ/נָּחָ֑שׁ | ha./na.Chash | H5175 | HTd/Ncmsa; Gen 3:4 #2 הַ/נָּחָ֖שׁ | ha./na.Chash | H5175 | HTd/Ncmsa; Gen 3:13 #10 הַ/נָּחָ֥שׁ | ha./na.Chash | H5175 | HTd/Ncmsa; Gen 3:14 #5 הַ/נָּחָשׁ֮ | ha./na.Chash | H5175 | HTd/Ncmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **01 創世記/第40章.md:152 — 四、「求你記念我」（14-15節）**
   - chapter ownership: (40,)
   - type / claim: lexical_meaning — 約瑟求酒政「記念我……救我出這[[監_監牢_坑|監牢]]」。他所求的「施恩與我」，BH 指出用的是希伯來文的 *chesed*——那是盟約裡忠實不變的愛，也就是說，約瑟求的不只是一個順手的人情，而是守信到底的相待。他自述「我實在是從[[希伯來人之地]]被拐來的」：GT《串珠聖經註釋》說第15節的「拐」原作「綁架」，正指哥哥們出賣他一事；精讀本則說明「希伯來人」字面意思是「過來的人」，以色列人向別族介紹自己時用它（創43:32；拿1:9），別族稱呼以色列人時也用它（出2:6）——約瑟這樣自報身分，是因他沒有忘記自己是亞伯拉罕的後裔、立約的百姓。丁良才另提一種讀法：約瑟不說迦南地，「大概因為他輕看那些拜偶像的迦南人，不願意被人看作迦南人」。
@@ -755,52 +851,88 @@
   - STEP: no direct STEP occurrence
   - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **01 創世記/第4章.md:93 — 一、兩個兒子與兩種職業（1-2節）**
+  - chapter ownership: (4,)
+  - type / claim: lexical_meaning — 原文資料（STEP）在第1節把 קַיִן（*Qayin*，H7014B）標記為男性名字，並把[[夏娃]]所說的 קָנִיתִי（*qaniti*，H7069）解釋為「我已經得到」。這使得名字和她的宣告在發音上產生了呼應。學者丁良才（GT）用一句話點出了這一章在整卷書中的地位：「上一章是在談人類罪惡的起源；這一章則是在談罪惡的蔓延。」當夏娃生下[[該隱]]時說「耶和華使我得了一個男子」，丁良才認為這個名字的意思就是「得著」，顯示夏娃以為自己生下了神之前所應許的那個人（見創3:15），但其實並不是；KC 也看出了這種期待，並把它比喻成先知撒母耳誤以為高大的以利押就是神挑選的王（見撒上16:6-7）。《創世記雷氏研讀本》（GT）從原文角度補充說明：「在希伯來文裡，『該隱』和『我得了』是兩個發音相似的雙關語」；不過，《丁道爾聖經註釋》也提醒我們，這種對名字的解釋「通常只是一種文字遊戲，它們在字根上不一定是同一個來源，只是給一個常見的名字賦予特別的意義」。至於第1節提到的夫妻「同房」，丁道爾解釋原文其實是「知道」的意思，「這非常優美地表達出，男女之間真正的結合是建立在完全的相知與交流之中」；而《聖經精讀本》則注意到，夏娃的宣告本身就是一種信仰的表達——「夏娃承認孩子是神賜給她的禮物」。
+  - STEP: Gen 4:1 #9 קַ֔יִן | Ka.yin | H7014B | HNpm; Gen 4:2 #11 וְ/קַ֕יִן | ve./Ka.yin | H7014B | HC/Npm; Gen 4:3 #5 קַ֜יִן | Ka.yin | H7014B | HNpm; Gen 4:5 #2 קַ֥יִן | Ka.yin | H7014B | HNpm; Gen 4:5 #8 לְ/קַ֙יִן֙ | le./Ka.yin | H7014B | HR/Npm
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **01 創世記/第4章.md:95 — 一、兩個兒子與兩種職業（1-2節）**
   - chapter ownership: (4,)
-  - type / claim: lexical_meaning — STEP 在2節將 הָבֶל／הֶבֶל（H1893）辨識為男性人名「亞伯」。[[亞伯]]的名字，註釋則進一步提出不同語源方向：CT 讀為「虛空」，丁良才說它「顯明夏娃失了盼望」，《雷氏研讀本》也說「亞伯」意即「呼吸」或「虛空」，「也許反映夏娃明白到咒詛的含義（羅八20）」。但《丁道爾聖經註釋》在這裡按下一個煞車：亞伯之名雖與希伯來字「虛空」或「一個呼吸」外型完全相同，「但是其關係恐怕是出於偶然，因為經上並未由此提及什麼」，並提出另一個字根方向——或與蘇美文的 ibil(a) 同源，意為「兒子」。
+  - type / claim: lexical_meaning — 到了第2節，原文資料將 הָבֶל／הֶבֶל（H1893）標記為男性名字「[[亞伯]]」。對於亞伯這個名字，不同的註釋書提出了不同的字源看法：CT 解釋為「虛空」，丁良才認為這「顯示出夏娃失去了盼望」，《雷氏研讀本》也說「亞伯」的意思是「呼吸」或「虛空」，「或許反映出夏娃已經明白了人類墮落被咒詛的意義（見羅8:20）」。但是《丁道爾聖經註釋》在這裡提出了一種保留的態度：雖然亞伯的名字在拼法上跟希伯來文的「虛空」或「呼吸」完全一樣，「但這可能只是碰巧相同，因為聖經並沒有特別拿這個字來作文章」，並提出了另一種可能性——這個名字或許是源自蘇美語的 ibil(a)，意思是「兒子」。
   - STEP: Gen 4:2 #6 הָ֑בֶל | Ha.vel | H1893 | HNpm; Gen 4:2 #8 הֶ֙בֶל֙ | he.vel | H1893 | HNpm; Gen 4:4 #1 וְ/הֶ֨בֶל | ve./He.vel | H1893 | HC/Npm; Gen 4:4 #11 הֶ֖בֶל | He.vel | H1893 | HNpm; Gen 4:8 #4 הֶ֣בֶל | He.vel | H1893 | HNpm
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **01 創世記/第4章.md:119 — 三、罪伏在門前：殺人以前的最後呼召（6-7節）**
   - chapter ownership: (4,)
-  - type / claim: lexical_meaning — STEP 在7節把「罪」חַטָּאת（H2403B）標作陰性單數名詞，把「伏」רֹבֵץ（H7257）標作陽性單數分詞；「戀慕」תְּשׁוּקָה（H8669）正是3章16節同一個詞，「制伏／管轄」תִּמְשָׁל（H4910）則是第二人稱陽性單數的 Qal 未完成式。[[罪伏在門前|「罪就伏在門前」]]也是聖經裡第一次出現「罪」字。CT 把它讀成「一個人格化的活物（羅七17）……蹲伏在門前，準備要隨時撲過來」，並列出原文字義：「罪」是射不中目標、罪刑、贖罪祭，「伏」是躺臥、蹲伏。《聖經精讀本》補上文化背景：「希伯來人借用古代巴比倫的表現手法，描寫罪就象守在門口向屋內的人吼叫的野獸。」BH 也指出「戀慕」與創世記3章16節女人戀慕丈夫是同一個字，並連到彼得前書5章8節如吼叫獅子的比喻。
+  - type / claim: lexical_meaning — 原文資料在第7節把「罪」חַטָּאת（H2403B）標記為陰性單數名詞，把「伏」רֹבֵץ（H7257）標記為陽性單數分詞；而「戀慕」תְּשׁוּקָה（H8669）這個字，剛好跟創世記3章16節裡女人戀慕丈夫是同一個字；「制伏／管轄」תִּמְשָׁל（H4910）則是用來對著該隱說的動作。[[罪伏在門前|「罪就伏在門前」]]這句話，是整本聖經第一次出現「罪」這個字。CT 把這裡的罪形容成「一個像人一樣有生命的怪物（見羅7:17）……蹲伏在門前，隨時準備撲過來」，並列出了原文的意思：「罪」的意思是射箭沒射中靶心、罪行、贖罪祭，而「伏」的意思是躺臥、蹲伏。《聖經精讀本》則補充了當時的文化背景：「希伯來人借用了古代巴比倫的表達方式，把罪描寫成一隻守在門外、對著屋內咆哮的野獸。」BH 也指出這裡的「戀慕」跟創世記3章16節是同一個字，並把它連結到彼得前書5章8節那種像吼叫獅子準備吃人的比喻。
   - STEP: Gen 4:7 #9 חַטָּ֣את | cha.Tat | H2403B | HNcfsa; Gen 4:7 #10 רֹבֵ֑ץ | ro.Vetz | H7257 | HVqrmsa; Gen 4:7 #12 תְּשׁ֣וּקָת֔/וֹ | te.Shu.ka.T/o | H8669 | HNcfsc/Sp3ms; Gen 4:7 #14 תִּמְשָׁל\־ | tim.shol- | H4910 | HVqi2ms
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
-- **01 創世記/第4章.md:144 — 四、第一宗謀殺與神的追問（8-16節）**
-  - chapter ownership: (4,)
-  - type / claim: transliteration — oth
-  - STEP: no direct STEP occurrence
-  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
-  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
-- **01 創世記/第4章.md:174 — 六、塞特與求告耶和華的名（25-26節）**
-  - chapter ownership: (4,)
-  - type / claim: transliteration — Seth
-  - STEP: no direct STEP occurrence
-  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
-  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
 - **01 創世記/第5章.md:115 — 三、就死了：八次喪鐘（5-31節）**
   - chapter ownership: (5,)
-  - type / claim: lexical_meaning — STEP 顯示5、8、11、14、17、20、27、31節都使用同一個 וַיָּמֹֽת（H4191），意思是「他就死了」。GT《聖經精讀本》因此把這八次[[死亡的普遍性|「就死了」]]形容為「仿佛在人類歷史中不斷發出鳴響的喪鐘，人類絕對免不了死亡（羅5:14）」；KC 也說這幾節裡的死亡鐘聲像副歌一樣一再響起。CT 的話中之光把它收在三句話裡：「亞當無論活得多長，終歸須死；人生總在死亡陰影的籠罩之下」「死是從罪而來，於是死就臨到眾人（羅五12）。按著定命，人人都有一死，死後且有審判（來九27）」「死是人的歸宿和終站，卻不是基督徒的歸宿；死對基督徒而言，不過是睡覺，是息了勞苦」。
+  - type / claim: lexical_meaning — 原文資料顯示，在5、8、11、14、17、20、27、31這八節經文裡，都重複使用了同一個字 וַיָּמֹֽת（H4191），意思是「他就死了」。GT《聖經精讀本》因此把這八次[[死亡的普遍性|「就死了」]]形容為「彷彿在人類歷史中不斷敲響的喪鐘，說明人類絕對逃不過死亡的命運（見羅5:14）」；KC 也說，這幾節裡的死亡鐘聲就像副歌一樣一再響起。CT 把這件事總結成三句話：「亞當不管活了多久，最後還是會死；人生總是被籠罩在死亡的陰影下」、「死亡是從罪惡來的，於是死亡就臨到了所有的人（見羅5:12）。按照命定，每個人最後都會死，死後還有審判（見來9:27）」、「死亡是人類最後的歸宿和終點，但這並不是基督徒的歸宿；對基督徒來說，死亡不過是睡著了，是放下了世上的勞苦」。
   - STEP: Gen 5:5 #12 וַ/יָּמֹֽת\׃\ \ס | va/i.ya.Mot | H4191 | Hc/Vqw3ms; Gen 5:8 #11 וַ/יָּמֹֽת\׃\ \ס | va/i.ya.Mot | H4191 | Hc/Vqw3ms; Gen 5:11 #10 וַ/יָּמֹֽת\׃\ \ס | va/i.ya.Mot | H4191 | Hc/Vqw3ms; Gen 5:14 #10 וַ/יָּמֹֽת\׃\ \ס | va/i.ya.Mot | H4191 | Hc/Vqw3ms; Gen 5:17 #11 וַ/יָּמֹֽת\׃\ \ס | va/i.ya.Mot | H4191 | Hc/Vqw3ms
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **01 創世記/第5章.md:133 — 五、瑪土撒拉——名字裡的預告（25-27節）**
   - chapter ownership: (5,)
-  - type / claim: lexical_meaning — STEP 將 מְתוּשֶׁלַח（H4968）辨識為人物專名「瑪土撒拉」；本章直接記載他共活九百六十九歲，是聖經所記最長壽的人。CT 與 BH 再從名字提出預告性的理解。CT 把算式列了出來：瑪土撒拉一百八十七歲生拉麥，拉麥一百八十二歲生挪亞，挪亞六百歲時洪水氾濫全地（創七6），「三個數目加起來正好九百六十九年，也就是瑪土撒拉死的那一年」。BH 給的字義是「投槍的人」或「他死時必有事發生」，並同樣把他的死與洪水之年相連，讀為神在審判前的忍耐。CT 進一步指出，正是這個啟示使以諾敬畏神：「以諾得著神的啟示，知道神必要在他的兒子死時施行審判，因而給他兒子命名『瑪土撒拉』，這證明他相信神的話。他這一個信心，使他在生活上敬畏神，與神同行。」
+  - type / claim: lexical_meaning — 原文資料把 מְתוּשֶׁלַח（H4968）標記為人名「瑪土撒拉」；本章直接記載他一共活了九百六十九歲，是聖經裡記錄活得最久的人。CT 和 BH 進一步從他的名字看出了預言的意味。CT 列出了數學算式：瑪土撒拉一百八十七歲生拉麥，拉麥一百八十二歲生挪亞，挪亞六百歲那年發生了大洪水（見創7:6），「這三個數字加起來剛好是九百六十九年，也就是瑪土撒拉死掉的那一年」。BH 指出這個名字的意思是「投射長矛的人」或是「他死的時候一定會有事情發生」，並同樣把他的死亡跟大洪水發生的年份連在一起，解讀為這是神在降下審判前的耐心等待。CT 進一步指出，正是因為這個啟示，才讓以諾開始敬畏神：「以諾得到了神的啟示，知道神一定會在他兒子死掉的那年降下審判，所以給兒子取名叫『瑪土撒拉』，這證明他相信神說的話。正是因為這份信心，讓他在生活中敬畏神，與神同行。」
   - STEP: Gen 5:21 #8 מְתוּשָֽׁלַח\׃ | me.tu.Sha.lach | H4968 | HNpm; Gen 5:22 #8 מְתוּשֶׁ֔לַח | me.tu.She.lach | H4968 | HNpm; Gen 5:25 #2 מְתוּשֶׁ֔לַח | me.tu.She.lach | H4968 | HNpm; Gen 5:26 #2 מְתוּשֶׁ֗לַח | me.tu.She.lach | H4968 | HNpm; Gen 5:27 #4 מְתוּשֶׁ֔לַח | me.tu.She.lach | H4968 | HNpm
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
-- **01 創世記/第5章.md:141 — 六、拉麥命名挪亞（28-31節）**
-  - chapter ownership: (5,)
-  - type / claim: transliteration — Noah
-  - STEP: no direct STEP occurrence
-  - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
-  - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
-- **01 創世記/第7章.md:77 — 神命挪亞全家進方舟（1-4節）**
+- **01 創世記/第6章.md:88 — 二、我的靈不永遠與人相爭（3節）**
+  - chapter ownership: (6,)
+  - type / claim: lexical_meaning — 同一句話裡還有「我的靈」（רוּחִי，H7307G）跟「肉體」（בָשָׂר，H1320）這兩個字。根據這些原文資料，各家註釋發展出了「居住／停留」以及「相爭／審判」這兩種不同的解讀。GT 丁良才註明這句話「也可以翻譯為『不永遠和他相爭』」；GT《創世記雷氏研讀本》則把兩種可能性並列出來：「（1）聖靈的鬥爭，是指神因為人類罪孽深重，而對他們作出審判或執行審判；（2）人類的靈——也就是神放在人裡面的靈——不會長久住在他們裡面（意思是人類終究必須面對死亡的命運）。」
+  - STEP: Gen 6:3 #5 רוּחִ֤/י | ru.Ch/i | H7307G | HNcbsc/Sp1fs; Gen 6:3 #10 בָשָׂ֑ר | va.Sar | H1320 | HNcmsa; Gen 6:12 #10 בָּשָׂ֛ר | ba.Sar | H1320 | HNcmsa; Gen 6:13 #6 בָּשָׂר֙ | ba.Sar | H1320 | HNcmsa; Gen 6:17 #11 בָּשָׂ֗ר | ba.Sar | H1320 | HNcmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第6章.md:113 — 五、世界敗壞與神的宣告（11-13節）**
+  - chapter ownership: (6,)
+  - type / claim: lexical_meaning — 原文資料在第11節用「地敗壞了」（וַתִּשָּׁחֵת，H7843），在第12節又用「已經敗壞」（נִשְׁחָתָה）和使動語態的「已敗壞」（הִשְׁחִית），來描述整個地球和所有有血肉的生物；到了第13節，同一個字根轉變成了使動語態的「我將要毀滅他們」（מַשְׁחִיתָם）。這就是原文裡[[敗壞與毀滅的文字呼應]]：世界在道德上已經腐敗了，神於是宣告要終止並清除那個腐敗的秩序。同一段經文裡的「強暴」（חָמָס，H2555），在第11、13節都是名詞；BH 和其他註釋書進一步從社會的角度，說明了這種暴力、壓迫和無法無天的情況，並指出這就是經文裡明說的神要降下審判的理由。KC 則把這句話解讀為：人類把跟自己有關的一切都搞壞了，因為人類的罪，咒詛也籠罩了所有被造的萬物（見羅8:20、22）。
+  - STEP: Gen 6:11 #1 וַ/תִּשָּׁחֵ֥ת | va./ti.sha.Chet | H7843 | Hc/VNw3fs; Gen 6:12 #6 נִשְׁחָ֑תָה | nish.Cha.tah | H7843 | HVNp3fs; Gen 6:12 #8 הִשְׁחִ֧ית | hish.Chit | H7843 | HVhp3ms; Gen 6:13 #15 מַשְׁחִיתָ֖/ם | mash.chi.Ta/m | H7843 | HVhrmsc/Sp3mp; Gen 6:11 #7 חָמָֽס\׃ | cha.Mas | H2555 | HNcmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第6章.md:127 — 六、方舟的建造（14-22節）**
+  - chapter ownership: (6,)
+  - type / claim: lexical_meaning — | 裡外抹松香 | 原文資料分別標出了動詞「遮蓋」（וְכָפַרְתָּ，H3722B）和名詞「松香／瀝青」（בַּכֹּפֶר，H3724B）；這兩個字的字根很像。KC 和 CT 進一步把這組字連結到挽回、贖罪和遮蓋 | 代表基督寶血的救贖功效 |
+  - STEP: Gen 6:14 #10 וְ/כָֽפַרְתָּ֥ | ve./kha.far.Ta | H3722B | Hc/Vqq2ms; Gen 6:14 #14 בַּ/כֹּֽפֶר\׃ | ba./Ko.fer | H3724B | HRd/Ncmsa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第7章.md:110 — 五、水勢高漲、死亡與存留下來的生命（17-24節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_meaning — 第2節以 הַטְּהוֹרָה（H2889，「潔淨的」）和「不是潔淨的」區分畜類；潔淨畜類的 שִׁבְעָה שִׁבְעָה（H7651）直譯為「七、七」，不潔淨畜類則用雙數 שְׁנַיִם（H8147，「兩個」）。因此「七七」可譯作七對，也有譯本理解為七隻，即三對加一隻。來源普遍把潔淨畜類較多的數量與創8:20的獻祭相連：第6章的[[每樣兩個與潔淨畜類七對|每樣兩個]]是一般保存原則，第7章再補充潔淨類別的特殊數量。GT背景註釋進一步把洪水前的潔淨區分理解為主要關乎獻祭；利未記則把這套分類發展為以色列的飲食規條。
-  - STEP: Gen 7:2 #3 הַ/טְּהוֹרָ֗ה | ha./te.ho.Rah | H2889 | HTd/Aafsa; Gen 7:8 #3 הַ/טְּהוֹרָ֔ה | ha./te.ho.Rah | H2889 | HTd/Aafsa; Gen 7:2 #6 שִׁבְעָ֥ה | shiv.'Ah | H7651 | HAcbsa; Gen 7:2 #7 שִׁבְעָ֖ה | shiv.'Ah | H7651 | HAcbsa; Gen 7:3 #4 שִׁבְעָ֥ה | shiv.'Ah | H7651 | HAcbsa
+  - type / claim: lexical_meaning — 第17到24節用了一連串的動詞來推動洪水上漲的畫面：「增多」（רָבָה，H7235A）出現在17、18節；「增強／勝過」（גָּבַר，H1396）出現在18、19、20、24節；「遮蓋」（כָּסָה，H3680）則在19、20節用來描寫高山被淹沒；方舟被大水「托起」（נָשָׂא，H5375H）並且「升高」（רוּם，H7311A）。大水淹過了山頂十五肘；GT《串珠聖經註釋》按照一肘約 0.45 公尺換算，認為水高出了山頂大約七公尺。不過 GT《丁道爾聖經註釋》對這個數字提出了一個重要的限制：「十五肘深，指的是高出山頂的深度，而不是水全部的深度。就像許多人猜測的，這個數字很可能是從滿載的方舟在水裡的吃水深度（例如，方舟總高三十肘的一半）估算出來的；意思是這麼深的水，已經排除了方舟航行時會撞到山頂的一切障礙。」《聖經精讀本》接著從「變強／勝過」（גָּבַר）這個字的語感，生動地描寫了翻騰的急流與暴風的動態。KC 想像了當時的人拼命拍打方舟的門、逃向高山的慘狀，用來表達神的審判降臨後，一切都為時已晚；這屬於講道時生動的畫面重現。
+  - STEP: Gen 7:11 #19 רַבָּ֔ה | ra.Bah | H7227A | HAafsa; Gen 7:17 #7 וַ/יִּרְבּ֣וּ | va/i.yir.Bu | H7235A | Hc/Vqw3mp; Gen 7:18 #3 וַ/יִּרְבּ֥וּ | va/i.yir.Bu | H7235A | Hc/Vqw3mp; Gen 7:18 #1 וַ/יִּגְבְּר֥וּ | va/i.yig.be.Ru | H1396 | Hc/Vqw3mp; Gen 7:19 #2 גָּֽבְר֛וּ | ga.ve.Ru | H1396 | HVqp3cp
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第8章.md:87 — 一、神記念，大水漸漸退去（1-5節）**
+  - chapter ownership: (8,)
+  - type / claim: lexical_meaning — 原文資料把水退的過程寫得很生動具體：第1節的 וַיִּשֹׁכּוּ（H7918）意思是「水消退了」；第2節說地下的泉源和天上的窗戶「被關閉」，大雨「被止住」；第3節用了兩個動詞（הָלוֹךְ וָשׁוֹב）來描寫水不斷地退去，又用 וַיַּחְסְרוּ（H2637）說水量減少了；到了第5節，再用「持續減少」一路寫到山頂終於露出來。KC 把這段循序漸進的過程，進一步應用在基督徒的關懷牧養上：生活中的考驗和打擊也許已經停止了，但留下來的後遺症，卻可能還需要一段時間才能慢慢消退。
+  - STEP: Gen 8:1 #19 וַ/יָּשֹׁ֖כּוּ | va/i.ya.Sho.ku | H7918 | Hc/Vqw3mp; Gen 8:3 #5 הָל֣וֹךְ | ha.Lokh | H1980L | HVqaa; Gen 8:5 #3 הָל֣וֹךְ | ha.Lokh | H1980G | HVqaa; Gen 8:3 #6 וָ/שׁ֑וֹב | va./Shov | H7725J | HC/Vqaa; Gen 8:7 #6 וָ/שׁ֔וֹב | va./Shov | H7725G | HC/Vqaa
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第8章.md:107 — 二、洪水消退的時間表（1-14節）**
+  - chapter ownership: (8,)
+  - type / claim: lexical_meaning — 在第13、14節裡，經文用了[[乾的兩個希伯來字|兩個不同的希伯來字]]來描寫「乾了」：第13節兩次用了 חָרְבוּ（H2717A），意思是水退去了、地面已經乾了；第14節則用了 יָבְשָׁה（H3001），意思是土地已經完全乾燥。GT 根據上下文解釋說，第13節的重點是地面上已經沒有積水了，而第14節則是指泥土都已經乾透了。挪亞雖然在正月初一就親眼看到地面乾了，但他還是耐心等到了二月二十七日，直到聽見神說話才走出方舟；CT 與 GT 就從這多出來的五十幾天等待中，進一步討論了[[信心與忍耐]]的功課。
+  - STEP: Gen 8:13 #9 חָֽרְב֥וּ | cha.re.Vu | H2717A | HVqp3cp; Gen 8:13 #20 חָֽרְב֖וּ | cha.re.Vu | H2717A | HVqp3cp; Gen 8:14 #7 יָבְשָׁ֖ה | ya.ve.Shah | H3001 | HVqp3fs; Gen 8:7 #8 יְבֹ֥שֶׁת | ye.Vo.shet | H3001 | HVqcc
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第8章.md:160 — 六、人心依然邪惡，但神依然施展憐憫（21-22節）**
+  - chapter ownership: (8,)
+  - type / claim: lexical_meaning — 第22節先用「只要地球還存在的一天」畫出了一個時間範圍，接著成雙成對地列出了播種與收割、寒與暑、夏與冬、晝與夜，最後用「都不會停止」（לֹא יִשְׁבֹּתוּ）來作總結。GT 賈斯樂與郝威根據這句話解釋，神應許的是地球上四季的更替和農作物的生長規律不會中斷，但這不代表局部地區不會再發生饑荒或農作物歉收。至於[[神是否改變心意]]，同一份資料也解釋說，這段經文的意思是，神保證不會再用「像這次大洪水一樣」的方式來滅絕生物；至於彼得後書3:10所談到的世界末日審判，則是跨越到新約經文的延伸討論了。CT、GT 與 BibleHub 也根據「只要地球還存在的一天」這句話，進一步連結到了未來新天新地的盼望。
+  - STEP: Gen 8:9 #1 וְ/לֹֽא\־ | ve./lo'- | H3808 | HC/Tn; Gen 8:12 #9 וְ/לֹֽא\־ | ve./lo'- | H3808 | HC/Tn; Gen 8:21 #10 לֹֽא\־ | lo'- | H3808 | HTn; Gen 8:21 #24 וְ/לֹֽא\־ | ve./lo'- | H3808 | HC/Tn; Gen 8:22 #13 לֹ֥א | lo' | H3808 | HTn
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第9章.md:137 — 四、神與人類以及所有活物立約（8-17節）**
+  - chapter ownership: (9,)
+  - type / claim: lexical_meaning — 原文資料顯示，第9節的「堅立」（מֵקִים）和第11節的「我要堅立」（וַהֲקִמֹתִי，H6965I）是來自同一個字根，而且都是使動語態。原文的重複，跟上面表格整理出來的內容完全一致：這個約是神主動讓它成立的，而且對象包含了挪亞一家、全人類，甚至所有的動物。
+  - STEP: Gen 9:9 #3 מֵקִ֛ים | me.Kim | H6965I | HVhrmsa; Gen 9:11 #1 וַ/הֲקִמֹתִ֤י | va./ha.ki.mo.Ti | H6965I | Hc/Vhq1cs; Gen 9:17 #9 הֲקִמֹ֔תִי | ha.ki.Mo.ti | H6965I | HVhp1cs
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **01 創世記/第9章.md:165 — 六、大洪水之後依然有罪：挪亞喝醉酒（18-21節）**
+  - chapter ownership: (9,)
+  - type / claim: lexical_meaning — 原文資料顯示，經文把挪亞的裸露寫成了反身語態（וַיִּתְגַּל，H1540I），意思是挪亞「使自己赤身露體」。這個原文的詞形雖然沒有改變註釋學者的結論，卻讓故事裡的責任歸屬變得更清楚：葡萄園和酒本身都不是問題，挪亞失去自我控制才是整個事件變調的關鍵。
+  - STEP: Gen 9:21 #5 וַ/יִּתְגַּ֖ל | va/i.yit.Gal | H1540I | Hc/Vtw3ms
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **link_folder/主題/基土拉的地位.md:45 — 兩處經文的兩個字**
@@ -839,6 +971,24 @@
   - STEP: no direct STEP occurrence
   - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
+- **link_folder/主題/生養眾多與治理.md:39 — [[01 創世記/第9章|第9章]]**
+  - chapter ownership: (9,)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/主題/生養眾多與治理.md:75 — 來源依據**
+  - chapter ownership: (1, 9, 10)
+  - type / claim: morphology — plural
+  - STEP: no direct STEP occurrence
+  - reason: high-confidence morphology phrase detected but no word/Strong anchor could be resolved
+  - manual action: manually inspect the exact occurrence morphology; do not infer theology from morphology
+- **link_folder/主題/神與亞伯蘭立約.md:36 — [[01 創世記/第15章|第15章]]**
+  - chapter ownership: (15,)
+  - type / claim: lexical_meaning — - 第7至8節以同一字根（H3423H）把神要亞伯蘭「承受」這地的應許與亞伯蘭求確據的問題連起來；第18節再以「我已賜給」（נָתַתִּי，H5414G）確認應許
+  - STEP: Gen 15:18 #10 נָתַ֙תִּי֙ | na.Ta.ti | H5414G | HVqp1cs; Gen 15:7 #14 לְ/רִשְׁתָּֽ/הּ\׃ | le./rish.Ta/h | H3423H | HR/Vqcc/Sp3fs; Gen 15:8 #7 אִֽירָשֶֽׁ/נָּה\׃ | 'I.ra.She./nah | H3423H | HVqi1cs/Sp3fs; Gen 15:2 #6 תִּתֶּן\־ | ti.ten- | H5414G | HVqi2ms; Gen 15:3 #6 נָתַ֖תָּה | na.Ta.tah | H5414G | HVqp2ms
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **link_folder/主題/雅各騙取祝福.md:48 — [[01 創世記/第27章|第27章]]**
   - chapter ownership: (27,)
   - type / claim: transliteration — bekorah
@@ -1727,6 +1877,12 @@
   - STEP: Gen 6:8 #3 חֵ֖ן | chen | H2580 | HNcmsa
   - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
   - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
+- **link_folder/神學/挪亞之約.md:43 — [[01 創世記/第9章|第9章]]**
+  - chapter ownership: (9,)
+  - type / claim: lexical_meaning — - 本章重點：神與挪亞、他的兒子與後裔，以及一切活物堅立永約，應許不再以洪水滅絕凡有血肉者或毀壞地，並以虹作記號。第9、11節的「堅立」（מֵקִים／וַהֲקִמֹתִי，H6965I）來自同一字根，都是使動語態。
+  - STEP: Gen 9:9 #3 מֵקִ֛ים | me.Kim | H6965I | HVhrmsa; Gen 9:11 #1 וַ/הֲקִמֹתִ֤י | va./ha.ki.mo.Ti | H6965I | Hc/Vhq1cs; Gen 9:17 #9 הֲקִמֹ֔תִי | ha.ki.Mo.ti | H6965I | HVhp1cs
+  - reason: brief lexicon provides a possible semantic range, not automatic contextual meaning
+  - manual action: only review a demonstrable word/Strong mismatch; do not treat lexicon wording as a verdict
 - **link_folder/神學/挪亞之約.md:83 — 來源依據**
   - chapter ownership: (6, 8, 9)
   - type / claim: morphology — noun
@@ -1866,7 +2022,7 @@
   - reason: unmatched romanized/foreign term has no resolvable local word/Strong anchor
   - manual action: manually verify against the cited verse and source convention; do not auto-rewrite
 
-### INTERPRETIVE (38)
+### INTERPRETIVE (40)
 
 - **01 創世記/第1章.md:89 — 起初的創造與未成形的地（v1-2）**
   - chapter ownership: (1,)
@@ -1886,15 +2042,9 @@
   - STEP: no direct STEP occurrence
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第2章.md:110 — 二、塵土沒有生命，直到神親自吹氣（4-7節）**
+- **01 創世記/第2章.md:153 — 六、這段婚姻，後來指向了一個更深遠的故事（18-24節）**
   - chapter ownership: (2,)
-  - type / claim: lexical_interpretation — 但塵土不是人的全部。神把生命的氣息吹入他的鼻孔，他便成了「活的生命、活的受造者」נֶפֶשׁ חַיָּה。這נֶפֶשׁ חַיָּה 表達『活的生命、活的受造者』，同一詞組也可用來稱活物。本節接著特別描述神把生命的氣息吹入人，使人成為活人；部分註釋再從這個行動及其他經文，進一步討論人的靈、魂、體與人特殊的屬靈生命。這一節真正動人的地方，是人的生命由神親自賜下。塵土使人謙卑，神的氣息卻使人的生命帶著不可輕看的尊嚴（見[[地上塵土與生命氣息]]、[[有靈的活人]]）。
-  - STEP: Gen 2:7 #15 לְ/נֶ֥פֶשׁ | le./Ne.fesh | H5315K | HR/Ncfsa; Gen 2:19 #25 נֶ֥פֶשׁ | Ne.fesh | H5315K | HNcfsa; Gen 2:7 #16 חַיָּֽה\׃ | chai.Yah | H2416A | HAafsa; Gen 2:19 #7 חַיַּ֤ת | chai.Yat | H2416C | HNcfsc; Gen 2:19 #26 חַיָּ֖ה | chai.Yah | H2416A | HAafsa
-  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
-  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第2章.md:153 — 六、這段婚姻，後來指向更遠的故事（18-24節）**
-  - chapter ownership: (2,)
-  - type / claim: lexical_interpretation — > 本章主要原文包括：「歇下」שָׁבַת（H7673A）、「分別為聖」קָדַשׁ（H6942G）、「來歷」תּוֹלְדוֹת（H8435）、「塑造」יָצַר（H3335G）、「活的生命／受造者」נֶפֶשׁ חַיָּה（H5315K＋H2416E）、「工作／服事」עָבַד（H5647I）、「看守／守護」שָׁמַר（H8104H）、「幫助者」עֵזֶר（H5828）、「相對／在面前」נֶגֶד（H5048）、「側邊／肋骨」צֵלָע（H6763）、「建造」בָּנָה（H1129）與「連合」דָּבַק（H1692）。這些拼寫、Strong 編號及基本詞義依 STEP Bible 原文資料；陶匠、四河象徵、肋旁圖像、三層死亡及基督與教會等內容，則屬註釋或跨經文的神學閱讀。
+  - type / claim: lexical_interpretation — > 本章主要的原文包括：「歇下」（שָׁבַת，H7673A）、「分別為聖」（קָדַשׁ，H6942G）、「來歷」（תּוֹלְדוֹת，H8435）、「塑造」（יָצַר，H3335G）、「活的生命／受造者」（נֶפֶשׁ חַיָּה，H5315K＋H2416E）、「工作／服事」（עָבַד，H5647I）、「看守／守護」（שָׁמַר，H8104H）、「幫助者」（עֵזֶר，H5828）、「相對／在面前」（נֶגֶד，H5048）、「側邊／肋骨」（צֵלָע，H6763）、「建造」（בָּנָה，H1129）與「連合」（דָּבַק，H1692）。這些拼寫、Strong 編號及基本意思，都是根據 STEP Bible 的原文資料；至於陶匠捏泥土、四條河的象徵、肋旁的圖畫、死亡的三個層面，以及基督與教會的奧祕等內容，則是屬於註釋書或是跨越經文的神學解讀。
   - STEP: Gen 2:2 #8 וַ/יִּשְׁבֹּת֙ | va/i.yish.Bot | H7673A | Hc/Vqw3ms; Gen 2:3 #10 שָׁבַת֙ | sha.Vat | H7673A | HVqp3ms; Gen 2:3 #6 וַ/יְקַדֵּ֖שׁ | va/y.ka.Desh | H6942G | Hc/Vpw3ms; Gen 2:4 #2 תוֹלְד֧וֹת | tol.Dot | H8435 | HNcfpc; Gen 2:7 #1 וַ/יִּיצֶר֩ | va/i.yi.Tzer | H3335G | Hc/Vqw3ms
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
@@ -1904,82 +2054,94 @@
   - STEP: no direct STEP occurrence
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第3章.md:107 — 三、審判中的第一個福音（14-19節）**
+- **01 創世記/第3章.md:107 — 三、神在審判中給出的第一個福音（14-19節）**
   - chapter ownership: (3,)
-  - type / claim: lexical_interpretation — 神沒有詢問蛇，而是直接宣告咒詛。蛇要用肚子行走、終身吃土，這既是對蛇的判決，也象徵撒但工作的降卑與蒙羞。第 15 節在審判中帶出盼望：女人的後裔要傷蛇的頭，蛇只能傷他的腳跟。「後裔」原文是 זֶרַע（H2233H，「種子／後代」），以單數詞形出現，也可以統稱一群後代；接下來的話再用陽性單數的「他」承接。部分註釋結合本節整體與新約，進一步看見這應許最終集中在基督身上，稱為「原初福音」。
+  - type / claim: lexical_interpretation — 神根本沒有去問蛇為什麼要這樣做，而是直接對牠宣告了咒詛。神說蛇要用肚子走路、一輩子吃土；這不但是對這條蛇的判決，也象徵了撒但的工作將會受到屈辱與蒙羞。在第 15 節，神在嚴厲的審判中帶出了一線希望：女人的後裔要傷蛇的頭，而蛇只能傷他的腳跟。「後裔」在原文是 זֶרַע（H2233H，「種子／後代」），這個字雖然是單數形式，但也可以用來統稱一群後代；不過緊接著下一句話，神就用陽性單數的「他」來稱呼這個後裔。因此，許多註釋學者結合了新約聖經，進一步看見這個應許最終是集中在耶穌基督一個人的身上，這也就是神學上常說的「原初福音」。
   - STEP: Gen 3:15 #7 זַרְעֲ/ךָ֖ | zar.'a./Kha | H2233H | HNcmsc/Sp2ms; Gen 3:15 #9 זַרְעָ֑/הּ | zar.'A/h | H2233H | HNcmsc/Sp3fs
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第3章.md:116 — 四、恩典的遮蓋與通往生命樹的道路（20-24節）**
+  - chapter ownership: (3,)
+  - type / claim: lexical_interpretation — 在第20節，亞當第一次把妻子叫作「夏娃」（חַוָּה，H2332），這跟「活著的人」（חָי，H2416A）的發音很像，用來說明她將會成為眾生之母。有些註釋學者從名字和生命的關聯性，進一步把亞當為妻子取名這個舉動，理解為亞當在聽見死亡的判決之後，心裡依然抓住了神要賜下生命的應許。接著在下一節，經文說神用「皮的衣服」（כָּתְנוֹת עוֹר，H3801＋H5785）給他們兩個人穿上；CT、KC 與 BibleHub 從這裡進一步討論了犧牲、流血與遮蓋罪惡的屬靈意義；不過 GT 的丁道爾註釋則先強調，這是神在照顧他們兩個人當下最實際的需要。
+  - STEP: Gen 3:20 #5 חַוָּ֑ה | cha.Vah | H2332 | HNpf; Gen 3:20 #11 חָֽי\׃ | Chai | H2416A | HAamsa; Gen 3:21 #6 כָּתְנ֥וֹת | ka.te.Not | H3801 | HNcfpc; Gen 3:21 #7 ע֖וֹר | or | H5785 | HNcmsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 - **01 創世記/第4章.md:144 — 四、第一宗謀殺與神的追問（8-16節）**
   - chapter ownership: (4,)
-  - type / claim: lexical_interpretation — CT 的〈該隱墮落的過程〉是同一條路的六段版本：不順從神的啟示、因不蒙悅納而發怒、因嫉妒殺害別人、對神說謊、只求自己的益處、與神完全隔絕。至於[[該隱的記號]]，STEP 的句法是神「為該隱」設立 אוֹת（*oth*，H226H）這個陰性單數名詞「記號」，後面的目的子句說明它是為了免得遇見他的人擊殺他；經文重點放在保護功能。幾份註釋再進一步解釋記號的形式：《啟導本》說那「不是在身上作什麼記號，而是一個警告的訊號」；《雷氏研讀本》說是「神保證用恩慈對待他，是保護他性命的一個象徵」；《丁道爾聖經註釋》說它「不是一個烙印，乃是一種安全通行證──幾乎像是立約，使神實際上成了該隱的保護者」；BibleHub 則保留經文沒有指明記號性質的界線，《舊約背景註釋》也容許它可能是外在記號或神向該隱顯示的神蹟。這些安排要放進[[古代近東血仇制度|古代近東的血仇背景]]才看得清楚：在中央權力管不到的地方，家族宿怨導致的償命是常態，神立記號正是把處置權從私人復仇手中收回。
+  - type / claim: lexical_interpretation — CT 的〈該隱墮落的過程〉也是走同一條路線，分成六個階段：不順從神的啟示、因為祭物不被接受而發脾氣、因為嫉妒而殺害別人、對神說謊、只想到自己的利益、最後與神完全隔絕。至於神給[[該隱的記號]]，原文的句法是神「為了該隱」設立了 אוֹת（*oth*，H226H）這個名詞（記號），後面的句子說明了設立記號的目的，是為了避免遇到他的人把他殺了；可見經文的重點在於這個記號的「保護」功能。幾份註釋進一步解釋了這個記號可能長什麼樣子：《啟導本》說那「不是在身上刺什麼記號，而是一個警告的信號」；《雷氏研讀本》認為這是「神保證會用恩典對待他、保護他生命的一個象徵」；《丁道爾聖經註釋》說它「不是一個犯人的烙印，而是一種安全通行證——幾乎就像是神跟他立約，讓神實際成了該隱的保護者」；而 BibleHub 則保持經文沒有明說的界線，《舊約背景註釋》也認為它可能是一個外在的記號，或者是神向該隱行的一個神蹟。要把這些安排放進[[古代近東血仇制度|古代近東的血仇背景]]裡才能看懂：在當時，如果中央政府管不到，家族之間因為仇恨而互相報復要命是很平常的事，神給該隱立下這個記號，正是為了把處置生命的權力，從私人的報復中收回來。
   - STEP: Gen 4:15 #13 א֔וֹת | 'ot | H226H | HNcfsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 - **01 創世記/第4章.md:174 — 六、塞特與求告耶和華的名（25-26節）**
   - chapter ownership: (4,)
-  - type / claim: lexical_interpretation — 敘事在最後兩節回到亞當的家。[[亞當]]與夏娃又生一子，取名[[塞特]]。STEP 把 שֵׁת（*Seth*，H8352）標作男性人名，緊接著的 שָׁת（H7896I）則是 Qal 完成式第三人稱陽性單數「他已設立／指定」；夏娃又說神給她「另一個後裔，代替亞伯」，使名字、動詞與敘事解釋連在一起。CT 再給出「新苗，茁芽，設立，代替，償還」的一串釋義；《雷氏研讀本》作「那指定的一個」代替者，《啟導本》作「替代」或「賜」，KC 作「補償」或「替代」，並由此提出一條通則：凡獻給神或被神取回的，神必加以補償或代替。CT 的話中之光把這件事的神學說盡了：「神的見證人是不會斷絕的；這一個被殺了，神還會興起另一個來代替。」
+  - type / claim: lexical_interpretation — 故事在最後兩節回到了亞當的家。[[亞當]]與夏娃又生了一個兒子，取名叫[[塞特]]。原文資料把 שֵׁת（*Seth*，H8352）標記為男性的名字，而緊接在後面的動詞 שָׁת（H7896I）意思是「他已經設立／指定」；夏娃接著說，神給了她「另一個後裔，來代替亞伯」，這樣一來，就把名字、動作跟故事的解釋全部串連在一起了。CT 對這個名字給出了一連串的解釋：「新苗、發芽、設立、代替、補償」；《雷氏研讀本》解釋為「那被指定的一位」代替者，《啟導本》解釋為「替代」或「賜給」，KC 解釋為「補償」或「替代」，並且從中得出一個原則：凡是獻給神，或是被神收回去的，神一定會給予補償或代替。CT 則用一句話把這背後的神學意涵說得很透徹：「神的見證人是不會斷絕的；這一個被殺了，神還會興起另一個來代替。」
   - STEP: Gen 4:25 #11 שֵׁ֑ת | Shet | H8352 | HNpm; Gen 4:25 #13 שָֽׁת\־ | shat- | H7896I | HVqp3ms; Gen 4:26 #1 וּ/לְ/שֵׁ֤ת | u/l./Shet | H8352 | HC/R/Npm
-  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
-  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第5章.md:127 — 四、以諾——與神同行（21-24節）**
-  - chapter ownership: (5,)
-  - type / claim: lexical_interpretation — STEP 在24節先說 וְאֵינֶנּוּ（H369，「他不在了」），再用 לָקַח（H3947G）說「神取了他」；「取」是 Qal 完成式，施行動作的主詞是神。GT《創世記雷氏研讀本》進一步指出這字「跟描述以利亞升天時所用的希伯來文相同」（王下二3、5）；GT《串珠聖經註釋》也說「王下第2章用同一個希伯來字描寫以利亞升天」；GT《聖經精讀本》則強調以諾與以利亞不經死亡「並非是對他們虔誠的獎賞」，而是要顯明凡與神恢復交通的地方就有救恩。新約把這件事說得更清楚：[[希伯來書11章以諾因信被接去|「以諾因著信被接去，不至於見死」（來十一5）]]，而[[猶大書以諾預言審判|猶大書14-15節]]記下他預言主帶著千萬聖者降臨施行審判——GT 李道生因此稱以諾為「聖經最早的一位先知」。KC 補一句：以諾沒有把神的啟示留給自己，而是傳給周圍的人，這正證明他真是與神同行。
-  - STEP: Gen 5:24 #5 וְ/אֵינֶ֕/נּוּ | ve./'ei.Ne./nu | H369 | HC/Ncmsc/Sp3ms; Gen 5:24 #7 לָקַ֥ח | la.Kach | H3947G | HVqp3ms
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 - **01 創世記/第6章.md:107 — 四、挪亞蒙恩（8-10節）**
   - chapter ownership: (6,)
-  - type / claim: lexical_interpretation — 「惟有挪亞在耶和華眼前蒙恩」使恩典在普世審判的背景中格外突出。STEP 顯示「蒙恩」由 מָצָא（H4672，「尋得」）與 חֵן（H2580，「恩惠／恩寵」）組成。GT《創世記雷氏研讀本》進一步給出完整的字義與神學說明：「『恩』（恩惠）或寵愛。希伯來文是 chen，字根的意思是『彎曲或彎腰』，因而指在上者給在下者賜予不配得的恩寵……這裏是這字第一次出現的地方。」BH 同樣說這是聖經第一次提到恩典。**掛名要注意**：作「恩字首次出現」這個斷言的是雷氏研讀本與 BH，不是 CT——CT 在此只給原文字義「恩惠，恩寵，喜愛」，重點放在恩典的源頭：「神的恩典是人得救的根源；祂要恩待誰，就恩待誰（羅九15）。但另一方面，挪亞必然有他蒙恩的理由（9節）。」（見[[恩典的首次出現]]）
+  - type / claim: lexical_interpretation — 「惟有挪亞在耶和華眼前蒙恩」這句話，讓神的恩典在全世界都要面臨審判的背景下顯得特別突出。原文資料顯示，「蒙恩」是由「尋得」（מָצָא，H4672）和「恩惠／恩寵」（חֵן，H2580）這兩個字組成的。GT《創世記雷氏研讀本》進一步給出了完整的字義和神學解釋：「『恩』（恩惠）或寵愛。希伯來文是 chen，字根的意思是『彎曲或彎腰』，因此是指地位高的人，把恩寵賜給不配得的下屬……這是這個字在聖經裡第一次出現的地方。」BH 也同樣說，這是聖經第一次提到恩典。**不過引用時要注意**：斷言這是「恩典這個字第一次出現」的是雷氏研讀本和 BH，並不是 CT——CT 在這裡只給出了原文的意思是「恩惠、恩寵、喜愛」，CT 的重點是放在恩典的來源：「神的恩典是人能得救的根本原因；神要恩待誰，就恩待誰（見羅9:15）。但從另一方面來看，挪亞必定也有他蒙恩的理由（見第9節）。」（詳見[[恩典的首次出現]]）
   - STEP: Gen 6:8 #2 מָ֥צָא | Ma.tza' | H4672 | HVqp3ms; Gen 6:8 #3 חֵ֖ן | chen | H2580 | HNcmsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 - **01 創世記/第6章.md:135 — 六、方舟的建造（14-22節）**
   - chapter ownership: (6,)
-  - type / claim: lexical_interpretation — 第18節的「我要堅立」是 וַהֲקִמֹתִי（H6965I，使動語態），所堅立的是「我的約」בְּרִיתִי（H1285）。BH 與 GT 進一步指出，這是聖經首次明說「約」；[[挪亞之約]]表明神主動確立審判中的拯救安排。妻子、兒子與兒婦都被包括其中，CT 又把它讀成家庭性的救恩圖畫（彼前三20；徒十六31），但這項延伸仍應按本章的挪亞家庭敘事來理解。
+  - type / claim: lexical_interpretation — 第18節的「我要堅立」是使動語態的 וַהֲקִמֹתִי（H6965I），神要堅立的是「我的約」（בְּרִיתִי，H1285）。BH 與 GT 進一步指出，這是聖經裡面第一次明確提到「約」這個字；[[挪亞之約]]表明了，是神主動在審判中確立了這個拯救的計畫。妻子、兒子和媳婦全都被包含在這個約裡面，CT 又把它解讀為一幅以家庭為單位的救恩圖畫（參考彼前3:20；徒16:31），不過這種延伸的解讀，還是應該回到本章挪亞家庭的故事脈絡來理解。
   - STEP: Gen 6:18 #1 וַ/הֲקִמֹתִ֥י | va./ha.ki.mo.Ti | H6965I | Hc/Vhq1cs; Gen 6:18 #3 בְּרִיתִ֖/י | be.ri.T/i | H1285 | HNcfsc/Sp1bs
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第7章.md:73 — 神命挪亞全家進方舟（1-4節）**
+- **01 創世記/第7章.md:73 — 一、神命令挪亞全家進方舟（1-4節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_interpretation — STEP 顯示，神以命令式 בֹּא（H935G，「進入／來」）吩咐挪亞，把「你」和「你全家」בֵּיתְךָ（H1004M，「你的家／家人」）一同帶進方舟；神也以 צַדִּיק（H6662，「義的」）稱挪亞。CT把這稱為聖經中早期的救恩呼召，也從「你和你的全家」發展家庭救恩的靈訓；KC與BibleHub同樣把方舟中的一家看作神保存家庭的圖畫。這些是從挪亞一家蒙保存進一步發展的家庭救恩教導；本章直接敘述的則是神給挪亞一家這次特定的應許與命令。
+  - type / claim: lexical_interpretation — 原文資料（STEP）顯示，神用祈使句的「進入／來」（בֹּא，H935G）來命令挪亞，要他把「你」和「你全家」（בֵּיתְךָ，H1004M）一起帶進方舟裡面；神也用「義的」（צַדִּיק，H6662）這個字來稱呼挪亞。CT 把這看作是聖經裡很早期發出的救恩呼召，並且從「你和你的全家」這句話，延伸出了關於家庭得救的屬靈教導；KC 與 BibleHub 也同樣把方舟裡的這一家人，看作是神要保存整個家庭的圖畫。這些都是學者從挪亞一家人得救的故事中，進一步延伸出來的家庭得救教導；不過這章經文直接敘述的，是神針對挪亞這一家人，在這次特定事件中所給的應許和命令。
   - STEP: Gen 7:1 #4 בֹּֽא\־ | bo'- | H935G | HVqv2ms; Gen 7:13 #4 בָּ֣א | ba' | H935G | HVqp3ms; Gen 7:1 #7 בֵּיתְ/ךָ֖ | bei.te./Kha | H1004M | HNcmsc/Sp2ms; Gen 7:1 #13 צַדִּ֥יק | tza.Dik | H6662 | HAamsa; Gen 7:7 #1 וַ/יָּ֣בֹא | va/i.Ya.vo' | H935G | Hc/Vqw3ms
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第7章.md:91 — 洪水爆發與精確日期（11-12節）**
+- **01 創世記/第7章.md:91 — 三、洪水爆發與精確的日期（11-12節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_interpretation — 挪亞六百歲二月十七日，[[大淵的泉源與天上的窗戶|大淵的泉源裂開，天上的窗戶敞開]]，大雨持續四十晝夜。STEP顯示「裂開」נִבְקְעוּ（H1234）和「敞開」נִפְתָּחוּ（H6605A）都是被動詞形；מַעְיְנֹת（H4599）是「泉源」，תְּהוֹם רַבָּה（H8415、H7227A）是「大淵」，וַאֲרֻבֹּת（H699）則是「而天上的窗戶／水閘」。GT《丁道爾聖經註釋》先為這個日期定性：「這裏準確的日期，顯然沒有象徵意味，可見是人所牢記的一項事實；這一點可由故事中進一步仔細記錄的日期，得到證實。」GT 艾基斯《舊約聖經難題彙編》據此作文獻比較：世界各地都有洪水傳說（巴比倫的烏他拿比士、蘇美的古要特烏、希臘的丟加良、印度的馬奴等），「但在全部有關洪水的故事中，只有聖經記載在洪水開始後各樣事情發生的準確日子」；《吉加墨詠史詩》「也和大部份經過數百至一千年口傳下來的傳說一樣，沒有記載洪水發生於那一年」。艾基斯並比較兩隻船的形制——烏他拿比士的方舟是正方體，「不大合乎實際需要，亦不適合用於海上航行」，挪亞的方舟長寬深比例則「正是大洋船的理想體積」。這些是來源所作的文獻比較與護教論證。
+  - type / claim: lexical_interpretation — 在挪亞六百歲那年的二月十七日，[[大淵的泉源與天上的窗戶|地下深淵的泉源裂開了，天上的窗戶也打開了]]，大雨連續下了四十個白天和黑夜。原文資料顯示，「裂開」（נִבְקְעוּ，H1234）和「打開」（נִפְתָּחוּ，H6605A）都是被動語態；「泉源」是 מַעְיְנֹת（H4599），「大淵」是 תְּהוֹם רַבָּה（H8415、H7227A），而「天上的窗戶／水閘」則是 וַאֲרֻבֹּת（H699）。GT《丁道爾聖經註釋》先對這個日期下了一個定論：「這裡記載了這麼準確的日期，顯然不是什麼象徵意義，可見這是一件被人牢牢記住的真實事件；這一點可以從故事後面繼續記錄的詳細日期得到證明。」GT 艾基斯的《舊約聖經難題彙編》根據這一點作了各國文獻的比較：世界各地都有大洪水的傳說（例如巴比倫、蘇美、希臘、印度等），「但是在所有關於洪水的故事裡，只有聖經準確地記錄了洪水發生後每一件事情的具體日期」；像是《吉加墨斯史詩》「也跟大部分口耳相傳了幾百到一千年的傳說一樣，根本沒有記載洪水到底是哪一年發生的」。艾基斯還比較了兩邊故事裡的船隻設計——巴比倫神話裡的方舟是一個正方體，「這不太符合實際需要，也不適合在海上航行」，而挪亞方舟的長、寬、高比例「正好是一艘能在汪洋中航行的理想船隻體積」。這些都是學者所作的文獻比較與護教論證。
   - STEP: Gen 7:11 #15 נִבְקְעוּ֙ | niv.ke.'U | H1234 | HVNp3cp; Gen 7:11 #22 נִפְתָּֽחוּ\׃ | nif.Ta.chu | H6605A | HVNp3cp; Gen 7:11 #17 מַעְיְנֹת֙ | ma'.ye.Not | H4599 | HNcfpc; Gen 7:11 #18 תְּה֣וֹם | te.Hom | H8415 | HNcfsa; Gen 7:11 #19 רַבָּ֔ה | ra.Bah | H7227A | HAafsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第7章.md:93 — 洪水爆發與精確日期（11-12節）**
+- **01 創世記/第7章.md:93 — 三、洪水爆發與精確的日期（11-12節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_interpretation — STEP在第12節另以 הַגֶּשֶׁם（H1653）稱實際降下的「雨」；註釋再把「大淵泉源」與「天上窗戶」放進古代世界的宇宙圖像，描寫上下水源同時開啟。BH把它讀成受造秩序逆轉，說天窗敞開「可以看作創世記1章分開諸水的逆轉，象徵因人的罪而回到混沌」。GT 這邊給的是背景與修辭說明：《舊約背景註釋》指「天上窗戶」是「富有詩意」而「不是科學化的用語，而是反映觀察者的角度，正如我們也說太陽會『日落』一樣」，並考出這語詞在古代近東文學中「只在另一處地方出現」（迦南神話中巴力居所的「窗戶」，指雲中的裂縫，且與下雨無關）；《串珠聖經註釋》給希伯來宇宙觀的框架——「大氣層上面和地底下都各有一個廣大的儲水池」；《聖經精讀本》說「裂開了」是修辭手法，「描述當萬物的主宰把堵水用的塞子拔出時，宏大的水從四方同時湧出」。CT 的文意註解則給兩種可能：「或指地下水湧上來，或指海床升高導致海水倒灌」，其後再以「大淵象徵陰府攻擊」作靈意解說。
+  - type / claim: lexical_interpretation — 原文在第12節另外用 הַגֶּשֶׁם（H1653）來稱呼實際降下來的「雨」；註釋書接著把「大淵的泉源」和「天上的窗戶」，放進古代世界的宇宙觀裡，來描寫天上地下的水源同時爆發的景象。BH 把它解讀為神創造秩序的大逆轉，認為天窗打開「可以看作是創世記第一章『神把水上下分開』這件事的倒退，象徵因為人類的罪，世界又回到了起初混沌的狀態」。GT 則提供了歷史背景和文學修辭的說明：《舊約背景註釋》指出，「天上的窗戶」這句話「很有詩意」，「它不是科學用語，而是反映了當時人們觀察天空的角度，就像我們今天也還是會說『太陽下山了』一樣」，並考證出這個詞在古代中東文學裡「只在另一個地方出現過」（就是在迦南神話裡巴力住處的「窗戶」，那是指雲層裡的裂縫，而且跟下雨無關）；《串珠聖經註釋》介紹了希伯來人的宇宙觀——「他們認為大氣層上面和地底下，都各有一個巨大的儲水池」；《聖經精讀本》則說「裂開了」是一種文學修辭，「用來描寫當萬物的主宰把堵水的塞子拔掉時，巨大的水流從四面八方同時湧出來的畫面」。CT 的字義解釋則給了兩種可能性：「這可能是指地下水湧上來，也可能是指海床升高導致海水倒灌」，接著又用「大淵象徵陰間的攻擊」來作屬靈的解說。
   - STEP: Gen 7:12 #2 הַ/גֶּ֖שֶׁם | ha./Ge.shem | H1653 | HTd/Ncmsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第7章.md:95 — 洪水爆發與精確日期（11-12節）**
+- **01 創世記/第7章.md:95 — 三、洪水爆發與精確的日期（11-12節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_interpretation — STEP以 אַרְבָּעִים（H705）標出「四十」，直接說明大雨持續四十日、四十夜。CT與BibleHub再從聖經中其他「[[四十的屬靈意義|四十]]」的段落，進一步討論試驗、審判與預備的屬靈意義。
+  - type / claim: lexical_interpretation — 原文用 אַרְבָּעִים（H705）標出了「四十」，直接說明這場大雨持續了四十個晝夜。CT 和 BibleHub 接著從聖經裡其他提到「[[四十的屬靈意義|四十]]」的經文，進一步討論了這個數字在代表試驗、審判和預備上的屬靈意義。
   - STEP: Gen 7:4 #9 אַרְבָּעִ֣ים | 'ar.ba.'Im | H705 | HAcmpa; Gen 7:4 #11 וְ/אַרְבָּעִ֖ים | ve./'ar.ba.'Im | H705 | HC/Acmpa; Gen 7:12 #5 אַרְבָּעִ֣ים | 'ar.ba.'Im | H705 | HAcmpa; Gen 7:12 #7 וְ/אַרְבָּעִ֖ים | ve./'ar.ba.'Im | H705 | HC/Acmpa; Gen 7:17 #3 אַרְבָּעִ֥ים | 'ar.ba.'Im | H705 | HAcmpa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第7章.md:112 — 水勢高漲、死亡與存留（17-24節）**
+- **01 創世記/第7章.md:112 — 五、水勢高漲、死亡與存留下來的生命（17-24節）**
   - chapter ownership: (7,)
-  - type / claim: lexical_interpretation — 第21至23節連續列舉飛鳥、牲畜、走獸、昆蟲與所有的人，並以 נִשְׁמַת（H5397，「氣息」）、רוּחַ（H7307H，「氣／氣息」）和 חַיִּים（H2416E，「生命」）界定旱地上死亡的生命。第23節先用主動式 וַיִּמַח（H4229A，「祂除滅」），再用被動式 וַיִּמָּחוּ（同一 Strong，「牠們被除滅」），最後以 וַיִּשָּׁאֶר（H7604，「被留下／存留」）配合 אַךְ（H389，「只有」）轉向挪亞和方舟中的生命。這一正一反構成[[洪水中的審判與拯救]]的核心；[[挪亞作為審判中蒙保守的預表|挪亞一家]]因此成為審判中蒙神保守的預表。CT、KC與BibleHub據此把方舟連於基督：審判的水使方舟浮起，方舟中的人因此經過審判而蒙保守。這是新約光照下的豫表性閱讀。
+  - type / claim: lexical_interpretation — 第21到23節連續列出了飛鳥、牲畜、野獸、昆蟲和所有的人類，並用「氣息」（נִשְׁמַת，H5397）、「氣／氣息」（רוּחַ，H7307H）和「生命」（חַיִּים，H2416E）來界定那些在陸地上死去的生物。第23節先用了主動語態的「祂除滅」（וַיִּמַח，H4229A），接著用被動語態的「牠們被除滅」（וַיִּמָּחוּ），最後用「被留下／存留」（וַיִּשָּׁאֶר，H7604）配合「只有」（אַךְ，H389）這個字，把鏡頭轉向了挪亞和方舟裡面的生命。這一正一反的對比，構成了[[洪水中的審判與拯救]]的核心；因此，[[挪亞作為審判中蒙保守的預表|挪亞一家人]]就成了在審判中蒙神保護的預言圖畫。CT、KC 與 BibleHub 根據這一點，把方舟連結到了耶穌基督：審判的大水把方舟浮了起來，方舟裡的人因此經過了審判，卻蒙了保守。這是站在新約聖經的光照下所作的屬靈解讀。
   - STEP: Gen 7:22 #3 נִשְׁמַת\־ | nish.mat- | H5397 | HNcfsc; Gen 7:15 #12 ר֥וּחַ | Ru.ach | H7307H | HNcfsc; Gen 7:22 #4 ר֨וּחַ | Ru.ach | H7307H | HNcfsc; Gen 7:11 #5 לְ/חַיֵּי\־ | le./chai.yei- | H2416E | HR/Ncmpc; Gen 7:15 #13 חַיִּֽים\׃ | chai.Yim | H2416E | HNcmpa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第8章.md:89 — 神記念，水勢漸退（1-5節）**
+- **01 創世記/第8章.md:89 — 一、神記念，大水漸漸退去（1-5節）**
   - chapter ownership: (8,)
-  - type / claim: lexical_interpretation — 「神叫風吹地」使用 רוּחַ（*ruach*，H7307H）；STEP在本句給的語境義是「風」，簡要義域則包括氣息與靈。CT、GT與BibleHub進一步把這個[[風與靈同字|同字現象]]與創1:2神的靈運行在水面上相照，視洪水後的秩序恢復為再創造；CT又把神的記念、方舟與風分別連於父、子、靈的救恩工作，以[[三一神同工]]整理這段豫表。
+  - type / claim: lexical_interpretation — 經文說「神叫風吹地」，這裡用的字是 רוּחַ（*ruach*，H7307H）；原文資料在這裡給的翻譯是「風」，但這個字在字典裡的簡單意思也包含了「氣息」與「靈」。CT、GT 與 BibleHub 進一步把這個[[風與靈同字|同一個字的現象]]，跟創世記1:2「神的靈運行在水面上」對照起來看，認為大洪水之後秩序的恢復，就像是神再一次的創造；CT 甚至把「神的記念」、「方舟」和「風」，分別連結到聖父、聖子、聖靈的拯救工作，用[[三一神同工]]的角度，整理出了這段故事的屬靈意義。
   - STEP: Gen 8:1 #16 ר֙וּחַ֙ | Ru.ach | H7307H | HNcfsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
-- **01 創世記/第8章.md:118 — 烏鴉、鴿子與橄欖葉（6-12節）**
+- **01 創世記/第8章.md:118 — 三、烏鴉、鴿子與橄欖葉（6-12節）**
   - chapter ownership: (8,)
-  - type / claim: lexical_interpretation — STEP把兩種鳥和牠們的行動分得很清楚：7節的 עֹרֵב（H6158）是烏鴉，並以 יָצוֹא וָשׁוֹב 描寫牠持續飛出又返回；8節的 יוֹנָה（H3123）是鴿子，9節說牠找不到 מָנוֹחַ（H4494，「落腳／安歇之處」），挪亞便伸手把牠帶回方舟。11節使用 עֲלֵה（H5929，「葉」）和 זַיִת（H2132H，「橄欖」），並以 טָרָף（H2965）特別說明那是「新擰／新摘下的」。這些行動使挪亞能觀察水與土地的狀態；CT、GT與KC再按利11:15、太3:16等經文，將[[烏鴉與鴿子的象徵|烏鴉和鴿子]]進一步應用為舊造性情與聖靈、新生命。丁道爾則先把[[橄欖葉子|橄欖葉]]理解為「新造的應許」，後世又由此發展出口銜橄欖枝的和平圖像。
+  - type / claim: lexical_interpretation — 原文資料把這兩種鳥跟牠們的動作區分得很清楚：第7節的 עֹרֵב（H6158）是烏鴉，並用 יָצוֹא וָשׁוֹב 描寫牠不斷地飛出去又飛回來；第8節的 יוֹנָה（H3123）是鴿子，第9節說牠找不到「落腳／安歇的地方」（מָנוֹחַ，H4494），挪亞就伸手把牠接回方舟裡。第11節用了「葉子」（עֲלֵה，H5929）和「橄欖」（זַיִת，H2132H），並且用 טָרָף（H2965）這個字特別強調那是「新擰／剛摘下來的」。這些放鳥的動作，讓挪亞能觀察外面水位和土地恢復的狀況；CT、GT 與 KC 接著根據利未記11:15（規定烏鴉不潔淨）、馬太福音3:16（聖靈像鴿子降下）等經文，進一步把[[烏鴉與鴿子的象徵|烏鴉和鴿子]]，應用來比喻人舊有的脾氣，以及聖靈賜下的新生命。丁道爾則是先把[[橄欖葉子|橄欖葉]]解釋為「神賜下新生命的應許」，後來的人也就根據這個典故，發展出了「鴿子嘴裡叼著橄欖枝」代表和平的圖案。
   - STEP: Gen 8:7 #3 הָֽ/עֹרֵ֑ב | ha./'o.Rev | H6158 | HTd/Ncmsa; Gen 8:11 #5 עֶ֔רֶב | 'E.rev | H6153 | HNcmsa; Gen 8:7 #5 יָצוֹא֙ | ya.tzO' | H3318G | HVqaa; Gen 8:3 #6 וָ/שׁ֑וֹב | va./Shov | H7725J | HC/Vqaa; Gen 8:7 #6 וָ/שׁ֔וֹב | va./Shov | H7725G | HC/Vqaa
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第9章.md:145 — 五、彩虹與神的記念（12-17節）**
+  - chapter ownership: (9,)
+  - type / claim: lexical_interpretation — 在原文裡，「[[虹]]」與「弓」用的是同一個希伯來字；第13節的「我的虹」（קַשְׁתִּי，H7198），直接翻譯過來就是「我的弓」。《創世記第九章註解》把這把弓「朝著天空而不是朝著地面」的畫面，解讀為神帶來的是安慰而不是恐嚇，並用彩虹來象徵神的信實。Kingcomments 的創世記註釋又把啟示錄4:2-3提到神寶座周圍有一道彩虹的畫面，連結到神在嚴厲的審判之後，依然保有憐憫和祝福。
+  - STEP: Gen 9:13 #2 קַשְׁתִּ֕/י | kash.T/i | H7198 | HNcfsc/Sp1bs; Gen 9:14 #7 הַ/קֶּ֖שֶׁת | ha./Ke.shet | H7198 | HTd/Ncfsa; Gen 9:16 #2 הַ/קֶּ֖שֶׁת | ha./Ke.shet | H7198 | HTd/Ncfsa
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **01 創世記/第9章.md:204 — 十、「奴僕的奴僕」到底是什麼身分？（25節）**
+  - chapter ownership: (9,)
+  - type / claim: lexical_interpretation — 「奴僕的奴僕」這句話在原文裡是 עֶבֶד עֲבָדִים（H5650），也就是把同一個名詞，先用單數、再用複數重複說了一次。這種寫法加強了受制於人、地位卑微的程度；但這句話本身，並沒有詳細說明後來世界各地奴隸制度的所有運作形式，所以下面這段關於歷史與神學的討論依然是非常必要的。
+  - STEP: Gen 9:25 #4 עֶ֥בֶד | 'E.ved | H5650 | HNcmsc; Gen 9:25 #5 עֲבָדִ֖ים | 'a.va.Dim | H5650 | HNcmpa; Gen 9:26 #8 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa; Gen 9:27 #9 עֶ֥בֶד | 'E.ved | H5650 | HNcmsa
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 - **link_folder/主題/橄欖葉子.md:13 — 定義**
@@ -2094,6 +2256,12 @@
   - chapter ownership: (32,)
   - type / claim: lexical_interpretation — BH 從字義補充：「營」（machaneh）在希伯來文帶有軍事營地的含意，象徵神的保護；這反映神作為戰士的形象，是出十五3 已有的主題。
   - STEP: Gen 32:2 #5 מַחֲנֵ֥ה | ma.cha.Neh | H4264 | HNcfsc
+  - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
+  - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
+- **link_folder/背景/摩利橡樹.md:21 — [[01 創世記/第12章|第12章]]**
+  - chapter ownership: (12,)
+  - type / claim: lexical_interpretation — - 本章重點：第6節記亞伯蘭經過那地，「到了示劍地方摩利橡樹那裡；那時迦南人住在那地」。CT 註「摩利」字義為教師、教訓、山寨；GT《舊約背景註釋》考為泰博橡樹，是示劍的地標，可能也是教師講學或士師聽訟之處，其茂盛象徵豐饒崇拜，「因此經常用作祭偶的地點（不是崇拜對象）」；GT《串珠聖經註釋》指迦南人視之為神聖，占卜者憑樹葉颯聲指示未來。STEP 逐詞資料記作 אֵלוֹן מוֹרֶה「摩利的大樹」，其中 אֵלוֹן（H436H）的詞典義為 terebinth（篤耨香樹）。
+  - STEP: Gen 12:6 #8 אֵל֣וֹן | 'e.Lon | H436H | HNcmsc; Gen 12:6 #9 מוֹרֶ֑ה | mo.Reh | H4176G | HNpl
   - reason: the claim is exegetical/theological and must not be adjudicated by STEP lexicon
   - manual action: retain for human interpretive review only if desired; STEP absence is not a failure
 

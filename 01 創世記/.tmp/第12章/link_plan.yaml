@@ -125,18 +125,6 @@ A_use_directly:
   existing_title: 亞伯蘭下埃及與出埃及
   existing_path: link_folder/互文/亞伯蘭下埃及與出埃及.md
 B_needs_update: []
-C_new_formal:
-- name: 摩利橡樹
-  suggested_type: 背景
-  evidence: 6節；示劍的地標。CT 註「摩利」字義為教師、教訓、山寨；GT《舊約背景註釋》考為泰博橡樹，可能是教師講學、士師聽訟之處，並引烏加列史詩《阿赫特》達尼珥的審判樹；串珠指迦南人視為神聖，占卜者憑樹葉颯聲指示未來
-  surfaces:
-  - phrase: 摩利橡樹
-    verses:
-    - 6
-  target_path: link_folder/背景/摩利橡樹.md
-  semantic_hint:
-  - title: 亞摩利人幔利的橡樹
-    score: 0.457
-    type: 地點
+C_new_formal: []
 D_new_candidate: []
 E_skip: []

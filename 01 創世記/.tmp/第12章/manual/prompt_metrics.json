@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "book": "創世記",
+  "chapter": 12,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 124427,
+        "bytes": 188815
+      },
+      "after": {
+        "chars": 26257,
+        "bytes": 35577
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_genesis_12.txt",
+          "chars": 37423,
+          "bytes": 37449
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_genesis_12.txt",
+          "chars": 7036,
+          "bytes": 7086
+        },
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_genesis_12.txt",
+          "chars": 7958,
+          "bytes": 22034
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_genesis_12.txt",
+          "chars": 20936,
+          "bytes": 58348
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_genesis_12.txt",
+          "raw_chars": 46460,
+          "raw_bytes": 53044,
+          "projected_chars": 21045,
+          "projected_bytes": 23985,
+          "occurrences": 268,
+          "lexicon_entries": 121,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    }
+  ]
+}
