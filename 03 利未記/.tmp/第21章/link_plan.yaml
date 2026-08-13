@@ -15,12 +15,12 @@ B_needs_update:
   match_type: exact
   existing_title: 祭司不可為死人哀哭（居喪條例）
   existing_path: link_folder/主題/祭司不可為死人哀哭（居喪條例）.md
-- name: 受膏的祭司（mashiach kohen）
+- name: 受膏的祭司
   suggested_type: 人物
   evidence: v10「在弟兄中作大祭司、頭上倒了膏油、又承接聖職，穿了聖衣的」。GT丁良才：在大祭司的頭上倒了膏油，就是膏大祭司和膏眾祭司的特別不同處，神膏油的冠冕在大祭司頭上（v12）
   match_type: exact
-  existing_title: 受膏的祭司（mashiach kohen）
-  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
 - name: 摩西
   suggested_type: 人物
   evidence: 1, 16節「耶和華對摩西說」
@@ -61,7 +61,7 @@ C_new_formal:
   - title: 火祭（isheh）
     score: 0.449
     type: 主題
-  - title: 營外焚燒（machutz la-machaneh saraf）
+  - title: 營外焚燒
     score: 0.421
     type: 主題
 - name: 大祭司娶處女為妻的婚姻條例

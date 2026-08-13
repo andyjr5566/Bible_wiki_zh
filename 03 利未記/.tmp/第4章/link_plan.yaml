@@ -1,73 +1,6 @@
 book: 利未記
 chapter: 4
 A_use_directly:
-- name: 受膏的祭司
-  suggested_type: 人物
-  evidence: '利4:3,5,16 大祭司犯罪獻公牛犢；CT: 受膏的祭司指大祭司、犯罪使百姓陷在罪裡；KC: 大祭司代表百姓、其罪有群體性；BH: 大祭司預表基督、但基督無罪一次獻上永遠成聖'
-  surfaces:
-  - phrase: 受膏的祭司
-  match_type: base
-  existing_title: 受膏的祭司（mashiach kohen）
-  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
-- name: 公牛犢
-  suggested_type: 主題
-  evidence: '利4:3,14 大祭司與全會眾獻公牛犢；CT: 公牛犢指兩歲公牛、份量最重；KC: 公牛預表基督大能贖罪；BH: 公牛為最高等級贖罪祭供物'
-  surfaces:
-  - phrase: 公牛犢
-  - phrase: 公牛
-  match_type: base
-  existing_title: 公牛犢（par ben baqar）
-  existing_path: link_folder/主題/公牛犢（par ben baqar）.md
-- name: 營外焚燒
-  suggested_type: 主題
-  evidence: '利4:11-12,21 全公牛搬到營外潔淨之地倒灰之所焚燒；CT: 營外預表基督在城門外受苦（來13:11-13）；KC: 營外焚燒表神震怒、基督被神離棄；BH:
-    營外潔淨地預表各各他、基督在營外成就贖罪'
-  surfaces:
-  - phrase: 營外
-  - phrase: 營外潔淨之地
-  - phrase: 搬到營外燒了
-  match_type: base
-  existing_title: 營外焚燒（machutz la-machaneh saraf）
-  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
-- name: 全會眾
-  suggested_type: 人物
-  evidence: '利4:13-21 以色列全會眾誤犯罪獻公牛犢；CT: 全會眾指以色列全體、長老代表按手；KC: 會眾罪與大祭司罪相等、須帶血入聖所；BH:
-    全會眾贖罪祭預表教會集體認罪'
-  surfaces:
-  - phrase: 全會眾
-  - phrase: 會眾
-  - phrase: 以色列全會眾
-  match_type: base
-  existing_title: 全會眾（kol ha-edah）
-  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
-- name: 赦免
-  suggested_type: 神學
-  evidence: '利4:20,26,31,35 他們必蒙赦免；CT: 贖罪後蒙赦免；KC: 神信實公義赦免我們的罪（約壹1:9）'
-  surfaces:
-  - phrase: 蒙赦免
-  - phrase: 赦免
-  match_type: base
-  existing_title: 赦免（salach）
-  existing_path: link_folder/神學/赦免（salach）.md
-- name: 潔淨之地
-  suggested_type: 地點
-  evidence: '利4:12 搬到營外潔淨之地、倒灰之所；CT: 潔淨之地指倒灰處、處理聖物之所；KC: 預表各各他、基督在城外受苦'
-  surfaces:
-  - phrase: 潔淨之地
-  - phrase: 倒灰之所
-  match_type: base
-  existing_title: 潔淨之地（maqom tahor）
-  existing_path: link_folder/地點/潔淨之地（maqom tahor）.md
-- name: 誤犯
-  suggested_type: 神學
-  evidence: '利4:2,13,22,27 若有人誤犯了一件；CT: 誤犯指無心所犯、非故意悖逆；KC: 故意犯罪贖罪祭無效（民15:30-31；來10:26）'
-  surfaces:
-  - phrase: 誤犯
-  - phrase: 誤犯了罪
-  match_type: alias
-  existing_title: 誤犯（shagagah）
-  existing_path: link_folder/神學/誤犯（shagagah）.md
-B_needs_update:
 - name: 贖罪祭
   suggested_type: 神學
   evidence: '利4:1-35 全章核心主題；CT: 贖罪祭條例、四等級供物、灑血儀式、營外焚燒；GT: 贖罪祭四等級、誤犯之罪、贖罪祭預表基督；KC:
@@ -77,15 +10,15 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
-- name: 按手（samak）
+- name: 按手
   suggested_type: 原文
   evidence: '利4:4,15,24,29,33 獻祭者/長老按手在祭牲頭上；CT: 按手表示獻祭人與祭牲合而為一、罪孽轉移；KC: 按手表達『把自己與這祭物認同、合為一』；BH:
     按手是罪孽轉移至祭牲的關鍵動作'
   surfaces:
   - phrase: 按手
   match_type: exact
-  existing_title: 按手（samak）
-  existing_path: link_folder/原文/按手（samak）.md
+  existing_title: 按手
+  existing_path: link_folder/原文/按手.md
 - name: 灑血
   suggested_type: 主題
   evidence: '利4:6,17 彈血七次於幔子前；利4:7,18,25,30,34 抹血於壇角、倒血於壇腳；CT: 灑血是贖罪祭特點、表避、表徵遮蓋罪行；KC:
@@ -97,7 +30,7 @@ B_needs_update:
   match_type: exact
   existing_title: 灑血
   existing_path: link_folder/主題/灑血.md
-- name: 脂油（chelev）
+- name: 脂油
   suggested_type: 原文
   evidence: '利4:8-10,19,26,31,35 取下脂油、腰子、肝網焚燒；CT: 脂油即肥肉、最肥美部分、燒在壇上歸神；KC: 脂油焚燒為馨香火祭；BH:
     脂油代表基督完全奉獻的內在能量'
@@ -107,8 +40,25 @@ B_needs_update:
   - phrase: 蓋臟的脂油
   - phrase: 臟上所有的脂油
   match_type: exact
-  existing_title: 脂油（chelev）
-  existing_path: link_folder/原文/脂油（chelev）.md
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
+- name: 受膏的祭司
+  suggested_type: 人物
+  evidence: '利4:3,5,16 大祭司犯罪獻公牛犢；CT: 受膏的祭司指大祭司、犯罪使百姓陷在罪裡；KC: 大祭司代表百姓、其罪有群體性；BH: 大祭司預表基督、但基督無罪一次獻上永遠成聖'
+  surfaces:
+  - phrase: 受膏的祭司
+  match_type: exact
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
+- name: 公牛犢
+  suggested_type: 主題
+  evidence: '利4:3,14 大祭司與全會眾獻公牛犢；CT: 公牛犢指兩歲公牛、份量最重；KC: 公牛預表基督大能贖罪；BH: 公牛為最高等級贖罪祭供物'
+  surfaces:
+  - phrase: 公牛犢
+  - phrase: 公牛
+  match_type: exact
+  existing_title: 公牛犢
+  existing_path: link_folder/主題/公牛犢.md
 - name: 會幕門口
   suggested_type: 地點
   evidence: '利4:4,14,18,24,29,33 牽牛/羊到會幕門口宰殺；CT: 會幕門口有銅壇、是獻祭地點；KC: 會幕門口是神與人相會之處'
@@ -147,6 +97,28 @@ B_needs_update:
   match_type: exact
   existing_title: 銅壇（燔祭壇）
   existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 營外焚燒
+  suggested_type: 主題
+  evidence: '利4:11-12,21 全公牛搬到營外潔淨之地倒灰之所焚燒；CT: 營外預表基督在城門外受苦（來13:11-13）；KC: 營外焚燒表神震怒、基督被神離棄；BH:
+    營外潔淨地預表各各他、基督在營外成就贖罪'
+  surfaces:
+  - phrase: 營外
+  - phrase: 營外潔淨之地
+  - phrase: 搬到營外燒了
+  match_type: exact
+  existing_title: 營外焚燒
+  existing_path: link_folder/主題/營外焚燒.md
+- name: 全會眾
+  suggested_type: 人物
+  evidence: '利4:13-21 以色列全會眾誤犯罪獻公牛犢；CT: 全會眾指以色列全體、長老代表按手；KC: 會眾罪與大祭司罪相等、須帶血入聖所；BH:
+    全會眾贖罪祭預表教會集體認罪'
+  surfaces:
+  - phrase: 全會眾
+  - phrase: 會眾
+  - phrase: 以色列全會眾
+  match_type: exact
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
 - name: 以色列的眾長老
   suggested_type: 人物
   evidence: '利4:15 會中的長老按手在牛頭上；CT: 長老代表全會眾；KC: 長老按手表百姓罪轉到公牛身上'
@@ -203,6 +175,15 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
+- name: 赦免
+  suggested_type: 神學
+  evidence: '利4:20,26,31,35 他們必蒙赦免；CT: 贖罪後蒙赦免；KC: 神信實公義赦免我們的罪（約壹1:9）'
+  surfaces:
+  - phrase: 蒙赦免
+  - phrase: 赦免
+  match_type: exact
+  existing_title: 赦免
+  existing_path: link_folder/神學/赦免.md
 - name: 腰子
   suggested_type: 原文
   evidence: '利4:9 腰子和腰子上的脂油；CT: 腰子代表人感情中樞；BH: 腰子是智慧圖畫、基督分辨善惡完美感覺'
@@ -220,6 +201,65 @@ B_needs_update:
   match_type: exact
   existing_title: 肝上的網子
   existing_path: link_folder/原文/肝上的網子.md
-C_new_formal: []
+- name: 潔淨之地
+  suggested_type: 地點
+  evidence: '利4:12 搬到營外潔淨之地、倒灰之所；CT: 潔淨之地指倒灰處、處理聖物之所；KC: 預表各各他、基督在城外受苦'
+  surfaces:
+  - phrase: 潔淨之地
+  - phrase: 倒灰之所
+  match_type: exact
+  existing_title: 潔淨之地
+  existing_path: link_folder/地點/潔淨之地.md
+- name: 皮肉頭腿臟腑糞
+  suggested_type: 主題
+  evidence: '利4:11 公牛的皮和所有的肉，並頭、腿、臟、腑、糞；CT: 祭物的頭和腿是犯罪行動的執行器官，臟腑是犯罪動機的來源；GT 丁良才: 有注釋家以為凡燒在營外的贖罪祭牲不用剝皮，但這說法未必可靠；KC:
+    逐項對應——頭（思想）、腿（行事）、內臟（情感）、糞（污穢）；BH: 逐項列出象徵徹底除罪'
+  surfaces:
+  - phrase: 皮和所有的肉
+  match_type: exact
+  existing_title: 皮肉頭腿臟腑糞
+  existing_path: link_folder/主題/皮肉頭腿臟腑糞.md
+- name: 誤犯
+  suggested_type: 神學
+  evidence: '利4:2,13,22,27 若有人誤犯了一件；CT: 誤犯指無心所犯、非故意悖逆；KC: 故意犯罪贖罪祭無效（民15:30-31；來10:26）'
+  surfaces:
+  - phrase: 誤犯
+  - phrase: 誤犯了罪
+  match_type: exact
+  existing_title: 誤犯
+  existing_path: link_folder/神學/誤犯.md
+B_needs_update: []
+C_new_formal:
+- name: 彈血七次
+  suggested_type: 主題
+  evidence: '利4:6,17 對著聖所的幔子彈血七次；CT: 七在聖經裡表徵完全，故彈血七次意指完全遮蓋罪行；GT 丁良才專段解此問並列出九處「七」的旁證（金燈檯七盞、膏油彈壇七次、承接聖職七日、潔淨七日、大贖罪日彈七次、繞耶利哥城、乃縵沐浴七次、羔羊七角七眼、書卷七印）；GT《舊約聖經背景註釋》:
+    「彈血七次是同時淨化聖所每一部分，不必分別處理的方法」；GT《精讀本》: 意為將血完全灑上直至神滿足；BH: 七象徵完全，彈七次表示贖罪過程徹底完成。跨章價值：利8:11
+    膏油彈壇七次、利14:7,16,27,51 潔淨禮、利16:14,19 大贖罪日、民19:4'
+  surfaces:
+  - phrase: 彈血七次
+  target_path: link_folder/主題/彈血七次.md
+  semantic_hint:
+  - title: 彈油七次（潔淨禮）
+    score: 0.465
+    type: 主題
+  - title: 向會幕前彈紅母牛的血七次
+    score: 0.44
+    type: 文化
+- name: 故意犯罪沒有贖罪祭
+  suggested_type: 神學
+  evidence: '利4:2 全章以「誤犯」為前提；GT 丁良才: 贖罪祭「不是為放膽作惡的人預備的（四2，民十五30，來十28）」，並指出為該死的罪如姦淫、殺人、頑梗背逆、褻瀆聖名「神並沒有設什麼贖罪的祭」；GT《啟導本》:
+    「人若故意犯罪，贖罪祭便沒有功效（民十五30～31；比較來十26）」；GT《雷氏研讀本》: 誤犯的罪跟有預謀、故意違反律法的罪不同；KC: 「凡故意犯罪的人沒有祭…這樣的人必從民中剪除」；GT《精讀本》:
+    故意犯罪是誹謗神（太12:31,32），這樣的人將從百姓中剪除。跨章價值：民15:30-31、來10:26、利5 的具體案例對照'
+  target_path: link_folder/神學/故意犯罪沒有贖罪祭.md
+  semantic_hint:
+  - title: 贖愆祭（asham）
+    score: 0.449
+    type: 原文
+  - title: 贖罪祭
+    score: 0.42
+    type: 神學
+  - title: 贖罪
+    score: 0.417
+    type: 神學
 D_new_candidate: []
 E_skip: []

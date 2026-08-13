@@ -53,7 +53,7 @@ B_needs_update:
   match_type: alias
   existing_title: 亞倫和他兒子（祭司）
   existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
-- name: 脂油（chelev）
+- name: 脂油
   suggested_type: 原文
   evidence: '[''v7-10 獻鳥時因鳥無脂油，故以第二隻鳥作燔祭代替脂油焚燒。KC: The sin trip is a horrible thing
     for God, but the fat is not. But there is no fat on a bird. That is why the second
@@ -61,8 +61,8 @@ B_needs_update:
   surfaces:
   - phrase: 脂油
   match_type: exact
-  existing_title: 脂油（chelev）
-  existing_path: link_folder/原文/脂油（chelev）.md
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
 C_new_formal:
 - name: 贖愆祭（asham）
   suggested_type: 原文
@@ -212,7 +212,7 @@ D_new_candidate:
   - title: 基督作贖罪祭
     score: 0.477
     type: 神學
-  - title: 赦免（salach）
+  - title: 赦免
     score: 0.454
     type: 神學
 - name: 燔祭
@@ -234,7 +234,7 @@ D_new_candidate:
   - title: 火祭（isheh）
     score: 0.448
     type: 主題
-- name: 誤犯（shagagah）
+- name: 誤犯
   suggested_type: 原文
   evidence: '[''v15-18 重複「誤犯了罪」「誤行的那錯事」。CT：「誤犯的罪包括誤吃聖物、不獻初熟之物、不納十分之一等」。KC: It is assumed
     it happens unintentionally. Yet we can become guilty if we do not keep an eye
@@ -245,7 +245,7 @@ D_new_candidate:
   - phrase: 誤犯了罪
   match_type: type_conflict
   note: 分類衝突：候選=原文，既有=神學，secondary=[]
-- name: 赦免（salach）
+- name: 赦免
   suggested_type: 原文
   evidence: '[''v10, 13, 16, 18 四次重複「他必蒙赦免」。CT：「經過祭司為他獻祭之後，就蒙神赦免。」KC: There is forgiveness
     on the basis of the trip. BH: Forgiveness is the ultimate goal of the atonement

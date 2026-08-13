@@ -18,13 +18,13 @@ links:
   target: 肥尾巴
 - verse: 3
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 4
   phrase: 兩個腰子
   target: 腰子
 - verse: 4
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 4
   phrase: 肝上的網子
   target: 肝上的網子
@@ -111,16 +111,16 @@ links:
   target: 剪除（kareth）
 - verse: 23
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 24
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 25
   phrase: 火祭
   target: 火祭（isheh）
 - verse: 25
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 25
   phrase: 剪除
   target: 剪除（kareth）
@@ -135,7 +135,7 @@ links:
   target: 火祭（isheh）
 - verse: 30
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 30
   phrase: 搖祭
   target: 搖祭（tenufah）
@@ -144,7 +144,7 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 31
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 32
   phrase: 平安祭
   target: 平安祭
@@ -159,7 +159,7 @@ links:
   target: 平安祭
 - verse: 33
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 34
   phrase: 平安祭
   target: 平安祭

@@ -78,12 +78,12 @@ B_needs_update:
   match_type: exact
   existing_title: 亞倫和他兒子（祭司）
   existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
-- name: 脂油（chelev）
+- name: 脂油
   suggested_type: 原文
   evidence: v12「在其上燒平安祭牲的脂油」。
   match_type: exact
-  existing_title: 脂油（chelev）
-  existing_path: link_folder/原文/脂油（chelev）.md
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v14「素祭的條例乃是這樣：亞倫的子孫要在壇前把這祭獻在耶和華面前」——14-23節整段為素祭的祭司條例。
@@ -119,12 +119,12 @@ B_needs_update:
   match_type: exact
   existing_title: 永遠的定例
   existing_path: link_folder/神學/永遠的定例.md
-- name: 受膏的祭司（mashiach kohen）
+- name: 受膏的祭司
   suggested_type: 人物
   evidence: v20「當亞倫受膏的日子」；v22「亞倫的子孫中，接續他為受膏的祭司，要把這素祭獻上」。
   match_type: exact
-  existing_title: 受膏的祭司（mashiach kohen）
-  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
 - name: 伊法
   suggested_type: 原文
   evidence: v20「細麵伊法十分之一，為常獻的素祭」。
@@ -143,20 +143,20 @@ B_needs_update:
   match_type: exact
   existing_title: 血
   existing_path: link_folder/主題/血.md
-- name: 潔淨之地（maqom tahor）
+- name: 潔淨之地
   suggested_type: 地點
   evidence: v11「把灰拿到營外潔淨之處」——與利4:12「營外潔淨之地、倒灰之所」同一地點。
   surfaces:
   - phrase: 營外潔淨之處
   match_type: exact
-  existing_title: 潔淨之地（maqom tahor）
-  existing_path: link_folder/地點/潔淨之地（maqom tahor）.md
-- name: 全會眾（kol ha-edah）
+  existing_title: 潔淨之地
+  existing_path: link_folder/地點/潔淨之地.md
+- name: 全會眾
   suggested_type: 人物
   evidence: v30「凡贖罪祭，若將血帶進會幕在聖所贖罪，那肉都不可吃，必用火焚燒」——此規定適用的三種情形之一即利4:13-21全會眾的贖罪祭（血帶入會幕），本節是對利4章規定的祭司條例總結。
   match_type: exact
-  existing_title: 全會眾（kol ha-edah）
-  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
 C_new_formal:
 - name: 虧負鄰舍即干犯耶和華
   suggested_type: 神學
@@ -242,7 +242,7 @@ C_new_formal:
   - title: 每日獻祭（常獻燔祭）
     score: 0.478
     type: 神學
-  - title: 受膏的祭司（mashiach kohen）
+  - title: 受膏的祭司
     score: 0.464
     type: 人物
   - title: 亞倫和他兒子（祭司）

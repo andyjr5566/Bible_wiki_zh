@@ -3,46 +3,46 @@ chapter: 4
 links:
 - verse: 2
   phrase: 誤犯
-  target: 誤犯（shagagah）
+  target: 誤犯
 - verse: 3
   phrase: 受膏的祭司
-  target: 受膏的祭司（mashiach kohen）
+  target: 受膏的祭司
 - verse: 3
   phrase: 沒有殘疾的
   target: 無殘疾（tamim）
 - verse: 3
   phrase: 公牛犢
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 3
   phrase: 贖罪祭
   target: 贖罪祭
 - verse: 4
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 4
   phrase: 會幕門口
   target: 會幕門口
 - verse: 4
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 5
   phrase: 受膏的祭司
-  target: 受膏的祭司（mashiach kohen）
+  target: 受膏的祭司
 - verse: 5
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 6
   phrase: 聖所的幔子
   target: 內幔（隔聖所至聖所的幔子）
 - verse: 6
-  phrase: 彈血
-  target: 灑血
+  phrase: 彈血七次
+  target: 彈血七次
 - verse: 7
   phrase: 香壇
   target: 金香壇（香壇）
 - verse: 7
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 7
   phrase: 會幕門口
   target: 會幕門口
@@ -54,52 +54,55 @@ links:
   target: 贖罪祭
 - verse: 8
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 8
   phrase: 所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 8
   phrase: 蓋臟的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 8
   phrase: 臟上所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 9
   phrase: 兩個腰子
   target: 腰子
 - verse: 9
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 9
   phrase: 肝上的網子
   target: 肝上的網子
 - verse: 10
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 11
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
+- verse: 11
+  phrase: 皮和所有的肉
+  target: 皮肉頭腿臟腑糞
 - verse: 12
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 12
   phrase: 營外潔淨之地
-  target: 營外焚燒（machutz la-machaneh saraf）
+  target: 營外焚燒
 - verse: 12
   phrase: 倒灰之所
-  target: 潔淨之地（maqom tahor）
+  target: 潔淨之地
 - verse: 13
   phrase: 以色列全會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 13
   phrase: 誤犯了罪
-  target: 誤犯（shagagah）
+  target: 誤犯
 - verse: 14
   phrase: 會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 14
   phrase: 公牛犢
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 14
   phrase: 贖罪祭
   target: 贖罪祭
@@ -111,19 +114,19 @@ links:
   target: 以色列的眾長老
 - verse: 15
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 16
   phrase: 受膏的祭司
-  target: 受膏的祭司（mashiach kohen）
+  target: 受膏的祭司
 - verse: 16
   phrase: 公牛
-  target: 公牛犢（par ben baqar）
+  target: 公牛犢
 - verse: 17
   phrase: 幔子
   target: 內幔（隔聖所至聖所的幔子）
 - verse: 17
-  phrase: 彈血
-  target: 灑血
+  phrase: 彈血七次
+  target: 彈血七次
 - verse: 18
   phrase: 耶和華面前壇
   target: 金香壇（香壇）
@@ -135,7 +138,7 @@ links:
   target: 銅壇（燔祭壇）
 - verse: 19
   phrase: 所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 20
   phrase: 贖罪祭
   target: 贖罪祭
@@ -144,13 +147,13 @@ links:
   target: 贖罪
 - verse: 20
   phrase: 蒙赦免
-  target: 赦免（salach）
+  target: 赦免
 - verse: 21
   phrase: 搬到營外燒了
-  target: 營外焚燒（machutz la-machaneh saraf）
+  target: 營外焚燒
 - verse: 21
   phrase: 會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 21
   phrase: 贖罪祭
   target: 贖罪祭
@@ -159,7 +162,7 @@ links:
   target: 以色列人的官長
 - verse: 22
   phrase: 誤犯了罪
-  target: 誤犯（shagagah）
+  target: 誤犯
 - verse: 23
   phrase: 沒有殘疾的
   target: 無殘疾（tamim）
@@ -168,7 +171,7 @@ links:
   target: 山羊
 - verse: 24
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 24
   phrase: 贖罪祭
   target: 贖罪祭
@@ -183,16 +186,16 @@ links:
   target: 銅壇（燔祭壇）
 - verse: 26
   phrase: 所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 26
   phrase: 為他贖了
   target: 贖罪
 - verse: 26
   phrase: 蒙赦免
-  target: 赦免（salach）
+  target: 赦免
 - verse: 27
   phrase: 誤犯了罪
-  target: 誤犯（shagagah）
+  target: 誤犯
 - verse: 28
   phrase: 沒有殘疾的
   target: 無殘疾（tamim）
@@ -201,7 +204,7 @@ links:
   target: 山羊
 - verse: 29
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 29
   phrase: 贖罪祭
   target: 贖罪祭
@@ -213,13 +216,13 @@ links:
   target: 銅壇（燔祭壇）
 - verse: 31
   phrase: 所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 31
   phrase: 贖罪
   target: 贖罪
 - verse: 31
   phrase: 蒙赦免
-  target: 赦免（salach）
+  target: 赦免
 - verse: 32
   phrase: 綿羊羔
   target: 綿羊
@@ -234,7 +237,7 @@ links:
   target: 綿羊
 - verse: 33
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 33
   phrase: 贖罪祭
   target: 贖罪祭
@@ -249,7 +252,7 @@ links:
   target: 銅壇（燔祭壇）
 - verse: 35
   phrase: 所有的脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 35
   phrase: 羊羔
   target: 綿羊
@@ -258,4 +261,4 @@ links:
   target: 贖罪
 - verse: 35
   phrase: 蒙赦免
-  target: 赦免（salach）
+  target: 赦免

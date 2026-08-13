@@ -13,7 +13,7 @@ candidates:
   - name: 以色列的眾長老
     type: 人物
     evidence: v1「摩西召了亞倫和他兒子，並以色列的眾長老來」
-  - name: 全會眾（kol ha-edah）
+  - name: 全會眾
     type: 人物
     evidence: v5「全會眾都近前來，站在耶和華面前」
   - name: 承接聖職（分別為聖）
@@ -46,7 +46,7 @@ candidates:
   - name: 無殘疾（tamim）
     type: 主題
     evidence: v2,3「都要沒有殘疾的」兩次出現
-  - name: 公牛犢（par ben baqar）
+  - name: 公牛犢
     type: 主題
     evidence: v2「你當取牛群中的一隻公牛犢作贖罪祭」
   - name: 山羊
@@ -55,7 +55,7 @@ candidates:
   - name: 灑血
     type: 主題
     evidence: v12,18「他就灑在壇的周圍」兩次出現
-  - name: 脂油（chelev）
+  - name: 脂油
     type: 原文
     evidence: v10,19,20「脂油」三次出現於贖罪祭、平安祭
   - name: 腰子
@@ -78,10 +78,10 @@ candidates:
     surfaces:
       - 會幕前
     evidence: v5「他們把摩西所吩咐的，帶到會幕前；全會眾都近前來，站在耶和華面前」
-  - name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+  - name: 皮肉頭腿臟腑糞
     type: 主題
     evidence: v11「又用火將肉和皮燒在營外」，為祭司自己所獻贖罪祭不可食用、須全焚
-  - name: 營外焚燒（machutz la-machaneh saraf）
+  - name: 營外焚燒
     type: 主題
     evidence: v11「用火將肉和皮燒在營外」
   - name: 舉手祝福（祭司祝福百姓）

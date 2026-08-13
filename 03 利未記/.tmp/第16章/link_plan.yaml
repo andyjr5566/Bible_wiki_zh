@@ -63,12 +63,12 @@ B_needs_update:
   match_type: exact
   existing_title: 亞比戶
   existing_path: link_folder/人物/亞比戶.md
-- name: 營外焚燒（machutz la-machaneh saraf）
+- name: 營外焚燒
   suggested_type: 主題
   evidence: v27「作贖罪祭的公牛和公山羊的血既帶入聖所贖罪，這牛羊就要搬到營外，將皮、肉、糞用火焚燒」。GT丁良才：大贖罪日所獻祭牲之肉因血已帶入至聖所，祭司不能吃，須全部搬到營外燒掉；CT靈意：表徵接受救恩的人要到營外與基督一同受苦（來13:11-13）
   match_type: exact
-  existing_title: 營外焚燒（machutz la-machaneh saraf）
-  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+  existing_title: 營外焚燒
+  existing_path: link_folder/主題/營外焚燒.md
 - name: 紅母牛預表基督城外受苦（來13：11-12）
   suggested_type: 互文
   evidence: CT靈意於v27明確引用「作贖罪祭的…牛羊就要搬到營外，將皮、肉、糞用火焚燒」表徵「接受救恩的人要到營外，與基督一同受苦（參來十三11~13）」；KC同段：「營外」是基督徒的位置（Heb
@@ -130,7 +130,7 @@ C_new_formal:
     - 21
   target_path: link_folder/主題/按手認罪（承認罪孽轉移）.md
   semantic_hint:
-  - title: 按手（samak）
+  - title: 按手
     score: 0.415
     type: 原文
 - name: 曠野無人之地

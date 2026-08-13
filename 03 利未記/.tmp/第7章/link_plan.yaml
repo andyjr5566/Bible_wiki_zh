@@ -114,7 +114,7 @@ B_needs_update:
   match_type: exact
   existing_title: 從民中剪除的含義
   existing_path: link_folder/解經爭議/從民中剪除的含義.md
-- name: 脂油（chelev）
+- name: 脂油
   suggested_type: 原文
   evidence: 'v23「你曉諭以色列人說：牛的脂油、綿羊的脂油、山羊的脂油，你們都不可吃」；v24「自死的和被野獸撕裂的，那脂油可以做別的使用，只是你們萬不可吃」；v25「無論何人吃了獻給耶和華當火祭牲畜的脂油，那人必從民中剪除」。
 
@@ -124,8 +124,8 @@ B_needs_update:
 
     本章23-25節將脂油禁令從利3:17「祭牲脂油不可吃」擴大到一切牛羊脂油（不限於被獻為祭者），並補充自死/被野獸撕裂之脂油例外可作他用。'
   match_type: exact
-  existing_title: 脂油（chelev）
-  existing_path: link_folder/原文/脂油（chelev）.md
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
 - name: 血不可吃（血の禁令）
   suggested_type: 神學
   evidence: 'v26「在你們一切的住處，無論是雀鳥的血是野獸的血，你們都不可吃」；v27「無論是誰吃血，那人必從民中剪除」。

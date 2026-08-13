@@ -478,11 +478,11 @@
       "細麻內袍"
     ]
   },
-  "公牛犢（par ben baqar）": {
-    "path": "link_folder/主題/公牛犢（par ben baqar）.md",
+  "公牛犢": {
+    "path": "link_folder/主題/公牛犢.md",
     "type": "主題",
     "secondary_types": [],
-    "title": "公牛犢（par ben baqar）",
+    "title": "公牛犢",
     "status": "formal",
     "aliases": [
       "公牛",
@@ -1288,6 +1288,16 @@
       "七次彈油"
     ]
   },
+  "彈血七次": {
+    "path": "link_folder/主題/彈血七次.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "彈血七次",
+    "status": "formal",
+    "aliases": [
+      "彈血七次"
+    ]
+  },
   "彈血於施恩座與壇（大祭司一年一度贖罪禮）": {
     "path": "link_folder/主題/彈血於施恩座與壇（大祭司一年一度贖罪禮）.md",
     "type": "主題",
@@ -2015,16 +2025,13 @@
       "帳幕的豎板"
     ]
   },
-  "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）": {
-    "path": "link_folder/主題/皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）.md",
+  "皮肉頭腿臟腑糞": {
+    "path": "link_folder/主題/皮肉頭腿臟腑糞.md",
     "type": "主題",
     "secondary_types": [],
-    "title": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）",
+    "title": "皮肉頭腿臟腑糞",
     "status": "formal",
-    "aliases": [
-      "公牛餘體",
-      "祭牲全體"
-    ]
+    "aliases": []
   },
   "盟約": {
     "path": "link_folder/主題/盟約.md",
@@ -10198,11 +10205,11 @@
       "Nephilim"
     ]
   },
-  "全會眾（kol ha-edah）": {
-    "path": "link_folder/人物/全會眾（kol ha-edah）.md",
+  "全會眾": {
+    "path": "link_folder/人物/全會眾.md",
     "type": "人物",
     "secondary_types": [],
-    "title": "全會眾（kol ha-edah）",
+    "title": "全會眾",
     "status": "formal",
     "aliases": [
       "會眾",
@@ -10258,14 +10265,13 @@
       "Rebekah"
     ]
   },
-  "受膏的祭司（mashiach kohen）": {
-    "path": "link_folder/人物/受膏的祭司（mashiach kohen）.md",
+  "受膏的祭司": {
+    "path": "link_folder/人物/受膏的祭司.md",
     "type": "人物",
     "secondary_types": [],
-    "title": "受膏的祭司（mashiach kohen）",
+    "title": "受膏的祭司",
     "status": "formal",
     "aliases": [
-      "受膏祭司",
       "大祭司"
     ]
   },
@@ -15178,15 +15184,14 @@
       "蘆葦海"
     ]
   },
-  "潔淨之地（maqom tahor）": {
-    "path": "link_folder/地點/潔淨之地（maqom tahor）.md",
+  "潔淨之地": {
+    "path": "link_folder/地點/潔淨之地.md",
     "type": "地點",
     "secondary_types": [],
-    "title": "潔淨之地（maqom tahor）",
+    "title": "潔淨之地",
     "status": "formal",
     "aliases": [
-      "倒灰之所",
-      "營外潔淨處"
+      "倒灰之所"
     ]
   },
   "王谷": {
@@ -19908,6 +19913,17 @@
     "status": "formal",
     "aliases": []
   },
+  "故意犯罪沒有贖罪祭": {
+    "path": "link_folder/神學/故意犯罪沒有贖罪祭.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "故意犯罪沒有贖罪祭",
+    "status": "formal",
+    "aliases": [
+      "擅敢行事",
+      "放膽作惡"
+    ]
+  },
   "救恩": {
     "path": "link_folder/神學/救恩.md",
     "type": "神學",
@@ -22231,17 +22247,14 @@
     "status": "formal",
     "aliases": []
   },
-  "誤犯（shagagah）": {
-    "path": "link_folder/神學/誤犯（shagagah）.md",
+  "誤犯": {
+    "path": "link_folder/神學/誤犯.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "誤犯（shagagah）",
+    "title": "誤犯",
     "status": "formal",
     "aliases": [
-      "誤犯",
-      "無心之失",
-      "非故意的罪",
-      "過失之罪"
+      "無心之失"
     ]
   },
   "謀殺與誤殺的區分": {
@@ -22307,11 +22320,11 @@
     "status": "formal",
     "aliases": []
   },
-  "赦免（salach）": {
-    "path": "link_folder/神學/赦免（salach）.md",
+  "赦免": {
+    "path": "link_folder/神學/赦免.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "赦免（salach）",
+    "title": "赦免",
     "status": "formal",
     "aliases": [
       "蒙赦免",
@@ -25665,10 +25678,10 @@
     "alias_of": "內袍（雜色內袍）"
   },
   "公牛": {
-    "alias_of": "公牛犢（par ben baqar）"
+    "alias_of": "公牛犢"
   },
   "牛犢": {
-    "alias_of": "公牛犢（par ben baqar）"
+    "alias_of": "公牛犢"
   },
   "分蹄倒嚼": {
     "alias_of": "分蹄倒嚼（潔淨走獸的判準）"
@@ -26122,12 +26135,6 @@
   },
   "帳幕的豎板": {
     "alias_of": "皂莢木豎板"
-  },
-  "公牛餘體": {
-    "alias_of": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）"
-  },
-  "祭牲全體": {
-    "alias_of": "皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）"
   },
   "covenant": {
     "alias_of": "盟約"
@@ -27708,10 +27715,10 @@
     "alias_of": "偉人"
   },
   "會眾": {
-    "alias_of": "全會眾（kol ha-edah）"
+    "alias_of": "全會眾"
   },
   "以色列全會眾": {
-    "alias_of": "全會眾（kol ha-edah）"
+    "alias_of": "全會眾"
   },
   "Leah": {
     "alias_of": "利亞"
@@ -27728,11 +27735,8 @@
   "Rebekah": {
     "alias_of": "利百加"
   },
-  "受膏祭司": {
-    "alias_of": "受膏的祭司（mashiach kohen）"
-  },
   "大祭司": {
-    "alias_of": "受膏的祭司（mashiach kohen）"
+    "alias_of": "受膏的祭司"
   },
   "可拉": {
     "alias_of": "可拉的背叛（預告）"
@@ -28797,10 +28801,7 @@
     "alias_of": "海（紅海）"
   },
   "倒灰之所": {
-    "alias_of": "潔淨之地（maqom tahor）"
-  },
-  "營外潔淨處": {
-    "alias_of": "潔淨之地（maqom tahor）"
+    "alias_of": "潔淨之地"
   },
   "二軍兵": {
     "alias_of": "瑪哈念"
@@ -30050,6 +30051,12 @@
   "重擔": {
     "alias_of": "擔子"
   },
+  "擅敢行事": {
+    "alias_of": "故意犯罪沒有贖罪祭"
+  },
+  "放膽作惡": {
+    "alias_of": "故意犯罪沒有贖罪祭"
+  },
   "救了我們各家": {
     "alias_of": "救贖"
   },
@@ -30692,26 +30699,17 @@
   "remember my covenant": {
     "alias_of": "記念我的約"
   },
-  "誤犯": {
-    "alias_of": "誤犯（shagagah）"
-  },
   "無心之失": {
-    "alias_of": "誤犯（shagagah）"
-  },
-  "非故意的罪": {
-    "alias_of": "誤犯（shagagah）"
-  },
-  "過失之罪": {
-    "alias_of": "誤犯（shagagah）"
+    "alias_of": "誤犯"
   },
   "贖罪祭(chatat)": {
     "alias_of": "贖罪祭"
   },
   "蒙赦免": {
-    "alias_of": "赦免（salach）"
+    "alias_of": "赦免"
   },
   "罪得赦免": {
-    "alias_of": "赦免（salach）"
+    "alias_of": "赦免"
   },
   "罪的跨代影響": {
     "alias_of": "追討罪自父及子直到三四代"

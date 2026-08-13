@@ -18,7 +18,7 @@ links:
   target: 贖罪祭
 - verse: 3
   phrase: 會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 3
   phrase: 會幕門口
   target: 會幕門口
@@ -27,7 +27,7 @@ links:
   target: 摩西
 - verse: 4
   phrase: 會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 4
   phrase: 會幕門口
   target: 會幕門口
@@ -36,7 +36,7 @@ links:
   target: 摩西
 - verse: 5
   phrase: 會眾
-  target: 全會眾（kol ha-edah）
+  target: 全會眾
 - verse: 6
   phrase: 摩西
   target: 摩西
@@ -117,13 +117,13 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 14
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 15
   phrase: 摩西
   target: 摩西
 - verse: 16
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 16
   phrase: 肝上的網子
   target: 肝上的網子
@@ -141,13 +141,13 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 18
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 19
   phrase: 摩西
   target: 摩西
 - verse: 20
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 21
   phrase: 水洗
   target: 洗身（水洗）
@@ -168,7 +168,7 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 22
   phrase: 按手
-  target: 按手（samak）
+  target: 按手
 - verse: 23
   phrase: 摩西
   target: 摩西
@@ -180,7 +180,7 @@ links:
   target: 亞倫
 - verse: 25
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 25
   phrase: 肥尾巴
   target: 肥尾巴
@@ -192,7 +192,7 @@ links:
   target: 腰子
 - verse: 26
   phrase: 脂油
-  target: 脂油（chelev）
+  target: 脂油
 - verse: 27
   phrase: 亞倫
   target: 亞倫

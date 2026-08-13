@@ -223,10 +223,10 @@ A_use_directly:
   match_type: exact
   existing_title: 心裡有智慧
   existing_path: link_folder/原文/心裡有智慧.md
-- name: 全會眾（kol ha-edah）
+- name: 全會眾
   suggested_type: 人物
   evidence: 出35:1,4,20 三次出現「以色列全會眾」，本章的每一個轉折都以這個群體為單位——摩西招聚他們、對他們宣告、他們從摩西面前退去。CT 把這個詞的內涵展開：「『以色列全會眾』指全體以色列人中能承擔神所託付責任的人，殉道者司提反稱他們為『曠野的會』（參徒7:38），可見他們是一群蒙神救贖並呼召，從世界（埃及所豫表的）裏出來，成為『曠野的會』，身負神使命不斷前行，又建造會幕的人。」GT《聖經精讀本》給的是同一個對照：「全會眾：也叫曠野教會（徒7:38）。因為以色列百姓是神揀選的，並且是從外邦人中分別出來的群體。」BH
-    指出這場招聚「凸顯了他們與神立約關係的群體性」，並把它與新約教會的聚集相連（來10:25）。已有條目「全會眾（kol ha-edah）」
+    指出這場招聚「凸顯了他們與神立約關係的群體性」，並把它與新約教會的聚集相連（來10:25）。已有條目「全會眾」
   surfaces:
   - phrase: 以色列全會眾
     verses:
@@ -234,8 +234,8 @@ A_use_directly:
     - 4
     - 20
   match_type: exact
-  existing_title: 全會眾（kol ha-edah）
-  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
 - name: 以色列人的官長
   suggested_type: 人物
   evidence: 出35:27「眾官長把紅瑪瑙和別樣的寶石，可以鑲嵌在以弗得與胸牌上的，都拿了來。」GT 丁良才記下兩種身分推測：「有人以為這些官長是百姓的長老（出3:16，4:29，24:9），也有人以為是十二支派的首領（民1:16，7:2）。」CT

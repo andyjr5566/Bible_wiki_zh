@@ -2,11 +2,11 @@ book: 民數記
 chapter: 19
 A_use_directly: []
 B_needs_update:
-- name: 營外焚燒（machutz la-machaneh saraf）
+- name: 營外焚燒
   suggested_type: 主題
   match_type: exact
-  existing_title: 營外焚燒（machutz la-machaneh saraf）
-  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+  existing_title: 營外焚燒
+  existing_path: link_folder/主題/營外焚燒.md
 - name: 牛膝草
   suggested_type: 原文
   match_type: exact

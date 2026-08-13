@@ -80,10 +80,10 @@ C_new_formal:
   - phrase: 必蒙赦免
   target_path: link_folder/神學/全會眾誤行過錯與大眾贖罪定例.md
   semantic_hint:
-  - title: 全會眾（kol ha-edah）
+  - title: 全會眾
     score: 0.493
     type: 人物
-  - title: 誤犯（shagagah）
+  - title: 誤犯
     score: 0.446
     type: 神學
 - name: 個人誤犯過錯與一歲母山羊贖罪祭
@@ -98,7 +98,7 @@ C_new_formal:
   - title: 山羊
     score: 0.499
     type: 文化
-  - title: 誤犯（shagagah）
+  - title: 誤犯
     score: 0.495
     type: 神學
   - title: 贖愆祭（asham）

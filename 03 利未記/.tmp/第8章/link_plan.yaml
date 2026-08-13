@@ -20,18 +20,18 @@ B_needs_update:
   match_type: exact
   existing_title: 摩西
   existing_path: link_folder/人物/摩西.md
-- name: 全會眾（kol ha-edah）
+- name: 全會眾
   suggested_type: 人物
   evidence: v3-5「又招聚會眾到會幕門口……於是會眾聚集在會幕門口」，觀禮見證亞倫受召
   match_type: exact
-  existing_title: 全會眾（kol ha-edah）
-  existing_path: link_folder/人物/全會眾（kol ha-edah）.md
-- name: 受膏的祭司（mashiach kohen）
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
+- name: 受膏的祭司
   suggested_type: 人物
   evidence: v12「又把膏油倒在亞倫的頭上膏他，使他成聖」，亞倫是唯一在就職時受澆灌膏油者，區別於其子只受彈血彈油
   match_type: exact
-  existing_title: 受膏的祭司（mashiach kohen）
-  existing_path: link_folder/人物/受膏的祭司（mashiach kohen）.md
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
 - name: 承接聖職（分別為聖）
   suggested_type: 神學
   evidence: 全章即出29章承接聖職禮儀的歷史實行；v33,35「你們七天不可出會幕的門……因為主叫你們七天承接聖職」
@@ -128,12 +128,12 @@ B_needs_update:
   match_type: exact
   existing_title: 銅壇（燔祭壇）
   existing_path: link_folder/主題/銅壇（燔祭壇）.md
-- name: 按手（samak）
+- name: 按手
   suggested_type: 原文
   evidence: v14,18,22「亞倫和他兒子按手在……頭上」三次出現於贖罪祭、燔祭、承接聖職之祭
   match_type: exact
-  existing_title: 按手（samak）
-  existing_path: link_folder/原文/按手（samak）.md
+  existing_title: 按手
+  existing_path: link_folder/原文/按手.md
 - name: 贖罪祭
   suggested_type: 神學
   evidence: v14-17 為亞倫和他兒子所獻的贖罪祭公牛
@@ -146,12 +146,12 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
-- name: 脂油（chelev）
+- name: 脂油
   suggested_type: 原文
   evidence: v16,25「取臟上所有的脂油」「取脂油和肥尾巴」
   match_type: exact
-  existing_title: 脂油（chelev）
-  existing_path: link_folder/原文/脂油（chelev）.md
+  existing_title: 脂油
+  existing_path: link_folder/原文/脂油.md
 - name: 肝上的網子
   suggested_type: 原文
   evidence: v16,25「肝上的網子」兩次出現
@@ -164,18 +164,18 @@ B_needs_update:
   match_type: exact
   existing_title: 腰子
   existing_path: link_folder/原文/腰子.md
-- name: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
+- name: 皮肉頭腿臟腑糞
   suggested_type: 主題
   evidence: v17「惟有公牛，連皮帶肉並糞，用火燒在營外」
   match_type: exact
-  existing_title: 皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）
-  existing_path: link_folder/主題/皮肉頭腿臟腑糞（or basar rosh regel qereb pereq）.md
-- name: 營外焚燒（machutz la-machaneh saraf）
+  existing_title: 皮肉頭腿臟腑糞
+  existing_path: link_folder/主題/皮肉頭腿臟腑糞.md
+- name: 營外焚燒
   suggested_type: 主題
   evidence: v17「用火燒在營外」
   match_type: exact
-  existing_title: 營外焚燒（machutz la-machaneh saraf）
-  existing_path: link_folder/主題/營外焚燒（machutz la-machaneh saraf）.md
+  existing_title: 營外焚燒
+  existing_path: link_folder/主題/營外焚燒.md
 - name: 灑血
   suggested_type: 主題
   evidence: v19,24「摩西把血灑在壇的周圍」兩次出現
