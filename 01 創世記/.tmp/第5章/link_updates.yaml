@@ -4,7 +4,7 @@ updates:
 - title: 亞當
   path: link_folder/人物/亞當.md
   summary: 亞當的後代記錄從他開始；經文回顧神照自己的樣式造人，並記亞當一百三十歲生塞特、共活九百三十歲就死了。
-  relation: 亞當在本章既是家譜起點，也是墮落後人類死亡命運的代表；塞特按亞當自己的形像樣式而生，顯明罪與死已進入人類承傳。
+  relation: STEP 顯示第1節以 אָדָם 指人名亞當，也以同字稱全人類；第3節再用「樣式、形像」說塞特照亞當而生。幾份註釋由此進一步討論罪與死進入人類承傳。
   sources: [經文, CT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 塞特
@@ -15,26 +15,26 @@ updates:
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 以挪士
   path: link_folder/人物/以挪士.md
-  summary: 以挪士是塞特的兒子，九十歲生該南，共活九百零五歲；其名字有軟弱、必死的人之意。
+  summary: 以挪士是塞特的兒子，九十歲生該南，共活九百零五歲；STEP 將 אֱנוֹשׁ（H583）標作人物專名，註釋再把名字解作軟弱、必死的人。
   relation: 以挪士在第4章已連於求告耶和華名的開始，在第5章則進入塞特線家譜，凸顯敬虔線在死亡陰影下延續。
   sources: [經文, CT, GT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 該南
   path: link_folder/人物/該南.md
-  summary: 該南是以挪士的兒子，七十歲生瑪勒列，共活九百一十歲；來源記其名可作得業者，也有與該隱之名相近的討論。
-  relation: 該南在本章維持塞特家譜的連續性；其名字含義被 CT 用於屬靈歷程，指向追求基督作產業。
+  summary: 該南是以挪士的兒子，七十歲生瑪勒列，共活九百一十歲；STEP 將 קֵינָן（H7018）標作人物專名，註釋再提出得業者及與該隱之名相近等討論。
+  relation: 該南在本章維持塞特家譜的連續性；CT 進一步選用自己的釋名，把他放進追求基督作產業的屬靈應用。
   sources: [經文, CT, GT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 瑪勒列
   path: link_folder/人物/瑪勒列.md
-  summary: 瑪勒列是該南的兒子，六十五歲生雅列，共活八百九十五歲；名字可解作神的稱讚。
-  relation: 瑪勒列是亞當到挪亞十代中的第五代，來源以其名義連於蒙神喜悅與稱讚的屬靈歷程。
+  summary: 瑪勒列是該南的兒子，六十五歲生雅列，共活八百九十五歲；STEP 將 מַהֲלַלְאֵל（H4111G）標作人物專名，註釋再解作神的稱讚。
+  relation: 瑪勒列是亞當到挪亞十代中的第五代；CT 進一步以自己的釋名，把他連於蒙神喜悅與稱讚的屬靈歷程。
   sources: [經文, CT, GT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 雅列
   path: link_folder/人物/雅列.md
-  summary: 雅列是瑪勒列的兒子，一百六十二歲生以諾，共活九百六十二歲；名字有卑下、向下流出等解釋。
-  relation: 雅列作為以諾的父親，把家譜推向本章最重要的例外人物；來源也以其名字說明謙卑與蒙恩的屬靈次序。
+  summary: 雅列是瑪勒列的兒子，一百六十二歲生以諾，共活九百六十二歲；STEP 將 יֶרֶד（H3382G）標作人物專名，註釋另有卑下、下降或世代相傳等釋名。
+  relation: 雅列作為以諾的父親，把家譜推向本章最重要的例外人物；CT 再選用「卑下」的釋名說明謙卑與蒙恩的屬靈次序。
   sources: [經文, CT, GT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 以諾
@@ -46,7 +46,7 @@ updates:
 - title: 瑪土撒拉
   path: link_folder/人物/瑪土撒拉.md
   summary: 瑪土撒拉是以諾的兒子，一百八十七歲生拉麥，共活九百六十九歲，是聖經記載最長壽的人。
-  relation: 本章來源特別把瑪土撒拉名字與洪水年代連起來：187 加 182 加挪亞六百歲時洪水來到，正好是 969 年，顯出審判前神長久忍耐。
+  relation: STEP 直接確認瑪土撒拉的人名與九百六十九歲年數；CT、BH 再把釋名和洪水年代連起來，進一步讀出審判前神長久忍耐。
   sources: [經文, CT, GT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 拉麥（塞特族）
@@ -57,32 +57,32 @@ updates:
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 挪亞
   path: link_folder/人物/挪亞.md
-  summary: 挪亞在第5章被介紹為拉麥的兒子，名字與安息、安慰相連；五百歲時生閃、含、雅弗。
+  summary: 挪亞在第5章被介紹為拉麥的兒子；STEP 顯示人名 נֹחַ（H5146）與「他必安慰我們」יְנַחֲמֵנוּ（H5162G）的聲音呼應，註釋再發展安息與安慰的主題；他五百歲時生閃、含、雅弗。
   relation: 第5章使挪亞在洪水敘事前登場，將亞當到挪亞的家譜收束到神將藉以保存人類的代表人物；來源也把他與審判中蒙保守的預表相連。
   sources: [經文, CT, GT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 閃
   path: link_folder/人物/閃.md
-  summary: 閃是挪亞三子之一，名字有名、名聲之意；第5章只在結尾介紹他與含、雅弗同為挪亞後裔。
+  summary: 閃是挪亞三子之一；STEP 將 שֵׁם（H8035）標作人物專名，CT 再把名字解作名、名聲。第5章只在結尾介紹他與含、雅弗同為挪亞後裔。
   relation: 閃在本章被列在三子之首，來源指出這與後續亞伯拉罕、以色列以及基督家譜的路線有關；其出生順序則需按創世記11章再細辨。
   sources: [經文, CT, GT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 含
   path: link_folder/人物/含.md
-  summary: 含是挪亞三子之一，名字有熱、溫暖之意；第5章在挪亞五百歲生三子時介紹他。
+  summary: 含是挪亞三子之一；STEP 將 חָם（H2526G）標作人物專名，CT 再把名字解作熱、溫暖。第5章在挪亞五百歲生三子時介紹他。
   relation: 含在本章只作洪水後列國分布的伏筆，與閃、雅弗一同標示新世界將由挪亞三子展開。
   sources: [經文, CT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 雅弗
   path: link_folder/人物/雅弗.md
-  summary: 雅弗是挪亞三子之一，名字有擴張、增大、美好之意；第5章在結尾與閃、含同列。
+  summary: 雅弗是挪亞三子之一；STEP 將 יֶפֶת（H3315）標作人物專名，CT 再把名字解作擴張、增大、美好。第5章在結尾與閃、含同列。
   relation: 雅弗在本章作洪水後民族分布的伏筆；來源也提到他的出生順序可能早於閃，需由創世記10至11章綜合判斷。
   sources: [經文, CT, GT, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 形像與樣式
   path: link_folder/神學/形像與樣式.md
   summary: 第5章回顧神造人時照自己的樣式造，又記亞當生塞特時是照亞當自己的形像樣式而生。
-  relation: 本章使形像與樣式從創造論延伸到墮落後承傳：人仍有受造尊貴，卻也承受亞當犯罪後的死亡處境。
+  relation: STEP 顯示第1節與第3節重複「樣式」דְּמוּת（H1823），第3節另有「形像」צֶלֶם（H6754）；幾份註釋再從這個呼應討論人的受造尊貴與亞當犯罪後的死亡處境。
   sources: [經文, CT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 死亡的普遍性
@@ -99,13 +99,13 @@ updates:
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
 - title: 洪水前先祖名字含義
   path: link_folder/原文/洪水前先祖名字含義.md
-  summary: CT 以第5章十代先祖名字串連屬靈歷程：從亞當的屬土，到塞特的新生命、以挪士的軟弱、以諾的學習、挪亞的安息。
-  relation: 此條目在本章提供名字含義的整理框架，但應作來源提供的靈訓線索，不取代經文家譜本身的歷史與神學重點。
+  summary: STEP 逐一辨識第5章十代人物專名；CT 再選用自己的釋名串連屬靈歷程：從亞當的屬土，到塞特的新生命、以挪士的軟弱、以諾的學習、挪亞的安息。
+  relation: 此條目保留 CT 在〈靈訓要義〉中的講道式應用，同時先交代 STEP 可確認的人名資料與其他註釋不同的釋名方向。
   sources: [CT]
   source_files: [raw_data/ccbiblestudy_CT_genesis_5.txt]
 - title: 安慰與安息
   path: link_folder/主題/安慰與安息.md
-  summary: 拉麥給兒子起名挪亞，盼望他在耶和華咒詛地所帶來的操作與勞苦中安慰人；挪亞名字與安息、安慰相近。
+  summary: 拉麥給兒子起名挪亞，盼望他在耶和華咒詛地所帶來的工作與勞苦中安慰人；STEP 顯示 נֹחַ（H5146）與 יְנַחֲמֵנוּ（H5162G）的聲音呼應，註釋再連到安息主題。
   relation: 本章把安息盼望放在咒詛地與死亡副歌之中；來源指出挪亞不能終極成就此安息，真正安息須由神藉救恩帶來。
   sources: [經文, CT, GT, KC, BH]
   source_files: [raw_scripture/創世記/第5章.txt, raw_data/ccbiblestudy_CT_genesis_5.txt, raw_data/ccbiblestudy_GT_genesis_5.txt, raw_data/kingcomments_genesis_5.txt, raw_data/biblehub_study_genesis_5.txt]
