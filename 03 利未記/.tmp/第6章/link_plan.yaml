@@ -38,12 +38,12 @@ B_needs_update:
   match_type: exact
   existing_title: 公綿羊
   existing_path: link_folder/主題/公綿羊.md
-- name: 賠償（shalem）
+- name: 賠償
   suggested_type: 原文
   evidence: v4-5「就要歸還他所搶奪的，或是因欺壓所得的，或是人交付他的，或是人遺失他所撿的物，或是他因什麼物起了假誓，就要如數歸還，另外加上五分之一，在查出他有罪的日子要交還本主」；CT「贖愆祭的這一個『還』字，和挽回祭（羅3:25）的『挽』字，乃是同樣的意思」。
   match_type: exact
-  existing_title: 賠償（shalem）
-  existing_path: link_folder/原文/賠償（shalem）.md
+  existing_title: 賠償
+  existing_path: link_folder/原文/賠償.md
 - name: 供物（qorban）
   suggested_type: 原文
   evidence: v20「他和他子孫所要獻給耶和華的供物，就是細麵伊法十分之一」。

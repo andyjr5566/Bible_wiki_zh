@@ -1,6 +1,9 @@
 book: 利未記
 chapter: 5
 links:
+- verse: 1
+  phrase: 他本是見證
+  target: 不作見證的罪
 - verse: 2
   phrase: 不潔的物
   target: 污穢
@@ -20,6 +23,9 @@ links:
   phrase: 母羊
   target: 母綿羊
 - verse: 6
+  phrase: 贖罪祭
+  target: 贖罪祭
+- verse: 6
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 7
@@ -31,15 +37,39 @@ links:
 - verse: 7
   phrase: 贖愆祭
   target: 贖愆祭（asham）
+- verse: 7
+  phrase: 贖罪祭
+  target: 贖罪祭
+- verse: 7
+  phrase: 燔祭
+  target: 燔祭
 - verse: 8
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 8
+  phrase: 贖罪祭
+  target: 贖罪祭
+- verse: 9
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 9
   phrase: 血
   target: 血
+- verse: 9
+  phrase: 壇的旁邊
+  target: 銅壇（燔祭壇）
+- verse: 9
+  phrase: 壇的腳
+  target: 銅壇（燔祭壇）
+- verse: 10
+  phrase: 燔祭
+  target: 燔祭
 - verse: 10
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 10
+  phrase: 必蒙赦免
+  target: 赦免
 - verse: 11
   phrase: 斑鳩
   target: 斑鳩
@@ -55,6 +85,9 @@ links:
 - verse: 11
   phrase: 伊法十分之一
   target: 伊法
+- verse: 11
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 12
   phrase: 供物
   target: 供物（qorban）
@@ -67,18 +100,33 @@ links:
 - verse: 12
   phrase: 紀念
   target: 紀念份
+- verse: 12
+  phrase: 火祭
+  target: 火祭（isheh）
+- verse: 12
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 13
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 13
+  phrase: 必蒙赦免
+  target: 赦免
 - verse: 15
   phrase: 耶和華的聖物
   target: 聖物
+- verse: 15
+  phrase: 誤犯了罪
+  target: 誤犯
 - verse: 15
   phrase: 聖所的舍客勒
   target: 舍客勒
 - verse: 15
   phrase: 贖愆祭牲
   target: 贖愆祭（asham）
+- verse: 15
+  phrase: 沒有殘疾
+  target: 無殘疾（tamim）
 - verse: 15
   phrase: 公綿羊
   target: 公綿羊
@@ -87,10 +135,10 @@ links:
   target: 聖物
 - verse: 16
   phrase: 償還
-  target: 賠償（shalem）
+  target: 賠償
 - verse: 16
   phrase: 加五分之一
-  target: 賠償（shalem）
+  target: 賠償
 - verse: 16
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -100,6 +148,12 @@ links:
 - verse: 16
   phrase: 公綿羊
   target: 公綿羊
+- verse: 16
+  phrase: 必蒙赦免
+  target: 赦免
+- verse: 18
+  phrase: 沒有殘疾
+  target: 無殘疾（tamim）
 - verse: 18
   phrase: 公綿羊
   target: 公綿羊
@@ -109,6 +163,9 @@ links:
 - verse: 18
   phrase: 贖愆祭
   target: 贖愆祭（asham）
+- verse: 18
+  phrase: 必蒙赦免
+  target: 赦免
 - verse: 19
   phrase: 贖愆祭
   target: 贖愆祭（asham）

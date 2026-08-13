@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_5.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 322,
+      "first": "Lev 5:1",
+      "last": "Lev 5:19",
+      "sha256": "3ed76ae97298789a684015ac73760e41cac75812810e79f16faf4ca67ffbd4f5",
+      "bytes": 61517,
+      "chars": 54042,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
