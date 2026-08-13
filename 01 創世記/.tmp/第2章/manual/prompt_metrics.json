@@ -8,12 +8,12 @@
       "stage": "chapter_content",
       "path": "chapter_content.prompt.md",
       "before": {
-        "chars": 151076,
-        "bytes": 222686
+        "chars": 151258,
+        "bytes": 223102
       },
       "after": {
-        "chars": 30125,
-        "bytes": 40227
+        "chars": 30307,
+        "bytes": 40643
       },
       "commentary_bodies_omitted": [
         {

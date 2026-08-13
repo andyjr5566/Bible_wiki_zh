@@ -200,6 +200,8 @@ class ManualPromptIntegrationTests(unittest.TestCase):
                 self.assertIn("Lexicon 是可能義域", prompt)
                 self.assertIn("morphology", prompt)
                 self.assertIn("共識票", prompt)
+                self.assertIn("正面分層", prompt)
+                self.assertIn("部分註釋如何從整段或其他經文進一步理解", prompt)
                 self.assertNotIn("CT_SENTINEL_123", prompt)
                 self.assertNotIn("GT_SENTINEL_456", prompt)
                 self.assertNotIn("STEP_SENTINEL_789", prompt)

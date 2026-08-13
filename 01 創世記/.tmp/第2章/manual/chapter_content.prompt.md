@@ -547,6 +547,7 @@ format: position | original | transliteration | exact Extended Strong | morpholo
 【STEP 原文資料使用邊界】
 - STEP Bible 是原文證據層，不是第五套 commentary：可直接支持本章詞形、lemma、Strong 編號、morphology、context gloss 與 lexicon 義域等語言事實；不得把它算成CT／GT／KC／BH 的註釋共識票。
 - Lexicon 是可能義域，不等於本節必然語境義；morphology 是語法形態，不會自行推出神學結論。語言事實與註釋家的解讀必須分開表述，神學判斷仍須由經文脈絡或註釋來源支持。
+- 表達不同層次時要正面分層：先說 STEP 能確認的字形、lemma、Strong、morphology、本節譯義或簡要義域，再說部分註釋如何從整段或其他經文進一步理解。除非原文、Strong、詞形或 lexical identification 確有可驗證衝突，否則不要寫成『這個字不能證明……』『STEP 沒有這個意思』『這只是神學推論』等反駁或裁決語氣。
 - STEP 可以觸發原文候選，但只建立有研究價值、跨章累積價值或實質內容的概念；不得因每個功能詞、詞形或 Strong 編號批量建頁，Strong 編號也不是 wiki 條目 ID。
 
 【規則】knowledge_nodes 是「分組→節點清單」的物件，值必須是純字串陣列（既有條目或本章新建條目的完整名稱），不可用巢狀物件或額外欄位，例如：
