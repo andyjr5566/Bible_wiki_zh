@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 7,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "entry_batch",
+      "path": "entry_batch_1.prompt.md",
+      "before": {
+        "chars": 197228,
+        "bytes": 260184
+      },
+      "after": {
+        "chars": 40681,
+        "bytes": 50880
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_7.txt",
+          "chars": 11288,
+          "bytes": 31542
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_7.txt",
+          "chars": 14347,
+          "bytes": 40009
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_7.txt",
+          "chars": 14326,
+          "bytes": 14406
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_7.txt",
+          "chars": 71312,
+          "bytes": 71326
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_7.txt",
+          "raw_chars": 81439,
+          "raw_bytes": 93137,
+          "projected_chars": 35570,
+          "projected_bytes": 40383,
+          "occurrences": 480,
+          "lexicon_entries": 138,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ]
+    }
+  ]
+}

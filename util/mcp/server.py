@@ -107,6 +107,10 @@ _ITALIC_LATIN_RE = re.compile(r"\*([A-Za-z][A-Za-z'’\-]{2,24})\*")
 _TRANSLITERATION_IGNORE = {
     "CT", "GT", "KC", "BH", "BibleHub", "BibleHub Study", "KingComments",
     "ESV", "KJV", "NIV", "NASB", "NKJV", "RSV", "ASV", "LXX", "MT",
+    # canonical source-identity labels required by the entry-payload prompt
+    # (「逐節註解（ccbiblestudy CT）」…) — a site name, never a transliteration.
+    "ccbiblestudy", "ccbiblestudy CT", "ccbiblestudy GT",
+    "STEP Bible", "STEPBible",
 }
 # Frequent simplified-only characters; the corpus is Traditional Chinese throughout.
 _SIMPLIFIED_CHARS = set(
