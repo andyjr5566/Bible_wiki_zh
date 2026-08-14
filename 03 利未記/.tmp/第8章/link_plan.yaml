@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 8
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 亞倫和他兒子（祭司）
   suggested_type: 人物
   evidence: 全章主角，摩西為亞倫和他兒子行承接聖職之禮（v2, 6-36）
@@ -110,12 +109,12 @@ B_needs_update:
   match_type: exact
   existing_title: 牌子（冠冕牌）
   existing_path: link_folder/原文/牌子（冠冕牌）.md
-- name: 膏油（聖膏油）
+- name: 聖膏油
   suggested_type: 原文
   evidence: v2,10-12,30「膏油」多次出現，用以抹帳幕、壇、亞倫使其成聖
   match_type: exact
-  existing_title: 膏油（聖膏油）
-  existing_path: link_folder/原文/膏油（聖膏油）.md
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
 - name: 洗濯盆（銅盆）
   suggested_type: 主題
   evidence: v11「並洗濯盆和盆座，使他成聖」
@@ -141,7 +140,7 @@ B_needs_update:
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
 - name: 燔祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v18-21 第一隻公綿羊獻為燔祭，「把全羊燒在壇上為馨香的燔祭」
   match_type: exact
   existing_title: 燔祭
@@ -201,17 +200,17 @@ B_needs_update:
   existing_title: 肥尾巴
   existing_path: link_folder/原文/肥尾巴.md
 - name: 平安祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v22-29 第二隻公綿羊為「承接聖職之禮的羊」，屬平安祭的特殊形式
   match_type: exact
   existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
-- name: 搖祭（tenufah）
+  existing_path: link_folder/神學/平安祭.md
+- name: 搖祭
   suggested_type: 原文
   evidence: v27,29「把這一切放在亞倫的手上和他兒子的手上作搖祭」「摩西拿羊的胸作為搖祭」
   match_type: exact
-  existing_title: 搖祭（tenufah）
-  existing_path: link_folder/原文/搖祭（tenufah）.md
+  existing_title: 搖祭
+  existing_path: link_folder/原文/搖祭.md
 - name: 至聖的供物（聖與至聖之分）
   suggested_type: 主題
   evidence: v31-32 肉和餅只限亞倫和他兒子在會幕門口吃，剩下的必須用火焚燒，不可留到次日
@@ -230,6 +229,45 @@ B_needs_update:
   match_type: exact
   existing_title: 會幕門口
   existing_path: link_folder/地點/會幕門口.md
-C_new_formal: []
+B_needs_update:
+- name: 無酵餅
+  suggested_type: 原文
+  evidence: 'v2「一筐無酵餅」；v26「再從耶和華面前、盛無酵餅的筐子裡取出一個無酵餅，一個油餅，一個薄餅」；v31「又吃承接聖職筐子裡的餅」。
+
+    GT丁良才點出一項與平安祭的差異：「這承接聖職之禮的祭沒有同獻之有酵的餅。」
+
+    CT：「這三種餅都是無酵餅，和脂油和右腿一同作搖祭。」
+
+    BH：無酵餅不含酵，象徵純潔與無罪，是承接聖職禮的一部分，反映事奉神者所需的聖潔。
+
+    STEP：v2、v26 的「無酵餅」是 מַצָּה（H4682）；v26 的三樣分別是 חַלָּה（H2471，STEP 逐字解「a round perforated
+    bread」）、לֶחֶם שֶׁמֶן（油餅）與 רָקִיק（H7550，薄餅）——與利7:12 感謝祭配的三種餅是同一組詞。'
+  match_type: exact
+  existing_title: 無酵餅
+  existing_path: link_folder/原文/無酵餅.md
+C_new_formal:
+- name: 七日承接聖職不出會幕門
+  suggested_type: 主題
+  evidence: 'v33「你們七天不可出會幕的門，等到你們承接聖職的日子滿了，因為主叫你們七天承接聖職」；v35「七天你們要晝夜住在會幕門口，遵守耶和華的吩咐，免得你們死亡」。
+
+    CT：「意指祭司在七天之內，不可走出會幕的院子之外」；「意指違背此項命令必會招致死亡的懲罰」；靈意上「七天表徵完全，即指一生活在聖潔的原則下」。
+
+    GT丁良才並列兩種對這七天內容的解法：一說摩西每天都重行獻早晚祭、潔淨會幕、並為亞倫父子重行承接聖職的禮；另一說只有第一天行承接聖職禮，其餘六天僅獻常獻的祭並潔淨祭壇。他自己傾向前者。他並指出祭司住的是「會幕的旁屋」，這七天「有默想、祈禱和觀近神的好機會」。
+
+    GT《聖經精讀本》：「承接聖職儀式持續七天，為的是彰顯承接聖職儀式的神聖、公正及完全。不可出會幕的門: 為了保證聖潔。」
+
+    GT《舊約聖經背景註釋》給了近東旁證：「大祭司不可因為任何理由離開此地，因為這樣做會使他感染不潔……蘇美文獻形容恩圖女祭司亦要面對同樣的危機……為期七日的奉獻典禮頗為常見，古德奉獻拉加什廟宇便是例證。」
+
+    KC：七天說到我們的一生，七是完全的數字；神要祭司在對的地方、對的時間、對的心思裡，若不顧祂的旨意，祭司的事奉就會「死去」（利10:1-2）。
+
+    STEP：v33「承接聖職」是 מִלֻּאִים（H4394）配動詞片語 יְמַלֵּא אֶת־יֶדְכֶם（מָלֵא H4390，「充滿你們的手」）；v35「遵守耶和華的吩咐」是
+    שָׁמַר（H8104G）配同源名詞 מִשְׁמֶרֶת（H4931，STEP 逐字解「the duty of」）。
+
+    跨章價值：利9:1「到了第八天」正是這七天期滿的次日；利10:1-2 拿答亞比戶事件緊接其後；利14:8-9 求潔淨者同樣有七日等候；出29:35-37 是本條例的來源。'
+  target_path: link_folder/主題/七日承接聖職不出會幕門.md
+  semantic_hint:
+  - title: 承接聖職（分別為聖）
+    score: 0.437
+    type: 神學
 D_new_candidate: []
 E_skip: []

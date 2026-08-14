@@ -12,7 +12,7 @@ links:
   target: 聖衣（祭司聖服）
 - verse: 2
   phrase: 膏油
-  target: 膏油（聖膏油）
+  target: 聖膏油
 - verse: 2
   phrase: 贖罪祭
   target: 贖罪祭
@@ -81,16 +81,16 @@ links:
   target: 摩西
 - verse: 10
   phrase: 膏油
-  target: 膏油（聖膏油）
+  target: 聖膏油
 - verse: 11
   phrase: 膏油
-  target: 膏油（聖膏油）
+  target: 聖膏油
 - verse: 11
   phrase: 洗濯盆和盆座
   target: 洗濯盆（銅盆）
 - verse: 12
   phrase: 膏油
-  target: 膏油（聖膏油）
+  target: 聖膏油
 - verse: 12
   phrase: 亞倫
   target: 亞倫
@@ -198,7 +198,7 @@ links:
   target: 亞倫
 - verse: 27
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 28
   phrase: 摩西
   target: 摩西
@@ -216,7 +216,7 @@ links:
   target: 摩西
 - verse: 29
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 29
   phrase: 承接聖職
   target: 承接聖職（分別為聖）
@@ -225,7 +225,7 @@ links:
   target: 摩西
 - verse: 30
   phrase: 膏油
-  target: 膏油（聖膏油）
+  target: 聖膏油
 - verse: 30
   phrase: 亞倫
   target: 亞倫
