@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_6.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 411,
+      "first": "Lev 6:1",
+      "last": "Lev 6:30",
+      "sha256": "dd56605b1894885b1d2183877fffa9649829c4fe2ebbf2f1d78f1470c30f1352",
+      "bytes": 80168,
+      "chars": 70304,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

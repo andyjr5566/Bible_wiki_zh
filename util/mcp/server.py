@@ -1393,6 +1393,18 @@ def _raw_corpus() -> str:
     return "".join(parts)
 
 
+def _raw_corpus_unpointed(raw: str) -> str:
+    """Corpus with niqqud stripped, so pointed Hebrew can be matched consonantally.
+
+    Entry tokens are compared after ``_NIQQUD_RE`` stripping; before the STEP
+    layer existed the corpus held almost no pointed Hebrew, so comparing a
+    stripped token against the raw text happened to work. STEP raw files are
+    fully pointed, so the corpus must be stripped the same way or every pointed
+    form in it becomes invisible to the check.
+    """
+    return _NIQQUD_RE.sub("", raw)
+
+
 @mcp.tool()
 def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True) -> Dict[str, Any]:
     """Globally flag Hebrew letters, Latin transliterations and simplified characters.
@@ -1415,6 +1427,7 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
     raw = _raw_corpus()
     if not raw:
         return _error("raw_data/ 讀不到任何來源檔，無法判斷出處")
+    raw_unpointed = _raw_corpus_unpointed(raw)
 
     hebrew, latin, simplified = [], [], []
     for path in files:
@@ -1422,7 +1435,7 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
         text = path.read_text(encoding="utf-8", errors="ignore")
         for run in sorted(set(_HEBREW_RUN_RE.findall(text))):
             stripped = _NIQQUD_RE.sub("", run)
-            if stripped and stripped not in raw:
+            if stripped and stripped not in raw_unpointed:
                 hebrew.append({"file": relative, "token": run})
         candidates = set(_PAREN_LATIN_RE.findall(text)) | set(_ITALIC_LATIN_RE.findall(text))
         for token in sorted(candidates):

@@ -301,6 +301,24 @@ class ScanUnsourcedTokensTests(unittest.TestCase):
                 result = server.scan_unsourced_tokens("創世記", 1)
         self.assertEqual(result["flag_count"], 0)
 
+    def test_pointed_corpus_form_counts_as_a_source(self):
+        """STEP raw files are fully pointed; the corpus must be stripped too.
+
+        Otherwise every vocalised form in STEP is invisible to the check and the
+        entry's own lemma gets flagged as unsourced.
+        """
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "本節作 מִנְחָה，即素祭。\n")
+            # A STEP-style raw file: same consonants, different pointing.
+            (root / "raw_data" / "stepbible_x.txt").write_text(
+                "| מִנְחָ֖ה | min.Chah | grain offering | H4503G |", encoding="utf-8"
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        hebrew = {item["token"] for item in result["unsourced_hebrew"]}
+        self.assertNotIn("מִנְחָה", hebrew)
+
 
 class RunGatesTests(unittest.TestCase):
     def test_fail_conclusion_overrides_zero_exit_code(self):

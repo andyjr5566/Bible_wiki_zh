@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 6,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "entry_batch",
+      "path": "entry_batch_1.prompt.md",
+      "before": {
+        "chars": 173210,
+        "bytes": 235075
+      },
+      "after": {
+        "chars": 36185,
+        "bytes": 45590
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_6.txt",
+          "chars": 13486,
+          "bytes": 36655
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_6.txt",
+          "chars": 13192,
+          "bytes": 36900
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_6.txt",
+          "chars": 16670,
+          "bytes": 16796
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_6.txt",
+          "chars": 55852,
+          "bytes": 55862
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_6.txt",
+          "raw_chars": 69677,
+          "raw_bytes": 79541,
+          "projected_chars": 31257,
+          "projected_bytes": 35536,
+          "occurrences": 411,
+          "lexicon_entries": 157,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        }
+      ]
+    }
+  ]
+}
