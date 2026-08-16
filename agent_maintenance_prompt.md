@@ -77,12 +77,9 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 - **內容**：直接引原話「」並標對哪一家（CT／GT／KC／BH 或 GT 內各家），不張冠李戴、
   某家沒說就別替他生一個；矛盾並陳不壓平；英文來源譯成繁中不貼原文；只出自經文與來源。
 - **STEP 邊界**：STEP 是原文證據層，不是第五套 commentary；可支持詞形、lemma、Strong、
-  morphology、context gloss 與 lexicon 義域，但不算 commentary 共識票。Lexicon 是可能義域，
-  不等於本節必然語境義；morphology 也不自行推出神學結論。語言事實與註釋解讀分開寫。
+  morphology、context gloss 與 lexicon 義域。
 - **原文資料採正面分層語氣**：先陳述 STEP 能確認的字形、lemma、Strong、morphology、
   本節譯義與簡要義域；再寫「部分註釋進一步理解為……」「結合其他經文，某來源進一步討論……」。
-  除非 Hebrew／Strong／morphology／lexical identification 確有可驗證衝突，否則避免「不能由這個字
-  推出」「這個字並不證明」「STEP 沒有這個意思」「這只是神學推論」等裁決式或辯論式語氣。
   STEP 負責界定 linguistic evidence，commentary 負責呈現整段與跨經文的解經延伸；兩層並陳，
   不讓 STEP 扮演反駁 commentary 的角色。
 - **圖表優先**：材料是流程／路線／對照／階層／關係／時間軸的形狀 → 對應 mermaid／表格；

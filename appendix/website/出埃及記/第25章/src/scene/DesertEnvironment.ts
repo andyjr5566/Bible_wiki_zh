@@ -1,17 +1,117 @@
 import * as THREE from 'three';
 
+export type AtmosphereMode = 'dawn' | 'midday' | 'night';
+
 export class DesertEnvironment {
   readonly #root = new THREE.Group();
+  readonly #scene: THREE.Scene;
+
+  #skyMesh: THREE.Mesh | null = null;
+  #skyMaterial: THREE.ShaderMaterial | null = null;
+  #starfield: THREE.Points | null = null;
+
+  #hemiLight: THREE.HemisphereLight | null = null;
+  #sunLight: THREE.DirectionalLight | null = null;
+  #warmFillLight: THREE.DirectionalLight | null = null;
+  #holyPlaceGlow: THREE.PointLight | null = null;
+  #arkLight: THREE.SpotLight | null = null;
+
+  #currentMode: AtmosphereMode = 'midday';
 
   constructor(scene: THREE.Scene) {
+    this.#scene = scene;
     this.#root.name = 'desert-art-direction';
     scene.add(this.#root);
     scene.fog = new THREE.Fog(0xd6b77f, 64, 176);
+
     this.installSky();
+    this.installStarfield();
     this.installTerrain();
     this.installMountains();
     this.installCamp();
     this.installLighting();
+  }
+
+  get currentAtmosphere(): AtmosphereMode {
+    return this.#currentMode;
+  }
+
+  setAtmosphere(mode: AtmosphereMode): void {
+    this.#currentMode = mode;
+    if (!this.#skyMaterial || !this.#hemiLight || !this.#sunLight || !this.#warmFillLight || !this.#holyPlaceGlow || !this.#arkLight) return;
+
+    const uniforms = this.#skyMaterial.uniforms as {
+      topColor?: { value: THREE.Color };
+      horizonColor?: { value: THREE.Color };
+      sunColor?: { value: THREE.Color };
+      sunDirection?: { value: THREE.Vector3 };
+    };
+
+    if (mode === 'dawn') {
+      this.#scene.fog = new THREE.Fog(0xd89f78, 50, 160);
+      uniforms.topColor?.value.setHex(0x35527a);
+      uniforms.horizonColor?.value.setHex(0xdf9a66);
+      uniforms.sunColor?.value.setHex(0xffaa5e);
+      uniforms.sunDirection?.value.set(-0.85, 0.28, 0.45).normalize();
+
+      this.#hemiLight.color.setHex(0xdfa58a);
+      this.#hemiLight.groundColor.setHex(0x6a3820);
+      this.#hemiLight.intensity = 1.1;
+
+      this.#sunLight.color.setHex(0xffaa5e);
+      this.#sunLight.intensity = 3.8;
+      this.#sunLight.position.set(-60, 24, 30);
+
+      this.#warmFillLight.color.setHex(0xdf8450);
+      this.#warmFillLight.intensity = 0.6;
+
+      this.#holyPlaceGlow.intensity = 16;
+      this.#arkLight.intensity = 38;
+      if (this.#starfield) this.#starfield.visible = false;
+    } else if (mode === 'night') {
+      this.#scene.fog = new THREE.Fog(0x101524, 45, 140);
+      uniforms.topColor?.value.setHex(0x060a16);
+      uniforms.horizonColor?.value.setHex(0x141f38);
+      uniforms.sunColor?.value.setHex(0xaec8f2); // Moon glow
+      uniforms.sunDirection?.value.set(0.4, 0.8, -0.45).normalize();
+
+      this.#hemiLight.color.setHex(0x1e2c4c);
+      this.#hemiLight.groundColor.setHex(0x0d121c);
+      this.#hemiLight.intensity = 0.45;
+
+      this.#sunLight.color.setHex(0x8faad8); // Moonlight
+      this.#sunLight.intensity = 1.1;
+      this.#sunLight.position.set(25, 55, -30);
+
+      this.#warmFillLight.color.setHex(0x2d3a58);
+      this.#warmFillLight.intensity = 0.2;
+
+      this.#holyPlaceGlow.intensity = 28;
+      this.#arkLight.intensity = 55;
+      if (this.#starfield) this.#starfield.visible = true;
+    } else {
+      // Midday (Default)
+      this.#scene.fog = new THREE.Fog(0xd6b77f, 64, 176);
+      uniforms.topColor?.value.setHex(0x527a98);
+      uniforms.horizonColor?.value.setHex(0xd9c39b);
+      uniforms.sunColor?.value.setHex(0xffe3aa);
+      uniforms.sunDirection?.value.set(-0.46, 0.58, 0.67).normalize();
+
+      this.#hemiLight.color.setHex(0xdce8ef);
+      this.#hemiLight.groundColor.setHex(0x6a4128);
+      this.#hemiLight.intensity = 1.38;
+
+      this.#sunLight.color.setHex(0xffd6a0);
+      this.#sunLight.intensity = 4.5;
+      this.#sunLight.position.set(-38, 54, 36);
+
+      this.#warmFillLight.color.setHex(0xe8b87a);
+      this.#warmFillLight.intensity = 0.52;
+
+      this.#holyPlaceGlow.intensity = 18;
+      this.#arkLight.intensity = 42;
+      if (this.#starfield) this.#starfield.visible = false;
+    }
   }
 
   dispose(): void {
@@ -25,41 +125,72 @@ export class DesertEnvironment {
   }
 
   private installSky(): void {
-    const sky = new THREE.Mesh(
+    this.#skyMaterial = new THREE.ShaderMaterial({
+      side: THREE.BackSide,
+      depthWrite: false,
+      fog: false,
+      uniforms: {
+        topColor: { value: new THREE.Color(0x527a98) },
+        horizonColor: { value: new THREE.Color(0xd9c39b) },
+        sunColor: { value: new THREE.Color(0xffe3aa) },
+        sunDirection: { value: new THREE.Vector3(-0.46, 0.58, 0.67).normalize() },
+      },
+      vertexShader: `varying vec3 vDirection;
+        void main() {
+          vDirection = normalize(position);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }`,
+      fragmentShader: `uniform vec3 topColor;
+        uniform vec3 horizonColor;
+        uniform vec3 sunColor;
+        uniform vec3 sunDirection;
+        varying vec3 vDirection;
+        void main() {
+          float skyMix = smoothstep(-0.08, 0.30, vDirection.y);
+          vec3 color = mix(horizonColor, topColor, skyMix);
+          float sun = pow(max(dot(normalize(vDirection), sunDirection), 0.0), 84.0);
+          color += sunColor * sun * 0.72;
+          gl_FragColor = vec4(color, 1.0);
+        }`,
+    });
+
+    this.#skyMesh = new THREE.Mesh(
       new THREE.SphereGeometry(185, 48, 24),
-      new THREE.ShaderMaterial({
-        side: THREE.BackSide,
-        depthWrite: false,
-        fog: false,
-        uniforms: {
-          topColor: { value: new THREE.Color(0x527a98) },
-          horizonColor: { value: new THREE.Color(0xd9c39b) },
-          sunColor: { value: new THREE.Color(0xffe3aa) },
-          sunDirection: { value: new THREE.Vector3(-0.46, 0.58, 0.67).normalize() },
-        },
-        vertexShader: `varying vec3 vDirection;
-          void main() {
-            vDirection = normalize(position);
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }`,
-        fragmentShader: `uniform vec3 topColor;
-          uniform vec3 horizonColor;
-          uniform vec3 sunColor;
-          uniform vec3 sunDirection;
-          varying vec3 vDirection;
-          void main() {
-            float skyMix = smoothstep(-0.08, 0.30, vDirection.y);
-            vec3 color = mix(horizonColor, topColor, skyMix);
-            float sun = pow(max(dot(normalize(vDirection), sunDirection), 0.0), 84.0);
-            color += sunColor * sun * 0.72;
-            gl_FragColor = vec4(color, 1.0);
-          }`,
-      }),
+      this.#skyMaterial,
     );
-    sky.name = 'graded-desert-sky';
-    sky.scale.y = 0.72;
-    sky.renderOrder = -20;
-    this.#root.add(sky);
+    this.#skyMesh.name = 'graded-desert-sky';
+    this.#skyMesh.scale.y = 0.72;
+    this.#skyMesh.renderOrder = -20;
+    this.#root.add(this.#skyMesh);
+  }
+
+  private installStarfield(): void {
+    const starCount = 350;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const r = 175.0;
+      const sinPhi = Math.sin(phi);
+      positions[i * 3] = r * sinPhi * Math.cos(theta);
+      positions[i * 3 + 1] = Math.abs(r * Math.cos(phi)) * 0.7 + 10; // Upper dome
+      positions[i * 3 + 2] = r * sinPhi * Math.sin(theta);
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.85,
+      transparent: true,
+      opacity: 0.9,
+      depthWrite: false,
+    });
+    this.#starfield = new THREE.Points(geo, mat);
+    this.#starfield.name = 'night-starfield';
+    this.#starfield.visible = false;
+    this.#root.add(this.#starfield);
   }
 
   private installTerrain(): void {
@@ -163,28 +294,38 @@ export class DesertEnvironment {
   }
 
   private installLighting(): void {
-    this.#root.add(new THREE.HemisphereLight(0xdce8ef, 0x6a4128, 1.38));
-    const sun = new THREE.DirectionalLight(0xffd6a0, 4.5);
-    sun.name = 'late-afternoon-sun';
-    sun.position.set(-38, 54, 36);
-    sun.castShadow = true;
-    sun.shadow.mapSize.set(4096, 4096);
-    sun.shadow.camera.left = -70; sun.shadow.camera.right = 70; sun.shadow.camera.top = 70; sun.shadow.camera.bottom = -70;
-    sun.shadow.camera.near = 1; sun.shadow.camera.far = 160; sun.shadow.bias = -0.0003;
-    this.#root.add(sun);
-    const warmFill = new THREE.DirectionalLight(0xe8b87a, 0.52); warmFill.position.set(34, 16, -42); this.#root.add(warmFill);
+    this.#hemiLight = new THREE.HemisphereLight(0xdce8ef, 0x6a4128, 1.38);
+    this.#root.add(this.#hemiLight);
 
-    const holyPlaceGlow = new THREE.PointLight(0xffca82, 18, 13, 2);
-    holyPlaceGlow.name = 'holy-place-warm-glow';
-    holyPlaceGlow.position.set(0, 3.2, -4.7);
-    this.#root.add(holyPlaceGlow);
+    this.#sunLight = new THREE.DirectionalLight(0xffd6a0, 4.5);
+    this.#sunLight.name = 'late-afternoon-sun';
+    this.#sunLight.position.set(-38, 54, 36);
+    this.#sunLight.castShadow = true;
+    this.#sunLight.shadow.mapSize.set(4096, 4096);
+    this.#sunLight.shadow.camera.left = -70; this.#sunLight.shadow.camera.right = 70; this.#sunLight.shadow.camera.top = 70; this.#sunLight.shadow.camera.bottom = -70;
+    this.#sunLight.shadow.camera.near = 1; sunLightFar(this.#sunLight);
+    this.#root.add(this.#sunLight);
 
-    const arkLight = new THREE.SpotLight(0xffd58f, 42, 16, Math.PI / 7, 0.72, 1.7);
-    arkLight.name = 'most-holy-focused-light';
-    arkLight.position.set(-1.2, 7.2, -6.7);
-    arkLight.target.position.set(0, 0.6, -9.1);
-    this.#root.add(arkLight, arkLight.target);
+    this.#warmFillLight = new THREE.DirectionalLight(0xe8b87a, 0.52);
+    this.#warmFillLight.position.set(34, 16, -42);
+    this.#root.add(this.#warmFillLight);
+
+    this.#holyPlaceGlow = new THREE.PointLight(0xffca82, 18, 13, 2);
+    this.#holyPlaceGlow.name = 'holy-place-warm-glow';
+    this.#holyPlaceGlow.position.set(0, 3.2, -4.7);
+    this.#root.add(this.#holyPlaceGlow);
+
+    this.#arkLight = new THREE.SpotLight(0xffd58f, 42, 16, Math.PI / 7, 0.72, 1.7);
+    this.#arkLight.name = 'most-holy-focused-light';
+    this.#arkLight.position.set(-1.2, 7.2, -6.7);
+    this.#arkLight.target.position.set(0, 0.6, -9.1);
+    this.#root.add(this.#arkLight, this.#arkLight.target);
   }
+}
+
+function sunLightFar(sun: THREE.DirectionalLight): void {
+  sun.shadow.camera.far = 160;
+  sun.shadow.bias = -0.0003;
 }
 
 function createTentGeometry(): THREE.BufferGeometry {

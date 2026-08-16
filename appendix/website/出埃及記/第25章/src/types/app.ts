@@ -1,13 +1,21 @@
 import type { ExperienceMode, UIState } from './ui';
 import type { AssetProfile, AssetRuntimeState } from './assets';
 import type { AttributionView, ExperienceState, RitualCommand, TourCommand } from './experience';
+import type { AudioManager } from '../audio/AudioManager';
+import type { AtmosphereMode } from './atmosphere';
 
 export interface ArchitectureStats {
-  objects: number; characters: number; rituals: number; scriptures: number; locations: number; assets: number;
+  objects: number;
+  characters: number;
+  rituals: number;
+  scriptures: number;
+  locations: number;
+  assets: number;
 }
 
 export interface AppPort {
   readonly stats: ArchitectureStats;
+  readonly audio: AudioManager;
   getState(): Readonly<UIState>;
   subscribe(listener: (state: Readonly<UIState>) => void): () => void;
   transitionTo(mode: ExperienceMode, reason: string): void;
@@ -23,4 +31,6 @@ export interface AppPort {
   commandRitual(command: RitualCommand): void;
   setCreditsOpen(open: boolean): void;
   getAttributions(): AttributionView[];
+  setAtmosphere(mode: AtmosphereMode): void;
+  setQuality(preset: 'high' | 'medium' | 'low'): void;
 }

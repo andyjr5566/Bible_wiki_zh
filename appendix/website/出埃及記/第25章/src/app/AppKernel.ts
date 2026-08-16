@@ -1,3 +1,4 @@
+import { AudioManager } from '../audio/AudioManager';
 import { CharacterRegistry } from '../characters/CharacterRegistry';
 import { CharacterSystem } from '../characters/CharacterSystem';
 import { runtimeConfig } from '../config/runtime';
@@ -7,6 +8,7 @@ import { RitualRegistry } from '../rituals/RitualRegistry';
 import { RitualVisualSystem } from '../rituals/RitualVisualSystem';
 import { SceneBootstrap } from '../scene/SceneBootstrap';
 import { ObjectRegistry } from '../scene/ObjectRegistry';
+import type { AtmosphereMode } from '../scene/DesertEnvironment';
 import { ScriptureMappingService } from '../scripture/ScriptureMappingService';
 import { ScriptureRegistry } from '../scripture/ScriptureRegistry';
 import { LearningModeManager } from '../systems/LearningModeManager';
@@ -35,6 +37,7 @@ export class AppKernel implements AppPort {
   readonly data = loadProjectData();
   readonly uiState = new UIStateManager();
   readonly scene: SceneBootstrap;
+  readonly audio = new AudioManager();
   readonly objects = new ObjectRegistry(this.data.tabernacle.objects);
   readonly characters = new CharacterSystem(new CharacterRegistry(this.data.characters.characters));
   readonly rituals: RitualPlaybackController;
@@ -75,7 +78,7 @@ export class AppKernel implements AppPort {
     };
     this.#unsubscribe = this.uiState.subscribe((state) => this.applyMode(state.mode));
     this.#assetUnsubscribe = this.assetRuntime.subscribe((state) => this.onAssetState(state));
-    this.scene.setUpdate(() => this.update());
+    this.scene.setUpdate((deltaSeconds) => this.update(deltaSeconds));
   }
 
   start(): void {
@@ -84,12 +87,21 @@ export class AppKernel implements AppPort {
     void this.startAssets();
   }
 
+  setAtmosphere(mode: AtmosphereMode): void {
+    this.scene.setAtmosphere(mode);
+  }
+
+  setQuality(preset: 'high' | 'medium' | 'low'): void {
+    this.scene.setQuality(preset);
+  }
+
   getState(): Readonly<UIState> { return this.uiState.snapshot; }
   subscribe(listener: (state: Readonly<UIState>) => void): () => void { return this.uiState.subscribe(listener); }
   transitionTo(mode: ExperienceMode, reason: string): void {
     if (mode === 'tour' && !this.tour.current) return;
     const isCurrentMode = this.uiState.snapshot.mode === mode;
     this.uiState.transitionTo(mode, reason);
+    this.audio.playNav();
     if (mode === 'tour') { this.tour.reset(); this.focusTourStop(); }
     if (mode === 'learning') this.openLearningObject(this.learning.context.objectId ?? 'burnt-altar');
     if (mode === 'overview' && isCurrentMode) this.scene.context.cameraManager.applyMode('overview');
@@ -166,11 +178,13 @@ export class AppKernel implements AppPort {
     if (command === 'close') { this.tour.pause(); this.uiState.returnToPrevious('tour-close'); }
     if (command === 'previous') { this.tour.previous(); this.focusTourStop(); }
     if (command === 'next') { this.tour.next(); this.focusTourStop(); }
+    this.audio.playClick();
     this.publishExperience();
   }
 
   selectLearningObject(objectId: string): void {
     if (this.uiState.snapshot.mode !== 'learning') this.uiState.transitionTo('learning', `interaction:${objectId}`);
+    this.audio.playInspect();
     this.openLearningObject(objectId);
     this.publishExperience();
   }
@@ -182,6 +196,7 @@ export class AppKernel implements AppPort {
     this.rituals.start(ritualId);
     const ritualLocation = this.requireLocation(ritual.locationId);
     this.scene.context.cameraManager.focus(ritualLocation.position, ritualLocation.position.z < -2 ? 3.4 : 5.8);
+    this.audio.playClick();
     this.publishExperience();
   }
 
@@ -192,6 +207,7 @@ export class AppKernel implements AppPort {
       else if (this.rituals.state.status === 'paused') { this.rituals.resume(); if (this.rituals.state.ritualId) this.ritualVisuals.play(this.rituals.state.ritualId); }
     }
     if (command === 'next') this.rituals.next();
+    this.audio.playClick();
     this.publishExperience();
   }
 
@@ -212,6 +228,7 @@ export class AppKernel implements AppPort {
     this.#unsubscribe?.();
     this.#assetUnsubscribe?.();
     this.#experienceEvents.clear();
+    this.audio.dispose();
     this.ritualVisuals.dispose();
     this.assetRuntime.dispose();
     this.scene.dispose();
@@ -228,8 +245,10 @@ export class AppKernel implements AppPort {
     this.publishExperience();
   }
 
-  private update(): void {
+  private update(deltaSeconds: number): void {
     this.ritualVisuals.update(performance.now() / 1000);
+    const cameraPose = this.scene.context.cameraManager.pose;
+    this.audio.updatePlayerState(cameraPose.position, false, deltaSeconds);
   }
 
   private openLearningObject(objectId: string): void {

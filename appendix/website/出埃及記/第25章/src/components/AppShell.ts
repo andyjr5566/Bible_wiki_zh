@@ -1,9 +1,13 @@
+import type { AppKernel } from '../app/AppKernel';
 import type { AppPort } from '../types/app';
 import type { AssetProfile, AssetRuntimeState } from '../types/assets';
 import type { ExperienceState } from '../types/experience';
 import type { UIState } from '../types/ui';
 import { ExperiencePanel } from './ExperiencePanel';
 import { ModeNavigation } from './ModeNavigation';
+import { MiniMap } from './MiniMap';
+import { SettingsModal } from './SettingsModal';
+import { ScriptureStudyModal } from './ScriptureStudyModal';
 
 const profiles: Array<{ id: AssetProfile; label: string }> = [
   { id: 'desktop-high', label: '完整會幕' },
@@ -24,6 +28,9 @@ export class AppShell {
   readonly canvas: HTMLCanvasElement;
   readonly #modeNavigation: ModeNavigation;
   readonly #experiencePanel: ExperiencePanel;
+  readonly #miniMap: MiniMap;
+  readonly #settingsModal: SettingsModal;
+  readonly #scriptureModal: ScriptureStudyModal;
   readonly #assetStatus: HTMLElement;
   readonly #researchPanel: HTMLElement;
   readonly #sheetToggle: HTMLButtonElement;
@@ -38,48 +45,120 @@ export class AppShell {
   constructor(root: HTMLElement) {
     root.innerHTML = `<main class="app-shell">
       <canvas class="scene-canvas" tabindex="0" aria-label="可拖曳旋轉、滾輪縮放的 3D 會幕場景"></canvas>
+      
+      <!-- Top Museum Header -->
       <header class="museum-header">
-        <div class="brand-lockup"><span class="brand-mark" aria-hidden="true"></span><div><p>EXODUS 25 · NON-COMMERCIAL</p><h1>互動式會幕研讀</h1></div></div>
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p>EXODUS 25 · 3D INTERACTIVE EXPLORER</p>
+            <h1>聖經會幕 · 空間研讀</h1>
+          </div>
+        </div>
         <nav class="mode-navigation"></nav>
-        <button class="credits-button" type="button" data-credits-trigger>資料來源</button>
+        <div class="header-action-group">
+          <button class="action-pill-button" type="button" data-open-scripture>📜 出25章逐節研讀</button>
+          <button class="action-pill-button" type="button" data-toggle-map>🗺️ 平面圖</button>
+          <button class="action-icon-button" type="button" data-toggle-audio title="切換音效">🔊</button>
+          <button class="action-icon-button" type="button" data-open-settings title="設定與大氣氛圍">⚙️</button>
+          <button class="credits-button" type="button" data-credits-trigger>資料來源</button>
+        </div>
       </header>
-      <aside class="research-panel is-sheet-collapsed"><button class="panel-sheet-toggle" type="button" data-sheet-toggle aria-expanded="false" aria-controls="experience-panel"><span aria-hidden="true">↑</span><span>展開控制</span></button><div class="experience-panel" id="experience-panel"></div>
-        <details class="asset-drawer"><summary>模型檢視選項</summary><nav class="profile-buttons" aria-label="3D 模型方案"></nav><nav class="detail-buttons" aria-label="器物細節"></nav><p class="asset-status" data-testid="asset-status" aria-live="polite"></p></details>
+
+      <!-- Sidebar Research Panel -->
+      <aside class="research-panel is-sheet-collapsed">
+        <button class="panel-sheet-toggle" type="button" data-sheet-toggle aria-expanded="false" aria-controls="experience-panel">
+          <span aria-hidden="true">↑</span><span>展開控制</span>
+        </button>
+        <div class="experience-panel" id="experience-panel"></div>
+        <details class="asset-drawer">
+          <summary>模型檢視選項</summary>
+          <nav class="profile-buttons" aria-label="3D 模型方案"></nav>
+          <nav class="detail-buttons" aria-label="器物細節"></nav>
+          <p class="asset-status" data-testid="asset-status" aria-live="polite"></p>
+        </details>
       </aside>
-      <footer class="control-legend" aria-label="3D 操作說明"><span><i class="mouse-icon" aria-hidden="true"></i><strong>拖曳</strong>旋轉視角</span><span><strong>滾輪</strong>拉近縮遠</span><span><strong>點目前頁籤</strong>重設視角</span></footer>
+
+      <!-- Floating Proximity Indicator -->
+      <div class="proximity-hud" id="proximity-hud" aria-live="polite" aria-hidden="true">
+        <span class="keycap">E</span><span>靠近查看</span><strong id="proximity-target-name">約櫃</strong>
+      </div>
+
+      <!-- Minimap Float Overlay -->
+      <aside class="minimap-overlay is-hidden" id="minimap-overlay"></aside>
+
+      <!-- Footer Control Hints -->
+      <footer class="control-legend" aria-label="3D 操作說明">
+        <span><i class="mouse-icon" aria-hidden="true"></i><strong>拖曳</strong>旋轉視角</span>
+        <span><strong>滾輪</strong>拉近縮遠</span>
+        <span><strong>WASD / 點擊器物</strong>快速聚焦</span>
+      </footer>
     </main>`;
+
     const canvas = root.querySelector('canvas');
     const modeNav = root.querySelector<HTMLElement>('.mode-navigation');
     const experience = root.querySelector<HTMLElement>('.experience-panel');
     const assetStatus = root.querySelector<HTMLElement>('.asset-status');
     const researchPanel = root.querySelector<HTMLElement>('.research-panel');
     const sheetToggle = root.querySelector<HTMLButtonElement>('[data-sheet-toggle]');
-    if (!(canvas instanceof HTMLCanvasElement) || !modeNav || !experience || !assetStatus || !researchPanel || !sheetToggle) throw new Error('App shell failed to create required elements.');
+    const minimapOverlay = root.querySelector<HTMLElement>('#minimap-overlay');
+
+    if (!(canvas instanceof HTMLCanvasElement) || !modeNav || !experience || !assetStatus || !researchPanel || !sheetToggle || !minimapOverlay) {
+      throw new Error('App shell failed to create required elements.');
+    }
+
     this.canvas = canvas;
     this.#researchPanel = researchPanel;
     this.#sheetToggle = sheetToggle;
     this.#modeNavigation = new ModeNavigation(modeNav);
     this.#experiencePanel = new ExperiencePanel(experience);
+    this.#miniMap = new MiniMap(minimapOverlay);
+    this.#settingsModal = new SettingsModal(root);
+    this.#scriptureModal = new ScriptureStudyModal(root);
     this.#assetStatus = assetStatus;
+
     this.installAssetControls(root);
+    this.installHeaderActions(root);
   }
 
   bind(app: AppPort): void {
     this.#modeNavigation.bind(app);
     this.#experiencePanel.bind(app);
+    this.#miniMap.bind(app);
     this.#sheetToggle.addEventListener('click', this.#onSheetToggle);
+
+    // If app is AppKernel instance, bind modals
+    if ('scene' in app && 'audio' in app) {
+      const kernel = app as unknown as AppKernel;
+      this.#settingsModal.bind(kernel);
+      this.#scriptureModal.bind(kernel);
+    }
+
     document.querySelector('[data-credits-trigger]')?.addEventListener('click', () => app.setCreditsOpen(true));
     this.#profileButtons.forEach((button, profile) => button.addEventListener('click', () => app.setAssetProfile(profile)));
     this.#detailButtons.forEach((button, assetId) => button.addEventListener('click', () => app.loadDetail(assetId)));
-    this.#unsubscribe = app.subscribe((state) => { this.#uiState = state; this.render(); });
+
+    this.#unsubscribe = app.subscribe((state) => {
+      this.#uiState = state;
+      this.render();
+    });
     this.#assetUnsubscribe = app.subscribeAssets((state) => this.renderAssetState(state));
-    this.#experienceUnsubscribe = app.subscribeExperience((state) => { this.#experienceState = state; this.render(); });
+    this.#experienceUnsubscribe = app.subscribeExperience((state) => {
+      this.#experienceState = state;
+      this.render();
+    });
   }
 
   dispose(): void {
-    this.#unsubscribe?.(); this.#assetUnsubscribe?.(); this.#experienceUnsubscribe?.();
+    this.#unsubscribe?.();
+    this.#assetUnsubscribe?.();
+    this.#experienceUnsubscribe?.();
     this.#sheetToggle.removeEventListener('click', this.#onSheetToggle);
-    this.#modeNavigation.dispose(); this.#experiencePanel.dispose();
+    this.#modeNavigation.dispose();
+    this.#experiencePanel.dispose();
+    this.#miniMap.dispose();
+    this.#settingsModal.dispose();
+    this.#scriptureModal.dispose();
   }
 
   readonly #onSheetToggle = (): void => {
@@ -91,12 +170,50 @@ export class AppShell {
       : '<span aria-hidden="true">↓</span><span>收合控制</span>';
   };
 
+  private installHeaderActions(root: HTMLElement): void {
+    root.querySelector('[data-open-scripture]')?.addEventListener('click', () => {
+      this.#scriptureModal.open();
+    });
+
+    root.querySelector('[data-toggle-map]')?.addEventListener('click', () => {
+      const overlay = root.querySelector('#minimap-overlay');
+      if (overlay) overlay.classList.toggle('is-hidden');
+    });
+
+    root.querySelector('[data-open-settings]')?.addEventListener('click', () => {
+      this.#settingsModal.open();
+    });
+
+    const audioBtn = root.querySelector<HTMLButtonElement>('[data-toggle-audio]');
+    audioBtn?.addEventListener('click', () => {
+      // Toggle audio
+      this.#settingsModal.element.querySelector<HTMLButtonElement>('[data-settings-action="toggle-mute"]')?.click();
+    });
+  }
+
   private installAssetControls(root: HTMLElement): void {
     const profileNav = root.querySelector<HTMLElement>('.profile-buttons');
     const detailNav = root.querySelector<HTMLElement>('.detail-buttons');
     if (!profileNav || !detailNav) throw new Error('Missing asset controls.');
-    profiles.forEach(({ id, label }) => { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.dataset.profile = id; profileNav.append(button); this.#profileButtons.set(id, button); });
-    details.forEach(([id, label]) => { const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.dataset.detail = id; button.disabled = true; detailNav.append(button); this.#detailButtons.set(id, button); });
+
+    profiles.forEach(({ id, label }) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = label;
+      button.dataset.profile = id;
+      profileNav.append(button);
+      this.#profileButtons.set(id, button);
+    });
+
+    details.forEach(([id, label]) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = label;
+      button.dataset.detail = id;
+      button.disabled = true;
+      detailNav.append(button);
+      this.#detailButtons.set(id, button);
+    });
   }
 
   private render(): void {
@@ -106,9 +223,16 @@ export class AppShell {
   }
 
   private renderAssetState(state: Readonly<AssetRuntimeState>): void {
-    this.#profileButtons.forEach((button, profile) => { button.classList.toggle('is-active', state.profile === profile); button.setAttribute('aria-pressed', String(state.profile === profile)); });
+    this.#profileButtons.forEach((button, profile) => {
+      button.classList.toggle('is-active', state.profile === profile);
+      button.setAttribute('aria-pressed', String(state.profile === profile));
+    });
+
     const detailsEnabled = state.profile === 'desktop-structural' && state.phase !== 'loading';
-    this.#detailButtons.forEach((button) => { button.disabled = !detailsEnabled; });
+    this.#detailButtons.forEach((button) => {
+      button.disabled = !detailsEnabled;
+    });
+
     const progress = state.progress?.ratio == null ? '' : ` · ${Math.round(state.progress.ratio * 100)}%`;
     const active = state.activeAssetIds.length ? state.activeAssetIds.join('、') : '尚未載入';
     this.#assetStatus.textContent = state.phase === 'error' && state.error
