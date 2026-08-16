@@ -9,6 +9,39 @@ const confidenceLabels = {
   illustrative: '示意呈現',
 } as const;
 
+const objectMeta: Record<string, { hebrew: string; dimensions: string; materials: string }> = {
+  ark: {
+    hebrew: 'אֲרוֹן הָעֵדוּת (Aron Ha-Edut) / כַּפֹּרֶת (Kapporet)',
+    dimensions: '長 2.5 肘 × 寬 1.5 肘 × 高 1.5 肘 (約 112.5 × 67.5 × 67.5 cm)',
+    materials: '皂莢木、純金內外包裹、二金基路伯',
+  },
+  menorah: {
+    hebrew: 'מְנוֹרַת הַזָּהָב (Menorat HaZahav)',
+    dimensions: '一他連得精金 (約 34~43 kg 純金錘成一體)',
+    materials: '精金、杏花狀杯、球、花、純橄欖油',
+  },
+  'shewbread-table': {
+    hebrew: 'שֻׁלְחָן לֶחֶם הַפָּנִים (Shulchan Lechem HaPanim)',
+    dimensions: '長 2 肘 × 寬 1 肘 × 高 1.5 肘 (約 90 × 45 × 67.5 cm)',
+    materials: '皂莢木、純金包裹、金牙邊、金盤金爵',
+  },
+  'incense-altar': {
+    hebrew: 'מִזְבַּח הַקְּטֹרֶת (Mizbeach HaKetoret)',
+    dimensions: '長 1 肘 × 寬 1 肘 × 高 2 肘 (約 45 × 45 × 90 cm)',
+    materials: '皂莢木、四角純金包裹、聖香料',
+  },
+  laver: {
+    hebrew: 'כִּיּוֹר נְחֹשֶׁת (Kiyor Nechoshet)',
+    dimensions: '未詳載（供祭司供職前洗手洗腳）',
+    materials: '銅鏡（會幕門前伺候之婦人的鏡子）',
+  },
+  'burnt-altar': {
+    hebrew: 'מִזְבַּח הָעֹלָה (Mizbeach HaOlah)',
+    dimensions: '長 5 肘 × 寬 5 肘 × 高 3 肘 (約 225 × 225 × 135 cm)',
+    materials: '皂莢木、空心銅包裹、銅網、銅盆',
+  },
+};
+
 const objectOrder = [
   ['burnt-altar', '燔祭壇'],
   ['laver', '洗濯盆'],
@@ -32,11 +65,11 @@ const scriptureContextLabels = {
 } as const;
 
 const tourDescriptions: Record<string, string> = {
-  'tour-east-gate': '先確認入口與東西向；接著沿同一條中軸向內觀看。',
+  'tour-east-gate': '先確認入口與東西向；接著沿同一條中軸向西觀看神聖空間序列。',
   'tour-burnt-altar': '外院首先遇見燔祭壇。經文描述它的材料、尺寸、器具與搬運方式。',
-  'tour-laver': '洗濯盆位於壇與會幕之間，與祭司進入供職前的洗濯有關。',
-  'tour-holy-place': '聖所內有燈臺、陳設餅桌與香壇；畫面屬依經文位置所作的視覺重建。',
-  'tour-most-holy': '幔子分隔至聖所；約櫃與施恩座是這條空間軸線的終點。',
+  'tour-laver': '洗濯盆位於壇與會幕之間，與祭司進入供職前的洗濯潔淨有關。',
+  'tour-holy-place': '聖所內有金燈臺、陳設餅桌與香壇；依經文指引排列於幔子之前。',
+  'tour-most-holy': '幔子分隔至聖所；純金約櫃與施恩座是整座會幕最核心的神聖所在。',
 };
 
 export class ExperiencePanel {
@@ -90,15 +123,27 @@ export class ExperiencePanel {
 
 function renderOverview(state: Readonly<ExperienceState>): string {
   return `<section class="panel-card intro-card" aria-labelledby="overview-title">
-    <p class="section-kicker">3D 快速開始</p>
-    <h2 id="overview-title">拖曳畫面，就能環視會幕</h2>
-    <p class="intro-lede">按住滑鼠左鍵拖曳以旋轉，使用滾輪拉近或縮遠。第一次使用，建議先從五站導覽開始。</p>
-    <ol class="quick-steps"><li><b>拖曳</b><span>旋轉 3D 視角</span></li><li><b>滾輪</b><span>拉近或縮遠</span></li><li><b>選器物</b><span>查看經文註解</span></li></ol>
-    <div class="quick-actions"><button type="button" class="primary-button" data-mode-jump="tour">開始五站導覽</button><button type="button" data-mode-jump="learning">查看器物與經文</button></div>
-    <p class="orientation-note"><strong>空間方向：</strong>從東門進入，依序經過燔祭壇、洗濯盆、聖所與至聖所。</p>
-    <div class="route-line" aria-label="由東向西的空間順序"><span>東門</span><i></i><span>燔祭壇</span><i></i><span>洗濯盆</span><i></i><span>至聖所</span></div>
-    <dl class="micro-stats"><div><dt>目前模型</dt><dd>${state.assetProfile === 'desktop-high' ? '完整會幕' : state.assetProfile === 'desktop-structural' ? '框架剖面' : '低模備援'}</dd></div><div><dt>使用性質</dt><dd>非商業 · 教學重建</dd></div></dl>
-    <p class="reconstruction-note">遠山、沙丘與營帳群取自參考圖的空間氣氛，只作重建脈絡，不主張營位數量或配置是經文明載。</p>
+    <p class="section-kicker">3D 探索指南</p>
+    <h2 id="overview-title">拖曳畫面，探索神聖空間</h2>
+    <p class="intro-lede">按住滑鼠左鍵拖曳環視，滾輪縮放；可隨時點選上方導覽或器物以進入深度研讀。</p>
+    <ol class="quick-steps">
+      <li><b>拖曳</b><span>旋轉 3D 視角</span></li>
+      <li><b>滾輪</b><span>拉近或縮遠</span></li>
+      <li><b>選器物</b><span>查看考據註解</span></li>
+    </ol>
+    <div class="quick-actions">
+      <button type="button" class="primary-button" data-mode-jump="tour">開始五站導覽</button>
+      <button type="button" data-mode-jump="learning">查看器物與經文</button>
+    </div>
+    <p class="orientation-note"><strong>空間方向：</strong>由東門進入，依序經過燔祭壇、洗濯盆、聖所與至聖所。</p>
+    <div class="route-line" aria-label="由東向西的空間順序">
+      <span>東門入口</span><i></i><span>燔祭壇</span><i></i><span>洗濯盆</span><i></i><span>聖所</span><i></i><span>至聖所約櫃</span>
+    </div>
+    <dl class="micro-stats">
+      <div><dt>目前模型方案</dt><dd>${state.assetProfile === 'desktop-high' ? '完整會幕' : state.assetProfile === 'desktop-structural' ? '框架剖面' : '低模備援'}</dd></div>
+      <div><dt>使用性質</dt><dd>非商業 · 聖經研讀</dd></div>
+    </dl>
+    <p class="reconstruction-note">環境光影、沙丘與營帳群依據西奈曠野地理脈絡重現，只作教學重建參考。</p>
   </section>`;
 }
 
@@ -107,7 +152,12 @@ function renderTour(state: Readonly<ExperienceState>): string {
   return `<section class="panel-card" aria-labelledby="tour-title" data-testid="tour-panel">
     <p class="section-kicker">五站導覽 · ${state.tour.index + 1}/${state.tour.total}</p>
     <h2 id="tour-title" data-testid="tour-step">${escapeHtml(stop?.title ?? '導覽')}</h2>
-    <details class="mobile-drawer tour-context-drawer"><summary>本站說明</summary><p class="tour-description">${escapeHtml(stop ? tourDescriptions[stop.id] ?? '' : '')}</p><p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote"><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}</details>
+    <details class="mobile-drawer tour-context-drawer" open>
+      <summary>本站說明</summary>
+      <p class="tour-description">${escapeHtml(stop ? tourDescriptions[stop.id] ?? '' : '')}</p>
+      <p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>
+      ${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote" open><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}
+    </details>
     <div class="tour-progress"><span style="width:${state.tour.total ? ((state.tour.index + 1) / state.tour.total) * 100 : 0}%"></span></div>
     <div class="control-row">
       <button type="button" data-tour-command="previous" ${state.tour.index === 0 ? 'disabled' : ''}>← 上一站</button>
@@ -120,22 +170,42 @@ function renderTour(state: Readonly<ExperienceState>): string {
 function renderLearning(state: Readonly<ExperienceState>): string {
   const learning = state.learning;
   const confidence = learning.confidence ? confidenceLabels[learning.confidence] : null;
+  const meta = learning.objectId ? objectMeta[learning.objectId] : null;
   const objects = objectOrder.map(([id, label]) => `<button type="button" data-learning-object="${id}" class="object-chip ${learning.objectId === id ? 'is-active' : ''}">${label}</button>`).join('');
   const scriptures = learning.scriptureReferences.length
     ? learning.scriptureReferences.map(({ id, summary, annotation, originalText, context }) => `<li><div class="scripture-head"><span class="scripture-context">${scriptureContextLabels[context]}</span><strong>${escapeHtml(id)}</strong></div><b>${escapeHtml(summary)}</b><span>${escapeHtml(annotation)}</span><details class="scripture-quote"><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(id)} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(originalText)}</p></details></li>`).join('')
     : '<li><span>請選擇器物查看經文註解。</span></li>';
   const rituals = learning.ritualIds.filter((id) => id in ritualLabels).map((id) => `<button type="button" class="primary-button" data-ritual-id="${id}">${ritualLabels[id]}</button>`).join('');
+
   return `<section class="panel-card learning-card" aria-labelledby="learning-title" data-testid="learning-panel">
-    <p class="section-kicker">選擇器物 · 查看經文</p>
-    <div class="title-with-badge"><h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}</div>
-    <p class="location-label">位置：${escapeHtml(learning.locationName ?? '—')}</p>
+    <p class="section-kicker">器物空間研讀 · 考據探索</p>
+    <div class="title-with-badge">
+      <h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>
+      ${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}
+    </div>
+    <p class="location-label">📍 位置：${escapeHtml(learning.locationName ?? '—')}</p>
+    
+    ${meta ? `
+      <div class="hebrew-meta-card">
+        <span class="hebrew-text">${escapeHtml(meta.hebrew)}</span>
+        <div class="meta-row"><span>尺寸：</span><strong>${escapeHtml(meta.dimensions)}</strong></div>
+        <div class="meta-row"><span>材料：</span><strong>${escapeHtml(meta.materials)}</strong></div>
+      </div>
+    ` : ''}
+
     <nav class="object-grid" aria-label="器物選擇">${objects}</nav>
-    <details class="mobile-drawer learning-details"><summary>查看經文註解</summary>
-      <p class="scripture-intro">下列註解分開標示製作指示、實作記錄、空間配置與事奉規範；摘要不是經文逐字翻譯。點「展開和合本原文」可查看對應段落。</p>
+    
+    <details class="mobile-drawer learning-details" open>
+      <summary>經文與事奉規範</summary>
+      <p class="scripture-intro">依據《出埃及記》25–30 章文字記錄重建；點「展開和合本原文」可研讀完整經文。</p>
       <ul class="scripture-list">${scriptures}</ul>
       ${rituals ? `<div class="ritual-launchers">${rituals}</div>` : ''}
       ${renderRitual(state)}
-      <details class="disclosure"><summary>人物與服飾的重建界線</summary><p>${escapeHtml(state.character.disclosure)}</p><p data-testid="character-status">人物視覺：本版不展示</p></details>
+      <details class="disclosure">
+        <summary>人物與服飾的考據界線</summary>
+        <p>${escapeHtml(state.character.disclosure)}</p>
+        <p data-testid="character-status">人物視覺：以聖經考據資料呈現</p>
+      </details>
     </details>
   </section>`;
 }
