@@ -4,4 +4,4 @@ util/output/embedding_index.npz
 util/output/embedding_index.meta.json
 
 # STEP Bible 官方資料集快取：可由 extract_stepbible.py --download 重建，不入庫
-.stepbible_data/
+
