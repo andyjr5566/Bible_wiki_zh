@@ -1,16 +1,9 @@
 book: 利未記
 chapter: 12
 A_use_directly:
-- name: 產婦不潔原因之爭（原罪說與血液不潔說）
-  suggested_type: 解經爭議
-  evidence: CT/KC 傾向「婦人產後不潔表徵全人類一出生就是不潔」的原罪讀法；GT《啟導本》明確反駁：此說不能解釋何以獻贖罪祭的是產婦而非新嬰；GT《舊約背景註釋》進一步指出「這裡並沒有需贖之罪，只有在壇上被清除的不潔」，主張贖罪祭實為「潔淨祭」
-  match_type: exact
-  existing_title: 產婦不潔原因之爭（原罪說與血液不潔說）
-  existing_path: link_folder/解經爭議/產婦不潔原因之爭（原罪說與血液不潔說）.md
-B_needs_update:
 - name: 摩西
   suggested_type: 人物
-  evidence: v1「耶和華對摩西說」，本章條例由摩西單獨領受（不同於利11同時對摩西亞倫兩人說話）
+  evidence: v1「耶和華對摩西說」，本章條例由摩西單獨領受（不同於利11同時對摩西亞倫兩人說話）；BH 指出摩西作為神約的中保，是基督這位神人之間終極中保的預表（提前2:5）
   match_type: exact
   existing_title: 摩西
   existing_path: link_folder/人物/摩西.md
@@ -21,8 +14,8 @@ B_needs_update:
   existing_title: 割禮之約
   existing_path: link_folder/神學/割禮之約.md
 - name: 燔祭
-  suggested_type: 原文
-  evidence: v6,8「她要把一歲的羊羔為燔祭」；GT 丁良才註：此處燔祭列在贖罪祭前，表示婦人因神的慈悲將自己獻給神
+  suggested_type: 神學
+  evidence: v6,8「她要把一歲的羊羔為燔祭」；GT 丁良才註：此處燔祭列在贖罪祭前，表示婦人因神的慈悲將自己獻給神；KC 也說燔祭排在前面因此帶有重點
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
@@ -34,13 +27,13 @@ B_needs_update:
   existing_path: link_folder/神學/贖罪祭.md
 - name: 斑鳩
   suggested_type: 主題
-  evidence: v6,8「一隻雛鴿或是一隻斑鳩為贖罪祭」；力量不夠獻羊羔者可取兩隻斑鳩代替
+  evidence: v6,8「一隻雛鴿或是一隻斑鳩為贖罪祭」；GT《啟導本》指出斑鳩是候鳥、四至十月才飛來巴勒斯坦，鴿子則一年四季都有，所以條例讓獻祭的人二者擇一
   match_type: exact
   existing_title: 斑鳩
   existing_path: link_folder/主題/斑鳩.md
 - name: 雛鴿
   suggested_type: 主題
-  evidence: v6,8 與斑鳩並列，貧窮產婦以兩隻雛鴿代替一羊羔一鳥的組合
+  evidence: v6,8 與斑鳩並列，貧窮產婦以兩隻雛鴿代替一羊羔一鳥的組合；GT 丁良才註 v6 只用一隻鳥為贖罪祭，與利5:7-10 不同，大概因為已經有羊羔為燔祭
   match_type: exact
   existing_title: 雛鴿
   existing_path: link_folder/主題/雛鴿.md
@@ -50,7 +43,24 @@ B_needs_update:
   match_type: exact
   existing_title: 燔祭祭牲的貧富分級
   existing_path: link_folder/神學/燔祭祭牲的貧富分級.md
-C_new_formal:
+- name: 潔淨與不潔淨
+  suggested_type: 神學
+  evidence: 全章以「不潔淨」與「潔淨」的往返為骨架；STEP 顯示 v2,5 的「不潔淨」是動詞 טָמֵא（H2930A），v4,6「潔淨的日子」是名詞
+    טֹהַר（H2892A），v7,8「就潔淨了」是動詞 טָהֵר（H2891）
+  match_type: exact
+  existing_title: 潔淨與不潔淨
+  existing_path: link_folder/神學/潔淨與不潔淨.md
+- name: 血
+  suggested_type: 主題
+  evidence: v4,5「產血不潔」、v7「她的血源就潔淨了」；GT《串珠》思想問題指出血在別處有贖罪與潔淨之用（17:11），在本章卻只成為玷污的源頭
+  surfaces:
+  - phrase: 產血
+    verses:
+    - 4
+    - 5
+  match_type: exact
+  existing_title: 血
+  existing_path: link_folder/主題/血.md
 - name: 產婦生產潔淨條例（男四十女八十天）
   suggested_type: 主題
   evidence: v2-8 全章核心：生男孩不潔七天、家居三十三天共四十天；生女孩不潔兩個七天、家居六十六天共八十天，滿了潔淨的日子獻燔祭與贖罪祭
@@ -61,6 +71,63 @@ C_new_formal:
   - phrase: 家居六十六天
     verses:
     - 5
-  target_path: link_folder/主題/產婦生產潔淨條例（男四十女八十天）.md
+  match_type: exact
+  existing_title: 產婦生產潔淨條例（男四十女八十天）
+  existing_path: link_folder/主題/產婦生產潔淨條例（男四十女八十天）.md
+- name: 產婦不潔原因之爭（原罪說與血液不潔說）
+  suggested_type: 解經爭議
+  evidence: CT 靈意註解讀為「婦人產後不潔表徵全人類一出生就是不潔」，但同一份 CT 的話中之光又說「不潔淨並不是指有罪或污穢」；GT《啟導本》明確反駁原罪讀法：此說不能解釋何以獻贖罪祭的是產婦而非新嬰；GT《舊約背景註釋》主張贖罪祭實為「潔淨祭」；GT
+    賈斯樂郝威分「母親的職責」與「墮落後母道的情形」
+  match_type: exact
+  existing_title: 產婦不潔原因之爭（原罪說與血液不潔說）
+  existing_path: link_folder/解經爭議/產婦不潔原因之爭（原罪說與血液不潔說）.md
+B_needs_update: []
+C_new_formal:
+- name: 血源
+  suggested_type: 原文
+  evidence: v7「她的血源就潔淨了」；CT〔原文字義〕「源」泉源；STEP 顯示原文是 מִמְּקֹר דָּמֶיהָ，מָקוֹר（H4726，maqor）簡要義為
+    fountain（泉源）
+  surfaces:
+  - phrase: 血源
+    verses:
+    - 7
+  target_path: link_folder/原文/血源.md
+- name: 禮儀不潔與道德罪的分別
+  suggested_type: 神學
+  evidence: GT《舊約背景註釋》「不潔不一定是能夠避免的，不潔的理由往往與犯罪毫無關係」；BH 兩處說本章的不潔「不是道德判決，而是需要潔淨的禮儀狀態」；CT
+    話中之光也說「不潔淨並不是指有罪或污穢」
+  target_path: link_folder/神學/禮儀不潔與道德罪的分別.md
+  semantic_hint:
+  - title: 潔淨與不潔淨
+    score: 0.407
+    type: 神學
+- name: 古代近東的產後不潔與淨化期
+  suggested_type: 背景
+  evidence: GT《舊約背景註釋》記分娩不潔在埃及、巴比倫、波斯都有案例，波斯和希臘對分娩後進入聖潔地區同樣有四十日規限，赫人則認為男嬰三個月、女嬰四個月不潔淨；並提到「經血中有鬼魔居住」是常見信念
+  target_path: link_folder/背景/古代近東的產後不潔與淨化期.md
+  semantic_hint:
+  - title: 產婦生產潔淨條例（男四十女八十天）
+    score: 0.517
+    type: 主題
+  - title: 產婦不潔原因之爭（原罪說與血液不潔說）
+    score: 0.47
+    type: 解經爭議
+  - title: 禮儀不潔與道德罪的分別
+    score: 0.469
+    type: 神學
+- name: 馬利亞的潔淨禮與獻鳥（路2：22-24）
+  suggested_type: 互文
+  evidence: CT 註主耶穌依此條例第八天行割禮（路二21）；GT 丁良才、《啟導本》、《聖經精讀本》都以馬利亞只獻兩隻鳥說明約瑟一家貧窮；KC 指出馬利亞是本條例唯一的例外——她所生的孩子是完全潔淨的一位
+  target_path: link_folder/互文/馬利亞的潔淨禮與獻鳥（路2：22-24）.md
+  semantic_hint:
+  - title: 潔淨痲瘋者的兩鳥儀式
+    score: 0.52
+    type: 主題
+  - title: 斑鳩
+    score: 0.5
+    type: 主題
+  - title: 產婦生產潔淨條例（男四十女八十天）
+    score: 0.488
+    type: 主題
 D_new_candidate: []
 E_skip: []

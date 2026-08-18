@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_12.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 8,
+      "words": 117,
+      "first": "Lev 12:1",
+      "last": "Lev 12:8",
+      "sha256": "8866a559492187b13079b456678f9306522ab651389d4bccf421d051c1befa61",
+      "bytes": 22229,
+      "chars": 19429,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
