@@ -187,6 +187,7 @@
   },
   "active": "d0b3f11024b8a66d",
   "lastOpenFiles": [
+    "util/apply_finetuning_patch.py",
     "util/check_chars.py",
     "util/apply_targeted_patch.py",
     "util/patch_entries.py",
@@ -202,7 +203,6 @@
     "util/inspect_ex20_part.py",
     "util/update_ex20_all.py",
     "util/update_ex19.py",
-    "util/update_ex18.py",
     "link_folder/原文/寄居的.md",
     "01 創世記/第22章.md",
     "link_folder/主題/清早起來.md",
