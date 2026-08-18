@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_14.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 57,
+      "words": 818,
+      "first": "Lev 14:1",
+      "last": "Lev 14:57",
+      "sha256": "4a36744066c7c40e1a31b56fa3ec698ed802051a4b29bbc0a81ac749ee700de2",
+      "bytes": 158204,
+      "chars": 138907,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

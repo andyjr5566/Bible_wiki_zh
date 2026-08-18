@@ -15,7 +15,7 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 3
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
 - verse: 4
   phrase: 求潔淨
   target: 大痲瘋得潔淨的條例（人）
@@ -54,7 +54,7 @@ links:
   target: 牛膝草
 - verse: 7
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
 - verse: 7
   phrase: 求潔淨
   target: 大痲瘋得潔淨的條例（人）
@@ -83,6 +83,9 @@ links:
   phrase: 油一羅革
   target: 一羅革油（log）
 - verse: 11
+  phrase: 行潔淨之禮
+  target: 大痲瘋得潔淨的條例（人）
+- verse: 11
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 11
@@ -102,7 +105,7 @@ links:
   target: 一羅革油（log）
 - verse: 12
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 13
   phrase: 贖愆祭
   target: 贖愆祭（asham）
@@ -155,8 +158,8 @@ links:
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 18
-  phrase: 求潔淨
-  target: 大痲瘋得潔淨的條例（人）
+  phrase: 抹在那求潔淨人的頭上
+  target: 右耳垂右手大拇指右腳大拇指（抹血抹油潔淨禮）
 - verse: 19
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
@@ -198,7 +201,7 @@ links:
   target: 一羅革油（log）
 - verse: 24
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 25
   phrase: 贖愆祭
   target: 贖愆祭（asham）
@@ -236,8 +239,8 @@ links:
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 29
-  phrase: 求潔淨
-  target: 大痲瘋得潔淨的條例（人）
+  phrase: 抹在那求潔淨人的頭上
+  target: 右耳垂右手大拇指右腳大拇指（抹血抹油潔淨禮）
 - verse: 30
   phrase: 照他的力量
   target: 貧窮人的潔淨條例（大痲瘋）
@@ -246,7 +249,7 @@ links:
   target: 亞倫和他兒子（祭司）
 - verse: 32
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
 - verse: 32
   phrase: 不能將關乎得潔淨之物預備夠數
   target: 貧窮人的潔淨條例（大痲瘋）
@@ -342,7 +345,7 @@ links:
   target: 大痲瘋條例總結（利13-14）
 - verse: 55
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
 - verse: 57
   phrase: 指明何時為潔淨，何時為不潔淨
   target: 大痲瘋條例總結（利13-14）
