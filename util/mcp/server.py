@@ -9,11 +9,15 @@ model endpoint on the user's behalf.
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
+import io
 import json
 import re
+import runpy
 import subprocess
 import sys
+import threading
 import urllib.parse
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -103,6 +107,16 @@ _HEBREW_RUN_RE = re.compile(r"[֐-׿]+")
 _NIQQUD_RE = re.compile(r"[֑-ׇ]")
 _PAREN_LATIN_RE = re.compile(r"[（(]\s*([A-Za-z][A-Za-z'’\-./ ]{1,34})\s*[)）]")
 _ITALIC_LATIN_RE = re.compile(r"\*([A-Za-z][A-Za-z'’\-]{2,24})\*")
+# A transliteration is often written bare, introduced by a Chinese marker phrase
+# rather than wrapped in brackets or italics — 「希伯來文 mayim chayyim」.  The two
+# patterns above never saw those (利14 實測：活水條目的杜撰音譯 mayim chayyim 全庫
+# 0 命中卻掃不出來), so the marker phrase itself is used as the anchor.  Anchoring
+# on the marker keeps this precise: ordinary English in the prose — source sigla,
+# 漢森氏病 (Hansen)、NIV — is not introduced this way.
+_MARKED_LATIN_RE = re.compile(
+    r"(?:希伯來文|希伯來字|原文作|原文為|原文是|音譯作|音譯為|音譯)\s*"
+    r"[「『\"']?\s*([A-Za-z][A-Za-z'’\-]{1,24}(?:\s+[A-Za-z][A-Za-z'’\-]{1,24}){0,2})"
+)
 # Source labels and translation sigla are not transliterations.
 _TRANSLITERATION_IGNORE = {
     "CT", "GT", "KC", "BH", "BibleHub", "BibleHub Study", "KingComments",
@@ -262,24 +276,123 @@ def _manual_completion(canonical: str, chapter: int) -> List[str]:
     return missing
 
 
-def _run_manual(command: str, canonical: str, chapter: int, *options: str) -> Dict[str, Any]:
-    cmd = [sys.executable, str(UTIL_DIR / "run_chapter_manual.py"), command, *options, canonical, str(chapter)]
-    try:
-        proc = subprocess.run(
-            cmd,
-            cwd=ROOT_DIR,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            timeout=90,
-        )
-    except subprocess.TimeoutExpired:
-        return _error("manual 流程逾時（90 秒）", command=cmd)
+# --- util CLI execution ------------------------------------------------------
+#
+# These wrappers used to shell out unconditionally.  On some hosts the MCP
+# server is not allowed to create a child process at all: every call blocked
+# until its own timeout even though the identical command finished in seconds
+# from a shell (build_link_index.py — 300s timeout here, 2.3s from a shell), and
+# every gate wrapper was therefore unusable.  A host that blocks spawning makes
+# the attempt hang rather than fail fast, so it is probed once with a trivial
+# interpreter call; when spawning is unavailable the CLI is executed in this
+# process with ``runpy`` instead.  ``runpy`` keeps the exact CLI semantics —
+# same argv, same cwd, module run as ``__main__`` — so the scripts behave
+# identically; a subprocess is still preferred when the host allows it, for the
+# stronger isolation.
+
+_EXEC_LOCK = threading.Lock()
+_SPAWN_PROBE_SECONDS = 10
+_spawn_allowed: Optional[bool] = None
+
+
+def _can_spawn() -> bool:
+    """Whether this host lets the server start a child process (probed once)."""
+    global _spawn_allowed
+    if _spawn_allowed is None:
+        try:
+            subprocess.run(
+                [sys.executable, "-c", "pass"],
+                cwd=ROOT_DIR,
+                capture_output=True,
+                timeout=_SPAWN_PROBE_SECONDS,
+            )
+            _spawn_allowed = True
+        except (subprocess.TimeoutExpired, OSError):
+            _spawn_allowed = False
+    return _spawn_allowed
+
+
+def _exec_util_inprocess(
+    script_path: Path, argv: List[str], timeout: int, cmd: List[str]
+) -> Dict[str, Any]:
+    """Execute the CLI as ``__main__`` in a worker thread of this process."""
+    out, err = io.StringIO(), io.StringIO()
+    box: Dict[str, Any] = {"returncode": 0}
+
+    def _target() -> None:
+        try:
+            runpy.run_path(str(script_path), run_name="__main__")
+        except SystemExit as exc:  # argparse and the gates exit with a status
+            code = exc.code
+            box["returncode"] = 0 if code is None else (code if isinstance(code, int) else 1)
+        except BaseException as exc:  # a crashing CLI must not take down the server
+            box["returncode"] = 1
+            err.write(f"{type(exc).__name__}: {exc}")
+
+    with _EXEC_LOCK:
+        saved_argv = sys.argv[:]
+        sys.argv = [str(script_path), *argv]
+        try:
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+                worker = threading.Thread(target=_target, daemon=True)
+                worker.start()
+                worker.join(timeout)
+                if worker.is_alive():
+                    return {"timed_out": True, "command": cmd, "in_process": True}
+        finally:
+            sys.argv = saved_argv
     return {
-        "success": proc.returncode == 0,
-        "returncode": proc.returncode,
-        "stdout": proc.stdout.strip(),
-        "stderr": proc.stderr.strip(),
+        "returncode": box["returncode"],
+        "stdout": out.getvalue(),
+        "stderr": err.getvalue(),
+        "command": cmd,
+        "in_process": True,
+    }
+
+
+def _exec_util(script_path: Path, argv: List[str], timeout: int) -> Dict[str, Any]:
+    """Run a util CLI, spawning when the host allows it and in-process when not.
+
+    ``timed_out`` and ``os_error`` are returned rather than raised so that each
+    caller keeps its own error wording.
+    """
+    cmd = [sys.executable, str(script_path), *argv]
+    if _can_spawn():
+        try:
+            proc = subprocess.run(
+                cmd,
+                cwd=ROOT_DIR,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                timeout=timeout,
+            )
+        except subprocess.TimeoutExpired:
+            return {"timed_out": True, "command": cmd}
+        except OSError as exc:
+            return {"os_error": str(exc), "command": cmd}
+        return {
+            "returncode": proc.returncode,
+            "stdout": proc.stdout or "",
+            "stderr": proc.stderr or "",
+            "command": cmd,
+        }
+    return _exec_util_inprocess(script_path, argv, timeout, cmd)
+
+
+def _run_manual(command: str, canonical: str, chapter: int, *options: str) -> Dict[str, Any]:
+    argv = [command, *options, canonical, str(chapter)]
+    result = _exec_util(UTIL_DIR / "run_chapter_manual.py", argv, 90)
+    cmd = result["command"]
+    if result.get("timed_out"):
+        return _error("manual 流程逾時（90 秒）", command=cmd)
+    if result.get("os_error"):
+        return _error(f"無法執行 run_chapter_manual.py：{result['os_error']}", command=cmd)
+    return {
+        "success": result["returncode"] == 0,
+        "returncode": result["returncode"],
+        "stdout": result["stdout"].strip(),
+        "stderr": result["stderr"].strip(),
         "command": " ".join(cmd),
     }
 
@@ -289,29 +402,19 @@ def _run_util_command(script: str, *args: str, timeout: int = 300) -> Dict[str, 
     script_path = UTIL_DIR / script
     if not script_path.is_file():
         return _error(f"找不到 util 程式：{script}")
-    cmd = [sys.executable, str(script_path), *(str(arg) for arg in args)]
-    try:
-        proc = subprocess.run(
-            cmd,
-            cwd=ROOT_DIR,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            timeout=max(1, min(int(timeout), 900)),
-        )
-    except subprocess.TimeoutExpired:
-        return _error(
-            f"{script} 執行逾時（{timeout} 秒）",
-            command=" ".join(cmd),
-        )
-    except OSError as exc:
-        return _error(f"無法執行 {script}：{exc}", command=" ".join(cmd))
+    bounded = max(1, min(int(timeout), 900))
+    result = _exec_util(script_path, [str(arg) for arg in args], bounded)
+    cmd = " ".join(result["command"])
+    if result.get("timed_out"):
+        return _error(f"{script} 執行逾時（{timeout} 秒）", command=cmd)
+    if result.get("os_error"):
+        return _error(f"無法執行 {script}：{result['os_error']}", command=cmd)
     return {
-        "success": proc.returncode == 0,
-        "returncode": proc.returncode,
-        "stdout": proc.stdout.strip()[-30_000:],
-        "stderr": proc.stderr.strip()[-10_000:],
-        "command": " ".join(cmd),
+        "success": result["returncode"] == 0,
+        "returncode": result["returncode"],
+        "stdout": result["stdout"].strip()[-30_000:],
+        "stderr": result["stderr"].strip()[-10_000:],
+        "command": cmd,
     }
 
 
@@ -1637,7 +1740,11 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
             stripped = _NIQQUD_RE.sub("", run)
             if stripped and stripped not in raw_unpointed:
                 hebrew.append({"file": relative, "token": run})
-        candidates = set(_PAREN_LATIN_RE.findall(text)) | set(_ITALIC_LATIN_RE.findall(text))
+        candidates = (
+            set(_PAREN_LATIN_RE.findall(text))
+            | set(_ITALIC_LATIN_RE.findall(text))
+            | set(_MARKED_LATIN_RE.findall(text))
+        )
         for token in sorted(candidates):
             token = token.strip()
             if not token or token in _TRANSLITERATION_IGNORE:
@@ -1654,6 +1761,18 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
                         "note": "整串查無出處，但每個字詞單獨都有出處（多為 raw 換行造成），請人工確認寫法",
                     }
                     latin.append(simplified_note)
+                continue
+            # An apostrophe is a spelling choice, not a missing source: the entry
+            # may write se'irim where the source writes seirim.  That is worth
+            # aligning but it is not 查無出處, so it must not become a hard flag.
+            bare = token.replace("'", "").replace("’", "")
+            if bare != token and _latin_in_corpus(bare, raw):
+                if include_warnings:
+                    latin.append({
+                        "file": relative,
+                        "token": token,
+                        "note": f"來源用的拼法沒有撇號（{bare}），請對齊來源寫法",
+                    })
                 continue
             latin.append({"file": relative, "token": token})
         found = sorted(set(text) & _SIMPLIFIED_CHARS)
@@ -1685,22 +1804,20 @@ _MAX_GATE_TIMEOUT_SECONDS = 900
 
 
 def _run_gate(script: str, *args: str, timeout: int = _MAX_GATE_TIMEOUT_SECONDS) -> Dict[str, Any]:
-    cmd = [sys.executable, str(UTIL_DIR / script), *args]
-    try:
-        proc = subprocess.run(
-            cmd, cwd=ROOT_DIR, capture_output=True, text=True, encoding="utf-8", timeout=timeout
-        )
-    except subprocess.TimeoutExpired:
+    result = _exec_util(UTIL_DIR / script, list(args), timeout)
+    if result.get("timed_out"):
         return {"gate": script, "passed": False, "error": f"逾時（{timeout} 秒）"}
-    stdout = proc.stdout.strip()
+    if result.get("os_error"):
+        return {"gate": script, "passed": False, "error": f"無法執行：{result['os_error']}"}
+    stdout = result["stdout"].strip()
     tail = "\n".join(stdout.splitlines()[-6:])
-    passed = proc.returncode == 0 and "結論：FAIL" not in stdout
+    passed = result["returncode"] == 0 and "結論：FAIL" not in stdout
     return {
         "gate": " ".join([script, *args]),
         "passed": passed,
-        "returncode": proc.returncode,
+        "returncode": result["returncode"],
         "tail": tail,
-        "stderr": proc.stderr.strip()[-500:],
+        "stderr": result["stderr"].strip()[-500:],
     }
 
 

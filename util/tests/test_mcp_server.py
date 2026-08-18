@@ -1,4 +1,5 @@
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -11,6 +12,70 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from util.mcp import server
+
+
+class UtilExecutionFallbackTests(unittest.TestCase):
+    """The server must still run the util CLIs on hosts that block spawning.
+
+    Such a host does not fail fast — every ``subprocess.run`` blocks until its
+    own timeout — so the gates were unusable until the in-process path existed.
+    """
+
+    def _script(self, root, body):
+        path = Path(root) / "fake_gate.py"
+        path.write_text(body, encoding="utf-8")
+        return path
+
+    def test_in_process_run_captures_stdout_and_returncode(self):
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "import sys\nprint('結論：PASS')\nsys.exit(0)\n")
+            result = server._exec_util_inprocess(script, [], 30, ["cmd"])
+        self.assertEqual(result["returncode"], 0)
+        self.assertIn("結論：PASS", result["stdout"])
+        self.assertTrue(result["in_process"])
+
+    def test_in_process_run_reports_nonzero_exit(self):
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "import sys\nprint('結論：FAIL')\nsys.exit(2)\n")
+            result = server._exec_util_inprocess(script, [], 30, ["cmd"])
+        self.assertEqual(result["returncode"], 2)
+
+    def test_in_process_run_passes_argv_through_then_restores_it(self):
+        before = sys.argv[:]
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "import sys\nprint('|'.join(sys.argv[1:]))\n")
+            result = server._exec_util_inprocess(script, ["利未記", "14"], 30, ["cmd"])
+        self.assertIn("利未記|14", result["stdout"])
+        self.assertEqual(sys.argv, before, "the server's own argv must not be clobbered")
+
+    def test_in_process_run_survives_a_crashing_cli(self):
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "raise RuntimeError('boom')\n")
+            result = server._exec_util_inprocess(script, [], 30, ["cmd"])
+        self.assertEqual(result["returncode"], 1)
+        self.assertIn("boom", result["stderr"])
+
+    def test_blocked_spawn_is_detected_and_not_retried(self):
+        calls = []
+
+        def fake_run(*args, **kwargs):
+            calls.append(args)
+            raise subprocess.TimeoutExpired(cmd="probe", timeout=10)
+
+        with patch.object(server, "_spawn_allowed", None), patch.object(
+            subprocess, "run", fake_run
+        ):
+            self.assertFalse(server._can_spawn())
+            self.assertFalse(server._can_spawn())
+        self.assertEqual(len(calls), 1, "the probe must be cached, not repeated per call")
+
+    def test_exec_util_falls_back_to_in_process_when_spawn_is_blocked(self):
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "print('結論：PASS')\n")
+            with patch.object(server, "_spawn_allowed", False):
+                result = server._exec_util(script, [], 30)
+        self.assertTrue(result["in_process"])
+        self.assertIn("結論：PASS", result["stdout"])
 
 
 class MCPReadBoundaryTests(unittest.TestCase):
@@ -394,6 +459,37 @@ class ScanUnsourcedTokensTests(unittest.TestCase):
             "knowledge_nodes:\n  原文:\n    - 測試條目\norganization: |\n  文字\n",
             encoding="utf-8",
         )
+
+    def test_flags_a_bare_transliteration_introduced_by_a_marker_phrase(self):
+        """利14 實測：杜撰的「希伯來文 mayim chayyim」不在括號也不是斜體。"""
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "活水的希伯來文 mayim chayyim，指流動的水。\n")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        latin = {item["token"] for item in result["unsourced_latin"]}
+        self.assertIn("mayim chayyim", latin)
+
+    def test_marker_phrase_does_not_flag_a_sourced_transliteration(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "這地的希伯來文 Peniel 就是本節的用字。\n")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        latin = {item["token"] for item in result["unsourced_latin"]}
+        self.assertNotIn("Peniel", latin)
+
+    def test_apostrophe_variant_is_reviewed_not_flagged_as_unsourced(self):
+        """來源寫 Peniel、條目寫 Pen'iel：是拼法要對齊，不是查無出處。"""
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "音譯 Pen'iel 見本節。\n")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        hard = {item["token"] for item in result["unsourced_latin"]}
+        review = {item["token"] for item in result["latin_needing_review"]}
+        self.assertNotIn("Pen'iel", hard)
+        self.assertIn("Pen'iel", review)
 
     def test_flags_only_tokens_absent_from_the_corpus(self):
         with tempfile.TemporaryDirectory() as name:
