@@ -187,6 +187,7 @@
   },
   "active": "d0b3f11024b8a66d",
   "lastOpenFiles": [
+    "util/apply_final_reconciliation.py",
     "util/clean_exodus_3.py",
     "util/fix_exodus_3.py",
     "util/patch_link_folders.py",
@@ -206,7 +207,6 @@
     "01 創世記/第16章.md",
     "01 創世記/第7章.md",
     "util/patch_round_fix.py",
-    "util/check_clean_11_20.py",
     "01 創世記/第45章.md",
     "01 創世記/第42章.md",
     "03 利未記/第8章.md",
