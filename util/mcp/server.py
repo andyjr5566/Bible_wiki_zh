@@ -296,17 +296,28 @@ _spawn_allowed: Optional[bool] = None
 
 
 def _can_spawn() -> bool:
-    """Whether this host lets the server start a child process (probed once)."""
+    """Whether this host lets the server run a util CLI as a child process.
+
+    The probe deliberately spawns a *grandchild*: some hosts allow the server to
+    start python but block what that python then starts, and several of the CLIs
+    shell out themselves (check_chapter_files.py runs ``git``).  A one-level
+    probe passes on such a host and the gate still hangs — check_chapter_files
+    timed out at 180s while finishing in 1.1s from a shell.
+    """
     global _spawn_allowed
     if _spawn_allowed is None:
+        probe = (
+            "import subprocess,sys;"
+            "subprocess.run([sys.executable,'-c','pass'],capture_output=True,timeout=5)"
+        )
         try:
-            subprocess.run(
-                [sys.executable, "-c", "pass"],
+            proc = subprocess.run(
+                [sys.executable, "-c", probe],
                 cwd=ROOT_DIR,
                 capture_output=True,
                 timeout=_SPAWN_PROBE_SECONDS,
             )
-            _spawn_allowed = True
+            _spawn_allowed = proc.returncode == 0
         except (subprocess.TimeoutExpired, OSError):
             _spawn_allowed = False
     return _spawn_allowed
@@ -368,7 +379,12 @@ def _exec_util(script_path: Path, argv: List[str], timeout: int) -> Dict[str, An
                 timeout=timeout,
             )
         except subprocess.TimeoutExpired:
-            return {"timed_out": True, "command": cmd}
+            # A CLI that finishes in seconds from a shell did not finish here, so
+            # spawning is unreliable on this host after all.  Stop paying the
+            # timeout on every later call and retry the work in-process.
+            global _spawn_allowed
+            _spawn_allowed = False
+            return _exec_util_inprocess(script_path, argv, timeout, cmd)
         except OSError as exc:
             return {"os_error": str(exc), "command": cmd}
         return {

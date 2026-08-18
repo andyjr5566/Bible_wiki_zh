@@ -69,6 +69,39 @@ class UtilExecutionFallbackTests(unittest.TestCase):
             self.assertFalse(server._can_spawn())
         self.assertEqual(len(calls), 1, "the probe must be cached, not repeated per call")
 
+    def test_probe_spawns_a_grandchild(self):
+        """A one-level probe passes on hosts that block only nested spawning.
+
+        check_chapter_files.py runs ``git`` itself, so it still hung at 180s
+        after the one-level probe reported success.
+        """
+        seen = []
+
+        def fake_run(cmd, **kwargs):
+            seen.append(cmd)
+            raise subprocess.TimeoutExpired(cmd="probe", timeout=10)
+
+        with patch.object(server, "_spawn_allowed", None), patch.object(
+            subprocess, "run", fake_run
+        ):
+            server._can_spawn()
+        self.assertIn("subprocess", seen[0][-1], "the probe itself must spawn a child")
+
+    def test_a_spawn_that_times_out_retries_in_process_and_stops_spawning(self):
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(name, "print('結論：PASS')\n")
+
+            def fake_run(cmd, **kwargs):
+                raise subprocess.TimeoutExpired(cmd=cmd, timeout=1)
+
+            with patch.object(server, "_spawn_allowed", True), patch.object(
+                subprocess, "run", fake_run
+            ):
+                result = server._exec_util(script, [], 30)
+                self.assertFalse(server._spawn_allowed, "later calls must skip the wait")
+        self.assertTrue(result["in_process"])
+        self.assertIn("結論：PASS", result["stdout"])
+
     def test_exec_util_falls_back_to_in_process_when_spawn_is_blocked(self):
         with tempfile.TemporaryDirectory() as name:
             script = self._script(name, "print('結論：PASS')\n")
