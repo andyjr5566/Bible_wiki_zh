@@ -175,7 +175,7 @@ class ManualPromptIntegrationTests(unittest.TestCase):
             plan = {
                 "A_use_directly": [], "B_needs_update": [],
                 "C_new_formal": [{
-                    "name": "創造（bara）", "suggested_type": "神學", "evidence": "1節",
+                    "name": "創造（bara）", "suggested_type": "神學", "evidence": "1節；H1254",
                     "surfaces": [{"phrase": "創造", "verses": [1]}],
                 }],
                 "D_draft": [],
@@ -213,26 +213,44 @@ class ManualPromptIntegrationTests(unittest.TestCase):
     def test_m3_unparseable_evidence_fails_small_without_dumping_full_chapter(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            def make_word(ref, pos, w, t, s, m, gloss, lexicon):
+                return extract_stepbible.WordEntry(
+                    reference=ref, position=pos, word=w, transliteration=t,
+                    gloss=gloss, strongs_raw=s, strongs=[s], main_strong=s,
+                    morphology_raw=m, morphology=m, lexicon_short=lexicon,
+                )
+            def write_step(path, title, verses):
+                ref = extract_stepbible.parse_reference(title)
+                path.write_text(extract_stepbible.render_markdown(ref, verses, False), encoding="utf-8")
+
             (root / "raw_scripture" / "創世記").mkdir(parents=True)
             (root / "raw_scripture" / "創世記" / "第1章.txt").write_text(
                 "起初，神創造天地。\n地是空虛混沌。\n", encoding="utf-8"
             )
             (root / "raw_data").mkdir()
-            (root / "raw_data" / "stepbible_genesis_1.txt").write_text(valid_step_text(), encoding="utf-8")
-            (root / "raw_data" / "ct.txt").write_text("CT commentary", encoding="utf-8")
-            (root / "link_folder" / "神學").mkdir(parents=True)
+            verses = {
+                1: [
+                    make_word("Gen.1.1", 1, "בָּרָא", "bara", "H1254A", "V-Qal", gloss="created", lexicon="create"),
+                ],
+                2: [
+                    make_word("Gen.1.2", 1, "הָיְתָה", "haytah", "H1961", "V-Qal", gloss="was", lexicon="be"),
+                ],
+            }
+            write_step(root / "raw_data" / "stepbible_genesis_1.txt", "Genesis 1", verses)
             chapter = root / "01 創世記" / ".tmp" / "第1章"
             chapter.mkdir(parents=True)
-            (chapter / "source_manifest.md").write_text(manifest_text([
-                ("CT", "逐節註解", "https://example.test/ct", "raw_data/ct.txt", "OK"),
-                ("STEP Bible", "原文資料", "https://x/step", "raw_data/stepbible_genesis_1.txt", "OK")
-            ]), encoding="utf-8")
+            (chapter / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| STEP Bible | 原文資料 | https://x/step | raw_data/stepbible_genesis_1.txt | OK |\n",
+                encoding="utf-8",
+            )
             (chapter / "manual").mkdir()
             ctx = run_chapter.ChapterContext("創世記", 1, root=root, index={}, homonyms={})
             plan = {
                 "A_use_directly": [], "B_needs_update": [],
                 "C_new_formal": [{
-                    "name": "神學候選", "suggested_type": "神學", "evidence": "純語義描述無節號",
+                    "name": "原文候選", "suggested_type": "原文", "evidence": "純語義描述無節號",
                     "surfaces": [],
                 }],
                 "D_draft": [],
@@ -252,4 +270,3 @@ class ManualPromptIntegrationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

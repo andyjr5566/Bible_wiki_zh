@@ -169,7 +169,7 @@ class StepContextToolTests(unittest.TestCase):
                 encoding="utf-8",
             )
             with patch.object(server, "ROOT_DIR", root):
-                result = server.query_step_context("創世記", 1)
+                result = server.query_step_context("創世記", 1, verses="1-3")
         self.assertFalse(result["success"])
         self.assertIn("未宣告 OK STEP", result["error"])
 
@@ -255,6 +255,44 @@ class StepContextToolTests(unittest.TestCase):
                 result = server.query_step_context("創世記", 1, base_strong="H1254")
             self.assertTrue(result["success"])
             self.assertIn("בָּרָא", result["context"])
+            self.assertEqual(1, result["result_count"])
+            self.assertFalse(result["truncated"])
+
+    def test_query_step_context_rejects_empty_targets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.query_step_context("創世記", 1)
+            self.assertFalse(result["success"])
+            self.assertIn("至少必須提供", result["error"])
+
+    def test_find_step_occurrences_mutual_exclusivity(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                # Both strong and base_strong provided -> error
+                result_both = server.find_step_occurrences("創世記", 1, strong="H1254A", base_strong="H1254")
+                self.assertFalse(result_both["success"])
+                self.assertIn("不可同時指定", result_both["error"])
+
+                # Neither provided -> error
+                result_none = server.find_step_occurrences("創世記", 1)
+                self.assertFalse(result_none["success"])
+                self.assertIn("必須指定", result_none["error"])
+
+    def test_find_step_candidates_include_low(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                res_default = server.find_step_candidates("創世記", 1, include_low=False)
+                res_with_low = server.find_step_candidates("創世記", 1, include_low=True)
+            self.assertTrue(res_default["success"])
+            self.assertTrue(res_with_low["success"])
+            self.assertGreaterEqual(res_with_low["total_found"], res_default["total_found"])
+
 
 
 

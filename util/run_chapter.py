@@ -1217,12 +1217,25 @@ def chapter_content_step(
                             for field in (e.get("name"), e.get("evidence"), e.get("definition")):
                                 if field:
                                     plan_strongs.extend(extract_stepbible.extract_strongs(field))
+        entry_dir = ctx.path("entry_content")
+        if entry_dir.is_dir():
+            for yaml_path in entry_dir.glob("*.yaml"):
+                try:
+                    ytext = yaml_path.read_text(encoding="utf-8")
+                    plan_strongs.extend(extract_stepbible.extract_strongs(ytext))
+                except Exception:
+                    continue
         try:
             step_source_path = step_context.find_formal_step_source(ctx.root, ctx.book, ctx.chapter)
             raw = step_source_path.read_text(encoding="utf-8-sig", errors="strict")
             doc = extract_stepbible.parse_rendered_markdown_text(raw)
             step_candidates = step_context.discover_candidates(
-                doc, plan_strongs=plan_strongs, max_results=step_context.HARD_CANDIDATE_MAX
+                doc,
+                root=ctx.root,
+                plan_strongs=plan_strongs,
+                include_medium=True,
+                include_low=False,
+                max_results=step_context.HARD_CANDIDATE_MAX,
             )
         except Exception:
             step_candidates = None

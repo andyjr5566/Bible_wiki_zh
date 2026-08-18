@@ -1131,6 +1131,7 @@ def find_step_candidates(
     chapter: int,
     verses: Optional[str] = None,
     include_medium: bool = True,
+    include_low: bool = False,
     nearby_window: int = 5,
     max_results: int = 20,
 ) -> Dict[str, Any]:
@@ -1151,10 +1152,14 @@ def find_step_candidates(
         raw = path.read_text(encoding="utf-8-sig", errors="strict")
         doc = step_extractor.parse_rendered_markdown_text(raw)
         candidates = step_context.discover_candidates(
-            doc, verses=selected, max_results=max_results
+            doc,
+            root=ROOT_DIR,
+            verses=selected,
+            nearby_window=nearby_window,
+            include_medium=include_medium,
+            include_low=include_low,
+            max_results=max_results,
         )
-        if not include_medium:
-            candidates = [c for c in candidates if c.priority == "HIGH"]
         return {
             "success": True,
             "book": canonical,
@@ -1163,9 +1168,15 @@ def find_step_candidates(
                 {
                     "base_strong": c.base_strong,
                     "exact_strongs": list(c.exact_strongs),
+                    "surface": c.surface,
+                    "context_gloss": c.context_gloss,
+                    "lexicon_word": c.lexicon_word,
+                    "lexicon_transliteration": c.lexicon_transliteration,
+                    "lexicon_short": c.lexicon_short,
                     "headword": c.headword,
                     "transliteration": c.transliteration,
                     "short_gloss": c.short_gloss,
+                    "variants": list(c.variants),
                     "occurrences_count": len(c.occurrences),
                     "priority": c.priority,
                     "signals": list(c.signals),
@@ -1198,11 +1209,20 @@ def find_step_occurrences(
         chapter = int(chapter)
         if chapter < 1:
             raise ValueError("chapter 必須是正整數")
-        target = base_strong or strong
-        if not target:
+        if strong and base_strong:
+            return _error(
+                "不可同時指定 base_strong 與 strong，請二選一：strong 為 exact match，base_strong 為 base/variant group match。"
+            )
+        if not strong and not base_strong:
             return _error("必須指定 base_strong 或 strong")
         return step_context.find_nearby_occurrences(
-            ROOT_DIR, canonical, chapter, target, window=window, max_results=max_results
+            ROOT_DIR,
+            canonical,
+            chapter,
+            base_strong=base_strong,
+            strong=strong,
+            window=window,
+            max_results=max_results,
         )
     except (OSError, UnicodeError, TypeError, ValueError) as exc:
         return _error(str(exc))
@@ -1224,15 +1244,17 @@ def query_step_context(
     ``verses`` accepts values such as ``1-3,5``.  ``strong`` matches the exact
     Extended Strong (for example H1254A), ``base_strong`` matches base Strong codes
     (for example H1254), and ``word`` searches original text, transliteration, or
-    the brief lexicon.  The root and source are fixed: this tool reads only the
-    STEP file declared by the chapter manifest (or the canonical local raw file
-    when no chapter manifest exists), never the web.
+    the brief lexicon.  The query requires at least one target parameter.
     """
     try:
         canonical = _canonical_book(book)
         chapter = int(chapter)
         if chapter < 1:
             raise ValueError("chapter 必須是正整數")
+        if not verses and not strong and not base_strong and not word:
+            return _error(
+                "至少必須提供 verses, strong, base_strong 或 word 其中之一進行精確查詢；若需探索本章原文候選，請使用 find_step_candidates。"
+            )
         selected = step_context.parse_verse_spec(verses) if verses else None
         path = step_context.find_formal_step_source(
             ROOT_DIR, canonical, chapter, verses=selected
@@ -1248,14 +1270,18 @@ def query_step_context(
             expected_chapter=chapter,
             scripture_verse_count=scripture_count,
         )
+        bounded_results = min(max(1, int(max_results)), step_context.HARD_QUERY_MAX_RESULTS)
+        bounded_chars = min(max(500, int(max_characters)), step_context.HARD_QUERY_MAX_CHARS)
         projection = step_context.project_step_source(
-            path, verses=selected, strong=strong, base_strong=base_strong, word=word
+            path,
+            verses=selected,
+            strong=strong,
+            base_strong=base_strong,
+            word=word,
+            max_results=bounded_results,
+            max_characters=bounded_chars,
+            allow_full_chapter=False,
         )
-        text = projection.text
-        truncated = False
-        if len(text) > max_characters:
-            text = text[:max_characters] + "\n…（達到 max_characters 上限截斷）"
-            truncated = True
         return {
             "success": True,
             "book": canonical,
@@ -1265,16 +1291,19 @@ def query_step_context(
             "strong": strong,
             "base_strong": base_strong,
             "word": word,
-            "context": text,
+            "context": projection.text,
+            "result_count": projection.occurrence_count,
+            "returned_chars": len(projection.text),
+            "truncated": projection.truncated,
             "metrics": {
                 "raw_chars": projection.raw_chars,
                 "raw_bytes": projection.raw_bytes,
-                "projected_chars": len(text),
-                "projected_bytes": len(text.encode("utf-8")),
+                "projected_chars": len(projection.text),
+                "projected_bytes": len(projection.text.encode("utf-8")),
                 "occurrences": projection.occurrence_count,
                 "lexicon_entries": projection.lexicon_count,
                 "selected_verses": list(projection.selected_verses),
-                "truncated": truncated,
+                "truncated": projection.truncated,
             },
             "validation": receipt,
         }

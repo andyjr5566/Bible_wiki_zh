@@ -488,15 +488,14 @@ def build_prompt_context(
             raw_chars = len(item.path.read_text(encoding="utf-8-sig", errors="replace"))
 
             if step_verses == ():
-                # M3 unresolved fail-small mode
+                # M3 unresolved / non-original-skipped / full-chapter-evidence fail-small mode
                 notice = (
                     f"{STEP_PROMPT_DISCLAIMER}\n\n"
                     "## STEP Bible task projection\n"
                     f"- source: {item.path.name}\n"
                     "- selected verses: none\n"
                     "- mode: unresolved\n"
-                    "- note: evidence/surfaces 未能解析節號；未自動注入整章 STEP 資料。"
-                    "需要時請透過 MCP 工具 query_step_context / find_step_candidates 精確查詢。"
+                    "- note: 未自動注入整章 STEP 資料；需要時請透過 MCP 工具 query_step_context / find_step_candidates 精確查詢。"
                 )
                 projections.append(notice)
                 step_metrics.append({
@@ -507,16 +506,21 @@ def build_prompt_context(
                     "projected_chars": len(notice),
                     "projected_bytes": len(notice.encode("utf-8")),
                     "occurrences": 0,
+                    "occurrence_count": 0,
                     "lexicon_entries": 0,
                     "selected_verses": [],
                     "candidate_count": 0,
                     "selected_candidate_count": 0,
                     "truncated": False,
+                    "returned_chars": len(notice),
+                    "budget": step_char_budget or step_context.DEFAULT_STEP_PROMPT_CHAR_BUDGET,
                     "fallback_used": False,
                 })
             elif step_verses is not None:
-                # M3 targeted mode (specific verses or explicit full-chapter)
-                projection = step_context.project_step_source(item.path, verses=step_verses)
+                # M3 targeted mode (specific verses)
+                projection = step_context.project_step_source(
+                    item.path, verses=step_verses, allow_full_chapter=True
+                )
                 text_with_disclaimer = f"{STEP_PROMPT_DISCLAIMER}\n\n{projection.text}"
                 projections.append(text_with_disclaimer)
                 step_metrics.append({
@@ -527,20 +531,25 @@ def build_prompt_context(
                     "projected_chars": len(text_with_disclaimer),
                     "projected_bytes": len(text_with_disclaimer.encode("utf-8")),
                     "occurrences": projection.occurrence_count,
+                    "occurrence_count": projection.occurrence_count,
                     "lexicon_entries": projection.lexicon_count,
                     "selected_verses": list(projection.selected_verses),
-                    "candidate_count": len(projection.selected_verses),
-                    "selected_candidate_count": len(projection.selected_verses),
-                    "truncated": False,
+                    "candidate_count": len(step_candidates) if step_candidates is not None else 1,
+                    "selected_candidate_count": len(step_candidates) if step_candidates is not None else 1,
+                    "truncated": projection.truncated,
+                    "returned_chars": len(text_with_disclaimer),
+                    "budget": step_char_budget or step_context.DEFAULT_STEP_PROMPT_CHAR_BUDGET,
                     "fallback_used": False,
                 })
             else:
                 # M6 selected candidates mode (step_verses is None)
                 budget = step_char_budget or step_context.DEFAULT_STEP_PROMPT_CHAR_BUDGET
+                disclaimer_len = len(STEP_PROMPT_DISCLAIMER) + 2
+                evidence_budget = max(500, budget - disclaimer_len)
                 raw = item.path.read_text(encoding="utf-8-sig", errors="strict")
                 doc = extract_stepbible.parse_rendered_markdown_text(raw)
                 evidence = step_context.select_step_evidence(
-                    doc, candidates=step_candidates, char_budget=budget
+                    doc, root=root, candidates=step_candidates, char_budget=evidence_budget
                 )
                 text_with_disclaimer = f"{STEP_PROMPT_DISCLAIMER}\n\n{evidence.text}"
                 projections.append(text_with_disclaimer)
@@ -552,11 +561,13 @@ def build_prompt_context(
                     "projected_chars": len(text_with_disclaimer),
                     "projected_bytes": len(text_with_disclaimer.encode("utf-8")),
                     "occurrences": 0,
+                    "occurrence_count": 0,
                     "lexicon_entries": 0,
                     "selected_verses": [],
                     "candidate_count": evidence.candidate_count,
                     "selected_candidate_count": evidence.selected_count,
                     "truncated": evidence.truncated,
+                    "returned_chars": len(text_with_disclaimer),
                     "budget": budget,
                     "fallback_used": False,
                 })

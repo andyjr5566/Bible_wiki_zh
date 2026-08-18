@@ -251,11 +251,15 @@ def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dic
         ctx, plan, batch_size=1,
         source_context_policy=source_excerpts.MANUAL_PROJECTED,
     )
+    m3_snapshot = ctx._last_prompt_context
+
     chapter_capture = run_chapter_manual.PromptCapture(prompt_dir, "chapter_content", ctx=ctx)
     ctx.runner = chapter_capture
     run_chapter.chapter_content_step(
         ctx, plan, source_context_policy=source_excerpts.MANUAL_PROJECTED
     )
+    m6_snapshot = ctx._last_prompt_context
+
     if len(entry_capture.metrics) != 1 or len(chapter_capture.metrics) != 1:
         raise RuntimeError(f"{name} benchmark 未捕捉到唯一 M3/M6 prompt")
     receipt = step_context.validate_step_source(
@@ -269,26 +273,24 @@ def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dic
             f"{name} STEP word count 漂移：預期 {expected_words}，實際 {receipt['words']}"
         )
 
-    # Compute Layer 2 (full chapter compact projection) prompt size for comparison
-    compact_proj = step_context.project_step_source(step_path)
+    # Compute Layer 2 (Phase 1 compact projection) prompt size for comparison
+    compact_proj = step_context.project_step_source(step_path, allow_full_chapter=True)
     ref_block = source_excerpts._manual_reference_block(
         source_excerpts.manifest_source_identities(ctx.path("source_manifest.md"), ctx.root), ctx.root
     )
     layer2_context_text = f"{ref_block}\n\n{compact_proj.text}"
-    
+
     # M3 Layer 2 prompt
     m3_metric = entry_capture.metrics[0]
     m3_l3_prompt = (prompt_dir / m3_metric["path"]).read_text(encoding="utf-8")
     m3_l2_prompt = m3_l3_prompt
-    m3_snapshot = ctx._last_prompt_context
     if m3_snapshot and m3_snapshot.text in m3_l3_prompt:
         m3_l2_prompt = m3_l3_prompt.replace(m3_snapshot.text, layer2_context_text, 1)
-    
+
     # M6 Layer 2 prompt
     m6_metric = chapter_capture.metrics[0]
     m6_l3_prompt = (prompt_dir / m6_metric["path"]).read_text(encoding="utf-8")
     m6_l2_prompt = m6_l3_prompt
-    m6_snapshot = ctx._last_prompt_context
     if m6_snapshot and m6_snapshot.text in m6_l3_prompt:
         m6_l2_prompt = m6_l3_prompt.replace(m6_snapshot.text, layer2_context_text, 1)
 
@@ -333,9 +335,14 @@ def run_benchmarks(data_path: Path) -> dict:
             for stage in ("m3", "m6"):
                 if case[stage]["reduction_l1_to_l3_percent"] < 30:
                     raise RuntimeError(
-                        f"{case['case']} {stage.upper()} prompt reduction < 30%："
+                        f"{case['case']} {stage.upper()} prompt reduction vs Layer 1 < 30%："
                         f"{case[stage]['reduction_l1_to_l3_percent']}%"
                     )
+            if case["m6"]["reduction_l2_to_l3_percent"] <= 0:
+                raise RuntimeError(
+                    f"{case['case']} M6 prompt reduction vs Layer 2 <= 0%："
+                    f"{case['m6']['reduction_l2_to_l3_percent']}%"
+                )
     return {
 
         "version": 2,

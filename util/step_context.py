@@ -37,6 +37,10 @@ HARD_OCCURRENCE_MAX = 50
 DEFAULT_NEARBY_WINDOW = 5
 HARD_NEARBY_WINDOW = 10
 DEFAULT_STEP_PROMPT_CHAR_BUDGET = 7000
+DEFAULT_QUERY_MAX_RESULTS = 200
+HARD_QUERY_MAX_RESULTS = 200
+DEFAULT_QUERY_MAX_CHARS = 12000
+HARD_QUERY_MAX_CHARS = 12000
 
 
 class StepValidationError(ValueError):
@@ -60,18 +64,36 @@ class StepProjection:
     occurrence_count: int
     lexicon_count: int
     selected_verses: tuple[int, ...]
+    truncated: bool = False
 
 
 @dataclass(frozen=True)
 class StepCandidate:
     base_strong: str
     exact_strongs: tuple[str, ...]
-    headword: str
-    transliteration: str
-    short_gloss: str
+    surface: str
+    context_gloss: str
+    lexicon_word: str
+    lexicon_transliteration: str
+    lexicon_short: str
+    variants: tuple[dict, ...]
     occurrences: tuple[dict, ...]
     priority: str  # "HIGH", "MEDIUM", "LOW"
     signals: tuple[str, ...]
+
+    @property
+    def headword(self) -> str:
+        return self.surface
+
+    @property
+    def transliteration(self) -> str:
+        return self.lexicon_transliteration or (
+            self.occurrences[0]["transliteration"] if self.occurrences else ""
+        )
+
+    @property
+    def short_gloss(self) -> str:
+        return self.lexicon_short or self.context_gloss
 
 
 @dataclass(frozen=True)
@@ -161,22 +183,61 @@ def _evidence_verses(evidence: str) -> tuple[set[int], list[str], bool]:
     return verses, warnings, False
 
 
+NON_ORIGINAL_TYPES = {
+    "人物", "地點", "神學", "背景", "文化", "歷史", "主題", "事件", "解經爭議", "互文"
+}
+
+
+def _is_non_original_entry(entry: dict) -> bool:
+    stype = str(entry.get("suggested_type") or entry.get("type") or "").strip()
+    if stype in NON_ORIGINAL_TYPES:
+        name = str(entry.get("name") or "")
+        evidence = str(entry.get("evidence") or "")
+        if _HEBREW_RE.search(name) or _GREEK_RE.search(name):
+            return False
+        if re.search(r"\b[HG]\d+[A-Za-z]?\b", name + " " + evidence):
+            return False
+        if re.search(r"[（\(][a-zA-Z\s'\-]+[）\)]", name):
+            return False
+        return True
+    return False
+
+
 def select_candidate_verses(
     batch: Iterable[dict], available_verses: Iterable[int]
 ) -> VerseSelection:
     """Select M3 STEP verses from batch evidence/surfaces with fail-small policy."""
     available = set(int(verse) for verse in available_verses)
+    batch_list = list(batch)
+    if not batch_list:
+        return VerseSelection((), "unresolved", ("候選清單為空",))
+
+    if all(_is_non_original_entry(entry) for entry in batch_list):
+        return VerseSelection(
+            (),
+            "non-original-skipped",
+            ("本批候選均為非原文類條目，未自動注入該節全部原文詞彙；若需原文證據請用 query_step_context。",),
+        )
+
     selected: set[int] = set()
     warnings: list[str] = []
     full_chapter = False
-    for entry in batch:
+    for entry in batch_list:
+        if _is_non_original_entry(entry):
+            continue
         selected.update(_surface_verses(entry))
         parsed, parse_warnings, requested_full = _evidence_verses(entry.get("evidence", ""))
         selected.update(parsed)
         warnings.extend(f"{entry.get('name', 'candidate')}：{item}" for item in parse_warnings)
         full_chapter = full_chapter or requested_full
+
     if full_chapter:
-        return VerseSelection(tuple(sorted(available)), "full-chapter-evidence", tuple(warnings))
+        return VerseSelection(
+            (),
+            "full-chapter-evidence",
+            ("候選範圍為全章，為避免 token 膨脹未自動投射整章 compact STEP；請使用 find_step_candidates 探索或 query_step_context 查詢。",),
+        )
+
     outside = sorted(selected - available)
     if outside:
         warnings.append(f"evidence 節號超出 STEP source：{outside}")
@@ -190,6 +251,7 @@ def select_candidate_verses(
     return VerseSelection((), "unresolved", tuple(warnings))
 
 
+
 def _all_words(document: extract_stepbible.StepDocument):
     for verse in sorted(document.verses):
         for word in sorted(document.verses[verse], key=lambda item: item.position):
@@ -199,15 +261,19 @@ def _all_words(document: extract_stepbible.StepDocument):
 def discover_candidates(
     document: extract_stepbible.StepDocument,
     *,
+    root: Optional[Path | str] = None,
     verses: Optional[Iterable[int]] = None,
     plan_strongs: Optional[Iterable[str]] = None,
+    nearby_window: int = DEFAULT_NEARBY_WINDOW,
+    include_medium: bool = True,
+    include_low: bool = False,
     max_results: int = DEFAULT_CANDIDATE_MAX,
 ) -> list[StepCandidate]:
     """Discover deterministic linguistic candidates from a validated STEP document.
 
     Excludes STEP control Strongs (H90xx), groups Extended Strong variants under
-    their base Strong, and assigns priority based on plan matches, chapter recurrence,
-    and extended variants.
+    their base Strong, scans bounded nearby chapters to score recurrence, and
+    categorizes candidates into HIGH, MEDIUM, and LOW priorities.
     """
     max_count = min(max(1, int(max_results)), HARD_CANDIDATE_MAX)
     selected_verses = set(int(v) for v in verses) if verses is not None else set(document.verses)
@@ -225,6 +291,31 @@ def discover_candidates(
             norm = extract_stepbible.normalize_strong(cleaned)
             if norm:
                 plan_exact_strongs.add(norm)
+
+    # Scan nearby window once to aggregate base Strong counts in adjacent chapters
+    nearby_counts: dict[str, int] = {}
+    nearby_root = Path(root) if root else (ROOT if (ROOT / "raw_data").is_dir() else None)
+    if nearby_root and nearby_window > 0:
+        window_val = min(max(1, int(nearby_window)), HARD_NEARBY_WINDOW)
+        start_ch = max(1, document.reference.chapter - window_val)
+        end_ch = document.reference.chapter + window_val
+        for ch in range(start_ch, end_ch + 1):
+            if ch == document.reference.chapter:
+                continue
+            filename = extract_stepbible.stepbible_filename(document.reference.book_name, ch)
+            path = nearby_root / "raw_data" / filename
+            if not path.is_file():
+                continue
+            try:
+                raw = path.read_text(encoding="utf-8-sig", errors="strict")
+                doc = extract_stepbible.parse_rendered_markdown_text(raw)
+                for _, w in _all_words(doc):
+                    if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong):
+                        base = extract_stepbible.base_strong(w.main_strong)
+                        if base:
+                            nearby_counts[base] = nearby_counts.get(base, 0) + 1
+            except Exception:
+                continue
 
     groups: dict[str, list[dict]] = {}
     for verse, word in _all_words(document):
@@ -245,15 +336,32 @@ def discover_candidates(
             "exact_strong": word.main_strong,
             "morphology": word.morphology_raw or word.morphology,
             "gloss": word.gloss,
-            "lexicon": word.lexicon_short,
+            "lexicon_word": word.lexicon_word,
+            "lexicon_transliteration": word.lexicon_transliteration,
+            "lexicon_short": word.lexicon_short,
         })
 
     candidates: list[StepCandidate] = []
     for base, occs in groups.items():
         exact_strongs = tuple(sorted({o["exact_strong"] for o in occs if o["exact_strong"]}))
-        headword = occs[0]["surface"]
-        transliteration = occs[0]["transliteration"]
-        short_gloss = occs[0]["lexicon"] or occs[0]["gloss"]
+        surface = occs[0]["surface"]
+        context_gloss = occs[0]["gloss"]
+        lexicon_word = occs[0]["lexicon_word"] or occs[0]["surface"]
+        lexicon_transliteration = occs[0]["lexicon_transliteration"] or occs[0]["transliteration"]
+        lexicon_short = occs[0]["lexicon_short"]
+
+        variants_map: dict[str, dict] = {}
+        for o in occs:
+            es = o["exact_strong"]
+            if es not in variants_map:
+                variants_map[es] = {
+                    "exact_strong": es,
+                    "lexicon_word": o["lexicon_word"] or o["surface"],
+                    "lexicon_transliteration": o["lexicon_transliteration"] or o["transliteration"],
+                    "lexicon_short": o["lexicon_short"],
+                    "gloss": o["gloss"],
+                }
+        variants = tuple(variants_map[es] for es in exact_strongs)
 
         signals: list[str] = []
         is_plan_target = (
@@ -269,16 +377,25 @@ def discover_candidates(
         elif count == 2:
             signals.append("chapter_recurrence_x2")
 
+        nearby_count = nearby_counts.get(base, 0)
+        if nearby_count > 0:
+            signals.append(f"nearby_chapter_recurrence_x{nearby_count}")
+
         if len(exact_strongs) > 1:
             signals.append(f"extended_variants_{len(exact_strongs)}")
 
         if is_plan_target or count >= 3:
             priority = "HIGH"
-        elif count == 2 or len(exact_strongs) > 1:
+        elif count == 2 or (count == 1 and nearby_count > 0):
             priority = "MEDIUM"
         else:
             priority = "LOW"
             signals.append("single_occurrence")
+
+        if not include_low and priority == "LOW":
+            continue
+        if not include_medium and priority != "HIGH":
+            continue
 
         simplified_occs = tuple({
             "verse": o["verse"],
@@ -287,15 +404,19 @@ def discover_candidates(
             "exact_strong": o["exact_strong"],
             "morphology": o["morphology"],
             "gloss": o["gloss"],
+            "transliteration": o["transliteration"],
         } for o in occs)
 
         candidates.append(
             StepCandidate(
                 base_strong=base,
                 exact_strongs=exact_strongs,
-                headword=headword,
-                transliteration=transliteration,
-                short_gloss=short_gloss,
+                surface=surface,
+                context_gloss=context_gloss,
+                lexicon_word=lexicon_word,
+                lexicon_transliteration=lexicon_transliteration,
+                lexicon_short=lexicon_short,
+                variants=variants,
                 occurrences=simplified_occs,
                 priority=priority,
                 signals=tuple(signals),
@@ -317,29 +438,45 @@ def find_nearby_occurrences(
     root: Path | str,
     book: str,
     chapter: int,
-    base_strong_value: str,
+    base_strong_value: Optional[str] = None,
     *,
+    base_strong: Optional[str] = None,
+    strong: Optional[str] = None,
     window: int = DEFAULT_NEARBY_WINDOW,
     max_results: int = DEFAULT_OCCURRENCE_MAX,
 ) -> dict:
-    """Find occurrences of base_strong across nearby chapters within a bounded window."""
+    """Find occurrences of base_strong or exact strong across nearby chapters."""
     root = Path(root)
     canonical = canonical_book_name(book)
     chapter = int(chapter)
     window = min(max(1, int(window)), HARD_NEARBY_WINDOW)
     max_results = min(max(1, int(max_results)), HARD_OCCURRENCE_MAX)
-    target_base = extract_stepbible.base_strong(base_strong_value)
-    if not target_base:
+
+    effective_base = base_strong or base_strong_value
+    if strong and effective_base:
         return {
             "success": False,
-            "error": f"無法解析 base Strong：{base_strong_value}",
+            "error": "不可同時指定 base_strong 與 strong，請二選一：strong 為 exact match，base_strong 為 base/variant group match。",
+            "book": canonical,
+            "chapter": chapter,
+            "occurrences": [],
+        }
+    if not strong and not effective_base:
+        return {
+            "success": False,
+            "error": "必須指定 base_strong 或 strong",
             "book": canonical,
             "chapter": chapter,
             "occurrences": [],
         }
 
+    target_exact = extract_stepbible.normalize_strong(strong) if strong else None
+    target_base = extract_stepbible.base_strong(effective_base) if effective_base else None
+
     occurrences = []
     scanned_chapters = []
+    missing_chapters = []
+    invalid_chapters = []
     start_ch = max(1, chapter - window)
     end_ch = chapter + window
 
@@ -347,18 +484,26 @@ def find_nearby_occurrences(
         filename = extract_stepbible.stepbible_filename(canonical, ch)
         path = root / "raw_data" / filename
         if not path.is_file():
+            missing_chapters.append(ch)
             continue
         scanned_chapters.append(ch)
         try:
             raw = path.read_text(encoding="utf-8-sig", errors="strict")
             doc = extract_stepbible.parse_rendered_markdown_text(raw)
-        except Exception:
+        except Exception as exc:
+            invalid_chapters.append({"chapter": ch, "error": str(exc)})
             continue
 
         for verse, word in _all_words(doc):
             if not word.main_strong:
                 continue
-            if extract_stepbible.base_strong(word.main_strong) == target_base:
+            matches = False
+            if target_exact:
+                matches = (word.main_strong == target_exact)
+            elif target_base:
+                matches = (extract_stepbible.base_strong(word.main_strong) == target_base)
+
+            if matches:
                 occurrences.append({
                     "book": canonical,
                     "chapter": ch,
@@ -380,11 +525,15 @@ def find_nearby_occurrences(
         "success": True,
         "book": canonical,
         "chapter": chapter,
+        "strong": target_exact,
         "base_strong": target_base,
+        "match_type": "exact" if target_exact else "base_group",
         "window": window,
         "occurrences": occurrences[:max_results],
         "total_found": len(occurrences),
         "chapters_scanned": scanned_chapters,
+        "missing_chapters": missing_chapters,
+        "invalid_chapters": invalid_chapters,
     }
 
 
@@ -407,11 +556,20 @@ def render_candidate_summary(
     lines.append("")
 
     for c in candidates:
-        lines.append(f"### {c.base_strong} ({c.headword} / {c.transliteration}) — {c.priority}")
-        lines.append(f"- exact Strong: {', '.join(c.exact_strongs)}")
-        lines.append(f"- brief gloss: {c.short_gloss}")
+        header_desc = f"{c.surface} / {c.lexicon_word}" if c.surface != c.lexicon_word else c.surface
+        lines.append(f"### {c.base_strong} ({header_desc} / {c.lexicon_transliteration}) — {c.priority}")
+        lines.append(f"- exact Strongs: {', '.join(c.exact_strongs)}")
+        lines.append(f"- context gloss: {c.context_gloss}")
+        if c.lexicon_short:
+            lines.append(f"- brief lexicon: {c.lexicon_short}")
         lines.append(f"- occurrences in chapter: {len(c.occurrences)}")
         lines.append(f"- signals: {', '.join(c.signals)}")
+        if len(c.variants) > 1:
+            lines.append("- variants:")
+            for v in c.variants:
+                lines.append(
+                    f"  - {v['exact_strong']} | {v['lexicon_word']} ({v['lexicon_transliteration']}) | {v['lexicon_short']}"
+                )
         lines.append("- instances:")
         for occ in c.occurrences:
             lines.append(
@@ -426,19 +584,28 @@ def render_candidate_summary(
 def select_step_evidence(
     document: extract_stepbible.StepDocument,
     *,
+    root: Optional[Path | str] = None,
     candidates: Optional[list[StepCandidate]] = None,
     plan_strongs: Optional[Iterable[str]] = None,
     verses: Optional[Iterable[int]] = None,
+    nearby_window: int = DEFAULT_NEARBY_WINDOW,
     char_budget: int = DEFAULT_STEP_PROMPT_CHAR_BUDGET,
 ) -> StepEvidence:
-    """Filter and render candidates within char_budget without corrupting individual records."""
+    """Filter and render HIGH/MEDIUM candidates within char_budget without padding LOW words."""
     if candidates is None:
         candidates = discover_candidates(
             document,
+            root=root,
             verses=verses,
             plan_strongs=plan_strongs,
+            nearby_window=nearby_window,
+            include_medium=True,
+            include_low=False,
             max_results=HARD_CANDIDATE_MAX,
         )
+
+    # Automatic prompt context NEVER injects LOW candidates to fill remaining budget
+    candidates = [c for c in candidates if c.priority in ("HIGH", "MEDIUM")]
 
     if not candidates:
         text = (
@@ -470,7 +637,6 @@ def select_step_evidence(
         else:
             break
 
-
     truncated = len(selected) < len(candidates)
     final_text = render_candidate_summary(
         selected,
@@ -485,6 +651,7 @@ def select_step_evidence(
         truncated=truncated,
         total_chars=len(final_text),
     )
+
 
 
 def validate_step_source(
@@ -580,14 +747,31 @@ def render_projection(
     strong: Optional[str] = None,
     base_strong: Optional[str] = None,
     word: Optional[str] = None,
+    max_results: int = DEFAULT_QUERY_MAX_RESULTS,
+    max_characters: int = DEFAULT_QUERY_MAX_CHARS,
+    allow_full_chapter: bool = False,
     source_path: Optional[Path] = None,
-) -> tuple[str, int, int, tuple[int, ...]]:
-    """Render occurrences plus one lexicon row per exact Extended Strong."""
+) -> tuple[str, int, int, tuple[int, ...], bool]:
+    """Render occurrences plus one lexicon row per exact Extended Strong with bounded budget."""
+    if (
+        not allow_full_chapter
+        and verses is None
+        and strong is None
+        and base_strong is None
+        and word is None
+    ):
+        raise ValueError(
+            "至少必須提供 verses, strong, base_strong 或 word 其中之一進行精確查詢；若需探索本章原文候選，請使用 find_step_candidates。"
+        )
+
+    max_count = min(max(1, int(max_results)), HARD_QUERY_MAX_RESULTS)
+    max_chars = min(max(500, int(max_characters)), HARD_QUERY_MAX_CHARS)
+
     selected = set(int(verse) for verse in verses) if verses is not None else set(document.verses)
     strong_filter = extract_stepbible.normalize_strong(strong) if strong else None
     base_filter = extract_stepbible.base_strong(base_strong) if base_strong else None
     word_filter = (word or "").casefold()
-    occurrences = []
+    all_matching = []
     for verse, entry in _all_words(document):
         if verse not in selected:
             continue
@@ -599,27 +783,81 @@ def render_projection(
             entry.word + " " + entry.transliteration + " " + entry.lexicon_short
         ).casefold():
             continue
-        occurrences.append((verse, entry))
+        all_matching.append((verse, entry))
 
-    lexical: dict[str, str] = {}
-    for _verse, entry in occurrences:
-        if entry.main_strong and entry.lexicon_short:
-            lexical.setdefault(entry.main_strong, entry.lexicon_short)
+    truncated = False
+    if len(all_matching) > max_count:
+        all_matching = all_matching[:max_count]
+        truncated = True
+
+    included_occurrences = []
+    included_lexical: dict[str, str] = {}
     reference = document.reference
-    selected_present = tuple(sorted({verse for verse, _entry in occurrences}))
     source_label = source_path.as_posix() if source_path else "canonical STEP TXT"
-    lines = [
+    selected_present_all = sorted({verse for verse, _entry in all_matching})
+
+    header_lines = [
         "## STEP Bible task projection",
         f"- source: {Path(source_label).name if source_path else source_label}",
         f"- reference: {reference.book_name} {reference.chapter}",
-        f"- selected verses: {','.join(map(str, selected_present)) or 'none'}",
+        f"- selected verses: {','.join(map(str, selected_present_all)) or 'none'}",
         "- boundary: lexicon 是可能義域，不等於本節語境義；morphology 不自行證明神學結論。",
+    ]
+
+    for verse, entry in all_matching:
+        test_occs = included_occurrences + [(verse, entry)]
+        test_lex = dict(included_lexical)
+        if entry.main_strong and entry.lexicon_short:
+            test_lex[entry.main_strong] = entry.lexicon_short
+
+        occ_lines = []
+        act_v = None
+        for v, e in test_occs:
+            if v != act_v:
+                occ_lines.append(f"#### {reference.code} {reference.chapter}:{v}")
+                act_v = v
+            fields = [
+                str(e.position),
+                e.word,
+                e.transliteration,
+                e.main_strong,
+                e.morphology_raw or e.morphology,
+                e.gloss,
+            ]
+            occ_lines.append("- " + " | ".join(f.strip() for f in fields))
+
+        lex_lines = ["", "### Lexicon（依 exact Extended Strong 去重）"]
+        for sid, d in test_lex.items():
+            lex_lines.append(f"- {sid} | {d}")
+
+        total_len = sum(
+            len(l) + 1
+            for l in header_lines
+            + [
+                "",
+                "### Occurrences",
+                "format: position | original | transliteration | exact Extended Strong | morphology code | context gloss",
+            ]
+            + occ_lines
+            + lex_lines
+        )
+        if total_len <= max_chars or not included_occurrences:
+            included_occurrences = test_occs
+            included_lexical = test_lex
+        else:
+            truncated = True
+            break
+
+    lines = list(header_lines)
+    if truncated:
+        lines.append("- note: 查詢結果已達到 max_results 或 max_characters 上限截斷。")
+    lines.extend([
         "",
         "### Occurrences",
         "format: position | original | transliteration | exact Extended Strong | morphology code | context gloss",
-    ]
+    ])
     active_verse = None
-    for verse, entry in occurrences:
+    for verse, entry in included_occurrences:
         if verse != active_verse:
             lines.append(f"#### {reference.code} {reference.chapter}:{verse}")
             active_verse = verse
@@ -632,16 +870,17 @@ def render_projection(
             entry.gloss,
         ]
         lines.append("- " + " | ".join(field.strip() for field in fields))
-    if not occurrences:
+    if not included_occurrences:
         lines.append("- （沒有符合查詢條件的 occurrence）")
     lines.extend(["", "### Lexicon（依 exact Extended Strong 去重）"])
-    if lexical:
-        for strong_id, definition in lexical.items():
+    if included_lexical:
+        for strong_id, definition in included_lexical.items():
             lines.append(f"- {strong_id} | {definition}")
     else:
         lines.append("- （沒有可用 brief lexicon）")
     text = "\n".join(lines).rstrip() + "\n"
-    return text, len(occurrences), len(lexical), selected_present
+    selected_present = tuple(sorted({verse for verse, _entry in included_occurrences}))
+    return text, len(included_occurrences), len(included_lexical), selected_present, truncated
 
 
 def project_step_source(
@@ -651,12 +890,23 @@ def project_step_source(
     strong: Optional[str] = None,
     base_strong: Optional[str] = None,
     word: Optional[str] = None,
+    max_results: int = DEFAULT_QUERY_MAX_RESULTS,
+    max_characters: int = DEFAULT_QUERY_MAX_CHARS,
+    allow_full_chapter: bool = False,
 ) -> StepProjection:
     path = Path(path)
     raw = path.read_text(encoding="utf-8-sig", errors="strict")
     document = extract_stepbible.parse_rendered_markdown_text(raw)
-    text, occurrence_count, lexicon_count, selected = render_projection(
-        document, verses=verses, strong=strong, base_strong=base_strong, word=word, source_path=path
+    text, occurrence_count, lexicon_count, selected, truncated = render_projection(
+        document,
+        verses=verses,
+        strong=strong,
+        base_strong=base_strong,
+        word=word,
+        max_results=max_results,
+        max_characters=max_characters,
+        allow_full_chapter=allow_full_chapter,
+        source_path=path,
     )
     return StepProjection(
         text=text,
@@ -667,7 +917,9 @@ def project_step_source(
         occurrence_count=occurrence_count,
         lexicon_count=lexicon_count,
         selected_verses=selected,
+        truncated=truncated,
     )
+
 
 
 def find_formal_step_source(
@@ -749,13 +1001,14 @@ def main(argv=None) -> int:
             if not args.base_strong and not args.strong:
                 print("❌ --occurrences 需要指定 --base-strong 或 --strong", file=sys.stderr)
                 return 1
-            strong_target = args.base_strong or args.strong
             result = find_nearby_occurrences(
-                ROOT, args.book, args.chapter, strong_target,
+                ROOT, args.book, args.chapter,
+                base_strong=args.base_strong, strong=args.strong,
                 window=args.window, max_results=args.max_results
             )
             print(json.dumps(result, ensure_ascii=False, indent=2))
-            return 0
+            return 0 if result.get("success") else 1
+
 
         path = find_formal_step_source(ROOT, args.book, args.chapter, verses=verses)
         scripture = ROOT / "raw_scripture" / canonical_book_name(args.book) / f"第{args.chapter}章.txt"
