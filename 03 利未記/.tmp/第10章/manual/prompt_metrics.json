@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 10,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 135126,
+        "bytes": 191876
+      },
+      "after": {
+        "chars": 30656,
+        "bytes": 41129
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_10.txt",
+          "chars": 8772,
+          "bytes": 24636
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_10.txt",
+          "chars": 14365,
+          "bytes": 40409
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_10.txt",
+          "chars": 8488,
+          "bytes": 8536
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_10.txt",
+          "chars": 44772,
+          "bytes": 44796
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_10.txt",
+          "raw_chars": 53771,
+          "raw_bytes": 61699,
+          "projected_chars": 25096,
+          "projected_bytes": 28587,
+          "occurrences": 327,
+          "lexicon_entries": 132,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 10
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 亞倫
   suggested_type: 人物
   evidence: 全章核心人物，兩子因獻凡火死亡（v1-2）、神親自曉諭他祭司禁酒定例（v8-11）、為未吃贖罪祭肉向摩西辯解（v16-20）
@@ -44,12 +43,12 @@ B_needs_update:
   match_type: exact
   existing_title: 摩西
   existing_path: link_folder/人物/摩西.md
-- name: 親近（qarab）
+- name: 親近
   suggested_type: 原文
   evidence: v3「這就是耶和華所說：我在親近我的人中要顯為聖」
   match_type: exact
-  existing_title: 親近（qarab）
-  existing_path: link_folder/原文/親近（qarab）.md
+  existing_title: 親近
+  existing_path: link_folder/原文/親近.md
 - name: 利10：3
   suggested_type: 互文
   evidence: v3 全節本身即此互文條目的核心經文：「我在親近我的人中要顯為聖；在眾民面前，我要得榮耀」
@@ -63,17 +62,17 @@ B_needs_update:
   existing_title: 素祭（minchah）
   existing_path: link_folder/原文/素祭（minchah）.md
 - name: 平安祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v14-15「所搖的胸，所舉的腿……因為這些是從以色列人平安祭中給你」
   match_type: exact
   existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
-- name: 搖祭（tenufah）
+  existing_path: link_folder/神學/平安祭.md
+- name: 搖祭
   suggested_type: 原文
   evidence: v14-15「所搖的胸」「當搖祭，在耶和華面前搖一搖」
   match_type: exact
-  existing_title: 搖祭（tenufah）
-  existing_path: link_folder/原文/搖祭（tenufah）.md
+  existing_title: 搖祭
+  existing_path: link_folder/原文/搖祭.md
 - name: 至聖的供物（聖與至聖之分）
   suggested_type: 主題
   evidence: v12「因為是至聖的」；v13「你的分和你兒子的分」；v17「這贖罪祭既是至聖的，主又給了你們」
@@ -86,48 +85,72 @@ B_needs_update:
   match_type: exact
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
-- name: 膏油（聖膏油）
+- name: 聖膏油
   suggested_type: 原文
   evidence: v7「因為耶和華的膏油在你們的身上」，是亞倫和剩下兒子不可出會幕門的理由
   match_type: exact
-  existing_title: 膏油（聖膏油）
-  existing_path: link_folder/原文/膏油（聖膏油）.md
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
 - name: 燔祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v12,16,19 承接聖職期間常獻的燔祭與百姓所獻的燔祭
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
-C_new_formal:
 - name: 凡火
   suggested_type: 主題
   evidence: v1「在耶和華面前獻上凡火，是耶和華沒有吩咐他們的」，指非取自燔祭壇聖火的火，是本章核心事件起因
-  target_path: link_folder/主題/凡火.md
+  match_type: exact
+  existing_title: 凡火
+  existing_path: link_folder/主題/凡火.md
 - name: 祭司不可為死人哀哭（居喪條例）
   suggested_type: 主題
   evidence: v6-7「不可蓬頭散髮，也不可撕裂衣裳，免得你們死亡……你們也不可出會幕的門，恐怕你們死亡，因為耶和華的膏油在你們的身上」
-  target_path: link_folder/主題/祭司不可為死人哀哭（居喪條例）.md
+  match_type: exact
+  existing_title: 祭司不可為死人哀哭（居喪條例）
+  existing_path: link_folder/主題/祭司不可為死人哀哭（居喪條例）.md
 - name: 祭司禁酒的定例
   suggested_type: 主題
   evidence: v9「你和你兒子進會幕的時候，清酒、濃酒都不可喝，免得你們死亡；這要作你們世世代代永遠的定例」
-  target_path: link_folder/主題/祭司禁酒的定例.md
+  match_type: exact
+  existing_title: 祭司禁酒的定例
+  existing_path: link_folder/主題/祭司禁酒的定例.md
 - name: 聖俗潔淨不潔淨的分別
   suggested_type: 神學
   evidence: v10-11「使你們可以將聖的、俗的，潔淨的、不潔淨的，分別出來；又使你們可以將耶和華藉摩西曉諭以色列人的一切律例教訓他們」
-  target_path: link_folder/神學/聖俗潔淨不潔淨的分別.md
-  semantic_hint:
-  - title: 潔淨與不潔淨
-    score: 0.459
-    type: 神學
-  - title: 聖潔（qodesh）
-    score: 0.436
-    type: 原文
-  - title: 潔淨與不潔淨的早期區分
-    score: 0.434
-    type: 主題
+  match_type: exact
+  existing_title: 聖俗潔淨不潔淨的分別
+  existing_path: link_folder/神學/聖俗潔淨不潔淨的分別.md
 - name: 米沙利和以利撒反
   suggested_type: 人物
   evidence: v4-5「摩西召了亞倫叔父烏薛的兒子米沙利、以利撒反來……於是二人上前來，把他們穿著袍子抬到營外」
-  target_path: link_folder/人物/米沙利和以利撒反.md
+  match_type: exact
+  existing_title: 米沙利和以利撒反
+  existing_path: link_folder/人物/米沙利和以利撒反.md
+B_needs_update:
+- name: 壇火常燒不熄滅
+  suggested_type: 主題
+  evidence: v1「凡火」的定義正是以壇火為對照；CT 註「祭壇上的聖火來自神自己(參九24)，其後早晚添柴，不可熄滅(參六12)」，BH 亦指焚香之火本應取自「由神親自點燃」的燔祭壇
+  match_type: exact
+  existing_title: 壇火常燒不熄滅
+  existing_path: link_folder/主題/壇火常燒不熄滅.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: v1 拿答亞比戶所盛的火不是從燔祭壇取的；GT 丁良才「這火不是從燔祭壇上得的，大概是從會幕院中，祭司作飯的地方所取來的凡火」
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 補行逾越節
+  suggested_type: 歷史
+  evidence: v5 米沙利和以利撒反抬屍出營；GT《聖經精讀本》指二人「因移動、觸摸拿答和亞比戶的屍體，成為不潔的人」，觸屍不潔持續七天，「因此不能參加那年正月14日的逾越節」，故有民9:1-12
+    第二次逾越節的特別定例
+  match_type: exact
+  existing_title: 補行逾越節
+  existing_path: link_folder/歷史/補行逾越節.md
+C_new_formal:
+- name: 香爐
+  suggested_type: 文化
+  evidence: v1「亞倫的兒子拿答、亞比戶各拿自己的香爐」；GT《舊約聖經背景註釋》「它最有可能是長柄鍋子，能夠鏟起熱炭……其用處是作為手提的香壇。埃及人想要保護自己免受邪魔干擾時，也用香爐燒香」；GT《聖經精讀本》「早晚在神面前焚香盛燔祭壇火種的器具(出27：3)」
+  target_path: link_folder/文化/香爐.md
 D_new_candidate: []
 E_skip: []

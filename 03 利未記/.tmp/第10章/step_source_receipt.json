@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_10.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 327,
+      "first": "Lev 10:1",
+      "last": "Lev 10:20",
+      "sha256": "c0b705b854156f3148c8c25b312f5738f5bb03e5fa3f505a1db265f11266c87e",
+      "bytes": 62172,
+      "chars": 54244,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

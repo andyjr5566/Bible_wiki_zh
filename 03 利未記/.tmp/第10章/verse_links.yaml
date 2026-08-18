@@ -11,6 +11,9 @@ links:
   phrase: 亞比戶
   target: 亞比戶
 - verse: 1
+  phrase: 香爐
+  target: 香爐
+- verse: 1
   phrase: 凡火
   target: 凡火
 - verse: 3
@@ -21,7 +24,7 @@ links:
   target: 亞倫
 - verse: 3
   phrase: 親近
-  target: 親近（qarab）
+  target: 親近
 - verse: 4
   phrase: 摩西
   target: 摩西
@@ -49,9 +52,6 @@ links:
 - verse: 6
   phrase: 以他瑪
   target: 以他瑪
-- verse: 7
-  phrase: 膏油
-  target: 膏油（聖膏油）
 - verse: 7
   phrase: 摩西
   target: 摩西
@@ -81,7 +81,7 @@ links:
   target: 平安祭
 - verse: 15
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 16
   phrase: 摩西
   target: 摩西
