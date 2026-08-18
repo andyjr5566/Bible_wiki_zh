@@ -519,6 +519,107 @@ class SelectM3CandidateEvidenceTests(unittest.TestCase):
         self.assertEqual(0, evidence.candidate_count)
         self.assertIn("無法機械定位", evidence.text)
 
+    def test_hebrew_shared_characters_does_not_false_positive(self):
+        # In a single verse, words share letters (e.g. ה, י):
+        # נָסָה (H5254), אֱלֹהִים (H0430), הָיָה (H1961)
+        ref = extract_stepbible.parse_reference("Genesis 22:1")
+        doc = extract_stepbible.StepDocument(
+            reference=ref,
+            verses={
+                1: [
+                    make_word("Gen.22.1", 1, "וְהָאֱלֹהִים", "wəhāʾĕlōhîm", "H0430", "N-mp", gloss="and God", lexicon="God"),
+                    make_word("Gen.22.1", 2, "נִסָּה", "nissâ", "H5254", "V-Piel", gloss="tested", lexicon="test; prove"),
+                    make_word("Gen.22.1", 3, "וַיְהִי", "wayhî", "H1961", "V-Qal", gloss="and it came to pass", lexicon="be; become"),
+                ]
+            }
+        )
+        batch = [{
+            "name": "試驗（נָסָה）",
+            "suggested_type": "原文",
+            "evidence": "1節",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(1, evidence.candidate_count)
+        self.assertIn("H5254", evidence.text)
+        # H0430 (God) and H1961 (be) share letters with נסה but must NOT be matched!
+        self.assertNotIn("H0430", evidence.text)
+        self.assertNotIn("H1961", evidence.text)
+
+    def test_greek_shared_characters_does_not_false_positive(self):
+        # In a single verse, Greek words share letters:
+        # λόγος (G3056), θεός (G2316), ἦν (G2258)
+        ref = extract_stepbible.parse_reference("John 1:1")
+        doc = extract_stepbible.StepDocument(
+            reference=ref,
+            verses={
+                1: [
+                    make_word("John.1.1", 1, "Ἐν", "En", "G1722", "Prep", gloss="In", lexicon="in"),
+                    make_word("John.1.1", 2, "ἀρχῇ", "archē", "G0746", "N-DFS", gloss="beginning", lexicon="beginning"),
+                    make_word("John.1.1", 3, "ἦν", "ēn", "G2258", "V-IAI-3S", gloss="was", lexicon="be"),
+                    make_word("John.1.1", 4, "ὁ", "ho", "G3588", "T-NSM", gloss="the", lexicon="the"),
+                    make_word("John.1.1", 5, "λόγος", "logos", "G3056", "N-NSM", gloss="Word", lexicon="word"),
+                    make_word("John.1.1", 6, "καὶ", "kai", "G2532", "Conj", gloss="and", lexicon="and"),
+                    make_word("John.1.1", 7, "ὁ", "ho", "G3588", "T-NSM", gloss="the", lexicon="the"),
+                    make_word("John.1.1", 8, "λόγος", "logos", "G3056", "N-NSM", gloss="Word", lexicon="word"),
+                    make_word("John.1.1", 9, "ἦν", "ēn", "G2258", "V-IAI-3S", gloss="was", lexicon="be"),
+                    make_word("John.1.1", 10, "πρὸς", "pros", "G4314", "Prep", gloss="with", lexicon="with"),
+                    make_word("John.1.1", 11, "τὸν", "ton", "G3588", "T-ASM", gloss="the", lexicon="the"),
+                    make_word("John.1.1", 12, "θεόν", "theon", "G2316", "N-ASM", gloss="God", lexicon="God"),
+                ]
+            }
+        )
+        batch = [{
+            "name": "道（λόγος）",
+            "suggested_type": "原文",
+            "evidence": "1節",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(1, evidence.candidate_count)
+        self.assertIn("G3056", evidence.text)
+        self.assertNotIn("G2316", evidence.text)
+        self.assertNotIn("G2258", evidence.text)
+
+    def test_bare_chinese_no_anchor_fails_small_without_guessing_high(self):
+        # Candidate with no lexical anchor in a verse with a repeated word
+        batch = [{
+            "name": "純中文無錨點條目",
+            "suggested_type": "原文",
+            "evidence": "1節",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("unresolved", evidence.mode)
+        self.assertEqual(0, evidence.candidate_count)
+        self.assertIn("無法機械定位", evidence.text)
+
+    def test_multi_entry_batch_unions_occurrences_for_same_base_strong(self):
+        # Two entries in the same batch point to the same Strong across different verses
+        batch = [
+            {
+                "name": "穹蒼（raqia）",
+                "suggested_type": "原文",
+                "evidence": "6節",
+                "surfaces": [],
+            },
+            {
+                "name": "穹蒼（raqia）",
+                "suggested_type": "原文",
+                "evidence": "7節",
+                "surfaces": [],
+            },
+        ]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(1, evidence.candidate_count)
+        self.assertEqual(2, evidence.occurrences)
+        self.assertEqual((6, 7), evidence.selected_verses)
+        self.assertIn("6:4", evidence.text)
+        self.assertIn("7:4", evidence.text)
+
 
 if __name__ == "__main__":
     unittest.main()

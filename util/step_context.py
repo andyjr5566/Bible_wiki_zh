@@ -29,8 +29,10 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 _DIGIT_TRANSLATION = str.maketrans("０１２３４５６７８９", "0123456789")
-_HEBREW_RE = re.compile(r"[\u0590-\u05ff\ufb1d-\ufb4f]")
-_GREEK_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]")
+_HEBREW_TOKEN_RE = re.compile(r"[\u0590-\u05ff\ufb1d-\ufb4f]+")
+_GREEK_TOKEN_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]+")
+_HEBREW_RE = _HEBREW_TOKEN_RE
+_GREEK_RE = _GREEK_TOKEN_RE
 
 
 def _normalize_latin(text: str) -> str:
@@ -38,6 +40,21 @@ def _normalize_latin(text: str) -> str:
         return ""
     decomposed = unicodedata.normalize("NFKD", text)
     return re.sub(r"[^a-z0-9]", "", decomposed.lower())
+
+
+def _normalize_hebrew_token(text: str) -> str:
+    if not text:
+        return ""
+    decomposed = unicodedata.normalize("NFKD", text)
+    return re.sub(r"[^\u05d0-\u05ea\ufb1d-\ufb4f]", "", decomposed)
+
+
+def _normalize_greek_token(text: str) -> str:
+    if not text:
+        return ""
+    decomposed = unicodedata.normalize("NFKD", text)
+    stripped = "".join(c for c in decomposed if not unicodedata.combining(c))
+    return re.sub(r"[^\u0370-\u03ff\u1f00-\u1fff]", "", stripped.lower())
 
 
 def _to_canonical_zh(book_or_code: str) -> str:
@@ -50,6 +67,44 @@ def _to_canonical_zh(book_or_code: str) -> str:
         if meta["name"].lower() == cleaned.lower() or cleaned in meta.get("aliases", ()):
             return meta["canonical_name"]
     return canonical_book_name(cleaned)
+
+
+def load_validated_nearby_step(
+    root: Path | str,
+    book: str,
+    chapter: int,
+) -> tuple[Optional[extract_stepbible.StepDocument], Optional[str]]:
+    """Load and validate a formal STEP source for an adjacent chapter.
+
+    Returns (document, None) on success, (None, None) if source file is missing,
+    or (None, error_str) if validation or parsing fails.
+    """
+    canonical = _to_canonical_zh(book)
+    try:
+        path = find_formal_step_source(root, canonical, chapter)
+    except (FileNotFoundError, StepValidationError):
+        return None, None
+
+    try:
+        scripture = Path(root) / "raw_scripture" / canonical / f"第{chapter}章.txt"
+        verse_count = (
+            len(scripture.read_text(encoding="utf-8").splitlines())
+            if scripture.is_file()
+            else None
+        )
+        validate_step_source(
+            path,
+            expected_book=canonical,
+            expected_chapter=chapter,
+            scripture_verse_count=verse_count,
+        )
+        raw = path.read_text(encoding="utf-8-sig", errors="strict")
+        doc = extract_stepbible.parse_rendered_markdown_text(raw)
+        if doc.reference.chapter != chapter or _to_canonical_zh(doc.reference.book_name) != canonical:
+            raise StepValidationError(f"STEP chapter/book 不符：{path}")
+        return doc, None
+    except Exception as exc:
+        return None, str(exc)
 
 
 DEFAULT_CANDIDATE_MAX = 20
@@ -219,7 +274,7 @@ def _is_non_original_entry(entry: dict) -> bool:
     if stype in NON_ORIGINAL_TYPES:
         name = str(entry.get("name") or "")
         evidence = str(entry.get("evidence") or "")
-        if _HEBREW_RE.search(name) or _GREEK_RE.search(name):
+        if _HEBREW_TOKEN_RE.search(name) or _GREEK_TOKEN_RE.search(name):
             return False
         if re.search(r"\b[HG]\d+[A-Za-z]?\b", name + " " + evidence):
             return False
@@ -294,6 +349,7 @@ def discover_candidates(
     include_medium: bool = True,
     include_low: bool = False,
     max_results: int = DEFAULT_CANDIDATE_MAX,
+    diagnostics: Optional[dict] = None,
 ) -> list[StepCandidate]:
     """Discover deterministic linguistic candidates from a validated STEP document.
 
@@ -331,26 +387,24 @@ def discover_candidates(
         for ch in range(start_ch, end_ch + 1):
             if ch == document.reference.chapter:
                 continue
-            try:
-                path = find_formal_step_source(nearby_root, document.reference.book_name, ch)
-            except (FileNotFoundError, StepValidationError) as exc:
+            doc, err = load_validated_nearby_step(nearby_root, document.reference.book_name, ch)
+            if err:
+                nearby_invalid_chapters.append({"chapter": ch, "error": err})
+                continue
+            if doc is None:
                 nearby_missing_chapters.append(ch)
                 continue
+            nearby_scanned_chapters.append(ch)
+            for _, w in _all_words(doc):
+                if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong):
+                    base = extract_stepbible.base_strong(w.main_strong)
+                    if base:
+                        nearby_counts[base] = nearby_counts.get(base, 0) + 1
 
-            try:
-                raw = path.read_text(encoding="utf-8-sig", errors="strict")
-                doc = extract_stepbible.parse_rendered_markdown_text(raw)
-                if doc.reference.chapter != ch or _to_canonical_zh(doc.reference.book_name) != _to_canonical_zh(document.reference.book_name):
-                    raise StepValidationError(f"STEP chapter/book 不符：{path}")
-                nearby_scanned_chapters.append(ch)
-                for _, w in _all_words(doc):
-                    if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong):
-                        base = extract_stepbible.base_strong(w.main_strong)
-                        if base:
-                            nearby_counts[base] = nearby_counts.get(base, 0) + 1
-            except Exception as exc:
-                nearby_invalid_chapters.append({"chapter": ch, "error": str(exc)})
-                continue
+    if diagnostics is not None:
+        diagnostics["scanned_chapters"] = nearby_scanned_chapters
+        diagnostics["missing_chapters"] = nearby_missing_chapters
+        diagnostics["invalid_chapters"] = nearby_invalid_chapters
 
     groups: dict[str, list[dict]] = {}
     for verse, word in _all_words(document):
@@ -514,23 +568,17 @@ def find_nearby_occurrences(
     invalid_chapters = []
     start_ch = max(1, chapter - window)
     end_ch = chapter + window
+    limit_reached = False
 
     for ch in range(start_ch, end_ch + 1):
-        try:
-            path = find_formal_step_source(root, canonical, ch)
-        except (FileNotFoundError, StepValidationError) as exc:
+        doc, err = load_validated_nearby_step(root, canonical, ch)
+        if err:
+            invalid_chapters.append({"chapter": ch, "error": err})
+            continue
+        if doc is None:
             missing_chapters.append(ch)
             continue
-
-        try:
-            raw = path.read_text(encoding="utf-8-sig", errors="strict")
-            doc = extract_stepbible.parse_rendered_markdown_text(raw)
-            if doc.reference.chapter != ch or _to_canonical_zh(doc.reference.book_name) != canonical:
-                raise StepValidationError(f"STEP chapter/book 不符：{path}")
-            scanned_chapters.append(ch)
-        except Exception as exc:
-            invalid_chapters.append({"chapter": ch, "error": str(exc)})
-            continue
+        scanned_chapters.append(ch)
 
         for verse, word in _all_words(doc):
             if not word.main_strong:
@@ -555,12 +603,11 @@ def find_nearby_occurrences(
                     "gloss": word.gloss,
                 })
                 if len(occurrences) >= max_results:
+                    limit_reached = True
                     break
-        if len(occurrences) >= max_results:
+        if limit_reached:
             break
 
-    total_found = len(occurrences)
-    selected_occs = occurrences[:max_results]
     return {
         "success": True,
         "book": canonical,
@@ -569,11 +616,10 @@ def find_nearby_occurrences(
         "base_strong": target_base,
         "match_type": "exact" if target_exact else "base_group",
         "window": window,
-        "occurrences": selected_occs,
-        "result_count": len(selected_occs),
-        "total_found": total_found,
+        "occurrences": occurrences,
+        "result_count": len(occurrences),
         "max_results": max_results,
-        "truncated": len(selected_occs) < total_found,
+        "truncated": limit_reached,
         "chapters_scanned": scanned_chapters,
         "missing_chapters": missing_chapters,
         "invalid_chapters": invalid_chapters,
@@ -677,8 +723,8 @@ def select_m3_candidate_evidence(
                 truncated=False, total_chars=len(text), mode="full-chapter-evidence"
             )
 
-    matched_candidates: list[StepCandidate] = []
-    matched_base_set: set[str] = set()
+    base_occurrences: dict[str, list[extract_stepbible.WordEntry]] = {}
+    base_seen_keys: dict[str, set[tuple[str, int]]] = {}
     all_selected_verses: set[int] = set()
 
     for entry in batch_list:
@@ -697,9 +743,21 @@ def select_m3_candidate_evidence(
         target_bases = {extract_stepbible.base_strong(s) for s in strongs if extract_stepbible.base_strong(s)}
         target_exacts = {extract_stepbible.normalize_strong(s) for s in strongs if extract_stepbible.normalize_strong(s)}
 
-        # 2. Extract Hebrew / Greek letters
-        hebrew_in_name = _HEBREW_RE.findall(entry_name)
-        greek_in_name = _GREEK_RE.findall(entry_name)
+        # 2. Extract full Hebrew / Greek tokens
+        all_text_to_scan = entry_name + " " + evidence + " " + " ".join(
+            s.get("phrase", "") if isinstance(s, dict) else str(s) for s in surfaces
+        )
+        hebrew_tokens = [
+            _normalize_hebrew_token(t)
+            for t in _HEBREW_TOKEN_RE.findall(all_text_to_scan)
+        ]
+        hebrew_tokens = [t for t in hebrew_tokens if len(t) >= 2]
+
+        greek_tokens = [
+            _normalize_greek_token(t)
+            for t in _GREEK_TOKEN_RE.findall(all_text_to_scan)
+        ]
+        greek_tokens = [t for t in greek_tokens if len(t) >= 2]
 
         # 3. Extract Latin transliteration in parentheses
         latin_transliterations = [
@@ -730,14 +788,19 @@ def select_m3_candidate_evidence(
             if base in target_bases or w.main_strong in target_exacts:
                 entry_matched_bases.add(base)
                 continue
-            # Match Hebrew / Greek
-            if hebrew_in_name or greek_in_name:
-                stripped_w = extract_stepbible.strip_cantillation_and_vowels(w.word)
-                for t in (hebrew_in_name + greek_in_name):
-                    if t in w.word or t in stripped_w:
-                        entry_matched_bases.add(base)
-                        break
-                if base in entry_matched_bases:
+            # Match Hebrew token (whole normalized token equality)
+            if hebrew_tokens:
+                w_heb = _normalize_hebrew_token(w.word)
+                w_heb_lex = _normalize_hebrew_token(w.lexicon_word or "")
+                if any(t == w_heb or t == w_heb_lex for t in hebrew_tokens):
+                    entry_matched_bases.add(base)
+                    continue
+            # Match Greek token (whole normalized token equality)
+            if greek_tokens:
+                w_grk = _normalize_greek_token(w.word)
+                w_grk_lex = _normalize_greek_token(w.lexicon_word or "")
+                if any(t == w_grk or t == w_grk_lex for t in greek_tokens):
+                    entry_matched_bases.add(base)
                     continue
             # Match Transliteration
             if latin_transliterations:
@@ -750,7 +813,7 @@ def select_m3_candidate_evidence(
                             entry_matched_bases.add(base)
                             break
 
-        # If no Strong / surface / transliteration matched but verse scope exists, run discovery on those verses
+        # If no Strong / Hebrew / Greek / transliteration matched but verse scope exists, run discovery on those verses
         if not entry_matched_bases and verse_scope:
             discovered = discover_candidates(
                 document, verses=verse_scope, root=root,
@@ -763,56 +826,61 @@ def select_m3_candidate_evidence(
             for dc in discovered:
                 if any(p and (p in dc.surface or p in dc.context_gloss) for p in surface_phrases):
                     entry_matched_bases.add(dc.base_strong)
-                elif dc.priority == "HIGH":
-                    entry_matched_bases.add(dc.base_strong)
+            # NEVER guess HIGH words!
 
-        for b in sorted(entry_matched_bases):
-            if b not in matched_base_set:
-                matched_base_set.add(b)
-                target_occs = [
-                    w for _v, w in words_in_scope
-                    if extract_stepbible.base_strong(w.main_strong) == b
-                ]
-                if not target_occs:
-                    continue
-                first_w = target_occs[0]
-                exact_strongs = tuple(sorted({w.main_strong for w in target_occs if w.main_strong}))
-                variants_map = {}
-                for w in target_occs:
-                    es = w.main_strong
-                    if es not in variants_map:
-                        variants_map[es] = {
-                            "exact_strong": es,
-                            "lexicon_word": w.lexicon_word or w.word,
-                            "lexicon_transliteration": w.lexicon_transliteration or w.transliteration,
-                            "lexicon_short": w.lexicon_short,
-                            "gloss": w.gloss,
-                        }
-                variants = tuple(variants_map[es] for es in exact_strongs)
-                simplified_occs = tuple({
-                    "verse": int(w.reference.split(".")[-1]) if "." in w.reference else 1,
-                    "position": w.position,
-                    "surface": w.word,
-                    "exact_strong": w.main_strong,
-                    "morphology": w.morphology_raw or w.morphology,
+        for b in entry_matched_bases:
+            seen_set = base_seen_keys.setdefault(b, set())
+            occs_list = base_occurrences.setdefault(b, [])
+            for _v, w in words_in_scope:
+                if extract_stepbible.base_strong(w.main_strong) == b:
+                    key = (w.reference, w.position)
+                    if key not in seen_set:
+                        seen_set.add(key)
+                        occs_list.append(w)
+
+    matched_candidates: list[StepCandidate] = []
+    for b in sorted(base_occurrences.keys()):
+        target_occs = base_occurrences[b]
+        if not target_occs:
+            continue
+        first_w = target_occs[0]
+        exact_strongs = tuple(sorted({w.main_strong for w in target_occs if w.main_strong}))
+        variants_map = {}
+        for w in target_occs:
+            es = w.main_strong
+            if es not in variants_map:
+                variants_map[es] = {
+                    "exact_strong": es,
+                    "lexicon_word": w.lexicon_word or w.word,
+                    "lexicon_transliteration": w.lexicon_transliteration or w.transliteration,
+                    "lexicon_short": w.lexicon_short,
                     "gloss": w.gloss,
-                    "transliteration": w.transliteration,
-                } for w in target_occs)
-                matched_candidates.append(
-                    StepCandidate(
-                        base_strong=b,
-                        exact_strongs=exact_strongs,
-                        surface=first_w.word,
-                        context_gloss=first_w.gloss,
-                        lexicon_word=first_w.lexicon_word or first_w.word,
-                        lexicon_transliteration=first_w.lexicon_transliteration or first_w.transliteration,
-                        lexicon_short=first_w.lexicon_short,
-                        variants=variants,
-                        occurrences=simplified_occs,
-                        priority="HIGH",
-                        signals=("m3_targeted_candidate",),
-                    )
-                )
+                }
+        variants = tuple(variants_map[es] for es in exact_strongs)
+        simplified_occs = tuple({
+            "verse": int(w.reference.split(".")[-1]) if "." in w.reference else 1,
+            "position": w.position,
+            "surface": w.word,
+            "exact_strong": w.main_strong,
+            "morphology": w.morphology_raw or w.morphology,
+            "gloss": w.gloss,
+            "transliteration": w.transliteration,
+        } for w in target_occs)
+        matched_candidates.append(
+            StepCandidate(
+                base_strong=b,
+                exact_strongs=exact_strongs,
+                surface=first_w.word,
+                context_gloss=first_w.gloss,
+                lexicon_word=first_w.lexicon_word or first_w.word,
+                lexicon_transliteration=first_w.lexicon_transliteration or first_w.transliteration,
+                lexicon_short=first_w.lexicon_short,
+                variants=variants,
+                occurrences=simplified_occs,
+                priority="HIGH",
+                signals=("m3_targeted_candidate",),
+            )
+        )
 
     if not matched_candidates:
         text = (
@@ -900,6 +968,9 @@ def select_step_evidence(
             selected_count=0,
             truncated=False,
             total_chars=len(text),
+            mode="selected_candidates",
+            selected_verses=(),
+            occurrences=0,
         )
 
     selected: list[StepCandidate] = []
@@ -924,12 +995,17 @@ def select_step_evidence(
         chapter=document.reference.chapter,
         truncated=truncated,
     )
+    total_occs = sum(len(c.occurrences) for c in selected)
+    all_verses = tuple(sorted({occ["verse"] for c in selected for occ in c.occurrences if "verse" in occ}))
     return StepEvidence(
         text=final_text,
         candidate_count=len(candidates),
         selected_count=len(selected),
         truncated=truncated,
         total_chars=len(final_text),
+        mode="selected_candidates",
+        selected_verses=all_verses,
+        occurrences=total_occs,
     )
 
 

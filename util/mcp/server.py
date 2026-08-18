@@ -1154,19 +1154,19 @@ def find_step_candidates(
         )
         raw = path.read_text(encoding="utf-8-sig", errors="strict")
         doc = step_extractor.parse_rendered_markdown_text(raw)
-        max_count = min(max(1, int(max_results)), 50)
-        all_candidates = step_context.discover_candidates(
+        max_count = min(max(1, int(max_results)), step_context.HARD_CANDIDATE_MAX)
+        diagnostics: dict = {}
+        candidates = step_context.discover_candidates(
             doc,
             root=ROOT_DIR,
             verses=selected,
             nearby_window=nearby_window,
             include_medium=include_medium,
             include_low=include_low,
-            max_results=1000,
+            max_results=max_count,
+            diagnostics=diagnostics,
         )
-        total_discovered = len(all_candidates)
-        candidates = all_candidates[:max_count]
-        truncated = len(candidates) < total_discovered
+        truncated = len(candidates) >= max_count
         return {
             "success": True,
             "book": canonical,
@@ -1192,9 +1192,11 @@ def find_step_candidates(
                 for c in candidates
             ],
             "result_count": len(candidates),
-            "total_discovered": total_discovered,
             "max_results": max_count,
             "truncated": truncated,
+            "chapters_scanned": diagnostics.get("scanned_chapters", []),
+            "missing_chapters": diagnostics.get("missing_chapters", []),
+            "invalid_chapters": diagnostics.get("invalid_chapters", []),
         }
     except (OSError, UnicodeError, TypeError, ValueError) as exc:
         return _error(str(exc))

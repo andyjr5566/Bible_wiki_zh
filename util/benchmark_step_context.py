@@ -243,12 +243,33 @@ def _metric_3layer(
     }
 
 
-def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dict:
+def _phase1_candidate_verses(batch: Iterable[dict], available_verses: Iterable[int]) -> tuple[int, ...]:
+    """Reconstruct authentic Phase 1 verse selection without Phase 2 non-original filtering."""
+    available = set(int(v) for v in available_verses)
+    selected: set[int] = set()
+    for entry in batch:
+        selected.update(step_context._surface_verses(entry))
+        parsed, _warnings, _requested_full = step_context._evidence_verses(entry.get("evidence", ""))
+        selected.update(parsed)
+    selected &= available
+    return tuple(sorted(selected))
+
+
+def _run_case(
+    name: str,
+    ctx: run_chapter.ChapterContext,
+    plan: dict,
+    step_path: Path,
+    *,
+    expected_words: int,
+) -> dict:
     prompt_dir = ctx.path("benchmark_prompts")
     entry_capture = run_chapter_manual.PromptCapture(prompt_dir, "entry_batch", ctx=ctx)
     ctx.runner = entry_capture
     run_chapter.entry_content_step(
-        ctx, plan, batch_size=1,
+        ctx,
+        plan,
+        batch_size=1,
         source_context_policy=source_excerpts.MANUAL_PROJECTED,
     )
     m3_snapshot = ctx._last_prompt_context
@@ -256,7 +277,9 @@ def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dic
     chapter_capture = run_chapter_manual.PromptCapture(prompt_dir, "chapter_content", ctx=ctx)
     ctx.runner = chapter_capture
     run_chapter.chapter_content_step(
-        ctx, plan, source_context_policy=source_excerpts.MANUAL_PROJECTED
+        ctx,
+        plan,
+        source_context_policy=source_excerpts.MANUAL_PROJECTED,
     )
     m6_snapshot = ctx._last_prompt_context
 
@@ -280,7 +303,7 @@ def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dic
 
     # M3 Layer 2: Phase 1 targeted-verse compact projection
     c_entries = plan.get("C_new_formal", [])
-    phase1_verses = step_context.select_candidate_verses(c_entries, range(1, len(ctx.raw_verses()) + 1)).verses
+    phase1_verses = _phase1_candidate_verses(c_entries, range(1, len(ctx.raw_verses()) + 1))
     if phase1_verses:
         m3_phase1_proj = step_context.project_step_source(step_path, verses=phase1_verses, allow_full_chapter=True)
     else:
