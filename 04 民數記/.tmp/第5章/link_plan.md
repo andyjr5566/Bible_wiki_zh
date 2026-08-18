@@ -3,7 +3,7 @@
 ## B. 需更新既有條目
 
 - [[摩西]] → link_folder/人物/摩西.md（exact；候選分類=人物；實際分類已核對；來源行=1）
-- [[大痲瘋（tsara'at，皮膚病診斷條例）]] → link_folder/原文/大痲瘋（tsara'at，皮膚病診斷條例）.md（exact；候選分類=原文；實際分類已核對；來源行=3；依據：v2「長大痲瘋的」；GT：指皮膚病，不必太久便可治好（参利13章）；BH：leprosy，可引伸為sin's defiling nature）
+- [[大痲瘋（sara'at）]] → link_folder/原文/大痲瘋（tsara'at，皮膚病診斷條例）.md（exact；候選分類=原文；實際分類已核對；來源行=3；依據：v2「長大痲瘋的」；GT：指皮膚病，不必太久便可治好（参利13章）；BH：leprosy，可引伸為sin's defiling nature）
 - [[漏症（身患漏症的條例）]] → link_folder/原文/漏症（身患漏症的條例）.md（exact；候選分類=原文；實際分類已核對；來源行=4；依據：v2「患漏症的」；CT：指男女長期或間歇性從性器官流淌不正常的分泌物；GT：指長時期的性器官漏病（參利15章））
 - [[認罪]] → link_folder/主題/認罪.md（exact；候選分類=主題；實際分類已核對；來源行=5；依據：v7「他要承認所犯的罪」；CT靈意：不僅要向人認罪，還要向神認罪；GT：向對方承認自己的錯是為了求得對方原諒，也是為了承認神真理的正當性（路19:1-10））
 - [[加五分之一贖回原則]] → link_folder/主題/加五分之一贖回原則.md（exact；候選分類=主題；實際分類已核對；來源行=6；依據：v7「另外加上五分之一，也歸與所虧負的人」；CT：作為額外的懲罰性賠償；GT《精讀本》：包含著賠償的意思，呈現神的公義；BH：add a fifth (20%) as a deterrent and an acknowledgment of inconvenience suffered by the wronged party）

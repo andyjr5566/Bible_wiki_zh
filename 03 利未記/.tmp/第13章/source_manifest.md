@@ -4,3 +4,4 @@
 | ccbiblestudy GT | 拾穗 | https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT13.htm | raw_data/ccbiblestudy_GT_leviticus_13.txt | OK |
 | KingComments | 研經註解 | https://www.kingcomments.com/en/bible-studies/Lev/13 | raw_data/kingcomments_leviticus_13.txt | OK |
 | BibleHub Study | 研經註解 | https://biblehub.com/study/leviticus/13.htm | raw_data/biblehub_study_leviticus_13.txt | OK |
+| STEP Bible | 原文資料 | https://github.com/STEPBible/STEPBible-Data | raw_data/stepbible_leviticus_13.txt | OK |
