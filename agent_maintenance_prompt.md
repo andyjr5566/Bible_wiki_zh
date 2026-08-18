@@ -5,7 +5,7 @@
 ## Production 核心規則（優先於本文歷史說明）
 
 1. M3 / M6 一律人工 payload，不使用外部模型 API 自動生成。
-2. 四套 Commentary 必須全文閱讀一次，不在每個 M3/M6 prompt 重複全文。
+2. 每章的四套 Commentary 都必須各自全文閱讀一次；M3/M6 prompt 不重複內嵌全文。
 3. STEP full raw 不要求 Agent 全文逐詞閱讀；由 machine validation 驗證。
 4. M3 只接收 candidate-matched STEP evidence，不接收整節或整章 STEP raw。
 5. M6 只接收 selected HIGH/MEDIUM STEP evidence。

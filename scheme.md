@@ -33,7 +33,7 @@
 
 ```text
 資料層（人工與程式填寫）.tmp/第x章/*.yaml —— 每種有 JSON Schema
-  link_candidates.yaml   Agent 判斷候選（唯一人工內容輸入）
+  link_candidates.yaml   Agent 判斷候選去留與 evidence/surfaces
   link_plan.yaml         resolver 程式產生 A–E
   entry_content/*.yaml   Agent 依實際 M3 prompt 手寫
   verse_links.yaml       程式產生
@@ -152,7 +152,7 @@ raw_scripture + 正式 raw_data
 - `link_plan` 只決定「用哪個條目、放哪、什麼類別」；寫內容一律回到 raw text 與經文，不得依 plan 編內容。
 - 本章整理（organization）是「### 小節（vX-Y）」分段的整合性散文並標明出處（CT指出…），份量門檻隨章節長度由程式驗證；章節「參考資料」由程式從 source_manifest 注入 OK 來源 URL，模型不手寫。
 - 經文本文只取自 `raw_scripture`，render_chapter 逐字對齊；wiki-link 由程式掃描已知詞彙套用（子字串保證、長詞優先、目標閉合），模型不再手寫經文區。已知詞彙＝候選名＋條目全名＋括號前裸名＋條目 aliases（A/B 取全庫索引、C 取本章 payload）＋候選宣告的 `surfaces`——經文用條目全名與 aliases 都對不上的簡稱時（桌子→陳設餅桌子），在 link_candidates 為該候選宣告 surfaces；同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 幕幔、v31-33 內幔）。同一詞推導出多個條目＝歧義，整詞不連並記 manual_review（宣告的 surfaces 優先於推導，可用來裁決）。
-- 正式 raw source 全文保留且可追溯，但 prompt context 與 source truth 分層。Injected/default runner 可用 `FULL`；manual runner 已由 Agent 全文讀四套 commentary，prompt 只放引用；STEP 放 deterministic task projection。FULL 模式的 commentary／structured budget 彼此獨立，STEP 變大不再擠壓 commentary。
+- 正式 raw source 全文保留且可追溯，但 source truth 與 prompt context 分層。正式 manual production 中：每章四套 commentary 由 Agent 依 sources.md 各自全文閱讀一次；M3/M6 prompt 不重複內嵌 commentary 全文；STEP full raw 由 machine validation 驗證；M3/M6 只注入 deterministic task-aware STEP projection。
 - 累積標記 `<!-- accumulation:{書}:{章}:start/end -->` 由程式生成與定位；同書卷一個 `### 標題`、章次依序排列，重跑冪等。
 
 ---

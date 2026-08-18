@@ -5,7 +5,7 @@
 ## Production 核心規則（優先於本文歷史說明）
 
 1. M3 / M6 一律人工 payload，不使用外部模型 API 自動生成。
-2. 四套 Commentary 必須全文閱讀一次，不在每個 M3/M6 prompt 重複全文。
+2. 每章的四套 Commentary 都必須各自全文閱讀一次；M3/M6 prompt 不重複內嵌全文。
 3. STEP full raw 不要求 Agent 全文逐詞閱讀；由 machine validation 驗證。
 4. M3 只接收 candidate-matched STEP evidence，不接收整節或整章 STEP raw。
 5. M6 只接收 selected HIGH/MEDIUM STEP evidence。
@@ -26,8 +26,9 @@ STEP 使用規則：
 
 - 本章原文查詢以本章 manifest 宣告的正式 STEP source 為準。
 - STEP full raw 由 machine validation 驗證，不要求 Agent 人工全文逐詞閱讀，也不得整份塞進 M3/M6 prompt。
-- `query_step_context`、`find_step_candidates` 用於本章精確查詢。
-- `find_step_occurrences` 可在 bounded 範圍查相鄰章；每個相鄰章都必須使用其正式 STEP source 並先通過 deterministic validation。
+- `find_step_candidates`：探索本章原文候選。
+- `query_step_context`：精確查 verses / exact Strong / base Strong / word。
+- `find_step_occurrences`：bounded 查相鄰章出現情況；每章正式 source 必須 validation PASS。
 - 不查網路 STEP。
 - `read_chapter_source` 不得讀取 structured STEP raw 全文。
 
