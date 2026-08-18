@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 15,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_15.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 456,
+      "first": "Lev 15:1",
+      "last": "Lev 15:33",
+      "sha256": "6a395174a3efe542b49870c1f813494bcd33730ef6a0e47a8a95a7b71be87d26",
+      "bytes": 91093,
+      "chars": 80461,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

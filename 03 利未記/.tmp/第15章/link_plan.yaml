@@ -1,7 +1,111 @@
 book: 利未記
 chapter: 15
-A_use_directly: []
-B_needs_update:
+A_use_directly:
+- name: 漏症（身患漏症的條例）
+  suggested_type: 原文
+  evidence: 2-15節；男性從下體長期或間歇性排出不正常分泌物（下流的或止住的皆不潔淨）。CT〔原文字義〕：「漏症」流出，排出。GT《舊約背景註釋》：最常見病因是淋病，另有說法指傳染性尿道血吸蟲病；GT丁良才：按民5:1-4患漏症者要出到營外，大衛咒詛約押家「不斷有患漏症的」（撒下3:29）；GT精讀本：原意即「繼續流淌」，指血或精液持續流出
+  surfaces:
+  - phrase: 身患漏症
+    verses:
+    - 2
+  - phrase: 患漏症
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 漏症（身患漏症的條例）
+  existing_path: link_folder/原文/漏症（身患漏症的條例）.md
+- name: 患漏症者接觸物件的傳染條例
+  suggested_type: 主題
+  evidence: 4-11節；患者所躺的床、所坐之物、所騎的鞍子皆不潔淨；凡摸此人身體、物件，或被其吐沫沾身者，皆不潔淨到晚上，須洗衣服用水洗澡；患者未涮手而摸人，被摸者同樣不潔。GT串珠：本段「身」字雖未明指部位，但可合理推論指生殖器官；患者不單自己不潔，更可使他人或物件不潔，傳染性比11、13、14章的疾病更廣，但毋須遷出營外或經詳盡潔淨禮儀，僅獻二鳥為贖罪祭燔祭即可
+  surfaces:
+  - phrase: 所躺的床
+    verses:
+    - 4
+  - phrase: 所坐的物
+    verses:
+    - 4
+  - phrase: 所騎的鞍子
+    verses:
+    - 9
+  - phrase: 不潔淨到晚上
+    verses:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 患漏症者接觸物件的傳染條例
+  existing_path: link_folder/主題/患漏症者接觸物件的傳染條例.md
+- name: 漏症痊癒的潔淨條例
+  suggested_type: 主題
+  evidence: 13-15節；痊癒後計算七天、洗衣服、用活水洗身即潔淨；第八天取兩隻斑鳩或雛鴿到會幕門口交給祭司，一獻贖罪祭一獻燔祭，為他贖罪。GT丁良才：平常獻祭只有貧窮人可用斑鳩雛鴿代替，但行此潔淨禮則不論貧富皆用鳥
+  surfaces:
+  - phrase: 計算七天
+    verses:
+    - 13
+  - phrase: 用活水洗身
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 漏症痊癒的潔淨條例
+  existing_path: link_folder/主題/漏症痊癒的潔淨條例.md
+- name: 夢遺與交合的潔淨條例
+  suggested_type: 主題
+  evidence: 16-18節；男人夢遺，須用水洗全身，不潔淨到晚上；衣服皮子被精所染須用水洗；男女交合後兩人皆不潔淨到晚上須用水洗澡。GT串珠：夢遺及性交在巴比倫、埃及、希臘、羅馬、亞拉伯等古文化同樣被視為不潔；KC：這是無罪咎、非因犯罪而不潔的情況，不需獻祭
+  surfaces:
+  - phrase: 夢遺
+    verses:
+    - 16
+  - phrase: 被精所染
+    verses:
+    - 17
+  - phrase: 若男女交合
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 夢遺與交合的潔淨條例
+  existing_path: link_folder/主題/夢遺與交合的潔淨條例.md
+- name: 女人行經的不潔條例
+  suggested_type: 主題
+  evidence: 19-24節；女人行經污穢七天，凡摸她的、她所躺所坐之物，皆不潔淨；男人若與行經女人同房染了她的污穢，就七天不潔淨。GT丁良才：本節希伯來文「污穢」原意即「不潔淨」；月經期間不須獻祭，只須用水洗淨；GT精讀本：因流血緣故視為不潔，同時意味神對人生產的咒詛（創3:16）
+  surfaces:
+  - phrase: 女人行經
+    verses:
+    - 19
+  - phrase: 女人在污穢之中
+    verses:
+    - 20
+  - phrase: 染了他的污穢
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 女人行經的不潔條例
+  existing_path: link_folder/主題/女人行經的不潔條例.md
+- name: 血漏（女人非經期出血的不潔條例）
+  suggested_type: 主題
+  evidence: 25-30節；女人在經期以外患多日血漏，或經期過長，其不潔淨的日子與經期不潔一樣；痊癒後計算七天，第八天獻兩隻斑鳩或雛鴿，一為贖罪祭一為燔祭。GT丁良才：主耶穌曾使患十二年血漏的女人立刻痊癒（太9:20-22），按律法她若未涮手摸主便使主不潔，但她因信心使自己得潔淨；KC：新約中患此症被醫治的婦人記在可5:25-29、路8:43-48
+  surfaces:
+  - phrase: 血漏
+    verses:
+    - 25
+  - phrase: 經期過長
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 血漏（女人非經期出血的不潔條例）
+  existing_path: link_folder/主題/血漏（女人非經期出血的不潔條例）.md
+- name: 隔絕（與污穢分別）
+  suggested_type: 原文
+  evidence: v31「你們要這樣使以色列人與他們的污穢隔絕，免得他們玷污我的帳幕」。GT串珠：「隔絕」在希伯來文這字與「拿細耳人」有相同字根，以色列人要與污穢隔絕，正如拿細耳人要遠離清酒濃酒一樣（見民6:1-4）
+  surfaces:
+  - phrase: 隔絕
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 隔絕（與污穢分別）
+  existing_path: link_folder/原文/隔絕（與污穢分別）.md
 - name: 摩西
   suggested_type: 人物
   evidence: v1「耶和華對摩西、亞倫說」
@@ -51,128 +155,33 @@ B_needs_update:
   match_type: exact
   existing_title: 潔淨與不潔淨
   existing_path: link_folder/神學/潔淨與不潔淨.md
+B_needs_update:
+- name: 禮儀不潔與道德罪的分別
+  suggested_type: 神學
+  evidence: KC 在導言把本章與痲瘋對照：「痲瘋是出於自己意志的罪，因此是玷污；漏症卻是不由自主發生的，沒有意圖」，並說神在罪的性質上作了分別；BH 反覆指出本章的「不潔」是禮儀狀態而非道德罪；GT《聖經精讀本》也說舊約時代的不潔觀念不是倫理道德方面的可恥行為
+  match_type: exact
+  existing_title: 禮儀不潔與道德罪的分別
+  existing_path: link_folder/神學/禮儀不潔與道德罪的分別.md
+- name: 血
+  suggested_type: 主題
+  evidence: v19「女人行經，必污穢七天」、v25「患多日的血漏」；GT《聖經精讀本》指出把行經的人定為不潔是因流血的緣故，這血因身體的破壞而流出；GT《啟導本》另指分泌物中包含人體中已死亡的細胞，而死乃不潔的表徵
+  match_type: exact
+  existing_title: 血
+  existing_path: link_folder/主題/血.md
 C_new_formal:
-- name: 漏症（身患漏症的條例）
-  suggested_type: 原文
-  evidence: 2-15節；男性從下體長期或間歇性排出不正常分泌物（下流的或止住的皆不潔淨）。CT〔原文字義〕：「漏症」流出，排出。GT《舊約背景註釋》：最常見病因是淋病，另有說法指傳染性尿道血吸蟲病；GT丁良才：按民5:1-4患漏症者要出到營外，大衛咒詛約押家「不斷有患漏症的」（撒下3:29）；GT精讀本：原意即「繼續流淌」，指血或精液持續流出
-  surfaces:
-  - phrase: 身患漏症
-    verses:
-    - 2
-  - phrase: 患漏症
-    verses:
-    - 3
-  target_path: link_folder/原文/漏症（身患漏症的條例）.md
-- name: 患漏症者接觸物件的傳染條例
-  suggested_type: 主題
-  evidence: 4-11節；患者所躺的床、所坐之物、所騎的鞍子皆不潔淨；凡摸此人身體、物件，或被其吐沫沾身者，皆不潔淨到晚上，須洗衣服用水洗澡；患者未涮手而摸人，被摸者同樣不潔。GT串珠：本段「身」字雖未明指部位，但可合理推論指生殖器官；患者不單自己不潔，更可使他人或物件不潔，傳染性比11、13、14章的疾病更廣，但毋須遷出營外或經詳盡潔淨禮儀，僅獻二鳥為贖罪祭燔祭即可
-  surfaces:
-  - phrase: 所躺的床
-    verses:
-    - 4
-  - phrase: 所坐的物
-    verses:
-    - 4
-  - phrase: 所騎的鞍子
-    verses:
-    - 9
-  - phrase: 不潔淨到晚上
-    verses:
-    - 5
-    - 6
-    - 7
-    - 8
-    - 10
-    - 11
-  target_path: link_folder/主題/患漏症者接觸物件的傳染條例.md
-- name: 漏症痊癒的潔淨條例
-  suggested_type: 主題
-  evidence: 13-15節；痊癒後計算七天、洗衣服、用活水洗身即潔淨；第八天取兩隻斑鳩或雛鴿到會幕門口交給祭司，一獻贖罪祭一獻燔祭，為他贖罪。GT丁良才：平常獻祭只有貧窮人可用斑鳩雛鴿代替，但行此潔淨禮則不論貧富皆用鳥
-  surfaces:
-  - phrase: 計算七天
-    verses:
-    - 13
-  - phrase: 用活水洗身
-    verses:
-    - 13
-  target_path: link_folder/主題/漏症痊癒的潔淨條例.md
+- name: 古代近東的排泄物與經血不潔觀念
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》在本章有四段對照——v1-15：「古代近東其他地方相信這種分泌物是患者被鬼附的證據，但在以色列，這人只需要洗身並到聖所行淨化禮，不像在美索不達米亞一般，需要驅邪」；v16-18：赫人相信夢遺是與精靈性交的結果，赫人性交後只須洗身便能參加廟宇儀式；v19-24：「古代世界到處都視經血令人不潔，幾個文化更以為有被鬼魔影響的危險」，某位亞述君王下旨禁止行經中的婦女在獻祭時覲見君王；v25-33：月經過長使人幾乎不可能生育
+  target_path: link_folder/背景/古代近東的排泄物與經血不潔觀念.md
   semantic_hint:
-  - title: 大痲瘋得潔淨的條例（人）
-    score: 0.525
-    type: 主題
-  - title: 房屋大痲瘋的診斷與潔淨條例
-    score: 0.457
-    type: 主題
-  - title: 衣服皮子的黴斑條例
-    score: 0.448
-    type: 主題
-- name: 夢遺與交合的潔淨條例
-  suggested_type: 主題
-  evidence: 16-18節；男人夢遺，須用水洗全身，不潔淨到晚上；衣服皮子被精所染須用水洗；男女交合後兩人皆不潔淨到晚上須用水洗澡。GT串珠：夢遺及性交在巴比倫、埃及、希臘、羅馬、亞拉伯等古文化同樣被視為不潔；KC：這是無罪咎、非因犯罪而不潔的情況，不需獻祭
-  surfaces:
-  - phrase: 夢遺
-    verses:
-    - 16
-  - phrase: 被精所染
-    verses:
-    - 17
-  - phrase: 若男女交合
-    verses:
-    - 18
-  target_path: link_folder/主題/夢遺與交合的潔淨條例.md
-- name: 女人行經的不潔條例
-  suggested_type: 主題
-  evidence: 19-24節；女人行經污穢七天，凡摸她的、她所躺所坐之物，皆不潔淨；男人若與行經女人同房染了她的污穢，就七天不潔淨。GT丁良才：本節希伯來文「污穢」原意即「不潔淨」；月經期間不須獻祭，只須用水洗淨；GT精讀本：因流血緣故視為不潔，同時意味神對人生產的咒詛（創3:16）
-  surfaces:
-  - phrase: 女人行經
-    verses:
-    - 19
-  - phrase: 女人在污穢之中
-    verses:
-    - 20
-  - phrase: 染了他的污穢
-    verses:
-    - 24
-  target_path: link_folder/主題/女人行經的不潔條例.md
-  semantic_hint:
-  - title: 產婦生產潔淨條例（男四十女八十天）
-    score: 0.461
-    type: 主題
-- name: 血漏（女人非經期出血的不潔條例）
-  suggested_type: 主題
-  evidence: 25-30節；女人在經期以外患多日血漏，或經期過長，其不潔淨的日子與經期不潔一樣；痊癒後計算七天，第八天獻兩隻斑鳩或雛鴿，一為贖罪祭一為燔祭。GT丁良才：主耶穌曾使患十二年血漏的女人立刻痊癒（太9:20-22），按律法她若未涮手摸主便使主不潔，但她因信心使自己得潔淨；KC：新約中患此症被醫治的婦人記在可5:25-29、路8:43-48
-  surfaces:
-  - phrase: 血漏
-    verses:
-    - 25
-  - phrase: 經期過長
-    verses:
-    - 25
-  target_path: link_folder/主題/血漏（女人非經期出血的不潔條例）.md
-  semantic_hint:
-  - title: 產婦生產潔淨條例（男四十女八十天）
-    score: 0.438
-    type: 主題
-  - title: 產婦不潔原因之爭（原罪說與血液不潔說）
-    score: 0.426
-    type: 解經爭議
-  - title: 血不可吃（血の禁令）
-    score: 0.419
-    type: 神學
-- name: 隔絕（與污穢分別）
-  suggested_type: 原文
-  evidence: v31「你們要這樣使以色列人與他們的污穢隔絕，免得他們玷污我的帳幕」。GT串珠：「隔絕」在希伯來文這字與「拿細耳人」有相同字根，以色列人要與污穢隔絕，正如拿細耳人要遠離清酒濃酒一樣（見民6:1-4）
-  surfaces:
-  - phrase: 隔絕
-    verses:
-    - 31
-  target_path: link_folder/原文/隔絕（與污穢分別）.md
-  semantic_hint:
-  - title: 污穢
-    score: 0.423
-    type: 主題
-  - title: 聖俗潔淨不潔淨的分別
-    score: 0.41
-    type: 神學
+  - title: 古代近東的產後不潔與淨化期
+    score: 0.531
+    type: 背景
+  - title: 古代近東的皮膚病與黴斑觀念
+    score: 0.484
+    type: 背景
+  - title: 古代近東飲食潔淨
+    score: 0.483
+    type: 背景
 D_new_candidate: []
 E_skip: []
