@@ -1139,6 +1139,9 @@ def find_step_candidates(
 
     Groups Extended Strong variants under their base Strong, checks nearby recurrence
     within ±nearby_window chapters, and categorizes into HIGH, MEDIUM, LOW priorities.
+
+    【使用指引】不知道查什麼時使用此工具探索候選。
+    selected STEP context 中沒有某詞，不代表正式 STEP raw 沒有該詞；候選缺席不是 absence evidence。
     """
     try:
         canonical = _canonical_book(book)
@@ -1203,6 +1206,9 @@ def find_step_occurrences(
 
     Scans chapter ± window for raw STEP files and returns occurrences with verse,
     position, surface word, transliteration, morphology, and gloss.
+
+    【使用指引】查附近章節詞彙重複／複現時使用此工具。
+    strong 為 exact match，base_strong 為 base/variant group match；兩者互斥。
     """
     try:
         canonical = _canonical_book(book)
@@ -1245,6 +1251,9 @@ def query_step_context(
     Extended Strong (for example H1254A), ``base_strong`` matches base Strong codes
     (for example H1254), and ``word`` searches original text, transliteration, or
     the brief lexicon.  The query requires at least one target parameter.
+
+    【使用指引】知道特定節次、Strong 編號或詞彙時使用此工具精確查詢；不要用 broad query 模擬整章 raw read。
+    selected STEP context 中沒有某詞，不代表正式 STEP raw 沒有該詞；候選缺席不是 absence evidence，需要確認時請直接用本工具查詢。
     """
     try:
         canonical = _canonical_book(book)
