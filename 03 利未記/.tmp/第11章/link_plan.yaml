@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 11
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 摩西
   suggested_type: 人物
   evidence: v1「耶和華對摩西、亞倫說」，本章起神首次同時向摩西和亞倫兩人說話
@@ -54,7 +53,6 @@ B_needs_update:
   match_type: exact
   existing_title: 潔淨與不潔淨
   existing_path: link_folder/神學/潔淨與不潔淨.md
-C_new_formal:
 - name: 分蹄倒嚼（潔淨走獸的判準）
   suggested_type: 主題
   evidence: v3-8 潔淨走獸須同時具備「蹄分兩瓣」與「倒嚼」兩個條件，缺一即不潔淨（駱駝、沙番、兔子、豬四例）
@@ -72,11 +70,9 @@ C_new_formal:
     - 6
     - 7
     - 26
-  target_path: link_folder/主題/分蹄倒嚼（潔淨走獸的判準）.md
-  semantic_hint:
-  - title: 潔淨與不潔淨
-    score: 0.424
-    type: 神學
+  match_type: exact
+  existing_title: 分蹄倒嚼（潔淨走獸的判準）
+  existing_path: link_folder/主題/分蹄倒嚼（潔淨走獸的判準）.md
 - name: 沙番（shaphan）
   suggested_type: 原文
   evidence: v5「沙番，因為倒嚼不分蹄，就與你們不潔淨」；GT：「沙番」從希伯來文 shaphan 音譯過來，一般認為是蹄兔（岩石間的哺乳類動物）
@@ -84,7 +80,9 @@ C_new_formal:
   - phrase: 沙番
     verses:
     - 5
-  target_path: link_folder/原文/沙番（shaphan）.md
+  match_type: exact
+  existing_title: 沙番（shaphan）
+  existing_path: link_folder/原文/沙番（shaphan）.md
 - name: 豬與異教祭祀的關聯
   suggested_type: 文化
   evidence: v7-8 豬因「蹄分兩瓣卻不倒嚼」不潔淨；舊約聖經背景註釋：赫人某些儀式獻豬為祭給冥界神祇，美索不達米亞豬也是獻給鬼魔的祭物，以色列人視豬為極度可憎（賽65:4,66:3,17）
@@ -92,17 +90,9 @@ C_new_formal:
   - phrase: 豬
     verses:
     - 7
-  target_path: link_folder/文化/豬與異教祭祀的關聯.md
-  semantic_hint:
-  - title: 埃及人厭惡的祭牲
-    score: 0.433
-    type: 文化
-  - title: 耳環作異教護身符
-    score: 0.42
-    type: 文化
-  - title: 埃及人所厭惡的
-    score: 0.409
-    type: 神學
+  match_type: exact
+  existing_title: 豬與異教祭祀的關聯
+  existing_path: link_folder/文化/豬與異教祭祀的關聯.md
 - name: 有翅有鱗（潔淨水族的判準）
   suggested_type: 主題
   evidence: v9-12 水族潔淨與否的唯一判準是「有翅有鱗」，無論淡水鹹水皆適用
@@ -115,7 +105,9 @@ C_new_formal:
     - 10
     - 11
     - 12
-  target_path: link_folder/主題/有翅有鱗（潔淨水族的判準）.md
+  match_type: exact
+  existing_title: 有翅有鱗（潔淨水族的判準）
+  existing_path: link_folder/主題/有翅有鱗（潔淨水族的判準）.md
 - name: 不潔淨雀鳥（二十種可憎飛禽）
   suggested_type: 主題
   evidence: v13-19 逐一列舉二十種不可吃的雀鳥，多為食肉猛禽或食腐鳥類，末尾納入蝙蝠
@@ -123,11 +115,9 @@ C_new_formal:
   - phrase: 雀鳥
     verses:
     - 13
-  target_path: link_folder/主題/不潔淨雀鳥（二十種可憎飛禽）.md
-  semantic_hint:
-  - title: 潔淨與不潔淨
-    score: 0.4
-    type: 神學
+  match_type: exact
+  existing_title: 不潔淨雀鳥（二十種可憎飛禽）
+  existing_path: link_folder/主題/不潔淨雀鳥（二十種可憎飛禽）.md
 - name: 蹦跳的蝗蟲類（潔淨昆蟲）
   suggested_type: 主題
   evidence: v20-23 有翅膀用四足爬行的飛蟲當以為可憎，唯獨有腿能在地上蹦跳者（蝗蟲、螞蚱、蟋蟀、蚱蜢）可吃
@@ -135,7 +125,9 @@ C_new_formal:
   - phrase: 蝗蟲
     verses:
     - 22
-  target_path: link_folder/主題/蹦跳的蝗蟲類（潔淨昆蟲）.md
+  match_type: exact
+  existing_title: 蹦跳的蝗蟲類（潔淨昆蟲）
+  existing_path: link_folder/主題/蹦跳的蝗蟲類（潔淨昆蟲）.md
 - name: 地上爬物（八種不潔爬蟲）
   suggested_type: 主題
   evidence: v29-31 列舉地上爬物中不潔淨的八種：鼬鼠、鼫鼠、蜥蜴、壁虎、龍子、守宮、蛇醫、蝘蜓
@@ -143,6 +135,37 @@ C_new_formal:
   - phrase: 地上爬物
     verses:
     - 29
-  target_path: link_folder/主題/地上爬物（八種不潔爬蟲）.md
+  match_type: exact
+  existing_title: 地上爬物（八種不潔爬蟲）
+  existing_path: link_folder/主題/地上爬物（八種不潔爬蟲）.md
+B_needs_update:
+- name: 你們要聖潔因為我是聖潔的
+  suggested_type: 神學
+  evidence: v44-45「我是耶和華你們的神；所以你們要成為聖潔，因為我是聖潔的」「我是把你們從埃及地領出來的耶和華……所以你們要聖潔，因為我是聖潔的」——本公式在利未記的第一次出現，也是全章一切飲食條例的理由
+  match_type: exact
+  existing_title: 你們要聖潔因為我是聖潔的
+  existing_path: link_folder/神學/你們要聖潔因為我是聖潔的.md
+- name: 古代近東飲食潔淨
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》多則——【利十一2 飲食的規限】美索不達米亞有食物短期遭禁的例子、巴比倫有些神祇只肯接受某種牲畜為祭物，「但卻沒有好像本段一般，凌駕一切之上的系統」；【利十一3～7
+    動物分類的準則】列出人類學家、健康衛生與異教儀式等理論並評其弱點；【利十一7 豬】亞述、赫人、埃及與希臘羅馬的豬祭資料
+  match_type: exact
+  existing_title: 古代近東飲食潔淨
+  existing_path: link_folder/背景/古代近東飲食潔淨.md
+C_new_formal:
+- name: 摸活的不潔淨動物算不算不潔（法利賽人與撒都該人之爭）
+  suggested_type: 解經爭議
+  evidence: GT 丁良才在 v26 與 v32 兩處記下法利賽人與撒都該人對本章條例的相反解法，並指出這使兩派「在家庭和社會的風俗人情上，發生好些不同的地方」
+  target_path: link_folder/解經爭議/摸活的不潔淨動物算不算不潔（法利賽人與撒都該人之爭）.md
+  semantic_hint:
+  - title: 聖潔飲食
+    score: 0.473
+    type: 主題
+  - title: 潔淨與不潔淨
+    score: 0.468
+    type: 神學
+  - title: 豬與異教祭祀的關聯
+    score: 0.466
+    type: 文化
 D_new_candidate: []
 E_skip: []

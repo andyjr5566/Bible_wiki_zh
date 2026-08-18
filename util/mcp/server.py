@@ -1397,6 +1397,20 @@ def _raw_corpus() -> str:
     return "".join(parts)
 
 
+def _latin_in_corpus(token: str, raw: str) -> bool:
+    """Whether a Latin transliteration appears in the corpus as a whole word.
+
+    ``\\b`` cannot be used here: Python treats CJK characters as word characters,
+    so a transliteration printed straight against Chinese text — the normal way
+    these sources write it, e.g. 「從希伯來文shaphan音譯過來」 — has no word
+    boundary on either side and was reported as unsourced. Bounding on ASCII
+    letters instead still keeps ``perat`` from matching ``temperate`` while
+    letting a CJK-adjacent token count as found.
+    """
+    pattern = r"(?<![A-Za-z])" + re.escape(token) + r"(?![A-Za-z])"
+    return re.search(pattern, raw, re.IGNORECASE) is not None
+
+
 def _raw_corpus_unpointed(raw: str) -> str:
     """Corpus with niqqud stripped, so pointed Hebrew can be matched consonantally.
 
@@ -1417,7 +1431,8 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
     markdown is checked against the whole ``raw_data/`` corpus, not only the
     source files for this chapter or entry. Hebrew runs are compared after
     stripping niqqud; Latin tokens use word-boundary matching so that ``perat``
-    does not falsely match ``temperate``. A flag means the token appears nowhere
+    does not falsely match ``temperate``; the bound is ASCII letters, not ``b``, so a
+    transliteration printed against CJK text still counts as found. A flag means the token appears nowhere
     in the local corpus and is a strong removal signal. No flag does *not* prove
     the token came from this entry's actual accumulated sources. This tool reads
     only; it never edits.
@@ -1446,13 +1461,11 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
             token = token.strip()
             if not token or token in _TRANSLITERATION_IGNORE:
                 continue
-            if re.search(r"\b" + re.escape(token) + r"\b", raw, re.IGNORECASE):
+            if _latin_in_corpus(token, raw):
                 continue
             # A compound such as "Peniel / Penuel" is sourced when every word is.
             words = [word for word in re.split(r"[^A-Za-z']+", token) if word]
-            if words and all(
-                re.search(r"\b" + re.escape(word) + r"\b", raw, re.IGNORECASE) for word in words
-            ):
+            if words and all(_latin_in_corpus(word, raw) for word in words):
                 if include_warnings:
                     simplified_note = {
                         "file": relative,

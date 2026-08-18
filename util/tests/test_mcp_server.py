@@ -319,6 +319,36 @@ class ScanUnsourcedTokensTests(unittest.TestCase):
         hebrew = {item["token"] for item in result["unsourced_hebrew"]}
         self.assertNotIn("מִנְחָה", hebrew)
 
+    def test_transliteration_printed_against_cjk_counts_as_a_source(self):
+        """These sources write the transliteration with no space around it.
+
+        ``\\b`` treats CJK as word characters, so 「希伯來文shaphan音譯」 has no
+        boundary on either side and the sourced token was reported as unsourced.
+        """
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "沙番（shaphan）是一種兔類的動物。\n")
+            (root / "raw_data" / "gt_x.txt").write_text(
+                "“沙番”從希伯來文shaphan音譯過來，一般認為就是“蹄兔”。", encoding="utf-8"
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        latin = {item["token"] for item in result["unsourced_latin"]}
+        self.assertNotIn("shaphan", latin)
+
+    def test_substring_of_a_latin_word_is_still_unsourced(self):
+        """Relaxing the bound must not let ``perat`` match ``temperate``."""
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "伯拉大河（perat）。\n")
+            (root / "raw_data" / "bh_x.txt").write_text(
+                "a temperate climate encouraged cooperation", encoding="utf-8"
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        latin = {item["token"] for item in result["unsourced_latin"]}
+        self.assertIn("perat", latin)
+
 
 class RunGatesTests(unittest.TestCase):
     def test_fail_conclusion_overrides_zero_exit_code(self):
