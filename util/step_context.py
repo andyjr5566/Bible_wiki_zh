@@ -82,8 +82,10 @@ def load_validated_nearby_step(
     canonical = _to_canonical_zh(book)
     try:
         path = find_formal_step_source(root, canonical, chapter)
-    except (FileNotFoundError, StepValidationError):
+    except FileNotFoundError:
         return None, None
+    except StepValidationError as exc:
+        return None, str(exc)
 
     try:
         scripture = Path(root) / "raw_scripture" / canonical / f"第{chapter}章.txt"

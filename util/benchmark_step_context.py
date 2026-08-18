@@ -378,12 +378,11 @@ def run_benchmarks(data_path: Path) -> dict:
                         f"{case[stage]['reduction_l2_to_l3_percent']}%"
                     )
     return {
-
         "version": 2,
         "layers": {
             "layer1": "Legacy FULL (full commentary text + full raw STEP table in prompt)",
-            "layer2": "Current Compact (commentary reference + full chapter compact STEP projection)",
-            "layer3": "New Selected Evidence (commentary reference + targeted/selected candidates STEP)",
+            "layer2": "Phase 1 compact (M3: targeted-verse compact; M6: full chapter compact STEP projection)",
+            "layer3": "Phase 2 selected evidence (commentary reference + targeted/selected candidates STEP)",
         },
         "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
         "source": "local official STEPBible-Data cache; no network",

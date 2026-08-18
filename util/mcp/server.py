@@ -1152,8 +1152,22 @@ def find_step_candidates(
         path = step_context.find_formal_step_source(
             ROOT_DIR, canonical, chapter, verses=selected
         )
+        scripture = ROOT_DIR / "raw_scripture" / canonical / f"第{chapter}章.txt"
+        verse_count = (
+            len(scripture.read_text(encoding="utf-8").splitlines())
+            if scripture.is_file()
+            else None
+        )
+        receipt = step_context.validate_step_source(
+            path,
+            expected_book=canonical,
+            expected_chapter=chapter,
+            scripture_verse_count=verse_count,
+        )
         raw = path.read_text(encoding="utf-8-sig", errors="strict")
         doc = step_extractor.parse_rendered_markdown_text(raw)
+        if doc.reference.chapter != chapter or step_context._to_canonical_zh(doc.reference.book_name) != canonical:
+            raise step_context.StepValidationError(f"STEP chapter/book 不符：{path}")
         max_count = min(max(1, int(max_results)), step_context.HARD_CANDIDATE_MAX)
         diagnostics: dict = {}
         candidates = step_context.discover_candidates(
@@ -1171,6 +1185,7 @@ def find_step_candidates(
             "success": True,
             "book": canonical,
             "chapter": chapter,
+            "validation": receipt,
             "candidates": [
                 {
                     "base_strong": c.base_strong,

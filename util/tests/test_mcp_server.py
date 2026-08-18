@@ -237,6 +237,8 @@ class StepContextToolTests(unittest.TestCase):
                 result = server.find_step_candidates("創世記", 1)
             self.assertTrue(result["success"])
             self.assertIn("candidates", result)
+            self.assertIn("validation", result)
+            self.assertEqual("PASS", result["validation"]["status"])
 
     def test_find_step_occurrences_tool(self):
         with tempfile.TemporaryDirectory() as directory:

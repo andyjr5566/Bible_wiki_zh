@@ -620,6 +620,29 @@ class SelectM3CandidateEvidenceTests(unittest.TestCase):
         self.assertIn("6:4", evidence.text)
         self.assertIn("7:4", evidence.text)
 
+    def test_load_validated_nearby_step_differentiates_missing_and_invalid(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            # 1. Truly missing file -> (None, None)
+            doc, err = step_context.load_validated_nearby_step(root, "創世記", 99)
+            self.assertIsNone(doc)
+            self.assertIsNone(err)
+
+            # 2. Manifest with ambiguous/invalid STEP sources -> (None, error_str)
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| STEP 1 | 原文資料 | https://x/1 | raw_data/s1.txt | OK |\n"
+                "| STEP 2 | 原文資料 | https://x/2 | raw_data/s2.txt | OK |\n",
+                encoding="utf-8",
+            )
+            doc, err = step_context.load_validated_nearby_step(root, "創世記", 1)
+            self.assertIsNone(doc)
+            self.assertIsNotNone(err)
+            self.assertIn("多個", err)
+
 
 if __name__ == "__main__":
     unittest.main()
