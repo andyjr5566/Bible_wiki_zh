@@ -2,6 +2,17 @@
 
 # Agent Start Prompt
 
+## Production 核心規則（優先於本文歷史說明）
+
+1. M3 / M6 一律人工 payload，不使用外部模型 API 自動生成。
+2. 四套 Commentary 必須全文閱讀一次，不在每個 M3/M6 prompt 重複全文。
+3. STEP full raw 不要求 Agent 全文逐詞閱讀；由 machine validation 驗證。
+4. M3 只接收 candidate-matched STEP evidence，不接收整節或整章 STEP raw。
+5. M6 只接收 selected HIGH/MEDIUM STEP evidence。
+6. STEP 不足時使用 MCP 精確 query，不猜測、不 dump full raw。
+7. `find_step_occurrences` 可 bounded 查相鄰章，但每章都必須使用正式且驗證通過的 STEP source。
+8. 實際 M3/M6 寫作格式，以 `run_chapter_manual.py prompts` 當次產生的 prompt 為最終規格。
+
 處理書卷章節時，流程由 `util/run_chapter_manual.py` 與人工 payload 共同主導；你負責「準備輸入、讀來源、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。
 
 ## MCP 輔助（可用時；不取代本流程）
@@ -11,10 +22,14 @@
 `read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、manifest 正式來源
 內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
 
-STEP 探索與候選發現用 `find_step_candidates`，相鄰章節出現次數查核用 `find_step_occurrences`，
-深查用 `query_step_context`（book/chapter＋verses／exact Strong／base_strong／word），或 CLI
-`python util/step_context.py 書名 章 --verses 1-3`；只讀本章 manifest 宣告的本地正式 STEP，
-不查網路或其他章。`read_chapter_source` 禁止直接讀取 raw STEP 全文，以防 token 膨脹。
+STEP 使用規則：
+
+- 本章原文查詢以本章 manifest 宣告的正式 STEP source 為準。
+- STEP full raw 由 machine validation 驗證，不要求 Agent 人工全文逐詞閱讀，也不得整份塞進 M3/M6 prompt。
+- `query_step_context`、`find_step_candidates` 用於本章精確查詢。
+- `find_step_occurrences` 可在 bounded 範圍查相鄰章；每個相鄰章都必須使用其正式 STEP source 並先通過 deterministic validation。
+- 不查網路 STEP。
+- `read_chapter_source` 不得讀取 structured STEP raw 全文。
 
 
 本檔下面列出的 `util/*.py` 都有對應 MCP 工具：註釋抓取用 `crawl_bible_source`、STEP 原文擷取用
@@ -84,11 +99,16 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    python util/run_chapter_manual.py prompts 【書名】 X
    ```
    `prompts` 會落地 `manual/sources.md`、M3/M6 實際 prompt 與 `prompt_metrics.json`。Agent
-   必須依 sources.md 全文讀四套 commentary 並完成 read_log；STEP 全 raw 由 machine gate 驗證，
-   M3 prompt 依 batch evidence/surfaces 挑出之節次注入 targeted compact projection（無法解析節號時 fail-small 僅提示，不塞整章），
-   M6 prompt 注入少量 selected candidates 原文證據。需要更多原文時用 MCP 工具 `find_step_candidates`、
-   `find_step_occurrences`、`query_step_context` 或 CLI `step_context.py`。手寫
-   `.tmp/第x章/entry_content/*.yaml` 與 `chapter_content.yaml`。條目寫齊後重跑 `prompts`
+   必須依 sources.md 全文讀四套 commentary 並完成 read_log；STEP 全 raw 由 machine gate 驗證。
+   M3 的 STEP 使用方式：
+   - evidence / surfaces / verses 只是 candidate 的搜尋範圍，不代表把該節全部 STEP words 放進 prompt。
+   - selector 只注入與本批 candidate 實際匹配的 STEP evidence，例如 Strong / Extended Strong、Hebrew / Greek token、transliteration 或可機械確認的 surface。
+   - 找不到的 candidate fail-small，不猜詞。
+   - evidence=全章 的 candidate 只略過該 candidate，不得讓同一 large batch 其他 candidate 失去 STEP evidence。
+   - 絕不 fallback 成整節或整章 STEP raw。
+   - 需要更多資料時才使用 MCP query。
+   M6 只注入 HIGH / MEDIUM selected STEP candidates，不用 LOW 填滿預算；需要更多原文細節時再用 MCP query。
+   手寫 `.tmp/第x章/entry_content/*.yaml` 與 `chapter_content.yaml`。條目寫齊後重跑 `prompts`
    更新 M6 prompt，再依序執行 `check`、`run`；`run` 只做 M5/P3/P4，若缺 payload 會直接報錯，不會自動產生內容。
    - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」）。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗。
    - **M3 的 alias 撞名不再硬失敗**：alias 撞上既有／同批條目時（利2「素祭」配「禮物」實例），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，保留其餘人工 payload 供修正。

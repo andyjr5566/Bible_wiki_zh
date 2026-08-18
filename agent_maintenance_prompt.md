@@ -2,6 +2,17 @@
 
 # Agent Maintenance Prompt（維護既有章節與 link_folder 條目）
 
+## Production 核心規則（優先於本文歷史說明）
+
+1. M3 / M6 一律人工 payload，不使用外部模型 API 自動生成。
+2. 四套 Commentary 必須全文閱讀一次，不在每個 M3/M6 prompt 重複全文。
+3. STEP full raw 不要求 Agent 全文逐詞閱讀；由 machine validation 驗證。
+4. M3 只接收 candidate-matched STEP evidence，不接收整節或整章 STEP raw。
+5. M6 只接收 selected HIGH/MEDIUM STEP evidence。
+6. STEP 不足時使用 MCP 精確 query，不猜測、不 dump full raw。
+7. `find_step_occurrences` 可 bounded 查相鄰章，但每章都必須使用正式且驗證通過的 STEP source。
+8. 實際 M3/M6 寫作格式，以 `run_chapter_manual.py prompts` 當次產生的 prompt 為最終規格。
+
 新章製作照 `agent_start_prompt.md` 走。本檔管的是**維護**：章節做完之後，回頭修改
 `.tmp/第x章/` 的內容（M3 條目、M6 本章整理、候選、B 類累積），要怎麼把修改正確地
 落到渲染後的 `第x章.md` 與 `link_folder/**.md`。
@@ -78,6 +89,12 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
   某家沒說就別替他生一個；矛盾並陳不壓平；英文來源譯成繁中不貼原文；只出自經文與來源。
 - **STEP 邊界**：STEP 是原文證據層，不是第五套 commentary；可支持詞形、lemma、Strong、
   morphology、context gloss 與 lexicon 義域。STEP 未在 context projection 出現或 brief lexicon 未列某含義，不等於「STEP 否定該義」或「原文查無此義」；STEP absence 不得作為否定註釋延伸的證據。
+- **STEP 實際執行規則**：
+  - STEP full raw 只做 machine validation，不人工全文逐詞讀，也不整份塞進 M3/M6。
+  - M3 只使用 candidate-matched projection；verse scope 只是搜尋範圍，不是整節輸入。
+  - 單一 candidate 無法定位或 evidence=全章時，只讓該 candidate fail-small，不影響同 batch 其他 candidate。
+  - M6 使用 selected HIGH/MEDIUM candidates。
+  - 不足的原文資料再用 MCP query，不自行猜測。
 - **原文資料採正面分層語氣**：先陳述 STEP 能確認的字形、lemma、Strong、morphology、
   本節譯義與簡要義域；再寫「部分註釋進一步理解為……」「結合其他經文，某來源進一步討論……」。
   STEP 負責界定 linguistic evidence，commentary 負責呈現整段與跨經文的解經延伸；兩層並陳，
@@ -272,10 +289,11 @@ python util/verify_links.py 【書名】
 
 ## 實戰要點（開場先讀，少走冤枉路）
 
-這節是把已踩過的坑落成 checklist。逐章維護的實際順序建議：**四套 OK commentary 全讀＋STEP machine gate → 機械掃描（下 A）
-→ 逐條目讀＋高風險四類勘誤 → 覆蓋率重推（下 B）→ 驗 M6 → 閘門 → 分兩 commit（勘誤／覆蓋）**。
+STEP 是否可用一律以當章 `source_manifest.md` 與 machine validation 結果為準：
 
-**既有 Phase A 狀態（2026-08-13）：**創世記 1–50、出埃及記 1–40 的 STEP raw、manifest 第五列與 machine receipt 已補齊；這是來源基礎設施 enrichment，不代表重開兩卷生命週期，也不要因此重跑 M3／M6／render／links 或硬補不存在的歷史 commentary read logs。`reports/step_audit/` 只是人工勘誤佇列，不可據此自動改 production。利未記／民數記不做預先 backfill，等實際正式校讀時逐章整合 STEP。
+- manifest 有正式 STEP 且 validation PASS → 使用目前 projection/query 架構。
+- STEP 缺檔或 validation FAIL → 先依正式 extractor / manifest 流程補齊，不得跳過。
+- 不依賴過去某次 Phase A 書卷清單判斷。
 
 ### A0. 開工第一件事：commentary 全讀＋STEP machine gate（沒過不准動任何檔）
 

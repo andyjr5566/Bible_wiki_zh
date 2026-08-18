@@ -1,32 +1,50 @@
 # Scripture Knowledge Base Scheme
 
 本檔是 `scripture/` 的設計原則與決策記錄，供人與 agent 理解「為什麼這樣設計」。
-操作入口見 `agent_start_prompt.md`；資料結構契約見 `_config/schemas/*.json`；流程本身在 `util/run_chapter.py`。重構緣由與階段記錄見 `refactor_guidelines.md`。
+操作入口見 `agent_start_prompt.md`。
+正式 production chapter workflow 由 `util/run_chapter_manual.py` 主導；
+`util/run_chapter.py` 是底層 orchestrator，M3/M6 的外部 model/API 路徑已停用。
+資料結構契約見 `_config/schemas/*.json`。
 
-核心一句話：**模型不碰結構，程式不碰內容。** 模型只輸出 YAML payload（資料），所有 markdown 由 render 程式從 payload 生成；格式合規是結構性保證，不靠模型自律。
+核心一句話：**模型不碰結構，程式不碰內容。** 所有 markdown 由 render 程式從 payload 生成；格式合規是結構性保證，不靠模型自律。
 
 ---
 
 ## 1. 架構總覽
 
+正式 production flow：
+
 ```text
-編排層（程式）util/run_chapter.py
-  resolve → entry_content(模型) → verse_links(程式) → chapter_content(模型) → render → validate
-  斷點續跑：.tmp/第x章/ 內檔案存在即跳過；重跑冪等
-資料層（模型填寫）.tmp/第x章/*.yaml —— 每種有 JSON Schema
-  link_candidates.yaml   候選節點（agent 準備，唯一人工內容輸入）
-  link_plan.yaml         A–E 分類（resolver 產生）
-  entry_content/*.yaml   C 類新條目 payload（模型批量填寫，每批 5 條）
-  verse_links.yaml       經文 wiki-link（程式掃描產生，不呼叫模型）
-  chapter_content.yaml   本章知識節點＋本章整理（模型填寫；線上格式為
-                         「YAML 頭＋===ORGANIZATION=== 分隔的裸 markdown」，
-                         由程式組裝——模型不做 YAML 跳脫，杜絕長文塞字串的整類失敗）
-  link_updates.yaml      B 類累積（agent 填 summary/relation）
+來源準備
+→ Commentary Agent 全文閱讀 + read_log
+→ STEP full raw machine validation
+→ resolve / link_plan
+→ run_chapter_manual.py prompts
+→ Agent 手寫 M3 entry_content/*.yaml
+→ 重跑 prompts 更新 M6 prompt
+→ Agent 手寫 M6 chapter_content.yaml
+→ check
+→ M5 verse_links（程式）
+→ render
+→ validate
+→ B 類 link_updates
+→ final gates
+```
+
+```text
+資料層（人工與程式填寫）.tmp/第x章/*.yaml —— 每種有 JSON Schema
+  link_candidates.yaml   Agent 判斷候選（唯一人工內容輸入）
+  link_plan.yaml         resolver 程式產生 A–E
+  entry_content/*.yaml   Agent 依實際 M3 prompt 手寫
+  verse_links.yaml       程式產生
+  chapter_content.yaml   Agent 依實際 M6 prompt 手寫
+  link_updates.yaml      Agent 填 summary/relation，程式安全套用
 呈現層（程式）render_entry.py / render_chapter.py
   payload → markdown；frontmatter、H2 順序、accumulation 標記、alias 格式全由程式排版
 ```
 
-模型呼叫規約（`util/model_client.py`）：schema 驗證 + 具體錯誤回饋重試（上限 3 次）+ 失敗標記 manual_review。端點可切換（`_config/model_endpoints.yaml`；CLI `list|use|test`；API key 只放環境變數，經 `api_key_env` 引用，不寫進設定檔）。`tasks:` 把不同任務路由到不同端點與模型：值可為端點名字串，或 `{endpoint, model, kind}` mapping（同一端點依任務換模型）。目前 `entry`（條目，量大逐批）、`chapter`（本章整理，長篇）、`embedding`（語義索引，`kind: embedding`）各自指定。mapping 的 model 只在最終選中的端點就是該設定端點時生效；env 切到別的端點＝用該端點自己的 model。
+M3 manual production 預設使用 large batch，避免重複輸入共同 prompt context；只有明確指定 `--batch-size` 時才分批。
+M3 / M6 的舊外部 model/API 自動生成路徑已停用；正式 production 一律使用 `run_chapter_manual.py` + Agent 手寫 payload。模型端點設定若仍供 embedding 等其他工具使用，與 M3/M6 chapter production 無關。
 
 **決策記錄：模板不設 `_templates/` 資料夾。** 條目與章節的 markdown 結構直接寫在 render 程式內（有 round-trip 測試保證 `render(parse(x)) == x`）；設獨立模板檔會造成兩份真相。模型永遠看不到模板——這才是原則的重點。
 
@@ -36,7 +54,7 @@
 
 ```text
 scripture/
-├── scheme.md / agent_start_prompt.md / refactor_guidelines.md
+├── scheme.md / agent_start_prompt.md
 ├── raw_scripture/{標準書名}/第{章}.txt     # 本地經文，每行一節，不得改寫
 ├── raw_data/                               # 註釋 crawl 與 STEP extract 的正式來源文字
 ├── .stepbible_data/                        # STEP 官方資料集可重建快取（gitignored）
@@ -83,7 +101,7 @@ scripture/
 |---|---|---|
 | A | 既有條目已含本書卷本章累積 | 直接用（verse_links 連 existing_title） |
 | B | 既有條目，本章尚未累積 | `link_updates.py` 安全累積（人填 summary/relation） |
-| C | 不存在且資料足夠 | orchestrator 批量請模型建正式條目 |
+| C | 不存在且資料足夠 | Agent 依 M3 prompt 手寫 entry_content payload，再由程式驗證與 render |
 | D | 同名／分類衝突、資料不足 | 人工判斷，不得自動建立或連結 |
 | E | 不應建 link | 純文字 |
 
@@ -119,10 +137,13 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 ## 4. 資料流契約
 
 ```text
-raw_scripture + 有效 raw_data
-→ link_candidates.yaml（agent 判斷）
+raw_scripture + 正式 raw_data
+→ link_candidates.yaml（Agent 判斷）
 → build_link_index.py → resolve → link_plan.yaml（程式分類 A–E）
-→ run_chapter.py：entry payloads（模型）→ verse_links（程式掃描）→ chapter_content（模型）
+→ run_chapter_manual.py prompts
+→ entry_content/*.yaml（Agent 手寫 M3）
+→ verse_links.yaml（程式掃描）
+→ chapter_content.yaml（Agent 手寫 M6）
 → render_entry / render_chapter（程式渲染全部 markdown）
 → link_updates.py（B 類，人填內容、程式冪等寫入標記區）
 → 驗證鏈 → commit
