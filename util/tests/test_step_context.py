@@ -643,6 +643,47 @@ class SelectM3CandidateEvidenceTests(unittest.TestCase):
             self.assertIsNotNone(err)
             self.assertIn("多個", err)
 
+    def test_mixed_batch_with_precise_and_full_chapter_entries(self):
+        # Same batch containing:
+        # 1. precise Strong candidate (H1254 in v1)
+        # 2. evidence=全章 candidate (skipped without blocking others)
+        # 3. Hebrew/transliteration candidate (穹蒼 raqia H7549 in vv6-7)
+        batch = [
+            {
+                "name": "創造",
+                "suggested_type": "原文",
+                "evidence": "1節；H1254",
+                "surfaces": [],
+            },
+            {
+                "name": "創造之工",
+                "suggested_type": "原文",
+                "evidence": "全章",
+                "surfaces": [],
+            },
+            {
+                "name": "穹蒼（raqia）",
+                "suggested_type": "原文",
+                "evidence": "6-7節",
+                "surfaces": [{"phrase": "空氣", "verses": [6, 7]}],
+            },
+        ]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(2, evidence.candidate_count)
+        self.assertEqual(2, evidence.selected_count)
+        self.assertEqual(3, evidence.occurrences)
+        self.assertEqual((1, 6, 7), evidence.selected_verses)
+        # Precise candidates get STEP evidence
+        self.assertIn("H1254", evidence.text)
+        self.assertIn("H7549", evidence.text)
+        # Full chapter candidate is skipped and mentioned in note
+        self.assertIn("創造之工", evidence.text)
+        self.assertIn("query_step_context", evidence.text)
+        # Other unrelated words in full chapter (e.g. H6213A, H7225) are NOT dumped
+        self.assertNotIn("H6213A", evidence.text)
+        self.assertNotIn("H7225", evidence.text)
+
 
 if __name__ == "__main__":
     unittest.main()

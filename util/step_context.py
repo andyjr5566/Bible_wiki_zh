@@ -634,6 +634,7 @@ def render_candidate_summary(
     book_name: str = "",
     chapter: int = 0,
     truncated: bool = False,
+    notes: Optional[list[str]] = None,
 ) -> str:
     """Render compact markdown summary for selected candidates."""
     lines = [
@@ -644,6 +645,9 @@ def render_candidate_summary(
     ]
     if truncated:
         lines.append("- note: 候選資料已依 token 預算截斷，更多詞彙請透過 MCP 查詢。")
+    if notes:
+        for n in notes:
+            lines.append(f"- note: {n}")
     lines.append("")
 
     for c in candidates:
@@ -683,6 +687,8 @@ def select_m3_candidate_evidence(
 
     Only injects candidate-relevant linguistic evidence for the entries in this batch.
     Never falls back to full-verse dumps of unrelated words.
+    Per-entry fail-small: if one candidate has full-chapter scope or cannot be resolved,
+    other precise candidates in the same batch still receive their STEP evidence.
     """
     batch_list = list(batch or [])
     if not batch_list:
@@ -711,31 +717,27 @@ def select_m3_candidate_evidence(
             truncated=False, total_chars=len(text), mode="non-original-skipped"
         )
 
-    for entry in batch_list:
-        if "全章" in str(entry.get("evidence", "")):
-            text = (
-                "## STEP Bible selected candidates\n"
-                f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
-                "- candidate count: 0\n"
-                "- mode: full-chapter-evidence\n"
-                "- note: 候選範圍為全章，為避免 token 膨脹未自動投射整章 compact STEP；請使用 find_step_candidates 探索或 query_step_context 查詢。\n"
-            )
-            return StepEvidence(
-                text=text, candidate_count=0, selected_count=0,
-                truncated=False, total_chars=len(text), mode="full-chapter-evidence"
-            )
-
     base_occurrences: dict[str, list[extract_stepbible.WordEntry]] = {}
     base_seen_keys: dict[str, set[tuple[str, int]]] = {}
     all_selected_verses: set[int] = set()
+    skipped_full_chapter_entries: list[str] = []
 
     for entry in batch_list:
         if _is_non_original_entry(entry):
             continue
         entry_name = str(entry.get("name") or "")
         evidence = str(entry.get("evidence") or "")
+
+        if "全章" in evidence:
+            skipped_full_chapter_entries.append(entry_name or "全章候選")
+            continue
+
         surfaces = entry.get("surfaces") or []
-        verse_scope, _warnings, _is_full = _evidence_verses(evidence)
+        verse_scope, _warnings, is_full = _evidence_verses(evidence)
+        if is_full:
+            skipped_full_chapter_entries.append(entry_name or "全章候選")
+            continue
+
         verse_scope.update(_surface_verses(entry))
         if verse_scope:
             all_selected_verses.update(verse_scope)
@@ -885,6 +887,18 @@ def select_m3_candidate_evidence(
         )
 
     if not matched_candidates:
+        if skipped_full_chapter_entries:
+            text = (
+                "## STEP Bible selected candidates\n"
+                f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
+                "- candidate count: 0\n"
+                "- mode: full-chapter-evidence\n"
+                "- note: 候選範圍為全章，為避免 token 膨脹未自動投射整章 compact STEP；請使用 find_step_candidates 探索或 query_step_context 查詢。\n"
+            )
+            return StepEvidence(
+                text=text, candidate_count=0, selected_count=0,
+                truncated=False, total_chars=len(text), mode="full-chapter-evidence"
+            )
         text = (
             "## STEP Bible selected candidates\n"
             f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
@@ -897,6 +911,11 @@ def select_m3_candidate_evidence(
             truncated=False, total_chars=len(text), mode="unresolved"
         )
 
+    extra_notes = []
+    if skipped_full_chapter_entries:
+        names_str = "、".join(skipped_full_chapter_entries)
+        extra_notes.append(f"候選【{names_str}】範圍為全章，未自動投射整章 compact STEP；請使用 query_step_context 查詢。")
+
     selected: list[StepCandidate] = []
     for c in matched_candidates:
         candidate_test = selected + [c]
@@ -905,6 +924,7 @@ def select_m3_candidate_evidence(
             book_name=document.reference.book_name,
             chapter=document.reference.chapter,
             truncated=len(candidate_test) < len(matched_candidates),
+            notes=extra_notes,
         )
         if len(rendered) <= char_budget:
             selected.append(c)
@@ -917,6 +937,7 @@ def select_m3_candidate_evidence(
         book_name=document.reference.book_name,
         chapter=document.reference.chapter,
         truncated=truncated,
+        notes=extra_notes,
     )
     total_occs = sum(len(c.occurrences) for c in selected)
     return StepEvidence(
