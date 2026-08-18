@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 9
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 亞倫
   suggested_type: 人物
   evidence: 全章主角，第八天首次以正式大祭司身分親自獻上贖罪祭、燔祭、平安祭（v7-24）
@@ -56,12 +55,12 @@ B_needs_update:
   match_type: exact
   existing_title: 神在火中降臨
   existing_path: link_folder/神學/神在火中降臨.md
-- name: 下拜（shachah）
+- name: 下拜
   suggested_type: 原文
-  evidence: v24「眾民一見，就都歡呼，俯伏在地」
+  evidence: v24「眾民一見，就都歡呼，俯伏在地」；CT〔原文字義〕給「俯伏」的字義是「仆倒」，與出24:1「下拜」不是同一個原文字
   match_type: exact
-  existing_title: 下拜（shachah）
-  existing_path: link_folder/原文/下拜（shachah）.md
+  existing_title: 下拜
+  existing_path: link_folder/原文/下拜.md
 - name: 贖罪祭
   suggested_type: 神學
   evidence: v2,3,8-11,15 亞倫先為自己、後為百姓所獻的贖罪祭
@@ -69,17 +68,17 @@ B_needs_update:
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
 - name: 燔祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v2,3,12-14,16 為亞倫和為百姓所獻的燔祭
   match_type: exact
   existing_title: 燔祭
   existing_path: link_folder/神學/燔祭.md
 - name: 平安祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v4,18-21 為百姓所獻的平安祭（公牛和公綿羊）
   match_type: exact
   existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
+  existing_path: link_folder/神學/平安祭.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v4,17「並取調油的素祭」「他又奉上素祭，從其中取一滿把，燒在壇上」
@@ -134,12 +133,12 @@ B_needs_update:
   match_type: exact
   existing_title: 肥尾巴
   existing_path: link_folder/原文/肥尾巴.md
-- name: 搖祭（tenufah）
+- name: 搖祭
   suggested_type: 原文
   evidence: v21「胸和右腿，亞倫當作搖祭，在耶和華面前搖一搖」
   match_type: exact
-  existing_title: 搖祭（tenufah）
-  existing_path: link_folder/原文/搖祭（tenufah）.md
+  existing_title: 搖祭
+  existing_path: link_folder/原文/搖祭.md
 - name: 銅壇（燔祭壇）
   suggested_type: 主題
   evidence: v8,9,12,13,17,20 全章反覆以壇為獻祭焚燒之處
@@ -166,10 +165,41 @@ B_needs_update:
   match_type: exact
   existing_title: 營外焚燒
   existing_path: link_folder/主題/營外焚燒.md
-C_new_formal:
 - name: 舉手祝福（祭司祝福百姓）
   suggested_type: 神學
   evidence: v22-23「亞倫向百姓舉手，為他們祝福」「摩西、亞倫進入會幕，又出來為百姓祝福」，祭司體系正式運作後的第一個職事動作，KC指出此預表基督升天前舉手祝福門徒（路24:50）
-  target_path: link_folder/神學/舉手祝福（祭司祝福百姓）.md
+  match_type: exact
+  existing_title: 舉手祝福（祭司祝福百姓）
+  existing_path: link_folder/神學/舉手祝福（祭司祝福百姓）.md
+B_needs_update:
+- name: 壇火常燒不熄滅
+  suggested_type: 主題
+  evidence: v24「有火從耶和華面前出來，在壇上燒盡燔祭和脂油」；GT《利未記雷氏研讀本》把本節讀為「那常常燒的『火』（六12,13）開始焚燒的時候」，直接把利6:12-13
+    的常火條例接到本節
+  match_type: exact
+  existing_title: 壇火常燒不熄滅
+  existing_path: link_folder/主題/壇火常燒不熄滅.md
+- name: 雲柱火柱
+  suggested_type: 歷史
+  evidence: v23「耶和華的榮光就向眾民顯現」；GT《舊約聖經背景註釋》指雲柱火柱是最可能的顯現方式，「在此火從柱中冒出，燒盡所有的祭物」
+  match_type: exact
+  existing_title: 雲柱火柱
+  existing_path: link_folder/歷史/雲柱火柱.md
+C_new_formal:
+- name: 古代近東廟宇奉獻典禮
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》兩則——v1「七天的啟用奉獻典禮完成後，制度在第八日開始實施」並比對所羅門聖殿啟用（王上八62～64）與 hanok
+    一詞；v23「古代近東大部分的廟宇奉獻典禮，都是環繞神明正式在廟中開光而舉行（通常指神像搬入廟中）」，而耶和華在此沒有開光
+  target_path: link_folder/背景/古代近東廟宇奉獻典禮.md
+  semantic_hint:
+  - title: 古代近東以什一奉獻為神職薪酬
+    score: 0.546
+    type: 文化
+  - title: 古代近東祭壇
+    score: 0.505
+    type: 背景
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.492
+    type: 背景
 D_new_candidate: []
 E_skip: []
