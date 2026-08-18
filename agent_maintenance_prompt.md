@@ -124,13 +124,13 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 
 連上 `Hermes-Scripture-MCP` 時，先用 `get_chapter_status` 看管線缺口；用
 `read_chapter_artifact` 讀白名單內的 `.tmp` payload／prompt、用 `read_chapter_source`
-讀本章經文或 manifest 宣告為 OK 的來源、用 `search_wiki_entries`／`read_wiki_entry` 核對
-既有條目與 alias。這些工具有路徑白名單，不能用來讀任意檔案。
+讀本章經文或 manifest 宣告為 OK 的註釋來源（structured STEP 原文資料禁止透過此工具讀 raw 全文）、用 `search_wiki_entries`／`read_wiki_entry` 核對
+既有條目與 alias。STEP 原文候選發現用 `find_step_candidates`、相鄰章節出現次數查核用 `find_step_occurrences`、精確查詢用 `query_step_context`。這些工具有路徑與預算白名單，不能用來讀任意檔案。
 
 本檔引用的 `util/*.py` 也都有 MCP 對應：`extract_stepbible`、`build_source_manifest`、`build_candidate_similarity`、
 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
-`audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates` 與
+`audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates`、`find_step_candidates`、`find_step_occurrences`、`query_step_context` 與
 `rename_markdown`。`check_accumulation_orphans.py`（反向孤兒累積）與
 `check_development_staleness.py`（development 落後累積成長候選清單，見上方「勘誤所有
 link 與條目內容」一節）目前無 MCP 對應，直接用 Bash 跑。`run_chapter` 這個 MCP 名稱固定走

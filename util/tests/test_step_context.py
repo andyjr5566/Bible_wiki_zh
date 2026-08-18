@@ -157,15 +157,101 @@ class EvidenceSelectionTests(unittest.TestCase):
     def test_parse_range(self):
         self.assertEqual({1, 2, 3, 5}, step_context.parse_verse_spec("1-3、5"))
 
-    def test_unparseable_evidence_fails_open_to_full_chapter(self):
+    def test_unparseable_evidence_fails_small_without_full_chapter(self):
         result = step_context.select_candidate_verses(
             [{"name": "候選", "evidence": "這段只描述語義，沒有節號"}],
             range(1, 6),
         )
-        self.assertEqual((1, 2, 3, 4, 5), result.verses)
-        self.assertEqual("chapter-fallback", result.mode)
-        self.assertTrue(any("fail-open" in warning for warning in result.warnings))
+        self.assertEqual((), result.verses)
+        self.assertEqual("unresolved", result.mode)
+        self.assertTrue(any("未自動注入整章 STEP" in warning or "精確查詢" in warning for warning in result.warnings))
+
+
+class CandidateDiscoveryTests(unittest.TestCase):
+    def _sample_document(self):
+        ref = extract_stepbible.parse_reference("Genesis 1")
+        verses = {
+            1: [
+                make_word("Gen.1.1", 1, "בְּרֵאשִׁית", "bərēʾšît", "H7225", "N-fs", gloss="in the beginning", lexicon="beginning"),
+                make_word("Gen.1.1", 2, "בָּרָא", "bārāʾ", "H1254A", "V-Qal-3ms", gloss="created", lexicon="create"),
+                make_word("Gen.1.1", 3, "אֱלֹהִים", "ʾĕlōhîm", "H430G", "N-mp", gloss="God", lexicon="God"),
+                make_word("Gen.1.1", 4, "־", "-", "H9003", "Punct", gloss="punct", lexicon=""),
+            ],
+            2: [
+                make_word("Gen.1.2", 1, "וְהָאָרֶץ", "wəhāʾāreṣ", "H776", "N-fs", gloss="and the earth", lexicon="earth"),
+                make_word("Gen.1.2", 2, "אֱלֹהִים", "ʾĕlōhîm", "H430G", "N-mp", gloss="God", lexicon="God"),
+            ],
+            3: [
+                make_word("Gen.1.3", 1, "וַיֹּאמֶר", "wayyōʾmer", "H559", "V-Qal-3ms", gloss="and said", lexicon="say"),
+                make_word("Gen.1.3", 2, "אֱלֹהִים", "ʾĕlōhîm", "H430G", "N-mp", gloss="God", lexicon="God"),
+                make_word("Gen.1.3", 3, "בָּרָא", "bārāʾ", "H1254B", "V-Qal-3ms", gloss="created", lexicon="create"),
+            ],
+        }
+        return extract_stepbible.StepDocument(reference=ref, verses=verses)
+
+    def test_discover_candidates_excludes_control_strongs(self):
+        doc = self._sample_document()
+        candidates = step_context.discover_candidates(doc)
+        base_strongs = [c.base_strong for c in candidates]
+        self.assertNotIn("H9003", base_strongs)
+
+    def test_discover_candidates_priority_and_extended_variants(self):
+        doc = self._sample_document()
+        # H430 appears 3 times -> HIGH
+        # H1254 has variants H1254A, H1254B -> MEDIUM
+        # H7225 appears 1 time -> LOW
+        candidates = step_context.discover_candidates(doc)
+        cand_map = {c.base_strong: c for c in candidates}
+        self.assertIn("H430", cand_map)
+        self.assertEqual("HIGH", cand_map["H430"].priority)
+        self.assertEqual(3, len(cand_map["H430"].occurrences))
+
+        self.assertIn("H1254", cand_map)
+        self.assertEqual(set(cand_map["H1254"].exact_strongs), {"H1254A", "H1254B"})
+
+        self.assertIn("H7225", cand_map)
+        self.assertEqual("LOW", cand_map["H7225"].priority)
+
+    def test_discover_candidates_respects_max_results(self):
+        doc = self._sample_document()
+        candidates = step_context.discover_candidates(doc, max_results=2)
+        self.assertLessEqual(len(candidates), 2)
+
+    def test_select_step_evidence_respects_char_budget(self):
+        doc = self._sample_document()
+        evidence = step_context.select_step_evidence(doc, char_budget=600)
+        self.assertLessEqual(len(evidence.text), 600)
+        self.assertIn("H430", evidence.text)
+        self.assertNotIn("H7225", evidence.text)
+        self.assertTrue(evidence.truncated)
+        self.assertEqual(1, evidence.selected_count)
+        self.assertEqual(5, evidence.candidate_count)
+
+
+
+
+class NearbyOccurrencesTests(unittest.TestCase):
+    def test_find_nearby_occurrences_bounded_window(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "raw_data").mkdir()
+            # Write Exodus 19, 20, 21
+            for ch in (19, 20, 21):
+                path = root / "raw_data" / f"stepbible_exodus_{ch}.txt"
+                verses = {
+                    1: [make_word(f"Exo.{ch}.1", 1, "נָסָה", "nāsāh", "H5254G", "V-Piel", gloss="to test", lexicon="test")]
+                }
+                write_step(path, f"Exodus {ch}", verses)
+
+            results = step_context.find_nearby_occurrences(
+                root, "出埃及記", 20, "H5254", window=2, max_results=10
+            )
+            self.assertTrue(results["success"])
+            self.assertEqual(3, len(results["occurrences"]))
+            refs = [occ["reference"] for occ in results["occurrences"]]
+            self.assertEqual(["Exo.19.1", "Exo.20.1", "Exo.21.1"], refs)
 
 
 if __name__ == "__main__":
     unittest.main()
+

@@ -210,6 +210,46 @@ class ManualPromptIntegrationTests(unittest.TestCase):
             self.assertIn("raw_data/gt.txt", sources_plan)
             self.assertIn("raw_data/stepbible_genesis_1_1.txt", sources_plan)
 
+    def test_m3_unparseable_evidence_fails_small_without_dumping_full_chapter(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "raw_scripture" / "創世記").mkdir(parents=True)
+            (root / "raw_scripture" / "創世記" / "第1章.txt").write_text(
+                "起初，神創造天地。\n地是空虛混沌。\n", encoding="utf-8"
+            )
+            (root / "raw_data").mkdir()
+            (root / "raw_data" / "stepbible_genesis_1.txt").write_text(valid_step_text(), encoding="utf-8")
+            (root / "raw_data" / "ct.txt").write_text("CT commentary", encoding="utf-8")
+            (root / "link_folder" / "神學").mkdir(parents=True)
+            chapter = root / "01 創世記" / ".tmp" / "第1章"
+            chapter.mkdir(parents=True)
+            (chapter / "source_manifest.md").write_text(manifest_text([
+                ("CT", "逐節註解", "https://example.test/ct", "raw_data/ct.txt", "OK"),
+                ("STEP Bible", "原文資料", "https://x/step", "raw_data/stepbible_genesis_1.txt", "OK")
+            ]), encoding="utf-8")
+            (chapter / "manual").mkdir()
+            ctx = run_chapter.ChapterContext("創世記", 1, root=root, index={}, homonyms={})
+            plan = {
+                "A_use_directly": [], "B_needs_update": [],
+                "C_new_formal": [{
+                    "name": "神學候選", "suggested_type": "神學", "evidence": "純語義描述無節號",
+                    "surfaces": [],
+                }],
+                "D_draft": [],
+            }
+            manual = chapter / "manual"
+            ctx.runner = run_chapter_manual.PromptCapture(manual, "entry_batch", ctx=ctx)
+            run_chapter.entry_content_step(
+                ctx, plan, batch_size=10,
+                source_context_policy=source_excerpts.MANUAL_PROJECTED,
+            )
+            entry_prompt = (manual / "entry_batch_1.prompt.md").read_text(encoding="utf-8")
+            self.assertIn("mode: unresolved", entry_prompt)
+            self.assertIn("selected verses: none", entry_prompt)
+            self.assertNotIn("H1254A", entry_prompt)
+            self.assertTrue(any("未自動注入整章 STEP" in item or "精確查詢" in item for item in ctx.manual_review))
+
 
 if __name__ == "__main__":
     unittest.main()
+

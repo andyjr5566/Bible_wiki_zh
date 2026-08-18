@@ -38,6 +38,7 @@ try:
 except ImportError:
     from book_paths import book_directory, canonical_book_name
 
+import extract_stepbible
 import remediation
 import render_chapter
 import render_entry
@@ -1205,9 +1206,30 @@ def chapter_content_step(
         _log("▶ M6 chapter_content：讀取人工 payload 中…")
     raw_verses = ctx.raw_verses()
     raw_text = "\n".join(f"{i}. {v}" for i, v in enumerate(raw_verses, 1))
+    step_candidates = None
+    if source_context_policy == source_excerpts.MANUAL_PROJECTED:
+        plan_strongs = []
+        if isinstance(plan, dict):
+            for entries in plan.values():
+                if isinstance(entries, list):
+                    for e in entries:
+                        if isinstance(e, dict):
+                            for field in (e.get("name"), e.get("evidence"), e.get("definition")):
+                                if field:
+                                    plan_strongs.extend(extract_stepbible.extract_strongs(field))
+        try:
+            step_source_path = step_context.find_formal_step_source(ctx.root, ctx.book, ctx.chapter)
+            raw = step_source_path.read_text(encoding="utf-8-sig", errors="strict")
+            doc = extract_stepbible.parse_rendered_markdown_text(raw)
+            step_candidates = step_context.discover_candidates(
+                doc, plan_strongs=plan_strongs, max_results=step_context.HARD_CANDIDATE_MAX
+            )
+        except Exception:
+            step_candidates = None
     prompt_context = source_excerpts.build_prompt_context(
         ctx.path("source_manifest.md"), ctx.root,
         policy=source_context_policy,
+        step_candidates=step_candidates,
     )
     ctx._last_prompt_context = prompt_context
     sources_text = prompt_context.text

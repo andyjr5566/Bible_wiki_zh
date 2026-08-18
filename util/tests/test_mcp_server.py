@@ -185,6 +185,78 @@ class StepContextToolTests(unittest.TestCase):
         self.assertIn("overwrite=true", result["error"])
         run.assert_not_called()
 
+    def test_read_chapter_source_blocks_step_raw_bypass(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| STEP Bible | 原文資料 | https://x/step | raw_data/stepbible_genesis_1.txt | OK |\n",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.read_chapter_source("創世記", 1, source="STEP Bible")
+            self.assertFalse(result["success"])
+            self.assertIn("structured", result["error"])
+            self.assertIn("find_step_candidates", result.get("advice", result["error"]))
+
+    def test_read_chapter_source_allows_commentary(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "raw_data").mkdir()
+            (root / "raw_data" / "ct.txt").write_text("CT commentary body", encoding="utf-8")
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| CT | 逐節註解 | https://x/ct | raw_data/ct.txt | OK |\n",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.read_chapter_source("創世記", 1, source="CT")
+            self.assertTrue(result["success"])
+            self.assertIn("CT commentary body", result["content"])
+
+    def test_find_step_candidates_tool(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+            (tmp / "source_manifest.md").write_text(
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| STEP Bible | 原文資料 | https://x/step | raw_data/stepbible_genesis_1.txt | OK |\n",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.find_step_candidates("創世記", 1)
+            self.assertTrue(result["success"])
+            self.assertIn("candidates", result)
+
+    def test_find_step_occurrences_tool(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.find_step_occurrences("創世記", 1, base_strong="H1254")
+            self.assertTrue(result["success"])
+            self.assertIn("occurrences", result)
+
+    def test_query_step_context_base_strong(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_step(root)
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.query_step_context("創世記", 1, base_strong="H1254")
+            self.assertTrue(result["success"])
+            self.assertIn("בָּרָא", result["context"])
+
+
 
 class MCPUpdateTokenTests(unittest.TestCase):
     def test_apply_rejects_a_preview_token_when_target_changed(self):

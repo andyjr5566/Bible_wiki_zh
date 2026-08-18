@@ -444,12 +444,20 @@ def _manual_reference_block(identities, root):
     return "\n".join(lines).rstrip() + "\n"
 
 
+STEP_PROMPT_DISCLAIMER = (
+    "> 以下 STEP 區塊是 deterministic selector 為本任務挑出的少量候選，不是本章完整 STEP 資料。"
+    "需要更多經節／詞彙時，請使用 MCP 工具 query_step_context / find_step_candidates 進行精確查詢。"
+)
+
+
 def build_prompt_context(
     manifest_path,
     root,
     *,
     policy=FULL,
     step_verses=None,
+    step_candidates=None,
+    step_char_budget=None,
 ):
     """Build one policy-controlled source context without changing source truth."""
     root = Path(root)
@@ -467,25 +475,91 @@ def build_prompt_context(
     try:
         try:
             from . import step_context
+            from . import extract_stepbible
         except ImportError:
             import step_context
+            import extract_stepbible
         projections = []
         step_metrics = []
         for item in present:
             if not item.is_structured:
                 continue
-            projection = step_context.project_step_source(item.path, verses=step_verses)
-            projections.append(projection.text)
-            step_metrics.append({
-                "source": item.path.relative_to(root).as_posix(),
-                "raw_chars": projection.raw_chars,
-                "raw_bytes": projection.raw_bytes,
-                "projected_chars": projection.projected_chars,
-                "projected_bytes": projection.projected_bytes,
-                "occurrences": projection.occurrence_count,
-                "lexicon_entries": projection.lexicon_count,
-                "selected_verses": list(projection.selected_verses),
-            })
+            raw_bytes = item.path.stat().st_size
+            raw_chars = len(item.path.read_text(encoding="utf-8-sig", errors="replace"))
+
+            if step_verses == ():
+                # M3 unresolved fail-small mode
+                notice = (
+                    f"{STEP_PROMPT_DISCLAIMER}\n\n"
+                    "## STEP Bible task projection\n"
+                    f"- source: {item.path.name}\n"
+                    "- selected verses: none\n"
+                    "- mode: unresolved\n"
+                    "- note: evidence/surfaces 未能解析節號；未自動注入整章 STEP 資料。"
+                    "需要時請透過 MCP 工具 query_step_context / find_step_candidates 精確查詢。"
+                )
+                projections.append(notice)
+                step_metrics.append({
+                    "source": item.path.relative_to(root).as_posix(),
+                    "selection_mode": "unresolved",
+                    "raw_chars": raw_chars,
+                    "raw_bytes": raw_bytes,
+                    "projected_chars": len(notice),
+                    "projected_bytes": len(notice.encode("utf-8")),
+                    "occurrences": 0,
+                    "lexicon_entries": 0,
+                    "selected_verses": [],
+                    "candidate_count": 0,
+                    "selected_candidate_count": 0,
+                    "truncated": False,
+                    "fallback_used": False,
+                })
+            elif step_verses is not None:
+                # M3 targeted mode (specific verses or explicit full-chapter)
+                projection = step_context.project_step_source(item.path, verses=step_verses)
+                text_with_disclaimer = f"{STEP_PROMPT_DISCLAIMER}\n\n{projection.text}"
+                projections.append(text_with_disclaimer)
+                step_metrics.append({
+                    "source": item.path.relative_to(root).as_posix(),
+                    "selection_mode": "targeted",
+                    "raw_chars": projection.raw_chars,
+                    "raw_bytes": projection.raw_bytes,
+                    "projected_chars": len(text_with_disclaimer),
+                    "projected_bytes": len(text_with_disclaimer.encode("utf-8")),
+                    "occurrences": projection.occurrence_count,
+                    "lexicon_entries": projection.lexicon_count,
+                    "selected_verses": list(projection.selected_verses),
+                    "candidate_count": len(projection.selected_verses),
+                    "selected_candidate_count": len(projection.selected_verses),
+                    "truncated": False,
+                    "fallback_used": False,
+                })
+            else:
+                # M6 selected candidates mode (step_verses is None)
+                budget = step_char_budget or step_context.DEFAULT_STEP_PROMPT_CHAR_BUDGET
+                raw = item.path.read_text(encoding="utf-8-sig", errors="strict")
+                doc = extract_stepbible.parse_rendered_markdown_text(raw)
+                evidence = step_context.select_step_evidence(
+                    doc, candidates=step_candidates, char_budget=budget
+                )
+                text_with_disclaimer = f"{STEP_PROMPT_DISCLAIMER}\n\n{evidence.text}"
+                projections.append(text_with_disclaimer)
+                step_metrics.append({
+                    "source": item.path.relative_to(root).as_posix(),
+                    "selection_mode": "selected_candidates",
+                    "raw_chars": raw_chars,
+                    "raw_bytes": raw_bytes,
+                    "projected_chars": len(text_with_disclaimer),
+                    "projected_bytes": len(text_with_disclaimer.encode("utf-8")),
+                    "occurrences": 0,
+                    "lexicon_entries": 0,
+                    "selected_verses": [],
+                    "candidate_count": evidence.candidate_count,
+                    "selected_candidate_count": evidence.selected_count,
+                    "truncated": evidence.truncated,
+                    "budget": budget,
+                    "fallback_used": False,
+                })
     except (OSError, UnicodeError, ValueError) as exc:
         raise SourceError(f"STEP prompt projection 失敗；不得靜默省略原文證據：{exc}") from exc
 
@@ -507,6 +581,7 @@ def build_prompt_context(
         commentary_omitted=omitted,
         step_metrics=tuple(step_metrics),
     )
+
 
 
 def is_large_chapter(sources, raw_verses):

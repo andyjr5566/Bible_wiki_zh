@@ -1073,6 +1073,8 @@ def read_chapter_source(
     ``source='scripture'`` reads the local verses.  For source material, pass
     the source label returned in ``source_manifest.md``; files not declared by
     that manifest are unavailable through this MCP tool.
+    Structured STEP original-language sources cannot be read raw through this tool;
+    use ``find_step_candidates`` or ``query_step_context`` instead.
     """
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
@@ -1083,7 +1085,29 @@ def read_chapter_source(
             result = _bounded_content(path, max_characters)
             result.update({"success": True, "source": "scripture"})
             return result
-        sources = source_excerpts.parse_manifest(tmp / "source_manifest.md", ROOT_DIR)
+
+        if source.casefold() in ("step bible", "step", "stepbible"):
+            return {
+                "success": False,
+                "error": "STEP 原文資料為 structured 資料來源，禁止透過 read_chapter_source 讀取 raw 全文。",
+                "advice": "請改用 find_step_candidates 探索候選詞、find_step_occurrences 查詢相鄰章節，或用 query_step_context 進行節號／Strong 精確查詢。",
+                "source": source,
+            }
+
+        manifest_path = tmp / "source_manifest.md"
+        if manifest_path.is_file():
+            identities = source_excerpts.manifest_source_identities(manifest_path, ROOT_DIR)
+            for item in identities:
+                if source_excerpts.source_label_matches(item, source) or item.manifest_label.casefold() == source.casefold():
+                    if item.is_structured:
+                        return {
+                            "success": False,
+                            "error": "STEP 原文資料為 structured 資料來源，禁止透過 read_chapter_source 讀取 raw 全文。",
+                            "advice": "請改用 find_step_candidates 探索候選詞、find_step_occurrences 查詢相鄰章節，或用 query_step_context 進行節號／Strong 精確查詢。",
+                            "source": item.manifest_label,
+                        }
+
+        sources = source_excerpts.parse_manifest(manifest_path, ROOT_DIR)
         allowed_root = ROOT_DIR / "raw_data"
         choices = []
         for label, path in sources:
@@ -1102,20 +1126,107 @@ def read_chapter_source(
 
 
 @mcp.tool()
+def find_step_candidates(
+    book: str,
+    chapter: int,
+    verses: Optional[str] = None,
+    include_medium: bool = True,
+    nearby_window: int = 5,
+    max_results: int = 20,
+) -> Dict[str, Any]:
+    """Discover deterministic original-language candidates from this chapter's formal STEP TXT.
+
+    Groups Extended Strong variants under their base Strong, checks nearby recurrence
+    within ±nearby_window chapters, and categorizes into HIGH, MEDIUM, LOW priorities.
+    """
+    try:
+        canonical = _canonical_book(book)
+        chapter = int(chapter)
+        if chapter < 1:
+            raise ValueError("chapter 必須是正整數")
+        selected = step_context.parse_verse_spec(verses) if verses else None
+        path = step_context.find_formal_step_source(
+            ROOT_DIR, canonical, chapter, verses=selected
+        )
+        raw = path.read_text(encoding="utf-8-sig", errors="strict")
+        doc = step_extractor.parse_rendered_markdown_text(raw)
+        candidates = step_context.discover_candidates(
+            doc, verses=selected, max_results=max_results
+        )
+        if not include_medium:
+            candidates = [c for c in candidates if c.priority == "HIGH"]
+        return {
+            "success": True,
+            "book": canonical,
+            "chapter": chapter,
+            "candidates": [
+                {
+                    "base_strong": c.base_strong,
+                    "exact_strongs": list(c.exact_strongs),
+                    "headword": c.headword,
+                    "transliteration": c.transliteration,
+                    "short_gloss": c.short_gloss,
+                    "occurrences_count": len(c.occurrences),
+                    "priority": c.priority,
+                    "signals": list(c.signals),
+                    "instances": list(c.occurrences),
+                }
+                for c in candidates
+            ],
+            "total_found": len(candidates),
+        }
+    except (OSError, UnicodeError, TypeError, ValueError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
+def find_step_occurrences(
+    book: str,
+    chapter: int,
+    base_strong: Optional[str] = None,
+    strong: Optional[str] = None,
+    window: int = 5,
+    max_results: int = 20,
+) -> Dict[str, Any]:
+    """Find occurrences of a base Strong or exact Strong across nearby chapters.
+
+    Scans chapter ± window for raw STEP files and returns occurrences with verse,
+    position, surface word, transliteration, morphology, and gloss.
+    """
+    try:
+        canonical = _canonical_book(book)
+        chapter = int(chapter)
+        if chapter < 1:
+            raise ValueError("chapter 必須是正整數")
+        target = base_strong or strong
+        if not target:
+            return _error("必須指定 base_strong 或 strong")
+        return step_context.find_nearby_occurrences(
+            ROOT_DIR, canonical, chapter, target, window=window, max_results=max_results
+        )
+    except (OSError, UnicodeError, TypeError, ValueError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
 def query_step_context(
     book: str,
     chapter: int,
     verses: Optional[str] = None,
     strong: Optional[str] = None,
+    base_strong: Optional[str] = None,
     word: Optional[str] = None,
+    max_results: int = 200,
+    max_characters: int = 12000,
 ) -> Dict[str, Any]:
     """Query compact deterministic context from this chapter's formal STEP TXT.
 
     ``verses`` accepts values such as ``1-3,5``.  ``strong`` matches the exact
-    Extended Strong (for example H1254A), and ``word`` searches original text,
-    transliteration, or the brief lexicon.  The root and source are fixed: this
-    tool reads only the STEP file declared by the chapter manifest (or the
-    canonical local raw file when no chapter manifest exists), never the web.
+    Extended Strong (for example H1254A), ``base_strong`` matches base Strong codes
+    (for example H1254), and ``word`` searches original text, transliteration, or
+    the brief lexicon.  The root and source are fixed: this tool reads only the
+    STEP file declared by the chapter manifest (or the canonical local raw file
+    when no chapter manifest exists), never the web.
     """
     try:
         canonical = _canonical_book(book)
@@ -1138,8 +1249,13 @@ def query_step_context(
             scripture_verse_count=scripture_count,
         )
         projection = step_context.project_step_source(
-            path, verses=selected, strong=strong, word=word
+            path, verses=selected, strong=strong, base_strong=base_strong, word=word
         )
+        text = projection.text
+        truncated = False
+        if len(text) > max_characters:
+            text = text[:max_characters] + "\n…（達到 max_characters 上限截斷）"
+            truncated = True
         return {
             "success": True,
             "book": canonical,
@@ -1147,21 +1263,24 @@ def query_step_context(
             "source": _relative_to_root(path),
             "verses": sorted(selected) if selected else None,
             "strong": strong,
+            "base_strong": base_strong,
             "word": word,
-            "context": projection.text,
+            "context": text,
             "metrics": {
                 "raw_chars": projection.raw_chars,
                 "raw_bytes": projection.raw_bytes,
-                "projected_chars": projection.projected_chars,
-                "projected_bytes": projection.projected_bytes,
+                "projected_chars": len(text),
+                "projected_bytes": len(text.encode("utf-8")),
                 "occurrences": projection.occurrence_count,
                 "lexicon_entries": projection.lexicon_count,
                 "selected_verses": list(projection.selected_verses),
+                "truncated": truncated,
             },
             "validation": receipt,
         }
     except (OSError, UnicodeError, TypeError, ValueError) as exc:
         return _error(str(exc))
+
 
 
 @mcp.tool()

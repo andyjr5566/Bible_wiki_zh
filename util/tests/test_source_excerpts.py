@@ -187,5 +187,67 @@ class LargeChapterTests(unittest.TestCase):
             self.assertFalse(is_large_chapter([("CT", src)], ["v"] * 10))
 
 
+class BuildPromptContextTests(unittest.TestCase):
+    def _setup_chapter(self, root):
+        (root / "raw_data").mkdir(parents=True, exist_ok=True)
+        (root / "raw_data" / "ct.txt").write_text("CT commentary text", encoding="utf-8")
+        
+        import extract_stepbible
+        ref = extract_stepbible.parse_reference("Genesis 1")
+        w1 = extract_stepbible.WordEntry(
+            reference="Gen.1.1", position=1, word="בָּרָא", transliteration="bara",
+            gloss="created", strongs_raw="H1254A", strongs=["H1254A"], main_strong="H1254A",
+            morphology_raw="V-Qal-3ms", morphology="V-Qal-3ms", lexicon_short="create",
+        )
+        w2 = extract_stepbible.WordEntry(
+            reference="Gen.1.2", position=1, word="אֱלֹהִים", transliteration="elohim",
+            gloss="God", strongs_raw="H430G", strongs=["H430G"], main_strong="H430G",
+            morphology_raw="N-mp", morphology="N-mp", lexicon_short="God",
+        )
+        step_text = extract_stepbible.render_markdown(ref, {1: [w1], 2: [w2]}, False)
+        (root / "raw_data" / "stepbible_genesis_1.txt").write_text(step_text, encoding="utf-8")
+        manifest = root / "source_manifest.md"
+        manifest.write_text(
+            "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+            "|---|---|---|---|---|\n"
+            "| CT | 逐節註解 | https://x/ct | raw_data/ct.txt | OK |\n"
+            "| STEP Bible | 原文資料 | https://x/step | raw_data/stepbible_genesis_1.txt | OK |\n",
+            encoding="utf-8",
+        )
+        return manifest
+
+
+    def test_unresolved_mode_emits_notice_and_no_full_chapter(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self._setup_chapter(root)
+            from source_excerpts import MANUAL_PROJECTED, build_prompt_context
+            ctx = build_prompt_context(manifest, root, policy=MANUAL_PROJECTED, step_verses=())
+            self.assertIn("unresolved", ctx.text)
+            self.assertIn("selected verses: none", ctx.text)
+            self.assertNotIn("H1254A", ctx.text)
+            self.assertEqual("unresolved", ctx.step_metrics[0]["selection_mode"])
+
+    def test_targeted_mode_emits_selected_verses(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self._setup_chapter(root)
+            from source_excerpts import MANUAL_PROJECTED, build_prompt_context
+            ctx = build_prompt_context(manifest, root, policy=MANUAL_PROJECTED, step_verses=(1,))
+            self.assertIn("H1254A", ctx.text)
+            self.assertNotIn("H430G", ctx.text)
+            self.assertEqual("targeted", ctx.step_metrics[0]["selection_mode"])
+
+    def test_selected_candidates_mode_for_m6(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self._setup_chapter(root)
+            from source_excerpts import MANUAL_PROJECTED, build_prompt_context
+            ctx = build_prompt_context(manifest, root, policy=MANUAL_PROJECTED, step_verses=None)
+            self.assertIn("selected candidates", ctx.text)
+            self.assertEqual("selected_candidates", ctx.step_metrics[0]["selection_mode"])
+
+
 if __name__ == "__main__":
     unittest.main()
+
