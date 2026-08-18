@@ -424,5 +424,102 @@ class QueryStepContextTests(unittest.TestCase):
             self.assertTrue(proj.truncated)
 
 
+class SelectM3CandidateEvidenceTests(unittest.TestCase):
+    def setUp(self):
+        ref = extract_stepbible.parse_reference("Genesis 1:1-8")
+        self.doc = extract_stepbible.StepDocument(
+            reference=ref,
+            verses={
+                1: [
+                    make_word("Gen.1.1", 1, "בְּרֵאשִׁית", "bərēʾšît", "H7225", "N-fs", gloss="in the beginning", lexicon="beginning"),
+                    make_word("Gen.1.1", 2, "בָּרָא", "bārāʾ", "H1254A", "V-Qal", gloss="created", lexicon="create"),
+                    make_word("Gen.1.1", 3, "אֱלֹהִים", "ʾĕlōhîm", "H0430", "N-mp", gloss="God", lexicon="God"),
+                ],
+                6: [
+                    make_word("Gen.1.6", 1, "וַיֹּאמֶר", "wayyōʾmer", "H0559", "V-Qal", gloss="and said", lexicon="say"),
+                    make_word("Gen.1.6", 2, "אֱלֹהִים", "ʾĕlōhîm", "H0430", "N-mp", gloss="God", lexicon="God"),
+                    make_word("Gen.1.6", 3, "יְהִי", "yəhî", "H1961", "V-Qal", gloss="let there be", lexicon="be"),
+                    make_word("Gen.1.6", 4, "רָקִיעַ", "rāqîaʿ", "H7549", "N-ms", gloss="expanse", lexicon="firmament; expanse"),
+                ],
+                7: [
+                    make_word("Gen.1.7", 1, "וַיַּעַשׂ", "wayyaʿaś", "H6213A", "V-Qal", gloss="and made", lexicon="make"),
+                    make_word("Gen.1.7", 2, "אֱלֹהִים", "ʾĕlōhîm", "H0430", "N-mp", gloss="God", lexicon="God"),
+                    make_word("Gen.1.7", 3, "אֶת", "ʾet", "H0853", "Part", gloss="[obj]", lexicon="obj"),
+                    make_word("Gen.1.7", 4, "הָרָקִיעַ", "hārāqîaʿ", "H7549", "N-ms", gloss="the expanse", lexicon="firmament; expanse"),
+                ],
+            },
+        )
+
+    def test_transliteration_match_raqia_injects_only_h7549(self):
+        batch = [{
+            "name": "穹蒼（raqia）",
+            "suggested_type": "原文",
+            "evidence": "6-7節",
+            "surfaces": [{"phrase": "空氣", "verses": [6, 7]}],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(1, evidence.candidate_count)
+        self.assertEqual(1, evidence.selected_count)
+        self.assertEqual(2, evidence.occurrences)
+        self.assertIn("H7549", evidence.text)
+        self.assertIn("rāqîaʿ", evidence.text)
+        # Should NOT contain other words in v6 or v7
+        self.assertNotIn("wayyōʾmer", evidence.text)
+        self.assertNotIn("H6213A", evidence.text)
+
+    def test_explicit_strong_matching(self):
+        batch = [{
+            "name": "創造",
+            "suggested_type": "原文",
+            "evidence": "1節；H1254",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("targeted", evidence.mode)
+        self.assertEqual(1, evidence.candidate_count)
+        self.assertEqual(1, evidence.occurrences)
+        self.assertIn("H1254", evidence.text)
+        self.assertNotIn("H7225", evidence.text)
+
+    def test_non_original_candidate_skipped(self):
+        batch = [{
+            "name": "敬畏神",
+            "suggested_type": "神學",
+            "evidence": "20節；CT 區分「敬畏」與「懼怕」",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("non-original-skipped", evidence.mode)
+        self.assertEqual(0, evidence.candidate_count)
+        self.assertIn("非原文類條目", evidence.text)
+        self.assertNotIn("H7549", evidence.text)
+
+    def test_full_chapter_evidence_fails_small(self):
+        batch = [{
+            "name": "創造之工",
+            "suggested_type": "原文",
+            "evidence": "全章",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("full-chapter-evidence", evidence.mode)
+        self.assertEqual(0, evidence.candidate_count)
+        self.assertIn("候選範圍為全章", evidence.text)
+
+    def test_unresolved_fails_small(self):
+        batch = [{
+            "name": "完全未知詞彙",
+            "suggested_type": "原文",
+            "evidence": "無節號純文字",
+            "surfaces": [],
+        }]
+        evidence = step_context.select_m3_candidate_evidence(self.doc, batch)
+        self.assertEqual("unresolved", evidence.mode)
+        self.assertEqual(0, evidence.candidate_count)
+        self.assertIn("無法機械定位", evidence.text)
+
+
 if __name__ == "__main__":
     unittest.main()
+

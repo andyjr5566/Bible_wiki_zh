@@ -291,7 +291,9 @@ class StepContextToolTests(unittest.TestCase):
                 res_with_low = server.find_step_candidates("創世記", 1, include_low=True)
             self.assertTrue(res_default["success"])
             self.assertTrue(res_with_low["success"])
-            self.assertGreaterEqual(res_with_low["total_found"], res_default["total_found"])
+            self.assertIn("total_discovered", res_default)
+            self.assertIn("result_count", res_default)
+            self.assertGreaterEqual(res_with_low["total_discovered"], res_default["total_discovered"])
 
 
 

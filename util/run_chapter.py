@@ -669,19 +669,18 @@ def entry_content_step(
         total_batches = (len(pending) + batch_size - 1) // batch_size
         for batch_num, start in enumerate(range(0, len(pending), batch_size), 1):
             batch = pending[start:start + batch_size]
-            step_verses = None
             if source_context_policy == source_excerpts.MANUAL_PROJECTED:
                 selection = step_context.select_candidate_verses(
                     batch, range(1, len(raw_verses) + 1)
                 )
-                step_verses = selection.verses
                 for warning in selection.warnings:
                     notice = f"M3 STEP projection：{warning}"
                     if notice not in ctx.manual_review:
                         ctx.manual_review.append(notice)
             prompt_context = source_excerpts.build_prompt_context(
                 ctx.path("source_manifest.md"), ctx.root,
-                policy=source_context_policy, step_verses=step_verses,
+                policy=source_context_policy,
+                m3_batch=batch if source_context_policy == source_excerpts.MANUAL_PROJECTED else None,
             )
             ctx._last_prompt_context = prompt_context
             if last_errors:

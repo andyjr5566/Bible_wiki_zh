@@ -263,7 +263,7 @@ class ManualPromptIntegrationTests(unittest.TestCase):
             )
             entry_prompt = (manual / "entry_batch_1.prompt.md").read_text(encoding="utf-8")
             self.assertIn("mode: unresolved", entry_prompt)
-            self.assertIn("selected verses: none", entry_prompt)
+            self.assertIn("candidate count: 0", entry_prompt)
             self.assertNotIn("H1254A", entry_prompt)
             self.assertTrue(any("未自動注入整章 STEP" in item or "精確查詢" in item for item in ctx.manual_review))
 

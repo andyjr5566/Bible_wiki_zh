@@ -274,25 +274,36 @@ def _run_case(name: str, ctx, plan, step_path: Path, expected_words: int) -> dic
         )
 
     # Compute Layer 2 (Phase 1 compact projection) prompt size for comparison
-    compact_proj = step_context.project_step_source(step_path, allow_full_chapter=True)
     ref_block = source_excerpts._manual_reference_block(
         source_excerpts.manifest_source_identities(ctx.path("source_manifest.md"), ctx.root), ctx.root
     )
-    layer2_context_text = f"{ref_block}\n\n{compact_proj.text}"
+
+    # M3 Layer 2: Phase 1 targeted-verse compact projection
+    c_entries = plan.get("C_new_formal", [])
+    phase1_verses = step_context.select_candidate_verses(c_entries, range(1, len(ctx.raw_verses()) + 1)).verses
+    if phase1_verses:
+        m3_phase1_proj = step_context.project_step_source(step_path, verses=phase1_verses, allow_full_chapter=True)
+    else:
+        m3_phase1_proj = step_context.project_step_source(step_path, allow_full_chapter=True)
+    layer2_m3_context_text = f"{ref_block}\n\n{m3_phase1_proj.text}"
+
+    # M6 Layer 2: Phase 1 full-chapter compact projection
+    m6_phase1_proj = step_context.project_step_source(step_path, allow_full_chapter=True)
+    layer2_m6_context_text = f"{ref_block}\n\n{m6_phase1_proj.text}"
 
     # M3 Layer 2 prompt
     m3_metric = entry_capture.metrics[0]
     m3_l3_prompt = (prompt_dir / m3_metric["path"]).read_text(encoding="utf-8")
     m3_l2_prompt = m3_l3_prompt
     if m3_snapshot and m3_snapshot.text in m3_l3_prompt:
-        m3_l2_prompt = m3_l3_prompt.replace(m3_snapshot.text, layer2_context_text, 1)
+        m3_l2_prompt = m3_l3_prompt.replace(m3_snapshot.text, layer2_m3_context_text, 1)
 
     # M6 Layer 2 prompt
     m6_metric = chapter_capture.metrics[0]
     m6_l3_prompt = (prompt_dir / m6_metric["path"]).read_text(encoding="utf-8")
     m6_l2_prompt = m6_l3_prompt
     if m6_snapshot and m6_snapshot.text in m6_l3_prompt:
-        m6_l2_prompt = m6_l3_prompt.replace(m6_snapshot.text, layer2_context_text, 1)
+        m6_l2_prompt = m6_l3_prompt.replace(m6_snapshot.text, layer2_m6_context_text, 1)
 
     m3_3layer = _metric_3layer(
         m3_metric["before"],
@@ -338,11 +349,11 @@ def run_benchmarks(data_path: Path) -> dict:
                         f"{case['case']} {stage.upper()} prompt reduction vs Layer 1 < 30%："
                         f"{case[stage]['reduction_l1_to_l3_percent']}%"
                     )
-            if case["m6"]["reduction_l2_to_l3_percent"] <= 0:
-                raise RuntimeError(
-                    f"{case['case']} M6 prompt reduction vs Layer 2 <= 0%："
-                    f"{case['m6']['reduction_l2_to_l3_percent']}%"
-                )
+                if case[stage]["reduction_l2_to_l3_percent"] <= 0:
+                    raise RuntimeError(
+                        f"{case['case']} {stage.upper()} prompt reduction vs Layer 2 <= 0%："
+                        f"{case[stage]['reduction_l2_to_l3_percent']}%"
+                    )
     return {
 
         "version": 2,

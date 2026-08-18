@@ -457,6 +457,7 @@ def build_prompt_context(
     policy=FULL,
     step_verses=None,
     step_candidates=None,
+    m3_batch=None,
     step_char_budget=None,
 ):
     """Build one policy-controlled source context without changing source truth."""
@@ -487,11 +488,40 @@ def build_prompt_context(
             raw_bytes = item.path.stat().st_size
             raw_chars = len(item.path.read_text(encoding="utf-8-sig", errors="replace"))
 
-            if step_verses == ():
+            if m3_batch is not None:
+                budget = step_char_budget or step_context.DEFAULT_STEP_PROMPT_CHAR_BUDGET
+                disclaimer_len = len(STEP_PROMPT_DISCLAIMER) + 2
+                evidence_budget = max(500, budget - disclaimer_len)
+                raw = item.path.read_text(encoding="utf-8-sig", errors="strict")
+                doc = extract_stepbible.parse_rendered_markdown_text(raw)
+                evidence = step_context.select_m3_candidate_evidence(
+                    doc, m3_batch, root=root, char_budget=evidence_budget
+                )
+                text_with_disclaimer = f"{STEP_PROMPT_DISCLAIMER}\n\n{evidence.text}"
+                projections.append(text_with_disclaimer)
+                step_metrics.append({
+                    "source": item.path.relative_to(root).as_posix(),
+                    "selection_mode": evidence.mode,
+                    "raw_chars": raw_chars,
+                    "raw_bytes": raw_bytes,
+                    "projected_chars": len(text_with_disclaimer),
+                    "projected_bytes": len(text_with_disclaimer.encode("utf-8")),
+                    "occurrences": evidence.occurrences,
+                    "occurrence_count": evidence.occurrences,
+                    "lexicon_entries": evidence.selected_count,
+                    "selected_verses": list(evidence.selected_verses),
+                    "candidate_count": evidence.candidate_count,
+                    "selected_candidate_count": evidence.selected_count,
+                    "truncated": evidence.truncated,
+                    "returned_chars": len(text_with_disclaimer),
+                    "budget": budget,
+                    "fallback_used": False,
+                })
+            elif step_verses == ():
                 # M3 unresolved / non-original-skipped / full-chapter-evidence fail-small mode
                 notice = (
                     f"{STEP_PROMPT_DISCLAIMER}\n\n"
-                    "## STEP Bible task projection\n"
+                    "## STEP Bible selected candidates\n"
                     f"- source: {item.path.name}\n"
                     "- selected verses: none\n"
                     "- mode: unresolved\n"
@@ -517,7 +547,7 @@ def build_prompt_context(
                     "fallback_used": False,
                 })
             elif step_verses is not None:
-                # M3 targeted mode (specific verses)
+                # Phase 1 targeted verse projection (used by benchmark Layer 2 / backward compatibility)
                 projection = step_context.project_step_source(
                     item.path, verses=step_verses, allow_full_chapter=True
                 )

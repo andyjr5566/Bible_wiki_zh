@@ -3,8 +3,9 @@
 
 The formal source remains ``raw_data/stepbible_*.txt``.  This module parses
 that complete renderer-owned format, validates it as structured data, and
-projects only task-relevant occurrences plus a deduplicated Extended-Strong
-lexicon.  It never downloads data and never queries another chapter.
+projects task-relevant occurrences and selected candidate evidence.  Bounded
+nearby chapter lookups are used strictly to evaluate lexical recurrence signals.
+It never downloads data at runtime.
 """
 from __future__ import annotations
 
@@ -13,6 +14,7 @@ import hashlib
 import json
 import re
 import sys
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Optional
@@ -29,6 +31,26 @@ ROOT = Path(__file__).resolve().parent.parent
 _DIGIT_TRANSLATION = str.maketrans("０１２３４５６７８９", "0123456789")
 _HEBREW_RE = re.compile(r"[\u0590-\u05ff\ufb1d-\ufb4f]")
 _GREEK_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]")
+
+
+def _normalize_latin(text: str) -> str:
+    if not text:
+        return ""
+    decomposed = unicodedata.normalize("NFKD", text)
+    return re.sub(r"[^a-z0-9]", "", decomposed.lower())
+
+
+def _to_canonical_zh(book_or_code: str) -> str:
+    cleaned = str(book_or_code).strip()
+    if cleaned in extract_stepbible.BOOK_BY_CANONICAL_NAME:
+        return cleaned
+    if cleaned in extract_stepbible.BOOK_BY_CODE:
+        return extract_stepbible.BOOK_BY_CODE[cleaned]["canonical_name"]
+    for meta in extract_stepbible.BOOK_BY_CODE.values():
+        if meta["name"].lower() == cleaned.lower() or cleaned in meta.get("aliases", ()):
+            return meta["canonical_name"]
+    return canonical_book_name(cleaned)
+
 
 DEFAULT_CANDIDATE_MAX = 20
 HARD_CANDIDATE_MAX = 40
@@ -83,7 +105,7 @@ class StepCandidate:
 
     @property
     def headword(self) -> str:
-        return self.surface
+        return self.lexicon_word or self.surface
 
     @property
     def transliteration(self) -> str:
@@ -103,6 +125,10 @@ class StepEvidence:
     selected_count: int
     truncated: bool
     total_chars: int
+    mode: str = "selected_candidates"
+    selected_verses: tuple[int, ...] = ()
+    occurrences: int = 0
+
 
 
 def _normalize_verse_syntax(value: str) -> str:
@@ -295,6 +321,9 @@ def discover_candidates(
     # Scan nearby window once to aggregate base Strong counts in adjacent chapters
     nearby_counts: dict[str, int] = {}
     nearby_root = Path(root) if root else (ROOT if (ROOT / "raw_data").is_dir() else None)
+    nearby_missing_chapters: list[int] = []
+    nearby_invalid_chapters: list[dict] = []
+    nearby_scanned_chapters: list[int] = []
     if nearby_root and nearby_window > 0:
         window_val = min(max(1, int(nearby_window)), HARD_NEARBY_WINDOW)
         start_ch = max(1, document.reference.chapter - window_val)
@@ -302,19 +331,25 @@ def discover_candidates(
         for ch in range(start_ch, end_ch + 1):
             if ch == document.reference.chapter:
                 continue
-            filename = extract_stepbible.stepbible_filename(document.reference.book_name, ch)
-            path = nearby_root / "raw_data" / filename
-            if not path.is_file():
+            try:
+                path = find_formal_step_source(nearby_root, document.reference.book_name, ch)
+            except (FileNotFoundError, StepValidationError) as exc:
+                nearby_missing_chapters.append(ch)
                 continue
+
             try:
                 raw = path.read_text(encoding="utf-8-sig", errors="strict")
                 doc = extract_stepbible.parse_rendered_markdown_text(raw)
+                if doc.reference.chapter != ch or _to_canonical_zh(doc.reference.book_name) != _to_canonical_zh(document.reference.book_name):
+                    raise StepValidationError(f"STEP chapter/book 不符：{path}")
+                nearby_scanned_chapters.append(ch)
                 for _, w in _all_words(doc):
                     if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong):
                         base = extract_stepbible.base_strong(w.main_strong)
                         if base:
                             nearby_counts[base] = nearby_counts.get(base, 0) + 1
-            except Exception:
+            except Exception as exc:
+                nearby_invalid_chapters.append({"chapter": ch, "error": str(exc)})
                 continue
 
     groups: dict[str, list[dict]] = {}
@@ -481,15 +516,18 @@ def find_nearby_occurrences(
     end_ch = chapter + window
 
     for ch in range(start_ch, end_ch + 1):
-        filename = extract_stepbible.stepbible_filename(canonical, ch)
-        path = root / "raw_data" / filename
-        if not path.is_file():
+        try:
+            path = find_formal_step_source(root, canonical, ch)
+        except (FileNotFoundError, StepValidationError) as exc:
             missing_chapters.append(ch)
             continue
-        scanned_chapters.append(ch)
+
         try:
             raw = path.read_text(encoding="utf-8-sig", errors="strict")
             doc = extract_stepbible.parse_rendered_markdown_text(raw)
+            if doc.reference.chapter != ch or _to_canonical_zh(doc.reference.book_name) != canonical:
+                raise StepValidationError(f"STEP chapter/book 不符：{path}")
+            scanned_chapters.append(ch)
         except Exception as exc:
             invalid_chapters.append({"chapter": ch, "error": str(exc)})
             continue
@@ -521,6 +559,8 @@ def find_nearby_occurrences(
         if len(occurrences) >= max_results:
             break
 
+    total_found = len(occurrences)
+    selected_occs = occurrences[:max_results]
     return {
         "success": True,
         "book": canonical,
@@ -529,8 +569,11 @@ def find_nearby_occurrences(
         "base_strong": target_base,
         "match_type": "exact" if target_exact else "base_group",
         "window": window,
-        "occurrences": occurrences[:max_results],
-        "total_found": len(occurrences),
+        "occurrences": selected_occs,
+        "result_count": len(selected_occs),
+        "total_found": total_found,
+        "max_results": max_results,
+        "truncated": len(selected_occs) < total_found,
         "chapters_scanned": scanned_chapters,
         "missing_chapters": missing_chapters,
         "invalid_chapters": invalid_chapters,
@@ -579,6 +622,243 @@ def render_candidate_summary(
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
+
+
+def select_m3_candidate_evidence(
+    document: extract_stepbible.StepDocument,
+    batch: Iterable[dict],
+    *,
+    root: Optional[Path | str] = None,
+    char_budget: int = DEFAULT_STEP_PROMPT_CHAR_BUDGET,
+) -> StepEvidence:
+    """Deterministically select compact STEP evidence for an M3 entry batch.
+
+    Only injects candidate-relevant linguistic evidence for the entries in this batch.
+    Never falls back to full-verse dumps of unrelated words.
+    """
+    batch_list = list(batch or [])
+    if not batch_list:
+        text = (
+            "## STEP Bible selected candidates\n"
+            f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
+            "- candidate count: 0\n"
+            "- mode: unresolved\n"
+            "- note: 候選清單為空；需要時請透過 MCP 工具查詢。\n"
+        )
+        return StepEvidence(
+            text=text, candidate_count=0, selected_count=0,
+            truncated=False, total_chars=len(text), mode="unresolved"
+        )
+
+    if all(_is_non_original_entry(entry) for entry in batch_list):
+        text = (
+            "## STEP Bible selected candidates\n"
+            f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
+            "- candidate count: 0\n"
+            "- mode: non-original-skipped\n"
+            "- note: 本批候選均為非原文類條目，未自動注入原文詞彙；若需原文證據請用 query_step_context。\n"
+        )
+        return StepEvidence(
+            text=text, candidate_count=0, selected_count=0,
+            truncated=False, total_chars=len(text), mode="non-original-skipped"
+        )
+
+    for entry in batch_list:
+        if "全章" in str(entry.get("evidence", "")):
+            text = (
+                "## STEP Bible selected candidates\n"
+                f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
+                "- candidate count: 0\n"
+                "- mode: full-chapter-evidence\n"
+                "- note: 候選範圍為全章，為避免 token 膨脹未自動投射整章 compact STEP；請使用 find_step_candidates 探索或 query_step_context 查詢。\n"
+            )
+            return StepEvidence(
+                text=text, candidate_count=0, selected_count=0,
+                truncated=False, total_chars=len(text), mode="full-chapter-evidence"
+            )
+
+    matched_candidates: list[StepCandidate] = []
+    matched_base_set: set[str] = set()
+    all_selected_verses: set[int] = set()
+
+    for entry in batch_list:
+        if _is_non_original_entry(entry):
+            continue
+        entry_name = str(entry.get("name") or "")
+        evidence = str(entry.get("evidence") or "")
+        surfaces = entry.get("surfaces") or []
+        verse_scope, _warnings, _is_full = _evidence_verses(evidence)
+        verse_scope.update(_surface_verses(entry))
+        if verse_scope:
+            all_selected_verses.update(verse_scope)
+
+        # 1. Extract explicit Strong codes from name and evidence
+        strongs = extract_stepbible.extract_strongs(entry_name + " " + evidence)
+        target_bases = {extract_stepbible.base_strong(s) for s in strongs if extract_stepbible.base_strong(s)}
+        target_exacts = {extract_stepbible.normalize_strong(s) for s in strongs if extract_stepbible.normalize_strong(s)}
+
+        # 2. Extract Hebrew / Greek letters
+        hebrew_in_name = _HEBREW_RE.findall(entry_name)
+        greek_in_name = _GREEK_RE.findall(entry_name)
+
+        # 3. Extract Latin transliteration in parentheses
+        latin_transliterations = [
+            t.strip() for t in re.findall(r"[（\(]([a-zA-Z\s'\-’]+)[）\)]", entry_name)
+            if t.strip()
+        ]
+
+        # Scope words
+        if verse_scope:
+            words_in_scope = [
+                (v, w) for v in sorted(verse_scope) if v in document.verses
+                for w in document.verses[v]
+                if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong)
+            ]
+        else:
+            words_in_scope = [
+                (v, w) for v, w in _all_words(document)
+                if w.main_strong and not extract_stepbible.is_step_control_strong(w.main_strong)
+            ]
+
+        # Search matching words
+        entry_matched_bases: set[str] = set()
+        for v, w in words_in_scope:
+            base = extract_stepbible.base_strong(w.main_strong)
+            if not base:
+                continue
+            # Match Strong
+            if base in target_bases or w.main_strong in target_exacts:
+                entry_matched_bases.add(base)
+                continue
+            # Match Hebrew / Greek
+            if hebrew_in_name or greek_in_name:
+                stripped_w = extract_stepbible.strip_cantillation_and_vowels(w.word)
+                for t in (hebrew_in_name + greek_in_name):
+                    if t in w.word or t in stripped_w:
+                        entry_matched_bases.add(base)
+                        break
+                if base in entry_matched_bases:
+                    continue
+            # Match Transliteration
+            if latin_transliterations:
+                norm_w_trans = _normalize_latin(w.transliteration)
+                norm_w_lex_trans = _normalize_latin(w.lexicon_transliteration or "")
+                for t in latin_transliterations:
+                    norm_t = _normalize_latin(t)
+                    if len(norm_t) >= 2:
+                        if norm_t == norm_w_trans or norm_t == norm_w_lex_trans or norm_t in norm_w_trans:
+                            entry_matched_bases.add(base)
+                            break
+
+        # If no Strong / surface / transliteration matched but verse scope exists, run discovery on those verses
+        if not entry_matched_bases and verse_scope:
+            discovered = discover_candidates(
+                document, verses=verse_scope, root=root,
+                include_medium=True, include_low=False, max_results=5
+            )
+            surface_phrases = [
+                s.get("phrase", "") if isinstance(s, dict) else str(s)
+                for s in surfaces
+            ]
+            for dc in discovered:
+                if any(p and (p in dc.surface or p in dc.context_gloss) for p in surface_phrases):
+                    entry_matched_bases.add(dc.base_strong)
+                elif dc.priority == "HIGH":
+                    entry_matched_bases.add(dc.base_strong)
+
+        for b in sorted(entry_matched_bases):
+            if b not in matched_base_set:
+                matched_base_set.add(b)
+                target_occs = [
+                    w for _v, w in words_in_scope
+                    if extract_stepbible.base_strong(w.main_strong) == b
+                ]
+                if not target_occs:
+                    continue
+                first_w = target_occs[0]
+                exact_strongs = tuple(sorted({w.main_strong for w in target_occs if w.main_strong}))
+                variants_map = {}
+                for w in target_occs:
+                    es = w.main_strong
+                    if es not in variants_map:
+                        variants_map[es] = {
+                            "exact_strong": es,
+                            "lexicon_word": w.lexicon_word or w.word,
+                            "lexicon_transliteration": w.lexicon_transliteration or w.transliteration,
+                            "lexicon_short": w.lexicon_short,
+                            "gloss": w.gloss,
+                        }
+                variants = tuple(variants_map[es] for es in exact_strongs)
+                simplified_occs = tuple({
+                    "verse": int(w.reference.split(".")[-1]) if "." in w.reference else 1,
+                    "position": w.position,
+                    "surface": w.word,
+                    "exact_strong": w.main_strong,
+                    "morphology": w.morphology_raw or w.morphology,
+                    "gloss": w.gloss,
+                    "transliteration": w.transliteration,
+                } for w in target_occs)
+                matched_candidates.append(
+                    StepCandidate(
+                        base_strong=b,
+                        exact_strongs=exact_strongs,
+                        surface=first_w.word,
+                        context_gloss=first_w.gloss,
+                        lexicon_word=first_w.lexicon_word or first_w.word,
+                        lexicon_transliteration=first_w.lexicon_transliteration or first_w.transliteration,
+                        lexicon_short=first_w.lexicon_short,
+                        variants=variants,
+                        occurrences=simplified_occs,
+                        priority="HIGH",
+                        signals=("m3_targeted_candidate",),
+                    )
+                )
+
+    if not matched_candidates:
+        text = (
+            "## STEP Bible selected candidates\n"
+            f"- reference: {document.reference.book_name} {document.reference.chapter}\n"
+            "- candidate count: 0\n"
+            "- mode: unresolved\n"
+            "- note: 無法機械定位該候選原文詞彙；請使用 MCP 工具 query_step_context / find_step_candidates 精確查詢。\n"
+        )
+        return StepEvidence(
+            text=text, candidate_count=0, selected_count=0,
+            truncated=False, total_chars=len(text), mode="unresolved"
+        )
+
+    selected: list[StepCandidate] = []
+    for c in matched_candidates:
+        candidate_test = selected + [c]
+        rendered = render_candidate_summary(
+            candidate_test,
+            book_name=document.reference.book_name,
+            chapter=document.reference.chapter,
+            truncated=len(candidate_test) < len(matched_candidates),
+        )
+        if len(rendered) <= char_budget:
+            selected.append(c)
+        else:
+            break
+
+    truncated = len(selected) < len(matched_candidates)
+    final_text = render_candidate_summary(
+        selected,
+        book_name=document.reference.book_name,
+        chapter=document.reference.chapter,
+        truncated=truncated,
+    )
+    total_occs = sum(len(c.occurrences) for c in selected)
+    return StepEvidence(
+        text=final_text,
+        candidate_count=len(matched_candidates),
+        selected_count=len(selected),
+        truncated=truncated,
+        total_chars=len(final_text),
+        mode="targeted",
+        selected_verses=tuple(sorted(all_selected_verses)),
+        occurrences=total_occs,
+    )
 
 
 def select_step_evidence(
@@ -931,7 +1211,7 @@ def find_formal_step_source(
 ) -> Path:
     """Resolve this chapter's manifest STEP source, then canonical raw filename."""
     root = Path(root)
-    canonical = canonical_book_name(book)
+    canonical = _to_canonical_zh(book)
     chapter = int(chapter)
     try:
         chapter_dir = book_directory(root, canonical) / ".tmp" / f"第{chapter}章"
