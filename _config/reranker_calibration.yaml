@@ -1,6 +1,15 @@
 # Reranker 模型校準表
 # 僅經實測 gold dataset 校準之模型（calibrated: true）方可依門檻自動給出 ✅ 建議使用既有條目 / 🆕 建議建立新條目。
-# 未校準之模型（calibrated: false）僅輸出排序與評分，所有非確切字面匹配一律標 ⚠ 人工確認。
+# 未校準之模型（calibrated: false）只輸出排序與評分供參考，⚠ 由 semantic_lookup.py 的
+# 檢索相似度規則（REPORT_FLAG_FLOOR，已跨 5 卷 151 候選實測）決定。
+#
+# ⚠️ 翻 calibrated: true 之前必讀——下面的 provisional_thresholds 是 0–1 通用尺度，
+# 本專案語料實測不適用。利19 實跑（繁體中文條目摘要 vs 中文候選查詢）Top-5 分數
+# 全落在 0.033–0.063，端點煙霧測試 Top1 也只有 0.058。若直接把 calibrated 翻成 true，
+# 每個候選都會 top1 < score_low(0.40) → 一律輸出「🆕 建議建立新條目」，
+# 也就是把這份報告本來要防的重複條目變成預設輸出。
+# 校準流程：先看各章報告 meta 的 rerank_score_observed 收集實際分佈，
+# 再用已知的真重複對（酒政_酒政長→酒政、孝敬父母→當孝敬父母等）定門檻。
 
 models:
   nvidia/llama-nemotron-rerank-vl-1b-v2:free:

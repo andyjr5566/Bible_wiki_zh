@@ -8,19 +8,22 @@ embedding_index_fingerprint: 0f3424eaeb3bfd9b
 link_index_sha256: 2de605a54b3f4e225d5cd6e5e8c3b69103f79f6cdbafa62bf41fc31cdcded799
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
-rerank_policy_version: 2026.08.2
-calibration_sha256: aea2a540852101ea21072d76e3be681b117de568a7d5141c8cdd386c0e5000ac
+rerank_policy_version: 2026.08.3
+calibration_sha256: b5e4edf31ddf7623a302672b86d9d1c8193b3c7c17b7f638410daa145bb7d193
 rerank_status: not_needed
 rerankable_candidates: 0
 rerank_attempted: 0
 rerank_succeeded: 0
+rerank_retrieve_top_k: 20
+rerank_score_observed: none
 -->
 
 # 候選語義近鄰報告：利未記 第18章
 
 - 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2622 條
-- 規則說明：字面確切匹配直接通過；模糊／衝突候選經檢索 Top K 後由 Reranker 裁判。
-  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠；未校準模型僅供排序參考。
+- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
+  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
+  重排模型未校準時，⚠ 由檢索相似度規則（≥0.60 且 top-1 非同實體）決定，重排名次只當附加證據。
   字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。
 
 ## 不可效法埃及迦南的行為（主題）

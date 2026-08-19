@@ -56,7 +56,9 @@ QUERY_INPUT_TYPE = "query"
 DEFAULT_TOP = 5
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_FILENAME = "candidate_similarity.md"
-RERANK_POLICY_VERSION = "2026.08.2"
+# 2026.08.3：第一階段檢索加深到 RERANK_RETRIEVE_TOP_K；未校準模型改由檢索規則決定 ⚠；
+# 校準模型的「建新條目」分支加上兩階段一致性護欄。判定規則變了就要 bump，舊報告需重跑。
+RERANK_POLICY_VERSION = "2026.08.3"
 CALIBRATION_FILE_REL = Path("_config") / "reranker_calibration.yaml"
 
 
@@ -161,6 +163,13 @@ REPORT_FLAG_FLOOR = 0.60
 # 就這樣變成現存的章內重複。實測分佈：真重複 ≥0.84，相關但不同概念
 # （聖所↔至聖所 0.767、五十個金鉤↔五十個銅鉤 0.758）≤0.78，取 0.80。
 INTRA_FLAG_FLOOR = 0.80
+
+# 二階段檢索的第一階段深度。Cross-Encoder 只能重排「檢索已經找到的」——
+# 檢索深度就是整條管線的召回上限。若第一階段只取 5 名（＝報告顯示的名次），
+# 重排等於把同樣 5 筆重新排一次，兩階段架構的意義（用便宜的檢索擴大召回、
+# 用昂貴的重排提升精確）就消失了。因此重排候選的第一階段改取 20 名，
+# 重排後再截到 top 名顯示；不重排的候選仍只取 top 名，不多花成本。
+RERANK_RETRIEVE_TOP_K = 20
 
 
 class SemanticIndex:
@@ -332,9 +341,30 @@ def _lexical_preview(name, link_index, homonyms):
     return "無字面對應 → 新建（C）", False
 
 
+def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod):
+    """本檔 REPORT_FLAG_FLOOR 那條經實測校準的檢索規則：回傳 (判定文字, 是否計入 flagged)。
+
+    重排模型未校準時由這條規則決定 flag——它是目前唯一在本語料上實測過的判準
+    （跨 5 卷 151 候選，見 REPORT_FLAG_FLOOR 上方註解），不該被未校準的分數取代。
+    """
+    title, score, entry = sim_top1
+    if suggested and not resolver_mod.type_compatible(suggested, entry):
+        return (
+            f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={entry.get('type')}），"
+            f"若確為同實體請確認是否改用 [[{title}]]"
+        ), True
+    if score < threshold:
+        return "🆕 建議建立新條目（無高相似既有條目）", False
+    return (
+        f"⚠ 語義相似度高（{score:.3f} ≥ {threshold:.2f}），"
+        f"請確認是否同概念改用 [[{title}]]"
+    ), True
+
+
 def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                      threshold=None, link_index=None, homonyms=None,
-                     reranker=None, use_rerank=True, require_rerank=False):
+                     reranker=None, use_rerank=True, require_rerank=False,
+                     rerank_top_k=RERANK_RETRIEVE_TOP_K):
     """對整章 link_candidates 產生二階段語義近鄰與重排報告，寫入 .tmp/第x章/。
 
     架構：
@@ -423,8 +453,9 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         f"# 候選語義近鄰報告：{canonical} 第{chapter}章",
         "",
         f"- 檢索模型：{index.meta.get('model')}｜重排模型：{rerank_model or '未啟用 (僅檢索)'}（{'已校準' if is_calibrated else '未校準/保守模式'}）｜全庫 {len(index.entries)} 條",
-        "- 規則說明：字面確切匹配直接通過；模糊／衝突候選經檢索 Top K 後由 Reranker 裁判。",
-        "  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠；未校準模型僅供排序參考。",
+        f"- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top {max(top, rerank_top_k) if use_rerank else top} 名再由 Reranker 重排，取前 {top} 名顯示。",
+        "  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。",
+        f"  重排模型未校準時，⚠ 由檢索相似度規則（≥{threshold:.2f} 且 top-1 非同實體）決定，重排名次只當附加證據。",
         "  字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。",
         "",
     ]
@@ -441,14 +472,20 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     rerank_succeeded = 0
     rerank_failed = 0
     circuit_open = False
+    # 實測分數區間寫進 meta：校準前要先看得到這個模型在本語料上的分數尺度，
+    # 才不會把別的語料調出來的門檻直接套上（見 _config/reranker_calibration.yaml）。
+    observed_rerank_scores = []
 
     if not candidates:
         lines.append("（本章 link_candidates 為空）")
     else:
         queries = [candidate_query_text(candidate) for candidate in candidates]
-        results, matrix = index.query_vectors(queries, top=top, return_matrix=True)
+        # 第一階段一律檢索到重排深度；不重排的候選稍後自己截到 top 名。
+        retrieve_top = max(top, rerank_top_k) if use_rerank else top
+        results, matrix = index.query_vectors(queries, top=retrieve_top, return_matrix=True)
 
-        for candidate, hits in zip(candidates, results):
+        for candidate, deep_hits in zip(candidates, results):
+            hits = deep_hits[:top]
             name = candidate["name"]
             base = resolver.base_name(name)
             suggested = candidate.get("suggested_type") or candidate.get("type")
@@ -497,31 +534,35 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                 or is_safe_lexical_match
             )
 
-            if not lexical_decided and hits:
+            if not lexical_decided and deep_hits:
                 rerankable_candidates += 1
                 if use_rerank and not circuit_open:
                     rerank_attempted += 1
                     q_text = candidate_rerank_query(candidate, book=canonical, chapter=chapter)
-                    doc_texts = [entry_rerank_document(t, e, root=root) for t, s, e in hits]
+                    doc_texts = [entry_rerank_document(t, e, root=root) for t, s, e in deep_hits]
                     try:
                         if reranker is not None:
                             rerank_res = reranker(q_text, doc_texts)
                         else:
                             rerank_res = rerank_documents(q_text, doc_texts, task="rerank")
-                        
+
                         if rerank_res:
                             rerank_succeeded += 1
                             has_rerank = True
                             for r_item in rerank_res:
                                 idx = r_item["index"]
-                                if 0 <= idx < len(hits):
-                                    t, s, e = hits[idx]
+                                if 0 <= idx < len(deep_hits):
+                                    t, s, e = deep_hits[idx]
+                                    score = r_item["relevance_score"]
+                                    observed_rerank_scores.append(score)
                                     ranked_items.append({
                                         "title": t,
                                         "sim_score": s,
-                                        "rerank_score": r_item["relevance_score"],
+                                        "rerank_score": score,
                                         "entry": e,
                                     })
+                            # 重排完才截斷：深檢索的意義就在讓第 6～20 名有機會被拉上來
+                            ranked_items = ranked_items[:top]
                     except Exception as exc:
                         rerank_failed += 1
                         if _is_circuit_breaker_exception(exc):
@@ -551,7 +592,8 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     top2 = ranked_items[1] if len(ranked_items) > 1 else None
                     top1_r = top1["rerank_score"] if top1["rerank_score"] is not None else 0.0
                     top2_r = top2["rerank_score"] if top2 and top2["rerank_score"] is not None else 0.0
-                    margin = top1_r - top2_r if top2 and top2["rerank_score"] is not None else top1_r
+                    # 只有一筆時沒有「領先差距」可言，不能拿 top1 分數冒充 margin
+                    margin = (top1_r - top2_r) if (top2 and top2["rerank_score"] is not None) else 0.0
                     lines.append(f"rerank_margin: {margin:.3f} (Top1 - Top2)")
 
                     # --- 第一層：Deterministic Lexical Governance ---
@@ -576,14 +618,29 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                             )
                             flagged += 1
                         elif not is_calibrated:
-                            verdict = f"⚠ 未校準模型（{rerank_model}），評分僅供排序參考，需人工確認"
-                            flagged += 1
+                            # 未校準的重排分數不能當判準，但也不該讓每個新候選都掛 ⚠——
+                            # 那會把「需要人工看」的訊號稀釋成雜訊。回落到本檔上方那條
+                            # 經 5 卷 151 候選實測校準的檢索規則決定 flag，重排名次只當附加證據。
+                            sim_verdict, sim_flag = _embedding_rule_verdict(
+                                hits[0], suggested, threshold, resolver
+                            )
+                            verdict = f"{sim_verdict}（重排模型 {rerank_model} 未校準，上表名次僅供參考）"
+                            if sim_flag:
+                                flagged += 1
                         else:
                             score_high = calib_thresholds.get("score_high", 0.70)
                             score_low = calib_thresholds.get("score_low", 0.40)
                             margin_high = calib_thresholds.get("margin_high", 0.20)
                             margin_ambiguous = calib_thresholds.get("margin_ambiguous", 0.15)
-                            if top1_r < score_low:
+                            if top1_r < score_low and hits[0][1] >= threshold:
+                                # 兩階段互相矛盾：重排說都不相關、檢索說有 ≥ 門檻的近鄰。
+                                # 這種情況下宣告「建新條目」正是製造重複條目的路徑，必須交人工。
+                                verdict = (
+                                    f"⚠ 兩階段判定不一致（重排 {top1_r:.3f} < {score_low:.2f}，"
+                                    f"但檢索最高分 {hits[0][1]:.3f} ≥ {threshold:.2f}／[[{hits[0][0]}]]），需人工判斷"
+                                )
+                                flagged += 1
+                            elif top1_r < score_low:
                                 verdict = "🆕 建議建立新條目（既有條目相關度低）"
                             elif top1_r >= score_high and margin >= margin_high:
                                 verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
@@ -617,17 +674,11 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         verdict = f"✅ 建議使用既有條目 [[{lexical_title}]]（同名／字面對應）"
                     else:
                         # --- 第二層：Semantic Advisory Governance（純 embedding 降級路徑）---
-                        semantic_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
-                        if not semantic_type_compat:
-                            verdict = (
-                                f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
-                                f"若確為同實體請確認是否改用 [[{top1['title']}]]"
-                            )
-                            flagged += 1
-                        elif top1["sim_score"] < threshold:
-                            verdict = "🆕 建議建立新條目（無高相似既有條目）"
-                        else:
-                            verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
+                        verdict, sim_flag = _embedding_rule_verdict(
+                            (top1["title"], top1["sim_score"], top1["entry"]),
+                            suggested, threshold, resolver,
+                        )
+                        if sim_flag:
                             flagged += 1
                     lines.append(f"判定：{verdict}")
             else:
@@ -678,6 +729,10 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     calibration_sha256 = _file_sha256(root / CALIBRATION_FILE_REL)
     embedding_model = index.meta.get("model", "")
     embedding_index_fingerprint = compute_index_fingerprint(index.meta)
+    observed_range = (
+        f"{min(observed_rerank_scores):.3f}-{max(observed_rerank_scores):.3f}"
+        if observed_rerank_scores else "none"
+    )
 
     meta_header = (
         "<!-- candidate_similarity_meta\n"
@@ -696,6 +751,8 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         f"rerankable_candidates: {rerankable_candidates}\n"
         f"rerank_attempted: {rerank_attempted}\n"
         f"rerank_succeeded: {rerank_succeeded}\n"
+        f"rerank_retrieve_top_k: {rerank_top_k}\n"
+        f"rerank_score_observed: {observed_range}\n"
         "-->\n\n"
     )
 

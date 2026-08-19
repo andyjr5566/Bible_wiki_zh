@@ -247,8 +247,15 @@ def has_book_chapter_data(entry_path, book, chapter, root=ROOT):
     if marker in text:
         return True
     direct = re.compile(rf"^###\s+{re.escape(book)}\s*第{re.escape(str(chapter))}章\s*$", re.M)
+    # `(?:(?!^###\s)[\s\S])*?` 把搜尋限制在本書卷那一段之內。
+    # 原本用裸的 `[\s\S]*?`，它會越過後面的 `### 其他書卷` 去撿同號數的章標題——
+    # 例：條目有 `### 利未記`（利7/17/18/22）與 `### 民數記`（民19），查「利未記 19」
+    # 會被民19 的 `#### [[04 民數記/第19章|第19章]]` 誤配成 True，於是該條目被判
+    # A_use_directly（本章資料已存在）而不是 B_needs_update，該補的累積永遠不會補，
+    # 而且四道閘門都不會叫（link_updates 只管 B；孤兒檢查驗的是反方向）。
     nested = re.compile(
-        rf"^###\s+{re.escape(book)}\s*$[\s\S]*?"
+        rf"^###\s+{re.escape(book)}\s*$"
+        rf"(?:(?!^###\s)[\s\S])*?"
         rf"^####\s+(?:\[\[[^\]|]*\|)?第{re.escape(str(chapter))}章(?:\]\])?\s*$",
         re.M,
     )

@@ -100,6 +100,27 @@ class ResolverTests(unittest.TestCase):
             self.assertTrue(has_book_chapter_data("entry.md", "創世記", "28", root))
 
 
+    def test_nested_lookup_does_not_leak_into_the_next_book_section(self):
+        """`### 利未記` 段落的搜尋不可越界撿到 `### 民數記` 底下的同號數章。
+
+        全庫實測（2026-08-19）：裸的 `[\s\S]*?` 造成 701 筆假陽性、涉及 280 個條目。
+        後果是該條目被判 A_use_directly（本章資料已存在），link_updates 不會替它
+        補累積，而反向孤兒檢查驗的是「條目→章」不是「章→條目」，四道閘門全過。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "entry.md").write_text(
+                "### 利未記\n"
+                "#### [[03 利未記/第7章|第7章]]\n- x\n"
+                "### 民數記\n"
+                "#### [[04 民數記/第19章|第19章]]\n- y\n",
+                encoding="utf-8",
+            )
+            self.assertFalse(has_book_chapter_data("entry.md", "利未記", "19", root))
+            self.assertTrue(has_book_chapter_data("entry.md", "民數記", "19", root))
+            self.assertTrue(has_book_chapter_data("entry.md", "利未記", "7", root))
+
+
 class UpdateTests(unittest.TestCase):
     def test_internal_source_lines_are_forbidden_but_heading_is_allowed(self):
         self.assertIsNone(INTERNAL_SOURCE_LINE_RE.search("### 觸發來源\n"))

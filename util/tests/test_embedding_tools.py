@@ -181,9 +181,11 @@ class _FakeIndex:
         self.hits_per_query = hits_per_query
         self.matrix = matrix
         self.received = None
+        self.received_top = None
 
     def query_vectors(self, queries, top=3, return_matrix=False):
         self.received = list(queries)
+        self.received_top = top
         if return_matrix:
             import numpy as np
             matrix = self.matrix if self.matrix is not None else np.eye(
@@ -313,7 +315,10 @@ class CandidateReportTests(unittest.TestCase):
             content = path.read_text(encoding="utf-8")
 
         self.assertEqual(1, flagged)
-        self.assertIn("判定：⚠ 未校準模型（uncalibrated-reranker），評分僅供排序參考，需人工確認", content)
+        # 未校準模型不得自動 ✅；判定回落到經實測校準的檢索規則，並標明重排未校準。
+        self.assertIn("判定：⚠ 語義相似度高（0.870 ≥ 0.60）", content)
+        self.assertIn("未校準", content)
+        self.assertNotIn("判定：✅", content)
 
     def test_homonym_attention_strictly_overrides_reranker(self):
         """同名歧義候選（link_homonyms 中的 D 類詞）即使 Reranker 得分 0.99，也絕對只能判定為 ⚠。"""
@@ -936,8 +941,13 @@ class CandidateReportTests(unittest.TestCase):
         self.assertEqual(1, flagged)
         self.assertIn("判定：⚠ 字面分類不相容", content)
 
-    def test_uncalibrated_low_score_flags_warning(self):
-        """未校準模型在低重排分數（如 0.10）時仍必須標 ⚠，不得輸出 🆕。"""
+    def test_uncalibrated_low_score_defers_to_retrieval_rule(self):
+        """未校準模型的低重排分數不得當判準：判定改由經校準的檢索相似度規則決定。
+
+        檢索也說沒有近鄰（0.30 < 0.60）時 🆕 才是正確答案——這正是加 Reranker
+        之前跑了 5 卷的行為。真正要防的是「低重排分數把高相似度警告壓掉」，
+        由下面的 sim=0.75 案例把關。
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
@@ -964,9 +974,124 @@ class CandidateReportTests(unittest.TestCase):
             )
             content = path.read_text(encoding="utf-8")
 
+        self.assertEqual(0, flagged)
+        self.assertIn("🆕 建議建立新條目", content)
+
+        # 同一個低重排分數，但檢索說有 0.75 的近鄰：未校準的重排不得把警告壓掉。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"test-reranker": {"calibrated": False}}})
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "罕見詞", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("概念", 0.75, {"title": "概念", "type": "神學", "path": "p"})]])
+
+            def low_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.10}]
+            low_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=low_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
         self.assertEqual(1, flagged)
-        self.assertIn("判定：⚠ 未校準模型", content)
+        self.assertIn("判定：⚠ 語義相似度高（0.750 ≥ 0.60）", content)
         self.assertNotIn("🆕", content)
+
+    def test_calibrated_low_rerank_but_high_similarity_needs_human(self):
+        """已校準模型說「都不相關」但檢索說有 ≥ 門檻近鄰時，不得逕自輸出 🆕。
+
+        這條分支是製造重複條目的路徑：重排一旦在某語料上分數整體偏低
+        （本專案實測 nvidia rerank 對中文條目只給 0.03–0.06），
+        「top1 < score_low → 建新條目」就會對每個候選都成立。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"calibrated-reranker": {
+                    "calibrated": True,
+                    "thresholds": {"score_high": 0.70, "score_low": 0.40,
+                                   "margin_high": 0.20, "margin_ambiguous": 0.15},
+                }}})
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "光的創造", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("光", 0.82, {"title": "光", "type": "神學", "path": "p"})]])
+
+            def low_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.05}]
+            low_reranker.model_name = "calibrated-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=low_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 兩階段判定不一致", content)
+        self.assertNotIn("🆕", content)
+
+    def test_rerank_sees_deeper_retrieval_than_displayed_top(self):
+        """第一階段要檢索到 RERANK_RETRIEVE_TOP_K，重排後才截到 top 名顯示。
+
+        否則 Cross-Encoder 只是把 bi-encoder 已經選出的同一批重排一次，
+        召回上限完全由 bi-encoder 決定，兩階段架構沒有意義。
+        """
+        from semantic_lookup import RERANK_RETRIEVE_TOP_K
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "新詞", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            # 檢索名次：正確答案「深處的條目」排在第 8 名，超出顯示的前 5 名
+            hits = [
+                (f"雜訊{i}", 0.70 - i * 0.01, {"title": f"雜訊{i}", "type": "神學", "path": f"p{i}"})
+                for i in range(7)
+            ]
+            hits.append(("深處的條目", 0.61,
+                         {"title": "深處的條目", "type": "神學", "path": "deep"}))
+            fake = _FakeIndex([hits])
+
+            def deep_reranker(query, docs):
+                # 重排把第 8 筆拉到第一
+                return [{"index": 7, "relevance_score": 0.9}] + [
+                    {"index": i, "relevance_score": 0.1} for i in range(7)
+                ]
+            deep_reranker.model_name = "uncalibrated-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=deep_reranker, use_rerank=True, top=5,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(RERANK_RETRIEVE_TOP_K, fake.received_top)
+        self.assertIn("| 1 | 深處的條目 |", content)
+        # 重排後只顯示 top 名
+        self.assertNotIn("| 6 |", content)
 
     def test_type_mismatch_rerank_intermediate_score_flags_warning(self):
         """分類不相容候選在已校準模型給出中等重排分數（如 0.50）時必須標 ⚠ 近鄰分類不相容，不得輸出 🆕。"""
