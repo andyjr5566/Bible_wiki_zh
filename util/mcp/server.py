@@ -294,9 +294,50 @@ def _manual_completion(canonical: str, chapter: int) -> List[str]:
 
 _EXEC_LOCK = threading.Lock()
 _SPAWN_PROBE_SECONDS = 10
+# Wall-clock budget for get_chapter_status' library call; it takes about 1s.
+_STATUS_BUDGET_SECONDS = 45
 _spawn_allowed: Optional[bool] = None
 _stdout_router: Optional["_ThreadRoutedStream"] = None
 _stderr_router: Optional["_ThreadRoutedStream"] = None
+
+
+class _StageTimeout(Exception):
+    """An in-process helper exceeded its wall-clock budget."""
+
+    def __init__(self, label: str, timeout: float) -> None:
+        super().__init__(f"{label} 逾時（{timeout} 秒）——已中止，未取得結果")
+        self.label = label
+        self.timeout = timeout
+
+
+def _bounded(label: str, timeout: float, fn, *args, **kwargs):
+    """Run an in-process helper under a wall-clock bound, naming it on timeout.
+
+    Tools that call a util module directly never pass through ``_exec_util`` and
+    so used to have no bound at all.  ``get_chapter_status`` was one: it calls
+    ``build_checks``, which shells out to ``git``, and on a host that stalls
+    child processes it blocked until the client aborted at 1800s — against about
+    1s in a plain shell.  Per-call timeouts inside the helper are not enough,
+    because a stall can also happen before any of them applies (process creation
+    itself).  A tool that cannot finish must fail in seconds and say which stage
+    stalled, rather than occupying the server.
+    """
+    box: Dict[str, Any] = {}
+
+    def _target() -> None:
+        try:
+            box["value"] = fn(*args, **kwargs)
+        except BaseException as exc:  # re-raised on the caller's thread below
+            box["error"] = exc
+
+    worker = threading.Thread(target=_target, daemon=True)
+    worker.start()
+    worker.join(timeout)
+    if worker.is_alive():  # abandoned, not killed — Python cannot kill a thread
+        raise _StageTimeout(label, timeout)
+    if "error" in box:
+        raise box["error"]
+    return box["value"]
 
 
 def _can_spawn() -> bool:
@@ -314,15 +355,26 @@ def _can_spawn() -> bool:
             "import subprocess,sys;"
             "subprocess.run([sys.executable,'-c','pass'],capture_output=True,timeout=5)"
         )
+
+        def _probe() -> bool:
+            try:
+                proc = subprocess.run(
+                    [sys.executable, "-c", probe],
+                    cwd=ROOT_DIR,
+                    capture_output=True,
+                    timeout=_SPAWN_PROBE_SECONDS,
+                )
+                return proc.returncode == 0
+            except (subprocess.TimeoutExpired, OSError):
+                return False
+
         try:
-            proc = subprocess.run(
-                [sys.executable, "-c", probe],
-                cwd=ROOT_DIR,
-                capture_output=True,
-                timeout=_SPAWN_PROBE_SECONDS,
+            # ``subprocess.run``'s own timeout only starts once the child exists;
+            # a host that stalls inside process creation would hang here forever.
+            _spawn_allowed = _bounded(
+                "spawn probe", _SPAWN_PROBE_SECONDS * 2, _probe
             )
-            _spawn_allowed = proc.returncode == 0
-        except (subprocess.TimeoutExpired, OSError):
+        except _StageTimeout:
             _spawn_allowed = False
     return _spawn_allowed
 
@@ -1119,7 +1171,10 @@ def get_chapter_status(book: str, chapter: int) -> Dict[str, Any]:
         chapter_file_checks.disable_git("MCP host 不允許建立子行程")
     try:
         canonical, _directory, _tmp = _chapter_context(book, chapter)
-        checks = build_checks(canonical, chapter, root=ROOT_DIR)
+        checks = _bounded("build_checks", _STATUS_BUDGET_SECONDS, build_checks,
+                          canonical, chapter, root=ROOT_DIR)
+    except _StageTimeout as exc:
+        return _error(str(exc), stage=exc.label)
     except (OSError, ValueError, yaml.YAMLError) as exc:
         return _error(str(exc))
     rows = [

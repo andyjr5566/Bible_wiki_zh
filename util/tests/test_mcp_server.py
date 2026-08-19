@@ -3,6 +3,7 @@ import json
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 import unittest
 from pathlib import Path
@@ -179,6 +180,50 @@ class ChapterStatusGitTests(unittest.TestCase):
             result = server.get_chapter_status("利未記", 16)
         self.assertTrue(result["success"])
         self.assertIn("git_checks_skipped", result, "a skipped check must not read as passed")
+
+    def test_bounded_returns_a_named_timeout_instead_of_blocking(self):
+        """A stalled stage must fail in seconds and say which stage stalled.
+
+        Per-call timeouts inside the helper are not enough: the stall can happen
+        before any of them applies, which is how one library call held the
+        server until the client aborted at 1800s.
+        """
+        started = threading.Event()
+
+        def _never_returns():
+            started.set()
+            time.sleep(30)
+
+        with self.assertRaises(server._StageTimeout) as caught:
+            server._bounded("build_checks", 0.05, _never_returns)
+        self.assertTrue(started.wait(1), "the stage must actually have run")
+        self.assertEqual(caught.exception.label, "build_checks")
+        self.assertIn("build_checks", str(caught.exception))
+
+    def test_bounded_propagates_the_stage_result_and_its_errors(self):
+        self.assertEqual(server._bounded("ok", 5, lambda a, b: a + b, 2, 3), 5)
+        with self.assertRaises(ValueError):
+            server._bounded("boom", 5, lambda: (_ for _ in ()).throw(ValueError("x")))
+
+    def test_status_reports_a_timeout_rather_than_hanging(self):
+        def _stall(*_args, **_kwargs):
+            time.sleep(30)
+
+        with patch.object(server, "_STATUS_BUDGET_SECONDS", 0.05), patch.object(
+            server, "build_checks", _stall
+        ), patch.object(server, "_spawn_allowed", True):
+            result = server.get_chapter_status("利未記", 16)
+        self.assertFalse(result["success"])
+        self.assertEqual(result["stage"], "build_checks")
+
+    def test_spawn_probe_cannot_hang_on_process_creation(self):
+        def _stall_in_popen(*_args, **_kwargs):
+            time.sleep(30)  # a host that blocks inside CreateProcess
+
+        with patch.object(server, "_spawn_allowed", None), patch.object(
+            server, "_SPAWN_PROBE_SECONDS", 0.05
+        ), patch.object(subprocess, "run", _stall_in_popen):
+            self.assertFalse(server._can_spawn())
 
     def test_status_keeps_git_enabled_when_spawning_works(self):
         check_chapter_files.disable_git(None)
