@@ -283,6 +283,46 @@ class CandidateReportTests(unittest.TestCase):
         self.assertIn("rerank_margin: 0.648", content)
         self.assertIn("判定：✅ 建議使用既有條目 [[米甸]]", content)
 
+    def test_middle_band_similarity_is_flagged_not_declared_new(self):
+        """0.50–0.70 這一段不得判「建新條目」——實測那裡真對應與無對應完全重疊。
+
+        2026-08-20 的 96 組 gold pair 量到：正確目標奪冠時相似度中位數 0.700、
+        最低 0.523；遮罩負例（該概念其實還沒有條目）中位數 0.621、最高 0.763。
+        舊門檻 0.60 會把 10/57 的真對應判成 🆕 建新條目——那正是製造重複條目的路徑。
+        本例 sim=0.55 落在舊門檻之下、新門檻之上，必須是 ⚠ 且不給方向。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"test-reranker": {"calibrated": False}}}),
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "田角遺落的莊稼", "type": "主題"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("田角拾穗顧念窮人的條例", 0.55,
+                                 {"title": "田角拾穗顧念窮人的條例", "type": "主題", "path": "p"})]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.95}]
+            fake_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertNotIn("🆕", content)
+        self.assertIn("⚠ 相似度居中", content)
+        self.assertIn("需逐一人工判斷", content)
+
     def test_uncalibrated_reranker_flags_warning(self):
         """未校準模型（calibrated: false 或未登錄）即使分數極高也只能給 ⚠ 供排序參考。"""
         with tempfile.TemporaryDirectory() as tmp:
@@ -316,7 +356,7 @@ class CandidateReportTests(unittest.TestCase):
 
         self.assertEqual(1, flagged)
         # 未校準模型不得自動 ✅；判定回落到經實測校準的檢索規則，並標明重排未校準。
-        self.assertIn("判定：⚠ 語義相似度高（0.870 ≥ 0.60）", content)
+        self.assertIn("判定：⚠ 語義相似度高（0.870 ≥ 0.70）", content)
         self.assertIn("未校準", content)
         self.assertNotIn("判定：✅", content)
 
@@ -1005,7 +1045,7 @@ class CandidateReportTests(unittest.TestCase):
             content = path.read_text(encoding="utf-8")
 
         self.assertEqual(1, flagged)
-        self.assertIn("判定：⚠ 語義相似度高（0.750 ≥ 0.60）", content)
+        self.assertIn("判定：⚠ 語義相似度高（0.750 ≥ 0.70）", content)
         self.assertNotIn("🆕", content)
 
     def test_calibrated_low_rerank_but_high_similarity_needs_human(self):

@@ -56,9 +56,10 @@ QUERY_INPUT_TYPE = "query"
 DEFAULT_TOP = 5
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_FILENAME = "candidate_similarity.md"
-# 2026.08.3：第一階段檢索加深到 RERANK_RETRIEVE_TOP_K；未校準模型改由檢索規則決定 ⚠；
-# 校準模型的「建新條目」分支加上兩階段一致性護欄。判定規則變了就要 bump，舊報告需重跑。
-RERANK_POLICY_VERSION = "2026.08.3"
+# 2026.08.4：檢索深度 10→20；REPORT_FLAG_FLOOR 0.60→0.50 並拆出 REPORT_CONFIDENT_FLOOR
+# 三段判定（依 96 組 gold pair 的正例／遮罩負例分佈重定）。
+# 判定規則變了就要 bump，舊報告需重跑。
+RERANK_POLICY_VERSION = "2026.08.4"
 CALIBRATION_FILE_REL = Path("_config") / "reranker_calibration.yaml"
 
 
@@ -153,9 +154,27 @@ def extract_report_metadata(path_or_text):
 #   規則標 42%；主要 FP 是「事件候選→其主角人物／地點」這種跨分類鄰居，而
 #   真改名對幾乎都分類相容（原文→原文、神學→神學）——加 type_compatible
 #   條件後降到 17%，且不損失任何已確認真對。
-# 下限 0.60 偏向查全（申24 的真重複對 0.62–0.64 也要抓到）。
-# 換 embedding 模型後需重新校準。
-REPORT_FLAG_FLOOR = 0.60
+#
+# 2026-08-20 重定（96 組跨卷 gold pair，util/tests/smoke_reranker_calibration.py，
+# 遮罩負例＝把正確目標從結果拿掉後的最高分近鄰，模擬「這概念其實還沒有條目」）：
+#   正確目標奪冠時的相似度：中位數 0.700，區間 0.523–0.827
+#   遮罩負例的最高分近鄰　：中位數 0.621，區間 0.471–0.763
+# 兩個分佈重疊得很厲害，沒有任何單一門檻能同時做到查全與查準：
+#   0.50 → 標出 100% 真對，但也標 95% 無對應者
+#   0.60 → 標出  82% 真對，同時標 61% 無對應者
+#   0.70 → 標出  51% 真對，同時標 13% 無對應者
+#
+# 所以門檻不是拿來「判對錯」的，是拿來決定**哪一句話敢講**。兩種錯的代價不對稱：
+#   說「🆕 建新條目」而其實有 → 產生重複條目，事後要靠人工合併，最貴。
+#   說「⚠ 請確認 X」而其實不是 → 人看一眼否決，便宜。
+# 舊值 0.60 讓 18%（10/57）的真對應掉進「🆕 建新條目」，那正是製造重複條目的路徑。
+# 下限改 0.50——實測正確目標奪冠時最低 0.523，低於 0.50 才敢說沒有對應條目。
+# 換 embedding 模型後需重新校準（重跑上面那支 smoke test）。
+REPORT_FLAG_FLOOR = 0.50
+
+# ⚠ 的強弱分界。≥ 此值時 61%→13% 的無對應誤標率，措辭才敢說「很可能同概念」；
+# 落在 REPORT_FLAG_FLOOR ~ 此值之間的一律標成「需人工判斷」，不給方向。
+REPORT_CONFIDENT_FLOOR = 0.70
 
 # 候選互查（本章候選彼此比對，query-query 空間）的 ⚠ 門檻。全新章節裡
 # 「兩個候選其實同概念」在索引裡查不到（兩者都還不存在），只有互查能抓——
@@ -167,15 +186,16 @@ INTRA_FLAG_FLOOR = 0.80
 # 二階段檢索的第一階段深度。Cross-Encoder 只能重排「檢索已經找到的」，
 # 所以檢索深度就是整條管線的召回上限；但深度要用量的，不是憑直覺設。
 #
-# 2026-08-20 申命記 smoke test（15 組「申命記措詞 → 創/出/利/民 既有條目」的
+# 2026-08-20 申命記 smoke test（96 組「申命記措詞 → 創/出/利/民 既有條目」的
 # 跨卷 gold pair，模擬新章開發時每個候選都沒有字面對應的情形）：
-#   recall@5 = 15/15、recall@10 = 15/15、recall@20 = 15/15
-#   正確目標的名次中位數 1、最差 3
-# 也就是說在本語料上，bi-encoder 幾乎不會把正確目標排到 5 名之外，
-# 深度從 5 加到 20 買不到任何召回，卻讓每次重排的 payload 變成 4 倍。
-# 取 10 是留一倍餘裕（最差名次 3 的兩倍以上），同時把重排成本壓回一半。
+#   recall@3 = 85%、@5 = 91%、@10 = 94%、@20 = 96%、@30 = 97%
+#   正確目標的名次中位數 1、90 百分位 4、最差 21
+# 先前用 15 組量到「最差名次 3」而取 10，樣本一擴大就翻案：長尾遠比 15 筆看得到的深。
+# 檢索深度是整條管線的召回上限，這一段丟掉的東西 Cross-Encoder 永遠救不回來，
+# 而重排只是一次呼叫裡多帶幾份文件（成本線性、不是多打幾次 API）。
+# 取 20：召回 94%→96%（漏掉的少三分之一），涵蓋到實測第 21 名的長尾邊緣。
 # 換 embedding 模型或換書卷後要重跑這個 smoke test 再定。
-RERANK_RETRIEVE_TOP_K = 10
+RERANK_RETRIEVE_TOP_K = 20
 
 
 class SemanticIndex:
@@ -347,12 +367,19 @@ def _lexical_preview(name, link_index, homonyms):
     return "無字面對應 → 新建（C）", False
 
 
-def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod):
-    """本檔 REPORT_FLAG_FLOOR 那條經實測校準的檢索規則：回傳 (判定文字, 是否計入 flagged)。
+def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod,
+                            confident=None):
+    """本檔兩條實測門檻構成的檢索規則：回傳 (判定文字, 是否計入 flagged)。
 
     重排模型未校準時由這條規則決定 flag——它是目前唯一在本語料上實測過的判準
-    （跨 5 卷 151 候選，見 REPORT_FLAG_FLOOR 上方註解），不該被未校準的分數取代。
+    （96 組 gold pair，見 REPORT_FLAG_FLOOR 上方註解），不該被未校準的分數取代。
+
+    三段：低於 REPORT_FLAG_FLOOR 才敢說「建新條目」；高於 REPORT_CONFIDENT_FLOOR
+    才敢指名「很可能是同概念」；中間那段照樣 ⚠ 但不給方向，因為實測在那一段
+    真對應與無對應的分數完全重疊。
     """
+    if confident is None:
+        confident = REPORT_CONFIDENT_FLOOR
     title, score, entry = sim_top1
     if suggested and not resolver_mod.type_compatible(suggested, entry):
         return (
@@ -360,10 +387,17 @@ def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod):
             f"若確為同實體請確認是否改用 [[{title}]]"
         ), True
     if score < threshold:
-        return "🆕 建議建立新條目（無高相似既有條目）", False
+        return (
+            f"🆕 建議建立新條目（最相似條目僅 {score:.3f} < {threshold:.2f}）"
+        ), False
+    if score >= confident:
+        return (
+            f"⚠ 語義相似度高（{score:.3f} ≥ {confident:.2f}），"
+            f"請確認是否同概念改用 [[{title}]]"
+        ), True
     return (
-        f"⚠ 語義相似度高（{score:.3f} ≥ {threshold:.2f}），"
-        f"請確認是否同概念改用 [[{title}]]"
+        f"⚠ 相似度居中（{threshold:.2f} ≤ {score:.3f} < {confident:.2f}），"
+        f"最近鄰為 [[{title}]]——此區間真對應與無對應分數重疊，需逐一人工判斷"
     ), True
 
 
