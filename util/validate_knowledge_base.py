@@ -28,6 +28,7 @@ from build_link_index import (
 )
 from resolve_link_candidates import load_homonyms, normalize_name
 
+_GIT_TIMEOUT_SECONDS = 20
 VALID_STATUS = {"formal", "candidate"}
 BIBLE_BOOKS = list(json.loads(
     (ROOT / "_config" / "bible_books.json").read_text(encoding="utf-8")
@@ -327,20 +328,37 @@ def extract_protected(text):
     return sections
 
 
+def _git(*args):
+    """跑 git 並限時。逾時的意思是這台機器起不了 git，不是 diff 是空的。
+
+    本模組會被 MCP server 以 in-process 方式執行（見 util/mcp/server.py 的
+    `_exec_util_inprocess`），而該 server 的 host 封鎖建立子行程時，沒有
+    timeout 的 `subprocess.run` 會永遠不回來。逾時一律當成非零 returncode，
+    交給既有的失敗分支處理。
+    """
+    try:
+        return subprocess.run(
+            ["git", *args], cwd=ROOT, capture_output=True, text=True,
+            encoding="utf-8", timeout=_GIT_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        return subprocess.CompletedProcess(
+            args, 1, "", f"git 逾時（{_GIT_TIMEOUT_SECONDS} 秒）"
+        )
+    except OSError as exc:
+        return subprocess.CompletedProcess(args, 1, "", f"無法執行 git：{exc}")
+
+
 def validate_protected_changes(base):
     errors = []
-    command = ["git", "diff", "--name-only", f"{base}...HEAD", "--", "link_folder"]
-    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
+    result = _git("diff", "--name-only", f"{base}...HEAD", "--", "link_folder")
     if result.returncode:
         return [f"無法取得 protected section diff：{result.stderr.strip()}"]
     for name in result.stdout.splitlines():
         path = ROOT / name
         if not path.exists() or path.suffix != ".md":
             continue
-        old = subprocess.run(
-            ["git", "show", f"{base}:{name}"], cwd=ROOT,
-            capture_output=True, text=True, encoding="utf-8",
-        )
+        old = _git("show", f"{base}:{name}")
         if old.returncode:  # 新檔沒有保護區歷史
             continue
         old_sections = extract_protected(old.stdout)
@@ -355,10 +373,7 @@ def validate_protected_changes(base):
 
 
 def changed_link_files(base):
-    result = subprocess.run(
-        ["git", "diff", "--name-only", f"{base}...HEAD", "--", "link_folder"],
-        cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
-    )
+    result = _git("diff", "--name-only", f"{base}...HEAD", "--", "link_folder")
     if result.returncode:
         return set()
     return {name.replace("\\", "/") for name in result.stdout.splitlines()}

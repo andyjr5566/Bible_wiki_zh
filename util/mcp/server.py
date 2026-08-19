@@ -9,7 +9,6 @@ model endpoint on the user's behalf.
 
 from __future__ import annotations
 
-import contextlib
 import hashlib
 import io
 import json
@@ -55,6 +54,9 @@ if str(UTIL_DIR) not in sys.path:
     sys.path.insert(0, str(UTIL_DIR))
 
 from book_paths import BOOK_NUMBERS, book_directory, canonical_book_name
+# aliased: a tool below is also named ``check_chapter_files`` and would
+# otherwise rebind this module name at import time.
+import check_chapter_files as chapter_file_checks
 from check_chapter_files import build_checks
 import extract_stepbible as step_extractor
 import link_updates
@@ -293,6 +295,8 @@ def _manual_completion(canonical: str, chapter: int) -> List[str]:
 _EXEC_LOCK = threading.Lock()
 _SPAWN_PROBE_SECONDS = 10
 _spawn_allowed: Optional[bool] = None
+_stdout_router: Optional["_ThreadRoutedStream"] = None
+_stderr_router: Optional["_ThreadRoutedStream"] = None
 
 
 def _can_spawn() -> bool:
@@ -323,14 +327,67 @@ def _can_spawn() -> bool:
     return _spawn_allowed
 
 
+class _ThreadRoutedStream(io.TextIOBase):
+    """Send one thread's writes to its own buffer, leaving other threads alone.
+
+    ``redirect_stdout`` is a process-wide switch, so it cannot express "capture
+    this worker".  That matters on timeout: the worker keeps running after the
+    redirect is undone, and its next ``print`` would land on the real stdout —
+    which on a stdio MCP server is the protocol itself.  A timed-out worker
+    therefore keeps its route forever; the leak is one dict entry.
+
+    ``console.utf8_stdio`` only reconfigures a stream that has ``reconfigure``,
+    which ``TextIOBase`` does not, so the CLIs leave this wrapper alone.
+    """
+
+    def __init__(self, real: Any) -> None:
+        self._real = real
+        self._routes: Dict[int, io.StringIO] = {}
+        self._lock = threading.Lock()
+
+    def route(self, buffer: io.StringIO) -> None:
+        with self._lock:
+            self._routes[threading.get_ident()] = buffer
+
+    def unroute(self, ident: int) -> None:
+        with self._lock:
+            self._routes.pop(ident, None)
+
+    def _stream(self) -> Any:
+        with self._lock:
+            return self._routes.get(threading.get_ident(), self._real)
+
+    def writable(self) -> bool:
+        return True
+
+    def write(self, text: str) -> int:
+        return self._stream().write(text)
+
+    def flush(self) -> None:
+        self._stream().flush()
+
+
+def _routed_stdio() -> tuple:
+    """Install the routing wrappers once, and return them."""
+    global _stdout_router, _stderr_router
+    if _stdout_router is None:
+        _stdout_router = _ThreadRoutedStream(sys.stdout)
+        _stderr_router = _ThreadRoutedStream(sys.stderr)
+        sys.stdout, sys.stderr = _stdout_router, _stderr_router
+    return _stdout_router, _stderr_router
+
+
 def _exec_util_inprocess(
     script_path: Path, argv: List[str], timeout: int, cmd: List[str]
 ) -> Dict[str, Any]:
     """Execute the CLI as ``__main__`` in a worker thread of this process."""
     out, err = io.StringIO(), io.StringIO()
     box: Dict[str, Any] = {"returncode": 0}
+    stdout_router, stderr_router = _routed_stdio()
 
     def _target() -> None:
+        stdout_router.route(out)
+        stderr_router.route(err)
         try:
             runpy.run_path(str(script_path), run_name="__main__")
         except SystemExit as exc:  # argparse and the gates exit with a status
@@ -344,12 +401,13 @@ def _exec_util_inprocess(
         saved_argv = sys.argv[:]
         sys.argv = [str(script_path), *argv]
         try:
-            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
-                worker = threading.Thread(target=_target, daemon=True)
-                worker.start()
-                worker.join(timeout)
-                if worker.is_alive():
-                    return {"timed_out": True, "command": cmd, "in_process": True}
+            worker = threading.Thread(target=_target, daemon=True)
+            worker.start()
+            worker.join(timeout)
+            if worker.is_alive():  # keep it routed; it may still print
+                return {"timed_out": True, "command": cmd, "in_process": True}
+            stdout_router.unroute(worker.ident)
+            stderr_router.unroute(worker.ident)
         finally:
             sys.argv = saved_argv
     return {
@@ -1052,6 +1110,13 @@ def get_chapter_status(book: str, chapter: int) -> Dict[str, Any]:
     This diagnoses missing pipeline artefacts and embeds the exact resume hint.
     It does not execute a model, render files, or alter payloads.
     """
+    if not _can_spawn():
+        # ``build_checks`` runs ``git`` itself.  This is a library call, so it
+        # never went through ``_exec_util`` and had no timeout of its own: on a
+        # host that blocks child processes it hung until the client gave up
+        # (1800s, against 2s for the same CLI in a shell).  Declaring git
+        # unavailable up front makes that check return empty instead.
+        chapter_file_checks.disable_git("MCP host 不允許建立子行程")
     try:
         canonical, _directory, _tmp = _chapter_context(book, chapter)
         checks = build_checks(canonical, chapter, root=ROOT_DIR)
@@ -1061,13 +1126,17 @@ def get_chapter_status(book: str, chapter: int) -> Dict[str, Any]:
         {"name": name, "passed": passed, "resume_hint": "" if passed else hint}
         for name, passed, hint in checks
     ]
-    return {
+    result = {
         "success": True,
         "book": canonical,
         "chapter": chapter,
         "passed": all(row["passed"] for row in rows),
         "checks": rows,
     }
+    skipped = chapter_file_checks.git_disabled_reason()
+    if skipped:  # never let a skipped check read as a passed one
+        result["git_checks_skipped"] = skipped
+    return result
 
 
 @mcp.tool()

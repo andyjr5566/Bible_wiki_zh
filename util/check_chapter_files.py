@@ -28,6 +28,28 @@ ROOT = Path(__file__).resolve().parent.parent
 
 _ACCUM_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
 
+# git 無限期阻塞時的上限。本模組被 MCP server 以函式庫方式呼叫
+# （`build_checks`），而該 server 跑在不允許建立子行程的 host 上：沒有
+# timeout 的 `subprocess.run` 不是失敗而是永遠不回來（實測 get_chapter_status
+# 卡滿 1800 秒被 client 中止，同一支 CLI 在 shell 只要 2 秒）。逾時與
+# 「不是 repo」同樣視為 git 不可用，照既有契約回 None、不誤擋。
+_GIT_TIMEOUT_SECONDS = 20
+_git_disabled_reason = None
+
+
+def disable_git(reason):
+    """關掉本模組的 git 呼叫；長駐 host 已知不能 spawn 時先行宣告。
+
+    沒有這個開關，這種 host 每次呼叫都要再付一次 `_GIT_TIMEOUT_SECONDS`。
+    """
+    global _git_disabled_reason
+    _git_disabled_reason = reason
+
+
+def git_disabled_reason():
+    """git 目前被判為不可用的原因；可用時回 None。"""
+    return _git_disabled_reason
+
 
 def _git_lines_z(root, *args):
     """跑 git 並以 NUL 分隔解析輸出（避開 core.quotepath 對中文路徑的轉義）。
@@ -35,10 +57,17 @@ def _git_lines_z(root, *args):
     呼叫端須自行把 -z 放在 pathspec（--）之前——放在 args 尾端會被 git
     當成檔名（實測踩過：三個注入測試檔全數漏抓）。
     """
+    if _git_disabled_reason is not None:
+        return None
     try:
         proc = subprocess.run(
-            ["git", *args], cwd=root, capture_output=True, check=True
+            ["git", *args], cwd=root, capture_output=True, check=True,
+            timeout=_GIT_TIMEOUT_SECONDS,
         )
+    except subprocess.TimeoutExpired:
+        # 這台機器上 git 起不來。latch 起來，後續呼叫不必再各付一次逾時。
+        disable_git(f"git 逾時（{_GIT_TIMEOUT_SECONDS} 秒），本行程不再呼叫 git")
+        return None
     except (OSError, subprocess.CalledProcessError):
         return None
     return [p for p in proc.stdout.decode("utf-8", "replace").split("\0") if p]

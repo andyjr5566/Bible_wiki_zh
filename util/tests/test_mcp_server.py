@@ -1,7 +1,9 @@
+import io
 import json
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -12,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from util.mcp import server
+from util import check_chapter_files
 
 
 class UtilExecutionFallbackTests(unittest.TestCase):
@@ -109,6 +112,79 @@ class UtilExecutionFallbackTests(unittest.TestCase):
                 result = server._exec_util(script, [], 30)
         self.assertTrue(result["in_process"])
         self.assertIn("結論：PASS", result["stdout"])
+
+    def test_a_timed_out_worker_never_writes_to_the_real_stdout(self):
+        """A stdio MCP server's stdout is the protocol; a leaked worker must miss it.
+
+        The worker outlives the call that started it, so restoring the stream on
+        timeout — which is what ``redirect_stdout`` does — would put the CLI's
+        later output straight into the JSON-RPC stream.
+        """
+        with tempfile.TemporaryDirectory() as name:
+            script = self._script(
+                name,
+                "import time\n"
+                "time.sleep(0.4)\n"
+                "print('這行不可以進入 stdio 傳輸')\n",
+            )
+            real = io.StringIO()
+            with patch.object(sys, "stdout", real), patch.object(
+                server, "_stdout_router", None
+            ), patch.object(server, "_stderr_router", None):
+                result = server._exec_util_inprocess(script, [], 0.05, ["cmd"])
+                self.assertTrue(result["timed_out"])
+                time.sleep(0.8)  # let the leaked worker reach its print
+                print("呼叫端自己的輸出仍要送到真正的 stdout")
+            self.assertNotIn("這行不可以進入 stdio 傳輸", real.getvalue())
+            self.assertIn("呼叫端自己的輸出", real.getvalue())
+
+
+class ChapterStatusGitTests(unittest.TestCase):
+    """``get_chapter_status`` calls ``build_checks`` directly, not through ``_exec_util``.
+
+    That library call shells out to ``git`` on its own, so the spawn fallback
+    did not cover it: on a host that blocks child processes it hung with no
+    bound at all until the client aborted at 1800s, while the same CLI takes
+    about 2s in a shell.
+    """
+
+    def setUp(self):
+        self.addCleanup(check_chapter_files.disable_git, None)
+
+    def test_git_call_is_bounded_and_latches_off_after_a_hang(self):
+        calls = []
+
+        def fake_run(cmd, **kwargs):
+            calls.append(kwargs.get("timeout"))
+            raise subprocess.TimeoutExpired(cmd=cmd, timeout=kwargs.get("timeout"))
+
+        check_chapter_files.disable_git(None)
+        with patch.object(check_chapter_files.subprocess, "run", fake_run):
+            self.assertIsNone(check_chapter_files._git_lines_z(ROOT, "status"))
+            self.assertIsNone(check_chapter_files._git_lines_z(ROOT, "ls-files"))
+        self.assertEqual(len(calls), 1, "the second call must not pay the timeout again")
+        self.assertIsNotNone(calls[0], "an unbounded git call is what hung the server")
+        self.assertIsNotNone(check_chapter_files.git_disabled_reason())
+
+    def test_untracked_findings_degrade_to_empty_when_git_is_disabled(self):
+        check_chapter_files.disable_git("測試")
+        errors, pending, notes = check_chapter_files.untracked_entry_findings(
+            ROOT, "利未記", 16
+        )
+        self.assertEqual((errors, pending, notes), ([], [], []))
+
+    def test_status_disables_git_when_the_host_blocks_spawning(self):
+        check_chapter_files.disable_git(None)
+        with patch.object(server, "_spawn_allowed", False):
+            result = server.get_chapter_status("利未記", 16)
+        self.assertTrue(result["success"])
+        self.assertIn("git_checks_skipped", result, "a skipped check must not read as passed")
+
+    def test_status_keeps_git_enabled_when_spawning_works(self):
+        check_chapter_files.disable_git(None)
+        with patch.object(server, "_spawn_allowed", True):
+            server.get_chapter_status("利未記", 16)
+        self.assertIsNone(check_chapter_files.git_disabled_reason())
 
 
 class MCPReadBoundaryTests(unittest.TestCase):
