@@ -449,7 +449,7 @@ def _check_chapter(ctx, problems, warnings, rewrite_aliases=True):
 
 
 def cmd_check(args):
-    ctx = rc.ChapterContext(args.book, args.chapter)
+    ctx = rc.ChapterContext(args.book, args.chapter, root=getattr(args, "root", rc.ROOT))
     problems, warnings = [], []
     stale_removed, after_removed = simulate_invalidation(ctx)
     if stale_removed or after_removed:
@@ -461,13 +461,17 @@ def cmd_check(args):
         _require_sources(ctx)
     except SourceError as exc:
         problems.append(str(exc))
+    try:
+        _require_candidate_similarity(ctx)
+    except SourceError as exc:
+        problems.append(str(exc))
     plan_path = ctx.path("link_plan.yaml")
     if not plan_path.exists():
         print("❌ 尚無 link_plan.yaml——先跑 prompts")
         return 1
     plan = rc._read_yaml(plan_path) or {}
     # source-kind-aware gate：commentary 驗全文逐字回執；STEP 驗完整結構與 receipt。
-    problems.extend(check_source_read.check(args.book, args.chapter))
+    problems.extend(check_source_read.check(args.book, args.chapter, root=ctx.root))
     # Prompt 規格檔全讀的機械閘門：沒有 Prompt 逐字回執就擋下（見 util/check_prompt_read.py 檔頭）
     problems.extend(check_prompt_read.check(args.book, args.chapter))
     _check_entries(ctx, plan, problems, warnings)
@@ -492,7 +496,9 @@ def cmd_check(args):
 # run：原版 orchestrator ＋ guard runner（零 API 保證）
 # --------------------------------------------------------------------------- #
 def cmd_run(args):
-    ctx = rc.ChapterContext(args.book, args.chapter)
+    ctx = rc.ChapterContext(args.book, args.chapter, root=getattr(args, "root", rc.ROOT))
+    _require_sources(ctx)
+    _require_candidate_similarity(ctx)
     stale_removed, after_removed = simulate_invalidation(ctx)
     if "link_plan.yaml" in stale_removed or any(k in HAND_NODES for k in stale_removed):
         print("❌ 上游已改動，實跑會作廢：" + "、".join(stale_removed))

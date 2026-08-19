@@ -56,7 +56,7 @@ QUERY_INPUT_TYPE = "query"
 DEFAULT_TOP = 5
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_FILENAME = "candidate_similarity.md"
-RERANK_POLICY_VERSION = "2026.08.1"
+RERANK_POLICY_VERSION = "2026.08.2"
 CALIBRATION_FILE_REL = Path("_config") / "reranker_calibration.yaml"
 
 
@@ -86,10 +86,16 @@ def _load_calibration(root=ROOT):
     """載入 _config/reranker_calibration.yaml。"""
     calib_path = Path(root) / CALIBRATION_FILE_REL
     if not calib_path.is_file():
-        return {"models": {}}
+        fallback = ROOT / CALIBRATION_FILE_REL
+        if fallback.is_file():
+            calib_path = fallback
+        else:
+            return {"models": {}}
     try:
         data = yaml.safe_load(calib_path.read_text(encoding="utf-8"))
-        return data if isinstance(data, dict) else {"models": {}}
+        if not isinstance(data, dict) or not isinstance(data.get("models"), dict):
+            return {"models": {}}
+        return data
     except Exception:
         return {"models": {}}
 

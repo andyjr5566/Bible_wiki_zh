@@ -256,9 +256,19 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if meta.get("rerank_policy_version") != RERANK_POLICY_VERSION:
         return False, f"判定規則版本已升級（報告 {meta.get('rerank_policy_version')} vs 目前 {RERANK_POLICY_VERSION}），需重跑 semantic_lookup.py", ""
 
-    cur_calib_sha = _file_sha256(root / CALIBRATION_FILE_REL)
-    if meta.get("calibration_sha256") != cur_calib_sha:
-        return False, "校準設定檔 reranker_calibration.yaml 已變更，需重跑 semantic_lookup.py", ""
+    calib_path = root / CALIBRATION_FILE_REL
+    if not calib_path.is_file():
+        return False, "校準設定檔 reranker_calibration.yaml 不存在，需先建立", ""
+    try:
+        calib_data = yaml.safe_load(calib_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return False, f"校準設定檔 reranker_calibration.yaml 損壞無法解析（{exc}）", ""
+    if not isinstance(calib_data, dict) or not isinstance(calib_data.get("models"), dict):
+        return False, "校準設定檔 reranker_calibration.yaml 格式非預期（需包含 models mapping）", ""
+
+    cur_calib_sha = _file_sha256(calib_path)
+    if cur_calib_sha == "missing" or meta.get("calibration_sha256") != cur_calib_sha:
+        return False, "校準設定檔 reranker_calibration.yaml 缺失或已變更，需重跑 semantic_lookup.py", ""
 
     meta_path = root / "util" / "output" / "embedding_index.meta.json"
     if not meta_path.is_file():

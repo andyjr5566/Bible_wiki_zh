@@ -793,6 +793,22 @@ class BuildCandidateSimilarityMCPTests(unittest.TestCase):
         self.assertNotIn("--no-rerank", cmd)
         self.assertTrue(res["rerank_enabled"])
 
+    def test_render_manual_chapter_rejects_when_check_fails(self):
+        def fake_check(book, chapter):
+            return {
+                "success": False,
+                "passed": False,
+                "book": "創世記",
+                "chapter": 1,
+                "incomplete_reasons": ["candidate_similarity.md 檢查未通過（禁止 rerank_status: disabled）"],
+            }
+
+        with patch.object(server, "check_manual_payloads", fake_check):
+            res = server.render_manual_chapter("創世記", 1)
+
+        self.assertFalse(res["success"])
+        self.assertIn("manual payload gate 未通過", res["error"])
+
 
 if __name__ == "__main__":
     unittest.main()

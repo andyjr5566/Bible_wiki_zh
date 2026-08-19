@@ -76,8 +76,23 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
                 },
             })
         )
-        _write(root / "util" / "output" / "embedding_index.meta.json", '{"model": "test-embed", "entries": []}')
-        _write(root / "util" / "output" / "embedding_index.npz", "dummy")
+        import numpy as np
+        from build_embedding_index import _vectors_sha256, compute_index_fingerprint
+        vectors = np.zeros((0, 4), dtype=np.float32)
+        np.savez_compressed(root / "util" / "output" / "embedding_index.npz", vectors=vectors)
+        meta = {
+            "schema_version": 2,
+            "model": "test-embed",
+            "dim": 4,
+            "input_type": "passage",
+            "vectors_sha256": _vectors_sha256(vectors),
+            "entries": [],
+        }
+        meta["index_fingerprint"] = compute_index_fingerprint(meta)
+        _write(
+            root / "util" / "output" / "embedding_index.meta.json",
+            json.dumps(meta, ensure_ascii=False),
+        )
         return root, tmp_dir
 
     def test_prompts_fails_when_similarity_report_missing(self):
@@ -91,8 +106,11 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
 
     def test_prompts_fails_when_similarity_report_stale(self):
         """當 candidates 變更使 similarity report 過期時，cmd_prompts 拋出 SourceError。"""
+        from build_embedding_index import compute_index_fingerprint
         with tempfile.TemporaryDirectory() as tmp:
             root, tmp_dir = self._setup_root(tmp)
+            meta_json = json.loads((root / "util" / "output" / "embedding_index.meta.json").read_text(encoding="utf-8"))
+            fp = compute_index_fingerprint(meta_json)
             meta = (
                 "<!-- candidate_similarity_meta\n"
                 "schema_version: 1\n"
@@ -100,13 +118,16 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
                 "chapter: 1\n"
                 "candidate_sha256: 0000000000000000000000000000000000000000000000000000000000000000\n"
                 "embedding_model: test-embed\n"
-                "embedding_index_fingerprint: none\n"
+                f"embedding_index_fingerprint: {fp}\n"
                 f"link_index_sha256: {_file_sha256(root / 'util' / 'output' / 'link_index.json')}\n"
                 f"homonyms_sha256: {_file_sha256(root / '_config' / 'link_homonyms.yaml')}\n"
                 "rerank_model: test-reranker\n"
                 f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
                 f"calibration_sha256: {_file_sha256(root / '_config' / 'reranker_calibration.yaml')}\n"
                 "rerank_status: success\n"
+                "rerankable_candidates: 1\n"
+                "rerank_attempted: 1\n"
+                "rerank_succeeded: 1\n"
                 "-->\n\n# 候選語義近鄰報告\n"
             )
             _write(tmp_dir / "candidate_similarity.md", meta)
@@ -115,6 +136,73 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             with self.assertRaises(SourceError) as ctx:
                 rcm.cmd_prompts(args)
             self.assertIn("candidate_similarity.md 不存在或已過期", str(ctx.exception))
+
+    def test_check_fails_when_rerank_disabled(self):
+        """當 candidate_similarity.md 狀態為 disabled 時，cmd_check 回報 check 未過。"""
+        from build_embedding_index import compute_index_fingerprint
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._setup_root(tmp)
+            meta_json = json.loads((root / "util" / "output" / "embedding_index.meta.json").read_text(encoding="utf-8"))
+            fp = compute_index_fingerprint(meta_json)
+            meta = (
+                "<!-- candidate_similarity_meta\n"
+                "schema_version: 1\n"
+                "book: 創世記\n"
+                "chapter: 1\n"
+                f"candidate_sha256: {_file_sha256(tmp_dir / 'link_candidates.yaml')}\n"
+                "embedding_model: test-embed\n"
+                f"embedding_index_fingerprint: {fp}\n"
+                f"link_index_sha256: {_file_sha256(root / 'util' / 'output' / 'link_index.json')}\n"
+                f"homonyms_sha256: {_file_sha256(root / '_config' / 'link_homonyms.yaml')}\n"
+                "rerank_model: none\n"
+                f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
+                f"calibration_sha256: {_file_sha256(root / '_config' / 'reranker_calibration.yaml')}\n"
+                "rerank_status: disabled\n"
+                "rerankable_candidates: 0\n"
+                "rerank_attempted: 0\n"
+                "rerank_succeeded: 0\n"
+                "-->\n\n# 候選語義近鄰報告\n"
+            )
+            _write(tmp_dir / "candidate_similarity.md", meta)
+            _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
+
+            args = argparse.Namespace(book="創世記", chapter=1, no_rewrite=True, root=root)
+            rc = rcm.cmd_check(args)
+            self.assertEqual(1, rc, "disabled 報告必須使 cmd_check 回傳 1 失敗")
+
+    def test_run_fails_when_rerank_disabled(self):
+        """當 candidate_similarity.md 狀態為 disabled 時，cmd_run 拋出 SourceError 拒絕執行。"""
+        from build_embedding_index import compute_index_fingerprint
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._setup_root(tmp)
+            meta_json = json.loads((root / "util" / "output" / "embedding_index.meta.json").read_text(encoding="utf-8"))
+            fp = compute_index_fingerprint(meta_json)
+            meta = (
+                "<!-- candidate_similarity_meta\n"
+                "schema_version: 1\n"
+                "book: 創世記\n"
+                "chapter: 1\n"
+                f"candidate_sha256: {_file_sha256(tmp_dir / 'link_candidates.yaml')}\n"
+                "embedding_model: test-embed\n"
+                f"embedding_index_fingerprint: {fp}\n"
+                f"link_index_sha256: {_file_sha256(root / 'util' / 'output' / 'link_index.json')}\n"
+                f"homonyms_sha256: {_file_sha256(root / '_config' / 'link_homonyms.yaml')}\n"
+                "rerank_model: none\n"
+                f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
+                f"calibration_sha256: {_file_sha256(root / '_config' / 'reranker_calibration.yaml')}\n"
+                "rerank_status: disabled\n"
+                "rerankable_candidates: 0\n"
+                "rerank_attempted: 0\n"
+                "rerank_succeeded: 0\n"
+                "-->\n\n# 候選語義近鄰報告\n"
+            )
+            _write(tmp_dir / "candidate_similarity.md", meta)
+            _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
+
+            args = argparse.Namespace(book="創世記", chapter=1, keep_chapter=False, root=root)
+            with self.assertRaises(SourceError) as ctx:
+                rcm.cmd_run(args)
+            self.assertIn("禁止 rerank_status: disabled", str(ctx.exception))
 
 
 if __name__ == "__main__":
