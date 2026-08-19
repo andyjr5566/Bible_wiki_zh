@@ -87,6 +87,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - **原文資料採正面分層寫法**：先說 STEP 能直接確認的原文字形、lemma、Strong、morphology、本節譯義與簡要義域，再說「部分註釋進一步理解為……」或「結合其他經文，某些解釋進一步討論……」。除非 STEP 與註釋在 Hebrew／Strong／morphology／lexical identification 等事項上有明確、可驗證的衝突，否則避免寫成「不能由這個字推出」「這個字並不證明」「原文沒有這個意思」「這只是神學推論」或「不能從中文譯名倒推」。STEP 負責界定語言證據，commentary 負責呈現解經與神學延伸；兩者層次不同時並列呈現。
    - **候選寫齊後跑語義近鄰與重排報告**（候選定稿前必經，check_chapter_files 與 run_chapter_manual 會驗證 freshness）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
+     （`--no-rerank` 僅限離線診斷／除錯；正式生產閘門嚴格拒絕 `disabled` 狀態）
      程式先以字面規則篩選（同名／alias 確切命中直接通過不打 API），對模糊／衝突／新建候選由 Embedding 索引撈出 Top K 近鄰，再交由 Cross-Encoder Reranker 進行精細打分裁判，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告資訊請依序判讀：
      - **字面解析**：resolver 實際會把候選對到哪（同名／裸名／alias／新建）。標「請確認」的多半是 alias 導向不同名條目——alias 登記錯誤會把候選靜默導去錯的條目（實例：安密巴 aliases 誤含以實各谷），這裡是唯一的事前攔截點。
      - **候選重排表格與判定**：

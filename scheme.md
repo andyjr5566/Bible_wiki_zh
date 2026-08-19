@@ -18,6 +18,9 @@
 來源準備
 → Commentary Agent 全文閱讀 + read_log
 → STEP full raw machine validation
+→ Agent 建立 link_candidates.yaml
+→ semantic_lookup.py → candidate_similarity.md（語義近鄰＋Rerank 報告）
+→ freshness hard gate 驗證
 → resolve / link_plan
 → run_chapter_manual.py prompts
 → Agent 手寫 M3 entry_content/*.yaml

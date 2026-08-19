@@ -746,7 +746,11 @@ def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> 
 def build_candidate_similarity(
     book: str, chapter: int, top: int = 5, no_rerank: bool = False,
 ) -> Dict[str, Any]:
-    """Run ``semantic_lookup.py --candidates`` and write the two-stage retrieval + reranker report."""
+    """Run ``semantic_lookup.py --candidates`` and write the two-stage retrieval + reranker report.
+
+    ``no_rerank=true`` is strictly for offline diagnostic/debug purposes; formal production
+    gates (preflight and manual prompts) strictly reject ``rerank_status: disabled``.
+    """
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
         bounded_top = max(3, min(int(top), 10))

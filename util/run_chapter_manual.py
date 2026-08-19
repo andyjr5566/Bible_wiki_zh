@@ -130,19 +130,23 @@ def _require_sources(ctx):
 
 
 def _require_candidate_similarity(ctx):
-    """候選語義近鄰報告硬性前置閘門：報告缺失或過期（stale）時禁止進入 resolve 與 prompt 生成。"""
+    """候選語義近鄰報告硬性前置閘門：報告缺失、過期或 production disabled 時禁止進入 resolve 與 prompt 生成。"""
     try:
-        from .check_chapter_files import check_candidate_similarity_freshness
+        from .check_chapter_files import check_candidate_similarity_readiness
     except ImportError:
-        from check_chapter_files import check_candidate_similarity_freshness
+        from check_chapter_files import check_candidate_similarity_readiness
 
-    fresh, reason, _ = check_candidate_similarity_freshness(ctx.book, ctx.chapter, root=ctx.root)
-    if not fresh:
+    ok, hint, status, warning = check_candidate_similarity_readiness(
+        ctx.book, ctx.chapter, root=ctx.root, production=True
+    )
+    if not ok:
         raise SourceError(
-            f"candidate_similarity.md 不存在或已過期（{reason}）。\n"
+            f"candidate_similarity.md 不存在或已過期／檢查未通過（{hint}）。\n"
             f"  請先執行：python util/semantic_lookup.py --candidates {ctx.book} {ctx.chapter}\n"
             f"  檢視 ⚠ 項目並確認候選後，再重跑 run_chapter_manual.py prompts。"
         )
+    if warning:
+        print(f"⚠️ {warning}")
 
 
 # --------------------------------------------------------------------------- #

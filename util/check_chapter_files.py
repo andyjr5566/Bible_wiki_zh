@@ -199,6 +199,14 @@ def _embedding_index_synced(root):
         return False, "索引不存在（首次請跑 python util/build_embedding_index.py 全量建立）"
     if summary.get("legacy_schema"):
         return False, "索引為 legacy schema，請跑 python util/build_embedding_index.py --rebuild"
+    try:
+        cur_embed_model = select_endpoint(task="embedding", root=root).get("model")
+    except Exception as exc:
+        return False, f"目前 embedding 端點設定無法解析：{exc}"
+    if not cur_embed_model:
+        return False, "目前 embedding model 未設定"
+    if summary.get("model") != cur_embed_model:
+        return False, f"索引模型（{summary.get('model')}）與目前設定（{cur_embed_model}）不符，請跑 python util/build_embedding_index.py --rebuild"
     changed, removed = summary["changed"], summary["removed"]
     if changed or removed:
         return False, f"{len(changed)} 條未入索引或已變更、{len(removed)} 條已刪除"
@@ -206,7 +214,7 @@ def _embedding_index_synced(root):
 
 
 def check_candidate_similarity_freshness(book, chapter, root=ROOT):
-    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness。
+    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness（11 因子 Fail-Closed 驗證）。
 
     回傳 (fresh: bool, reason: str, status: str)
     """
@@ -266,6 +274,16 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if meta.get("embedding_index_fingerprint") != cur_fp:
         return False, "embedding 向量索引指紋已變更，需重跑 semantic_lookup.py", ""
 
+    # 檢查 Embedding 模型設定一致性（Fail-closed）
+    try:
+        cur_embed_model = select_endpoint(task="embedding", root=root).get("model")
+    except Exception as exc:
+        return False, f"目前 embedding route 無法解析：{exc}", ""
+    if not cur_embed_model:
+        return False, "目前 embedding model 未設定", ""
+    if meta.get("embedding_model") != cur_embed_model:
+        return False, f"embedding 模型已變更（報告 {meta.get('embedding_model')} vs 目前 {cur_embed_model}），需重跑 semantic_lookup.py", ""
+
     status = meta.get("rerank_status")
     if not status or status not in VALID_RERANK_STATUS:
         return False, f"rerank_status '{status}' 無效或缺失（必須為 {VALID_RERANK_STATUS}）", ""
@@ -274,16 +292,47 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
         if req_field not in meta:
             return False, f"元資料缺少運作統計欄位 {req_field}", status
 
-    # 檢查 Rerank 模型設定一致性
+    # 檢查 Rerank 模型設定一致性（Fail-closed）
     if status != "disabled":
         try:
-            cur_rerank_model = select_endpoint(task="rerank").get("model")
-        except Exception:
-            cur_rerank_model = None
-        if cur_rerank_model and meta.get("rerank_model") != cur_rerank_model:
+            cur_rerank_model = select_endpoint(task="rerank", root=root).get("model")
+        except Exception as exc:
+            return False, f"目前 rerank route 無法解析：{exc}", status
+        if not cur_rerank_model:
+            return False, "目前 rerank model 未設定", status
+        if meta.get("rerank_model") != cur_rerank_model:
             return False, f"rerank 模型已變更（報告 {meta.get('rerank_model')} vs 目前 {cur_rerank_model}），需重跑 semantic_lookup.py", status
 
     return True, "", status
+
+
+def check_candidate_similarity_readiness(book, chapter, root=ROOT, production=True):
+    """統一的前置與生產就緒檢查閘門。
+
+    回傳 (ok: bool, hint: str, status: str, warning: str | None)
+    """
+    fresh, reason, status = check_candidate_similarity_freshness(book, chapter, root=root)
+    canonical = canonical_book_name(book)
+    if not fresh:
+        return (
+            False,
+            f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}（{reason}）",
+            status,
+            None,
+        )
+    if production and status == "disabled":
+        return (
+            False,
+            "正式生產流程禁止 rerank_status: disabled（--no-rerank 僅供診斷/除錯）；請配置 Reranker 並重跑 semantic_lookup.py",
+            status,
+            None,
+        )
+    if status in {"partial", "degraded"}:
+        warning = f"candidate_similarity fresh，但 Reranker 狀態為 {status}，本次使用降級結果"
+        hint = "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"
+        return True, hint, status, warning
+    hint = "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"
+    return True, hint, status, None
 
 
 def build_checks(book, chapter, root=ROOT, preflight=False):
@@ -310,7 +359,6 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     run_cmd = f"python util/run_chapter_manual.py run {canonical} {chapter}"
 
     embedding_ok, embedding_detail = _embedding_index_synced(root)
-    sim_fresh, sim_reason, sim_status = check_candidate_similarity_freshness(canonical, chapter, root=root)
 
     # 來源完整性與閱讀回執驗證
     sources_declared_ok = False
@@ -342,21 +390,10 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     else:
         sources_declared_detail = f"來源清單 {manifest_path} 不存在"
 
-    # 候選相似度與 Preflight Readiness 檢查
-    sim_check_ok = sim_fresh
-    sim_check_hint = ""
-    sim_check_warning = ""
-
-    if not sim_fresh:
-        sim_check_hint = f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}（{sim_reason}）"
-    else:
-        if preflight and sim_status == "disabled":
-            sim_check_ok = False
-            sim_check_hint = "正式交接前置包禁止 rerank_status: disabled（--no-rerank 僅供診斷）；請配置 Reranker 並重跑 semantic_lookup.py"
-        elif sim_status in {"partial", "degraded"}:
-            sim_check_warning = f"candidate_similarity fresh，但 Reranker 狀態為 {sim_status}，本次使用降級結果"
-        else:
-            sim_check_hint = "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"
+    # 候選相似度與 Preflight / Production Readiness 檢查
+    sim_ok, sim_hint, sim_status, sim_warning = check_candidate_similarity_readiness(
+        canonical, chapter, root=root, production=True
+    )
 
     checks = [
         CheckResult(
@@ -385,9 +422,9 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         ),
         CheckResult(
             "步驟2｜candidate_similarity.md（候選語義近鄰報告與 freshness）",
-            sim_check_ok,
-            sim_check_hint,
-            warning=sim_check_warning,
+            sim_ok,
+            sim_hint,
+            warning=sim_warning,
         ),
     ]
 

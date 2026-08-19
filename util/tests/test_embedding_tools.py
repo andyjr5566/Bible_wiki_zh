@@ -443,8 +443,68 @@ class CandidateReportTests(unittest.TestCase):
         self.assertEqual(1, flagged)
         self.assertIn("判定：⚠ 近鄰分類不相容", content)
 
+    def test_rerank_low_score_type_incompatible_flagged(self):
+        """Rerank 分數極低（0.10）但分類不相容時，必須標 ⚠ 近鄰分類不相容，絕不可誤判 🆕。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"custom-reranker": {"calibrated": True, "score_high": 0.70, "score_low": 0.40}}})
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "擊打磐石事件", "type": "事件"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[
+                ("摩西", 0.75, {"type": "人物", "secondary_types": [], "path": "p"}),
+            ]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.10}]
+            fake_reranker.model_name = "custom-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 近鄰分類不相容", content)
+        self.assertNotIn("判定：🆕", content)
+
+    def test_embedding_low_score_type_incompatible_flagged(self):
+        """純 Embedding 降級下，相似度極低（0.20 < threshold）但分類不相容時，必須標 ⚠ 近鄰分類不相容，絕不可誤判 🆕。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "某事件", "type": "事件"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[
+                ("某人物", 0.20, {"type": "人物", "secondary_types": [], "path": "p"}),
+            ]])
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                threshold=0.60, use_rerank=False,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 近鄰分類不相容", content)
+        self.assertNotIn("判定：🆕", content)
+
     def test_rerank_low_score_suggests_new_entry(self):
-        """Rerank 所有候選分數皆低（<0.40）時判定為建議新條目。"""
+        """Rerank 所有候選分數皆低（<0.40）且分類相容時判定為建議新條目。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
@@ -482,6 +542,79 @@ class CandidateReportTests(unittest.TestCase):
 
         self.assertEqual(0, flagged)
         self.assertIn("判定：🆕 建議建立新條目", content)
+
+    def test_lexical_attention_skips_reranker_execution(self):
+        """字面層已有歧義（attention）的候選，不應調用 Rerank API。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "希伯", "type": "人物"}],
+                }, allow_unicode=True),
+            )
+            homonyms = {
+                "希伯": [
+                    {"target": "希伯（沙拉之子）", "type": "人物", "disambiguation": "沙拉之子"},
+                    {"target": "希伯（迦得支派）", "type": "人物", "disambiguation": "迦得支派"},
+                ]
+            }
+            fake = _FakeIndex([[
+                ("希伯（沙拉之子）", 0.90, {"type": "人物", "path": "p1"}),
+            ]])
+
+            rerank_called = []
+            def fake_reranker(query, docs):
+                rerank_called.append(query)
+                return [{"index": 0, "relevance_score": 0.99}]
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms=homonyms,
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(0, len(rerank_called))
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 字面解析有歧義", content)
+        self.assertIn("rerankable_candidates: 0", content)
+
+    def test_lexical_type_mismatch_skips_reranker_execution(self):
+        """字面層同名但分類不相容（lexical type mismatch）的候選，不應調用 Rerank API。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "摩西", "type": "地點"}],  # 候選填地點
+                }, allow_unicode=True),
+            )
+            link_index = {
+                "摩西": {"title": "摩西", "type": "人物", "path": "link_folder/人物/摩西.md"},
+            }
+            fake = _FakeIndex([[
+                ("摩西", 0.95, {"type": "人物", "path": "link_folder/人物/摩西.md"}),
+            ]])
+
+            rerank_called = []
+            def fake_reranker(query, docs):
+                rerank_called.append(query)
+                return [{"index": 0, "relevance_score": 0.99}]
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(0, len(rerank_called))
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 字面分類不相容", content)
+        self.assertIn("rerankable_candidates: 0", content)
 
     def test_exact_match_skips_reranker(self):
         """字面完全命中條目跳過 Rerank API 呼叫。"""
@@ -574,9 +707,10 @@ class CandidateReportTests(unittest.TestCase):
                 [0.9, np.sqrt(1 - 0.81), 0.0],
                 [0.0, 0.0, 1.0],
             ], dtype=np.float32)
-            low = {"type": "主題", "secondary_types": []}
+            low_theme = {"type": "主題", "secondary_types": []}
+            low_person = {"type": "人物", "secondary_types": []}
             fake = _FakeIndex(
-                [[("條目", 0.2, low)], [("條目", 0.2, low)], [("條目", 0.2, low)]],
+                [[("條目甲", 0.2, low_theme)], [("條目乙", 0.2, low_theme)], [("條目丙", 0.2, low_person)]],
                 matrix=matrix,
             )
             path, total, flagged = candidate_report(
@@ -584,7 +718,8 @@ class CandidateReportTests(unittest.TestCase):
                 use_rerank=False,
             )
             content = path.read_text(encoding="utf-8")
-        self.assertEqual(1, flagged)  # 索引近鄰全低分，只有互查一對
+        self.assertEqual(1, flagged)  # 索引近鄰全低分且分類相容，只有互查一對
+
     def test_metadata_header_and_extraction(self):
         """測試 candidate_similarity.md 開頭的 metadata 註解能被 extract_report_metadata 完整解析。"""
         from semantic_lookup import extract_report_metadata, RERANK_POLICY_VERSION

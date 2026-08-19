@@ -49,6 +49,33 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             "candidates": [{"name": "創造", "type": "主題"}],
         })
         _write(root / "util" / "output" / "link_index.json", "{}")
+        _write(root / "_config" / "link_homonyms.yaml", "{}")
+        _write(root / "_config" / "reranker_calibration.yaml", "models: {}")
+        _write(
+            root / "_config" / "model_endpoints.yaml",
+            yaml.safe_dump({
+                "active": "test-ep",
+                "endpoints": {
+                    "test-ep": {
+                        "type": "openai",
+                        "base_url": "http://127.0.0.1:4001/v1",
+                        "model": "test-model",
+                    }
+                },
+                "tasks": {
+                    "embedding": {
+                        "endpoint": "test-ep",
+                        "model": "test-embed",
+                        "kind": "embedding",
+                    },
+                    "rerank": {
+                        "endpoint": "test-ep",
+                        "model": "test-reranker",
+                        "kind": "rerank",
+                    },
+                },
+            })
+        )
         _write(root / "util" / "output" / "embedding_index.meta.json", '{"model": "test-embed", "entries": []}')
         _write(root / "util" / "output" / "embedding_index.npz", "dummy")
         return root, tmp_dir

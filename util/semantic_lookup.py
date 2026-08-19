@@ -315,7 +315,10 @@ def _lexical_preview(name, link_index, homonyms):
     """
     _, options = resolver.homonym_options(name, homonyms)
     if options:
-        targets = "、".join(option["target"] for option in options)
+        targets = "、".join(
+            (option.get("target") or option.get("name") or str(option))
+            for option in options if isinstance(option, (dict, str))
+        )
         return f"同名詞需人工選擇（將歸 D）：{targets}", True
     match_type, entry, title = resolver.find_in_index(name, link_index)
     if match_type == "conflict":
@@ -469,11 +472,17 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             lines.append(f"字面解析：{'⚠ ' if attention else ''}{preview}")
             lines.append("")
 
-            # 執行 Rerank（若啟用且非確切命中）
+            # 執行 Rerank（若啟用且非字面層已裁決）
             ranked_items = []
             has_rerank = False
 
-            if not is_safe_lexical_match and hits:
+            lexical_decided = (
+                attention
+                or (lexical_entry is not None and not lexical_type_compat)
+                or is_safe_lexical_match
+            )
+
+            if not lexical_decided and hits:
                 rerankable_candidates += 1
                 if use_rerank and not circuit_open:
                     rerank_attempted += 1
@@ -545,7 +554,13 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     else:
                         # --- 第二層：Semantic Advisory Governance（僅在第一層未決定時進入）---
                         semantic_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
-                        if not is_calibrated:
+                        if not semantic_type_compat:
+                            verdict = (
+                                f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                                f"若確為同實體請確認是否改用 [[{top1['title']}]]"
+                            )
+                            flagged += 1
+                        elif not is_calibrated:
                             verdict = f"⚠ 未校準模型（{rerank_model}），評分僅供排序參考，需人工確認"
                             flagged += 1
                         else:
@@ -555,12 +570,6 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                             margin_ambiguous = calib_thresholds.get("margin_ambiguous", 0.15)
                             if top1_r < score_low:
                                 verdict = "🆕 建議建立新條目（既有條目相關度低）"
-                            elif not semantic_type_compat:
-                                verdict = (
-                                    f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
-                                    f"若確為同實體請確認是否改用 [[{top1['title']}]]"
-                                )
-                                flagged += 1
                             elif top1_r >= score_high and margin >= margin_high:
                                 verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
                             elif margin < margin_ambiguous:
@@ -594,14 +603,14 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     else:
                         # --- 第二層：Semantic Advisory Governance（純 embedding 降級路徑）---
                         semantic_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
-                        if top1["sim_score"] < threshold:
-                            verdict = "🆕 建議建立新條目（無高相似既有條目）"
-                        elif not semantic_type_compat:
+                        if not semantic_type_compat:
                             verdict = (
                                 f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
                                 f"若確為同實體請確認是否改用 [[{top1['title']}]]"
                             )
                             flagged += 1
+                        elif top1["sim_score"] < threshold:
+                            verdict = "🆕 建議建立新條目（無高相似既有條目）"
                         else:
                             verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
                             flagged += 1

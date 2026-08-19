@@ -51,6 +51,31 @@ class CheckChapterFilesTests(unittest.TestCase):
     def _root(self, tmp):
         root = Path(tmp)
         (root / "01 創世記").mkdir(parents=True, exist_ok=True)
+        _write(
+            root / "_config" / "model_endpoints.yaml",
+            yaml.safe_dump({
+                "active": "test-ep",
+                "endpoints": {
+                    "test-ep": {
+                        "type": "openai",
+                        "base_url": "http://127.0.0.1:4001/v1",
+                        "model": "test-model",
+                    }
+                },
+                "tasks": {
+                    "embedding": {
+                        "endpoint": "test-ep",
+                        "model": "test-embed",
+                        "kind": "embedding",
+                    },
+                    "rerank": {
+                        "endpoint": "test-ep",
+                        "model": "test-reranker",
+                        "kind": "rerank",
+                    },
+                },
+            })
+        )
         return root
 
     def test_stops_reporting_at_first_missing_step(self):
@@ -102,11 +127,16 @@ class CheckChapterFilesTests(unittest.TestCase):
         """空條目庫（link_index={}）對空索引（Schema v2）＝同步。"""
         import numpy as np
         from build_embedding_index import _vectors_sha256, compute_index_fingerprint
+        from model_client import select_endpoint
+        try:
+            cur_embed_model = select_endpoint(task="embedding", root=root).get("model") or "test-embed"
+        except Exception:
+            cur_embed_model = "test-embed"
         vectors = np.zeros((0, 4), dtype=np.float32)
         np.savez_compressed(root / "util" / "output" / "embedding_index.npz", vectors=vectors)
         meta = {
             "schema_version": 2,
-            "model": "test-embed",
+            "model": cur_embed_model,
             "dim": 4,
             "input_type": "passage",
             "vectors_sha256": _vectors_sha256(vectors),
@@ -133,7 +163,12 @@ class CheckChapterFilesTests(unittest.TestCase):
             calib_sha = _file_sha256(root / "_config" / "reranker_calibration.yaml")
 
         try:
-            cur_rerank_model = select_endpoint(task="rerank").get("model") or "test-reranker"
+            cur_embed_model = select_endpoint(task="embedding", root=root).get("model") or "test-embed"
+        except Exception:
+            cur_embed_model = "test-embed"
+
+        try:
+            cur_rerank_model = select_endpoint(task="rerank", root=root).get("model") or "test-reranker"
         except Exception:
             cur_rerank_model = "test-reranker"
 
@@ -142,7 +177,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             "book": "創世記",
             "chapter": "1",
             "candidate_sha256": _file_sha256(tmp_dir / 'link_candidates.yaml'),
-            "embedding_model": "test-embed",
+            "embedding_model": cur_embed_model,
             "embedding_index_fingerprint": fp,
             "link_index_sha256": _file_sha256(root / 'util' / 'output' / 'link_index.json'),
             "homonyms_sha256": _file_sha256(root / '_config' / 'link_homonyms.yaml'),
@@ -205,20 +240,25 @@ class CheckChapterFilesTests(unittest.TestCase):
             failed = [res.label for res in checks if not res.ok]
             self.assertEqual([], failed)
 
-    def test_table_driven_freshness_mutations_fail_closed(self):
-        """Table-driven 測試：11 個依賴因子只要任一項突變或不合，freshness 一律判 FAIL。"""
+    def test_candidate_similarity_freshness_table_driven_mutations(self):
+        """完整 11 個依賴因子與統計欄位突變時，Freshness 必須判 stale。"""
         mutations = [
-            ("schema_version", {"schema_version": "99"}),
-            ("book", {"book": "出埃及記"}),
-            ("chapter", {"chapter": "99"}),
-            ("candidate_sha256", {"candidate_sha256": "bad_hash"}),
-            ("link_index_sha256", {"link_index_sha256": "bad_hash"}),
-            ("homonyms_sha256", {"homonyms_sha256": "bad_hash"}),
-            ("rerank_policy_version", {"rerank_policy_version": "1999.01.1"}),
-            ("calibration_sha256", {"calibration_sha256": "bad_hash"}),
-            ("embedding_index_fingerprint", {"embedding_index_fingerprint": "bad_fp"}),
+            ("1. schema_version", {"schema_version": "99"}),
+            ("2. book", {"book": "出埃及記"}),
+            ("3. chapter", {"chapter": "99"}),
+            ("4. candidate_sha256", {"candidate_sha256": "bad_hash"}),
+            ("5. embedding_model", {"embedding_model": "old-unsupported-model"}),
+            ("6. embedding_index_fingerprint", {"embedding_index_fingerprint": "bad_fp"}),
+            ("7. link_index_sha256", {"link_index_sha256": "bad_hash"}),
+            ("8. homonyms_sha256", {"homonyms_sha256": "bad_hash"}),
+            ("9. rerank_model", {"rerank_model": "old-reranker-model"}),
+            ("10. rerank_policy_version", {"rerank_policy_version": "1999.01.1"}),
+            ("11. calibration_sha256", {"calibration_sha256": "bad_hash"}),
             ("rerank_status_missing", {"rerank_status": None}),
             ("rerank_status_invalid", {"rerank_status": "unknown_status"}),
+            ("rerankable_candidates_missing", {"rerankable_candidates": None}),
+            ("rerank_attempted_missing", {"rerank_attempted": None}),
+            ("rerank_succeeded_missing", {"rerank_succeeded": None}),
         ]
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -236,6 +276,25 @@ class CheckChapterFilesTests(unittest.TestCase):
                     self._write_fresh_similarity_report(tmp_dir, root, overrides=override)
                     fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
                     self.assertFalse(fresh, f"欄位 {field_name} 突變應判定 stale，但回傳 fresh")
+
+    def test_freshness_fails_closed_when_rerank_endpoint_error(self):
+        """當 rerank route/endpoint 設定損壞時，Freshness 必須 Fail-Closed 回傳 False。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            # 寫入無效的 model_endpoints.yaml
+            _write(root / "_config" / "model_endpoints.yaml", "tasks: {rerank: invalid_nonexistent_endpoint}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)
+
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh, "端點設定錯誤時應 Fail-Closed 回傳 False")
+            self.assertIn("無法解析", reason)
 
     def test_preflight_fails_when_manifest_has_duplicate_or_missing_sources(self):
         """來源宣告若不符合恰好五套 {CT, GT, KC, BH, STEP}，Preflight 必須 FAIL。"""
@@ -278,6 +337,26 @@ class CheckChapterFilesTests(unittest.TestCase):
             sim_check = next(c for c in checks if "candidate_similarity" in c.label)
             self.assertFalse(sim_check.ok)
             self.assertIn("禁止 rerank_status: disabled", sim_check.resume_hint)
+
+    def test_manual_prompts_fails_when_rerank_disabled(self):
+        """run_chapter_manual.py prompts 正式生產流程禁止 rerank_status: disabled。"""
+        import run_chapter_manual as rcm
+        import run_chapter as rc
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates: []\nbook: 創世記\nchapter: 1\n")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root, overrides={"rerank_status": "disabled", "rerank_model": "none"})
+
+            ctx = rc.ChapterContext(BOOK, CHAPTER, root=root)
+            with self.assertRaises(rcm.SourceError) as cm:
+                rcm._require_candidate_similarity(ctx)
+            self.assertIn("禁止 rerank_status: disabled", str(cm.exception))
 
     def test_preflight_warns_and_passes_when_rerank_degraded(self):
         """當 rerank_status 為 partial 或 degraded 時，Preflight 放行 PASS 並附帶 warning。"""

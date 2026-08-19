@@ -49,7 +49,10 @@ class ModelValidationError(ModelError):
 # --------------------------------------------------------------------------- #
 # 端點控制器
 # --------------------------------------------------------------------------- #
-def load_endpoints(path=ENDPOINTS_FILE):
+def load_endpoints(path=None, root=None):
+    if path is None:
+        path = (Path(root) / "_config" / "model_endpoints.yaml") if root else ENDPOINTS_FILE
+    path = Path(path)
     if not path.exists():
         return {"active": "claude-cli", "endpoints": {"claude-cli": {"type": "claude"}}}
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
@@ -80,7 +83,7 @@ def _task_config(config, task):
     raise ModelError(f"tasks.{task} 格式錯誤：需為端點名字串或 mapping")
 
 
-def select_endpoint(name=None, config=None, task=None):
+def select_endpoint(name=None, config=None, task=None, root=None):
     """選端點，優先序：明確指定 → 該 task 的 MODEL_ENDPOINT_<TASK>
     → MODEL_ENDPOINT（全域 env）→ tasks.<task>（設定檔）→ active。
 
@@ -90,7 +93,7 @@ def select_endpoint(name=None, config=None, task=None):
     其 model 只在最終選中的端點就是 task 設定的端點時才覆蓋——被明確指定或
     環境變數切到別的端點時，用該端點自己的 model（env 覆蓋＝整組覆蓋）。
     """
-    config = config or load_endpoints()
+    config = config or load_endpoints(root=root)
     endpoints = config["endpoints"]
     task_cfg = _task_config(config, task)
     task_env = os.environ.get(f"{ENV_ENDPOINT}_{task.upper()}") if task else None
