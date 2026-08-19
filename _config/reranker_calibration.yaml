@@ -3,36 +3,38 @@
 # 未校準之模型（calibrated: false）只輸出排序與評分供參考，⚠ 由 semantic_lookup.py 的
 # 檢索相似度規則（REPORT_FLAG_FLOOR，已跨 5 卷 151 候選實測）決定。
 #
-# ⚠️ 翻 calibrated: true 之前必讀——下面的 provisional_thresholds 是 0–1 通用尺度，
-# 目前沒有證據顯示它適用於本專案語料。實測分佈（見各章報告 meta 的 rerank_score_observed）：
-#   利19：0.007–0.068（1 次重排）
-#   利20：0.011–0.442（2 次重排）
-# 也就是說分數尺度隨配對品質變動很大，但低端遠低於 score_low(0.40)。
-# 若在樣本這麼少的情況下翻成 true，大部分候選會 top1 < score_low → 輸出「🆕 建議建立新條目」，
-# 把這份報告本來要防的重複條目變成預設輸出。
+# 2026-08-20 申命記 smoke test（15 組跨卷 gold pair：申命記措詞的候選 → 創/出/利/民 既有條目，
+# 模擬新章開發）量到的分佈，取代先前只有 3 個樣本的推論：
 #
-# 樣本嚴重不足的原因：重排只在候選「完全沒有字面對應」時才跑，而勘誤流程的候選幾乎都已有條目。
-# 利16/17/18 各 0 次，利19 1 次，利20 2 次——五章 112 個候選總共只觸發 3 次。
-# 目前這 3 次裡，重排的 top-1 與檢索的 top-1 不一致：1 次重排較佳（以色列刑罰的節制與程序保障 →
-# 曠野審判制度，比檢索選的古代近東司法制度貼近）、1 次較差（古代近東的社會契約 → 古代近東受託制度，
-# 檢索選的古代近東立約較貼近）、1 次兩者都不對。不足以判定優劣。
+#   重排分數｜正確目標：中位數 0.957，區間 0.321–0.999；奪冠時最低 0.714
+#   重排分數｜確實沒有正確目標的候選（利19/利20 實跑）：0.011–0.442
+#   檢索相似度｜正確目標：中位數 0.599（0.497–0.705）；非目標近鄰中位數 0.493
+#   Top1-Top2 margin：中位數 0.312，區間 0.000–0.952
 #
-# 校準流程：先累積足夠的 rerank_score_observed 樣本（新章開發時觸發率高得多），
-# 再用已知的真重複對（酒政_酒政長→酒政、孝敬父母→當孝敬父母等）定門檻。
+# 兩個要點：
+# (1) 先前「本語料重排分數只有 0.03–0.06、翻 calibrated 會一律輸出建新條目」是抽樣偏誤。
+#     那批低分是因為那些候選**確實沒有對應條目**——低分才是正確答案。
+#     真有對應時分數高得多（中位數 0.957），score_low 大致分得開兩者。
+# (2) 但 0.321（正確目標最低）與 0.442（無對應候選最高）重疊，所以低分區不能給 🆕 太寬，
+#     下面把 score_low 從 0.40 降到 0.30：低於 0.30 才敢說「沒有對應條目」。
+#
+# 仍維持 calibrated: false——15 筆是 smoke test 不是 gold dataset，
+# 而且分數高不等於實體正確（本次有 5 筆重排把別的條目排到 0.99 以上而壓過正確目標）。
+# 要翻 true 之前，需要在新章開發時累積更大的樣本並驗證「高分＝同實體」。
 
 models:
   nvidia/llama-nemotron-rerank-vl-1b-v2:free:
     calibrated: false
     provisional_thresholds:
-      score_high: 0.70        # 暫定高分門檻（待 gold dataset 實測校準）
-      score_low: 0.40         # 暫定低分門檻
-      margin_high: 0.20       # 暫定 Top1 - Top2 領先差距
-      margin_ambiguous: 0.15  # 暫定模糊差距下限
+      score_high: 0.90        # smoke test：正確目標中位數 0.957、奪冠時最低 0.714
+      score_low: 0.30         # smoke test：正確目標最低 0.321，低於此才敢判「沒有對應條目」
+      margin_high: 0.20       # smoke test：margin 中位數 0.312
+      margin_ambiguous: 0.10  # margin 分佈很散（0.000–0.952），模糊帶放寬
 
   nvidia/llama-nemotron-rerank-vl-1b-v2:
     calibrated: false
     provisional_thresholds:
-      score_high: 0.70
-      score_low: 0.40
+      score_high: 0.90
+      score_low: 0.30
       margin_high: 0.20
-      margin_ambiguous: 0.15
+      margin_ambiguous: 0.10

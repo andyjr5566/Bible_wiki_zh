@@ -9,19 +9,19 @@ link_index_sha256: e93fe3bc99af9535f2b16b79539ea8f5a27abeae227405db79b7403b8af6c
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.3
-calibration_sha256: b5e4edf31ddf7623a302672b86d9d1c8193b3c7c17b7f638410daa145bb7d193
+calibration_sha256: 2eff4695db1e2d3a098dcd9a79946f38885dae5a76cc257b2e7cde5c5198a3d0
 rerank_status: not_needed
 rerankable_candidates: 0
 rerank_attempted: 0
 rerank_succeeded: 0
-rerank_retrieve_top_k: 20
+rerank_retrieve_top_k: 10
 rerank_score_observed: none
 -->
 
 # 候選語義近鄰報告：利未記 第20章
 
 - 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2625 條
-- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
+- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 10 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.60 且 top-1 非同實體）決定，重排名次只當附加證據。
   字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。
