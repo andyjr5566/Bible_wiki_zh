@@ -85,14 +85,19 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - **原文類候選名的括號音譯必須是本章來源實際出現過的拼寫**（先 `grep -i` raw_data 確認）；來源沒給音譯就用裸中文名，不可憑聖經工具書常識補配（利2「紀念份（azkarah）」實例：來源只給英文 memorial portion）。希伯來字母寫法同理，且更嚴：P4 validate 對候選檔／entry_content／chapter_content 逐字驗證希伯來字母的出處，查無出處＝error 擋 build（全庫實測抓到創47/出28-30/利1 共 18 筆歷史真陽性、0 誤報）；本章新建原文類名稱的拉丁音譯查無出處＝manual_review 提醒（拼寫變體無法機械排除）。
    - **STEP 的使用邊界**：它是原文證據層，不是第五套 commentary。可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域，但 lexicon 只是可能義域，不等於本節必然語境義；morphology 也不自行推出神學結論。STEP 可觸發原文候選，仍只收有研究／跨章累積／實質內容價值者；不為每個功能詞、詞形或 Strong 編號批量建頁，Strong 不是 wiki ID。比較 CT／GT／KC／BH 的共識時不得把 STEP 算一票。**STEP 未在 context projection 出現或 brief lexicon 未列某含義，不等於「STEP 否定該義」或「原文查無此義」；STEP absence 不得作為否定註釋延伸的證據。**
    - **原文資料採正面分層寫法**：先說 STEP 能直接確認的原文字形、lemma、Strong、morphology、本節譯義與簡要義域，再說「部分註釋進一步理解為……」或「結合其他經文，某些解釋進一步討論……」。除非 STEP 與註釋在 Hebrew／Strong／morphology／lexical identification 等事項上有明確、可驗證的衝突，否則避免寫成「不能由這個字推出」「這個字並不證明」「原文沒有這個意思」「這只是神學推論」或「不能從中文譯名倒推」。STEP 負責界定語言證據，commentary 負責呈現解經與神學延伸；兩者層次不同時並列呈現。
-   - **候選寫齊後跑語義近鄰報告**（候選定稿前必經，check_chapter_files 會驗報告存在）：
+   - **候選寫齊後跑語義近鄰與重排報告**（候選定稿前必經，check_chapter_files 會驗報告存在）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
-     程式把每個候選的「名稱＋分類＋evidence＋surfaces」合成富查詢、一次批量比對全庫索引，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告三種資訊都要看：
-     - **字面解析預覽**：resolver 實際會把候選對到哪（同名／裸名／alias／新建）。標「請確認」的多半是 alias 導向不同名條目——alias 登記錯誤會把候選靜默導去錯的條目（實例：安密巴 aliases 誤含以實各谷），這裡是唯一的事前攔截點。
-     - **對全庫的 ⚠／ⓘ**：⚠（top-1 高分、字面對不上、分類相容）→ 與候選**同概念**（措辭不同、意思相同）就把候選名改成該既有條目名（resolver 會歸 A/B 走累積），不要另建近似重複；確為不同概念則照建。ⓘ（top-1 高分但分類不相容）→ 常是跨分類的同實體（火柱雲柱[主題]→雲柱火柱[歷史]），確認後連分類一起改用既有條目的。標「resolver 可自動對上」的近鄰不用處理。
-     - **候選互查的 ⚠**（本章兩個候選彼此相似 ≥0.8）：新章的條目彼此都還不在索引裡，「兩個候選其實同概念」只有互查抓得到——考慮合併成一個候選（另一個詞用 surfaces 涵蓋），或確認確為兩事再照建。
-     報告是分類輔助，不是硬規則；evidence 寫得越具體（含經文引句），近鄰越準。
-   - 資料驅動判準見 `scheme.md` §3；語義近鄰索引見 `scheme.md` §3.5。
+     程式先以字面規則篩選（同名／alias 確切命中直接通過不打 API），對模糊／衝突／新建候選由 Embedding 索引撈出 Top K 近鄰，再交由 Cross-Encoder Reranker 進行精細打分裁判，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告資訊請依序判讀：
+     - **字面解析**：resolver 實際會把候選對到哪（同名／裸名／alias／新建）。標「請確認」的多半是 alias 導向不同名條目——alias 登記錯誤會把候選靜默導去錯的條目（實例：安密巴 aliases 誤含以實各谷），這裡是唯一的事前攔截點。
+     - **候選重排表格與判定**：
+       - `| Rank | Candidate | Similarity | Rerank | Path |` 表格：列出 Top K 既有條目與重排分數。
+       - `rerank_margin`：Top1 與 Top2 分數差距。
+       - `✅ 建議使用既有條目 [[條目]]`（高可信領先且分類相容）→ 若確認為同概念，把候選名改成該既有條目名（resolver 歸 A/B 累積），避免建近似重複。
+       - `⚠ 需 Agent / 人工判斷`（候選相近、分數差距過小或跨分類）→ 需人工核對上下文與經文實體。
+       - `🆕 建議建立新條目`（相關度低）→ 確為新概念，維持 C 類照建。
+     - **候選互查的 ⚠**（本章兩個候選彼此相似 ≥0.8）：新章條目都還不在索引裡，「兩個候選其實同概念」只有互查抓得到——考慮合併成一個候選（另一個詞用 surfaces 涵蓋），或確認確為兩事再照建。
+     報告是分類輔助，不是硬規則；evidence 寫得越具體（含經文引句），重排裁判越準。
+   - 資料驅動判準見 `scheme.md` §3；語義近鄰與重排架構見 `scheme.md` §3.5。
 
 3. **跑人工 orchestrator**（M3/M6 手寫，結構、渲染、驗證由程式處理）
    ```text

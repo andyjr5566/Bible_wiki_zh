@@ -212,6 +212,86 @@ def openai_embed_runner(texts, *, base_url=DEFAULT_OPENAI_BASE_URL,
         raise ModelError(f"embeddings 回應格式非預期：{str(data)[:300]}") from exc
 
 
+def openai_rerank_runner(query, documents, *, base_url=DEFAULT_OPENAI_BASE_URL,
+                         model=None, api_key=None, top_n=None, timeout=30):
+    """OpenAI / OpenRouter 相容 /rerank 端點（如 nvidia cross-encoder 模型）。"""
+    if not documents:
+        return []
+    base = base_url.rstrip("/")
+    url = base if base.endswith("/rerank") else f"{base}/rerank"
+    top_n = top_n if top_n is not None else len(documents)
+    payload = {
+        "model": model,
+        "query": str(query),
+        "documents": [str(d) for d in documents],
+        "top_n": top_n,
+    }
+    body = json.dumps(payload).encode("utf-8")
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:300]
+        raise ModelError(f"呼叫 {url} 失敗：HTTP {exc.code} {detail}") from exc
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise ModelError(f"呼叫 {url} 失敗：{exc}") from exc
+
+    raw_results = data.get("results") if isinstance(data, dict) else None
+    if raw_results is None and isinstance(data, dict):
+        raw_results = data.get("data")
+    if not isinstance(raw_results, list):
+        raise ModelError(f"rerank 回應格式非預期：{str(data)[:300]}")
+
+    results = []
+    for item in raw_results:
+        if not isinstance(item, dict):
+            continue
+        idx = item.get("index")
+        score = item.get("relevance_score")
+        if score is None:
+            score = item.get("score")
+        if idx is not None and score is not None:
+            idx_int = int(idx)
+            results.append({
+                "index": idx_int,
+                "relevance_score": float(score),
+                "document": documents[idx_int] if 0 <= idx_int < len(documents) else "",
+            })
+    results.sort(key=lambda r: r["relevance_score"], reverse=True)
+    return results
+
+
+def rerank_documents(query, documents, *, task="rerank", endpoint_name=None,
+                     top_n=None, runner=None):
+    """將 query 與候選 documents 進行語意重排打分。
+
+    端點與模型依 tasks.<task>（預設 tasks.rerank）路由。
+    回傳由高到低排序的 list[{"index": int, "relevance_score": float, "document": str}]。
+    runner 可注入供單元測試。
+    """
+    if not documents:
+        return []
+    if runner is None:
+        endpoint = select_endpoint(endpoint_name, task=task)
+        if endpoint.get("type", "openai") != "openai":
+            raise ModelError(
+                f"端點「{endpoint['name']}」type={endpoint.get('type')} 不支援 rerank"
+            )
+        model = endpoint.get("model")
+        if not model:
+            raise ModelError(f"端點「{endpoint['name']}」未指定 rerank 模型")
+        base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
+        api_key = _endpoint_api_key(endpoint)
+        runner = lambda q, docs: openai_rerank_runner(
+            q, docs, base_url=base_url, model=model, api_key=api_key, top_n=top_n
+        )
+    return runner(query, documents)
+
+
 def embed_texts(texts, *, task="embedding", endpoint_name=None, batch_size=64,
                 input_type=None, runner=None):
     """把一批文字轉成向量；端點與模型依 tasks.<task> 路由。
@@ -419,6 +499,24 @@ def _cmd_test(args):
         print(
             f"✅ {endpoint['name']} embedding 正常："
             f"模型 {endpoint.get('model')}，維度 {len(vectors[0])}"
+        )
+        return 0
+    if endpoint.get("kind") == "rerank":
+        try:
+            results = rerank_documents(
+                "創世記 25:2 亞伯拉罕之子",
+                ["米甸是亞伯拉罕與基土拉之子", "埃及是尼羅河流域國家"],
+                task=args.task,
+                endpoint_name=args.name,
+            )
+        except ModelError as exc:
+            print(f"❌ {endpoint['name']} rerank 測試失敗：{exc}")
+            return 1
+        top_idx = results[0]["index"] if results else "?"
+        top_score = results[0]["relevance_score"] if results else 0.0
+        print(
+            f"✅ {endpoint['name']} rerank 正常："
+            f"模型 {endpoint.get('model')}，測試重排 Top1={top_idx}（分數 {top_score:.3f}）"
         )
         return 0
     runner = make_runner(endpoint)

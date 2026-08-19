@@ -743,20 +743,26 @@ def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> 
 
 
 @mcp.tool()
-def build_candidate_similarity(book: str, chapter: int, top: int = 3) -> Dict[str, Any]:
-    """Run ``semantic_lookup.py --candidates`` and write the human-review report."""
+def build_candidate_similarity(
+    book: str, chapter: int, top: int = 5, no_rerank: bool = False,
+) -> Dict[str, Any]:
+    """Run ``semantic_lookup.py --candidates`` and write the two-stage retrieval + reranker report."""
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
         bounded_top = max(3, min(int(top), 10))
-        result = _run_util_command(
+        cmd = [
             "semantic_lookup.py", "--candidates", canonical, str(chapter),
-            "--top", str(bounded_top), timeout=300,
-        )
+            "--top", str(bounded_top),
+        ]
+        if no_rerank:
+            cmd.append("--no-rerank")
+        result = _run_util_command(*cmd, timeout=300)
         result.update({
             "book": canonical,
             "chapter": chapter,
             "report": _relative_to_root(tmp / "candidate_similarity.md"),
             "top": bounded_top,
+            "rerank_enabled": not no_rerank,
         })
         return result
     except (TypeError, ValueError, OSError) as exc:

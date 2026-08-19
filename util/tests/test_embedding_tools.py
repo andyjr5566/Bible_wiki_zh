@@ -11,7 +11,12 @@ if str(UTIL_DIR) not in sys.path:
 import yaml
 
 from build_embedding_index import _hash, entry_embed_text, stale_summary
-from semantic_lookup import candidate_query_text, candidate_report
+from semantic_lookup import (
+    candidate_query_text,
+    candidate_rerank_query,
+    candidate_report,
+    entry_rerank_document,
+)
 
 
 def _write(path, content):
@@ -115,6 +120,21 @@ class CandidateQueryTextTests(unittest.TestCase):
         )
 
 
+class CandidateRerankQueryTests(unittest.TestCase):
+    def test_composes_rerank_fields(self):
+        text = candidate_rerank_query({
+            "name": "米甸",
+            "suggested_type": "人物",
+            "evidence": "創25:2 亞伯拉罕與基土拉所生的兒子",
+            "surfaces": [{"phrase": "米甸"}],
+        }, book="創世記", chapter=25)
+        self.assertIn("待建立詞：米甸", text)
+        self.assertIn("出現位置：創世記 第25章", text)
+        self.assertIn("候選類型：人物", text)
+        self.assertIn("本章上下文：創25:2 亞伯拉罕與基土拉所生的兒子", text)
+        self.assertIn("經文用詞：米甸", text)
+
+
 class _FakeIndex:
     def __init__(self, hits_per_query, matrix=None):
         self.meta = {"model": "test-embed"}
@@ -134,7 +154,7 @@ class _FakeIndex:
 
 
 class CandidateReportTests(unittest.TestCase):
-    def test_report_flags_above_threshold_and_counts(self):
+    def test_report_without_rerank_fallback_and_table(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
@@ -149,50 +169,67 @@ class CandidateReportTests(unittest.TestCase):
                 }, allow_unicode=True),
             )
             fake = _FakeIndex([
-                [("既有近似條目", 0.55, {"type": "主題"}),
-                 ("低分條目", 0.20, {"type": "主題"})],
-                [("不相關", 0.15, {"type": "神學"})],
+                [("既有近似條目", 0.75, {"type": "主題", "path": "link_folder/主題/既有近似條目.md"}),
+                 ("低分條目", 0.20, {"type": "主題", "path": "link_folder/主題/低分條目.md"})],
+                [("不相關", 0.15, {"type": "神學", "path": "link_folder/神學/不相關.md"})],
             ])
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.40
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60,
+                use_rerank=False,
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(2, total)
         self.assertEqual(1, flagged)
-        self.assertIn("0.550 ⚠ 既有近似條目", content)
-        self.assertIn("0.200 低分條目", content)
-        self.assertIn("依據甲", fake.received[0])  # evidence 進了查詢文本
+        self.assertIn("| 1 | 既有近似條目 | 0.750 | link_folder/主題/既有近似條目.md |", content)
+        self.assertIn("判定：⚠ 語義相似度高", content)
+        self.assertIn("依據甲", fake.received[0])
         self.assertEqual("candidate_similarity.md", path.name)
 
-    def test_same_entity_hit_marked_not_flagged(self):
-        """同名與括號前裸名命中都算同實體：註記、不標 ⚠。"""
+    def test_report_with_mock_reranker(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
             _write(
-                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                root / "01 創世記" / ".tmp" / "第25章" / "link_candidates.yaml",
                 yaml.safe_dump({
-                    "book": "創世記", "chapter": 1,
+                    "book": "創世記", "chapter": 25,
                     "candidates": [
-                        {"name": "既有條目", "type": "主題"},
-                        {"name": "皂莢木", "type": "主題"},
+                        {"name": "米甸", "type": "人物", "evidence": "基土拉生了心蘭、約珊、米但、米甸"},
                     ],
                 }, allow_unicode=True),
             )
             fake = _FakeIndex([
-                [("既有條目", 0.70, {"type": "主題"})],
-                [("皂莢木（atzei shittim）", 0.70, {"type": "原文"})],  # 裸名命中
+                [
+                    ("米甸人", 0.91, {"type": "群體", "path": "link_folder/群體/米甸人.md"}),
+                    ("米甸", 0.87, {"type": "人物", "path": "link_folder/人物/米甸.md"}),
+                ],
             ])
+
+            def fake_reranker(query, docs):
+                # Reranker 根據人物與經文上下文，將 index 1 (米甸人物) 排第一
+                return [
+                    {"index": 1, "relevance_score": 0.962},
+                    {"index": 0, "relevance_score": 0.314},
+                ]
+
+            fake_reranker.model_name = "test-reranker"
+
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
+                "創世記", 25, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
             )
             content = path.read_text(encoding="utf-8")
-        self.assertEqual(0, flagged)  # 同實體命中不算「待改名」
-        self.assertEqual(2, content.count("resolver 可自動對上"))
-        self.assertNotIn("0.700 ⚠", content)  # hit 行不得有 ⚠（表頭圖例不算）
 
-    def test_only_top1_gets_flag(self):
-        """⚠ 只標 top-1：排第二的高分近鄰只顯示、不標記。"""
+        self.assertEqual(1, total)
+        self.assertEqual(0, flagged)  # 確切對應／明確領先不標 ⚠
+        self.assertIn("| Rank | Candidate | Similarity | Rerank | Path |", content)
+        self.assertIn("| 1 | 米甸 | 0.870 | 0.962 | link_folder/人物/米甸.md |", content)
+        self.assertIn("| 2 | 米甸人 | 0.910 | 0.314 | link_folder/群體/米甸人.md |", content)
+        self.assertIn("rerank_margin: 0.648", content)
+        self.assertIn("判定：✅ 建議使用既有條目 [[米甸]]", content)
+
+    def test_rerank_ambiguous_margin_flagged(self):
+        """Top1 與 Top2 分數相近（margin < 0.15）時標 ⚠ 需人工判斷。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
@@ -200,67 +237,121 @@ class CandidateReportTests(unittest.TestCase):
                 root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
                 yaml.safe_dump({
                     "book": "創世記", "chapter": 1,
-                    "candidates": [{"name": "甲候選", "type": "主題"}],
+                    "candidates": [{"name": "模糊候選", "type": "主題"}],
                 }, allow_unicode=True),
             )
             fake = _FakeIndex([[
-                ("甲候選", 0.75, {"type": "主題"}),          # top1 同實體
-                ("高分兄弟條目", 0.70, {"type": "主題"}),     # top2 高分但不標
+                ("概念甲", 0.70, {"type": "主題", "path": "p1"}),
+                ("概念乙", 0.68, {"type": "主題", "path": "p2"}),
             ]])
+
+            def fake_reranker(query, docs):
+                return [
+                    {"index": 0, "relevance_score": 0.65},
+                    {"index": 1, "relevance_score": 0.62},  # margin = 0.03
+                ]
+
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
             )
             content = path.read_text(encoding="utf-8")
-        self.assertEqual(0, flagged)
-        self.assertNotIn("0.750 ⚠", content)
-        self.assertNotIn("0.700 ⚠", content)
-        self.assertIn("0.700 高分兄弟條目", content)
 
-    def test_type_incompatible_top1_not_flagged(self):
-        """事件候選的 top-1 是其主角人物＝跨分類鄰居，不標 ⚠。"""
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            (root / "01 創世記").mkdir(parents=True)
-            _write(
-                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
-                yaml.safe_dump({
-                    "book": "創世記", "chapter": 1,
-                    "candidates": [
-                        {"name": "以色列戰勝巴珊王噩", "type": "事件"},
-                        {"name": "同分類近似", "type": "主題"},
-                    ],
-                }, allow_unicode=True),
-            )
-            fake = _FakeIndex([
-                [("巴珊王噩", 0.78, {"type": "人物", "secondary_types": []})],
-                [("既有主題條目", 0.70, {"type": "主題", "secondary_types": []})],
-            ])
-            path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
-            )
-            content = path.read_text(encoding="utf-8")
-        self.assertEqual(1, flagged)  # 只有分類相容的那筆
-        self.assertNotIn("0.780 ⚠", content)
-        self.assertIn("0.700 ⚠ 既有主題條目", content)
-
-    def test_secondary_type_counts_as_compatible(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            (root / "01 創世記").mkdir(parents=True)
-            _write(
-                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
-                yaml.safe_dump({
-                    "book": "創世記", "chapter": 1,
-                    "candidates": [{"name": "雅博河", "type": "地點"}],
-                }, allow_unicode=True),
-            )
-            fake = _FakeIndex([
-                [("雅博", 0.77, {"type": "原文", "secondary_types": ["地點"]})],
-            ])
-            _, _, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
-            )
         self.assertEqual(1, flagged)
+        self.assertIn("rerank_margin: 0.030", content)
+        self.assertIn("判定：⚠ 候選相近（Top1 與 Top2 分數接近），需 Agent / 人工判斷", content)
+
+    def test_rerank_type_incompatible_flagged(self):
+        """Rerank 分數高但分類不相容時標 ⚠。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "戰勝巴珊王", "type": "事件"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[
+                ("巴珊王噩", 0.75, {"type": "人物", "secondary_types": [], "path": "p"}),
+            ]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.85}]
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 分類不相容", content)
+
+    def test_rerank_low_score_suggests_new_entry(self):
+        """Rerank 所有候選分數皆低（<0.40）時判定為建議新條目。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "全新概念", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[
+                ("不相干條目", 0.30, {"type": "神學", "path": "p"}),
+            ]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.15}]
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(0, flagged)
+        self.assertIn("判定：🆕 建議建立新條目", content)
+
+    def test_exact_match_skips_reranker(self):
+        """字面完全命中條目跳過 Rerank API 呼叫。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "亞伯拉罕", "type": "人物"}],
+                }, allow_unicode=True),
+            )
+            link_index = {
+                "亞伯拉罕": {"title": "亞伯拉罕", "type": "人物", "path": "link_folder/人物/亞伯拉罕.md"},
+            }
+            fake = _FakeIndex([[
+                ("亞伯拉罕", 0.95, {"type": "人物", "path": "link_folder/人物/亞伯拉罕.md"}),
+            ]])
+
+            rerank_called = []
+
+            def fake_reranker(query, docs):
+                rerank_called.append(query)
+                return [{"index": 0, "relevance_score": 0.99}]
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(0, len(rerank_called))  # 未調用 reranker
+        self.assertEqual(0, flagged)
+        self.assertIn("對上既有「亞伯拉罕」（exact，將歸 A/B 累積）", content)
+        self.assertIn("判定：✅ 建議使用既有條目 [[亞伯拉罕]]（resolver 可自動對上）", content)
 
     def test_lexical_preview_flags_alias_redirect(self):
         """alias 導向不同名條目（安密巴誤含以實各谷型）要標「請確認」。"""
@@ -288,6 +379,7 @@ class CandidateReportTests(unittest.TestCase):
             path, _, _ = candidate_report(
                 "創世記", 1, root=root, index=fake,
                 link_index=link_index, homonyms={}, threshold=0.60,
+                use_rerank=False,
             )
             content = path.read_text(encoding="utf-8")
         self.assertIn("經 alias 導向「安密巴」", content)
@@ -311,7 +403,6 @@ class CandidateReportTests(unittest.TestCase):
                     ],
                 }, allow_unicode=True),
             )
-            # 前兩列夾角極小（cos≈0.9），第三列正交
             matrix = np.array([
                 [1.0, 0.0, 0.0],
                 [0.9, np.sqrt(1 - 0.81), 0.0],
@@ -323,7 +414,8 @@ class CandidateReportTests(unittest.TestCase):
                 matrix=matrix,
             )
             path, total, flagged = candidate_report(
-                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60,
+                use_rerank=False,
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(1, flagged)  # 索引近鄰全低分，只有互查一對

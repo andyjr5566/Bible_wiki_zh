@@ -277,5 +277,58 @@ class EmbedTextsTests(unittest.TestCase):
         self.assertEqual([[1.0], [2.0]], vectors)
 
 
+class RerankDocumentsTests(unittest.TestCase):
+    def test_rerank_runner_formats_payload_and_sorts_results(self):
+        recorded_requests = []
+
+        def fake_urlopen(request, timeout=None):
+            body = json.loads(request.data.decode("utf-8"))
+            recorded_requests.append((request.full_url, body))
+            return _FakeResponse({
+                "results": [
+                    {"index": 1, "relevance_score": 0.95},
+                    {"index": 0, "relevance_score": 0.35},
+                ]
+            })
+
+        with patch.object(model_client.urllib.request, "urlopen", fake_urlopen):
+            results = model_client.openai_rerank_runner(
+                "query text",
+                ["doc 0", "doc 1"],
+                base_url="http://localhost:4001/v1",
+                model="rerank-model",
+            )
+
+        self.assertEqual(1, len(recorded_requests))
+        url, body = recorded_requests[0]
+        self.assertEqual("http://localhost:4001/v1/rerank", url)
+        self.assertEqual("rerank-model", body["model"])
+        self.assertEqual("query text", body["query"])
+        self.assertEqual(["doc 0", "doc 1"], body["documents"])
+        self.assertEqual(2, body["top_n"])
+
+        self.assertEqual(2, len(results))
+        self.assertEqual(1, results[0]["index"])
+        self.assertEqual(0.95, results[0]["relevance_score"])
+        self.assertEqual("doc 1", results[0]["document"])
+        self.assertEqual(0, results[1]["index"])
+        self.assertEqual(0.35, results[1]["relevance_score"])
+        self.assertEqual("doc 0", results[1]["document"])
+
+    def test_empty_documents_returns_empty(self):
+        self.assertEqual([], model_client.rerank_documents("q", []))
+
+    def test_custom_runner_injection(self):
+        calls = []
+
+        def fake_runner(q, docs):
+            calls.append((q, list(docs)))
+            return [{"index": 0, "relevance_score": 0.99, "document": docs[0]}]
+
+        results = model_client.rerank_documents("查詢", ["文件甲"], runner=fake_runner)
+        self.assertEqual([("查詢", ["文件甲"])], calls)
+        self.assertEqual(0.99, results[0]["relevance_score"])
+
+
 if __name__ == "__main__":
     unittest.main()

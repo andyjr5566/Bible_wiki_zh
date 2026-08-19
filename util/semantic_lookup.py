@@ -33,15 +33,15 @@ from pathlib import Path
 import numpy as np
 
 try:
-    from .model_client import ModelError, embed_texts, select_endpoint
-    from .build_embedding_index import META_FILE, VECTORS_FILE
+    from .model_client import ModelError, embed_texts, rerank_documents, select_endpoint
+    from .build_embedding_index import META_FILE, VECTORS_FILE, entry_embed_text
     from .book_paths import book_directory, canonical_book_name
     from . import resolve_link_candidates as resolver
 except ImportError:
-    from model_client import ModelError, embed_texts, select_endpoint
+    from model_client import ModelError, embed_texts, rerank_documents, select_endpoint
     import book_paths
     from book_paths import book_directory, canonical_book_name
-    from build_embedding_index import META_FILE, VECTORS_FILE
+    from build_embedding_index import META_FILE, VECTORS_FILE, entry_embed_text
     import resolve_link_candidates as resolver
 
 QUERY_INPUT_TYPE = "query"
@@ -159,8 +159,9 @@ def candidate_query_text(candidate):
     的非對稱設計，查詢側多給上下文能明顯改善近鄰品質。
     """
     parts = [candidate["name"]]
-    if candidate.get("suggested_type"):
-        parts.append(f"分類：{candidate['suggested_type']}")
+    stype = candidate.get("suggested_type") or candidate.get("type")
+    if stype:
+        parts.append(f"分類：{stype}")
     if candidate.get("evidence"):
         parts.append(str(candidate["evidence"]))
     phrases = [
@@ -170,6 +171,30 @@ def candidate_query_text(candidate):
     if phrases:
         parts.append("經文用詞：" + "、".join(phrases))
     return "\n".join(parts)
+
+
+def candidate_rerank_query(candidate, book=None, chapter=None):
+    """候選的 Reranker 查詢文本：待建立詞＋出現位置＋候選類型＋本章上下文＋經文用詞。"""
+    parts = [f"待建立詞：{candidate['name']}"]
+    if book and chapter:
+        parts.append(f"出現位置：{book} 第{chapter}章")
+    stype = candidate.get("suggested_type") or candidate.get("type")
+    if stype:
+        parts.append(f"候選類型：{stype}")
+    if candidate.get("evidence"):
+        parts.append(f"本章上下文：{candidate['evidence']}")
+    phrases = [
+        surface["phrase"] for surface in candidate.get("surfaces") or []
+        if isinstance(surface, dict) and surface.get("phrase")
+    ]
+    if phrases:
+        parts.append("經文用詞：" + "、".join(phrases))
+    return "\n".join(parts)
+
+
+def entry_rerank_document(title, entry, root=ROOT):
+    """條目的 Reranker 文件文本：標題＋分類＋別名＋定義／主題發展／累積摘要。"""
+    return entry_embed_text(title, entry, root=root)
 
 
 def _lexical_preview(name, link_index, homonyms):
@@ -194,17 +219,21 @@ def _lexical_preview(name, link_index, homonyms):
     return "無字面對應 → 新建（C）", False
 
 
-def candidate_report(book, chapter, top=3, root=ROOT, index=None,
-                     threshold=None, link_index=None, homonyms=None):
-    """對整章 link_candidates 產生語義近鄰報告，寫入 .tmp/第x章/。
+def candidate_report(book, chapter, top=5, root=ROOT, index=None,
+                     threshold=None, link_index=None, homonyms=None,
+                     reranker=None, use_rerank=True):
+    """對整章 link_candidates 產生二階段語義近鄰與重排報告，寫入 .tmp/第x章/。
 
-    每個候選三種資訊：（1）字面解析預覽——resolver 實際會對到哪
-    （alias 導向不同名條目時特別標出）；（2）語義近鄰——⚠ 標「top-1、
-    非同實體、分類相容、≥ threshold」，ⓘ 標「top-1 高分但分類不相容」
-    （同實體常跨分類，如 火柱雲柱[主題]→雲柱火柱[歷史]，值得人工看）；
-    （3）候選互查——⚠ 標 ≥ INTRA_FLAG_FLOOR 的配對。校準見常數註解。
-    回傳 (report_path, 候選數, 有 ⚠ 的候選數＋互查配對數)。只寫報告檔，
-    不改動 candidates 或任何條目——判斷與改名永遠是人工的事。
+    架構：
+    1. 字面規則篩選：確切同名／正規化同名無歧義條目標為確切命中，跳過 Reranker API。
+    2. 第一階段檢索：模糊／衝突／新建候選透過 SemanticIndex 檢索 Top K（預設 5~8 名）。
+    3. 第二階段裁判：使用 Cross-Encoder Reranker（如 nvidia/llama-nemotron-rerank-vl-1b-v2:free）
+       對候選富查詢與既有條目摘要進行語意重排與重新打分。
+    4. 輸出結構化報告：包含 Markdown 表格、Similarity 與 Rerank 分數、Top1-Top2 Margin、
+       以及判定標記（✅ 建議使用既有條目｜⚠ 需 Agent / 人工判斷｜🆕 建議建立新條目）。
+    5. 候選互查：比對本章內部各候選之間的語義重複。
+
+    回傳 (report_path, 候選數, 有 ⚠／ⓘ 的候選數＋互查配對數)。
     """
     if threshold is None:
         threshold = REPORT_FLAG_FLOOR
@@ -238,16 +267,25 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
                     if phrase not in scripture_text:
                         surface_warnings.append(f"  - 條目「{c['name']}」的 surface「{phrase}」未出現在本章經文中")
 
+    # 偵測 reranker 可用性
+    rerank_model = None
+    if use_rerank:
+        if reranker is not None:
+            rerank_model = getattr(reranker, "model_name", "custom-reranker")
+        else:
+            try:
+                ep = select_endpoint(task="rerank")
+                rerank_model = ep.get("model")
+            except Exception:
+                rerank_model = None
+
     lines = [
         f"# 候選語義近鄰報告：{canonical} 第{chapter}章",
         "",
-        f"- 索引模型：{index.meta.get('model')}｜{len(index.entries)} 條｜"
-        f"⚠＝top-1 非同實體、分類相容、≥ {threshold}｜ⓘ＝top-1 高分但分類不相容",
-        "- 查詢文本＝候選名＋分類＋evidence＋surfaces。本報告僅輔助分類判斷：",
-        "  ⚠ 近鄰若與候選**同概念** → 把候選名改成該既有條目名（resolver 會歸 A/B 累積）；",
-        "  ⓘ 多為跨分類的同實體（改名時分類也用既有條目的）或事件↔主角這類鄰居；",
-        "  名稱雖近但**確為不同概念** → 照建，不受此報告限制。其餘近鄰只是脈絡。",
-        "  「字面解析」列 resolver 實際會對到哪——標「請確認」者務必人工核實。",
+        f"- 檢索模型：{index.meta.get('model')}｜重排模型：{rerank_model or '未啟用 (僅檢索)'}｜全庫 {len(index.entries)} 條",
+        "- 規則說明：字面確切匹配（exact/alias）直接通過；模糊／衝突候選經檢索 Top K 後由 Reranker 裁判。",
+        "  判定標記：✅ 建議使用既有條目｜⚠ 需 Agent / 人工判斷｜🆕 建議建立新條目",
+        "  字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。",
         "",
     ]
     if surface_warnings:
@@ -263,32 +301,143 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
     else:
         queries = [candidate_query_text(candidate) for candidate in candidates]
         results, matrix = index.query_vectors(queries, top=top, return_matrix=True)
+
         for candidate, hits in zip(candidates, results):
             name = candidate["name"]
             base = resolver.base_name(name)
-            suggested = candidate.get("suggested_type")
-            lines.append(f"## {name}（{suggested or '?'}）")
+            suggested = candidate.get("suggested_type") or candidate.get("type")
             preview, attention = _lexical_preview(name, link_index, homonyms)
-            lines.append(f"字面解析：{'⚠ ' if attention else ''}{preview}")
-            for rank, (title, score, entry) in enumerate(hits):
-                mark = ""
-                note_extra = ""
-                if resolver.base_name(title) == base:
-                    note_extra = "；resolver 可自動對上（同名／裸名）"
-                elif rank == 0 and score >= threshold:
-                    if not suggested or resolver.type_compatible(suggested, entry):
-                        mark = " ⚠"
-                        flagged += 1
-                    else:
-                        mark = " ⓘ"
-                        note_extra = (
-                            f"；分類不相容（{suggested}→{entry.get('type', '?')}），"
-                            "若確為同實體請人工確認"
-                        )
-                lines.append(
-                    f"- {score:.3f}{mark} {title}（{entry.get('type', '?')}{note_extra}）"
-                )
+
+            match_type, matched, title = resolver.find_in_index(name, link_index)
+            is_exact_match = bool(
+                matched and not attention and
+                resolver.base_name(title) == base and
+                (not suggested or resolver.type_compatible(suggested, matched))
+            )
+
+            lines.append(f"## {name}（{suggested or '?'}）")
+            
+            # Query block
+            lines.append("query:")
+            lines.append(f"- 待建立詞：{name}")
+            lines.append(f"- 出現位置：{canonical} 第{chapter}章")
+            lines.append(f"- 候選類型：{suggested or '未指定'}")
+            if candidate.get("evidence"):
+                lines.append(f"- 本章上下文：{candidate['evidence']}")
+            phrases = [
+                s["phrase"] for s in candidate.get("surfaces") or []
+                if isinstance(s, dict) and s.get("phrase")
+            ]
+            if phrases:
+                lines.append(f"- 經文用詞：{'、'.join(phrases)}")
             lines.append("")
+
+            lines.append(f"字面解析：{'⚠ ' if attention else ''}{preview}")
+            lines.append("")
+
+            # 執行 Rerank（若啟用且非確切命中）
+            ranked_items = []
+            has_rerank = False
+
+            if use_rerank and not is_exact_match and hits:
+                q_text = candidate_rerank_query(candidate, book=canonical, chapter=chapter)
+                doc_texts = [entry_rerank_document(t, e, root=root) for t, s, e in hits]
+                try:
+                    if reranker is not None:
+                        rerank_res = reranker(q_text, doc_texts)
+                    else:
+                        rerank_res = rerank_documents(q_text, doc_texts, task="rerank")
+                    
+                    if rerank_res:
+                        has_rerank = True
+                        for r_item in rerank_res:
+                            idx = r_item["index"]
+                            if 0 <= idx < len(hits):
+                                t, s, e = hits[idx]
+                                ranked_items.append({
+                                    "title": t,
+                                    "sim_score": s,
+                                    "rerank_score": r_item["relevance_score"],
+                                    "entry": e,
+                                })
+                except Exception as exc:
+                    # 降級不中斷
+                    print(f"⚠️ Reranker 呼叫失敗（降級為純相似度）：{exc}")
+
+            if not ranked_items:
+                ranked_items = [
+                    {"title": t, "sim_score": s, "rerank_score": None, "entry": e}
+                    for t, s, e in hits
+                ]
+
+            # 產生表格與判定
+            if ranked_items:
+                top1 = ranked_items[0]
+                top2 = ranked_items[1] if len(ranked_items) > 1 else None
+                is_same_entity = resolver.base_name(top1["title"]) == base
+                is_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
+
+                if has_rerank:
+                    lines.append("| Rank | Candidate | Similarity | Rerank | Path |")
+                    lines.append("|---|---|---:|---:|---|")
+                    for r_rank, item in enumerate(ranked_items, 1):
+                        r_score_str = f"{item['rerank_score']:.3f}" if item["rerank_score"] is not None else "-"
+                        path_str = item["entry"].get("path", "")
+                        lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {r_score_str} | {path_str} |")
+                    lines.append("")
+
+                    top1_r = top1["rerank_score"] or 0.0
+                    top2_r = top2["rerank_score"] if top2 and top2["rerank_score"] is not None else 0.0
+                    margin = top1_r - top2_r if top2 and top2["rerank_score"] is not None else top1_r
+                    lines.append(f"rerank_margin: {margin:.3f} (Top1 - Top2)")
+
+                    if is_same_entity:
+                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（同名／字面對應）"
+                    elif top1_r >= 0.70 and margin >= 0.20 and is_type_compat:
+                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
+                    elif top1_r >= 0.40:
+                        if not is_type_compat:
+                            verdict = (
+                                f"⚠ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                                f"若確為同實體請確認是否改用 [[{top1['title']}]]"
+                            )
+                            flagged += 1
+                        elif margin < 0.15:
+                            verdict = "⚠ 候選相近（Top1 與 Top2 分數接近），需 Agent / 人工判斷"
+                            flagged += 1
+                        else:
+                            verdict = f"⚠ 相關度中等，請確認是否使用既有條目 [[{top1['title']}]]"
+                            flagged += 1
+                    else:
+                        verdict = "🆕 建議建立新條目（既有條目相關度低）"
+                    lines.append(f"判定：{verdict}")
+                else:
+                    lines.append("| Rank | Candidate | Similarity | Path |")
+                    lines.append("|---|---|---:|---|")
+                    for r_rank, item in enumerate(ranked_items, 1):
+                        path_str = item["entry"].get("path", "")
+                        lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {path_str} |")
+                    lines.append("")
+
+                    if is_same_entity:
+                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（resolver 可自動對上）"
+                    elif top1["sim_score"] >= threshold:
+                        if is_type_compat:
+                            verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
+                            flagged += 1
+                        else:
+                            verdict = (
+                                f"ⓘ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                                "若確為同實體請人工確認"
+                            )
+                            flagged += 1
+                    else:
+                        verdict = "🆕 建議建立新條目（無高相似既有條目）"
+                    lines.append(f"判定：{verdict}")
+            else:
+                lines.append("（無相似條目）")
+            lines.append("")
+
         # 候選互查：本章候選彼此比對（query-query 空間）
         pair_scores = matrix @ matrix.T
         pairs = []
@@ -310,6 +459,7 @@ def candidate_report(book, chapter, top=3, root=ROOT, index=None,
                 flagged += 1
         else:
             lines.append("（無 ≥ 門檻的配對）")
+
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     return report_path, len(candidates), flagged
@@ -320,7 +470,7 @@ def main():
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure:
             reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="embedding 語義近似查詢")
+    parser = argparse.ArgumentParser(description="embedding 語義近似查詢與 rerank 重排裁判")
     parser.add_argument("term", nargs="?", help="要查詢的詞")
     parser.add_argument("--file", help="一行一詞的檔案，批次查詢")
     parser.add_argument(
@@ -328,6 +478,8 @@ def main():
         help="讀該章 link_candidates.yaml 產生候選近鄰報告（candidate_similarity.md）",
     )
     parser.add_argument("--top", type=int, default=DEFAULT_TOP, help="每詞取前幾名")
+    parser.add_argument("--threshold", type=float, default=None, help="相似度門檻")
+    parser.add_argument("--no-rerank", action="store_true", help="停用 Reranker 語意裁判")
     parser.add_argument("--json", action="store_true", help="輸出 JSON")
     args = parser.parse_args()
 
@@ -335,13 +487,15 @@ def main():
         book, chapter = args.candidates[0], int(args.candidates[1])
         try:
             path, total, flagged = candidate_report(
-                book, chapter, top=max(3, min(args.top, 10))
+                book, chapter, top=max(3, min(args.top, 10)),
+                threshold=args.threshold,
+                use_rerank=not args.no_rerank,
             )
         except (ModelError, FileNotFoundError, ValueError) as exc:
             print(f"❌ {exc}")
             return 1
         print(f"✅ 報告已寫入：{path}")
-        print(f"   候選 {total} 個，其中 {flagged} 個的 top-1 是高分非同實體近鄰（⚠）——"
+        print(f"   候選 {total} 個，其中 {flagged} 項需人工審核（⚠／ⓘ）——"
               "逐一檢視是否改用既有條目名（走 B 類累積）。")
         return 0
 

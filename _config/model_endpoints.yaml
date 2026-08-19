@@ -47,6 +47,10 @@ tasks:
     endpoint: local-4000
     model: nvidia/nemotron-3-embed-1b
     kind: embedding
+  rerank:                             # 候選語意重排裁判
+    endpoint: local-4001
+    model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
+    kind: rerank
 # local-4000 proxy 可用的 chat 模型（換 entry／chapter 的 model 即可）：
 #   z-ai/glm-5.2、minimaxai/minimax-m3、deepseek-ai/deepseek-v4-pro、
 #   nvidia/nemotron-3-ultra-550b-a55b、minimaxai/minimax-m2.7

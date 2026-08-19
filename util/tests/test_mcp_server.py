@@ -754,5 +754,45 @@ class RunGatesTests(unittest.TestCase):
         self.assertNotIn("check_existing_links.py", calls)
 
 
+class BuildCandidateSimilarityMCPTests(unittest.TestCase):
+    def test_build_candidate_similarity_dispatches_with_top_and_rerank_flag(self):
+        recorded_calls = []
+
+        def fake_run(*cmd, timeout=300):
+            recorded_calls.append((cmd, timeout))
+            return {"success": True, "returncode": 0, "stdout": "ok", "stderr": ""}
+
+        with patch.object(server, "_run_util_command", fake_run):
+            res = server.build_candidate_similarity("創世記", 1, top=8, no_rerank=True)
+
+        self.assertTrue(res["success"])
+        self.assertEqual(1, len(recorded_calls))
+        cmd, timeout = recorded_calls[0]
+        self.assertEqual("semantic_lookup.py", cmd[0])
+        self.assertEqual("--candidates", cmd[1])
+        self.assertEqual("創世記", cmd[2])
+        self.assertEqual("1", cmd[3])
+        self.assertEqual("--top", cmd[4])
+        self.assertEqual("8", cmd[5])
+        self.assertIn("--no-rerank", cmd)
+        self.assertFalse(res["rerank_enabled"])
+        self.assertEqual(8, res["top"])
+
+    def test_build_candidate_similarity_default_enables_rerank(self):
+        recorded_calls = []
+
+        def fake_run(*cmd, timeout=300):
+            recorded_calls.append((cmd, timeout))
+            return {"success": True, "returncode": 0, "stdout": "ok", "stderr": ""}
+
+        with patch.object(server, "_run_util_command", fake_run):
+            res = server.build_candidate_similarity("創世記", 25)
+
+        self.assertTrue(res["success"])
+        cmd, _ = recorded_calls[0]
+        self.assertNotIn("--no-rerank", cmd)
+        self.assertTrue(res["rerank_enabled"])
+
+
 if __name__ == "__main__":
     unittest.main()

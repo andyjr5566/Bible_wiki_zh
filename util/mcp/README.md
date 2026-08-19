@@ -25,7 +25,7 @@
 | `crawl_bible_source` | 對單一明確 URL 呼叫 `crawl_bible_text.py`，輸出限制在 `raw_data/`。 | 是（不覆寫預設） |
 | `extract_stepbible` | 由固定的 `.stepbible_data/` 擷取單章／節範圍到 canonical `raw_data/stepbible_*.txt`；可只下載所需官方檔。 | 是（不覆寫預設） |
 | `build_source_manifest` | 產生或檢查四套註釋＋STEP 原文資料的 `source_manifest.md`。 | 是（check-only 否） |
-| `build_candidate_similarity` | 呼叫 `semantic_lookup.py --candidates` 產生人工判讀報告。 | 是 |
+| `build_candidate_similarity` | 呼叫 `semantic_lookup.py --candidates` 產生二階段檢索與重排裁判報告。 | 是 |
 | `model_client` | 對應 `model_client.py list|test|use`；`use` 必須 `confirm=true`。 | `use` 會寫入 |
 | `sync_link_index` | 對應 `build_link_index.py`，可選 `check_only`。 | 是（check-only 否） |
 | `check_existing_links` | 對應 `check_existing_links.py ... --missing`。 | 否 |
