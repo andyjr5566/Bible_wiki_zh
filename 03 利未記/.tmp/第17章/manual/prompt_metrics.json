@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 17,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 101195,
+        "bytes": 145016
+      },
+      "after": {
+        "chars": 12044,
+        "bytes": 19522
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_17.txt",
+          "chars": 6182,
+          "bytes": 17520
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_17.txt",
+          "chars": 10971,
+          "bytes": 30743
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_17.txt",
+          "chars": 4823,
+          "bytes": 4873
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_17.txt",
+          "chars": 30317,
+          "bytes": 30323
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_17.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 44204,
+          "raw_bytes": 50905,
+          "projected_chars": 6744,
+          "projected_bytes": 7736,
+          "occurrences": 88,
+          "occurrence_count": 88,
+          "lexicon_entries": 9,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 9,
+          "truncated": true,
+          "returned_chars": 6744,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}
