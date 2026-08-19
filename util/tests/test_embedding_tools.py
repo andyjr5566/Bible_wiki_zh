@@ -1094,6 +1094,52 @@ class CandidateReportTests(unittest.TestCase):
                 SemanticIndex.load(meta_file=meta_file, vectors_file=vec_file, check_model=False)
             self.assertIn("指紋不符", str(ctx.exception))
 
+    def test_candidate_report_refuses_stale_embedding_index(self):
+        """當 embedding 索引落後條目庫時，candidate_report 必須主動拒絕執行。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記" / ".tmp" / "第1章").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({"book": "創世記", "chapter": 1, "candidates": [{"name": "候選", "type": "主題"}]}),
+            )
+            # 條目庫已有 1 條，但 index meta 為空
+            _write(root / "util" / "output" / "link_index.json", json.dumps({
+                "新條目": {"type": "主題", "path": "link_folder/主題/新條目.md", "aliases": []}
+            }))
+            _write(root / "link_folder" / "主題" / "新條目.md", "# 新條目\n\n## 定義\n內容")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            _write(root / "_config" / "reranker_calibration.yaml", "models: {}")
+            _write(
+                root / "_config" / "model_endpoints.yaml",
+                yaml.safe_dump({
+                    "active": "test-ep",
+                    "endpoints": {"test-ep": {"type": "openai", "base_url": "http://127.0.0.1:4001/v1", "model": "test-model"}},
+                    "tasks": {
+                        "embedding": {"endpoint": "test-ep", "model": "test-embed", "kind": "embedding"},
+                        "rerank": {"endpoint": "test-ep", "model": "test-reranker", "kind": "rerank"},
+                    },
+                })
+            )
+            import numpy as np
+            from build_embedding_index import _vectors_sha256, compute_index_fingerprint
+            vectors = np.zeros((0, 4), dtype=np.float32)
+            np.savez_compressed(root / "util" / "output" / "embedding_index.npz", vectors=vectors)
+            meta = {
+                "schema_version": 2,
+                "model": "test-embed",
+                "dim": 4,
+                "input_type": "passage",
+                "vectors_sha256": _vectors_sha256(vectors),
+                "entries": [],
+            }
+            meta["index_fingerprint"] = compute_index_fingerprint(meta)
+            _write(root / "util" / "output" / "embedding_index.meta.json", json.dumps(meta, ensure_ascii=False))
+
+            with self.assertRaises(ValueError) as ctx:
+                candidate_report("創世記", 1, root=root)
+            self.assertIn("未與目前條目庫同步", str(ctx.exception))
+
 
 if __name__ == "__main__":
     unittest.main()

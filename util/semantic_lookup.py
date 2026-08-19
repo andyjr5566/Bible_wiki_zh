@@ -86,11 +86,7 @@ def _load_calibration(root=ROOT):
     """載入 _config/reranker_calibration.yaml。"""
     calib_path = Path(root) / CALIBRATION_FILE_REL
     if not calib_path.is_file():
-        fallback = ROOT / CALIBRATION_FILE_REL
-        if fallback.is_file():
-            calib_path = fallback
-        else:
-            return {"models": {}}
+        return {"models": {}}
     try:
         data = yaml.safe_load(calib_path.read_text(encoding="utf-8"))
         if not isinstance(data, dict) or not isinstance(data.get("models"), dict):
@@ -367,7 +363,20 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     candidates_path = tmp_dir / "link_candidates.yaml"
     report_path = tmp_dir / REPORT_FILENAME
 
-    index = index or SemanticIndex.load()
+    if index is None:
+        try:
+            from .check_chapter_files import _embedding_index_synced
+        except ImportError:
+            from check_chapter_files import _embedding_index_synced
+
+        synced, sync_reason = _embedding_index_synced(root=root)
+        if not synced:
+            raise ValueError(
+                f"embedding 語義索引未與目前條目庫同步（{sync_reason}），"
+                "需先執行 python util/build_embedding_index.py 更新索引再產生候選近鄰報告。"
+            )
+        index = SemanticIndex.load()
+
     if link_index is None:
         link_index = resolver.load_index()
     if homonyms is None:

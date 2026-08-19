@@ -338,6 +338,27 @@ class CheckChapterFilesTests(unittest.TestCase):
             self.assertFalse(fresh, "校準設定檔損壞時應 Fail-Closed 回傳 False")
             self.assertIn("損壞無法解析", reason)
 
+    def test_freshness_fails_when_embedding_index_stale_against_link_index(self):
+        """當條目庫新增條目但未更新 embedding 索引時，Freshness 必須判定未同步而 FAIL。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            # 條目庫已有條目 A，但 embedding 索引為空（未同步）
+            _write(root / "util" / "output" / "link_index.json", json.dumps({
+                "新條目": {"type": "主題", "path": "link_folder/主題/新條目.md", "aliases": []}
+            }))
+            _write(root / "link_folder" / "主題" / "新條目.md", "# 新條目\n\n## 定義\n內容")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)
+
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh, "embedding 索引落後條目庫時應 Fail-Closed 回傳 False")
+            self.assertIn("未與目前條目庫同步", reason)
+
     def test_preflight_fails_when_manifest_has_duplicate_or_missing_sources(self):
         """來源宣告若不符合恰好五套 {CT, GT, KC, BH, STEP}，Preflight 必須 FAIL。"""
         with tempfile.TemporaryDirectory() as tmp:

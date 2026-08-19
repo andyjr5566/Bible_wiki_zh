@@ -294,6 +294,11 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if meta.get("embedding_model") != cur_embed_model:
         return False, f"embedding 模型已變更（報告 {meta.get('embedding_model')} vs 目前 {cur_embed_model}），需重跑 semantic_lookup.py", ""
 
+    # 檢查 Embedding 索引是否與條目庫即時同步（防範跨章新詞未入索引漏查）
+    embedding_synced, sync_reason = _embedding_index_synced(root)
+    if not embedding_synced:
+        return False, f"embedding 語義索引未與目前條目庫同步（{sync_reason}），需先更新 embedding index 再重跑 semantic_lookup.py", ""
+
     status = meta.get("rerank_status")
     if not status or status not in VALID_RERANK_STATUS:
         return False, f"rerank_status '{status}' 無效或缺失（必須為 {VALID_RERANK_STATUS}）", ""
