@@ -12060,6 +12060,14 @@
     "status": "formal",
     "aliases": []
   },
+  "他的血要歸到他身上": {
+    "path": "link_folder/原文/他的血要歸到他身上.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "他的血要歸到他身上",
+    "status": "formal",
+    "aliases": []
+  },
   "以弗得": {
     "path": "link_folder/原文/以弗得.md",
     "type": "原文",
@@ -12591,8 +12599,7 @@
     "status": "formal",
     "aliases": [
       "寄居的(ger)",
-      "ger",
-      "toshav"
+      "ger"
     ]
   },
   "審判官": {
@@ -22758,6 +22765,14 @@
     "status": "formal",
     "aliases": []
   },
+  "以色列刑罰的節制與程序保障": {
+    "path": "link_folder/背景/以色列刑罰的節制與程序保障.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "以色列刑罰的節制與程序保障",
+    "status": "formal",
+    "aliases": []
+  },
   "伊甸園四河": {
     "path": "link_folder/背景/伊甸園四河.md",
     "type": "背景",
@@ -23168,6 +23183,14 @@
     "aliases": [
       "古代近東的痲瘋觀念"
     ]
+  },
+  "古代近東的社會契約": {
+    "path": "link_folder/背景/古代近東的社會契約.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的社會契約",
+    "status": "formal",
+    "aliases": []
   },
   "古代近東的神諭機制": {
     "path": "link_folder/背景/古代近東的神諭機制.md",
@@ -28365,9 +28388,6 @@
     "alias_of": "寄居的"
   },
   "ger": {
-    "alias_of": "寄居的"
-  },
-  "toshav": {
     "alias_of": "寄居的"
   },
   "希伯來人 (過河的人)": {
