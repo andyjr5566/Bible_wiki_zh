@@ -51,6 +51,32 @@ class CheckChapterFilesTests(unittest.TestCase):
         )
         _write(root / "util" / "output" / "embedding_index.npz", "dummy")
 
+    def _write_fresh_similarity_report(self, tmp_dir, root):
+        from semantic_lookup import _file_sha256, RERANK_POLICY_VERSION
+        from build_embedding_index import compute_index_fingerprint
+        meta_path = root / "util" / "output" / "embedding_index.meta.json"
+        fp = "none"
+        if meta_path.is_file():
+            import json
+            fp = compute_index_fingerprint(json.loads(meta_path.read_text(encoding="utf-8")))
+        meta = (
+            "<!-- candidate_similarity_meta\n"
+            "schema_version: 1\n"
+            "book: 創世記\n"
+            "chapter: 1\n"
+            f"candidate_sha256: {_file_sha256(tmp_dir / 'link_candidates.yaml')}\n"
+            "embedding_model: test-embed\n"
+            f"embedding_index_fingerprint: {fp}\n"
+            f"link_index_sha256: {_file_sha256(root / 'util' / 'output' / 'link_index.json')}\n"
+            f"homonyms_sha256: {_file_sha256(root / '_config' / 'link_homonyms.yaml')}\n"
+            "rerank_model: test-reranker\n"
+            f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
+            f"calibration_sha256: {_file_sha256(root / '_config' / 'reranker_calibration.yaml')}\n"
+            "rerank_status: success\n"
+            "-->\n\n# 候選語義近鄰報告\n"
+        )
+        _write(tmp_dir / "candidate_similarity.md", meta)
+
     def test_all_major_files_present_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
@@ -58,20 +84,57 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
             _write(tmp_dir / "source_manifest.md", "manifest")
             _write(tmp_dir / "link_candidates.yaml", "candidates")
-            _write(tmp_dir / "candidate_similarity.md", "# 報告")
-            _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
-            _write(tmp_dir / "verse_links.yaml", "links")
-            _write(tmp_dir / "chapter_content.yaml", "content")
-            _write(root / "01 創世記" / f"第{CHAPTER}章.md", "# 第1章")
             _write(root / "util" / "output" / "link_index.json", "{}")
             _write(root / "util" / "output" / "link_quality_report.json", "{}")
             _write(root / "util" / "output" / "verify_report.json", "{}")
             _write(root / "util" / "output" / "verify_result.txt", "ok")
             self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)
+            _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
+            _write(tmp_dir / "verse_links.yaml", "links")
+            _write(tmp_dir / "chapter_content.yaml", "content")
+            _write(root / "01 創世記" / f"第{CHAPTER}章.md", "# 第1章")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             failed = [label for label, ok, _ in checks if not ok]
             self.assertEqual([], failed)
+
+    def test_preflight_passes_with_only_steps_1_and_2(self):
+        """--preflight 模式只驗證前置包（經文、manifest、candidates、fresh similarity report）。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            _write(tmp_dir / "source_manifest.md", "manifest")
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+            self.assertEqual(4, len(checks))  # 只有步驟1與步驟2的4個檢查項
+            failed = [label for label, ok, _ in checks if not ok]
+            self.assertEqual([], failed)
+
+    def test_stale_candidate_similarity_fails_check(self):
+        """候選檔被修改後，未重跑 semantic_lookup 導致 hash 不一致時判定失敗。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            _write(tmp_dir / "source_manifest.md", "manifest")
+            _write(tmp_dir / "link_candidates.yaml", "candidates_v1")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)
+
+            # 修改 candidates 檔案使其與報告記載之 hash 不符
+            _write(tmp_dir / "link_candidates.yaml", "candidates_v2_modified")
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+            sim_check = next(c for c in checks if "candidate_similarity" in c[0])
+            self.assertFalse(sim_check[1])
+            self.assertIn("候選檔已變更", sim_check[2])
 
     def test_missing_similarity_report_fails_step2(self):
         with tempfile.TemporaryDirectory() as tmp:

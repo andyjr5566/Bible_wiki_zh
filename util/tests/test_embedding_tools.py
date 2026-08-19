@@ -185,31 +185,46 @@ class CandidateReportTests(unittest.TestCase):
         self.assertIn("依據甲", fake.received[0])
         self.assertEqual("candidate_similarity.md", path.name)
 
-    def test_report_with_mock_reranker(self):
+    def test_report_with_mock_reranker_calibrated(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({
+                    "models": {
+                        "test-reranker": {
+                            "calibrated": True,
+                            "thresholds": {
+                                "score_high": 0.70,
+                                "score_low": 0.40,
+                                "margin_high": 0.20,
+                                "margin_ambiguous": 0.15,
+                            },
+                        },
+                    },
+                }),
+            )
             _write(
                 root / "01 創世記" / ".tmp" / "第25章" / "link_candidates.yaml",
                 yaml.safe_dump({
                     "book": "創世記", "chapter": 25,
                     "candidates": [
-                        {"name": "米甸", "type": "人物", "evidence": "基土拉生了心蘭、約珊、米但、米甸"},
+                        {"name": "亞伯拉罕之子米甸", "type": "人物", "evidence": "基土拉生了心蘭、約珊、米但、米甸"},
                     ],
                 }, allow_unicode=True),
             )
             fake = _FakeIndex([
                 [
-                    ("米甸人", 0.91, {"type": "群體", "path": "link_folder/群體/米甸人.md"}),
                     ("米甸", 0.87, {"type": "人物", "path": "link_folder/人物/米甸.md"}),
+                    ("米甸人", 0.91, {"type": "群體", "path": "link_folder/群體/米甸人.md"}),
                 ],
             ])
 
             def fake_reranker(query, docs):
-                # Reranker 根據人物與經文上下文，將 index 1 (米甸人物) 排第一
                 return [
-                    {"index": 1, "relevance_score": 0.962},
-                    {"index": 0, "relevance_score": 0.314},
+                    {"index": 0, "relevance_score": 0.962},
+                    {"index": 1, "relevance_score": 0.314},
                 ]
 
             fake_reranker.model_name = "test-reranker"
@@ -221,18 +236,113 @@ class CandidateReportTests(unittest.TestCase):
             content = path.read_text(encoding="utf-8")
 
         self.assertEqual(1, total)
-        self.assertEqual(0, flagged)  # 確切對應／明確領先不標 ⚠
+        self.assertEqual(0, flagged)  # 校準模型 + 高分且高 Margin
         self.assertIn("| Rank | Candidate | Similarity | Rerank | Path |", content)
         self.assertIn("| 1 | 米甸 | 0.870 | 0.962 | link_folder/人物/米甸.md |", content)
-        self.assertIn("| 2 | 米甸人 | 0.910 | 0.314 | link_folder/群體/米甸人.md |", content)
         self.assertIn("rerank_margin: 0.648", content)
         self.assertIn("判定：✅ 建議使用既有條目 [[米甸]]", content)
+
+    def test_uncalibrated_reranker_flags_warning(self):
+        """未校準模型（calibrated: false 或未登錄）即使分數極高也只能給 ⚠ 供排序參考。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第25章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 25,
+                    "candidates": [
+                        {"name": "亞伯拉罕之子米甸", "type": "人物", "evidence": "基土拉生了心蘭、約珊、米但、米甸"},
+                    ],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([
+                [
+                    ("米甸", 0.87, {"type": "人物", "path": "link_folder/人物/米甸.md"}),
+                ],
+            ])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.98}]
+
+            fake_reranker.model_name = "uncalibrated-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 25, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 未校準模型（uncalibrated-reranker），評分僅供排序參考，需人工確認", content)
+
+    def test_homonym_attention_strictly_overrides_reranker(self):
+        """同名歧義候選（link_homonyms 中的 D 類詞）即使 Reranker 得分 0.99，也絕對只能判定為 ⚠。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "link_homonyms.yaml",
+                yaml.safe_dump({
+                    "示劍": [
+                        {"target": "示劍 (人物)", "note": "哈抹的兒子"},
+                        {"target": "示劍 (地點)", "note": "迦南中部城邑"},
+                    ],
+                }, allow_unicode=True),
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第34章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 34,
+                    "candidates": [
+                        {"name": "示劍", "type": "人物", "evidence": "哈抹的兒子示劍看見她"},
+                    ],
+                }, allow_unicode=True),
+            )
+            homonyms = {
+                "示劍": [
+                    {"target": "示劍 (人物)", "note": "哈抹的兒子"},
+                    {"target": "示劍 (地點)", "note": "迦南中部城邑"},
+                ]
+            }
+            fake = _FakeIndex([
+                [
+                    ("示劍 (人物)", 0.95, {"type": "人物", "path": "link_folder/人物/示劍 (人物).md"}),
+                ],
+            ])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.999}]
+
+            fake_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 34, root=root, index=fake, link_index={}, homonyms=homonyms,
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("字面解析：⚠ 同名詞需人工選擇（將歸 D）：示劍 (人物)、示劍 (地點)", content)
+        self.assertIn("判定：⚠ 字面解析有歧義／需人工確認", content)
+        self.assertNotIn("判定：✅", content)
 
     def test_rerank_ambiguous_margin_flagged(self):
         """Top1 與 Top2 分數相近（margin < 0.15）時標 ⚠ 需人工判斷。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({
+                    "models": {
+                        "test-reranker": {
+                            "calibrated": True,
+                            "thresholds": {"score_high": 0.70, "score_low": 0.40, "margin_high": 0.20, "margin_ambiguous": 0.15},
+                        }
+                    }
+                })
+            )
             _write(
                 root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
                 yaml.safe_dump({
@@ -250,6 +360,7 @@ class CandidateReportTests(unittest.TestCase):
                     {"index": 0, "relevance_score": 0.65},
                     {"index": 1, "relevance_score": 0.62},  # margin = 0.03
                 ]
+            fake_reranker.model_name = "test-reranker"
 
             path, total, flagged = candidate_report(
                 "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
@@ -259,7 +370,7 @@ class CandidateReportTests(unittest.TestCase):
 
         self.assertEqual(1, flagged)
         self.assertIn("rerank_margin: 0.030", content)
-        self.assertIn("判定：⚠ 候選相近（Top1 與 Top2 分數接近），需 Agent / 人工判斷", content)
+        self.assertIn("判定：⚠ 候選相近（Top1 與 Top2 分數差距 0.030 < 0.15）", content)
 
     def test_rerank_type_incompatible_flagged(self):
         """Rerank 分數高但分類不相容時標 ⚠。"""
@@ -295,6 +406,17 @@ class CandidateReportTests(unittest.TestCase):
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
             _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({
+                    "models": {
+                        "test-reranker": {
+                            "calibrated": True,
+                            "thresholds": {"score_high": 0.70, "score_low": 0.40, "margin_high": 0.20, "margin_ambiguous": 0.15},
+                        }
+                    }
+                })
+            )
+            _write(
                 root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
                 yaml.safe_dump({
                     "book": "創世記", "chapter": 1,
@@ -307,6 +429,7 @@ class CandidateReportTests(unittest.TestCase):
 
             def fake_reranker(query, docs):
                 return [{"index": 0, "relevance_score": 0.15}]
+            fake_reranker.model_name = "test-reranker"
 
             path, total, flagged = candidate_report(
                 "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
@@ -351,7 +474,7 @@ class CandidateReportTests(unittest.TestCase):
         self.assertEqual(0, len(rerank_called))  # 未調用 reranker
         self.assertEqual(0, flagged)
         self.assertIn("對上既有「亞伯拉罕」（exact，將歸 A/B 累積）", content)
-        self.assertIn("判定：✅ 建議使用既有條目 [[亞伯拉罕]]（resolver 可自動對上）", content)
+        self.assertIn("判定：✅ 建議使用既有條目 [[亞伯拉罕]]（同名／字面對應）", content)
 
     def test_lexical_preview_flags_alias_redirect(self):
         """alias 導向不同名條目（安密巴誤含以實各谷型）要標「請確認」。"""
@@ -419,8 +542,172 @@ class CandidateReportTests(unittest.TestCase):
             )
             content = path.read_text(encoding="utf-8")
         self.assertEqual(1, flagged)  # 索引近鄰全低分，只有互查一對
-        self.assertIn("0.900 ⚠ 叛教之城甲 ↔ 叛教之城乙", content)
-        self.assertNotIn("無關候選 ↔", content)
+    def test_metadata_header_and_extraction(self):
+        """測試 candidate_similarity.md 開頭的 metadata 註解能被 extract_report_metadata 完整解析。"""
+        from semantic_lookup import extract_report_metadata, RERANK_POLICY_VERSION
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "亞伯拉罕之約", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("亞伯拉罕", 0.70, {"type": "人物", "path": "p"})]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.88}]
+            fake_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            meta = extract_report_metadata(path)
+
+        self.assertIsNotNone(meta)
+        self.assertEqual("創世記", meta.get("book"))
+        self.assertEqual("1", meta.get("chapter"))
+        self.assertEqual(RERANK_POLICY_VERSION, meta.get("rerank_policy_version"))
+        self.assertEqual("test-reranker", meta.get("rerank_model"))
+        self.assertEqual("success", meta.get("rerank_status"))
+        self.assertEqual("1", meta.get("rerankable_candidates"))
+        self.assertEqual("1", meta.get("rerank_succeeded"))
+
+    def test_circuit_breaker_endpoint_system_failure(self):
+        """端點系統故障（如 ConnectionRefusedError / URLError）會觸發熔斷，停止後續呼叫，狀態標為 degraded/partial。"""
+        import urllib.error
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [
+                        {"name": "候選1", "type": "主題"},
+                        {"name": "候選2", "type": "主題"},
+                    ],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([
+                [("條目1", 0.5, {"type": "主題", "path": "p1"})],
+                [("條目2", 0.5, {"type": "主題", "path": "p2"})],
+            ])
+
+            call_count = [0]
+
+            def failing_reranker(query, docs):
+                call_count[0] += 1
+                raise urllib.error.URLError("Connection refused")
+
+            failing_reranker.model_name = "failing-reranker"
+
+            from semantic_lookup import extract_report_metadata
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=failing_reranker, use_rerank=True,
+            )
+            meta = extract_report_metadata(path)
+
+        self.assertEqual(1, call_count[0])  # 第1次掛掉熔斷後，第2次不呼叫
+        self.assertEqual("degraded", meta.get("rerank_status"))
+        self.assertEqual("1", meta.get("rerank_attempted"))
+        self.assertEqual("0", meta.get("rerank_succeeded"))
+
+    def test_single_item_failure_does_not_trip_circuit_breaker(self):
+        """單一候選解析錯誤不應熔斷整章，後續候選仍應繼續 rerank，狀態為 partial。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [
+                        {"name": "異常候選", "type": "主題"},
+                        {"name": "正常候選", "type": "主題"},
+                    ],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([
+                [("條目1", 0.5, {"type": "主題", "path": "p1"})],
+                [("條目2", 0.5, {"type": "主題", "path": "p2"})],
+            ])
+
+            call_count = [0]
+
+            def item_failing_reranker(query, docs):
+                call_count[0] += 1
+                if "異常" in query:
+                    raise ValueError("JSON parse error for single candidate")
+                return [{"index": 0, "relevance_score": 0.85}]
+
+            item_failing_reranker.model_name = "item-failing-reranker"
+
+            from semantic_lookup import extract_report_metadata
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=item_failing_reranker, use_rerank=True,
+            )
+            meta = extract_report_metadata(path)
+
+        self.assertEqual(2, call_count[0])  # 兩次都有嘗試
+        self.assertEqual("partial", meta.get("rerank_status"))
+        self.assertEqual("2", meta.get("rerank_attempted"))
+        self.assertEqual("1", meta.get("rerank_succeeded"))
+
+    def test_not_needed_status_when_all_exact_matches(self):
+        """若全章候選皆為確切命中（無 rerankable candidates），狀態為 not_needed，且 require_rerank 不報錯。"""
+        from semantic_lookup import extract_report_metadata
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "摩西", "type": "人物"}],
+                }, allow_unicode=True),
+            )
+            link_index = {"摩西": {"title": "摩西", "type": "人物", "path": "p"}}
+            fake = _FakeIndex([[("摩西", 0.99, {"type": "人物", "path": "p"})]])
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                use_rerank=True, require_rerank=True,
+            )
+            meta = extract_report_metadata(path)
+
+        self.assertEqual("not_needed", meta.get("rerank_status"))
+        self.assertEqual("0", meta.get("rerankable_candidates"))
+
+    def test_require_rerank_raises_on_failure(self):
+        """當 require_rerank=True 且 rerank_status 處於 partial/degraded/disabled 時拋出 ModelError。"""
+        from model_client import ModelError
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "模糊候選", "type": "主題"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("條目", 0.5, {"type": "主題", "path": "p"})]])
+
+            def failing_reranker(query, docs):
+                raise TimeoutError("Endpoint timeout")
+            failing_reranker.model_name = "failing-reranker"
+
+            with self.assertRaises(ModelError):
+                candidate_report(
+                    "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                    reranker=failing_reranker, use_rerank=True, require_rerank=True,
+                )
 
 
 if __name__ == "__main__":

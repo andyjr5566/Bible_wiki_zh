@@ -81,8 +81,8 @@ def _task_config(config, task):
 
 
 def select_endpoint(name=None, config=None, task=None):
-    """選端點，優先序：明確指定 → MODEL_ENDPOINT → 該 task 的 MODEL_ENDPOINT_<TASK>
-    → tasks.<task>（設定檔）→ active。
+    """選端點，優先序：明確指定 → 該 task 的 MODEL_ENDPOINT_<TASK>
+    → MODEL_ENDPOINT（全域 env）→ tasks.<task>（設定檔）→ active。
 
     task 用來把「做條目」（entry）與「本章整理」（chapter）等內容任務分開指定
     端點，設定見 `_config/model_endpoints.yaml` 的 tasks 區塊；未列出的 task

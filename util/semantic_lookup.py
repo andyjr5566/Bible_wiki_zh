@@ -26,28 +26,99 @@ evidence＋surfaces」合成富查詢（比裸名多很多訊號），一次批�
   hits = index.query("不可搶奪鄰舍", top=5)   # [(title, score, meta), ...]
 """
 import argparse
+import hashlib
 import json
+import re
 import sys
+import urllib.error
 from pathlib import Path
 
 import numpy as np
+import yaml
 
 try:
     from .model_client import ModelError, embed_texts, rerank_documents, select_endpoint
-    from .build_embedding_index import META_FILE, VECTORS_FILE, entry_embed_text
+    from .build_embedding_index import (
+        META_FILE, VECTORS_FILE, compute_index_fingerprint, entry_embed_text,
+    )
     from .book_paths import book_directory, canonical_book_name
     from . import resolve_link_candidates as resolver
 except ImportError:
     from model_client import ModelError, embed_texts, rerank_documents, select_endpoint
     import book_paths
     from book_paths import book_directory, canonical_book_name
-    from build_embedding_index import META_FILE, VECTORS_FILE, entry_embed_text
+    from build_embedding_index import (
+        META_FILE, VECTORS_FILE, compute_index_fingerprint, entry_embed_text,
+    )
     import resolve_link_candidates as resolver
 
 QUERY_INPUT_TYPE = "query"
 DEFAULT_TOP = 5
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_FILENAME = "candidate_similarity.md"
+RERANK_POLICY_VERSION = "2026.08.1"
+CALIBRATION_FILE_REL = Path("_config") / "reranker_calibration.yaml"
+
+
+def _file_sha256(path):
+    """計算檔案的 SHA256；若檔案不存在回傳 'missing'。"""
+    p = Path(path)
+    if not p.is_file():
+        return "missing"
+    h = hashlib.sha256()
+    try:
+        # 正規化換行後計算 hash，避免 CRLF/LF 差異導致誤判
+        data = p.read_bytes().replace(b"\r\n", b"\n")
+        h.update(data)
+        return h.hexdigest()
+    except OSError:
+        return "error"
+
+
+def _load_calibration(root=ROOT):
+    """載入 _config/reranker_calibration.yaml。"""
+    calib_path = Path(root) / CALIBRATION_FILE_REL
+    if not calib_path.is_file():
+        return {"models": {}}
+    try:
+        data = yaml.safe_load(calib_path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {"models": {}}
+    except Exception:
+        return {"models": {}}
+
+
+def _is_circuit_breaker_exception(exc):
+    """判斷是否為端點／系統級錯誤（連線拒絕、逾時、429、5xx），需觸發斷路器。"""
+    if isinstance(exc, (TimeoutError, ConnectionRefusedError)):
+        return True
+    if isinstance(exc, urllib.error.URLError):
+        return True
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code == 429 or exc.code >= 500
+    msg = str(exc).lower()
+    if any(k in msg for k in ["connection refused", "timed out", "timeout", "502", "503", "504", "429"]):
+        return True
+    return False
+
+
+def extract_report_metadata(path_or_text):
+    """解析 candidate_similarity.md 開頭的 candidate_similarity_meta 註解。"""
+    if isinstance(path_or_text, (str, Path)) and Path(path_or_text).is_file():
+        text = Path(path_or_text).read_text(encoding="utf-8")
+    else:
+        text = str(path_or_text)
+    match = re.search(r"<!--\s*candidate_similarity_meta\s*\n([\s\S]*?)\n\s*-->", text)
+    if not match:
+        return None
+    meta = {}
+    for line in match.group(1).splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if ":" in line:
+            k, v = line.split(":", 1)
+            meta[k.strip()] = v.strip()
+    return meta
 
 # 候選報告的 ⚠ 規則：只標「top-1、非同實體、分類相容、≥ 此下限」的近鄰。
 # 跨 5 卷 151 候選實測（創40／出26／利19／民21／申13，富查詢）：
@@ -221,7 +292,7 @@ def _lexical_preview(name, link_index, homonyms):
 
 def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                      threshold=None, link_index=None, homonyms=None,
-                     reranker=None, use_rerank=True):
+                     reranker=None, use_rerank=True, require_rerank=False):
     """對整章 link_candidates 產生二階段語義近鄰與重排報告，寫入 .tmp/第x章/。
 
     架構：
@@ -229,19 +300,27 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     2. 第一階段檢索：模糊／衝突／新建候選透過 SemanticIndex 檢索 Top K（預設 5~8 名）。
     3. 第二階段裁判：使用 Cross-Encoder Reranker（如 nvidia/llama-nemotron-rerank-vl-1b-v2:free）
        對候選富查詢與既有條目摘要進行語意重排與重新打分。
-    4. 輸出結構化報告：包含 Markdown 表格、Similarity 與 Rerank 分數、Top1-Top2 Margin、
-       以及判定標記（✅ 建議使用既有條目｜⚠ 需 Agent / 人工判斷｜🆕 建議建立新條目）。
+    4. Deterministic Governance 優先判定：
+       - homonym / conflict / alias warning → 永遠 ⚠，絕不給 ✅
+       - 分類不相容 → 永遠 ⚠ 分類不相容，絕不給 ✅
+       - 確切同名無歧義 → ✅ 建議使用既有條目
+       - 未校準模型 → ⚠ 未校準模型僅供排序參考，需人工確認
+       - 校準模型 → 依校準門檻與 Margin 判定 ✅ / ⚠ / 🆕
     5. 候選互查：比對本章內部各候選之間的語義重複。
+    6. 寫入包含完整 Multi-factor 指紋的結構化元資料標頭（供 Freshness Gate 檢驗）。
 
     回傳 (report_path, 候選數, 有 ⚠／ⓘ 的候選數＋互查配對數)。
     """
     if threshold is None:
         threshold = REPORT_FLAG_FLOOR
+    root = Path(root)
     canonical = canonical_book_name(book)
     candidates = resolver.load_candidates(canonical, chapter, root=root)
-    report_path = (
-        book_directory(root, canonical) / ".tmp" / f"第{chapter}章" / REPORT_FILENAME
-    )
+    book_dir = book_directory(root, canonical)
+    tmp_dir = book_dir / ".tmp" / f"第{chapter}章"
+    candidates_path = tmp_dir / "link_candidates.yaml"
+    report_path = tmp_dir / REPORT_FILENAME
+
     index = index or SemanticIndex.load()
     if link_index is None:
         link_index = resolver.load_index()
@@ -256,7 +335,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                 f"必須是 link_folder/ 下的合法資料夾之一：{resolver.VALID_TYPES}"
             )
 
-    raw_path = ROOT / "raw_scripture" / canonical / f"第{chapter}章.txt"
+    raw_path = root / "raw_scripture" / canonical / f"第{chapter}章.txt"
     scripture_text = raw_path.read_text(encoding="utf-8") if raw_path.exists() else ""
     surface_warnings = []
     if scripture_text:
@@ -267,7 +346,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     if phrase not in scripture_text:
                         surface_warnings.append(f"  - 條目「{c['name']}」的 surface「{phrase}」未出現在本章經文中")
 
-    # 偵測 reranker 可用性
+    # 偵測 reranker 可用性與校準狀態
     rerank_model = None
     if use_rerank:
         if reranker is not None:
@@ -279,12 +358,18 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             except Exception:
                 rerank_model = None
 
+    calib_data = _load_calibration(root=root)
+    models_calib = calib_data.get("models") or {}
+    calib_entry = models_calib.get(rerank_model, {}) if rerank_model else {}
+    is_calibrated = bool(calib_entry.get("calibrated") is True)
+    calib_thresholds = calib_entry.get("thresholds") or calib_entry.get("provisional_thresholds") or {}
+
     lines = [
         f"# 候選語義近鄰報告：{canonical} 第{chapter}章",
         "",
-        f"- 檢索模型：{index.meta.get('model')}｜重排模型：{rerank_model or '未啟用 (僅檢索)'}｜全庫 {len(index.entries)} 條",
-        "- 規則說明：字面確切匹配（exact/alias）直接通過；模糊／衝突候選經檢索 Top K 後由 Reranker 裁判。",
-        "  判定標記：✅ 建議使用既有條目｜⚠ 需 Agent / 人工判斷｜🆕 建議建立新條目",
+        f"- 檢索模型：{index.meta.get('model')}｜重排模型：{rerank_model or '未啟用 (僅檢索)'}（{'已校準' if is_calibrated else '未校準/保守模式'}）｜全庫 {len(index.entries)} 條",
+        "- 規則說明：字面確切匹配直接通過；模糊／衝突候選經檢索 Top K 後由 Reranker 裁判。",
+        "  治理優先：同名歧義（D類）與分類不相容永遠標 ⚠；未校準模型僅供排序參考。",
         "  字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。",
         "",
     ]
@@ -296,6 +381,12 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             print(f"⚠️ {w.strip()}")
 
     flagged = 0
+    rerankable_candidates = 0
+    rerank_attempted = 0
+    rerank_succeeded = 0
+    rerank_failed = 0
+    circuit_open = False
+
     if not candidates:
         lines.append("（本章 link_candidates 為空）")
     else:
@@ -339,30 +430,44 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             ranked_items = []
             has_rerank = False
 
-            if use_rerank and not is_exact_match and hits:
-                q_text = candidate_rerank_query(candidate, book=canonical, chapter=chapter)
-                doc_texts = [entry_rerank_document(t, e, root=root) for t, s, e in hits]
-                try:
-                    if reranker is not None:
-                        rerank_res = reranker(q_text, doc_texts)
-                    else:
-                        rerank_res = rerank_documents(q_text, doc_texts, task="rerank")
-                    
-                    if rerank_res:
-                        has_rerank = True
-                        for r_item in rerank_res:
-                            idx = r_item["index"]
-                            if 0 <= idx < len(hits):
-                                t, s, e = hits[idx]
-                                ranked_items.append({
-                                    "title": t,
-                                    "sim_score": s,
-                                    "rerank_score": r_item["relevance_score"],
-                                    "entry": e,
-                                })
-                except Exception as exc:
-                    # 降級不中斷
-                    print(f"⚠️ Reranker 呼叫失敗（降級為純相似度）：{exc}")
+            if not is_exact_match and hits:
+                rerankable_candidates += 1
+                if use_rerank and not circuit_open:
+                    rerank_attempted += 1
+                    q_text = candidate_rerank_query(candidate, book=canonical, chapter=chapter)
+                    doc_texts = [entry_rerank_document(t, e, root=root) for t, s, e in hits]
+                    try:
+                        if reranker is not None:
+                            rerank_res = reranker(q_text, doc_texts)
+                        else:
+                            rerank_res = rerank_documents(q_text, doc_texts, task="rerank")
+                        
+                        if rerank_res:
+                            rerank_succeeded += 1
+                            has_rerank = True
+                            for r_item in rerank_res:
+                                idx = r_item["index"]
+                                if 0 <= idx < len(hits):
+                                    t, s, e = hits[idx]
+                                    ranked_items.append({
+                                        "title": t,
+                                        "sim_score": s,
+                                        "rerank_score": r_item["relevance_score"],
+                                        "entry": e,
+                                    })
+                    except Exception as exc:
+                        rerank_failed += 1
+                        if _is_circuit_breaker_exception(exc):
+                            circuit_open = True
+                            try:
+                                print(f"⚠️ Reranker 端點系統性失敗，觸發斷路器熔斷：{exc}")
+                            except Exception:
+                                pass
+                        else:
+                            try:
+                                print(f"⚠️ 候選「{name}」Rerank 失敗（降級單筆）：{exc}")
+                            except Exception:
+                                pass
 
             if not ranked_items:
                 ranked_items = [
@@ -370,7 +475,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     for t, s, e in hits
                 ]
 
-            # 產生表格與判定
+            # 產生表格與判定（嚴格遵循治理優先序）
             if ranked_items:
                 top1 = ranked_items[0]
                 top2 = ranked_items[1] if len(ranked_items) > 1 else None
@@ -386,30 +491,43 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {r_score_str} | {path_str} |")
                     lines.append("")
 
-                    top1_r = top1["rerank_score"] or 0.0
+                    top1_r = top1["rerank_score"] if top1["rerank_score"] is not None else 0.0
                     top2_r = top2["rerank_score"] if top2 and top2["rerank_score"] is not None else 0.0
                     margin = top1_r - top2_r if top2 and top2["rerank_score"] is not None else top1_r
                     lines.append(f"rerank_margin: {margin:.3f} (Top1 - Top2)")
 
-                    if is_same_entity:
+                    # 治理優先序判定
+                    score_low = calib_thresholds.get("score_low", 0.40) if is_calibrated else 0.40
+                    if attention:
+                        verdict = f"⚠ 字面解析有歧義／需人工確認（{preview}）"
+                        flagged += 1
+                    elif is_exact_match or (is_same_entity and is_type_compat and not attention):
                         verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（同名／字面對應）"
-                    elif top1_r >= 0.70 and margin >= 0.20 and is_type_compat:
-                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
-                    elif top1_r >= 0.40:
-                        if not is_type_compat:
-                            verdict = (
-                                f"⚠ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
-                                f"若確為同實體請確認是否改用 [[{top1['title']}]]"
-                            )
+                    elif top1_r < score_low:
+                        verdict = "🆕 建議建立新條目（既有條目相關度低）"
+                    elif not is_type_compat:
+                        verdict = (
+                            f"⚠ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                            f"若確為同實體請確認是否改用 [[{top1['title']}]]"
+                        )
+                        flagged += 1
+                    elif not is_calibrated:
+                        verdict = f"⚠ 未校準模型（{rerank_model}），評分僅供排序參考，需人工確認"
+                        flagged += 1
+                    else:
+                        score_high = calib_thresholds.get("score_high", 0.70)
+                        margin_high = calib_thresholds.get("margin_high", 0.20)
+                        margin_ambiguous = calib_thresholds.get("margin_ambiguous", 0.15)
+                        if top1_r >= score_high and margin >= margin_high:
+                            verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
+                        elif margin < margin_ambiguous:
+                            verdict = f"⚠ 候選相近（Top1 與 Top2 分數差距 {margin:.3f} < {margin_ambiguous:.2f}），需 Agent / 人工判斷"
                             flagged += 1
-                        elif margin < 0.15:
-                            verdict = "⚠ 候選相近（Top1 與 Top2 分數接近），需 Agent / 人工判斷"
+                        elif top1_r >= score_low:
+                            verdict = f"⚠ 相關度中等（{top1_r:.3f}），請確認是否使用既有條目 [[{top1['title']}]]"
                             flagged += 1
                         else:
-                            verdict = f"⚠ 相關度中等，請確認是否使用既有條目 [[{top1['title']}]]"
-                            flagged += 1
-                    else:
-                        verdict = "🆕 建議建立新條目（既有條目相關度低）"
+                            verdict = "🆕 建議建立新條目（既有條目相關度低）"
                     lines.append(f"判定：{verdict}")
                 else:
                     lines.append("| Rank | Candidate | Similarity | Path |")
@@ -419,17 +537,21 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {path_str} |")
                     lines.append("")
 
-                    if is_same_entity:
-                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（resolver 可自動對上）"
+                    # 治理優先序判定 (純 embedding 降級路徑)
+                    if attention:
+                        verdict = f"⚠ 字面解析有歧義／需人工確認（{preview}）"
+                        flagged += 1
+                    elif is_exact_match or (is_same_entity and is_type_compat and not attention):
+                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（同名／字面對應）"
                     elif top1["sim_score"] >= threshold:
-                        if is_type_compat:
-                            verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
-                            flagged += 1
-                        else:
+                        if not is_type_compat:
                             verdict = (
                                 f"ⓘ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
                                 "若確為同實體請人工確認"
                             )
+                            flagged += 1
+                        else:
+                            verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
                             flagged += 1
                     else:
                         verdict = "🆕 建議建立新條目（無高相似既有條目）"
@@ -460,8 +582,51 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         else:
             lines.append("（無 ≥ 門檻的配對）")
 
+    # 計算狀態
+    if not use_rerank or rerank_model is None:
+        rerank_status = "disabled"
+    elif rerankable_candidates == 0:
+        rerank_status = "not_needed"
+    elif rerank_failed == 0 and rerank_succeeded == rerankable_candidates:
+        rerank_status = "success"
+    elif rerank_succeeded > 0:
+        rerank_status = "partial"
+    else:
+        rerank_status = "degraded"
+
+    if require_rerank and rerank_status in ("partial", "degraded", "disabled"):
+        raise ModelError(f"--require-rerank 要求 Reranker 正常運作，但目前狀態為 {rerank_status}")
+
+    # 計算所有指紋與雜湊
+    candidate_sha256 = _file_sha256(candidates_path)
+    link_index_sha256 = _file_sha256(root / "util" / "output" / "link_index.json")
+    homonyms_sha256 = _file_sha256(root / "_config" / "link_homonyms.yaml")
+    calibration_sha256 = _file_sha256(root / CALIBRATION_FILE_REL)
+    embedding_model = index.meta.get("model", "")
+    embedding_index_fingerprint = compute_index_fingerprint(index.meta)
+
+    meta_header = (
+        "<!-- candidate_similarity_meta\n"
+        "schema_version: 1\n"
+        f"book: {canonical}\n"
+        f"chapter: {chapter}\n"
+        f"candidate_sha256: {candidate_sha256}\n"
+        f"embedding_model: {embedding_model}\n"
+        f"embedding_index_fingerprint: {embedding_index_fingerprint}\n"
+        f"link_index_sha256: {link_index_sha256}\n"
+        f"homonyms_sha256: {homonyms_sha256}\n"
+        f"rerank_model: {rerank_model or 'none'}\n"
+        f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
+        f"calibration_sha256: {calibration_sha256}\n"
+        f"rerank_status: {rerank_status}\n"
+        f"rerankable_candidates: {rerankable_candidates}\n"
+        f"rerank_attempted: {rerank_attempted}\n"
+        f"rerank_succeeded: {rerank_succeeded}\n"
+        "-->\n\n"
+    )
+
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    report_path.write_text(meta_header + "\n".join(lines).rstrip() + "\n", encoding="utf-8")
     return report_path, len(candidates), flagged
 
 
@@ -480,6 +645,7 @@ def main():
     parser.add_argument("--top", type=int, default=DEFAULT_TOP, help="每詞取前幾名")
     parser.add_argument("--threshold", type=float, default=None, help="相似度門檻")
     parser.add_argument("--no-rerank", action="store_true", help="停用 Reranker 語意裁判")
+    parser.add_argument("--require-rerank", action="store_true", help="強制要求 Reranker 成功（降級/失敗則 exit 1）")
     parser.add_argument("--json", action="store_true", help="輸出 JSON")
     args = parser.parse_args()
 
@@ -490,6 +656,7 @@ def main():
                 book, chapter, top=max(3, min(args.top, 10)),
                 threshold=args.threshold,
                 use_rerank=not args.no_rerank,
+                require_rerank=args.require_rerank,
             )
         except (ModelError, FileNotFoundError, ValueError) as exc:
             print(f"❌ {exc}")

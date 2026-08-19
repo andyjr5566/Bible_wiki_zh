@@ -1,0 +1,20 @@
+# Reranker 模型校準表
+# 僅經實測 gold dataset 校準之模型（calibrated: true）方可依門檻自動給出 ✅ 建議使用既有條目 / 🆕 建議建立新條目。
+# 未校準之模型（calibrated: false）僅輸出排序與評分，所有非確切字面匹配一律標 ⚠ 人工確認。
+
+models:
+  nvidia/llama-nemotron-rerank-vl-1b-v2:free:
+    calibrated: false
+    provisional_thresholds:
+      score_high: 0.70        # 暫定高分門檻（待 gold dataset 實測校準）
+      score_low: 0.40         # 暫定低分門檻
+      margin_high: 0.20       # 暫定 Top1 - Top2 領先差距
+      margin_ambiguous: 0.15  # 暫定模糊差距下限
+
+  nvidia/llama-nemotron-rerank-vl-1b-v2:
+    calibrated: false
+    provisional_thresholds:
+      score_high: 0.70
+      score_low: 0.40
+      margin_high: 0.20
+      margin_ambiguous: 0.15

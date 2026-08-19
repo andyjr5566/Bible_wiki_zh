@@ -32,15 +32,15 @@
 候選寫齊後，定稿前必跑語義近鄰與重排報告：
     python util/semantic_lookup.py --candidates 【{書名}】 {X}
 輸出寫到 .tmp/第{X}章/candidate_similarity.md，資訊都要看並回頭修候選：
-  - 字面解析：標「請確認」的多半是 alias 導向錯條目，要核實。
-  - 候選重排表格與判定：
-    - `✅ 建議使用既有條目 [[條目]]`（高可信領先且分類相容）→ 若確認為同概念改用既有條目名（走 B 類累積），不要另建近似重複。
-    - `⚠ 需 Agent / 人工判斷`（候選相近、分數差距過小或跨分類）→ 需人工核對上下文判定。
+  - 字面解析：標「請確認」的多半是 alias 導向錯條目或同名詞歧義（D類），務必人工核實。
+  - 治理優先與重排裁判：
+    - `✅ 建議使用既有條目 [[條目]]`（確切命中或經校準模型判定高可信且分類相容）→ 若確認為同概念改用既有條目名（走 B 類累積），不要另建近似重複。
+    - `⚠ 需 Agent / 人工判斷`（未校準模型、候選相近、分數差距過小、同名歧義或分類不相容）→ 需人工核對上下文判定。
     - `🆕 建議建立新條目`（相關度低）→ 維持 C 類新建。
   - 候選互查 ⚠（本章內兩候選相似 ≥0.8）→ 考慮合併成一個候選（另一詞用 surfaces）。
 
 ## 收尾自檢（做完再回報，不要往下跑 run_chapter）
-    python util/check_chapter_files.py {書名} {X}
-確認 source_manifest.md／link_candidates.yaml／candidate_similarity.md 三者存在
-且無缺檔警告，即代表前置包（交接包）備齊，可以交給下一手跑步驟3–8。
+    python util/check_chapter_files.py {書名} {X} --preflight
+確認經文、source_manifest.md、link_candidates.yaml、candidate_similarity.md 與 freshness 檢查全數 PASS，
+即代表前置包（交接包）備齊，可以交給下一手跑步驟3–8。
 回報只列：候選數量、有沒有觸發 ⚠/ⓘ 需要你確認的項目、以及自檢結果。

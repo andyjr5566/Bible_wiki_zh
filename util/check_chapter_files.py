@@ -12,15 +12,28 @@ Usage:
 import argparse
 import re
 import subprocess
+import json
 import sys
 from pathlib import Path
 
 try:
     from .book_paths import book_directory, canonical_book_name
     from .console import utf8_stdio
+    from .semantic_lookup import (
+        _file_sha256,
+        extract_report_metadata,
+        RERANK_POLICY_VERSION,
+    )
+    from .build_embedding_index import compute_index_fingerprint
 except ImportError:
     from book_paths import book_directory, canonical_book_name
     from console import utf8_stdio
+    from semantic_lookup import (
+        _file_sha256,
+        extract_report_metadata,
+        RERANK_POLICY_VERSION,
+    )
+    from build_embedding_index import compute_index_fingerprint
 
 import yaml
 
@@ -175,7 +188,52 @@ def _embedding_index_synced(root):
     return True, ""
 
 
-def build_checks(book, chapter, root=ROOT):
+def check_candidate_similarity_freshness(book, chapter, root=ROOT):
+    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness。"""
+    root = Path(root)
+    canonical = canonical_book_name(book)
+    book_dir = book_directory(root, canonical)
+    tmp = book_dir / ".tmp" / f"第{chapter}章"
+    report_path = tmp / "candidate_similarity.md"
+    candidates_path = tmp / "link_candidates.yaml"
+
+    if not report_path.is_file():
+        return False, "候選近鄰報告 candidate_similarity.md 不存在"
+    if not candidates_path.is_file():
+        return False, "候選檔 link_candidates.yaml 不存在"
+
+    meta = extract_report_metadata(report_path)
+    if not meta:
+        return False, "candidate_similarity.md 缺少機器元資料標頭（<!-- candidate_similarity_meta -->）"
+
+    cur_cand_sha = _file_sha256(candidates_path)
+    if meta.get("candidate_sha256") != cur_cand_sha:
+        return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py"
+
+    cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
+    if meta.get("link_index_sha256") and cur_link_sha != "missing" and meta.get("link_index_sha256") != cur_link_sha:
+        return False, "既有條目索引 link_index.json 已變更，需重跑 semantic_lookup.py"
+
+    cur_homo_sha = _file_sha256(root / "_config" / "link_homonyms.yaml")
+    if meta.get("homonyms_sha256") and cur_homo_sha != "missing" and meta.get("homonyms_sha256") != cur_homo_sha:
+        return False, "同名詞設定 link_homonyms.yaml 已變更，需重跑 semantic_lookup.py"
+
+    if meta.get("rerank_policy_version") != RERANK_POLICY_VERSION:
+        return False, f"判定規則版本已升級（報告 {meta.get('rerank_policy_version')} vs 目前 {RERANK_POLICY_VERSION}），需重跑 semantic_lookup.py"
+
+    meta_path = root / "util" / "output" / "embedding_index.meta.json"
+    if meta_path.is_file():
+        try:
+            cur_fp = compute_index_fingerprint(json.loads(meta_path.read_text(encoding="utf-8")))
+            if meta.get("embedding_index_fingerprint") and meta.get("embedding_index_fingerprint") != cur_fp:
+                return False, "embedding 向量索引已更新，需重跑 semantic_lookup.py"
+        except Exception:
+            pass
+
+    return True, ""
+
+
+def build_checks(book, chapter, root=ROOT, preflight=False):
     canonical = canonical_book_name(book)
     book_dir = book_directory(root, book)
     tmp = book_dir / ".tmp" / f"第{chapter}章"
@@ -195,8 +253,9 @@ def build_checks(book, chapter, root=ROOT):
     link_updates_ok = updates_expected == 0 or (tmp / "link_updates.yaml").exists()
     run_chapter_cmd = f"python util/run_chapter_manual.py {canonical} {chapter}"
     embedding_ok, embedding_detail = _embedding_index_synced(root)
+    sim_fresh, sim_reason = check_candidate_similarity_freshness(canonical, chapter, root=root)
 
-    return [
+    checks = [
         (
             "步驟1｜經文本地檔",
             raw_scripture.exists(),
@@ -218,11 +277,17 @@ def build_checks(book, chapter, root=ROOT):
             f"逐節核對經文與有效 raw text，寫 {tmp / 'link_candidates.yaml'}。",
         ),
         (
-            "步驟2｜candidate_similarity.md（候選語義近鄰報告）",
-            (tmp / "candidate_similarity.md").exists(),
-            f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}，"
-            "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。",
+            "步驟2｜candidate_similarity.md（候選語義近鄰報告與 freshness）",
+            sim_fresh,
+            f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}"
+            + (f"（{sim_reason}）" if not sim_fresh else "，依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"),
         ),
+    ]
+
+    if preflight:
+        return checks
+
+    checks.extend([
         (
             "步驟3｜link_plan.yaml（P2 resolve）",
             plan_path.exists(),
@@ -278,7 +343,8 @@ def build_checks(book, chapter, root=ROOT):
             "再 python util/build_embedding_index.py（增量，通常數秒）——"
             "本章新條目沒進索引，下一章的候選近鄰報告就查不到它們。",
         ),
-    ]
+    ])
+    return checks
 
 
 def main():
@@ -286,10 +352,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("book")
     parser.add_argument("chapter", type=int)
+    parser.add_argument("--preflight", action="store_true", help="只驗證前置包（步驟1與步驟2）完備性")
     args = parser.parse_args()
 
     try:
-        checks = build_checks(args.book, args.chapter)
+        checks = build_checks(args.book, args.chapter, preflight=args.preflight)
     except (OSError, ValueError, yaml.YAMLError) as exc:
         print(f"❌ {exc}")
         return 1
@@ -302,6 +369,11 @@ def main():
             print("結論：FAIL（缺口見上）")
             return 1
         print(f"✅ {label}")
+
+    if args.preflight:
+        print("✅ 前置交接包主要檔案與 freshness 齊備。")
+        print("結論：PASS")
+        return 0
 
     canonical = canonical_book_name(args.book)
     errors, pending, notes = untracked_entry_findings(ROOT, args.book, args.chapter)

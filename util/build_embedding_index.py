@@ -222,13 +222,26 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
             for title in titles
         ],
     }
+    meta["index_fingerprint"] = compute_index_fingerprint(meta)
     VECTORS_FILE.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(VECTORS_FILE, vectors=matrix)
     META_FILE.write_text(
         json.dumps(meta, ensure_ascii=False), encoding="utf-8"
     )
-    print(f"✅ 索引已寫入：{VECTORS_FILE.name}（{len(titles)} 條、{dim} 維）")
+    print(f"✅ 索引已寫入：{VECTORS_FILE.name}（{len(titles)} 條、{dim} 維、fingerprint: {meta['index_fingerprint']}）")
     return 0
+
+
+def compute_index_fingerprint(meta):
+    """計算索引 meta 的確定性指紋（model + dim + 所有條目 hash 總成）。"""
+    if not isinstance(meta, dict):
+        return "none"
+    h = hashlib.sha256()
+    h.update(str(meta.get("model", "")).encode("utf-8"))
+    h.update(str(meta.get("dim", "")).encode("utf-8"))
+    for item in sorted(meta.get("entries", []), key=lambda x: x.get("title", "")):
+        h.update(f"{item.get('title')}:{item.get('hash')}".encode("utf-8"))
+    return h.hexdigest()[:16]
 
 
 def stale_summary(root=ROOT):

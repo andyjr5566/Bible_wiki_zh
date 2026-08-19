@@ -129,6 +129,22 @@ def _require_sources(ctx):
     return present
 
 
+def _require_candidate_similarity(ctx):
+    """候選語義近鄰報告硬性前置閘門：報告缺失或過期（stale）時禁止進入 resolve 與 prompt 生成。"""
+    try:
+        from .check_chapter_files import check_candidate_similarity_freshness
+    except ImportError:
+        from check_chapter_files import check_candidate_similarity_freshness
+
+    ok, reason = check_candidate_similarity_freshness(ctx.book, ctx.chapter, root=ctx.root)
+    if not ok:
+        raise SourceError(
+            f"candidate_similarity.md 不存在或已過期（{reason}）。\n"
+            f"  請先執行：python util/semantic_lookup.py --candidates {ctx.book} {ctx.chapter}\n"
+            f"  檢視 ⚠ 項目並確認候選後，再重跑 run_chapter_manual.py prompts。"
+        )
+
+
 # --------------------------------------------------------------------------- #
 # prompts
 # --------------------------------------------------------------------------- #
@@ -191,7 +207,7 @@ class PromptCapture:
 
 
 def cmd_prompts(args):
-    ctx = rc.ChapterContext(args.book, args.chapter)
+    ctx = rc.ChapterContext(args.book, args.chapter, root=getattr(args, "root", rc.ROOT))
     stale_removed, _ = simulate_invalidation(ctx)
     hand_hit = [k for k in stale_removed if k in HAND_NODES]
     if hand_hit and not args.confirm_stale:
@@ -201,6 +217,7 @@ def cmd_prompts(args):
         print("確認要作廢請加 --confirm-stale；不想作廢就先還原上游改動。")
         return 1
     _require_sources(ctx)
+    _require_candidate_similarity(ctx)
 
     # Always leave the reading plan first.  If STEP validation fails below,
     # the Agent can still see the exact formal paths to repair, while stale
