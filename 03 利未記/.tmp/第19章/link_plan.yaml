@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 19
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 當孝敬父母
   suggested_type: 神學
   evidence: v3「你們各人都當孝敬父母，也要守我的安息日」。GT丁良才：孝敬父母是十誡的第五誡，且是第一條帶應許的誡命（弗6:2）；本句「孝敬」原文與申6:2,13「敬畏」相同，與出20:12「孝敬」原文不同；GT啟導本：父母是天父在地上的代表，應受充分尊敬，新約重述此命令（弗6:1-4；提前5:4）
@@ -32,11 +31,11 @@ B_needs_update:
   existing_title: 不可為自己雕刻偶像
   existing_path: link_folder/神學/不可為自己雕刻偶像.md
 - name: 平安祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: 5-8節；獻平安祭要獻得可蒙悅納，當天和第二天要吃完，留到第三天必用火焚燒，第三天再吃即為可憎惡，凡吃的人必擔當罪孽被剪除。GT丁良才：為感謝而獻的平安祭不可留到次日早晨，為還願或甘心獻的平安祭不可留到第三天；本段重申利7:15-18的條例，嚴禁獻祭染異教色彩
   match_type: exact
   existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
+  existing_path: link_folder/神學/平安祭.md
 - name: 不可偷盜
   suggested_type: 神學
   evidence: v11「你們不可偷盜，不可欺騙，也不可彼此說謊」，第八誡的重申，與欺騙、說謊並列。GT丁良才：偷盜包括不正常運用權位謀利、剋扣工資、不正當買賣斤兩不足、拐賣人口等一切在別人不知情下使人受損己身得利的行為
@@ -86,7 +85,6 @@ B_needs_update:
   match_type: exact
   existing_title: 血的尊重
   existing_path: link_folder/神學/血的尊重.md
-C_new_formal:
 - name: 你們要聖潔因為我是聖潔的
   suggested_type: 神學
   evidence: v2「你曉諭以色列全會眾說：你們要聖潔，因為我耶和華你們的神是聖潔的」，全章總綱。GT丁良才：本句在摩西五經中只記在此處和出12:3，顯明神以這律法要略是何等要緊；GT啟導本：第十七章教訓百姓在飲食上要聖潔，十八章和二十章論倫常上要聖潔，本章教訓他們在交接上要聖潔；KC：利未記十八章多屬消極（分別脫離惡），本章兼有積極（分別歸向神）——這是關乎全體神子民的日常生活，不僅是亞倫父子的祭司職分
@@ -94,17 +92,67 @@ C_new_formal:
   - phrase: 你們要聖潔，因為我耶和華─你們的神是聖潔的
     verses:
     - 2
-  target_path: link_folder/神學/你們要聖潔因為我是聖潔的.md
-  semantic_hint:
-  - title: 神的聖潔
-    score: 0.537
-    type: 神學
-  - title: 聖潔
-    score: 0.536
-    type: 神學
-  - title: 聖潔（qodesh）
-    score: 0.526
-    type: 原文
+  match_type: exact
+  existing_title: 你們要聖潔因為我是聖潔的
+  existing_path: link_folder/神學/你們要聖潔因為我是聖潔的.md
+- name: 不可偏向交鬼行巫術的
+  suggested_type: 主題
+  evidence: v31「不可偏向那些交鬼的和行巫術的；不可求問他們，以致被他們玷污了」。GT丁良才：人與邪鬼交接，就不能和神交接，因為沾染了邪靈的污穢（林前10:20-21；林後6:14-17）；比方掃羅王求問隱多珥交鬼婦人（撒上28:7）、亞哈謝（王下1:2-4）、瑪拿西（代下33:6）
+  surfaces:
+  - phrase: 不可偏向那些交鬼的和行巫術的
+    verses:
+    - 31
+  match_type: exact
+  existing_title: 不可偏向交鬼行巫術的
+  existing_path: link_folder/主題/不可偏向交鬼行巫術的.md
+B_needs_update:
+- name: 剪除
+  suggested_type: 原文
+  evidence: v8「凡吃的人必擔當他的罪孽；因為他褻瀆了耶和華的聖物，那人必從民中剪除」。CT：凡褻瀆聖物的，必被治死；GT丁良才把本節與七20-21、25、27、二十三29 並列為同一組剪除條例。BH：being cut off 是極重的刑罰，常被理解為逐出會眾甚至死刑，反映聖潔須在群體中維持
+  surfaces:
+  - phrase: 那人必從民中剪除
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: v14「只要敬畏你的神」、v32「又要敬畏你的神」。CT：神對弱勢的人以憐憫為懷，對仗勢欺人者卻是公義可畏的，所以要敬畏祂；敬畏神是智慧的開端（箴9:10）。BH：fearing God is not about terror but about awe and respect，敬畏神是對待弱者與長者的動機來源
+  surfaces:
+  - phrase: 只要敬畏你的神
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 贖愆祭（asham）
+  suggested_type: 原文
+  evidence: v21-22；那人要把贖愆祭就是一隻公綿羊牽到會幕門口，祭司要用贖愆祭的羊為他贖罪。GT丁良才：除了所受的刑罰以外，那人還要獻贖愆祭，因為他與那婢女行淫也是得罪神（參五14至六7）；GT精讀本：贖愆祭是作為對神或對人賠償獻上的祭物；BH：guilt offering 特別用於須賠償的過犯，兼顧對神的冒犯與對人的損害
+  surfaces:
+  - phrase: 祭司要用贖愆祭的羊在耶和華面前贖他所犯的罪
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 贖愆祭（asham）
+  existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 寄居的
+  suggested_type: 原文
+  evidence: v10「要留給窮人和寄居的」、v33-34「若有外人在你們國中和你同居，就不可欺負他……因為你們在埃及地也作過寄居的」。GT丁良才：33-34兩節是指著受過割禮進了猶太教的外人說的；BH：the inclusion of foreigners in this provision underscores the universal scope of God's care
+  surfaces:
+  - phrase: 因為你們在埃及地也作過寄居的
+    verses:
+    - 34
+  match_type: exact
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
+- name: 古代近東法典
+  suggested_type: 背景
+  evidence: 本章是全卷點名古代近東法典最密集的一章。GT《舊約背景註釋》在四處引為對照：v19 赫人法律禁止同種兩樣種子違者處死；v20-22 吾珥南模的新蘇美法律與埃施嫩納的巴比倫法律都規定強姦婢女需要罰款；v27 漢摩拉比法典對作假見證之人的刑罰是剃去他一半的頭髮，中亞述法典容許債奴的主人以拔髮為懲戒；v31 漢摩拉比法典和中亞述法律都禁止行邪術和在施法中使用藥物；v35-36 漢摩拉比法典規定還債買酒都要用標準的量和衡，違者輕則財物充公重則處死
+  match_type: exact
+  existing_title: 古代近東法典
+  existing_path: link_folder/背景/古代近東法典.md
+C_new_formal:
 - name: 田角拾穗顧念窮人的條例
   suggested_type: 主題
   evidence: v9-10「在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的。不可摘盡葡萄園的果子，也不可拾取葡萄園所掉的果子；要留給窮人和寄居的」。GT丁良才：猶太人傳說收割時至少要留下六十分之一；GT啟導本：這條例使以色列人得三個教訓——所得為業之地不是自己的乃是神的（二十五23）、不可有貪婪吝嗇為己的心、快樂時正是施捨的好機會；路得記二章記載波阿斯遵行此例讓路得得拾穗
@@ -152,10 +200,6 @@ C_new_formal:
     verses:
     - 15
   target_path: link_folder/主題/審判不可行不義按公義審判.md
-  semantic_hint:
-  - title: 審判全地的主豈不行公義
-    score: 0.413
-    type: 神學
 - name: 不可搬弄是非不可與鄰舍為敵
   suggested_type: 主題
   evidence: v16「不可在民中往來搬弄是非，也不可與鄰舍為敵，置之於死（原文作流他的血）」。GT丁良才：猶太人解釋本節含兩層意思——不可把無辜人因假見證置於死地，也不可因明知真情卻不肯作見證而置之於死（見死不救也是一項大罪）
@@ -197,16 +241,6 @@ C_new_formal:
     verses:
     - 21
   target_path: link_folder/主題/婢女行淫的贖愆祭條例.md
-  semantic_hint:
-  - title: 產婦生產潔淨條例（男四十女八十天）
-    score: 0.459
-    type: 主題
-  - title: 贖愆祭（asham）
-    score: 0.454
-    type: 原文
-  - title: 贖罪祭
-    score: 0.45
-    type: 神學
 - name: 迦南地栽種果樹頭三年果子如未受割禮的條例
   suggested_type: 主題
   evidence: 23-25節；到了迦南地栽種果樹，三年之久果子如未受割禮不可吃，第四年果子全成聖用以讚美耶和華，第五年才可吃樹上的果子好叫樹結果子更多。GT丁良才：果樹在前三年結果太早會使樹受傷，故將所結果子趁小的時候剪去；GT《舊約背景註釋》：最初三年必須小心栽培修剪，樹木才能正當長成保證豐收，第四年出產奉獻給神為祭，第五年起主人可以吃樹上的果子
@@ -218,16 +252,6 @@ C_new_formal:
     verses:
     - 24
   target_path: link_folder/主題/迦南地栽種果樹頭三年果子如未受割禮的條例.md
-  semantic_hint:
-  - title: 迦南地
-    score: 0.485
-    type: 地點
-  - title: 迦南人
-    score: 0.46
-    type: 人物
-  - title: 迦南
-    score: 0.434
-    type: 人物
 - name: 不可行法術觀兆
   suggested_type: 主題
   evidence: v26「你們不可吃帶血的物；不可用法術，也不可觀兆」。GT丁良才：這是論外邦人的風俗，若不是神所准的，就不會有意外事臨到，人靠邪靈改善命運或用法術得知未來都是枉然；GT《舊約背景註釋》：查看祭牲內臟、分析兆頭、從自然現象解讀未來都屬占卜，聖經譴責這種行徑因它與耶和華是全能的神、不受命運操縱的觀念相違背
@@ -255,18 +279,6 @@ C_new_formal:
     verses:
     - 29
   target_path: link_folder/主題/不可辱沒女兒使她為娼妓.md
-  semantic_hint:
-  - title: 羅得提出交出女兒如何評價
-    score: 0.408
-    type: 解經爭議
-- name: 不可偏向交鬼行巫術的
-  suggested_type: 主題
-  evidence: v31「不可偏向那些交鬼的和行巫術的；不可求問他們，以致被他們玷污了」。GT丁良才：人與邪鬼交接，就不能和神交接，因為沾染了邪靈的污穢（林前10:20-21；林後6:14-17）；比方掃羅王求問隱多珥交鬼婦人（撒上28:7）、亞哈謝（王下1:2-4）、瑪拿西（代下33:6）
-  surfaces:
-  - phrase: 不可偏向那些交鬼的和行巫術的
-    verses:
-    - 31
-  target_path: link_folder/主題/不可偏向交鬼行巫術的.md
 - name: 尊敬老人
   suggested_type: 主題
   evidence: v32「在白髮的人面前，你要站起來；也要尊敬老人，又要敬畏你的神」。GT啟導本：老年人在東方一向受特別尊敬，他們的經驗與智慧為社會的財富，信徒對神和對老年人都有尊敬的責任，不可輕忽
@@ -289,10 +301,6 @@ C_new_formal:
     verses:
     - 34
   target_path: link_folder/主題/善待寄居的外人愛他如己.md
-  semantic_hint:
-  - title: 寄居的（ger）
-    score: 0.436
-    type: 原文
 - name: 公道天平法碼升斗
   suggested_type: 主題
   evidence: 35-36節「在尺、秤、升、斗上也是如此。要用公道天平、公道法碼、公道升斗、公道秤」。GT丁良才：不公平的事是神所憎惡的（申25:13-15；結45:10,12；何12:7-8；摩8:5；彌6:10-11；箴11:1,16:11,20:10,23）；GT《舊約背景註釋》：漢摩拉比法典規定用五穀或銀子還債都要用標準的量和衡，違者輕則財物充公重則處死
@@ -301,5 +309,19 @@ C_new_formal:
     verses:
     - 36
   target_path: link_folder/主題/公道天平法碼升斗.md
+- name: 古代近東的社會契約
+  suggested_type: 背景
+  evidence: v11-19。GT《舊約背景註釋》以「社會契約」為題指出，本段的定言式法令使我們進一步認識神和以色列之間的社會契約，和以色列人彼此之間的權利義務，並下了一個全稱判斷：「這種人類及其神明之間的社會契約，歷史之中再沒有其他例證。」古代近東的信念是神祇關心社會正義，人類自信必須向神明負責，或是私人與家庭的神祇，或是正義之神沙馬士；但對以色列的鄰邦來說，管制人類行為的社會契約是人與人之間的合同，起誓召來的神明只是擔任保護者的角色
+  target_path: link_folder/背景/古代近東的社會契約.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.512
+    type: 歷史
+  - title: 古代近東立約
+    score: 0.468
+    type: 背景
+  - title: 古代近東法典
+    score: 0.459
+    type: 背景
 D_new_candidate: []
 E_skip: []
