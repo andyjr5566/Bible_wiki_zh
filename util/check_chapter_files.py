@@ -23,8 +23,12 @@ try:
         _file_sha256,
         extract_report_metadata,
         RERANK_POLICY_VERSION,
+        CALIBRATION_FILE_REL,
     )
-    from .build_embedding_index import compute_index_fingerprint
+    from .build_embedding_index import compute_index_fingerprint, stale_summary
+    from .model_client import select_endpoint
+    from . import source_excerpts
+    from . import check_source_read
 except ImportError:
     from book_paths import book_directory, canonical_book_name
     from console import utf8_stdio
@@ -32,14 +36,37 @@ except ImportError:
         _file_sha256,
         extract_report_metadata,
         RERANK_POLICY_VERSION,
+        CALIBRATION_FILE_REL,
     )
-    from build_embedding_index import compute_index_fingerprint
+    from build_embedding_index import compute_index_fingerprint, stale_summary
+    from model_client import select_endpoint
+    import source_excerpts
+    import check_source_read
 
+from collections import Counter
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 
 _ACCUM_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
+VALID_RERANK_STATUS = {"success", "partial", "degraded", "disabled", "not_needed"}
+
+
+class CheckResult:
+    """檢查結果封裝；支援 tuple (label, ok, resume_hint) 解構並附帶 warning 屬性。"""
+
+    def __init__(self, label, ok, resume_hint="", warning=""):
+        self.label = label
+        self.ok = ok
+        self.resume_hint = resume_hint
+        self.warning = warning
+
+    def __iter__(self):
+        return iter((self.label, self.ok, self.resume_hint))
+
+    def __repr__(self):
+        return f"CheckResult(label={self.label!r}, ok={self.ok!r}, warning={self.warning!r})"
+
 
 # git 無限期阻塞時的上限。本模組被 MCP server 以函式庫方式呼叫
 # （`build_checks`），而該 server 跑在不允許建立子行程的 host 上：沒有
@@ -166,22 +193,12 @@ def _plan_unique_name_count(plan, key):
 
 
 def _embedding_index_synced(root):
-    """embedding 索引是否與條目庫同步（純雜湊比對，不打網路）。
-
-    回傳 (ok, 說明)。這是機械可證的同步檢查：漏跑 build_embedding_index
-    的下場是「下一章的候選近鄰報告查不到本章新條目」，靜默且延後爆發，
-    所以在此硬擋。與相似度判斷（不可證、只附註）分屬兩事。
-    """
-    try:
-        try:
-            from .build_embedding_index import stale_summary
-        except ImportError:
-            from build_embedding_index import stale_summary
-    except Exception as exc:  # numpy 未裝等環境問題也要能給出可讀訊息
-        return False, f"無法載入 build_embedding_index：{exc}"
+    """embedding 索引是否與條目庫同步（純雜湊比對，不打網路）。"""
     summary = stale_summary(root)
     if summary is None:
         return False, "索引不存在（首次請跑 python util/build_embedding_index.py 全量建立）"
+    if summary.get("legacy_schema"):
+        return False, "索引為 legacy schema，請跑 python util/build_embedding_index.py --rebuild"
     changed, removed = summary["changed"], summary["removed"]
     if changed or removed:
         return False, f"{len(changed)} 條未入索引或已變更、{len(removed)} 條已刪除"
@@ -189,7 +206,10 @@ def _embedding_index_synced(root):
 
 
 def check_candidate_similarity_freshness(book, chapter, root=ROOT):
-    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness。"""
+    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness。
+
+    回傳 (fresh: bool, reason: str, status: str)
+    """
     root = Path(root)
     canonical = canonical_book_name(book)
     book_dir = book_directory(root, canonical)
@@ -198,39 +218,72 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     candidates_path = tmp / "link_candidates.yaml"
 
     if not report_path.is_file():
-        return False, "候選近鄰報告 candidate_similarity.md 不存在"
+        return False, "候選近鄰報告 candidate_similarity.md 不存在", ""
     if not candidates_path.is_file():
-        return False, "候選檔 link_candidates.yaml 不存在"
+        return False, "候選檔 link_candidates.yaml 不存在", ""
 
     meta = extract_report_metadata(report_path)
     if not meta:
-        return False, "candidate_similarity.md 缺少機器元資料標頭（<!-- candidate_similarity_meta -->）"
+        return False, "candidate_similarity.md 缺少機器元資料標頭（<!-- candidate_similarity_meta -->）", ""
+
+    if meta.get("schema_version") != "1":
+        return False, f"元資料 schema_version 不符（報告 {meta.get('schema_version')} vs 預期 1）", ""
+    if meta.get("book") != canonical:
+        return False, f"元資料書名不符（報告 {meta.get('book')} vs 目前 {canonical}）", ""
+    if str(meta.get("chapter")) != str(chapter):
+        return False, f"元資料章節不符（報告 {meta.get('chapter')} vs 目前 {chapter}）", ""
 
     cur_cand_sha = _file_sha256(candidates_path)
     if meta.get("candidate_sha256") != cur_cand_sha:
-        return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py"
+        return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py", ""
 
     cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
-    if meta.get("link_index_sha256") and cur_link_sha != "missing" and meta.get("link_index_sha256") != cur_link_sha:
-        return False, "既有條目索引 link_index.json 已變更，需重跑 semantic_lookup.py"
+    if cur_link_sha == "missing" or meta.get("link_index_sha256") != cur_link_sha:
+        return False, "既有條目索引 link_index.json 缺失或已變更，需重跑 semantic_lookup.py", ""
 
     cur_homo_sha = _file_sha256(root / "_config" / "link_homonyms.yaml")
-    if meta.get("homonyms_sha256") and cur_homo_sha != "missing" and meta.get("homonyms_sha256") != cur_homo_sha:
-        return False, "同名詞設定 link_homonyms.yaml 已變更，需重跑 semantic_lookup.py"
+    if cur_homo_sha == "missing" or meta.get("homonyms_sha256") != cur_homo_sha:
+        return False, "同名詞設定 link_homonyms.yaml 缺失或已變更，需重跑 semantic_lookup.py", ""
 
     if meta.get("rerank_policy_version") != RERANK_POLICY_VERSION:
-        return False, f"判定規則版本已升級（報告 {meta.get('rerank_policy_version')} vs 目前 {RERANK_POLICY_VERSION}），需重跑 semantic_lookup.py"
+        return False, f"判定規則版本已升級（報告 {meta.get('rerank_policy_version')} vs 目前 {RERANK_POLICY_VERSION}），需重跑 semantic_lookup.py", ""
+
+    cur_calib_sha = _file_sha256(root / CALIBRATION_FILE_REL)
+    if meta.get("calibration_sha256") != cur_calib_sha:
+        return False, "校準設定檔 reranker_calibration.yaml 已變更，需重跑 semantic_lookup.py", ""
 
     meta_path = root / "util" / "output" / "embedding_index.meta.json"
-    if meta_path.is_file():
-        try:
-            cur_fp = compute_index_fingerprint(json.loads(meta_path.read_text(encoding="utf-8")))
-            if meta.get("embedding_index_fingerprint") and meta.get("embedding_index_fingerprint") != cur_fp:
-                return False, "embedding 向量索引已更新，需重跑 semantic_lookup.py"
-        except Exception:
-            pass
+    if not meta_path.is_file():
+        return False, "embedding 索引 meta 檔不存在，需先建立索引", ""
+    try:
+        cur_embed_meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return False, f"embedding 索引 meta 檔損壞（{exc}），需 --rebuild", ""
 
-    return True, ""
+    cur_fp = compute_index_fingerprint(cur_embed_meta)
+    if cur_fp == "legacy_stale":
+        return False, "embedding 索引為 legacy schema，需執行 build_embedding_index.py --rebuild", ""
+    if meta.get("embedding_index_fingerprint") != cur_fp:
+        return False, "embedding 向量索引指紋已變更，需重跑 semantic_lookup.py", ""
+
+    status = meta.get("rerank_status")
+    if not status or status not in VALID_RERANK_STATUS:
+        return False, f"rerank_status '{status}' 無效或缺失（必須為 {VALID_RERANK_STATUS}）", ""
+
+    for req_field in ["rerankable_candidates", "rerank_attempted", "rerank_succeeded"]:
+        if req_field not in meta:
+            return False, f"元資料缺少運作統計欄位 {req_field}", status
+
+    # 檢查 Rerank 模型設定一致性
+    if status != "disabled":
+        try:
+            cur_rerank_model = select_endpoint(task="rerank").get("model")
+        except Exception:
+            cur_rerank_model = None
+        if cur_rerank_model and meta.get("rerank_model") != cur_rerank_model:
+            return False, f"rerank 模型已變更（報告 {meta.get('rerank_model')} vs 目前 {cur_rerank_model}），需重跑 semantic_lookup.py", status
+
+    return True, "", status
 
 
 def build_checks(book, chapter, root=ROOT, preflight=False):
@@ -238,6 +291,7 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     book_dir = book_directory(root, book)
     tmp = book_dir / ".tmp" / f"第{chapter}章"
     raw_scripture = root / "raw_scripture" / canonical / f"第{chapter}章.txt"
+    manifest_path = tmp / "source_manifest.md"
     plan_path = tmp / "link_plan.yaml"
     entry_dir = tmp / "entry_content"
     chapter_md = book_dir / f"第{chapter}章.md"
@@ -251,36 +305,89 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         entry_dir.is_dir() and len(list(entry_dir.glob("*.yaml"))) >= entries_expected
     )
     link_updates_ok = updates_expected == 0 or (tmp / "link_updates.yaml").exists()
-    run_chapter_cmd = f"python util/run_chapter_manual.py {canonical} {chapter}"
+    prompts_cmd = f"python util/run_chapter_manual.py prompts {canonical} {chapter}"
+    check_cmd = f"python util/run_chapter_manual.py check {canonical} {chapter}"
+    run_cmd = f"python util/run_chapter_manual.py run {canonical} {chapter}"
+
     embedding_ok, embedding_detail = _embedding_index_synced(root)
-    sim_fresh, sim_reason = check_candidate_similarity_freshness(canonical, chapter, root=root)
+    sim_fresh, sim_reason, sim_status = check_candidate_similarity_freshness(canonical, chapter, root=root)
+
+    # 來源完整性與閱讀回執驗證
+    sources_declared_ok = False
+    sources_declared_detail = ""
+    sources_read_ok = False
+    sources_read_detail = ""
+
+    if manifest_path.is_file():
+        try:
+            identities = source_excerpts.manifest_source_identities(manifest_path, root)
+            counts = Counter(identity.key for identity in identities)
+            expected = Counter({"CT": 1, "GT": 1, "KC": 1, "BH": 1, "STEP": 1})
+            if counts == expected:
+                sources_declared_ok = True
+            else:
+                sources_declared_detail = f"來源宣告不符合正好五套（CT/GT/KC/BH/STEP 各一筆）：目前為 {dict(counts)}"
+        except Exception as exc:
+            sources_declared_detail = f"無法解析來源清單：{exc}"
+
+        if sources_declared_ok:
+            try:
+                source_problems = check_source_read.check(canonical, chapter, root=root)
+                if not source_problems:
+                    sources_read_ok = True
+                else:
+                    sources_read_detail = "；".join(source_problems)
+            except Exception as exc:
+                sources_read_detail = f"來源閱讀檢查失敗：{exc}"
+    else:
+        sources_declared_detail = f"來源清單 {manifest_path} 不存在"
+
+    # 候選相似度與 Preflight Readiness 檢查
+    sim_check_ok = sim_fresh
+    sim_check_hint = ""
+    sim_check_warning = ""
+
+    if not sim_fresh:
+        sim_check_hint = f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}（{sim_reason}）"
+    else:
+        if preflight and sim_status == "disabled":
+            sim_check_ok = False
+            sim_check_hint = "正式交接前置包禁止 rerank_status: disabled（--no-rerank 僅供診斷）；請配置 Reranker 並重跑 semantic_lookup.py"
+        elif sim_status in {"partial", "degraded"}:
+            sim_check_warning = f"candidate_similarity fresh，但 Reranker 狀態為 {sim_status}，本次使用降級結果"
+        else:
+            sim_check_hint = "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"
 
     checks = [
-        (
+        CheckResult(
             "步驟1｜經文本地檔",
             raw_scripture.exists(),
             f"從步驟1「準備來源」開始：確認 {raw_scripture} 是否存在——"
             "這一步缺檔不可由程式代補，需回報使用者確認經文來源。",
         ),
-        (
-            "步驟1｜source_manifest.md",
-            (tmp / "source_manifest.md").exists(),
-            "從步驟1「準備來源」繼續：四套註釋（CT/GT/KC/BH）用 crawl_bible_text.py，"
-            "STEP 原文資料用 extract_stepbible.py；查核每份 raw text 是否為本章有效內容後，"
-            "再用 build_source_manifest.py 寫 "
-            f"{tmp / 'source_manifest.md'}。",
+        CheckResult(
+            "步驟1｜source_manifest.md 完整五來源宣告",
+            sources_declared_ok,
+            "從步驟1「準備來源」繼續：必須包含 CT、GT、KC、BH、STEP 剛好各一筆有效來源。"
+            + (f"（{sources_declared_detail}）" if sources_declared_detail else ""),
         ),
-        (
+        CheckResult(
+            "步驟1｜來源閱讀回執與 STEP 驗證",
+            sources_read_ok,
+            "從步驟1「準備來源」繼續：四套 commentary 必須有完整 read_log 逐字引句且 STEP 通過機器驗證。"
+            + (f"（{sources_read_detail}）" if sources_read_detail else ""),
+        ),
+        CheckResult(
             "步驟2｜link_candidates.yaml",
             (tmp / "link_candidates.yaml").exists(),
             "從步驟2「建 link_candidates.yaml」開始：依 _config/schemas/link_candidates.schema.json "
             f"逐節核對經文與有效 raw text，寫 {tmp / 'link_candidates.yaml'}。",
         ),
-        (
+        CheckResult(
             "步驟2｜candidate_similarity.md（候選語義近鄰報告與 freshness）",
-            sim_fresh,
-            f"從步驟2後半續做：python util/semantic_lookup.py --candidates {canonical} {chapter}"
-            + (f"（{sim_reason}）" if not sim_fresh else "，依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"),
+            sim_check_ok,
+            sim_check_hint,
+            warning=sim_check_warning,
         ),
     ]
 
@@ -288,55 +395,55 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         return checks
 
     checks.extend([
-        (
+        CheckResult(
             "步驟3｜link_plan.yaml（P2 resolve）",
             plan_path.exists(),
-            f"從步驟3「跑 orchestrator」開始：python util/build_link_index.py && {run_chapter_cmd}",
+            f"從步驟3「跑 orchestrator」開始：python util/build_link_index.py && {prompts_cmd}",
         ),
-        (
+        CheckResult(
             f"步驟3｜entry_content/*.yaml（M3，計畫需 {entries_expected} 個）",
             entry_content_ok,
-            f"重跑步驟3：{run_chapter_cmd}（可斷點續跑，只補未完成的條目 payload）。",
+            f"重跑步驟3：{check_cmd} 或 {prompts_cmd}（補未完成的條目 payload）。",
         ),
-        (
+        CheckResult(
             "步驟3｜verse_links.yaml（M5）",
             (tmp / "verse_links.yaml").exists(),
-            f"重跑步驟3：{run_chapter_cmd}（entry_content 全數完成後才會產生此檔）。",
+            f"重跑步驟3：{check_cmd}（entry_content 全數完成後才會產生此檔）。",
         ),
-        (
+        CheckResult(
             "步驟3｜chapter_content.yaml（M6）",
             (tmp / "chapter_content.yaml").exists(),
-            f"重跑步驟3：{run_chapter_cmd}（模型填本章整理 payload）。",
+            f"重跑步驟3：{check_cmd}（模型填本章整理 payload）。",
         ),
-        (
+        CheckResult(
             f"步驟3｜{chapter_md.name}（P3 render）",
             chapter_md.exists(),
-            f"重跑步驟3：{run_chapter_cmd}；若 manual_review 顯示 knowledge_nodes 閉合後全空，"
+            f"重跑步驟3：{run_cmd}；若 manual_review 顯示 knowledge_nodes 閉合後全空，"
             "先處理步驟5的人工決策點（修 candidates 或人工建檔）再重跑。",
         ),
-        (
+        CheckResult(
             f"步驟4｜link_updates.yaml（B 類累積，計畫需 {updates_expected} 筆）",
             link_updates_ok,
             f"從步驟4「B 類累積」開始：python util/link_updates.py prepare {canonical} {chapter}，"
             "回經文與有效 raw text 填 summary/relation，先 apply --dry-run 再 apply。",
         ),
-        (
+        CheckResult(
             "步驟6｜util/output/link_index.json",
             (output_dir / "link_index.json").exists(),
             "從步驟6「收尾驗證」開始：python util/build_appendix_links.py && python util/check_existing_links.py "
             f"{book_dir.name}/第{chapter}章.md --missing && python util/build_link_index.py",
         ),
-        (
+        CheckResult(
             "步驟6｜util/output/link_quality_report.json",
             (output_dir / "link_quality_report.json").exists(),
             f"從步驟6繼續：python util/validate_knowledge_base.py && python util/link_quality_check.py {canonical}",
         ),
-        (
+        CheckResult(
             "步驟6｜util/output/verify_report.json ＋ verify_result.txt",
             (output_dir / "verify_report.json").exists() and (output_dir / "verify_result.txt").exists(),
             f"從步驟6繼續：python util/verify_links.py {canonical} && python util/audit_knowledge_base.py --check-due",
         ),
-        (
+        CheckResult(
             "步驟6｜embedding 語義索引同步",
             embedding_ok,
             f"（{embedding_detail}）從步驟6續做：python util/build_link_index.py，"
@@ -361,17 +468,20 @@ def main():
         print(f"❌ {exc}")
         return 1
 
-    for label, ok, resume_hint in checks:
-        if not ok:
-            print(f"❌ 缺檔：{label}")
-            print(f"   → 請從此動作續做：{resume_hint}")
+    for res in checks:
+        if not res.ok:
+            print(f"❌ 缺檔：{res.label}")
+            print(f"   → 請從此動作續做：{res.resume_hint}")
             print("   完成後依 agent_start_prompt.md 流程順序繼續往下一步，直到本檢查全數通過。")
             print("結論：FAIL（缺口見上）")
             return 1
-        print(f"✅ {label}")
+        if getattr(res, "warning", None):
+            print(f"⚠️ {res.warning}")
+        else:
+            print(f"✅ {res.label}")
 
     if args.preflight:
-        print("✅ 前置交接包主要檔案與 freshness 齊備。")
+        print("✅ 前置交接包主要檔案、來源閱讀回執與 freshness 齊備。")
         print("結論：PASS")
         return 0
 

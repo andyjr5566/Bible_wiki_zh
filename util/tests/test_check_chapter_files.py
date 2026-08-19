@@ -1,3 +1,4 @@
+import json
 import sys
 import tempfile
 import unittest
@@ -24,6 +25,28 @@ def _write_yaml(path, data):
     _write(path, yaml.safe_dump(data, allow_unicode=True))
 
 
+def valid_step_text(reference="Genesis 1:1"):
+    import extract_stepbible
+    ref = extract_stepbible.parse_reference(reference)
+    verse = ref.verse_start or 1
+    strong = "H1254A" if ref.testament == "OT" else "G3056A"
+    original = "בָּרָא" if ref.testament == "OT" else "λόγος"
+    word = extract_stepbible.WordEntry(
+        reference=f"{ref.code}.{ref.chapter}.{verse}",
+        position=1,
+        word=original,
+        transliteration="bara" if ref.testament == "OT" else "logos",
+        gloss="created" if ref.testament == "OT" else "word",
+        strongs_raw=strong,
+        strongs=[strong],
+        main_strong=strong,
+        morphology_raw="V-Qal-3ms" if ref.testament == "OT" else "N-NSM",
+        morphology="V-Qal-3ms" if ref.testament == "OT" else "N-NSM",
+        lexicon_short="create" if ref.testament == "OT" else "word; message",
+    )
+    return extract_stepbible.render_markdown(ref, {verse: [word]}, False)
+
+
 class CheckChapterFilesTests(unittest.TestCase):
     def _root(self, tmp):
         root = Path(tmp)
@@ -43,48 +66,113 @@ class CheckChapterFilesTests(unittest.TestCase):
             _, _, hint = checks[1]
             self.assertIn("source_manifest.md", hint)
 
+    def _write_valid_sources(self, root, tmp_dir):
+        (root / "raw_data").mkdir(parents=True, exist_ok=True)
+        rows = [
+            "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |",
+            "|------|------|-----|---------------|------|",
+        ]
+        logs = ["# 來源讀取回執：創世記 第1章", ""]
+        labels = [
+            ("ccbiblestudy CT", "逐節註解", "https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT01.htm", "ccbiblestudy_CT_genesis_1.txt"),
+            ("ccbiblestudy GT", "拾穗", "https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT01.htm", "ccbiblestudy_GT_genesis_1.txt"),
+            ("KingComments", "研經註解", "https://www.kingcomments.com/en/bible-studies/Gen/1", "kingcomments_genesis_1.txt"),
+            ("BibleHub Study", "研經註解", "https://biblehub.com/study/genesis/1.htm", "biblehub_study_genesis_1.txt"),
+            ("STEP Bible", "原文資料", "https://www.stepbible.org/?q=version=ESV&reference=Gen.1", "stepbible_genesis_1.txt"),
+        ]
+        for label, kind, url, fname in labels:
+            rel = f"raw_data/{fname}"
+            p = root / rel
+            if kind == "原文資料":
+                _write(p, valid_step_text("Genesis 1:1"))
+                rows.append(f"| {label} | {kind} | {url} | {rel} | OK |")
+            else:
+                raw_lines = [f"{label} 註釋內容逐字測試句長度第{i}行" for i in range(1, 10)]
+                _write(p, "\n".join(raw_lines) + "\n")
+                rows.append(f"| {label} | {kind} | {url} | {rel} | OK |")
+                logs.extend([
+                    f"## {rel}", "- 行數：9",
+                    f"- 引句：{raw_lines[0]}", f"- 引句：{raw_lines[3]}",
+                    f"- 引句：{raw_lines[8]}", "",
+                ])
+        _write(tmp_dir / "source_manifest.md", "\n".join(rows) + "\n")
+        _write(tmp_dir / "read_log.md", "\n".join(logs) + "\n")
+
     def _write_synced_embedding_index(self, root):
-        """空條目庫（link_index={}）對空索引＝同步。"""
+        """空條目庫（link_index={}）對空索引（Schema v2）＝同步。"""
+        import numpy as np
+        from build_embedding_index import _vectors_sha256, compute_index_fingerprint
+        vectors = np.zeros((0, 4), dtype=np.float32)
+        np.savez_compressed(root / "util" / "output" / "embedding_index.npz", vectors=vectors)
+        meta = {
+            "schema_version": 2,
+            "model": "test-embed",
+            "dim": 4,
+            "input_type": "passage",
+            "vectors_sha256": _vectors_sha256(vectors),
+            "entries": [],
+        }
+        meta["index_fingerprint"] = compute_index_fingerprint(meta)
         _write(
             root / "util" / "output" / "embedding_index.meta.json",
-            '{"model": "test-embed", "dim": 4, "entries": []}',
+            json.dumps(meta, ensure_ascii=False),
         )
-        _write(root / "util" / "output" / "embedding_index.npz", "dummy")
 
-    def _write_fresh_similarity_report(self, tmp_dir, root):
+    def _write_fresh_similarity_report(self, tmp_dir, root, overrides=None):
         from semantic_lookup import _file_sha256, RERANK_POLICY_VERSION
         from build_embedding_index import compute_index_fingerprint
+        from model_client import select_endpoint
         meta_path = root / "util" / "output" / "embedding_index.meta.json"
         fp = "none"
         if meta_path.is_file():
-            import json
             fp = compute_index_fingerprint(json.loads(meta_path.read_text(encoding="utf-8")))
-        meta = (
-            "<!-- candidate_similarity_meta\n"
-            "schema_version: 1\n"
-            "book: 創世記\n"
-            "chapter: 1\n"
-            f"candidate_sha256: {_file_sha256(tmp_dir / 'link_candidates.yaml')}\n"
-            "embedding_model: test-embed\n"
-            f"embedding_index_fingerprint: {fp}\n"
-            f"link_index_sha256: {_file_sha256(root / 'util' / 'output' / 'link_index.json')}\n"
-            f"homonyms_sha256: {_file_sha256(root / '_config' / 'link_homonyms.yaml')}\n"
-            "rerank_model: test-reranker\n"
-            f"rerank_policy_version: {RERANK_POLICY_VERSION}\n"
-            f"calibration_sha256: {_file_sha256(root / '_config' / 'reranker_calibration.yaml')}\n"
-            "rerank_status: success\n"
-            "-->\n\n# 候選語義近鄰報告\n"
-        )
-        _write(tmp_dir / "candidate_similarity.md", meta)
+        
+        calib_sha = _file_sha256(root / "_config" / "reranker_calibration.yaml")
+        if not (root / "_config" / "reranker_calibration.yaml").exists():
+            _write(root / "_config" / "reranker_calibration.yaml", "models: {}")
+            calib_sha = _file_sha256(root / "_config" / "reranker_calibration.yaml")
+
+        try:
+            cur_rerank_model = select_endpoint(task="rerank").get("model") or "test-reranker"
+        except Exception:
+            cur_rerank_model = "test-reranker"
+
+        meta_dict = {
+            "schema_version": "1",
+            "book": "創世記",
+            "chapter": "1",
+            "candidate_sha256": _file_sha256(tmp_dir / 'link_candidates.yaml'),
+            "embedding_model": "test-embed",
+            "embedding_index_fingerprint": fp,
+            "link_index_sha256": _file_sha256(root / 'util' / 'output' / 'link_index.json'),
+            "homonyms_sha256": _file_sha256(root / '_config' / 'link_homonyms.yaml'),
+            "rerank_model": cur_rerank_model,
+            "rerank_policy_version": RERANK_POLICY_VERSION,
+            "calibration_sha256": calib_sha,
+            "rerank_status": "success",
+            "rerankable_candidates": "1",
+            "rerank_attempted": "1",
+            "rerank_succeeded": "1",
+        }
+        if overrides:
+            meta_dict.update(overrides)
+
+        lines = ["<!-- candidate_similarity_meta"]
+        for k, v in meta_dict.items():
+            if v is not None:
+                lines.append(f"{k}: {v}")
+        lines.extend(["-->", "", "# 候選語義近鄰報告", ""])
+        _write(tmp_dir / "candidate_similarity.md", "\n".join(lines))
 
     def test_all_major_files_present_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
             tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
-            _write(tmp_dir / "source_manifest.md", "manifest")
+            self._write_valid_sources(root, tmp_dir)
             _write(tmp_dir / "link_candidates.yaml", "candidates")
             _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
             _write(root / "util" / "output" / "link_quality_report.json", "{}")
             _write(root / "util" / "output" / "verify_report.json", "{}")
             _write(root / "util" / "output" / "verify_result.txt", "ok")
@@ -96,45 +184,118 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(root / "01 創世記" / f"第{CHAPTER}章.md", "# 第1章")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            failed = [label for label, ok, _ in checks if not ok]
+            failed = [res.label for res in checks if not res.ok]
             self.assertEqual([], failed)
 
     def test_preflight_passes_with_only_steps_1_and_2(self):
-        """--preflight 模式只驗證前置包（經文、manifest、candidates、fresh similarity report）。"""
+        """--preflight 模式驗證前置包（經文、5來源 manifest、read_log、candidates、fresh similarity report）。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
             tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
-            _write(tmp_dir / "source_manifest.md", "manifest")
+            self._write_valid_sources(root, tmp_dir)
             _write(tmp_dir / "link_candidates.yaml", "candidates")
             _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
             self._write_synced_embedding_index(root)
             self._write_fresh_similarity_report(tmp_dir, root)
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
-            self.assertEqual(4, len(checks))  # 只有步驟1與步驟2的4個檢查項
-            failed = [label for label, ok, _ in checks if not ok]
+            self.assertEqual(5, len(checks))
+            failed = [res.label for res in checks if not res.ok]
             self.assertEqual([], failed)
 
-    def test_stale_candidate_similarity_fails_check(self):
-        """候選檔被修改後，未重跑 semantic_lookup 導致 hash 不一致時判定失敗。"""
+    def test_table_driven_freshness_mutations_fail_closed(self):
+        """Table-driven 測試：11 個依賴因子只要任一項突變或不合，freshness 一律判 FAIL。"""
+        mutations = [
+            ("schema_version", {"schema_version": "99"}),
+            ("book", {"book": "出埃及記"}),
+            ("chapter", {"chapter": "99"}),
+            ("candidate_sha256", {"candidate_sha256": "bad_hash"}),
+            ("link_index_sha256", {"link_index_sha256": "bad_hash"}),
+            ("homonyms_sha256", {"homonyms_sha256": "bad_hash"}),
+            ("rerank_policy_version", {"rerank_policy_version": "1999.01.1"}),
+            ("calibration_sha256", {"calibration_sha256": "bad_hash"}),
+            ("embedding_index_fingerprint", {"embedding_index_fingerprint": "bad_fp"}),
+            ("rerank_status_missing", {"rerank_status": None}),
+            ("rerank_status_invalid", {"rerank_status": "unknown_status"}),
+        ]
+
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
             tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
-            _write(tmp_dir / "source_manifest.md", "manifest")
-            _write(tmp_dir / "link_candidates.yaml", "candidates_v1")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
             _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+
+            for field_name, override in mutations:
+                with self.subTest(field=field_name):
+                    self._write_fresh_similarity_report(tmp_dir, root, overrides=override)
+                    fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+                    self.assertFalse(fresh, f"欄位 {field_name} 突變應判定 stale，但回傳 fresh")
+
+    def test_preflight_fails_when_manifest_has_duplicate_or_missing_sources(self):
+        """來源宣告若不符合恰好五套 {CT, GT, KC, BH, STEP}，Preflight 必須 FAIL。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            # 只有 CT 與 GT，缺 KC, BH, STEP
+            _write(tmp_dir / "source_manifest.md", (
+                "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                "|---|---|---|---|---|\n"
+                "| CT | 研經註解 | u | raw_data/1.txt | OK |\n"
+                "| GT | 研經註解 | u | raw_data/2.txt | OK |\n"
+            ))
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
             self._write_synced_embedding_index(root)
             self._write_fresh_similarity_report(tmp_dir, root)
 
-            # 修改 candidates 檔案使其與報告記載之 hash 不符
-            _write(tmp_dir / "link_candidates.yaml", "candidates_v2_modified")
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+            source_decl_check = next(c for c in checks if "完整五來源宣告" in c.label)
+            self.assertFalse(source_decl_check.ok)
+            self.assertIn("來源宣告不符合正好五套", source_decl_check.resume_hint)
+
+    def test_preflight_fails_when_rerank_disabled(self):
+        """正式 preflight 階段不接受 rerank_status: disabled（--no-rerank 產物）。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root, overrides={"rerank_status": "disabled", "rerank_model": "none"})
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
-            sim_check = next(c for c in checks if "candidate_similarity" in c[0])
-            self.assertFalse(sim_check[1])
-            self.assertIn("候選檔已變更", sim_check[2])
+            sim_check = next(c for c in checks if "candidate_similarity" in c.label)
+            self.assertFalse(sim_check.ok)
+            self.assertIn("禁止 rerank_status: disabled", sim_check.resume_hint)
+
+    def test_preflight_warns_and_passes_when_rerank_degraded(self):
+        """當 rerank_status 為 partial 或 degraded 時，Preflight 放行 PASS 並附帶 warning。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root, overrides={"rerank_status": "degraded"})
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+            sim_check = next(c for c in checks if "candidate_similarity" in c.label)
+            self.assertTrue(sim_check.ok)
+            self.assertIn("Reranker 狀態為 degraded", sim_check.warning)
 
     def test_missing_similarity_report_fails_step2(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -143,9 +304,9 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(tmp_dir / "link_candidates.yaml", "candidates")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            report_check = next(c for c in checks if "candidate_similarity" in c[0])
-            self.assertFalse(report_check[1])
-            self.assertIn("--candidates", report_check[2])
+            report_check = next(c for c in checks if "candidate_similarity" in c.label)
+            self.assertFalse(report_check.ok)
+            self.assertIn("--candidates", report_check.resume_hint)
 
     def test_stale_embedding_index_fails_final_check(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -158,17 +319,17 @@ class CheckChapterFilesTests(unittest.TestCase):
             self._write_synced_embedding_index(root)
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            embed_check = next(c for c in checks if "embedding" in c[0])
-            self.assertFalse(embed_check[1])
-            self.assertIn("build_embedding_index", embed_check[2])
+            embed_check = next(c for c in checks if "embedding" in c.label)
+            self.assertFalse(embed_check.ok)
+            self.assertIn("build_embedding_index", embed_check.resume_hint)
 
     def test_absent_embedding_index_fails_with_bootstrap_hint(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            embed_check = next(c for c in checks if "embedding" in c[0])
-            self.assertFalse(embed_check[1])
-            self.assertIn("索引不存在", embed_check[2])
+            embed_check = next(c for c in checks if "embedding" in c.label)
+            self.assertFalse(embed_check.ok)
+            self.assertIn("索引不存在", embed_check.resume_hint)
 
     def test_entry_content_count_dedupes_plan_names(self):
         """C_new_formal 計畫可能同名重複（run_chapter.py 建 entry 前會去重）。"""
@@ -185,8 +346,8 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(tmp_dir / "entry_content" / "重複詞.yaml", "name: 重複詞")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            entry_check = next(c for c in checks if "entry_content" in c[0])
-            self.assertTrue(entry_check[1], "去重後 1 個候選對 1 個檔案應視為完成")
+            entry_check = next(c for c in checks if "entry_content" in c.label)
+            self.assertTrue(entry_check.ok, "去重後 1 個候選對 1 個檔案應視為完成")
 
     def test_link_updates_skipped_when_plan_has_no_b_class(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -195,8 +356,8 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
-            update_check = next(c for c in checks if "link_updates.yaml" in c[0])
-            self.assertTrue(update_check[1], "計畫無 B 類候選時不應要求 link_updates.yaml")
+            update_check = next(c for c in checks if "link_updates.yaml" in c.label)
+            self.assertTrue(update_check.ok, "計畫無 B 類候選時不應要求 link_updates.yaml")
 
 
 if __name__ == "__main__":

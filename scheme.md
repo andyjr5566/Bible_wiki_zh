@@ -130,11 +130,11 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
   - **報告輸出**：寫入 `.tmp/第x章/candidate_similarity.md`，每項包含字面解析、Top K 表格（Similarity 與 Rerank 分數）、`rerank_margin`（Top1 - Top2 差距）與結構化判定（`✅ 建議使用既有條目` / `⚠ 需 Agent / 人工判斷` / `🆕 建議建立新條目`）。Agent 據此決定改名（歸 A/B 累積）或照建——這是主要防線，發生在建條目之前。
 （2）resolve 時：程式自動對 C／D 候選查近鄰寫進 `link_plan.yaml` 的 `semantic_hint`，當第二道安全網。
 
-**邊界（與整體原則一致：機械不可證者只提示、不裁決）**：
+**邊界（與整體原則一致：機械不可證者只提示、不裁決；可機械證明者嚴格守門）**：
 
-- **純附註，不是閘門**：相似結果只供人工判斷（報告與 `semantic_hint` 皆然），不改分類、不自動建立或連結、不擋 commit。相似度與 Rerank 分數非機械可證，不升級為 error（呼應「加護欄前先全庫實測」的教訓）。
+- **判定分數 advisory vs 報告存在與 Freshness hard gate**：相似度與 Rerank 判定的分數與建議為輔助人工／Agent 決策之 *advisory report*，不自動變更分類、不自動合併實體；但 `candidate_similarity.md` 報告本身「是否存在、各項上游依賴 provenance（候選檔 SHA、embedding 指紋、link_index SHA、homonyms SHA、rerank 政策版本、校準檔 SHA）是否一致 fresh」，則為機械可證的 *hard gate*——未產出或過期者，由 `run_chapter_manual.py prompts` 與 `check_chapter_files.py --preflight` 硬性阻擋。
 - **Precision 優先於 Recall**：不將 Rerank score 單純視為自動合併機率；同時審視 Top1 分數、Top2 分數、Margin 與分類相容性，模糊案例一律標 ⚠ 交由人工或 Agent 審核，避免將不同實體誤合併。
-- **降級不中斷**：Rerank 服務不可用或失敗時自動降級為純 Embedding 相似度報告；resolve 的 `semantic_hint` 在索引缺失、模型不符、端點不通時靜默略過，主流程照跑。
+- **降級不中斷**：Rerank 服務不可用或失敗時自動降級為純 Embedding 相似度報告（狀態標為 `partial` 或 `degraded`，preflight 附帶 ⚠ 警示放行；`disabled` 限於診斷模式）；resolve 的 `semantic_hint` 在索引缺失、模型不符、端點不通時靜默略過，主流程照跑。
 - **同步是機械可證，故硬擋**：「索引有沒有跟上條目庫」與「相似度像不像」不同——前者可用雜湊比對證明。`build_embedding_index.py --check` 與 `check_chapter_files.py` 在收尾驗證索引同步（不打網路），過期即 FAIL 並給補救指令；漏跑的下場是下一章的近鄰報告查不到本章新條目，靜默且延後爆發，所以必須擋。
 - **與 embedding 模型綁定**：向量跨模型不可比，混用後相似度看似合理實為垃圾。meta 記錄模型名與維度，載入端比對現行設定，不符即拒用並要求 `--rebuild`（此為機械可證，故可硬擋）。
 - **⚠ 規則經跨卷實測校準（含全新章節模擬）**：現用 `nvidia/nemotron-3-embed-1b`，query／passage 為非對稱向量空間（同句兩空間 cos≈0.6，絕對分數整體偏低）。候選報告的 ⚠ 標「**top-1、非同實體**（resolver `base_name` 對不上）、**分類相容**（`type_compatible`，含 secondary_types）、**≥0.60**」的近鄰（`semantic_lookup.REPORT_FLAG_FLOOR`）。校準過程（跨 5 卷 151 候選）：絕對門檻不可行——條例密集章的兄弟條目彼此 0.6–0.75，0.55 會標 93%；真改名／重複對（含勘誤刪掉的舊名、`剪除（kareth）→從民中剪除（karet）` 這種字面構不著的）全以 top-1 出現且 ≥0.68；再用遮罩模擬「本章條目尚不存在」的全新章節（真實使用情境），僅 top-1 規則標 42%（FP 主力＝事件候選→其主角人物／地點的跨分類鄰居），加分類相容條件降到 17% 且不損失真對。**候選互查**（同報告第二節）另補全新章節的盲區：兩個同概念候選在索引裡都查不到，只有彼此比對能抓（申13 的兩對章內重複 0.84–0.90 即實例）；query-query 空間實測真重複 ≥0.84、相關但不同 ≤0.78，取 `INTRA_FLAG_FLOOR=0.80`。resolver 附註用裸名查詢，另行校準 `SEMANTIC_HINT_THRESHOLD=0.40`（裸名噪音上限≈0.24、真近似 0.42–0.57）。換 embedding 模型後以上全部失效須重新校準。索引一律用 `input_type=passage`、查詢用 `query`，不可混。
@@ -146,6 +146,8 @@ resolver 比對序：完全同名 → aliases → 音譯基名（裸名「皂莢
 ```text
 raw_scripture + 正式 raw_data
 → link_candidates.yaml（Agent 判斷）
+→ semantic_lookup.py → candidate_similarity.md（語義近鄰＋Rerank 報告）
+→ freshness hard gate 驗證
 → build_link_index.py → resolve → link_plan.yaml（程式分類 A–E）
 → run_chapter_manual.py prompts
 → entry_content/*.yaml（Agent 手寫 M3）

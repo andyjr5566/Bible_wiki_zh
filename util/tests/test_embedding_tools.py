@@ -55,12 +55,23 @@ class EntryEmbedTextTests(unittest.TestCase):
 
 class StaleSummaryTests(unittest.TestCase):
     def _root_with(self, tmp, link_index, meta):
+        import numpy as np
+        from build_embedding_index import _vectors_sha256, compute_index_fingerprint
         root = Path(tmp)
         _write(root / "util" / "output" / "link_index.json",
                json.dumps(link_index, ensure_ascii=False))
+        dim = meta.get("dim", 4)
+        n = len(meta.get("entries", []))
+        vectors = np.zeros((n, dim), dtype=np.float32)
+        np.savez_compressed(root / "util" / "output" / "embedding_index.npz", vectors=vectors)
+        if "schema_version" not in meta and not meta.get("legacy_test"):
+            meta["schema_version"] = 2
+        if "vectors_sha256" not in meta and not meta.get("legacy_test"):
+            meta["vectors_sha256"] = _vectors_sha256(vectors)
+        if "index_fingerprint" not in meta and not meta.get("legacy_test"):
+            meta["index_fingerprint"] = compute_index_fingerprint(meta)
         _write(root / "util" / "output" / "embedding_index.meta.json",
                json.dumps(meta, ensure_ascii=False))
-        _write(root / "util" / "output" / "embedding_index.npz", "dummy")
         return root
 
     def test_missing_index_returns_none(self):
@@ -81,6 +92,34 @@ class StaleSummaryTests(unittest.TestCase):
         self.assertEqual(["甲"], summary["changed"])
         self.assertEqual(["乙"], summary["removed"])
 
+    def test_path_change_causes_stale(self):
+        """條目 path 改變時，即使文本 hash 相同也應判定為 stale。"""
+        entry = {"title": "甲", "type": "主題", "path": "link_folder/主題/甲_新路徑.md", "aliases": []}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            correct = _hash(entry_embed_text("甲", entry, root=root))
+            root = self._root_with(
+                tmp,
+                {"甲": entry},
+                {"model": "m", "entries": [
+                    {"title": "甲", "path": "link_folder/主題/甲_舊路徑.md", "type": "主題", "hash": correct}
+                ]},
+            )
+            summary = stale_summary(root)
+        self.assertEqual(["甲"], summary["changed"])
+
+    def test_secondary_types_change_changes_embed_text_and_hash(self):
+        """次分類變更會使 entry_embed_text 與 hash 改變。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry1 = {"title": "甲", "type": "主題", "secondary_types": [], "path": "p", "aliases": []}
+            entry2 = {"title": "甲", "type": "主題", "secondary_types": ["神學"], "path": "p", "aliases": []}
+            t1 = entry_embed_text("甲", entry1, root=root)
+            t2 = entry_embed_text("甲", entry2, root=root)
+            self.assertNotIn("次分類：", t1)
+            self.assertIn("次分類：神學", t2)
+            self.assertNotEqual(_hash(t1), _hash(t2))
+
     def test_fresh_index_reports_clean(self):
         entry = {"title": "甲", "type": "主題", "path": "link_folder/主題/甲.md", "aliases": []}
         with tempfile.TemporaryDirectory() as tmp:
@@ -90,7 +129,7 @@ class StaleSummaryTests(unittest.TestCase):
                 tmp,
                 {"甲": entry, "甲別名": {"alias_of": "甲"}},  # alias 鍵應被忽略
                 {"model": "m", "entries": [
-                    {"title": "甲", "path": "p", "type": "主題", "hash": correct}
+                    {"title": "甲", "path": "link_folder/主題/甲.md", "type": "主題", "hash": correct}
                 ]},
             )
             summary = stale_summary(root)
@@ -378,6 +417,10 @@ class CandidateReportTests(unittest.TestCase):
             root = Path(tmp)
             (root / "01 創世記").mkdir(parents=True)
             _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"custom-reranker": {"calibrated": True, "score_high": 0.70}}})
+            )
+            _write(
                 root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
                 yaml.safe_dump({
                     "book": "創世記", "chapter": 1,
@@ -398,7 +441,7 @@ class CandidateReportTests(unittest.TestCase):
             content = path.read_text(encoding="utf-8")
 
         self.assertEqual(1, flagged)
-        self.assertIn("判定：⚠ 分類不相容", content)
+        self.assertIn("判定：⚠ 近鄰分類不相容", content)
 
     def test_rerank_low_score_suggests_new_entry(self):
         """Rerank 所有候選分數皆低（<0.40）時判定為建議新條目。"""
@@ -708,6 +751,213 @@ class CandidateReportTests(unittest.TestCase):
                     "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
                     reranker=failing_reranker, use_rerank=True, require_rerank=True,
                 )
+
+    def test_lexical_exact_separated_from_semantic_top1(self):
+        """字面完全命中（摩西/人物）與語義 Top1（摩西之歌/主題）分離，判決使用字面命中，不報分類衝突。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "摩西", "type": "人物"}],
+                }, allow_unicode=True),
+            )
+            link_index = {"摩西": {"title": "摩西", "type": "人物", "path": "link_folder/人物/摩西.md"}}
+            fake = _FakeIndex([[("摩西之歌", 0.95, {"title": "摩西之歌", "type": "主題", "path": "link_folder/主題/摩西之歌.md"})]])
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                use_rerank=False,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(0, flagged)
+        self.assertIn("判定：✅ 建議使用既有條目 [[摩西]]（同名／字面對應）", content)
+        self.assertNotIn("摩西之歌", content.split("判定：")[-1])
+
+    def test_lexical_type_mismatch_flags_warning(self):
+        """字面同名條目若與候選分類不相容，必須判定 ⚠ 字面分類不相容（不得 ✅）。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "摩西", "type": "主題"}],
+                }, allow_unicode=True),
+            )
+            link_index = {"摩西": {"title": "摩西", "type": "人物", "path": "link_folder/人物/摩西.md"}}
+            fake = _FakeIndex([[("摩西", 0.99, {"title": "摩西", "type": "人物", "path": "link_folder/人物/摩西.md"})]])
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                use_rerank=False,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 字面分類不相容", content)
+
+    def test_uncalibrated_low_score_flags_warning(self):
+        """未校準模型在低重排分數（如 0.10）時仍必須標 ⚠，不得輸出 🆕。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"test-reranker": {"calibrated": False}}})
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "罕見詞", "type": "神學"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("概念", 0.30, {"title": "概念", "type": "神學", "path": "p"})]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.10}]
+            fake_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 未校準模型", content)
+        self.assertNotIn("🆕", content)
+
+    def test_type_mismatch_rerank_intermediate_score_flags_warning(self):
+        """分類不相容候選在已校準模型給出中等重排分數（如 0.50）時必須標 ⚠ 近鄰分類不相容，不得輸出 🆕。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "_config" / "reranker_calibration.yaml",
+                yaml.safe_dump({"models": {"test-reranker": {"calibrated": True, "score_low": 0.40, "score_high": 0.70}}})
+            )
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "戰役", "type": "事件"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("某人物", 0.30, {"title": "某人物", "type": "人物", "path": "p"})]])
+
+            def fake_reranker(query, docs):
+                return [{"index": 0, "relevance_score": 0.50}]
+            fake_reranker.model_name = "test-reranker"
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                reranker=fake_reranker, use_rerank=True,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 近鄰分類不相容", content)
+        self.assertNotIn("🆕", content)
+
+    def test_type_mismatch_embedding_high_score_flags_warning(self):
+        """純 embedding 降級路徑中，分類不相容候選在高相似度（如 0.70 ≥ threshold）時必須標 ⚠ 近鄰分類不相容。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [{"name": "戰役", "type": "事件"}],
+                }, allow_unicode=True),
+            )
+            fake = _FakeIndex([[("某人物", 0.70, {"title": "某人物", "type": "人物", "path": "p"})]])
+
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index={}, homonyms={}, threshold=0.60,
+                use_rerank=False,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        self.assertIn("判定：⚠ 近鄰分類不相容", content)
+        self.assertNotIn("🆕", content)
+
+    def test_circuit_breaker_cause_chain_wrapped_errors(self):
+        """斷路器遍歷 cause 鏈：HTTP 500/429/Timeout 熔斷；HTTP 400/401/404 不熔斷。"""
+        import urllib.error
+        from model_client import ModelError
+        from semantic_lookup import _is_circuit_breaker_exception
+
+        http500 = urllib.error.HTTPError("url", 500, "Internal Error", {}, None)
+        http429 = urllib.error.HTTPError("url", 429, "Too Many Requests", {}, None)
+        http400 = urllib.error.HTTPError("url", 400, "Bad Request", {}, None)
+        http401 = urllib.error.HTTPError("url", 401, "Unauthorized", {}, None)
+        http404 = urllib.error.HTTPError("url", 404, "Not Found", {}, None)
+
+        # Wrapped in ModelError
+        err500 = ModelError("failed")
+        err500.__cause__ = http500
+        self.assertTrue(_is_circuit_breaker_exception(err500))
+
+        err429 = ModelError("rate limited")
+        err429.__cause__ = http429
+        self.assertTrue(_is_circuit_breaker_exception(err429))
+
+        err_timeout = ModelError("timed out")
+        err_timeout.__cause__ = TimeoutError("socket timeout")
+        self.assertTrue(_is_circuit_breaker_exception(err_timeout))
+
+        err400 = ModelError("bad request")
+        err400.__cause__ = http400
+        self.assertFalse(_is_circuit_breaker_exception(err400))
+
+        err401 = ModelError("unauthorized")
+        err401.__cause__ = http401
+        self.assertFalse(_is_circuit_breaker_exception(err401))
+
+        err404 = ModelError("not found")
+        err404.__cause__ = http404
+        self.assertFalse(_is_circuit_breaker_exception(err404))
+
+    def test_legacy_embedding_schema_and_vector_sha_mismatch(self):
+        """Legacy schema 或 vector SHA mismatch 時 SemanticIndex.load 必須拋出 ModelError。"""
+        from semantic_lookup import SemanticIndex
+        from model_client import ModelError
+        import numpy as np
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            meta_file = root / "embedding_index.meta.json"
+            vec_file = root / "embedding_index.npz"
+
+            # 1. Legacy Schema 1
+            meta_v1 = {"schema_version": 1, "model": "test-embed", "dim": 4, "entries": []}
+            _write(meta_file, json.dumps(meta_v1))
+            np.savez_compressed(vec_file, vectors=np.zeros((0, 4), dtype=np.float32))
+
+            with self.assertRaises(ModelError) as ctx:
+                SemanticIndex.load(meta_file=meta_file, vectors_file=vec_file, check_model=False)
+            self.assertIn("legacy schema", str(ctx.exception))
+
+            # 2. Vector SHA mismatch
+            meta_v2 = {
+                "schema_version": 2,
+                "model": "test-embed",
+                "dim": 4,
+                "vectors_sha256": "fake_hash",
+                "entries": [],
+            }
+            _write(meta_file, json.dumps(meta_v2))
+            with self.assertRaises(ModelError) as ctx:
+                SemanticIndex.load(meta_file=meta_file, vectors_file=vec_file, check_model=False)
+            self.assertIn("指紋不符", str(ctx.exception))
 
 
 if __name__ == "__main__":

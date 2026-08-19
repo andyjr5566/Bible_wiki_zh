@@ -75,6 +75,13 @@ def _file_sha256(path):
         return "error"
 
 
+def _safe_print(msg):
+    try:
+        print(msg)
+    except Exception:
+        pass
+
+
 def _load_calibration(root=ROOT):
     """載入 _config/reranker_calibration.yaml。"""
     calib_path = Path(root) / CALIBRATION_FILE_REL
@@ -89,15 +96,27 @@ def _load_calibration(root=ROOT):
 
 def _is_circuit_breaker_exception(exc):
     """判斷是否為端點／系統級錯誤（連線拒絕、逾時、429、5xx），需觸發斷路器。"""
-    if isinstance(exc, (TimeoutError, ConnectionRefusedError)):
-        return True
-    if isinstance(exc, urllib.error.URLError):
-        return True
-    if isinstance(exc, urllib.error.HTTPError):
-        return exc.code == 429 or exc.code >= 500
-    msg = str(exc).lower()
-    if any(k in msg for k in ["connection refused", "timed out", "timeout", "502", "503", "504", "429"]):
-        return True
+    curr = exc
+    seen = set()
+    while curr is not None and id(curr) not in seen:
+        seen.add(id(curr))
+        if isinstance(curr, urllib.error.HTTPError):
+            if curr.code == 429 or 500 <= curr.code < 600:
+                return True
+        elif isinstance(curr, urllib.error.URLError):
+            return True
+        elif isinstance(curr, (TimeoutError, ConnectionRefusedError)):
+            return True
+        msg = str(curr).lower()
+        if (
+            "connection refused" in msg
+            or "timed out" in msg
+            or "timeout" in msg
+            or re.search(r"\b429\b", msg)
+            or re.search(r"\b5\d\d\b", msg)
+        ):
+            return True
+        curr = getattr(curr, "__cause__", None) or getattr(curr, "__context__", None)
     return False
 
 
@@ -156,10 +175,28 @@ class SemanticIndex:
             raise ModelError(
                 "embedding 索引不存在；請先跑 python util/build_embedding_index.py"
             )
-        meta = json.loads(meta_file.read_text(encoding="utf-8"))
-        vectors = np.load(vectors_file)["vectors"]
+        try:
+            meta = json.loads(meta_file.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise ModelError(f"embedding meta 損壞：{exc}，請 --rebuild") from exc
+
+        if meta.get("schema_version") != 2 or not meta.get("vectors_sha256"):
+            raise ModelError(
+                "embedding 索引為 legacy schema；Schema v2 要求 --rebuild"
+            )
+        try:
+            vectors = np.load(vectors_file)["vectors"]
+        except Exception as exc:
+            raise ModelError(f"embedding vectors 讀取失敗：{exc}，請 --rebuild") from exc
+
         if len(meta.get("entries", [])) != vectors.shape[0]:
             raise ModelError("embedding 索引損壞：meta 與向量列數不符，請 --rebuild")
+
+        from build_embedding_index import _vectors_sha256
+        actual_sha = _vectors_sha256(vectors)
+        if actual_sha != meta.get("vectors_sha256"):
+            raise ModelError("embedding vectors 與 meta 指紋不符；索引可能損壞，請 --rebuild")
+
         if check_model:
             current = select_endpoint(task="embedding").get("model")
             if current and current != meta.get("model"):
@@ -399,11 +436,17 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             suggested = candidate.get("suggested_type") or candidate.get("type")
             preview, attention = _lexical_preview(name, link_index, homonyms)
 
-            match_type, matched, title = resolver.find_in_index(name, link_index)
-            is_exact_match = bool(
-                matched and not attention and
-                resolver.base_name(title) == base and
-                (not suggested or resolver.type_compatible(suggested, matched))
+            match_type, lexical_entry, lexical_title = resolver.find_in_index(name, link_index)
+            lexical_type_compat = (
+                not suggested
+                or not lexical_entry
+                or resolver.type_compatible(suggested, lexical_entry)
+            )
+            is_safe_lexical_match = bool(
+                lexical_entry
+                and not attention
+                and lexical_type_compat
+                and resolver.base_name(lexical_title) == base
             )
 
             lines.append(f"## {name}（{suggested or '?'}）")
@@ -430,7 +473,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             ranked_items = []
             has_rerank = False
 
-            if not is_exact_match and hits:
+            if not is_safe_lexical_match and hits:
                 rerankable_candidates += 1
                 if use_rerank and not circuit_open:
                     rerank_attempted += 1
@@ -459,15 +502,9 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         rerank_failed += 1
                         if _is_circuit_breaker_exception(exc):
                             circuit_open = True
-                            try:
-                                print(f"⚠️ Reranker 端點系統性失敗，觸發斷路器熔斷：{exc}")
-                            except Exception:
-                                pass
+                            _safe_print(f"⚠️ Reranker 端點系統性失敗，觸發斷路器熔斷：{exc}")
                         else:
-                            try:
-                                print(f"⚠️ 候選「{name}」Rerank 失敗（降級單筆）：{exc}")
-                            except Exception:
-                                pass
+                            _safe_print(f"⚠️ 候選「{name}」Rerank 失敗（降級單筆）：{exc}")
 
             if not ranked_items:
                 ranked_items = [
@@ -475,13 +512,8 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                     for t, s, e in hits
                 ]
 
-            # 產生表格與判定（嚴格遵循治理優先序）
+            # 產生表格與判定（嚴格遵循兩層治理優先序）
             if ranked_items:
-                top1 = ranked_items[0]
-                top2 = ranked_items[1] if len(ranked_items) > 1 else None
-                is_same_entity = resolver.base_name(top1["title"]) == base
-                is_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
-
                 if has_rerank:
                     lines.append("| Rank | Candidate | Similarity | Rerank | Path |")
                     lines.append("|---|---|---:|---:|---|")
@@ -491,43 +523,52 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {r_score_str} | {path_str} |")
                     lines.append("")
 
+                    top1 = ranked_items[0]
+                    top2 = ranked_items[1] if len(ranked_items) > 1 else None
                     top1_r = top1["rerank_score"] if top1["rerank_score"] is not None else 0.0
                     top2_r = top2["rerank_score"] if top2 and top2["rerank_score"] is not None else 0.0
                     margin = top1_r - top2_r if top2 and top2["rerank_score"] is not None else top1_r
                     lines.append(f"rerank_margin: {margin:.3f} (Top1 - Top2)")
 
-                    # 治理優先序判定
-                    score_low = calib_thresholds.get("score_low", 0.40) if is_calibrated else 0.40
+                    # --- 第一層：Deterministic Lexical Governance ---
                     if attention:
                         verdict = f"⚠ 字面解析有歧義／需人工確認（{preview}）"
                         flagged += 1
-                    elif is_exact_match or (is_same_entity and is_type_compat and not attention):
-                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（同名／字面對應）"
-                    elif top1_r < score_low:
-                        verdict = "🆕 建議建立新條目（既有條目相關度低）"
-                    elif not is_type_compat:
+                    elif lexical_entry and not lexical_type_compat:
                         verdict = (
-                            f"⚠ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
-                            f"若確為同實體請確認是否改用 [[{top1['title']}]]"
+                            f"⚠ 字面分類不相容（候選={suggested} vs 條目={lexical_entry.get('type')}），"
+                            f"若確為同實體請確認是否改用 [[{lexical_title}]]"
                         )
                         flagged += 1
-                    elif not is_calibrated:
-                        verdict = f"⚠ 未校準模型（{rerank_model}），評分僅供排序參考，需人工確認"
-                        flagged += 1
+                    elif is_safe_lexical_match:
+                        verdict = f"✅ 建議使用既有條目 [[{lexical_title}]]（同名／字面對應）"
                     else:
-                        score_high = calib_thresholds.get("score_high", 0.70)
-                        margin_high = calib_thresholds.get("margin_high", 0.20)
-                        margin_ambiguous = calib_thresholds.get("margin_ambiguous", 0.15)
-                        if top1_r >= score_high and margin >= margin_high:
-                            verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
-                        elif margin < margin_ambiguous:
-                            verdict = f"⚠ 候選相近（Top1 與 Top2 分數差距 {margin:.3f} < {margin_ambiguous:.2f}），需 Agent / 人工判斷"
-                            flagged += 1
-                        elif top1_r >= score_low:
-                            verdict = f"⚠ 相關度中等（{top1_r:.3f}），請確認是否使用既有條目 [[{top1['title']}]]"
+                        # --- 第二層：Semantic Advisory Governance（僅在第一層未決定時進入）---
+                        semantic_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
+                        if not is_calibrated:
+                            verdict = f"⚠ 未校準模型（{rerank_model}），評分僅供排序參考，需人工確認"
                             flagged += 1
                         else:
-                            verdict = "🆕 建議建立新條目（既有條目相關度低）"
+                            score_high = calib_thresholds.get("score_high", 0.70)
+                            score_low = calib_thresholds.get("score_low", 0.40)
+                            margin_high = calib_thresholds.get("margin_high", 0.20)
+                            margin_ambiguous = calib_thresholds.get("margin_ambiguous", 0.15)
+                            if top1_r < score_low:
+                                verdict = "🆕 建議建立新條目（既有條目相關度低）"
+                            elif not semantic_type_compat:
+                                verdict = (
+                                    f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                                    f"若確為同實體請確認是否改用 [[{top1['title']}]]"
+                                )
+                                flagged += 1
+                            elif top1_r >= score_high and margin >= margin_high:
+                                verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]"
+                            elif margin < margin_ambiguous:
+                                verdict = f"⚠ 候選相近（Top1 與 Top2 分數差距 {margin:.3f} < {margin_ambiguous:.2f}），需 Agent / 人工判斷"
+                                flagged += 1
+                            else:
+                                verdict = f"⚠ 相關度中等（{top1_r:.3f}），請確認是否使用既有條目 [[{top1['title']}]]"
+                                flagged += 1
                     lines.append(f"判定：{verdict}")
                 else:
                     lines.append("| Rank | Candidate | Similarity | Path |")
@@ -537,24 +578,33 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                         lines.append(f"| {r_rank} | {item['title']} | {item['sim_score']:.3f} | {path_str} |")
                     lines.append("")
 
-                    # 治理優先序判定 (純 embedding 降級路徑)
+                    top1 = ranked_items[0]
+                    # --- 第一層：Deterministic Lexical Governance ---
                     if attention:
                         verdict = f"⚠ 字面解析有歧義／需人工確認（{preview}）"
                         flagged += 1
-                    elif is_exact_match or (is_same_entity and is_type_compat and not attention):
-                        verdict = f"✅ 建議使用既有條目 [[{top1['title']}]]（同名／字面對應）"
-                    elif top1["sim_score"] >= threshold:
-                        if not is_type_compat:
+                    elif lexical_entry and not lexical_type_compat:
+                        verdict = (
+                            f"⚠ 字面分類不相容（候選={suggested} vs 條目={lexical_entry.get('type')}），"
+                            f"若確為同實體請確認是否改用 [[{lexical_title}]]"
+                        )
+                        flagged += 1
+                    elif is_safe_lexical_match:
+                        verdict = f"✅ 建議使用既有條目 [[{lexical_title}]]（同名／字面對應）"
+                    else:
+                        # --- 第二層：Semantic Advisory Governance（純 embedding 降級路徑）---
+                        semantic_type_compat = not suggested or resolver.type_compatible(suggested, top1["entry"])
+                        if top1["sim_score"] < threshold:
+                            verdict = "🆕 建議建立新條目（無高相似既有條目）"
+                        elif not semantic_type_compat:
                             verdict = (
-                                f"ⓘ 分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
-                                "若確為同實體請人工確認"
+                                f"⚠ 近鄰分類不相容（候選={suggested} vs 條目={top1['entry'].get('type')}），"
+                                f"若確為同實體請確認是否改用 [[{top1['title']}]]"
                             )
                             flagged += 1
                         else:
                             verdict = f"⚠ 語義相似度高（≥{threshold:.2f}），請確認是否同概念改用 [[{top1['title']}]]"
                             flagged += 1
-                    else:
-                        verdict = "🆕 建議建立新條目（無高相似既有條目）"
                     lines.append(f"判定：{verdict}")
             else:
                 lines.append("（無相似條目）")

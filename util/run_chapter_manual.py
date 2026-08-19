@@ -136,8 +136,8 @@ def _require_candidate_similarity(ctx):
     except ImportError:
         from check_chapter_files import check_candidate_similarity_freshness
 
-    ok, reason = check_candidate_similarity_freshness(ctx.book, ctx.chapter, root=ctx.root)
-    if not ok:
+    fresh, reason, _ = check_candidate_similarity_freshness(ctx.book, ctx.chapter, root=ctx.root)
+    if not fresh:
         raise SourceError(
             f"candidate_similarity.md 不存在或已過期（{reason}）。\n"
             f"  請先執行：python util/semantic_lookup.py --candidates {ctx.book} {ctx.chapter}\n"

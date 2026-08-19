@@ -81,8 +81,13 @@ def _clean_section(content):
     return " ".join(text.split())
 
 
+def _vectors_sha256(vectors):
+    arr = np.ascontiguousarray(vectors, dtype=np.float32)
+    return hashlib.sha256(arr.tobytes()).hexdigest()
+
+
 def entry_embed_text(title, entry, root=ROOT):
-    """條目的 embedding 文本：標題＋分類＋別名，再依優先序併入多段內文。
+    """條目的 embedding 文本：標題＋分類＋次分類＋別名，再依優先序併入多段內文。
 
     塞進定義、主題發展、相關條目、按書卷累積，讓模型能萃取更多特徵；
     段落依 SECTION_PRIORITY 排序後截斷，最有鑑別度的定義永遠保留。
@@ -90,6 +95,9 @@ def entry_embed_text(title, entry, root=ROOT):
     parts = [title]
     if entry.get("type"):
         parts.append(f"分類：{entry['type']}")
+    secondary = entry.get("secondary_types") or []
+    if secondary:
+        parts.append("次分類：" + "、".join(secondary))
     aliases = [a for a in entry.get("aliases") or [] if a and a != title]
     if aliases:
         parts.append("別名：" + "、".join(aliases))
@@ -121,14 +129,23 @@ def embedding_model():
 
 
 def load_stored(meta_file=META_FILE, vectors_file=VECTORS_FILE):
-    """讀既有索引；不存在回 (None, None)。"""
+    """讀既有索引；不存在回 (None, None)。若為 legacy schema 則主動拒絕。"""
     if not (meta_file.exists() and vectors_file.exists()):
         return None, None
     meta = json.loads(meta_file.read_text(encoding="utf-8"))
+    if meta.get("schema_version") != 2 or not meta.get("vectors_sha256"):
+        raise ModelError(
+            "embedding 索引為 legacy schema；Schema v2 不允許沿用舊向量，"
+            "請執行 python util/build_embedding_index.py --rebuild"
+        )
     vectors = np.load(vectors_file)["vectors"]
     if len(meta.get("entries", [])) != vectors.shape[0]:
         raise ModelError(
             "embedding 索引損壞：meta 條目數與向量列數不符，請 --rebuild"
+        )
+    if _vectors_sha256(vectors) != meta.get("vectors_sha256"):
+        raise ModelError(
+            "embedding vectors 與 meta 指紋不符；索引可能損壞，請 --rebuild"
         )
     return meta, vectors
 
@@ -159,13 +176,17 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
                     "向量跨模型不可比，請跑 --rebuild"
                 )
             old_rows = {
-                item["title"]: (i, item["hash"])
+                item["title"]: (i, item["hash"], item.get("path", ""))
                 for i, item in enumerate(meta["entries"])
             }
 
     todo = [
         title for title in texts
-        if title not in old_rows or old_rows[title][1] != hashes[title]
+        if (
+            title not in old_rows
+            or old_rows[title][1] != hashes[title]
+            or old_rows[title][2] != link_index[title].get("path", "")
+        )
     ]
     removed = [title for title in old_rows if title not in texts]
     reused = len(texts) - len(todo)
@@ -207,16 +228,19 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
     matrix = _normalize(matrix)
 
     meta = {
+        "schema_version": 2,
         "model": model,
         "dim": dim,
         "input_type": INDEX_INPUT_TYPE,
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        "vectors_sha256": _vectors_sha256(matrix),
         "entries": [
             {
                 "title": title,
                 "path": link_index[title].get("path", ""),
                 "type": link_index[title].get("type", ""),
                 "secondary_types": link_index[title].get("secondary_types", []),
+                "aliases": [a for a in link_index[title].get("aliases", []) if a and a != title],
                 "hash": hashes[title],
             }
             for title in titles
@@ -233,24 +257,33 @@ def build(rebuild=False, batch_size=BATCH_SIZE, root=ROOT):
 
 
 def compute_index_fingerprint(meta):
-    """計算索引 meta 的確定性指紋（model + dim + 所有條目 hash 總成）。"""
+    """計算索引 meta 的確定性指紋（schema_version + model + dim + input_type + vectors_sha256 + 條目明細）。"""
     if not isinstance(meta, dict):
         return "none"
+    if meta.get("schema_version") != 2 or not meta.get("vectors_sha256"):
+        return "legacy_stale"
     h = hashlib.sha256()
+    h.update(str(meta.get("schema_version", "")).encode("utf-8"))
     h.update(str(meta.get("model", "")).encode("utf-8"))
     h.update(str(meta.get("dim", "")).encode("utf-8"))
+    h.update(str(meta.get("input_type", "")).encode("utf-8"))
+    h.update(str(meta.get("vectors_sha256", "")).encode("utf-8"))
     for item in sorted(meta.get("entries", []), key=lambda x: x.get("title", "")):
-        h.update(f"{item.get('title')}:{item.get('hash')}".encode("utf-8"))
+        title = item.get("title", "")
+        path = item.get("path", "")
+        entry_hash = item.get("hash", "")
+        entry_type = item.get("type", "")
+        sec_types = ",".join(item.get("secondary_types") or [])
+        aliases = ",".join(item.get("aliases") or [])
+        h.update(f"{title}:{path}:{entry_hash}:{entry_type}:{sec_types}:{aliases}".encode("utf-8"))
     return h.hexdigest()[:16]
 
 
 def stale_summary(root=ROOT):
     """比對索引 meta 與現行條目庫（純雜湊，不打網路、不讀端點設定）。
 
-    回傳 {"model", "total", "changed": [...], "removed": [...]}；
-    索引檔不存在回 None。供 --check 與 check_chapter_files 判斷
-    「本章新增／修改的條目是否已進索引」——這是機械可證的同步檢查，
-    與相似度判斷（不可證、只附註）分屬兩事。
+    回傳 {"model", "total", "changed": [...], "removed": [...], "legacy_schema": bool}；
+    索引檔不存在回 None。
     """
     root = Path(root)
     output = root / "util" / "output"
@@ -259,19 +292,40 @@ def stale_summary(root=ROOT):
     link_index_file = output / "link_index.json"
     if not (meta_file.exists() and vectors_file.exists()):
         return None
-    meta = json.loads(meta_file.read_text(encoding="utf-8"))
+    try:
+        meta = json.loads(meta_file.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    if meta.get("schema_version") != 2 or not meta.get("vectors_sha256"):
+        return {
+            "model": meta.get("model"),
+            "total": 0,
+            "changed": ["__LEGACY_SCHEMA__"],
+            "removed": [],
+            "legacy_schema": True,
+        }
     link_index = load_link_index(link_index_file)
-    stored = {item["title"]: item["hash"] for item in meta.get("entries", [])}
-    changed = [
-        title for title, entry in link_index.items()
-        if stored.get(title) != _hash(entry_embed_text(title, entry, root=root))
-    ]
+    stored = {
+        item["title"]: {
+            "hash": item.get("hash"),
+            "path": item.get("path", ""),
+        }
+        for item in meta.get("entries", [])
+    }
+    changed = []
+    for title, entry in link_index.items():
+        cur_hash = _hash(entry_embed_text(title, entry, root=root))
+        cur_path = entry.get("path", "")
+        st = stored.get(title)
+        if not st or st.get("hash") != cur_hash or st.get("path") != cur_path:
+            changed.append(title)
     removed = [title for title in stored if title not in link_index]
     return {
         "model": meta.get("model"),
         "total": len(link_index),
         "changed": changed,
         "removed": removed,
+        "legacy_schema": False,
     }
 
 
@@ -279,6 +333,9 @@ def check(root=ROOT):
     summary = stale_summary(root)
     if summary is None:
         print("❌ embedding 索引不存在；請跑 python util/build_embedding_index.py（首次全量建立）")
+        return 1
+    if summary.get("legacy_schema"):
+        print("❌ embedding 索引為 legacy schema；請跑 python util/build_embedding_index.py --rebuild")
         return 1
     try:
         current = embedding_model()
