@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_3.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 51,
+      "words": 599,
+      "first": "Num 3:1",
+      "last": "Num 3:51",
+      "sha256": "3500e63fe5d247e470ede73794a8ed1f417079bdeb782b3005140a9d5f63ce2c",
+      "bytes": 116614,
+      "chars": 101008,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

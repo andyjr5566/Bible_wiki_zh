@@ -1,7 +1,6 @@
 book: 民數記
 chapter: 3
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 利未支派
   suggested_type: 人物
   match_type: exact
@@ -57,30 +56,63 @@ B_needs_update:
   match_type: exact
   existing_title: 十二支派起源
   existing_path: link_folder/神學/十二支派起源.md
+- name: 利未三族分工
+  suggested_type: 事件
+  match_type: exact
+  existing_title: 利未三族分工
+  existing_path: link_folder/事件/利未三族分工.md
 - name: 利未人代替長子
   suggested_type: 神學
   match_type: exact
   existing_title: 利未人代替長子
   existing_path: link_folder/神學/利未人代替長子.md
-C_new_formal:
-- name: 利未三族分工
-  suggested_type: 事件
-  target_path: link_folder/事件/利未三族分工.md
-  semantic_hint:
-  - title: 利未支派
-    score: 0.543
-    type: 人物
-  - title: 利未
-    score: 0.501
-    type: 人物
-  - title: 利未人受聖職討罪
-    score: 0.445
-    type: 事件
 - name: 贖銀五舍客勒
   suggested_type: 文化
   surfaces:
   - phrase: 贖銀
   - phrase: 五舍客勒
-  target_path: link_folder/文化/贖銀五舍客勒.md
+  match_type: exact
+  existing_title: 贖銀五舍客勒
+  existing_path: link_folder/文化/贖銀五舍客勒.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 民3:1「耶和華在西乃山曉諭摩西的日子，亞倫和摩西的後代如下」——本章開頭把亞倫列在摩西之前。CT 給兩個理由：亞倫是長子，而且「摩西作為以色列人的領袖，他的職位並不傳給他的子孫」。GT
+    丁良才說得更完整：「亞倫的名字記在先，不但因為亞倫是長子，也是因為摩西的職任只屬本人一身（摩西的兒子被列在利未人中，代上二十三14），亞倫的職任卻要歸與他的子孫，故此本章只提到亞倫的後裔，未曾論及摩西的子孫。」GT《聖經精讀本》補一句：沒有記錄摩西的後代，可能是因為他們都是普通的利未人（代上23:4-17）。全章由摩西執行數點（v16、39、42、49），並由他把贖銀交給亞倫（v51）。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: 民3:1「耶和華在西乃山曉諭摩西的日子」，v14 則作「耶和華在西乃的曠野曉諭摩西說」——同一章裡山與曠野並用。CT 說 v1 指的是出埃及後第二年二月初一日（參民1:1），「或者指其後的短暫日子」；GT
+    丁良才說法相同：「就是以色列人出埃及以後第二年二月初一日（一1），不然，就是大概的話。」BH 指出西乃山是神頒布十誡與律法之處，是立約與啟示的地方，也預表信徒要聚集的天上錫安山（來12:18-24）。
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: 民3:47「你要按人丁，照聖所的平，每人取贖銀五舍客勒（一舍客勒是二十季拉）」。CT 的原文字義指出一件事：「『平』(原文與「舍客勒」同字)」——STEP
+    原文資料印證這一點，本節三處（五舍客勒、聖所的平、一舍客勒）同為 Strong H8255，原形 שֶׁ֫קֶל（she.qel）。GT《啟導本》給換算：一舍客勒約合今11.4克，一季拉約合今0.6克，而全部贖銀1365舍客勒約合今15.5公斤。CT
+    給的換算略有出入：五舍客勒「約折合57點5公克」、1365舍客勒「約折合15697點5公克」。GT《舊約聖經背景註釋》說舍客勒的平均重量是十一又五分之二克，並指出古籍另提到可能更重的「重舍客勒」，而「此處提及的聖所法碼可能較『市用』舍客勒標準更有價值和重量」；它並換算出五舍客勒「大約相等於半年的工資」。
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+B_needs_update: []
+C_new_formal:
+- name: 利未人總數的三百之差
+  suggested_type: 解經爭議
+  evidence: 民3:39 說被數的利未人「共有二萬二千名」，但把三族的分數加起來（革順7,500、哥轄8,600、米拉利6,200）卻是22,300，多出三百。CT
+    指出這個差額，並提出版本證據：「《希臘文七十士譯本》哥轄族是八千三百名，而非八千六百名。」GT《啟導本》採同一條路並說明原因：「這多出來的300人來自抄寫的錯誤。28節哥轄族的總男丁數應為8300」，因為「3」與「6」的希伯來文字形極易誤抄。GT《民數記串珠聖經註釋》先記下猶太拉比的說法——「這三百名是利未人長子之數，他們不能代替以色列的長子」——但隨即指出這個算法「未有在15節預先聲明，本章也沒有記載點算利未人長子的指示」，因此判斷「較佳的解釋」仍是抄寫之誤。GT
+    丁良才與《聖經精讀本》則採拉比那條路：丁良才說「這三百名大概是利未人頭生的男子，所以不能代替別人」，精讀本說得更明確：利未支派的長子也是分別為聖歸耶和華的，「所以不能代替其他支派的長子」。
+  target_path: link_folder/解經爭議/利未人總數的三百之差.md
+  semantic_hint:
+  - title: 利未支派
+    score: 0.522
+    type: 人物
+  - title: 數點利未任職男子
+    score: 0.507
+    type: 事件
+  - title: 利未
+    score: 0.474
+    type: 人物
 D_new_candidate: []
 E_skip: []
