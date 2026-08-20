@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 9,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 130013,
+        "bytes": 172619
+      },
+      "after": {
+        "chars": 11992,
+        "bytes": 19796
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_numbers_9.txt",
+          "chars": 8548,
+          "bytes": 24526
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_numbers_9.txt",
+          "chars": 6532,
+          "bytes": 18032
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_numbers_9.txt",
+          "chars": 11170,
+          "bytes": 11248
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_numbers_9.txt",
+          "chars": 41490,
+          "bytes": 41552
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_numbers_9.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 57361,
+          "raw_bytes": 66460,
+          "projected_chars": 6494,
+          "projected_bytes": 7428,
+          "occurrences": 89,
+          "occurrence_count": 89,
+          "lexicon_entries": 7,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 7,
+          "truncated": true,
+          "returned_chars": 6494,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

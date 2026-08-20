@@ -51,12 +51,12 @@ A_use_directly:
   match_type: exact
   existing_title: 逾越節羔羊
   existing_path: link_folder/歷史/逾越節羔羊.md
-- name: 剪除(kareth)
+- name: 剪除
   suggested_type: 原文
   evidence: 若有人潔淨且未行路，卻推辭不守逾越節，那人必須從民中剪除，擔當自己的罪。
-  match_type: normalized
-  existing_title: 剪除（kareth）
-  existing_path: link_folder/原文/剪除（kareth）.md
+  match_type: exact
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
 - name: 寄居的與本地人同歸一例
   suggested_type: 主題
   evidence: 外人若願意向耶和華守逾越節，其律例典章與本地人同歸一例。
@@ -79,7 +79,44 @@ A_use_directly:
   match_type: exact
   existing_title: 雲柱火柱
   existing_path: link_folder/歷史/雲柱火柱.md
-B_needs_update: []
+- name: 法櫃的帳幕
+  suggested_type: 地點
+  evidence: v15「就是法櫃的帳幕」；CT 原文字義註「法櫃」見證，並指出會幕中最重要的物件就是約櫃。
+  match_type: exact
+  existing_title: 法櫃的帳幕
+  existing_path: link_folder/地點/法櫃的帳幕.md
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1、4、5、6、8、9、23 貫穿全章：神在西乃曠野吩咐摩西守逾越節，不潔的人到摩西面前申訴，摩西說「你們暫且等候，我可以去聽耶和華指著你們是怎樣吩咐的」，末節「都是憑耶和華吩咐摩西的」。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: v6「當日他們到摩西、亞倫面前」；BH 指出摩西與亞倫代表律法與祭司職分，是中保角色。
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: v15「立起帳幕的那日，有雲彩遮蓋帳幕，就是法櫃的帳幕」；v17-22 雲彩在帳幕上停住或收上去，決定安營與起行。
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 希西家守二月逾越節（代下三十）
+  suggested_type: 互文
+  evidence: GT 丁良才在 v11 指出：「後來希西家照本節的規矩，就將大逾越節改了挪到第二月（代下三十1-15）。」KC 也引代下30:18-20 希西家為未潔淨卻吃逾越節的人禱告、耶和華醫治百姓，作為本章條例的實例。
+  match_type: exact
+  existing_title: 希西家守二月逾越節（代下三十）
+  existing_path: link_folder/互文/希西家守二月逾越節（代下三十）.md
+- name: 三位祭司能否宰殺所有逾越節羊羔
+  suggested_type: 解經爭議
+  evidence: GT 丁良才在 v3 提出：「有人看三位祭司不能宰殺逾越節那麼多的羊羔，把血都灑在壇上。」他給了兩個解法：本次逾越節的禮節與後來不同（申16:5
+    或暗示家長早已在別處宰羊羔），或另有利未人與祭司幫忙（出24:5、代下30:16、35:11）。
+  match_type: exact
+  existing_title: 三位祭司能否宰殺所有逾越節羊羔
+  existing_path: link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md
 C_new_formal: []
 D_new_candidate: []
 E_skip: []

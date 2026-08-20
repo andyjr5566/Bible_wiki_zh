@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_9.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 354,
+      "first": "Num 9:1",
+      "last": "Num 9:23",
+      "sha256": "4dc06759121eaaf17ad9b7d385015c3ef524fae6c57048e6942ab110fb50978e",
+      "bytes": 66460,
+      "chars": 57882,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
