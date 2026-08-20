@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_1.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 54,
+      "words": 588,
+      "first": "Num 1:1",
+      "last": "Num 1:54",
+      "sha256": "446d11e76df815cb53f094a15d9d0dec84a12ad4834a982f80074f14c2ac2a64",
+      "bytes": 115393,
+      "chars": 99887,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
