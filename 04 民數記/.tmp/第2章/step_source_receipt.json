@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_2.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 341,
+      "first": "Num 2:1",
+      "last": "Num 2:34",
+      "sha256": "0f2b0470efdee8802bb851a07fd0f65cbce7573d8d6684e4757bdf5f35ded5e5",
+      "bytes": 68409,
+      "chars": 59185,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
