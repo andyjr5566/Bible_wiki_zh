@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 27,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 188048,
+        "bytes": 260810
+      },
+      "after": {
+        "chars": 13047,
+        "bytes": 21893
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_27.txt",
+          "chars": 14758,
+          "bytes": 41836
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_27.txt",
+          "chars": 15033,
+          "bytes": 42043
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_27.txt",
+          "chars": 12479,
+          "bytes": 12521
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_27.txt",
+          "chars": 62942,
+          "bytes": 62958
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_27.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 77375,
+          "raw_bytes": 89045,
+          "projected_chars": 6984,
+          "projected_bytes": 8042,
+          "occurrences": 99,
+          "occurrence_count": 99,
+          "lexicon_entries": 5,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 5,
+          "truncated": true,
+          "returned_chars": 6984,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}
