@@ -4,7 +4,7 @@ book: 民數記
 chapter: 8
 candidate_sha256: 57e28bc54fdffc20198d34417de17d841a0252b726d3278f8d6103e4a49f6491
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: a2b0b6eaf890df37
+embedding_index_fingerprint: 9bd8cf25f1adf11a
 link_index_sha256: e3bfbe30f5e5ada8b54a60b501e666a3ea23a832b0ec77bfd9e794f8bdb2875d
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -36,7 +36,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 耶和華 | 0.570 | link_folder/神學/耶和華.md |
+| 1 | 耶和華 | 0.572 | link_folder/神學/耶和華.md |
 | 2 | 耶和華神的名字 | 0.559 | link_folder/神學/耶和華神的名字.md |
 | 3 | 耶和華我是 | 0.499 | link_folder/神學/耶和華我是.md |
 | 4 | 耶和華永生神 | 0.477 | link_folder/神學/耶和華永生神.md |
@@ -94,7 +94,7 @@ query:
 | 2 | 閒雜人 | 0.396 | link_folder/人物/閒雜人.md |
 | 3 | 以米人 | 0.389 | link_folder/人物/以米人.md |
 | 4 | 希伯來人 | 0.386 | link_folder/人物/希伯來人.md |
-| 5 | 摩押人 | 0.382 | link_folder/人物/摩押人.md |
+| 5 | 以色列 | 0.385 | link_folder/原文/以色列.md |
 
 判定：⚠ 字面解析有歧義／需人工確認（經 alias 導向「以色列」——名稱不同，請確認確為同一實體）
 
@@ -113,7 +113,7 @@ query:
 | 1 | 利未支派 | 0.636 | link_folder/人物/利未支派.md |
 | 2 | 利未人代替長子 | 0.610 | link_folder/神學/利未人代替長子.md |
 | 3 | 利未人受職與祭司受職的差別 | 0.603 | link_folder/主題/利未人受職與祭司受職的差別.md |
-| 4 | 潔淨 | 0.575 | link_folder/神學/潔淨.md |
+| 4 | 潔淨 | 0.573 | link_folder/神學/潔淨.md |
 | 5 | 利未 | 0.559 | link_folder/人物/利未.md |
 
 判定：⚠ 字面解析有歧義／需人工確認（經 alias 導向「利未支派」——名稱不同，請確認確為同一實體）
@@ -151,7 +151,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 除罪水 | 0.748 | link_folder/主題/除罪水.md |
-| 2 | 潔淨 | 0.621 | link_folder/神學/潔淨.md |
+| 2 | 潔淨 | 0.619 | link_folder/神學/潔淨.md |
 | 3 | 活水（潔淨儀式用） | 0.585 | link_folder/原文/活水（潔淨儀式用）.md |
 | 4 | 除污穢的水 | 0.578 | link_folder/神學/除污穢的水.md |
 | 5 | 牛灰活水預表聖靈潔淨（約7：38-39） | 0.577 | link_folder/互文/牛灰活水預表聖靈潔淨（約7：38-39）.md |
@@ -270,7 +270,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 按手 | 0.647 | link_folder/原文/按手.md |
+| 1 | 按手 | 0.701 | link_folder/原文/按手.md |
 | 2 | 按手在犯人頭上作見證（利24：14） | 0.574 | link_folder/主題/按手在犯人頭上作見證（利24：14）.md |
 | 3 | 按手認罪（承認罪孽轉移） | 0.518 | link_folder/主題/按手認罪（承認罪孽轉移）.md |
 | 4 | 古代近東的獻祭與燔祭習俗 | 0.491 | link_folder/背景/古代近東的獻祭與燔祭習俗.md |
@@ -330,7 +330,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 潔淨 | 0.739 | link_folder/神學/潔淨.md |
+| 1 | 潔淨 | 0.737 | link_folder/神學/潔淨.md |
 | 2 | 你們要聖潔因為我是聖潔的 | 0.611 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
 | 3 | 潔淨與不潔淨 | 0.600 | link_folder/神學/潔淨與不潔淨.md |
 | 4 | 自潔 | 0.599 | link_folder/神學/自潔.md |
@@ -388,9 +388,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 利未人任職年齡的差異 | 0.745 | link_folder/解經爭議/利未人任職年齡的差異.md |
-| 2 | 工作（baabodath） | 0.672 | link_folder/原文/工作（baabodath）.md |
-| 3 | 三十歲直到五十歲（利未人任職年齡） | 0.661 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
+| 1 | 利未人任職年齡的差異 | 0.839 | link_folder/解經爭議/利未人任職年齡的差異.md |
+| 2 | 三十歲直到五十歲（利未人任職年齡） | 0.696 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
+| 3 | 工作（baabodath） | 0.672 | link_folder/原文/工作（baabodath）.md |
 | 4 | 辦事（melakah） | 0.589 | link_folder/原文/辦事（melakah）.md |
 | 5 | 利未支派 | 0.547 | link_folder/人物/利未支派.md |
 
@@ -407,9 +407,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 三十歲直到五十歲（利未人任職年齡） | 0.721 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
+| 1 | 三十歲直到五十歲（利未人任職年齡） | 0.806 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
 | 2 | 工作（baabodath） | 0.688 | link_folder/原文/工作（baabodath）.md |
-| 3 | 利未人任職年齡的差異 | 0.642 | link_folder/解經爭議/利未人任職年齡的差異.md |
+| 3 | 利未人任職年齡的差異 | 0.666 | link_folder/解經爭議/利未人任職年齡的差異.md |
 | 4 | 辦事（melakah） | 0.637 | link_folder/原文/辦事（melakah）.md |
 | 5 | 利未支派 | 0.630 | link_folder/人物/利未支派.md |
 

@@ -4,7 +4,7 @@ book: 民數記
 chapter: 9
 candidate_sha256: 9fc10e14a7b32b802da2e5455690c573201459778bb000da1aad9632641bd2f7
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 1e389c60cf1d9b61
+embedding_index_fingerprint: 9bd8cf25f1adf11a
 link_index_sha256: e3bfbe30f5e5ada8b54a60b501e666a3ea23a832b0ec77bfd9e794f8bdb2875d
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -37,10 +37,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 逾越節 | 0.645 | link_folder/歷史/逾越節.md |
+| 1 | 逾越節 | 0.652 | link_folder/歷史/逾越節.md |
 | 2 | 在黃昏的時候 | 0.529 | link_folder/原文/在黃昏的時候.md |
-| 3 | 希西家守二月逾越節（代下三十） | 0.519 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
-| 4 | 過紅海 | 0.513 | link_folder/歷史/過紅海.md |
+| 3 | 過紅海 | 0.513 | link_folder/歷史/過紅海.md |
+| 4 | 補行逾越節 | 0.508 | link_folder/歷史/補行逾越節.md |
 | 5 | 節期與紀念 | 0.503 | link_folder/主題/節期與紀念.md |
 
 判定：✅ 建議使用既有條目 [[逾越節]]（同名／字面對應）
@@ -56,7 +56,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西乃的曠野 | 0.708 | link_folder/地點/西乃的曠野.md |
+| 1 | 西乃的曠野 | 0.710 | link_folder/地點/西乃的曠野.md |
 | 2 | 以色列到達西乃山 | 0.641 | link_folder/事件/以色列到達西乃山.md |
 | 3 | 西乃 | 0.633 | link_folder/地點/西乃.md |
 | 4 | 曠野 | 0.622 | link_folder/地點/曠野.md |
@@ -75,11 +75,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 死屍不潔 | 0.744 | link_folder/神學/死屍不潔.md |
+| 1 | 死屍不潔 | 0.733 | link_folder/神學/死屍不潔.md |
 | 2 | 民19：11-13 | 0.567 | link_folder/互文/民19：11-13.md |
 | 3 | 不可挨近死屍（拿細耳人的潔淨） | 0.540 | link_folder/主題/不可挨近死屍（拿細耳人的潔淨）.md |
 | 4 | 潔淨與不潔淨 | 0.533 | link_folder/神學/潔淨與不潔淨.md |
-| 5 | 補行逾越節 | 0.528 | link_folder/歷史/補行逾越節.md |
+| 5 | 補行逾越節 | 0.507 | link_folder/歷史/補行逾越節.md |
 
 判定：✅ 建議使用既有條目 [[死屍不潔]]（同名／字面對應）
 
@@ -94,10 +94,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 補行逾越節 | 0.760 | link_folder/歷史/補行逾越節.md |
-| 2 | 遠方行路 | 0.632 | link_folder/文化/遠方行路.md |
-| 3 | 希西家守二月逾越節（代下三十） | 0.538 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
-| 4 | 逾越節 | 0.504 | link_folder/歷史/逾越節.md |
+| 1 | 補行逾越節 | 0.740 | link_folder/歷史/補行逾越節.md |
+| 2 | 希西家守二月逾越節（代下三十） | 0.556 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
+| 3 | 遠方行路 | 0.551 | link_folder/文化/遠方行路.md |
+| 4 | 逾越節 | 0.508 | link_folder/歷史/逾越節.md |
 | 5 | 二月逾越節是否只有一天、不必除酵 | 0.504 | link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md |
 
 判定：✅ 建議使用既有條目 [[補行逾越節]]（同名／字面對應）
@@ -113,9 +113,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 遠方行路 | 0.789 | link_folder/文化/遠方行路.md |
-| 2 | 補行逾越節 | 0.582 | link_folder/歷史/補行逾越節.md |
-| 3 | 希西家守二月逾越節（代下三十） | 0.430 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
+| 1 | 遠方行路 | 0.643 | link_folder/文化/遠方行路.md |
+| 2 | 補行逾越節 | 0.553 | link_folder/歷史/補行逾越節.md |
+| 3 | 希西家守二月逾越節（代下三十） | 0.451 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
 | 4 | 以本月為正月 | 0.403 | link_folder/主題/以本月為正月.md |
 | 5 | 二月逾越節是否只有一天、不必除酵 | 0.389 | link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md |
 
@@ -132,7 +132,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 無酵餅 | 0.661 | link_folder/原文/無酵餅.md |
+| 1 | 無酵餅 | 0.659 | link_folder/原文/無酵餅.md |
 | 2 | 無酵節 | 0.603 | link_folder/歷史/無酵節.md |
 | 3 | 逾越節的吃法 | 0.575 | link_folder/歷史/逾越節的吃法.md |
 | 4 | 除酵 | 0.559 | link_folder/原文/除酵.md |
@@ -151,10 +151,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 苦菜 | 0.754 | link_folder/原文/苦菜.md |
+| 1 | 苦菜 | 0.749 | link_folder/原文/苦菜.md |
 | 2 | 逾越節的吃法 | 0.610 | link_folder/歷史/逾越節的吃法.md |
-| 3 | 逾越節 | 0.532 | link_folder/歷史/逾越節.md |
-| 4 | 逾越節羔羊 | 0.480 | link_folder/歷史/逾越節羔羊.md |
+| 3 | 逾越節 | 0.534 | link_folder/歷史/逾越節.md |
+| 4 | 逾越節羔羊 | 0.484 | link_folder/歷史/逾越節羔羊.md |
 | 5 | 逾越（Pesach） | 0.472 | link_folder/原文/逾越（Pesach）.md |
 
 判定：✅ 建議使用既有條目 [[苦菜]]（同名／字面對應）
@@ -171,11 +171,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 逾越節羔羊 | 0.686 | link_folder/歷史/逾越節羔羊.md |
+| 1 | 逾越節羔羊 | 0.705 | link_folder/歷史/逾越節羔羊.md |
 | 2 | 基督預表（逾越節羔羊） | 0.646 | link_folder/神學/基督預表（逾越節羔羊）.md |
 | 3 | 約翰福音十九36 羔羊骨頭不折 | 0.642 | link_folder/互文/約翰福音十九36 羔羊骨頭不折.md |
 | 4 | 逾越節的吃法 | 0.626 | link_folder/歷史/逾越節的吃法.md |
-| 5 | 逾越節 | 0.618 | link_folder/歷史/逾越節.md |
+| 5 | 逾越節 | 0.620 | link_folder/歷史/逾越節.md |
 
 判定：✅ 建議使用既有條目 [[逾越節羔羊]]（同名／字面對應）
 
@@ -210,7 +210,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 寄居的與本地人同歸一例 | 0.695 | link_folder/主題/寄居的與本地人同歸一例.md |
+| 1 | 寄居的與本地人同歸一例 | 0.698 | link_folder/主題/寄居的與本地人同歸一例.md |
 | 2 | 逾越節條例（外邦人與寄居者） | 0.677 | link_folder/歷史/逾越節條例（外邦人與寄居者）.md |
 | 3 | 本地人與寄居者同歸一例的律法精神 | 0.647 | link_folder/神學/本地人與寄居者同歸一例的律法精神.md |
 | 4 | 寄居的 | 0.637 | link_folder/原文/寄居的.md |
@@ -230,7 +230,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 雲柱火柱 | 0.715 | link_folder/歷史/雲柱火柱.md |
+| 1 | 雲柱火柱 | 0.739 | link_folder/歷史/雲柱火柱.md |
 | 2 | 雲彩 | 0.656 | link_folder/原文/雲彩.md |
 | 3 | 法櫃的帳幕 | 0.633 | link_folder/地點/法櫃的帳幕.md |
 | 4 | 拔營起行 | 0.555 | link_folder/歷史/拔營起行.md |
@@ -325,11 +325,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 希西家守二月逾越節（代下三十） | 0.713 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
-| 2 | 逾越節 | 0.559 | link_folder/歷史/逾越節.md |
-| 3 | 補行逾越節 | 0.531 | link_folder/歷史/補行逾越節.md |
+| 1 | 希西家守二月逾越節（代下三十） | 0.865 | link_folder/互文/希西家守二月逾越節（代下三十）.md |
+| 2 | 補行逾越節 | 0.623 | link_folder/歷史/補行逾越節.md |
+| 3 | 逾越節 | 0.559 | link_folder/歷史/逾越節.md |
 | 4 | 以本月為正月 | 0.528 | link_folder/主題/以本月為正月.md |
-| 5 | 逾越（Pesach） | 0.493 | link_folder/原文/逾越（Pesach）.md |
+| 5 | 三位祭司能否宰殺所有逾越節羊羔 | 0.493 | link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md |
 
 判定：✅ 建議使用既有條目 [[希西家守二月逾越節（代下三十）]]（同名／字面對應）
 
@@ -344,9 +344,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 三位祭司能否宰殺所有逾越節羊羔 | 0.736 | link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md |
-| 2 | 逾越節羔羊 | 0.614 | link_folder/歷史/逾越節羔羊.md |
-| 3 | 逾越節 | 0.591 | link_folder/歷史/逾越節.md |
+| 1 | 三位祭司能否宰殺所有逾越節羊羔 | 0.841 | link_folder/解經爭議/三位祭司能否宰殺所有逾越節羊羔.md |
+| 2 | 逾越節羔羊 | 0.612 | link_folder/歷史/逾越節羔羊.md |
+| 3 | 逾越節 | 0.587 | link_folder/歷史/逾越節.md |
 | 4 | 祭司吃贖罪祭的意義 | 0.575 | link_folder/神學/祭司吃贖罪祭的意義.md |
 | 5 | 出12：5 | 0.569 | link_folder/互文/出12：5.md |
 

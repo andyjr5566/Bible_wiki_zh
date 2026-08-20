@@ -4,23 +4,23 @@ book: 民數記
 chapter: 7
 candidate_sha256: 3edfba1a843bc5fc12689afe74a0e5464e364761a8cea25fd8c787d9cc13ba24
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: c37144701f9fb912
-link_index_sha256: 0b28113513723cd14e14491d9f90cadaaf17331f0192ae58f5dd5becc7e9a6f5
+embedding_index_fingerprint: 9bd8cf25f1adf11a
+link_index_sha256: e3bfbe30f5e5ada8b54a60b501e666a3ea23a832b0ec77bfd9e794f8bdb2875d
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
 calibration_sha256: 337500e601e3a204c71a4bbe077172c48c165c2ea9ffe38c5d4425363d899411
-rerank_status: success
-rerankable_candidates: 1
-rerank_attempted: 1
-rerank_succeeded: 1
+rerank_status: not_needed
+rerankable_candidates: 0
+rerank_attempted: 0
+rerank_succeeded: 0
 rerank_retrieve_top_k: 20
-rerank_score_observed: 0.002-0.024
+rerank_score_observed: none
 -->
 
 # 候選語義近鄰報告：民數記 第7章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2634 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2636 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -73,7 +73,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 他瑪（創38） | 0.435 | link_folder/人物/他瑪（創38）.md |
-| 2 | 以他瑪 | 0.434 | link_folder/人物/以他瑪.md |
+| 2 | 以他瑪 | 0.424 | link_folder/人物/以他瑪.md |
 | 3 | 他瑪 (撒下13) | 0.396 | link_folder/人物/他瑪 (撒下13).md |
 | 4 | 以米人 | 0.369 | link_folder/人物/以米人.md |
 | 5 | 他瑪行動是否可稱義 | 0.351 | link_folder/解經爭議/他瑪行動是否可稱義.md |
@@ -90,11 +90,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 革順子孫 | 0.495 | link_folder/人物/革順子孫.md |
+| 1 | 革順子孫 | 0.461 | link_folder/人物/革順子孫.md |
 | 2 | 革舜（摩西之子） | 0.370 | link_folder/人物/革舜（摩西之子）.md |
-| 3 | 哥轄子孫 | 0.341 | link_folder/人物/哥轄子孫.md |
-| 4 | 革迦撒人 | 0.311 | link_folder/人物/革迦撒人.md |
-| 5 | 流珥（以掃之子） | 0.307 | link_folder/人物/流珥（以掃之子）.md |
+| 3 | 革迦撒人 | 0.311 | link_folder/人物/革迦撒人.md |
+| 4 | 流珥（以掃之子） | 0.307 | link_folder/人物/流珥（以掃之子）.md |
+| 5 | 俄南 | 0.305 | link_folder/人物/俄南.md |
 
 判定：✅ 建議使用既有條目 [[革順子孫]]（同名／字面對應）
 
@@ -108,7 +108,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 米拉利子孫 | 0.533 | link_folder/人物/米拉利子孫.md |
+| 1 | 米拉利子孫 | 0.485 | link_folder/人物/米拉利子孫.md |
 | 2 | 米戶雅利 | 0.393 | link_folder/人物/米戶雅利.md |
 | 3 | 瑪土撒利 | 0.374 | link_folder/人物/瑪土撒利.md |
 | 4 | 米利暗 | 0.332 | link_folder/人物/米利暗.md |
@@ -126,9 +126,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 哥轄子孫 | 0.513 | link_folder/人物/哥轄子孫.md |
-| 2 | 革順子孫 | 0.369 | link_folder/人物/革順子孫.md |
-| 3 | 可拉的背叛（預告） | 0.355 | link_folder/人物/可拉的背叛（預告）.md |
+| 1 | 哥轄子孫 | 0.466 | link_folder/人物/哥轄子孫.md |
+| 2 | 可拉的背叛（預告） | 0.355 | link_folder/人物/可拉的背叛（預告）.md |
+| 3 | 革順子孫 | 0.345 | link_folder/人物/革順子孫.md |
 | 4 | 西珥（何利人） | 0.337 | link_folder/人物/西珥（何利人）.md |
 | 5 | 俄南 | 0.333 | link_folder/人物/俄南.md |
 
@@ -164,11 +164,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 奉獻篷車與牛（利未人搬運分工） | 0.868 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
-| 2 | 利未三族分工 | 0.614 | link_folder/事件/利未三族分工.md |
-| 3 | 革順子孫 | 0.612 | link_folder/人物/革順子孫.md |
-| 4 | 肩頭抬聖物（哥轄子孫） | 0.579 | link_folder/主題/肩頭抬聖物（哥轄子孫）.md |
-| 5 | 米拉利子孫 | 0.574 | link_folder/人物/米拉利子孫.md |
+| 1 | 奉獻篷車與牛（利未人搬運分工） | 0.842 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
+| 2 | 革順子孫 | 0.666 | link_folder/人物/革順子孫.md |
+| 3 | 米拉利子孫 | 0.629 | link_folder/人物/米拉利子孫.md |
+| 4 | 利未三族分工 | 0.614 | link_folder/事件/利未三族分工.md |
+| 5 | 哥轄子孫 | 0.605 | link_folder/人物/哥轄子孫.md |
 
 判定：✅ 建議使用既有條目 [[奉獻篷車與牛（利未人搬運分工）]]（同名／字面對應）
 
@@ -184,10 +184,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 肩頭抬聖物（哥轄子孫） | 0.848 | link_folder/主題/肩頭抬聖物（哥轄子孫）.md |
-| 2 | 哥轄子孫 | 0.596 | link_folder/人物/哥轄子孫.md |
+| 1 | 肩頭抬聖物（哥轄子孫） | 0.871 | link_folder/主題/肩頭抬聖物（哥轄子孫）.md |
+| 2 | 哥轄子孫 | 0.702 | link_folder/人物/哥轄子孫.md |
 | 3 | 不可摸聖物 | 0.575 | link_folder/神學/不可摸聖物.md |
-| 4 | 奉獻篷車與牛（利未人搬運分工） | 0.565 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
+| 4 | 奉獻篷車與牛（利未人搬運分工） | 0.557 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
 | 5 | 抬架（會幕器具搬運） | 0.554 | link_folder/主題/抬架（會幕器具搬運）.md |
 
 判定：✅ 建議使用既有條目 [[肩頭抬聖物（哥轄子孫）]]（同名／字面對應）
@@ -204,11 +204,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 奉獻壇之禮（十二支派首領奉獻） | 0.867 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
-| 2 | 按日獻供物（十二天奉獻禮） | 0.677 | link_folder/主題/按日獻供物（十二天奉獻禮）.md |
-| 3 | 金盂盛滿了香（祈禱與事奉） | 0.615 | link_folder/主題/金盂盛滿了香（祈禱與事奉）.md |
-| 4 | 燔祭 | 0.580 | link_folder/神學/燔祭.md |
-| 5 | 葉忒羅獻祭 | 0.576 | link_folder/事件/葉忒羅獻祭.md |
+| 1 | 奉獻壇之禮（十二支派首領奉獻） | 0.808 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
+| 2 | 按日獻供物（十二天奉獻禮） | 0.670 | link_folder/主題/按日獻供物（十二天奉獻禮）.md |
+| 3 | 金盂盛滿了香（祈禱與事奉） | 0.627 | link_folder/主題/金盂盛滿了香（祈禱與事奉）.md |
+| 4 | 供物（qorban） | 0.586 | link_folder/原文/供物（qorban）.md |
+| 5 | 燔祭 | 0.580 | link_folder/神學/燔祭.md |
 
 判定：✅ 建議使用既有條目 [[奉獻壇之禮（十二支派首領奉獻）]]（同名／字面對應）
 
@@ -224,11 +224,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 按日獻供物（十二天奉獻禮） | 0.808 | link_folder/主題/按日獻供物（十二天奉獻禮）.md |
-| 2 | 奉獻壇之禮（十二支派首領奉獻） | 0.673 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
+| 1 | 按日獻供物（十二天奉獻禮） | 0.758 | link_folder/主題/按日獻供物（十二天奉獻禮）.md |
+| 2 | 奉獻壇之禮（十二支派首領奉獻） | 0.624 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
 | 3 | 每日獻祭（常獻燔祭） | 0.559 | link_folder/神學/每日獻祭（常獻燔祭）.md |
-| 4 | 供物（qorban） | 0.531 | link_folder/原文/供物（qorban）.md |
-| 5 | 神的供應 | 0.526 | link_folder/主題/神的供應.md |
+| 4 | 供物（qorban） | 0.550 | link_folder/原文/供物（qorban）.md |
+| 5 | 奉獻篷車與牛（利未人搬運分工） | 0.527 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
 
 判定：✅ 建議使用既有條目 [[按日獻供物（十二天奉獻禮）]]（同名／字面對應）
 
@@ -244,7 +244,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 金盂盛滿了香（祈禱與事奉） | 0.815 | link_folder/主題/金盂盛滿了香（祈禱與事奉）.md |
+| 1 | 金盂盛滿了香（祈禱與事奉） | 0.763 | link_folder/主題/金盂盛滿了香（祈禱與事奉）.md |
 | 2 | 聖徒禱告如香（啟5：8, 8：3-4） | 0.682 | link_folder/互文/聖徒禱告如香（啟5：8, 8：3-4）.md |
 | 3 | 基督代禱（來7：25） | 0.594 | link_folder/互文/基督代禱（來7：25）.md |
 | 4 | 金香壇（香壇） | 0.579 | link_folder/主題/金香壇（香壇）.md |
@@ -264,7 +264,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 聖所的平（捨客勒標準） | 0.770 | link_folder/文化/聖所的平（捨客勒標準）.md |
+| 1 | 聖所的平（捨客勒標準） | 0.727 | link_folder/文化/聖所的平（捨客勒標準）.md |
 | 2 | 舍客勒 | 0.542 | link_folder/原文/舍客勒.md |
 | 3 | 公道天平法碼升斗 | 0.487 | link_folder/主題/公道天平法碼升斗.md |
 | 4 | 神的聖所 | 0.483 | link_folder/神學/神的聖所.md |
@@ -288,7 +288,7 @@ query:
 | 2 | 神與人相會（耶和華面前） | 0.568 | link_folder/神學/神與人相會（耶和華面前）.md |
 | 3 | 神的同在 | 0.553 | link_folder/神學/神的同在.md |
 | 4 | 耶和華的話臨到 | 0.523 | link_folder/神學/耶和華的話臨到.md |
-| 5 | 摩西上山見神 | 0.515 | link_folder/事件/摩西上山見神.md |
+| 5 | 約櫃 | 0.520 | link_folder/主題/約櫃.md |
 
 判定：✅ 建議使用既有條目 [[二基路伯中間說話的聲音]]（同名／字面對應）
 
@@ -345,7 +345,7 @@ query:
 | 2 | 牛群 | 0.561 | link_folder/文化/牛群.md |
 | 3 | 私宰祭牲須獻為平安祭的條例 | 0.531 | link_folder/主題/私宰祭牲須獻為平安祭的條例.md |
 | 4 | 燔祭平安祭同獻的素祭與奠祭比例 | 0.509 | link_folder/神學/燔祭平安祭同獻的素祭與奠祭比例.md |
-| 5 | 公牛犢 | 0.485 | link_folder/主題/公牛犢.md |
+| 5 | 奉獻壇之禮（十二支派首領奉獻） | 0.501 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
 
 判定：✅ 建議使用既有條目 [[平安祭]]（同名／字面對應）
 
@@ -379,7 +379,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 施恩座 | 0.448 | link_folder/主題/施恩座.md |
+| 1 | 施恩座 | 0.451 | link_folder/主題/施恩座.md |
 | 2 | 出25：17-22 | 0.401 | link_folder/互文/出25：17-22.md |
 | 3 | 二基路伯中間說話的聲音 | 0.358 | link_folder/神學/二基路伯中間說話的聲音.md |
 | 4 | 挽回祭（羅3：25） | 0.357 | link_folder/互文/挽回祭（羅3：25）.md |
@@ -394,18 +394,17 @@ query:
 - 候選類型：背景
 - 本章上下文：v1「摩西立完了帳幕」把時間拉回出40:17 的第二年正月初一日，早於民1:1 的二月初一。GT 丁良才：「本章的事，原該列在利八10節以後，不過記在此處，免得有防礙於記載西奈山垂律法的事。」GT《啟導本》：作者希望民數記可以集中講獻祭和祭司的按立，再敘述全民出發前的準備與利未人工作的分配，之後才介紹十二支派奉獻禮物。GT《民數記串珠聖經註釋》給了三個理由（先交代車牛分配需接上文利未人職務、律法禮儀先於實踐記載以免破壞整體性、奉獻是以神為中心生活的最高回應）。KC 列出從正月初一到二月二十日雲彩收上起行的完整事件序列。
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「民數記第七章的時序與編排」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 行軍次序 | 0.619 | 0.024 | link_folder/事件/行軍次序.md |
-| 2 | 利未支派 | 0.577 | 0.010 | link_folder/人物/利未支派.md |
-| 3 | 第二年正月初一立帳幕 | 0.648 | 0.009 | link_folder/歷史/第二年正月初一立帳幕.md |
-| 4 | 耶和華的節期年曆總覽（利未記23章七大節期架構） | 0.566 | 0.006 | link_folder/主題/耶和華的節期年曆總覽（利未記23章七大節期架構）.md |
-| 5 | 會幕立起的日期與時間表 | 0.675 | 0.006 | link_folder/背景/會幕立起的日期與時間表.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 民數記第七章的時序與編排 | 0.903 | link_folder/背景/民數記第七章的時序與編排.md |
+| 2 | 會幕立起的日期與時間表 | 0.675 | link_folder/背景/會幕立起的日期與時間表.md |
+| 3 | 第二年正月初一立帳幕 | 0.648 | link_folder/歷史/第二年正月初一立帳幕.md |
+| 4 | 行軍次序 | 0.619 | link_folder/事件/行軍次序.md |
+| 5 | 奉獻篷車與牛（利未人搬運分工） | 0.606 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
 
-rerank_margin: 0.014 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=背景 vs 條目=事件），若確為同實體請確認是否改用 [[行軍次序]]
+判定：✅ 建議使用既有條目 [[民數記第七章的時序與編排]]（同名／字面對應）
 
 ## 供物（qorban）（原文）
 query:
@@ -418,11 +417,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 供物（qorban） | 0.695 | link_folder/原文/供物（qorban）.md |
+| 1 | 供物（qorban） | 0.735 | link_folder/原文/供物（qorban）.md |
 | 2 | 禮物 | 0.641 | link_folder/原文/禮物.md |
-| 3 | 燔祭 | 0.605 | link_folder/神學/燔祭.md |
-| 4 | 血祭與素祭 | 0.601 | link_folder/主題/血祭與素祭.md |
-| 5 | 素祭（minchah） | 0.599 | link_folder/原文/素祭（minchah）.md |
+| 3 | 奉獻壇之禮（十二支派首領奉獻） | 0.640 | link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md |
+| 4 | 燔祭 | 0.605 | link_folder/神學/燔祭.md |
+| 5 | 血祭與素祭 | 0.601 | link_folder/主題/血祭與素祭.md |
 
 判定：✅ 建議使用既有條目 [[供物（qorban）]]（同名／字面對應）
 
@@ -437,11 +436,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 贖罪祭與贖愆祭的分別 | 0.764 | link_folder/神學/贖罪祭與贖愆祭的分別.md |
+| 1 | 贖罪祭與贖愆祭的分別 | 0.793 | link_folder/神學/贖罪祭與贖愆祭的分別.md |
 | 2 | 贖愆祭（asham） | 0.753 | link_folder/原文/贖愆祭（asham）.md |
 | 3 | 贖罪祭 | 0.702 | link_folder/神學/贖罪祭.md |
 | 4 | 贖罪 | 0.669 | link_folder/神學/贖罪.md |
-| 5 | 故意犯罪沒有贖罪祭 | 0.619 | link_folder/神學/故意犯罪沒有贖罪祭.md |
+| 5 | 供物（qorban） | 0.625 | link_folder/原文/供物（qorban）.md |
 
 判定：✅ 建議使用既有條目 [[贖罪祭與贖愆祭的分別]]（同名／字面對應）
 
@@ -456,10 +455,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 二基路伯中間說話的聲音 | 0.716 | link_folder/神學/二基路伯中間說話的聲音.md |
-| 2 | 約櫃 | 0.710 | link_folder/主題/約櫃.md |
+| 1 | 約櫃 | 0.736 | link_folder/主題/約櫃.md |
+| 2 | 二基路伯中間說話的聲音 | 0.716 | link_folder/神學/二基路伯中間說話的聲音.md |
 | 3 | 法版 | 0.664 | link_folder/原文/法版.md |
-| 4 | 施恩座 | 0.606 | link_folder/主題/施恩座.md |
+| 4 | 施恩座 | 0.631 | link_folder/主題/施恩座.md |
 | 5 | 出25：17-22 | 0.570 | link_folder/互文/出25：17-22.md |
 
 判定：✅ 建議使用既有條目 [[約櫃]]（同名／字面對應）
