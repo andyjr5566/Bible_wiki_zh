@@ -4,8 +4,8 @@ book: 利未記
 chapter: 24
 candidate_sha256: d63ed02ecdf413efc2d8e2a8bbdc4d479eccca90a1c59ec37bd37903c18336dd
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 9250c36790acf64b
-link_index_sha256: 0b4d664ace349a1583307e4d30eb665d00c4fe2e937ede01c0ca99f960877d49
+embedding_index_fingerprint: 3cdd9ce524c0d3e4
+link_index_sha256: e832110fe8f0c39f5e67d46ddb1ee96f50ab29589ee4ec887bbc065a598bbe15
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4

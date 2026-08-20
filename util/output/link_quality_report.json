@@ -1,15 +1,8 @@
 {
-  "total_warnings": 79,
+  "total_warnings": 78,
   "critical_count": 0,
-  "warning_count": 79,
+  "warning_count": 78,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "利未記/第25章.md",
-      "target": "安息年",
-      "message": "同一 alias「安息年」指向多個 target: 安息年, 安息年律例"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

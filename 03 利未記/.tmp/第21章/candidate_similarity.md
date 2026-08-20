@@ -4,8 +4,8 @@ book: 利未記
 chapter: 21
 candidate_sha256: a88c51844e0eb53302ac196d8a7d8767b0f99d5e9d6f130fec7879cbb9e1541a
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: dc76d4b9eca9dc0d
-link_index_sha256: 36019505015ee2297deafd4d6cbc7f176f1137a473f648460858514a9927f9a6
+embedding_index_fingerprint: 3cdd9ce524c0d3e4
+link_index_sha256: e832110fe8f0c39f5e67d46ddb1ee96f50ab29589ee4ec887bbc065a598bbe15
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：利未記 第21章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2627 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2628 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -179,8 +179,8 @@ query:
 | 1 | 褻瀆（cha.lal） | 0.830 | link_folder/原文/褻瀆（cha.lal）.md |
 | 2 | 聖潔 | 0.617 | link_folder/神學/聖潔.md |
 | 3 | 你們要聖潔因為我是聖潔的 | 0.609 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
-| 4 | 玷污耶和華的聖所與帳幕 | 0.586 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
-| 5 | 不可辱沒女兒使她為娼妓 | 0.579 | link_folder/主題/不可辱沒女兒使她為娼妓.md |
+| 4 | 褻瀆聖名（na.qav） | 0.596 | link_folder/原文/褻瀆聖名（na.qav）.md |
+| 5 | 玷污耶和華的聖所與帳幕 | 0.586 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
 
 判定：✅ 建議使用既有條目 [[褻瀆（cha.lal）]]（同名／字面對應）
 
