@@ -4,7 +4,7 @@ book: 民數記
 chapter: 2
 candidate_sha256: 736ee8cf8792a6836c2b792ddba12a259161ca95574c38dce952bd568facd138
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 76787b1af07cbb02
+embedding_index_fingerprint: c2abf8934419fa2d
 link_index_sha256: 63feb9a64e3fb5e516c6e7a6352ff04131187d149984c1f419d4c256c2171684
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -164,8 +164,8 @@ BH：Reuben was the firstborn of Jacob and Leah, yet his tribe is positioned on 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 流便 | 0.723 | link_folder/人物/流便.md |
-| 2 | 便雅憫 | 0.628 | link_folder/人物/便雅憫.md |
-| 3 | 迦得（萬幸） | 0.618 | link_folder/人物/迦得（萬幸）.md |
+| 2 | 便雅憫 | 0.632 | link_folder/人物/便雅憫.md |
+| 3 | 迦得（萬幸） | 0.626 | link_folder/人物/迦得（萬幸）.md |
 | 4 | 行軍次序 | 0.610 | link_folder/事件/行軍次序.md |
 | 5 | 十二支派起源 | 0.607 | link_folder/神學/十二支派起源.md |
 
@@ -192,7 +192,7 @@ BH：Ephraim, younger son of Joseph, received greater blessing from Jacob（創4
 | 2 | 瑪拿西 | 0.631 | link_folder/人物/瑪拿西.md |
 | 3 | 十二支派起源 | 0.608 | link_folder/神學/十二支派起源.md |
 | 4 | 便雅憫 | 0.607 | link_folder/人物/便雅憫.md |
-| 5 | 以法蓮在瑪拿西以上 | 0.590 | link_folder/神學/以法蓮在瑪拿西以上.md |
+| 5 | 西布倫（同住） | 0.592 | link_folder/人物/西布倫（同住）.md |
 
 判定：✅ 建議使用既有條目 [[以法蓮]]（同名／字面對應）
 
@@ -215,9 +215,9 @@ BH：Dan's role was on the north side, forming rear guard alongside Asher and Na
 |---|---|---:|---|
 | 1 | 但支派 | 0.763 | link_folder/人物/但支派.md |
 | 2 | 但（審判） | 0.591 | link_folder/人物/但（審判）.md |
-| 3 | 猶大支派 | 0.576 | link_folder/人物/猶大支派.md |
-| 4 | 行軍次序 | 0.568 | link_folder/事件/行軍次序.md |
-| 5 | 拿弗他利 | 0.566 | link_folder/人物/拿弗他利.md |
+| 3 | 拿弗他利 | 0.578 | link_folder/人物/拿弗他利.md |
+| 4 | 猶大支派 | 0.576 | link_folder/人物/猶大支派.md |
+| 5 | 行軍次序 | 0.568 | link_folder/事件/行軍次序.md |
 
 判定：✅ 建議使用既有條目 [[但支派]]（同名／字面對應）
 
@@ -243,7 +243,7 @@ BH：The organization of the tribes around the Tabernacle has theological signif
 | 2 | 以色列人的軍隊 | 0.730 | link_folder/神學/以色列人的軍隊.md |
 | 3 | 安營與纛 | 0.717 | link_folder/主題/安營與纛.md |
 | 4 | 神的軍兵 | 0.603 | link_folder/神學/神的軍兵.md |
-| 5 | 十二族長協助數點 | 0.591 | link_folder/事件/十二族長協助數點.md |
+| 5 | 以色列人帶兵器 | 0.589 | link_folder/歷史/以色列人帶兵器.md |
 
 判定：✅ 建議使用既有條目 [[以色列人的軍隊]]（同名／字面對應）
 
@@ -264,7 +264,7 @@ BH：The twelve tribes descended from sons of Jacob, each with distinct identity
 |---|---|---:|---|
 | 1 | 十二支派起源 | 0.839 | link_folder/神學/十二支派起源.md |
 | 2 | 利亞 | 0.664 | link_folder/人物/利亞.md |
-| 3 | 拿弗他利 | 0.644 | link_folder/人物/拿弗他利.md |
+| 3 | 拿弗他利 | 0.651 | link_folder/人物/拿弗他利.md |
 | 4 | 猶大支派 | 0.642 | link_folder/人物/猶大支派.md |
 | 5 | 利未 | 0.640 | link_folder/人物/利未.md |
 
@@ -285,7 +285,7 @@ KC：The leaders are the same as in Numbers 1, now arranged by camp positions.
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 十二族長協助數點 | 0.788 | link_folder/事件/十二族長協助數點.md |
+| 1 | 十二族長協助數點 | 0.755 | link_folder/事件/十二族長協助數點.md |
 | 2 | 拿順 | 0.659 | link_folder/人物/拿順.md |
 | 3 | 十二支派起源 | 0.658 | link_folder/神學/十二支派起源.md |
 | 4 | 行軍次序 | 0.628 | link_folder/事件/行軍次序.md |
@@ -334,9 +334,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以薩迦（價值） | 0.811 | link_folder/人物/以薩迦（價值）.md |
+| 1 | 以薩迦（價值） | 0.826 | link_folder/人物/以薩迦（價值）.md |
 | 2 | 以薩迦（報酬） | 0.621 | link_folder/原文/以薩迦（報酬）.md |
-| 3 | 西布倫（同住） | 0.600 | link_folder/人物/西布倫（同住）.md |
+| 3 | 西布倫（同住） | 0.609 | link_folder/人物/西布倫（同住）.md |
 | 4 | 拿順 | 0.584 | link_folder/人物/拿順.md |
 | 5 | 猶大支派 | 0.577 | link_folder/人物/猶大支派.md |
 
@@ -353,7 +353,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西布倫（同住） | 0.790 | link_folder/人物/西布倫（同住）.md |
+| 1 | 西布倫（同住） | 0.798 | link_folder/人物/西布倫（同住）.md |
 | 2 | 以法蓮 | 0.546 | link_folder/人物/以法蓮.md |
 | 3 | 猶大支派 | 0.543 | link_folder/人物/猶大支派.md |
 | 4 | 西珥 | 0.527 | link_folder/地點/西珥.md |
@@ -372,11 +372,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦得（萬幸） | 0.863 | link_folder/人物/迦得（萬幸）.md |
+| 1 | 迦得（萬幸） | 0.865 | link_folder/人物/迦得（萬幸）.md |
 | 2 | 迦得（幸運） | 0.664 | link_folder/原文/迦得（幸運）.md |
-| 3 | 亞設（有福） | 0.613 | link_folder/人物/亞設（有福）.md |
-| 4 | 猶大支派 | 0.582 | link_folder/人物/猶大支派.md |
-| 5 | 迦勒 | 0.580 | link_folder/人物/迦勒.md |
+| 3 | 亞設（有福） | 0.631 | link_folder/人物/亞設（有福）.md |
+| 4 | 便雅憫 | 0.584 | link_folder/人物/便雅憫.md |
+| 5 | 猶大支派 | 0.582 | link_folder/人物/猶大支派.md |
 
 判定：✅ 建議使用既有條目 [[迦得（萬幸）]]（同名／字面對應）
 
@@ -391,10 +391,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞設（有福） | 0.821 | link_folder/人物/亞設（有福）.md |
-| 2 | 迦得（萬幸） | 0.597 | link_folder/人物/迦得（萬幸）.md |
+| 1 | 亞設（有福） | 0.827 | link_folder/人物/亞設（有福）.md |
+| 2 | 迦得（萬幸） | 0.602 | link_folder/人物/迦得（萬幸）.md |
 | 3 | 以法蓮 | 0.583 | link_folder/人物/以法蓮.md |
-| 4 | 拿弗他利 | 0.547 | link_folder/人物/拿弗他利.md |
+| 4 | 拿弗他利 | 0.548 | link_folder/人物/拿弗他利.md |
 | 5 | 瑪拿西 | 0.546 | link_folder/人物/瑪拿西.md |
 
 判定：✅ 建議使用既有條目 [[亞設（有福）]]（同名／字面對應）
@@ -414,7 +414,7 @@ query:
 | 2 | 以法蓮 | 0.685 | link_folder/人物/以法蓮.md |
 | 3 | 十二支派起源 | 0.613 | link_folder/神學/十二支派起源.md |
 | 4 | 收納以法蓮與瑪拿西 | 0.609 | link_folder/歷史/收納以法蓮與瑪拿西.md |
-| 5 | 瑪拿西（使之忘了） | 0.597 | link_folder/原文/瑪拿西（使之忘了）.md |
+| 5 | 迦得（萬幸） | 0.600 | link_folder/人物/迦得（萬幸）.md |
 
 判定：✅ 建議使用既有條目 [[瑪拿西]]（同名／字面對應）
 
@@ -433,7 +433,7 @@ query:
 | 2 | 以法蓮 | 0.627 | link_folder/人物/以法蓮.md |
 | 3 | 十二支派起源 | 0.625 | link_folder/神學/十二支派起源.md |
 | 4 | 猶大支派 | 0.608 | link_folder/人物/猶大支派.md |
-| 5 | 瑪拿西 | 0.582 | link_folder/人物/瑪拿西.md |
+| 5 | 迦得（萬幸） | 0.587 | link_folder/人物/迦得（萬幸）.md |
 
 判定：✅ 建議使用既有條目 [[便雅憫]]（同名／字面對應）
 
@@ -449,10 +449,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 西緬 | 0.679 | link_folder/人物/西緬.md |
-| 2 | 西布倫（同住） | 0.618 | link_folder/人物/西布倫（同住）.md |
+| 2 | 西布倫（同住） | 0.624 | link_folder/人物/西布倫（同住）.md |
 | 3 | 「西緬」名字含義 | 0.599 | link_folder/原文/「西緬」名字含義.md |
 | 4 | 猶大支派 | 0.565 | link_folder/人物/猶大支派.md |
-| 5 | 以法蓮 | 0.565 | link_folder/人物/以法蓮.md |
+| 5 | 迦得（萬幸） | 0.565 | link_folder/人物/迦得（萬幸）.md |
 
 判定：✅ 建議使用既有條目 [[西緬]]（同名／字面對應）
 
@@ -467,7 +467,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拿弗他利 | 0.783 | link_folder/人物/拿弗他利.md |
+| 1 | 拿弗他利 | 0.796 | link_folder/人物/拿弗他利.md |
 | 2 | 但支派 | 0.592 | link_folder/人物/但支派.md |
 | 3 | 拿鶴 | 0.562 | link_folder/人物/拿鶴.md |
 | 4 | 拿順 | 0.560 | link_folder/人物/拿順.md |
@@ -489,7 +489,7 @@ query:
 |---|---|---:|---|
 | 1 | 拿順 | 0.857 | link_folder/人物/拿順.md |
 | 2 | 亞倫的祭司譜系 | 0.626 | link_folder/人物/亞倫的祭司譜系.md |
-| 3 | 十二族長協助數點 | 0.611 | link_folder/事件/十二族長協助數點.md |
+| 3 | 十二族長協助數點 | 0.598 | link_folder/事件/十二族長協助數點.md |
 | 4 | 猶大支派 | 0.583 | link_folder/人物/猶大支派.md |
 | 5 | 以利亞撒 | 0.575 | link_folder/人物/以利亞撒.md |
 

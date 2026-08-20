@@ -116,7 +116,6 @@ A_use_directly:
   match_type: exact
   existing_title: 十二族長協助數點
   existing_path: link_folder/事件/十二族長協助數點.md
-B_needs_update:
 - name: 拿順
   suggested_type: 人物
   evidence: 民1:7「屬猶大的，有亞米拿達的兒子拿順」，猶大支派首領兼軍中統領（v16）。CT 原文字義作「男巫」。GT 丁良才：「拿順是亞倫的妻兄（出六23），也是大衛的先祖（得四21-20）。」KC 依 Grant《Numerical Bible》給的字義是 prophet（先知），父名亞米拿達為 people of the willing Giver。BH：拿順列在馬太福音一4、路加福音三32 耶穌的家譜中；猶太傳統高度推崇拿順，常把信心之舉歸給他，例如紅海分開之前第一個踏進海中的就是他。同一人再見於民2:3、7:12、10:14。
@@ -143,11 +142,50 @@ B_needs_update:
   match_type: exact
   existing_title: 六十萬人的數目
   existing_path: link_folder/解經爭議/六十萬人的數目.md
+B_needs_update:
+- name: 西緬
+  suggested_type: 人物
+  evidence: 民1:22-23 西緬子孫59,300 名。CT 指出西緬經常與利未相提並論（創49:5），但此次數點漏過利未，因利未支派專供聖職不在數點之列。GT《聖經精讀本》指出西緬是利亞的第二個兒子（創29:33）。GT《民數記串珠聖經註釋》的兩章對照表顯示西緬是減幅最大的支派：民1 的59,300 到民26 只剩22,200。BH 指出西緬的地業落在猶大境內（書19:1-9），並提到創49:5-7 雅各對西緬與利未「分散在以色列」的預言。
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 民1:28-29 以薩迦子孫54,400 名。CT 指出猶大、以薩迦和西布倫三人都是同母兄弟，利亞所生（創35:23），「這三個支派在軍隊的編組裡同屬最先起行的一組」。GT《聖經精讀本》指出以薩迦和西布倫是利亞的第五和第六個兒子（創30:17-20）。BH 指出以薩迦以「通達時務」著稱（代上12:32），地業在肥沃的耶斯列平原。
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 民1:30-31 西布倫子孫57,400 名。CT 在民一9 直接指回第8節註解：猶大、以薩迦和西布倫同為利亞所生，同屬最先起行的一組。GT《聖經精讀本》指出西布倫是利亞的第六個兒子（創30:17-20）。BH 指出雅各預言西布倫必住在海口、成為停船的海口（創49:13），其地業近加利利海、便於貿易，並在士師記4:6 與歷代志上12:33 出兵。
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 民1:24-25 迦得子孫45,650 名——本章唯一沒有以「百」收尾的數字。GT 丁良才記下兩件事：「迦得的名字列在此處大概是因這支派和流便西緬支派在一營之中」；以及「除了迦得支派以外，十二支派都是記整數，沒有記零數，有人以為這一次的計算，是為預備打仗，所以只記五十個以上的整數」。CT 指出迦得和亞設同為悉帕所生（創35:26），卻在軍隊編組中分列不同的組。GT《聖經精讀本》指出迦得是利亞的婢女悉帕的第一個兒子（創30:10-11），神把相近的親族安排在一個行列中，「是為了消除人為的矛盾和磨擦，這是神的智慧」。BH 指出迦得以善戰著稱（代上12:8）。
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 民1:40-41 亞設子孫41,500 名。CT 指出亞設和迦得同為悉帕所生（創35:26），卻在軍隊的編組中分列不同的組——「亞設與但、拿弗他利同組（參二25~31），迦得則與流便、西緬同組（參二10~16）」。GT《聖經精讀本》指出亞設是悉帕最小的兒子（創30:12-13）。BH 指出亞設之名意為快樂或有福，地業沿地中海岸富庶，應驗創49:20 的祝福，申33:24 另提到亞設的橄欖油。
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 民1:42-43 拿弗他利子孫53,400 名。CT 指出但和拿弗他利兩兄弟為同母辟拉所生（創35:25），「他們兩支派加上亞設支派在軍隊的編組中同屬殿後的一組」。GT《聖經精讀本》指出拿弗他利是辟拉最小的兒子（創30:7-8）。BH 指出拿弗他利地業在迦南北部靠加利利海，日後是耶穌大部分傳道工作所在，應驗以賽亞書9:1-2 的預言。
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 民1:36-37 便雅憫子孫35,400 名。CT 指出在軍隊的編組中，以法蓮、瑪拿西和便雅憫同屬一組，「他們都是拉結的後裔」（民2:18-24；創35:24）。BH 指出便雅憫雖是較小的支派，卻以善用機弦的勇士著稱（士20:16），日後出了以色列的第一位王掃羅，以及使徒保羅。
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
 C_new_formal:
-- name: 兩次普查的關係
-  suggested_type: 解經爭議
-  evidence: 出38:25-26 的贖命銀普查與民1 的軍籍普查總數同為603,550，兩者關係諸家不同。GT 丁良才主張兩次計算「是相連的」，列四層理由。GT 賈斯樂郝威《聖經難解經文詮釋手冊》命題3 主張是兩次不同目的的普查：「第一次的人數核定（出卅八章）是為了宗教的目的，第二次人數核定是為了軍事目的……兩次核定人數的數目接近相符，因為核定的日期相近不遠。」GT《民數記串珠聖經註釋》：「這次統計很可能沿用數月前作過的統計資料（出30:12-16; 38:25-26），但目的卻是不同。」KC 給的間隔則是九個月：「This number corresponds to a previous census, about nine months earlier」。GT《啟導本》另指這是以色列人進入曠野後舉行的第二次人口調查。
-  target_path: link_folder/解經爭議/兩次普查的關係.md
 - name: 家室與宗族
   suggested_type: 主題
   evidence: 民1:2「按以色列全會眾的家室、宗族、人名的數目」；v18「會眾就照他們的家室、宗族、人名的數目…都述說自己的家譜」。CT：家室指略大於家庭的家族，宗族指介於支派和家族之間的部族；以色列人相當重視家譜，甚至根據家譜來斷定是以色列人不是（尼7:5,61）；家譜是各以色列人生命來源的記錄，教會也應該重視生命來源的見證——教會不是人的組織，不是看屬地的財富身分才幹，而是看屬天的生命。GT（丁良才）：這種數點法有四層益處——好修成可靠的家譜、得詳知各支派人數、能分佈各支派應占位置、可規定出發次序；古時候的以色列人以他們的家譜為重要，這樣辦為將來之救主的家譜使後人有法考察。GT（精讀本）：家室指親屬，宗族是父親、族長和家、家族的組合詞，指各支派；這樣按家室和宗族計算人數是為了讓人記住自己的出身，也是為了讓各個支派明確選民意識和歷史意識，好使他們協調一致完成神的神聖計畫。KC：every member must know his origin and where he belongs; every believer must know his place in Christ, know he is a child of God and what his spiritual family is; must declare pedigrees — declaring goes beyond inner conviction, must testify for others of his faith and not be ashamed (2Tim 1:8,12); declaration necessary because of "mixed multitude" (Exo 12:38; Num 11:4) among them — people who joined company of Christians but do not have life from God. BH：organization by clans and families highlights tribal structure crucial for identity and inheritance rights; listing every man by name signifies value of individual within community; one by one emphasizes thoroughness and precision — God's attention to detail and care for each member.
@@ -166,5 +204,11 @@ C_new_formal:
   match_type: exact
   existing_title: 二十歲以外能打仗的
   existing_path: link_folder/主題/二十歲以外能打仗的.md
+- name: 兩次普查的關係
+  suggested_type: 解經爭議
+  evidence: 出38:25-26 的贖命銀普查與民1 的軍籍普查總數同為603,550，兩者關係諸家不同。GT 丁良才主張兩次計算「是相連的」，列四層理由。GT 賈斯樂郝威《聖經難解經文詮釋手冊》命題3 主張是兩次不同目的的普查：「第一次的人數核定（出卅八章）是為了宗教的目的，第二次人數核定是為了軍事目的……兩次核定人數的數目接近相符，因為核定的日期相近不遠。」GT《民數記串珠聖經註釋》：「這次統計很可能沿用數月前作過的統計資料（出30:12-16; 38:25-26），但目的卻是不同。」KC 給的間隔則是九個月：「This number corresponds to a previous census, about nine months earlier」。GT《啟導本》另指這是以色列人進入曠野後舉行的第二次人口調查。
+  match_type: exact
+  existing_title: 兩次普查的關係
+  existing_path: link_folder/解經爭議/兩次普查的關係.md
 D_new_candidate: []
 E_skip: []
