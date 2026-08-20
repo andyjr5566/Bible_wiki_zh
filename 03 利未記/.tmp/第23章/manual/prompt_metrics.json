@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 23,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 256072,
+        "bytes": 359682
+      },
+      "after": {
+        "chars": 13225,
+        "bytes": 22910
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_23.txt",
+          "chars": 17110,
+          "bytes": 47940
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_23.txt",
+          "chars": 28763,
+          "bytes": 79786
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_23.txt",
+          "chars": 26705,
+          "bytes": 26931
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_23.txt",
+          "chars": 85489,
+          "bytes": 85531
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_23.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 97992,
+          "raw_bytes": 113889,
+          "projected_chars": 6628,
+          "projected_bytes": 7627,
+          "occurrences": 109,
+          "occurrence_count": 109,
+          "lexicon_entries": 4,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            20,
+            21,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 4,
+          "truncated": true,
+          "returned_chars": 6628,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}
