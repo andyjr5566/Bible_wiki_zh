@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_8.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 361,
+      "first": "Num 8:1",
+      "last": "Num 8:26",
+      "sha256": "c7570c58c311e079727da4eafdaba4d9071ae17573700e60b0ffcbb0288ac08a",
+      "bytes": 68943,
+      "chars": 60214,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

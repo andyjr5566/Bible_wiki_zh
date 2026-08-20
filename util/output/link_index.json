@@ -574,6 +574,14 @@
       "分蹄倒嚼"
     ]
   },
+  "利未人受職與祭司受職的差別": {
+    "path": "link_folder/主題/利未人受職與祭司受職的差別.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "利未人受職與祭司受職的差別",
+    "status": "formal",
+    "aliases": []
+  },
   "利未人城邑房屋隨時贖回": {
     "path": "link_folder/主題/利未人城邑房屋隨時贖回.md",
     "type": "主題",
@@ -20521,11 +20529,11 @@
     "status": "formal",
     "aliases": []
   },
-  "潔淨(maqom tahor)": {
-    "path": "link_folder/神學/潔淨(maqom tahor).md",
+  "潔淨": {
+    "path": "link_folder/神學/潔淨.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "潔淨(maqom tahor)",
+    "title": "潔淨",
     "status": "formal",
     "aliases": []
   },

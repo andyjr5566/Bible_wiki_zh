@@ -2,7 +2,7 @@ book: 民數記
 chapter: 8
 candidates:
 - name: 耶和華
-  type: 人物
+  type: 神學
 - name: 摩西
   type: 人物
 - name: 亞倫
@@ -11,20 +11,17 @@ candidates:
   type: 人物
 - name: 利未人
   type: 人物
-  evidence: v6-26，神揀選利未人代替以色列人一切頭生的，歸給神辦會幕的事。CT：利未人代表所有信徒被神分別出來服事。GT：利未人的奉獻與潔淨。KC：Levites
-    represent believers completely dedicated to God.
+  evidence: v6-26，神揀選利未人代替以色列人一切頭生的，歸給神辦會幕的事。CT：利未人代表所有信徒被神分別出來服事。GT：利未人的奉獻與潔淨。KC：Levites represent believers completely dedicated to God.
   surfaces:
   - 利未人
 - name: 燈臺
   type: 主題
-  evidence: v1-4，點燈的時候，七盞燈都要向燈臺前面發光，用金子錘出來的。CT：燈臺預表基督是世界的光，也預表教會作為金燈臺發光。GT：光照在神面前。KC：The
-    lampstand signifies Christ and His church shining the divine light.
+  evidence: v1-4，點燈的時候，七盞燈都要向燈臺前面發光，用金子錘出來的。CT：燈臺預表基督是世界的光，也預表教會作為金燈臺發光。GT：光照在神面前。KC：The lampstand signifies Christ and His church shining the divine light.
   surfaces:
   - 燈臺
 - name: 除罪水
   type: 主題
-  evidence: v7，潔淨利未人時，用除罪水彈在他們身上。CT：預表基督流血和聖靈的洗淨。GT：對付外面的罪污。KC：Water of purifying
-    represents the washing of water by the Word.
+  evidence: v7，潔淨利未人時，用除罪水彈在他們身上。CT：預表基督流血和聖靈的洗淨。GT：對付外面的罪污。KC：Water of purifying represents the washing of water by the Word.
   surfaces:
   - 除罪水
 - name: 剃頭刀
@@ -32,7 +29,7 @@ candidates:
   evidence: v7，用剃頭刀刮全身。CT：預表對付肉體和天然的生命。
   surfaces:
   - 剃頭刀
-- name: 素祭(minchah)
+- name: 素祭（minchah）
   type: 原文
   evidence: v8，同獻的素祭，調油的細麵。CT：預表基督完美無瑕的為人生活。
   surfaces:
@@ -42,18 +39,18 @@ candidates:
   evidence: v8, 12，一隻公牛犢作贖罪祭，為利未人贖罪。CT：對付罪性。
   surfaces:
   - 贖罪祭
-- name: 燔祭(olah)
-  type: 原文
+- name: 燔祭
+  type: 神學
   evidence: v12，一隻作燔祭。CT：完全奉獻給神。
   surfaces:
   - 燔祭
-- name: 搖祭(tenufah)
+- name: 搖祭
   type: 原文
   evidence: v11, 13, 15, 21，將利未人當作搖祭奉給耶和華。CT：搖祭預表復活的生命。利未人如同死而復活獻給神。GT：搖祭是在神面前搖一搖。
   surfaces:
   - 搖祭
-- name: 按手(samak)
-  type: 神學
+- name: 按手
+  type: 原文
   evidence: v10, 12，以色列人按手在利未人頭上，利未人按手在牛頭上。CT：按手代表聯合（identification）和聯合。以色列人與利未人聯合，利未人與祭牲聯合。
   surfaces:
   - 按手
@@ -63,11 +60,11 @@ candidates:
   surfaces:
   - 埃及地
 - name: 會幕
-  type: 地點
+  type: 主題
   evidence: v15, 19, 22, 24, 26，利未人進去辦會幕的事。
   surfaces:
   - 會幕
-- name: 潔淨(maqom tahor)
+- name: 潔淨
   type: 神學
   evidence: v6, 7, 15, 21，潔淨利未人。CT：事奉神的人必須先得潔淨。
   surfaces:
@@ -78,3 +75,12 @@ candidates:
   evidence: v19，免得他們挨近聖所，有災殃臨到他們中間。
   surfaces:
   - 聖所
+- name: 利未人受職與祭司受職的差別
+  type: 主題
+  evidence: GT《啟導本》：「利未人受職儀式與祭司不同，祭司都要受膏（出二十八41；二十九1～9；利八12），利未人只須經過一個潔淨的儀式……祭司和利未人的不同處，是祭司可以接近祭壇、能獻祭，利未人則不能，只可以在會幕內輔助祭司。」GT《民數記串珠聖經註釋》：「祭司被膏抹成聖，才開始在會幕中事奉神（利8），利未人的事奉可說是較為次一級，只需行潔淨的禮儀便可。」GT 丁良才：「摩西曾分派祭司（利八章），照樣也要分派利未人，但聖書上說是潔淨他們。」GT 丁良才另指出利未人「親近聖物也沒有什麼特別的禮服，所以要洗他們的衣服」。KC：利未人不在祭司之上，而是他們的僕人（路22:27）。
+- name: 利未人任職年齡的差異
+  type: 解經爭議
+  evidence: v24 說「從二十五歲以外」，民4:3、23、30 卻說三十歲。CT：「這裡的二十五歲以外，大概是指五年的見習階段，等滿三十歲才正式任職。」GT 丁良才：「有注釋家以為利未人從二十五歲以外，先有數年的練習，到三十歲才正式就職。」GT《聖經精讀本》另指出代上23:24 把年限降到了二十歲。KC 同樣讀為預備期，並以保羅歸主後先往阿拉伯、再到安提阿事奉為例（徒9:20、加1:17、徒11:25-26、徒13:2-3）。
+- name: 三十歲直到五十歲（利未人任職年齡）
+  type: 主題
+  evidence: v24-26 定下起訖：二十五歲前來任職，五十歲停工退任，之後「只要在會幕裡，和他們的弟兄一同伺候，謹守所吩咐的」。CT：「五是人在神面前負責的數目。從二十五歲（五乘五），開始辨事……作工期間也是五乘五，二十五年。」GT《民數記串珠聖經註釋》把 v26 譯為「幫助他們的弟兄謹守責任」，並指出「利未人的獻身事奉是終身盡忠職守的」。GT《舊約聖經背景註釋》另從古代近東債奴服務的類比說明利未人在債主（神）家中提供指定的服務、由祂供養。

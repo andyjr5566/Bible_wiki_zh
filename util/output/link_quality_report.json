@@ -1,7 +1,7 @@
 {
-  "total_warnings": 94,
+  "total_warnings": 96,
   "critical_count": 0,
-  "warning_count": 94,
+  "warning_count": 96,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -454,6 +454,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/原文/按手.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/原文/搖祭.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
@@ -625,6 +632,13 @@
       "source": "link_folder/神學/贖罪祭.md",
       "target": "第7章",
       "message": "同一 alias「第7章」指向多個 target: 03 利未記/第7章, 04 民數記/第7章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/贖罪祭.md",
+      "target": "第8章",
+      "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
     },
     {
       "type": "alias_target_conflict",
