@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 24
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 金燈臺
   suggested_type: 主題
   evidence: v2-4「要吩咐以色列人，把那為點燈搗成的清橄欖油拿來給你，使燈常常點著...亞倫從晚上到早晨必在耶和華面前經理這燈...他要在耶和華面前常收拾精金燈臺上的燈」。KC：Verses
@@ -99,6 +98,39 @@ B_needs_update:
   match_type: exact
   existing_title: 祭司經理燈（亞倫和他兒子）
   existing_path: link_folder/人物/祭司經理燈（亞倫和他兒子）.md
+- name: 寄居的與本地人同歸一例
+  suggested_type: 主題
+  evidence: v16「不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死」；v22「不管是寄居的是本地人，同歸一例。我是耶和華─你們的神」。GT啟導本：此人的父親雖為埃及人，但在司法範圍內，外國人與土生的以色列人同等對待；GT丁良才：本節（22）重複16-17節的條例，是特要使人注意；GT串珠：「同歸一例」，神的律法前，人人平等——本章在褻瀆聖名條例與人身傷害條例末尾兩度重申此一律法平等原則，形成本章結構上的呼應
+  surfaces:
+  - phrase: 不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死
+    verses:
+    - 16
+  - phrase: 不管是寄居的是本地人，同歸一例
+    verses:
+    - 22
+  existing_title: 寄居的與本地人同歸一例
+- name: 陳設餅十二個餅預表以色列十二支派
+  suggested_type: 神學
+  evidence: v5-9 十二個餅的象徵意義。CT〔靈意註解〕：「十二個餅」表徵屬靈生命的供應（餅），使人達到屬天的完全，又表徵以色列十二支派（十二）；KC：The
+    twelve loaves of the bread of the Presence represent the twelve tribes of Israel...The
+    priests make themselves one with the people by eating this bread（已譯：陳設餅的十二個餅代表以色列十二支派，祭司吃這餅使自己與百姓合一）；GT啟導本：有人說十二個餅代表以色列人十二支派，要他們紀念所得福氣，來自供應豐富的神——本章陳設餅的預表意義是CT／KC共同著墨的神學重點，與陳設餅桌子條例的程序性內容分屬不同層次
+  existing_title: 陳設餅十二個餅預表以色列十二支派
+B_needs_update:
+- name: 石刑
+  suggested_type: 背景
+  evidence: 本章是聖經中石刑最完整的一次記錄——從犯行、收監候旨、神的判決、見證人按手、到全會眾執行，程序齊備。GT 丁良才並在此處列出全本聖經七回用石頭打死人的記載：褻瀆主名的人（本章）、犯安息日的人（民15:36）、亞幹（書7:24-25）、亞多蘭（王上12:18）、拿伯（王上21:13）、撒迦利亞（代下24:21）、司提反（徒7:58）。他並說明程序設計的用意：作見證的人要先下手然後眾民也下手，「見證人既要先下手，他們就必格外小心，不作假見證，民眾既然也得下手，他們就也必越發害怕，不敢犯罪」。GT《舊約聖經背景註釋》：石刑是團體性的處死方法，「由於要斷定哪塊石頭導致罪犯死亡是不可能的，故此沒有一個人需要為這死亡負責」，並指出美索不達米亞文獻沒有提及石刑，只提淹死、刺刑、砍頭、火燒。
+  match_type: exact
+  existing_title: 石刑
+  existing_path: link_folder/背景/石刑.md
+- name: 按手
+  suggested_type: 原文
+  evidence: v14「叫聽見的人都放手在他頭上」。STEP語言資料顯示這個動詞是 סָמַךְ（sa.makh，逐字解 they will lean），與利1:4、利3:2、利4:4、利8:14
+    獻祭者按手在祭牲頭上是同一個字。但各家對這個動作在本章的意義說法不同：CT「大概是作見證，證明他的確咒詛聖名」，並說「顯明這罪原是那人的，也表示作見證的人在這罪上是無份的」，與洗手的表意相似；GT
+    串珠的讀法相反——「聽見的人因受連累而有罪，現今按手在犯罪者頭上，藉他的死而獲赦罪」；KC 兼取兩面：按手表示與被按者認同，「他們把所目睹之罪行的罪責放在犯罪者頭上，藉此使自己得以脫身」；BH
+    則說按手代表罪責與責任的轉移，同時要求目擊者確認控訴屬實。
+  match_type: exact
+  existing_title: 按手
+  existing_path: link_folder/原文/按手.md
 C_new_formal:
 - name: 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）
   suggested_type: 事件
@@ -115,17 +147,7 @@ C_new_formal:
   - phrase: 於是，摩西曉諭以色列人，他們就把那咒詛聖名的人帶到營外，用石頭打死
     verses:
     - 23
-  target_path: link_folder/事件/褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）.md
-  semantic_hint:
-  - title: 利未人受聖職討罪
-    score: 0.547
-    type: 事件
-  - title: 閒雜人
-    score: 0.462
-    type: 人物
-  - title: 利未
-    score: 0.461
-    type: 人物
+  existing_title: 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）
 - name: 示羅密（但支派底伯利的女兒，褻瀆者之母）
   suggested_type: 人物
   evidence: v11「他母親名叫示羅密，是但支派底伯利的女兒」。GT丁良才：聖書提出這婦人的支派和父親與自己的名字，無非是要人注意這事，在他身上受警誡，免得再有希伯來人將自己的女兒嫁與外邦人；GT精讀本：示羅密字面意思是「和平」、「充滿和平」，但這個婦人在埃及地與埃及人結婚，犯了與外邦人通婚的罪，這個婦人沒有用信仰教育好子女，造成兒子的悲劇；KC：This
@@ -134,17 +156,7 @@ C_new_formal:
   - phrase: 他母親名叫示羅密，是但支派底伯利的女兒
     verses:
     - 11
-  target_path: link_folder/人物/示羅密（但支派底伯利的女兒，褻瀆者之母）.md
-  semantic_hint:
-  - title: 拔示巴
-    score: 0.478
-    type: 人物
-  - title: 示劍（哈抹之子）
-    score: 0.476
-    type: 人物
-  - title: 底拿
-    score: 0.472
-    type: 人物
+  existing_title: 示羅密（但支派底伯利的女兒，褻瀆者之母）
 - name: 按手在犯人頭上作見證（利24：14）
   suggested_type: 主題
   evidence: v14「把那咒詛聖名的人帶到營外。叫聽見的人都放手在他頭上；全會眾就要用石頭打死他」。GT丁良才：這樣就顯明這罪原是那人的，也表示作見證的人在這罪上是無份的，這是和洗手的表意相似（申二十一6）；GT串珠：聽見的人因受連累而有罪，現今按手在犯罪者頭上，藉他的死而獲赦罪；GT《舊約聖經背景註釋》：石刑的功用是制裁侵犯整個社群的罪行，每個被得罪之人都必須參與，由於要斷定哪塊石頭導致罪犯死亡是不可能的，故此沒有一個人需要為這死亡負責——按手在此處的作用是見證定罪而非轉嫁贖罪，與利未記十六21大贖罪日按手在替罪羊頭上轉移全會眾罪孽的用法不同
@@ -152,28 +164,7 @@ C_new_formal:
   - phrase: 叫聽見的人都放手在他頭上
     verses:
     - 14
-  target_path: link_folder/主題/按手在犯人頭上作見證（利24：14）.md
-  semantic_hint:
-  - title: 按手
-    score: 0.502
-    type: 原文
-  - title: 按手認罪（承認罪孽轉移）
-    score: 0.462
-    type: 主題
-  - title: 手長大痲瘋的神蹟
-    score: 0.41
-    type: 神學
-- name: 寄居的與本地人同歸一例
-  suggested_type: 主題
-  evidence: v16「不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死」；v22「不管是寄居的是本地人，同歸一例。我是耶和華─你們的神」。GT啟導本：此人的父親雖為埃及人，但在司法範圍內，外國人與土生的以色列人同等對待；GT丁良才：本節（22）重複16-17節的條例，是特要使人注意；GT串珠：「同歸一例」，神的律法前，人人平等——本章在褻瀆聖名條例與人身傷害條例末尾兩度重申此一律法平等原則，形成本章結構上的呼應
-  surfaces:
-  - phrase: 不管是寄居的是本地人，他褻瀆耶和華名的時候，必被治死
-    verses:
-    - 16
-  - phrase: 不管是寄居的是本地人，同歸一例
-    verses:
-    - 22
-  target_path: link_folder/主題/寄居的與本地人同歸一例.md
+  existing_title: 按手在犯人頭上作見證（利24：14）
 - name: 打死人與打死牲畜的賠償原則
   suggested_type: 主題
   evidence: v17-18,21「打死人的，必被治死；打死牲畜的，必賠上牲畜，以命償命...打死牲畜的，必賠上牲畜；打死人的，必被治死」。GT丁良才：本節（18）是推廣出二十一33-34節的條例；GT精讀本：本節呈現公義的原則，公義的特點在於所有一切都按神的律法而行——人命與獸命的償還原則分列並重複兩次，形成本段的框架結構，緊接著才引出v19-20的以眼還眼傷害條例
@@ -184,33 +175,7 @@ C_new_formal:
   - phrase: 打死牲畜的，必賠上牲畜，以命償命
     verses:
     - 18
-  target_path: link_folder/主題/打死人與打死牲畜的賠償原則.md
-  semantic_hint:
-  - title: 牛傷牛的律例
-    score: 0.491
-    type: 事件
-  - title: 牛觸死人的律例
-    score: 0.485
-    type: 事件
-  - title: 傷害賠償的律例
-    score: 0.482
-    type: 事件
-- name: 陳設餅十二個餅預表以色列十二支派
-  suggested_type: 神學
-  evidence: v5-9 十二個餅的象徵意義。CT〔靈意註解〕：「十二個餅」表徵屬靈生命的供應（餅），使人達到屬天的完全，又表徵以色列十二支派（十二）；KC：The
-    twelve loaves of the bread of the Presence represent the twelve tribes of Israel...The
-    priests make themselves one with the people by eating this bread（已譯：陳設餅的十二個餅代表以色列十二支派，祭司吃這餅使自己與百姓合一）；GT啟導本：有人說十二個餅代表以色列人十二支派，要他們紀念所得福氣，來自供應豐富的神——本章陳設餅的預表意義是CT／KC共同著墨的神學重點，與陳設餅桌子條例的程序性內容分屬不同層次
-  target_path: link_folder/神學/陳設餅十二個餅預表以色列十二支派.md
-  semantic_hint:
-  - title: 陳設餅桌子
-    score: 0.571
-    type: 主題
-  - title: 十二支派起源
-    score: 0.497
-    type: 神學
-  - title: 十二根柱子
-    score: 0.476
-    type: 事件
+  existing_title: 打死人與打死牲畜的賠償原則
 - name: 光與燈預表基督（世界的光）
   suggested_type: 神學
   evidence: v2-4 金燈臺常常點著的預表意義。CT〔話中之光〕：光象徵福音，點著的燈象徵神的救贖把福音賜給人，信徒有責任在日常生活中彰顯基督救恩之光；KC：Prophetically,
@@ -218,16 +183,21 @@ C_new_formal:
     of the Lord Jesus continue to exist in heaven as a memorial before the face of
     God（已譯：這預表百姓雖與神隔絕，卻藉著主耶穌的大祭司職分，在神面前作為紀念繼續存在於天上）；BH：Jesus is described as the true
     light (John 1:9), fulfilling the symbolism of the menorah（已譯：耶穌被稱為真光，應驗了金燈臺的預表）——本章燈油與經理燈檯的條例延伸出的基督論預表，與金燈臺條目的程序性內容分屬不同層次
-  target_path: link_folder/神學/光與燈預表基督（世界的光）.md
-  semantic_hint:
-  - title: 世界的光（約8：12）
-    score: 0.626
-    type: 互文
-  - title: 七個金燈臺的奧祕（啟1：20）
-    score: 0.423
-    type: 互文
-  - title: 嗎哪預表基督
-    score: 0.413
-    type: 神學
+  existing_title: 光與燈預表基督（世界的光）
+- name: 褻瀆聖名（na.qav）
+  suggested_type: 原文
+  evidence: v11「褻瀆了聖名」與 v16「褻瀆耶和華名的」用的是同一個動詞。STEP語言資料顯示那是 נָקַב（na.qav），詞典義 to pierce（刺穿）；v11
+    是 Qal 敘述式（H5344A），v16 兩處是 Qal 分詞與不定詞連綴（H5344B）。CT 的原文字義欄給的正是同一組：「褻瀆」褻瀆，咒詛，刺穿。同一節還有第二個動詞——v11「並且咒詛」是
+    קָלַל（qa.lal）的 Piel（H7043），而 v14 稱這人為「那咒詛聖名的人」用的也是 qa.lal 的分詞，不是 na.qav。STEP 另顯示
+    v16 兩處用不定詞絕對式加強語氣：מוֹת יוּמָת（certainly to die／he will be put to death）與 רָגוֹם
+    יִרְגְּמוּ（certainly to stone／they will stone），和合本以「必被治死」「總要用石頭打死他」對應。
+  surfaces:
+  - phrase: 這以色列婦人的兒子褻瀆了聖名，並且咒詛
+    verses:
+    - 11
+  - phrase: 那褻瀆耶和華名的，必被治死
+    verses:
+    - 16
+  target_path: link_folder/原文/褻瀆聖名（na.qav）.md
 D_new_candidate: []
 E_skip: []

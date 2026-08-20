@@ -1456,9 +1456,7 @@
     "secondary_types": [],
     "title": "打死人與打死牲畜的賠償原則",
     "status": "formal",
-    "aliases": [
-      "打死人與打死牲畜的賠償原則"
-    ]
+    "aliases": []
   },
   "打獵放血用土掩蓋": {
     "path": "link_folder/主題/打獵放血用土掩蓋.md",
@@ -1521,9 +1519,7 @@
     "secondary_types": [],
     "title": "按手在犯人頭上作見證（利24：14）",
     "status": "formal",
-    "aliases": [
-      "按手在犯人頭上作見證"
-    ]
+    "aliases": []
   },
   "按手認罪（承認罪孽轉移）": {
     "path": "link_folder/主題/按手認罪（承認罪孽轉移）.md",
@@ -3909,9 +3905,7 @@
     "secondary_types": [],
     "title": "褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）",
     "status": "formal",
-    "aliases": [
-      "褻瀆聖名案例"
-    ]
+    "aliases": []
   },
   "財物受損的律例": {
     "path": "link_folder/事件/財物受損的律例.md",
@@ -11164,9 +11158,7 @@
     "secondary_types": [],
     "title": "示羅密（但支派底伯利的女兒，褻瀆者之母）",
     "status": "formal",
-    "aliases": [
-      "示羅密"
-    ]
+    "aliases": []
   },
   "神的使者": {
     "path": "link_folder/人物/神的使者.md",
@@ -13795,6 +13787,16 @@
     "title": "衣裳（外袍）",
     "status": "formal",
     "aliases": []
+  },
+  "褻瀆聖名（na.qav）": {
+    "path": "link_folder/原文/褻瀆聖名（na.qav）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "褻瀆聖名（na.qav）",
+    "status": "formal",
+    "aliases": [
+      "褻瀆耶和華名"
+    ]
   },
   "褻瀆（cha.lal）": {
     "path": "link_folder/原文/褻瀆（cha.lal）.md",
@@ -18556,9 +18558,7 @@
     "secondary_types": [],
     "title": "光與燈預表基督（世界的光）",
     "status": "formal",
-    "aliases": [
-      "光與燈預表基督(世界的光)"
-    ]
+    "aliases": []
   },
   "光與黑暗的分別": {
     "path": "link_folder/神學/光與黑暗的分別.md",
@@ -26186,9 +26186,6 @@
   "拐角板": {
     "alias_of": "拐角板（雙板）"
   },
-  "按手在犯人頭上作見證": {
-    "alias_of": "按手在犯人頭上作見證（利24：14）"
-  },
   "按手認罪": {
     "alias_of": "按手認罪（承認罪孽轉移）"
   },
@@ -26824,9 +26821,6 @@
   },
   "行軍順序": {
     "alias_of": "行軍次序"
-  },
-  "褻瀆聖名案例": {
-    "alias_of": "褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）"
   },
   "金牛犢": {
     "alias_of": "金牛犢事件"
@@ -28079,9 +28073,6 @@
   "示納": {
     "alias_of": "示納（押瑪王）"
   },
-  "示羅密": {
-    "alias_of": "示羅密（但支派底伯利的女兒，褻瀆者之母）"
-  },
   "天使": {
     "alias_of": "神的使者"
   },
@@ -28690,6 +28681,9 @@
   },
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
+  },
+  "褻瀆耶和華名": {
+    "alias_of": "褻瀆聖名（na.qav）"
   },
   "辱沒": {
     "alias_of": "褻瀆（cha.lal）"
@@ -29965,9 +29959,6 @@
   },
   "傳於後代之命令": {
     "alias_of": "傳於後代"
-  },
-  "光與燈預表基督(世界的光)": {
-    "alias_of": "光與燈預表基督（世界的光）"
   },
   "大地是屬耶和華的": {
     "alias_of": "全地都是屬耶和華的"
