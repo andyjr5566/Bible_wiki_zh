@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 21,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 127464,
+        "bytes": 179607
+      },
+      "after": {
+        "chars": 11827,
+        "bytes": 19264
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_leviticus_21.txt",
+          "chars": 10534,
+          "bytes": 29662
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_leviticus_21.txt",
+          "chars": 10834,
+          "bytes": 30422
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_leviticus_21.txt",
+          "chars": 5388,
+          "bytes": 5442
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_leviticus_21.txt",
+          "chars": 46506,
+          "bytes": 46518
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_leviticus_21.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 49434,
+          "raw_bytes": 56856,
+          "projected_chars": 6457,
+          "projected_bytes": 7336,
+          "occurrences": 96,
+          "occurrence_count": 96,
+          "lexicon_entries": 8,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 8,
+          "truncated": true,
+          "returned_chars": 6457,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

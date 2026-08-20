@@ -1,7 +1,6 @@
 book: 利未記
 chapter: 21
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 祭司不可為死人哀哭（居喪條例）
   suggested_type: 主題
   evidence: 1-6, 10-12節；祭司不可為民中的死人沾染自己，除非為骨肉之親的父母兒女弟兄和未出嫁的處女姊妹；不可使頭光禿、不可剃除鬍鬚周圍、不可用刀劃身；大祭司則更嚴格，連父母之死也不可沾染，不可蓬頭散髮、不可撕裂衣服、不可出聖所。與利10:6-7亞倫、以利亞撒、以他瑪不可為拿答亞比戶之死蓬頭散髮撕裂衣服同一原則，本章訂為祭司世世代代的定例。GT丁良才：神體貼祭司的感情，容許為骨肉之親沾染自己，但大祭司連父母之喪也不可像俗人一樣參與，因他沾染了不潔就沒有人能替他供職；GT啟導本：祭司不可接觸死人以免沾染不潔（民19:11-13），但至近的親屬例外，這裡沒有提到祭司的妻室，可能因妻子已與丈夫同為一體
@@ -27,6 +26,24 @@ B_needs_update:
   match_type: exact
   existing_title: 摩西
   existing_path: link_folder/人物/摩西.md
+B_needs_update:
+- name: 聖潔
+  suggested_type: 神學
+  evidence: 本章是祭司專屬的聖潔法典。STEP 顯示「使成聖」的 קִדֵּשׁ Piel 分詞（H6942G）在 v8 出現兩次（「你要使他成聖」ve./ki.dash.T/o；「我使你們成聖的耶和華」me.ka.dish./Khem）、v15（me.ka.de.Sh/o）與
+    v23（me.ka.de.Sha/m）各一次，主詞都是神。GT 串珠：「如果百姓須與一切邪惡隔絕，祭司們更當如此，他們是要歸神為聖的（6），百姓也要以他們為聖（8）。」GT
+    丁良才把三層聖潔講成同心的等級：「以色列眾人都要歸耶和華為聖（十八1至十九37），祭司更是如此（1-9），大祭司卻還要比眾祭司更聖（10-15）」。BH 於
+    v8 指出，祭司的聖潔不是他自身固有的，而是源自神的揀選與分別。
+  match_type: exact
+  existing_title: 聖潔
+  existing_path: link_folder/神學/聖潔.md
+- name: 沒有殘疾的祭牲
+  suggested_type: 神學
+  evidence: STEP 顯示本章 v17、v18、v21（兩次）、v23 共 5 次使用 מוּם（mum，H3971B，逐字解 a blemish），這正是祭牲條例所用的「殘疾」一詞。GT
+    啟導本因此直接把兩者並列：「進入聖所侍奉的祭司，應象所獻的祭牲一樣，在身體上沒有殘疾。」BH 於 v18 也把祭司的無瑕要求對回「無瑕祭牲的要求（利22:21）」。GT
+    丁良才給的第二個緣故是同一條原則：「神的祭司必須完全，因為一切歸給神的必須純全無疵（二十二17-25）。」
+  match_type: exact
+  existing_title: 沒有殘疾的祭牲
+  existing_path: link_folder/神學/沒有殘疾的祭牲.md
 C_new_formal:
 - name: 祭司不可娶被玷污的婦人為妻
   suggested_type: 主題
@@ -35,17 +52,7 @@ C_new_formal:
   - phrase: 不可娶妓女或被污的女人為妻
     verses:
     - 7
-  target_path: link_folder/主題/祭司不可娶被玷污的婦人為妻.md
-  semantic_hint:
-  - title: 婢女行淫的贖愆祭條例
-    score: 0.509
-    type: 主題
-  - title: 不可與經期婦人親近
-    score: 0.447
-    type: 主題
-  - title: 污穢
-    score: 0.434
-    type: 主題
+  existing_title: 祭司不可娶被玷污的婦人為妻
 - name: 祭司的女兒行淫用火焚燒
   suggested_type: 主題
   evidence: v9「祭司的女兒若行淫辱沒自己，就辱沒了父親，必用火將她焚燒」。GT丁良才：大約是在治死以後才用火焚燒的，這是比治死的刑罰更重，因為有職分之人的子女若行可恥的事，辱沒父親和他的職分，罪孽更大所受刑罰也該更重；此火刑與利20:14「人若娶妻並娶其母便是大惡要用火焚燒」同屬本書最嚴厲的刑罰
@@ -53,17 +60,7 @@ C_new_formal:
   - phrase: 祭司的女兒若行淫辱沒自己，就辱沒了父親，必用火將他焚燒
     verses:
     - 9
-  target_path: link_folder/主題/祭司的女兒行淫用火焚燒.md
-  semantic_hint:
-  - title: 婢女行淫的贖愆祭條例
-    score: 0.453
-    type: 主題
-  - title: 火祭（isheh）
-    score: 0.449
-    type: 主題
-  - title: 營外焚燒
-    score: 0.421
-    type: 主題
+  existing_title: 祭司的女兒行淫用火焚燒
 - name: 大祭司娶處女為妻的婚姻條例
   suggested_type: 主題
   evidence: 13-15節；大祭司只可娶處女為妻，寡婦、被休的婦人、被污為妓的女人都不可娶，只可娶本民中的處女，免得在民中辱沒他的兒女。GT丁良才：按猶太人解釋，未婚夫死了大祭司也不可娶那處女；一般祭司可娶寡婦為妻（v14「寡婦」不受此限），唯大祭司連祭司所遺留的寡婦也不可娶；GT精讀本：暗示新約時代基督接受基督徒為新婦，是毫無瑕疵的童女（林後11:2-3；弗5:22-33；啟19:7-8）
@@ -74,17 +71,7 @@ C_new_formal:
   - phrase: 寡婦或是被休的婦人，或是被污為妓的女人，都不可娶
     verses:
     - 14
-  target_path: link_folder/主題/大祭司娶處女為妻的婚姻條例.md
-  semantic_hint:
-  - title: 古代近東婚姻習俗
-    score: 0.434
-    type: 歷史
-  - title: 婢女行淫的贖愆祭條例
-    score: 0.431
-    type: 主題
-  - title: 送婢女為嫁妝
-    score: 0.405
-    type: 文化
+  existing_title: 大祭司娶處女為妻的婚姻條例
 - name: 有殘疾的祭司不可近前獻祭
   suggested_type: 主題
   evidence: 17-23節；凡有殘疾的（瞎眼、瘸腿、塌鼻子、肢體有餘、折腳折手、駝背、矮矬、眼睛有毛病、長癬、長疥、損壞腎子）都不可近前來獻神的食物，但仍可吃聖物至聖之物，只是不可進到幔子前也不可就近壇前。GT丁良才：此條例有三個緣故——若有殘疾人作祭司百姓就容易輕看祭祀神的禮節、神的祭司必須完全因一切歸給神的必須純全無疵、祭司預表主耶穌因此必須完全；GT《舊約背景註釋》：古代近東每個宗教都要求祭壇聖潔特區內保持儀式上的潔淨，祭物和主持宗教事務的人員都包括在內，有缺陷的祭司雖不能接近祭壇卻仍有權分享祭司當得的祭物
@@ -98,13 +85,23 @@ C_new_formal:
   - phrase: 但不可進到幔子前，也不可就近壇前
     verses:
     - 23
-  target_path: link_folder/主題/有殘疾的祭司不可近前獻祭.md
-  semantic_hint:
-  - title: 沒有殘疾的祭牲
-    score: 0.459
-    type: 神學
-  - title: 無殘疾（tamim）
-    score: 0.428
-    type: 主題
+  existing_title: 有殘疾的祭司不可近前獻祭
+- name: 褻瀆（cha.lal）
+  suggested_type: 原文
+  evidence: STEP 顯示 חָלַל（cha.lal，H2490H，詞典義 to profane）在本章出現 7 次、橫跨 6 節，是全章的骨幹動詞；和合本卻依語境譯成三個不同的中文詞——v4「從俗」（לְהֵחַלּוֹ
+    le./He.cha.L/o，HR/VNcc/Sp3ms，逐字解 to profane himself）、v6「褻瀆」神的名（יְחַלְּלוּ ye.cha.le.Lu，HVpi3mp）、v9「辱沒」自己與父親（תֵחֵל
+    te.Chel，HVhi3fs 與 מְחַלֶּלֶת me.cha.Le.let，HVprfsa 各一次）、v12「褻瀆」神的聖所（יְחַלֵּל ye.cha.Lel，HVpi3ms）、v15「辱沒」他的兒女（同形）、v23「褻瀆」我的聖所（同形）。與此相對的是
+    קדשׁ Piel 分詞「使成聖」（H6942G）在 v8 兩次、v15、v23 各一次，CT 也留意到「經文中曾三次提及使人成聖的神(參8，15，23節)」。
+  surfaces:
+  - phrase: 不可褻瀆神的名
+    verses:
+    - 6
+  - phrase: 也不可褻瀆神的聖所
+    verses:
+    - 12
+  - phrase: 免得褻瀆我的聖所
+    verses:
+    - 23
+  target_path: link_folder/原文/褻瀆（cha.lal）.md
 D_new_candidate: []
 E_skip: []
