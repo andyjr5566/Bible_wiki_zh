@@ -7,15 +7,24 @@ links:
 - verse: 2
   phrase: 要遠離以色列人所分別為聖、歸給我的聖物
   target: 污穢
+- verse: 2
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
 - verse: 3
   phrase: 凡身上有污穢、親近以色列人所分別為聖、歸耶和華聖物的
   target: 污穢
 - verse: 3
   phrase: 剪除
-  target: 剪除（kareth）
+  target: 剪除
 - verse: 4
   phrase: 不可吃聖物，直等他潔淨了
   target: 污穢
+- verse: 6
+  phrase: 聖物
+  target: 聖物
+- verse: 7
+  phrase: 聖物
+  target: 聖物
 - verse: 8
   phrase: 污穢
   target: 污穢
@@ -28,6 +37,9 @@ links:
 - verse: 11
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 11
+  phrase: 聖物
+  target: 聖物
 - verse: 12
   phrase: 祭司的女兒若嫁外人，就不可吃舉祭的聖物
   target: 誰可吃聖物的資格條例
@@ -40,6 +52,15 @@ links:
 - verse: 15
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 15
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
+- verse: 15
+  phrase: 耶和華的聖物
+  target: 聖物
+- verse: 16
+  phrase: 聖物
+  target: 聖物
 - verse: 17
   phrase: 摩西
   target: 摩西
@@ -58,6 +79,12 @@ links:
 - verse: 23
   phrase: 若肢體有餘的，或是缺少的，只可作甘心祭獻上
   target: 肢體有餘或缺少只可作甘心祭
+- verse: 23
+  phrase: 不蒙悅納
+  target: 獻祭不蒙悅納
+- verse: 25
+  phrase: 不蒙悅納
+  target: 獻祭不蒙悅納
 - verse: 26
   phrase: 摩西
   target: 摩西
@@ -70,3 +97,6 @@ links:
 - verse: 28
   phrase: 不可同日宰母和子
   target: 不可同日宰母和子
+- verse: 32
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
