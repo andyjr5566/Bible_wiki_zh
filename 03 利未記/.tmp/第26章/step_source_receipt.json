@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "利未記",
+  "chapter": 26,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_leviticus_26.txt",
+      "book": "Leviticus",
+      "book_code": "Lev",
+      "chapter": 26,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 46,
+      "words": 582,
+      "first": "Lev 26:1",
+      "last": "Lev 26:46",
+      "sha256": "fc97e087b1a8983ae3536f37bee973f01043fdfc4456c4bb31d3266dadb8d9cb",
+      "bytes": 121846,
+      "chars": 107230,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
