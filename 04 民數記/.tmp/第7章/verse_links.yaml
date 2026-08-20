@@ -5,6 +5,9 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 3
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 3
   phrase: 六輛篷子車和十二隻公牛
   target: 奉獻篷車與牛（利未人搬運分工）
 - verse: 4
@@ -37,6 +40,9 @@ links:
 - verse: 10
   phrase: 奉獻壇的禮
   target: 奉獻壇之禮（十二支派首領奉獻）
+- verse: 10
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 11
   phrase: 摩西
   target: 摩西
@@ -47,8 +53,14 @@ links:
   phrase: 每天一個首領來獻供物
   target: 按日獻供物（十二天奉獻禮）
 - verse: 12
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 12
   phrase: 拿順
   target: 拿順
+- verse: 13
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 13
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -70,6 +82,12 @@ links:
 - verse: 17
   phrase: 拿順
   target: 拿順
+- verse: 17
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 19
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 19
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -88,6 +106,12 @@ links:
 - verse: 23
   phrase: 平安祭
   target: 平安祭
+- verse: 23
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 25
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 25
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -106,6 +130,12 @@ links:
 - verse: 29
   phrase: 平安祭
   target: 平安祭
+- verse: 29
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 31
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 31
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -124,6 +154,12 @@ links:
 - verse: 35
   phrase: 平安祭
   target: 平安祭
+- verse: 35
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 37
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 37
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -142,6 +178,12 @@ links:
 - verse: 41
   phrase: 平安祭
   target: 平安祭
+- verse: 41
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 43
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 43
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -160,6 +202,12 @@ links:
 - verse: 47
   phrase: 平安祭
   target: 平安祭
+- verse: 47
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 49
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 49
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -178,6 +226,12 @@ links:
 - verse: 53
   phrase: 平安祭
   target: 平安祭
+- verse: 53
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 55
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 55
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -196,6 +250,12 @@ links:
 - verse: 59
   phrase: 平安祭
   target: 平安祭
+- verse: 59
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 61
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 61
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -214,6 +274,12 @@ links:
 - verse: 65
   phrase: 平安祭
   target: 平安祭
+- verse: 65
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 67
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 67
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -232,6 +298,12 @@ links:
 - verse: 71
   phrase: 平安祭
   target: 平安祭
+- verse: 71
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 73
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 73
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -250,6 +322,12 @@ links:
 - verse: 77
   phrase: 平安祭
   target: 平安祭
+- verse: 77
+  phrase: 供物
+  target: 供物（qorban）
+- verse: 79
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 79
   phrase: 聖所的平
   target: 聖所的平（捨客勒標準）
@@ -268,6 +346,9 @@ links:
 - verse: 83
   phrase: 平安祭
   target: 平安祭
+- verse: 83
+  phrase: 供物
+  target: 供物（qorban）
 - verse: 84
   phrase: 獻壇之禮
   target: 奉獻壇之禮（十二支派首領奉獻）
@@ -299,8 +380,11 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 89
+  phrase: 法櫃
+  target: 約櫃
+- verse: 89
   phrase: 施恩座
   target: 施恩座
 - verse: 89
   phrase: 二基路伯中間有與他說話的聲音
-  target: 二基路伯中間說話的聲音（施恩座微聲）
+  target: 二基路伯中間說話的聲音

@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 7,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 257448,
+        "bytes": 320254
+      },
+      "after": {
+        "chars": 12109,
+        "bytes": 23889
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_numbers_7.txt",
+          "chars": 18189,
+          "bytes": 52150
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_numbers_7.txt",
+          "chars": 10747,
+          "bytes": 29005
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_numbers_7.txt",
+          "chars": 11509,
+          "bytes": 11563
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_numbers_7.txt",
+          "chars": 174434,
+          "bytes": 174476
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_numbers_7.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 169307,
+          "raw_bytes": 198130,
+          "projected_chars": 4152,
+          "projected_bytes": 4898,
+          "occurrences": 89,
+          "occurrence_count": 89,
+          "lexicon_entries": 1,
+          "selected_verses": [
+            3,
+            11,
+            13,
+            14,
+            15,
+            16,
+            19,
+            20,
+            21,
+            22,
+            25,
+            26,
+            27,
+            28,
+            31,
+            32,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            43,
+            44,
+            45,
+            46,
+            49,
+            50,
+            51,
+            52,
+            55,
+            56,
+            57,
+            58,
+            61,
+            62,
+            63,
+            64,
+            67,
+            68,
+            69,
+            70,
+            73,
+            74,
+            75,
+            76,
+            79,
+            80,
+            81,
+            82,
+            85
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 1,
+          "truncated": true,
+          "returned_chars": 4152,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

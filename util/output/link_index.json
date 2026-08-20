@@ -18102,11 +18102,11 @@
     "status": "formal",
     "aliases": []
   },
-  "二基路伯中間說話的聲音（施恩座微聲）": {
-    "path": "link_folder/神學/二基路伯中間說話的聲音（施恩座微聲）.md",
+  "二基路伯中間說話的聲音": {
+    "path": "link_folder/神學/二基路伯中間說話的聲音.md",
     "type": "神學",
     "secondary_types": [],
-    "title": "二基路伯中間說話的聲音（施恩座微聲）",
+    "title": "二基路伯中間說話的聲音",
     "status": "formal",
     "aliases": [
       "二基路伯中間有與他說話的聲音"
@@ -23455,6 +23455,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "歌斐木",
+    "status": "formal",
+    "aliases": []
+  },
+  "民數記第七章的時序與編排": {
+    "path": "link_folder/背景/民數記第七章的時序與編排.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "民數記第七章的時序與編排",
     "status": "formal",
     "aliases": []
   },
@@ -29908,7 +29916,7 @@
     "alias_of": "不能看見神的面而存活"
   },
   "二基路伯中間有與他說話的聲音": {
-    "alias_of": "二基路伯中間說話的聲音（施恩座微聲）"
+    "alias_of": "二基路伯中間說話的聲音"
   },
   "五個人追趕一百人": {
     "alias_of": "五個人追趕一百人（蒙福的軍事應許）"

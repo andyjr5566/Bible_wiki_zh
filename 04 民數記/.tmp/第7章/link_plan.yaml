@@ -1,6 +1,19 @@
 book: 民數記
 chapter: 7
-A_use_directly: []
+A_use_directly:
+- name: 拿順
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 拿順
+  existing_path: link_folder/人物/拿順.md
+- name: 二基路伯中間說話的聲音
+  suggested_type: 神學
+  evidence: v89「摩西進會幕要與耶和華說話的時候，聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音」。CT：奉獻的高峰是神對人說話與親密交通（出25:22）。GT：神住民中間的明證。KC：God shares His deep thoughts in the quietness of the sanctuary after devotion.
+  surfaces:
+  - phrase: 二基路伯中間有與他說話的聲音
+  match_type: exact
+  existing_title: 二基路伯中間說話的聲音
+  existing_path: link_folder/神學/二基路伯中間說話的聲音.md
 B_needs_update:
 - name: 摩西
   suggested_type: 人物
@@ -33,7 +46,7 @@ B_needs_update:
   existing_title: 哥轄子孫
   existing_path: link_folder/人物/哥轄子孫.md
 - name: 燔祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v15, 87「作燔祭的，共有公牛十二隻…」。
   match_type: exact
   existing_title: 燔祭
@@ -45,11 +58,11 @@ B_needs_update:
   existing_title: 贖罪祭
   existing_path: link_folder/神學/贖罪祭.md
 - name: 平安祭
-  suggested_type: 原文
+  suggested_type: 神學
   evidence: v17, 88「作平安祭的，共有公牛二十四隻…」。
   match_type: exact
   existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
+  existing_path: link_folder/神學/平安祭.md
 - name: 素祭（minchah）
   suggested_type: 原文
   evidence: v13, 87「盛滿了調油的細麵作素祭…」。
@@ -62,44 +75,68 @@ B_needs_update:
   match_type: exact
   existing_title: 施恩座
   existing_path: link_folder/主題/施恩座.md
+- name: 供物（qorban）
+  suggested_type: 原文
+  evidence: v3「他們把自己的供物送到耶和華面前」；CT：『供物』指供給神的禮物。GT《民數記串珠聖經註釋》分辨禮物與祭物：「禮物是額外的，並不是神清楚指定的，因此摩西須尋問神是否接受這些禮物（4）……至於祭物，則是神清楚指明的。」GT《舊約聖經背景註釋》指出 v84-88 所列的牲畜並非立刻被獻為祭，「可說是聖所喬遷的禮物」。
+  match_type: exact
+  existing_title: 供物（qorban）
+  existing_path: link_folder/原文/供物（qorban）.md
+- name: 贖罪祭與贖愆祭的分別
+  suggested_type: 神學
+  evidence: v16、87 只獻贖罪祭而未獻贖愆祭，三家給的理由各不相同：CT——首領「不是為個人的罪行獻祭，而是代表全支派之人在神面前乃是罪人，故僅獻贖罪祭」；GT《民數記串珠聖經註釋》——「贖愆祭是要贖人際間的罪咎（參利5章），而本段的獻祭是以神為中心，故此無需獻贖愆祭」；GT《聖經精讀本》——「是因為他們沒有犯應該向神賠償的特別罪」。
+  match_type: exact
+  existing_title: 贖罪祭與贖愆祭的分別
+  existing_path: link_folder/神學/贖罪祭與贖愆祭的分別.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: v89「聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音」；CT：『法櫃』指約櫃，裡面存放兩塊法版、嗎哪、亞倫發過芽的杖。GT《聖經精讀本》：施恩座以上、二基路伯中間是神與人相見的地方（出25:22），希伯來書稱之為施恩的寶座（來4:16）。
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
 C_new_formal:
-- name: 拿順
-  suggested_type: 人物
-  target_path: link_folder/人物/拿順.md
+- name: 民數記第七章的時序與編排
+  suggested_type: 背景
+  evidence: v1「摩西立完了帳幕」把時間拉回出40:17 的第二年正月初一日，早於民1:1 的二月初一。GT 丁良才：「本章的事，原該列在利八10節以後，不過記在此處，免得有防礙於記載西奈山垂律法的事。」GT《啟導本》：作者希望民數記可以集中講獻祭和祭司的按立，再敘述全民出發前的準備與利未人工作的分配，之後才介紹十二支派奉獻禮物。GT《民數記串珠聖經註釋》給了三個理由（先交代車牛分配需接上文利未人職務、律法禮儀先於實踐記載以免破壞整體性、奉獻是以神為中心生活的最高回應）。KC 列出從正月初一到二月二十日雲彩收上起行的完整事件序列。
+  target_path: link_folder/背景/民數記第七章的時序與編排.md
+  semantic_hint:
+  - title: 行軍次序
+    score: 0.487
+    type: 事件
+  - title: 七是節期中最要緊的數目
+    score: 0.461
+    type: 主題
+  - title: 第11章的敘事次序
+    score: 0.453
+    type: 解經爭議
 - name: 奉獻篷車與牛（利未人搬運分工）
   suggested_type: 事件
-  evidence: v1-9，以色列眾首領奉獻六輛篷子車與十二隻公牛；摩西分配給革順子孫兩車四牛、米拉利子孫四車八牛，但哥轄子孫無車牛。CT：照職務負荷分配，神備辦所需。GT：首領同心合意樂獻。KC：spiritual
-    wisdom in facilitating God's service.
+  evidence: v1-9，以色列眾首領奉獻六輛篷子車與十二隻公牛；摩西分配給革順子孫兩車四牛、米拉利子孫四車八牛，但哥轄子孫無車牛。CT：照職務負荷分配，神備辦所需。GT：首領同心合意樂獻。KC：spiritual wisdom in facilitating God's service.
   surfaces:
   - phrase: 六輛篷子車和十二隻公牛
   - phrase: 車與牛
   target_path: link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md
 - name: 肩頭抬聖物（哥轄子孫）
   suggested_type: 主題
-  evidence: v9「但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物」。CT：高舉主的服事需親自付代價。GT：大衛用車拉約櫃招致烏撒之死（撒下6:6-7）。KC：heavenly
-    things must be carried on the shoulders with fear and trembling.
+  evidence: v9「但車與牛都沒有交給哥轄子孫；因為他們辦的是聖所的事，在肩頭上抬聖物」。CT：高舉主的服事需親自付代價。GT：大衛用車拉約櫃招致烏撒之死（撒下6:6-7）。KC：heavenly things must be carried on the shoulders with fear and trembling.
   surfaces:
   - phrase: 在肩頭上抬聖物
   target_path: link_folder/主題/肩頭抬聖物（哥轄子孫）.md
 - name: 奉獻壇之禮（十二支派首領奉獻）
   suggested_type: 事件
-  evidence: v10-88，用膏抹壇的日子，十二支派首領一連十二天每天一位前來行奉獻壇之禮，獻上銀盤、銀碗、金盂（盛滿香）及四大祭物（燔祭、贖罪祭、平安祭、素祭）。CT：代表全民熱誠感恩與神人關係的建立。KC：voluntary
-    offering out of love for the altar and the LORD.
+  evidence: v10-88，用膏抹壇的日子，十二支派首領一連十二天每天一位前來行奉獻壇之禮，獻上銀盤、銀碗、金盂（盛滿香）及四大祭物（燔祭、贖罪祭、平安祭、素祭）。CT：代表全民熱誠感恩與神人關係的建立。KC：voluntary offering out of love for the altar and the LORD.
   surfaces:
   - phrase: 奉獻壇的禮
   - phrase: 獻壇之禮
   target_path: link_folder/事件/奉獻壇之禮（十二支派首領奉獻）.md
 - name: 按日獻供物（十二天奉獻禮）
   suggested_type: 主題
-  evidence: v11, 12-83「要每天一個首領來獻供物」，神不嫌繁瑣詳細記載每位首領與供物。CT：神極其看重並逐一數點個人與支派的奉獻，絕不輕忽。GT：各支派在敬拜神的事上責任平等。KC：God
-    gives His full personal attention to every single giver.
+  evidence: v11, 12-83「要每天一個首領來獻供物」，神不嫌繁瑣詳細記載每位首領與供物。CT：神極其看重並逐一數點個人與支派的奉獻，絕不輕忽。GT：各支派在敬拜神的事上責任平等。KC：God gives His full personal attention to every single giver.
   surfaces:
   - phrase: 每天一個首領來獻供物
   target_path: link_folder/主題/按日獻供物（十二天奉獻禮）.md
 - name: 金盂盛滿了香（祈禱與事奉）
   suggested_type: 主題
-  evidence: v14, 20...86「一個金盂，重十舍客勒，盛滿了香」。CT：金盂表徵神性與信心，香表徵眾聖徒真誠的祈禱（啟5:8）。GT：奉獻連同禱告昇華，蒙神極大悅納。KC：sweet
-    fragrance of Christ and prayers of saints.
+  evidence: v14, 20...86「一個金盂，重十舍客勒，盛滿了香」。CT：金盂表徵神性與信心，香表徵眾聖徒真誠的祈禱（啟5:8）。GT：奉獻連同禱告昇華，蒙神極大悅納。KC：sweet fragrance of Christ and prayers of saints.
   surfaces:
   - phrase: 盛滿了香
   - phrase: 金盂盛滿了香
@@ -110,12 +147,5 @@ C_new_formal:
   surfaces:
   - phrase: 聖所的平
   target_path: link_folder/文化/聖所的平（捨客勒標準）.md
-- name: 二基路伯中間說話的聲音（施恩座微聲）
-  suggested_type: 神學
-  evidence: v89「摩西進會幕要與耶和華說話的時候，聽見法櫃的施恩座以上、二基路伯中間有與他說話的聲音」。CT：奉獻的高峰是神對人說話與親密交通（出25:22）。GT：神住民中間的明證。KC：God
-    shares His deep thoughts in the quietness of the sanctuary after devotion.
-  surfaces:
-  - phrase: 二基路伯中間有與他說話的聲音
-  target_path: link_folder/神學/二基路伯中間說話的聲音（施恩座微聲）.md
 D_new_candidate: []
 E_skip: []

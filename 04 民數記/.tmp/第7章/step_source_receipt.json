@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_7.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 89,
+      "words": 1071,
+      "first": "Num 7:1",
+      "last": "Num 7:89",
+      "sha256": "b6d45aada72394e8dc4e36c87b069e5b595a08275e637b84d9272e0ff27c95e6",
+      "bytes": 198130,
+      "chars": 171007,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
