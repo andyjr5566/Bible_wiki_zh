@@ -4,8 +4,8 @@ book: 利未記
 chapter: 22
 candidate_sha256: a566c367e3f2f9df11532678b7ca9cb98eaa5db958e39e5f2f76edcdec196682
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: b6a0f5d847eba6cf
-link_index_sha256: 397f819c24f5eacfbd85ffbda9f502f398d69edc558dcbeeddd5a45cdec3eeb3
+embedding_index_fingerprint: dc76d4b9eca9dc0d
+link_index_sha256: 36019505015ee2297deafd4d6cbc7f176f1137a473f648460858514a9927f9a6
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：利未記 第22章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2626 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2627 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。

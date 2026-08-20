@@ -4,8 +4,8 @@ book: 利未記
 chapter: 21
 candidate_sha256: a88c51844e0eb53302ac196d8a7d8767b0f99d5e9d6f130fec7879cbb9e1541a
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: da9b9159252f8764
-link_index_sha256: 397f819c24f5eacfbd85ffbda9f502f398d69edc558dcbeeddd5a45cdec3eeb3
+embedding_index_fingerprint: dc76d4b9eca9dc0d
+link_index_sha256: 36019505015ee2297deafd4d6cbc7f176f1137a473f648460858514a9927f9a6
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：利未記 第21章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2626 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2627 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -121,7 +121,7 @@ query:
 | 2 | 祭司不可娶被玷污的婦人為妻 | 0.767 | link_folder/主題/祭司不可娶被玷污的婦人為妻.md |
 | 3 | 結44：20-25 | 0.620 | link_folder/互文/結44：20-25.md |
 | 4 | 林後6：14 | 0.601 | link_folder/互文/林後6：14.md |
-| 5 | 婢女行淫的贖愆祭條例 | 0.559 | link_folder/主題/婢女行淫的贖愆祭條例.md |
+| 5 | 誰可吃聖物的資格條例 | 0.561 | link_folder/主題/誰可吃聖物的資格條例.md |
 
 判定：✅ 建議使用既有條目 [[大祭司娶處女為妻的婚姻條例]]（同名／字面對應）
 
@@ -139,9 +139,9 @@ query:
 |---|---|---:|---|
 | 1 | 有殘疾的祭司不可近前獻祭 | 0.872 | link_folder/主題/有殘疾的祭司不可近前獻祭.md |
 | 2 | 沒有殘疾的祭牲 | 0.707 | link_folder/神學/沒有殘疾的祭牲.md |
-| 3 | 無殘疾（tamim） | 0.627 | link_folder/主題/無殘疾（tamim）.md |
-| 4 | 瑪1：8 | 0.599 | link_folder/互文/瑪1：8.md |
-| 5 | 祭司吃贖罪祭的意義 | 0.585 | link_folder/神學/祭司吃贖罪祭的意義.md |
+| 3 | 肢體有餘或缺少只可作甘心祭 | 0.661 | link_folder/主題/肢體有餘或缺少只可作甘心祭.md |
+| 4 | 誰可吃聖物的資格條例 | 0.648 | link_folder/主題/誰可吃聖物的資格條例.md |
+| 5 | 無殘疾（tamim） | 0.627 | link_folder/主題/無殘疾（tamim）.md |
 
 判定：✅ 建議使用既有條目 [[有殘疾的祭司不可近前獻祭]]（同名／字面對應）
 
@@ -197,7 +197,7 @@ query:
 |---|---|---:|---|
 | 1 | 聖潔 | 0.819 | link_folder/神學/聖潔.md |
 | 2 | 你們要聖潔因為我是聖潔的 | 0.687 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
-| 3 | 褻瀆（cha.lal） | 0.681 | link_folder/原文/褻瀆（cha.lal）.md |
+| 3 | 褻瀆（cha.lal） | 0.675 | link_folder/原文/褻瀆（cha.lal）.md |
 | 4 | 聖俗潔淨不潔淨的分別 | 0.661 | link_folder/神學/聖俗潔淨不潔淨的分別.md |
 | 5 | 神的聖潔 | 0.650 | link_folder/神學/神的聖潔.md |
 
@@ -216,9 +216,9 @@ query:
 |---|---|---:|---|
 | 1 | 沒有殘疾的祭牲 | 0.822 | link_folder/神學/沒有殘疾的祭牲.md |
 | 2 | 有殘疾的祭司不可近前獻祭 | 0.799 | link_folder/主題/有殘疾的祭司不可近前獻祭.md |
-| 3 | 無殘疾（tamim） | 0.741 | link_folder/主題/無殘疾（tamim）.md |
-| 4 | 瑪1：8 | 0.610 | link_folder/互文/瑪1：8.md |
-| 5 | 肢體有餘或缺少只可作甘心祭 | 0.586 | link_folder/主題/肢體有餘或缺少只可作甘心祭.md |
+| 3 | 肢體有餘或缺少只可作甘心祭 | 0.750 | link_folder/主題/肢體有餘或缺少只可作甘心祭.md |
+| 4 | 無殘疾（tamim） | 0.741 | link_folder/主題/無殘疾（tamim）.md |
+| 5 | 瑪1：8 | 0.610 | link_folder/互文/瑪1：8.md |
 
 判定：✅ 建議使用既有條目 [[沒有殘疾的祭牲]]（同名／字面對應）
 
