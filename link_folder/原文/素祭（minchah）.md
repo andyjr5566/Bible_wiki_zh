@@ -80,7 +80,7 @@ CT 補上素祭的實際功能：敬拜者藉此表明忠貞與感恩，「也�
 
 <!-- accumulation:民數記:5:start -->
 #### [[04 民數記/第5章|第5章]]
-- 本章重點：本章第15、18、25-26節規範「疑恨的素祭」，使用最粗賤的大麥麵，且絕不可澆油、不可加乳香（v15）。CT與KC指出此乃特殊的贖罪審判性素祭，無油無乳香因為神絕不在不義中得喜樂。
+- 本章重點：本章第15、18、25-26節規範「疑恨的素祭」，使用最粗賤的大麥麵，且絕不可澆油、不可加乳香（v15）。CT與KC指出此乃特殊的贖罪審判性素祭，無油無乳香因為神絕不在不義中得喜樂。GT《民數記串珠聖經註釋》指出本章的素祭是個特例：通常加油和乳香代表喜樂和感恩（利2:15），此處不加，是要表明獻者的不潔和悲哀贖罪的心態（參利5:11）。GT《聖經精讀本》另給技術性理由：這素祭不與燔祭或平安祭一同獻上，只單獻素祭。STEP 原文資料顯示第18節這份供物的原形是 מִנְחָה（min.chah，H4503G，詞典義 offering），而修飾它的兩個名稱一個是 זִכָּרוֹן（memorial），一個是「疑恨」的複數形。BH 指出油與乳香通常使供物更為芬芳、象徵喜樂與感謝，此處刻意省去，正凸顯這不是慶典而是一場嚴肅的查驗。
 - 與本章關聯：為利未記第2章與第6章素祭體系補充針對婚姻疑忌、不加油乳香的特殊素祭變體。
 <!-- accumulation:民數記:5:end -->
 
@@ -123,3 +123,7 @@ CT 補上素祭的實際功能：敬拜者藉此表明忠貞與感恩，「也�
 - 研經註解: KingComments 利未記第2章註解（<https://www.kingcomments.com/en/bible-studies/Lev/2>）
 - 研經註解: BibleHub 利未記第2章研經註解（<https://biblehub.com/study/leviticus/2.htm>）
 - 原文資料: 利未記 2:1 מִנְחָה H4503G 逐字解「grain offering」、詞典義域「offering」（<https://github.com/STEPBible/STEPBible-Data>）
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT05.htm — ccbiblestudy 註解（CT）民數記第5章
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT05.htm — ccbiblestudy 拾穗（GT）民數記第5章
+- https://www.kingcomments.com/en/bible-studies/Num/5 — KingComments 民數記第5章
+- https://biblehub.com/study/numbers/5.htm — BibleHub Study 民數記第5章

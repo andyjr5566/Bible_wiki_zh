@@ -42,7 +42,7 @@ source_scope: collected_only
 
 <!-- accumulation:民數記:5:start -->
 #### [[04 民數記/第5章|第5章]]
-- 本章重點：本章第2節指令將長大痲瘋者送出營外隔離（v2）。GT指出此處大痲瘋指一般的傳染性皮膚疾病（如癬癩）；CT靈意表徵從人裏面罪性顯露出來的罪污；KC指出其預表爆發未經審判的罪。
+- 本章重點：本章第2節指令將長大痲瘋者送出營外隔離（v2）。GT指出此處大痲瘋指一般的傳染性皮膚疾病（如癬癩）；CT靈意表徵從人裏面罪性顯露出來的罪污；KC指出其預表爆發未經審判的罪。GT《啟導本》在本章特別限定這個詞的範圍：此處雖用「大痲瘋」一詞，「但指的只是疥一類的皮膚病，不用太久便可治好」（參利13 及民12:10-16）。GT《舊約聖經背景註釋》則把這類疾病的性質討論指回民數記十三章2節的註釋，並指出巴比倫文獻也提過類似限制，皮膚病患者被逼隔離，「很可能是在墳墓附近居住」。BH 說明這道隔離同時有兩層作用：實務上防止疾病擴散，象徵上代表罪的玷污性；而利未記13-14 章給了診斷與潔淨的細則。
 - 與本章關聯：延伸利未記13-14章大痲瘋診斷與潔淨條例，落實大軍行軍安營時隔離不潔者的具體行政與屬靈防線。
 <!-- accumulation:民數記:5:end -->
 
@@ -76,3 +76,7 @@ source_scope: collected_only
 - 研經註解: Leviticus 13——Come Near to God、Laws about Skin Diseases、Laws about Mildew（<https://www.kingcomments.com/en/bible-studies/Lev/13>）
 - 研經註解: Leviticus 13——Laws about Skin Diseases、Laws about Mildew（<https://biblehub.com/study/leviticus/13.htm>）
 - 原文資料: STEP Bible 利未記13章逐字資料（צָרָעַת H6883、נֶגַע H5061、צָרוּעַ H6879、שְׂאֵת H7613、סַפַּחַת H5597、בַהֶרֶת H934、סָגַר H5462）（<https://github.com/STEPBible/STEPBible-Data>）
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT05.htm — ccbiblestudy 註解（CT）民數記第5章
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT05.htm — ccbiblestudy 拾穗（GT）民數記第5章
+- https://www.kingcomments.com/en/bible-studies/Num/5 — KingComments 民數記第5章
+- https://biblehub.com/study/numbers/5.htm — BibleHub Study 民數記第5章

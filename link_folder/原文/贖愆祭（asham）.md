@@ -78,7 +78,7 @@ CT 用一句話概括同一個分野：「贖罪祭的罪是指在根本上籠�
 
 <!-- accumulation:民數記:5:start -->
 #### [[04 民數記/第5章|第5章]]
-- 本章重點：本章第8節規定賠償虧負之外，犯罪者仍需獻上一隻公羊作為贖罪/贖愆祭。CT與GT說明賠償處理人際損害，贖愆祭公羊處理對神的干犯，兩者並行不可偏廢。
+- 本章重點：本章第8節規定賠償虧負之外，犯罪者仍需獻上一隻公羊作為贖罪/贖愆祭。CT與GT說明賠償處理人際損害，贖愆祭公羊處理對神的干犯，兩者並行不可偏廢。GT 丁良才指出第8節「贖罪的公羊」就是利未記六章6節所吩咐的贖愆祭。GT《聖經精讀本》說明它與加五分之一的關係：加上五分之一的行為包含賠償的意思，呈現的是神的公義，而這件事「與贖愆祭的意義有關（利5:14-6:7）」。BH 指出這隻公羊處理的是同一件事的另一面：賠償對付的是虧負人的部分，贖愆祭對付的是干犯神的部分，兩者缺一不可。
 - 與本章關聯：呼應利未記5:14-6:7贖愆祭條例，強調任何得罪人的罪本質上皆干犯了神，必須藉血祭贖罪。
 <!-- accumulation:民數記:5:end -->
 
@@ -112,3 +112,8 @@ CT 用一句話概括同一個分野：「贖罪祭的罪是指在根本上籠�
 - 拾穗: 利未記第五章拾穗——14-19節贖愆祭背景、賠償細節、公綿羊規定（<https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT05.htm>）
 - 研經註解: Leviticus 5 KingComments——14-19節贖愆祭神學意義、基督預表、估價與賠償（<https://www.kingcomments.com/en/bible-studies/Lev/5>）
 - 研經註解: Leviticus 5 BibleHub Study——15-19節逐節研讀、聖物誤犯、加五分之一、公綿羊贖愆祭（<https://biblehub.com/study/leviticus/5.htm>）
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT05.htm — ccbiblestudy 註解（CT）民數記第5章
+- https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT05.htm — ccbiblestudy 拾穗（GT）民數記第5章
+- https://www.kingcomments.com/en/bible-studies/Num/5 — KingComments 民數記第5章
+- https://biblehub.com/study/numbers/5.htm — BibleHub Study 民數記第5章
+- https://github.com/STEPBible/STEPBible-Data — STEP Bible 原文資料（CC BY 4.0）民數記第5章
