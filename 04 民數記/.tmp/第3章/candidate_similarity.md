@@ -4,7 +4,7 @@ book: 民數記
 chapter: 3
 candidate_sha256: b96d1fb492fc720720592e85fbfa794175897920af7462c05273eba2e4a14309
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 9a6c1f227e8d0ae0
+embedding_index_fingerprint: 1150a958accbd881
 link_index_sha256: ed89cd4409ad64a5d11655a6a679305a7d2fd73f0e88950d7435c512c7a13c06
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -144,7 +144,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以利亞撒 | 0.502 | link_folder/人物/以利亞撒.md |
+| 1 | 以利亞撒 | 0.494 | link_folder/人物/以利亞撒.md |
 | 2 | 以利以謝（人物） | 0.466 | link_folder/人物/以利以謝（人物）.md |
 | 3 | 以利以謝 | 0.463 | link_folder/人物/以利以謝.md |
 | 4 | 以撒 | 0.422 | link_folder/人物/以撒.md |
@@ -162,8 +162,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以他瑪 | 0.450 | link_folder/人物/以他瑪.md |
-| 2 | 他瑪（創38） | 0.435 | link_folder/人物/他瑪（創38）.md |
+| 1 | 他瑪（創38） | 0.435 | link_folder/人物/他瑪（創38）.md |
+| 2 | 以他瑪 | 0.434 | link_folder/人物/以他瑪.md |
 | 3 | 他瑪 (撒下13) | 0.396 | link_folder/人物/他瑪 (撒下13).md |
 | 4 | 以米人 | 0.369 | link_folder/人物/以米人.md |
 | 5 | 他瑪行動是否可稱義 | 0.351 | link_folder/解經爭議/他瑪行動是否可稱義.md |
@@ -234,7 +234,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 利未三族分工 | 0.666 | link_folder/事件/利未三族分工.md |
+| 1 | 利未三族分工 | 0.630 | link_folder/事件/利未三族分工.md |
 | 2 | 利未支派 | 0.524 | link_folder/人物/利未支派.md |
 | 3 | 利未 | 0.501 | link_folder/人物/利未.md |
 | 4 | 數點利未任職男子 | 0.497 | link_folder/事件/數點利未任職男子.md |

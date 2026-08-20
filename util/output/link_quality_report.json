@@ -1,14 +1,21 @@
 {
-  "total_warnings": 78,
+  "total_warnings": 86,
   "critical_count": 0,
-  "warning_count": 78,
+  "warning_count": 86,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "利未記/第7章.md",
-      "target": "剪除",
-      "message": "同一 alias「剪除」指向多個 target: 剪除, 從民中剪除的含義"
+      "source": "民數記/第5章.md",
+      "target": "舉祭",
+      "message": "同一 alias「舉祭」指向多個 target: 聖物, 舉祭"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第5章.md",
+      "target": "素祭",
+      "message": "同一 alias「素祭」指向多個 target: 疑恨的素祭（大麥面不加油乳香）, 素祭（minchah）"
     },
     {
       "type": "alias_target_conflict",
@@ -62,6 +69,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/亞設（有福）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/以撒.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 03 利未記/第26章"
@@ -83,9 +97,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/以薩迦（價值）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/便雅憫.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/所羅門.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 11 列王紀上/第1章, 14 歷代志下/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/拿弗他利.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -244,9 +279,30 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/西布倫（同住）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/西緬.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/迦南人.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 06 約書亞記/第3章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/迦得（萬幸）.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
     },
     {
       "type": "alias_target_conflict",

@@ -1259,7 +1259,7 @@ def chapter_content_step(
     allowed_links = list(dict.fromkeys(existing_titles + created))
     min_sections, min_chars = _org_requirements(len(raw_verses))
     prompt = (
-        f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫 "
+        f"你是聖經研經資料整理員。唯一任務：為 {ctx.book} 第{ctx.chapter}章填寫, 內容若是能夠用條列式整理的知識節點，請用 knowledge_nodes 欄位列出；若是需要用文字敘述的整理，請用 organization 欄位寫出。\n\n"
         f"chapter_content payload（本章知識節點 + 本章整理）。\n\n【經文】\n{raw_text}\n\n"
         f"【本章來源 context】\n{sources_text}\n\n"
         f"【STEP 原文資料使用邊界】\n{STEP_USAGE_RULES}\n"
