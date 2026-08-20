@@ -1,7 +1,6 @@
 book: 民數記
 chapter: 4
-A_use_directly: []
-B_needs_update:
+A_use_directly:
 - name: 摩西
   suggested_type: 人物
   match_type: exact
@@ -22,6 +21,24 @@ B_needs_update:
   match_type: exact
   existing_title: 以他瑪
   existing_path: link_folder/人物/以他瑪.md
+- name: 哥轄子孫
+  suggested_type: 人物
+  evidence: v2, 4, 15, 17, 34，利未次子後代，負責搬運至聖物
+  match_type: exact
+  existing_title: 哥轄子孫
+  existing_path: link_folder/人物/哥轄子孫.md
+- name: 革順子孫
+  suggested_type: 人物
+  evidence: v22, 24, 28, 38，利未長子後代，負責抬會幕幔子與覆蓋物
+  match_type: exact
+  existing_title: 革順子孫
+  existing_path: link_folder/人物/革順子孫.md
+- name: 米拉利子孫
+  suggested_type: 人物
+  evidence: v29, 31, 33, 42，利未幼子後代，負責抬會幕板、閂、柱子與座等骨架
+  match_type: exact
+  existing_title: 米拉利子孫
+  existing_path: link_folder/人物/米拉利子孫.md
 - name: 利未三族分工
   suggested_type: 事件
   match_type: exact
@@ -91,93 +108,79 @@ B_needs_update:
   match_type: exact
   existing_title: 不可摸約櫃（撒下6：6-7）
   existing_path: link_folder/互文/不可摸約櫃（撒下6：6-7）.md
-C_new_formal:
-- name: 哥轄子孫
-  suggested_type: 人物
-  evidence: v2, 4, 15, 17, 34，利未次子後代，負責搬運至聖物
-  target_path: link_folder/人物/哥轄子孫.md
-- name: 革順子孫
-  suggested_type: 人物
-  evidence: v22, 24, 28, 38，利未長子後代，負責抬會幕幔子與覆蓋物
-  target_path: link_folder/人物/革順子孫.md
-- name: 米拉利子孫
-  suggested_type: 人物
-  evidence: v29, 31, 33, 42，利未幼子後代，負責抬會幕板、閂、柱子與座等骨架
-  target_path: link_folder/人物/米拉利子孫.md
-- name: 數點利未任職男子
-  suggested_type: 事件
-  evidence: v2-3, 22-23, 29-30, 34-49，第二次數點利未人，統計30至50歲在會幕任職辦事的男子共8580名
-  target_path: link_folder/事件/數點利未任職男子.md
-- name: 三十歲直到五十歲（利未人任職年齡）
-  suggested_type: 主題
-  evidence: v3, 23, 30, 35, 39, 43, 47，利未人正式在會幕辦事與負重任的成熟壯年時期
-  target_path: link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md
-  semantic_hint:
-  - title: 利未支派
-    score: 0.513
-    type: 人物
-  - title: 利未
-    score: 0.454
-    type: 人物
-  - title: 利未人受聖職討罪
-    score: 0.449
-    type: 事件
-- name: 按名指定
-  suggested_type: 主題
-  evidence: v32，米拉利子孫所抬的骨架與器具按名指定分派，提高效率與明確職責
-  target_path: link_folder/主題/按名指定.md
-- name: 抬架（會幕器具搬運）
-  suggested_type: 主題
-  evidence: v10, 12, 15，無槓聖所器具包紮後放在抬架（carrying frame）上抬運
-  target_path: link_folder/主題/抬架（會幕器具搬運）.md
-- name: 不可摸聖物
-  suggested_type: 神學
-  evidence: v15，哥轄子孫只可抬不可觸摸聖物，違者治死；表徵事奉邊界與聖潔敬畏
-  target_path: link_folder/神學/不可摸聖物.md
-  semantic_hint:
-  - title: 不可摸約櫃（撒下6：6-7）
-    score: 0.422
-    type: 互文
-  - title: 摸聖物成聖
-    score: 0.417
-    type: 神學
-- name: 不可觀看聖所
-  suggested_type: 神學
-  evidence: v20，哥轄子孫連片時不可進去觀看聖所，免得死亡；保護人免受神聖榮耀擊殺
-  target_path: link_folder/神學/不可觀看聖所.md
-- name: 祭司統轄事奉
-  suggested_type: 神學
-  evidence: v28, 33，革順與米拉利子孫在祭司以他瑪手下分派看守，哥轄由以利亞撒監督，展現層層負責的事奉秩序
-  target_path: link_folder/神學/祭司統轄事奉.md
-- name: 利未人任職年齡的差異
-  suggested_type: 解經爭議
-  evidence: v3（30歲）、民8:24（25歲）、拉3:8/代上23:24（20歲）之年齡規定調和與歷史發展
-  target_path: link_folder/解經爭議/利未人任職年齡的差異.md
-  semantic_hint:
-  - title: 利未支派
-    score: 0.507
-    type: 人物
-  - title: 利未
-    score: 0.434
-    type: 人物
-  - title: 利未三族分工
-    score: 0.43
-    type: 事件
 - name: 抬約櫃的槓是否可抽出來
   suggested_type: 解經爭議
   evidence: 出25:15（槓不可抽出來）與民4:6（把槓穿上/調整系緊）之難題解釋
-  target_path: link_folder/解經爭議/抬約櫃的槓是否可抽出來.md
-  semantic_hint:
-  - title: 壇的槓（抬壇用）
-    score: 0.41
-    type: 主題
+  match_type: exact
+  existing_title: 抬約櫃的槓是否可抽出來
+  existing_path: link_folder/解經爭議/抬約櫃的槓是否可抽出來.md
+B_needs_update:
+- name: 洗濯盆（銅盆）
+  suggested_type: 主題
+  evidence: 民數記第四章逐一交代每件聖器怎麼包、誰來抬，卻獨獨沒有提到洗濯盆。CT 特別加了一則備註指出這件事，並列出洗濯盆在聖經中的三樣特點：聖經未曾提到洗濯盆的尺寸（出30:17-21）；會幕器具中唯有洗濯盆提到材料的來源（出38:8）；會幕器具中唯有洗濯盆未曾提到由哪一個家族搬運。GT 丁良才在 v15 給出版本證據：「撒瑪利亞人的摩西五經，並七十士所譯的希臘文舊約，在本節末後有下列四句：『他們又用紫色的毯子，蓋洗濯的盆和盆座，又蒙上海狗皮；放在抬架上。』」他隨即補上自己的判斷：「但神或者故意不叫他們遮蓋洗濯盆和盆座。」
+  match_type: exact
+  existing_title: 洗濯盆（銅盆）
+  existing_path: link_folder/主題/洗濯盆（銅盆）.md
+C_new_formal:
+- name: 數點利未任職男子
+  suggested_type: 事件
+  evidence: v2-3, 22-23, 29-30, 34-49，第二次數點利未人，統計30至50歲在會幕任職辦事的男子共8580名
+  match_type: exact
+  existing_title: 數點利未任職男子
+  existing_path: link_folder/事件/數點利未任職男子.md
+- name: 三十歲直到五十歲（利未人任職年齡）
+  suggested_type: 主題
+  evidence: v3, 23, 30, 35, 39, 43, 47，利未人正式在會幕辦事與負重任的成熟壯年時期
+  match_type: exact
+  existing_title: 三十歲直到五十歲（利未人任職年齡）
+  existing_path: link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md
+- name: 按名指定
+  suggested_type: 主題
+  evidence: v32，米拉利子孫所抬的骨架與器具按名指定分派，提高效率與明確職責
+  match_type: exact
+  existing_title: 按名指定
+  existing_path: link_folder/主題/按名指定.md
+- name: 抬架（會幕器具搬運）
+  suggested_type: 主題
+  evidence: v10, 12, 15，無槓聖所器具包紮後放在抬架（carrying frame）上抬運
+  match_type: exact
+  existing_title: 抬架（會幕器具搬運）
+  existing_path: link_folder/主題/抬架（會幕器具搬運）.md
+- name: 不可摸聖物
+  suggested_type: 神學
+  evidence: v15，哥轄子孫只可抬不可觸摸聖物，違者治死；表徵事奉邊界與聖潔敬畏
+  match_type: exact
+  existing_title: 不可摸聖物
+  existing_path: link_folder/神學/不可摸聖物.md
+- name: 不可觀看聖所
+  suggested_type: 神學
+  evidence: v20，哥轄子孫連片時不可進去觀看聖所，免得死亡；保護人免受神聖榮耀擊殺
+  match_type: exact
+  existing_title: 不可觀看聖所
+  existing_path: link_folder/神學/不可觀看聖所.md
+- name: 祭司統轄事奉
+  suggested_type: 神學
+  evidence: v28, 33，革順與米拉利子孫在祭司以他瑪手下分派看守，哥轄由以利亞撒監督，展現層層負責的事奉秩序
+  match_type: exact
+  existing_title: 祭司統轄事奉
+  existing_path: link_folder/神學/祭司統轄事奉.md
+- name: 利未人任職年齡的差異
+  suggested_type: 解經爭議
+  evidence: v3（30歲）、民8:24（25歲）、拉3:8/代上23:24（20歲）之年齡規定調和與歷史發展
+  match_type: exact
+  existing_title: 利未人任職年齡的差異
+  existing_path: link_folder/解經爭議/利未人任職年齡的差異.md
 - name: 辦事（melakah）
   suggested_type: 原文
   evidence: v3 GT難解經文記載 melakah 專指會幕正式任職辦事
-  target_path: link_folder/原文/辦事（melakah）.md
+  match_type: exact
+  existing_title: 辦事（melakah）
+  existing_path: link_folder/原文/辦事（melakah）.md
 - name: 工作（baabodath）
   suggested_type: 原文
   evidence: v3 GT難解經文記載 baabodath 指會幕勞作或學徒時期工作
-  target_path: link_folder/原文/工作（baabodath）.md
+  match_type: exact
+  existing_title: 工作（baabodath）
+  existing_path: link_folder/原文/工作（baabodath）.md
 D_new_candidate: []
 E_skip: []
