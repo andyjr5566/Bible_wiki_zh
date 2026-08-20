@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_6.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 360,
+      "first": "Num 6:1",
+      "last": "Num 6:27",
+      "sha256": "c8f556bbdb6933c261aafe18656c76699983cba23bdcd491347b67cfb1156beb",
+      "bytes": 68818,
+      "chars": 60430,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

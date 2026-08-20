@@ -22799,6 +22799,16 @@
     "status": "formal",
     "aliases": []
   },
+  "凱特夫欣嫩銀卷與古代近東祝福文": {
+    "path": "link_folder/背景/凱特夫欣嫩銀卷與古代近東祝福文.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "凱特夫欣嫩銀卷與古代近東祝福文",
+    "status": "formal",
+    "aliases": [
+      "凱特夫欣嫩銀卷"
+    ]
+  },
   "出埃及記書名的由來": {
     "path": "link_folder/背景/出埃及記書名的由來.md",
     "type": "背景",
@@ -23359,6 +23369,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "宗教曆與民事曆兩種曆法",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿細耳人三禁令與三種民間宗教": {
+    "path": "link_folder/背景/拿細耳人三禁令與三種民間宗教.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "拿細耳人三禁令與三種民間宗教",
     "status": "formal",
     "aliases": []
   },
@@ -24742,6 +24760,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "拉結偷神像的動機",
+    "status": "formal",
+    "aliases": []
+  },
+  "拿細耳人長髮與保羅禁令的張力": {
+    "path": "link_folder/解經爭議/拿細耳人長髮與保羅禁令的張力.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "拿細耳人長髮與保羅禁令的張力",
     "status": "formal",
     "aliases": []
   },
@@ -31038,6 +31064,9 @@
   },
   "伊甸河流": {
     "alias_of": "伊甸園四河"
+  },
+  "凱特夫欣嫩銀卷": {
+    "alias_of": "凱特夫欣嫩銀卷與古代近東祝福文"
   },
   "出埃及記的書名": {
     "alias_of": "出埃及記書名的由來"

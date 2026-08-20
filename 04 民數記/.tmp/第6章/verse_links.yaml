@@ -76,6 +76,9 @@ links:
 - verse: 15
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 15
+  phrase: 奠祭
+  target: 奠酒
 - verse: 16
   phrase: 贖罪祭
   target: 贖罪祭
@@ -88,6 +91,9 @@ links:
 - verse: 17
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 17
+  phrase: 奠祭
+  target: 奠酒
 - verse: 18
   phrase: 拿細耳人
   target: 拿細耳人（nazir）
@@ -99,7 +105,7 @@ links:
   target: 平安祭
 - verse: 20
   phrase: 搖祭
-  target: 搖祭（tenufah）
+  target: 搖祭
 - verse: 20
   phrase: 拿細耳人
   target: 拿細耳人（nazir）
