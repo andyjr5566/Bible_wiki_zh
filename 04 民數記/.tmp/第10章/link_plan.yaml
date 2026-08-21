@@ -9,6 +9,44 @@ A_use_directly:
   match_type: exact
   existing_title: 銀號
   existing_path: link_folder/文化/銀號.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 第3節：「吹這號的時候，全會眾要到你那裡，聚集在會幕門口。」會幕為會眾聚集聽受摩西吩咐，以及事奉朝拜神的核心場所。
+  surfaces:
+  - phrase: 會幕
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: 第10節：「在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號...」快樂日、節期及月朔奉獻燔祭時皆需吹銀號，作為在耶和華面前的紀念。
+  surfaces:
+  - phrase: 燔祭
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: 第10節：「...獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。」平安祭表達與神並百姓互相比鄰的團契歡慶，伴隨吹號更顯敬拜的感恩與神聖榮耀。
+  surfaces:
+  - phrase: 平安祭
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 法櫃的帳幕
+  suggested_type: 地點
+  evidence: 第11節：「第二年二月二十日，雲彩從法櫃的帳幕收上去。」指停靠有法櫃的聖幕，雲彩自幕上收起是神賜發前進信號的啟動標誌。
+  match_type: exact
+  existing_title: 法櫃的帳幕
+  existing_path: link_folder/地點/法櫃的帳幕.md
+- name: 雲彩
+  suggested_type: 原文
+  evidence: 第11-12、34節記載雲彩自法櫃的帳幕收回並停住在巴蘭的曠野，日間行路亦有耶和華的雲彩覆蓋於上方，體現神有形有體的引導與庇蔭。
+  surfaces:
+  - phrase: 雲彩
+  match_type: exact
+  existing_title: 雲彩
+  existing_path: link_folder/原文/雲彩.md
 - name: 拔營起行
   suggested_type: 歷史
   evidence: 第12-28節詳載以色列眾人首度仰賴神雲彩與吹號前引，自西乃曠野解散帳幕而朝著巴蘭曠野有序列隊移動的歷史軍旅紀錄。
@@ -19,69 +57,18 @@ A_use_directly:
   match_type: exact
   existing_title: 拔營起行
   existing_path: link_folder/歷史/拔營起行.md
-- name: 巴蘭的曠野
-  suggested_type: 地點
-  evidence: 第12節：「...雲彩停住在巴蘭的曠野。」位於西乃半島中東部的廣大遼闊無垠乾旱區，為此番大遷徙第一階段安營指止的目的地。
-  match_type: exact
-  existing_title: 巴蘭的曠野
-  existing_path: link_folder/地點/巴蘭的曠野.md
-- name: 何巴
-  suggested_type: 人物
-  evidence: 第29-32節記載摩西至誠力勸米甸人流珥的兒子何巴攜行同行，期願依仗何巴對漫川大曠野地形的純熟熟悉而兼任行程引路與安營覓點的良善「眼目」。
-  match_type: exact
-  existing_title: 何巴
-  existing_path: link_folder/人物/何巴.md
-- name: 約櫃前行與停住的宣告
-  suggested_type: 神學
-  evidence: 第35-36節記載約櫃每當起進與留頓定居，摩西皆必定隨行作出莊嚴禱詞宣告，以此明證並呼告真神主動為選民四散仇敵、又歡欣榮耀與千萬會民永樂同居的心境與信念。
-  match_type: exact
-  existing_title: 約櫃前行與停住的宣告
-  existing_path: link_folder/神學/約櫃前行與停住的宣告.md
-B_needs_update:
-- name: 會幕（帳幕整體）
-  suggested_type: 主題
-  evidence: 第3節：「吹這號的時候，全會眾要到你那裡，聚集在會幕門口。」會幕為會眾聚集聽受摩西吩咐，以及事奉朝拜神的核心場所。
-  surfaces:
-  - phrase: 會幕
-  match_type: exact
-  existing_title: 會幕（帳幕整體）
-  existing_path: link_folder/主題/會幕（帳幕整體）.md
-- name: 燔祭
-  suggested_type: 原文
-  evidence: 第10節：「在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號...」快樂日、節期及月朔奉獻燔祭時皆需吹銀號，作為在耶和華面前的紀念。
-  surfaces:
-  - phrase: 燔祭
-  match_type: exact
-  existing_title: 燔祭
-  existing_path: link_folder/神學/燔祭.md
-- name: 平安祭
-  suggested_type: 原文
-  evidence: 第10節：「...獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。」平安祭表達與神並百姓互相比鄰的團契歡慶，伴隨吹號更顯敬拜的感恩與神聖榮耀。
-  surfaces:
-  - phrase: 平安祭
-  match_type: exact
-  existing_title: 平安祭
-  existing_path: link_folder/原文/平安祭.md
-- name: 法櫃的帳幕
-  suggested_type: 地點
-  evidence: 第11節：「第二年二月二十日，雲彩從法櫃的帳幕收上去。」指停靠有法櫃的聖幕，雲彩自幕上收起是神賜發前進信號的啟動標誌。
-  match_type: exact
-  existing_title: 法櫃的帳幕
-  existing_path: link_folder/地點/法櫃的帳幕.md
-- name: 雲彩（anan）
-  suggested_type: 原文
-  evidence: 第11-12、34節記載雲彩自法櫃的帳幕收回並停住在巴蘭的曠野，日間行路亦有耶和華的雲彩覆蓋於上方，體現神有形有體的引導與庇蔭。
-  surfaces:
-  - phrase: 雲彩
-  match_type: exact
-  existing_title: 雲彩（anan）
-  existing_path: link_folder/原文/雲彩（anan）.md
 - name: 西乃的曠野
   suggested_type: 地點
   evidence: 第12節：「以色列人就按站往前行，離開西乃的曠野...」此為以色列民駐紮垂望西乃山、獲受聖約與組成了軍營的起始地。
   match_type: exact
   existing_title: 西乃的曠野
   existing_path: link_folder/地點/西乃的曠野.md
+- name: 巴蘭的曠野
+  suggested_type: 地點
+  evidence: 第12節：「...雲彩停住在巴蘭的曠野。」位於西乃半島中東部的廣大遼闊無垠乾旱區，為此番大遷徙第一階段安營指止的目的地。
+  match_type: exact
+  existing_title: 巴蘭的曠野
+  existing_path: link_folder/地點/巴蘭的曠野.md
 - name: 革順子孫
   suggested_type: 人物
   evidence: 第17節：「帳幕拆卸，革順的子孫和米拉利的子孫就抬著帳幕先往前行。」革順家為利未主要宗族之一，負責拆卸並隨前後營起隊同行運載帳幕的布幕、外覆及門簾。
@@ -106,11 +93,18 @@ B_needs_update:
   match_type: exact
   existing_title: 哥轄子孫
   existing_path: link_folder/人物/哥轄子孫.md
+- name: 何巴
+  suggested_type: 人物
+  evidence: 第29-32節記載摩西至誠力勸米甸人流珥的兒子何巴攜行同行，期願依仗何巴對漫川大曠野地形的純熟熟悉而兼任行程引路與安營覓點的良善「眼目」。
+  match_type: exact
+  existing_title: 何巴
+  existing_path: link_folder/人物/何巴.md
 - name: 流珥葉忒羅與何巴的稱謂關係
   suggested_type: 解經爭議
   evidence: 第29節稱：「摩西對他岳父（或作：內兄）─米甸人流珥的兒子何巴─說...」聖經中對摩西岳父有稱流珥（創、出）、葉忒羅（出），而處所對何巴乃岳父或內兄之身份歸向有原文字義與古舊稱呼習語上的爭議辨明。
   surfaces:
-  - phrase: 流珥的兒子何巴
+  - phrase: 岳父
+  - phrase: 內兄
   match_type: exact
   existing_title: 流珥葉忒羅與何巴的稱謂關係
   existing_path: link_folder/解經爭議/流珥葉忒羅與何巴的稱謂關係.md
@@ -122,6 +116,80 @@ B_needs_update:
   match_type: exact
   existing_title: 約櫃
   existing_path: link_folder/主題/約櫃.md
-C_new_formal: []
+- name: 約櫃前行與停住的宣告
+  suggested_type: 神學
+  evidence: 第35-36節記載約櫃每當起進與留頓定居，摩西皆必定隨行作出莊嚴禱詞宣告，以此明證並呼告真神主動為選民四散仇敵、又歡欣榮耀與千萬會民永樂同居的心境與信念。
+  match_type: exact
+  existing_title: 約櫃前行與停住的宣告
+  existing_path: link_folder/神學/約櫃前行與停住的宣告.md
+B_needs_update:
+- name: 安營與纛
+  suggested_type: 主題
+  evidence: 第14、18、22、25節四次以「纛」標記四大營的行進單位：「按著軍隊首先往前行的是猶大營的纛」「按著軍隊往前行的是流便營的纛」「按著軍隊往前行的是以法蓮營的纛」「在諸營末後的是但營的纛」。民1-2
+    訂下的安營格局在本章第一次實際移動，四個纛依序拔營。CT 註「『纛』指旗幟」。
+  surfaces:
+  - phrase: 纛
+  match_type: exact
+  existing_title: 安營與纛
+  existing_path: link_folder/主題/安營與纛.md
+- name: 銀號與主再來天使吹號（太24：31）
+  suggested_type: 互文
+  evidence: 第2節銀號用以招聚會眾。GT《民數記串珠聖經註釋》由此接到末世：「主再來的時候，更有天使吹號，招聚神的選民（太24:31）。」GT《啟導本聖經註釋》也說「到末後的日子，神的使者要用『號筒的大聲』將選民從四方招聚攏來（太二十四31；參啟8～9章）」；BH
+    在第2、5、6、7節反覆接到帖前4:16 的號筒聲。
+  match_type: exact
+  existing_title: 銀號與主再來天使吹號（太24：31）
+  existing_path: link_folder/互文/銀號與主再來天使吹號（太24：31）.md
+- name: 銀號與聖殿敬拜（代下5：12）
+  suggested_type: 互文
+  evidence: 第10節規定節期、月朔獻祭吹號。GT 丁良才指出「當所羅門的時候，有一百二十枝（代下五12）」，並上溯「當刃劍的時候，有七枝號筒（代上十五24）」；GT《民數記串珠聖經註釋》說「日後聖殿敬拜也用銀號（王下11:14）」；GT《聖經精讀本》列出快樂的日子的實例，包含所羅門奉獻聖殿（代下5:12；7:6）。
+  match_type: exact
+  existing_title: 銀號與聖殿敬拜（代下5：12）
+  existing_path: link_folder/互文/銀號與聖殿敬拜（代下5：12）.md
+- name: 銀號形制（直筒喇叭口）
+  suggested_type: 文化
+  evidence: 第2節「你要用銀子做兩枝號」。GT 對形制與長度留下兩個並不一致的數字：《民數記串珠聖經註釋》據猶太史家說「銀號的直管約四十五毫米長，開端像喇叭」，《啟導本聖經註釋》據約瑟夫說「銀號為直筒形，長約45公分，末端張開如喇叭」。GT《舊約聖經背景註釋》另舉考古實例：「法老圖坦卡門的墓中，就有一個這樣的樂器（長度幾達兩呎的銀號）」，並說明銀的提煉用灰吹法。GT
+    丁良才與《啟導本》都把它與羊角製的「角」分開。
+  match_type: exact
+  existing_title: 銀號形制（直筒喇叭口）
+  existing_path: link_folder/文化/銀號形制（直筒喇叭口）.md
+- name: 銀號製作工藝（錘出法）
+  suggested_type: 文化
+  evidence: 第2節「都要錘出來的」。CT 註「『錘出來』表示整體的材質沒有摻雜，是純銀作的，金燈台也是錘出來的(參出二十五31)」，並把「錘出來(原文雙字)」拆為「錘打金屬(首字)；做，製作，完成(次字)」。GT《民數記串珠聖經註釋》說「整枝號筒要用人手錘出來（1），正如聖所中的器具一樣」。
+  match_type: exact
+  existing_title: 銀號製作工藝（錘出法）
+  existing_path: link_folder/文化/銀號製作工藝（錘出法）.md
+C_new_formal:
+- name: 古代近東的戰場傳訊方式
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》在第3～7節說明本章號聲制度的軍事背景：「作戰時傳達訊息，有好幾種方法。無論是戍防陣線還是空曠地區，烽火都得到廣泛使用。高舉的杖和標槍，有時亦能傳遞簡單的訊息。晚銅器時代（亦即本處經文的當代）的埃及，已經有在軍事和宗教上使用號角訊息的例證了。號角可以混合長短的角聲，傳達預定的信號。」
+  target_path: link_folder/背景/古代近東的戰場傳訊方式.md
+- name: 摩西請何巴作嚮導是否顯出信心不足
+  suggested_type: 解經爭議
+  evidence: 第29-32節摩西兩次挽留何巴作「眼目」。CT〔靈意註解〕判為「摩西請求岳父同行，好作眼目，表示他的信心不足」；KC 也說「That is
+    not a good thing... Moses should have left it at that」。GT《聖經精讀本》正面反對：「這並不表示摩西的不信，而是為了更加有效地調動百萬以上的以色列百姓所需要的」；GT
+    賈斯樂郝威《聖經難解經文詮釋手冊》命題9 另從分工角度回答。四套來源在此三比一（或二比二）分歧。
+  target_path: link_folder/解經爭議/摩西請何巴作嚮導是否顯出信心不足.md
+  semantic_hint:
+  - title: 何巴
+    score: 0.584
+    type: 人物
+  - title: 摩西
+    score: 0.492
+    type: 人物
+  - title: 摩西的代求
+    score: 0.484
+    type: 神學
+- name: 約櫃在前頭行與在營中的位置
+  suggested_type: 解經爭議
+  evidence: 第33節說「耶和華的約櫃在前頭行了三天的路程」，但民二17 與本章第21節把哥轄人抬的聖物排在第二營之後。GT 賈斯樂郝威《聖經難解經文詮釋手冊》命題10
+    列出三種解法（兩個約櫃說、平時居中特殊時在前說、「在前頭行」指領導地位而非位置）；CT 與 GT 丁良才都採「特別緣故才轉到前頭（書三6）」；KC 則讀成職分翻轉——約櫃離開被保護的中心位置，反過來成為保護百姓的那一位。
+  target_path: link_folder/解經爭議/約櫃在前頭行與在營中的位置.md
+  semantic_hint:
+  - title: 約櫃
+    score: 0.422
+    type: 主題
+  - title: 行軍次序
+    score: 0.411
+    type: 事件
 D_new_candidate: []
 E_skip: []
