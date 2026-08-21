@@ -1,7 +1,67 @@
 book: 民數記
 chapter: 17
 A_use_directly: []
-B_needs_update: []
+B_needs_update:
+- name: 杖
+  suggested_type: 神學
+  evidence: 本章整章圍繞十二根杖。GT 丁良才《民數記註釋》分辨舊約三種杖的長度與用途，並指出本章用的是第三種（約三尺、類似拐棍）；CT 的說法相同，並註明它與詩23:4 牧羊的竿與杖不同字、也與創32:10 雅各的杖不同字。STEP 原文資料顯示本章的杖是 מַטֶּה（ma.Teh，H4294G），詞典義同時是「支派」與「杖」。既有條目只累積出4，缺本章。
+  match_type: exact
+  existing_title: 杖
+  existing_path: link_folder/神學/杖.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 本章是神第三次、也是最後一次印證亞倫的祭司職分。第3節他的名字被寫在利未的杖上；第8節「利未族亞倫的杖已經發了芽，生了花苞，開了花，結了熟杏」。GT 丁良才：「亞倫也是因神的恩典結了果子，顯明本來無用的人，既被神揀選賜福，就必有用處，有能力。」既有條目累積至民16，缺本章。
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第7節摩西把十二根杖存在法櫃的帳幕內；第8節「摩西進法櫃的帳幕去」；第9節把所有的杖拿出來給以色列眾人看；第11節「耶和華怎樣吩咐他，他就怎樣行了」。CT 指出當時只有摩西能進至聖所，所以是他把杖放進去的。既有條目累積至民16，缺本章。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: 本章的主題就是祭司職分歸誰。GT《民數記串珠聖經註釋》指出這是神證實亞倫職事的第三個方法，前兩次分別是可拉黨被活埋與亞倫獻香止瘟疫。GT《啟導本聖經註釋》另指出方法上的差別：前兩次是百姓抱怨、神要消滅他們，這次是神先提出方法測驗。既有條目累積至民18，缺本章。
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第3節「將亞倫的名字寫在利未的杖上」；第8節「利未族亞倫的杖」。CT 由此指出亞倫實際上就是利未支派的首領，雖然他的祖父哥轄是利未的次子；GT 丁良才的說法相同。第13節百姓的恐懼也與利未人的職權界線有關。既有條目累積至民18，缺本章。
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: 第4、7、10節三次指定杖要放在「法櫃前」。CT 指出原文只有「見證」而無「櫃」字，「故此，不少解經家認為亞倫的杖是與盛嗎哪的金罐放在兩塊法版的前面，而這三樣都放在法櫃的裡面（參來九4）」。GT 丁良才與《啟導本聖經註釋》也都引來9:4。既有條目累積至民10，缺本章。
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 至聖所
+  suggested_type: 地點
+  evidence: 第4、7節杖存放的位置。CT 說明這代表至聖所的裡面：「平時誰也不能進去，連大祭司亞倫也僅能一年一度進去。當時只有摩西例外。」第8節摩西進去看杖，也是神特別的吩咐（GT 丁良才：「平常摩西不敢進去，但這一次有耶和華特別的命令。」）。既有條目累積至利16，缺本章。
+  match_type: exact
+  existing_title: 至聖所
+  existing_path: link_folder/地點/至聖所.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 第4節「你要把這些杖存在會幕內法櫃前，就是我與你們相會之處」；第13節百姓的哀嘆「凡挨近耶和華帳幕的是必死的」。GT《民數記串珠聖經註釋》指出亞倫的杖從此成了記號，像包香壇的銅一樣（民16:38），警戒任何反叛祭司的行為。既有條目累積至民10，缺本章。
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 嗎哪
+  suggested_type: 主題
+  evidence: 第10節亞倫的杖放在法櫃前。CT 與 GT 丁良才都把它與盛嗎哪的金罐並列（來9:4），GT 丁良才並指出「當所羅門的時候，大概這杖和盛嗎哪的金罐已經失落了（王上八9）」。KC 更把兩者連成一組：曠野的路上這兩樣都需要——嗎哪是主的生命作我們的糧，杖是那位死而復活、如今作大祭司為我們祈求的主。既有條目累積出16、利2、民11，缺本章。
+  match_type: exact
+  existing_title: 嗎哪
+  existing_path: link_folder/主題/嗎哪.md
+- name: 以色列人的怨言
+  suggested_type: 歷史
+  evidence: 第5節與第10節兩次說明這個神蹟的目的：「我必使以色列人向你們所發的怨言止息，不再達到我耳中」、「你就使他們向我發的怨言止息，免得他們死亡」。GT《民數記串珠聖經註釋》指出向祭司發的怨言就是向神發的怨言。第12-13節百姓的反應是恐懼而非悔改。既有條目累積至民16，缺本章。
+  match_type: exact
+  existing_title: 以色列人的怨言
+  existing_path: link_folder/歷史/以色列人的怨言.md
 C_new_formal:
 - name: 十二支派首領之杖按著名冊交付驗證
   suggested_type: 事件
@@ -11,13 +71,6 @@ C_new_formal:
   - phrase: 共取十二根
   - phrase: 將各人的名字寫在各人的杖上
   target_path: link_folder/事件/十二支派首領之杖按著名冊交付驗證.md
-  semantic_hint:
-  - title: 十二族長協助數點
-    score: 0.44
-    type: 事件
-  - title: 奉獻壇之禮（十二支派首領奉獻）
-    score: 0.411
-    type: 事件
 - name: 把亞倫之名簽寫在利未之杖上的授命標記
   suggested_type: 神學
   evidence: 雖亞倫本生於利未眾子次系哥轄，神依然特別告明需把亞倫二字題上利未本族名仗。此舉宣告大祭司職位絕並非仰借屬世人間的世仇奪戰，而是直接仰借永主親旨定下不容旁人窺爭的核心代表權杖。
@@ -25,16 +78,6 @@ C_new_formal:
   - phrase: 將亞倫的名字寫在利未的杖上
   - phrase: 各族長必有一根杖
   target_path: link_folder/神學/把亞倫之名簽寫在利未之杖上的授命標記.md
-  semantic_hint:
-  - title: 亞倫
-    score: 0.441
-    type: 人物
-  - title: 利未
-    score: 0.419
-    type: 人物
-  - title: 利未人受聖職討罪
-    score: 0.415
-    type: 事件
 - name: 存於見證會殿前等候神使出枯長生苞結杏的奇顯
   suggested_type: 事件
   evidence: 十二手杖存留於無人染指的見證至聖所法櫃殿庭，僅隔一身夕刻，當世間一木垂沉死地，神宣告只有天獲者才擁新芽。翌展唯獨亞倫枯杖接連綻出芽蒂、抽苞敷蕊且垂現出珍貴白聖熱果結了成熟的杏子。
@@ -50,16 +93,6 @@ C_new_formal:
   - phrase: 生了花苞，開了花，結了熟杏
   - phrase: 從耶和華面前拿出來
   target_path: link_folder/神學/亞倫發芽熟杏之杖表徵經歷死地步入復活生命力.md
-  semantic_hint:
-  - title: 亞倫杖發芽預表基督復活大祭司（來 4：14-16；9：11-12）
-    score: 0.554
-    type: 互文
-  - title: 亞倫的杖吞了術士的杖
-    score: 0.437
-    type: 歷史
-  - title: 亞倫拿著香爐站在死人與活人中間祈禱救恩代濟
-    score: 0.407
-    type: 神學
 - name: 亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒
   suggested_type: 文化
   evidence: 依神聖諭亞倫的神果靈丈未被取走散亡，反而久藏存置於會幕見證神匣前面當作鐵血守信旗表。讓未來千萬徒嗣敬畏仰視，將抗官奪位與私縱的逆怨埋言自耳間永遠平止，免遭神罰身陷黃沙。
@@ -68,16 +101,6 @@ C_new_formal:
   - phrase: 給這些背叛之子留作記號
   - phrase: 向我發的怨言止息
   target_path: link_folder/文化/亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒.md
-  semantic_hint:
-  - title: 法櫃前杖作記號預表基督在神面前為證（來 9：24；約一 2：1）
-    score: 0.533
-    type: 互文
-  - title: 約櫃
-    score: 0.487
-    type: 主題
-  - title: 亞倫
-    score: 0.479
-    type: 人物
 - name: 凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡
   suggested_type: 神學
   evidence: 當合族群黎親見枯棒開杏的聖潔大功，原本高狂企拿香爐爭職的心態頓受駭悚痛批！深徹悔覺如妄借不潔舊人擅近王之聖殿祭務，唯取殺身刑死之報，正式建立進深聖恩須依持天命中保和自省謙恭之千禧法則。
@@ -87,15 +110,5 @@ C_new_formal:
   - phrase: 凡挨近耶和華帳幕的是必死的
   - phrase: 我們都要死亡嗎
   target_path: link_folder/神學/凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡.md
-  semantic_hint:
-  - title: 外人近前來必被治死
-    score: 0.485
-    type: 主題
-  - title: 會幕門口
-    score: 0.446
-    type: 地點
-  - title: 不可親近
-    score: 0.446
-    type: 神學
 D_new_candidate: []
 E_skip: []
