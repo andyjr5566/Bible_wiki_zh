@@ -4,7 +4,7 @@ book: 民數記
 chapter: 14
 candidate_sha256: 6d23c31b9b1ff6054b9e5c922869582ea5bd435e28a07284510d35df076f5c98
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 0d955ff9d8bb6f11
+embedding_index_fingerprint: 52855767f8bfbb0a
 link_index_sha256: 32b32272f148fae563e024a5f87552e54ad61fb7c0b94a7f928c9fea76f52ceb
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -42,7 +42,7 @@ query:
 | 2 | 耶和華的爭戰 | 0.549 | link_folder/神學/耶和華的爭戰.md |
 | 3 | 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人 | 0.545 | link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md |
 | 4 | 申8：3 人活著不是單靠食物 | 0.536 | link_folder/互文/申8：3 人活著不是單靠食物.md |
-| 5 | 硬著頸項的百姓 | 0.522 | link_folder/神學/硬著頸項的百姓.md |
+| 5 | 迦南地 | 0.532 | link_folder/地點/迦南地.md |
 
 判定：✅ 建議使用既有條目 [[仇敵是我們的食物]]（同名／字面對應）
 
@@ -62,7 +62,7 @@ query:
 | 2 | 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪 | 0.647 | link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md |
 | 3 | 迦南人 | 0.613 | link_folder/人物/迦南人.md |
 | 4 | 迦南人與比利洗人 | 0.607 | link_folder/歷史/迦南人與比利洗人.md |
-| 5 | 迦南七族（迦南地原住民） | 0.577 | link_folder/背景/迦南七族（迦南地原住民）.md |
+| 5 | 亞瑪力人 | 0.587 | link_folder/人物/亞瑪力人.md |
 
 判定：✅ 建議使用既有條目 [[迦南大敗直到何珥瑪]]（同名／字面對應）
 
@@ -99,7 +99,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 曠野飄流四十年 | 0.807 | link_folder/歷史/曠野飄流四十年.md |
-| 2 | 四十的屬靈意義 | 0.582 | link_folder/原文/四十的屬靈意義.md |
+| 2 | 四十的屬靈意義 | 0.639 | link_folder/原文/四十的屬靈意義.md |
 | 3 | 神公義追討與禍延子孫的釋經探討 | 0.580 | link_folder/解經爭議/神公義追討與禍延子孫的釋經探討.md |
 | 4 | 四十晝夜 | 0.564 | link_folder/神學/四十晝夜.md |
 | 5 | 曠野安息日撿柴事件與神明告處決 | 0.527 | link_folder/事件/曠野安息日撿柴事件與神明告處決.md |
@@ -139,7 +139,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 專心跟從主與另一個心志 | 0.853 | link_folder/神學/專心跟從主與另一個心志.md |
-| 2 | 迦勒 | 0.527 | link_folder/人物/迦勒.md |
+| 2 | 迦勒 | 0.591 | link_folder/人物/迦勒.md |
 | 3 | 與神同行 | 0.516 | link_folder/神學/與神同行.md |
 | 4 | 聖靈的引領 | 0.503 | link_folder/主題/聖靈的引領.md |
 | 5 | 約4：24 | 0.492 | link_folder/互文/約4：24.md |
@@ -159,10 +159,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 報惡信之人的瘟疫與存活者 | 0.786 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
-| 2 | 迦勒 | 0.585 | link_folder/人物/迦勒.md |
-| 3 | 仇敵是我們的食物 | 0.522 | link_folder/神學/仇敵是我們的食物.md |
-| 4 | 約書亞 | 0.520 | link_folder/人物/約書亞.md |
-| 5 | 次日會眾猛發埋怨招致耶和華天譴大瘟疫 | 0.518 | link_folder/事件/次日會眾猛發埋怨招致耶和華天譴大瘟疫.md |
+| 2 | 十二探子窺探迦南地 | 0.595 | link_folder/事件/十二探子窺探迦南地.md |
+| 3 | 迦勒 | 0.594 | link_folder/人物/迦勒.md |
+| 4 | 耶和華擊打百姓的瘟疫 | 0.533 | link_folder/事件/耶和華擊打百姓的瘟疫.md |
+| 5 | 仇敵是我們的食物 | 0.522 | link_folder/神學/仇敵是我們的食物.md |
 
 判定：✅ 建議使用既有條目 [[報惡信之人的瘟疫與存活者]]（同名／字面對應）
 
@@ -238,7 +238,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 專心跟從主與另一個心志 | 0.808 | link_folder/神學/專心跟從主與另一個心志.md |
-| 2 | 迦勒 | 0.697 | link_folder/人物/迦勒.md |
+| 2 | 迦勒 | 0.757 | link_folder/人物/迦勒.md |
 | 3 | 迦得（萬幸） | 0.533 | link_folder/人物/迦得（萬幸）.md |
 | 4 | 約書亞 | 0.519 | link_folder/人物/約書亞.md |
 | 5 | 仇敵是我們的食物 | 0.483 | link_folder/神學/仇敵是我們的食物.md |
@@ -257,10 +257,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 約書亞 | 0.616 | link_folder/人物/約書亞.md |
-| 2 | 迦勒 | 0.596 | link_folder/人物/迦勒.md |
+| 2 | 迦勒 | 0.603 | link_folder/人物/迦勒.md |
 | 3 | 專心跟從主與另一個心志 | 0.504 | link_folder/神學/專心跟從主與另一個心志.md |
 | 4 | 何西阿與約書亞改名時機與字意之解經爭議 | 0.490 | link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md |
-| 5 | 十二探子窺探迦南地 | 0.481 | link_folder/事件/十二探子窺探迦南地.md |
+| 5 | 十二探子窺探迦南地 | 0.483 | link_folder/事件/十二探子窺探迦南地.md |
 
 判定：✅ 建議使用既有條目 [[約書亞]]（同名／字面對應）
 
@@ -313,9 +313,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 加低斯巴尼亞事件 | 0.642 | link_folder/歷史/加低斯巴尼亞事件.md |
-| 2 | 曠野飄流四十年 | 0.541 | link_folder/歷史/曠野飄流四十年.md |
-| 3 | 十二探子窺探迦南地 | 0.541 | link_folder/事件/十二探子窺探迦南地.md |
+| 1 | 加低斯巴尼亞事件 | 0.718 | link_folder/歷史/加低斯巴尼亞事件.md |
+| 2 | 十二探子窺探迦南地 | 0.559 | link_folder/事件/十二探子窺探迦南地.md |
+| 3 | 曠野飄流四十年 | 0.541 | link_folder/歷史/曠野飄流四十年.md |
 | 4 | 迦南大敗直到何珥瑪 | 0.537 | link_folder/歷史/迦南大敗直到何珥瑪.md |
 | 5 | 假意悔改與冒死擅自作戰 | 0.529 | link_folder/事件/假意悔改與冒死擅自作戰.md |
 
@@ -332,11 +332,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 報惡信之人的瘟疫與存活者 | 0.718 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
-| 2 | 十二探子窺探迦南地 | 0.717 | link_folder/事件/十二探子窺探迦南地.md |
-| 3 | 迦勒 | 0.623 | link_folder/人物/迦勒.md |
-| 4 | 窺探迦南起因為神命或民意的解經爭議 | 0.550 | link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md |
-| 5 | 加低斯巴尼亞事件 | 0.546 | link_folder/歷史/加低斯巴尼亞事件.md |
+| 1 | 十二探子窺探迦南地 | 0.793 | link_folder/事件/十二探子窺探迦南地.md |
+| 2 | 報惡信之人的瘟疫與存活者 | 0.718 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
+| 3 | 迦勒 | 0.622 | link_folder/人物/迦勒.md |
+| 4 | 加低斯巴尼亞事件 | 0.581 | link_folder/歷史/加低斯巴尼亞事件.md |
+| 5 | 窺探迦南起因為神命或民意的解經爭議 | 0.550 | link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md |
 
 判定：✅ 建議使用既有條目 [[十二探子窺探迦南地]]（同名／字面對應）
 
@@ -352,7 +352,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 曠野飄流四十年 | 0.764 | link_folder/歷史/曠野飄流四十年.md |
-| 2 | 四十的屬靈意義 | 0.694 | link_folder/原文/四十的屬靈意義.md |
+| 2 | 四十的屬靈意義 | 0.759 | link_folder/原文/四十的屬靈意義.md |
 | 3 | 四十晝夜 | 0.611 | link_folder/神學/四十晝夜.md |
 | 4 | 四百年與第四代的關係 | 0.583 | link_folder/解經爭議/四百年與第四代的關係.md |
 | 5 | 創十五13 四百年寄居預言 | 0.571 | link_folder/互文/創十五13 四百年寄居預言.md |
@@ -370,7 +370,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞瑪力人 | 0.675 | link_folder/人物/亞瑪力人.md |
+| 1 | 亞瑪力人 | 0.767 | link_folder/人物/亞瑪力人.md |
 | 2 | 迦南大敗直到何珥瑪 | 0.671 | link_folder/歷史/迦南大敗直到何珥瑪.md |
 | 3 | 亞瑪力 | 0.666 | link_folder/人物/亞瑪力.md |
 | 4 | 申25：17-19 記念亞瑪力 | 0.639 | link_folder/互文/申25：17-19 記念亞瑪力.md |
@@ -389,7 +389,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦南地 | 0.724 | link_folder/地點/迦南地.md |
+| 1 | 迦南地 | 0.741 | link_folder/地點/迦南地.md |
 | 2 | 流奶與蜜之地 | 0.692 | link_folder/神學/流奶與蜜之地.md |
 | 3 | 進迦南應許 | 0.670 | link_folder/歷史/進迦南應許.md |
 | 4 | 迦南人 | 0.663 | link_folder/人物/迦南人.md |
@@ -408,7 +408,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 耶和華擊打百姓的瘟疫 | 0.741 | link_folder/事件/耶和華擊打百姓的瘟疫.md |
+| 1 | 耶和華擊打百姓的瘟疫 | 0.768 | link_folder/事件/耶和華擊打百姓的瘟疫.md |
 | 2 | 報惡信之人的瘟疫與存活者 | 0.693 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
 | 3 | 災殃 | 0.657 | link_folder/原文/災殃.md |
 | 4 | 第五災：重重的瘟疫 | 0.602 | link_folder/神學/第五災：重重的瘟疫.md |

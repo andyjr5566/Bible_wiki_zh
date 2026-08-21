@@ -4,8 +4,8 @@ book: 民數記
 chapter: 12
 candidate_sha256: 1832b29276d11077c45c287d063a756b8edcc5649fd8ba90972c4d68651b1218
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 25d7f67fcac2d766
-link_index_sha256: 33e2ebda7823fea0eb6de48c3f55d0882b1efb84b7ef76055e9d15901c5ab278
+embedding_index_fingerprint: 52855767f8bfbb0a
+link_index_sha256: 32b32272f148fae563e024a5f87552e54ad61fb7c0b94a7f928c9fea76f52ceb
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第12章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2645 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2647 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -199,7 +199,7 @@ query:
 | 2 | 大痲瘋（sara'at） | 0.568 | link_folder/原文/大痲瘋（sara'at）.md |
 | 3 | 手長大痲瘋的神蹟 | 0.548 | link_folder/神學/手長大痲瘋的神蹟.md |
 | 4 | 禮儀不潔與道德罪的分別 | 0.534 | link_folder/神學/禮儀不潔與道德罪的分別.md |
-| 5 | 神公義追討與禍延子孫的釋經探討 | 0.521 | link_folder/解經爭議/神公義追討與禍延子孫的釋經探討.md |
+| 5 | 米利暗與亞倫誰是主謀 | 0.507 | link_folder/解經爭議/米利暗與亞倫誰是主謀.md |
 
 判定：✅ 建議使用既有條目 [[大痲瘋是否等同於罪的懲罰之爭]]（同名／字面對應）
 
@@ -258,7 +258,7 @@ query:
 | 1 | 巴蘭的曠野 | 0.780 | link_folder/地點/巴蘭的曠野.md |
 | 2 | 汛的曠野 | 0.619 | link_folder/地點/汛的曠野.md |
 | 3 | 西乃的曠野 | 0.603 | link_folder/地點/西乃的曠野.md |
-| 4 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.589 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
+| 4 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.595 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
 | 5 | 哈洗錄 | 0.588 | link_folder/地點/哈洗錄.md |
 
 判定：✅ 建議使用既有條目 [[巴蘭的曠野]]（同名／字面對應）
@@ -314,8 +314,8 @@ query:
 |---|---|---:|---|
 | 1 | 代求 | 0.712 | link_folder/神學/代求.md |
 | 2 | 摩西的代求 | 0.686 | link_folder/神學/摩西的代求.md |
-| 3 | 摩西為百姓代求（金牛犢） | 0.677 | link_folder/互文/摩西為百姓代求（金牛犢）.md |
-| 4 | 摩西代求與神的豐盛慈愛 | 0.669 | link_folder/神學/摩西代求與神的豐盛慈愛.md |
+| 3 | 摩西代求與神的豐盛慈愛 | 0.683 | link_folder/神學/摩西代求與神的豐盛慈愛.md |
+| 4 | 摩西為百姓代求（金牛犢） | 0.677 | link_folder/互文/摩西為百姓代求（金牛犢）.md |
 | 5 | 摩西的靈命低谷與重擔求死 | 0.617 | link_folder/神學/摩西的靈命低谷與重擔求死.md |
 
 判定：✅ 建議使用既有條目 [[摩西的代求]]（同名／字面對應）

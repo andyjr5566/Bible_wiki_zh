@@ -4,8 +4,8 @@ book: 民數記
 chapter: 13
 candidate_sha256: 33e1b6d76eee830dbe0eb3d3302e350bfaf1cb30263af0535ffffec55028b0fb
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: b63aada7cd41277c
-link_index_sha256: 3551a534d58058d408b17d7c50d3011ff55b2a7532aa1aa75559279e6f41a0cd
+embedding_index_fingerprint: 52855767f8bfbb0a
+link_index_sha256: 32b32272f148fae563e024a5f87552e54ad61fb7c0b94a7f928c9fea76f52ceb
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -38,10 +38,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦勒 | 0.789 | link_folder/人物/迦勒.md |
-| 2 | 專心跟從主與另一個心志 | 0.580 | link_folder/神學/專心跟從主與另一個心志.md |
+| 1 | 迦勒 | 0.762 | link_folder/人物/迦勒.md |
+| 2 | 專心跟從主與另一個心志 | 0.636 | link_folder/神學/專心跟從主與另一個心志.md |
 | 3 | 迦得（萬幸） | 0.536 | link_folder/人物/迦得（萬幸）.md |
-| 4 | 報惡信之人的瘟疫與存活者 | 0.527 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
+| 4 | 十二探子窺探迦南地 | 0.508 | link_folder/事件/十二探子窺探迦南地.md |
 | 5 | 迦南人 | 0.506 | link_folder/人物/迦南人.md |
 
 判定：✅ 建議使用既有條目 [[迦勒]]（同名／字面對應）
@@ -58,8 +58,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約書亞 | 0.760 | link_folder/人物/約書亞.md |
-| 2 | 何西阿與約書亞改名時機與字意之解經爭議 | 0.740 | link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md |
+| 1 | 約書亞 | 0.773 | link_folder/人物/約書亞.md |
+| 2 | 何西阿與約書亞改名時機與字意之解經爭議 | 0.741 | link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md |
 | 3 | 耶和華聖名的啟示 | 0.556 | link_folder/神學/耶和華聖名的啟示.md |
 | 4 | 摩西 | 0.552 | link_folder/人物/摩西.md |
 | 5 | 耶和華 | 0.535 | link_folder/神學/耶和華.md |
@@ -77,9 +77,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 十二探子窺探迦南地 | 0.737 | link_folder/事件/十二探子窺探迦南地.md |
-| 2 | 加低斯巴尼亞事件 | 0.586 | link_folder/歷史/加低斯巴尼亞事件.md |
-| 3 | 迦南地 | 0.565 | link_folder/地點/迦南地.md |
+| 1 | 十二探子窺探迦南地 | 0.696 | link_folder/事件/十二探子窺探迦南地.md |
+| 2 | 加低斯巴尼亞事件 | 0.599 | link_folder/歷史/加低斯巴尼亞事件.md |
+| 3 | 迦南地 | 0.557 | link_folder/地點/迦南地.md |
 | 4 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.556 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
 | 5 | 窺探迦南起因為神命或民意的解經爭議 | 0.553 | link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md |
 
@@ -96,10 +96,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 加低斯巴尼亞事件 | 0.687 | link_folder/歷史/加低斯巴尼亞事件.md |
-| 2 | 報惡信之人的瘟疫與存活者 | 0.581 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
-| 3 | 曠野飄流四十年 | 0.567 | link_folder/歷史/曠野飄流四十年.md |
-| 4 | 十二探子窺探迦南地 | 0.555 | link_folder/事件/十二探子窺探迦南地.md |
+| 1 | 加低斯巴尼亞事件 | 0.704 | link_folder/歷史/加低斯巴尼亞事件.md |
+| 2 | 十二探子窺探迦南地 | 0.588 | link_folder/事件/十二探子窺探迦南地.md |
+| 3 | 曠野飄流四十年 | 0.558 | link_folder/歷史/曠野飄流四十年.md |
+| 4 | 報惡信之人的瘟疫與存活者 | 0.537 | link_folder/事件/報惡信之人的瘟疫與存活者.md |
 | 5 | 加低斯 | 0.537 | link_folder/地點/加低斯.md |
 
 判定：✅ 建議使用既有條目 [[加低斯巴尼亞事件]]（同名／字面對應）
@@ -117,7 +117,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 以實各谷的一掛葡萄 | 0.775 | link_folder/主題/以實各谷的一掛葡萄.md |
-| 2 | 流奶與蜜之地 | 0.546 | link_folder/神學/流奶與蜜之地.md |
+| 2 | 流奶與蜜之地 | 0.534 | link_folder/神學/流奶與蜜之地.md |
 | 3 | 迦南地栽種果樹頭三年果子如未受割禮的條例 | 0.533 | link_folder/主題/迦南地栽種果樹頭三年果子如未受割禮的條例.md |
 | 4 | 葡萄樹_葡萄_杯 | 0.515 | link_folder/神學/葡萄樹_葡萄_杯.md |
 | 5 | 葡萄樹與真葡萄樹_約15_1 | 0.514 | link_folder/互文/葡萄樹與真葡萄樹_約15_1.md |
@@ -175,10 +175,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.854 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
-| 2 | 加低斯巴尼亞事件 | 0.659 | link_folder/歷史/加低斯巴尼亞事件.md |
-| 3 | 巴蘭的曠野 | 0.649 | link_folder/地點/巴蘭的曠野.md |
+| 2 | 巴蘭的曠野 | 0.649 | link_folder/地點/巴蘭的曠野.md |
+| 3 | 加低斯巴尼亞事件 | 0.623 | link_folder/歷史/加低斯巴尼亞事件.md |
 | 4 | 加低斯 | 0.581 | link_folder/地點/加低斯.md |
-| 5 | 十二探子窺探迦南地 | 0.542 | link_folder/事件/十二探子窺探迦南地.md |
+| 5 | 十二探子窺探迦南地 | 0.525 | link_folder/事件/十二探子窺探迦南地.md |
 
 判定：✅ 建議使用既有條目 [[十二探子自巴蘭或加低斯巴尼亞出發之解經爭議]]（同名／字面對應）
 
@@ -193,8 +193,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 何西阿與約書亞改名時機與字意之解經爭議 | 0.843 | link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md |
-| 2 | 約書亞 | 0.647 | link_folder/人物/約書亞.md |
+| 1 | 何西阿與約書亞改名時機與字意之解經爭議 | 0.844 | link_folder/解經爭議/何西阿與約書亞改名時機與字意之解經爭議.md |
+| 2 | 約書亞 | 0.655 | link_folder/人物/約書亞.md |
 | 3 | 流珥葉忒羅與何巴的稱謂關係 | 0.530 | link_folder/解經爭議/流珥葉忒羅與何巴的稱謂關係.md |
 | 4 | 耶和華聖名的啟示 | 0.527 | link_folder/神學/耶和華聖名的啟示.md |
 | 5 | 撒發那忒巴內亞名字含義 | 0.524 | link_folder/解經爭議/撒發那忒巴內亞名字含義.md |
@@ -213,7 +213,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 流奶與蜜之地 | 0.711 | link_folder/神學/流奶與蜜之地.md |
+| 1 | 流奶與蜜之地 | 0.729 | link_folder/神學/流奶與蜜之地.md |
 | 2 | 進迦南應許 | 0.533 | link_folder/歷史/進迦南應許.md |
 | 3 | 大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許 | 0.491 | link_folder/事件/大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許.md |
 | 4 | 米甸地 | 0.491 | link_folder/地點/米甸地.md |
@@ -236,7 +236,7 @@ query:
 | 1 | 南地與希伯崙 | 0.836 | link_folder/地點/南地與希伯崙.md |
 | 2 | 南地 | 0.643 | link_folder/地點/南地.md |
 | 3 | 希伯崙 | 0.643 | link_folder/地點/希伯崙.md |
-| 4 | 迦南地 | 0.573 | link_folder/地點/迦南地.md |
+| 4 | 迦南地 | 0.569 | link_folder/地點/迦南地.md |
 | 5 | 希未人 | 0.553 | link_folder/歷史/希未人.md |
 
 判定：✅ 建議使用既有條目 [[南地與希伯崙]]（同名／字面對應）
@@ -253,10 +253,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 窺探迦南起因為神命或民意的解經爭議 | 0.831 | link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md |
-| 2 | 十二探子窺探迦南地 | 0.641 | link_folder/事件/十二探子窺探迦南地.md |
+| 2 | 十二探子窺探迦南地 | 0.643 | link_folder/事件/十二探子窺探迦南地.md |
 | 3 | 神是否改變進迦南的心意 | 0.590 | link_folder/解經爭議/神是否改變進迦南的心意.md |
 | 4 | 摩西請何巴作嚮導是否顯出信心不足 | 0.562 | link_folder/解經爭議/摩西請何巴作嚮導是否顯出信心不足.md |
-| 5 | 吞吃居民之地是什麼意思 | 0.546 | link_folder/解經爭議/吞吃居民之地是什麼意思.md |
+| 5 | 加低斯巴尼亞事件 | 0.551 | link_folder/歷史/加低斯巴尼亞事件.md |
 
 判定：✅ 建議使用既有條目 [[窺探迦南起因為神命或民意的解經爭議]]（同名／字面對應）
 
@@ -271,11 +271,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦南地 | 0.708 | link_folder/地點/迦南地.md |
+| 1 | 迦南地 | 0.741 | link_folder/地點/迦南地.md |
 | 2 | 迦南地的居民分佈 | 0.671 | link_folder/背景/迦南地的居民分佈.md |
 | 3 | 迦南人 | 0.647 | link_folder/人物/迦南人.md |
-| 4 | 流奶與蜜之地 | 0.635 | link_folder/神學/流奶與蜜之地.md |
-| 5 | 征服迦南應許 | 0.614 | link_folder/事件/征服迦南應許.md |
+| 4 | 征服迦南應許 | 0.614 | link_folder/事件/征服迦南應許.md |
+| 5 | 流奶與蜜之地 | 0.613 | link_folder/神學/流奶與蜜之地.md |
 
 判定：✅ 建議使用既有條目 [[迦南地]]（同名／字面對應）
 
@@ -290,11 +290,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 四十的屬靈意義 | 0.741 | link_folder/原文/四十的屬靈意義.md |
+| 1 | 四十的屬靈意義 | 0.825 | link_folder/原文/四十的屬靈意義.md |
 | 2 | 四十晝夜 | 0.666 | link_folder/神學/四十晝夜.md |
 | 3 | 四十歲的意義 | 0.603 | link_folder/神學/四十歲的意義.md |
-| 4 | 摩西八十歲 | 0.545 | link_folder/互文/摩西八十歲.md |
-| 5 | 神的試驗 | 0.537 | link_folder/神學/神的試驗.md |
+| 4 | 曠野飄流四十年 | 0.601 | link_folder/歷史/曠野飄流四十年.md |
+| 5 | 摩西八十歲 | 0.545 | link_folder/互文/摩西八十歲.md |
 
 判定：✅ 建議使用既有條目 [[四十的屬靈意義]]（同名／字面對應）
 
@@ -329,10 +329,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 吞吃居民之地是什麼意思 | 0.866 | link_folder/解經爭議/吞吃居民之地是什麼意思.md |
-| 2 | 流奶與蜜之地 | 0.591 | link_folder/神學/流奶與蜜之地.md |
-| 3 | 進迦南應許 | 0.560 | link_folder/歷史/進迦南應許.md |
-| 4 | 迦南人 | 0.554 | link_folder/人物/迦南人.md |
-| 5 | 迦南地 | 0.553 | link_folder/地點/迦南地.md |
+| 2 | 流奶與蜜之地 | 0.604 | link_folder/神學/流奶與蜜之地.md |
+| 3 | 迦南地 | 0.577 | link_folder/地點/迦南地.md |
+| 4 | 進迦南應許 | 0.560 | link_folder/歷史/進迦南應許.md |
+| 5 | 迦南人 | 0.554 | link_folder/人物/迦南人.md |
 
 判定：✅ 建議使用既有條目 [[吞吃居民之地是什麼意思]]（同名／字面對應）
 
