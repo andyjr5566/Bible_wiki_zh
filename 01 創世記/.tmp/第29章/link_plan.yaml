@@ -213,6 +213,18 @@ A_use_directly:
   match_type: exact
   existing_title: 「猶大」名字含義
   existing_path: link_folder/原文/「猶大」名字含義.md
+- name: 聘金與禮物
+  suggested_type: 原文
+  evidence: 18、20節；雅各無聘金，以七年勞役代替
+  match_type: exact
+  existing_title: 聘金與禮物
+  existing_path: link_folder/原文/聘金與禮物.md
+- name: 古代近東婚姻習俗
+  suggested_type: 歷史
+  evidence: 26-30節；拉班以長女先嫁的當地規矩，及使女作陪嫁妝奩
+  match_type: exact
+  existing_title: 古代近東婚姻習俗
+  existing_path: link_folder/歷史/古代近東婚姻習俗.md
 B_needs_update: []
 C_new_formal:
 - name: 利亞的眼睛沒有神氣

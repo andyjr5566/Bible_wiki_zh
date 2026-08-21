@@ -164,6 +164,36 @@ A_use_directly:
   match_type: exact
   existing_title: 慈愛誠實
   existing_path: link_folder/原文/慈愛誠實.md
+- name: 以利以謝
+  suggested_type: 人物
+  evidence: 2節；管理全業最老的僕人，各家推斷即創15:2 的大馬色人以利以謝
+  match_type: exact
+  existing_title: 以利以謝
+  existing_path: link_folder/人物/以利以謝.md
+- name: 哈蘭
+  suggested_type: 地點
+  evidence: 10節；「拿鶴的城」CT 與 GT《串珠聖經註釋》都認為即哈蘭
+  match_type: exact
+  existing_title: 哈蘭
+  existing_path: link_folder/地點/哈蘭.md
+- name: 聘金與禮物
+  suggested_type: 原文
+  evidence: 22、53節；GT《舊約背景註釋》指婚約前男方須交付聘金、女方預備妝奩
+  match_type: exact
+  existing_title: 聘金與禮物
+  existing_path: link_folder/原文/聘金與禮物.md
+- name: 乳母底波拉
+  suggested_type: 人物
+  evidence: 59節；利百加的乳母同行，各家據創35:8 認定即底波拉
+  match_type: exact
+  existing_title: 乳母底波拉
+  existing_path: link_folder/人物/乳母底波拉.md
+- name: 古代近東婚姻習俗
+  suggested_type: 歷史
+  evidence: 57-58節；GT《舊約背景註釋》分析古代女子在婚事上少有自主決定的空間
+  match_type: exact
+  existing_title: 古代近東婚姻習俗
+  existing_path: link_folder/歷史/古代近東婚姻習俗.md
 B_needs_update: []
 C_new_formal: []
 D_new_candidate: []

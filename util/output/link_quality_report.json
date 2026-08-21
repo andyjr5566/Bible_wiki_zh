@@ -1,28 +1,77 @@
 {
-  "total_warnings": 101,
+  "total_warnings": 109,
   "critical_count": 0,
-  "warning_count": 101,
+  "warning_count": 109,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第11章.md",
-      "target": "鵪鶉",
-      "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
+      "source": "創世記/第14章.md",
+      "target": "示拿",
+      "message": "同一 alias「示拿」指向多個 target: 示拿, 示拿地"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第5章.md",
-      "target": "舉祭",
-      "message": "同一 alias「舉祭」指向多個 target: 聖物, 舉祭"
+      "source": "創世記/第25章.md",
+      "target": "亞蘭人",
+      "message": "同一 alias「亞蘭人」指向多個 target: 亞蘭, 亞蘭人"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "民數記/第5章.md",
-      "target": "素祭",
-      "message": "同一 alias「素祭」指向多個 target: 疑恨的素祭（大麥面不加油乳香）, 素祭（minchah）"
+      "source": "創世記/第30章.md",
+      "target": "底拿",
+      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿名字含義"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第35章.md",
+      "target": "伊勒伯特利",
+      "message": "同一 alias「伊勒伯特利」指向多個 target: 伊勒伯特利, 伯特利的神"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第35章.md",
+      "target": "伯特利之神",
+      "message": "同一 alias「伯特利之神」指向多個 target: 伊勒伯特利, 伯特利的神"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第36章.md",
+      "target": "亞瑪力",
+      "message": "同一 alias「亞瑪力」指向多個 target: 亞瑪力, 亞瑪力人"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第37章.md",
+      "target": "以實瑪利人",
+      "message": "同一 alias「以實瑪利人」指向多個 target: 以實瑪利, 以實瑪利人"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第41章.md",
+      "target": "瑪拿西",
+      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "創世記/第41章.md",
+      "target": "以法蓮",
+      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞伯拉罕.md",
+      "target": "第26章",
+      "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 03 利未記/第26章"
     },
     {
       "type": "alias_target_conflict",
@@ -366,6 +415,13 @@
       "source": "link_folder/地點/埃及.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 03 利未記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/西乃山.md",
+      "target": "第3章",
+      "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 04 民數記/第3章"
     },
     {
       "type": "alias_target_conflict",

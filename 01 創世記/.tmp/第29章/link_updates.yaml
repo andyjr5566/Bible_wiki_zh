@@ -1,11 +1,35 @@
-book: 創世記
+book: 01 創世記
 chapter: 29
 updates:
+- title: 以撒
+  path: link_folder/人物/以撒.md
+  summary: 以撒本人沒有出場，卻是本章對照的另一端。GT《聖經精讀本──創世記註解》算出兩件婚事的距離：「自從上次亞伯拉罕的僕人以利以謝因以撒的婚姻而來(24:34),已過了97年。」CT 則把雅各的婚事與以撒當年的事並排：「以撒為雅各祝福時不知道他是雅各；雅各娶利亞為妻時也不知道她是利亞。」
+  relation: 創27 以撒眼睛昏花、認錯了兒子；本章雅各在夜色與面紗底下認錯了新娘。CT 一共列出三條對稱，另兩條是「雅各聽了母親的話，欺哄了以撒；利亞聽了父親的話，欺哄了雅各」，以及「以撒不知不覺地為神所揀選的雅各祝福；雅各不知不覺地娶了神所揀選的利亞為妻」。同一個家族的兩代人，各自在看不清楚的時候成全了神的揀選。
+- title: 以利以謝
+  path: link_folder/人物/以利以謝.md
+  summary: 雅各在井旁遇見拉結，各家立刻想起創24 的那一趟。GT《聖經精讀本──創世記註解》：「這場面讓人聯想到一個世紀前,亞伯拉罕的僕人以利以謝為給以撒找到新娘,奉命來到這裡的情形(24:15,28-31)。這兩件事絕不是偶然或幸運,而是神引導的結果。」
+  relation: 兩趟井邊之行的落差，就是本章的伏筆。GT 丁良才《創世紀註釋》說得直接：「雅各來的樣子和以利以謝來的樣子完全不同（參二十四章）。雅各沒有駱駝、僕人和禮物（三十二10），所以必須說出真情才能被拉班收留。」以利以謝帶著十匹駱駝的財物來提親，雅各兩手空空，只能拿七年勞役抵聘金。
+- title: 亞伯拉罕
+  path: link_folder/人物/亞伯拉罕.md
+  summary: 亞伯拉罕沒有出現在本章，但雅各走的是他家的老路。BH 指出雅各所到的地方，正是當年亞伯拉罕的僕人為以撒尋得妻子之處，也是母親利百加的家鄉；而哈蘭是亞伯拉罕一家離開吾珥後定居的城（創11:31）。GT 三次提到「亞伯拉罕的僕人以利以謝」，每一次都是拿創24 與本章對照。
+  relation: 本章把亞伯拉罕之約往下傳了一代。BH 說明拉班的身分時，是從亞伯拉罕的家族網絡切入的：拉班是利百加的哥哥，而拿鶴是亞伯拉罕的兄弟，這條親族線正是雅各此行要接上的。亞伯拉罕當年差僕人回本族娶妻，為的是不與迦南人通婚；兩代之後，雅各被父母打發走同一條路，娶回的也正是拿鶴家的女兒——以色列十二支派由此開始。
+- title: 彌賽亞
+  path: link_folder/神學/彌賽亞.md
+  summary: GT《聖經精讀本──創世記註解》把本章的試煉直接放在彌賽亞的譜系上讀：「身為彌賽亞約定的繼承人,雅各將成為12支派的祖先,他有必要、而且必須改變自己的人格,過成聖的生活,即使必須經過許多試煉。」利亞的第四個兒子取名猶大——BH 指出猶大支派後來出了大衛，最終出了耶穌基督（創49:10；太1:1-3）。
+  relation: 彌賽亞的家譜在本章拐了一個彎：它不從雅各所愛的拉結出來，而從那個失寵的利亞出來。GT《聖經精讀本──創世記註解》另指出雅各在本章所受的愛與試煉本身也有預表意義：「雅各對拉結純真忘我的愛情能預表基督對教會的大愛(弗5:25)。」應許的線在這裡不走人所偏愛的一邊，而走神所揀選的一邊。
+- title: 伯特利
+  path: link_folder/地點/伯特利.md
+  summary: 本章從伯特利起步。GT《聖經精讀本──創世記註解》：「雅各在伯特利得到神的安慰和應許,與剛離開別是巴不同,他肯定得到了屬靈的能力,必定是大步向前邁進。」GT《串珠聖經註釋》記下路線：「雅各離開伯特利，朝東北走，來到哈蘭附近的郊野。」
+  relation: 兩塊石頭把伯特利與本章綁在一起。CT 指出：「本章按原文多次提到『那塊石頭』(the stone)，似乎是回應第廿八章在伯特利的那塊石頭(參廿八11，18，22)。那塊石頭是記念雅各與神的相遇，而這塊大石頭卻成了雅各和拉結相見的媒介。」CT 並由此分出兩地各自的功用：「人若要認識神，就必須到『伯特利』去(參廿八章)；人若要認識自己的本性，就要到『哈蘭』去。」
 - title: 雅各
   path: link_folder/人物/雅各.md
   summary: 雅各到達東方人之地，在井旁遇見拉結，為娶她服事拉班七年；拉班以利亞欺哄他後，他又為拉結再服事七年。
   relation: 本章顯出雅各在神保守下到達母族之地，也開始在拉班手下經歷被欺哄與管教，為其性格受磨練的二十年揭開序幕。
-  sources: [CT, GT, KC, BH]
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
@@ -15,7 +39,11 @@ updates:
   path: link_folder/人物/拉班.md
   summary: 拉班接待雅各，提出工價問題，後以利亞代替拉結欺哄雅各，再要求雅各為拉結服事七年。
   relation: 本章把拉班描繪為精於算計、利用親屬與女兒婚姻牟利的人，也成為神管教雅各的工具。
-  sources: [CT, GT, KC, BH]
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
@@ -25,7 +53,10 @@ updates:
   path: link_folder/人物/拿鶴.md
   summary: 雅各在井旁向哈蘭牧人詢問「拿鶴的孫子拉班」，以確認自己已到母族相關地區。
   relation: 拿鶴在本章作為拉班家族身分的標記，連接雅各尋找母族與亞伯拉罕本族線索。
-  sources: [CT, GT, BH]
+  sources:
+  - CT
+  - GT
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
@@ -34,7 +65,11 @@ updates:
   path: link_folder/人物/利百加.md
   summary: 雅各向拉結表明自己是利百加的兒子，拉結便跑去告訴父親拉班。
   relation: 利百加的身分使雅各得以被拉班家認作親屬，也承接她先前吩咐雅各逃往拉班家的敘事。
-  sources: [CT, GT, KC, BH]
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
@@ -44,7 +79,11 @@ updates:
   path: link_folder/地點/哈蘭.md
   summary: 雅各在東方人之地遇見從哈蘭來的牧人，並藉此確認拉班及拉結所在的母族環境。
   relation: 哈蘭在本章不只是目的地名稱，也是雅各受拉班接納、服事與受磨練的背景區域。
-  sources: [CT, GT, KC, BH]
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
@@ -54,7 +93,11 @@ updates:
   path: link_folder/神學/神的保守與帶領.md
   summary: 雅各離開伯特利後順利到達母族地區，正巧在井旁遇見拉結；來源把這理解為神在雅各路上的護理與帶領。
   relation: 本章顯示創世記28章神同在與保守的應許開始落實，即使雅各之後仍要經過拉班家的管教與磨練。
-  sources: [CT, GT, KC, BH]
+  sources:
+  - CT
+  - GT
+  - KC
+  - BH
   source_files:
   - raw_data/ccbiblestudy_CT_genesis_29.txt
   - raw_data/ccbiblestudy_GT_genesis_29.txt
