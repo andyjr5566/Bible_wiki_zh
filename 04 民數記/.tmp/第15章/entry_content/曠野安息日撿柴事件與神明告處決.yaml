@@ -1,13 +1,15 @@
-name: "曠野安息日撿柴事件與神明告處決"
-type: "事件"
-status: "formal"
-definition: "發生並記錄在民數記第15章32至36節的先導懲處性經典個案：在上帝闡宣告諭「無心之禍得贖、故意自是務要除根」的大則不久後，一名選戶人士於曠野期間毫不管守定立的安息日清高準程，在聖日四面遊覽撿持草薪為用。民眾把該涉罪人囚在收室請斷聖裁；隨即耶和華明白親降斷命令：「總要把那人治死」，由悉群牽向遙深營外引石擊戮至休命。為告惕安息不可苟玩的長朝警鑑。"
+name: 曠野安息日撿柴事件與神明告處決
+type: 事件
+status: formal
+definition: 發生並記錄在民數記第15章32至36節的先導懲處性經典個案：在上帝闡宣告諭「無心之禍得贖、故意自是務要除根」的大則不久後，一名選戶人士於曠野期間毫不管守定立的安息日清高準程，在聖日四面遊覽撿持草薪為用。民眾把該涉罪人囚在收室請斷聖裁；隨即耶和華明白親降斷命令：「總要把那人治死」，由悉群牽向遙深營外引石擊戮至休命。為告惕安息不可苟玩的長朝警鑑。
 accumulations:
-  - book: "民數記"
-    chapter: 15
-    summary: "在漫流沙漠期，全營尋得一名對神定聖期傲行無視而撿拾木枝者；眾人在天誓下不敢推衍擅決，幽禁久候神光之清楚諭命；終依天判全院出城執法以沉重荒石擊絕涉逆犯行。"
-    relation: "成為「明知故犯與擅自踐凌主道」的第一宗客觀實務範證：警昭安息日所內隱的是不可侵奪的上神領主榮美與信約底座；貪縱一干一利而以身玩法的蓄意棄背必致在眾證中落除長存生脈。"
+- book: 民數記
+  chapter: 15
+  summary: 第32-36節記下一個案例：以色列人在曠野的時候，有人在安息日撿柴，被帶到摩西、亞倫並全會眾那裡。「將他收在監內；因為當怎樣辦他，還沒有指明」（v34）；神的判決是「總要把那人治死；全會眾要在營外用石頭把他打死」（v35）。GT《民數記串珠聖經註釋》指出爭點在哪裡：安息日作工或生火要治死是律法明文（出31:15；35:2-3），「但在安息日檢柴卻未有明文說明」，而撿柴的目的是生火，所以這是蓄意違反不可生火的條例。
+  relation: 這一段緊接在第30-31節「擅敢行事」的宣告之後，是那條原則的第一個實例。CT 稱讚摩西的處置：他是等候神命令他如何作才敢作，不敢自作主張。KC 也從教會紀律的角度讀這個「收在監內」的動作——有些案子教會不知道該怎麼辦，這時寧可先擱置、承認自己不知道，等主指明。GT 丁良才《民數記註釋》註明「在營外」的用意：「免得營盤被污穢了（參徒七58，來十三12）」，而 GT《舊約聖經背景註釋》補上一句：處決不論是不是群體性的，都要在營外執行，以免因與屍體接觸而沾染不潔。
 sources:
-  - "ccbiblestudy CT: 逐節註解 (https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT15.htm)"
-  - "ccbiblestudy GT: 拾穗 (https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT15.htm)"
-  - "KingComments: 研經註解 (https://www.kingcomments.com/en/bible-studies/Num/15)"
+- 'ccbiblestudy CT: 逐節註解 (https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT15.htm)'
+- 'ccbiblestudy GT: 拾穗 (https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT15.htm)'
+- 'KingComments: 研經註解 (https://www.kingcomments.com/en/bible-studies/Num/15)'
+- 'BibleHub Study: 研經註解 (https://biblehub.com/study/numbers/15.htm)'
+- 'STEP Bible: 原文資料 (https://github.com/STEPBible/STEPBible-Data)'

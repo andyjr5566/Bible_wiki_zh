@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 15,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_15.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 41,
+      "words": 511,
+      "first": "Num 15:1",
+      "last": "Num 15:41",
+      "sha256": "43c8e4698be789539f265855c28de6de7f8ec098264a7612074b9e399a307bdd",
+      "bytes": 99090,
+      "chars": 86696,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
