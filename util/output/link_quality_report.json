@@ -1,8 +1,15 @@
 {
-  "total_warnings": 96,
+  "total_warnings": 101,
   "critical_count": 0,
-  "warning_count": 96,
+  "warning_count": 101,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第11章.md",
+      "target": "鵪鶉",
+      "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -70,8 +77,22 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
+      "target": "第12章",
+      "message": "同一 alias「第12章」指向多個 target: 02 出埃及記/第12章, 04 民數記/第12章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
       "target": "第16章",
       "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 03 利未記/第16章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞瑪力人.md",
+      "target": "第14章",
+      "message": "同一 alias「第14章」指向多個 target: 01 創世記/第14章, 04 民數記/第14章"
     },
     {
       "type": "alias_target_conflict",
@@ -351,7 +372,14 @@
       "severity": "warning",
       "source": "link_folder/地點/迦南地.md",
       "target": "第13章",
-      "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 02 出埃及記/第13章"
+      "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 02 出埃及記/第13章, 04 民數記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/迦南地.md",
+      "target": "第14章",
+      "message": "同一 alias「第14章」指向多個 target: 02 出埃及記/第14章, 04 民數記/第14章"
     },
     {
       "type": "alias_target_conflict",
@@ -415,6 +443,13 @@
       "source": "link_folder/背景/古代近東法典.md",
       "target": "第20章",
       "message": "同一 alias「第20章」指向多個 target: 02 出埃及記/第20章, 03 利未記/第20章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/歷史/以色列人的怨言.md",
+      "target": "第14章",
+      "message": "同一 alias「第14章」指向多個 target: 02 出埃及記/第14章, 04 民數記/第14章"
     },
     {
       "type": "alias_target_conflict",

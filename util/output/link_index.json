@@ -313,7 +313,9 @@
     "secondary_types": [],
     "title": "以實各谷的一掛葡萄",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "以實各谷"
+    ]
   },
   "以實瑪利十二族": {
     "path": "link_folder/主題/以實瑪利十二族.md",
@@ -400,6 +402,14 @@
       "為一年之首",
       "宗教曆的起點"
     ]
+  },
+  "以色列人一連五次違背神": {
+    "path": "link_folder/主題/以色列人一連五次違背神.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "以色列人一連五次違背神",
+    "status": "formal",
+    "aliases": []
   },
   "以色列人賣給外人的贖回條例": {
     "path": "link_folder/主題/以色列人賣給外人的贖回條例.md",
@@ -3205,7 +3215,9 @@
     "secondary_types": [],
     "title": "十二探子窺探迦南地",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "十二探子"
+    ]
   },
   "十二支派首領之杖按著名冊交付驗證": {
     "path": "link_folder/事件/十二支派首領之杖按著名冊交付驗證.md",
@@ -14371,7 +14383,9 @@
     "secondary_types": [],
     "title": "他備拉",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "焚燒"
+    ]
   },
   "以倘": {
     "path": "link_folder/地點/以倘.md",
@@ -14752,13 +14766,11 @@
   "基博羅哈他瓦": {
     "path": "link_folder/地點/基博羅哈他瓦.md",
     "type": "地點",
-    "secondary_types": [
-      "歷史"
-    ],
+    "secondary_types": [],
     "title": "基博羅哈他瓦",
     "status": "formal",
     "aliases": [
-      "貪慾之塚"
+      "貪欲之人的墳墓"
     ]
   },
   "基悉": {
@@ -17631,7 +17643,9 @@
     "secondary_types": [],
     "title": "迦南大敗直到何珥瑪",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "何珥瑪"
+    ]
   },
   "進迦南應許": {
     "path": "link_folder/歷史/進迦南應許.md",
@@ -19938,7 +19952,9 @@
     "secondary_types": [],
     "title": "摩西的靈命低谷與重擔求死",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "摩西求死"
+    ]
   },
   "摩西認同受苦的神子民": {
     "path": "link_folder/神學/摩西認同受苦的神子民.md",
@@ -22141,7 +22157,9 @@
     "secondary_types": [],
     "title": "自認如蚱蜢的不信態勢",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "如蚱蜢一樣"
+    ]
   },
   "至高的神": {
     "path": "link_folder/神學/至高的神.md",
@@ -22764,7 +22782,9 @@
     "secondary_types": [],
     "title": "亞衲族與偉人拿非林",
     "status": "formal",
-    "aliases": []
+    "aliases": [
+      "亞衲族"
+    ]
   },
   "以色列刑罰的節制與程序保障": {
     "path": "link_folder/背景/以色列刑罰的節制與程序保障.md",
@@ -23135,6 +23155,14 @@
       "近東獻兒女為祭"
     ]
   },
+  "古代近東的戰場傳訊方式": {
+    "path": "link_folder/背景/古代近東的戰場傳訊方式.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的戰場傳訊方式",
+    "status": "formal",
+    "aliases": []
+  },
   "古代近東的排泄物與經血不潔觀念": {
     "path": "link_folder/背景/古代近東的排泄物與經血不潔觀念.md",
     "type": "背景",
@@ -23229,6 +23257,14 @@
       "古代近東的血觀念",
       "近東血觀念"
     ]
+  },
+  "古代近東的超脫預言": {
+    "path": "link_folder/背景/古代近東的超脫預言.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "古代近東的超脫預言",
+    "status": "formal",
+    "aliases": []
   },
   "古代近東社會弱勢群體": {
     "path": "link_folder/背景/古代近東社會弱勢群體.md",
@@ -23642,6 +23678,14 @@
       "迦南六族"
     ]
   },
+  "迦南地的居民分佈": {
+    "path": "link_folder/背景/迦南地的居民分佈.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "迦南地的居民分佈",
+    "status": "formal",
+    "aliases": []
+  },
   "金環": {
     "path": "link_folder/背景/金環.md",
     "type": "背景",
@@ -23895,6 +23939,14 @@
       "地點"
     ],
     "title": "亭拿地點辨識",
+    "status": "formal",
+    "aliases": []
+  },
+  "他備拉與基博羅哈他瓦是否同一地": {
+    "path": "link_folder/解經爭議/他備拉與基博羅哈他瓦是否同一地.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "他備拉與基博羅哈他瓦是否同一地",
     "status": "formal",
     "aliases": []
   },
@@ -24485,6 +24537,14 @@
     "status": "formal",
     "aliases": []
   },
+  "吞吃居民之地是什麼意思": {
+    "path": "link_folder/解經爭議/吞吃居民之地是什麼意思.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "吞吃居民之地是什麼意思",
+    "status": "formal",
+    "aliases": []
+  },
   "含看見父親赤身的含義": {
     "path": "link_folder/解經爭議/含看見父親赤身的含義.md",
     "type": "解經爭議",
@@ -24865,6 +24925,14 @@
       "舉手的三種讀法"
     ]
   },
+  "摩西請何巴作嚮導是否顯出信心不足": {
+    "path": "link_folder/解經爭議/摩西請何巴作嚮導是否顯出信心不足.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "摩西請何巴作嚮導是否顯出信心不足",
+    "status": "formal",
+    "aliases": []
+  },
   "摸活的不潔淨動物算不算不潔（法利賽人與撒都該人之爭）": {
     "path": "link_folder/解經爭議/摸活的不潔淨動物算不算不潔（法利賽人與撒都該人之爭）.md",
     "type": "解經爭議",
@@ -25001,6 +25069,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "比撒列作櫃與申10：3 的張力",
+    "status": "formal",
+    "aliases": []
+  },
+  "民12：3 這句話是誰寫的": {
+    "path": "link_folder/解經爭議/民12：3 這句話是誰寫的.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "民12：3 這句話是誰寫的",
     "status": "formal",
     "aliases": []
   },
@@ -25280,6 +25356,14 @@
       "雅博摔跤對手"
     ]
   },
+  "神賜鵪鶉又降災的因果": {
+    "path": "link_folder/解經爭議/神賜鵪鶉又降災的因果.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "神賜鵪鶉又降災的因果",
+    "status": "formal",
+    "aliases": []
+  },
   "祭司聖衣的件數之爭": {
     "path": "link_folder/解經爭議/祭司聖衣的件數之爭.md",
     "type": "解經爭議",
@@ -25331,11 +25415,27 @@
       "4-8節接續十29"
     ]
   },
+  "米利暗與亞倫誰是主謀": {
+    "path": "link_folder/解經爭議/米利暗與亞倫誰是主謀.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "米利暗與亞倫誰是主謀",
+    "status": "formal",
+    "aliases": []
+  },
   "約伯記與以東地的關聯": {
     "path": "link_folder/解經爭議/約伯記與以東地的關聯.md",
     "type": "解經爭議",
     "secondary_types": [],
     "title": "約伯記與以東地的關聯",
+    "status": "formal",
+    "aliases": []
+  },
+  "約櫃在前頭行與在營中的位置": {
+    "path": "link_folder/解經爭議/約櫃在前頭行與在營中的位置.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "約櫃在前頭行與在營中的位置",
     "status": "formal",
     "aliases": []
   },
@@ -25920,6 +26020,9 @@
   },
   "亞倫的祝福": {
     "alias_of": "亞倫的祝福（祭司祝福）"
+  },
+  "以實各谷": {
+    "alias_of": "以實各谷的一掛葡萄"
   },
   "為一年之首": {
     "alias_of": "以本月為正月"
@@ -26673,6 +26776,9 @@
   },
   "利未人受聖職": {
     "alias_of": "利未人受聖職討罪"
+  },
+  "十二探子": {
+    "alias_of": "十二探子窺探迦南地"
   },
   "十二支派首領協助普查": {
     "alias_of": "十二族長協助數點"
@@ -28903,6 +29009,9 @@
   "Timnah": {
     "alias_of": "亭拿（猶大）"
   },
+  "焚燒": {
+    "alias_of": "他備拉"
+  },
   "曠野邊的以倘": {
     "alias_of": "以倘"
   },
@@ -28975,7 +29084,7 @@
   "Kiriath-arba": {
     "alias_of": "基列亞巴"
   },
-  "貪慾之塚": {
+  "貪欲之人的墳墓": {
     "alias_of": "基博羅哈他瓦"
   },
   "Chezib": {
@@ -29734,6 +29843,9 @@
   "成群的蒼蠅之災": {
     "alias_of": "蠅災"
   },
+  "何珥瑪": {
+    "alias_of": "迦南大敗直到何珥瑪"
+  },
   "領你進迦南人之地": {
     "alias_of": "進迦南應許"
   },
@@ -30288,6 +30400,9 @@
   },
   "神差遣摩西": {
     "alias_of": "摩西的呼召與差遣"
+  },
+  "摩西求死": {
+    "alias_of": "摩西的靈命低谷與重擔求死"
   },
   "摩西認同希伯來弟兄": {
     "alias_of": "摩西認同受苦的神子民"
@@ -30895,6 +31010,9 @@
   "更換衣裳": {
     "alias_of": "自潔與更換衣裳"
   },
+  "如蚱蜢一樣": {
+    "alias_of": "自認如蚱蜢的不信態勢"
+  },
   "舉手祝福": {
     "alias_of": "舉手祝福（祭司祝福百姓）"
   },
@@ -31071,6 +31189,9 @@
   },
   "亞舍拉": {
     "alias_of": "亞舍拉（木偶）"
+  },
+  "亞衲族": {
+    "alias_of": "亞衲族與偉人拿非林"
   },
   "伊甸四河": {
     "alias_of": "伊甸園四河"
