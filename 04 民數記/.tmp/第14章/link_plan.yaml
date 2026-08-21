@@ -1,7 +1,67 @@
 book: 民數記
 chapter: 14
 A_use_directly: []
-B_needs_update: []
+B_needs_update:
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 第6-9節他與約書亞撕裂衣服、勸阻全會眾；第24節神親口稱他「我的僕人迦勒」，並說「因他另有一個心志，專一跟從我」；第30、38節他是全代人中兩個進得去的人之一。CT 的〔原文字義〕註「『另有一個心志』原文是『另有一個靈』……『專一跟從我』字面的意思是『完全跟在我後面』」。此條目已累積創36、民13，尚無民14——而民14 才是他得應許的那一章。
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第6節他與迦勒一同撕裂衣服，第30、38節與迦勒一同被列為例外。GT 丁良才指出這是他第一次開口：「到了這地步。約書亞才說了話。」GT《啟導本聖經註釋》：「約書亞在此時發言，勇敢堅定又高瞻遠囑，是率領新一代進入迦南的新領袖。」此條目已累積民11、民13，尚無民14。
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 摩西的代求
+  suggested_type: 神學
+  evidence: 第13-19節是摩西在民數記篇幅最長的一次代求，也是全章的樞紐。GT 丁良才把他的理由拆成三層：「1靠主的榮耀（13-17），2仗主的應許（17-18），3依主的憐憫（19）。」KC 指出這次代求的根據：「神的應許與作為是他懇求的基礎。摩西援引耶和華論到自己所說的話（出34:6-7）。」神的回答是「我照著你的話赦免了他們」（v20）。此條目已累積出9、33、34、民11、民12，尚無民14。
+  match_type: exact
+  existing_title: 摩西的代求
+  existing_path: link_folder/神學/摩西的代求.md
+- name: 以色列人的怨言
+  suggested_type: 歷史
+  evidence: 第1-4節是全卷怨言的頂點：喧嚷、哭號、發怨言、要另立首領回埃及。GT 丁良才數出三種動作：「在營裡發生了三種舉動：1喧嚷，2號哭，3發怨言。號哭是不信的結果；頌揚是信心的結果。」第27節神親自定性：「這惡會眾向我發怨言，我忍耐他們要到幾時呢？」此條目已累積出14-17、民11，尚無民14。
+  match_type: exact
+  existing_title: 以色列人的怨言
+  existing_path: link_folder/歷史/以色列人的怨言.md
+- name: 加低斯巴尼亞事件
+  suggested_type: 歷史
+  evidence: 本章整章就是這個事件本身：探子回報之後百姓的反應、神的判決、四十年的宣告、擅自上山的慘敗。GT《聖經精讀本》直接以此為名：「加低斯巴尼亞事件是以色列出埃及以後所犯的最大的悖逆事件。」此條目在民13 已建，累積只到民13，卻缺了事件真正發生的這一章。
+  match_type: exact
+  existing_title: 加低斯巴尼亞事件
+  existing_path: link_folder/歷史/加低斯巴尼亞事件.md
+- name: 十二探子窺探迦南地
+  suggested_type: 事件
+  evidence: 第36-38節是這次任務的結局：「摩西所打發、窺探那地的人回來，報那地的惡信……這些報惡信的人都遭瘟疫，死在耶和華面前。其中惟有嫩的兒子約書亞和耶孚尼的兒子迦勒仍然存活。」KC 指出十二人可能同時站在百姓中間，十個當場倒下、兩個站著。此條目只累積民13，缺這一章的結局。
+  match_type: exact
+  existing_title: 十二探子窺探迦南地
+  existing_path: link_folder/事件/十二探子窺探迦南地.md
+- name: 四十的屬靈意義
+  suggested_type: 原文
+  evidence: 第33-34節把民13 的四十天換算成四十年：「按你們窺探那地的四十日，一年頂一日，你們要擔當罪孽四十年。」GT《民數記串珠聖經註釋》：「『一年頂一日』：強調神對罪惡的嚴厲。」GT《啟導本聖經註釋》另指出「『四十年』是約數，實際上是三十八年零十個月」。此條目已累積創7、民13，尚無民14。
+  match_type: exact
+  existing_title: 四十的屬靈意義
+  existing_path: link_folder/原文/四十的屬靈意義.md
+- name: 亞瑪力人
+  suggested_type: 人物
+  evidence: 第25節神指出「亞瑪力人和迦南人住在谷中」，第43、45節他們把擅自上山的以色列人殺退直到何珥瑪。GT 丁良才指出神叫百姓轉回曠野的實際用意：「神叫他們轉回曠野，是要他們免得受亞瑪力人和迦南人所害。」GT《聖經精讀本》：「亞瑪力人是神不喜悅的民族,卻成了神剿滅以色列的工具。」此條目已累積創14、創36、出17，尚無民14。
+  match_type: exact
+  existing_title: 亞瑪力人
+  existing_path: link_folder/人物/亞瑪力人.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 第3、8、23、30、31節反覆以「那地」指稱迦南：百姓說「耶和華為什麼把我們領到那地」，迦勒說「那地原是流奶與蜜之地」，神說「他們斷不得看見我向他們的祖宗所起誓應許之地」，又說「你們所厭棄的那地」我必把你們的婦人孩子領進去。本章是這塊地由應許轉為判決標準的一章。
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 耶和華擊打百姓的瘟疫
+  suggested_type: 事件
+  evidence: 第12節神說「我要用瘟疫擊殺他們」，第37節十個報惡信的探子「都遭瘟疫，死在耶和華面前」。GT《舊約聖經背景註釋》：「譯作『瘟疫』的字眼十分模糊，不足以確定所指的是何種疾病；雖然部分學者認為這是形容鼠疫。舊約通常視瘟疫為神對嚴重瀆聖或褻瀆罪行的刑罰。」此條目已累積出32、民11，尚無民14。
+  match_type: exact
+  existing_title: 耶和華擊打百姓的瘟疫
+  existing_path: link_folder/事件/耶和華擊打百姓的瘟疫.md
 C_new_formal:
 - name: 仇敵是我們的食物
   suggested_type: 神學
@@ -15,32 +75,12 @@ C_new_formal:
   surfaces:
   - phrase: 殺退了，直到何珥瑪
   target_path: link_folder/歷史/迦南大敗直到何珥瑪.md
-  semantic_hint:
-  - title: 迦南人
-    score: 0.482
-    type: 人物
-  - title: 征服迦南應許
-    score: 0.471
-    type: 事件
-  - title: 迦南人與比利洗人
-    score: 0.461
-    type: 歷史
 - name: 試探神十次
   suggested_type: 互文
   evidence: 第22節上帝口親宣定對埃及與曠野漫途一再目睹上神無限威望卻屢生疑恨的民之嚴懲總結：「這些人雖看見我的榮耀和我在埃及與曠野所行的神蹟，仍然試探我這十次，不聽從我的話。」囊括自出埃及紅海抱怨、瑪拉哭苦水、汛曠野爭餅肉、留存或安息日強取嗎哪、利非訂無水鬥口、西乃跪犢，以至他備拉、基博羅哈他瓦與加低斯十事之靈命警鑑。
   surfaces:
   - phrase: 試探我這十次
   target_path: link_folder/互文/試探神十次.md
-  semantic_hint:
-  - title: 神的試驗
-    score: 0.474
-    type: 神學
-  - title: 神試驗亞伯拉罕
-    score: 0.461
-    type: 神學
-  - title: 十誡
-    score: 0.429
-    type: 神學
 - name: 曠野飄流四十年
   suggested_type: 歷史
   evidence: 第33至34節宣讀以色列人於民數記第十四章遭遇的神聖終局刑決：「你們的兒女必在曠野飄流四十年，擔當你們淫行的罪，直到你們的屍首在曠野消滅。按你們窺探那地的四十日，一年頂一日，你們要擔當罪孽四十年。」以窺伺四十日換一年至成年背約者全仆廢於黃河的嚴格鍛鍊。
@@ -54,16 +94,6 @@ C_new_formal:
   surfaces:
   - phrase: 豐盛的慈愛
   target_path: link_folder/神學/摩西代求與神的豐盛慈愛.md
-  semantic_hint:
-  - title: 神的慈愛引領
-    score: 0.554
-    type: 神學
-  - title: 摩西為百姓代求（金牛犢）
-    score: 0.548
-    type: 互文
-  - title: 摩西的代求
-    score: 0.547
-    type: 神學
 - name: 專心跟從主與另一個心志
   suggested_type: 神學
   evidence: 第24節耶和華真訓對於義僕迦勒等純聖心性之天恩封譽：「惟獨我的僕人迦勒，因他另有一個心志，專一跟從我，我就把他領進他所去過的那地；他的後裔也必得那地為業。」表徵與眾民不信墮怯截然殊途的超凡心志（希伯來文為「另有一個靈」），唯執仰看信實不顧人世難度、全然不二走隨聖神引指的名譽勝履。
@@ -85,10 +115,6 @@ C_new_formal:
   - phrase: 情願上耶和華所應許的地方去
   - phrase: 擅敢上山頂去
   target_path: link_folder/事件/假意悔改與冒死擅自作戰.md
-  semantic_hint:
-  - title: 悔改
-    score: 0.429
-    type: 神學
 - name: 神公義追討與禍延子孫的釋經探討
   suggested_type: 解經爭議
   evidence: 針對第18節及出埃及記神宣讀「萬不以有罪的為無罪，必追討他的罪，自父及子，直到三、四代」與以西結書「兒子必不擔當父親的罪孽」（結18:20）個人受審原則如何平行並解的經學議論；剖白家庭風紀、道德流弊與靈修傳遞在時空中帶予苗裔之後效因果關係。
@@ -96,16 +122,6 @@ C_new_formal:
   - phrase: 自父及子，直到三、四代
   - phrase: 必追討他的罪
   target_path: link_folder/解經爭議/神公義追討與禍延子孫的釋經探討.md
-  semantic_hint:
-  - title: 追討罪自父及子直到三四代
-    score: 0.454
-    type: 神學
-  - title: 神的性情宣告（耶和華有憐憫有恩典）
-    score: 0.427
-    type: 神學
-  - title: 西緬利未報復是否合乎公義
-    score: 0.409
-    type: 解經爭議
 - name: 耶和華的榮光與會幕的及時顯現
   suggested_type: 主題
   evidence: 第10節面對百萬蠢動暴眾正舉巨石謀把見證義將二人殺除於暴喝瞬隙：「但全會眾說：拿石頭打死他們二人。忽然，耶和華的榮光在會幕中向以色列眾人顯現。」無限上天的神蹟燦耀突忽暴閃降駕在會幕至尖以止制民變並伸衛義民的高光聖幕相守實例。
@@ -113,15 +129,5 @@ C_new_formal:
   - phrase: 耶和華的榮光
   - phrase: 在會幕中向以色列眾人顯現
   target_path: link_folder/主題/耶和華的榮光與會幕的及時顯現.md
-  semantic_hint:
-  - title: 耶和華的榮光
-    score: 0.638
-    type: 神學
-  - title: 神的榮耀
-    score: 0.52
-    type: 神學
-  - title: 摩西不能進會幕
-    score: 0.509
-    type: 神學
 D_new_candidate: []
 E_skip: []
