@@ -1,7 +1,103 @@
 book: 民數記
 chapter: 16
 A_use_directly: []
-B_needs_update: []
+B_needs_update:
+- name: 可拉的背叛（預告）
+  suggested_type: 人物
+  evidence: 本章就是這個條目所預告的事件本身。該條目建於出6（可拉列在以斯哈的兒子中），累積只有出埃及記6一筆；民16 是可拉之名再次出現、且成為全卷最大叛變的一章。GT 丁良才《民數記註釋》列出他的動機：「可拉在這件事上，存三樣不良的心：1驕傲，2嫉妒，3貪婪。」
+  match_type: exact
+  existing_title: 可拉的背叛（預告）
+  existing_path: link_folder/人物/可拉的背叛（預告）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第4節「摩西聽見這話就俯伏在地」；第15節向神自辯「我並沒有奪過他們一匹驢」；第22、45節兩次俯伏為全會眾代求。GT 丁良才《民數記註釋》數出摩西一生四次作以色列人的中保挽回主怒，本章就佔了兩次。既有條目累積 52 筆但停在民9，缺本章。
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 第46-48節：摩西吩咐亞倫拿香爐跑到會中為百姓贖罪，「他站在活人死人中間，瘟疫就止住了」。CT 指出此時亞倫已經九十歲左右。GT 丁良才對比：「可拉燒香招了災，亞倫燒香卻消了災，罪人與義人所作的，往往有這樣的分別。」既有條目累積至民12，缺本章。
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第37-39節神指名由「祭司亞倫的兒子以利亞撒」從火中撿起香爐、錘成片子包壇。GT 丁良才《民數記註釋》說明為什麼不是亞倫去撿：「摩西只吩咐以利亞撒從燒死人的火中檢出香爐，卻沒有吩咐他父親亞倫，因為大祭司亞倫不敢污穢自己（利二十一10-12）。」既有條目累積出6、利10、民3、民4，缺本章。
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第8-10節摩西兩次稱他們「利未的子孫」，並指出他們已被分別出來親近神、辦耶和華帳幕的事。GT《舊約聖經背景註釋》分辨利未人與祭司的職權差異。可拉本人就是哥轄族的利未人。既有條目累積至民18，缺本章這場由利未人帶頭的叛變。
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 第1節大坍、亞比蘭、安都出自流便子孫。CT 與 GT 丁良才給的動機一致：流便原是以色列的長子，因淫行失去長子的名分（創49:3-4），子孫可能因此心生不滿；而流便營與哥轄營都在會幕南邊，「所以多有同心合謀的機會」。既有條目累積至民2，缺本章。
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 全會眾
+  suggested_type: 人物
+  evidence: 第3節「全會眾個個既是聖潔」是叛黨的口號；第19節可拉招聚全會眾；第41節「以色列全會眾都向摩西、亞倫發怨言」。STEP 原文資料顯示第3節的「會眾」是 עֵדָה（e.Dah，H5712），與同節後半的「會眾」קָהָל（ke.Hal，H6951）是兩個不同的字。既有條目累積至利9，缺本章。
+  match_type: exact
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第25節「摩西起來，往大坍、亞比蘭那裡去；以色列的長老也隨著他去」。CT 指出這表示長老們與摩西同心一致行動；GT 丁良才補充他們的作用：「眾長老也幫助摩西勸百姓離開那些惡人的帳棚（26）。」既有條目累積出3、出24、民11，缺本章。
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 香爐
+  suggested_type: 文化
+  evidence: 本章的判決工具。第6-7、17-18節各人拿香爐盛火加香；第37-39節香爐被錘成片子包壇。GT《舊約聖經背景註釋》說明形制：「這些香爐最有可能是可兼用來剷起煤炭的長柄小鍋。由於他們在裡面燒香，這也是活動的香壇。」既有條目只累積利10，缺本章。
+  match_type: exact
+  existing_title: 香爐
+  existing_path: link_folder/文化/香爐.md
+- name: 銅壇（燔祭壇）
+  suggested_type: 主題
+  evidence: 第38-39節那二百五十個香爐被錘成銅片包在壇上。CT 註明包的是哪一座壇：「『包壇』是指包銅祭壇（參出二十七2），而非香壇，因為香壇是金包的（參出三十七26）。」GT《民數記串珠聖經註釋》同樣指出祭壇已用銅包裹、香壇卻未有。既有條目累積至民4，缺本章。
+  match_type: exact
+  existing_title: 銅壇（燔祭壇）
+  existing_path: link_folder/主題/銅壇（燔祭壇）.md
+- name: 耶和華的榮光
+  suggested_type: 神學
+  evidence: 第19節可拉招聚全會眾時「耶和華的榮光就向全會眾顯現」；第42節會眾聚集發怨言時「有雲彩遮蓋了，耶和華的榮光顯現」。CT 指出這代表神的臨在與即將施行審判；GT 丁良才註第42節：「不是照常停在會幕上，乃是表示耶和華特意進入了會幕。」既有條目累積出16、出40、利9，缺本章。
+  match_type: exact
+  existing_title: 耶和華的榮光
+  existing_path: link_folder/神學/耶和華的榮光.md
+- name: 摩西的代求
+  suggested_type: 神學
+  evidence: 第22節與第45節摩西兩次俯伏代求，第22節的禱告詞是「神，萬人之靈的神啊，一人犯罪，你就要向全會眾發怒嗎？」GT 丁良才列出摩西一生四次作中保挽回主怒，本章佔第三、第四次。既有條目累積至民14，缺本章。
+  match_type: exact
+  existing_title: 摩西的代求
+  existing_path: link_folder/神學/摩西的代求.md
+- name: 中保
+  suggested_type: 神學
+  evidence: 第48節「他站在活人死人中間，瘟疫就止住了」。GT《民數記串珠聖經註釋》：「何等美麗的一幅的圖畫，叫人想起耶穌基督在十字架上所成就的救恩。」GT 丁良才：「亞倫這樣行，作了耶穌的預表。」既有條目只累積出24、出32，本章是它在民數記的第一站。
+  match_type: exact
+  existing_title: 中保
+  existing_path: link_folder/神學/中保.md
+- name: 以色列人的怨言
+  suggested_type: 歷史
+  evidence: 第41節「第二天，以色列全會眾都向摩西、亞倫發怨言說：你們殺了耶和華的百姓了」。CT 指出會眾並沒有得到教訓，反而認為摩西亞倫假借神的名陷害人命。STEP 原文資料顯示第11節摩西說可拉「向他發怨言」用的是 לוּן（lun，H3885B）的使役語態，字面是「使人發怨言」。既有條目累積至民14，缺本章。
+  match_type: exact
+  existing_title: 以色列人的怨言
+  existing_path: link_folder/歷史/以色列人的怨言.md
+- name: 耶和華擊打百姓的瘟疫
+  suggested_type: 事件
+  evidence: 第46-50節：忿怒從耶和華那裡出來，瘟疫發作，除可拉一事之外共死一萬四千七百人。GT《舊約聖經背景註釋》描述其性質：「這個殺死了一萬四千七百人的瘟疫，是以曾經殺死埃及長子之『滅命使者』的姿態出現。」既有條目累積出32、民11、民14，缺本章這次規模最大的一場。
+  match_type: exact
+  existing_title: 耶和華擊打百姓的瘟疫
+  existing_path: link_folder/事件/耶和華擊打百姓的瘟疫.md
+- name: 亞倫和他兒子（祭司）
+  suggested_type: 人物
+  evidence: 整章的爭點就是祭司職分歸誰。第10節「你們還要求祭司的職任嗎？」；第40節結論是「使亞倫後裔之外的人不得近前來在耶和華面前燒香」。GT《舊約聖經背景註釋》說明利未人與祭司的分權。既有條目累積至民18，缺本章這場為祭司職分而起的叛變。
+  match_type: exact
+  existing_title: 亞倫和他兒子（祭司）
+  existing_path: link_folder/人物/亞倫和他兒子（祭司）.md
 C_new_formal:
 - name: 可拉大坍亞比蘭等領首聯合的大反亂
   suggested_type: 事件
@@ -19,10 +115,6 @@ C_new_formal:
   - phrase: 你們為什麼自高
   - phrase: 超過耶和華的會眾呢
   target_path: link_folder/神學/全會眾的聖潔宣示與對代表主職之挑釁.md
-  semantic_hint:
-  - title: 全會眾
-    score: 0.451
-    type: 人物
 - name: 利未職分的尊嚴與越權追求祭司職分
   suggested_type: 神學
   evidence: 摩西向可拉等利未子孫嚴肅辨明，上帝特將他們拔擢侍立於大堂前擔侍供奉職能已為厚重的榮美至高祝福，如今心生不滿甚至窺伺亞倫獨掌的大祭司職位就是公然敵擋施與選派的耶和華。
@@ -31,16 +123,6 @@ C_new_formal:
   - phrase: 你們還要求祭司的職任嗎
   - phrase: 這豈為小事
   target_path: link_folder/神學/利未職分的尊嚴與越權追求祭司職分.md
-  semantic_hint:
-  - title: 利未
-    score: 0.491
-    type: 人物
-  - title: 利未支派
-    score: 0.473
-    type: 人物
-  - title: 利未人受聖職討罪
-    score: 0.466
-    type: 事件
 - name: 大坍和亞比蘭強硬反抗與藐視帶進蜜地的應許
   suggested_type: 事件
   evidence: 流便子民大坍和亞比蘭公開抗拒摩西招喚出面的正言，放縱反語侮罵埃及才是真正長成奶蜜處，控言導走荒野是為了施愚害死群眾，並且痛諷領軍使人心受屈成盲，徹底把主信與呼籲採在底層。
@@ -57,16 +139,6 @@ C_new_formal:
   - phrase: 我並沒有奪過他們一匹驢
   - phrase: 也沒有害過他們一個人
   target_path: link_folder/神學/摩西在耶和華面前自辯清白與拒受甘禮.md
-  semantic_hint:
-  - title: 摩西
-    score: 0.517
-    type: 人物
-  - title: 摩西為人極其謙和（民12：3）
-    score: 0.508
-    type: 神學
-  - title: 被拒絕的拯救者摩西
-    score: 0.506
-    type: 互文
 - name: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
   suggested_type: 事件
   evidence: 摩西發布曠世預言宣明若非主選，天意自無聲；一旦上神施作造奇新功使砂礫荒原爆成裂壑深淵將其群眷全財活墜入下界幽穴，即證悖逆屬實。果即話終聲定，厚石破底把全戶叛軍無聲葬入冷晦泉深。
@@ -82,16 +154,6 @@ C_new_formal:
   - phrase: 有火從耶和華那裡出來
   - phrase: 燒滅了那獻香的二百五十個人
   target_path: link_folder/事件/耶和華的烈火將兩百五十個拿香爐者徹底毀滅.md
-  semantic_hint:
-  - title: 烈火（esh okelah）
-    score: 0.499
-    type: 原文
-  - title: 凡火
-    score: 0.462
-    type: 主題
-  - title: 拿答
-    score: 0.46
-    type: 人物
 - name: 香爐被鍛釘為包裝壇上的銅片與長遠鑑誡
   suggested_type: 文化
   evidence: 雖焚滅罪狂逆兵，但因供上聖堂之金屬香器本身已定作聖歸；神敕命把這大串遺世銅器奮手痛敲成一塊塊緊密輝朗金屬薄片牢牢釘包上獻火外壇，讓來往瞻禮之後世代輩子警悟僭越慘痛災局。
@@ -100,16 +162,6 @@ C_new_formal:
   - phrase: 叫人錘成片子
   - phrase: 給以色列人作記號
   target_path: link_folder/文化/香爐被鍛釘為包裝壇上的銅片與長遠鑑誡.md
-  semantic_hint:
-  - title: 銅壇（燔祭壇）
-    score: 0.429
-    type: 主題
-  - title: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
-    score: 0.426
-    type: 主題
-  - title: 壇的槓（抬壇用）
-    score: 0.407
-    type: 主題
 - name: 次日會眾猛發埋怨招致耶和華天譴大瘟疫
   suggested_type: 事件
   evidence: 親擊滅門之警未過一朝，愚狂迷狂的大批人流竟然復聚圍攏，荒唐痛駡是神使殺絕良材，引至真神光雲激發狂電譴懲，瞬刻大面病殃如海潮衝刷掃過人群造成鉅禍萬餘喪生。
@@ -118,13 +170,6 @@ C_new_formal:
   - phrase: 你們殺了耶和華的百姓了
   - phrase: 瘟疫在百姓中已經發作了
   target_path: link_folder/事件/次日會眾猛發埋怨招致耶和華天譴大瘟疫.md
-  semantic_hint:
-  - title: 以色列人的怨言
-    score: 0.444
-    type: 歷史
-  - title: 報惡信之人的瘟疫與存活者
-    score: 0.411
-    type: 事件
 - name: 亞倫拿著香爐站在死人與活人中間祈禱救恩代濟
   suggested_type: 神學
   evidence: 浩難之急摩西立呼年老祭神長官亞倫抓挑香壇殘露熱灰並狂灑聖香疾跑撲入奔殃散亂人海；大司靈孤獨無阻力駐在活屍與血殍兩重邊線深訴祈恕，當局怒病應咒而定，高聳長留神子親作長隨保贖中保之至極投影。
@@ -134,15 +179,5 @@ C_new_formal:
   - phrase: 為他們贖罪
   - phrase: 拿你的香爐
   target_path: link_folder/神學/亞倫拿著香爐站在死人與活人中間祈禱救恩代濟.md
-  semantic_hint:
-  - title: 基督代禱（來7：25）
-    score: 0.466
-    type: 互文
-  - title: 聖徒禱告如香（啟5：8, 8：3-4）
-    score: 0.424
-    type: 互文
-  - title: 信徒禱告如香（啟5：8, 8：3-4）
-    score: 0.413
-    type: 互文
 D_new_candidate: []
 E_skip: []
