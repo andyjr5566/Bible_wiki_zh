@@ -1,0 +1,40 @@
+name: 神與摩西面對面明說
+type: 神學
+secondary_types: []
+aliases:
+- 面對面說話
+- 明說
+status: formal
+definition: |-
+  民12:6-8 是全本聖經對「神怎樣向人說話」分得最清楚的一段。神把先知與摩西分成兩種等級：
+
+  | | 一般先知（v6） | 摩西（v8） |
+  | :--- | :--- | :--- |
+  | 方式 | 在異象中顯現、在夢中說話 | 面對面說話 |
+  | 清晰度 | ——（需要解讀） | 明說，不用謎語 |
+  | 所見 | ——  | 必見耶和華的形像 |
+
+  **「面對面」的原文字面是「嘴對嘴」。** GT《聖經精讀本》：「字面上的意思是『嘴對嘴』，是指神與摩西相見的時候並不是通過中間通道，而是象朋友一樣自然對話的意思（出33:11）。」STEP 原文資料證實這個字面：第8節是 peh 'el- peh（H6310G，詞典義 lip／mouth）。
+
+  **STEP 另顯示第6與第8節用了一組近乎同形的字。** 第6節「異象」是 ba./mar.'Ah（H4759A，詞典義 vision），第8節「明說」是 u./mar.'Eh（H4758，詞典義 appearance）——兩個不同的 Strong 編號，拼寫卻只差一點。CT 給的原文字義正是「異象」景象，鏡子／「明說」眼前看到的。==先知得到的是「異象」，摩西得到的是「所見」。==
+
+  **「見我的形像」不等於看見神的本體。** GT 丁良才：「神叫摩西所看見的，是照著他所能容受的（出三十三21-23）。摩西卻沒有看見神的本體（出三十三20，約一18，西一15，提前六16）。」CT 也說「形像不是真體」。GT《啟導本聖經註釋》：「這當然不是指直接見到神未隱藏的面，而是一種可見的形狀。摩西曾要求見神的面，他見到了神的背。」STEP 顯示這個字是 te.mu.Nat（H8544，詞典義 likeness）。
+
+  **這段話的重點不在貶低先知，而在說明米利暗和亞倫錯在哪裡。** GT《民數記串珠聖經註釋》：「屬靈的權柄源於神親自的啟示（2），米利暗和亞倫所說的並沒有錯，可惜他們沒有分辨出他們得啟示的方法與摩西的有何不同。」
+accumulations:
+- book: 民數記
+  chapter: 12
+  summary: 第6至8節神親自界定兩種啟示：一般先知得的是異象與夢，摩西得的是面對面、明說、不用謎語，並且見神的形像。GT《聖經精讀本》指出「面對面」的原文字面是「嘴對嘴」，STEP 原文資料證實第8節正是 peh 到 peh。
+  relation: 這段話是神對第2節那句「難道耶和華單與摩西說話，不也與我們說話嗎」的正面回答：神沒有否認祂也與他們說話，只是指出方式不同。GT《民數記串珠聖經註釋》因此說米利暗和亞倫「所說的並沒有錯，可惜他們沒有分辨出他們得啟示的方法與摩西的有何不同」——本章的裁決不在事實層面，而在等級層面。
+related_entries:
+- 先知
+- 摩西在神全家盡忠（民12：7）
+- 摩西為人極其謙和（民12：3）
+- 米利暗
+- 亞倫
+sources:
+- '逐節註解（ccbiblestudy CT）: 民數記12:6-8 原文字義與文意註解（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT12.htm）'
+- '拾穗（ccbiblestudy GT）: 民數記12:8《聖經精讀本》、丁良才、《啟導本聖經註釋》與12:4~15《民數記串珠聖經註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT12.htm）'
+- '研經註解（KingComments）: Numbers 12:4-9（https://www.kingcomments.com/en/bible-studies/Num/12）'
+- '研經註解（BibleHub Study）: Numbers 12:6-8 face to face, clearly and not in riddles（https://biblehub.com/study/numbers/12.htm）'
+- '原文資料（STEP Bible）: Numbers 12:6,8 mar.ah H4759A、mar.eh H4758、peh H6310G、te.mu.nah H8544（https://github.com/STEPBible/STEPBible-Data）'

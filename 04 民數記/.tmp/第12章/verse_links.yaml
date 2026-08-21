@@ -7,12 +7,24 @@ links:
 - verse: 1
   phrase: 米利暗
   target: 米利暗
+- verse: 1
+  phrase: 亞倫
+  target: 亞倫
 - verse: 3
   phrase: 摩西為人極其謙和
   target: 摩西為人極其謙和（民12：3）
 - verse: 4
+  phrase: 亞倫
+  target: 亞倫
+- verse: 4
   phrase: 米利暗
   target: 米利暗
+- verse: 5
+  phrase: 雲柱
+  target: 雲柱火柱
+- verse: 5
+  phrase: 亞倫
+  target: 亞倫
 - verse: 5
   phrase: 米利暗
   target: 米利暗
@@ -33,13 +45,16 @@ links:
   target: 米利暗
 - verse: 10
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
+- verse: 11
+  phrase: 亞倫
+  target: 亞倫
 - verse: 11
   phrase: 米利暗
   target: 米利暗
 - verse: 11
   phrase: 大痲瘋
-  target: 大痲瘋（tsara'at，皮膚病診斷條例）
+  target: 大痲瘋（sara'at）
 - verse: 14
   phrase: 在營外關鎖七天
   target: 患痲瘋者的哀悼記號（獨居營外）
