@@ -32,11 +32,11 @@ B_needs_update:
   match_type: exact
   existing_title: 第三日
   existing_path: link_folder/神學/第三日.md
-- name: 剪除（kareth）
+- name: 剪除
   suggested_type: 原文
   match_type: exact
-  existing_title: 剪除（kareth）
-  existing_path: link_folder/原文/剪除（kareth）.md
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
 C_new_formal:
 - name: 無殘疾與未曾負軛的紅母牛
   suggested_type: 神學
