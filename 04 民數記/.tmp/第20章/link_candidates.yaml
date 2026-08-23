@@ -1,93 +1,121 @@
 candidates:
-  - name: "米利暗卒於加低斯"
-    type: "事件"
-    status: "formal"
-    summary: "以色列人漂流曠野三十八年後，於第四十年正月初一全隊抵達尋的曠野之加低斯；女先知米利暗在此終老離世並埋葬當地，宣告一代引領出埃及經歷大紅海讚揚高蹈的歷史先知因肉體驕軟與漫長審判正式交卸勞作。"
-    occurrences:
-      - "民20:1"
-    source_refs:
-      - "基督徒文摘: 民20:1 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:1 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:1 death of Miriam（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:1 death and burial of Miriam（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "亞倫卒於何珥山與祭司職任更替"
-      - "加低斯"
-
-  - name: "摩西擊打磐石兩下"
-    type: "事件"
-    status: "formal"
-    summary: "在加低斯乾旱荒谷，會眾因絕境缺水放肆爭鬧痛詬神僕；耶和華本命摩西與亞倫手持職杖召集千黎「向磐石說話」便必湧現長奔救命狂水，摩西卻負激於憤怒怒斥群體為『悖逆的人』並擅自提杖舉手狠擊巨石兩回。"
-    occurrences:
-      - "民20:2-11"
-    source_refs:
-      - "基督徒文摘: 民20:2-11 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:2-11 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:2-11 striking the rock twice（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:11 smiting the rock with the rod（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "在米利巴未將耶和華尊為聖"
-      - "磐石出水"
-      - "米利巴（Meribah）"
-
-  - name: "在米利巴未將耶和華尊為聖"
-    type: "神學"
-    status: "formal"
-    summary: "儘管耶和華存忍恤信讓荒岩噴射奔流滿足眾兆乾渴，神王依舊直斥摩西與亞倫因血性狂傲與懷疑致『不信我在以色列人眼前尊我為聖』，就此降下嚴肅定讞：剝奪二位舊老引領本國軍眾涉越應許迦南金境的最後榮恩。"
-    occurrences:
-      - "民20:12-13"
-    source_refs:
-      - "基督徒文摘: 民20:12-13 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:12-13 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:12-13 failure to sanctify God（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:12 because ye believed me not（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "摩西擊打磐石兩下"
-      - "米利巴（Meribah）"
-
-  - name: "以東王拒絕以色列人假道"
-    type: "歷史"
-    status: "formal"
-    summary: "摩西遣使從加低斯致書擁有以掃血緣的弟兄邦侯以東王，言辭謙誠闡敘過往出埃受劫與當下渴求行駛中央商貿大路王道之宿願，應諾買資而吃決不傷害半畝農井；奈何以東鐵心重拒並遣厲陣鐵騎耀武堵截，迫使上民轉走遶行。"
-    occurrences:
-      - "民20:14-21"
-    source_refs:
-      - "基督徒文摘: 民20:14-21 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:14-21 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:14-21 Edom refuses passage（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:20 Edom came out against him（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "以東"
-      - "何珥山"
-
-  - name: "何珥山"
-    type: "地點"
-    status: "formal"
-    summary: "座落於以東嚴闊疆界近旁的巍巍山脊，即為以色列大軍受以東抗讓而退轉駐紮的極肅古地；耶和華欽點摩西伴著高垂暮宿的亞倫及子以利亞撒步登山麓嶺巔，在千本萬目見證底下實施終生職權革換與行禮傳代。"
-    occurrences:
-      - "民20:22-25"
-      - "民20:27"
-    source_refs:
-      - "基督徒文摘: 民20:22-25, 27 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:22-25, 27 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:22-25, 27 Mount Hor boundary of Edom（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:22 mount Hor by the coast of Edom（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "亞倫卒於何珥山與祭司職任更替"
-      - "以東"
-
-  - name: "亞倫卒於何珥山與祭司職任更替"
-    type: "神學"
-    status: "formal"
-    summary: "在何珥靜肅山顛，摩西遵守主旨將大祭司身上極表恩澤擔罪的舊造聖衣解卸完始裝轉著其新儲世承之子以利亞撒肩前；亞倫隨宣終齡百八三寒卒臥山尖榮歸祖國，會幕百萬部眾聞言放哀為茲垂舊率督致悲仰嘆三十長日。"
-    occurrences:
-      - "民20:26"
-      - "民20:28-29"
-    source_refs:
-      - "基督徒文摘: 民20:26, 28-29 註解與靈訓（https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT20.htm）"
-      - "拾穗與舊約聖經背景註釋: 民20:26, 28-29 丁良才與《背景註釋》（https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT20.htm）"
-      - "研經註解: KingComments Num 20:26, 28-29 transfer of holy garments to Eleazar（https://www.kingcomments.com/en/bible-studies/Num/20）"
-      - "研經註解: BibleHub Num 20:28 stripped Aaron of his garments（https://biblehub.com/study/numbers/20.htm）"
-    cross_references:
-      - "何珥山"
-      - "米利暗卒於加低斯"
+- name: 米利暗卒於加低斯
+  type: 事件
+  source: 民20:1：「正月間，以色列全會眾到了尋的曠野，就住在加低斯。米利暗死在那裡，就葬在那裡。」
+  justification: 第一代領袖三人中第一個離世；CT 指加低斯是三十八年前失敗之地，KC 讀為出埃及喜樂之聲的止息。
+- name: 摩西擊打磐石兩下
+  type: 事件
+  source: 民20:10-11：摩西斥會眾為背叛的人，舉手用杖擊打磐石兩下。
+  justification: 摩西一生最重的一次失腳；神命吩咐、他卻擊打，四套來源對錯在哪裡各有側重。
+- name: 在米利巴未將耶和華尊為聖
+  type: 神學
+  source: 民20:12：「因為你們不信我，不在以色列人眼前尊我為聖，所以你們必不得領這會眾進我所賜給他們的地去。」
+  justification: 本章的判詞；「尊為聖」與第13節神「顯為聖」在原文是同一個動詞的兩種語態。
+- name: 亞倫卒於何珥山與祭司職任更替
+  type: 神學
+  source: 民20:25-28：把亞倫的聖衣脫下來給以利亞撒穿上，亞倫死在山頂。
+  justification: 大祭司職分第一次交接；來7:23-25 據此論祭司的更替與基督永遠的祭司職分。
+- name: 以東王拒絕以色列人假道
+  type: 歷史
+  source: 民20:14-21：摩西以「你的弟兄以色列人」求借道，以東王兩次拒絕並出兵攔阻。
+  justification: 以色列與以東的第一次正面外交；以色列不還手，因神已把西珥賜給以掃。
+- name: 何珥山
+  type: 地點
+  source: 民20:22-23、27：以色列全會眾從加低斯起行到了何珥山，在附近以東邊界。
+  justification: 亞倫的死地；確切位置各家不一，GT《舊約聖經背景註釋》列出兩個候選並各有難處。
+- name: 大道（原文作王道）
+  type: 文化
+  source: 民20:17、19：「只走大道（原文作王道），不偏左右」「我們要走大道上去」。
+  justification: 五套來源都對這條路作了說明（丁良才的地形、啟導本的走向、精讀本的國際路線、靈修版的車隊用途、BH 的貿易路線），語料庫無節點。
+- name: 哀哭三十天
+  type: 文化
+  source: 民20:29：「全會眾，就是以色列全家，見亞倫已經死了，便都為亞倫哀哭了三十天。」
+  justification: 一般服喪七天、國喪三十天的分別；CT、GT 丁良才、GT《精讀本》、GT《舊約聖經背景註釋》與 BH（shloshim）都有註解，語料庫無節點。
+- name: 歸到他列祖
+  type: 主題
+  source: 民20:24、26：「亞倫要歸到他列祖（原文作本民）那裡」。
+  justification: 舊約對死亡的固定說法；CT、GT《啟導本》、GT《民數記串珠聖經註釋》與 BH 都作了註解，並連到創25:8、創35:29，語料庫無節點。
+- name: 以色列人經過還是繞過以東境界
+  type: 解經爭議
+  source: 民20:21 說「於是他們轉去，離開他」，申2:4 卻說「你們要經過他們的境界」。
+  justification: GT 收了兩份專門處理這個矛盾的材料（賈斯樂郝威命題23、艾基斯《舊約聖經難題彙編》），兩者都給出解法，語料庫無節點。
+- name: 米利暗
+  type: 人物
+  source: 民20:1：米利暗死在加低斯，就葬在那裡。
+  justification: 出2、出15、利13、民12 已累積；本章是她的結局。
+- name: 加低斯
+  type: 地點
+  source: 民20:1、14、16、22：全會眾住在加低斯，摩西從加低斯差遣使者。
+  justification: 創14、創16、創20 已累積；本章是以色列全會眾最後一次聚集在加低斯。
+- name: 以東
+  type: 地點
+  source: 民20:14-21、23：摩西向以東王求借道遭拒；何珥山在以東邊界。
+  justification: 創14/25/32/36、出15、民21 已累積，唯獨缺了以東正式拒絕以色列的這一章。
+- name: 以東與以色列的敵對
+  type: 神學
+  source: 民20:18、20：以東王兩次拒絕並率許多人出來攔阻。
+  justification: 創36 已累積；本章是兩族敵對的第一次實際衝突。
+- name: 磐石出水
+  type: 事件
+  source: 民20:8-11：神吩咐摩西向磐石說話，摩西卻擊打兩下，水仍流出。
+  justification: 出17 已累積；本章是磐石出水的第二次，也是唯一一次以審判收場。
+- name: 磐石預表基督
+  type: 神學
+  source: 民20:8、11：吩咐磐石與擊打磐石。
+  justification: 出17、出33 已累積；四套來源都在本章引林前10:4，CT 與 GT 丁良才更據此解釋為何不可再打。
+- name: 林前10：4 靈磐石就是基督
+  type: 互文
+  source: 民20:8、11 的磐石。
+  justification: 出17 已累積；CT、GT 丁良才、GT《精讀本》、KC 在本章都引了林前10:4。
+- name: 賽53：4-5 磐石被擊打
+  type: 互文
+  source: 民20:11：摩西用杖擊打磐石兩下。
+  justification: 出17 已累積；本章的重點正是「已被擊打過一次就不可再打」。
+- name: 米利巴（Meribah）
+  type: 原文
+  source: 民20:13：「這水名叫米利巴水（米利巴就是爭鬧的意思）」。
+  justification: 出17 已累積；本章是同名的第二處水，STEP 的 Extended Strong 把兩處分開編碼。
+- name: 瑪撒米利巴是一次還是兩次
+  type: 解經爭議
+  source: 民20:1-13 與出17:1-7 的異同。
+  justification: 出17 已累積；該條目定義寫的就是民20:1-13，卻沒有本章累積。GT《啟導本聖經註釋》在本章列出三點不同。
+- name: 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議
+  type: 解經爭議
+  source: 民20:1 把加低斯放在尋的曠野，民13:26 卻說「巴蘭曠野的加低斯」。
+  justification: 民13 已累積；該條目定義直接引民20:1，而本章 GT 收了賈斯樂郝威命題22 專門處理這個問題。
+- name: 受膏的祭司
+  type: 人物
+  source: 民20:25-28：亞倫的大祭司職分移交以利亞撒。
+  justification: 利4、利6、利8、利21 已累積；本章是大祭司職分第一次實際交接。
+- name: 聖衣（祭司聖服）
+  type: 主題
+  source: 民20:26、28：「把亞倫的聖衣脫下來，給他的兒子以利亞撒穿上」。
+  justification: 出28/29/39/40、利6/8/16 已累積；本章是聖衣第一次從一個人身上轉到另一個人身上。
+- name: 以利亞撒
+  type: 人物
+  source: 民20:25-28：以利亞撒隨父上山，穿上聖衣，與摩西一同下山。
+  justification: 出6、利10、民3/4/16/19 已累積；本章是他正式接任大祭司。
+- name: 杖
+  type: 神學
+  source: 民20:8、9、11：「你拿著杖去」「從耶和華面前取了杖去」「用杖擊打磐石兩下」。
+  justification: 出4、民17 已累積；這根杖是誰的，四套來源在本章有明確分歧。
+- name: 耶和華的榮光
+  type: 神學
+  source: 民20:6：摩西亞倫俯伏在會幕門口，耶和華的榮光向他們顯現。
+  justification: 出16、出40、利9、民16 已累積；本章是榮光在百姓爭鬧時顯現的又一例，且這次不帶審判。
+- name: 曠野飄流四十年
+  type: 歷史
+  source: 民20:1「正月間」是出埃及後第四十年；本章是飄流期的終點。
+  justification: 民14 已累積；該條目只寫了判詞的那一章，本章是刑期屆滿的那一章。
+- name: 以掃貪戀世俗（來12：16）
+  type: 互文
+  source: 民20:14：摩西向以東王稱「你的弟兄以色列人」。
+  justification: 創33 已累積；CT 在本章第14節的靈意註解直接引來十二16 解釋以東。
+- name: 亞倫
+  type: 人物
+  source: 民20:2-13、22-29：與摩西同受判詞，最後死在何珥山，享年一百二十三歲。
+  justification: 出4-39、利8-21、民1-18 已累積；本章是他的結局。
+- name: 摩西
+  type: 人物
+  source: 民20:1-29：本章是摩西一生最重的一次失腳，也是他失去進迦南資格的那一章。
+  justification: 出2-40、利8-27、民1-18 已累積；本章是他事奉生涯的轉折點。

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_20.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 418,
+      "first": "Num 20:1",
+      "last": "Num 20:29",
+      "sha256": "99c4371bef5a716de682a443ba1c4ee4905e2fe41382002dc14bed902c575caa",
+      "bytes": 79722,
+      "chars": 69887,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,7 +1,112 @@
 book: 民數記
 chapter: 20
 A_use_directly: []
-B_needs_update: []
+B_needs_update:
+- name: 米利暗
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 米利暗
+  existing_path: link_folder/人物/米利暗.md
+- name: 加低斯
+  suggested_type: 地點
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 以東
+  suggested_type: 地點
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 以東與以色列的敵對
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 以東與以色列的敵對
+  existing_path: link_folder/神學/以東與以色列的敵對.md
+- name: 磐石出水
+  suggested_type: 事件
+  match_type: exact
+  existing_title: 磐石出水
+  existing_path: link_folder/事件/磐石出水.md
+- name: 磐石預表基督
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 磐石預表基督
+  existing_path: link_folder/神學/磐石預表基督.md
+- name: 林前10：4 靈磐石就是基督
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 林前10：4 靈磐石就是基督
+  existing_path: link_folder/互文/林前10：4 靈磐石就是基督.md
+- name: 賽53：4-5 磐石被擊打
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 賽53：4-5 磐石被擊打
+  existing_path: link_folder/互文/賽53：4-5 磐石被擊打.md
+- name: 米利巴（Meribah）
+  suggested_type: 原文
+  match_type: exact
+  existing_title: 米利巴（Meribah）
+  existing_path: link_folder/原文/米利巴（Meribah）.md
+- name: 瑪撒米利巴是一次還是兩次
+  suggested_type: 解經爭議
+  match_type: exact
+  existing_title: 瑪撒米利巴是一次還是兩次
+  existing_path: link_folder/解經爭議/瑪撒米利巴是一次還是兩次.md
+- name: 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議
+  suggested_type: 解經爭議
+  match_type: exact
+  existing_title: 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議
+  existing_path: link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md
+- name: 受膏的祭司
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
+- name: 聖衣（祭司聖服）
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 聖衣（祭司聖服）
+  existing_path: link_folder/主題/聖衣（祭司聖服）.md
+- name: 以利亞撒
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 杖
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 杖
+  existing_path: link_folder/神學/杖.md
+- name: 耶和華的榮光
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 耶和華的榮光
+  existing_path: link_folder/神學/耶和華的榮光.md
+- name: 曠野飄流四十年
+  suggested_type: 歷史
+  match_type: exact
+  existing_title: 曠野飄流四十年
+  existing_path: link_folder/歷史/曠野飄流四十年.md
+- name: 以掃貪戀世俗（來12：16）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 以掃貪戀世俗（來12：16）
+  existing_path: link_folder/互文/以掃貪戀世俗（來12：16）.md
+- name: 亞倫
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 摩西
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 何珥山
+  suggested_type: 地點
+  existing_path: link_folder/地點/何珥山.md
+  match_type: exact
+  existing_title: 何珥山
 C_new_formal:
 - name: 米利暗卒於加低斯
   suggested_type: 事件
@@ -12,14 +117,37 @@ C_new_formal:
 - name: 在米利巴未將耶和華尊為聖
   suggested_type: 神學
   target_path: link_folder/神學/在米利巴未將耶和華尊為聖.md
-- name: 以東王拒絕以色列人假道
-  suggested_type: 歷史
-  target_path: link_folder/歷史/以東王拒絕以色列人假道.md
-- name: 何珥山
-  suggested_type: 地點
-  target_path: link_folder/地點/何珥山.md
 - name: 亞倫卒於何珥山與祭司職任更替
   suggested_type: 神學
   target_path: link_folder/神學/亞倫卒於何珥山與祭司職任更替.md
+- name: 以東王拒絕以色列人假道
+  suggested_type: 歷史
+  target_path: link_folder/歷史/以東王拒絕以色列人假道.md
+- name: 大道（原文作王道）
+  suggested_type: 文化
+  target_path: link_folder/文化/大道（原文作王道）.md
+- name: 哀哭三十天
+  suggested_type: 文化
+  target_path: link_folder/文化/哀哭三十天.md
+- name: 歸到他列祖
+  suggested_type: 主題
+  target_path: link_folder/主題/歸到他列祖.md
+  semantic_hint:
+  - title: 歸到列祖
+    score: 0.465
+    type: 主題
+- name: 以色列人經過還是繞過以東境界
+  suggested_type: 解經爭議
+  target_path: link_folder/解經爭議/以色列人經過還是繞過以東境界.md
+  semantic_hint:
+  - title: 以東
+    score: 0.444
+    type: 地點
+  - title: 以東王拒絕以色列人假道
+    score: 0.438
+    type: 歷史
+  - title: 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯
+    score: 0.403
+    type: 地點
 D_new_candidate: []
 E_skip: []
