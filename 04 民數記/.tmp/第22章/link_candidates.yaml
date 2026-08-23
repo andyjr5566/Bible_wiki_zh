@@ -1,287 +1,198 @@
 book: 民數記
 chapter: 22
 candidates:
-  - name: 摩押平原
-    type: 地點
-    evidence: 1節；以色列人在約但河東、耶利哥對面安營；CT 指此為民22-36 章背景地，也是申命記全書講道地
-    surfaces:
-      - {phrase: 摩押平原, verses: [1]}
-  - name: 巴勒
-    type: 人物
-    evidence: 2、4、5、7、10、11、13、14、15、16、17、36、37、39、40、41節；摩押王西撥的兒子，名「毀滅者」；因懼以色列而召巴蘭咒詛
-    surfaces:
-      - {phrase: 巴勒, verses: [2, 4, 5, 7, 10, 11, 13, 14, 15, 16, 17, 36, 37, 39, 40, 41]}
-  - name: 西撥
-    type: 人物
-    evidence: 2、4、10、16節；巴勒之父，名「麻雀」；GT 丁良才指巴勒可能為米甸人，受亞摩利王西宏分派治摩押
-    surfaces:
-      - {phrase: 西撥, verses: [2, 4, 10, 16]}
-  - name: 亞摩利人
-    type: 人物
-    evidence: 2、21章背景；以色列擊敗亞摩利王西宏與噩，引發摩押恐懼；CT 指亞摩利疆域在摩押北面。既有「人物/亞摩利人」條目，走 B 類累積。
-    surfaces:
-      - {phrase: 亞摩利人, verses: [2]}
-  - name: 米甸長老
-    type: 人物
-    evidence: 4、7節；與摩押長老同往巴蘭處，帶卦金；GT 指米甸人住亞克巴灣東北阿拉伯曠野，可能受雇於摩押王室
-    surfaces:
-      - {phrase: 米甸的長老, verses: [4, 7]}
-  - name: 巴蘭
-    type: 人物
-    evidence: 5、7、8、9、10、11、12、13、15、16、17、18、19、20、21、22、23、24、25、26、27、28、29、30、31、32、33、34、35、36、37、38、39、41節；比珥兒子，住毘奪（幼發拉底河邊），異教術士/先知；KC/GT/CT 一致視為假先知、貪不義之財
-    surfaces:
-      - {phrase: 巴蘭, verses: [5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41]}
-  - name: 比珥
-    type: 人物
-    evidence: 5、10、11、16、17、18、20、21、22、23、24、25、26、27、28、29、30、31、32、33、34、35、36、37、38、39、41節；巴蘭之父，名「焚燒」；GT 指巴蘭名「非我民」或「吞滅百姓」
-    surfaces:
-      - {phrase: 比珥, verses: [5, 10, 11, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41]}
-  - name: 毘奪
-    type: 地點
-    evidence: 5節；巴蘭本鄉，幼發拉底河西岸小鎮；申23:4 同地；GT 指位於米所波大米北部，文化發達宗教蓬勃之地
-    surfaces:
-      - {phrase: 毘奪, verses: [5]}
-  - name: 幼發拉底河
-    type: 地點
-    evidence: 5節；「大河」；巴蘭故鄉毘奪所在；古代近東重要地標
-    surfaces:
-      - {phrase: 大河, verses: [5]}
-  - name: 卦金
-    type: 原文
-    evidence: 7、18節；占卜費用/禮金；彼後2:15「不義工價」；GT 指非定金乃報酬，巴蘭咒詛後才能收費
-    surfaces:
-      - {phrase: 卦金, verses: [7]}
-      - {phrase: 滿屋的金銀, verses: [18]}
-  - name: 耶和華
-    type: 神學
-    evidence: 8、9、12、13、18、19、20、22、28、31、35、38節；全章核心施救者與掌權者；巴蘭稱「耶和華我神」卻非真信
-    surfaces:
-      - {phrase: 耶和華, verses: [8, 9, 12, 13, 18, 19, 20, 22, 28, 31, 35, 38]}
-  - name: 神
-    type: 神學
-    evidence: 9、12、13、18、19、20、22、28、31、35、38節；CT/GT 指真神不受異教術士召請，主動臨到巴蘭使用他
-    surfaces:
-      - {phrase: 神, verses: [9, 12, 13, 18, 19, 20, 22, 28, 31, 35, 38]}
-  - name: 耶和華的使者
-    type: 人物
-    evidence: 22、23、24、25、26、27、31、32、33、34、35節；手持拔出的刀三次攔阻巴蘭；GT 指希伯來文 satan 此處作「敵擋」角色，非約伯記之控訴者
-    surfaces:
-      - {phrase: 耶和華的使者, verses: [22, 23, 24, 25, 26, 27, 31, 32, 33, 34, 35]}
-      - {phrase: 耶和華的使者站在路上, verses: [22, 31]}
-  - name: 驢
-    type: 背景
-    evidence: 21、22、23、25、27、28、29、30、33節；三次看見天使避開，被巴蘭打三次；耶和華叫驢開口說人話（聖經除伊甸蛇外唯一記載）。既有「背景/驢」條目，走 B 類累積。
-    surfaces:
-      - {phrase: 驢, verses: [21, 22, 23, 25, 27, 28, 29, 30, 33]}
-  - name: 驢開口說話
-    type: 事件
-    evidence: 28-30節；耶和華開驢口，問巴蘭「我向你行了什麼，你竟打我這三次」；驢陳述忠心服事，巴蘭承認從未如此
-    surfaces:
-      - {phrase: 耶和華叫驢開口, verses: [28]}
-      - {phrase: 驢對巴蘭說, verses: [28, 30]}
-  - name: 巴力的高處
-    type: 地點
-    evidence: 41節；巴勒帶巴蘭上巴力高處觀看以色列營邊界；聖經首提巴力；KC 指此處專為撒但崇拜、隱藏在巴力名下
-    surfaces:
-      - {phrase: 巴力的高處, verses: [41]}
-  - name: 基列胡瑣
-    type: 地點
-    evidence: 39節；巴蘭與巴勒同行至基列胡瑣；巴勒獻牛羊給巴蘭與使臣
-    surfaces:
-      - {phrase: 基列胡瑣, verses: [39]}
-  - name: 亞嫩河
-    type: 地點
-    evidence: 36節；摩押京城在邊界上、亞嫩河旁；巴勒出迎巴蘭處
-    surfaces:
-      - {phrase: 亞嫩河, verses: [36]}
-  - name: 咒詛與祝福
-    type: 神學
-    evidence: 6、11、12、17、18、38節；巴勒信巴蘭咒詛必生效；神宣告「那民是蒙福的」；巴蘭承認只能說神所賜的話
-    surfaces:
-      - {phrase: 咒詛, verses: [6, 11, 17, 18, 38]}
-      - {phrase: 祝福, verses: [6, 12, 18, 38]}
-      - {phrase: 那民是蒙福的, verses: [12]}
-  - name: 以色列人
-    type: 人物
-    evidence: 1、2、3、4、5、6、11、12、14、17、18、20、38、41節；從埃及出來、遮滿地面、蒙福的民；巴勒見其眾多懼怕。「以色列人」為既有「原文/以色列」條目之 alias，走 B 類累積。
-    surfaces:
-      - {phrase: 以色列人, verses: [1, 2, 3, 4, 5, 6, 11, 12, 14, 17, 18, 20, 38, 41]}
-      - {phrase: 這民, verses: [5, 6, 11, 12, 17, 18, 20, 38]}
-  - name: 約但河
-    type: 地點
-    evidence: 1節；以色列營在約但河東；預表進迦南前最後預備地
-    surfaces:
-      - {phrase: 約但河, verses: [1]}
-  - name: 耶利哥
-    type: 地點
-    evidence: 1節；對著耶利哥安營；預表征服迦南第一目標
-    surfaces:
-      - {phrase: 耶利哥, verses: [1]}
-  - name: 摩押王
-    type: 人物
-    evidence: 4、5、10、11、16、36、37、40、41節；巴勒的稱號；GT 指「王」可指小國領袖或部落酋長
-    surfaces:
-      - {phrase: 摩押王, verses: [4, 5, 10, 11, 16, 36, 37, 40, 41]}
-  - name: 先知與術士
-    type: 人物
-    evidence: 5、6、7、8、18、38節；巴蘭身分雙重：巴勒視為能咒詛的先知/術士；書13:22 稱「術士」；KC 指非耶和華先知
-    surfaces:
-      - {phrase: 先知, verses: [5, 6, 7, 8, 18, 38]}
-      - {phrase: 術士, verses: [5, 6, 7, 8, 18, 38]}
-  - name: 占卜
-    type: 文化
-    evidence: 7、18節；摩押米甸長老帶卦金行占卜；申18:10-12 禁以色列人行占卜；KC 指古近東普遍諮詢占卜師介入政治軍事
-    surfaces:
-      - {phrase: 占卜, verses: [7, 18]}
-  - name: 異象與夢
-    type: 神學
-    evidence: 8、19、20節；巴蘭夜間求問神、期待異象/夢啟示；CT 丁良才指巴蘭以為神在夢中啟示
-    surfaces:
-      - {phrase: 異象, verses: [8, 19, 20]}
-      - {phrase: 夢, verses: [8, 19, 20]}
-  - name: 蒙福的民
-    type: 神學
-    evidence: 12節；神對巴蘭說「那民是蒙福的」；KC 指即使以色列犯罪，始終是神百姓，非外邦人可咒詛滅亡
-    surfaces:
-      - {phrase: 蒙福的民, verses: [12]}
-      - {phrase: 那民是蒙福的, verses: [12]}
-  - name: 道路與攔阻
-    type: 原文
-    evidence: 22、23、24、26、32、34節；天使三次站在路上敵擋（satan）、窄路、無法轉折；巴蘭承認「我所行的在神面前偏僻」
-    surfaces:
-      - {phrase: 敵擋, verses: [22, 32]}
-      - {phrase: 攔阻, verses: [16, 22, 32]}
-      - {phrase: 偏僻, verses: [32]}
-      - {phrase: 窄路, verses: [24, 26]}
-  - name: 睜開眼睛
-    type: 原文
-    evidence: 31節；耶和華使巴蘭眼目明亮，看見天使手持拔出的刀；巴蘭低頭俯伏
-    surfaces:
-      - {phrase: 眼目明亮, verses: [31]}
-      - {phrase: 看見耶和華的使者, verses: [31]}
-  - name: 認罪
-    type: 神學
-    evidence: 34節；巴蘭說「我有罪了」；KC 指如法老、掃羅、猶大般非真悔改；天使仍命其去、只說神的話
-    surfaces:
-      - {phrase: 我有罪了, verses: [34]}
-  - name: 獻祭與祭壇
-    type: 文化
-    evidence: 40節；巴勒獻牛羊送給巴蘭與使臣；二十三章後續建七壇獻公牛公羊；KC 指咒詛儀式包含建壇獻祭
-    surfaces:
-      - {phrase: 獻牛羊, verses: [40]}
-      - {phrase: 祭壇, verses: [40]}
-  - name: 巴力
-    type: 神學
-    evidence: 41節；迦南主神；KC 指士師時代進入以色列、亞哈時耶洗別立為國教；本章首見巴力名
-    surfaces:
-      - {phrase: 巴力, verses: [41]}
-  - name: 亞蘭
-    type: 地點
-    evidence: 23:7 巴蘭說「巴勒從亞蘭領我來」；GT/背景註釋指巴蘭來自亞蘭（敘利亞東北/米所波大米北部）
-    surfaces:
-      - {phrase: 亞蘭}
-  - name: 代爾阿拉考古發現
-    type: 歷史
-    evidence: GT 背景註釋：1967 年荷蘭考古隊在約旦代爾阿拉發現主前850年灰泥殘片，提到比珥兒子巴蘭，證實經外傳統
-    surfaces: []
-  - name: 馬里文獻
-    type: 歷史
-    evidence: GT 背景註釋：馬里文獻記載口傳神諭，先知活動在古近東不罕見；巴蘭屬此類國際性先知傳統
-    surfaces: []
-  - name: 咒詛的力量
-    type: 神學
-    evidence: 6、17、18、23:8、24:9節；古近東信咒詛能召神怒臨到個人/團體；KC 指惟耶和華能施行咒詛，先知擅自行事不能生效
-    surfaces:
-      - {phrase: 咒詛, verses: [6, 17, 18]}
-  - name: 神的主權
-    type: 神學
-    evidence: 12、20、22、35、38節；神禁止巴蘭咒詛、後許其去但限制所說、發怒差遣天使攔阻、最終借巴蘭口祝福以色列
-    surfaces:
-      - {phrase: 神的主權, verses: [12, 20, 22, 35, 38]}
-  - name: 神使用惡人成全旨意
-    type: 神學
-    evidence: 12、20、35、38節；CT 丁良才：神有時用惡人成全旨意；KC：神強迫巴蘭祝福以色列，為神更大榮耀
-    surfaces:
-      - {phrase: 神使用惡人, verses: [12, 20, 35, 38]}
-  - name: 驢看見天使巴蘭看不見
-    type: 神學
-    evidence: 23、25、27、31節；驢三次看見天使避開，巴蘭卻看不見；精讀本指未得救贖恩典的人不過是滅亡的動物
-    surfaces:
-      - {phrase: 驢看見, verses: [23, 25, 27]}
-      - {phrase: 巴蘭沒有看見, verses: [31]}
-  - name: 動物開口說話
-    type: 互文
-    evidence: 28節；聖經三處動物開口：伊甸蛇(創3:1)、巴蘭驢(民22:28)、約拿大魚(拿1:17)；KC 指不信者以此譏笑，實則關乎墮落、神與百姓連結、主耶穌
-    surfaces:
-      - {phrase: 耶和華叫驢開口, verses: [28]}
-  - name: 巴蘭認罪如法老掃羅猶大
-    type: 互文
-    evidence: 34節；KC：巴蘭認罪如法老(出9:27)、掃羅(撒上15:24)、猶大(太27:3-4)，非真悔改
-    surfaces:
-      - {phrase: 我有罪了, verses: [34]}
-  - name: 巴蘭教訓巴勒設絆腳石
-    type: 互文
-    evidence: 啟2:14「巴蘭曾教導巴勒將絆腳石放在以色列人面前，叫他們吃祭偶像之物，行姦淫」；民25、31 章應驗
-    surfaces: []
-  - name: 巴蘭貪愛不義工價
-    type: 互文
-    evidence: 彼後2:15「巴蘭貪愛不義工價」；猶11「為利往巴蘭的錯謬裡直奔」；KC/GT/CT 一致定性
-    surfaces:
-      - {phrase: 不義工價, verses: []}
-  - name: 巴蘭死於刀下
-    type: 互文
-    evidence: 民31:8「以刀殺了巴蘭」；加6:7「種的是什麼，收的也是什麼」；GT 丁良才指其結局慘然
-    surfaces: []
-  - name: 以色列人拜巴力毘珥
-    type: 互文
-    evidence: 民25 章；巴蘭策動以色列人拜巴力毘珥、與摩押女子行淫，致二萬四千人遭瘟疫
-    surfaces: []
-  - name: 非尼哈贖罪
-    type: 互文
-    evidence: 民25 章；祭司非尼哈為民贖罪，制止瘟疫；CT 指民22-36 都在摩押平原發生
-    surfaces: []
-  - name: 第三次人口調查
-    type: 互文
-    evidence: 民26 章；在摩押平原進行，為進迦南預備；CT 指民22-36 背景地相同
-    surfaces: []
-  - name: 摩押平原為進迦南預備地
-    type: 神學
-    evidence: 1節；CT/啟導本/精讀本：以色列在此停留數月，數點人數、檢驗軍隊、頒佈律法、選立約書亞；申命記全書在此講道
-    surfaces:
-      - {phrase: 摩押平原, verses: [1]}
-  - name: 巴勒名字意毀滅者
-    type: 原文
-    evidence: 2節；GT 串珠/精讀本：巴勒意「毀滅者」或「擄掠者」；士11:25 同名
-    surfaces:
-      - {phrase: 巴勒, verses: [2]}
-  - name: 巴蘭名字意非我民
-    type: 原文
-    evidence: 5節；GT 精讀本：巴蘭希伯來文意「非我民」或「吞滅百姓者」；與其性格行為一致
-    surfaces:
-      - {phrase: 巴蘭, verses: [5]}
-  - name: 比珥意焚燒
-    type: 原文
-    evidence: 5節；CT 丁良才：比珥意「焚燒」
-    surfaces:
-      - {phrase: 比珥, verses: [5]}
-  - name: 毘奪意預言者
-    type: 原文
-    evidence: 5節；CT 丁良才：毘奪意「預言者」
-    surfaces:
-      - {phrase: 毘奪, verses: [5]}
-  - name: 米甸人
-    type: 族群
-    evidence: 4、7節；與摩押聯手對抗以色列；創25:1-6 亞伯拉罕與基土拉後裔；出2:15 摩西逃至米甸；背景註釋指米甸長老可能行巫術
-    surfaces:
-      - {phrase: 米甸人, verses: [4, 7]}
-      - {phrase: 米甸的長老, verses: [4, 7]}
-  - name: 占卜儀式
-    type: 文化
-    evidence: 7、40節；帶卦金、建壇獻祭、求神諭；背景註釋指赫人文獻咒詛儀式含倒水等動作
-    surfaces:
-      - {phrase: 卦金, verses: [7]}
-      - {phrase: 獻祭, verses: [40]}
-  - name: 巴蘭的道路與錯謬
-    type: 互文
-    evidence: 彼後2:15「巴蘭的道路」；猶11「巴蘭的錯謬」；啟2:14「巴蘭的教訓」；三處新約引用定性巴蘭
-    surfaces: []
+- name: 摩押人
+  type: 人物
+  evidence: v3「摩押人因以色列民甚多，就大大懼怕，心內憂急」；CT 指出當時亞摩利人和巴珊人都比摩押人強大卻一一被擊敗，GT《串珠》說明摩押人先前肯供糧食和水只期望亞摩利人擊敗以色列
+  surfaces:
+  - phrase: 摩押人
+    verses:
+    - 3
+- name: 亞摩利人
+  type: 人物
+  evidence: v2「以色列人向亞摩利人所行的一切事，西撥的兒子巴勒都看見了」；CT 說亞摩利人是迦南七族之一、疆域在摩押地北面
+  surfaces:
+  - phrase: 亞摩利人
+    verses:
+    - 2
+- name: 米甸
+  type: 人物
+  evidence: v4、v7 摩押與「米甸的長老」聯手；GT《背景註釋》說米甸人是住在外約但南部的民族，被形容為亞伯拉罕和基土拉的後裔
+  surfaces:
+  - phrase: 米甸
+    verses:
+    - 4
+    - 7
+- name: 約但河
+  type: 地點
+  evidence: v1「在摩押平原、約但河東，對著耶利哥安營」；BH 說約但河是曠野與應許之地的界線
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 1
+- name: 耶和華的使者
+  type: 神學
+  evidence: v22-35 耶和華的使者三次站在路上敵擋巴蘭，手裡有拔出來的刀；CT 說『耶和華的使者』有時指基督、有時指天使
+  surfaces:
+  - phrase: 耶和華的使者
+- name: 祝福與咒詛
+  type: 主題
+  evidence: v6「你為誰祝福，誰就得福；你咒詛誰，誰就受咒詛」；v12「因為那民是蒙福的」；GT《背景註釋》整段說明古代近東咒詛的力量與儀式
+- name: 驢
+  type: 背景
+  evidence: v21-33 巴蘭備上驢、三次打驢；CT 說當時中東地區驢適於短途旅行、駱駝適於長途旅行
+  surfaces:
+  - phrase: 驢
+- name: 先知
+  type: 主題
+  evidence: GT《背景註釋》說巴蘭「具有國際性的真先知信譽」「不獨是個占卜者而已」，KC 則說他不是耶和華的先知；四套來源對他的先知身分看法分歧
+- name: 刀劍
+  type: 主題
+  evidence: v23、v31 使者「手裡有拔出來的刀」，v29 巴蘭說「我恨不能手中有刀」；BH 說拔出的刀象徵臨到的審判與神的權柄
+  surfaces:
+  - phrase: 刀
+    verses:
+    - 23
+    - 29
+    - 31
+- name: 基抹（摩押的神）
+  type: 背景
+  evidence: BH 在 v3 說明摩押人敬拜基抹，一群敬拜獨一真神的百姓出現在境內是對他們信仰的挑戰
+- name: 摩押地
+  type: 地點
+  evidence: v36 巴勒往「摩押京城」迎接巴蘭，「這城是在邊界上，在亞嫩河旁」；GT《背景註釋》說亞珥摩押的地點至今未有定論
+- name: 耶和華的使者是否為神顯現
+  type: 解經爭議
+  evidence: CT 說『耶和華的使者』有時指基督、有時指天使；GT 丁良才在 v35 說「這一句顯明耶和華的使者是耶和華」；BH 多次說這是 theophany
+- name: 摩押平原
+  type: 地點
+  evidence: v1「以色列人起行，在摩押平原、約但河東，對著耶利哥安營」；GT 丁良才說摩押平原從伯耶施末直到亞伯什亭，GT《背景註釋》說這位置恰可成為進入迦南地的跳板
+  surfaces:
+  - phrase: 摩押平原
+    verses:
+    - 1
+- name: 巴勒
+  type: 人物
+  evidence: v2「西撥的兒子巴勒」；CT 說他是米甸人、顯示摩押已改朝換代；GT《串珠》說「巴勒」意即「毀滅者」；BH 說其名意為 devastator 或 waster
+  surfaces:
+  - phrase: 巴勒
+- name: 巴蘭（比珥的兒子）
+  type: 人物
+  evidence: v5「比珥的兒子巴蘭」；CT 說他是米所波大米人、一位出名的異教術士；KC 說他的名字出現在八卷聖經裡而且一律是負面的
+  surfaces:
+  - phrase: 巴蘭
+- name: 毘奪（巴蘭的本鄉）
+  type: 地點
+  evidence: v5「大河邊的毘奪」；GT《背景註釋》說此地大概是幼發拉底河支流薩朱爾河畔、敘利亞北部迦基米施十二哩外的毘特魯，並說明遙遠距離驅使部分學者另覓遺址
+  surfaces:
+  - phrase: 毘奪
+    verses:
+    - 5
+  - phrase: 大河
+    verses:
+    - 5
+- name: 卦金（qe.sem）
+  type: 原文
+  evidence: v7「摩押的長老和米甸的長老手裡拿著卦金」；STEP 顯示原文是 קְסָמִים（ke.sa.Mim，H7081），字面是「占卜」的複數；GT《背景註釋》討論這是報酬還是定金
+  surfaces:
+  - phrase: 卦金
+    verses:
+    - 7
+- name: 敵擋（sa.tan）
+  type: 原文
+  evidence: v22、v32「耶和華的使者站在路上敵擋他」「我出來敵擋你」；STEP 顯示原文是 לְשָׂטָן（le./sa.Tan，H7854）；GT《背景註釋》明說這字音譯就是「撒但」，但此處只形容天使扮演的敵對角色
+  surfaces:
+  - phrase: 敵擋
+    verses:
+    - 22
+    - 32
+- name: 咒詛（a.rar 與 qa.vav）
+  type: 原文
+  evidence: v6、v12 用 אָרַר（a.rar，H779），v11、v17 用 קָבַב（qa.vav，H6895）；STEP 顯示本章「咒詛」其實是兩個不同的原文動詞
+  surfaces:
+  - phrase: 咒詛
+- name: 越過耶和華的口（peh）
+  type: 原文
+  evidence: v18「我行大事小事也不得越過耶和華─我神的命」；STEP 顯示「命」原文是 פֶּה（pi，H6310I，字面「口」），「越過」是 עָבַר（la./'a.Vor，H5674D，詞典義含 trespass）
+  surfaces:
+  - phrase: 越過耶和華─我神的命
+    verses:
+    - 18
+- name: 眼目明亮（ga.lah）
+  type: 原文
+  evidence: v31「耶和華使巴蘭的眼目明亮」；STEP 顯示動詞是 גָּלָה（va/y.Gal，H1540I，揭開、顯露），與 v28 開驢的口所用的 פָּתַח（H6605A）不是同一個字
+  surfaces:
+  - phrase: 眼目明亮
+    verses:
+    - 31
+- name: 巴力的高處（Bamoth-baal）
+  type: 地點
+  evidence: v41「巴勒領巴蘭到巴力的高處」；STEP 顯示原文 בָּמוֹת בָּעַל 是專有地名；GT《啟導本》說可能就是二十一19～20 的巴末
+  surfaces:
+  - phrase: 巴力的高處
+    verses:
+    - 41
+- name: 基列胡瑣
+  type: 地點
+  evidence: v39「巴蘭和巴勒同行，來到基列胡瑣」；CT 說原文雙字意為「外頭、街道」與「街城」；GT《背景註釋》說所在不明
+  surfaces:
+  - phrase: 基列胡瑣
+    verses:
+    - 39
+- name: 亞嫩河
+  type: 地點
+  evidence: v36「這城是在邊界上，在亞嫩河旁」；CT 說亞嫩河是摩押和亞摩利的邊界；CT 給的原文字義是「湍急的溪流」
+  surfaces:
+  - phrase: 亞嫩河
+    verses:
+    - 36
+- name: 耶利哥
+  type: 地點
+  evidence: v1「對著耶利哥安營」；CT 說耶利哥平原就在摩押平原對面、中間隔著約但河；BH 說耶利哥是世上最古老的有人居住城市之一
+  surfaces:
+  - phrase: 耶利哥
+    verses:
+    - 1
+- name: 驢開口說話
+  type: 事件
+  evidence: v28-30；CT 說這是出於神顯出神蹟；GT《啟導本》說除了伊甸園的蛇，全部聖經只有這裡記載動物開口說話；GT《背景註釋》舉埃及《兩兄弟的故事》與亞述《阿希卡爾的教訓》作古代近東對照
+  surfaces:
+  - phrase: 耶和華叫驢開口
+    verses:
+    - 28
+- name: 巴蘭是先知還是術士
+  type: 解經爭議
+  evidence: GT《背景註釋》說他「具有國際性的真先知信譽」「不獨是個占卜者而已」；GT《啟導本》列四點說他不是聖潔的先知；KC 說他是假先知、撒但的僕人；書13:22 稱他為術士
+- name: 神既准巴蘭去又向他發怒
+  type: 解經爭議
+  evidence: v20 神說「你就起來同他們去」，v22 卻說「神因他去就發了怒」；賈斯樂郝威《聖經難解經文詮釋手冊》與艾基斯《舊約聖經難題彙編》各有一則專門處理；GT《背景註釋》另有〈神差派後反又敵擋〉
+- name: 神的允許與神的命定
+  type: 神學
+  evidence: CT 反覆分辨兩者：「神的命定並沒有改變…他放棄了神的命定，而接受了神的允許」「真正愛慕神的人是不甘心接受神的允許的」；神的容許乃是表徵神的「任憑」（羅一24、26）；GT 丁良才說「神先因恩典不淮巴蘭去，後因發怒任憑他去」並引詩106:15、箴1:31、詩81:12、賽66:4、耶2:19
+- name: 神的主權
+  type: 神學
+  evidence: GT《聖經精讀本》說神是萬有之主、掌管萬事、按自己聖潔的旨意成就歷史，並說神掌管了巴蘭的意志和口；BH 反覆說 God can use anyone to fulfill His purposes
+- name: 巴力（迦南主神）
+  type: 背景
+  evidence: v41「巴力的高處」；KC 說這是聖經中第一次提到巴力，並說明巴力（意為「主」）是迦南人的主神、亞斯她錄是主要的女神，士師時期在以色列取得固定地位，亞哈與耶洗別時代成為國教
+- name: 代爾阿拉的巴蘭銘文
+  type: 背景
+  evidence: GT《舊約聖經背景註釋》記載 1967 年夫朗肯率領的荷蘭考古團在約旦代爾阿拉遺址發現刻字灰泥殘片，鑑定為主前八五○年左右、用亞蘭文寫成，提到比珥的兒子巴蘭是個先見
+- name: 古代近東的神諭機制
+  type: 背景
+  evidence: GT《舊約聖經背景註釋》說有五十多個馬里文獻記載口傳的神諭，不同神明透過一般人或僧侶向馬里王心利林傳達信息；同一則註釋把巴蘭的直接神諭與占卜（檢查祭牲、觀察雀鳥飛行）分開
+- name: 巴蘭的道路（彼後2：15-16）
+  type: 互文
+  evidence: CT 引彼後二15「隨從比珥之子巴蘭的路，巴蘭就是那貪愛不義的工價的先知」；KC 說新約三處引用中這是第一處
+- name: 巴蘭的錯謬（猶11）
+  type: 互文
+  evidence: CT 引猶11「為利往巴蘭的錯謬裡直奔」；KC 列出新約三處引用之一
+- name: 巴蘭的教訓（啟2：14）
+  type: 互文
+  evidence: CT 引啟二14「有人服從了巴蘭的教訓。這巴蘭曾教導巴勒將絆腳石放在以色列人面前」；KC 列為新約三處引用之一
+- name: 咒詛你的我必咒詛他（創12：3）
+  type: 互文
+  evidence: BH 在 v6、v12、v13、v17 反覆引創12:3 說神應許賜福給祝福亞伯拉罕的、咒詛咒詛他的，指出巴勒的計畫從一開始就注定落空
+- name: 開眼得見天上軍兵（王下6：17）
+  type: 互文
+  evidence: BH 在 v31 引王下6:17 以利沙僕人被開眼看見天軍作對照，說明神使人看見屬靈實際

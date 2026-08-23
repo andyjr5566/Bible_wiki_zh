@@ -3958,6 +3958,14 @@
     "status": "formal",
     "aliases": []
   },
+  "驢開口說話": {
+    "path": "link_folder/事件/驢開口說話.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "驢開口說話",
+    "status": "formal",
+    "aliases": []
+  },
   "鵪鶉遮營": {
     "path": "link_folder/事件/鵪鶉遮營.md",
     "type": "事件",
@@ -5567,6 +5575,14 @@
       "和睦是神喜悅 (詩133-1)"
     ]
   },
+  "咒詛你的我必咒詛他（創12：3）": {
+    "path": "link_folder/互文/咒詛你的我必咒詛他（創12：3）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "咒詛你的我必咒詛他（創12：3）",
+    "status": "formal",
+    "aliases": []
+  },
   "哥林多前書15章首先的人亞當與末後的亞當": {
     "path": "link_folder/互文/哥林多前書15章首先的人亞當與末後的亞當.md",
     "type": "互文",
@@ -6059,6 +6075,30 @@
     "type": "互文",
     "secondary_types": [],
     "title": "巴別塔與五旬節",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴蘭的教訓（啟2：14）": {
+    "path": "link_folder/互文/巴蘭的教訓（啟2：14）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "巴蘭的教訓（啟2：14）",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴蘭的道路（彼後2：15-16）": {
+    "path": "link_folder/互文/巴蘭的道路（彼後2：15-16）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "巴蘭的道路（彼後2：15-16）",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴蘭的錯謬（猶11）": {
+    "path": "link_folder/互文/巴蘭的錯謬（猶11）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "巴蘭的錯謬（猶11）",
     "status": "formal",
     "aliases": []
   },
@@ -9524,6 +9564,14 @@
       "銅蛇被毀滅預表除去偶像"
     ]
   },
+  "開眼得見天上軍兵（王下6：17）": {
+    "path": "link_folder/互文/開眼得見天上軍兵（王下6：17）.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "開眼得見天上軍兵（王下6：17）",
+    "status": "formal",
+    "aliases": []
+  },
   "阿摩司書6章不為約瑟的苦難擔憂": {
     "path": "link_folder/互文/阿摩司書6章不為約瑟的苦難擔憂.md",
     "type": "互文",
@@ -10491,11 +10539,27 @@
     "status": "formal",
     "aliases": []
   },
+  "巴勒": {
+    "path": "link_folder/人物/巴勒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "巴勒",
+    "status": "formal",
+    "aliases": []
+  },
   "巴實抹": {
     "path": "link_folder/人物/巴實抹.md",
     "type": "人物",
     "secondary_types": [],
     "title": "巴實抹",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴蘭（比珥的兒子）": {
+    "path": "link_folder/人物/巴蘭（比珥的兒子）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "巴蘭（比珥的兒子）",
     "status": "formal",
     "aliases": []
   },
@@ -12373,6 +12437,14 @@
       "生命的贖價"
     ]
   },
+  "卦金（qe.sem）": {
+    "path": "link_folder/原文/卦金（qe.sem）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "卦金（qe.sem）",
+    "status": "formal",
+    "aliases": []
+  },
   "取利": {
     "path": "link_folder/原文/取利.md",
     "type": "原文",
@@ -12410,6 +12482,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "名字含義與諧音",
+    "status": "formal",
+    "aliases": []
+  },
+  "咒詛（a.rar 與 qa.vav）": {
+    "path": "link_folder/原文/咒詛（a.rar 與 qa.vav）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "咒詛（a.rar 與 qa.vav）",
     "status": "formal",
     "aliases": []
   },
@@ -12947,6 +13027,14 @@
     "status": "formal",
     "aliases": []
   },
+  "敵擋（sa.tan）": {
+    "path": "link_folder/原文/敵擋（sa.tan）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "敵擋（sa.tan）",
+    "status": "formal",
+    "aliases": []
+  },
   "斬斷你的頭_從你將你的頭抬起來": {
     "path": "link_folder/原文/斬斷你的頭_從你將你的頭抬起來.md",
     "type": "原文",
@@ -13396,6 +13484,14 @@
     "aliases": [
       "監/監牢/坑"
     ]
+  },
+  "眼目明亮（ga.lah）": {
+    "path": "link_folder/原文/眼目明亮（ga.lah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "眼目明亮（ga.lah）",
+    "status": "formal",
+    "aliases": []
   },
   "眼都昏迷": {
     "path": "link_folder/原文/眼都昏迷.md",
@@ -13950,6 +14046,14 @@
       "迸出的疹子"
     ]
   },
+  "越過耶和華的口（peh）": {
+    "path": "link_folder/原文/越過耶和華的口（peh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "越過耶和華的口（peh）",
+    "status": "formal",
+    "aliases": []
+  },
   "路14（Loukas 14）": {
     "path": "link_folder/原文/路14（Loukas 14）.md",
     "type": "原文",
@@ -14293,6 +14397,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "黃蜂",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞嫩河": {
+    "path": "link_folder/地點/亞嫩河.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞嫩河",
     "status": "formal",
     "aliases": []
   },
@@ -14755,6 +14867,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基列胡瑣": {
+    "path": "link_folder/地點/基列胡瑣.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基列胡瑣",
+    "status": "formal",
+    "aliases": []
+  },
   "基博羅哈他瓦": {
     "path": "link_folder/地點/基博羅哈他瓦.md",
     "type": "地點",
@@ -14925,6 +15045,14 @@
       "Baal-zephon"
     ]
   },
+  "巴力的高處（Bamoth-baal）": {
+    "path": "link_folder/地點/巴力的高處（Bamoth-baal）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴力的高處（Bamoth-baal）",
+    "status": "formal",
+    "aliases": []
+  },
   "巴旦亞蘭": {
     "path": "link_folder/地點/巴旦亞蘭.md",
     "type": "地點",
@@ -15051,6 +15179,14 @@
       "歷史"
     ],
     "title": "摩押地",
+    "status": "formal",
+    "aliases": []
+  },
+  "摩押平原": {
+    "path": "link_folder/地點/摩押平原.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "摩押平原",
     "status": "formal",
     "aliases": []
   },
@@ -15187,6 +15323,14 @@
       "派尼伊勒",
       "神之面"
     ]
+  },
+  "毘奪（巴蘭的本鄉）": {
+    "path": "link_folder/地點/毘奪（巴蘭的本鄉）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "毘奪（巴蘭的本鄉）",
+    "status": "formal",
+    "aliases": []
   },
   "水井": {
     "path": "link_folder/地點/水井.md",
@@ -15476,6 +15620,14 @@
     "aliases": [
       "紅海曠野的路"
     ]
+  },
+  "耶利哥": {
+    "path": "link_folder/地點/耶利哥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶利哥",
+    "status": "formal",
+    "aliases": []
   },
   "耶路撒冷": {
     "path": "link_folder/地點/耶路撒冷.md",
@@ -21046,6 +21198,14 @@
     "status": "formal",
     "aliases": []
   },
+  "神的允許與神的命定": {
+    "path": "link_folder/神學/神的允許與神的命定.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "神的允許與神的命定",
+    "status": "formal",
+    "aliases": []
+  },
   "神的右手": {
     "path": "link_folder/神學/神的右手.md",
     "type": "神學",
@@ -22802,6 +22962,14 @@
       "亞衲族"
     ]
   },
+  "代爾阿拉的巴蘭銘文": {
+    "path": "link_folder/背景/代爾阿拉的巴蘭銘文.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "代爾阿拉的巴蘭銘文",
+    "status": "formal",
+    "aliases": []
+  },
   "以色列刑罰的節制與程序保障": {
     "path": "link_folder/背景/以色列刑罰的節制與程序保障.md",
     "type": "背景",
@@ -23437,6 +23605,14 @@
     "type": "背景",
     "secondary_types": [],
     "title": "宗教曆與民事曆兩種曆法",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴力（迦南主神）": {
+    "path": "link_folder/背景/巴力（迦南主神）.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "巴力（迦南主神）",
     "status": "formal",
     "aliases": []
   },
@@ -24781,6 +24957,14 @@
       "巴別塔與ziggurat"
     ]
   },
+  "巴蘭是先知還是術士": {
+    "path": "link_folder/解經爭議/巴蘭是先知還是術士.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "巴蘭是先知還是術士",
+    "status": "formal",
+    "aliases": []
+  },
   "床頭或杖頭": {
     "path": "link_folder/解經爭議/床頭或杖頭.md",
     "type": "解經爭議",
@@ -25306,6 +25490,14 @@
       "神厭惡以色列的張力",
       "利26:30與26:44的張力"
     ]
+  },
+  "神既准巴蘭去又向他發怒": {
+    "path": "link_folder/解經爭議/神既准巴蘭去又向他發怒.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "神既准巴蘭去又向他發怒",
+    "status": "formal",
+    "aliases": []
   },
   "神是否改變心意": {
     "path": "link_folder/解經爭議/神是否改變心意.md",

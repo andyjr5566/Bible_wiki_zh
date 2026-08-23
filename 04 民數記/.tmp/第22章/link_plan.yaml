@@ -1,0 +1,327 @@
+book: 民數記
+chapter: 22
+A_use_directly: []
+B_needs_update:
+- name: 摩押人
+  suggested_type: 人物
+  evidence: v3「摩押人因以色列民甚多，就大大懼怕，心內憂急」；CT 指出當時亞摩利人和巴珊人都比摩押人強大卻一一被擊敗，GT《串珠》說明摩押人先前肯供糧食和水只期望亞摩利人擊敗以色列
+  surfaces:
+  - phrase: 摩押人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 摩押人
+  existing_path: link_folder/人物/摩押人.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: v2「以色列人向亞摩利人所行的一切事，西撥的兒子巴勒都看見了」；CT 說亞摩利人是迦南七族之一、疆域在摩押地北面
+  surfaces:
+  - phrase: 亞摩利人
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 米甸
+  suggested_type: 人物
+  evidence: v4、v7 摩押與「米甸的長老」聯手；GT《背景註釋》說米甸人是住在外約但南部的民族，被形容為亞伯拉罕和基土拉的後裔
+  surfaces:
+  - phrase: 米甸
+    verses:
+    - 4
+    - 7
+  match_type: exact
+  existing_title: 米甸
+  existing_path: link_folder/人物/米甸.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: v1「在摩押平原、約但河東，對著耶利哥安營」；BH 說約但河是曠野與應許之地的界線
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶和華的使者
+  suggested_type: 神學
+  evidence: v22-35 耶和華的使者三次站在路上敵擋巴蘭，手裡有拔出來的刀；CT 說『耶和華的使者』有時指基督、有時指天使
+  surfaces:
+  - phrase: 耶和華的使者
+  match_type: exact
+  existing_title: 耶和華的使者
+  existing_path: link_folder/神學/耶和華的使者.md
+- name: 祝福與咒詛
+  suggested_type: 主題
+  evidence: v6「你為誰祝福，誰就得福；你咒詛誰，誰就受咒詛」；v12「因為那民是蒙福的」；GT《背景註釋》整段說明古代近東咒詛的力量與儀式
+  match_type: exact
+  existing_title: 祝福與咒詛
+  existing_path: link_folder/主題/祝福與咒詛.md
+- name: 驢
+  suggested_type: 背景
+  evidence: v21-33 巴蘭備上驢、三次打驢；CT 說當時中東地區驢適於短途旅行、駱駝適於長途旅行
+  surfaces:
+  - phrase: 驢
+  match_type: exact
+  existing_title: 驢
+  existing_path: link_folder/背景/驢.md
+- name: 先知
+  suggested_type: 主題
+  evidence: GT《背景註釋》說巴蘭「具有國際性的真先知信譽」「不獨是個占卜者而已」，KC 則說他不是耶和華的先知；四套來源對他的先知身分看法分歧
+  match_type: exact
+  existing_title: 先知
+  existing_path: link_folder/主題/先知.md
+- name: 刀劍
+  suggested_type: 主題
+  evidence: v23、v31 使者「手裡有拔出來的刀」，v29 巴蘭說「我恨不能手中有刀」；BH 說拔出的刀象徵臨到的審判與神的權柄
+  surfaces:
+  - phrase: 刀
+    verses:
+    - 23
+    - 29
+    - 31
+  match_type: exact
+  existing_title: 刀劍
+  existing_path: link_folder/主題/刀劍.md
+- name: 基抹（摩押的神）
+  suggested_type: 背景
+  evidence: BH 在 v3 說明摩押人敬拜基抹，一群敬拜獨一真神的百姓出現在境內是對他們信仰的挑戰
+  match_type: exact
+  existing_title: 基抹（摩押的神）
+  existing_path: link_folder/背景/基抹（摩押的神）.md
+- name: 摩押地
+  suggested_type: 地點
+  evidence: v36 巴勒往「摩押京城」迎接巴蘭，「這城是在邊界上，在亞嫩河旁」；GT《背景註釋》說亞珥摩押的地點至今未有定論
+  match_type: exact
+  existing_title: 摩押地
+  existing_path: link_folder/地點/摩押地.md
+- name: 耶和華的使者是否為神顯現
+  suggested_type: 解經爭議
+  evidence: CT 說『耶和華的使者』有時指基督、有時指天使；GT 丁良才在 v35 說「這一句顯明耶和華的使者是耶和華」；BH 多次說這是 theophany
+  match_type: exact
+  existing_title: 耶和華的使者是否為神顯現
+  existing_path: link_folder/解經爭議/耶和華的使者是否為神顯現.md
+- name: 神的主權
+  suggested_type: 神學
+  evidence: GT《聖經精讀本》說神是萬有之主、掌管萬事、按自己聖潔的旨意成就歷史，並說神掌管了巴蘭的意志和口；BH 反覆說 God can use anyone
+    to fulfill His purposes
+  match_type: exact
+  existing_title: 神的主權
+  existing_path: link_folder/神學/神的主權.md
+- name: 古代近東的神諭機制
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》說有五十多個馬里文獻記載口傳的神諭，不同神明透過一般人或僧侶向馬里王心利林傳達信息；同一則註釋把巴蘭的直接神諭與占卜（檢查祭牲、觀察雀鳥飛行）分開
+  match_type: exact
+  existing_title: 古代近東的神諭機制
+  existing_path: link_folder/背景/古代近東的神諭機制.md
+C_new_formal:
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: v1「以色列人起行，在摩押平原、約但河東，對著耶利哥安營」；GT 丁良才說摩押平原從伯耶施末直到亞伯什亭，GT《背景註釋》說這位置恰可成為進入迦南地的跳板
+  surfaces:
+  - phrase: 摩押平原
+    verses:
+    - 1
+  target_path: link_folder/地點/摩押平原.md
+- name: 巴勒
+  suggested_type: 人物
+  evidence: v2「西撥的兒子巴勒」；CT 說他是米甸人、顯示摩押已改朝換代；GT《串珠》說「巴勒」意即「毀滅者」；BH 說其名意為 devastator
+    或 waster
+  surfaces:
+  - phrase: 巴勒
+  target_path: link_folder/人物/巴勒.md
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: v5「比珥的兒子巴蘭」；CT 說他是米所波大米人、一位出名的異教術士；KC 說他的名字出現在八卷聖經裡而且一律是負面的
+  surfaces:
+  - phrase: 巴蘭
+  target_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 毘奪（巴蘭的本鄉）
+  suggested_type: 地點
+  evidence: v5「大河邊的毘奪」；GT《背景註釋》說此地大概是幼發拉底河支流薩朱爾河畔、敘利亞北部迦基米施十二哩外的毘特魯，並說明遙遠距離驅使部分學者另覓遺址
+  surfaces:
+  - phrase: 毘奪
+    verses:
+    - 5
+  - phrase: 大河
+    verses:
+    - 5
+  target_path: link_folder/地點/毘奪（巴蘭的本鄉）.md
+- name: 卦金（qe.sem）
+  suggested_type: 原文
+  evidence: v7「摩押的長老和米甸的長老手裡拿著卦金」；STEP 顯示原文是 קְסָמִים（ke.sa.Mim，H7081），字面是「占卜」的複數；GT《背景註釋》討論這是報酬還是定金
+  surfaces:
+  - phrase: 卦金
+    verses:
+    - 7
+  target_path: link_folder/原文/卦金（qe.sem）.md
+- name: 敵擋（sa.tan）
+  suggested_type: 原文
+  evidence: v22、v32「耶和華的使者站在路上敵擋他」「我出來敵擋你」；STEP 顯示原文是 לְשָׂטָן（le./sa.Tan，H7854）；GT《背景註釋》明說這字音譯就是「撒但」，但此處只形容天使扮演的敵對角色
+  surfaces:
+  - phrase: 敵擋
+    verses:
+    - 22
+    - 32
+  target_path: link_folder/原文/敵擋（sa.tan）.md
+- name: 咒詛（a.rar 與 qa.vav）
+  suggested_type: 原文
+  evidence: v6、v12 用 אָרַר（a.rar，H779），v11、v17 用 קָבַב（qa.vav，H6895）；STEP 顯示本章「咒詛」其實是兩個不同的原文動詞
+  surfaces:
+  - phrase: 咒詛
+  target_path: link_folder/原文/咒詛（a.rar 與 qa.vav）.md
+- name: 越過耶和華的口（peh）
+  suggested_type: 原文
+  evidence: v18「我行大事小事也不得越過耶和華─我神的命」；STEP 顯示「命」原文是 פֶּה（pi，H6310I，字面「口」），「越過」是 עָבַר（la./'a.Vor，H5674D，詞典義含
+    trespass）
+  surfaces:
+  - phrase: 越過耶和華─我神的命
+    verses:
+    - 18
+  target_path: link_folder/原文/越過耶和華的口（peh）.md
+  semantic_hint:
+  - title: 逾越（Pesach）
+    score: 0.419
+    type: 原文
+- name: 眼目明亮（ga.lah）
+  suggested_type: 原文
+  evidence: v31「耶和華使巴蘭的眼目明亮」；STEP 顯示動詞是 גָּלָה（va/y.Gal，H1540I，揭開、顯露），與 v28 開驢的口所用的
+    פָּתַח（H6605A）不是同一個字
+  surfaces:
+  - phrase: 眼目明亮
+    verses:
+    - 31
+  target_path: link_folder/原文/眼目明亮（ga.lah）.md
+- name: 巴力的高處（Bamoth-baal）
+  suggested_type: 地點
+  evidence: v41「巴勒領巴蘭到巴力的高處」；STEP 顯示原文 בָּמוֹת בָּעַל 是專有地名；GT《啟導本》說可能就是二十一19～20 的巴末
+  surfaces:
+  - phrase: 巴力的高處
+    verses:
+    - 41
+  target_path: link_folder/地點/巴力的高處（Bamoth-baal）.md
+- name: 基列胡瑣
+  suggested_type: 地點
+  evidence: v39「巴蘭和巴勒同行，來到基列胡瑣」；CT 說原文雙字意為「外頭、街道」與「街城」；GT《背景註釋》說所在不明
+  surfaces:
+  - phrase: 基列胡瑣
+    verses:
+    - 39
+  target_path: link_folder/地點/基列胡瑣.md
+  semantic_hint:
+  - title: 基列
+    score: 0.426
+    type: 地點
+- name: 亞嫩河
+  suggested_type: 地點
+  evidence: v36「這城是在邊界上，在亞嫩河旁」；CT 說亞嫩河是摩押和亞摩利的邊界；CT 給的原文字義是「湍急的溪流」
+  surfaces:
+  - phrase: 亞嫩河
+    verses:
+    - 36
+  target_path: link_folder/地點/亞嫩河.md
+  semantic_hint:
+  - title: 亞述
+    score: 0.444
+    type: 地點
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: v1「對著耶利哥安營」；CT 說耶利哥平原就在摩押平原對面、中間隔著約但河；BH 說耶利哥是世上最古老的有人居住城市之一
+  surfaces:
+  - phrase: 耶利哥
+    verses:
+    - 1
+  target_path: link_folder/地點/耶利哥.md
+- name: 驢開口說話
+  suggested_type: 事件
+  evidence: v28-30；CT 說這是出於神顯出神蹟；GT《啟導本》說除了伊甸園的蛇，全部聖經只有這裡記載動物開口說話；GT《背景註釋》舉埃及《兩兄弟的故事》與亞述《阿希卡爾的教訓》作古代近東對照
+  surfaces:
+  - phrase: 耶和華叫驢開口
+    verses:
+    - 28
+  target_path: link_folder/事件/驢開口說話.md
+- name: 巴蘭是先知還是術士
+  suggested_type: 解經爭議
+  evidence: GT《背景註釋》說他「具有國際性的真先知信譽」「不獨是個占卜者而已」；GT《啟導本》列四點說他不是聖潔的先知；KC 說他是假先知、撒但的僕人；書13:22
+    稱他為術士
+  target_path: link_folder/解經爭議/巴蘭是先知還是術士.md
+  semantic_hint:
+  - title: 先知
+    score: 0.405
+    type: 主題
+- name: 神既准巴蘭去又向他發怒
+  suggested_type: 解經爭議
+  evidence: v20 神說「你就起來同他們去」，v22 卻說「神因他去就發了怒」；賈斯樂郝威《聖經難解經文詮釋手冊》與艾基斯《舊約聖經難題彙編》各有一則專門處理；GT《背景註釋》另有〈神差派後反又敵擋〉
+  target_path: link_folder/解經爭議/神既准巴蘭去又向他發怒.md
+  semantic_hint:
+  - title: 氣忿忿
+    score: 0.442
+    type: 原文
+- name: 神的允許與神的命定
+  suggested_type: 神學
+  evidence: CT 反覆分辨兩者：「神的命定並沒有改變…他放棄了神的命定，而接受了神的允許」「真正愛慕神的人是不甘心接受神的允許的」；神的容許乃是表徵神的「任憑」（羅一24、26）；GT
+    丁良才說「神先因恩典不淮巴蘭去，後因發怒任憑他去」並引詩106:15、箴1:31、詩81:12、賽66:4、耶2:19
+  target_path: link_folder/神學/神的允許與神的命定.md
+  semantic_hint:
+  - title: 神的顧念與應允
+    score: 0.422
+    type: 神學
+  - title: 神的主權與預定
+    score: 0.41
+    type: 神學
+- name: 巴力（迦南主神）
+  suggested_type: 背景
+  evidence: v41「巴力的高處」；KC 說這是聖經中第一次提到巴力，並說明巴力（意為「主」）是迦南人的主神、亞斯她錄是主要的女神，士師時期在以色列取得固定地位，亞哈與耶洗別時代成為國教
+  target_path: link_folder/背景/巴力（迦南主神）.md
+  semantic_hint:
+  - title: 巴力洗分
+    score: 0.482
+    type: 地點
+- name: 代爾阿拉的巴蘭銘文
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》記載 1967 年夫朗肯率領的荷蘭考古團在約旦代爾阿拉遺址發現刻字灰泥殘片，鑑定為主前八五○年左右、用亞蘭文寫成，提到比珥的兒子巴蘭是個先見
+  target_path: link_folder/背景/代爾阿拉的巴蘭銘文.md
+- name: 巴蘭的道路（彼後2：15-16）
+  suggested_type: 互文
+  evidence: CT 引彼後二15「隨從比珥之子巴蘭的路，巴蘭就是那貪愛不義的工價的先知」；KC 說新約三處引用中這是第一處
+  target_path: link_folder/互文/巴蘭的道路（彼後2：15-16）.md
+- name: 巴蘭的錯謬（猶11）
+  suggested_type: 互文
+  evidence: CT 引猶11「為利往巴蘭的錯謬裡直奔」；KC 列出新約三處引用之一
+  target_path: link_folder/互文/巴蘭的錯謬（猶11）.md
+  semantic_hint:
+  - title: 巴蘭的曠野
+    score: 0.425
+    type: 地點
+- name: 巴蘭的教訓（啟2：14）
+  suggested_type: 互文
+  evidence: CT 引啟二14「有人服從了巴蘭的教訓。這巴蘭曾教導巴勒將絆腳石放在以色列人面前」；KC 列為新約三處引用之一
+  target_path: link_folder/互文/巴蘭的教訓（啟2：14）.md
+  semantic_hint:
+  - title: 巴蘭的曠野
+    score: 0.424
+    type: 地點
+- name: 咒詛你的我必咒詛他（創12：3）
+  suggested_type: 互文
+  evidence: BH 在 v6、v12、v13、v17 反覆引創12:3 說神應許賜福給祝福亞伯拉罕的、咒詛咒詛他的，指出巴勒的計畫從一開始就注定落空
+  target_path: link_folder/互文/咒詛你的我必咒詛他（創12：3）.md
+  semantic_hint:
+  - title: 祝福與咒詛
+    score: 0.558
+    type: 主題
+  - title: 雅各不知情發下咒詛
+    score: 0.518
+    type: 解經爭議
+  - title: 不可妄稱耶和華你神的名
+    score: 0.505
+    type: 神學
+- name: 開眼得見天上軍兵（王下6：17）
+  suggested_type: 互文
+  evidence: BH 在 v31 引王下6:17 以利沙僕人被開眼看見天軍作對照，說明神使人看見屬靈實際
+  target_path: link_folder/互文/開眼得見天上軍兵（王下6：17）.md
+  semantic_hint:
+  - title: 神的軍兵
+    score: 0.488
+    type: 神學
+D_new_candidate: []
+E_skip: []
