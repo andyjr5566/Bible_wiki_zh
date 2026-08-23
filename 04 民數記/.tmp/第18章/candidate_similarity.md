@@ -4,8 +4,8 @@ book: 民數記
 chapter: 18
 candidate_sha256: 6f80b9bbf2c4b0f255c449157af37e034d405fa9c73483f4a81ec0c97a12e1bf
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 5c84599c23ab0128
-link_index_sha256: 32b32272f148fae563e024a5f87552e54ad61fb7c0b94a7f928c9fea76f52ceb
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第18章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2647 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -38,9 +38,9 @@ query:
 |---|---|---:|---|
 | 1 | 擔當干犯聖所與祭司職任的罪孽 | 0.593 | link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md |
 | 2 | 聖物 | 0.506 | link_folder/主題/聖物.md |
-| 3 | 玷污耶和華的聖所與帳幕 | 0.486 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
-| 4 | 在米利巴未將耶和華尊為聖 | 0.465 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
-| 5 | 聖潔 | 0.459 | link_folder/神學/聖潔.md |
+| 3 | 玷污耶和華的聖所與帳幕 | 0.461 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
+| 4 | 聖潔 | 0.459 | link_folder/神學/聖潔.md |
+| 5 | 聖俗潔淨不潔淨的分別 | 0.457 | link_folder/神學/聖俗潔淨不潔淨的分別.md |
 
 判定：✅ 建議使用既有條目 [[擔當干犯聖所與祭司職任的罪孽]]（同名／字面對應）
 
@@ -91,7 +91,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 利未人的什一奉獻 | 0.665 | link_folder/神學/利未人的什一奉獻.md |
-| 2 | 古代近東以什一奉獻為神職薪酬 | 0.590 | link_folder/文化/古代近東以什一奉獻為神職薪酬.md |
+| 2 | 古代近東以什一奉獻為神職薪酬 | 0.592 | link_folder/文化/古代近東以什一奉獻為神職薪酬.md |
 | 3 | 什一奉獻的起源 | 0.562 | link_folder/神學/什一奉獻的起源.md |
 | 4 | 利未人受職與祭司受職的差別 | 0.536 | link_folder/主題/利未人受職與祭司受職的差別.md |
 | 5 | 十分之一 | 0.535 | link_folder/原文/十分之一.md |
@@ -108,7 +108,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 古代近東以什一奉獻為神職薪酬 | 0.760 | link_folder/文化/古代近東以什一奉獻為神職薪酬.md |
+| 1 | 古代近東以什一奉獻為神職薪酬 | 0.629 | link_folder/文化/古代近東以什一奉獻為神職薪酬.md |
 | 2 | 古代近東的祭司 | 0.520 | link_folder/背景/古代近東的祭司.md |
 | 3 | 古代近東祭壇 | 0.480 | link_folder/背景/古代近東祭壇.md |
 | 4 | 古代近東的獻祭與燔祭習俗 | 0.479 | link_folder/背景/古代近東的獻祭與燔祭習俗.md |
@@ -220,7 +220,7 @@ query:
 | 2 | 利未 | 0.530 | link_folder/人物/利未.md |
 | 3 | 「利未」名字含義 | 0.429 | link_folder/原文/「利未」名字含義.md |
 | 4 | 數點利未任職男子 | 0.428 | link_folder/事件/數點利未任職男子.md |
-| 5 | 利乏音人 | 0.428 | link_folder/人物/利乏音人.md |
+| 5 | 利未的族譜（出六14-27） | 0.426 | link_folder/歷史/利未的族譜（出六14-27）.md |
 
 判定：✅ 建議使用既有條目 [[利未支派]]（同名／字面對應）
 
@@ -237,8 +237,8 @@ query:
 | 1 | 亞倫和他兒子（祭司） | 0.581 | link_folder/人物/亞倫和他兒子（祭司）.md |
 | 2 | 古代近東的祭司 | 0.564 | link_folder/背景/古代近東的祭司.md |
 | 3 | 亞倫的祭司譜系 | 0.555 | link_folder/人物/亞倫的祭司譜系.md |
-| 4 | 祭司經理燈（亞倫和他兒子） | 0.524 | link_folder/人物/祭司經理燈（亞倫和他兒子）.md |
-| 5 | 亞倫 | 0.508 | link_folder/人物/亞倫.md |
+| 4 | 亞倫 | 0.527 | link_folder/人物/亞倫.md |
+| 5 | 祭司經理燈（亞倫和他兒子） | 0.524 | link_folder/人物/祭司經理燈（亞倫和他兒子）.md |
 
 判定：✅ 建議使用既有條目 [[亞倫和他兒子（祭司）]]（同名／字面對應）
 
@@ -254,8 +254,8 @@ query:
 |---|---|---:|---|
 | 1 | 永遠當祭司的職任 | 0.599 | link_folder/神學/永遠當祭司的職任.md |
 | 2 | 基督三重職分 | 0.486 | link_folder/神學/基督三重職分.md |
-| 3 | 永遠的定例 | 0.448 | link_folder/神學/永遠的定例.md |
-| 4 | 永恆國度 | 0.445 | link_folder/神學/永恆國度.md |
+| 3 | 永恆國度 | 0.445 | link_folder/神學/永恆國度.md |
+| 4 | 永遠的定例 | 0.434 | link_folder/神學/永遠的定例.md |
 | 5 | 至高神的祭司 | 0.424 | link_folder/神學/至高神的祭司.md |
 
 判定：✅ 建議使用既有條目 [[永遠當祭司的職任]]（同名／字面對應）
@@ -271,11 +271,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞倫 | 0.672 | link_folder/人物/亞倫.md |
-| 2 | 神與摩西面對面明說 | 0.558 | link_folder/神學/神與摩西面對面明說.md |
-| 3 | 耶和華的話臨到 | 0.558 | link_folder/神學/耶和華的話臨到.md |
-| 4 | 摩西上山見神 | 0.550 | link_folder/事件/摩西上山見神.md |
-| 5 | 米利暗與亞倫誰是主謀 | 0.538 | link_folder/解經爭議/米利暗與亞倫誰是主謀.md |
+| 1 | 亞倫 | 0.680 | link_folder/人物/亞倫.md |
+| 2 | 亞倫卒於何珥山與祭司職任更替 | 0.563 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
+| 3 | 神與摩西面對面明說 | 0.558 | link_folder/神學/神與摩西面對面明說.md |
+| 4 | 耶和華的話臨到 | 0.558 | link_folder/神學/耶和華的話臨到.md |
+| 5 | 摩西上山見神 | 0.550 | link_folder/事件/摩西上山見神.md |
 
 判定：✅ 建議使用既有條目 [[亞倫]]（同名／字面對應）
 
@@ -290,9 +290,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.649 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.644 | link_folder/人物/摩西.md |
 | 2 | 摩西代行祭司職分 | 0.633 | link_folder/主題/摩西代行祭司職分.md |
-| 3 | 亞倫 | 0.623 | link_folder/人物/亞倫.md |
+| 3 | 亞倫 | 0.631 | link_folder/人物/亞倫.md |
 | 4 | 利未人的什一奉獻 | 0.605 | link_folder/神學/利未人的什一奉獻.md |
 | 5 | 摩西上山見神 | 0.596 | link_folder/事件/摩西上山見神.md |
 

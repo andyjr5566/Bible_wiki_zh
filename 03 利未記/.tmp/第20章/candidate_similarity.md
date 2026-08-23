@@ -4,26 +4,26 @@ book: 利未記
 chapter: 20
 candidate_sha256: 37a88dfa3b0833be5de0739384be5ebf239ecf6ec6dcc1e69f2374b0fbc080a4
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: f14b01696b2c14fb
-link_index_sha256: e93fe3bc99af9535f2b16b79539ea8f5a27abeae227405db79b7403b8af6ce3d
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
-rerank_policy_version: 2026.08.3
-calibration_sha256: 2eff4695db1e2d3a098dcd9a79946f38885dae5a76cc257b2e7cde5c5198a3d0
+rerank_policy_version: 2026.08.4
+calibration_sha256: 337500e601e3a204c71a4bbe077172c48c165c2ea9ffe38c5d4425363d899411
 rerank_status: not_needed
 rerankable_candidates: 0
 rerank_attempted: 0
 rerank_succeeded: 0
-rerank_retrieve_top_k: 10
+rerank_retrieve_top_k: 20
 rerank_score_observed: none
 -->
 
 # 候選語義近鄰報告：利未記 第20章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2625 條
-- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 10 名再由 Reranker 重排，取前 5 名顯示。
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
+- 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
-  重排模型未校準時，⚠ 由檢索相似度規則（≥0.60 且 top-1 非同實體）決定，重排名次只當附加證據。
+  重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
   字面解析：列 resolver 實際比對結果——標「請確認」者務必人工核實。
 
 ## 摩洛獻兒女治死條例（含知情連坐）（主題）
@@ -40,8 +40,8 @@ query:
 |---|---|---:|---|
 | 1 | 摩洛獻兒女治死條例（含知情連坐） | 0.830 | link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md |
 | 2 | 利18：21 | 0.736 | link_folder/互文/利18：21.md |
-| 3 | 不可使兒女經火歸摩洛 | 0.711 | link_folder/主題/不可使兒女經火歸摩洛.md |
-| 4 | 石刑 | 0.710 | link_folder/背景/石刑.md |
+| 3 | 石刑 | 0.713 | link_folder/背景/石刑.md |
+| 4 | 不可使兒女經火歸摩洛 | 0.711 | link_folder/主題/不可使兒女經火歸摩洛.md |
 | 5 | 以色列刑罰的節制與程序保障 | 0.642 | link_folder/背景/以色列刑罰的節制與程序保障.md |
 
 判定：✅ 建議使用既有條目 [[摩洛獻兒女治死條例（含知情連坐）]]（同名／字面對應）
@@ -159,10 +159,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 娶妻並娶其母用火焚燒的大惡條例 | 0.908 | link_folder/主題/娶妻並娶其母用火焚燒的大惡條例.md |
-| 2 | 他瑪被判燒死的刑罰問題 | 0.612 | link_folder/解經爭議/他瑪被判燒死的刑罰問題.md |
-| 3 | 不可使兒女經火歸摩洛 | 0.603 | link_folder/主題/不可使兒女經火歸摩洛.md |
-| 4 | 以色列刑罰的節制與程序保障 | 0.569 | link_folder/背景/以色列刑罰的節制與程序保障.md |
-| 5 | 摩洛獻兒女治死條例（含知情連坐） | 0.559 | link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md |
+| 2 | 祭司的女兒行淫用火焚燒 | 0.686 | link_folder/主題/祭司的女兒行淫用火焚燒.md |
+| 3 | 他瑪被判燒死的刑罰問題 | 0.612 | link_folder/解經爭議/他瑪被判燒死的刑罰問題.md |
+| 4 | 不可使兒女經火歸摩洛 | 0.603 | link_folder/主題/不可使兒女經火歸摩洛.md |
+| 5 | 以色列刑罰的節制與程序保障 | 0.569 | link_folder/背景/以色列刑罰的節制與程序保障.md |
 
 判定：✅ 建議使用既有條目 [[娶妻並娶其母用火焚燒的大惡條例]]（同名／字面對應）
 
@@ -221,8 +221,8 @@ query:
 | 1 | 無子女而死的刑罰 | 0.836 | link_folder/神學/無子女而死的刑罰.md |
 | 2 | 以色列刑罰的節制與程序保障 | 0.622 | link_folder/背景/以色列刑罰的節制與程序保障.md |
 | 3 | 申21：18-21 | 0.592 | link_folder/互文/申21：18-21.md |
-| 4 | 咒罵父母 | 0.583 | link_folder/神學/咒罵父母.md |
-| 5 | 死刑的罪行 | 0.570 | link_folder/神學/死刑的罪行.md |
+| 4 | 祭司的女兒行淫用火焚燒 | 0.586 | link_folder/主題/祭司的女兒行淫用火焚燒.md |
+| 5 | 咒罵父母 | 0.583 | link_folder/神學/咒罵父母.md |
 
 判定：✅ 建議使用既有條目 [[無子女而死的刑罰]]（同名／字面對應）
 
@@ -239,7 +239,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 你們要聖潔因為我是聖潔的 | 0.781 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
-| 2 | 聖潔 | 0.678 | link_folder/神學/聖潔.md |
+| 2 | 聖潔 | 0.693 | link_folder/神學/聖潔.md |
 | 3 | 神的聖潔 | 0.650 | link_folder/神學/神的聖潔.md |
 | 4 | 自潔 | 0.624 | link_folder/神學/自潔.md |
 | 5 | 分別為聖 | 0.620 | link_folder/神學/分別為聖.md |
@@ -261,8 +261,8 @@ query:
 | 1 | 玷污自己也玷污地 | 0.774 | link_folder/神學/玷污自己也玷污地.md |
 | 2 | 你們要聖潔因為我是聖潔的 | 0.607 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
 | 3 | 聖潔生活 | 0.584 | link_folder/主題/聖潔生活.md |
-| 4 | 聖潔 | 0.577 | link_folder/神學/聖潔.md |
-| 5 | 玷污耶和華的聖所與帳幕 | 0.556 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
+| 4 | 寄居的與本地人同歸一例 | 0.563 | link_folder/主題/寄居的與本地人同歸一例.md |
+| 5 | 聖潔 | 0.561 | link_folder/神學/聖潔.md |
 
 判定：✅ 建議使用既有條目 [[玷污自己也玷污地]]（同名／字面對應）
 
@@ -297,11 +297,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.578 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.570 | link_folder/人物/摩西.md |
 | 2 | 耶和華的話臨到 | 0.511 | link_folder/神學/耶和華的話臨到.md |
 | 3 | 摩西的呼召與差遣 | 0.494 | link_folder/神學/摩西的呼召與差遣.md |
-| 4 | 摩西在耶和華面前自辯清白與拒受甘禮 | 0.490 | link_folder/神學/摩西在耶和華面前自辯清白與拒受甘禮.md |
-| 5 | 摩西上山見神 | 0.483 | link_folder/事件/摩西上山見神.md |
+| 4 | 摩西上山見神 | 0.483 | link_folder/事件/摩西上山見神.md |
+| 5 | 摩西看為極大 | 0.480 | link_folder/人物/摩西看為極大.md |
 
 判定：✅ 建議使用既有條目 [[摩西]]（同名／字面對應）
 
@@ -320,8 +320,8 @@ query:
 | 1 | 摩洛（Molech）身分之爭 | 0.864 | link_folder/解經爭議/摩洛（Molech）身分之爭.md |
 | 2 | 不可使兒女經火歸摩洛 | 0.709 | link_folder/主題/不可使兒女經火歸摩洛.md |
 | 3 | 摩洛獻兒女治死條例（含知情連坐） | 0.687 | link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md |
-| 4 | 古代近東的性禁忌與獻兒女為祭 | 0.604 | link_folder/背景/古代近東的性禁忌與獻兒女為祭.md |
-| 5 | 古代近東獻兒女為祭 | 0.593 | link_folder/背景/古代近東獻兒女為祭.md |
+| 4 | 基抹（摩押的神） | 0.616 | link_folder/背景/基抹（摩押的神）.md |
+| 5 | 古代近東的性禁忌與獻兒女為祭 | 0.604 | link_folder/背景/古代近東的性禁忌與獻兒女為祭.md |
 
 判定：✅ 建議使用既有條目 [[摩洛（Molech）身分之爭]]（同名／字面對應）
 
@@ -357,11 +357,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 石刑 | 0.844 | link_folder/背景/石刑.md |
-| 2 | 死刑的罪行 | 0.639 | link_folder/神學/死刑的罪行.md |
-| 3 | 以色列刑罰的節制與程序保障 | 0.621 | link_folder/背景/以色列刑罰的節制與程序保障.md |
-| 4 | 他的血要歸到他身上 | 0.593 | link_folder/原文/他的血要歸到他身上.md |
-| 5 | 曠野安息日撿柴事件與神明告處決 | 0.585 | link_folder/事件/曠野安息日撿柴事件與神明告處決.md |
+| 1 | 石刑 | 0.842 | link_folder/背景/石刑.md |
+| 2 | 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件） | 0.642 | link_folder/事件/褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）.md |
+| 3 | 死刑的罪行 | 0.639 | link_folder/神學/死刑的罪行.md |
+| 4 | 以色列刑罰的節制與程序保障 | 0.621 | link_folder/背景/以色列刑罰的節制與程序保障.md |
+| 5 | 曠野安息日撿柴事件與神明告處決 | 0.607 | link_folder/事件/曠野安息日撿柴事件與神明告處決.md |
 
 判定：✅ 建議使用既有條目 [[石刑]]（同名／字面對應）
 
@@ -381,7 +381,7 @@ query:
 | 2 | 從民中剪除的含義 | 0.685 | link_folder/解經爭議/從民中剪除的含義.md |
 | 3 | 從以色列中剪除 | 0.623 | link_folder/原文/從以色列中剪除.md |
 | 4 | 摩洛獻兒女治死條例（含知情連坐） | 0.584 | link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md |
-| 5 | 石刑 | 0.561 | link_folder/背景/石刑.md |
+| 5 | 擅敢行事與褻瀆耶和華的剪除處分 | 0.583 | link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md |
 
 判定：✅ 建議使用既有條目 [[剪除]]（同名／字面對應）
 
@@ -397,7 +397,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 玷污耶和華的聖所與帳幕 | 0.812 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
+| 1 | 玷污耶和華的聖所與帳幕 | 0.799 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
 | 2 | 不可使兒女經火歸摩洛 | 0.648 | link_folder/主題/不可使兒女經火歸摩洛.md |
 | 3 | 摩洛獻兒女治死條例（含知情連坐） | 0.626 | link_folder/主題/摩洛獻兒女治死條例（含知情連坐）.md |
 | 4 | 神的聖所 | 0.611 | link_folder/神學/神的聖所.md |
@@ -417,11 +417,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 流奶與蜜之地 | 0.860 | link_folder/神學/流奶與蜜之地.md |
+| 1 | 流奶與蜜之地 | 0.852 | link_folder/神學/流奶與蜜之地.md |
 | 2 | 進迦南應許 | 0.661 | link_folder/歷史/進迦南應許.md |
-| 3 | 迦南地 | 0.594 | link_folder/地點/迦南地.md |
+| 3 | 迦南地 | 0.616 | link_folder/地點/迦南地.md |
 | 4 | 創十五13-16 迦南應許 | 0.556 | link_folder/互文/創十五13-16 迦南應許.md |
-| 5 | 迦南人 | 0.546 | link_folder/人物/迦南人.md |
+| 5 | 吞吃居民之地是什麼意思 | 0.550 | link_folder/解經爭議/吞吃居民之地是什麼意思.md |
 
 判定：✅ 建議使用既有條目 [[流奶與蜜之地]]（同名／字面對應）
 
@@ -458,7 +458,7 @@ query:
 |---|---|---:|---|
 | 1 | 他的血要歸到他身上 | 0.891 | link_folder/原文/他的血要歸到他身上.md |
 | 2 | 血 | 0.631 | link_folder/主題/血.md |
-| 3 | 彈血七次 | 0.589 | link_folder/主題/彈血七次.md |
+| 3 | 彈血七次 | 0.594 | link_folder/主題/彈血七次.md |
 | 4 | 灑血 | 0.581 | link_folder/主題/灑血.md |
 | 5 | 灑 | 0.578 | link_folder/原文/灑.md |
 
@@ -497,9 +497,9 @@ query:
 |---|---|---:|---|
 | 1 | 分別為聖 | 0.715 | link_folder/神學/分別為聖.md |
 | 2 | 你們要聖潔因為我是聖潔的 | 0.660 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
-| 3 | 聖潔的國民 | 0.631 | link_folder/神學/聖潔的國民.md |
-| 4 | 聖潔 | 0.617 | link_folder/神學/聖潔.md |
-| 5 | 分別百姓 | 0.602 | link_folder/神學/分別百姓.md |
+| 3 | 聖潔 | 0.654 | link_folder/神學/聖潔.md |
+| 4 | 聖潔的國民 | 0.631 | link_folder/神學/聖潔的國民.md |
+| 5 | 頭生歸神為聖 | 0.606 | link_folder/歷史/頭生歸神為聖.md |
 
 判定：✅ 建議使用既有條目 [[分別為聖]]（同名／字面對應）
 

@@ -1,6 +1,9 @@
 book: 民數記
 chapter: 17
 links:
+- verse: 1
+  phrase: 摩西
+  target: 摩西
 - verse: 2
   phrase: 從他們手下取杖
   target: 十二支派首領之杖按著名冊交付驗證
@@ -17,11 +20,47 @@ links:
   phrase: 各族長必有一根杖
   target: 把亞倫之名簽寫在利未之杖上的授命標記
 - verse: 4
+  phrase: 杖
+  target: 杖
+- verse: 4
   phrase: 存在會幕內法櫃前
   target: 存於見證會殿前等候神使出枯長生苞結杏的奇顯
 - verse: 5
   phrase: 我所揀選的那人，他的杖必發芽
   target: 存於見證會殿前等候神使出枯長生苞結杏的奇顯
+- verse: 6
+  phrase: 摩西
+  target: 摩西
+- verse: 6
+  phrase: 杖
+  target: 杖
+- verse: 6
+  phrase: 亞倫
+  target: 亞倫
+- verse: 7
+  phrase: 摩西
+  target: 摩西
+- verse: 7
+  phrase: 杖
+  target: 杖
+- verse: 7
+  phrase: 法櫃
+  target: 約櫃
+- verse: 7
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
+- verse: 8
+  phrase: 摩西
+  target: 摩西
+- verse: 8
+  phrase: 法櫃
+  target: 約櫃
+- verse: 8
+  phrase: 帳幕
+  target: 會幕（帳幕整體）
+- verse: 8
+  phrase: 利未族
+  target: 利未支派
 - verse: 8
   phrase: 亞倫的杖已經發了芽
   target: 存於見證會殿前等候神使出枯長生苞結杏的奇顯
@@ -29,8 +68,17 @@ links:
   phrase: 生了花苞，開了花，結了熟杏
   target: 亞倫發芽熟杏之杖表徵經歷死地步入復活生命力
 - verse: 9
+  phrase: 摩西
+  target: 摩西
+- verse: 9
+  phrase: 杖
+  target: 杖
+- verse: 9
   phrase: 從耶和華面前拿出來
   target: 亞倫發芽熟杏之杖表徵經歷死地步入復活生命力
+- verse: 10
+  phrase: 摩西
+  target: 摩西
 - verse: 10
   phrase: 把亞倫的杖還放在法櫃前
   target: 亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒
@@ -40,6 +88,12 @@ links:
 - verse: 10
   phrase: 向我發的怨言止息
   target: 亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒
+- verse: 11
+  phrase: 摩西
+  target: 摩西
+- verse: 12
+  phrase: 摩西
+  target: 摩西
 - verse: 12
   phrase: 我們死啦
   target: 凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡

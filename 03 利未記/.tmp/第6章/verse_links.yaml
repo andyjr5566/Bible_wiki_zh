@@ -10,12 +10,21 @@ links:
 - verse: 6
   phrase: 公綿羊
   target: 公綿羊
+- verse: 6
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
+- verse: 7
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
 - verse: 9
   phrase: 亞倫和他的子孫
   target: 亞倫和他兒子（祭司）
 - verse: 9
   phrase: 燔祭
   target: 燔祭
+- verse: 10
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
 - verse: 10
   phrase: 細麻布褲子
   target: 褲子（細麻布褲子）
@@ -26,6 +35,9 @@ links:
   phrase: 營外潔淨之處
   target: 潔淨之地
 - verse: 12
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
+- verse: 12
   phrase: 燔祭
   target: 燔祭
 - verse: 12
@@ -34,9 +46,27 @@ links:
 - verse: 14
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 14
+  phrase: 亞倫的子孫
+  target: 亞倫和他兒子（祭司）
+- verse: 15
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
 - verse: 15
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 15
+  phrase: 細麵
+  target: 細麵
+- verse: 16
+  phrase: 不帶酵
+  target: 素祭不可有酵與蜜
+- verse: 16
+  phrase: 會幕的院子
+  target: 會幕院子
+- verse: 17
+  phrase: 賜給他們的分
+  target: 祭司的分（靠祭物養生）
 - verse: 17
   phrase: 至聖的
   target: 至聖的供物（聖與至聖之分）
@@ -59,6 +89,9 @@ links:
   phrase: 供物
   target: 供物（qorban）
 - verse: 20
+  phrase: 細麵
+  target: 細麵
+- verse: 20
   phrase: 伊法
   target: 伊法
 - verse: 20
@@ -68,6 +101,9 @@ links:
   phrase: 素祭
   target: 素祭（minchah）
 - verse: 22
+  phrase: 亞倫的子孫
+  target: 亞倫和他兒子（祭司）
+- verse: 22
   phrase: 受膏的祭司
   target: 受膏的祭司
 - verse: 22
@@ -76,6 +112,9 @@ links:
 - verse: 22
   phrase: 永遠的定例
   target: 永遠的定例
+- verse: 23
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
 - verse: 23
   phrase: 素祭
   target: 素祭（minchah）
@@ -91,9 +130,18 @@ links:
 - verse: 25
   phrase: 至聖的
   target: 至聖的供物（聖與至聖之分）
+- verse: 26
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
+- verse: 26
+  phrase: 會幕的院子
+  target: 會幕院子
 - verse: 27
   phrase: 血
   target: 血
+- verse: 29
+  phrase: 祭司
+  target: 亞倫和他兒子（祭司）
 - verse: 29
   phrase: 至聖的
   target: 至聖的供物（聖與至聖之分）

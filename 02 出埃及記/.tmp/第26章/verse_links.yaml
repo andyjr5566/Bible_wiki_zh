@@ -65,6 +65,9 @@ links:
   phrase: 帳幕的豎板
   target: 皂莢木豎板
 - verse: 17
+  phrase: 兩榫相對
+  target: 兩榫相對（榫卯接合）
+- verse: 17
   phrase: 板
   target: 皂莢木豎板
 - verse: 18
@@ -79,6 +82,9 @@ links:
 - verse: 19
   phrase: 帶卯的銀座
   target: 銀座（帶卯的銀座）
+- verse: 19
+  phrase: 榫
+  target: 兩榫相對（榫卯接合）
 - verse: 20
   phrase: 板
   target: 皂莢木豎板
@@ -100,6 +106,9 @@ links:
 - verse: 24
   phrase: 板
   target: 皂莢木豎板
+- verse: 24
+  phrase: 第一個環子
+  target: 板上的金環（套閂）
 - verse: 24
   phrase: 拐角
   target: 拐角板（雙板）
@@ -124,6 +133,9 @@ links:
 - verse: 29
   phrase: 金子
   target: 金子（包金）
+- verse: 29
+  phrase: 板上的金環
+  target: 板上的金環（套閂）
 - verse: 29
   phrase: 閂
   target: 閂（橫閂）

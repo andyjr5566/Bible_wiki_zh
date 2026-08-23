@@ -47,8 +47,14 @@ links:
   phrase: 法老
   target: 法老
 - verse: 7
+  phrase: 六百輛特選的車
+  target: 六百輛特選的車
+- verse: 7
   phrase: 埃及
   target: 埃及
+- verse: 7
+  phrase: 車兵長
+  target: 車兵長
 - verse: 8
   phrase: 耶和華
   target: 耶和華
@@ -205,6 +211,9 @@ links:
 - verse: 24
   phrase: 埃及
   target: 埃及
+- verse: 25
+  phrase: 使他們的車輪脫落
+  target: 車輪脫落
 - verse: 25
   phrase: 埃及
   target: 埃及

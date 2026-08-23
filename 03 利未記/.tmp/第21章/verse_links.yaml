@@ -7,6 +7,12 @@ links:
 - verse: 1
   phrase: 祭司不可為民中的死人沾染自己
   target: 祭司不可為死人哀哭（居喪條例）
+- verse: 4
+  phrase: 從俗
+  target: 褻瀆（cha.lal）
+- verse: 6
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
 - verse: 7
   phrase: 不可娶妓女或被污的女人為妻
   target: 祭司不可娶被玷污的婦人為妻
@@ -19,12 +25,18 @@ links:
 - verse: 11
   phrase: 不可挨近死屍，也不可為父母沾染自己
   target: 祭司不可為死人哀哭（居喪條例）
+- verse: 12
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
 - verse: 13
   phrase: 他要娶處女為妻
   target: 大祭司娶處女為妻的婚姻條例
 - verse: 14
   phrase: 寡婦或是被休的婦人，或是被污為妓的女人，都不可娶
   target: 大祭司娶處女為妻的婚姻條例
+- verse: 15
+  phrase: 辱沒
+  target: 褻瀆（cha.lal）
 - verse: 16
   phrase: 摩西
   target: 摩西
@@ -37,6 +49,9 @@ links:
 - verse: 23
   phrase: 但不可進到幔子前，也不可就近壇前
   target: 有殘疾的祭司不可近前獻祭
+- verse: 23
+  phrase: 褻瀆
+  target: 褻瀆（cha.lal）
 - verse: 24
   phrase: 摩西
   target: 摩西

@@ -4,6 +4,9 @@ links:
 - verse: 1
   phrase: 你要鑿出兩塊石版
   target: 摩西鑿石版（第二次法版）
+- verse: 1
+  phrase: 其上的字我要寫在這版上
+  target: 法版上的字是誰寫的
 - verse: 2
   phrase: 西乃山
   target: 西乃山
@@ -19,18 +22,45 @@ links:
 - verse: 7
   phrase: 為千萬人存留慈愛
   target: 神的性情宣告（耶和華有憐憫有恩典）
+- verse: 7
+  phrase: 必追討他的罪，自父及子，直到三、四代
+  target: 禍延三四代
+- verse: 9
+  phrase: 求你在我們中間同行
+  target: 摩西的代求
 - verse: 9
   phrase: 硬著頸項的百姓
   target: 硬著頸項的百姓
+- verse: 10
+  phrase: 我要立約
+  target: 神的同在
 - verse: 11
   phrase: 亞摩利人、迦南人、赫人、比利洗人、希未人、耶布斯人
   target: 迦南七族（迦南地原住民）
+- verse: 12
+  phrase: 恐怕成為你們中間的網羅
+  target: 立約禁令
+- verse: 13
+  phrase: 拆毀他們的祭壇
+  target: 拆毀偶像律例
+- verse: 13
+  phrase: 打碎他們的柱像
+  target: 柱像
+- verse: 13
+  phrase: 砍下他們的木偶
+  target: 亞舍拉（木偶）
+- verse: 14
+  phrase: 不可敬拜別神
+  target: 忌邪（嫉妒）
 - verse: 14
   phrase: 忌邪的神
   target: 忌邪的神
 - verse: 14
   phrase: 忌邪者
   target: 忌邪的神
+- verse: 16
+  phrase: 又為你的兒子娶他們的女兒為妻
+  target: 申命記7_3-4 禁止與迦南人通婚
 - verse: 18
   phrase: 除酵節
   target: 三大節期
@@ -43,6 +73,9 @@ links:
 - verse: 20
   phrase: 凡頭生的兒子都要贖出來
   target: 頭生歸神為聖
+- verse: 21
+  phrase: 第七日要安息
+  target: 安息日
 - verse: 22
   phrase: 七七節
   target: 三大節期
@@ -56,8 +89,14 @@ links:
   phrase: 逾越節的祭
   target: 逾越節
 - verse: 26
+  phrase: 地裡首先初熟之物
+  target: 初熟果子
+- verse: 26
   phrase: 不可用山羊羔母的奶煮山羊羔
   target: 出23：19不可用山羊羔母奶煮山羊羔
+- verse: 27
+  phrase: 你要將這些話寫上
+  target: 本章是否另有一套十誡
 - verse: 28
   phrase: 十條誡
   target: 十誡
@@ -68,8 +107,14 @@ links:
   phrase: 自己的面皮因耶和華和他說話就發了光
   target: 摩西面皮發光（與帕子）
 - verse: 30
+  phrase: 亞倫和以色列眾人看見摩西的面皮發光
+  target: 亞倫
+- verse: 30
   phrase: 怕挨近他
   target: 摩西面皮發光（與帕子）
+- verse: 31
+  phrase: 亞倫
+  target: 亞倫
 - verse: 32
   phrase: 西乃山
   target: 西乃山

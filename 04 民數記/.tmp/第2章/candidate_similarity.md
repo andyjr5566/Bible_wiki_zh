@@ -4,8 +4,8 @@ book: 民數記
 chapter: 2
 candidate_sha256: 736ee8cf8792a6836c2b792ddba12a259161ca95574c38dce952bd568facd138
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: c2abf8934419fa2d
-link_index_sha256: 63feb9a64e3fb5e516c6e7a6352ff04131187d149984c1f419d4c256c2171684
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第2章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2630 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -86,8 +86,8 @@ BH：The central positioning reflects the need for God to be the focal point in 
 | 1 | 利未支派 | 0.749 | link_folder/人物/利未支派.md |
 | 2 | 行軍次序 | 0.670 | link_folder/事件/行軍次序.md |
 | 3 | 安營與纛 | 0.662 | link_folder/主題/安營與纛.md |
-| 4 | 摩西的臨時會幕（營外） | 0.625 | link_folder/事件/摩西的臨時會幕（營外）.md |
-| 5 | 會幕（帳幕整體） | 0.615 | link_folder/主題/會幕（帳幕整體）.md |
+| 4 | 約櫃在前頭行與在營中的位置 | 0.643 | link_folder/解經爭議/約櫃在前頭行與在營中的位置.md |
+| 5 | 哥轄子孫 | 0.626 | link_folder/人物/哥轄子孫.md |
 
 判定：✅ 建議使用既有條目 [[利未支派]]（同名／字面對應）
 
@@ -139,10 +139,10 @@ BH：Judah's position at the forefront of the camp signifies their role as leade
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 猶大支派 | 0.832 | link_folder/人物/猶大支派.md |
-| 2 | 拿順 | 0.642 | link_folder/人物/拿順.md |
+| 2 | 拿順 | 0.650 | link_folder/人物/拿順.md |
 | 3 | 猶大（雅各之子） | 0.638 | link_folder/人物/猶大（雅各之子）.md |
 | 4 | 行軍次序 | 0.608 | link_folder/事件/行軍次序.md |
-| 5 | 但支派 | 0.579 | link_folder/人物/但支派.md |
+| 5 | 彌賽亞 | 0.587 | link_folder/神學/彌賽亞.md |
 
 判定：✅ 建議使用既有條目 [[猶大支派]]（同名／字面對應）
 
@@ -286,7 +286,7 @@ KC：The leaders are the same as in Numbers 1, now arranged by camp positions.
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 十二族長協助數點 | 0.755 | link_folder/事件/十二族長協助數點.md |
-| 2 | 拿順 | 0.659 | link_folder/人物/拿順.md |
+| 2 | 拿順 | 0.670 | link_folder/人物/拿順.md |
 | 3 | 十二支派起源 | 0.658 | link_folder/神學/十二支派起源.md |
 | 4 | 行軍次序 | 0.628 | link_folder/事件/行軍次序.md |
 | 5 | 猶大支派 | 0.603 | link_folder/人物/猶大支派.md |
@@ -337,7 +337,7 @@ query:
 | 1 | 以薩迦（價值） | 0.826 | link_folder/人物/以薩迦（價值）.md |
 | 2 | 以薩迦（報酬） | 0.621 | link_folder/原文/以薩迦（報酬）.md |
 | 3 | 西布倫（同住） | 0.609 | link_folder/人物/西布倫（同住）.md |
-| 4 | 拿順 | 0.584 | link_folder/人物/拿順.md |
+| 4 | 拿順 | 0.592 | link_folder/人物/拿順.md |
 | 5 | 猶大支派 | 0.577 | link_folder/人物/猶大支派.md |
 
 判定：✅ 建議使用既有條目 [[以薩迦（價值）]]（同名／字面對應）
@@ -357,7 +357,7 @@ query:
 | 2 | 以法蓮 | 0.546 | link_folder/人物/以法蓮.md |
 | 3 | 猶大支派 | 0.543 | link_folder/人物/猶大支派.md |
 | 4 | 西珥 | 0.527 | link_folder/地點/西珥.md |
-| 5 | 以東 | 0.525 | link_folder/地點/以東.md |
+| 5 | 西緬 | 0.508 | link_folder/人物/西緬.md |
 
 判定：✅ 建議使用既有條目 [[西布倫（同住）]]（同名／字面對應）
 
@@ -375,8 +375,8 @@ query:
 | 1 | 迦得（萬幸） | 0.865 | link_folder/人物/迦得（萬幸）.md |
 | 2 | 迦得（幸運） | 0.664 | link_folder/原文/迦得（幸運）.md |
 | 3 | 亞設（有福） | 0.631 | link_folder/人物/亞設（有福）.md |
-| 4 | 便雅憫 | 0.584 | link_folder/人物/便雅憫.md |
-| 5 | 猶大支派 | 0.582 | link_folder/人物/猶大支派.md |
+| 4 | 迦勒 | 0.604 | link_folder/人物/迦勒.md |
+| 5 | 便雅憫 | 0.584 | link_folder/人物/便雅憫.md |
 
 判定：✅ 建議使用既有條目 [[迦得（萬幸）]]（同名／字面對應）
 
@@ -433,7 +433,7 @@ query:
 | 2 | 以法蓮 | 0.627 | link_folder/人物/以法蓮.md |
 | 3 | 十二支派起源 | 0.625 | link_folder/神學/十二支派起源.md |
 | 4 | 猶大支派 | 0.608 | link_folder/人物/猶大支派.md |
-| 5 | 迦得（萬幸） | 0.587 | link_folder/人物/迦得（萬幸）.md |
+| 5 | 亞捫人 | 0.601 | link_folder/人物/亞捫人.md |
 
 判定：✅ 建議使用既有條目 [[便雅憫]]（同名／字面對應）
 
@@ -469,9 +469,9 @@ query:
 |---|---|---:|---|
 | 1 | 拿弗他利 | 0.796 | link_folder/人物/拿弗他利.md |
 | 2 | 但支派 | 0.592 | link_folder/人物/但支派.md |
-| 3 | 拿鶴 | 0.562 | link_folder/人物/拿鶴.md |
-| 4 | 拿順 | 0.560 | link_folder/人物/拿順.md |
-| 5 | 以法蓮 | 0.551 | link_folder/人物/以法蓮.md |
+| 3 | 亞衲族與偉人拿非林 | 0.571 | link_folder/背景/亞衲族與偉人拿非林.md |
+| 4 | 拿順 | 0.564 | link_folder/人物/拿順.md |
+| 5 | 拿鶴 | 0.562 | link_folder/人物/拿鶴.md |
 
 判定：✅ 建議使用既有條目 [[拿弗他利]]（同名／字面對應）
 
@@ -487,11 +487,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拿順 | 0.857 | link_folder/人物/拿順.md |
-| 2 | 亞倫的祭司譜系 | 0.626 | link_folder/人物/亞倫的祭司譜系.md |
+| 1 | 拿順 | 0.856 | link_folder/人物/拿順.md |
+| 2 | 亞倫的祭司譜系 | 0.614 | link_folder/人物/亞倫的祭司譜系.md |
 | 3 | 十二族長協助數點 | 0.598 | link_folder/事件/十二族長協助數點.md |
-| 4 | 猶大支派 | 0.583 | link_folder/人物/猶大支派.md |
-| 5 | 以利亞撒 | 0.575 | link_folder/人物/以利亞撒.md |
+| 4 | 拿細耳人（nazir） | 0.587 | link_folder/原文/拿細耳人（nazir）.md |
+| 5 | 猶大支派 | 0.583 | link_folder/人物/猶大支派.md |
 
 判定：✅ 建議使用既有條目 [[拿順]]（同名／字面對應）
 
@@ -529,7 +529,7 @@ query:
 | 2 | 六十萬零三千五百五十人（出38：26） | 0.646 | link_folder/事件/六十萬零三千五百五十人（出38：26）.md |
 | 3 | 出埃及 | 0.599 | link_folder/歷史/出埃及.md |
 | 4 | 兩次普查的關係 | 0.583 | link_folder/解經爭議/兩次普查的關係.md |
-| 5 | 數點民數 | 0.568 | link_folder/事件/數點民數.md |
+| 5 | 利未人總數的三百之差 | 0.578 | link_folder/解經爭議/利未人總數的三百之差.md |
 
 判定：✅ 建議使用既有條目 [[六十萬人的數目]]（同名／字面對應）
 

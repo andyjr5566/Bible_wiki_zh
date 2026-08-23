@@ -55,6 +55,9 @@ links:
 - verse: 9
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 9
+  phrase: 戲笑
+  target: 戲笑
 - verse: 10
   phrase: 亞伯拉罕
   target: 亞伯拉罕
@@ -86,14 +89,23 @@ links:
   phrase: 夏甲
   target: 夏甲
 - verse: 17
+  phrase: 神的使者
+  target: 神的使者
+- verse: 17
   phrase: 夏甲
   target: 夏甲
 - verse: 19
   phrase: 夏甲
   target: 夏甲
+- verse: 21
+  phrase: 巴蘭的曠野
+  target: 巴蘭的曠野
 - verse: 22
   phrase: 亞比米勒
   target: 亞比米勒
+- verse: 22
+  phrase: 非各
+  target: 非各
 - verse: 22
   phrase: 亞伯拉罕
   target: 亞伯拉罕
@@ -136,6 +148,9 @@ links:
 - verse: 32
   phrase: 亞比米勒
   target: 亞比米勒
+- verse: 32
+  phrase: 非各
+  target: 非各
 - verse: 33
   phrase: 亞伯拉罕
   target: 亞伯拉罕
@@ -143,8 +158,14 @@ links:
   phrase: 別是巴
   target: 別是巴
 - verse: 33
+  phrase: 垂絲柳樹
+  target: 垂絲柳樹
+- verse: 33
   phrase: 耶和華─永生神
   target: 耶和華永生神
 - verse: 34
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 34
+  phrase: 非利士人
+  target: 非利士人

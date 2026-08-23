@@ -23,6 +23,9 @@ links:
   phrase: 清早起來
   target: 清早起來
 - verse: 3
+  phrase: 驢
+  target: 驢
+- verse: 3
   phrase: 以撒
   target: 以撒
 - verse: 4
@@ -34,6 +37,9 @@ links:
 - verse: 5
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 5
+  phrase: 驢
+  target: 驢
 - verse: 6
   phrase: 亞伯拉罕
   target: 亞伯拉罕
@@ -91,6 +97,9 @@ links:
 - verse: 15
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 16
+  phrase: 指著自己起誓
+  target: 指著自己起誓
 - verse: 19
   phrase: 亞伯拉罕
   target: 亞伯拉罕
@@ -101,6 +110,9 @@ links:
   phrase: 亞伯拉罕
   target: 亞伯拉罕
 - verse: 20
+  phrase: 密迦
+  target: 密迦
+- verse: 20
   phrase: 拿鶴
   target: 拿鶴
 - verse: 22
@@ -109,6 +121,9 @@ links:
 - verse: 22
   phrase: 利百加
   target: 利百加
+- verse: 23
+  phrase: 密迦
+  target: 密迦
 - verse: 23
   phrase: 亞伯拉罕
   target: 亞伯拉罕

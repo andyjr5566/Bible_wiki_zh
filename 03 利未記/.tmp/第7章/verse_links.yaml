@@ -64,9 +64,18 @@ links:
 - verse: 10
   phrase: 素祭
   target: 素祭（minchah）
+- verse: 10
+  phrase: 亞倫的子孫
+  target: 亞倫和他兒子（祭司）
 - verse: 11
   phrase: 平安祭
   target: 平安祭
+- verse: 12
+  phrase: 細麵
+  target: 細麵
+- verse: 12
+  phrase: 感謝祭
+  target: 平安祭的三類（感謝祭、還願祭、甘心祭）
 - verse: 13
   phrase: 平安祭
   target: 平安祭
@@ -91,6 +100,12 @@ links:
 - verse: 18
   phrase: 平安祭
   target: 平安祭
+- verse: 18
+  phrase: 不蒙悅納
+  target: 獻祭不蒙悅納
+- verse: 18
+  phrase: 可憎嫌的
+  target: 獻祭不蒙悅納
 - verse: 19
   phrase: 污穢
   target: 污穢
@@ -155,11 +170,17 @@ links:
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 33
+  phrase: 亞倫子孫
+  target: 亞倫和他兒子（祭司）
+- verse: 33
   phrase: 平安祭
   target: 平安祭
 - verse: 33
   phrase: 脂油
   target: 脂油
+- verse: 33
+  phrase: 為分
+  target: 祭司的分（靠祭物養生）
 - verse: 34
   phrase: 平安祭
   target: 平安祭

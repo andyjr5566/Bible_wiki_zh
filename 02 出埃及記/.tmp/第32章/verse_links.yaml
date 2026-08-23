@@ -2,6 +2,9 @@ book: 出埃及記
 chapter: 32
 links:
 - verse: 1
+  phrase: 摩西
+  target: 摩西
+- verse: 1
   phrase: 亞倫
   target: 亞倫
 - verse: 1
@@ -10,6 +13,12 @@ links:
 - verse: 2
   phrase: 亞倫
   target: 亞倫
+- verse: 2
+  phrase: 摘下你們妻子、兒女耳上的金環
+  target: 耳環作異教護身符
+- verse: 3
+  phrase: 百姓就都摘下他們耳上的金環
+  target: 金環
 - verse: 3
   phrase: 亞倫
   target: 亞倫
@@ -19,33 +28,69 @@ links:
 - verse: 4
   phrase: 牛犢
   target: 金牛犢事件
+- verse: 4
+  phrase: 這是領你出埃及地的神
+  target: 古代近東偶像崇拜
 - verse: 5
   phrase: 亞倫
   target: 亞倫
 - verse: 5
   phrase: 牛犢
   target: 金牛犢事件
+- verse: 6
+  phrase: 坐下吃喝，起來玩耍
+  target: 坐下吃喝起來玩耍
+- verse: 7
+  phrase: 摩西
+  target: 摩西
 - verse: 8
   phrase: 牛犢
   target: 金牛犢事件
+- verse: 9
+  phrase: 摩西
+  target: 摩西
 - verse: 9
   phrase: 硬著頸項的百姓
   target: 硬著頸項的百姓
 - verse: 11
   phrase: 摩西便懇求耶和華
   target: 摩西為百姓代求（金牛犢）
+- verse: 12
+  phrase: 求你轉意，不發你的烈怒
+  target: 代求
 - verse: 13
   phrase: 亞伯拉罕
   target: 亞伯拉罕
 - verse: 13
   phrase: 以撒
   target: 以撒
+- verse: 14
+  phrase: 於是耶和華後悔
+  target: 神的後悔與憂傷
+- verse: 15
+  phrase: 摩西轉身下山
+  target: 摩西
+- verse: 15
+  phrase: 手裡拿著兩塊法版
+  target: 法版
 - verse: 17
   phrase: 約書亞
   target: 約書亞
+- verse: 17
+  phrase: 摩西
+  target: 摩西
+- verse: 18
+  phrase: 摩西
+  target: 摩西
+- verse: 19
+  phrase: 摩西
+  target: 摩西
 - verse: 19
   phrase: 牛犢
   target: 金牛犢事件
+- verse: 19
+  phrase: 又看見人跳舞
+  target: 坐下吃喝起來玩耍
 - verse: 19
   phrase: 把兩塊版扔在山下摔碎了
   target: 摩西摔碎法版（廢約的象徵）
@@ -53,17 +98,35 @@ links:
   phrase: 牛犢
   target: 金牛犢事件
 - verse: 21
+  phrase: 摩西
+  target: 摩西
+- verse: 21
   phrase: 亞倫
   target: 亞倫
 - verse: 22
   phrase: 亞倫
   target: 亞倫
+- verse: 22
+  phrase: 這百姓專於作惡，是你知道的
+  target: 推諉罪責
 - verse: 23
   phrase: 神像
   target: 金牛犢事件
+- verse: 23
+  phrase: 摩西
+  target: 摩西
+- verse: 24
+  phrase: 金環
+  target: 金環
+- verse: 24
+  phrase: 我把金環扔在火中
+  target: 推諉罪責
 - verse: 24
   phrase: 牛犢
   target: 金牛犢事件
+- verse: 25
+  phrase: 摩西
+  target: 摩西
 - verse: 25
   phrase: 亞倫
   target: 亞倫
@@ -76,9 +139,21 @@ links:
 - verse: 28
   phrase: 利未的子孫
   target: 利未人受聖職討罪
+- verse: 28
+  phrase: 摩西
+  target: 摩西
+- verse: 29
+  phrase: 摩西
+  target: 摩西
+- verse: 30
+  phrase: 摩西
+  target: 摩西
 - verse: 30
   phrase: 或者可以為你們贖罪
   target: 摩西為百姓代求（金牛犢）
+- verse: 31
+  phrase: 摩西
+  target: 摩西
 - verse: 31
   phrase: 金像
   target: 金牛犢事件
@@ -86,8 +161,17 @@ links:
   phrase: 從你所寫的冊上塗抹我的名
   target: 從冊上塗抹（生命冊）
 - verse: 33
+  phrase: 摩西
+  target: 摩西
+- verse: 33
   phrase: 我就從我的冊上塗抹誰的名
   target: 從冊上塗抹（生命冊）
+- verse: 34
+  phrase: 我的使者必在你前面引路
+  target: 耶和華的使者
+- verse: 35
+  phrase: 耶和華殺百姓的緣故
+  target: 耶和華擊打百姓的瘟疫
 - verse: 35
   phrase: 亞倫
   target: 亞倫

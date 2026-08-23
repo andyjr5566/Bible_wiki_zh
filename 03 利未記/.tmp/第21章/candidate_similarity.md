@@ -4,8 +4,8 @@ book: 利未記
 chapter: 21
 candidate_sha256: a88c51844e0eb53302ac196d8a7d8767b0f99d5e9d6f130fec7879cbb9e1541a
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 3cdd9ce524c0d3e4
-link_index_sha256: e832110fe8f0c39f5e67d46ddb1ee96f50ab29589ee4ec887bbc065a598bbe15
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：利未記 第21章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2628 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -39,10 +39,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 祭司不可為死人哀哭（居喪條例） | 0.859 | link_folder/主題/祭司不可為死人哀哭（居喪條例）.md |
-| 2 | 不可挨近死屍（拿細耳人的潔淨） | 0.671 | link_folder/主題/不可挨近死屍（拿細耳人的潔淨）.md |
+| 2 | 不可挨近死屍（拿細耳人的潔淨） | 0.696 | link_folder/主題/不可挨近死屍（拿細耳人的潔淨）.md |
 | 3 | 民19：11-13 | 0.644 | link_folder/互文/民19：11-13.md |
 | 4 | 大祭司娶處女為妻的婚姻條例 | 0.629 | link_folder/主題/大祭司娶處女為妻的婚姻條例.md |
-| 5 | 受膏的祭司 | 0.625 | link_folder/人物/受膏的祭司.md |
+| 5 | 受膏的祭司 | 0.620 | link_folder/人物/受膏的祭司.md |
 
 判定：✅ 建議使用既有條目 [[祭司不可為死人哀哭（居喪條例）]]（同名／字面對應）
 
@@ -62,7 +62,7 @@ query:
 | 2 | 大祭司娶處女為妻的婚姻條例 | 0.660 | link_folder/主題/大祭司娶處女為妻的婚姻條例.md |
 | 3 | 林後6：14 | 0.625 | link_folder/互文/林後6：14.md |
 | 4 | 不可辱沒女兒使她為娼妓 | 0.602 | link_folder/主題/不可辱沒女兒使她為娼妓.md |
-| 5 | 不可姦淫 | 0.596 | link_folder/神學/不可姦淫.md |
+| 5 | 污穢 | 0.601 | link_folder/主題/污穢.md |
 
 判定：✅ 建議使用既有條目 [[祭司不可娶被玷污的婦人為妻]]（同名／字面對應）
 
@@ -97,7 +97,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 受膏的祭司 | 0.757 | link_folder/人物/受膏的祭司.md |
+| 1 | 受膏的祭司 | 0.749 | link_folder/人物/受膏的祭司.md |
 | 2 | 聖膏油 | 0.602 | link_folder/原文/聖膏油.md |
 | 3 | 膏抹成聖 | 0.584 | link_folder/神學/膏抹成聖.md |
 | 4 | 冠冕（裹頭巾） | 0.575 | link_folder/原文/冠冕（裹頭巾）.md |
@@ -156,8 +156,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.589 | link_folder/人物/摩西.md |
-| 2 | 摩西在耶和華面前自辯清白與拒受甘禮 | 0.548 | link_folder/神學/摩西在耶和華面前自辯清白與拒受甘禮.md |
+| 1 | 摩西 | 0.591 | link_folder/人物/摩西.md |
+| 2 | 摩西在耶和華面前自辯清白與拒受甘禮 | 0.528 | link_folder/神學/摩西在耶和華面前自辯清白與拒受甘禮.md |
 | 3 | 摩西的呼召與差遣 | 0.509 | link_folder/神學/摩西的呼召與差遣.md |
 | 4 | 耶和華的話臨到 | 0.504 | link_folder/神學/耶和華的話臨到.md |
 | 5 | 摩西看為極大 | 0.501 | link_folder/人物/摩西看為極大.md |
@@ -180,7 +180,7 @@ query:
 | 2 | 聖潔 | 0.617 | link_folder/神學/聖潔.md |
 | 3 | 你們要聖潔因為我是聖潔的 | 0.609 | link_folder/神學/你們要聖潔因為我是聖潔的.md |
 | 4 | 褻瀆聖名（na.qav） | 0.596 | link_folder/原文/褻瀆聖名（na.qav）.md |
-| 5 | 玷污耶和華的聖所與帳幕 | 0.586 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
+| 5 | 玷污耶和華的聖所與帳幕 | 0.588 | link_folder/神學/玷污耶和華的聖所與帳幕.md |
 
 判定：✅ 建議使用既有條目 [[褻瀆（cha.lal）]]（同名／字面對應）
 
@@ -218,7 +218,7 @@ query:
 | 2 | 有殘疾的祭司不可近前獻祭 | 0.799 | link_folder/主題/有殘疾的祭司不可近前獻祭.md |
 | 3 | 肢體有餘或缺少只可作甘心祭 | 0.750 | link_folder/主題/肢體有餘或缺少只可作甘心祭.md |
 | 4 | 無殘疾（tamim） | 0.741 | link_folder/主題/無殘疾（tamim）.md |
-| 5 | 瑪1：8 | 0.610 | link_folder/互文/瑪1：8.md |
+| 5 | 無殘疾與未曾負軛的紅母牛 | 0.620 | link_folder/神學/無殘疾與未曾負軛的紅母牛.md |
 
 判定：✅ 建議使用既有條目 [[沒有殘疾的祭牲]]（同名／字面對應）
 

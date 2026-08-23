@@ -16,6 +16,15 @@ links:
 - verse: 1
   phrase: 以他瑪
   target: 亞倫的祭司譜系
+- verse: 1
+  phrase: 祭司
+  target: 亞倫的祭司譜系
+- verse: 2
+  phrase: 聖衣
+  target: 聖衣（祭司聖服）
+- verse: 2
+  phrase: 為榮耀，為華美
+  target: 為榮耀為華美（聖衣的目的）
 - verse: 3
   phrase: 心中有智慧
   target: 聖靈膏抹（約壹2：20,27）
@@ -27,16 +36,28 @@ links:
   target: 亞倫
 - verse: 3
   phrase: 分別為聖
-  target: 山上的樣式
+  target: 承接聖職（分別為聖）
+- verse: 3
+  phrase: 祭司
+  target: 亞倫的祭司譜系
 - verse: 4
   phrase: 亞倫
   target: 亞倫
+- verse: 4
+  phrase: 聖服
+  target: 聖衣（祭司聖服）
+- verse: 4
+  phrase: 祭司
+  target: 亞倫的祭司譜系
 - verse: 5
   phrase: 金線
   target: 金線
 - verse: 5
   phrase: 藍色、紫色、朱紅色線
   target: 藍色、紫色、朱紅色線
+- verse: 5
+  phrase: 細麻
+  target: 撚的細麻
 - verse: 6
   phrase: 金線
   target: 金線
@@ -180,16 +201,16 @@ links:
   target: 藍色、紫色、朱紅色線
 - verse: 33
   phrase: 石榴
-  target: 外袍（以弗得的外袍）
+  target: 鈴鐺與石榴（大祭司袍子）
 - verse: 33
   phrase: 金鈴鐺
-  target: 外袍（以弗得的外袍）
+  target: 鈴鐺與石榴（大祭司袍子）
 - verse: 34
   phrase: 金鈴鐺
-  target: 外袍（以弗得的外袍）
+  target: 鈴鐺與石榴（大祭司袍子）
 - verse: 34
   phrase: 石榴
-  target: 外袍（以弗得的外袍）
+  target: 鈴鐺與石榴（大祭司袍子）
 - verse: 35
   phrase: 進聖所
   target: 聖所
@@ -205,6 +226,15 @@ links:
 - verse: 37
   phrase: 冠冕
   target: 冠冕（裹頭巾）
+- verse: 38
+  phrase: 擔當干犯聖物條例的罪孽
+  target: 擔當干犯聖所與祭司職任的罪孽
+- verse: 39
+  phrase: 細麻
+  target: 撚的細麻
+- verse: 39
+  phrase: 內袍
+  target: 內袍（雜色內袍）
 - verse: 39
   phrase: 冠冕
   target: 冠冕（裹頭巾）
@@ -215,17 +245,26 @@ links:
   phrase: 亞倫的兒子
   target: 亞倫的祭司譜系
 - verse: 40
+  phrase: 內袍
+  target: 內袍（雜色內袍）
+- verse: 40
   phrase: 腰帶
   target: 腰帶（繡花腰帶）
 - verse: 40
   phrase: 裹頭巾
   target: 冠冕（裹頭巾）
+- verse: 40
+  phrase: 為榮耀，為華美
+  target: 為榮耀為華美（聖衣的目的）
 - verse: 41
   phrase: 亞倫
   target: 亞倫
 - verse: 41
   phrase: 分別為聖
-  target: 山上的樣式
+  target: 承接聖職（分別為聖）
+- verse: 41
+  phrase: 祭司
+  target: 亞倫的祭司譜系
 - verse: 42
   phrase: 細麻布褲子
   target: 褲子（細麻布褲子）
@@ -241,3 +280,6 @@ links:
 - verse: 43
   phrase: 聖所
   target: 聖所
+- verse: 43
+  phrase: 擔罪
+  target: 擔當干犯聖所與祭司職任的罪孽

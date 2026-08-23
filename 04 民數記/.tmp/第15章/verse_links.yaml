@@ -5,14 +5,35 @@ links:
   phrase: 到了我所賜給你們居住的地
   target: 進迦南地後的獻祭定例與神愛恩慈
 - verse: 3
+  phrase: 火祭
+  target: 火祭（isheh）
+- verse: 3
+  phrase: 燔祭
+  target: 燔祭
+- verse: 3
+  phrase: 平安祭
+  target: 平安祭
+- verse: 3
   phrase: 馨香之祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
+- verse: 4
+  phrase: 伊法
+  target: 伊法
 - verse: 4
   phrase: 調和作素祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
 - verse: 5
+  phrase: 燔祭
+  target: 燔祭
+- verse: 5
+  phrase: 平安祭
+  target: 平安祭
+- verse: 5
   phrase: 奠祭的酒
   target: 燔祭平安祭同獻的素祭與奠祭比例
+- verse: 6
+  phrase: 伊法
+  target: 伊法
 - verse: 6
   phrase: 調和作素祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
@@ -22,6 +43,15 @@ links:
 - verse: 7
   phrase: 馨香之祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
+- verse: 8
+  phrase: 燔祭
+  target: 燔祭
+- verse: 8
+  phrase: 平安祭
+  target: 平安祭
+- verse: 9
+  phrase: 伊法
+  target: 伊法
 - verse: 9
   phrase: 調和作素祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
@@ -40,6 +70,9 @@ links:
 - verse: 15
   phrase: 同居的外人都歸一例
   target: 本地人與寄居者同歸一例的律法精神
+- verse: 15
+  phrase: 寄居
+  target: 寄居身分
 - verse: 16
   phrase: 一樣的條例
   target: 本地人與寄居者同歸一例的律法精神
@@ -49,6 +82,9 @@ links:
 - verse: 18
   phrase: 進去的那地
   target: 進迦南地後的獻祭定例與神愛恩慈
+- verse: 19
+  phrase: 舉祭
+  target: 舉祭
 - verse: 20
   phrase: 初熟的麥子
   target: 初熟的麥子磨麵作餅作為舉祭
@@ -61,18 +97,42 @@ links:
 - verse: 21
   phrase: 初熟的麥子
   target: 初熟的麥子磨麵作餅作為舉祭
+- verse: 21
+  phrase: 舉祭
+  target: 舉祭
 - verse: 24
   phrase: 若有誤行，是會眾所不知道的
   target: 全會眾誤行過錯與大眾贖罪定例
 - verse: 24
+  phrase: 燔祭
+  target: 燔祭
+- verse: 24
+  phrase: 素祭
+  target: 素祭（minchah）
+- verse: 24
+  phrase: 奠祭
+  target: 奠酒
+- verse: 24
   phrase: 馨香之祭
   target: 燔祭平安祭同獻的素祭與奠祭比例
+- verse: 24
+  phrase: 贖罪祭
+  target: 贖罪祭
 - verse: 25
   phrase: 為以色列全會眾贖罪
   target: 全會眾誤行過錯與大眾贖罪定例
 - verse: 25
   phrase: 必蒙赦免
   target: 全會眾誤行過錯與大眾贖罪定例
+- verse: 25
+  phrase: 火祭
+  target: 火祭（isheh）
+- verse: 25
+  phrase: 贖罪祭
+  target: 贖罪祭
+- verse: 26
+  phrase: 寄居
+  target: 寄居身分
 - verse: 26
   phrase: 必蒙赦免
   target: 全會眾誤行過錯與大眾贖罪定例
@@ -92,6 +152,9 @@ links:
   phrase: 必蒙赦免
   target: 全會眾誤行過錯與大眾贖罪定例
 - verse: 29
+  phrase: 寄居
+  target: 寄居身分
+- verse: 29
   phrase: 誤行
   target: 全會眾誤行過錯與大眾贖罪定例
 - verse: 29
@@ -100,6 +163,9 @@ links:
 - verse: 30
   phrase: 擅敢行事的
   target: 擅敢行事與褻瀆耶和華的剪除處分
+- verse: 30
+  phrase: 寄居
+  target: 寄居身分
 - verse: 30
   phrase: 褻瀆了耶和華
   target: 擅敢行事與褻瀆耶和華的剪除處分
@@ -113,23 +179,14 @@ links:
   phrase: 違背耶和華的命令
   target: 擅敢行事與褻瀆耶和華的剪除處分
 - verse: 31
+  phrase: 剪除
+  target: 剪除
+- verse: 31
   phrase: 罪孽要歸到他身上
   target: 擅敢行事與褻瀆耶和華的剪除處分
 - verse: 32
-  phrase: 在安息日撿柴
-  target: 曠野安息日撿柴事件與神明告處決
-- verse: 33
-  phrase: 撿柴
-  target: 曠野安息日撿柴事件與神明告處決
-- verse: 34
-  phrase: 當怎樣辦他，還沒有指明
-  target: 曠野安息日撿柴事件與神明告處決
-- verse: 35
-  phrase: 營外用石頭把他打死
-  target: 曠野安息日撿柴事件與神明告處決
-- verse: 36
-  phrase: 用石頭打死他
-  target: 曠野安息日撿柴事件與神明告處決
+  phrase: 安息日
+  target: 安息日
 - verse: 38
   phrase: 衣服邊上做繸子
   target: 衣服邊的繸子與藍細帶子

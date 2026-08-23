@@ -5,14 +5,38 @@ links:
   phrase: 摩西
   target: 摩西
 - verse: 2
+  phrase: 把自己的兒女獻給摩洛的
+  target: 摩洛（Molech）身分之爭
+- verse: 2
   phrase: 總要治死他；本地人要用石頭把他打死
   target: 摩洛獻兒女治死條例（含知情連坐）
+- verse: 3
+  phrase: 把他從民中剪除
+  target: 剪除
+- verse: 3
+  phrase: 因為他把兒女獻給摩洛
+  target: 不可使兒女經火歸摩洛
+- verse: 3
+  phrase: 玷污我的聖所，褻瀆我的聖名
+  target: 玷污耶和華的聖所與帳幕
+- verse: 4
+  phrase: 摩洛
+  target: 摩洛（Molech）身分之爭
 - verse: 4
   phrase: 本地人若佯為不見，不把他治死
   target: 摩洛獻兒女治死條例（含知情連坐）
+- verse: 5
+  phrase: 摩洛
+  target: 摩洛（Molech）身分之爭
+- verse: 5
+  phrase: 剪除
+  target: 剪除
 - verse: 6
   phrase: 人偏向交鬼的和行巫術的
   target: 不可偏向交鬼行巫術的
+- verse: 6
+  phrase: 剪除
+  target: 剪除
 - verse: 7
   phrase: 所以你們要自潔成聖
   target: 你們要聖潔因為我是聖潔的
@@ -43,9 +67,24 @@ links:
 - verse: 15
   phrase: 人若與獸淫合，總要治死他，也要殺那獸
   target: 不可與獸淫合逆性的事
+- verse: 16
+  phrase: 女人若與獸親近，與他淫合
+  target: 不可與獸淫合逆性的事
+- verse: 16
+  phrase: 罪要歸到他們身上
+  target: 他的血要歸到他身上
+- verse: 17
+  phrase: 人若娶他的姊妹，無論是異母同父的，是異父同母的
+  target: 近親性關係的十二項條例
+- verse: 17
+  phrase: 他們必在本民的眼前被剪除
+  target: 剪除
 - verse: 18
   phrase: 婦人有月經，若與他同房
   target: 不可與經期婦人親近
+- verse: 18
+  phrase: 剪除
+  target: 剪除
 - verse: 19
   phrase: 不可露姨母或是姑母的下體
   target: 近親性關係的十二項條例
@@ -58,12 +97,24 @@ links:
 - verse: 22
   phrase: 免得我領你們去住的那地把你們吐出
   target: 玷污自己也玷污地
+- verse: 24
+  phrase: 流奶與蜜之地
+  target: 流奶與蜜之地
+- verse: 24
+  phrase: 使你們與萬民有分別的
+  target: 分別為聖
 - verse: 25
   phrase: 你們要把潔淨和不潔淨的禽獸分別出來
   target: 潔淨與不潔淨的早期區分
 - verse: 26
   phrase: 你們要歸我為聖，因為我─耶和華是聖的
   target: 你們要聖潔因為我是聖潔的
+- verse: 26
+  phrase: 並叫你們與萬民有分別，使你們作我的民
+  target: 分別為聖
 - verse: 27
   phrase: 是交鬼的或行巫術的，總要治死他們
   target: 不可偏向交鬼行巫術的
+- verse: 27
+  phrase: 人必用石頭把他們打死
+  target: 石刑

@@ -4,8 +4,8 @@ book: 民數記
 chapter: 15
 candidate_sha256: 37d62032e0348d372a1e6444162cfe6570bdec1aefff5e0bbf1e312750724b4b
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: a9038750f46d57b2
-link_index_sha256: 32b32272f148fae563e024a5f87552e54ad61fb7c0b94a7f928c9fea76f52ceb
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第15章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2647 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -38,7 +38,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 進迦南地後的獻祭定例與神愛恩慈 | 0.746 | link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md |
+| 1 | 進迦南地後的獻祭定例與神愛恩慈 | 0.741 | link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md |
 | 2 | 進迦南應許 | 0.632 | link_folder/歷史/進迦南應許.md |
 | 3 | 迦南地 | 0.611 | link_folder/地點/迦南地.md |
 | 4 | 流奶與蜜之地 | 0.604 | link_folder/神學/流奶與蜜之地.md |
@@ -99,8 +99,8 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 初熟的麥子磨麵作餅作為舉祭 | 0.749 | link_folder/神學/初熟的麥子磨麵作餅作為舉祭.md |
-| 2 | 初熟 | 0.697 | link_folder/原文/初熟.md |
-| 3 | 初熟果子 | 0.693 | link_folder/神學/初熟果子.md |
+| 2 | 初熟果子 | 0.693 | link_folder/神學/初熟果子.md |
+| 3 | 初熟 | 0.691 | link_folder/原文/初熟.md |
 | 4 | 古代近東初熟果子奉獻 | 0.619 | link_folder/背景/古代近東初熟果子奉獻.md |
 | 5 | 五旬節兩個有酵餅的搖祭條例 | 0.609 | link_folder/主題/五旬節兩個有酵餅的搖祭條例.md |
 
@@ -119,7 +119,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 全會眾誤行過錯與大眾贖罪定例 | 0.795 | link_folder/神學/全會眾誤行過錯與大眾贖罪定例.md |
-| 2 | 全會眾 | 0.688 | link_folder/人物/全會眾.md |
+| 2 | 全會眾 | 0.685 | link_folder/人物/全會眾.md |
 | 3 | 誤犯 | 0.675 | link_folder/神學/誤犯.md |
 | 4 | 個人誤犯過錯與一歲母山羊贖罪祭 | 0.665 | link_folder/神學/個人誤犯過錯與一歲母山羊贖罪祭.md |
 | 5 | 贖罪祭 | 0.609 | link_folder/神學/贖罪祭.md |
@@ -161,8 +161,8 @@ query:
 | 1 | 擅敢行事與褻瀆耶和華的剪除處分 | 0.746 | link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md |
 | 2 | 剪除 | 0.557 | link_folder/原文/剪除.md |
 | 3 | 從民中剪除的含義 | 0.554 | link_folder/解經爭議/從民中剪除的含義.md |
-| 4 | 在米利巴未將耶和華尊為聖 | 0.550 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
-| 5 | 故意犯罪沒有贖罪祭 | 0.547 | link_folder/神學/故意犯罪沒有贖罪祭.md |
+| 4 | 故意犯罪沒有贖罪祭 | 0.547 | link_folder/神學/故意犯罪沒有贖罪祭.md |
+| 5 | 不潔淨被剪除預表拒絕恩典滅亡（來10：26-29） | 0.545 | link_folder/互文/不潔淨被剪除預表拒絕恩典滅亡（來10：26-29）.md |
 
 判定：✅ 建議使用既有條目 [[擅敢行事與褻瀆耶和華的剪除處分]]（同名／字面對應）
 
@@ -241,7 +241,7 @@ query:
 | 2 | 燔祭 | 0.645 | link_folder/神學/燔祭.md |
 | 3 | 燔祭平安祭同獻的素祭與奠祭比例 | 0.603 | link_folder/神學/燔祭平安祭同獻的素祭與奠祭比例.md |
 | 4 | 素祭（minchah） | 0.587 | link_folder/原文/素祭（minchah）.md |
-| 5 | 壇火常燒不熄滅 | 0.571 | link_folder/主題/壇火常燒不熄滅.md |
+| 5 | 耶和華的烈火將兩百五十個拿香爐者徹底毀滅 | 0.580 | link_folder/事件/耶和華的烈火將兩百五十個拿香爐者徹底毀滅.md |
 
 判定：✅ 建議使用既有條目 [[火祭（isheh）]]（同名／字面對應）
 
@@ -389,7 +389,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 初熟 | 0.686 | link_folder/原文/初熟.md |
+| 1 | 初熟 | 0.673 | link_folder/原文/初熟.md |
 | 2 | 初熟的麥子磨麵作餅作為舉祭 | 0.655 | link_folder/神學/初熟的麥子磨麵作餅作為舉祭.md |
 | 3 | 初熟果子 | 0.608 | link_folder/神學/初熟果子.md |
 | 4 | 五旬節兩個有酵餅的搖祭條例 | 0.552 | link_folder/主題/五旬節兩個有酵餅的搖祭條例.md |
@@ -507,7 +507,7 @@ query:
 | 2 | 曠野安息日撿柴事件與神明告處決 | 0.580 | link_folder/事件/曠野安息日撿柴事件與神明告處決.md |
 | 3 | 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件） | 0.568 | link_folder/事件/褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）.md |
 | 4 | 來13：12-13 | 0.566 | link_folder/互文/來13：12-13.md |
-| 5 | 營外焚燒 | 0.532 | link_folder/主題/營外焚燒.md |
+| 5 | 營外焚燒 | 0.533 | link_folder/主題/營外焚燒.md |
 
 判定：✅ 建議使用既有條目 [[石刑]]（同名／字面對應）
 

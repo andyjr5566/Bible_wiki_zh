@@ -440,6 +440,11 @@ B_needs_update:
   match_type: exact
   existing_title: 哈妥爾（Hathor）
   existing_path: link_folder/文化/哈妥爾（Hathor）.md
+- existing_path: link_folder/解經爭議/紅海指的是哪個海.md
+  existing_title: 紅海指的是哪個海
+  match_type: exact
+  name: 紅海指的是哪個海
+  suggested_type: 解經爭議
 C_new_formal:
 - name: 車兵長
   suggested_type: 原文
@@ -465,19 +470,5 @@ C_new_formal:
     verses:
     - 25
   target_path: link_folder/解經爭議/車輪脫落.md
-- name: 紅海指的是哪個海
-  suggested_type: 解經爭議
-  evidence: 2、21節；《啟導本》長註、賈斯樂郝威〈命題18〉、《丁道爾》、《中文聖經註釋》緒論、《舊約背景註釋》五處各給不同水域
-  target_path: link_folder/解經爭議/紅海指的是哪個海.md
-  semantic_hint:
-  - title: 海（紅海）
-    score: 0.597
-    type: 地點
-  - title: 紅海曠野
-    score: 0.494
-    type: 地點
-  - title: 詩一零六9 紅海乾地
-    score: 0.464
-    type: 互文
 D_new_candidate: []
 E_skip: []

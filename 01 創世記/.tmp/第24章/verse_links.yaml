@@ -26,6 +26,9 @@ links:
   phrase: 大腿底下
   target: 大腿底下起誓
 - verse: 10
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 10
   phrase: 十匹駱駝
   target: 十匹駱駝
 - verse: 10
@@ -35,11 +38,17 @@ links:
   phrase: 拿鶴
   target: 拿鶴
 - verse: 11
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 11
   phrase: 水井
   target: 水井
 - verse: 12
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 14
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 14
   phrase: 以撒
   target: 以撒
@@ -58,6 +67,15 @@ links:
 - verse: 15
   phrase: 密迦
   target: 密迦
+- verse: 19
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 20
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 22
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 22
   phrase: 金環
   target: 金環
@@ -91,21 +109,39 @@ links:
 - verse: 29
   phrase: 金鐲
   target: 金鐲
+- verse: 29
+  phrase: 駱駝
+  target: 駱駝成為家畜
+- verse: 31
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 32
   phrase: 拉班
   target: 拉班
+- verse: 32
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 33
   phrase: 拉班
   target: 拉班
 - verse: 34
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 35
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 42
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 44
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 45
   phrase: 利百加
   target: 利百加
+- verse: 46
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 47
   phrase: 密迦
   target: 密迦
@@ -118,6 +154,9 @@ links:
 - verse: 48
   phrase: 亞伯拉罕
   target: 亞伯拉罕
+- verse: 49
+  phrase: 慈愛誠實
+  target: 慈愛誠實
 - verse: 50
   phrase: 拉班
   target: 拉班
@@ -154,21 +193,33 @@ links:
 - verse: 61
   phrase: 利百加
   target: 利百加
+- verse: 61
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 62
   phrase: 以撒
   target: 以撒
 - verse: 63
   phrase: 以撒
   target: 以撒
+- verse: 63
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 64
   phrase: 利百加
   target: 利百加
 - verse: 64
   phrase: 以撒
   target: 以撒
+- verse: 64
+  phrase: 駱駝
+  target: 駱駝成為家畜
 - verse: 65
   phrase: 利百加
   target: 利百加
+- verse: 65
+  phrase: 帕子
+  target: 蒙臉帕子
 - verse: 66
   phrase: 以撒
   target: 以撒

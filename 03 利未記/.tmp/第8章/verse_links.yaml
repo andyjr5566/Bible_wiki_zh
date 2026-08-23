@@ -16,6 +16,9 @@ links:
 - verse: 2
   phrase: 贖罪祭
   target: 贖罪祭
+- verse: 2
+  phrase: 無酵餅
+  target: 無酵餅
 - verse: 3
   phrase: 會眾
   target: 全會眾
@@ -191,6 +194,9 @@ links:
   phrase: 兩個腰子
   target: 腰子
 - verse: 26
+  phrase: 無酵餅
+  target: 無酵餅
+- verse: 26
   phrase: 脂油
   target: 脂油
 - verse: 27
@@ -241,6 +247,9 @@ links:
 - verse: 31
   phrase: 承接聖職
   target: 承接聖職（分別為聖）
+- verse: 33
+  phrase: 七天不可出會幕的門
+  target: 七日承接聖職不出會幕門
 - verse: 33
   phrase: 承接聖職
   target: 承接聖職（分別為聖）

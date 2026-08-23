@@ -4,8 +4,8 @@ book: 民數記
 chapter: 1
 candidate_sha256: 2ef25d8d410c1d232a0e7957df002325d0d45ef29b0e30166cb48489d795984b
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: c2abf8934419fa2d
-link_index_sha256: 63feb9a64e3fb5e516c6e7a6352ff04131187d149984c1f419d4c256c2171684
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第1章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2630 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -39,9 +39,9 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 會幕（帳幕整體） | 0.802 | link_folder/主題/會幕（帳幕整體）.md |
-| 2 | 法櫃的帳幕 | 0.745 | link_folder/地點/法櫃的帳幕.md |
+| 2 | 法櫃的帳幕 | 0.763 | link_folder/地點/法櫃的帳幕.md |
 | 3 | 摩西的臨時會幕（營外） | 0.697 | link_folder/事件/摩西的臨時會幕（營外）.md |
-| 4 | 約櫃 | 0.693 | link_folder/主題/約櫃.md |
+| 4 | 約櫃 | 0.688 | link_folder/主題/約櫃.md |
 | 5 | 法版 | 0.688 | link_folder/原文/法版.md |
 
 判定：✅ 建議使用既有條目 [[會幕（帳幕整體）]]（同名／字面對應）
@@ -57,11 +57,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西乃的曠野 | 0.827 | link_folder/地點/西乃的曠野.md |
+| 1 | 西乃的曠野 | 0.825 | link_folder/地點/西乃的曠野.md |
 | 2 | 以色列到達西乃山 | 0.735 | link_folder/事件/以色列到達西乃山.md |
 | 3 | 汛的曠野 | 0.725 | link_folder/地點/汛的曠野.md |
 | 4 | 西乃 | 0.718 | link_folder/地點/西乃.md |
-| 5 | 西乃山 | 0.661 | link_folder/地點/西乃山.md |
+| 5 | 西乃山 | 0.669 | link_folder/地點/西乃山.md |
 
 判定：✅ 建議使用既有條目 [[西乃的曠野]]（同名／字面對應）
 
@@ -76,11 +76,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.775 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.777 | link_folder/人物/摩西.md |
 | 2 | 摩西上山見神 | 0.684 | link_folder/事件/摩西上山見神.md |
-| 3 | 亞倫 | 0.678 | link_folder/人物/亞倫.md |
-| 4 | 耶和華的話臨到 | 0.667 | link_folder/神學/耶和華的話臨到.md |
-| 5 | 被拒絕的拯救者摩西 | 0.638 | link_folder/互文/被拒絕的拯救者摩西.md |
+| 3 | 耶和華的話臨到 | 0.667 | link_folder/神學/耶和華的話臨到.md |
+| 4 | 亞倫 | 0.661 | link_folder/人物/亞倫.md |
+| 5 | 神與摩西面對面明說 | 0.643 | link_folder/神學/神與摩西面對面明說.md |
 
 判定：✅ 建議使用既有條目 [[摩西]]（同名／字面對應）
 
@@ -95,10 +95,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞倫 | 0.662 | link_folder/人物/亞倫.md |
-| 2 | 十二族長協助數點 | 0.589 | link_folder/事件/十二族長協助數點.md |
-| 3 | 亞倫的祭司譜系 | 0.573 | link_folder/人物/亞倫的祭司譜系.md |
-| 4 | 拿順 | 0.568 | link_folder/人物/拿順.md |
+| 1 | 亞倫 | 0.655 | link_folder/人物/亞倫.md |
+| 2 | 亞倫的祭司譜系 | 0.593 | link_folder/人物/亞倫的祭司譜系.md |
+| 3 | 十二族長協助數點 | 0.589 | link_folder/事件/十二族長協助數點.md |
+| 4 | 拿順 | 0.570 | link_folder/人物/拿順.md |
 | 5 | 數點民數 | 0.558 | link_folder/事件/數點民數.md |
 
 判定：✅ 建議使用既有條目 [[亞倫]]（同名／字面對應）
@@ -154,7 +154,7 @@ query:
 |---|---|---:|---|
 | 1 | 猶大支派 | 0.813 | link_folder/人物/猶大支派.md |
 | 2 | 猶大（雅各之子） | 0.656 | link_folder/人物/猶大（雅各之子）.md |
-| 3 | 拿順 | 0.599 | link_folder/人物/拿順.md |
+| 3 | 拿順 | 0.606 | link_folder/人物/拿順.md |
 | 4 | 十二支派起源 | 0.594 | link_folder/神學/十二支派起源.md |
 | 5 | 但支派 | 0.558 | link_folder/人物/但支派.md |
 
@@ -270,8 +270,8 @@ query:
 |---|---|---:|---|
 | 1 | 利未支派 | 0.899 | link_folder/人物/利未支派.md |
 | 2 | 利未 | 0.718 | link_folder/人物/利未.md |
-| 3 | 利未三族分工 | 0.693 | link_folder/事件/利未三族分工.md |
-| 4 | 利未人代替長子 | 0.683 | link_folder/神學/利未人代替長子.md |
+| 3 | 利未三族分工 | 0.706 | link_folder/事件/利未三族分工.md |
+| 4 | 利未人受職與祭司受職的差別 | 0.703 | link_folder/主題/利未人受職與祭司受職的差別.md |
 | 5 | 利未人受聖職討罪 | 0.677 | link_folder/事件/利未人受聖職討罪.md |
 
 判定：✅ 建議使用既有條目 [[利未支派]]（同名／字面對應）
@@ -310,9 +310,9 @@ query:
 |---|---|---:|---|
 | 1 | 二十歲以外能打仗的 | 0.859 | link_folder/主題/二十歲以外能打仗的.md |
 | 2 | 以色列人的軍隊 | 0.671 | link_folder/神學/以色列人的軍隊.md |
-| 3 | 數點民數 | 0.545 | link_folder/事件/數點民數.md |
-| 4 | 古代近東的人口統計 | 0.538 | link_folder/背景/古代近東的人口統計.md |
-| 5 | 三十歲直到五十歲（利未人任職年齡） | 0.537 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
+| 3 | 三十歲直到五十歲（利未人任職年齡） | 0.572 | link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md |
+| 4 | 數點民數 | 0.545 | link_folder/事件/數點民數.md |
+| 5 | 利未人任職年齡的差異 | 0.542 | link_folder/解經爭議/利未人任職年齡的差異.md |
 
 判定：✅ 建議使用既有條目 [[二十歲以外能打仗的]]（同名／字面對應）
 
@@ -348,11 +348,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 外人近前來必被治死 | 0.883 | link_folder/主題/外人近前來必被治死.md |
-| 2 | 凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡 | 0.603 | link_folder/神學/凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡.md |
-| 3 | 不可親近 | 0.601 | link_folder/神學/不可親近.md |
-| 4 | 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件） | 0.596 | link_folder/事件/褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）.md |
-| 5 | 剪除 | 0.596 | link_folder/原文/剪除.md |
+| 1 | 外人近前來必被治死 | 0.895 | link_folder/主題/外人近前來必被治死.md |
+| 2 | 凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡 | 0.617 | link_folder/神學/凡擅進靠近耶和華會棚與祭事場者必定蒙誅死亡.md |
+| 3 | 寄居的與本地人同歸一例 | 0.603 | link_folder/主題/寄居的與本地人同歸一例.md |
+| 4 | 不可親近 | 0.601 | link_folder/神學/不可親近.md |
+| 5 | 褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件） | 0.596 | link_folder/事件/褻瀆聖名案例（利未記唯一記載的具體刑罰執行事件）.md |
 
 判定：✅ 建議使用既有條目 [[外人近前來必被治死]]（同名／字面對應）
 
@@ -369,10 +369,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 十二族長協助數點 | 0.900 | link_folder/事件/十二族長協助數點.md |
-| 2 | 以色列的眾長老 | 0.688 | link_folder/人物/以色列的眾長老.md |
-| 3 | 摩西立首領 | 0.663 | link_folder/事件/摩西立首領.md |
-| 4 | 以色列人的官長 | 0.660 | link_folder/人物/以色列人的官長.md |
-| 5 | 以色列的長老 | 0.657 | link_folder/文化/以色列的長老.md |
+| 2 | 以色列的長老 | 0.704 | link_folder/文化/以色列的長老.md |
+| 3 | 以色列的眾長老 | 0.688 | link_folder/人物/以色列的眾長老.md |
+| 4 | 摩西立首領 | 0.663 | link_folder/事件/摩西立首領.md |
+| 5 | 以色列人的官長 | 0.660 | link_folder/人物/以色列人的官長.md |
 
 判定：✅ 建議使用既有條目 [[十二族長協助數點]]（同名／字面對應）
 
@@ -388,7 +388,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拿順 | 0.814 | link_folder/人物/拿順.md |
+| 1 | 拿順 | 0.815 | link_folder/人物/拿順.md |
 | 2 | 十二族長協助數點 | 0.612 | link_folder/事件/十二族長協助數點.md |
 | 3 | 拿弗他利 | 0.587 | link_folder/人物/拿弗他利.md |
 | 4 | 拿鶴 | 0.582 | link_folder/人物/拿鶴.md |
@@ -543,8 +543,8 @@ query:
 | 1 | 迦得（萬幸） | 0.838 | link_folder/人物/迦得（萬幸）.md |
 | 2 | 迦得（幸運） | 0.635 | link_folder/原文/迦得（幸運）.md |
 | 3 | 亞設（有福） | 0.609 | link_folder/人物/亞設（有福）.md |
-| 4 | 十二支派起源 | 0.600 | link_folder/神學/十二支派起源.md |
-| 5 | 拿弗他利 | 0.582 | link_folder/人物/拿弗他利.md |
+| 4 | 迦勒 | 0.601 | link_folder/人物/迦勒.md |
+| 5 | 十二支派起源 | 0.600 | link_folder/神學/十二支派起源.md |
 
 判定：✅ 建議使用既有條目 [[迦得（萬幸）]]（同名／字面對應）
 
@@ -582,7 +582,7 @@ query:
 | 2 | 拿鶴 | 0.611 | link_folder/人物/拿鶴.md |
 | 3 | 辟拉 | 0.550 | link_folder/人物/辟拉.md |
 | 4 | 但支派 | 0.547 | link_folder/人物/但支派.md |
-| 5 | 迦南 | 0.543 | link_folder/人物/迦南.md |
+| 5 | 拿順 | 0.547 | link_folder/人物/拿順.md |
 
 判定：✅ 建議使用既有條目 [[拿弗他利]]（同名／字面對應）
 

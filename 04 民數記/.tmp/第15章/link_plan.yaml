@@ -92,6 +92,11 @@ B_needs_update:
   match_type: exact
   existing_title: 石刑
   existing_path: link_folder/背景/石刑.md
+- existing_path: link_folder/事件/曠野安息日撿柴事件與神明告處決.md
+  existing_title: 曠野安息日撿柴事件與神明告處決
+  match_type: exact
+  name: 曠野安息日撿柴事件與神明告處決
+  suggested_type: 事件
 C_new_formal:
 - name: 進迦南地後的獻祭定例與神愛恩慈
   suggested_type: 主題
@@ -154,16 +159,6 @@ C_new_formal:
   - phrase: 違背耶和華的命令
   - phrase: 罪孽要歸到他身上
   target_path: link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md
-- name: 曠野安息日撿柴事件與神明告處決
-  suggested_type: 事件
-  evidence: 記載以眾在野遇見一人於安息聖日為一己欲生火而蓄意收集柴草，領袖將之關監尋求聖諦指示，進而獲神明確宣示以石頭在營外治死的司法判決，為防護救贖安息免受藐視留下萬代借鏡與肅然警誡。
-  surfaces:
-  - phrase: 在安息日撿柴
-  - phrase: 撿柴
-  - phrase: 當怎樣辦他，還沒有指明
-  - phrase: 營外用石頭把他打死
-  - phrase: 用石頭打死他
-  target_path: link_folder/事件/曠野安息日撿柴事件與神明告處決.md
 - name: 衣服邊的繸子與藍細帶子
   suggested_type: 文化
   evidence: 神飭令所有會民在長袍衣緣角落縫製明顯整齊之繸子且加上極為刺眼警醒的蔚藍天朝色緞條，使生活步行衣飾成為流動警醒碑記，使人看見就立然想起與永生天上長遠相守並受天度恩約束約縛之本分為榮。

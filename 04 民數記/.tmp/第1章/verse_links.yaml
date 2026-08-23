@@ -34,12 +34,36 @@ links:
 - verse: 5
   phrase: 流便
   target: 流便
+- verse: 6
+  phrase: 西緬
+  target: 西緬
+- verse: 7
+  phrase: 拿順
+  target: 拿順
+- verse: 8
+  phrase: 以薩迦
+  target: 以薩迦（價值）
+- verse: 9
+  phrase: 西布倫
+  target: 西布倫（同住）
 - verse: 10
   phrase: 以法蓮
   target: 以法蓮
 - verse: 10
   phrase: 瑪拿西
   target: 瑪拿西
+- verse: 11
+  phrase: 便雅憫
+  target: 便雅憫
+- verse: 13
+  phrase: 亞設
+  target: 亞設（有福）
+- verse: 14
+  phrase: 迦得
+  target: 迦得（萬幸）
+- verse: 15
+  phrase: 拿弗他利
+  target: 拿弗他利
 - verse: 16
   phrase: 首領
   target: 十二族長協助數點
@@ -89,6 +113,9 @@ links:
   phrase: 被數的
   target: 數點民數
 - verse: 22
+  phrase: 西緬
+  target: 西緬
+- verse: 22
   phrase: 家室
   target: 家室與宗族
 - verse: 22
@@ -101,6 +128,9 @@ links:
   phrase: 被數的
   target: 數點民數
 - verse: 24
+  phrase: 迦得
+  target: 迦得（萬幸）
+- verse: 24
   phrase: 家室
   target: 家室與宗族
 - verse: 24
@@ -125,6 +155,9 @@ links:
   phrase: 被數的
   target: 數點民數
 - verse: 28
+  phrase: 以薩迦
+  target: 以薩迦（價值）
+- verse: 28
   phrase: 家室
   target: 家室與宗族
 - verse: 28
@@ -136,6 +169,9 @@ links:
 - verse: 28
   phrase: 被數的
   target: 數點民數
+- verse: 30
+  phrase: 西布倫
+  target: 西布倫（同住）
 - verse: 30
   phrase: 家室
   target: 家室與宗族
@@ -179,6 +215,9 @@ links:
   phrase: 被數的
   target: 數點民數
 - verse: 36
+  phrase: 便雅憫
+  target: 便雅憫
+- verse: 36
   phrase: 家室
   target: 家室與宗族
 - verse: 36
@@ -203,6 +242,9 @@ links:
   phrase: 被數的
   target: 數點民數
 - verse: 40
+  phrase: 亞設
+  target: 亞設（有福）
+- verse: 40
   phrase: 家室
   target: 家室與宗族
 - verse: 40
@@ -214,6 +256,9 @@ links:
 - verse: 40
   phrase: 被數的
   target: 數點民數
+- verse: 42
+  phrase: 拿弗他利
+  target: 拿弗他利
 - verse: 42
   phrase: 家室
   target: 家室與宗族

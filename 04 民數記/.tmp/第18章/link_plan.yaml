@@ -78,10 +78,12 @@ B_needs_update:
   match_type: exact
   existing_title: 舍客勒
   existing_path: link_folder/原文/舍客勒.md
-C_new_formal:
-- name: 擔當干犯聖所與祭司職任的罪孽
+- existing_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
+  existing_title: 擔當干犯聖所與祭司職任的罪孽
+  match_type: exact
+  name: 擔當干犯聖所與祭司職任的罪孽
   suggested_type: 神學
-  target_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
+C_new_formal:
 - name: 祭司與利未人的職任為神之賞賜
   suggested_type: 神學
   target_path: link_folder/神學/祭司與利未人的職任為神之賞賜.md

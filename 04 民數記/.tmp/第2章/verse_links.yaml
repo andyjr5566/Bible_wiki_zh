@@ -8,29 +8,47 @@ links:
   phrase: 本族的旗號
   target: 安營與纛
 - verse: 2
-  phrase: 會幕
-  target: 會幕（帳幕整體）
+  phrase: 對著會幕的四圍安營
+  target: 安營與纛
+- verse: 3
+  phrase: 照著軍隊安營
+  target: 以色列人的軍隊
 - verse: 3
   phrase: 猶大營的纛
   target: 猶大支派
 - verse: 3
+  phrase: 拿順
+  target: 拿順
+- verse: 3
   phrase: 作猶大人的首領
   target: 十二族長協助數點
 - verse: 5
+  phrase: 以薩迦
+  target: 以薩迦（價值）
+- verse: 5
   phrase: 作以薩迦人的首領
   target: 十二族長協助數點
+- verse: 7
+  phrase: 西布倫
+  target: 西布倫（同住）
 - verse: 9
   phrase: 按著軍隊被數的
   target: 以色列人的軍隊
 - verse: 9
-  phrase: 要作第一隊往前行
-  target: 以色列人的軍隊
+  phrase: 第一隊往前行
+  target: 行軍次序
 - verse: 10
   phrase: 按著軍隊
   target: 以色列人的軍隊
 - verse: 10
   phrase: 流便營的纛
   target: 流便
+- verse: 12
+  phrase: 西緬
+  target: 西緬
+- verse: 14
+  phrase: 迦得
+  target: 迦得（萬幸）
 - verse: 16
   phrase: 流便
   target: 流便
@@ -38,8 +56,8 @@ links:
   phrase: 按著軍隊被數的
   target: 以色列人的軍隊
 - verse: 16
-  phrase: 要作第二隊往前行
-  target: 以色列人的軍隊
+  phrase: 第二隊往前行
+  target: 行軍次序
 - verse: 17
   phrase: 會幕要往前行
   target: 會幕（帳幕整體）
@@ -55,6 +73,12 @@ links:
 - verse: 18
   phrase: 以法蓮營的纛
   target: 以法蓮
+- verse: 20
+  phrase: 瑪拿西
+  target: 瑪拿西
+- verse: 22
+  phrase: 便雅憫
+  target: 便雅憫
 - verse: 24
   phrase: 以法蓮
   target: 以法蓮
@@ -62,17 +86,26 @@ links:
   phrase: 按著軍隊被數的
   target: 以色列人的軍隊
 - verse: 24
-  phrase: 要作第三隊往前行
-  target: 以色列人的軍隊
+  phrase: 第三隊往前行
+  target: 行軍次序
 - verse: 25
   phrase: 按著軍隊
   target: 以色列人的軍隊
 - verse: 25
   phrase: 但營的纛
   target: 但支派
+- verse: 27
+  phrase: 亞設
+  target: 亞設（有福）
+- verse: 29
+  phrase: 拿弗他利
+  target: 拿弗他利
 - verse: 31
-  phrase: 作末隊往前行
-  target: 以色列人的軍隊
+  phrase: 末隊往前行
+  target: 行軍次序
 - verse: 33
   phrase: 利未人沒有數在以色列人中
   target: 利未支派
+- verse: 34
+  phrase: 安營起行
+  target: 行軍次序

@@ -1,12 +1,30 @@
 book: 出埃及記
 chapter: 35
 links:
+- verse: 1
+  phrase: 以色列全會眾
+  target: 全會眾
+- verse: 1
+  phrase: 這是耶和華所吩咐的話，叫你們照著行
+  target: 出35-40 逐字複述出25-31
+- verse: 2
+  phrase: 六日要做工
+  target: 安息日與會幕工程的關係
 - verse: 2
   phrase: 安息聖日
   target: 安息日
+- verse: 2
+  phrase: 必把他治死
+  target: 古代近東安息日
 - verse: 3
   phrase: 安息日
   target: 安息日
+- verse: 3
+  phrase: 不可在你們一切的住處生火
+  target: 安息日不可生火
+- verse: 4
+  phrase: 以色列全會眾
+  target: 全會眾
 - verse: 5
   phrase: 樂意獻的
   target: 甘心樂意的奉獻
@@ -19,12 +37,21 @@ links:
 - verse: 9
   phrase: 胸牌
   target: 胸牌（決斷胸牌）
+- verse: 10
+  phrase: 你們中間凡心裡有智慧的
+  target: 心裡有智慧
+- verse: 10
+  phrase: 耶和華一切所吩咐的
+  target: 山上的樣式
 - verse: 11
   phrase: 帳幕和帳幕的罩棚
   target: 會幕（帳幕整體）
 - verse: 12
   phrase: 施恩座
   target: 施恩座
+- verse: 13
+  phrase: 桌子和桌子的槓
+  target: 陳設餅桌子
 - verse: 13
   phrase: 陳設餅
   target: 陳設餅桌子
@@ -34,6 +61,9 @@ links:
 - verse: 18
   phrase: 帳幕的橛子並院子的橛子，和這兩處的繩子
   target: 橛子與繩子的預表
+- verse: 20
+  phrase: 以色列全會眾
+  target: 全會眾
 - verse: 21
   phrase: 心裡受感和甘心樂意的
   target: 甘心樂意的奉獻
@@ -50,6 +80,9 @@ links:
   phrase: 凡有智慧、心裡受感的婦女
   target: 婦女參與建造會幕
 - verse: 27
+  phrase: 眾官長
+  target: 以色列人的官長
+- verse: 27
   phrase: 以弗得
   target: 以弗得
 - verse: 27
@@ -58,6 +91,9 @@ links:
 - verse: 29
   phrase: 甘心樂意獻禮物
   target: 甘心樂意的奉獻
+- verse: 29
+  phrase: 做耶和華藉摩西所吩咐的一切工
+  target: 神的同在
 - verse: 30
   phrase: 猶大支派
   target: 猶大支派

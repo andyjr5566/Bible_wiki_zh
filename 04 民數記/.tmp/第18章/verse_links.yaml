@@ -2,6 +2,9 @@ book: 民數記
 chapter: 18
 links:
 - verse: 1
+  phrase: 亞倫
+  target: 亞倫
+- verse: 1
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 2
@@ -14,20 +17,41 @@ links:
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
 - verse: 8
+  phrase: 亞倫
+  target: 亞倫
+- verse: 8
   phrase: 舉祭
   target: 舉祭
 - verse: 9
   phrase: 至聖的供物
   target: 至聖的供物（聖與至聖之分）
+- verse: 9
+  phrase: 贖愆祭
+  target: 贖愆祭（asham）
 - verse: 11
   phrase: 舉祭
   target: 舉祭
+- verse: 11
+  phrase: 搖祭
+  target: 搖祭
+- verse: 12
+  phrase: 初熟
+  target: 初熟
+- verse: 13
+  phrase: 初熟
+  target: 初熟
+- verse: 16
+  phrase: 舍客勒
+  target: 舍客勒
 - verse: 19
   phrase: 舉祭
   target: 舉祭
 - verse: 19
   phrase: 鹽約
   target: 立約的鹽
+- verse: 20
+  phrase: 亞倫
+  target: 亞倫
 - verse: 21
   phrase: 十分之一
   target: 十分之一
@@ -43,6 +67,9 @@ links:
 - verse: 24
   phrase: 利未人
   target: 利未支派
+- verse: 25
+  phrase: 摩西
+  target: 摩西
 - verse: 26
   phrase: 利未人
   target: 利未支派
@@ -64,6 +91,9 @@ links:
 - verse: 28
   phrase: 祭司
   target: 亞倫和他兒子（祭司）
+- verse: 28
+  phrase: 亞倫
+  target: 亞倫
 - verse: 29
   phrase: 舉祭
   target: 舉祭

@@ -31,21 +31,36 @@ links:
 - verse: 7
   phrase: 會幕門口
   target: 會幕門口
+- verse: 8
+  phrase: 拈鬮
+  target: 拈鬮定羊的歸屬
+- verse: 8
+  phrase: 阿撒瀉勒
+  target: 阿撒瀉勒（Azazel）歸屬之爭
 - verse: 9
   phrase: 亞倫
   target: 亞倫
+- verse: 10
+  phrase: 阿撒瀉勒
+  target: 阿撒瀉勒（Azazel）歸屬之爭
 - verse: 11
   phrase: 亞倫
   target: 亞倫
 - verse: 12
+  phrase: 搗細的香料
+  target: 搗細香料遮掩施恩座
+- verse: 12
   phrase: 幔子內
   target: 至聖所
 - verse: 13
-  phrase: 施恩座
-  target: 施恩座
+  phrase: 香的煙雲遮掩法櫃上的施恩座
+  target: 搗細香料遮掩施恩座
 - verse: 14
-  phrase: 施恩座
-  target: 施恩座
+  phrase: 用指頭彈在施恩座的東面
+  target: 彈血於施恩座與壇（大祭司一年一度贖罪禮）
+- verse: 14
+  phrase: 彈血七次
+  target: 彈血於施恩座與壇（大祭司一年一度贖罪禮）
 - verse: 15
   phrase: 幔子內
   target: 至聖所
@@ -55,6 +70,15 @@ links:
 - verse: 20
   phrase: 亞倫
   target: 亞倫
+- verse: 21
+  phrase: 兩手按在羊頭上
+  target: 按手認罪（承認罪孽轉移）
+- verse: 21
+  phrase: 承認以色列人諸般的罪孽過犯
+  target: 按手認罪（承認罪孽轉移）
+- verse: 22
+  phrase: 帶到無人之地
+  target: 曠野無人之地
 - verse: 23
   phrase: 亞倫
   target: 亞倫
@@ -62,11 +86,26 @@ links:
   phrase: 用水洗身
   target: 洗身（水洗）
 - verse: 26
+  phrase: 阿撒瀉勒
+  target: 阿撒瀉勒（Azazel）歸屬之爭
+- verse: 26
   phrase: 用水洗身
   target: 洗身（水洗）
 - verse: 28
   phrase: 用水洗身
   target: 洗身（水洗）
+- verse: 29
+  phrase: 每逢七月初十日
+  target: 大贖罪日（Yom Kippur）條例
+- verse: 29
+  phrase: 刻苦己心
+  target: 刻苦己心（禁食悔改）
+- verse: 31
+  phrase: 聖安息日
+  target: 聖安息日（大贖罪日雙重安息）
+- verse: 31
+  phrase: 刻苦己心
+  target: 刻苦己心（禁食悔改）
 - verse: 32
   phrase: 聖衣
   target: 聖衣（祭司聖服）

@@ -4,8 +4,8 @@ book: 民數記
 chapter: 3
 candidate_sha256: b96d1fb492fc720720592e85fbfa794175897920af7462c05273eba2e4a14309
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 1150a958accbd881
-link_index_sha256: ed89cd4409ad64a5d11655a6a679305a7d2fd73f0e88950d7435c512c7a13c06
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第3章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2631 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -40,7 +40,7 @@ query:
 | 2 | 利未 | 0.530 | link_folder/人物/利未.md |
 | 3 | 「利未」名字含義 | 0.429 | link_folder/原文/「利未」名字含義.md |
 | 4 | 數點利未任職男子 | 0.428 | link_folder/事件/數點利未任職男子.md |
-| 5 | 利乏音人 | 0.428 | link_folder/人物/利乏音人.md |
+| 5 | 利未的族譜（出六14-27） | 0.426 | link_folder/歷史/利未的族譜（出六14-27）.md |
 
 判定：✅ 建議使用既有條目 [[利未支派]]（同名／字面對應）
 
@@ -54,7 +54,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞倫 | 0.439 | link_folder/人物/亞倫.md |
+| 1 | 亞倫 | 0.436 | link_folder/人物/亞倫.md |
 | 2 | 亞略 | 0.389 | link_folder/人物/亞略.md |
 | 3 | 以倫 | 0.384 | link_folder/人物/以倫.md |
 | 4 | 亞蘭人 | 0.370 | link_folder/人物/亞蘭人.md |
@@ -75,7 +75,7 @@ query:
 | 1 | 亞倫的祭司譜系 | 0.594 | link_folder/人物/亞倫的祭司譜系.md |
 | 2 | 古代近東的祭司 | 0.547 | link_folder/背景/古代近東的祭司.md |
 | 3 | 亞倫和他兒子（祭司） | 0.530 | link_folder/人物/亞倫和他兒子（祭司）.md |
-| 4 | 亞倫 | 0.508 | link_folder/人物/亞倫.md |
+| 4 | 亞倫 | 0.522 | link_folder/人物/亞倫.md |
 | 5 | 利未的族譜（出六14-27） | 0.496 | link_folder/歷史/利未的族譜（出六14-27）.md |
 
 判定：✅ 建議使用既有條目 [[亞倫的祭司譜系]]（同名／字面對應）
@@ -91,10 +91,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 會幕（帳幕整體） | 0.451 | link_folder/主題/會幕（帳幕整體）.md |
-| 2 | 法櫃的帳幕 | 0.388 | link_folder/地點/法櫃的帳幕.md |
-| 3 | 耶和華的榮光與會幕的及時顯現 | 0.372 | link_folder/主題/耶和華的榮光與會幕的及時顯現.md |
-| 4 | 第二年正月初一立帳幕 | 0.348 | link_folder/歷史/第二年正月初一立帳幕.md |
-| 5 | 十幅幔子（內層幕幔） | 0.324 | link_folder/主題/十幅幔子（內層幕幔）.md |
+| 2 | 法櫃的帳幕 | 0.354 | link_folder/地點/法櫃的帳幕.md |
+| 3 | 第二年正月初一立帳幕 | 0.348 | link_folder/歷史/第二年正月初一立帳幕.md |
+| 4 | 十幅幔子（內層幕幔） | 0.324 | link_folder/主題/十幅幔子（內層幕幔）.md |
+| 5 | 摩西不能進會幕 | 0.322 | link_folder/神學/摩西不能進會幕.md |
 
 判定：✅ 建議使用既有條目 [[會幕（帳幕整體）]]（同名／字面對應）
 
@@ -109,10 +109,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 拿單 | 0.360 | link_folder/人物/拿單.md |
-| 2 | 拿細耳人（nazir） | 0.333 | link_folder/原文/拿細耳人（nazir）.md |
-| 3 | 拿答 | 0.319 | link_folder/人物/拿答.md |
-| 4 | 拿鶴 | 0.313 | link_folder/人物/拿鶴.md |
-| 5 | 拿瑪 | 0.309 | link_folder/人物/拿瑪.md |
+| 2 | 拿答 | 0.319 | link_folder/人物/拿答.md |
+| 3 | 拿鶴 | 0.313 | link_folder/人物/拿鶴.md |
+| 4 | 拿瑪 | 0.309 | link_folder/人物/拿瑪.md |
+| 5 | 以拿 | 0.294 | link_folder/人物/以拿.md |
 
 判定：✅ 建議使用既有條目 [[拿答]]（同名／字面對應）
 
@@ -144,9 +144,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以利亞撒 | 0.494 | link_folder/人物/以利亞撒.md |
+| 1 | 以利亞撒 | 0.479 | link_folder/人物/以利亞撒.md |
 | 2 | 以利以謝（人物） | 0.466 | link_folder/人物/以利以謝（人物）.md |
-| 3 | 以利以謝 | 0.463 | link_folder/人物/以利以謝.md |
+| 3 | 以利以謝 | 0.447 | link_folder/人物/以利以謝.md |
 | 4 | 以撒 | 0.422 | link_folder/人物/以撒.md |
 | 5 | 以拉撒 | 0.420 | link_folder/地點/以拉撒.md |
 
@@ -163,7 +163,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 他瑪（創38） | 0.435 | link_folder/人物/他瑪（創38）.md |
-| 2 | 以他瑪 | 0.434 | link_folder/人物/以他瑪.md |
+| 2 | 以他瑪 | 0.424 | link_folder/人物/以他瑪.md |
 | 3 | 他瑪 (撒下13) | 0.396 | link_folder/人物/他瑪 (撒下13).md |
 | 4 | 以米人 | 0.369 | link_folder/人物/以米人.md |
 | 5 | 他瑪行動是否可稱義 | 0.351 | link_folder/解經爭議/他瑪行動是否可稱義.md |
@@ -184,7 +184,7 @@ query:
 | 2 | 火燒營邊預表神審判（來12：29） | 0.351 | link_folder/互文/火燒營邊預表神審判（來12：29）.md |
 | 3 | 燃燒卻不燒毀的荊棘 | 0.326 | link_folder/神學/燃燒卻不燒毀的荊棘.md |
 | 4 | 耶和華使凡事順利 | 0.303 | link_folder/神學/耶和華使凡事順利.md |
-| 5 | 耶和華的烈火將兩百五十個拿香爐者徹底毀滅 | 0.297 | link_folder/事件/耶和華的烈火將兩百五十個拿香爐者徹底毀滅.md |
+| 5 | 冒煙的爐與燒著的火把指什麼 | 0.291 | link_folder/解經爭議/冒煙的爐與燒著的火把指什麼.md |
 
 判定：✅ 建議使用既有條目 [[凡火]]（同名／字面對應）
 
@@ -238,7 +238,7 @@ query:
 | 2 | 利未支派 | 0.524 | link_folder/人物/利未支派.md |
 | 3 | 利未 | 0.501 | link_folder/人物/利未.md |
 | 4 | 數點利未任職男子 | 0.497 | link_folder/事件/數點利未任職男子.md |
-| 5 | 奉獻篷車與牛（利未人搬運分工） | 0.496 | link_folder/事件/奉獻篷車與牛（利未人搬運分工）.md |
+| 5 | 利未人受聖職討罪 | 0.470 | link_folder/事件/利未人受聖職討罪.md |
 
 判定：✅ 建議使用既有條目 [[利未三族分工]]（同名／字面對應）
 
@@ -271,7 +271,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 贖銀五舍客勒 | 0.629 | link_folder/文化/贖銀五舍客勒.md |
+| 1 | 贖銀五舍客勒 | 0.616 | link_folder/文化/贖銀五舍客勒.md |
 | 2 | 二十舍客勒銀子 | 0.436 | link_folder/文化/二十舍客勒銀子.md |
 | 3 | 半舍客勒（贖罪銀） | 0.416 | link_folder/原文/半舍客勒（贖罪銀）.md |
 | 4 | 銀號 | 0.401 | link_folder/文化/銀號.md |
@@ -309,8 +309,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.693 | link_folder/人物/摩西.md |
-| 2 | 亞倫 | 0.687 | link_folder/人物/亞倫.md |
+| 1 | 摩西 | 0.694 | link_folder/人物/摩西.md |
+| 2 | 亞倫 | 0.686 | link_folder/人物/亞倫.md |
 | 3 | 利未的族譜（出六14-27） | 0.668 | link_folder/歷史/利未的族譜（出六14-27）.md |
 | 4 | 摩西代行祭司職分 | 0.647 | link_folder/主題/摩西代行祭司職分.md |
 | 5 | 摩西上山見神 | 0.647 | link_folder/事件/摩西上山見神.md |
@@ -328,8 +328,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西乃山 | 0.823 | link_folder/地點/西乃山.md |
-| 2 | 西乃的曠野 | 0.773 | link_folder/地點/西乃的曠野.md |
+| 1 | 西乃山 | 0.821 | link_folder/地點/西乃山.md |
+| 2 | 西乃的曠野 | 0.772 | link_folder/地點/西乃的曠野.md |
 | 3 | 神的山 | 0.763 | link_folder/地點/神的山.md |
 | 4 | 西乃 | 0.760 | link_folder/地點/西乃.md |
 | 5 | 以色列到達西乃山 | 0.760 | link_folder/事件/以色列到達西乃山.md |
@@ -348,10 +348,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 舍客勒 | 0.795 | link_folder/原文/舍客勒.md |
-| 2 | 會幕金銀銅重量的換算分歧 | 0.678 | link_folder/解經爭議/會幕金銀銅重量的換算分歧.md |
-| 3 | 半舍客勒（贖罪銀） | 0.652 | link_folder/原文/半舍客勒（贖罪銀）.md |
-| 4 | 聖所的平（捨客勒標準） | 0.632 | link_folder/文化/聖所的平（捨客勒標準）.md |
-| 5 | 一比加 | 0.606 | link_folder/原文/一比加.md |
+| 2 | 聖所的平（捨客勒標準） | 0.735 | link_folder/文化/聖所的平（捨客勒標準）.md |
+| 3 | 會幕金銀銅重量的換算分歧 | 0.678 | link_folder/解經爭議/會幕金銀銅重量的換算分歧.md |
+| 4 | 贖銀五舍客勒 | 0.676 | link_folder/文化/贖銀五舍客勒.md |
+| 5 | 半舍客勒（贖罪銀） | 0.652 | link_folder/原文/半舍客勒（贖罪銀）.md |
 
 判定：✅ 建議使用既有條目 [[舍客勒]]（同名／字面對應）
 
