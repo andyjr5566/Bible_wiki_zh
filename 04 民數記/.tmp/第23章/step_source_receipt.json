@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_23.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 389,
+      "first": "Num 23:1",
+      "last": "Num 23:30",
+      "sha256": "fd1e4c6e90cb243b6df2cd8197801998de464c90740ed53d2e75f1480db1cc2b",
+      "bytes": 75674,
+      "chars": 66549,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+book: 民數記
+chapter: 23
+candidates:
+- name: 巴勒
+  type: 人物
+  evidence: v1-30 巴勒三次築壇、三次換地方，最後說「你一點不要咒詛他們，也不要為他們祝福」
+  surfaces:
+  - phrase: 巴勒
+- name: 巴蘭（比珥的兒子）
+  type: 人物
+  evidence: v1-30 巴蘭三次要求築七座壇、兩次題起詩歌祝福以色列
+  surfaces:
+  - phrase: 巴蘭
+- name: 摩押人
+  type: 人物
+  evidence: v6、v17「摩押的使臣」都站在燔祭旁邊；v7「摩押王引我出東山」
+  surfaces:
+  - phrase: 摩押的使臣
+- name: 燔祭
+  type: 神學
+  evidence: v3、6、15、17 巴勒站在燔祭旁邊；KC 說燔祭表明神不看信徒的失敗、乃在基督裡看他們
+  surfaces:
+  - phrase: 燔祭
+- name: 公羊
+  type: 神學
+  evidence: v1、2、14、29、30 每座壇上獻一隻公羊
+  surfaces:
+  - phrase: 公羊
+- name: 亞蘭
+  type: 地點
+  evidence: v7「巴勒引我出亞蘭」；CT 說亞蘭指米所波大米、是巴蘭的故鄉
+  surfaces:
+  - phrase: 亞蘭
+    verses:
+    - 7
+- name: 咒詛（a.rar 與 qa.vav）
+  type: 原文
+  evidence: v7 巴勒的話用 a.rar（H779），v8 巴蘭的回答改用 qa.vav（H6895）；本章延續民22 的兩動詞分佈
+  surfaces:
+  - phrase: 咒詛
+- name: 卦金（qe.sem）
+  type: 原文
+  evidence: v23「也沒有占卜可以害以色列」的「占卜」是 qe.sem（H7081），與民22:7 長老手裡拿的「卦金」同一個字
+  surfaces:
+  - phrase: 占卜
+    verses:
+    - 23
+- name: 祝福與咒詛
+  type: 主題
+  evidence: v8「神沒有咒詛的，我焉能咒詛」、v20「我奉命祝福；神也曾賜福，此事我不能翻轉」、v25 巴勒要他兩樣都別做
+  surfaces:
+  - phrase: 祝福
+- name: 巴蘭是先知還是術士
+  type: 解經爭議
+  evidence: v1 CT 說築七座壇「顯然不是按照向耶和華真神獻祭的條例，因此他不是真先知」；v3 丁良才卻說「這一句顯明巴蘭不是專意靠法術」
+- name: 神的後悔與憂傷
+  type: 神學
+  evidence: v19「神非人，必不致說謊，也非人子，必不致後悔」；STEP 顯示「後悔」是 na.cham（H5162H）反身形
+- name: 神的主權
+  type: 神學
+  evidence: v5、16 耶和華將話傳給巴蘭；v20「此事我不能翻轉」；GT《聖經精讀本》說神掌管自己的計畫和歷史
+- name: 因信稱義
+  type: 神學
+  evidence: v21「他未見雅各中有罪孽，也未見以色列中有奸惡」；KC 用整段講稱義並引羅8:1、8:33-34
+- name: 分別為聖
+  type: 神學
+  evidence: v9「這是獨居的民，不列在萬民中」；CT 說表徵他們是分別出來歸神為聖的
+- name: 亞伯拉罕之約
+  type: 神學
+  evidence: v10「誰能數點雅各的塵土」；丁良才說這是應驗創13:16、28:14 的話
+- name: 先知
+  type: 主題
+  evidence: v5、16 神將話放在巴蘭口裡；KC 說巴蘭這些詩歌是聖經中第一批偉大的先知性宣告
+- name: 巴力的高處（Bamoth-baal）
+  type: 地點
+  evidence: GT《民數記串珠聖經註釋》說巴勒領巴蘭到三個地方——巴力的高處（22:41）、毘斯迦山與毘珥山
+- name: 曠野
+  type: 地點
+  evidence: v28「巴勒就領巴蘭到那下望曠野的毘珥山頂上」
+  surfaces:
+  - phrase: 曠野
+    verses:
+    - 28
+- name: 摩押地
+  type: 地點
+  evidence: v14、28 瑣腓田、毘斯迦山頂與毘珥山頂都在摩押境內
+- name: 七座壇與七牛七羊
+  type: 文化
+  evidence: v1-2、14、29-30 三次都築七座壇、每座獻一牛一羊；GT《背景註釋》舉亞述王以撒哈頓與推羅之巴力的條約召請「七神」為例
+  surfaces:
+  - phrase: 七座壇
+- name: 詩歌（ma.shal）
+  type: 原文
+  evidence: v7、18「巴蘭便題起詩歌說」；STEP 顯示原文是 me.sha.L/o（H4912），簡要義域 proverb；CT 給的原文字義是「箴言，比喻」
+  surfaces:
+  - phrase: 詩歌
+- name: 淨光的高處（she.phi）
+  type: 原文
+  evidence: v3「於是巴蘭上一淨光的高處」；STEP 顯示原文是 She.fi（H8205），簡要義域 bareness
+  surfaces:
+  - phrase: 淨光的高處
+    verses:
+    - 3
+- name: 瑣腓田與毘斯迦山頂
+  type: 地點
+  evidence: v14「於是領巴蘭到了瑣腓田，上了毘斯迦山頂」；GT《背景註釋》說「瑣腓」的意思是「守更者」、「守望者」
+  surfaces:
+  - phrase: 瑣腓田
+    verses:
+    - 14
+  - phrase: 毘斯迦山頂
+    verses:
+    - 14
+- name: 毘珥山頂
+  type: 地點
+  evidence: v28「那下望曠野的毘珥山頂上」；CT 說毘珥山是毘斯迦西南的一個山峰，離摩西安葬的地方不遠
+  surfaces:
+  - phrase: 毘珥山頂
+    verses:
+    - 28
+- name: 獨居的民不列在萬民中
+  type: 神學
+  evidence: v9；STEP 顯示「不列在」是 yit.cha.Shav（H2803H）反身形；KC 用整段講分別為聖的積極面
+  surfaces:
+  - phrase: 獨居的民
+    verses:
+    - 9
+- name: 神非人必不致說謊
+  type: 神學
+  evidence: v19；CT、GT 丁良才、KC、BH 都在此大段論神的不改變，並引撒上15:29、瑪3:6、羅11:29、多1:2
+  surfaces:
+  - phrase: 神非人
+    verses:
+    - 19
+- name: 雅各的塵土與四分之一
+  type: 主題
+  evidence: v10「誰能數點雅各的塵土？誰能計算以色列的四分之一？」；CT 說四分之一指以色列營地的東西南北四個營盤之一
+  surfaces:
+  - phrase: 雅各的塵土
+    verses:
+    - 10
+  - phrase: 四分之一
+    verses:
+    - 10
+- name: 我願如義人之死而死
+  type: 解經爭議
+  evidence: v10；GT 丁良才說「有許多人如同巴蘭一樣，願意如義人之終而終，卻不肯做義人」；KC 說他想死義人的死卻同時想活惡人的生活
+  surfaces:
+  - phrase: 我願如義人之死而死
+    verses:
+    - 10
+- name: 未見雅各中有罪孽
+  type: 神學
+  evidence: v21；CT 說不是以色列沒有犯罪，而是祭壇上的祭牲遮蓋了他們的罪孽；KC 用整段講稱義超過赦免
+- name: 歡呼王的聲音（te.ru.ah）
+  type: 原文
+  evidence: v21「有歡呼王的聲音在他們中間」；STEP 顯示「歡呼」是 te.ru.'At（H8643），簡要義域 shout
+  surfaces:
+  - phrase: 歡呼王的聲音
+    verses:
+    - 21
+- name: 野牛之力（re.em）
+  type: 原文
+  evidence: v22「他們似乎有野牛之力」；BH 說希伯來文作 reem，常與力量與未馴服的能力連在一起
+  surfaces:
+  - phrase: 野牛之力
+    verses:
+    - 22
+- name: 母獅與公獅的比喻
+  type: 主題
+  evidence: v24「這民起來，彷彿母獅，挺身，好像公獅」；GT《啟導本》說本節暗合創49:9
+  surfaces:
+  - phrase: 母獅
+    verses:
+    - 24
+  - phrase: 公獅
+    verses:
+    - 24
+- name: 斷沒有法術可以害雅各
+  type: 神學
+  evidence: v23；STEP 顯示「法術」是 na.chash（H5173）、「占卜」是 qe.sem（H7081）；CT 說任何邪術都不能使神與他們有隔閡
+- name: 巴蘭的七篇詩歌
+  type: 主題
+  evidence: GT《啟導本》說自民23:7 至民24:25 一共載有巴蘭的七首詩歌、用的是對句法；KC 另分成四篇並列出四個遞進的神名
+- name: 換個地方就能改變神嗎
+  type: 解經爭議
+  evidence: v13、27 巴勒兩次要巴蘭換地方；CT 話中之光說人以為地方轉換了神也就會改變了；GT《串珠》說這種想法實在是愚昧的迷信
+- name: 後裔如地上的塵沙
+  type: 原文
+  evidence: v10 丁良才說「誰能數點雅各的塵土」是應驗創13:16、28:14 的話；KC 與 BH 也都引創13:16
+- name: 誰能控告神所揀選的人（羅8：33-34）
+  type: 互文
+  evidence: KC 在 v23 引羅8:33-34；BH 在 v8 也引同一段說明真正的審判只屬於神
+- name: 神必不致說謊也不後悔（撒上15：29）
+  type: 互文
+  evidence: v19 丁良才引撒上15:29 兩次；KC 也引撒上15:29 與羅11:29
+- name: 猶大是小獅子（創49：9）
+  type: 互文
+  evidence: v24 GT《啟導本聖經註釋》說「本節暗合《創世記》四十九9的話」
+- name: 古代近東立約
+  type: 背景
+  evidence: GT《舊約聖經背景註釋》說國際條約簽署時或會召請神明作為協議的見證，亞述王以撒哈頓與推羅之巴力簽署條約時召請「七神」，並為每一神祇築壇獻祭
