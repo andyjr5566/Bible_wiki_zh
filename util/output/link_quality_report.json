@@ -1,70 +1,28 @@
 {
-  "total_warnings": 109,
+  "total_warnings": 112,
   "critical_count": 0,
-  "warning_count": 109,
+  "warning_count": 112,
   "warnings": [
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第14章.md",
-      "target": "示拿",
-      "message": "同一 alias「示拿」指向多個 target: 示拿, 示拿地"
+      "source": "民數記/第11章.md",
+      "target": "鵪鶉",
+      "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第25章.md",
-      "target": "亞蘭人",
-      "message": "同一 alias「亞蘭人」指向多個 target: 亞蘭, 亞蘭人"
+      "source": "民數記/第5章.md",
+      "target": "舉祭",
+      "message": "同一 alias「舉祭」指向多個 target: 聖物, 舉祭"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
-      "source": "創世記/第30章.md",
-      "target": "底拿",
-      "message": "同一 alias「底拿」指向多個 target: 底拿, 底拿名字含義"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伊勒伯特利",
-      "message": "同一 alias「伊勒伯特利」指向多個 target: 伊勒伯特利, 伯特利的神"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第35章.md",
-      "target": "伯特利之神",
-      "message": "同一 alias「伯特利之神」指向多個 target: 伊勒伯特利, 伯特利的神"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第36章.md",
-      "target": "亞瑪力",
-      "message": "同一 alias「亞瑪力」指向多個 target: 亞瑪力, 亞瑪力人"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第37章.md",
-      "target": "以實瑪利人",
-      "message": "同一 alias「以實瑪利人」指向多個 target: 以實瑪利, 以實瑪利人"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "瑪拿西",
-      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西（使之忘了）"
-    },
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "創世記/第41章.md",
-      "target": "以法蓮",
-      "message": "同一 alias「以法蓮」指向多個 target: 以法蓮, 以法蓮（使之昌盛）"
+      "source": "民數記/第5章.md",
+      "target": "素祭",
+      "message": "同一 alias「素祭」指向多個 target: 疑恨的素祭（大麥面不加油乳香）, 素祭（minchah）"
     },
     {
       "type": "alias_target_conflict",
@@ -134,7 +92,28 @@
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
       "target": "第16章",
-      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 03 利未記/第16章"
+      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 03 利未記/第16章, 04 民數記/第16章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 04 民數記/第17章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第18章",
+      "message": "同一 alias「第18章」指向多個 target: 02 出埃及記/第18章, 04 民數記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫和他兒子（祭司）.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 03 利未記/第17章, 04 民數記/第17章"
     },
     {
       "type": "alias_target_conflict",
@@ -294,15 +273,22 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
+      "target": "第16章",
+      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 04 民數記/第16章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
       "target": "第17章",
-      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 03 利未記/第17章"
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 03 利未記/第17章, 04 民數記/第17章"
     },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第18章",
-      "message": "同一 alias「第18章」指向多個 target: 02 出埃及記/第18章, 03 利未記/第18章"
+      "message": "同一 alias「第18章」指向多個 target: 02 出埃及記/第18章, 03 利未記/第18章, 04 民數記/第18章"
     },
     {
       "type": "alias_target_conflict",
@@ -316,7 +302,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第20章",
-      "message": "同一 alias「第20章」指向多個 target: 02 出埃及記/第20章, 03 利未記/第20章"
+      "message": "同一 alias「第20章」指向多個 target: 02 出埃及記/第20章, 03 利未記/第20章, 04 民數記/第20章"
     },
     {
       "type": "alias_target_conflict",
@@ -331,6 +317,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第25章",
       "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第21章",
+      "message": "同一 alias「第21章」指向多個 target: 03 利未記/第21章, 04 民數記/第21章"
     },
     {
       "type": "alias_target_conflict",
@@ -394,6 +387,13 @@
       "source": "link_folder/人物/雅各.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 02 出埃及記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/加低斯.md",
+      "target": "第20章",
+      "message": "同一 alias「第20章」指向多個 target: 01 創世記/第20章, 04 民數記/第20章"
     },
     {
       "type": "alias_target_conflict",
@@ -506,6 +506,20 @@
       "source": "link_folder/歷史/以色列人的怨言.md",
       "target": "第14章",
       "message": "同一 alias「第14章」指向多個 target: 02 出埃及記/第14章, 04 民數記/第14章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/歷史/以色列人的怨言.md",
+      "target": "第16章",
+      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 04 民數記/第16章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/歷史/以色列人的怨言.md",
+      "target": "第17章",
+      "message": "同一 alias「第17章」指向多個 target: 02 出埃及記/第17章, 04 民數記/第17章"
     },
     {
       "type": "alias_target_conflict",
@@ -695,6 +709,13 @@
       "source": "link_folder/神學/神的同在.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 02 出埃及記/第26章, 03 利未記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/耶和華的榮光.md",
+      "target": "第16章",
+      "message": "同一 alias「第16章」指向多個 target: 02 出埃及記/第16章, 04 民數記/第16章"
     },
     {
       "type": "alias_target_conflict",

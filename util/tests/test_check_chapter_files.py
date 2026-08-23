@@ -502,5 +502,89 @@ class CheckChapterFilesTests(unittest.TestCase):
             self.assertTrue(update_check.ok, "計畫無 B 類候選時不應要求 link_updates.yaml")
 
 
+class VerseLinkCoverageTests(unittest.TestCase):
+    """M5 重生失效偵測：plan 宣告的詞出現在經文、verse_links 卻沒連上。
+
+    民20 實錯做成的（刪 pipeline_state.json 關掉作廢機制 → verse_links 沿用舊檔，
+    整章 30 個候選只渲染出 4 個連結，而其餘六道閘門全 PASS）。
+    """
+
+    def _root(self, tmp, *, links, plan=None, entries=("亞倫", "摩西"), index=None):
+        root = Path(tmp)
+        (root / "01 創世記").mkdir(parents=True, exist_ok=True)
+        _write(
+            root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt",
+            chr(10).join(["耶和華曉諭摩西說", "摩西和亞倫招聚會眾"]) + chr(10),
+        )
+        for name in entries:
+            _write(root / "link_folder" / "人物" / f"{name}.md", f"# {name}")
+        _write_yaml(
+            root / "01 創世記" / ".tmp" / f"第{CHAPTER}章" / "link_plan.yaml",
+            plan if plan is not None else {
+                "A_use_directly": [],
+                "B_needs_update": [
+                    {"name": "摩西", "existing_title": "摩西",
+                     "existing_path": "link_folder/人物/摩西.md", "match_type": "exact"},
+                    {"name": "亞倫", "existing_title": "亞倫",
+                     "existing_path": "link_folder/人物/亞倫.md", "match_type": "exact"},
+                ],
+                "C_new_formal": [],
+            },
+        )
+        _write_yaml(
+            root / "01 創世記" / ".tmp" / f"第{CHAPTER}章" / "verse_links.yaml",
+            {"book": BOOK, "chapter": CHAPTER, "links": links},
+        )
+        _write(root / "util" / "output" / "link_index.json",
+               json.dumps(index or {}, ensure_ascii=False))
+        return root
+
+    def test_reports_targets_declared_in_plan_but_absent_from_verse_links(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp, links=[{"verse": 1, "phrase": "摩西", "target": "摩西"}])
+            gaps = ccf.verse_link_coverage_gaps(BOOK, CHAPTER, root=root)
+            self.assertEqual(["亞倫"], [target for target, _ in gaps])
+            self.assertIn("第2節", gaps[0][1][0])
+
+    def test_no_gap_when_every_plan_target_is_linked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp, links=[
+                {"verse": 1, "phrase": "摩西", "target": "摩西"},
+                {"verse": 2, "phrase": "亞倫", "target": "亞倫"},
+            ])
+            self.assertEqual([], ccf.verse_link_coverage_gaps(BOOK, CHAPTER, root=root))
+
+    def test_missing_entry_file_is_rename_drift_not_a_gap(self):
+        """plan 的候選名落後於改名（出12「寄居的（ger）」實例）——條目檔不存在就不報。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(
+                tmp,
+                links=[{"verse": 1, "phrase": "摩西", "target": "摩西"}],
+                entries=("摩西",),  # 亞倫.md 不存在＝已改名
+            )
+            self.assertEqual([], ccf.verse_link_coverage_gaps(BOOK, CHAPTER, root=root))
+
+    def test_longer_index_alias_wins_the_span_and_suppresses_short_surface(self):
+        """創40 實例：v1 的「埃及」其實被 alias「埃及王的酒政」整個蓋住，不是漏連。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(
+                tmp,
+                links=[{"verse": 1, "phrase": "摩西", "target": "摩西"},
+                       {"verse": 2, "phrase": "摩西和亞倫", "target": "摩西"}],
+                index={"摩西": {"aliases": ["摩西和亞倫"]}},
+            )
+            self.assertEqual([], ccf.verse_link_coverage_gaps(BOOK, CHAPTER, root=root))
+
+    def test_build_checks_surfaces_the_gap_with_a_regeneration_hint(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp, links=[{"verse": 1, "phrase": "摩西", "target": "摩西"}])
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            failed = [res for res in checks if not res.ok and "verse_links.yaml 涵蓋" in res.label]
+            self.assertEqual(1, len(failed))
+            self.assertIn("亞倫", failed[0].resume_hint)
+            self.assertIn("rm ", failed[0].resume_hint)
+            self.assertIn("pipeline_state.json", failed[0].resume_hint)
+
+
 if __name__ == "__main__":
     unittest.main()

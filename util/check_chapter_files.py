@@ -350,6 +350,87 @@ def check_candidate_similarity_readiness(book, chapter, root=ROOT, production=Tr
     return True, hint, status, None
 
 
+def verse_link_coverage_gaps(book, chapter, root=ROOT):
+    """M5 重生失效偵測：本章 plan 自己宣告的詞出現在經文，verse_links 卻沒連上它。
+
+    `verse_links_step` 開頭就是「輸出檔存在就沿用」，而擋在前面的作廢機制
+    (`_invalidate_stale`) 只在 `pipeline_state.json` 有基線時生效——基線一旦被刪，
+    改過 `link_plan.yaml`／`entry_content` 之後重跑會**靜默**沿用上一輪的
+    `verse_links.yaml`。民20 實測整章 30 個候選只渲染出 4 個內文連結，而
+    validate_knowledge_base／verify_links／link_quality_check／check_existing_links
+    全部 PASS：它們驗的是「連出去的對不對」，沒有一道驗「該連的有沒有連」。
+
+    只報**本章自己凍結得住的詞彙**：候選宣告的 surfaces、候選名、條目全名與括號前
+    裸名、本章 entry_content payload 的 aliases。全庫索引的 aliases 不列入回報，因為
+    它隨後續章節成長，拿它當基準會把「語料自然變多」誤判成缺口。
+
+    但**位置競爭仍用完整索引**（含那些 aliases）：M5 是長詞優先、同節不重疊，把索引
+    aliases 抽掉會讓短詞搶到本來屬於長詞的位置而生誤報（創40 實例：v1 的「埃及」其實
+    被 alias「埃及王的酒政」整個蓋住，抽掉 alias 後「埃及」就被誤報成漏連）。
+    因此掃描用完整 surface map，只在「勝出的詞是本章自己宣告的」時才回報。
+
+    比對規則直接沿用 `build_surface_map` 與 `verse_links_step` 本體（含歧義不連、
+    長詞優先、同節不重疊），所以報出來的每一筆都是同一套程式在同一份 plan 上會連、
+    而現檔沒有的。
+    """
+    try:
+        from . import run_chapter
+    except ImportError:
+        import run_chapter
+
+    tmp = book_directory(root, book) / ".tmp" / f"第{chapter}章"
+    plan = _load_yaml(tmp / "link_plan.yaml")
+    payload = _load_yaml(tmp / "verse_links.yaml")
+    if not isinstance(plan, dict) or not isinstance(payload, dict) or not plan:
+        return []
+
+    entry_dir = tmp / "entry_content"
+    created = sorted(path.stem for path in entry_dir.glob("*.yaml")) if entry_dir.is_dir() else []
+
+    def _surfaces(index):
+        ctx = run_chapter.ChapterContext(book, chapter, root=root, index=index)
+        ctx.created_entry_names = list(created)
+        return ctx, run_chapter.build_surface_map(ctx, plan)
+
+    index_path = root / "util" / "output" / "link_index.json"
+    try:
+        # 明確從 root 讀索引；resolver.load_index() 綁死在真實 repo 路徑，交給它會讓
+        # 其他 root（測試、MCP 工作區）比對到錯的索引。
+        full_index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else {}
+        if not isinstance(full_index, dict):
+            full_index = {}
+        _, own_map = _surfaces({})              # 本章自己宣告的詞（回報範圍）
+        ctx, surface_map = _surfaces(full_index)  # 完整索引（位置競爭，避免短詞搶位誤報）
+        verses = ctx.raw_verses()
+    except (OSError, ValueError, KeyError):
+        return []
+    own = set(own_map)
+
+    linked = {link.get("target") for link in (payload.get("links") or [])}
+    # plan 的候選名可能落後於改名（出12 實例：plan 仍指「寄居的（ger）」，實際條目
+    # 早已改名為「寄居的」，經文其實連得好好的）。目標條目檔不存在＝那是改名漂移，
+    # 不是 verse_links 過期，不報。
+    entry_stems = {path.stem for path in (root / "link_folder").rglob("*.md")}
+    gaps = {}
+    for vnum, verse in enumerate(verses, 1):
+        spans = []
+        for surface, info in surface_map.items():
+            if info["verses"] is not None and vnum not in info["verses"]:
+                continue
+            idx = verse.find(surface)
+            if idx != -1:
+                spans.append((idx, idx + len(surface), surface))
+        spans.sort(key=lambda s: (s[0], -(s[1] - s[0])))
+        last_end = -1
+        for start, end, surface in spans:
+            if start >= last_end:
+                target = surface_map[surface]["target"]
+                if surface in own and target not in linked and target in entry_stems:
+                    gaps.setdefault(target, []).append(f"第{vnum}節「{surface}」")
+                last_end = end
+    return sorted(gaps.items())
+
+
 def build_checks(book, chapter, root=ROOT, preflight=False):
     canonical = canonical_book_name(book)
     book_dir = book_directory(root, book)
@@ -374,6 +455,13 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     run_cmd = f"python util/run_chapter_manual.py run {canonical} {chapter}"
 
     embedding_ok, embedding_detail = _embedding_index_synced(root)
+
+    verse_links_path = tmp / "verse_links.yaml"
+    verse_gaps = (
+        verse_link_coverage_gaps(canonical, chapter, root=root)
+        if verse_links_path.is_file() and plan_path.is_file()
+        else []
+    )
 
     # 來源完整性與閱讀回執驗證
     sources_declared_ok = False
@@ -461,6 +549,18 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             "步驟3｜verse_links.yaml（M5）",
             (tmp / "verse_links.yaml").exists(),
             f"重跑步驟3：{check_cmd}（entry_content 全數完成後才會產生此檔）。",
+        ),
+        CheckResult(
+            "步驟3｜verse_links.yaml 涵蓋本章 plan 宣告的經文詞",
+            not verse_gaps,
+            "verse_links.yaml 是上一輪的舊檔：M5 有檔就跳過，而刪掉 pipeline_state.json "
+            "會關掉作廢機制、讓改過的 link_plan／entry_content 無法連鎖重生。"
+            f'強制重生：rm "{verse_links_path}" 再跑 {run_cmd}'
+            "（不要改用刪 pipeline_state.json；要改 link_plan 就自己把新 sha256 寫回去）。"
+            "漏連：" + "；".join(
+                f"{target}（{'、'.join(where[:3])}{'…' if len(where) > 3 else ''}）"
+                for target, where in verse_gaps[:8]
+            ) + ("…等 %d 個" % len(verse_gaps) if len(verse_gaps) > 8 else ""),
         ),
         CheckResult(
             "步驟3｜chapter_content.yaml（M6）",

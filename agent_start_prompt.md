@@ -175,6 +175,14 @@ python util/build_appendix_links.py
    `link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml`、`entry_content/*.yaml`、
    `verse_links.yaml`、`chapter_content.yaml`、`第x章.md`、`link_updates.yaml`、
    `util/output/` 下的驗證報告），最後以雜湊比對驗證 embedding 語義索引與條目庫同步。
+   除了「檔案在不在」，它還驗一項**內容涵蓋**：`verse_links.yaml` 有沒有涵蓋本章
+   `link_plan.yaml` 自己宣告的經文詞。`verse_links_step` 是「輸出檔存在就沿用」，而擋在
+   前面的作廢機制只在 `pipeline_state.json` 有基線時生效——**基線一旦被刪就整套失效**，
+   改過 candidates／plan／entry_content 之後重跑會靜默沿用上一輪的 `verse_links.yaml`
+   （民20 實測：整章 30 個候選只渲染出 4 個內文連結，其餘六道閘門全 PASS，因為它們驗的是
+   「連出去的對不對」，沒有一道驗「該連的有沒有連」）。要讓某一步重生就**直接刪那一步的
+   輸出檔**；非改 `link_plan.yaml` 不可時，改完要自己把新的 sha256 寫回 `pipeline_state.json`，
+   否則下次 `run` 會整個 `entry_content` 目錄砍掉重來、手寫 payload 全沒。
    一旦某檔缺失，程式會停在第一個缺檔處並印出「該回到哪個動作續做」的具體指令
    （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter_manual.py prompts`；缺 `link_updates.yaml`
    → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面
