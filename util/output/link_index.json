@@ -1725,6 +1725,14 @@
     "status": "formal",
     "aliases": []
   },
+  "歸到他列祖": {
+    "path": "link_folder/主題/歸到他列祖.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "歸到他列祖",
+    "status": "formal",
+    "aliases": []
+  },
   "歸到列祖": {
     "path": "link_folder/主題/歸到列祖.md",
     "type": "主題",
@@ -3246,6 +3254,14 @@
     "status": "formal",
     "aliases": []
   },
+  "厭惡淡薄的食物與火蛇之災": {
+    "path": "link_folder/事件/厭惡淡薄的食物與火蛇之災.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "厭惡淡薄的食物與火蛇之災",
+    "status": "formal",
+    "aliases": []
+  },
   "受託看管的律例": {
     "path": "link_folder/事件/受託看管的律例.md",
     "type": "事件",
@@ -3642,14 +3658,6 @@
       "正月一日"
     ]
   },
-  "比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌": {
-    "path": "link_folder/事件/比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌",
-    "status": "formal",
-    "aliases": []
-  },
   "牛傷牛的律例": {
     "path": "link_folder/事件/牛傷牛的律例.md",
     "type": "事件",
@@ -3708,14 +3716,6 @@
       "百姓發顫",
       "百姓懼怕"
     ]
-  },
-  "百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人": {
-    "path": "link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md",
-    "type": "事件",
-    "secondary_types": [],
-    "title": "百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人",
-    "status": "formal",
-    "aliases": []
   },
   "百姓摘除妝飾表悔改": {
     "path": "link_folder/事件/百姓摘除妝飾表悔改.md",
@@ -14465,14 +14465,6 @@
       "Elim"
     ]
   },
-  "以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯": {
-    "path": "link_folder/地點/以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯",
-    "status": "formal",
-    "aliases": []
-  },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
     "type": "地點",
@@ -14938,6 +14930,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "巴旦亞蘭",
+    "status": "formal",
+    "aliases": []
+  },
+  "巴珊": {
+    "path": "link_folder/地點/巴珊.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴珊",
     "status": "formal",
     "aliases": []
   },
@@ -15700,6 +15700,14 @@
     "status": "formal",
     "aliases": []
   },
+  "井之歌（比珥掘井）": {
+    "path": "link_folder/文化/井之歌（比珥掘井）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "井之歌（比珥掘井）",
+    "status": "formal",
+    "aliases": []
+  },
   "亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒": {
     "path": "link_folder/文化/亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒.md",
     "type": "文化",
@@ -15946,11 +15954,11 @@
       "古埃及貿易"
     ]
   },
-  "向會幕前彈紅母牛的血七次": {
-    "path": "link_folder/文化/向會幕前彈紅母牛的血七次.md",
+  "哀哭三十天": {
+    "path": "link_folder/文化/哀哭三十天.md",
     "type": "文化",
     "secondary_types": [],
-    "title": "向會幕前彈紅母牛的血七次",
+    "title": "哀哭三十天",
     "status": "formal",
     "aliases": []
   },
@@ -16120,6 +16128,14 @@
     "status": "formal",
     "aliases": []
   },
+  "大道（原文作王道）": {
+    "path": "link_folder/文化/大道（原文作王道）.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "大道（原文作王道）",
+    "status": "formal",
+    "aliases": []
+  },
   "太陽神Ra（Amon-Re）": {
     "path": "link_folder/文化/太陽神Ra（Amon-Re）.md",
     "type": "文化",
@@ -16280,6 +16296,14 @@
     "status": "formal",
     "aliases": []
   },
+  "敞口的器皿": {
+    "path": "link_folder/文化/敞口的器皿.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "敞口的器皿",
+    "status": "formal",
+    "aliases": []
+  },
   "法老賜埃及名與妻": {
     "path": "link_folder/文化/法老賜埃及名與妻.md",
     "type": "文化",
@@ -16416,6 +16440,14 @@
       "耳朵上的環子",
       "異教耳環"
     ]
+  },
+  "耶和華的戰記": {
+    "path": "link_folder/文化/耶和華的戰記.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "耶和華的戰記",
+    "status": "formal",
+    "aliases": []
   },
   "聖所的平（捨客勒標準）": {
     "path": "link_folder/文化/聖所的平（捨客勒標準）.md",
@@ -16641,14 +16673,6 @@
     "status": "formal",
     "aliases": []
   },
-  "香柏木、牛膝草與朱紅線": {
-    "path": "link_folder/文化/香柏木、牛膝草與朱紅線.md",
-    "type": "文化",
-    "secondary_types": [],
-    "title": "香柏木、牛膝草與朱紅線",
-    "status": "formal",
-    "aliases": []
-  },
   "香柏木（潔淨儀式用）": {
     "path": "link_folder/文化/香柏木（潔淨儀式用）.md",
     "type": "文化",
@@ -16733,14 +16757,6 @@
       "杖吞杖",
       "亞倫的蛇吞了術士的蛇"
     ]
-  },
-  "亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪": {
-    "path": "link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md",
-    "type": "歷史",
-    "secondary_types": [],
-    "title": "亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪",
-    "status": "formal",
-    "aliases": []
   },
   "亞瑪拿泥版": {
     "path": "link_folder/歷史/亞瑪拿泥版.md",
@@ -17154,11 +17170,11 @@
     "status": "formal",
     "aliases": []
   },
-  "戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土": {
-    "path": "link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md",
+  "戰勝亞拉得王": {
+    "path": "link_folder/歷史/戰勝亞拉得王.md",
     "type": "歷史",
     "secondary_types": [],
-    "title": "戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土",
+    "title": "戰勝亞拉得王",
     "status": "formal",
     "aliases": []
   },
@@ -19914,14 +19930,6 @@
       "謙和"
     ]
   },
-  "摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治": {
-    "path": "link_folder/神學/摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治.md",
-    "type": "神學",
-    "secondary_types": [],
-    "title": "摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治",
-    "status": "formal",
-    "aliases": []
-  },
   "摩西的代求": {
     "path": "link_folder/神學/摩西的代求.md",
     "type": "神學",
@@ -22197,6 +22205,14 @@
       "祭司祝福百姓"
     ]
   },
+  "舉銅蛇望而得活": {
+    "path": "link_folder/神學/舉銅蛇望而得活.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "舉銅蛇望而得活",
+    "status": "formal",
+    "aliases": []
+  },
   "苦害中仍然增長": {
     "path": "link_folder/神學/苦害中仍然增長.md",
     "type": "神學",
@@ -23395,6 +23411,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基抹（摩押的神）": {
+    "path": "link_folder/背景/基抹（摩押的神）.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "基抹（摩押的神）",
+    "status": "formal",
+    "aliases": []
+  },
   "宗主條約": {
     "path": "link_folder/背景/宗主條約.md",
     "type": "背景",
@@ -24049,6 +24073,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "以眼還眼的適用範圍",
+    "status": "formal",
+    "aliases": []
+  },
+  "以色列人經過還是繞過以東境界": {
+    "path": "link_folder/解經爭議/以色列人經過還是繞過以東境界.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "以色列人經過還是繞過以東境界",
     "status": "formal",
     "aliases": []
   },
