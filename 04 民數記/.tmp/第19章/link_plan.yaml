@@ -37,6 +37,81 @@ B_needs_update:
   match_type: exact
   existing_title: 剪除
   existing_path: link_folder/原文/剪除.md
+- name: 彈血七次
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 彈血七次
+  existing_path: link_folder/主題/彈血七次.md
+- name: 藍色、紫色、朱紅色線
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 藍色、紫色、朱紅色線
+  existing_path: link_folder/主題/藍色、紫色、朱紅色線.md
+- name: 以利亞撒
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 永遠的定例
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 永遠的定例
+  existing_path: link_folder/神學/永遠的定例.md
+- name: 潔淨之地
+  suggested_type: 地點
+  match_type: exact
+  existing_title: 潔淨之地
+  existing_path: link_folder/地點/潔淨之地.md
+- name: 贖罪祭
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 不潔之人出到營外
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 不潔之人出到營外
+  existing_path: link_folder/主題/不潔之人出到營外.md
+- name: 意外沾染死屍與重新潔淨條例
+  suggested_type: 事件
+  match_type: exact
+  existing_title: 意外沾染死屍與重新潔淨條例
+  existing_path: link_folder/事件/意外沾染死屍與重新潔淨條例.md
+- name: 不可挨近死屍（拿細耳人的潔淨）
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 不可挨近死屍（拿細耳人的潔淨）
+  existing_path: link_folder/主題/不可挨近死屍（拿細耳人的潔淨）.md
+- name: 潔淨與不潔淨
+  suggested_type: 神學
+  match_type: exact
+  existing_title: 潔淨與不潔淨
+  existing_path: link_folder/神學/潔淨與不潔淨.md
+- name: 潔淨痲瘋者的兩鳥儀式
+  suggested_type: 主題
+  match_type: exact
+  existing_title: 潔淨痲瘋者的兩鳥儀式
+  existing_path: link_folder/主題/潔淨痲瘋者的兩鳥儀式.md
+- name: 古代近東的替罪與潔淨儀式
+  suggested_type: 背景
+  match_type: exact
+  existing_title: 古代近東的替罪與潔淨儀式
+  existing_path: link_folder/背景/古代近東的替罪與潔淨儀式.md
+- name: 紅母牛預表基督城外受苦（來13：11-12）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 紅母牛預表基督城外受苦（來13：11-12）
+  existing_path: link_folder/互文/紅母牛預表基督城外受苦（來13：11-12）.md
+- name: 不潔淨被剪除預表拒絕恩典滅亡（來10：26-29）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 不潔淨被剪除預表拒絕恩典滅亡（來10：26-29）
+  existing_path: link_folder/互文/不潔淨被剪除預表拒絕恩典滅亡（來10：26-29）.md
+- name: 玷污耶和華的聖所與帳幕
+  suggested_type: 神學
+  existing_path: link_folder/神學/玷污耶和華的聖所與帳幕.md
+  match_type: exact
+  existing_title: 玷污耶和華的聖所與帳幕
 C_new_formal:
 - name: 無殘疾與未曾負軛的紅母牛
   suggested_type: 神學
@@ -44,17 +119,11 @@ C_new_formal:
 - name: 除污穢的水
   suggested_type: 神學
   target_path: link_folder/神學/除污穢的水.md
-- name: 向會幕前彈紅母牛的血七次
-  suggested_type: 文化
-  target_path: link_folder/文化/向會幕前彈紅母牛的血七次.md
-- name: 香柏木、牛膝草與朱紅線
-  suggested_type: 文化
-  target_path: link_folder/文化/香柏木、牛膝草與朱紅線.md
 - name: 第三日與第七日的除污穢禮儀
   suggested_type: 文化
   target_path: link_folder/文化/第三日與第七日的除污穢禮儀.md
-- name: 玷污耶和華的聖所與帳幕
-  suggested_type: 神學
-  target_path: link_folder/神學/玷污耶和華的聖所與帳幕.md
+- name: 敞口的器皿
+  suggested_type: 文化
+  target_path: link_folder/文化/敞口的器皿.md
 D_new_candidate: []
 E_skip: []

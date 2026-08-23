@@ -1,15 +1,27 @@
 book: 民數記
 chapter: 19
 links:
+- verse: 3
+  phrase: 以利亞撒
+  target: 以利亞撒
+- verse: 4
+  phrase: 以利亞撒
+  target: 以利亞撒
 - verse: 6
   phrase: 香柏木
   target: 香柏木（潔淨儀式用）
 - verse: 6
   phrase: 牛膝草
   target: 牛膝草
+- verse: 6
+  phrase: 朱紅色線
+  target: 藍色、紫色、朱紅色線
 - verse: 9
   phrase: 除污穢的水
   target: 除污穢的水
+- verse: 10
+  phrase: 永遠的定例
+  target: 永遠的定例
 - verse: 12
   phrase: 除污穢的水
   target: 除污穢的水
@@ -19,6 +31,9 @@ links:
 - verse: 13
   phrase: 除污穢的水
   target: 除污穢的水
+- verse: 15
+  phrase: 敞口的器皿
+  target: 敞口的器皿
 - verse: 17
   phrase: 活水
   target: 活水（潔淨儀式用）
@@ -31,3 +46,6 @@ links:
 - verse: 20
   phrase: 除污穢的水
   target: 除污穢的水
+- verse: 21
+  phrase: 永遠的定例
+  target: 永遠的定例
