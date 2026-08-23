@@ -1,18 +1,33 @@
 book: 民數記
 chapter: 21
 links:
+- verse: 3
+  phrase: 何珥瑪
+  target: 迦南大敗直到何珥瑪
 - verse: 4
   phrase: 何珥山
   target: 何珥山
 - verse: 4
   phrase: 以東地
   target: 以東
+- verse: 5
+  phrase: 摩西
+  target: 摩西
 - verse: 6
   phrase: 火蛇
   target: 火蛇（saraph）
+- verse: 7
+  phrase: 摩西
+  target: 摩西
+- verse: 8
+  phrase: 摩西
+  target: 摩西
 - verse: 8
   phrase: 火蛇
   target: 火蛇（saraph）
+- verse: 9
+  phrase: 摩西
+  target: 摩西
 - verse: 9
   phrase: 銅蛇
   target: 銅蛇（nehushtan）
@@ -25,15 +40,24 @@ links:
 - verse: 13
   phrase: 亞摩利人
   target: 亞摩利人
+- verse: 14
+  phrase: 耶和華的戰記
+  target: 耶和華的戰記
 - verse: 15
   phrase: 摩押
   target: 摩押
+- verse: 16
+  phrase: 摩西
+  target: 摩西
 - verse: 20
   phrase: 摩押
   target: 摩押
 - verse: 21
   phrase: 亞摩利人
   target: 亞摩利人
+- verse: 22
+  phrase: 大道（原文作王道）
+  target: 大道（原文作王道）
 - verse: 24
   phrase: 亞捫人
   target: 亞捫人
@@ -49,9 +73,21 @@ links:
 - verse: 29
   phrase: 摩押
   target: 摩押
+- verse: 29
+  phrase: 基抹
+  target: 基抹（摩押的神）
 - verse: 31
   phrase: 亞摩利人
   target: 亞摩利人
 - verse: 32
+  phrase: 摩西
+  target: 摩西
+- verse: 32
   phrase: 亞摩利人
   target: 亞摩利人
+- verse: 33
+  phrase: 巴珊
+  target: 巴珊
+- verse: 34
+  phrase: 摩西
+  target: 摩西

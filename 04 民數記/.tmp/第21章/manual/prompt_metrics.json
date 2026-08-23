@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 21,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "entry_batch",
+      "path": "entry_batch_1.prompt.md",
+      "before": {
+        "chars": 193305,
+        "bytes": 259430
+      },
+      "after": {
+        "chars": 5602,
+        "bytes": 11482
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_numbers_21.txt",
+          "chars": 11093,
+          "bytes": 31259
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_numbers_21.txt",
+          "chars": 16329,
+          "bytes": 44888
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_numbers_21.txt",
+          "chars": 17049,
+          "bytes": 17208
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_numbers_21.txt",
+          "chars": 64665,
+          "bytes": 64689
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_numbers_21.txt",
+          "selection_mode": "non-original-skipped",
+          "raw_chars": 79463,
+          "raw_bytes": 91823,
+          "projected_chars": 305,
+          "projected_bytes": 467,
+          "occurrences": 0,
+          "occurrence_count": 0,
+          "lexicon_entries": 0,
+          "selected_verses": [],
+          "candidate_count": 0,
+          "selected_candidate_count": 0,
+          "truncated": false,
+          "returned_chars": 305,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,21 +1,21 @@
 book: 民數記
 chapter: 21
 A_use_directly:
-- name: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
-  suggested_type: 互文
+- name: 火蛇（saraph）
+  suggested_type: 原文
   match_type: exact
-  existing_title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
-  existing_path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
-- name: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
-  suggested_type: 互文
+  existing_title: 火蛇（saraph）
+  existing_path: link_folder/原文/火蛇（saraph）.md
+- name: 銅蛇（nehushtan）
+  suggested_type: 原文
   match_type: exact
-  existing_title: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
-  existing_path: link_folder/互文/以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）.md
-- name: 銅蛇被毀滅預表除去偶像（王下18：4）
-  suggested_type: 互文
+  existing_title: 銅蛇（nehushtan）
+  existing_path: link_folder/原文/銅蛇（nehushtan）.md
+- name: 亞摩利人
+  suggested_type: 人物
   match_type: exact
-  existing_title: 銅蛇被毀滅預表除去偶像（王下18：4）
-  existing_path: link_folder/互文/銅蛇被毀滅預表除去偶像（王下18：4）.md
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
 - name: 何珥山
   suggested_type: 地點
   match_type: exact
@@ -36,40 +36,106 @@ A_use_directly:
   match_type: exact
   existing_title: 摩押
   existing_path: link_folder/人物/摩押.md
+- name: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  existing_path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+- name: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  existing_path: link_folder/互文/以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）.md
+- name: 銅蛇被毀滅預表除去偶像（王下18：4）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 銅蛇被毀滅預表除去偶像（王下18：4）
+  existing_path: link_folder/互文/銅蛇被毀滅預表除去偶像（王下18：4）.md
 B_needs_update:
-- name: 火蛇（saraph）
-  suggested_type: 原文
+- name: 迦南大敗直到何珥瑪
+  suggested_type: 歷史
   match_type: exact
-  existing_title: 火蛇（saraph）
-  existing_path: link_folder/原文/火蛇（saraph）.md
-- name: 銅蛇（nehushtan）
-  suggested_type: 原文
+  existing_title: 迦南大敗直到何珥瑪
+  existing_path: link_folder/歷史/迦南大敗直到何珥瑪.md
+- name: 嗎哪
+  suggested_type: 主題
   match_type: exact
-  existing_title: 銅蛇（nehushtan）
-  existing_path: link_folder/原文/銅蛇（nehushtan）.md
-- name: 亞摩利人
+  existing_title: 嗎哪
+  existing_path: link_folder/主題/嗎哪.md
+- name: 百姓厭棄嗎哪（約6：31-35）
+  suggested_type: 互文
+  match_type: exact
+  existing_title: 百姓厭棄嗎哪（約6：31-35）
+  existing_path: link_folder/互文/百姓厭棄嗎哪（約6：31-35）.md
+- name: 摩西
   suggested_type: 人物
   match_type: exact
-  existing_title: 亞摩利人
-  existing_path: link_folder/人物/亞摩利人.md
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 利乏音人
+  suggested_type: 人物
+  match_type: exact
+  existing_title: 利乏音人
+  existing_path: link_folder/人物/利乏音人.md
+- name: 大道（原文作王道）
+  suggested_type: 文化
+  match_type: exact
+  existing_title: 大道（原文作王道）
+  existing_path: link_folder/文化/大道（原文作王道）.md
+- name: 曠野飄流四十年
+  suggested_type: 歷史
+  match_type: exact
+  existing_title: 曠野飄流四十年
+  existing_path: link_folder/歷史/曠野飄流四十年.md
 C_new_formal:
-- name: 亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪
+- name: 戰勝亞拉得王
   suggested_type: 歷史
-  target_path: link_folder/歷史/亞拉得人襲擊探路者及神賜下徹底戰勝之何珥瑪.md
-- name: 百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人
+  target_path: link_folder/歷史/戰勝亞拉得王.md
+  semantic_hint:
+  - title: 耶和華的得勝
+    score: 0.426
+    type: 神學
+  - title: 戰勝亞瑪力人
+    score: 0.425
+    type: 事件
+- name: 厭惡淡薄的食物與火蛇之災
   suggested_type: 事件
-  target_path: link_folder/事件/百姓抱怨難路痛厭淡薄食物與耶和華使火蛇咬人.md
-- name: 摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治
+  target_path: link_folder/事件/厭惡淡薄的食物與火蛇之災.md
+  semantic_hint:
+  - title: 火蛇（saraph）
+    score: 0.475
+    type: 原文
+  - title: 蛇
+    score: 0.401
+    type: 人物
+- name: 舉銅蛇望而得活
   suggested_type: 神學
-  target_path: link_folder/神學/摩西為民祈禱製作銅蛇掛於杆上見證望蛇生得治.md
-- name: 以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯
+  target_path: link_folder/神學/舉銅蛇望而得活.md
+  semantic_hint:
+  - title: 銅蛇（nehushtan）
+    score: 0.453
+    type: 原文
+- name: 耶和華的戰記
+  suggested_type: 文化
+  target_path: link_folder/文化/耶和華的戰記.md
+  semantic_hint:
+  - title: 耶和華是戰士
+    score: 0.557
+    type: 神學
+  - title: 耶和華的爭戰
+    score: 0.502
+    type: 神學
+  - title: 耶和華
+    score: 0.465
+    type: 神學
+- name: 井之歌（比珥掘井）
+  suggested_type: 文化
+  target_path: link_folder/文化/井之歌（比珥掘井）.md
+- name: 基抹（摩押的神）
+  suggested_type: 背景
+  target_path: link_folder/背景/基抹（摩押的神）.md
+- name: 巴珊
   suggested_type: 地點
-  target_path: link_folder/地點/以耶亞巴琳經亞嫩河與戰記上述蘇法的哇哈伯.md
-- name: 比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌
-  suggested_type: 事件
-  target_path: link_folder/事件/比珥活水泉谷與眾首領用圭用杖挖井引頌讚凱歌.md
-- name: 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土
-  suggested_type: 歷史
-  target_path: link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md
+  target_path: link_folder/地點/巴珊.md
 D_new_candidate: []
 E_skip: []
