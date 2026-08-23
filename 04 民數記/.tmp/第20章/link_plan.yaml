@@ -107,6 +107,11 @@ B_needs_update:
   existing_path: link_folder/地點/何珥山.md
   match_type: exact
   existing_title: 何珥山
+- existing_path: link_folder/文化/大道（原文作王道）.md
+  existing_title: 大道（原文作王道）
+  match_type: exact
+  name: 大道（原文作王道）
+  suggested_type: 文化
 C_new_formal:
 - name: 米利暗卒於加低斯
   suggested_type: 事件
@@ -123,9 +128,6 @@ C_new_formal:
 - name: 以東王拒絕以色列人假道
   suggested_type: 歷史
   target_path: link_folder/歷史/以東王拒絕以色列人假道.md
-- name: 大道（原文作王道）
-  suggested_type: 文化
-  target_path: link_folder/文化/大道（原文作王道）.md
 - name: 哀哭三十天
   suggested_type: 文化
   target_path: link_folder/文化/哀哭三十天.md

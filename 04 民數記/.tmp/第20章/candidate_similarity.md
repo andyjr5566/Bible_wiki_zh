@@ -4,23 +4,23 @@ book: 民數記
 chapter: 20
 candidate_sha256: c97ab1ab4663664feab53de5682a92c5f38001a4516bcd8dc73a75be2bea5fbe
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 4a1a3142c25c32e7
-link_index_sha256: b35d779541350b92819ead3af822028e575c91b617cb695bd576c1e5464f37d0
+embedding_index_fingerprint: 7b6221c20d6d2928
+link_index_sha256: 078925937f5492dead026cda93201e82bb7679d3b879eb6d20da12d14f73754f
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
 calibration_sha256: 337500e601e3a204c71a4bbe077172c48c165c2ea9ffe38c5d4425363d899411
-rerank_status: success
-rerankable_candidates: 4
-rerank_attempted: 4
-rerank_succeeded: 4
+rerank_status: not_needed
+rerankable_candidates: 0
+rerank_attempted: 0
+rerank_succeeded: 0
 rerank_retrieve_top_k: 20
-rerank_score_observed: 0.000-0.240
+rerank_score_observed: none
 -->
 
 # 候選語義近鄰報告：民數記 第20章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2646 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2651 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -36,11 +36,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 米利暗卒於加低斯 | 0.509 | link_folder/事件/米利暗卒於加低斯.md |
+| 1 | 米利暗卒於加低斯 | 0.369 | link_folder/事件/米利暗卒於加低斯.md |
 | 2 | 加低斯巴尼亞事件 | 0.359 | link_folder/歷史/加低斯巴尼亞事件.md |
-| 3 | 米利暗 | 0.329 | link_folder/人物/米利暗.md |
+| 3 | 米利暗 | 0.339 | link_folder/人物/米利暗.md |
 | 4 | 猶大與他瑪事件 | 0.314 | link_folder/歷史/猶大與他瑪事件.md |
-| 5 | 在米利巴未將耶和華尊為聖 | 0.312 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
+| 5 | 米利暗之歌 | 0.285 | link_folder/神學/米利暗之歌.md |
 
 判定：✅ 建議使用既有條目 [[米利暗卒於加低斯]]（同名／字面對應）
 
@@ -54,11 +54,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西擊打磐石兩下 | 0.698 | link_folder/事件/摩西擊打磐石兩下.md |
-| 2 | 磐石出水 | 0.517 | link_folder/事件/磐石出水.md |
-| 3 | 摩西摔碎法版（廢約的象徵） | 0.498 | link_folder/事件/摩西摔碎法版（廢約的象徵）.md |
-| 4 | 賽53：4-5 磐石被擊打 | 0.482 | link_folder/互文/賽53：4-5 磐石被擊打.md |
-| 5 | 摩西 | 0.455 | link_folder/人物/摩西.md |
+| 1 | 摩西擊打磐石兩下 | 0.616 | link_folder/事件/摩西擊打磐石兩下.md |
+| 2 | 磐石出水 | 0.518 | link_folder/事件/磐石出水.md |
+| 3 | 賽53：4-5 磐石被擊打 | 0.499 | link_folder/互文/賽53：4-5 磐石被擊打.md |
+| 4 | 摩西摔碎法版（廢約的象徵） | 0.498 | link_folder/事件/摩西摔碎法版（廢約的象徵）.md |
+| 5 | 摩西 | 0.473 | link_folder/人物/摩西.md |
 
 判定：✅ 建議使用既有條目 [[摩西擊打磐石兩下]]（同名／字面對應）
 
@@ -72,11 +72,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 在米利巴未將耶和華尊為聖 | 0.651 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
+| 1 | 在米利巴未將耶和華尊為聖 | 0.500 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
 | 2 | 耶和華 | 0.462 | link_folder/神學/耶和華.md |
 | 3 | 耶和華聖名的啟示 | 0.448 | link_folder/神學/耶和華聖名的啟示.md |
 | 4 | 耶和華是戰士 | 0.419 | link_folder/神學/耶和華是戰士.md |
-| 5 | 脫鞋與聖地 | 0.416 | link_folder/文化/脫鞋與聖地.md |
+| 5 | 米利巴（Meribah） | 0.418 | link_folder/原文/米利巴（Meribah）.md |
 
 判定：✅ 建議使用既有條目 [[在米利巴未將耶和華尊為聖]]（同名／字面對應）
 
@@ -90,9 +90,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞倫卒於何珥山與祭司職任更替 | 0.741 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
-| 2 | 何珥山 | 0.588 | link_folder/地點/何珥山.md |
-| 3 | 亞倫 | 0.562 | link_folder/人物/亞倫.md |
+| 1 | 亞倫卒於何珥山與祭司職任更替 | 0.615 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
+| 2 | 亞倫 | 0.602 | link_folder/人物/亞倫.md |
+| 3 | 何珥山 | 0.544 | link_folder/地點/何珥山.md |
 | 4 | 亞倫和他兒子（祭司） | 0.531 | link_folder/人物/亞倫和他兒子（祭司）.md |
 | 5 | 亞倫的祭司譜系 | 0.528 | link_folder/人物/亞倫的祭司譜系.md |
 
@@ -108,11 +108,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以東王拒絕以色列人假道 | 0.676 | link_folder/歷史/以東王拒絕以色列人假道.md |
-| 2 | 以東 | 0.413 | link_folder/地點/以東.md |
-| 3 | 以東諸王早於以色列王政 | 0.393 | link_folder/歷史/以東諸王早於以色列王政.md |
-| 4 | 以東與以色列的敵對 | 0.383 | link_folder/神學/以東與以色列的敵對.md |
-| 5 | 戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土 | 0.379 | link_folder/歷史/戰勝希實本與巴珊二大頑梗敵軍與佔領其廣澤領土.md |
+| 1 | 以東王拒絕以色列人假道 | 0.588 | link_folder/歷史/以東王拒絕以色列人假道.md |
+| 2 | 以東與以色列的敵對 | 0.467 | link_folder/神學/以東與以色列的敵對.md |
+| 3 | 以東 | 0.434 | link_folder/地點/以東.md |
+| 4 | 大道（原文作王道） | 0.397 | link_folder/文化/大道（原文作王道）.md |
+| 5 | 以東諸王早於以色列王政 | 0.393 | link_folder/歷史/以東諸王早於以色列王政.md |
 
 判定：✅ 建議使用既有條目 [[以東王拒絕以色列人假道]]（同名／字面對應）
 
@@ -126,7 +126,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 何珥山 | 0.487 | link_folder/地點/何珥山.md |
+| 1 | 何珥山 | 0.434 | link_folder/地點/何珥山.md |
 | 2 | 何烈山 | 0.422 | link_folder/地點/何烈山.md |
 | 3 | 西珥山 | 0.420 | link_folder/地點/西珥山.md |
 | 4 | 西珥（何利人） | 0.359 | link_folder/人物/西珥（何利人）.md |
@@ -140,18 +140,17 @@ query:
 - 出現位置：民數記 第20章
 - 候選類型：文化
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「大道（原文作王道）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 以東王拒絕以色列人假道 | 0.290 | 0.015 | link_folder/歷史/以東王拒絕以色列人假道.md |
-| 2 | 沿海大道（Via Maris） | 0.250 | 0.002 | link_folder/地點/沿海大道（Via Maris）.md |
-| 3 | 認識神的道 | 0.210 | 0.002 | link_folder/主題/認識神的道.md |
-| 4 | 繞道而行 | 0.191 | 0.001 | link_folder/歷史/繞道而行.md |
-| 5 | 爐灶和摶麵盆 | 0.187 | 0.001 | link_folder/文化/爐灶和摶麵盆.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 大道（原文作王道） | 0.466 | link_folder/文化/大道（原文作王道）.md |
+| 2 | 沿海大道（Via Maris） | 0.250 | link_folder/地點/沿海大道（Via Maris）.md |
+| 3 | 大衛 | 0.223 | link_folder/人物/大衛.md |
+| 4 | 喝道「跪下」的禮儀 | 0.223 | link_folder/文化/喝道「跪下」的禮儀.md |
+| 5 | 路14（Loukas 14） | 0.222 | link_folder/原文/路14（Loukas 14）.md |
 
-rerank_margin: 0.013 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=文化 vs 條目=歷史），若確為同實體請確認是否改用 [[以東王拒絕以色列人假道]]
+判定：✅ 建議使用既有條目 [[大道（原文作王道）]]（同名／字面對應）
 
 ## 哀哭三十天（文化）
 query:
@@ -159,18 +158,17 @@ query:
 - 出現位置：民數記 第20章
 - 候選類型：文化
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「哀哭三十天」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 亞達禾場與亞伯麥西 | 0.249 | 0.004 | link_folder/地點/亞達禾場與亞伯麥西.md |
-| 2 | 古代哀悼習俗 | 0.287 | 0.004 | link_folder/背景/古代哀悼習俗.md |
-| 3 | 古埃及薰屍與哀悼 | 0.316 | 0.002 | link_folder/文化/古埃及薰屍與哀悼.md |
-| 4 | 蓬頭散髮（表羞辱與蒙罪嫌） | 0.258 | 0.002 | link_folder/文化/蓬頭散髮（表羞辱與蒙罪嫌）.md |
-| 5 | 婚宴與剪羊毛風俗 | 0.300 | 0.001 | link_folder/文化/婚宴與剪羊毛風俗.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 哀哭三十天 | 0.423 | link_folder/文化/哀哭三十天.md |
+| 2 | 古代近東夢文化 | 0.330 | link_folder/文化/古代近東夢文化.md |
+| 3 | 古埃及薰屍與哀悼 | 0.316 | link_folder/文化/古埃及薰屍與哀悼.md |
+| 4 | 婚宴與剪羊毛風俗 | 0.300 | link_folder/文化/婚宴與剪羊毛風俗.md |
+| 5 | 坑中無水 | 0.299 | link_folder/文化/坑中無水.md |
 
-rerank_margin: 0.000 (Top1 - Top2)
-判定：🆕 建議建立新條目（最相似條目僅 0.330 < 0.50）（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[哀哭三十天]]（同名／字面對應）
 
 ## 歸到他列祖（主題）
 query:
@@ -178,18 +176,17 @@ query:
 - 出現位置：民數記 第20章
 - 候選類型：主題
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「歸到他列祖」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 歸到列祖 | 0.457 | 0.240 | link_folder/主題/歸到列祖.md |
-| 2 | 離俗歸耶和華 | 0.370 | 0.003 | link_folder/主題/離俗歸耶和華.md |
-| 3 | 彌賽亞家譜中的恩典 | 0.395 | 0.003 | link_folder/神學/彌賽亞家譜中的恩典.md |
-| 4 | 宗族方言地土地與邦國 | 0.382 | 0.001 | link_folder/主題/宗族方言地土地與邦國.md |
-| 5 | 神為何命夏甲回到撒萊手下 | 0.404 | 0.001 | link_folder/解經爭議/神為何命夏甲回到撒萊手下.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 歸到他列祖 | 0.496 | link_folder/主題/歸到他列祖.md |
+| 2 | 歸到列祖 | 0.457 | link_folder/主題/歸到列祖.md |
+| 3 | 神為何命夏甲回到撒萊手下 | 0.404 | link_folder/解經爭議/神為何命夏甲回到撒萊手下.md |
+| 4 | 何3（Hoshea 3） | 0.401 | link_folder/原文/何3（Hoshea 3）.md |
+| 5 | 回到伯特利的屬靈復興 | 0.400 | link_folder/神學/回到伯特利的屬靈復興.md |
 
-rerank_margin: 0.237 (Top1 - Top2)
-判定：🆕 建議建立新條目（最相似條目僅 0.457 < 0.50）（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[歸到他列祖]]（同名／字面對應）
 
 ## 以色列人經過還是繞過以東境界（解經爭議）
 query:
@@ -197,18 +194,17 @@ query:
 - 出現位置：民數記 第20章
 - 候選類型：解經爭議
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「以色列人經過還是繞過以東境界」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 以東王拒絕以色列人假道 | 0.442 | 0.081 | link_folder/歷史/以東王拒絕以色列人假道.md |
-| 2 | 以東 | 0.430 | 0.036 | link_folder/地點/以東.md |
-| 3 | 紅海指的是哪個海 | 0.398 | 0.009 | link_folder/解經爭議/紅海指的是哪個海.md |
-| 4 | 紅海曠野 | 0.391 | 0.006 | link_folder/地點/紅海曠野.md |
-| 5 | 出埃及的年代 | 0.398 | 0.006 | link_folder/解經爭議/出埃及的年代.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 以色列人經過還是繞過以東境界 | 0.708 | link_folder/解經爭議/以色列人經過還是繞過以東境界.md |
+| 2 | 以東王拒絕以色列人假道 | 0.469 | link_folder/歷史/以東王拒絕以色列人假道.md |
+| 3 | 創世記36章以東諸王年代問題 | 0.446 | link_folder/解經爭議/創世記36章以東諸王年代問題.md |
+| 4 | 以東 | 0.443 | link_folder/地點/以東.md |
+| 5 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.430 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
 
-rerank_margin: 0.045 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=解經爭議 vs 條目=歷史），若確為同實體請確認是否改用 [[以東王拒絕以色列人假道]]
+判定：✅ 建議使用既有條目 [[以色列人經過還是繞過以東境界]]（同名／字面對應）
 
 ## 米利暗（人物）
 query:
@@ -220,11 +216,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 米利暗 | 0.415 | link_folder/人物/米利暗.md |
-| 2 | 米利暗卒於加低斯 | 0.356 | link_folder/事件/米利暗卒於加低斯.md |
-| 3 | 以米人 | 0.352 | link_folder/人物/以米人.md |
-| 4 | 米利暗之歌 | 0.315 | link_folder/神學/米利暗之歌.md |
-| 5 | 米利暗與亞倫誰是主謀 | 0.305 | link_folder/解經爭議/米利暗與亞倫誰是主謀.md |
+| 1 | 米利暗 | 0.411 | link_folder/人物/米利暗.md |
+| 2 | 以米人 | 0.352 | link_folder/人物/以米人.md |
+| 3 | 米利暗之歌 | 0.315 | link_folder/神學/米利暗之歌.md |
+| 4 | 米利暗與亞倫誰是主謀 | 0.305 | link_folder/解經爭議/米利暗與亞倫誰是主謀.md |
+| 5 | 米利暗卒於加低斯 | 0.304 | link_folder/事件/米利暗卒於加低斯.md |
 
 判定：✅ 建議使用既有條目 [[米利暗]]（同名／字面對應）
 
@@ -238,7 +234,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 加低斯 | 0.410 | link_folder/地點/加低斯.md |
+| 1 | 加低斯 | 0.387 | link_folder/地點/加低斯.md |
 | 2 | 安密巴 | 0.355 | link_folder/地點/安密巴.md |
 | 3 | 巴列 | 0.346 | link_folder/地點/巴列.md |
 | 4 | 加低斯巴尼亞事件 | 0.340 | link_folder/歷史/加低斯巴尼亞事件.md |
@@ -259,7 +255,7 @@ query:
 | 1 | 以東名字含義 | 0.421 | link_folder/原文/以東名字含義.md |
 | 2 | 提幔 | 0.415 | link_folder/地點/提幔.md |
 | 3 | 東方人之地 | 0.396 | link_folder/地點/東方人之地.md |
-| 4 | 以東 | 0.381 | link_folder/地點/以東.md |
+| 4 | 以東 | 0.395 | link_folder/地點/以東.md |
 | 5 | 伊甸 | 0.371 | link_folder/地點/伊甸.md |
 
 判定：✅ 建議使用既有條目 [[以東]]（同名／字面對應）
@@ -274,11 +270,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以東與以色列的敵對 | 0.665 | link_folder/神學/以東與以色列的敵對.md |
+| 1 | 以東與以色列的敵對 | 0.668 | link_folder/神學/以東與以色列的敵對.md |
 | 2 | 俄巴底亞書以東審判 | 0.551 | link_folder/互文/俄巴底亞書以東審判.md |
-| 3 | 出埃及記17章亞瑪力攻擊以色列 | 0.458 | link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md |
-| 4 | 以東 | 0.441 | link_folder/地點/以東.md |
-| 5 | 耶和華的爭戰 | 0.430 | link_folder/神學/耶和華的爭戰.md |
+| 3 | 以東王拒絕以色列人假道 | 0.462 | link_folder/歷史/以東王拒絕以色列人假道.md |
+| 4 | 出埃及記17章亞瑪力攻擊以色列 | 0.458 | link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md |
+| 5 | 以東 | 0.437 | link_folder/地點/以東.md |
 
 判定：✅ 建議使用既有條目 [[以東與以色列的敵對]]（同名／字面對應）
 
@@ -292,11 +288,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 磐石出水 | 0.453 | link_folder/事件/磐石出水.md |
+| 1 | 磐石出水 | 0.444 | link_folder/事件/磐石出水.md |
 | 2 | 詩78：15-16 磐石出水 | 0.410 | link_folder/互文/詩78：15-16 磐石出水.md |
-| 3 | 摩西擊打磐石兩下 | 0.336 | link_folder/事件/摩西擊打磐石兩下.md |
-| 4 | 磐石預表基督 | 0.336 | link_folder/神學/磐石預表基督.md |
-| 5 | 林前10：4 靈磐石就是基督 | 0.323 | link_folder/互文/林前10：4 靈磐石就是基督.md |
+| 3 | 磐石預表基督 | 0.334 | link_folder/神學/磐石預表基督.md |
+| 4 | 約4：14 活水 | 0.307 | link_folder/互文/約4：14 活水.md |
+| 5 | 林前10：4 靈磐石就是基督 | 0.304 | link_folder/互文/林前10：4 靈磐石就是基督.md |
 
 判定：✅ 建議使用既有條目 [[磐石出水]]（同名／字面對應）
 
@@ -310,10 +306,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 磐石預表基督 | 0.634 | link_folder/神學/磐石預表基督.md |
-| 2 | 賽53：4-5 磐石被擊打 | 0.517 | link_folder/互文/賽53：4-5 磐石被擊打.md |
-| 3 | 基督的預表 | 0.514 | link_folder/神學/基督的預表.md |
-| 4 | 林前10：4 靈磐石就是基督 | 0.473 | link_folder/互文/林前10：4 靈磐石就是基督.md |
+| 1 | 磐石預表基督 | 0.624 | link_folder/神學/磐石預表基督.md |
+| 2 | 基督的預表 | 0.514 | link_folder/神學/基督的預表.md |
+| 3 | 賽53：4-5 磐石被擊打 | 0.491 | link_folder/互文/賽53：4-5 磐石被擊打.md |
+| 4 | 林前10：4 靈磐石就是基督 | 0.467 | link_folder/互文/林前10：4 靈磐石就是基督.md |
 | 5 | 麥基洗德的豫表 | 0.442 | link_folder/神學/麥基洗德的豫表.md |
 
 判定：✅ 建議使用既有條目 [[磐石預表基督]]（同名／字面對應）
@@ -328,9 +324,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 林前10：4 靈磐石就是基督 | 0.675 | link_folder/互文/林前10：4 靈磐石就是基督.md |
-| 2 | 磐石預表基督 | 0.578 | link_folder/神學/磐石預表基督.md |
-| 3 | 賽53：4-5 磐石被擊打 | 0.469 | link_folder/互文/賽53：4-5 磐石被擊打.md |
+| 1 | 林前10：4 靈磐石就是基督 | 0.674 | link_folder/互文/林前10：4 靈磐石就是基督.md |
+| 2 | 磐石預表基督 | 0.566 | link_folder/神學/磐石預表基督.md |
+| 3 | 賽53：4-5 磐石被擊打 | 0.455 | link_folder/互文/賽53：4-5 磐石被擊打.md |
 | 4 | 約4：14 活水 | 0.443 | link_folder/互文/約4：14 活水.md |
 | 5 | 神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10） | 0.423 | link_folder/互文/神揀選止息怨言預表基督平息叛逆（來 12：24；羅 5：10）.md |
 
@@ -346,11 +342,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 賽53：4-5 磐石被擊打 | 0.613 | link_folder/互文/賽53：4-5 磐石被擊打.md |
+| 1 | 賽53：4-5 磐石被擊打 | 0.600 | link_folder/互文/賽53：4-5 磐石被擊打.md |
 | 2 | 賽53：5 | 0.435 | link_folder/互文/賽53：5.md |
-| 3 | 摩西擊打磐石兩下 | 0.422 | link_folder/事件/摩西擊打磐石兩下.md |
-| 4 | 詩78：15-16 磐石出水 | 0.387 | link_folder/互文/詩78：15-16 磐石出水.md |
-| 5 | 磐石預表基督 | 0.381 | link_folder/神學/磐石預表基督.md |
+| 3 | 摩西擊打磐石兩下 | 0.417 | link_folder/事件/摩西擊打磐石兩下.md |
+| 4 | 磐石預表基督 | 0.388 | link_folder/神學/磐石預表基督.md |
+| 5 | 詩78：15-16 磐石出水 | 0.387 | link_folder/互文/詩78：15-16 磐石出水.md |
 
 判定：✅ 建議使用既有條目 [[賽53：4-5 磐石被擊打]]（同名／字面對應）
 
@@ -364,11 +360,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 米利巴（Meribah） | 0.494 | link_folder/原文/米利巴（Meribah）.md |
+| 1 | 米利巴（Meribah） | 0.474 | link_folder/原文/米利巴（Meribah）.md |
 | 2 | 米斯巴 | 0.425 | link_folder/原文/米斯巴.md |
-| 3 | 在米利巴未將耶和華尊為聖 | 0.399 | link_folder/神學/在米利巴未將耶和華尊為聖.md |
-| 4 | 米拉利子孫 | 0.320 | link_folder/人物/米拉利子孫.md |
-| 5 | 米斯巴作為瞭望塔與鑒察 | 0.319 | link_folder/文化/米斯巴作為瞭望塔與鑒察.md |
+| 3 | 米拉利子孫 | 0.320 | link_folder/人物/米拉利子孫.md |
+| 4 | 米斯巴作為瞭望塔與鑒察 | 0.319 | link_folder/文化/米斯巴作為瞭望塔與鑒察.md |
+| 5 | 米利暗 | 0.304 | link_folder/人物/米利暗.md |
 
 判定：✅ 建議使用既有條目 [[米利巴（Meribah）]]（同名／字面對應）
 
@@ -382,8 +378,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 瑪撒米利巴是一次還是兩次 | 0.546 | link_folder/解經爭議/瑪撒米利巴是一次還是兩次.md |
-| 2 | 米利巴（Meribah） | 0.460 | link_folder/原文/米利巴（Meribah）.md |
+| 1 | 瑪撒米利巴是一次還是兩次 | 0.532 | link_folder/解經爭議/瑪撒米利巴是一次還是兩次.md |
+| 2 | 米利巴（Meribah） | 0.441 | link_folder/原文/米利巴（Meribah）.md |
 | 3 | 瑪撒（Massah） | 0.404 | link_folder/原文/瑪撒（Massah）.md |
 | 4 | 以實瑪利人與米甸人稱呼差異 | 0.394 | link_folder/解經爭議/以實瑪利人與米甸人稱呼差異.md |
 | 5 | 二月逾越節是否只有一天、不必除酵 | 0.392 | link_folder/解經爭議/二月逾越節是否只有一天、不必除酵.md |
@@ -400,7 +396,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.648 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
+| 1 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.599 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
 | 2 | 十二探子窺探迦南地 | 0.409 | link_folder/事件/十二探子窺探迦南地.md |
 | 3 | 窺探迦南起因為神命或民意的解經爭議 | 0.392 | link_folder/解經爭議/窺探迦南起因為神命或民意的解經爭議.md |
 | 4 | 加低斯巴尼亞事件 | 0.371 | link_folder/歷史/加低斯巴尼亞事件.md |
@@ -418,7 +414,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 受膏的祭司 | 0.517 | link_folder/人物/受膏的祭司.md |
+| 1 | 受膏的祭司 | 0.512 | link_folder/人物/受膏的祭司.md |
 | 2 | 膏抹成聖 | 0.409 | link_folder/神學/膏抹成聖.md |
 | 3 | 聖靈膏抹（約壹2：20,27） | 0.398 | link_folder/互文/聖靈膏抹（約壹2：20,27）.md |
 | 4 | 聖膏油 | 0.392 | link_folder/原文/聖膏油.md |
@@ -454,7 +450,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以利亞撒 | 0.481 | link_folder/人物/以利亞撒.md |
+| 1 | 以利亞撒 | 0.479 | link_folder/人物/以利亞撒.md |
 | 2 | 以利以謝（人物） | 0.466 | link_folder/人物/以利以謝（人物）.md |
 | 3 | 以利以謝 | 0.447 | link_folder/人物/以利以謝.md |
 | 4 | 以撒 | 0.422 | link_folder/人物/以撒.md |
@@ -472,7 +468,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 杖 | 0.561 | link_folder/神學/杖.md |
+| 1 | 杖 | 0.545 | link_folder/神學/杖.md |
 | 2 | 杖變蛇的神蹟 | 0.471 | link_folder/神學/杖變蛇的神蹟.md |
 | 3 | 摩西伸杖 | 0.455 | link_folder/神學/摩西伸杖.md |
 | 4 | 亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒 | 0.401 | link_folder/文化/亞倫之杖存於法櫃前留給悖逆之子作垂範鑑戒.md |
@@ -508,7 +504,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 曠野飄流四十年 | 0.489 | link_folder/歷史/曠野飄流四十年.md |
+| 1 | 曠野飄流四十年 | 0.471 | link_folder/歷史/曠野飄流四十年.md |
 | 2 | 四十的屬靈意義 | 0.368 | link_folder/原文/四十的屬靈意義.md |
 | 3 | 米甸曠野對摩西的預備 | 0.354 | link_folder/神學/米甸曠野對摩西的預備.md |
 | 4 | 四十歲的意義 | 0.334 | link_folder/神學/四十歲的意義.md |
@@ -526,7 +522,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以掃貪戀世俗（來12：16） | 0.652 | link_folder/互文/以掃貪戀世俗（來12：16）.md |
+| 1 | 以掃貪戀世俗（來12：16） | 0.635 | link_folder/互文/以掃貪戀世俗（來12：16）.md |
 | 2 | 以掃貪戀世俗與外在和好的落差 | 0.597 | link_folder/神學/以掃貪戀世俗與外在和好的落差.md |
 | 3 | 希伯來書12章 | 0.585 | link_folder/互文/希伯來書12章.md |
 | 4 | 約翰一書2章三樣情慾 | 0.474 | link_folder/互文/約翰一書2章三樣情慾.md |
@@ -544,7 +540,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞倫 | 0.445 | link_folder/人物/亞倫.md |
+| 1 | 亞倫 | 0.436 | link_folder/人物/亞倫.md |
 | 2 | 亞略 | 0.389 | link_folder/人物/亞略.md |
 | 3 | 以倫 | 0.384 | link_folder/人物/以倫.md |
 | 4 | 亞蘭人 | 0.370 | link_folder/人物/亞蘭人.md |
@@ -562,7 +558,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.537 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.550 | link_folder/人物/摩西.md |
 | 2 | 摩西的希伯來與埃及雙重身分 | 0.482 | link_folder/背景/摩西的希伯來與埃及雙重身分.md |
 | 3 | 摩西名字的由來 | 0.473 | link_folder/原文/摩西名字的由來.md |
 | 4 | 摩西的呼召與差遣 | 0.452 | link_folder/神學/摩西的呼召與差遣.md |
