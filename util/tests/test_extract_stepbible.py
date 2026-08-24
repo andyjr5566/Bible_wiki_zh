@@ -79,6 +79,39 @@ class ParserAndRendererTests(unittest.TestCase):
             self.assertIn("CC BY 4.0", txt)
             self.assertIn("creativecommons.org/licenses/by/4.0", txt)
 
+    def test_split_verse_streams_do_not_collide_on_word_position(self):
+        """TAHOT 檔頭列出 Num.26.1 等「英文與希伯來分節起點不同」的經節：
+
+        同一節在檔案裡是兩段各自從 #01 起編的字流，直接沿用 #NN 會產生重複
+        位置，check_source_read 的 machine validation 會判 FAIL。
+        """
+        TAB = chr(9)
+        rows = [
+            ['Num.26.1(25.19)#01=L', 'וַ/יְהִי', 'va/y.Hi', 'and/ it was', 'H1961', 'Hc/Vqw3ms'],
+            ['Num.26.1(25.19)#02=L', 'אַחֲרֵי', "'a.cha.Rei", 'after', 'H0310A', 'HAcmpc'],
+            ['Num.26.1#01=L', 'וַ/יֹּאמֶר', 'va/i.Yo.mer', 'and/ he said', 'H0559', 'Hc/Vqw3ms'],
+            ['Num.26.1#02=L', 'יְהוָה', 'Yah.weh', 'Yahweh', 'H3068G', 'HNpt'],
+            ['Num.26.2#01=L', 'שְׂאוּ', "se.'U", 'take', 'H5375', 'HVqv2mp'],
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            tagged = root / "TAHOT Gen-Deu fixture.txt"
+            tagged.write_text(
+                chr(10).join(TAB.join(r) for r in rows) + chr(10), encoding="utf-8"
+            )
+            ref = step.parse_reference("民數記 26")
+            verses = step.parse_tahot(tagged, ref, {}, {})
+
+            self.assertEqual(
+                [1, 2, 3, 4], [w.position for w in verses[1]],
+                "同一節的字序位置必須唯一且連續",
+            )
+            self.assertEqual(
+                [r[2] for r in rows[:4]], [w.transliteration for w in verses[1]],
+                "順序必須維持檔案原順序",
+            )
+            self.assertEqual([1], [w.position for w in verses[2]], "其他節不受影響")
+
     def test_nt_parser_and_json_output(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -764,6 +764,30 @@ def expand_greek_morph(raw: str, mapping: dict[str, str]) -> str:
 # Tagged-text parsing
 # ---------------------------------------------------------------------------
 
+
+def assign_word_position(
+    verse: int,
+    position: int,
+    verses: dict[int, list["WordEntry"]],
+    seen: dict[int, set[int]],
+) -> int:
+    """回傳該節內不重複的字序位置。
+
+    TAHOT 檔頭自己列出「English verses occasionally start a verse on a
+    different word - i.e. Num.26.1; 1Sa.21.1; ...」：這些經節在檔案裡是兩段
+    各自從 #01 起編的字流（例如 ``Num.26.1(25.19)#01`` 之後又接
+    ``Num.26.1#01``）。直接沿用 ``#NN`` 會在同一節產生重複位置，
+    validator 會判為「STEP word position 不合法或重複」。
+    這裡只在真的撞號時順接編號，沒有撞號的經節輸出完全不變。
+    """
+    used = seen.setdefault(verse, set())
+    pos = position or (len(verses.get(verse, [])) + 1)
+    while pos in used:
+        pos = max(used) + 1
+    used.add(pos)
+    return pos
+
+
 def parse_tahot(
     path: Path,
     target: Reference,
@@ -771,6 +795,7 @@ def parse_tahot(
     morph_map: dict[str, str],
 ) -> dict[int, list[WordEntry]]:
     verses: dict[int, list[WordEntry]] = {}
+    seen_positions: dict[int, set[int]] = {}
 
     with path.open("r", encoding="utf-8-sig", errors="replace") as f:
         for line in f:
@@ -803,7 +828,7 @@ def parse_tahot(
 
             entry = WordEntry(
                 reference=f"{target.code}.{target.chapter}.{verse}",
-                position=position or (len(verses.get(verse, [])) + 1),
+                position=assign_word_position(verse, position, verses, seen_positions),
                 word=word,
                 transliteration=transliteration,
                 gloss=gloss,
@@ -830,6 +855,7 @@ def parse_tagnt(
     morph_map: dict[str, str],
 ) -> dict[int, list[WordEntry]]:
     verses: dict[int, list[WordEntry]] = {}
+    seen_positions: dict[int, set[int]] = {}
 
     with path.open("r", encoding="utf-8-sig", errors="replace") as f:
         for line in f:
@@ -874,7 +900,7 @@ def parse_tagnt(
 
             entry = WordEntry(
                 reference=f"{target.code}.{target.chapter}.{verse}",
-                position=position or (len(verses.get(verse, [])) + 1),
+                position=assign_word_position(verse, position, verses, seen_positions),
                 word=word.replace("¶", ""),
                 transliteration=transliteration,
                 gloss=gloss,
