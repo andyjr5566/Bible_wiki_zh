@@ -1,7 +1,7 @@
 {
-  "total_warnings": 118,
+  "total_warnings": 121,
   "critical_count": 0,
-  "warning_count": 118,
+  "warning_count": 121,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -16,6 +16,20 @@
       "source": "民數記/第24章.md",
       "target": "希伯",
       "message": "同一 alias「希伯」指向多個 target: 希伯, 詩歌中的希伯是誰"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第26章.md",
+      "target": "西緬",
+      "message": "同一 alias「西緬」指向多個 target: 西緬, 西緬支派人數銳減"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第26章.md",
+      "target": "瑪拿西",
+      "message": "同一 alias「瑪拿西」指向多個 target: 瑪拿西, 瑪拿西支派人數大增"
     },
     {
       "type": "alias_target_conflict",
@@ -331,6 +345,13 @@
       "source": "link_folder/人物/摩西.md",
       "target": "第21章",
       "message": "同一 alias「第21章」指向多個 target: 03 利未記/第21章, 04 民數記/第21章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第26章",
+      "message": "同一 alias「第26章」指向多個 target: 03 利未記/第26章, 04 民數記/第26章"
     },
     {
       "type": "alias_target_conflict",

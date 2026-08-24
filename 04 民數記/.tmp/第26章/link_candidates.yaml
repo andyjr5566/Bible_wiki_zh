@@ -1,0 +1,248 @@
+book: 民數記
+chapter: 26
+candidates:
+- name: 摩西
+  type: 人物
+  evidence: v1-4 神吩咐他數點，v52-56 神吩咐他分地的原則，v63 他與以利亞撒一同數點。
+  surfaces:
+  - 摩西
+- name: 以利亞撒
+  type: 人物
+  evidence: v1、v3、v63 三次與摩西並列主持數點；v60 列為亞倫之子。
+  surfaces:
+  - 以利亞撒
+- name: 亞倫
+  type: 人物
+  evidence: v1「祭司亞倫的兒子以利亞撒」；v59-60 他的父母與四個兒子；v64 第一次數點時他仍在。
+  surfaces:
+  - 亞倫
+- name: 約書亞
+  type: 人物
+  evidence: v65「除了耶孚尼的兒子迦勒和嫩的兒子約書亞以外，連一個人也沒有存留」。
+  surfaces:
+  - 約書亞
+- name: 迦勒
+  type: 人物
+  evidence: v65 與約書亞是第一次被數的人中唯二存留的。
+  surfaces:
+  - 迦勒
+- name: 摩押平原
+  type: 地點
+  evidence: v3、v63「在摩押平原與耶利哥相對的約但河邊」。
+  surfaces:
+  - 摩押平原
+- name: 約但河
+  type: 地點
+  evidence: v3、v63 數點的地點在約但河東邊。
+  surfaces:
+  - 約但河
+- name: 耶利哥
+  type: 地點
+  evidence: v3、v63「與耶利哥相對」——耶利哥在約但河西。
+  surfaces:
+  - 耶利哥
+- name: 可拉的背叛（預告）
+  type: 人物
+  evidence: v9-11 重述可拉的事；v58 可拉族仍列在利未各族中。
+  surfaces:
+  - 可拉
+- name: 可拉大坍亞比蘭等領首聯合的大反亂
+  type: 事件
+  evidence: v9「這大坍、亞比蘭，就是從會中選召的，與可拉一黨同向耶和華爭鬧的時候」。
+  surfaces:
+  - 大坍
+  - 亞比蘭
+- name: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  type: 事件
+  evidence: v10「地便開口吞了他們，和可拉、可拉的黨類一同死亡」。
+  surfaces:
+  - 地便開口吞了他們
+- name: 數點民數
+  type: 事件
+  evidence: v64「摩西和祭司亞倫從前在西乃的曠野所數的以色列人」——第一次數點。
+  surfaces:
+  - 在西乃的曠野所數的
+- name: 利未支派
+  type: 人物
+  evidence: v57-62 利未人另行數點，一個月以外的男丁共二萬三千。
+  surfaces:
+  - 利未人
+- name: 哥轄子孫
+  type: 人物
+  evidence: v57-58「屬哥轄的，有哥轄族」；v58「哥轄生暗蘭」。
+  surfaces:
+  - 哥轄
+- name: 利未三族分工
+  type: 事件
+  evidence: v57 革順、哥轄、米拉利三大家族。
+  surfaces:
+  - 革順
+  - 米拉利
+- name: 流便
+  type: 人物
+  evidence: v5-7「以色列的長子是流便」，被數的共四萬三千七百三十名。
+  surfaces:
+  - 流便
+- name: 西緬
+  type: 人物
+  evidence: v12-14 西緬的各族，共二萬二千二百名。
+  surfaces:
+  - 西緬
+- name: 迦得（萬幸）
+  type: 人物
+  evidence: v15-18 迦得子孫的各族，共四萬零五百名。
+  surfaces:
+  - 迦得
+- name: 猶大支派
+  type: 人物
+  evidence: v19-22 猶大的各族，共七萬六千五百名，仍是人數最多的支派。
+  surfaces:
+  - 猶大
+- name: 以薩迦（價值）
+  type: 人物
+  evidence: v23-25 以薩迦的各族，共六萬四千三百名。
+  surfaces:
+  - 以薩迦
+- name: 西布倫（同住）
+  type: 人物
+  evidence: v26-27 西布倫的各族，共六萬零五百名。
+  surfaces:
+  - 西布倫
+- name: 瑪拿西
+  type: 人物
+  evidence: v28-34 瑪拿西的各族，共五萬二千七百名，本章排在以法蓮之前。
+  surfaces:
+  - 瑪拿西
+- name: 以法蓮
+  type: 人物
+  evidence: v28、v35-37 以法蓮子孫的各族，共三萬二千五百名。
+  surfaces:
+  - 以法蓮
+- name: 約瑟
+  type: 人物
+  evidence: v28「約瑟的兒子有瑪拿西、以法蓮」；v37「按著家族，這都是約瑟的子孫」。
+  surfaces:
+  - 約瑟
+- name: 便雅憫
+  type: 人物
+  evidence: v38-41 便雅憫的子孫，共四萬五千六百名。
+  surfaces:
+  - 便雅憫
+- name: 但支派
+  type: 人物
+  evidence: v42-43 但的眾子只有書含一族，共六萬四千四百名。
+  surfaces:
+  - 但的眾子
+- name: 亞設（有福）
+  type: 人物
+  evidence: v44-47 亞設子孫的各族，共五萬三千四百名。
+  surfaces:
+  - 亞設
+- name: 拿弗他利
+  type: 人物
+  evidence: v48-50 拿弗他利的各族，共四萬五千四百名。
+  surfaces:
+  - 拿弗他利
+- name: 拿答
+  type: 人物
+  evidence: v60-61「拿答、亞比戶在耶和華面前獻凡火的時候就死了」。
+  surfaces:
+  - 拿答
+- name: 亞比戶
+  type: 人物
+  evidence: v60-61 與拿答一同因獻凡火而死。
+  surfaces:
+  - 亞比戶
+- name: 凡火
+  type: 主題
+  evidence: v61「在耶和華面前獻凡火的時候就死了」。
+  surfaces:
+  - 凡火
+- name: 約基別
+  type: 人物
+  evidence: v59「暗蘭的妻名叫約基別，是利未女子，生在埃及」。
+  surfaces:
+  - 約基別
+- name: 暗蘭
+  type: 人物
+  evidence: v58「哥轄生暗蘭」；v59 他與約基別生了亞倫、摩西、米利暗。
+  surfaces:
+  - 暗蘭
+- name: 米利暗
+  type: 人物
+  evidence: v59「並他們的姊姊米利暗」。
+  surfaces:
+  - 米利暗
+- name: 耶和華擊打百姓的瘟疫
+  type: 事件
+  evidence: v1「瘟疫之後」——接民25 那場死了二萬四千人的瘟疫。
+  surfaces:
+  - 瘟疫
+- name: 耶和華是事奉者的業與分
+  type: 神學
+  evidence: v62「因為在以色列人中，沒有分給他們產業」；CT 明引民十八20 說神自己就是他們的產業。
+  surfaces:
+  - 沒有分給他們產業
+- name: 第二次數點人口
+  type: 事件
+  evidence: v51「以色列人中被數的，共有六十萬零一千七百三十名」；與民1 的六十萬零三千五百五十名對照。
+  surfaces:
+  - 六十萬零一千七百三十名
+- name: 計算總數（抬起頭）
+  type: 原文
+  evidence: v2、v4「計算總數」；STEP 本節譯義是 lift up the head of，CT 給的字義是「人頭」。
+  surfaces:
+  - 計算總數
+- name: 作了警戒（nes）
+  type: 原文
+  evidence: 'v10「他們就作了警戒」；STEP 本節譯義是 a warning sign，簡要義域 nes: ensign。'
+  surfaces:
+  - 作了警戒
+- name: 可拉的眾子沒有死亡
+  type: 神學
+  evidence: v11 這一句單獨成節；CT、GT、KC、BH 都追蹤到可拉後裔在聖殿作樂與詩篇的題記。
+  surfaces:
+  - 可拉的眾子沒有死亡
+- name: 西羅非哈的女兒
+  type: 人物
+  evidence: v33「西羅非哈沒兒子，只有女兒」，並列出五個名字；四套來源都說這是民27、民36 的伏筆。
+  surfaces:
+  - 西羅非哈
+- name: 拈鬮分地（go.ral）
+  type: 主題
+  evidence: v55-56「還要拈鬮分地」；CT 給的原文字義是「小鵝卵石」，GT《背景註釋》另引馬里的分封做法。
+- name: 西緬支派人數銳減
+  type: 主題
+  evidence: v14 共二萬二千二百名，比民1 的五萬九千三百名少了三萬七千一百名。
+  surfaces:
+  - 二萬二千二百名
+- name: 支派人數減少的原因之爭
+  type: 解經爭議
+  evidence: v18 迦得共四萬零五百名；CT 與丁良才歸因於營地位置與可拉黨，GT《啟導本》則說原因不明。
+  surfaces:
+  - 四萬零五百名
+- name: 瑪拿西支派人數大增
+  type: 主題
+  evidence: v34 共五萬二千七百名，增加最多；KC 把原因歸於西羅非哈的女兒，GT《精讀本》歸於順服。
+  surfaces:
+  - 五萬二千七百名
+- name: 亞設的女兒西拉
+  type: 人物
+  evidence: v46「亞設的女兒名叫西拉」；CT 說她是唯一列名在整個譜系中的女性。
+  surfaces:
+  - 西拉
+- name: 但支派至終定居於何地
+  type: 解經爭議
+  evidence: v43 但支派共六萬四千四百名；GT 艾基斯專文處理但支派後來北遷拉億的問題。
+  surfaces:
+  - 六萬四千四百名
+- name: 珥和俄南死在迦南地（創38：6-10）
+  type: 互文
+  evidence: v19「猶大的兒子是珥和俄南。這珥和俄南死在迦南地」。
+  surfaces:
+  - 珥和俄南
+- name: 他們必要死在曠野（民14：29-35）
+  type: 互文
+  evidence: v64-65「因為耶和華論到他們說：他們必要死在曠野」——本章是那句判語的結算。
+  surfaces:
+  - 他們必要死在曠野

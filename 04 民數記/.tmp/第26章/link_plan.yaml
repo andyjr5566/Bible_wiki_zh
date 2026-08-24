@@ -1,0 +1,424 @@
+book: 民數記
+chapter: 26
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1-4 神吩咐他數點，v52-56 神吩咐他分地的原則，v63 他與以利亞撒一同數點。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: v1、v3、v63 三次與摩西並列主持數點；v60 列為亞倫之子。
+  surfaces:
+  - phrase: 以利亞撒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: v1「祭司亞倫的兒子以利亞撒」；v59-60 他的父母與四個兒子；v64 第一次數點時他仍在。
+  surfaces:
+  - phrase: 亞倫
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: v65「除了耶孚尼的兒子迦勒和嫩的兒子約書亞以外，連一個人也沒有存留」。
+  surfaces:
+  - phrase: 約書亞
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 迦勒
+  suggested_type: 人物
+  evidence: v65 與約書亞是第一次被數的人中唯二存留的。
+  surfaces:
+  - phrase: 迦勒
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: v3、v63「在摩押平原與耶利哥相對的約但河邊」。
+  surfaces:
+  - phrase: 摩押平原
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: v3、v63 數點的地點在約但河東邊。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: v3、v63「與耶利哥相對」——耶利哥在約但河西。
+  surfaces:
+  - phrase: 耶利哥
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 可拉的背叛（預告）
+  suggested_type: 人物
+  evidence: v9-11 重述可拉的事；v58 可拉族仍列在利未各族中。
+  surfaces:
+  - phrase: 可拉
+  match_type: exact
+  existing_title: 可拉的背叛（預告）
+  existing_path: link_folder/人物/可拉的背叛（預告）.md
+- name: 可拉大坍亞比蘭等領首聯合的大反亂
+  suggested_type: 事件
+  evidence: v9「這大坍、亞比蘭，就是從會中選召的，與可拉一黨同向耶和華爭鬧的時候」。
+  surfaces:
+  - phrase: 大坍
+  - phrase: 亞比蘭
+  match_type: exact
+  existing_title: 可拉大坍亞比蘭等領首聯合的大反亂
+  existing_path: link_folder/事件/可拉大坍亞比蘭等領首聯合的大反亂.md
+- name: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  suggested_type: 事件
+  evidence: v10「地便開口吞了他們，和可拉、可拉的黨類一同死亡」。
+  surfaces:
+  - phrase: 地便開口吞了他們
+  match_type: exact
+  existing_title: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  existing_path: link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md
+- name: 數點民數
+  suggested_type: 事件
+  evidence: v64「摩西和祭司亞倫從前在西乃的曠野所數的以色列人」——第一次數點。
+  surfaces:
+  - phrase: 在西乃的曠野所數的
+  match_type: exact
+  existing_title: 數點民數
+  existing_path: link_folder/事件/數點民數.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: v57-62 利未人另行數點，一個月以外的男丁共二萬三千。
+  surfaces:
+  - phrase: 利未人
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 哥轄子孫
+  suggested_type: 人物
+  evidence: v57-58「屬哥轄的，有哥轄族」；v58「哥轄生暗蘭」。
+  surfaces:
+  - phrase: 哥轄
+  match_type: exact
+  existing_title: 哥轄子孫
+  existing_path: link_folder/人物/哥轄子孫.md
+- name: 利未三族分工
+  suggested_type: 事件
+  evidence: v57 革順、哥轄、米拉利三大家族。
+  surfaces:
+  - phrase: 革順
+  - phrase: 米拉利
+  match_type: exact
+  existing_title: 利未三族分工
+  existing_path: link_folder/事件/利未三族分工.md
+- name: 流便
+  suggested_type: 人物
+  evidence: v5-7「以色列的長子是流便」，被數的共四萬三千七百三十名。
+  surfaces:
+  - phrase: 流便
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: v12-14 西緬的各族，共二萬二千二百名。
+  surfaces:
+  - phrase: 西緬
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: v15-18 迦得子孫的各族，共四萬零五百名。
+  surfaces:
+  - phrase: 迦得
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: v19-22 猶大的各族，共七萬六千五百名，仍是人數最多的支派。
+  surfaces:
+  - phrase: 猶大
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: v23-25 以薩迦的各族，共六萬四千三百名。
+  surfaces:
+  - phrase: 以薩迦
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: v26-27 西布倫的各族，共六萬零五百名。
+  surfaces:
+  - phrase: 西布倫
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: v28-34 瑪拿西的各族，共五萬二千七百名，本章排在以法蓮之前。
+  surfaces:
+  - phrase: 瑪拿西
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: v28、v35-37 以法蓮子孫的各族，共三萬二千五百名。
+  surfaces:
+  - phrase: 以法蓮
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: v28「約瑟的兒子有瑪拿西、以法蓮」；v37「按著家族，這都是約瑟的子孫」。
+  surfaces:
+  - phrase: 約瑟
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: v38-41 便雅憫的子孫，共四萬五千六百名。
+  surfaces:
+  - phrase: 便雅憫
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: v42-43 但的眾子只有書含一族，共六萬四千四百名。
+  surfaces:
+  - phrase: 但的眾子
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: v44-47 亞設子孫的各族，共五萬三千四百名。
+  surfaces:
+  - phrase: 亞設
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: v48-50 拿弗他利的各族，共四萬五千四百名。
+  surfaces:
+  - phrase: 拿弗他利
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 拿答
+  suggested_type: 人物
+  evidence: v60-61「拿答、亞比戶在耶和華面前獻凡火的時候就死了」。
+  surfaces:
+  - phrase: 拿答
+  match_type: exact
+  existing_title: 拿答
+  existing_path: link_folder/人物/拿答.md
+- name: 亞比戶
+  suggested_type: 人物
+  evidence: v60-61 與拿答一同因獻凡火而死。
+  surfaces:
+  - phrase: 亞比戶
+  match_type: exact
+  existing_title: 亞比戶
+  existing_path: link_folder/人物/亞比戶.md
+- name: 凡火
+  suggested_type: 主題
+  evidence: v61「在耶和華面前獻凡火的時候就死了」。
+  surfaces:
+  - phrase: 凡火
+  match_type: exact
+  existing_title: 凡火
+  existing_path: link_folder/主題/凡火.md
+- name: 約基別
+  suggested_type: 人物
+  evidence: v59「暗蘭的妻名叫約基別，是利未女子，生在埃及」。
+  surfaces:
+  - phrase: 約基別
+  match_type: exact
+  existing_title: 約基別
+  existing_path: link_folder/人物/約基別.md
+- name: 暗蘭
+  suggested_type: 人物
+  evidence: v58「哥轄生暗蘭」；v59 他與約基別生了亞倫、摩西、米利暗。
+  surfaces:
+  - phrase: 暗蘭
+  match_type: exact
+  existing_title: 暗蘭
+  existing_path: link_folder/人物/暗蘭.md
+- name: 米利暗
+  suggested_type: 人物
+  evidence: v59「並他們的姊姊米利暗」。
+  surfaces:
+  - phrase: 米利暗
+  match_type: exact
+  existing_title: 米利暗
+  existing_path: link_folder/人物/米利暗.md
+- name: 耶和華擊打百姓的瘟疫
+  suggested_type: 事件
+  evidence: v1「瘟疫之後」——接民25 那場死了二萬四千人的瘟疫。
+  surfaces:
+  - phrase: 瘟疫
+  match_type: exact
+  existing_title: 耶和華擊打百姓的瘟疫
+  existing_path: link_folder/事件/耶和華擊打百姓的瘟疫.md
+- name: 耶和華是事奉者的業與分
+  suggested_type: 神學
+  evidence: v62「因為在以色列人中，沒有分給他們產業」；CT 明引民十八20 說神自己就是他們的產業。
+  surfaces:
+  - phrase: 沒有分給他們產業
+  match_type: exact
+  existing_title: 耶和華是事奉者的業與分
+  existing_path: link_folder/神學/耶和華是事奉者的業與分.md
+C_new_formal:
+- name: 第二次數點人口
+  suggested_type: 事件
+  evidence: v51「以色列人中被數的，共有六十萬零一千七百三十名」；與民1 的六十萬零三千五百五十名對照。
+  surfaces:
+  - phrase: 六十萬零一千七百三十名
+  target_path: link_folder/事件/第二次數點人口.md
+  semantic_hint:
+  - title: 兩次普查的關係
+    score: 0.402
+    type: 解經爭議
+- name: 計算總數（抬起頭）
+  suggested_type: 原文
+  evidence: v2、v4「計算總數」；STEP 本節譯義是 lift up the head of，CT 給的字義是「人頭」。
+  surfaces:
+  - phrase: 計算總數
+  target_path: link_folder/原文/計算總數（抬起頭）.md
+  semantic_hint:
+  - title: 提你出監_抬起頭
+    score: 0.415
+    type: 原文
+- name: 作了警戒（nes）
+  suggested_type: 原文
+  evidence: 'v10「他們就作了警戒」；STEP 本節譯義是 a warning sign，簡要義域 nes: ensign。'
+  surfaces:
+  - phrase: 作了警戒
+  target_path: link_folder/原文/作了警戒（nes）.md
+- name: 可拉的眾子沒有死亡
+  suggested_type: 神學
+  evidence: v11 這一句單獨成節；CT、GT、KC、BH 都追蹤到可拉後裔在聖殿作樂與詩篇的題記。
+  surfaces:
+  - phrase: 可拉的眾子沒有死亡
+  target_path: link_folder/神學/可拉的眾子沒有死亡.md
+  semantic_hint:
+  - title: 可拉的背叛（預告）
+    score: 0.455
+    type: 人物
+- name: 西羅非哈的女兒
+  suggested_type: 人物
+  evidence: v33「西羅非哈沒兒子，只有女兒」，並列出五個名字；四套來源都說這是民27、民36 的伏筆。
+  surfaces:
+  - phrase: 西羅非哈
+  target_path: link_folder/人物/西羅非哈的女兒.md
+  semantic_hint:
+  - title: 書亞的女兒
+    score: 0.414
+    type: 人物
+  - title: 羅得的兩個女兒
+    score: 0.402
+    type: 人物
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: v55-56「還要拈鬮分地」；CT 給的原文字義是「小鵝卵石」，GT《背景註釋》另引馬里的分封做法。
+  surfaces:
+  - phrase: 拈鬮
+  target_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 西緬支派人數銳減
+  suggested_type: 主題
+  evidence: v14 共二萬二千二百名，比民1 的五萬九千三百名少了三萬七千一百名。
+  surfaces:
+  - phrase: 二萬二千二百名
+  target_path: link_folder/主題/西緬支派人數銳減.md
+- name: 支派人數減少的原因之爭
+  suggested_type: 解經爭議
+  evidence: v18 迦得共四萬零五百名；CT 與丁良才歸因於營地位置與可拉黨，GT《啟導本》則說原因不明。
+  surfaces:
+  - phrase: 四萬零五百名
+  target_path: link_folder/解經爭議/支派人數減少的原因之爭.md
+- name: 瑪拿西支派人數大增
+  suggested_type: 主題
+  evidence: v34 共五萬二千七百名，增加最多；KC 把原因歸於西羅非哈的女兒，GT《精讀本》歸於順服。
+  surfaces:
+  - phrase: 五萬二千七百名
+  target_path: link_folder/主題/瑪拿西支派人數大增.md
+- name: 亞設的女兒西拉
+  suggested_type: 人物
+  evidence: v46「亞設的女兒名叫西拉」；CT 說她是唯一列名在整個譜系中的女性。
+  surfaces:
+  - phrase: 西拉
+  target_path: link_folder/人物/亞設的女兒西拉.md
+  semantic_hint:
+  - title: 亞設（有福）
+    score: 0.494
+    type: 人物
+  - title: 悉帕
+    score: 0.482
+    type: 人物
+  - title: 書亞的女兒
+    score: 0.474
+    type: 人物
+- name: 但支派至終定居於何地
+  suggested_type: 解經爭議
+  evidence: v43 但支派共六萬四千四百名；GT 艾基斯專文處理但支派後來北遷拉億的問題。
+  surfaces:
+  - phrase: 六萬四千四百名
+  target_path: link_folder/解經爭議/但支派至終定居於何地.md
+- name: 珥和俄南死在迦南地（創38：6-10）
+  suggested_type: 互文
+  evidence: v19「猶大的兒子是珥和俄南。這珥和俄南死在迦南地」。
+  surfaces:
+  - phrase: 珥和俄南
+  target_path: link_folder/互文/珥和俄南死在迦南地（創38：6-10）.md
+  semantic_hint:
+  - title: 迦南人
+    score: 0.564
+    type: 人物
+  - title: 迦南地
+    score: 0.553
+    type: 地點
+  - title: 迦南人與比利洗人
+    score: 0.533
+    type: 歷史
+- name: 他們必要死在曠野（民14：29-35）
+  suggested_type: 互文
+  evidence: v64-65「因為耶和華論到他們說：他們必要死在曠野」——本章是那句判語的結算。
+  surfaces:
+  - phrase: 他們必要死在曠野
+  target_path: link_folder/互文/他們必要死在曠野（民14：29-35）.md
+  semantic_hint:
+  - title: 曠野飄流四十年
+    score: 0.519
+    type: 歷史
+  - title: 曠野
+    score: 0.515
+    type: 地點
+  - title: 曠野安息日撿柴事件與神明告處決
+    score: 0.486
+    type: 事件
+D_new_candidate: []
+E_skip: []
