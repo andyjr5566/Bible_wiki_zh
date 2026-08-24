@@ -1,0 +1,402 @@
+book: 民數記
+chapter: 24
+A_use_directly: []
+B_needs_update:
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: v1-25 全章主角；v3、v15 兩次自報「比珥的兒子巴蘭」，v25 起來回本地去。
+  surfaces:
+  - phrase: 巴蘭
+  match_type: exact
+  existing_title: 巴蘭（比珥的兒子）
+  existing_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 巴勒
+  suggested_type: 人物
+  evidence: v10 向巴蘭生氣拍手，v11 打發他回去，v13 滿屋金銀，v25 也回去了。
+  surfaces:
+  - phrase: 巴勒
+  match_type: exact
+  existing_title: 巴勒
+  existing_path: link_folder/人物/巴勒.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: v1「卻面向曠野」；CT 說是面向摩押平原觀看以色列人。
+  surfaces:
+  - phrase: 曠野
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 斷沒有法術可以害雅各
+  suggested_type: 神學
+  evidence: v1「就不像前兩次去求法術」，與民23:23 宣告法術無效的同一個字。
+  surfaces:
+  - phrase: 法術
+  match_type: exact
+  existing_title: 斷沒有法術可以害雅各
+  existing_path: link_folder/神學/斷沒有法術可以害雅各.md
+- name: 神的靈在人身上
+  suggested_type: 神學
+  evidence: v2「神的靈就臨到他身上」；CT 與 GT 都說這與巴蘭是否蒙神喜悅無關。
+  surfaces:
+  - phrase: 神的靈
+  match_type: exact
+  existing_title: 神的靈在人身上
+  existing_path: link_folder/神學/神的靈在人身上.md
+- name: 安營與纛
+  suggested_type: 主題
+  evidence: v2「看見以色列人照著支派居住」；CT 說是分別支派安營、井然有序。
+  surfaces:
+  - phrase: 照著支派居住
+  match_type: exact
+  existing_title: 安營與纛
+  existing_path: link_folder/主題/安營與纛.md
+- name: 詩歌（ma.shal）
+  suggested_type: 原文
+  evidence: v3、v15、v20、v21、v23 五次「題起詩歌」；STEP 作 me.sha.Lo（H4912）。
+  surfaces:
+  - phrase: 詩歌
+  match_type: exact
+  existing_title: 詩歌（ma.shal）
+  existing_path: link_folder/原文/詩歌（ma.shal）.md
+- name: 眼目明亮（ga.lah）
+  suggested_type: 原文
+  evidence: v4、v16「眼目睜開而仆倒的人說」；STEP 作 u./ge.Lui（H1540I），與民22:31 同字。
+  surfaces:
+  - phrase: 眼目睜開
+  match_type: exact
+  existing_title: 眼目明亮（ga.lah）
+  existing_path: link_folder/原文/眼目明亮（ga.lah）.md
+- name: 香柏木（潔淨儀式用）
+  suggested_type: 文化
+  evidence: v6「如水邊的香柏木」；CT 說形容帳棚高大如香柏木。
+  surfaces:
+  - phrase: 香柏木
+  match_type: exact
+  existing_title: 香柏木（潔淨儀式用）
+  existing_path: link_folder/文化/香柏木（潔淨儀式用）.md
+- name: 野牛之力（re.em）
+  suggested_type: 原文
+  evidence: v8「他似乎有野牛之力」；STEP 作 ke./to.'a.Fot re.'Em（H8443＋H7214）。
+  surfaces:
+  - phrase: 野牛之力
+  match_type: exact
+  existing_title: 野牛之力（re.em）
+  existing_path: link_folder/原文/野牛之力（re.em）.md
+- name: 母獅與公獅的比喻
+  suggested_type: 主題
+  evidence: v9「他蹲如公獅，臥如母獅，誰敢惹他？」
+  surfaces:
+  - phrase: 公獅
+  - phrase: 母獅
+  match_type: exact
+  existing_title: 母獅與公獅的比喻
+  existing_path: link_folder/主題/母獅與公獅的比喻.md
+- name: 祝福與咒詛
+  suggested_type: 主題
+  evidence: v9「凡給你祝福的，願他蒙福」；v10 巴勒抱怨「你這三次竟為他們祝福」。
+  surfaces:
+  - phrase: 祝福
+  match_type: exact
+  existing_title: 祝福與咒詛
+  existing_path: link_folder/主題/祝福與咒詛.md
+- name: 咒詛（a.rar 與 qa.vav）
+  suggested_type: 原文
+  evidence: v9「願他受咒詛」與 v10「為我咒詛仇敵」；STEP v9 兩處都作 a.rar（H779）。
+  surfaces:
+  - phrase: 咒詛
+  match_type: exact
+  existing_title: 咒詛（a.rar 與 qa.vav）
+  existing_path: link_folder/原文/咒詛（a.rar 與 qa.vav）.md
+- name: 咒詛你的我必咒詛他（創12：3）
+  suggested_type: 互文
+  evidence: v9「凡咒詛你的，願他受咒詛」；CT、GT、KC、BH 都指回創12:3 與創27:29。
+  surfaces:
+  - phrase: 凡咒詛你的
+  match_type: exact
+  existing_title: 咒詛你的我必咒詛他（創12：3）
+  existing_path: link_folder/互文/咒詛你的我必咒詛他（創12：3）.md
+- name: 越過耶和華的口（peh）
+  suggested_type: 原文
+  evidence: v13「我也不得越過耶和華的命」；CT 給的原文字義是「命」＝口。
+  surfaces:
+  - phrase: 越過耶和華的命
+  match_type: exact
+  existing_title: 越過耶和華的口（peh）
+  existing_path: link_folder/原文/越過耶和華的口（peh）.md
+- name: 以東
+  suggested_type: 地點
+  evidence: v18「他必得以東為基業」。
+  surfaces:
+  - phrase: 以東
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 西珥
+  suggested_type: 地點
+  evidence: v18「又得仇敵之地西珥為產業」。
+  surfaces:
+  - phrase: 西珥
+  match_type: exact
+  existing_title: 西珥
+  existing_path: link_folder/地點/西珥.md
+- name: 亞瑪力
+  suggested_type: 人物
+  evidence: v20「巴蘭觀看亞瑪力…亞瑪力原為諸國之首，但他終必沉淪」。
+  surfaces:
+  - phrase: 亞瑪力
+  match_type: exact
+  existing_title: 亞瑪力
+  existing_path: link_folder/人物/亞瑪力.md
+- name: 基尼人
+  suggested_type: 人物
+  evidence: v21「巴蘭觀看基尼人…你的住處本是堅固」。
+  surfaces:
+  - phrase: 基尼人
+  match_type: exact
+  existing_title: 基尼人
+  existing_path: link_folder/人物/基尼人.md
+- name: 亞述
+  suggested_type: 地點
+  evidence: v22「直到亞述把你擄去」、v24「苦害亞述」。
+  surfaces:
+  - phrase: 亞述
+  match_type: exact
+  existing_title: 亞述
+  existing_path: link_folder/地點/亞述.md
+- name: 彌賽亞
+  suggested_type: 神學
+  evidence: v17 有星有杖的預言；CT、GT、KC、BH 都讀出彌賽亞指向。
+  match_type: exact
+  existing_title: 彌賽亞
+  existing_path: link_folder/神學/彌賽亞.md
+- name: 巴蘭是先知還是術士
+  suggested_type: 解經爭議
+  evidence: v1 他不再求法術、v2 神的靈臨到他身上、v4 仆倒——本章同時提供兩邊的證據。
+  match_type: exact
+  existing_title: 巴蘭是先知還是術士
+  existing_path: link_folder/解經爭議/巴蘭是先知還是術士.md
+- name: 巴蘭的七篇詩歌
+  suggested_type: 主題
+  evidence: v3-9、v15-19、v20、v21-22、v23-24 是這組詩歌的後五篇，本章收尾。
+  match_type: exact
+  existing_title: 巴蘭的七篇詩歌
+  existing_path: link_folder/主題/巴蘭的七篇詩歌.md
+- name: 巴蘭的教訓（啟2：14）
+  suggested_type: 互文
+  evidence: v25 巴蘭回本地去；GT 丁良才說他仍住在米甸人中，用別的方法謀害以色列人。
+  match_type: exact
+  existing_title: 巴蘭的教訓（啟2：14）
+  existing_path: link_folder/互文/巴蘭的教訓（啟2：14）.md
+- name: 全能的神（El Shaddai）
+  suggested_type: 神學
+  evidence: v4、v16「得見全能者的異象」；STEP 作 sha.Dai（H7706），與創17:1 同一稱號。
+  surfaces:
+  - phrase: 全能者
+  match_type: exact
+  existing_title: 全能的神（El Shaddai）
+  existing_path: link_folder/神學/全能的神（El Shaddai）.md
+- name: 至高的神
+  suggested_type: 神學
+  evidence: v16「明白至高者的意旨」；STEP 作 el.Yon（H5945B），與創14:18-22 同一稱號。
+  surfaces:
+  - phrase: 至高者
+  match_type: exact
+  existing_title: 至高的神
+  existing_path: link_folder/神學/至高的神.md
+- name: 希伯
+  suggested_type: 人物
+  evidence: v24「苦害希伯」；GT 丁良才說希伯就是閃之後裔的總稱。
+  match_type: exact
+  existing_title: 希伯
+  existing_path: link_folder/人物/希伯.md
+- name: 摩押地
+  suggested_type: 地點
+  evidence: v17「必打破摩押的四角」；KC 說字面是摩押的邊界。
+  match_type: exact
+  existing_title: 摩押地
+  existing_path: link_folder/地點/摩押地.md
+- name: 神的主權
+  suggested_type: 神學
+  evidence: v13「耶和華說什麼，我就要說什麼」；v23「哀哉！神行這事，誰能得活？」
+  match_type: exact
+  existing_title: 神的主權
+  existing_path: link_folder/神學/神的主權.md
+C_new_formal:
+- name: 眼目閉住還是睜開（sha.tam）
+  suggested_type: 原文
+  evidence: v3、v15「眼目閉住（閉住或作：睜開）的人說」；和合本自己並列兩個相反的譯法。
+  surfaces:
+  - phrase: 眼目閉住
+  target_path: link_folder/原文/眼目閉住還是睜開（sha.tam）.md
+- name: 以色列營帳的華美
+  suggested_type: 主題
+  evidence: v5「你的帳棚何等華美！…你的帳幕何其華麗！」；四家都討論這幅營地圖像。
+  surfaces:
+  - phrase: 帳棚
+  - phrase: 帳幕
+  target_path: link_folder/主題/以色列營帳的華美.md
+  semantic_hint:
+  - title: 安營與纛
+    score: 0.433
+    type: 主題
+- name: 接連的山谷（na.chal）
+  suggested_type: 原文
+  evidence: v6「如接連的山谷」；STEP 本節譯義作 wadis、簡要義域卻列 palm-tree。
+  surfaces:
+  - phrase: 接連的山谷
+  target_path: link_folder/原文/接連的山谷（na.chal）.md
+- name: 沉香樹
+  suggested_type: 文化
+  evidence: v6「如耶和華所栽的沉香樹」；GT 說可長到三公尺多、主要用作香料原料。
+  surfaces:
+  - phrase: 沉香樹
+  target_path: link_folder/文化/沉香樹.md
+- name: 種子（ze.ra）
+  suggested_type: 原文
+  evidence: v7「種子要撒在多水之處」；STEP 本節譯義作 offspring its。
+  surfaces:
+  - phrase: 種子
+  target_path: link_folder/原文/種子（ze.ra）.md
+- name: 亞甲是人名還是王朝稱號
+  suggested_type: 解經爭議
+  evidence: v7「他的王必超過亞甲」；亞甲是掃羅時代的亞瑪力王，GT 收了兩篇難題專文處理年代問題。
+  surfaces:
+  - phrase: 亞甲
+  target_path: link_folder/解經爭議/亞甲是人名還是王朝稱號.md
+  semantic_hint:
+  - title: 亞略
+    score: 0.403
+    type: 人物
+- name: 拍手的手勢
+  suggested_type: 文化
+  evidence: v10「巴勒向巴蘭生氣，就拍起手來」；CT 說是藐視，KC 說是驚駭。
+  surfaces:
+  - phrase: 拍起手來
+  target_path: link_folder/文化/拍手的手勢.md
+- name: 星與杖的王權象徵
+  suggested_type: 主題
+  evidence: v17「有星要出於雅各，有杖要興於以色列」；GT《背景註釋》討論這組隱喻在古代近東的用法。
+  surfaces:
+  - phrase: 有星要出於雅各
+  - phrase: 有杖要興於以色列
+  target_path: link_folder/主題/星與杖的王權象徵.md
+- name: 摩押的四角（pe.ah）
+  suggested_type: 原文
+  evidence: v17「必打破摩押的四角」；CT 說指國境四周邊緣，KC 說字面是 corners of Moab。
+  surfaces:
+  - phrase: 摩押的四角
+  target_path: link_folder/原文/摩押的四角（pe.ah）.md
+- name: 擾亂之子是塞特的後裔嗎
+  suggested_type: 解經爭議
+  evidence: v17「毀壞擾亂之子」；CT 讀作塞特人，GT 讀作爭戰或驕傲的人，BH 說所指不明。
+  surfaces:
+  - phrase: 擾亂之子
+  target_path: link_folder/解經爭議/擾亂之子是塞特的後裔嗎.md
+  semantic_hint:
+  - title: 塞特
+    score: 0.508
+    type: 人物
+  - title: 塞特家譜與應許之線
+    score: 0.417
+    type: 神學
+- name: 窩巢與基尼的雙關（qen 與 qa.yin）
+  suggested_type: 原文
+  evidence: v21「你的窩巢做在巖穴中」；CT 明說「窩巢」是雙關語，既指窩巢又指基尼人。
+  surfaces:
+  - phrase: 窩巢
+  target_path: link_folder/原文/窩巢與基尼的雙關（qen 與 qa.yin）.md
+- name: 巴蘭詩歌中的亞述指哪一個
+  suggested_type: 解經爭議
+  evidence: v22、v24 的「亞述」；GT 收了四種互相衝突的判定：新亞述帝國、亞書利、亞塞爾、亞述加巴比倫。
+  surfaces:
+  - phrase: 直到亞述把你擄去
+  target_path: link_folder/解經爭議/巴蘭詩歌中的亞述指哪一個.md
+  semantic_hint:
+  - title: 巴蘭的七篇詩歌
+    score: 0.496
+    type: 主題
+  - title: 詩歌（ma.shal）
+    score: 0.439
+    type: 原文
+  - title: 代爾阿拉的巴蘭銘文
+    score: 0.426
+    type: 背景
+- name: 與以色列友好的基尼人為何遭難
+  suggested_type: 解經爭議
+  evidence: v22「然而基尼必至衰微」；GT《啟導本》直接提出這個問題並列了三種解釋。
+  surfaces:
+  - phrase: 基尼必至衰微
+  target_path: link_folder/解經爭議/與以色列友好的基尼人為何遭難.md
+  semantic_hint:
+  - title: 基尼人
+    score: 0.43
+    type: 人物
+  - title: 士1：16
+    score: 0.43
+    type: 互文
+- name: 基提（Kittim）
+  suggested_type: 地點
+  evidence: v24「必有人乘船從基提界而來」；GT 說是賽普勒斯島的古稱，以基提翁城為名。
+  surfaces:
+  - phrase: 基提
+  target_path: link_folder/地點/基提（Kittim）.md
+- name: 詩歌中的希伯是誰
+  suggested_type: 解經爭議
+  evidence: v24「苦害希伯」；GT《背景註釋》說這名字至今仍未有令人滿意的解釋。
+  surfaces:
+  - phrase: 希伯
+  target_path: link_folder/解經爭議/詩歌中的希伯是誰.md
+  semantic_hint:
+  - title: 希伯
+    score: 0.499
+    type: 人物
+  - title: 希伯與希伯來名稱
+    score: 0.455
+    type: 原文
+  - title: 「希伯來人」的意義
+    score: 0.451
+    type: 原文
+- name: 眼目睜開而仆倒是敬虔還是術士的徵候
+  suggested_type: 解經爭議
+  evidence: v4、v16「眼目睜開而仆倒的人說」；CT 說正常的先知見異象時並不仆倒，BH 卻說俯伏是敬畏順服。
+  surfaces:
+  - phrase: 仆倒
+  target_path: link_folder/解經爭議/眼目睜開而仆倒是敬虔還是術士的徵候.md
+- name: 東方博士見他的星（太2：1-2）
+  suggested_type: 互文
+  evidence: v17 的星；CT 說可能是這預言使東方博士來到耶路撒冷，KC、BH 同樣連到太2。
+  target_path: link_folder/互文/東方博士見他的星（太2：1-2）.md
+- name: 明亮的晨星（啟22：16）
+  suggested_type: 互文
+  evidence: v17 的星；CT 引啟二28、二十二16，KC 說對教會而言祂是明亮的晨星。
+  target_path: link_folder/互文/明亮的晨星（啟22：16）.md
+- name: 圭必不離猶大（創49：10）
+  suggested_type: 互文
+  evidence: v17 的杖；GT 串珠、KC、BH 都指回創49:10 的圭。
+  target_path: link_folder/互文/圭必不離猶大（創49：10）.md
+  semantic_hint:
+  - title: 細羅 (創49_10)
+    score: 0.52
+    type: 神學
+  - title: 猶大支派
+    score: 0.495
+    type: 人物
+  - title: 猶大（雅各之子）
+    score: 0.487
+    type: 人物
+- name: 掃羅擊殺亞甲（撒上15：8）
+  suggested_type: 互文
+  evidence: v7 的亞甲；GT 與 BH 都說這預言應驗在掃羅擊敗亞瑪力王亞甲。
+  target_path: link_folder/互文/掃羅擊殺亞甲（撒上15：8）.md
+  semantic_hint:
+  - title: 約押
+    score: 0.514
+    type: 人物
+  - title: 該隱殺亞伯
+    score: 0.491
+    type: 互文
+  - title: 亞捫人
+    score: 0.433
+    type: 人物
+D_new_candidate: []
+E_skip: []

@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 24,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 135762,
+        "bytes": 186653
+      },
+      "after": {
+        "chars": 12792,
+        "bytes": 21489
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_numbers_24.txt",
+          "chars": 9327,
+          "bytes": 26213
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_numbers_24.txt",
+          "chars": 10734,
+          "bytes": 29532
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_numbers_24.txt",
+          "chars": 11108,
+          "bytes": 11214
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_numbers_24.txt",
+          "chars": 45528,
+          "bytes": 45560
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_numbers_24.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 53494,
+          "raw_bytes": 61462,
+          "projected_chars": 6629,
+          "projected_bytes": 7598,
+          "occurrences": 66,
+          "occurrence_count": 66,
+          "lexicon_entries": 10,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            20,
+            21,
+            23,
+            25
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 10,
+          "truncated": true,
+          "returned_chars": 6629,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

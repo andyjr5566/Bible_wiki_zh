@@ -1,0 +1,229 @@
+book: 民數記
+chapter: 24
+candidates:
+- name: 巴蘭（比珥的兒子）
+  type: 人物
+  evidence: v1-25 全章主角；v3、v15 兩次自報「比珥的兒子巴蘭」，v25 起來回本地去。
+  surfaces:
+  - 巴蘭
+- name: 巴勒
+  type: 人物
+  evidence: v10 向巴蘭生氣拍手，v11 打發他回去，v13 滿屋金銀，v25 也回去了。
+  surfaces:
+  - 巴勒
+- name: 曠野
+  type: 地點
+  evidence: v1「卻面向曠野」；CT 說是面向摩押平原觀看以色列人。
+  surfaces:
+  - 曠野
+- name: 斷沒有法術可以害雅各
+  type: 神學
+  evidence: v1「就不像前兩次去求法術」，與民23:23 宣告法術無效的同一個字。
+  surfaces:
+  - 法術
+- name: 神的靈在人身上
+  type: 神學
+  evidence: v2「神的靈就臨到他身上」；CT 與 GT 都說這與巴蘭是否蒙神喜悅無關。
+  surfaces:
+  - 神的靈
+- name: 安營與纛
+  type: 主題
+  evidence: v2「看見以色列人照著支派居住」；CT 說是分別支派安營、井然有序。
+  surfaces:
+  - 照著支派居住
+- name: 詩歌（ma.shal）
+  type: 原文
+  evidence: v3、v15、v20、v21、v23 五次「題起詩歌」；STEP 作 me.sha.Lo（H4912）。
+  surfaces:
+  - 詩歌
+- name: 眼目明亮（ga.lah）
+  type: 原文
+  evidence: v4、v16「眼目睜開而仆倒的人說」；STEP 作 u./ge.Lui（H1540I），與民22:31 同字。
+  surfaces:
+  - 眼目睜開
+- name: 香柏木（潔淨儀式用）
+  type: 文化
+  evidence: v6「如水邊的香柏木」；CT 說形容帳棚高大如香柏木。
+  surfaces:
+  - 香柏木
+- name: 野牛之力（re.em）
+  type: 原文
+  evidence: v8「他似乎有野牛之力」；STEP 作 ke./to.'a.Fot re.'Em（H8443＋H7214）。
+  surfaces:
+  - 野牛之力
+- name: 母獅與公獅的比喻
+  type: 主題
+  evidence: v9「他蹲如公獅，臥如母獅，誰敢惹他？」
+  surfaces:
+  - 公獅
+  - 母獅
+- name: 祝福與咒詛
+  type: 主題
+  evidence: v9「凡給你祝福的，願他蒙福」；v10 巴勒抱怨「你這三次竟為他們祝福」。
+  surfaces:
+  - 祝福
+- name: 咒詛（a.rar 與 qa.vav）
+  type: 原文
+  evidence: v9「願他受咒詛」與 v10「為我咒詛仇敵」；STEP v9 兩處都作 a.rar（H779）。
+  surfaces:
+  - 咒詛
+- name: 咒詛你的我必咒詛他（創12：3）
+  type: 互文
+  evidence: v9「凡咒詛你的，願他受咒詛」；CT、GT、KC、BH 都指回創12:3 與創27:29。
+  surfaces:
+  - 凡咒詛你的
+- name: 越過耶和華的口（peh）
+  type: 原文
+  evidence: v13「我也不得越過耶和華的命」；CT 給的原文字義是「命」＝口。
+  surfaces:
+  - 越過耶和華的命
+- name: 以東
+  type: 地點
+  evidence: v18「他必得以東為基業」。
+  surfaces:
+  - 以東
+- name: 西珥
+  type: 地點
+  evidence: v18「又得仇敵之地西珥為產業」。
+  surfaces:
+  - 西珥
+- name: 亞瑪力
+  type: 人物
+  evidence: v20「巴蘭觀看亞瑪力…亞瑪力原為諸國之首，但他終必沉淪」。
+  surfaces:
+  - 亞瑪力
+- name: 基尼人
+  type: 人物
+  evidence: v21「巴蘭觀看基尼人…你的住處本是堅固」。
+  surfaces:
+  - 基尼人
+- name: 亞述
+  type: 地點
+  evidence: v22「直到亞述把你擄去」、v24「苦害亞述」。
+  surfaces:
+  - 亞述
+- name: 彌賽亞
+  type: 神學
+  evidence: v17 有星有杖的預言；CT、GT、KC、BH 都讀出彌賽亞指向。
+- name: 巴蘭是先知還是術士
+  type: 解經爭議
+  evidence: v1 他不再求法術、v2 神的靈臨到他身上、v4 仆倒——本章同時提供兩邊的證據。
+- name: 巴蘭的七篇詩歌
+  type: 主題
+  evidence: v3-9、v15-19、v20、v21-22、v23-24 是這組詩歌的後五篇，本章收尾。
+- name: 巴蘭的教訓（啟2：14）
+  type: 互文
+  evidence: v25 巴蘭回本地去；GT 丁良才說他仍住在米甸人中，用別的方法謀害以色列人。
+- name: 全能的神（El Shaddai）
+  type: 神學
+  evidence: v4、v16「得見全能者的異象」；STEP 作 sha.Dai（H7706），與創17:1 同一稱號。
+  surfaces:
+  - 全能者
+- name: 至高的神
+  type: 神學
+  evidence: v16「明白至高者的意旨」；STEP 作 el.Yon（H5945B），與創14:18-22 同一稱號。
+  surfaces:
+  - 至高者
+- name: 希伯
+  type: 人物
+  evidence: v24「苦害希伯」；GT 丁良才說希伯就是閃之後裔的總稱。
+- name: 摩押地
+  type: 地點
+  evidence: v17「必打破摩押的四角」；KC 說字面是摩押的邊界。
+- name: 神的主權
+  type: 神學
+  evidence: v13「耶和華說什麼，我就要說什麼」；v23「哀哉！神行這事，誰能得活？」
+- name: 眼目閉住還是睜開（sha.tam）
+  type: 原文
+  evidence: v3、v15「眼目閉住（閉住或作：睜開）的人說」；和合本自己並列兩個相反的譯法。
+  surfaces:
+  - 眼目閉住
+- name: 以色列營帳的華美
+  type: 主題
+  evidence: v5「你的帳棚何等華美！…你的帳幕何其華麗！」；四家都討論這幅營地圖像。
+  surfaces:
+  - 帳棚
+  - 帳幕
+- name: 接連的山谷（na.chal）
+  type: 原文
+  evidence: v6「如接連的山谷」；STEP 本節譯義作 wadis、簡要義域卻列 palm-tree。
+  surfaces:
+  - 接連的山谷
+- name: 沉香樹
+  type: 文化
+  evidence: v6「如耶和華所栽的沉香樹」；GT 說可長到三公尺多、主要用作香料原料。
+  surfaces:
+  - 沉香樹
+- name: 種子（ze.ra）
+  type: 原文
+  evidence: v7「種子要撒在多水之處」；STEP 本節譯義作 offspring its。
+  surfaces:
+  - 種子
+- name: 亞甲是人名還是王朝稱號
+  type: 解經爭議
+  evidence: v7「他的王必超過亞甲」；亞甲是掃羅時代的亞瑪力王，GT 收了兩篇難題專文處理年代問題。
+  surfaces:
+  - 亞甲
+- name: 拍手的手勢
+  type: 文化
+  evidence: v10「巴勒向巴蘭生氣，就拍起手來」；CT 說是藐視，KC 說是驚駭。
+  surfaces:
+  - 拍起手來
+- name: 星與杖的王權象徵
+  type: 主題
+  evidence: v17「有星要出於雅各，有杖要興於以色列」；GT《背景註釋》討論這組隱喻在古代近東的用法。
+  surfaces:
+  - 有星要出於雅各
+  - 有杖要興於以色列
+- name: 摩押的四角（pe.ah）
+  type: 原文
+  evidence: v17「必打破摩押的四角」；CT 說指國境四周邊緣，KC 說字面是 corners of Moab。
+  surfaces:
+  - 摩押的四角
+- name: 擾亂之子是塞特的後裔嗎
+  type: 解經爭議
+  evidence: v17「毀壞擾亂之子」；CT 讀作塞特人，GT 讀作爭戰或驕傲的人，BH 說所指不明。
+  surfaces:
+  - 擾亂之子
+- name: 窩巢與基尼的雙關（qen 與 qa.yin）
+  type: 原文
+  evidence: v21「你的窩巢做在巖穴中」；CT 明說「窩巢」是雙關語，既指窩巢又指基尼人。
+  surfaces:
+  - 窩巢
+- name: 巴蘭詩歌中的亞述指哪一個
+  type: 解經爭議
+  evidence: v22、v24 的「亞述」；GT 收了四種互相衝突的判定：新亞述帝國、亞書利、亞塞爾、亞述加巴比倫。
+  surfaces:
+  - 直到亞述把你擄去
+- name: 與以色列友好的基尼人為何遭難
+  type: 解經爭議
+  evidence: v22「然而基尼必至衰微」；GT《啟導本》直接提出這個問題並列了三種解釋。
+  surfaces:
+  - 基尼必至衰微
+- name: 基提（Kittim）
+  type: 地點
+  evidence: v24「必有人乘船從基提界而來」；GT 說是賽普勒斯島的古稱，以基提翁城為名。
+  surfaces:
+  - 基提
+- name: 詩歌中的希伯是誰
+  type: 解經爭議
+  evidence: v24「苦害希伯」；GT《背景註釋》說這名字至今仍未有令人滿意的解釋。
+  surfaces:
+  - 希伯
+- name: 眼目睜開而仆倒是敬虔還是術士的徵候
+  type: 解經爭議
+  evidence: v4、v16「眼目睜開而仆倒的人說」；CT 說正常的先知見異象時並不仆倒，BH 卻說俯伏是敬畏順服。
+  surfaces:
+  - 仆倒
+- name: 東方博士見他的星（太2：1-2）
+  type: 互文
+  evidence: v17 的星；CT 說可能是這預言使東方博士來到耶路撒冷，KC、BH 同樣連到太2。
+- name: 明亮的晨星（啟22：16）
+  type: 互文
+  evidence: v17 的星；CT 引啟二28、二十二16，KC 說對教會而言祂是明亮的晨星。
+- name: 圭必不離猶大（創49：10）
+  type: 互文
+  evidence: v17 的杖；GT 串珠、KC、BH 都指回創49:10 的圭。
+- name: 掃羅擊殺亞甲（撒上15：8）
+  type: 互文
+  evidence: v7 的亞甲；GT 與 BH 都說這預言應驗在掃羅擊敗亞瑪力王亞甲。
