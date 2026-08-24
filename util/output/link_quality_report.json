@@ -1,7 +1,7 @@
 {
-  "total_warnings": 115,
+  "total_warnings": 118,
   "critical_count": 0,
-  "warning_count": 115,
+  "warning_count": 118,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -9,6 +9,13 @@
       "source": "民數記/第11章.md",
       "target": "鵪鶉",
       "message": "同一 alias「鵪鶉」指向多個 target: 鵪鶉遮營, 鵪鶉遷徙"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "民數記/第24章.md",
+      "target": "希伯",
+      "message": "同一 alias「希伯」指向多個 target: 希伯, 詩歌中的希伯是誰"
     },
     {
       "type": "alias_target_conflict",
@@ -316,7 +323,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第25章",
-      "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章"
+      "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 03 利未記/第25章, 04 民數記/第25章"
     },
     {
       "type": "alias_target_conflict",
@@ -345,6 +352,13 @@
       "source": "link_folder/人物/烏利亞.md",
       "target": "第11章",
       "message": "同一 alias「第11章」指向多個 target: 10 撒母耳記下/第11章, 13 歷代志上/第11章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/米甸.md",
+      "target": "第25章",
+      "message": "同一 alias「第25章」指向多個 target: 01 創世記/第25章, 04 民數記/第25章"
     },
     {
       "type": "alias_target_conflict",
@@ -443,6 +457,13 @@
       "source": "link_folder/主題/內幔（隔聖所至聖所的幔子）.md",
       "target": "第4章",
       "message": "同一 alias「第4章」指向多個 target: 03 利未記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/會幕（帳幕整體）.md",
+      "target": "第25章",
+      "message": "同一 alias「第25章」指向多個 target: 02 出埃及記/第25章, 04 民數記/第25章"
     },
     {
       "type": "alias_target_conflict",

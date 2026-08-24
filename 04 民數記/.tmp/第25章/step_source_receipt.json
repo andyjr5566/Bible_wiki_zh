@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_25.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 229,
+      "first": "Num 25:1",
+      "last": "Num 25:18",
+      "sha256": "776477f30521a59dcc1124403f6fae276fea224fcb07eb13acd5e758b71754d7",
+      "bytes": 44283,
+      "chars": 38579,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+book: 民數記
+chapter: 25
+A_use_directly: []
+B_needs_update:
+- name: 非尼哈
+  suggested_type: 人物
+  evidence: v7 從會中起來手裡拿著槍，v11 神親自稱讚他，v12-13 得平安的約。
+  surfaces:
+  - phrase: 非尼哈
+  match_type: exact
+  existing_title: 非尼哈
+  existing_path: link_folder/人物/非尼哈.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: v7、v11 兩次記「祭司亞倫的孫子，以利亞撒的兒子非尼哈」。
+  surfaces:
+  - phrase: 以利亞撒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: v7、v11「祭司亞倫的孫子」——非尼哈的祭司資格由此而來。
+  surfaces:
+  - phrase: 亞倫
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: v4 神吩咐他處置族長，v5 他轉吩咐審判官，v6 他在會幕門前哭泣。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 米甸
+  suggested_type: 人物
+  evidence: v6、v15 米甸女人，v17 擾害米甸人，v18 米甸首領的女兒哥斯比。
+  surfaces:
+  - phrase: 米甸
+  match_type: exact
+  existing_title: 米甸
+  existing_path: link_folder/人物/米甸.md
+- name: 摩押人
+  suggested_type: 人物
+  evidence: v1「百姓與摩押女子行起淫亂」。
+  surfaces:
+  - phrase: 摩押女子
+  match_type: exact
+  existing_title: 摩押人
+  existing_path: link_folder/人物/摩押人.md
+- name: 巴力（迦南主神）
+  suggested_type: 背景
+  evidence: v3、v5 以色列人與巴力毘珥連合；巴力是迦南的豐饒之神。
+  match_type: exact
+  existing_title: 巴力（迦南主神）
+  existing_path: link_folder/背景/巴力（迦南主神）.md
+- name: 忌邪（嫉妒）
+  suggested_type: 原文
+  evidence: v11「以我的忌邪為心，使我不在忌邪中把他們除滅」；STEP 顯示同節動詞名詞同根三次。
+  surfaces:
+  - phrase: 忌邪
+  match_type: exact
+  existing_title: 忌邪（嫉妒）
+  existing_path: link_folder/原文/忌邪（嫉妒）.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: v13「因他為神有忌邪的心，為以色列人贖罪」。
+  surfaces:
+  - phrase: 忌邪的心
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 贖罪
+  suggested_type: 神學
+  evidence: v13「為以色列人贖罪」；STEP 作 va/y.kha.Per（H3722A）。
+  surfaces:
+  - phrase: 贖罪
+  match_type: exact
+  existing_title: 贖罪
+  existing_path: link_folder/神學/贖罪.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: v6「摩西和以色列全會眾正在會幕門前哭泣的時候」。
+  surfaces:
+  - phrase: 會幕
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: v14「是西緬一個宗族的首領」。
+  surfaces:
+  - phrase: 西緬
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 審判官
+  suggested_type: 原文
+  evidence: v5「於是摩西吩咐以色列的審判官說」。
+  surfaces:
+  - phrase: 審判官
+  match_type: exact
+  existing_title: 審判官
+  existing_path: link_folder/原文/審判官.md
+- name: 耶和華擊打百姓的瘟疫
+  suggested_type: 事件
+  evidence: v8 瘟疫止息，v9 遭瘟疫死的有二萬四千人，v18 瘟疫流行的日子。
+  surfaces:
+  - phrase: 瘟疫
+  match_type: exact
+  existing_title: 耶和華擊打百姓的瘟疫
+  existing_path: link_folder/事件/耶和華擊打百姓的瘟疫.md
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: CT、GT、KC 都指出本章的計謀出自巴蘭（民31:16、啟2:14）。
+  match_type: exact
+  existing_title: 巴蘭（比珥的兒子）
+  existing_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 掛在木頭上_懸屍示眾
+  suggested_type: 歷史
+  evidence: v4「在我面前對著日頭懸掛」；CT 說指處死後掛在木架上示眾，日落之後才能將屍首取下來。
+  match_type: exact
+  existing_title: 掛在木頭上_懸屍示眾
+  existing_path: link_folder/歷史/掛在木頭上_懸屍示眾.md
+- name: 巴蘭的教訓（啟2：14）
+  suggested_type: 互文
+  evidence: v18「用這詭計誘惑了你們」；CT 明說這出自巴蘭的教訓（參啟二14）。
+  match_type: exact
+  existing_title: 巴蘭的教訓（啟2：14）
+  existing_path: link_folder/互文/巴蘭的教訓（啟2：14）.md
+C_new_formal:
+- name: 什亭（亞伯什亭）
+  suggested_type: 地點
+  evidence: v1「以色列人住在什亭」；GT 說全名是亞伯什亭，是約書亞探子入侵迦南的出發點。
+  surfaces:
+  - phrase: 什亭
+  target_path: link_folder/地點/什亭（亞伯什亭）.md
+- name: 巴力毘珥
+  suggested_type: 背景
+  evidence: v3、v5「以色列人與巴力毘珥連合」；GT 說原文是「毘珥之巴力」的意思。
+  surfaces:
+  - phrase: 巴力毘珥
+  target_path: link_folder/背景/巴力毘珥.md
+  semantic_hint:
+  - title: 巴力（迦南主神）
+    score: 0.405
+    type: 背景
+- name: 連合（tsa.mad）
+  suggested_type: 原文
+  evidence: v3、v5 的「連合」；KC 說這個字有「同負一軛」的力量，CT 給的字義是束緊、綁在一起。
+  surfaces:
+  - phrase: 連合
+  target_path: link_folder/原文/連合（tsa.mad）.md
+- name: 行起淫亂（za.nah）
+  suggested_type: 原文
+  evidence: v1「百姓與摩押女子行起淫亂」；CT 說有宗教與情欲雙重意思。
+  surfaces:
+  - phrase: 行起淫亂
+  target_path: link_folder/原文/行起淫亂（za.nah）.md
+- name: 對著日頭懸掛是什麼刑罰
+  suggested_type: 解經爭議
+  evidence: v4「在我面前對著日頭懸掛」；CT 給的字義是處死、脫臼，丁良才說先斬首級再懸掛，GT《背景註釋》說處死的方法不明。
+  surfaces:
+  - phrase: 對著日頭懸掛
+  target_path: link_folder/解經爭議/對著日頭懸掛是什麼刑罰.md
+  semantic_hint:
+  - title: 掛在木頭上_懸屍示眾
+    score: 0.446
+    type: 歷史
+  - title: 斬斷你的頭_從你將你的頭抬起來
+    score: 0.416
+    type: 原文
+- name: 摩西是否照神的吩咐處死族長
+  suggested_type: 解經爭議
+  evidence: v4 神吩咐處死所有族長，v5 摩西卻只吩咐殺與巴力毘珥連合的人；GT 串珠明說摩西並沒有照做。
+  surfaces:
+  - phrase: 你們各人要把他們殺了
+  target_path: link_folder/解經爭議/摩西是否照神的吩咐處死族長.md
+  semantic_hint:
+  - title: 摩西
+    score: 0.543
+    type: 人物
+  - title: 摩西殺死埃及人的解經問題
+    score: 0.532
+    type: 解經爭議
+  - title: 耶和華想要殺摩西（24節）
+    score: 0.531
+    type: 解經爭議
+- name: 亭子（qub.bah）
+  suggested_type: 原文
+  evidence: v8「跟隨那以色列人進亭子裡去」；CT 說是供休息的帳棚，GT《背景註釋》說似乎是個聖室。
+  surfaces:
+  - phrase: 亭子
+  target_path: link_folder/原文/亭子（qub.bah）.md
+- name: 由腹中刺透（qo.vah）
+  suggested_type: 原文
+  evidence: v8「便將以色列人和那女人由腹中刺透」；GT《啟導本》說「腹」可指女人性器官。
+  surfaces:
+  - phrase: 由腹中刺透
+  target_path: link_folder/原文/由腹中刺透（qo.vah）.md
+- name: 二萬四千與林前10：8 的二萬三千
+  suggested_type: 解經爭議
+  evidence: v9「那時遭瘟疫死的，有二萬四千人」；林前10:8 作二萬三千，GT 收了兩篇難題專文處理。
+  surfaces:
+  - phrase: 二萬四千人
+  target_path: link_folder/解經爭議/二萬四千與林前10：8 的二萬三千.md
+- name: 帶到他弟兄那裡去是什麼意思
+  suggested_type: 解經爭議
+  evidence: v6「帶著一個米甸女人到他弟兄那裡去」；GT《靈修版》說譯作「帶到他的內室去」更佳，《背景註釋》另列兩種讀法。
+  surfaces:
+  - phrase: 到他弟兄那裡去
+  target_path: link_folder/解經爭議/帶到他弟兄那裡去是什麼意思.md
+  semantic_hint:
+  - title: 骨肉原文作弟兄
+    score: 0.448
+    type: 原文
+- name: 平安的約
+  suggested_type: 主題
+  evidence: v12「我將我平安的約賜給他」；GT 引賽54:10、瑪2:5，串珠說祭司的職事使神與人和好。
+  surfaces:
+  - phrase: 平安的約
+  target_path: link_folder/主題/平安的約.md
+- name: 心利（撒路的兒子）
+  suggested_type: 人物
+  evidence: v14「名叫心利，是撒路的兒子，是西緬一個宗族的首領」。
+  surfaces:
+  - phrase: 心利
+  target_path: link_folder/人物/心利（撒路的兒子）.md
+- name: 哥斯比（蘇珥的女兒）
+  suggested_type: 人物
+  evidence: v15、v18「那被殺的米甸女人，名叫哥斯比」；CT 給的名字字義是「虛假的」。
+  surfaces:
+  - phrase: 哥斯比
+  target_path: link_folder/人物/哥斯比（蘇珥的女兒）.md
+- name: 蘇珥（米甸首領）
+  suggested_type: 人物
+  evidence: v15「這蘇珥是米甸一個宗族的首領」；CT 說蘇珥是米甸五王中的一位（參三十一8）。
+  surfaces:
+  - phrase: 蘇珥
+  target_path: link_folder/人物/蘇珥（米甸首領）.md
+- name: 擾害（tsa.rar）
+  suggested_type: 原文
+  evidence: v17、v18 的「擾害」；GT 串珠說意思是把對方當作敵人。
+  surfaces:
+  - phrase: 擾害
+  target_path: link_folder/原文/擾害（tsa.rar）.md
+- name: 詭計（ne.khel）
+  suggested_type: 原文
+  evidence: v18「因為他們用詭計擾害你們……用這詭計誘惑了你們」；STEP 顯示同節名詞與動詞同根。
+  surfaces:
+  - phrase: 詭計
+  target_path: link_folder/原文/詭計（ne.khel）.md
+- name: 米甸人為何被追討而摩押人沒有
+  suggested_type: 解經爭議
+  evidence: v17「你要擾害米甸人，擊殺他們」；引誘的是摩押女子，被追討的卻是米甸人。
+  surfaces:
+  - phrase: 擊殺他們
+  target_path: link_folder/解經爭議/米甸人為何被追討而摩押人沒有.md
+  semantic_hint:
+  - title: 米甸
+    score: 0.485
+    type: 人物
+  - title: 摩押人
+    score: 0.471
+    type: 人物
+  - title: 米甸地
+    score: 0.466
+    type: 地點
+- name: 非尼哈的行為是否可效法
+  suggested_type: 解經爭議
+  evidence: v7-8 他手裡拿著槍刺透兩人；GT 丁良才說這是特別的辦法、現在不可效法，KC 卻說非尼哈的靈必須成為我們所有人的特徵。
+  surfaces:
+  - phrase: 手裡拿著槍
+  target_path: link_folder/解經爭議/非尼哈的行為是否可效法.md
+- name: 非尼哈後裔承接大祭司（士20：28）
+  suggested_type: 互文
+  evidence: v13「作為永遠當祭司職任的約」；CT、GT、KC 都指出這應許後來應驗。
+  surfaces:
+  - phrase: 永遠當祭司職任的約
+  target_path: link_folder/互文/非尼哈後裔承接大祭司（士20：28）.md
+  semantic_hint:
+  - title: 非尼哈
+    score: 0.615
+    type: 人物
+  - title: 亞倫的祭司譜系
+    score: 0.582
+    type: 人物
+  - title: 以利亞撒
+    score: 0.522
+    type: 人物
+- name: 詩106：28-31 記念毘珥的事
+  suggested_type: 互文
+  evidence: KC 說這件罪在以色列歷史中被牢牢記住，並引書22:17、詩106:28-31、何9:10。
+  target_path: link_folder/互文/詩106：28-31 記念毘珥的事.md
+  semantic_hint:
+  - title: 申31：28-29
+    score: 0.406
+    type: 互文
+  - title: 毘珥山頂
+    score: 0.405
+    type: 地點
+D_new_candidate: []
+E_skip: []
