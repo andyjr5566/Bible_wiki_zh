@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 28,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_28.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 348,
+      "first": "Num 28:1",
+      "last": "Num 28:31",
+      "sha256": "3169df6acd71d470e98f3ff5b61b9764dafcc117937cb73f17f156cfb29a73df",
+      "bytes": 68640,
+      "chars": 59490,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

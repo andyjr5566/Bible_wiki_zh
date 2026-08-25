@@ -403,6 +403,20 @@
       "宗教曆的起點"
     ]
   },
+  "以獻祭安排時間": {
+    "path": "link_folder/主題/以獻祭安排時間.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學",
+      "文化"
+    ],
+    "title": "以獻祭安排時間",
+    "status": "formal",
+    "aliases": [
+      "敬拜時間表",
+      "獻祭日曆"
+    ]
+  },
   "以色列人一連五次違背神": {
     "path": "link_folder/主題/以色列人一連五次違背神.md",
     "type": "主題",
@@ -1681,6 +1695,20 @@
     "status": "formal",
     "aliases": []
   },
+  "新素祭": {
+    "path": "link_folder/主題/新素祭.md",
+    "type": "主題",
+    "secondary_types": [
+      "原文",
+      "文化"
+    ],
+    "title": "新素祭",
+    "status": "formal",
+    "aliases": [
+      "新的素祭",
+      "七七節新素祭"
+    ]
+  },
   "施恩座": {
     "path": "link_folder/主題/施恩座.md",
     "type": "主題",
@@ -2348,6 +2376,20 @@
       "潔淨第八天儀式"
     ]
   },
+  "節期祭物層層累加": {
+    "path": "link_folder/主題/節期祭物層層累加.md",
+    "type": "主題",
+    "secondary_types": [
+      "原文",
+      "文化"
+    ],
+    "title": "節期祭物層層累加",
+    "status": "formal",
+    "aliases": [
+      "節期祭物累加",
+      "常獻祭以外"
+    ]
+  },
   "節期與紀念": {
     "path": "link_folder/主題/節期與紀念.md",
     "type": "主題",
@@ -2439,6 +2481,20 @@
     "title": "羅得的墮落",
     "status": "formal",
     "aliases": []
+  },
+  "群體性獻祭": {
+    "path": "link_folder/主題/群體性獻祭.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化",
+      "神學"
+    ],
+    "title": "群體性獻祭",
+    "status": "formal",
+    "aliases": [
+      "公共獻祭",
+      "全會眾的獻祭"
+    ]
   },
   "耶和華的榮光與會幕的及時顯現": {
     "path": "link_folder/主題/耶和華的榮光與會幕的及時顯現.md",
@@ -13465,6 +13521,20 @@
     "status": "formal",
     "aliases": []
   },
+  "欣（hin）": {
+    "path": "link_folder/原文/欣（hin）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "欣（hin）",
+    "status": "formal",
+    "aliases": [
+      "hin",
+      "欣",
+      "欣(液量單位)"
+    ]
+  },
   "歇息": {
     "path": "link_folder/原文/歇息.md",
     "type": "原文",
@@ -14674,6 +14744,20 @@
     "status": "formal",
     "aliases": [
       "酒政 (cupbearer)"
+    ]
+  },
+  "醇酒（she.khar）": {
+    "path": "link_folder/原文/醇酒（she.khar）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "醇酒（she.khar）",
+    "status": "formal",
+    "aliases": [
+      "she.khar",
+      "醇酒",
+      "濃酒"
     ]
   },
   "野牛之力（re.em）": {
@@ -17400,6 +17484,21 @@
       "駱駝"
     ]
   },
+  "七七節（五旬節）": {
+    "path": "link_folder/歷史/七七節（五旬節）.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "互文"
+    ],
+    "title": "七七節（五旬節）",
+    "status": "formal",
+    "aliases": [
+      "七七節",
+      "五旬節",
+      "收割節"
+    ]
+  },
   "七十長老制度起源": {
     "path": "link_folder/歷史/七十長老制度起源.md",
     "type": "歷史",
@@ -17936,6 +18035,20 @@
     "title": "曠野飄流四十年",
     "status": "formal",
     "aliases": []
+  },
+  "月朔": {
+    "path": "link_folder/歷史/月朔.md",
+    "type": "歷史",
+    "secondary_types": [
+      "文化",
+      "原文"
+    ],
+    "title": "月朔",
+    "status": "formal",
+    "aliases": [
+      "新月",
+      "每月初一"
+    ]
   },
   "東風（西洛可、卡姆辛）": {
     "path": "link_folder/歷史/東風（西洛可、卡姆辛）.md",
@@ -21397,6 +21510,19 @@
     "aliases": [
       "不蒙悅納",
       "可憎嫌的"
+    ]
+  },
+  "獻給神的食物": {
+    "path": "link_folder/神學/獻給神的食物.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "獻給神的食物",
+    "status": "formal",
+    "aliases": [
+      "神的食物",
+      "獻祭作神的食物"
     ]
   },
   "玷污耶和華的聖所與帳幕": {
@@ -26979,6 +27105,12 @@
   "宗教曆的起點": {
     "alias_of": "以本月為正月"
   },
+  "敬拜時間表": {
+    "alias_of": "以獻祭安排時間"
+  },
+  "獻祭日曆": {
+    "alias_of": "以獻祭安排時間"
+  },
   "幔子": {
     "alias_of": "內幔（隔聖所至聖所的幔子）"
   },
@@ -27309,6 +27441,12 @@
   "崇拜": {
     "alias_of": "敬拜"
   },
+  "新的素祭": {
+    "alias_of": "新素祭"
+  },
+  "七七節新素祭": {
+    "alias_of": "新素祭"
+  },
   "蔽罪座": {
     "alias_of": "施恩座"
   },
@@ -27483,6 +27621,12 @@
   "潔淨第八天儀式": {
     "alias_of": "第八天獻祭（大痲瘋潔淨）"
   },
+  "節期祭物累加": {
+    "alias_of": "節期祭物層層累加"
+  },
+  "常獻祭以外": {
+    "alias_of": "節期祭物層層累加"
+  },
   "純金": {
     "alias_of": "精金"
   },
@@ -27503,6 +27647,12 @@
   },
   "綿羊羔": {
     "alias_of": "綿羊"
+  },
+  "公共獻祭": {
+    "alias_of": "群體性獻祭"
+  },
+  "全會眾的獻祭": {
+    "alias_of": "群體性獻祭"
   },
   "聖安息日": {
     "alias_of": "聖安息日（大贖罪日雙重安息）"
@@ -29586,6 +29736,15 @@
   "a.chuz.zah": {
     "alias_of": "業地（a.chuz.zah）"
   },
+  "hin": {
+    "alias_of": "欣（hin）"
+  },
+  "欣": {
+    "alias_of": "欣（hin）"
+  },
+  "欣(液量單位)": {
+    "alias_of": "欣（hin）"
+  },
   "公的都要屬耶和華": {
     "alias_of": "歸給耶和華"
   },
@@ -29930,6 +30089,15 @@
   },
   "酒政 (cupbearer)": {
     "alias_of": "酒政_cupbearer"
+  },
+  "she.khar": {
+    "alias_of": "醇酒（she.khar）"
+  },
+  "醇酒": {
+    "alias_of": "醇酒（she.khar）"
+  },
+  "濃酒": {
+    "alias_of": "醇酒（she.khar）"
   },
   "金絲": {
     "alias_of": "金線"
@@ -30552,6 +30720,15 @@
   "駱駝": {
     "alias_of": "駱駝成為家畜"
   },
+  "七七節": {
+    "alias_of": "七七節（五旬節）"
+  },
+  "五旬節": {
+    "alias_of": "七七節（五旬節）"
+  },
+  "收割節": {
+    "alias_of": "七七節（五旬節）"
+  },
   "七十長老起源": {
     "alias_of": "七十長老制度起源"
   },
@@ -30692,6 +30869,12 @@
   },
   "約瑟的雙份產業": {
     "alias_of": "收納以法蓮與瑪拿西"
+  },
+  "新月": {
+    "alias_of": "月朔"
+  },
+  "每月初一": {
+    "alias_of": "月朔"
   },
   "Sirocco": {
     "alias_of": "東風（西洛可、卡姆辛）"
@@ -31610,6 +31793,12 @@
   },
   "可憎嫌的": {
     "alias_of": "獻祭不蒙悅納"
+  },
+  "神的食物": {
+    "alias_of": "獻給神的食物"
+  },
+  "獻祭作神的食物": {
+    "alias_of": "獻給神的食物"
   },
   "甘心樂意": {
     "alias_of": "甘心樂意的奉獻"

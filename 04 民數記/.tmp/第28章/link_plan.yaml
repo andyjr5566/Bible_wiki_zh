@@ -1,0 +1,304 @@
+book: 民數記
+chapter: 28
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1 神再次藉摩西頒布獻祭條例；GT 與 KingComments 都把本章放在摩西將領導權交給約書亞、以色列即將進地的背景中。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 供物（qorban）
+  suggested_type: 原文
+  evidence: v2「我的供物」是 STEP H7133A qorban，陽性單數構造式附第一人稱後綴；CT 解作奉獻物、禮物。
+  surfaces:
+  - phrase: 供物
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 供物（qorban）
+  existing_path: link_folder/原文/供物（qorban）.md
+- name: 火祭（isheh）
+  suggested_type: 主題
+  evidence: v2-27 多次稱祭物為火祭；STEP H801 isheh 在本章反覆出現，CT 說凡全部或部分燒在壇上的供物都可稱火祭。
+  surfaces:
+  - phrase: 火祭
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: v2、6、8、13、24、27 反覆使用 H7381 re.ach 加 H5207 ni.cho.ach「舒暢的香氣」；四套註釋都解作神悅納祭物的圖像。
+  surfaces:
+  - phrase: 馨香
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: 本章所有時段都以燔祭為主；STEP 一律標 H5930A olah，CT、GT、KingComments、BibleHub 均指出整個祭牲焚燒、表達全然獻上的特點。
+  surfaces:
+  - phrase: 燔祭
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 每日獻祭（常獻燔祭）
+  suggested_type: 神學
+  evidence: v3-8 每早晚各獻一隻一歲、無殘疾的公羊羔；STEP H8548 ta.mid 表示持續、不間斷，四套註釋都把它視為全民敬拜的每日基礎。
+  surfaces:
+  - phrase: 常獻的燔祭
+  match_type: exact
+  existing_title: 每日獻祭（常獻燔祭）
+  existing_path: link_folder/神學/每日獻祭（常獻燔祭）.md
+- name: 在黃昏的時候
+  suggested_type: 原文
+  evidence: v4、8 的時間語是 H996G bein 加 H6153 的雙數「兩個晚上之間」；中文分別譯作黃昏與晚上，指每日第二次常獻祭的時段。
+  surfaces:
+  - phrase: 黃昏的時候
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 在黃昏的時候
+  existing_path: link_folder/原文/在黃昏的時候.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v5 起所有燔祭按祭牲大小配上細麵調油的素祭；STEP 標 H4503G min.chah，四套註釋均注意其精確分量。
+  surfaces:
+  - phrase: 素祭
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 伊法
+  suggested_type: 原文
+  evidence: v5、9、12-13、20-21、28-29 用伊法的十分之一、二、三計量細麵；STEP 將伊法標為 H374 ephah，十分量另以 H6241
+    issaron 表示。
+  surfaces:
+  - phrase: 伊法
+  match_type: exact
+  existing_title: 伊法
+  existing_path: link_folder/原文/伊法.md
+- name: 奠酒
+  suggested_type: 文化
+  evidence: v7-15、24、31 的奠祭以酒澆奠；STEP 名詞 H5262 nesekh、動詞 H5258A nasakh，GT 記錄澆在壇旁或祭物上的兩種理解。
+  surfaces:
+  - phrase: 奠祭
+  match_type: exact
+  existing_title: 奠酒
+  existing_path: link_folder/文化/奠酒.md
+- name: 西乃山
+  suggested_type: 地點
+  evidence: v6 說常獻燔祭是在西乃山所命定；CT、GT、BibleHub 都回指出29:38-42，說明這不是新創制度，而是進地前的重申。
+  surfaces:
+  - phrase: 西乃山
+  match_type: exact
+  existing_title: 西乃山
+  existing_path: link_folder/地點/西乃山.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: v9-10 每安息日另加兩隻羊羔及配套素祭、奠祭；GT 與 BibleHub 強調這是加在每日常獻祭之上、代表全會眾獻上的祭。
+  surfaces:
+  - phrase: 安息日
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 燔祭平安祭同獻的素祭與奠祭比例
+  suggested_type: 神學
+  evidence: v12-14、20-21、28-29 顯示公牛、公羊、羊羔分別配三、二、一個伊法十分量，奠酒則為半欣、三分之一欣、四分之一欣；GT 指出此比例與民15一致。
+  match_type: exact
+  existing_title: 燔祭平安祭同獻的素祭與奠祭比例
+  existing_path: link_folder/神學/燔祭平安祭同獻的素祭與奠祭比例.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: v15、22、30 在月朔、無酵節與七七節各加一隻公山羊為贖罪祭；STEP 標 H2403H chat.tat，v22、30 又用 H3722A
+    Piel 不定詞「為你們贖罪」。
+  surfaces:
+  - phrase: 贖罪祭
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 逾越節
+  suggested_type: 歷史
+  evidence: v16 指定正月十四日是耶和華的逾越節；四套註釋都回顧出埃及的拯救，並說明它緊接七日無酵節。
+  surfaces:
+  - phrase: 逾越節
+  match_type: exact
+  existing_title: 逾越節
+  existing_path: link_folder/歷史/逾越節.md
+- name: 基督預表（逾越節羔羊）
+  suggested_type: 神學
+  evidence: CT、GT、KingComments、BibleHub 都把逾越節羔羊與基督的捨命相連；本章雖不重述羔羊條例，仍以逾越節為無酵節獻祭的起點。
+  match_type: exact
+  existing_title: 基督預表（逾越節羔羊）
+  existing_path: link_folder/神學/基督預表（逾越節羔羊）.md
+- name: 無酵節
+  suggested_type: 歷史
+  evidence: v17-25 規定正月十五日起七日吃無酵餅、首末日聖會並每日加獻祭物；GT 與 BibleHub 同時補充出埃及記念及春季大麥收成背景。
+  surfaces:
+  - phrase: 無酵餅七日
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 無酵節
+  existing_path: link_folder/歷史/無酵節.md
+- name: 聖會
+  suggested_type: 文化
+  evidence: v18、25、26 在無酵節首末日及七七節舉行聖會；STEP 是 H4744 miq.ra 構造式加 H6944G qodesh，字面為「聖潔的召集」。
+  surfaces:
+  - phrase: 聖會
+  match_type: exact
+  existing_title: 聖會
+  existing_path: link_folder/文化/聖會.md
+- name: 勞碌的工（a.vo.dah）
+  suggested_type: 原文
+  evidence: v18、25、26 禁止「勞碌的工」；STEP 結構是 H4399「工作」加 H5656I a.vo.dah「服役／勞動」，四套註釋均解作放下日常工作專心守節。
+  surfaces:
+  - phrase: 勞碌的工
+  match_type: exact
+  existing_title: 勞碌的工（a.vo.dah）
+  existing_path: link_folder/原文/勞碌的工（a.vo.dah）.md
+- name: 沒有殘疾的祭牲
+  suggested_type: 神學
+  evidence: v3、9、11、19、31 反覆要求祭牲沒有殘疾；STEP H8549G ta.mim 為複數形容詞「完整、無瑕」，四套註釋皆以此強調獻祭的完整性。
+  surfaces:
+  - phrase: 沒有殘疾
+  match_type: exact
+  existing_title: 沒有殘疾的祭牲
+  existing_path: link_folder/神學/沒有殘疾的祭牲.md
+- name: 初熟
+  suggested_type: 原文
+  evidence: v26「初熟」是 STEP H1061 bik.kurim，帶定冠詞的陽性複數名詞；GT、KingComments、BibleHub 都以初熟莊稼說明向神承認收成來源。
+  surfaces:
+  - phrase: 莊稼初熟
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 初熟
+  existing_path: link_folder/原文/初熟.md
+- name: 五旬節兩個有酵餅的搖祭條例
+  suggested_type: 主題
+  evidence: v26 的「新素祭」需以利23:16-17補足為初熟麥子製成的兩個餅；CT、GT、KingComments 都明確引用這項條例。
+  match_type: exact
+  existing_title: 五旬節兩個有酵餅的搖祭條例
+  existing_path: link_folder/主題/五旬節兩個有酵餅的搖祭條例.md
+- name: 五旬節與律法頒布
+  suggested_type: 背景
+  evidence: BibleHub 說猶太傳統把七七節與西乃山頒布律法相連；GT《背景註釋》也記此傳統，但須與本章直接陳述的收割節意義分開。
+  match_type: exact
+  existing_title: 五旬節與律法頒布
+  existing_path: link_folder/背景/五旬節與律法頒布.md
+- name: 聖靈分賜預表五旬節（徒2：1-4）
+  suggested_type: 互文
+  evidence: GT、KingComments、BibleHub 都把七七節與徒2五旬節聖靈降臨、教會形成相連，屬新約互文應用而非本章原文字義。
+  match_type: exact
+  existing_title: 聖靈分賜預表五旬節（徒2：1-4）
+  existing_path: link_folder/互文/聖靈分賜預表五旬節（徒2：1-4）.md
+- name: 節期祭物詳情另見民數記28-29章
+  suggested_type: 背景
+  evidence: 利23主要列節期意義與日期，本章及民29則集中列出各節期祭物數量；KingComments 與 GT 都明確比較兩處的不同焦點。
+  match_type: exact
+  existing_title: 節期祭物詳情另見民數記28-29章
+  existing_path: link_folder/背景/節期祭物詳情另見民數記28-29章.md
+C_new_formal:
+- name: 以獻祭安排時間
+  suggested_type: 主題
+  evidence: v2 要百姓「按日期」獻祭，隨後依每日、每安息日、每月朔、逾越節／無酵節與七七節展開；CT、GT、KingComments、BibleHub
+    都以這個時間次序整理本章。
+  surfaces:
+  - phrase: 按日期
+    verses:
+    - 2
+  target_path: link_folder/主題/以獻祭安排時間.md
+  semantic_hint:
+  - title: 民數記第七章的時序與編排
+    score: 0.408
+    type: 背景
+- name: 群體性獻祭
+  suggested_type: 主題
+  evidence: v2-31 的祭是祭司按時代表全體以色列獻上的公共祭，不是每家各獻一次；GT《啟導本》與《背景註釋》、KingComments 都明確區分本章的全民定期祭與個人自願祭。
+  target_path: link_folder/主題/群體性獻祭.md
+  semantic_hint:
+  - title: 牛群
+    score: 0.404
+    type: 文化
+- name: 獻給神的食物
+  suggested_type: 神學
+  evidence: v2 四次以第一人稱所有格說「我的供物、我的食物、我的火祭、我的馨香」；GT、KingComments、BibleHub 都說這不是神需要進食，而是強調敬拜以神為中心。
+  surfaces:
+  - phrase: 獻給我作馨香火祭的食物
+    verses:
+    - 2
+  target_path: link_folder/神學/獻給神的食物.md
+  semantic_hint:
+  - title: 利未人的什一奉獻
+    score: 0.436
+    type: 神學
+  - title: 古代近東初熟果子奉獻
+    score: 0.427
+    type: 背景
+  - title: 初熟的麥子磨麵作餅作為舉祭
+    score: 0.426
+    type: 神學
+- name: 欣（hin）
+  suggested_type: 原文
+  evidence: v5、7、14 用液量單位「欣」計量油與酒；STEP 標 H1969 hin，並以四分之一、三分之一、二分之一隨祭牲大小遞增。
+  surfaces:
+  - phrase: 欣
+  target_path: link_folder/原文/欣（hin）.md
+- name: 醇酒（she.khar）
+  suggested_type: 原文
+  evidence: v7「醇酒」不是一般 yayin，而是 STEP H7941 she.khar「濃酒／發酵飲料」；CT 特別指出本節奠祭用此字，在其他奠祭經文少見。
+  surfaces:
+  - phrase: 醇酒
+    verses:
+    - 7
+  target_path: link_folder/原文/醇酒（she.khar）.md
+- name: 月朔
+  suggested_type: 歷史
+  evidence: v11-15 規定每月起頭的燔祭、素祭、奠祭與贖罪祭；STEP v11 是 H7218J「起頭」加 H2320G「你們的月份」，GT《背景註釋》補充以色列使用陰曆的文化脈絡。
+  surfaces:
+  - phrase: 月朔
+  target_path: link_folder/歷史/月朔.md
+- name: 節期祭物層層累加
+  suggested_type: 主題
+  evidence: v10、15、23-24、31 明說安息日、月朔與節期祭物是在每日常獻祭以外；GT 用節期重疊的實例說明總數要相加，BibleHub 也以
+    layered nature 解釋「in addition to」。
+  surfaces:
+  - phrase: 在早晨常獻的燔祭以外
+    verses:
+    - 23
+  - phrase: 在常獻的燔祭和同獻的奠祭以外
+    verses:
+    - 24
+  - phrase: 在常獻的燔祭和同獻的素祭並同獻的奠祭以外
+    verses:
+    - 31
+  target_path: link_folder/主題/節期祭物層層累加.md
+  semantic_hint:
+  - title: 節期祭物詳情另見民數記28-29章
+    score: 0.411
+    type: 背景
+- name: 七七節（五旬節）
+  suggested_type: 歷史
+  evidence: v26-31 是收割初熟與新素祭的七七節；GT、KingComments、BibleHub 都說它在逾越節後七週、第五十日，因此新約又稱五旬節。
+  surfaces:
+  - phrase: 七七節
+  target_path: link_folder/歷史/七七節（五旬節）.md
+  semantic_hint:
+  - title: 七七節安息日算法的兩種解讀之爭
+    score: 0.441
+    type: 解經爭議
+  - title: 七是節期中最要緊的數目
+    score: 0.438
+    type: 主題
+- name: 新素祭
+  suggested_type: 主題
+  evidence: v26 七七節把新收成作成新的素祭獻給神；STEP 是 H4503G min.chah 加陰性單數形容詞 H2319H cha.da.shah「新的」。
+  surfaces:
+  - phrase: 新素祭
+    verses:
+    - 26
+  target_path: link_folder/主題/新素祭.md
+D_new_candidate: []
+E_skip: []
