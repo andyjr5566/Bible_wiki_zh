@@ -1,7 +1,7 @@
 {
-  "total_warnings": 121,
+  "total_warnings": 123,
   "critical_count": 0,
-  "warning_count": 121,
+  "warning_count": 123,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -356,6 +356,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/摩西.md",
+      "target": "第27章",
+      "message": "同一 alias「第27章」指向多個 target: 03 利未記/第27章, 04 民數記/第27章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/比利洗人.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 06 約書亞記/第3章"
@@ -625,6 +632,13 @@
       "source": "link_folder/原文/搖祭.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/禧年（第五十年）.md",
+      "target": "第27章",
+      "message": "同一 alias「第27章」指向多個 target: 03 利未記/第27章, 04 民數記/第27章"
     },
     {
       "type": "alias_target_conflict",

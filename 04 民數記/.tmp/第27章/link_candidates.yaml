@@ -1,0 +1,210 @@
+book: 民數記
+chapter: 27
+candidates:
+- name: 西羅非哈的女兒
+  type: 人物
+  section: 人物與場景
+  evidence: v1-7 五位女兒在會幕門口公開提出父家產業問題；CT、GT、KingComments、BibleHub 都逐段解釋她們的訴求、信心與案件影響。
+  surfaces:
+  - 西羅非哈的女兒
+- name: 摩西
+  type: 人物
+  section: 人物與場景
+  evidence: v5 把案件帶到神面前，v12-17 面對死亡並為會眾求領袖，v18-23 公開按立約書亞。
+  surfaces:
+  - 摩西
+- name: 約書亞
+  type: 人物
+  section: 人物與場景
+  evidence: v18-23 被神揀選、由摩西按手與囑咐，並領受部分尊榮。
+  surfaces:
+  - 約書亞
+- name: 以利亞撒
+  type: 人物
+  section: 人物與場景
+  evidence: v2 參與公開審理，v19-23 在約書亞的任命與日後藉烏陵求問中居關鍵位置。
+  surfaces:
+  - 以利亞撒
+- name: 亞倫
+  type: 人物
+  section: 人物與場景
+  evidence: v13 摩西將像哥哥亞倫一樣歸到列祖；四套註釋都以亞倫的死作領袖交接背景。
+  surfaces:
+  - 亞倫
+- name: 瑪拿西
+  type: 人物
+  section: 人物與場景
+  evidence: v1 以完整家譜交代西羅非哈的女兒屬瑪拿西支派，產業案件因此帶有支派地業的脈絡。
+  surfaces:
+  - 瑪拿西
+- name: 會幕門口
+  type: 地點
+  section: 人物與場景
+  evidence: v2 五位女兒站在會幕門口、摩西、祭司、首領與會眾面前，顯示這是公開的法律程序。
+  surfaces:
+  - 會幕門口
+- name: 可拉的背叛（預告）
+  type: 人物
+  section: 歷史背景
+  evidence: v3 女兒明言父親沒有參與可拉同黨的叛亂，為父親之死與家族名分作必要區分。
+  surfaces:
+  - 可拉同黨
+- name: 加低斯
+  type: 地點
+  section: 歷史背景
+  evidence: v14 括註明說湧水之地是尋的曠野加低斯米利巴水。
+  surfaces:
+  - 加低斯
+- name: 摩西擊打磐石兩下
+  type: 事件
+  section: 歷史背景
+  evidence: v14 回顧會眾爭鬧、湧水與摩西未在眾人眼前尊神為聖的事件；四套註釋均回指民20摩西擊打磐石的行動。
+- name: 迦南地
+  type: 地點
+  section: 歷史背景
+  evidence: v12 神叫摩西觀看「我所賜給以色列人的地」；四套註釋都明確解為即將承受的迦南地。
+- name: 禧年（第五十年）
+  type: 原文
+  section: 產業條例
+  evidence: GT 以利25的禧年土地歸回制度說明地業屬神、家族只是受託持有；這補足本章父家產業不可消失的背景。
+- name: 女兒承受產業的條例
+  type: 主題
+  section: 產業條例
+  evidence: v4-11 從個案形成全以色列的繼承次序；四套註釋都說此判例讓沒有兒子的家仍能保留名分與地業。
+  surfaces:
+  - phrase: 產業歸給他的女兒
+    verses:
+    - 8
+- name: 地不可永賣（地權屬神）
+  type: 神學
+  section: 產業條例
+  evidence: v7-12 同時以「產業」和「我所賜給以色列人的地」描述土地；GT 以利25、禧年與支派制度說明土地的神聖託付，可累積到既有地權屬神條目。
+  surfaces:
+  - phrase: 我所賜給以色列人的地
+    verses:
+    - 12
+- name: 產業（na.cha.lah）
+  type: 原文
+  section: 原文觀察
+  evidence: STEP 顯示 H5159 在 v7-11 共六次，詞形為陰性名詞單數，並帶不同所有格後綴；語境是父家可傳遞的繼承份。
+  surfaces:
+  - phrase: 產業
+    verses:
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+- name: 業地（a.chuz.zah）
+  type: 原文
+  section: 原文觀察
+  evidence: STEP 顯示 v4 的「產業」與 v7 的「為業」用 H272 a.chuz.zah，著重可持有的地業；與 H5159 的承受份形成互補。
+  surfaces:
+  - phrase: 分給我們產業
+    verses:
+    - 4
+  - phrase: 把地分給他們為業
+    verses:
+    - 7
+- name: 判斷（mish.pat）
+  type: 原文
+  section: 原文觀察
+  evidence: STEP 顯示同一詞族 H4941 在 v5 是帶第三人稱陰性複數後綴的「她們的案件」H4941H，v11 是「典章」、v21 是烏陵的「判斷」H4941G。
+  surfaces:
+  - phrase: 案件
+    verses:
+    - 5
+  - phrase: 典章
+    verses:
+    - 11
+  - phrase: 判斷
+    verses:
+    - 21
+- name: 亞巴琳山
+  type: 地點
+  section: 摩西的終程
+  evidence: v12 神命摩西上亞巴琳山觀看所賜之地；CT、GT、KingComments、BibleHub 都交代其山區位置及與尼波山的關係。
+  surfaces:
+  - 亞巴琳山
+- name: 摩西不得進入應許之地
+  type: 事件
+  section: 摩西的終程
+  evidence: v12-14 摩西只能觀看土地，隨後將像亞倫一樣死去，原因回溯到米利巴未在會眾眼前尊神為聖。
+- name: 歸到他列祖
+  type: 主題
+  section: 摩西的終程
+  evidence: v13 說摩西看過土地後要像亞倫一樣「歸到列祖」；STEP 顯示 H622 是 Niphal 被動形「被聚集」，四套註釋以此描述他的死亡。
+  surfaces:
+  - phrase: 歸到你列祖
+    verses:
+    - 13
+- name: 在米利巴未將耶和華尊為聖
+  type: 神學
+  section: 摩西的終程
+  evidence: v14 神親自說明摩西受罰的焦點，是在湧水事件中沒有於會眾眼前尊祂為聖；STEP 將 H6942G 標為使役式不定詞，可累積到既有米利巴條目。
+  surfaces:
+  - phrase: 尊我為聖
+    verses:
+    - 14
+- name: 萬人之靈的神
+  type: 神學
+  section: 領袖交接
+  evidence: v16 摩西以此稱呼向神求領袖；STEP 顯示「靈」H7307G 在此為陰性複數 ru.Chot，而 v18 約書亞「有靈」是同詞的單數。
+  surfaces:
+  - 萬人之靈的神
+- name: 沒有牧人的羊群
+  type: 主題
+  section: 領袖交接
+  evidence: v17 以羊群無牧人說明會眾的危險；STEP 顯示「牧人」H7462B 是 Qal 主動分詞 ro.eh，四套註釋都以牧養責任解釋領袖角色。
+  surfaces:
+  - 沒有牧人的羊群
+- name: 出入（領袖用語）
+  type: 原文
+  section: 原文觀察
+  evidence: v17、v21 重複「出入」；STEP 分別標示 H3318G 與 H935G，v17 又有使役形「引出、領入」，顯示這是實際帶領會眾的成對用語。
+  surfaces:
+  - phrase: 出入
+    verses:
+    - 17
+    - 21
+- name: 聖靈
+  type: 神學
+  section: 領袖交接
+  evidence: v18 中文譯為約書亞心中「有聖靈」；STEP 直接證據是 H7307G ru.ach 的陰性單數，四套註釋進一步解為神所賜、使他能任職的靈。
+  surfaces:
+  - phrase: 聖靈
+    verses:
+    - 18
+- name: 按手
+  type: 原文
+  section: 領袖交接
+  evidence: v18 命令摩西按手，v23 記述他實行；STEP 顯示兩處均為 H5564，分別是 Qal 完成式第二人稱單數與 Qal 敘事式第三人稱單數。
+  surfaces:
+  - phrase: 按手
+    verses:
+    - 18
+    - 23
+- name: 尊榮（hod）
+  type: 原文
+  section: 原文觀察
+  evidence: v20「將你的尊榮給他幾分」；STEP 顯示 H1935 hod 是陽性單數名詞，前綴介系詞表示「從你的尊榮中」，並非另有一個「幾分」名詞。
+  surfaces:
+  - phrase: 尊榮
+    verses:
+    - 20
+- name: 烏陵和土明
+  type: 原文
+  section: 領袖交接
+  evidence: v21 以利亞撒要憑烏陵的判斷替約書亞求問；STEP 顯示「烏陵」H224 是複數形式，四套註釋都說明它在決策中的角色。
+  surfaces:
+  - phrase: 烏陵
+    verses:
+    - 21
+- name: 約書亞承接摩西
+  type: 事件
+  section: 領袖交接
+  evidence: v18-23 包含神揀選、摩西領來、公開站立、按手、囑咐、分授尊榮及全會眾聽從；四套註釋均以此為正式交接。
+- name: 摩西與約書亞的權柄差異
+  type: 主題
+  section: 領袖交接
+  evidence: v20 只把摩西的尊榮給約書亞幾分，v21 約書亞要藉以利亞撒與烏陵求問；GT、KingComments、BibleHub 都特別比較兩人的權柄方式。

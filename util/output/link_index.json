@@ -1089,6 +1089,20 @@
     "status": "formal",
     "aliases": []
   },
+  "女兒承受產業的條例": {
+    "path": "link_folder/主題/女兒承受產業的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史",
+      "文化"
+    ],
+    "title": "女兒承受產業的條例",
+    "status": "formal",
+    "aliases": [
+      "女兒繼承產業",
+      "女兒承業條例"
+    ]
+  },
   "奴僕與自由": {
     "path": "link_folder/主題/奴僕與自由.md",
     "type": "主題",
@@ -1618,6 +1632,18 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西與約書亞的權柄差異": {
+    "path": "link_folder/主題/摩西與約書亞的權柄差異.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西與約書亞的權柄差異",
+    "status": "formal",
+    "aliases": [
+      "約書亞所得的尊榮"
+    ]
+  },
   "支搭帳棚": {
     "path": "link_folder/主題/支搭帳棚.md",
     "type": "主題",
@@ -1820,6 +1846,18 @@
     "title": "污穢",
     "status": "formal",
     "aliases": []
+  },
+  "沒有牧人的羊群": {
+    "path": "link_folder/主題/沒有牧人的羊群.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "沒有牧人的羊群",
+    "status": "formal",
+    "aliases": [
+      "羊群沒有牧人"
+    ]
   },
   "洗濯盆（銅盆）": {
     "path": "link_folder/主題/洗濯盆（銅盆）.md",
@@ -3559,6 +3597,19 @@
     "status": "formal",
     "aliases": []
   },
+  "摩西不得進入應許之地": {
+    "path": "link_folder/事件/摩西不得進入應許之地.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "摩西不得進入應許之地",
+    "status": "formal",
+    "aliases": [
+      "摩西只能觀看迦南地",
+      "摩西不得進迦南"
+    ]
+  },
   "摩西完了工": {
     "path": "link_folder/事件/摩西完了工.md",
     "type": "事件",
@@ -3902,6 +3953,19 @@
     "title": "米利暗卒於加低斯",
     "status": "formal",
     "aliases": []
+  },
+  "約書亞承接摩西": {
+    "path": "link_folder/事件/約書亞承接摩西.md",
+    "type": "事件",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "約書亞承接摩西",
+    "status": "formal",
+    "aliases": [
+      "摩西按立約書亞",
+      "約書亞接續摩西"
+    ]
   },
   "耶和華擊打百姓的瘟疫": {
     "path": "link_folder/事件/耶和華擊打百姓的瘟疫.md",
@@ -12586,6 +12650,18 @@
       "禮冠"
     ]
   },
+  "出入（領袖用語）": {
+    "path": "link_folder/原文/出入（領袖用語）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "出入（領袖用語）",
+    "status": "formal",
+    "aliases": [
+      "領袖出入"
+    ]
+  },
   "初熟": {
     "path": "link_folder/原文/初熟.md",
     "type": "原文",
@@ -12593,6 +12669,19 @@
     "title": "初熟",
     "status": "formal",
     "aliases": []
+  },
+  "判斷（mish.pat）": {
+    "path": "link_folder/原文/判斷（mish.pat）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "判斷（mish.pat）",
+    "status": "formal",
+    "aliases": [
+      "mish.pat",
+      "案件與判斷"
+    ]
   },
   "利河伯（寬闊）": {
     "path": "link_folder/原文/利河伯（寬闊）.md",
@@ -12926,6 +13015,18 @@
     "title": "尊大的王子",
     "status": "formal",
     "aliases": []
+  },
+  "尊榮（hod）": {
+    "path": "link_folder/原文/尊榮（hod）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "尊榮（hod）",
+    "status": "formal",
+    "aliases": [
+      "hod"
+    ]
   },
   "屈枉": {
     "path": "link_folder/原文/屈枉.md",
@@ -13344,6 +13445,18 @@
     "status": "formal",
     "aliases": []
   },
+  "業地（a.chuz.zah）": {
+    "path": "link_folder/原文/業地（a.chuz.zah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "業地（a.chuz.zah）",
+    "status": "formal",
+    "aliases": [
+      "a.chuz.zah"
+    ]
+  },
   "榮耀": {
     "path": "link_folder/原文/榮耀.md",
     "type": "原文",
@@ -13711,6 +13824,18 @@
     "aliases": [
       "Massah",
       "瑪撒"
+    ]
+  },
+  "產業（na.cha.lah）": {
+    "path": "link_folder/原文/產業（na.cha.lah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "產業（na.cha.lah）",
+    "status": "formal",
+    "aliases": [
+      "na.cha.lah"
     ]
   },
   "用肚子行走，終身吃土": {
@@ -14751,6 +14876,18 @@
     "title": "亞嫩河",
     "status": "formal",
     "aliases": []
+  },
+  "亞巴琳山": {
+    "path": "link_folder/地點/亞巴琳山.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "亞巴琳山",
+    "status": "formal",
+    "aliases": [
+      "亞巴琳山地"
+    ]
   },
   "亞拉臘山": {
     "path": "link_folder/地點/亞拉臘山.md",
@@ -22850,6 +22987,18 @@
       "做磚無草"
     ]
   },
+  "萬人之靈的神": {
+    "path": "link_folder/神學/萬人之靈的神.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "萬人之靈的神",
+    "status": "formal",
+    "aliases": [
+      "萬靈之神"
+    ]
+  },
   "萬國同源": {
     "path": "link_folder/神學/萬國同源.md",
     "type": "神學",
@@ -27016,6 +27165,12 @@
   "奉獻田地的估價與贖回": {
     "alias_of": "奉獻田地的複雜計算（承受之地與買來之地的差別）"
   },
+  "女兒繼承產業": {
+    "alias_of": "女兒承受產業的條例"
+  },
+  "女兒承業條例": {
+    "alias_of": "女兒承受產業的條例"
+  },
   "有智慧的婦女": {
     "alias_of": "婦女參與建造會幕"
   },
@@ -27145,6 +27300,9 @@
   "燒香遮掩施恩座": {
     "alias_of": "搗細香料遮掩施恩座"
   },
+  "約書亞所得的尊榮": {
+    "alias_of": "摩西與約書亞的權柄差異"
+  },
   "worship": {
     "alias_of": "敬拜"
   },
@@ -27192,6 +27350,9 @@
   },
   "罩棚的蓋": {
     "alias_of": "染紅的公羊皮蓋子"
+  },
+  "羊群沒有牧人": {
+    "alias_of": "沒有牧人的羊群"
   },
   "銅洗濯盆": {
     "alias_of": "洗濯盆（銅盆）"
@@ -27613,6 +27774,12 @@
   "Moses ascends the mountain": {
     "alias_of": "摩西上山見神"
   },
+  "摩西只能觀看迦南地": {
+    "alias_of": "摩西不得進入應許之地"
+  },
+  "摩西不得進迦南": {
+    "alias_of": "摩西不得進入應許之地"
+  },
   "摩西就完了工": {
     "alias_of": "摩西完了工"
   },
@@ -27720,6 +27887,12 @@
   },
   "Altar Jehovah Nissi": {
     "alias_of": "築壇耶和華尼西"
+  },
+  "摩西按立約書亞": {
+    "alias_of": "約書亞承接摩西"
+  },
+  "約書亞接續摩西": {
+    "alias_of": "約書亞承接摩西"
   },
   "Jethro visits Moses": {
     "alias_of": "葉忒羅來訪"
@@ -29230,6 +29403,15 @@
   "禮冠": {
     "alias_of": "冠冕（裹頭巾）"
   },
+  "領袖出入": {
+    "alias_of": "出入（領袖用語）"
+  },
+  "mish.pat": {
+    "alias_of": "判斷（mish.pat）"
+  },
+  "案件與判斷": {
+    "alias_of": "判斷（mish.pat）"
+  },
   "加七倍降災": {
     "alias_of": "加七倍懲罰"
   },
@@ -29292,6 +29474,9 @@
   },
   "ger": {
     "alias_of": "寄居的"
+  },
+  "hod": {
+    "alias_of": "尊榮（hod）"
   },
   "希伯來人 (過河的人)": {
     "alias_of": "希伯來人_過河的人"
@@ -29397,6 +29582,9 @@
   },
   "神使用風": {
     "alias_of": "東風與西風"
+  },
+  "a.chuz.zah": {
+    "alias_of": "業地（a.chuz.zah）"
   },
   "公的都要屬耶和華": {
     "alias_of": "歸給耶和華"
@@ -29511,6 +29699,9 @@
   },
   "瑪撒": {
     "alias_of": "瑪撒（Massah）"
+  },
+  "na.cha.lah": {
+    "alias_of": "產業（na.cha.lah）"
   },
   "金合歡木": {
     "alias_of": "皂莢木"
@@ -29787,6 +29978,9 @@
   },
   "鬼魔": {
     "alias_of": "鬼魔（seirim，公山羊）"
+  },
+  "亞巴琳山地": {
+    "alias_of": "亞巴琳山"
   },
   "Adullam": {
     "alias_of": "亞杜蘭"
@@ -31839,6 +32033,9 @@
   },
   "做磚無草": {
     "alias_of": "草與磚"
+  },
+  "萬靈之神": {
+    "alias_of": "萬人之靈的神"
   },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
