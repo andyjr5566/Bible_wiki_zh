@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 30,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 94483,
+        "bytes": 126108
+      },
+      "after": {
+        "chars": 12431,
+        "bytes": 20345
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_numbers_30.txt",
+          "chars": 5096,
+          "bytes": 14386
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_numbers_30.txt",
+          "chars": 5750,
+          "bytes": 15438
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_numbers_30.txt",
+          "chars": 6761,
+          "bytes": 6817
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_numbers_30.txt",
+          "chars": 29512,
+          "bytes": 29518
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_numbers_30.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 42297,
+          "raw_bytes": 48438,
+          "projected_chars": 6772,
+          "projected_bytes": 7732,
+          "occurrences": 89,
+          "occurrence_count": 89,
+          "lexicon_entries": 7,
+          "selected_verses": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 7,
+          "truncated": true,
+          "returned_chars": 6772,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

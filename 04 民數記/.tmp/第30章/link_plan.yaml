@@ -1,0 +1,255 @@
+book: 民數記
+chapter: 30
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1 摩西曉諭以色列各支派的首領，v16 說這是耶和華所吩咐摩西的律例；GT 丁良才說曉諭首領是因為首領要判斷因許願而起的爭論。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 摩西立首領
+  suggested_type: 事件
+  evidence: v1 的對象是各支派的首領；BibleHub 回指出18 葉忒羅建議摩西設立千夫長、百夫長、五十夫長、十夫長的分層領導，KingComments
+    說對首領說是因為這是家庭的事。
+  surfaces:
+  - phrase: 首領
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 摩西立首領
+  existing_path: link_folder/事件/摩西立首領.md
+- name: 許願
+  suggested_type: 文化
+  evidence: 全章十六節反覆講「所許的願」；STEP v2 是同源的 H5087 yi.Dor 加 H5088 Ne.der，CT 也註明「許願(原文雙字)」。
+  surfaces:
+  - phrase: 許願
+  match_type: exact
+  existing_title: 許願
+  existing_path: link_folder/文化/許願.md
+- name: 冒失發誓
+  suggested_type: 主題
+  evidence: v6、8 的「冒失話」是 STEP H4008 miv.Ta' 加 H8193G se.fa.Tei/ha，lexicon 作 rash word；CT
+    解為輕率的發言，GT 丁良才說「本章的條例，或者是因這些冒失話定的」。
+  surfaces:
+  - phrase: 冒失話
+    verses:
+    - 6
+    - 8
+  match_type: exact
+  existing_title: 冒失發誓
+  existing_path: link_folder/主題/冒失發誓.md
+- name: 刻苦己心（禁食悔改）
+  suggested_type: 主題
+  evidence: v13「刻苦約束自己所起的誓」是 STEP H6031B Piel 不定詞 le./'a.Not 加 H5315I Na.fesh，與民29:7
+    贖罪日的用字同一結構；GT 丁良才說「就是禁食等事（利十六29，民二十九7）」。
+  surfaces:
+  - phrase: 刻苦約束自己
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 刻苦己心（禁食悔改）
+  existing_path: link_folder/主題/刻苦己心（禁食悔改）.md
+- name: 赦免
+  suggested_type: 神學
+  evidence: v5、8、12 三次說「耶和華也必赦免他」；GT 丁良才說「他既然沒有食言的罪，神也就不罰他」，KingComments 說這是耶和華恩典的顯明。
+  surfaces:
+  - phrase: 赦免
+  match_type: exact
+  existing_title: 赦免
+  existing_path: link_folder/神學/赦免.md
+- name: 拿細耳人（nazir）
+  suggested_type: 原文
+  evidence: GT 串珠說摩西律法在本章之前已提過許願之例，「重點在許願的獻物（利27章）及拿細耳人的願（民6章）」；GT《舊約聖經背景註釋》也把拿細耳人的願列為願的一種。
+  match_type: exact
+  existing_title: 拿細耳人（nazir）
+  existing_path: link_folder/原文/拿細耳人（nazir）.md
+- name: 許願獻人估價表（年齡性別分級）
+  suggested_type: 主題
+  evidence: GT 啟導本說遇到實際環境不許可履行所許的願時，「《利未記》二十七章對此已有規定」；GT《舊約聖經背景註釋》也要讀者參看利27:2-13。
+  match_type: exact
+  existing_title: 許願獻人估價表（年齡性別分級）
+  existing_path: link_folder/主題/許願獻人估價表（年齡性別分級）.md
+- name: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  suggested_type: 主題
+  evidence: GT 串珠解釋許願條例為何插在此處時說「還願者須獻感恩祭（利7:16），而在節期中還願獻祭的適當的」。
+  match_type: exact
+  existing_title: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  existing_path: link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md
+- name: 不可妄稱耶和華你神的名
+  suggested_type: 神學
+  evidence: GT《舊約聖經背景註釋》說起願是召喚神明與崇拜者建立契約的宗教性行動，「故此絕對不得違約，免得觸怒神明（見：出二十7不得「妄用」神名的命令）」；BibleHub
+    也說起誓是以神的名為見證。
+  match_type: exact
+  existing_title: 不可妄稱耶和華你神的名
+  existing_path: link_folder/神學/不可妄稱耶和華你神的名.md
+- name: 甘心樂意的奉獻
+  suggested_type: 神學
+  evidence: KingComments 說前幾章的節期祭是全民的義務祭，本章的願則是個人自願的；GT《聖經精讀本》也說許願「是人自發的意志,不是強制的義務」。
+  match_type: exact
+  existing_title: 甘心樂意的奉獻
+  existing_path: link_folder/神學/甘心樂意的奉獻.md
+- name: 群體性獻祭
+  suggested_type: 主題
+  evidence: KingComments 明確對比：民28-29 的節期祭是 national compulsory offerings，本章的願是 personal
+    voluntary vows。
+  match_type: exact
+  existing_title: 群體性獻祭
+  existing_path: link_folder/主題/群體性獻祭.md
+- name: 民29：40 在希伯來聖經屬民30：1
+  suggested_type: 背景
+  evidence: 本章的第一節在希伯來文聖經裡是第二節；CT 在民29:40 指出希伯來文聖經把「摩西照耶和華所吩咐他的一切話告訴以色列人」放在民30 的第一節，GT
+    丁良才在本章 v1 也直接註明「參二十九40」。
+  match_type: exact
+  existing_title: 民29：40 在希伯來聖經屬民30：1
+  existing_path: link_folder/背景/民29：40 在希伯來聖經屬民30：1.md
+- name: 以弗所書5章基督與教會的婚姻奧祕
+  suggested_type: 互文
+  evidence: GT 串珠說本章條例「與新約的教訓原則上是一致的（參弗5:22; 6:1; 西3:18-20）」；BibleHub 在 v6、7、10、12、13、15、16
+    反覆回指弗5:23 丈夫是妻子的頭。
+  match_type: exact
+  existing_title: 以弗所書5章基督與教會的婚姻奧祕
+  existing_path: link_folder/互文/以弗所書5章基督與教會的婚姻奧祕.md
+- name: 擔當干犯聖所與祭司職任的罪孽
+  suggested_type: 神學
+  evidence: v15「就要擔當婦人的罪孽」是 STEP H5375J ve./na.Sa' 加 H5771G 'a.vo.Na/h；同樣的「擔當罪孽」結構也用在祭司代眾人擔責的條例上。
+  match_type: exact
+  existing_title: 擔當干犯聖所與祭司職任的罪孽
+  existing_path: link_folder/神學/擔當干犯聖所與祭司職任的罪孽.md
+- name: 大贖罪日（Yom Kippur）條例
+  suggested_type: 歷史
+  evidence: GT 丁良才在 v13 說「刻苦約束自己」就是禁食等事，並引利十六29、民二十九7；CT 也說這是禁食禱告以表達憂傷之情。
+  match_type: exact
+  existing_title: 大贖罪日（Yom Kippur）條例
+  existing_path: link_folder/歷史/大贖罪日（Yom Kippur）條例.md
+- name: 女兒承受產業的條例
+  suggested_type: 主題
+  evidence: GT《舊約聖經背景註釋》說本章的少女「受父親的監護，因此不擁有財產」；民27 西羅非哈女兒的案子則是同一制度下的另一面。
+  match_type: exact
+  existing_title: 女兒承受產業的條例
+  existing_path: link_folder/主題/女兒承受產業的條例.md
+- name: 褻瀆（cha.lal）
+  suggested_type: 原文
+  evidence: 'v2「不可食言」是 STEP H2490H ya.Chel 加 H1697G de.va.R/o，本節譯義 he will violate
+    his word，lexicon 作 חָלַל (cha.lal): to profane；CT 引《呂振中譯本》譯為「不可褻瀆自己的話」。'
+  surfaces:
+  - phrase: 食言
+  match_type: exact
+  existing_title: 褻瀆（cha.lal）
+  existing_path: link_folder/原文/褻瀆（cha.lal）.md
+- name: 贖愆祭（asham）
+  suggested_type: 原文
+  evidence: v15 丈夫擔當婦人的罪孽之後要獻的祭：CT 說「在神面前獻祭贖罪(參利五17~19)」，GT 丁良才指明是「利五14-19節上所定的祭」。
+  match_type: exact
+  existing_title: 贖愆祭（asham）
+  existing_path: link_folder/原文/贖愆祭（asham）.md
+- name: 撒上1（Shmuel Aleph 1）
+  suggested_type: 原文
+  evidence: GT《舊約聖經背景註釋》說哈拿是聖經中惟一妻子自行許願、將兒子終身奉獻在示羅會幕事奉的案例；BibleHub 也兩次引撒上1:11 說明許願的性質。
+  match_type: exact
+  existing_title: 撒上1（Shmuel Aleph 1）
+  existing_path: link_folder/原文/撒上1（Shmuel Aleph 1）.md
+C_new_formal:
+- name: 許願與約束自己的分別
+  suggested_type: 原文
+  evidence: v2 一節裡有三組同源的動詞加名詞：H5087 yi.Dor 加 H5088 Ne.der（許願）、H7650 hi.Sha.va' 加 H7621
+    she.vu.'Ah（起誓）、H631 le/'.Sor 加 H632 'i.Sar（約束）；GT 丁良才說「『許願』——就是立志要作什麼。『要約束自己』——就是立志不作什麼」。
+  surfaces:
+  - phrase: 約束自己
+    verses:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 14
+  target_path: link_folder/原文/許願與約束自己的分別.md
+  semantic_hint:
+  - title: 許願
+    score: 0.441
+    type: 文化
+- name: 默默不言就是默許
+  suggested_type: 主題
+  evidence: v4、7、11、14 都以「默默不言」為關鍵；STEP 是 H2790B he.che.Rish（Hiphil），v14 更用不定詞絕對式加未完成式強調；BibleHub
+    說在當時的文化與法律脈絡裡沉默等同同意。
+  surfaces:
+  - phrase: 默默不言
+  target_path: link_folder/主題/默默不言就是默許.md
+- name: 為定與廢去（qum 與 pa.rar）
+  suggested_type: 原文
+  evidence: 本章的法律機制建立在三個動詞上：H6965I qum（為定、堅定，字面站立起來）、H5106 nu（不應承，Hiphil）、H6565A pa.rar（廢去，字面使破裂）；v15
+    用 ha.Fer ya.Fer 的不定詞絕對式加未完成式強調，CT 也註明「全廢了(原文雙同字)」。
+  surfaces:
+  - phrase: 為定
+    verses:
+    - 4
+  - phrase: 廢去
+    verses:
+    - 13
+  target_path: link_folder/原文/為定與廢去（qum 與 pa.rar）.md
+- name: 五種必須償還的願
+  suggested_type: 主題
+  evidence: GT《民數記串珠聖經註釋》把本章整理成五種確定的願：男子、未婚女子得父許可、女子婚前之願得夫默許、寡婦或離婚婦人、女子婚後之願得夫默許。
+  target_path: link_folder/主題/五種必須償還的願.md
+- name: 民30：6-8 是已出嫁還是被聘未嫁
+  suggested_type: 解經爭議
+  evidence: v6「他若出了嫁」的原文是 H1961 ha.Yo tih.Yeh 加 H376H le./'Ish（不定詞絕對式加未完成式，STEP 譯義
+    certainly she will belong to a husband）；GT 丁良才與 KingComments 都讀成尚未過門的被聘女子，CT 與
+    BibleHub 則讀成已為人妻。
+  surfaces:
+  - phrase: 出了嫁
+    verses:
+    - 6
+  target_path: link_folder/解經爭議/民30：6-8 是已出嫁還是被聘未嫁.md
+- name: 寡婦與被休的婦人可以自主許願
+  suggested_type: 主題
+  evidence: v9 是全章唯一不需要男性應承的情況；STEP 標「被休的」為 H1644H ge.ru.Shah（Qal 被動分詞，字根為趕出），GT 啟導本、精讀本、串珠與
+    BibleHub 都在此指出她們具有獨立的責任能力。
+  surfaces:
+  - phrase: 寡婦
+    verses:
+    - 9
+  target_path: link_folder/主題/寡婦與被休的婦人可以自主許願.md
+- name: 丈夫擔當婦人的罪孽
+  suggested_type: 神學
+  evidence: v15 說丈夫聽見以後才把願廢了，就要擔當婦人的罪孽；CT 說他須在神面前獻祭贖罪（參利五17~19），GT 丁良才指明是利五14-19 所定的祭，GT《聖經精讀本》引利5:1-6，BibleHub
+    則把它讀成基督擔當眾人罪孽的預表。
+  surfaces:
+  - phrase: 擔當婦人的罪孽
+    verses:
+    - 15
+  target_path: link_folder/神學/丈夫擔當婦人的罪孽.md
+  semantic_hint:
+  - title: 推諉罪責
+    score: 0.439
+    type: 神學
+- name: 太5：33-37 什麼誓都不可起
+  suggested_type: 互文
+  evidence: 四套註釋都在本章回指這段：CT 與 GT 啟導本說耶穌要人從死的律法中走出來、恢復立法的真精神，GT《聖經精讀本》說新約時代許願變質、耶穌斥責這種假冒偽善的敬虔，KingComments
+    整段引用太5:33-37。
+  target_path: link_folder/互文/太5：33-37 什麼誓都不可起.md
+  semantic_hint:
+  - title: 太12：34-37
+    score: 0.447
+    type: 互文
+  - title: 太12：36-37
+    score: 0.419
+    type: 互文
+- name: 許願條例為何插在民29 與民31 之間
+  suggested_type: 背景
+  evidence: GT《民數記串珠聖經註釋》給了三個理由：還願者須獻感恩祭而節期正是還願獻祭的場合、戰前起願是常見的（民21:2）、以色列人即將與迦南人爭戰，神在此刻先把立願條例定清楚。
+  target_path: link_folder/背景/許願條例為何插在民29 與民31 之間.md
+- name: 女子在以色列社會的法律地位
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》有兩段專論：少女與為人妻者「在法律上受其父親或丈夫所支配」，沒有擁有財產、創辦生意、提出訴訟、安排婚事的權利；能夠任意而行的似乎只有守寡或年老的婦人，並引漢摩拉比法律與底波拉等女性長老為對照。
+  target_path: link_folder/背景/女子在以色列社會的法律地位.md
+D_new_candidate: []
+E_skip: []

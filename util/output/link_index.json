@@ -260,6 +260,14 @@
       "門簾柱"
     ]
   },
+  "五種必須償還的願": {
+    "path": "link_folder/主題/五種必須償還的願.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "五種必須償還的願",
+    "status": "formal",
+    "aliases": []
+  },
   "亞伯拉罕分產": {
     "path": "link_folder/主題/亞伯拉罕分產.md",
     "type": "主題",
@@ -1237,6 +1245,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "寄居者身份",
+    "status": "formal",
+    "aliases": []
+  },
+  "寡婦與被休的婦人可以自主許願": {
+    "path": "link_folder/主題/寡婦與被休的婦人可以自主許願.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "寡婦與被休的婦人可以自主許願",
     "status": "formal",
     "aliases": []
   },
@@ -3270,6 +3286,16 @@
     "title": "麥基洗德與基督豫表",
     "status": "formal",
     "aliases": []
+  },
+  "默默不言就是默許": {
+    "path": "link_folder/主題/默默不言就是默許.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "默默不言就是默許",
+    "status": "formal",
+    "aliases": [
+      "默默不言"
+    ]
   },
   "三大節期律例": {
     "path": "link_folder/事件/三大節期律例.md",
@@ -6225,6 +6251,16 @@
     "aliases": [
       "太五27-28",
       "姦淫與淫念"
+    ]
+  },
+  "太5：33-37 什麼誓都不可起": {
+    "path": "link_folder/互文/太5：33-37 什麼誓都不可起.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太5：33-37 什麼誓都不可起",
+    "status": "formal",
+    "aliases": [
+      "太5:33-37"
     ]
   },
   "太5：38-39": {
@@ -13851,6 +13887,17 @@
       "炭疽病"
     ]
   },
+  "為定與廢去（qum 與 pa.rar）": {
+    "path": "link_folder/原文/為定與廢去（qum 與 pa.rar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "為定與廢去（qum 與 pa.rar）",
+    "status": "formal",
+    "aliases": [
+      "qum",
+      "pa.rar"
+    ]
+  },
   "烈火": {
     "path": "link_folder/原文/烈火.md",
     "type": "原文",
@@ -14526,6 +14573,14 @@
       "額上作經文",
       "經文匣"
     ]
+  },
+  "許願與約束自己的分別": {
+    "path": "link_folder/原文/許願與約束自己的分別.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "許願與約束自己的分別",
+    "status": "formal",
+    "aliases": []
   },
   "詩歌（ma.shal）": {
     "path": "link_folder/原文/詩歌（ma.shal）.md",
@@ -18797,6 +18852,14 @@
       "洪水前最後七天",
       "最後七天的寬限"
     ]
+  },
+  "丈夫擔當婦人的罪孽": {
+    "path": "link_folder/神學/丈夫擔當婦人的罪孽.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "丈夫擔當婦人的罪孽",
+    "status": "formal",
+    "aliases": []
   },
   "三一神同工": {
     "path": "link_folder/神學/三一神同工.md",
@@ -24386,6 +24449,14 @@
     "status": "formal",
     "aliases": []
   },
+  "女子在以色列社會的法律地位": {
+    "path": "link_folder/背景/女子在以色列社會的法律地位.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "女子在以色列社會的法律地位",
+    "status": "formal",
+    "aliases": []
+  },
   "宗主條約": {
     "path": "link_folder/背景/宗主條約.md",
     "type": "背景",
@@ -24660,6 +24731,14 @@
       "神學"
     ],
     "title": "西乃山立約",
+    "status": "formal",
+    "aliases": []
+  },
+  "許願條例為何插在民29 與民31 之間": {
+    "path": "link_folder/背景/許願條例為何插在民29 與民31 之間.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "許願條例為何插在民29 與民31 之間",
     "status": "formal",
     "aliases": []
   },
@@ -26204,6 +26283,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "民12：3 這句話是誰寫的",
+    "status": "formal",
+    "aliases": []
+  },
+  "民30：6-8 是已出嫁還是被聘未嫁": {
+    "path": "link_folder/解經爭議/民30：6-8 是已出嫁還是被聘未嫁.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "民30：6-8 是已出嫁還是被聘未嫁",
     "status": "formal",
     "aliases": []
   },
@@ -27967,6 +28054,9 @@
   "離俗": {
     "alias_of": "離俗歸耶和華"
   },
+  "默默不言": {
+    "alias_of": "默默不言就是默許"
+  },
   "arrival at Sinai": {
     "alias_of": "以色列到達西乃山"
   },
@@ -28527,6 +28617,9 @@
   },
   "姦淫與淫念": {
     "alias_of": "太5：27-28"
+  },
+  "太5:33-37": {
+    "alias_of": "太5：33-37 什麼誓都不可起"
   },
   "不能事奉神又事奉瑪門": {
     "alias_of": "太6：24"
@@ -29925,6 +30018,12 @@
   },
   "炭疽病": {
     "alias_of": "炭疽（anthrax）"
+  },
+  "qum": {
+    "alias_of": "為定與廢去（qum 與 pa.rar）"
+  },
+  "pa.rar": {
+    "alias_of": "為定與廢去（qum 與 pa.rar）"
   },
   "烏陵": {
     "alias_of": "烏陵和土明"
