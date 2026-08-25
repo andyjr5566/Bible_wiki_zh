@@ -1,0 +1,433 @@
+book: 民數記
+chapter: 31
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1-2 神吩咐摩西攻打米甸，之後就要歸到本民那裡；全章十四次提到摩西執行分配與收金。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 米甸
+  suggested_type: 人物
+  evidence: 本章的對象；GT《舊約聖經背景註釋》說米甸領土主要在阿拉伯半島西北部的亞喀巴灣東面，KingComments 指出米甸也是亞伯拉罕的後裔。
+  surfaces:
+  - phrase: 米甸
+  match_type: exact
+  existing_title: 米甸
+  existing_path: link_folder/人物/米甸.md
+- name: 摩押人
+  suggested_type: 人物
+  evidence: GT 丁良才在 v2 指出「神沒有提到摩押人，或者是因為引誘以色列人的事，是米甸人的罪（二十五17）」。
+  match_type: exact
+  existing_title: 摩押人
+  existing_path: link_folder/人物/摩押人.md
+- name: 基土拉
+  suggested_type: 人物
+  evidence: KingComments 與 BibleHub 都指出米甸是亞伯拉罕從基土拉所生的後裔（創25:1-2），因此米甸與以色列是遠親。
+  match_type: exact
+  existing_title: 基土拉
+  existing_path: link_folder/人物/基土拉.md
+- name: 非尼哈
+  suggested_type: 人物
+  evidence: v6 摩西打發祭司以利亞撒的兒子非尼哈同去；KingComments 說領軍的不是約書亞而是祭司非尼哈，因為這一仗要潔淨以色列因與米甸連結而來的玷污。
+  surfaces:
+  - phrase: 非尼哈
+  match_type: exact
+  existing_title: 非尼哈
+  existing_path: link_folder/人物/非尼哈.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: v6、12-13、21、26、29、31、41、51、54 以利亞撒全程參與；GT 串珠說大祭司不可接觸死屍，所以帶兵的是他的兒子非尼哈。
+  surfaces:
+  - phrase: 以利亞撒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: KingComments 特別指出這一仗的領袖不是約書亞而是非尼哈，並說百姓失敗的處境使然。
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 摩西立首領
+  suggested_type: 事件
+  evidence: v14、48、52、54 的千夫長、百夫長；BibleHub 回指出18:21-25 葉忒羅建議摩西按千、百、五十、十設立首領的分層編制。
+  surfaces:
+  - phrase: 千夫長、百夫長
+    verses:
+    - 14
+    - 48
+    - 52
+    - 54
+  match_type: exact
+  existing_title: 摩西立首領
+  existing_path: link_folder/事件/摩西立首領.md
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: v8 巴蘭被刀殺，v16 摩西指出米甸婦女是因巴蘭的計謀叫以色列人得罪耶和華。
+  surfaces:
+  - phrase: 巴蘭
+  match_type: exact
+  existing_title: 巴蘭（比珥的兒子）
+  existing_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 巴蘭的教訓（啟2：14）
+  suggested_type: 互文
+  evidence: GT 丁良才在 v16 直接註「巴蘭的計謀——（啟二14）」；BibleHub 也引啟2:14 說巴蘭的教訓是絆腳石。
+  match_type: exact
+  existing_title: 巴蘭的教訓（啟2：14）
+  existing_path: link_folder/互文/巴蘭的教訓（啟2：14）.md
+- name: 蘇珥（米甸首領）
+  suggested_type: 人物
+  evidence: v8 五王之一；CT 與 GT 串珠都指出他的女兒哥斯比曾引誘心利犯姦淫，被非尼哈刺死（民25:14-15）。
+  surfaces:
+  - phrase: 蘇珥
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 蘇珥（米甸首領）
+  existing_path: link_folder/人物/蘇珥（米甸首領）.md
+- name: 哥斯比（蘇珥的女兒）
+  suggested_type: 人物
+  evidence: CT 在 v8 說蘇珥「他的女兒哥斯比曾引誘以色列人心利犯姦淫，結果被非尼哈刺死(參二十五14~15)」。
+  match_type: exact
+  existing_title: 哥斯比（蘇珥的女兒）
+  existing_path: link_folder/人物/哥斯比（蘇珥的女兒）.md
+- name: 巴力毘珥
+  suggested_type: 背景
+  evidence: v16 說這些婦女叫以色列人「在毘珥的事上得罪耶和華」；STEP 標為 'al- de.var- pe.'or。
+  surfaces:
+  - phrase: 毘珥
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 巴力毘珥
+  existing_path: link_folder/背景/巴力毘珥.md
+- name: 耶和華擊打百姓的瘟疫
+  suggested_type: 事件
+  evidence: v16 指出毘珥的事導致「耶和華的會眾遭遇瘟疫」；CT 說死了二萬四千人（民25:9）。
+  surfaces:
+  - phrase: 瘟疫
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 耶和華擊打百姓的瘟疫
+  existing_path: link_folder/事件/耶和華擊打百姓的瘟疫.md
+- name: 非尼哈的行為是否可效法
+  suggested_type: 解經爭議
+  evidence: KingComments 說非尼哈之所以領軍，是因為他先前已經用刀對米甸執行過審判（民25:7-8），「他是知道神聖潔的人」。
+  match_type: exact
+  existing_title: 非尼哈的行為是否可效法
+  existing_path: link_folder/解經爭議/非尼哈的行為是否可效法.md
+- name: 米甸人為何被追討而摩押人沒有
+  suggested_type: 解經爭議
+  evidence: 本章只打米甸；GT 丁良才說神沒有提到摩押人，是因為引誘以色列人的事是米甸人的罪。
+  match_type: exact
+  existing_title: 米甸人為何被追討而摩押人沒有
+  existing_path: link_folder/解經爭議/米甸人為何被追討而摩押人沒有.md
+- name: 銀號
+  suggested_type: 文化
+  evidence: v6 非尼哈手裡拿著「吹大聲的號筒」；STEP 標為 H2689 cha.tzo.tze.Rot，正是民10:2 的銀號，GT《舊約聖經背景註釋》說這裡的希伯來文字眼是指金屬的號筒。
+  surfaces:
+  - phrase: 號筒
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 銀號
+  existing_path: link_folder/文化/銀號.md
+- name: 吹角的日子（te.ru.'Ah）
+  suggested_type: 原文
+  evidence: v6「吹大聲」是 H8643 ha./te.ru.'Ah，與民29:1 吹角節的日子名、民10:5-6 的拔營號令、民23:21 的營中歡呼是同一個字。
+  surfaces:
+  - phrase: 吹大聲
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 吹角的日子（te.ru.'Ah）
+  existing_path: link_folder/原文/吹角的日子（te.ru.'Ah）.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: v12 戰利品被帶到摩押平原、約但河邊與耶利哥相對的營盤。
+  surfaces:
+  - phrase: 摩押平原
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: v12 的營盤在約但河邊；BibleHub 說約但河是以色列從曠野漂流轉入應許之地的地理界線。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: v12 的營盤與耶利哥相對；BibleHub 指出耶利哥正是進迦南後第一座被攻取的城。
+  surfaces:
+  - phrase: 耶利哥
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 不潔之人出到營外
+  suggested_type: 主題
+  evidence: v13 摩西、以利亞撒與會眾首領都出到營外迎接；CT 說一面表示隆重歡迎，另一面在營外處理不潔之物。
+  surfaces:
+  - phrase: 出到營外
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 不潔之人出到營外
+  existing_path: link_folder/主題/不潔之人出到營外.md
+- name: 營外七天等候（潔淨禮）
+  suggested_type: 主題
+  evidence: v19 命令打仗回來的人在營外駐紮七日；GT《舊約聖經背景註釋》說為士兵和戰利品而設的七日淨化儀式必須在營外進行，免得玷污其餘的百姓。
+  surfaces:
+  - phrase: 在營外駐紮七日
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 營外七天等候（潔淨禮）
+  existing_path: link_folder/主題/營外七天等候（潔淨禮）.md
+- name: 第三日與第七日的除污穢禮儀
+  suggested_type: 文化
+  evidence: v19 明定第三日、第七日都要潔淨自己；CT 說即民19:19 的灑水潔淨之禮。
+  surfaces:
+  - phrase: 第三日，第七日
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 第三日與第七日的除污穢禮儀
+  existing_path: link_folder/文化/第三日與第七日的除污穢禮儀.md
+- name: 除污穢的水
+  suggested_type: 神學
+  evidence: v23 說能見火的經火之後「還要用除污穢的水潔淨他」；STEP 標為 be./Mei ni.Dah（H4325G＋H5079）。
+  surfaces:
+  - phrase: 除污穢的水
+  match_type: exact
+  existing_title: 除污穢的水
+  existing_path: link_folder/神學/除污穢的水.md
+- name: 無殘疾與未曾負軛的紅母牛
+  suggested_type: 神學
+  evidence: CT 在 v23 說「『除污穢的水』指用純紅母牛的灰所調製的水(參十九9)」；GT《聖經精讀本》也說是用紅母牛的灰作成的水（19:2-10）。
+  match_type: exact
+  existing_title: 無殘疾與未曾負軛的紅母牛
+  existing_path: link_folder/神學/無殘疾與未曾負軛的紅母牛.md
+- name: 舉祭
+  suggested_type: 原文
+  evidence: v29、41、52 三次把獻給耶和華的那一份稱為舉祭；CT 說舉祭是祭物拿在手裡呈垂直上下擺動，獻後歸給祭司。
+  surfaces:
+  - phrase: 舉祭
+  match_type: exact
+  existing_title: 舉祭
+  existing_path: link_folder/原文/舉祭.md
+- name: 供物（qorban）
+  suggested_type: 原文
+  evidence: v50 軍長把金器「送來為耶和華的供物」；STEP 標為 H7133A ka.re.Ban，全卷民數記只出現兩次，另一次是民28:2「我的供物」。
+  surfaces:
+  - phrase: 供物
+    verses:
+    - 50
+  match_type: exact
+  existing_title: 供物（qorban）
+  existing_path: link_folder/原文/供物（qorban）.md
+- name: 利未人的什一奉獻
+  suggested_type: 神學
+  evidence: v30、47 每五十取一交給利未人；GT 啟導本指出「祭司所得為利未人的十分之一，符合《民數記》十八26的規定」。
+  match_type: exact
+  existing_title: 利未人的什一奉獻
+  existing_path: link_folder/神學/利未人的什一奉獻.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: v52 軍長所獻的金子共一萬六千七百五十舍客勒；CT 說約折合192公斤，GT 啟導本說合190公斤，GT 串珠說一舍客勒約等於四克。
+  surfaces:
+  - phrase: 舍客勒
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 半舍客勒（贖罪銀）
+  suggested_type: 原文
+  evidence: GT《舊約聖經背景註釋》把 v50 的金器連到出30:12 的人口統計贖價：「每次人口統計之後，都要為每個男丁收取贖命的價銀」。
+  match_type: exact
+  existing_title: 半舍客勒（贖罪銀）
+  existing_path: link_folder/原文/半舍客勒（贖罪銀）.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: v54 摩西與以利亞撒把金子帶進會幕，在耶和華面前作為以色列人的紀念；STEP 標為 'O.hel mo.'Ed 加 H2146 zi.ka.Ron。
+  surfaces:
+  - phrase: 會幕
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 贖命的價銀
+  suggested_type: 原文
+  evidence: GT《舊約聖經背景註釋》在 v50 說：「按照出埃及記三十12的律法，每次人口統計之後，都要為每個男丁收取贖命的價銀。」本章的金器正是在數點軍隊、確認無一人陣亡之後繳付的。
+  match_type: exact
+  existing_title: 贖命的價銀
+  existing_path: link_folder/原文/贖命的價銀.md
+- name: 潔淨與不潔淨
+  suggested_type: 神學
+  evidence: v19-24 整段處理的是打仗帶來的禮儀不潔：接觸死屍的人、擄來的人口、衣服皮物木器與金屬器皿都要潔淨；GT《聖經精讀本》說「能與神交通的人之基本條件是『聖潔』」。
+  match_type: exact
+  existing_title: 潔淨與不潔淨
+  existing_path: link_folder/神學/潔淨與不潔淨.md
+- name: 十二族長協助數點
+  suggested_type: 事件
+  evidence: v26 神吩咐摩西、以利亞撒與會眾的各族長一同計算所擄來的人口和牲畜總數；BibleHub 說這是民政、祭司與支派三方領導的組合。
+  surfaces:
+  - phrase: 各族長
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 十二族長協助數點
+  existing_path: link_folder/事件/十二族長協助數點.md
+- name: 計算總數（抬起頭）
+  suggested_type: 原文
+  evidence: v26 與 v49 兩次「計算總數」在原文都是 H5375V na.Sa' 加 H7218H rosh（把頭抬起來），與民1:2、民26:2
+    數點百姓的用語同一結構。
+  surfaces:
+  - phrase: 計算總數
+  match_type: exact
+  existing_title: 計算總數（抬起頭）
+  existing_path: link_folder/原文/計算總數（抬起頭）.md
+C_new_formal:
+- name: 報仇（na.qam 與 nik.mah）
+  suggested_type: 原文
+  evidence: v2 神說「報以色列人的仇」是同源的 H5358 ne.Kom 加 H5360 nik.Mat；v3 摩西轉述時改成「為耶和華報仇」，動詞換成
+    H5414H la./Tet（給、置），字面是把耶和華的報復加在米甸身上。CT 兩節的原文字義欄正好標出這個差別。
+  surfaces:
+  - phrase: 報仇
+    verses:
+    - 3
+  target_path: link_folder/原文/報仇（na.qam 與 nik.mah）.md
+- name: 貢物（Me.khes）
+  suggested_type: 原文
+  evidence: v28、37、38、39、41 的「貢物」是 H4371 Me.khes，STEP lexicon 作 a tax；CT 指出「貢物這詞的原文，聖經中僅出現在本章中」，與王上十25
+    等處的貢物不同詞。
+  surfaces:
+  - phrase: 貢物
+  target_path: link_folder/原文/貢物（Me.khes）.md
+- name: 聖所的器皿是什麼
+  suggested_type: 解經爭議
+  evidence: v6「聖所的器皿和吹大聲的號筒」所指為何，四套來源說法不同：CT 猜是香爐，GT 丁良才與 KingComments 讀成同位語（器皿就是號筒），GT《舊約聖經背景註釋》猜可能包括約櫃、胸牌與烏陵土明，而
+    KingComments 明確排除烏陵土明。
+  surfaces:
+  - phrase: 聖所的器皿
+    verses:
+    - 6
+  target_path: link_folder/解經爭議/聖所的器皿是什麼.md
+  semantic_hint:
+  - title: 聖所
+    score: 0.478
+    type: 地點
+  - title: 聖所的平（捨客勒標準）
+    score: 0.444
+    type: 文化
+  - title: 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）
+    score: 0.44
+    type: 主題
+- name: 殺盡米甸人的道德難題
+  suggested_type: 解經爭議
+  evidence: v7-10、17 的滅絕命令；GT 收錄賈斯樂郝威《聖經難解經文詮釋手冊》命題28 與艾基斯《舊約聖經難題彙編》兩篇專論，啟導本與《舊約聖經背景註釋》另有各自的說明。
+  target_path: link_folder/解經爭議/殺盡米甸人的道德難題.md
+  semantic_hint:
+  - title: 米甸人為何被追討而摩押人沒有
+    score: 0.419
+    type: 解經爭議
+- name: 戰利品的分配辦法
+  suggested_type: 主題
+  evidence: v26-47 把擄物分作兩半，出征的每五百取一歸耶和華、會眾的每五十取一歸利未人；GT 串珠與 KingComments 都列出完整的數字表。
+  surfaces:
+  - phrase: 分作兩半
+    verses:
+    - 27
+  target_path: link_folder/主題/戰利品的分配辦法.md
+- name: 全軍無一人陣亡
+  suggested_type: 事件
+  evidence: v49 軍長回報「僕人權下的兵已經計算總數，並不短少一人」；CT、GT 丁良才、啟導本與 KingComments 都以此為神特別保護的證據。
+  surfaces:
+  - phrase: 並不短少一人
+    verses:
+    - 49
+  target_path: link_folder/事件/全軍無一人陣亡.md
+- name: 金器贖罪的性質之爭
+  suggested_type: 解經爭議
+  evidence: v50「好在耶和華面前為我們的生命贖罪」的性質，各家判斷不同：GT 啟導本說軍官或因殺戮太多而求贖己之罪，GT《聖經精讀本》說不是為特定的罪求饒恕而是感謝，GT《舊約聖經背景註釋》連到人口統計的贖命價銀，KingComments
+    說用物質贖罪本身就是例外。
+  surfaces:
+  - phrase: 為我們的生命贖罪
+    verses:
+    - 50
+  target_path: link_folder/解經爭議/金器贖罪的性質之爭.md
+- name: 米甸的五王
+  suggested_type: 歷史
+  evidence: v8 列出以未、利金、蘇珥、戶珥、利巴五個名字；CT 給出每個名字的原文字義，GT 丁良才與《聖經精讀本》都指出他們其實是亞摩利王西宏轄下的首領（書13:21）。
+  surfaces:
+  - phrase: 米甸的五王
+    verses:
+    - 8
+  target_path: link_folder/歷史/米甸的五王.md
+- name: 巴蘭之死
+  suggested_type: 事件
+  evidence: v8 說「又用刀殺了比珥的兒子巴蘭」；CT 說本句暗示巴蘭不是死在戰場上乃是後來被殺的，GT 丁良才同判，KingComments 說他的名字與五王並列、看來是他們的謀士。
+  surfaces:
+  - phrase: 又用刀殺了比珥的兒子巴蘭
+    verses:
+    - 8
+  target_path: link_folder/事件/巴蘭之死.md
+  semantic_hint:
+  - title: 巴蘭（比珥的兒子）
+    score: 0.419
+    type: 人物
+- name: 經火與過水的潔淨
+  suggested_type: 主題
+  evidence: v22-23 列出金、銀、銅、鐵、錫、鉛六種金屬，能見火的經火再用除污穢的水，不能見火的過水；STEP 顯示「經火」與「過水」用同一個動詞
+    H5674A ta.'a.Vi.ru（使…經過）。
+  surfaces:
+  - phrase: 經火
+    verses:
+    - 23
+  target_path: link_folder/主題/經火與過水的潔淨.md
+- name: 每支派一千人
+  suggested_type: 主題
+  evidence: v4-5 不論支派人數多寡，每支派各出一千人，共一萬二千人；CT 列為此次打仗的四個特點之二，GT《聖經精讀本》說這暗示屬神的百姓沒有差別，都有保守神榮耀的責任。
+  surfaces:
+  - phrase: 每支派要打發一千人
+    verses:
+    - 4
+  target_path: link_folder/主題/每支派一千人.md
+- name: 已嫁與未嫁的原文判準
+  suggested_type: 原文
+  evidence: v17「已嫁的女子」與 v18「沒有出嫁的」在原文都是由「認識」「男人」「躺臥」三、四個字組成的片語；CT 的原文字義欄逐字拆開，GT 串珠說原意是「曾與男人有性關係者」。
+  surfaces:
+  - phrase: 已嫁的女子
+    verses:
+    - 17
+  target_path: link_folder/原文/已嫁與未嫁的原文判準.md
+  semantic_hint:
+  - title: 民30：6-8 是已出嫁還是被聘未嫁
+    score: 0.444
+    type: 解經爭議
+- name: 米甸人後來又強盛
+  suggested_type: 背景
+  evidence: v7「殺了所有的男丁」不等於滅族：CT 說米甸人散居各地、後來又成了大族，GT 丁良才、啟導本、串珠與 KingComments 都以士師記六章的米甸壓迫為證。
+  target_path: link_folder/背景/米甸人後來又強盛.md
+- name: 摩西最後的任務
+  suggested_type: 主題
+  evidence: v2 說報完仇「後來要歸到你列祖那裡」；KingComments 說神不讓祂的僕人離世，直到他看見完全的報復，「僕人不會在任務完成之前被取去」；GT《聖經精讀本》也說攻打米甸是摩西最後的使命。
+  surfaces:
+  - phrase: 歸到你列祖
+    verses:
+    - 2
+  target_path: link_folder/主題/摩西最後的任務.md
+  semantic_hint:
+  - title: 摩西
+    score: 0.45
+    type: 人物
+  - title: 摩西完了工
+    score: 0.442
+    type: 事件
+D_new_candidate: []
+E_skip: []

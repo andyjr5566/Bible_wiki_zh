@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 31,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_31.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 54,
+      "words": 677,
+      "first": "Num 31:1",
+      "last": "Num 31:54",
+      "sha256": "dc6f8fc8449671eb3bbef1476d1f1ff8edafa70c54490b6b1b2b96b0b2c1764c",
+      "bytes": 127270,
+      "chars": 110611,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

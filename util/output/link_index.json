@@ -1510,6 +1510,14 @@
     "status": "formal",
     "aliases": []
   },
+  "戰利品的分配辦法": {
+    "path": "link_folder/主題/戰利品的分配辦法.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "戰利品的分配辦法",
+    "status": "formal",
+    "aliases": []
+  },
   "戲言": {
     "path": "link_folder/主題/戲言.md",
     "type": "主題",
@@ -1675,6 +1683,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "摩西代行祭司職分",
+    "status": "formal",
+    "aliases": []
+  },
+  "摩西最後的任務": {
+    "path": "link_folder/主題/摩西最後的任務.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "摩西最後的任務",
     "status": "formal",
     "aliases": []
   },
@@ -1888,6 +1904,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "母綿羊",
+    "status": "formal",
+    "aliases": []
+  },
+  "每支派一千人": {
+    "path": "link_folder/主題/每支派一千人.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "每支派一千人",
     "status": "formal",
     "aliases": []
   },
@@ -2484,6 +2508,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "細麵",
+    "status": "formal",
+    "aliases": []
+  },
+  "經火與過水的潔淨": {
+    "path": "link_folder/主題/經火與過水的潔淨.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "經火與過水的潔淨",
     "status": "formal",
     "aliases": []
   },
@@ -3403,6 +3435,14 @@
     "status": "formal",
     "aliases": []
   },
+  "全軍無一人陣亡": {
+    "path": "link_folder/事件/全軍無一人陣亡.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "全軍無一人陣亡",
+    "status": "formal",
+    "aliases": []
+  },
   "六十萬零三千五百五十人（出38：26）": {
     "path": "link_folder/事件/六十萬零三千五百五十人（出38：26）.md",
     "type": "事件",
@@ -3606,6 +3646,14 @@
     "aliases": [
       "Sabbath gathering rules"
     ]
+  },
+  "巴蘭之死": {
+    "path": "link_folder/事件/巴蘭之死.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "巴蘭之死",
+    "status": "formal",
+    "aliases": []
   },
   "希伯來女僕的律例": {
     "path": "link_folder/事件/希伯來女僕的律例.md",
@@ -13026,6 +13074,17 @@
     "status": "formal",
     "aliases": []
   },
+  "報仇（na.qam 與 nik.mah）": {
+    "path": "link_folder/原文/報仇（na.qam 與 nik.mah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "報仇（na.qam 與 nik.mah）",
+    "status": "formal",
+    "aliases": [
+      "na.qam",
+      "nik.mah"
+    ]
+  },
   "夏娃名字含義": {
     "path": "link_folder/原文/夏娃名字含義.md",
     "type": "原文",
@@ -13189,6 +13248,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "工作（baabodath）",
+    "status": "formal",
+    "aliases": []
+  },
+  "已嫁與未嫁的原文判準": {
+    "path": "link_folder/原文/已嫁與未嫁的原文判準.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "已嫁與未嫁的原文判準",
     "status": "formal",
     "aliases": []
   },
@@ -14625,6 +14692,16 @@
     "title": "謠言",
     "status": "formal",
     "aliases": []
+  },
+  "貢物（Me.khes）": {
+    "path": "link_folder/原文/貢物（Me.khes）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "貢物（Me.khes）",
+    "status": "formal",
+    "aliases": [
+      "Me.khes"
+    ]
   },
   "貪戀": {
     "path": "link_folder/原文/貪戀.md",
@@ -18405,6 +18482,14 @@
       "第十災",
       "末災"
     ]
+  },
+  "米甸的五王": {
+    "path": "link_folder/歷史/米甸的五王.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "米甸的五王",
+    "status": "formal",
+    "aliases": []
   },
   "約瑟下埃及": {
     "path": "link_folder/歷史/約瑟下埃及.md",
@@ -24673,6 +24758,14 @@
     "status": "formal",
     "aliases": []
   },
+  "米甸人後來又強盛": {
+    "path": "link_folder/背景/米甸人後來又強盛.md",
+    "type": "背景",
+    "secondary_types": [],
+    "title": "米甸人後來又強盛",
+    "status": "formal",
+    "aliases": []
+  },
   "米甸祭司": {
     "path": "link_folder/背景/米甸祭司.md",
     "type": "背景",
@@ -26258,6 +26351,14 @@
       "創世記9章與死刑"
     ]
   },
+  "殺盡米甸人的道德難題": {
+    "path": "link_folder/解經爭議/殺盡米甸人的道德難題.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "殺盡米甸人的道德難題",
+    "status": "formal",
+    "aliases": []
+  },
   "每樣兩個與潔淨畜類七對": {
     "path": "link_folder/解經爭議/每樣兩個與潔淨畜類七對.md",
     "type": "解經爭議",
@@ -26815,6 +26916,14 @@
       "耶和華使者的身分"
     ]
   },
+  "聖所的器皿是什麼": {
+    "path": "link_folder/解經爭議/聖所的器皿是什麼.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "聖所的器皿是什麼",
+    "status": "formal",
+    "aliases": []
+  },
   "致咒詛苦水儀式是否迷信之爭": {
     "path": "link_folder/解經爭議/致咒詛苦水儀式是否迷信之爭.md",
     "type": "解經爭議",
@@ -26983,6 +27092,14 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "酒政忘記約瑟是人性還是神的安排",
+    "status": "formal",
+    "aliases": []
+  },
+  "金器贖罪的性質之爭": {
+    "path": "link_folder/解經爭議/金器贖罪的性質之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "金器贖罪的性質之爭",
     "status": "formal",
     "aliases": []
   },
@@ -29806,6 +29923,12 @@
   "生命氣息": {
     "alias_of": "地上塵土與生命氣息"
   },
+  "na.qam": {
+    "alias_of": "報仇（na.qam 與 nik.mah）"
+  },
+  "nik.mah": {
+    "alias_of": "報仇（na.qam 與 nik.mah）"
+  },
   "大痲瘋": {
     "alias_of": "大痲瘋（sara'at）"
   },
@@ -30213,6 +30336,9 @@
   },
   "詩51": {
     "alias_of": "詩篇51篇"
+  },
+  "Me.khes": {
+    "alias_of": "貢物（Me.khes）"
   },
   "渴望": {
     "alias_of": "貪戀"
