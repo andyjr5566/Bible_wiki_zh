@@ -1,0 +1,429 @@
+book: 民數記
+chapter: 29
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v40 摩西照耶和華所吩咐的一切話告訴以色列人；CT 指出本節是民28-29 兩章的結語。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以獻祭安排時間
+  suggested_type: 主題
+  evidence: 本章依七月初一、初十、十五至二十二日的次序排列祭物；GT 串珠說七月是以色列人休息和敬拜的日子，CT 的綱要也按吹角節、贖罪日、住棚節三段分。
+  match_type: exact
+  existing_title: 以獻祭安排時間
+  existing_path: link_folder/主題/以獻祭安排時間.md
+- name: 群體性獻祭
+  suggested_type: 主題
+  evidence: v39 明說這些祭是在你們的節期為全體獻的，個人所許的願與甘心所獻另計；GT 串珠說這些是神清楚指明的、是必須獻上的，自願或許願獻的祭則是額外的。
+  match_type: exact
+  existing_title: 群體性獻祭
+  existing_path: link_folder/主題/群體性獻祭.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: v2、8、13、36 各節期的主祭都是燔祭；STEP 一律標 H5930A 'o.Lah，CT 說整個祭物須在壇上經火燒、全部獻給神。
+  surfaces:
+  - phrase: 燔祭
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 素祭（minchah）
+  suggested_type: 原文
+  evidence: v3、9、14、18 起每隻祭牲都配同獻的素祭；STEP 標 H4503G min.chah，v3 的細麵是 H5560 So.let、調油是
+    H1101A be.lu.Lah。
+  surfaces:
+  - phrase: 素祭
+  match_type: exact
+  existing_title: 素祭（minchah）
+  existing_path: link_folder/原文/素祭（minchah）.md
+- name: 奠酒
+  suggested_type: 文化
+  evidence: v6、11、16 起每段都以同獻的奠祭收尾；STEP 標 H5262 ne.sekh，v39 用複數附屬形 nis.kei/Khem。
+  surfaces:
+  - phrase: 奠祭
+  match_type: exact
+  existing_title: 奠酒
+  existing_path: link_folder/文化/奠酒.md
+- name: 贖罪祭
+  suggested_type: 神學
+  evidence: 本章每一個節期日都加獻一隻公山羊為贖罪祭；STEP 標 H2403H cha.Tat，v5 另有 H3722A Piel 不定詞 le./kha.Per
+    為你們贖罪。
+  surfaces:
+  - phrase: 贖罪祭
+  match_type: exact
+  existing_title: 贖罪祭
+  existing_path: link_folder/神學/贖罪祭.md
+- name: 火祭（isheh）
+  suggested_type: 主題
+  evidence: v6、13、36 稱這些祭為火祭；STEP 標 H801 'i.Sheh，v13 是 'i.Sheh Rei.ach ni.Cho.ach
+    的三重構造鏈。
+  surfaces:
+  - phrase: 火祭
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 馨香之氣
+  suggested_type: 神學
+  evidence: v2、6、8、13、36 反覆說馨香；STEP 是 H7381 Rei.ach 加 H5207 ni.Cho.ach，CT 也註明是原文雙字。
+  surfaces:
+  - phrase: 馨香
+  match_type: exact
+  existing_title: 馨香之氣
+  existing_path: link_folder/神學/馨香之氣.md
+- name: 每日獻祭（常獻燔祭）
+  suggested_type: 神學
+  evidence: v6、11、16、19 起每段都說這些是在常獻的燔祭以外；STEP 標 H8548 ha./ta.Mid，本節譯義 continuity。
+  surfaces:
+  - phrase: 常獻的燔祭
+  match_type: exact
+  existing_title: 每日獻祭（常獻燔祭）
+  existing_path: link_folder/神學/每日獻祭（常獻燔祭）.md
+- name: 沒有殘疾的祭牲
+  suggested_type: 神學
+  evidence: v2、8、13、17、36 都要求祭牲沒有殘疾；STEP 標 H8549G te.mi.Mim，本節譯義 unblemished。
+  surfaces:
+  - phrase: 沒有殘疾
+  match_type: exact
+  existing_title: 沒有殘疾的祭牲
+  existing_path: link_folder/神學/沒有殘疾的祭牲.md
+- name: 伊法
+  suggested_type: 原文
+  evidence: v3-4、9-10、14-15 用伊法十分之三、二、一計量細麵；STEP 顯示本章 12 次都只是 H6241 'es.ro.Nim（十分之一），全章沒有出現
+    H374 伊法本字。
+  surfaces:
+  - phrase: 伊法
+  match_type: exact
+  existing_title: 伊法
+  existing_path: link_folder/原文/伊法.md
+- name: 聖會
+  suggested_type: 文化
+  evidence: v1、7、12 三個節期日都要有聖會；STEP 是 H4744 mik.ra' 構造式加 H6944G ko.desh。
+  surfaces:
+  - phrase: 聖會
+  match_type: exact
+  existing_title: 聖會
+  existing_path: link_folder/文化/聖會.md
+- name: 勞碌的工（a.vo.dah）
+  suggested_type: 原文
+  evidence: v1、12、35 禁止勞碌的工；STEP 是 H4399 me.Le.khet 加 H5656I 'a.vo.Dah，本節譯義 work of
+    servitude。
+  surfaces:
+  - phrase: 勞碌的工
+  match_type: exact
+  existing_title: 勞碌的工（a.vo.dah）
+  existing_path: link_folder/原文/勞碌的工（a.vo.dah）.md
+- name: 月朔
+  suggested_type: 歷史
+  evidence: v6 說吹角節的祭是在月朔的燔祭以外；STEP 在此用 H2320H ha./Cho.desh，本節譯義 the new moon，GT 丁良才指出每月朔祭司就吹銀號筒。
+  surfaces:
+  - phrase: 月朔
+  match_type: exact
+  existing_title: 月朔
+  existing_path: link_folder/歷史/月朔.md
+- name: 節期祭物層層累加
+  suggested_type: 主題
+  evidence: v6、11、16、19、22、25、28、31、34、38 每段結尾都用以外；STEP 一律是 H905J le./Vad，BibleHub
+    也以 layered nature 解釋這個結構。
+  surfaces:
+  - phrase: 與同獻的素祭並同獻的奠祭以外
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 節期祭物層層累加
+  existing_path: link_folder/主題/節期祭物層層累加.md
+- name: 節期祭物詳情另見民數記28-29章
+  suggested_type: 背景
+  evidence: 本章與民28 合起來才是節期祭物的完整清單；GT 串珠說以上兩章主要記述節日當獻的祭物，KingComments 也把兩章視為同一套條例的上下半年。
+  match_type: exact
+  existing_title: 節期祭物詳情另見民數記28-29章
+  existing_path: link_folder/背景/節期祭物詳情另見民數記28-29章.md
+- name: 吹角節（七月初一）
+  suggested_type: 歷史
+  evidence: v1-6 是七月初一吹角節的祭；GT 丁良才、串珠、精讀本、背景註釋都在此補充吹角節的曆法與紀念意義。
+  surfaces:
+  - phrase: 七月初一日
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 吹角節（七月初一）
+  existing_path: link_folder/歷史/吹角節（七月初一）.md
+- name: 大贖罪日（Yom Kippur）條例
+  suggested_type: 歷史
+  evidence: v7-11 是七月初十贖罪日的祭；GT 丁良才說就是大贖罪日，本日的禮節記在利十六1-34、二十三26-32。
+  surfaces:
+  - phrase: 七月初十日
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 大贖罪日（Yom Kippur）條例
+  existing_path: link_folder/歷史/大贖罪日（Yom Kippur）條例.md
+- name: 住棚節（利23節期規定）
+  suggested_type: 歷史
+  evidence: v12-38 是七月十五日起八天的住棚節；GT 丁良才說本節期為會眾所獻的祭牲比一切別的節期都多。
+  surfaces:
+  - phrase: 七月十五日
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 住棚節（利23節期規定）
+  existing_path: link_folder/歷史/住棚節（利23節期規定）.md
+- name: 贖罪日的節期獻祭（民29：7-11）
+  suggested_type: 互文
+  evidence: 本章 v7-11 正是該條目所指的經文本身：利16 記至聖所內的程序，本段補上同一天壇上的節期祭。
+  match_type: exact
+  existing_title: 贖罪日的節期獻祭（民29：7-11）
+  existing_path: link_folder/互文/贖罪日的節期獻祭（民29：7-11）.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: v39 把平安祭與燔祭、素祭、奠祭並列為節期以外可獻的祭；STEP 標 H8002 shal.mei/Khem，CT 說此名詞在希伯來文表示和好或福祉。
+  surfaces:
+  - phrase: 平安祭
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 細麵
+  suggested_type: 主題
+  evidence: v3、9、14 的素祭一律用調油的細麵；STEP 標 H5560 So.let，CT 說是把磨細的生麵粉調和橄欖油揉成不可有酵的麵團。
+  surfaces:
+  - phrase: 細麵
+  match_type: exact
+  existing_title: 細麵
+  existing_path: link_folder/主題/細麵.md
+- name: 公牛犢
+  suggested_type: 主題
+  evidence: v2、8、13、17 的燔祭以公牛犢為首；STEP 是 H6499 par 加 H1121H be.nei-、H1241 ba.Kar。
+  surfaces:
+  - phrase: 公牛犢
+  match_type: exact
+  existing_title: 公牛犢
+  existing_path: link_folder/主題/公牛犢.md
+- name: 公綿羊
+  suggested_type: 主題
+  evidence: v2、8、13 每個節期日都獻公綿羊；STEP 標 H352A 'A.yil，吹角節與贖罪日各一隻、住棚節每日兩隻。
+  surfaces:
+  - phrase: 公綿羊
+  match_type: exact
+  existing_title: 公綿羊
+  existing_path: link_folder/主題/公綿羊.md
+- name: 許願
+  suggested_type: 文化
+  evidence: v39 說節期祭是在所許的願以外；STEP 標 H5088 nid.rei/Khem，lexicon 為 ne.der。
+  surfaces:
+  - phrase: 所許的願
+    verses:
+    - 39
+  match_type: exact
+  existing_title: 許願
+  existing_path: link_folder/文化/許願.md
+- name: 甘心樂意的奉獻
+  suggested_type: 神學
+  evidence: v39 的甘心所獻是 STEP H5071 nid.vo.tei/Khem，lexicon 為 ne.da.vah；KingComments
+    說神尋找那些自願敬拜、親近祂的心。
+  surfaces:
+  - phrase: 甘心所獻
+    verses:
+    - 39
+  match_type: exact
+  existing_title: 甘心樂意的奉獻
+  existing_path: link_folder/神學/甘心樂意的奉獻.md
+- name: 耶和華的節期年曆總覽（利未記23章七大節期架構）
+  suggested_type: 主題
+  evidence: 本章是利23 節期表中七月三個節期的祭物明細；GT 精讀本說把三個節期集中在一個月裡是為振作以色列百姓屬靈的士氣。
+  match_type: exact
+  existing_title: 耶和華的節期年曆總覽（利未記23章七大節期架構）
+  existing_path: link_folder/主題/耶和華的節期年曆總覽（利未記23章七大節期架構）.md
+- name: 七是節期中最要緊的數目
+  suggested_type: 主題
+  evidence: 本章的七月、七隻羊羔、守節七日、第七日的公牛七隻都以七計；GT 背景註釋指出吹角日發生在全年新月第七次出現的七月。
+  match_type: exact
+  existing_title: 七是節期中最要緊的數目
+  existing_path: link_folder/主題/七是節期中最要緊的數目.md
+- name: 刻苦己心（禁食悔改）
+  suggested_type: 主題
+  evidence: v7 命令要刻苦己心；STEP 是 H6031B Piel 動詞 ve./'i.ni.Tem 加 H5315I naf.sho.tei/Khem，GT
+    丁良才說這吩咐大概也包括禁食的意思。
+  surfaces:
+  - phrase: 刻苦己心
+  match_type: exact
+  existing_title: 刻苦己心（禁食悔改）
+  existing_path: link_folder/主題/刻苦己心（禁食悔改）.md
+- name: 銀號
+  suggested_type: 文化
+  evidence: GT 丁良才在 v6 指出每月朔祭司就吹銀號筒，並記下猶太注釋家說吹角節當日除祭司的銀號外，百姓從日出到日落也吹角。
+  match_type: exact
+  existing_title: 銀號
+  existing_path: link_folder/文化/銀號.md
+- name: 銀號與主再來天使吹號（太24：31）
+  suggested_type: 互文
+  evidence: GT 精讀本說吹角節的角聲象徵告知耶穌基督的初臨和再臨的信息；BibleHub 也把號聲與帖前4:16 相連。
+  match_type: exact
+  existing_title: 銀號與主再來天使吹號（太24：31）
+  existing_path: link_folder/互文/銀號與主再來天使吹號（太24：31）.md
+- name: 三大節期
+  suggested_type: 神學
+  evidence: BibleHub 說住棚節是以色列三大朝聖節期之一，男丁都要上耶路撒冷朝見耶和華；GT 背景註釋也說收成後尚有餘暇前往耶路撒冷朝聖。
+  match_type: exact
+  existing_title: 三大節期
+  existing_path: link_folder/神學/三大節期.md
+- name: 住棚裡是棚或帳的難題
+  suggested_type: 解經爭議
+  evidence: GT 串珠說百姓要在帳棚居住七天紀念祖先出埃及後在帳棚中居住；GT 背景註釋則說象徵是建築以綠葉為裝飾的棚，讓收割者可以休息。
+  match_type: exact
+  existing_title: 住棚裡是棚或帳的難題
+  existing_path: link_folder/解經爭議/住棚裡是棚或帳的難題.md
+- name: 鬼魔（seirim，公山羊）
+  suggested_type: 原文
+  evidence: 本章每日的贖罪祭都是公山羊；STEP 標 H8163B se.'ir- 加 H5795 'i.Zim，字面是山羊中的一隻公山羊。
+  surfaces:
+  - phrase: 公山羊
+  match_type: exact
+  existing_title: 鬼魔（seirim，公山羊）
+  existing_path: link_folder/原文/鬼魔（seirim，公山羊）.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: CT 說第八日的嚴肅會視同安息日，不可作工，百姓要到會幕前聚集；KingComments 也把住棚節七日與安息日並比。
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 宗教曆與民事曆兩種曆法
+  suggested_type: 背景
+  evidence: GT 啟導本說本節的七月初一乃民事曆的年首，丁良才說聖年七月初一號就是常年的正月初一；兩套曆法的重疊正是本章第一節的時間座標。
+  match_type: exact
+  existing_title: 宗教曆與民事曆兩種曆法
+  existing_path: link_folder/背景/宗教曆與民事曆兩種曆法.md
+- name: 七十的屬靈意義
+  suggested_type: 原文
+  evidence: 住棚節七日的公牛從十三隻逐日遞減到七隻，GT 精讀本算出總共獻上七十只公牛。
+  match_type: exact
+  existing_title: 七十的屬靈意義
+  existing_path: link_folder/原文/七十的屬靈意義.md
+- name: 守節
+  suggested_type: 原文
+  evidence: v12 要向耶和華守節七日用的是同源動詞加名詞 H2287 ve./cha.go.Tem 加 H2282 chag；CT 也註明守節是原文雙字，首字是過節、次字是節慶集會。
+  surfaces:
+  - phrase: 守節七日
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 守節
+  existing_path: link_folder/原文/守節.md
+C_new_formal:
+- name: 吹角的日子（te.ru.'Ah）
+  suggested_type: 原文
+  evidence: v1 吹角的日子原文是 H3117G Yom 加 H8643 te.ru.'Ah，STEP 本節譯義為 the sound of a loud
+    blast，lexicon 作 shout；同一個字在民10:5-6 是拔營的號令、民23:21 是歡呼王的聲音、民31:6 是出戰的號令。
+  surfaces:
+  - phrase: 吹角的日子
+    verses:
+    - 1
+  target_path: link_folder/原文/吹角的日子（te.ru.'Ah）.md
+- name: 嚴肅會（a.Tze.ret）
+  suggested_type: 原文
+  evidence: v35 嚴肅會是 H6116 'a.Tze.ret，STEP 本節譯義 an assembly；這個字在整卷民數記只出現這一次，與 v1、7、12
+    的聖會不是同一個詞。
+  surfaces:
+  - phrase: 嚴肅會
+  target_path: link_folder/原文/嚴肅會（a.Tze.ret）.md
+- name: 一切的工（me.la.khah）
+  suggested_type: 原文
+  evidence: v7 贖罪日寫的是 H3605 kol- 加 H4399 me.la.Khah，而 v1、12、35 三個節期日寫的是 kol- me.Le.khet
+    加 H5656I 'a.vo.Dah；中文譯本正是用什麼工與什麼勞碌的工區分這兩種寫法。
+  surfaces:
+  - phrase: 什麼工都不可做
+    verses:
+    - 7
+  target_path: link_folder/原文/一切的工（me.la.khah）.md
+- name: 七月的三個節期
+  suggested_type: 主題
+  evidence: v1、7、12 把吹角節、贖罪日、住棚節都放在七月；GT 串珠說七月是適合休息和慶祝的時間，因為莊稼已經收成了，丁良才說七月中有節期的日子比全年其餘各月之節期的日子更多。
+  target_path: link_folder/主題/七月的三個節期.md
+  semantic_hint:
+  - title: 七是節期中最要緊的數目
+    score: 0.467
+    type: 主題
+  - title: 三大節期
+    score: 0.439
+    type: 神學
+  - title: 古代近東三大節期
+    score: 0.414
+    type: 背景
+- name: 住棚節公牛逐日遞減
+  suggested_type: 主題
+  evidence: v13、17、20、23、26、29、32 的公牛從十三隻減到七隻，公綿羊與羊羔數目不變；CT 說住棚節中所獻的祭牲是全年所有的節期中最多的。
+  surfaces:
+  - phrase: 公牛犢十三隻
+    verses:
+    - 13
+  target_path: link_folder/主題/住棚節公牛逐日遞減.md
+- name: 公牛逐日遞減的原因之爭
+  suggested_type: 解經爭議
+  evidence: GT 背景註釋給兩個可能：反映時間的過去，或免得國家最貴重的牲口過度損耗；KingComments 讀成對基督之工的賞識隨和平國度時間推移而遞減；GT
+    精讀本則讀成表示對神完全的奉獻和忠心；CT 只記數字不給理由。
+  target_path: link_folder/解經爭議/公牛逐日遞減的原因之爭.md
+- name: 住棚節第八日的嚴肅會
+  suggested_type: 事件
+  evidence: v35-38 在住棚節七日之後另加第八日；CT 說是七月二十二日繼續慶祝一天，GT 丁良才說這日所獻雖少仍算為住棚節最大的日子，KingComments
+    說它說出一個新的開始也說出一個沒有終結的開始。
+  surfaces:
+  - phrase: 第八日
+    verses:
+    - 35
+  target_path: link_folder/事件/住棚節第八日的嚴肅會.md
+  semantic_hint:
+  - title: 住棚節（利23節期規定）
+    score: 0.495
+    type: 歷史
+  - title: 第八天獻祭（大痲瘋潔淨）
+    score: 0.417
+    type: 主題
+- name: 所定的節期（mo.'ed）
+  suggested_type: 原文
+  evidence: 'v39 你們的節期是 H4150H be./mo.''a.dei./Khem，lexicon 作 meeting: festival，字面是所約定的時候。'
+  surfaces:
+  - phrase: 節期
+    verses:
+    - 39
+  target_path: link_folder/原文/所定的節期（mo.'ed）.md
+- name: 贖罪日的贖罪祭（ki.pu.Rim）
+  suggested_type: 原文
+  evidence: v11 說當日的公山羊是在贖罪祭以外，STEP 該處是 H2403H cha.Tat 加 H3725 ha./ki.pu.Rim，直譯為那贖罪的贖罪祭；GT
+    丁良才說這贖罪祭在利十六章上所記的以外，表明牛羊的血不能完全贖罪。
+  surfaces:
+  - phrase: 這是在贖罪祭和常獻的燔祭
+    verses:
+    - 11
+  target_path: link_folder/原文/贖罪日的贖罪祭（ki.pu.Rim）.md
+  semantic_hint:
+  - title: 大贖罪日（Yom Kippur）條例
+    score: 0.413
+    type: 歷史
+  - title: 贖罪日的節期獻祭（民29：7-11）
+    score: 0.408
+    type: 互文
+- name: 全年為全會眾所獻祭牲總數
+  suggested_type: 背景
+  evidence: GT 丁良才在 v39 統計：除許願與甘心所獻以外，按民28-29 每年要為全會共獻公牛犢一百十三隻、公綿羊三十七隻、公羊羔一千零六十七隻、公山羊三十只，總共一千二百四十七隻。
+  target_path: link_folder/背景/全年為全會眾所獻祭牲總數.md
+  semantic_hint:
+  - title: 全會眾
+    score: 0.42
+    type: 人物
+- name: 民29：40 在希伯來聖經屬民30：1
+  suggested_type: 背景
+  evidence: CT 在 v40 指出：本節可作民28-29 兩章的結語，但希伯來文聖經把它放在民30 的第一節，作為三十章的序言。
+  target_path: link_folder/背景/民29：40 在希伯來聖經屬民30：1.md
+  semantic_hint:
+  - title: 曠野飄流四十年
+    score: 0.436
+    type: 歷史
+  - title: 出35-40 逐字複述出25-31
+    score: 0.42
+    type: 主題
+  - title: 亞倫和他兒子（祭司）
+    score: 0.419
+    type: 人物
+D_new_candidate: []
+E_skip: []
