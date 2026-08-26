@@ -659,6 +659,34 @@ class ScanUnsourcedTokensTests(unittest.TestCase):
         self.assertIn("אבגד", hebrew)
         self.assertNotIn("שָׁלוֹם", hebrew)      # sourced once niqqud is stripped
 
+    def test_maqqef_joined_pair_is_not_reported_when_both_halves_are_sourced(self):
+        """STEP 把 maqqef 兩邊分列，所以連寫形永遠不會整串出現在語料裡。
+
+        全庫實測 208 處連寫，每一處兩邊都有出處——報它是在報 STEP 的標記方式。
+        """
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "原文作 אֶת־הָאָרֶץ。\n")
+            (root / "raw_data" / "stepbible_x.txt").write_text(
+                "| אֶת\u05be | 'et- | H853 |\n| הָאָרֶץ | ha.'A.rets | H776 |",
+                encoding="utf-8",
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        self.assertEqual([], result["unsourced_hebrew"])
+
+    def test_maqqef_joined_pair_is_still_flagged_when_a_half_is_unsourced(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "原文作 אֶת־אבגד。\n")
+            (root / "raw_data" / "stepbible_x.txt").write_text(
+                "| אֶת\u05be | 'et- | H853 |", encoding="utf-8"
+            )
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        tokens = {item["token"] for item in result["unsourced_hebrew"]}
+        self.assertIn("אֶת־אבגד", tokens)
+
     def test_dou_is_traditional_and_never_a_simplified_flag(self):
         """出28「祭司披肩或斗篷」是 CT raw 自己的用字，不是簡體。
 

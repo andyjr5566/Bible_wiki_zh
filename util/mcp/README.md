@@ -76,7 +76,12 @@ M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 `knowledge_nodes` 解析成 `link_folder/**.md` 加上渲染後的章節 md，逐一對整個
 `raw_data/` 語料比對。希伯來字串去 niqqud 後比對；拉丁音譯用**詞界**比對，避免
 `perat` 被 `temperate` 誤配。整串查無出處但每個字詞單獨都有出處的（多為 raw 換行
-造成，如 `Chalcolithic Age`），另放進 `latin_needing_review` 不計入 flag。**有 flag**
+造成，如 `Chalcolithic Age`），另放進 `latin_needing_review` 不計入 flag。
+**maqqef 連寫（`אֶת־הָאָרֶץ`）只要連字號兩邊各自有出處就視為有出處，完全不報**——
+STEP 的逐字表把兩邊分成兩列，連寫這個**印刷上正確**的形式因此永遠不會整串出現在
+語料裡，報它等於在報 STEP 的標記方式（全庫實測 208 處，0 個真陽性）；有一邊查無
+出處的連寫仍然照報。`run_chapter.py` 的 `_unsourced_hebrew_errors` 用同一條規則。
+**有 flag**
 表示全庫語料都找不到，是強力刪除線索；**沒有 flag** 只表示別處可能出現過，仍必須依
 本章 manifest 與該條目實際累積的章節來源核對。
 

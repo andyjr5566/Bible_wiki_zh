@@ -1835,6 +1835,7 @@ def _unfileable_candidate_errors(ctx):
 
 _HEBREW_RUN_RE = re.compile(r"[א-ת][א-ת֑-ׇװ-״]*")
 _HEBREW_MARKS_RE = re.compile(r"[֑-ׇ]")
+_MAQQEF = "־"  # the hyphen that joins two words in printed Hebrew
 
 
 def _chapter_source_corpus(ctx, *, commentary_only=False):
@@ -1874,7 +1875,8 @@ def _unsourced_hebrew_errors(ctx):
     被塞入來源沒給的希伯來字母 מִנְחָה——模型（有時是人工）會幫原文類條目配上
     「反正是對的」的希伯來寫法，但鐵律是「內容只能出自 rawdata」，音譯／字母
     寫法也不例外。比對前先去除注音符號（niqqud，U+0591–U+05C7），來源給無注音
-    形式、payload 寫注音形式（或反過來）不算錯。
+    形式、payload 寫注音形式（或反過來）不算錯；maqqef 連寫兩邊各自有出處也
+    不算錯（見 _maqqef_halves_are_sourced）。
 
     判準是純機械的子字串比對（字母序列在／不在來源裡），不涉推測，故列 error。
     全庫實測（93 個 .tmp 章節）命中 18 筆、0 誤報——逐一 grep 證實對應 raw 檔
@@ -1896,13 +1898,31 @@ def _unsourced_hebrew_errors(ctx):
         text = path.read_text(encoding="utf-8")
         for run in sorted(set(_HEBREW_RUN_RE.findall(text))):
             stripped = _HEBREW_MARKS_RE.sub("", run)
-            if stripped and stripped not in corpus_stripped:
-                errors.append(
-                    f"{path.name}: 希伯來字「{run}」在本章來源與經文中查無出處——"
-                    f"來源沒給的原文寫法不可寫入（即使拼寫正確），請整段拔除，"
-                    f"只保留來源實際出現的形式"
-                )
+            if not stripped or stripped in corpus_stripped:
+                continue
+            if _maqqef_halves_are_sourced(run, corpus_stripped):
+                continue
+            errors.append(
+                f"{path.name}: 希伯來字「{run}」在本章來源與經文中查無出處——"
+                f"來源沒給的原文寫法不可寫入（即使拼寫正確），請整段拔除，"
+                f"只保留來源實際出現的形式"
+            )
     return errors
+
+
+def _maqqef_halves_are_sourced(run, corpus_stripped):
+    """maqqef 連寫只要兩邊各自有出處就算有出處，整串查不到不算杜撰。
+
+    STEP 的逐字表把 maqqef 兩邊拆成獨立列，所以 `אֶת־הָאָרֶץ` 這種**印刷上正確**
+    的寫法必然不會以單一字串出現在來源裡——報它等於在報 STEP 的標記方式，不是
+    在報憑空補配。全庫實測（2026-08-26）連寫形 208 處，每一處兩邊都有出處，
+    0 個真陽性。連字號有一邊查無出處的仍然照報。
+    """
+    if _MAQQEF not in run:
+        return False
+    halves = [_HEBREW_MARKS_RE.sub("", part) for part in run.split(_MAQQEF)]
+    halves = [part for part in halves if part]
+    return len(halves) > 1 and all(part in corpus_stripped for part in halves)
 
 
 _LATIN_SUFFIX_RE = re.compile(r"[（(]([A-Za-z][A-Za-z' \-]*[A-Za-z])[）)]\s*$")

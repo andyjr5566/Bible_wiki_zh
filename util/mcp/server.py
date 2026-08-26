@@ -107,6 +107,7 @@ _MERMAID_BARE_LABEL_RE = re.compile(
 # --- scan_unsourced_tokens patterns ---------------------------------------------
 _HEBREW_RUN_RE = re.compile(r"[֐-׿]+")
 _NIQQUD_RE = re.compile(r"[֑-ׇ]")
+_MAQQEF = "־"  # the hyphen that joins two words in printed Hebrew
 _PAREN_LATIN_RE = re.compile(r"[（(]\s*([A-Za-z][A-Za-z'’\-./ ]{1,34})\s*[)）]")
 _ITALIC_LATIN_RE = re.compile(r"\*([A-Za-z][A-Za-z'’\-]{2,24})\*")
 # A transliteration is often written bare, introduced by a Chinese marker phrase
@@ -1860,6 +1861,23 @@ def _raw_corpus_unpointed(raw: str) -> str:
     return _NIQQUD_RE.sub("", raw)
 
 
+def _maqqef_halves_are_sourced(run: str, corpus_unpointed: str) -> bool:
+    """A maqqef-joined pair is sourced when each half is, even though the pair is not.
+
+    STEP's word table puts the two sides of a maqqef on separate rows, so a form
+    that is perfectly correct printed Hebrew — ``אֶת־הָאָרֶץ`` — can never appear in
+    the corpus as one string.  That is STEP's markup, not a fabricated spelling,
+    so it is ignored outright rather than reported.  Whole-vault measurement
+    (2026-08-26): 208 joined runs, every one with both halves attested, 0 true
+    positives.  A joined pair with an unattested half is still flagged.
+    """
+    if _MAQQEF not in run:
+        return False
+    halves = [_NIQQUD_RE.sub("", part) for part in run.split(_MAQQEF)]
+    halves = [part for part in halves if part]
+    return len(halves) > 1 and all(part in corpus_unpointed for part in halves)
+
+
 @mcp.tool()
 def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True) -> Dict[str, Any]:
     """Globally flag Hebrew letters, Latin transliterations and simplified characters.
@@ -1871,8 +1889,11 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
     does not falsely match ``temperate``; the bound is ASCII letters, not ``b``, so a
     transliteration printed against CJK text still counts as found. A flag means the token appears nowhere
     in the local corpus and is a strong removal signal. No flag does *not* prove
-    the token came from this entry's actual accumulated sources. This tool reads
-    only; it never edits.
+    the token came from this entry's actual accumulated sources. A Hebrew run
+    joined by a maqqef counts as sourced when each half is: the joined form is
+    correct printed Hebrew while STEP splits the pair across rows, so the joined
+    string is absent from the corpus by construction, and reporting it would be
+    reporting STEP's markup. This tool reads only; it never edits.
     """
     try:
         canonical = _canonical_book(book)
@@ -1891,8 +1912,11 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
         text = path.read_text(encoding="utf-8", errors="ignore")
         for run in sorted(set(_HEBREW_RUN_RE.findall(text))):
             stripped = _NIQQUD_RE.sub("", run)
-            if stripped and stripped not in raw_unpointed:
-                hebrew.append({"file": relative, "token": run})
+            if not stripped or stripped in raw_unpointed:
+                continue
+            if _maqqef_halves_are_sourced(run, raw_unpointed):
+                continue
+            hebrew.append({"file": relative, "token": run})
         candidates = (
             set(_PAREN_LATIN_RE.findall(text))
             | set(_ITALIC_LATIN_RE.findall(text))
@@ -1947,6 +1971,7 @@ def scan_unsourced_tokens(book: str, chapter: int, include_warnings: bool = True
         "advice": (
             "查無出處＝刪除音譯或希伯來字母，改用來源實際給的中文字義；"
             "未報出不等於本章／該條目實際來源有出處，仍須依 manifest 與累積章節人工核對；"
+            "maqqef 連寫只要兩邊各自有出處就視為有出處——那是 STEP 分列的產物，不是杜撰；"
             "護欄只掃 .tmp payload，本工具補掃已渲染的 link_folder 條目。"
         ),
     }

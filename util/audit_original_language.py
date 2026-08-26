@@ -40,6 +40,7 @@ CLASSIFICATIONS = (
     "UNVERIFIABLE", "INTERPRETIVE",
 )
 _HEBREW_RUN_RE = re.compile(r"[\u0590-\u05ff\ufb1d-\ufb4f]+")
+_MAQQEF = "־"  # the hyphen that joins two words in printed Hebrew
 _STRONG_RE = re.compile(r"(?<![A-Za-z0-9])([HG]\d{1,5}[A-Za-z]?)(?![A-Za-z0-9])", re.I)
 _WIKILINK_RE = re.compile(r"(?<!!)\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 _ACCUMULATION_RE = re.compile(
@@ -197,8 +198,24 @@ class EvidenceIndex:
             found.extend(mapping.get((chapter, value), ()))
         return _unique_occurrences(found)
 
-    def hebrew_matches(self, value, chapters):
-        return self._in_chapters(self.hebrew, value, chapters)
+    def hebrew_matches(self, value, chapters, raw_token=None):
+        matches = self._in_chapters(self.hebrew, value, chapters)
+        if matches or not raw_token or _MAQQEF not in raw_token:
+            return matches
+        # STEP puts the two sides of a maqqef on separate rows, so a maqqef-joined
+        # pair — correct printed Hebrew — can never match as one string.  Resolve
+        # it half by half instead of reporting STEP's own markup as a problem.
+        halves = [normalize_hebrew(part) for part in raw_token.split(_MAQQEF)]
+        halves = [part for part in halves if part]
+        if len(halves) < 2:
+            return matches
+        resolved = []
+        for half in halves:
+            found = self._in_chapters(self.hebrew, half, chapters)
+            if not found:
+                return []
+            resolved.extend(found)
+        return resolved
 
     def transliteration_matches(self, strict, loose, chapters):
         exact = self._in_chapters(self.trans_strict, strict, chapters)
@@ -624,9 +641,12 @@ def audit_files(root: Path, book: str, selected: Iterable[int], owned, index: Ev
                 normalized = normalize_hebrew(token)
                 if not normalized:
                     continue
-                matches = index.hebrew_matches(normalized, owners)
+                matches = index.hebrew_matches(normalized, owners, raw_token=token)
                 if matches:
-                    classification, reason = "PASS", "normalized Hebrew consonants found in chapter-local STEP"
+                    classification = "PASS"
+                    reason = ("normalized Hebrew consonants found in chapter-local STEP"
+                              if _MAQQEF not in token
+                              else "maqqef-joined pair resolved half by half in chapter-local STEP")
                     action = "none"
                 else:
                     strong_anchors = _anchor_occurrences(index, line, owners, transliterations)

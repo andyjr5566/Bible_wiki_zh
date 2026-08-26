@@ -1120,6 +1120,23 @@ class UnsourcedHebrewTests(unittest.TestCase):
             errors = run_chapter._unsourced_hebrew_errors(ctx)
             self.assertEqual(1, len(errors))
 
+    def test_maqqef_joined_pair_passes_when_both_halves_are_sourced(self):
+        """連寫是正確的印刷形式，STEP 逐字表卻把 maqqef 兩邊分成兩列。
+
+        報它等於在報 STEP 的標記方式。全庫實測 208 處連寫、兩邊全部有出處。
+        """
+        raw = "BH: the text reads אֶת הָאָרֶץ in Hebrew."
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, raw, "原文作 אֶת־הָאָרֶץ。")
+            self.assertEqual([], run_chapter._unsourced_hebrew_errors(ctx))
+
+    def test_maqqef_joined_pair_is_still_flagged_when_a_half_is_unsourced(self):
+        raw = "BH: the text reads אֶת in Hebrew."
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, raw, "原文作 אֶת־אבגד。")
+            errors = run_chapter._unsourced_hebrew_errors(ctx)
+            self.assertEqual(1, len(errors))
+
     def test_no_hebrew_anywhere_is_silent(self):
         with tempfile.TemporaryDirectory() as tmp:
             ctx = self._ctx(tmp, self.RAW_WITHOUT_HEBREW, "希伯來文 minchah 意為禮物。")
