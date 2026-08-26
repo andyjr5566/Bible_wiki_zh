@@ -16294,14 +16294,6 @@
     "status": "formal",
     "aliases": []
   },
-  "死海": {
-    "path": "link_folder/地點/死海.md",
-    "type": "地點",
-    "secondary_types": [],
-    "title": "死海",
-    "status": "formal",
-    "aliases": []
-  },
   "比哈希錄": {
     "path": "link_folder/地點/比哈希錄.md",
     "type": "地點",
@@ -16639,22 +16631,15 @@
   "約但河": {
     "path": "link_folder/地點/約但河.md",
     "type": "地點",
-    "secondary_types": [],
-    "title": "約但河",
-    "status": "formal",
-    "aliases": []
-  },
-  "約旦河": {
-    "path": "link_folder/地點/約旦河.md",
-    "type": "地點",
     "secondary_types": [
       "歷史",
       "神學"
     ],
-    "title": "約旦河",
+    "title": "約但河",
     "status": "formal",
     "aliases": [
-      "Jordan River"
+      "Jordan River",
+      "約旦河"
     ]
   },
   "紅海曠野": {
@@ -16887,7 +16872,8 @@
     "title": "鹽海",
     "status": "formal",
     "aliases": [
-      "亞拉巴海"
+      "亞拉巴海",
+      "死海"
     ]
   },
   "麥比拉洞": {
@@ -31098,7 +31084,10 @@
     "alias_of": "米甸地"
   },
   "Jordan River": {
-    "alias_of": "約旦河"
+    "alias_of": "約但河"
+  },
+  "約旦河": {
+    "alias_of": "約但河"
   },
   "紅海曠野的路": {
     "alias_of": "紅海曠野"
@@ -31149,6 +31138,9 @@
     "alias_of": "非利士地"
   },
   "亞拉巴海": {
+    "alias_of": "鹽海"
+  },
+  "死海": {
     "alias_of": "鹽海"
   },
   "Apis": {

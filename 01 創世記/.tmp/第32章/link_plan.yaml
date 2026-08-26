@@ -78,7 +78,7 @@ A_use_directly:
   match_type: exact
   existing_title: 以東
   existing_path: link_folder/地點/以東.md
-- name: 約旦河
+- name: 約但河
   suggested_type: 地點
   evidence: 10節；雅各先前只拿杖過此河，如今成兩隊（raw 作「約但河」）
   surfaces:
@@ -86,8 +86,8 @@ A_use_directly:
     verses:
     - 10
   match_type: exact
-  existing_title: 約旦河
-  existing_path: link_folder/地點/約旦河.md
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
 - name: 雅博渡口
   suggested_type: 地點
   evidence: 22節；雅各送家眷過此，獨留摔跤之地
