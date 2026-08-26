@@ -4,8 +4,8 @@ book: 民數記
 chapter: 33
 candidate_sha256: 8d6ba821316ebaf0aa6d3000033d7bf9cd8865da3056e3b9d306ef4a00180f4d
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: ae0061bab912ad8b
-link_index_sha256: 02d9bcaf977b534ca449dc8d68095cfd6270c7c6733d11dcc7cabc696ffdab82
+embedding_index_fingerprint: 21c86d464c5e4b6f
+link_index_sha256: bd3a7f56e8ccce25feddf95d779a25b410d78f03075d8d06d9f2a084c9b4d670
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第33章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2835 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2844 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -38,7 +38,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.673 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.665 | link_folder/人物/摩西.md |
 | 2 | 摩西的呼召與差遣 | 0.576 | link_folder/神學/摩西的呼召與差遣.md |
 | 3 | 遵著耶和華的吩咐記載路程 | 0.567 | link_folder/主題/遵著耶和華的吩咐記載路程.md |
 | 4 | 摩西名字的由來 | 0.560 | link_folder/原文/摩西名字的由來.md |
@@ -59,7 +59,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 亞倫去世的日期 | 0.727 | link_folder/主題/亞倫去世的日期.md |
-| 2 | 亞倫 | 0.695 | link_folder/人物/亞倫.md |
+| 2 | 亞倫 | 0.650 | link_folder/人物/亞倫.md |
 | 3 | 亞倫卒於何珥山與祭司職任更替 | 0.594 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
 | 4 | 何珥山 | 0.583 | link_folder/地點/何珥山.md |
 | 5 | 摩西八十歲 | 0.570 | link_folder/互文/摩西八十歲.md |
@@ -79,7 +79,7 @@ query:
 |---|---|---:|---|
 | 1 | 亞倫卒於何珥山與祭司職任更替 | 0.752 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
 | 2 | 亞倫去世的日期 | 0.715 | link_folder/主題/亞倫去世的日期.md |
-| 3 | 亞倫 | 0.655 | link_folder/人物/亞倫.md |
+| 3 | 亞倫 | 0.621 | link_folder/人物/亞倫.md |
 | 4 | 何珥山 | 0.609 | link_folder/地點/何珥山.md |
 | 5 | 亞倫的祭司譜系 | 0.584 | link_folder/人物/亞倫的祭司譜系.md |
 
@@ -97,7 +97,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 蘭塞 | 0.707 | link_folder/地點/蘭塞.md |
+| 1 | 蘭塞 | 0.689 | link_folder/地點/蘭塞.md |
 | 2 | 曠野四十二站 | 0.526 | link_folder/主題/曠野四十二站.md |
 | 3 | 歌珊地 | 0.478 | link_folder/地點/歌珊地.md |
 | 4 | 出埃及 | 0.470 | link_folder/歷史/出埃及.md |
@@ -117,10 +117,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 疏割 | 0.626 | link_folder/地點/疏割.md |
+| 1 | 疏割 | 0.611 | link_folder/地點/疏割.md |
 | 2 | 住棚裡是棚或帳的難題 | 0.532 | link_folder/解經爭議/住棚裡是棚或帳的難題.md |
 | 3 | 帳棚生活與定居對比 | 0.528 | link_folder/文化/帳棚生活與定居對比.md |
-| 4 | 以倘 | 0.509 | link_folder/地點/以倘.md |
+| 4 | 以倘 | 0.506 | link_folder/地點/以倘.md |
 | 5 | 哈洗錄 | 0.481 | link_folder/地點/哈洗錄.md |
 
 判定：✅ 建議使用既有條目 [[疏割]]（同名／字面對應）
@@ -137,11 +137,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以倘 | 0.733 | link_folder/地點/以倘.md |
+| 1 | 以倘 | 0.721 | link_folder/地點/以倘.md |
 | 2 | 紅海曠野 | 0.570 | link_folder/地點/紅海曠野.md |
-| 3 | 海（紅海） | 0.562 | link_folder/地點/海（紅海）.md |
+| 3 | 海（紅海） | 0.554 | link_folder/地點/海（紅海）.md |
 | 4 | 海邊 | 0.546 | link_folder/地點/海邊.md |
-| 5 | 汛的曠野 | 0.531 | link_folder/地點/汛的曠野.md |
+| 5 | 汛的曠野 | 0.530 | link_folder/地點/汛的曠野.md |
 
 判定：✅ 建議使用既有條目 [[以倘]]（同名／字面對應）
 
@@ -157,10 +157,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 比哈希錄 | 0.754 | link_folder/地點/比哈希錄.md |
+| 1 | 比哈希錄 | 0.750 | link_folder/地點/比哈希錄.md |
 | 2 | 哈洗錄 | 0.582 | link_folder/地點/哈洗錄.md |
-| 3 | 密奪 | 0.576 | link_folder/地點/密奪.md |
-| 4 | 巴力洗分 | 0.569 | link_folder/地點/巴力洗分.md |
+| 3 | 巴力洗分 | 0.576 | link_folder/地點/巴力洗分.md |
+| 4 | 密奪 | 0.547 | link_folder/地點/密奪.md |
 | 5 | 民三十三7-8 行程記錄 | 0.535 | link_folder/互文/民三十三7-8 行程記錄.md |
 
 判定：✅ 建議使用既有條目 [[比哈希錄]]（同名／字面對應）
@@ -177,9 +177,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 巴力洗分 | 0.720 | link_folder/地點/巴力洗分.md |
-| 2 | 比哈希錄 | 0.554 | link_folder/地點/比哈希錄.md |
-| 3 | 密奪 | 0.551 | link_folder/地點/密奪.md |
+| 1 | 巴力洗分 | 0.713 | link_folder/地點/巴力洗分.md |
+| 2 | 比哈希錄 | 0.559 | link_folder/地點/比哈希錄.md |
+| 3 | 密奪 | 0.535 | link_folder/地點/密奪.md |
 | 4 | 基列胡瑣 | 0.490 | link_folder/地點/基列胡瑣.md |
 | 5 | 巴力的高處（Bamoth-baal） | 0.486 | link_folder/地點/巴力的高處（Bamoth-baal）.md |
 
@@ -197,9 +197,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 密奪 | 0.774 | link_folder/地點/密奪.md |
-| 2 | 比哈希錄 | 0.493 | link_folder/地點/比哈希錄.md |
-| 3 | 以倘 | 0.478 | link_folder/地點/以倘.md |
+| 1 | 密奪 | 0.779 | link_folder/地點/密奪.md |
+| 2 | 比哈希錄 | 0.498 | link_folder/地點/比哈希錄.md |
+| 3 | 以倘 | 0.481 | link_folder/地點/以倘.md |
 | 4 | 書珥 | 0.476 | link_folder/地點/書珥.md |
 | 5 | 牆垣 | 0.443 | link_folder/原文/牆垣.md |
 
@@ -217,10 +217,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 書珥的曠野 | 0.742 | link_folder/地點/書珥的曠野.md |
-| 2 | 汛的曠野 | 0.658 | link_folder/地點/汛的曠野.md |
+| 1 | 書珥的曠野 | 0.731 | link_folder/地點/書珥的曠野.md |
+| 2 | 汛的曠野 | 0.651 | link_folder/地點/汛的曠野.md |
 | 3 | 書珥 | 0.629 | link_folder/地點/書珥.md |
-| 4 | 以倘 | 0.622 | link_folder/地點/以倘.md |
+| 4 | 以倘 | 0.620 | link_folder/地點/以倘.md |
 | 5 | 西乃的曠野 | 0.609 | link_folder/地點/西乃的曠野.md |
 
 判定：✅ 建議使用既有條目 [[書珥的曠野]]（同名／字面對應）
@@ -237,11 +237,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 瑪拉 | 0.748 | link_folder/地點/瑪拉.md |
-| 2 | 瑪拉苦水變甜 | 0.696 | link_folder/事件/瑪拉苦水變甜.md |
+| 1 | 瑪拉 | 0.743 | link_folder/地點/瑪拉.md |
+| 2 | 瑪拉苦水變甜 | 0.682 | link_folder/事件/瑪拉苦水變甜.md |
 | 3 | 一棵樹 | 0.597 | link_folder/原文/一棵樹.md |
 | 4 | 耶和華拉法 | 0.464 | link_folder/神學/耶和華拉法.md |
-| 5 | 以琳 | 0.457 | link_folder/地點/以琳.md |
+| 5 | 以琳 | 0.454 | link_folder/地點/以琳.md |
 
 判定：✅ 建議使用既有條目 [[瑪拉]]（同名／字面對應）
 
@@ -257,7 +257,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以琳 | 0.733 | link_folder/地點/以琳.md |
+| 1 | 以琳 | 0.730 | link_folder/地點/以琳.md |
 | 2 | 十二與七十是否有象徵意義 | 0.706 | link_folder/解經爭議/十二與七十是否有象徵意義.md |
 | 3 | 十二支派起源 | 0.465 | link_folder/神學/十二支派起源.md |
 | 4 | 七十的屬靈意義 | 0.458 | link_folder/原文/七十的屬靈意義.md |
@@ -277,11 +277,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 海（紅海） | 0.727 | link_folder/地點/海（紅海）.md |
+| 1 | 海（紅海） | 0.715 | link_folder/地點/海（紅海）.md |
 | 2 | 海邊 | 0.666 | link_folder/地點/海邊.md |
-| 3 | 過紅海 | 0.594 | link_folder/歷史/過紅海.md |
-| 4 | 紅海指的是哪個海 | 0.593 | link_folder/解經爭議/紅海指的是哪個海.md |
-| 5 | 比哈希錄 | 0.586 | link_folder/地點/比哈希錄.md |
+| 3 | 紅海指的是哪個海 | 0.593 | link_folder/解經爭議/紅海指的是哪個海.md |
+| 4 | 比哈希錄 | 0.590 | link_folder/地點/比哈希錄.md |
+| 5 | 過紅海 | 0.583 | link_folder/歷史/過紅海.md |
 
 判定：✅ 建議使用既有條目 [[海（紅海）]]（同名／字面對應）
 
@@ -297,10 +297,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 汛的曠野 | 0.695 | link_folder/地點/汛的曠野.md |
-| 2 | 西乃的曠野 | 0.574 | link_folder/地點/西乃的曠野.md |
+| 1 | 汛的曠野 | 0.676 | link_folder/地點/汛的曠野.md |
+| 2 | 書珥的曠野 | 0.576 | link_folder/地點/書珥的曠野.md |
 | 3 | 以色列人的怨言 | 0.571 | link_folder/歷史/以色列人的怨言.md |
-| 4 | 書珥的曠野 | 0.570 | link_folder/地點/書珥的曠野.md |
+| 4 | 西乃的曠野 | 0.564 | link_folder/地點/西乃的曠野.md |
 | 5 | 曠野 | 0.559 | link_folder/地點/曠野.md |
 
 判定：✅ 建議使用既有條目 [[汛的曠野]]（同名／字面對應）
@@ -317,7 +317,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 利非訂 | 0.783 | link_folder/地點/利非訂.md |
+| 1 | 利非訂 | 0.773 | link_folder/地點/利非訂.md |
 | 2 | 戰勝亞瑪力人 | 0.545 | link_folder/事件/戰勝亞瑪力人.md |
 | 3 | 磐石出水 | 0.533 | link_folder/事件/磐石出水.md |
 | 4 | 米利巴（Meribah） | 0.519 | link_folder/原文/米利巴（Meribah）.md |
@@ -337,8 +337,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西乃的曠野 | 0.699 | link_folder/地點/西乃的曠野.md |
-| 2 | 西乃 | 0.698 | link_folder/地點/西乃.md |
+| 1 | 西乃 | 0.698 | link_folder/地點/西乃.md |
+| 2 | 西乃的曠野 | 0.690 | link_folder/地點/西乃的曠野.md |
 | 3 | 西乃山 | 0.647 | link_folder/地點/西乃山.md |
 | 4 | 汛的曠野 | 0.624 | link_folder/地點/汛的曠野.md |
 | 5 | 以色列到達西乃山 | 0.606 | link_folder/事件/以色列到達西乃山.md |
@@ -380,7 +380,7 @@ query:
 | 1 | 哈洗錄 | 0.647 | link_folder/地點/哈洗錄.md |
 | 2 | 曠野四十二站 | 0.451 | link_folder/主題/曠野四十二站.md |
 | 3 | 大痲瘋（sara'at） | 0.448 | link_folder/原文/大痲瘋（sara'at）.md |
-| 4 | 比哈希錄 | 0.443 | link_folder/地點/比哈希錄.md |
+| 4 | 比哈希錄 | 0.446 | link_folder/地點/比哈希錄.md |
 | 5 | 民三十三7-8 行程記錄 | 0.415 | link_folder/互文/民三十三7-8 行程記錄.md |
 
 判定：✅ 建議使用既有條目 [[哈洗錄]]（同名／字面對應）
@@ -397,10 +397,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 加低斯 | 0.679 | link_folder/地點/加低斯.md |
+| 1 | 加低斯 | 0.678 | link_folder/地點/加低斯.md |
 | 2 | 加低斯巴尼亞事件 | 0.599 | link_folder/歷史/加低斯巴尼亞事件.md |
 | 3 | 曠野飄流四十年 | 0.574 | link_folder/歷史/曠野飄流四十年.md |
-| 4 | 汛的曠野 | 0.532 | link_folder/地點/汛的曠野.md |
+| 4 | 汛的曠野 | 0.533 | link_folder/地點/汛的曠野.md |
 | 5 | 哈洗錄 | 0.529 | link_folder/地點/哈洗錄.md |
 
 判定：✅ 建議使用既有條目 [[加低斯]]（同名／字面對應）
@@ -418,8 +418,8 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 何珥山 | 0.736 | link_folder/地點/何珥山.md |
-| 2 | 亞倫去世的日期 | 0.555 | link_folder/主題/亞倫去世的日期.md |
-| 3 | 以東 | 0.539 | link_folder/地點/以東.md |
+| 2 | 北界的何珥山 | 0.618 | link_folder/地點/北界的何珥山.md |
+| 3 | 亞倫去世的日期 | 0.555 | link_folder/主題/亞倫去世的日期.md |
 | 4 | 何烈山 | 0.537 | link_folder/地點/何烈山.md |
 | 5 | 摩西錄 | 0.530 | link_folder/地點/摩西錄.md |
 
@@ -437,7 +437,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以東 | 0.624 | link_folder/地點/以東.md |
+| 1 | 以東 | 0.604 | link_folder/地點/以東.md |
 | 2 | 何珥山 | 0.566 | link_folder/地點/何珥山.md |
 | 3 | 西珥 | 0.549 | link_folder/地點/西珥.md |
 | 4 | 東方人之地 | 0.534 | link_folder/地點/東方人之地.md |
@@ -478,10 +478,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 亞巴琳山 | 0.708 | link_folder/地點/亞巴琳山.md |
-| 2 | 何珥山 | 0.517 | link_folder/地點/何珥山.md |
-| 3 | 瑣腓田與毘斯迦山頂 | 0.503 | link_folder/地點/瑣腓田與毘斯迦山頂.md |
-| 4 | 西乃山的地理 | 0.496 | link_folder/背景/西乃山的地理.md |
-| 5 | 毘珥山頂 | 0.488 | link_folder/地點/毘珥山頂.md |
+| 2 | 北界的何珥山 | 0.526 | link_folder/地點/北界的何珥山.md |
+| 3 | 何珥山 | 0.517 | link_folder/地點/何珥山.md |
+| 4 | 瑣腓田與毘斯迦山頂 | 0.503 | link_folder/地點/瑣腓田與毘斯迦山頂.md |
+| 5 | 西乃山的地理 | 0.496 | link_folder/背景/西乃山的地理.md |
 
 判定：✅ 建議使用既有條目 [[亞巴琳山]]（同名／字面對應）
 
@@ -498,10 +498,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 摩押平原 | 0.712 | link_folder/地點/摩押平原.md |
-| 2 | 耶利哥 | 0.538 | link_folder/地點/耶利哥.md |
+| 2 | 耶利哥 | 0.532 | link_folder/地點/耶利哥.md |
 | 3 | 摩押地 | 0.528 | link_folder/地點/摩押地.md |
 | 4 | 曠野四十二站 | 0.513 | link_folder/主題/曠野四十二站.md |
-| 5 | 約但河 | 0.513 | link_folder/地點/約但河.md |
+| 5 | 摩押 | 0.491 | link_folder/人物/摩押.md |
 
 判定：✅ 建議使用既有條目 [[摩押平原]]（同名／字面對應）
 
@@ -521,7 +521,7 @@ query:
 | 2 | 摩押平原 | 0.497 | link_folder/地點/摩押平原.md |
 | 3 | 行起淫亂（za.nah） | 0.490 | link_folder/原文/行起淫亂（za.nah）.md |
 | 4 | 亭子（qub.bah） | 0.488 | link_folder/原文/亭子（qub.bah）.md |
-| 5 | 汛的曠野 | 0.483 | link_folder/地點/汛的曠野.md |
+| 5 | 汛的曠野 | 0.488 | link_folder/地點/汛的曠野.md |
 
 判定：✅ 建議使用既有條目 [[什亭（亞伯什亭）]]（同名／字面對應）
 
@@ -537,11 +537,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 耶利哥 | 0.753 | link_folder/地點/耶利哥.md |
-| 2 | 約但河 | 0.578 | link_folder/地點/約但河.md |
+| 1 | 耶利哥 | 0.742 | link_folder/地點/耶利哥.md |
+| 2 | 約但河 | 0.561 | link_folder/地點/約但河.md |
 | 3 | 摩押平原 | 0.519 | link_folder/地點/摩押平原.md |
-| 4 | 迦南地 | 0.507 | link_folder/地點/迦南地.md |
-| 5 | 河東城邑的位置考據 | 0.507 | link_folder/背景/河東城邑的位置考據.md |
+| 4 | 河東城邑的位置考據 | 0.507 | link_folder/背景/河東城邑的位置考據.md |
+| 5 | 迦南地 | 0.496 | link_folder/地點/迦南地.md |
 
 判定：✅ 建議使用既有條目 [[耶利哥]]（同名／字面對應）
 
@@ -557,7 +557,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦南地 | 0.641 | link_folder/地點/迦南地.md |
+| 1 | 迦南地 | 0.617 | link_folder/地點/迦南地.md |
 | 2 | 迦南人 | 0.616 | link_folder/人物/迦南人.md |
 | 3 | 迦南人與比利洗人 | 0.583 | link_folder/歷史/迦南人與比利洗人.md |
 | 4 | 希伯來人之地 | 0.568 | link_folder/地點/希伯來人之地.md |
@@ -577,11 +577,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約但河 | 0.743 | link_folder/地點/約但河.md |
+| 1 | 約但河 | 0.713 | link_folder/地點/約但河.md |
 | 2 | 摩押平原 | 0.653 | link_folder/地點/摩押平原.md |
-| 3 | 耶利哥 | 0.588 | link_folder/地點/耶利哥.md |
+| 3 | 耶利哥 | 0.578 | link_folder/地點/耶利哥.md |
 | 4 | 約旦河 | 0.539 | link_folder/地點/約旦河.md |
-| 5 | 迦南地 | 0.529 | link_folder/地點/迦南地.md |
+| 5 | 什亭（亞伯什亭） | 0.523 | link_folder/地點/什亭（亞伯什亭）.md |
 
 判定：✅ 建議使用既有條目 [[約但河]]（同名／字面對應）
 
@@ -596,7 +596,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 瑪拉苦水變甜 | 0.766 | link_folder/事件/瑪拉苦水變甜.md |
+| 1 | 瑪拉苦水變甜 | 0.759 | link_folder/事件/瑪拉苦水變甜.md |
 | 2 | 瑪拉 | 0.693 | link_folder/地點/瑪拉.md |
 | 3 | 一棵樹 | 0.622 | link_folder/原文/一棵樹.md |
 | 4 | 耶和華拉法 | 0.443 | link_folder/神學/耶和華拉法.md |
@@ -615,8 +615,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 過紅海 | 0.737 | link_folder/歷史/過紅海.md |
-| 2 | 海（紅海） | 0.676 | link_folder/地點/海（紅海）.md |
+| 1 | 過紅海 | 0.721 | link_folder/歷史/過紅海.md |
+| 2 | 海（紅海） | 0.678 | link_folder/地點/海（紅海）.md |
 | 3 | 紅海分開 | 0.645 | link_folder/歷史/紅海分開.md |
 | 4 | 紅海曠野 | 0.620 | link_folder/地點/紅海曠野.md |
 | 5 | 詩一零六9 紅海乾地 | 0.608 | link_folder/互文/詩一零六9 紅海乾地.md |
@@ -655,7 +655,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 曠野飄流四十年 | 0.662 | link_folder/歷史/曠野飄流四十年.md |
-| 2 | 加低斯 | 0.610 | link_folder/地點/加低斯.md |
+| 2 | 加低斯 | 0.617 | link_folder/地點/加低斯.md |
 | 3 | 加低斯巴尼亞事件 | 0.599 | link_folder/歷史/加低斯巴尼亞事件.md |
 | 4 | 四百三十年 | 0.572 | link_folder/原文/四百三十年.md |
 | 5 | 四十的屬靈意義 | 0.556 | link_folder/原文/四十的屬靈意義.md |
@@ -674,7 +674,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 逾越節 | 0.672 | link_folder/歷史/逾越節.md |
+| 1 | 逾越節 | 0.658 | link_folder/歷史/逾越節.md |
 | 2 | 無酵節 | 0.587 | link_folder/歷史/無酵節.md |
 | 3 | 逾越（Pesach） | 0.579 | link_folder/原文/逾越（Pesach）.md |
 | 4 | 無酵節重申 | 0.579 | link_folder/歷史/無酵節重申.md |
@@ -693,11 +693,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 第十災（殺長子之災） | 0.765 | link_folder/歷史/第十災（殺長子之災）.md |
+| 1 | 第十災（殺長子之災） | 0.774 | link_folder/歷史/第十災（殺長子之災）.md |
 | 2 | 長子之死 | 0.714 | link_folder/歷史/長子之死.md |
 | 3 | 神為何擊殺埃及眾長子 | 0.667 | link_folder/解經爭議/神為何擊殺埃及眾長子.md |
 | 4 | 詩七八51、一三六10 擊殺長子 | 0.665 | link_folder/互文/詩七八51、一三六10 擊殺長子.md |
-| 5 | 十災 | 0.626 | link_folder/歷史/十災.md |
+| 5 | 耶和華敗壞埃及一切神 | 0.621 | link_folder/歷史/耶和華敗壞埃及一切神.md |
 
 判定：✅ 建議使用既有條目 [[第十災（殺長子之災）]]（同名／字面對應）
 
@@ -713,9 +713,9 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 敗壞他們的神 | 0.751 | link_folder/原文/敗壞他們的神.md |
-| 2 | 十災 | 0.689 | link_folder/歷史/十災.md |
-| 3 | 耶和華敗壞埃及一切神 | 0.657 | link_folder/歷史/耶和華敗壞埃及一切神.md |
-| 4 | 第十災（殺長子之災） | 0.647 | link_folder/歷史/第十災（殺長子之災）.md |
+| 2 | 耶和華敗壞埃及一切神 | 0.657 | link_folder/歷史/耶和華敗壞埃及一切神.md |
+| 3 | 十災 | 0.656 | link_folder/歷史/十災.md |
+| 4 | 第十災（殺長子之災） | 0.649 | link_folder/歷史/第十災（殺長子之災）.md |
 | 5 | 蠅災 | 0.599 | link_folder/歷史/蠅災.md |
 
 判定：✅ 建議使用既有條目 [[十災]]（同名／字面對應）
@@ -733,9 +733,9 @@ query:
 |---|---|---:|---|
 | 1 | 米利暗卒於加低斯 | 0.737 | link_folder/事件/米利暗卒於加低斯.md |
 | 2 | 亞倫去世的日期 | 0.665 | link_folder/主題/亞倫去世的日期.md |
-| 3 | 亞倫 | 0.550 | link_folder/人物/亞倫.md |
-| 4 | 米利暗 | 0.550 | link_folder/人物/米利暗.md |
-| 5 | 亞倫卒於何珥山與祭司職任更替 | 0.526 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
+| 3 | 米利暗 | 0.550 | link_folder/人物/米利暗.md |
+| 4 | 亞倫卒於何珥山與祭司職任更替 | 0.526 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
+| 5 | 摩西八十歲 | 0.524 | link_folder/互文/摩西八十歲.md |
 
 判定：✅ 建議使用既有條目 [[米利暗卒於加低斯]]（同名／字面對應）
 
@@ -751,11 +751,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拈鬮分地（go.ral） | 0.667 | link_folder/主題/拈鬮分地（go.ral）.md |
-| 2 | 耶和華是事奉者的業與分 | 0.502 | link_folder/神學/耶和華是事奉者的業與分.md |
-| 3 | 產業（na.cha.lah） | 0.482 | link_folder/原文/產業（na.cha.lah）.md |
-| 4 | 宗族方言地土地與邦國 | 0.443 | link_folder/主題/宗族方言地土地與邦國.md |
-| 5 | 亞伯拉罕分產 | 0.439 | link_folder/主題/亞伯拉罕分產.md |
+| 1 | 拈鬮分地（go.ral） | 0.656 | link_folder/主題/拈鬮分地（go.ral）.md |
+| 2 | 這地必落給你們為業（na.phal） | 0.503 | link_folder/原文/這地必落給你們為業（na.phal）.md |
+| 3 | 耶和華是事奉者的業與分 | 0.502 | link_folder/神學/耶和華是事奉者的業與分.md |
+| 4 | 產業（na.cha.lah） | 0.483 | link_folder/原文/產業（na.cha.lah）.md |
+| 5 | 宗族方言地土地與邦國 | 0.443 | link_folder/主題/宗族方言地土地與邦國.md |
 
 判定：✅ 建議使用既有條目 [[拈鬮分地（go.ral）]]（同名／字面對應）
 
@@ -771,11 +771,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 產業（na.cha.lah） | 0.608 | link_folder/原文/產業（na.cha.lah）.md |
+| 1 | 產業（na.cha.lah） | 0.602 | link_folder/原文/產業（na.cha.lah）.md |
 | 2 | 業地（a.chuz.zah） | 0.455 | link_folder/原文/業地（a.chuz.zah）.md |
-| 3 | 女兒承受產業的條例 | 0.329 | link_folder/主題/女兒承受產業的條例.md |
-| 4 | 褻瀆（cha.lal） | 0.319 | link_folder/原文/褻瀆（cha.lal）.md |
-| 5 | 耶和華是事奉者的業與分 | 0.316 | link_folder/神學/耶和華是事奉者的業與分.md |
+| 3 | 這地必落給你們為業（na.phal） | 0.391 | link_folder/原文/這地必落給你們為業（na.phal）.md |
+| 4 | 女兒承受產業的條例 | 0.329 | link_folder/主題/女兒承受產業的條例.md |
+| 5 | 褻瀆（cha.lal） | 0.319 | link_folder/原文/褻瀆（cha.lal）.md |
 
 判定：✅ 建議使用既有條目 [[產業（na.cha.lah）]]（同名／字面對應）
 
@@ -791,9 +791,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 邱壇與日像被毀（拜偶像的終極審判） | 0.697 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
+| 1 | 邱壇與日像被毀（拜偶像的終極審判） | 0.703 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
 | 2 | 毀滅迦南偶像的三道命令 | 0.619 | link_folder/主題/毀滅迦南偶像的三道命令.md |
-| 3 | 拆毀偶像律例 | 0.589 | link_folder/事件/拆毀偶像律例.md |
+| 3 | 拆毀偶像律例 | 0.586 | link_folder/事件/拆毀偶像律例.md |
 | 4 | 柱像 | 0.498 | link_folder/原文/柱像.md |
 | 5 | 敗壞他們的神 | 0.491 | link_folder/原文/敗壞他們的神.md |
 
@@ -810,8 +810,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 不可為自己雕刻偶像 | 0.754 | link_folder/神學/不可為自己雕刻偶像.md |
-| 2 | 拆毀偶像律例 | 0.615 | link_folder/事件/拆毀偶像律例.md |
+| 1 | 不可為自己雕刻偶像 | 0.746 | link_folder/神學/不可為自己雕刻偶像.md |
+| 2 | 拆毀偶像律例 | 0.612 | link_folder/事件/拆毀偶像律例.md |
 | 3 | 毀滅迦南偶像的三道命令 | 0.601 | link_folder/主題/毀滅迦南偶像的三道命令.md |
 | 4 | 出20：4-6 | 0.591 | link_folder/互文/出20：4-6.md |
 | 5 | 古代近東偶像崇拜 | 0.586 | link_folder/背景/古代近東偶像崇拜.md |
@@ -829,7 +829,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦南七族（迦南地原住民） | 0.740 | link_folder/背景/迦南七族（迦南地原住民）.md |
+| 1 | 迦南七族（迦南地原住民） | 0.746 | link_folder/背景/迦南七族（迦南地原住民）.md |
 | 2 | 迦南人 | 0.685 | link_folder/人物/迦南人.md |
 | 3 | 迦南人與比利洗人 | 0.677 | link_folder/歷史/迦南人與比利洗人.md |
 | 4 | 比利洗人 | 0.648 | link_folder/人物/比利洗人.md |
@@ -848,9 +848,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拆毀偶像律例 | 0.661 | link_folder/事件/拆毀偶像律例.md |
+| 1 | 拆毀偶像律例 | 0.665 | link_folder/事件/拆毀偶像律例.md |
 | 2 | 毀滅迦南偶像的三道命令 | 0.621 | link_folder/主題/毀滅迦南偶像的三道命令.md |
-| 3 | 邱壇與日像被毀（拜偶像的終極審判） | 0.608 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
+| 3 | 邱壇與日像被毀（拜偶像的終極審判） | 0.601 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
 | 4 | 柱像 | 0.541 | link_folder/原文/柱像.md |
 | 5 | 古代近東偶像崇拜 | 0.535 | link_folder/背景/古代近東偶像崇拜.md |
 
@@ -911,7 +911,7 @@ query:
 | 2 | 民21 與民33 的站名為何不同 | 0.603 | link_folder/解經爭議/民21 與民33 的站名為何不同.md |
 | 3 | 行程表在古代近東的體裁 | 0.577 | link_folder/背景/行程表在古代近東的體裁.md |
 | 4 | 遵著耶和華的吩咐記載路程 | 0.564 | link_folder/主題/遵著耶和華的吩咐記載路程.md |
-| 5 | 汛的曠野 | 0.546 | link_folder/地點/汛的曠野.md |
+| 5 | 汛的曠野 | 0.536 | link_folder/地點/汛的曠野.md |
 
 判定：✅ 建議使用既有條目 [[曠野四十二站]]（同名／字面對應）
 
@@ -969,7 +969,7 @@ query:
 | 2 | 越過耶和華的口（peh） | 0.556 | link_folder/原文/越過耶和華的口（peh）.md |
 | 3 | 遵行 | 0.528 | link_folder/原文/遵行.md |
 | 4 | 耶和華的話臨到 | 0.507 | link_folder/神學/耶和華的話臨到.md |
-| 5 | 摩西 | 0.488 | link_folder/人物/摩西.md |
+| 5 | 在耶和華面前 | 0.486 | link_folder/神學/在耶和華面前.md |
 
 判定：✅ 建議使用既有條目 [[遵著耶和華的吩咐記載路程]]（同名／字面對應）
 
@@ -1004,7 +1004,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 昂然無懼 | 0.795 | link_folder/原文/昂然無懼.md |
+| 1 | 昂然無懼 | 0.785 | link_folder/原文/昂然無懼.md |
 | 2 | 以色列人出埃及的軍隊 | 0.537 | link_folder/歷史/以色列人出埃及的軍隊.md |
 | 3 | 大能的手 | 0.519 | link_folder/神學/大能的手.md |
 | 4 | 以色列人帶兵器 | 0.516 | link_folder/歷史/以色列人帶兵器.md |
@@ -1065,9 +1065,9 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 毀滅迦南偶像的三道命令 | 0.800 | link_folder/主題/毀滅迦南偶像的三道命令.md |
-| 2 | 拆毀偶像律例 | 0.704 | link_folder/事件/拆毀偶像律例.md |
+| 2 | 拆毀偶像律例 | 0.678 | link_folder/事件/拆毀偶像律例.md |
 | 3 | 柱像 | 0.585 | link_folder/原文/柱像.md |
-| 4 | 邱壇與日像被毀（拜偶像的終極審判） | 0.571 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
+| 4 | 邱壇與日像被毀（拜偶像的終極審判） | 0.558 | link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md |
 | 5 | 滅絕 | 0.530 | link_folder/原文/滅絕.md |
 
 判定：✅ 建議使用既有條目 [[毀滅迦南偶像的三道命令]]（同名／字面對應）
@@ -1105,10 +1105,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 普嫩 | 0.821 | link_folder/地點/普嫩.md |
-| 2 | 比哈希錄 | 0.502 | link_folder/地點/比哈希錄.md |
-| 3 | 以旬迦別 | 0.494 | link_folder/地點/以旬迦別.md |
-| 4 | 加低斯 | 0.490 | link_folder/地點/加低斯.md |
-| 5 | 河東城邑的位置考據 | 0.471 | link_folder/背景/河東城邑的位置考據.md |
+| 2 | 比哈希錄 | 0.505 | link_folder/地點/比哈希錄.md |
+| 3 | 加低斯 | 0.497 | link_folder/地點/加低斯.md |
+| 4 | 以旬迦別 | 0.494 | link_folder/地點/以旬迦別.md |
+| 5 | 迦南四境的地名考據 | 0.486 | link_folder/背景/迦南四境的地名考據.md |
 
 判定：✅ 建議使用既有條目 [[普嫩]]（同名／字面對應）
 
@@ -1148,7 +1148,7 @@ query:
 | 2 | 民21 與民33 的站名為何不同 | 0.534 | link_folder/解經爭議/民21 與民33 的站名為何不同.md |
 | 3 | 井之歌（比珥掘井） | 0.524 | link_folder/文化/井之歌（比珥掘井）.md |
 | 4 | 水井 | 0.513 | link_folder/地點/水井.md |
-| 5 | 加低斯 | 0.495 | link_folder/地點/加低斯.md |
+| 5 | 摩西錄 | 0.494 | link_folder/地點/摩西錄.md |
 
 判定：✅ 建議使用既有條目 [[比尼亞干]]（同名／字面對應）
 
@@ -1165,10 +1165,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 亞倫去世的日期 | 0.863 | link_folder/主題/亞倫去世的日期.md |
-| 2 | 亞倫 | 0.614 | link_folder/人物/亞倫.md |
-| 3 | 亞倫卒於何珥山與祭司職任更替 | 0.611 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
-| 4 | 摩西八十歲 | 0.572 | link_folder/互文/摩西八十歲.md |
-| 5 | 何珥山 | 0.566 | link_folder/地點/何珥山.md |
+| 2 | 亞倫卒於何珥山與祭司職任更替 | 0.611 | link_folder/神學/亞倫卒於何珥山與祭司職任更替.md |
+| 3 | 摩西八十歲 | 0.572 | link_folder/互文/摩西八十歲.md |
+| 4 | 何珥山 | 0.566 | link_folder/地點/何珥山.md |
+| 5 | 米利暗卒於加低斯 | 0.562 | link_folder/事件/米利暗卒於加低斯.md |
 
 判定：✅ 建議使用既有條目 [[亞倫去世的日期]]（同名／字面對應）
 

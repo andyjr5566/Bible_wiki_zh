@@ -4,7 +4,7 @@ book: 民數記
 chapter: 34
 candidate_sha256: a2979c4fefdb8e24a8737ba77cbb9d66c80945148567dc13898b45798c7f2005
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 62c3fac9e203db22
+embedding_index_fingerprint: 21c86d464c5e4b6f
 link_index_sha256: bd3a7f56e8ccce25feddf95d779a25b410d78f03075d8d06d9f2a084c9b4d670
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -38,7 +38,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.586 | link_folder/人物/摩西.md |
+| 1 | 摩西 | 0.594 | link_folder/人物/摩西.md |
 | 2 | 耶和華的話臨到 | 0.526 | link_folder/神學/耶和華的話臨到.md |
 | 3 | 耶和華 | 0.510 | link_folder/神學/耶和華.md |
 | 4 | 摩西的呼召與差遣 | 0.508 | link_folder/神學/摩西的呼召與差遣.md |
@@ -58,7 +58,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以利亞撒 | 0.708 | link_folder/人物/以利亞撒.md |
+| 1 | 以利亞撒 | 0.700 | link_folder/人物/以利亞撒.md |
 | 2 | 亞倫的祭司譜系 | 0.603 | link_folder/人物/亞倫的祭司譜系.md |
 | 3 | 以利以謝（人物） | 0.566 | link_folder/人物/以利以謝（人物）.md |
 | 4 | 非尼哈 | 0.554 | link_folder/人物/非尼哈.md |
@@ -78,11 +78,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約書亞 | 0.674 | link_folder/人物/約書亞.md |
+| 1 | 約書亞 | 0.655 | link_folder/人物/約書亞.md |
 | 2 | 約書亞承接摩西 | 0.618 | link_folder/事件/約書亞承接摩西.md |
 | 3 | 摩西與約書亞的權柄差異 | 0.577 | link_folder/主題/摩西與約書亞的權柄差異.md |
 | 4 | 分地的十位支派首領 | 0.555 | link_folder/主題/分地的十位支派首領.md |
-| 5 | 迦勒 | 0.538 | link_folder/人物/迦勒.md |
+| 5 | 迦勒 | 0.530 | link_folder/人物/迦勒.md |
 
 判定：✅ 建議使用既有條目 [[約書亞]]（同名／字面對應）
 
@@ -98,9 +98,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦勒 | 0.728 | link_folder/人物/迦勒.md |
+| 1 | 迦勒 | 0.699 | link_folder/人物/迦勒.md |
 | 2 | 分地的十位支派首領 | 0.608 | link_folder/主題/分地的十位支派首領.md |
-| 3 | 迦得（萬幸） | 0.575 | link_folder/人物/迦得（萬幸）.md |
+| 3 | 迦得（萬幸） | 0.586 | link_folder/人物/迦得（萬幸）.md |
 | 4 | 專心跟從主與另一個心志 | 0.552 | link_folder/神學/專心跟從主與另一個心志.md |
 | 5 | 十二探子窺探迦南地 | 0.519 | link_folder/事件/十二探子窺探迦南地.md |
 
@@ -119,10 +119,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 兩支派半求河東之地為業 | 0.618 | link_folder/事件/兩支派半求河東之地為業.md |
-| 2 | 流便 | 0.589 | link_folder/人物/流便.md |
-| 3 | 迦得（萬幸） | 0.533 | link_folder/人物/迦得（萬幸）.md |
+| 2 | 流便 | 0.569 | link_folder/人物/流便.md |
+| 3 | 迦得（萬幸） | 0.551 | link_folder/人物/迦得（萬幸）.md |
 | 4 | 流便失去長子名分 | 0.527 | link_folder/神學/流便失去長子名分.md |
-| 5 | 約但河 | 0.518 | link_folder/地點/約但河.md |
+| 5 | 約但河 | 0.520 | link_folder/地點/約但河.md |
 
 判定：✅ 建議使用既有條目 [[流便]]（同名／字面對應）
 
@@ -138,11 +138,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦得（萬幸） | 0.661 | link_folder/人物/迦得（萬幸）.md |
+| 1 | 迦得（萬幸） | 0.669 | link_folder/人物/迦得（萬幸）.md |
 | 2 | 兩支派半求河東之地為業 | 0.582 | link_folder/事件/兩支派半求河東之地為業.md |
 | 3 | 迦得（幸運） | 0.559 | link_folder/原文/迦得（幸運）.md |
-| 4 | 迦勒 | 0.544 | link_folder/人物/迦勒.md |
-| 5 | 約但河 | 0.520 | link_folder/地點/約但河.md |
+| 4 | 迦勒 | 0.542 | link_folder/人物/迦勒.md |
+| 5 | 約但河 | 0.526 | link_folder/地點/約但河.md |
 
 判定：✅ 建議使用既有條目 [[迦得（萬幸）]]（同名／字面對應）
 
@@ -158,7 +158,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 瑪拿西 | 0.693 | link_folder/人物/瑪拿西.md |
+| 1 | 瑪拿西 | 0.654 | link_folder/人物/瑪拿西.md |
 | 2 | 瑪拿西半支派為何留在河東 | 0.591 | link_folder/解經爭議/瑪拿西半支派為何留在河東.md |
 | 3 | 瑪吉 | 0.562 | link_folder/人物/瑪吉.md |
 | 4 | 收納以法蓮與瑪拿西 | 0.538 | link_folder/歷史/收納以法蓮與瑪拿西.md |
@@ -178,9 +178,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約瑟 | 0.618 | link_folder/人物/約瑟.md |
-| 2 | 約瑟（增添／除去） | 0.581 | link_folder/原文/約瑟（增添／除去）.md |
-| 3 | 瑪拿西 | 0.556 | link_folder/人物/瑪拿西.md |
+| 1 | 約瑟（增添／除去） | 0.581 | link_folder/原文/約瑟（增添／除去）.md |
+| 2 | 約瑟 | 0.580 | link_folder/人物/約瑟.md |
+| 3 | 瑪拿西 | 0.559 | link_folder/人物/瑪拿西.md |
 | 4 | 約瑟（增添） | 0.524 | link_folder/人物/約瑟（增添）.md |
 | 5 | 約瑟在埃及 | 0.522 | link_folder/人物/約瑟在埃及.md |
 
@@ -198,11 +198,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 猶大支派 | 0.615 | link_folder/人物/猶大支派.md |
+| 1 | 猶大支派 | 0.595 | link_folder/人物/猶大支派.md |
 | 2 | 分地的十位支派首領 | 0.591 | link_folder/主題/分地的十位支派首領.md |
-| 3 | 迦勒 | 0.545 | link_folder/人物/迦勒.md |
-| 4 | 猶大（雅各之子） | 0.527 | link_folder/人物/猶大（雅各之子）.md |
-| 5 | 拿順 | 0.525 | link_folder/人物/拿順.md |
+| 3 | 猶大（雅各之子） | 0.527 | link_folder/人物/猶大（雅各之子）.md |
+| 4 | 拿順 | 0.525 | link_folder/人物/拿順.md |
+| 5 | 珥和俄南死在迦南地（創38：6-10） | 0.513 | link_folder/互文/珥和俄南死在迦南地（創38：6-10）.md |
 
 判定：✅ 建議使用既有條目 [[猶大支派]]（同名／字面對應）
 
@@ -218,9 +218,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西緬 | 0.666 | link_folder/人物/西緬.md |
+| 1 | 西緬 | 0.646 | link_folder/人物/西緬.md |
 | 2 | 「西緬」名字含義 | 0.550 | link_folder/原文/「西緬」名字含義.md |
-| 3 | 西布倫（同住） | 0.550 | link_folder/人物/西布倫（同住）.md |
+| 3 | 西布倫（同住） | 0.544 | link_folder/人物/西布倫（同住）.md |
 | 4 | 西緬支派人數銳減 | 0.528 | link_folder/主題/西緬支派人數銳減.md |
 | 5 | 亞捫人 | 0.525 | link_folder/人物/亞捫人.md |
 
@@ -238,9 +238,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 便雅憫 | 0.621 | link_folder/人物/便雅憫.md |
+| 1 | 便雅憫 | 0.626 | link_folder/人物/便雅憫.md |
 | 2 | 便雅憫名字含義 | 0.592 | link_folder/原文/便雅憫名字含義.md |
-| 3 | 流便 | 0.521 | link_folder/人物/流便.md |
+| 3 | 流便 | 0.519 | link_folder/人物/流便.md |
 | 4 | 便亞米 | 0.514 | link_folder/人物/便亞米.md |
 | 5 | 「便亞米」名字含義 | 0.510 | link_folder/原文/「便亞米」名字含義.md |
 
@@ -259,10 +259,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 但支派至終定居於何地 | 0.588 | link_folder/解經爭議/但支派至終定居於何地.md |
-| 2 | 但支派 | 0.585 | link_folder/人物/但支派.md |
+| 2 | 但支派 | 0.552 | link_folder/人物/但支派.md |
 | 3 | 但（審判） | 0.505 | link_folder/人物/但（審判）.md |
 | 4 | 分地的十位支派首領 | 0.471 | link_folder/主題/分地的十位支派首領.md |
-| 5 | 猶大支派 | 0.453 | link_folder/人物/猶大支派.md |
+| 5 | 但 | 0.453 | link_folder/地點/但.md |
 
 判定：✅ 建議使用既有條目 [[但支派]]（同名／字面對應）
 
@@ -278,11 +278,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以法蓮 | 0.629 | link_folder/人物/以法蓮.md |
+| 1 | 以法蓮 | 0.633 | link_folder/人物/以法蓮.md |
 | 2 | 亞蘭人 | 0.506 | link_folder/人物/亞蘭人.md |
-| 3 | 拿弗他利 | 0.489 | link_folder/人物/拿弗他利.md |
-| 4 | 西布倫（同住） | 0.483 | link_folder/人物/西布倫（同住）.md |
-| 5 | 以倫 | 0.482 | link_folder/人物/以倫.md |
+| 3 | 西布倫（同住） | 0.482 | link_folder/人物/西布倫（同住）.md |
+| 4 | 以倫 | 0.482 | link_folder/人物/以倫.md |
+| 5 | 以法他 | 0.479 | link_folder/地點/以法他.md |
 
 判定：✅ 建議使用既有條目 [[以法蓮]]（同名／字面對應）
 
@@ -298,11 +298,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 西布倫（同住） | 0.737 | link_folder/人物/西布倫（同住）.md |
+| 1 | 西布倫（同住） | 0.743 | link_folder/人物/西布倫（同住）.md |
 | 2 | 西珥 | 0.517 | link_folder/地點/西珥.md |
-| 3 | 西緬 | 0.511 | link_folder/人物/西緬.md |
-| 4 | 以法蓮 | 0.483 | link_folder/人物/以法蓮.md |
-| 5 | 以東 | 0.483 | link_folder/地點/以東.md |
+| 3 | 西緬 | 0.515 | link_folder/人物/西緬.md |
+| 4 | 以法蓮 | 0.489 | link_folder/人物/以法蓮.md |
+| 5 | 以東 | 0.481 | link_folder/地點/以東.md |
 
 判定：✅ 建議使用既有條目 [[西布倫（同住）]]（同名／字面對應）
 
@@ -318,11 +318,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 以薩迦（價值） | 0.713 | link_folder/人物/以薩迦（價值）.md |
+| 1 | 以薩迦（價值） | 0.715 | link_folder/人物/以薩迦（價值）.md |
 | 2 | 以薩迦（報酬） | 0.594 | link_folder/原文/以薩迦（報酬）.md |
 | 3 | 以掃 | 0.460 | link_folder/人物/以掃.md |
 | 4 | 以撒 | 0.457 | link_folder/人物/以撒.md |
-| 5 | 以利亞撒 | 0.457 | link_folder/人物/以利亞撒.md |
+| 5 | 以利亞撒 | 0.455 | link_folder/人物/以利亞撒.md |
 
 判定：✅ 建議使用既有條目 [[以薩迦（價值）]]（同名／字面對應）
 
@@ -338,11 +338,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞設（有福） | 0.706 | link_folder/人物/亞設（有福）.md |
+| 1 | 亞設（有福） | 0.720 | link_folder/人物/亞設（有福）.md |
 | 2 | 亞述 | 0.526 | link_folder/地點/亞述.md |
-| 3 | 以薩迦（價值） | 0.520 | link_folder/人物/以薩迦（價值）.md |
+| 3 | 以薩迦（價值） | 0.513 | link_folder/人物/以薩迦（價值）.md |
 | 4 | 創世記27章以掃所得祝福 | 0.506 | link_folder/互文/創世記27章以掃所得祝福.md |
-| 5 | 以掃 | 0.500 | link_folder/人物/以掃.md |
+| 5 | 以法蓮 | 0.504 | link_folder/人物/以法蓮.md |
 
 判定：✅ 建議使用既有條目 [[亞設（有福）]]（同名／字面對應）
 
@@ -358,7 +358,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 拿弗他利 | 0.627 | link_folder/人物/拿弗他利.md |
+| 1 | 拿弗他利 | 0.600 | link_folder/人物/拿弗他利.md |
 | 2 | 拿順 | 0.550 | link_folder/人物/拿順.md |
 | 3 | 亞衲族與偉人拿非林 | 0.510 | link_folder/背景/亞衲族與偉人拿非林.md |
 | 4 | 分地的十位支派首領 | 0.500 | link_folder/主題/分地的十位支派首領.md |
@@ -378,11 +378,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 迦南地 | 0.700 | link_folder/地點/迦南地.md |
+| 1 | 迦南地 | 0.703 | link_folder/地點/迦南地.md |
 | 2 | 迦南人 | 0.645 | link_folder/人物/迦南人.md |
 | 3 | 迦南四境 | 0.636 | link_folder/主題/迦南四境.md |
 | 4 | 迦南地的居民分佈 | 0.629 | link_folder/背景/迦南地的居民分佈.md |
-| 5 | 約但河 | 0.598 | link_folder/地點/約但河.md |
+| 5 | 約但河 | 0.601 | link_folder/地點/約但河.md |
 
 判定：✅ 建議使用既有條目 [[迦南地]]（同名／字面對應）
 
@@ -399,10 +399,10 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 迦南四境 | 0.482 | link_folder/主題/迦南四境.md |
-| 2 | 以東 | 0.478 | link_folder/地點/以東.md |
+| 2 | 以東 | 0.476 | link_folder/地點/以東.md |
 | 3 | 面東定向的左右方位 | 0.464 | link_folder/背景/面東定向的左右方位.md |
 | 4 | 東方人之地 | 0.454 | link_folder/地點/東方人之地.md |
-| 5 | 以倘 | 0.444 | link_folder/地點/以倘.md |
+| 5 | 以倘 | 0.441 | link_folder/地點/以倘.md |
 
 判定：✅ 建議使用既有條目 [[以東]]（同名／字面對應）
 
@@ -418,7 +418,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 加低斯 | 0.595 | link_folder/地點/加低斯.md |
+| 1 | 加低斯 | 0.609 | link_folder/地點/加低斯.md |
 | 2 | 加低斯巴尼亞事件 | 0.522 | link_folder/歷史/加低斯巴尼亞事件.md |
 | 3 | 安密巴 | 0.517 | link_folder/地點/安密巴.md |
 | 4 | 十二探子自巴蘭或加低斯巴尼亞出發之解經爭議 | 0.501 | link_folder/解經爭議/十二探子自巴蘭或加低斯巴尼亞出發之解經爭議.md |
@@ -438,7 +438,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 鹽海 | 0.745 | link_folder/地點/鹽海.md |
+| 1 | 鹽海 | 0.721 | link_folder/地點/鹽海.md |
 | 2 | 迦南四境 | 0.605 | link_folder/主題/迦南四境.md |
 | 3 | 大海（地中海） | 0.541 | link_folder/地點/大海（地中海）.md |
 | 4 | 死海 | 0.535 | link_folder/地點/死海.md |
@@ -458,7 +458,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約但河 | 0.721 | link_folder/地點/約但河.md |
+| 1 | 約但河 | 0.728 | link_folder/地點/約但河.md |
 | 2 | 迦南四境 | 0.637 | link_folder/主題/迦南四境.md |
 | 3 | 迦南四境的地名考據 | 0.572 | link_folder/背景/迦南四境的地名考據.md |
 | 4 | 約旦河 | 0.550 | link_folder/地點/約旦河.md |
@@ -479,7 +479,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 耶利哥 | 0.730 | link_folder/地點/耶利哥.md |
-| 2 | 約但河 | 0.597 | link_folder/地點/約但河.md |
+| 2 | 約但河 | 0.595 | link_folder/地點/約但河.md |
 | 3 | 兩支派半求河東之地為業 | 0.518 | link_folder/事件/兩支派半求河東之地為業.md |
 | 4 | 雅謝 | 0.509 | link_folder/地點/雅謝.md |
 | 5 | 河東城邑的位置考據 | 0.505 | link_folder/背景/河東城邑的位置考據.md |
@@ -541,7 +541,7 @@ query:
 | 2 | 河東之地是神的旨意還是神的允許 | 0.662 | link_folder/解經爭議/河東之地是神的旨意還是神的允許.md |
 | 3 | 瑪拿西半支派為何留在河東 | 0.651 | link_folder/解經爭議/瑪拿西半支派為何留在河東.md |
 | 4 | 河東二支派半最先被擄（代上5：25-26） | 0.585 | link_folder/互文/河東二支派半最先被擄（代上5：25-26）.md |
-| 5 | 約但河 | 0.577 | link_folder/地點/約但河.md |
+| 5 | 約但河 | 0.575 | link_folder/地點/約但河.md |
 
 判定：✅ 建議使用既有條目 [[兩支派半求河東之地為業]]（同名／字面對應）
 
@@ -557,7 +557,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 迦南四境 | 0.760 | link_folder/主題/迦南四境.md |
-| 2 | 迦南地 | 0.626 | link_folder/地點/迦南地.md |
+| 2 | 迦南地 | 0.618 | link_folder/地點/迦南地.md |
 | 3 | 迦南四境的地名考據 | 0.589 | link_folder/背景/迦南四境的地名考據.md |
 | 4 | 曠野四十二站 | 0.565 | link_folder/主題/曠野四十二站.md |
 | 5 | 神所定的邊界 | 0.556 | link_folder/神學/神所定的邊界.md |
@@ -578,7 +578,7 @@ query:
 | 1 | 迦南四境的地名考據 | 0.838 | link_folder/背景/迦南四境的地名考據.md |
 | 2 | 迦南四境 | 0.581 | link_folder/主題/迦南四境.md |
 | 3 | 河東城邑的位置考據 | 0.557 | link_folder/背景/河東城邑的位置考據.md |
-| 4 | 加低斯 | 0.548 | link_folder/地點/加低斯.md |
+| 4 | 加低斯 | 0.556 | link_folder/地點/加低斯.md |
 | 5 | 迦南地的居民分佈 | 0.538 | link_folder/背景/迦南地的居民分佈.md |
 
 判定：✅ 建議使用既有條目 [[迦南四境的地名考據]]（同名／字面對應）
@@ -597,7 +597,7 @@ query:
 | 1 | 四界與亞伯拉罕之約的落差 | 0.910 | link_folder/解經爭議/四界與亞伯拉罕之約的落差.md |
 | 2 | 亞伯拉罕之約 | 0.557 | link_folder/神學/亞伯拉罕之約.md |
 | 3 | 神所定的邊界 | 0.555 | link_folder/神學/神所定的邊界.md |
-| 4 | 埃及河的地理辨識 | 0.550 | link_folder/解經爭議/埃及河的地理辨識.md |
+| 4 | 埃及河的地理辨識 | 0.551 | link_folder/解經爭議/埃及河的地理辨識.md |
 | 5 | 「伯拉大河」名稱 | 0.550 | link_folder/原文/「伯拉大河」名稱.md |
 
 判定：✅ 建議使用既有條目 [[四界與亞伯拉罕之約的落差]]（同名／字面對應）
@@ -635,7 +635,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 基尼烈湖 | 0.834 | link_folder/地點/基尼烈湖.md |
-| 2 | 海（紅海） | 0.484 | link_folder/地點/海（紅海）.md |
+| 2 | 海（紅海） | 0.487 | link_folder/地點/海（紅海）.md |
 | 3 | 基列 | 0.474 | link_folder/地點/基列.md |
 | 4 | 紅海指的是哪個海 | 0.469 | link_folder/解經爭議/紅海指的是哪個海.md |
 | 5 | 基列山 | 0.450 | link_folder/地點/基列山.md |
@@ -654,8 +654,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 埃及河 | 0.764 | link_folder/地點/埃及河.md |
-| 2 | 埃及河的地理辨識 | 0.761 | link_folder/解經爭議/埃及河的地理辨識.md |
+| 1 | 埃及河的地理辨識 | 0.748 | link_folder/解經爭議/埃及河的地理辨識.md |
+| 2 | 埃及河 | 0.728 | link_folder/地點/埃及河.md |
 | 3 | 「河」是否專指尼羅河 | 0.599 | link_folder/解經爭議/「河」是否專指尼羅河.md |
 | 4 | 尼羅河 | 0.571 | link_folder/地點/尼羅河.md |
 | 5 | 埃及 | 0.540 | link_folder/地點/埃及.md |
@@ -673,8 +673,8 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 埃及河的地理辨識 | 0.849 | link_folder/解經爭議/埃及河的地理辨識.md |
-| 2 | 埃及河 | 0.774 | link_folder/地點/埃及河.md |
+| 1 | 埃及河的地理辨識 | 0.846 | link_folder/解經爭議/埃及河的地理辨識.md |
+| 2 | 埃及河 | 0.741 | link_folder/地點/埃及河.md |
 | 3 | 「河」是否專指尼羅河 | 0.619 | link_folder/解經爭議/「河」是否專指尼羅河.md |
 | 4 | 「伯拉大河」名稱 | 0.550 | link_folder/原文/「伯拉大河」名稱.md |
 | 5 | 尼羅河 | 0.545 | link_folder/地點/尼羅河.md |
@@ -695,7 +695,7 @@ query:
 |---|---|---:|---|
 | 1 | 大海（地中海） | 0.803 | link_folder/地點/大海（地中海）.md |
 | 2 | 迦南四境 | 0.537 | link_folder/主題/迦南四境.md |
-| 3 | 海（紅海） | 0.489 | link_folder/地點/海（紅海）.md |
+| 3 | 海（紅海） | 0.486 | link_folder/地點/海（紅海）.md |
 | 4 | 迦南四境的地名考據 | 0.451 | link_folder/背景/迦南四境的地名考據.md |
 | 5 | 紅海指的是哪個海 | 0.438 | link_folder/解經爭議/紅海指的是哪個海.md |
 
@@ -734,8 +734,8 @@ query:
 |---|---|---:|---|
 | 1 | 這地必落給你們為業（na.phal） | 0.826 | link_folder/原文/這地必落給你們為業（na.phal）.md |
 | 2 | 拈鬮分地（go.ral） | 0.538 | link_folder/主題/拈鬮分地（go.ral）.md |
-| 3 | 迦南四境 | 0.493 | link_folder/主題/迦南四境.md |
-| 4 | 迦南地 | 0.493 | link_folder/地點/迦南地.md |
+| 3 | 迦南地 | 0.500 | link_folder/地點/迦南地.md |
+| 4 | 迦南四境 | 0.493 | link_folder/主題/迦南四境.md |
 | 5 | 產業（na.cha.lah） | 0.491 | link_folder/原文/產業（na.cha.lah）.md |
 
 判定：✅ 建議使用既有條目 [[這地必落給你們為業（na.phal）]]（同名／字面對應）
