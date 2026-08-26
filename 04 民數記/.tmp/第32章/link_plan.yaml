@@ -1,0 +1,446 @@
+book: 民數記
+chapter: 32
+A_use_directly:
+- name: 流便
+  suggested_type: 人物
+  evidence: 第1節「流便子孫和迦得子孫的牲畜極其眾多」；CT 註流便迦得同屬第二隊、安營會幕南邊；BH 註流便是雅各長子但因過犯失去領導地位。
+  surfaces:
+  - phrase: 流便
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 第1、6、25、29、31、33節；GT 串珠指出流便是長子理應排名在先，但主謀實為迦得支派，所以下文多次以迦得排首；BH 註迦得支派以勇士著稱（代上12:8）。
+  surfaces:
+  - phrase: 迦得
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第33、39、40、41節「約瑟的兒子瑪拿西半個支派」「瑪拿西的兒子瑪吉」；CT 註瑪拿西子孫共八個家族。
+  surfaces:
+  - phrase: 瑪拿西
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 全章的仲裁者：第6-15節責備、第20-24節立條件、第28-30節向以利亞撒與約書亞交代、第33、40節分地。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第2節兩支派來見「摩西和祭司以利亞撒，並會眾的首領」；第28節摩西為他們囑咐以利亞撒；CT 註他接續亞倫作大祭司、是宗教最高領袖。
+  surfaces:
+  - phrase: 以利亞撒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第12節與迦勒同列為專心跟從神的兩人；第28節摩西把河東之約交代給他執行；KC 註約書亞後來確實照辦（書22:1-4）。
+  surfaces:
+  - phrase: 約書亞
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 第12節「惟有基尼洗族耶孚尼的兒子迦勒和嫩的兒子約書亞可以看見，因為他們專心跟從我」。
+  surfaces:
+  - phrase: 迦勒
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 基尼洗人
+  suggested_type: 人物
+  evidence: 第12節「基尼洗族耶孚尼的兒子迦勒」；BH 註基尼洗人是被併入猶大支派的族群，顯示神的約超出以色列血統。
+  surfaces:
+  - phrase: 基尼洗族
+  match_type: exact
+  existing_title: 基尼洗人
+  existing_path: link_folder/人物/基尼洗人.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第33節「亞摩利王西宏的國」、第39節瑪吉子孫「趕出那裡的亞摩利人」。
+  surfaces:
+  - phrase: 亞摩利人
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 第33節「約瑟的兒子瑪拿西半個支派」；GT 丁良才註瑪吉的兒子被養在約瑟的膝上（創50:23）。
+  surfaces:
+  - phrase: 約瑟
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: 第11節耶和華起誓應許之地是「對亞伯拉罕、以撒、雅各起誓應許之地」。
+  surfaces:
+  - phrase: 亞伯拉罕
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: 第11節「亞伯拉罕、以撒、雅各」。
+  surfaces:
+  - phrase: 以撒
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: CT 與 GT 丁良才都指出第41節的睚珥其實出自猶大支派：希斯崙的兒子西割娶瑪吉的女兒所生，歸屬母親家族才稱為瑪拿西的子孫（代上2:21-22）。
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: CT 註第21節「等他趕出他的仇敵」的『祂的仇敵』指迦南人。
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 亞捫人
+  suggested_type: 人物
+  evidence: KC 註約但河東之地原屬亞捫人，後被亞摩利王西宏與噩奪去，以色列人才得以攻取（民21:21-35）；GT《舊約背景註釋》註雅謝位於亞捫邊界上。
+  match_type: exact
+  existing_title: 亞捫人
+  existing_path: link_folder/人物/亞捫人.md
+- name: 基列
+  suggested_type: 地點
+  evidence: 第1節「雅謝地和基列地是可牧放牲畜之地」；GT 丁良才註基列有廣狹兩義；CT 註廣義泛指約但河東以色列人所佔領之地。
+  surfaces:
+  - phrase: 基列
+    verses:
+    - 1
+    - 26
+    - 29
+    - 39
+    - 40
+  match_type: exact
+  existing_title: 基列
+  existing_path: link_folder/地點/基列.md
+- name: 巴珊
+  suggested_type: 地點
+  evidence: 第33節「巴珊王噩的國」；CT 註噩的國在北邊。
+  surfaces:
+  - phrase: 巴珊
+  match_type: exact
+  existing_title: 巴珊
+  existing_path: link_folder/地點/巴珊.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第5節「不要領我們過約但河」、第19、21、29、32節；KC 以過約但河象徵進入屬天福分。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 第30、32節；第7、9節「耶和華所賜給他們的那地」即迦南。
+  surfaces:
+  - phrase: 迦南地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: GT 丁良才註第36節伯寧拉、伯哈蘭這兩座城位於摩押平原；KC 註兩支派當時所在之地就是摩押平原。
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 亞述
+  suggested_type: 地點
+  evidence: GT 丁良才與《啟導本》都指出這二支派半在以色列亡國之前便為亞述國攻入、最先被擄（代上5:26）；KC 引代上5:25-26 全段。
+  match_type: exact
+  existing_title: 亞述
+  existing_path: link_folder/地點/亞述.md
+- name: 為定與廢去（qum 與 pa.rar）
+  suggested_type: 原文
+  evidence: 第7、9節「你們為何使以色列人灰心喪膽」的動詞就是民30 願的機制裡那個「不應承」——STEP 顯示兩處同為 H5106（詞典形 nu，詞典義
+    to forbid）；GT《聖經精讀本》註這句話是「使心傾斜」的意思，源於具有禁止、反對、拒絕等意思的希伯來語，受詞是 lev（心）。
+  surfaces:
+  - phrase: 灰心喪膽
+  match_type: exact
+  existing_title: 為定與廢去（qum 與 pa.rar）
+  existing_path: link_folder/原文/為定與廢去（qum 與 pa.rar）.md
+- name: 業地（a.chuz.zah）
+  suggested_type: 原文
+  evidence: 第5節「求你把這地給我們為業」、第22、29、32節；STEP 顯示「為業」是 H272 a.chuz.zah，與第18-19節的「產業」na.cha.lah（H5159）不是同一個字；第30節「得產業」是同源動詞
+    H270 a.chaz。
+  surfaces:
+  - phrase: 為業
+    verses:
+    - 5
+    - 22
+    - 29
+    - 32
+  - phrase: 得產業
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 業地（a.chuz.zah）
+  existing_path: link_folder/原文/業地（a.chuz.zah）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第18節「直等到以色列人各承受自己的產業」、第19節「我們的產業是坐落在約但河東邊這裡」；STEP 顯示 H5159 na.cha.lah、動詞
+    H5157 na.chal，第18節是 Hitpael。
+  surfaces:
+  - phrase: 產業
+    verses:
+    - 18
+    - 19
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 專心跟從主與另一個心志
+  suggested_type: 神學
+  evidence: 第11、12節「因為他們沒有專心跟從我」「因為他們專心跟從我」；CT 註字面意思是「完全跟在我後面」；STEP 顯示是 mil.'U（H4390，詞典義
+    to fill）＋ 'a.cha.Rei（H310A，詞典義 after）。
+  surfaces:
+  - phrase: 專心跟從
+  match_type: exact
+  existing_title: 專心跟從主與另一個心志
+  existing_path: link_folder/神學/專心跟從主與另一個心志.md
+- name: 流便失去長子名分
+  suggested_type: 神學
+  evidence: BH 註第1節：流便是雅各的長子，但他的支派因流便的過犯（創49:3-4）沒有保住領導地位；本章第6節起摩西的對話與第25、29、31節的敘述都把迦得排在流便之前。
+  match_type: exact
+  existing_title: 流便失去長子名分
+  existing_path: link_folder/神學/流便失去長子名分.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: KC 註河東之地不是照拈鬮分的（對照書14:1-2）：摩西把他們自己選的地給他們，而在應許地裡每一支派得的是神所選的分；GT《聖經精讀本》同樣指出原本土地分配是通過拈鬮以神的主權決定（民26:55），摩西這次並沒有用這個方法。
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 戰利品的分配辦法
+  suggested_type: 主題
+  evidence: GT 丁良才註第1節「牲畜，極其眾多」時直接指向民31:32-47，即米甸之役的戰利品清單；本章兩支派的牲畜規模與上一章的分配辦法直接相接。
+  match_type: exact
+  existing_title: 戰利品的分配辦法
+  existing_path: link_folder/主題/戰利品的分配辦法.md
+- name: 十二探子窺探迦南地
+  suggested_type: 事件
+  evidence: 第8-9節摩西回顧「我先前從加低斯巴尼亞打發你們先祖去窺探那地」「他們上以實各谷，去窺探那地回來的時候，使以色列人灰心喪膽」。
+  surfaces:
+  - phrase: 窺探那地
+  match_type: exact
+  existing_title: 十二探子窺探迦南地
+  existing_path: link_folder/事件/十二探子窺探迦南地.md
+- name: 以實各谷的一掛葡萄
+  suggested_type: 主題
+  evidence: 第9節「他們上以實各谷，去窺探那地回來的時候」；BH 註以實各谷正是探子砍下那掛要用槓抬的葡萄之處（民13:23）。
+  surfaces:
+  - phrase: 以實各谷
+  match_type: exact
+  existing_title: 以實各谷的一掛葡萄
+  existing_path: link_folder/主題/以實各谷的一掛葡萄.md
+- name: 加低斯巴尼亞事件
+  suggested_type: 歷史
+  evidence: 第8節「我先前從加低斯巴尼亞打發你們先祖去窺探那地，他們也是這樣行」；摩西以三十八年前的事警戒兩支派。
+  surfaces:
+  - phrase: 加低斯巴尼亞
+  match_type: exact
+  existing_title: 加低斯巴尼亞事件
+  existing_path: link_folder/歷史/加低斯巴尼亞事件.md
+- name: 曠野飄流四十年
+  suggested_type: 歷史
+  evidence: 第13節「使他們在曠野飄流四十年，等到在耶和華眼前行惡的那一代人都消滅了」；CT 註四十年是概數，轉向之後實約三十八年（申2:14）。
+  match_type: exact
+  existing_title: 曠野飄流四十年
+  existing_path: link_folder/歷史/曠野飄流四十年.md
+- name: 摩西不得進入應許之地
+  suggested_type: 事件
+  evidence: KC 註兩支派求「不要領我們過約但河」這句話必定刺痛了摩西——他自己極想進去卻不被准許。
+  match_type: exact
+  existing_title: 摩西不得進入應許之地
+  existing_path: link_folder/事件/摩西不得進入應許之地.md
+- name: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  suggested_type: 互文
+  evidence: 第33節「摩西將亞摩利王西宏的國和巴珊王噩的國……都給了迦得子孫和流便子孫」；CT 註西宏的國在南邊。
+  surfaces:
+  - phrase: 西宏
+  match_type: exact
+  existing_title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  existing_path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+- name: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  suggested_type: 互文
+  evidence: 第33節「巴珊王噩的國」；CT 註噩的國在北邊。
+  surfaces:
+  - phrase: 噩
+  match_type: exact
+  existing_title: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  existing_path: link_folder/互文/以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）.md
+B_needs_update: []
+C_new_formal:
+- name: 瑪吉
+  suggested_type: 人物
+  evidence: 第39、40節「瑪拿西的兒子瑪吉，他的子孫往基列去，佔了那地」；CT 註瑪吉是瑪拿西唯一的兒子；GT 丁良才註他的兒子被養在約瑟膝上（創50:23）、瑪吉人最勇敢好冒險。
+  surfaces:
+  - phrase: 瑪吉
+  target_path: link_folder/人物/瑪吉.md
+- name: 睚珥
+  suggested_type: 人物
+  evidence: 第41節「瑪拿西的子孫睚珥去佔了基列的村莊」；CT 與 GT 都指出他是猶大支派希斯崙之子西割與瑪吉女兒所生；GT 註士師睚珥（士10:3）大概是他的後裔。
+  surfaces:
+  - phrase: 子孫睚珥
+    verses:
+    - 41
+  target_path: link_folder/人物/睚珥.md
+- name: 挪巴
+  suggested_type: 人物
+  evidence: 第42節「挪巴去佔了基納和基納的鄉村，就按自己的名稱基納為挪巴」；CT 註他顯然是一個出名的首領但無法推查家世；BH 註基納即今敘利亞的 Qanawat。
+  surfaces:
+  - phrase: 挪巴
+  target_path: link_folder/人物/挪巴.md
+- name: 希實本
+  suggested_type: 地點
+  evidence: 第3、37節；CT 註原屬亞摩利王西宏的都城；GT《舊約背景註釋》定位在馬達巴平原西北角、尼波山東北三哩；BH 註賽15:4、耶48:2 都提到它。
+  surfaces:
+  - phrase: 希實本
+  target_path: link_folder/地點/希實本.md
+- name: 雅謝
+  suggested_type: 地點
+  evidence: 第1、3、35節；CT 註指從亞摩利王西宏奪得之地（民21:32）；GT《舊約背景註釋》定位在雅博河以南十二哩、亞捫邊界上的賈齊爾廢墟；BH
+    註以葡萄園著稱、後成為利未人的城。
+  surfaces:
+  - phrase: 雅謝
+  target_path: link_folder/地點/雅謝.md
+- name: 底本
+  suggested_type: 地點
+  evidence: 第3、34節；GT《舊約背景註釋》註底本（＝迪班）是摩押的首都、米沙石碑出土地；GT 丁良才註因迦得人佔了這城所以稱為底本迦得（民33:45-46）。
+  surfaces:
+  - phrase: 底本
+  target_path: link_folder/地點/底本.md
+- name: 哈倭特睚珥
+  suggested_type: 地點
+  evidence: 第41節；CT 註直譯為「睚珥的一切城邑」、是一些沒有城牆的村落；GT 註原有二十三個村莊（代上2:22）、到士師年間成了三十個（士10:4）。
+  surfaces:
+  - phrase: 哈倭特睚珥
+  target_path: link_folder/地點/哈倭特睚珥.md
+- name: 帶兵器（cha.lats）
+  suggested_type: 原文
+  evidence: 第17、21、27、29、30、32節；STEP 顯示 H2502B 詞典形 cha.lats、詞典義 to arm，第17、20節是 Niphal（自己武裝起來），第29、30、32節是被動分詞
+    cha.lu.Tzim。
+  surfaces:
+  - phrase: 帶兵器
+  target_path: link_folder/原文/帶兵器（cha.lats）.md
+- name: 壘圈（ge.de.rah）
+  suggested_type: 原文
+  evidence: 第16、24節「為牲畜壘圈」；CT 註原文三字：建造（首字）、墻欄（次字）、群畜（第三字）；STEP 顯示 gid.Rot（H1448，詞典義
+    wall）＋ tzon（H6629G，詞典義 flock）＋ niv.Neh（H1129，詞典義 to build）。
+  surfaces:
+  - phrase: 壘圈
+  target_path: link_folder/原文/壘圈（ge.de.rah）.md
+- name: 你們的罪必追上你們
+  suggested_type: 神學
+  evidence: 第23節；CT 引英文聖經譯法「要確實知道你的罪，必將你找著！」並引加6:7-8；KC 說罪不只是被發現的事，而是一個會來找到他們的主動者；STEP
+    顯示動詞 H4672 ma.tsa（to find）是第三人稱陰性單數，主詞是陰性名詞 cha.tat（罪）。
+  surfaces:
+  - phrase: 你們的罪必追上你們
+  target_path: link_folder/神學/你們的罪必追上你們.md
+  semantic_hint:
+  - title: 追討罪自父及子直到三四代
+    score: 0.451
+    type: 神學
+  - title: 罪伏在門前
+    score: 0.41
+    type: 神學
+- name: 在耶和華面前
+  suggested_type: 神學
+  evidence: 第20、21、22、27、29、32節；GT《聖經精讀本》註第20-22節連提三次、是摩西與兩支派立約與履約的記號，並提出 Coram Deo；CT
+    註耶和華被認為是他們的戰神。
+  surfaces:
+  - phrase: 在耶和華面前
+  target_path: link_folder/神學/在耶和華面前.md
+  semantic_hint:
+  - title: 寧錄的在耶和華面前
+    score: 0.45
+    type: 解經爭議
+  - title: 耶和華
+    score: 0.434
+    type: 神學
+  - title: 神與人相會（耶和華面前）
+    score: 0.431
+    type: 神學
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第1-42節全章：兩支派提出要求（1-5）、摩西責備（6-15）、折衷方案（16-19）、摩西立條件（20-24）、雙方確認（25-32）、分地與築城（33-42）。GT
+    串珠把本章分成同樣六段。
+  target_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 河東之地是神的旨意還是神的允許
+  suggested_type: 解經爭議
+  evidence: CT：「河東之地再好也不是神的應許……他們所得到的只能說是神的允許。神的允許就不是神的最好。」KC：神的心意是每一支派在河東也有分，但不是要他們完全定居在那裡。GT《啟導本》說雅謝地和基列地「也屬神所賜之地」，串珠說「以色列人額外得地為業，是神所容許的」。BH
+    說這件事「引出關於神應許的性質與祂計畫中彈性的問題，反映出神的恩典與供應這個更大的主題」。
+  target_path: link_folder/解經爭議/河東之地是神的旨意還是神的允許.md
+  semantic_hint:
+  - title: 神的允許與神的命定
+    score: 0.467
+    type: 神學
+  - title: 往東遷移
+    score: 0.4
+    type: 主題
+- name: 摩西是否未求問耶和華就允准
+  suggested_type: 解經爭議
+  evidence: CT 第20節：「摩西的回話顯然沒有先求問神。」GT 串珠：「本段似乎顯示，摩西並無尋求神的指示，只按他對律法的瞭解作出決定……這事按起願的條例處理（參30章注），神既未有清楚曉諭，即等於默許。」GT《聖經精讀本》說摩西以神代理者的權柄和神所賜的智慧直接分配了土地。BH
+    沒有提出這個問題。
+  target_path: link_folder/解經爭議/摩西是否未求問耶和華就允准.md
+  semantic_hint:
+  - title: 摩西求神同去並蒙應允
+    score: 0.513
+    type: 事件
+  - title: 代求
+    score: 0.511
+    type: 神學
+  - title: 摩西審判百姓
+    score: 0.507
+    type: 事件
+- name: 瑪拿西半支派為何留在河東
+  suggested_type: 解經爭議
+  evidence: GT 丁良才：聖書早先沒有提到瑪拿西半支派，也沒有解釋為何分為兩半，推測瑪吉人勇敢好冒險、或與基列人不和。GT 串珠：有學者以為是後人加上的，但此事在摩西約書亞時代多次記載，可能是瑪拿西支派見有先例而自動請纓。GT《聖經精讀本》：因為他們征服了基列地。KC：似乎是兩支派得逞之後半個瑪拿西支派才加入，兩支派的態度造成了另一個支派的分裂。
+  target_path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+  semantic_hint:
+  - title: 瑪拿西
+    score: 0.412
+    type: 人物
+- name: 過河的四萬人與留守的七萬人
+  suggested_type: 主題
+  evidence: CT 第27節：兩個支派加上瑪拿西半個支派的戰士總數超過十一萬人（民26:7、18、34），而過約但河的總人數僅約四萬人（書4:13）。GT
+    丁良才第17節同樣說：約有四萬人過了約旦河，還有二十歲以外的七萬多人看守婦人孩子羊群和所有的牲畜。
+  target_path: link_folder/主題/過河的四萬人與留守的七萬人.md
+- name: 城名是改了的（尼波與巴力免）
+  suggested_type: 文化
+  evidence: 第38節「尼波、巴力免，名字是改了的」；CT 註因為原名是異教神祇的名字、佔據之後改名；GT 丁良才引出23:13；GT《聖經精讀本》列出改名的兩重意義；BH
+    註改名象徵拒絕異教的過去。STEP 顯示「名字是改了的」是 mu.sa.Bot shem（H5437G，詞典形 sa.vav，詞典義 to turn）。
+  surfaces:
+  - phrase: 名字是改了的
+  target_path: link_folder/文化/城名是改了的（尼波與巴力免）.md
+- name: 河東城邑的位置考據
+  suggested_type: 背景
+  evidence: GT《舊約背景註釋》兩段專論：第3節逐一考據亞大錄（阿塔魯斯廢墟）、底本（＝迪班）、寧拉（寧林遺址）、希實本（＝黑什班）、以利亞利（＝阿珥）、比穩（＝馬因）；第34-42節再補亞羅珥、約比哈（＝朱貝哈特）、伯哈蘭、基列亭（＝庫雷亞特廢墟）。
+  target_path: link_folder/背景/河東城邑的位置考據.md
+- name: 河東二支派半最先被擄（代上5：25-26）
+  suggested_type: 互文
+  evidence: KC 全段引代上5:25-26：他們得罪列祖的神、隨從那地之民的神行邪淫，神就激動亞述王普勒與提革拉毘尼色的心，把流便人、迦得人、瑪拿西半支派擄到哈臘、哈博、哈拉與歌散河邊。GT
+    丁良才與《啟導本》同樣指出這二支派半最先遭到被擄的命運。
+  target_path: link_folder/互文/河東二支派半最先被擄（代上5：25-26）.md
+  semantic_hint:
+  - title: 猶大支派
+    score: 0.402
+    type: 人物
+  - title: 亞述
+    score: 0.401
+    type: 地點
+D_new_candidate: []
+E_skip: []
