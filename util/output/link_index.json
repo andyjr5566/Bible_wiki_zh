@@ -1985,6 +1985,16 @@
     "status": "formal",
     "aliases": []
   },
+  "民數記的結語": {
+    "path": "link_folder/主題/民數記的結語.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "民數記的結語",
+    "status": "formal",
+    "aliases": []
+  },
   "求告耶和華的名": {
     "path": "link_folder/主題/求告耶和華的名.md",
     "type": "主題",
@@ -2469,6 +2479,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "稱妻說謊",
+    "status": "formal",
+    "aliases": []
+  },
+  "稱摩西為我主": {
+    "path": "link_folder/主題/稱摩西為我主.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "稱摩西為我主",
     "status": "formal",
     "aliases": []
   },
@@ -13086,6 +13104,18 @@
     "status": "formal",
     "aliases": []
   },
+  "各守各的產業（da.vaq）": {
+    "path": "link_folder/原文/各守各的產業（da.vaq）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "各守各的產業（da.vaq）",
+    "status": "formal",
+    "aliases": [
+      "da.vaq"
+    ]
+  },
   "各從其類": {
     "path": "link_folder/原文/各從其類.md",
     "type": "原文",
@@ -14248,6 +14278,16 @@
     "aliases": [
       "Massah",
       "瑪撒"
+    ]
+  },
+  "產業減少（ga.ra）": {
+    "path": "link_folder/原文/產業減少（ga.ra）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "產業減少（ga.ra）",
+    "status": "formal",
+    "aliases": [
+      "ga.ra"
     ]
   },
   "產業（na.cha.lah）": {
@@ -26144,6 +26184,14 @@
     "status": "formal",
     "aliases": []
   },
+  "同宗支派的兩種解釋": {
+    "path": "link_folder/解經爭議/同宗支派的兩種解釋.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "同宗支派的兩種解釋",
+    "status": "formal",
+    "aliases": []
+  },
   "吞吃居民之地是什麼意思": {
     "path": "link_folder/解經爭議/吞吃居民之地是什麼意思.md",
     "type": "解經爭議",
@@ -30329,6 +30377,9 @@
   "生命的贖價": {
     "alias_of": "半舍客勒（贖罪銀）"
   },
+  "da.vaq": {
+    "alias_of": "各守各的產業（da.vaq）"
+  },
   "te.ru.'Ah": {
     "alias_of": "吹角的日子（te.ru.'Ah）"
   },
@@ -30628,6 +30679,9 @@
   },
   "瑪撒": {
     "alias_of": "瑪撒（Massah）"
+  },
+  "ga.ra": {
+    "alias_of": "產業減少（ga.ra）"
   },
   "na.cha.lah": {
     "alias_of": "產業（na.cha.lah）"

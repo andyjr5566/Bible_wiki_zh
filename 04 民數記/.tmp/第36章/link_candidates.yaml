@@ -1,0 +1,98 @@
+book: 民數記
+chapter: 36
+candidates:
+- name: 西羅非哈的女兒
+  type: 人物
+  evidence: v2「將我們兄弟西羅非哈的產業分給他的眾女兒」；v6「論到西羅非哈的眾女兒」；v10-12 她們照吩咐嫁了伯叔的兒子。STEP 顯示五個名字是 mach.Lah（H4244G）、tir.Tzah（H8656G）、cha.ge.Lah（H2295）、mil.Kah（H4435H）、no.'Ah（H5270）。
+  surfaces:
+  - 西羅非哈的眾女兒
+  - 西羅非哈的女兒
+- name: 女兒承受產業的條例
+  type: 主題
+  evidence: v2 回顧民27 的判例：「我主也受了耶和華的吩咐將我們兄弟西羅非哈的產業分給他的眾女兒」；v8 把個案推成通則：「凡在以色列支派中得了產業的女子必作同宗支派人的妻」。GT《民數記串珠聖經註釋》：「上次問題的處理原則是：父親的產業不應因無兒子而落入外人手上，應由女兒或近親承受。」
+  surfaces:
+  - 得了產業的女子
+- name: 產業（na.cha.lah）
+  type: 原文
+  evidence: 本章 12 次出現。STEP 顯示 v2 是 be./na.cha.Lah（H5159）、v3-4 是 na.cha.la.Ta/n 與 mi./na.cha.Lat、v7 是 be./na.cha.Lat、v9 是 be./Na.cha.la.T/o。CT 原文字義給「產業，基業，地業」。
+  surfaces:
+  - 產業
+- name: 拈鬮分地（go.ral）
+  type: 主題
+  evidence: v2「耶和華曾吩咐我主拈鬮分地給以色列人為業」；v3「我們拈鬮所得的產業就要減少了」。STEP 顯示是 be./go.Ral 與 u./mi./go.Ral（H1486），簡要詞典義 allotted；CT 原文字義給「鬮，卵石」。
+  surfaces:
+  - 拈鬮
+- name: 禧年（第五十年）
+  type: 原文
+  evidence: v4「到了以色列人的禧年，這女兒的產業就必加在他們丈夫支派的產業上」。STEP 顯示是 hai./yo.Vel（H3104），簡要詞典義 jubilee/horn；CT 原文字義給「第五十年，號角」。
+  surfaces:
+  - 禧年
+- name: 摩西
+  type: 人物
+  evidence: v1 族長們來到摩西面前；v5「摩西照耶和華的話吩咐以色列人」；v10、13 兩次「耶和華⋯⋯吩咐摩西」。CT 註 v5：顯然摩西曾將此問題求問神，得到神的答覆（參二十七5~6）。
+  surfaces:
+  - 摩西
+- name: 瑪吉
+  type: 人物
+  evidence: v1「瑪拿西的孫子，瑪吉的兒子基列」。CT 背景註解：「瑪拿西僅有一個兒子瑪吉，瑪吉又僅有一個兒子基列，而基列有六個兒子(參二十六29~32)。」
+  surfaces:
+  - 瑪吉
+- name: 瑪拿西
+  type: 人物
+  evidence: v1「瑪拿西的孫子」；v12「他們嫁入約瑟兒子、瑪拿西子孫的族中」。STEP 顯示是 me.na.Sheh（H4519G）。
+  surfaces:
+  - 瑪拿西
+- name: 約瑟
+  type: 人物
+  evidence: v1「約瑟的後裔」；v5「約瑟支派的人說得有理」；v12「約瑟兒子、瑪拿西子孫的族中」。GT 丁良才註 v5：「約瑟支派，就是以法蓮、瑪拿西支派。但在此處摩西特指基列人。」
+  surfaces:
+  - 約瑟
+- name: 瑪拿西半支派為何留在河東
+  type: 解經爭議
+  evidence: CT 註 v1：「瑪吉族和基列族的產業分配在約但河東，而此次的問題與這兩族無關，故可能他們的族長可能缺席。」GT 丁良才同樣說：「瑪姬人的族長不在其內，因為他們在約旦河東已經得了基業。」
+- name: 典章
+  type: 神學
+  evidence: 'v13「這是耶和華⋯⋯藉著摩西所吩咐以色列人的命令典章」。STEP 顯示是 ha./mish.pa.Tim（H4941G），簡要詞典義 justice: judgement；CT 原文字義給「審判，律例，公義」。'
+  surfaces:
+  - 典章
+- name: 摩押平原
+  type: 地點
+  evidence: v13「這是耶和華在摩押平原─約但河邊、耶利哥對面─藉著摩西所吩咐以色列人的命令典章」。STEP 顯示是 be./'ar.Vot mo.'Av（H6160I 加 H4124I）。
+  surfaces:
+  - 摩押平原
+- name: 約但河
+  type: 地點
+  evidence: v13「摩押平原─約但河邊」。GT《啟導本聖經註釋》：「本書以『約但河邊、耶利哥對面』作結，說明以色列人此際遠望隔岸美地，已為定居作好準備。」
+  surfaces:
+  - 約但河
+- name: 耶利哥
+  type: 地點
+  evidence: v13「耶利哥對面」。STEP 顯示是 ye.re.Cho（H3405G）。
+  surfaces:
+  - 耶利哥
+- name: 各守各的產業（da.vaq）
+  type: 原文
+  evidence: v7「因為以色列人要各守各祖宗支派的產業」；v9「因為以色列支派的人要各守各的產業」。STEP 顯示動詞是 yid.be.Ku（H1692，詞典形 da.vaq），簡要詞典義 to cleave；CT 原文字義給「附著，黏住，緊靠」。
+  surfaces:
+  - 各守各
+- name: 家室與宗族
+  type: 主題
+  evidence: v1、v12 兩次用「族」指瑪拿西下面的單位；v6「同宗支派」。STEP 顯示 v1 是 le./mish.Pa.chat 與 mi./mish.pe.Chot、v6 是 le./mish.Pa.chat ma.Teh 'a.vi./Hem、v12 是 mi./mish.pe.Chot 與 mish.Pa.chat（H4940，簡要詞典義 family），與 H4294H ma.Teh（tribe）並列。
+- name: 同宗支派的兩種解釋
+  type: 解經爭議
+  evidence: v6「只是要嫁同宗支派的人」。CT 在備註中列出兩種解釋：指同一支派，或指同一支派內的同一宗族。GT 丁良才同樣列出兩個解法並偏向宗族說。STEP 顯示原文是 le./mish.Pa.chat ma.Teh 'a.vi./Hem（H4940 加 H4294H 加 H1G）。
+  surfaces:
+  - 同宗支派
+- name: 產業減少（ga.ra）
+  type: 原文
+  evidence: v3「這樣，我們拈鬮所得的產業就要減少了」；v4「我們祖宗支派的產業就減少了」。STEP 顯示動詞是 ve./nig.re.'Ah 與 yi.ga.Re.a'（H1639，詞典形 ga.ra），Niphal 形；相對的「加在」是 ve./no.Saf 與 ve./nos.Fah（H3254H，詞典形 ya.saph），同樣是 Niphal。CT 原文字義給「減少，限制，撤回」與「增加」。
+  surfaces:
+  - 減少
+- name: 稱摩西為我主
+  type: 主題
+  evidence: v2 族長們兩次稱摩西「我主」。GT 丁良才：「當時的以色列人，比前輩的人對於摩西更加恭敬。按聖書上所記，唯獨亞倫和約書亞曾稱摩西為主。」STEP 顯示是 'a.do.N/i（H113，簡要詞典義 lord）。
+  surfaces:
+  - 我主
+- name: 民數記的結語
+  type: 主題
+  evidence: v13「這是耶和華在摩押平原─約但河邊、耶利哥對面─藉著摩西所吩咐以色列人的命令典章」。GT 丁良才：「本節是民數記的總結；將神在摩押平原，和在西奈山所吩咐的命令典章，列為平等（參利二十六46，二十七34）。」KingComments 也說最後這一句是對耶和華所說之話的總結與強調。
