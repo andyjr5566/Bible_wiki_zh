@@ -1,0 +1,308 @@
+book: 民數記
+chapter: 34
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第1、13、16節：耶和華兩次曉諭摩西（1、16節），摩西把四界與分地的原則吩咐以色列人（13節）。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第17節「要給你們分地為業之人的名字是祭司以利亞撒和嫩的兒子約書亞」；CT 註以利亞撒是亞倫的兒子、接續他擔任大祭司。
+  surfaces:
+  - phrase: 以利亞撒
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第17節與以利亞撒同列為分地的主責人；CT 回顧他原為摩西的少年助手、與迦勒同為探子，後蒙神指定為摩西的接班人。
+  surfaces:
+  - phrase: 約書亞
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 第19節「猶大支派有耶孚尼的兒子迦勒」；CT 註此時他年歲與約書亞不相上下、大約將近八十歲（書14:10）；GT 丁良才註十位首領中只有迦勒的名字別處聖經也提到。
+  surfaces:
+  - phrase: 迦勒
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 第14節「流便支派和迦得支派按著宗族受了產業」；第15節這兩個半支派已經在耶利哥對面、約但河東受了產業。
+  surfaces:
+  - phrase: 流便
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 第14節與流便支派並列，已在約但河東受了產業，因此不參與河西的分地。
+  surfaces:
+  - phrase: 迦得
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第14節「瑪拿西半個支派也受了產業」；第23節「約瑟的子孫瑪拿西支派有一個首領，以弗的兒子漢聶」——同一個支派在本章同時出現在河東與河西兩邊。
+  surfaces:
+  - phrase: 瑪拿西
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 第23節「約瑟的子孫瑪拿西支派」；BH 註提到約瑟是要把分地接回神與亞伯拉罕、以撒、雅各所立的約。
+  surfaces:
+  - phrase: 約瑟
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 第19節列在十位首領之首；GT 丁良才註「猶大在先，或因這支派的首領是早先做探子的迦勒」。
+  surfaces:
+  - phrase: 猶大支派
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 西緬
+  suggested_type: 人物
+  evidence: 第20節「西緬支派有亞米忽的兒子示母利」；BH 註西緬的地業後來落在猶大境內（書19:1-9），與本章名單裡它緊接猶大的位置相合。
+  surfaces:
+  - phrase: 西緬
+  match_type: exact
+  existing_title: 西緬
+  existing_path: link_folder/人物/西緬.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 第21節「便雅憫支派有基斯倫的兒子以利達」；CT 給的名字字義：便雅憫「右手之子」、基斯倫「信心」、以利達「神喜愛的」。
+  surfaces:
+  - phrase: 便雅憫
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 但支派
+  suggested_type: 人物
+  evidence: 第22節「但支派有一個首領，約利的兒子布基」；BH 註但支派的地業在北部，後來與拜偶像連在一起（士18）。
+  surfaces:
+  - phrase: 但支派
+  match_type: exact
+  existing_title: 但支派
+  existing_path: link_folder/人物/但支派.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 第24節「以法蓮支派有一個首領，拾弗但的兒子基母利」；BH 註以法蓮位置居中、日後常代表北國以色列。
+  surfaces:
+  - phrase: 以法蓮
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 西布倫（同住）
+  suggested_type: 人物
+  evidence: 第25節「西布倫支派有一個首領，帕納的兒子以利撒番」；BH 引創49:13 雅各對西布倫的預言，說它必住在海口、成為停船的港口。
+  surfaces:
+  - phrase: 西布倫
+  match_type: exact
+  existing_title: 西布倫（同住）
+  existing_path: link_folder/人物/西布倫（同住）.md
+- name: 以薩迦（價值）
+  suggested_type: 人物
+  evidence: 第26節「以薩迦支派有一個首領，阿散的兒子帕鐵」；CT 給的字義是「有價值」；BH 引代上12:32 說以薩迦人通達時務。
+  surfaces:
+  - phrase: 以薩迦
+  match_type: exact
+  existing_title: 以薩迦（價值）
+  existing_path: link_folder/人物/以薩迦（價值）.md
+- name: 亞設（有福）
+  suggested_type: 人物
+  evidence: 第27節「亞設支派有一個首領，示羅米的兒子亞希忽」；BH 註亞設分得迦南北部肥美之地，應驗創49:20 雅各的預言。
+  surfaces:
+  - phrase: 亞設
+  match_type: exact
+  existing_title: 亞設（有福）
+  existing_path: link_folder/人物/亞設（有福）.md
+- name: 拿弗他利
+  suggested_type: 人物
+  evidence: 第28節「拿弗他利支派有一個首領，亞米忽的兒子比大黑」，是名單的最後一位；BH 引賽9:1-2 說拿弗他利地日後要見大光。
+  surfaces:
+  - phrase: 拿弗他利
+  match_type: exact
+  existing_title: 拿弗他利
+  existing_path: link_folder/人物/拿弗他利.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 第2節「你們到了迦南地，就是歸你們為業的迦南四境之地」、第29節「在迦南地把產業分給以色列人」；CT 註本章的迦南地指約但河西之地。
+  surfaces:
+  - phrase: 迦南地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 以東
+  suggested_type: 地點
+  evidence: 第3節「南角要從尋的曠野，貼著以東的邊界」；STEP 顯示「貼著」在原文是 'al- ye.Dei（H3027K，詞典形 yad），字面是在以東的手上。
+  surfaces:
+  - phrase: 以東
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: 第4節「直通到加低斯巴尼亞的南邊」；CT 註加低斯巴尼亞又名加低斯，位於尋的曠野南部。
+  surfaces:
+  - phrase: 加低斯巴尼亞
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 鹽海
+  suggested_type: 地點
+  evidence: 第3節「南界要從鹽海東頭起」、第12節「這界要下到約但河，通到鹽海為止」——南界與東界都以鹽海為端點；CT 註鹽海又名亞拉巴海，即今死海。
+  surfaces:
+  - phrase: 鹽海
+  match_type: exact
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第12節「這界要下到約但河，通到鹽海為止」、第15節「約但河東、向日出之地」；CT 註約但河和死海成為迦南地的東部天然邊界。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第15節「這兩個半支派已經在耶利哥對面、約但河東、向日出之地受了產業」；CT 註『耶利哥對面』即指約但河東，因耶利哥位於約但河西。
+  surfaces:
+  - phrase: 耶利哥
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第13節「這地就是耶和華吩咐拈鬮給九個半支派承受為業的」；GT《聖經精讀本》註用拈鬮是為了讓百姓明白土地的主人是神。
+  surfaces:
+  - phrase: 拈鬮
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第14、15節「受了產業」、第29節「把產業分給以色列人」；STEP 顯示第2節「歸你們為業」的名詞也是 na.cha.Lah（H5159），第17節的動詞
+    yin.cha.Lu 是同一字根 H5157。
+  surfaces:
+  - phrase: 產業
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第14-15節重提流便、迦得與瑪拿西半支派已在約但河東受了產業，因此河西之地只分給九個半支派；CT 註這是他們獲得摩西允准、有條件地分配在約但河東（民32:33）。
+  match_type: exact
+  existing_title: 兩支派半求河東之地為業
+  existing_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 埃及河
+  suggested_type: 地點
+  evidence: 第5節「從押們轉到埃及小河，直通到海為止」；CT 註它是與埃及接壤的一條沙漠地小河；GT《聖經精讀本》註它不是尼羅河，而是從巴蘭曠野流向地中海的沙漠河；BH
+    註它常被認定為阿里什乾河。
+  surfaces:
+  - phrase: 埃及小河
+  match_type: exact
+  existing_title: 埃及河
+  existing_path: link_folder/地點/埃及河.md
+- name: 埃及河的地理辨識
+  suggested_type: 解經爭議
+  evidence: 第5節的「埃及小河」是應許之地的西南界點。GT《聖經精讀本》明說：「這個地方不是指埃及的尼羅河,而是指從巴蘭曠野流向地中海的沙漠河」；BH
+    也把它認定為阿里什乾河而非尼羅河；GT《舊約聖經背景註釋》說南界最後往西在阿里什乾河轉入地中海。
+  match_type: exact
+  existing_title: 埃及河的地理辨識
+  existing_path: link_folder/解經爭議/埃及河的地理辨識.md
+C_new_formal:
+- name: 迦南四境
+  suggested_type: 主題
+  evidence: 第2-12節逐段畫出南、西、北、東四界；CT 的內容綱要把它列為第一段；GT《民數記串珠聖經註釋》說迦南地是出埃及旅程的目的地，接在上一章的旅途紀錄之後最為合適。
+  target_path: link_folder/主題/迦南四境.md
+  semantic_hint:
+  - title: 迦南地
+    score: 0.484
+    type: 地點
+  - title: 迦南人
+    score: 0.456
+    type: 人物
+  - title: 迦南人與比利洗人
+    score: 0.436
+    type: 歷史
+- name: 迦南四境的地名考據
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》為四界上的地名逐一定位：哈馬口最可能是奧朗底河源頭之一旁邊的萊布韋、西達達很可能是今日的瑟達德、西斐崙和哈薩以難是西達達東南面的兩個綠洲、哈薩亞達與押們常被考證為加低斯一帶的兩個水泉；並說第11節所列地名皆不可考。
+  target_path: link_folder/背景/迦南四境的地名考據.md
+  semantic_hint:
+  - title: 迦南地
+    score: 0.545
+    type: 地點
+  - title: 迦南地的居民分佈
+    score: 0.513
+    type: 背景
+  - title: 迦南人
+    score: 0.486
+    type: 人物
+- name: 四界與亞伯拉罕之約的落差
+  suggested_type: 解經爭議
+  evidence: GT《聖經精讀本》：神應許亞伯拉罕的領土是從埃及河直到伯拉大河（創15:18），這裡提到的領土比應許縮小了很多；KC 也說這些邊界與神向亞伯拉罕提到的不相符、應許之地大得多。GT《啟導本》卻說所羅門王全盛時期的版圖的確達到了本章所描述的四界；GT《舊約聖經背景註釋》說以色列史中沒有一個階段的國界與本段相同。
+  target_path: link_folder/解經爭議/四界與亞伯拉罕之約的落差.md
+  semantic_hint:
+  - title: 亞伯拉罕之約
+    score: 0.481
+    type: 神學
+  - title: 亞伯拉罕
+    score: 0.454
+    type: 人物
+  - title: 神堅定與亞伯拉罕的約
+    score: 0.425
+    type: 主題
+- name: 北界的何珥山
+  suggested_type: 地點
+  evidence: 第7-8節「北界要從大海起，畫到何珥山，從何珥山劃到哈馬口」；CT、GT 丁良才、GT《啟導本》與《民數記串珠聖經註釋》都指出這座何珥山與亞倫死的何珥山同名不同地——這一座在迦南北部，是黎巴嫩山的一峰。
+  surfaces:
+  - phrase: 何珥山
+  target_path: link_folder/地點/北界的何珥山.md
+- name: 基尼烈湖
+  suggested_type: 地點
+  evidence: 第11節「又要達到基尼烈湖的東邊」；CT 註它在新約稱革尼撒勒湖（路5:1），又名提比哩亞海（約21:1），即今加利利海；BH 註這是耶穌許多神蹟與教導發生的地方。
+  surfaces:
+  - phrase: 基尼烈湖
+  target_path: link_folder/地點/基尼烈湖.md
+- name: 大海（地中海）
+  suggested_type: 地點
+  evidence: '第6節「西邊要以大海為界」、第7節「北界要從大海起」；CT 與 GT 丁良才都註大海就是地中海；STEP 顯示第6節「西邊」的原文是 Yam（H3220H，詞典義
+    sea: west），西方在原文就是「海」。'
+  surfaces:
+  - phrase: 大海
+  target_path: link_folder/地點/大海（地中海）.md
+- name: 分地的十位支派首領
+  suggested_type: 主題
+  evidence: 第16-29節列出以利亞撒、約書亞與十個支派各一位首領；GT《民數記串珠聖經註釋》註分地一事由十二位領袖一起負責、不由大祭司或約書亞單獨主持以示公允；GT
+    丁良才與《啟導本》都指出名單的次序就是後來從南到北得地的次序。
+  target_path: link_folder/主題/分地的十位支派首領.md
+- name: 這地必落給你們為業（na.phal）
+  suggested_type: 原文
+  evidence: '第2節「就是歸你們為業的迦南四境之地」；CT 的原文字義給「歸」是「抽籤落在，抽籤分配」；STEP 顯示這個動詞是 ti.Pol（H5307I，詞典形
+    na.phal，簡要詞典義 to fall: allot），字面是「這地必落給你們」。'
+  surfaces:
+  - phrase: 歸你們為業
+  target_path: link_folder/原文/這地必落給你們為業（na.phal）.md
+- name: 神所定的邊界
+  suggested_type: 神學
+  evidence: 第12節「這四圍的邊界以內，要作你們的地」。CT 在〔話中之光〕說「神給人一定的邊界，人不能越過那極限」，並指出這界限有保守分別為聖的戰略意義；KC
+    全章以邊界為主題，說界線把屬於神的與不屬於神的分開；GT《聖經精讀本》則說神把危險與障礙放在以色列四圍，是為了教導他們順服神的話語。
+  target_path: link_folder/神學/神所定的邊界.md
+D_new_candidate: []
+E_skip: []

@@ -630,6 +630,16 @@
     "status": "formal",
     "aliases": []
   },
+  "分地的十位支派首領": {
+    "path": "link_folder/主題/分地的十位支派首領.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "分地的十位支派首領",
+    "status": "formal",
+    "aliases": []
+  },
   "分蹄倒嚼（潔淨走獸的判準）": {
     "path": "link_folder/主題/分蹄倒嚼（潔淨走獸的判準）.md",
     "type": "主題",
@@ -3020,6 +3030,16 @@
     "type": "主題",
     "secondary_types": [],
     "title": "近親性關係的十二項條例",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦南四境": {
+    "path": "link_folder/主題/迦南四境.md",
+    "type": "主題",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "迦南四境",
     "status": "formal",
     "aliases": []
   },
@@ -15019,6 +15039,16 @@
     "status": "formal",
     "aliases": []
   },
+  "這地必落給你們為業（na.phal）": {
+    "path": "link_folder/原文/這地必落給你們為業（na.phal）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "這地必落給你們為業（na.phal）",
+    "status": "formal",
+    "aliases": []
+  },
   "通事（傳譯員）": {
     "path": "link_folder/原文/通事（傳譯員）.md",
     "type": "原文",
@@ -15645,6 +15675,14 @@
       "加低斯巴尼亞"
     ]
   },
+  "北界的何珥山": {
+    "path": "link_folder/地點/北界的何珥山.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "北界的何珥山",
+    "status": "formal",
+    "aliases": []
+  },
   "南地": {
     "path": "link_folder/地點/南地.md",
     "type": "地點",
@@ -15816,6 +15854,14 @@
       "貪欲之人的墳墓"
     ]
   },
+  "基尼烈湖": {
+    "path": "link_folder/地點/基尼烈湖.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基尼烈湖",
+    "status": "formal",
+    "aliases": []
+  },
   "基悉": {
     "path": "link_folder/地點/基悉.md",
     "type": "地點",
@@ -15872,6 +15918,14 @@
     "aliases": [
       "Dothan"
     ]
+  },
+  "大海（地中海）": {
+    "path": "link_folder/地點/大海（地中海）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "大海（地中海）",
+    "status": "formal",
+    "aliases": []
   },
   "大馬士革": {
     "path": "link_folder/地點/大馬士革.md",
@@ -22272,6 +22326,16 @@
     "status": "formal",
     "aliases": []
   },
+  "神所定的邊界": {
+    "path": "link_folder/神學/神所定的邊界.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "神所定的邊界",
+    "status": "formal",
+    "aliases": []
+  },
   "神攔阻人犯罪": {
     "path": "link_folder/神學/神攔阻人犯罪.md",
     "type": "神學",
@@ -25123,6 +25187,16 @@
       "迦南六族"
     ]
   },
+  "迦南四境的地名考據": {
+    "path": "link_folder/背景/迦南四境的地名考據.md",
+    "type": "背景",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "迦南四境的地名考據",
+    "status": "formal",
+    "aliases": []
+  },
   "迦南地的居民分佈": {
     "path": "link_folder/背景/迦南地的居民分佈.md",
     "type": "背景",
@@ -26069,6 +26143,16 @@
       "四十天與一百五十天",
       "洪水四十天還是一百五十天"
     ]
+  },
+  "四界與亞伯拉罕之約的落差": {
+    "path": "link_folder/解經爭議/四界與亞伯拉罕之約的落差.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "四界與亞伯拉罕之約的落差",
+    "status": "formal",
+    "aliases": []
   },
   "四百年與第四代的關係": {
     "path": "link_folder/解經爭議/四百年與第四代的關係.md",
