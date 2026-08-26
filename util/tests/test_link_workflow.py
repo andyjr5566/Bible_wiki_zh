@@ -147,6 +147,43 @@ class UpdateTests(unittest.TestCase):
         self.assertNotIn("raw_data/example.txt", block)
         self.assertNotIn("### 創世記", block)
 
+    def test_eighth_accumulation_hint_includes_definition(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry_path = root / "link_folder" / "人物" / "測試.md"
+            entry_path.parent.mkdir(parents=True)
+            blocks = "\n\n".join(
+                render_block("創世記", chapter, {
+                    "summary": f"重點{chapter}",
+                    "relation": f"關聯{chapter}",
+                })
+                for chapter in range(1, 8)
+            )
+            entry_path.write_text(
+                "# 測試\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n"
+                f"### 創世記\n\n{blocks}\n\n"
+                "## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            manifest = root / "updates.yaml"
+            manifest.write_text(yaml.safe_dump({
+                "book": "創世記",
+                "chapter": 8,
+                "updates": [{
+                    "title": "測試",
+                    "path": "link_folder/人物/測試.md",
+                    "summary": "第八筆",
+                    "relation": "第八筆關聯",
+                }],
+            }, allow_unicode=True), encoding="utf-8")
+            logs = []
+            with patch("link_updates.ROOT", root):
+                self.assertEqual(1, apply_updates(manifest, reporter=logs.append))
+            self.assertTrue(any(
+                "definition／development／related_entries／sources" in line
+                for line in logs
+            ))
+
     def test_apply_inserts_inside_book_group_in_chapter_order(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

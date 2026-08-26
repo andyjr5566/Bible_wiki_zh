@@ -172,7 +172,7 @@ _ACCUM_BLOCK_RE = re.compile(r"<!-- accumulation:[^:]+:\d+:start -->")
 
 
 def _development_stale_hint(before_text, after_text):
-    """累積區塊數剛跨過門檻、或門檻之上又新增時，提醒回頭補 development。
+    """累積區塊數剛跨過門檻、或門檻之上又新增時，提醒回頭檢查條目總體區塊。
 
     只是提醒（manual_review 性質），不擋 apply：development 是否真的落後累積成長
     要人工讀過才能判斷（見 util/check_development_staleness.py 的討論），這裡只
@@ -287,7 +287,7 @@ def apply_updates(manifest, dry_run=False, reporter=print):
             if hint_count is not None:
                 reporter(
                     f"   ℹ️ {operation['relative_path']} 累積已達 {hint_count} 筆——"
-                    "建議順手檢查 development／related_entries／sources 是否已跟上"
+                    "建議順手檢查 definition／development／related_entries／sources 是否已跟上"
                     "目前的累積範圍（不只停留在條目首建那一卷/那一章）"
                 )
         reporter(f"✅ {'預覽' if dry_run else '套用'}完成：{len(changes)} 個檔案")
