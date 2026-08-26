@@ -4,12 +4,12 @@ book: 民數記
 chapter: 35
 candidate_sha256: f1baa0a8af2bc9e53c3293efe1b47be6f58b8da067737d8fd9041e00a4d91629
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 412379d0bea7df66
-link_index_sha256: d4bf4032413da9cda11e18dca7e04241cf74c3470e4ad5b8823047dd2ad0b4db
+embedding_index_fingerprint: 6fff3af8c43abaef
+link_index_sha256: e24aab27058df0d448efe4faf77c2cb3e4a615c154cd3ba1d4bee0abf90e39ad
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
-calibration_sha256: 337500e601e3a204c71a4bbe077172c48c165c2ea9ffe38c5d4425363d899411
+calibration_sha256: f63b1218023371bbbece396422aa7a02025bba0da119b49cae75232755734211
 rerank_status: not_needed
 rerankable_candidates: 0
 rerank_attempted: 0
@@ -20,7 +20,7 @@ rerank_score_observed: none
 
 # 候選語義近鄰報告：民數記 第35章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2848 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 2853 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -38,11 +38,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩西 | 0.628 | link_folder/人物/摩西.md |
-| 2 | 摩押平原 | 0.622 | link_folder/地點/摩押平原.md |
+| 1 | 摩押平原 | 0.636 | link_folder/地點/摩押平原.md |
+| 2 | 摩西 | 0.628 | link_folder/人物/摩西.md |
 | 3 | 摩西上山見神 | 0.594 | link_folder/事件/摩西上山見神.md |
-| 4 | 耶利哥 | 0.577 | link_folder/地點/耶利哥.md |
-| 5 | 摩西的呼召與差遣 | 0.568 | link_folder/神學/摩西的呼召與差遣.md |
+| 4 | 民數記的結語 | 0.587 | link_folder/主題/民數記的結語.md |
+| 5 | 耶利哥 | 0.569 | link_folder/地點/耶利哥.md |
 
 判定：✅ 建議使用既有條目 [[摩西]]（同名／字面對應）
 
@@ -58,11 +58,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 摩押平原 | 0.737 | link_folder/地點/摩押平原.md |
-| 2 | 耶利哥 | 0.637 | link_folder/地點/耶利哥.md |
-| 3 | 摩押地 | 0.558 | link_folder/地點/摩押地.md |
-| 4 | 摩押人 | 0.546 | link_folder/人物/摩押人.md |
-| 5 | 河東城邑的位置考據 | 0.545 | link_folder/背景/河東城邑的位置考據.md |
+| 1 | 摩押平原 | 0.742 | link_folder/地點/摩押平原.md |
+| 2 | 耶利哥 | 0.633 | link_folder/地點/耶利哥.md |
+| 3 | 民數記的結語 | 0.559 | link_folder/主題/民數記的結語.md |
+| 4 | 摩押地 | 0.558 | link_folder/地點/摩押地.md |
+| 5 | 摩押人 | 0.546 | link_folder/人物/摩押人.md |
 
 判定：✅ 建議使用既有條目 [[摩押平原]]（同名／字面對應）
 
@@ -80,7 +80,7 @@ query:
 |---|---|---:|---|
 | 1 | 約但河 | 0.698 | link_folder/地點/約但河.md |
 | 2 | 往東遷移 | 0.556 | link_folder/主題/往東遷移.md |
-| 3 | 耶利哥 | 0.556 | link_folder/地點/耶利哥.md |
+| 3 | 耶利哥 | 0.550 | link_folder/地點/耶利哥.md |
 | 4 | 迦南地 | 0.547 | link_folder/地點/迦南地.md |
 | 5 | 兩支派半求河東之地為業 | 0.525 | link_folder/事件/兩支派半求河東之地為業.md |
 
@@ -99,7 +99,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 耶利哥 | 0.745 | link_folder/地點/耶利哥.md |
-| 2 | 摩押平原 | 0.617 | link_folder/地點/摩押平原.md |
+| 2 | 摩押平原 | 0.610 | link_folder/地點/摩押平原.md |
 | 3 | 雅謝 | 0.482 | link_folder/地點/雅謝.md |
 | 4 | 摩押地 | 0.481 | link_folder/地點/摩押地.md |
 | 5 | 約但河 | 0.480 | link_folder/地點/約但河.md |
@@ -158,11 +158,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 產業（na.cha.lah） | 0.626 | link_folder/原文/產業（na.cha.lah）.md |
+| 1 | 產業（na.cha.lah） | 0.629 | link_folder/原文/產業（na.cha.lah）.md |
 | 2 | 業地（a.chuz.zah） | 0.557 | link_folder/原文/業地（a.chuz.zah）.md |
 | 3 | 這地必落給你們為業（na.phal） | 0.544 | link_folder/原文/這地必落給你們為業（na.phal）.md |
-| 4 | 耶和華是事奉者的業與分 | 0.439 | link_folder/神學/耶和華是事奉者的業與分.md |
-| 5 | 報仇（na.qam 與 nik.mah） | 0.410 | link_folder/原文/報仇（na.qam 與 nik.mah）.md |
+| 4 | 各守各的產業（da.vaq） | 0.504 | link_folder/原文/各守各的產業（da.vaq）.md |
+| 5 | 耶和華是事奉者的業與分 | 0.439 | link_folder/神學/耶和華是事奉者的業與分.md |
 
 判定：✅ 建議使用既有條目 [[產業（na.cha.lah）]]（同名／字面對應）
 

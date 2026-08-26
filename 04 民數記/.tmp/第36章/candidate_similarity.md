@@ -9,7 +9,7 @@ link_index_sha256: e24aab27058df0d448efe4faf77c2cb3e4a615c154cd3ba1d4bee0abf90e3
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
-calibration_sha256: 27303e0cbdcfd0e5b08d47f5f77b7e5be796a922676e77e12c955d39fdf26086
+calibration_sha256: f63b1218023371bbbece396422aa7a02025bba0da119b49cae75232755734211
 rerank_status: not_needed
 rerankable_candidates: 0
 rerank_attempted: 0
