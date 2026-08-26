@@ -659,6 +659,28 @@ class ScanUnsourcedTokensTests(unittest.TestCase):
         self.assertIn("אבגד", hebrew)
         self.assertNotIn("שָׁלוֹם", hebrew)      # sourced once niqqud is stripped
 
+    def test_dou_is_traditional_and_never_a_simplified_flag(self):
+        """出28「祭司披肩或斗篷」是 CT raw 自己的用字，不是簡體。
+
+        斗 只有在代替 鬥 時才是簡體；本庫 23 處全是斗篷／漏斗形／升斗／三斗麵，
+        連正式條目名「公道天平法碼升斗」都含它——23 個誤報、0 個真陽性。
+        """
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "CT 的原文字義給「以弗得」為「祭司披肩或斗篷」。\n")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        self.assertEqual(result["simplified_characters"], [])
+
+    def test_a_real_simplified_character_is_still_flagged(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            self._chapter(root, "敬拜是人对神的尊崇。\n")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.scan_unsourced_tokens("創世記", 1)
+        found = {item["characters"] for item in result["simplified_characters"]}
+        self.assertIn("对", found)
+
     def test_clean_chapter_reports_no_flags(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

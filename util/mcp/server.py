@@ -129,9 +129,12 @@ _TRANSLITERATION_IGNORE = {
     "STEP Bible", "STEPBible",
 }
 # Frequent simplified-only characters; the corpus is Traditional Chinese throughout.
+# 斗 is deliberately absent: it is only simplified when it stands for 鬥, and every
+# one of its 23 uses in this vault is ordinary Traditional Chinese (斗篷／漏斗形／
+# 升斗／三斗麵), including the formal entry 公道天平法碼升斗 — 23 false positives, 0 true.
 _SIMPLIFIED_CHARS = set(
     "贯东车马门问间见觉学国图书写与来对时机样条种类经过还这发现产业内长关无爱应变风飞"
-    "离归乡个们么为没说话让给头买卖乐会体点热当权义军师杀击斗农岁职员团结灵进电记讲论"
+    "离归乡个们么为没说话让给头买卖乐会体点热当权义军师杀击农岁职员团结灵进电记讲论"
     "证据历称举义乱亲价众优伟传伤伦优侧俭债倾偿储儿"
 )
 
