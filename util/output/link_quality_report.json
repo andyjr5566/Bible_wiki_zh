@@ -1,7 +1,7 @@
 {
-  "total_warnings": 134,
+  "total_warnings": 138,
   "critical_count": 0,
-  "warning_count": 134,
+  "warning_count": 138,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -489,6 +489,20 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/疏割.md",
+      "target": "第33章",
+      "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 04 民數記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/約但河.md",
+      "target": "第33章",
+      "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 04 民數記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/西乃山.md",
       "target": "第3章",
       "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 04 民數記/第3章"
@@ -499,6 +513,13 @@
       "source": "link_folder/地點/迦南地.md",
       "target": "第13章",
       "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 02 出埃及記/第13章, 04 民數記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/迦南地.md",
+      "target": "第33章",
+      "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 04 民數記/第33章"
     },
     {
       "type": "alias_target_conflict",
@@ -583,6 +604,13 @@
       "source": "link_folder/背景/古代近東立約.md",
       "target": "第23章",
       "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 04 民數記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/背景/迦南七族（迦南地原住民）.md",
+      "target": "第33章",
+      "message": "同一 alias「第33章」指向多個 target: 02 出埃及記/第33章, 04 民數記/第33章"
     },
     {
       "type": "alias_target_conflict",

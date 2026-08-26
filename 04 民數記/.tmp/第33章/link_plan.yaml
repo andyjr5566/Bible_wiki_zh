@@ -1,0 +1,483 @@
+book: 民數記
+chapter: 33
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第1節「在摩西、亞倫的手下出埃及地」；第2節「摩西遵著耶和華的吩咐記載他們所行的路程」；第50節耶和華在摩押平原曉諭摩西。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 第1節與摩西並列為出埃及的領導；第38-39節亞倫遵耶和華的吩咐上何珥山，死在那裡，年一百二十三歲。
+  surfaces:
+  - phrase: 亞倫
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 亞倫卒於何珥山與祭司職任更替
+  suggested_type: 神學
+  evidence: 第38-39節記亞倫的死與年歲；GT 丁良才註「聖書上只在本處記亞倫去世的日期」；BH 註何珥山是大祭司職分由亞倫轉給以利亞撒的地方。
+  match_type: exact
+  existing_title: 亞倫卒於何珥山與祭司職任更替
+  existing_path: link_folder/神學/亞倫卒於何珥山與祭司職任更替.md
+- name: 蘭塞
+  suggested_type: 地點
+  evidence: 第3、5節：正月十五日以色列人從蘭塞起行，是四十二站的第一站；CT 註它也是以色列人定居埃及的地方（創47:11）。
+  surfaces:
+  - phrase: 蘭塞
+  match_type: exact
+  existing_title: 蘭塞
+  existing_path: link_folder/地點/蘭塞.md
+- name: 疏割
+  suggested_type: 地點
+  evidence: 第5、6節第二站；CT 給的字義是「畜棚，貨攤」；BH 註疏割意為「棚」或「臨時住處」，與住棚節的緣由相接（利23:42-43）。
+  surfaces:
+  - phrase: 疏割
+  match_type: exact
+  existing_title: 疏割
+  existing_path: link_folder/地點/疏割.md
+- name: 以倘
+  suggested_type: 地點
+  evidence: 第6、7節第三站「曠野邊的以倘」；CT 從字義「海邊」推它靠近紅海邊；GT 丁良才則說「本章6節的以倘，原來在死海旁邊」。
+  surfaces:
+  - phrase: 以倘
+  match_type: exact
+  existing_title: 以倘
+  existing_path: link_folder/地點/以倘.md
+- name: 比哈希錄
+  suggested_type: 地點
+  evidence: 第7、8節；CT 依出14:2 判定第四站的站名應為比哈希錄，實際安營處在巴力洗分和密奪兩處埃及防營之間。
+  surfaces:
+  - phrase: 比哈希錄
+  match_type: exact
+  existing_title: 比哈希錄
+  existing_path: link_folder/地點/比哈希錄.md
+- name: 巴力洗分
+  suggested_type: 地點
+  evidence: 第7節「是在巴力洗分對面」；CT 註它可能是密奪北面的另一座防城；BH 註這名字與埃及人所拜的神明有關。
+  surfaces:
+  - phrase: 巴力洗分
+  match_type: exact
+  existing_title: 巴力洗分
+  existing_path: link_folder/地點/巴力洗分.md
+- name: 密奪
+  suggested_type: 地點
+  evidence: 第7節「就在密奪安營」；CT 註密奪是埃及東面國境上設有守望塔的防城，根據文獻埃及在那裡築了一道邊牆。
+  surfaces:
+  - phrase: 密奪
+  match_type: exact
+  existing_title: 密奪
+  existing_path: link_folder/地點/密奪.md
+- name: 書珥的曠野
+  suggested_type: 地點
+  evidence: 第8節「經過海中到了書珥曠野」；CT 註它位於西乃半島的西北角，以色列人由此轉向南方；GT 丁良才說伊坦曠野就是書珥曠野。
+  surfaces:
+  - phrase: 書珥曠野
+  match_type: exact
+  existing_title: 書珥的曠野
+  existing_path: link_folder/地點/書珥的曠野.md
+- name: 瑪拉
+  suggested_type: 地點
+  evidence: 第8、9節第五站；CT 註在此丟一棵樹在水裡，變苦水為甜水（出15:23）。
+  surfaces:
+  - phrase: 瑪拉
+  match_type: exact
+  existing_title: 瑪拉
+  existing_path: link_folder/地點/瑪拉.md
+- name: 以琳
+  suggested_type: 地點
+  evidence: 第9節「以琳有十二股水泉，七十棵棕樹」；CT 與 GT《聖經精讀本》都把十二與七十讀成十二支派與七十長老。
+  surfaces:
+  - phrase: 以琳
+  match_type: exact
+  existing_title: 以琳
+  existing_path: link_folder/地點/以琳.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: 第10、11節第七站「安營在紅海邊」；CT 註《出埃及記》中沒有提到這一站。
+  surfaces:
+  - phrase: 紅海
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+- name: 汛的曠野
+  suggested_type: 地點
+  evidence: 第11、12節第八站；CT 註以色列人在此抱怨，並在此地開始有降嗎哪的神蹟（出16:13-15）。
+  surfaces:
+  - phrase: 汛的曠野
+  match_type: exact
+  existing_title: 汛的曠野
+  existing_path: link_folder/地點/汛的曠野.md
+- name: 利非訂
+  suggested_type: 地點
+  evidence: 第14、15節「安營在利非訂；在那裡，百姓沒有水喝」；CT 註在那裡發生兩件大事：杖打磐石流出水來，以及與亞瑪力人爭戰得勝。
+  surfaces:
+  - phrase: 利非訂
+  match_type: exact
+  existing_title: 利非訂
+  existing_path: link_folder/地點/利非訂.md
+- name: 西乃的曠野
+  suggested_type: 地點
+  evidence: 第15、16節第十二站；CT 註境內有西乃山，神就在那山頂上降下律法。
+  surfaces:
+  - phrase: 西乃的曠野
+  match_type: exact
+  existing_title: 西乃的曠野
+  existing_path: link_folder/地點/西乃的曠野.md
+- name: 基博羅哈他瓦
+  suggested_type: 地點
+  evidence: 第16、17節第十三站；CT 註原文字義「貪慾之人的墳墓」，在吃鵪鶉之際被瘟疫殺死了很多人。
+  surfaces:
+  - phrase: 基博羅哈他瓦
+  match_type: exact
+  existing_title: 基博羅哈他瓦
+  existing_path: link_folder/地點/基博羅哈他瓦.md
+- name: 哈洗錄
+  suggested_type: 地點
+  evidence: 第17、18節第十四站；CT 註在此地發生米利暗長大痲瘋的事，行程被耽延了七天。
+  surfaces:
+  - phrase: 哈洗錄
+  match_type: exact
+  existing_title: 哈洗錄
+  existing_path: link_folder/地點/哈洗錄.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: 第36、37節「安營在尋的曠野，就是加低斯」；CT 註加低斯是以色列惹神怒氣最嚴重的地方，在那裡開始了四十年的飄流。
+  surfaces:
+  - phrase: 加低斯
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 何珥山
+  suggested_type: 地點
+  evidence: 第37-41節：以東地的邊界，亞倫死在那裡；CT 註以色列人避過正面與以東人發生衝突。
+  surfaces:
+  - phrase: 何珥山
+  match_type: exact
+  existing_title: 何珥山
+  existing_path: link_folder/地點/何珥山.md
+- name: 以東
+  suggested_type: 地點
+  evidence: 第37節「安營在何珥山，以東地的邊界」；BH 註以東是以掃後裔之地，與以色列既是親族又是對頭。
+  surfaces:
+  - phrase: 以東地
+  match_type: exact
+  existing_title: 以東
+  existing_path: link_folder/地點/以東.md
+- name: 底本
+  suggested_type: 地點
+  evidence: 第45、46節「安營在底本迦得」；CT 與 GT 丁良才都說這名字大概是因迦得人修補底本城起的（參民32:34）。
+  surfaces:
+  - phrase: 底本迦得
+  match_type: exact
+  existing_title: 底本
+  existing_path: link_folder/地點/底本.md
+- name: 亞巴琳山
+  suggested_type: 地點
+  evidence: 第47、48節第四十一站；CT 註亞巴琳山指死海和約但河東邊那一帶山嶺的總稱，其中北部山區名叫毗斯迦，最高峰名叫尼波。
+  surfaces:
+  - phrase: 亞巴琳山
+  match_type: exact
+  existing_title: 亞巴琳山
+  existing_path: link_folder/地點/亞巴琳山.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: 第48、49、50節第四十二站；CT 註兩地從南到北相距約二十公里，表示以色列軍營展開長達約有二十公里。
+  surfaces:
+  - phrase: 摩押平原
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 什亭（亞伯什亭）
+  suggested_type: 地點
+  evidence: 第49節「從伯耶施末直到亞伯什亭」；CT 給的字義是「刺槐之草地」；BH 註亞伯什亭意為「皂莢樹的草場」，也是民25 以色列與摩押女子犯罪之處。
+  surfaces:
+  - phrase: 亞伯什亭
+  match_type: exact
+  existing_title: 什亭（亞伯什亭）
+  existing_path: link_folder/地點/什亭（亞伯什亭）.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第48、50節「約但河邊、耶利哥對面」；GT《啟導本》註耶利哥屬迦南重鎮，也是以色列人進迦南最先攻打的一座城。
+  surfaces:
+  - phrase: 耶利哥
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 第51節「你們過約但河進迦南地的時候」；第40節「住在迦南南地的迦南人亞拉得王」。
+  surfaces:
+  - phrase: 迦南地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第48、49、50、51節：安營在摩押平原約但河邊，並吩咐他們過約但河進迦南地。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 瑪拉苦水變甜
+  suggested_type: 事件
+  evidence: CT 在第8節註『瑪拉』是第五站，在此丟一棵樹在水裡，變苦水為甜水（出15:23）；BH 也在同節回顧這件事。
+  match_type: exact
+  existing_title: 瑪拉苦水變甜
+  existing_path: link_folder/事件/瑪拉苦水變甜.md
+- name: 過紅海
+  suggested_type: 歷史
+  evidence: 第8節「從比哈希錄對面起行，經過海中到了書珥曠野」；CT 註『經過海中』指神使用神蹟，使以色列人走在乾地上，到達紅海的對岸。
+  match_type: exact
+  existing_title: 過紅海
+  existing_path: link_folder/歷史/過紅海.md
+- name: 戰勝亞拉得王
+  suggested_type: 歷史
+  evidence: 第40節「住在迦南南地的迦南人亞拉得王聽說以色列人來了」；CT 註亞拉得在南地的北部，位於希伯崙以南約二十七公里。
+  surfaces:
+  - phrase: 亞拉得王
+  match_type: exact
+  existing_title: 戰勝亞拉得王
+  existing_path: link_folder/歷史/戰勝亞拉得王.md
+- name: 曠野飄流四十年
+  suggested_type: 歷史
+  evidence: 第38節「以色列人出了埃及地後四十年」；CT 註利提瑪與加低斯該是同一地方，加低斯是在那裡開始了四十年飄流的地方。
+  match_type: exact
+  existing_title: 曠野飄流四十年
+  existing_path: link_folder/歷史/曠野飄流四十年.md
+- name: 逾越節
+  suggested_type: 歷史
+  evidence: 第3節「正月十五日，就是逾越節的次日」；CT 註這也是無酵節的第一日；KC 指出這預設了逾越節所代表的事與脫離埃及為奴之間的直接關聯。
+  surfaces:
+  - phrase: 逾越節
+  match_type: exact
+  existing_title: 逾越節
+  existing_path: link_folder/歷史/逾越節.md
+- name: 第十災（殺長子之災）
+  suggested_type: 歷史
+  evidence: 第4節「那時，埃及人正葬埋他們的長子，就是耶和華在他們中間所擊殺的」；CT 註在逾越節的那一夜神擊殺埃及人所有的長子（出12:29）。
+  match_type: exact
+  existing_title: 第十災（殺長子之災）
+  existing_path: link_folder/歷史/第十災（殺長子之災）.md
+- name: 十災
+  suggested_type: 歷史
+  evidence: 第4節「耶和華也敗壞他們的神」；CT 註這指神降十災，就是對埃及人所崇拜的眾神施行審判。
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 米利暗卒於加低斯
+  suggested_type: 事件
+  evidence: GT《啟導本》在第38節註：「米利暗死後半年亞倫也死了；亞倫死後六個月，摩西也隨著去世」，把本章記的亞倫死期放進三位領袖相繼離世的時間軸。
+  match_type: exact
+  existing_title: 米利暗卒於加低斯
+  existing_path: link_folder/事件/米利暗卒於加低斯.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第54節「你們要按家室拈鬮，承受那地；人多的，要把產業多分給他們；人少的，要把產業少分給他們」；CT 把分地原則列成三項。
+  surfaces:
+  - phrase: 拈鬮
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第54節兩次「產業」；STEP 顯示是 H5159 na.cha.lah，前後由兩個 Hitpael 動詞 hit.na.chal.Tem
+    與 tit.ne.Cha.lu（H5157）包住。
+  surfaces:
+  - phrase: 產業
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 邱壇與日像被毀（拜偶像的終極審判）
+  suggested_type: 主題
+  evidence: 第52節「又拆毀他們一切的邱壇」；CT 註必須拆毀一切建在高地上的異教神廟和神壇等崇拜設施。
+  surfaces:
+  - phrase: 邱壇
+  match_type: exact
+  existing_title: 邱壇與日像被毀（拜偶像的終極審判）
+  existing_path: link_folder/主題/邱壇與日像被毀（拜偶像的終極審判）.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: 第52節「毀滅他們一切鏨成的石像和他們一切鑄成的偶像」；BH 把這道命令接回十誡的第一、二誡（出20:3-4）。
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 迦南七族（迦南地原住民）
+  suggested_type: 背景
+  evidence: 第52、55節「就要從你們面前趕出那裡所有的居民」「倘若你們不趕出那地的居民」；BH 註這地的居民即迦南人，以拜偶像與道德敗壞著稱。
+  match_type: exact
+  existing_title: 迦南七族（迦南地原住民）
+  existing_path: link_folder/背景/迦南七族（迦南地原住民）.md
+- name: 拆毀偶像律例
+  suggested_type: 事件
+  evidence: 第52節列出鏨成的石像、鑄成的偶像、邱壇三類必須毀滅的對象；GT 丁良才註以色列人後來並不遵行，反倒在邱壇上獻祭。
+  match_type: exact
+  existing_title: 拆毀偶像律例
+  existing_path: link_folder/事件/拆毀偶像律例.md
+- name: 越過耶和華的口（peh）
+  suggested_type: 原文
+  evidence: '第2節「摩西遵著耶和華的吩咐記載他們所行的路程」與第38節「祭司亞倫遵著耶和華的吩咐上何珥山」；STEP 顯示兩處的「吩咐」都是 pi（H6310I，詞典形
+    peh，簡要詞典義 lip: word），字面是耶和華的口。'
+  surfaces:
+  - phrase: 遵著耶和華的吩咐
+  match_type: exact
+  existing_title: 越過耶和華的口（peh）
+  existing_path: link_folder/原文/越過耶和華的口（peh）.md
+- name: 他備拉與基博羅哈他瓦是否同一地
+  suggested_type: 解經爭議
+  evidence: 本章第16-17節的行程表列了基博羅哈他瓦，卻沒有列民11:3 的他備拉——這正是主張兩地是同一地的第一項理由。
+  match_type: exact
+  existing_title: 他備拉與基博羅哈他瓦是否同一地
+  existing_path: link_folder/解經爭議/他備拉與基博羅哈他瓦是否同一地.md
+- name: 昂然無懼
+  suggested_type: 原文
+  evidence: 第3節「在一切埃及人眼前昂然無懼地出去」；CT 註原文是「高舉的手」；GT《聖經精讀本》同樣說是「高舉的手」的意思；KC 也說字面是「以高舉的手」。STEP
+    顯示是 be./Yad（H3027G）＋ ra.Mah（H7311A，詞典形 rum，詞典義 to exalt）。
+  surfaces:
+  - phrase: 昂然無懼
+  match_type: exact
+  existing_title: 昂然無懼
+  existing_path: link_folder/原文/昂然無懼.md
+C_new_formal:
+- name: 曠野四十二站
+  suggested_type: 主題
+  evidence: 第1-49節整份行程表。CT 把它分成四段（十二站、二十一站、九站、過河前的吩咐），並逐站給出名字字義與靈意；GT《民數記串珠聖經註釋》把四十二站排成六程各七站，並指出程與程之間的對應。
+  surfaces:
+  - phrase: 路程
+  target_path: link_folder/主題/曠野四十二站.md
+- name: 行程表在古代近東的體裁
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》：「行程表的體裁在古代近東的年表中十分常見，例子之一是主前九世紀 * 亞述王的年表。」並提到埃及遠征敘利亞─巴勒斯坦的記錄中也保存了行程表。
+  target_path: link_folder/背景/行程表在古代近東的體裁.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.413
+    type: 歷史
+- name: 民21 與民33 的站名為何不同
+  suggested_type: 解經爭議
+  evidence: GT 丁良才列出三種緣故（名字是以色列人自己起的、因地形起名、同時在兩處安營）；GT 引賈斯樂郝威《聖經難解經文詮釋手冊》命題29 給出七點解答；CT
+    註第31節申10:6 的記載剛好相反。
+  target_path: link_folder/解經爭議/民21 與民33 的站名為何不同.md
+- name: 遵著耶和華的吩咐記載路程
+  suggested_type: 主題
+  evidence: 第2節「摩西遵著耶和華的吩咐記載他們所行的路程」；KC 強調這不是照摩西的吩咐、而是照耶和華的吩咐；STEP 顯示「遵著耶和華的吩咐」是 'al-
+    pi Yah.weh，字面是照耶和華的口。
+  surfaces:
+  - phrase: 記載
+  target_path: link_folder/主題/遵著耶和華的吩咐記載路程.md
+  semantic_hint:
+  - title: 遵行
+    score: 0.44
+    type: 原文
+  - title: 認識神的道
+    score: 0.417
+    type: 主題
+  - title: 挪亞的完全順服
+    score: 0.408
+    type: 神學
+- name: 神的回顧只記進度不記背叛
+  suggested_type: 神學
+  evidence: KC：在這份列表裡神說的不是背叛，而是前進；神不是在那些倒下的人身上看見祂的百姓，而是在那些站立住的人身上看見。CT 也註加低斯這個名字沒有出現在行程記錄裡，是神的赦免使加低斯的失敗沒有留下在記錄中。
+  target_path: link_folder/神學/神的回顧只記進度不記背叛.md
+  semantic_hint:
+  - title: 神的記念
+    score: 0.459
+    type: 神學
+  - title: 神是否暫時忘記了挪亞
+    score: 0.437
+    type: 解經爭議
+  - title: 神的後悔與憂傷
+    score: 0.43
+    type: 神學
+- name: 敗壞他們的神
+  suggested_type: 原文
+  evidence: 第4節「耶和華也敗壞他們的神」；CT 原文字義給兩個字：做、製作、完成（首字）；審判（次字）。GT《聖經精讀本》說「敗壞」是「他施行審判」的意思；《靈修版聖經註釋》說可以直譯為「耶和華審判他們的眾神」。STEP
+    顯示是 'a.Sah（H6213A）＋ she.fa.Tim（H8201，詞典形 she.phet，詞典義 judgment）。
+  surfaces:
+  - phrase: 敗壞他們的神
+  target_path: link_folder/原文/敗壞他們的神.md
+  semantic_hint:
+  - title: 拆毀偶像律例
+    score: 0.444
+    type: 事件
+  - title: 耶和華敗壞埃及一切神
+    score: 0.443
+    type: 歷史
+  - title: 敗壞與毀滅的文字呼應
+    score: 0.404
+    type: 原文
+- name: 眼中的刺與肋下的荊棘
+  suggested_type: 原文
+  evidence: 第55節；CT 註『眼中的刺』形容令人難受，『肋下的荊棘』形容無法動彈、寢食難安；GT《聖經精讀本》指出「刺」的原文是複數。STEP 顯示兩個詞是不同的字：si.Kim（H7899）與
+    tz.ni.Nim（H6796），都是陽性複數。
+  surfaces:
+  - phrase: 眼中的刺
+  - phrase: 肋下的荊棘
+  target_path: link_folder/原文/眼中的刺與肋下的荊棘.md
+- name: 毀滅迦南偶像的三道命令
+  suggested_type: 主題
+  evidence: 第52節一節之內用了三個動詞與三類對象：趕出居民、毀滅鏨成的石像與鑄成的偶像、拆毀邱壇。CT 原文字義逐一標注；STEP 顯示三個動詞分別是
+    ya.rash（H3423H）、a.vad（H6）、sha.mad（H8045）。
+  surfaces:
+  - phrase: 鏨成的石像
+  target_path: link_folder/主題/毀滅迦南偶像的三道命令.md
+  semantic_hint:
+  - title: 拆毀偶像律例
+    score: 0.52
+    type: 事件
+  - title: 古代近東偶像崇拜
+    score: 0.432
+    type: 背景
+  - title: 滅絕
+    score: 0.426
+    type: 原文
+- name: 以旬迦別
+  suggested_type: 地點
+  evidence: 第35、36節第三十二站；GT 丁良才註「就是所羅門製造船隻的海口（王上九26，代下八17）」；GT《舊約背景註釋》定位在亞喀巴灣頭；BH
+    註它是銅冶煉與貿易的重鎮。
+  surfaces:
+  - phrase: 以旬迦別
+  target_path: link_folder/地點/以旬迦別.md
+- name: 普嫩
+  suggested_type: 地點
+  evidence: 第42、43節第三十六站；CT 註有聖經學者認為它是比嫩的別名；GT《舊約背景註釋》定位在死海以南三十哩的費楠廢墟；BH 註它以銅礦聞名。
+  surfaces:
+  - phrase: 普嫩
+  target_path: link_folder/地點/普嫩.md
+- name: 摩西錄
+  suggested_type: 地點
+  evidence: 第30、31節第二十七站；CT 註聖經學者認為摩西錄就是申10:6 的摩西拉，亞倫的死亡和埋葬以及以利亞撒的接任發生在那裡；GT 丁良才註這是多數字式、申10:6
+    的摩西拉是單數字式。
+  surfaces:
+  - phrase: 摩西錄
+  target_path: link_folder/地點/摩西錄.md
+  semantic_hint:
+  - title: 摩西寫在書上
+    score: 0.532
+    type: 背景
+  - title: 摩西
+    score: 0.528
+    type: 人物
+  - title: 摩西之歌
+    score: 0.519
+    type: 神學
+- name: 比尼亞干
+  suggested_type: 地點
+  evidence: 第31、32節第二十八站；CT 註又名比羅比尼亞干或亞干井，《申命記》的記載剛好相反；BH 註申10:6 稱它為「亞干子孫的井」，說明那裡有水。
+  surfaces:
+  - phrase: 比尼亞干
+  target_path: link_folder/地點/比尼亞干.md
+- name: 亞倫去世的日期
+  suggested_type: 主題
+  evidence: 第38-39節：出埃及後四十年五月初一日，亞倫上何珥山死在那裡，年一百二十三歲。GT 丁良才註「聖書上只在本處記亞倫去世的日期」，並註亞倫站在法老面前時年八十三歲；BH
+    註這個明確的日期為敘事提供了歷史錨點。
+  surfaces:
+  - phrase: 五月初一日
+  target_path: link_folder/主題/亞倫去世的日期.md
+D_new_candidate: []
+E_skip: []
