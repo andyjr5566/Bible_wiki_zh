@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "民數記",
+  "chapter": 35,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_numbers_35.txt",
+      "book": "Numbers",
+      "book_code": "Num",
+      "chapter": 35,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 482,
+      "first": "Num 35:1",
+      "last": "Num 35:34",
+      "sha256": "b0bee87d27d3103728508dccbbbf93105705332e91d108e1135a964023800c42",
+      "bytes": 93086,
+      "chars": 81880,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

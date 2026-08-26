@@ -1,0 +1,278 @@
+book: 民數記
+chapter: 35
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: v1「耶和華在摩押平原─約但河邊、耶利哥對面曉諭摩西說」；v9「耶和華曉諭摩西說」。本章兩段律例都由神向摩西頒佈。
+  surfaces:
+  - phrase: 摩西
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: v1「耶和華在摩押平原─約但河邊、耶利哥對面曉諭摩西說」。GT《聖經精讀本》列出以色列在摩押平原接受的七項條例，本章的利未人城邑與逃城制度是其中之一。
+  surfaces:
+  - phrase: 摩押平原
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: v1「約但河邊」；v10「你們過約但河，進了迦南地」；v14「在約但河東要分出三座城」。逃城以約但河為東西分界。
+  surfaces:
+  - phrase: 約但河
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: v1「耶利哥對面」。CT 註『摩押平原約但河邊』即指約但河東岸的平原。
+  surfaces:
+  - phrase: 耶利哥
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: v10「你們過約但河，進了迦南地」；v14「在迦南地也要分出三座城」。CT 註「進了迦南地」即指攻取了迦南地之後。
+  surfaces:
+  - phrase: 迦南地
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: v2「把些城給利未人居住」；v6-8 四十八座城。CT 註因利未人並未分配產業之地給他們，除了能得到以色列人出產的十分之一之外，尚需居住之地。
+  surfaces:
+  - phrase: 利未人
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: v2「從所得為業的地中」；v8「各支派要按所承受為業之地」；v28「才可以回到他所得為業之地」。STEP 顯示 v2 是 mi./na.cha.Lat（H5159），v8
+    是 na.cha.la.T/o（H5159）。
+  surfaces:
+  - phrase: 為業
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 利未人城邑房屋隨時贖回
+  suggested_type: 主題
+  evidence: GT《舊約聖經背景註釋》在 v1-5 段註明「有關他們在這些城邑中的產權，見：民二十五32～34」（即利未記二十五32-34），指向利未人城邑房屋的贖回條例。
+  match_type: exact
+  existing_title: 利未人城邑房屋隨時贖回
+  existing_path: link_folder/主題/利未人城邑房屋隨時贖回.md
+- name: 逃城
+  suggested_type: 互文
+  evidence: v6「其中當有六座逃城，使誤殺人的可以逃到那裡」；v9-15 逃城制度；v25-28 住在逃城直到大祭司死。本章是逃城制度最完整的一段。
+  surfaces:
+  - phrase: 逃城
+  match_type: exact
+  existing_title: 逃城
+  existing_path: link_folder/互文/逃城.md
+- name: 殺人（ratsach）
+  suggested_type: 原文
+  evidence: v6、11、12「誤殺人的」與 v16-21、30-31「故殺人的」在原文是同一個字。STEP 顯示兩者都是 ro.Tze.ach（H7523，詞典形
+    ra.tsach），Qal 主動分詞；差別由 v11「誤」bi/sh.ga.Gah（H7684）與 v20-21 的仇恨、埋伏等情節界定。
+  surfaces:
+  - phrase: 誤殺人的
+  match_type: exact
+  existing_title: 殺人（ratsach）
+  existing_path: link_folder/原文/殺人（ratsach）.md
+- name: 謀殺與誤殺的區分
+  suggested_type: 神學
+  evidence: v16-21 用鐵器、石頭、木器打死人並因怨恨推倒、埋伏扔物的是故殺；v22-23 沒有仇恨、忽然推倒、沒有看見的是誤殺。GT《民數記串珠聖經註釋》：謀殺的動機可從武器的種類或先前的仇怨判斷。
+  surfaces:
+  - phrase: 故殺人的
+  match_type: exact
+  existing_title: 謀殺與誤殺的區分
+  existing_path: link_folder/神學/謀殺與誤殺的區分.md
+- name: 救贖goel
+  suggested_type: 神學
+  evidence: 'v12「這些城可以作逃避報仇人的城」；v19、21、24、25、27「報血仇的」。STEP 顯示原文是 go.''El ha./Dam（H1350H＋H1818），H1350
+    的簡要詞典義是 to redeem: avenge；KingComments 指出「報血仇的」在希伯來文就是 goël，也用於贖回失去的家業時的「至近親屬」。'
+  surfaces:
+  - phrase: 報血仇的
+  - phrase: 報血仇人
+  - phrase: 報仇人
+  match_type: exact
+  existing_title: 救贖goel
+  existing_path: link_folder/神學/救贖goel.md
+- name: 古代近東血仇制度
+  suggested_type: 背景
+  evidence: v19「報血仇的必親自殺那故殺人的，一遇見就殺他」。GT《舊約聖經背景註釋》：聖經律法雖然清楚顯示「報血仇者」有責任為被殺害的親屬復仇，這種家族間的血仇對於司法的執行卻有不良的影響。
+  match_type: exact
+  existing_title: 古代近東血仇制度
+  existing_path: link_folder/背景/古代近東血仇制度.md
+- name: 古代近東祭壇庇護
+  suggested_type: 背景
+  evidence: GT《舊約聖經背景註釋》註 v6-34：為被告提供庇護的方法「可能有延伸或替代出埃及記二十一12～14『庇護性祭壇』的作用」，並指祭司團體可能擔心犯法者抓住祭壇的角有污穢祭壇之虞。
+  match_type: exact
+  existing_title: 古代近東祭壇庇護
+  existing_path: link_folder/背景/古代近東祭壇庇護.md
+- name: 全會眾
+  suggested_type: 人物
+  evidence: v12「等他站在會眾面前聽審判」；v24「會眾就要照典章……審判」；v25「會眾要救這誤殺人的脫離報血仇人的手」。STEP 顯示是 ha./'e.Dah（H5712）。
+  surfaces:
+  - phrase: 會眾
+  match_type: exact
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
+- name: 典章
+  suggested_type: 神學
+  evidence: 'v12「聽審判」、v24「會眾就要照典章」、v29「要作你們世世代代的律例典章」。STEP 顯示 v12 是 la./mish.Pat（H4941G）、v24
+    是 ha./mish.pa.Tim（H4941G），簡要詞典義 justice: judgement。'
+  surfaces:
+  - phrase: 典章
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 不可作假見證陷害人
+  suggested_type: 神學
+  evidence: v30「只是不可憑一個見證的口叫人死」。CT 註『不可憑一個見證的口』這是為防止作假見證；GT 丁良才引申十七6「要憑兩三個人的口作見證」。
+  match_type: exact
+  existing_title: 不可作假見證陷害人
+  existing_path: link_folder/神學/不可作假見證陷害人.md
+- name: 死刑的罪行
+  suggested_type: 神學
+  evidence: v16-21「故殺人的必被治死」；v31「他必被治死」。STEP 顯示 v31 是 Mot yu.Mat（H4191，不定詞絕對式配 Hophal），字面「必定被治死」。
+  surfaces:
+  - phrase: 必被治死
+  match_type: exact
+  existing_title: 死刑的罪行
+  existing_path: link_folder/神學/死刑的罪行.md
+- name: 寄居的
+  suggested_type: 原文
+  evidence: v15「這六座城要給以色列人和他們中間的外人，並寄居的」。STEP 顯示「外人」是 Ger（H1616）、「寄居的」是 to.Shav（H8453A）。CT
+    註『他們中間的外人』指傾向猶太教但尚未正式歸化的外邦人；『寄居的』指不接受猶太教禮儀的外邦人。
+  surfaces:
+  - phrase: 寄居的
+  match_type: exact
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
+- name: 受膏的祭司
+  suggested_type: 人物
+  evidence: v25「直等到受聖膏的大祭司死了」；v28、32「大祭司死了」「大祭司未死以先」。CT 註『受聖膏的大祭司』指大祭司在上任供職時，須先受膏（參出四十15）。
+  surfaces:
+  - phrase: 大祭司
+  match_type: exact
+  existing_title: 受膏的祭司
+  existing_path: link_folder/人物/受膏的祭司.md
+- name: 聖膏油
+  suggested_type: 原文
+  evidence: v25「直等到受聖膏的大祭司死了」。STEP 顯示是 ma.Shach（H4886）加 be./She.men ha./Ko.desh（H8081＋H6944G），字面「用聖別的油膏他」。
+  surfaces:
+  - phrase: 聖膏
+  match_type: exact
+  existing_title: 聖膏油
+  existing_path: link_folder/原文/聖膏油.md
+- name: 贖命的價銀
+  suggested_type: 原文
+  evidence: v31「故殺人、犯死罪的，你們不可收贖價代替他的命」；v32「那逃到逃城的人，你們不可為他收贖價」。STEP 顯示是 kho.fer（H3724A），簡要詞典義
+    ransom。GT《舊約聖經背景註釋》：赫人和中亞述的法律，都容許贖價買回兇手的性命。
+  surfaces:
+  - phrase: 贖價
+  match_type: exact
+  existing_title: 贖命的價銀
+  existing_path: link_folder/原文/贖命的價銀.md
+- name: 血
+  suggested_type: 主題
+  evidence: v33「因為血是污穢地的；若有在地上流人血的，非流那殺人者的血，那地就不得潔淨」。STEP 顯示本節三次出現 Dam（H1818）。
+  surfaces:
+  - phrase: 血
+  match_type: exact
+  existing_title: 血
+  existing_path: link_folder/主題/血.md
+- name: 污穢
+  suggested_type: 主題
+  evidence: v33「這樣，你們就不污穢所住之地」。STEP 顯示動詞是 ta.cha.Ni.fu（H2610，詞典形 cha.neph），簡要詞典義 to
+    pollute，Hiphil 形。
+  surfaces:
+  - phrase: 污穢
+  match_type: exact
+  existing_title: 污穢
+  existing_path: link_folder/主題/污穢.md
+- name: 玷污自己也玷污地
+  suggested_type: 神學
+  evidence: v34「你們不可玷污所住之地」。STEP 顯示動詞是 te.ta.Me'（H2930A，詞典形 ta.me），簡要詞典義 to defile。CT
+    註土地的潔與不潔端視地上居民的兩種情形：是否敬拜偶像假神、是否流無辜之人的血。
+  surfaces:
+  - phrase: 玷污
+  match_type: exact
+  existing_title: 玷污自己也玷污地
+  existing_path: link_folder/神學/玷污自己也玷污地.md
+- name: 神住在人間
+  suggested_type: 神學
+  evidence: v34「就是我住在其中之地，因為我─耶和華住在以色列人中間」。STEP 顯示以色列「所住」是 yo.she.Vim（H3427 ya.shav），神「住在」是
+    sho.Khen（H7931 sha.khan），兩個動詞不同。
+  surfaces:
+  - phrase: 住在以色列人中間
+  match_type: exact
+  existing_title: 神住在人間
+  existing_path: link_folder/神學/神住在人間.md
+C_new_formal:
+- name: 郊野（mig.rash）
+  suggested_type: 原文
+  evidence: v2「也要把這城四圍的郊野給利未人」；v3-5 郊野的量法；v7「連城帶郊野都要給他們」。STEP 顯示 v4 是 u./mig.re.Shei（H4054），簡要詞典義
+    pasture；CT 原文字義作「空地」。
+  surfaces:
+  - phrase: 郊野
+  target_path: link_folder/原文/郊野（mig.rash）.md
+- name: 利未人的四十八座城
+  suggested_type: 主題
+  evidence: v6-8「其中當有六座逃城……此外還要給他們四十二座城」「共有四十八座」「人多的就多給，人少的就少給」。GT 丁良才註猶大和西緬支派將九座城分給了利未人，拿弗他利給了三座城，其餘的支派各給了四座城。
+  surfaces:
+  - phrase: 四十八座
+  target_path: link_folder/主題/利未人的四十八座城.md
+  semantic_hint:
+  - title: 利未人城邑房屋隨時贖回
+    score: 0.452
+    type: 主題
+  - title: 利未
+    score: 0.427
+    type: 人物
+  - title: 利未支派
+    score: 0.41
+    type: 人物
+- name: 利未人分散在各支派中
+  suggested_type: 主題
+  evidence: v2「從所得為業的地中把些城給利未人居住」；v8「各支派要按所承受為業之地把城邑給利未人」。GT 丁良才註這是應驗創四十九7 的話，原是咒詛的話，神卻叫這話變為祝福；KingComments
+    同樣指這是雅各預言的應驗。
+  target_path: link_folder/主題/利未人分散在各支派中.md
+  semantic_hint:
+  - title: 利未
+    score: 0.507
+    type: 人物
+  - title: 利未支派
+    score: 0.477
+    type: 人物
+- name: 憑幾個見證人的口
+  suggested_type: 主題
+  evidence: v30「要憑幾個見證人的口把那故殺人的殺了，只是不可憑一個見證的口叫人死」。STEP 顯示「見證人」是 'e.Dim（H5707）、「一個見證」是
+    've./'Ed 'e.Chad'（H5707＋H259）。CT 註「見證人」原意是指在場目睹的證人，可延伸為事發現場的犯罪證據。
+  target_path: link_folder/主題/憑幾個見證人的口.md
+- name: 大祭司死了誤殺者才得釋放
+  suggested_type: 神學
+  evidence: v25「他要住在其中，直等到受聖膏的大祭司死了」；v28「大祭司死了以後，誤殺人的才可以回到他所得為業之地」；v32 不可收贖價使他在大祭司未死以先再來住在本地。GT《舊約聖經背景註釋》：消除殺人之罪咎的是大祭司的死亡。
+  surfaces:
+  - phrase: 大祭司死了
+  target_path: link_folder/神學/大祭司死了誤殺者才得釋放.md
+  semantic_hint:
+  - title: 古代近東祭壇庇護
+    score: 0.402
+    type: 背景
+  - title: 謀殺與誤殺的區分
+    score: 0.4
+    type: 神學
+- name: 那地不得潔淨（ki.pher）
+  suggested_type: 原文
+  evidence: v33「那地就不得潔淨（潔淨原文作贖）」——和合本自己標明原文作贖。STEP 顯示動詞是 ye.khu.Par（H3722A，詞典形 ki.pher），簡要詞典義
+    to atone，Pual 形。
+  surfaces:
+  - phrase: 不得潔淨
+  target_path: link_folder/原文/那地不得潔淨（ki.pher）.md
+D_new_candidate: []
+E_skip: []

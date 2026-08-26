@@ -650,6 +650,16 @@
       "分蹄倒嚼"
     ]
   },
+  "利未人分散在各支派中": {
+    "path": "link_folder/主題/利未人分散在各支派中.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "利未人分散在各支派中",
+    "status": "formal",
+    "aliases": []
+  },
   "利未人受職與祭司受職的差別": {
     "path": "link_folder/主題/利未人受職與祭司受職的差別.md",
     "type": "主題",
@@ -665,6 +675,16 @@
     "title": "利未人城邑房屋隨時贖回",
     "status": "formal",
     "aliases": []
+  },
+  "利未人的四十八座城": {
+    "path": "link_folder/主題/利未人的四十八座城.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "利未人的四十八座城",
+    "status": "formal",
+    "aliases": [
+      "四十八座城"
+    ]
   },
   "利百加不孕": {
     "path": "link_folder/主題/利百加不孕.md",
@@ -1519,6 +1539,16 @@
     "type": "主題",
     "secondary_types": [],
     "title": "愛鄰舍與仇敵",
+    "status": "formal",
+    "aliases": []
+  },
+  "憑幾個見證人的口": {
+    "path": "link_folder/主題/憑幾個見證人的口.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "憑幾個見證人的口",
     "status": "formal",
     "aliases": []
   },
@@ -15092,6 +15122,28 @@
     "status": "formal",
     "aliases": []
   },
+  "那地不得潔淨（ki.pher）": {
+    "path": "link_folder/原文/那地不得潔淨（ki.pher）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "那地不得潔淨（ki.pher）",
+    "status": "formal",
+    "aliases": [
+      "ki.pher"
+    ]
+  },
+  "郊野（mig.rash）": {
+    "path": "link_folder/原文/郊野（mig.rash）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "郊野（mig.rash）",
+    "status": "formal",
+    "aliases": [
+      "mig.rash"
+    ]
+  },
   "配偶幫助者": {
     "path": "link_folder/原文/配偶幫助者.md",
     "type": "原文",
@@ -20503,6 +20555,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "大淵的泉源與天上的窗戶",
+    "status": "formal",
+    "aliases": []
+  },
+  "大祭司死了誤殺者才得釋放": {
+    "path": "link_folder/神學/大祭司死了誤殺者才得釋放.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "大祭司死了誤殺者才得釋放",
     "status": "formal",
     "aliases": []
   },
@@ -27807,6 +27869,9 @@
   "分蹄倒嚼": {
     "alias_of": "分蹄倒嚼（潔淨走獸的判準）"
   },
+  "四十八座城": {
+    "alias_of": "利未人的四十八座城"
+  },
   "刻苦己心": {
     "alias_of": "刻苦己心（禁食悔改）"
   },
@@ -30785,6 +30850,12 @@
   },
   "越過": {
     "alias_of": "逾越（Pesach）"
+  },
+  "ki.pher": {
+    "alias_of": "那地不得潔淨（ki.pher）"
+  },
+  "mig.rash": {
+    "alias_of": "郊野（mig.rash）"
   },
   "相配的幫助者": {
     "alias_of": "配偶幫助者"
