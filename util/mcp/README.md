@@ -9,7 +9,7 @@
 | 工具 | 用途 | 是否寫入 |
 | --- | --- | --- |
 | `get_chapter_status` | 依 `check_chapter_files.build_checks` 回報管線缺口與續作指令。 | 否 |
-| `search_wiki_entries` | 查 canonical link index 的 title、alias、主分類與 secondary types。 | 否 |
+| `search_wiki_entries` | 查 canonical link index 的 title、alias、主分類與 secondary types；傳 `queries` 可一次掃整章候選清單（見下方「開章前的候選存在性掃描」）。 | 否 |
 | `read_wiki_entry` | 只讀取索引中的 `link_folder/**/*.md` 條目。 | 否 |
 | `read_chapter_artifact` | 只讀取白名單內的 `.tmp/第X章` payload／manual prompt。 | 否 |
 | `read_chapter_source` | 讀本地經文或該章 manifest 宣告為 OK 的 raw_data 來源。 | 否 |
@@ -57,6 +57,22 @@ M3 與 M6 不會呼叫 `run_chapter.py` 的模型端點。標準順序是：
 7. `render_manual_chapter`
 
 `check_manual_payloads` 是唯讀的；它不會把 alias 連結回寫檔案。任何內容敘述仍須人工對回經文與正式來源。Prompt 不再複製已全文讀過的 commentary body；這不是摘要或降低閱讀要求。STEP 是原文證據層，不是第五套 commentary：完整 raw source 經 deterministic machine gate，prompt projection 的 lexicon 依 exact Extended Strong 去重、每個 occurrence 保留 morphology code；不得算入四套註釋的共識票。Lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
+
+## 開章前的候選存在性掃描
+
+`link_candidates.yaml` 定稿前有兩層檢查，缺一層都有靜默漏洞：
+
+1. **字面存在性**（本節）：`search_wiki_entries(queries=[...])` 一次掃整章打算寫的候選名。
+   回傳保持查詢順序，另附一個 `unmatched` 清單列出「完全查無」的名字。**這一欄是重點**——
+   候選名對不上任何真實條目時 resolver 不會報錯，只會靜靜歸成 C 類新建，於是憑印象寫的
+   「千夫長百夫長制度」就變成一個與既有「曠野審判制度」重複的新條目。想寫 B 類累積就
+   必須用**精確既有標題**，這支工具是唯一能在寫檔前確認標題的地方。
+   裸名 `find`／`grep` 取代不了它：`X（字義）` 形式的檔名與 alias 都對不上裸名比對
+   （民2 差一步建出四個分岔支派條目）。`max_results` 是**每個 query** 的上限，一次掃
+   幾十個名字時調小（例如 5）；上限 60 個 query。
+2. **語義近鄰**：候選寫齊後跑 `build_candidate_similarity`。它抓的是第 1 層抓不到的那型——
+   措辭完全不同、關鍵字查不到的既有條目，以及本章兩個候選其實同概念（新章條目還不在
+   索引裡，只有候選互查看得出來）。
 
 ## 內容勘誤：兩個工具能幫到哪、幫不到哪
 

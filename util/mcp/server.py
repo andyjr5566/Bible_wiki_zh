@@ -69,6 +69,7 @@ mcp = FastMCP("Hermes-Scripture-MCP")
 _MAX_READ_CHARS = 24_000
 _DEFAULT_READ_CHARS = 12_000
 _MAX_SEARCH_RESULTS = 50
+_MAX_SEARCH_QUERIES = 60
 _CHAPTER_ARTIFACTS = {
     "source_manifest.md",
     "link_candidates.yaml",
@@ -1232,28 +1233,13 @@ def get_chapter_status(book: str, chapter: int) -> Dict[str, Any]:
     return result
 
 
-@mcp.tool()
-def search_wiki_entries(
+def _search_one(
+    entries: List[Dict[str, Any]],
     query: str,
-    entry_type: Optional[str] = None,
-    max_results: int = 20,
+    entry_type: Optional[str],
+    limit: int,
 ) -> Dict[str, Any]:
-    """Search the canonical link index by title and aliases, with deterministic results.
-
-    ``entry_type`` filters the primary type; aliases and secondary types are
-    returned so an agent can make the A/B/C/D decision without inventing names.
-    """
-    query = query.strip()
-    if not query:
-        return _error("query 不可為空")
-    try:
-        index = _load_entry_index()
-        entries = _primary_entries(index)
-    except (OSError, ValueError, json.JSONDecodeError) as exc:
-        return _error(str(exc))
-    known_types = sorted({str(entry.get("type")) for entry in entries if entry.get("type")})
-    if entry_type is not None and entry_type not in known_types:
-        return _error("未知 entry_type", allowed_types=known_types)
+    """Rank one needle against the index; shared by single and batch search."""
     needle = query.casefold()
     matches = []
     for entry in entries:
@@ -1272,14 +1258,64 @@ def search_wiki_entries(
         else:
             continue
         matches.append((rank, title, _entry_result(entry, matched_by)))
-    limit = max(1, min(max_results, _MAX_SEARCH_RESULTS))
     matches.sort(key=lambda item: (item[0], item[1]))
     return {
-        "success": True,
         "query": query,
         "result_count": min(len(matches), limit),
         "truncated": len(matches) > limit,
         "results": [item[2] for item in matches[:limit]],
+    }
+
+
+@mcp.tool()
+def search_wiki_entries(
+    query: Optional[str] = None,
+    queries: Optional[List[str]] = None,
+    entry_type: Optional[str] = None,
+    max_results: int = 20,
+) -> Dict[str, Any]:
+    """Search the canonical link index by title and aliases, with deterministic results.
+
+    ``entry_type`` filters the primary type; aliases and secondary types are
+    returned so an agent can make the A/B/C/D decision without inventing names.
+
+    Pass ``queries`` to sweep a whole chapter's candidate list in one call: the
+    A/B decision needs the *exact* existing title, and a candidate name that
+    matches no real entry is never reported as an error — it silently becomes a
+    C-class new entry, which is how near-duplicate entries get created. Batch
+    results keep the query order and each carries its own ``result_count`` and
+    ``truncated``. ``max_results`` applies per query, so lower it when sweeping
+    many names at once.
+    """
+    if queries is not None and query is not None:
+        return _error("query 與 queries 只能擇一")
+    raw = [query] if queries is None else list(queries)
+    if queries is None and query is None:
+        return _error("必須提供 query 或 queries")
+    cleaned = [str(item).strip() for item in raw if item is not None and str(item).strip()]
+    if not cleaned:
+        return _error("query 不可為空")
+    if len(cleaned) > _MAX_SEARCH_QUERIES:
+        return _error("queries 過多", max_queries=_MAX_SEARCH_QUERIES, received=len(cleaned))
+    try:
+        index = _load_entry_index()
+        entries = _primary_entries(index)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        return _error(str(exc))
+    known_types = sorted({str(entry.get("type")) for entry in entries if entry.get("type")})
+    if entry_type is not None and entry_type not in known_types:
+        return _error("未知 entry_type", allowed_types=known_types)
+    limit = max(1, min(max_results, _MAX_SEARCH_RESULTS))
+    searches = [_search_one(entries, needle, entry_type, limit) for needle in cleaned]
+    if queries is None:  # single-query shape stays exactly as before
+        result = {"success": True}
+        result.update(searches[0])
+        return result
+    return {
+        "success": True,
+        "query_count": len(searches),
+        "unmatched": [row["query"] for row in searches if row["result_count"] == 0],
+        "searches": searches,
     }
 
 

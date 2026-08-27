@@ -294,6 +294,46 @@ class MCPReadBoundaryTests(unittest.TestCase):
             self.assertTrue(result["success"])
             self.assertEqual("exact_alias", result["results"][0]["matched_by"])
 
+    def test_batch_queries_keep_order_and_report_unmatched(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            entry = self._index(root)
+            path = root / entry["path"]
+            path.parent.mkdir(parents=True)
+            path.write_text("# 測試條目", encoding="utf-8")
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.search_wiki_entries(
+                    queries=["測試別名", "查無此詞", entry["title"]]
+                )
+            self.assertTrue(result["success"])
+            self.assertEqual(3, result["query_count"])
+            self.assertEqual(
+                ["測試別名", "查無此詞", entry["title"]],
+                [row["query"] for row in result["searches"]],
+            )
+            # a candidate name matching nothing is the silent C-class trap
+            self.assertEqual(["查無此詞"], result["unmatched"])
+            self.assertEqual("exact_alias", result["searches"][0]["results"][0]["matched_by"])
+            self.assertEqual("exact_title", result["searches"][2]["results"][0]["matched_by"])
+
+    def test_batch_rejects_both_query_and_queries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._index(root)
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.search_wiki_entries(query="甲", queries=["乙"])
+            self.assertFalse(result["success"])
+
+    def test_batch_rejects_too_many_queries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._index(root)
+            too_many = [f"詞{n}" for n in range(server._MAX_SEARCH_QUERIES + 1)]
+            with patch.object(server, "ROOT_DIR", root):
+                result = server.search_wiki_entries(queries=too_many)
+            self.assertFalse(result["success"])
+            self.assertEqual(server._MAX_SEARCH_QUERIES, result["max_queries"])
+
 
 class ManualCompletionTests(unittest.TestCase):
     def test_missing_m3_and_m6_are_incomplete(self):
