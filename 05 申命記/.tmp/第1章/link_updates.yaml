@@ -1,0 +1,790 @@
+book: 申命記
+chapter: 1
+review_schema_version: 1
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目都必須分別填 definition／development 的 keep 或 update 並說明理由；這是審查義務，不是更新配額；keep 是正常且完整的結果，多數或全部 keep 都可通過。只有真正新增穩定定義或跨章發展才選 update，否則必須 keep，禁止為了顯得有做事而硬湊。
+updates:
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第1、3、5節三次點名摩西：他在約但河東的曠野向以色列眾人說話、照耶和華所吩咐的都曉諭他們、在摩押地講律法。第9-12節他回憶自己說過「管理你們的重任，我獨自擔當不起」；第37節神對他說「你必不得進入那地」。
+  relation: 本章是摩西臨終前一個多月的講話開場。CT：「就是摩西死前大約一個月。」他在這裡同時是三種身分——轉述神吩咐的人、當年設立官長的人、以及被判不得過河的人。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 70 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 69
+    accumulation_count_after: 70
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第1、5節「約但河東」是摩西講話的位置。CT 文意註解：「『約但河東』原文「約但河外」，即今之外約但」。STEP 顯示是 be./'E.ver hai./yar.Den（H5676H＋H3383）。
+  relation: 整卷申命記講於河東，河西才是要去的地。這條河在本章是還沒跨過的界線。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 12 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 11
+    accumulation_count_after: 12
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 第2節「從何烈山經過西珥山到加低斯巴尼亞有十一天的路程」；第6節神在何烈山說「你們在這山上住的日子夠了」；第19節「我們照著耶和華─我們神所吩咐的從何烈山起行」。CT：「『何烈山』指整條山脈，是磐石出水的地方(參出十七6)，其中一峰稱西乃山，就是神的山」；GT：「何烈山即以色列人領受律法的西奈山（出十九1），一般相信在西乃（今譯西奈）半島南部」。
+  relation: 本章的歷史回顧從何烈山起算，不從埃及起算。KC 指出百姓在那裡待了約一年，神說時候夠了，就叫他們往前走。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 西珥山
+  path: link_folder/地點/西珥山.md
+  summary: 第2節「從何烈山經過西珥山到加低斯巴尼亞」。CT：「『經過西珥山』指繞過以東地的邊緣(參二4)」；GT《串珠聖經註釋》：「「西珥山」：死海以南、亞拉巴東南面的山谷」。
+  relation: 本章只把西珥山當成路線上的一個標記；第44節「在西珥殺退你們」則是敗退的地點。真正處理以東人領土的規定要到第二章。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 加低斯
+  path: link_folder/地點/加低斯.md
+  summary: 第2、19節作「加低斯巴尼亞」，第46節作「加低斯」：「於是你們在加低斯住了許多日子。」GT：「加低斯巴尼亞原名加低斯，又名安密巴（創十四7），位於南地西南，是迦南的南疆入口，距別是巴南約70公里；為曠野中的一個綠洲，水草茂盛。」BH 指出考古上與西奈半島東北的 Ain el-Qudeirat 相對應。
+  relation: 本章的轉折點與收尾都在這裡：第19節到達，第22節在這裡提議派探子，第46節又停在這裡。CT：「『加低斯』乃是原出發點，表示不服神的命令的結局，乃是原地踏步。」
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 8 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 7
+    accumulation_count_after: 8
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第4節「亞摩利王西宏」；第7、19、20節「亞摩利人的山地」；第27節百姓怕被「交在亞摩利人手中」；第44節「住那山地的亞摩利人就出來攻擊你們」。CT 原文字義：「亞摩利」山居者。STEP 顯示是 ha./'e.mo.Ri（H567）。
+  relation: 亞摩利人在本章出現五次，前後意義相反：第4節是已經被擊殺的對象，第27節是百姓害怕的對象，第44節是實際擊敗他們的對象。GT《啟導本》指出「亞摩利人之山地」在此似泛指以色列人要去得為業的迦南全地。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    - 套用後將有 8 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 7
+    accumulation_count_after: 8
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第4節「住希實本的亞摩利王西宏」。CT 原文字義：「希實本」堡壘；GT《啟導本》：「「希實本」為亞摩利人的首邑，距死海北部東岸約20公里」；GT 華爾頓《申命記背景注釋》指出本節三個地點中「只有希實本曾被挖掘，但這個遺址也有爭議之處」。
+  relation: 本章只用它來標定西宏的身分，戰事本身留到第二章詳述。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+  summary: 第4節「那時，他已經擊殺了住希實本的亞摩利王西宏」。CT：「詳情請參閱民數記二十一章21~35節」；KC：「希實本本是摩押的首都，卻被亞摩利王西宏攻佔。」
+  relation: 本章把這場勝仗當成講話的時間座標——摩西開口時，河東的第一場仗已經打完。KC 進一步說，明白河東這兩場勝利是理解摩西接下來要講的話的前提。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第4節「住以得來、亞斯她錄的巴珊王噩」。CT 原文字義：「巴珊」多結果實的；BH 指出巴珊是一片肥沃富庶的地區，所以在以得來的這場仗關係重大。
+  relation: 與希實本並列，構成本章第4節的兩場河東戰事。地名的字義與 BH 對土地的描述一致。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  path: link_folder/互文/以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）.md
+  summary: 第4節「巴珊王噩」。CT 原文字義：「噩」長頸的；BH：「噩是另一個強敵，以身量高大著稱（申3:11）。」
+  relation: 本章只點名，細節留到第三章。GT 華爾頓《申命記背景注釋》補了一個對照：西宏和噩本人都沒有在任何經外文獻中出現，但他們的城市亞斯他錄有。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 摩押地
+  path: link_folder/地點/摩押地.md
+  summary: 第5節「摩西在約但河東的摩押地講律法說」。CT：「『摩押地』即指亞拉巴(參1節)的中南部」；BH 指出摩押位於死海以東，因羅得之子摩押得名（創19:37），並說摩西在此講話而不能進迦南與民20:12 的米利巴事件有關。
+  relation: 這是申命記全書的講台所在。摩西在應許之地之外講解那地的律法。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 4
+    accumulation_count_after: 5
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 南地
+  path: link_folder/地點/南地.md
+  summary: 第7節「就是亞拉巴、山地、高原、南地」。CT：「『南地』指迦南地境內的南部地區，別是巴以南一片貧瘠乾地」；GT《雷氏研讀本》：「「南地」（N e g e v）。位於迦南地南部的曠野地，約有四千五百平方英里（11,650平方公里）」。STEP 顯示是 u./va./Ne.gev（H5045G）。
+  relation: 本章把南地列進應許之地的分區清單，而不是當成障礙；第7節的整份清單是要去得的範圍。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: 第7節「沿海一帶迦南人的地」。CT 原文字義：「迦南人」熱心的，生意人，商人；BH 指出迦南人是應許之地的主要居民，以城邑發達與偶像敬拜著稱。
+  relation: 本章只在第7節的地理清單裡提到迦南人，用來標定應許之地的北部沿海範圍。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 11 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 10
+    accumulation_count_after: 11
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞伯拉罕
+  path: link_folder/人物/亞伯拉罕.md
+  summary: 第8節「就是耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許賜給他們和他們後裔為業之地」。GT《啟導本》指出第7節所描寫的範圍與神當年應許亞伯拉罕、以撒和雅各的相符（創十五18；二十六2～4；三十五11～12）。
+  relation: 本章用列祖之約作為進去得地的依據——第7節先給範圍，第8節立刻說明這範圍是向誰起的誓。第11節「惟願耶和華─你們列祖的神使你們比如今更多千倍」則接到人數的應許。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 24 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 23
+    accumulation_count_after: 24
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以撒
+  path: link_folder/人物/以撒.md
+  summary: 第8節「亞伯拉罕、以撒、雅各」。CT 原文字義：「以撒」他笑。
+  relation: 本章以三位列祖並列的形式出現，作為第7節那片地的應許對象。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 21 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 20
+    accumulation_count_after: 21
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 第8節「亞伯拉罕、以撒、雅各」。CT 原文字義：「雅各」抓住腳後跟的人，取代者。
+  relation: 與亞伯拉罕、以撒並列，構成本章起誓應許的三代對象。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 29 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 28
+    accumulation_count_after: 29
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 敬畏神、誠實、恨不義之財
+  path: link_folder/神學/敬畏神、誠實、恨不義之財.md
+  summary: 第13節「你們要按著各支派選舉有智慧、有見識、為眾人所認識的」。GT《啟導本》把兩份名單併起來看：「這裡和《出埃及記》十八21都列出了做領袖的一些標準，包括：1，敬畏神；2，誠實無妄；3，恨不義之財；4，有智慧；5，有見識；6，為眾人所尊敬（或作“有經驗”）。前三者為道德的，後三者為智慧與知識的。」CT 把申命記這三項拆開：「(1)有智慧，較偏重於治事的才幹；(2)有見識，較偏重於分辨的能力；(3)為眾人所認識的，較偏重於經驗和信譽。」STEP 顯示是 cha.kha.Mim（H2450）、u./ne.vo.Nim（H995 bin，Niphal 分詞）、vi./du.'Im（H3045 yada，Qal 被動分詞）。
+  relation: 出18:21 那三項偏道德，申1:13 這三項偏才智，GT《啟導本》把六項合起來當成同一份領袖標準。STEP 顯示第三項在原文是被動分詞，字面是「被人認識的」——與 CT 說的「經驗和信譽」方向一致。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 葉忒羅建議分層治理
+  path: link_folder/事件/葉忒羅建議分層治理.md
+  summary: 第9-18節回顧在何烈山下設立官長的經過。GT《啟導本》：「本節至18節所記的事可參《出埃及記》十八13～26」；GT《聖經精讀本》：「本文講述了摩西在實行岳父葉忒羅之忠告(出18:17-23)的過程中,首先向百姓講明其理由,再得到他們同意的場面。」
+  relation: 申命記的敘述補上了出埃及記沒寫的一段：第13-14節百姓先參與推舉並回答「照你所說的行了為妙」，摩西才任命。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 曠野審判制度
+  path: link_folder/背景/曠野審判制度.md
+  summary: '第15節「立他們為官長、千夫長、百夫長、五十夫長、十夫長，管理你們」。CT：「按所管理的人數，分別設立各級官長(參出十八25)」；GT《聖經精讀本》：「十夫長: 與其它夫長有所不同,他們所擔任的並不是軍事上的統率或司法上的責任,而是負責事務記錄,戶籍管理等行政瑣事,似乎是指基層行政人員的職稱。」BH 指出這種千、百、五十、十的編制反映軍事組織形態。'
+  relation: 本章讓這套制度多出一個層次的細節：GT《聖經精讀本》把十夫長與其他各級區分開來，說它負責的是戶籍與事務記錄一類的基層行政，不是軍事統率或司法。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: 第16節「當時，我囑咐你們的審判官說：你們聽訟⋯都要按公義判斷」。CT 原文字義：「審判官」判斷，治理。STEP 顯示是 sho.fe.tei./Khem（H8199 shaphat）；同節「按公義判斷」的動詞 u./she.fa.Tem 也是 H8199，「公義」是 Tze.dek（H6664G）。
+  relation: 本章顯示「審判官」與「判斷」在原文同一字根——這個職稱本身就是那個動作。第17節接著說明這個動作的歸屬：「因為審判是屬乎神的。」
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: 第16節「無論是弟兄彼此爭訟，是與同居的外人爭訟，都要按公義判斷」。CT：「『外人』指皈依猶太教的非希伯來人」；BH 指出把外人納入同一套司法標準，反映神的公義不分族群。STEP 顯示是 ge.R/o（H1616 ger，簡要詞典義 sojourner）。
+  relation: 本章把寄居者放進司法條文的受理範圍，而不是另立標準——第16節的兩種當事人（弟兄之間、與外人之間）適用同一句「都要按公義判斷」。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 申1：17
+  path: link_folder/互文/申1：17.md
+  summary: 第17節「審判的時候，不可看人的外貌；聽訟不可分貴賤，不可懼怕人，因為審判是屬乎神的。若有難斷的案件，可以呈到我這裡，我就判斷。」CT：「『審判是屬乎神的』指審判是經過神的授權，代表神而為，故毋須顧慮「人」的因素」；GT《聖經精讀本》：「掌管神之律法的審判官作為神的代言人,也當持有以神的權威與名義審判的意識」；BH 指出審判官是神的代表，在地上執行祂的公義（詩82:1-4）。STEP 顯示「審判」是 ha./mish.Pat（H4941G）、「難斷的案件」是 ha./da.Var 'a.Sher yik.Sheh（H1697L＋H7185）。
+  relation: 這個條目本來只從出23 那一側累積；本章補上的是被引用的那一節本身的上下文——它出現在摩西囑咐審判官的段落裡，前面是三道禁令，後面是難案上呈的機制。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: update
+      reason: 此條目的主題發展原為「待累積」，且既有累積只有出埃及記23章一側。本章補上被引用的申1:17 本身的上下文後，才第一次具備跨卷綜合的兩章材料（出23 的司法禁令 ＋ 申1 的立法場景與理由）。
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:1
+- title: 古代近東司法制度
+  path: link_folder/背景/古代近東司法制度.md
+  summary: 第16-17節。GT 華爾頓《申命記背景注釋》【申一16 古代近東的司法體制】：「接近這個時代的埃及和赫人記錄，亦同樣顯示司法系統是等級性的。赫人的《軍官及司令指南》（Instructions to Officers and Commanders）⋯讓軍官擔任法官⋯在大部分其他司法系統中，難斷的案件都是呈交給君王處理，在此的最高裁判則是摩西⋯陪審團並不存在，但長老有時也會集體判案⋯律師也不存在，大部分人在法庭上都是充任自己的律師。」
+  relation: 本章補上兩個具體對照：一是赫人《軍官及司令指南》同樣讓軍官擔任法官，與第13-15節的編制相仿；二是其他司法系統的最高裁判是君王，而這裡是摩西。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 曠野飄流四十年
+  path: link_folder/歷史/曠野飄流四十年.md
+  summary: '第19節「經過你們所看見那大而可怕的曠野」；第46節「於是你們在加低斯住了許多日子」。GT《聖經精讀本》：「大而可怕的曠野: 指阿拉伯曠野的西部,即形成北部西奈半島的荒涼沙漠地帶⋯山脈如同被火燒,只有尖岩陡石和荒沙遍滿全地。」KC 說那大而可怕的曠野是要在他們裡面養出對那地的渴望。'
+  relation: 本章從結果回頭看這段年日：第2節那句十一天的旁註，就是把飄流的長度放在一個可比的尺度上。CT 與 GT《啟導本》算的是三十八年，KC 與 BH 算的是出埃及到進迦南的四十年。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 十二探子窺探迦南地
+  path: link_folder/事件/十二探子窺探迦南地.md
+  summary: 第22-25節「我們要先打發人去，為我們窺探那地」「就從你們中間選了十二個人，每支派一人」。KC 點出與民數記的差異：民數記說是神吩咐派探子（民13:1-2），這裡說是百姓要求的，而這個要求出於對神的不信任，神看見他們心意已定就給了他們。CT：「摩西打發探子去窺探迦南地，不是決定應否進入應許之地，而是察探應當從何處進入。」
+  relation: 本章提供的是民數記沒有的那一面——提議是誰先開口的。GT《聖經精讀本》也持同樣讀法：派探子並非出自神的本意，是神允許了多疑百姓的要求。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以實各谷的一掛葡萄
+  path: link_folder/主題/以實各谷的一掛葡萄.md
+  summary: 第24-25節「於是他們起身上山地去，到以實各谷，窺探那地」「他們手裡拿著那地的果子下來」。CT 原文字義：「以實各」串束；CT 指出果子是兩個人用杠抬著一掛葡萄，又帶了些石榴和無花果(參民十三23)；GT《啟導本》：「“以實各”有果實累累之意，表示其地異常肥沃。此谷近希伯侖（參民十三22）。」
+  relation: 本章把果子與結論綁在一起：第25節探子帶著實物回來，說的是「耶和華─我們的神所賜給我們的是美地」。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 流奶與蜜之地
+  path: link_folder/神學/流奶與蜜之地.md
+  summary: 第25節「耶和華─我們的神所賜給我們的是美地」。CT：「『美地』又稱流奶與蜜之地(參民十三27)，乃形容物產豐富，適宜居住生活」；GT《聖經精讀本》：「早在摩西蒙召時(出3:8,17),神就描繪那地為“流奶與蜜之地”。」
+  relation: 本章用的詞是「美地」，CT 與 GT 都指出它與「流奶與蜜之地」指同一件事。KC 統計「美地」這個說法在申命記出現十次。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 4
+    accumulation_count_after: 5
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 越過耶和華的口（peh）
+  path: link_folder/原文/越過耶和華的口（peh）.md
+  summary: '第26節「你們卻不肯上去，竟違背了耶和華─你們神的命令」；第43節「竟違背耶和華的命令，擅自上山地去了」。GT《聖經精讀本》：「違背了耶和華你們神的命令: 在這裡意指誡命的“命令”(希伯來語, peh)的字面意思是“口”。即,出自神之口的話就是誡命。」STEP 顯示兩節同為 va./tam.Ru ''et- pi Yah.weh（H4784 marah＋H6310I peh）；相對地第45節「耶和華卻不聽你們的聲音」用的是 be./Ko.le./Khem（H6963A qol）。'
+  relation: 民22 巴蘭說他不得越過耶和華的口、民33 摩西與亞倫遵著耶和華的口而行，本章是第三種用法：以色列人悖逆耶和華的口，而且同一章裡出現兩次（第26與43節）。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞衲族與偉人拿非林
+  path: link_folder/背景/亞衲族與偉人拿非林.md
+  summary: 第28節「並且我們在那裡看見亞衲族的人」。CT 原文字義：「亞衲」頸項；CT：「『亞衲族』是一個身量高大的巨人族(參民十三33)」；GT《啟導本》：「“亞衲族”為迦南早期居民，以身材高大著稱⋯但所居地的城牆，據考古學家發現，只有10至15公尺高。探子說“高得頂天”的確過甚其詞。」GT 李道生《舊約聖經問題總解》另回答亞衲族的來歷與約書亞剿滅的結果。STEP 顯示是 be.Nei 'a.na.Kim（H6062）。
+  relation: 本章的亞衲族是恐懼的內容而不是敘事的主體——它出現在百姓引述探子的話裡。KC 指出四十年後的新一代又要面對同一批人，這次是重新給的機會。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 耶和華的爭戰
+  path: link_folder/神學/耶和華的爭戰.md
+  summary: 第30節「在你們前面行的耶和華─你們的神必為你們爭戰，正如他在埃及和曠野，在你們眼前所行的一樣」；第41節百姓說要「上去爭戰」；第42節神說「不要上去，也不要爭戰；因我不在你們中間」。STEP 顯示第30節是 hu' yi.la.Chem la./Khem（H3898A lacham，Niphal）。CT：「『為你們爭戰』指敵人不足畏懼，因神必使信靠祂的人得勝。」
+  relation: 同一個詞在本章出現三次，主詞不同結果就相反：第30節是神為他們爭戰，第41-42節是他們自己要去爭戰而神不在其中。第44節的結局印證了第42節的警告。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 雲柱火柱
+  path: link_folder/歷史/雲柱火柱.md
+  summary: 第33節「他在路上，在你們前面行，為你們找安營的地方；夜間在火柱裡，日間在雲柱裡，指示你們所當行的路」。GT《啟導本》：「在曠野中，神的約櫃走在百姓前面，為他們開路，找安營的地方。神在會幕的雲彩中，用火柱、雲柱引領他們行經曠野（參出十三21）。」BH 把火與雲讀成神同在的可見形式，使他們晝夜都能行路。
+  relation: 本章把雲柱火柱放進一段反駁裡：百姓要求派探子去查「該走何道」，第33節提醒他們神一路上都在前面找安營的地方、指示當行的路。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 8 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 7
+    accumulation_count_after: 8
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 加低斯巴尼亞事件
+  path: link_folder/歷史/加低斯巴尼亞事件.md
+  summary: 第19-46節整段回顧。GT《聖經精讀本》：「回顧加低斯巴尼亞事件:本文回顧了38年前加低斯巴尼亞所發生的以色列舊世代苦澀的叛逆事件(民13:1-14:45)。當時新世代尚小或尚未出生,因此,未能知道長達40年的曠野流浪生活的真正意義。」BH 指出加低斯巴尼亞是決斷與試驗之地，也是失敗的地點。
+  relation: 本章是這件事的第二次敘述，對象是沒有經歷過的人。摩西用第二人稱「你們」講他們父輩做的事，KC 說這是因為同樣的不信也在這一代裡面。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 迦勒
+  path: link_folder/人物/迦勒.md
+  summary: 第36節「惟有耶孚尼的兒子迦勒必得看見，並且我要將他所踏過的地賜給他和他的子孫，因為他專心跟從我」。CT 原文字義：「耶孚尼」他將被面對；「迦勒」有才能的，勇敢，全心的；BH 指出耶孚尼被記為基尼洗人，暗示可能有非以色列的出身。STEP 顯示是 ka.Lev ben- ye.fu.Neh（H3612G＋H3312G）。
+  relation: 本章只提迦勒不提約書亞作為「例外」，KC 的解釋是約書亞另有身分（接續摩西作領袖），而迦勒是一個普通以色列人，可以拿來對照自己。第38節才輪到約書亞。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 6
+    accumulation_count_after: 7
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 專心跟從主與另一個心志
+  path: link_folder/神學/專心跟從主與另一個心志.md
+  summary: 第36節「因為他專心跟從我」。CT：「『專心跟從我』字面的意思是『完全跟在我後面』，意指一心一意跟從神，不受任何外在因素的影響(參民三十二12)」；KC 指出迦勒的名字意思就是「全心」。STEP 顯示是 mi.Le' 'a.cha.Rei Yah.weh（H4390 ma.le Piel＋H310A a.char）。
+  relation: 本章給這個說法補上原文字面：不是「跟得很努力」，而是「填滿了跟在耶和華後面」。它與第32節「你們在這事上卻不信」形成本章內部的對照。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 摩西不得進入應許之地
+  path: link_folder/事件/摩西不得進入應許之地.md
+  summary: 第37節「耶和華為你的緣故也向我發怒，說：你必不得進入那地」。CT：「『為你們的緣故』指以色列百姓惹動摩西氣憤失態，杖打磐石兩次，結果遭受神的懲罰(參民二十11~12)」；GT《雷氏研讀本》：「雖然拒絕摩西進入應許地的決定，在以色列人於加低斯被拒絕的三十八年後才宣佈出來，但兩個決定的原因是相同的——不信。」KC 指出摩西在這裡沒有講自己的失敗，講的是發怒的起因。
+  relation: 本章把摩西被拒與百姓被拒放在同一段裡宣告（第35-38節），時間上其實相隔三十八年。GT《雷氏研讀本》認為兩者原因相同；KC 則說摩西是刻意把兩件事連起來，以突顯神審判的一致。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第38節「伺候你、嫩的兒子約書亞，他必得進入那地；你要勉勵他，因為他要使以色列人承受那地為業」。CT 原文字義：「嫩」魚，後裔；「勉勵」兼顧，加強；BH 指出他原名何西阿，摩西為他改名約書亞，意思是「耶和華是拯救」。
+  relation: 本章給約書亞的定位是接續者而不是例外者——第36節的例外只列迦勒，第38節另外交代約書亞，並要摩西勉勵他。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 13 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 12
+    accumulation_count_after: 13
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 海（紅海）
+  path: link_folder/地點/海（紅海）.md
+  summary: 第40節「至於你們，要轉回，從紅海的路往曠野去」。GT《啟導本》：「“紅海”原文為“蘆葦海”，當日很多湖泊都用此名（參出十四21注）。此處指阿卡巴灣。」GT《串珠》：「「紅海的路」：應作「蘆葦海的路」（參出13:18注）。這路經過加低斯東面。從這路「往曠野去」，即往東南，朝著亞喀巴海灣的方向沿路走去。」
+  relation: 本章的紅海是回頭的方向而不是渡過的地方：第40節叫這一代循紅海的路退回曠野。BH 指出這條路把他們帶回旅程的起點。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 4
+    accumulation_count_after: 5
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 得罪神
+  path: link_folder/神學/得罪神.md
+  summary: 第41節「我們得罪了耶和華，情願照耶和華─我們神一切所吩咐的上去爭戰」。CT 原文字義：「得罪」錯過目標，出差錯，犯罪。STEP 顯示是 cha.ta.Nu（H2398 chata，簡要詞典義 to sin）。KC 說他們口裡發出的「我們得罪了」只是照著念，沒有真實的份量。
+  relation: 本章的認罪出現在錯誤的時間點：第41節認了罪，第42節神說不要上去，第43節他們仍然上去。CT 說他們「雖然口裡認罪，但他們的行動卻違背神的命令」。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 迦南大敗直到何珥瑪
+  path: link_folder/歷史/迦南大敗直到何珥瑪.md
+  summary: 第44節「住那山地的亞摩利人就出來攻擊你們，追趕你們，如蜂擁一般，在西珥殺退你們，直到何珥瑪」。CT：「『何珥瑪』是雙關語，原本是可以得到『庇護』的地理用詞，現在轉用來成為『完全毀滅』的所在」；CT 原文字義：「殺退」打碎。STEP 顯示「如蜂擁一般」是 ka.'a.Sher ta.'a.Sei.nah ha./de.vo.Rim（H1682 de.vo.rah）、「殺退」是 va/i.ya.ke.Tu（H3807 ka.tat）。
+  relation: 本章是這場敗仗的第二次敘述，並且緊接著第45節的哭號與第46節的停滯。BH 指出何珥瑪這個名字本身的意思就是毀滅。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 宗主條約
+  path: link_folder/背景/宗主條約.md
+  summary: GT《聖經精讀本》：「摩西的第一篇講章:整卷書都依照當時施行於古代近東的宗主權盟約的傳統形式進行記錄。其結構如下:①前言;②歷史性序論;③立約;④保存並公開頒佈;⑤證人的名單;⑥根據是否遵守所立之約而賜下的祝福與咒詛。如此來看,本文當屬前言與歷史性序論部分。」同段並指出本書由三篇講章構成(1:6-4:43;4:44-26:19;27:1-30:20)，本章屬第一篇。
+  relation: 既有累積收的是出19 的前言與宣言、出20 的義務條款、利26 的祝咒條款；本章補上的是整卷書層級的對應——GT《聖經精讀本》把申命記全書讀成一份宗主權盟約文件，而第一章屬於其中的前言與歷史性序論。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 伯拉大河
+  path: link_folder/地點/伯拉大河.md
+  summary: 第7節「並利巴嫩山又到伯拉大河」。CT：「『伯拉大河』即今幼發拉底河，是神所應許之地的北方界線」；CT 原文字義：「伯拉」豐收；BH 指出幼發拉底河是西亞最長的河流之一，標示應許之地的東北界。STEP 顯示是 ne.har- pe.Rat（H5104H na.har＋H6578）。
+  relation: 本章把它放在應許之地分區清單的最後一項，作為北界。GT《啟導本》指出這個範圍與創15:18 給亞伯拉罕的應許相符，大衛所羅門時代曾見到這塊版圖。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 摩西立首領
+  path: link_folder/事件/摩西立首領.md
+  summary: 第13-15節「你們要按著各支派選舉有智慧、有見識、為眾人所認識的，我立他們為你們的首領」「我便將你們各支派的首領⋯立他們為官長、千夫長、百夫長、五十夫長、十夫長」。CT：「本節又說出領袖人物如何產生：(1)選舉──為眾人所舉薦；(2)設立──為成熟的既任領袖所認可。」CT 並指出出埃及記十八章雖未記載此事經過會眾贊同，但摩西一人無法認識那麼多首領，可確定各支派都熱心舉薦。
+  relation: 既有累積是從出18 的執行面收的；本章補上的是產生程序——CT 拆成推舉與設立兩步，而第14節「你們回答我說：照你所說的行了為妙」是出埃及記沒有的一句。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記1章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []

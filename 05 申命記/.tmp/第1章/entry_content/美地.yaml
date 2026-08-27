@@ -1,0 +1,41 @@
+name: 美地
+type: 主題
+secondary_types: []
+aliases: []
+status: formal
+definition: |-
+  「美地」在申命記第一章出現兩次，一次出自探子之口，一次出自神的誓言，中間隔著整段悖逆。
+
+  | 節次 | 說話的人 | 內容 |
+  |---|---|---|
+  | 25 | 十二探子 | 「耶和華─我們的神所賜給我們的是美地」 |
+  | 35 | 耶和華 | 「這惡世代的人，連一個也不得見我起誓應許賜給你們列祖的美地」 |
+
+  探子回報時說那地是好的，百姓卻不肯上去；於是同一個詞在第35節變成他們見不到的東西。
+
+  **這是申命記的常用語。** KC 統計了它在本書的分布：「a good (or: fair) land」這個說法在申命記出現十次——申1:25、1:35、3:25、4:21、4:22、6:18、8:7、8:10、9:6、11:17。
+
+  **原文。** STEP 原文資料顯示第25節是 to.Vah ha./'A.retz（H2896A tov「pleasant」＋H776G erets「land」），第35節同樣用 H2896A。CT 給第25節與第35節的原文字義都是「美」＝好的，令人愉悅的。
+
+  **和「流奶與蜜之地」的關係。** CT 說：「『美地』又稱流奶與蜜之地（參民十三27），乃形容物產豐富，適宜居住生活。」GT《聖經精讀本》補上這個描述的起點：「早在摩西蒙召時（出3:8,17），神就描繪那地為『流奶與蜜之地』。」
+
+  **探子帶回來的證據。** CT 指出第25節「手裡拿著那地的果子」是兩個人用杠抬著一掛葡萄，又帶了些石榴和無花果（民13:23）；GT《串珠》列出同樣三樣果子。BH 說這些果子是那地豐饒的實物見證。
+accumulations:
+- book: 申命記
+  chapter: 1
+  summary: |-
+    第25節探子回報「所賜給我們的是美地」，第35節神起誓「這惡世代的人，連一個也不得見⋯美地」。KC 指出「a good (or: fair) land」在申命記共出現十次（1:25,35;3:25;4:21,22;6:18;8:7,10;9:6;11:17）。STEP 顯示是 to.Vah ha./'A.retz（H2896A tov）；CT 兩處原文字義都作「好的，令人愉悅的」，並說美地又稱流奶與蜜之地。
+  relation: 同一個詞在本章前後兩次的落差就是整章的轉折——探子親眼確認那地是好的，百姓卻不肯上去，於是第35節神用同一個詞宣告他們見不到它。第39節接著說兒女必進入那地，這個詞才有了下一代的著落。
+related_entries:
+- 流奶與蜜之地
+- 十二探子窺探迦南地
+- 以實各谷的一掛葡萄
+- 應許之地的四至
+- 加低斯巴尼亞事件
+- 迦勒
+sources:
+- '逐節註解（ccbiblestudy CT）: 申命記第一章註解 — 申一25〔文意註解〕「『美地』又稱流奶與蜜之地(參民十三27)」與果子內容、申一35〔原文字義〕「美」好的，令人愉悅的（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT01.htm）'
+- '研經註解（KingComments）: Deuteronomy 1 — 22-25 The Twelve Spies（an expression that appears ten times in this book (Deu 1:25,35; 3:25; 4:21,22; 6:18; 8:7,10; 9:6; 11:17)）（https://www.kingcomments.com/en/bible-studies/Deu/1）'
+- '拾穗（ccbiblestudy GT）: 申命記第一章拾穗 — 申一25《聖經精讀本》「所賜給我們的是美地」段（出3:8,17 流奶與蜜之地）與《串珠聖經註釋》「那地的果子」（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT01.htm）'
+- '研經註解（BibleHub Study）: Deuteronomy 1 — Deuteronomy 1:25 「It is a good land」與「They took some of the fruit of the land in their hands」兩段（https://biblehub.com/study/deuteronomy/1.htm）'
+- '原文資料（STEP Bible）: Deuteronomy 1:25 — to.Vah（H2896A，tov: pleasant）＋ha./''A.retz（H776G）（https://github.com/STEPBible/STEPBible-Data）'

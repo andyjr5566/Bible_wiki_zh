@@ -101,7 +101,6 @@ candidates:
   evidence: |-
     v7「就是亞拉巴、山地、高原、南地，沿海一帶迦南人的地，並利巴嫩山又到伯拉大河」。CT：「『伯拉大河』即今幼發拉底河，是神所應許之地的北方界線」；GT《啟導本》：「本節所描寫的迦南應許地範圍與神當年應許亞伯拉罕、以撒和雅各的符合（創十五18；二十六2～4；三十五11～12）。大衛和所羅門王時代，已見到這塊擴展的版圖」；BH：「The Euphrates River⋯marks the northeastern boundary of the promised land」。
   surfaces:
-  - 伯拉大河
   - 利巴嫩山
   - 沿海一帶
 - name: 高原（Shephelah）
@@ -137,8 +136,8 @@ candidates:
   surfaces:
   - 擔當
   - 撫養
-- name: 選立首領的條件
-  type: 主題
+- name: 敬畏神、誠實、恨不義之財
+  type: 神學
   evidence: |-
     v13「你們要按著各支派選舉有智慧、有見識、為眾人所認識的」。CT：「本節說出領袖三條件：(1)有智慧，較偏重於治事的才幹；(2)有見識，較偏重於分辨的能力；(3)為眾人所認識的，較偏重於經驗和信譽」；GT《啟導本》列出六項並對照出十八21；BH：「Wisdom in the biblical sense often refers to the fear of the Lord⋯These qualities are echoed in the New Testament qualifications for church leaders (1 Timothy 3:1-7)」。STEP 顯示是 cha.kha.Mim（H2450 wise）、u./ne.vo.Nim（H995 bin，Niphal 分詞 understanding）、vi./du.'Im（H3045 yada，Qal 被動分詞 known）。
   surfaces:
@@ -155,7 +154,6 @@ candidates:
   - 千夫長
   - 百夫長
   - 五十夫長
-  - 十夫長
 - name: 審判官
   type: 原文
   evidence: |-
@@ -169,11 +167,11 @@ candidates:
 - name: 不可看人的外貌（na.khar）
   type: 原文
   evidence: |-
-    v17「審判的時候，不可看人的外貌；聽訟不可分貴賤，不可懼怕人」。CT 原文字義：「外貌」面，臉；「貴」巨大的；「賤」小的，低微的。STEP 顯示是 lo'- ta.Ki.ru fa.Nim（H5234A na.khar「to recognize」＋H6440N panim「faces」），字面是「不可認臉」；同節「不可懼怕人」是 lo' ta.Gu.ru mi./pe.nei- 'Ish（H1481C gur「to dread」），再次用 panim。BH：「Partiality, or favoritism, is condemned throughout Scripture (e.g., Leviticus 19:15, James 2:1-9)」。
+    v17「審判的時候，不可看人的外貌；聽訟不可分貴賤，不可懼怕人」。CT 原文字義：「外貌」面，臉；「貴」巨大的；「賤」小的，低微的。STEP 顯示是 lo'- ta.Ki.ru fa.Nim（H5234A na.khar「to recognize」＋H6440N pa.neh「faces」），字面是「不可認臉」；同節「不可懼怕人」是 lo' ta.Gu.ru mi./pe.nei- 'Ish（H1481C gur「to dread」），再次用 pa.neh。BH：「Partiality, or favoritism, is condemned throughout Scripture (e.g., Leviticus 19:15, James 2:1-9)」。
   surfaces:
   - 不可看人的外貌
-- name: 審判是屬乎神的
-  type: 神學
+- name: 申1：17
+  type: 互文
   evidence: |-
     v17「因為審判是屬乎神的。若有難斷的案件，可以呈到我這裡，我就判斷」。CT：「『審判是屬乎神的』指審判是經過神的授權，代表神而為，故毋須顧慮「人」的因素」；GT《聖經精讀本》：「掌管神之律法的審判官作為神的代言人,也當持有以神的權威與名義審判的意識」；KC 列為審判官四條件之三；BH：「Judges serve as God's representatives, administering His justice on earth (Psalm 82:1-4)」。STEP 顯示「審判」是 ha./mish.Pat（H4941G）、「難斷的案件」是 ha./da.Var 'a.Sher yik.Sheh（H1697L davar「word: case」＋H7185 qashah「to harden」）。
   surfaces:
@@ -208,7 +206,7 @@ candidates:
   type: 神學
   evidence: |-
     v25「所賜給我們的是美地」。CT：「『美地』又稱流奶與蜜之地(參民十三27)」；GT《聖經精讀本》：「早在摩西蒙召時(出3:8,17),神就描繪那地為“流奶與蜜之地”(11:9)」。
-- name: 耶和華的命令（peh）
+- name: 越過耶和華的口（peh）
   type: 原文
   evidence: |-
     v26「竟違背了耶和華─你們神的命令」；v43「竟違背耶和華的命令，擅自上山地去了」。GT《聖經精讀本》：「違背了耶和華你們神的命令: 在這裡意指誡命的“命令”(希伯來語, peh)的字面意思是“口”。即,出自神之口的話就是誡命」。STEP 兩節同為 va./tam.Ru 'et- pi Yah.weh（H4784 marah「to rebel」＋H6310I peh「lip: word」）；相對地 v45「耶和華卻不聽你們的聲音」用的是 be./Ko.le./Khem（H6963A qol「voice」）。
@@ -245,7 +243,7 @@ candidates:
 - name: 專心跟從主與另一個心志
   type: 神學
   evidence: |-
-    v36「因為他專心跟從我」。CT：「『專心跟從我』字面的意思是『完全跟在我後面』，意指一心一意跟從神，不受任何外在因素的影響(參民三十二12)」；KC：「His name means 'wholeheartedly'.」STEP 顯示是 mi.Le' 'a.cha.Rei Yah.weh（H4390 male「to fill」Piel＋H310A achar「after」），字面是「他填滿了跟在耶和華後面」。
+    v36「因為他專心跟從我」。CT：「『專心跟從我』字面的意思是『完全跟在我後面』，意指一心一意跟從神，不受任何外在因素的影響(參民三十二12)」；KC：「His name means 'wholeheartedly'.」STEP 顯示是 mi.Le' 'a.cha.Rei Yah.weh（H4390 ma.le「to fill」Piel＋H310A a.char「after」），字面是「他填滿了跟在耶和華後面」。
   surfaces:
   - 專心跟從
 - name: 摩西不得進入應許之地
@@ -279,7 +277,15 @@ candidates:
   type: 歷史
   evidence: |-
     v44「住那山地的亞摩利人就出來攻擊你們，追趕你們，如蜂擁一般，在西珥殺退你們，直到何珥瑪」。CT：「『何珥瑪』是雙關語，原本是可以得到『庇護』的地理用詞，現在轉用來成為『完全毀滅』的所在」；CT 原文字義：「殺退」打碎。STEP 顯示「如蜂擁一般」是 ka.'a.Sher ta.'a.Sei.nah ha./de.vo.Rim（H1682 devorah「bee」）、「殺退」是 va/i.ya.ke.Tu（H3807 katat「to crush」）。
-- name: 申命記的宗主權盟約結構
+- name: 宗主條約
   type: 背景
   evidence: |-
     GT《聖經精讀本》：「摩西的第一篇講章:整卷書都依照當時施行於古代近東的宗主權盟約的傳統形式進行記錄。其結構如下:①前言;②歷史性序論;③立約;④保存並公開頒佈;⑤證人的名單;⑥根據是否遵守所立之約而賜下的祝福與咒詛。如此來看,本文當屬前言與歷史性序論部分。因為,本文是構成本書的三篇講章(1:6-4:43;4:44-26:19;27:1-30:20)中第一篇」。
+- name: 伯拉大河
+  type: 地點
+  evidence: |-
+    v7「並利巴嫩山又到伯拉大河」。CT：「『伯拉大河』即今幼發拉底河，是神所應許之地的北方界線」；CT 原文字義：「伯拉」豐收；BH：「The Euphrates River, one of the longest rivers in Western Asia, marks the northeastern boundary of the promised land」。STEP 顯示是 ne.har- pe.Rat（H5104H na.har「river」＋H6578）。
+- name: 摩西立首領
+  type: 事件
+  evidence: |-
+    v13-15「你們要按著各支派選舉⋯我立他們為你們的首領」「我便將你們各支派的首領⋯立他們為官長、千夫長、百夫長、五十夫長、十夫長」。CT：「本節又說出領袖人物如何產生：(1)選舉──為眾人所舉薦；(2)設立──為成熟的既任領袖所認可」；GT《啟導本》：「本節至18節所記的事可參《出埃及記》十八13～26」。

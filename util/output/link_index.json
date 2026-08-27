@@ -755,6 +755,14 @@
       "加上五分之一"
     ]
   },
+  "十一天的路程": {
+    "path": "link_folder/主題/十一天的路程.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "十一天的路程",
+    "status": "formal",
+    "aliases": []
+  },
   "十一幅山羊毛幔子（罩棚）": {
     "path": "link_folder/主題/十一幅山羊毛幔子（罩棚）.md",
     "type": "主題",
@@ -1551,6 +1559,18 @@
     "title": "憑幾個見證人的口",
     "status": "formal",
     "aliases": []
+  },
+  "應許之地的四至": {
+    "path": "link_folder/主題/應許之地的四至.md",
+    "type": "主題",
+    "secondary_types": [
+      "地點"
+    ],
+    "title": "應許之地的四至",
+    "status": "formal",
+    "aliases": [
+      "應許之地的疆界"
+    ]
   },
   "我豈是看守我兄弟的麼": {
     "path": "link_folder/主題/我豈是看守我兄弟的麼.md",
@@ -2631,6 +2651,14 @@
     "type": "主題",
     "secondary_types": [],
     "title": "羅得的墮落",
+    "status": "formal",
+    "aliases": []
+  },
+  "美地": {
+    "path": "link_folder/主題/美地.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "美地",
     "status": "formal",
     "aliases": []
   },
@@ -12661,6 +12689,16 @@
     "status": "formal",
     "aliases": []
   },
+  "不可看人的外貌（na.khar）": {
+    "path": "link_folder/原文/不可看人的外貌（na.khar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "不可看人的外貌（na.khar）",
+    "status": "formal",
+    "aliases": [
+      "na.khar"
+    ]
+  },
   "乾的兩個希伯來字": {
     "path": "link_folder/原文/乾的兩個希伯來字.md",
     "type": "原文",
@@ -12879,6 +12917,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "作了警戒（nes）",
+    "status": "formal",
+    "aliases": []
+  },
+  "你與你們的單複數交替": {
+    "path": "link_folder/原文/你與你們的單複數交替.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "你與你們的單複數交替",
     "status": "formal",
     "aliases": []
   },
@@ -13540,6 +13586,16 @@
       "從以色列的會中剪除"
     ]
   },
+  "心消化（ma.sas）": {
+    "path": "link_folder/原文/心消化（ma.sas）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "心消化（ma.sas）",
+    "status": "formal",
+    "aliases": [
+      "ma.sas"
+    ]
+  },
   "心裡有智慧": {
     "path": "link_folder/原文/心裡有智慧.md",
     "type": "原文",
@@ -13767,6 +13823,16 @@
     "status": "formal",
     "aliases": [
       "撚的細麻"
+    ]
+  },
+  "擔當（na.sa）": {
+    "path": "link_folder/原文/擔當（na.sa）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "擔當（na.sa）",
+    "status": "formal",
+    "aliases": [
+      "na.sa"
     ]
   },
   "擾害（tsa.rar）": {
@@ -14202,6 +14268,14 @@
       "matzos",
       "無酵的餅"
     ]
+  },
+  "爭先與擅自": {
+    "path": "link_folder/原文/爭先與擅自.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "爭先與擅自",
+    "status": "formal",
+    "aliases": []
   },
   "牆垣": {
     "path": "link_folder/原文/牆垣.md",
@@ -14909,6 +14983,16 @@
     "status": "formal",
     "aliases": []
   },
+  "講律法（ba.ar）": {
+    "path": "link_folder/原文/講律法（ba.ar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "講律法（ba.ar）",
+    "status": "formal",
+    "aliases": [
+      "ba.ar"
+    ]
+  },
   "謠言": {
     "path": "link_folder/原文/謠言.md",
     "type": "原文",
@@ -15437,6 +15521,16 @@
       "亞巴琳山地"
     ]
   },
+  "亞拉巴": {
+    "path": "link_folder/地點/亞拉巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞拉巴",
+    "status": "formal",
+    "aliases": [
+      "亞拉巴的路"
+    ]
+  },
   "亞拉臘山": {
     "path": "link_folder/地點/亞拉臘山.md",
     "type": "地點",
@@ -15452,6 +15546,18 @@
     "title": "亞摩利人幔利的橡樹",
     "status": "formal",
     "aliases": []
+  },
+  "亞斯她錄": {
+    "path": "link_folder/地點/亞斯她錄.md",
+    "type": "地點",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "亞斯她錄",
+    "status": "formal",
+    "aliases": [
+      "亞斯他錄"
+    ]
   },
   "亞杜蘭": {
     "path": "link_folder/地點/亞杜蘭.md",
@@ -15547,6 +15653,14 @@
     "aliases": [
       "曠野邊的以倘"
     ]
+  },
+  "以得來": {
+    "path": "link_folder/地點/以得來.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以得來",
+    "status": "formal",
+    "aliases": []
   },
   "以得臺": {
     "path": "link_folder/地點/以得臺.md",
@@ -16957,6 +17071,16 @@
       "非利士人的地"
     ]
   },
+  "高原（Shephelah）": {
+    "path": "link_folder/地點/高原（Shephelah）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "高原（Shephelah）",
+    "status": "formal",
+    "aliases": [
+      "Shephelah"
+    ]
+  },
   "鹽海": {
     "path": "link_folder/地點/鹽海.md",
     "type": "地點",
@@ -18269,6 +18393,14 @@
       "以色列人出埃及",
       "Exodus"
     ]
+  },
+  "出埃及第四十年十一月初一日": {
+    "path": "link_folder/歷史/出埃及第四十年十一月初一日.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "出埃及第四十年十一月初一日",
+    "status": "formal",
+    "aliases": []
   },
   "利未的族譜（出六14-27）": {
     "path": "link_folder/歷史/利未的族譜（出六14-27）.md",
@@ -26430,6 +26562,14 @@
     "status": "formal",
     "aliases": []
   },
+  "巴蘭與哈洗錄是否同名不同地": {
+    "path": "link_folder/解經爭議/巴蘭與哈洗錄是否同名不同地.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "巴蘭與哈洗錄是否同名不同地",
+    "status": "formal",
+    "aliases": []
+  },
   "巴蘭詩歌中的亞述指哪一個": {
     "path": "link_folder/解經爭議/巴蘭詩歌中的亞述指哪一個.md",
     "type": "解經爭議",
@@ -28171,6 +28311,9 @@
   },
   "不潔淨的宣告": {
     "alias_of": "患痲瘋者的哀悼記號（獨居營外）"
+  },
+  "應許之地的疆界": {
+    "alias_of": "應許之地的四至"
   },
   "開玩笑": {
     "alias_of": "戲言"
@@ -30260,6 +30403,9 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "na.khar": {
+    "alias_of": "不可看人的外貌（na.khar）"
+  },
   "Allon-bacuth": {
     "alias_of": "亞倫巴古"
   },
@@ -30467,6 +30613,9 @@
   "從以色列的會中剪除": {
     "alias_of": "從以色列中剪除"
   },
+  "ma.sas": {
+    "alias_of": "心消化（ma.sas）"
+  },
   "心中有智慧": {
     "alias_of": "心裡有智慧"
   },
@@ -30523,6 +30672,9 @@
   },
   "撒上第一章": {
     "alias_of": "撒上1（Shmuel Aleph 1）"
+  },
+  "na.sa": {
+    "alias_of": "擔當（na.sa）"
   },
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
@@ -30824,6 +30976,9 @@
   "詩51": {
     "alias_of": "詩篇51篇"
   },
+  "ba.ar": {
+    "alias_of": "講律法（ba.ar）"
+  },
   "Me.khes": {
     "alias_of": "貢物（Me.khes）"
   },
@@ -30985,6 +31140,12 @@
   },
   "亞巴琳山地": {
     "alias_of": "亞巴琳山"
+  },
+  "亞拉巴的路": {
+    "alias_of": "亞拉巴"
+  },
+  "亞斯他錄": {
+    "alias_of": "亞斯她錄"
   },
   "Adullam": {
     "alias_of": "亞杜蘭"
@@ -31261,6 +31422,9 @@
   },
   "非利士人的地": {
     "alias_of": "非利士地"
+  },
+  "Shephelah": {
+    "alias_of": "高原（Shephelah）"
   },
   "亞拉巴海": {
     "alias_of": "鹽海"
