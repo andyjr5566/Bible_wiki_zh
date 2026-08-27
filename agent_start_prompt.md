@@ -125,7 +125,19 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    ```text
    python util/link_updates.py prepare 【書名】 X
    ```
-   回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，然後：
+   回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，並逐條完成
+   `overview_review`。三個區塊的功能絕對不同：
+   - **定義**：回答「這是誰／什麼、如何辨識、範圍與邊界是什麼」；只在本章資料改變或澄清穩定身分時更新，不寫本章事件摘要。
+   - **主題發展**：綜合至少兩個章節（可跨卷），說明推進、轉折、對照或整體意義；不是逐章累積的加長版。
+   - **逐章累積**：`summary`／`relation` 只記本章明確事實與本章關聯，每章各自成塊。
+
+   `definition`／`development` 必須各選 `keep` 或 `update` 並寫理由；這是**審查義務，不是
+   更新配額**。`keep` 是正常且完整的結果，一章全部 `keep` 也可通過；只有 agent 能明確指出
+   真正的新定義或跨章發展時才選 `update`，否則必須 `keep`，不准為了顯得有做事而硬湊。
+   `development=update` 必須在 `synthesis_scope` 列出
+   本章與至少另一章，並先修改條目的 `## 主題發展`。**絕對不可把本章的
+   `summary`／`relation` 換句話說後貼進定義或主題發展，也不可用「民35」這類單章小標題
+   在主題發展再做一份逐章補充。**然後：
    ```text
    python util/link_updates.py apply 【書名】 X --dry-run
    python util/link_updates.py apply 【書名】 X

@@ -29,6 +29,7 @@ try:
     from .model_client import select_endpoint
     from . import source_excerpts
     from . import check_source_read
+    from . import link_updates
 except ImportError:
     from book_paths import book_directory, canonical_book_name
     from console import utf8_stdio
@@ -42,6 +43,7 @@ except ImportError:
     from model_client import select_endpoint
     import source_excerpts
     import check_source_read
+    import link_updates
 
 from collections import Counter
 import yaml
@@ -449,7 +451,24 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     entry_content_ok = entries_expected == 0 or (
         entry_dir.is_dir() and len(list(entry_dir.glob("*.yaml"))) >= entries_expected
     )
-    link_updates_ok = updates_expected == 0 or (tmp / "link_updates.yaml").exists()
+    link_updates_path = tmp / "link_updates.yaml"
+    link_updates_ok = updates_expected == 0 or link_updates_path.exists()
+    link_review_ok = updates_expected == 0
+    link_review_detail = ""
+    link_review_warning = ""
+    if updates_expected and link_updates_path.is_file():
+        try:
+            update_manifest = _load_yaml(link_updates_path)
+            link_updates.preview_updates(link_updates_path, root=root)
+            link_review_ok = True
+            if update_manifest.get("review_schema_version") is None:
+                link_review_warning = (
+                    "此章是 overview_review 上線前的 legacy link_updates.yaml，僅為相容而放行；"
+                    "未宣稱 agent 當時已完成定義／主題發展判斷。未來由 prepare 產生的新 manifest "
+                    "會強制逐條 keep/update。"
+                )
+        except (OSError, ValueError, yaml.YAMLError) as exc:
+            link_review_detail = str(exc)
     prompts_cmd = f"python util/run_chapter_manual.py prompts {canonical} {chapter}"
     check_cmd = f"python util/run_chapter_manual.py check {canonical} {chapter}"
     run_cmd = f"python util/run_chapter_manual.py run {canonical} {chapter}"
@@ -578,6 +597,15 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             link_updates_ok,
             f"從步驟4「B 類累積」開始：python util/link_updates.py prepare {canonical} {chapter}，"
             "回經文與有效 raw text 填 summary/relation，先 apply --dry-run 再 apply。",
+        ),
+        CheckResult(
+            "步驟4｜overview_review 已逐條判斷定義／主題發展且與實際區塊一致",
+            link_review_ok,
+            "完成 link_updates.yaml 每筆 overview_review：definition/development 各選 keep 或 "
+            "update 並寫理由；keep 合法。定義只處理穩定身分，主題發展只做跨章綜合，"
+            "不可把 summary/relation 換句話說貼入。development=update 要列本章＋另一章的 "
+            f"synthesis_scope，再重跑 apply --dry-run。檢查訊息：{link_review_detail}",
+            warning=link_review_warning,
         ),
         CheckResult(
             "步驟6｜util/output/link_index.json",

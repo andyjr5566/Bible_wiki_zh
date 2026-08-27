@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 UTIL_DIR = Path(__file__).resolve().parents[1]
 if str(UTIL_DIR) not in sys.path:
@@ -500,6 +501,50 @@ class CheckChapterFilesTests(unittest.TestCase):
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             update_check = next(c for c in checks if "link_updates.yaml" in c.label)
             self.assertTrue(update_check.ok, "計畫無 B 類候選時不應要求 link_updates.yaml")
+
+    def test_pending_overview_review_fails_final_check_but_keep_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(
+                root / "link_folder" / "人物" / "測試.md",
+                "# 測試\n\n## 定義\n\n穩定身分。\n\n## 按書卷累積\n\n"
+                "## 主題發展\n\n跨章綜合。\n\n## 相關條目\n\n## 來源依據\n",
+            )
+            _write_yaml(tmp_dir / "link_plan.yaml", {
+                "C_new_formal": [],
+                "B_needs_update": [{
+                    "name": "測試",
+                    "existing_title": "測試",
+                    "existing_path": "link_folder/人物/測試.md",
+                }],
+            })
+            with patch.object(ccf.link_updates, "ROOT", root), patch("builtins.print"):
+                manifest = ccf.link_updates.prepare(BOOK, CHAPTER)
+            data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+            data["updates"][0]["summary"] = "本章重點"
+            data["updates"][0]["relation"] = "本章與條目的關聯"
+            _write_yaml(manifest, data)
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            review_check = next(c for c in checks if "overview_review" in c.label)
+            self.assertFalse(review_check.ok)
+            self.assertIn("尚未完成判斷", review_check.resume_hint)
+
+            review = data["updates"][0]["overview_review"]
+            review["definition"] = {
+                "decision": "keep",
+                "reason": "本章沒有改變條目的穩定身分或辨識邊界",
+            }
+            review["development"] = {
+                "decision": "keep",
+                "reason": "本章尚未形成需要補入總體區塊的跨章推進",
+                "synthesis_scope": [],
+            }
+            _write_yaml(manifest, data)
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            review_check = next(c for c in checks if "overview_review" in c.label)
+            self.assertTrue(review_check.ok)
 
 
 class VerseLinkCoverageTests(unittest.TestCase):

@@ -122,6 +122,55 @@ class ResolverTests(unittest.TestCase):
 
 
 class UpdateTests(unittest.TestCase):
+    def _prepare_review_fixture(self, root, development="已有跨章發展"):
+        chapter_dir = root / "01 創世記" / ".tmp" / "第8章"
+        chapter_dir.mkdir(parents=True)
+        entry_path = root / "link_folder" / "人物" / "測試.md"
+        entry_path.parent.mkdir(parents=True)
+        entry_path.write_text(
+            "# 測試\n\n## 定義\n\n穩定身分與辨識邊界。\n\n"
+            "## 按書卷累積\n\n### 創世記\n\n"
+            "<!-- accumulation:創世記:1:start -->\n#### 第1章\n"
+            "- 本章重點：舊重點\n- 與本章關聯：舊關聯\n"
+            "<!-- accumulation:創世記:1:end -->\n\n"
+            f"## 主題發展\n\n{development}\n\n"
+            "## 相關條目\n\n## 來源依據\n",
+            encoding="utf-8",
+        )
+        (chapter_dir / "link_plan.yaml").write_text(yaml.safe_dump({
+            "B_needs_update": [{
+                "name": "測試",
+                "existing_title": "測試",
+                "existing_path": "link_folder/人物/測試.md",
+            }],
+        }, allow_unicode=True), encoding="utf-8")
+        with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
+            manifest = link_updates.prepare("創世記", 8)
+        data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+        data["updates"][0]["summary"] = "第八章的新重點"
+        data["updates"][0]["relation"] = "第八章與測試條目的新關聯"
+        manifest.write_text(
+            yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+        )
+        return manifest, entry_path
+
+    @staticmethod
+    def _fill_keep_review(manifest):
+        data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+        review = data["updates"][0]["overview_review"]
+        review["definition"].update({
+            "decision": "keep",
+            "reason": "本章沒有改變條目的穩定身分或辨識邊界",
+        })
+        review["development"].update({
+            "decision": "keep",
+            "reason": "本章尚未形成超越既有內容的跨章推進或對照",
+        })
+        manifest.write_text(
+            yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+        )
+        return data
+
     def test_internal_source_lines_are_forbidden_but_heading_is_allowed(self):
         self.assertIsNone(INTERNAL_SOURCE_LINE_RE.search("### 觸發來源\n"))
         self.assertIsNotNone(INTERNAL_SOURCE_LINE_RE.search("- 觸發來源：CT\n"))
@@ -183,6 +232,121 @@ class UpdateTests(unittest.TestCase):
                 "definition／development／related_entries／sources" in line
                 for line in logs
             ))
+
+    def test_prepare_makes_distinct_overview_review_mandatory_but_keep_is_valid(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(root)
+            data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+            self.assertEqual(1, data["review_schema_version"])
+            self.assertIn("穩定身分", data["review_guidance"]["definition"])
+            self.assertIn("跨章", data["review_guidance"]["development"])
+            self.assertIn("本章明確資料", data["review_guidance"]["accumulation"])
+            self.assertEqual(
+                "pending", data["updates"][0]["overview_review"]["definition"]["decision"]
+            )
+            self.assertTrue((manifest.parent / "link_update_review_baseline.yaml").is_file())
+
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "尚未完成判斷"):
+                    link_updates.preview_updates(manifest)
+
+            self._fill_keep_review(manifest)
+            with patch.object(link_updates, "ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+            review = preview["operations"][0]["overview_review"]
+            self.assertEqual("keep", review["definition"]["decision"])
+            self.assertEqual("keep", review["development"]["decision"])
+            self.assertFalse(review["definition"]["changed"])
+            self.assertFalse(review["development"]["changed"])
+
+    def test_update_decision_requires_real_section_change(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            data["updates"][0]["overview_review"]["definition"].update({
+                "decision": "update",
+                "reason": "本章資料澄清了條目的穩定身分與辨識邊界",
+            })
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "選了 update.*沒有改變"):
+                    link_updates.preview_updates(manifest)
+
+    def test_development_update_requires_cross_chapter_scope_and_returns_diff(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            data["updates"][0]["overview_review"]["development"].update({
+                "decision": "update",
+                "reason": "本章與第一章形成從身分建立到公開承擔責任的推進",
+                "synthesis_scope": ["創世記:8"],
+            })
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            text = entry_path.read_text(encoding="utf-8")
+            entry_path.write_text(
+                text.replace(
+                    "已有跨章發展",
+                    "已有跨章發展\n\n第一章建立身分，第八章則顯出這身分如何轉為公開責任。",
+                ),
+                encoding="utf-8",
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "本章與至少另一章"):
+                    link_updates.preview_updates(manifest)
+
+            data["updates"][0]["overview_review"]["development"]["synthesis_scope"] = [
+                "創世記:1", "創世記:8",
+            ]
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+            review = preview["operations"][0]["overview_review"]["development"]
+            self.assertTrue(review["changed"])
+            self.assertIn("第一章建立身分", review["diff"])
+            logs = []
+            with patch.object(link_updates, "ROOT", root):
+                self.assertEqual(
+                    1, link_updates.apply_updates(manifest, dry_run=True, reporter=logs.append)
+                )
+            self.assertTrue(any("主題發展 diff" in line for line in logs))
+
+    def test_development_update_rejects_current_chapter_restatement(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            update = data["updates"][0]
+            update["summary"] = "第八章記載測試人物在眾人面前承擔新的公開責任"
+            update["relation"] = "這件事顯明測試人物的身分在本章轉為公開責任"
+            update["overview_review"]["development"].update({
+                "decision": "update",
+                "reason": "準備以本章與第一章說明身分和責任之間的推進",
+                "synthesis_scope": ["創世記:1", "創世記:8"],
+            })
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            text = entry_path.read_text(encoding="utf-8")
+            entry_path.write_text(
+                text.replace(
+                    "已有跨章發展",
+                    "已有跨章發展\n\n### 創8：公開責任\n\n"
+                    "第八章記載測試人物在眾人面前承擔新的公開責任。",
+                ),
+                encoding="utf-8",
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "summary／relation 高度重疊"):
+                    link_updates.preview_updates(manifest)
 
     def test_apply_inserts_inside_book_group_in_chapter_order(self):
         with tempfile.TemporaryDirectory() as tmp:
