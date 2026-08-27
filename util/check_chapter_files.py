@@ -602,7 +602,8 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             "步驟4｜overview_review 已逐條判斷定義／主題發展且與實際區塊一致",
             link_review_ok,
             "完成 link_updates.yaml 每筆 overview_review：definition/development 各選 keep 或 "
-            "update 並寫理由；keep 合法。定義只處理穩定身分，主題發展只做跨章綜合，"
+            "update；keep 合法。只有程式提出 challenge 而仍 keep 時才填受控 basis。"
+            "定義只處理穩定身分，主題發展只做跨章綜合，"
             "不可把 summary/relation 換句話說貼入。development=update 要列本章＋另一章的 "
             f"synthesis_scope，再重跑 apply --dry-run。檢查訊息：{link_review_detail}",
             warning=link_review_warning,

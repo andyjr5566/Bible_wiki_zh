@@ -20,11 +20,15 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 BOOK_ALIASES = {"約書亞記": "約書亞記"}
 
-REVIEW_SCHEMA_VERSION = 1
+REVIEW_SCHEMA_VERSION = 2
 REVIEW_BASELINE_FILENAME = "link_update_review_baseline.yaml"
 REVIEW_DECISIONS = {"keep", "update"}
-MIN_REVIEW_REASON_LENGTH = 8
-REVIEW_GUIDANCE = {
+MIN_REVIEW_REASON_LENGTH_V1 = 8
+REVIEW_KEEP_BASIS = {
+    "definition": {"no_identity_change", "already_covered", "insufficient_evidence"},
+    "development": {"already_covered", "single_chapter_only", "insufficient_evidence"},
+}
+REVIEW_GUIDANCE_V1 = {
     "definition": (
         "定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或"
         "澄清條目的穩定身分時更新，不得寫成本章事件摘要。"
@@ -43,6 +47,34 @@ REVIEW_GUIDANCE = {
         "只有真正新增穩定定義或跨章發展才選 update，否則必須 keep，禁止為了顯得有做事而硬湊。"
     ),
 }
+REVIEW_GUIDANCE = {
+    "definition": (
+        "定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或"
+        "澄清條目的穩定身分時更新，不得寫成本章事件摘要。"
+    ),
+    "development": (
+        "主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；"
+        "不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。"
+    ),
+    "accumulation": (
+        "逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；"
+        "每章各自成塊，不負責總體定義或跨章綜合。"
+    ),
+    "decision_rule": (
+        "每個 B 類條目只須分別填 definition／development 的 keep 或 update；"
+        "這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，"
+        "才用受控 basis 代碼；update 則由實際區塊 diff 證明。"
+    ),
+    "keep_basis": (
+        "definition 可用 no_identity_change／already_covered／insufficient_evidence；"
+        "development 可用 already_covered／single_chapter_only／insufficient_evidence。"
+        "沒有 challenge 時直接填 keep。"
+    ),
+    "signals": (
+        "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；"
+        "many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。"
+    ),
+}
 
 
 def book_rank(book):
@@ -54,6 +86,13 @@ _H2_SECTION_RE = re.compile(r"(?ms)^##\s+(.+?)\s*$\n(.*?)(?=^##\s+|\Z)")
 _ACCUM_META_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
 DEVELOPMENT_STALE_THRESHOLD = 7
 _ACCUM_BLOCK_RE = re.compile(r"<!-- accumulation:[^:]+:\d+:start -->")
+_DEFINITION_CUE_RE = re.compile(
+    r"(?:又稱|亦稱|別名|身分(?:為|是)|指的是|專指|泛指|辨識方式|範圍(?:是|為)|定義為|邊界)"
+)
+_CROSS_CHAPTER_CUE_RE = re.compile(
+    r"(?:既有累積|先前累積|本來只從|本章補上|第二次敘述|再次敘述|重述|"
+    r"跨章|跨卷|整卷(?:書|本書)|全書層級|形成.{0,12}(?:對照|推進|轉折))"
+)
 
 
 def _section_body(text, heading):
@@ -64,54 +103,45 @@ def _section_body(text, heading):
     return ""
 
 
-def _review_priority(text, book, chapter):
-    """Return deterministic attention signals; the semantic verdict stays human."""
+def _review_signals(text, book, chapter):
+    """Return compact deterministic signals; the semantic verdict stays with the agent."""
     blocks = _ACCUM_META_RE.findall(text)
     marker = (book, str(chapter))
     after_count = len(blocks) + (0 if marker in blocks else 1)
     books = {canonical_book_name(block_book) for block_book, _ in blocks}
-    reasons = ["本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新"]
-    high_priority = False
+    signals = []
     if book not in books:
-        reasons.append("本章是此條目第一次累積到這一卷書")
-        high_priority = True
+        signals.append("first_in_book")
     if not _section_body(text, "定義"):
-        reasons.append("定義目前空白")
-        high_priority = True
+        signals.append("definition_blank")
     if not _section_body(text, "主題發展"):
-        reasons.append("主題發展目前空白")
-        high_priority = True
+        signals.append("development_blank")
     if after_count > DEVELOPMENT_STALE_THRESHOLD:
-        reasons.append(
-            f"套用後將有 {after_count} 筆逐章累積，超過 {DEVELOPMENT_STALE_THRESHOLD} 筆提醒門檻"
-        )
-        high_priority = True
-    return "high" if high_priority else "normal", reasons, len(blocks), after_count
+        signals.append("many_accumulations")
+    return signals, len(blocks), after_count
 
 
 def _review_payload(text, book, chapter):
-    priority, reasons, before_count, after_count = _review_priority(text, book, chapter)
+    signals, before_count, after_count = _review_signals(text, book, chapter)
     return {
-        "review_attention": priority,
-        "trigger_reasons": reasons,
-        "accumulation_count_before": before_count,
-        "accumulation_count_after": after_count,
-        "definition": {"decision": "pending", "reason": ""},
-        "development": {
-            "decision": "pending",
-            "reason": "",
-            "synthesis_scope": [],
-        },
+        "signals": signals,
+        "accumulation_count": [before_count, after_count],
+        "definition": "pending",
+        "development": "pending",
     }
 
 
-def _review_baseline_entry(update, text):
-    return {
+def _review_baseline_entry(update, text, review=None):
+    entry = {
         "title": str(update.get("title", "")),
         "path": str(update.get("path", "")),
         "definition": _section_body(text, "定義"),
         "development": _section_body(text, "主題發展"),
     }
+    if review is not None:
+        entry["signals"] = list(review.get("signals") or [])
+        entry["accumulation_count"] = list(review.get("accumulation_count") or [])
+    return entry
 
 
 def plan_updates(book, chapter):
@@ -168,8 +198,9 @@ def prepare(book, chapter):
     for update in data["updates"]:
         path = _entry_path(ROOT, update["path"])
         text = path.read_text(encoding="utf-8")
-        update["overview_review"] = _review_payload(text, book, int(chapter))
-        baselines.append(_review_baseline_entry(update, text))
+        review = _review_payload(text, book, int(chapter))
+        update["overview_review"] = review
+        baselines.append(_review_baseline_entry(update, text, review))
     data = {
         "book": data["book"],
         "chapter": data["chapter"],
@@ -193,8 +224,8 @@ def prepare(book, chapter):
     print(f"✅ 已建立更新骨架：{output}（{len(data['updates'])} 條）")
     print(
         "⚠️ 套用前必須逐條填 overview_review：definition／development 各自選 "
-        "keep 或 update 並說明理由；keep 合法，不得把逐章 summary／relation 換句話說"
-        "塞進定義或主題發展。"
+        "keep 或 update；keep 合法，不得把逐章 summary／relation 換句話說"
+        "塞進定義或主題發展。程式提出 challenge 而仍 keep 時才填短 basis 代碼。"
     )
     print(
         "   development=update 時，synthesis_scope 至少列本章與另一章（書卷:章），"
@@ -219,17 +250,18 @@ def validate_update(update):
 
 
 def _load_review_baselines(manifest, data, book, chapter):
-    """Load immutable-at-prepare section snapshots for schema-v1 manifests."""
+    """Load immutable-at-prepare section snapshots for versioned review manifests."""
     version = data.get("review_schema_version")
     if version is None:
         return None  # Historical manifests remain readable/re-applicable.
-    if version != REVIEW_SCHEMA_VERSION:
+    if version not in {1, REVIEW_SCHEMA_VERSION}:
         raise ValueError(
-            f"不支援的 review_schema_version：{version}（目前為 {REVIEW_SCHEMA_VERSION}）"
+            f"不支援的 review_schema_version：{version}（支援 1、{REVIEW_SCHEMA_VERSION}）"
         )
+    expected_guidance = REVIEW_GUIDANCE_V1 if version == 1 else REVIEW_GUIDANCE
     guidance = data.get("review_guidance")
     if not isinstance(guidance, dict) or any(
-        guidance.get(key) != value for key, value in REVIEW_GUIDANCE.items()
+        guidance.get(key) != value for key, value in expected_guidance.items()
     ):
         raise ValueError(
             "review_guidance 缺漏或被改寫；定義、主題發展、逐章累積的定位不可移除，"
@@ -243,7 +275,7 @@ def _load_review_baselines(manifest, data, book, chapter):
         raise ValueError(f"找不到 overview review 基線：{raw_name}；請重新 prepare")
     baseline = yaml.safe_load(baseline_path.read_text(encoding="utf-8")) or {}
     if (
-        baseline.get("review_schema_version") != REVIEW_SCHEMA_VERSION
+        baseline.get("review_schema_version") != version
         or canonical_book_name(str(baseline.get("book", ""))) != book
         or baseline.get("chapter") != chapter
     ):
@@ -256,7 +288,7 @@ def _load_review_baselines(manifest, data, book, chapter):
         if not isinstance(entry, dict) or not str(entry.get("path", "")).strip():
             raise ValueError("overview review 基線含無效條目")
         out[str(entry["path"])] = entry
-    return out
+    return version, out
 
 
 def _added_section_text(before, after):
@@ -329,6 +361,79 @@ def _validated_synthesis_scope(raw_scope, book, chapter):
     return refs
 
 
+def _review_challenges(update, baseline):
+    """Return focused machine challenges; signals alone never force an update."""
+    signals = set(baseline.get("signals") or [])
+    counts = baseline.get("accumulation_count") or []
+    after_count = counts[1] if len(counts) > 1 and isinstance(counts[1], int) else 0
+    content = f"{update.get('summary', '')}\n{update.get('relation', '')}"
+    challenges = {"definition": [], "development": []}
+    if "definition_blank" in signals:
+        challenges["definition"].append("definition_blank")
+    if _DEFINITION_CUE_RE.search(content):
+        challenges["definition"].append("identity_language")
+    if "development_blank" in signals and after_count >= 2:
+        challenges["development"].append("development_blank_with_history")
+    if "many_accumulations" in signals:
+        challenges["development"].append("many_accumulations")
+    if _CROSS_CHAPTER_CUE_RE.search(content):
+        challenges["development"].append("cross_chapter_language")
+    return challenges
+
+
+def _v2_verdict(verdict, title, key, heading, challenges, before):
+    """Parse the compact v2 verdict and validate a challenged keep basis."""
+    if isinstance(verdict, str):
+        decision = verdict.strip().lower()
+        basis = ""
+        raw_scope = None
+    elif isinstance(verdict, dict):
+        if str(verdict.get("reason", "")).strip():
+            raise ValueError(
+                f"{title} 的 {heading} 使用 schema v2，不要填 reason；"
+                "只填 keep/update，程式提出 challenge 且仍 keep 時才填 basis"
+            )
+        decision = str(verdict.get("decision", "")).strip().lower()
+        basis = str(verdict.get("basis", "")).strip().lower()
+        raw_scope = verdict.get("synthesis_scope")
+    else:
+        raise ValueError(
+            f"{title} 的 overview_review.{key} 必須是 keep/update，"
+            "或含 decision 的物件"
+        )
+    if decision not in REVIEW_DECISIONS:
+        raise ValueError(
+            f"{title} 的 {heading} 尚未完成判斷：必須填 keep 或 update"
+        )
+    allowed = REVIEW_KEEP_BASIS[key]
+    if basis and basis not in allowed:
+        raise ValueError(
+            f"{title} 的 {heading} basis「{basis}」不合法；可用：{', '.join(sorted(allowed))}"
+        )
+    if decision == "update":
+        if basis:
+            raise ValueError(f"{title} 的 {heading} 已選 update，不需要 basis")
+        return decision, "", raw_scope
+    if challenges and not basis:
+        raise ValueError(
+            f"{title} 的 {heading} 有程式 challenge（{', '.join(challenges)}）；"
+            "若仍 keep，請改填 {decision: keep, basis: 受控代碼}，不要寫理由作文"
+        )
+    if not challenges and basis:
+        raise ValueError(f"{title} 的 {heading} 沒有 challenge，直接填 keep 即可，不需要 basis")
+    if basis == "already_covered" and not before.strip():
+        raise ValueError(f"{title} 的 {heading} 目前空白，basis 不能填 already_covered")
+    if key == "development" and basis == "single_chapter_only" and "cross_chapter_language" in challenges:
+        raise ValueError(
+            f"{title} 的 relation/summary 已出現跨章綜合訊號，"
+            "development basis 不能填 single_chapter_only；請重新判斷 update、"
+            "already_covered 或 insufficient_evidence"
+        )
+    if raw_scope not in (None, []):
+        raise ValueError(f"{title} 的主題發展選 keep，不需要 synthesis_scope")
+    return decision, basis, raw_scope
+
+
 def _section_diff(before, after, heading):
     if before == after:
         return ""
@@ -341,33 +446,53 @@ def _section_diff(before, after, heading):
     ))
 
 
-def _validate_overview_review(update, current_text, baseline, book, chapter):
+def _validate_overview_review(
+    update, current_text, baseline, book, chapter,
+    review_schema_version=REVIEW_SCHEMA_VERSION,
+):
     title = str(update.get("title", "?"))
     review = update.get("overview_review")
     if not isinstance(review, dict):
         raise ValueError(
             f"{title} 缺少 overview_review；請分別判斷定義與主題發展，keep 合法但不可略過"
         )
-    result = {
-        "review_attention": review.get("review_attention", "normal"),
-        "trigger_reasons": list(review.get("trigger_reasons") or []),
-    }
+    if review_schema_version == 1:
+        challenges = {"definition": [], "development": []}
+        result = {
+            "review_attention": review.get("review_attention", "normal"),
+            "trigger_reasons": list(review.get("trigger_reasons") or []),
+        }
+    else:
+        signals = list(baseline.get("signals") or [])
+        challenges = _review_challenges(update, baseline)
+        result = {
+            "review_attention": "high" if signals or any(challenges.values()) else "normal",
+            "signals": signals,
+            "challenges": challenges,
+        }
     for key, heading in (("definition", "定義"), ("development", "主題發展")):
         verdict = review.get(key)
-        if not isinstance(verdict, dict):
-            raise ValueError(f"{title} 的 overview_review.{key} 必須是物件")
-        decision = str(verdict.get("decision", "")).strip().lower()
-        if decision not in REVIEW_DECISIONS:
-            raise ValueError(
-                f"{title} 的 {heading} 尚未完成判斷：decision 必須是 keep 或 update"
-            )
-        reason = str(verdict.get("reason", "")).strip()
-        if len(reason) < MIN_REVIEW_REASON_LENGTH:
-            raise ValueError(
-                f"{title} 的 {heading} 判斷理由過短；請說明本章是否改變穩定身分／"
-                "是否形成跨章發展，不能只填『不用』"
-            )
         before = str(baseline.get(key, ""))
+        if review_schema_version == 1:
+            if not isinstance(verdict, dict):
+                raise ValueError(f"{title} 的 overview_review.{key} 必須是物件")
+            decision = str(verdict.get("decision", "")).strip().lower()
+            if decision not in REVIEW_DECISIONS:
+                raise ValueError(
+                    f"{title} 的 {heading} 尚未完成判斷：decision 必須是 keep 或 update"
+                )
+            reason = str(verdict.get("reason", "")).strip()
+            if len(reason) < MIN_REVIEW_REASON_LENGTH_V1:
+                raise ValueError(
+                    f"{title} 的 {heading} 判斷理由過短；請說明本章是否改變穩定身分／"
+                    "是否形成跨章發展，不能只填『不用』"
+                )
+            basis = ""
+            raw_scope = verdict.get("synthesis_scope")
+        else:
+            decision, basis, raw_scope = _v2_verdict(
+                verdict, title, key, heading, challenges[key], before
+            )
         after = _section_body(current_text, heading)
         changed = before != after
         if decision == "update" and not changed:
@@ -377,7 +502,7 @@ def _validate_overview_review(update, current_text, baseline, book, chapter):
         if decision == "keep" and changed:
             raise ValueError(
                 f"{title} 的 {heading} 選了 keep，但條目中的「## {heading}」已被修改；"
-                "請把 decision 改為 update 並說明，或還原該區塊"
+                "請把 decision 改為 update，或還原該區塊"
             )
         added = _added_section_text(before, after) if changed else ""
         if decision == "update" and (
@@ -407,13 +532,16 @@ def _validate_overview_review(update, current_text, baseline, book, chapter):
                 )
         item = {
             "decision": decision,
-            "reason": reason,
             "changed": changed,
             "diff": _section_diff(before, after, heading),
         }
+        if review_schema_version == 1:
+            item["reason"] = reason
+        elif basis:
+            item["basis"] = basis
         if key == "development" and decision == "update":
             item["synthesis_scope"] = _validated_synthesis_scope(
-                verdict.get("synthesis_scope"), book, chapter
+                raw_scope, book, chapter
             )
         result[key] = item
     return result
@@ -529,7 +657,11 @@ def preview_updates(manifest, root=None):
     if not isinstance(updates, list):
         raise ValueError("manifest 的 updates 必須是清單")
 
-    review_baselines = _load_review_baselines(manifest, data, book, chapter)
+    review_context = _load_review_baselines(manifest, data, book, chapter)
+    review_schema_version = None
+    review_baselines = None
+    if review_context is not None:
+        review_schema_version, review_baselines = review_context
     root = Path(ROOT if root is None else root).resolve()
     operations = []
     for update in updates:
@@ -554,7 +686,7 @@ def preview_updates(manifest, root=None):
                     "請重新 prepare"
                 )
             overview_review = _validate_overview_review(
-                update, text, baseline, book, chapter
+                update, text, baseline, book, chapter, review_schema_version
             )
         new_text = _updated_text(text, book, chapter, update, path)
         operations.append({

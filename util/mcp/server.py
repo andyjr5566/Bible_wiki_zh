@@ -977,8 +977,9 @@ def prepare_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
             "review_count": review_count,
             "review_roles": link_updates.REVIEW_GUIDANCE,
             "next_step": (
-                "逐條填 overview_review：definition/development 各選 keep 或 update 並寫理由；"
+                "逐條填 overview_review：definition/development 各選 keep 或 update；"
                 "這是審查義務，不是更新配額，全部 keep 也能正常通過；"
+                "只有 preview 提出 challenge 而仍 keep 時才填受控 basis；"
                 "development=update 還要列 synthesis_scope（本章＋至少另一章）並先修改條目。"
                 "不要把 summary/relation 換句話說貼進定義或主題發展，再執行 preview。"
             ),
@@ -2140,7 +2141,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 依 `manual/sources.md` 全文讀四套 commentary、確認 STEP receipt → 讀 M3 task projection（細查用 `query_step_context`）→ 手寫 entry payload → 再 prepare 取得更新後 M6 chapter projection → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。Prompt 不重貼 commentary raw body。
 6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對 manifest 正式來源。STEP 只支持語言事實，不算 commentary 共識票；lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
 6b. 渲染後可跑 `scan_unsourced_tokens`——它以**整個** raw_data 語料補掃 `link_folder` 條目裡查無出處的希伯來字母與拉丁音譯（詞界比對）。報出＝強力刪除線索；未報出**不**證明它出自本章／該條目實際來源，仍須人工核對 manifest 與累積章節。
-7. B 類累積先用 `prepare_chapter_link_updates`。逐條填 `overview_review`：`definition` 判斷穩定身分／辨識邊界是否改變，`development` 判斷是否形成至少跨兩章的推進／轉折／對照；兩者各選 `keep` 或 `update` 並寫理由。這是審查義務、不是更新配額；`keep` 是正常完整的結果，全部 `keep` 也可通過，只有確有新定義或跨章發展才選 `update`。逐章累積的 `summary`／`relation` 只記本章事實與關聯，絕不可換句話說後塞進定義或主題發展；`development=update` 須列 `synthesis_scope`（本章＋至少另一章）並先修改條目。再核對來源、呼叫 `preview_chapter_link_updates` 查看區塊 diff，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
+7. B 類累積先用 `prepare_chapter_link_updates`。逐條填 `overview_review`：`definition` 判斷穩定身分／辨識邊界是否改變，`development` 判斷是否形成至少跨兩章的推進／轉折／對照；兩者只填 `keep` 或 `update`。這是審查義務、不是更新配額；`keep` 是正常完整的結果，全部 `keep` 也可通過。只有 preview 提出程式 challenge 而仍選 `keep` 時，才依錯誤訊息填一個受控 `basis`；`update` 由正式區塊 diff 證明。逐章累積的 `summary`／`relation` 只記本章事實與關聯，絕不可換句話說後塞進定義或主題發展；`development=update` 須列 `synthesis_scope`（本章＋至少另一章）並先修改條目。再核對來源、呼叫 `preview_chapter_link_updates` 查看區塊 diff，使用回傳 token 才可 `apply_chapter_link_updates`；套用後重跑 preview 必須是 0 變更。
 8. 收尾可用 `run_gates(book, chapter, rebuild_index=True, timeout_seconds=900)` 作核心機械閘門；MCP client 的整體 tool-call timeout 也要設 900000 ms。它不取代上述完整收尾工具或人工內容複核。**閘門全綠只是可以開始檢查內容的前提，不是完工判準。**
 9. 新建候選前可用 `find_duplicate_entries` 掃一次全庫既有近似重複；`check_accumulation_orphans(book)` 可單獨驗證條目累積是否都有章節連回（`run_gates` 已含此項，此為單獨快查用）。若真的找到重複，用 `merge_entries` 合併，見 `biblical_maintenance_sop` 的合併步驟。
 """

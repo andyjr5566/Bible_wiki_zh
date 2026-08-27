@@ -532,15 +532,8 @@ class CheckChapterFilesTests(unittest.TestCase):
             self.assertIn("尚未完成判斷", review_check.resume_hint)
 
             review = data["updates"][0]["overview_review"]
-            review["definition"] = {
-                "decision": "keep",
-                "reason": "本章沒有改變條目的穩定身分或辨識邊界",
-            }
-            review["development"] = {
-                "decision": "keep",
-                "reason": "本章尚未形成需要補入總體區塊的跨章推進",
-                "synthesis_scope": [],
-            }
+            review["definition"] = "keep"
+            review["development"] = "keep"
             _write_yaml(manifest, data)
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             review_check = next(c for c in checks if "overview_review" in c.label)

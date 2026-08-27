@@ -131,9 +131,12 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - **主題發展**：綜合至少兩個章節（可跨卷），說明推進、轉折、對照或整體意義；不是逐章累積的加長版。
    - **逐章累積**：`summary`／`relation` 只記本章明確事實與本章關聯，每章各自成塊。
 
-   `definition`／`development` 必須各選 `keep` 或 `update` 並寫理由；這是**審查義務，不是
+   `definition`／`development` 必須各選 `keep` 或 `update`；這是**審查義務，不是
    更新配額**。`keep` 是正常且完整的結果，一章全部 `keep` 也可通過；只有 agent 能明確指出
    真正的新定義或跨章發展時才選 `update`，否則必須 `keep`，不准為了顯得有做事而硬湊。
+   若 preview 依空白區塊、累積數或 `summary`／`relation` 的跨章語句提出 `challenge`，仍選
+   `keep` 時才填一個受控 `basis`（如 `already_covered`、`single_chapter_only`、
+   `insufficient_evidence`）。`update` 由實際正式區塊 diff 證明。
    `development=update` 必須在 `synthesis_scope` 列出
    本章與至少另一章，並先修改條目的 `## 主題發展`。**絕對不可把本章的
    `summary`／`relation` 換句話說後貼進定義或主題發展，也不可用「民35」這類單章小標題
