@@ -1,0 +1,285 @@
+book: 申命記
+chapter: 1
+candidates:
+- name: 摩西
+  type: 人物
+  evidence: |-
+    v1「以下所記的是摩西⋯向以色列眾人所說的話」；v3「摩西照耶和華藉著他所吩咐以色列人的話都曉諭他們」；v5「摩西在約但河東的摩押地講律法說」。
+- name: 約但河
+  type: 地點
+  evidence: |-
+    v1、v5「約但河東」。CT 文意註解：「『約但河東』原文「約但河外」，即今之外約但」。STEP 顯示是 be./'E.ver hai./yar.Den（H5676H＋H3383），簡要詞典義 side: beyond。
+- name: 亞拉巴
+  type: 地點
+  evidence: |-
+    v1「疏弗對面的亞拉巴」；v7「就是亞拉巴、山地、高原、南地」。CT／GT 同文：「『亞拉巴』指約但河流域從北邊的加利利海到死海南端以迄阿卡巴灣的河谷地帶。今天死海南岸仍叫做亞拉巴（Wady el-Arabah）」。STEP 顯示是 ba./'a.ra.Vah（H6160G），簡要詞典義 Arabah。
+  surfaces:
+  - 亞拉巴
+- name: 巴蘭與哈洗錄是否同名不同地
+  type: 解經爭議
+  evidence: |-
+    v1 列出疏弗、巴蘭、陀弗、拉班、哈洗錄、底撒哈。CT：「這些地方都位於亞拉巴的範圍內，並非南地以南的巴蘭曠野，故巴蘭和哈洗錄同名不同地(參民十二16)」；GT《啟導本》：「疏弗、巴蘭、陀弗、拉班、哈洗錄、底撒哈都是從西奈山北往摩押經過的地方⋯但知巴蘭為介乎加低斯與西奈間的曠野」；BH 亦把 Paran 認作 Numbers 10:12 的曠野、把 Hazeroth 認作 Numbers 11:35 的營地。
+  surfaces:
+  - 疏弗
+  - 陀弗
+  - 底撒哈
+- name: 十一天的路程
+  type: 主題
+  evidence: |-
+    v2「（從何烈山經過西珥山到加低斯巴尼亞有十一天的路程。）」CT：「以色列人共花了三十八年的時間」；GT《聖經精讀本》：「這令我們想起以色列竟然為了這麼短的路程而花費了40年」；KC：「The journey could have lasted eleven days⋯Due to unbelief, however, it took them forty years」；BH：「The eleven-day journey serves as a reminder of the consequences of not trusting in God's promises」。
+  surfaces:
+  - 十一天的路程
+- name: 何烈山
+  type: 地點
+  evidence: |-
+    v2、v6、v19。CT：「『何烈山』指整條山脈，是磐石出水的地方(參出十七6)，其中一峰稱西乃山，就是神的山」；GT：「何烈山即以色列人領受律法的西奈山（出十九1），一般相信在西乃（今譯西奈）半島南部」。
+- name: 西珥山
+  type: 地點
+  evidence: |-
+    v2「經過西珥山」。CT：「『經過西珥山』指繞過以東地的邊緣(參二4)」；GT《串珠》：「「西珥山」：死海以南、亞拉巴東南面的山谷」。
+- name: 加低斯
+  type: 地點
+  evidence: |-
+    v2、v19「到了加低斯巴尼亞」；v46「於是你們在加低斯住了許多日子」。GT：「加低斯巴尼亞原名加低斯，又名安密巴（創十四7），位於南地西南，是迦南的南疆入口，距別是巴南約70公里；為曠野中的一個綠洲，水草茂盛。」
+  surfaces:
+  - 加低斯巴尼亞
+  - 加低斯
+- name: 出埃及第四十年十一月初一日
+  type: 歷史
+  evidence: |-
+    v3。CT：「就是摩西死前大約一個月」；GT《啟導本》：「這是本書唯一記載的日期。兩個月後，百姓進入迦南地（比較書四19）。這期間，他們用了30天來為摩西舉哀（三十四8）」；GT《雷氏研讀本》：「其中兩年停留在西乃山和前往加低斯巴尼亞，其餘三十八年飄流在曠野（二14）」；BH：「The eleventh month, known as Shevat in the Hebrew calendar」。
+  surfaces:
+  - 出埃及第四十年十一月初一日
+- name: 亞摩利人
+  type: 人物
+  evidence: |-
+    v4「亞摩利王西宏」；v7「亞摩利人的山地」；v19、v20、v27、v44。STEP 顯示是 ha./'e.mo.Ri（H567），簡要詞典義 Amorite。CT 原文字義：「亞摩利」山居者。
+- name: 希實本
+  type: 地點
+  evidence: |-
+    v4「住希實本的亞摩利王西宏」。CT 原文字義：「希實本」堡壘；GT：「「希實本」為亞摩利人的首邑，距死海北部東岸約20公里」；BH：「Heshbon was the capital city of Sihon⋯Archaeological evidence suggests it was a fortified city」。
+- name: 以色列戰勝亞摩利王西宏互文
+  type: 互文
+  evidence: |-
+    v4「他已經擊殺了住希實本的亞摩利王西宏」。CT：「詳情請參閱民數記二十一章21~35節」；KC：「Heshbon is the capital of Moab, but was conquered by Sihon, a king of the Amorites.」
+  surfaces:
+  - 西宏
+- name: 巴珊
+  type: 地點
+  evidence: |-
+    v4「住以得來、亞斯她錄的巴珊王噩」。CT 原文字義：「巴珊」多結果實的；BH：「Bashan was a fertile and prosperous region」。
+- name: 以色列戰勝巴珊王噩互文
+  type: 互文
+  evidence: |-
+    v4「巴珊王噩」。CT 原文字義：「噩」長頸的；BH：「Og, king of Bashan, was another formidable opponent, known for his giant stature (Deuteronomy 3:11)」。
+  surfaces:
+  - 噩
+- name: 以得來
+  type: 地點
+  evidence: |-
+    v4「住以得來、亞斯她錄的巴珊王噩」。CT 原文字義：「以得來」好的牧草地；GT《啟導本》：「三1說噩住在亞斯他錄；以得來或為離宮所在，位於加利利海東岸45公里處」；BH：「The battle at Edrei was crucial as Bashan was a fertile and prosperous region」。
+  surfaces:
+  - 以得來
+- name: 亞斯她錄
+  type: 地點
+  evidence: |-
+    v4。CT 原文字義：「亞斯他錄」星辰；GT《華爾頓申命記背景注釋》：「本節稱亞斯他錄為巴珊的首都。埃及、亞述文獻，和亞馬拿書函，都提到過這個城市⋯它今日稱為亞斯他拉遺址（Tell 'Ashtarah），位於雅穆克河畔，加利利海東面二十五哩左右之處」；BH：「Ashtaroth was one of the principal cities of Og's kingdom and a center of worship for the Canaanite goddess Astarte」。
+  surfaces:
+  - 亞斯她錄
+- name: 摩押地
+  type: 地點
+  evidence: |-
+    v5「摩西在約但河東的摩押地講律法說」。CT：「『摩押地』即指亞拉巴(參1節)的中南部」；BH：「Moab is a region east of the Dead Sea, named after the descendants of Moab, the son of Lot (Genesis 19:37)」。
+- name: 講律法（ba.ar）
+  type: 原文
+  evidence: |-
+    v5「摩西在約但河東的摩押地講律法說」。CT 原文字義：「講」解釋，使明白；「律法」指引，教誨。GT《雷氏研讀本》：「「講」。直譯作：解釋」；GT《聖經精讀本》：「講律法說: “講”的希伯來語“baar ”意指“明確地闡明或講解”」；BH：「The Hebrew word for "explain" can also mean "to make clear" or "to expound"」。STEP 顯示是 ho.'Il be.'Er（H2974＋H874），context gloss「he undertook」「he made clear」，簡要詞典義 ba.ar to make plain；「律法」是 ha./to.Rah（H8451），簡要詞典義 instruction。
+  surfaces:
+  - 講律法
+- name: 應許之地的四至
+  type: 主題
+  evidence: |-
+    v7「就是亞拉巴、山地、高原、南地，沿海一帶迦南人的地，並利巴嫩山又到伯拉大河」。CT：「『伯拉大河』即今幼發拉底河，是神所應許之地的北方界線」；GT《啟導本》：「本節所描寫的迦南應許地範圍與神當年應許亞伯拉罕、以撒和雅各的符合（創十五18；二十六2～4；三十五11～12）。大衛和所羅門王時代，已見到這塊擴展的版圖」；BH：「The Euphrates River⋯marks the northeastern boundary of the promised land」。
+  surfaces:
+  - 伯拉大河
+  - 利巴嫩山
+  - 沿海一帶
+- name: 高原（Shephelah）
+  type: 地點
+  evidence: |-
+    v7「亞拉巴、山地、高原、南地」。CT：「『高原』或翻作「低原」、「丘陵」，指迦南地中部「山地」以南，西面與非利士地鄰接，南面與「南地」相接的丘陵地帶」；GT《雷氏研讀本》：「「高原」。位於沿海平原與中央高地之間的低地。此地被稱為Shephelah」；BH：「The foothills, or Shephelah, are the lowlands between the coastal plain and the hill country」。STEP 顯示是 u./va./she.fe.Lah（H8219）。
+  surfaces:
+  - 高原
+- name: 南地
+  type: 地點
+  evidence: |-
+    v7「亞拉巴、山地、高原、南地」。CT：「『南地』指迦南地境內的南部地區，別是巴以南一片貧瘠乾地」；GT《雷氏研讀本》：「「南地」（N e g e v）。位於迦南地南部的曠野地，約有四千五百平方英里（11,650平方公里）」。STEP 顯示是 u./va./Ne.gev（H5045G）。
+- name: 迦南人
+  type: 人物
+  evidence: |-
+    v7「沿海一帶迦南人的地」。CT 原文字義：「迦南人」熱心的，生意人，商人；BH：「The Canaanites were the primary inhabitants of the land promised to Israel」。
+- name: 亞伯拉罕
+  type: 人物
+  evidence: |-
+    v8「耶和華向你們列祖亞伯拉罕、以撒、雅各起誓應許賜給他們和他們後裔為業之地」。
+- name: 以撒
+  type: 人物
+  evidence: |-
+    v8「亞伯拉罕、以撒、雅各」。CT 原文字義：「以撒」他笑。
+- name: 雅各
+  type: 人物
+  evidence: |-
+    v8「亞伯拉罕、以撒、雅各」。CT 原文字義：「雅各」抓住腳後跟的人，取代者。
+- name: 擔當（na.sa）
+  type: 原文
+  evidence: |-
+    v9「管理你們的重任，我獨自擔當不起」；v12「我獨自一人怎能擔當得起呢」；v31「耶和華─你們的神撫養你們，如同人撫養兒子一般」。CT 原文字義兩處同給「舉起，承擔」（v9「擔當」、v31「撫養」）。STEP 顯示三處同為 H5375H：v9 se.'Et（to bear）、v12 'e.Sa'（will I bear）、v31 ne.sa.'a./Kha（he carried you）與 yi.sa'-（he carries），簡要詞典義 na.sa to lift: bear。KC：「What Moses was not able to do (Num 11:14), God did: He carried them like a man carries his child.」
+  surfaces:
+  - 擔當
+  - 撫養
+- name: 選立首領的條件
+  type: 主題
+  evidence: |-
+    v13「你們要按著各支派選舉有智慧、有見識、為眾人所認識的」。CT：「本節說出領袖三條件：(1)有智慧，較偏重於治事的才幹；(2)有見識，較偏重於分辨的能力；(3)為眾人所認識的，較偏重於經驗和信譽」；GT《啟導本》列出六項並對照出十八21；BH：「Wisdom in the biblical sense often refers to the fear of the Lord⋯These qualities are echoed in the New Testament qualifications for church leaders (1 Timothy 3:1-7)」。STEP 顯示是 cha.kha.Mim（H2450 wise）、u./ne.vo.Nim（H995 bin，Niphal 分詞 understanding）、vi./du.'Im（H3045 yada，Qal 被動分詞 known）。
+  surfaces:
+  - 有智慧、有見識、為眾人所認識的
+- name: 葉忒羅建議分層治理
+  type: 事件
+  evidence: |-
+    v9-18 回顧何烈山下設立官長。GT《啟導本》：「本節至18節所記的事可參《出埃及記》十八13～26」；GT《聖經精讀本》：「本文講述了摩西在實行岳父葉忒羅之忠告(出18:17-23)的過程中,首先向百姓講明其理由,再得到他們同意的場面」。
+- name: 曠野審判制度
+  type: 背景
+  evidence: |-
+    v15「立他們為官長、千夫長、百夫長、五十夫長、十夫長」。CT：「按所管理的人數，分別設立各級官長(參出十八25)」；GT《聖經精讀本》：「十夫長: 與其它夫長有所不同,他們所擔任的並不是軍事上的統率或司法上的責任,而是負責事務記錄,戶籍管理等行政瑣事」；BH：「This hierarchical structure reflects a military organization」。
+  surfaces:
+  - 千夫長
+  - 百夫長
+  - 五十夫長
+  - 十夫長
+- name: 審判官
+  type: 原文
+  evidence: |-
+    v16「當時，我囑咐你們的審判官說」。CT 原文字義：「審判官」判斷，治理。STEP 顯示是 sho.fe.tei./Khem（H8199 shaphat），同節「按公義判斷」的動詞 u./she.fa.Tem 同為 H8199，「公義」是 Tze.dek（H6664G）。
+- name: 寄居的
+  type: 原文
+  evidence: |-
+    v16「是與同居的外人爭訟，都要按公義判斷」。CT：「『外人』指皈依猶太教的非希伯來人」；BH：「Including "a foreign resident" highlights the inclusivity of God's justice system」。STEP 顯示是 ge.R/o（H1616），簡要詞典義 ger sojourner。
+  surfaces:
+  - 同居的外人
+- name: 不可看人的外貌（na.khar）
+  type: 原文
+  evidence: |-
+    v17「審判的時候，不可看人的外貌；聽訟不可分貴賤，不可懼怕人」。CT 原文字義：「外貌」面，臉；「貴」巨大的；「賤」小的，低微的。STEP 顯示是 lo'- ta.Ki.ru fa.Nim（H5234A na.khar「to recognize」＋H6440N panim「faces」），字面是「不可認臉」；同節「不可懼怕人」是 lo' ta.Gu.ru mi./pe.nei- 'Ish（H1481C gur「to dread」），再次用 panim。BH：「Partiality, or favoritism, is condemned throughout Scripture (e.g., Leviticus 19:15, James 2:1-9)」。
+  surfaces:
+  - 不可看人的外貌
+- name: 審判是屬乎神的
+  type: 神學
+  evidence: |-
+    v17「因為審判是屬乎神的。若有難斷的案件，可以呈到我這裡，我就判斷」。CT：「『審判是屬乎神的』指審判是經過神的授權，代表神而為，故毋須顧慮「人」的因素」；GT《聖經精讀本》：「掌管神之律法的審判官作為神的代言人,也當持有以神的權威與名義審判的意識」；KC 列為審判官四條件之三；BH：「Judges serve as God's representatives, administering His justice on earth (Psalm 82:1-4)」。STEP 顯示「審判」是 ha./mish.Pat（H4941G）、「難斷的案件」是 ha./da.Var 'a.Sher yik.Sheh（H1697L davar「word: case」＋H7185 qashah「to harden」）。
+  surfaces:
+  - 審判是屬乎神的
+- name: 古代近東司法制度
+  type: 背景
+  evidence: |-
+    v16-17。GT《華爾頓申命記背景注釋》：「接近這個時代的埃及和赫人記錄，亦同樣顯示司法系統是等級性的。赫人的《軍官及司令指南》（Instructions to Officers and Commanders）甚至與第13節相同，讓軍官擔任法官⋯陪審團並不存在，但長老有時也會集體判案⋯律師也不存在，大部分人在法庭上都是充任自己的律師」。
+- name: 曠野飄流四十年
+  type: 歷史
+  evidence: |-
+    v19「經過你們所看見那大而可怕的曠野」；v46「於是你們在加低斯住了許多日子」。GT《聖經精讀本》：「大而可怕的曠野: 指阿拉伯曠野的西部,即形成北部西奈半島的荒涼沙漠地帶⋯山脈如同被火燒,只有尖岩陡石和荒沙遍滿全地」；KC：「The great and terrible wilderness served to create a longing for the land.」
+- name: 你與你們的單複數交替
+  type: 原文
+  evidence: |-
+    v21、v31 在原文是第二人稱單數，與全章通用的複數不同。GT《啟導本》：「本節的“你”為第二人稱單數，與全章通用的多數“你們”不同。有人因此指出本節為後加的。31節經文中的“你們”原文也是單數，《和合本》為求統一，改譯為“你們”」。STEP morphology 逐字證實：v21 Re.'eh（Vqv2ms）、'e.lo.Hei./kha（Sp2ms）、'a.Leh（Vqv2ms）、Resh（Vqv2ms）、ti.Ra'（Vqj2ms）、te.Chat（VNj2ms）全為單數；v31 ra.'I.ta（Vqp2ms）、ne.sa.'a./Kha（Sp2ms）亦為單數。
+- name: 十二探子窺探迦南地
+  type: 事件
+  evidence: |-
+    v22-25「我們要先打發人去，為我們窺探那地」；v23「就從你們中間選了十二個人，每支派一人」。KC：「In Numbers it says that God commands spies to be sent out (Num 13:1-2), while here we learn that the people wanted it.」
+- name: 以實各谷的一掛葡萄
+  type: 主題
+  evidence: |-
+    v24「到以實各谷，窺探那地」；v25「他們手裡拿著那地的果子下來」。CT 原文字義：「以實各」串束；GT《啟導本》：「“以實各”有果實累累之意，表示其地異常肥沃。此谷近希伯侖（參民十三22）」。
+- name: 美地
+  type: 主題
+  evidence: |-
+    v25「耶和華─我們的神所賜給我們的是美地」；v35「連一個也不得見我起誓應許賜給你們列祖的美地」。CT：「『美地』又稱流奶與蜜之地(參民十三27)，乃形容物產豐富，適宜居住生活」；KC：「They have also recognized that the land God gives is "a good (or: fair) land", an expression that appears ten times in this book (Deu 1:25,35; 3:25; 4:21,22; 6:18; 8:7,10; 9:6; 11:17).」STEP 顯示是 to.Vah ha./'A.retz（H2896A tov「pleasant」）。
+  surfaces:
+  - 美地
+- name: 流奶與蜜之地
+  type: 神學
+  evidence: |-
+    v25「所賜給我們的是美地」。CT：「『美地』又稱流奶與蜜之地(參民十三27)」；GT《聖經精讀本》：「早在摩西蒙召時(出3:8,17),神就描繪那地為“流奶與蜜之地”(11:9)」。
+- name: 耶和華的命令（peh）
+  type: 原文
+  evidence: |-
+    v26「竟違背了耶和華─你們神的命令」；v43「竟違背耶和華的命令，擅自上山地去了」。GT《聖經精讀本》：「違背了耶和華你們神的命令: 在這裡意指誡命的“命令”(希伯來語, peh)的字面意思是“口”。即,出自神之口的話就是誡命」。STEP 兩節同為 va./tam.Ru 'et- pi Yah.weh（H4784 marah「to rebel」＋H6310I peh「lip: word」）；相對地 v45「耶和華卻不聽你們的聲音」用的是 be./Ko.le./Khem（H6963A qol「voice」）。
+  surfaces:
+  - 命令
+- name: 心消化（ma.sas）
+  type: 原文
+  evidence: |-
+    v28「我們的弟兄使我們的心消化」。CT 原文字義：「消化」溶化，溶解；GT《聖經精讀本》：「使我們的心消化: 原文的字面意義是“使心消融並淌流”」；BH：「The phrase "hearts melt" is a vivid expression of fear and loss of courage」。STEP 顯示是 he.Ma.su 'et- le.va.Ve./nu（H4549 ma.sas「to melt」，Hiphil 使役），簡要詞典義 to melt。
+  surfaces:
+  - 心消化
+- name: 亞衲族與偉人拿非林
+  type: 背景
+  evidence: |-
+    v28「並且我們在那裡看見亞衲族的人」。CT 原文字義：「亞衲」頸項；GT《啟導本》：「“亞衲族”為迦南早期居民，以身材高大著稱⋯但所居地的城牆，據考古學家發現，只有10至15公尺高。探子說“高得頂天”的確過甚其詞」；GT 李道生：「亞衲－－意即巨人，此族的人身體強壯高大」。STEP 顯示是 be.Nei 'a.na.Kim（H6062）。
+- name: 耶和華的爭戰
+  type: 神學
+  evidence: |-
+    v30「在你們前面行的耶和華─你們的神必為你們爭戰」；v41「情願照耶和華─我們神一切所吩咐的上去爭戰」；v42「不要上去，也不要爭戰」。STEP 顯示 v30 是 hu' yi.la.Chem la./Khem（H3898A lacham，Niphal）。
+  surfaces:
+  - 爭戰
+- name: 雲柱火柱
+  type: 歷史
+  evidence: |-
+    v33「夜間在火柱裡，日間在雲柱裡，指示你們所當行的路」。GT《啟導本》：「在曠野中，神的約櫃走在百姓前面，為他們開路，找安營的地方。神在會幕的雲彩中，用火柱、雲柱引領他們行經曠野（參出十三21）」。
+- name: 加低斯巴尼亞事件
+  type: 歷史
+  evidence: |-
+    v19-46 整段回顧。GT《聖經精讀本》：「回顧加低斯巴尼亞事件:本文回顧了38年前加低斯巴尼亞所發生的以色列舊世代苦澀的叛逆事件(民13:1-14:45)」。
+- name: 迦勒
+  type: 人物
+  evidence: |-
+    v36「惟有耶孚尼的兒子迦勒必得看見⋯因為他專心跟從我」。CT 原文字義：「耶孚尼」他將被面對；「迦勒」有才能的，勇敢，全心的；BH：「His father, Jephunneh, is identified as a Kenizzite」。STEP 顯示是 ka.Lev ben- ye.fu.Neh（H3612G＋H3312G）。
+- name: 專心跟從主與另一個心志
+  type: 神學
+  evidence: |-
+    v36「因為他專心跟從我」。CT：「『專心跟從我』字面的意思是『完全跟在我後面』，意指一心一意跟從神，不受任何外在因素的影響(參民三十二12)」；KC：「His name means 'wholeheartedly'.」STEP 顯示是 mi.Le' 'a.cha.Rei Yah.weh（H4390 male「to fill」Piel＋H310A achar「after」），字面是「他填滿了跟在耶和華後面」。
+  surfaces:
+  - 專心跟從
+- name: 摩西不得進入應許之地
+  type: 事件
+  evidence: |-
+    v37「耶和華為你的緣故也向我發怒，說：你必不得進入那地」。CT：「『為你們的緣故』指以色列百姓惹動摩西氣憤失態，杖打磐石兩次，結果遭受神的懲罰(參民二十11~12)」；GT《雷氏研讀本》：「雖然拒絕摩西進入應許地的決定，在以色列人於加低斯被拒絕的三十八年後才宣佈出來，但兩個決定的原因是相同的——不信」。
+- name: 約書亞
+  type: 人物
+  evidence: |-
+    v38「伺候你、嫩的兒子約書亞，他必得進入那地；你要勉勵他」。CT 原文字義：「嫩」魚，後裔；「勉勵」兼顧，加強；BH：「His name, originally Hoshea, was changed by Moses to Joshua, meaning "The LORD is salvation"」。
+- name: 海（紅海）
+  type: 地點
+  evidence: |-
+    v40「至於你們，要轉回，從紅海的路往曠野去」。GT《啟導本》：「“紅海”原文為“蘆葦海”，當日很多湖泊都用此名（參出十四21注）。此處指阿卡巴灣」；GT《串珠》：「「紅海的路」：應作「蘆葦海的路」（參出13:18注）。這路經過加低斯東面」。
+  surfaces:
+  - 紅海
+- name: 得罪神
+  type: 神學
+  evidence: |-
+    v41「我們得罪了耶和華」。CT 原文字義：「得罪」錯過目標，出差錯，犯罪。STEP 顯示是 cha.ta.Nu（H2398 chata），簡要詞典義 to sin。KC：「If the confession "we have sinned" sounds from their mouths, it is only by rote with no real meaning.」
+  surfaces:
+  - 得罪
+- name: 爭先與擅自
+  type: 原文
+  evidence: |-
+    v41「於是你們各人帶著兵器，爭先上山地去了」；v43「竟違背耶和華的命令，擅自上山地去了」。CT 原文字義：「爭先」認為容易，輕鬆以待；「擅自」傲慢，無禮。GT《聖經精讀本》：「擅自: “無禮”或“妄自尊大”」。STEP 顯示 v41 是 va./ta.Hi.nu（H1951 hun，context gloss「you regarded as easy」）、v43 是 va./ta.Zi.du（H2102 zud，簡要詞典義「to boil」，context gloss「you acted presumptuously」）。BH：「thinking it easy to go up into the hill country⋯reveals their misunderstanding of the situation and underestimation of the enemy」。
+  surfaces:
+  - 爭先
+  - 擅自
+- name: 迦南大敗直到何珥瑪
+  type: 歷史
+  evidence: |-
+    v44「住那山地的亞摩利人就出來攻擊你們，追趕你們，如蜂擁一般，在西珥殺退你們，直到何珥瑪」。CT：「『何珥瑪』是雙關語，原本是可以得到『庇護』的地理用詞，現在轉用來成為『完全毀滅』的所在」；CT 原文字義：「殺退」打碎。STEP 顯示「如蜂擁一般」是 ka.'a.Sher ta.'a.Sei.nah ha./de.vo.Rim（H1682 devorah「bee」）、「殺退」是 va/i.ya.ke.Tu（H3807 katat「to crush」）。
+- name: 申命記的宗主權盟約結構
+  type: 背景
+  evidence: |-
+    GT《聖經精讀本》：「摩西的第一篇講章:整卷書都依照當時施行於古代近東的宗主權盟約的傳統形式進行記錄。其結構如下:①前言;②歷史性序論;③立約;④保存並公開頒佈;⑤證人的名單;⑥根據是否遵守所立之約而賜下的祝福與咒詛。如此來看,本文當屬前言與歷史性序論部分。因為,本文是構成本書的三篇講章(1:6-4:43;4:44-26:19;27:1-30:20)中第一篇」。

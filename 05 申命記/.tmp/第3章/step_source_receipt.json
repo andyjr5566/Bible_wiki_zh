@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_3.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 461,
+      "first": "Deu 3:1",
+      "last": "Deu 3:29",
+      "sha256": "f3c9096652dab99653e74e415bce348705c20772204d09010c01222e565a9acd",
+      "bytes": 86474,
+      "chars": 75378,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

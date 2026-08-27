@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_1.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 46,
+      "words": 654,
+      "first": "Deu 1:1",
+      "last": "Deu 1:46",
+      "sha256": "1d0f9af5a80806e929e09c5c7cc6195b394dfeeca10152348ef405e2240edfe2",
+      "bytes": 129573,
+      "chars": 113469,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

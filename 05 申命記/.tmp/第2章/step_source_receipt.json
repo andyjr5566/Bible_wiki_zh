@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_2.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 532,
+      "first": "Deu 2:1",
+      "last": "Deu 2:37",
+      "sha256": "8c95aeb876473635621070d27f268f9637866d1f910cc744a110f444899558b1",
+      "bytes": 102568,
+      "chars": 89813,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
