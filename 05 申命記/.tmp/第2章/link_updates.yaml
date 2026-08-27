@@ -1,0 +1,593 @@
+book: 申命記
+chapter: 2
+review_schema_version: 1
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目都必須分別填 definition／development 的 keep 或 update 並說明理由；這是審查義務，不是更新配額；keep 是正常且完整的結果，多數或全部 keep 都可通過。只有真正新增穩定定義或跨章發展才選 update，否則必須 keep，禁止為了顯得有做事而硬湊。
+updates:
+- title: 海（紅海）
+  path: link_folder/地點/海（紅海）.md
+  summary: 第1節「此後，我們轉回，從紅海的路往曠野去，是照耶和華所吩咐我的」。CT：「『從紅海的路』指取道阿卡巴灣」；GT《啟導本》：「“紅海”當指阿卡巴灣」；BH 指出往紅海的路是離開應許之地、退回曠野的方向，是回到試驗與倚靠神的地方。
+  relation: 本章開頭的紅海是退回去的方向——申1:40 神叫他們轉回紅海的路，第2章第1節就是照做。第8節以拉他與以旬迦別在紅海最北端，是這條路的終點，也是往北轉的起點。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 主題發展目前空白
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 西珥山
+  path: link_folder/地點/西珥山.md
+  summary: '第1節「我們在西珥山繞行了許多日子」；第5節「因我已將西珥山賜給以掃為業」；第8節「離了我們弟兄以掃子孫所住的西珥」。GT《聖經精讀本》：「西珥山: 在這裡並非指某一特定的山,乃是指整個以東山地」；CT：「『西珥山』在死海的南邊，屬於以東地；『繞行』指繞過以東地」；GT《雷氏研讀本》：「“以掃”的後裔獲賜“西珥山”（整個以東地帶，死海以南的多山地帶；參看創三六6～8）為產業」。STEP 顯示第5節是 har se.''Ir（H2022G＋H8165G）。'
+  relation: 本章的西珥山有兩個身分：第1節是繞了三十八年的地方，第5節是神明令不可碰的產業。第3節「你們繞行這山的日子夠了，要轉向北去」把這兩件事接起來。
+  overview_review:
+    review_attention: normal
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    accumulation_count_before: 4
+    accumulation_count_after: 5
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 曠野飄流四十年
+  path: link_folder/歷史/曠野飄流四十年.md
+  summary: '第1節「繞行了許多日子」、第7節「這四十年，耶和華─你的神常與你同在」、第14節「共有三十八年」。GT《聖經精讀本》：「許多日子: 指加低斯巴尼亞探子事件之後的38年。這是不信的代價,所以受到神的懲罰而不能進入迦南地的以色列舊世代都在曠野中流浪至死(14節)」；GT《啟導本》：「以色列人四十年曠野生活，除去從埃及到達西奈，和在西奈記加低斯生活的兩年，剩下38年」。'
+  relation: 本章第一次把三十八年這個數字寫死，並且指出它結束的方式與地點——第13-16節過撒烈溪、那世代的兵丁滅盡。第7節同時給了另一面：這段年日裡他們一無所缺。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 主題發展目前空白
+    accumulation_count_before: 6
+    accumulation_count_after: 7
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以掃
+  path: link_folder/人物/以掃.md
+  summary: 第4節「你們弟兄以掃的子孫住在西珥」；第5節「因我已將西珥山賜給以掃為業」；第8、12、22、29節。GT《啟導本》：「以東人為以撒長子以掃的子孫⋯他們所居之地為神所賜，不屬於應許以色列人的土地」；KC 指出摩西必須告訴百姓怎樣對待這些親屬。
+  relation: 以掃在本章的身分是「你們弟兄」——第4節神特意用這個稱呼。第12、22節另記以掃的子孫把何利人從西珥趕出去，並且經文明說那「就如以色列在耶和華賜給他為業之地所行的一樣」。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 9 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 8
+    accumulation_count_after: 9
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以東
+  path: link_folder/地點/以東.md
+  summary: 第4-8節以色列繞過以掃子孫所住的西珥。GT《聖經精讀本》：「本文回顧了民20:14-21。但這裡省略了以東王無禮地拒絕以色列願通過此地的溫和請求。雖然以東王無禮地拒絕了,但以色列卻離開以東人回避了與他們的衝突,這並不是因為懼怕他們,乃是因為神不可與以東人相爭戰的和平命令」；GT《啟導本》：「以東人為以撒長子以掃的子孫」。
+  relation: 本章對以東的處理與民20 那次被拒絕的記載可以並讀：GT《聖經精讀本》指出這裡略去了以東王的無禮拒絕，只留下神的禁令。第29節摩西對西宏說話時，還把以東人算成善待過他們的一方。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 套用後將有 11 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 10
+    accumulation_count_after: 11
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 神所定的邊界
+  path: link_folder/神學/神所定的邊界.md
+  summary: 第5、9、19節三次「我不賜給你們為業，因我已將⋯賜給⋯為業」。KC：「他們從中可以看見神掌管一切，並為每一國定下居住的地方（申32:8；徒17:26）。」GT《聖經精讀本》：「神根據對此三個民族(以東、摩押、亞捫)的祖先,即以掃與羅得的憐恤與應許而保護了他們。由此可知,自在永在者神之應許的不變與信實」；CT 第5節〔話中之光〕：「神的兒女要知道自己的地界，不能羨慕別人，也不該妒忌別人為甚麼先得了地上的成就。」
+  relation: 既有累積收的是以色列自己四界之內的邊界；本章補上的是同一件事的另一面——神也為以東、摩押、亞捫劃了界，而以色列被明令不可越過。第5節甚至把不可越過的程度量到一個腳掌。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞拉巴
+  path: link_folder/地點/亞拉巴.md
+  summary: 第8節「從亞拉巴的路，經過以拉他、以旬迦別，轉向摩押曠野的路去」。CT：「『從亞拉巴的路』另譯「取道低谷」」；GT《啟導本》：「以拉他和以旬迦別為“亞拉巴路”的起點，在阿卡巴灣的頂端。此路始于阿卡巴灣，向北伸延，直到摩押地的東部」。
+  relation: 申1 的亞拉巴是講話的地點與應許之地的一個分區；本章的亞拉巴是一條路——從阿卡巴灣往北的通道，以色列人靠它離開以東、轉向摩押。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以旬迦別
+  path: link_folder/地點/以旬迦別.md
+  summary: '第8節「經過以拉他、以旬迦別」。GT《聖經精讀本》：「以拉他,以旬迦別: 是位於紅海最北端的兩個港口城市,出了埃及的以色列曾先後三次路經此地,以戰略要地著稱。尤其是“以旬迦別”具有“人的背脊之骨”,似乎是因其高低不平的地形而來」；CT 原文字義：「以旬迦別」人的骨幹。'
+  relation: 本章把以旬迦別與以拉他並列為亞拉巴路的南端起點。GT《聖經精讀本》指出以色列人前後三次經過這裡。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 摩押地
+  path: link_folder/地點/摩押地.md
+  summary: 第8節「轉向摩押曠野的路去」；第18節「你今天要從摩押的境界亞珥經過」。CT：「『摩押曠野的路』摩押曠野是在摩押地的東邊(參民二十一11)」；GT《聖經精讀本》：「摩押人的地位於以東地的北部即死海東部」。
+  relation: 本章的摩押地是行程的第二段：第8節轉向它、第13節過撒烈溪進入它的南界、第18節從亞珥經過。與申1 的摩押地（講話的地點）是同一片地的不同階段。
+  overview_review:
+    review_attention: normal
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 摩押人
+  path: link_folder/人物/摩押人.md
+  summary: 第9節「不可擾害摩押人，也不可與他們爭戰」；第11節「摩押人稱他們為以米人」；第29節「住亞珥的摩押人待我一樣」。GT《聖經精讀本》：「摩押人是亞伯拉罕的侄子羅得從自己的大女兒生的摩押之後裔(創19:37),與以東人一樣是以色列的兄弟民族。值得一提的是,日後成為大衛與基督的直系祖先路得是摩押女子(得1:4)」。
+  relation: 本章給摩押人的定位是不可碰的兄弟民族。第10-12節的插敘另記他們先前把以米人趕出那地——與以色列日後要做的事同型。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 羅得
+  path: link_folder/人物/羅得.md
+  summary: 第9節「因我已將亞珥賜給羅得的子孫為業」；第19節「因我已將那地賜給羅得的子孫為業」。CT 指出摩押人與亞捫人分別是羅得與長女、次女所生的子孫（參創十九36~38）；KC：「耶和華提醒他們的出身，稱他們為『羅得的子孫』。」STEP 顯示第9節是 li/v.nei- Lot（H1121G＋H3876）。
+  relation: 本章兩次用「羅得的子孫」而不用族名，把摩押與亞捫的地權追溯到亞伯拉罕的侄兒。這是禁令的依據——他們與以色列同源。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 5
+    accumulation_count_after: 6
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以米人
+  path: link_folder/人物/以米人.md
+  summary: '第10-11節「先前，有以米人住在那裡，民數眾多，身體高大，像亞衲人一樣。這以米人像亞衲人；也算為利乏音人；摩押人稱他們為以米人」。CT 原文字義：「以米」恐怖；GT《聖經精讀本》：「以米人: “以米”具有“可怕”、“可畏”之意,似乎因他們像亞衲族(1:28)一樣身長力壯而來」；GT《啟導本》：「《創世記》十四5說以米人本來住在亞嫩河北摩押地的沙微基列亭」；KC 指出摩押人稱他們為以米人，意思是「可怕的」或「令人生畏的」。'
+  relation: 本章的以米人是一段插敘的主角：他們像亞衲人一樣高大，卻已被摩押人取代。KC 指出這本該是給以色列的鼓勵——四十年前他們正是因為怕這種人而不肯上去。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 利乏音人
+  path: link_folder/人物/利乏音人.md
+  summary: 第11節「也算為利乏音人」；第20節「那地也算為利乏音人之地，先前利乏音人住在那裡，亞捫人稱他們為散送冥」。CT 原文字義：「利乏音」巨人；GT《啟導本》：「“利乏音人”不是一個民族的稱號，而是以色列人入居迦南前住在巴勒斯坦一帶傳統英雄人物的統稱，其人身材特高且強壯。摩押人稱他們為“以米人”（創十四5）；猶大人稱他們為亞衲人（民十三33；士一20）；亞捫人叫他們做散送冥（20節）」；GT《聖經精讀本》：「此宗族原具有“世人”之意,原是居住在約但河朝陽之地,利乏音谷(書17:15)的原住民,後被亞捫人所驅逐(20,21節),以巴珊王“噩”為終,完全被除滅(3:3,11)」。
+  relation: 本章是利乏音人三個別名同時出現的地方：第11節給以米人這個名字，第20節給散送冥。GT《聖經精讀本》並指出這個族群最後以巴珊王噩為終。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞衲族與偉人拿非林
+  path: link_folder/背景/亞衲族與偉人拿非林.md
+  summary: 第10、11、21節三次「像亞衲人一樣」。CT 原文字義：「亞衲」長頸；CT：「『亞衲人』是身材魁偉的巨人族(參民十三33)」；KC：「這對以色列本該是鼓勵。神既幫助以色列的親屬趕出了強大眾多的族群，祂也會照樣幫助以色列。」BH 指出亞衲人以身量著稱，這個比較是用來強調以米人與利乏音人的可畏。
+  relation: 本章的亞衲人是一把量尺：以米人、散送冥都用「像亞衲人一樣」來形容。KC 讀出的用意是對照——四十年前以色列因這種人而卻步（申1:28），而摩押與亞捫已經把同型的族群趕走了。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 何利人
+  path: link_folder/人物/何利人.md
+  summary: 第12節「先前，何利人也住在西珥，但以掃的子孫將他們除滅，得了他們的地，接著居住」；第22節重述同一件事。CT 原文字義：「何利」洞穴居民；GT《啟導本》：「過去以為何利人為穴居部落民族，因其希伯來文名中的hor有“穴”的意思，現在已知為主前一千五百年時住在巴勒斯坦北部和敘利亞一帶的強大赫倫人（Hurrians）」；GT《串珠》：「有關他們的生活習俗，可參考古學家所發掘的努斯泥版」；BH 指出何利人是西珥的原住民（創14:6、36:20-30）。
+  relation: 本章兩次提到何利人被以掃子孫取代，而且第12節明說這「就如以色列在耶和華賜給他為業之地所行的一樣」。GT《聖經精讀本》指出這句話或是指河東分地、或是預言式的完成時態。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 加低斯
+  path: link_folder/地點/加低斯.md
+  summary: 第14節「自從離開加低斯巴尼亞，到過了撒烈溪的時候，共有三十八年」。CT：「『加低斯巴尼亞』簡稱加低斯，以色列人從加低斯到加低斯(參民十三26；二十1)，在曠野飄流，將近三十八年，直到上一代二十歲以上的人都死光了，這裡所謂的『自從離開加低斯巴尼亞』，是指首次離開加低斯」。
+  relation: 本章用加低斯當三十八年的起算點，撒烈溪當終點。CT 並指出從第二次離開加低斯到過撒烈溪並沒有花太多時間——真正漫長的是中間那段。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 套用後將有 9 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 8
+    accumulation_count_after: 9
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞捫人
+  path: link_folder/人物/亞捫人.md
+  summary: 第19節「走近亞捫人之地，不可擾害他們，也不可與他們爭戰」；第20-21節亞捫人稱利乏音人為散送冥並得了他們的地；第37節「惟有亞捫人之地⋯都沒有挨近」。CT 原文字義：「亞捫」部落的；GT《聖經精讀本》：「亞捫人居住在約但河對面,即摩押人的東北地區,是亞伯拉罕的侄子羅得從其二女而生的後裔(創19:38)」。
+  relation: 亞捫人是本章三個不可碰的族群裡的最後一個，而且第37節特別記下以色列確實沒有挨近——KC 指出這一節是在強調以色列的順服。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 非利士人
+  path: link_folder/地點/非利士人.md
+  summary: '第23節「從迦斐託出來的迦斐託人將先前住在鄉村直到迦薩的亞衛人除滅，接著居住」。CT：「『迦斐托』即革哩底(參多一12)；『迦斐托人』又稱非利士人，他們佔據迦南地西南沿海一帶地方，直到迦薩」；GT《聖經精讀本》：「從迦斐托出來的迦斐托人: 指非利士人(耶47:4;摩9:7),其土著地為愛琴海沿岸地區的Crete。“非利士”本身具有“移民”(immigrant)之意」；GT《啟導本》：「非利士人滅了亞衛人，取得其地；後來以色列人又把非利士人滅了」。'
+  relation: 本章記的是非利士人取得迦南西南沿海的那一步。GT《聖經精讀本》指出他們與以色列同型——都是移居到迦南、驅逐原住民而定居的族群。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 非利士人出自迦斯路希或迦斐託
+  path: link_folder/解經爭議/非利士人出自迦斯路希或迦斐託.md
+  summary: 第23節把非利士人的來源指向迦斐託。GT《啟導本》：「迦斐托為今天的克里特島非利士人可能來自此島（參創十14；耶四十七4；摩九7）」；GT《串珠》：「「迦斐托」：即現在的克里特島（新約聖經稱它為革哩底，參多1:12）」；BH：「Caphtor is traditionally identified with Crete, though some scholars suggest it could refer to other locations in the Aegean or eastern Mediterranean.」（迦斐託傳統上認作克里特，但也有學者主張是愛琴海或東地中海的其他地方）
+  relation: 本章提供的是「出自迦斐託」這一側的直接經文根據。BH 同時指出克里特這個定位並非定論，仍有其他可能。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞嫩河
+  path: link_folder/地點/亞嫩河.md
+  summary: '第24節「你們起來前往，過亞嫩谷」；第36節「從亞嫩谷邊的亞羅珥和谷中的城」。CT：「『亞嫩谷』指亞嫩河谷，是一條從摩押高原流入死海中部的河，河谷深約五百公尺，寬約三公里，形成小型的峽谷(參民二十一13)」；GT《聖經精讀本》：「亞嫩谷: 與“亞嫩河”相一致,因為不下雨的季節河床會乾涸成谷。亞嫩谷是摩押與亞摩利人的分界線(民21:13)」；GT《串珠》：「「亞嫩谷」：是摩押的北界，西宏的國土以希實本為首都」；BH 指出它相當於今天約旦的 Wadi Mujib。'
+  relation: 亞嫩谷在本章是轉捩點的地標：第24節過了它就從「不可爭戰」轉為「你要與他爭戰」，第36節它又成為所得之地的南界。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 接連的山谷（na.chal）
+  path: link_folder/原文/接連的山谷（na.chal）.md
+  summary: '第24節「過亞嫩谷」、第36節「亞嫩谷邊」與「谷中的城」。STEP 顯示這三處的「谷」都是 Na.chal（H5158N），簡要詞典義 torrent: valley，context gloss 作 wadi——與 GT《聖經精讀本》所說「不下雨的季節河床會乾涸成谷」的旱溪一致。'
+  relation: 本章讓這個字有了一個具體的例子：亞嫩既叫河也叫谷，原文用的是同一個 na.chal，因為它本來就是雨季有水、旱季乾涸的地形。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第24節「我已將亞摩利人希實本王西宏和他的地交在你手中」。GT《雷氏研讀本》：「亞摩利人是一個與以色列人無關的異族，他們散佈在約但河的東面。由於他們沉溺於偶像膜拜，所以神吩咐以色列人把他們毀滅」；GT《啟導本》：「以色列人可以攻取約但河以東亞摩利人的土地，西宏與噩都是亞摩利人的王，屬迦南族，住在約但河兩岸（創十16；十五16；書二十四8）」。
+  relation: 本章把亞摩利人與以東、摩押、亞捫明確分開：前三者是兄弟民族不可碰，亞摩利人是異族且神命定要除滅。這個區分是本章結構的分水嶺。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 主題發展目前空白
+    - 套用後將有 9 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 8
+    accumulation_count_after: 9
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第24、26、30節「希實本王西宏」。CT：「『亞摩利人希實本王西宏』指當時的亞摩利王，又稱希實本王西宏，因為希實本乃是亞摩利的京城(參民二十一27；書九10)」；GT《啟導本》：「希實本為西宏的首邑（民二十一26）」；KC 指出希實本原屬摩押，被亞摩利人攻佔並把摩押人趕走（民21:26-29）。
+  relation: 本章是希實本第一次以西宏王都的身分完整登場。KC 補的那條前史（原屬摩押、被亞摩利人奪去）解釋了為什麼攻打希實本不算侵犯摩押的地。
+  overview_review:
+    review_attention: normal
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+  summary: 第24-37節整段。GT《串珠》：「以色列民擊敗希實本王（見民21:21-32）」；GT《聖經精讀本》：「此次爭戰是以色列在開展迦南征服戰之前的序幕戰,以色列得勝的消息傳遍了迦南全地,以色列成為周邊國家一致顫驚恐懼的對象(11:25;出23:27;書2:9-11)」；GT《雷氏研讀本》：「比較民數記二十一章21至32節。」
+  relation: 本章是這場戰役最詳細的一次敘述，從第26節派使者談判開始，到第37節記下沒有挨近亞捫人的地為止。GT《聖經精讀本》把它定位成迦南征服戰的序幕戰。
+  overview_review:
+    review_attention: normal
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    accumulation_count_before: 4
+    accumulation_count_after: 5
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 使者
+  path: link_folder/原文/使者.md
+  summary: '第26節「我從基底莫的曠野差遣使者去見希實本王西宏，用和睦的話說」。GT《串珠》：「「用和睦的話」：暗示摩西欲與希實本王締立和約」；GT《聖經精讀本》：「差遣使者……用和睦的話: 在爭戰之前先提出和親是符合律法(20:10)的行為」；BH 指出派遣使者是古代近東常見的外交作法，反映的是先求和平而非直接開戰。'
+  relation: 本章的使者是外交手段而非神的差遣。第24節神已經把西宏交在他們手中，第26節摩西仍先派人談——GT《聖經精讀本》指出這符合申20:10 的規定。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 大道（原文作王道）
+  path: link_folder/文化/大道（原文作王道）.md
+  summary: '第27節「求你容我從你的地經過，只走大道，不偏左右」。CT 原文字義：「大道(原文雙同字)」道路，路程；CT：「『只走大道，不偏左右』指不侵犯住宅區、民房、田地等」；GT《聖經精讀本》：「只走大道: 具有“只走道,只走道”的意思,強調了會一直沿著大道而行,概不侵犯其它所有地方。此道與民21:22的“王道”(Kings Highway)是同一道路,是古代東方幾個主要國際道路之一」；BH 指出這條「王道」從亞喀巴灣通到大馬士革，是古代近東的重要貿易幹道。'
+  relation: 既有累積是從民20 向以東王提出的請求收的；本章補上的是同一條路、同一套說詞被用在西宏身上。GT《聖經精讀本》明確指出這與民21:22 的王道是同一道路，而 CT 指出原文是同一個字重複兩次。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    - 主題發展目前空白
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第29節「等我過了約但河，好進入耶和華─我們神所賜給我們的地」。CT 原文字義：「約但」下降；CT：「『約但河』就在死海的北邊流入死海，而約但河的東岸屬於亞摩利人、西岸屬於迦南人，故須從亞摩利人的境內渡河到迦南地」。
+  relation: 本章的約但河出現在對西宏的外交辭令裡：以色列人聲明只是路過，目的地在河的另一邊。CT 指出這正是必須經過亞摩利人境內的原因。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 套用後將有 13 筆逐章累積，超過 7 筆提醒門檻
+    accumulation_count_before: 12
+    accumulation_count_after: 13
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 法老心剛硬三字
+  path: link_folder/原文/法老心剛硬三字.md
+  summary: 第30節「因為耶和華─你的神使他心中剛硬，性情頑梗」。CT 原文字義：「心中」靈，氣，風；「剛硬」固執，頑固；「性情」內心；「頑梗」堅強，堅固。STEP 顯示是 hik.Shah 'et- ru.Ch/o（H7185 qa.shah＋H7307G ru.ach）與 ve./'i.Metz 'et- le.va.V/o（H553 a.mats＋H3824 le.vav）——和合本譯作「心中」的是 ruach（靈），譯作「性情」的才是 levav（心）。GT《串珠》把它接到法老：「參出7:3, 14，有關法老的心剛硬。」
+  relation: 既有累積收的是出埃及記法老那三個「剛硬」的字；本章補上第四個字 a.mats（H553，to strengthen），對象是西宏，而且與 qa.shah 配成一對。GT《串珠》明說這與法老的心剛硬是同一類問題。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 滅絕
+  path: link_folder/原文/滅絕.md
+  summary: '第34節「將有人煙的各城，連女人帶孩子，盡都毀滅，沒有留下一個」。STEP 顯示是 va./na.cha.Rem（H2763A，Hiphil，簡要詞典義 cha.ram: to devote/destroy）；同節「有人煙的各城」是 ''ir me.Tim（H4962 mat「man」）、「沒有留下一個」是 lo'' hish.''Ar.nu sa.Rid（H7604 sha.ar＋H8300 sa.rid「survivor」）。CT 原文字義：「人煙」男人；「毀滅」完全毀壞。'
+  relation: 既有累積收的是出22:20 的 H2763；本章是同一個動詞用在戰爭處置上的第一個實例，而且 STEP 補上了 GT《啟導本》原句裡缺漏的那個字形。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 1
+    accumulation_count_after: 2
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第36節「直到基列，耶和華─我們的神都交給我們了」。CT：「『基列』廣義泛指約但河東以色列人所佔領之地(參三十四1)，狹義僅指雅博河以北包括巴珊地區在內，本處應指狹義的基列」；GT《啟導本》：「基列在加利利海東南，土地肥沃（參創三十一21）」；GT《串珠》：「「基列」：約但河東的山區」；BH 指出基列是以巴基聞名的肥沃牧地，後來分給流便、迦得與瑪拿西半支派。
+  relation: 基列在本章是所得之地的北端座標，與南端的亞羅珥一起框出河東的戰果。CT 特別指出這裡取的是狹義的基列。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 3
+    accumulation_count_after: 4
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 雅博渡口
+  path: link_folder/地點/雅博渡口.md
+  summary: 第37節「惟有亞捫人之地，凡靠近雅博河的地，並山地的城邑⋯都沒有挨近」。CT 原文字義：「雅博」倒空；GT《啟導本》：「雅博河在外約但，自東北向西南流，在死海北約30公里處流入約但河」；GT《串珠》：「「雅博河」：約但河東部的支流，在死海以北六十四公里（四十英里）流入約但河；昔日雅各曾在此與天使摔跤」；BH 指出雅博河今稱 Zarqa 河，是重要的地理界線。
+  relation: 既有累積是從創32 雅各摔跤那一側收的；本章補上的是同一條河作為軍事界線的用法——它標出以色列奉命不得挨近的範圍。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: 第34節「盡都毀滅」。GT《啟導本》：「“毀滅”的希伯來原文作（），為一專用字，指在為神而作的聖戰中，將所有戰俘、擄物完全殲滅，當作對神的奉獻」（該處字形在來源檔中缺漏，STEP 補為 va./na.cha.Rem，H2763A）；CT：「『盡都毀滅』意指不留一個活口，通常只有在聖戰的指令下才這樣作，例如在耶利哥城(參書六17)」；GT《啟導本》另列出戰後處理的三種型態：人畜財物通通毀滅、消滅人但留下財產、只消滅男丁，本章第35節屬第二種。
+  relation: 既有累積是從出22:20 的律法條文收的；本章補上這個概念實際執行時的分級——GT《啟導本》列出三種處置方式，而本章保留了牲畜與財物，屬於中間那一種。
+  overview_review:
+    review_attention: high
+    trigger_reasons:
+    - 本章將新增一筆 B 類逐章累積，須分別判斷定義與主題發展是否需要更新
+    - 本章是此條目第一次累積到這一卷書
+    accumulation_count_before: 2
+    accumulation_count_after: 3
+    definition:
+      decision: keep
+      reason: 本章提供的是申命記2章的事實與關聯，屬逐章累積範圍；條目的身分、辨識方式與邊界沒有因本章而改變或需要澄清。
+    development:
+      decision: keep
+      reason: 本章沒有提供跨章／跨卷的主題推進或轉折；相關內容屬本章逐章累積，硬寫進主題發展只會變成 summary 的換句話說。
+      synthesis_scope: []

@@ -475,6 +475,14 @@
     "status": "formal",
     "aliases": []
   },
+  "你一無所缺": {
+    "path": "link_folder/主題/你一無所缺.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "你一無所缺",
+    "status": "formal",
+    "aliases": []
+  },
   "你在那裡": {
     "path": "link_folder/主題/你在那裡.md",
     "type": "主題",
@@ -2031,6 +2039,14 @@
     "status": "formal",
     "aliases": []
   },
+  "沒有一座城高得使我們不能攻取": {
+    "path": "link_folder/主題/沒有一座城高得使我們不能攻取.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "沒有一座城高得使我們不能攻取",
+    "status": "formal",
+    "aliases": []
+  },
   "沒有牧人的羊群": {
     "path": "link_folder/主題/沒有牧人的羊群.md",
     "type": "主題",
@@ -2272,6 +2288,16 @@
       "產婦潔淨條例",
       "生產潔淨禮"
     ]
+  },
+  "用錢買糧買水": {
+    "path": "link_folder/主題/用錢買糧買水.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "用錢買糧買水",
+    "status": "formal",
+    "aliases": []
   },
   "田角拾穗顧念窮人的條例": {
     "path": "link_folder/主題/田角拾穗顧念窮人的條例.md",
@@ -10517,6 +10543,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞衛人": {
+    "path": "link_folder/人物/亞衛人.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞衛人",
+    "status": "formal",
+    "aliases": []
+  },
   "亞西納": {
     "path": "link_folder/人物/亞西納.md",
     "type": "人物",
@@ -11414,6 +11448,14 @@
     "type": "人物",
     "secondary_types": [],
     "title": "撒萊",
+    "status": "formal",
+    "aliases": []
+  },
+  "散送冥": {
+    "path": "link_folder/人物/散送冥.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "散送冥",
     "status": "formal",
     "aliases": []
   },
@@ -12689,6 +12731,14 @@
     "status": "formal",
     "aliases": []
   },
+  "不可擾害也不可爭戰（tsur、garah）": {
+    "path": "link_folder/原文/不可擾害也不可爭戰（tsur、garah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "不可擾害也不可爭戰（tsur、garah）",
+    "status": "formal",
+    "aliases": []
+  },
   "不可看人的外貌（na.khar）": {
     "path": "link_folder/原文/不可看人的外貌（na.khar）.md",
     "type": "原文",
@@ -12925,6 +12975,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "你與你們的單複數交替",
+    "status": "formal",
+    "aliases": []
+  },
+  "使天下萬民驚恐懼怕": {
+    "path": "link_folder/原文/使天下萬民驚恐懼怕.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "使天下萬民驚恐懼怕",
     "status": "formal",
     "aliases": []
   },
@@ -14235,6 +14293,16 @@
       "pa.rar"
     ]
   },
+  "為業（ye.ru.shah）": {
+    "path": "link_folder/原文/為業（ye.ru.shah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "為業（ye.ru.shah）",
+    "status": "formal",
+    "aliases": [
+      "ye.ru.shah"
+    ]
+  },
   "烈火": {
     "path": "link_folder/原文/烈火.md",
     "type": "原文",
@@ -14745,6 +14813,14 @@
       "兩個腰子"
     ]
   },
+  "腳掌可踏之處": {
+    "path": "link_folder/原文/腳掌可踏之處.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "腳掌可踏之處",
+    "status": "formal",
+    "aliases": []
+  },
   "膳長_baker": {
     "path": "link_folder/原文/膳長_baker.md",
     "type": "原文",
@@ -15083,6 +15159,16 @@
     "aliases": [
       "膿皰",
       "迸出的疹子"
+    ]
+  },
+  "起首得那地（cha.lal）": {
+    "path": "link_folder/原文/起首得那地（cha.lal）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "起首得那地（cha.lal）",
+    "status": "formal",
+    "aliases": [
+      "cha.lal"
     ]
   },
   "越過耶和華的口（peh）": {
@@ -15583,6 +15669,22 @@
       "Ashteroth Karnaim"
     ]
   },
+  "亞珥": {
+    "path": "link_folder/地點/亞珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞珥",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞羅珥": {
+    "path": "link_folder/地點/亞羅珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞羅珥",
+    "status": "formal",
+    "aliases": []
+  },
   "亞蘭": {
     "path": "link_folder/地點/亞蘭.md",
     "type": "地點",
@@ -15673,6 +15775,14 @@
       "Migdal Eder",
       "Tower of Eder"
     ]
+  },
+  "以拉他": {
+    "path": "link_folder/地點/以拉他.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以拉他",
+    "status": "formal",
+    "aliases": []
   },
   "以拉撒": {
     "path": "link_folder/地點/以拉撒.md",
@@ -16068,6 +16178,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基底莫": {
+    "path": "link_folder/地點/基底莫.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基底莫",
+    "status": "formal",
+    "aliases": []
+  },
   "基悉": {
     "path": "link_folder/地點/基悉.md",
     "type": "地點",
@@ -16418,6 +16536,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "撒冷",
+    "status": "formal",
+    "aliases": []
+  },
+  "撒烈溪": {
+    "path": "link_folder/地點/撒烈溪.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒烈溪",
     "status": "formal",
     "aliases": []
   },
@@ -17028,6 +17154,14 @@
     "status": "formal",
     "aliases": []
   },
+  "迦薩": {
+    "path": "link_folder/地點/迦薩.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦薩",
+    "status": "formal",
+    "aliases": []
+  },
   "雅博渡口": {
     "path": "link_folder/地點/雅博渡口.md",
     "type": "地點",
@@ -17046,6 +17180,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "雅謝",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅雜": {
+    "path": "link_folder/地點/雅雜.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "雅雜",
     "status": "formal",
     "aliases": []
   },
@@ -18183,6 +18325,14 @@
     "aliases": [
       "七十長老起源"
     ]
+  },
+  "三十八年與那世代的兵丁滅盡": {
+    "path": "link_folder/歷史/三十八年與那世代的兵丁滅盡.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "三十八年與那世代的兵丁滅盡",
+    "status": "formal",
+    "aliases": []
   },
   "亞伯拉罕在示劍築壇": {
     "path": "link_folder/歷史/亞伯拉罕在示劍築壇.md",
@@ -27197,6 +27347,16 @@
     "status": "formal",
     "aliases": []
   },
+  "神使西宏心中剛硬與人的責任": {
+    "path": "link_folder/解經爭議/神使西宏心中剛硬與人的責任.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神使西宏心中剛硬與人的責任",
+    "status": "formal",
+    "aliases": []
+  },
   "神公義追討與禍延子孫的釋經探討": {
     "path": "link_folder/解經爭議/神公義追討與禍延子孫的釋經探討.md",
     "type": "解經爭議",
@@ -30784,6 +30944,9 @@
   "pa.rar": {
     "alias_of": "為定與廢去（qum 與 pa.rar）"
   },
+  "ye.ru.shah": {
+    "alias_of": "為業（ye.ru.shah）"
+  },
   "烏陵": {
     "alias_of": "烏陵和土明"
   },
@@ -31008,6 +31171,9 @@
   },
   "迸出的疹子": {
     "alias_of": "起泡的瘡"
+  },
+  "cha.lal": {
+    "alias_of": "起首得那地（cha.lal）"
   },
   "路加福音 14": {
     "alias_of": "路14（Loukas 14）"
