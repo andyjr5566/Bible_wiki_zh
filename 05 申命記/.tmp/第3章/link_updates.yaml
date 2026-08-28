@@ -1,0 +1,384 @@
+book: 申命記
+chapter: 3
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先完整讀取每筆 path 指向的正式條目，核對其中的定義、全部按書卷累積與主題發展；再把本章 summary／relation 與既有內容一起判斷。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence。沒有 challenge 時直接填 keep。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第1、10、13節。CT：「『巴珊』位於雅博河以北，黑門山以南的高原(即今戈蘭高原)，境內牧草繁茂，盛產牛羊」；GT《串珠》：「「巴珊」：「肥沃」之意。巴珊位於基列之北，以產牛馳名。」；GT《聖經精讀本》給的範圍更細：「以雅默河為界,領土分為兩部分。南部地區是從雅博河到雅默河的基列山北部,北部地方則包括從雅默河到黎巴嫩的黑門山。此地是海拔480米至690米的高原地帶,因遼闊而肥沃,適於畜牧業」；BH：「Bashan was a fertile region east of the Jordan River, known for its rich pastures and strong cities.」（巴珊是約但河東一塊肥沃的地區，以豐美的草場與堅固的城著稱。）STEP 顯示是 ha./ba.Shan（H1316）。
+  relation: 本章前半整段都在巴珊。第13節把它與亞珥歌伯畫上等號（「亞珥歌伯全地乃是巴珊全地」），同一節又叫它「利乏音人之地」，第14節睚珥再按自己的名字改叫哈倭特睚珥——同一塊地在一章之內出現四個名字。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）
+  path: link_folder/互文/以色列戰勝巴珊王噩互文（申3：1-11；詩135：10-12；136：17-22）.md
+  summary: 第1-11節是這個互文的申命記端。噩在以得來率眾民迎戰，被全數擊殺；第11節補上他是利乏音人的餘民，鐵床長九肘寬四肘，還在亞捫人的拉巴。KC 指出噩的心態：「Og has not been warned by Sihon's defeat. Audaciously, relying on his own strength, he comes out to meet Israel to fight against them.」（噩沒有因西宏的敗亡而受警戒。他大膽地倚仗自己的力量，出來迎戰以色列。）GT《聖經精讀本》說他「被稱為利乏音人當中的最後一人(11節)」。
+  relation: 本章正是這個條目在申1 累積時預告的「細節留到第三章」。民21 記戰事本身，申3 補的是規模（六十座城全數攻下）與噩的身量（鐵床尺寸），詩篇則把它與西宏並列成神擊殺大君王的雙重見證。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 以得來
+  path: link_folder/地點/以得來.md
+  summary: '第1節噩「在以得來與我們交戰」，第10節它成了標示巴珊範圍的地名。CT：「『以得來』是巴珊的副都，位於加利利海的東面約一百多公里」；GT《聖經精讀本》：「以得來: 是巴珊王“噩”所居住的王都,與“亞斯他錄”一起是巴珊國兩大首都之一(1:4)」；GT《串珠》：「「撒迦和以得來」：分別位於巴珊北面和南的邊界（書13:11; 代上5:11），後者似為噩的首邑之一（見申1:4）。」STEP 顯示第10節是 ''ve./''ed.Re.''i（H154）。'
+  relation: 同一個地名在本章有兩種功能：第1節是戰場，第10節是界標。申1:4 只點名「住以得來、亞斯她錄的巴珊王噩」，第3章把那一句展開成整段敘事。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+  summary: 第2、6節兩次拿西宏之役當先例：「你要待他像從前待住希實本的亞摩利王西宏一樣」「像從前待希實本王西宏一樣」。KC：「The previous victory, that over Sihon, is cited as evidence.」（先前那場勝過西宏的仗，在這裡被舉出來當作憑據。）第21節摩西又把兩王合稱「這二王」，交給約書亞當憑據。
+  relation: 西宏之役在本章不是主線，而是量尺：神用它保證噩的結局，摩西用它保證迦南各國的結局。CT 在第2節〔話中之光〕講的正是這件事：「只發生過一次的事件，人都可以看它為偶然的，但事情接連的發生，就沒有人可以說它是偶然的。」
+  overview_review:
+    definition: keep
+    development: keep
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第2節「住希實本的亞摩利王西宏」，第6節「希實本王西宏」。CT：「因為希實本乃是亞摩利的京城(參民二十一27；書九10)」；BH：「Heshbon was the capital city of Sihon, king of the Amorites. Its mention here situates the narrative in a specific geographical and historical context.」（希實本是亞摩利王西宏的京城。提到它，把這段敘事放進一個具體的地理與歷史脈絡裡。）STEP 顯示第6節是 chesh.Bon（H2809）。
+  relation: 本章兩次提到希實本都是為了指認西宏，而西宏是用來說明噩的下場。這座城在申2 是攻取的目標，到申3 已經變成一個現成的先例。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第8節「兩個亞摩利王」（西宏與噩），第9節「亞摩利人稱為示尼珥」。CT 原文字義：「亞摩利」山居者。GT《聖經精讀本》：「亞摩利人與當時居住在約但河東的以東、摩押、亞捫人有所不同,是早在亞伯拉罕移居迦南之前已定居在那裡的原住民,也是早已預定被毀滅的迦南七族之一(7:1;書3:10)」；BH：「The Amorites were a Semitic people who played a significant role in the history of the ancient Near East.」（亞摩利人是閃族的一支，在古代近東歷史上扮演重要角色。）
+  relation: 第8節用「兩個亞摩利王」把西宏與噩收成一組，這組稱呼是本章分地敘述的起點；第9節則顯示亞摩利語與西頓語對同一座山有不同的叫法。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 滅絕
+  path: link_folder/原文/滅絕.md
+  summary: 第6節「我們將這些都毀滅了」。CT 原文字義：「毀滅」完全毀壞；「人煙」男人。STEP 顯示這一節連用兩次同一字根：va./na.cha.Rem 與 ha.cha.Rem（H2763A，cha.ram，簡要詞典義 to devote/destroy），「有人煙的各城」的「人煙」是 me.Tim（H4962）。
+  relation: 本章第6節把這個字的處置對象講得最明確——「把有人煙的各城，連女人帶孩子」；緊接著的第7節保留牲畜與財物，兩種處置並排在相鄰兩節。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: 第6節「盡都毀滅」。GT《聖經精讀本》：「這種徹底的“毀滅”其意義不同於源自民族的仇恨或個人之殘忍的大屠殺。以色列的迦南征服戰是基於神命令的耶和華之聖戰,體現了神的公義及保持天國之純潔性,生動地教訓了當從根本上除去所有罪惡的事實」；GT《啟導本》：「在為神而作的聖戰中，須把敵方連人帶物全都摧毀。不能毀滅之物，例如金、銀等，則予保留，歸神為聖（參書六16～19）」；BH：「This phrase refers to the practice of "herem," a term meaning to devote something to God by completely destroying it.」（這個詞指的是 herem 的作法——把某物完全毀壞，以此獻給神。）
+  relation: 巴珊之役的處置與希實本之役完全相同，經文自己點明「像從前待希實本王西宏一樣」。KC 從神的性情這一面補上：「God is a merciful God. He always gives the opportunity to escape judgment, but over unrepentance He metes righteous judgment.」（神是憐憫的神。祂總是給人逃離審判的機會，但對不肯悔改的，祂施行公義的審判。）
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 戰利品的分配辦法
+  path: link_folder/主題/戰利品的分配辦法.md
+  summary: 第7節「惟有一切牲畜和城中的財物都取為自己的掠物」。CT 原文字義：「財物」掠奪品，戰利品；「掠物」搶劫，搶奪。CT〔話中之光〕指出這不是每次都准：「不是每一次爭戰得勝神都讓他們奪取財物，耶利哥的戰役，和掃羅擊打亞瑪力人，神都不許他們擄掠財物。以色列人學會了在得勝以後，先是分別財物，再把財物分別出來歸於神(參民三十一25~54)」；BH：「In the ancient world, plundering was a common practice after a military victory. It served as a reward for the victors and a means to sustain the community.」（在古代世界，戰勝後掠取財物是常見的作法。它既是勝利者的報償，也是維持群體生計的方式。）
+  relation: 本章第6-7節把兩種處置擺在一起：人盡都毀滅，牲畜財物取為掠物。CT〔話中之光〕說這是「根據神的心意作分別」——民31 的分配辦法在這裡是被當成後續來引述的。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 亞嫩河
+  path: link_folder/地點/亞嫩河.md
+  summary: 第8節「將亞嫩谷直到黑門山之地奪過來」；第12節「從亞嫩谷邊的亞羅珥起」；第16節「從基列到亞嫩谷，以谷中為界」。CT 原文字義：「亞嫩」湍急的溪流。GT《聖經精讀本》：「南界為流過亞嫩狹谷中央的溪水,東北界為雅博河上流,西界為約但河與死海。」BH：「The Arnon Valley served as a natural boundary between Moab and the Amorite kingdom.」（亞嫩谷是摩押與亞摩利王國之間的天然界線。）
+  relation: 亞嫩谷在本章出現三次，每次都在標界：第8節標征服範圍的南端，第12、16節標流便與迦得地業的南界。第16節「以谷中為界」是三次裡最精確的一次。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第10節「基列全地」；第12節「基列山地的一半」；第13節「其餘的基列地」；第15節「我又將基列給了瑪吉」；第16節「從基列到亞嫩谷」。CT 原文字義：「基列」多岩之地；CT：「『基列全地』指雅博河以北迄巴珊地南界」；GT《啟導本》：「基列在約但河東岸，土地廣闊；雅博河流經其間，一分為二。12節“基列山地的一半”當指此而言。」；BH：「Gilead is a mountainous region east of the Jordan River, known for its balm, a resin used for medicinal purposes.」（基列是約但河東的一片山地，以基列乳香著稱——那是一種藥用樹脂。）
+  relation: 基列是本章分地時被切成兩半的那塊地：南半給流便和迦得，北半給瑪拿西半支派，GT《啟導本》指出雅博河就是那條分界。第15節又把基列給瑪吉，CT 說那指的是瑪吉族與基列族。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 利乏音人
+  path: link_folder/人物/利乏音人.md
+  summary: 第11節「利乏音人所剩下的只有巴珊王噩」；第13節「這叫做利乏音人之地」。CT 原文字義：「利乏音」巨人；CT：「『利乏音人』巨人族(參創十四5)」，並說「『利乏音人之地』意指巨人之地，是亞珥歌伯地和巴珊地的同義詞」；GT《雷氏研讀本》：「“噩”。居住在巴勒斯坦的最後一個利乏音人。」；BH：「Og was the last of the Rephaim, a group of ancient giants mentioned in the Old Testament. The Rephaim were considered formidable and were often associated with the Anakim and other giant clans.」（噩是利乏音人的最後一個。舊約提到的利乏音人被視為可畏，常與亞衲族等巨人族連在一起。）STEP 顯示是 ha./re.fa.'Im（H7497B）。
+  relation: 第11節把噩定位成一個族群的終點，第13節則把他的地稱作「利乏音人之地」。這兩節合起來，是本章用來衡量這場勝仗份量的尺——CT〔話中之光〕：「經過了這兩次戰役，亞衲人再也不能在他們的心中成為威脅。」
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 亞捫人
+  path: link_folder/人物/亞捫人.md
+  summary: 第11節「現今豈不是在亞捫人的拉巴嗎？」；第16節「直到亞捫人交界的雅博河」。CT 原文字義：「亞捫」部落的；「拉巴」偉大；CT：「『亞捫人』是亞伯拉罕的侄兒羅得與他次女亂倫所生的子孫(參創十九36，38)，和以色列人有血緣關係；『拉巴』位於雅博河上游支流的北岸，後來劃歸迦得支派(參書十三25)」；GT《啟導本》：「拉巴是亞捫人的首邑，即今約但首都亞曼。」；BH：「Rabbah, the capital of the Ammonites, is modern-day Amman, Jordan.」（拉巴是亞捫人的京城，就是今天約但的首都安曼。）
+  relation: 亞捫人在本章有兩個角色：他們的京城保存著噩的鐵床，他們的邊界是流便與迦得地業的東北端。申2 交代不可擾害亞捫人，申3 就把邊界劃到他們門口為止。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 亞羅珥
+  path: link_folder/地點/亞羅珥.md
+  summary: 第12節「從亞嫩谷邊的亞羅珥起」。CT 原文字義：「亞羅珥」毀滅；CT：「『亞羅珥』位於死海中部東方約20公里處，亞嫩河北畔的一座城(參二36)」；BH：「Aroer was a city located on the northern edge of the Arnon Valley, which served as a natural boundary.」（亞羅珥位於亞嫩谷北緣，那條谷是一道天然界線。）
+  relation: 亞羅珥在申2:36 是攻取範圍的起點，到本章變成分地的起算點。同一座城，兩章各給它一個角色。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第12節「都給了流便人和迦得人」；第16節重述一次界線。CT 原文字義：「流便」看哪一個兒子；CT：「這兩個支派加上瑪拿西的半個支派，後來得了約但河東岸的全部佔領地(參13節；民三十四15)」；BH：「Their request for land on the east side of the Jordan was based on its suitability for their large herds and flocks.」（他們求約但河東的地，是因為那裡適合他們龐大的牛羊群。）
+  relation: 流便在本章一律與迦得成對出現，兩次都同時被提。第16-17節把他們的四至寫得最完整：南到亞嫩谷、東北到雅博河、西到約但河與鹽海，再加毘斯迦山根東邊之地。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 第12、16節「流便人和迦得人」。CT 原文字義：「迦得」軍隊，財富。GT《聖經精讀本》：「將從亞嫩谷邊的亞羅珥起到雅博江之鄉的南部地區賜給流便與迦得支派,將從雅博江到基列山地與巴珊地的北部地方分給了瑪拿西半個支派(書13:8-31)。」CT 另註亞捫人的京城拉巴「後來劃歸迦得支派(參書十三25)」。
+  relation: 迦得在本章沒有單獨的敘述，一律與流便並列；本章給他們的地，南界亞嫩谷、北界雅博河，正是第11節那座保存噩之鐵床的拉巴所在的一帶。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第18-20節。摩西重申當年的條件：勇士要帶著兵器在弟兄前面過去，妻子孩子牲畜留在河東的城裡，等弟兄也得地、也得享平安，才可以回來。GT《聖經精讀本》：「摩西與他們立約條件是他們當在迦南征服戰中作先鋒(民32:16-42)⋯如今,還有兩個月左右就要進入迦南,摩西為了督促他們履行所立之約,促使他們回想此事。」KC：「Moses does not forget that wilderness side of the Jordan is not the promised land. The land where the blessing of God is enjoyed is still before them.」（摩西沒有忘記約但河的曠野那一邊不是應許之地。真正能享受神賜福的那地還在前頭。）
+  relation: 民32 是立約的時候，申3 是履約前的提醒。GT《聖經精讀本》指出這件事後來由約書亞再確認（書1:12-15），最終毫無差錯地履行（書22:1-6）；它並列出兩個理由：「①為了以色列共同體的團結;②並且為了其它支派的士氣」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 河東之地是神的旨意還是神的允許
+  path: link_folder/解經爭議/河東之地是神的旨意還是神的允許.md
+  summary: 第18節摩西說「耶和華你們的神已將這地賜給你們為業」，把河東之地直接說成神所賜。KC 在同一段提出另一面：「Moses does not forget that wilderness side of the Jordan is not the promised land. The land where the blessing of God is enjoyed is still before them.」（摩西沒有忘記約但河的曠野那一邊不是應許之地。真正能享受神賜福的那地還在前頭。）
+  relation: 本章在同一小段裡同時提供這個爭議的兩端：經文用「賜給你們為業」的語言，KC 卻堅持河東不是應許之地。第20節「你們才可以回到我所賜給你們為業之地」也用了同一個詞。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第13節「我給了瑪拿西半支派」；第14節「瑪拿西的子孫睚珥」。CT 原文字義：「瑪拿西」導致遺忘；CT：「瑪拿西的子孫共有八個家族，由一個兒子、一個孫子、六個曾孫組成(參民二十六29~32)，瑪吉族和基列族留在約但河東岸」；BH：「The tribe of Manasseh was divided into two half-tribes, one settling on the east side of the Jordan River and the other on the west.」（瑪拿西支派分成兩個半支派，一半住在約但河東，一半住在河西。）
+  relation: 本章分給瑪拿西的是最北邊的一塊——基列北半與巴珊全地。BH 指出這與約瑟得雙份產業有關：以法蓮與瑪拿西各得一份，等於約瑟在各支派中得了雙份。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+- title: 瑪拿西半支派為何留在河東
+  path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+  summary: 第13節「其餘的基列地和巴珊全地，就是噩王的國，我給了瑪拿西半支派」。CT 說明是哪些家族：「瑪吉族和基列族留在約但河東岸」；GT《聖經精讀本》把整個分地方案講完：「將從雅博江到基列山地與巴珊地的北部地方分給了瑪拿西半個支派(書13:8-31)。」
+  relation: 本章只給結果，不給理由——經文說「我給了」，沒有像民32 那樣記下請求與交涉。第14節睚珥佔亞珥歌伯、第15節基列給瑪吉，是這半個支派在河東實際落腳的兩個家族。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 睚珥
+  path: link_folder/人物/睚珥.md
+  summary: 第14節「瑪拿西的子孫睚珥佔了亞珥歌伯全境，直到基述人和瑪迦人的交界」。CT 原文字義：「睚珥」他啟迪；CT 說明他的身世：「『睚珥』是猶大支派希斯崙的兒子西割和瑪吉的女兒結婚所生的兒子，歸屬母親家族，故稱瑪拿西的子孫(參民三十二41)」，並說「最後的征服是由瑪拿西的子孫睚珥完成。他獲得亞珥歌伯作為報酬(參民三十二39，41)」；GT《聖經精讀本》：「若從父系就是猶大的五代子孫,在這裡則從了母系(代上2:3-24)。此處之所以特意提到其名,似乎是因為他是一個軍事領袖或英勇的壯士,在征服亞珥歌伯時立下了赫赫戰功。」
+  relation: 除了摩西與約書亞，睚珥是本章唯一被單獨記名的以色列人。他做的兩件事——佔地與改名——讓亞珥歌伯多了「哈倭特睚珥」這個一直沿用到寫作當時的名字。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 哈倭特睚珥
+  path: link_folder/地點/哈倭特睚珥.md
+  summary: 第14節「就按自己的名稱這巴珊地為哈倭特睚珥，直到今日」。CT 原文字義：「哈倭特睚珥」睚珥的村落；CT：「『哈倭特睚珥』直譯為「睚珥的一切城邑」(參書十三30；士十4；王上四13)，是一些沒有城牆的村落」；BH：「Renaming places was a common practice in ancient times, often signifying ownership or commemorating a significant event.」（在古代，替地方改名是常見的作法，通常表示所有權，或紀念一件重要的事。）BH 另指出「直到今日」說明這個名字延用了相當長的時間。STEP 把整個名字當一個編號：cha.Vot ya.'Ir（H2334）。
+  relation: 這是本章第三個關於地名來歷的註記（前兩個是第9節黑門山的別名、第11節鐵床在拉巴）。CT 說哈倭特睚珥是沒有城牆的村落，正好與第5節「無城牆的鄉村」對得上。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 瑪吉
+  path: link_folder/人物/瑪吉.md
+  summary: 第15節「我又將基列給了瑪吉」。CT 原文字義：「瑪吉」賣出；CT：「『瑪吉』是瑪拿西唯一的兒子，瑪吉又僅有一個兒子基列；本句指的是瑪吉族和基列族」；GT《啟導本》：「瑪姬是約瑟之子瑪拿西的長子，也是基列人的祖先（書十七1）。」；BH：「Machir was the firstborn son of Manasseh, the son of Joseph. The tribe of Manasseh was one of the half-tribes of Israel, and Machir's descendants were known for their strength and valor.」（瑪吉是約瑟之子瑪拿西的長子。瑪拿西支派是以色列的半支派之一，瑪吉的後裔以勇力著稱。）
+  relation: 第15節只有一句話，卻把瑪拿西半支派的地業落實到一個家族。CT 與 GT 對瑪吉的排行說法略有出入：CT 說他是瑪拿西「唯一的兒子」，GT《啟導本》與 BH 都說他是「長子」。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 雅博渡口
+  path: link_folder/地點/雅博渡口.md
+  summary: 第16節「直到亞捫人交界的雅博河」。CT 原文字義：「雅博」倒空。BH：「The Jabbok River, now known as the Zarqa River, was another important boundary marker. It flows into the Jordan River and was the site where Jacob wrestled with God in Genesis 32:22-32, a pivotal moment in biblical history. This river marked the northern boundary of the land given to the Reubenites and Gadites.」（雅博河今名扎爾卡河，是另一個重要的界標。它流入約但河，也是雅各在創32:22-32 與神摔跤的地方。這條河標出分給流便人與迦得人之地的北界。）
+  relation: 雅博河在本章是分界線：南邊給流便和迦得，北邊給瑪拿西半支派。CT 在第1、10節也用它界定地理位置——「巴珊位於雅博河以北」、「『基列全地』指雅博河以北迄巴珊地南界」。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 亞拉巴
+  path: link_folder/地點/亞拉巴.md
+  summary: 第17節「又將亞拉巴和靠近約但河之地」。CT 原文字義：「亞拉巴」沙漠曠野，乾草原；CT：「『亞拉巴』指約但河流域從北邊的加利利海到死海南端以迄阿卡巴灣的河谷地帶」。STEP 顯示是 ha./'a.ra.Vah（H6160G）。
+  relation: 第17節把亞拉巴當成流便與迦得地業的西側：從基尼烈到亞拉巴海。同一節裡「亞拉巴」與「亞拉巴海」是兩個不同的指稱，後者經文自己註明「就是鹽海」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 基尼烈湖
+  path: link_folder/地點/基尼烈湖.md
+  summary: 第17節「從基尼烈直到亞拉巴海」。CT 原文字義：「基尼烈」豎琴；CT：「『基尼烈』或指加利利海，或指加利利海西北岸的一城」；GT《啟導本》：「“基尼烈”為拿弗他利支派所得的一個城，位於加利利海西北岸（加利利海在舊約時代叫做基尼烈湖，見民三十四11）」；GT《串珠》：「「基尼烈」：即加利利海。」BH：「Chinnereth, also known as the Sea of Galilee, is a freshwater lake in northern Israel.」（基尼烈又名加利利海，是以色列北部的一座淡水湖。）STEP 顯示是 mi./ki.Ne.ret（H3672G）。
+  relation: 基尼烈是流便與迦得地業的北端界標，與南端的鹽海成一組。BH 把兩者的對照點出來：加利利海是活水，鹽海沒有生命。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 鹽海
+  path: link_folder/地點/鹽海.md
+  summary: '第17節「從基尼烈直到亞拉巴海，就是鹽海」。GT《啟導本》：「鹽海即死海，舊約中無“死海”之名，主後第一或第二世紀，始名“死海”。」；GT《聖經精讀本》：「亞拉巴海,就是鹽海: 指今日的死海(Dead Sea)」；BH：「The Sea of the Arabah, or the Salt Sea, is another name for the Dead Sea, known for its high salinity and mineral content. The Dead Sea is the lowest point on Earth''s surface」（亞拉巴海即鹽海，是死海的另一個名字，以高鹽度與豐富礦物質著稱。死海是地表最低的地方。）STEP 顯示第17節同時用了 yam ha./''a.ra.Vah 與 yam ha./Me.lach（H3220G 加 H6160G 與 H4417G）。'
+  relation: 本章一節之內給了這片水域兩個名字，而且經文自己作了對照：「亞拉巴海，就是鹽海」。它是流便與迦得地業的西南端。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 瑣腓田與毘斯迦山頂
+  path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+  summary: '第17節「並毘斯迦山根東邊之地」；第27節「你且上毘斯迦山頂去」。CT 原文字義：「毗斯迦」裂縫，峰；「山根」斜坡，地基；CT：「『毗斯迦』亦即摩西所登遠望迦南之山峰，在死海東邊摩押平原的尼波山上(參三十四1)」；GT《串珠》：「「毗斯迦」：或許就是死海東面那俯視鹽海（死海）的尼波山（32:49; 34:1）。」；GT《聖經精讀本》：「毗斯迦山: 是位於耶利哥對面的山,似乎是以尼波山(34:1)為最高峰的亞巴琳山脈(民27:12)的組成部分。」STEP 顯示第17節「山根」是 ''ash.Dot ha./pis.Gah（H798，簡要詞典義 Slopes of Pisgah）。'
+  relation: 毘斯迦在本章出現兩次，功能完全不同：第17節是地界的一部分，第27節是摩西被允許登上去遠望全地的地方。CT〔話中之光〕說「在毘斯迦的高處，可以看得更遠」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 帶兵器（cha.lats）
+  path: link_folder/原文/帶兵器（cha.lats）.md
+  summary: 第18節「你們所有的勇士都要帶著兵器」。STEP 顯示是 cha.lu.Tzim（H2502B，cha.lats，簡要詞典義 to arm），被動分詞，context gloss 作 equipped——與民32:30、32 完全同形。CT 說這道命令的對象是「流便和迦得兩個支派加上瑪拿西的半個支派」。
+  relation: 民32 是兩支派半自己說要帶兵器過去的地方，申3 是摩西在渡河前把同一件事再說一次。詞形完全相同，說話的人換了。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 為業（ye.ru.shah）
+  path: link_folder/原文/為業（ye.ru.shah）.md
+  summary: '第20節「你們才可以回到我所賜給你們為業之地」。STEP 顯示是 li./ru.sha.T/o（H3425，ye.rush.shah，簡要詞典義 possession），與申2 是同一個 Extended Strong；同章第18節的「賜給你們為業」則用動詞 le./rish.Ta/h（H3423H，ya.rash，簡要詞典義 to possess: take）。'
+  relation: 本章一章之內同時用到這個字根的名詞與動詞：第18節說神已經把這地給了他們去得（動詞），第20節說他們打完仗可以回到自己的產業（名詞）。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 申命記:2
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第21節「那時我吩咐約書亞說」；第28節「你卻要囑咐約書亞，勉勵他，使他膽壯」。CT 原文字義：「約書亞」耶和華是拯救。GT《串珠》：「勉勵約書亞──接棒人。這位顯赫一時的軍事領袖（出17:9），曾被稱為摩西的幫手和摩西所揀選的一個人（參出24:13; 民11:28），現被神立為摩西的接棒人乃眾望所歸的事（詳情見民27:15-23）。」BH：「Joshua's role as Moses' assistant (Exodus 24:13) and his experience as a military leader (Exodus 17:9-14) make him a fitting successor.」（約書亞曾作摩西的幫手（出24:13），又有帶兵的經驗（出17:9-14），使他成為合適的繼任者。）
+  relation: 本章給約書亞的兩段話結構相同：先講他已經看見的（第21節），再講他不必懼怕的理由（第22節）。第28節則把動作交回摩西手上——是摩西要去囑咐他、勉勵他、使他膽壯。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+- title: 耶和華的爭戰
+  path: link_folder/神學/耶和華的爭戰.md
+  summary: '第22節「你不要怕他們，因那為你爭戰的是耶和華你的神」。CT 原文字義：「爭戰」戰鬥，作戰；CT：「意指爭戰是神的事，只管放心交託給祂。」GT《聖經精讀本》：「那為你爭戰的是耶和華你的神: 摩西的這一席話對將要與強大的迦南人打一場大戰的新領袖約書亞而言是最有力的激勵。因為約書亞在聽此番話時,心中必想起在與西宏和噩的爭戰中,在紅海海岸為了以色列的緣故親自與法老的軍隊爭戰的那位神(出14:13-31),在利非訂和亞摩利人相爭時使以色列得以告白“耶和華尼西”的那位神(出17:8-16)。」STEP 顯示「爭戰」是 ha./nil.Cham（H3898A，la.cham，簡要詞典義 to fight），Niphal 分詞。'
+  relation: 出14 是這個主題的起點，申3:22 是它交到下一代手上的時候。GT《聖經精讀本》正是把紅海與利非訂兩次爭戰接到這一句上。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: 第24節「主耶和華啊，你已將你的大力大能顯給僕人看」。CT 原文字義：「大力」偉大，高大；「大能(原文雙字)」手(首字)；強壯的，堅固的(次字)；CT：「『大能』按原文另譯「大能的手」」。STEP 顯示是 ga.de.le./Kha（H1433，go.del）加 ya.de./Kha ha./cha.za.Kah（H3027H，yad，加 H2389，cha.zaq）；同節的「大能的作為」則是另一個字 ge.vu.ro.Te./kha（H1369，ge.vu.rah）。
+  relation: 出埃及記用「大能的手」講領百姓出埃及，申3:24 是摩西回頭指這隻手在河東所做的事。CT 指出原文在這裡是「大能的手」，中文譯作「大力大能」把兩個名詞併成了一個詞組。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 起首得那地（cha.lal）
+  path: link_folder/原文/起首得那地（cha.lal）.md
+  summary: '第24節「你已將你的大力大能顯給僕人看」的「已將」。STEP 顯示是 ha.chi.Lo.ta（H2490C，簡要詞典義 to profane/begin: begin），context gloss 作「you have begun」，與申2:24-25「起首得那地」同一個 base Strong H2490。BH 讀出的正是這一層：「Moses is speaking here, recognizing that God has only just begun to reveal His full might and majesty.」（摩西在這裡說話，是意識到神才剛開始彰顯祂完全的大能與威嚴。）'
+  relation: 申2 神叫以色列「起首得那地」，申3 摩西說神「已經開始」向他顯出大能——同一個字根，一次是命令，一次是回顧。KC 說摩西求的正是讓神把已經開始的作完。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 申命記:2
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: '第8節「約但河東」；第17節「靠近約但河之地」；第20節「約但河那邊」；第25節「約但河那邊的美地」；第27節「你必不能過這約但河」。CT 原文字義：「約但」下降。GT《啟導本》：「“約但河那邊”指約但河西的迦南地（25節；十一30）。」BH：「Crossing the Jordan represents a transition from the wilderness wanderings to the inheritance of the Promised Land.」（過約但河代表從曠野漂流過渡到承受應許之地。）STEP 顯示第20、25節的「那邊」是 be./''E.ver（H5676H，e.ver，簡要詞典義 side: beyond）。'
+  relation: 約但河是本章後半的軸線。同一條河，對兩支派半是要過去再回來，對約書亞是要帶百姓過去，對摩西是「你必不能過」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第25節「求你容我過去，看約但河那邊的美地，就是那佳美的山地和利巴嫩」。CT 原文字義：「美」好的，令人愉悅的；「佳美的」(原文和「美」同字)。STEP 證實兩處都是 H2896A（ha./to.Vah 與 ha./Tov）。KC：「He spoke with great admiration about the inheritance that the LORD has prepared for His people and called it "the fair land" and "that good hill country". He fully appreciates the land of God.」（他滿懷讚嘆地講論耶和華為祂百姓所預備的產業，稱它為「美地」與「那佳美的山地」。他完全懂得神那塊地的好。）BH：「The "good land" refers to the land of Canaan, which God promised to the descendants of Abraham, Isaac, and Jacob.」（「美地」指的是迦南地，神應許給亞伯拉罕、以撒、雅各後裔的那塊地。）
+  relation: 申1 的「美地」出自探子與神的誓言，申3 的「美地」出自摩西自己的請求。同一個詞，這一次說話的人不得進去。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 在米利巴未將耶和華尊為聖
+  path: link_folder/神學/在米利巴未將耶和華尊為聖.md
+  summary: 第26節「但耶和華因你們的緣故向我發怒，不應允我」。CT：「『因你們的緣故』表面是因以色列人爭鬧求水喝，實際是因摩西違背神的命令，用杖擊打磐石兩下(參民二十11~13)」；GT《雷氏研讀本》：「“耶和華……向我發怒”。由於摩西在米利巴的不順服和不信，參看民數記第二十章8節的腳註。」；GT《串珠》：「摩西發怒得罪神，乃由百姓激怒所引起（民20:1-13; 27:12-14）；另一方面，作為選民的領袖，他要和他們共同承擔背逆神的罪。」；GT 李道生：「照聖經所說，摩西和亞倫因過份自大，擅自發怒⋯不信神，不在以色列人眼前尊主為聖，違背主的命令」。
+  relation: 民20 是事件本身，申3 是它的後果被說出口的地方。本章把責任分成兩邊：經文說「因你們的緣故」，註釋家則指出實際的行為是摩西自己的。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 摩西不得進入應許之地
+  path: link_folder/事件/摩西不得進入應許之地.md
+  summary: 第23-28節。摩西懇求「求你容我過去」，神的回答是「罷了！你不要向我再提這事」，改為准他上毘斯迦山頂向東西南北觀望，並吩咐他把工作交給約書亞。GT《聖經精讀本》列出三個要領悟的旨意：「①得以進入迦南地所憑藉的並不是人的功勞;②摩西只有一次因輕舉妄動的行為未能完全彰顯神的聖潔,神使摩西不得進入迦南,生動地教訓新世代違背神之聖潔的罪何等巨大;③通過象徵為“律法”的摩西被排除在外的事實,明確表明了律法在藉著基督而來的福音面前的局限性。」KC 指出神仍給了回應：「God allowed him to stand in a place from where he could see the whole land in its length and breadth (Num 27:12-14; Deu 34:1-4). God enabled him to look further than is conceivable with natural eyes.」（神讓他站在一個地方，能看見全地的長闊。神使他看得比肉眼所能想像的更遠。）
+  relation: 這是全本聖經唯一記下摩西為此事開口懇求的一段。民20 給了判詞，民27 安排了接班，申34 記下實現；申3 補的是判詞與實現之間的那次請求，以及被拒之後神給的替代方案。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 民數記:20
+      - 民數記:27
+- title: 面東定向的左右方位
+  path: link_folder/背景/面東定向的左右方位.md
+  summary: '第27節「向東、西、南、北舉目觀望」。STEP 顯示四個方位詞分別是 Ya.ma/h（H3220H，yam，簡要詞典義 sea: west）、tza.Fo.na/h（H6828G，north）、tei.Ma.na/h（H8486，te.man，south）、miz.Ra.cha/h（H4217H，east）——希伯來文標「西」用的就是「海」這個字。CT 原文字義另給：「觀望(原文雙字)」覺察，凝視(首字)；眼睛(次字)。'
+  relation: 這是摩西被拒之後神給的替代：不能走過去，但可以從高處把四方看遍。第27節的「南」（tei.Ma.na/h）與出26:18 GT 所引的 teymanah（向右）拼寫相合，是同一套以身體朝東為基準的方位語言。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 出埃及記:26
+      - 創世記:13
+- title: 擔當（na.sa）
+  path: link_folder/原文/擔當（na.sa）.md
+  summary: '第27節「向東、西、南、北舉目觀望」的「舉」。STEP 顯示是 ve./Sa''（H5375M，na.sa，簡要詞典義 to lift: look），與申1「擔當」同一個 base Strong H5375。CT 原文字義把整個詞組拆成兩個字：「觀望(原文雙字)」覺察，凝視(首字)；眼睛(次字)。'
+  relation: 申1 這個字根用在摩西「擔當」百姓的重擔，申3 用在他「舉」目觀望。STEP 給這個字根的簡要詞典義都是 to lift，兩處分別走向「承擔」與「抬眼」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 約書亞承接摩西
+  path: link_folder/事件/約書亞承接摩西.md
+  summary: 第21、28節。摩西兩次奉命對約書亞說話：第21-22節給他憑據（親眼看見的二王）與保證（耶和華必為你爭戰），第28節神吩咐摩西「囑咐約書亞，勉勵他，使他膽壯」。GT《啟導本》：「神要摩西把領導權交付約書亞。這位年青一代的新領袖要負起兩個責任：1，征服新土（帶領這百姓過河）；2，把土地分配給百姓（“承受你所要觀看之地”）。」KC 指出這已經是第三次講到交棒：「This is already the third time that the transfer of the leadership from Moses to Joshua is discussed (Deu 1:38; 3:21-22). It is important for Moses, for Joshua and for the people.」（這已經是第三次談到領導權從摩西移交給約書亞。這件事對摩西、對約書亞、對百姓都很重要。）
+  relation: 本章的交棒緊接在摩西被拒之後：第26節神說「罷了」，第28節就把工作交下去。CT〔話中之光〕點出這需要什麼：「這需要多大的順服、多寬廣的胸襟！」
+  overview_review:
+    definition: keep
+    development: keep

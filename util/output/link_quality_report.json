@@ -1,7 +1,7 @@
 {
-  "total_warnings": 139,
+  "total_warnings": 140,
   "critical_count": 0,
-  "warning_count": 139,
+  "warning_count": 140,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -93,6 +93,13 @@
       "source": "link_folder/人物/亞倫和他兒子（祭司）.md",
       "target": "第17章",
       "message": "同一 alias「第17章」指向多個 target: 03 利未記/第17章, 04 民數記/第17章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞摩利人.md",
+      "target": "第3章",
+      "message": "同一 alias「第3章」指向多個 target: 02 出埃及記/第3章, 05 申命記/第3章"
     },
     {
       "type": "alias_target_conflict",

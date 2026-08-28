@@ -38,6 +38,11 @@ BH 在出二十二20 指出「必要滅絕」背後的觀念是希伯來文的 h
 - 與本章關聯：既有累積是從出22:20 的律法條文收的；本章補上這個概念實際執行時的分級——GT《啟導本》列出三種處置方式，而本章保留了牲畜與財物，屬於中間那一種。
 <!-- accumulation:申命記:2:end -->
 
+<!-- accumulation:申命記:3:start -->
+#### [[05 申命記/第3章|第3章]]
+- 本章重點：第6節「盡都毀滅」。GT《聖經精讀本》：「這種徹底的“毀滅”其意義不同於源自民族的仇恨或個人之殘忍的大屠殺。以色列的迦南征服戰是基於神命令的耶和華之聖戰,體現了神的公義及保持天國之純潔性,生動地教訓了當從根本上除去所有罪惡的事實」；GT《啟導本》：「在為神而作的聖戰中，須把敵方連人帶物全都摧毀。不能毀滅之物，例如金、銀等，則予保留，歸神為聖（參書六16～19）」；BH：「This phrase refers to the practice of "herem," a term meaning to devote something to God by completely destroying it.」（這個詞指的是 herem 的作法——把某物完全毀壞，以此獻給神。）
+- 與本章關聯：巴珊之役的處置與希實本之役完全相同，經文自己點明「像從前待希實本王西宏一樣」。KC 從神的性情這一面補上：「God is a merciful God. He always gives the opportunity to escape judgment, but over unrepentance He metes righteous judgment.」（神是憐憫的神。祂總是給人逃離審判的機會，但對不肯悔改的，祂施行公義的審判。）
+<!-- accumulation:申命記:3:end -->
 ## 主題發展
 
 herem 這個字在兩卷書裡出現的位置不同，份量也不同。
