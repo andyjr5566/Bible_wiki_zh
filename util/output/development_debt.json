@@ -1,0 +1,47 @@
+{
+  "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，development=update 時清除。維護回合處理，不擋章節流程。",
+  "entries": [
+    {
+      "path": "link_folder/地點/埃及.md",
+      "title": "埃及",
+      "deferred_at": "申命記:4",
+      "accumulated": 36,
+      "fingerprint": "356f81a4895af054"
+    },
+    {
+      "path": "link_folder/人物/流便.md",
+      "title": "流便",
+      "deferred_at": "申命記:4",
+      "accumulated": 16,
+      "fingerprint": "b56229d271b7f2e7"
+    },
+    {
+      "path": "link_folder/地點/約但河.md",
+      "title": "約但河",
+      "deferred_at": "申命記:4",
+      "accumulated": 15,
+      "fingerprint": "2d7f769de61bd89b"
+    },
+    {
+      "path": "link_folder/人物/瑪拿西.md",
+      "title": "瑪拿西",
+      "deferred_at": "申命記:4",
+      "accumulated": 12,
+      "fingerprint": "5a8a775c374be9d6"
+    },
+    {
+      "path": "link_folder/人物/亞摩利人.md",
+      "title": "亞摩利人",
+      "deferred_at": "申命記:4",
+      "accumulated": 11,
+      "fingerprint": "7c210648ec369304"
+    },
+    {
+      "path": "link_folder/人物/迦得（萬幸）.md",
+      "title": "迦得（萬幸）",
+      "deferred_at": "申命記:4",
+      "accumulated": 11,
+      "fingerprint": "ae7628a075d62304"
+    }
+  ]
+}

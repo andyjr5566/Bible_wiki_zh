@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 import sys
@@ -402,13 +403,98 @@ class UpdateTests(unittest.TestCase):
             self.assertTrue(evidence.is_file())
             text = evidence.read_text(encoding="utf-8")
             self.assertIn("穩定身分與辨識邊界。", text)
-            self.assertIn("累積 1 章：創世記1", text)
+            self.assertIn("累積 1 章：創世記 1", text)
             self.assertIn("第一段講長子名分。", text)
             self.assertIn("第二段講河東分地的安排。", text)
             self.assertIn("段落索引", text)
             with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
                 with self.assertRaises(FileExistsError):
                     link_updates.prepare("創世記", 8)
+
+    def test_standing_debt_is_the_only_honest_basis_when_the_entry_owes_a_synthesis(self):
+        """條目自己欠帳（累積多／主題發展空白）時，insufficient_evidence 會把欠帳抹掉。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, entry_path = self._prepare_review_fixture(root, development="")
+            blocks = "\n".join(
+                render_block("創世記", chapter, {
+                    "summary": f"重點{chapter}", "relation": f"關聯{chapter}",
+                })
+                for chapter in range(1, 10)
+            )
+            entry_path.write_text(
+                "# 測試\n\n## 定義\n\n穩定身分與辨識邊界。\n\n## 按書卷累積\n\n### 創世記\n\n"
+                f"{blocks}\n\n## 主題發展\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            data = self._fill_keep_review(manifest)
+
+            for basis, pattern in (("insufficient_evidence", "會把欠帳抹掉"),):
+                data["updates"][0]["overview_review"]["development"] = {
+                    "decision": "keep", "basis": basis,
+                }
+                manifest.write_text(
+                    yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+                )
+                with patch.object(link_updates, "ROOT", root):
+                    with self.assertRaisesRegex(ValueError, pattern):
+                        link_updates.preview_updates(manifest)
+
+            data["updates"][0]["overview_review"]["development"] = {
+                "decision": "keep", "basis": "standing_debt",
+            }
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+                added, settled = link_updates.record_development_debt(preview, root=root)
+            self.assertEqual(["測試"], added)
+            self.assertEqual([], settled)
+            ledger = json.loads(
+                (root / link_updates.DEVELOPMENT_DEBT_PATH).read_text(encoding="utf-8")
+            )
+            self.assertEqual("link_folder/人物/測試.md", ledger["entries"][0]["path"])
+            self.assertEqual("創世記:8", ledger["entries"][0]["deferred_at"])
+
+    def test_standing_debt_needs_a_debt_signal(self):
+        """沒有欠帳訊號時不可用 standing_debt 當萬用出口。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            data["updates"][0]["overview_review"]["development"] = {
+                "decision": "keep", "basis": "standing_debt",
+            }
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "沒有 challenge"):
+                    link_updates.preview_updates(manifest)
+
+    def test_outline_uses_headings_when_present_so_it_stops_growing_per_paragraph(self):
+        """成熟條目的段落只會越來越多；有小標題時索引只給小標題。"""
+        body = "開場一段。\n\n### 甲\n\n甲的內容。\n\n### 乙\n\n乙的內容。\n\n### 丙\n\n丙的內容。"
+        outline = link_updates._section_outline(body)
+        labels = [row[0] for row in outline]
+        self.assertEqual(["### 甲", "### 乙", "### 丙"], labels[:3])
+        self.assertIn("段散文", labels[-1])
+        self.assertNotIn("甲的內容。", "".join(labels))
+
+        long_body = "\n\n".join(f"第{n}段的開頭。內文內文。" for n in range(1, 13))
+        capped = link_updates._section_outline(long_body)
+        self.assertEqual(link_updates.EVIDENCE_OUTLINE_MAX_ROWS + 1, len(capped))
+        self.assertIn("段，共", capped[-1][0])
+
+    def test_accumulated_chapters_are_grouped_by_book(self):
+        """35 章的條目不該把書卷名重複 35 次。"""
+        text = "".join(
+            f"<!-- accumulation:{book}:{chapter}:start -->x<!-- accumulation:{book}:{chapter}:end -->"
+            for book, chapter in (("創世記", 12), ("創世記", 13), ("出埃及記", 1), ("申命記", 4))
+        )
+        self.assertEqual("創世記 12,13 ／ 出埃及記 1 ／ 申命記 4",
+                         link_updates._format_accumulated(text))
 
     def test_long_definitions_ship_as_an_index_not_full_text(self):
         """證據檔會隨累積變肥，長定義改給主張索引；短定義仍給全文。"""

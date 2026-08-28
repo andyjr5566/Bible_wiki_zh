@@ -126,11 +126,13 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    python util/link_updates.py prepare 【書名】 X
    ```
    prepare 會同時產生 `review_evidence.md`：逐條給出目標條目的**定義**（400 字以內
-   全文，較長的給主張索引：首段全文＋其餘段落的粗體導語）、**主題發展段落索引**
-   （每段標題或開頭＋字數）與**已累積章清單**。判 `overview_review` 前先讀這一份，
-   不要逐一開啟每個條目——申3 實測是全部條目原文的 15%（12.5 萬字元 → 1.85 萬），
-   而且正好是判斷要用的那一部分。**索引是分流用的：只要判斷不是單純 keep，就開條目
-   原檔再確認**；要引用逐字內容（尤其 `covered_by`）一律開檔。
+   全文，較長的給主張索引：首段全文＋其餘段落的粗體導語）、**主題發展索引**（有 H3
+   小標題時只列小標題，沒有才列段落開頭、上限 8 段）與**已累積章清單**（依書卷分組）。
+   判 `overview_review` 前先讀這一份，不要逐一開啟每個條目——申4 實測是全部條目原文的
+   11%（13.9 萬字元 → 1.5 萬），而且正好是判斷要用的那一部分。實戰上**最有用的是累積
+   章清單那一行**：章號並排＋主題發展寫著空白，就是一條沒人寫的跨章線。
+   **索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認**；要引用逐字內容
+   （尤其 `covered_by`）一律開檔。
    （條目被改過或舊章要補產生：`python util/link_updates.py evidence 【書名】 X`。）
    再回到經文與有效 raw text 填 `summary`／`relation`，並逐條完成
    `overview_review`。三個區塊的功能絕對不同：
@@ -148,6 +150,12 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    比對；引不出來就不是 `already_covered`，該改判 `update` 或換一個 basis。
    注意 `single_chapter_only` 的意思是「本章素材形不成跨章綜合」——若該條目自己的
    累積清單裡已經有別章在講同一件事，這個 basis 就是假的。
+   **條目本身欠帳（`many_accumulations` 或 `development_blank_with_history`）而本章
+   只給了一句帶過的提及時，填 `standing_debt`**：三個舊 basis 沒有一個誠實描述這種
+   狀況，而 `insufficient_evidence` 在有欠帳訊號時已被擋掉（它會把欠帳抹掉）。
+   `standing_debt` 由 apply 記進 `util/output/development_debt.json`，日後在別章或維護
+   回合把該條目的主題發展補成跨章綜合、填 `development=update`，apply 就會自動清除該筆。
+   隨時可用 `python util/link_updates.py debt` 看目前欠帳清單。
    `development=update` 必須在 `synthesis_scope` 列出
    本章與至少另一章，並先修改條目的 `## 主題發展`。**絕對不可把本章的
    `summary`／`relation` 換句話說後貼進定義或主題發展，也不可用「民35」這類單章小標題

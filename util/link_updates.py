@@ -2,6 +2,8 @@
 """準備並安全套用 link_folder 的章節累積資料。"""
 import argparse
 import difflib
+import hashlib
+import json
 import os
 import re
 import sys
@@ -26,7 +28,8 @@ REVIEW_DECISIONS = {"keep", "update"}
 MIN_REVIEW_REASON_LENGTH_V1 = 8
 REVIEW_KEEP_BASIS = {
     "definition": {"no_identity_change", "already_covered", "insufficient_evidence"},
-    "development": {"already_covered", "single_chapter_only", "insufficient_evidence"},
+    "development": {"already_covered", "single_chapter_only", "insufficient_evidence",
+                    "standing_debt"},
 }
 REVIEW_GUIDANCE_V1 = {
     "definition": (
@@ -76,9 +79,12 @@ REVIEW_GUIDANCE = {
     ),
     "keep_basis": (
         "definition 可用 no_identity_change／already_covered／insufficient_evidence；"
-        "development 可用 already_covered／single_chapter_only／insufficient_evidence。"
+        "development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。"
         "沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by："
         "從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。"
+        "條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，"
+        "填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，"
+        "不是把問題抹掉；這種情況不可用 insufficient_evidence。"
     ),
     "signals": (
         "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；"
@@ -178,22 +184,44 @@ def _opening_sentence(text, limit=64):
     return flat[:limit] + ("⋯" if len(flat) > limit else "")
 
 
+EVIDENCE_OUTLINE_MAX_ROWS = 8
+
+
 def _section_outline(body):
-    """Index one section as (heading-or-opening, character count) per paragraph."""
-    outline = []
-    for para in _PARAGRAPH_SPLIT_RE.split(str(body).strip()):
-        chunk = para.strip()
-        if not chunk:
-            continue
-        if chunk.startswith("#"):
-            outline.append(("### " + chunk.lstrip("# ").strip(), 0))
-            continue
-        outline.append((_opening_sentence(chunk), len(_squeeze(chunk))))
+    """Index one section: its H3 headings when it has them, else its openings.
+
+    A mature entry keeps growing paragraphs, so a per-paragraph index grows with
+    it.  Headings already name what each block is about, so when they exist they
+    are the whole index; headingless sections fall back to openings, capped.
+    """
+    chunks = [c.strip() for c in _PARAGRAPH_SPLIT_RE.split(str(body).strip()) if c.strip()]
+    headings = [c for c in chunks if c.startswith("#")]
+    if headings:
+        outline = [("### " + c.lstrip("# ").strip(), 0) for c in headings]
+        prose = [c for c in chunks if not c.startswith("#")]
+        if prose:
+            outline.append((
+                f"（小標題以外另有 {len(prose)} 段散文，共 "
+                f"{sum(len(_squeeze(c)) for c in prose)} 字；要內文請開條目原檔）", 0))
+        return outline
+    outline = [(_opening_sentence(c), len(_squeeze(c))) for c in chunks[:EVIDENCE_OUTLINE_MAX_ROWS]]
+    rest = chunks[EVIDENCE_OUTLINE_MAX_ROWS:]
+    if rest:
+        outline.append((
+            f"（另有 {len(rest)} 段，共 {sum(len(_squeeze(c)) for c in rest)} 字未列）", 0))
     return outline
 
 
 def _accumulated_labels(text):
     return [f"{book}{chapter}" for book, chapter in _ACCUM_META_RE.findall(text)]
+
+
+def _format_accumulated(text):
+    """Group accumulated chapters by book so a 35-chapter entry stays one short line."""
+    grouped = {}
+    for book, chapter in _ACCUM_META_RE.findall(text):
+        grouped.setdefault(book, []).append(chapter)
+    return " ／ ".join(f"{book} {','.join(chapters)}" for book, chapters in grouped.items())
 
 
 def _definition_evidence(body):
@@ -221,9 +249,11 @@ def review_evidence_markdown(book, chapter, entries):
         "",
         "判 overview_review 前讀這一份，不必逐一開啟每個目標條目。",
         f"定義 {EVIDENCE_DEFINITION_FULL_LIMIT} 字以內給全文，較長的給主張索引"
-        "（首段全文＋其餘段落的粗體導語或開頭）；主題發展一律給段落索引。",
+        "（首段全文＋其餘段落的粗體導語或開頭）；主題發展有小標題時只給小標題，"
+        f"沒有小標題才給段落開頭（上限 {EVIDENCE_OUTLINE_MAX_ROWS} 段）。",
         "索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認。",
-        "填 already_covered 一定要開檔逐字節錄 covered_by。",
+        "填 already_covered 一定要開檔逐字節錄 covered_by；"
+        "條目本身欠帳而本章只有一句帶過的提及，填 standing_debt（會記進欠帳清單）。",
         "",
     ]
     for entry in entries:
@@ -234,7 +264,7 @@ def review_evidence_markdown(book, chapter, entries):
                 entry["path"],
                 "、".join(entry["signals"]) or "無",
                 len(labels),
-                "、".join(labels) or "（無）",
+                entry.get("accumulated_grouped") or "（無）",
             )
         )
         lines.append("")
@@ -311,6 +341,7 @@ def write_review_evidence(book, chapter):
             "path": str(update.get("path", "")),
             "signals": signals,
             "accumulated": _accumulated_labels(text),
+            "accumulated_grouped": _format_accumulated(text),
             "definition": _section_body(text, "定義"),
             "development": _section_body(text, "主題發展"),
         })
@@ -346,6 +377,7 @@ def prepare(book, chapter):
             "path": str(update.get("path", "")),
             "signals": list(review.get("signals") or []),
             "accumulated": _accumulated_labels(text),
+            "accumulated_grouped": _format_accumulated(text),
             "definition": _section_body(text, "定義"),
             "development": _section_body(text, "主題發展"),
         })
@@ -595,6 +627,19 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
     elif covered_by:
         raise ValueError(
             f"{title} 的 {heading} 只有 basis=already_covered 才填 covered_by"
+        )
+    debt_signals = [c for c in challenges
+                    if c in ("many_accumulations", "development_blank_with_history")]
+    if key == "development" and basis == "standing_debt" and not debt_signals:
+        raise ValueError(
+            f"{title} 的 {heading} 沒有存量欠帳訊號（many_accumulations／"
+            "development_blank_with_history），basis 不能填 standing_debt"
+        )
+    if key == "development" and basis == "insufficient_evidence" and debt_signals:
+        raise ValueError(
+            f"{title} 的 {heading} 有存量欠帳訊號（{', '.join(debt_signals)}）；"
+            "insufficient_evidence 會把欠帳抹掉，請改填 standing_debt（會被記進欠帳清單），"
+            "或改判 update／already_covered／single_chapter_only"
         )
     if key == "development" and basis == "single_chapter_only" and "cross_chapter_language" in challenges:
         raise ValueError(
@@ -914,6 +959,67 @@ def _commit_operations(changes):
                 pass
 
 
+DEVELOPMENT_DEBT_PATH = "util/output/development_debt.json"
+
+
+def _accumulation_fingerprint(text):
+    """Stable fingerprint of an entry's accumulated (book, chapter) set."""
+    marks = sorted({f"{b}:{c}" for b, c in _ACCUM_META_RE.findall(text)})
+    digest = hashlib.sha256("|".join(marks).encode("utf-8")).hexdigest()[:16]
+    return marks, digest
+
+
+def _load_development_debt(root):
+    path = Path(root) / DEVELOPMENT_DEBT_PATH
+    if not path.is_file():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    entries = data.get("entries") if isinstance(data, dict) else None
+    return {str(item["path"]): item for item in entries or [] if isinstance(item, dict) and item.get("path")}
+
+
+def record_development_debt(preview, root=None):
+    """Record/settle standing development debt named by this chapter's review.
+
+    ``standing_debt`` means the entry owes a cross-chapter synthesis that this
+    chapter is too thin to pay.  Writing it down is the point: the ledger is what
+    a later maintenance pass reads, so the basis cannot quietly erase the debt.
+    """
+    root = Path(ROOT if root is None else root).resolve()
+    ledger = _load_development_debt(root)
+    book, chapter = preview["book"], preview["chapter"]
+    added, settled = [], []
+    for op in preview["operations"]:
+        review = op.get("overview_review") or {}
+        development = review.get("development") or {}
+        key = op["relative_path"]
+        if development.get("basis") == "standing_debt":
+            marks, digest = _accumulation_fingerprint(op["after"])
+            ledger[key] = {
+                "path": key,
+                "title": op["title"],
+                "deferred_at": f"{book}:{chapter}",
+                "accumulated": len(marks),
+                "fingerprint": digest,
+            }
+            added.append(op["title"])
+        elif key in ledger and development.get("decision") == "update":
+            ledger.pop(key)
+            settled.append(op["title"])
+    path = root / DEVELOPMENT_DEBT_PATH
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，"
+                "development=update 時清除。維護回合處理，不擋章節流程。",
+        "entries": sorted(ledger.values(), key=lambda x: (-int(x.get("accumulated") or 0), x["path"])),
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return added, settled
+
+
 def apply_updates(manifest, dry_run=False, reporter=print):
     """Apply fully prevalidated updates with staged per-file replacements.
 
@@ -928,6 +1034,9 @@ def apply_updates(manifest, dry_run=False, reporter=print):
     changes = [item for item in preview["operations"] if item["after"] != item["before"]]
     if not dry_run and changes:
         _commit_operations(changes)
+    debt_added, debt_settled = ([], [])
+    if not dry_run:
+        debt_added, debt_settled = record_development_debt(preview)
     if reporter:
         action = "預覽" if dry_run else "更新"
         for operation in changes:
@@ -954,6 +1063,13 @@ def apply_updates(manifest, dry_run=False, reporter=print):
                     "建議順手檢查 definition／development／related_entries／sources 是否已跟上"
                     "目前的累積範圍（不只停留在條目首建那一卷/那一章）"
                 )
+        if debt_added:
+            reporter(
+                f"📌 記入主題發展欠帳（{len(debt_added)} 筆）：{'、'.join(debt_added)}"
+                f"　→ {DEVELOPMENT_DEBT_PATH}"
+            )
+        if debt_settled:
+            reporter(f"✅ 已還清欠帳（{len(debt_settled)} 筆）：{'、'.join(debt_settled)}")
         reporter(f"✅ {'預覽' if dry_run else '套用'}完成：{len(changes)} 個檔案")
     return len(changes)
 
@@ -970,6 +1086,7 @@ def main():
     )
     evidence_parser.add_argument("book")
     evidence_parser.add_argument("chapter")
+    sub.add_parser("debt", help="列出主題發展存量欠帳清單（basis=standing_debt 累積而成）")
     apply_parser = sub.add_parser("apply")
     apply_parser.add_argument(
         "target", nargs="+",
@@ -980,6 +1097,20 @@ def main():
     try:
         if args.command == "prepare":
             prepare(args.book, args.chapter)
+        elif args.command == "debt":
+            ledger = _load_development_debt(ROOT)
+            if not ledger:
+                print("✅ 目前沒有主題發展存量欠帳")
+            else:
+                rows = sorted(ledger.values(),
+                              key=lambda x: -int(x.get("accumulated") or 0))
+                print(f"📌 主題發展存量欠帳 {len(rows)} 筆（{DEVELOPMENT_DEBT_PATH}）：")
+                for item in rows:
+                    print("   %-14s 累積 %2s 章　延後於 %s　%s" % (
+                        item.get("title", "?"), item.get("accumulated", "?"),
+                        item.get("deferred_at", "?"), item.get("path", "?")))
+                print("   還帳方式：在後續章節或維護回合把該條目的 ## 主題發展 補成跨章綜合，")
+                print("   並在該章的 overview_review 填 development=update——apply 會自動清除該筆。")
         elif args.command == "evidence":
             path, count = write_review_evidence(
                 canonical_book_name(args.book), int(args.chapter)

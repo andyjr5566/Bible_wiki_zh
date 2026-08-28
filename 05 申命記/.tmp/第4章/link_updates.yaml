@@ -9,7 +9,7 @@ review_guidance:
   development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
   accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
   decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
-  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
   signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
 updates:
 - title: 何烈山
@@ -113,7 +113,7 @@ updates:
     definition: keep
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 巴珊
   path: link_folder/地點/巴珊.md
   summary: 第43、47節「為瑪拿西人分定巴珊的哥蘭」「又得了巴珊王噩的地，就是兩個亞摩利王」。CT〔原文字義〕「巴珊」多結果實的、「噩」長頸的，並指出這兩節的事蹟可參民二十一24，35。BH：「Bashan was known for its rich pastures and strong bulls, as noted in Psalm 22:12.」（巴珊以豐美的牧場和強壯的公牛著稱，詩篇22:12 有記載。）
@@ -147,7 +147,7 @@ updates:
     definition: keep
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 迦得（萬幸）
   path: link_folder/人物/迦得（萬幸）.md
   summary: 第43節「為迦得人分定基列的拉末」。CT 指出「迦得人所得地業在河東的中部」，並把拉末的細節指向書二十一38。BH：「The Gadites were known as fierce warriors, and their territory was often a site of conflict due to its strategic importance.」（迦得人以驍勇著稱，他們的地界因位置關鍵而常成為衝突之地。）
@@ -156,7 +156,7 @@ updates:
     definition: keep
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 瑪拿西
   path: link_folder/人物/瑪拿西.md
   summary: 第43節「為瑪拿西人分定巴珊的哥蘭」。CT 指出「瑪拿西半支派的人所得地業在河東的最北邊」，並把哥蘭的細節指向書二十一27。GT《串珠》：「『哥蘭』：位於加利利海以東廿九公里（十八英里）。」BH 指出瑪拿西人「were descendants of Joseph, and their inheritance was divided between the east and west of the Jordan」（是約瑟的後裔，他們的產業分在約但河東西兩邊）。
@@ -167,7 +167,7 @@ updates:
       basis: no_identity_change
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 亞摩利人
   path: link_folder/人物/亞摩利人.md
   summary: 第46、47節「在住希實本、亞摩利王西宏之地」「又得了巴珊王噩的地，就是兩個亞摩利王，在約但河東向日出之地」。CT〔原文字義〕「亞摩利」山居者。BH：「The Amorites were a prominent Canaanite people known for their fortified cities and military prowess.」（亞摩利人是迦南地的重要民族，以堅固的城與軍事實力著稱。）
@@ -176,7 +176,7 @@ updates:
     definition: keep
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 逃城
   path: link_folder/互文/逃城.md
   summary: 第41-43節摩西在約但河東分定三座城，並在第42節說明適用對象：「使那素無仇恨、無心殺了人的，可以逃到這三城之中的一座城，就得存活」。GT《啟導本》：「逃城共有六座，河東三座，河西三座（十九2～3）。」GT《聖經精讀本》指出逃城「原定要在約但河東與河西各立三座(民35:14)」，並說這是「為了防止進一步流無辜之血的社會仲裁制度」。CT〔話中之光〕：「逃城是恩典的小影，說明了神對人的體貼。」
@@ -260,7 +260,7 @@ updates:
     definition: keep
     development:
       decision: keep
-      basis: insufficient_evidence
+      basis: standing_debt
 - title: 出埃及
   path: link_folder/歷史/出埃及.md
   summary: 第20、37、45、46節。第20節「耶和華將你們從埃及領出來，脫離鐵爐，要特作自己產業的子民」；第37節「因他愛你的列祖，所以揀選他們的後裔，用大能親自領你出了埃及」。KC：「God has redeemed His people, that they may be His own people.」（神救贖了祂的百姓，為要他們成為屬祂自己的子民。）
