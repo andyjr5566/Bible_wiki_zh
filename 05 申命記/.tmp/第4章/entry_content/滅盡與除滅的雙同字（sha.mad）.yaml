@@ -1,0 +1,37 @@
+name: 滅盡與除滅的雙同字（sha.mad）
+type: 原文
+secondary_types: []
+aliases:
+- 盡行除滅
+status: formal
+definition: |-
+  申命記4:26 的下半句在中文讀起來像兩個相似的警告：「你們必⋯速速滅盡！你們不能在那地上長久，必盡行除滅。」原文的力道來自一個中文譯不出來的結構。
+
+  **兩處都是同一個動詞連用兩次。** CT〔原文字義〕直接標了出來：「滅盡（原文雙同字）」消滅，消失；「盡行除滅（原文雙同字）」根絕，滅絕。
+
+  STEP 原文資料顯示這兩組的詞形：
+
+  | 和合本 | 原文 | Extended Strong | 形態 | 本節譯義 |
+  |---|---|---|---|---|
+  | 速速滅盡 | 'a.Vod ／ toe.Du/n | 皆 H6 | 不定詞絕對式＋Qal 未完成 | certainly <to perish> ／ you will perish |
+  | 盡行除滅 | hi.sha.Med ／ ti.sha.me.Du/n | 皆 H8045 | 不定詞絕對式＋Niphal 未完成 | utterly <destroyed> ／ you will be destroyed |
+
+  簡要詞典義分別是 a.vad: to perish 與 sha.mad: to destroy。希伯來文用同一動詞的不定詞絕對式加限定式來加強語氣，中文只能靠「速速」「盡行」這類副詞補。
+
+  **這是本章判詞的頂點。** CT 文意註解：「意指拜偶像的結局，必然招致滅族。」BH 則指出這裡的毀滅「is not only physical but also spiritual, as it represents a severing of the relationship with God」（不只是肉身的，也是屬靈的，因為它代表與神的關係被切斷）。
+
+  **但它不是最後一句話。** 第31節緊接著說「他總不撇下你，不滅絕你」——那裡用的是另一個字根（sha.chat，見[[敗壞與滅絕同一字根（sha.chat）]]）。判詞用 sha.mad，赦免用 sha.chat 的否定式，兩者並不互相取消。
+accumulations:
+- book: 申命記
+  chapter: 4
+  summary: '第26節「速速滅盡」「必盡行除滅」。CT〔原文字義〕：「滅盡（原文雙同字）」消滅，消失；「盡行除滅（原文雙同字）」根絕，滅絕。STEP：''a.Vod／toe.Du/n 皆 H6（a.vad: to perish），hi.sha.Med／ti.sha.me.Du/n 皆 H8045（sha.mad: to destroy），兩組都是不定詞絕對式加限定動詞的加強結構。CT：意指拜偶像的結局，必然招致滅族。BH：這毀滅不只是肉身的，也代表與神的關係被切斷。'
+  relation: 這是本章刑罰語言的最高點，緊接在第26節前半「我今日呼天喚地向你們作見證」之後。第27-28節再往下推：分散萬民、人數稀少、在那裡事奉木石的神。
+related_entries:
+- 呼天喚地作見證（ud）
+- 敗壞與滅絕同一字根（sha.chat）
+- 分散在萬民中
+- 住久了原文是睡著了（ya.shen）
+sources:
+- '逐節註解（ccbiblestudy CT）: 申四26〔原文字義〕與文意註解——兩處原文雙同字與滅族的結局（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT04.htm）'
+- '研經註解（BibleHub Study）: Deuteronomy 4:26 — utterly destroyed 的屬靈含義（https://biblehub.com/study/deuteronomy/4.htm）'
+- '原文資料（STEP Bible）: Deuteronomy 4:26 — H6 與 H8045 的不定詞絕對式加限定動詞結構（https://github.com/STEPBible/STEPBible-Data）'

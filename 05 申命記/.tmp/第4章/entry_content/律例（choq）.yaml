@@ -1,0 +1,39 @@
+name: 律例（choq）
+type: 原文
+secondary_types: []
+aliases:
+- 律例
+status: formal
+definition: |-
+  申命記第四章從第1節就把「律例」擺在最前面：「以色列人哪，現在我所教訓你們的律例典章，你們要聽從遵行」。這個詞在本章出現在第1、5、6、8、14、40、45節，是全章的骨架。
+
+  STEP 原文資料顯示，本章的「律例」是 chu.Kim（複數，H2706G），簡要詞典義 statute: decree；第40節與「誡命」並列時仍是同一個字根。
+
+  **三家對這個字的界定。**
+
+  | 來源 | 說法 |
+  |---|---|
+  | CT〔原文字義〕 | 「律例」法規，法令，條例 |
+  | GT《串珠聖經註釋》 | 「律例」：專指一些永久性的列寫出來的行為規範。 |
+  | BH | 「"Statutes" often denote permanent laws, while "ordinances" can refer to specific regulations or judgments.」（「律例」通常指常設的法律，「典章」則可指特定的規範或判決。） |
+
+  三家的共通點都落在同一件事上：律例是常設的、寫定的、不隨情況更動的。CT 在文意註解裡把它與典章配成一組：「『律例』指律法，是神向人的要求；『典章』指審判，是神對人是否遵行律法的判定」。
+
+  **它與十誡的分工。** CT 在第14節說明得最清楚：律例典章與十條誡不同，「十條誡是神親自頒佈的基本原則法令，猶如憲法；律例典章是神通過摩西所頒佈的細則法令」。
+
+  **GT 提醒不要分得太死。** GT《聖經精讀本》指出「聖經混用了律例與典章（王上8:58；詩119:12-16），難以進行嚴謹的區分。故律例與典章當被理解為是相互強調『所有律法與教訓』的重複手法」。
+accumulations:
+- book: 申命記
+  chapter: 4
+  summary: '第1、5、6、8、14、40、45節反覆出現的骨架詞。STEP：chu.Kim（H2706G，choq，簡要詞典義 statute: decree）。CT〔原文字義〕「律例」法規，法令，條例；GT《串珠》：「律例」：專指一些永久性的列寫出來的行為規範；BH：「"Statutes" often denote permanent laws」（「律例」通常指常設的法律）。CT 並指出律例典章是細則法令，十條誡才是「猶如憲法」的基本原則法令。'
+  relation: 本章講的不是新頒律法，而是要新一代把已頒的律例接過去。第1節說聽從遵行才得存活進地，第40節說遵守才得福長久——同一個詞把全章的頭尾扣起來。
+related_entries:
+- 典章
+- 十誡
+- 法度（e.dah）
+- 摩西的第二篇講章
+sources:
+- '逐節註解（ccbiblestudy CT）: 申四1、14〔原文字義〕與文意註解——律例、典章與十條誡的分工（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT04.htm）'
+- '拾穗（ccbiblestudy GT）: 申四1《串珠聖經註釋》「律例」定義；《聖經精讀本》律例與典章難以嚴謹區分（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT04.htm）'
+- '研經註解（BibleHub Study）: Deuteronomy 4:1 — statutes / ordinances 的區別（https://biblehub.com/study/deuteronomy/4.htm）'
+- '原文資料（STEP Bible）: Deuteronomy 4 — chu.Kim（H2706G）本章出現位置與簡要詞典義（https://github.com/STEPBible/STEPBible-Data）'

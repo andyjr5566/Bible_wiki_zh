@@ -1,0 +1,356 @@
+book: 申命記
+chapter: 4
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 第10、15節「你在何烈山站在耶和華─你神面前的那日」「因為耶和華在何烈山、從火中對你們說話的那日」。CT 指出「『何烈山…那日』指站在西乃山腳下迎接神降臨的那日(參出十九17)」；CT〔原文字義〕另給「何烈」沙漠。GT《雷氏研讀本》：「『何烈山』。即西乃山；這事蹟可見於出埃及記第十九章。」GT《串珠》說它是西乃山的別稱，神曾在該處向百姓顯現。
+  relation: 本章兩次提何烈山，功能不同：第10節是回憶那天發生了什麼（招聚百姓、聽見話語、學習敬畏），第15節則把那天的一個細節——沒有看見形像——變成整段偶像禁令的法理根據。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 十誡
+  path: link_folder/神學/十誡.md
+  summary: 第13節「他將所吩咐你們當守的約指示你們，就是十條誡，並將這誡寫在兩塊石版上」。STEP：'a.Se.ret ha./de.va.Rim（H6235＋H1697G，字面「十個話」）。CT 指出十條誡內容詳載於出埃及記第二十章，並在第14節區分兩層：十條誡是神親自頒佈的基本原則法令「猶如憲法」，律例典章則是通過摩西頒佈的細則法令。GT《啟導本》指出第10節的「我的話」不是泛指律法，「而是專指十誡（13節；五22；九10；十2,4）」。
+  relation: 十誡在本章不是被複述（那要到第五章），而是被當成一個歷史事實引用：它是何烈山那天神親口說、親手寫下的東西。摩西用它來證明律例典章有神的權威。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 巴力毘珥
+  path: link_folder/背景/巴力毘珥.md
+  summary: 第3節「耶和華因巴力毘珥的事所行的，你們親眼看見了。凡隨從巴力毘珥的人，耶和華─你們的神都從你們中間除滅了」。CT〔原文字義〕「巴力毗珥」鴻溝之主，並說它指在毗珥山上的巴力，「巴力是迦南地居民所信奉的繁殖之神」。GT《串珠》：「巴力即主人的意思，是迦南人心目中掌五穀生產之神。迦南人敬拜巴力，把淫亂與宗教禮儀混在一起。」GT《雷氏研讀本》：「有二萬四千人在這次災禍中死去。」
+  relation: 本章用這件事作對照組：第3節說隨從巴力毘珥的被除滅，第4節說專靠耶和華的全都存活。這是摩西講聽從遵行才得存活時唯一舉出的實例，而且是聽眾親眼見過的。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 民數記:25
+      - 民數記:31
+- title: 伯毘珥
+  path: link_folder/地點/伯毘珥.md
+  summary: '第46節「在約但河東伯毘珥對面的谷中，在住希實本、亞摩利王西宏之地」。GT《聖經精讀本》：「伯毗珥: 具有『毗珥之家』之意,指建有摩押之神『巴力毘珥』之殿的位於摩押平原的城邑(3:29)。」GT《精讀本》並把它列為第二篇講章的地點。'
+  relation: 伯毘珥在申3:29 是第一篇講章的結語位置，到本章第46節成了第二篇講章的序言位置——同一個地名前後兩次標定摩西講話的所在。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第46節「在住希實本、亞摩利王西宏之地；這西宏是摩西和以色列人出埃及後所擊殺的」。CT〔原文字義〕「希實本」堡壘、「西宏」勇士、「亞摩利」山居者，並指出這一節的西宏事蹟可參民二十一24。
+  relation: 本章的希實本出現在第二篇講章的序言裡，作用是標定地點與來歷：摩西講話的地方，是從希實本王西宏手中奪來的地。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 亞羅珥
+  path: link_folder/地點/亞羅珥.md
+  summary: 第48節「從亞嫩谷邊的亞羅珥，直到西雲山，就是黑門山」。CT〔原文字義〕「亞羅珥」毀滅、「亞嫩」湍急的溪流，並說「『亞羅珥』位於死海中部東方約20公里處，亞嫩河北畔的一座城」；STEP：me./'a.ro.'Er（H6177H），同節「邊」為 se.fat-（H8193I）。
+  relation: 本章第48-49節列的是摩西講話時腳下那片地的四至。亞羅珥是南端的座標，與北端的黑門山成一組。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 黑門山
+  path: link_folder/地點/黑門山.md
+  summary: 第48節「直到西雲山，就是黑門山」。STEP：har si.'On（H7865）與 cher.Mon（H2768），H7865 的簡要詞典義列為 (Mount) Sirion。CT〔原文字義〕「西雲」崇高的、「黑門」聖所，並說「『西雲山』聖經僅在此處出現一次，是黑門山的別名」，黑門山「位於利巴嫩之南，南北蜿蜒約達八十公里山脈中的最高峰，約有三千公尺高，長年積雪，峰頂現仍有巴力廟的遺址」。GT《雷氏研讀本》：「『西雲山』。北部黑門山的迦南名字（比較三9）。」GT《聖經精讀本》則說希伯來人「據其高度(海拔2850米)稱為『西雲』(高處)」。
+  relation: 本章給了黑門山第四個名字。申3:9 已列出西頓人叫西連、亞摩利人叫示尼珥，本章第48節再加一個西雲山——CT 指出這個名字全聖經只出現這一次。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 亞拉巴
+  path: link_folder/地點/亞拉巴.md
+  summary: 第49節「還有約但河東的全亞拉巴，直到亞拉巴海，靠近毘斯迦山根」。CT：「『亞拉巴』指約但河流域從北邊的加利利海到死海南端以迄阿卡巴灣的河谷地帶」，〔原文字義〕另給「亞拉巴」沙漠曠野，乾草原。BH：「The Arabah refers to the desert region stretching from the Sea of Galilee to the Gulf of Aqaba.」（亞拉巴指的是從加利利海延伸到阿卡巴灣的沙漠地帶。）
+  relation: 本章的亞拉巴出現在地界清單的最後一段，與亞拉巴海、毘斯迦山根一起把河東的南段補齊。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 鹽海
+  path: link_folder/地點/鹽海.md
+  summary: 第49節「直到亞拉巴海」。CT：「『亞拉巴海』亦即死海，或稱鹽海(參三17)，海水鹽分極高，生物無法生存，故稱死海。」GT《啟導本》：「亞拉巴海即死海，參一1注。」BH：「The Sea of the Arabah is another name for the Dead Sea, the lowest point on Earth's surface.」（亞拉巴海是死海的另一個名字，是地表最低點。）
+  relation: 本章用的是「亞拉巴海」這個名字，與申3:17 的用法一致——同一片水域，在申命記的地界清單裡固定用這個稱呼。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 瑣腓田與毘斯迦山頂
+  path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+  summary: 第49節「靠近毘斯迦山根」。CT〔原文字義〕「毘斯迦」裂縫、「山根」地基，山坡。BH：「Pisgah is a mountain range in Moab, from which Moses viewed the Promised Land before his death (Deuteronomy 34:1).」（毘斯迦是摩押的一列山，摩西死前從那裡觀看應許之地。）
+  relation: 毘斯迦在本章只以「山根」的形式出現，作為地界的一個座標；但它同時也是本章第21-22節那件事的背景——摩西不能過河，最後正是從這座山看那地。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第21、22、26、41、46、47、49節。第21-22節是摩西不得過的界線，第26節是他們將要過去得為業的地，第41、46、47、49節則反覆用「約但河東」標定位置。CT 在第41節指出「『分定三座城』就是在河東地分設三座逃城(參民三十五14)」。
+  relation: 本章的約但河有兩種用法並存：對摩西是不能過的界線，對百姓是必要過的門檻，對逃城制度則是把六座城切成兩半的分界。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第43、47節「為瑪拿西人分定巴珊的哥蘭」「又得了巴珊王噩的地，就是兩個亞摩利王」。CT〔原文字義〕「巴珊」多結果實的、「噩」長頸的，並指出這兩節的事蹟可參民二十一24，35。BH：「Bashan was known for its rich pastures and strong bulls, as noted in Psalm 22:12.」（巴珊以豐美的牧場和強壯的公牛著稱，詩篇22:12 有記載。）
+  relation: 巴珊在本章有兩個身分：第43節是逃城哥蘭的所在地，第47節是被奪之地的北半。前者是制度安排，後者是戰果清單。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第43節「為迦得人分定基列的拉末」。STEP：ba./gil.'Ad（H1568G）。BH：「Gilead was a fertile region known for its balm, a healing ointment, which is referenced in Jeremiah 8:22.」（基列是一片肥沃的地區，以它的乳香著稱，那是一種療傷的膏，耶利米書8:22 有提到。）
+  relation: 基列在本章只出現一次，作為逃城拉末的所在地——它在河東三座逃城裡居中，對應迦得支派的地界。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 平原（mi.shor）
+  path: link_folder/地點/平原（mi.shor）.md
+  summary: 第43節「為流便人分定曠野平原的比悉」。STEP：ba./mid.Bar（H4057B）＋ha./mi.Shor（H4334，簡要詞典義 plain）——與申3:10 的「平原」是同一個字。
+  relation: 申3:10 的平原是奪來的地，本章第43節的平原是逃城比悉的所在地。同一塊高原，先出現在戰果清單裡，再出現在制度安排裡。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第43節「為流便人分定曠野平原的比悉」。CT 指出「流便人所得地業在河東的最南邊」，並把比悉的細節指向書二十一36。BH：「The location in the wilderness on the plateau indicates a region that was somewhat isolated, providing a natural barrier and protection.」（它位在高原曠野，這個位置說明那是一片相對孤立的區域，本身就構成天然屏障與保護。）
+  relation: 本章的流便只出現一次，而且不是分地，是分逃城。申3 講的是他們拿到哪塊地，本章講的是那塊地上要留一座城給誤殺人的。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 第43節「為迦得人分定基列的拉末」。CT 指出「迦得人所得地業在河東的中部」，並把拉末的細節指向書二十一38。BH：「The Gadites were known as fierce warriors, and their territory was often a site of conflict due to its strategic importance.」（迦得人以驍勇著稱，他們的地界因位置關鍵而常成為衝突之地。）
+  relation: 與流便相同，本章的迦得只在逃城名單裡出現一次。三座城由南到北分屬流便、迦得、瑪拿西，正好對應他們在申3 分到的三段地界。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第43節「為瑪拿西人分定巴珊的哥蘭」。CT 指出「瑪拿西半支派的人所得地業在河東的最北邊」，並把哥蘭的細節指向書二十一27。GT《串珠》：「『哥蘭』：位於加利利海以東廿九公里（十八英里）。」BH 指出瑪拿西人「were descendants of Joseph, and their inheritance was divided between the east and west of the Jordan」（是約瑟的後裔，他們的產業分在約但河東西兩邊）。
+  relation: 本章的瑪拿西指的是留在河東的那半個支派。哥蘭是三座逃城裡最北的一座，落在他們分得的巴珊。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第46、47節「在住希實本、亞摩利王西宏之地」「又得了巴珊王噩的地，就是兩個亞摩利王，在約但河東向日出之地」。CT〔原文字義〕「亞摩利」山居者。BH：「The Amorites were a prominent Canaanite people known for their fortified cities and military prowess.」（亞摩利人是迦南地的重要民族，以堅固的城與軍事實力著稱。）
+  relation: 本章把西宏與噩合稱為「兩個亞摩利王」，出現在第二篇講章的序言裡——這片地的來歷就是這兩場仗。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 逃城
+  path: link_folder/互文/逃城.md
+  summary: 第41-43節摩西在約但河東分定三座城，並在第42節說明適用對象：「使那素無仇恨、無心殺了人的，可以逃到這三城之中的一座城，就得存活」。GT《啟導本》：「逃城共有六座，河東三座，河西三座（十九2～3）。」GT《聖經精讀本》指出逃城「原定要在約但河東與河西各立三座(民35:14)」，並說這是「為了防止進一步流無辜之血的社會仲裁制度」。CT〔話中之光〕：「逃城是恩典的小影，說明了神對人的體貼。」
+  relation: 民35:14 只規定河東河西各三座，本章第41-43節是摩西實際點名河東那三座的地方——比悉、拉末、哥蘭。河西那三座要等進迦南以後才設。
+  overview_review:
+    definition:
+      decision: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 出埃及記:21
+      - 民數記:35
+- title: 謀殺與誤殺的區分
+  path: link_folder/神學/謀殺與誤殺的區分.md
+  summary: 第42節「使那素無仇恨、無心殺了人的」。CT 文意註解：「『素無仇恨、無心殺了人』指非蓄意謀殺，而是因事故誤殺」；〔原文字義〕另拆出兩組雙字：「素(原文雙字)」早先(首字)；前天(次字)；「無心(原文雙字)」缺少，沒有(首字)；知識，理解(次字)。BH：「The distinction between intentional and unintentional killing is crucial in biblical law.」（有意與無意殺人的區分，在聖經律法裡至為關鍵。）
+  relation: 本章不再重述判準的細節，只用「素無仇恨、無心」六個字帶過，重點放在後果——就得存活。這與同章前半講聽從遵行才得存活的語言是同一組。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 摩西不得進入應許之地
+  path: link_folder/事件/摩西不得進入應許之地.md
+  summary: 第21-22節「耶和華又因你們的緣故向我發怒，起誓必不容我過約但河」「我只得死在這地，不能過約但河；但你們必過去得那美地」。CT 指出「『因你們的緣故』表面是因以色列人爭鬧求水喝，實際是因摩西違背神的命令，用杖擊打磐石兩下(參民二十11~13)」。KC 指出這是摩西第三次提到耶和華因他們的緣故向他發怒（申1:37；3:26）。
+  relation: 本章這一段插在偶像禁令中間（v21-24），位置本身有話說：摩西剛講完不可雕刻偶像，隨即用自己的例子說明神不因人的資歷改判——下一節就是「你的神乃是烈火，是忌邪的神」。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第21、22節「也不容我進入耶和華你神所賜你為業的那美地」「但你們必過去得那美地」。CT：「『那美地』指迦南地，又稱流奶與蜜之地，形容物產豐富(參民十三27)。」BH：「The "good land" refers to Canaan, described as a land flowing with milk and honey (Exodus 3:8).」（「美地」指迦南，經上形容它是流奶與蜜之地。）
+  relation: 本章的美地出現在一組對照句裡：摩西死在這地、百姓過去得那地。同一塊地，一個人拿不到，一整代人拿得到。
+  overview_review:
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:1
+      - 申命記:3
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: '第34節「用試驗、神蹟、奇事、爭戰、大能的手，和伸出來的膀臂，並大可畏的事」。STEP：Yad cha.za.Kah（H3027H yad: hand: power＋H2389 cha.zaq: strong）與 ze.Ro.a'' ne.tu.Yah（H2220＋H5186）。GT《串珠》：「『大能的手和伸出來的膀臂』：手和膀臂在申命記常常相提並論（7:19; 11:2; 26:8），代表神的拯救。」CT 指出「爭戰、大能的手，和伸出來的膀臂，並大可畏的事」指過紅海。'
+  relation: 在出埃及記裡這句話是敘事的收束語，在本章它變成論證的證據：摩西用它證明「除他以外，再無別神」。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 忌邪的神
+  path: link_folder/神學/忌邪的神.md
+  summary: 第24節「因為耶和華你的神乃是烈火，是忌邪的神」。STEP：'el ka.Na'（H410G＋H7067H，簡要詞典義 jealous）。CT〔原文字義〕「忌邪」嫉妒，忌恨，並說它「形容神對維護祂獨一、至尊的權利極其熱忱，絲毫不能容忍對立的人事物並存」。GT《雷氏研讀本》：「『忌邪的神』。字詞在此的含義是：一位保持其權利的神。」GT《串珠》：「『忌邪』：可作嫉妒或熱誠解；神常以丈夫和妻子的愛比喻祂和子民的關係，並要求他們絕對忠貞不二（出20:5）。」
+  relation: 本章把忌邪與烈火放在同一句話裡，而且是接在「免得忘記耶和華─你們神與你們所立的約，為自己雕刻偶像」之後——忌邪在這裡是立約關係的排他性，不是情緒。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 烈火
+  path: link_folder/原文/烈火.md
+  summary: '第24節「因為耶和華你的神乃是烈火」。STEP：''esh ''o.khe.Lah（H784 esh: fire＋H398 a.khal: to eat，字面「吞吃的火」）。CT〔原文字義〕「烈」吞噬，燒毀，並說烈火「形容神的聖潔的性情和公義的審判，任何污穢的人事物遲早必被焚毀，不能容忍其長久存立」。GT《啟導本》：「『烈火』象徵神的聖潔與威嚴。以賽亞也用『烈火』描寫神（賽二十九6；三十27,30）。」GT《聖經精讀本》：神彰顯自己的榮耀如烈火(出24:17)，「不僅用火審判人的罪惡,在末後的日子,也將會用火施行審判」。'
+  relation: 出二十四17 說榮耀的形狀好像烈火，本章第24節不再是比喻而是斷言——耶和華你的神乃是烈火。位置也不同：這句話是接在偶像禁令之後說的。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 出埃及記:24
+- title: 亞嫩河
+  path: link_folder/地點/亞嫩河.md
+  summary: '第48節「從亞嫩谷邊的亞羅珥」。STEP：Na.chal ''ar.Non（H5158N na.chal: torrent: valley＋H769）。CT〔原文字義〕「亞嫩」湍急的溪流。BH：「Aroer is a city located on the northern edge of the Arnon Valley, which served as a boundary marker for the territory of the Israelites.」（亞羅珥是位於亞嫩谷北緣的一座城，是以色列人地界的標記。）'
+  relation: 亞嫩谷在本章是地界清單的南端起點，與北端的黑門山相對。它在申2:36 是所得之地的南界，本章第48節重複同一條界線。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 埃及
+  path: link_folder/地點/埃及.md
+  summary: 第20、34、37、45、46節。第20節「耶和華將你們從埃及領出來，脫離鐵爐」，第34節「像耶和華你們的神在埃及，在你們眼前為你們所行的一切事呢」，第37節「用大能親自領你出了埃及」。GT《啟導本》指出摩西「向新一代以色列人多次講述神當日領他們祖先出埃及的歷史，要百姓認識自己的身分早非奴隸，而是自由人，是神特殊的子民」。
+  relation: 本章的埃及不是地點，是證據。三個反問（v32-34）的核心就是：有沒有別的神在埃及做過這種事。答案是沒有，所以「除他以外，再無別神」。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: insufficient_evidence
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第20、37、45、46節。第20節「耶和華將你們從埃及領出來，脫離鐵爐，要特作自己產業的子民」；第37節「因他愛你的列祖，所以揀選他們的後裔，用大能親自領你出了埃及」。KC：「God has redeemed His people, that they may be His own people.」（神救贖了祂的百姓，為要他們成為屬祂自己的子民。）
+  relation: 本章給出埃及安了一個目的句：領出來是為了特作自己產業的子民。第37節再往前推一層，說原因在於神愛列祖。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: 第10節「使他們存活在世的日子，可以學習敬畏我，又可以教訓兒女這樣行」。CT 文意註解：「『學習敬畏』意指由此得到教訓，懂得應當怕神；『教訓兒女』意指帶領自己的兒女，使他們也學會怕神。」CT〔話中之光〕另指出「人的天性是不會敬畏神的，也是不肯敬畏神的，一個肯敬畏神的人，必然是在經歷中遇見神」。BH：「The fear of the LORD is a recurring theme in Scripture, representing reverence, awe, and obedience to God.」（敬畏耶和華是聖經反覆出現的主題，代表敬重、敬畏與順服。）
+  relation: 本章把敬畏放在一個具體場合裡：神招聚百姓、讓他們親耳聽見，目的就是學會敬畏，並且教下一代。敬畏在這裡是可以學、也必須傳的東西。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 密雲
+  path: link_folder/神學/密雲.md
+  summary: 第11節「山上有火焰沖天，並有昏黑、密雲、幽暗」。CT〔原文字義〕「昏黑」黑暗、「幽暗」漆黑，烏黑，並說「『密雲』指濃厚的雲層」。GT《聖經精讀本》解釋為什麼神只能降臨在密雲中：因神「居住在人所不能接近的光中(詩104:2;提前6:16),為了將顯在以色列百姓面前,就只能以密雲來摭掩耀眼的榮耀之光」。
+  relation: 本章的密雲與火焰同時出現，構成一個矛盾的畫面：有光有聲音，卻看不見形狀。這正是第12節「只聽見聲音，卻沒有看見形像」的物理條件。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 神住在幽暗中
+  path: link_folder/神學/神住在幽暗中.md
+  summary: 第11節「並有昏黑、密雲、幽暗」。CT〔原文字義〕「幽暗」漆黑，烏黑，並說「『幽暗』指神所在之處的幽暗(參王上八12)，是一種幽黑深暗」。
+  relation: 會幕的幽暗是人造的（層層遮蓋），何烈山的幽暗是神顯現時自然帶著的。本章第11節把三個詞並列——昏黑、密雲、幽暗，都是為了同一件事：看不見。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 不可為自己雕刻偶像
+  path: link_folder/神學/不可為自己雕刻偶像.md
+  summary: 第16、23、25節。第16-18節列出禁止的形像：男像女像、走獸、飛鳥、爬物、水中的魚；第23節「免得忘記耶和華你們神與你們所立的約，為自己雕刻偶像」。CT〔原文字義〕「雕刻」做，製作，完成，並說雕刻「指包括木刻、石雕、泥塑、各種金屬的鑄造，以及繪畫、刺繡、針織、各種手工等」，偶像「指作為敬拜對象的各種形像，包括人物、生物、無生物等」。GT《啟導本》：「神是個靈（約四24），沒有形像。十誡中的第二誡嚴禁人作形像或雕刻偶像（出二十4）。」
+  relation: 本章給第二誡補了一個理由，是出二十4 沒有寫出來的：因為那一天你們沒有看見形像。禁令在這裡不是規定，是推論。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 立約
+  path: link_folder/主題/立約.md
+  summary: 第13、23、31節。第13節「他將所吩咐你們當守的約指示你們，就是十條誡」；第23節「免得忘記耶和華你們神與你們所立的約」；第31節「也不忘記他起誓與你列祖所立的約」。GT《啟導本》：「『約』指的就是『十誡』，因為前面提到何烈山，是神領十誡的地方。不過，本書有的地方用的『約』字指神與以色列先祖所立的應許之約（七12；八18）。」GT《串珠》：「『約』：可表示有條件的合同，也可指一種關係的建立。」
+  relation: 本章的「約」在三處指的東西不完全一樣：第13節是十條誡本身，第23節是百姓那一邊要記得的責任，第31節是神那一邊不會忘記的承諾。同一個字，兩邊各執一端。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 神的揀選
+  path: link_folder/神學/神的揀選.md
+  summary: 第37節「因他愛你的列祖，所以揀選他們的後裔，用大能親自領你出了埃及」。CT〔原文字義〕「揀選」選擇，挑選，並說「『揀選』表明不在乎人的定意，乃在乎神的憐憫(參羅九11，16)」。GT《啟導本》：「神揀選以色列人非因他們強大，而是因為祂愛他們的祖先。這是本書首次提到神對人的大愛，人因此也應愛神（五10；六5）。」GT《串珠》：「形容神揀選列祖的愛是發乎自然，出於恩典，與被揀選者的好處毫無關係。」
+  relation: 本章把揀選的理由往前推了一代：不是因為這一代人做了什麼，是因為神愛他們的列祖。這句話接在三個反問的結論之後，用來解釋神為什麼要為這個民族做那些事。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 神的憐憫
+  path: link_folder/神學/神的憐憫.md
+  summary: 第31節「耶和華─你神原是有憐憫的神；他總不撇下你，不滅絕你，也不忘記他起誓與你列祖所立的約」。STEP：'el ra.Chum（H410G＋H7349，簡要詞典義 compassionate）。CT：「『憐憫的神』神的心是愛(參約三16；約壹四8，16)，憐憫是愛的俯就、體恤，臨到不夠資格的對象，使其從可憐的情況提升到可愛的程度。」GT《串珠》：「『有憐憫的神』：憐憫是愛和憐恤的流露。在摩西的信念裡，神的公義（25-28）和慈愛是互不衝突的。」
+  relation: 這一節是本章判詞段落的收尾。前面五節講滅盡、分散、事奉木石之神，這一節用三個否定把它們全部框住——不撇下、不滅絕、不忘記約。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 古代近東偶像崇拜
+  path: link_folder/背景/古代近東偶像崇拜.md
+  summary: 第16-19節。GT《串珠》指出第17節「或地上走獸的像，或空中飛鳥的像」「包括埃及人所敬拜的有豺首及鷹首人身的神像」，第19節的「日月」則對應「早在亞伯拉罕的時代，吾珥和哈蘭二城的居民已有月神的敬拜，而埃及亦敬拜日神」。GT《聖經精讀本》另指出第17-18節「摩西考慮到昔日居住在埃及時曾在那地漫延的動物崇拜思想」，而雕刻金牛犢的事件「在很大程度上也是受到埃及崇拜動物思想的影響」。
+  relation: 本章列的不是抽象的禁令清單，是一份實際存在的神像目錄：埃及的獸首人身像、吾珥與哈蘭的月神、埃及的日神。摩西講的是他們親眼看過的東西。
+  overview_review:
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 典章
+  path: link_folder/神學/典章.md
+  summary: '第1、5、8、14、45節與「律例」成對出現。STEP：mish.pa.Tim（H4941G，mish.pat，簡要詞典義 justice: judgement）。CT：「『典章』指審判，是神對人是否遵行律法的判定」。GT《串珠》：「『典章』：與『審判官』一詞有同一字根，指神的判決性行動。」BH：「"Statutes" often denote permanent laws, while "ordinances" can refer to specific regulations or judgments.」（「律例」通常指常設的法律，「典章」則可指特定的規範或判決。）'
+  relation: 本章第8節給典章加了一個形容詞：公義。這是全章唯一一次評價律法本身的品質，而且是拿來與列國比較——哪一大國有這樣公義的律例典章。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第20節「要特作自己產業的子民，像今日一樣」。STEP：le./'Am na.cha.Lah（H5971A＋H5159，簡要詞典義 inheritance）——本節的 na.cha.lah 不是以色列所得的地，而是以色列自己就是神所得的那一份。CT：「『特作自己產業的子民』指神特別揀選以色列人為祂自己的產業(參三十二9)」，並在〔話中之光〕說「神是要我們的基業，我們是祂的產業」。
+  relation: 民數記那六章的 na.cha.lah 講的都是人承受的地，本章第20節反過來——神承受的是人。同一個字，主客易位。
+  overview_review:
+    definition: keep
+    development: keep
+- title: 石版
+  path: link_folder/文化/石版.md
+  summary: '第13節「並將這誡寫在兩塊石版上」。STEP：she.Nei lu.Chot ''a.va.Nim（H8147 two＋H3871 lu.ach: tablet＋H68G e.ven: stone）。CT 指出「『兩塊石版』是神用指頭寫的石版(參出三十四28)」。GT《啟導本》：「『兩塊石版』，參《出埃及記》三十一18注。兩塊石版上所寫的內容相同，立約的雙方各執一塊。兩塊石版都存放在神的約櫃中，因為以色列人的聖所也是神的居所。」'
+  relation: 出24 是神應許要給石版，出31 說明是神用指頭寫的，本章第13節補上這份文件的形式：兩塊內容相同，立約雙方各執一塊。
+  overview_review:
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 出埃及記:24
+      - 出埃及記:31

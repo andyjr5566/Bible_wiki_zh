@@ -1,0 +1,477 @@
+book: 申命記
+chapter: 4
+A_use_directly: []
+B_needs_update:
+- name: 何烈山
+  suggested_type: 地點
+  evidence: 第10、15節「你在何烈山站在耶和華你神面前的那日」；CT：何烈山那日指站在西乃山腳下迎接神降臨的那日。
+  match_type: exact
+  existing_title: 何烈山
+  existing_path: link_folder/地點/何烈山.md
+- name: 十誡
+  suggested_type: 神學
+  evidence: 第13節「就是十條誡，並將這誡寫在兩塊石版上」；STEP：'a.Se.ret ha./de.va.Rim（H6235＋H1697G，字面「十個話」）。
+  surfaces:
+  - phrase: 十條誡
+  match_type: exact
+  existing_title: 十誡
+  existing_path: link_folder/神學/十誡.md
+- name: 巴力毘珥
+  suggested_type: 背景
+  evidence: 第3節「耶和華因巴力毘珥的事所行的，你們親眼看見了」；GT：巴力即主人，是迦南人心目中掌五穀生產之神。
+  match_type: exact
+  existing_title: 巴力毘珥
+  existing_path: link_folder/背景/巴力毘珥.md
+- name: 伯毘珥
+  suggested_type: 地點
+  evidence: 第46節「在約但河東伯毘珥對面的谷中」；GT《精讀本》：伯毗珥具有毗珥之家之意。
+  match_type: exact
+  existing_title: 伯毘珥
+  existing_path: link_folder/地點/伯毘珥.md
+- name: 希實本
+  suggested_type: 地點
+  evidence: 第46節「在住希實本、亞摩利王西宏之地」。
+  match_type: exact
+  existing_title: 希實本
+  existing_path: link_folder/地點/希實本.md
+- name: 亞羅珥
+  suggested_type: 地點
+  evidence: 第48節「從亞嫩谷邊的亞羅珥」；STEP：me./'a.ro.'Er（H6177H）。
+  match_type: exact
+  existing_title: 亞羅珥
+  existing_path: link_folder/地點/亞羅珥.md
+- name: 黑門山
+  suggested_type: 地點
+  evidence: 第48節「直到西雲山，就是黑門山」；STEP：har si.'On（H7865）與 cher.Mon（H2768）；CT：西雲山聖經僅在此處出現一次，是黑門山的別名。
+  surfaces:
+  - phrase: 西雲山
+  match_type: exact
+  existing_title: 黑門山
+  existing_path: link_folder/地點/黑門山.md
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: 第49節「還有約但河東的全亞拉巴」。
+  match_type: exact
+  existing_title: 亞拉巴
+  existing_path: link_folder/地點/亞拉巴.md
+- name: 鹽海
+  suggested_type: 地點
+  evidence: 第49節「直到亞拉巴海」；CT：亞拉巴海亦即死海，或稱鹽海。
+  surfaces:
+  - phrase: 亞拉巴海
+  match_type: exact
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 瑣腓田與毘斯迦山頂
+  suggested_type: 地點
+  evidence: 第49節「靠近毘斯迦山根」；CT：『山根』地基，山坡。
+  surfaces:
+  - phrase: 毘斯迦山根
+  match_type: exact
+  existing_title: 瑣腓田與毘斯迦山頂
+  existing_path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第21、22、26、41、46、47、49節；本章前半是不得過的界線，後半是逃城與地界的座標。
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 巴珊
+  suggested_type: 地點
+  evidence: 第43節「為瑪拿西人分定巴珊的哥蘭」；第47節「又得了巴珊王噩的地」。
+  match_type: exact
+  existing_title: 巴珊
+  existing_path: link_folder/地點/巴珊.md
+- name: 基列
+  suggested_type: 地點
+  evidence: 第43節「為迦得人分定基列的拉末」；STEP：ba./gil.'Ad（H1568G）。
+  match_type: exact
+  existing_title: 基列
+  existing_path: link_folder/地點/基列.md
+- name: 平原（mi.shor）
+  suggested_type: 地點
+  evidence: 第43節「曠野平原的比悉」；STEP：ha./mi.Shor（H4334，簡要詞典義 plain）。
+  surfaces:
+  - phrase: 曠野平原
+  match_type: exact
+  existing_title: 平原（mi.shor）
+  existing_path: link_folder/地點/平原（mi.shor）.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 第43節「為流便人分定曠野平原的比悉」；CT：流便人所得地業在河東的最南邊。
+  surfaces:
+  - phrase: 流便人
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 迦得（萬幸）
+  suggested_type: 人物
+  evidence: 第43節「為迦得人分定基列的拉末」；CT：迦得人所得地業在河東的中部。
+  surfaces:
+  - phrase: 迦得人
+  match_type: exact
+  existing_title: 迦得（萬幸）
+  existing_path: link_folder/人物/迦得（萬幸）.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第43節「為瑪拿西人分定巴珊的哥蘭」；CT：瑪拿西半支派的人所得地業在河東的最北邊。
+  surfaces:
+  - phrase: 瑪拿西人
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第46、47節「亞摩利王西宏之地」「就是兩個亞摩利王」；CT〔原文字義〕「亞摩利」山居者。
+  surfaces:
+  - phrase: 亞摩利王
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 逃城
+  suggested_type: 互文
+  evidence: 第41-43節摩西在河東分定三座城；GT：逃城共有六座，河東三座，河西三座。
+  surfaces:
+  - phrase: 這三城
+  match_type: exact
+  existing_title: 逃城
+  existing_path: link_folder/互文/逃城.md
+- name: 謀殺與誤殺的區分
+  suggested_type: 神學
+  evidence: 第42節「使那素無仇恨、無心殺了人的」；CT：指非蓄意謀殺，而是因事故誤殺。
+  surfaces:
+  - phrase: 無心殺了人
+  match_type: exact
+  existing_title: 謀殺與誤殺的區分
+  existing_path: link_folder/神學/謀殺與誤殺的區分.md
+- name: 摩西不得進入應許之地
+  suggested_type: 事件
+  evidence: 第21-22節「起誓必不容我過約但河」「我只得死在這地」。
+  surfaces:
+  - phrase: 不容我過約但河
+  match_type: exact
+  existing_title: 摩西不得進入應許之地
+  existing_path: link_folder/事件/摩西不得進入應許之地.md
+- name: 美地
+  suggested_type: 主題
+  evidence: 第21、22節「也不容我進入耶和華你神所賜你為業的那美地」。
+  match_type: exact
+  existing_title: 美地
+  existing_path: link_folder/主題/美地.md
+- name: 大能的手
+  suggested_type: 神學
+  evidence: 第34節「用試驗、神蹟、奇事、爭戰、大能的手，和伸出來的膀臂」；STEP：Yad cha.za.Kah（H3027H＋H2389）。
+  match_type: exact
+  existing_title: 大能的手
+  existing_path: link_folder/神學/大能的手.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: 第24節「是忌邪的神」；STEP：'el ka.Na'（H410G＋H7067H，簡要詞典義 jealous）。
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 烈火
+  suggested_type: 原文
+  evidence: 第24節「耶和華你的神乃是烈火」；STEP：'esh 'o.khe.Lah（H784＋H398，字面「吞吃的火」）。
+  match_type: exact
+  existing_title: 烈火
+  existing_path: link_folder/原文/烈火.md
+- name: 亞嫩河
+  suggested_type: 地點
+  evidence: 第48節「從亞嫩谷邊的亞羅珥」；STEP：Na.chal 'ar.Non（H5158N＋H769）。
+  surfaces:
+  - phrase: 亞嫩谷
+  match_type: exact
+  existing_title: 亞嫩河
+  existing_path: link_folder/地點/亞嫩河.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 第20、34、37、45、46節；本章把出埃及當作認識獨一真神的證據。
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: 第20節「耶和華將你們從埃及領出來，脫離鐵爐」；第37節「用大能親自領你出了埃及」。
+  surfaces:
+  - phrase: 從埃及領出來
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 第10節「可以學習敬畏我，又可以教訓兒女這樣行」。
+  surfaces:
+  - phrase: 學習敬畏我
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 密雲
+  suggested_type: 神學
+  evidence: 第11節「山上有火焰沖天，並有昏黑、密雲、幽暗」。
+  match_type: exact
+  existing_title: 密雲
+  existing_path: link_folder/神學/密雲.md
+- name: 神住在幽暗中
+  suggested_type: 神學
+  evidence: 第11節「並有昏黑、密雲、幽暗」；CT：『幽暗』指神所在之處的幽暗。
+  surfaces:
+  - phrase: 幽暗
+  match_type: exact
+  existing_title: 神住在幽暗中
+  existing_path: link_folder/神學/神住在幽暗中.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: 第16、23、25節「雕刻偶像」；GT：十誡中的第二誡嚴禁人作形像或雕刻偶像。
+  surfaces:
+  - phrase: 雕刻偶像
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 立約
+  suggested_type: 主題
+  evidence: 第13、23、31節「他將所吩咐你們當守的約指示你們」「不忘記他起誓與你列祖所立的約」。
+  surfaces:
+  - phrase: 所立的約
+  match_type: exact
+  existing_title: 立約
+  existing_path: link_folder/主題/立約.md
+- name: 神的揀選
+  suggested_type: 神學
+  evidence: 第37節「因他愛你的列祖，所以揀選他們的後裔」；CT：『揀選』表明不在乎人的定意，乃在乎神的憐憫。
+  surfaces:
+  - phrase: 揀選他們的後裔
+  match_type: exact
+  existing_title: 神的揀選
+  existing_path: link_folder/神學/神的揀選.md
+- name: 神的憐憫
+  suggested_type: 神學
+  evidence: 第31節「耶和華你神原是有憐憫的神」；STEP：'el ra.Chum（H410G＋H7349，簡要詞典義 compassionate）。
+  surfaces:
+  - phrase: 有憐憫的神
+  match_type: exact
+  existing_title: 神的憐憫
+  existing_path: link_folder/神學/神的憐憫.md
+- name: 古代近東偶像崇拜
+  suggested_type: 背景
+  evidence: 第16-19節男像女像、走獸飛鳥爬物魚、日月星；GT：埃及人所敬拜的有豺首及鷹首人身的神像。
+  surfaces:
+  - phrase: 走獸的像
+  match_type: exact
+  existing_title: 古代近東偶像崇拜
+  existing_path: link_folder/背景/古代近東偶像崇拜.md
+- name: 典章
+  suggested_type: 神學
+  evidence: '第1、5、8、14、45節與「律例」成對出現；STEP：mish.pa.Tim（H4941G，mish.pat，簡要詞典義 justice:
+    judgement）；GT《串珠》：「典章」：與「審判官」一詞有同一字根，指神的判決性行動。'
+  surfaces:
+  - phrase: 典章
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第20節「要特作自己產業的子民，像今日一樣」；STEP：le./'Am na.cha.Lah（H5971A＋H5159，簡要詞典義 inheritance）——同一個字在本節指的是神的產業就是這群人。
+  surfaces:
+  - phrase: 產業的子民
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 石版
+  suggested_type: 文化
+  evidence: 第13節「並將這誡寫在兩塊石版上」；STEP：she.Nei lu.Chot 'a.va.Nim（H8147＋H3871 lu.ach tablet＋H68G
+    e.ven stone）。
+  surfaces:
+  - phrase: 石版
+  match_type: exact
+  existing_title: 石版
+  existing_path: link_folder/文化/石版.md
+C_new_formal:
+- name: 律例（choq）
+  suggested_type: 原文
+  evidence: '第1、5、6、8、14、40、45節反覆出現；STEP：chu.Kim（H2706G，choq，簡要詞典義 statute: decree）；GT《串珠》：「律例」：專指一些永久性的列寫出來的行為規範。'
+  surfaces:
+  - phrase: 律例
+  target_path: link_folder/原文/律例（choq）.md
+- name: 不可加添也不可刪減（ya.saph、ga.ra）
+  suggested_type: 原文
+  evidence: 第2節「所吩咐你們的話，你們不可加添，也不可刪減」；STEP：to.Si.fu（H3254H）與 tig.re.'U（H1639）。
+  surfaces:
+  - phrase: 不可加添
+  target_path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+- name: 專靠（da.veq）
+  suggested_type: 原文
+  evidence: 第4節「惟有你們專靠耶和華你們神的人」；STEP：ha./de.ve.Kim（H1695，da.veq，簡要詞典義 cleaving）；CT〔原文字義〕「專靠」貼近，貼著的。
+  surfaces:
+  - phrase: 專靠
+  target_path: link_folder/原文/專靠（da.veq）.md
+- name: 智慧與聰明（chokh.mah、bi.nah）
+  suggested_type: 原文
+  evidence: 第6節「這就是你們在萬民眼前的智慧、聰明」；STEP：cha.khe.mat（H2451）與 Vi.nat（H998）。
+  surfaces:
+  - phrase: 智慧、聰明
+  target_path: link_folder/原文/智慧與聰明（chokh.mah、bi.nah）.md
+- name: 神與我們相近（qa.rov）
+  suggested_type: 神學
+  evidence: 第7節「哪一大國的人有神與他們相近」；STEP：ke.ro.Vim（H7138，qa.rov，簡要詞典義 near）。
+  surfaces:
+  - phrase: 與他們相近
+  target_path: link_folder/神學/神與我們相近（qa.rov）.md
+  semantic_hint:
+  - title: 親近
+    score: 0.43
+    type: 原文
+- name: 只聽見聲音卻沒有看見形像（te.mu.nah）
+  suggested_type: 神學
+  evidence: 第12、15、16、23、25節；STEP：te.Mu.nat（H8544，te.mu.nah，簡要詞典義 likeness）。
+  surfaces:
+  - phrase: 沒有看見形像
+  target_path: link_folder/神學/只聽見聲音卻沒有看見形像（te.mu.nah）.md
+- name: 天上的萬象（tze.va）
+  suggested_type: 背景
+  evidence: 第19節「見耶和華你的神為天下萬民所擺列的日月星，就是天上的萬象」；STEP：tze.Va'（H6635A，tsa.va，簡要詞典義 army）。
+  surfaces:
+  - phrase: 天上的萬象
+  target_path: link_folder/背景/天上的萬象（tze.va）.md
+- name: 鐵爐（kur、bar.zel）
+  suggested_type: 原文
+  evidence: 第20節「耶和華將你們從埃及領出來，脫離鐵爐」；STEP：mi./Kur（H3564，kur，簡要詞典義 furnace）＋ha./bar.Zel（H1270）。
+  surfaces:
+  - phrase: 鐵爐
+  target_path: link_folder/原文/鐵爐（kur、bar.zel）.md
+- name: 住久了原文是睡著了（ya.shen）
+  suggested_type: 原文
+  evidence: 第25節「你們在那地住久了」；CT〔原文字義〕「住久」睡著；STEP：ve./no.shan.Tem（H3462，ya.shen，簡要詞典義
+    to sleep）。
+  surfaces:
+  - phrase: 住久了
+  target_path: link_folder/原文/住久了原文是睡著了（ya.shen）.md
+- name: 呼天喚地作見證（ud）
+  suggested_type: 主題
+  evidence: 第26節「我今日呼天喚地向你們作見證」；STEP：ha.'i.do.Ti（H5749B，ud，簡要詞典義 to testify）。
+  surfaces:
+  - phrase: 呼天喚地
+  target_path: link_folder/主題/呼天喚地作見證（ud）.md
+- name: 滅盡與除滅的雙同字（sha.mad）
+  suggested_type: 原文
+  evidence: 第26節；CT〔原文字義〕「滅盡(原文雙同字)」「盡行除滅(原文雙同字)」；STEP：hi.sha.Med ti.sha.me.Du/n（皆
+    H8045）。
+  surfaces:
+  - phrase: 盡行除滅
+  target_path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+- name: 分散在萬民中
+  suggested_type: 歷史
+  evidence: 第27節「耶和華必使你們分散在萬民中」；GT《精讀本》：北以色列於 B.C.722 被亞述所毀，南猶大則於 B.C.586 被巴比倫所滅並擄去。
+  surfaces:
+  - phrase: 分散在萬民中
+  target_path: link_folder/歷史/分散在萬民中.md
+- name: 不能看不能聽不能吃不能聞的神
+  suggested_type: 主題
+  evidence: 第28節「就是用木石造成、不能看、不能聽、不能吃、不能聞的神」。
+  surfaces:
+  - phrase: 不能看、不能聽、不能吃、不能聞
+  target_path: link_folder/主題/不能看不能聽不能吃不能聞的神.md
+- name: 盡心盡性尋求（ba.qash、da.rash）
+  suggested_type: 原文
+  evidence: 第29節「你盡心盡性尋求他的時候，就必尋見」；STEP：vi.kash.Tem（H1245）、tid.re.She./nu（H1875）、le.va.ve./Kha（H3824）、naf.She./kha（H5315G）。
+  surfaces:
+  - phrase: 盡心盡性尋求
+  target_path: link_folder/原文/盡心盡性尋求（ba.qash、da.rash）.md
+- name: 敗壞與滅絕同一字根（sha.chat）
+  suggested_type: 原文
+  evidence: 第25節「敗壞自己」與第31節「不滅絕你」；STEP：hish.cha.Tem 與 yash.chi.Te./kha 都是 H7843。
+  surfaces:
+  - phrase: 不滅絕你
+  target_path: link_folder/原文/敗壞與滅絕同一字根（sha.chat）.md
+  semantic_hint:
+  - title: 敗壞與毀滅的文字呼應
+    score: 0.44
+    type: 原文
+- name: 除他以外再無別神
+  suggested_type: 神學
+  evidence: 第35、39節「惟有耶和華他是神，除他以外，再無別神」。
+  surfaces:
+  - phrase: 除他以外，再無別神
+  target_path: link_folder/神學/除他以外再無別神.md
+  semantic_hint:
+  - title: 除了我以外你不可有別的神
+    score: 0.541
+    type: 神學
+  - title: 除了我以外
+    score: 0.459
+    type: 原文
+  - title: 出20：3
+    score: 0.423
+    type: 互文
+- name: 曾有何民聽見神在火中說話還能存活
+  suggested_type: 主題
+  evidence: 第32-33節「曾有何民聽見神在火中說話的聲音，像你聽見還能存活呢？」
+  surfaces:
+  - phrase: 還能存活
+  target_path: link_folder/主題/曾有何民聽見神在火中說話還能存活.md
+  semantic_hint:
+  - title: 神在火中降臨
+    score: 0.427
+    type: 神學
+  - title: 燃燒卻不燒毀的荊棘
+    score: 0.425
+    type: 神學
+- name: 神何曾從別的國中將一國的人民領出來
+  suggested_type: 神學
+  evidence: 第34節；STEP：ma.Sot（H4531B 試驗）、'o.Tot（H226G 神蹟）、mof.Tim（H4159 奇事）、mil.cha.Mah（H4421
+    爭戰）、mo.ra.'Im（H4172A 大可畏的事）。
+  surfaces:
+  - phrase: 將一國的人民領出來
+  target_path: link_folder/神學/神何曾從別的國中將一國的人民領出來.md
+- name: 摩西分定河東三座逃城（ba.dal）
+  suggested_type: 事件
+  evidence: 第41節「那時，摩西在約但河東，向日出之地，分定三座城」；STEP：yav.Dil（H914，ba.dal，簡要詞典義 to separate）。
+  surfaces:
+  - phrase: 分定三座城
+  target_path: link_folder/事件/摩西分定河東三座逃城（ba.dal）.md
+  semantic_hint:
+  - title: 逃城
+    score: 0.488
+    type: 互文
+  - title: 河東城邑的位置考據
+    score: 0.44
+    type: 背景
+  - title: 書20：1-9
+    score: 0.405
+    type: 互文
+- name: 比悉
+  suggested_type: 地點
+  evidence: 第43節「為流便人分定曠野平原的比悉」；STEP：Be.tzer（H1221G）；CT〔原文字義〕「比悉」金礦，遠方的營寨。
+  target_path: link_folder/地點/比悉.md
+- name: 拉末
+  suggested_type: 地點
+  evidence: 第43節「為迦得人分定基列的拉末」；STEP：ra.Mot（H7216H）；CT〔原文字義〕「拉末」高度。
+  target_path: link_folder/地點/拉末.md
+- name: 哥蘭
+  suggested_type: 地點
+  evidence: 第43節「為瑪拿西人分定巴珊的哥蘭」；STEP：go.Lan（H1474）；GT：哥蘭位於加利利海以東廿九公里。
+  target_path: link_folder/地點/哥蘭.md
+- name: 法度（e.dah）
+  suggested_type: 原文
+  evidence: 第45節「所傳給他們的法度、律例、典章」；STEP：ha./'e.Dot（H5713B，e.dah，簡要詞典義 testimony）；CT：『法度』指律法的證詞。
+  surfaces:
+  - phrase: 法度
+  target_path: link_folder/原文/法度（e.dah）.md
+- name: 摩西的第二篇講章
+  suggested_type: 背景
+  evidence: 第44-49節；GT《精讀本》：本文是第二講章的序論部分，講述第二篇講章的時機與歷史背景。
+  surfaces:
+  - phrase: 摩西在以色列人面前所陳明的律法
+  target_path: link_folder/背景/摩西的第二篇講章.md
+  semantic_hint:
+  - title: 摩西鑿石版（第二次法版）
+    score: 0.499
+    type: 事件
+  - title: 摩西
+    score: 0.458
+    type: 人物
+  - title: 摩西為百姓代求（金牛犢）
+    score: 0.451
+    type: 互文
+D_new_candidate: []
+E_skip: []
