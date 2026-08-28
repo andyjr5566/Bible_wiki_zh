@@ -316,7 +316,11 @@ class UpdateTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "不能填 single_chapter_only"):
                     link_updates.preview_updates(manifest)
 
-            data["updates"][0]["overview_review"]["development"]["basis"] = "already_covered"
+            data["updates"][0]["overview_review"]["development"] = {
+                "decision": "keep",
+                "basis": "already_covered",
+                "covered_by": "已有跨章發展",
+            }
             manifest.write_text(
                 yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
             )
@@ -326,6 +330,85 @@ class UpdateTests(unittest.TestCase):
                 ["cross_chapter_language"],
                 preview["operations"][0]["overview_review"]["challenges"]["development"],
             )
+
+    def test_intra_chapter_restatement_is_not_a_cross_chapter_signal(self):
+        """章內「第16節重述一次」不是跨章訊號，不該逼出受控 basis。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            data["updates"][0]["relation"] = "第12節先給界線，第16節重述一次。"
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+            self.assertEqual(
+                [],
+                preview["operations"][0]["overview_review"]["challenges"]["development"],
+            )
+
+    def test_already_covered_needs_a_verbatim_anchor_from_the_section(self):
+        """already_covered 必須舉得出該區塊的逐字內容，否則不成立。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(
+                root, development="長子名分在創35章斷送，創49 再次宣告。"
+            )
+            data = self._fill_keep_review(manifest)
+            data["updates"][0]["relation"] = "本章補上跨卷的對照。"
+            for verdict, pattern in (
+                ({"decision": "keep", "basis": "already_covered"}, "必須加 covered_by"),
+                (
+                    {
+                        "decision": "keep",
+                        "basis": "already_covered",
+                        "covered_by": "河東分地的安排",
+                    },
+                    "找不到逐字對應",
+                ),
+            ):
+                data["updates"][0]["overview_review"]["development"] = verdict
+                manifest.write_text(
+                    yaml.safe_dump(data, allow_unicode=True, sort_keys=False),
+                    encoding="utf-8",
+                )
+                with patch.object(link_updates, "ROOT", root):
+                    with self.assertRaisesRegex(ValueError, pattern):
+                        link_updates.preview_updates(manifest)
+
+            data["updates"][0]["overview_review"]["development"] = {
+                "decision": "keep",
+                "basis": "already_covered",
+                "covered_by": "長子名分在創35章斷送",
+            }
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                preview = link_updates.preview_updates(manifest)
+            review = preview["operations"][0]["overview_review"]["development"]
+            self.assertEqual("already_covered", review["basis"])
+            self.assertEqual("長子名分在創35章斷送", review["covered_by"])
+
+    def test_prepare_writes_the_compact_review_evidence_file(self):
+        """證據檔給定義全文與主題發展段落索引，取代逐一開條目。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(
+                root, development="第一段講長子名分。\n\n第二段講河東分地的安排。"
+            )
+            evidence = manifest.parent / link_updates.REVIEW_EVIDENCE_FILENAME
+            self.assertTrue(evidence.is_file())
+            text = evidence.read_text(encoding="utf-8")
+            self.assertIn("穩定身分與辨識邊界。", text)
+            self.assertIn("已累積 1 章：創世記1", text)
+            self.assertIn("第一段講長子名分。", text)
+            self.assertIn("第二段講河東分地的安排。", text)
+            self.assertIn("段落索引", text)
+            with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
+                with self.assertRaises(FileExistsError):
+                    link_updates.prepare("創世記", 8)
 
     def test_schema_v2_rejects_reason_output(self):
         with tempfile.TemporaryDirectory() as tmp:

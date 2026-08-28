@@ -48,6 +48,15 @@ REVIEW_GUIDANCE_V1 = {
     ),
 }
 REVIEW_GUIDANCE = {
+    "review_input": (
+        "判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、"
+        "主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。"
+        "再把本章 summary／relation 與既有內容一起判斷。"
+    ),
+    "review_evidence": (
+        "review_evidence.md 由 prepare 產生，是本章審查的證據檔；"
+        "它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。"
+    ),
     "definition": (
         "定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或"
         "澄清條目的穩定身分時更新，不得寫成本章事件摘要。"
@@ -68,7 +77,8 @@ REVIEW_GUIDANCE = {
     "keep_basis": (
         "definition 可用 no_identity_change／already_covered／insufficient_evidence；"
         "development 可用 already_covered／single_chapter_only／insufficient_evidence。"
-        "沒有 challenge 時直接填 keep。"
+        "沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by："
+        "從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。"
     ),
     "signals": (
         "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；"
@@ -90,9 +100,14 @@ _DEFINITION_CUE_RE = re.compile(
     r"(?:又稱|亦稱|別名|身分(?:為|是)|指的是|專指|泛指|辨識方式|範圍(?:是|為)|定義為|邊界)"
 )
 _CROSS_CHAPTER_CUE_RE = re.compile(
-    r"(?:既有累積|先前累積|本來只從|本章補上|第二次敘述|再次敘述|重述|"
+    r"(?:既有累積|先前累積|本來只從|本章補上|"
     r"跨章|跨卷|整卷(?:書|本書)|全書層級|形成.{0,12}(?:對照|推進|轉折))"
 )
+
+
+def _squeeze(text):
+    """Collapse all whitespace so a quoted anchor survives re-wrapping."""
+    return "".join(str(text).split())
 
 
 def _section_body(text, heading):
@@ -144,6 +159,77 @@ def _review_baseline_entry(update, text, review=None):
     return entry
 
 
+REVIEW_EVIDENCE_FILENAME = "review_evidence.md"
+_PARAGRAPH_SPLIT_RE = re.compile(r"\n\s*\n")
+
+
+def _opening_sentence(text, limit=64):
+    """Return a paragraph's opening clause, cut at the first full stop if it is close."""
+    flat = " ".join(str(text).split())
+    match = re.search(r"[。！？]", flat)
+    if match and match.end() <= limit:
+        return flat[: match.end()]
+    return flat[:limit] + ("⋯" if len(flat) > limit else "")
+
+
+def _section_outline(body):
+    """Index one section as (heading-or-opening, character count) per paragraph."""
+    outline = []
+    for para in _PARAGRAPH_SPLIT_RE.split(str(body).strip()):
+        chunk = para.strip()
+        if not chunk:
+            continue
+        if chunk.startswith("#"):
+            outline.append(("### " + chunk.lstrip("# ").strip(), 0))
+            continue
+        outline.append((_opening_sentence(chunk), len(_squeeze(chunk))))
+    return outline
+
+
+def _accumulated_labels(text):
+    return [f"{book}{chapter}" for book, chapter in _ACCUM_META_RE.findall(text)]
+
+
+def review_evidence_markdown(book, chapter, entries):
+    """Render the compact review evidence: full definitions, development outlines."""
+    lines = [
+        f"# B 類累積審查證據：{book} 第{chapter}章",
+        "",
+        "判 overview_review 前讀這一份，不必逐一開啟每個目標條目。",
+        "「定義」給全文——definition 的 keep／update 就靠它判。",
+        "「主題發展」只給段落索引（每段開頭與字數）：夠判斷有沒有涵蓋某個主題，",
+        "不夠寫綜合。要填 already_covered 必須開條目原檔逐字節錄 covered_by。",
+        "",
+    ]
+    for entry in entries:
+        signals = "、".join(entry["signals"]) or "無"
+        lines.append(f"## {entry['title']}")
+        lines.append(f"- path：{entry['path']}")
+        lines.append(f"- signals：{signals}")
+        labels = entry["accumulated"]
+        lines.append(
+            "- 已累積 {} 章：{}".format(len(labels), "、".join(labels) or "（無）")
+        )
+        definition = entry["definition"].strip()
+        lines.append("")
+        if definition:
+            lines.append(f"### 定義（{len(_squeeze(definition))} 字，全文）")
+            lines.append(definition)
+        else:
+            lines.append("### 定義：空白")
+        lines.append("")
+        outline = _section_outline(entry["development"])
+        if outline:
+            total = len(_squeeze(entry["development"]))
+            lines.append(f"### 主題發展（{len(outline)} 段／{total} 字，段落索引）")
+            for text, size in outline:
+                lines.append(f"- {text}" + (f"　〔{size} 字〕" if size else ""))
+        else:
+            lines.append("### 主題發展：空白")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def plan_updates(book, chapter):
     base = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章"
     plan_yaml = base / "link_plan.yaml"
@@ -183,24 +269,62 @@ def plan_updates(book, chapter):
     }
 
 
+def write_review_evidence(book, chapter):
+    """(Re)generate the review evidence file from the manifest's current targets."""
+    chapter_dir = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章"
+    manifest = chapter_dir / "link_updates.yaml"
+    if manifest.exists():
+        data = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
+        updates = data.get("updates") or []
+    else:
+        updates = plan_updates(book, chapter)["updates"]
+    rows = []
+    for update in updates:
+        text = _entry_path(ROOT, update["path"]).read_text(encoding="utf-8")
+        signals, _, _ = _review_signals(text, book, int(chapter))
+        rows.append({
+            "title": str(update.get("title", "")),
+            "path": str(update.get("path", "")),
+            "signals": signals,
+            "accumulated": _accumulated_labels(text),
+            "definition": _section_body(text, "定義"),
+            "development": _section_body(text, "主題發展"),
+        })
+    path = chapter_dir / REVIEW_EVIDENCE_FILENAME
+    path.write_text(review_evidence_markdown(book, int(chapter), rows), encoding="utf-8")
+    return path, len(rows)
+
+
 def prepare(book, chapter):
     console.utf8_stdio()
     chapter_dir = book_directory(ROOT, book) / ".tmp" / f"第{chapter}章"
     output = chapter_dir / "link_updates.yaml"
     baseline_path = chapter_dir / REVIEW_BASELINE_FILENAME
-    existing = [path for path in (output, baseline_path) if path.exists()]
+    evidence_guard = chapter_dir / REVIEW_EVIDENCE_FILENAME
+    existing = [
+        path for path in (output, baseline_path, evidence_guard) if path.exists()
+    ]
     if existing:
         raise FileExistsError(
             f"{existing[0]} 已存在；避免覆蓋人工內容或審查基線"
         )
     data = plan_updates(book, chapter)
     baselines = []
+    evidence_rows = []
     for update in data["updates"]:
         path = _entry_path(ROOT, update["path"])
         text = path.read_text(encoding="utf-8")
         review = _review_payload(text, book, int(chapter))
         update["overview_review"] = review
         baselines.append(_review_baseline_entry(update, text, review))
+        evidence_rows.append({
+            "title": str(update.get("title", "")),
+            "path": str(update.get("path", "")),
+            "signals": list(review.get("signals") or []),
+            "accumulated": _accumulated_labels(text),
+            "definition": _section_body(text, "定義"),
+            "development": _section_body(text, "主題發展"),
+        })
     data = {
         "book": data["book"],
         "chapter": data["chapter"],
@@ -221,7 +345,13 @@ def prepare(book, chapter):
     output.write_text(
         yaml.safe_dump(data, allow_unicode=True, sort_keys=False, default_style='"'), encoding="utf-8"
     )
+    evidence_path = chapter_dir / REVIEW_EVIDENCE_FILENAME
+    evidence_path.write_text(
+        review_evidence_markdown(book, int(chapter), evidence_rows), encoding="utf-8"
+    )
     print(f"✅ 已建立更新骨架：{output}（{len(data['updates'])} 條）")
+    print(f"📖 先讀審查證據檔：{evidence_path}")
+    print("   它給定義全文、主題發展段落索引與已累積章清單；索引不足以判定時再開條目原檔。")
     print(
         "⚠️ 套用前必須逐條填 overview_review：definition／development 各自選 "
         "keep 或 update；keep 合法，不得把逐章 summary／relation 換句話說"
@@ -387,6 +517,7 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
         decision = verdict.strip().lower()
         basis = ""
         raw_scope = None
+        covered_by = ""
     elif isinstance(verdict, dict):
         if str(verdict.get("reason", "")).strip():
             raise ValueError(
@@ -396,6 +527,7 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
         decision = str(verdict.get("decision", "")).strip().lower()
         basis = str(verdict.get("basis", "")).strip().lower()
         raw_scope = verdict.get("synthesis_scope")
+        covered_by = str(verdict.get("covered_by", "")).strip()
     else:
         raise ValueError(
             f"{title} 的 overview_review.{key} 必須是 keep/update，"
@@ -413,7 +545,9 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
     if decision == "update":
         if basis:
             raise ValueError(f"{title} 的 {heading} 已選 update，不需要 basis")
-        return decision, "", raw_scope
+        if covered_by:
+            raise ValueError(f"{title} 的 {heading} 已選 update，不需要 covered_by")
+        return decision, "", raw_scope, ""
     if challenges and not basis:
         raise ValueError(
             f"{title} 的 {heading} 有程式 challenge（{', '.join(challenges)}）；"
@@ -421,8 +555,23 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
         )
     if not challenges and basis:
         raise ValueError(f"{title} 的 {heading} 沒有 challenge，直接填 keep 即可，不需要 basis")
-    if basis == "already_covered" and not before.strip():
-        raise ValueError(f"{title} 的 {heading} 目前空白，basis 不能填 already_covered")
+    if basis == "already_covered":
+        if not before.strip():
+            raise ValueError(f"{title} 的 {heading} 目前空白，basis 不能填 already_covered")
+        if not covered_by:
+            raise ValueError(
+                f"{title} 的 {heading} 填 already_covered 時必須加 covered_by："
+                "從該區塊現有內容逐字節錄一句（程式會比對）；引不出來就不是 already_covered"
+            )
+        if _squeeze(covered_by) not in _squeeze(before):
+            raise ValueError(
+                f"{title} 的 {heading} covered_by 在該區塊找不到逐字對應；"
+                "already_covered 不成立，請改判 update 或其他 basis"
+            )
+    elif covered_by:
+        raise ValueError(
+            f"{title} 的 {heading} 只有 basis=already_covered 才填 covered_by"
+        )
     if key == "development" and basis == "single_chapter_only" and "cross_chapter_language" in challenges:
         raise ValueError(
             f"{title} 的 relation/summary 已出現跨章綜合訊號，"
@@ -431,7 +580,7 @@ def _v2_verdict(verdict, title, key, heading, challenges, before):
         )
     if raw_scope not in (None, []):
         raise ValueError(f"{title} 的主題發展選 keep，不需要 synthesis_scope")
-    return decision, basis, raw_scope
+    return decision, basis, raw_scope, covered_by
 
 
 def _section_diff(before, after, heading):
@@ -488,9 +637,10 @@ def _validate_overview_review(
                     "是否形成跨章發展，不能只填『不用』"
                 )
             basis = ""
+            covered_by = ""
             raw_scope = verdict.get("synthesis_scope")
         else:
-            decision, basis, raw_scope = _v2_verdict(
+            decision, basis, raw_scope, covered_by = _v2_verdict(
                 verdict, title, key, heading, challenges[key], before
             )
         after = _section_body(current_text, heading)
@@ -539,6 +689,8 @@ def _validate_overview_review(
             item["reason"] = reason
         elif basis:
             item["basis"] = basis
+            if covered_by:
+                item["covered_by"] = covered_by
         if key == "development" and decision == "update":
             item["synthesis_scope"] = _validated_synthesis_scope(
                 raw_scope, book, chapter
@@ -789,6 +941,11 @@ def main():
     prepare_parser = sub.add_parser("prepare")
     prepare_parser.add_argument("book")
     prepare_parser.add_argument("chapter")
+    evidence_parser = sub.add_parser(
+        "evidence", help="重生審查證據檔（條目被改過或舊章補產生時使用）"
+    )
+    evidence_parser.add_argument("book")
+    evidence_parser.add_argument("chapter")
     apply_parser = sub.add_parser("apply")
     apply_parser.add_argument(
         "target", nargs="+",
@@ -799,6 +956,11 @@ def main():
     try:
         if args.command == "prepare":
             prepare(args.book, args.chapter)
+        elif args.command == "evidence":
+            path, count = write_review_evidence(
+                canonical_book_name(args.book), int(args.chapter)
+            )
+            print(f"✅ 審查證據檔已寫入：{path}（{count} 條）")
         else:
             # 與 prepare 同形式的「書名 章」是主要用法；manifest 路徑保留相容
             if len(args.target) == 2 and args.target[1].isdigit():

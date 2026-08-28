@@ -125,7 +125,12 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    ```text
    python util/link_updates.py prepare 【書名】 X
    ```
-   回到經文與有效 raw text 填 `link_updates.yaml` 的 `summary`／`relation`，並逐條完成
+   prepare 會同時產生 `review_evidence.md`：逐條給出目標條目的**定義全文**、
+   **主題發展段落索引**（每段開頭與字數）與**已累積章清單**。判 `overview_review`
+   前先讀這一份，不要逐一開啟每個條目——它約是全部條目原文的兩成，而且正好是判斷
+   要用的那兩成。段落索引不足以判定、或要引用逐字內容時，再開該條目原檔。
+   （條目被改過或舊章要補產生：`python util/link_updates.py evidence 【書名】 X`。）
+   再回到經文與有效 raw text 填 `summary`／`relation`，並逐條完成
    `overview_review`。三個區塊的功能絕對不同：
    - **定義**：回答「這是誰／什麼、如何辨識、範圍與邊界是什麼」；只在本章資料改變或澄清穩定身分時更新，不寫本章事件摘要。
    - **主題發展**：綜合至少兩個章節（可跨卷），說明推進、轉折、對照或整體意義；不是逐章累積的加長版。
@@ -137,6 +142,10 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    若 preview 依空白區塊、累積數或 `summary`／`relation` 的跨章語句提出 `challenge`，仍選
    `keep` 時才填一個受控 `basis`（如 `already_covered`、`single_chapter_only`、
    `insufficient_evidence`）。`update` 由實際正式區塊 diff 證明。
+   **`already_covered` 必須同時給 `covered_by`**：從該區塊現有內容逐字節錄一句，程式會
+   比對；引不出來就不是 `already_covered`，該改判 `update` 或換一個 basis。
+   注意 `single_chapter_only` 的意思是「本章素材形不成跨章綜合」——若該條目自己的
+   累積清單裡已經有別章在講同一件事，這個 basis 就是假的。
    `development=update` 必須在 `synthesis_scope` 列出
    本章與至少另一章，並先修改條目的 `## 主題發展`。**絕對不可把本章的
    `summary`／`relation` 換句話說後貼進定義或主題發展，也不可用「民35」這類單章小標題

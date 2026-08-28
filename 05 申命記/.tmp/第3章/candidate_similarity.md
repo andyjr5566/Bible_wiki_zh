@@ -4,7 +4,7 @@ book: 申命記
 chapter: 3
 candidate_sha256: a01e42baeb1e55864f2062c582d8e963b24097b641b66439ea1bca4ce2a48330
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: de872456f3e54db4
+embedding_index_fingerprint: 53fe45478bf047dd
 link_index_sha256: a2031773ed74b5e80e7988d593383d34532e0e45f172de7d4f87bc4001473fa4
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
@@ -449,7 +449,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 流便 | 0.575 | link_folder/人物/流便.md |
+| 1 | 流便 | 0.588 | link_folder/人物/流便.md |
 | 2 | 兩支派半求河東之地為業 | 0.554 | link_folder/事件/兩支派半求河東之地為業.md |
 | 3 | 迦得（萬幸） | 0.523 | link_folder/人物/迦得（萬幸）.md |
 | 4 | 亞捫人 | 0.493 | link_folder/人物/亞捫人.md |
@@ -529,7 +529,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 瑪拿西 | 0.551 | link_folder/人物/瑪拿西.md |
+| 1 | 瑪拿西 | 0.549 | link_folder/人物/瑪拿西.md |
 | 2 | 瑪吉 | 0.544 | link_folder/人物/瑪吉.md |
 | 3 | 睚珥 | 0.503 | link_folder/人物/睚珥.md |
 | 4 | 瑪拿西支派人數大增 | 0.492 | link_folder/主題/瑪拿西支派人數大增.md |
@@ -551,7 +551,7 @@ query:
 |---|---|---:|---|
 | 1 | 瑪拿西半支派為何留在河東 | 0.810 | link_folder/解經爭議/瑪拿西半支派為何留在河東.md |
 | 2 | 瑪吉 | 0.642 | link_folder/人物/瑪吉.md |
-| 3 | 瑪拿西 | 0.596 | link_folder/人物/瑪拿西.md |
+| 3 | 瑪拿西 | 0.604 | link_folder/人物/瑪拿西.md |
 | 4 | 河東之地是神的旨意還是神的允許 | 0.577 | link_folder/解經爭議/河東之地是神的旨意還是神的允許.md |
 | 5 | 兩支派半求河東之地為業 | 0.564 | link_folder/事件/兩支派半求河東之地為業.md |
 
@@ -570,7 +570,7 @@ query:
 |---|---|---:|---|
 | 1 | 睚珥 | 0.774 | link_folder/人物/睚珥.md |
 | 2 | 瑪吉 | 0.603 | link_folder/人物/瑪吉.md |
-| 3 | 瑪拿西 | 0.581 | link_folder/人物/瑪拿西.md |
+| 3 | 瑪拿西 | 0.568 | link_folder/人物/瑪拿西.md |
 | 4 | 摩押 | 0.562 | link_folder/人物/摩押.md |
 | 5 | 猶大支派 | 0.547 | link_folder/人物/猶大支派.md |
 
@@ -627,7 +627,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 瑪吉 | 0.797 | link_folder/人物/瑪吉.md |
-| 2 | 瑪拿西 | 0.579 | link_folder/人物/瑪拿西.md |
+| 2 | 瑪拿西 | 0.561 | link_folder/人物/瑪拿西.md |
 | 3 | 睚珥 | 0.493 | link_folder/人物/睚珥.md |
 | 4 | 瑪拿西半支派為何留在河東 | 0.482 | link_folder/解經爭議/瑪拿西半支派為何留在河東.md |
 | 5 | 收納以法蓮與瑪拿西 | 0.479 | link_folder/歷史/收納以法蓮與瑪拿西.md |
@@ -647,7 +647,7 @@ query:
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
 | 1 | 雅博渡口 | 0.784 | link_folder/地點/雅博渡口.md |
-| 2 | 約但河 | 0.602 | link_folder/地點/約但河.md |
+| 2 | 約但河 | 0.585 | link_folder/地點/約但河.md |
 | 3 | 雅博渡口經歷 (創32) | 0.549 | link_folder/互文/雅博渡口經歷 (創32).md |
 | 4 | 摔跤 | 0.534 | link_folder/原文/摔跤.md |
 | 5 | 「伯拉大河」名稱 | 0.520 | link_folder/原文/「伯拉大河」名稱.md |
@@ -1002,7 +1002,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 約但河 | 0.607 | link_folder/地點/約但河.md |
+| 1 | 約但河 | 0.609 | link_folder/地點/約但河.md |
 | 2 | 過去與發怒同一字根（a.var） | 0.545 | link_folder/原文/過去與發怒同一字根（a.var）.md |
 | 3 | 以色列人經過還是繞過以東境界 | 0.510 | link_folder/解經爭議/以色列人經過還是繞過以東境界.md |
 | 4 | 雅博渡口 | 0.496 | link_folder/地點/雅博渡口.md |

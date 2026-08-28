@@ -3,12 +3,13 @@ chapter: 3
 review_schema_version: 2
 review_baseline: link_update_review_baseline.yaml
 review_guidance:
-  review_input: 判斷前先完整讀取每筆 path 指向的正式條目，核對其中的定義、全部按書卷累積與主題發展；再把本章 summary／relation 與既有內容一起判斷。
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
   definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
   development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
   accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
   decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
-  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence。沒有 challenge 時直接填 keep。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。
   signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
 updates:
 - title: 巴珊
@@ -138,8 +139,11 @@ updates:
   overview_review:
     definition: keep
     development:
-      decision: keep
-      basis: already_covered
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 民數記:32
+      - 民數記:34
 - title: 迦得（萬幸）
   path: link_folder/人物/迦得（萬幸）.md
   summary: 第12、16節「流便人和迦得人」。CT 原文字義：「迦得」軍隊，財富。GT《聖經精讀本》：「將從亞嫩谷邊的亞羅珥起到雅博江之鄉的南部地區賜給流便與迦得支派,將從雅博江到基列山地與巴珊地的北部地方分給了瑪拿西半個支派(書13:8-31)。」CT 另註亞捫人的京城拉巴「後來劃歸迦得支派(參書十三25)」。
@@ -174,8 +178,11 @@ updates:
   overview_review:
     definition: keep
     development:
-      decision: keep
-      basis: already_covered
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 民數記:32
+      - 民數記:34
 - title: 瑪拿西半支派為何留在河東
   path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
   summary: 第13節「其餘的基列地和巴珊全地，就是噩王的國，我給了瑪拿西半支派」。CT 說明是哪些家族：「瑪吉族和基列族留在約但河東岸」；GT《聖經精讀本》把整個分地方案講完：「將從雅博江到基列山地與巴珊地的北部地方分給了瑪拿西半個支派(書13:8-31)。」
@@ -288,6 +295,7 @@ updates:
     development:
       decision: keep
       basis: already_covered
+      covered_by: 摩西死前將領導以色列人進迦南地的責任交給了約書亞
 - title: 耶和華的爭戰
   path: link_folder/神學/耶和華的爭戰.md
   summary: '第22節「你不要怕他們，因那為你爭戰的是耶和華你的神」。CT 原文字義：「爭戰」戰鬥，作戰；CT：「意指爭戰是神的事，只管放心交託給祂。」GT《聖經精讀本》：「那為你爭戰的是耶和華你的神: 摩西的這一席話對將要與強大的迦南人打一場大戰的新領袖約書亞而言是最有力的激勵。因為約書亞在聽此番話時,心中必想起在與西宏和噩的爭戰中,在紅海海岸為了以色列的緣故親自與法老的軍隊爭戰的那位神(出14:13-31),在利非訂和亞摩利人相爭時使以色列得以告白“耶和華尼西”的那位神(出17:8-16)。」STEP 顯示「爭戰」是 ha./nil.Cham（H3898A，la.cham，簡要詞典義 to fight），Niphal 分詞。'
@@ -320,8 +328,11 @@ updates:
   overview_review:
     definition: keep
     development:
-      decision: keep
-      basis: already_covered
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 民數記:32
+      - 民數記:34
 - title: 美地
   path: link_folder/主題/美地.md
   summary: 第25節「求你容我過去，看約但河那邊的美地，就是那佳美的山地和利巴嫩」。CT 原文字義：「美」好的，令人愉悅的；「佳美的」(原文和「美」同字)。STEP 證實兩處都是 H2896A（ha./to.Vah 與 ha./Tov）。KC：「He spoke with great admiration about the inheritance that the LORD has prepared for His people and called it "the fair land" and "that good hill country". He fully appreciates the land of God.」（他滿懷讚嘆地講論耶和華為祂百姓所預備的產業，稱它為「美地」與「那佳美的山地」。他完全懂得神那塊地的好。）BH：「The "good land" refers to the land of Canaan, which God promised to the descendants of Abraham, Isaac, and Jacob.」（「美地」指的是迦南地，神應許給亞伯拉罕、以撒、雅各後裔的那塊地。）
