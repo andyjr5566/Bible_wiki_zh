@@ -402,13 +402,33 @@ class UpdateTests(unittest.TestCase):
             self.assertTrue(evidence.is_file())
             text = evidence.read_text(encoding="utf-8")
             self.assertIn("穩定身分與辨識邊界。", text)
-            self.assertIn("已累積 1 章：創世記1", text)
+            self.assertIn("累積 1 章：創世記1", text)
             self.assertIn("第一段講長子名分。", text)
             self.assertIn("第二段講河東分地的安排。", text)
             self.assertIn("段落索引", text)
             with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
                 with self.assertRaises(FileExistsError):
                     link_updates.prepare("創世記", 8)
+
+    def test_long_definitions_ship_as_an_index_not_full_text(self):
+        """證據檔會隨累積變肥，長定義改給主張索引；短定義仍給全文。"""
+        head = "他是本章的主角，出現在第一節。"
+        paras = [
+            "**%s。** %s" % (label, "說明內容。" * 40)
+            for label in ("他在哪裡", "他做了什麼", "為什麼重要")
+        ]
+        body = ("%s\n\n" % head) + "\n\n".join(paras)
+        header, out = link_updates._definition_evidence(body)
+        self.assertIn("索引", header)
+        self.assertEqual(head, out[0])
+        self.assertTrue(all(line.startswith("- ") for line in out[1:]))
+        self.assertIn("他做了什麼。", out[2])
+        self.assertNotIn("說明內容。", "".join(out))
+        self.assertLess(len("".join(out)), len(body) // 4)
+
+        short_header, short_out = link_updates._definition_evidence("短定義內容。")
+        self.assertIn("全文", short_header)
+        self.assertEqual(["短定義內容。"], short_out)
 
     def test_schema_v2_rejects_reason_output(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -125,10 +125,12 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    ```text
    python util/link_updates.py prepare 【書名】 X
    ```
-   prepare 會同時產生 `review_evidence.md`：逐條給出目標條目的**定義全文**、
-   **主題發展段落索引**（每段開頭與字數）與**已累積章清單**。判 `overview_review`
-   前先讀這一份，不要逐一開啟每個條目——它約是全部條目原文的兩成，而且正好是判斷
-   要用的那兩成。段落索引不足以判定、或要引用逐字內容時，再開該條目原檔。
+   prepare 會同時產生 `review_evidence.md`：逐條給出目標條目的**定義**（400 字以內
+   全文，較長的給主張索引：首段全文＋其餘段落的粗體導語）、**主題發展段落索引**
+   （每段標題或開頭＋字數）與**已累積章清單**。判 `overview_review` 前先讀這一份，
+   不要逐一開啟每個條目——申3 實測是全部條目原文的 15%（12.5 萬字元 → 1.85 萬），
+   而且正好是判斷要用的那一部分。**索引是分流用的：只要判斷不是單純 keep，就開條目
+   原檔再確認**；要引用逐字內容（尤其 `covered_by`）一律開檔。
    （條目被改過或舊章要補產生：`python util/link_updates.py evidence 【書名】 X`。）
    再回到經文與有效 raw text 填 `summary`／`relation`，並逐條完成
    `overview_review`。三個區塊的功能絕對不同：

@@ -160,12 +160,18 @@ def _review_baseline_entry(update, text, review=None):
 
 
 REVIEW_EVIDENCE_FILENAME = "review_evidence.md"
+# 短定義直接給全文；長定義改給索引，需要逐字內容時開條目原檔。
+EVIDENCE_DEFINITION_FULL_LIMIT = 400
+_BOLD_LEAD_RE = re.compile(r"^\*\*(.+?)\*\*")
 _PARAGRAPH_SPLIT_RE = re.compile(r"\n\s*\n")
 
 
 def _opening_sentence(text, limit=64):
-    """Return a paragraph's opening clause, cut at the first full stop if it is close."""
+    """Return a paragraph label: its bold lead-in if it has one, else its opening clause."""
     flat = " ".join(str(text).split())
+    lead = _BOLD_LEAD_RE.match(flat)
+    if lead and len(lead.group(1)) <= limit:
+        return lead.group(1)
     match = re.search(r"[。！？]", flat)
     if match and match.end() <= limit:
         return flat[: match.end()]
@@ -190,33 +196,51 @@ def _accumulated_labels(text):
     return [f"{book}{chapter}" for book, chapter in _ACCUM_META_RE.findall(text)]
 
 
+def _definition_evidence(body):
+    """Short definitions ship whole; long ones ship as an index of their claims."""
+    text = body.strip()
+    if not text:
+        return "### 定義：空白", []
+    size = len(_squeeze(text))
+    if size <= EVIDENCE_DEFINITION_FULL_LIMIT:
+        return f"### 定義（{size} 字，全文）", [text]
+    paragraphs = [c.strip() for c in _PARAGRAPH_SPLIT_RE.split(text) if c.strip()]
+    lines = [paragraphs[0]] if paragraphs else []
+    for chunk in paragraphs[1:]:
+        if chunk.startswith("#") or chunk.startswith("|"):
+            continue
+        lines.append(f"- {_opening_sentence(chunk)}　〔{len(_squeeze(chunk))} 字〕")
+    header = f"### 定義（{size} 字，索引；要逐字內容請開條目原檔）"
+    return header, lines
+
+
 def review_evidence_markdown(book, chapter, entries):
-    """Render the compact review evidence: full definitions, development outlines."""
+    """Render the compact review evidence: definition claims, development outlines."""
     lines = [
         f"# B 類累積審查證據：{book} 第{chapter}章",
         "",
         "判 overview_review 前讀這一份，不必逐一開啟每個目標條目。",
-        "「定義」給全文——definition 的 keep／update 就靠它判。",
-        "「主題發展」只給段落索引（每段開頭與字數）：夠判斷有沒有涵蓋某個主題，",
-        "不夠寫綜合。要填 already_covered 必須開條目原檔逐字節錄 covered_by。",
+        f"定義 {EVIDENCE_DEFINITION_FULL_LIMIT} 字以內給全文，較長的給主張索引"
+        "（首段全文＋其餘段落的粗體導語或開頭）；主題發展一律給段落索引。",
+        "索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認。",
+        "填 already_covered 一定要開檔逐字節錄 covered_by。",
         "",
     ]
     for entry in entries:
-        signals = "、".join(entry["signals"]) or "無"
-        lines.append(f"## {entry['title']}")
-        lines.append(f"- path：{entry['path']}")
-        lines.append(f"- signals：{signals}")
         labels = entry["accumulated"]
+        lines.append(f"## {entry['title']}")
         lines.append(
-            "- 已累積 {} 章：{}".format(len(labels), "、".join(labels) or "（無）")
+            "`{}`　signals：{}　累積 {} 章：{}".format(
+                entry["path"],
+                "、".join(entry["signals"]) or "無",
+                len(labels),
+                "、".join(labels) or "（無）",
+            )
         )
-        definition = entry["definition"].strip()
         lines.append("")
-        if definition:
-            lines.append(f"### 定義（{len(_squeeze(definition))} 字，全文）")
-            lines.append(definition)
-        else:
-            lines.append("### 定義：空白")
+        header, body = _definition_evidence(entry["definition"])
+        lines.append(header)
+        lines.extend(body)
         lines.append("")
         outline = _section_outline(entry["development"])
         if outline:
