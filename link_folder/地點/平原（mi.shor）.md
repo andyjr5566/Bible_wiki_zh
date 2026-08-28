@@ -14,7 +14,7 @@ source_scope: collected_only
 
 **原文。** STEP 顯示是 ha./mi.Shor（H4334），簡要詞典義 plain，本節 context gloss 作 the plain。CT 原文字義給的是：「平原」平地。
 
-**它在哪裡。** CT：「『平原的各城』指米底巴平原上諸城(參書十三16)。」GT《啟導本》從南北兩端界定：「“平原的各城”北起基列，南到亞嫩河。」BH 用的是它的原文名稱：「The "plateau" refers to the region known as the Mishor, a highland area east of the Jordan River. This area was known for its fertile land and strategic location.」（這裡的「高原」指的是一塊叫做 Mishor 的地區，位於約但河東的高地，以土地肥沃、位置險要著稱。）
+**它在哪裡。** CT：「『平原的各城』指米底巴平原上諸城(參書十三16)」GT《啟導本》從南北兩端界定：「“平原的各城”北起基列，南到亞嫩河。」BH 用的是它的原文名稱：「The "plateau" refers to the region known as the Mishor, a highland area east of the Jordan River. This area was known for its fertile land and strategic location.」（這裡的「高原」指的是一塊叫做 Mishor 的地區，位於約但河東的高地，以土地肥沃、位置險要著稱。）
 
 **它歸誰。** BH：「In biblical times, it was part of the territory given to the tribes of Reuben and Gad. The plateau's cities were significant for their agricultural productivity and served as a buffer zone against eastern invaders.」（在聖經時代它屬於分給流便與迦得兩支派的地；高原上的城因農產豐富而重要，也是抵擋東方入侵者的緩衝地帶。）這與第12、16節把亞嫩谷以北的地給流便人和迦得人相合。
 

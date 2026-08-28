@@ -446,12 +446,19 @@ def _load_review_baselines(manifest, data, book, chapter):
         )
     expected_guidance = REVIEW_GUIDANCE_V1 if version == 1 else REVIEW_GUIDANCE
     guidance = data.get("review_guidance")
-    if not isinstance(guidance, dict) or any(
-        guidance.get(key) != value for key, value in expected_guidance.items()
-    ):
+    # 比對「角色有沒有被刪掉」，不比對逐字措辭。
+    #
+    # 原本是逐字相等，於是每次調整 REVIEW_GUIDANCE 的用語，全部既有 manifest 都會
+    # 一起變成「被改寫」——而 prepare 拒絕覆寫既有 manifest，等於逼人手動去補那段
+    # 文字。今天加 standing_debt 說明就讓申3 整章的檢查掛掉。護的是三個區塊的定位
+    # 不可被移除，那用 key 是否齊備、值是否為非空字串就驗得住。
+    missing = [key for key in expected_guidance
+               if not isinstance((guidance or {}).get(key), str)
+               or not str((guidance or {}).get(key)).strip()]
+    if not isinstance(guidance, dict) or missing:
         raise ValueError(
-            "review_guidance 缺漏或被改寫；定義、主題發展、逐章累積的定位不可移除，"
-            "請重新 prepare"
+            f"review_guidance 缺漏（{'、'.join(missing) or '不是物件'}）；"
+            "定義、主題發展、逐章累積的定位不可移除，請重新 prepare"
         )
     raw_name = data.get("review_baseline")
     if not isinstance(raw_name, str) or Path(raw_name).name != raw_name:
@@ -674,6 +681,7 @@ def _validate_overview_review(
         raise ValueError(
             f"{title} 缺少 overview_review；請分別判斷定義與主題發展，keep 合法但不可略過"
         )
+    already_applied = f"<!-- accumulation:{book}:{chapter}:start -->" in current_text
     if review_schema_version == 1:
         challenges = {"definition": [], "development": []}
         result = {
@@ -714,15 +722,22 @@ def _validate_overview_review(
             )
         after = _section_body(current_text, heading)
         changed = before != after
-        if decision == "update" and not changed:
-            raise ValueError(
-                f"{title} 的 {heading} 選了 update，但條目中的「## {heading}」沒有改變"
-            )
-        if decision == "keep" and changed:
-            raise ValueError(
-                f"{title} 的 {heading} 選了 keep，但條目中的「## {heading}」已被修改；"
-                "請把 decision 改為 update，或還原該區塊"
-            )
+        # 只在本章尚未套用時比對「決定 vs 區塊實際變動」。
+        #
+        # 套用之後，同一個條目會被後面的章節與勘誤合法改動，基線比對就不再是良定義的
+        # 檢查——申4 修了平原（mi.shor）定義裡一處引號飄移，申3／申4 的舊 manifest 立刻
+        # 一起報「選了 keep 但區塊已被修改」。章節進行中（marker 還不在）仍然全驗，
+        # 那時這道比對正是用來擋「說 keep 卻改了區塊」「說 update 卻沒動」。
+        if not already_applied:
+            if decision == "update" and not changed:
+                raise ValueError(
+                    f"{title} 的 {heading} 選了 update，但條目中的「## {heading}」沒有改變"
+                )
+            if decision == "keep" and changed:
+                raise ValueError(
+                    f"{title} 的 {heading} 選了 keep，但條目中的「## {heading}」已被修改；"
+                    "請把 decision 改為 update，或還原該區塊"
+                )
         added = _added_section_text(before, after) if changed else ""
         if decision == "update" and (
             _ACCUM_META_RE.search(added)

@@ -496,6 +496,60 @@ class UpdateTests(unittest.TestCase):
         self.assertEqual("創世記 12,13 ／ 出埃及記 1 ／ 申命記 4",
                          link_updates._format_accumulated(text))
 
+    def test_applied_manifest_is_not_relitigated_when_a_later_edit_lands(self):
+        """套用之後，同一個條目會被後面的章節與勘誤合法改動，基線比對不再是良定義的檢查。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, entry_path = self._prepare_review_fixture(root)
+            self._fill_keep_review(manifest)
+            with patch.object(link_updates, "ROOT", root):
+                link_updates.apply_updates(manifest, reporter=None)
+
+            text = entry_path.read_text(encoding="utf-8")
+            entry_path.write_text(text.replace("已有跨章發展", "已有跨章發展（後續章節補寫）"),
+                                  encoding="utf-8")
+            with patch.object(link_updates, "ROOT", root):
+                self.assertEqual(0, link_updates.apply_updates(manifest, dry_run=True,
+                                                               reporter=None))
+
+    def test_unapplied_manifest_still_rejects_keep_when_the_section_changed(self):
+        """章節進行中仍然全驗：說 keep 卻改了區塊要被擋下。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, entry_path = self._prepare_review_fixture(root)
+            self._fill_keep_review(manifest)
+            text = entry_path.read_text(encoding="utf-8")
+            entry_path.write_text(text.replace("已有跨章發展", "改寫過的跨章發展"),
+                                  encoding="utf-8")
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "選了 keep，但條目中的"):
+                    link_updates.preview_updates(manifest)
+
+    def test_guidance_wording_may_change_without_breaking_existing_manifests(self):
+        """驗的是三個區塊的定位有沒有被刪掉，不是逐字措辭。
+
+        原本逐字相等，於是每次調整 REVIEW_GUIDANCE 的用語，全部既有 manifest 都會
+        變成「被改寫」，而 prepare 拒絕覆寫既有檔——等於逼人手動補那段文字。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest, _entry_path = self._prepare_review_fixture(root)
+            data = self._fill_keep_review(manifest)
+            data["review_guidance"]["development"] += "（措辭調整）"
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                link_updates.preview_updates(manifest)
+
+            data["review_guidance"].pop("development")
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "review_guidance 缺漏"):
+                    link_updates.preview_updates(manifest)
+
     def test_long_definitions_ship_as_an_index_not_full_text(self):
         """證據檔會隨累積變肥，長定義改給主張索引；短定義仍給全文。"""
         head = "他是本章的主角，出現在第一節。"

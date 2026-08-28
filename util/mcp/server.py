@@ -1054,6 +1054,33 @@ def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Di
 
 
 @mcp.tool()
+def check_quote_fidelity(book: str, chapter: int, references: bool = False) -> Dict[str, Any]:
+    """Verify that every bracketed quote in this chapter's own output is verbatim.
+
+    The structural gates check that files exist, links resolve and formats are
+    legal; none of them checks whether the sentence inside the quote marks
+    actually came from a source. This one compares each 「」／『』 quote in the
+    chapter's entry payloads, chapter payload, B-class summary/relation and the
+    rendered ``本章整理`` against this chapter's OK commentary plus the whole
+    book's scripture — scripture from earlier chapters is normal to quote,
+    adjacent-chapter *commentary* is exactly the contamination to catch.
+    Quote marks, whitespace and full/half width are normalised away; an excerpt
+    written with ⋯ is checked fragment by fragment. Reporting is a strong signal
+    (truncation with an invented full stop, a Chinese rendering of an English
+    quote presented as verbatim, two non-adjacent sentences joined); not
+    reporting does not prove the content is faithful. Read-only.
+    """
+    try:
+        canonical, _directory, _tmp = _chapter_context(book, chapter)
+        args = [canonical, str(chapter)] + (["--references"] if references else [])
+        result = _run_util_command("check_quote_fidelity.py", *args, timeout=120)
+        result.update({"book": canonical, "chapter": chapter, "references": references})
+        return result
+    except (TypeError, ValueError, OSError) as exc:
+        return _error(str(exc))
+
+
+@mcp.tool()
 def check_accumulation_orphans(book: Optional[str] = None, scan_all: bool = False) -> Dict[str, Any]:
     """Find entries that declare an ``accumulation:book:chapter`` block the chapter never links back to.
 

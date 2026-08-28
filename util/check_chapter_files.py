@@ -29,6 +29,7 @@ try:
     from .model_client import select_endpoint
     from . import source_excerpts
     from . import check_source_read
+    from . import check_quote_fidelity
     from . import link_updates
 except ImportError:
     from book_paths import book_directory, canonical_book_name
@@ -43,6 +44,7 @@ except ImportError:
     from model_client import select_endpoint
     import source_excerpts
     import check_source_read
+    import check_quote_fidelity
     import link_updates
 
 from collections import Counter
@@ -215,6 +217,10 @@ def _embedding_index_synced(root):
     return True, ""
 
 
+class _AlreadyApplied(Exception):
+    """內部訊號：本章 B 類累積已套用，審查判斷轉為歷史紀錄。"""
+
+
 def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness（11 因子 Fail-Closed 驗證）。
 
@@ -247,9 +253,24 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if meta.get("candidate_sha256") != cur_cand_sha:
         return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py", ""
 
-    cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
-    if cur_link_sha == "missing" or meta.get("link_index_sha256") != cur_link_sha:
-        return False, "既有條目索引 link_index.json 缺失或已變更，需重跑 semantic_lookup.py", ""
+    # 索引類因子只在「裁決尚未被消化」時才綁定。
+    #
+    # 這份報告的用途是在寫 payload 以前裁決「候選該連既有條目還是新建」。M3/M6 手寫
+    # 完成之後，那個裁決已經被寫進 payload，而報告本身變成當時的紀錄；此後條目庫每
+    # 長一點（本章 render 出的新條目、下一章新增的條目）都會讓指紋變動，逼出一次沒有
+    # 任何判斷可做的重跑——申4 一章重跑四次，申3 完工後再檢查也照樣卡住。
+    #
+    # 更糟的是 render 之後重跑會讓本章 C 類候選對到自己而變成高可信，報告的診斷值歸零
+    # （全庫 127 份報告回溯：3929 個候選只有 14 個真的送過重排）。所以這裡不是放寬，
+    # 是把索引綁定放回它真正有意義的時點：payload 寫出來以前。
+    adjudication_consumed = (
+        (tmp / "chapter_content.yaml").is_file()
+        and any((tmp / "entry_content").glob("*.yaml"))
+    )
+    if not adjudication_consumed:
+        cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
+        if cur_link_sha == "missing" or meta.get("link_index_sha256") != cur_link_sha:
+            return False, "既有條目索引 link_index.json 缺失或已變更，需重跑 semantic_lookup.py", ""
 
     cur_homo_sha = _file_sha256(root / "_config" / "link_homonyms.yaml")
     if cur_homo_sha == "missing" or meta.get("homonyms_sha256") != cur_homo_sha:
@@ -283,7 +304,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     cur_fp = compute_index_fingerprint(cur_embed_meta)
     if cur_fp == "legacy_stale":
         return False, "embedding 索引為 legacy schema，需執行 build_embedding_index.py --rebuild", ""
-    if meta.get("embedding_index_fingerprint") != cur_fp:
+    if not adjudication_consumed and meta.get("embedding_index_fingerprint") != cur_fp:
         return False, "embedding 向量索引指紋已變更，需重跑 semantic_lookup.py", ""
 
     # 檢查 Embedding 模型設定一致性（Fail-closed）
@@ -298,7 +319,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
 
     # 檢查 Embedding 索引是否與條目庫即時同步（防範跨章新詞未入索引漏查）
     embedding_synced, sync_reason = _embedding_index_synced(root)
-    if not embedding_synced:
+    if not adjudication_consumed and not embedding_synced:
         return False, f"embedding 語義索引未與目前條目庫同步（{sync_reason}），需先更新 embedding index 再重跑 semantic_lookup.py", ""
 
     status = meta.get("rerank_status")
@@ -459,6 +480,28 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     if updates_expected and link_updates_path.is_file():
         try:
             update_manifest = _load_yaml(link_updates_path)
+            # 已套用的章節不再重驗審查判斷，只驗累積區塊在不在。
+            #
+            # preview_updates 會拿條目「現在」的定義／主題發展去對本章 prepare 當時的
+            # 基線。等到後面的章節合法更新了同一個條目（申4 補了美地與約但河的主題發展），
+            # 申1-3 的舊 manifest 就會突然報「選了 keep 但區塊已被修改」——完工章節被
+            # 後來的章節追溯性弄壞，而且條目越常被累積壞得越快。
+            # 章節進行中（尚未套用）仍然全驗：那時基線比對正是用來擋「說 keep 卻改了區塊」。
+            marker = f"<!-- accumulation:{canonical}:{chapter}:start -->"
+            targets = [update.get("path") for update in (update_manifest.get("updates") or [])
+                       if isinstance(update, dict) and update.get("path")]
+            applied = bool(targets) and all(
+                (root / str(path)).is_file()
+                and marker in (root / str(path)).read_text(encoding="utf-8")
+                for path in targets
+            )
+            if applied:
+                link_review_ok = True
+                link_review_detail = (
+                    f"{len(targets)} 個條目的本章累積區塊齊備；"
+                    "審查判斷為當時紀錄，不再與條目現況重比（後續章節可合法改動同一區塊）"
+                )
+                raise _AlreadyApplied
             link_updates.preview_updates(link_updates_path, root=root)
             link_review_ok = True
             if update_manifest.get("review_schema_version") is None:
@@ -467,6 +510,8 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
                     "未宣稱 agent 當時已完成定義／主題發展判斷。未來由 prepare 產生的新 manifest "
                     "會強制逐條 keep/update。"
                 )
+        except _AlreadyApplied:
+            pass
         except (OSError, ValueError, yaml.YAMLError) as exc:
             link_review_detail = str(exc)
     prompts_cmd = f"python util/run_chapter_manual.py prompts {canonical} {chapter}"
@@ -511,6 +556,26 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
                 sources_read_detail = f"來源閱讀檢查失敗：{exc}"
     else:
         sources_declared_detail = f"來源清單 {manifest_path} 不存在"
+
+    # 引句逐字回查：閘門驗結構，驗不到引號裡的話是不是真的出自來源
+    quote_fidelity_ok, quote_fidelity_detail = True, ""
+    if (tmp / "chapter_content.yaml").exists():
+        try:
+            quote_total, quote_misses, _names = check_quote_fidelity.check_quotes(
+                canonical, chapter, root=root
+            )
+            quote_fidelity_ok = not quote_misses
+            if quote_misses:
+                preview = "；".join(f"{label}：{quote[:28]}" for label, quote in quote_misses[:3])
+                quote_fidelity_detail = (
+                    f"引句 {quote_total} 處，回查不到 {len(quote_misses)} 處——{preview}"
+                    + ("⋯" if len(quote_misses) > 3 else "")
+                )
+            else:
+                quote_fidelity_detail = f"引句 {quote_total} 處全數命中"
+        except Exception as exc:
+            quote_fidelity_detail = f"引句回查失敗：{exc}"
+            quote_fidelity_ok = False
 
     # 候選相似度與 Preflight / Production Readiness 檢查
     sim_ok, sim_hint, sim_status, sim_warning = check_candidate_similarity_readiness(
@@ -608,6 +673,15 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             "不可把 summary/relation 換句話說貼入。development=update 要列本章＋另一章的 "
             f"synthesis_scope，再重跑 apply --dry-run。檢查訊息：{link_review_detail}",
             warning=link_review_warning,
+        ),
+        CheckResult(
+            "步驟5｜引句逐字回查（本章來源＋全卷經文）",
+            quote_fidelity_ok,
+            "有引句在本章正式來源與全卷經文裡都找不到逐字對應——閘門驗結構，"
+            "驗不到引號裡的話是不是真的出自來源。常見成因：截斷後自己補句號、"
+            "換一種引號、把英文來源的中文譯文當成逐字引句、把不相鄰的兩句接成一句。"
+            f"逐條看：python util/check_quote_fidelity.py {canonical} {chapter}。"
+            f"檢查訊息：{quote_fidelity_detail}",
         ),
         CheckResult(
             "步驟6｜util/output/link_index.json",

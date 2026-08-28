@@ -539,6 +539,72 @@ class CheckChapterFilesTests(unittest.TestCase):
             review_check = next(c for c in checks if "overview_review" in c.label)
             self.assertTrue(review_check.ok)
 
+    def test_applied_chapter_is_not_relitigated_against_later_edits(self):
+        """後面的章節合法改動同一個條目時，完工章節不該被追溯性判成 FAIL。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            entry = root / "link_folder" / "人物" / "測試.md"
+            _write(entry,
+                   "# 測試\n\n## 定義\n\n穩定身分。\n\n## 按書卷累積\n\n"
+                   "## 主題發展\n\n跨章綜合。\n\n## 相關條目\n\n## 來源依據\n")
+            _write_yaml(tmp_dir / "link_plan.yaml", {
+                "C_new_formal": [],
+                "B_needs_update": [{
+                    "name": "測試", "existing_title": "測試",
+                    "existing_path": "link_folder/人物/測試.md",
+                }],
+            })
+            with patch.object(ccf.link_updates, "ROOT", root), patch("builtins.print"):
+                manifest = ccf.link_updates.prepare(BOOK, CHAPTER)
+            data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+            data["updates"][0]["summary"] = "本章重點"
+            data["updates"][0]["relation"] = "本章與條目的關聯"
+            data["updates"][0]["overview_review"]["definition"] = "keep"
+            data["updates"][0]["overview_review"]["development"] = "keep"
+            _write_yaml(manifest, data)
+            with patch.object(ccf.link_updates, "ROOT", root):
+                ccf.link_updates.apply_updates(manifest, reporter=None)
+
+            # 後面的章節把同一個條目的主題發展補成跨章綜合——這是合法的
+            text = entry.read_text(encoding="utf-8")
+            entry.write_text(text.replace("跨章綜合。", "跨章綜合。後續章節補寫的段落。"),
+                             encoding="utf-8")
+
+            checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            review_check = next(c for c in checks if "overview_review" in c.label)
+            self.assertTrue(review_check.ok, review_check.resume_hint)
+            self.assertIn("累積區塊齊備", review_check.resume_hint)
+
+    def test_index_factors_stop_binding_once_payloads_are_written(self):
+        """裁決被寫進 payload 之後，條目庫長大不該再逼出一次沒有判斷可做的重跑。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root,
+                                                overrides={"link_index_sha256": "bad_hash"})
+
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh, "payload 還沒寫時，索引變動仍必須擋下")
+            self.assertIn("link_index.json", reason)
+
+            _write(tmp_dir / "chapter_content.yaml", "book: 創世記")
+            _write(tmp_dir / "entry_content" / "測試.yaml", "name: 測試")
+            fresh, _reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertTrue(fresh, "payload 寫完後，索引長大不該再判 stale")
+
+            # 但候選檔本身變了仍然要擋——那是真的要重新裁決
+            _write(tmp_dir / "link_candidates.yaml", "candidates changed")
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+            self.assertIn("候選檔已變更", reason)
+
 
 class VerseLinkCoverageTests(unittest.TestCase):
     """M5 重生失效偵測：plan 宣告的詞出現在經文、verse_links 卻沒連上。
