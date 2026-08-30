@@ -177,7 +177,6 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 - **新章 production／等同重做某章的大改**：完整收尾順序與參數以 `agent_start_prompt.md` 步驟 7–8 為準。共享憲法不重抄整套 ordered commands，避免與 SOP 漂移；其中包含 `build_appendix_links.py`，且 embedding index 必須執行實際增量更新，不能用 `--check` 取代更新步驟。
 
 - **既有章節 maintenance**：完工定義以 `agent_maintenance_prompt.md` 為準。核心至少包含 `validate_knowledge_base` 與 `verify_links`，其餘 gate 依實際改動範圍追加；只有大改到等同重做該章時才升級為新章完整收尾。
-
 - Gate 的參數不是一體適用：例如 `check_existing_links.py --missing` 需要章節 markdown 路徑；以書卷名為參數的 corpus／book-level 工具則傳標準書卷名。**不得把「閘門吃書卷名不是路徑」當成所有 gate 的通則。**
 
 - `verify_links` 的正式通過條件是 BROKEN=0、INVALID=0、UNKNOWN=0；`PENDING_SCRIPTURE_REFS` 可依 `scheme.md` 的正式規則存在，不應被誤判成同類失敗。
@@ -200,23 +199,30 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 ## Multi-Agent Collaboration
 
-這個專案的預設內容工作不是三個 Agent 平行寫作，而是**主筆 → 獨立證據稽核 → 主筆修正 → 必要時總編輯驗收**。
+`agent_start_prompt.md` 仍是新章 production **單一正式流程**。本節只定義跨 Agent review 要掛在哪些內容邊界，不另造第二套 production SOP。
+
+預設內容協作是**Claude 主筆 → Codex 在落地前獨立查核 → Claude 修正 → 回到正式 workflow 繼續執行 → 必要時 Antigravity 做全局驗收**。
 
 ### Claude：主筆
 
 - Claude 是研經文章與條目內容的主要作者：完整閱讀 commentary、使用 STEP evidence，手寫 M3／M6，並依 Codex 的查核報告修正文稿。
 - Claude 的核心目標是：**寫得對、寫得完整、寫得讓一般讀者看得懂**。
 - Claude 可以自行做基本 self-check，但不得把自己的自我審稿取代獨立 evidence audit。
-- 內容查核發現問題後，預設由 Claude 回到來源修正文稿；不要讓 reviewer 直接把文章改成另一篇風格不同的版本。
+- Codex 找到有證據支持的問題後，由 Claude 修改真正的 source-of-truth payload；不要讓 reviewer 直接改渲染後的 markdown 或把文章重寫成另一種風格。
 
 ### Codex：Evidence Auditor
 
-- Codex 在內容流程中的主要角色是**獨立資料稽核員**，不是第二個主筆。
-- Codex 必須把 Claude 已寫出的重要事實性敘述對回 `raw_scripture/`、本章 manifest 的有效 `raw_data/`、STEP evidence／receipt 與正式 project rules，檢查文章是否明顯超出、扭曲或錯配來源。
+- Codex 在內容流程中的主要角色是**獨立資料稽核員**，不是第二個主筆；內容稽核預設 read-only。
+- Codex 必須把 Claude 已寫出的重要事實性敘述對回 `raw_scripture/`、本章 manifest 的有效 `raw_data/`、STEP evidence／receipt 與正式 project rules，檢查是否超出、扭曲或錯配來源。
 - 查核至少區分：`supported`、`overstated`、`unsupported`、`source mismatch`、`quotation mismatch`、`missing nuance`；每個非 PASS 項都要附可驗證證據與修正方向。
 - 特別檢查：全稱詞、數字、來源 attribution、逐字引句、經文引用、STEP lexical range 被誤寫成本節確定義、morphology 被過度神學化、commentary 分歧被壓平，以及異章資料污染。
-- **Codex 的內容稽核預設 read-only**：先回報問題，不直接重寫 M3／M6 正文；由 Claude 依報告修正後再複核。
-- 當任務本身明確是 Python／pipeline／schema／MCP／resolver／validator／tests／migration 等工程工作時，Codex 才切換成工程角色，依相應 workflow 修改程式；不要把「Codex = 工程」套用到一般文章查核。
+
+### Pre-landing review gates
+
+- **M3**：Claude 寫完 `.tmp/第x章/entry_content/*.yaml` 後，先由 Codex audit；Claude 修正並確認後，才把這批 M3 視為可供後續 M6 使用的內容。不要等 render 後才第一次查。
+- **M6**：Claude 寫完 `.tmp/第x章/chapter_content.yaml` 後，由 Codex audit M6，並檢查與已確認的 M3 是否矛盾；有問題由 Claude 修 YAML。**未通過前不得 `run`／render 到 production markdown。** 結構 `check` 可作為非落地輔助，但不能取代 evidence audit。
+- **B 類累積**：`link_updates.yaml` 必須在正式 `apply` 前由 Codex audit。preview／dry-run 可用來輔助核對，但 **audit 未通過不得 apply 到既有 `link_folder` 條目**。
+- render／apply 之後仍照 `agent_start_prompt.md` 執行原本的內容複核、sanity check 與 final gates；這些是落地結果的最後把關，**不是第一次 evidence audit**。若沒有新疑點，不要求 Codex 把同一章重新完整 audit 第二遍。
 
 ### Antigravity：總編輯／全局 Reviewer
 
@@ -229,15 +235,19 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 ### 預設內容工作流
 
 ```text
-Claude 寫 M3／M6
-→ Codex evidence audit
-→ Claude 依證據修正
-→ 機械 validators／gates
-→ Antigravity（必要時）做全局／整體驗收
+依 agent_start_prompt.md 進入正式流程
+→ Claude 寫 M3 payload
+→ Codex audit M3 → Claude 修正
+→ Claude 寫 M6 payload
+→ Codex audit M6／M3-M6 一致性 → Claude 修正
+→ check → run/render
+→ Claude 準備 B 類 link_updates
+→ Codex audit B 類 → Claude 修正 → preview/apply
+→ 依 agent_start_prompt.md 完成後續複核與 validators/gates
+→ Antigravity（必要時）做跨章／整卷全局 review
 ```
 
-- 一般章節預設 `Claude → Codex → Claude` 即可，不為了「三 Agent 都有參與」而強迫 Antigravity 出場。
-- 複雜章節或跨章／整卷工作，再加入 Antigravity。
+- 一般章節不為了「三 Agent 都有參與」而強迫 Antigravity 出場。
 - Agent 之間不得靠多數決決定來源事實；reviewer 指出問題後仍必須回到可驗證 evidence。
 
 ### 跨層修改邊界
