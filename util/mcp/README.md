@@ -40,7 +40,7 @@
 | `run_chapter` | 相容名稱，但固定轉到 `run_chapter_manual.py run`；MCP 不暴露模型版 `run_chapter.py`。 | 是 |
 | `rename_markdown` | 對應 `rename_markdown.py`；預設 dry-run，正式改名需 `confirm=true`。 | 正式改名會寫入 |
 | `check_source_read` | 對應 A0 讀取回執閘門 `check_source_read.py`；開工前先過。 | 否 |
-| `check_quote_fidelity` | 引句逐字回查：本章 payload／章整理裡的「」引句，逐條比對本章 OK 註釋＋全卷經文。閘門驗結構，這一支驗引號裡的話出自哪裡。 | 否 |
+| `check_quote_fidelity` | 引句逐字回查：本章 payload／章整理裡的「」引句，逐條比對本章 OK 註釋＋全本聖經經文。傳 `entry=<條目路徑>` 改驗單一 link_folder 條目的定義與主題發展，語料換成該條目自己累積過的每一章。閘門驗結構，這一支驗引號裡的話出自哪裡。 | 否 |
 | `check_accumulation_orphans` | 對應反向孤兒累積檢查；`book` 或 `scan_all=true` 二選一。 | 否 |
 | `find_duplicate_entries` | 對應 `embedding_dup_report.py --json`，回報全庫既有近似重複條目對，只出報告。 | 會更新 `util/output/duplicate_entries.json` |
 | `merge_entries` | 對應 `merge_entries.py`；預設 dry-run，正式合併需 `confirm=true`。 | 正式合併會寫入（見下方三個手動收尾項） |
@@ -107,10 +107,15 @@ STEP 的逐字表把兩邊分成兩列，連寫這個**印刷上正確**的形�
 entry_content，護欄一次都沒驗過。
 
 `check_quote_fidelity` 補的是第三塊：**引號裡那句話是不是真的來自本章來源**。
-語料＝本章 manifest 的 OK 註釋＋**全卷**經文（引用前面章節的經文是正常寫法，
-引用相鄰章的**註釋**才是要抓的那一型）。比對前把引號、空白、全半形正規化掉，
-帶 ⋯ 的節錄逐段查。申4 實測 333 處引句、申3 實測 346 處，各報 0；申1／申2 分別報
-20／39 處——那是真的積欠。它已經接進 `check_chapter_files` 的步驟5。
+語料＝本章 manifest 的 OK 註釋＋**全本聖經**經文（引用別章甚至別卷的和合本經文都是
+正當寫法，KC 申2 就引了提後4:7；引用相鄰章的**註釋**才是要抓的那一型）。比對前把
+引號、空白、全半形與 markdown 強調記號正規化掉，帶 ⋯ 的節錄逐段查。它已經接進
+`check_chapter_files` 的步驟5。
+
+**條目模式 `entry=<路徑>`**：`link_folder/**.md` 是維護回合真正動筆的地方（情境 E
+的活文件），章節模式從不掃它——寫進定義與主題發展的引句原本一道閘門都沒有。條目
+模式把語料換成「該條目自己宣告累積過的每一章」，那正好是它有權引用的來源集合；
+引了沒有累積過的章的註釋就會被報出來。
 
 掛錯家的引句、被壓平的爭議、憑常識腦補的交叉引註，仍然只能逐條開條目對 rawdata 讀。`agent_maintenance_prompt.md` 的三件工作沒有工具化。
 

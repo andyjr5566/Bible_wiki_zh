@@ -140,6 +140,57 @@ class QuoteFidelityTests(unittest.TestCase):
             _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
             self.assertEqual([], misses)
 
+    def test_markdown_emphasis_inside_a_quote_is_not_a_drift(self):
+        """引句裡寫 **可能** 是排版強調，不是改了來源的字。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml="name: 測試\ndefinition: CT 說「『鴿子』原文字義**是使者**」。\n",
+            )
+            _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual([], misses)
+
+    def test_entry_mode_uses_the_chapters_the_entry_actually_accumulated(self):
+        """link_folder 條目是維護回合動筆的地方，章節模式從不掃它。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp)
+            _write(root / "raw_data" / "ct7.txt", "CT 創7：洪水泛濫在地上四十晝夜。")
+            _write(root / "01 創世記" / ".tmp" / "第7章" / "source_manifest.md",
+                   "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+                   "|---|---|---|---|---|\n"
+                   "| ccbiblestudy CT | 逐節註解 | https://example.invalid/ct7 |"
+                   " raw_data/ct7.txt | OK |\n")
+            entry = root / "link_folder" / "主題" / "測試.md"
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            entry.write_text(
+                "# 測試\n\n## 定義\n\n身分。\n\n## 按書卷累積\n\n"
+                "<!-- accumulation:創世記:7:start -->\n#### 第7章\n"
+                "<!-- accumulation:創世記:7:end -->\n\n"
+                "## 主題發展\n\nCT 說「洪水泛濫在地上四十晝夜」。\n\n"
+                "## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            total, misses, names = cqf.check_entry_quotes(entry, root=root)
+            self.assertEqual((1, []), (total, misses))
+            self.assertIn("創世記7", names)
+
+    def test_entry_mode_flags_a_quote_from_a_chapter_the_entry_never_accumulated(self):
+        """條目能引的只有它自己累積過的章；引別章註釋正是要抓的那一型。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp)
+            entry = root / "link_folder" / "主題" / "測試.md"
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            entry.write_text(
+                "# 測試\n\n## 定義\n\n身分。\n\n## 按書卷累積\n\n"
+                "<!-- accumulation:創世記:8:start -->\n#### 第8章\n"
+                "<!-- accumulation:創世記:8:end -->\n\n"
+                "## 主題發展\n\nCT 說「洪水泛濫在地上四十晝夜」。\n\n"
+                "## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            _total, misses, _names = cqf.check_entry_quotes(entry, root=root)
+            self.assertEqual(1, len(misses))
+
     def test_yaml_folded_scalars_are_not_false_positives(self):
         """safe_dump 的折行會在長句中插入反斜線與續行縮排；必須解析 yaml 而不是正則。"""
         import yaml as yaml_module

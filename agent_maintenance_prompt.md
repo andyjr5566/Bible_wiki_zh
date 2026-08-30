@@ -66,6 +66,13 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
   累積表（已審過、有出處）重新綜整，不是重新套用自動生成；development 只收「跨書卷／跨章的主題
   遞進」，同一段經文內的字義辯論屬於 definition，不要塞錯欄位。`link_updates.py apply` 套用
   時累積跨過門檻會自動印提醒，別忽略。
+- **欠帳有帳本，維護回合就是來還的**：章節流程遇到「條目自己欠一段跨章綜合、但本章
+  素材太薄付不起」時，會在 `overview_review` 填 `development=standing_debt`，由 apply
+  記進 `util/output/development_debt.json`。`python util/link_updates.py debt` 列出目前
+  欠誰。還帳＝依該條目**現有的、已審過的累積表**重新綜整出跨卷的主題發展（不是重新
+  套用自動生成、也不是把逐章累積換句話說），然後 `python util/link_updates.py debt
+  --settle <條目路徑>` 結清。settle 會驗兩件事：主題發展不是空白／待累積，而且點名了
+  該條目實際累積的至少兩卷書——判準與 `development=update` 的 `synthesis_scope` 一致。
 
 **別只維護既有候選——要問「rawdata 有沒有值得跨章累積、卻沒有條目的概念」**：勘誤既有的
 同時，把 candidate/entry 覆蓋率對 rawdata 重新推導一遍（B/C/D 為空≠已完備，只代表沒人動過）。
@@ -266,6 +273,11 @@ render 後可用 `scan_unsourced_tokens` 補掃舊 A 類條目從未被 payload 
   （`_would_destroy_data`），不會再碰這個檔——此時 **md 本身就是活文件**：
   - 補累積：走 link_updates（情境 D），不要手貼區塊。
   - 修定義區的錯字／勘誤：直接改 md，commit 訊息註明勘誤依據。
+  - **改完跑 `python util/check_quote_fidelity.py --entry <條目路徑>`**。章節模式只掃
+    `.tmp` 與章 md，從不掃 `link_folder`——維護回合寫進定義與主題發展的引句原本一道
+    閘門都沒有。條目模式的語料是「該條目自己宣告累積過的每一章」，正好是它有權引用的
+    範圍；引了沒累積過的章的註釋就會被報出來。實測補寫六個欠帳條目時，這一支當場抓到
+    兩處自己剛寫的截斷補句號，外加兩處寫在更早章節、一直沒被驗過的舊飄移。
 - 改名／移分類資料夾一律 `python util/rename_markdown.py <src> <dst> [--dry-run]`。
 
 ## 收尾驗證（每次維護後，量力裁剪但不省核心）
@@ -276,6 +288,9 @@ python util/verify_links.py 【書名】
 ```
 
 另視改動加跑：
+
+- 動了 `link_folder/**.md` 的定義或主題發展 →
+  `python util/check_quote_fidelity.py --entry <條目路徑>`（見情境 E）。
 
 - 動了條目名／aliases／新增刪除條目 → `python util/build_link_index.py` 與
   `python util/build_embedding_index.py`（順序不可反），再補

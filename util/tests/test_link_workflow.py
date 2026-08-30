@@ -457,6 +457,65 @@ class UpdateTests(unittest.TestCase):
             self.assertEqual("link_folder/人物/測試.md", ledger["entries"][0]["path"])
             self.assertEqual("創世記:8", ledger["entries"][0]["deferred_at"])
 
+    def test_a_maintenance_round_can_settle_a_debt_it_actually_paid(self):
+        """欠帳原本只有章節 apply 清得掉，維護回合補寫完卻無路可清。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry = root / "link_folder" / "人物" / "測試.md"
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            blocks = render_block("創世記", 1, {"summary": "甲", "relation": "乙"})
+            blocks += render_block("民數記", 2, {"summary": "丙", "relation": "丁"})
+            entry.write_text(
+                "# 測試\n\n## 定義\n\n身分。\n\n## 按書卷累積\n\n"
+                + blocks
+                + "\n\n## 主題發展\n\n創1 起頭的線，到民2 才轉向。\n\n## 相關條目\n\n## 來源依據\n",
+                encoding="utf-8",
+            )
+            ledger = root / "util" / "output" / "development_debt.json"
+            ledger.parent.mkdir(parents=True, exist_ok=True)
+            ledger.write_text(json.dumps({"entries": [{
+                "path": "link_folder/人物/測試.md", "title": "測試",
+                "deferred_at": "申命記:4", "accumulated": 2, "fingerprint": "x",
+            }]}, ensure_ascii=False), encoding="utf-8")
+
+            item, named = link_updates.settle_development_debt(
+                "link_folder/人物/測試.md", root=root
+            )
+            self.assertEqual("測試", item["title"])
+            self.assertEqual(["創世記", "民數記"], named)
+            self.assertEqual([], json.loads(ledger.read_text(encoding="utf-8"))["entries"])
+
+    def test_settle_refuses_a_blank_or_single_book_development(self):
+        """還帳的判準與 development=update 一致：要跨至少兩卷，不能只是填了字。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry = root / "link_folder" / "人物" / "測試.md"
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            blocks = render_block("創世記", 1, {"summary": "甲", "relation": "乙"})
+            blocks += render_block("民數記", 2, {"summary": "丙", "relation": "丁"})
+            ledger = root / "util" / "output" / "development_debt.json"
+            ledger.parent.mkdir(parents=True, exist_ok=True)
+
+            def write(development):
+                entry.write_text(
+                    "# 測試\n\n## 定義\n\n身分。\n\n## 按書卷累積\n\n" + blocks
+                    + "\n\n## 主題發展\n\n" + development
+                    + "\n\n## 相關條目\n\n## 來源依據\n",
+                    encoding="utf-8",
+                )
+                ledger.write_text(json.dumps({"entries": [{
+                    "path": "link_folder/人物/測試.md", "title": "測試",
+                    "deferred_at": "申命記:4", "accumulated": 2, "fingerprint": "x",
+                }]}, ensure_ascii=False), encoding="utf-8")
+
+            write("待累積")
+            with self.assertRaisesRegex(ValueError, "空白／待累積"):
+                link_updates.settle_development_debt("link_folder/人物/測試.md", root=root)
+
+            write("創1 這一章講得很完整，別章沒有補充。")
+            with self.assertRaisesRegex(ValueError, "只點名 1 卷"):
+                link_updates.settle_development_debt("link_folder/人物/測試.md", root=root)
+
     def test_standing_debt_needs_a_debt_signal(self):
         """沒有欠帳訊號時不可用 standing_debt 當萬用出口。"""
         with tempfile.TemporaryDirectory() as tmp:

@@ -1054,7 +1054,9 @@ def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Di
 
 
 @mcp.tool()
-def check_quote_fidelity(book: str, chapter: int, references: bool = False) -> Dict[str, Any]:
+def check_quote_fidelity(book: Optional[str] = None, chapter: Optional[int] = None,
+                         references: bool = False,
+                         entry: Optional[str] = None) -> Dict[str, Any]:
     """Verify that every bracketed quote in this chapter's own output is verbatim.
 
     The structural gates check that files exist, links resolve and formats are
@@ -1069,8 +1071,22 @@ def check_quote_fidelity(book: str, chapter: int, references: bool = False) -> D
     (truncation with an invented full stop, a Chinese rendering of an English
     quote presented as verbatim, two non-adjacent sentences joined); not
     reporting does not prove the content is faithful. Read-only.
+
+    Pass ``entry`` instead of book/chapter to check one ``link_folder`` entry's
+    definition and topic-development sections. That is where a maintenance round
+    actually writes (an entry already accumulated by other chapters is a live
+    document, not a render product), and the chapter mode never scans it, so
+    those sections have no quote gate at all. The corpus is then every chapter
+    the entry itself declares an accumulation for — precisely the sources it has
+    standing to quote.
     """
     try:
+        if entry:
+            result = _run_util_command("check_quote_fidelity.py", "--entry", entry, timeout=180)
+            result.update({"entry": entry})
+            return result
+        if not book or chapter is None:
+            return _error("要嘛給 book 與 chapter，要嘛給 entry")
         canonical, _directory, _tmp = _chapter_context(book, chapter)
         args = [canonical, str(chapter)] + (["--references"] if references else [])
         result = _run_util_command("check_quote_fidelity.py", *args, timeout=120)

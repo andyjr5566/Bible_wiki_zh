@@ -996,6 +996,74 @@ def _load_development_debt(root):
     return {str(item["path"]): item for item in entries or [] if isinstance(item, dict) and item.get("path")}
 
 
+def _book_mentions(text, books):
+    """哪幾卷書在這段文字裡被點名（全名，或「創32」這種簡稱＋章號）。"""
+    found = set()
+    for book in books:
+        if book in text:
+            found.add(book)
+            continue
+        if book.endswith(("上", "下")):
+            short = book[0] + book[-1]
+        elif book.endswith(("前書", "後書", "一書", "二書", "三書")):
+            short = book[0] + book[-2]
+        else:
+            short = book[0]
+        if re.search(re.escape(short) + r"\s*\d", text):
+            found.add(book)
+    return found
+
+
+def _write_development_debt(root, ledger):
+    path = Path(root) / DEVELOPMENT_DEBT_PATH
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，"
+                "development=update 時清除；維護回合用 "
+                "link_updates.py debt --settle <path>。",
+        "entries": sorted(ledger.values(),
+                          key=lambda x: (-int(x.get("accumulated") or 0), x["path"])),
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def settle_development_debt(relative_path, root=None):
+    """維護回合把某條目的欠帳結清。
+
+    帳本原本只能由章節 apply（development=update）清除，可是欠帳本來就是留給維護
+    回合處理的——那時沒有章節 manifest 可填，於是欠帳無論怎麼補寫都清不掉。這裡用
+    同一套判準的機械版：主題發展要有內容，而且要點名該條目實際累積的至少兩卷書
+    （等同 synthesis_scope 的跨章要求）。
+    """
+    root = Path(ROOT if root is None else root).resolve()
+    ledger = _load_development_debt(root)
+    key = str(relative_path).replace(chr(92), "/")
+    if key not in ledger:
+        raise ValueError(f"欠帳清單裡沒有這一筆：{key}（用 debt 看目前清單）")
+    target = root / key
+    if not target.is_file():
+        raise ValueError(f"找不到條目檔：{key}")
+    text = target.read_text(encoding="utf-8")
+    section = _section_body(text, "主題發展")
+    if section is None:
+        raise ValueError(f"{key} 沒有「## 主題發展」區塊")
+    body = section.strip()
+    if not body or body in {"待累積", "（待累積）"}:
+        raise ValueError(f"{key} 的主題發展仍是空白／待累積，還不能結清")
+    books = sorted({b for b, _c in _ACCUM_META_RE.findall(text)})
+    named = _book_mentions(body, books)
+    if len(named) < 2:
+        raise ValueError(
+            f"{key} 的主題發展只點名 {len(named)} 卷"
+            f"（{'、'.join(sorted(named)) or '無'}），而該條目的累積橫跨 "
+            f"{len(books)} 卷（{'、'.join(books)}）。主題發展要綜合至少兩卷／兩章"
+            "才算還帳，否則那只是逐章累積的換句話說。"
+        )
+    item = ledger.pop(key)
+    _write_development_debt(root, ledger)
+    return item, sorted(named)
+
+
 def record_development_debt(preview, root=None):
     """Record/settle standing development debt named by this chapter's review.
 
@@ -1024,14 +1092,7 @@ def record_development_debt(preview, root=None):
         elif key in ledger and development.get("decision") == "update":
             ledger.pop(key)
             settled.append(op["title"])
-    path = root / DEVELOPMENT_DEBT_PATH
-    path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，"
-                "development=update 時清除。維護回合處理，不擋章節流程。",
-        "entries": sorted(ledger.values(), key=lambda x: (-int(x.get("accumulated") or 0), x["path"])),
-    }
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    _write_development_debt(root, ledger)
     return added, settled
 
 
@@ -1101,7 +1162,13 @@ def main():
     )
     evidence_parser.add_argument("book")
     evidence_parser.add_argument("chapter")
-    sub.add_parser("debt", help="列出主題發展存量欠帳清單（basis=standing_debt 累積而成）")
+    debt_parser = sub.add_parser(
+        "debt", help="列出／結清主題發展存量欠帳（basis=standing_debt 累積而成）"
+    )
+    debt_parser.add_argument(
+        "--settle", metavar="條目路徑",
+        help="維護回合結清一筆：該條目的 ## 主題發展 必須已補成跨卷綜合",
+    )
     apply_parser = sub.add_parser("apply")
     apply_parser.add_argument(
         "target", nargs="+",
@@ -1113,6 +1180,13 @@ def main():
         if args.command == "prepare":
             prepare(args.book, args.chapter)
         elif args.command == "debt":
+            if args.settle:
+                item, named = settle_development_debt(args.settle)
+                print(f"✅ 已結清：{item.get('title')}（{item.get('path')}）")
+                print(f"   主題發展點名的書卷：{'、'.join(named)}")
+                remaining = _load_development_debt(ROOT)
+                print(f"   剩餘欠帳 {len(remaining)} 筆")
+                return
             ledger = _load_development_debt(ROOT)
             if not ledger:
                 print("✅ 目前沒有主題發展存量欠帳")
@@ -1124,8 +1198,9 @@ def main():
                     print("   %-14s 累積 %2s 章　延後於 %s　%s" % (
                         item.get("title", "?"), item.get("accumulated", "?"),
                         item.get("deferred_at", "?"), item.get("path", "?")))
-                print("   還帳方式：在後續章節或維護回合把該條目的 ## 主題發展 補成跨章綜合，")
-                print("   並在該章的 overview_review 填 development=update——apply 會自動清除該筆。")
+                print("   還帳方式：把該條目的 ## 主題發展 補成跨章綜合，然後二選一——")
+                print("   ①在後續章節的 overview_review 填 development=update（apply 自動清除）；")
+                print("   ②維護回合直接跑 link_updates.py debt --settle <條目路徑>。")
         elif args.command == "evidence":
             path, count = write_review_evidence(
                 canonical_book_name(args.book), int(args.chapter)

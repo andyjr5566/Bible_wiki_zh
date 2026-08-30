@@ -19,6 +19,9 @@
   - 引句含 ⋯／… 時視為節錄，拆開後每段各自回查（每段至少 5 字才算數）。
   - 少於 10 字、或含頓線的引句不查：中文用「」兼作強調與並列（「過去／所要去」），
     那不是宣稱逐字引用，硬報只會製造誤報。
+條目模式（--entry）：`link_folder/**.md` 是維護回合實際動筆的地方（情境 E 的活文件），
+章節模式從不掃它，於是寫進定義／主題發展的引句一道閘門都沒有。條目模式改以「該條目
+自己宣告累積過的每一章」為語料——那正好就是它有權引用的來源集合。
 本工具只出報告，不改檔；報出＝強力線索，未報出不等於內容忠實。
 """
 from __future__ import annotations
@@ -50,6 +53,7 @@ QUOTE_PATTERNS = (
 )
 ELLIPSIS_RE = re.compile(r"[⋯…]+")
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
+MARKDOWN_EMPHASIS_RE = re.compile(r"\*+|=={2,}|==")
 CHAPTER_ORGANIZATION_HEADING = "## 本章整理"
 
 _CN_DIGITS = "一二三四五六七八九"
@@ -68,6 +72,8 @@ def normalize(text) -> str:
     # 引號本身不算內容：把來源的引句再嵌進自己的「」時，內層一律要換成『』
     # （中文排版慣例），逐字比對必須看穿這一層，否則每章會多出二十幾筆假陽性。
     text = text.translate({ord(c): None for c in "「」『』\"'"})
+    # markdown 的強調記號不是內容：引句裡寫 **可能** 是排版，不是改了來源的字。
+    text = MARKDOWN_EMPHASIS_RE.sub("", text)
     return "".join(text.split())
 
 
@@ -96,6 +102,79 @@ def chapter_corpus(book: str, chapter: int, root: Path = ROOT) -> tuple[str, lis
     if scripture:
         names.append(f"和合本經文 {scripture} 章")
     return "".join(parts), names
+
+
+ACCUM_META_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
+
+
+def entry_corpus(entry_path: Path, root: Path = ROOT) -> tuple[str, list[str]]:
+    """條目語料＝它累積過的每一章的 OK 來源＋全本聖經。
+
+    條目引用的正當範圍就是它自己累積過的章節；拿全庫 raw_data 當語料會放過
+    「引了別章註釋卻沒有該章累積」這一型，拿單章當語料又會把正當的跨章引用報成
+    查無出處。
+    """
+    text = entry_path.read_text(encoding="utf-8")
+    parts, names = [], []
+    seen = set()
+    for book, chapter in ACCUM_META_RE.findall(text):
+        book = canonical_book_name(book)
+        manifest = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "source_manifest.md"
+        if not manifest.is_file():
+            names.append(f"（缺 manifest：{book}{chapter}）")
+            continue
+        for _label, path in parse_manifest(manifest, root):
+            path = Path(path)
+            if path in seen or not path.is_file():
+                continue
+            seen.add(path)
+            parts.append(normalize(path.read_text(encoding="utf-8", errors="ignore")))
+        names.append(f"{book}{chapter}")
+    scripture = 0
+    for path in sorted((root / "raw_scripture").glob("*/第*章.txt")):
+        parts.append(normalize(path.read_text(encoding="utf-8", errors="ignore")))
+        scripture += 1
+    if scripture:
+        names.append(f"和合本經文 {scripture} 章")
+    return "".join(parts), names
+
+
+def entry_targets(entry_path: Path):
+    """條目裡由維護者寫出來的部分：定義與主題發展（逐章累積另有章節模式在驗）。"""
+    text = entry_path.read_text(encoding="utf-8")
+    out = []
+    for heading in ("定義", "主題發展"):
+        start = text.find(f"## {heading}")
+        if start < 0:
+            continue
+        end = text.find("\n## ", start + 4)
+        out.append((heading, text[start:end if end > start else len(text)]))
+    return out
+
+
+def check_entry_quotes(entry_path: Path, root: Path = ROOT):
+    corpus, names = entry_corpus(Path(entry_path), root)
+    total, misses = 0, []
+    for label, text in entry_targets(Path(entry_path)):
+        seen = set()
+        for pattern in QUOTE_PATTERNS:
+            for match in pattern.finditer(text):
+                quote = match.group(1).strip()
+                if len(quote) < MIN_QUOTE_CHARS or quote in seen:
+                    continue
+                if "／" in quote or "/" in quote:
+                    continue
+                seen.add(quote)
+                total += 1
+                if normalize(quote) in corpus:
+                    continue
+                if ELLIPSIS_RE.search(quote):
+                    pieces = [f.strip() for f in ELLIPSIS_RE.split(quote) if f.strip()]
+                    fragments = [f for f in pieces if len(f) >= MIN_FRAGMENT_CHARS] or pieces
+                    if fragments and all(normalize(f) in corpus for f in fragments):
+                        continue
+                misses.append((label, quote))
+    return total, misses, names
 
 
 def _organization_section(markdown: str) -> str:
@@ -227,11 +306,28 @@ def check_references(book: str, chapter: int, root: Path = ROOT):
 def main() -> int:
     console.utf8_stdio()
     parser = argparse.ArgumentParser(description="引句與交叉引註逐字回查（只出報告）")
-    parser.add_argument("book")
-    parser.add_argument("chapter", type=int)
+    parser.add_argument("book", nargs="?")
+    parser.add_argument("chapter", type=int, nargs="?")
+    parser.add_argument("--entry", help="改驗單一 link_folder 條目的定義與主題發展")
     parser.add_argument("--references", action="store_true",
                         help="同時回查交叉引註（誤報較多，預設關閉）")
     args = parser.parse_args()
+    if args.entry:
+        path = Path(args.entry)
+        if not path.is_absolute():
+            path = ROOT / args.entry
+        total, misses, names = check_entry_quotes(path)
+        print(f"語料：{path.name} 累積過的 {'、'.join(names)}")
+        print(f"引句 {total} 處，回查不到 {len(misses)} 處")
+        for label, quote in misses:
+            print(f"   ✗ {label}：{quote[:80]}")
+        if misses:
+            print("結論：FAIL（條目只能引用它自己累積過的那些章的來源）")
+            return 1
+        print("結論：PASS")
+        return 0
+    if not args.book or args.chapter is None:
+        parser.error("要嘛給「書名 章」，要嘛給 --entry <條目路徑>")
     book = canonical_book_name(args.book)
 
     total, misses, source_names = check_quotes(book, args.chapter)
