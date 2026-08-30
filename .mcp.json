@@ -8,6 +8,13 @@
         "util.mcp.server"
       ],
       "cwd": "c:/Obsidian/Hermes/scripture"
+    },
+    "codex-cli": {
+      "type": "stdio",
+      "command": "codex",
+      "args": [
+        "mcp-server"
+      ]
     }
   }
 }
