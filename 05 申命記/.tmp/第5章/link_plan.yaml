@@ -1,0 +1,526 @@
+book: 申命記
+chapter: 5
+A_use_directly: []
+B_needs_update:
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第1節「摩西將以色列眾人召了來」；第5節「那時我站在耶和華和你們中間」；KC：Moses calls Israel together. He
+    is a picture of the Lord Jesus as the Teacher who speaks God's Word.
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 何烈山
+  suggested_type: 地點
+  evidence: 第2節「耶和華─我們的神在何烈山與我們立約」；STEP：be./cho.Rev（H2722）；BH：Horeb is another name
+    for Mount Sinai, where Moses received the Ten Commandments.
+  match_type: exact
+  existing_title: 何烈山
+  existing_path: link_folder/地點/何烈山.md
+- name: 西乃之約
+  suggested_type: 神學
+  evidence: '第2-3節；STEP：ka.Rat（H3772H，簡要詞典義 to cut: make(covenant)）＋be.Rit（H1285）；GT《啟導本》：這是西奈之約的重申，必須成為他們生活的守則、信仰的依憑。'
+  surfaces:
+  - phrase: 與我們立約
+  match_type: exact
+  existing_title: 西乃之約
+  existing_path: link_folder/神學/西乃之約.md
+- name: 十誡
+  suggested_type: 神學
+  evidence: 第6-21節復述十誡；第22節「這些話是耶和華…大聲曉諭你們全會眾的」；STEP：ha./de.va.Rim（H1697G，字面「這些話」）；GT《精讀本》：十誡是所有律法的核心與本質,並不是單純的律法,乃是神的「約」。
+  surfaces:
+  - phrase: 這些話
+  match_type: exact
+  existing_title: 十誡
+  existing_path: link_folder/神學/十誡.md
+- name: 十誡的條分法
+  suggested_type: 神學
+  evidence: CT 說第五誡「刻在第一塊石頭，與有關神的第一至第四誡同列」；KC 說第16節起是第二塊法版的開始（From this verse begins
+    the second table of the law with six commandments）；GT《啟導本》另按兩兩配對分組。
+  match_type: exact
+  existing_title: 十誡的條分法
+  existing_path: link_folder/神學/十誡的條分法.md
+- name: 神頒布十誡
+  suggested_type: 事件
+  evidence: 第4、22節「耶和華在山上，從火中…大聲曉諭你們全會眾的」「他就把這話寫在兩塊石版上」；本章是摩西對新一代重述何烈山頒律當日的情形。
+  match_type: exact
+  existing_title: 神頒布十誡
+  existing_path: link_folder/事件/神頒布十誡.md
+- name: 律例（choq）
+  suggested_type: 原文
+  evidence: '第1、31節「我今日曉諭你們的律例典章」「我要將一切誡命、律例、典章傳給你」；STEP：ha./chu.Kim（H2706G，簡要詞典義
+    statute: decree）；CT：『律例』指律法，是神向人的要求。'
+  surfaces:
+  - phrase: 律例
+  match_type: exact
+  existing_title: 律例（choq）
+  existing_path: link_folder/原文/律例（choq）.md
+- name: 典章
+  suggested_type: 神學
+  evidence: '第1、31節與「律例」成對出現；STEP：ha./mish.pa.Tim（H4941G，簡要詞典義 justice: judgement）；CT：『典章』指審判，是神對人是否遵行律法的判定。'
+  surfaces:
+  - phrase: 典章
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 中保
+  suggested_type: 神學
+  evidence: 第5節「那時我站在耶和華和你們中間，要將耶和華的話傳給你們」；第27節百姓請摩西代聽；GT《精讀本》：這仲裁者的原理在舊約時代人是不可缺的,預表了新約時代神人之間的惟一中保耶穌基督的事工。
+  surfaces:
+  - phrase: 站在耶和華和你們中間
+  match_type: exact
+  existing_title: 中保
+  existing_path: link_folder/神學/中保.md
+- name: 為奴之家
+  suggested_type: 主題
+  evidence: 第6節「曾將你從埃及地為奴之家領出來」；STEP：mi./Beit 'a.va.Dim（H1004B＋H5650，字面「奴僕之家」）；BH："House
+    of slavery" refers to the oppressive environment in Egypt.
+  surfaces:
+  - phrase: 為奴之家
+  match_type: exact
+  existing_title: 為奴之家
+  existing_path: link_folder/主題/為奴之家.md
+- name: 奴僕
+  suggested_type: 原文
+  evidence: 第15節「你也要記念你在埃及地作過奴僕」；STEP：'E.ved（H5650）；CT：意指應當回想從前那種日以繼夜，不得休息的苦工。
+  surfaces:
+  - phrase: 作過奴僕
+  match_type: exact
+  existing_title: 奴僕
+  existing_path: link_folder/原文/奴僕.md
+- name: 埃及
+  suggested_type: 地點
+  evidence: 第6節「從埃及地為奴之家領出來」；第15節「你在埃及地作過奴僕」；本章把出埃及同時當作十誡的序言與安息日誡命的理由。
+  match_type: exact
+  existing_title: 埃及
+  existing_path: link_folder/地點/埃及.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: 第6、15節；STEP：ho.tze.Ti./kha 與 va/i.yo.Tzi.'a./kha 同為 H3318H（ya.tsa）；GT《精讀本》：在這裡我們要注意授予十誡的耶和華並不是憑著審判者的威嚴,乃是憑著救贖主的慈愛來宣告自己的事實。
+  surfaces:
+  - phrase: 將你從那裡領出來
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: 第8-9節；STEP：fe.sel（H6459，簡要詞典義 idol）；CT：『雕刻』指包括木刻、石雕、泥塑、各種金屬的鑄造，以及繪畫、刺繡、針織、各種手工等。
+  surfaces:
+  - phrase: 不可為自己雕刻偶像
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 只聽見聲音卻沒有看見形像（te.mu.nah）
+  suggested_type: 神學
+  evidence: 第8節「也不可做什麼形像」；STEP：te.mu.Nah（H8544，簡要詞典義 likeness），與申4:12、15-16、23、25
+    同一個字；KC：God is a spirit and cannot be represented by anything.
+  surfaces:
+  - phrase: 也不可做什麼形像
+  match_type: exact
+  existing_title: 只聽見聲音卻沒有看見形像（te.mu.nah）
+  existing_path: link_folder/神學/只聽見聲音卻沒有看見形像（te.mu.nah）.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: 第9節「因為我耶和華─你的神是忌邪的神」；STEP：'el ka.Na'（H410G＋H7067H，簡要詞典義 jealous）；CT：按原文意指嫉妒的神，表示祂忌恨任何人在祂以外另有別神。
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 追討罪自父及子直到三四代
+  suggested_type: 神學
+  evidence: '第9節；STEP：Po.ked（H6485I，簡要詞典義 to reckon: visit）、shi.le.Shim（H8029 第三代）、ri.be.''Im（H7256
+    第四代）；GT《串珠》：這裡不是指過犯的本身，而是指罪惡的後果。'
+  surfaces:
+  - phrase: 自父及子，直到三、四代
+  match_type: exact
+  existing_title: 追討罪自父及子直到三四代
+  existing_path: link_folder/神學/追討罪自父及子直到三四代.md
+- name: 發慈愛直到千代
+  suggested_type: 神學
+  evidence: 第10節；STEP：che.sed（H2617A，簡要詞典義 kindness）＋la./'a.la.Fim（H505G，字面「向千」）；CT：『發慈愛』按原文的文法，含有『繼續不斷地傾倒神那絕對的愛』的意思。
+  surfaces:
+  - phrase: 我必向他們發慈愛，直到千代
+  match_type: exact
+  existing_title: 發慈愛直到千代
+  existing_path: link_folder/神學/發慈愛直到千代.md
+- name: 不可妄稱耶和華你神的名
+  suggested_type: 神學
+  evidence: '第11節；STEP：ti.Sa''（H5375G，簡要詞典義 to lift: raise）＋la./Shav''（H7723H，簡要詞典義
+    vanity: vain）；GT《雷氏》：即為了錯誤的目的，如操縱人、行法術，或其它自私的欲望。'
+  surfaces:
+  - phrase: 不可妄稱耶和華─你神的名
+  match_type: exact
+  existing_title: 不可妄稱耶和華你神的名
+  existing_path: link_folder/神學/不可妄稱耶和華你神的名.md
+- name: 安息日
+  suggested_type: 神學
+  evidence: 第12-15節；STEP：ha./sha.Bat（H7676）；KC：The sabbath command is the core command
+    of obedience. All other commandments can be understood even by unbelievers.
+  surfaces:
+  - phrase: 守安息日為聖日
+  match_type: exact
+  existing_title: 安息日
+  existing_path: link_folder/神學/安息日.md
+- name: 當孝敬父母
+  suggested_type: 神學
+  evidence: 第16節；STEP：ka.Bed（H3513G，簡要詞典義 to honor）；CT：『使你得福』這是十誡中唯一可得福分的應許。
+  surfaces:
+  - phrase: 孝敬父母
+  match_type: exact
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+- name: 不可殺人
+  suggested_type: 神學
+  evidence: 第17節；STEP：tre.Tzach（H7523，ra.tsach，簡要詞典義 to murder）；BH：The Hebrew word
+    used here for "murder" is "ratsach," which specifically refers to unlawful killing,
+    distinguishing it from killing in war or capital punishment.
+  match_type: exact
+  existing_title: 不可殺人
+  existing_path: link_folder/神學/不可殺人.md
+- name: 不可姦淫
+  suggested_type: 神學
+  evidence: 第18節；STEP：tne.'Af（H5003，na.aph，簡要詞典義 to commit adultery）；GT《串珠》：先知屢用「淫亂」象徵以色列民對神的不貞。
+  match_type: exact
+  existing_title: 不可姦淫
+  existing_path: link_folder/神學/不可姦淫.md
+- name: 不可偷盜
+  suggested_type: 神學
+  evidence: 第19節；STEP：tge.No（H1589，ga.nav，簡要詞典義 to steal）；KC：Stealing is taking away
+    from another what that other person has received from the Lord and using for ourselves.
+  match_type: exact
+  existing_title: 不可偷盜
+  existing_path: link_folder/神學/不可偷盜.md
+- name: 不可作假見證陷害人
+  suggested_type: 神學
+  evidence: '第20節；STEP：''ed Shav''（H5707 witness＋H7723G，簡要詞典義 vanity: false）；GT《串珠》：指在法庭上給假口供。'
+  match_type: exact
+  existing_title: 不可作假見證陷害人
+  existing_path: link_folder/神學/不可作假見證陷害人.md
+- name: 不可貪戀
+  suggested_type: 神學
+  evidence: 第21節；STEP：tach.Mod（H2530A）與 tit.'a.Veh（H183）兩個不同的動詞；KC：This commandment
+    lays bare the germ of sin.
+  surfaces:
+  - phrase: 不可貪戀人的妻子
+  match_type: exact
+  existing_title: 不可貪戀
+  existing_path: link_folder/神學/不可貪戀.md
+- name: 石版
+  suggested_type: 文化
+  evidence: 第22節「他就把這話寫在兩塊石版上，交給我了」；STEP：she.Nei lu.Chot 'a.va.Nim（H8147＋H3871＋H68G）；GT《精讀本》：對聖經與希伯來人而言,數字「2」意味著證據或確實性。
+  surfaces:
+  - phrase: 兩塊石版
+  match_type: exact
+  existing_title: 石版
+  existing_path: link_folder/文化/石版.md
+- name: 密雲
+  suggested_type: 神學
+  evidence: 第22節「從火中、雲中、幽暗中」；STEP：he./'a.Nan（H6051，a.nan）；CT：『從火中、雲中、幽暗中』形容聲音出處。
+  surfaces:
+  - phrase: 雲中
+  match_type: exact
+  existing_title: 密雲
+  existing_path: link_folder/神學/密雲.md
+- name: 神住在幽暗中
+  suggested_type: 神學
+  evidence: 第22節「幽暗中」；STEP：ve./ha./'a.ra.Fel（H6205，context gloss thick darkness）；CT：『從黑暗中出來』意指神從祂所在的幽暗中發聲。
+  surfaces:
+  - phrase: 幽暗中
+  match_type: exact
+  existing_title: 神住在幽暗中
+  existing_path: link_folder/神學/神住在幽暗中.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第23節「你們支派中所有的首領和長老都來就近我」；STEP：ra.Shei shiv.tei./Khem（H7218H＋H7626H）與 ve./zik.nei./Khem（H2205G）；GT《精讀本》：首領是各支派的領袖,各有一名,長老則是年高德重之人,為數較多。
+  surfaces:
+  - phrase: 長老
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 耶和華的榮光
+  suggested_type: 神學
+  evidence: 第24節「耶和華─我們神將他的榮光和他的大能顯給我們看」；STEP：ke.vo.D/o（H3519 ka.vod）與 ga.de.L/o（H1433
+    go.del）；CT：『祂的榮光』指神顯出祂的榮耀，在此以火光為代表。
+  surfaces:
+  - phrase: 他的榮光
+  match_type: exact
+  existing_title: 耶和華的榮光
+  existing_path: link_folder/神學/耶和華的榮光.md
+- name: 耶和華永生神
+  suggested_type: 神學
+  evidence: 第26節「曾有何人聽見永生神的聲音從火中出來」；STEP：'E.lo.Him chai.Yim（H430G＋H2416A）；BH：Unlike
+    the idols of surrounding nations, which were lifeless and mute, the God of Israel
+    is living and active.
+  surfaces:
+  - phrase: 永生神
+  match_type: exact
+  existing_title: 耶和華永生神
+  existing_path: link_folder/神學/耶和華永生神.md
+- name: 寄居身分
+  suggested_type: 神學
+  evidence: 第14節「並在你城裡寄居的客旅」；STEP：ve./ge.re./Kha（H1616 ger）＋bi/sh.'a.Rei./kha（H8179G
+    sha.ar，字面「在你的城門內」）；BH：The inclusion of foreigners underscores the universal nature
+    of God's covenant.
+  surfaces:
+  - phrase: 寄居的客旅
+  match_type: exact
+  existing_title: 寄居身分
+  existing_path: link_folder/神學/寄居身分.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: '第29節「惟願他們存這樣的心敬畏我」；STEP：le./yir.''Ah（H3372H，簡要詞典義 to fear: revere）；BH：This
+    fear is not terror but a recognition of God''s power and a commitment to obedience.'
+  surfaces:
+  - phrase: 敬畏我
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 大能的手
+  suggested_type: 神學
+  evidence: 第15節「耶和華─你神用大能的手和伸出來的膀臂將你從那裡領出來」；STEP：be./Yad cha.za.Kah（H3027H＋H2389）＋u./vi/z.Ro.a'
+    ne.tu.Yah（H2220＋H5186）。
+  surfaces:
+  - phrase: 大能的手和伸出來的膀臂
+  match_type: exact
+  existing_title: 大能的手
+  existing_path: link_folder/神學/大能的手.md
+- name: 摩西的第二篇講章
+  suggested_type: 背景
+  evidence: GT《啟導本》：本章至11章是摩西第二篇談話中關於律法基本原則的講話，為一5「講律法」的開始；GT《串珠》：5:1-11:32 摩西勸勉以色列民：謹守遵行神在何烈山頒佈的訓令。
+  match_type: exact
+  existing_title: 摩西的第二篇講章
+  existing_path: link_folder/背景/摩西的第二篇講章.md
+- name: 不可加添也不可刪減（ya.saph、ga.ra）
+  suggested_type: 原文
+  evidence: 第22節「此外並沒有添別的話」；STEP：ve./Lo' ya.Saf（H3254H，ya.saph）——與申4:2「不可加添」同一個字根；KC：This
+    word is a complete word to enjoy the blessing, nothing has been added.
+  surfaces:
+  - phrase: 此外並沒有添別的話
+  match_type: exact
+  existing_title: 不可加添也不可刪減（ya.saph、ga.ra）
+  existing_path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+- name: 主日與安息日的關係之爭
+  suggested_type: 解經爭議
+  evidence: CT〔問題改正〕列出九點主張新約信徒毋須守安息日；GT 引李道生《舊約聖經問題總解》同向作答；KC 反對把主日當成改頭換面的安息日（The
+    first day of the week is not a disguised sabbath）。
+  match_type: exact
+  existing_title: 主日與安息日的關係之爭
+  existing_path: link_folder/解經爭議/主日與安息日的關係之爭.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 第3節「這約不是與我們列祖立的」；GT《雷氏》：西乃之約不是賜給列祖的（他們有亞伯拉罕之約；比較四31）；GT《啟導本》：將亞伯拉罕之約中的應許，具體施行在離開埃及奴役後的以色列人身上。
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 律法與恩典
+  suggested_type: 主題
+  evidence: 第6節先講救贖再頒誡命；CT：神乃是先把以色列人從埃及地救出來，然後才將律法賜給他們。因此，律法的本身就是一種愛的表示；GT《精讀本》：在這種意義上,十誡是基於神之慈愛的「慈愛之約」。
+  match_type: exact
+  existing_title: 律法與恩典
+  existing_path: link_folder/主題/律法與恩典.md
+- name: 曾有何民聽見神在火中說話還能存活
+  suggested_type: 主題
+  evidence: 第24、26節「今日我們得見神與人說話，人還存活」「像我們聽見還能存活呢？」；STEP：va./Chai 與 va/i.Ye.chi 皆 H2421（cha.yah）。
+  surfaces:
+  - phrase: 人還存活
+  - phrase: 還能存活
+  match_type: exact
+  existing_title: 曾有何民聽見神在火中說話還能存活
+  existing_path: link_folder/主題/曾有何民聽見神在火中說話還能存活.md
+- name: 面對面見神
+  suggested_type: 神學
+  evidence: 第4節「耶和華在山上，從火中，面對面與你們說話」；STEP：pa.Nim be./fa.Nim（H6440H 雙同字）；GT《精讀本》：這並不意味著摩西或百姓們曾親眼見過神的容顏,他們只是看見了神的榮耀。
+  surfaces:
+  - phrase: 面對面
+  match_type: exact
+  existing_title: 面對面見神
+  existing_path: link_folder/神學/面對面見神.md
+- name: 雷轟即神的聲音
+  suggested_type: 神學
+  evidence: 第22節「大聲曉諭你們全會眾的」；STEP：Kol ga.Dol（H6963A＋H1419A）；CT：『大聲』有如打雷(參約十二29)。
+  surfaces:
+  - phrase: 大聲
+  match_type: exact
+  existing_title: 雷轟即神的聲音
+  existing_path: link_folder/神學/雷轟即神的聲音.md
+- name: 烈火
+  suggested_type: 原文
+  evidence: 第25節「現在這大火將要燒滅我們」；STEP：to.khe.Le./nu（H398，a.khal，簡要詞典義 to eat）＋ha./'Esh
+    ha./ge.do.Lah——與申4:24「烈火」（'esh 'o.khe.Lah）同樣是「火」加「吞吃」兩個字。
+  surfaces:
+  - phrase: 大火
+  match_type: exact
+  existing_title: 烈火
+  existing_path: link_folder/原文/烈火.md
+- name: 我是耶和華你的神
+  suggested_type: 神學
+  evidence: 第6節「我是耶和華─你的神，曾將你從埃及地為奴之家領出來」；GT《精讀本》：在立約或立法之前首先宣佈了立法者的稱呼及資格,這是為了對後面的契約或律法賦予牢不可破的權威和價值；CT：『耶和華』的希伯來文是雅威(Yehweh)，意思是那自有永有的。
+  surfaces:
+  - phrase: 我是耶和華─你的神
+  match_type: exact
+  existing_title: 我是耶和華你的神
+  existing_path: link_folder/神學/我是耶和華你的神.md
+- name: 妄稱
+  suggested_type: 原文
+  evidence: 第11節；STEP：ti.Sa'（H5375G）＋la./Shav'（H7723H）；CT〔原文字義〕「妄稱(原文雙字)」舉起，承擔；本章第20節的「假見證」（'ed
+    Shav'，H7723G）用的是同一個 shav。
+  surfaces:
+  - phrase: 妄稱耶和華名的
+  match_type: exact
+  existing_title: 妄稱
+  existing_path: link_folder/原文/妄稱.md
+- name: 貪戀
+  suggested_type: 原文
+  evidence: 第21節「不可貪戀人的妻子」tach.Mod（H2530A）與「也不可貪圖人的房屋」tit.'a.Veh（H183）是兩個不同的動詞；GT
+    引艾基斯：在申命記五21，「房屋」之前也用了一個與出埃及記不同的動詞「妄想」（即tit'awweh取代了tahmod)。
+  surfaces:
+  - phrase: 貪圖
+  match_type: exact
+  existing_title: 貪戀
+  existing_path: link_folder/原文/貪戀.md
+- name: 申5：6-21
+  suggested_type: 互文
+  evidence: 本章第6-21節就是這段十誡本身；GT 引艾基斯《舊約聖經難題彙編》整段處理它與出二十2-17 的字句差異；KC：What we will
+    see in verses 6-21, is not just a repetition of the Ten Commandments from Exodus
+    20.
+  match_type: exact
+  existing_title: 申5：6-21
+  existing_path: link_folder/互文/申5：6-21.md
+- name: 當記念安息日守為聖日
+  suggested_type: 神學
+  evidence: 第12-15節第四誡；GT《精讀本》：在出20:11中,聖守安息日的誡命是以神在創造天地萬物之後第七日休息的事實為根據,而本書則以以色列民族從埃及得到解放的歷史性救贖事件為根據；BH：In
+    the ancient Near Eastern context, this command was countercultural, as most societies
+    did not have a regular day of rest.
+  surfaces:
+  - phrase: 吩咐你守安息日
+  match_type: exact
+  existing_title: 當記念安息日守為聖日
+  existing_path: link_folder/神學/當記念安息日守為聖日.md
+- name: 「記念」與「守」
+  suggested_type: 原文
+  evidence: 第12節「當照耶和華─你神所吩咐的守安息日為聖日」用 sha.Mor（H8104G，簡要詞典義 to keep）起頭；第15節「你也要記念你在埃及地作過奴僕」才用
+    ve./za.khar.Ta（H2142，za.khar）——本章的「記念」掛在埃及為奴，不在安息日誡命本身。
+  surfaces:
+  - phrase: 記念
+  match_type: exact
+  existing_title: 「記念」與「守」
+  existing_path: link_folder/原文/「記念」與「守」.md
+- name: 安息（第七日的歇息）
+  suggested_type: 原文
+  evidence: 第14節「使你的僕婢可以和你一樣安息」；STEP：ya.Nu.ach（H5117，nu.ach，簡要詞典義 to rest），與「安息日」（sha.bat，H7676）不是同一個字；GT《啟導本》：在神面前人人平等，從祂規定僕婢也應休息看出。
+  surfaces:
+  - phrase: 可以和你一樣安息
+  match_type: exact
+  existing_title: 安息（第七日的歇息）
+  existing_path: link_folder/原文/安息（第七日的歇息）.md
+- name: 遵行
+  suggested_type: 原文
+  evidence: '第1、32節「你們要聽，可以學習，謹守遵行」；STEP：u./she.mar.Tem（H8104J，簡要詞典義 to keep: careful）＋la./''a.so.Ta/m（H6213A，a.sah）；CT：『謹守』重在指思想觀念的贊同和一致；『遵行』重在指行為上的遵照和實施。'
+  surfaces:
+  - phrase: 謹守遵行
+  match_type: exact
+  existing_title: 遵行
+  existing_path: link_folder/原文/遵行.md
+- name: 定言式法律
+  suggested_type: 神學
+  evidence: 第7-21節十條誡命全用「不可……」或「當……」的絕對句式；GT《精讀本》：第一,十誡的體裁是,即「當……」或「不可……」。
+  match_type: exact
+  existing_title: 定言式法律
+  existing_path: link_folder/神學/定言式法律.md
+- name: 百姓懼怕神的顯現
+  suggested_type: 事件
+  evidence: 第5節「因為你們懼怕那火，沒有上山」；第23-27節首領和長老求摩西代聽；第25節「現在這大火將要燒滅我們，我們何必冒死呢？」
+  surfaces:
+  - phrase: 懼怕那火
+  - phrase: 求你近前去
+  match_type: exact
+  existing_title: 百姓懼怕神的顯現
+  existing_path: link_folder/事件/百姓懼怕神的顯現.md
+C_new_formal:
+- name: 這約是與哪一代人立的
+  suggested_type: 解經爭議
+  evidence: 第3節「這約不是與我們列祖立的，乃是與我們今日在這裡存活之人立的」；GT《雷氏》給出兩種讀法（列祖＝西乃山那一代／列祖＝族長）；GT《啟導本》與
+    KC 各採一種。
+  target_path: link_folder/解經爭議/這約是與哪一代人立的.md
+  semantic_hint:
+  - title: 立約
+    score: 0.419
+    type: 主題
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: 第9節「事奉」ta.'a.ve.De/m（H5647H）、第13節「勞碌」ta.'a.Vod（H5647I）、第6節「為奴」'a.va.Dim（H5650）、第14節「僕婢」'av.de./kha（H5650）、第15節「作過奴僕」'E.ved（H5650）——STEP
+    顯示同一個 a.vad 字根貫穿本章。
+  target_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  semantic_hint:
+  - title: 奴僕
+    score: 0.401
+    type: 原文
+- name: 學習與教訓同一字根（la.mad）
+  suggested_type: 原文
+  evidence: 第1節「可以學習」u./le.mad.Tem（H3925H）與第31節「你要教訓他們」te.la.me.De/m（H3925G）；CT：在這裏，摩西列舉了教育法則：聽，是教育的開始。
+  target_path: link_folder/原文/學習與教訓同一字根（la.mad）.md
+- name: 得福（ya.tav）
+  suggested_type: 原文
+  evidence: 第16節「使你得福」Yi.tav、第28節「他們所說的都是」hei.Ti.vu、第29節「使他們…得福」yi.Tav，STEP 皆 H3190（ya.tav，簡要詞典義
+    be good）；CT〔原文字義〕「都是」美好，喜歡，令人滿意。
+  target_path: link_folder/原文/得福（ya.tav）.md
+- name: 惟願（mi yi.ten）
+  suggested_type: 原文
+  evidence: '第29節「惟願他們存這樣的心敬畏我」；STEP：mi-（H4310 who?）＋yi.Ten（H5414Q，簡要詞典義 to give:
+    if only!），字面是「誰會給」；CT：『這樣的心』指害怕惹神發怒的心。'
+  target_path: link_folder/原文/惟願（mi yi.ten）.md
+- name: 幽暗與黑暗的兩個字（a.ra.phel、cho.shekh）
+  suggested_type: 原文
+  evidence: 第22節「幽暗」ve./ha./'a.ra.Fel（H6205）與第23節「黑暗」ha./Cho.shekh（H2822）在 STEP 是兩個不同的字；CT〔原文字義〕「幽暗」漆黑，烏黑；「黑暗」黑暗，隱密處。
+  target_path: link_folder/原文/幽暗與黑暗的兩個字（a.ra.phel、cho.shekh）.md
+- name: 凡屬血氣的（ba.sar）
+  suggested_type: 原文
+  evidence: 第26節「凡屬血氣的，曾有何人聽見永生神的聲音」；STEP：khol- ba.Sar（H3605＋H1320，簡要詞典義 flesh）；BH："All
+    flesh" refers to all humanity。
+  surfaces:
+  - phrase: 凡屬血氣的
+  target_path: link_folder/原文/凡屬血氣的（ba.sar）.md
+- name: 以色列啊你要聽（sha.ma）
+  suggested_type: 原文
+  evidence: 第1節「以色列人哪，我今日曉諭你們的律例典章，你們要聽」；STEP：she.Ma'（H8085G，命令式）；BH：This phrase echoes
+    the Shema (Deuteronomy 6:4), a central declaration of faith in Judaism.
+  surfaces:
+  - phrase: 你們要聽
+  target_path: link_folder/原文/以色列啊你要聽（sha.ma）.md
+- name: 不可偏離左右
+  suggested_type: 主題
+  evidence: 第32節「不可偏離左右」；STEP：ta.Su.ru（H5493I，簡要詞典義 to turn aside）＋ya.Min（H3225G 右）＋u./se.Mol（H8040G
+    左）；GT《精讀本》：指要正直走在神所吩咐的律法之路。
+  surfaces:
+  - phrase: 不可偏離左右
+  target_path: link_folder/主題/不可偏離左右.md
+- name: 十誡的解釋原理
+  suggested_type: 神學
+  evidence: GT《精讀本》在第7-21節列出解釋十誡的原理：動機性原理、對偶原理、代表的原理、連線性原理，並說這些原理可擴大適用於其它所有律法。
+  target_path: link_folder/神學/十誡的解釋原理.md
+  semantic_hint:
+  - title: 十誡
+    score: 0.523
+    type: 神學
+  - title: 十句話
+    score: 0.461
+    type: 原文
+  - title: 倫理十誡
+    score: 0.444
+    type: 神學
+- name: 十誡中的兩條正面誡命
+  suggested_type: 主題
+  evidence: 第12、16節；STEP：ka./'a.Sher tzi.ve./Kha（H834D＋H6680）；GT《啟導本》：此誡和下一條孝敬父母之誡，為十誡中唯一兩條用正面語氣提出的誡命（其他都用「不可」），並且用「照耶和華神所吩咐」開頭，旨在說明十誡為神親自頒佈。
+  surfaces:
+  - phrase: 照耶和華─你神所吩咐的
+  target_path: link_folder/主題/十誡中的兩條正面誡命.md
+  semantic_hint:
+  - title: 十誡
+    score: 0.528
+    type: 神學
+  - title: 倫理十誡
+    score: 0.468
+    type: 神學
+  - title: 十誡的條分法
+    score: 0.454
+    type: 神學
+D_new_candidate: []
+E_skip: []

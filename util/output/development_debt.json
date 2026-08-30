@@ -1,4 +1,12 @@
 {
   "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，development=update 時清除；維護回合用 link_updates.py debt --settle <path>。",
-  "entries": []
+  "entries": [
+    {
+      "path": "link_folder/神學/亞伯拉罕之約.md",
+      "title": "亞伯拉罕之約",
+      "deferred_at": "申命記:5",
+      "accumulated": 15,
+      "fingerprint": "2e11cc6fde8d66c3"
+    }
+  ]
 }

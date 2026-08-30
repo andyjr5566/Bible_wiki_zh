@@ -1,0 +1,42 @@
+name: 事奉與作奴僕同一字根（a.vad）
+type: 原文
+secondary_types: []
+aliases:
+- 事奉與作奴僕
+status: formal
+definition: |-
+  申命記第五章裡有五個位置，中文分別譯成「為奴」「事奉」「勞碌」「僕婢」「作過奴僕」，看起來像五件不相干的事，在原文卻共用一個字根。
+
+  STEP 逐字資料把這五處排出來：
+
+  | 節 | 和合本 | STEP 音譯 | Strong | 簡要詞典義 |
+  |---|---|---|---|---|
+  | 6 | 為奴之家 | 'a.va.Dim | H5650 | servant/slave |
+  | 9 | 也不可事奉他 | ta.'a.ve.De/m | H5647H | to serve: minister |
+  | 13 | 六日要勞碌 | ta.'a.Vod | H5647I | to serve: labour |
+  | 14 | 你的僕婢 | 'av.de./kha | H5650 | servant/slave |
+  | 15 | 在埃及地作過奴僕 | 'E.ved | H5650 | servant/slave |
+
+  H5647 是動詞 a.vad，H5650 是由它來的名詞 e.ved；簡要詞典把動詞的兩個編號分別記成 to serve: minister 與 to serve: labour，同一個動作按上下文落在宗教服事或日常勞動兩邊。
+
+  CT 的原文字義在兩個相隔六節的地方給了完全相同的中文：第9節「事奉」工作，服事；第13節「勞碌」工作，服事。中文譯本把它們分開譯，是為了讀起來順，不是因為原文換了字。
+
+  CT 對這幾處的解釋各自貼著上下文：第9節的『事奉』指侍候那些形像，並為其從事宗教性的工作；第13節說一周第一至第六日，為著維持家庭的生活，每天都要作所該作的工；第15節則要人回想從前那種日以繼夜，不得休息的苦工。
+
+  這條線也解釋了第14至15節那個看似繞路的理由。KC 指出，除了創造之外，救恩也是我們順服的理由，而這份救贖同樣會帶著人去憐憫別人。GT《啟導本聖經申命記註釋》講得直接：在神面前人人平等，從祂規定僕婢也應休息看出。曾經是 e.ved 的人，如今家裡有 e.ved，安息日就是這件事的具體安排。
+accumulations:
+- book: 申命記
+  chapter: 5
+  summary: '第6節「為奴之家」''a.va.Dim（H5650）、第9節「事奉」ta.''a.ve.De/m（H5647H）、第13節「勞碌」ta.''a.Vod（H5647I）、第14節「僕婢」''av.de./kha（H5650）、第15節「作過奴僕」''E.ved（H5650），STEP 顯示同屬 a.vad 字根。CT 的原文字義在第9節與第13節都作「工作，服事」。'
+  relation: 這個字根把本章三段本來分開的內容縫在一起：第二誡禁止事奉偶像、第四誡吩咐六日勞碌、第15節回頭指埃及的苦工。中文讀者看不出來的重複，正是安息日誡命在申命記改以救贖為理由的語言基礎——被贖出奴役的人，要讓自己家裡的僕婢也得安息。
+related_entries:
+- 奴僕
+- 為奴之家
+- 安息（第七日的歇息）
+- 當記念安息日守為聖日
+- 出埃及
+sources:
+- '逐節註解（ccbiblestudy CT）: 申五9、13、15〔原文字義〕與文意註解——事奉、勞碌、作過奴僕（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT05.htm）'
+- '拾穗（ccbiblestudy GT）: 申五14《啟導本》——在神面前人人平等（https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT05.htm）'
+- '研經註解（KingComments）: Deuteronomy 5:12-15 — 救恩作為順服的理由與憐憫他人（https://www.kingcomments.com/en/bible-studies/Deu/5）'
+- '原文資料（STEP Bible）: Deuteronomy 5:6, 9, 13, 14, 15 — H5647／H5650 的出現位置、morphology 與簡要詞典義（https://github.com/STEPBible/STEPBible-Data）'

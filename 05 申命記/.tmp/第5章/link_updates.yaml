@@ -1,0 +1,733 @@
+book: 申命記
+chapter: 5
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第1節摩西召齊以色列眾人講律例典章；第5節「那時我站在耶和華和你們中間，要將耶和華的話傳給你們」；第23-31節百姓的首領長老求他代聽，神應允並留他站在自己這裡領受一切誡命、律例、典章，再去教訓百姓。KC 把摩西讀成主耶穌的圖畫——那位講說神話語的教師。
+  relation: 本章是摩西第二篇講章的開講，他在其中同時是講員與四十年前那件事的當事人。中保的位置在第5節先立好，第27節由百姓自己開口確認，第31節由神親自安排下去；本章沒有出現他在民20 的失敗，只有他被交付教導的職分。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 70
+    - 71
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 從出7章他「照樣行了」開始，摩西的角色定型為中保
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 第2節「耶和華─我們的神在何烈山與我們立約」；STEP：be./cho.Rev（H2722）。BH 指何烈是西乃山的另一個名字，摩西在那裡領受十誡；並說何烈位於西乃半島，確切位置仍有爭論，傳統上與半島南部相連。
+  relation: 本章把何烈山當成整篇講章的起點：第2至5節回到那一天，第6至21節重述當日所頒的十誡，第22至31節接著講當日山下發生的事。它在本章不是一個地理座標，而是約的發生地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 西乃之約
+  path: link_folder/神學/西乃之約.md
+  summary: '第2-3節；STEP：ka.Rat（H3772H，簡要詞典義 to cut: make(covenant)）＋be.Rit（H1285）。GT《啟導本聖經申命記註釋》：「這是西奈之約的重申，必須成為他們生活的守則、信仰的依憑」；GT《聖經精讀本》指此約的特徵是神親自與已具備國家規模的整個以色列民族立約，而聖約的內容與本質與從前沒有差別。'
+  relation: 本章是這約在申命記裡的正式重申。第3節把立約對象定在「今日在這裡存活之人」，第32至33節把守約與存活得福綁在一起——約不是一份四十年前簽完就歸檔的文件，而是眼前這一代要照著走的路。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 十誡
+  path: link_folder/神學/十誡.md
+  summary: 第6-21節整段重述十誡；第22節說這些話是神親口向全會眾說的，此外並沒有添別的話。GT《聖經精讀本》：「十誡是所有律法的核心與本質,並不是單純的律法,乃是神的『約』」，並指出盛放十誡的法櫃被稱為約櫃、記錄十誡的書被稱為約書。
+  relation: 本章是十誡在五經裡的第二次完整記載。與出20 的差異可以逐項辨認，落在第四誡（起首多了「照耶和華所吩咐的」、名單補上牛驢與僕婢安息的目的、理由由創造換成救贖）、第五誡（多了「照耶和華所吩咐的」與「使你得福」）與第十誡（次序對調、第二個動詞換字、加上田地）；KC 另指出這裡後五誡之間用「和」串連，出20 沒有。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 十誡的條分法
+  path: link_folder/神學/十誡的條分法.md
+  summary: 本章兩家分法相左。CT 把第五誡劃進第一塊石版：父母「象徵神是我們生命的源頭，所以第五誡刻在第一塊石頭，與有關神的第一至第四誡同列」；KC 則從第16節起算第二塊法版，說這裡開始是六條關於待鄰舍的誡命。GT《啟導本》另給一種兩兩配對的讀法：「第一和第二誡確立對神敬拜的原則，建立人神的關愛；第三和第四誡為對拜偶像的禁止；第五和第七誡關乎家庭的保障；第六和第八誡乃對個人的保護；第九和第十誡為人與人間關係的守則」。
+  relation: 本章第一次讓這個分歧在同一批來源裡正面碰上：第五誡歸哪一塊石版，CT 與 KC 在第16節的註解給了相反的答案；GT《啟導本》則在第7節起的十誡總論裡根本不按石版分，改用兩兩配對。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 神頒布十誡
+  path: link_folder/事件/神頒布十誡.md
+  summary: 第4、22節；本章是摩西對新一代重述何烈山頒律當日的情形：神在山上從火中面對面說話，從火中、雲中、幽暗中大聲曉諭全會眾，此外並沒有添別的話，並把這話寫在兩塊石版上交給摩西。GT《聖經精讀本》：「神對以色列百姓只是親口說了所有律法的基礎,即具有憲法性質的十誡,除此之外的律法則藉著中保摩西傳達給百姓」。
+  relation: 出20 記的是事件當下，本章記的是四十年後的複述，並補上當日的後續——百姓求摩西代聽、神說他們所說的都是、神留摩西領受其餘的誡命律例典章。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 律例（choq）
+  path: link_folder/原文/律例（choq）.md
+  summary: '第1節「我今日曉諭你們的律例典章」與第31節「我要將一切誡命、律例、典章傳給你」；STEP：ha./chu.Kim（H2706G，簡要詞典義 statute: decree）。CT 在本章兩處給同一組界定：『律例』指律法，是神向人的要求。GT《聖經精讀本》在第31節說：「『律例和典章』則重複說明了『誡命』這一詞的含意」。'
+  relation: 本章把律例的來源路線寫全了：第31節神把誡命、律例、典章交給摩西，摩西再教訓百姓；第1節與第32節是百姓這一端的責任——聽、學習、謹守遵行，不可偏離左右。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:5
+- title: 典章
+  path: link_folder/神學/典章.md
+  summary: '第1、31節與「律例」成對出現；STEP：ha./mish.pa.Tim（H4941G，簡要詞典義 justice: judgement）。CT：『典章』指審判，是神對人是否遵行律法的判定。GT《聖經精讀本》第31節：「誡命、律例、典章: 指由神直接指示的所有律法」。'
+  relation: 本章的典章不是新頒的條文，而是第31節神交給摩西、要他教訓百姓的那一套。十誡是神親口對全會眾說的，其餘的律例典章則藉摩西轉達——這條分工是本章對典章最具體的定位。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 中保
+  path: link_folder/神學/中保.md
+  summary: 第5節「那時我站在耶和華和你們中間，要將耶和華的話傳給你們」；第23-27節首領和長老請摩西代聽；第28-31節神應允，打發百姓回帳棚，留摩西站在自己這裡。GT《聖經精讀本》：「這仲裁者的原理在舊約時代人是不可缺的,預表了新約時代神人之間的惟一中保耶穌基督的事工」，並指出摩西的中保事工是基於神的旨意，而並非基於百姓的協議與他們的邀請。KC 把中保的職責讀成兩層：不只是站在神與人中間的那一位，還要為我們的失敗擔保後果。
+  relation: 本章是舊約裡少數把中保的成因、請求與神的批准三件事寫在同一段的地方。第5節先立好位置，第27節百姓開口要，第28節神說他們所說的都是，第31節安排實際的傳達路線。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:32
+      - 申命記:5
+- title: 為奴之家
+  path: link_folder/主題/為奴之家.md
+  summary: 第6節「曾將你從埃及地為奴之家領出來」；STEP：mi./Beit 'a.va.Dim（H1004B＋H5650，字面是奴僕之家）。BH 指這個說法點出以色列被救出來的處境——埃及是他們受苦役與惡待的地方，因此凸顯神救贖者與釋放者的身分。
+  relation: 「為奴之家」這個稱呼在本章只出現在第6節，用來說明頒令者是誰；第15節換成「你在埃及地作過奴僕」，成為守安息日的理由。同一段記憶在本章被用了兩次，先當權柄的憑據，再當憐憫的動機。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 奴僕
+  path: link_folder/原文/奴僕.md
+  summary: 第15節「你也要記念你在埃及地作過奴僕」；STEP：'E.ved（H5650）。CT：意指應當回想從前那種日以繼夜，不得休息的苦工。同一個字根也出現在第6節的「為奴」、第14節與第21節的「僕婢」，以及第9節的「事奉」與第13節的「勞碌」。
+  relation: 出21 處理的是以色列人自己家中的奴僕條例，本章則回到他們自己曾是奴僕這件事，並把它變成第四誡的理由：因為你作過奴僕，所以你家裡的僕婢也要和你一樣安息。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 埃及
+  path: link_folder/地點/埃及.md
+  summary: 第6節「從埃及地為奴之家領出來」與第15節「你在埃及地作過奴僕」。BH 指出埃及為奴的記憶要在以色列人心裡養出謙卑與感恩，提醒他們一切都倚靠神。
+  relation: 申4 把埃及壓縮成一座鐵爐、當作獨一真神的論據；本章換了用途——埃及成為十誡引言裡神的身分證明（v6），又成為安息日誡命的理由（v15）。同一段歷史在本章被用了兩次，兩次的功能都不是敘事。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 36
+    - 37
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 創世記與出埃及記寫的是以色列人在埃及遭遇了什麼；申命記不再描述埃及，而是拿它當論據。
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第6節與第15節；STEP 顯示兩處的「領出來」ho.tze.Ti./kha 與 va/i.yo.Tzi.'a./kha 同為 H3318H（ya.tsa）。GT《聖經精讀本》：「在這裡我們要注意授予十誡的耶和華並不是憑著審判者的威嚴,乃是憑著救贖主的慈愛來宣告自己的事實」。
+  relation: 本章把出埃及放在十誡的最前面與第四誡的正中間。KC 指出，除了創造之外，救恩也是我們順服的理由，而這份救贖同樣會帶著人去憐憫別人——第14至15節的僕婢安息就是這句話的具體內容。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 不可為自己雕刻偶像
+  path: link_folder/神學/不可為自己雕刻偶像.md
+  summary: 第8-9節；STEP：fe.sel（H6459，簡要詞典義 idol）。CT：『雕刻』指包括木刻、石雕、泥塑、各種金屬的鑄造，以及繪畫、刺繡、針織、各種手工等。CT 並在〔問題改正〕擋掉一種過度應用：神在建造會幕和聖殿時「還特別選拔巧匠」製作基路伯、獅子、牛、棕樹等物件，可見禁令「與敬拜那些形像有關」，不適用於非以敬拜為目的的製作與觀賞。KC 說神是靈，不能被任何東西代表；任何人手造出來的像都只會是祂的漫畫。
+  relation: 本章的第二誡與第一誡貼得很緊：第7節先排除別的神，第8至9節再排除為敬拜而造的形像，第9節下半用忌邪的神說明理由。CT 的〔問題改正〕是本章少見的界線題——它防的是把禁令擴大到一切造像與觀賞。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 只聽見聲音卻沒有看見形像（te.mu.nah）
+  path: link_folder/神學/只聽見聲音卻沒有看見形像（te.mu.nah）.md
+  summary: 第8節「也不可做什麼形像」；STEP：te.mu.Nah（H8544，簡要詞典義 likeness），與申4:12、15-16、23、25 是同一個字。KC 說除了主耶穌之外，人對神一無所知，凡按自己想法構想出來的神都是雕刻的像。
+  relation: 申4 用「你們只聽見聲音，卻沒有看見形像」推出禁令的理由，本章第8節則把同一個字放進誡命本文。論證在前一章，條文在這一章——兩章合起來才看得出這個字為什麼是第二誡的支點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:5
+- title: 忌邪的神
+  path: link_folder/神學/忌邪的神.md
+  summary: 第9節「因為我耶和華─你的神是忌邪的神」；STEP：'el ka.Na'（H410G＋H7067H，簡要詞典義 jealous）。CT：按原文意指嫉妒的神，表示祂忌恨任何人在祂以外另有別神，而向牠敬拜；並指出神與人立約的關係有同婚約，要求對方完全的奉獻。
+  relation: 本章把忌邪擺在第二誡的理由位置，緊接著就是三四代與千代的兩個幅度。忌邪在這裡不是情緒的描述，而是第9至10節那組對照的根據——追討與發慈愛都從同一個屬性出來。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 追討罪自父及子直到三四代
+  path: link_folder/神學/追討罪自父及子直到三四代.md
+  summary: '第9節；STEP：Po.ked（H6485I，簡要詞典義 to reckon: visit）、shi.le.Shim（H8029 第三代）、ri.be.''Im（H7256 第四代）。GT《申命記串珠聖經註釋》：「這裡不是指過犯的本身，而是指罪惡的後果」。CT 指出這話與結十八20「兒子必不擔當父親的罪孽」看似相抵觸，因此另有所指——「按照常理，兒女和子孫難免受到父母、祖父母的連累，譬如疾病的遺傳、家境的貧困、觀念的傳遞、行為的模仿等」。BH 也說這不是直接的刑罰轉嫁，而是活在有罪環境裡的自然後果。'
+  relation: 本章把這句話與第10節的千代放在一起讀。CT 的結論是「愛神所引起正面積極的影響，遠超過恨神所引起負面消極的影響」，並把「直到千代」解成「子子孫孫將會受惠無窮」。追討到三四代、慈愛到千代，這個幅度上的不對稱本身就是第9至10節要說的事。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 發慈愛直到千代
+  path: link_folder/神學/發慈愛直到千代.md
+  summary: 第10節；STEP：che.sed（H2617A，簡要詞典義 kindness）＋la./'a.la.Fim（H505G，字面是向千）。CT：『發慈愛』按原文的文法，含有『繼續不斷地傾倒神那絕對的愛』的意思；『直到千代』意指子子孫孫將會受惠無窮。KC 直接比較兩邊的幅度：愛神那一邊延伸到千，恨神那一邊只到第三、第四代，愛遠遠超過恨。
+  relation: 本章讓這句話與第9節的三四代成對出現，並把條件寫得很清楚：愛我、守我誡命的。CT 指出愛神就必遵守神的誡命，遵守誡命也就是把愛神的心表現出來——這一節把愛與守放在同一個動作裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 不可妄稱耶和華你神的名
+  path: link_folder/神學/不可妄稱耶和華你神的名.md
+  summary: '第11節；STEP：ti.Sa''（H5375G，簡要詞典義 to lift: raise）＋la./Shav''（H7723H，簡要詞典義 vanity: vain）。GT《申命記雷氏研讀本》：「即為了錯誤的目的，如操縱人、行法術，或其它自私的欲望」；GT《串珠》：「在希伯來人的思想裡，名字與個人緊密相關，不可分割」。CT 指出這條誡命「與褻瀆的話和污言穢語無關，其用意是防止人濫用耶和華的名」。KC 舉了幾種今天的形式：借主的名替自己的意見背書、口稱主名卻容讓罪、以主名為聚集中心卻按自己的口味安排。'
+  relation: 本章的第三誡與第九誡在原文共用一個字：第11節的「妄稱」是 la./Shav'（H7723H），第20節的「假見證」是 'ed Shav'（H7723G）。對神的名說空話與在法庭上作空證，在這一章是同一個字的兩種用法。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 安息日
+  path: link_folder/神學/安息日.md
+  summary: 第12-15節；STEP：ha./sha.Bat（H7676）。GT《聖經精讀本》：「在出20:11中,聖守安息日的誡命是以神在創造天地萬物之後第七日休息的事實為根據,而本書則以以色列民族從埃及得到解放的歷史性救贖事件為根據」。KC 說守安息日是順服的核心誡命，其餘誡命連不信的人也懂得，守安息日的唯一理由是神吩咐了。
+  relation: 本章給安息日換了一個理由，也因此換了一個重心。第14節把兒女、僕婢、牲畜與寄居的客旅全列進來，第14節末尾說明目的是「使你的僕婢可以和你一樣安息」，第15節給出根據：你自己作過奴僕。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 當孝敬父母
+  path: link_folder/神學/當孝敬父母.md
+  summary: 第16節；STEP：ka.Bed（H3513G，簡要詞典義 to honor）。CT：『使你得福』這是十誡中唯一可得福分的應許；並指出第五誡與有關神的前四誡同列在第一塊石版上。GT《串珠》：「『孝敬父母』：包括聽從父母」。BH 指出在古代以色列，家庭是群體與宗教生活的基本單位，孝敬父母被看作維持社會秩序與盟約忠誠的根基。
+  relation: 本章的第五誡比出20 多了「使你得福」一項，並與第四誡同樣以「照耶和華─你神所吩咐的」起頭。這兩條是本章十誡裡僅有的兩條正面誡命，也是僅有的兩條先聲明「照耶和華所吩咐的」再給要求的誡命。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 不可殺人
+  path: link_folder/神學/不可殺人.md
+  summary: 第17節；STEP：tre.Tzach（H7523，ra.tsach，簡要詞典義 to murder）。BH 指出這裡的 ratsach 專指不法的殺害，與戰爭中的殺敵或律法容許的死刑分屬不同的事。CT 兩邊都加了限制：它涵蓋自殺與墮胎，卻不適用於服兵役、子宮外孕引流、警察自衛與法官陪審團的死刑判決；並說「『不可殺人』不能用來支持『廢除死刑』的根據」。KC 也把它與神藉掌權者施行的處決分開（創9:6）。
+  relation: 本章的第六誡在原文只有兩個字，本章來源的重點因此全落在界線上——哪些殺不在此列，以及主耶穌把它推進到動怒與懷怨（太五21-26）。這是解釋十誡的動機性原理在本章最清楚的一次應用。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 不可姦淫
+  path: link_folder/神學/不可姦淫.md
+  summary: 第18節；STEP：tne.'Af（H5003，na.aph，簡要詞典義 to commit adultery）。GT《串珠》：「『不可姦淫』：是神聖婚姻生活的規則。先知屢用『淫亂』象徵以色列民對神的不貞」。CT 把禁止的範圍分成五類，並把「眼睛看見異性，心裡動淫念的」也列進來（太五27-30）。KC 說婚姻關係是人與人之間一切關係的基礎，在婚姻裡不忠的人，在任何別的關係裡都不能被信任。
+  relation: 本章的第七誡在後五誡裡與其他四條用「和」串起來（KC 指出這是與出20 的一項差別）。GT《串珠》提到的先知用法，也讓這一誡與第二誡的忌邪連成一線——婚約的比喻兩邊都用得上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 不可偷盜
+  path: link_folder/神學/不可偷盜.md
+  summary: 第19節；STEP：tge.No（H1589，ga.nav，簡要詞典義 to steal）。CT 把偷盜的範圍列得很細，從索賄、剋扣工資、欠債不還到斤兩不足、欠漏稅、拐賣人口，並說「凡是在別人不知情的景況下，使神、國家、社會、團體、私人的利益受到損失，而自己蒙受利益者，均可列入偷盜」。KC 把可偷的東西擴到名聲與話語——散布謠言可以偷走人的好名聲，把別人說過的話當成自己在神話語裡的發現，也是偷。
+  relation: 本章的第八誡是解釋十誡的對偶原理最清楚的例子：KC 說對認識自己福分的基督徒而言，重點不只在不偷，而在做相反的事——勞力行善，好有東西分給缺乏的人（弗四28）。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 不可作假見證陷害人
+  path: link_folder/神學/不可作假見證陷害人.md
+  summary: '第20節；STEP：''ed Shav''（H5707 witness＋H7723G，簡要詞典義 vanity: false）。GT《串珠》：「『不可作假見證』：指在法庭上給假口供」。CT 把它從法庭推廣出去：任何謊言、造謠、捏造事實、虛構證據、假新聞、幫助散播不實之事，致使對方名譽、品格、信用、錢財、事業、家庭受害者，都可視為作假見證。BH 則把「鄰舍」推到群體同胞乃至全人類。'
+  relation: 本章的第九誡與第三誡共用同一個字 shav：對神的名說空話與在法庭上作空證，在本章是同一個字的兩種用法。這一點在中文譯本上完全看不出來，只有原文比得出來。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 不可貪戀
+  path: link_folder/神學/不可貪戀.md
+  summary: 第21節；STEP 顯示這一節用了兩個不同的動詞——「不可貪戀人的妻子」是 tach.Mod（H2530A），「也不可貪圖人的房屋」是 tit.'a.Veh（H183）。GT《串珠》：「『不可貪戀』：重點不在人外在的行為，而在內心的境況」。CT 指出聖經明說貪財為萬惡之根（提前六10），又將貪婪與拜偶像同列（西三5）。KC 說這條誡命把罪的胚芽揭出來，讓每個人都看清楚人靠自己守不住律法。
+  relation: 本章的第十誡與出20 有兩處差別：妻子與房屋的次序對調，第二個動詞也換了字。GT 引艾基斯處理過這件事，判斷兩個動詞的意思完全相同，差別在申命記的風格更一致。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 石版
+  path: link_folder/文化/石版.md
+  summary: 第22節「他就把這話寫在兩塊石版上，交給我了」；STEP：she.Nei lu.Chot 'a.va.Nim（H8147＋H3871＋H68G）。CT 指出這是「神用指頭寫的石版」。GT《聖經精讀本》：「對聖經與希伯來人而言,數字『2』意味著證據或確實性。故,這句話暗示了十誡之約的普遍見證性及完全性」。BH 說用石版寫成表示這份律法的恆久，而由神親自書寫則顯明它的來源與權柄。
+  relation: 申4:13 講的是版上寫了什麼，本章講的是這份文件怎麼交到摩西手上——說完、沒有再添、寫下、交付，四個動作在第22節一句話裡走完。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 密雲
+  path: link_folder/神學/密雲.md
+  summary: 第22節「這些話是耶和華在山上，從火中、雲中、幽暗中，大聲曉諭你們全會眾的」；STEP：he./'a.Nan（H6051，a.nan）；CT：『從火中、雲中、幽暗中』形容聲音出處。BH 說雲與幽暗傳達的是神本性中的奧祕與隱藏的一面，與引領以色列人的雲柱是同一組意象。
+  relation: 出19 的密雲是神降臨時的景象，本章的雲則夾在火與幽暗中間，構成聲音的出處。第23節接著換一個字寫黑暗——同一場顯現，本章用了三個不同的詞來描述它的能見度。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 神住在幽暗中
+  path: link_folder/神學/神住在幽暗中.md
+  summary: 第22節的「幽暗」，STEP：ve./ha./'a.ra.Fel（H6205，本節譯義 thick darkness）；CT〔原文字義〕「幽暗」漆黑，烏黑，並解第23節「『從黑暗中出來』意指神從祂所在的幽暗中發聲」。GT《聖經精讀本》另註第23節的火：「此火並不是可燃燒其它東西的自然之火,而是只有形象的超自然之火」。
+  relation: 本章把幽暗放在聲音的出處上——神在那裡說話，百姓在外面聽。第22節把火、雲、幽暗三樣並列，第23節寫聲音從黑暗中出來時又換了一個字，是本章描述這場顯現用字最密的兩節。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:26
+      - 申命記:5
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第23節「你們支派中所有的首領和長老都來就近我」；STEP：ra.Shei shiv.tei./Khem（H7218H＋H7626H）與 ve./zik.nei./Khem（H2205G）。GT《聖經精讀本》：「首領是各支派的領袖,各有一名,長老則是年高德重之人,為數較多⋯因此,他們是百姓實質性的代表」。CT 認為指的是十二支派的首領和七十長老（參民十一16）。BH 說他們的近前是一種正式而恭敬的回應，反映以色列社會的層級結構與領袖在維繫盟約忠誠上的責任。
+  relation: 本章的長老不是來受命的，而是來代表百姓提出請求的：第24至27節那段話是他們說的，第28節神說「這百姓的話，我聽見了」——他們一開口就等同全民開口。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 耶和華的榮光
+  path: link_folder/神學/耶和華的榮光.md
+  summary: 第24節「耶和華─我們神將他的榮光和他的大能顯給我們看」；STEP：ke.vo.D/o（H3519 ka.vod）與 ga.de.L/o（H1433 go.del）。CT：『祂的榮光』指神顯出祂的榮耀，在此以火光為代表；『祂的大能』指神顯出祂的偉大，在此以聲音為代表。BH 說榮光與大能指的是神那壓倒性的威嚴與能力，在山上以火與煙顯出來。
+  relation: 本章的榮光是百姓自己說出來的，不是敘事者的描述。他們一面承認看見了榮光，一面立刻說再聽下去就必死亡——第24與25節連著兩句話，正是本章對神顯現的兩種反應同時存在的證據。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 耶和華永生神
+  path: link_folder/神學/耶和華永生神.md
+  summary: 第26節「凡屬血氣的，曾有何人聽見永生神的聲音從火中出來」；STEP：'E.lo.Him chai.Yim（H430G＋H2416A）。BH 指出這個稱呼與四圍列國那些沒有生命、不能出聲的偶像正好相對，以色列的神是活的、動的。
+  relation: 創21 的永生神是亞伯拉罕在別是巴求告的名，本章則出現在百姓最害怕的一刻。第26節把「凡屬血氣的」與「永生神」擺在同一句話的兩端——會朽壞的肉身聽見了活神的聲音竟然沒死，這正是他們接下來請摩西代聽的理由。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 寄居身分
+  path: link_folder/神學/寄居身分.md
+  summary: 第14節「並在你城裡寄居的客旅」；STEP：ve./ge.re./Kha（H1616 ger）＋bi/sh.'a.Rei./kha（H8179G sha.ar，字面是在你的城門內）。BH 說把外人也列進安息日的規定，顯出神的盟約帶有普世的性質，並與利19:34 善待寄居者的吩咐同屬一條線。
+  relation: 創47 與出2、6 的寄居講的是以色列人自己在別人地上的身分，本章則轉到相反的位置——他們即將成為地主，而寄居的客旅要在他們的城裡得享同一份安息。曾經寄居的人怎麼待寄居的人，是本章第四誡的實際內容之一。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: '第29節「惟願他們存這樣的心敬畏我，常遵守我的一切誡命」；STEP：le./yir.''Ah（H3372H，簡要詞典義 to fear: revere）。CT：『這樣的心』指害怕惹神發怒的心，並說神惟願以色列人由衷地尊敬祂、順服祂——「照規定做事，與發自內心而做很不相同」。BH 提醒這裡的敬畏不是恐怖，而是對神的能力有所認識並委身於順服。'
+  relation: 本章的敬畏出自神自己的口，而且緊接在祂稱讚百姓「所說的都是」之後。百姓那份怕是被火嚇出來的，神要的是留得住的那一種——第29節把敬畏與常遵守誡命寫成同一件事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: keep
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: 第15節「耶和華─你神用大能的手和伸出來的膀臂將你從那裡領出來」；STEP：be./Yad cha.za.Kah（H3027H＋H2389）＋u./vi/z.Ro.a' ne.tu.Yah（H2220＋H5186）。CT：『大能的手』形容祂大有能力的作為；『伸出的膀臂』形容祂拯救的範圍。BH 說這是描寫神的能力與主動介入的比喻，兼有力量與保護兩層意思。
+  relation: 出13、14 的大能的手是出埃及當下的宣告，申3、4 是拿它作論據；本章把它接到一條誡命上——因為神用大能的手領你出來，所以你要守安息日，並讓你的僕婢也安息。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 摩西的第二篇講章
+  path: link_folder/背景/摩西的第二篇講章.md
+  summary: GT《啟導本》：「本章至11章是摩西第二篇談話中關於律法基本原則的講話，為一5『講律法』的開始」，並指出本章開始的話與四1相同，「用誠懇且親切的呼喚來勖勉新一代」。GT《串珠》給的分段是：「5:1-11:32 摩西勸勉以色列民：謹守遵行神在何烈山頒佈的訓令」。GT《聖經精讀本》：「摩西的第二篇講章是申命記的正文,本文是為了重複說明十誡的導文」。
+  relation: 申4:44-49 是這篇講章的序言，本章第1節才是正式開講。GT《啟導本》並說明它與後文的分工：有關律法細節的解釋，大都記在十二章以後，本章到十一章講的是基本原則。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:5
+- title: 不可加添也不可刪減（ya.saph、ga.ra）
+  path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+  summary: 第22節「此外並沒有添別的話」；STEP：ve./Lo' ya.Saf（H3254H，ya.saph）——與申4:2「不可加添」同一個字根。GT《聖經精讀本》：「神對以色列百姓只是親口說了所有律法的基礎,即具有憲法性質的十誡,除此之外的律法則藉著中保摩西傳達給百姓」。KC 說這是一份完整的話，一句也沒有再加；神說了就寫下來，好讓人隨時查考祂說過什麼。
+  relation: 申4:2 是對百姓的禁令——你們不可加添；本章第22節是對神自己的敘述——祂沒有再添。更有意思的是第25節百姓怕「再聽見」用的也是這個字根（yo.se.Fim，H3254G）：神沒有再加，百姓怕的正是再加。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:5
+- title: 主日與安息日的關係之爭
+  path: link_folder/解經爭議/主日與安息日的關係之爭.md
+  summary: CT 在〔問題改正〕列出九點主張新約信徒毋須守安息日，包括安息日是後事的影兒（西二16-17）、主耶穌沒有吩咐門徒守安息日、十誡中惟獨守安息日這一項未出現於新約聖經等。GT 引李道生《舊約聖經問題總解》同向作答：「信徒現今不在舊約律法之下，乃是活在新約恩典之中，所以不需要再守安息日了」。KC 的立場不同：他反對把七日的第一日當成改頭換面的安息日，也不主張把安息日的規條轉移過去；基督徒守第一日不是因為第七日被廢掉，而是因為他們向律法死了、與基督一同復活。CT 另提出一個折衷說法：舊約時代的安息日，到了新約時代就成為了主日。
+  relation: 出31 把安息日立為立約的記號，本章換成救贖的紀念，因此本章的爭點集中在「這條誡命還算不算數」。CT 與 GT 給的是同一個方向的答案，KC 給的是不同的理由——他不從廢除立論，而從信徒與律法的關係立論。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:31
+      - 申命記:5
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 第3節「這約不是與我們列祖立的」。GT《申命記雷氏研讀本》在兩種讀法中給了一種：「西乃之約不是賜給列祖的（他們有亞伯拉罕之約；比較四31），而是賜給那些從埃及地出來的人（五6）」。GT《啟導本》採另一種：此約乃與亞伯拉罕、以撒、雅各的後裔所立，「將亞伯拉罕之約中的應許，具體施行在離開埃及奴役後的以色列人身上」。
+  relation: 本章沒有正面講亞伯拉罕之約，只在第3節的爭議裡把它當成對照組。兩家的分歧其實就是這兩個約的關係問題：西乃之約是另立一個，還是把亞伯拉罕之約的應許落實下來。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 律法與恩典
+  path: link_folder/主題/律法與恩典.md
+  summary: 第6節先講救贖再頒誡命。CT：「神乃是先把以色列人從埃及地救出來，然後才將律法賜給他們。因此，律法的本身就是一種愛的表示」，並說「神的律法，不是加給他們的枷鎖，而是頭上的華冠榮冕」。GT《聖經精讀本》：「在這種意義上,十誡是基於神之慈愛的『慈愛之約』」，並指出頒律的耶和華不是憑審判者的威嚴，而是憑救贖主的慈愛宣告自己。GT 另引《精讀本》列出十誡的三重目的：為萬人、為不信者、為聖徒。
+  relation: 出20 已經有同樣的次序，本章把它講得更明白：第6節的引言之後，第15節又用出埃及當作第四誡的理由。同一份恩典在本章出現兩次，一次奠定權柄，一次奠定憐憫。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 曾有何民聽見神在火中說話還能存活
+  path: link_folder/主題/曾有何民聽見神在火中說話還能存活.md
+  summary: 第24節「今日我們得見神與人說話，人還存活」與第26節「像我們聽見還能存活呢？」；STEP：va./Chai 與 va/i.Ye.chi 皆 H2421（cha.yah）。CT 指出一般的情況下，人碰到神的烈火會被立即燒化，但以色列人的首領和長老不僅看見了火，並且也聽見了火中的聲音，竟然還能存活，所以不同尋常。BH 說他們的存活見證了神的憐憫與恩典，也顯出神所要的是關係而不是毀滅。
+  relation: 申4:32-33 是摩西丟出的反問，本章第24、26節是百姓自己說出同一件事——而且他們說完之後立刻推出結論：不能再聽了，請摩西代聽。同一個驚訝，在申4 是論證的憑據，在本章是求中保的理由。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:5
+- title: 面對面見神
+  path: link_folder/神學/面對面見神.md
+  summary: 第4節「耶和華在山上，從火中，面對面與你們說話」；STEP：pa.Nim be./fa.Nim（H6440H，雙同字）。CT：『面對面』指沒有通過任何媒介，直接頒賜給以色列人。GT《聖經精讀本》把分寸講明白：「這並不意味著摩西或百姓們曾親眼見過神的容顏,他們只是看見了神的榮耀」，並說面對面的意思是像人與朋友面對面說話一樣親密。BH 也指出神並未顯出祂完全的榮耀，因為沒有人見神的面還能存活（出33:20）。
+  relation: 創32 與出33 的面對面都落在個人身上——雅各、摩西；本章的面對面對象是全會眾。而同一章第5節馬上補上摩西站在中間，第22至27節又寫百姓怕得要人代聽：直接與間接在本章同時成立。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 雷轟即神的聲音
+  path: link_folder/神學/雷轟即神的聲音.md
+  summary: 第22節「大聲曉諭你們全會眾的」；STEP：Kol ga.Dol（H6963A＋H1419A）。CT：『大聲』有如打雷(參約十二29)。本章的「聲音」（qol）在第22至28節反覆出現：第23節從黑暗中出來的聲音、第24與26節從火中出來的聲音、第25節再聽見就必死亡的聲音，第28節則換成神聽見百姓的聲音。
+  relation: 出9 的雷轟在原文直譯是神的聲音，那是審判的吼聲；本章的聲音是頒律的聲音，百姓聽見了還活著，卻不敢再聽。同一個字在兩處都指向神開口這件事本身，而不是自然現象。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 烈火
+  path: link_folder/原文/烈火.md
+  summary: 第25節「現在這大火將要燒滅我們」；STEP：to.khe.Le./nu（H398，a.khal，簡要詞典義 to eat）＋ha./'Esh ha./ge.do.Lah——與申4:24「烈火」（'esh 'o.khe.Lah）同樣是火加吞吃兩個字。CT〔原文字義〕「燒滅」吞噬，燒毀，並指出百姓覺得自己若再進一步，將必死無疑。
+  relation: 申4:24 說耶和華你的神乃是烈火，那是摩西下的斷語；本章第25節是百姓自己的話——他們用同樣的兩個字，說的卻是自己會被吃掉。從神的屬性到人的處境，同一組字在兩章走了一個來回。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 我是耶和華你的神
+  path: link_folder/神學/我是耶和華你的神.md
+  summary: 第6節「我是耶和華─你的神，曾將你從埃及地為奴之家領出來」。CT〔原文字義〕：『耶和華』的希伯來文是雅威(Yehweh)，意思是那自有永有的，那位我就是「我是」的。GT《聖經精讀本》：「在立約或立法之前首先宣佈了立法者的稱呼及資格,這是為了對後面的契約或律法賦予牢不可破的權威和價值」。GT《串珠》另給一種可能的譯法：「『我是耶和華你的神』：可作『我耶和華是你們的神』」。BH 說這句宣告確立神的身分與權柄，也把十誡建立在祂與以色列的盟約關係上。
+  relation: 出20:2 是這句話的第一次出場，本章第6節逐字重複。差別在後文——本章第15節再一次用同一段救贖史，這次不是當引言，而是當第四誡的理由。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 妄稱
+  path: link_folder/原文/妄稱.md
+  summary: '第11節；STEP：ti.Sa''（H5375G，簡要詞典義 to lift: raise）＋la./Shav''（H7723H，簡要詞典義 vanity: vain）。CT〔原文字義〕：「妄稱(原文雙字)」舉起，承擔；並解作存心不正直誠實，態度不鄭重，虛情假意且輕浮地稱呼神的名。本章第20節的「假見證」是 ''ed Shav''（H7723G），與第11節的 shav 是同一個字。'
+  relation: 出20:7 的累積處理的是這個詞的字義與適用範圍；本章多出一件出20 看不到的事——同一個 shav 在十誡裡出現兩次，一次對神，一次對人。第三誡與第九誡因此在原文上是一對。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 貪戀
+  path: link_folder/原文/貪戀.md
+  summary: 第21節。STEP 顯示本節用了兩個不同的動詞：「不可貪戀人的妻子」是 tach.Mod（H2530A，簡要詞典義 to desire），「也不可貪圖人的房屋」是 tit.'a.Veh（H183，簡要詞典義 to desire）。GT 引艾基斯《舊約聖經難題彙編》：「在出埃及記二十17，『房屋』在『妻子』之前，但到了申命記五21，卻是『妻子』先于『房屋』」，並指「在申命記五21，『房屋』之前也用了一個與出埃及記不同的動詞『妄想』（即tit'awweh取代了tahmod)」，而「這兩個動詞的意思完全相同」。
+  relation: 出20:17 兩次都用 chamad，本章把第二次換成 avah，次序也對調。艾基斯判斷這是風格上的調整而非意思的改變——申命記的用字「肯定更符合它作為摩西五經最後一卷具有教導性目的之書」。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 申5：6-21
+  path: link_folder/互文/申5：6-21.md
+  summary: 本章第6-21節就是這段十誡本身。GT 引艾基斯《舊約聖經難題彙編》整段處理它與出二十2-17 的字句差異，列出兩處具體不同：第十誡中「妻子」與「房屋」的次序對調，以及申五21 用 tit'awweh 取代 tahmod；並指出摩西在守安息日的誡命裡沒有提及神在六日內的創造之工，卻插入了記念從埃及為奴之家出來的內容。艾基斯的結論是「兩者間的差異，只在於措詞有所不同，但其中的基本教訓絕沒有分別」。KC 另指出後五誡之間在這裡用「和」串連，出20 沒有。STEP 顯示第20節的「假見證」是 'ed Shav'（H5707＋H7723G）。
+  relation: 這是本條目第一次在申命記這一端取得材料。出20 的累積是從那一頭看過來的，本章則提供了差異的清單與各家對差異性質的判斷——不是只有安息日理由這一處。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 當記念安息日守為聖日
+  path: link_folder/神學/當記念安息日守為聖日.md
+  summary: 第12-15節第四誡在本章的形式。第12節以「當照耶和華─你神所吩咐的」起頭，並用 sha.Mor（H8104G，守）作誡命的動詞；第15節給出理由：你在埃及地作過奴僕，神用大能的手和伸出來的膀臂把你領出來。GT《聖經精讀本》：「若說出埃及記是側重了安息日的創造性意義,本書則是強調了安息日的救贖史性意義」。BH 指出在古代近東，定期的休息日在別的社會裡並不存在，這條誡命在當時是反潮流的。KC 說守安息日是順服的核心誡命，其餘誡命連不信的人也懂得，守它的唯一理由是神吩咐了。
+  relation: 出20 的第四誡以創造為根據，出31 加上記號與成聖，本章換成救贖，並因此把重心移到僕婢與寄居者身上。第14節末尾寫明目的：使你的僕婢可以和你一樣安息。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 「記念」與「守」
+  path: link_folder/原文/「記念」與「守」.md
+  summary: 第12節的誡命動詞是 sha.Mor（H8104G，簡要詞典義 to keep），而本章的「記念」ve./za.khar.Ta（H2142，za.khar）落在第15節，記的是在埃及作過奴僕這件事。GT 引艾基斯指出，摩西在這裡沒有提神在六日內的創造之工，卻插入了記念從埃及為奴之家出來的內容，並說這句話同樣是有聖靈默示的，以色列人聽了會更出於恩慈地記念他們社會中的低下階層。
+  relation: 出20:8 的累積記下了兩個字的異文關係；本章提供了另一半的實據——申5:12 確實作「守」，而「記念」並沒有消失，它換了受詞，從安息日換成埃及為奴的日子。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+- title: 安息（第七日的歇息）
+  path: link_folder/原文/安息（第七日的歇息）.md
+  summary: 第14節「使你的僕婢可以和你一樣安息」；STEP：ya.Nu.ach（H5117，nu.ach，簡要詞典義 to rest），與「安息日」的 sha.bat（H7676）不是同一個字。GT《啟導本》：「在神面前人人平等，從祂規定僕婢也應休息看出。神對貧苦的人特別關懷」。CT 指出申命記重述十誡特別強調安息日的誡命，重點是教導以色列人善待他們的奴僕，甚至牲畜，因為他們比誰都明白受重壓的困苦。BH 也說這一節強調的是平等與公義，確保僕婢與主人得到同樣的休息。
+  relation: 出23:12 的理由是人道，本章的理由是救贖史；兩者在結果上重疊——都讓最底層的人得休息。本章多出來的一層是動機：不是因為憐憫的通則，而是因為你自己作過奴僕。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 遵行
+  path: link_folder/原文/遵行.md
+  summary: '第1節「你們要聽，可以學習，謹守遵行」與第32節「你們要照耶和華─你們神所吩咐的謹守遵行」；STEP：u./she.mar.Tem（H8104J，簡要詞典義 to keep: careful）＋la./''a.so.Ta/m（H6213A，a.sah）。CT：『謹守』重在指思想觀念的贊同和一致；『遵行』重在指行為上的遵照和實施。第27節百姓自己說「我們就聽從遵行」，用的是 sha.ma 加 a.sah。'
+  relation: 出24:7 的「遵行」配的是「聽從」（a.sah＋sha.ma），本章第1、32節配的是「謹守」（sha.mar＋a.sah）。同一個 a.sah 在兩處各接一個不同的動詞，前者強調聽了就做，後者強調小心地照著做。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 定言式法律
+  path: link_folder/神學/定言式法律.md
+  summary: 第7-21節十條誡命全用「不可……」或「當……」的絕對句式；本章的理由句只出現在第9至11節與第15、16節，其餘各條只有命令本身。GT《聖經精讀本》在本章的十誡總論裡記下：「第一,十誡的體裁是,即『當……』或『不可……』」，並說十誡是所有律法的核心與本質，並不是單純的律法，乃是神的約。
+  relation: 出20、21 的累積是從法典比較的角度確立這個分類；本章提供了同一組條文在四十年後被複述的例子——「當」與「不可」的句式沒有改，字句上的異動則分布在第四、第五與第十誡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 百姓懼怕神的顯現
+  path: link_folder/事件/百姓懼怕神的顯現.md
+  summary: 第5節「因為你們懼怕那火，沒有上山」；第23-27節火焰燒山時，支派的首領和長老就近摩西，說「現在這大火將要燒滅我們，我們何必冒死呢？」並求他代聽代傳。第28節神說「這百姓的話，我聽見了；他們所說的都是」，第29節接著說惟願他們常存這樣的心敬畏祂。GT《聖經精讀本》：「這裡特意記錄了神喜悅百姓的此番仲裁之邀的事實」，並指出摩西再次詳細記錄自己的中保作用，是為了給他所傳的律法賦予神性權威。
+  relation: 出20:18-19 記到百姓請求為止；本章補上神那一邊的回應，而且是肯定的。KC 讀出的重點在懼怕本身——在滿是火的山前，人才發現自己需要一位中保。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
