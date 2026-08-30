@@ -200,17 +200,50 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 ## Multi-Agent Collaboration
 
-預設專長分工（不是硬性禁止其他 Agent 檢查同一領域）：
+這個專案的預設內容工作不是三個 Agent 平行寫作，而是**主筆 → 獨立證據稽核 → 主筆修正 → 必要時總編輯驗收**。
 
-- **Claude**：內容、語意、Commentary、STEP evidence、M3／M6、來源 attribution review。
+### Claude：主筆
 
-- **Codex**：Python、pipeline、schema、MCP、resolver、validator、tests、migration、deterministic checks。
+- Claude 是研經文章與條目內容的主要作者：完整閱讀 commentary、使用 STEP evidence，手寫 M3／M6，並依 Codex 的查核報告修正文稿。
+- Claude 的核心目標是：**寫得對、寫得完整、寫得讓一般讀者看得懂**。
+- Claude 可以自行做基本 self-check，但不得把自己的自我審稿取代獨立 evidence audit。
+- 內容查核發現問題後，預設由 Claude 回到來源修正文稿；不要讓 reviewer 直接把文章改成另一篇風格不同的版本。
 
-- **Antigravity**：任務拆解、跨 Agent 協調、project-wide review、最終 validation orchestration。
+### Codex：Evidence Auditor
+
+- Codex 在內容流程中的主要角色是**獨立資料稽核員**，不是第二個主筆。
+- Codex 必須把 Claude 已寫出的重要事實性敘述對回 `raw_scripture/`、本章 manifest 的有效 `raw_data/`、STEP evidence／receipt 與正式 project rules，檢查文章是否明顯超出、扭曲或錯配來源。
+- 查核至少區分：`supported`、`overstated`、`unsupported`、`source mismatch`、`quotation mismatch`、`missing nuance`；每個非 PASS 項都要附可驗證證據與修正方向。
+- 特別檢查：全稱詞、數字、來源 attribution、逐字引句、經文引用、STEP lexical range 被誤寫成本節確定義、morphology 被過度神學化、commentary 分歧被壓平，以及異章資料污染。
+- **Codex 的內容稽核預設 read-only**：先回報問題，不直接重寫 M3／M6 正文；由 Claude 依報告修正後再複核。
+- 當任務本身明確是 Python／pipeline／schema／MCP／resolver／validator／tests／migration 等工程工作時，Codex 才切換成工程角色，依相應 workflow 修改程式；不要把「Codex = 工程」套用到一般文章查核。
+
+### Antigravity：總編輯／全局 Reviewer
+
+- Antigravity 不必每章固定出場，也不重做 Codex 的逐句 evidence audit。
+- 它負責較高視角的 editorial / project-wide review：檢查整篇是否覆蓋失衡、重大主題是否漏掉、M3 與 M6 是否互相矛盾、條目策略是否重複或碎片化、跨章／整卷的分類與用詞是否一致，以及文章對一般讀者是否清楚順暢。
+- Antigravity 也負責把大量 Codex findings 依影響排序，區分真正影響內容正確性／完整性的問題與純 wording 偏好。
+- 適合在複雜章節、數章批次 review、整卷 consistency review，或 Claude／Codex 出現難以整理的分歧時使用。
+- Antigravity 的角色是**總編輯與問題整理者，不是最終真理裁判**；來源爭議仍回到正式 evidence 與 project rules。
+
+### 預設內容工作流
+
+```text
+Claude 寫 M3／M6
+→ Codex evidence audit
+→ Claude 依證據修正
+→ 機械 validators／gates
+→ Antigravity（必要時）做全局／整體驗收
+```
+
+- 一般章節預設 `Claude → Codex → Claude` 即可，不為了「三 Agent 都有參與」而強迫 Antigravity 出場。
+- 複雜章節或跨章／整卷工作，再加入 Antigravity。
+- Agent 之間不得靠多數決決定來源事實；reviewer 指出問題後仍必須回到可驗證 evidence。
 
 ### 跨層修改邊界
 
-- 內容層任務不得順手修改 pipeline、schema、resolver 或 MCP server implementation。
+- 內容主筆／內容 reviewer 任務不得順手修改 pipeline、schema、resolver 或 MCP server implementation；若 audit 發現工程缺陷，先單獨列出，再開工程任務處理。
+- Codex 的 evidence audit、Antigravity 的 editorial review 預設 read-only；內容修正預設由 Claude 執行。
 - 程式工程任務不得順手改寫經文、`link_folder/` 正文、`raw_data/` 或 `.tmp/` production payload 的內容。
 - 若任務本身就是修正跨層契約，必須明確指出受影響的兩層，並分別依各自的權威文件與 validation 處理。
 - 經文本文只取自 `raw_scripture/`，不得由模型改寫。
@@ -220,4 +253,5 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 - **不採多數決。**
 - 回到 `source_manifest` / `raw_data` / STEP evidence / 正式 project rules。
 - 要求每個 Agent 指出**可驗證證據**（raw 檔行號、STEP receipt、schema 條款、閘門輸出）。
+- Antigravity 可以整理分歧、指出各方論證缺口，但不能以「第三票」取代證據裁決。
 - 無法確認時標記 `unresolved`，**不得自行猜測**，交人工裁決。
