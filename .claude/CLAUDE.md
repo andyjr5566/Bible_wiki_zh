@@ -64,13 +64,20 @@ Only use Read when you need exact raw content to edit a specific line.
 Use `index_status` to discover available repo aliases.
 <!-- /vexp -->
 
-## Hermes Scripture current source architecture
+## Hermes Scripture — Claude-specific bridge
 
-- Each production chapter uses four commentary sources (CT, GT, KingComments, BibleHub Study) plus one STEP Bible original-language evidence file. STEP is not a fifth commentary and never counts as a commentary-consensus vote.
-- Prepare commentary with `util/crawl_bible_text.py`; prepare STEP with `util/extract_stepbible.py "書名 章" --data_path .stepbible_data --output_path raw_data --download`; then regenerate the manifest with `util/build_source_manifest.py`.
-- Every OK source remains complete in `raw_data` and participates in provenance/validation, but the read gate is source-kind-aware. CT/GT/KingComments/BibleHub are prose: the Agent must read each complete file and record three verbatim quotes (including one from the final third) in `read_log.md`. STEP is structured data: the complete file is deterministically parsed and validated, with a SHA-256 machine receipt; it does not need a human 434-row reading receipt.
-- Manual M3/M6 prompts reference the already-read commentary instead of embedding it again. They include deterministic STEP projections: M3 selects evidence/surface verses with fail-open chapter fallback; M6 uses the chapter compact view. Repeated lexicon text is deduplicated by exact Extended Strong, while every occurrence keeps its morphology code. Use `python util/step_context.py 書名 章 --verses ...|--strong ...|--word ...` (or MCP `query_step_context`) for deeper local-only lookup.
-- STEP lexical meanings are possible ranges, not automatic contextual meanings; morphology does not itself prove theology. STEP may trigger only research-worthy original-language candidates—never bulk pages for function words/forms, and Strong numbers are not wiki IDs.
-- `raw_data/stepbible_*.txt` derives from STEP Bible / STEPBible-Data under CC BY 4.0 and must retain attribution. The repository's own Apache-2.0 license does not replace that upstream license.
-- Phase A infrastructure backfill is complete for Genesis 1–50 and Exodus 1–40: all 90 chapters have formal STEP raw files, five-row manifests, and deterministic machine receipts. This did not reopen their completed/corrected lifecycle or rerun M3, M6, rendering, links, commentary reading, or proofreading.
-- For completed chapters, use `util/backfill_step_sources.py` for idempotent STEP-only migration and `util/audit_original_language.py` for report-only checks. The audit never patches production content. Do not pre-backfill Leviticus or Numbers; integrate STEP when those chapters enter their actual formal proofreading workflow.
+Hermes Scripture 的跨 Agent 共用規則只維護在根目錄 `AGENTS.md`；根目錄 `CLAUDE.md` 以 `@AGENTS.md` 載入它。本檔只保留 Claude Code 專屬的 vexp 細節，不再複製 source architecture、STEP lifecycle 或當前書卷進度，避免形成第二份真相。
+
+Claude 處理 Scripture 任務時：
+
+- 新章 production → `agent_start_prompt.md`。
+- 已完成章節勘誤／補充 → `agent_maintenance_prompt.md`。
+- 架構、來源與設計判斷 → `scheme.md`。
+- M3／M6 的當次 payload schema、欄位、輸入範圍與格式 → 當次 `util/run_chapter_manual.py prompts`。
+- STEP／Commentary 的角色、evidence boundary、validation、multi-agent collaboration 與 conflict handling → `AGENTS.md`。
+
+不要在本檔維護歷史 Phase 清單或書卷 migration 狀態；目前狀態一律查當前 project status、manifest 與 receipts。
+
+M3 STEP projection 依目前正式實作與 `AGENTS.md`：只使用 candidate-matched evidence；candidate 無法定位或 evidence=全章時 fail-small，不得 fallback 成整節／整章 STEP raw，必要時改用精確 STEP query。
+
+若本檔、`AGENTS.md`、SOP 或當次 prompts 出現真正衝突，依 `AGENTS.md` 的「規則權威範圍」判定；無法消解時標記 `unresolved`，不得自行猜測。
