@@ -87,6 +87,9 @@ class ChapterContext:
         self.homonyms = homonyms
         self.tmp = book_directory(self.root, book) / ".tmp" / f"第{self.chapter}章"
         self.manual_review = []
+        # notes 與 manual_review 的差別是「要不要動手」：manual_review 會被
+        # remediation 印成「結論：FAIL」，notes 只是說明流程做了什麼。
+        self.notes = []
 
     def path(self, *parts):
         return self.tmp.joinpath(*parts)
@@ -1405,6 +1408,18 @@ def _inject_references(ctx, out_path, payload):
 _OTHER_CHAPTER_ACCUM_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
 
 
+def _already_accumulated_here(ctx, target):
+    """條目裡已經有本章的累積標記＝本章內容早就寫進去了。
+
+    完工章節因為勘誤重跑 render 時，覆寫保護必然會攔下這些條目（後來的章節
+    合法地在它們身上累積過）。那時跳過覆寫正是保護該做的事，不是待辦——申1
+    實測四個條目（亞拉巴／以得來／擔當／美地）全部早有 `accumulation:申命記:1`，
+    卻讓一個早已完成的章節每次重跑都印出「結論：FAIL」。
+    """
+    marker = f"<!-- accumulation:{ctx.book}:{ctx.chapter}:start -->"
+    return target.exists() and marker in target.read_text(encoding="utf-8")
+
+
 def _would_destroy_data(ctx, target):
     """既有條目檔內含「其他章節」累積標記時，覆寫會毀掉跨章資料——拒絕覆寫。"""
     if not target.exists():
@@ -1526,9 +1541,14 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
         payload = {**payload, "related_entries": resolved}
         target = ctx.root / "link_folder" / payload["type"] / f"{safe}.md"
         if _would_destroy_data(ctx, target):
-            ctx.manual_review.append(
-                f"entry_content:{name}：既有條目已含其他章節累積，跳過以免覆蓋（應歸 B 累積）"
-            )
+            if _already_accumulated_here(ctx, target):
+                ctx.notes.append(
+                    f"entry_content:{name}：條目已有本章累積，保留條目現況不覆寫"
+                )
+            else:
+                ctx.manual_review.append(
+                    f"entry_content:{name}：既有條目已含其他章節累積，跳過以免覆蓋（應歸 B 累積）"
+                )
             continue
         markdown = render_entry.render_entry(payload, known_types=known)
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -2598,6 +2618,7 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
         "written": written,
         "errors": errors,
         "manual_review": ctx.manual_review,
+        "notes": ctx.notes,
         "entry_count": len(entry_payloads),
     }
 

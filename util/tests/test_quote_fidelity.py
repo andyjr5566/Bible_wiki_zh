@@ -97,6 +97,49 @@ class QuoteFidelityTests(unittest.TestCase):
             _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
             self.assertEqual([], misses)
 
+    def test_a_verse_quoted_from_another_book_is_verifiable(self):
+        """KC 申2 引提後4:7。別卷經文是正當引用，語料限制成本卷會把它報成查無出處。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml="name: 測試\ndefinition: KC 引保羅的話「那美好的仗我已經打過了」。\n",
+            )
+            _write(root / "raw_scripture" / "提摩太後書" / "第4章.txt",
+                   "7. 那美好的仗我已經打過了，當跑的路我已經跑盡了。")
+            _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual([], misses)
+
+    def test_excerpt_whose_fragments_are_all_short_is_still_checked(self):
+        """「因我已將⋯賜給⋯為業」：碎片全短於門檻時，無從判斷不等於查無出處。"""
+        verse = {CHAPTER: "5. 因我已將西珥山賜給以掃為業。"}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml="name: 測試\ndefinition: 三次都用「因我已將⋯賜給⋯為業」。\n",
+                scripture_by_chapter=verse,
+            )
+            _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual([], misses)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml="name: 測試\ndefinition: 三次都用「因我已買⋯賜給⋯為業」。\n",
+                scripture_by_chapter=verse,
+            )
+            _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual(1, len(misses))
+
+    def test_excerpt_ending_in_an_ellipsis_still_matches(self):
+        """以 ⋯ 結尾的引句只切得出一段；用段數判會把整句漏掉（申4 實測回歸）。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(
+                tmp,
+                entry_yaml="name: 測試\ndefinition: 經文說「神記念挪亞和方舟裡的一切走獸⋯」\n",
+            )
+            _total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
+            self.assertEqual([], misses)
+
     def test_yaml_folded_scalars_are_not_false_positives(self):
         """safe_dump 的折行會在長句中插入反斜線與續行縮排；必須解析 yaml 而不是正則。"""
         import yaml as yaml_module

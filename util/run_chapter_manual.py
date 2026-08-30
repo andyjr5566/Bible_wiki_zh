@@ -546,6 +546,8 @@ def cmd_run(args):
 
     result = rc.run_chapter(args.book, args.chapter, runner=guard)
     print(f"✅ 完成：寫入 {len(result['written'])} 檔，新增條目 {result['entry_count']}")
+    for note in result.get("notes", []):
+        print(f"ℹ️ {note}")
     if result["manual_review"]:
         print("⚠️ 需人工處理：")
         for item in result["manual_review"]:

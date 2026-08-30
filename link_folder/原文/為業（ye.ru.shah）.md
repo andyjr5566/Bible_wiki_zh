@@ -33,7 +33,7 @@ STEP 原文資料給的簡要詞典義是 ye.rush.shah: possession。
 
 <!-- accumulation:申命記:2:start -->
 #### [[05 申命記/第2章|第2章]]
-- 本章重點：第5、9（兩次）、19節的「為業」在原文都是名詞 ye.ru.Shah（H3425，簡要詞典義 possession），三次都用在以東、摩押、亞捫身上；第24節「得他的地為業」則是同一字根的動詞 Rash（H3423H ya.rash，to possess: take）。KC：「神與這些別的民族也有關係，祂也把地賜給了列國（第9、19節）。」
+- 本章重點：第5、9（兩次）、19節的「為業」在原文都是名詞 ye.ru.Shah（H3425，簡要詞典義 possession），三次都用在以東、摩押、亞捫身上；第24節「得他的地為業」則是同一字根的動詞 Rash（H3423H ya.rash，to possess: take）。KC：「God also has His involvement with these other peoples. He also gave the nations land (verses 9,19).」（神與這些別的民族也有關係，祂也把地賜給了列國。）
 - 與本章關聯：這個字在本章的分布本身就是章旨：四次裡有三次講的是別人的產業。第5、9、19節的句型完全一樣——「我不賜給你們⋯因我已將⋯賜給⋯」，到第24節才反過來變成命令以色列去得地。
 <!-- accumulation:申命記:2:end -->
 

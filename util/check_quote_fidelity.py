@@ -14,8 +14,8 @@
   - 正規化：NFKC、彎引號轉直引號、去掉所有引號（「」『』與直引號：來源用“”、本庫再嵌套時內外層又會互換，引號本身不是內容）、
     去掉 U+2000–U+200B、去掉所有空白、
     把 [[目標|別名]] 還原成別名（章 md 的引句裡會夾 wiki-link）。
-  - 語料裡的**經文**放整卷（引用前面章節的經文是正常寫法），**註釋只放本章**——
-    相鄰章註釋混引正是要抓的東西。
+  - 語料裡的**經文**放整本聖經（引用別章、別卷的和合本經文都是正當寫法，KC 引提後4:7
+    就是實例），**註釋只放本章**——相鄰章註釋混引正是要抓的東西。
   - 引句含 ⋯／… 時視為節錄，拆開後每段各自回查（每段至少 5 字才算數）。
   - 少於 10 字、或含頓線的引句不查：中文用「」兼作強調與並列（「過去／所要去」），
     那不是宣稱逐字引用，硬報只會製造誤報。
@@ -78,16 +78,23 @@ def chapter_corpus(book: str, chapter: int, root: Path = ROOT) -> tuple[str, lis
     if not manifest.is_file():
         raise FileNotFoundError(f"找不到 {manifest}")
     paths = [path for _label, path in parse_manifest(manifest, root)]
-    # 經文放整卷：引用前面章節的經文是正常寫法（申3 的累積引申1:4 的巴珊王噩）。
+    # 經文放整本聖經：引用別章甚至別卷的和合本經文都是正當寫法（申3 的累積引申1:4 的
+    # 巴珊王噩；KC 申2 引提後4:7「那美好的仗我已經打過了」）。本地 raw_scripture 有全部
+    # 66 卷，限制成本卷只會把正當的跨卷引用報成查無出處。
     # 註釋只放本章：相鄰章註釋混引（CT 民25／民26）正是要抓的那一型。
-    paths.extend(sorted((root / "raw_scripture" / book).glob("第*章.txt")))
-    parts, names = [], []
+    paths.extend(sorted((root / "raw_scripture").glob("*/第*章.txt")))
+    parts, names, scripture = [], [], 0
     for path in paths:
         path = Path(path)
         if not path.is_file():
             continue
         parts.append(normalize(path.read_text(encoding="utf-8", errors="ignore")))
-        names.append(path.name)
+        if path.parent.parent.name == "raw_scripture":
+            scripture += 1
+        else:
+            names.append(path.name)
+    if scripture:
+        names.append(f"和合本經文 {scripture} 章")
     return "".join(parts), names
 
 
@@ -158,10 +165,16 @@ def check_quotes(book: str, chapter: int, root: Path = ROOT):
                 total += 1
                 if normalize(quote) in corpus:
                     continue
-                fragments = [f for f in ELLIPSIS_RE.split(quote)
-                             if len(f.strip()) >= MIN_FRAGMENT_CHARS]
-                if fragments and all(normalize(f) in corpus for f in fragments):
-                    continue
+                if ELLIPSIS_RE.search(quote):
+                    # 判準是「有沒有節錄記號」，不是「切出幾段」：以 ⋯ 結尾的引句
+                    # 只切得出一段（申4「…並大可畏的事⋯」），用段數判會整句漏掉。
+                    pieces = [f.strip() for f in ELLIPSIS_RE.split(quote) if f.strip()]
+                    # 節錄逐段查。碎片全都短於門檻時（「因我已將⋯賜給⋯為業」這種句型
+                    # 抽象），過濾後會空掉；空清單不代表查無出處，代表無從判斷——改成
+                    # 每一段都要在語料裡，比直接報出來誠實。
+                    fragments = [f for f in pieces if len(f) >= MIN_FRAGMENT_CHARS] or pieces
+                    if fragments and all(normalize(f) in corpus for f in fragments):
+                        continue
                 misses.append((label, quote))
     return total, misses, source_names
 
