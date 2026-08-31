@@ -192,6 +192,9 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 | 情境 | 權威文件 |
 | --- | --- |
 | 新章 production | `agent_start_prompt.md` |
+| Codex 主導新章協作 | `agent_codex_orchestrator_prompt.md`（角色／review/fallback；實際步驟仍以 `agent_start_prompt.md` 為準） |
+| Codex 額度耗盡後 Antigravity 接手 | `agent_antigravity_orchestrator_prompt.md` |
+| Evidence review | `agent_evidence_audit_prompt.md` |
 | 已完成章節勘誤／補充 | `agent_maintenance_prompt.md` |
 | 架構、來源與設計判斷 | `scheme.md` |
 | 實際 M3／M6 payload 規格 | 當次 `util/run_chapter_manual.py prompts` 輸出（最高優先，蓋過上述文件的摘要） |
@@ -199,79 +202,88 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 ## Multi-Agent Collaboration
 
-`agent_start_prompt.md` 仍是新章 production **單一正式流程**。本節只定義跨 Agent review 要掛在哪些內容邊界，不另造第二套 production SOP。
+`agent_start_prompt.md` 仍是新章 production **唯一正式流程**。Orchestrator prompt 只決定誰推流程、誰寫內容、誰 review；不得另造第二套 SOP。
 
-預設內容協作是**Claude 主筆 → Codex 在落地前獨立查核 → Claude 修正 → 回到正式 workflow 繼續執行 → 必要時 Antigravity 做全局驗收**。
+預設：**Codex 總控／QA → Claude Opus 主筆 → Codex 落地前 audit → Claude 修 → Codex gate/render/apply/final gates**。Codex quota／service unavailable 時，**Antigravity 從同一磁碟 checkpoint 接手總控與 reviewer**，不重做、不重置 review 預算。
 
-### Claude：主筆
+### Codex：Primary Orchestrator + Evidence Reviewer
 
-- Claude 是研經文章與條目內容的主要作者：完整閱讀 commentary、使用 STEP evidence，手寫 M3／M6，並依 Codex 的查核報告修正文稿。
-- Claude 的核心目標是：**寫得對、寫得完整、寫得讓一般讀者看得懂**。
-- Claude 可以自行做基本 self-check，但不得把自己的自我審稿取代獨立 evidence audit。
-- Codex 找到有證據支持的問題後，由 Claude 修改真正的 source-of-truth payload；不要讓 reviewer 直接改渲染後的 markdown 或把文章重寫成另一種風格。
+- Codex 是新章預設 host，先讀 `agent_codex_orchestrator_prompt.md`。
+- 負責 source/manifest/STEP machine validation、similarity/resolver/prompts、review receipt、check、run/render、B prepare/preview/apply、final gates、commit。
+- Claude交稿後依 `agent_evidence_audit_prompt.md` 查核；audit 對 Claude-authored content read-only，findings 退 Claude 修。
+- M3 必查已寫內容與 **missing entry candidate**；candidate 根因要退回 `link_candidates.yaml`，再重跑 deterministic steps。
+- Codex 不做第一次語意作者；否則會自己寫、自己審。
 
-### Codex：Evidence Auditor
+### Claude：研經內容作者
 
-- Codex 在內容流程中的主要角色是**獨立資料稽核員**，不是第二個主筆；內容稽核預設 read-only。
-- 每次 evidence audit 都先讀固定規格 `agent_evidence_audit_prompt.md`，Claude 只傳本次 `book / chapter / stage / sha256` 與必要的前一輪 thread；不要每輪臨時重寫一份審查標準。
-- Codex 必須把 Claude 已寫出的重要事實性敘述對回 `raw_scripture/`、本章 manifest 的有效 `raw_data/`、STEP evidence／receipt 與正式 project rules，檢查是否超出、扭曲或錯配來源。
-- 查核至少區分：`supported`、`overstated`、`unsupported`、`source mismatch`、`quotation mismatch`、`missing nuance`；每個非 PASS 項都要附可驗證證據與修正方向。
-- 特別檢查：全稱詞、數字、來源 attribution、逐字引句、經文引用、STEP lexical range 被誤寫成本節確定義、morphology 被過度神學化、commentary 分歧被壓平，以及異章資料污染。
+- 完整讀四套 Commentary、完成 `read_log.md`、做 candidate 語意判斷、手寫 M3/M6/B 類內容，依 reviewer findings 修 source-of-truth payload。
+- 固定 `model=opus`、`effort=max`；同一章優先沿用同一 `session_id`。
+- 不得靜默 fallback Sonnet/Haiku；Opus 不可用就 `BLOCKED`，除非使用者另允許。
+- Claude 不主導 run/render/apply/final gates/commit，也不得替 reviewer 宣告 PASS。
 
-### Review checkpoint / receipt
+### Antigravity：Codex quota fallback + 可選總編輯
 
-- 每章只有一份小型狀態檔：`.tmp/第x章/agent_review.yaml`；由 `util/agent_review.py` 維護，不手算、不手填 SHA。
-- `m3` hash 綁定 `entry_content/*.yaml`；`m6` hash 同時綁定 `chapter_content.yaml` 與目前 M3 hash；`link_updates` hash 同時綁定 `link_updates.yaml` 與目前 M3/M6 hash。所以上游內容一改，下游舊 PASS 也會自然 stale。
-- Claude 每輪交審前先跑 `python util/agent_review.py submit 書名 章 stage`。這是 Claude checkpoint；會產生／更新 round、SHA256，並把該 stage 的 Codex 狀態設為 pending。
-- Codex read-only 審完後，回覆必須依 `agent_evidence_audit_prompt.md` 附 `REVIEW_STAGE / REVIEW_SHA256 / REVIEW_STATUS / FINDINGS_COUNT` footer。Claude **只能照 Codex 真實回覆**記錄：`python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> --sha <Codex回覆SHA> [--thread-id ...] [--findings-count N]`；不得替 Codex 自行簽 PASS。
-- Claude 修改 payload 後重新 `submit`；只要 hash 改變，上一輪 PASS 自動失效並進入下一 round。Round 1 做完整 audit；Round 2+ 優先沿用同一 Codex thread，只複核上一輪 findings、修改處與直接波及範圍，避免無理由重讀全部來源。
-- 要跨過 review 邊界前跑 `python util/agent_review.py gate 書名 章 stage`；只有「目前 hash = Codex PASS 的 hash」才算通過。
+- Codex 因 quota/rate-limit/service unavailable 無法繼續時，Antigravity 依 `agent_antigravity_orchestrator_prompt.md` 從當前 disk state 接手 **orchestrator + Evidence Reviewer**。
+- Antigravity fallback 使用 `agy models` 中最新一代 **High** tier Gemini；目前指定 `gemini-3.7-flash-high`（Gemini 3.7 Flash High）。不要把舊 `gemini-3.1-pro-high` 當預設 fallback。
+- Antigravity 的 High reasoning 由 model tier/slug 表達；若 live catalog 出現更新一代 High，改用更新者。
+- 它接手後仍把 prose 任務交給 Claude Opus/max；自己只做流程與 QA。
+- Codex 已用掉的 `review_attempts` 照算，**換 reviewer 不重置**。
+- Codex 可用時，Antigravity 仍可在複雜章節／數章／整卷完成後做高層 editorial consistency review，但不重做逐句 evidence audit。
 
-### Pre-landing review gates
+### Review budget / receipt（硬限制）
 
-- **M3**：Claude 寫完 `.tmp/第x章/entry_content/*.yaml` → `submit ... m3` → Codex audit → Claude 修正／重送，直到 `gate ... m3` PASS；之後才把這批 M3 視為可供正式 M6 使用的內容。不要等 render 後才第一次查。
-- **M6**：Claude 寫完 `.tmp/第x章/chapter_content.yaml` → `submit ... m6` → Codex audit M6 並檢查與已確認 M3 的一致性；直到 `gate ... m6` PASS。**未通過前不得 `run`／render 到 production markdown。** 結構 `check` 可作為非落地輔助，但不能取代 evidence audit。
-- **B 類累積**：`link_updates.yaml` 完成後 → `submit ... link_updates` → Codex audit；直到 `gate ... link_updates` PASS 才能正式 `apply`。preview／dry-run 可用來輔助核對，但不得把它當 Codex PASS。
-- render／apply 之後仍照 `agent_start_prompt.md` 執行原本的內容複核、sanity check 與 final gates；這些是落地結果的最後把關，**不是第一次 evidence audit**。若沒有新疑點，不要求 Codex 把同一章重新完整 audit 第二遍。
+- 每章每個 stage（`m3`、`m6`、`link_updates`）最多 **2 次 substantive reviewer attempt**，由 `util/agent_review.py` 強制執行。
+- Attempt 1/2：完整 audit，一次列齊 material findings；M3 一定含條目完整度。
+- Claude 修後 Attempt 2/2：最後一次 reviewer 機會，只複核上一輪、修改處與直接波及範圍，並一次列齊所有剩餘 material findings。
+- 不把 review quota 浪費在文風偏好、可有可無的「更完整」建議。
+- Attempt 2 若仍 `CHANGES_REQUIRED`：Claude做**最後修正**；下一次 `submit` 若 hash 改變，程式直接對新 hash 記 `forced_pass: true` + `reviewer_status: pass`。**禁止第三次 reviewer call。**
+- `BLOCKED` 不算 substantive attempt；因此 Codex quota block 後可由 Antigravity接同一 hash，不額外消耗機會。
+- 兩次預算屬於 stage，不屬於 agent/session；換 Codex session、換 Antigravity、重開 IDE 都不能歸零。
+- `forced_pass` 是流程上可跨 gate 的 PASS，但不是「reviewer 確認零問題」；final mechanical/semantic sanity gates 仍全部照 SOP 跑。
+- v1 舊 receipt 的 `codex: pass` 仍可讀；新 receipt 使用 `reviewer_status` / `reviewer_agent` / `review_attempts` / `review_history`。
 
-### Antigravity：總編輯／全局 Reviewer
+### Pre-landing gates
 
-- Antigravity 不必每章固定出場，也不重做 Codex 的逐句 evidence audit。
-- 它負責較高視角的 editorial / project-wide review：檢查整篇是否覆蓋失衡、重大主題是否漏掉、M3 與 M6 是否互相矛盾、條目策略是否重複或碎片化、跨章／整卷的分類與用詞是否一致，以及文章對一般讀者是否清楚順暢。
-- Antigravity 也負責把大量 Codex findings 依影響排序，區分真正影響內容正確性／完整性的問題與純 wording 偏好。
-- 適合在複雜章節、數章批次 review、整卷 consistency review，或 Claude／Codex 出現難以整理的分歧時使用。
-- Antigravity 的角色是**總編輯與問題整理者，不是最終真理裁判**；來源爭議仍回到正式 evidence 與 project rules。
+- **M3**：Claude寫 M3 → orchestrator `submit m3` → reviewer attempt（含 missing-entry）→ Claude修 → 最多第二次 reviewer → 必要時 Claude最後修 + forced pass → `gate m3` PASS；之後才生成正式最新 M6 prompt。
+- **M6**：Claude寫 M6 → `submit m6` → reviewer 查 M6 + 已核准 M3 consistency → 同樣最多兩次 → `gate m6` PASS；未過不得 run/render。
+- **B 類**：orchestrator prepare → Claude填 `link_updates.yaml` → `submit link_updates` → 最多兩次 reviewer → `gate link_updates` PASS → 才 apply。
+- render/apply 後照 `agent_start_prompt.md` 做 post-landing sanity + steps 7–8 final gates；這不是第三輪 evidence audit。
 
 ### 預設內容工作流
 
 ```text
-依 agent_start_prompt.md 進入正式流程
-→ Claude 寫 M3 payload → submit m3
-→ Codex 依固定 prompt audit → Claude 修正／重送 → gate m3 PASS
-→ Claude 寫 M6 payload → submit m6
-→ Codex audit M6／M3-M6 一致性 → Claude 修正／重送 → gate m6 PASS
+Codex 準備來源／machine gates
+→ Claude(Opus,max) 全文 Commentary + read_log + candidates
+→ Codex similarity / resolve / prompts
+→ Claude M3
+→ reviewer attempt 1 → Claude修
+→ reviewer attempt 2（若需要）→ Claude最後修 → 必要時 FORCED PASS
+→ M3 gate
+→ 最新 M6 prompt → Claude M6 → 同樣最多兩次 review → M6 gate
 → check → run/render
-→ Claude 準備 B 類 link_updates → submit link_updates
-→ Codex audit B 類 → Claude 修正／重送 → gate link_updates PASS → preview/apply
-→ 依 agent_start_prompt.md 完成後續複核與 validators/gates
-→ Antigravity（必要時）做跨章／整卷全局 review
+→ B prepare → Claude B → 同樣最多兩次 review → B gate → preview/apply
+→ post-landing sanity + final gates → commit
+
+若 Codex 額度耗盡：
+Codex current disk checkpoint → Antigravity(latest High) 接手 → 不重置 review_attempts → 繼續同一流程
 ```
 
-- 一般章節不為了「三 Agent 都有參與」而強迫 Antigravity 出場。
-- Agent 之間不得靠多數決決定來源事實；reviewer 指出問題後仍必須回到可驗證 evidence。
+- 同一章 Claude 優先維持一個 session；多章一章完整完成、一章一 commit。
+- Agent 之間不靠多數決；來源事實回到可驗證 evidence。
 
 ### 跨層修改邊界
 
-- 內容主筆／內容 reviewer 任務不得順手修改 pipeline、schema、resolver 或 MCP server implementation；若 audit 發現工程缺陷，先單獨列出，再開工程任務處理。
-- Codex 的 evidence audit、Antigravity 的 editorial review 預設 read-only；內容修正預設由 Claude 執行。
-- 程式工程任務不得順手改寫經文、`link_folder/` 正文、`raw_data/` 或 `.tmp/` production payload 的內容。
-- 若任務本身就是修正跨層契約，必須明確指出受影響的兩層，並分別依各自的權威文件與 validation 處理。
+- Orchestrator 可以執行正式 pipeline／schema-aware scripts，但不得因此成為研經內容作者。
+- Evidence audit 對 Claude-authored M3/M6/B read-only；內容修正由 Claude做。
+- Claude 內容任務不得順手改 pipeline、schema、resolver 或 MCP server；工程缺陷另開工程任務。
+- 程式工程任務不得順手改寫經文、`link_folder/` 正文、`raw_data/` 或 `.tmp/` production payload 的語意內容。
+- 跨層契約修正要明確指出兩層並各自 validation。
 - 經文本文只取自 `raw_scripture/`，不得由模型改寫。
 
 ## 多 Agent 意見不一致時
 
 - **不採多數決。**
 - 回到 `source_manifest` / `raw_data` / STEP evidence / 正式 project rules。
-- 要求每個 Agent 指出**可驗證證據**（raw 檔行號、STEP receipt、schema 條款、閘門輸出）。
-- Antigravity 可以整理分歧、指出各方論證缺口，但不能以「第三票」取代證據裁決。
-- 無法確認時標記 `unresolved`，**不得自行猜測**，交人工裁決。
+- 要求各方指出可驗證證據（raw 行號、STEP receipt、schema、gate output）。
+- Antigravity 作為 editor 時可整理分歧，但不能以「第三票」取代證據。
+- 無法確認就標 `unresolved`，不得猜測，交人工裁決。
