@@ -1,0 +1,463 @@
+book: 申命記
+chapter: 6
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 以色列啊你要聽（sha.ma）
+  path: link_folder/原文/以色列啊你要聽（sha.ma）.md
+  summary: 第3節與第4節連著兩次「以色列啊，你要聽」，STEP 第4節為 she.Ma'（H8085G）。第4節正是猶太人稱為示馬（shema）的那一句，GT《啟導本聖經申命記註釋》說「本節為舊約的精義」，並說在希伯來文舊約中本節以 shema 一字開始，意即「聽哪」；GT《雷氏研讀本》另記按拉比律例猶太人要早晚背誦這示馬，且示馬原本只有第4節，後來才擴充到第5至9節等段落。
+  relation: 申5:1 的「你們要聽」是摩西召集會眾的開場命令，本章第4節則把同一個字變成信仰告白的名字。從命令到信經，這個字在兩章之間換了功能——申5 是要人聽，申6 是要人天天背誦所聽見的那一句。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:6
+- title: 事奉與作奴僕同一字根（a.vad）
+  path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  summary: 第12節「為奴之家」'a.va.Dim（H5650）、第13節「事奉他」ta.'a.Vod（H5647G）、第21節「在埃及作過法老的奴僕」'a.va.Dim（H5650），STEP 顯示同屬 a.vad／e.ved 字根。CT 在第13節說對神三件重要的是敬畏祂、事奉祂、忠貞待祂。
+  relation: 本章把這個字根用在一組因果上：第12節提醒他們曾在「為奴之家」，第13節就要他們去事奉神，第21節父親對兒子講的故事又從作奴僕開始。中文的「為奴」與「事奉」看起來相反，原文是同一個動作換了對象。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:6
+- title: 學習與教訓同一字根（la.mad）
+  path: link_folder/原文/學習與教訓同一字根（la.mad）.md
+  summary: '第1節「所吩咐教訓你們的誡命」STEP 為 le./la.Med（H3925G，簡要詞典義 la.mad: to learn: teach）。本章第7節另有一個也譯作「教訓」的字，STEP 為 ve./shi.nan.Ta/m（H8150，sha.nan: to sharpen），與 la.mad 不同字根。'
+  relation: 申5 那組 la.mad 講的是摩西與百姓之間的教與學，本章第1節沿用同一個字，但第7節把教導的場景換到家庭，並改用另一個字根。同一個中文詞「教訓」在本章之內就分屬兩個原文字，這是讀中文看不出來的分工。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:6
+- title: 律例（choq）
+  path: link_folder/原文/律例（choq）.md
+  summary: 「律例」在本章出現於第1、2、17、20、24節，STEP 為 choq（H2706G）。CT 在第2節與第24節都說「律例」在此是律法的總稱，在第17節則說是律法的條規，是神向人的要求。第20節借兒子的問題把「法度、律例、典章」三個詞一起列出。
+  relation: 本章讓這個詞從條文變成教材：第1節它是摩西要教的內容，第20節它成了兒子發問的對象，第24節則給出目的——遵行這一切律例，使我們常得好處。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 法度（e.dah）
+  path: link_folder/原文/法度（e.dah）.md
+  summary: 第17節「誡命、法度、律例」與第20節「這些法度、律例、典章」兩次出現「法度」，STEP 為 e.dah（H5713B）。CT 說「法度」指律法的證詞，見證神對人的心意。
+  relation: 申4 首次帶出這個詞，本章把它放進兩個新位置：第17節是命令句裡的三詞並列，第20節則出現在兒子的提問裡。也就是說，這個詞不只是律法的分類名稱，也是下一代會直接問起的東西。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:6
+- title: 得福（ya.tav）
+  path: link_folder/原文/得福（ya.tav）.md
+  summary: '第3節「得以享福」yi.Tav 與第18節「使你可以享福」Yi.tav，STEP 同為 H3190（ya.tav: be good）；第24節的「常得好處」則是 H2896B（tov），不同編號。CT 在第18節說按照神的旨意行事有兩樣眼前的好處：享福與得迦南地。'
+  relation: 本章把這個字放在頭尾兩處，都接在「遵行」之後：第3節是進地之前的應許，第18節是行事準則之後的結果。第24節換字之後意思相近而用詞不同，中文讀起來像同一句話，原文分成兩組。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:6
+- title: 記號與經文
+  path: link_folder/原文/記號與經文.md
+  summary: 第8節「繫在手上為記號，戴在額上為經文」，STEP 為 'ot（H226H）與 to.ta.Fot（H2903）；第9節「寫在你房屋的門框上，並你的城門上」，STEP 門框為 me.zu.Zot（H4201）。CT 說後來猶太人文士把四段經文寫在小羊皮卷上放進皮匣，禱告時分別繫在手臂和前額；GT《雷氏研讀本》說掛在門上的那個稱為 mezuzah。GT《聖經精讀本》則認為這些話並不是讓人按照字面意義去一一奉行，而是象徵性地描述無論行動或內心都不可忘記神的話語。
+  relation: 出13 的兩句話收束無酵節與頭生歸神，本章則把同一組動作接在示馬後面，並且多出第9節的門框與城門——這是既有條目原本沒有的一段。四段經文匣經文之中有兩段（申6:4-9、11:13-21）正是出自申命記，本章就是其中之一。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 滅盡與除滅的雙同字（sha.mad）
+  path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+  summary: '第15節「惟恐耶和華─你神的怒氣向你發作，就把你從地上除滅」，STEP 為 ve./hish.Mi.de./kha（H8045，sha.mad: to destroy）。CT 說以色列人如果因敬拜偶像假神而觸怒真神，其結局相當可怕，並指後來南北兩國先後滅亡、人民被擄分散列國，證明本節的警告並非虛假。'
+  relation: 申4 用這個字根講違約的後果，本章第15節把它接在「忌邪的神」後面，成為隨從別神的直接代價。兩章的用法一致：這個字出現的地方，講的都是留在那地或被逐出那地。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:6
+- title: 遵行
+  path: link_folder/原文/遵行.md
+  summary: 「遵行」在本章出現於第1、3、18、24、25節。CT 在第3節與第25節兩次做同一組區分：『謹守』重在指思想觀念的贊同和一致；『遵行』重在指行為上的遵照和實施。第18節把它接在「耶和華眼中看為正、看為善的」之後。
+  relation: 本章從頭到尾用這個字扣住結構：第1節說律法是為了遵行而頒布，第25節說遵行就是我們的義。中間第18節換了一個判準——不是照自己看為正的去做，而是照耶和華眼中看為正的去做。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 典章
+  path: link_folder/神學/典章.md
+  summary: 第1節與第20節兩次出現「典章」，STEP 為 mish.pat（H4941G）。CT 說『典章』指審判，是神對人是否遵行律法的判定，並在第20節註解重複同一個定義。
+  relation: 本章把「典章」放在一頭一尾：第1節是摩西要教的三種法律用語之一，第20節則是兒子問起的三個詞之一。中間第17節列三詞時換成了「法度」，所以整章其實在四個詞之間輪換。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: keep
+- title: 忌邪的神
+  path: link_folder/神學/忌邪的神.md
+  summary: 第15節「因為在你們中間的耶和華─你神是忌邪的神」，STEP 為 'el（H410G）＋ka.Na'（H7067H）。CT 說『忌邪』形容神對維護祂獨一、至尊的權利極其熱忱，絲毫不能容忍對立的人事物並存。GT《聖經精讀本》說這是將神擬人化的表現手法，並說神的「嫉妒」源自祂的屬性，是向自己百姓的又一種愛。
+  relation: 本章把忌邪直接接在第4節的獨一之後：因為神是獨一的，隨從別神才會構成背叛。第14節先下禁令，第15節才給理由，第15節下半再給後果——這是本章唯一一處把神的屬性當作刑罰依據來用的地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 流奶與蜜之地
+  path: link_folder/神學/流奶與蜜之地.md
+  summary: 第3節「使你可以在那流奶與蜜之地得以享福」。GT《啟導本聖經申命記註釋》說「流奶與蜜之地」形容迦南地的富庶，與以色列人現居的曠野成強烈對比；GT《串珠聖經註釋》說它象徵土地肥沃、產品豐富；GT《雷氏研讀本》說這是住在曠野之人夢寐以求的地方，指一塊飽得灌溉的土地。KC 統計這個片語在聖經中出現將近二十次。
+  relation: 本章只用了這個片語一次，位置很關鍵：它接在第3節的「謹守遵行」之後，是遵行的結果而不是既得的現況。第10至11節接著把這片地拆成城邑、房屋、水井、葡萄園橄欖園四樣具體的東西。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: 第21節「耶和華用大能的手將我們從埃及領出來」，STEP 為 be./Yad（H3027H）＋cha.za.Kah（H2389）。CT 說「用大能的手」指降十災、使紅海成乾地等神蹟奇事。
+  relation: 本章讓這個片語出現在一個新場合：不是摩西對百姓講，而是父親對兒子講。第20節兒子問律法是什麼意思，第21節父親的回答就從這隻手開始——律法的理由被安置在一段救贖歷史裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: 「敬畏耶和華」在本章出現三次（第2、13、24節），STEP 皆為 ya.re（H3372H）。CT 在第2節說『敬畏』指害怕惹神發怒；BH 說這種懼怕不是恐懼，而是承認神的聖潔與權柄。KC 指出在神面前敬畏祂與愛祂是連在一起的，而敬畏神就是對祂存敬重。
+  relation: 本章把敬畏放在三個不同的位置：第2節是律法的目的，第13節是進地之後的要求，第24節是父親對兒子的解釋。這三處分別落在講章的開頭、中段與結尾，等於用同一個動作把整章框起來，而第5節的「愛」就夾在第2節與第13節之間。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:6
+- title: 除他以外再無別神
+  path: link_folder/神學/除他以外再無別神.md
+  summary: 第4節「耶和華─我們神是獨一的主」與第14節「不可隨從別神，就是你們四圍國民的神」。GT《聖經精讀本》說第4節同時排斥了多神論、泛神論及單一神論；KC 說以色列的信仰是一神的，這給了人關於神旨意的確定性，而多神信仰缺的正是這份確定。
+  relation: 申4:35、39 是以論證作結的宣告——先擺出三個反問，再說除他以外再無別神；本章第4節則不作論證，直接把它放在命令的最前面當前提。同一個真理在兩章裡的功能不同：申4 是結論，申6 是出發點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:6
+- title: 傳於後代
+  path: link_folder/神學/傳於後代.md
+  summary: 第7節「也要殷勤教訓你的兒女」與第20至25節的父子問答。KC 指出聖經有四處記載兒子發問，本章第20節是第四處，另三處分別關乎逾越節（出12:26）、頭生的贖回（出13:14）與過約旦河（書4:6）。GT《串珠聖經註釋》說摩西不厭其煩地複述神在歷史中所施行的恩惠和拯救，為要把神在救贖中的恩典與以色列民應有的生活方式連接起來。
+  relation: 出埃及記那幾處的父子問答都繫在一個節期或一件記號上，本章第20節問的卻是律法本身——這些法度、律例、典章是什麼意思。而父親的答案仍舊從出埃及講起，所以教導的內容雖然換了，敘事的起點沒有變。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 神的試驗
+  path: link_folder/神學/神的試驗.md
+  summary: '第16節「你們不可試探耶和華─你們的神，像你們在瑪撒那樣試探他」，STEP 為 te.na.Su／ni.si.Tem（H5254G，na.sah: to test）。CT 說『試探』原意試驗、考驗、驗證，是神試驗祂的子民的用詞，如今反過來，神的子民試圖迫使神照他們的意思伸手作事。GT 另指出這個字沒有現代「引誘人犯罪」的含義。'
+  relation: 既有累積裡兩個方向都有：創22、出15、16 是神試驗人，出17 則已經是百姓在瑪撒試探神——該章的累積本身就寫著方向被翻了過來。本章第16節做的是第三件事：把出17 那個方向明文列成禁令，而且用的是同一個字。這一節也成了主耶穌在曠野引用的兩節之一。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 不是神試驗百姓，而是百姓試探神（瑪撒）。申6:16警告
+- title: 瑪撒（Massah）
+  path: link_folder/原文/瑪撒（Massah）.md
+  summary: 第16節「像你們在瑪撒那樣試探他」，STEP 為 ba./ma.Sah（H4532）。CT 的原文字義給「瑪撒」誘惑，並註明該事件記載於出17:3-7；GT《聖經精讀本》說這是出埃及第一年百姓在何烈山附近的利非訂因沒有水喝而抱怨摩西、懷疑神的事件，「瑪撒」這一地名正是源自此事件。
+  relation: 出17 是事件本身，本章第16節是多年之後的引用——摩西把一個地名當成警告用語，對著沒有親歷那件事的新一代說。GT《啟導本》另指出主耶穌受試探時引用了這一節，所以這個地名在新約又被用了一次。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 不可妄稱耶和華你神的名
+  path: link_folder/神學/不可妄稱耶和華你神的名.md
+  summary: 第13節「指著他的名起誓」，STEP 為 shem（H8034）＋ti.sha.Ve.a'（H7650）。GT《聖經精讀本》說若發誓就當指著神的名字，且對那名字存敬畏之心、賦予最高權威，並說這是悖論性地強調了第三條誡命的聖名敬畏思想。CT 說本句按照原文緊跟著『起誓』，故含有誓願效忠真神、不隨從假神、也不提起別神之名的意思。
+  relation: 第三誡在申5 是禁令，本章第13節則出現它的正面版本——不是不可妄稱，而是要指著這個名起誓。CT 並把第13節與第14節連讀：起誓效忠真神，接著就是不可隨從別神。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 十誡
+  path: link_folder/神學/十誡.md
+  summary: CT 在第1節與第17節兩次註明「誡命」指十條誡，並把它與「律例」（律法，是神向人的要求）、「典章」（審判）、「法度」（律法的證詞）分開。GT 的思想問題也指出第1節「誡命」屬單數，與複數的「律例」「典章」不同。
+  relation: 申5 把十誡整段重述，本章緊接著給它一個總原則。第1節說這些是耶和華吩咐教訓的誡命律例典章，第5節則把全部要求收束成一句盡心盡性盡力愛神——本章不是另立新規，而是替上一章那十條找出核心。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 第10、18、23節三次提到神向列祖起誓應許那地，STEP 皆為 nish.Ba'（H7650）；第10節指名亞伯拉罕、以撒、雅各。KC 指出本章三次講進入那地、每次都加上神起過誓，並說當神用起誓確認自己的話，是為了在人的軟弱上加一層確據。
+  relation: 本章是這約在申命記裡第一次以「起誓」重複三遍的形式出現，而且每次都與具體的產業綁在一起——第10節接城邑房屋，第18節接美地，第23節接父親對兒子的講述。約不再只是應許，而是即將兌現的清單。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:12
+      - 申命記:6
+- title: 因信稱義
+  path: link_folder/神學/因信稱義.md
+  summary: 第25節「這就是我們的義了」，STEP 為 u./tze.da.Kah（H6666）。GT《聖經精讀本》直接處理這句話與保羅教義的關係，說「這句話決不與保羅所闡明因信稱義的教義相矛盾」，理由是摩西所談的義之動機並非單單指遵守律法的外在行為，而是包括愛耶和華的內在狀態；BH 也說這種義不是賺得救恩，並引羅3:21-22。
+  relation: 創15:6 是亞伯蘭因信被算為義，本章第25節則說謹守遵行就是我們的義——兩句話表面相反，因此成為必須處理的問題。GT《聖經精讀本》與 BH 都不認為兩者衝突，但給的理由不同：前者訴諸動機裡的愛，後者訴諸義的定義本身不是賺取救恩。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 人若遵行律例典章就必因此活著
+  path: link_folder/神學/人若遵行律例典章就必因此活著.md
+  summary: '第24節「耶和華又吩咐我們遵行這一切律例……使我們常得好處，蒙他保全我們的生命」，STEP「保全我們的生命」為 le./chai.yo.Te./nu（H2421，cha.yah: to live）；第25節接著說「這就是我們的義了」。GT《雷氏研讀本》說遵守律法並不保證有永生，但這樣的順服卻構成得到約之祝福的權利，尤其是獲得土地的權利。'
+  relation: 利18:5 用「就必因此活著」把遵行與生命連起來，本章第24節用的是另一組詞——常得好處、保全生命——講同一件事，而且緊接著第25節的義。申命記把這條原則放進進迦南前的講章裡，對象是即將得地的一代。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:18
+      - 申命記:6
+- title: 十災
+  path: link_folder/歷史/十災.md
+  summary: 第22節「將重大可怕的神蹟奇事施行在埃及地和法老並他全家的身上」，STEP 為 'o.Tot（H226G）＋mo.fe.tim（H4159）。GT《串珠聖經註釋》直接註明「神跡奇事」指十災；CT 說『重大可怕的』指非人力所能克服的現象。
+  relation: 本章不重述十災的內容，只用一句話把它整包放進父親對兒子的回答裡。這是十災在本庫累積中的一個新用法——不是敘事，而是教義問答的證據。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第12節「將你從埃及地、為奴之家領出來」、第21節「耶和華用大能的手將我們從埃及領出來」、第23節「將我們從那裡領出來」，STEP 三處皆為 ya.tsa（H3318H）。GT《聖經精讀本》說摩西不停地回顧出埃及事件與西奈山頒佈律法事件，因為此二事件不僅孕育了以色列，還宣告神是以色列的救贖者與治理者。
+  relation: 本章三次提到領出來，功能各不相同：第12節是警告（別忘記），第21節是教材（告訴兒子），第23節則把領出來與領進去連成一句——神把他們領出埃及，是為了領他們進那地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 進迦南應許
+  path: link_folder/歷史/進迦南應許.md
+  summary: 第10節「耶和華─你的神領你進他向你列祖……起誓應許給你的地」、第18節「可以進去得……那美地」、第23節「要領我們進入他向我們列祖起誓應許之地」。CT 說迦南地是神應許賜給亞伯拉罕和他後裔的。KC 指出本章三次講到進入那地，每次都加上神起過誓。
+  relation: 出13 的應許是出發時的方向，本章則是抵達前最後的叮嚀，而且三次都把「進去」與「起誓」綁在一起。第19節再補一句方式——照耶和華所說的，從你面前攆出你的一切仇敵。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第18節「並可以進去得耶和華向你列祖起誓應許的那美地」。CT 的原文字義註明「美」與同節的「善的」原文同字（STEP 兩處皆 H2896A，tov）；第10節形容城邑「又大又美」用的也是同一個字。
+  relation: 本章讓「美」這個字出現在兩個層次：第10節形容城邑是又大又美的現成產業，第18節形容整片地是美地，而中間隔著第12節的警告。同一個字先講物質的好，再講應許的好。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 為奴之家
+  path: link_folder/主題/為奴之家.md
+  summary: 第12節「免得你忘記將你從埃及地、為奴之家領出來的耶和華」，STEP 為 mi./Beit（H1004B）＋'a.va.Dim（H5650）。CT 說這一節意指屆時應當飲水思源，不可忘恩負義。第21節父親對兒子的回答也從「我們在埃及作過法老的奴僕」開始。
+  relation: 本章把這個詞放在飽足的正對面：第10至11節列了四樣現成的享受，第12節緊接著提醒他們是從為奴之家出來的。KC 指出本章三次提醒讀者曾經為奴而神把他們領了出來（第12、21、23節）。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 亞伯拉罕
+  path: link_folder/人物/亞伯拉罕.md
+  summary: 第10節「他向你列祖亞伯拉罕、以撒、雅各起誓應許給你的地」，STEP 為 le./'av.ra.Ham（H85）。CT 說意指迦南地是神應許賜給亞伯拉罕和他後裔的。
+  relation: 本章只在第10節提到他一次，是列祖三人並列的名單，用途是替那地的所有權作背書。第18節與第23節再兩次講「向你列祖起誓」時就不再指名，所以第10節等於替後面兩處定義了「列祖」是誰。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 以撒
+  path: link_folder/人物/以撒.md
+  summary: 第10節「他向你列祖亞伯拉罕、以撒、雅各起誓應許給你的地」，STEP 為 le./yitz.Chak（H3327）。CT 在同節說以撒、雅各也長住迦南地。
+  relation: 本章對他的著墨只有名單裡的兩個字，功能是與亞伯拉罕、雅各一起構成那地應許的傳承鏈。本章沒有提供任何關於他個人的新資料。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 第10節「他向你列祖亞伯拉罕、以撒、雅各起誓應許給你的地」，STEP 為 u./le./ya.'a.Ko（H3290）。CT 在同節說以撒、雅各也長住迦南地。
+  relation: 本章對他的著墨只有名單裡的兩個字，功能是與亞伯拉罕、以撒一起構成那地應許的傳承鏈。本章沒有提供任何關於他個人的新資料。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 29
+    - 30
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 法老
+  path: link_folder/人物/法老.md
+  summary: 第21節「我們在埃及作過法老的奴僕」與第22節「將重大可怕的神蹟奇事施行在埃及地和法老並他全家的身上」，STEP 為 le./far.'Oh 與 be./far.'Oh（H6547J）。CT 說『法老』是埃及王的稱謂。
+  relation: 本章提到他兩次，都在父親對兒子的回答裡，而且都是被動的一方——以色列作過他的奴僕，神的神蹟施行在他和他全家身上。這是他在本庫累積中第一次以教義問答的角色出現，而非敘事人物。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 摩西的第二篇講章
+  path: link_folder/背景/摩西的第二篇講章.md
+  summary: GT《聖經精讀本》說本章可以說是持續到26章的摩西第二篇講章的序言，其主題是「愛耶和華」，具體地說就是當以愛耶和華的那愛順服他的一切話，並且要徹底將這些話語教導後裔，這就是摩西所要教訓的所有律法之核心和精神；同一份註釋在第1節另指出，這是神宣告十誡後使百姓回到帳棚、只留下摩西在西奈山所吩咐的一切律法之詳細規定。
+  relation: 申4、申5 是這篇講章的前段，本章則被 GT《聖經精讀本》明確定位為序言，並指出它的主題詞是「愛」。這替第5節在整篇講章裡的地位定了位：它不只是本章的高點，也是後面二十章的綱領。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 太22：36-39
+  path: link_folder/互文/太22：36-39.md
+  summary: 第5節「你要盡心、盡性、盡力愛耶和華─你的神」是主耶穌所稱第一且最大誡命的出處。CT 說主耶穌將本節視為第一且是最大的誡命；GT《雷氏研讀本》說耶穌基督稱這命令為首先和最大的誡命，並在句中加上了「盡意」；GT《啟導本》說主基督把申命記多處愛的命令綜合起來成為一條第一且最大的誡命，並解釋「心」在希伯來人思想中是行為之本，也是智慧的主體。
+  relation: 既有條目從出20 的十誡那一側記錄這段引用，本章則提供了它的舊約出處之一——愛神那半條。太22 把申6:5 與利19:18 合起來，所以本章是那兩節的其中一節。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep

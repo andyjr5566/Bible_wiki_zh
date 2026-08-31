@@ -1,0 +1,25 @@
+version: 1
+book: 申命記
+chapter: 6
+stages:
+  m3:
+    round: 3
+    sha256: ffb3c23b06b553f66ea56de39b3ca72c33c8397e188bddadc966a1b2b7182367
+    claude: revised
+    codex: pass
+    thread_id: 01a055c3-9c3d-7f03-abe3-4d2b64b52e55
+    findings_count: 0
+  m6:
+    round: 4
+    sha256: 9f4edbb75597db86e4c235eca083203e591b59640354dde98a7f197f2934347d
+    claude: revised
+    codex: pass
+    thread_id: 01a055c3-9c3d-7f03-abe3-4d2b64b52e55
+    findings_count: 0
+  link_updates:
+    round: 3
+    sha256: 0afd4bbe5d0284b05a0d79f18c287c5e3f2d0a3718cfbbd22fff547f68763650
+    claude: revised
+    codex: pass
+    thread_id: 01a055c3-9c3d-7f03-abe3-4d2b64b52e55
+    findings_count: 0

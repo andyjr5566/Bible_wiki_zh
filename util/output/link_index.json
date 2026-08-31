@@ -3514,6 +3514,14 @@
       "離俗"
     ]
   },
+  "非你所建造的": {
+    "path": "link_folder/主題/非你所建造的.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "非你所建造的",
+    "status": "formal",
+    "aliases": []
+  },
   "非利士人的嫉妒": {
     "path": "link_folder/主題/非利士人的嫉妒.md",
     "type": "主題",
@@ -6516,6 +6524,16 @@
     "aliases": [
       "天上有聲音",
       "太三17"
+    ]
+  },
+  "太4：1-11 耶穌在曠野受試探引用申命記": {
+    "path": "link_folder/互文/太4：1-11 耶穌在曠野受試探引用申命記.md",
+    "type": "互文",
+    "secondary_types": [],
+    "title": "太4：1-11 耶穌在曠野受試探引用申命記",
+    "status": "formal",
+    "aliases": [
+      "耶穌受試探引用申命記"
     ]
   },
   "太5：17": {
@@ -13102,6 +13120,16 @@
     "status": "formal",
     "aliases": []
   },
+  "你要盡心盡性盡力愛耶和華（a.hav）": {
+    "path": "link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "你要盡心盡性盡力愛耶和華（a.hav）",
+    "status": "formal",
+    "aliases": [
+      "盡心盡性盡力愛神"
+    ]
+  },
   "使天下萬民驚恐懼怕": {
     "path": "link_folder/原文/使天下萬民驚恐懼怕.md",
     "type": "原文",
@@ -14316,6 +14344,16 @@
       "使之經過"
     ]
   },
+  "殷勤教訓（sha.nan）": {
+    "path": "link_folder/原文/殷勤教訓（sha.nan）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "殷勤教訓（sha.nan）",
+    "status": "formal",
+    "aliases": [
+      "殷勤教訓"
+    ]
+  },
   "殺人（ratsach）": {
     "path": "link_folder/原文/殺人（ratsach）.md",
     "type": "原文",
@@ -14664,6 +14702,16 @@
     "aliases": [
       "狗不搖舌",
       "連狗也不敢向他們搖舌"
+    ]
+  },
+  "獨一（e.chad）": {
+    "path": "link_folder/原文/獨一（e.chad）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "獨一（e.chad）",
+    "status": "formal",
+    "aliases": [
+      "獨一"
     ]
   },
   "王下7（Melakhim Bet 7）": {
@@ -28345,6 +28393,16 @@
       "不是與我們列祖立的"
     ]
   },
+  "遵行誡命是我們的義": {
+    "path": "link_folder/解經爭議/遵行誡命是我們的義.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "遵行誡命是我們的義",
+    "status": "formal",
+    "aliases": [
+      "這就是我們的義了"
+    ]
+  },
   "酒政「想起罪」是指忘記約瑟還是得罪法老": {
     "path": "link_folder/解經爭議/酒政「想起罪」是指忘記約瑟還是得罪法老.md",
     "type": "解經爭議",
@@ -30012,6 +30070,9 @@
   "太三17": {
     "alias_of": "太3：17"
   },
+  "耶穌受試探引用申命記": {
+    "alias_of": "太4：1-11 耶穌在曠野受試探引用申命記"
+  },
   "耶穌成全律法": {
     "alias_of": "太5：17"
   },
@@ -31140,6 +31201,9 @@
   "何西阿三章": {
     "alias_of": "何3（Hoshea 3）"
   },
+  "盡心盡性盡力愛神": {
+    "alias_of": "你要盡心盡性盡力愛耶和華（a.hav）"
+  },
   "各耳板": {
     "alias_of": "供物（qorban）"
   },
@@ -31428,6 +31492,9 @@
   "使之經過": {
     "alias_of": "歸給耶和華"
   },
+  "殷勤教訓": {
+    "alias_of": "殷勤教訓（sha.nan）"
+  },
   "ratsach": {
     "alias_of": "殺人（ratsach）"
   },
@@ -31538,6 +31605,9 @@
   },
   "連狗也不敢向他們搖舌": {
     "alias_of": "狗不敢搖舌"
+  },
+  "獨一": {
+    "alias_of": "獨一（e.chad）"
   },
   "列王紀下 7": {
     "alias_of": "王下7（Melakhim Bet 7）"
@@ -34742,6 +34812,9 @@
   },
   "不是與我們列祖立的": {
     "alias_of": "這約是與哪一代人立的"
+  },
+  "這就是我們的義了": {
+    "alias_of": "遵行誡命是我們的義"
   },
   "占卜用的銀杯": {
     "alias_of": "銀杯與杯占術"

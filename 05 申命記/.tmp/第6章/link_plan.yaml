@@ -1,0 +1,353 @@
+book: 申命記
+chapter: 6
+A_use_directly: []
+B_needs_update:
+- name: 以色列啊你要聽（sha.ma）
+  suggested_type: 原文
+  evidence: v3、v4 兩次「以色列啊，你要聽」，STEP v4 為 she.Ma'（H8085G，命令式）、v3 為 ve./sha.ma'.Ta；申5:1
+    建此條目時 BH 已預先指出它呼應申6:4 的 Shema，本章正是那個出處
+  surfaces:
+  - phrase: 以色列啊，你要聽
+  match_type: exact
+  existing_title: 以色列啊你要聽（sha.ma）
+  existing_path: link_folder/原文/以色列啊你要聽（sha.ma）.md
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: v13「事奉他」ta.'a.Vod（H5647G）、v21「作過法老的奴僕」'a.va.Dim（H5650），與 v12「為奴之家」同屬 a.vad／e.ved
+    字根，延續申5 已建的字根線
+  surfaces:
+  - phrase: 事奉他
+  - phrase: 作過法老的奴僕
+  match_type: exact
+  existing_title: 事奉與作奴僕同一字根（a.vad）
+  existing_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+- name: 學習與教訓同一字根（la.mad）
+  suggested_type: 原文
+  evidence: 'v1「所吩咐教訓你們的誡命」STEP 為 le./la.Med（H3925G，la.mad: to learn: teach）；本章 v7
+    的「殷勤教訓」是另一個字根 sha.nan，兩者需區辨'
+  surfaces:
+  - phrase: 教訓你們的誡命
+  match_type: exact
+  existing_title: 學習與教訓同一字根（la.mad）
+  existing_path: link_folder/原文/學習與教訓同一字根（la.mad）.md
+- name: 律例（choq）
+  suggested_type: 原文
+  evidence: v1、2、17、20、24 反覆出現「律例」，STEP 為 choq（H2706G）；CT 在 v2、v24 說「律例」在此是律法的總稱，v17
+    則說是律法的條規
+  surfaces:
+  - phrase: 律例
+  match_type: exact
+  existing_title: 律例（choq）
+  existing_path: link_folder/原文/律例（choq）.md
+- name: 法度（e.dah）
+  suggested_type: 原文
+  evidence: v17、20「法度」，STEP 為 e.dah（H5713B）；CT：「法度」指律法的證詞，見證神對人的心意
+  surfaces:
+  - phrase: 法度
+  match_type: exact
+  existing_title: 法度（e.dah）
+  existing_path: link_folder/原文/法度（e.dah）.md
+- name: 得福（ya.tav）
+  suggested_type: 原文
+  evidence: 'v3「得以享福」yi.Tav 與 v18「使你可以享福」Yi.tav 同為 H3190（ya.tav: be good）；v24「常得好處」則是
+    H2896B（tov），不同字，不併入'
+  surfaces:
+  - phrase: 得以享福
+  - phrase: 使你可以享福
+  match_type: exact
+  existing_title: 得福（ya.tav）
+  existing_path: link_folder/原文/得福（ya.tav）.md
+- name: 記號與經文
+  suggested_type: 原文
+  evidence: v8「繫在手上為記號，戴在額上為經文」與出13:9、16 是同一組吩咐（STEP v8：'ot H226H、to.ta.Fot H2903）；v9「寫在你房屋的門框上」me.zu.Zot（H4201）是既有條目尚未涵蓋的
+    mezuzah 一段，CT／GT／BH 三家都詳述後世作法
+  surfaces:
+  - phrase: 繫在手上為記號
+  - phrase: 戴在額上為經文
+  - phrase: 寫在你房屋的門框上
+  match_type: exact
+  existing_title: 記號與經文
+  existing_path: link_folder/原文/記號與經文.md
+- name: 滅盡與除滅的雙同字（sha.mad）
+  suggested_type: 原文
+  evidence: 'v15「就把你從地上除滅」STEP 為 ve./hish.Mi.de./kha（H8045，sha.mad: to destroy），與既有條目同字根'
+  surfaces:
+  - phrase: 除滅
+  match_type: exact
+  existing_title: 滅盡與除滅的雙同字（sha.mad）
+  existing_path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+- name: 遵行
+  suggested_type: 原文
+  evidence: v1、3、18、24、25「遵行」；CT 在 v3 與 v25 兩次區分：「謹守」重在思想觀念的贊同和一致，「遵行」重在行為上的遵照和實施
+  surfaces:
+  - phrase: 遵行
+  match_type: exact
+  existing_title: 遵行
+  existing_path: link_folder/原文/遵行.md
+- name: 典章
+  suggested_type: 神學
+  evidence: v1、20「典章」，STEP 為 mish.pat（H4941G）；CT：「典章」指審判，是神對人是否遵行律法的判定
+  surfaces:
+  - phrase: 典章
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 忌邪的神
+  suggested_type: 神學
+  evidence: v15「耶和華─你神是忌邪的神」，STEP 'el（H410G）＋ka.Na'（H7067H）；CT 說忌邪形容神對維護祂獨一至尊的權利極其熱忱，GT《精讀本》另從神人同形同性論解釋
+  surfaces:
+  - phrase: 忌邪的神
+  match_type: exact
+  existing_title: 忌邪的神
+  existing_path: link_folder/神學/忌邪的神.md
+- name: 流奶與蜜之地
+  suggested_type: 神學
+  evidence: v3「流奶與蜜之地」；GT《啟導本》說它形容迦南地的富庶並與現居曠野成對比，KC 統計這片語在全本聖經出現近二十次
+  surfaces:
+  - phrase: 流奶與蜜之地
+  match_type: exact
+  existing_title: 流奶與蜜之地
+  existing_path: link_folder/神學/流奶與蜜之地.md
+- name: 大能的手
+  suggested_type: 神學
+  evidence: v21「耶和華用大能的手將我們從埃及領出來」，STEP be./Yad（H3027H）＋cha.za.Kah（H2389）；CT：「用大能的手」指降十災、使紅海成乾地等神蹟奇事
+  surfaces:
+  - phrase: 大能的手
+  match_type: exact
+  existing_title: 大能的手
+  existing_path: link_folder/神學/大能的手.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: v2、13、24 三次「敬畏耶和華」，STEP 皆為 ya.re（H3372H）；CT v2：「敬畏」指害怕惹神發怒；BH 則說這種懼怕不是恐懼而是承認神的聖潔與權柄
+  surfaces:
+  - phrase: 敬畏耶和華
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 除他以外再無別神
+  suggested_type: 神學
+  evidence: v4「耶和華─我們神是獨一的主」與 v14「不可隨從別神」是申4:35、39 那句宣告的正面命令版；GT《精讀本》說本節同時排斥多神論、泛神論及單一神論，KC
+    指以色列的信仰是一神論
+  match_type: exact
+  existing_title: 除他以外再無別神
+  existing_path: link_folder/神學/除他以外再無別神.md
+- name: 傳於後代
+  suggested_type: 神學
+  evidence: v7 殷勤教訓兒女、v20-25 兒子發問父親作答；KC 明列聖經四次「兒子發問」，本章 v20 是第四次（前三次為出12:26、出13:14、書4:6）；既有條目的主題發展已指名對應申6:6-7
+  surfaces:
+  - phrase: 你的兒子問你說
+  match_type: exact
+  existing_title: 傳於後代
+  existing_path: link_folder/神學/傳於後代.md
+- name: 神的試驗
+  suggested_type: 神學
+  evidence: 'v16「你們不可試探耶和華─你們的神」，STEP te.na.Su／ni.si.Tem（H5254G，na.sah: to test）；GT
+    指該詞原指神對人的驗證，這裡卻被人反過來用在神身上'
+  surfaces:
+  - phrase: 你們不可試探耶和華
+  match_type: exact
+  existing_title: 神的試驗
+  existing_path: link_folder/神學/神的試驗.md
+- name: 瑪撒（Massah）
+  suggested_type: 原文
+  evidence: v16「像你們在瑪撒那樣試探他」，STEP ba./ma.Sah（H4532，Massah）；CT〔原文字義〕「瑪撒」誘惑，並註明該事件記載於出17:3-7；GT《精讀本》說這是出埃及第一年在利非訂因沒有水喝而懷疑神的事件
+  surfaces:
+  - phrase: 瑪撒
+  match_type: exact
+  existing_title: 瑪撒（Massah）
+  existing_path: link_folder/原文/瑪撒（Massah）.md
+- name: 不可妄稱耶和華你神的名
+  suggested_type: 神學
+  evidence: v13「指著他的名起誓」，STEP shem（H8034）＋ti.sha.Ve.a'（H7650）；GT《精讀本》說這是悖論性地強調了第三條誡命的聖名敬畏思想
+  surfaces:
+  - phrase: 指著他的名起誓
+  match_type: exact
+  existing_title: 不可妄稱耶和華你神的名
+  existing_path: link_folder/神學/不可妄稱耶和華你神的名.md
+- name: 十誡
+  suggested_type: 神學
+  evidence: CT 在 v1 與 v17 兩次註明「誡命」指十條誡，而「律例」「典章」「法度」各有所指；本章 v1-3 是十誡重述之後的總綱
+  match_type: exact
+  existing_title: 十誡
+  existing_path: link_folder/神學/十誡.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: v10、18、23 三次提到神向列祖起誓應許（STEP 皆為 nish.Ba'，H7650）；KC 特別指出本章三次講進入那地，每次都加上神起過誓，並列舉神四次起誓的場合
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+- name: 因信稱義
+  suggested_type: 神學
+  evidence: v25「這就是我們的義了」，GT《精讀本》直接處理這句話與保羅因信稱義教義的關係，說摩西所談的義之動機包括愛耶和華的內在狀態
+  match_type: exact
+  existing_title: 因信稱義
+  existing_path: link_folder/神學/因信稱義.md
+- name: 人若遵行律例典章就必因此活著
+  suggested_type: 神學
+  evidence: v24「使我們常得好處，蒙他保全我們的生命」（STEP le./chai.yo.Te./nu，H2421）與 v25 的義，正是利18:5
+    那條原則的申命記版；GT《雷氏》說遵守律法並不保證有永生，卻構成得到約之祝福的權利
+  match_type: exact
+  existing_title: 人若遵行律例典章就必因此活著
+  existing_path: link_folder/神學/人若遵行律例典章就必因此活著.md
+- name: 十災
+  suggested_type: 歷史
+  evidence: v22「將重大可怕的神蹟奇事施行在埃及地和法老並他全家的身上」，GT《串珠》直接註明「神跡奇事」指十災
+  surfaces:
+  - phrase: 神蹟奇事
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 出埃及
+  suggested_type: 歷史
+  evidence: v21「耶和華用大能的手將我們從埃及領出來」；GT《精讀本》說摩西不停回顧出埃及與西奈山頒佈律法兩件事，因為此二事件孕育了以色列
+  surfaces:
+  - phrase: 從埃及領出來
+  match_type: exact
+  existing_title: 出埃及
+  existing_path: link_folder/歷史/出埃及.md
+- name: 進迦南應許
+  suggested_type: 歷史
+  evidence: v10「耶和華─你的神領你進他向你列祖⋯起誓應許給你的地」，v18、23 再各說一次；CT：迦南地是神應許賜給亞伯拉罕和他後裔的
+  surfaces:
+  - phrase: 領你進
+  match_type: exact
+  existing_title: 進迦南應許
+  existing_path: link_folder/歷史/進迦南應許.md
+- name: 美地
+  suggested_type: 主題
+  evidence: v18「並可以進去得耶和華向你列祖起誓應許的那美地」，CT〔原文字義〕註明「美」與 v18 的「善的」原文同字（STEP 皆 H2896A，tov）
+  surfaces:
+  - phrase: 美地
+  match_type: exact
+  existing_title: 美地
+  existing_path: link_folder/主題/美地.md
+- name: 為奴之家
+  suggested_type: 主題
+  evidence: v12「免得你忘記將你從埃及地、為奴之家領出來的耶和華」，STEP mi./Beit（H1004B）＋'a.va.Dim（H5650）；CT：意指屆時應當飲水思源，不可忘恩負義
+  surfaces:
+  - phrase: 為奴之家
+  match_type: exact
+  existing_title: 為奴之家
+  existing_path: link_folder/主題/為奴之家.md
+- name: 亞伯拉罕
+  suggested_type: 人物
+  evidence: v10「你列祖亞伯拉罕、以撒、雅各」，STEP le./'av.ra.Ham（H85）；CT 指迦南地是神應許賜給亞伯拉罕和他後裔的
+  surfaces:
+  - phrase: 亞伯拉罕
+  match_type: exact
+  existing_title: 亞伯拉罕
+  existing_path: link_folder/人物/亞伯拉罕.md
+- name: 以撒
+  suggested_type: 人物
+  evidence: v10「你列祖亞伯拉罕、以撒、雅各」，STEP le./yitz.Chak（H3327）；CT 指以撒、雅各也長住迦南地
+  surfaces:
+  - phrase: 以撒
+  match_type: exact
+  existing_title: 以撒
+  existing_path: link_folder/人物/以撒.md
+- name: 雅各
+  suggested_type: 人物
+  evidence: v10「你列祖亞伯拉罕、以撒、雅各」，STEP u./le./ya.'a.Ko（H3290）
+  surfaces:
+  - phrase: 雅各
+  match_type: exact
+  existing_title: 雅各
+  existing_path: link_folder/人物/雅各.md
+- name: 法老
+  suggested_type: 人物
+  evidence: v22「施行在埃及地和法老並他全家的身上」，STEP be./far.'Oh（H6547J）；CT：法老是埃及王的稱謂。v21 的「作過法老的奴僕」已歸
+    a.vad 字根條目，故本條只取 v22
+  surfaces:
+  - phrase: 法老
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 法老
+  existing_path: link_folder/人物/法老.md
+- name: 摩西的第二篇講章
+  suggested_type: 背景
+  evidence: GT《精讀本》說本章是持續到26章的摩西第二篇講章的序言，其主題是「愛耶和華」，並說這是摩西所要教訓的所有律法之核心和精神
+  match_type: exact
+  existing_title: 摩西的第二篇講章
+  existing_path: link_folder/背景/摩西的第二篇講章.md
+- name: 太22：36-39
+  suggested_type: 互文
+  evidence: v5 被主耶穌稱為第一且最大的誡命；CT、GT《雷氏》、GT《啟導本》、BH 都指出太22:37／可12:30 引用本節並加上「盡意」，既有條目的定義已註明兩大誡命源自申6:5
+    與利19:18
+  match_type: exact
+  existing_title: 太22：36-39
+  existing_path: link_folder/互文/太22：36-39.md
+C_new_formal:
+- name: 獨一（e.chad）
+  suggested_type: 原文
+  evidence: 'v4「耶和華─我們神是獨一的主」，STEP ''e.Chad（H259，e.chad: one）。GT《雷氏》說第4節有許多不同譯法，可能是強調耶威的獨一性；GT《精讀本》說「獨一」並非相對的單一性而是絕對的惟一性；KC
+    從神的合一推出祂旨意的確定性。本庫尚無此條目'
+  surfaces:
+  - phrase: 耶和華─我們神是獨一的主
+  target_path: link_folder/原文/獨一（e.chad）.md
+- name: 你要盡心盡性盡力愛耶和華（a.hav）
+  suggested_type: 原文
+  evidence: 'v5，STEP ve./''A.hav.ta（H157G，a.hav: to love）＋le.va.ve./Kha（H3824，le.vav:
+    heart）＋naf.she./Kha（H5315G，ne.phesh: soul）＋me.''o.De./kha（H3966，me.od: much）。CT：靈、魂、體全人投入；GT《串珠》：「愛」尤指順從；KC
+    指出愛的命令從來不是地上的統治者會下的命令。與既有條目「盡心盡性尋求（ba.qash、da.rash）」不同節不同動詞，本庫尚無此條目'
+  surfaces:
+  - phrase: 盡心、盡性、盡力愛耶和華
+  target_path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+  semantic_hint:
+  - title: 盡心盡性尋求（ba.qash、da.rash）
+    score: 0.433
+    type: 原文
+  - title: 甘心樂意的奉獻
+    score: 0.402
+    type: 神學
+- name: 殷勤教訓（sha.nan）
+  suggested_type: 原文
+  evidence: 'v7「殷勤教訓你的兒女」，STEP ve./shi.nan.Ta/m（H8150，sha.nan: to sharpen）。CT〔原文字義〕：「殷勤教訓」深刻地（教導），並說「教訓」原文「磨、使尖利」；GT《精讀本》：希伯來詞意為「使之銳利」或「紮」；BH
+    也說這個字含磨利或刻寫之意。與 v1 的 la.mad 不同字根，本庫尚無此條目'
+  surfaces:
+  - phrase: 殷勤教訓你的兒女
+  target_path: link_folder/原文/殷勤教訓（sha.nan）.md
+- name: 非你所建造的
+  suggested_type: 主題
+  evidence: v10-11 連用四次「非你所建造的」「非你所裝滿的」「非你所鑿成的」「非你所栽種的」。CT：表示坐享其成；KC 說這裡一再指出神的百姓為這些福分沒有出過力；BH
+    兩次把它連到弗2:8-9 的恩典。本庫尚無此條目
+  surfaces:
+  - phrase: 非你所建造的
+  - phrase: 非你所裝滿的
+  - phrase: 非你所鑿成的
+  - phrase: 非你所栽種的
+  target_path: link_folder/主題/非你所建造的.md
+- name: 太4：1-11 耶穌在曠野受試探引用申命記
+  suggested_type: 互文
+  evidence: v13 與 v16 是主耶穌受試探時三次引用申命記的其中兩次（第三次為申8:3）。GT《雷氏》在 v13 註明主受引誘時引述本節、六章16節與八章3節；GT《啟導本》說祂擊敗魔鬼所用的經文全部來自申命記；KC
+    逐一對應三次引用與三次試探，並指出魔鬼引詩91 時斷章取義。本庫已有「申8：3 人活著不是單靠食物」但只涵蓋第三次，尚無統攝三次引用的條目
+  target_path: link_folder/互文/太4：1-11 耶穌在曠野受試探引用申命記.md
+  semantic_hint:
+  - title: 申8：3 人活著不是單靠食物
+    score: 0.524
+    type: 互文
+  - title: 申9：9-11
+    score: 0.519
+    type: 互文
+  - title: 神的試驗
+    score: 0.488
+    type: 神學
+- name: 遵行誡命是我們的義
+  suggested_type: 解經爭議
+  evidence: v25「這就是我們的義了」，STEP u./tze.da.Kah（H6666）。四套來源給出不同解法：CT 說意指滿足與神所立之約的要求；GT《雷氏》說遵守律法並不保證有永生，卻構成得到約之祝福的權利；GT《啟導本》說「義」是就立約關係而言；GT《精讀本》說它決不與因信稱義矛盾；BH
+    說這種義不是賺得救恩。本庫尚無此條目
+  surfaces:
+  - phrase: 這就是我們的義了
+  target_path: link_folder/解經爭議/遵行誡命是我們的義.md
+  semantic_hint:
+  - title: 遵行
+    score: 0.497
+    type: 原文
+  - title: 十誡中的兩條正面誡命
+    score: 0.426
+    type: 主題
+  - title: 當孝敬父母
+    score: 0.417
+    type: 神學
+D_new_candidate: []
+E_skip: []
