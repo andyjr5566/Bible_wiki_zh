@@ -213,15 +213,25 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 ### Codex：Evidence Auditor
 
 - Codex 在內容流程中的主要角色是**獨立資料稽核員**，不是第二個主筆；內容稽核預設 read-only。
+- 每次 evidence audit 都先讀固定規格 `agent_evidence_audit_prompt.md`，Claude 只傳本次 `book / chapter / stage / sha256` 與必要的前一輪 thread；不要每輪臨時重寫一份審查標準。
 - Codex 必須把 Claude 已寫出的重要事實性敘述對回 `raw_scripture/`、本章 manifest 的有效 `raw_data/`、STEP evidence／receipt 與正式 project rules，檢查是否超出、扭曲或錯配來源。
 - 查核至少區分：`supported`、`overstated`、`unsupported`、`source mismatch`、`quotation mismatch`、`missing nuance`；每個非 PASS 項都要附可驗證證據與修正方向。
 - 特別檢查：全稱詞、數字、來源 attribution、逐字引句、經文引用、STEP lexical range 被誤寫成本節確定義、morphology 被過度神學化、commentary 分歧被壓平，以及異章資料污染。
 
+### Review checkpoint / receipt
+
+- 每章只有一份小型狀態檔：`.tmp/第x章/agent_review.yaml`；由 `util/agent_review.py` 維護，不手算、不手填 SHA。
+- `m3` hash 綁定 `entry_content/*.yaml`；`m6` hash 同時綁定 `chapter_content.yaml` 與目前 M3 hash；`link_updates` hash 同時綁定 `link_updates.yaml` 與目前 M3/M6 hash。所以上游內容一改，下游舊 PASS 也會自然 stale。
+- Claude 每輪交審前先跑 `python util/agent_review.py submit 書名 章 stage`。這是 Claude checkpoint；會產生／更新 round、SHA256，並把該 stage 的 Codex 狀態設為 pending。
+- Codex read-only 審完後，回覆必須依 `agent_evidence_audit_prompt.md` 附 `REVIEW_STAGE / REVIEW_SHA256 / REVIEW_STATUS / FINDINGS_COUNT` footer。Claude **只能照 Codex 真實回覆**記錄：`python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> --sha <Codex回覆SHA> [--thread-id ...] [--findings-count N]`；不得替 Codex 自行簽 PASS。
+- Claude 修改 payload 後重新 `submit`；只要 hash 改變，上一輪 PASS 自動失效並進入下一 round。Round 1 做完整 audit；Round 2+ 優先沿用同一 Codex thread，只複核上一輪 findings、修改處與直接波及範圍，避免無理由重讀全部來源。
+- 要跨過 review 邊界前跑 `python util/agent_review.py gate 書名 章 stage`；只有「目前 hash = Codex PASS 的 hash」才算通過。
+
 ### Pre-landing review gates
 
-- **M3**：Claude 寫完 `.tmp/第x章/entry_content/*.yaml` 後，先由 Codex audit；Claude 修正並確認後，才把這批 M3 視為可供後續 M6 使用的內容。不要等 render 後才第一次查。
-- **M6**：Claude 寫完 `.tmp/第x章/chapter_content.yaml` 後，由 Codex audit M6，並檢查與已確認的 M3 是否矛盾；有問題由 Claude 修 YAML。**未通過前不得 `run`／render 到 production markdown。** 結構 `check` 可作為非落地輔助，但不能取代 evidence audit。
-- **B 類累積**：`link_updates.yaml` 必須在正式 `apply` 前由 Codex audit。preview／dry-run 可用來輔助核對，但 **audit 未通過不得 apply 到既有 `link_folder` 條目**。
+- **M3**：Claude 寫完 `.tmp/第x章/entry_content/*.yaml` → `submit ... m3` → Codex audit → Claude 修正／重送，直到 `gate ... m3` PASS；之後才把這批 M3 視為可供正式 M6 使用的內容。不要等 render 後才第一次查。
+- **M6**：Claude 寫完 `.tmp/第x章/chapter_content.yaml` → `submit ... m6` → Codex audit M6 並檢查與已確認 M3 的一致性；直到 `gate ... m6` PASS。**未通過前不得 `run`／render 到 production markdown。** 結構 `check` 可作為非落地輔助，但不能取代 evidence audit。
+- **B 類累積**：`link_updates.yaml` 完成後 → `submit ... link_updates` → Codex audit；直到 `gate ... link_updates` PASS 才能正式 `apply`。preview／dry-run 可用來輔助核對，但不得把它當 Codex PASS。
 - render／apply 之後仍照 `agent_start_prompt.md` 執行原本的內容複核、sanity check 與 final gates；這些是落地結果的最後把關，**不是第一次 evidence audit**。若沒有新疑點，不要求 Codex 把同一章重新完整 audit 第二遍。
 
 ### Antigravity：總編輯／全局 Reviewer
@@ -236,13 +246,13 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 ```text
 依 agent_start_prompt.md 進入正式流程
-→ Claude 寫 M3 payload
-→ Codex audit M3 → Claude 修正
-→ Claude 寫 M6 payload
-→ Codex audit M6／M3-M6 一致性 → Claude 修正
+→ Claude 寫 M3 payload → submit m3
+→ Codex 依固定 prompt audit → Claude 修正／重送 → gate m3 PASS
+→ Claude 寫 M6 payload → submit m6
+→ Codex audit M6／M3-M6 一致性 → Claude 修正／重送 → gate m6 PASS
 → check → run/render
-→ Claude 準備 B 類 link_updates
-→ Codex audit B 類 → Claude 修正 → preview/apply
+→ Claude 準備 B 類 link_updates → submit link_updates
+→ Codex audit B 類 → Claude 修正／重送 → gate link_updates PASS → preview/apply
 → 依 agent_start_prompt.md 完成後續複核與 validators/gates
 → Antigravity（必要時）做跨章／整卷全局 review
 ```
