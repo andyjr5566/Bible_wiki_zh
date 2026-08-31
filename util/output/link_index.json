@@ -13691,6 +13691,19 @@
     "status": "formal",
     "aliases": []
   },
+  "專愛（cha.Shak）": {
+    "path": "link_folder/原文/專愛（cha.Shak）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "專愛（cha.Shak）",
+    "status": "formal",
+    "aliases": [
+      "專愛",
+      "cha.Shak"
+    ]
+  },
   "專靠（da.veq）": {
     "path": "link_folder/原文/專靠（da.veq）.md",
     "type": "原文",
@@ -28383,6 +28396,20 @@
       "迦南咒詛不是黑人咒詛"
     ]
   },
+  "迦南滅絕命令的歷史範圍": {
+    "path": "link_folder/解經爭議/迦南滅絕命令的歷史範圍.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學",
+      "歷史"
+    ],
+    "title": "迦南滅絕命令的歷史範圍",
+    "status": "formal",
+    "aliases": [
+      "迦南滅絕命令",
+      "迦南七族滅絕命令"
+    ]
+  },
   "這約是與哪一代人立的": {
     "path": "link_folder/解經爭議/這約是與哪一代人立的.md",
     "type": "解經爭議",
@@ -31335,6 +31362,12 @@
   },
   "ger": {
     "alias_of": "寄居的"
+  },
+  "專愛": {
+    "alias_of": "專愛（cha.Shak）"
+  },
+  "cha.Shak": {
+    "alias_of": "專愛（cha.Shak）"
   },
   "專靠": {
     "alias_of": "專靠（da.veq）"
@@ -34809,6 +34842,12 @@
   },
   "迦南咒詛不是黑人咒詛": {
     "alias_of": "迦南咒詛的種族主義誤用"
+  },
+  "迦南滅絕命令": {
+    "alias_of": "迦南滅絕命令的歷史範圍"
+  },
+  "迦南七族滅絕命令": {
+    "alias_of": "迦南滅絕命令的歷史範圍"
   },
   "不是與我們列祖立的": {
     "alias_of": "這約是與哪一代人立的"

@@ -1,0 +1,230 @@
+book: 申命記
+chapter: 7
+candidates:
+  - name: 迦南七族（迦南地原住民）
+    type: 背景
+    evidence: 申7:1列出七族，合稱比以色列更強大的七國之民。
+    surfaces:
+      - phrase: 七國的民
+        verses: [1]
+
+  - name: 赫人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 赫人
+        verses: [1]
+
+  - name: 革迦撒人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 革迦撒人
+        verses: [1]
+
+  - name: 亞摩利人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 亞摩利人
+        verses: [1]
+
+  - name: 迦南人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 迦南人
+        verses: [1]
+
+  - name: 比利洗人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 比利洗人
+        verses: [1]
+
+  - name: 希未人
+    type: 歷史
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 希未人
+        verses: [1]
+
+  - name: 耶布斯人
+    type: 人物
+    evidence: 申7:1所列迦南七族之一。
+    surfaces:
+      - phrase: 耶布斯人
+        verses: [1]
+
+  - name: 滅絕（herem）
+    type: 神學
+    evidence: 申7:2的滅絕淨盡與7:26的當毀滅之物共同呈現歸於毀滅的概念。
+    surfaces:
+      - phrase: 滅絕淨盡
+        verses: [2]
+      - phrase: 當毀滅的物
+        verses: [26]
+
+  - name: 立約禁令
+    type: 事件
+    evidence: 申7:2禁止以色列與迦南七族立約。
+    surfaces:
+      - phrase: 立約
+        verses: [2]
+
+  - name: 申命記7_3-4 禁止與迦南人通婚
+    type: 互文
+    evidence: 申7:3-4以轉去事奉別神說明禁婚的宗教理由。
+    surfaces:
+      - phrase: 結親
+        verses: [3]
+
+  - name: 古代近東祭壇
+    type: 背景
+    evidence: 申7:5命令拆毀迦南宗教祭壇。
+    surfaces:
+      - phrase: 祭壇
+        verses: [5]
+
+  - name: 柱像
+    type: 原文
+    evidence: 申7:5命令打碎迦南宗教柱像。
+    surfaces:
+      - phrase: 柱像
+        verses: [5]
+
+  - name: 亞舍拉（木偶）
+    type: 背景
+    evidence: 申7:5的木偶由多套註釋辨識為亞舍拉崇拜物。
+    surfaces:
+      - phrase: 木偶
+        verses: [5]
+
+  - name: 不可為自己雕刻偶像
+    type: 神學
+    evidence: 申7:5、25命令焚燒雕刻的偶像與神像。
+    surfaces:
+      - phrase: 雕刻的偶像
+        verses: [5]
+      - phrase: 雕刻的神像
+        verses: [25]
+
+  - name: 聖潔的國民
+    type: 神學
+    evidence: 申7:6稱以色列為歸耶和華的聖潔之民。
+    surfaces:
+      - phrase: 聖潔的民
+        verses: [6]
+
+  - name: 神的揀選
+    type: 神學
+    evidence: 申7:6-8說明揀選出於神的愛與向列祖所起的誓。
+    surfaces:
+      - phrase: 揀選
+        verses: [6, 7]
+
+  - name: 屬我的子民
+    type: 神學
+    evidence: 申7:6說神從萬民中揀選以色列特作自己的子民。
+    surfaces:
+      - phrase: 自己的子民
+        verses: [6]
+
+  - name: 專愛
+    type: 原文
+    evidence: 申7:7以專愛描述耶和華主動眷愛以色列；STEP為H2836A cha.Shak。
+    surfaces:
+      - phrase: 專愛
+        verses: [7]
+
+  - name: 神的信實
+    type: 神學
+    evidence: 申7:9宣告耶和華是信實、守約的神。
+    surfaces:
+      - phrase: 信實的神
+        verses: [9]
+
+  - name: 發慈愛直到千代
+    type: 神學
+    evidence: 申7:9、12把守約施慈愛與愛神、遵行誡命相連。
+    surfaces:
+      - phrase: 施慈愛
+        verses: [9, 12]
+
+  - name: 出埃及
+    type: 歷史
+    evidence: 申7:8、18-19以出埃及作為神過去拯救與今日應許的根據。
+    surfaces:
+      - phrase: 領你們出來
+        verses: [8]
+      - phrase: 領你出來
+        verses: [19]
+
+  - name: 救贖
+    type: 神學
+    evidence: 申7:8說神從為奴之家救贖以色列。
+    surfaces:
+      - phrase: 救贖
+        verses: [8]
+
+  - name: 大能的手
+    type: 神學
+    evidence: 申7:8、19以大能的手描述神救出以色列的能力。
+    surfaces:
+      - phrase: 大能的手
+        verses: [8, 19]
+
+  - name: 祝福與咒詛
+    type: 主題
+    evidence: 申7:10、12-16並列背約的報應與順服所得的約中福分。
+    surfaces:
+      - phrase: 賜福
+        verses: [13]
+      - phrase: 蒙福
+        verses: [14]
+
+  - name: 聽命順從蒙醫治
+    type: 主題
+    evidence: 申7:12-15將聽從、謹守遵行與疾病遠離的約中福分相連；CT、GT、KC與BH均處理第15節。
+    surfaces:
+      - phrase: 一切的病症
+        verses: [15]
+      - phrase: 埃及各樣的惡疾
+        verses: [15]
+
+  - name: 征服迦南應許
+    type: 事件
+    evidence: 申7:1、17-24應許神必領以色列得地並制伏強敵。
+    surfaces:
+      - phrase: 得為業之地
+        verses: [1]
+
+  - name: 網羅
+    type: 原文
+    evidence: 申7:16、25以網羅描述偶像崇拜及貪圖偶像金銀的危險。
+    surfaces:
+      - phrase: 網羅
+        verses: [16, 25]
+
+  - name: 黃蜂
+    type: 原文
+    evidence: 申7:20說神打發黃蜂對付迦南人；註釋保留昆蟲、恐慌等解釋。
+    surfaces:
+      - phrase: 黃蜂
+        verses: [20]
+
+  - name: 逐漸趕出
+    type: 神學
+    evidence: 申7:22說神漸漸趕出列國，以免野獸增多傷害百姓。
+    surfaces:
+      - phrase: 漸漸趕出
+        verses: [22]
+
+  - name: 亞摩利人罪孽滿盈
+    type: 神學
+    evidence: GT、KC與BH以創15:16說明迦南審判的歷史背景。
+
+  - name: 迦南滅絕命令的歷史範圍
+    type: 解經爭議
+    evidence: GT、KC與BH把命令放在特定迦南審判中，並區分今日對人的普遍行為規範。

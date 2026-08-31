@@ -1,0 +1,25 @@
+version: 1
+book: 申命記
+chapter: 7
+stages:
+  m3:
+    round: 1
+    sha256: a73d9f47b2670b9ba501bcf0ee93b0e0930820182c8db29501166dae543a61e0
+    claude: ready
+    codex: pass
+    thread_id: codex-root-deut7-m3
+    findings_count: 0
+  m6:
+    round: 2
+    sha256: 2a393e10acb803cceff411291a8545c9fd1c4451c0be81093c0671164bcd9193
+    claude: revised
+    codex: pass
+    thread_id: codex-root-deut7-m6
+    findings_count: 0
+  link_updates:
+    round: 6
+    sha256: f74b0e55808811cab8d9505e4d9ea93677afcf44f579c351381182aae93667b9
+    claude: revised
+    codex: pass
+    thread_id: codex-root-deut7-links
+    findings_count: 0

@@ -1,0 +1,438 @@
+"book": "申命記"
+"chapter": !!int "7"
+"review_schema_version": !!int "2"
+"review_baseline": "link_update_review_baseline.yaml"
+"review_guidance":
+  "review_input": "判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章\
+    \ summary／relation 與既有內容一起判斷。"
+  "review_evidence": "review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代\
+    \ already_covered 的逐字舉證。"
+  "definition": "定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。"
+  "development": "主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation\
+    \ 換句話說後貼進來。"
+  "accumulation": "逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。"
+  "decision_rule": "每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部\
+    \ keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。"
+  "keep_basis": "definition 可用 no_identity_change／already_covered／insufficient_evidence；development\
+    \ 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有\
+    \ challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是\
+    \ already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json\
+    \ 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。"
+  "signals": "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals\
+    \ 只提高注意，不等於必須 update。"
+"updates":
+- "title": "迦南七族（迦南地原住民）"
+  "path": "link_folder/背景/迦南七族（迦南地原住民）.md"
+  "summary": "申7:1 把赫人、革迦撒人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人完整列為七國的民，並說他們比以色列強大。第2至5節把趕出七族與不可立約、不可結親、拆毀祭壇、打碎柱像、砍下亞舍拉及焚燒偶像連在一起。"
+  "relation": "本章使先前六族名單補足為七族，也把這次行動放在進入迦南、對付當地偶像崇拜與施行審判的特定歷史處境。禁婚的明說理由是他們會使以色列的兒女轉去事奉別神，經文沒有以族裔優越作理由，也不能把這項命令普遍化為今日對異族使用暴力的規範。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "出埃及記:3"
+      - "出埃及記:33"
+      - "出埃及記:34"
+      - "民數記:33"
+      - "申命記:7"
+- "title": "赫人"
+  "path": "link_folder/人物/赫人.md"
+  "summary": "申7:1 只把赫人列為神要從以色列面前趕出的七國之一，並說這些國比以色列強大；本章沒有補充赫人的起源、地域或後來歷史。"
+  "relation": "赫人在此只以迦南七族成員的身分出現，其本章作用是標明進地時所面對的居民之一。第1節沒有提供可另行推展赫人族史的新資料。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development": "keep"
+- "title": "革迦撒人"
+  "path": "link_folder/人物/革迦撒人.md"
+  "summary": "申7:1 把革迦撒人列為進入迦南時所面對的七國之一，並統稱這七國比以色列強大；本章沒有交代革迦撒人的起源或分布。"
+  "relation": "第1節確認革迦撒人在完整七族名單中的位置，也把他們列在比以色列強大的七國之中；除此之外不能補寫來源未提供的民族史。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "亞摩利人"
+  "path": "link_folder/人物/亞摩利人.md"
+  "summary": "申7:1 把亞摩利人列為進入迦南時所面對的七國之一，並說七國比以色列強大。本章在這裡沒有重述西宏、噩或亞摩利人的其他歷史。"
+  "relation": "亞摩利人在本章只承接七族成員的身分，列在整體比以色列強大的七國之中。第1節沒有提供足以改寫亞摩利人整體族史的新材料。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "11"
+    - !!int "12"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "迦南人"
+  "path": "link_folder/人物/迦南人.md"
+  "summary": "申7:1 把迦南人列入七國的民，與赫人、革迦撒人等族並列，並統稱七國比以色列強大。本章沒有另述迦南人的個別歷史。"
+  "relation": "迦南人在第1節是七族名單中的一個特定族名，不是泛指整份名單。這項並列澄清了名稱的窄義，卻沒有新增可延伸為迦南人族史的資料。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "11"
+    - !!int "12"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "比利洗人"
+  "path": "link_folder/人物/比利洗人.md"
+  "summary": "申7:1 把比利洗人列為迦南七國之一，並統稱七國比以色列強大；本章沒有進一步說明比利洗人是民族、社會階層或居住型態。"
+  "relation": "本章只確認比利洗人在七族名單中的位置，並把他們列在比以色列強大的七國之中；第1節不足以解決既有來源對其身分的疑問。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "5"
+    - !!int "6"
+    "definition": "keep"
+    "development": "keep"
+- "title": "希未人"
+  "path": "link_folder/歷史/希未人.md"
+  "summary": "申7:1 把希未人列為神要交給以色列的七國之一，並說這些國比以色列強大；本章沒有提供希未人的個別事件或地理資料。"
+  "relation": "希未人在此只以迦南七族成員的身分出現，列在整體比以色列強大的七國之中；第1節沒有新增可延伸為希未人獨立歷史的材料。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition": "keep"
+    "development": "keep"
+- "title": "耶布斯人"
+  "path": "link_folder/人物/耶布斯人.md"
+  "summary": "申7:1 把耶布斯人列為進入迦南時所面對的七國之一，並統稱七國比以色列強大；本章沒有提到耶路撒冷或耶布斯人的其他歷史。"
+  "relation": "本章僅確認耶布斯人在七族中的身分，並把他們列在比以色列強大的七國之中，不能由第1節補入別章才有的城市或族群資料。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development": "keep"
+- "title": "滅絕（herem）"
+  "path": "link_folder/神學/滅絕（herem）.md"
+  "summary": "申7:2 的 הַחֲרֵם／תַּחֲרִים 是動詞，STEP 標為 H2763A，本節譯義是徹底毀滅；第26節兩次出現的 חֵרֶם 則是名詞 H2764A，指當毀滅之物。第25至26節因此不只要求焚燒偶像，也禁止貪圖其金銀、把當毀滅之物帶進家中。"
+  "relation": "本章把同一概念的動作與對象分開呈現：第2節是對七族施行的動詞，第26節是不可收藏的名詞。兩者都受申7的特殊歷史範圍約束，位於進入迦南、七族的偶像崇拜與神審判的處境，不是對異族暴力的日常規範。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "出埃及記:22"
+      - "利未記:27"
+      - "申命記:2"
+      - "申命記:3"
+      - "申命記:7"
+- "title": "立約禁令"
+  "path": "link_folder/事件/立約禁令.md"
+  "summary": "申7:2 命令以色列不可與七族立約，也不可憐恤他們；第3至5節接著禁止通婚並要求拆毀其敬拜設施。經文給出的危險是以色列的兒女被轉去事奉別神。"
+  "relation": "本章重申出23與出34的立約禁令，並用禁婚及拆毀偶像設施說明其宗教邊界。禁令針對進迦南時與偶像崇拜結盟的風險，不以族裔優越為根據。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition":
+      "decision": "keep"
+      "basis": "already_covered"
+      "covered_by": "不可和他們並他們的神立約"
+    "development": "keep"
+- "title": "申命記7_3-4 禁止與迦南人通婚"
+  "path": "link_folder/互文/申命記7_3-4 禁止與迦南人通婚.md"
+  "summary": "申7:3-4 禁止以色列把女兒嫁給七族的兒子，也禁止兒子娶七族的女兒。經文隨即說明原因：這種婚姻會使兒女轉離耶和華，去事奉別神，招致神的怒氣。"
+  "relation": "本章把出34:16 的警告寫成直接命令，所防的是婚姻帶來的敬拜轉向與信仰傳承斷裂。禁令針對偶像崇拜的宗教風險，不以族裔本身作為婚姻價值的判準。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "創世記:34"
+      - "出埃及記:34"
+      - "申命記:7"
+- "title": "古代近東祭壇"
+  "path": "link_folder/背景/古代近東祭壇.md"
+  "summary": "申7:5 命令以色列拆毀七族的祭壇，並與打碎柱像、砍下亞舍拉及焚燒雕刻偶像並列。本章沒有描述祭壇的形制、尺寸或材料。"
+  "relation": "這裡的祭壇屬於迦南偶像敬拜的設施，所以與其他宗教物件一同拆毀。命令所針對的是異教敬拜的基礎設施，不能混同於以色列按神命令建造的祭壇。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "柱像"
+  "path": "link_folder/原文/柱像.md"
+  "summary": "申7:5 把柱像列在迦南敬拜設施之中，命令以色列將它們打碎。它與同節要砍下的亞舍拉分別列名，不能視為同一物件。"
+  "relation": "本章使柱像禁令在既有出23、出34與利26之外再出現一次。柱像是直立的宗教石柱；同節的亞舍拉是另一類木製宗教物件，動詞也分別是打碎與砍下。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "出埃及記:23"
+      - "出埃及記:34"
+      - "利未記:26"
+      - "申命記:7"
+- "title": "亞舍拉（木偶）"
+  "path": "link_folder/背景/亞舍拉（木偶）.md"
+  "summary": "申7:5 命令以色列砍下七族的亞舍拉，並與拆祭壇、碎柱像、焚燒雕刻偶像並列。註釋把它理解為與迦南敬拜相關的木製物件。"
+  "relation": "本章把亞舍拉置於要清除的偶像敬拜物件中。經文給它的動作是砍下，給柱像的動作是打碎，顯示亞舍拉與石製柱像是兩類物件，不應混稱。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "不可為自己雕刻偶像"
+  "path": "link_folder/神學/不可為自己雕刻偶像.md"
+  "summary": "申7:5 命令焚燒七族的雕刻偶像；第25至26節再說偶像必須用火焚燒，不可貪圖其上的金銀，也不可把當毀滅之物帶進家中。"
+  "relation": "十誡禁止以色列為敬拜而製造與跪拜形像，本章則處理進入迦南後遇見別人既有偶像的情況：不可保存、利用或因貴金屬而重新佔有它們。這擴展了禁令的實際場景，仍以拒絕偶像敬拜為核心。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "出埃及記:20"
+      - "出埃及記:32"
+      - "民數記:33"
+      - "申命記:4"
+      - "申命記:5"
+      - "申命記:7"
+- "title": "聖潔的國民"
+  "path": "link_folder/神學/聖潔的國民.md"
+  "summary": "申7:6 稱以色列為歸耶和華為聖潔的民，並把這身分與神從萬民中揀選他們、特作自己的子民連在一起。這句話接在清除迦南偶像敬拜的命令之後。"
+  "relation": "本章把聖潔落實為約中的分別與專一歸屬。以色列之所以要拒絕當地偶像，不是因族裔優越，而是因他們已被神揀選歸祂，應按這身分生活。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "神的揀選"
+  "path": "link_folder/神學/神的揀選.md"
+  "summary": "申7:6-8 說神從萬民中揀選以色列特作自己的子民，並明言原因不在他們人數眾多，因他們原是萬民中最少的；經文把這選擇連於神的愛和向列祖所守的誓。"
+  "relation": "本章把既有個人揀選的主題擴到群體：神的揀選建立以色列的約中身分，起點是祂主動的愛與守約，不是民族規模或功德。第9至11節隨即把蒙選身分連到認識神的信實與謹守誡命。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "創世記:25"
+      - "申命記:4"
+      - "申命記:7"
+- "title": "屬我的子民"
+  "path": "link_folder/神學/屬我的子民.md"
+  "summary": "申7:6 說神從地上的萬民中揀選以色列，特作自己的子民。這項歸屬與聖潔、揀選三者在同一節中彼此解釋。"
+  "relation": "本章把作神子民寫成神主動選擇所建立的約中歸屬。這個身分要求百姓不被迦南偶像同化，也在第7至11節得到愛、守誓與守命的說明。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "神的信實"
+  "path": "link_folder/神學/神的信實.md"
+  "summary": "申7:8-10 以出埃及的救贖說明神守向列祖所起的誓，並稱祂為信實的神：向愛祂、守祂誡命的人守約施慈愛直到千代，也向恨祂的人當面報應。"
+  "relation": "本章讓神的信實同時表現在兌現應許與施行約中審判。祂的守約不是抽象品格，而在領以色列出埃及、持續施慈愛及對悖逆作出回應上成為可辨認的行動。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "發慈愛直到千代"
+  "path": "link_folder/神學/發慈愛直到千代.md"
+  "summary": "申7:9 說信實的神向愛祂、守祂誡命的人守約施慈愛直到千代；第12節又把百姓聽從、謹守遵行典章與神守約施慈愛相連。"
+  "relation": "本章重申十誡中直到千代的語句，並把它放在神的信實與約的雙方關係中。千代表達神守約慈愛的廣遠延續，經文同時保留愛神、守命與第10節審判悖逆者的完整脈絡。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development": "keep"
+- "title": "出埃及"
+  "path": "link_folder/歷史/出埃及.md"
+  "summary": "申7:8 說神用大能的手把以色列從為奴之家、法老手下救贖出來；第18至19節又要百姓在害怕七族時，牢記神在埃及向法老施行的試驗、神蹟奇事、大能的手和伸出的膀臂。"
+  "relation": "本章把出埃及從過去事件轉成面對未來恐懼的記憶。神既曾勝過法老，也能把進迦南所面對的列國交在以色列手中；回憶救恩在此成為信靠的根據。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "5"
+    - !!int "6"
+    "definition": "keep"
+    "development": "keep"
+- "title": "救贖"
+  "path": "link_folder/神學/救贖.md"
+  "summary": "申7:8 說神因愛以色列並守向列祖所起的誓，用大能的手把他們從為奴之家、埃及王法老手下救贖出來。救贖在本節是一項已發生的歷史行動。"
+  "relation": "本章把救贖放在神揀選與守約的理由鏈中：神先主動愛與守誓，繼而把作奴僕的百姓帶出來。這項行動建立他們屬神的身分，也成為第18至19節面對迦南列國時可回想的根據。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "大能的手"
+  "path": "link_folder/神學/大能的手.md"
+  "summary": "申7:8 說神用大能的手救贖以色列脫離為奴之家與法老的手；第19節又把大能的手與試驗、神蹟奇事及伸出的膀臂並列，要求百姓以此記念出埃及。"
+  "relation": "本章讓大能的手同時回顧救贖並回答眼前的恐懼。百姓面對比自己強大的七族時，信心的依據不是估算自身力量，而是神已在埃及顯出的行動。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development": "keep"
+- "title": "祝福與咒詛"
+  "path": "link_folder/主題/祝福與咒詛.md"
+  "summary": "申7:10-16 把約中的兩面並陳：恨神的人受報應，聽從並謹守典章的人則蒙守約施慈愛，得著人口、生育、五穀、新酒、油、牛羊和健康方面的祝福。"
+  "relation": "本章的祝福具體落在以色列即將居住之地、家庭、牲畜與身體生活，審判也放在對神的愛恨與守約關係中。這些是本段對以色列的約中應許，不能抽離土地與聖約處境，改成人人今生必然富足無病的公式。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development": "keep"
+- "title": "聽命順從蒙醫治"
+  "path": "link_folder/主題/聽命順從蒙醫治.md"
+  "summary": "申7:12-15 把聽從、謹守遵行與約中祝福相連，其中包括神使一切病症離開以色列，不把埃及各樣的惡疾加在他們身上。CT 將其概括為痛苦難治的病；GT 同時記眼炎、痢疾、天花、象皮病等列舉，以及十災或埃及地方病兩種解法；BH 偏向出埃及時的災害。KC 提醒，患病本身不能證明一個人不順服。"
+  "relation": "本章承接出15的聽命與醫治原則，卻把它明確放在神與以色列的約及進地祝福中。這段不能推成所有疾病都由個人不順服造成的普遍公式；來源對埃及惡疾的所指也沒有單一答案。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development": "keep"
+- "title": "征服迦南應許"
+  "path": "link_folder/事件/征服迦南應許.md"
+  "summary": "申7:17-24 回答以色列因七族強大而產生的恐懼：要記念神怎樣對付法老和埃及；神要使敵人驚恐，打發黃蜂追出躲藏的人，並漸漸趕出列國，直到諸王的名被除滅。"
+  "relation": "本章重申出23的征服應許，也保留同樣的兩個特徵：神主動介入，進展卻有安排的次序。黃蜂表示敵人不能躲過神的行動，漸漸趕出則防止土地突然荒置、野獸增多。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "網羅"
+  "path": "link_folder/原文/網羅.md"
+  "summary": "申7:16 警告七族的神會成為以色列的網羅；第25節又禁止貪圖雕刻偶像上的金銀，免得因此陷入網羅。宗教敬拜與物質貪欲在本章形成同一種陷阱。"
+  "relation": "出10 是埃及臣僕把摩西視為網羅，出23 則已把事奉別神稱為通向毀滅的網羅。本章延續後一種用法，並補上偶像金銀的誘惑：人既可能因敬拜被纏住，也可能因想保留貴重材料而落入同一陷阱。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition":
+      "decision": "update"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "出埃及記:10"
+      - "出埃及記:23"
+      - "申命記:7"
+- "title": "黃蜂"
+  "path": "link_folder/原文/黃蜂.md"
+  "summary": "申7:20 說神要打發黃蜂攻擊七族，直到躲藏的人滅亡。來源保留多種理解：GT《雷氏研讀本》提出真實昆蟲或埃及軍隊，CT 以巨大毒蜂表徵神所用的天然災害，GT《串珠聖經註釋》理解為使敵人驚惶紛亂的力量，BH 也偏向恐懼或驚慌的形象。"
+  "relation": "本章與出23共同以黃蜂描寫神在征服中先行介入。真實昆蟲、軍隊、天然災害與恐慌隱喻都見於正式來源，材料不足以裁定唯一所指；共同重點是連躲藏的敵人也不能逃過神的行動。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "逐漸趕出"
+  "path": "link_folder/神學/逐漸趕出.md"
+  "summary": "申7:22 說神要把七國從以色列面前漸漸趕出，不可迅速滅盡，免得野地的獸增多而害及百姓。CT 進一步說這速度配合以色列實際佔有與管理土地的能力。"
+  "relation": "本章重申出23的漸進安排，說明征服的速度也受居住與土地管理的現實約束。土地若太快空置，野獸會增多；逐步趕出使百姓能在取得一地後安頓，再繼續前進。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "亞摩利人罪孽滿盈"
+  "path": "link_folder/神學/亞摩利人罪孽滿盈.md"
+  "summary": "申7:1 把亞摩利人列在七國之中；GT、KC與BH在解釋本章審判時都回引創15:16，將迦南征服與亞摩利人罪孽滿盈的等待期限相連。"
+  "relation": "這項互文把創15尚未滿盈的延遲與申7進入迦南時的審判連起來，強調審判有其道德與歷史背景，不是因以色列的族裔優越。本章本身沒有重新敘述亞摩利人罪孽的內容。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
