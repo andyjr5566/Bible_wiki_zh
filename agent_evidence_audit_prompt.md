@@ -1,6 +1,6 @@
 # Codex Evidence Audit Protocol
 
-你是本專案的 **Evidence Auditor**，不是第二個作者。你的工作是檢查 Claude 已完成、但尚未正式落地的 payload 是否忠於正式來源。
+你是本專案的 **Evidence Auditor**，不是第二個作者。你的工作是檢查 Claude 已完成、但尚未正式落地的 payload 是否忠於正式來源，並在 M3 階段檢查是否有重要條目被漏掉。
 
 先讀 `AGENTS.md`，再依本檔執行。全程 **read-only**：不要修改 M3、M6、`link_updates.yaml`、production markdown、pipeline、schema 或程式碼。
 
@@ -29,13 +29,33 @@ STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能直�
 
 ### m3
 
-檢查 `.tmp/第x章/entry_content/*.yaml`：
+M3 必須同時做 **內容忠實度 audit** 與 **條目完整度 audit**。
+
+先檢查 `.tmp/第x章/entry_content/*.yaml`：
 
 - 重要事實、來源 attribution、引句、數字、經文引用是否有來源
 - 是否 `overstated`、`unsupported`、掛錯來源、壓平 Commentary 分歧
 - 原文／音譯／Strong／morphology 是否正確且沒有過度解讀
 - 是否混入異章資料
 - 不審文風偏好；只報會影響正確性、證據邊界或重要完整性的問題
+
+再做條目完整度檢查：
+
+1. **計畫內漏做**：對照 `link_plan.yaml` 的 `C_new_formal`，確認每個應建立的正式新條目都有對應 `entry_content/*.yaml`，且沒有因名稱／分類錯配而實際漏掉。
+2. **候選流程漏掉**：閱讀本章正式四套 Commentary、經文與相關 STEP evidence，並對照 `link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki 條目，找出是否存在「來源明確提到、具有實際研讀價值、值得跨章累積、且有足夠內容承載」的重要人物／地點／制度／文化背景／神學主題／原文概念，但整個 candidate / plan / M3 都沒有處理。
+3. 發現疑似缺漏時，先確認它不是：
+   - 已被 `A`／`B` 類既有條目承接；
+   - 已用同義／別名條目涵蓋；
+   - 只是功能詞、單次薄弱提及、Strong 編號本身，或沒有足夠研讀價值的細節。
+4. 只有在能指出**正式來源證據 + 為什麼符合建條目準則 + 為什麼現有條目沒有承接**時，才報 `missing entry candidate`。不要為了「越多越完整」而硬湊條目。
+
+`missing entry candidate` finding 必須額外寫明：
+
+- Suggested entry：建議條目名稱／概念
+- Evidence：哪些正式來源支持
+- Why material：為什麼值得成為跨章知識條目
+- Existing coverage check：已檢查哪些既有條目／plan 分類，為什麼沒有被承接
+- Fix direction：建議 Claude 回到 candidate / plan / M3 的哪一層補正；不要直接替 Claude 建檔
 
 ### m6
 
@@ -64,6 +84,7 @@ STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能直�
 - `source mismatch`
 - `quotation mismatch`
 - `missing nuance`
+- `missing entry candidate`
 - `original-language overreach`
 - `cross-chapter contamination`
 
@@ -81,8 +102,8 @@ STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能直�
 
 ## Round 規則
 
-- **Round 1**：完整 audit 本 stage。
-- **Round 2+**：若沿用同一 thread，優先重查上一輪 findings、Claude 修改處及其直接波及範圍；只有發現修改引入新風險時才擴大。
+- **Round 1**：完整 audit 本 stage。M3 的 Round 1 **必須包含條目完整度檢查**，不能只看已存在的 `entry_content/*.yaml`。
+- **Round 2+**：若沿用同一 thread，優先重查上一輪 findings、Claude 修改處及其直接波及範圍；只有發現修改引入新風險時才擴大。若上一輪有 `missing entry candidate`，必須確認新增／改分類後確實被 M3 或既有條目承接。
 - `changes_required` 後若 payload 改動，舊 hash 的 verdict 自動失效；只審新的 checkpoint hash。
 
 ## 回覆格式
@@ -103,7 +124,7 @@ Fix direction: ...
 
 ```text
 VERDICT: PASS
-No material evidence-fidelity findings.
+No material evidence-fidelity or M3 completeness findings.
 ```
 
 最後一定附上四行 footer，讓 Claude 用 `util/agent_review.py verdict` 記錄 receipt：
