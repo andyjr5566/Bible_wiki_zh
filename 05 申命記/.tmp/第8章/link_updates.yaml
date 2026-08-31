@@ -1,0 +1,333 @@
+book: 申命記
+chapter: 8
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 嗎哪
+  path: link_folder/主題/嗎哪.md
+  summary: 第3、16節兩次回顧神在曠野賜下列祖所不認識的嗎哪；STEP 原文資料為 H4478A（man）。CT 在第3節點出順序，說飢餓帶來了嗎哪的供應，可見飢餓並非壞事；GT《聖經精讀本》說「你和你列祖所不認識的嗎哪」暗示嗎哪並非自然產物，乃是神以大能特別供給的全新食品；KC 說神刻意讓人挨餓，好叫人更珍惜嗎哪，並在缺乏中認識神取之不盡的資源。
+  relation: 本章把嗎哪的意義從「神供應食物」推進成一句可以帶進美地的教訓——人活著不是單靠食物，乃是靠耶和華口裡所出的一切話。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第7至10節是申命記對美地最完整的一段描寫：有河、有泉、有源，七樣出產，那地的石頭是鐵、山內可以挖銅，吃得飽足、一無所缺。KC 數過這段描述裡「地」出現七次，STEP 原文資料的 'E.retz（H776G）可以驗證：第7節兩次、第8節兩次、第9節兩次、第10節一次。GT《聖經精讀本》把這段歸為三樣富饒——豐富的水源、豐富的農作物、豐富的礦物質，並說與大都是沙漠地帶的近東其它地區相比，這實在是流奶與蜜的應許之地。
+  relation: 申1 至申4 反覆用「美地」這個詞卻沒有描寫內容，本章第一次把「好」拆成數得出來的項目，並在第10節要求人吃飽之後稱頌賜地的神。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:8
+      - 申命記:1
+      - 申命記:3
+      - 申命記:4
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第2節說神在曠野引導以色列四十年，第15節描寫這地方是「那大而可怕的曠野，那裡有火蛇、蠍子、乾旱無水之地」，第16節說神又在曠野賜下嗎哪。CT 把第15節讀成一幅全景：「空曠遼闊、幾無水源、天候酷熱、時有塵暴、常遇毒物、人煙稀少的曠野之地」。STEP 原文資料的 mid.Bar（H4057B）在本章出現三次，全落在第2、15、16節。
+  relation: 本章給曠野一個明確的功能定位——它是苦煉、試驗與管教的場所，並與第7至10節的美地形成整章的對照結構。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:8
+      - 出埃及記:5
+- title: 曠野飄流四十年
+  path: link_folder/歷史/曠野飄流四十年.md
+  summary: 第2至5節與第14至16節兩度回顧這四十年，並第一次正面給出目的：苦煉、試驗、要知道人心內如何，最終是叫人終久享福。第4節記下兩個細節——衣服沒有穿破、腳也沒有腫。CT 把試煉的目的整理成四項：顯明存心是否肯守神的誡命、學會活著靠神口裡所出的一切話、父神的管教使人得益處、叫人終久享福。GT《申命記串珠聖經註釋》說這段流浪的日子是以色列民一種謙卑的經驗，好使他們學會順服和感恩。
+  relation: 民14 記的是四十年的判決，申1 至申2 記的是走完這段路的長度與結果，本章則第一次說明神為什麼要讓這一代這樣走。
+  overview_review:
+    signals:
+    - development_blank
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:8
+      - 民數記:14
+      - 申命記:2
+- title: 火蛇（saraph）
+  path: link_folder/原文/火蛇（saraph）.md
+  summary: 第15節把火蛇列為曠野的危險之一；STEP 原文資料作 na.Chash sa.Raf（H5175 與 H8314A 並列）。GT《啟導本聖經申命記註釋》說「火蛇」可能因人被此蛇咬後炎腫似火而得名，並指民21:6 提到此種毒蛇；GT《聖經精讀本》說此蛇帶有巨毒，被咬會感到如火燒般的痛苦，並推測似乎是指常見於古代近東沙漠的角蝰。BH 也把毒蛇與蠍子並列為沙漠中真實的威脅。
+  relation: 民21 記的是火蛇作為審判工具進入營中，本章則把牠列進神領百姓走過的環境本身，重點從審判轉到神的保守。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 磐石出水
+  path: link_folder/事件/磐石出水.md
+  summary: 第15節回顧神「曾為你使水從堅硬的磐石中流出來」；STEP 原文資料作 mi./Tzur（H6697H）配 Ha./cha.la.Mish（H2496，簡要詞典義 flint），CT 的原文字義給「堅硬」是打火石。GT《啟導本聖經申命記註釋》指出這是出17:6 及民20:8 所記擊打出水的磐石，但那兩處沒有「堅硬」字樣；GT《申命記串珠聖經註釋》說神為選民曾兩次叫磐石出水，第一次在何烈山（出17:6），另一次在加低斯（民20:8）。
+  relation: 本章把兩次磐石出水收成一句回顧，並加上「堅硬」這個原出處都沒有的形容，強調水是從打火石般的岩石裡出來的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 為奴之家
+  path: link_folder/主題/為奴之家.md
+  summary: 第14節說神「將你從埃及地為奴之家領出來」；STEP 原文資料作 mi./Beit（H1004B）配 'a.va.Dim（H5650，簡要詞典義 servant/slave）。BH 說這個稱呼點出過去的奴役與如今的自由之間的對比。
+  relation: 出13 與申5、申6 把這個稱呼連到守節與守誡命，本章則把它接到財富上：忘記為奴之家，就會以為貨財是自己力量得來的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第14節把「將你從埃及地為奴之家領出來」列為不可忘記的第一件事，接著第15至16節依序數出曠野的引導、從堅硬磐石流出的水與嗎哪。BH 指出出埃及是以色列歷史的樞紐事件，象徵神的能力、信實與立約的愛。
+  relation: 本章不是敘述出埃及，而是把它當成對付驕傲的記憶——第17節那句自誇之所以站不住，正因為說話的人本來是被領出來的奴隸。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: keep
+- title: 典章
+  path: link_folder/神學/典章.md
+  summary: '第11節把誡命、典章、律例三樣並列，說不可忘記耶和華以致不守這些；STEP 原文資料作 u./mish.pa.Ta/v（H4941G，簡要詞典義 justice: judgement）。CT 的文意註解分辨三者：「『誡命』指十條誡；『律例』指律法，是神向人的要求；『典章』指審判，是神對人是否遵行律法的判定」。'
+  relation: 本章沒有展開典章的內容，而是把它與遺忘連在一起——不守典章是忘記神的具體表現。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 律例（choq）
+  path: link_folder/原文/律例（choq）.md
+  summary: 第11節的「律例」STEP 原文資料作 ve./chu.ko.Ta/v（H2708，chuq.qah，簡要詞典義 statute），與申4 至申6 所用的 chu.Kim（H2706G，choq）是同一詞根的另一個形式，中文同樣譯作律例。CT 在本節把律例解作律法，是神向人的要求。
+  relation: 申4 至申6 把律例放在教導與遵行的正面架構裡，本章則把它放進「免得忘記」的警告——同一組詞在這裡成了遺忘的檢測點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: '第6節把三個動作排在一起：謹守耶和華的誡命、遵行他的道、敬畏他；STEP 原文資料作 u./le./yir.''Ah（H3372H，簡要詞典義 to fear: revere）。BH 指出敬畏耶和華是智慧的開端（箴9:10），是對神的權能、聖潔與權柄的敬重與敬畏，不是被嚇壞的恐懼。'
+  relation: 本章把敬畏放在曠野回顧與美地描寫之間，作為受過管教之後應有的回應。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 第18節說神賜人得貨財的力量，「為要堅定他向你列祖起誓所立的約，像今日一樣」；STEP 原文資料的動詞是 ha.Kim（H6965I，本節譯義 to carry out），受詞是 be.ri.T/o（H1285，covenant）。第1節也提到「耶和華向你們列祖起誓應許的那地」。BH 指出這裡的約指向與亞伯拉罕、以撒、雅各所立關於地、後裔與福分的應許。
+  relation: 本章把財富的來源直接接到列祖之約——神給人賺取的能力，目的是兌現他自己先前的誓言。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 神的試驗
+  path: link_folder/神學/神的試驗.md
+  summary: 第2節與第16節兩次說曠野四十年是要試驗以色列；STEP 原文資料為 H5254G（na.sah）。GT《聖經精讀本》分辨這不是出於惡意使人掉進陷阱的試探，而是為了使人領悟真理並最終得到祝福的善意考試；GT《啟導本聖經申命記註釋》提醒「這裡不是說神不知道他們的內心」，這裡的知道「是指人的道德情操經過考驗之後所顯出的真情況」。
+  relation: 本章把試驗的目的寫得最完整：顯明人心、教人靠神的話而活，並在第16節收在叫人終久享福。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 苦難與管教
+  path: link_folder/神學/苦難與管教.md
+  summary: 第5節以父子關係定位神在曠野的作為：「耶和華─你神管教你，好像人管教兒子一樣」；STEP 原文資料為 H3256（ya.sar）。GT《申命記串珠聖經註釋》說管教「意即訓誨和責備」，並說管教通常意味著對受教者的殷切期望；GT《聖經精讀本》稱之為以為父之心加諸的愛的鞭打，並引來12:5-11。CT 說這是有積極用意的責備和訓誡，雖有忿怒的懲罰，卻不是出於恨的動機。KC 與 BH 同樣連到來12。
+  relation: 本章把整整四十年的艱苦統攝在「管教」一個詞底下，並說明管教的目的是使人得益處、終久享福。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:8
+      - 創世記:42
+- title: 除他以外再無別神
+  path: link_folder/神學/除他以外再無別神.md
+  summary: 第19節警告忘記耶和華的結果是「隨從別神，事奉敬拜」，接著是必定滅亡；STEP 原文資料的三個動詞依序是 ve./ha.lakh.Ta（H1980N，walk after）、va./'a.vad.Ta/m（H5647H，serve）、ve./hish.ta.cha.Vi.ta（H7812，bow down）。GT《申命記串珠聖經註釋》說這正是違背十誡的第一誡（出20:3）。
+  relation: 申4 與申6 從正面宣告除耶和華以外再無別神，本章則從反面說出違背它的路徑：先忘記，再隨從，最後滅亡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 遵行
+  path: link_folder/原文/遵行.md
+  summary: 第1節「謹守遵行」與第6節「遵行他的道」。STEP 原文資料在第1節作 tish.me.Ru/n（H8104J）配 la./'a.Sot（H6213A，本節譯義 to observe），第6節則作 la./Le.khet（H1980I，by walking）配 bi/d.ra.Kha/v（H1870G，ways）。CT 分辨第1節的兩個動作：「謹守」重在指思想觀念的贊同和一致，「遵行」重在指行為上的遵照和實施。
+  relation: 本章把遵行放在兩個不同的位置：第1節接著「好叫你們存活」，第6節接著敬畏；同一個要求既關乎存活，也關乎與神的關係。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 「記念」與「守」
+  path: link_folder/原文/「記念」與「守」.md
+  summary: 本章把這一對字用在整篇講章的骨架上：第2、18節兩次「記念」（STEP 原文資料為 H2142，za.khar），第1、2、6、11節的「謹守／守／謹慎」則都是 H8104（sha.mar）。CT 在第11節註明「守」在原文和「謹慎」是同一個字。
+  relation: 出20 與申5 的對照落在第四誡的異文上，本章則顯示這一對字並不限於安息日：記念管的是回頭看四十年，謹守管的是往前守住誡命。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 得福（ya.tav）
+  path: link_folder/原文/得福（ya.tav）.md
+  summary: 第16節「叫你終久享福」STEP 原文資料作 le./hei.tiv./Kha（H3190，ya.tav）配 be./'a.cha.ri.Te./kha（H319，簡要詞典義 end）。GT《聖經精讀本》說這是神藉著許多逆境試驗聖徒的目的，與起初以甜美話語誘惑、終久卻使人滅亡的撒但之作為有本質上的區別。
+  relation: 申5 與申6 把這個字用在誡命的應許上，本章則把它放在四十年苦煉的終點——同一個字從遵行就得福延伸成受過管教之後終久得福。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 人若遵行律例典章就必因此活著
+  path: link_folder/神學/人若遵行律例典章就必因此活著.md
+  summary: 第1節把謹守遵行一切誡命與「好叫你們存活，人數增多，且進去得耶和華向你們列祖起誓應許的那地」接在一起。GT《聖經精讀本》說得最直接：「謹守遵行神的誡命，這並不單單是祝福的問題，乃是關乎生死的問題」，並指上一代因不順服而在曠野四十年間被除滅淨盡就是活生生的證明。CT 也提醒本節有三個步驟：存活、人數增多、進去。
+  relation: 利18 給的是原則，申6 把它放進進地前的講章，本章再加上一個反面證明——上一代確實沒有活著進去。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 申8：3 人活著不是單靠食物
+  path: link_folder/互文/申8：3 人活著不是單靠食物.md
+  summary: '本章第3節就是這個條目的出處經文。STEP 原文資料顯示「人活著」兩次都是 yich.Yeh（H2421）配 ha./''a.Dam（H120G），「食物」是 ha./Le.chem（H3899H，簡要詞典義 food: bread），「口裡所出的」是 mo.Tza''（H4161）配 fi-（H6310G）。CT 說主耶穌曾引用這句話來對付魔鬼（太4:4），暗示正如食物可維持肉身的性命，神口裡所出的一切話是維持靈命不可或缺之物；GT《聖經精讀本》補充這句話並不單與屬靈生命相關，也與肉體的生命相關——即使沒有糧食，只要神願意，也能用嗎哪等方式維持人的生命。'
+  relation: 出16 是這節的背景事件，本章是它被說出來的地方；摩西在這裡把四十年的嗎哪經歷總結成一句可以帶進美地的話。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 太4：1-11 耶穌在曠野受試探引用申命記
+  path: link_folder/互文/太4：1-11 耶穌在曠野受試探引用申命記.md
+  summary: 本章第3節是耶穌三次引用申命記中的一次，四家都指出這個引用：CT 說主耶穌曾引用這句話來對付魔鬼；GT《申命記雷氏研讀本》說耶穌面對魔鬼試探的時候引述本節的下半節（太四4）；GT《聖經精讀本》說基督因飢餓受撒但誘惑之時正是用這句話來回答的（太4:4；路4:4）；KC 說主耶穌知道神並沒有把石頭給人作食物，父不必行神蹟也能供給他（太4:3-4）。
+  relation: 申6:13 與申6:16 出自摩西講章的另一段，本章第3節補上第三處引用，也就是耶穌回應第一個試探時所用的那一句。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 神賜福賜財富能力 (申8-18)
+  path: link_folder/互文/神賜福賜財富能力 (申8-18).md
+  summary: 本章第18節就是這個條目的出處經文：「你要記念耶和華─你的神，因為得貨財的力量是他給你的，為要堅定他向你列祖起誓所立的約，像今日一樣。」STEP 原文資料顯示「力量」是 Ko.ach（H3581B），「得」是 la./'a.Sot（H6213I，本節譯義 to acquire），「貨財」是 Cha.yil（H2428H）。GT《聖經精讀本》指出這意味著所有財物都是神的，人只是管理那些財物的管家；BH 引代上29:12 說財富與尊榮都出於神。
+  relation: 創33 是這節在雅各身上的活出，本章是它被說出來的地方；第17節先寫出人心裡的自誇，第18節才給出正解。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 神的供應
+  path: link_folder/主題/神的供應.md
+  summary: 本章把曠野的供應列成一串：第3節的嗎哪、第4節「你的衣服沒有穿破，你的腳也沒有腫」、第15節從堅硬磐石流出的水、第16節再一次的嗎哪。GT《申命記雷氏研讀本》推測衣服的供應也許部分透過與其它人交換物品、部分是神奇妙地賜予（比較申29:5）；CT 說第4節形容不缺衣受寒、也不赤腳受磨，表示神的看顧無微不至。
+  relation: 出16 記的是嗎哪供應的制度，本章把四十年的供應整批收攏，並指出供應的目的是叫人知道人活著不是單靠食物。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 你一無所缺
+  path: link_folder/主題/你一無所缺.md
+  summary: 第9節說在美地「你在那地不缺食物，一無所缺」；STEP 原文資料的動詞是 tech.Sar（H2637，cha.ser，簡要詞典義 to lack），與申2:7 的「一無所缺」同一個字根；同節的「不缺食物」另用 ve./mis.ke.Nut（H4544，簡要詞典義 poverty）。BH 說這句保證強調神完全的供應與看顧。
+  relation: 申2:7 講的是四十年曠野裡的一無所缺，本章講的是進地之後的一無所缺；同一個承諾跨過兩種完全相反的環境。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:8
+      - 申命記:2
+- title: 以色列啊你要聽（sha.ma）
+  path: link_folder/原文/以色列啊你要聽（sha.ma）.md
+  summary: '第20節把滅亡的原因定在「不聽從耶和華─你們神的話」；STEP 原文資料作 tish.me.''U/n（H8085H，簡要詞典義 to hear: obey）配 be./Kol（H6963A，voice）。CT 的原文字義給「話」是聲音，文意註解把「聽從」解作順從，「不聽從」就是不遵照神的話去行。'
+  relation: 申5 用這個字召集會眾，申6 把它變成每天都要說的話，本章則第一次用它的否定式——不聽從就是滅亡的理由。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep

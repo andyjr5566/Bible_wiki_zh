@@ -1,0 +1,240 @@
+book: 申命記
+chapter: 8
+candidates:
+  - name: 苦煉（a.nah）
+    type: 原文
+    evidence: 申8:2、3、16三次用「苦煉」描述神在曠野對待以色列的方式；STEP為H6031B a.nah，CT〔原文字義〕作「苦待，壓迫」。
+    surfaces:
+      - phrase: 苦煉
+        verses: [2, 3, 16]
+
+  - name: 忘記（sha.khach）
+    type: 原文
+    evidence: 申8:11、14、19三次警告「忘記耶和華」；STEP為H7911 sha.khach，19節以不定詞絕對式加未完成式強調。
+    surfaces:
+      - phrase: 忘記
+        verses: [11, 14, 19]
+
+  - name: 貨財（cha.yil）
+    type: 原文
+    evidence: 申8:17-18的「貨財」STEP為H2428H cha.yil；CT〔原文字義〕給「財富」，並解「我力量、我能力」為一己所能掌握的力量總合。
+    surfaces:
+      - phrase: 貨財
+        verses: [17]
+
+  - name: 心高氣傲（rum）
+    type: 原文
+    evidence: 申8:14「你就心高氣傲」STEP作ve./Ram le.va.Ve./kha（H7311A rum＋H3824 le.vav）；CT〔原文字義〕註明「氣傲」原文無此字。
+    surfaces:
+      - phrase: 心高氣傲
+        verses: [14]
+
+  - name: 河、泉、源（na.chal、a.yin、te.hom）
+    type: 原文
+    evidence: 申8:7「有河，有泉，有源」STEP依序為H5158A na.chal、H5869M a.yin、H8415 te.hom；CT〔原文字義〕給「泉」眼目，水泉；「源」深處。
+    surfaces:
+      - phrase: 有河，有泉，有源
+        verses: [7]
+
+  - name: 稱頌（ba.rakh）
+    type: 原文
+    evidence: 申8:10「就要稱頌耶和華」STEP為H1288 ba.rakh（Piel）；CT〔原文字義〕給「祝福，屈膝」；BH說明飯後稱頌神是承認神為一切福分之源的敬拜行動。
+    surfaces:
+      - phrase: 稱頌
+        verses: [10]
+
+  - name: 蠍子（aq.rav）
+    type: 原文
+    evidence: 申8:15「蠍子」STEP為H6137 aq.rav；GT說明蠍子廣泛棲息近東沙漠、巴勒斯坦地區種類達十餘種，並提到「蠍子口」地名。
+    surfaces:
+      - phrase: 蠍子
+        verses: [15]
+
+  - name: 迦南地的七樣出產
+    type: 主題
+    evidence: 申8:8列出小麥、大麥、葡萄樹、無花果樹、石榴樹、橄欖樹與蜜；CT逐項給屬靈表徵，KC數為七樣並與埃及的六樣對比，BH逐項給農業與聖經背景。
+    surfaces:
+      - phrase: 小麥、大麥、葡萄樹、無花果樹、石榴樹、橄欖樹，和蜜
+        verses: [8]
+
+  - name: 鐵礦與銅礦（bar.zel、ne.cho.shet）
+    type: 文化
+    evidence: 申8:9「那地的石頭是鐵，山內可以挖銅」；STEP為H1270 bar.zel與H5178A ne.cho.shet；GT指亞拉巴地區產銅鐵、所羅門以前即已開採，BH提到亭納谷的古代銅礦。
+    surfaces:
+      - phrase: 那地的石頭是鐵，山內可以挖銅
+        verses: [9]
+
+  - name: 嗎哪
+    type: 主題
+    evidence: 申8:3、16兩次回顧神在曠野賜下列祖所不認識的嗎哪。
+    surfaces:
+      - phrase: 嗎哪
+        verses: [3, 16]
+
+  - name: 美地
+    type: 主題
+    evidence: 申8:7、10稱神所領進之地為美地，並在7-10節詳細描寫。
+    surfaces:
+      - phrase: 美地
+        verses: [7, 10]
+
+  - name: 曠野
+    type: 地點
+    evidence: 申8:2、15、16以曠野為四十年試煉的場所，15節描述其為大而可怕、有火蛇蠍子、乾旱無水之地。
+    surfaces:
+      - phrase: 曠野
+        verses: [2, 15, 16]
+
+  - name: 曠野飄流四十年
+    type: 歷史
+    evidence: 申8:2、4兩次以「這四十年」總括曠野歲月的目的與神的看顧。
+    surfaces:
+      - phrase: 這四十年
+        verses: [2, 4]
+
+  - name: 火蛇（saraph）
+    type: 原文
+    evidence: 申8:15列火蛇為曠野的危險；STEP作na.Chash sa.Raf（H5175＋H8314A）。
+    surfaces:
+      - phrase: 火蛇
+        verses: [15]
+
+  - name: 磐石出水
+    type: 事件
+    evidence: 申8:15回顧神使水從堅硬的磐石中流出；STEP作mi./Tzur Ha./cha.la.Mish（H6697H＋H2496 flint），CT〔原文字義〕給「堅硬」打火石。
+    surfaces:
+      - phrase: 使水從堅硬的磐石中流出來
+        verses: [15]
+
+  - name: 為奴之家
+    type: 主題
+    evidence: 申8:14以「埃及地為奴之家」指出百姓被領出來的處境。
+    surfaces:
+      - phrase: 為奴之家
+        verses: [14]
+
+  - name: 出埃及
+    type: 歷史
+    evidence: 申8:14把「將你從埃及地為奴之家領出來」立為不可忘記的根據。
+    surfaces:
+      - phrase: 從埃及地
+        verses: [14]
+
+  - name: 典章
+    type: 神學
+    evidence: 申8:11把誡命、典章、律例並列為不可停止遵守的內容。
+    surfaces:
+      - phrase: 典章
+        verses: [11]
+
+  - name: 律例（choq）
+    type: 原文
+    evidence: 申8:11的「律例」STEP作ve./chu.ko.Ta/v（H2708 chuq.qah）。
+    surfaces:
+      - phrase: 律例
+        verses: [11]
+
+  - name: 敬畏神
+    type: 神學
+    evidence: 申8:6把謹守誡命、遵行他的道與敬畏他並列；STEP作u./le./yir.'Ah（H3372H）。
+    surfaces:
+      - phrase: 敬畏他
+        verses: [6]
+
+  - name: 亞伯拉罕之約
+    type: 神學
+    evidence: 申8:18說神賜得貨財的力量，是為要堅定他向列祖起誓所立的約。
+    surfaces:
+      - phrase: 向你列祖起誓所立的約
+        verses: [18]
+
+  - name: 神的試驗
+    type: 神學
+    evidence: 申8:2、16說明曠野四十年是要試驗百姓；STEP為H5254G na.sah，GT區分善意的test與惡意的temptation。
+    surfaces:
+      - phrase: 試驗你
+        verses: [2, 16]
+
+  - name: 苦難與管教
+    type: 神學
+    evidence: 申8:5以父親管教兒子比喻神的管教；STEP為H3256 ya.sar，CT、GT、KC、BH均連到來12:5-11。
+    surfaces:
+      - phrase: 管教
+        verses: [5]
+
+  - name: 除他以外再無別神
+    type: 神學
+    evidence: 申8:19警告忘記耶和華必導致隨從別神、事奉敬拜；GT指這正是違背十誡的第一誡。
+    surfaces:
+      - phrase: 隨從別神
+        verses: [19]
+
+  - name: 遵行
+    type: 原文
+    evidence: 申8:1「謹守遵行」與8:6「遵行他的道」；CT區分「謹守」重在思想觀念的一致、「遵行」重在行為上的實施。
+    surfaces:
+      - phrase: 遵行
+        verses: [1, 6]
+
+  - name: 「記念」與「守」
+    type: 原文
+    evidence: 申8:2、18兩次「記念」（H2142 za.khar）與8:1、2、6、11的「謹守／守／謹慎」（H8104 sha.mar）在本章交替出現；CT在8:11註明「守」原文和「謹慎」同字。
+    surfaces:
+      - phrase: 記念
+        verses: [2, 18]
+
+  - name: 得福（ya.tav）
+    type: 原文
+    evidence: 申8:16「叫你終久享福」STEP作le./hei.tiv./Kha（H3190 ya.tav）＋be./'a.cha.ri.Te./kha（H319 end）。
+    surfaces:
+      - phrase: 享福
+        verses: [16]
+
+  - name: 人若遵行律例典章就必因此活著
+    type: 神學
+    evidence: 申8:1把謹守遵行誡命與「好叫你們存活」相連；GT說這不單是祝福的問題，乃是關乎生死的問題。
+    surfaces:
+      - phrase: 好叫你們存活
+        verses: [1]
+
+  - name: 申8：3 人活著不是單靠食物
+    type: 互文
+    evidence: 申8:3本節即此互文條目的出處經文。
+    surfaces:
+      - phrase: 人活著不是單靠食物
+        verses: [3]
+
+  - name: 太4：1-11 耶穌在曠野受試探引用申命記
+    type: 互文
+    evidence: 申8:3下半句被耶穌在曠野受試探時引用（太4:4）；CT、GT、KC、BH四家都指出這個引用。
+    surfaces:
+      - phrase: 乃是靠耶和華口裡所出的一切話
+        verses: [3]
+
+  - name: 神賜福賜財富能力 (申8-18)
+    type: 互文
+    evidence: 申8:18本節即此互文條目的出處經文。
+    surfaces:
+      - phrase: 得貨財的力量是他給你的
+        verses: [18]
+
+  - name: 神的供應
+    type: 主題
+    evidence: 申8:3-4、15-16列舉曠野中的供應——嗎哪、不穿破的衣服、不腫的腳、從磐石流出的水。
+    surfaces:
+      - phrase: 你的衣服沒有穿破
+        verses: [4]
+
+  - name: 你一無所缺
+    type: 主題
+    evidence: 申8:9說在美地「你在那地不缺食物，一無所缺」；STEP為H2637 cha.ser（to lack），GT、KC、BH均處理這項應許。
+    surfaces:
+      - phrase: 一無所缺
+        verses: [9]
+
+  - name: 以色列啊你要聽（sha.ma）
+    type: 原文
+    evidence: '申8:20把滅亡的原因定在「不聽從耶和華你們神的話」；STEP為H8085H sha.ma（簡要詞典義 to hear／obey），CT〔文意註解〕解「聽從」為順從。'
+    surfaces:
+      - phrase: 不聽從
+        verses: [20]

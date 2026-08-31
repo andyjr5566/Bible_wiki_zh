@@ -3219,6 +3219,18 @@
     "status": "formal",
     "aliases": []
   },
+  "迦南地的七樣出產": {
+    "path": "link_folder/主題/迦南地的七樣出產.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "迦南地的七樣出產",
+    "status": "formal",
+    "aliases": [
+      "七樣出產"
+    ]
+  },
   "進迦南地後的獻祭定例與神愛恩慈": {
     "path": "link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md",
     "type": "主題",
@@ -13921,6 +13933,18 @@
       "心中有智慧"
     ]
   },
+  "心高氣傲（rum）": {
+    "path": "link_folder/原文/心高氣傲（rum）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "心高氣傲（rum）",
+    "status": "formal",
+    "aliases": [
+      "心高氣傲"
+    ]
+  },
   "忌邪（嫉妒）": {
     "path": "link_folder/原文/忌邪（嫉妒）.md",
     "type": "原文",
@@ -13930,6 +13954,18 @@
     "title": "忌邪（嫉妒）",
     "status": "formal",
     "aliases": []
+  },
+  "忘記（sha.khach）": {
+    "path": "link_folder/原文/忘記（sha.khach）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "忘記（sha.khach）",
+    "status": "formal",
+    "aliases": [
+      "忘記"
+    ]
   },
   "惟願（mi yi.ten）": {
     "path": "link_folder/原文/惟願（mi yi.ten）.md",
@@ -14419,6 +14455,18 @@
       "沙番",
       "石獾",
       "岩獾"
+    ]
+  },
+  "河、泉、源（na.chal、a.yin、te.hom）": {
+    "path": "link_folder/原文/河、泉、源（na.chal、a.yin、te.hom）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "河、泉、源（na.chal、a.yin、te.hom）",
+    "status": "formal",
+    "aliases": [
+      "有河,有泉,有源"
     ]
   },
   "治理與管理": {
@@ -14942,6 +14990,18 @@
     "status": "formal",
     "aliases": []
   },
+  "稱頌（ba.rakh）": {
+    "path": "link_folder/原文/稱頌（ba.rakh）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "稱頌（ba.rakh）",
+    "status": "formal",
+    "aliases": [
+      "稱頌"
+    ]
+  },
   "穹蒼（raqia）": {
     "path": "link_folder/原文/穹蒼（raqia）.md",
     "type": "原文",
@@ -15229,6 +15289,18 @@
     "status": "formal",
     "aliases": []
   },
+  "苦煉（a.nah）": {
+    "path": "link_folder/原文/苦煉（a.nah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "苦煉（a.nah）",
+    "status": "formal",
+    "aliases": [
+      "苦煉"
+    ]
+  },
   "苦菜": {
     "path": "link_folder/原文/苦菜.md",
     "type": "原文",
@@ -15264,6 +15336,18 @@
     "title": "蛇的原文字義",
     "status": "formal",
     "aliases": []
+  },
+  "蠍子（aq.rav）": {
+    "path": "link_folder/原文/蠍子（aq.rav）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "蠍子（aq.rav）",
+    "status": "formal",
+    "aliases": [
+      "蠍子"
+    ]
   },
   "血源": {
     "path": "link_folder/原文/血源.md",
@@ -15438,6 +15522,18 @@
     "status": "formal",
     "aliases": [
       "Me.khes"
+    ]
+  },
+  "貨財（cha.yil）": {
+    "path": "link_folder/原文/貨財（cha.yil）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "貨財（cha.yil）",
+    "status": "formal",
+    "aliases": [
+      "貨財"
     ]
   },
   "貪戀": {
@@ -18669,6 +18765,18 @@
     "aliases": [
       "錘出來",
       "錘出"
+    ]
+  },
+  "鐵礦與銅礦（bar.zel、ne.cho.shet）": {
+    "path": "link_folder/文化/鐵礦與銅礦（bar.zel、ne.cho.shet）.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "鐵礦與銅礦（bar.zel、ne.cho.shet）",
+    "status": "formal",
+    "aliases": [
+      "石頭是鐵"
     ]
   },
   "雙語命名_亞蘭語伊迦爾撒哈杜他_希伯來語迦累得": {
@@ -29452,6 +29560,9 @@
   "蝗蟲類": {
     "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
   },
+  "七樣出產": {
+    "alias_of": "迦南地的七樣出產"
+  },
   "遠離清酒濃酒": {
     "alias_of": "遠離葡萄樹與酒"
   },
@@ -31417,6 +31528,12 @@
   "心中有智慧": {
     "alias_of": "心裡有智慧"
   },
+  "心高氣傲": {
+    "alias_of": "心高氣傲（rum）"
+  },
+  "忘記": {
+    "alias_of": "忘記（sha.khach）"
+  },
   "惟願": {
     "alias_of": "惟願（mi yi.ten）"
   },
@@ -31549,6 +31666,9 @@
   "岩獾": {
     "alias_of": "沙番（shaphan）"
   },
+  "有河,有泉,有源": {
+    "alias_of": "河、泉、源（na.chal、a.yin、te.hom）"
+  },
   "法勒原文字義": {
     "alias_of": "法勒名字與分地"
   },
@@ -31678,6 +31798,9 @@
   "提獻物": {
     "alias_of": "禮物"
   },
+  "稱頌": {
+    "alias_of": "稱頌（ba.rakh）"
+  },
   "Meribah": {
     "alias_of": "米利巴（Meribah）"
   },
@@ -31765,6 +31888,9 @@
   "神的居住": {
     "alias_of": "舍吉拿（shekinah）"
   },
+  "苦煉": {
+    "alias_of": "苦煉（a.nah）"
+  },
   "bitter herbs": {
     "alias_of": "苦菜"
   },
@@ -31773,6 +31899,9 @@
   },
   "摩西的蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
+  },
+  "蠍子": {
+    "alias_of": "蠍子（aq.rav）"
   },
   "行事與我反對": {
     "alias_of": "行事與我反對（qe.ri）"
@@ -31806,6 +31935,9 @@
   },
   "Me.khes": {
     "alias_of": "貢物（Me.khes）"
+  },
+  "貨財": {
+    "alias_of": "貨財（cha.yil）"
   },
   "渴望": {
     "alias_of": "貪戀"
@@ -32538,6 +32670,9 @@
   },
   "錘出": {
     "alias_of": "銀號製作工藝（錘出法）"
+  },
+  "石頭是鐵": {
+    "alias_of": "鐵礦與銅礦（bar.zel、ne.cho.shet）"
   },
   "frogs sacred in Egypt": {
     "alias_of": "青蛙為埃及聖物"

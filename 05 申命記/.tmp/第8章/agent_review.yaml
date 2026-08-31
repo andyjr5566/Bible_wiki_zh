@@ -1,0 +1,18 @@
+version: 1
+book: 申命記
+chapter: 8
+stages:
+  m3:
+    round: 3
+    sha256: 2d76491b6b0c32ba7b7f6a98632530086122d8a5f7dfc7482e6334b5628e74e8
+    claude: revised
+    codex: pass
+    thread_id: 01a05857-0e1a-7612-ab9f-799bfaefe7cd
+    findings_count: 0
+  m6:
+    round: 4
+    sha256: 277d59c4ac9c8bd202ee671faa04a0c0a240a6309498a5e3ba1e96f20df13341
+    claude: revised
+    codex: pass
+    thread_id: 01a05857-0e1a-7612-ab9f-799bfaefe7cd
+    findings_count: 0

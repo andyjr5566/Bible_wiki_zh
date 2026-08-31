@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_8.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 293,
+      "first": "Deu 8:1",
+      "last": "Deu 8:20",
+      "sha256": "4659d5163abf8da53ad5d8637b29878facde380f12a8a851a3e68ab4cb5608bd",
+      "bytes": 58673,
+      "chars": 51379,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
