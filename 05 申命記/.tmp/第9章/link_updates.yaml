@@ -1,0 +1,523 @@
+book: 申命記
+chapter: 9
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 從冊上塗抹（生命冊）
+  path: link_folder/互文/從冊上塗抹（生命冊）.md
+  summary: 第14節神說要「將他們的名從天下塗抹」，STEP 原文資料的動詞是 ve./'em.Cheh（H4229A，ma.chah，簡要詞典義 to wipe），與出32:32-33 摩西求神從冊上塗抹自己的名同一個字。GT《啟導本聖經申命記註釋》指這是從生命冊上塗去其名（詩69:28）；GT《聖經精讀本》補上摩西當時的回應——他求告神，哪怕把自己的名字從生命冊上塗抹，也一定要赦免以色列百姓所犯的罪（出32:31-32），並把保羅為同胞所獻的禱告（羅9:3）放在同一條線上。
+  relation: 出32 是摩西自願被塗抹，申9 是神提出要把整個民族塗抹；同一個動詞在兩處的方向剛好相反，而摩西的代求正是擋在中間的那一步。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 以色列啊你要聽（sha.ma）
+  path: link_folder/原文/以色列啊你要聽（sha.ma）.md
+  summary: 第1節以「以色列啊，你當聽」開場，STEP 原文資料為 she.Ma'（H8085G，命令式）。KC 指出這個字是申命記的特色（申4:1；5:1；6:3），作用是把注意力叫回神要說的話上；BH 說這個呼喚呼應申6:4，也提醒以色列他們是立約的群體。
+  relation: 申5 用它召集會眾、申6 把它變成每天要說的話，本章則用它開啟一段拆穿自我感覺的講論——要聽的內容不是應許，而是自己的悖逆史。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第1節說「你今日要過約但河」，STEP 原文資料為 hai./yar.Den（H3383）。BH 指出約但河同時是地理界線與屬靈界線，過河標誌著曠野飄流結束、進入應許之地；GT《聖經精讀本》則提醒這裡的「今日」並非指今日馬上，事實上他們過約但河是在兩個月之後。
+  relation: 本章一開頭就把過河擺在眼前，接著整章卻在講過河之前必須先弄清楚的一件事——得地不是因為自己的義。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞衲族與偉人拿非林
+  path: link_folder/背景/亞衲族與偉人拿非林.md
+  summary: 第2節說那民是亞衲族的人，又大又高，並引用一句流傳的話：誰能在亞衲族人面前站立得住呢？STEP 原文資料為 be.Nei 'a.na.Kim（H1121A＋H6062）與 be.Nei 'a.Nak（H6061）；CT 的〔原文字義〕給「亞衲」是頸項，文意註解說這是一種身材魁偉的巨人族（參民13:33）。BH 補上他們的名聲本身就足以叫以色列人猶豫。
+  relation: 民13 是探子把亞衲族當成不能上去的理由，本章則把同一批人放進另一個框架：敵人確實可畏，但第3節說在前面過去的是耶和華。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 烈火
+  path: link_folder/原文/烈火.md
+  summary: 第3節說耶和華在你前面過去「如同烈火」，STEP 原文資料為 'esh 'o.khe.Lah（H784 火＋H398 吞吃）；CT 的〔原文字義〕給「烈」是吞噬，文意註解說這火是因迦南地的原住民拜偶像假神而惹動神忌邪的怒火（參申4:24）。GT《啟導本聖經申命記註釋》從另一面讀：神走在祂的子民前面，與他們一同作戰，取得勝利。
+  relation: 本章把烈火放在得勝的應許裡，但同一章第8節與第19節又說這烈怒差一點燒到以色列自己身上。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 亞摩利人罪孽滿盈
+  path: link_folder/神學/亞摩利人罪孽滿盈.md
+  summary: 第4節與第5節兩次說趕出列國是因他們的惡，STEP 原文資料為 rish.'At（H7564 rish.ah，簡要詞典義 wickedness）。GT《聖經精讀本》把這條線接回創15:16，說迦南人被滅的根本理由與所多瑪、蛾摩拉一樣正是他們的罪孽，那是自亞伯拉罕領受啟示之後七百年來不斷加增、無法得到赦免的罪；GT《啟導本聖經申命記註釋》也說迦南原居民失去在原地居留的權利，是因為他們的罪惡已滿盈。
+  relation: 本章把這件事當成得地的第一個真正原因，並用它直接堵住「因我的義」那句話。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 遵行誡命是我們的義
+  path: link_folder/解經爭議/遵行誡命是我們的義.md
+  summary: 第5節在「並不是因你的義」之後又加一句「也不是因你心裡正直」，STEP 原文資料為 ve./tzid.ka.te./Cha（H6666）與 u./ve./Yo.sher 配 le.Va.ve./kha（H3476＋H3824）。CT 的文意註解把「心裡正直」解作存心純正、高尚；GT《申命記串珠聖經註釋》說本段一再提到神向列祖起誓保證的應許，是要百姓知道神向他們施慈愛並不是因為他們有什麼好處。
+  relation: 申6:25 說遵行這一切誡命就是我們的義，本章卻三次說得地不是因你的義——兩處要並讀才不會偏：一處講遵行的結果，一處講得地的原因。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 申命記:6
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 第5節說得地的第二個原因，是神要堅定他向列祖亞伯拉罕、以撒、雅各起誓所應許的話，STEP 原文資料的動詞是 ha.Kim（H6965I，本節譯義 to carry out）；第27節摩西代求時再一次具名求神記念這三位僕人。GT《申命記雷氏研讀本》把「所應許的話」指回創13:15。
+  relation: 本章讓這約承擔了一個新的功能：它不只是應許的來源，更是在百姓完全不配的時候，神仍然行動的唯一理由。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第6節說神將這美地賜你為業，並不是因你的義，STEP 原文資料為 ha./'A.retz ha./to.Vah（H776G＋H2896A）。BH 指出這塊好地就是那流奶與蜜之地，它是白白的恩賜而不是報酬。
+  relation: 申8 用整段描寫美地有多好，本章緊接著說明它為什麼會落到這群硬著頸項的人手上——不是因為他們配。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 硬著頸項的百姓
+  path: link_folder/神學/硬著頸項的百姓.md
+  summary: 第6節與第13節兩次出現，STEP 原文資料為 ke.sheh 'O.ref（H7186 severe＋H6203 neck）；第6節是摩西說的，第13節是神親口說的。CT 說這意指剛硬、倔強、頑梗、悖逆，如同不肯負軛的公牛（參出32:9；33:3；34:9）。GT《申命記雷氏研讀本》說這比喻來自那拒絕負軛的不聽話的牛，GT《申命記串珠聖經註釋》則說源於不受制馭的野驢，GT《聖經精讀本》另說這是聖經的慣用語，意指硬挺著頸項的百姓。
+  relation: 本章把這個稱呼從一句評語變成整章的骨架：第7至24節那一長串悖逆史，就是這四個字的注解。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 出埃及記:32
+- title: 「記念」與「守」
+  path: link_folder/原文/「記念」與「守」.md
+  summary: 第7節「你當記念不忘」用的是 ze.Khor（H2142 za.khar，命令式），第27節摩西對神說「求你記念」用的是同一個字根。KC 指出第27節是他數到的第三次記念（申8:2、申9:7、申9:27），而這一次摩西不是對百姓說，是對神說。
+  relation: 申8 要人記念神的恩待，本章前半要人記念自己的失敗，末了摩西把同一個動作轉向神——求神記念祂自己的僕人與應許。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 忘記（sha.khach）
+  path: link_folder/原文/忘記（sha.khach）.md
+  summary: 第7節「你當記念不忘」的「不忘」STEP 原文資料為 'al- tish.Kach（H7911，否定祈使）。CT 的文意註解說這是指應當謹記在曠野飄流的四十年間一再觸發神怒氣的事。
+  relation: 申8 用這個字警告人不要忘記神的恩待，本章用同一個字要人不要忘記自己的悖逆；同一個動詞在相鄰兩章對著兩種完全不同的記憶。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 申命記:8
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第7節說你在曠野怎樣惹耶和華發怒，第28節摩西提到外邦人可能說神領百姓出來是要在曠野殺他們。GT《聖經精讀本》把第7節讀成強調——以色列四十年曠野史是充滿不順服的悖逆之史，並指出與此相近的表達還有第24節的「自從我認識你們以來」。
+  relation: 申8 把曠野讀成神苦煉、試驗與管教的課堂，本章把同一段年日讀成一份悖逆清單；兩種讀法指的是同一片地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第7節以「自從你出了埃及地的那日」作為悖逆史的起點，第12節神稱百姓為「你從埃及領出來的」，第26、29節摩西則把出埃及當成代求的第一個理由——是你用大力救贖的，用大能和伸出來的膀臂領出來的。GT《聖經精讀本》指出第26節這句話與出32:7 神對摩西所說的話遙相呼應。
+  relation: 本章把出埃及同時當成控訴的起點與求情的根據：同一件事，神用它說明百姓有多不配，摩西用它說明神不能不管。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 第8節說以色列在何烈山惹耶和華發怒，STEP 原文資料為 u./ve./cho.Rev（H2722）；CT 指出何烈山就是神的山（參出3:1），又稱西乃山，是神頒佈十誡以及建造會幕樣式之處。本章第9至21節整段回顧都發生在這裡。
+  relation: 本章讓何烈山同時承載兩件事：領受十誡的地方，也是拜金牛犢的地方；摩西把悖逆史的第一站放在這裡，正因為兩件事發生在同一座山上。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 摩西上山領石版
+  path: link_folder/事件/摩西上山領石版.md
+  summary: 第9節說我上了山要領受兩塊石版，就是耶和華與你們立約的版，並在山上住了四十晝夜沒有吃飯也沒有喝水。CT 指出這是摩西奉神的命令上到神的山（參出24:12），兩塊石版上刻有十條誡命（參申4:13）；CT 並說禁食四十晝夜這件事另見出34:28。
+  relation: 出24 記的是上山這件事本身，本章則從結果回頭說：那次上山領到的版，下山時就在他手裡被摔碎了。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 石版
+  path: link_folder/文化/石版.md
+  summary: 第9、10、11節三次提到兩塊石版，STEP 原文資料為 lu.Chot ha./'a.va.Nim（H3871 tablet＋H68G stone），第9、11節並稱之為 lu.Chot ha./be.Rit（約版）。CT 說約版又稱法版，指見證神和人立約的石版。BH 指出石頭這種材質本身就表示長久與不變。
+  relation: 本章讓石版的意義在幾節之內翻轉：第10節它是神用指頭寫的，第17節它在百姓眼前被摔碎——立約的憑據成了廢約的憑據。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 四十晝夜
+  path: link_folder/神學/四十晝夜.md
+  summary: 本章四次出現四十晝夜：第9、11節是摩西上山領受石版的期間，第18節是摔碎法版之後的俯伏代求，第25節又說在耶和華面前照舊俯伏四十晝夜。CT 在第25節留下一個問題：聖經僅記載摩西兩次在神面前四十晝夜（參出24:18；34:28），故本節若不是重複記載第二次的事，便可能另有第三次。GT《聖經精讀本》則說聖經中的四十一般指一個世代，或試驗與磨練、審判與悔改等的期間。
+  relation: 本章把同一個時間長度用在兩種完全不同的事情上：一次是領受律法，兩次是為破壞律法的人求情。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 出埃及記:24
+- title: 神的指頭（路11：20）
+  path: link_folder/互文/神的指頭（路11：20）.md
+  summary: 第10節說兩塊石版「是神用指頭寫的」，STEP 原文資料為 ke.tu.Vim be./'etz.Ba' 'E.lo.Him（H3789 寫＋H676 finger）。CT 說神的指頭表徵神的能力（參詩8:3），表示那兩塊石版是出於神的工作（參出32:16）；GT《申命記雷氏研讀本》同樣說神的指頭指出神的能力。BH 指出這個說法強調律法不是人的詮釋，而是神直接的傳達。
+  relation: 本章用這個說法替十誡定性，也讓第17節的摔碎更顯沉重——被摔碎的是神親手寫的東西。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 十誡
+  path: link_folder/神學/十誡.md
+  summary: 第10節說版上所寫的是照耶和華在大會的日子、在山上、從火中對你們所說的一切話；GT《申命記串珠聖經註釋》指這就是十誡（出20:1-17；申5:1-22；10:4）。第12、16節接著說百姓快快地偏離了所吩咐的道，CT 指這正是十誡中不可有別的神、不可為自己雕刻偶像那兩條。
+  relation: 本章不重述十誡的條文，而是記下它被頒佈與被違背之間相隔多短——GT《聖經精讀本》說金牛犢發生在聽神親自宣告十誡之後尚未滿四十日。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 不可為自己雕刻偶像
+  path: link_folder/神學/不可為自己雕刻偶像.md
+  summary: 第12節說百姓為自己鑄成了偶像，STEP 原文資料為 ma.se.Khah（H4541A）；第16節說鑄成了牛犢。CT 指出所吩咐的道即指神在十誡中所吩咐不可有別的神、不可為自己雕刻偶像的道路（出20:3-4），並說他們才在不久前答應了神不給神造像，言猶在耳，這些答應都成了空。
+  relation: 本章給這條誡命配上一個最壞的時間點：違背它的時候，禁止造像的石版還在山上，還沒交到百姓手裡。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 金牛犢事件
+  path: link_folder/事件/金牛犢事件.md
+  summary: 第12至21節是申命記對這件事最完整的回顧：百姓鑄成偶像、摩西下山摔碎兩塊版、俯伏四十晝夜代求、為亞倫祈禱，最後把牛犢用火焚燒搗碎磨細撒在從山上流下來的溪水中。CT 從黃金的比重推想那牛犢並不太大，並注意到出埃及記另記了摩西叫以色列人喝那水（參出32:20）；GT《聖經精讀本》說那偶像似乎是先以木頭雕刻其形狀再鍍上一層金，並指金牛犢是仿照埃及的偶像；KC 說代求並不使審判罪惡的行動變成多餘。
+  relation: 出32 是事件現場，本章是摩西四十年後的自述；他把它擺在悖逆史的第一位，用來證明第6節那句「你本是硬著頸項的百姓」。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 出埃及記:32
+- title: 摩西摔碎法版（廢約的象徵）
+  path: link_folder/事件/摩西摔碎法版（廢約的象徵）.md
+  summary: 第17節說我就把那兩塊版從我手中扔下去，在你們眼前摔碎了，STEP 原文資料的動詞是 va./'ash.li.Khe/m（H7993 throw）與 va./'a.sha.be.Re/m（H7665 break）。GT《啟導本聖經申命記註釋》說「摩西摔碎法版並非他個人的暴怒行動」，因為古代雙方訂約時如有一方毀約，他方就扔碎書約之石表示作廢，而在你們眼前摔碎指出這是一有見證人的法律行為；GT《申命記串珠聖經註釋》說摔碎「象徵神和選民所立的盟約即告廢除」。KC 說摔碎表達的是百姓已經摔碎了他們與耶和華的關係。CT 則仍讀作發烈怒的表現。
+  relation: 本章特意加上在你們眼前四個字，把這個動作從情緒轉成公開的宣告——各家對摩西當下的心情看法不同，但都同意約在那一刻被宣告作廢。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 摩西為百姓代求（金牛犢）
+  path: link_folder/互文/摩西為百姓代求（金牛犢）.md
+  summary: 第18至20節記下摩西的第一輪代求：因百姓所犯的一切罪，像從前一樣俯伏在耶和華面前四十晝夜沒有吃飯也沒有喝水，並且為亞倫祈禱。GT《聖經精讀本》說第一個四十晝夜是為了領受刻著十誡的兩塊石版，這一次則是為失去選民資格的百姓獻上代禱，同時恢復被破壞的聖約。KC 指出摩西為亞倫禱告這件事說明祭司職分同樣是神恩典的工作。
+  relation: 出32 記下摩西當場的代求，本章補上兩件出埃及記沒有寫的事：那四十晝夜的禁食是第二次，而且他也為亞倫求了。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 摩西代禱熄滅神怒（詩106：23）
+  path: link_folder/互文/摩西代禱熄滅神怒（詩106：23）.md
+  summary: 第19節說我因耶和華向你們大發烈怒要滅絕你們就甚害怕，但那次耶和華又應允了我。CT 說『甚害怕』指摩西害怕神在大發烈怒之餘真的將以色列人滅絕了，而『應允了我』指神答應了中保摩西的請求。BH 指出神再一次垂聽顯明祂的憐憫與忍耐。
+  relation: 本章把代求的效果寫成一句實話：判決已經下了，攔住它的是一個人的祈求。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞倫
+  path: link_folder/人物/亞倫.md
+  summary: 第20節說耶和華也向亞倫甚是發怒要滅絕他，那時摩西又為亞倫祈禱。CT 指出亞倫雖然是大祭司，卻糊塗到為眾百姓鑄造金牛犢，而出埃及記三十二章並未記載神要殺亞倫以及摩西為亞倫代禱的事；GT《申命記雷氏研讀本》同樣指出出埃及記並沒有提到神向亞倫發怒；GT《聖經精讀本》推測摩西回顧這件事，是為了教訓至今擔任大祭司這一聖潔職分的亞倫——若沒有神的憐憫，他早就因拜金牛犢的事件而被除滅。
+  relation: 這一節是申命記獨有的資料：金牛犢事件裡大祭司自己也在滅絕的名單上，而他能留下來同樣是靠代求。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 40
+    - 41
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 他備拉
+  path: link_folder/地點/他備拉.md
+  summary: 第22節把他備拉列為惹耶和華發怒的地點之一。GT《啟導本聖經申命記註釋》說那裡發生的是惡語譭謗神（民11:1-3）；GT《聖經精讀本》定在出埃及第二年二月；KC 說那裡的百姓是被同行的閒雜人影響而生出不滿。
+  relation: 本章把它與瑪撒、基博羅哈他瓦排在一起，用三個地名證明金牛犢不是孤立事件。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 瑪撒（Massah）
+  path: link_folder/原文/瑪撒（Massah）.md
+  summary: 第22節把瑪撒列為惹耶和華發怒的地點之一。GT《啟導本聖經申命記註釋》說那裡是因缺乏食水而發怨言（出17:1-7）；GT《聖經精讀本》定在出埃及第一年二月底，百姓因飲水問題向耶和華發怨言並與摩西相爭；KC 讀出的重點是百姓在那裡質疑耶和華是否在他們中間。
+  relation: 申6:16 用瑪撒警告不可試探神，本章則把它放進一張惹神發怒的地名清單裡——同一個地方，一處當警告，一處當證據。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 基博羅哈他瓦
+  path: link_folder/地點/基博羅哈他瓦.md
+  summary: 第22節把基博羅哈他瓦列為惹耶和華發怒的地點之一。GT《啟導本聖經申命記註釋》說那裡是起貪欲埋怨神（民11:31-34）；GT《聖經精讀本》定在出埃及第二年三、四月，百姓因厭惡嗎哪而向摩西索求肉食；KC 說他們是被想吃肉的慾望帶走了。
+  relation: 申8 說嗎哪是為了教人靠神的話而活，本章列出的正是拒絕這個功課的那一站。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 加低斯巴尼亞事件
+  path: link_folder/歷史/加低斯巴尼亞事件.md
+  summary: 第23節說耶和華打發你們離開加低斯巴尼亞，叫你們上去得地，那時你們違背了命令，不信服他，也不聽從他的話。GT《啟導本聖經申命記註釋》說以色列人因為不信而功虧一簣，被罰在曠野流浪；GT《申命記雷氏研讀本》一句話點出重點：不信是他們主要的罪；KC 也說加低斯巴尼亞講的就是不信。
+  relation: 本章把這件事排在悖逆清單的最後一項，位置正好對著第1節那句今日要過約但河——同一種選擇，這一代要再面對一次。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 摩西的代求
+  path: link_folder/神學/摩西的代求.md
+  summary: 第25至29節是本章的收尾，也是摩西祈禱的全文。CT 整理出三個理由：以色列人是神所拯救、分別出來歸給神的產業；不要因百姓的過犯而不顧神對列祖的應許；不要因此讓外邦人嘲笑神、褻瀆神。GT《申命記串珠聖經註釋》給的三條相同。GT《啟導本聖經申命記註釋》說這篇禱詞措詞誠懇而優美，摩西甚至願以身贖罪（出32:32）。KC 從第27節讀出這是他數到的第三次記念，而這一次是對神說的。
+  relation: 這三個理由沒有一個建立在百姓身上，正好把第4至6節那句「不是因你的義」從一句教訓變成實際的操作。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 出埃及記:8
+- title: 救贖
+  path: link_folder/神學/救贖.md
+  summary: 第26節說他們是你的產業，是你用大力救贖的。CT 的〔原文字義〕給「大力」是偉大、高大。BH 指出這裡的救贖回指出埃及那件事，是神權能與信實的憑據。
+  relation: 本章把救贖當成求情的理由：既然是神自己出代價買回來的，就不該由神自己毀掉。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第26節與第29節兩次稱以色列是神的產業，是摩西代求的第一個理由。CT 的〔原文字義〕給「產業」是財產、基業。GT《聖經精讀本》說這指的是付出昂貴代價、最終成為神自己所有之寶貝的選民以色列；BH 指出這個字同時指向那塊應許之地與這群人。
+  relation: 本章把這個字翻了一面：以色列不只是要去得產業的一方，他們自己就是神所得的產業——摩西求情的第一句話用的正是這一層。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: 第26節說百姓是你用大能從埃及領出來的，第29節再說一次，並加上伸出來的膀臂。CT 的〔原文字義〕給「大能」是強壯的。
+  relation: 申7 用大能的手講神怎樣救出以色列，本章用同一個說法講神為什麼不能中途放手。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 伸出來的膀臂
+  path: link_folder/神學/伸出來的膀臂.md
+  summary: 第29節以「是你用大能和伸出來的膀臂領出來的」收束全章。CT 的〔原文字義〕給「大能」是兩個字——巨大的、力量能力，「伸出來」則是延長、伸展。
+  relation: 這是摩西祈禱的最後一句，也是全章的最後一句：整章從敵人的高大講到自己的悖逆，收在神伸出來的那隻膀臂上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 敗壞與滅絕同一字根（sha.chat）
+  path: link_folder/原文/敗壞與滅絕同一字根（sha.chat）.md
+  summary: 第12節神說百姓「已經敗壞了自己」（shi.Chet，H7843，Piel 完成式），第26節摩西求神「不要滅絕你的百姓」（tash.Chet，H7843，Hiphil），中文一個是敗壞、一個是滅絕，原文卻是同一個字根。CT 說『敗壞了自己』意指主動被偶像玷污，變成可棄絕的狀態。
+  relation: 本章把這個字根的兩端擺在同一篇講論裡：人先自己毀了自己，摩西才求神不要照著毀下去。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 申命記:4
+- title: 滅盡與除滅的雙同字（sha.mad）
+  path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+  summary: STEP 原文資料顯示 H8045 在本章出現六次，而對象一路在換：第3節是迦南人（他要滅絕他們），第8、14、19、25節是以色列（要滅絕你們），第20節則是亞倫（要滅絕他，帶第三人稱陽性單數詞尾）。CT 在第14節說照神對摩西所說的話來看，神已經判決了以色列的死刑，若不是摩西的禱告，以色列的滅絕就成了定局。
+  relation: 同一個判決動詞先指著迦南人、再轉向以色列與亞倫，這正是第4至6節那個論證的語言證據——在這個動詞底下，以色列與被趕出的列國沒有本質差別。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep

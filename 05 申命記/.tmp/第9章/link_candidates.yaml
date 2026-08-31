@@ -1,0 +1,301 @@
+book: 申命記
+chapter: 9
+candidates:
+  - name: 不是因你的義（tse.da.qah）
+    type: 原文
+    evidence: 申9:4、5、6三次否定以色列的義是得地的理由；STEP為H6666 tse.da.qah，第5節另有H3476 yo.sher 配 H3824 le.vav（心裡正直）與H7564 rish.ah（國民的惡）。
+    surfaces:
+      - phrase: 因我的義
+        verses: [4]
+      - phrase: 並不是因你的義
+        verses: [5, 6]
+
+  - name: 大會的日子（qa.hal）
+    type: 原文
+    evidence: 申9:10「在大會的日子」STEP為H6951 qa.hal；GT指七十士譯本把「大會」譯成ekklesia，CT說明這是百姓潔淨兩天後聚集山下的那日。
+    surfaces:
+      - phrase: 大會的日子
+        verses: [10]
+
+  - name: 你且由著我（ra.phah）
+    type: 原文
+    evidence: 申9:14神對摩西說「你且由著我」；STEP為H7503 ra.phah（簡要詞典義 to slacken），CT〔原文字義〕給「下沉，放鬆」。
+    surfaces:
+      - phrase: 你且由著我
+        verses: [14]
+
+  - name: 從冊上塗抹（生命冊）
+    type: 互文
+    evidence: 申9:14「將他們的名從天下塗抹」STEP為H4229A ma.chah（to wipe），與出32:32-33 摩西求從冊上塗抹自己的名是同一個動詞；GT指這是從生命冊上塗去其名（詩69:28），BH連到啟3:5。
+    surfaces:
+      - phrase: 將他們的名從天下塗抹
+        verses: [14]
+
+  - name: 快快地（ma.her）
+    type: 原文
+    evidence: 申9:3「速速滅亡」、9:12「趕快下去」與「快快地偏離」、9:16「快快地偏離」，STEP皆為H4118B ma.her；CT在12節註明「快快地」原文與「趕快」同字。
+    surfaces:
+      - phrase: 速速滅亡
+        verses: [3]
+      - phrase: 趕快下去
+        verses: [12]
+      - phrase: 快快地
+        verses: [12, 16]
+
+  - name: 以色列啊你要聽（sha.ma）
+    type: 原文
+    evidence: 申9:1以「以色列啊，你當聽」開場，STEP為H8085G she.Ma'（命令式）；KC指這個開場是申命記的特色。
+    surfaces:
+      - phrase: 你當聽
+        verses: [1]
+
+  - name: 約但河
+    type: 地點
+    evidence: 申9:1說今日要過約但河進去得地。
+    surfaces:
+      - phrase: 約但河
+        verses: [1]
+
+  - name: 亞衲族與偉人拿非林
+    type: 背景
+    evidence: 申9:2以亞衲族的又大又高說明敵人的可畏；CT〔原文字義〕給「亞衲」頸項，BH連到民13:33。
+    surfaces:
+      - phrase: 亞衲族
+        verses: [2]
+
+  - name: 烈火
+    type: 原文
+    evidence: 申9:3說耶和華在前面過去「如同烈火」；STEP為'esh 'o.khe.Lah（H784＋H398），CT〔原文字義〕給「烈」吞噬。
+    surfaces:
+      - phrase: 烈火
+        verses: [3]
+
+  - name: 亞摩利人罪孽滿盈
+    type: 神學
+    evidence: 申9:4-5兩次說趕出列國是因他們的惡；GT《聖經精讀本》連到創15:16，說七百年來不斷加增的罪孽導致他們滅亡。
+    surfaces:
+      - phrase: 因他們的惡
+        verses: [4]
+
+  - name: 遵行誡命是我們的義
+    type: 解經爭議
+    evidence: 申9:5加上「也不是因你心裡正直」，與申6:25「這就是我們的義了」形成必須並讀的張力。
+    surfaces:
+      - phrase: 也不是因你心裡正直
+        verses: [5]
+
+  - name: 亞伯拉罕之約
+    type: 神學
+    evidence: 申9:5說得地的第二個理由是神要堅定向列祖起誓所應許的話，並具名列出亞伯拉罕、以撒、雅各。
+    surfaces:
+      - phrase: 向你列祖亞伯拉罕、以撒、雅各起誓所應許的話
+        verses: [5]
+
+  - name: 美地
+    type: 主題
+    evidence: 申9:6說神將這美地賜你為業，並不是因你的義。
+    surfaces:
+      - phrase: 美地
+        verses: [6]
+
+  - name: 硬著頸項的百姓
+    type: 神學
+    evidence: 申9:6與9:13兩次稱以色列是硬著頸項的百姓；STEP為ke.sheh 'O.ref（H7186＋H6203）。
+    surfaces:
+      - phrase: 硬著頸項的百姓
+        verses: [6, 13]
+
+  - name: 「記念」與「守」
+    type: 原文
+    evidence: 申9:7「你當記念不忘」（H2142 za.khar 命令式）與9:27摩西向神說「求你記念」，同一個動詞在本章對人也對神。
+    surfaces:
+      - phrase: 記念
+        verses: [7, 27]
+
+  - name: 忘記（sha.khach）
+    type: 原文
+    evidence: 申9:7「你當記念不忘」的「不忘」STEP為H7911 sha.khach（否定祈使）。
+    surfaces:
+      - phrase: 不忘
+        verses: [7]
+
+  - name: 曠野
+    type: 地點
+    evidence: 申9:7說以色列在曠野怎樣惹神發怒，本章把曠野讀成一段悖逆史。
+    surfaces:
+      - phrase: 曠野
+        verses: [7]
+
+  - name: 出埃及
+    type: 歷史
+    evidence: 申9:7、12、26以出埃及為悖逆史的起點，也是摩西代求的第一個理由。
+    surfaces:
+      - phrase: 你出了埃及地的那日
+        verses: [7]
+
+  - name: 何烈山
+    type: 地點
+    evidence: 申9:8說以色列在何烈山惹耶和華發怒；STEP為H2722 cho.rev。
+    surfaces:
+      - phrase: 何烈山
+        verses: [8]
+
+  - name: 摩西上山領石版
+    type: 事件
+    evidence: 申9:9摩西上山領受兩塊石版，住了四十晝夜沒有吃飯也沒有喝水。
+    surfaces:
+      - phrase: 我上了山
+        verses: [9]
+
+  - name: 石版
+    type: 文化
+    evidence: 申9:9-11三次提到兩塊石版，並稱之為立約的版、約版；STEP為lu.Chot ha./'a.va.Nim（H3871＋H68G）。
+    surfaces:
+      - phrase: 兩塊石版
+        verses: [9, 10, 11]
+
+  - name: 四十晝夜
+    type: 神學
+    evidence: 申9:9、11、18、25四次出現四十晝夜，分別是領受石版與兩次俯伏代求。
+    surfaces:
+      - phrase: 四十晝夜
+        verses: [9, 11, 18, 25]
+
+  - name: 神的指頭（路11：20）
+    type: 互文
+    evidence: 申9:10說石版是神用指頭寫的；STEP為be./'etz.Ba'（H676 finger），CT說神的指頭表徵神的能力。
+    surfaces:
+      - phrase: 是神用指頭寫的
+        verses: [10]
+
+  - name: 十誡
+    type: 神學
+    evidence: 申9:10說版上所寫的是照耶和華在大會的日子從火中所說的一切話；GT指這即十誡（出20:1-17；申5:1-22）。
+    surfaces:
+      - phrase: 所說的一切話
+        verses: [10]
+
+  - name: 不可為自己雕刻偶像
+    type: 神學
+    evidence: 申9:12說百姓為自己鑄成了偶像，CT指這正是違背十誡中不可為自己雕刻偶像的吩咐。
+    surfaces:
+      - phrase: 為自己鑄成了偶像
+        verses: [12]
+
+  - name: 金牛犢事件
+    type: 事件
+    evidence: 申9:12-21整段回顧何烈山的金牛犢事件，包括鑄造、摩西摔版、焚燒搗碎與撒在溪水中。
+    surfaces:
+      - phrase: 鑄成了牛犢
+        verses: [16]
+      - phrase: 所鑄的牛犢用火焚燒
+        verses: [21]
+
+  - name: 摩西摔碎法版（廢約的象徵）
+    type: 事件
+    evidence: 申9:17摩西把兩塊版扔下摔碎；GT《啟導本聖經申命記註釋》以古代訂約毀約扔碎書約之石解釋這個動作。
+    surfaces:
+      - phrase: 在你們眼前摔碎了
+        verses: [17]
+
+  - name: 摩西為百姓代求（金牛犢）
+    type: 互文
+    evidence: 申9:18-20摩西為百姓與亞倫俯伏禁食代求四十晝夜。
+    surfaces:
+      - phrase: 就像從前俯伏在耶和華面前
+        verses: [18]
+
+  - name: 摩西代禱熄滅神怒（詩106：23）
+    type: 互文
+    evidence: 申9:19說耶和華那次又應允了摩西，代求攔住了滅絕的判決。
+    surfaces:
+      - phrase: 但那次耶和華又應允了我
+        verses: [19]
+
+  - name: 亞倫
+    type: 人物
+    evidence: 申9:20說耶和華也向亞倫甚是發怒要滅絕他，摩西為亞倫祈禱；GT與KC都指出出埃及記沒有記載這件事。
+    surfaces:
+      - phrase: 亞倫
+        verses: [20]
+
+  - name: 他備拉
+    type: 地點
+    evidence: 申9:22列他備拉為惹神發怒的地點之一（民11:1-3）。
+    surfaces:
+      - phrase: 他備拉
+        verses: [22]
+
+  - name: 瑪撒（Massah）
+    type: 原文
+    evidence: 申9:22列瑪撒為惹神發怒的地點之一（出17:1-7）。
+    surfaces:
+      - phrase: 瑪撒
+        verses: [22]
+
+  - name: 基博羅哈他瓦
+    type: 地點
+    evidence: 申9:22列基博羅哈他瓦為惹神發怒的地點之一（民11:31-34）。
+    surfaces:
+      - phrase: 基博羅哈他瓦
+        verses: [22]
+
+  - name: 加低斯巴尼亞事件
+    type: 歷史
+    evidence: 申9:23回顧加低斯巴尼亞的違命，說他們不信服神也不聽從他的話。
+    surfaces:
+      - phrase: 加低斯巴尼亞
+        verses: [23]
+
+  - name: 摩西的代求
+    type: 神學
+    evidence: 申9:25-29摩西的祈禱列出三個理由：百姓是神的產業、神向列祖的應許、免得外邦人譏笑神。
+    surfaces:
+      - phrase: 我祈禱耶和華說
+        verses: [26]
+
+  - name: 救贖
+    type: 神學
+    evidence: 申9:26說百姓是神用大力救贖的。
+    surfaces:
+      - phrase: 是你用大力救贖的
+        verses: [26]
+
+  - name: 產業（na.cha.lah）
+    type: 原文
+    evidence: 申9:26、29兩次稱以色列是神的產業，是摩西代求的第一個理由。
+    surfaces:
+      - phrase: 你的產業
+        verses: [26, 29]
+
+  - name: 大能的手
+    type: 神學
+    evidence: 申9:26說神用大能從埃及領出百姓。
+    surfaces:
+      - phrase: 用大能從埃及領出來的
+        verses: [26]
+
+  - name: 伸出來的膀臂
+    type: 神學
+    evidence: 申9:29以大能和伸出來的膀臂總結出埃及的拯救。
+    surfaces:
+      - phrase: 伸出來的膀臂
+        verses: [29]
+
+  - name: 敗壞與滅絕同一字根（sha.chat）
+    type: 原文
+    evidence: 申9:12「百姓已經敗壞了自己」與9:26「求你不要滅絕你的百姓」STEP皆為H7843 sha.chat，同一個字根扣住百姓自毀與摩西求神不要毀滅。
+    surfaces:
+      - phrase: 敗壞了自己
+        verses: [12]
+      - phrase: 求你不要滅絕你的百姓
+        verses: [26]
+
+  - name: 滅盡與除滅的雙同字（sha.mad）
+    type: 原文
+    evidence: 申9:3、8、14、19、20、25共六處H8045 sha.mad，對象由迦南人轉到以色列與亞倫，貫穿本章的審判與代求主線。
+    surfaces:
+      - phrase: 要滅絕
+        verses: [3, 8, 14, 19, 25]
+      - phrase: 要滅絕他
+        verses: [20]

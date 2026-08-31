@@ -12873,6 +12873,18 @@
       "na.khar"
     ]
   },
+  "不是因你的義（tse.da.qah）": {
+    "path": "link_folder/原文/不是因你的義（tse.da.qah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "不是因你的義（tse.da.qah）",
+    "status": "formal",
+    "aliases": [
+      "不是因你的義"
+    ]
+  },
   "乾的兩個希伯來字": {
     "path": "link_folder/原文/乾的兩個希伯來字.md",
     "type": "原文",
@@ -13123,6 +13135,18 @@
     "title": "作了警戒（nes）",
     "status": "formal",
     "aliases": []
+  },
+  "你且由著我（ra.phah）": {
+    "path": "link_folder/原文/你且由著我（ra.phah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "你且由著我（ra.phah）",
+    "status": "formal",
+    "aliases": [
+      "你且由著我"
+    ]
   },
   "你與你們的單複數交替": {
     "path": "link_folder/原文/你與你們的單複數交替.md",
@@ -13574,6 +13598,18 @@
     "status": "formal",
     "aliases": []
   },
+  "大會的日子（qa.hal）": {
+    "path": "link_folder/原文/大會的日子（qa.hal）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "大會的日子（qa.hal）",
+    "status": "formal",
+    "aliases": [
+      "大會的日子"
+    ]
+  },
   "大東風": {
     "path": "link_folder/原文/大東風.md",
     "type": "原文",
@@ -13965,6 +14001,18 @@
     "status": "formal",
     "aliases": [
       "忘記"
+    ]
+  },
+  "快快地（ma.her）": {
+    "path": "link_folder/原文/快快地（ma.her）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "快快地（ma.her）",
+    "status": "formal",
+    "aliases": [
+      "快快地"
     ]
   },
   "惟願（mi yi.ten）": {
@@ -31279,6 +31327,9 @@
   "na.khar": {
     "alias_of": "不可看人的外貌（na.khar）"
   },
+  "不是因你的義": {
+    "alias_of": "不是因你的義（tse.da.qah）"
+  },
   "事奉與作奴僕": {
     "alias_of": "事奉與作奴僕同一字根（a.vad）"
   },
@@ -31338,6 +31389,9 @@
   },
   "何西阿三章": {
     "alias_of": "何3（Hoshea 3）"
+  },
+  "你且由著我": {
+    "alias_of": "你且由著我（ra.phah）"
   },
   "盡心盡性盡力愛神": {
     "alias_of": "你要盡心盡性盡力愛耶和華（a.hav）"
@@ -31447,6 +31501,9 @@
   "nik.mah": {
     "alias_of": "報仇（na.qam 與 nik.mah）"
   },
+  "大會的日子": {
+    "alias_of": "大會的日子（qa.hal）"
+  },
   "大痲瘋": {
     "alias_of": "大痲瘋（sara'at）"
   },
@@ -31533,6 +31590,9 @@
   },
   "忘記": {
     "alias_of": "忘記（sha.khach）"
+  },
+  "快快地": {
+    "alias_of": "快快地（ma.her）"
   },
   "惟願": {
     "alias_of": "惟願（mi yi.ten）"

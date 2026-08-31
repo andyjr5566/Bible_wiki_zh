@@ -1,7 +1,7 @@
 {
-  "total_warnings": 147,
+  "total_warnings": 148,
   "critical_count": 0,
-  "warning_count": 147,
+  "warning_count": 148,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -57,7 +57,7 @@
       "severity": "warning",
       "source": "link_folder/人物/亞倫.md",
       "target": "第9章",
-      "message": "同一 alias「第9章」指向多個 target: 02 出埃及記/第9章, 03 利未記/第9章, 04 民數記/第9章"
+      "message": "同一 alias「第9章」指向多個 target: 02 出埃及記/第9章, 03 利未記/第9章, 04 民數記/第9章, 05 申命記/第9章"
     },
     {
       "type": "alias_target_conflict",
@@ -870,6 +870,13 @@
       "source": "link_folder/神學/悔改.md",
       "target": "第2章",
       "message": "同一 alias「第2章」指向多個 target: 29 約珥書/第2章, 44 使徒行傳/第2章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/摩西的代求.md",
+      "target": "第9章",
+      "message": "同一 alias「第9章」指向多個 target: 02 出埃及記/第9章, 05 申命記/第9章"
     },
     {
       "type": "alias_target_conflict",

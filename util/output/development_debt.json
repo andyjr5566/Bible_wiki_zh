@@ -2,6 +2,13 @@
   "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，development=update 時清除；維護回合用 link_updates.py debt --settle <path>。",
   "entries": [
     {
+      "path": "link_folder/人物/亞倫.md",
+      "title": "亞倫",
+      "deferred_at": "申命記:9",
+      "accumulated": 41,
+      "fingerprint": "5e6db54a291a014c"
+    },
+    {
       "path": "link_folder/人物/雅各.md",
       "title": "雅各",
       "deferred_at": "申命記:6",
@@ -32,9 +39,16 @@
     {
       "path": "link_folder/神學/亞伯拉罕之約.md",
       "title": "亞伯拉罕之約",
-      "deferred_at": "申命記:8",
-      "accumulated": 17,
-      "fingerprint": "df73a89e43ddef67"
+      "deferred_at": "申命記:9",
+      "accumulated": 18,
+      "fingerprint": "ac73e0248fbe4fe4"
+    },
+    {
+      "path": "link_folder/地點/約但河.md",
+      "title": "約但河",
+      "deferred_at": "申命記:9",
+      "accumulated": 16,
+      "fingerprint": "c90ade570dcd8cee"
     },
     {
       "path": "link_folder/人物/亞摩利人.md",
@@ -58,6 +72,27 @@
       "fingerprint": "f2141577f57fc836"
     },
     {
+      "path": "link_folder/原文/產業（na.cha.lah）.md",
+      "title": "產業（na.cha.lah）",
+      "deferred_at": "申命記:9",
+      "accumulated": 8,
+      "fingerprint": "1dad51a2311876a2"
+    },
+    {
+      "path": "link_folder/歷史/出埃及.md",
+      "title": "出埃及",
+      "deferred_at": "申命記:9",
+      "accumulated": 8,
+      "fingerprint": "1433617dd7ee6a84"
+    },
+    {
+      "path": "link_folder/神學/不可為自己雕刻偶像.md",
+      "title": "不可為自己雕刻偶像",
+      "deferred_at": "申命記:9",
+      "accumulated": 8,
+      "fingerprint": "db31a09dff7011d6"
+    },
+    {
       "path": "link_folder/神學/典章.md",
       "title": "典章",
       "deferred_at": "申命記:8",
@@ -65,11 +100,74 @@
       "fingerprint": "3c0eae3c00b905b1"
     },
     {
+      "path": "link_folder/神學/大能的手.md",
+      "title": "大能的手",
+      "deferred_at": "申命記:9",
+      "accumulated": 8,
+      "fingerprint": "20d3d6244231e753"
+    },
+    {
+      "path": "link_folder/歷史/加低斯巴尼亞事件.md",
+      "title": "加低斯巴尼亞事件",
+      "deferred_at": "申命記:9",
+      "accumulated": 5,
+      "fingerprint": "66219ada973fa61e"
+    },
+    {
+      "path": "link_folder/背景/亞衲族與偉人拿非林.md",
+      "title": "亞衲族與偉人拿非林",
+      "deferred_at": "申命記:9",
+      "accumulated": 4,
+      "fingerprint": "a128dfbaecc93fd2"
+    },
+    {
+      "path": "link_folder/事件/摩西上山領石版.md",
+      "title": "摩西上山領石版",
+      "deferred_at": "申命記:9",
+      "accumulated": 3,
+      "fingerprint": "28e7dfccb9a684fb"
+    },
+    {
+      "path": "link_folder/地點/基博羅哈他瓦.md",
+      "title": "基博羅哈他瓦",
+      "deferred_at": "申命記:9",
+      "accumulated": 3,
+      "fingerprint": "53bb4564b2f7fed2"
+    },
+    {
       "path": "link_folder/背景/古代近東祭壇.md",
       "title": "古代近東祭壇",
       "deferred_at": "申命記:7",
       "accumulated": 3,
       "fingerprint": "fee84c39306b8522"
+    },
+    {
+      "path": "link_folder/事件/摩西摔碎法版（廢約的象徵）.md",
+      "title": "摩西摔碎法版（廢約的象徵）",
+      "deferred_at": "申命記:9",
+      "accumulated": 2,
+      "fingerprint": "cb4885e25c881157"
+    },
+    {
+      "path": "link_folder/互文/摩西代禱熄滅神怒（詩106：23）.md",
+      "title": "摩西代禱熄滅神怒（詩106：23）",
+      "deferred_at": "申命記:9",
+      "accumulated": 2,
+      "fingerprint": "373f010d169e7fe4"
+    },
+    {
+      "path": "link_folder/互文/摩西為百姓代求（金牛犢）.md",
+      "title": "摩西為百姓代求（金牛犢）",
+      "deferred_at": "申命記:9",
+      "accumulated": 2,
+      "fingerprint": "cb4885e25c881157"
+    },
+    {
+      "path": "link_folder/地點/他備拉.md",
+      "title": "他備拉",
+      "deferred_at": "申命記:9",
+      "accumulated": 2,
+      "fingerprint": "4811e169a8c4e64f"
     }
   ]
 }

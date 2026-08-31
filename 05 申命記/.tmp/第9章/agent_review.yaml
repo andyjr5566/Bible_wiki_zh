@@ -1,0 +1,10 @@
+version: 1
+book: 申命記
+chapter: 9
+stages:
+  m3:
+    round: 2
+    sha256: a4d5fbdb7f97caea07fa18889d9574b42c8aa8ff5af3a1ba459d88184838ef82
+    claude: revised
+    codex: pending
+    thread_id: 01a058c4-4512-7373-a9eb-9d45e0a89c87
