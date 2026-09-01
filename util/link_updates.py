@@ -88,7 +88,7 @@ REVIEW_GUIDANCE = {
     ),
     "signals": (
         "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；"
-        "many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。"
+        "many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。"
     ),
 }
 
@@ -101,6 +101,7 @@ def book_rank(book):
 _H2_SECTION_RE = re.compile(r"(?ms)^##\s+(.+?)\s*$\n(.*?)(?=^##\s+|\Z)")
 _ACCUM_META_RE = re.compile(r"<!-- accumulation:([^:]+):(\d+):start -->")
 DEVELOPMENT_STALE_THRESHOLD = 7
+DEVELOPMENT_STALE_INTERVAL = 5
 _ACCUM_BLOCK_RE = re.compile(r"<!-- accumulation:[^:]+:\d+:start -->")
 _DEFINITION_CUE_RE = re.compile(
     r"(?:又稱|亦稱|別名|身分(?:為|是)|指的是|專指|泛指|辨識方式|範圍(?:是|為)|定義為|邊界)"
@@ -137,7 +138,10 @@ def _review_signals(text, book, chapter):
         signals.append("definition_blank")
     if not _section_body(text, "主題發展"):
         signals.append("development_blank")
-    if after_count > DEVELOPMENT_STALE_THRESHOLD:
+    if (
+        after_count >= DEVELOPMENT_STALE_THRESHOLD
+        and (after_count - DEVELOPMENT_STALE_THRESHOLD) % DEVELOPMENT_STALE_INTERVAL == 0
+    ):
         signals.append("many_accumulations")
     return signals, len(blocks), after_count
 
@@ -859,18 +863,20 @@ def _updated_text(text, book, chapter, update, path):
 
 
 def _development_stale_hint(before_text, after_text):
-    """累積區塊數剛跨過門檻、或門檻之上又新增時，提醒回頭檢查條目總體區塊。
+    """累積區塊數達到門檻（7）或其後每隔間隔（12, 17, 22...）新增時，提醒回頭檢查條目總體區塊。
 
     只是提醒（manual_review 性質），不擋 apply：development 是否真的落後累積成長
     要人工讀過才能判斷（見 util/check_development_staleness.py 的討論），這裡只
     用區塊數當機械觸發點，避免每次套用都重複洗版同一句提醒。
     """
     count = len(_ACCUM_BLOCK_RE.findall(after_text))
-    if count <= DEVELOPMENT_STALE_THRESHOLD:
+    if count < DEVELOPMENT_STALE_THRESHOLD:
         return None
     prev_count = len(_ACCUM_BLOCK_RE.findall(before_text))
     if prev_count == count:
         return None  # 這次套用沒有新增累積區塊，不是本次改動造成的
+    if (count - DEVELOPMENT_STALE_THRESHOLD) % DEVELOPMENT_STALE_INTERVAL != 0:
+        return None
     return count
 
 

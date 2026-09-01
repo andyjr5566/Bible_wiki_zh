@@ -191,7 +191,7 @@ class UpdateTests(unittest.TestCase):
         self.assertNotIn("raw_data/example.txt", block)
         self.assertNotIn("### 創世記", block)
 
-    def test_eighth_accumulation_hint_includes_definition(self):
+    def test_seventh_accumulation_hint_includes_definition(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             entry_path = root / "link_folder" / "人物" / "測試.md"
@@ -201,7 +201,7 @@ class UpdateTests(unittest.TestCase):
                     "summary": f"重點{chapter}",
                     "relation": f"關聯{chapter}",
                 })
-                for chapter in range(1, 8)
+                for chapter in range(1, 7)
             )
             entry_path.write_text(
                 "# 測試\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n"
@@ -212,12 +212,12 @@ class UpdateTests(unittest.TestCase):
             manifest = root / "updates.yaml"
             manifest.write_text(yaml.safe_dump({
                 "book": "創世記",
-                "chapter": 8,
+                "chapter": 7,
                 "updates": [{
                     "title": "測試",
                     "path": "link_folder/人物/測試.md",
-                    "summary": "第八筆",
-                    "relation": "第八筆關聯",
+                    "summary": "第七筆",
+                    "relation": "第七筆關聯",
                 }],
             }, allow_unicode=True), encoding="utf-8")
             logs = []
@@ -1047,6 +1047,54 @@ class PlanUpdatesTests(unittest.TestCase):
             with patch.object(link_updates, "ROOT", root):
                 with self.assertRaises(FileNotFoundError):
                     plan_updates("出埃及記", 26)
+
+
+class StaleIntervalTests(unittest.TestCase):
+    """許多累積條目的提醒與 challenge 應逢 7, 12, 17, 22... 才觸發，避免每章洗版。"""
+
+    def test_review_signals_many_accumulations_interval(self):
+        def make_entry(count):
+            blocks = "".join(f"<!-- accumulation:創世記:{i}:start -->\n" for i in range(1, count + 1))
+            return f"# 條目\n\n## 定義\n內容\n\n## 主題發展\n內容\n\n## 按書卷累積\n\n{blocks}"
+
+        # 累積 6 章 + 本章 1 章 = 7 筆 (觸發)
+        signals_7, _, _ = link_updates._review_signals(make_entry(6), "出埃及記", 1)
+        self.assertIn("many_accumulations", signals_7)
+
+        # 累積 7 章 + 本章 1 章 = 8 筆 (不觸發)
+        signals_8, _, _ = link_updates._review_signals(make_entry(7), "出埃及記", 1)
+        self.assertNotIn("many_accumulations", signals_8)
+
+        # 累積 10 章 + 本章 1 章 = 11 筆 (不觸發)
+        signals_11, _, _ = link_updates._review_signals(make_entry(10), "出埃及記", 1)
+        self.assertNotIn("many_accumulations", signals_11)
+
+        # 累積 11 章 + 本章 1 章 = 12 筆 (觸發)
+        signals_12, _, _ = link_updates._review_signals(make_entry(11), "出埃及記", 1)
+        self.assertIn("many_accumulations", signals_12)
+
+        # 累積 16 章 + 本章 1 章 = 17 筆 (觸發)
+        signals_17, _, _ = link_updates._review_signals(make_entry(16), "出埃及記", 1)
+        self.assertIn("many_accumulations", signals_17)
+
+    def test_development_stale_hint_interval(self):
+        def make_blocks(count):
+            return "".join(f"<!-- accumulation:創世記:{i}:start -->\n" for i in range(1, count + 1))
+
+        # 6 -> 7 筆 (觸發)
+        self.assertEqual(7, link_updates._development_stale_hint(make_blocks(6), make_blocks(7)))
+
+        # 7 -> 8 筆 (不觸發)
+        self.assertIsNone(link_updates._development_stale_hint(make_blocks(7), make_blocks(8)))
+
+        # 10 -> 11 筆 (不觸發)
+        self.assertIsNone(link_updates._development_stale_hint(make_blocks(10), make_blocks(11)))
+
+        # 11 -> 12 筆 (觸發)
+        self.assertEqual(12, link_updates._development_stale_hint(make_blocks(11), make_blocks(12)))
+
+        # 16 -> 17 筆 (觸發)
+        self.assertEqual(17, link_updates._development_stale_hint(make_blocks(16), make_blocks(17)))
 
 
 if __name__ == "__main__":
