@@ -205,6 +205,64 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             self.assertIn("禁止 rerank_status: disabled", str(ctx.exception))
 
 
+class CmdPromptsInvalidationTests(unittest.TestCase):
+    """直接打 cmd_prompts 本體，釘住它內部的作廢／回寫順序。
+
+    只驗底層 API 串接是不夠的：把 cmd_prompts 裡的 _invalidate_after_plan 刪掉，
+    那種測試照樣全綠，而 bug（verse_links 被靜默沿用）會無聲復活。
+    """
+
+    def _run_prompts(self, root):
+        from unittest.mock import patch
+
+        args = argparse.Namespace(
+            book="出埃及記", chapter=26, root=root,
+            confirm_stale=True, batch_size=None,
+        )
+        # 只擋掉與本測試無關的前置閘門（來源、相似度報告、STEP machine validation），
+        # 作廢與回寫全部走真程式。
+        with patch.object(rcm, "_require_sources", lambda ctx: {}), \
+                patch.object(rcm, "_require_candidate_similarity", lambda ctx: None), \
+                patch.object(rcm.rc.source_excerpts, "render_source_reading_plan",
+                             lambda *a, **k: "# sources"), \
+                patch.object(rcm.check_source_read, "validate_structured_sources",
+                             lambda *a, **k: ([], {})):
+            try:
+                rcm.cmd_prompts(args)
+            except Exception:
+                # prompt 擷取階段本來就會以例外中止；本測試只看它之前的作廢行為。
+                pass
+
+    def test_cmd_prompts_invalidates_verse_links_before_advancing_the_baseline(self):
+        from util.tests.test_run_chapter import OrchestratorTests, fake_runner
+        import run_chapter
+
+        helper = OrchestratorTests("test_untouched_candidates_still_resume")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = helper._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+            verse_links = tmp_dir / "verse_links.yaml"
+            verse_links.write_text("# 過期佔位\n", encoding="utf-8")
+
+            cand = tmp_dir / "link_candidates.yaml"
+            data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+            data["candidates"][0]["surfaces"] = ["施恩座"]
+            cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+            self._run_prompts(root)
+
+            self.assertFalse(
+                verse_links.exists(),
+                "cmd_prompts 推進基線之前必須先作廢 verse_links；"
+                "少了 _invalidate_after_plan，run 會沿用這份過期檔且閘門全綠",
+            )
+            state = json.loads((tmp_dir / "pipeline_state.json").read_text(encoding="utf-8"))
+            self.assertIn("link_plan.yaml", state, "基線仍應被推進，否則 run 會永遠拒絕執行")
+
+
 class PipelineBaselineTests(unittest.TestCase):
     """細粒度作廢的基線回寫：這些漏洞都會靜默毀掉手寫 payload。"""
 
