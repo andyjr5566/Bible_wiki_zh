@@ -44,11 +44,18 @@
       "fingerprint": "e1aab088ae16ddc9"
     },
     {
+      "path": "link_folder/人物/流便.md",
+      "title": "流便",
+      "deferred_at": "申命記:11",
+      "accumulated": 17,
+      "fingerprint": "c4de0e08f56119fb"
+    },
+    {
       "path": "link_folder/地點/約但河.md",
       "title": "約但河",
-      "deferred_at": "申命記:9",
-      "accumulated": 16,
-      "fingerprint": "c90ade570dcd8cee"
+      "deferred_at": "申命記:11",
+      "accumulated": 17,
+      "fingerprint": "d3eea46d904fb450"
     },
     {
       "path": "link_folder/人物/以利亞撒.md",
@@ -107,6 +114,13 @@
       "fingerprint": "8bc56d1505f9fbba"
     },
     {
+      "path": "link_folder/歷史/曠野飄流四十年.md",
+      "title": "曠野飄流四十年",
+      "deferred_at": "申命記:11",
+      "accumulated": 9,
+      "fingerprint": "fbc556253811d36f"
+    },
+    {
       "path": "link_folder/神學/摩西的代求.md",
       "title": "摩西的代求",
       "deferred_at": "申命記:10",
@@ -142,11 +156,25 @@
       "fingerprint": "20d3d6244231e753"
     },
     {
+      "path": "link_folder/地點/海（紅海）.md",
+      "title": "海（紅海）",
+      "deferred_at": "申命記:11",
+      "accumulated": 7,
+      "fingerprint": "42f5db5fe06dd4ba"
+    },
+    {
       "path": "link_folder/神學/分別為聖.md",
       "title": "分別為聖",
       "deferred_at": "申命記:10",
       "accumulated": 7,
       "fingerprint": "fd204914b8903972"
+    },
+    {
+      "path": "link_folder/地點/亞拉巴.md",
+      "title": "亞拉巴",
+      "deferred_at": "申命記:11",
+      "accumulated": 5,
+      "fingerprint": "f2353a1ad2e7886e"
     },
     {
       "path": "link_folder/歷史/加低斯巴尼亞事件.md",
@@ -161,6 +189,13 @@
       "deferred_at": "申命記:9",
       "accumulated": 4,
       "fingerprint": "a128dfbaecc93fd2"
+    },
+    {
+      "path": "link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md",
+      "title": "地破裂吞吃可拉與大坍亞比蘭之家與其財物",
+      "deferred_at": "申命記:11",
+      "accumulated": 3,
+      "fingerprint": "f45ceb99e9e7c83a"
     },
     {
       "path": "link_folder/事件/摩西上山領石版.md",
@@ -203,6 +238,20 @@
       "deferred_at": "申命記:9",
       "accumulated": 2,
       "fingerprint": "4811e169a8c4e64f"
+    },
+    {
+      "path": "link_folder/地點/利巴嫩.md",
+      "title": "利巴嫩",
+      "deferred_at": "申命記:11",
+      "accumulated": 2,
+      "fingerprint": "9c9b57490a301b22"
+    },
+    {
+      "path": "link_folder/地點/大海（地中海）.md",
+      "title": "大海（地中海）",
+      "deferred_at": "申命記:11",
+      "accumulated": 2,
+      "fingerprint": "df6b6520de201640"
     }
   ]
 }

@@ -1,0 +1,471 @@
+book: 申命記
+chapter: 11
+A_use_directly: []
+B_needs_update:
+- name: 你要盡心盡性盡力愛耶和華（a.hav）
+  suggested_type: 原文
+  evidence: 申11:1、13、22 三次要求愛神；STEP 為 ve./'A.hav.ta（v1）與 le./'a.ha.Vah（v13、22），同為
+    H157G。KC 指出愛神在本章三段各出現一次（1、13、22節）。
+  surfaces:
+  - phrase: 愛耶和華─你的神
+    verses:
+    - 1
+  - phrase: 愛耶和華─你們的神
+    verses:
+    - 13
+    - 22
+  match_type: exact
+  existing_title: 你要盡心盡性盡力愛耶和華（a.hav）
+  existing_path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+- name: 苦難與管教
+  suggested_type: 神學
+  evidence: 申11:2 說兒女沒有看見「耶和華─你們神的管教」；STEP 為 mu.Sar（H4148G，簡要詞典義 discipline）；CT 說這指神在曠野中對悖逆者的屢次懲罰。
+  match_type: exact
+  existing_title: 苦難與管教
+  existing_path: link_folder/神學/苦難與管教.md
+- name: 大能的手
+  suggested_type: 神學
+  evidence: 申11:2「大能的手」；STEP 為 ya.D/o ha./cha.za.Kah（H3027H 加 H2389，cha.zaq 簡要詞典義
+    strong）；CT 說大能的手重在指克服難處和敵人。
+  surfaces:
+  - phrase: 大能的手
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 大能的手
+  existing_path: link_folder/神學/大能的手.md
+- name: 伸出來的膀臂
+  suggested_type: 神學
+  evidence: 申11:2「伸出來的膀臂」；STEP 為 u./ze.ro.'/O ha./ne.tu.Yah（H2220 加 H5186）；CT 說這重在指無微不至的保守和看顧；GT《申命記雷氏研讀本》說它生動地形容神的保護。
+  surfaces:
+  - phrase: 伸出來的膀臂
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 伸出來的膀臂
+  existing_path: link_folder/神學/伸出來的膀臂.md
+- name: 十災
+  suggested_type: 歷史
+  evidence: 申11:3「他在埃及中向埃及王法老和其全地所行的神蹟奇事」；CT 說這指在埃及地降十災（參出七至十一章）。
+  surfaces:
+  - phrase: 神蹟奇事
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 十災
+  existing_path: link_folder/歷史/十災.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: 申11:4 記紅海淹沒埃及追兵；CT 說當時前有紅海水阻、後有埃及追兵。
+  surfaces:
+  - phrase: 紅海
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+- name: 紅海分開
+  suggested_type: 歷史
+  evidence: 申11:4「耶和華怎樣使紅海的水淹沒他們，將他們滅絕，直到今日」；CT 說神使紅海的水分開成乾地容以色列人走過去，等追兵下海追逐時令海水復原淹沒他們（參出十四21~27）。
+  surfaces:
+  - phrase: 淹沒他們，將他們滅絕
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 紅海分開
+  existing_path: link_folder/歷史/紅海分開.md
+- name: 曠野飄流四十年
+  suggested_type: 歷史
+  evidence: 申11:5「並他在曠野怎樣待你們，以致你們來到這地方」；CT 說本節重在指神在曠野中怎樣養活以色列人，包括天降嗎哪、飛來鵪鶉、磐石出水。
+  surfaces:
+  - phrase: 在曠野怎樣待你們
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 曠野飄流四十年
+  existing_path: link_folder/歷史/曠野飄流四十年.md
+- name: 可拉大坍亞比蘭等領首聯合的大反亂
+  suggested_type: 事件
+  evidence: 申11:6 提大坍、亞比蘭；CT 說本句指可拉一黨人的叛逆（參民十六章）；KC 注意到本節沒有提可拉，可能因為他的兒子沒有死（民26:9-11）。
+  surfaces:
+  - phrase: 大坍、亞比蘭
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 可拉大坍亞比蘭等領首聯合的大反亂
+  existing_path: link_folder/事件/可拉大坍亞比蘭等領首聯合的大反亂.md
+- name: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  suggested_type: 事件
+  evidence: 申11:6「地怎樣在以色列人中間開口，吞了他們和他們的家眷，並帳棚與跟他們的一切活物」；STEP 為 pa.tze.Tah ha./'A.retz
+    'et- Pi./ha（H6475 加 H6310G）與 va./tiv.la.'E/m（H1104，ba.la）。
+  surfaces:
+  - phrase: 地怎樣在以色列人中間開口，吞了他們
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 地破裂吞吃可拉與大坍亞比蘭之家與其財物
+  existing_path: link_folder/事件/地破裂吞吃可拉與大坍亞比蘭之家與其財物.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 申11:6「流便子孫以利押的兒子大坍、亞比蘭」；BH 指出他們出自雅各長子流便的支派，這可能助長了他們對摩西領導權的挑戰。
+  surfaces:
+  - phrase: 流便子孫
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 流奶與蜜之地
+  suggested_type: 神學
+  evidence: 申11:9「那是流奶與蜜之地」；STEP 為 'E.retz za.Vat cha.Lav u./de.Vash（H2100G、H2461、H1706）；CT
+    說奶代表動物的豐富、蜜代表植物的豐富；GT《聖經精讀本──申命記註解》另指出這句話同時是應許之地的指稱。
+  surfaces:
+  - phrase: 流奶與蜜之地
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 流奶與蜜之地
+  existing_path: link_folder/神學/流奶與蜜之地.md
+- name: 埃及地
+  suggested_type: 地點
+  evidence: 申11:10 把迦南地與埃及地對比；CT 說不像埃及地意指迦南地的天然資源勝過埃及地。
+  surfaces:
+  - phrase: 埃及地
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 埃及地
+  existing_path: link_folder/地點/埃及地.md
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: 申11:13「盡心盡性事奉他」STEP 為 u./le./'a.ve.D/o（H5647G），11:16「去事奉敬拜別神」為 va./'a.vad.Tem（H5647H），同為
+    a.vad。
+  surfaces:
+  - phrase: 盡心盡性事奉他
+    verses:
+    - 13
+  - phrase: 事奉敬拜別神
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 事奉與作奴僕同一字根（a.vad）
+  existing_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+- name: 美地
+  suggested_type: 主題
+  evidence: 申11:17「使你們在耶和華所賜給你們的美地上速速滅亡」；STEP 為 ha./'A.retz ha./to.Vah（H776G 加 H2896A）。
+  surfaces:
+  - phrase: 美地
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 美地
+  existing_path: link_folder/主題/美地.md
+- name: 快快地（ma.her）
+  suggested_type: 原文
+  evidence: 申11:17「速速滅亡」；STEP 為 va./'a.vad.Tem me.he.Rah（H6 加 H4120，me.he.rah 簡要詞典義
+    haste），與申9:3、12、16 的 ma.her 同一字根；CT 原文字義給「速速」快速地、匆促地。
+  surfaces:
+  - phrase: 速速滅亡
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 快快地（ma.her）
+  existing_path: link_folder/原文/快快地（ma.her）.md
+- name: 記號與經文
+  suggested_type: 原文
+  evidence: 申11:18「繫在手上為記號，戴在額上為經文」；STEP 為 le./'Ot（H226H，sign）與 le./to.ta.Fot（H2903，phylacteries）；CT
+    說後來猶太人文士把四段經文寫在小羊皮卷上放進皮匣；BH 稱之為 tefillin，並在第20節說明門框上的 mezuzah。
+  surfaces:
+  - phrase: 繫在手上為記號，戴在額上為經文
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 記號與經文
+  existing_path: link_folder/原文/記號與經文.md
+- name: 他的道（de.rekh）
+  suggested_type: 原文
+  evidence: 申11:22「行他的道」；STEP 為 la./Le.khet be./khol de.ra.Kha/v（H1980I 加 H1870G），與申10:12
+    同一組詞；CT 原文字義給「道」道路、路徑。
+  surfaces:
+  - phrase: 行他的道
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 他的道（de.rekh）
+  existing_path: link_folder/原文/他的道（de.rekh）.md
+- name: 專靠（da.veq）
+  suggested_type: 原文
+  evidence: 申11:22「專靠他」；STEP 為 u./le./da.ve.kah- v/o（H1692，da.vaq 簡要詞典義 to cleave，不定詞）；CT
+    說專靠意指最親密的關係，如同夫妻彼此的關係一樣；GT《啟導本聖經申命記註釋》要讀者參看十20注。
+  surfaces:
+  - phrase: 專靠他
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 專靠（da.veq）
+  existing_path: link_folder/原文/專靠（da.veq）.md
+- name: 腳掌可踏之處
+  suggested_type: 原文
+  evidence: 申11:24「凡你們腳掌所踏之地都必歸你們」；STEP 為 tid.Rokh kaf- rag.le./Khem（H1869 da.rakh
+    踏、H3709H kaph 腳掌、H7272 re.gel 腳），第25節的「所踏」也是 tid.re.khu-（H1869）；與申2:5 那個「連腳掌可踏之處我都不給你們」是同一組詞的相反用法；CT
+    說腳掌所踏之地意指所到之處；GT《啟導本聖經申命記註釋》說「腳」是權力的象徵，被踏在腳下表示征服（參詩一一〇1）。
+  surfaces:
+  - phrase: 腳掌所踏之地
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 腳掌可踏之處
+  existing_path: link_folder/原文/腳掌可踏之處.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 申11:24「從曠野和利巴嫩」；STEP 為 ha./mid.Bar（H4057B）；CT 說這裡的曠野指巴蘭的曠野為南界，GT《啟導本聖經申命記註釋》說指巴勒斯坦南端的界限，包括南地和西奈半島。
+  surfaces:
+  - phrase: 曠野
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 利巴嫩
+  suggested_type: 地點
+  evidence: 申11:24「從曠野和利巴嫩」；CT 說利巴嫩指利巴嫩山岳地帶為北界；BH 提到它以香柏樹著名（王上5:6）。
+  surfaces:
+  - phrase: 利巴嫩
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 利巴嫩
+  existing_path: link_folder/地點/利巴嫩.md
+- name: 伯拉大河
+  suggested_type: 地點
+  evidence: 申11:24「並伯拉大河」；STEP 為 ha./na.Har ne.har- pe.Rat（H5104G 加 H6578，Euphrates）；CT
+    說伯拉大河即幼發拉底河為東界；BH 說這是應許之地最遠的一端，在大衛與所羅門時期部分實現（王上4:21）。
+  surfaces:
+  - phrase: 伯拉大河
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 伯拉大河
+  existing_path: link_folder/地點/伯拉大河.md
+- name: 大海（地中海）
+  suggested_type: 地點
+  evidence: 申11:24「直到西海」；STEP 為 hai./Yam ha./'a.cha.Ron（H3220G 加 H314），字面是後面的海；CT
+    原文字義給「西」後面、西方，並說西海即地中海為西界。
+  surfaces:
+  - phrase: 西海
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 大海（地中海）
+  existing_path: link_folder/地點/大海（地中海）.md
+- name: 應許之地的四至
+  suggested_type: 主題
+  evidence: 申11:24 一次列出四界：曠野、利巴嫩、伯拉大河、西海；STEP 的「境界」是 ge.vul./Khem（H1366H）；GT《聖經精讀本──申命記註解》說這最大限度地明示了將來以色列百姓要佔據的四圍之界（創15:18）。
+  surfaces:
+  - phrase: 都要作你們的境界
+    verses:
+    - 24
+  match_type: exact
+  existing_title: 應許之地的四至
+  existing_path: link_folder/主題/應許之地的四至.md
+- name: 使天下萬民驚恐懼怕
+  suggested_type: 原文
+  evidence: 申11:25「使懼怕驚恐臨到你們所踏之地的居民」；STEP 為 pach.de./Khem（H6343，pa.chad）與 u./mo.ra.'a./Khem（H4172A，mo.ra），前一個字與申2:25
+    相同、後一個字換成另一個詞；CT 說懼怕驚恐指被震懾住、無心抵抗；BH 舉喇合在耶利哥的話為例（書2:9-11）。
+  surfaces:
+  - phrase: 懼怕驚恐
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 使天下萬民驚恐懼怕
+  existing_path: link_folder/原文/使天下萬民驚恐懼怕.md
+- name: 祝福與咒詛
+  suggested_type: 主題
+  evidence: 申11:26-28；STEP 為 be.ra.Khah（H1293）與 u./ke.la.Lah（H7045）；CT 說是福是禍人有選擇的自由，陳明意指擺在眼前由人抉擇。
+  surfaces:
+  - phrase: 祝福與咒詛
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 祝福與咒詛
+  existing_path: link_folder/主題/祝福與咒詛.md
+- name: 神的命令與自由意志
+  suggested_type: 主題
+  evidence: 申11:26「我今日將祝福與咒詛的話都陳明在你們面前」；GT《聖經精讀本──申命記註解》把這個處境類比為神把亞當夏娃放在善惡果面前（創2:16、17），說神允許人以自由意志選擇善和惡，且喜悅發自內心自發性的順服。
+  surfaces:
+  - phrase: 都陳明在你們面前
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 神的命令與自由意志
+  existing_path: link_folder/主題/神的命令與自由意志.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 申11:30「這二山豈不是在約但河那邊」、11:31「你們要過約但河」；STEP 為 hai./yar.Den（H3383）。
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 30
+    - 31
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: 申11:30「在住亞拉巴的迦南人之地」；STEP 為 ba./'a.ra.Vah（H6160G）；CT 說亞拉巴指約但河流域從北邊的加利利海到死海南端以迄阿卡巴灣的河谷地帶。
+  surfaces:
+  - phrase: 亞拉巴
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 亞拉巴
+  existing_path: link_folder/地點/亞拉巴.md
+- name: 摩利橡樹
+  suggested_type: 背景
+  evidence: 申11:30「靠近摩利橡樹嗎」；STEP 為 'e.lo.Nei mo.Reh（H436H 加 H4176G）；CT 說摩利橡樹位於示劍境內（參創十二6）；KC
+    說 Moreh 意為教導，橡樹一字帶著強壯或堅硬的意思。
+  surfaces:
+  - phrase: 摩利橡樹
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 摩利橡樹
+  existing_path: link_folder/背景/摩利橡樹.md
+C_new_formal:
+- name: 吩咐、律例、典章、誡命四個詞
+  suggested_type: 原文
+  evidence: 申11:1 一口氣列出四個詞；STEP 為 mish.mar.T/o（H4931，charge）、chu.ko.Ta/v（H2708，statute）、mish.pa.Ta/v（H4941G，justice／judgement）、mitz.vo.Ta/v（H4687，commandment）；CT
+    的原文字義逐一給出中文，並說「常守」意指始終一貫的遵守。
+  surfaces:
+  - phrase: 他的吩咐、律例、典章、誡命
+    verses:
+    - 1
+  target_path: link_folder/原文/吩咐、律例、典章、誡命四個詞.md
+  semantic_hint:
+  - title: 律例（choq）
+    score: 0.52
+    type: 原文
+  - title: 典章
+    score: 0.506
+    type: 神學
+  - title: 法度（e.dah）
+    score: 0.401
+    type: 原文
+- name: 膽壯與大能同一字根（cha.zaq）
+  suggested_type: 原文
+  evidence: 申11:8「使你們膽壯」STEP 為 te.chez.Ku（H2388G，cha.zaq 簡要詞典義 to strengthen），與第2節「大能的手」的
+    ha./cha.za.Kah（H2389）同一字根；CT 原文字義給「膽壯」堅定、奮勇。
+  surfaces:
+  - phrase: 膽壯
+    verses:
+    - 8
+  target_path: link_folder/原文/膽壯與大能同一字根（cha.zaq）.md
+- name: 用腳澆灌
+  suggested_type: 文化
+  evidence: 申11:10「你在那裡撒種，用腳澆灌，像澆灌菜園一樣」；STEP 為 ve./hish.Ki.ta ve./rag.le./Kha（H8248G
+    加 H7272）與 ke./Gan hai./ya.Rak（H1588M 加 H3419）；CT 說必須用腳踏動水車引水澆灌；GT《申命記雷氏研讀本》說可能指由腳來轉動的水車或用腳把水轉到小水溝裏；BH
+    提到 shaduf 一類人力灌溉。
+  surfaces:
+  - phrase: 撒種，用腳澆灌
+    verses:
+    - 10
+  target_path: link_folder/文化/用腳澆灌.md
+- name: 雨水滋潤（ma.tar、sha.tah）
+  suggested_type: 原文
+  evidence: 申11:11「有山有谷、雨水滋潤之地」；STEP 為 'E.retz ha.Rim u./ve.ka.'Ot（H2022G 加 H1237K）與
+    li/m.Tar ha./sha.Ma.yim tish.teh- Ma.yim（H4306 雨、H8354 喝、H4325G 水）；CT 原文字義註明「滋潤」在原文是雙字——首字是喝、次字是水。
+  surfaces:
+  - phrase: 有山有谷、雨水滋潤之地
+    verses:
+    - 11
+  target_path: link_folder/原文/雨水滋潤（ma.tar、sha.tah）.md
+- name: 眷顧（da.rash）
+  suggested_type: 原文
+  evidence: 申11:12「是耶和華─你神所眷顧的」；STEP 為 do.Resh（H1875，da.rash 簡要詞典義 to seek）；CT 原文字義給「眷顧」求助、尋找；GT《聖經精讀本──申命記註解》說這象徵神對迦南地與其上百姓的關懷與眷顧。
+  surfaces:
+  - phrase: 眷顧
+    verses:
+    - 12
+  target_path: link_folder/原文/眷顧（da.rash）.md
+- name: 留意聽從與留意謹守（雙同字）
+  suggested_type: 原文
+  evidence: 申11:13「留意聽從」STEP 為 sha.Mo.a' tish.me.'U（H8085H 不定詞絕對式加未完成式），申11:22「留意謹守」為
+    sha.Mor tish.me.Ru/n（H8104J 加 H8104G）；CT 原文字義註明「留意聽從」在原文是雙同字。
+  surfaces:
+  - phrase: 留意聽從
+    verses:
+    - 13
+  - phrase: 留意謹守遵行
+    verses:
+    - 22
+  target_path: link_folder/原文/留意聽從與留意謹守（雙同字）.md
+  semantic_hint:
+  - title: 遵行
+    score: 0.456
+    type: 原文
+- name: 秋雨春雨（yo.reh、mal.qosh）
+  suggested_type: 原文
+  evidence: 申11:14「必按時降秋雨春雨」；STEP 為 yo.Reh（H3138，autumn rain）與 u./mal.Ko.osh（H4456，spring
+    rain）；CT 說秋雨又名早雨約在陽曆九、十月間降雨，春雨又名晚雨約在三、四月間；GT《啟導本聖經申命記註釋》與 BH 也各給了農時說明。
+  surfaces:
+  - phrase: 秋雨春雨
+    verses:
+    - 14
+  target_path: link_folder/原文/秋雨春雨（yo.reh、mal.qosh）.md
+- name: 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+  suggested_type: 原文
+  evidence: 申11:14「使你們可以收藏五穀、新酒和油」；STEP 為 de.ga.Ne./kha（H1715）、ve./ti.ro.she./Kha（H8492，new
+    wine）、ve./yitz.ha.Re./kha（H3323，fresh oil）；KC 依詩104:14-15 把三者分別對到糧食、喜樂與發光的臉；BH
+    說明它們是以色列飲食與經濟的主要物產。
+  surfaces:
+  - phrase: 五穀、新酒和油
+    verses:
+    - 14
+  target_path: link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md
+- name: 心中受迷惑（pa.tah）
+  suggested_type: 原文
+  evidence: 申11:16「免得心中受迷惑」；STEP 為 yif.Teh le.vav./Khem（H6601B，pa.tah 簡要詞典義 to entice）；CT
+    原文字義給「受迷惑」單純、被引誘；GT《申命記串珠聖經註釋》說原指思想開放，接受迦南地所敬拜的假神。
+  surfaces:
+  - phrase: 心中受迷惑
+    verses:
+    - 16
+  target_path: link_folder/原文/心中受迷惑（pa.tah）.md
+- name: 如天覆地的日子那樣多
+  suggested_type: 主題
+  evidence: 申11:21；GT《申命記串珠聖經註釋》說即永遠（參伯14:12；詩89:29）；GT《聖經精讀本──申命記註解》另給直譯與意譯兩種讀法；KC
+    說它同時指生命的品質與長度。
+  surfaces:
+  - phrase: 如天覆地的日子那樣多
+    verses:
+    - 21
+  target_path: link_folder/主題/如天覆地的日子那樣多.md
+- name: 基利心山與以巴路山
+  suggested_type: 地點
+  evidence: 申11:29-30；STEP 為 har ge.ri.Zim（H1630）與 har 'ei.Val（H5858C）；CT 說基利心山地處示劍之南全山林木茂盛象徵有福氣，以巴路山與之對峙山頂光禿荒涼象徵禍患；GT《啟導本聖經申命記註釋》與《申命記雷氏研讀本》另給海拔與方位；KC
+    從南面的溫暖光照與北面的寒冷幽暗解釋這個分配。
+  surfaces:
+  - phrase: 基利心山
+    verses:
+    - 29
+  - phrase: 以巴路山
+    verses:
+    - 29
+  target_path: link_folder/地點/基利心山與以巴路山.md
+  semantic_hint:
+  - title: 基列山
+    score: 0.449
+    type: 地點
+  - title: 基列
+    score: 0.401
+    type: 地點
+- name: 吉甲
+  suggested_type: 地點
+  evidence: 申11:30「與吉甲相對」；STEP 為 ha./gil.Gal（H1537G）；CT 說本節的吉甲可能不是指約書亞駐紮的根據地（參書四19）而是較北處；GT《啟導本聖經申命記註釋》說聖經學者相信迦南地有兩個吉甲，這裡指示劍附近的那一個。
+  surfaces:
+  - phrase: 吉甲
+    verses:
+    - 30
+  target_path: link_folder/地點/吉甲.md
+D_new_candidate: []
+E_skip: []

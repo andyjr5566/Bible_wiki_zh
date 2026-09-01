@@ -1,0 +1,61 @@
+version: 2
+book: 申命記
+chapter: 11
+stages:
+  m3:
+    round: 1
+    revision: 2
+    sha256: ad8d2508d9c0e278deb570e06013c153fe904293d478db0b6b9597b664ebd2e7
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: ad8d2508d9c0e278deb570e06013c153fe904293d478db0b6b9597b664ebd2e7
+      verdict: pass
+      findings_count: 0
+    thread_id: agy:bd8c95f8-d25e-4537-9fea-e487dc151969
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: eac34955a8049186948e8e31cad923b5c2c7657d2509a3f5912d9ded79ac0e87
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 0590283a30e7d9aabcf23f484c6aa79b2069e2fe3f12200c2f3ba6c239f73015
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: fa68822b0b74e8a025981e86c81545309f7e52facaf17ab0401ed1ab1eec5451
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0
+    thread_id: agy:0e84d4f1-608e-4848-92c8-d85417c0445a
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 18c1870124a014c420517272318a5cd2de5061291b139d2b42aa9b48b7f0ac7f
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 18c1870124a014c420517272318a5cd2de5061291b139d2b42aa9b48b7f0ac7f
+      verdict: pass
+      findings_count: 0
+    thread_id: agy:8a9a68ae-5985-445c-b537-42f492e3a0c1
+    findings_count: 0

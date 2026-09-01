@@ -1,0 +1,51 @@
+---
+type: 原文
+secondary_types:
+- 文化
+aliases:
+- 五穀新酒和油
+status: formal
+source_scope: collected_only
+---
+
+# 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+
+## 定義
+
+申11:14 說按時的雨帶來三樣收成：「使你們可以收藏五穀、新酒和油」。
+
+STEP 顯示三者在原文是三個不同的名詞：דְגָנֶךָ（de.ga.Ne./kha，H1715，da.gan 簡要詞典義 grain）、וְתִירֹשְׁךָ（ve./ti.ro.she./Kha，H8492，ti.rosh，本節譯義 new wine）、וְיִצְהָרֶךָ（ve./yitz.ha.Re./kha，H3323，yits.har，本節譯義 fresh oil）。動詞「收藏」是 וְאָסַפְתָּ（ve./'a.saf.Ta，H622，a.saph 聚集）。
+
+**這三樣是那地的主要物產。** BH 說明它們在以色列的飲食與經濟裡各有位置：穀物是做餅的基本糧食，新酒是剛收成的葡萄所出、象徵喜樂與慶祝，油主要指橄欖油，用於烹調、點燈與膏抹；能把三樣收進倉裡，就代表一次成功的收成。
+
+KC 依詩104:14-15 把三者分別對應到三件事：穀物用來作食物，酒與喜樂相連，油使人的臉發光。他並從這三樣往前引，讀成信徒在那地上可以享用的份。
+
+**第15節把範圍再擴大一層。** 「也必使你吃得飽足，並使田野為你的牲畜長草」——CT 指出雨水不僅為生長五穀所需，並且有助牧草生長供牲畜食用，而五穀和牲畜又都是人類的食物來源，所以說「使你吃得飽足」。==雨落下來，一路管到人的飯桌與牲畜的草料。==
+
+這三樣在本章的位置是條件句的答應部分，前面是第13節的「若留意聽從」，後面是第16至17節的警告。GT《聖經精讀本──申命記註解》對這種鋪排下的判語是：摩西講章的特徵是先羅列順服神所帶來的祝福，之後再明示不順服所召來的咒詛。
+
+## 按書卷累積
+
+### 申命記
+
+<!-- accumulation:申命記:11:start -->
+#### [[05 申命記/第11章|第11章]]
+- 本章重點：第14節「收藏五穀、新酒和油」。STEP：de.ga.Ne./kha（H1715）、ve./ti.ro.she./Kha（H8492，new wine）、ve./yitz.ha.Re./kha（H3323，fresh oil），動詞是 ve./'a.saf.Ta（H622）。BH 說明三者在飲食與經濟中的位置；KC 依詩104:14-15 分別對到食物、喜樂與發光的臉；CT 在第15節指出雨也長牧草，牲畜與五穀一同構成人的糧食來源；GT《聖經精讀本》說摩西的講章先列祝福再明示咒詛。
+- 與本章關聯：這是本章那場按時的雨落地後的結果清單。它把「順服」與「吃得飽足」直接接在一起，也讓第16至17節「就使天閉塞不下雨，地也不出產」的警告有了對照的實物。
+<!-- accumulation:申命記:11:end -->
+
+## 相關條目
+
+- [[秋雨春雨（yo.reh、mal.qosh）]]
+- [[雨水滋潤（ma.tar、sha.tah）]]
+- [[流奶與蜜之地]]
+- [[美地]]
+- [[留意聽從與留意謹守（雙同字）]]
+
+## 來源依據
+
+- 原文資料（STEP Bible）: 申命記11:14 da.gan、ti.rosh、yits.har 與 a.saph 的字形、Strong 與本節譯義（<https://github.com/STEPBible/STEPBible-Data>）
+- 研經註解（BibleHub Study）: Deuteronomy 11:14，三樣物產在以色列飲食與經濟中的位置（<https://biblehub.com/study/deuteronomy/11.htm>）
+- 研經註解（KingComments）: Deuteronomy 11:13-15，依詩104:14-15 分述三樣（<https://www.kingcomments.com/en/bible-studies/Deu/11>）
+- 逐節註解（ccbiblestudy CT）: 申命記11:15 雨水、牧草與飽足的關係（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT11.htm>）
+- 拾穗（ccbiblestudy GT）: 申命記11:16-17《聖經精讀本──申命記註解》論先祝福後咒詛的鋪排（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT11.htm>）
