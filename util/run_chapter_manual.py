@@ -314,6 +314,10 @@ def cmd_prompts(args):
         )
     rc._invalidate_stale(ctx)
     plan = rc.resolve_step(ctx)  # runner 尚未注入 → 語義附註照常嘗試（端點不通自動略過）
+    # plan 對下游的作廢必須在這裡就做掉。少了這一步，下面回寫基線會把「plan 變過」
+    # 的證據一併抹掉，run 於是判定乾淨而沿用上一輪的 verse_links.yaml——那正是
+    # 「該連的沒連、六道閘門全綠」那一型靜默失效（民20 實測整章只渲染出 4 個連結）。
+    rc._invalidate_after_plan(ctx)
     # prompts 已經把當前的 candidates 消化成這份 plan，基線必須跟著前進。
     # 少了這一步，改過 candidates 之後 run 會永遠認為上游是髒的而拒絕執行，
     # 而 prompts 又不會清掉那個狀態——兩個指令互踢，只能手改 pipeline_state.json。

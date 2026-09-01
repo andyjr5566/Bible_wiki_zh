@@ -644,6 +644,32 @@ class MCPUpdateTokenTests(unittest.TestCase):
             self.assertEqual(0, after["change_count"])
             self.assertEqual("summary", after["detail"])
 
+    def test_prepare_points_at_the_manifest_instead_of_inlining_the_guidance(self):
+        # REVIEW_GUIDANCE 全文已由 prepare 寫進 manifest 的 review_guidance 區塊，
+        # 判定前本來就要開那個檔；在回應裡再抄一份等於每章重複同一段長文。
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            tmp = root / "01 創世記" / ".tmp" / "第1章"
+            tmp.mkdir(parents=True)
+
+            def fake_run(script, *args, **kwargs):
+                (tmp / "link_updates.yaml").write_text(
+                    "book: 創世記\nchapter: 1\nupdates:\n"
+                    "  - title: 測試\n    path: link_folder/主題/測試.md\n"
+                    "    summary: ''\n    relation: ''\n",
+                    encoding="utf-8",
+                )
+                return {"success": True, "stdout": "", "stderr": ""}
+
+            with patch.object(server, "ROOT_DIR", root), \
+                    patch.object(server, "_run_util_command", fake_run):
+                result = server.prepare_chapter_link_updates("創世記", 1)
+            self.assertTrue(result["success"])
+            self.assertNotIn("review_roles", result)
+            self.assertIn("review_roles_ref", result)
+            self.assertIn("link_updates.yaml", result["review_roles_ref"])
+            self.assertEqual(1, result["review_count"])
+
     def test_invalid_detail_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

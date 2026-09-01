@@ -244,6 +244,74 @@ class OrchestratorTests(unittest.TestCase):
             )
             self.assertTrue(verse_links.exists())
 
+    def test_prompts_sequence_still_invalidates_verse_links(self):
+        # 回歸：把 plan→下游的作廢移到 _invalidate_after_plan 之後，人工路徑的
+        # prompts 若只做「_invalidate_stale → resolve → 回寫基線」，就會在刪掉
+        # verse_links 之前先把「plan 變過」的證據抹掉，run 於是判定乾淨而沿用
+        # 上一輪的 verse_links.yaml——「該連的沒連、閘門全綠」那一型靜默失效。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            verse_links = root / "02 出埃及記" / ".tmp" / "第26章" / "verse_links.yaml"
+            verse_links.write_text("# 過期佔位\n", encoding="utf-8")
+
+            cand = self._candidates_path(root)
+            data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+            data["candidates"][0]["surfaces"] = ["施恩座"]
+            cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+            # 複刻 run_chapter_manual.cmd_prompts 的動作序列
+            ctx = run_chapter.ChapterContext(
+                "出埃及記", 26, root=root, index={}, homonyms={},
+            )
+            run_chapter._invalidate_stale(ctx)
+            run_chapter.resolve_step(ctx)
+            run_chapter._invalidate_after_plan(ctx)
+            run_chapter.save_pipeline_nodes(
+                ctx, ("link_candidates.yaml", "link_candidates.md", "link_plan.yaml"),
+            )
+            self.assertFalse(
+                verse_links.exists(),
+                "prompts 回寫基線前必須先作廢 verse_links，否則證據被抹掉就再也不會重生",
+            )
+
+            entry_dir = root / "02 出埃及記" / ".tmp" / "第26章" / "entry_content"
+            self.assertTrue(
+                any(entry_dir.glob("*.yaml")),
+                "只改 surfaces 時手寫 entry_content 仍應保留",
+            )
+
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self.assertTrue(verse_links.exists())
+            self.assertNotEqual("# 過期佔位\n", verse_links.read_text(encoding="utf-8"))
+
+    def test_render_does_not_rewrite_the_hand_written_chapter_payload(self):
+        # references 與 organization 的正規化是衍生資料，回寫會讓 M6 的 review
+        # checkpoint hash 在每次 render 後過期，也把 source-of-truth 改成另一種
+        # 序列化風格。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            payload = root / "02 出埃及記" / ".tmp" / "第26章" / "chapter_content.yaml"
+            before = payload.read_bytes()
+
+            chapter_md = root / "02 出埃及記" / "第26章.md"
+            self.assertIn("參考資料", chapter_md.read_text(encoding="utf-8"))
+
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self.assertEqual(
+                before, payload.read_bytes(),
+                "render 不得改寫作者手寫的 chapter_content.yaml",
+            )
+
     def test_surfaces_edit_regenerates_verse_links(self):
         # 反面：verse_links 確實吃 surfaces，必須重生——否則就變成「該連的沒連」
         # 那一型靜默失效。
