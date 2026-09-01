@@ -1,0 +1,530 @@
+book: 申命記
+chapter: 10
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後超過提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 摩西鑿石版（第二次法版）
+  path: link_folder/事件/摩西鑿石版（第二次法版）.md
+  summary: 第1、3節神吩咐摩西「鑿出兩塊石版，和先前的一樣」，摩西照辦上山；CT 指出先前的石版是神自己預備的（出24:12），這次則由摩西預備（出34:1）。第2、4節說字仍由神寫，而且是照先前所寫的——CT 對這四個字的註解是「意指內容完全一樣」。
+  relation: 申10 補上出34 沒有交代的一環：重刻的版有了固定去處，第5節說放在摩西所做的櫃中「現今還在那裡」。KC 並指出第二版上寫的和第一版沒有兩樣，不需要任何修訂。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 出埃及記:34
+- title: 石版
+  path: link_folder/文化/石版.md
+  summary: 第1、3節兩次出現「兩塊石版」；STEP 為 lu.Chot 'a.va.Nim（H3871 加 H68G），lu.ach 在本章共七次。第4節說耶和華把大會之日從火中所傳的十條誡照先前所寫的寫在這版上。
+  relation: 石版在本章第一次有了明確的存放處——第5節放進約櫃，並說「現今還在那裡」。GT《聖經精讀本──申命記註解》另補充櫃中還存著亞倫發芽之杖與盛滿一俄梅珥嗎哪的金罐子。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 摩西摔碎法版（廢約的象徵）
+  path: link_folder/事件/摩西摔碎法版（廢約的象徵）.md
+  summary: 第2節神親口提起這件事：「你先前摔碎的那版，其上的字我要寫在這版上」；STEP 顯示「摔碎」是 shi.Bar.ta（H7665，Piel 完成式，本節譯義 you shattered）。
+  relation: 摔碎在申10 不是被追究的過失，而是重寫的起點——神提起它只為說明新版要寫什麼。CT 從「和先前的一樣」讀出赦免的完整：「表示神對百姓的悅納和先前的沒有兩樣」。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 出埃及記:32
+      - 申命記:9
+- title: 約櫃
+  path: link_folder/主題/約櫃.md
+  summary: 第1節神吩咐「又要做一木櫃」，第3節摩西用皂莢木做成，第2、5節兩次說把版放在櫃中，第8節利未人的第一項職責是「抬耶和華的約櫃」。CT 指出這只木櫃就是約櫃。
+  relation: 申10 把約櫃的用途講得最簡單：它是石版的存放處，也是利未人一路抬著走的東西。GT《啟導本聖經申命記註釋》補上它後來的身分——放在會幕的至聖所裡，是神的寶座或腳凳。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 皂莢木
+  path: link_folder/原文/皂莢木.md
+  summary: 第3節「於是我用皂莢木做了一櫃」；STEP 為 'a.Tzei shi.Tim（H6086G 加 H7848，簡要詞典義 acacia）。GT《啟導本聖經申命記註釋》說皂莢木質堅硬，呈橙黃色，今仍見於巴勒斯坦沙漠地帶。
+  relation: 出埃及記裡皂莢木是會幕整套器具的材料，申10 只留下一件——存放石版的那只櫃。KC 在此把重點放在材質上，說櫃是木頭做的，指向主耶穌的人性。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 十句話
+  path: link_folder/原文/十句話.md
+  summary: 第4節「十條誡」；STEP 為 'a.Se.ret ha./de.va.Rim（H6235 加 H1697G），字面即十句話。CT 說十條誡即指基本法，內容詳載於出埃及記第二十章。
+  relation: 這是申命記裡這個說法出現的位置之一（另一處是申4:13）。本章的用法特別在「照先前所寫的」——同一份十句話被寫了兩次，內容完全一樣。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 出埃及記:20
+- title: 大會的日子（qa.hal）
+  path: link_folder/原文/大會的日子（qa.hal）.md
+  summary: 第4節「那大會之日」；STEP 為 be./Yom ha./ka.Hal（H3117G 加 H6951），與申9:10 是同一個片語。CT 說那是以色列眾百姓經過兩天的自潔預備之後，第三天聚集在西乃山腳下迎接神降臨在山上的那一日。
+  relation: 申9 用這個日子替十誡的來源定錨，申10 用它替重寫的內容定錨——第4節說寫在新版上的，正是那一天從火中所傳的話。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:9
+- title: 摩西錄
+  path: link_folder/地點/摩西錄.md
+  summary: 第6節記以色列人到了摩西拉，亞倫死在那裡、葬在那裡。CT 指出摩西拉是單數詞、民33:30 的摩西錄是複數詞，並註明本節的先後次序與民數記剛好相反。
+  relation: 民33 把摩西錄列為第二十七站，申10 則把它記成亞倫死葬與以利亞撒接任的地點；單複數的差異與行程方向相反，是申命記與民數記對照時最常被提出的一例。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 民數記:33
+- title: 比尼亞干
+  path: link_folder/地點/比尼亞干.md
+  summary: 第6節「以色列人從比羅比尼亞干（或作：亞干井）起行」；CT 的原文字義給「比羅比尼亞干」是亞干兒子之井，並說它亦即比尼亞干（民33:31）。BH 說這名字意為亞干子孫的井，井的存在表示那裡有水。
+  relation: 民33 的次序是摩西錄在前、比尼亞干在後，申10:6 剛好倒過來。CT 已在民33 記下兩地相距大約三十二公里，申10 這一節正是那個對照的另一半。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 民數記:33
+- title: 亞倫
+  path: link_folder/人物/亞倫.md
+  summary: 第6節「亞倫死在那裡，就葬在那裡。他兒子以利亞撒接續他供祭司的職分」；STEP 顯示「供祭司的職分」是 va/y.kha.Hen（H3547，ka.han，Piel），「接續」是 tach.Ta/v（H8478H）。
+  relation: 申9 記摩西為亞倫祈禱使他免於被滅，申10 就記下他的死與職分交棒。KC 指出亞倫是曠野旅程的大祭司，以利亞撒是進入迦南的大祭司。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 41
+    - 42
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞倫卒於何珥山與祭司職任更替
+  path: link_folder/神學/亞倫卒於何珥山與祭司職任更替.md
+  summary: 第6節記亞倫死葬與以利亞撒接續供祭司的職分；GT《聖經精讀本──申命記註解》指出這個繼承是由摩西脫下亞倫聖衣、給以利亞撒穿上的象徵儀式完成的（民20:25-28）。
+  relation: 民20 記的是交接的現場，申10:6 是四十年後的回顧，而且地名記成摩西拉而不是何珥山——這個差異由本章另立的條目處理。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 民數記:20
+      - 民數記:33
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第6節「他兒子以利亞撒接續他供祭司的職分」；CT 的原文字義給「以利亞撒」是神已幫助。
+  relation: 民20 記以利亞撒受膏接任的過程，申10:6 在摩西回顧西乃山事件時把這件事順帶記下，並用「接續」（tach.Ta/v）標明職分沒有中斷。KC 說他是進入迦南的大祭司。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 河、泉、源（na.chal、a.yin、te.hom）
+  path: link_folder/原文/河、泉、源（na.chal、a.yin、te.hom）.md
+  summary: 第7節說約巴他是「有溪水之地」；STEP 為 'E.retz Na.cha.lei Ma.yim（H5158A 加 H4325G），na.chal 與申8:7 描寫美地的「河」是同一個字。
+  relation: 申8:7 用 na.chal 形容即將進入的美地，申10:7 用同一個字形容曠野路上的一站。KC 從這個細節讀出曠野中途已經可以嚐到那地的樣子。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:8
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第8節「耶和華將利未支派分別出來」，交給他們抬約櫃、侍立事奉、奉他的名祝福三項職責；第9節說利未人在弟兄中無分無業，耶和華是他的產業。
+  relation: 民數記把利未人的分工鋪得很細，申10 只用兩節收成三件事加一個身分。GT《聖經精讀本──申命記註解》補上實際安排：神從其他支派取四十八座城邑與十一奉獻賜給他們作為居住地與生計。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 分別為聖
+  path: link_folder/神學/分別為聖.md
+  summary: 第8節「那時，耶和華將利未支派分別出來」；STEP 顯示這裡的動詞是 hiv.Dil（H914，ba.dal，簡要詞典義 to separate，Hiphil 完成式），與出13:2 頭生歸神所用的字不是同一個。
+  relation: 本章的分別出來是把一個支派從其餘支派中挑出來承擔聖工，重點落在職分上；GT《聖經精讀本──申命記註解》說只有被分別為聖的利未支派才能獨擔抬約櫃之任。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 稱頌（ba.rakh）
+  path: link_folder/原文/稱頌（ba.rakh）.md
+  summary: 第8節利未人的第三項職責是「奉他的名祝福」；STEP 為 u./le./va.Rekh（H1288，ba.rakh，Piel 不定詞）。CT 的原文字義給「祝福」是祝福、屈膝，並說這可能屬於大祭司的職責（參民六23~27）。
+  relation: 申8:10 是百姓吃飽了向神稱頌，申10:8 是利未人奉神的名向人祝福——同一個字根，兩個方向。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:8
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第9節「利未人在他弟兄中無分無業，耶和華是他的產業」；STEP 顯示「業」與「產業」同為 na.cha.Lah（H5159），「分」則是 Che.lek（H2506A），CT 的原文字義也註明產業與業同字。
+  relation: 民數記多處用這個字處理土地怎麼分，申10:9 用它處理一個支派為什麼不分地。CT 解釋這是指沒有與一般人同樣謀生的產業，事奉神並從神得到生活必需品的供應。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 四十晝夜
+  path: link_folder/神學/四十晝夜.md
+  summary: 第10節「我又像從前在山上住了四十晝夜」；STEP 顯示「住了」是 'a.Mad.ti（H5975G，a.mad，簡要詞典義 to stand），與第8節利未人「侍立」是同一個動詞。CT 指出原文是「像第一次」，故指第二次。
+  relation: 申9:18、25 記的是俯伏的四十晝夜，申10:10 是同一次的結論句——重點不在禁食，而在「那次耶和華也應允我」。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 摩西的代求
+  path: link_folder/神學/摩西的代求.md
+  summary: 第10節「那次耶和華也應允我，不忍將你滅絕」，第11節神接著吩咐摩西起來引導百姓進去得地。GT《申命記串珠聖經註釋》說這是上述事件的一個總結：神答應摩西的代禱，以色列民沒有被滅絕。
+  relation: 申9:25-29 記下代求的內容，申10:10-11 記下代求的結果，而結果有兩層：不滅絕，以及重新起行。KC 指出替百姓代求並作中保的那一位，也可以作那百姓的嚮導。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 敗壞與滅絕同一字根（sha.chat）
+  path: link_folder/原文/敗壞與滅絕同一字根（sha.chat）.md
+  summary: 第10節「不忍將你滅絕」；STEP 為 hash.chi.Te./kha（H7843，sha.chat，Hiphil 不定詞），「不忍」則是 'a.Vah（H14，簡要詞典義 be willing）。
+  relation: 申9:12 說百姓敗壞了自己、9:26 摩西求神不要滅絕百姓，申10:10 給出答案——神不願意做那件事。同一個字根在三節之內走完了發生、祈求與答覆。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:4
+      - 申命記:9
+- title: 美地
+  path: link_folder/主題/美地.md
+  summary: 第11節神吩咐摩西「你起來引導這百姓，使他們進去得我向他們列祖起誓應許所賜之地」；STEP 顯示「得」是 ve./yir.Shu（H3423H，ya.rash，簡要詞典義 to possess）。
+  relation: 申8、申9 把這地講成恩典而不是酬勞，申10:11 則把它放在代求蒙允之後——得地在本章是赦免的下一步。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: keep
+- title: 彌6：8
+  path: link_folder/互文/彌6：8.md
+  summary: 申10:12-13 摩西用問句總括神的要求；GT《申命記串珠聖經註釋》指出日後先知彌迦同樣說神要求百姓為貧困人伸張公義、憐愛他們，對神則要謙卑服從，BH 在第12節也把這個問句接到彌6:8。
+  relation: 這個條目原本記的是出23:1-9 的平行，申10:12-13 補上另一種平行——摩西同樣把神的全部要求收成一句話，而兩套要求都同時管對神與對人。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 出埃及記:23
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: 第12、20節兩次「敬畏耶和華─你的神」，STEP 同為 H3372H（ya.re）：第12節是 Le./yir.'ah（不定詞），第20節是 ti.Ra'（Qal 未完成式）。CT 把敬畏列為神的四項要求之首。
+  relation: 本章把敬畏放進一個問句的答案裡——它是第12節那個總結問句所列四項要求中的第一項。KC 另指出第20節的敬畏具體表現為三樣：事奉、專靠、指著他的名起誓。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 你要盡心盡性盡力愛耶和華（a.hav）
+  path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+  summary: 第12節「愛他，盡心盡性事奉他」；STEP 為 u./le./'a.ha.Vah（H157G）加 be./khol le.va.ve./Kha（H3824 心）與 u./ve./khol naf.She./kha（H5315G 性）。本節只列了心與性兩項。
+  relation: 申6:5 是三項，申10:12 只有兩項；CT 與 GT《啟導本聖經申命記註釋》在解說本節時都把申6:5 的「盡力」一併帶了進來。第15節接著說神先愛了列祖，愛的方向因此是雙向的。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:6
+- title: 事奉與作奴僕同一字根（a.vad）
+  path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  summary: 第12、20節兩次「事奉他」；STEP 為 ve./la./'a.Vod 與 ta.'a.Vod，同為 H5647G（a.vad）。同一章第8節利未人的「事奉」則是另一個字 sha.rat（H8334）。
+  relation: 申5、申6 用這個字根把誡命釘回埃及為奴的記憶，申10 讓它與利未人的供職並列——全民的事奉與祭司的供職在原文是兩個不同的詞。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 得福（ya.tav）
+  path: link_folder/原文/得福（ya.tav）.md
+  summary: 第13節「為要叫你得福」；STEP 為 le./Tov（H2896B，簡要詞典義 good），與申5:33 的 ve./Tov 同一組，而不是申5:16、29 的 H3190。
+  relation: 這是本條目所記那組分別的又一例：中文都寫成得福，原文分成兩組。GT《聖經精讀本──申命記註解》在本節說律例典章是給人提供生之意義與幸福之路的生命之燈光。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 神的揀選
+  path: link_folder/神學/神的揀選.md
+  summary: 第15節「耶和華但喜悅你的列祖，愛他們，從萬民中揀選他們的後裔」；STEP 顯示「喜悅」是 cha.Shak（H2836A，簡要詞典義 to desire），「揀選」是 va/i.yiv.Char（H977，ba.char）。CT 的原文字義給「喜悅」是戀慕。
+  relation: 申4:37 與申7:6-8 把揀選連到神對列祖的愛，申10:15 加上一個對比的位置——第14節先說天地全屬耶和華，第15節才說他偏偏揀選了一家。GT《申命記串珠聖經註釋》說「但」這個字強調的正是這個落差。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:7
+      - 創世記:25
+- title: 種子（ze.ra）
+  path: link_folder/原文/種子（ze.ra）.md
+  summary: 第15節「揀選他們的後裔」；STEP 為 be./zar.'A/m（H2233H），morphology HR/Ncmsc/Sp3mp 是陽性單數附屬形，CT 也註明後裔在原文是單數詞「種子」。
+  relation: 民24:7 的 ze.ra 是巴蘭預言裡撒在多水之處的種子，申10:15 的 ze.ra 是揀選的對象；兩處中文都作後裔，原文都是這個單數的集合名詞。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 民數記:24
+- title: 未受割禮的心若謙卑（認罪悔改的條件）
+  path: link_folder/神學/未受割禮的心若謙卑（認罪悔改的條件）.md
+  summary: 第16節「所以你們要將心裡的污穢除掉」；STEP 為 u./mal.Tem 'et 'a.re.Lat le.vav./Khem（H4135A mul、H6190H or.lah、H3824 le.vav），CT 直譯作「為未受割禮的心行割禮」。
+  relation: 利26:41 說的是「他們未受割禮的心若謙卑了」，申10:16 把同一件事寫成命令。GT《申命記雷氏研讀本》說這裡用作比喻，指使自己從罪惡裏分別出來。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 利未記:26
+- title: 硬著頸項的百姓
+  path: link_folder/神學/硬著頸項的百姓.md
+  summary: 第16節「不可再硬著頸項」；STEP 為 ve./'A.re.pe./Khem lo' tak.Shu od（H6203 o.reph、H7185 qa.shah，Hiphil），與申9:6、13 同一組詞。
+  relation: 申9 用這句話當論證的前提，申10:16 把它變成禁令——同一章裡先要人為心行割禮，再說不可再硬著頸項，兩句是一組。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 古代近東賄賂
+  path: link_folder/背景/古代近東賄賂.md
+  summary: 第17節「也不受賄賂」；STEP 為 Sho.chad（H7810，簡要詞典義 bribe）。CT 說不以貌取人、不受賄賂「意指祂不受任何權勢和財富力量的影響」。
+  relation: 出23 講的是人不可受賄，申10:17 講的是神不受賄——同一個社會現實在這一節被用來說明神的審判為什麼可靠。BH 並把它接到箴15:27 與賽33:15。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: 第18、19節三次出現；STEP 為 Ger（H1616，簡要詞典義 sojourner）。GT《聖經精讀本──申命記註解》說寄居的是離開本族本鄉而混居在希伯來人中的人，既沒有屬於自己的地產，也沒有法律權利。
+  relation: 申10 把善待寄居的接到兩個理由上：神自己憐愛寄居的並賜他衣食（18節），以及以色列在埃及地也作過寄居的（19節）。GT《申命記串珠聖經註釋》由此說摩西的律法自始至終都貫徹著憐憫弱者的教訓。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 出埃及記:22
+      - 出埃及記:23
+- title: 專靠（da.veq）
+  path: link_folder/原文/專靠（da.veq）.md
+  summary: 第20節「專靠他」；STEP 為 tid.Bak（H1692，da.vaq，簡要詞典義 to cleave，Qal 未完成式），與申4:4 的形容詞形 H1695 同一字根。GT《申命記串珠聖經註釋》給的直譯是「粘著他」。
+  relation: 申4:4 是描述——專靠耶和華的人今日全都存活；申10:20 是命令——你要專靠他。KC 把它列為敬畏的三種表現之一，說這是心裡定意的那一項。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:4
+- title: 雅各家七十人與七十五人
+  path: link_folder/解經爭議/雅各家七十人與七十五人.md
+  summary: 第22節「你的列祖七十人下埃及」；STEP 為 be./shiv.'Im Ne.fesh（H7657 加 H5315J）。GT《啟導本聖經申命記註釋》說「七十」表示完整，意思是以色列人的祖先都下到埃及、在那裡寄居。
+  relation: 創46 與出1 記的是那七十人本身，申10:22 用它當對照的一端——七十人下去，如今多如天上的星。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: 第22節「現在耶和華─你的神使你如同天上的星那樣多」；GT《聖經精讀本──申命記註解》說這正應驗神給亞伯拉罕的話，他的子孫必多起來如同天上的星（創15:5；22:17）。
+  relation: 申10 用人口的增長當作神守約的證據，並把它放在全章的最後一句——第21節說那些大而可畏的事是你親眼所看見的，第22節就給出其中一件。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt

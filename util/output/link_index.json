@@ -1290,6 +1290,19 @@
       "紡線的婦女"
     ]
   },
+  "孤兒寡婦": {
+    "path": "link_folder/主題/孤兒寡婦.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "孤兒寡婦",
+    "status": "formal",
+    "aliases": [
+      "孤兒寡婦",
+      "孤兒與寡婦"
+    ]
+  },
   "安息日與會幕工程的關係": {
     "path": "link_folder/主題/安息日與會幕工程的關係.md",
     "type": "主題",
@@ -2766,6 +2779,18 @@
     "aliases": [
       "公共獻祭",
       "全會眾的獻祭"
+    ]
+  },
+  "耶和華向你所要的是什麼呢": {
+    "path": "link_folder/主題/耶和華向你所要的是什麼呢.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "耶和華向你所要的是什麼呢",
+    "status": "formal",
+    "aliases": [
+      "神向你所要的是什麼呢"
     ]
   },
   "耶和華的榮光與會幕的及時顯現": {
@@ -12845,6 +12870,19 @@
     "status": "formal",
     "aliases": []
   },
+  "不以貌取人": {
+    "path": "link_folder/原文/不以貌取人.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "不以貌取人",
+    "status": "formal",
+    "aliases": [
+      "不以貌取人",
+      "不偏私"
+    ]
+  },
   "不可加添也不可刪減（ya.saph、ga.ra）": {
     "path": "link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md",
     "type": "原文",
@@ -12968,6 +13006,17 @@
     "title": "他的血要歸到他身上",
     "status": "formal",
     "aliases": []
+  },
+  "他的道（de.rekh）": {
+    "path": "link_folder/原文/他的道（de.rekh）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "他的道（de.rekh）",
+    "status": "formal",
+    "aliases": [
+      "他的道",
+      "遵行他的道"
+    ]
   },
   "以弗得": {
     "path": "link_folder/原文/以弗得.md",
@@ -13181,6 +13230,16 @@
     "title": "使者",
     "status": "formal",
     "aliases": []
+  },
+  "侍立事奉（a.mad、sha.rat）": {
+    "path": "link_folder/原文/侍立事奉（a.mad、sha.rat）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "侍立事奉（a.mad、sha.rat）",
+    "status": "formal",
+    "aliases": [
+      "侍立事奉"
+    ]
   },
   "供物（qorban）": {
     "path": "link_folder/原文/供物（qorban）.md",
@@ -13644,6 +13703,18 @@
       "坐骨神經",
       "大腿窩筋",
       "筋"
+    ]
+  },
+  "天和天上的天": {
+    "path": "link_folder/原文/天和天上的天.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "天和天上的天",
+    "status": "formal",
+    "aliases": [
+      "天上的天"
     ]
   },
   "奴僕": {
@@ -14296,6 +14367,16 @@
     "status": "formal",
     "aliases": [
       "不滅絕你"
+    ]
+  },
+  "敬畏與可畏同一字根（ya.re）": {
+    "path": "link_folder/原文/敬畏與可畏同一字根（ya.re）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "敬畏與可畏同一字根（ya.re）",
+    "status": "formal",
+    "aliases": [
+      "大而可畏"
     ]
   },
   "敵擋（sa.tan）": {
@@ -15645,6 +15726,16 @@
     "status": "formal",
     "aliases": [
       "ki.pu.Rim"
+    ]
+  },
+  "起來拔營起行（mas.sa）": {
+    "path": "link_folder/原文/起來拔營起行（mas.sa）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "起來拔營起行（mas.sa）",
+    "status": "formal",
+    "aliases": [
+      "起來拔營起行"
     ]
   },
   "起泡的瘡": {
@@ -17706,6 +17797,17 @@
     "title": "護衛長府_監",
     "status": "formal",
     "aliases": []
+  },
+  "谷歌大與約巴他": {
+    "path": "link_folder/地點/谷歌大與約巴他.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "谷歌大與約巴他",
+    "status": "formal",
+    "aliases": [
+      "谷歌大",
+      "約巴他"
+    ]
   },
   "路斯": {
     "path": "link_folder/地點/路斯.md",
@@ -24702,6 +24804,17 @@
     "status": "formal",
     "aliases": []
   },
+  "萬神之神，萬主之主": {
+    "path": "link_folder/神學/萬神之神，萬主之主.md",
+    "type": "神學",
+    "secondary_types": [],
+    "title": "萬神之神，萬主之主",
+    "status": "formal",
+    "aliases": [
+      "萬神之神",
+      "萬主之主"
+    ]
+  },
   "葡萄樹_葡萄_杯": {
     "path": "link_folder/神學/葡萄樹_葡萄_杯.md",
     "type": "神學",
@@ -26504,6 +26617,16 @@
       "亞伯蘭的半真半假"
     ]
   },
+  "亞倫死於摩西拉還是何珥山": {
+    "path": "link_folder/解經爭議/亞倫死於摩西拉還是何珥山.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "亞倫死於摩西拉還是何珥山",
+    "status": "formal",
+    "aliases": [
+      "亞倫死於何處"
+    ]
+  },
   "亞拉臘山與方舟遺跡爭議": {
     "path": "link_folder/解經爭議/亞拉臘山與方舟遺跡爭議.md",
     "type": "解經爭議",
@@ -28004,6 +28127,16 @@
       "原罪說與血液不潔說"
     ]
   },
+  "申命記十章的非時序編排": {
+    "path": "link_folder/解經爭議/申命記十章的非時序編排.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "申命記十章的非時序編排",
+    "status": "formal",
+    "aliases": [
+      "申十6-9的插敘"
+    ]
+  },
   "疏割居住是否屬靈倒退": {
     "path": "link_folder/解經爭議/疏割居住是否屬靈倒退.md",
     "type": "解經爭議",
@@ -29140,6 +29273,9 @@
   "紡線的婦女": {
     "alias_of": "婦女參與建造會幕"
   },
+  "孤兒與寡婦": {
+    "alias_of": "孤兒寡婦"
+  },
   "營盤佈局": {
     "alias_of": "安營與纛"
   },
@@ -29490,6 +29626,9 @@
   },
   "全會眾的獻祭": {
     "alias_of": "群體性獻祭"
+  },
+  "神向你所要的是什麼呢": {
+    "alias_of": "耶和華向你所要的是什麼呢"
   },
   "聖安息日": {
     "alias_of": "聖安息日（大贖罪日雙重安息）"
@@ -31321,6 +31460,9 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "不偏私": {
+    "alias_of": "不以貌取人"
+  },
   "不可加添也不可刪減": {
     "alias_of": "不可加添也不可刪減（ya.saph、ga.ra）"
   },
@@ -31353,6 +31495,12 @@
   },
   "Nisan": {
     "alias_of": "亞筆月"
+  },
+  "他的道": {
+    "alias_of": "他的道（de.rekh）"
+  },
+  "遵行他的道": {
+    "alias_of": "他的道（de.rekh）"
   },
   "ephod": {
     "alias_of": "以弗得"
@@ -31395,6 +31543,9 @@
   },
   "盡心盡性盡力愛神": {
     "alias_of": "你要盡心盡性盡力愛耶和華（a.hav）"
+  },
+  "侍立事奉": {
+    "alias_of": "侍立事奉（a.mad、sha.rat）"
   },
   "各耳板": {
     "alias_of": "供物（qorban）"
@@ -31515,6 +31666,9 @@
   },
   "筋": {
     "alias_of": "大腿窩的筋"
+  },
+  "天上的天": {
+    "alias_of": "天和天上的天"
   },
   "虛妄": {
     "alias_of": "妄稱"
@@ -31656,6 +31810,9 @@
   },
   "不滅絕你": {
     "alias_of": "敗壞與滅絕同一字根（sha.chat）"
+  },
+  "大而可畏": {
+    "alias_of": "敬畏與可畏同一字根（ya.re）"
   },
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
@@ -32019,6 +32176,9 @@
   },
   "ki.pu.Rim": {
     "alias_of": "贖罪日的贖罪祭（ki.pu.Rim）"
+  },
+  "起來拔營起行": {
+    "alias_of": "起來拔營起行（mas.sa）"
   },
   "膿皰": {
     "alias_of": "起泡的瘡"
@@ -32439,6 +32599,12 @@
   },
   "Seir": {
     "alias_of": "西珥山"
+  },
+  "谷歌大": {
+    "alias_of": "谷歌大與約巴他"
+  },
+  "約巴他": {
+    "alias_of": "谷歌大與約巴他"
   },
   "非利士": {
     "alias_of": "非利士地"
@@ -34270,6 +34436,12 @@
   "萬靈之神": {
     "alias_of": "萬人之靈的神"
   },
+  "萬神之神": {
+    "alias_of": "萬神之神，萬主之主"
+  },
+  "萬主之主": {
+    "alias_of": "萬神之神，萬主之主"
+  },
   "葡萄樹/葡萄/杯": {
     "alias_of": "葡萄樹_葡萄_杯"
   },
@@ -34657,6 +34829,9 @@
   "亞伯蘭的半真半假": {
     "alias_of": "亞伯蘭稱撒萊為妹子的性質"
   },
+  "亞倫死於何處": {
+    "alias_of": "亞倫死於摩西拉還是何珥山"
+  },
   "亞拉臘山的方舟遺跡": {
     "alias_of": "亞拉臘山與方舟遺跡爭議"
   },
@@ -34932,6 +35107,9 @@
   },
   "原罪說與血液不潔說": {
     "alias_of": "產婦不潔原因之爭（原罪說與血液不潔說）"
+  },
+  "申十6-9的插敘": {
+    "alias_of": "申命記十章的非時序編排"
   },
   "神厭惡以色列的張力": {
     "alias_of": "神厭惡以色列的難題（利26：30與26：44的張力）"

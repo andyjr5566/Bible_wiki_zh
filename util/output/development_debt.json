@@ -4,9 +4,9 @@
     {
       "path": "link_folder/人物/亞倫.md",
       "title": "亞倫",
-      "deferred_at": "申命記:9",
-      "accumulated": 41,
-      "fingerprint": "5e6db54a291a014c"
+      "deferred_at": "申命記:10",
+      "accumulated": 42,
+      "fingerprint": "8cf900acaec72e3f"
     },
     {
       "path": "link_folder/人物/雅各.md",
@@ -39,9 +39,9 @@
     {
       "path": "link_folder/神學/亞伯拉罕之約.md",
       "title": "亞伯拉罕之約",
-      "deferred_at": "申命記:9",
-      "accumulated": 18,
-      "fingerprint": "ac73e0248fbe4fe4"
+      "deferred_at": "申命記:10",
+      "accumulated": 19,
+      "fingerprint": "e1aab088ae16ddc9"
     },
     {
       "path": "link_folder/地點/約但河.md",
@@ -49,6 +49,13 @@
       "deferred_at": "申命記:9",
       "accumulated": 16,
       "fingerprint": "c90ade570dcd8cee"
+    },
+    {
+      "path": "link_folder/人物/以利亞撒.md",
+      "title": "以利亞撒",
+      "deferred_at": "申命記:10",
+      "accumulated": 14,
+      "fingerprint": "640fcdb83be2ea4b"
     },
     {
       "path": "link_folder/人物/亞摩利人.md",
@@ -65,18 +72,46 @@
       "fingerprint": "08eeb3b8c2d813b3"
     },
     {
+      "path": "link_folder/人物/利未支派.md",
+      "title": "利未支派",
+      "deferred_at": "申命記:10",
+      "accumulated": 11,
+      "fingerprint": "27b60f0cfcf8fc69"
+    },
+    {
+      "path": "link_folder/主題/約櫃.md",
+      "title": "約櫃",
+      "deferred_at": "申命記:10",
+      "accumulated": 10,
+      "fingerprint": "b5c861db26c93adc"
+    },
+    {
       "path": "link_folder/神學/敬畏神.md",
       "title": "敬畏神",
-      "deferred_at": "申命記:8",
-      "accumulated": 9,
-      "fingerprint": "f2141577f57fc836"
+      "deferred_at": "申命記:10",
+      "accumulated": 10,
+      "fingerprint": "34ab43116fcc386f"
     },
     {
       "path": "link_folder/原文/產業（na.cha.lah）.md",
       "title": "產業（na.cha.lah）",
-      "deferred_at": "申命記:9",
-      "accumulated": 8,
-      "fingerprint": "1dad51a2311876a2"
+      "deferred_at": "申命記:10",
+      "accumulated": 9,
+      "fingerprint": "bdae98aff48e63f8"
+    },
+    {
+      "path": "link_folder/原文/皂莢木.md",
+      "title": "皂莢木",
+      "deferred_at": "申命記:10",
+      "accumulated": 9,
+      "fingerprint": "8bc56d1505f9fbba"
+    },
+    {
+      "path": "link_folder/神學/摩西的代求.md",
+      "title": "摩西的代求",
+      "deferred_at": "申命記:10",
+      "accumulated": 9,
+      "fingerprint": "bde53b40160f2baa"
     },
     {
       "path": "link_folder/歷史/出埃及.md",
@@ -105,6 +140,13 @@
       "deferred_at": "申命記:9",
       "accumulated": 8,
       "fingerprint": "20d3d6244231e753"
+    },
+    {
+      "path": "link_folder/神學/分別為聖.md",
+      "title": "分別為聖",
+      "deferred_at": "申命記:10",
+      "accumulated": 7,
+      "fingerprint": "fd204914b8903972"
     },
     {
       "path": "link_folder/歷史/加低斯巴尼亞事件.md",
@@ -140,13 +182,6 @@
       "deferred_at": "申命記:7",
       "accumulated": 3,
       "fingerprint": "fee84c39306b8522"
-    },
-    {
-      "path": "link_folder/事件/摩西摔碎法版（廢約的象徵）.md",
-      "title": "摩西摔碎法版（廢約的象徵）",
-      "deferred_at": "申命記:9",
-      "accumulated": 2,
-      "fingerprint": "cb4885e25c881157"
     },
     {
       "path": "link_folder/互文/摩西代禱熄滅神怒（詩106：23）.md",

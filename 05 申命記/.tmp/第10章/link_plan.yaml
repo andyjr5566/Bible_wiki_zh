@@ -1,0 +1,536 @@
+book: 申命記
+chapter: 10
+A_use_directly: []
+B_needs_update:
+- name: 摩西鑿石版（第二次法版）
+  suggested_type: 事件
+  evidence: 申10:1、3 神吩咐摩西鑿出兩塊石版「和先前的一樣」，摩西照做並上山；CT 指出先前的石版是神自己預備的（出24:12），這次由摩西預備（出34:1）。
+  surfaces:
+  - phrase: 和先前的一樣
+    verses:
+    - 1
+    - 3
+  match_type: exact
+  existing_title: 摩西鑿石版（第二次法版）
+  existing_path: link_folder/事件/摩西鑿石版（第二次法版）.md
+- name: 石版
+  suggested_type: 文化
+  evidence: 申10:1、3「兩塊石版」；STEP 為 לֻוחֹת אֲבָנִים（lu.Chot 'a.va.Nim，H3871＋H68G），本章七次出現
+    lu.ach。
+  surfaces:
+  - phrase: 石版
+    verses:
+    - 1
+    - 3
+  match_type: exact
+  existing_title: 石版
+  existing_path: link_folder/文化/石版.md
+- name: 摩西摔碎法版（廢約的象徵）
+  suggested_type: 事件
+  evidence: 申10:2 神提起「你先前摔碎的那版」；STEP 為 שִׁבַּרְתָּ（shi.Bar.ta，H7665，Piel 完成式，本節譯義
+    you shattered）。
+  surfaces:
+  - phrase: 先前摔碎的那版
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 摩西摔碎法版（廢約的象徵）
+  existing_path: link_folder/事件/摩西摔碎法版（廢約的象徵）.md
+- name: 約櫃
+  suggested_type: 主題
+  evidence: 申10:1「又要做一木櫃」、2、3、5 放版於櫃中、8 利未人「抬耶和華的約櫃」；CT 指出木櫃即約櫃（參8節）。
+  surfaces:
+  - phrase: 木櫃
+    verses:
+    - 1
+  - phrase: 約櫃
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 約櫃
+  existing_path: link_folder/主題/約櫃.md
+- name: 皂莢木
+  suggested_type: 原文
+  evidence: 申10:3「我用皂莢木做了一櫃」；STEP 為 עֲצֵי שִׁטִּים（'a.Tzei shi.Tim，H6086G＋H7848，簡要詞典義
+    acacia）。
+  surfaces:
+  - phrase: 皂莢木
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 皂莢木
+  existing_path: link_folder/原文/皂莢木.md
+- name: 十句話
+  suggested_type: 原文
+  evidence: 申10:4「十條誡」；STEP 為 עֲשֶׂרֶת הַדְּבָרִים（'a.Se.ret ha./de.va.Rim，H6235＋H1697G），字面即「十句話」。
+  surfaces:
+  - phrase: 十條誡
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 十句話
+  existing_path: link_folder/原文/十句話.md
+- name: 大會的日子（qa.hal）
+  suggested_type: 原文
+  evidence: 申10:4「那大會之日」；STEP 為 בְּיוֹם הַקָּהָל（be./Yom ha./ka.Hal，H3117G＋H6951，qa.hal
+    簡要詞典義 assembly），與申9:10 同一片語。
+  surfaces:
+  - phrase: 大會之日
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 大會的日子（qa.hal）
+  existing_path: link_folder/原文/大會的日子（qa.hal）.md
+- name: 摩西錄
+  suggested_type: 地點
+  evidence: 申10:6 亞倫死葬之地稱「摩西拉」；CT 原文字義作「枷鎖」，並指出摩西拉是單數詞、民33:30 的摩西錄是複數詞，聖經學者認為是同一地；GT《啟導本》認為位置不詳，可能何珥山又名摩西拉。
+  surfaces:
+  - phrase: 摩西拉
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 摩西錄
+  existing_path: link_folder/地點/摩西錄.md
+- name: 比尼亞干
+  suggested_type: 地點
+  evidence: 申10:6 起行的出發地稱「比羅比尼亞干」；CT 原文字義「亞干兒子之井」，又名亞干井，即民33:31 的比尼亞干；BH 說明其名意為 wells
+    of the sons of Jaakan；本章與民33 的先後次序相反。
+  surfaces:
+  - phrase: 比羅比尼亞干
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 比尼亞干
+  existing_path: link_folder/地點/比尼亞干.md
+- name: 亞倫
+  suggested_type: 人物
+  evidence: 申10:6「亞倫死在那裡」，其子以利亞撒接續祭司職分。
+  surfaces:
+  - phrase: 亞倫
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 亞倫
+  existing_path: link_folder/人物/亞倫.md
+- name: 亞倫卒於何珥山與祭司職任更替
+  suggested_type: 神學
+  evidence: 申10:6 記亞倫死葬與以利亞撒接續供祭司的職分；GT《聖經精讀本》指出繼承是由摩西脫下亞倫聖衣、給以利亞撒穿上的象徵儀式完成（民20:25-28）。
+  surfaces:
+  - phrase: 接續他供祭司的職分
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 亞倫卒於何珥山與祭司職任更替
+  existing_path: link_folder/神學/亞倫卒於何珥山與祭司職任更替.md
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 申10:6「他兒子以利亞撒接續他供祭司的職分」；CT 原文字義「以利亞撒」神已幫助。
+  surfaces:
+  - phrase: 以利亞撒
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 河、泉、源（na.chal、a.yin、te.hom）
+  suggested_type: 原文
+  evidence: 申10:7 約巴他是「有溪水之地」；STEP 為 אֶרֶץ נַחֲלֵי מָיִם（'E.retz Na.cha.lei Ma.yim，H5158A），na.chal
+    與申8:7 美地的「河」是同一個字。
+  surfaces:
+  - phrase: 有溪水之地
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 河、泉、源（na.chal、a.yin、te.hom）
+  existing_path: link_folder/原文/河、泉、源（na.chal、a.yin、te.hom）.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 申10:8-9 神將利未支派分別出來抬約櫃、侍立事奉、奉名祝福；第9節說利未人在弟兄中無分無業。
+  surfaces:
+  - phrase: 利未支派
+    verses:
+    - 8
+  - phrase: 利未人
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: 申10:8「耶和華將利未支派分別出來」；STEP 為 הִבְדִּיל（hiv.Dil，H914，ba.dal 簡要詞典義 to separate，Hiphil
+    完成式）。
+  surfaces:
+  - phrase: 分別出來
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 稱頌（ba.rakh）
+  suggested_type: 原文
+  evidence: 申10:8 利未人「奉他的名祝福」；STEP 為 וּלְבָרֵךְ（u./le./va.Rekh，H1288，ba.rakh 簡要詞典義
+    to bless，Piel 不定詞）；CT 原文字義「祝福」祝福，屈膝。
+  surfaces:
+  - phrase: 奉他的名祝福
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 稱頌（ba.rakh）
+  existing_path: link_folder/原文/稱頌（ba.rakh）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 申10:9「無分無業」與「耶和華是他的產業」；STEP 顯示「業」與「產業」同為 נַחֲלָה（na.cha.Lah，H5159），「分」則是
+    חֵלֶק（Che.lek，H2506A）；CT 原文字義亦註明產業與業同字。
+  surfaces:
+  - phrase: 無分無業
+    verses:
+    - 9
+  - phrase: 是他的產業
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 四十晝夜
+  suggested_type: 神學
+  evidence: 申10:10「我又像從前在山上住了四十晝夜」；CT 指出原文是「像第一次」，故指第二次，是申九章金牛犢事件的總結。
+  surfaces:
+  - phrase: 四十晝夜
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 四十晝夜
+  existing_path: link_folder/神學/四十晝夜.md
+- name: 摩西的代求
+  suggested_type: 神學
+  evidence: 申10:10「那次耶和華也應允我，不忍將你滅絕」；GT《串珠》說這是上述事件的總結——神答應摩西的代禱，以色列民沒有被滅絕。
+  surfaces:
+  - phrase: 耶和華也應允我
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 摩西的代求
+  existing_path: link_folder/神學/摩西的代求.md
+- name: 敗壞與滅絕同一字根（sha.chat）
+  suggested_type: 原文
+  evidence: 申10:10「不忍將你滅絕」；STEP 為 הַשְׁחִיתֶךָ（hash.chi.Te./kha，H7843，sha.chat，Hiphil
+    不定詞），與申9:12、26 同一字根；「不忍」則是 אָבָה（'a.Vah，H14，簡要詞典義 be willing）。
+  surfaces:
+  - phrase: 不忍將你滅絕
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 敗壞與滅絕同一字根（sha.chat）
+  existing_path: link_folder/原文/敗壞與滅絕同一字根（sha.chat）.md
+- name: 美地
+  suggested_type: 主題
+  evidence: 申10:11「使他們進去得我向他們列祖起誓應許所賜之地」，與申8、申9 反覆出現的得地主題同一條線。
+  surfaces:
+  - phrase: 所賜之地
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 美地
+  existing_path: link_folder/主題/美地.md
+- name: 彌6：8
+  suggested_type: 互文
+  evidence: 申10:12-13 摩西總括神的要求；GT《串珠》指出日後先知彌迦同樣指出神要求百姓為貧困人伸張公義、憐愛他們，對神則謙卑服從（彌6:8）；BH
+    在第12節也把這個問句接到彌6:8。
+  match_type: exact
+  existing_title: 彌6：8
+  existing_path: link_folder/互文/彌6：8.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 申10:12、20 兩次「敬畏耶和華─你的神」；STEP 為 לְיִרְאָה（Le./yir.'ah）與 תִּירָא（ti.Ra'），同為
+    H3372H。
+  surfaces:
+  - phrase: 敬畏耶和華
+    verses:
+    - 12
+    - 20
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 你要盡心盡性盡力愛耶和華（a.hav）
+  suggested_type: 原文
+  evidence: 申10:12「愛他，盡心盡性事奉他」；STEP 為 וּלְאַהֲבָה（u./le./'a.ha.Vah，H157G）加 בְּכָל־לְבָבְךָ
+    וּבְכָל־נַפְשֶׁךָ（le.va.ve./Kha，H3824；naf.She./kha，H5315G），本節只有心與性兩項。
+  surfaces:
+  - phrase: 盡心盡性
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 你要盡心盡性盡力愛耶和華（a.hav）
+  existing_path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: 申10:12、20 兩次「事奉他」；STEP 為 וְלַעֲבֹד（ve./la./'a.Vod）與 תַעֲבֹד（ta.'a.Vod），同為
+    H5647G（a.vad）。
+  surfaces:
+  - phrase: 事奉他
+    verses:
+    - 12
+    - 20
+  match_type: exact
+  existing_title: 事奉與作奴僕同一字根（a.vad）
+  existing_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+- name: 得福（ya.tav）
+  suggested_type: 原文
+  evidence: 申10:13「為要叫你得福」；STEP 為 לְטוֹב（le./Tov，H2896B，簡要詞典義 good），與申5:33 的 ve./Tov
+    同一組，而非申5:16、29 的 H3190。
+  surfaces:
+  - phrase: 得福
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 得福（ya.tav）
+  existing_path: link_folder/原文/得福（ya.tav）.md
+- name: 神的揀選
+  suggested_type: 神學
+  evidence: 申10:15「耶和華但喜悅你的列祖，愛他們，從萬民中揀選他們的後裔」；STEP 為 חָשַׁק（cha.Shak，H2836A，簡要詞典義
+    to desire）與 וַיִּבְחַר（va/i.yiv.Char，H977，ba.char）；CT 原文字義「喜悅」戀慕。
+  surfaces:
+  - phrase: 揀選
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 神的揀選
+  existing_path: link_folder/神學/神的揀選.md
+- name: 種子（ze.ra）
+  suggested_type: 原文
+  evidence: 申10:15「揀選他們的後裔」；STEP 為 בְּזַרְעָם（be./zar.'A/m，H2233H），morphology HR/Ncmsc/Sp3mp
+    是陽性單數附屬形，CT 亦註明後裔原文是單數詞「種子」。
+  surfaces:
+  - phrase: 後裔
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 種子（ze.ra）
+  existing_path: link_folder/原文/種子（ze.ra）.md
+- name: 未受割禮的心若謙卑（認罪悔改的條件）
+  suggested_type: 神學
+  evidence: 申10:16「你們要將心裡的污穢除掉」；STEP 為 וּמַלְתֶּם אֵת עָרְלַת לְבַבְכֶם（u./mal.Tem，H4135A
+    mul；'a.re.Lat，H6190H or.lah；le.vav./Khem，H3824），字面是為你們的心行割禮；CT 直譯作「為未受割禮的心行割禮」。
+  surfaces:
+  - phrase: 心裡的污穢除掉
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 未受割禮的心若謙卑（認罪悔改的條件）
+  existing_path: link_folder/神學/未受割禮的心若謙卑（認罪悔改的條件）.md
+- name: 硬著頸項的百姓
+  suggested_type: 神學
+  evidence: 申10:16「不可再硬著頸項」；STEP 為 וְעָרְפְּכֶם לֹא תַקְשׁוּ עוֹד（'A.re.pe./Khem，H6203
+    o.reph；tak.Shu，H7185 qa.shah，Hiphil），與申9:6、13 同一組詞。
+  surfaces:
+  - phrase: 硬著頸項
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 硬著頸項的百姓
+  existing_path: link_folder/神學/硬著頸項的百姓.md
+- name: 古代近東賄賂
+  suggested_type: 背景
+  evidence: 申10:17「也不受賄賂」；STEP 為 שֹׁחַד（Sho.chad，H7810，簡要詞典義 bribe）；CT 說這意指祂不受任何權勢和財富力量的影響。
+  surfaces:
+  - phrase: 賄賂
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 古代近東賄賂
+  existing_path: link_folder/背景/古代近東賄賂.md
+- name: 寄居的
+  suggested_type: 原文
+  evidence: 申10:18-19 三次出現；STEP 為 גֵּר（Ger，H1616，簡要詞典義 sojourner）；GT《聖經精讀本》說指離開本族本鄉而混居在希伯來人中的人，既無地產也無法律權利。
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 18
+    - 19
+  match_type: exact
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
+- name: 專靠（da.veq）
+  suggested_type: 原文
+  evidence: 申10:20「專靠他」；STEP 為 תִדְבָּק（tid.Bak，H1692，da.vaq 簡要詞典義 to cleave，Qal 未完成式），與申4:4
+    的形容詞形 H1695 同一字根；GT《串珠》原作「粘著他」。
+  surfaces:
+  - phrase: 專靠
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 專靠（da.veq）
+  existing_path: link_folder/原文/專靠（da.veq）.md
+- name: 雅各家七十人與七十五人
+  suggested_type: 解經爭議
+  evidence: 申10:22「你的列祖七十人下埃及」；STEP 為 בְּשִׁבְעִים נֶפֶשׁ（be./shiv.'Im Ne.fesh，H7657＋H5315J）；GT《啟導本》說「七十」表示完整。
+  surfaces:
+  - phrase: 七十人下埃及
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 雅各家七十人與七十五人
+  existing_path: link_folder/解經爭議/雅各家七十人與七十五人.md
+- name: 亞伯拉罕之約
+  suggested_type: 神學
+  evidence: 申10:22「現在耶和華─你的神使你如同天上的星那樣多」；GT《聖經精讀本》指這正應驗神給亞伯拉罕「我必叫你的子孫多起來，如同天上的星」的應許（創15:5；22:17）。
+  surfaces:
+  - phrase: 如同天上的星那樣多
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 亞伯拉罕之約
+  existing_path: link_folder/神學/亞伯拉罕之約.md
+C_new_formal:
+- name: 谷歌大與約巴他
+  suggested_type: 地點
+  evidence: 申10:7 兩個相鄰站名；CT 原文字義分別為「揮斬之地」與「喜悅」，並給出相距約三十八點五公里；BH 給 cutting／quarry 與
+    pleasantness；KC 另給谷歌大 spring with lots of water。
+  surfaces:
+  - phrase: 谷歌大
+    verses:
+    - 7
+  - phrase: 約巴他
+    verses:
+    - 7
+  target_path: link_folder/地點/谷歌大與約巴他.md
+- name: 亞倫死於摩西拉還是何珥山
+  suggested_type: 解經爭議
+  evidence: 申10:6 說亞倫死在摩西拉，民20:28 與民33:38 說死在何珥山；GT 引艾基斯《舊約聖經難題彙編》整篇處理此難題，主張摩西拉可能是地區名而何珥山位於其中。
+  surfaces:
+  - phrase: 就葬在那裡
+    verses:
+    - 6
+  target_path: link_folder/解經爭議/亞倫死於摩西拉還是何珥山.md
+  semantic_hint:
+  - title: 亞倫去世的日期
+    score: 0.653
+    type: 主題
+  - title: 何珥山
+    score: 0.642
+    type: 地點
+  - title: 摩西錄
+    score: 0.631
+    type: 地點
+- name: 申命記十章的非時序編排
+  suggested_type: 解經爭議
+  evidence: 申10:6-9 夾在第5節與第10節之間；GT《啟導本》稱這四節是插在5與10節中間的一個註釋，KC 說此處不照時序而是按事件的內在關聯排列，CT
+    指出本節先後次序與民數記剛好相反。
+  surfaces:
+  - phrase: 他們從那裡起行
+    verses:
+    - 7
+  target_path: link_folder/解經爭議/申命記十章的非時序編排.md
+  semantic_hint:
+  - title: 民數記第七章的時序與編排
+    score: 0.52
+    type: 背景
+  - title: 第11章的敘事次序
+    score: 0.518
+    type: 解經爭議
+  - title: 行軍次序
+    score: 0.466
+    type: 事件
+- name: 侍立事奉（a.mad、sha.rat）
+  suggested_type: 原文
+  evidence: 申10:8 利未人「侍立在耶和華面前事奉他」；STEP 為 לַעֲמֹד לִפְנֵי（la./'a.Mod，H5975G，a.mad）與
+    לְשָׁרְתוֹ（le./sha.re.T/o，H8334，sha.rat 簡要詞典義 to minister），與12、20節全民的「事奉」（a.vad）不是同一個字；第10節摩西在山上「住了」四十晝夜用的也是
+    a.mad。
+  surfaces:
+  - phrase: 侍立在耶和華面前事奉他
+    verses:
+    - 8
+  target_path: link_folder/原文/侍立事奉（a.mad、sha.rat）.md
+- name: 起來拔營起行（mas.sa）
+  suggested_type: 原文
+  evidence: 申10:11「你起來引導這百姓」；STEP 為 קוּם לֵךְ לְמַסַּע（kum lekh le./ma.Sa'，H6965B＋H1980G＋H4550，mas.sa
+    簡要詞典義 journey）；CT 原文直譯作「起來拔營起行」。
+  surfaces:
+  - phrase: 你起來引導這百姓
+    verses:
+    - 11
+  target_path: link_folder/原文/起來拔營起行（mas.sa）.md
+- name: 耶和華向你所要的是什麼呢
+  suggested_type: 主題
+  evidence: 申10:12-13 摩西以問句總括神的要求；CT 歸納為敬畏、遵行他的道、愛、事奉四件加上遵守誡命律例；GT《串珠》與 BH 都接到彌6:8。經文第12節的「神向你所要的是什麼呢」由條目
+    alias 直接命中，不另宣告 surface。
+  target_path: link_folder/主題/耶和華向你所要的是什麼呢.md
+  semantic_hint:
+  - title: 耶和華
+    score: 0.495
+    type: 神學
+  - title: 耶和華聖名的啟示
+    score: 0.432
+    type: 神學
+  - title: 耶和華神的名字
+    score: 0.431
+    type: 神學
+- name: 他的道（de.rekh）
+  suggested_type: 原文
+  evidence: 申10:12「遵行他的道」；STEP 為 בְּכָל־דְּרָכָיו（be./khol de.ra.Kha/v，H1870G，morphology
+    HNcmpc/Sp3ms 為陽性複數附屬形），CT 亦指出這個字在原文裡是眾數。
+  surfaces:
+  - phrase: 遵行他的道
+    verses:
+    - 12
+  target_path: link_folder/原文/他的道（de.rekh）.md
+- name: 天和天上的天
+  suggested_type: 原文
+  evidence: 申10:14「天和天上的天，地和地上所有的，都屬耶和華」；STEP 為 הַשָּׁמַיִם וּשְׁמֵי הַשָּׁמָיִם（ha./sha.Ma.yim
+    u./she.Mei ha./sha.Ma.yim，H8064 連用三次）；GT《聖經精讀本》說這是希伯來文獨特的修辭手法，用來表達天的廣大無邊與至高。
+  surfaces:
+  - phrase: 天和天上的天
+    verses:
+    - 14
+  target_path: link_folder/原文/天和天上的天.md
+- name: 萬神之神，萬主之主
+  suggested_type: 神學
+  evidence: 申10:17「他是萬神之神，萬主之主，至大的神，大有能力，大而可畏」；STEP 為 אֱלֹהֵי הָאֱלֹהִים וַאֲדֹנֵי
+    הָאֲדֹנִים（'e.lo.Hei ha./'E.lo.Him，H430；va./'a.do.Nei ha./'a.do.Nim，H113）；CT 與
+    GT《啟導本》都強調這不意味在祂之下另有眾神。經文第17節「萬神之神，萬主之主」與條目全名逐字相同，由條目名直接命中。
+  target_path: link_folder/神學/萬神之神，萬主之主.md
+  semantic_hint:
+  - title: 天地的主
+    score: 0.423
+    type: 神學
+- name: 敬畏與可畏同一字根（ya.re）
+  suggested_type: 原文
+  evidence: 申10:17「大而可畏」與21節「那大而可畏的事」；STEP 為 וְהַנּוֹרָא（ve./ha./no.Ra'）與 הַנּוֹרָאֹת（ha./no.ra.'Ot），與12、20節的「敬畏」同為
+    H3372H（ya.re），一章之內四次。
+  surfaces:
+  - phrase: 大而可畏
+    verses:
+    - 17
+    - 21
+  target_path: link_folder/原文/敬畏與可畏同一字根（ya.re）.md
+  semantic_hint:
+  - title: 敬畏神
+    score: 0.428
+    type: 神學
+  - title: 敬畏耶和華的話
+    score: 0.406
+    type: 神學
+- name: 不以貌取人
+  suggested_type: 原文
+  evidence: 申10:17「不以貌取人」；STEP 為 לֹא־יִשָּׂא פָנִים（lo'-yi.Sa' fa.Nim，H5375Q na.sa＋H6440N
+    pa.neh），字面是不舉起臉面；CT 原文字義「取人」舉起，承擔；GT《串珠》作不偏私（參1:17）。
+  surfaces:
+  - phrase: 不以貌取人
+    verses:
+    - 17
+  target_path: link_folder/原文/不以貌取人.md
+- name: 孤兒寡婦
+  suggested_type: 主題
+  evidence: 申10:18「他為孤兒寡婦伸冤」；STEP 為 יָתוֹם וְאַלְמָנָה（ya.Tom，H3490；'al.ma.Nah，H490）；GT《聖經精讀本》說這是社會經濟上的弱者階層，神親自宣告自己為孤兒的父、寡婦的伸冤者（詩68:5）。
+  surfaces:
+  - phrase: 孤兒寡婦
+    verses:
+    - 18
+  target_path: link_folder/主題/孤兒寡婦.md
+  semantic_hint:
+  - title: 古代近東社會弱勢群體
+    score: 0.401
+    type: 背景
+D_new_candidate: []
+E_skip: []
