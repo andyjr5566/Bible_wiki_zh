@@ -78,6 +78,40 @@ def _file_sha256(path):
         return "error"
 
 
+def candidate_identity_sha256(path):
+    """候選檔的「身分面」指紋：只取每個候選的 name 與 type。
+
+    報告裁決的是「這個候選該連既有條目，還是新建」。evidence 與 surfaces 會被
+    當作查詢文字送進 embedding／rerank，所以裁決尚未被消化前仍以整檔綁定；一旦
+    M3／M6 payload 寫出來、裁決已經落進 payload，報告就變成當時的紀錄，此時只有
+    「候選集本身增刪」才是真的需要重新裁決的變動。修掉一個被長別名蓋住的死
+    surface（那必然發生在 payload 寫完之後的 run 階段）不該逼出一次整套 rerank
+    重跑——而且依本檔既有的註記，render 之後重跑本來就會讓報告的診斷值歸零。
+
+    檔案不存在回 'missing'，讀不到或格式不符回 'error'（呼叫端據此退回整檔比對）。
+    """
+    p = Path(path)
+    if not p.is_file():
+        return "missing"
+    try:
+        data = yaml.safe_load(p.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError):
+        return "error"
+    if not isinstance(data, dict):
+        return "error"
+    candidates = data.get("candidates")
+    if not isinstance(candidates, list):
+        return "error"
+    marks = []
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            return "error"
+        name = candidate.get("name")
+        stype = candidate.get("suggested_type") or candidate.get("type")
+        marks.append(f"{name}|{stype}")
+    return hashlib.sha256("\n".join(sorted(marks)).encode("utf-8")).hexdigest()
+
+
 def _safe_print(msg):
     try:
         print(msg)
@@ -764,6 +798,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
 
     # 計算所有指紋與雜湊
     candidate_sha256 = _file_sha256(candidates_path)
+    candidate_identity = candidate_identity_sha256(candidates_path)
     link_index_sha256 = _file_sha256(root / "util" / "output" / "link_index.json")
     homonyms_sha256 = _file_sha256(root / "_config" / "link_homonyms.yaml")
     calibration_sha256 = _file_sha256(root / CALIBRATION_FILE_REL)
@@ -780,6 +815,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         f"book: {canonical}\n"
         f"chapter: {chapter}\n"
         f"candidate_sha256: {candidate_sha256}\n"
+        f"candidate_identity_sha256: {candidate_identity}\n"
         f"embedding_model: {embedding_model}\n"
         f"embedding_index_fingerprint: {embedding_index_fingerprint}\n"
         f"link_index_sha256: {link_index_sha256}\n"

@@ -21,6 +21,7 @@ try:
     from .console import utf8_stdio
     from .semantic_lookup import (
         _file_sha256,
+        candidate_identity_sha256,
         extract_report_metadata,
         RERANK_POLICY_VERSION,
         CALIBRATION_FILE_REL,
@@ -36,6 +37,7 @@ except ImportError:
     from console import utf8_stdio
     from semantic_lookup import (
         _file_sha256,
+        candidate_identity_sha256,
         extract_report_metadata,
         RERANK_POLICY_VERSION,
         CALIBRATION_FILE_REL,
@@ -249,9 +251,47 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if str(meta.get("chapter")) != str(chapter):
         return False, f"元資料章節不符（報告 {meta.get('chapter')} vs 目前 {chapter}）", ""
 
+    # 裁決是否已被消化（M3／M6 payload 已寫齊）——下面兩處綁定的鬆緊都取決於它。
+    #
+    # 判準要對著 link_plan 宣告的 C 類數量，不能只問「有沒有任何一個 entry」：
+    # - 全章沒有新建條目（C=0）時 entry_content 永遠是空的，用 any() 會讓這一段
+    #   判斷永遠是 False，放寬形同不存在；
+    # - 反過來，5 個 C 只寫了 1 個就算「已消化」，剩下 4 個候選的 evidence 被改
+    #   動時會被誤放行，而那幾筆裁決根本還沒做。
+    # 判準與本檔 entries_expected 那一段一致。
+    plan_for_review = _load_yaml(tmp / "link_plan.yaml")
+    entry_dir = tmp / "entry_content"
+    written_entries = len(list(entry_dir.glob("*.yaml"))) if entry_dir.is_dir() else 0
+    if isinstance(plan_for_review, dict):
+        expected_entries = _plan_unique_name_count(plan_for_review, "C_new_formal")
+        adjudication_consumed = (
+            (tmp / "chapter_content.yaml").is_file()
+            and written_entries >= expected_entries
+        )
+    else:
+        # 沒有 plan 就數不出應有的 C 類數量，退回舊的啟發式：payload 在就算已消化。
+        # 正式流程不會走到這裡（payload 必然產在 resolve 之後），保留只是不改動
+        # 既有契約。
+        adjudication_consumed = (
+            (tmp / "chapter_content.yaml").is_file() and written_entries > 0
+        )
+
     cur_cand_sha = _file_sha256(candidates_path)
     if meta.get("candidate_sha256") != cur_cand_sha:
-        return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py", ""
+        # 裁決已消化之後，只有「候選集本身增刪」才需要重新裁決。evidence／surfaces
+        # 是送進 embedding／rerank 的查詢文字，裁決前照舊整檔綁定；但修掉一個被長
+        # 別名蓋住的死 surface 必然發生在 payload 寫完之後的 run 階段，那時逼出一
+        # 次整套 rerank 重跑既沒有判斷可做，報告本身也已因條目入庫而失去診斷值。
+        report_identity = meta.get("candidate_identity_sha256")
+        cur_identity = candidate_identity_sha256(candidates_path)
+        relaxed = (
+            adjudication_consumed
+            and report_identity                      # 舊報告沒這個欄位 → 退回整檔比對
+            and cur_identity not in ("missing", "error")
+            and report_identity == cur_identity
+        )
+        if not relaxed:
+            return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py", ""
 
     # 索引類因子只在「裁決尚未被消化」時才綁定。
     #
@@ -263,10 +303,6 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     # 更糟的是 render 之後重跑會讓本章 C 類候選對到自己而變成高可信，報告的診斷值歸零
     # （全庫 127 份報告回溯：3929 個候選只有 14 個真的送過重排）。所以這裡不是放寬，
     # 是把索引綁定放回它真正有意義的時點：payload 寫出來以前。
-    adjudication_consumed = (
-        (tmp / "chapter_content.yaml").is_file()
-        and any((tmp / "entry_content").glob("*.yaml"))
-    )
     if not adjudication_consumed:
         cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
         if cur_link_sha == "missing" or meta.get("link_index_sha256") != cur_link_sha:

@@ -606,6 +606,166 @@ class CheckChapterFilesTests(unittest.TestCase):
             self.assertIn("候選檔已變更", reason)
 
 
+class CandidateIdentityBindingTests(unittest.TestCase):
+    """裁決被消化之後，候選綁定只認「候選集增刪」，不再認查詢文字的微調。
+
+    死 surface 的修正必然發生在 payload 寫完之後的 run 階段；舊版整檔綁定會在
+    那時逼出一次整套 rerank 重跑，而依本檔既有註記，那時重跑的報告診斷值已歸零。
+    """
+
+    # 只借 fixture，不繼承母類的測試（繼承會讓那些測試各跑兩次）
+    _root = CheckChapterFilesTests._root
+    _write_valid_sources = CheckChapterFilesTests._write_valid_sources
+    _write_synced_embedding_index = CheckChapterFilesTests._write_synced_embedding_index
+    _write_fresh_similarity_report = CheckChapterFilesTests._write_fresh_similarity_report
+
+    CANDIDATES = {
+        "book": "創世記",
+        "chapter": 1,
+        "candidates": [
+            {"name": "創造", "type": "主題", "evidence": "第1節",
+             "surfaces": [{"phrase": "創造", "verses": [1]}]},
+        ],
+    }
+
+    def _stage(self, tmp, *, consumed):
+        root = self._root(tmp)
+        tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+        _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+        self._write_valid_sources(root, tmp_dir)
+        _write_yaml(tmp_dir / "link_candidates.yaml", self.CANDIDATES)
+        _write(root / "util" / "output" / "link_index.json", "{}")
+        _write(root / "_config" / "link_homonyms.yaml", "{}")
+        self._write_synced_embedding_index(root)
+        self._write_fresh_similarity_report(tmp_dir, root, overrides={
+            "candidate_identity_sha256": ccf.candidate_identity_sha256(
+                tmp_dir / "link_candidates.yaml"
+            ),
+        })
+        _write_yaml(tmp_dir / "link_plan.yaml", {
+            "C_new_formal": [{"name": "創造", "suggested_type": "主題"}],
+            "B_needs_update": [],
+        })
+        if consumed:
+            _write(tmp_dir / "chapter_content.yaml", "content")
+            _write_yaml(tmp_dir / "entry_content" / "創造.yaml", {"name": "創造"})
+        return root, tmp_dir
+
+    def _edit_surface(self, tmp_dir):
+        data = yaml.safe_load((tmp_dir / "link_candidates.yaml").read_text(encoding="utf-8"))
+        data["candidates"][0]["surfaces"] = []
+        _write_yaml(tmp_dir / "link_candidates.yaml", data)
+
+    def test_surface_edit_before_adjudication_still_invalidates(self):
+        # 裁決還沒被消化：surfaces 是送進 embedding／rerank 的查詢文字，照舊綁定。
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=False)
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+            self.assertIn("候選檔已變更", reason)
+
+    def test_surface_edit_after_adjudication_is_allowed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=True)
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertTrue(fresh, reason)
+
+    def test_adding_a_candidate_after_adjudication_still_invalidates(self):
+        # 候選集本身增刪＝真的有新裁決要做，仍然必須擋下來。
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=True)
+            data = yaml.safe_load((tmp_dir / "link_candidates.yaml").read_text(encoding="utf-8"))
+            data["candidates"].append({"name": "諸水", "type": "主題"})
+            _write_yaml(tmp_dir / "link_candidates.yaml", data)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+            self.assertIn("候選檔已變更", reason)
+
+    def test_changing_a_candidate_type_after_adjudication_still_invalidates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=True)
+            data = yaml.safe_load((tmp_dir / "link_candidates.yaml").read_text(encoding="utf-8"))
+            data["candidates"][0]["type"] = "原文"
+            _write_yaml(tmp_dir / "link_candidates.yaml", data)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+
+    def test_report_without_identity_hash_stays_strict(self):
+        # 舊報告沒有這個欄位 → 退回整檔比對，不得因為新規則而放行。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+            self._write_valid_sources(root, tmp_dir)
+            _write_yaml(tmp_dir / "link_candidates.yaml", self.CANDIDATES)
+            _write(root / "util" / "output" / "link_index.json", "{}")
+            _write(root / "_config" / "link_homonyms.yaml", "{}")
+            self._write_synced_embedding_index(root)
+            self._write_fresh_similarity_report(tmp_dir, root)  # 不含 identity 欄位
+            _write(tmp_dir / "chapter_content.yaml", "content")
+            _write_yaml(tmp_dir / "entry_content" / "創造.yaml", {"name": "創造"})
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+            self.assertIn("候選檔已變更", reason)
+
+    def test_zero_new_entry_chapter_counts_as_consumed(self):
+        # 全章沒有新建條目時 entry_content 永遠是空的。舊判準用 any()，這種章節
+        # 的「裁決已消化」永遠不成立，放寬形同不存在（連既有的索引放寬也一起失效）。
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=False)
+            _write_yaml(tmp_dir / "link_plan.yaml", {
+                "C_new_formal": [], "B_needs_update": [{"name": "創造"}],
+            })
+            _write(tmp_dir / "chapter_content.yaml", "content")
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertTrue(fresh, reason)
+
+    def test_partially_written_entries_are_not_consumed(self):
+        # 5 個 C 只寫了 1 個就放行，會讓其餘 4 筆尚未裁決的候選逃過重跑檢查。
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=True)
+            _write_yaml(tmp_dir / "link_plan.yaml", {
+                "C_new_formal": [
+                    {"name": "創造", "suggested_type": "主題"},
+                    {"name": "諸水", "suggested_type": "主題"},
+                ],
+                "B_needs_update": [],
+            })
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh, "C 類尚未寫齊時不得放行")
+            self.assertIn("候選檔已變更", reason)
+
+    def test_missing_plan_falls_back_to_the_old_heuristic(self):
+        # 數不出應有的 C 類數量時退回「payload 在就算已消化」。正式流程不會產生
+        # 這種狀態（payload 必然在 resolve 之後），這裡只確認沒有改掉既有契約。
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=True)
+            (tmp_dir / "link_plan.yaml").unlink()
+            self._edit_surface(tmp_dir)
+            fresh, reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertTrue(fresh, reason)
+
+    def test_missing_plan_without_payloads_is_not_consumed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, tmp_dir = self._stage(tmp, consumed=False)
+            (tmp_dir / "link_plan.yaml").unlink()
+            self._edit_surface(tmp_dir)
+            fresh, _reason, _ = ccf.check_candidate_similarity_freshness(BOOK, CHAPTER, root=root)
+            self.assertFalse(fresh)
+
+    def test_identity_hash_reports_error_for_unparsable_candidates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "link_candidates.yaml"
+            _write(path, "candidates")          # 不是 mapping
+            self.assertEqual("error", ccf.candidate_identity_sha256(path))
+            self.assertEqual("missing", ccf.candidate_identity_sha256(Path(tmp) / "nope.yaml"))
+
+
 class VerseLinkCoverageTests(unittest.TestCase):
     """M5 重生失效偵測：plan 宣告的詞出現在經文、verse_links 卻沒連上。
 
