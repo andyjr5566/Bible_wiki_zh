@@ -172,10 +172,11 @@ class OrchestratorTests(unittest.TestCase):
     def _candidates_path(self, root):
         return root / "02 出埃及記" / ".tmp" / "第26章" / "link_candidates.yaml"
 
-    def test_editing_candidates_invalidates_downstream(self):
+    def test_adding_candidate_invalidates_hand_written_downstream(self):
         # 坑：改了 link_candidates.yaml 後重跑，斷點續跑卻沿用照舊 candidates 生成的
         # link_plan.yaml 及其下游（verse_links／chapter_content／第x章.md），靜默套用
-        # 過期結果。這裡驗證：改動 candidates → 下游自動作廢並重生（模型被重新呼叫）。
+        # 過期結果。新增候選會改變 C 名單與可連白名單 → entry_content 與
+        # chapter_content 都必須作廢重生（模型被重新呼叫）。
         with tempfile.TemporaryDirectory() as tmp:
             root = self._make_vault(tmp)
             run_chapter.run_chapter(
@@ -184,10 +185,9 @@ class OrchestratorTests(unittest.TestCase):
             plan_path = root / "02 出埃及記" / ".tmp" / "第26章" / "link_plan.yaml"
             self.assertTrue(plan_path.exists())
 
-            # 改動 candidates 的內容（宣告 surfaces）——指紋改變
             cand = self._candidates_path(root)
             data = yaml.safe_load(cand.read_text(encoding="utf-8"))
-            data["candidates"][0]["surfaces"] = ["施恩座"]
+            data["candidates"].append({"name": "幔子", "type": "原文"})
             cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
 
             calls = []
@@ -201,8 +201,80 @@ class OrchestratorTests(unittest.TestCase):
             )
             self.assertEqual([], result["errors"])
             # 下游被作廢 → 模型被重新呼叫（若沒作廢，resume 會是 0 次呼叫）
-            self.assertTrue(calls, "改了 candidates 後應重新呼叫模型（下游已作廢重生）")
+            self.assertTrue(calls, "新增候選後應重新呼叫模型（下游已作廢重生）")
             self.assertTrue((root / "02 出埃及記" / "第26章.md").exists())
+
+    def test_editing_only_surfaces_spares_hand_written_payloads(self):
+        # surfaces 只餵 verse_links。舊版用整檔雜湊，改一個 surface 就連帶砍掉
+        # 手寫的 entry_content 與 chapter_content，逼出「備份→--confirm-stale→
+        # 還原→重算指紋」那一整套。細粒度作廢之後：verse_links 重生，手寫產物留著。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+            entry_dir = tmp_dir / "entry_content"
+            chapter_content = tmp_dir / "chapter_content.yaml"
+            verse_links = tmp_dir / "verse_links.yaml"
+            entry_before = sorted(p.read_bytes() for p in entry_dir.glob("*.yaml"))
+            chapter_before = chapter_content.read_bytes()
+
+            cand = self._candidates_path(root)
+            data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+            data["candidates"][0]["surfaces"] = ["施恩座"]
+            cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+            def exploding_runner(prompt):
+                raise AssertionError(
+                    "只改 surfaces 不該作廢手寫 payload、不該重新呼叫模型"
+                )
+
+            result = run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=exploding_runner, index={}, homonyms={},
+            )
+            self.assertEqual([], result["errors"])
+            self.assertEqual(
+                entry_before, sorted(p.read_bytes() for p in entry_dir.glob("*.yaml")),
+                "entry_content 不該被 surfaces 編輯作廢",
+            )
+            self.assertEqual(
+                chapter_before, chapter_content.read_bytes(),
+                "chapter_content 不該被 surfaces 編輯作廢",
+            )
+            self.assertTrue(verse_links.exists())
+
+    def test_surfaces_edit_regenerates_verse_links(self):
+        # 反面：verse_links 確實吃 surfaces，必須重生——否則就變成「該連的沒連」
+        # 那一型靜默失效。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            verse_links = root / "02 出埃及記" / ".tmp" / "第26章" / "verse_links.yaml"
+            verse_links.write_text("# 佔位，應被重生\n", encoding="utf-8")
+
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self.assertEqual(
+                "# 佔位，應被重生\n", verse_links.read_text(encoding="utf-8"),
+                "沒有上游改動時 verse_links 應照舊 resume（此為對照組）",
+            )
+
+            cand = self._candidates_path(root)
+            data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+            data["candidates"][0]["surfaces"] = ["施恩座"]
+            cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self.assertNotEqual(
+                "# 佔位，應被重生\n", verse_links.read_text(encoding="utf-8"),
+                "改了 surfaces 後 verse_links 必須重生",
+            )
 
     def test_untouched_candidates_still_resume(self):
         # 反向護欄：沒改 candidates 時，作廢機制不得誤刪，resume 必須照舊生效

@@ -229,8 +229,14 @@ python util/build_appendix_links.py
    改過 candidates／plan／entry_content 之後重跑會靜默沿用上一輪的 `verse_links.yaml`
    （民20 實測：整章 30 個候選只渲染出 4 個內文連結，其餘六道閘門全 PASS，因為它們驗的是
    「連出去的對不對」，沒有一道驗「該連的有沒有連」）。要讓某一步重生就**直接刪那一步的
-   輸出檔**；非改 `link_plan.yaml` 不可時，改完要自己把新的 sha256 寫回 `pipeline_state.json`，
-   否則下次 `run` 會整個 `entry_content` 目錄砍掉重來、手寫 payload 全沒。
+   輸出檔**。
+   作廢比對的是「下游真正讀到的那一面」而不是整檔雜湊：`entry_content` 只跟著
+   plan 的 C 類名單走，`chapter_content.yaml` 只跟著可連白名單與條目名／aliases 走，
+   `verse_links.yaml` 才吃 plan 全檔（surfaces 在裡面）。所以**只改 `surfaces`、或在
+   審查回合只改條目的定義／主題發展正文，都不會作廢手寫 payload**，不必再做
+   「備份 → `--confirm-stale` → 還原 → 手改指紋」那一套。反過來，新增／刪除候選或
+   改動條目 aliases 仍然會作廢下游，這是對的。`prompts` 跑完會把 candidates 與
+   plan 的基線一起前推，`run` 不會再因為上游看起來是髒的而永遠拒絕執行。
    一旦某檔缺失，程式會停在第一個缺檔處並印出「該回到哪個動作續做」的具體指令
    （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter_manual.py prompts`；缺 `link_updates.yaml`
    → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面

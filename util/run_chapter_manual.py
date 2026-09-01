@@ -64,10 +64,15 @@ def _utf8_console():
 def simulate_invalidation(ctx):
     """回傳 (stale_removed, after_entry_removed)：實跑時將被刪除的既存節點。
 
-    stale_removed 對應 _invalidate_stale（上游指紋變 → 連鎖作廢下游）；
-    after_entry_removed 對應 _invalidate_after_entry（entry_content 與基線不同
-    → verse_links／chapter_content 作廢）。人工路徑 entry_content_step 是
-    no-op（payload 都已存在），故「現在的指紋」就是屆時比對用的指紋。
+    對應實跑的三輪作廢：_invalidate_stale（candidates → link_plan）、
+    _invalidate_after_plan（plan 的 C 名單／可連白名單 → entry_content、
+    chapter_content；plan 整檔 → verse_links）、_invalidate_after_entry
+    （條目名稱＋aliases → chapter_content、verse_links）。人工路徑
+    entry_content_step 是 no-op（payload 都已存在），故「現在的指紋」就是屆時
+    比對用的指紋。
+
+    改 surfaces 之類只影響 verse_links 的編輯不會再宣告手寫 payload 被作廢；但
+    只要預測不出屆時的 plan，一律退回舊的保守宣告，寧可多警告也不靜默毀工。
     """
     prev = rc._load_pipeline_state(ctx)
     dirty, stale_removed = set(), []
@@ -84,13 +89,72 @@ def simulate_invalidation(ctx):
             dirty.add(out_key)
             if rc._node_path(ctx, out_key).exists():
                 stale_removed.append(out_key)
+
+    # plan 以下的三條邊由 _invalidate_after_plan 在 plan 重生之後才比對，所以這裡
+    # 也必須拿「屆時的 plan」來預測。plan 會重生時就在記憶體裡重跑一次 resolve
+    # （不寫檔、不做語義標註），算不出來就退回保守宣告，寧可多警告。
+    plan = _plan_after_run(ctx, regenerate="link_plan.yaml" in dirty)
+    for out_key, key, kind in (
+        ("entry_content", rc._PLAN_ENTRIES_KEY, "entries"),
+        ("chapter_content.yaml", rc._PLAN_WHITELIST_KEY, "whitelist"),
+    ):
+        if out_key in dirty or not rc._node_path(ctx, out_key).exists():
+            continue
+        current = rc.plan_projection(plan, kind) if plan is not None else None
+        if current is None:               # 投影不可用 → 與實跑一致，退回整檔比對
+            key = "link_plan.yaml"
+            current = rc._node_fingerprint(rc._node_path(ctx, "link_plan.yaml"))
+            if "link_plan.yaml" in dirty:
+                # plan 會重生但預測不出新內容 → 保守宣告會被作廢
+                dirty.add(out_key)
+                stale_removed.append(out_key)
+                continue
+        if key not in prev or current is None:
+            continue
+        if current != prev[key]:
+            dirty.add(out_key)
+            stale_removed.append(out_key)
+    if "verse_links.yaml" not in dirty and rc._node_path(ctx, "verse_links.yaml").exists():
+        if "link_plan.yaml" in dirty or (
+            "link_plan.yaml" in prev
+            and rc._node_fingerprint(rc._node_path(ctx, "link_plan.yaml")) != prev["link_plan.yaml"]
+        ):
+            dirty.add("verse_links.yaml")
+            stale_removed.append("verse_links.yaml")
+
     after_entry_removed = []
-    if "entry_content" in prev and "entry_content" not in dirty:
-        if rc._node_fingerprint(rc._node_path(ctx, "entry_content")) != prev["entry_content"]:
-            for key in ("verse_links.yaml", "chapter_content.yaml"):
-                if key not in dirty and rc._node_path(ctx, key).exists():
-                    after_entry_removed.append(key)
+    entry_dir = rc._node_path(ctx, "entry_content")
+    identity = rc._entry_projection(entry_dir)
+    for key_out in ("chapter_content.yaml", "verse_links.yaml"):
+        if key_out in dirty or not rc._node_path(ctx, key_out).exists():
+            continue
+        if identity is None or rc._ENTRY_IDENTITY_KEY not in prev:
+            continue                       # 解析失敗或無基線 → 不預測
+        if identity != prev[rc._ENTRY_IDENTITY_KEY]:
+            after_entry_removed.append(key_out)
     return stale_removed, after_entry_removed
+
+
+def _plan_after_run(ctx, regenerate):
+    """實跑時 entry_content_step 會看到的 link_plan；算不出來回 None。"""
+    if not regenerate:
+        path = rc._node_path(ctx, "link_plan.yaml")
+        if not path.exists():
+            return None
+        try:
+            return rc._read_yaml(path)
+        except (yaml.YAMLError, OSError):
+            return None
+    try:
+        index = rc.resolver.load_index() if ctx.index is None else ctx.index
+        homonyms = rc.resolver.load_homonyms() if ctx.homonyms is None else ctx.homonyms
+        candidates = rc.resolver.load_candidates(ctx.book, ctx.chapter, root=ctx.root)
+        plan = rc.resolver.resolve(
+            candidates, index, ctx.book, ctx.chapter, root=ctx.root, homonyms=homonyms
+        )
+        return rc.resolver.build_plan_document(plan, ctx.book, ctx.chapter)
+    except Exception:  # noqa: BLE001 — 預測失敗一律退回保守宣告
+        return None
 
 
 def _pending_entries(ctx, plan):
@@ -250,6 +314,12 @@ def cmd_prompts(args):
         )
     rc._invalidate_stale(ctx)
     plan = rc.resolve_step(ctx)  # runner 尚未注入 → 語義附註照常嘗試（端點不通自動略過）
+    # prompts 已經把當前的 candidates 消化成這份 plan，基線必須跟著前進。
+    # 少了這一步，改過 candidates 之後 run 會永遠認為上游是髒的而拒絕執行，
+    # 而 prompts 又不會清掉那個狀態——兩個指令互踢，只能手改 pipeline_state.json。
+    # 只回寫上游兩個節點：手寫的 entry_content／chapter_content 基線仍由 run 收尾
+    # 時決定，否則「先寫條目、後寫本章整理」的正常順序會被誤判成條目晚改。
+    rc.save_pipeline_nodes(ctx, ("link_candidates.yaml", "link_candidates.md", "link_plan.yaml"))
 
     cap_entry = PromptCapture(manual_dir, "entry_batch", ctx=ctx)
     ctx.runner = cap_entry
@@ -512,11 +582,7 @@ def cmd_run(args):
     if after_removed and args.keep_chapter:
         # 條目定稿在後、本章整理寫於其後——更新基線宣告 chapter_content 已是新的；
         # verse_links 仍要重生（條目 aliases 可能已變，surface 詞彙表跟著變）
-        state = rc._load_pipeline_state(ctx)
-        state["entry_content"] = rc._node_fingerprint(rc._node_path(ctx, "entry_content"))
-        ctx.path(rc._PIPELINE_STATE_FILE).write_text(
-            json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
+        rc.save_pipeline_nodes(ctx, ("entry_content",))
         verse_links = ctx.path("verse_links.yaml")
         if verse_links.exists():
             verse_links.unlink()

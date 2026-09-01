@@ -588,6 +588,72 @@ class MCPUpdateTokenTests(unittest.TestCase):
             self.assertFalse(result["success"])
             self.assertIn("preview_token", result["error"])
 
+    def _stage_preview_vault(self, root):
+        entry = root / "link_folder" / "主題" / "測試.md"
+        entry.parent.mkdir(parents=True)
+        entry.write_text("# 測試\n\n## 按書卷累積\n\n## 主題發展\n", encoding="utf-8")
+        tmp = root / "01 創世記" / ".tmp" / "第1章"
+        tmp.mkdir(parents=True)
+        (tmp / "link_updates.yaml").write_text(
+            "book: 創世記\nchapter: 1\nupdates:\n"
+            "  - title: 測試\n"
+            "    path: link_folder/主題/測試.md\n"
+            "    summary: 本章重點\n"
+            "    relation: 本章關聯\n",
+            encoding="utf-8",
+        )
+        return entry
+
+    def test_summary_mode_keeps_the_token_but_drops_the_diffs(self):
+        # 套用後的「再 preview 必須 0 變更」只需要一個整數，卻會回傳全部條目的
+        # 完整 diff——每章都白付一次。摘要模式不得動到 token，否則 apply 會失效。
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._stage_preview_vault(root)
+            with patch.object(server, "ROOT_DIR", root), \
+                    patch.object(server.link_updates, "ROOT", root):
+                full = server.preview_chapter_link_updates("創世記", 1, detail="full")
+                summary = server.preview_chapter_link_updates("創世記", 1, detail="summary")
+            self.assertTrue(full["success"] and summary["success"])
+            self.assertEqual(full["preview_token"], summary["preview_token"])
+            self.assertEqual(full["change_count"], summary["change_count"])
+            self.assertEqual("full", full["detail"])
+            self.assertEqual("summary", summary["detail"])
+            self.assertEqual(
+                [e["title"] for e in full["entries"]],
+                [e["title"] for e in summary["entries"]],
+            )
+            self.assertNotIn(
+                "diff", json.dumps(summary["entries"], ensure_ascii=False),
+                "摘要模式不可帶任何 diff 欄位",
+            )
+
+    def test_auto_mode_summarises_only_once_nothing_will_change(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._stage_preview_vault(root)
+            with patch.object(server, "ROOT_DIR", root), \
+                    patch.object(server.link_updates, "ROOT", root):
+                before = server.preview_chapter_link_updates("創世記", 1)
+                self.assertEqual("full", before["detail"], "有變更時必須給 diff 供審查")
+                applied = server.apply_chapter_link_updates(
+                    "創世記", 1, before["preview_token"]
+                )
+                self.assertTrue(applied["success"])
+                after = server.preview_chapter_link_updates("創世記", 1)
+            self.assertEqual(0, after["change_count"])
+            self.assertEqual("summary", after["detail"])
+
+    def test_invalid_detail_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._stage_preview_vault(root)
+            with patch.object(server, "ROOT_DIR", root), \
+                    patch.object(server.link_updates, "ROOT", root):
+                result = server.preview_chapter_link_updates("創世記", 1, detail="brief")
+            self.assertFalse(result["success"])
+            self.assertIn("detail", result["error"])
+
 
 class LintChapterContentTests(unittest.TestCase):
     """Each rule below was measured corpus-wide at 0 false positives before landing."""

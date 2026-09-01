@@ -205,5 +205,112 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             self.assertIn("禁止 rerank_status: disabled", str(ctx.exception))
 
 
+class PipelineBaselineTests(unittest.TestCase):
+    """細粒度作廢的基線回寫：這些漏洞都會靜默毀掉手寫 payload。"""
+
+    def _ctx(self, tmp):
+        root = Path(tmp)
+        (root / "01 創世記" / ".tmp" / "第1章").mkdir(parents=True, exist_ok=True)
+        return rcm.rc.ChapterContext("創世記", 1, root=root)
+
+    def test_save_pipeline_nodes_writes_projection_keys_together(self):
+        # 只回寫整檔指紋、不回寫投影指紋，會留下「半新半舊」的基線：
+        # --keep-chapter 就是這樣把使用者明確要保留的 chapter_content 刪掉的。
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp)
+            entry_dir = ctx.path("entry_content")
+            _write_yaml(entry_dir / "創造.yaml", {"name": "創造", "aliases": ["起初"]})
+
+            rcm.rc.save_pipeline_nodes(ctx, ("entry_content",))
+            state = rcm.rc._load_pipeline_state(ctx)
+            self.assertIn("entry_content", state)
+            self.assertIn(rcm.rc._ENTRY_IDENTITY_KEY, state)
+            self.assertEqual(
+                state[rcm.rc._ENTRY_IDENTITY_KEY],
+                rcm.rc._entry_projection(entry_dir),
+                "整檔指紋與投影指紋必須同一次寫入，不可只更新其中一個",
+            )
+
+    def test_save_pipeline_nodes_leaves_other_keys_untouched(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp)
+            _write(ctx.path("link_plan.yaml"), "C_new_formal: []\n")
+            rcm.rc._write_pipeline_state(ctx, {"chapter_content.yaml": "keep-me"})
+            rcm.rc.save_pipeline_nodes(ctx, ("link_plan.yaml",))
+            state = rcm.rc._load_pipeline_state(ctx)
+            self.assertEqual("keep-me", state["chapter_content.yaml"])
+            self.assertIn("link_plan.yaml", state)
+
+    def test_entry_projection_distinguishes_empty_from_unreadable(self):
+        # 條目被刪光時投影若回 None，_invalidate_edges 會當成「無基線」而完全不
+        # 作廢，下游殘留過期的 wiki-link 與 surface 對照。
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp)
+            entry_dir = ctx.path("entry_content")
+            empty = rcm.rc._entry_projection(entry_dir)
+            self.assertIsNotNone(empty, "目錄不存在＝零條目，必須有指紋")
+
+            entry_dir.mkdir(parents=True, exist_ok=True)
+            self.assertEqual(empty, rcm.rc._entry_projection(entry_dir))
+
+            _write_yaml(entry_dir / "創造.yaml", {"name": "創造", "aliases": []})
+            populated = rcm.rc._entry_projection(entry_dir)
+            self.assertIsNotNone(populated)
+            self.assertNotEqual(empty, populated)
+
+            for path in entry_dir.glob("*.yaml"):
+                path.unlink()
+            self.assertEqual(
+                empty, rcm.rc._entry_projection(entry_dir),
+                "刪光條目後必須回到零條目指紋，才能與基線比出差異",
+            )
+
+    def test_entry_projection_ignores_prose_edits(self):
+        # 這是整個細粒度作廢要換來的東西：審查回合改條目正文不再連坐下游。
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp)
+            entry_dir = ctx.path("entry_content")
+            _write_yaml(entry_dir / "創造.yaml", {
+                "name": "創造", "aliases": ["起初"], "definition": "第一版",
+            })
+            before = rcm.rc._entry_projection(entry_dir)
+            _write_yaml(entry_dir / "創造.yaml", {
+                "name": "創造", "aliases": ["起初"], "definition": "改過的定義",
+            })
+            self.assertEqual(before, rcm.rc._entry_projection(entry_dir))
+
+            _write_yaml(entry_dir / "創造.yaml", {
+                "name": "創造", "aliases": ["起初", "太初"], "definition": "改過的定義",
+            })
+            self.assertNotEqual(
+                before, rcm.rc._entry_projection(entry_dir),
+                "aliases 變了必須作廢下游：verse_links 與別名驗證都吃它",
+            )
+
+    def test_plan_projection_ignores_surfaces(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp)
+            plan_path = ctx.path("link_plan.yaml")
+            plan = {
+                "A_use_directly": [],
+                "B_needs_update": [{"name": "光", "existing_title": "光（or）"}],
+                "C_new_formal": [{"name": "創造", "suggested_type": "主題"}],
+            }
+            _write_yaml(plan_path, plan)
+            entries = rcm.rc._plan_projection(plan_path, "entries")
+            whitelist = rcm.rc._plan_projection(plan_path, "whitelist")
+
+            plan["C_new_formal"][0]["surfaces"] = [{"phrase": "創造", "verses": [1]}]
+            plan["B_needs_update"][0]["evidence"] = "改過的證據"
+            _write_yaml(plan_path, plan)
+            self.assertEqual(entries, rcm.rc._plan_projection(plan_path, "entries"))
+            self.assertEqual(whitelist, rcm.rc._plan_projection(plan_path, "whitelist"))
+
+            plan["C_new_formal"].append({"name": "諸水", "suggested_type": "主題"})
+            _write_yaml(plan_path, plan)
+            self.assertNotEqual(entries, rcm.rc._plan_projection(plan_path, "entries"))
+            self.assertNotEqual(whitelist, rcm.rc._plan_projection(plan_path, "whitelist"))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -179,12 +179,20 @@ _PIPELINE_STATE_FILE = "pipeline_state.json"
 # render 產出的 第x章.md／條目 .md 不在此列：render_step 每跑必重寫它們，不會沿用
 # 舊檔（且 第x章.md 的 build_fhl_maps 地圖區塊靠 render 讀舊檔保留，刪了反而遺失），
 # 所以無需、也不應把它們納入作廢——中間產物一被作廢重生，render 自然帶出正確結果。
+# 開跑前比對的邊：只到 link_plan 為止。plan 以下的三個節點改在 plan 重生之後
+# 由 _invalidate_after_plan 比對——開跑當下磁碟上的 plan 還是舊的，拿它判斷會
+# 得到「沒變」的錯誤結論。
 _PIPELINE_STAGES = (
     ("link_plan.yaml", ("link_candidates.yaml", "link_candidates.md")),
-    ("entry_content", ("link_plan.yaml",)),
-    ("verse_links.yaml", ("link_plan.yaml",)),
-    ("chapter_content.yaml", ("link_plan.yaml",)),
 )
+# plan／entry_content 的整檔雜湊粒度太粗：surfaces 只餵 verse_links，卻會連帶
+# 作廢手寫的 entry_content 與 chapter_content，逼出「備份→--confirm-stale→還原
+# →重算指紋」那一整套。這裡替每條邊記下「下游真正讀到的那一面」的指紋。
+_PLAN_ENTRIES_KEY = "link_plan.yaml#entries"
+_PLAN_WHITELIST_KEY = "link_plan.yaml#whitelist"
+# chapter_content 的驗證器吃 _allowed_alias_map，所以它跟 verse_links 一樣依賴
+# 「名稱＋aliases」這一面，不能只看名稱。
+_ENTRY_IDENTITY_KEY = "entry_content#identity"
 _PIPELINE_NODES = (
     "link_candidates.yaml", "link_candidates.md", "link_plan.yaml",
     "entry_content", "verse_links.yaml", "chapter_content.yaml",
@@ -206,6 +214,86 @@ def _node_fingerprint(path):
     if path.exists():
         return hashlib.sha256(path.read_bytes()).hexdigest()
     return None
+
+
+def _digest_lines(lines):
+    return hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
+
+
+def plan_projection(plan, kind):
+    """link_plan 的「下游依賴面」指紋；格式不符回 None（＝呼叫端退回整檔比對）。
+
+    - ``entries``：C_new_formal 的 (name, suggested_type)。entry_content_step 只
+      靠它決定要產生哪些 payload 檔；改 surfaces 不動它。
+    - ``whitelist``：A/B 既有條目標題＋C 新建條目名，也就是 chapter_content 的
+      可連 wiki-link 白名單。
+    """
+    if not isinstance(plan, dict):
+        return None
+    try:
+        if kind == "entries":
+            items = plan.get("C_new_formal") or []
+            if not isinstance(items, list):
+                return None
+            return _digest_lines(sorted(
+                f"{e.get('name')}|{e.get('suggested_type')}"
+                for e in items if isinstance(e, dict)
+            ))
+        if kind == "whitelist":
+            titles = []
+            for key in ("A_use_directly", "B_needs_update"):
+                items = plan.get(key) or []
+                if not isinstance(items, list):
+                    return None
+                titles.extend(
+                    str(e.get("existing_title") or e.get("name"))
+                    for e in items if isinstance(e, dict)
+                )
+            created = plan.get("C_new_formal") or []
+            if not isinstance(created, list):
+                return None
+            titles.extend(str(e.get("name")) for e in created if isinstance(e, dict))
+            return _digest_lines(sorted(titles))
+    except AttributeError:
+        return None
+    raise ValueError(f"未知的 plan 投影：{kind}")
+
+
+def _plan_projection(path, kind):
+    """從磁碟上的 link_plan.yaml 取投影；讀不到就回 None。"""
+    if not path.exists():
+        return None
+    try:
+        plan = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (yaml.YAMLError, OSError):
+        return None
+    return plan_projection(plan, kind)
+
+
+def _entry_projection(entry_dir):
+    """entry_content 的「下游依賴面」指紋（名稱＋aliases）；無目錄／讀不到回 None。
+
+    verse_links 靠 aliases 標經文，chapter_content 的可連白名單與別名驗證同樣只
+    吃這一面。改條目的定義或主題發展正文不動它，因此審查回合的內容修正不再連帶
+    砍掉手寫的 chapter_content。
+    """
+    if not entry_dir.is_dir():
+        return _digest_lines([])       # 目錄不存在＝零條目，不是「算不出來」
+    lines = []
+    for f in sorted(entry_dir.glob("*.yaml")):
+        try:
+            payload = yaml.safe_load(f.read_text(encoding="utf-8"))
+        except (yaml.YAMLError, OSError):
+            return None
+        if not isinstance(payload, dict):
+            return None
+        name = str(payload.get("name") or f.stem)
+        aliases = payload.get("aliases") or []
+        if not isinstance(aliases, list):
+            return None
+        lines.append(f"{name}|{','.join(sorted(str(a) for a in aliases))}")
+    # 空清單也要有指紋：條目被刪光時必須與基線不同，下游才會跟著作廢。
+    return _digest_lines(lines)
 
 
 def _remove_node(path):
@@ -255,38 +343,122 @@ def _invalidate_stale(ctx):
     return removed
 
 
+def _invalidate_edges(ctx, edges, message):
+    """共用的細粒度作廢：逐條邊比對「下游真正依賴的那一面」的指紋。
+
+    約定與 _invalidate_stale 一致——基線缺該鍵就視為乾淨、不作廢；投影算不出來
+    （檔案壞了、格式不符）就退回整檔比對，寧可多作廢也不要沿用過期輸出。
+    """
+    prev = _load_pipeline_state(ctx)
+    removed = []
+    for out_key, dep_key, current, fallback_key, fallback_value in edges:
+        if current is None:                     # 投影不可用 → 保守退回整檔
+            dep_key, current = fallback_key, fallback_value
+        if dep_key not in prev or current is None:
+            continue                            # 無基線＝首次採樣，不作廢既有輸出
+        if current != prev[dep_key]:
+            if _remove_node(_node_path(ctx, out_key)):
+                removed.append(out_key)
+    if removed:
+        _log(message + "：" + "、".join(dict.fromkeys(removed)))
+    return removed
+
+
+def _invalidate_after_plan(ctx):
+    """link_plan 重生之後，才比對它對下游的三條邊。
+
+    開跑時磁碟上的 plan 仍是舊的，拿它比對必然「沒變」，所以這一輪不能放在
+    _invalidate_stale 裡。三條邊各自只看下游真正讀到的那一面：
+    entry_content 看 C_new_formal 名單、chapter_content 看可連白名單、
+    verse_links 讀整份 plan（surfaces 就在裡面）故仍用整檔比對。
+    """
+    plan_path = _node_path(ctx, "link_plan.yaml")
+    plan_fp = _node_fingerprint(plan_path)
+    return _invalidate_edges(
+        ctx,
+        (
+            ("entry_content", _PLAN_ENTRIES_KEY,
+             _plan_projection(plan_path, "entries"), "link_plan.yaml", plan_fp),
+            ("chapter_content.yaml", _PLAN_WHITELIST_KEY,
+             _plan_projection(plan_path, "whitelist"), "link_plan.yaml", plan_fp),
+            ("verse_links.yaml", "link_plan.yaml", plan_fp, "link_plan.yaml", plan_fp),
+        ),
+        "⟳ 偵測到連結計畫改動，已自動作廢下游並將重生",
+    )
+
+
 def _invalidate_after_entry(ctx):
     """entry_content 在本次跑結束其步驟後才定型（M3 本次補齊失敗條目，或人工在跑前
     手改／補了 payload）；verse_links 讀條目 aliases、chapter_content 讀本章新建條目
     清單當白名單，兩者若沿用上一輪的舊檔就漏掉晚定型的條目。開頭的 _invalidate_stale
     比對不到這種變化（它在 entry_content_step 之前跑），故在 entry_content_step 之後
-    再比對一次 entry_content 指紋與基線，變了就作廢這兩個下游。呼叫點在 M3 之後、M5
-    之前。"""
-    prev = _load_pipeline_state(ctx)
-    if "entry_content" not in prev:  # 無基線（首次）→ 不作廢
-        return []
-    if _node_fingerprint(_node_path(ctx, "entry_content")) == prev["entry_content"]:
-        return []  # entry_content 未變
-    removed = []
-    for key in ("verse_links.yaml", "chapter_content.yaml"):
-        if _remove_node(_node_path(ctx, key)):
-            removed.append(key)
-    if removed:
-        _log("⟳ 偵測到 entry_content 變動（晚補／編輯條目），已自動作廢下游並將重生："
-             + "、".join(removed))
-    return removed
+    再比對一次、變了就作廢這兩個下游。呼叫點在 M3 之後、M5 之前。
+
+    比對的是投影而不是整個目錄的雜湊：審查回合修條目的定義／主題發展正文不會動到
+    名稱或 aliases，那種編輯不該把手寫的 chapter_content 一起砍掉。"""
+    entry_dir = _node_path(ctx, "entry_content")
+    entry_fp = _node_fingerprint(entry_dir)
+    identity = _entry_projection(entry_dir)
+    return _invalidate_edges(
+        ctx,
+        (
+            ("chapter_content.yaml", _ENTRY_IDENTITY_KEY,
+             identity, "entry_content", entry_fp),
+            ("verse_links.yaml", _ENTRY_IDENTITY_KEY,
+             identity, "entry_content", entry_fp),
+        ),
+        "⟳ 偵測到 entry_content 變動（晚補／編輯條目），已自動作廢下游並將重生",
+    )
+
+
+# 每個節點連帶要一起記的投影鍵：回寫基線時必須同進同出，否則會出現
+# 「整檔指紋是新的、投影指紋還是舊的」這種半新半舊狀態。
+_NODE_PROJECTIONS = {
+    "link_plan.yaml": (
+        (_PLAN_ENTRIES_KEY, lambda ctx: _plan_projection(_node_path(ctx, "link_plan.yaml"), "entries")),
+        (_PLAN_WHITELIST_KEY, lambda ctx: _plan_projection(_node_path(ctx, "link_plan.yaml"), "whitelist")),
+    ),
+    "entry_content": (
+        (_ENTRY_IDENTITY_KEY, lambda ctx: _entry_projection(_node_path(ctx, "entry_content"))),
+    ),
+}
+
+
+def _pipeline_fingerprints(ctx, keys):
+    """算出 keys 這些節點（含其投影鍵）目前的指紋。"""
+    state = {}
+    for key in keys:
+        fp = _node_fingerprint(_node_path(ctx, key))
+        if fp is not None:
+            state[key] = fp
+        for proj_key, compute in _NODE_PROJECTIONS.get(key, ()):
+            value = compute(ctx)
+            if value is not None:
+                state[proj_key] = value
+    return state
+
+
+def _write_pipeline_state(ctx, state):
+    ctx.path(_PIPELINE_STATE_FILE).write_text(
+        json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def save_pipeline_nodes(ctx, keys):
+    """只把指定節點的基線併回 pipeline_state，其餘鍵原封不動。
+
+    prompts 這類「消化了上游、但下游還等人手寫」的指令用它：不回寫上游基線，
+    下一次 run 會永遠認為上游仍是髒的而拒絕執行（實測：改過 candidates 之後
+    run 與 prompts 互相踢皮球，只能手動改 pipeline_state.json 才能繼續）。
+    """
+    state = _load_pipeline_state(ctx)
+    state.update(_pipeline_fingerprints(ctx, keys))
+    _write_pipeline_state(ctx, state)
 
 
 def _save_pipeline_state(ctx):
     """把當前各節點指紋存檔，作為下次跑的比對基線。run_chapter 結尾呼叫。"""
-    state = {}
-    for key in _PIPELINE_NODES:
-        fp = _node_fingerprint(_node_path(ctx, key))
-        if fp is not None:
-            state[key] = fp
-    ctx.path(_PIPELINE_STATE_FILE).write_text(
-        json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    _write_pipeline_state(ctx, _pipeline_fingerprints(ctx, _PIPELINE_NODES))
 
 
 def resolve_step(ctx):
@@ -1378,14 +1550,20 @@ def chapter_content_step(
         org_text, _ = _org_split_fences(org)
         for err in _org_bare_created_link_errors(org_text, allowed_links, created):
             ctx.manual_review.append(f"chapter_content：{err}")
-    return _inject_references(ctx, out_path, payload)
+    return _inject_references(ctx, payload)
 
 
-def _inject_references(ctx, out_path, payload):
+def _inject_references(ctx, payload):
     """章節「參考資料」不由模型手寫：程式從 source_manifest 注入 OK 來源的 URL。
 
     也涵蓋 resume（舊 payload 無 references）；organization 內殘留的參考資料
     區塊一併拆出合流，重跑冪等。
+
+    **不回寫 chapter_content.yaml。** references 與 organization 的正規化都是
+    由 source_manifest 決定的衍生資料，每次跑都能重算；把它寫回作者手寫的
+    payload 會造成兩個固定成本：M6 的 review checkpoint hash 在每次 render 後
+    必然過期（本來已 PASS 的 gate 被迫重送審），而且 source-of-truth 檔案被
+    程式改成另一種 YAML 序列化風格。渲染只需要這裡回傳的記憶體 payload。
     """
     if payload is None:
         return None
@@ -1396,10 +1574,7 @@ def _inject_references(ctx, out_path, payload):
         url for _, url in source_excerpts.manifest_urls(ctx.path("source_manifest.md"))
     ]
     references = manifest_refs or payload.get("references") or inline_refs
-    updated = dict(payload, organization=organization, references=references)
-    if updated != payload:
-        _write_yaml(out_path, updated)
-    return updated
+    return dict(payload, organization=organization, references=references)
 
 
 # --------------------------------------------------------------------------- #
@@ -2607,6 +2782,7 @@ def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None
     )
     _invalidate_stale(ctx)
     plan = resolve_step(ctx)
+    _invalidate_after_plan(ctx)
     entry_payloads = entry_content_step(ctx, plan, limit=entry_limit)
     _invalidate_after_entry(ctx)
     verse_links = verse_links_step(ctx, plan)

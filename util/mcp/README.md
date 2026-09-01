@@ -148,7 +148,11 @@ entry_content，護欄一次都沒驗過。
 3. 將回傳的 `preview_token` 傳給 `apply_chapter_link_updates`
 4. 再次 preview，確認 `change_count` 為 0
 
+`detail` 參數控制每個條目回傳多少內容，預設 `auto`：還有東西要套用時給完整的區塊 diff（那正是要審的東西），`change_count` 變成 0 之後就只回標題與判定——第 4 步只需要一個整數，卻會把整份 diff 再付一次錢。`full`／`summary` 可強制指定。`preview_token` 由檔案內容算出，三種模式完全相同，所以摘要模式拿到的 token 一樣可以拿去 apply。
+
 底層會先驗證所有更新目標只在 `link_folder/**/*.md`，預先計算全部變更，暫存後才逐檔替換；作業系統寫入失敗時會嘗試還原已替換的檔案。
+
+`prepare_chapter_link_updates` 不再把 `REVIEW_GUIDANCE` 全文放進回應（改回傳 `review_roles_ref`）：同一份文字 prepare 已經寫進 manifest 的 `review_guidance` 區塊，而判定前本來就必須開 manifest 與 `review_evidence.md`。
 
 ## MCP prompts
 

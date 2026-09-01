@@ -588,7 +588,35 @@ def _link_update_manifest(canonical: str, chapter: int) -> Path:
     return manifest
 
 
-def _update_preview(canonical: str, chapter: int) -> Dict[str, Any]:
+_PREVIEW_DETAIL_MODES = ("auto", "full", "summary")
+
+
+def _summarize_review(review: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """Drop the per-section diffs, keep the verdicts a caller still needs."""
+    if not isinstance(review, dict):
+        return review
+    summary: Dict[str, Any] = {}
+    for key in ("review_attention", "signals", "challenges"):
+        if key in review:
+            summary[key] = review[key]
+    for key in ("definition", "development"):
+        section = review.get(key)
+        if isinstance(section, dict):
+            summary[key] = {
+                k: v for k, v in section.items() if k != "diff"
+            }
+        elif section is not None:
+            summary[key] = section
+    return summary
+
+
+def _update_preview(
+    canonical: str, chapter: int, detail: str = "auto"
+) -> Dict[str, Any]:
+    if detail not in _PREVIEW_DETAIL_MODES:
+        raise ValueError(
+            f"detail 只能是 {'／'.join(_PREVIEW_DETAIL_MODES)}，收到「{detail}」"
+        )
     manifest = _link_update_manifest(canonical, chapter)
     preview = link_updates.preview_updates(manifest)
     if preview["book"] != canonical or preview["chapter"] != chapter:
@@ -610,12 +638,27 @@ def _update_preview(canonical: str, chapter: int) -> Dict[str, Any]:
             "will_change": before != after,
             "overview_review": operation.get("overview_review"),
         })
+    change_count = sum(item["will_change"] for item in changes)
+    # auto：套用後的「再 preview 必須 0 變更」那一次沒有任何 diff 可看，
+    # 回傳完整區塊只是把同一份 payload 再付一次錢；有變更時才給 diff。
+    summarize = detail == "summary" or (detail == "auto" and change_count == 0)
+    if summarize:
+        changes = [
+            {
+                "title": item["title"],
+                "path": item["path"],
+                "will_change": item["will_change"],
+                "overview_review": _summarize_review(item["overview_review"]),
+            }
+            for item in changes
+        ]
     return {
         "manifest": _relative_to_root(manifest),
         "book": canonical,
         "chapter": chapter,
         "preview_token": digest.hexdigest(),
-        "change_count": sum(item["will_change"] for item in changes),
+        "change_count": change_count,
+        "detail": "summary" if summarize else "full",
         "entries": changes,
     }
 
@@ -975,7 +1018,13 @@ def prepare_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
             "manifest": _relative_to_root(manifest),
             "review_required": review_count > 0,
             "review_count": review_count,
-            "review_roles": link_updates.REVIEW_GUIDANCE,
+            # REVIEW_GUIDANCE 全文已寫進 manifest 自己的 review_guidance 區塊，
+            # 而判斷前本來就必須開 manifest 與 review_evidence.md；在回應裡再抄一份
+            # 只是每章重複同一段長文。這裡改成指路。
+            "review_roles_ref": (
+                f"{_relative_to_root(manifest)} 的 review_guidance 區塊"
+                "（同一份文字，prepare 已寫入 manifest）"
+            ),
             "next_step": (
                 "先讀同資料夾的 review_evidence.md（定義全文＋主題發展段落索引＋已累積章清單）；"
                 "再逐條填 overview_review：definition/development 各選 keep 或 update；"
@@ -1858,7 +1907,9 @@ def render_manual_chapter(book: str, chapter: int, keep_chapter: bool = False) -
 
 
 @mcp.tool()
-def preview_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
+def preview_chapter_link_updates(
+    book: str, chapter: int, detail: str = "auto"
+) -> Dict[str, Any]:
     """Validate and preview B-class accumulation updates without modifying files.
 
     Review ``link_updates.yaml`` against the chapter sources first.  For new
@@ -1866,10 +1917,17 @@ def preview_chapter_link_updates(book: str, chapter: int) -> Dict[str, Any]:
     ``update`` must match a real section edit, and the response includes its diff.
     The returned token is required by ``apply_chapter_link_updates`` and becomes
     invalid if either the manifest or a target entry changes.
+
+    ``detail`` controls how much of each entry comes back.  ``auto`` (default)
+    returns the full section diffs while there is anything to apply and drops
+    them once ``change_count`` is 0 — the post-apply verification call carries no
+    diff worth reading.  ``full`` always returns them; ``summary`` never does.
+    The ``preview_token`` is computed from file content and is identical in every
+    mode, so a summary preview can still authorise ``apply_chapter_link_updates``.
     """
     try:
         canonical = _canonical_book(book)
-        preview = _update_preview(canonical, chapter)
+        preview = _update_preview(canonical, chapter, detail=detail)
         return {"success": True, **preview}
     except (OSError, ValueError, yaml.YAMLError) as exc:
         return _error(str(exc))
@@ -1884,7 +1942,8 @@ def apply_chapter_link_updates(book: str, chapter: int, preview_token: str) -> D
     """
     try:
         canonical = _canonical_book(book)
-        preview = _update_preview(canonical, chapter)
+        # 這裡只取 preview_token 與 manifest，回應不含 entries，故不必做摘要轉換。
+        preview = _update_preview(canonical, chapter, detail="full")
         if preview_token != preview["preview_token"]:
             return _error(
                 "preview_token 不符或已過期；請重新 preview、核對內容後再套用",
