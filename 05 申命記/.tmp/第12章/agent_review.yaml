@@ -1,0 +1,52 @@
+version: 2
+book: 申命記
+chapter: 12
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: bae6a68ea862b6ff049f058c64cfcb0d6eae8fc4b10676998b3cbac07115adbf
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: bae6a68ea862b6ff049f058c64cfcb0d6eae8fc4b10676998b3cbac07115adbf
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: eb38344f5a26381c7ba54fb2f9f94bcd85cf1f87262732f7eceab46b4febdd80
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: eb38344f5a26381c7ba54fb2f9f94bcd85cf1f87262732f7eceab46b4febdd80
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: b95e0d9e57f67b83a49fd996e44b26c8e18bfd28b766717898dc8c7f1771ccd6
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: b95e0d9e57f67b83a49fd996e44b26c8e18bfd28b766717898dc8c7f1771ccd6
+      verdict: pass
+      findings_count: 0
+    findings_count: 0

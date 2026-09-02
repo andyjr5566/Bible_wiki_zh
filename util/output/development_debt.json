@@ -58,6 +58,13 @@
       "fingerprint": "d3eea46d904fb450"
     },
     {
+      "path": "link_folder/神學/平安祭.md",
+      "title": "平安祭",
+      "deferred_at": "申命記:12",
+      "accumulated": 17,
+      "fingerprint": "384ea655badb00d0"
+    },
+    {
       "path": "link_folder/人物/以利亞撒.md",
       "title": "以利亞撒",
       "deferred_at": "申命記:10",
@@ -72,18 +79,18 @@
       "fingerprint": "03a4877dba11bb8d"
     },
     {
+      "path": "link_folder/人物/利未支派.md",
+      "title": "利未支派",
+      "deferred_at": "申命記:12",
+      "accumulated": 12,
+      "fingerprint": "4566b90a3becb983"
+    },
+    {
       "path": "link_folder/人物/迦南人.md",
       "title": "迦南人",
       "deferred_at": "申命記:7",
       "accumulated": 12,
       "fingerprint": "08eeb3b8c2d813b3"
-    },
-    {
-      "path": "link_folder/人物/利未支派.md",
-      "title": "利未支派",
-      "deferred_at": "申命記:10",
-      "accumulated": 11,
-      "fingerprint": "27b60f0cfcf8fc69"
     },
     {
       "path": "link_folder/主題/約櫃.md",
@@ -149,6 +156,13 @@
       "fingerprint": "3c0eae3c00b905b1"
     },
     {
+      "path": "link_folder/神學/分別為聖.md",
+      "title": "分別為聖",
+      "deferred_at": "申命記:12",
+      "accumulated": 8,
+      "fingerprint": "e59c6ca2aa864634"
+    },
+    {
       "path": "link_folder/神學/大能的手.md",
       "title": "大能的手",
       "deferred_at": "申命記:9",
@@ -163,13 +177,6 @@
       "fingerprint": "42f5db5fe06dd4ba"
     },
     {
-      "path": "link_folder/神學/分別為聖.md",
-      "title": "分別為聖",
-      "deferred_at": "申命記:10",
-      "accumulated": 7,
-      "fingerprint": "fd204914b8903972"
-    },
-    {
       "path": "link_folder/地點/亞拉巴.md",
       "title": "亞拉巴",
       "deferred_at": "申命記:11",
@@ -182,6 +189,20 @@
       "deferred_at": "申命記:9",
       "accumulated": 5,
       "fingerprint": "66219ada973fa61e"
+    },
+    {
+      "path": "link_folder/背景/古代近東偶像崇拜.md",
+      "title": "古代近東偶像崇拜",
+      "deferred_at": "申命記:12",
+      "accumulated": 5,
+      "fingerprint": "cfe139a234850d67"
+    },
+    {
+      "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
+      "title": "平安祭的三類（感謝祭、還願祭、甘心祭）",
+      "deferred_at": "申命記:12",
+      "accumulated": 4,
+      "fingerprint": "9b17a0e147e93249"
     },
     {
       "path": "link_folder/背景/亞衲族與偉人拿非林.md",
@@ -252,6 +273,13 @@
       "deferred_at": "申命記:11",
       "accumulated": 2,
       "fingerprint": "df6b6520de201640"
+    },
+    {
+      "path": "link_folder/地點/耶路撒冷.md",
+      "title": "耶路撒冷",
+      "deferred_at": "申命記:12",
+      "accumulated": 2,
+      "fingerprint": "706fc5d17902e3ec"
     }
   ]
 }

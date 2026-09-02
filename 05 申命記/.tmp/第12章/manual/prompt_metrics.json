@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 12,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 196776,
+        "bytes": 256055
+      },
+      "after": {
+        "chars": 13544,
+        "bytes": 23382
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_deuteronomy_12.txt",
+          "chars": 12374,
+          "bytes": 35314
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_deuteronomy_12.txt",
+          "chars": 8218,
+          "bytes": 22604
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_deuteronomy_12.txt",
+          "chars": 16399,
+          "bytes": 16514
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_deuteronomy_12.txt",
+          "chars": 63284,
+          "bytes": 63298
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_deuteronomy_12.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 90458,
+          "raw_bytes": 104514,
+          "projected_chars": 6887,
+          "projected_bytes": 8051,
+          "occurrences": 111,
+          "occurrence_count": 111,
+          "lexicon_entries": 4,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 4,
+          "truncated": true,
+          "returned_chars": 6887,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

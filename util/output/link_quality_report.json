@@ -1,7 +1,7 @@
 {
-  "total_warnings": 150,
+  "total_warnings": 152,
   "critical_count": 0,
-  "warning_count": 150,
+  "warning_count": 152,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -650,6 +650,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/主題/血.md",
+      "target": "第12章",
+      "message": "同一 alias「第12章」指向多個 target: 03 利未記/第12章, 05 申命記/第12章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/主題/認罪.md",
       "target": "第5章",
       "message": "同一 alias「第5章」指向多個 target: 03 利未記/第5章, 04 民數記/第5章"
@@ -954,6 +961,13 @@
       "source": "link_folder/神學/燔祭.md",
       "target": "第10章",
       "message": "同一 alias「第10章」指向多個 target: 03 利未記/第10章, 04 民數記/第10章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/燔祭.md",
+      "target": "第12章",
+      "message": "同一 alias「第12章」指向多個 target: 03 利未記/第12章, 05 申命記/第12章"
     },
     {
       "type": "alias_target_conflict",

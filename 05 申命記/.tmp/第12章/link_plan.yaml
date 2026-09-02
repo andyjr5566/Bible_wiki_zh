@@ -1,0 +1,373 @@
+book: 申命記
+chapter: 12
+A_use_directly: []
+B_needs_update:
+- name: 律例（choq）
+  suggested_type: 原文
+  evidence: v1「要謹守遵行的律例典章乃是這些」。CT〔原文字義〕「律例」法規，法令，條例，並在文意註解說律例指律法，是神向人的要求
+  surfaces:
+  - phrase: 律例
+  match_type: exact
+  existing_title: 律例（choq）
+  existing_path: link_folder/原文/律例（choq）.md
+- name: 典章
+  suggested_type: 神學
+  evidence: v1 與「律例」並列。CT 說典章指審判，是神對人是否遵行律法的判定；〔原文字義〕「典章」判決，判例，正義
+  surfaces:
+  - phrase: 典章
+  match_type: exact
+  existing_title: 典章
+  existing_path: link_folder/神學/典章.md
+- name: 得福（ya.tav）
+  suggested_type: 原文
+  evidence: 'v25「你和你的子孫就可以得福」與 v28「就可以永遠享福」STEP 都是 yi.Tav（H3190，ya.tav: be good）；v28
+    另有 ha./Tov（H2896A，tov）對應「看為善」，兩字並存於同一節'
+  surfaces:
+  - phrase: 得福
+  - phrase: 永遠享福
+  match_type: exact
+  existing_title: 得福（ya.tav）
+  existing_path: link_folder/原文/得福（ya.tav）.md
+- name: 事奉與作奴僕同一字根（a.vad）
+  suggested_type: 原文
+  evidence: 'v2「所趕出的國民事奉神的各地方」a.ve.du、v30「這些國民怎樣事奉他們的神」ya.''av.Du，同為 H5647H（a.vad:
+    to serve: minister）；v4 的「事奉」則是另一個字（a.sah），不併入'
+  surfaces:
+  - phrase: 事奉神的各地方
+  - phrase: 事奉他們的神
+  match_type: exact
+  existing_title: 事奉與作奴僕同一字根（a.vad）
+  existing_path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+- name: 滅盡與除滅的雙同字（sha.mad）
+  suggested_type: 原文
+  evidence: 'v30「不可在他們除滅之後」STEP 為 hi.sha.me.Da/m（H8045，sha.mad: to destroy）；v3 的「除滅」是
+    ve./''i.bad.Tem（H6，a.vad: to perish），中文同詞而原文不同，故只取第30節'
+  surfaces:
+  - phrase: 除滅
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 滅盡與除滅的雙同字（sha.mad）
+  existing_path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 'v9「所給你的產業」STEP 為 ha./na.cha.Lah（H5159，na.cha.lah: inheritance），與同節的安息地
+    me.nu.Chah 並列成一對'
+  surfaces:
+  - phrase: 產業
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+  suggested_type: 原文
+  evidence: v17「你的五穀、新酒，和油的十分之一」。GT《聖經精讀本》說五穀、新酒和油是希伯來人視為耶和華神之特別禮物的迦南地三大特產
+  surfaces:
+  - phrase: 五穀、新酒，和油
+  match_type: exact
+  existing_title: 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+  existing_path: link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md
+- name: 十分之一
+  suggested_type: 原文
+  evidence: v6、11「十分取一之物」與 v17「油的十分之一」。CT 與 GT《啟導本》都指出本章講的是三種十一奉獻裡的第二種，是節期慶典中所獻、獻的人可以享用的那一種
+  surfaces:
+  - phrase: 十分之一
+  - phrase: 十分取一之物
+  match_type: exact
+  existing_title: 十分之一
+  existing_path: link_folder/原文/十分之一.md
+- name: 舉祭
+  suggested_type: 原文
+  evidence: v6、11、17「手中的舉祭」。CT 說舉祭指將手中的祭物，垂直向上舉起，上下擺動，表示獻給神
+  surfaces:
+  - phrase: 舉祭
+  match_type: exact
+  existing_title: 舉祭
+  existing_path: link_folder/原文/舉祭.md
+- name: 柱像
+  suggested_type: 原文
+  evidence: 'v3「打碎他們的柱像」STEP 為 ma.Tze.vo.Ta/m（H4676，mats.tse.vah: pillar）。CT：打碎柱像，摧毀那刻有一些符號或形像的石柱'
+  surfaces:
+  - phrase: 柱像
+  match_type: exact
+  existing_title: 柱像
+  existing_path: link_folder/原文/柱像.md
+- name: 不可加添也不可刪減（ya.saph、ga.ra）
+  suggested_type: 原文
+  evidence: v32「凡我所吩咐的，你們都要謹守遵行，不可加添，也不可刪減」。CT〔原文字義〕「加添」增加；「刪減」減少，文意註解說不可按照私意增加或減少（參啟二十二18~19）；GT《啟導本聖經申命記註釋》在
+    v32 只註「參四2注」；KC 引申4:2 說神所說的一切本身完全，不需增添也不需削減；BH 從古代近東君王詔令不可竄改的角度說明
+  surfaces:
+  - phrase: 不可加添，也不可刪減
+  match_type: exact
+  existing_title: 不可加添也不可刪減（ya.saph、ga.ra）
+  existing_path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+- name: 網羅
+  suggested_type: 原文
+  evidence: 'v30「隨從他們的惡俗，陷入網羅」STEP 為 ti.na.Kesh（H5367，na.qash: to snare）。CT 說陷入網羅意指因此被神厭棄'
+  surfaces:
+  - phrase: 陷入網羅
+  match_type: exact
+  existing_title: 網羅
+  existing_path: link_folder/原文/網羅.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: v6、11、13、14、27 五次；v27 特別規定「你的燔祭，連肉帶血，都要獻在耶和華你神的壇上」。CT：獻燔祭時祭肉全都焚燒在祭壇上，血則倒在祭壇的周圍
+  surfaces:
+  - phrase: 燔祭
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: v6 與 v27；v27「平安祭的血要倒在耶和華你神的壇上；平安祭的肉，你自己可以吃」。GT《聖經精讀本》說在五大祭中只有平安祭才規定獻祭者可以食用祭物
+  surfaces:
+  - phrase: 平安祭
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  suggested_type: 主題
+  evidence: v6「並還願祭、甘心祭」、v26「你的還願祭」。CT 說還願祭與甘心祭都是屬於平安祭，前者指為達到許願而向神獻感謝的祭，後者指自發自動為感恩而向神獻的祭
+  surfaces:
+  - phrase: 還願祭
+  - phrase: 甘心祭
+  match_type: exact
+  existing_title: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  existing_path: link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md
+- name: 頭生歸神為聖
+  suggested_type: 歷史
+  evidence: v6、17「牛群羊群中頭生的」。CT 指出頭生的和舉祭歸給祭司享用，不可帶回各別所住的城裡
+  surfaces:
+  - phrase: 牛群羊群中頭生的
+  match_type: exact
+  existing_title: 頭生歸神為聖
+  existing_path: link_folder/歷史/頭生歸神為聖.md
+- name: 血
+  suggested_type: 主題
+  evidence: 'v23「不可吃血，因為血是生命」STEP 為 ha./Dam（H1818）與 ha./Na.fesh（H5315H，ne.phesh: soul:
+    life）；v27 燔祭連肉帶血與平安祭的血都要處理在壇上'
+  surfaces:
+  - phrase: 血是生命
+  match_type: exact
+  existing_title: 血
+  existing_path: link_folder/主題/血.md
+- name: 脂油和血都不可吃
+  suggested_type: 神學
+  evidence: v16、23、24、25 四次「不可吃血」，要倒在地上如同倒水。GT《聖經精讀本》列出四個理由；CT 列出三個；BH 接到創9:4、利17:11
+    與徒15:20
+  surfaces:
+  - phrase: 不可吃血
+  match_type: exact
+  existing_title: 脂油和血都不可吃
+  existing_path: link_folder/神學/脂油和血都不可吃.md
+- name: 潔淨
+  suggested_type: 神學
+  evidence: v15、22「無論潔淨人不潔淨人都可以吃」STEP 為 ha./ta.Me'（H2931）與 ve./ha./ta.hOr（H2889）。GT《聖經精讀本》說只有潔淨的人才能吃獻給神作犧牲祭的聖物，但這裡所論及的是單為了吃而宰殺的牲畜
+  surfaces:
+  - phrase: 無論潔淨人不潔淨人
+  match_type: exact
+  existing_title: 潔淨
+  existing_path: link_folder/神學/潔淨.md
+- name: 野味
+  suggested_type: 主題
+  evidence: v15、22「就如吃羚羊與鹿一般」STEP 為 ka./tze.Vi（H6643B，gazelle）與 ve./kha./'ai.Yal（H354，deer）。CT：羚羊與鹿乃屬野味，非用來獻祭，也沒有禮儀上的限制
+  surfaces:
+  - phrase: 羚羊與鹿
+  match_type: exact
+  existing_title: 野味
+  existing_path: link_folder/主題/野味.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: v26「只是你分別為聖的物和你的還願祭要奉到耶和華所選擇的地方去」。GT《聖經精讀本》說無論是牲畜還是器具，統稱為獻給神而特意分別之物
+  surfaces:
+  - phrase: 分別為聖
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 祭壇敬拜
+  suggested_type: 神學
+  evidence: v27 兩次「耶和華你神的壇上」——燔祭連肉帶血獻在壇上，平安祭的血倒在壇上。CT：血只能獻在壇上，血倒在壇上是在神面前承認罪人是該死亡的
+  surfaces:
+  - phrase: 耶和華─你神的壇上
+  match_type: exact
+  existing_title: 祭壇敬拜
+  existing_path: link_folder/神學/祭壇敬拜.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: v12「住在你們城裡無分無業的利未人」、v18、v19「永不可丟棄利未人」。CT 說無分無業的利未人指利未人沒有與一般以色列人同樣謀生的產業
+  surfaces:
+  - phrase: 利未人
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 利未人的什一奉獻
+  suggested_type: 神學
+  evidence: v18-19 把利未人放進吃祭物的名單，並命令永不可丟棄他。CT 說丟棄利未人亦即不作十一奉獻；KC 引民18:21-24 說神已定規利未人靠百姓所獻的十分之一維生
+  match_type: exact
+  existing_title: 利未人的什一奉獻
+  existing_path: link_folder/神學/利未人的什一奉獻.md
+- name: 亞舍拉（木偶）
+  suggested_type: 背景
+  evidence: 'v3「用火焚燒他們的木偶」STEP 為 va./''a.she.rei./Hem（H842，a.she.rah: Asherah）。CT：燒毀那專拜生殖女神亞舍拉像的木柱'
+  surfaces:
+  - phrase: 木偶
+  match_type: exact
+  existing_title: 亞舍拉（木偶）
+  existing_path: link_folder/背景/亞舍拉（木偶）.md
+- name: 毀滅迦南偶像的三道命令
+  suggested_type: 主題
+  evidence: v2-3 一連串動詞：毀壞（'a.Bed Te.'a.be.du/n，H6，不定詞絕對式加未完成式）、拆毀（na.tats）、打碎（sha.var）、焚燒（sa.raph）、砍下（ga.da）。CT
+    把 v3 拆成四件事並各給用途
+  surfaces:
+  - phrase: 都毀壞了
+  - phrase: 砍下他們雕刻的神像
+  match_type: exact
+  existing_title: 毀滅迦南偶像的三道命令
+  existing_path: link_folder/主題/毀滅迦南偶像的三道命令.md
+- name: 古代近東偶像崇拜
+  suggested_type: 背景
+  evidence: v2「無論是在高山，在小山，在各青翠樹下」STEP「青翠」為 ra.'a.nan（H7488B，luxuriant）。BH：High places
+    were commonly used for worship in ancient Near Eastern cultures, believed to be
+    closer to the divine；GT《聖經精讀本》說這源自越是高處就越是接近崇拜物件的迷信觀念
+  surfaces:
+  - phrase: 在各青翠樹下
+  match_type: exact
+  existing_title: 古代近東偶像崇拜
+  existing_path: link_folder/背景/古代近東偶像崇拜.md
+- name: 不可使兒女經火歸摩洛
+  suggested_type: 主題
+  evidence: v31「甚至將自己的兒女用火焚燒，獻與他們的神」。GT《啟導本》舉亞哈斯與瑪拿西仿行人祭、約西亞剷除（王下十六3；二十一6；二十三10）；GT《聖經精讀本》指名摩洛宗教；BH
+    舉迦太基與基色的考古
+  surfaces:
+  - phrase: 將自己的兒女用火焚燒
+  match_type: exact
+  existing_title: 不可使兒女經火歸摩洛
+  existing_path: link_folder/主題/不可使兒女經火歸摩洛.md
+- name: 專一敬拜
+  suggested_type: 神學
+  evidence: v4、13-14 禁止在自己看中的各處獻祭，只可在神選擇的地方。KC：God does not tolerate any form of worship
+    other than the worship to which He is entitled；CT 說屬靈的路是神所定的，不是根據人以為的美和好
+  match_type: exact
+  existing_title: 專一敬拜
+  existing_path: link_folder/神學/專一敬拜.md
+- name: 安息
+  suggested_type: 神學
+  evidence: 'v9「還沒有到耶和華你神所賜你的安息地」STEP 為 ha./me.nu.Chah（H4496H，me.nu.chah: resting）。GT《啟導本》說安息是以色列人到達迦南後定居下來的狀況，不只和平安定，不受仇敵威脅；BH
+    接到來4:9-10'
+  surfaces:
+  - phrase: 安息地
+  match_type: exact
+  existing_title: 安息
+  existing_path: link_folder/神學/安息.md
+- name: 摩西的第二篇講章
+  suggested_type: 背景
+  evidence: GT《聖經精讀本》說本段是摩西對以色列新一代所講三篇講章中第二篇(4:44-26:19)講章的正文；GT《啟導本》說本章至二十六章是《申命記》中詳細解釋律法的部分，並分成七組；KC
+    說 With this chapter begins the second part of the speech of Moses
+  match_type: exact
+  existing_title: 摩西的第二篇講章
+  existing_path: link_folder/背景/摩西的第二篇講章.md
+- name: 申12：5
+  suggested_type: 互文
+  evidence: 既有互文條目由出20 建立，內容是出20:24「凡記下我名的地方」與申12:5「立他名的居所」互相呼應；本章正是該節的出處章，須補上申12
+    本身的資料
+  match_type: exact
+  existing_title: 申12：5
+  existing_path: link_folder/互文/申12：5.md
+- name: 耶路撒冷
+  suggested_type: 地點
+  evidence: CT 在 v5、v14 說選擇何處後來明定必須在耶路撒冷、後來所選定的耶路撒冷是在猶大支派境內；GT《啟導本》引王上八16、十四21、代下三1；KC
+    說先是示羅、後來是錫安或耶路撒冷
+  match_type: exact
+  existing_title: 耶路撒冷
+  existing_path: link_folder/地點/耶路撒冷.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: CT 在 v7、v18 說神的面前即指會幕，並說一般人只能在會幕外面附近吃；GT《啟導本》說曠野時期會幕是中心，進迦南後會幕先設在示羅
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+C_new_formal:
+- name: 立他名的居所（中央聖所）
+  suggested_type: 主題
+  evidence: 'v5、11、14、18、21、26 六次講同一件事——只可在耶和華所選擇的那一個地方獻祭。STEP v5：la./Sum（H7760H，sum:
+    to set: put）＋she.M/o（H8034 shem）＋le./shikh.N/o（H7931，sha.khan: to dwell）；v5、v21
+    的「選擇」是 yiv.Char（H977，ba.char: to choose）。GT《聖經精讀本》稱之為惟一的中央聖所並統計本章五次；KC 說 Scripture
+    does not speak here of a place, but of the place，並數出本章六次、申命記後續十五次'
+  surfaces:
+  - phrase: 立他名的居所
+  - phrase: 所選擇要立為他名的居所
+  - phrase: 所選擇的地方
+  - phrase: 所要選擇的地方
+  - phrase: 所選擇要立他名的地方
+  target_path: link_folder/主題/立他名的居所（中央聖所）.md
+- name: 各人行自己眼中看為正的事
+  suggested_type: 主題
+  evidence: 'v8「我們今日在這裡所行的是各人行自己眼中看為正的事」，STEP 為 hai./ya.Shar（H3477G，ya.shar: upright）＋be./''ei.Na/v（H5869I）；v25、v28「耶和華眼中看為正」用同一組
+    ya.shar 與 a.yin，只換了那雙眼睛。CT 在 v28 明說與 8 節自己眼中看為正的事不同；KC 與 BH 都接到士21:25'
+  surfaces:
+  - phrase: 各人行自己眼中看為正的事
+  target_path: link_folder/主題/各人行自己眼中看為正的事.md
+- name: 在耶和華面前歡樂
+  suggested_type: 主題
+  evidence: 'v7、12、18 三次「在耶和華你神面前歡樂」，STEP v7 為 u./se.mach.Tem（H8055，sa.mach: to rejoice）。CT：歡樂是因神賜福，而神賜福是因按照神的旨意行事；GT《啟導本》說歡樂來自神的祝福，要成為以色列人在迦南安居後的享受；GT《串珠》思想問題第4題直接問神喜不喜歡人歡樂'
+  surfaces:
+  - phrase: 歡樂
+  target_path: link_folder/主題/在耶和華面前歡樂.md
+  semantic_hint:
+  - title: 在耶和華面前
+    score: 0.476
+    type: 神學
+  - title: 臉光照（神的容面）
+    score: 0.404
+    type: 神學
+- name: 不可照他們那樣事奉耶和華
+  suggested_type: 神學
+  evidence: 'v4 禁止用迦南人的方式敬拜真神。STEP v4「事奉」是 ta.''a.Su/n（H6213I，a.sah: to make: offer），與
+    v2、v30 迦南人事奉偶像的 a.vad（H5647H）不是同一個字；CT〔原文字義〕在 v4 註「事奉」做，製作，完成，正對得上。CT 列出四種不可照他們那樣：任意選定地點、任意建造神殿和祭壇、任意獻祭物和祭牲、任意隨自己所喜歡的敬拜方式'
+  surfaces:
+  - phrase: 不可照他們那樣事奉耶和華
+  target_path: link_folder/神學/不可照他們那樣事奉耶和華.md
+  semantic_hint:
+  - title: 專一事奉
+    score: 0.489
+    type: 神學
+  - title: 在曠野事奉神
+    score: 0.475
+    type: 神學
+  - title: 出埃及為要事奉神
+    score: 0.472
+    type: 神學
+- name: 宰牲與獻祭同一個字（za.vach）
+  suggested_type: 原文
+  evidence: 'v15「隨心所欲宰牲吃肉」STEP 為 tiz.Bach、v21「取些宰了」為 ve./za.vach.Ta，同屬 H2076（za.vach:
+    to sacrifice）。GT《啟導本》說在古代以色列社會中宰牲就是獻祭；CT 反過來釐清本章的用法：宰牲不是指宰殺祭牲，而是指獻祭以外，為要吃肉而宰殺牲畜'
+  surfaces:
+  - phrase: 宰牲
+  - phrase: 宰了
+  target_path: link_folder/原文/宰牲與獻祭同一個字（za.vach）.md
+  semantic_hint:
+  - title: 古代近東的獻祭與燔祭習俗
+    score: 0.442
+    type: 背景
+  - title: 供物（qorban）
+    score: 0.442
+    type: 原文
+  - title: 腰子
+    score: 0.436
+    type: 原文
+- name: 求問與訪問同一個字（da.rash）
+  suggested_type: 原文
+  evidence: 'v5「你們就當往那裡去求問」tid.re.Shu 與 v30「也不可訪問他們的神」tid.Rosh 同為 H1875（da.rash: to
+    seek）。GT《串珠聖經註釋》在 v30 明言：「訪問」：原文與5節「求問」是同一個字'
+  surfaces:
+  - phrase: 求問
+  - phrase: 訪問
+  target_path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+- name: 隨心所欲（av.vah、ne.phesh）
+  suggested_type: 原文
+  evidence: 'v15、20、21 三次「隨心所欲」，STEP 為 ''a.Vat（H185，av.vah: desire）＋naf.she./Kha（H5315I，ne.phesh:
+    soul: myself）。CT〔原文字義〕在 v15、20、21 三處都註「隨心」魂，自我；「所欲」渴望，意願'
+  surfaces:
+  - phrase: 隨心所欲
+  target_path: link_folder/原文/隨心所欲（av.vah、ne.phesh）.md
+D_new_candidate: []
+E_skip: []

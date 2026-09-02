@@ -1,0 +1,456 @@
+book: 申命記
+chapter: 12
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 律例（choq）
+  path: link_folder/原文/律例（choq）.md
+  summary: 第1節「要謹守遵行的律例典章乃是這些」把整章定位成一份律例典章的清單。CT〔原文字義〕註「律例」法規，法令，條例；文意註解說『律例』指律法，是神向人的要求。
+  relation: 申4 至8 講的是律例的來源、地位與遵行的理由；本章第一次把「律例典章」當成一份具體清單的標題——第1節之後接的不再是勸勉，而是條文本身。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 典章
+  path: link_folder/神學/典章.md
+  summary: 第1節與「律例」並列，作為整章的標題。CT〔原文字義〕註「典章」判決，判例，正義；文意註解說『典章』指審判，是神對人是否遵行律法的判定。
+  relation: 這個詞在出21:1 是一整段判例的標題。本章把它與「律例」合成一個雙詞標題，標示申12 至26章的條文段落從這裡開始。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 得福（ya.tav）
+  path: link_folder/原文/得福（ya.tav）.md
+  summary: '第25節「你和你的子孫就可以得福」與第28節「就可以永遠享福」STEP 都是 yi.Tav（H3190，ya.tav: be good）；第28節同時出現 ha./Tov（H2896A，tov）對應「看為善」。兩節都把蒙福接在行耶和華眼中看為正的事之後。'
+  relation: 申5、6、8、10 的 ya.tav 多接在誡命總則之後。本章把它接在兩件具體的事上——第25節是不吃血，第28節是謹守聽從所吩咐的一切話。同一個應許用語，這裡對應的是可執行的細目。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 事奉與作奴僕同一字根（a.vad）
+  path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  summary: '第2節「所趕出的國民事奉神的各地方」是 ''a.ve.du、第30節「怎樣事奉他們的神」是 ya.''av.Du，同為 H5647H（a.vad: to serve: minister）。第4節的「事奉耶和華」則換成另一個字 ta.''a.Su/n（H6213I，a.sah），CT〔原文字義〕在該處註「事奉」做，製作，完成。'
+  relation: 申5、6、10、11 用這個字根講以色列事奉神或曾在埃及作奴僕。本章兩次 a.vad 的主詞都是迦南人，而以色列敬拜真神那一句反而換了另一個動詞——同一章裡兩個字分別承擔兩邊。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 滅盡與除滅的雙同字（sha.mad）
+  path: link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md
+  summary: '第30節「不可在他們除滅之後隨從他們的惡俗」STEP 為 hi.sha.me.Da/m（H8045，sha.mad: to destroy）。同章第3節的「除滅」則是 ve./''i.bad.Tem（H6，a.vad: to perish），中文同詞而原文是兩個字。'
+  relation: 申4、6、9 的 sha.mad 都指向以色列自己可能被除滅。本章第30節把受詞換成迦南人——他們被除滅之後，危險反而轉成以色列會去學他們留下的惡俗。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: '第9節「所給你的產業」STEP 為 ha./na.cha.Lah（H5159，na.cha.lah: inheritance），與同節的「安息地」me.nu.Chah（H4496H）並列成一對，一起說明當時為什麼還不能照規矩獻祭。'
+  relation: 民27 至36 與申4、9、10 的 na.cha.lah 多指分地與繼承。本章把它用作時間標記：還沒有到那產業，所以第8節的權宜作法被容許；一到那裡就不可再這樣行。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+  path: link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md
+  summary: 第17節「你的五穀、新酒，和油的十分之一」把這三樣物產的十一奉獻列進不可在自己城裡吃的清單。GT《聖經精讀本》說五穀、新酒和油是希伯來人視為耶和華神之特別禮物的迦南地三大特產。
+  relation: 申11:14 說按時的雨使人可以收藏這三樣，本章則規定它們的十分之一要帶到神所選擇的地方吃。同一組物產，前一章講神怎麼給，本章講人怎麼還。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:11
+      - 申命記:12
+- title: 十分之一
+  path: link_folder/原文/十分之一.md
+  summary: 第6、11節的「十分取一之物」與第17節「油的十分之一」都要奉到耶和華所選擇的地方。CT 與 GT《啟導本聖經申命記註釋》都指出本章講的是三種十一奉獻裡的第二種，是在節期慶典中所獻、獻的人可以享用的那一種。KC 說獻上十分之一是承認神對那地的所有權。
+  relation: 創14、28 的十分之一是個人自發的舉動，利27 與民18 把它制度化。本章加上的是地點——十分之一不但要獻，還要帶到唯一指定的地方，並在那裡與家人和利未人一同吃掉。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 舉祭
+  path: link_folder/原文/舉祭.md
+  summary: 第6、11、17 節三次「手中的舉祭」，都被列在必須奉到神所選擇之地的清單裡；第17節明說舉祭不可在你城裡吃。CT 說『舉祭』指將手中的祭物垂直向上舉起、上下擺動表示獻給神，是平安祭的一種，祭物歸給祭司享用。
+  relation: 出29、利3、7 與民數記各章講的是舉祭在祭禮中怎麼獻、歸誰吃。本章處理的是另一個問題——不是怎麼獻，而是在哪裡獻。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 柱像
+  path: link_folder/原文/柱像.md
+  summary: '第3節「打碎他們的柱像」STEP 為 ma.Tze.vo.Ta/m（H4676，mats.tse.vah: pillar）。CT 說打碎柱像是摧毀那刻有一些符號或形像的石柱。'
+  relation: 出23、34 與申7 都把柱像列在拆毀清單裡。本章第3節把同一道命令接在「所趕出的國民事奉神的各地方」之後，指明要拆的不只是物件，還有那個地點作為祭儀場所的功能。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 不可加添也不可刪減（ya.saph、ga.ra）
+  path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+  summary: 第32節「凡我所吩咐的，你們都要謹守遵行，不可加添，也不可刪減」。CT〔原文字義〕註「加添」增加、「刪減」減少，並說不可按照私意增加或減少。GT《啟導本聖經申命記註釋》在這一節只註了一句「參四2注」；BH 從古代近東竄改君王詔令的角度說明這條規定的分量。
+  relation: 申4:2 把這句話放在律法總論的開頭。本章第32節把它移到一整段敬拜與飲食條例的結尾——同一句話這次收的是細則，而不是總綱。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 網羅
+  path: link_folder/原文/網羅.md
+  summary: '第30節「隨從他們的惡俗，陷入網羅」STEP 為 ti.na.Kesh（H5367，na.qash: to snare）。CT 說『陷入網羅』意指因此被神厭棄。'
+  relation: 出10 的網羅是法老的臣僕形容摩西，出23 與申7 說事奉迦南人的神會成為以色列的網羅。本章把觸發點往前挪了一步——不必真的去事奉，光是打聽他們怎樣事奉，就已經是踏進網羅的動作。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 燔祭
+  path: link_folder/神學/燔祭.md
+  summary: 燔祭在本章出現五次。第13、14節禁止在自己看中的各處獻燔祭，只可在耶和華所選擇的地方獻；第27節規定「你的燔祭，連肉帶血，都要獻在耶和華─你神的壇上」。CT 說獻燔祭時祭肉全都焚燒在祭壇上，血則倒在祭壇的周圍。
+  relation: 創8 至民數記各章講的是燔祭怎麼獻、獻什麼、何時獻。本章第一次把限制放在地點上——燔祭本身的規矩沒有改變，改變的是它只能在一個地方進行。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 平安祭
+  path: link_folder/神學/平安祭.md
+  summary: 第6節把平安祭列在要奉到那裡的清單中；第27節分開處理兩樣東西——平安祭的血要倒在耶和華你神的壇上，平安祭的肉則可以自己吃。GT《聖經精讀本》說在五大祭中只有平安祭才規定獻祭者可以食用祭物。
+  relation: 出、利、民各章講的是平安祭的種類、份額與吃的期限。本章把它放進中央聖所制度裡：正因為肉可以自己吃，才需要明說血仍要倒在壇上，不能一起帶回家。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  path: link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md
+  summary: 第6節「並還願祭、甘心祭」與第26節「你的還願祭」都被列進必須奉到耶和華所選擇之地的清單。CT 說還願祭與甘心祭都是屬於平安祭，前者指為達到許願而向神獻感謝的祭，後者指自發自動為感恩而向神獻的祭。
+  relation: 利3、7 定的是三類祭的條例與吃的期限，民30 處理許願本身的法律效力。本章加上地點：還願祭與甘心祭無論多麼出於自願，都不可以在自己城裡辦完。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 頭生歸神為聖
+  path: link_folder/歷史/頭生歸神為聖.md
+  summary: 第6節與第17節兩次出現「牛群羊群中頭生的」。第6節把它列進要奉到那裡的清單，第17節明說不可在你城裡吃。CT 指出頭生的和舉祭歸給祭司享用，不可帶回各別所住的城裡。
+  relation: 出13、34 立的是頭生歸神的總則，利27 處理贖回與估價。本章處理的是執行地點——頭生的仍舊歸神，這一次規定的是它必須被帶到哪裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 血
+  path: link_folder/主題/血.md
+  summary: '第23節「不可吃血，因為血是生命」STEP 為 ha./Dam（H1818）與 ha./Na.fesh（H5315H，ne.phesh: soul: life）；第27節規定燔祭連肉帶血都要獻在壇上，平安祭的血要倒在壇上。第16、24節兩次要求把血倒在地上，如同倒水一樣。'
+  relation: 利未記與民數記把血放在祭壇上與土地上。本章第一次處理沒有祭壇的場合——城裡宰殺的牲畜也有血，於是規定它要倒在地上；理由寫在第23節，因為血是生命。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:5
+      - 民數記:35
+      - 申命記:12
+- title: 脂油和血都不可吃
+  path: link_folder/神學/脂油和血都不可吃.md
+  summary: 不可吃血的禁令在本章出現四次（第16、23、24、25節），其中三次附帶同一個處置——要倒在地上，如同倒水一樣。第23節加上「只是你要心意堅定」，CT 解為不可受外邦人觀念的影響，以致動搖了不吃血的決心。GT《聖經精讀本》列出四個理由，並說最重要的是血是贖罪的惟一手段。
+  relation: 利3、7 把脂油與血並列為一切住處都不可吃的東西。本章只留下血這一半，並把它放進新的處境：城裡已經可以隨心所欲宰牲吃肉，這條禁令因此需要被重複四次。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 潔淨
+  path: link_folder/神學/潔淨.md
+  summary: 第15、22節兩次「無論潔淨人不潔淨人都可以吃」，STEP 為 ha./ta.Me'（H2931）與 ve./ha./ta.hOr（H2889）。GT《聖經精讀本》說只有潔淨的人才能吃獻給神作犧牲祭的聖物，但這裡所論及的是單為了吃而宰殺的牲畜，故任何人都能食用。
+  relation: 民8 的潔淨是事奉之前的程序。本章用的是同一組潔與不潔的分類，卻是為了畫出它不適用的範圍——一般吃肉不受這條界線限制，聖物才受。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 野味
+  path: link_folder/主題/野味.md
+  summary: 第15、22節兩次用「就如吃羚羊與鹿一般」作比方，STEP 為 ka./tze.Vi（H6643B，gazelle）與 ve./kha./'ai.Yal（H354，deer）。CT 說羚羊與鹿乃屬野味，非用來獻祭，也沒有禮儀上的限制；BH 說明理由是牠們不像綿羊或牛那樣是家畜。
+  relation: 創27 的野味是敘事裡的美味。本章的野味是律法裡的一個類別——可吃但不可獻，因此正好被拿來當作日常吃肉的參照標準。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development: keep
+- title: 分別為聖
+  path: link_folder/神學/分別為聖.md
+  summary: 第26節「只是你分別為聖的物和你的還願祭要奉到耶和華所選擇的地方去」。GT《聖經精讀本》說分別為聖的物無論是牲畜還是器具，統稱為獻給神而特意分別之物。
+  relation: 出13 以下這個詞多用在頭生的與人身上。本章把它用在「物」上，並且與地點綁在一起——分別出來歸神的東西，不可以留在自己城裡處理掉。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 祭壇敬拜
+  path: link_folder/神學/祭壇敬拜.md
+  summary: 第27節兩次提到耶和華你神的壇上：燔祭連肉帶血都要獻在壇上，平安祭的血要倒在壇上。CT 說血只能獻在壇上，血倒在壇上是在神面前承認罪人是該死亡的。
+  relation: 創8、33、35 的築壇是族長各自在所到之處立壇。本章把這件事收攏成唯一一座——第13至14節先禁止在各處獻祭，第27節才交代那一座壇上該怎麼做。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第12節「住在你們城裡無分無業的利未人」、第18節把利未人列進可以吃聖物的名單、第19節命令你要謹慎，在你所住的地方永不可丟棄利未人。CT 說『無分無業的利未人』指利未人沒有與一般以色列人同樣謀生的產業。
+  relation: 民數記各章交代利未人的職分、家族分工與沒有地業的制度。本章把這個制度換成一句給百姓的責任——不是利未人該做什麼，而是每次上到神面前歡樂時，不可以把他留在後面。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 利未人的什一奉獻
+  path: link_folder/神學/利未人的什一奉獻.md
+  summary: 第18節把利未人寫進在耶和華面前吃聖物與歡樂的名單，第19節命令永不可丟棄利未人。CT 把丟棄利未人讀成不作十一奉獻；KC 引民18:21-24 說神已定規利未人靠百姓所獻的十分之一維生，並說百姓不是一次性地給，而是只要住在那地就一直給。
+  relation: 民18 定的是利未人收到十分之一後自己也要再獻，民31 把同一原則放進戰利品。本章講的是這筆奉獻怎麼落地——它不只是交出去，還要在筵席上把人一起帶來。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:18
+      - 申命記:12
+- title: 亞舍拉（木偶）
+  path: link_folder/背景/亞舍拉（木偶）.md
+  summary: '第3節「用火焚燒他們的木偶」STEP 為 va./''a.she.rei./Hem（H842，a.she.rah: Asherah）。CT 說這是燒毀那專拜生殖女神亞舍拉像的木柱。'
+  relation: 出34 與申7 都把木偶列在拆毀清單裡。本章的差別在收尾——第3節在四樣東西之後加上一句並將其名從那地方除滅，要求連名字都不留下。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 毀滅迦南偶像的三道命令
+  path: link_folder/主題/毀滅迦南偶像的三道命令.md
+  summary: '第2節命令把外邦人事奉神的各地方都毀壞了，STEP 為不定詞絕對式加未完成式的 ''a.Bed Te.''a.be.du/n（H6，a.vad: to perish）；第3節接著出現 na.tats（拆毀）、sha.var（打碎）、sa.raph（焚燒）、ga.da（砍下）四個動詞與四樣對象，最後要求將其名從那地方除滅。CT 把第3節拆成四件事並各給用途。'
+  relation: 民33:52 的三道命令是進迦南前的總綱。本章把同一件工作逐樣寫開，並且多要求了一件民數記沒有提的事——除掉那些神明的名字。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:33
+      - 申命記:12
+- title: 古代近東偶像崇拜
+  path: link_folder/背景/古代近東偶像崇拜.md
+  summary: 第2節「無論是在高山，在小山，在各青翠樹下」，STEP 的「青翠」是 ra.'a.nan（H7488B，luxuriant）。BH 說古代近東文化常在高處敬拜，因為人相信那裡離神明更近；GT《聖經精讀本》說這源自越是高處就越是接近崇拜物件的迷信觀念，也是為了使參加崇拜儀式的人感到莊嚴；CT 另指出這類儀式包括和廟妓發生不道德的行為。
+  relation: 出20、23、32 與申4 的材料多集中在偶像的形制與禁令本身。本章補上的是選址與心理——為什麼壇會設在高山與青翠樹下，以及那種選址背後的想法。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 不可使兒女經火歸摩洛
+  path: link_folder/主題/不可使兒女經火歸摩洛.md
+  summary: 第31節「甚至將自己的兒女用火焚燒，獻與他們的神」。CT 列出神所最厭惡的事有三，並說本節僅舉第三項作代表。GT《啟導本聖經申命記註釋》記下後代真的發生了：猶大國亞哈斯和瑪拿西作王時仿行人祭惡俗，到約西亞作王時才予剷除；GT《聖經精讀本》指名這是摩洛宗教的獻祭方式；BH 另舉迦太基與基色的考古發現。
+  relation: 利18、20 是禁令與刑罰本身。本章把它放進另一個位置——它不是獨立的一條罪，而是照他們那樣事奉會走到的盡頭，用來說明為什麼連打聽都不可以。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 專一敬拜
+  path: link_folder/神學/專一敬拜.md
+  summary: '第4節「你們不可照他們那樣事奉耶和華─你們的神」，STEP 顯示這裡的「事奉」是 ta.''a.Su/n（H6213I，a.sah: to make: offer），與第2、30節迦南人事奉偶像的 a.vad 不是同一個字。CT 把「那樣」拆成四項：任意選定地點、任意建造神殿和祭壇、任意獻祭物和祭牲、任意隨自己所喜歡的敬拜方式。第13至14節封住地點，第29至32節再警告不可效法惡俗。'
+  relation: 出22:20 處理的是拜錯對象。本章處理的是用錯方式——第4節禁止的行為外表仍然是在敬拜耶和華，只是照著迦南人的規矩做。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:12
+- title: 安息
+  path: link_folder/神學/安息.md
+  summary: '第9節「你們還沒有到耶和華─你神所賜你的安息地」，STEP 為 ha./me.nu.Chah（H4496H，me.nu.chah: resting）；第10節說明那安息的內容是不被四圍的一切仇敵擾亂、安然居住。GT《啟導本聖經申命記註釋》說這是以色列人到達迦南後定居下來的狀況，不只和平安定、不受仇敵威脅，還可以環繞神的居所建立起一個以耶和華神為中心的單一大民族；BH 把它接到來4:9-10。'
+  relation: 創2 的安息是神歇了創造的工。本章的安息是地上的狀態，而且被當成一個時間分界——沒有到那安息地之前，第8節的權宜作法被容許，到了以後就不可再這樣行。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 摩西的第二篇講章
+  path: link_folder/背景/摩西的第二篇講章.md
+  summary: GT《聖經精讀本》說這一段是摩西對以色列新一代所講三篇講章中第二篇（4:44-26:19）講章的正文，並說當時距進入迦南尚有兩個月；GT《啟導本聖經申命記註釋》說本章至二十六章是《申命記》中詳細解釋律法的部分，並分成七組，第一組是十二1 至十四21；KC 說從這一章開始重點不再是祝福，而是要履行的義務。
+  relation: 申4:44-49 是這篇講章的序言，申5 至11 是勸勉的部分。本章是它的第二半——條文本身從這裡開始，一直到二十六章。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 申12：5
+  path: link_folder/互文/申12：5.md
+  summary: '第5節是這個互文條目的出處章。STEP 顯示「立他名的居所」是 la./Sum（H7760H）＋she.M/o（H8034）＋le./shikh.N/o（H7931，sha.khan: to dwell），「選擇」是 yiv.Char（H977，ba.char）。本章六次重複這個地方（第5、11、14、18、21、26節）；CT 說『選擇何處』後來明定必須在耶路撒冷。'
+  relation: 出20:24 的應許是神會到記下他名的地方賜福，本節則把它變成一條命令與一個制度：地方由神揀選，百姓要去求問。本章其餘的規定幾乎都建在這一節上。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:12
+- title: 耶路撒冷
+  path: link_folder/地點/耶路撒冷.md
+  summary: 本章沒有指名耶路撒冷，但註釋都把「耶和華所選擇的地方」指向它。CT 在第5節說『選擇何處』後來明定必須在耶路撒冷，在第14節說那一支派後來所選定的耶路撒冷是在猶大支派境內；GT《啟導本聖經申命記註釋》引王上八16、十四21 與代下三1，說所羅門王在這城建造聖殿；KC 說那個地方先是示羅，後來是錫安或耶路撒冷。
+  relation: 創14 的撒冷只是麥基洗德作王的城。本章雖然沒有點名，卻在制度上為它預留了位置——一個由神揀選、立他名、全國唯一的獻祭中心。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 會幕（帳幕整體）
+  path: link_folder/主題/會幕（帳幕整體）.md
+  summary: CT 在第7、18節說「耶和華你們神的面前」即指會幕，並說一般獻祭的人只能在會幕外面附近吃，只有祭司可以在會幕的院子吃。GT《啟導本聖經申命記註釋》說曠野時期會幕是中心，進迦南後會幕先設在示羅，但那是臨時措施；KC 也把示羅列為那個地方的第一站。
+  relation: 出、民各章講的是會幕怎麼造、怎麼安營、怎麼搬。本章講的是它之後會變成什麼——一個不再移動的地點；會幕在這條線上只是第一個階段。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep

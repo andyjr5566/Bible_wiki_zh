@@ -898,6 +898,18 @@
     "status": "formal",
     "aliases": []
   },
+  "各人行自己眼中看為正的事": {
+    "path": "link_folder/主題/各人行自己眼中看為正的事.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "各人行自己眼中看為正的事",
+    "status": "formal",
+    "aliases": [
+      "行自己眼中看為正的事"
+    ]
+  },
   "呼天喚地作見證（ud）": {
     "path": "link_folder/主題/呼天喚地作見證（ud）.md",
     "type": "主題",
@@ -936,6 +948,18 @@
     "status": "formal",
     "aliases": [
       "內幔柱"
+    ]
+  },
+  "在耶和華面前歡樂": {
+    "path": "link_folder/主題/在耶和華面前歡樂.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "在耶和華面前歡樂",
+    "status": "formal",
+    "aliases": [
+      "在神面前歡樂"
     ]
   },
   "地上爬物（八種不潔爬蟲）": {
@@ -2626,6 +2650,19 @@
     "title": "稱摩西為我主",
     "status": "formal",
     "aliases": []
+  },
+  "立他名的居所（中央聖所）": {
+    "path": "link_folder/主題/立他名的居所（中央聖所）.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "立他名的居所（中央聖所）",
+    "status": "formal",
+    "aliases": [
+      "中央聖所",
+      "神所選擇的地方"
+    ]
   },
   "立約": {
     "path": "link_folder/主題/立約.md",
@@ -13819,6 +13856,19 @@
     "status": "formal",
     "aliases": []
   },
+  "宰牲與獻祭同一個字（za.vach）": {
+    "path": "link_folder/原文/宰牲與獻祭同一個字（za.vach）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "宰牲與獻祭同一個字（za.vach）",
+    "status": "formal",
+    "aliases": [
+      "za.vach",
+      "宰牲"
+    ]
+  },
   "寄居的": {
     "path": "link_folder/原文/寄居的.md",
     "type": "原文",
@@ -14612,6 +14662,18 @@
     "aliases": [
       "怒氣",
       "憤怒離開"
+    ]
+  },
+  "求問與訪問同一個字（da.rash）": {
+    "path": "link_folder/原文/求問與訪問同一個字（da.rash）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "求問與訪問同一個字（da.rash）",
+    "status": "formal",
+    "aliases": [
+      "da.rash"
     ]
   },
   "汗流滿面才得糊口": {
@@ -16182,6 +16244,18 @@
     "status": "formal",
     "aliases": [
       "隔絕"
+    ]
+  },
+  "隨心所欲（av.vah、ne.phesh）": {
+    "path": "link_folder/原文/隨心所欲（av.vah、ne.phesh）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "隨心所欲（av.vah、ne.phesh）",
+    "status": "formal",
+    "aliases": [
+      "隨心所欲"
     ]
   },
   "隨眾": {
@@ -20573,6 +20647,18 @@
       "第二誡",
       "第二條誡命",
       "禁止偶像"
+    ]
+  },
+  "不可照他們那樣事奉耶和華": {
+    "path": "link_folder/神學/不可照他們那樣事奉耶和華.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "不可照他們那樣事奉耶和華",
+    "status": "formal",
+    "aliases": [
+      "不可照他們那樣"
     ]
   },
   "不可親近": {
@@ -29291,6 +29377,9 @@
   "吃兒女的肉": {
     "alias_of": "吃兒女的肉（極端饑荒的咒詛）"
   },
+  "行自己眼中看為正的事": {
+    "alias_of": "各人行自己眼中看為正的事"
+  },
   "呼天喚地": {
     "alias_of": "呼天喚地作見證（ud）"
   },
@@ -29299,6 +29388,9 @@
   },
   "內幔柱": {
     "alias_of": "四根包金柱子（內幔柱）"
+  },
+  "在神面前歡樂": {
+    "alias_of": "在耶和華面前歡樂"
   },
   "八種不潔爬蟲": {
     "alias_of": "地上爬物（八種不潔爬蟲）"
@@ -29722,6 +29814,12 @@
   },
   "祭司不得飲酒": {
     "alias_of": "祭司禁酒的定例"
+  },
+  "中央聖所": {
+    "alias_of": "立他名的居所（中央聖所）"
+  },
+  "神所選擇的地方": {
+    "alias_of": "立他名的居所（中央聖所）"
   },
   "鹽約": {
     "alias_of": "立約的鹽"
@@ -31826,6 +31924,12 @@
   "學習與教訓": {
     "alias_of": "學習與教訓同一字根（la.mad）"
   },
+  "za.vach": {
+    "alias_of": "宰牲與獻祭同一個字（za.vach）"
+  },
+  "宰牲": {
+    "alias_of": "宰牲與獻祭同一個字（za.vach）"
+  },
   "寄居的(ger)": {
     "alias_of": "寄居的"
   },
@@ -32023,6 +32127,9 @@
   },
   "憤怒離開": {
     "alias_of": "氣忿忿"
+  },
+  "da.rash": {
+    "alias_of": "求問與訪問同一個字（da.rash）"
   },
   "沙番": {
     "alias_of": "沙番（shaphan）"
@@ -32470,6 +32577,9 @@
   },
   "隔絕": {
     "alias_of": "隔絕（與污穢分別）"
+  },
+  "隨心所欲": {
+    "alias_of": "隨心所欲（av.vah、ne.phesh）"
   },
   "雨水滋潤": {
     "alias_of": "雨水滋潤（ma.tar、sha.tah）"
@@ -33571,6 +33681,9 @@
   },
   "禁止偶像": {
     "alias_of": "不可為自己雕刻偶像"
+  },
+  "不可照他們那樣": {
+    "alias_of": "不可照他們那樣事奉耶和華"
   },
   "do not break through": {
     "alias_of": "不可親近"
