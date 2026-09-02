@@ -1,0 +1,353 @@
+book: 申命記
+chapter: 14
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 不可效法外邦喪儀習俗（剃髮劃身刺花紋）
+  path: link_folder/主題/不可效法外邦喪儀習俗（剃髮劃身刺花紋）.md
+  summary: '第1節下半把這組禁令搬進申命記：「不可為死人用刀劃身，也不可將額上剃光。」STEP 顯示「用刀劃身」是 tit.go.de.Du（H1413，ga.dad: to cut，本節逐字解 you will cut yourselves），「額上剃光」是 ta.Si.mu（H7760A，sum: to set: make）加 ka.re.Chah（H7144，qor.chah: bald spot），而中文的「額上」在原文是 bein 加 ''ei.nei./Khem，字面是在你們眼睛之間。CT〔原文字義〕註「用刀劃身」刺穿，割劃自己，並說『額上剃光』意指僅留下長在頭頂的頭髮，而剃光四周。GT《申命記雷氏研讀本》說「這些為死人哀悼的做法——迦南人為了承認死者為神而有的做法——是神的子民所嚴禁的」；GT《聖經精讀本》說「此律例嚴禁為死人而自傷其身」，並補上一個社會常識——「在習慣上希伯來人不剃額上之發,故光頭大都是被羞辱與蔑視的對象」。KC 說神兒子面對死亡的方式與外邦人截然不同；BH 說「Cutting oneself was often a ritualistic act to appease or communicate with the dead or deities.」（自割常是一種儀式性的作法，用來安撫死者或神明，或與他們溝通。）'
+  relation: 利未記十九章把這組禁令放在一連串聖潔生活條例裡，本章給的理由換了一個層次：第1節上半先說「你們是耶和華─你們神的兒女」，第2節再說「你歸耶和華─你神為聖潔的民」，禁令是從身分推出來的。GT《聖經精讀本》另補一點利未記沒有的社會背景——希伯來人本來就不剃額上的頭髮，光頭在當時是羞辱的記號，所以這條禁令不只是宗教分別，也是文化常識的延續。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 屬我的子民
+  path: link_folder/神學/屬我的子民.md
+  summary: '第2節「耶和華從地上的萬民中揀選你特作自己的子民」，STEP 為 le./''Am 加 se.gu.Lah（H5459，簡要詞典義 se.gul.lah: possession）。CT 的話中之光把這個詞的分量講了出來：「特作自己的子民」原文是「作自己貴重的財產」，指借著分配擄物或遺產而得的財寶；CT〔文意註解〕另說它指特選出來、專一且完全屬於神、作神產業的子民。BH 譯作 prized possession，並把它接到出19:5 的祭司的國度與聖潔的國民，以及彼前2:9。'
+  relation: 這是同一個詞在律法書中的第三次出場：出19:5 在西奈山下第一次宣告，申7:6 把它與揀選、聖潔綁在一起，本章則把它當成飲食與奉獻兩段條例的理由。第2節與第21節兩次重複「你是歸耶和華─你神為聖潔的民」，顯示這個身分在本章不是點綴，而是每一條規定的根據。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 潔淨與不潔淨
+  path: link_folder/神學/潔淨與不潔淨.md
+  summary: '本章第7、8、10、19 節四次判為「與你們不潔淨」，STEP 都是 ta.Me（H2931，簡要詞典義 ta.me: unclean）。GT《申命記串珠聖經註釋》整理出學者對區分原則的三大類看法——衛生（有研究測出不潔之物的毒性較高）、宗教（不潔之物象徵迦南宗教或與其獻祭有關）、細菌（兔子、沙番、無翅無鱗之物、蝙蝠等是帶菌者）——同時聲明：「這些都不是聖經直接說明的。」GT《聖經精讀本》給的是屬靈層次的三個理由，其中一個是要以色列人在最基本的飲食生活上也與外邦人全然區別。CT 引可七18-20 與徒十9-16 說明新約的轉向。'
+  relation: 本章是這組分類在律法書中的第二次完整鋪陳，第一次在利未記十一章。判準沒有變，說法變了：本章不解釋為什麼，只反覆說「與你們不潔淨」——不潔是相對於這一群人說的，而理由寫在第2節與第21節的同一句話裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:11
+      - 申命記:14
+- title: 分蹄倒嚼（潔淨走獸的判準）
+  path: link_folder/主題/分蹄倒嚼（潔淨走獸的判準）.md
+  summary: '第6節「凡分蹄成為兩瓣又倒嚼的走獸，你們都可以吃」，第7至8節給出例外。STEP 顯示「分蹄」是 maf.Re.set（H6536，pa.ras: to divide）加 par.Sah（H6541，par.sah: hoof），「倒嚼」是 ma.''a.Lat（H5927M，a.lah: to ascend: regurgitate）加 ge.Rah（H1625，ge.rah: cud）。CT〔靈意註解〕說分蹄表徵行動有分別，倒嚼表徵反覆思想神的話；〔話中之光〕把結構讀成一個原則：「分蹄與倒嚼必須是一同具有的，只有其中一樣還是不潔的。」KC 說「Both characteristics must be present.」（兩樣特徵都必須具備。）並把只重教義不重實踐比作法利賽人的說而不行。'
+  relation: 利未記十一章給了同一條判準，但只點名不可吃的走獸；本章第4至5節先列出可吃的十種——牛、綿羊、山羊三種家畜，加上鹿、羚羊、麅子、野山羊、麋鹿、黃羊、青羊七種野生動物——再回頭講判準與例外。CT 指出前三種正是獻祭常用的祭牲，後七種不在祭牲之列卻同樣潔淨。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:11
+      - 申命記:14
+- title: 豬與異教祭祀的關聯
+  path: link_folder/文化/豬與異教祭祀的關聯.md
+  summary: 第8節「豬─因為是分蹄卻不倒嚼，就與你們不潔淨。這些獸的肉，你們不可吃，死的也不可摸」。CT〔靈意註解〕說『分蹄卻不倒嚼』表徵只有敬虔的外貌，卻背了敬虔的實意的人。BH 指出古代近東普遍把豬視為不潔，牠們常以廢棄物與腐肉為食，這條禁令把以色列與周邊吃豬肉的民族區分開來；他並說摸不潔動物的屍體會使人染上禮儀上的不潔，需要行潔淨禮。
+  relation: 利未記十一7 給的是判準與判定，本章多了一句「死的也不可摸」——禁止的範圍從吃擴到接觸。STEP 顯示這裡的「死的」是 u./ve./niv.la.Ta/m（H5038），與第21節「凡自死的」是同一個字。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 有翅有鱗（潔淨水族的判準）
+  path: link_folder/主題/有翅有鱗（潔淨水族的判準）.md
+  summary: 第9至10節「水中可吃的乃是這些：凡有翅有鱗的都可以吃；凡無翅無鱗的都不可吃，是與你們不潔淨」。CT〔原文字義〕註「翅」即鰭，〔話中之光〕說翅指在水中能行動，鱗是為著與水隔開；〔文意註解〕列出無翅無鱗的例子——鰻、鱔、蛤、牡蠣、蝦、蟹、鯨魚、海豚。KC 說「The scales are an armor, a separation between the animal and the environment in which it is in.」（鱗是一副鎧甲，是這動物與牠所處環境之間的隔離。）並舉一組對照：「Lot is someone who had scales. He did not take part in evil.」（羅得是有鱗的人，他沒有參與惡事。）但羅得沒有鰭、逃不出去，約瑟正好相反。BH 說這條排除了周邊文化常吃的貝類與其他海中生物。
+  relation: 本章的水族段比利未記十一9-12 精簡：利未記十一12 另加「凡水裡無翅無鱗的，你們都當以為可憎」的強烈用詞，本章只說「是與你們不潔淨」，與同章走獸段用同一個判定詞。判準本身完全相同，一句話兩個條件。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 不潔淨雀鳥（二十種可憎飛禽）
+  path: link_folder/主題/不潔淨雀鳥（二十種可憎飛禽）.md
+  summary: 第11至20節以「凡潔淨的鳥，你們都可以吃」開頭與結尾，中間第12至18節列出不可吃的鳥。CT〔原文字義〕逐一給出字義——「雕」禿鷹、「狗頭雕」兀鷹、「魚鷹」海鷗、「戴鴴」戴勝等；〔話中之光〕從名單本身歸納出三個共同點：殘忍（喜歡吃肉和血）、孤獨痛苦（喜歡陰暗的地方）、吃不潔污穢的食物。GT《申命記雷氏研讀本》說「這些雀鳥在利未記十一章13節的腳註已經加以識別」。KC 說飛鳥講的是靈界的事，清單以潔淨的鳥開始也以潔淨的鳥結束。BH 逐鳥說明時指出蝙蝠是這份名單裡唯一的哺乳類。
+  relation: 這是同一份名單在律法書中的第二次出現。與利未記十一13-19 一樣，這一段只給名單、不給判準——走獸有分蹄倒嚼、水族有有翅有鱗，飛鳥沒有。第19節另加一條利未記在別處處理的規定：凡有翅膀爬行的物都不潔淨。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 出23：19不可用山羊羔母奶煮山羊羔
+  path: link_folder/解經爭議/出23：19不可用山羊羔母奶煮山羊羔.md
+  summary: '第21節結尾第三次出現這條禁令。STEP 為 te.va.Shel（H1310，ba.shal: to boil）加 ge.Di（H1423，ge.di: kid）加 ba./cha.Lev（H2461，cha.lav: milk）加 ''i.M/o（H517，em: mother）。CT 給二意：以母奶煮其子有殘忍之嫌，此乃迦南人異教徒祭祀習俗。GT《申命記串珠聖經註釋》說「以山羊羔母的奶煮山羊羔是迦南常見的宗教儀式，與巴力的崇拜有密切的關係，所以不可隨從」；GT《聖經精讀本》說「用山羊羔的生命之泉母奶煮山羊羔是藐視生命之尊嚴的極其野蠻的行為」，並指有時是為了做出可口的料理，有時是為了行邪術的目的。KC 指出這條命令另外兩次出現用字完全相同，並說奶是給那小羊活命用的，不該拿來與牠的死連在一起。'
+  relation: 出二十三19 與出三十四26 兩次都把這條放在節期條款的結尾，本章把它放在食物條例的結尾——同一句話，第三個位置。它緊接在「因為你是歸耶和華─你神為聖潔的民」之後，因此在申命記裡不是節期規矩，而是聖潔身分的最後一項延伸。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:14
+- title: 十分之一
+  path: link_folder/原文/十分之一.md
+  summary: '第22節「十分取一分」，STEP 顯示是同一字根連用兩次：''a.Ser（H6237，HVpcc 不定詞絕對式）加 te.''a.Ser（H6237，HVpi2ms 未完成式）；第23節與第28節的「十分之一」則是名詞 ma''.Sar（H4643，簡要詞典義 ma.a.ser: tithe）。GT《啟導本聖經申命記註釋》說什一奉獻歷史甚久，創世記二十八22 和利未記二十七章都記有此事；BH 說這作法可追到亞伯拉罕給麥基洗德（創14:20）與雅各的許願（創28:22），是承認一切祝福都出於神。'
+  relation: '這一章同時用上了這個字的動詞與名詞兩種形式，而第22節的動詞疊寫正是條目定義裡創28:22 所記的那種加強語氣結構。本章第22至29節分別處理兩種用途：第22至27節帶到神所選擇的地方吃，第28至29節每逢三年留在本城周濟。（本回合順帶勘誤定義兩處：舊版把 STEP 的詞典義用引號寫成一句逐字引句，實際 STEP 簡要詞典義是 a.sar: to tithe，中文取十分之一、獻上一成是轉述不是原話；又把創28:22 的引句末字寫成祢，和合本作你。）'
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:28
+      - 申命記:14
+- title: 耶和華是事奉者的業與分
+  path: link_folder/神學/耶和華是事奉者的業與分.md
+  summary: '第27節「住在你城裡的利未人，你不可丟棄他，因為他在你們中間無分無業」，第29節再說一次。STEP 顯示「分」是 Che.lek（H2506A，簡要詞典義 che.leq: portion），「業」是 na.cha.Lah（H5159，簡要詞典義 na.cha.lah: inheritance），「丟棄」是 ta.''az.Ve./nu（H5800H，a.zav: to leave: neglect）。CT〔原文字義〕註「分」是一份土地，「業」是財產、產業。BH 說利未人不像其他支派得著地業，改為分散在各支派中倚靠什一與供物維生（民18:20-24）。'
+  relation: 民數記十八20 用的是同一對字，但說的是正面那一半——我就是你的分，是你的產業。本章只說出否定的那一半，而且不是說給利未人聽的：對象換成一般百姓，這句話成了他們不可丟棄利未人的理由。同一個事實在兩卷書裡承擔的功能完全不同。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:18
+      - 申命記:14
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: '本章四次出現「你城裡」（第21、27、29節）與「你的城中」（第28節），STEP 都是 bi/sh.''a.Rei./kha（H8179H，簡要詞典義 sha.ar: gate: town），字面是你的城門。BH 在第28節補上背景：「The gates of a city were often the center of civic life, where legal matters were settled and community decisions were made」（城門常是城市公共生活的中心，法律事務在那裡了結，社群決議也在那裡作成）。KC 說第三年的十分之一不帶到耶路撒冷，而是留在家裡邀請有需要的人。'
+  relation: 創世記那幾章記的是城門這個地點本身——羅得坐在城門口、亞伯拉罕在城門前議價、示劍父子在城門口說話。到了申命記的律法用語，同一個字已經成為整座城的代稱：第28至29節說十分之一「積存在你的城中」，供「你城裡」的利未人、寄居的與孤兒寡婦取用，講的是全城的範圍，不是城門那一小塊地方。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 利未人的什一奉獻
+  path: link_folder/神學/利未人的什一奉獻.md
+  summary: '第28至29節「每逢三年的末一年，你要將本年的土產十分之一都取出來，積存在你的城中。在你城裡無分無業的利未人，和你城裡寄居的，並孤兒寡婦，都可以來，吃得飽足」。STEP 的「積存」是 ve./hi.nach.Ta（H5117，簡要詞典義 nu.ach: to rest）。CT 說這是第三種什一奉獻，每隔三年積存起來，施捨給窮苦的人。GT《申命記雷氏研讀本》說「每逢第三年，第二個十分獻一的祭物不用帶往聖所，卻要留在家裏，用來供養利未人和貧窮的人」。KC 說第三年的十分之一不給利未人也不帶到耶路撒冷，而是留在家中邀請有需要的人；他並指出要拿得出這一份，前提是已經在那地住滿兩年。'
+  relation: 第27節與第29節兩次提到利未人，但方式不同：第27節是在感恩宴席上不可把他漏掉，第29節是每三年一次的實物周濟。這一章因此在既有的那條鏈上補了第三個環節——除了百姓交、利未人再獻，還有一筆定期留在本地、與寄居的和孤兒寡婦一同分享的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:14
+- title: 五穀、新酒和油（da.gan、ti.rosh、yits.har）
+  path: link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md
+  summary: '第23節「又要把你的五穀、新酒、和油的十分之一，並牛群羊群中頭生的，吃在耶和華─你神面前」。STEP 為 de.ga.ne./Kha（H1715，簡要詞典義 da.gan: grain）、ti.ro.she./Kha（H8492，簡要詞典義 ti.rosh: new wine）、ve./yitz.ha.Re./kha（H3323，簡要詞典義 yits.har: oil），與條目登記的三個字完全相同。CT〔文意註解〕說意指田地所出的五穀，葡萄所醡的新酒，橄欖所醡的油。BH 說這三樣是古代近東飲食的主食，代表供養與祝福。'
+  relation: 這是這組三樣物產在申命記的第三次出現，用法與申12:17 相同——都是要帶到神所選擇的地方吃，不可留在自己城裡。本章多加了一項並列的東西：牛群羊群中頭生的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: '本章三次提到這個地方：第23節「他所選擇要立為他名的居所」、第24節「所選擇要立為他名的地方」、第25節「所要選擇的地方」。STEP 的第23節為 ba./ma.Kom（H4725，簡要詞典義 ma.qom: place）加 yiv.Char（H977，ba.char: to choose）加 le./sha.Ken（H7931，簡要詞典義 sha.khan: to dwell）加 she.M/o（H8034，簡要詞典義 shem: name）。CT 說指在節期中帶到耶路撒冷奉獻。GT《申命記串珠聖經註釋》說這裡大概表示奉獻者可留一些，以便在中央聖所與家人共進感恩筵席。BH 說這指向後來在耶路撒冷建殿，是全國合一的所在。'
+  relation: 申命記十二章立下規矩，本章第24至26節第一次處理執行上的難題：住得太遠怎麼辦。答案不是就近獻，而是換成銀子帶過去、到了再買回來——地點不能讓，形式可以換。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:14
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: '第23節「這樣，你可以學習時常敬畏耶和華─你的神」。STEP 為 til.Mad（H3925H，簡要詞典義 la.mad: to learn）加 le./yir.''Ah（H3372H，簡要詞典義 ya.re: to fear: revere）加 kol 與 hai./ya.Mim（H3605 加 H3117K，簡要詞典義 yom: day: always）。CT〔話中之光〕說敬畏神不是一時的熱情衝動，而是恒久在神面前的生活，並說神造就建立神子民的方法，就是帶領他們實際的進入生活，讓他們在生活中具體的學習敬畏神。BH 說這裡的 fear 不是害怕，而是對神的聖潔與權柄有深的敬重，並接到箴9:10。'
+  relation: 這一節把敬畏放在一個具體的操練上：每年一次帶著十分之一上到神面前吃喝，就是學習敬畏的方法。CT 由此指出敬畏若沒有實際的生活就成了空談。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 到了申命記，敬畏成了整篇講章的骨架
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第27節「住在你城裡的利未人，你不可丟棄他，因為他在你們中間無分無業」，第29節「在你城裡無分無業的利未人」。STEP 為 ha./le.Vi（H3881）。BH 說利未支派分別出來承擔宗教職務，不像其他支派得地業，而是分散住在各支派中間，倚靠百姓的什一與供物維生。
+  relation: 本章記的是利未人在地方上的實際處境：他們不是集中在聖所，而是住在各人的城裡。因此百姓與他們的關係有兩種——上聖所過節時帶他一起去，每三年一次把留在本城的十分之一分給他。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 孤兒寡婦
+  path: link_folder/主題/孤兒寡婦.md
+  summary: '第29節「在你城裡無分無業的利未人，和你城裡寄居的，並孤兒寡婦，都可以來，吃得飽足」。STEP 為 ve./hai./ya.Tom（H3490，簡要詞典義 ya.tom: orphan）與 ve./ha./''al.ma.Nah（H490，簡要詞典義 al.ma.nah: widow），「吃得飽足」是 ve./sa.Ve.''u（H7646，簡要詞典義 sa.va: to satisfy）。GT《申命記串珠聖經註釋》說利未人、寄居的，並孤兒寡婦，都因不同的原因而要倚靠社會其他人士供應他們的需要，施與者每逢第三年把本來歸給神的十分之一份予不足者。BH 說孤兒在古代社會特別脆弱、寡婦常面對經濟困難與社會邊緣化，並接到詩68:5 與雅1:27；他並指出「吃得飽足」講的不只是勉強活著。'
+  relation: 申命記第十章說的是神親自為孤兒寡婦伸冤，本章說的是這件事怎麼在錢上落實：每三年一次，整整一成的收成留在本城，讓他們與利未人、寄居的一同吃飽。第29節結尾把賜福接在後面——耶和華必在你手裡所辦的一切事上賜福與你。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:14
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: '第21節「可以給你城裡寄居的吃，或賣與外人吃」與第29節「和你城裡寄居的」，STEP 兩處都是 ger（H1616，簡要詞典義 ger: sojourner）；第21節的「外人」另有其字 le./na.khe.Ri（H5237，簡要詞典義 nokh.ri: foreign）。GT《聖經精讀本》把兩者分開：「『寄居的』指生活在以色列人當中,也在一定程度上被其同化,卻因尚未受割禮,從聖約的角度,還沒有成為神子民的人」，而「外人 指不居住在以色列地的外國人」。BH 說外人不受同一套飲食律例約束，這條同時保住以色列的聖別，也顧到經濟與待客的實際。'
+  relation: 本章讓寄居的同時出現在兩種位置上：第21節是可以接受以色列人不能吃之物的一方，第29節是每三年一次受周濟的一方。同一節裡「寄居的」與「外人」用兩個不同的字，是本章對這個身分的邊界最清楚的一次界定。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: update
+    development: keep
+- title: 神的揀選
+  path: link_folder/神學/神的揀選.md
+  summary: '第2節「耶和華從地上的萬民中揀選你特作自己的子民」，STEP 為 ba.Char（H977，簡要詞典義 ba.char: to choose，HVqp3ms 完成式）。CT〔文意註解〕說『揀選』表明不在乎人的定意，乃在乎神的憐憫，並引羅九11、16。GT《聖經精讀本》說以色列之所以不該追隨外邦人的風俗，是因為聖潔之神從萬民中揀選以色列分別為聖。BH 說神揀選以色列不是基於他們的功勞，而是出於祂主權的旨意與愛，並接到申7:7-8 與弗1:4-5。'
+  relation: 本章的揀選不是獨立的主題，而是禁令的理由：第1節先禁止外邦喪儀，第2節緊接著用「因為」帶出揀選與聖潔，說明為什麼這一群人不能跟著周圍的人走。同一個動詞在本章第23、24、25 節換了主語受詞——神揀選百姓，也揀選那個立他名的地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 聖潔
+  path: link_folder/神學/聖潔.md
+  summary: '第2節與第21節兩次說「你是歸耶和華─你神為聖潔的民」，STEP 都是 ''am 加 ka.do.Vosh（H5971A 加 H6918G，簡要詞典義 qa.dosh: holy）。CT〔文意註解〕說『聖潔的民』意指從外邦萬民的風俗習慣中被分別出來歸神為聖的子民。BH 說 holiness 的意思是被分別出來歸給一個特殊的用途，兼含道德的純潔與身分的獨特，並接到彼前1:15-16。'
+  relation: 本章把這個身分用作兩段條例的支點：第2節放在喪儀禁令之後，第21節放在食物條例的最後一條之前。CT 的話中之光指出神的百姓必須從日常最普通的喪葬、吃喝等生活習俗開始與地上的萬民分別。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 隨心所欲（av.vah、ne.phesh）
+  path: link_folder/原文/隨心所欲（av.vah、ne.phesh）.md
+  summary: '第26節「你用這銀子，隨心所欲，或買牛羊，或買清酒濃酒，凡你心所想的都可以買」。STEP 顯示前半是 te.''a.Veh（H183，簡要詞典義 a.vah: to desire）加 naf.she./Kha（H5315I，簡要詞典義 ne.phesh: soul: myself），後半的「凡你心所想的」是 tish.''a.le./Kha（H7592，簡要詞典義 sha.al: to ask）加 naf.She./kha（H5315L，簡要詞典義 ne.phesh: soul: appetite）。CT〔原文字義〕註「隨心」是魂、自我，「所欲」是渴望、傾向。BH 說 anything you desire 是在律法界限內給敬拜者的自由，反映的是出於心的參與。'
+  relation: 申命記十二章的「隨心所欲」講的是在自己城裡宰牲吃肉，本章講的是把奉獻折現之後買什麼。兩處都是許可，而且都附著同一組上限：買什麼可以自己決定，在哪裡吃、為什麼吃不能。本章還在同一節裡把同義的另一組字並排——渴望與求問各用一次，兩次都以 ne.phesh 為主語。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:14
+- title: 學習與教訓同一字根（la.mad）
+  path: link_folder/原文/學習與教訓同一字根（la.mad）.md
+  summary: '第23節「這樣，你可以學習時常敬畏耶和華─你的神」，STEP 的「學習」是 til.Mad（H3925H，簡要詞典義 la.mad: to learn: learn，HVqj2ms），正是條目所記的字根。CT〔原文字義〕註「學習」是被教導、被訓練；CT〔話中之光〕說神既選召了祂的子民，祂就教導他們，造就他們，建立他們，使他們可以學習時常敬畏耶和華。'
+  relation: 申命記第五、六章的 la.mad 講的是律法的教與學，本章換了場合：學習的教材不是條文，是一年一度帶著十分之一上到神面前吃喝這件事本身。CT 的話中之光把這個方法講明——神造就子民的方式，是帶領他們實際的進入生活。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 在耶和華面前歡樂
+  path: link_folder/主題/在耶和華面前歡樂.md
+  summary: '第26節「你和你的家屬在耶和華─你神的面前吃喝快樂」。STEP 為 ve./''a.Khal.ta（H398）加 li/f.Nei（H6440G）加 ve./sa.mach.Ta（H8055，簡要詞典義 sa.mach: to rejoice）加 u./vei.Te./kha（H1004M，簡要詞典義 ba.yit: house: household）。CT〔話中之光〕說在神面前吃喝快樂並不是坐下吃喝、起來玩耍的狂歡和放縱，而是為了學習時常敬畏耶和華。KC 說當神的兒子享用祂所賜的福分時，神自己是喜悅的。BH 說與全家一同歡樂顯出敬拜在以色列是全家的事。'
+  relation: 申命記十二章三次下達這道命令，本章是同一件事的第四次，而且第一次交代了做不到時怎麼辦——路太遠可以換成銀子，到了那裡再買回來，歡樂本身不打折。第27節緊接著提醒不可丟棄利未人，第29節再把飽足擴大到寄居的與孤兒寡婦。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:14
+- title: 頭生歸神
+  path: link_folder/神學/頭生歸神.md
+  summary: '第23節「並牛群羊群中頭生的，吃在耶和華─你神面前」。STEP 為 u./ve.kho.Rot（H1060，簡要詞典義 be.khor: firstborn）加 be.ka.re./Cha（H1241，簡要詞典義 ba.qar: cattle）加 ve./tzo.Ne./kha（H6629G，簡要詞典義 tson: flock）。CT〔原文字義〕註「頭生的」即長子，〔文意註解〕把它與五穀、新酒、油並列，說的是家畜的頭生。BH 說頭生的代表神所賜之物中最好也最先的一份。'
+  relation: 出埃及記二十二29-30 規定頭生的要歸給神，本章記的是歸給神之後的處置方式：與十分之一一起帶到神所選擇的地方，在祂面前吃。這一節因此把頭生歸神從奉獻的動作接到節期的宴席上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 遠離葡萄樹與酒
+  path: link_folder/主題/遠離葡萄樹與酒.md
+  summary: '第26節「或買清酒濃酒」，STEP 為 vai./Ya.yin（H3196，簡要詞典義 ya.yin: wine）加 va./she.Khar（H7941，簡要詞典義 she.khar: strong drink），與拿細耳人被禁的是同一對字。GT《申命記雷氏研讀本》說「有些人認為這是經過發酵，但酒精成分極低的啤酒」，並指出民數記二十八7 用這用語描述奠祭所獻的濃酒、箴言二十1 警告人不可飲用濃酒，而以色列在曠野飄流的四十年期間都沒有飲用清酒或濃酒（申二九6）。GT 另收艾基斯《舊約聖經難題彙編》整篇處理舊約對飲酒的教訓。'
+  relation: 民數記第六章把清酒濃酒列為拿細耳人三條禁令的第一條，本章卻明文把它們列在可以用奉獻的銀子買的東西裡。同一對字在兩處的地位相反，正好顯出拿細耳人的願是一種額外的分別，不是全體百姓的通則。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
