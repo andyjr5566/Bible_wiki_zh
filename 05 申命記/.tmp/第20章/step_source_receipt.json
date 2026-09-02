@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_20.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 316,
+      "first": "Deu 20:1",
+      "last": "Deu 20:20",
+      "sha256": "33e937f50ae5d55c26ec83ab3a40e8b7438ee48adef100583479260d330ae42b",
+      "bytes": 62173,
+      "chars": 54745,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

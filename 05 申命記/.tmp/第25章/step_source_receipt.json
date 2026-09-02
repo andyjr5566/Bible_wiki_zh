@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_25.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 260,
+      "first": "Deu 25:1",
+      "last": "Deu 25:19",
+      "sha256": "5f039ca3a7497a9d660d96d240a45643e7b50f9dc19a6e93336ed1fe256e76dc",
+      "bytes": 53406,
+      "chars": 47123,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

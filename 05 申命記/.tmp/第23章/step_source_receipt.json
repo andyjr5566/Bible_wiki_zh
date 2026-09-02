@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_23.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 329,
+      "first": "Deu 23:1",
+      "last": "Deu 23:25",
+      "sha256": "5b30b55c23db22ffcba7b7e58f6d0ad79b9b4eb4a4a725997ff28ee700e2734f",
+      "bytes": 63942,
+      "chars": 56123,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

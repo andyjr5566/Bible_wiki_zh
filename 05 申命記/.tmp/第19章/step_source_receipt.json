@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_19.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 332,
+      "first": "Deu 19:1",
+      "last": "Deu 19:21",
+      "sha256": "32d11fae63e0b313279c4ff332e8da6f2fc49cbd701158d15b7be06084caf326",
+      "bytes": 64818,
+      "chars": 57129,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

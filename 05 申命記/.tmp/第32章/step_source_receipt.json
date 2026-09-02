@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_32.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 52,
+      "words": 615,
+      "first": "Deu 32:1",
+      "last": "Deu 32:52",
+      "sha256": "f63db5b5e62733ef73b279f4b1a549b0135a44f9dd660e7431f5d2aee26f21f2",
+      "bytes": 120100,
+      "chars": 105577,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

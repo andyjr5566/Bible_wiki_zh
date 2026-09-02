@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 33,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_33.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 33,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 336,
+      "first": "Deu 33:1",
+      "last": "Deu 33:29",
+      "sha256": "0ca7218306ff34005bb5828a5d2e266e0a1d856b015cedf39619ba3ce3681519",
+      "bytes": 67720,
+      "chars": 59314,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

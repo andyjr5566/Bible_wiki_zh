@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_22.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 447,
+      "first": "Deu 22:1",
+      "last": "Deu 22:30",
+      "sha256": "8721e6e958403de2de16f0e6e9dc37e527083c3861d89c6eaacd1513a9209af5",
+      "bytes": 87647,
+      "chars": 77094,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
