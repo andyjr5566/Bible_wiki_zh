@@ -1,0 +1,371 @@
+book: 申命記
+chapter: 16
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 亞筆月
+  path: link_folder/原文/亞筆月.md
+  summary: 'v1 兩次出現「亞筆月」，STEP 為 ha./''a.Viv（H24，簡要詞典義 a.viv: Abib）加 Cho.desh（H2320G，簡要詞典義 cho.desh: month）。CT〔原文字義〕註「亞筆」穀穗成形，文意註解說『亞筆月』原為希伯來民曆七月份，相當於陽曆三、四月間，後來被神於出埃及時改為正月(參出十二2)，再後來於被擄期間改稱為尼散月(參尼二1)，又說『亞筆月夜間』指正月十四日晚上(參利二十三5)。GT《申命記串珠聖經註釋》說「亞筆月」：即陽曆三月或四月；GT《啟導本聖經申命記註釋》說亞筆月為以色列人所用宗教曆法一年的開始；GT《聖經精讀本》說是原希伯來民間曆的第7月，後為了紀念出埃及的事實定為宗教曆的第1月。BH 說這個月相當於現代曆法的三至四月，是以色列大麥收成的時節。'
+  relation: 本章把這個月名放在整章的第一個字後面：「你要注意亞筆月」。它在這裡不只是報時間，而是命令的對象——要注意的是那個月本身，因為出埃及就發生在那個月的夜間。第16節列三大節期時，這個月的節期被稱為除酵節。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 逾越節
+  path: link_folder/歷史/逾越節.md
+  summary: '本章第1至8節是逾越節的完整條例，STEP 的 v1 為 Pe.sach（H6453，簡要詞典義 pe.sach: Passover）。CT〔文意註解〕說『逾越節的祭牲』指過逾越節時須宰殺牛羊獻祭(參代下三十五7)，又說『晚上日落』與出埃及那天晚上宰羊羔的時間相同(參出十二6)。GT《聖經精讀本》指出中央集權性祭祀的兩大目的是保持耶和華信仰的純潔性與以色列民族共同體的聯合，因為以色列百姓是作為民族共同體出埃及而不是作為個人，所以紀念出埃及的儀式也當一起相守。KC 把逾越節在聖經中的六次記載排開比較（出12、利23、民9、申16、書5、林前5），並說在申命記這一卷它只能在耶和華立名的地方守——從前在以色列人家中發生的事，在地上要連於神的家。BH 說逾越節的羔羊預表基督，並接到約1:29。'
+  relation: 這是逾越節條例第一次被綁死在一個地點上。第5節說得最直接：在耶和華─你神所賜的各城中，你不可獻逾越節的祭；第6節接著說只當在他所選擇要立為他名的居所獻。出埃及記十二章那一次是在各家的門內，本章則把同一個節期整個搬到中央聖所。第7節末尾補上一句實際的安排：次日早晨就回到你的帳棚去。（本回合順帶勘誤定義一處：舊版把 KC 為出埃及記十二章所下的引言加上引號當成逐字引句，該句在該條目累積章的來源檔查無逐字對應，已改為具名轉述。）
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:12
+      - 申命記:16
+- title: 無酵節
+  path: link_folder/歷史/無酵節.md
+  summary: v3「七日之內要吃無酵餅」與 v8「你要吃無酵餅六日，第七日要向耶和華─你的神守嚴肅會，不可做工」，v4 另加「在你四境之內，七日不可見麵酵」。CT〔文意註解〕說『七日之內要吃無酵餅』即指守無酵節七天(參出十二17~18)，並說『吃無酵餅六日』連同第七日仍然算是吃無酵餅七日(參利二十三6)；他也說『七日不可見麵酵』麵酵在此含有邪惡的意思(參林前五8)。GT《申命記串珠聖經註釋》說除酵節乃是提醒選民要離棄罪、過聖潔的生活。BH 說無酵在聖經裡常象徵罪與敗壞，除去麵酵象徵潔淨與從罪中分別出來。
+  relation: 本章的無酵節與逾越節寫在同一段裡，中間沒有分界。第3節的七日與第8節的六日看起來對不上，CT 的解法是第七日仍在其內，合起來還是七日。第16節列三大節期時，這一整段被統稱為除酵節。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 無酵餅
+  path: link_folder/原文/無酵餅.md
+  summary: 'v3 與 v8 兩處的「無酵餅」，STEP 都是 ma.Tzot（H4682，簡要詞典義 mats.tsah: unleavened bread），v3 的「有酵的」則是 cha.Metz（H2557A，簡要詞典義 cha.mets: leaven）。CT〔文意註解〕說『困苦餅』無酵餅的滋味不如有酵餅，用來表示紀念在埃及地所過困苦、悲慘的日子。GT《聖經精讀本》說之所以稱無酵餅為困苦餅，是為了使以色列百姓記起在埃及400年為奴生活的痛苦與苦澀。BH 說七天不吃有酵的餅是無酵節，是反省與潔淨的時間。'
+  relation: 本章給這塊餅取了一個別的地方沒有的名字：困苦餅。出埃及記記的是它怎麼來的（生麵沒時間發起），本章記的是它要人記住什麼——在埃及的日子與離開那一夜的匆促。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 嚴肅會（a.Tze.ret）
+  path: link_folder/原文/嚴肅會（a.Tze.ret）.md
+  summary: 'v8「第七日要向耶和華─你的神守嚴肅會，不可做工」，STEP 為 ''a.Tze.ret（H6116，簡要詞典義 a.tsa.rah: assembly）加 me.la.Khah（H4399，簡要詞典義 me.la.khah: work）。CT〔原文字義〕註「嚴肅會」嚴肅會，聚會，文意註解說『嚴肅會』指聚會宣告結束節期。GT《啟導本聖經申命記註釋》說逾越節只有一天，接上就是無酵節，一共七天當作一個節期來慶祝，而以第七日的「嚴肅會」為結束，因此「嚴肅會」也可譯為「閉幕會」或「結束的聖會」；GT《申命記串珠聖經註釋》說「嚴肅會」：在除酵節的第七天舉行，藉此宣佈節期完滿結束（民28:25）。KC 說最後一日有一個嚴肅會，然後節期就結束了，百姓回到他們的帳棚。'
+  relation: 民數記二十九章的嚴肅會在住棚節第八日，本章的在無酵節第七日——同一個字用在兩個不同的節期上。共同點是位置：兩次都是整段節期的最後一天，而且都禁止做工。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:29
+      - 申命記:16
+- title: 七七節（五旬節）
+  path: link_folder/歷史/七七節（五旬節）.md
+  summary: 'v9-12 是七七節的條例。STEP 的 v9 為 shiv.''Ah sha.vu.''Ot（H7651＋H7620H，簡要詞典義 sha.vu.a: week）加 tis.por（H5608A，簡要詞典義 sa.phar: to recount）加 me./ha.Chel cher.Mesh ba./ka.Mah（H2490C＋H2770＋H7054，簡要詞典義分別是 cha.lal: to profane/begin: begin、cher.mesh: sickle、qa.mah: standing grain）。CT〔文意註解〕說『七七日』指七個星期，『從你開鐮收割禾稼時算起』即指從收割大麥的初熟節算起，並備註大麥比小麥的收割日期早約近兩個月。GT《啟導本聖經申命記註釋》說七七節從亞筆月16號算起，從開始收割到七七節中間一共有七個星期，給全民有充分時間把應獻之物帶到敬拜的中心，全國同時歡慶，並說這個節期只有一天，新約稱此節為五旬節。GT 收馬唐納《申命記》說七七節從收割初熟的小麥開始，並且是恩賜聖靈的象徵。KC 說第一鐮下去是為了大麥初熟的禾捆，然後要數七個七。'
+  relation: 本章給這個節期兩樣別處沒有寫進來的東西。一是起算方式：不是憑曆法，是憑鐮刀第一次下去的那一天（第9節）。二是名單：第11節把兒女、僕婢、城裡的利未人、寄居的與孤兒寡婦全部寫進去，並在第12節給理由——你也要記念你在埃及作過奴僕。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:28
+      - 申命記:16
+- title: 住棚節（利23節期規定）
+  path: link_folder/歷史/住棚節（利23節期規定）.md
+  summary: 'v13-15 是住棚節的條例，STEP 的 v13 為 chag ha./su.Kot（H2282＋H5521，簡要詞典義分別是 chag: feast、suk.kah: booth）加 be./''A.se.pe./kha（H622，簡要詞典義 a.saph: to gather）加 ga.re.ne./Kha（H1637）與 yik.Ve./cha（H3342）。GT《啟導本聖經申命記註釋》說「住棚節」又名「收藏節」，守節時要住在用樹枝搭的帳棚中，從第七個月的十五日開始，為期七天；GT《申命記串珠聖經註釋》說這是一個秋天的節，乃是在收割葡萄和橄欖之後，表示一年農事的結束；GT《聖經精讀本》說禾場的穀、酒醡的酒意指收割了所有禾稼、收藏了所有水果，指流汗辛勞一年的所有收穫之物。KC 說這是三個節期的高峰，要收齊整個收成才守得成，並說 It takes spiritual growth to celebrate that feast.'
+  relation: 利未記與民數記給的是日期與祭物，本章給的是時機與名單。時機寫在第13節：把禾場的穀、酒醡的酒收藏以後——也就是全年農事收完之後。名單寫在第14節，與七七節那一份逐字相同。第15節收在一句話上：你就非常地歡樂。（本回合順帶勘誤定義兩處：一句丁良才論第八日的話在來源檔查無逐字對應、另一句引約7:37 的節號寫法與來源不同，已分別改為轉述與依來源更正。）
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:23
+      - 申命記:16
+- title: 三大節期
+  path: link_folder/神學/三大節期.md
+  summary: 'v16-17「你一切的男丁要在除酵節、七七節、住棚節，一年三次，在耶和華─你神所選擇的地方朝見他，卻不可空手朝見。各人要按自己的力量，照耶和華─你神所賜的福分，奉獻禮物」，STEP 為 sha.Lo.osh pe.''a.Mim（H7969＋H6471，簡要詞典義 pa.am: beat）加 ye.ra.''Eh 加 ''et pe.Nei（H7200G，Niphal，本節逐字解 he will appear）加 ze.khu.re./Kha（H2138，簡要詞典義 za.khur: male）。CT〔文意註解〕說『除酵節』包含逾越節在內，『不可空手朝見』意指要帶著祭牲和祭物；他並在話中之光整理神在出二十三14 已經宣告的三次守節，以及三個節期分屬正月、三月、七月。GT《聖經精讀本》說本文概要了上文所論及的三大節期之律例，並指出以色列的所有男丁一年三次為了守三大節期而彙聚在中央聖所獻祭給神。KC 把節期在摩西五經裡的四次記載分開比較：出23 與出34 連於約、利23 稱為所定的日期而在祭司的書裡、民28-29 是神主張自己的權利、申16 則連於神所揀選的地方。'
+  relation: 出二十三與出三十四給的是三次守節的命令，民數記給的是各節的祭物清單，本章給的是地點與態度：一年三次都要到神所選擇的那一個地方，而且不可空手。第17節另加一條分量的原則——按自己的力量、照所賜的福分，不設定額。（本回合順帶勘誤定義一處：舊版把 GT《啟導本聖經腳註》的節期分類加上引號，內層引號與來源用字不符，已改為具名轉述。）
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:16
+- title: 平安祭的三類（感謝祭、還願祭、甘心祭）
+  path: link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md
+  summary: 'v10「你要照耶和華─你神所賜你的福，手裡拿著甘心祭，獻在耶和華─你的神面前，守七七節」，STEP 為 mi.Sat nid.Vat ya.de./Kha（H4530＋H5071＋H3027G，簡要詞典義分別是 mis.sah: payment、ne.da.vah: voluntariness、yad: hand）。CT〔原文字義〕註「甘心祭」自由奉獻，文意註解說『甘心祭』指自發自動為感恩而向神獻的祭。BH 說甘心祭是出於感恩而非義務的自願禮物，反映的是奉獻者的心，並與強制的什一與獻祭形成對照。'
+  relation: 本章把甘心祭綁在七七節上，並附加一個計算方式：照耶和華所賜你的福。這與第17節的原則一致——分量由蒙福的程度決定，不是由條文決定。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 多多地給不可空手而去（a.naq、re.qam）
+  path: link_folder/原文/多多地給不可空手而去（a.naq、re.qam）.md
+  summary: 'v16 結尾「卻不可空手朝見」，STEP 為 rei.Kam（H7387，簡要詞典義 re.qam: emptily），與既有條目所記申15:13「不可使他空手而去」是同一個字。CT〔原文字義〕在本節註「空手」徒勞的，空空的，文意註解說『不可空手朝見』意指要帶著祭牲和祭物(參2，10，13節)。KC 說每個人都按耶和華賜福給他的分量帶著禮物來，沒有人可以空手來，因為神賜福給屬祂的每一個人。'
+  relation: 申15:13 的「空手」講的是主人打發奴僕出去，申16:16 的講的是百姓上到神面前。同一個副詞，一次朝外、一次朝上；共同點是兩處都接著同一個分量原則——照耶和華賜福給你的來給。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:15
+      - 申命記:16
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: 本章七次指向這個地方（v2、5、6、7、11、15、16）。CT〔話中之光〕注意到這個重複本身：神三番四次的提醒祂的子民，要切切的注意祂選擇立為祂名的居所(參2，6，7，11，15，16節)，並說作這樣多次數的提醒，正是神要祂的子民該學習注意神的同在，過於神的所賜。GT《聖經精讀本》說指為了防止禮拜場所的亂立、維持民族共同體的聯合，神在以色列12支派中特別指定的以色列境內唯一的中央聖所。KC 說從申12:1 開始的那一大段到本章第17節收尾，而這一段的高峰正是所有男丁一年三次都要上到那地方。
+  relation: 這是本章出現密度最高的一個要求。第5節用否定式說一次（各城中不可獻逾越節的祭），其餘六次都是肯定式。它同時管三件事：逾越節在哪裡獻、七七節與住棚節在哪裡歡樂、一年三次在哪裡朝見。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 在耶和華面前歡樂
+  path: link_folder/主題/在耶和華面前歡樂.md
+  summary: v11「都要在耶和華─你神所選擇立為他名的居所，在耶和華─你的神面前歡樂」、v14「都要歡樂」、v15「你就非常地歡樂」。CT〔原文字義〕註「歡樂」歡喜，快樂；「非常地歡樂」愉快的，高興的，並說『非常地歡樂』指極度地、確實地歡喜快樂。GT《申命記串珠聖經註釋》說「都要歡樂」：這是守住棚節的特色（12:18）。KC 說這一段以第3節的困苦之餅開頭、以第15節的完全歡樂結尾，並說歡樂的結果是要與周圍不如自己的人一同分享。
+  relation: 本章三次的歡樂各有位置：第11節在七七節、第14節在住棚節、第15節則是整段節期的收尾語。三次都帶著同一份名單——兒女、僕婢、利未人、寄居的、孤兒寡婦，所以歡樂在本章不是個人的情緒，是一場有邀請對象的聚集。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 為奴之家
+  path: link_folder/主題/為奴之家.md
+  summary: v12「你也要記念你在埃及作過奴僕。你要謹守遵行這些律例」。CT〔文意註解〕說意指藉著紀念先祖從前也曾度過貧困、悲慘的日子，轉而顧念自己周遭那些貧困、無依無靠的人們，如此守節乃是遵行律例的最好表現。GT《聖經精讀本》說在以色列社會所舉行的所有感恩慶典中，百姓當與貧窮的鄰人一起歡喜，這是因為以色列百姓當紀念自己在埃及為奴之時的悲慘生活，懷著對賜下如此豐盛恩典之神的感激之情。BH 說對為奴的記憶是要培養謙卑與感恩，並成為以公義與憐憫待人的道德要求。
+  relation: 這一節緊接在七七節的歡樂名單之後，功能很清楚：它是那份名單的理由。本章把記憶與慶典綁在一起——記得自己曾經是誰，才知道桌邊該坐哪些人。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 其目的在於讓以色列百姓紀念在埃及悲慘的生活，並感謝神的救贖之恩
+- title: 孤兒寡婦
+  path: link_folder/主題/孤兒寡婦.md
+  summary: v11 與 v14 兩次把「孤兒寡婦」列進守節歡樂的名單裡。CT〔文意註解〕說守七七節（收割節）不限對象，以色列人、無分無業的利未人、寄居的外邦人、孤兒寡婦等均可參與歡度節日，並說意指將祭肉和祭物分給不能預備的，大家一起快樂享用；他在話中之光說這是很柔和的話，提醒以色列人好好對待客旅的外人、孤兒及寡婦。GT《聖經精讀本》說在以色列社會所舉行的所有感恩慶典中，百姓當與貧窮的鄰人一起歡喜。BH 說孤兒與寡婦代表社會上最脆弱的一群，把他們納入節期顯出神對公義與憐憫的心。
+  relation: 申10 說神為孤兒寡婦伸冤、申14 說每三年一次的十分之一要讓他們吃飽，本章換了場合：不是救濟，是同席。第11節與第14節把他們寫進節期的歡樂名單，與獻祭的人自己的兒女並列。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:16
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: v11「以及在你們中間寄居的與孤兒寡婦」與 v14「以及寄居的與孤兒寡婦」。GT《聖經精讀本》說在以色列社會所舉行的所有感恩慶典中，百姓當與貧窮的鄰人一起歡喜（14:29）。CT〔文意註解〕說守節不限對象，寄居的外邦人也可參與歡度節日。BH 說提到寄居者反映以色列社會對聖約群體以外之人的開放，也提醒以色列自己曾在埃及作寄居的，並接到利19:34。
+  relation: 申14:21 的寄居者是可以接受以色列人不能吃之物的一方，申14:29 的是每三年受周濟的一方；本章的則是同席歡樂的一方。同一個身分在申命記裡因此走過三種位置——受讓、受濟、同席。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: v11 與 v14 兩次把「住在你城裡的利未人」列進守節的名單。CT〔文意註解〕說守節不限對象，無分無業的利未人也在其中，並說意指將祭肉和祭物分給不能預備的，大家一起快樂享用。BH 說利未人分別出來承擔宗教職務、沒有像其他支派那樣的地業，把他們納入節期慶典既是對事奉者的供養，也顯出各支派在敬拜上的合一。
+  relation: 申12:19 說不可丟棄利未人、申14:27 與29 說不可丟棄並要每三年供養他一次；本章講的是節期——他不只被供養，也在名單上與百姓同席歡樂。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: '本章四次出現這個字（v5「各城中」、v11 與 v14「你城裡」、v18「各城裡」），STEP 都是 sha.ar（H8179H，簡要詞典義 sha.ar: gate: town）。第18節把審判官與官長設在這裡：「你要在耶和華─你神所賜的各城裡，按著各支派設立審判官和官長。」GT《啟導本聖經申命記註釋》說各城須設立審判官和協助他的官長。KC 說在應許之地公義是在城門口宣告的，而審判官的人數也會按各城的居民人數而定，並指摩西在這裡規定的是下級法庭怎麼設立——不是每一件事都要送到最高的那一級。'
+  relation: 創世記那幾章記的是城門這個地點的實際用途，申14 與申15 用它作為全城範圍的代稱；本章第18節則第一次在律法裡把司法機構設在這裡。城門從一個發生事情的地方，變成一個被制度化的地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:19
+      - 申命記:16
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: 'v18「你要在耶和華─你神所賜的各城裡，按著各支派設立審判官和官長。他們必按公義的審判判斷百姓」，STEP 為 sho.fe.Tim（H8199，簡要詞典義 sha.phat: to judge）加 ve./sho.te.Rim（H7860，簡要詞典義 sho.ter: official），同節的「按公義的審判」是 mish.pat- Tze.dek（H4941G＋H6664G）。CT〔文意註解〕說『審判官』審理訴訟案件並下達判決，『官長』輔佐審判官，並列出按公義的審判三原則。GT《啟導本聖經申命記註釋》說本節至十八22 為有關以色列人行政體制設立的規定，例如審判官、王、祭司及先知等。KC 說在曠野時審判官是按人數設立的（出18:25），這裡則連於他們將要散居的各城。'
+  relation: 出十八與申一記的是摩西在曠野設立審判官——按人數分層。本章記的是進地之後的常設安排——按城設立，按支派分配。轉換的關鍵在定居：曠野裡是一個營，進地之後是散在各處的許多城，所以司法也必須跟著分散。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:16
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: 'v18「設立審判官和官長」，STEP 為 ve./sho.te.Rim（H7860，簡要詞典義 sho.ter: official）。CT〔文意註解〕說『官長』輔佐審判官。GT《申命記雷氏研讀本》說「長官」是協助「審判官」執行判決的司法長官；GT《啟導本聖經申命記註釋》說各城須設立審判官和協助他的官長。'
+  relation: 本章是這個職分在申命記律法裡的定位：它與審判官成對出現，職責是協助執行判決。與出埃及記那時作為埃及工頭下的以色列監工相比，這裡的官長已經是神治社群裡的司法輔佐。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 審判不可行不義按公義審判
+  path: link_folder/主題/審判不可行不義按公義審判.md
+  summary: 'v19「不可屈枉正直；不可看人的外貌」，STEP 為 ta.Teh mish.Pat（H5186＋H4941H，簡要詞典義 na.tah: to stretch、mish.pat: justice）加 ta.Kir pa.Nim（H5234A＋H6440N）。CT〔原文字義〕註「屈枉」傾斜，折彎，並在 v18 註解列出按公義的審判三原則：不屈枉正直(參出二十三6)、不看外貌(參箴二十四23)、不受賄賂(參出二十三8)。GT《啟導本聖經申命記註釋》說做審判官的人應守三個原則，總的目標是做到至公至義；GT《申命記串珠聖經註釋》說他們必須公正無私，不能因偏私、受賄而顛倒是非。'
+  relation: 利未記十九15 把這條要求說給全會眾聽，本章第19節說給剛被設立的審判官聽。第20節再把三項禁令合成一個正面的命令：你要追求至公至義。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 不可看人的外貌（na.khar）
+  path: link_folder/原文/不可看人的外貌（na.khar）.md
+  summary: 'v19「不可看人的外貌」，STEP 為 ta.Kir（H5234A，簡要詞典義 na.khar: to recognize）加 pa.Nim（H6440N，簡要詞典義 pa.neh: face: kindness），與既有條目所記的是同一個動詞。CT〔文意註解〕說『不看外貌』指不看人的身分地位，並引箴二十四23。GT《聖經精讀本》把它列為歪曲審判的第一個要素：基於貧富貴賤的人之外在標準（1:17;出23:6;利19:15）。BH 說在古代近東司法常因身分或財富而失衡，以色列被召到更高的標準，並接到徒10:34 與雅2:1-9。'
+  relation: 申1:17 是摩西對他自己設立的審判官說的，本章第19節是對將來各城的審判官說的——同一個動詞，從一次性的交代變成常設制度的守則。本章另有一點是申1 沒有的：它把這一條與賄賂並列，並在第20節用至公至義收尾。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:1
+      - 申命記:16
+- title: 司法公義
+  path: link_folder/神學/司法公義.md
+  summary: v18 下半「他們必按公義的審判判斷百姓」與 v20「你要追求至公至義」，STEP 分別為 mish.pat- Tze.dek（H4941G＋H6664G）與 Tze.dek Tze.dek（H6664G 連寫兩次）加 tir.Dof（H7291）。CT〔靈意註解〕說表徵神喜悅人行事合乎神公義的手續，話中之光說保守在神的公義中，和他們承受地土有直接的關係。GT《聖經精讀本》說一語扼要摩西審判律例的根本精神就是基於神的公義精神，並說在這種意義上司法部門應當成為那時代社會正義的堡壘，又列出歪曲審判的三個要素。KC 說第18至20節列的是神自己定下的標準，蓄意偏離那個標準就是屈枉正直。
+  relation: 出二十三1-9 給的是散列的警告（不可隨眾行惡、不可偏袒、不可受賄），本章把同一批要求裝進一個制度裡：先設立審判官（第18節），再列出三項禁令（第19節），最後用一個正面的動詞收束（第20節）。第20節下半還把它接到承受地業上——公義在本章不只是道德，是留在那地上的條件。（本回合順帶勘誤兩處：丁道爾那句漏抄了「（士師）」三字、KC 那句在出23 的來源檔查無逐字對應，已分別補回與改為轉述。）
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:16
+- title: 古代近東賄賂
+  path: link_folder/背景/古代近東賄賂.md
+  summary: 'v19「也不可受賄賂；因為賄賂能叫智慧人的眼變瞎了」，STEP 為 ti.Kach Sho.chad（H3947H＋H7810，簡要詞典義 sha.chad: bribe）。BH 說賄賂在古代是常見的作法，常被用來影響判決、扭曲司法，因此這條禁令是防腐的保障，用以保住領袖與審判官的正直，並引箴17:23 說惡人暗中受賄以歪曲公理。GT《聖經精讀本》把受賄列為歪曲審判的三個要素之一（出23:8）。CT 說任何不正當的金錢授受，一定會蒙蔽人的心眼，叫人無法分辨是非曲直。'
+  relation: 本章對賄賂的處理比別處多一層：它不只禁止，還說明機制——受影響的是智慧人的眼與義人的話，也就是制度裡本來最可靠的那一環。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 亞舍拉（木偶）
+  path: link_folder/背景/亞舍拉（木偶）.md
+  summary: 'v21「你為耶和華─你的神築壇，不可在壇旁栽什麼樹木作為木偶」，STEP 為 ti.Ta''（H5193，簡要詞典義 na.ta: to plant）加 ''a.she.Rah（H842，簡要詞典義 a.she.rah: Asherah）加 ''Etz（H6086H）加 ''E.tzel miz.Bach（H681＋H4196）。CT〔原文字義〕註「木偶」樹叢(偶像崇拜用)，文意註解說『木偶』指代表異教的偶像假神，由樹幹雕成。GT《申命記雷氏研讀本》說「木偶」指亞舍拉的柱像；GT 收馬唐納《申命記》說耶和華的壇最終放在耶路撒冷的聖殿裡，那裡難以種樹，但可以樹立一個偶像的象徵，而後來確實出現了（王下二三6）。BH 說亞舍拉是迦南的女神，與生育有關，常與巴力一同受敬拜。'
+  relation: 本章把這條禁令放在一個很具體的位置上：壇旁。前面幾章禁的是在別處拜別神，這裡禁的是把別神的記號搬到耶和華自己的壇邊。KC 由此把它接回審判官——第一件要處理的案子，是神自己的權利被侵犯。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 柱像
+  path: link_folder/原文/柱像.md
+  summary: 'v22「也不可為自己設立柱像；這是耶和華─你神所恨惡的」，STEP 為 ta.Kim（H6965I，簡要詞典義 qum: to arise: establish）加 ma.tze.Vah（H4676，簡要詞典義 mats.tse.vah: pillar），「恨惡」是 sa.Ne''（H8130，簡要詞典義 sa.ne: to hate）。CT〔原文字義〕註「柱像」樹墩，柱子(紀念物)；「恨惡」恨惡，懷恨，文意註解說指刻有一些符號或形像的石柱。GT《啟導本聖經申命記註釋》說「柱像」指男神巴力的石柱像；GT《申命記串珠聖經註釋》說木偶和柱像都是異教之神的象徵物。BH 說在古代近東，這類立石常被當成敬拜對象或紀念神明的標記。'
+  relation: 本章與木偶配成一對：一個是木頭做的、屬女神，一個是石頭立的、屬男神。經文對兩者的措辭不同——木偶只說不可栽，柱像則加上一句評語：這是耶和華─你神所恨惡的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 箴17：23
+  path: link_folder/互文/箴17：23.md
+  summary: 'v19 末句「又能顛倒義人的話」，STEP 為 vi./sa.Lef（H5557，簡要詞典義 sa.laph: to pervert）加 div.Rei tza.di.Kim（H1697L＋H6662）。BH 在本節明引箴17:23，說惡人暗中受賄以歪曲公理，正是既有條目由出23:8 建立的那一條線。CT〔文意註解〕說本句有二意：使公義的審判官作出不公正的判決，或使公義之人的見證變成虛假的見證；GT《申命記串珠聖經註釋》說這句或作「又能叫義人說假話」。'
+  relation: 這個節點原是從出二十三8 建立的。本章第19節是律法書裡同一句話的第二次出現，而且措辭更完整——出埃及記那一處說的是「賄賂能叫明眼人變瞎了，又能顛倒義人的話」，本章把明眼人換成了智慧人。箴17:23 則是同一組用語在智慧書中的回聲。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:16
