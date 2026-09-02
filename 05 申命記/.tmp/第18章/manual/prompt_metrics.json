@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 18,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 128758,
+        "bytes": 171252
+      },
+      "after": {
+        "chars": 12418,
+        "bytes": 20638
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_deuteronomy_18.txt",
+          "chars": 10425,
+          "bytes": 29153
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_deuteronomy_18.txt",
+          "chars": 5416,
+          "bytes": 14812
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_deuteronomy_18.txt",
+          "chars": 16284,
+          "bytes": 16410
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_deuteronomy_18.txt",
+          "chars": 40396,
+          "bytes": 40420
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_deuteronomy_18.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 51054,
+          "raw_bytes": 58676,
+          "projected_chars": 6621,
+          "projected_bytes": 7639,
+          "occurrences": 89,
+          "occurrence_count": 89,
+          "lexicon_entries": 7,
+          "selected_verses": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 7,
+          "truncated": true,
+          "returned_chars": 6621,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

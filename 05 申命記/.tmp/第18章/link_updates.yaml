@@ -1,0 +1,389 @@
+book: 申命記
+chapter: 18
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第1至8節整段以這個支派為主詞。第1至2節說他們在以色列中無分無業，所吃用的是獻給耶和華的火祭和一切所捐的，耶和華是他們的產業；第3至5節列出祭司從獻牛羊者手中所當得的前腿、兩腮、脾胃，加上初收的五穀、新酒、油與初剪的羊毛；第6至8節規定外地利未人上中央聖所事奉的待遇。STEP 顯示 v1 是 la./ko.ha.Nim（H3548）ha/l.vi.Yim（H3881）kol- She.vet le.Vi（H7626H 加 H3878）。CT 說祭司乃是從利未支派出來的祭司、無分無業意指沒有與一般人同樣謀生的產業，並說他們被分別出來事奉神所以沒有分得土地。GT《雷氏研讀本》說他們不像其它支派那樣獲得分地，但有四十八座城是指明歸給利未人的；GT《啟導本》說祭司是亞倫的後裔、利未人是祭司的輔助；GT《聖經精讀本》說利未支派從職責上可分為祭司與一般利未人兩種類型。KC 說祭司是獻祭者與敬拜者，利未人是被賜下來幫助祭司的。
+  relation: 申命記十七章給了這個支派兩個先前沒有寫明的位置——難斷案件的終審與律法書的保存；本章補上的是經濟面與內部規則。第1至5節寫收入從哪裡來，第6至8節寫這個支派內部怎麼分配才算公平。兩章合起來，利未支派在申命記裡的樣貌從職責擴到制度。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:17
+      - 申命記:18
+- title: 火祭（isheh）
+  path: link_folder/主題/火祭（isheh）.md
+  summary: 第1節「他們所吃用的就是獻給耶和華的火祭和一切所捐的」，這是「火祭」二字在申命記唯一一次出現。STEP 顯示是 'i.Shei（H801，簡要詞典義 ish.shah 為 food offering）。GT《申命記串珠聖經註釋》註「火祭」：此處指各類的獻祭；CT 則說火祭指經過火燒的一種獻祭，在任何的獻祭中凡把全部或一部分供物燒在壇上的都稱為火祭，並判斷這裡當然是指部分供物燒在壇上的。
+  relation: 利未記用這個詞標記橫跨五祭的共同特徵，利6-7 把它轉去指祭司所領受的那一份；本章把這個轉向推到底——火祭在這裡直接被列為整個利未支派的糧食來源，而不是某一次獻祭的操作細節。兩家對範圍的讀法在此分歧，值得並陳。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:7
+      - 申命記:18
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第1至2節四次出現這個字：祭司利未人和利未全支派「必在以色列中無分無業」（v1）、「他們在弟兄中必沒有產業；耶和華是他們的產業」（v2）。STEP 顯示是 ve./na.cha.Lah、ve./na.cha.la.T/o、ve./na.cha.Lah、na.cha.la.T/o（H5159），與之並列的「分」是 Che.lek（H2506A）。第8節另提到利未人賣祖父產業所得的（mi.ka.Ra/v，H4465）。CT〔原文字義〕註「分」一分(土地)、「業」產業，基業，並說「一切所捐的」原文與「業」同字。
+  relation: 民數記那幾章用這個字處理誰承受哪一份地；本章用同一個字說明有一個支派被刻意排除在分配之外。同一個名詞在第2節裡同時是被拿走的東西與被賜下的東西——沒有 na.cha.lah，因為耶和華就是那 na.cha.lah。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:27
+      - 申命記:18
+- title: 耶和華是事奉者的業與分
+  path: link_folder/神學/耶和華是事奉者的業與分.md
+  summary: 第2節：「他們在弟兄中必沒有產業；耶和華是他們的產業，正如耶和華所應許他們的。」STEP 顯示「產業」是 na.cha.Lah（H5159），與第1節的 Che.lek（H2506A）並列，與民18:20 是同一對字。CT 說這意指神負責利未人的生活問題，凡以色列人奉獻給神的都歸利未人享用；他在話中之光說這句話並不表明祭司和利未人得著了鐵飯碗，反而很容易叫他們沒有安全感，神是特意借著這樣的制度讓祭司、利未人和百姓一起學習在信心中跟隨神。GT《啟導本》說這是比喻的說法，意為百姓向耶和華所獻的是利未人生活的來源；GT《聖經精讀本》說這意味著神將全權負責利未人的所有生活問題。BH 說利未人的產業不是物質而是屬靈的，並引詩16:5。
+  relation: 民18:20 是神對亞倫說的第一人稱，申14:27、29 是摩西對百姓說的否定式，本章第2節則把兩半同時說出來，而且加上「正如耶和華所應許他們的」——這句補語正是把讀者指回民18:20 的應許。這是同一組話在五經裡的第三種說法。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:18
+      - 申命記:14
+      - 申命記:18
+- title: 利未人的什一奉獻
+  path: link_folder/神學/利未人的什一奉獻.md
+  summary: 第1節「火祭和一切所捐的」。CT〔文意註解〕說『一切所捐的』原文是「他的產業」，指什一奉獻（參民十八21）。GT《啟導本》也說祭司和利未人可以享受百姓的什一奉獻和部分祭物（參十四22及注；利二十七30；民十八21～29）。
+  relation: 本章沒有另立什一的規則，只是把它算進利未支派的收入清單裡。民18 定利未人自己那一端、申12 與申14 定百姓那一端，本章則是在列舉整個支派的生計來源時順帶提到它。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 祭司的分（靠祭物養生）
+  path: link_folder/主題/祭司的分（靠祭物養生）.md
+  summary: '第3至5節：「祭司從百姓所當得的分乃是這樣：凡獻牛或羊為祭的，要把前腿和兩腮並脾胃給祭司」，再加初收的五穀、新酒和油與初剪的羊毛。STEP 顯示「當得的分」是 mish.Pat（H4941J，簡要詞典義 mish.pat 為 justice: custom），三個部位是 ha./ze.Ro.a''（H2220，arm）、ha./le.cha.Ya.yim（H3895H，jaw）、ha./ke.Vah（H6896，stomach）。CT 說『祭』指平安祭、『前腿』就是作舉祭之用的右腿（參利七32），『兩腮並脾胃』代表祭司所當得的祭肉。GT《申命記串珠聖經註釋》說這份清單「與利7:28-36; 民18:18-19細節上不同，但精義則一至」；GT《聖經精讀本》列出民18:8-20 規定為祭司之分的項目，並說如此具體地指出祭司之分是為了使百姓毫無怨言地將定量提供給祭司，也使祭司不能在規定之外再向百姓索取更多。BH 說這三個部位是牲畜的上選部分。'
+  relation: 利未記第六、七章從祭壇的操作面把祭司該得的份寫成清單，本章從百姓的生活面再寫一次，項目不完全相同。第3節開頭用的字是 mish.Pat——它被寫成百姓該給的義務，而不只是祭司可拿的權利；GT《聖經精讀本》點出的兩個用意（防止百姓短給、也防止祭司多要）正是從這個角度來的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:7
+      - 申命記:18
+- title: 初熟
+  path: link_folder/原文/初熟.md
+  summary: '第4節：「初收的五穀、新酒和油，並初剪的羊毛，也要給他」。STEP 顯示兩次 re.Shit（H7225G，簡要詞典義 re.shit 為 first: beginning），後接 de.ga.ne./Kha（H1715）、ti.ro.she./Kha（H8492）、ve./yitz.ha.Re./kha（H3323），以及 gez（H1488，fleece）。CT 說初收的五穀新酒和油指初熟之物，是上好的（參民十八12），並在羊毛那一項註明：「聖經中僅此處提到羊毛歸祭司，初剪的羊毛未被玷污。」CT 的話中之光說把最好的和最先收穫的都給了祭司，是愛心的試驗，也是信心的確認。BH 說初熟之物象徵承認神的供應與主權，並把五穀、新酒、油列為古代近東飲食的主要作物。'
+  relation: 出23:19 說初熟之物要送到耶和華你神的殿，民18:12 把它劃進祭司的份，本章則直接指名收件人是那位侍立事奉的祭司。本章還多了一項別處沒有的東西——初剪的羊毛，把初熟的範圍從地裡長出來的擴到牲畜身上剪下來的。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 民數記:18
+      - 申命記:18
+- title: 神的揀選
+  path: link_folder/神學/神的揀選.md
+  summary: 第5節：「因為耶和華─你的神從你各支派中將他揀選出來，使他和他子孫永遠奉耶和華的名侍立事奉。」STEP 顯示「揀選」是 ba.Char（H977），第6節「耶和華所選擇的地方」用的 yiv.Char 也是同一個字。CT〔原文字義〕註「揀選」挑選，決定；「永遠」日子，有生之日，並說『他』指祭司利未人和利未全支派。CT 的話中之光說利未人事奉的資格是神賜給的。BH 說利未支派從十二支派中被揀出來有其獨特的呼召與目的，並把這件事接到出32:26-29 利未人在金牛犢事件中站在摩西一邊。
+  relation: 申4、申7、申10 講的揀選對象是整個民族，申17:15 講的是一個人（王），本章講的是一個支派，而且揀選的內容不是身分而是職務——侍立事奉。第6節緊接著又把同一個動詞用在地點上。同一個字在申命記裡因此涵蓋了民族、君王、支派與地點四種對象。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:17
+      - 申命記:18
+- title: 侍立事奉（a.mad、sha.rat）
+  path: link_folder/原文/侍立事奉（a.mad、sha.rat）.md
+  summary: 第5節「使他和他子孫永遠奉耶和華的名侍立事奉」，第7節「就要奉耶和華─他神的名事奉，像他眾弟兄利未人侍立在耶和華面前事奉一樣」。STEP 顯示 v5 是 la./'a.Mod（H5975G）le./sha.Ret（H8334），v7 則把兩者拆開使用：ve./she.Ret（H8334）與 ha./'o.me.Dim（H5975G）。CT〔原文字義〕註「侍立」侍立，站立、「事奉」伺候，服事，並說『侍立，事奉』侍立指等候差遣，事奉指投入工作，兩者構成祭司利未人的主要職務（參申十8）。GT《申命記串珠聖經註釋》說「侍立事奉」是祭司的職務（參10:8）。BH 說站立是預備與服事的姿態。
+  relation: 申10:8 用這一對字交代利未支派的職分，申17:12 用它作為判決有效力的根據，本章第5節則把它寫成揀選的目的本身——神揀選這個支派，就是為了讓他們侍立事奉。第7節又把兩個動詞拆開分配給新來的與原有的利未人，說明兩邊做的是同一件事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:17
+      - 申命記:18
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: 第6至7節：利未人若從所住的城出來，「一心願意到耶和華所選擇的地方」，就要奉耶和華他神的名事奉，像他眾弟兄利未人侍立在耶和華面前事奉一樣。STEP 顯示是 ha./ma.Kom（H4725）'a.Sher yiv.Char（H977）。CT 說『耶和華所選擇的地方』指聖所，即指後來在耶路撒冷所建的聖殿，並說每個利未人都有權遷移到那裡事奉。GT《聖經精讀本》說若有利未人因純正的宗教熱心懇切希望上到會幕所在的中央聖所去服事就當允許他，並說這樣的規定「防止了因獨佔中央聖所而有可能派生的特權意識」。BH 說這個被揀選的地方最終成為耶路撒冷。
+  relation: 申12、14、15、16 章講的是把祭物與節期帶到那一個地方，申17 第一次讓人為了難斷的案件上去，本章則讓人搬過去長住事奉。這使中央聖所從一個獻祭與終審的地點，變成一個有職位、有配給、需要規定分配辦法的常設機構——第8節處理的正是機構化之後才會出現的問題。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:17
+      - 申命記:18
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: '第6節：「利未人無論寄居在以色列中的哪一座城」。STEP 顯示「寄居」是 gar（H1481A，簡要詞典義 gur 為 to sojourn），主詞是利未人而不是外人；同一節的「城」是 she.''a.Rei./kha（H8179H，sha.ar: gate: town）。CT 說『哪一座城』包括祭司在內的利未人共得四十八座城（參民三十五7）。GT《雷氏研讀本》說利未人「即不象其它支派那樣獲得分地，但有四十八座城是指明歸給利未人的」。BH 說利未人在各城之間的移動反映他們的事奉不被地點綁死。'
+  relation: 前面幾章的「寄居的」講的是住在以色列中的外人（ger，H1616），需要被善待、被納入節期與什一；本章用的是同一字根的動詞，而且主詞換成利未人自己。理由寫在同章第1至2節——這個支派在以色列中無分無業，有城可住卻沒有地可分，所以經文用描寫外人的那個動詞描寫自己人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:18
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: 本章出現三次：第9節「那些國民所行可憎惡的事，你不可學著行」，第12節「凡行這些事的都為耶和華所憎惡；因那些國民行這可憎惡的事」。STEP 顯示分別是 ke./to.'a.Vot、to.'a.Vat、ha./to.'e.Vot（都是 H8441）。CT〔原文字義〕註「可憎惡的事」為製作並敬奉偶像，並說指拜偶像假神以及和偶像相關的事（參10~11節）。GT《聖經精讀本》說迦南人被趕出的原因是他們行了可憎之事，神並沒有因偏愛以色列百姓而除滅毫無過錯的迦南人。BH 說 detestable 一詞指神所憎惡的行為，並把它連到利18:24-30 玷污那地的說法。
+  relation: 申14:3 用這個字管餐桌上的食物，申17:1 管獻上的祭物，申12:31、13:14、17:4 管敬拜的對象；本章管的是第四類——取得資訊的方法。第12節還把這個字寫成一項歷史判決的理由：列國被趕出，是因為行了這些事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:18
+- title: 不可使兒女經火歸摩洛
+  path: link_folder/主題/不可使兒女經火歸摩洛.md
+  summary: 第10節：「你們中間不可有人使兒女經火」。STEP 顯示是 ma.'a.Vir（H5674A）be.no/v u./vi.T/o（H1121A、H1323G）ba./'Esh（H784）。CT 說『使兒女經火』「即指焚燒兒女，是亞捫人拜摩洛的儀式之一」（參利十八21）。GT《啟導本》說「經火」是一種火祭，把兒女焚燒（從火中經過）獻給偶像摩洛，並列出利十八21、二十2～5、申十二31、耶十九5、結十六21、二十三37；GT《雷氏研讀本》說膜拜摩洛有時包括把人焚燒作祭品。BH 說這在迦南列國中十分普遍，並引利18:21。
+  relation: 利18:21 與利20:2-5 把這件事列在敬拜與性的條例中並定下刑罰，申12:31 用它形容迦南人所行的可憎之事；本章把它排在「占卜的、觀兆的、用法術的」前面，成為求問前途那一整套作法的第一項。同一件事因此在兩卷書裡歸屬不同的類別。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:20
+      - 申命記:18
+- title: 卦金（qe.sem）
+  path: link_folder/原文/卦金（qe.sem）.md
+  summary: 第10節「也不可有占卜的」，第14節「因你所要趕出的那些國民都聽信觀兆的和占卜的」。STEP 顯示 v10 是 ko.Sem ke.sa.Mim（H7080 qa.sam 加 H7081 qe.sem），動詞加同源名詞連寫。CT〔原文字義〕註「占卜(原文雙字)」行占卜(首字)；占卜(次字)，並說『占卜(divination)』「指藉搖籤拈鬮以求得神意的一種邪術」（參結二十一21）。GT《啟導本》說占卜可參看《以西結書》二十一21。
+  relation: 民22:7 的「卦金」是這個名詞被當成報酬的用法，本章出現的是同一組字的完整形態，而且是被禁止的那一面。第14節把兩件事並排：那些國民都聽信這些人，至於你，耶和華從來不許你這樣行。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:22
+      - 申命記:18
+- title: 不可行法術觀兆
+  path: link_folder/主題/不可行法術觀兆.md
+  summary: 第10節列出「觀兆的、用法術的」，第14節再提「觀兆的和占卜的」。STEP 顯示「觀兆」是 me.'o.Nen（H6049B，a.nan）、「用法術」是 me.na.Chesh（H5172，na.chash），與利19:26 是同一對字根。CT〔原文字義〕註「觀兆」帶出雲影、「用法術」觀測兆頭，並說『觀兆(observer of times)』指一種星象術、預測未來將要發生的事（參利十九26），『法術(enchanter)』指藉邪靈行超自然的現象。GT《啟導本》說「觀兆」可能指觀看星象、「用法術的」以法術示前途；GT《雷氏研讀本》說「用法術的」是「解釋預兆的人」，並說巴蘭所做的就是這種工作（比較民二四1）。
+  relation: 利19:26 分項禁止這兩樣，本章把它們放進九項清單裡，並在第12節給出理由——這些是耶和華所憎惡的，也是列國被趕出的原因。第14節另補上一句對照：那些國民都聽信這些人，以色列不許這樣行。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 不可偏向交鬼行巫術的
+  path: link_folder/主題/不可偏向交鬼行巫術的.md
+  summary: '第11節列出「交鬼的、行巫術的」。STEP 顯示「交鬼的」是 sho.''El ''Ov（H7592 sha.al 加 H178 ov: medium），「行巫術的」是 yi.de.''o.Ni（H3049，yid.d.o.ni: spiritist），與利19:31、20:6、27 是同一對名詞。CT 說『交鬼的』指具通靈術、例如乩童女巫之類與邪靈污鬼來往的人（參利二十27），『巫術(necromancer)』指擁有異能、會行妖術的巫師（參利十九31）。GT《雷氏研讀本》說「交鬼的」是「靈媒」、「行巫術的」是「假裝認識靈幻世界的人」；GT《啟導本》說「行巫術的」和交鬼之法並用（賽八19）。BH 說靈媒被認為能在生者與死者之間居間傳話，並引利19:31 與撒上28 掃羅求問隱多珥交鬼婦人的下場。'
+  relation: 利19:31 立禁令、利20:6、27 補上剪除與死刑，本章把這兩種人放進九項清單裡，並在第15節給出替代方案——神要興起一位先知，百姓要聽從他。條目主題發展早已把本章這一段列為清單的所在。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 申18：10-12
+  path: link_folder/互文/申18：10-12.md
+  summary: 本條目所指的經文本身。第10至11節列出九項：使兒女經火、占卜的、觀兆的、用法術的、行邪術的、用迷術的、交鬼的、行巫術的、過陰的；第12節下判語「凡行這些事的都為耶和華所憎惡；因那些國民行這可憎惡的事，所以耶和華─你的神將他們從你面前趕出」。STEP 顯示九項各有不同字根（H5674A、H7080、H7081、H6049B、H5172、H3784、H2266、H2267、H7592、H178、H3049、H1875、H4191），第12節的「憎惡」是 H8441。CT〔原文字義〕逐項給字義，並指出「占卜」「用迷術」「交鬼」「過陰」在原文都是雙字，又說『迷術charmer』「指用符咒」、全聖經僅此一次提到。GT《聖經精讀本》說本文主要警告了占卜、法術等迷信行為，並說偶像崇拜極其廣泛地漫延于迦南人之間；GT《啟導本》說古時的人靠邪術求神問卜來測吉凶，甚至一國是否出戰也靠術士的觀兆、占卜來決定。BH 說這些作法在古代近東文化裡十分普遍。
+  relation: 這是本條目名稱所指的那一段經文第一次以主場身分被處理。出22:18 只給刑度，利19、利20 分項禁止並補上刑罰，本章則把形態列全、給出理由，並在第13至15節接上替代方案——作完全人，聽神所興起的先知。定義因此從一句索引式的說明改寫為這段經文本身的內容；跨卷綜合一律寫在主題發展，出22 與利20 兩個逐章累積區塊維持原樣不動。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 利未記:20
+      - 申命記:18
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 利未記:20
+      - 申命記:18
+- title: 求問與訪問同一個字（da.rash）
+  path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+  summary: 第11節「過陰的」。STEP 顯示是 ve./do.Resh（H1875，da.rash）'el- ha./me.Tim（H4191），字面是向死人求問。CT〔原文字義〕註「過陰(原文雙字)」尋求(首字)；死人(次字)，並說『過陰(inquiries of the dead)』指向死人的陰魂求問（參撒上二十八8）。GT《申命記串珠聖經註釋》說「過陰的」「指向死人的陰魂求問」。BH 說向死人求問是古代異教常見的作法，並引賽8:19 的對照。
+  relation: 申12:5 命令百姓往耶和華所選擇的地方去求問，申12:30 禁止訪問迦南人的神，申17:9 要求把難斷的案件帶到祭司利未人與審判官面前求問；本章給這個動詞加上第四種對象——死人，並把它列進耶和華所憎惡的事。這個字的好壞仍然只落在對象上，不落在動作本身。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:18
+- title: 義人與完全人
+  path: link_folder/神學/義人與完全人.md
+  summary: '第13節：「你要在耶和華─你的神面前作完全人。」STEP 顯示是 ta.Mim（H8549H，簡要詞典義 ta.mim 為 unblemished: blameless），與創6:9 描寫挪亞的是同一個 Extended Strong。CT〔原文字義〕註「完全人」完全的，健全的，並解作「意即單單信靠神，不聽信任何邪術」（參創十七1）。GT《申命記串珠聖經註釋》說「完全人」是誠實無偽之人，如挪亞、約伯（伯1:1）。BH 在本節寫出音譯 tamim，說它含完整、真誠、無瑕之意，並說這不是指從未犯罪而是指活得正直忠實，又把挪亞與亞伯拉罕（創6:9、17:1）列為同一描述的對象。KC 說神要祂的百姓在祂面前是無可指摘的。'
+  relation: 創6:9 用這個字描述一個人在敗壞世代中的例外，本章用同一個字對整個民族下命令，而且給了具體到近乎狹窄的內容——它緊接在占卜清單之後，第14節隨即說那些國民都聽信觀兆的和占卜的，至於你，耶和華從來不許你這樣行。完全在這裡的意思是不去問那些東西。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:6
+      - 申命記:18
+- title: 先知
+  path: link_folder/主題/先知.md
+  summary: '第15至22節六次出現「先知」（STEP：na.Vi''，H5030）。第15、18節應許神要從弟兄中間興起一位先知像摩西；第18節說「我要將當說的話傳給他」，STEP 顯示是 ve./na.ta.Ti（H5414H，na.tan: to give: put）de.va.Ra/i（H1697G）be./Fi/v（H6310G，peh: lip），字面是把我的話放在他口中，CT〔話中之光〕註的正是「傳給他」原文是「放在他口中」。第19節說不聽的神必討他的罪；第20至22節規定兩宗死罪與應驗的檢驗。CT 說先知的職分既不像人所選舉設立的審判官，也不像世襲的君王，更不像與生俱來的祭司利未人，而是由神一個一個單獨興起的，並說神通常在百姓背道的時候才興起先知。GT《啟導本》說這裡並非規定要像祭司或審判官一樣設立一個固定的先知職務；GT《聖經精讀本》說先知就是傳達神旨意的代言人，並列出真先知話語具權威的兩個條件。KC 說君王和祭司有繼承，先知沒有，並說這位先知將是一位中保。BH 說先知是神與人之間的居間者。'
+  relation: 創20 說明先知是什麼，出4 給出摩西與亞倫這個原型，民11、12 分辨受感說話與先知職分，申13 處理頭銜被冒用時怎麼辦；本章第一次正面說出這個角色從哪裡來，並把起因追到何烈山百姓自己的請求。申13 與申18 因此構成一對：一面是神真的會給，一面是給了以後仍要分辨。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:18
+- title: 何烈山
+  path: link_folder/地點/何烈山.md
+  summary: 第16節：「正如你在何烈山大會的日子求耶和華─你神一切的話，說：求你不再叫我聽見耶和華─我神的聲音，也不再叫我看見這大火，免得我死亡。」STEP 顯示「何烈」是 be./cho.Rev（H2722）。CT 說『何烈山大會的日子』指以色列人聚集在西乃山（就是何烈山）的山腳下、等候神降律法的那段日子（參出十九17），並說『求你』就是求摩西（參申五23、27；來十二18~19）。GT《聖經精讀本》說大會的日子指以色列百姓為了從神領受十誡、經過兩天的潔淨期之後聚集在西奈山腳下的那一日。BH 說何烈是西乃山的另一個名稱。
+  relation: 本章引何烈山不是為了描述那座山，而是為了引用那一天百姓說的話——這句話成了神設立先知制度的根據。第17節說耶和華回答「他們所說的是」，第18節接著給出應許。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 大會的日子（qa.hal）
+  path: link_folder/原文/大會的日子（qa.hal）.md
+  summary: '第16節「正如你在何烈山大會的日子求耶和華─你神一切的話」。STEP 顯示是 be./Yom（H3117G）ha./ka.Hal（H6951，簡要詞典義 qa.hal 為 assembly），與申9:10、10:4 完全相同；同一節的「求」是 sha.''Al.ta（H7592，sha.al: to ask），與第11節「交鬼的」sho.''El（同一編號 H7592）是同一個動詞，差別在求問的對象。CT 說這指以色列人聚集在西乃山山腳下等候神降律法的那段日子（參出十九17）。GT《聖經精讀本》說大會的日子指百姓為領受十誡經過兩天潔淨期後聚集在西奈山腳下的那一日（5:22;9:10;10:4;出19:11,16）。'
+  relation: 申9:10 用這個片語替十誡的來源定錨，申10:4 用它替重寫的內容定錨，本章第16節則用它替先知制度定錨——引的不是神那一天說了什麼，而是百姓那一天求了什麼。這是同一個片語在申命記的第三次出現，也是三次中唯一一次引百姓的話。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:9
+      - 申命記:10
+      - 申命記:18
+- title: 擅敢行事與褻瀆耶和華的剪除處分
+  path: link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md
+  summary: '第20節「若有先知擅敢託我的名說我所未曾吩咐他說的話，或是奉別神的名說話，那先知就必治死」，第22節「是那先知擅自說的」。STEP 顯示 v20 是 ya.Zid（H2102，簡要詞典義 zud），v22 是 be./za.dOn（H2087，za.don: arrogance），後者與申17:12 是同一個 Extended Strong。CT〔原文字義〕在 v20 註「擅敢」行為傲慢，行事叛逆，在 v22 註「擅自」傲慢，自大，並說所犯的死罪有兩種：託神的名說神所未曾吩咐他說的話，以及奉別神的名說話。GT《申命記串珠聖經註釋》說「奉別神的名說話」違反十誡的第一誡，故須處死；GT《聖經精讀本》說這些人都是妄稱聖潔之神的名字或向神的名挑戰之徒。BH 說擅敢指的是傲慢與越權，先知未受差遣卻擅自行動。'
+  relation: 民15:30 的「擅敢行事」抗拒的是耶和華的言語與命令，申17:12 抗拒的是神所設立的祭司與審判官所下的判語，本章第20節抗拒的是神自己的名——把神沒說過的話說成是神說的。三處用了三個不同的原文說法，而處分方向一致：剪除、治死、治死。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: update
+      synthesis_scope:
+      - 民數記:15
+      - 申命記:17
+      - 申命記:18
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:15
+      - 申命記:17
+      - 申命記:18
+- title: 神蹟奇事不是真先知的憑證
+  path: link_folder/主題/神蹟奇事不是真先知的憑證.md
+  summary: 第21至22節給出應驗這條測驗：「你心裡若說：耶和華所未曾吩咐的話，我們怎能知道呢？先知託耶和華的名說話，所說的若不成就，也無效驗，這就是耶和華所未曾吩咐的，是那先知擅自說的，你不要怕他。」CT 承認一般人確實無法當場知道，並把兩面都寫上——預言不應驗必定是假先知，預言有應驗也不一定是真先知；他還說判斷真先知不能單單以預言是否應驗為根據，還要看他所說的話是否與聖經的教導一致。GT《啟導本》說一個人說了預言卻不能應驗可以斷定為假先知，但「即使預言偶然得到應驗，也不一定是真先知」；GT《申命記串珠聖經註釋》說這裡所提的只是多種分辨假先知的方法之一。KC 說「The touchstone is and remains the Word of God.」（試金石始終是神的話。）BH 說預言的應驗是真偽的關鍵測驗，因為神的計畫不會落空。
+  relation: 申13:1-5 處理的是有能力卻不可聽——神蹟奇事就算應驗了，只要那話把人帶去隨從別神就不可聽；本章處理的是另一端，沒有應驗就不必怕。兩章合起來，應驗這件事只能用來否定，不能用來肯定，而條目定義原本引用的十八22 這條測驗，本章正是它的出處。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:18

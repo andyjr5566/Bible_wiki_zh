@@ -1,0 +1,138 @@
+book: 申命記
+chapter: 18
+candidates:
+- name: 利未支派
+  type: 人物
+  evidence: 第1至8節全段的主詞。「祭司利未人和利未全支派必在以色列中無分無業」（v1）；STEP 顯示 v1 是 la./ko.ha.Nim（H3548）ha/l.vi.Yim（H3881）kol- She.vet le.Vi（H7626H＋H3878）。
+  surfaces:
+  - 利未全支派
+  - 利未人
+- name: 火祭（isheh）
+  type: 主題
+  evidence: 「他們所吃用的就是獻給耶和華的火祭和一切所捐的」（v1）；STEP 顯示「火祭」是 'i.Shei（H801，簡要詞典義 ish.shah 為 food offering）。GT《串珠》說此處指各類的獻祭。
+  surfaces:
+  - 火祭
+- name: 產業（na.cha.lah）
+  type: 原文
+  evidence: 「他們在弟兄中必沒有產業；耶和華是他們的產業」（v2）；STEP 顯示 v1 與 v2 共四次 na.cha.lah（H5159），另 v1「分」是 Che.lek（H2506A）。
+  surfaces:
+  - 產業
+- name: 耶和華是事奉者的業與分
+  type: 神學
+  evidence: 「他們在弟兄中必沒有產業；耶和華是他們的產業，正如耶和華所應許他們的」（v2）；民18:20 用的是同一對字（Che.lek H2506A 與 na.cha.lah H5159），本章換成第三人稱重述。CT 說神負責利未人的生活問題，凡以色列人奉獻給神的都歸利未人享用。
+  surfaces:
+  - 耶和華是他們的產業
+- name: 利未人的什一奉獻
+  type: 神學
+  evidence: 「火祭和一切所捐的」（v1）；CT〔文意註解〕說『一切所捐的』原文「他的產業」，指什一奉獻（參民十八21）。
+  surfaces:
+  - 一切所捐的
+- name: 祭司的分（靠祭物養生）
+  type: 主題
+  evidence: 「祭司從百姓所當得的分乃是這樣：凡獻牛或羊為祭的，要把前腿和兩腮並脾胃給祭司」（v3）、「初收的五穀、新酒和油，並初剪的羊毛，也要給他」（v4）；STEP 顯示「當得的分」是 mish.Pat（H4941J），三個部位分別是 ze.Ro.a'（H2220）、le.cha.Ya.yim（H3895H）、ke.Vah（H6896）。
+  surfaces:
+  - 祭司從百姓所當得的分
+- name: 初熟
+  type: 原文
+  evidence: 「初收的五穀、新酒和油，並初剪的羊毛，也要給他」（v4）；STEP 顯示兩次 re.Shit（H7225G），另有 gez（H1488，fleece）。
+  surfaces:
+  - 初收的五穀
+- name: 神的揀選
+  type: 神學
+  evidence: 「因為耶和華─你的神從你各支派中將他揀選出來」（v5）；STEP 顯示「揀選」是 ba.Char（H977），與 v6「所選擇的」yiv.Char 是同一個字。
+  surfaces:
+  - 將他揀選出來
+- name: 侍立事奉（a.mad、sha.rat）
+  type: 原文
+  evidence: 「使他和他子孫永遠奉耶和華的名侍立事奉」（v5）；STEP 顯示是 la./'a.Mod（H5975G）le./sha.Ret（H8334），v7 再出現 ha./'o.me.Dim 與 ve./she.Ret。
+  surfaces:
+  - 侍立事奉
+- name: 立他名的居所（中央聖所）
+  type: 主題
+  evidence: 「一心願意到耶和華所選擇的地方」（v6）；STEP 顯示是 ha./ma.Kom（H4725）'a.Sher yiv.Char（H977）。
+  surfaces:
+  - 耶和華所選擇的地方
+- name: 寄居的
+  type: 原文
+  evidence: 「利未人無論寄居在以色列中的哪一座城」（v6）；STEP 顯示「寄居」是 gar（H1481A，簡要詞典義 gur 為 to sojourn），主詞是利未人自己。
+  surfaces:
+  - 寄居
+- name: 利未人自願上中央聖所事奉
+  type: 主題
+  evidence: 「就要奉耶和華─他神的名事奉，像他眾弟兄利未人侍立在耶和華面前事奉一樣。除了他賣祖父產業所得的以外，還要得一分祭物與他們同吃」（v7-8）；STEP 顯示 v8 是 Che.lek ke./Che.lek yo.Khe.lu（H2506A 兩次加 H398）。
+  surfaces:
+  - 還要得一分祭物與他們同吃
+- name: 可憎的物（to.e.vah）
+  type: 原文
+  evidence: 「那些國民所行可憎惡的事，你不可學著行」（v9）、「凡行這些事的都為耶和華所憎惡」（v12）；STEP 顯示本章三次 H8441（ke./to.'a.Vot、to.'a.Vat、ha./to.'e.Vot）。
+  surfaces:
+  - 可憎惡的事
+- name: 不可使兒女經火歸摩洛
+  type: 主題
+  evidence: 「你們中間不可有人使兒女經火」（v10）；STEP 顯示是 ma.'a.Vir（H5674A）be.no/v u./vi.T/o ba./'Esh（H784）。
+  surfaces:
+  - 使兒女經火
+- name: 卦金（qe.sem）
+  type: 原文
+  evidence: 「也不可有占卜的」（v10）、「都聽信觀兆的和占卜的」（v14）；STEP 顯示是 ko.Sem ke.sa.Mim（H7080 qa.sam 加 H7081 qe.sem），CT〔原文字義〕註「占卜(原文雙字)」行占卜(首字)；占卜(次字)。
+  surfaces:
+  - 占卜的
+- name: 不可行法術觀兆
+  type: 主題
+  evidence: 「觀兆的、用法術的」（v10）、「都聽信觀兆的和占卜的」（v14）；STEP 顯示「觀兆」是 me.'o.Nen（H6049B，a.nan）、「用法術」是 me.na.Chesh（H5172，na.chash）。
+  surfaces:
+  - 觀兆的
+  - 用法術的
+- name: 不可偏向交鬼行巫術的
+  type: 主題
+  evidence: 「交鬼的、行巫術的」（v11）；STEP 顯示是 sho.'El 'Ov（H7592 加 H178）與 yi.de.'o.Ni（H3049）。
+  surfaces:
+  - 交鬼的
+  - 行巫術的
+- name: 申18：10-12
+  type: 互文
+  evidence: 第10至11節一口氣列出九項：使兒女經火、占卜的、觀兆的、用法術的、行邪術的、用迷術的、交鬼的、行巫術的、過陰的；第12節總結「凡行這些事的都為耶和華所憎惡」。STEP 顯示九項各有不同字根，其中「行邪術的」是 me.kha.Shef（H3784，ka.shaph）、「用迷術的」是 cho.Ver Cha.ver（H2266 加 H2267）。
+  surfaces:
+  - 凡行這些事的
+  - 用迷術的
+- name: 求問與訪問同一個字（da.rash）
+  type: 原文
+  evidence: 「過陰的」（v11）；STEP 顯示是 do.Resh（H1875，da.rash）'el- ha./me.Tim（H4191），CT〔原文字義〕註「過陰(原文雙字)」尋求(首字)；死人(次字)。
+  surfaces:
+  - 過陰的
+- name: 義人與完全人
+  type: 神學
+  evidence: '「你要在耶和華─你的神面前作完全人」（v13）；STEP 顯示是 ta.Mim（H8549H，簡要詞典義 ta.mim 為 unblemished: blameless），BH 直接寫出 tamim 並說它含完整、真誠、無瑕之意。'
+  surfaces:
+  - 完全人
+- name: 先知
+  type: 主題
+  evidence: 第15至22節六次出現「先知」；STEP 顯示都是 na.Vi'（H5030）。v18「我要將當說的話傳給他」是 ve./na.ta.Ti de.va.Ra/i be./Fi/v（H5414H 加 H1697G 加 H6310G），字面是我要把我的話放在他口中。
+  surfaces:
+  - 先知
+- name: 興起一位先知像我
+  type: 神學
+  evidence: '「耶和華─你的神要從你們弟兄中間給你興起一位先知像我，你們要聽從他」（v15）、「我必在他們弟兄中間給他們興起一位先知像你」（v18）；STEP 顯示「興起」是 ya.Kim 與 ''a.Kim（H6965I，qum: to arise: establish），「弟兄」是 ''a.Chei./kha（H251I）。'
+  surfaces:
+  - 興起一位先知像我
+- name: 何烈山
+  type: 地點
+  evidence: 「正如你在何烈山大會的日子求耶和華─你神一切的話」（v16）；GT《聖經精讀本》說大會的日子指以色列百姓為了領受十誡聚集在西奈山腳下的那一日。
+  surfaces:
+  - 何烈山
+- name: 大會的日子（qa.hal）
+  type: 原文
+  evidence: 「正如你在何烈山大會的日子求耶和華─你神一切的話」（v16）；GT《聖經精讀本》說大會的日子指以色列百姓為了從神領受十誡，經過兩天的潔淨期之後，聚集在西奈山腳下的那一日。
+  surfaces:
+  - 大會的日子
+- name: 擅敢行事與褻瀆耶和華的剪除處分
+  type: 神學
+  evidence: '「若有先知擅敢託我的名說我所未曾吩咐他說的話」（v20）、「是那先知擅自說的」（v22）；STEP 顯示 v20 是 ya.Zid（H2102，zud）、v22 是 be./za.dOn（H2087，za.don: arrogance），後者與申17:12 的 ve./za.Don 是同一個 Extended Strong。'
+  surfaces:
+  - 擅敢託我的名
+  - 擅自說的
+- name: 神蹟奇事不是真先知的憑證
+  type: 主題
+  evidence: 「先知託耶和華的名說話，所說的若不成就，也無效驗，這就是耶和華所未曾吩咐的」（v22）；GT《啟導本》在申13 已把應驗列為另一項測驗並註明十八22，本章給出這條測驗本身。
+  surfaces:
+  - 也無效驗
