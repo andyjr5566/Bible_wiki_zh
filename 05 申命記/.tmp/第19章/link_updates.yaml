@@ -1,0 +1,262 @@
+book: 申命記
+chapter: 19
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 逃城
+  path: link_folder/互文/逃城.md
+  summary: '本章第1至13節是逃城制度在申命記的正式條文。第2節命令在所賜為業的地上分定三座城，第3節要求把地分為三段並預備道路，第4至6節界定受保護的條件，第8至9節給出再添三座的條件，第11至13節排除蓄意殺人者。STEP 顯示「逃」是 ya.Nus／la./Nus（H5127，簡要詞典義 nus: to flee），「分為三段」是 ve./shi.lash.Ta（H8027，sha.lash: to do three）。GT《申命記串珠聖經註釋》說設立的原因是為了保護生命，使誤殺人者可以得著安全的避難所；GT《聖經精讀本》說逃城制度是為了防止流無辜之血與報仇的惡性循環而立的社會仲裁制度，向素無仇恨地偶然殺人者提供安全藏身處。KC 說逃城是利未人與祭司的城，逃進去的人來到一個蒙福的地方，並說誤殺人者要住到大祭司死為止（民35:32），這段時間他被剝奪了享用自己產業的權利。BH 說這些城分布全地以確保任何人都到得了。'
+  relation: 出21:13 只給了「一個地方」，民35 定出六座並訂下住到大祭司死為止的規則，申4:41-43 是摩西實際點名河東三座；本章補上的是河西那三座的命令，以及前面幾處沒有的兩件事——通往逃城的道路要自己修，蓄意殺人者要由長老從城裡帶出來。制度的重點因此從有沒有地方可逃，推到到得了嗎、進去了就一定安全嗎。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:35
+      - 申命記:19
+- title: 申19：1-13
+  path: link_folder/互文/申19：1-13.md
+  summary: 本條目名稱所指的整段經文首次以主場身分被處理。第8至9節給出條件式擴充：耶和華若照向列祖所起的誓擴張境界，而百姓謹守遵行、愛耶和華、常常遵行他的道，「就要在這三座城之外，再添三座城」。GT《申命記雷氏研讀本》說這三座城從來沒有加添上去，因為以色列人並沒有佔領應許賜給亞伯拉罕的所有土地，並指大衛所征服的較大疆土不久就失去了；GT《申命記串珠聖經註釋》說即把城的數目由六座增至九座，因以色列人沒有完全佔據全迦南，故這三座外添的逃城以後並沒有記載（參書20章）；GT《啟導本聖經申命記註釋》說這件事在以色列人的歷史上沒有實現，因為他們不但未能得到整個應許之地，而且因為倒行逆施、國家分裂，遭到國破家亡的命運。KC 說那擴張本身也取決於他們對耶和華的順服。
+  relation: 本章是這個條目指涉的經文所在，因此定義從一句以出21 為視角的索引式說明，改寫為這段經文自己的內容。原定義把再添的三座說成可在約旦河東再添，與本章第8至9節不合——河東三座早已由申4:41-43 分定，這裡添的三座是在境界擴張之後另加，四套來源都是這樣讀的，一併勘誤。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:19
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:19
+- title: 摩西分定河東三座逃城（ba.dal）
+  path: link_folder/事件/摩西分定河東三座逃城（ba.dal）.md
+  summary: '第2節「就要在耶和華─你神所賜你為業的地上分定三座城」，第7節「所以我吩咐你說，要分定三座城」。STEP 顯示「分定」是 tav.Dil（H914，簡要詞典義 ba.dal: to separate），與申4:41 摩西在河東分定三座城是同一個字。CT〔原文字義〕註「分定」分開，分別出來，並說『分定三座城』即指約但河西三座逃城（參民三十五14）。GT《啟導本聖經申命記註釋》說這之前摩西已在約但河東為兩個半支派設立了三座，六座逃城平均分配在約但河東西兩岸的北、中與南三部分；GT《聖經精讀本》說律法規定應當從分給利未人的48座城邑中特意分別出六座來作為逃城（民35:6），河東三座是比悉、基列的拉末與巴珊的哥蘭，本節吩咐設立餘下三座，據書20:7 是加利利的基低斯、示劍與基列亞巴（希伯侖）。GT《雷氏研讀本》說摩西已經在約但河東岸分出三座，這時又在西岸分出三座。'
+  relation: 本條目記的是申4:41-43 那次已經完成的行動；本章用同一個動詞下的是還沒完成的命令。兩處合起來，六座逃城的設立分成兩半：河東由摩西親自做完，河西留給進地之後的百姓。GT《聖經精讀本》另補上河西三座的實際名字，使這條命令有了後續的落點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:19
+- title: 殺人（ratsach）
+  path: link_folder/原文/殺人（ratsach）.md
+  summary: '本章三次用這個字指誤殺人者（第3、4、6節），STEP 顯示是 ro.Tze.ach／ha./ro.Tze.ach（H7523，簡要詞典義 ra.tsach: to murder）。第11節寫蓄意殺人時，經文換的不是動詞而是描述——「若有人恨他的鄰舍，埋伏著起來擊殺他」，STEP 顯示「恨」是 so.Ne''（H8130，sa.ne: to hate）、「埋伏」是 ve./''A.rav（H693，a.rav: to ambush）。CT〔原文字義〕註「誤殺」非蓄意殺害、「無心(原文雙字)」缺少，沒有(首字)；意識，知識(次字)。GT《聖經精讀本》說摩西律法限制了蒙惠對象的範圍，只有在素無仇恨且完全無心的情況下才能停留在逃城。'
+  relation: 本條目的定義已記下一項爭議：ratsach 是否只能譯作謀殺。本章提供了直接的語料——同一個字在第3至6節通篇指的是意外致死的人，而蓄意的那一種要靠「恨」與「埋伏」兩個另外的字來標明。這使定義裡《舊約背景註釋》的提醒得到本章的印證：這個字的用法比單一的非法謀殺更複雜。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 也可出現在誤殺等語境
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 民數記:35
+      - 申命記:19
+- title: 謀殺與誤殺的區分
+  path: link_folder/神學/謀殺與誤殺的區分.md
+  summary: '第4節給出判定公式「凡素無仇恨，無心殺了人的」，第5節給出實例（同入樹林砍柴、斧頭脫了把飛落在鄰舍身上），第11至12節給出反面（恨他的鄰舍、埋伏著起來擊殺他，長老要把他從逃城帶出來）。STEP 顯示「無心」是 bi/v.li- Da.''at（H1097 加 H1847，簡要詞典義 da.at: knowledge），「素無仇恨」是 lo''- so.Ne''（H8130）接 mi./te.Mol shil.Shom（H8543 加 H8032），「斧頭脫了把」是 ve./na.Shal ha./bar.Zel（H5394，na.shal: to slip，加 H1270 iron），「埋伏」是 ve./''A.rav（H693）。CT 註『素無仇恨』指平日相處沒有恩怨糾葛、『無心殺了人的』指沒有預謀純屬意外，並說預謀殺人者即使逃到任何一座逃城也不能獲得庇護。GT《聖經精讀本》列出蒙惠的兩個條件，並說若不符合即便已藏身於逃城之內也不能受到保護；GT《串珠聖經註釋》說犯人逃入逃城後應由長老開庭審查他殺人是出於故意抑或無心。KC 說砍柴的例子讓界線變清楚——樹林誰都可以進、砍柴誰都可以做，事情不是出於預謀而純粹是意外，有了這個例子，任何類似案件都可以拿來比對評估。BH 說意圖是判定罪責的關鍵，並把它接到太5:21-22。'
+  relation: 出21:12-14 立原則，民35:16-23 給凶器與宿怨的判準；本章補上兩樣前面沒有的東西——一個可以套用的公式（素無仇恨、無心），和一個可以比對的實例（斧頭脫把）。判定的人也在本章第一次被指名：本城的長老。這個區分因此從一條原則變成一套可以執行的程序。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 民數記:35
+      - 申命記:19
+- title: 憑幾個見證人的口
+  path: link_folder/主題/憑幾個見證人的口.md
+  summary: 第15節：「人無論犯什麼罪，作什麼惡，不可憑一個人的口作見證，總要憑兩三個人的口作見證才可定案。」STEP 顯示「見證人」是 'ed／'e.Dim（H5707），「口」是 pi（H6310I），「定案」是 ya.Kum da.Var（H6965I 加 H1697G），字面是這事就立得住。CT 說『憑兩三個人的口』為防患挾仇報復，以免產生冤屈，故不可單憑一個人的話定罪。GT《申命記雷氏研讀本》說有關作見證的要求在殺人罪案裏已經詳述，這裡「引用至所有的刑事罪案」；GT《啟導本聖經申命記註釋》說這是保持司法公正的規定，法庭必須有足夠的證據才能定案，並說新約時代使徒也引用舊約的先例來解決教會內的爭執（提前五19；太十八16）；GT《聖經精讀本》說規定至少有兩名以上的證人說出一致的證詞才能使罪成立，是為了防止誣告或作偽證。KC 說新約教會處理犯罪也要照這條原則（太18:15-16），並說對在教會中擔任顯著職分的人尤其如此（提前5:19）。BH 說在書面紀錄稀少的古代近東，口頭見證至關重要，多人見證是防止誣告的保障。
+  relation: 民35:30 把這條門檻定在死刑案上，申17:6 用在事奉別神的案子上；本章第15節把它推到最寬——人無論犯什麼罪，作什麼惡。同一章接著第16至21節補上偽證的罰則，等於在放寬適用範圍的同時，把濫用這條規則的代價也寫了出來。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:35
+      - 申命記:17
+      - 申命記:19
+- title: 不可作假見證陷害人
+  path: link_folder/神學/不可作假見證陷害人.md
+  summary: '第16至21節是第九誡的罰則條文。第16節「若有凶惡的見證人起來，見證某人作惡」，STEP 顯示是 ''ed- cha.Mas（H5707 加 H2555，簡要詞典義 cha.mas: violence），「作惡」是 sa.Rah（H5627，sa.rah: revolt）；第18節「若見證人果然是作假見證的」是 ''ed- she.ker（H8267，she.qer: deception）；第19節「如同他想要待的」是 ka./''a.Sher za.Mam（H2161，za.mam: to plan）。CT 說神看作假見證的人是兇惡的見證人，因為作假見證是不公不義的行為，陷害無辜的人，令人含冤莫明；他並說第19節意指以其欲加之罪，將同等罪刑加在作假見證的人身上。GT《串珠聖經註釋》說「兇惡」描寫作假見證者陷害別人的陰毒心態（參詩35:11），「作惡」可指叛道反教；GT 收馬唐納《申命記》說在申命記看來假見證是一項極為嚴重的罪，應處的刑罰和被誣告的人一旦罪名成立所受的刑罰完全相等，這項極嚴厲的懲罰目的是為了防止社會上發生這一類的假見證。KC 說假見證不可不受懲罰（箴19:5,9），若指控被判定為假，起訴者就要受他原本要加給對方的刑罰。BH 說假見證威脅整個社會秩序與立約關係，並把它連到主耶穌受審時的假見證（可14:56-59）。'
+  relation: 出20:16 與申5:20 立下禁令，民35:30 把見證門檻用在死刑案上；本章第一次寫出查實之後怎麼辦——待他如同他想要待的弟兄，並在第20節說明用意是讓別人聽見都害怕。誡命本身管的是不要作假見證，本章管的是作了要付出什麼代價。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+      - 申命記:19
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: '第17至18節：兩造要站在耶和華面前、和當時的祭司並審判官面前，「審判官要細細地查究」。STEP 顯示「審判官」是 ha./Sho.fe.Tim（H8199，簡要詞典義 sha.phat: to judge），「細細地查究」是 ve./da.re.Shu（H1875，da.rash: to seek）加 hei.Tev（H3190，ya.tav: be good）。CT〔原文字義〕註「細細地」美好，令人滿意、「查究」尋訪，調查，並說『細細地查究』指殷勤地追查線索，辨明真偽。GT《聖經精讀本》說由此可知關於偽證罪或誣告罪的案件是由中央聖所的大法庭來審理（17:8,9）；GT《啟導本聖經申命記註釋》說審判事宜由審判官和通曉律法的祭司辦理。KC 說審判官必須仔細查明指控，並會與祭司討論所查得的結果。BH 說審判官與祭司分別承擔民事與宗教職責，兩者在以色列社會裡是結合的。'
+  relation: 申16:18 要求按城設立審判官，申17:8-13 讓他們與祭司組成終審機構；本章寫出他們在一樁具體案件裡實際要做的動作——查究。第17節同時說明層級：這不是地方城門口那一級，而是站在耶和華面前的那一級。審判官在這裡不是宣判者而是查證者，判決要等查究之後才出現。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:16
+      - 申命記:17
+      - 申命記:19
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第12節：「本城的長老就要打發人去，從那裡帶出他來，交在報血仇的手中，將他治死。」STEP 顯示是 zik.Nei i.R/o（H2205G 加 H5892B），字面是他那座城的長老們。CT 說『本城的長老』指那擁有審判權的官長，通常年歲較長。GT《申命記串珠聖經註釋》說犯人逃入逃城後應由長老開庭審查他殺人是出於故意抑或無心；如果是蓄意謀殺則應判死罪，把他交給報血仇的人；GT《聖經精讀本》說發生殺人案的那城長老當派人去逃城逮捕藏身其中的殺人犯，之後在城門當著眾人之面斷定殺人者是否出於蓄意。BH 說長老是群體中受敬重的領袖與決策者，負責維持公義與秩序，常在法律事務上擔任審判者。
+  relation: 前面幾章的長老多半是代表——代表百姓見神、受靈、立約。本章第12節把他們寫成執法者：他們要跨出自己的城，把人從另一座城帶出來，並決定交不交給報血仇的。逃城制度能不能運作，關鍵就在這一群人身上。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:19
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: '第17節：「這兩個爭訟的人就要站在耶和華面前，和當時的祭司，並審判官面前」。STEP 顯示「爭訟」是 ha./Riv（H7379，簡要詞典義 riv: strife），「站」是 ve./''a.me.Du（H5975G，a.mad: to stand）。GT《聖經精讀本》說由此可知關於偽證罪或誣告罪的案件是由中央聖所的大法庭來審理（17:8,9）。KC 說站在祭司與審判官面前就等於把自己呈在耶和華面前，祭司在神面前要把這事帶到耶和華那裡。BH 說站在耶和華面前表明這場程序的嚴肅性，也表明神是最終的審判者與見證者。'
+  relation: 本章沒有再提「耶和華所選擇的地方」這個說法，只用「站在耶和華面前」帶過；而 GT《聖經精讀本》把它認定為申17:8-9 那個上訴機構。這與申17 已經記下的第二種功能（難斷案件的終審）是同一件事，本章只是給它多加了一種案件類型。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 同一個地方因此有了第二種功能。
+- title: 把那惡從你們中間除掉（ba.ar）
+  path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
+  summary: '第19節「這樣，就把那惡從你們中間除掉」，STEP 顯示是 u./vi.''ar.Ta ha./Ra'' mi./kir.Be./cha（H1197I，簡要詞典義 ba.ar: to burn: purge，加 H7451B 加 H7130G），與申13:5、17:7 完全相同。第13節用同一個動詞而換了受詞：「卻要從以色列中除掉流無辜血的罪」，是 u./vi.''ar.Ta dam- ha./na.Ki（H1197I 加 H1818 加 H5355A）。CT〔原文字義〕在兩處都註「除掉」點燃，消耗。GT《啟導本聖經申命記註釋》說本書多次要求除惡，不只主張嚴懲作惡者，也要把那惡本身去除，並列出十三5、十七7、二十一21 等處。BH 說除去罪咎是為了保持群體的潔淨與立約關係。'
+  relation: 這句公式在申13 用於引誘拜別神的人，申17 用於擅敢不聽判決的人；本章第19節用於作假見證的人。同一章的第13節則把同一個動詞用在一項罪咎上——流無辜血的罪，而不是一個人。要除掉的東西因此從人擴到事，這是這個公式在申命記的第三站。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:17
+      - 申命記:19
+- title: 求問與訪問同一個字（da.rash）
+  path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+  summary: '第18節「審判官要細細地查究」。STEP 顯示是 ve./da.re.Shu（H1875，簡要詞典義 da.rash: to seek）加 hei.Tev（H3190，ya.tav: be good）。CT〔原文字義〕註「查究」尋訪，調查，並說指殷勤地追查線索，辨明真偽。'
+  relation: 申12:5 往神所選擇的地方求問、申12:30 訪問迦南人的神、申17:9 向祭司利未人求問、申18:11 向死人求問，四處的受詞都是一個可以問的對象。本章第18節的受詞卻是一樁案件的真相——這是這個動詞在申命記的第五種用法，也是第一次不問「誰」而查「什麼」。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:18
+      - 申命記:19
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: '第14節：「在耶和華─你神所賜你承受為業之地，不可挪移你鄰舍的地界」。STEP 顯示名詞與同源動詞在同一節連用——be./na.cha.la.te./Kha（H5159）加 tin.Chal（H5157，na.chal: to inherit）；第3節另有 yan.chi.le./Kha（H5157）指神使你承受為業。GT《聖經精讀本》說在土地登記制度尚未發達的古代社會，地界起了劃分土地所有權的作用。KC 說這一節講的不是照顧自己的產業，而是照顧鄰舍的產業。'
+  relation: 民數記那幾章用這個字處理分配，申命記十八章用它說明利未支派刻意沒有分到；本章第14節出現第三種用法——不是問這一份歸誰，而是問你有沒有動到別人那一份。同一節同時用了名詞與同源動詞，把「所承受的」與「承受這件事」綁在一起。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:36
+      - 申命記:18
+      - 申命記:19
+- title: 以眼還眼
+  path: link_folder/神學/以眼還眼.md
+  summary: 第21節：「你眼不可顧惜，要以命償命，以眼還眼，以牙還牙，以手還手，以腳還腳。」STEP 顯示五組都是同一個名詞前後對舉：Ne.fesh be./Ne.fesh（H5315H）、'A.yin be./'A.yin（H5869A）、shen be./Shen（H8127G）、yad be./Yad（H3027G）、Re.gel be./Ra.gel（H7272）。CT 說舊約的律法容許人討回公道，對別人所施的惡待可還以相等程度的報復，目的乃在阻止隨意侵犯別人，並說此處乃對作假見證的人施以同樣的懲罰；他另說這條例是審判官量刑的根據，表明在律法面前人人平等、罪罰相當，量刑不可過重也不可過輕。GT《啟導本聖經申命記註釋》說在法律面前人人平等，生命受到同樣保障，人乃按神的形像而造，此例非鼓勵復仇，所強調的乃積極愛護生命；GT《聖經精讀本》說在古代近東法律中除了舊約之外，明確論到同害復仇法的法典只有漢莫拉比法典，並說舊約只有三處論及，即本節與出21:23-25、利24:17-21。BH 說這條原則旨在防止過度處罰與私人報復，確保回應與冒犯相稱。
+  relation: 這一節收在本章最後，與第13節前後呼應：兩處開頭都是「你眼不可顧惜」，STEP 顯示都是 ta.Chos 加 ei.ne./Kha（H2347 加 H5869A）。第13節不可顧惜的是蓄意殺人者，第21節不可顧惜的是作假見證的人；本章因此用同一句話把兩段條例的結尾綁在一起。它也緊接著第19節「你們就要待他如同他想要待的弟兄」，是那句話的量刑細則。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 利未記:24
+      - 申命記:19
+- title: 以眼還眼的適用範圍
+  path: link_folder/解經爭議/以眼還眼的適用範圍.md
+  summary: 第21節出現在法庭程序（第17至20節）之後，本章三家因此都特別聲明它的適用範圍。GT《聖經精讀本》說關於嚴格的同害復仇法，「這絕不是個人性的復仇方法而只是說明了由司法機關執行刑罰」，並說律法在個人性層次上強調要無限地寬容饒恕，在社會性層次上則強調為了實現公義、維持秩序及防止犯罪應當嚴格地執行法律。CT 說「這一節所定的原則是給審判官使用的，並不適用於個人的報復」，並說這種處罰犯人的態度對古時在公義與公平的審判上「的確是一種突破」，因為那時大多數國家都使用專制的方法來處罰罪人；他另指出以牙還牙並不是放縱個人報私仇（參太五38～39）。GT 收馬唐納《申命記》說這例往往被誤解為有懷恨的成分，其實不然——它不是殘酷行為的特許，而是訂定其限度，確保犯人免受酷刑。KC 說主耶穌並沒有廢掉這條報應的律法，官方的執法機關仍然完全適用，他所做的是宣告它不能用在個人恩怨上（太5:38-42）。
+  relation: 本條目定義列出的三層爭議中，第一層是由法官還是由個人執行。本章給了最強的一項證據：這條原則出現的位置是法庭判決之後，對象是被查實的偽證者。三家在本章的說法完全一致，第一層爭議在這裡幾乎可以定案；第二層與第三層（照字面還是折成錢、是否適用於奴婢）本章沒有觸及。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:19

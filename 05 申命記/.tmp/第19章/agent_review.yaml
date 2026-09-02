@@ -1,0 +1,70 @@
+version: 2
+book: 申命記
+chapter: 19
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: b81320cdbeab6d593761300d6da777c6eb106a9d2cd2fc34ed870182d071b669
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: edf016f843fdd3402047512f1e90ec6ac6cf9e9423d70aa52eb8635f5e626d0c
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: b81320cdbeab6d593761300d6da777c6eb106a9d2cd2fc34ed870182d071b669
+      verdict: pass
+      findings_count: 0
+    thread_id: 2ebb664e-fc56-4c75-9694-2e1bfda22957
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 3f39c64fbdc15ddc5a972a7ad0347454603ffd1e100fbca88a1631dcd885e573
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 5564c3021390c24997832a29f2306e3db6203eff1e6ffa33580f780203f6ad35
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 3f39c64fbdc15ddc5a972a7ad0347454603ffd1e100fbca88a1631dcd885e573
+      verdict: pass
+      findings_count: 0
+    thread_id: 42604a55-5c80-4385-aa86-7517089bef3e
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 4
+    sha256: badee3698ab1f513b22cb746a361249ba3b958be2dd3c8aa18975058e4037bd1
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: f60f1cec8861399358ae0fd699bc225df0d391b04ae1f30a4cda63a1733090aa
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: badee3698ab1f513b22cb746a361249ba3b958be2dd3c8aa18975058e4037bd1
+      verdict: pass
+      findings_count: 0
+    thread_id: 50f347ba-efa9-4bca-81ee-7abd06593fed
+    findings_count: 0

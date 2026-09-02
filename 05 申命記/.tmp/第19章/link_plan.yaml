@@ -1,0 +1,184 @@
+book: 申命記
+chapter: 19
+A_use_directly:
+- name: 逃城
+  suggested_type: 互文
+  evidence: '「這人逃到那些城的一座城，就可以存活」（v5）、「便逃到這些城的一座城」（v11）；本章第1至13節是逃城制度在申命記的正式條文，交代河西那三座。STEP
+    顯示「逃」是 ya.Nus（H5127，nus: to flee），v3「使誤殺人的都可以逃到那裡去」是 la./Nus。'
+  surfaces:
+  - phrase: 那些城的一座城
+  - phrase: 這些城的一座城
+  match_type: exact
+  existing_title: 逃城
+  existing_path: link_folder/互文/逃城.md
+- name: 申19：1-13
+  suggested_type: 互文
+  evidence: 本條目名稱所指的整段經文。第8至9節另給一個條件式擴充：耶和華若照向列祖所起的誓擴張境界，且百姓謹守遵行，「就要在這三座城之外，再添三座城」。GT《雷氏研讀本》說這三座城從來沒有加添上去，因為以色列人並沒有佔領應許賜給亞伯拉罕的所有土地；GT《串珠》說即把城的數目由六座增至九座。
+  surfaces:
+  - phrase: 再添三座城
+  match_type: exact
+  existing_title: 申19：1-13
+  existing_path: link_folder/互文/申19：1-13.md
+- name: 摩西分定河東三座逃城（ba.dal）
+  suggested_type: 事件
+  evidence: '「就要在耶和華─你神所賜你為業的地上分定三座城」（v2）、「所以我吩咐你說，要分定三座城」（v7）；STEP 顯示「分定」是 tav.Dil（H914，ba.dal:
+    to separate），與申4:41 摩西在河東分定三座城用的是同一個動詞。GT《啟導本》說這之前摩西已在約但河東為兩個半支派設立了三座。'
+  surfaces:
+  - phrase: 分定三座城
+  match_type: exact
+  existing_title: 摩西分定河東三座逃城（ba.dal）
+  existing_path: link_folder/事件/摩西分定河東三座逃城（ba.dal）.md
+- name: 殺人（ratsach）
+  suggested_type: 原文
+  evidence: '「使誤殺人的，都可以逃到那裡去」（v3）、「誤殺人的逃到那裡可以存活」（v4）；STEP 顯示三次都是 ro.Tze.ach（H7523，ra.tsach:
+    to murder），同一個字既涵蓋誤殺也涵蓋 v11 的蓄意殺人。'
+  surfaces:
+  - phrase: 誤殺人的
+  match_type: exact
+  existing_title: 殺人（ratsach）
+  existing_path: link_folder/原文/殺人（ratsach）.md
+- name: 謀殺與誤殺的區分
+  suggested_type: 神學
+  evidence: '「凡素無仇恨，無心殺了人的」（v4）對照「若有人恨他的鄰舍，埋伏著起來擊殺他」（v11）；STEP 顯示 v4 是 bi/v.li- Da.''at（H1097
+    加 H1847，da.at: knowledge）與 lo''- so.Ne''（H8130，sa.ne: to hate），v11 是 so.Ne'' 加
+    ve./''A.rav（H693，a.rav: to ambush）。'
+  surfaces:
+  - phrase: 無心殺了人的
+  - phrase: 埋伏著起來擊殺他
+  match_type: exact
+  existing_title: 謀殺與誤殺的區分
+  existing_path: link_folder/神學/謀殺與誤殺的區分.md
+- name: 憑幾個見證人的口
+  suggested_type: 主題
+  evidence: 「不可憑一個人的口作見證，總要憑兩三個人的口作見證才可定案」（v15）；STEP 顯示「見證人」是 'ed／'e.Dim（H5707），「口」是
+    pi（H6310I），「定案」是 ya.Kum da.Var（H6965I 加 H1697G）。
+  surfaces:
+  - phrase: 憑兩三個人的口作見證
+  match_type: exact
+  existing_title: 憑幾個見證人的口
+  existing_path: link_folder/主題/憑幾個見證人的口.md
+- name: 不可作假見證陷害人
+  suggested_type: 神學
+  evidence: '「若見證人果然是作假見證的，以假見證陷害弟兄」（v18）；STEP 顯示是 ''ed- she.ker（H5707 加 H8267，she.qer:
+    deception）。KC 說本章詳述的三條誡命之一就是不可作假見證陷害鄰舍。'
+  surfaces:
+  - phrase: 作假見證的
+  match_type: exact
+  existing_title: 不可作假見證陷害人
+  existing_path: link_folder/神學/不可作假見證陷害人.md
+- name: 審判官
+  suggested_type: 原文
+  evidence: '「和當時的祭司，並審判官面前」（v17）、「審判官要細細地查究」（v18）；STEP 顯示是 ha./Sho.fe.Tim（H8199，sha.phat:
+    to judge）。'
+  surfaces:
+  - phrase: 審判官
+  match_type: exact
+  existing_title: 審判官
+  existing_path: link_folder/原文/審判官.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 「本城的長老就要打發人去，從那裡帶出他來」（v12）；STEP 顯示是 zik.Nei i.R/o（H2205G 加 H5892B）。CT
+    說『本城的長老』指那擁有審判權的官長，通常年歲較長。
+  surfaces:
+  - phrase: 本城的長老
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 立他名的居所（中央聖所）
+  suggested_type: 主題
+  evidence: 「這兩個爭訟的人就要站在耶和華面前，和當時的祭司，並審判官面前」（v17）；GT《聖經精讀本》說由此可知關於偽證罪或誣告罪的案件是由中央聖所的大法庭來審理（17:8,9）。
+  surfaces:
+  - phrase: 站在耶和華面前
+  match_type: exact
+  existing_title: 立他名的居所（中央聖所）
+  existing_path: link_folder/主題/立他名的居所（中央聖所）.md
+- name: 把那惡從你們中間除掉（ba.ar）
+  suggested_type: 神學
+  evidence: 「這樣，就把那惡從你們中間除掉」（v19）；STEP 顯示是 u./vi.'ar.Ta ha./Ra' mi./kir.Be./cha（H1197I
+    加 H7451B 加 H7130G），與申13:5、17:7 是同一個公式；第13節「除掉流無辜血的罪」用的也是 u./vi.'ar.Ta。
+  surfaces:
+  - phrase: 把那惡從你們中間除掉
+  match_type: exact
+  existing_title: 把那惡從你們中間除掉（ba.ar）
+  existing_path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
+- name: 求問與訪問同一個字（da.rash）
+  suggested_type: 原文
+  evidence: '「審判官要細細地查究」（v18）；STEP 顯示是 ve./da.re.Shu（H1875，da.rash）加 hei.Tev（H3190，ya.tav:
+    be good），是這個動詞在申命記的又一種對象——查案。'
+  surfaces:
+  - phrase: 細細地查究
+  match_type: exact
+  existing_title: 求問與訪問同一個字（da.rash）
+  existing_path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: '「在耶和華─你神所賜你承受為業之地，不可挪移你鄰舍的地界」（v14）；STEP 顯示是 be./na.cha.la.te./Kha（H5159）加
+    tin.Chal（H5157，na.chal: to inherit），名詞與同源動詞在同一節連用。'
+  surfaces:
+  - phrase: 承受為業之地
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 以眼還眼
+  suggested_type: 神學
+  evidence: 「你眼不可顧惜，要以命償命，以眼還眼，以牙還牙，以手還手，以腳還腳」（v21）；STEP 顯示是 Ne.fesh be./Ne.fesh、'A.yin
+    be./'A.yin、shen be./Shen、yad be./Yad、Re.gel be./Ra.gel 五組同字對舉。
+  surfaces:
+  - phrase: 以眼還眼
+  match_type: exact
+  existing_title: 以眼還眼
+  existing_path: link_folder/神學/以眼還眼.md
+- name: 以眼還眼的適用範圍
+  suggested_type: 解經爭議
+  evidence: 第21節在本章的位置很特別：它不是判傷害案，而是判作假見證的人。GT《聖經精讀本》說這絕不是個人性的復仇方法，而只是說明了由司法機關執行刑罰；CT
+    也說這一節所定的原則是給審判官使用的，並不適用於個人的報復。KC 則說主耶穌沒有廢掉這條律法，只是宣告它不適用於個人恩怨。
+  surfaces:
+  - phrase: 以命償命
+  match_type: exact
+  existing_title: 以眼還眼的適用範圍
+  existing_path: link_folder/解經爭議/以眼還眼的適用範圍.md
+B_needs_update: []
+C_new_formal:
+- name: 報血仇的（ga.al）
+  suggested_type: 原文
+  evidence: '「免得報血仇的，心中火熱追趕他」（v6）、「交在報血仇的手中，將他治死」（v12）；STEP 顯示是 go.''El ha./Dam（H1350H，ga.al:
+    to redeem: avenge 加 H1818 dam: blood）。CT 說指死者的至近親屬；GT《聖經精讀本》說含有償還、賠償之意，可翻譯為償還者、報仇者。'
+  surfaces:
+  - phrase: 報血仇的
+  target_path: link_folder/原文/報血仇的（ga.al）.md
+- name: 不可挪移地界（ge.vul）
+  suggested_type: 主題
+  evidence: '「在耶和華─你神所賜你承受為業之地，不可挪移你鄰舍的地界，那是先人所定的」（v14）；STEP 顯示「挪移」是 ta.Sig（H5253，na.sag:
+    to remove），「地界」是 ge.Vul（H1366G，ge.vul: border: boundary），「先人所定的」是 ga.ve.Lu ri.sho.Nim（H1379
+    加 H7223H）。'
+  surfaces:
+  - phrase: 不可挪移你鄰舍的地界
+  target_path: link_folder/主題/不可挪移地界（ge.vul）.md
+- name: 預備往逃城的道路
+  suggested_type: 主題
+  evidence: '「又要預備道路，使誤殺人的，都可以逃到那裡去」（v3）；STEP 顯示是 ta.Khin（H3559K，kun: to establish）加
+    ha./de.reKh（H1870K，de.rekh: way: road），並以 ve./shi.lash.Ta（H8027，sha.lash: to do
+    three）把地分為三段。CT、GT《聖經精讀本》與 KC 各自記下猶太傳統對這條路的規格。'
+  surfaces:
+  - phrase: 預備道路
+  target_path: link_folder/主題/預備往逃城的道路.md
+- name: 流無辜血的罪
+  suggested_type: 神學
+  evidence: '「免得無辜之人的血流在耶和華─你神所賜你為業的地上，流血的罪就歸於你」（v10）、「卻要從以色列中除掉流無辜血的罪」（v13）；STEP
+    顯示「無辜」是 ha./na.Ki（H5355A，na.qi: innocent），「血」是 dam（H1818）。'
+  surfaces:
+  - phrase: 流血的罪
+  - phrase: 流無辜血的罪
+  target_path: link_folder/神學/流無辜血的罪.md
+  semantic_hint:
+  - title: 血
+    score: 0.436
+    type: 主題
+  - title: 那地不得潔淨（ki.pher）
+    score: 0.408
+    type: 原文
+  - title: 來9：18-22
+    score: 0.404
+    type: 互文
+D_new_candidate: []
+E_skip: []
