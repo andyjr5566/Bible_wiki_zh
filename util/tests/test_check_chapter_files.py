@@ -524,6 +524,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
             data["updates"][0]["summary"] = "本章重點"
             data["updates"][0]["relation"] = "本章與條目的關聯"
+            data["updates"][0]["overview_review"]["definition"] = "pending"
             _write_yaml(manifest, data)
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)

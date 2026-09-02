@@ -148,11 +148,20 @@ def _review_signals(text, book, chapter):
 
 def _review_payload(text, book, chapter):
     signals, before_count, after_count = _review_signals(text, book, chapter)
+    def_status = "pending" if "definition_blank" in signals else "keep"
+    dev_status = (
+        "pending"
+        if (
+            "many_accumulations" in signals
+            or ("development_blank" in signals and after_count >= 2)
+        )
+        else "keep"
+    )
     return {
         "signals": signals,
         "accumulation_count": [before_count, after_count],
-        "definition": "pending",
-        "development": "pending",
+        "definition": def_status,
+        "development": dev_status,
     }
 
 
@@ -246,15 +255,49 @@ def _definition_evidence(body):
     return header, lines
 
 
+def _entry_is_flagged(entry):
+    signals = set(entry.get("signals") or [])
+    accum_count = len(entry.get("accumulated") or [])
+    if "definition_blank" in signals:
+        return True
+    if "many_accumulations" in signals:
+        return True
+    if "development_blank" in signals and (accum_count + 1 >= 2):
+        return True
+    return False
+
+
+def _compact_definition_summary(body, max_limit=70):
+    flat = " ".join(str(body).split())
+    if not flat:
+        return "空白", ""
+    size = len(_squeeze(flat))
+    chunks = [c.strip() for c in _PARAGRAPH_SPLIT_RE.split(str(body).strip()) if c.strip()]
+    lead = _opening_sentence(chunks[0], limit=max_limit) if chunks else ""
+    return f"{size} 字", f"首段「{lead}」"
+
+
+def _compact_development_summary(body, max_limit=70):
+    flat = " ".join(str(body).split())
+    if not flat:
+        return "空白", ""
+    chunks = [c.strip() for c in _PARAGRAPH_SPLIT_RE.split(str(body).strip()) if c.strip()]
+    total = sum(len(_squeeze(c)) for c in chunks)
+    headings = [c.lstrip("# ").strip() for c in chunks if c.startswith("#")]
+    if headings:
+        return f"{len(chunks)} 段／{total} 字", f"包含小標題「{'、'.join(headings[:3])}」等"
+    lead = _opening_sentence(chunks[0], limit=max_limit) if chunks else ""
+    return f"{len(chunks)} 段／{total} 字", f"首段「{lead}」"
+
+
 def review_evidence_markdown(book, chapter, entries):
     """Render the compact review evidence: definition claims, development outlines."""
     lines = [
         f"# B 類累積審查證據：{book} 第{chapter}章",
         "",
         "判 overview_review 前讀這一份，不必逐一開啟每個目標條目。",
-        f"定義 {EVIDENCE_DEFINITION_FULL_LIMIT} 字以內給全文，較長的給主張索引"
-        "（首段全文＋其餘段落的粗體導語或開頭）；主題發展有小標題時只給小標題，"
-        f"沒有小標題才給段落開頭（上限 {EVIDENCE_OUTLINE_MAX_ROWS} 段）。",
+        "【異常條目（空白／累積過多）】給出完整定義大綱與主題發展段落索引，供深入審查；",
+        "【正常條目（無異常信號）】給出緊湊現況摘要（正常條目 YAML 已預設 keep，若無重大突破不需改動）。",
         "索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認。",
         "填 already_covered 一定要開檔逐字節錄 covered_by；"
         "條目本身欠帳而本章只有一句帶過的提及，填 standing_debt（會記進欠帳清單）。",
@@ -271,19 +314,25 @@ def review_evidence_markdown(book, chapter, entries):
                 entry.get("accumulated_grouped") or "（無）",
             )
         )
-        lines.append("")
-        header, body = _definition_evidence(entry["definition"])
-        lines.append(header)
-        lines.extend(body)
-        lines.append("")
-        outline = _section_outline(entry["development"])
-        if outline:
-            total = len(_squeeze(entry["development"]))
-            lines.append(f"### 主題發展（{len(outline)} 段／{total} 字，段落索引）")
-            for text, size in outline:
-                lines.append(f"- {text}" + (f"　〔{size} 字〕" if size else ""))
+        if _entry_is_flagged(entry):
+            lines.append("")
+            header, body = _definition_evidence(entry["definition"])
+            lines.append(header)
+            lines.extend(body)
+            lines.append("")
+            outline = _section_outline(entry["development"])
+            if outline:
+                total = len(_squeeze(entry["development"]))
+                lines.append(f"### 主題發展（{len(outline)} 段／{total} 字，段落索引）")
+                for text, size in outline:
+                    lines.append(f"- {text}" + (f"　〔{size} 字〕" if size else ""))
+            else:
+                lines.append("### 主題發展：空白")
         else:
-            lines.append("### 主題發展：空白")
+            def_size, def_lead = _compact_definition_summary(entry["definition"])
+            dev_size, dev_lead = _compact_development_summary(entry["development"])
+            lines.append(f"- **定義**（{def_size}）" + (f"：{def_lead}" if def_lead else ""))
+            lines.append(f"- **主題發展**（{dev_size}）" + (f"：{dev_lead}" if dev_lead else ""))
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
@@ -411,11 +460,11 @@ def prepare(book, chapter):
     )
     print(f"✅ 已建立更新骨架：{output}（{len(data['updates'])} 條）")
     print(f"📖 先讀審查證據檔：{evidence_path}")
-    print("   它給定義全文、主題發展段落索引與已累積章清單；索引不足以判定時再開條目原檔。")
+    print("   它對異常條目給出完整大綱、對正常條目給出緊湊現況摘要；索引不足以判定時再開條目原檔。")
     print(
-        "⚠️ 套用前必須逐條填 overview_review：definition／development 各自選 "
-        "keep 或 update；keep 合法，不得把逐章 summary／relation 換句話說"
-        "塞進定義或主題發展。程式提出 challenge 而仍 keep 時才填短 basis 代碼。"
+        "⚠️ 套用前必須確認 overview_review：已為正常條目預設 keep；"
+        "標註 pending 的條目為重點審查項，必須明確決策。"
+        "程式提出 challenge 而仍 keep 時才填短 basis 代碼。"
     )
     print(
         "   development=update 時，synthesis_scope 至少列本章與另一章（書卷:章），"

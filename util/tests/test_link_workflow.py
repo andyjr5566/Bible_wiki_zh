@@ -231,23 +231,18 @@ class UpdateTests(unittest.TestCase):
     def test_prepare_makes_distinct_overview_review_mandatory_but_keep_is_valid(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            # 1. 正常條目（綠燈）：預設為 keep，可直接通過預覽
             manifest, _entry_path = self._prepare_review_fixture(root)
             data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
             self.assertEqual(2, data["review_schema_version"])
             self.assertIn("穩定身分", data["review_guidance"]["definition"])
             self.assertIn("跨章", data["review_guidance"]["development"])
             self.assertIn("本章明確資料", data["review_guidance"]["accumulation"])
-            self.assertEqual(
-                "pending", data["updates"][0]["overview_review"]["definition"]
-            )
+            self.assertEqual("keep", data["updates"][0]["overview_review"]["definition"])
+            self.assertEqual("keep", data["updates"][0]["overview_review"]["development"])
             self.assertNotIn("reason", data["updates"][0]["overview_review"])
             self.assertTrue((manifest.parent / "link_update_review_baseline.yaml").is_file())
 
-            with patch.object(link_updates, "ROOT", root):
-                with self.assertRaisesRegex(ValueError, "尚未完成判斷"):
-                    link_updates.preview_updates(manifest)
-
-            self._fill_keep_review(manifest)
             with patch.object(link_updates, "ROOT", root):
                 preview = link_updates.preview_updates(manifest)
             review = preview["operations"][0]["overview_review"]
@@ -255,6 +250,15 @@ class UpdateTests(unittest.TestCase):
             self.assertEqual("keep", review["development"]["decision"])
             self.assertFalse(review["definition"]["changed"])
             self.assertFalse(review["development"]["changed"])
+
+            # 2. 標註 pending 的條目：未完成判斷時強迫報錯攔截
+            data["updates"][0]["overview_review"]["definition"] = "pending"
+            manifest.write_text(
+                yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+            )
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "尚未完成判斷"):
+                    link_updates.preview_updates(manifest)
 
     def test_update_decision_requires_real_section_change(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -393,9 +397,10 @@ class UpdateTests(unittest.TestCase):
             self.assertEqual("長子名分在創35章斷送", review["covered_by"])
 
     def test_prepare_writes_the_compact_review_evidence_file(self):
-        """證據檔給定義全文與主題發展段落索引，取代逐一開條目。"""
+        """證據檔對正常條目給緊湊摘要，對異常條目給段落索引，取代逐一開條目。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            # 1. 正常條目（綠燈）：給緊湊摘要卡，不展開全部段落大綱
             manifest, _entry_path = self._prepare_review_fixture(
                 root, development="第一段講長子名分。\n\n第二段講河東分地的安排。"
             )
@@ -405,11 +410,25 @@ class UpdateTests(unittest.TestCase):
             self.assertIn("穩定身分與辨識邊界。", text)
             self.assertIn("累積 1 章：創世記 1", text)
             self.assertIn("第一段講長子名分。", text)
-            self.assertIn("第二段講河東分地的安排。", text)
-            self.assertIn("段落索引", text)
+            self.assertIn("- **定義**", text)
+            self.assertIn("- **主題發展**", text)
             with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
                 with self.assertRaises(FileExistsError):
                     link_updates.prepare("創世記", 8)
+
+            # 2. 異常條目（紅黃燈，例如 development_blank 且有歷史累積）：展開完整段落大綱
+            flagged_entry = {
+                "title": "異常條目",
+                "path": "link_folder/主題/異常條目.md",
+                "signals": ["development_blank"],
+                "accumulated": ["創世記1", "創世記2"],
+                "accumulated_grouped": "創世記 1,2",
+                "definition": "短定義內容",
+                "development": "",
+            }
+            flagged_md = link_updates.review_evidence_markdown("創世記", 8, [flagged_entry])
+            self.assertIn("### 主題發展：空白", flagged_md)
+            self.assertIn("### 定義", flagged_md)
 
     def test_standing_debt_is_the_only_honest_basis_when_the_entry_owes_a_synthesis(self):
         """條目自己欠帳（累積多／主題發展空白）時，insufficient_evidence 會把欠帳抹掉。"""
