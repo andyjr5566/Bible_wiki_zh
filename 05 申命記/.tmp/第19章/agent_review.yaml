@@ -48,13 +48,14 @@ stages:
     findings_count: 0
   link_updates:
     round: 2
-    revision: 4
-    sha256: badee3698ab1f513b22cb746a361249ba3b958be2dd3c8aa18975058e4037bd1
+    revision: 5
+    sha256: a259abb589faaae644eca20c23deea7a8ef37a1f84d87bf8e589adb1d3758fcb
     claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
     review_attempts: 2
-    forced_pass: false
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
     review_history:
     - attempt: 1
       reviewer: antigravity
@@ -66,5 +67,5 @@ stages:
       sha256: badee3698ab1f513b22cb746a361249ba3b958be2dd3c8aa18975058e4037bd1
       verdict: pass
       findings_count: 0
+    forced_from_findings_count: 0
     thread_id: 50f347ba-efa9-4bca-81ee-7abd06593fed
-    findings_count: 0
