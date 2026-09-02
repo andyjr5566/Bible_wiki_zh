@@ -1,0 +1,325 @@
+book: 申命記
+chapter: 17
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 沒有殘疾的祭牲
+  path: link_folder/神學/沒有殘疾的祭牲.md
+  summary: 第1節「凡有殘疾，或有什麼惡病的牛羊，你都不可獻給耶和華─你的神，因為這是耶和華─你神所憎惡的」。CT〔原文字義〕註「殘疾」瑕疵，缺陷，污點；「惡病(原文雙字)」壞的，惡的(首字)；言論，事件(次字)，文意註解說『殘疾』指有缺點、瑕疵，亦即不完全之意，『惡病』原文任何壞氣味的東西。GT《申命記雷氏研讀本》說「惡病」是缺點或障礙；GT《啟導本聖經申命記註釋》說這是一般獻祭的例，可與十五21同看，並指出埃及記所載同一條例中無「惡病」字樣，當為摩西講解時加以說明的結果；GT 收馬唐納《申命記》說獻有殘疾的動物是給神次好的，因為這類牲畜在市場上可以用低廉的價格買到。KC 說一切獻給神的祭都是基督之祭的預表；BH 說 detestable 指令神憎惡、厭棄的事物，並引瑪1:8。
+  relation: 本章第1節是這條規矩在申命記裡的又一次出現，位置卻很特別：它單獨一節放在整章之首，後面接的是拜天象、司法上訴與立王三段。串起四段的判準詞是同一個——第1節的「所憎惡的」與第4節的「可憎惡的事」在 STEP 是同一個字（H8441）。與申15:21 相比，本節多了「惡病」一詞，也多了把不合格祭牲判為可憎之物的措辭。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:15
+      - 申命記:17
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: '本章兩次用到這個字：第1節「這是耶和華─你神所憎惡的」與第4節「準有這可憎惡的事行在以色列中」，STEP 的鄰章查詢顯示兩處都是 H8441（簡要詞典義 to.e.vah: abomination），第1節為 to.''a.Vat、第4節為 ha./to.''e.Vah。CT〔文意註解〕說『可憎惡的事』即指拜偶像的事。GT《聖經精讀本》說第2節的「惡」與定冠詞一起使用會有那邪惡之意，即指拜偶像的罪。BH 說 abomination 指令神憎惡的行為，在申命記的脈絡裡多半指偶像崇拜，而在以色列中發生這種事不只是違法，更是屬靈上的背叛。'
+  relation: 本章把這個字用在兩件性質不同的事上：第1節是獻上有殘疾的祭牲，第4節是拜日月天象。條目原本記的是申14:3 把它用在食物上，本章則顯示同一個判準詞在同一章裡跨越了祭物與敬拜對象兩個範圍，也因此成為本章四段的共同標籤。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 憑幾個見證人的口
+  path: link_folder/主題/憑幾個見證人的口.md
+  summary: 第6節「要憑兩三個人的口作見證將那當死的人治死；不可憑一個人的口作見證將他治死」，STEP 為 'al pi she.Na.yim 'e.Dim（H5921A＋H6310I＋H8147＋H5707）與 'al pi 'ed 'e.Chad（H5707＋H259），與民35:30 是同一組字。CT〔原文字義〕註「將那當死的人治死(原文雙同字)」治死，處死，文意註解說『兩三個人的口』為防患挾仇報復，以免產生冤屈，故不可單憑一個人的話定罪。GT《聖經精讀本》說最少有兩人以上的證人作證才能判其有罪，這是為了防止人寶貴的生命因誣告或偽證而蒙冤受死的事情。KC 說惟有憑兩個或三個見證人的證詞才能執行公義；BH 說這條原則在新約被耶穌與保羅引用（太18:16、林後13:1）。
+  relation: 這是這條門檻第一次進入申命記。條目原本記的是民35:30 把它定在故殺人的案件上，本章則把同一組原文用語搬到宗教罪——有人去事奉敬拜別神。本章第7節另加一道民數記沒有的設計：見證人要先下手，然後眾民也下手。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:35
+      - 申命記:17
+- title: 石刑
+  path: link_folder/背景/石刑.md
+  summary: '第5節「你就要將行這惡事的男人或女人拉到城門外，用石頭將他打死」，第7節「見證人要先下手，然後眾民也下手將他治死」。STEP 的第7節為 yad ha./''e.Dim（H3027G＋H5707）加 va./ri.sho.Nah（H7223G，簡要詞典義 ri.shon: first）與 ve./Yad kol ha./''Am（H3605＋H5971A）加 ba./''a.cha.ro.Nah（H314，簡要詞典義 a.cha.ron: last）。CT〔文意註解〕說古時執行死刑是讓群眾投石砸死犯人，又說『見證人要先下手』是為著防止作偽證，一則表示良心無虧，二則表示願受作偽證的刑責。GT《啟導本聖經申命記註釋》記下當時的作法：受刑的人給拉到城外，綁在架子上，行刑時證人先動手，拿大石頭打在犯人頭上，然後各人拿石頭擲在垂死的人身上；GT《聖經精讀本》說規定證人先下手是為了使證人為自己的證詞負不可推卸的責任。'
+  relation: 條目原本記的是石刑作為群體共同執行的死刑方式，本章補上執行的先後次序：見證人的手在先、眾民的手在後，STEP 顯示原文用了 ri.shon 與 a.cha.ron 這一組對照的序數詞。行刑地點也寫得更明確——拉到城門外。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:17
+- title: 把那惡從你們中間除掉（ba.ar）
+  path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
+  summary: '本章兩次出現這句話：第7節「這樣，就把那惡從你們中間除掉」與第12節「這樣，便將那惡從以色列中除掉」，STEP 兩處都是 u./vi.''ar.Ta（H1197I，簡要詞典義 ba.ar: to burn: purge）加 ha./Ra''（H7451B），只是範圍詞一次是 mi./kir.Be./cha（H7130G，你中間）、一次是 mi./Yis.ra.''El（H3478，以色列）。CT〔原文字義〕註「除掉」消耗，燒盡，文意註解說『那惡』指罪惡，也指罪人。GT《申命記串珠聖經註釋》說「惡」這字或作「惡人」，表示將罪和罪人看為一體，必須滅絕（參林前5:13）。BH 說這句話在申命記反覆出現，強調以色列要與周圍列國分別。'
+  relation: 條目原本記的是申13:5 把這句話用在引誘人事奉別神的罪上。本章用了兩次，而且落在兩種不同的罪：第7節是拜日月天象的人，第12節是不服中央判決的人。兩處的範圍詞不同（你中間／以色列中），是同一公式在本章內部的變化。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:17
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: '第5節「拉到城門外」與第8節「你城中若起了爭訟的事」，STEP 的第8節為 bi/sh.''a.Rei./kha（H8179H，簡要詞典義 sha.ar: gate: town）。CT〔文意註解〕說『城門』古時是在城門口公開審問案件(參申二十一19)。GT《聖經精讀本》說當時城門是社交與交易的公共場所，也是公開的審判場所。BH 說在古代以色列，城門不只是出入口，也是審判與公眾集會的地方，把人帶到城門就表示啟動一項正式的法律程序，並接到得4:1-11 與箴31:23。'
+  relation: 本章讓城門同時擔起兩個角色，位置卻分開：第8節的爭訟起於城門這個地方，第5節的行刑則移到城門之外。條目先前累積的申14至16章講的是城門作為公共生活與審判的所在，本章補上它同時也是刑罰執行的界線。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:16
+      - 申命記:17
+- title: 求問與訪問同一個字（da.rash）
+  path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+  summary: '第9節「去見祭司利未人，並當時的審判官，求問他們，他們必將判語指示你」，STEP 的「求問」是 ve./da.rash.Ta（H1875，簡要詞典義 da.rash: to seek），正是申12:5「求問」與12:30「訪問」的同一個字。CT〔原文字義〕註「求問」求助，尋找。BH 說求問這個動作本身就承認了神所設立之人的權柄，是對神所立次序的謙卑順服。'
+  relation: 條目原本記的是申12 的兩端：第5節命令往神所選擇的地方求問，第30節禁止訪問別神。本章給了同一個字第三種對象——神所設立的人（祭司利未人與審判官）。三處合看，這個字的正負從來不在動作本身，而在對象。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:17
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: '第9節與第12節兩次提到審判官，STEP 都是 ha./sho.Fet（H8199，簡要詞典義 sha.phat: to judge）。CT〔文意註解〕說『審判官』最初是摩西所任命(參出十八25~26)，後來是祭司(參民五15)、士師(參撒上二25)，再後來是君王所任命審理案件的官長(參撒下十五3)。GT《申命記串珠聖經註釋》說在神治的體制裡，祭司與審判官同是神的代表；祭司的責任是教導律法，審判官則是律法的執行者。BH 說審判官負責按神的律法施行公義、解決爭訟，是維持社會秩序的關鍵。'
+  relation: 本章接在申16:18 各城設立審判官與官長之後，補上這套制度的頂端：地方判不下來的案件要上到耶和華所選擇的地方，見祭司利未人與當時的審判官。與地方審判官不同的是，中央這一組是祭司與審判官並列，第12節的刑罰也同時涵蓋兩者。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:16
+      - 申命記:17
+- title: 侍立事奉（a.mad、sha.rat）
+  path: link_folder/原文/侍立事奉（a.mad、sha.rat）.md
+  summary: '第12節「若有人擅敢不聽從那侍立在耶和華─你神面前的祭司」，STEP 為 ha./''o.Med（H5975G，簡要詞典義 a.mad: to stand: stand）加 le./Sha.ret（H8334，簡要詞典義 sha.rat: to minister），與申10:8 是同一對字。CT〔原文字義〕註「侍」伺候；「立」站立，文意註解說『那侍立在耶和華你神面前的祭司』這句話暗示他們在判斷之前求問神，因此他們的斷案也就是神的斷案。KC 說祭司最知道神的心意，因為他們習慣於在神面前。'
+  relation: 條目原本記的是申10:8 用這一對字描述利未支派的職分。本章把同一對字放進司法場景，並讓它承擔新的作用：它成了判決具有效力的理由——因為判斷的人是侍立在神面前的，所以不服判決的處分才會這麼重。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:17
+- title: 不可偏離左右
+  path: link_folder/主題/不可偏離左右.md
+  summary: '第11節「他們所指示你的判語，你不可偏離左右」，STEP 的「偏離」是 ta.Sur（H5493I，簡要詞典義 sur: to turn aside），與申5:32 是同一個動詞；同一字根在本章第17節再出現一次，用來說王的「心偏邪」（ya.Sur le.va.V/o）。CT〔原文字義〕註「偏離」轉變方向，出發，文意註解說『不可偏離左右』即指不可擅自更改。BH 說不可偏離左右在聖經裡是一個常見的說法，指持守在正路上，並接到書1:7。'
+  relation: 條目原本記的是申5:32 對全體百姓說的那一次。本章讓同一句話換了對象：第11節管的是中央法庭的判語，第20節管的是王。同一字根在第17節還被用來形容王的心偏邪，因此這句話在本章內部就出現了三種適用。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:17
+- title: 擅敢行事與褻瀆耶和華的剪除處分
+  path: link_folder/神學/擅敢行事與褻瀆耶和華的剪除處分.md
+  summary: '第12節「若有人擅敢不聽從」與第13節「眾百姓都要聽見害怕，不再擅敢行事」，STEP 的第12節為 ya.''a.Seh ve./za.Don（H6213A＋H2087，簡要詞典義 za.don: arrogance）。CT〔原文字義〕註「擅敢(原文雙字)」做，製作，完成(首字)；傲慢，自大(次字)，並把「擅敢行事」解成行為傲慢、行事叛逆。GT《聖經精讀本》把這個詞解作驕傲或傲慢。BH 說擅敢行事指的是對已立之權柄的傲慢與抗拒，是對神所立次序的正面挑戰，並以民16 可拉的背叛為例。'
+  relation: 這是這個題目第一次進入申命記。條目原本記的是民15:30-31 的 be./Yad ra.Mah（舉著手做的），本章用的是另一個原文說法 ve./za.Don，中文同樣譯作「擅敢」。抗拒的對象也換了：民數記針對耶和華的言語與命令，本章針對神所設立之祭司與審判官所下的判語。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: update
+      synthesis_scope:
+      - 民數記:15
+      - 申命記:17
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:15
+      - 申命記:17
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: '第8節「你就當起來，往耶和華─你神所選擇的地方」與第10節「他們在耶和華所選擇的地方指示你的判語」。STEP 的第8節為 ha./ma.Kom（H4725，簡要詞典義 ma.qom: place）加 yiv.Char（H977）。GT《申命記串珠聖經註釋》說「神所選擇的地方」即最高法院。BH 說這一節把難斷的案件集中到神所指定的地方審理，確保了判決的一致性、也維持了全國的合一。'
+  relation: 條目先前累積的申12、14、15、16章都是為了獻祭與守節而上到那地方。本章第一次讓人為了別的理由上去——難斷的案件。同一個地點因此多了一種功能：它既是敬拜的中心，也是司法的終審所在。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:17
+- title: 學習與教訓同一字根（la.mad）
+  path: link_folder/原文/學習與教訓同一字根（la.mad）.md
+  summary: '第19節「存在他那裡，要平生誦讀，好學習敬畏耶和華─他的神」，STEP 為 yil.Mad（H3925H，簡要詞典義 la.mad: to learn: learn）加 le./yir.''Ah（H3372H，簡要詞典義 ya.re: to fear: revere），與申14:23 是同一組搭配；同節的「誦讀」是 ve./Ka.ra''（H7121J，簡要詞典義 qa.ra: to call: read out）。CT〔文意註解〕說『平生誦讀』可以存記在心，『敬畏』在此指不敢絲毫違背神的旨意。BH 說每日誦讀表示一生委身於明白並實行神的命令。'
+  relation: 條目原本記的是申5 的會眾場景與申6 的家庭場景。本章把同一個字根放到第三個場景：王。而且這一次學習的手段被寫得很具體——親手抄錄一本律法書、存在身邊、平生誦讀。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:6
+      - 申命記:17
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第9節「去見祭司利未人」與第18節「就要將祭司利未人面前的這律法書」，STEP 都是 ha./ko.ha.Nim ha/l.vi.Yim（H3548＋H3881）。CT〔文意註解〕說『祭司利未人』意指從利未支派出來的祭司，故祭司乃是利未人。GT《啟導本聖經申命記註釋》說祭司、利未人負有保存律法和教導律法的責任（利十11），並說從本節可知在聖所中保存有一部律法書。BH 說利未祭司是神與百姓之間的中保，負責教導律法並獻祭。
+  relation: 本章給這個支派兩個先前沒有寫明的位置：參與最高法庭的判案（第9、12節），以及保管王抄錄律法書所依據的正本（第18節）。條目先前累積的民數記各章鋪開的是帳幕搬運與職務分工，本章加上的是司法與文本保存。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:17
+- title: 神的揀選
+  path: link_folder/神學/神的揀選.md
+  summary: '第15節「你總要立耶和華─你神所揀選的人為王」，STEP 為 yiv.Char（H977，簡要詞典義 ba.char: to choose）。GT《聖經精讀本》說立王的第一個條件必須是神所揀選的人，這暗示了以色列的真正之君是神，屬世君主只是神的代理人。BH 說這強調揀選的主權在神，並以撒上9:15-17 立掃羅、撒上16:1-13 立大衛為例。'
+  relation: 條目先前累積的創25、申4、申7、申10 講的都是對個人或整個民族的揀選。本章把同一個動詞用在一個職位上：王必須是耶和華揀選的人。這也讓揀選成為本章立王條例的第一個條件，與第二個條件（必從你弟兄中立一人）並列。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:7
+      - 申命記:17
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: '第16節「也不可使百姓回埃及去，為要加添他的馬匹，因耶和華曾吩咐你們說：不可再回那條路去」，STEP 為 ya.Shiv（H7725G，簡要詞典義 shuv: to return）加 mitz.Ray.ma/h（H4714G）與 la./Shuv ba./De.rekh ha./Zeh od（H1870K＋H5750）。CT〔文意註解〕說『馬匹』連同馬車、馬兵是軍事力量的象徵，埃及盛產馬隻；神的意思是以色列人不可回頭和埃及人打交道。GT《啟導本聖經申命記註釋》說「百姓回埃及」有人認為指用以色列的奴隸去交換埃及的馬匹，也有人說是與埃及結盟來增加國威，並引賽三十1-7、三十一1-3 為佐證。BH 說埃及代表過去的奴役，回到那裡等於否認神的拯救。'
+  relation: 條目先前累積的各章講的是走出埃及這件事本身及其記念。本章從反方向用到它：王不可為了加添馬匹而使百姓回埃及去。出埃及在這一節不是被記念的往事，而是一條不准回頭的路。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:12
+      - 申命記:17
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: '第15節「不可立你弟兄以外的人為王」，STEP 為 ''ish na.khe.Ri（H376G＋H5237，簡要詞典義 nokh.ri: foreign），正是申14:21「外人」與申15:3「外邦人」的同一個字。CT〔文意註解〕說立王的第二個條件是必須是以色列人（『你弟兄』），亦即不可立外邦人為王。BH 說禁止立外邦人為王是為了防止周邊列國的異教作法滲入，並以所羅門娶外邦女子的後果（王上11:1-8）為例。'
+  relation: 條目先前記的是 ger 與 nokhri 這兩個身分在申14:21、申15:3 的分別。本章給 nokhri 劃出第三條界線，而且是政治性的：外邦人不可作王。長居的外僑受律法保護、可以參與節期，但治理的位置不開放。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:17
+- title: 光體作記號定節令
+  path: link_folder/背景/光體作記號定節令.md
+  summary: 第3節「或拜日頭，或拜月亮，或拜天象」把受造的星體當成敬拜的對象。CT 的話中之光說將天上浩瀚、無邊無際、無法透測的萬象當作敬拜的對象，有靈性的人卻去膜拜無靈性的天象，並說神所造的諸天是為著地，而地是為著有靈的人(參亞十二1)。GT《啟導本聖經申命記註釋》說四19已警告不可膜拜神所造的作記號、定節令的星體，現在重申此禁制。BH 在本節指出這些天體是神的創造，不是神明，並接到創1:14-19。
+  relation: 這是這個題目第一次進入申命記。條目原本記的是創1:14-19 給日月星辰的位置——神所造、用來分晝夜作記號定節令的工具。本章記下這個位置被翻轉的樣子，並且給了處分：查有實據就要拉到城門外用石頭打死。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:1
+      - 申命記:17
+- title: 耶和華作王
+  path: link_folder/神學/耶和華作王.md
+  summary: 第14節「我要立王治理我，像四圍的國一樣」。GT《聖經精讀本》指出這個要求本身的問題：以色列因處於神的直接統治之下，沒有必要另立屬世君主，故王政制度並不是神所喜悅的制度（撒上8:7）。KC 說撒上8 那一次百姓要的是照自己心意的王而不是照神心意的王，他們是要一個王來取代耶和華。BH 說立王的要求反映神的理想神權與百姓想與周圍列國看齊之間的張力，並指這被讀為對神王權的拒絕（撒上8:7）。
+  relation: 這是這個題目第一次進入申命記。條目原本記的是出15:18 的宣告——耶和華必作王，直到永永遠遠。本章記下與它並列的另一句話：百姓將來會要求立一個像四圍的國那樣的王。第15節的回應沒有取消王位，而是把王放進神的揀選之下。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:15
+      - 申命記:17
+- title: 不可加添也不可刪減（ya.saph、ga.ra）
+  path: link_folder/原文/不可加添也不可刪減（ya.saph、ga.ra）.md
+  summary: '第16節末句「因耶和華曾吩咐你們說：不可再回那條路去」，STEP 的「不可再」是 lo'' to.si.Fu/n（H3254G，簡要詞典義 ya.saph: to add: again），與申4:2、12:32 的「不可加添」是同一個字根。CT〔文意註解〕說神的意思是以色列人不可回頭和埃及人打交道。同一節前半的三道禁令另用 ra.vah（H7235A，簡要詞典義 to multiply），與這個字根不同。'
+  relation: 條目先前累積的申4、申5、申12 用這個字根講的都是不可對神的話加添。本章的用法換了方向：句子講的不是律法的份量，而是一條不准再走的路。同一節裡另有一個表示「多」的動詞 ra.vah 管三道禁令，兩個字並列可以看出它們不是同一回事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:17
