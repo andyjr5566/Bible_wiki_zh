@@ -1,0 +1,49 @@
+---
+type: 原文
+secondary_types:
+- 背景
+aliases:
+- 匪類
+status: formal
+source_scope: collected_only
+---
+
+# 匪類（be.liy.ya.al）
+
+## 定義
+
+申命記第十三章第12節說「有些匪類從你們中間的一座城出來勾引本城的居民」。中文的「匪類」讀起來像流氓，原文說的是另一回事。
+
+STEP 顯示這是三個字接在一起：'a.na.Shim（H582，e.nosh: human）＋be.nei-（H1121H，ben: son）＋ve.li.Ya.'al（H1100G），簡要詞典把最後一個字記成 be.liy.ya.al: Belial。CT〔文意註解〕給的直譯是：『匪類』原文是「比列的子孫」，意指魔鬼的兒女。
+
+**這個字的字義各家說法接近。** GT《申命記串珠聖經註釋》說「匪類」意指沒有價值、卑賤之子，並記下它的希伯來文讀音是彼列，原意可能是吞吃，而新約用它來形容撒但（林後6:15）。GT《聖經精讀本》給的是兩個平行說法：無價值的邪惡之子（士19:22）或不敬虔的不法之子（帖後2:3）。KC 稱他們為 worthless men 或 Belials-children，並解作魔鬼的兒女。
+
+**它在本章的位置是第三種引誘。** 前兩段的引誘者是假先知（第1至5節）與至親好友（第6至11節），這一段換成一群人，而且他們的影響力達到整座城。GT《聖經精讀本》把本章這三種來源列成一組：來自假先知的誘惑、來自家人與親戚的誘惑、來自群眾的誘惑。KC 的分法相同，並把第三種稱為集體性的欺騙。
+
+**同一節裡還有一個動詞值得注意。** 「勾引本城的居民」在 STEP 是 va/i.ya.Di.chu（H5080，na.dach: to banish，本節逐字解 they have thrust aside），與第5節假先知「要勾引你離開耶和華」的 le./ha.di.cha./Kha 是同一個字；CT〔原文字義〕在兩處都註「勾引…離開」趕離，趕出，並在第10節說『勾引你離開』按原文意指「趕逐你離開」。三段引誘的主角不同，動作卻是同一個。
+
+## 按書卷累積
+
+### 申命記
+
+<!-- accumulation:申命記:13:start -->
+#### [[05 申命記/第13章|第13章]]
+- 本章重點：第12節「有些匪類從你們中間的一座城出來勾引本城的居民」，STEP 為 'a.na.Shim be.nei- ve.li.Ya.'al（H582＋H1121H＋H1100G，be.liy.ya.al: Belial）。CT 說『匪類』原文是「比列的子孫」，意指魔鬼的兒女；GT《申命記串珠聖經註釋》說它意指沒有價值、卑賤之子，希伯來文讀音是彼列，原意可能是吞吃，新約用它形容撒但（林後6:15）；GT《聖經精讀本》引士19:22 與帖後2:3；KC 稱他們為魔鬼的兒女。同節的「勾引」是 va/i.ya.Di.chu（H5080，na.dach: to banish），與第5節假先知的「勾引」同字。
+- 與本章關聯：這是本章三段引誘的第三種，也是唯一一種規模到全城的。前兩段的處置對象是一個人，這一段的處置對象是一座城；而三段共用同一個動詞——把人從耶和華那裡趕開。因為對象是整座城，第14節才需要先探聽查究，第15至17節的處置也才會嚴重到那個地步。
+<!-- accumulation:申命記:13:end -->
+
+## 相關條目
+
+- [[探聽查究細細地訪問（da.rash、cha.qar、sha.al）]]
+- [[滅絕（herem）]]
+- [[荒堆（tel）]]
+- [[把那惡從你們中間除掉（ba.ar）]]
+- [[神蹟奇事不是真先知的憑證]]
+- [[專一敬拜]]
+
+## 來源依據
+
+- 逐節註解（ccbiblestudy CT）: 申十三5、10、12~13〔原文字義〕〔文意註解〕——匪類原文是比列的子孫、勾引原文是趕離趕出（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT13.htm>）
+- 拾穗（ccbiblestudy GT）: 申十三1~2、12~13《申命記串珠聖經註釋》《聖經精讀本》——彼列的讀音與字義、士19:22 與帖後2:3、本章三種誘惑的分類（<https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT13.htm>）
+- 研經註解（KingComments）: Deuteronomy 13:12-18 — worthless men 與 Belials-children、集體性的欺騙（<https://www.kingcomments.com/en/bible-studies/Deu/13>）
+- 原文資料（STEP Bible）: Deuteronomy 13:12-13, 13:5 — H582、H1121H、H1100G、H5080 的詞形、morphology 與簡要詞典義（<https://github.com/STEPBible/STEPBible-Data>）

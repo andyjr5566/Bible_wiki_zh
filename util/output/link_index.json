@@ -2570,6 +2570,18 @@
     "status": "formal",
     "aliases": []
   },
+  "神蹟奇事不是真先知的憑證": {
+    "path": "link_folder/主題/神蹟奇事不是真先知的憑證.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神蹟奇事不是真先知的憑證",
+    "status": "formal",
+    "aliases": [
+      "真先知的憑證"
+    ]
+  },
   "祭司不可娶被玷污的婦人為妻": {
     "path": "link_folder/主題/祭司不可娶被玷污的婦人為妻.md",
     "type": "主題",
@@ -13497,6 +13509,18 @@
       "服役的工"
     ]
   },
+  "匪類（be.liy.ya.al）": {
+    "path": "link_folder/原文/匪類（be.liy.ya.al）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "匪類（be.liy.ya.al）",
+    "status": "formal",
+    "aliases": [
+      "匪類"
+    ]
+  },
   "十分之一": {
     "path": "link_folder/原文/十分之一.md",
     "type": "原文",
@@ -14309,6 +14333,18 @@
     "title": "按手",
     "status": "formal",
     "aliases": []
+  },
+  "探聽查究細細地訪問（da.rash、cha.qar、sha.al）": {
+    "path": "link_folder/原文/探聽查究細細地訪問（da.rash、cha.qar、sha.al）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "探聽查究細細地訪問（da.rash、cha.qar、sha.al）",
+    "status": "formal",
+    "aliases": [
+      "探聽查究細細地訪問"
+    ]
   },
   "接連的山谷（na.chal）": {
     "path": "link_folder/原文/接連的山谷（na.chal）.md",
@@ -15594,6 +15630,18 @@
     "status": "formal",
     "aliases": [
       "bitter herbs"
+    ]
+  },
+  "荒堆（tel）": {
+    "path": "link_folder/原文/荒堆（tel）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "荒堆（tel）",
+    "status": "formal",
+    "aliases": [
+      "荒堆"
     ]
   },
   "蒲草箱與方舟同字": {
@@ -22460,6 +22508,18 @@
     "title": "把亞倫之名簽寫在利未之杖上的授命標記",
     "status": "formal",
     "aliases": []
+  },
+  "把那惡從你們中間除掉（ba.ar）": {
+    "path": "link_folder/神學/把那惡從你們中間除掉（ba.ar）.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "把那惡從你們中間除掉（ba.ar）",
+    "status": "formal",
+    "aliases": [
+      "把那惡從你們中間除掉"
+    ]
   },
   "拉麥的一夫多妻": {
     "path": "link_folder/神學/拉麥的一夫多妻.md",
@@ -29797,6 +29857,9 @@
   "God's provision": {
     "alias_of": "神的供應"
   },
+  "真先知的憑證": {
+    "alias_of": "神蹟奇事不是真先知的憑證"
+  },
   "祭司居喪條例": {
     "alias_of": "祭司不可為死人哀哭（居喪條例）"
   },
@@ -31852,6 +31915,9 @@
   "服役的工": {
     "alias_of": "勞碌的工（a.vo.dah）"
   },
+  "匪類": {
+    "alias_of": "匪類（be.liy.ya.al）"
+  },
   "贖罪銀": {
     "alias_of": "半舍客勒（贖罪銀）"
   },
@@ -32034,6 +32100,9 @@
   },
   "拿細耳人的願": {
     "alias_of": "拿細耳人（nazir）"
+  },
+  "探聽查究細細地訪問": {
+    "alias_of": "探聽查究細細地訪問（da.rash、cha.qar、sha.al）"
   },
   "「提你出監」/「抬起頭」": {
     "alias_of": "提你出監_抬起頭"
@@ -32385,6 +32454,9 @@
   },
   "bitter herbs": {
     "alias_of": "苦菜"
+  },
+  "荒堆": {
+    "alias_of": "荒堆（tel）"
   },
   "蒲草箱": {
     "alias_of": "蒲草箱與方舟同字"
@@ -34050,6 +34122,9 @@
   },
   "承接聖職": {
     "alias_of": "承接聖職（分別為聖）"
+  },
+  "把那惡從你們中間除掉": {
+    "alias_of": "把那惡從你們中間除掉（ba.ar）"
   },
   "挪亞照樣行": {
     "alias_of": "挪亞的完全順服"

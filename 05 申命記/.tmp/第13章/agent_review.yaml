@@ -1,0 +1,69 @@
+version: 2
+book: 申命記
+chapter: 13
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: 5375e3f917bb2df82c9fab27f65820fcaf4471794df719809b973f184d05c28d
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: f0096a50a612cd560dd7cfdaed4405923d4d73b77c7d3ef47a9bc95f86c0810e
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 817e2bb2e5cd23c87279b3c9f9878f4bc3ae4801ad94bc3d24761be1cce8641d
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0
+  m6:
+    round: 2
+    revision: 4
+    sha256: 19cb66683eb9273f2efb122b4fe9d3f698e68325db36275cd9bcf2ef673f79d0
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 870c1aa28535bfe6bd834ac6d5fb99dac5d0ff2f9ca64392179ea79f7f6280cb
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 19cb66683eb9273f2efb122b4fe9d3f698e68325db36275cd9bcf2ef673f79d0
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 4
+    sha256: c5c0b98e7d22cc82089d5bcf8ceeab21129374dc41f0af82670952a91689d2ac
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 1585790bfaa40a5fb832eeee3e5745a51c60db8106f034d52986b509c40afbcc
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: b9065cb71ecbf8640cb6cc9b94c49100fd97bd9fe7f2ea159ccd86162cd52d35
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0

@@ -1,0 +1,250 @@
+book: 申命記
+chapter: 13
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: '第15節「都用刀殺盡」STEP 為 ha.cha.Rem（H2763A，cha.ram: to devote/destroy，不定詞絕對式），第17節「那當毀滅的物」為 ha./Che.rem（H2764A，che.rem: devoted thing）——動詞與名詞在同一章裡成對出現。CT〔原文字義〕第15節註「殺盡」滅絕，完全地毀壞、第17節註「當毀滅的物」禁忌；GT《申命記串珠聖經註釋》說整座城都該被摧毀，如同迦南地的城邑一樣；GT《聖經精讀本》說不僅要殺拜偶像者本人，甚至要徹底滅盡城中的牲畜與家產。'
+  relation: 出22、利27、申2、申3、申7 的 herem 對象是外邦或永獻之物。本章第一次把它用在以色列自己的一座城上——觸發條件不是族群，而是那城陷入拜偶像。第17節「連一點都不可粘你的手」則把不可取回這一面說到最細。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 石刑
+  path: link_folder/背景/石刑.md
+  summary: 第9節「你先下手，然後眾民也下手」與第10節「要用石頭打死他」。STEP 顯示第9節用了兩個對稱的詞——ya.de./Kha（你的手）配 va./ri.sho.Nah（H7223G，first），ve./Yad kol- ha./'Am（眾民的手）配 ba./'a.cha.ro.Nah（H314，last）；第9節的「總要殺他」是 ha.Rog ta.har.Ge./nu（H2026，不定詞絕對式加未完成式）。GT《聖經精讀本》說以色列的審判制度至少要有兩個以上的證人才能判其有罪，判死刑時規定證人先舉石打罪人；KC 說第一個見證人必須第一個丟石頭，控告的人不能把執行推給別人；BH 說這是防止誣告的保護機制，並接到約8:7；CT 稱之為大義滅親。
+  relation: 出21、利20、利24、民15 交代的是石刑用在誰身上、為什麼要全民動手、在營外執行。本章補上的是這道程序為什麼對控告者也是一種約束——先下手的必須是提出指控的人，因此沒有人能輕率地指控別人。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 見證人先下手，然後眾民也下手
+- title: 神蹟（miraculous signs）
+  path: link_folder/神學/神蹟（miraculous signs）.md
+  summary: '第1至2節「向你顯個神蹟奇事」「他所顯的神蹟奇事雖有應驗」，STEP 為 ''ot（H226G，ot: sign: miraculous）與 mo.Fet（H4159，mo.phet: wonder）。CT〔原文字義〕註「神蹟」神蹟，記號；GT《啟導本聖經申命記註釋》分辨兩個詞——「神蹟」為指示將來的預兆，「奇事」是證明先知或作夢的確有能力的異事，不過二詞常用作同義詞；KC 說神蹟奇事本來的作用只是支持所傳的信息（來2:3-4），撒但也能仿製，末世尤其如此（帖後2:9；啟13:14；太24:24）。'
+  relation: 出4、出10至12 收的是神蹟作為差遣憑證與教育下一代的正面用法。本章給的是同一件事的反面：神蹟即使真的應驗，也不能替說話的人背書。兩邊合起來，神蹟的效力始終取決於它所支持的那句話。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 林前5：13
+  path: link_folder/互文/林前5：13.md
+  summary: KC 在第1至5節把申13:5「把那惡從你們中間除掉」直接接到這一節：舊約在某些情況下是把人治死，新約給哥林多教會的命令則是 Remove the wicked man from among yourselves。他並數出這道舊約命令在申命記共出現九次。
+  relation: 利20 是 KC 第一次用這節來說明教會時代怎麼對付罪。本章讓這個連結更具體——申13:5 的那句公式正是新約這句話的舊約來歷，而不是一個泛泛的類比。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:20
+      - 申命記:13
+- title: 先知
+  path: link_folder/主題/先知.md
+  summary: 第1、3、5 節三次提到「那先知」，並與「做夢的」並列。CT〔原文字義〕註「先知」先知，發言人，說話者，並說『先知』指為神說話的人、『做夢的』指在睡夢中看見異象向人宣講神旨意者；GT《聖經精讀本》說作夢的指主張自己所作的夢是從神而來的特別啟示。GT《啟導本聖經申命記註釋》給的判準是：真先知的憑證不是有無行神蹟的能力，而是他的信息和工作是否符合神所啟示的客觀標準。
+  relation: 創20 與出4 處理的是先知這個角色是什麼、憑什麼被相信。本章處理的是同一個頭銜被冒用時怎麼辦——冒用者未必沒有能力，所以判準只能落在他說的話上。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:20
+      - 申命記:13
+- title: 你要盡心盡性盡力愛耶和華（a.hav）
+  path: link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md
+  summary: '第3節「要知道你們是盡心盡性愛耶和華─你們的神不是」，STEP 為 ''o.ha.Vim（H157G，a.hav: to love）＋be./khol le.vav./Khem（H3824，le.vav: heart）＋naf.she./Khem（H5315G，ne.phesh: soul）。CT 說『盡心盡性』原文是「全心全魂」。本章只列兩項，沒有申6:5 的「盡力」。BH 指出這句呼應申6:4-5 的示馬，並說耶穌在太22:37-38 稱之為最大的誡命。'
+  relation: 申6、10、11 三章的項目數已經不一致，本章再添一個兩項的版本，而且用途不同——前幾處是命令要這樣愛，本章是拿它當試驗的判準：神容許假先知出現，為的是看百姓是不是這樣愛他。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 神的試驗
+  path: link_folder/神學/神的試驗.md
+  summary: '第3節「因為這是耶和華─你們的神試驗你們」，STEP 為 me.na.Seh（H5254G，na.sah: to test）。CT 說『試驗你們』指驗明人的存心所在，並強調這並非說神主動利用假先知行神蹟奇事，因為邪靈也會行超自然的事，神乃是容許假先知行騙以顯明人的存心；GT《申命記串珠聖經註釋》要讀者參米該雅的預言與事蹟（王上22章）；BH 說試驗不是為了神的需要，因為他無所不知，而是為了讓人顯出自己的忠誠。'
+  relation: 創22、出15至17、申6、申8 的試驗媒介都是神自己安排的處境。本章的媒介換成了一個要把人帶離神的人，而問題也從會不會照著做，變成到底愛誰。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:22
+      - 申命記:13
+- title: 試探的本質
+  path: link_folder/神學/試探的本質.md
+  summary: 'GT《聖經精讀本》在第3節把兩者分開：神的試驗與撒但的試探全然不同，撒但的試探在人的內心勾起犯罪的衝動、目的在於誘惑人使其陷入網羅，神試驗人則是熬煉自己百姓的愛之教育過程，目的是終使其堅立在信心之上。本章第6節的「引誘」STEP 為 ye.si.te./Kha（H5496，sut: to incite），CT〔原文字義〕註「引誘」煽動，唆使。'
+  relation: 創3 記的是試探怎麼運作——懷疑神的話、扭曲命令、否認後果。本章記的是它從哪裡來：三段分別是公開的假先知、暗中的至親、成群的匪類，而且第6節的動詞明說那是一種煽動。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 專靠（da.veq）
+  path: link_folder/原文/專靠（da.veq）.md
+  summary: '第4節「專靠他」STEP 為 tid.ba.Ku/n（H1692，da.vaq: to cleave），是本節六個動詞的最後一項；第17節「不可粘你的手」是同一個字根的 yid.Bak（H1692）。CT〔原文字義〕在兩處給的中文完全相同——「專靠」附著，黏住，緊靠；「粘」附著，黏住，緊靠。'
+  relation: 申4:4 是描述、申10:20 與申11:22 是命令。本章加上的是反面用法：同一個動作被要求用在神身上，也被禁止用在當毀滅的物上，而且兩處落在同一章之內。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:4
+      - 申命記:13
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: '第4節「敬畏他」STEP 為 ti.Ra.''u（H3372H，ya.re: to fear: revere），排在六個動詞的第二位。CT 說『敬畏祂』指害怕惹祂不喜悅、發怒；GT《啟導本聖經申命記註釋》說考驗一個人靈性的標準在他是否遵從神的話、侍奉祂、倚靠祂。第11節另有一個不同方向的懼怕——以色列眾人都要聽見害怕，STEP 為 ve./yi.ra.''U/n（H3372G）。'
+  relation: 申4 至10 的敬畏多半接在誡命總則之後。本章把同一個字根用在兩個位置上：第4節是百姓對神應有的態度，第11節則是刑罰公開執行後眾人產生的懼怕——同一個字，一個是常態，一個是嚇阻的效果。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 事奉與作奴僕同一字根（a.vad）
+  path: link_folder/原文/事奉與作奴僕同一字根（a.vad）.md
+  summary: '第2節「事奉他吧」與第4節「事奉他」STEP 為 ta.''a.Vo.du（H5647H），第12節「事奉你們素來所不認識的別神」為 ve./na.''av.Dah（H5647H，a.vad: to serve: minister）；第5節的「為奴之家」則是 ''a.va.Dim（H5650，e.ved: servant/slave）。'
+  relation: 申5、6、10、11、12 的用法多半把事奉與埃及的奴役接在一起。本章把同一個動詞放在天平的兩端——第2、12節是被引誘去事奉別神，第4節是應當事奉耶和華，而第5節的為奴之家提醒讀者哪一邊才是把人領出來的那位。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 為奴之家
+  path: link_folder/主題/為奴之家.md
+  summary: '第5節「救贖你脫離為奴之家」與第10節「那領你出埃及地為奴之家的耶和華」。STEP 顯示第5節的「救贖」是 ve./ha./po.de./Kha（H6299，pa.dah: to ransom），「為奴之家」是 mi./Beit（H1004B）＋''a.va.Dim（H5650）。KC 說呼籲人去事奉別神是對神的直接侮辱，也是否認救贖是他而不是偶像成就的，因此是最大的忘恩負義。'
+  relation: 出13 與申5、6、8 用這個稱呼提醒百姓記念被領出來的那一天。本章把它變成論證的前提：第5節與第10節兩次在判死刑的理由裡提到它——引誘人離開的，正是引誘他們離開那位把他們從為奴之家贖出來的神。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 出埃及
+  path: link_folder/歷史/出埃及.md
+  summary: 第5節「那領你們出埃及地」與第10節「那領你出埃及地為奴之家的耶和華」，兩次都出現在說明為什麼要治死引誘者的句子裡。BH 說出埃及是以色列歷史的根基事件，背棄神不只是拒絕他的律法，也是否認他的救贖作為。
+  relation: 出12、13 與申4 至9 記的是這件事本身與它的紀念。本章用它當判決的依據——引誘人去事奉別神之所以是死罪，理由寫在同一句話裡：那位被離棄的，就是把他們領出埃及的那位。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 專一敬拜
+  path: link_folder/神學/專一敬拜.md
+  summary: 全章三段處理的都是同一件事——被引誘去事奉別神時該怎麼辦。GT《聖經精讀本》說摩西在本章分三個類型訓戒虛假宗教的誘惑：來自假先知的（1-5節）、來自家人與親戚的（6-11節）、來自群眾的（12-18節）；KC 說拜偶像是對神以及他與百姓關係的本質性攻擊，並說本章直接接著上一章最後幾節而來。
+  relation: 出22:20 定的是拜錯對象的刑度，申12 定的是敬拜的地點與方式。本章補的是第三面——當引誘來自身邊的人時該怎麼辦；三段的處置一致，說明專一敬拜的要求不因關係遠近或人數多寡而打折。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 各人行自己眼中看為正的事
+  path: link_folder/主題/各人行自己眼中看為正的事.md
+  summary: 第17節「行耶和華─你神眼中看為正的事」，與申12:8 的「各人行自己眼中看為正的事」、申12:25、28 的「耶和華眼中看為正」是同一組用語。本章把它放在處置拜偶像之城的收尾，接在「當毀滅的物連一點都不可粘你的手」之後。
+  relation: 申12 用這組用語標出曠野現況與應許之地的分界。本章把同一句話用作最嚴厲那段處置的收束——照著做完，就是行耶和華眼中看為正的事，而不是照自己的判斷決定要不要留情。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 求問與訪問同一個字（da.rash）
+  path: link_folder/原文/求問與訪問同一個字（da.rash）.md
+  summary: '第14節「探聽」STEP 為 ve./da.rash.Ta（H1875，da.rash: to seek），與申12:5「求問」tid.re.Shu、申12:30「訪問」tid.Rosh 是同一個字。本章的用法是第三個方向：不是向神求問，也不是向偶像打聽，而是查證一則傳聞。'
+  relation: 申12 用這個動詞劃出敬拜與網羅的分界。本章把它放進司法程序，與 cha.qar、sha.al 兩個近義動詞並列，成為動手之前必須先做完的第一件事。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 殺盡米甸人的道德難題
+  path: link_folder/解經爭議/殺盡米甸人的道德難題.md
+  summary: 第15至17節命令用刀殺盡那城裡的居民與牲畜、財物堆積燒盡、那城永為荒堆。GT《申命記串珠聖經註釋》說整座城都該被摧毀，如同迦南地的城邑一樣；GT《聖經精讀本》說這樣的規定表明離棄神而追隨偶像是何等可怕的罪惡，並說在預表天國的應許之地迦南決不容忍任何罪的因素得以存在。第14節先要求探聽、查究、細細地訪問，果然是真才可動手。
+  relation: 民31 的對象是米甸人，是外族。本章把形式相同的命令轉向以色列自己的一座城，觸發條件寫成拜偶像而不是族群；同時多了一道民31 沒有的查證程序。（本回合另作一處勘誤：定義區原把 KC 民31 的英文句以中譯形式放進「」，依 AGENTS.md 改為英文原句進「」、中譯進括號；依據為 raw_data/kingcomments_numbers_31.txt 的 That teaches us that we must distinguish in the exercise of judgment.）
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:31
+      - 申命記:13
+- title: 亞伯拉罕之約
+  path: link_folder/神學/亞伯拉罕之約.md
+  summary: '第17節「照他向你列祖所起的誓使你人數增多」，STEP 為 ve./hir.Be./kha（H7235A，ra.vah: to multiply）＋nish.Ba''（H7650，sha.va: to swear）。BH 把這句接回神應許亞伯拉罕後裔繁多（創12:2、15:5）；KC 說滅城會損失人口，但這個順服的舉動連著神必再使他們增多的應許。'
+  relation: 創世記各章與申5 至10 記的是這個約怎麼立、怎麼被重申。本章把它放在一個很特別的位置——全章講的是除掉，最後一句卻用這個約講增多，兩件事被寫在同一節裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep

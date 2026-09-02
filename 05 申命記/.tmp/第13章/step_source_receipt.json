@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_deuteronomy_13.txt",
+      "book": "Deuteronomy",
+      "book_code": "Deu",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 312,
+      "first": "Deu 13:1",
+      "last": "Deu 13:18",
+      "sha256": "8e7b23313fa88a34501086f6d2f0dbbdd2d72f406bb3522ffd5366ea6c025100",
+      "bytes": 61021,
+      "chars": 53512,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
