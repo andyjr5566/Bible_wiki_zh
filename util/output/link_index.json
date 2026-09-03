@@ -185,6 +185,18 @@
     "status": "formal",
     "aliases": []
   },
+  "不可籠住踹穀之牛的嘴": {
+    "path": "link_folder/主題/不可籠住踹穀之牛的嘴.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "不可籠住踹穀之牛的嘴",
+    "status": "formal",
+    "aliases": [
+      "不可籠住牛的嘴"
+    ]
+  },
   "不可與獸淫合逆性的事": {
     "path": "link_folder/主題/不可與獸淫合逆性的事.md",
     "type": "主題",
@@ -1883,6 +1895,18 @@
     "status": "formal",
     "aliases": []
   },
+  "抓住下體要砍手的條例": {
+    "path": "link_folder/主題/抓住下體要砍手的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "抓住下體要砍手的條例",
+    "status": "formal",
+    "aliases": [
+      "砍斷婦人的手的條例"
+    ]
+  },
   "抬架（會幕器具搬運）": {
     "path": "link_folder/主題/抬架（會幕器具搬運）.md",
     "type": "主題",
@@ -3486,6 +3510,18 @@
     "aliases": [
       "窮人潔淨禮",
       "大痲瘋貧民條例"
+    ]
+  },
+  "責打不可過四十下的條例": {
+    "path": "link_folder/主題/責打不可過四十下的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "責打不可過四十下的條例",
+    "status": "formal",
+    "aliases": [
+      "責打四十下的條例"
     ]
   },
   "賠償與公義": {
@@ -13741,6 +13777,18 @@
       "催逼驅趕"
     ]
   },
+  "儘後邊軟弱的人（za.nav）": {
+    "path": "link_folder/原文/儘後邊軟弱的人（za.nav）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "儘後邊軟弱的人（za.nav）",
+    "status": "formal",
+    "aliases": [
+      "儘後邊軟弱的人"
+    ]
+  },
   "內臟": {
     "path": "link_folder/原文/內臟.md",
     "type": "原文",
@@ -14120,6 +14168,18 @@
     "aliases": [
       "報血仇的",
       "報血仇者"
+    ]
+  },
+  "塗抹（ma.chah）": {
+    "path": "link_folder/原文/塗抹（ma.chah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "塗抹（ma.chah）",
+    "status": "formal",
+    "aliases": [
+      "塗抹"
     ]
   },
   "壘圈（ge.de.rah）": {
@@ -15547,6 +15607,18 @@
     "status": "formal",
     "aliases": [
       "金合歡木"
+    ]
+  },
+  "盡弟兄的本分（ya.vam）": {
+    "path": "link_folder/原文/盡弟兄的本分（ya.vam）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "盡弟兄的本分（ya.vam）",
+    "status": "formal",
+    "aliases": [
+      "盡弟兄的本分"
     ]
   },
   "盡心盡性尋求（ba.qash、da.rash）": {
@@ -18797,6 +18869,18 @@
       "印、帶子、杖"
     ]
   },
+  "叔嫂婚姻": {
+    "path": "link_folder/文化/叔嫂婚姻.md",
+    "type": "文化",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "叔嫂婚姻",
+    "status": "formal",
+    "aliases": [
+      "繼代結婚"
+    ]
+  },
   "古代埃及的蒲草與防水籃": {
     "path": "link_folder/文化/古代埃及的蒲草與防水籃.md",
     "type": "文化",
@@ -19513,6 +19597,16 @@
     "aliases": [
       "聖集會"
     ]
+  },
+  "脫鞋之家": {
+    "path": "link_folder/文化/脫鞋之家.md",
+    "type": "文化",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "脫鞋之家",
+    "status": "formal",
+    "aliases": []
   },
   "脫鞋與聖地": {
     "path": "link_folder/文化/脫鞋與聖地.md",
@@ -29911,6 +30005,9 @@
   "地界": {
     "alias_of": "不可挪移地界（ge.vul）"
   },
+  "不可籠住牛的嘴": {
+    "alias_of": "不可籠住踹穀之牛的嘴"
+  },
   "出營外": {
     "alias_of": "不潔之人出到營外"
   },
@@ -30315,6 +30412,9 @@
   },
   "房屋發黴潔淨法": {
     "alias_of": "房屋大痲瘋的診斷與潔淨條例"
+  },
+  "砍斷婦人的手的條例": {
+    "alias_of": "抓住下體要砍手的條例"
   },
   "拈鬮": {
     "alias_of": "拈鬮定羊的歸屬"
@@ -30741,6 +30841,9 @@
   },
   "大痲瘋貧民條例": {
     "alias_of": "貧窮人的潔淨條例（大痲瘋）"
+  },
+  "責打四十下的條例": {
+    "alias_of": "責打不可過四十下的條例"
   },
   "潔淨昆蟲": {
     "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
@@ -32605,6 +32708,9 @@
   "催逼驅趕": {
     "alias_of": "催逼"
   },
+  "儘後邊軟弱的人": {
+    "alias_of": "儘後邊軟弱的人（za.nav）"
+  },
   "臟腑": {
     "alias_of": "內臟"
   },
@@ -32703,6 +32809,9 @@
   },
   "報血仇者": {
     "alias_of": "報血仇的（ga.al）"
+  },
+  "塗抹": {
+    "alias_of": "塗抹（ma.chah）"
   },
   "多多地給": {
     "alias_of": "多多地給不可空手而去（a.naq、re.qam）"
@@ -33078,6 +33187,9 @@
   },
   "金合歡木": {
     "alias_of": "皂莢木"
+  },
+  "盡弟兄的本分": {
+    "alias_of": "盡弟兄的本分（ya.vam）"
   },
   "盡心盡性尋求": {
     "alias_of": "盡心盡性尋求（ba.qash、da.rash）"
@@ -33792,6 +33904,9 @@
   },
   "印、帶子、杖": {
     "alias_of": "印帶杖身份憑據"
+  },
+  "繼代結婚": {
+    "alias_of": "叔嫂婚姻"
   },
   "蒲草防水籃": {
     "alias_of": "古代埃及的蒲草與防水籃"

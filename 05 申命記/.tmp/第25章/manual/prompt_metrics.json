@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 25,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 112485,
+        "bytes": 149575
+      },
+      "after": {
+        "chars": 12327,
+        "bytes": 20217
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_deuteronomy_25.txt",
+          "chars": 9182,
+          "bytes": 25781
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_deuteronomy_25.txt",
+          "chars": 4133,
+          "bytes": 11349
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_deuteronomy_25.txt",
+          "chars": 12518,
+          "bytes": 12600
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_deuteronomy_25.txt",
+          "chars": 34835,
+          "bytes": 34863
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_deuteronomy_25.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 46724,
+          "raw_bytes": 53406,
+          "projected_chars": 6620,
+          "projected_bytes": 7488,
+          "occurrences": 70,
+          "occurrence_count": 70,
+          "lexicon_entries": 11,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 11,
+          "truncated": true,
+          "returned_chars": 6620,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+book: 申命記
+chapter: 25
+A_use_directly: []
+B_needs_update:
+- name: 審判不可行不義按公義審判
+  suggested_type: 主題
+  evidence: 第1節「審判官就要定義人有理，定惡人有罪」。CT：『義人』指無辜的或被誣告的人；『惡人』指侵權加害別人的人。STEP：v1「定義人有理」是
+    hitz.Di.ku（H6663 tsa.daq 使役語態，宣告為義），「定惡人有罪」是 hir.Shi.'u（H7561）。
+  surfaces:
+  - phrase: 定義人有理，定惡人有罪
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 審判不可行不義按公義審判
+  existing_path: link_folder/主題/審判不可行不義按公義審判.md
+- name: 審判官
+  suggested_type: 原文
+  evidence: 第1至2節兩次出現「審判官」。STEP：本章 v2「審判官」是 ha./sho.Fet（H8199 sha.phat），與出21:6 譯作「審判官」的
+    ha-Elohim（H430）不是同一個字。
+  match_type: exact
+  existing_title: 審判官
+  existing_path: link_folder/原文/審判官.md
+- name: 以色列刑罰的節制與程序保障
+  suggested_type: 背景
+  evidence: 第2至3節規定當面伏在地上、照數責打、不可過數。CT：不要處罰過度，要適當、快速、公平、有節制地處罰。KC：The stripes must
+    be given in the presence of the judge。
+  surfaces:
+  - phrase: 不可過數
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 以色列刑罰的節制與程序保障
+  existing_path: link_folder/背景/以色列刑罰的節制與程序保障.md
+- name: 四十的屬靈意義
+  suggested_type: 原文
+  evidence: 第3節「只可打他四十下」。STEP：'ar.ba.'Im（H705）。KC：the number forty stands for a full
+    punishment（Gen 7:12; Num 14:33-34）。CT 話中之光把「四十」讀作徹底。
+  surfaces:
+  - phrase: 四十下
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 四十的屬靈意義
+  existing_path: link_folder/原文/四十的屬靈意義.md
+- name: 人的尊嚴
+  suggested_type: 主題
+  evidence: 第3節「若過數，便是輕賤你的弟兄了」。STEP：「輕賤」是 nik.Lah（H7034 qa.lah，蒙羞），後面接「在你眼前」。BH：excessive
+    punishment could lead to public humiliation and a loss of personal honor。
+  surfaces:
+  - phrase: 輕賤你的弟兄
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 人的尊嚴
+  existing_path: link_folder/主題/人的尊嚴.md
+- name: 工價與雇約
+  suggested_type: 文化
+  evidence: 第4節被四套註釋一致讀成作工者當得供養的原則。CT：本節所述條例，後來轉用來說明「工人得工價是應當的」。KC：so the laborer
+    is worthy of his wages。
+  match_type: exact
+  existing_title: 工價與雇約
+  existing_path: link_folder/文化/工價與雇約.md
+- name: 古代近東婚姻習俗
+  suggested_type: 歷史
+  evidence: CT〔背景註解〕：叔嫂婚姻是古代中東和中亞許多民族的習俗，古代赫人和亞述人都有相似的習俗；文意註解另說「中東一帶地方，多有此風俗習慣」。GT《聖經精讀本》：這繼代結婚的風俗早在摩西時代的很久以前就遠傳於以色列社會與古代近東社會。
+  match_type: exact
+  existing_title: 古代近東婚姻習俗
+  existing_path: link_folder/歷史/古代近東婚姻習俗.md
+- name: 猶大與他瑪事件
+  suggested_type: 歷史
+  evidence: 四套來源都以創38:8 為本條例的先例。CT：使哥哥的產業有兒子可以繼承（參創三十八8）。GT《啟導本》：兄弟續弟兄遺孀的婚姻風俗自古流行，視為天經地義（創三十八章）。KC：This
+    use, now enacted as law, has been known for some time (Gen 38:8)。
+  match_type: exact
+  existing_title: 猶大與他瑪事件
+  existing_path: link_folder/歷史/猶大與他瑪事件.md
+- name: 救贖goel
+  suggested_type: 神學
+  evidence: 第5至10節。KC：Boaz must become both the redeemer and the one who performs
+    the duty of a husband's brother。BH：This law is also seen in the story of Ruth
+    and Boaz, where Boaz acts as a kinsman-redeemer。
+  match_type: exact
+  existing_title: 救贖goel
+  existing_path: link_folder/神學/救贖goel.md
+- name: 路得記4章法勒斯家譜
+  suggested_type: 互文
+  evidence: CT 話中之光：主耶穌基督和大衛王的祖先俄備得，就是波阿斯和路得透過「叔嫂婚姻」所生的長子（太一5；得四17）。GT《啟導本》：後來這條例擴大，死者若無兄弟，他的最近親屬也須負此義務（得四章）。
+  match_type: exact
+  existing_title: 路得記4章法勒斯家譜
+  existing_path: link_folder/互文/路得記4章法勒斯家譜.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第7至9節，寡嫂到城門長老那裡，長老召那人來問，脫鞋吐唾沫在長老面前進行。BH：The elders were respected leaders
+    and judges within the community。
+  surfaces:
+  - phrase: 長老
+    verses:
+    - 7
+    - 8
+    - 9
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 城門口公共場合
+  suggested_type: 歷史
+  evidence: 第7節「就要到城門長老那裡」。CT：『城門』指城門洞兩側的小房間，是以色列人處理交易和訴訟的公共會所（參得四1）。BH：The city gate
+    was the center of civic life in ancient Israel。
+  surfaces:
+  - phrase: 城門
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 城門口公共場合
+  existing_path: link_folder/歷史/城門口公共場合.md
+- name: 公道天平法碼升斗
+  suggested_type: 主題
+  evidence: 第13至16節。GT《啟導本》指向利19:35 及注。KC：The bad merchant has a large measure for
+    the purchase and a small measure for the sale。STEP：v15「對準公平」是 she.le.Mah（H8003
+    完整）配 Tze.dek（H6664G 公義），兩樣器具各配一次。
+  surfaces:
+  - phrase: 法碼
+    verses:
+    - 13
+    - 15
+  match_type: exact
+  existing_title: 公道天平法碼升斗
+  existing_path: link_folder/主題/公道天平法碼升斗.md
+- name: 伊法
+  suggested_type: 原文
+  evidence: 第14至15節的「升斗」。CT〔原文字義〕「兩樣的升斗（原文雙同字）」伊法，升斗。STEP：v14、v15 都是 'ei.Fah（H374）。
+  surfaces:
+  - phrase: 升斗
+    verses:
+    - 14
+    - 15
+  match_type: exact
+  existing_title: 伊法
+  existing_path: link_folder/原文/伊法.md
+- name: 可憎的物（to.e.vah）
+  suggested_type: 原文
+  evidence: 第16節「因為行非義之事的人都是耶和華─你神所憎惡的」。STEP：to.'a.Vat（H8441 to.e.vah）；「非義之事」是 'A.vel（H5766A）。KC：such
+    a conduct of ambivalence is an abomination。
+  surfaces:
+  - phrase: 所憎惡的
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 可憎的物（to.e.vah）
+  existing_path: link_folder/原文/可憎的物（to.e.vah）.md
+- name: 神的記念
+  suggested_type: 神學
+  evidence: 第17節「你要記念你們出埃及的時候」。STEP：za.Khor（H2142 zakhar 不定詞絕對形），與第19節要塗抹的「名號」ze.kher（H2143）同一字根。CT
+    靈訓把全章讀成神的紀念與追討。
+  surfaces:
+  - phrase: 記念
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 神的記念
+  existing_path: link_folder/神學/神的記念.md
+- name: 亞瑪力人
+  suggested_type: 人物
+  evidence: 第17至18節。CT：『亞瑪力人』是以掃的子孫（創卅六12），是以色列人的世仇。GT《雷氏研讀本》：亞瑪力人也許是迦南人中最殘忍野蠻的一族。
+  match_type: exact
+  existing_title: 亞瑪力人
+  existing_path: link_folder/人物/亞瑪力人.md
+- name: 出埃及記17章亞瑪力攻擊以色列
+  suggested_type: 互文
+  evidence: GT《串珠》「在路上怎樣待你」：見出17:8-16; 民14:39-45。GT《聖經精讀本》：指出埃及第一年二月底左右，以色列抵達何烈山附近的利非訂之時。
+  match_type: exact
+  existing_title: 出埃及記17章亞瑪力攻擊以色列
+  existing_path: link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md
+- name: 敬畏神
+  suggested_type: 神學
+  evidence: 第18節「並不敬畏神」。CT：換句話說，敬畏神的人不會欺負弱小者。BH：In biblical terms, the fear of God
+    is associated with wisdom and righteousness。
+  match_type: exact
+  existing_title: 敬畏神
+  existing_path: link_folder/神學/敬畏神.md
+- name: 亞瑪力
+  suggested_type: 人物
+  evidence: 第19節「你要將亞瑪力的名號從天下塗抹了」。STEP：'a.ma.Lek（H6002G），「名號」是 Ze.kher（H2143）。
+  surfaces:
+  - phrase: 亞瑪力的名號
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 亞瑪力
+  existing_path: link_folder/人物/亞瑪力.md
+- name: 申25：17-19 記念亞瑪力
+  suggested_type: 互文
+  evidence: 本段是出17 亞瑪力之役的回顧與命令，補上出17:8 沒有交代的攻擊方式。CT：神這個除滅亞瑪力人的命令，要等到希西家王年間才由西緬支派的人實現（參代上四41~43）。
+  match_type: exact
+  existing_title: 申25：17-19 記念亞瑪力
+  existing_path: link_folder/互文/申25：17-19 記念亞瑪力.md
+- name: 掃羅擊殺亞甲（撒上15：8）
+  suggested_type: 互文
+  evidence: CT：最後，神命令掃羅王除滅亞瑪力人（參撒上十五2~3），但他沒有徹底執行。KC：Saul is commissioned to blot
+    out Amalek, but fails by disobedience (1Sam 15:1-3,18-19)。
+  match_type: exact
+  existing_title: 掃羅擊殺亞甲（撒上15：8）
+  existing_path: link_folder/互文/掃羅擊殺亞甲（撒上15：8）.md
+C_new_formal:
+- name: 責打不可過四十下的條例
+  suggested_type: 主題
+  evidence: 第1至3節。CT〔背景註解〕後來猶太人擔心責打超過四十下，寧可少打一下，保羅受過四十減一的刑罰（林後11:24）。GT《聖經精讀本》：杖打時打到三十九下。BH：flogging
+    was a common form of punishment in the ancient Near East。
+  surfaces:
+  - phrase: 按著他的罪照數責打
+    verses:
+    - 2
+  target_path: link_folder/主題/責打不可過四十下的條例.md
+- name: 不可籠住踹穀之牛的嘴
+  suggested_type: 主題
+  evidence: 第4節。CT〔背景註解〕農夫把收割下來的麥穗排列在禾場上，讓牛拖著沉重的打穀橇碾過麥穗。GT《聖經精讀本》描述平木板穿孔、附堅硬石頭的打穀機。KC
+    指出新約兩次引用（林前9:9-10、提前5:17-18）。
+  surfaces:
+  - phrase: 不可籠住他的嘴
+    verses:
+    - 4
+  target_path: link_folder/主題/不可籠住踹穀之牛的嘴.md
+- name: 叔嫂婚姻
+  suggested_type: 文化
+  evidence: 第5至10節。CT〔背景註解〕叔嫂婚姻（levirate marriage）是古代中東和中亞許多民族的習俗，古代赫人和亞述人都有相似的習俗。GT《聖經精讀本》列出繼代結婚的三個目的。
+  surfaces:
+  - phrase: 死人的妻不可出嫁外人
+    verses:
+    - 5
+  target_path: link_folder/文化/叔嫂婚姻.md
+- name: 盡弟兄的本分（ya.vam）
+  suggested_type: 原文
+  evidence: 第5節「當盡弟兄的本分」、第7節「不給我盡弟兄的本分」。STEP：v5「他丈夫的兄弟」是 ye.va.Ma/h（H2993 名詞），「盡弟兄的本分」是
+    ve./yi.be.Ma/h（H2992 動詞），v7、v9「他哥哥的妻」是 ye.vim.T/o（H2994）——同一組字根的三個詞。
+  target_path: link_folder/原文/盡弟兄的本分（ya.vam）.md
+  semantic_hint:
+  - title: 骨肉原文作弟兄
+    score: 0.42
+    type: 原文
+- name: 塗抹（ma.chah）
+  suggested_type: 原文
+  evidence: 第6節「免得他的名在以色列中塗抹了」與第19節「將亞瑪力的名號從天下塗抹了」。STEP：兩處是同一個動詞 ma.chah（H4229A），v6
+    是被動語態 yi.ma.Cheh，v19 是命令以色列去做的 tim.Cheh。
+  target_path: link_folder/原文/塗抹（ma.chah）.md
+- name: 脫鞋之家
+  suggested_type: 文化
+  evidence: 第9至10節。CT〔背景註解〕「鞋」原文指古代中東人常穿的涼鞋，鞋子被古代以色列人作為交易的憑證（得四7）。GT《啟導本》：古代腳踏田地為依法取得土地所有權的象徵，脫去所穿之鞋象徵放棄權利。KC：Pulling
+    off the shoe speaks of the opposite and means abandoning a given thing。
+  target_path: link_folder/文化/脫鞋之家.md
+- name: 抓住下體要砍手的條例
+  suggested_type: 主題
+  evidence: 第11至12節。GT《啟導本》：這是聖經中「以命償命」之外，唯一斫斷肢體的刑罰。KC：The physical mutilation that
+    should be used here as a punishment is the only example given in the law。STEP：v12「手」是
+    ka.Pa/h（H3709G 手掌），與 v11 伸出的 ya.Da/h（H3027G）不同字。
+  surfaces:
+  - phrase: 就要砍斷婦人的手
+    verses:
+    - 12
+  target_path: link_folder/主題/抓住下體要砍手的條例.md
+- name: 儘後邊軟弱的人（za.nav）
+  suggested_type: 原文
+  evidence: 第18節「趁你疲乏困倦擊殺你儘後邊軟弱的人」。STEP：動詞 va/y.za.Nev（H2179 za.nav，字根與「尾巴」相關），受詞是
+    ha./ne.che.sha.Lim（H2826 cha.shal，軟弱），「疲乏」是 'a.Yef（H5889），「困倦」是 ya.Ge.a'（H3023）。
+  surfaces:
+  - phrase: 儘後邊軟弱的人
+    verses:
+    - 18
+  target_path: link_folder/原文/儘後邊軟弱的人（za.nav）.md
+D_new_candidate: []
+E_skip: []

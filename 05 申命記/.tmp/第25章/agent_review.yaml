@@ -1,0 +1,68 @@
+version: 2
+book: 申命記
+chapter: 25
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: b95ff7f67808134d1cc7dbaa83e09d64bbd42f40526c661d177b485c43c3717b
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: a84670d68d09c18a67c6cc223942ba65dc0d09e3b243e2d299c625170a1dab65
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: b95ff7f67808134d1cc7dbaa83e09d64bbd42f40526c661d177b485c43c3717b
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 4
+    sha256: 9c501b23ad5a0b383113fb2315f50a6bb6727517875c74ba8110e94d61736fa8
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 0048cc4e14b574551e9c80e5213e9aac1849b030f237253e81feabcb1ba50565
+      verdict: changes_required
+      findings_count: 1
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 176fa371eb2e6e049ba5128a2580a8ca65afa15605f487aabe5b44d070a0099a
+      verdict: pass
+      findings_count: 0
+  link_updates:
+    round: 2
+    revision: 3
+    sha256: 27376dc0ad89b5e560d29ce81debab650c535be461f2202e8fa508f1b415b5c3
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: ff307fc49108a8c6c812ea0c6c331858d9bf898b61ee1a00882ab0c71d830f4d
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 476c33a8272bbb30290509febf0fdbb1e2d96ad4d5b4e5d0734fb7c39d5698d4
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0

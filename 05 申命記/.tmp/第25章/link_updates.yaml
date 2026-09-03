@@ -1,0 +1,315 @@
+book: 申命記
+chapter: 25
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 審判不可行不義按公義審判
+  path: link_folder/主題/審判不可行不義按公義審判.md
+  summary: 第1節：「人若有爭訟，來聽審判，審判官就要定義人有理，定惡人有罪。」STEP：「爭訟」是 riv（H7379），「來聽審判」是走近 ha./mish.Pat（H4941G，審判之處），「定義人有理」是 hitz.Di.ku（H6663 tsa.daq 使役語態，宣告為義），「定惡人有罪」是 hir.Shi.'u（H7561）。CT 的文意註解替兩個對象下定義：『義人』指無辜的或被誣告的人，『惡人』指侵權加害別人的人。GT《啟導本聖經申命記註釋》說本節規定民間若有爭訟應交法庭處理，並指「義人」可譯為「無辜的」。BH 說無辜者得釋放是公義的根本原則，並引箴17:15 定惡人為義、定義人為惡都是耶和華所憎惡的。
+  relation: 本章開頭這一節替全章定了方向：先把是非判清楚，接下來三節才處理判清楚之後可以做到什麼程度。同一組宣告為義／定為有罪的動詞，在本章之後就沒有再出現。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: 第1至2節兩次出現「審判官」，第2節並規定他要叫受刑者當面伏在地上。STEP：本章的「審判官」是 ha./sho.Fet（H8199 sha.phat），第2節「叫他當面伏在地上」的動詞 ve./hi.pi.L/o（H5307G）主詞就是審判官；接著責打的動詞 ve./hi.Ka.h/u（H5221）沒有指名行刑者，並要在他面前（le./fa.Na/v，H6440H）進行。KC 指出鞭打必須在審判官面前執行，這強調判決要照著宣告的內容執行、而且要立刻執行；BH 說審判官在場確保刑罰不超過規定的上限。
+  relation: 和合本在出21:6 也譯出「審判官」，但那裡小字註明「審判官或作：神」，原文與本章的 sho.Fet 不是同一個字。本章的用法是最單純的一種：一個在法庭上判案、並親自在場監督行刑的人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 以色列刑罰的節制與程序保障
+  path: link_folder/背景/以色列刑罰的節制與程序保障.md
+  summary: 第2至3節是本條目所列限制中的一項，本章把它寫成完整條文：受刑者要當面伏在地上、按著他的罪照數責打、只可打他四十下不可過數。STEP：「按著他的罪」是 ke./Dei rish.'a.T/o（H1767 足夠＋H7564 罪惡，照他罪惡的分量），「照數」是 be./mis.Par（H4557），「不可過數」是 lo' yo.Sif（H3254G）。GT《啟導本聖經申命記註釋》：「次節規定刑罰應在審判官前執行，以昭公允，免得刑罰過分。」GT《聖經精讀本──申命記註解》把以色列的刑罰分成死刑、體罰與賠償刑三類，本段處理的是體罰。
+  relation: 本條目的主題發展早已把體罰的上限在申命記25章、以四十下為限這一項列進那串限制清單；本章提供的是那一項的原文條文本身，連帶補上它的執行細節與理由——過數就是輕賤你的弟兄。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 四十的屬靈意義
+  path: link_folder/原文/四十的屬靈意義.md
+  summary: 第3節：「只可打他四十下，不可過數」。STEP：'ar.ba.'Im（H705），與創7 記洪水日數的是同一個字。KC 說四十在這裡代表一次完整的刑罰，並舉創7:12 與民14:33-34 為對照；BH 也說四十在聖經裡常象徵試煉或審判的時期。CT 的背景註解記下後來的實務：猶太人擔心責打超過四十下、輕賤了弟兄，寧可少打一下，保羅受過的正是這種刑罰（林後11:24）；GT《聖經精讀本──申命記註解》說後來的猶太人為預防計數錯誤，杖打時打到三十九下。
+  relation: 這是本條目第一次遇到「四十」用來量次數而不是量時間，而且是一道不可超過的上限。後來的三十九下慣例，正是因為這個數目在這裡是上限而不是目標。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:7
+      - 申命記:25
+- title: 人的尊嚴
+  path: link_folder/主題/人的尊嚴.md
+  summary: 第3節替四十下的上限給了理由：「若過數，便是輕賤你的弟兄了。」STEP：「輕賤」是 ve./nik.Lah（H7034 qa.lah，被輕看蒙羞），後面接 le./'ei.Nei./kha（在你眼前）；挨打的人原文稱為 'a.Chi./kha（H251I，你的弟兄／同胞）。CT 的原文字義把這個詞拆成藐視羞辱加上眼睛，並說『輕賤』原文是看不起、意指踐踏人權。GT《申命記串珠聖經註釋》：「為了維護人的尊嚴，體罰必須定下準則，不可隨意鞭打被告」。BH 說過度的刑罰會造成公開的羞辱與人格的損失，而在古代近東，公開羞辱往往比肉體痛苦更難承受。
+  relation: 出21 保護的是被別人傷害的人，本章保護的是正在被合法處罰的人——律法在自己動手的時候替對方留了一道界線，理由不是他無辜，而是他仍然是你的弟兄。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:25
+- title: 工價與雇約
+  path: link_folder/文化/工價與雇約.md
+  summary: 第4節：「牛在場上踹穀的時候，不可籠住他的嘴。」STEP：lo' tach.Som（H2629 cha.sam，戴嘴套）、Shor（H7794）、be./di.Sh/o（H1758 dush，踐踏）。四套來源都把它讀成作工者當得供養的原則：CT 說本節後來轉用來說明工人得工價是應當的（提前5:18）與叫傳福音的靠著福音養生（林前9:9,14）；GT《啟導本聖經申命記註釋》說連牛在踹谷都許它吃場上的穀粒，為神工作的人豈不可以指望取得養身所需；KC：「Just as a criminal is deserving of punishment, so the laborer is worthy of his wages.」（罪人該受刑罰，同樣，作工的人配得工價。）BH 說籠住牠的嘴使牠工作時吃不到東西，這被視為不公。
+  relation: 本條目前面兩章記的都是人與人談好的雇約——雅各與拉班的工價、申24 不可欠雇工過夜的工價；本章這一節連牲畜都算在內，而且不必談：牠踩的穀，牠當場就可以吃。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 古代近東婚姻習俗
+  path: link_folder/歷史/古代近東婚姻習俗.md
+  summary: 第5至10節的叔嫂婚姻。CT 的背景註解：這是古代中東和中亞許多民族的習俗，如果哥哥死了卻沒有兒子，弟弟應當娶嫂子為妻，所生長子歸於哥哥名下，使哥哥的產業有兒子可以繼承（參創三十八8），「古代赫人和亞述人都有相似的習俗」；文意註解也說中東一帶地方多有此風俗習慣。GT《聖經精讀本──申命記註解》說這風俗早在摩西時代的很久以前就遠傳於以色列社會與古代近東社會（創38:8-11），只是到了摩西時代才成為明文的律法。GT《啟導本聖經申命記註釋》說這風俗自古流行，視為天經地義。
+  relation: 本條目前面收的是婚姻怎麼成立（聘金、禮物、家族協商、政治同盟），本章收的是丈夫死後婚姻怎麼延續。同一批社會共有這個習俗，差別在於以色列把它寫成了可以上法庭的條文。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:29
+      - 申命記:25
+- title: 猶大與他瑪事件
+  path: link_folder/歷史/猶大與他瑪事件.md
+  summary: 第5至10節把創38 的先例立成律法。CT 在背景註解直接引創三十八8 說明叔嫂婚姻的作法；GT《啟導本聖經申命記註釋》說「兄弟續弟兄遺孀的婚姻風俗自古流行，視為天經地義（創三十八章）」；GT《聖經精讀本──申命記註解》指這風俗早在摩西時代的很久以前就遠傳於以色列社會與古代近東社會（創38:8-11）；KC 也說這個早已存在的習慣如今被立成法律（Gen 38:8）。
+  relation: 創38 記的是這個義務沒有被履行時發生了什麼；申25:7-10 給的是同樣情況下的正式出路——寡嫂可以上到城門，請長老出面，讓不肯盡本分的人當眾承擔後果。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:38
+      - 申命記:25
+- title: 救贖goel
+  path: link_folder/神學/救贖goel.md
+  summary: 第5至10節的叔嫂婚姻與贖回的責任重疊。KC 指出波阿斯的情況牽涉的是比較遠的家族成員，因為沒有弟兄，而且那裡的地也早已轉到別人手上，所以波阿斯必須同時作贖回的人和盡弟兄本分的人；BH 說這條律法也見於路得與波阿斯的故事，波阿斯在其中作至近的親屬。GT《啟導本聖經申命記註釋》記下條例的擴大：「死者若無兄弟，他的最近親屬也須負此義務（得四章）」。
+  relation: 本條目前面收的贖回，處理的是人被賣、地被賣、血被流之後由親屬出面；本章加上的是另一種失去——一個人死了而沒有留下名字，也要由親屬出面補上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 路得記4章法勒斯家譜
+  path: link_folder/互文/路得記4章法勒斯家譜.md
+  summary: 第5至10節是波阿斯行為的律法根據。CT 的話中之光：「實際上，主耶穌基督和大衛王的祖先俄備得，就是波阿斯和路得透過「叔嫂婚姻」所生的長子(太一5；得四17)。」GT《啟導本聖經申命記註釋》指出條例後來擴大到最近親屬（得四章），並說古代腳踏田地為依法取得土地所有權的象徵，把鞋從一人交給另一人為權利轉移的表示（參得四7,8）。KC 說波阿斯必須同時作贖回的人和盡弟兄本分的人。
+  relation: 這條家譜能從法勒斯接到大衛，中間靠的就是本章這條律法：所生的長子歸死者名下，死者的名不至於在以色列中被塗抹。俄備得因此同時是波阿斯的兒子，也是瑪倫的後嗣。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:38
+      - 申命記:25
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第7至9節，長老在整個程序裡出現三次：寡嫂到城門長老那裡控訴，本城的長老召那人來問他，脫鞋與吐唾沫也在長老面前進行。STEP：ha./ze.ke.Nim（H2205G za.qen）。GT《聖經精讀本──申命記註解》把程序拆成四步：寡嫂告知城中長老、長老以審判官的資格開庭傳那男子、充分說明繼代結婚的意義與目的並勸其聽從、他若終不肯轉意才進行脫鞋與吐唾沫。BH 說長老是群體中受敬重的領袖與審判者，他們在場使程序具有問責性與正當性。
+  relation: 本條目前面幾章的長老多半在判案或執行處置；本章的長老先勸後罰——中間那一步是勸他聽從，而且即使勸不動也不能強迫他娶，只能公開記下他的選擇。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: 第7節：「他哥哥的妻就要到城門長老那裡」。CT：『城門』指城門洞兩側的小房間，是以色列人處理交易和訴訟的公共會所（參得四1）。BH 說城門是古代以色列公民生活的中心，法律交易、公開宣告與司法都在那裡進行（得4:1-2；箴31:23），這個場景因此強調了寡婦控訴的正式與公開性質。
+  relation: 本條目的定義已把申25:7 列進城門作為法律審判場所的清單；本章補上的是這場合的一個特點——在這裡由一位寡婦提出控訴，長老受理，被告當眾回答。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 最後成了一個有編制的機構所在
+- title: 公道天平法碼升斗
+  path: link_folder/主題/公道天平法碼升斗.md
+  summary: '第13至16節：囊中不可有一大一小兩樣的法碼，家裡不可有一大一小兩樣的升斗，當用對準公平的法碼與升斗，因為行非義之事的人都是耶和華所憎惡的。STEP：「法碼」是 ''E.ven（H68H，簡要詞典義 e.ven: stone: weight），「對準公平」是 she.le.Mah（H8003 完整）配 va./Tze.dek（H6664G 公義），兩樣器具各配一次。GT《啟導本聖經申命記註釋》指向利19:35 及注；KC 指出禁令的範圍不只是使用，連持有都不行，並說壞商人買進用大量器、賣出用小量器（摩8:5）。'
+  relation: 利19:36 的「公道」是 tze.deq 一節連用四次；本章則是 shalem 加 tzedeq 兩個字疊起來，各配一樣器具。本章另外把違反的後果寫成兩面：守的人日子可以長久，行非義之事的人是耶和華所憎惡的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 伊法
+  path: link_folder/原文/伊法.md
+  summary: 第14至15節的「升斗」原文就是伊法。STEP：v14 'ei.Fah 與 ve./'ei.Fah（H374）、v15 'ei.Fah，本章共三次。CT 的原文字義標明「兩樣的升斗（原文雙同字）」是伊法、升斗。第15節要求「當用對準公平的法碼，公平的升斗」，STEP 顯示配在伊法上的是 she.le.Mah（H8003 完整）與 va./Tze.dek（H6664G 公義）。
+  relation: 本條目前面所有的用例都在祭祀場合計量細麵，而且多半寫成伊法十分之幾；本章是它第一次出現在買賣裡，而且是完整的一個伊法——量的不是獻上去的，是賣出去的。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:5
+      - 申命記:25
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: '第16節：「因為行非義之事的人都是耶和華─你神所憎惡的。」STEP：to.''a.Vat（H8441 to.e.vah），「非義之事」是 ''A.vel（H5766A，簡要詞典義 e.vel: injustice）。CT 的原文字義給「非義之事」的是沒有公理、不公義，給「所憎惡的」的是可憎惡的事物。KC 說這種兩套標準的行徑對神而言是可憎的，並引箴20:10、11:1、20:23。'
+  relation: 這是這個字在申命記裡唯一一次用在買賣的度量衡上。前面幾章它管的是拜什麼、獻什麼、吃什麼、求問什麼、穿什麼、把什麼帶進殿裡；這一次管的是口袋裡多放的那一顆石頭。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:23
+      - 申命記:25
+- title: 神的記念
+  path: link_folder/神學/神的記念.md
+  summary: 第17節：「你要記念你們出埃及的時候，亞瑪力人在路上怎樣待你。」STEP：za.Khor（H2142 zakhar，不定詞絕對形），與神記念挪亞用的是同一個字根；第19節要塗抹的「名號」是 Ze.kher（H2143），同一字根的名詞，第19節結尾的「不可忘記」則是 tish.Kach（H7911 shakhach）。CT 的靈訓把全章讀成神的紀念與追討：神紀念被管教的百姓、紀念牲畜、紀念沒有後代的人、紀念活出公義的人，也紀念該被追討的亞瑪力人。
+  relation: 本條目前面收的都是神記念人；本章的命令方向相反——是神吩咐人去記念，而且記念的內容不是恩典而是罪行。CT 由此指出神的紀念有兩個方向，一面賜福，一面追討。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 亞瑪力人
+  path: link_folder/人物/亞瑪力人.md
+  summary: 第17至18節。CT：『亞瑪力人』是以掃的子孫（創卅六12），是以色列人的世仇，除了先後兩次與以色列人爭戰（參出十七8~16；民十四39~45）以外，又擊殺以色列隊伍盡後頭的人。GT《申命記雷氏研讀本》說「亞瑪力人也許是迦南人中最殘忍野蠻的一族」。KC 說他們攻擊一個剛剛脫離為奴之地、毫無戰鬥經驗又從未招惹過他們的百姓，顯出一種不敬畏神的心態。BH 說他們挑的是因疲乏或體弱落在後面的人。
+  relation: 本條目前面幾章記的是他們住在哪裡、什麼時候出現、打過哪幾場；本章第一次記下他們是怎麼打的，而那個打法正是滅族命令的理由。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 出埃及記17章亞瑪力攻擊以色列
+  path: link_folder/互文/出埃及記17章亞瑪力攻擊以色列.md
+  summary: '第17至18節回顧利非訂那場戰役。GT《申命記串珠聖經註釋》在「在路上怎樣待你」註明：見出17:8-16; 民14:39-45。GT《聖經精讀本──申命記註解》：「出埃及的時候: 指出埃及第一年二月底左右,以色列抵達何烈山附近的利非訂之時(出17:8-16)」。STEP：「擊殺你儘後邊」在原文是一個動詞 va/y.za.Nev（H2179 za.nav），語境義是攻擊隊伍後方。'
+  relation: 出17:8 只說亞瑪力人來爭戰，沒有說他們怎麼打；本章補上了攻擊的方式，也補上了以色列日後要負的責任。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:36
+      - 申命記:25
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: 第18節結尾：「並不敬畏神。」STEP：ve./lo' ya.Re'（H3372G）'E.lo.Him。CT 的文意註解：「換句話說，敬畏神的人不會欺負弱小者。」KC 說他們在攻擊神的百姓時顯出一種不敬畏神的心思。BH 說在聖經的語彙裡，敬畏神與智慧、公義相連，缺了這份敬畏就代表道德敗壞、拒絕神的權柄。
+  relation: 本條目前面十二章的「敬畏神」都是對以色列說的要求；本章這一次是對一個外邦民族的判語，而且是用來解釋神為何要追討他們——這份敬畏的有無，在這裡直接對應了對待弱者的方式。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 亞瑪力
+  path: link_folder/人物/亞瑪力.md
+  summary: '第19節：「你要將亞瑪力的名號從天下塗抹了，不可忘記。」STEP：''a.ma.Lek（H6002G）、「名號」是 Ze.kher（H2143，簡要詞典義 ze.kher: memorial）、「塗抹」是 tim.Cheh（H4229A ma.chah）。CT 的原文字義給「亞瑪力」的是山谷的居住者，給「名號」的是記念物；CT 並指這道命令要等到希西家王年間（主前726~697年）才由西緬支派的人實現（參代上四41~43）。KC 說這是要藉著完全的審判把這仇敵的記念徹底抹去。'
+  relation: 本條目前面記的是這個名字怎麼從一個人變成一個民族的代稱；本章記的是這個名字要被抹掉，而且用的動詞與第6節「免得他的名在以色列中塗抹了」完全相同。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 申25：17-19 記念亞瑪力
+  path: link_folder/互文/申25：17-19 記念亞瑪力.md
+  summary: 本段就是本條目的經文本身。第17節命令記念，第18節給出理由，第19節命令在得享平安之後塗抹亞瑪力的名號。STEP：v17「記念」是 za.Khor（H2142）、v19「名號」是 Ze.kher（H2143，同一字根）、「不可忘記」是 tish.Kach（H7911）；v18 的「擊殺你儘後邊」是動詞 va/y.za.Nev（H2179）。GT《啟導本聖經申命記註釋》：「如果只是因為亞瑪力人攻擊過以色列人，似不應有這滅族的命令。」GT《申命記串珠聖經註釋》指這在希西家王的時候終告實現，見代上4:43。
+  relation: 本條目原本是從出17 那一邊建立的，記的是申25 補上了出17:8 沒交代的攻擊方式；本章的四套來源是這段經文自己的註釋，補上的是原文結構——記念、名號、不可忘記在原文裡是同一組字的三次出現。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 掃羅擊殺亞甲（撒上15：8）
+  path: link_folder/互文/掃羅擊殺亞甲（撒上15：8）.md
+  summary: 第19節是掃羅後來奉的那道命令的出處。CT：「最後，神命令掃羅王除滅亞瑪力人(參撒上十五2~3)，但他沒有徹底執行。」CT 並說亞瑪力人最終在希西家的時代基本被消滅（參代上四43），而後來想除滅猶太人的哈曼，可能是亞瑪力王亞甲的後裔（參斯三1）。KC 記的順序相同：掃羅受命抹除亞瑪力卻因不順從而失敗，大衛後來擊敗他們，最終的了結發生在希西家的日子（1Chr 4:41-43）。
+  relation: 本條目原本只有民24:7 的預言與撒上15 的應驗；本章補上中間那一環——這道命令是摩西在摩押平原交下去的，而掃羅只是第一個被交付的人，不是最後一個。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:24
+      - 申命記:25
