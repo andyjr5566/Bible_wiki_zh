@@ -24,21 +24,27 @@ stages:
       findings_count: 0
     findings_count: 0
   m6:
-    round: 1
-    revision: 1
-    sha256: e8adae86a5c2c72eac8aec6c1186570c38739dca6752ce4a97ddba3dc4504e7c
-    claude: ready
+    round: 2
+    revision: 3
+    sha256: 566909276709c4ac0a561949cce619ec81f82400006dfdf6983a5957fefd3058
+    claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
-    review_attempts: 1
-    forced_pass: false
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
     review_history:
     - attempt: 1
       reviewer: antigravity
       sha256: e8adae86a5c2c72eac8aec6c1186570c38739dca6752ce4a97ddba3dc4504e7c
       verdict: pass
       findings_count: 0
-    findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: cee8b5f65bc3ab1fbc52f4d625a3831b5fd613e579fbbd18a5b8161f7fa7f137
+      verdict: changes_required
+      findings_count: 1
+    forced_from_findings_count: 1
   link_updates:
     round: 2
     revision: 2

@@ -25,8 +25,8 @@ stages:
     findings_count: 0
   m6:
     round: 2
-    revision: 4
-    sha256: 9c501b23ad5a0b383113fb2315f50a6bb6727517875c74ba8110e94d61736fa8
+    revision: 5
+    sha256: 458c6c5965203e391d9e696734529929ae7580a514eb5d6ab4a5311d017e8e7a
     claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
