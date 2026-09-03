@@ -40,7 +40,7 @@
 | `run_chapter` | 相容名稱，但固定轉到 `run_chapter_manual.py run`；MCP 不暴露模型版 `run_chapter.py`。 | 是 |
 | `rename_markdown` | 對應 `rename_markdown.py`；預設 dry-run，正式改名需 `confirm=true`。 | 正式改名會寫入 |
 | `check_source_read` | 對應 A0 讀取回執閘門 `check_source_read.py`；開工前先過。 | 否 |
-| `check_quote_fidelity` | 引句逐字回查：本章 payload／章整理裡的「」引句，逐條比對本章 OK 註釋＋全本聖經經文。傳 `entry=<條目路徑>` 改驗單一 link_folder 條目的定義與主題發展，語料換成該條目自己累積過的每一章。閘門驗結構，這一支驗引號裡的話出自哪裡。 | 否 |
+| `check_quote_fidelity` | 引句逐字回查：本章 payload／章整理裡的「」引句，逐條比對本章 OK 註釋＋全本聖經經文。傳 `entry=<條目路徑>` 改驗單一 link_folder 條目的定義與主題發展，語料換成該條目自己累積過的每一章。傳 `min_chars=2` 降門檻掃短引句（預設 10 以下完全不比對）。閘門驗結構，這一支驗引號裡的話出自哪裡。 | 否 |
 | `check_accumulation_orphans` | 對應反向孤兒累積檢查；`book` 或 `scan_all=true` 二選一。 | 否 |
 | `find_duplicate_entries` | 對應 `embedding_dup_report.py --json`，回報全庫既有近似重複條目對，只出報告。 | 會更新 `util/output/duplicate_entries.json` |
 | `merge_entries` | 對應 `merge_entries.py`；預設 dry-run，正式合併需 `confirm=true`。 | 正式合併會寫入（見下方三個手動收尾項） |
@@ -116,6 +116,12 @@ entry_content，護欄一次都沒驗過。
 的活文件），章節模式從不掃它——寫進定義與主題發展的引句原本一道閘門都沒有。條目
 模式把語料換成「該條目自己宣告累積過的每一章」，那正好是它有權引用的來源集合；
 引了沒有累積過的章的註釋就會被報出來。
+
+**短引句模式 `min_chars=<N>`**：預設門檻是 10 個字，**比它短的引句一個字都不比對**——
+所以「」被拿來當強調記號或術語標記用（本庫明文禁止，因為「」是逐字宣告）時，常駐閘門
+全綠也抓不到。閘門全過之後再跑一次 `min_chars=2`，那一型就會浮出來（申25 實測抓到 5 處，
+全是自己的措詞被加上引號：「尾巴」「神的追討」「為什麼罰這麼重」「伊法十分之幾」「怎麼打」）。代價是誤報變多，**報出的每一條都要人工裁決，不可照著刪**：
+真正的短引句（來源給的兩三個字字義）必須留著。閘門本身仍用預設門檻，調低只影響這一次呼叫。
 
 掛錯家的引句、被壓平的爭議、憑常識腦補的交叉引註，仍然只能逐條開條目對 rawdata 讀。`agent_maintenance_prompt.md` 的三件工作沒有工具化。
 

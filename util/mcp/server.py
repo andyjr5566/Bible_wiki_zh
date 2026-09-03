@@ -1105,7 +1105,8 @@ def check_source_read(book: str, chapter: int, strict_lines: bool = False) -> Di
 @mcp.tool()
 def check_quote_fidelity(book: Optional[str] = None, chapter: Optional[int] = None,
                          references: bool = False,
-                         entry: Optional[str] = None) -> Dict[str, Any]:
+                         entry: Optional[str] = None,
+                         min_chars: Optional[int] = None) -> Dict[str, Any]:
     """Verify that every bracketed quote in this chapter's own output is verbatim.
 
     The structural gates check that files exist, links resolve and formats are
@@ -1128,18 +1129,31 @@ def check_quote_fidelity(book: Optional[str] = None, chapter: Optional[int] = No
     those sections have no quote gate at all. The corpus is then every chapter
     the entry itself declares an accumulation for — precisely the sources it has
     standing to quote.
+
+    ``min_chars`` lowers the length floor (default 10). Quotes shorter than the
+    floor are not compared at all, so 「」 used as an emphasis or term marker —
+    which the project forbids, because the marks are a verbatim claim — passes
+    the standing gate untouched. Re-running with ``min_chars=2`` after the gate
+    is green is the way to catch that type; expect more noise and adjudicate each
+    hit by hand rather than deleting on sight. The gate itself keeps the default,
+    so lowering the floor here never changes what the closing gates enforce.
     """
     try:
+        if min_chars is not None and min_chars < 1:
+            return _error("min_chars 至少要 1")
+        floor = ["--min-chars", str(min_chars)] if min_chars is not None else []
         if entry:
-            result = _run_util_command("check_quote_fidelity.py", "--entry", entry, timeout=180)
-            result.update({"entry": entry})
+            result = _run_util_command("check_quote_fidelity.py", "--entry", entry,
+                                       *floor, timeout=180)
+            result.update({"entry": entry, "min_chars": min_chars})
             return result
         if not book or chapter is None:
             return _error("要嘛給 book 與 chapter，要嘛給 entry")
         canonical, _directory, _tmp = _chapter_context(book, chapter)
-        args = [canonical, str(chapter)] + (["--references"] if references else [])
+        args = [canonical, str(chapter)] + (["--references"] if references else []) + floor
         result = _run_util_command("check_quote_fidelity.py", *args, timeout=120)
-        result.update({"book": canonical, "chapter": chapter, "references": references})
+        result.update({"book": canonical, "chapter": chapter, "references": references,
+                       "min_chars": min_chars})
         return result
     except (TypeError, ValueError, OSError) as exc:
         return _error(str(exc))

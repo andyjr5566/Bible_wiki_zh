@@ -152,7 +152,7 @@ def entry_targets(entry_path: Path):
     return out
 
 
-def check_entry_quotes(entry_path: Path, root: Path = ROOT):
+def check_entry_quotes(entry_path: Path, root: Path = ROOT, min_chars: int = MIN_QUOTE_CHARS):
     corpus, names = entry_corpus(Path(entry_path), root)
     total, misses = 0, []
     for label, text in entry_targets(Path(entry_path)):
@@ -160,7 +160,7 @@ def check_entry_quotes(entry_path: Path, root: Path = ROOT):
         for pattern in QUOTE_PATTERNS:
             for match in pattern.finditer(text):
                 quote = match.group(1).strip()
-                if len(quote) < MIN_QUOTE_CHARS or quote in seen:
+                if len(quote) < min_chars or quote in seen:
                     continue
                 if "／" in quote or "/" in quote:
                     continue
@@ -228,7 +228,7 @@ def collect_targets(book: str, chapter: int, root: Path = ROOT):
     return targets
 
 
-def check_quotes(book: str, chapter: int, root: Path = ROOT):
+def check_quotes(book: str, chapter: int, root: Path = ROOT, min_chars: int = MIN_QUOTE_CHARS):
     corpus, source_names = chapter_corpus(book, chapter, root)
     total, misses = 0, []
     for label, text in collect_targets(book, chapter, root):
@@ -236,7 +236,7 @@ def check_quotes(book: str, chapter: int, root: Path = ROOT):
         for pattern in QUOTE_PATTERNS:
             for match in pattern.finditer(text):
                 quote = match.group(1).strip()
-                if len(quote) < MIN_QUOTE_CHARS or quote in seen:
+                if len(quote) < min_chars or quote in seen:
                     continue
                 if "／" in quote or "/" in quote:
                     continue  # 並列用法，不是宣稱逐字引用
@@ -311,12 +311,18 @@ def main() -> int:
     parser.add_argument("--entry", help="改驗單一 link_folder 條目的定義與主題發展")
     parser.add_argument("--references", action="store_true",
                         help="同時回查交叉引註（誤報較多，預設關閉）")
+    parser.add_argument("--min-chars", type=int, default=MIN_QUOTE_CHARS, metavar="N",
+                        help=f"引句長度下限（預設 {MIN_QUOTE_CHARS}）。調低到 2~4 可掃出"
+                             "「」被當強調記號用的短引句——那是常駐閘門驗不到的一型，"
+                             "但誤報也會變多，報出的每一條都要人工裁決")
     args = parser.parse_args()
+    if args.min_chars < 1:
+        parser.error("--min-chars 至少要 1")
     if args.entry:
         path = Path(args.entry)
         if not path.is_absolute():
             path = ROOT / args.entry
-        total, misses, names = check_entry_quotes(path)
+        total, misses, names = check_entry_quotes(path, min_chars=args.min_chars)
         print(f"語料：{path.name} 累積過的 {'、'.join(names)}")
         print(f"引句 {total} 處，回查不到 {len(misses)} 處")
         for label, quote in misses:
@@ -330,7 +336,7 @@ def main() -> int:
         parser.error("要嘛給「書名 章」，要嘛給 --entry <條目路徑>")
     book = canonical_book_name(args.book)
 
-    total, misses, source_names = check_quotes(book, args.chapter)
+    total, misses, source_names = check_quotes(book, args.chapter, min_chars=args.min_chars)
     print(f"語料：{'、'.join(source_names)}")
     print(f"引句 {total} 處，回查不到 {len(misses)} 處")
     for label, quote in misses:

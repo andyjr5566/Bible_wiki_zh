@@ -213,6 +213,39 @@ class QuoteFidelityTests(unittest.TestCase):
             total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root)
             self.assertEqual((0, []), (total, misses))
 
+    def test_short_quote_is_skipped_by_default_and_caught_when_floor_is_lowered(self):
+        """「」被當強調記號用的短引句，預設門檻下一個字都不比對——那是常駐閘門的盲區。"""
+        payload = 'name: 測試\ndefinition: 這裡談的是「神的追討」這件事。\n'
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp, entry_yaml=payload)
+            self.assertEqual((0, []), cqf.check_quotes(BOOK, CHAPTER, root=root)[:2])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp, entry_yaml=payload)
+            total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root, min_chars=2)
+            self.assertEqual(1, total)
+            self.assertEqual(["神的追討"], [quote for _label, quote in misses])
+
+    def test_lowered_floor_still_passes_a_short_but_real_quote(self):
+        """降門檻不是把短引句一律報出來：真的出自來源的短句仍要通過。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp, entry_yaml='name: 測試\ndefinition: CT 給的字義是「使者」。\n')
+            total, misses, _ = cqf.check_quotes(BOOK, CHAPTER, root=root, min_chars=2)
+            self.assertEqual((1, []), (total, misses))
+
+    def test_entry_mode_accepts_the_same_floor(self):
+        """條目模式與章節模式共用同一個門檻參數。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._chapter(tmp)
+            entry = root / "link_folder" / "主題" / "測試.md"
+            _write(entry,
+                   "# 測試\n\n## 定義\n\n這裡談的是「神的追討」。\n\n## 按書卷累積\n\n"
+                   "<!-- accumulation:創世記:8:start -->\n#### 第8章\n"
+                   "<!-- accumulation:創世記:8:end -->\n\n"
+                   "## 相關條目\n\n## 來源依據\n")
+            self.assertEqual([], cqf.check_entry_quotes(entry, root=root)[1])
+            _total, misses, _names = cqf.check_entry_quotes(entry, root=root, min_chars=2)
+            self.assertEqual(["神的追討"], [quote for _label, quote in misses])
+
 
 if __name__ == "__main__":
     unittest.main()
