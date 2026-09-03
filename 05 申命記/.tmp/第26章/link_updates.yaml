@@ -1,0 +1,310 @@
+book: 申命記
+chapter: 26
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 初熟
+  path: link_folder/原文/初熟.md
+  summary: '第2節「將所收的各種初熟的土產取些來」與第10節「現在我把你所賜給我地上初熟的土產奉了來」。STEP：me./re.Shit 與 re.Shit（H7225G re.shit: first: beginning）＋pe.Ri（H6529）＋ha./''a.da.Mah（H127G）。CT 的原文字義：「初熟」首先、最好的；「土產」果實、(地上的)出產；並說『初熟的土產』指初收的五穀、新酒和新油，並初剪的羊毛（參申十八4）。GT《聖經精讀本──申命記註解》：各種初熟的土產代表著所有餘下土產，因此將這些獻給神是承認神對迦南地的所有權及統治權的行為。KC 說把果子帶來本身就是他們已經到了那地的憑據。'
+  relation: 本條目前面幾章交代的是初熟之物送到哪裡、歸給誰；本章交代的是送去的人到了那裡要做什麼、說什麼——盛在筐子裡、交給祭司、放在壇前、說一段回顧民族來歷的話、下拜，再與利未人和寄居的一同歡樂。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:18
+      - 申命記:26
+- title: 古代近東初熟果子奉獻
+  path: link_folder/背景/古代近東初熟果子奉獻.md
+  summary: 第1至11節是初熟奉獻在律法裡最完整的一次規定。GT《聖經精讀本──申命記註解》說各種初熟的土產代表著所有餘下土產，因此將這些獻給神是承認神對迦南地的所有權及統治權的行為。BH 說初熟是古代以色列農業社會的作法，把收成中最先也最好的一份分別給神，是承認神的供應與主權；並說把它放進筐子這個動作，表示敬拜是有預備、有心意的。GT《申命記雷氏研讀本》另外指出，這特別的獻祭顯然只在進入迦南的第一次收割後才進行，而他們每年也獻上初熟的土產，作為未來豐收的保證。
+  relation: 出22 的背景資料講的是儲藏的實務——先分別出一份再封存收成；本章把同一個慣例寫成完整的程序，而且在程序中間插進一段必須親口說出來的民族來歷。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:26
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: 第2節「往耶和華─你神所選擇要立為他名的居所去」。STEP：le./sha.Ken（H7931 sha.khan，使居住）she.M/o（H8034 名）Sham（H8033G 在那裡）。GT《聖經精讀本──申命記註解》：指以色列唯一的中央聖所（12:5;16:2）。CT：指拿到耶路撒冷聖所。KC 說對以色列人而言，耶路撒冷是地上唯一的地方，百姓要在那裡聚集守耶和華的節期；外邦人在任何自己認為好的地方獻祭，神卻要親自為祂的百姓指定這個地方，並期待祂的百姓去尋找它。
+  relation: 本章是這條規定的一次實際應用，而且是最具體的一次：不只說要去那裡，還說去了要交給誰、放在哪裡、說什麼話。第12至15節的第三年十一奉獻則正好相反——那一份不進聖所，留在本城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 亞蘭人
+  path: link_folder/人物/亞蘭人.md
+  summary: '第5節「我祖原是一個將亡的亞蘭人」。STEP：''a.ra.Mi（H761J，簡要詞典義 a.ram.mi: Aramean）。CT：『亞蘭人』指雅各的母親利百加是亞蘭人（參創二十五20），雅各的兩個妻子利亞和拉結乃是母舅拉班的女兒（參創二十八5），故所生子孫也自稱亞蘭人；但若按照父系而言，以色列人是希伯來人。GT《啟導本聖經申命記註釋》說亞蘭是雅各逃避以掃所住的巴旦亞蘭地，他壯年大部分時間都在那裡度過。GT《聖經精讀本──申命記註解》特別排除一種誤解：這並不是指雅各是閃的五子之一亞蘭（創10:22）的後裔。'
+  relation: 本條目前面幾章的亞蘭人是外族——利百加與拉班的家族；本章卻是以色列人自己用來稱呼列祖的話，而且是在最莊重的場合、對神說的第一句。這個族稱在這裡不是族譜資料，是一句承認自己出身卑微的話。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 雅各
+  path: link_folder/人物/雅各.md
+  summary: 第5節的「我祖」四家一致指為雅各。KC：Jacob is “a wandering Aramean” because he lived in Syria for twenty years and because his mother comes from there.（雅各是一個飄泊的亞蘭人，因為他在敘利亞住了二十年，也因為他的母親出自那裡。）他並說雅各曾走到死亡的門口，因為拉班曾想殺他；神卻把一個幾乎被殺的人變成了一個大族。CT 說『我祖』指雅各、『將亡的』指衰老瀕死；GT《申命記串珠聖經註釋》說雅各下到埃及的時候，已是一個老邁體弱的人。
+  relation: 本條目累積了創世記大半卷的雅各生平；本章是那段生平被整個民族用一句話總結的地方——不是說我祖是以色列，而是說「我祖原是一個將亡的亞蘭人」。以色列人每次獻上初熟土產，都要從這一句說起。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 30
+    - 31
+    definition: keep
+    development: keep
+- title: 大能的手
+  path: link_folder/神學/大能的手.md
+  summary: 第8節「他就用大能的手和伸出來的膀臂，並大可畏的事與神蹟奇事，領我們出了埃及」。CT 逐一註明：『大能的手』形容祂大有能力的作為；『伸出的膀臂』形容祂拯救的範圍；『大可畏的事』指過紅海；『神蹟奇事』指降十災。CT 的原文字義另給「大能」強壯的、堅固的；「伸出來」伸展、延長；「可畏」令人懼怕；「事」記號；「奇事」奇蹟、預兆。BH 說這組意象強調神的大能與祂在人類歷史中的實際介入。
+  relation: 本條目前面幾章的「大能的手」都出現在摩西對百姓的講論裡，是神對以色列說的話；本章卻是百姓自己在獻祭時要背誦的告白——同一句話從教導的口吻換成了敬拜者的口吻。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 流奶與蜜之地
+  path: link_folder/神學/流奶與蜜之地.md
+  summary: 第9節「把這流奶與蜜之地賜給我們」與第15節「就是你向我們列祖起誓賜我們流奶與蜜之地」。CT：形容迦南地乃是土地肥沃，適宜畜牧業、果林茂密之地；「奶」代表動物的精華，「蜜」代表植物的精華。GT《聖經精讀本──申命記註解》：指迦南本土的修辭辭令（11:9）。BH 說這個描述強調土地的豐饒，奶與蜜象徵富足與神的供應。
+  relation: 本章兩次用到這個說法，而且分別放在兩段告白的收尾：第9節是初熟土產告白裡神已經做成的事，第15節是第三年十一奉獻告白裡向神求的事。同一片地，一次當作已領受的事實，一次當作祈求的內容。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 下拜
+  path: link_folder/原文/下拜.md
+  summary: '第10節「隨後你要把筐子放在耶和華─你神面前，向耶和華─你的神下拜」。STEP：ve./hish.ta.cha.Vi.ta（H7812，簡要詞典義 sha.chah: to bow）。CT 的原文字義：「下拜」下拜，俯伏。BH 說俯伏是敬拜、敬畏與順服神權柄的表達，是聖經中人遇見神的常見動作，反映敬拜者該有的心態。'
+  relation: 這是本章整套獻初熟動作的最後一個身體動作：話說完、筐子放下，然後下拜。KC 指出第10節那句在耶和華面前敬拜，正是前面所有預備要達到的地方。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第11節「你和利未人，並在你們中間寄居的」，第12至13節兩次「分給利未人和寄居的，與孤兒寡婦」。CT 說這幾句指的是在以色列人中無分無業的人們。BH 說利未人沒有分得地業，靠供物與百姓的慷慨維生（民18:24）。KC 把本章的四種人分別對應到主的僕人、還不認識主的人，以及失去天然依靠的人。
+  relation: 本條目前面幾章的利未人多半以事奉者或受供養者的身分出現；本章讓他們同時出現在兩個場合——第11節是與獻的人同席歡樂，第12節是每三年一次直接領受那一份十分之一。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: '第11節「並在你們中間寄居的」，第12至13節兩次與利未人、孤兒寡婦並列。STEP：ve./la./Ger（H1616，簡要詞典義 ger: sojourner）。CT 的原文字義：「寄居的」旅居者。BH 說寄居的是住在以色列人中間、卻不是本地出生的人，把他們算進來顯出神對所有人的顧念（出22:21）。'
+  relation: 本條目已累積了寄居者從不可欺負到愛他如己的整條線；本章加上的是兩個場合的並列——同一段經文裡，寄居的既在第11節的筵席上與獻的人一同歡樂，也在第12節的名單上與孤兒寡婦一同受供養。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 在耶和華面前歡樂
+  path: link_folder/主題/在耶和華面前歡樂.md
+  summary: 第11節「你和利未人，並在你們中間寄居的，要因耶和華─你神所賜你和你家的一切福分歡樂」。CT：『一切福分』指五穀豐收所代表的福樂平安生活；『歡樂』指過節時歡喜快樂的氣氛所代表的喜樂與感恩；百姓與利未人和寄居者一起歡樂，指一起享用筵席、分享神所賜的一切福分。GT《聖經精讀本──申命記註解》：神希望且命令為了表示感謝而獻上的自己子民的出產，能夠用在將歡樂與喜樂分給所有人，尤其是在對待貧窮的鄰人的事宜上。BH 說這道命令是群體性的，反映與神立約的喜樂。
+  relation: 本條目前面幾次的歡樂都接在獻祭與吃祭物之後；本章這一次接在一段告白之後——要先把「我祖原是一個將亡的亞蘭人」說完、把筐子放下、下拜，然後才歡樂。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 申命記:14
+      - 申命記:26
+- title: 十分之一
+  path: link_folder/原文/十分之一.md
+  summary: 第12節「你取完了一切土產的十分之一，要分給利未人和寄居的，與孤兒寡婦」。GT《啟導本聖經申命記註釋》：「十分取一之年」為以色列人第三種什一奉獻（參利二十七30及注），以色列人每逢三年要取出土產的十分之一周濟窮人。KC：These tithes are not given to the LORD, but directly to those for whom they are intended.（這些十分之一不是給耶和華的，而是直接給那些它們原本要給的人。）他並說它們不像每年的十分之一被帶到聖所，而是被帶到城裡去分。BH 稱之為 poor tithe，並指這一份留在本城分給有需要的人。
+  relation: 本條目前面收的是許願的語氣（創14、創28）與條文的語氣（利27、民18、申12、申14）；本章第13節換成第一人稱完成式的報告——我已將聖物從我家裡拿出來、給了誰、照著什麼命令、沒有違背也沒有忘記。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:28
+      - 申命記:14
+      - 申命記:26
+- title: 孤兒寡婦
+  path: link_folder/主題/孤兒寡婦.md
+  summary: '第12節「要分給利未人和寄居的，與孤兒寡婦，使他們在你城中可以吃得飽足」，第13節再列一次。STEP：la/i.ya.Tom（H3490，簡要詞典義 ya.tom: orphan）、ve./la./''al.ma.Nah（H490 al.ma.nah: widow）。CT 說這是在過節時拿出所積存的來周濟窮人並顧念無分無業的利未人。BH 說孤兒寡婦與寄居的代表社會中沒有能力自給的族群，這條規定讓群體的豐富分到所有成員身上，而目標寫的是「吃得飽足」，不只是活下去。'
+  relation: 本條目前面幾章多半把孤兒寡婦寫在禁令裡（不可屈枉、不可拿當頭）；本章寫的是一筆定期、定量、留在本城的供應，而且分完之後奉獻的人要在神面前逐項交代自己確實分了。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 聖物
+  path: link_folder/主題/聖物.md
+  summary: '第13節「我已將聖物從我家裡拿出來」與第14節「我守喪的時候，沒有吃這聖物」。STEP：ha./Ko.desh（H6944G，簡要詞典義 qo.desh: holiness）。CT 的原文字義：「聖物」分別、神聖；文意註解說『聖物』指分別出來專為奉獻給神的物品，並說人在居喪期中是不潔的（參民十九11），不可觸摸聖物。GT《聖經精讀本──申命記註解》：本節是告白了被分別為聖為十一奉獻的聖物並沒有用在私人身上或被玷污。GT《啟導本聖經申命記註釋》補上依據：守喪期為不潔的時期（民十九11～13），不可以吃祭肉（利七20）。'
+  relation: 本條目前面幾章的聖物在祭司與聖所的管轄下；本章的聖物放在自己家裡，要由本人拿出來，並且要由本人在神面前自陳沒有在守喪時吃它、沒有在不潔時拿它、也沒有為死人送去。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:5
+      - 申命記:26
+- title: 把那惡從你們中間除掉（ba.ar）
+  path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
+  summary: '第13節「我已將聖物從我家裡拿出來」與第14節「也沒有拿出來」用的是同一個動詞。STEP：bi.''Ar.ti 與 vi.''Ar.ti（H1197I，簡要詞典義 ba.ar: to burn: purge），第一人稱完成式；同一個 H1197I 在申21:9、21:21、22:21、22:22、22:24、24:7 都是第二人稱的要把那惡從你們中間除掉。本章第13節的受詞不是「那惡」，而是 ha./Ko.desh（H6944G，聖物）。'
+  relation: 這是這個動詞在申命記裡第一次不用在除惡上。受詞從要清掉的髒東西換成分別為聖的一份，人稱也從第二人稱的命令換成第一人稱的完成式——從一道待辦的命令，變成一句在神面前作結的報告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:19
+      - 申命記:26
+- title: 巴力（迦南主神）
+  path: link_folder/背景/巴力（迦南主神）.md
+  summary: 第14節「又沒有為死人送去」是本章可能提到巴力的一處，但各家並無共識。CT 說『為死人送去』可能指敬拜巴力（參詩一百零六28），並補上背景：在迦南神話中，巴力每年死而復活一次，帶來旱季和雨季的更替。GT《申命記串珠聖經註釋》同樣說「死人」可能指巴力神。GT《啟導本聖經申命記註釋》則先給另一種讀法（把需用的食物送往喪家），再對巴力說下了否定：「此說無可靠依據」。
+  relation: 本章對這個名字只有一句可能的、而且被其中一家明白否定的指涉，不足以推進本條目對巴力崇拜的整體理解；倒是它記下了一項本條目原本沒有的迦南神話細節——巴力每年死而復活一次，帶來旱季與雨季的更替。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 吩咐、律例、典章、誡命四個詞
+  path: link_folder/原文/吩咐、律例、典章、誡命四個詞.md
+  summary: '第16節「耶和華─你的神今日吩咐你行這些律例典章」、第17節「謹守他的律例、誡命、典章」、第18節「使你謹守他的一切誡命」。STEP：v16 是 ha./chu.Kim（H2706G choq: statute: decree）與 ha./mish.pa.Tim（H4941G mish.pat: justice: judgement），後面接 be./khol le.va.ve./Kha（H3824 le.vav）與 u./ve./Khol naf.She./kha（H5315G ne.phesh）；v17 有 chu.Ka/v（H2706G）與 u./mitz.vo.Ta/v（H4687 mits.vah），v18 再用一次 mitz.vo.Ta/v。CT 的原文字義：「律例」法規、法令、條例；「典章」判決、判例、正義；「性」魂、自我；「誡命」命令。文意註解另把兩個動詞分開：『謹守』重在指思想觀念的贊同和一致，『遵行』重在指行為上的遵照和實施。'
+  relation: 申11:1 把四個名詞一次排開，是摩西第二篇講章的開場；本章用其中幾個把同一篇講章收尾，而且加上了「盡心盡性」這個限定——中間十幾章的條例，正是這組詞實際指的內容。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:11
+      - 申命記:26
+- title: 立約
+  path: link_folder/主題/立約.md
+  summary: 第16至19節。GT《啟導本聖經申命記註釋》：本段有若向神承諾的誓詞（參出二十四7），具有契約形式，立約雙方莊嚴宣佈信守盟誓，「摩西為此約的見證人」，一方為以色列民，承諾願為耶和華神聖潔的子民，一方為神，宣佈願為以色列人的神；神賜此約乃本乎祂的恩典，答應賜福給遵守此約的民。GT《聖經精讀本──申命記註解》：本章是結束摩西第二篇講章的結語，摩西以兩種律例再次論及了律法的兩大精神之後，重新申明了所立之約。GT《申命記串珠聖經註釋》的總結是：當先順服然後才蒙福。
+  relation: 本條目前面收的立約多半是敘事裡的一次事件；本章收的是立約的形式本身——兩句對稱的宣告，雙方各說一次；以色列那一句以聽從他的話作結，神那一句則兩次援引他先前所應許的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 古代近東立約
+  path: link_folder/背景/古代近東立約.md
+  summary: 第16至19節具有古代近東條約的形式。GT《啟導本聖經申命記註釋》指出立約雙方莊嚴宣佈信守盟誓，摩西為此約的見證人，並列出雙方各自承諾的內容。CT 把兩邊的條款逐條拆開：以色列這一邊四項（認信耶和華是我個人的神、應承遵行祂的道路、承諾謹守祂的律法、答應聽從祂的話）；神這一邊五項（接納你應許的話、承認你為自己的子民、使你有能力謹守律法、立你超乎萬民之上、使你分別為聖專歸屬於祂）。STEP：v17 he.'e.Mar.ta 與 v18 he.'e.mi.re./Kha（同一個 H559 的使役語態），ka./'a.Sher di.Ber（H834D＋H1696I）兩次都在神那一邊——v18 中段與 v19 結尾，v17 則以 ve./li/sh.Mo.a' be./ko.L/o（H8085H＋H6963A）收尾。
+  relation: 本條目前面幾章記的都是人與人之間的約——禮物、證物、地名、互不侵犯；本章記的是百姓與神之間的約，而形式是同一套：雙方各自宣告，並且要有見證人。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:21
+      - 申命記:26
+- title: 屬我的子民
+  path: link_folder/神學/屬我的子民.md
+  summary: '第18節「耶和華今日照他所應許你的，也認你為他的子民」。STEP：le./''Am（H5971A am: people）se.gu.Lah（H5459，簡要詞典義 se.gul.lah: possession）。CT 說本節是神回應的話，內容包括接納你應許的話、承認你為自己的子民、使你有能力謹守律法。BH 說 treasured possession 指極其寶貴、受保護的所有物，在古代近東的語境裡指君王最珍視、最受保護的資產，同一個詞也見於出19:5 與瑪3:17。'
+  relation: 出19:5 是神在西乃山下單方面的宣告；本章第18節則是雙方對答的第二句——以色列先認耶和華為自己的神，神才照祂所應許的認他們為自己的子民。同一個身分，這裡是接在人的宣告之後給的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 聖潔的國民
+  path: link_folder/神學/聖潔的國民.md
+  summary: '第19節「並照他所應許的使你歸耶和華─你神為聖潔的民」。STEP：''am-（H5971A）ka.Dosh（H6918G，簡要詞典義 qa.dosh: holy）；同節的「稱讚、美名、尊榮」是 li/t.hi.Lah（H8416 te.hil.lah: praise）、u./le./Shem（H8034 shem: name）、u./le./tif.''A.ret（H8597 tiph.a.rah: beauty）。KC 說神的心意不只是把祂的百姓立在萬民之上，也是要擁有他們作一群分別出來、單單歸祂的百姓。BH 說被立在萬國之上不是靠軍事或結盟得來的地位，而是出於神的恩眷。'
+  relation: 出19:6 的「聖潔的國民」與「祭司的國度」並列；本章第19節則與「稱讚、美名、尊榮」並列，而且明說是超乎他所造的萬民之上。同一個身分在這裡被放進一份雙方各自簽下的約的最後一句。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 三種什一奉獻的區分
+  path: link_folder/主題/三種什一奉獻的區分.md
+  summary: 第12節「每逢三年，就是十分取一之年」。CT 的背景註解列出以色列人要交納的三個「十分之一」，並指第三個是每三年一次分給本城的利未人、寄居的和孤兒寡婦（參申十四28~29；二十六12）。GT《聖經精讀本──申命記註解》：指以每一個安息年為基準，每逢三年（第三年與第六年），為了救濟窮人而特意獻上的所謂第三年十一奉獻，其用途與用來感恩慶祝的第二個十一奉獻相區別。GT《啟導本聖經申命記註釋》：「十分取一之年」為以色列人第三種什一奉獻。BH 稱之為 poor tithe。
+  relation: 申14 回答的是有幾種，本章回答的是第三種怎麼結案：分給誰、在哪裡分、分完之後要在神面前說什麼。而這一份的特點是不進聖所、也沒有人監督，所以第13至14節那段自陳就成了唯一的把關。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:26

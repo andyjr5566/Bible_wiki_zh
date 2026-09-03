@@ -581,6 +581,19 @@
     "status": "formal",
     "aliases": []
   },
+  "你認我認的立約宣告": {
+    "path": "link_folder/主題/你認我認的立約宣告.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學",
+      "原文"
+    ],
+    "title": "你認我認的立約宣告",
+    "status": "formal",
+    "aliases": [
+      "你認我認"
+    ]
+  },
   "保護弱勢": {
     "path": "link_folder/主題/保護弱勢.md",
     "type": "主題",
@@ -769,6 +782,18 @@
       "分蹄倒嚼"
     ]
   },
+  "初熟土產的信仰告白": {
+    "path": "link_folder/主題/初熟土產的信仰告白.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "初熟土產的信仰告白",
+    "status": "formal",
+    "aliases": [
+      "初熟土產的告白"
+    ]
+  },
   "利未人分散在各支派中": {
     "path": "link_folder/主題/利未人分散在各支派中.md",
     "type": "主題",
@@ -894,6 +919,18 @@
     "title": "十一天的路程",
     "status": "formal",
     "aliases": []
+  },
+  "十一奉獻後的宣告": {
+    "path": "link_folder/主題/十一奉獻後的宣告.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "十一奉獻後的宣告",
+    "status": "formal",
+    "aliases": [
+      "十分之一的宣告"
+    ]
   },
   "十一幅山羊毛幔子（罩棚）": {
     "path": "link_folder/主題/十一幅山羊毛幔子（罩棚）.md",
@@ -14729,6 +14766,18 @@
       "我是我所是"
     ]
   },
+  "我祖原是一個將亡的亞蘭人（o.ved）": {
+    "path": "link_folder/原文/我祖原是一個將亡的亞蘭人（o.ved）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "我祖原是一個將亡的亞蘭人（o.ved）",
+    "status": "formal",
+    "aliases": [
+      "將亡的亞蘭人"
+    ]
+  },
   "戲笑": {
     "path": "link_folder/原文/戲笑.md",
     "type": "原文",
@@ -15810,6 +15859,18 @@
     "title": "窩巢與基尼的雙關（qen 與 qa.yin）",
     "status": "formal",
     "aliases": []
+  },
+  "筐子（te.ne）": {
+    "path": "link_folder/原文/筐子（te.ne）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "筐子（te.ne）",
+    "status": "formal",
+    "aliases": [
+      "筐子"
+    ]
   },
   "米利巴（Meribah）": {
     "path": "link_folder/原文/米利巴（Meribah）.md",
@@ -29050,6 +29111,18 @@
     "status": "formal",
     "aliases": []
   },
+  "為死人送去的意思之爭": {
+    "path": "link_folder/解經爭議/為死人送去的意思之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "為死人送去的意思之爭",
+    "status": "formal",
+    "aliases": [
+      "為死人送去"
+    ]
+  },
   "燈臺的杯是燈盞還是承花盤": {
     "path": "link_folder/解經爭議/燈臺的杯是燈盞還是承花盤.md",
     "type": "解經爭議",
@@ -30074,6 +30147,9 @@
   "獻祭日曆": {
     "alias_of": "以獻祭安排時間"
   },
+  "你認我認": {
+    "alias_of": "你認我認的立約宣告"
+  },
   "免服兵役": {
     "alias_of": "免服兵役的四種人"
   },
@@ -30103,6 +30179,9 @@
   },
   "分蹄倒嚼": {
     "alias_of": "分蹄倒嚼（潔淨走獸的判準）"
+  },
+  "初熟土產的告白": {
+    "alias_of": "初熟土產的信仰告白"
   },
   "四十八座城": {
     "alias_of": "利未人的四十八座城"
@@ -30139,6 +30218,9 @@
   },
   "加上五分之一": {
     "alias_of": "加五分之一贖回原則"
+  },
+  "十分之一的宣告": {
+    "alias_of": "十一奉獻後的宣告"
   },
   "山羊毛幔子": {
     "alias_of": "十一幅山羊毛幔子（罩棚）"
@@ -32942,6 +33024,9 @@
   "我是我所是": {
     "alias_of": "我是自有永有的"
   },
+  "將亡的亞蘭人": {
+    "alias_of": "我祖原是一個將亡的亞蘭人（o.ved）"
+  },
   "所多瑪和蛾摩拉的呼喊": {
     "alias_of": "所多瑪罪惡的呼喊"
   },
@@ -33217,6 +33302,9 @@
   },
   "稱頌": {
     "alias_of": "稱頌（ba.rakh）"
+  },
+  "筐子": {
+    "alias_of": "筐子（te.ne）"
   },
   "Meribah": {
     "alias_of": "米利巴（Meribah）"
@@ -36388,6 +36476,9 @@
   },
   "流珥與葉忒羅的關係": {
     "alias_of": "流珥葉忒羅與何巴的稱謂關係"
+  },
+  "為死人送去": {
+    "alias_of": "為死人送去的意思之爭"
   },
   "幾捧爐灰": {
     "alias_of": "爐灰的出處"
