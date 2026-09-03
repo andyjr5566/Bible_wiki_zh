@@ -1,0 +1,182 @@
+book: 申命記
+chapter: 21
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: '長老在本章出現在兩段程序裡。第2至6節的無主命案：他們與審判官一同出去量距離，取一隻未曾耕地未曾負軛的母牛犢牽到山谷打折頸項，然後在牛犢以上洗手，宣告「我們的手未曾流這人的血；我們的眼也未曾看見這事」。第19至20節則是逆子的案子被帶到本地的城門、本城的長老那裡。STEP 顯示是 ze.ke.Nei./cha 與 zik.Nei（H2205G，za.qen: old: elder）。CT：「『長老和審判官』指平時負責附近轄區的治安和審理案件的人」。GT《聖經精讀本──申命記註解》在第6節底下用一整段整理長老的詞源與職分，說舊約中的長老一詞具有「鬍鬚」或「白髮」之意，並列出治理百姓、以審判官的身份施行公義、參與政治宗教司法事務、作商業往來的證人（得4:4）與參與選擇國君等作用。BH 說長老是群體中受敬重的領袖，負責維持公義與秩序。'
+  relation: 本章讓長老站在一個很特別的位置上：他們既不是兇手，也不知道兇手是誰，卻要代表全城把這樁血案的責任接下來。經文要他們親手打折牛犢的頸項，再親口說出自己沒有流這人的血——動作與宣告是同一件事的兩面。第19至20節的逆子案則把父母的家務事移到他們面前，最後的裁決權在他們手上。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:19
+      - 申命記:21
+- title: 審判官
+  path: link_folder/原文/審判官.md
+  summary: '第2節「長老和審判官就要出去，從被殺的人那裡量起，直量到四圍的城邑」。STEP 顯示是 ve./sho.fe.Tei./kha（H8199，sha.phat: to judge），與同節的動作動詞 u./ma.de.Du（H4058，ma.dad: to measure）連著出現。CT：「『長老和審判官』指平時負責附近轄區的治安和審理案件的人」。BH 說長老通常是握有地方權柄的年長智者，審判官則是受派來解釋與施行律法的人；兩者同時出面顯示這件事的嚴重性，也顯示以色列社會裡民政與宗教職責交織在一起。'
+  relation: 這裡的審判官做的不是判案，而是量距離。案子本身沒有被告，判無可判，他們要決定的是責任落在哪一座城。經文把這個技術性的動作交給司法職分的人，等於宣告距離的測量本身就是一項裁決。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: '第5節「祭司利未的子孫要近前來；因為耶和華─你的神揀選了他們事奉他，奉耶和華的名祝福，所有爭訟毆打的事都要憑他們判斷」。STEP 顯示「事奉」是 le./Sha.re.T/o（H8334，sha.rat: to minister），「祝福」是 u./le./va.Rekh（H1288，ba.rakh: to bless），「爭訟」是 riv（H7379），「毆打」是 Na.ga（H5061），而「揀選」是 ba.Char（H977）。CT：「『祭司利未的子孫』意指從利未支派出來的祭司，故祭司乃是利未的子孫」，並說「祭司擁有最終判決權(參申十七9)，因為他們最親近神、最懂得神的心意。」BH 說利未人沒有像其他支派那樣得地業，耶和華自己就是他們的產業（民18:20-24），而他們的近前顯出他們在宗教與司法事務上的職權。'
+  relation: 本章給這個支派一個很短卻很密的定位：一句話裡並列三項職分——事奉、祝福、判斷。而他們近前來的場合並不是獻祭，是一樁沒有被告的血案；他們要在場，那道除罪程序才算數。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:17
+      - 申命記:21
+- title: 流無辜血的罪
+  path: link_folder/神學/流無辜血的罪.md
+  summary: '第8節長老的禱告「不要使流無辜血的罪歸在你的百姓以色列中間」，第9節收尾「你行耶和華眼中看為正的事，就可以從你們中間除掉流無辜血的罪」。STEP 顯示「無辜」是 na.Ki 與 ha./na.Ki（H5355A，na.qi: innocent），「血」是 dam（H1818），「除掉」是 te.va.Er（H1197I，ba.ar: to burn: purge）。CT：「『流無辜血的罪』意指：(1)流人血者必被問罪；(2)凡無法查明被害的原因，均視為無辜」，並說「『歸在你的百姓』暗示居民有責任提供安全的環境」。GT《申命記串珠聖經註釋》註「你的百姓」包括所有以色列人，不單是該城的居民。BH 說這個請求承認流無辜血是聖經律法裡極重的罪（創9:6），也指出這一整段的重點在群體責任。'
+  relation: 本章的處境是查不出兇手，因此沒有人能被問罪；經文的處理方式不是放掉，而是把責任落在最近的那座城，再由一隻母牛犢代死。第9節那句從你們中間除掉，因此不是宣告誰有罪，而是宣告地已經被清理過了。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:19
+      - 申命記:21
+- title: 贖罪
+  path: link_folder/神學/贖罪.md
+  summary: '第8節長老的禱告與結語各用一次同一個字根：命令式的 ka.Per（H3722A，ki.pher: to atone）與被動的 ve./nik.ka.Per；同節「你所救贖的」是 pa.Di.ta（H6299，pa.dah: to ransom）。GT《啟導本聖經申命記註釋》說：「殺死母牛犢不同於獻贖罪之祭，只是讓它擔負流人血的罪，使這罪不再歸到城中的百姓身上。」KC 講得更明白：「There is no atonement in the usual sense of the word here.」（這裡沒有一般意義上的贖罪。）他說牛犢的血什麼也沒有做，這是藉公義成就的贖罪，牛犢代替那位不知名的兇手死。BH 也說打折頸項而不是流血獻祭，正是這個禮儀與其他獻祭作法不同的地方。GT《聖經精讀本──申命記註解》的重點則在血上，引來9:22 說若不流血罪就不得赦免。'
+  relation: 這是一次沒有祭壇的贖罪：有牲畜、有代死、有宣告、有禱告，卻沒有把血獻上。同一個動詞在本章出現兩次，一次是人求神施行，一次是結果——流血的罪必得赦免。各家對這算不算獻祭意見不同，經文本身只說打折頸項。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:25
+      - 申命記:21
+- title: 長子名分
+  path: link_folder/主題/長子名分.md
+  summary: '第15至17節：人若有二妻，一為所愛一為所惡，而長子是所惡之妻生的，分產業時不可將所愛之妻生的兒子立為長子，卻要認所惡之妻生的為長子，將產業多加一分給他。STEP 顯示「多加一分」是 pi she.Na.yim（H6310K 加 H8147），字面是兩份的口；「立為長子」是動詞 le./va.Ker（H1069，ba.khar: to be/bear firstborn）；「力量強壯的時候」是 re.Shit o.N/o（H7225G 加 H202，on: strength）；「長子的名分」是 mish.Pat ha./be.kho.Rah（H4941H mish.pat 加 H1062 be.kho.rah）。CT 的原文字義也記下「多加一分(原文雙字)」二，雙(首字)；口(次字)、「名分」判決，判案，律例。GT《啟導本聖經申命記註釋》：「在東方社會，長子在家庭中享有特別地位，可從父親得雙分產業。」BH：「The double portion signifies the inheritance rights of the firstborn, which included a larger share of the father''s estate.」（雙份代表長子的繼承權，其中包括父親產業中較大的一份。）'
+  relation: 這一段是這個名分第一次被寫成明文法律：先前是家族裡發生的事，這裡成了父親不可違反的規定。CT 的話中之光把重點壓成一句：「長子就是長子，誰也不能改變這事實。」條文管的不是誰配得，而是父親的感情不可以改寫出生的次序。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 申21：18-21
+  path: link_folder/互文/申21：18-21.md
+  summary: '第18至21節：頑梗悖逆、屢懲不改又不聽從父母的兒子，父母要抓住他帶到本地的城門、本城的長老那裡，說明他頑梗悖逆、不聽從、是貪食好酒的人，本城的眾人就要用石頭將他打死。STEP 顯示「頑梗悖逆」是 so.Rer 與 u./mo.Reh（H5637 sa.rar 加 H4784 ma.rah，兩個都表示叛逆），「懲治」是 ve./yi.se.Ru（H3256，ya.sar: to discipline），「貪食好酒」是 zo.Lel 與 ve./so.Ve（H2151B za.lal 加 H5433B sa.va），「用石頭打死」是 U./re.ga.mu./hu（H7275，ra.gam: to stone）。CT：「『貪食好酒的人』意指好吃懶做、毫無用處的人」，並說根據猶太人的傳統，以色列的歷史上並沒有出現過這種案例。GT《申命記雷氏研讀本》：「根據猶太人的傳統，這懲罰從來沒有執行過，但卻少年罪案一個強大的制止力量！」，並指出最後的權威在於眾長老，而不是父親。GT《聖經精讀本──申命記註解》說污辱或輕看父母權威的人被視為破壞神的神聖創造位階秩序。BH 說石刑由全城的男丁執行，表明這是群體對罪的共同裁決。'
+  relation: 這一段把出埃及記只寫到死罪為止的那條線走完：這裡寫出完整的執行程序——誰指控、帶到哪裡、誰裁決、誰行刑。經文並把父母放在指控者的位置上，而不是行刑者的位置上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 當孝敬父母
+  path: link_folder/神學/當孝敬父母.md
+  summary: '第18節「人若有頑梗悖逆的兒子，不聽從父母的話，他們雖懲治他，他仍不聽從」，第20節父母對長老說「我們這兒子頑梗悖逆，不聽從我們的話」。STEP 顯示「不聽從」兩次都是 sha.ma（H8085H 與 H8085G，to hear: obey）加上 be./Kol（H6963A，qol: voice），字面是不聽父母的聲音。GT《啟導本聖經申命記註釋》說這是「違反十誡當孝敬父母的規定，因此要處死」。GT《聖經精讀本──申命記註解》說父母的權威是受十誡保障的人倫第一法則，是基於神的權威(出20:12)，污辱或輕看父母權威的人根據神的法律，要藉著公開的刑罰從共同體社會中被除去(出21:15,17;利20:9)。CT 引弗六2~3 指出神如此重視孝敬父母，因為人若不順服生身的父母，必然也不會順服造他的神。BH 說對父母的順從是十誡的根基之一，違逆不只是家庭問題，也威脅群體的安定。'
+  relation: 這一誡在本章走到了它最極端的一個案例。經文用的不是敬或不敬這種態度語言，而是聽或不聽這個動作——連續兩次的不聽從父母的聲音，加上懲治無效，才構成本段的條件。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: '第19節「父母就要抓住他，將他帶到本地的城門、本城的長老那裡」。STEP 顯示是 Sha.ar me.ko.M/o（H8179G，sha.ar: gate 加 H4725，ma.qom: place），字面是他那地方的城門。CT：「『城門』是古時以色列人審理案件、處裡公務的地方」；GT《申命記串珠聖經註釋》：「「城門」：以色列人審判的地方。」GT《啟導本聖經申命記註釋》也說「城門」是一地長老聽案件、判曲直的地方（看得四章）。BH 說城門是古代以色列法律交易、公告與集會的中心，把人帶到城門就表示啟動一項公開而正式的程序，並列出得4:1-11 與撒下15:2-6 作為同類記載。'
+  relation: 這一節的城門處理的是一件本來屬於家裡的事。父母抓住兒子，走到城門，事情就從管教變成審判；GT《申命記雷氏研讀本》指出最後的權威在於眾長老，而不是父親。城門在這裡是家與群體之間的那道門檻。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 把那惡從你們中間除掉（ba.ar）
+  path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
+  summary: '第21節「這樣，就把那惡從你們中間除掉，以色列眾人都要聽見害怕」。STEP 顯示是 u./vi.ar.Ta ha./Ra（H1197I，ba.ar: to burn: purge 加 H7451B，ra: bad: evil），與第9節除掉流無辜血的罪的 te.va.Er 是同一個動詞。CT 的原文字義註「那惡」壞的，惡的、「除掉」燃燒，消耗，並說『那惡』是指嚴重悖逆父母的惡行。BH 說這句話在申命記反覆出現，重點不只在刑罰，也在恢復與保護群體的屬靈完整，而後半句以色列眾人都要聽見害怕說明了嚇阻的目的。'
+  relation: 本章兩次用到這個動詞，位置很對稱：第9節除掉的是流無辜血的罪，第21節除掉的是那惡。一次是沒有人知道兇手，一次是全城都知道；同一個動作因此涵蓋了兩種極端的情況。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 掛在木頭上_懸屍示眾
+  path: link_folder/歷史/掛在木頭上_懸屍示眾.md
+  summary: '第22至23節：人若犯該死的罪被治死了，可以把他掛在木頭上，但屍首不可留在木頭上過夜，必要當日葬埋。STEP 顯示「掛」是 ve./ta.Li.ta（H8518，ta.lah: to hang），「屍首」是 niv.la.T/o（H5038，ne.ve.lah: carcass），「過夜」是 ta.Lin（H3885A，lun: to lodge），「必要葬埋」是 ka.Vor 加 tik.be.Re./nu（H6912，不定詞絕對式加未完成式的強調結構）。GT《申命記雷氏研讀本》：「絞刑不是常見的處死方法，不過人被治死後屍首會懸掛起來。」CT：「『掛在木頭上』指懸掛屍首示眾，用意在警戒眾人」，並說一般慣例屍體必須在日落以前取下(參書八29)、死屍被視為不潔(參利二十一1)。GT《聖經精讀本──申命記註解》說這是給屍體加上污辱與羞恥的刑罰(創40:19;民25:4)，是人所遭受最可怕的恥辱。BH 說當日埋葬的作法至今仍是猶太人的傳統。'
+  relation: 本章是這個作法的律法條文所在，並且規定了它的上限：可以示眾，但不可過夜。理由寫在同一節，是為了不玷污神所賜為業之地。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 被掛在木頭上與基督被掛在樹上_徒5_30_加3_13
+  path: link_folder/互文/被掛在木頭上與基督被掛在樹上_徒5_30_加3_13.md
+  summary: '第23節「因為被掛的人是在神面前受咒詛的」。STEP 顯示是 ki.Lat E.lo.Him ta.Lui（H7045，qe.la.lah: curse 加 H430G 加 H8518，ta.lah: to hang）。CT：「主耶穌被掛在木頭上，是為罪人成為咒詛(參加三13)」，並說主耶穌代替我們每一個當死的人被掛在木頭上，承受了我們當承受的恥辱和咒詛。GT《申命記串珠聖經註釋》說基督卻選擇了這種死法，藉此為世人除去咒詛。GT《聖經精讀本──申命記註解》說被掛在天地之間的屍體意味著為天地所離棄，不僅在人的咒詛之下，更是在神的咒詛之下，並說本節是藉著最恥辱的事件來啟示基督十字架奧秘的彌賽亞性句子。GT《馬唐納》指出主耶穌的屍首也不許留在十字架上過夜（參看約一九31）。BH 說被掛在木頭上是神審判的記號，保羅據此解釋基督為我們成了咒詛。'
+  relation: 本節是新約引用的那句話的出處。條文原本管的是屍體處理，四套註釋卻都在同一處轉向十字架；KC 把它列為髑髏地的第三個面向——神在使祂成為咒詛時必須撇棄祂。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: '這個字在本章第23節出現：「免得玷污了耶和華─你神所賜你為業之地」，STEP 顯示是 na.cha.Lah（H5159）。同章第16節分產業的動作則是同字根的動詞 han.chi.L/o（H5157，na.chal: to inherit）。另外值得留意的是第1節與第23節的「地」都是 a.da.Mah（H127G，a.da.mah: land: soil）。CT 說『免得玷污了…地』的理由是死屍被視為不潔(參利二十一1)。GT《啟導本聖經申命記註釋》說一個被定罪治死的人也是受神咒詛的人，把他懸屍示眾不可過夜，免得玷污土地，因土地乃神所賜。BH 說這片地是神給祂子民的聖潔禮物，也是祂與以色列立約的具體表徵。'
+  relation: 本章的第一節與最後一節都提到這片神所賜的地，而且兩處講的都是不可玷污它：開頭怕的是無主的血，結尾怕的是過夜的屍首。第16至17節的分產業則把同一個字根用在家庭內部——同一片地要按神定的次序傳下去。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
