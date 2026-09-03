@@ -1,0 +1,379 @@
+book: 申命記
+chapter: 27
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第1節「摩西和以色列的眾長老吩咐百姓說」。CT：這是《申命記》中首次記載摩西和眾長老一起向百姓說話，可能是摩西在臨死前有意使眾長老更多承擔職責。BH 說長老是各支派受敬重的領袖與代表，他們的參與顯出群體領導與共同責任，也顯出這道命令是立約更新程序的一部分。
+  relation: 本章三次開口的組合都不一樣：第1節摩西加眾長老，第9節摩西加祭司利未人，第11節摩西自己。長老出現在第一組，管的是石頭與壇那一段；祭司出現在第二組，管的是身分的宣告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第2、4、12節三次以過約但河為時間點：過河到了那地的當天要立石，過了河要把石頭立在以巴路山，過了河六個支派要站基利心山。STEP：hai./yar.Den（H3383）。BH 說約但河是曠野與迦南地之間的界線，過河象徵離開曠野、進入神的應許，與過紅海遙相呼應。
+  relation: 本條目前面幾章的約但河多半是地理位置或分地的界線；本章把它當成一個時間標記——過河那一天要做的第一件事不是打仗也不是分地，是立起寫著律法的石頭。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 基利心山與以巴路山
+  path: link_folder/地點/基利心山與以巴路山.md
+  summary: 第4節指定石頭與壇立在以巴路山，第12至13節指定六個支派站基利心山祝福、六個支派站以巴路山宣布咒詛。STEP：be./Har（H2022G）'ei.Val（H5858C）。CT：以巴路山距離約但河淺灘僅約29公里，它與基利心山對峙，兩山之間為極深的裂谷，以巴路山頂光禿荒涼，象徵禍患；至於基利心山，距約但河約48公里，地處示劍之南，全山林木茂盛，象徵有福氣。GT《啟導本聖經申命記註釋》：「林木茂盛的基利心山在南，是福氣的象徵；牛山濯濯的以巴路山在北，象徵禍患。」BH 說兩山在示劍附近形成一個天然的圓形劇場。KC 指出以巴路山在本章兩個主題裡都居中心。
+  relation: 申11:29 下的是命令，本章給的是執行細節：哪六個支派站哪一座山、利未人站在中間的山谷、百姓怎麼回答。值得注意的是立石、築壇、獻祭這一整套動作全都指定在以巴路山，也就是宣告咒詛的那一座。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:11
+      - 申命記:27
+- title: 築壇
+  path: link_folder/主題/築壇.md
+  summary: 第5至6節「在那裡要為耶和華─你的神築一座石壇；在石頭上不可動鐵器」。STEP：u./va.Ni.ta（H1129 ba.nah）miz.Be.ach（H4196）'a.va.Nim（H68G）。KC 指出記念碑旁邊立著一座壇——藉著碑上所寫的，神向人說話；藉著壇，人歸向神；凡如此全心對神的話說了是的人，就會想要獻祭。BH 說壇是敬拜與獻身的記號，延續了亞伯拉罕等列祖築壇的作法（創12:7）。
+  relation: 本條目前面收的築壇多半發生在列祖遇見神的地方；本章的壇是被命令建在一座指定的山上，而且與一份寫著律法的石碑並立。碑上是神對人的要求，壇上是人對神的回應。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 土壇
+  path: link_folder/神學/土壇.md
+  summary: '第5至6節重申出20:24-26 的規定：在石頭上不可動鐵器，要用沒有鑿過的石頭築壇。STEP：lo'' ta.Nif（H5130B，簡要詞典義 nuph: to wave，揮動）bar.Zel（H1270，鐵）；「沒有鑿過的石頭」是 ''a.va.Nim she.le.mOt（H68G＋H8003，簡要詞典義 sha.lem: complete）。CT：『不可動鐵器』即指不可切割、研磨和鑿劈，用意在保持渾然天成，避免人工的玷污（參出二十25）。GT《聖經精讀本──申命記註解》給兩個理由：不可為外在的美麗所震攝，乃要用心靈和誠實單單敬拜神；不能用可流人之血的鐵器等不潔淨的工具來雕鑿。GT《啟導本》說這祭壇和會幕的壇不只用處不同，形式也各異。KC 說壇必須照神所定的方式建造，不容人的加工。'
+  relation: 出20 是頒布十誡之後立刻給的規定，本章是進迦南時第一次實際執行它。原文用的形容詞是「完整的」石頭——不是說石頭沒有瑕疵，是說它沒有被人動過。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 燔祭
+  path: link_folder/神學/燔祭.md
+  summary: '第6節「在壇上要將燔祭獻給耶和華─你的神」。STEP：ve./ha.''a.Li.ta（H5927I）o.Lot（H5930A o.lah: burnt offering）。CT：『燔祭』指整個祭物須在祭壇上經過火燒，使馨香之氣上升，全部獻給神。KC 指出這裡沒有提到贖罪祭，只有燔祭與平安祭，因為這座壇上的祭是向神表達感恩；燔祭表明基督在十字架上的工作，是完全獻給神的。'
+  relation: 本條目累積過的燔祭多半在會幕或聖所的制度裡；本章的燔祭獻在一座剛用未鑿石頭堆起來的壇上，而且獻在宣告咒詛的那座山上。KC 特別點出這裡沒有贖罪祭——場合的重點不是處理罪，是表達感恩。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development: keep
+- title: 平安祭
+  path: link_folder/神學/平安祭.md
+  summary: 第7節「又要獻平安祭，且在那裡吃，在耶和華─你的神面前歡樂」。CT：『平安祭』此名詞在希伯來文表示「和好」或「福祉」，此祭為一私人的獻祭，所獻的可為感謝、還願或甘心獻的（參利七15~16），表明獻祭者對神的感恩、虔敬與奉獻，並藉此顯明神與人及人與鄰舍的和諧關係。GT《申命記串珠聖經註釋》說獻上燔祭和平安祭表示對神完全的奉獻，並藉著獻祭與神交通。KC 說平安祭表明基督在十字架上的工作，使神與祂百姓之間、以及神百姓彼此之間的交通成為可能。
+  relation: 這是本章唯一一件與吃有關的事，也是整場儀式裡唯一帶著歡樂的動作。它排在燔祭之後、兩山宣告咒詛之前——先把祭獻完、把飯吃完，才開始聽那十二句話。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 在耶和華面前歡樂
+  path: link_folder/主題/在耶和華面前歡樂.md
+  summary: 第7節「且在那裡吃，在耶和華─你的神面前歡樂」。CT 的原文字義：「歡樂」歡喜，快樂；話中之光說獻燔祭是承認神是賜恩的神，獻平安祭是確認他們已經在恩典裡，因為他們已經進入了神的應許。BH 說吃平安祭是群體的事，象徵與神、也與人的相交。
+  relation: 本條目前面幾次的歡樂都發生在中央聖所的節期裡；本章這一次發生在以巴路山——一座剛被指定為宣告咒詛的山上。歡樂與咒詛在同一場儀式、同一座山上前後相接。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 摩利橡樹
+  path: link_folder/背景/摩利橡樹.md
+  summary: CT 的背景註解：「以巴路山」位於迦南地交通中心示劍城的城北，靠近「摩利橡樹」（申十一30）；「摩利橡樹」是亞伯拉罕進入迦南時第一次停留的地方（參創十二6），神在這裡第一次應許「我要把這地賜給你的後裔」（創十二7），確認迦南就是應許之地。
+  relation: 本條目前面記的是亞伯拉罕在這裡第一次領受應許；本章記的是他的後裔在同一片地方立石、築壇、宣告祝福與咒詛。CT 由此說百姓在這裡舉行立約的儀式，也是宣告神對列祖應許的實現。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 示劍（城）
+  path: link_folder/地點/示劍（城）.md
+  summary: CT 的話中之光：在地理的環境上，基利心山和以巴路山是在迦南地的心臟地帶，在兩山之間有示劍城，那地是亞伯拉罕第一次築壇的地方，也是雅各正式承認神是祂的神的地。CT 的背景註解另指雅各也在這裡第一次為神築壇，正式承認神是以色列的神（參創三十三20）。BH 說兩山在示劍附近形成一個天然的圓形劇場。
+  relation: 本條目前面累積的都是創世記裡發生在示劍的事——亞伯拉罕的壇、雅各的壇、底拿的事、約瑟被差遣。本章是全書第一次把這個地方指定為全民族舉行立約儀式的所在，而且指定的時候他們還沒有進到那裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第9節「摩西和祭司利未人曉諭以色列眾人」、第14節「利未人要向以色列眾人高聲說」。GT《聖經精讀本──申命記註解》區分兩者：這裡的「利未人」並非指被規定站在基利心山上的一般利未支派，乃是指站在兩座山的中間、抬著約櫃、照摩西的話向站在兩邊的百姓大聲宣告祝福與咒詛的「利未支派的祭司」。CT 說第9節的『祭司利未人』指接續亞倫擔任大祭司的以利亞撒和他的兄弟以他瑪兩人。KC 說利未人在第14節出場，他們事奉、宣讀律法並加以解釋，指出不順從的後果。
+  relation: 本章讓利未支派同時出現在兩個位置：第12節利未名列站在基利心山祝福的六個支派之一，第14節利未人又站在中間向兩邊高聲宣告。GT《精讀本》正是為了處理這個看似矛盾才作出區分。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 立約
+  path: link_folder/主題/立約.md
+  summary: 第9至10節「你今日成為耶和華─你神的百姓了。所以要聽從耶和華─你神的話」。STEP：nih.Yei.ta（H1961，Niphal 第二人稱）le./'Am（H5971A）。CT：這裡並不是說今日才成為神的百姓，而是重申他們是神百姓的身分；他們是因為有立約百姓的地位，所以需要順服神，順服不是立約的前提，而是立約的結果。GT《啟導本聖經申命記註釋》：這裡記下的是重申神與以色列民立約的話，新一代像他們的上一代一樣，是神的子民，必須遵行神的誡命。
+  relation: 申26:17-19 是雙方各自宣告的形式，本章第9至10節是同一份約的另一種說法——不是你認我認，而是先宣告身分（你今日成為神的百姓了），再從那個身分推出要求（所以要聽從）。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 古代近東立約
+  path: link_folder/背景/古代近東立約.md
+  summary: GT《申命記串珠聖經註釋》：咒詛與祝福乃古時近東盟約的主要部分，臣屬若不忠於主人、背叛盟約，便遭受咒詛（受放逐、疾病、死亡等刑罰的恐嚇）；對那些忠信守約者，則應許興隆與祝福。BH 說把律法刻在石頭上，與古代近東把條約刻在石版或泥版上的作法相同。
+  relation: 申26 記的是條約的宣告形式（雙方各說一次），本章記的是條約的另外兩個常見部件——刻在石頭上的文本，以及當眾宣讀的咒詛條款。兩章合起來，這份約的形式就齊了。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 咒詛（a.rar 與 qa.vav）
+  path: link_folder/原文/咒詛（a.rar 與 qa.vav）.md
+  summary: '第15至26節每一項都以「必受咒詛」宣告。STEP：''a.Rur（H779，簡要詞典義 a.rar: to curse，Qal 被動分詞），十二項全部以這個字開頭。CT 也指出原文每句都以「咒詛」開頭。GT《申命記串珠聖經註釋》說這些咒詛都是對個人的良心而發的，以色列民聚在一起，公開地裁定這些惡行的罪。'
+  relation: 民22-24 的 a.rar 是巴蘭受雇要說卻說不出口的話；本章的 a.rar 是以色列自己站在山上，一句一句聽、一句一句答應下來的。同一個字，一邊是別人請不動的，一邊是自己領下來的。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:23
+      - 申命記:27
+- title: 不可為自己雕刻偶像
+  path: link_folder/神學/不可為自己雕刻偶像.md
+  summary: '第15節「有人製造耶和華所憎惡的偶像，或雕刻，或鑄造，就是工匠手所做的，在暗中設立，那人必受咒詛」。STEP：Fe.sel（H6459 pe.sel: idol）、u./ma.se.Khah（H4541A）、ma.''a.Seh ye.Dei cha.Rash（H4639G＋H3027G＋H2796，工匠手所做的）、ba./Sa.ter（H5643A se.ter: secrecy，在暗中）。GT《啟導本聖經申命記註釋》：製造偶像為十誡中的第一與第二誡的破壞。BH 指出偶像是人手所造的，本身沒有能力也沒有生命，這是聖經對偶像一貫的批判。'
+  relation: 第二誡本身沒有提到「在暗中」；本章這一項把它補上了。這也是十二項咒詛裡的第一項——CT 指出前十一項通常都是暗中進行的罪惡，而這一項就是起頭。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: 第15節「耶和華所憎惡的偶像」。STEP：to.'a.Vat（H8441 to.e.vah）。BH 說可憎這個詞在聖經裡用來形容神所厭惡的行為，這裡強調拜偶像不只是罪，而是神所極其憎惡的事，反映的是神的聖潔與祂對百姓專一的要求。
+  relation: 本條目在申命記裡管過敬拜的對象、祭物、食物、求問的方法、衣服、殿裡的錢與市場的法碼；本章回到最起點——雕刻與鑄造的偶像本身。而這一次它被放進一句要百姓回答阿們的咒詛裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 當孝敬父母
+  path: link_folder/神學/當孝敬父母.md
+  summary: 第16節「輕慢父母的，必受咒詛」。CT 的原文字義：「輕慢」輕視，羞辱；文意註解說『輕慢父母』指對父母不孝。GT《啟導本聖經申命記註釋》要讀者看出埃及記二十12注。BH 說在以色列社會裡家庭是根本單位，敬重父母對維持社會秩序與守約的忠誠都很關鍵；輕慢包括帶來羞辱的言行，是嚴重的冒犯。
+  relation: 第五誡是正面的命令（當孝敬），本章這一項是它的反面（輕慢的必受咒詛），而且是十二項裡緊接在偶像之後的第二項——先是對神的態度，再是對父母的態度。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 不可挪移地界（ge.vul）
+  path: link_folder/主題/不可挪移地界（ge.vul）.md
+  summary: 第17節「挪移鄰舍地界的，必受咒詛」。CT：『挪移鄰舍地界』指侵占別人的產業。GT《申命記串珠聖經註釋》：「挪移地界」即霸佔別人的土地。GT《聖經精讀本──申命記註解》：此律例禁止搶奪或侵犯他人的財產權。GT《啟導本聖經申命記註釋》在這一節指回申19:14。BH 說地界石標記產業，而地是神所賜的產業，挪動它不只是偷竊，也是違背神的約。
+  relation: 申19:14 是律法對人說不可以，本章是人自己開口說願這咒詛臨到做這事的人。而地界之所以能被偷偷挪動，正因為它是石頭做的界標，沒有人看著——這也是本章前十一項的共同點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:19
+      - 申命記:27
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: '第19節「向寄居的和孤兒寡婦屈枉正直的，必受咒詛」。STEP：ger（H1616，簡要詞典義 ger: sojourner）；同節「屈枉正直」是 ma.Teh mish.Pat（H5186 na.tah＋H4941H mish.pat）。CT：『寄居的和孤兒寡婦』都是屬於弱勢族群；『屈枉正直』指不顧事實而偏袒有權有勢的一方。GT《聖經精讀本──申命記註解》：寄居的和孤兒寡婦是舊約時代的三大弱勢群體，象徵著貧窮、柔弱而被欺壓的，為社會所疏離的人群。'
+  relation: 本條目前面幾章多半把寄居的寫在正面的命令裡（不可欺負、要愛他如己、要分給他）；本章第一次把它寫進一句咒詛——而且用的動詞與申16:19 對審判官說的「不可屈枉正直」完全相同。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 孤兒寡婦
+  path: link_folder/主題/孤兒寡婦.md
+  summary: 第19節「向寄居的和孤兒寡婦屈枉正直的，必受咒詛」。STEP：ya.Tom（H3490）、ve./'al.ma.Nah（H490）。CT 的原文字義：「屈枉」傾斜，折彎；「正直」正義，公正。BH 說在古代以色列，外人、孤兒與寡婦往往沒有保障、容易被剝削，照顧他們是舊約反覆出現的主題，也反映神作受欺壓者辯護人的性情。
+  relation: 本條目前面幾章給的是實際的供應（拾穗、十分之一、不可拿當頭）；本章給的是司法上的保障，而且形式是全民要回答阿們的公開咒詛。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 衣襟（ka.naph）
+  path: link_folder/原文/衣襟（ka.naph）.md
+  summary: 第20節「與繼母行淫的，必受咒詛！因為掀開他父親的衣襟」。CT 的原文字義：「行淫」同臥、睡覺；「掀開」揭開；文意註解說『繼母』在此代表一切骨肉親戚的配偶。GT《啟導本聖經申命記註釋》在這一節指回利未記18:8 與本書22:30。BH 說掀開父親的床所指的是侵犯了神聖的婚姻關係，在古代近東，婚床象徵夫妻之間排他的結合。
+  relation: 申22:30 用這句話當禁令的理由，本章用同一句話當咒詛的理由——同一個修辭在兩章之間從律法條文走進了公開宣告，而百姓要為它說阿們。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:22
+      - 申命記:27
+- title: 不可與獸淫合逆性的事
+  path: link_folder/主題/不可與獸淫合逆性的事.md
+  summary: 第21節「與獸淫合的，必受咒詛」。CT：『與獸淫合』是違逆神所創造的本性（參利二十15；羅一26~27）。GT《聖經精讀本──申命記註解》：獸奸罪與近親相奸罪、親男色者等一起是玷污這地的醜陋性犯罪，必須從以色列社會中除去（出22:19;利20:15,16）。GT《啟導本聖經申命記註釋》在這一節指回出埃及記二十二19與利未記十八23、二十15～16。BH 說在古代近東，獸交有時與異教的儀式和生殖崇拜有關，以色列被命令要遠離。
+  relation: 利18 是禁令，利20 是刑度，本章是咒詛。同一件事在兩卷書的三個篇章裡走了三種文體——從不可以，到該怎麼判，最後到百姓自己開口認下。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:18
+      - 利未記:20
+      - 申命記:27
+- title: 賄賂使智慧人的眼變瞎（sha.chad）
+  path: link_folder/原文/賄賂使智慧人的眼變瞎（sha.chad）.md
+  summary: 第25節「受賄賂害死無辜之人的，必受咒詛」。CT 的原文字義：「賄賂」贈送；「無辜」乾淨的，免罪；文意註解說這指審理案件的審判官或見證人，因有分於任何不正當的金錢授受，以致屈枉正直，使無辜的一方被定死罪，或含冤而死。GT《聖經精讀本──申命記註解》：此律例嚴禁殺人與之相關的受賄行為（出20:13;23:7,8）。BH 說在古代近東賄賂是常見的問題，往往導致腐敗與不義，而這一節把它推到最重的後果上。
+  relation: 申16:19 說賄賂會叫智慧人的眼變瞎，本章第25節說看不清楚的後果可以是一條人命。而同章第19節那句「屈枉正直」，STEP 顯示與申16:19 是同一組字（H5186 na.tah 配 H4941H mish.pat）。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:16
+      - 申命記:27
+- title: 流無辜血的罪
+  path: link_folder/神學/流無辜血的罪.md
+  summary: 第24至25節「暗中殺人的，必受咒詛」與「受賄賂害死無辜之人的，必受咒詛」。CT：『暗中殺人』指蓄意謀害人命，與意外人命事故不同（參民三十五15~16）；『受賄賂害死無辜之人』指使無辜的一方被定死罪，或含冤而死。BH 說暗中下手意味著預謀與怯懦，是群體內部的背叛，經文對此的厭惡與該隱殺亞伯的敘事一脈相承（創4:8-10）。
+  relation: 本條目前面幾章處理的是查得出來的血債（誤殺、曠野裡的屍首、掛在木頭上的屍體）；本章這兩節處理的是查不出來的——一種在暗中下手，一種假手法庭。正因為查不出來，才只能靠全體百姓開口說阿們。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 為定與廢去（qum 與 pa.rar）
+  path: link_folder/原文/為定與廢去（qum 與 pa.rar）.md
+  summary: '第2節「當天要立起幾塊大石頭」、第4節「將這些石頭立起來」與第26節「不堅守遵行這律法言語的」用的是同一個動詞。STEP：v2 va./ha.ke.mo.Ta（H6965I，簡要詞典義 qum: to arise: establish，使役語態第二人稱單數）、v4 ta.Ki.mu（H6965I，複數）、v26 ya.Kim（H6965I，第三人稱）。CT 的原文字義給第26節的「堅守」是堅守、堅立。'
+  relation: 民30 的 qum 講一個願能不能站得住；本章把同一個動詞用在石頭與話上，而且首尾呼應——開頭要百姓把石頭立起來，結尾咒詛那不把律法的話立起來的人。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:30
+      - 申命記:27
+- title: 講律法（ba.ar）
+  path: link_folder/原文/講律法（ba.ar）.md
+  summary: '第8節「你要將這律法的一切話明明的寫在石頭上」。STEP：ba.''Er（H874，簡要詞典義 ba.ar: to make plain）加 hei.Tev（H3190，簡要詞典義 ya.tav: be good），兩個不定詞連用；同一個 H874 也是申1:5「摩西…講律法」的那個動詞。CT 的原文字義：「明明的（原文雙字）」美好、令人滿意（首字）；清楚、使之明顯。KC 說要把律法的話寫得很清楚，好讓經過的人可以毫不費力地讀到（哈2:2），這也意味著不可從中減去或遺漏什麼。'
+  relation: 這個字在申命記只出現兩次，一次在全書開頭、一次在全書結尾的儀式裡。開卷時是摩西一個人把律法講明白，收卷時是全體百姓要把律法寫明白——同一個要求換了主詞，也從口說換成刻在石頭上。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:1
+      - 申命記:27
+- title: 不可咒罵聾子絆倒瞎子
+  path: link_folder/主題/不可咒罵聾子絆倒瞎子.md
+  summary: 第18節「使瞎子走差路的，必受咒詛」。GT《啟導本聖經申命記註釋》在這一節直接指回利未記19:14。GT《申命記串珠聖經註釋》：「使瞎子走差路」可象徵各種欺淩瞎子的行為。GT《聖經精讀本──申命記註解》：絆倒弱者或利用他們的弱點取利等在所有方面傷害、折磨弱者的行為，未能免受更加殘酷的律法之咒詛（利19:14）。CT：『使瞎子走差路』指代表故意欺騙瞎子的各種行為。BH 說這道咒詛點出保護與看顧弱者的道德責任，在古代近東，失明常與無助連在一起。
+  relation: 利19:14 是命令，本章是同一件事的咒詛版本。這一項與前後幾項有共同的形狀——受害的人看不見發生了什麼，所以只能靠全體百姓公開認下。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 近親性關係的十二項條例
+  path: link_folder/主題/近親性關係的十二項條例.md
+  summary: 第20、22、23節分別咒詛與繼母行淫、與同父或同母的姊妹行淫、與岳母行淫。GT《聖經精讀本──申命記註解》在20~23節下總註：這是與第七誡相關的對性犯罪的警告，本文尤其嚴禁了使神的神聖創造秩序極度紊亂的近親相奸罪與獸奸罪（利18:6~18;20:10~21）。GT《啟導本聖經申命記註釋》在這三節分別指回利未記18:8、18:9、18:17。CT 在三節分別指向利未記20:11-12、18:9、18:17，並說第22節是亂倫的行為、第23節是與母女兩人均有性關係，故不容許。
+  relation: 利18 那份十二項的清單，本章挑出其中三項放進咒詛裡，是十二項咒詛中佔比最高的一類。而 CT 指出前十一項通常都是暗中進行的罪惡——這三項正屬於最不容易被外人看見的那一種。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:18
+      - 利未記:20
+      - 申命記:27

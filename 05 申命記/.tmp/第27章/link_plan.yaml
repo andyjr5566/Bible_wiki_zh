@@ -1,0 +1,375 @@
+book: 申命記
+chapter: 27
+A_use_directly: []
+B_needs_update:
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第1節「摩西和以色列的眾長老吩咐百姓說」。CT：這是《申命記》中首次記載摩西和眾長老一起向百姓說話，可能是摩西在臨死前有意使眾長老更多承擔職責。BH
+    說長老是各支派受敬重的領袖與代表，他們的參與顯出群體領導與共同責任。
+  surfaces:
+  - phrase: 眾長老
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第2、4、12節三次「你們過了約但河」。STEP：hai./yar.Den（H3383）。BH 說約但河是曠野與迦南地之間的界線，過河象徵進入神的應許。
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 2
+    - 4
+    - 12
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 基利心山與以巴路山
+  suggested_type: 地點
+  evidence: 第4節（立石於以巴路山）、第12至13節（六支派站基利心山祝福、六支派站以巴路山宣布咒詛）。STEP：be./Har（H2022G）'ei.Val（H5858C）。CT：以巴路山距離約但河淺灘僅約29公里…它與基利心山對峙，兩山之間為極深的裂谷，以巴路山頂光禿荒涼，象徵禍患。GT《啟導本》：林木茂盛的基利心山在南，是福氣的象徵；牛山濯濯的以巴路山在北，象徵禍患。
+  match_type: exact
+  existing_title: 基利心山與以巴路山
+  existing_path: link_folder/地點/基利心山與以巴路山.md
+- name: 築壇
+  suggested_type: 主題
+  evidence: 第5至6節「在那裡要為耶和華─你的神築一座石壇」。STEP：u./va.Ni.ta（H1129 ba.nah）miz.Be.ach（H4196）'a.va.Nim（H68G）。KC
+    指出記念碑旁邊立著一座壇——藉著碑上所寫的，神向人說話；藉著壇，人歸向神。
+  surfaces:
+  - phrase: 築一座石壇
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 築壇
+  existing_path: link_folder/主題/築壇.md
+- name: 土壇
+  suggested_type: 神學
+  evidence: '第5節「在石頭上不可動鐵器」與第6節「要用沒有鑿過的石頭築耶和華─你神的壇」，與出20:24-26 的規定相同。STEP：v5 lo''
+    ta.Nif（H5130B，簡要詞典義 nuph: to wave）bar.Zel（H1270 鐵）；v6 ''a.va.Nim she.le.mOt（H68G＋H8003，簡要詞典義
+    sha.lem: complete）。CT 的原文字義：「動」揮動、搖動；「沒有鑿過」完整的；文意註解說『不可動鐵器』即指不可切割、研磨和鑿劈，用意在保持渾然天成，避免人工的玷污（參出二十25）。GT《聖經精讀本》給兩個理由：不可為外在的美麗所震攝，乃要用心靈和誠實單單敬拜神；不能用可流人之血的鐵器等不潔淨的工具來雕鑿。KC
+    說壇必須照神所定的方式建造，不容人的加工。'
+  surfaces:
+  - phrase: 沒有鑿過的石頭
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 土壇
+  existing_path: link_folder/神學/土壇.md
+- name: 燔祭
+  suggested_type: 神學
+  evidence: '第6節「在壇上要將燔祭獻給耶和華─你的神」。STEP：ve./ha.''a.Li.ta（H5927I）o.Lot（H5930A o.lah:
+    burnt offering）。CT：『燔祭』指整個祭物須在祭壇上經過火燒，使馨香之氣上升，全部獻給神。KC 指出這裡沒有提到贖罪祭，只有燔祭與平安祭。'
+  surfaces:
+  - phrase: 燔祭
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 燔祭
+  existing_path: link_folder/神學/燔祭.md
+- name: 平安祭
+  suggested_type: 神學
+  evidence: 第7節「又要獻平安祭，且在那裡吃」。CT：『平安祭』此名詞在希伯來文表示「和好」或「福祉」…表明獻祭者對神的感恩、虔敬與奉獻，並藉此顯明神與人及人與鄰舍的和諧關係。KC
+    說平安祭表明基督在十字架上的工作，使神與祂百姓之間、以及神百姓彼此之間的交通成為可能。
+  surfaces:
+  - phrase: 平安祭
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 平安祭
+  existing_path: link_folder/神學/平安祭.md
+- name: 在耶和華面前歡樂
+  suggested_type: 主題
+  evidence: 第7節「且在那裡吃，在耶和華─你的神面前歡樂」。CT 的原文字義：「歡樂」歡喜，快樂。BH 說吃平安祭是群體的事，象徵與神、也與人的相交，是為了與神和好而有的慶祝與感恩。
+  surfaces:
+  - phrase: 歡樂
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 在耶和華面前歡樂
+  existing_path: link_folder/主題/在耶和華面前歡樂.md
+- name: 摩利橡樹
+  suggested_type: 背景
+  evidence: CT 的背景註解：「以巴路山」位於迦南地交通中心示劍城的城北，靠近「摩利橡樹」（申十一30）；「摩利橡樹」是亞伯拉罕進入迦南時第一次停留的地方（參創十二6），神在這裡第一次應許「我要把這地賜給你的後裔」（創十二7）。
+  match_type: exact
+  existing_title: 摩利橡樹
+  existing_path: link_folder/背景/摩利橡樹.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: CT 的話中之光：基利心山和以巴路山是在迦南地的心臟地帶，在兩山之間有示劍城，那地是亞伯拉罕第一次築壇的地方，也是雅各正式承認神是祂的神的地。BH：兩山在示劍附近形成一個天然的圓形劇場。
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第9節「摩西和祭司利未人曉諭以色列眾人」、第14節「利未人要向以色列眾人高聲說」。GT《聖經精讀本──申命記註解》：「利未人」並非指被規定站在基利心山上的一般利未支派，乃是指站在兩座山的中間，抬著約櫃，照摩西的話向站在兩邊的百姓大聲宣告祝福與咒詛的「利未支派的祭司」。KC
+    說利未人在第14節出場，他們事奉、宣讀律法並加以解釋，指出不順從的後果。
+  surfaces:
+  - phrase: 利未人
+    verses:
+    - 9
+    - 14
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 立約
+  suggested_type: 主題
+  evidence: 第9至10節「你今日成為耶和華─你神的百姓了」。GT《啟導本聖經申命記註釋》：這裡記下的是重申神與以色列民立約的話。CT：這裡並不是說今日才成為神的百姓，而是重申他們是神百姓的身分；他們是因為有立約百姓的地位，所以需要順服神，順服不是立約的前提，而是立約的結果。
+  surfaces:
+  - phrase: 你今日成為耶和華─你神的百姓了
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 立約
+  existing_path: link_folder/主題/立約.md
+- name: 古代近東立約
+  suggested_type: 背景
+  evidence: GT《申命記串珠聖經註釋》：咒詛與祝福乃古時近東盟約的主要部分，臣屬若不忠於主人、背叛盟約，便遭受咒詛（受放逐、疾病、死亡等刑罰的恐嚇）；對那些忠信守約者，則應許興隆與祝福。BH
+    說把律法刻在石頭上，與古代近東把條約刻在石版或泥版上的作法相同。
+  match_type: exact
+  existing_title: 古代近東立約
+  existing_path: link_folder/背景/古代近東立約.md
+- name: 咒詛（a.rar 與 qa.vav）
+  suggested_type: 原文
+  evidence: '第15至26節每一項都以「必受咒詛」宣告。STEP：''a.Rur（H779，簡要詞典義 a.rar: to curse，Qal 被動分詞）。CT
+    指出原文每句都以這個字開頭。'
+  surfaces:
+  - phrase: 必受咒詛
+    verses:
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+  match_type: exact
+  existing_title: 咒詛（a.rar 與 qa.vav）
+  existing_path: link_folder/原文/咒詛（a.rar 與 qa.vav）.md
+- name: 不可為自己雕刻偶像
+  suggested_type: 神學
+  evidence: '第15節「有人製造耶和華所憎惡的偶像，或雕刻，或鑄造，就是工匠手所做的，在暗中設立」。STEP：Fe.sel（H6459 pe.sel:
+    idol）、u./ma.se.Khah（H4541A）、ma.''a.Seh ye.Dei cha.Rash（H4639G＋H3027G＋H2796，工匠手所做的）、ba./Sa.ter（H5643A
+    se.ter: secrecy）。GT《啟導本》：製造偶像為十誡中的第一與第二誡的破壞。'
+  surfaces:
+  - phrase: 或雕刻，或鑄造
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 不可為自己雕刻偶像
+  existing_path: link_folder/神學/不可為自己雕刻偶像.md
+- name: 可憎的物（to.e.vah）
+  suggested_type: 原文
+  evidence: 第15節「耶和華所憎惡的偶像」。STEP：to.'a.Vat（H8441 to.e.vah）。BH 說「可憎」一詞在聖經裡用來形容神所厭惡的行為，這裡強調拜偶像不只是罪，而是神所極其憎惡的事。
+  surfaces:
+  - phrase: 所憎惡的
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 可憎的物（to.e.vah）
+  existing_path: link_folder/原文/可憎的物（to.e.vah）.md
+- name: 當孝敬父母
+  suggested_type: 神學
+  evidence: 第16節「輕慢父母的，必受咒詛」。CT 的原文字義：「輕慢」輕視，羞辱；文意註解說『輕慢父母』指對父母不孝。GT《啟導本》要讀者看出埃及記二十12注。BH
+    說在以色列社會裡家庭是根本單位，敬重父母對維持社會秩序與守約的忠誠都很關鍵。
+  surfaces:
+  - phrase: 輕慢父母的
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+- name: 不可挪移地界（ge.vul）
+  suggested_type: 主題
+  evidence: 第17節「挪移鄰舍地界的，必受咒詛」。CT：『挪移鄰舍地界』指侵占別人的產業。GT《串珠》：「挪移地界」即霸佔別人的土地。GT《聖經精讀本》：此律例禁止搶奪或侵犯他人的財產權。BH
+    說地是神所賜的產業，改動地界不只是偷竊，也是違背神的約。
+  surfaces:
+  - phrase: 挪移鄰舍地界的
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 不可挪移地界（ge.vul）
+  existing_path: link_folder/主題/不可挪移地界（ge.vul）.md
+- name: 寄居的
+  suggested_type: 原文
+  evidence: 第19節「向寄居的和孤兒寡婦屈枉正直的，必受咒詛」。CT：『寄居的和孤兒寡婦』都是屬於弱勢族群；『屈枉正直』指不顧事實而偏袒有權有勢的一方。GT《聖經精讀本》：寄居的和孤兒寡婦是舊約時代的三大弱勢群體。
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
+- name: 孤兒寡婦
+  suggested_type: 主題
+  evidence: 第19節。CT 的原文字義：「屈枉」傾斜，折彎；「正直」正義，公正。BH 說在古代以色列，外人、孤兒與寡婦往往沒有保障，容易被剝削，照顧他們是舊約反覆出現的主題。
+  surfaces:
+  - phrase: 孤兒寡婦
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 孤兒寡婦
+  existing_path: link_folder/主題/孤兒寡婦.md
+- name: 衣襟（ka.naph）
+  suggested_type: 原文
+  evidence: 第20節「與繼母行淫的，必受咒詛！因為掀開他父親的衣襟」。CT 的原文字義：「掀開」揭開；文意註解說『繼母』在此代表一切骨肉親戚的配偶。BH
+    說掀開父親的床所指的是侵犯了神聖的婚姻關係。
+  surfaces:
+  - phrase: 掀開他父親的衣襟
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 衣襟（ka.naph）
+  existing_path: link_folder/原文/衣襟（ka.naph）.md
+- name: 不可與獸淫合逆性的事
+  suggested_type: 主題
+  evidence: 第21節「與獸淫合的，必受咒詛」。CT：『與獸淫合』是違逆神所創造的本性（參利二十15；羅一26~27）。GT《聖經精讀本》：獸奸罪與近親相奸罪、親男色者等一起是玷污這地的醜陋性犯罪，必須從以色列社會中除去（出22:19;利20:15,16）。BH
+    說在古代近東，獸交有時與異教的儀式和生殖崇拜有關，以色列被命令要遠離。
+  surfaces:
+  - phrase: 與獸淫合的
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 不可與獸淫合逆性的事
+  existing_path: link_folder/主題/不可與獸淫合逆性的事.md
+- name: 賄賂使智慧人的眼變瞎（sha.chad）
+  suggested_type: 原文
+  evidence: 第25節「受賄賂害死無辜之人的，必受咒詛」。CT 的原文字義：「賄賂」贈送；「無辜」乾淨的，免罪；文意註解說這指審理案件的審判官或見證人，因有分於任何不正當的金錢授受，以致屈枉正直。GT《聖經精讀本》：此律例嚴禁殺人與之相關的受賄行為（出20:13;23:7,8）。
+  surfaces:
+  - phrase: 受賄賂
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 賄賂使智慧人的眼變瞎（sha.chad）
+  existing_path: link_folder/原文/賄賂使智慧人的眼變瞎（sha.chad）.md
+- name: 流無辜血的罪
+  suggested_type: 神學
+  evidence: 第24至25節「暗中殺人的」與「受賄賂害死無辜之人的」。CT：『暗中殺人』指蓄意謀害人命，與意外人命事故不同（參民三十五15~16）。BH
+    說暗中下手意味著預謀與怯懦，是群體內部的背叛，經文對此的厭惡與該隱殺亞伯的敘事一脈相承。
+  surfaces:
+  - phrase: 害死無辜之人的
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 流無辜血的罪
+  existing_path: link_folder/神學/流無辜血的罪.md
+- name: 為定與廢去（qum 與 pa.rar）
+  suggested_type: 原文
+  evidence: '第2節「當天要立起幾塊大石頭」與第26節「不堅守遵行這律法言語的」是同一個動詞。STEP：v2 va./ha.ke.mo.Ta（H6965I，簡要詞典義
+    qum: to arise: establish，使役語態第二人稱單數）、v4 ta.Ki.mu（H6965I，使役語態複數）、v26 ya.Kim（H6965I，使役語態第三人稱，本節語境義是把這律法的話立住）。CT
+    的原文字義給第26節的「堅守」是堅守、堅立。'
+  surfaces:
+  - phrase: 不堅守遵行這律法言語的
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 為定與廢去（qum 與 pa.rar）
+  existing_path: link_folder/原文/為定與廢去（qum 與 pa.rar）.md
+- name: 講律法（ba.ar）
+  suggested_type: 原文
+  evidence: '第8節「你要將這律法的一切話明明的寫在石頭上」。STEP：ba.''Er（H874，簡要詞典義 ba.ar: to make plain）加
+    hei.Tev（H3190，簡要詞典義 ya.tav: be good），兩個不定詞連用；同一個 H874 也是申1:5「摩西…講律法」的那個動詞。CT 的原文字義：「明明的（原文雙字）」美好、令人滿意（首字）；清楚、使之明顯。KC
+    說要把律法的話寫得很清楚，好讓經過的人可以毫不費力地讀到（哈2:2）。'
+  surfaces:
+  - phrase: 明明的
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 講律法（ba.ar）
+  existing_path: link_folder/原文/講律法（ba.ar）.md
+- name: 不可咒罵聾子絆倒瞎子
+  suggested_type: 主題
+  evidence: 第18節「使瞎子走差路的，必受咒詛」。GT《啟導本聖經申命記註釋》直接指向利未記19:14。GT《申命記串珠聖經註釋》：「使瞎子走差路」可象徵各種欺淩瞎子的行為。GT《聖經精讀本──申命記註解》：絆倒弱者或利用他們的弱點取利等在所有方面傷害、折磨弱者的行為，未能免受更加殘酷的律法之咒詛（利19:14）。CT：『使瞎子走差路』指代表故意欺騙瞎子的各種行為。BH
+    說這道咒詛點出保護與看顧弱者的道德責任，在古代近東，失明常與無助連在一起。
+  surfaces:
+  - phrase: 使瞎子走差路的
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 不可咒罵聾子絆倒瞎子
+  existing_path: link_folder/主題/不可咒罵聾子絆倒瞎子.md
+- name: 近親性關係的十二項條例
+  suggested_type: 主題
+  evidence: 第20、22、23節分別咒詛與繼母行淫、與同父或同母的姊妹行淫、與岳母行淫。GT《聖經精讀本──申命記註解》在20~23節下總註：這是與第七誡相關的對性犯罪的警告，本文尤其嚴禁了使神的神聖創造秩序極度紊亂的近親相奸罪與獸奸罪（利18:6~18;20:10~21）。GT《啟導本》在三節分別指向利未記18:8、18:9、18:17。CT
+    在三節分別指向利未記20:11-12、18:9、18:17，並說『繼母』在此代表一切骨肉親戚的配偶。
+  surfaces:
+  - phrase: 與繼母行淫的
+    verses:
+    - 20
+  - phrase: 與異母同父，或異父同母的姊妹行淫的
+    verses:
+    - 22
+  - phrase: 與岳母行淫的
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 近親性關係的十二項條例
+  existing_path: link_folder/主題/近親性關係的十二項條例.md
+C_new_formal:
+- name: 立石寫律法的儀式
+  suggested_type: 主題
+  evidence: 第1至8節。GT《啟導本聖經申命記註釋》：立石，把話寫在石頭上，以昭永志，是古代中東的普通做法。GT《聖經精讀本──申命記註解》：此儀式是象徵性行為，用肉眼可視之物宣告了神的統治權將實實在在地臨到迦南地。KC
+    說進入那地的第一個動作，就是要立起一份對律法的記念。
+  surfaces:
+  - phrase: 把這律法的一切話寫在石頭上
+    verses:
+    - 3
+  target_path: link_folder/主題/立石寫律法的儀式.md
+- name: 墁上石灰（sid）
+  suggested_type: 原文
+  evidence: '第2節與第4節都說「墁上石灰」。STEP：動詞 ve./sad.Ta（H7874，簡要詞典義 sid: to whitewash）配名詞
+    ba./Sid（H7875，簡要詞典義 sid: lime），是同一字根的動詞與名詞。CT：在石頭上墁上石灰，是為了寫上字後更顯清晰。GT《申命記雷氏研讀本》：「石灰」借烘石膏而得，石膏可採於約但和死海的河谷。BH
+    說用灰泥塗抹石面是為了做出可書寫的平滑表面，這作法有該地區的考古發現支持。'
+  surfaces:
+  - phrase: 墁上石灰
+    verses:
+    - 2
+    - 4
+  target_path: link_folder/原文/墁上石灰（sid）.md
+- name: 兩山宣告祝福與咒詛的儀式
+  suggested_type: 主題
+  evidence: 第11至13節。GT《啟導本聖經申命記註釋》：各支派代表站定，由利未人祭司向眾宣讀15～26節所記的咒詛；代表十二支派立在兩山上的人，每聽完一個咒詛，都齊聲說一句「阿們」，表示同意。CT：在摩西吩咐以色列人的安排上，沒有提到祝福的內容，但顯然的是把祝福放在咒詛的前頭。KC
+    說神先把祝福擺在祂百姓面前，賜福給祂的百姓一直是祂心裡的意思。
+  surfaces:
+  - phrase: 為百姓祝福
+    verses:
+    - 12
+  target_path: link_folder/主題/兩山宣告祝福與咒詛的儀式.md
+  semantic_hint:
+  - title: 基利心山與以巴路山
+    score: 0.462
+    type: 地點
+  - title: 祝福與咒詛
+    score: 0.428
+    type: 主題
+- name: 十二項咒詛與百姓的阿們
+  suggested_type: 主題
+  evidence: 第14至26節。STEP：每一項都以 'a.Rur（H779 a.rar，被動分詞）開頭，每一項都以 'a.Men（H543）作結。CT：15~26節列出了十二條咒詛作為代表，原文每句都以「咒詛」開頭…前十一項通常都是「暗中」進行的罪惡，第十二項泛指所有的罪惡。GT《聖經精讀本》詳述「阿們」的字源與用法。KC：Even
+    if a disobedience takes place secretly (verses 15,24), the curse will hit its
+    mark。
+  surfaces:
+  - phrase: 阿們
+    verses:
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+  target_path: link_folder/主題/十二項咒詛與百姓的阿們.md
+  semantic_hint:
+  - title: 咒詛你的我必咒詛他（創12：3）
+    score: 0.406
+    type: 互文
+D_new_candidate: []
+E_skip: []
