@@ -1,0 +1,210 @@
+book: 申命記
+chapter: 22
+A_use_directly: []
+B_needs_update:
+- name: 愛鄰舍與仇敵
+  suggested_type: 主題
+  evidence: v1-4 三次「不可佯為不見」。CT 話中之光：「『弟兄』指以色列人，但神百姓憐恤的對象不但是弟兄，也包括仇敵(出二十三4-5；太五44)」；GT《啟導本》：「1～4節的例也見《出埃及記》二十三4～5。這是將守望相助的精神推廣擴大到整個社會，連對待仇敵也應如此」；KC：「What
+    applies in the case of an enemy (Exo 23:4), applies all the more to a brother.」
+  surfaces:
+  - phrase: 不可佯為不見
+  match_type: exact
+  existing_title: 愛鄰舍與仇敵
+  existing_path: link_folder/主題/愛鄰舍與仇敵.md
+- name: 可憎的物（to.e.vah）
+  suggested_type: 原文
+  evidence: 'v5「因為這樣行都是耶和華─你神所憎惡的」。STEP：תוֹעֲבַת to.''a.Vat（H8441，to.e.vah: abomination）。BH：「The
+    use of the word "detestable" indicates the seriousness with which God views the
+    violation of His created order.」'
+  surfaces:
+  - phrase: 所憎惡的
+  match_type: exact
+  existing_title: 可憎的物（to.e.vah）
+  existing_path: link_folder/原文/可憎的物（to.e.vah）.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: 'v9「都要充公」。STEP：תִּקְדַּשׁ tik.Dash（H6942I，qa.dash: to consecrate: forfeit）。GT《申命記串珠聖經註釋》：「「充公」：原是「成聖」：指交去聖所。」'
+  surfaces:
+  - phrase: 充公
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 不可使異類混雜（牲畜種子衣料）
+  suggested_type: 主題
+  evidence: 'v9-11 三道禁令與利19:19 同型。CT：「本段(9~11節)經文的用意，乃在維持信仰的純潔，不可兼容併蓄(參利十九19註解)」；GT《啟導本》：「兩種種子放在一道生長，可破壞品種的純正」；STEP
+    v9：כִּלְאָיִם kil.''A.yim（H3610，kil.a.yim: mixture）。'
+  surfaces:
+  - phrase: 兩樣種子
+  - phrase: 兩樣攙雜料
+  match_type: exact
+  existing_title: 不可使異類混雜（牲畜種子衣料）
+  existing_path: link_folder/主題/不可使異類混雜（牲畜種子衣料）.md
+- name: 潔淨與不潔淨
+  suggested_type: 神學
+  evidence: v10「不可並用牛、驢耕地」。CT：「牛是潔淨的牲畜，驢是不潔淨的牲畜(參申十四4~8)」；BH：「The ox is a clean animal
+    according to Levitical law (Leviticus 11:3), while the donkey is considered unclean
+    (Leviticus 11:4).」；KC：「An ox is a clean animal and a donkey is an unclean animal.」
+  surfaces:
+  - phrase: 牛、驢
+    verses:
+    - 10
+  match_type: exact
+  existing_title: 潔淨與不潔淨
+  existing_path: link_folder/神學/潔淨與不潔淨.md
+- name: 衣服邊的繸子與藍細帶子
+  suggested_type: 文化
+  evidence: 'v12「你要在所披的外衣上四圍做繸子」。STEP：גְּדִלִים ge.di.Lim（H1434，ge.dil: tassel）。GT《啟導本》：「在外衣上作“繸子”，有提醒穿的人常守律法的作用(民十五38～39)，也是民族服裝的一個特色。」BH
+    把這做法追到民15:37-41。'
+  surfaces:
+  - phrase: 繸子
+  match_type: exact
+  existing_title: 衣服邊的繸子與藍細帶子
+  existing_path: link_folder/文化/衣服邊的繸子與藍細帶子.md
+- name: 流無辜血的罪
+  suggested_type: 神學
+  evidence: 'v8「免得有人從房上掉下來，流血的罪就歸於你家」。STEP：דָּמִים da.Mim（H1818，dam: blood，複數）。BH：「Bloodguilt
+    refers to the responsibility for shedding innocent blood, a serious offense in
+    biblical law.」GT《啟導本》：「“流血的罪”看十九9；二十一1注。」'
+  surfaces:
+  - phrase: 流血的罪
+  match_type: exact
+  existing_title: 流無辜血的罪
+  existing_path: link_folder/神學/流無辜血的罪.md
+- name: 當孝敬父母
+  suggested_type: 神學
+  evidence: v7「這樣你就可以享福，日子得以長久」。KC：「By the addition "that it may be well with you
+    and that you may prolong your days", there is a connection between this regulation
+    and the fifth commandment, that of honoring father and mother. A similar addition
+    is given to the fifth commandment (Deu 5:16).」BH：「It is reminiscent of the fifth
+    commandment in Exodus 20:12, which promises long life for honoring one's parents.」
+  surfaces:
+  - phrase: 日子得以長久
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 當孝敬父母
+  existing_path: link_folder/神學/當孝敬父母.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: v15-18 長老受理貞潔憑據的訴訟並執行懲治。BH：「The city elders were respected leaders and
+    judges within the community, often sitting at the city gate to conduct legal and
+    civic matters.」GT《啟導本》：「在希伯來人社會中，女子的爭訟都由父親或丈夫出面擔負責任。」
+  surfaces:
+  - phrase: 長老
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 城門口公共場合
+  suggested_type: 歷史
+  evidence: v15「帶到本城門長老那裡」、v24「把這二人帶到本城門」。BH：「The city gate was not only a physical
+    entry point but also a central place for public gatherings, legal proceedings,
+    and commerce.」並引 得4:1-2、箴31:23。
+  surfaces:
+  - phrase: 本城門
+  match_type: exact
+  existing_title: 城門口公共場合
+  existing_path: link_folder/歷史/城門口公共場合.md
+- name: 舍客勒
+  suggested_type: 原文
+  evidence: v19「罰他一百舍客勒銀子」、v29「拿五十舍客勒銀子」。CT：「罰款一百舍客勒銀子(參19節)，約折合1150公克重，是女子聘禮身價的兩倍(參29節)」、「『五十舍客勒』約折合575公克」；GT《雷氏研讀本》：「罰款約相等於四十八安士(1.1千克)的銀子。」
+  surfaces:
+  - phrase: 舍客勒
+  match_type: exact
+  existing_title: 舍客勒
+  existing_path: link_folder/原文/舍客勒.md
+- name: 不可姦淫
+  suggested_type: 神學
+  evidence: v22「就要將姦夫淫婦一併治死」。GT《啟導本》：「希伯來人執行“不可姦淫”(出二十14)的誡命，只適用於男子與有夫之婦或與已受聘(訂婚)的女子行淫(利二十10；申二十二22～24,28～29)。」BH
+    也把本節接回出20:14。
+  surfaces:
+  - phrase: 姦夫淫婦
+  match_type: exact
+  existing_title: 不可姦淫
+  existing_path: link_folder/神學/不可姦淫.md
+- name: 引誘處女的律例
+  suggested_type: 事件
+  evidence: v28-29 與出22:16-17 是同一組案例的兩面。CT 話中之光：「男子沒有不娶的權力，但女子卻有拒絕的權力(出二十二16-17)」；GT《啟導本》列出污辱未許配女子的三項後果並註「女家若不許女兒嫁他，不可索還聘禮(出二十二16～17)」；KC
+    也整段引出22:16-17 作補充。
+  surfaces:
+  - phrase: 沒有許配人的處女
+  match_type: exact
+  existing_title: 引誘處女的律例
+  existing_path: link_folder/事件/引誘處女的律例.md
+- name: 不可同日宰母和子
+  suggested_type: 主題
+  evidence: v6「母鳥伏在雛上或在蛋上」。GT《聖經精讀本──申命記註解》註本節時把根據放在同一組律例上：「雖然律法賦予人掌管自然界的特權,但人總要根據神的慈愛與憐憫、維持、保護自然界(出23:19;利22:28)。」利22:28
+    正是不可同日宰母和子的條例。
+  surfaces:
+  - phrase: 母鳥
+  match_type: exact
+  existing_title: 不可同日宰母和子
+  existing_path: link_folder/主題/不可同日宰母和子.md
+C_new_formal:
+- name: 男女不可易服的條例
+  suggested_type: 主題
+  evidence: 'v5「婦女不可穿戴男子所穿戴的，男子也不可穿婦女的衣服」。STEP：כְלִי khe.li（H3627，ke.li: article/utensil）與
+    שִׂמְלַת sim.Lat（H8071，sim.lah: mantle）。GT 艾基斯《舊約聖經難題彙編》整篇討論 keli 與 simlah 的字義範圍；GT《雷氏研讀本》：「在當時的社會，男性和女性的服裝十分相似」；GT《啟導本》講迦南異教儀式男女易服；KC
+    談創造次序與公開的表現。'
+  surfaces:
+  - phrase: 婦女不可穿戴男子所穿戴的
+  target_path: link_folder/主題/男女不可易服的條例.md
+- name: 放母取雛的鳥窩條例
+  suggested_type: 主題
+  evidence: 'v6-7「不可連母帶雛一併取去。總要放母，只可取雛」。STEP：קַן kan（H7064，qen: nest）、צִפּוֹר tzi.Por（H6833，tsip.por:
+    bird）、שַׁלֵּחַ תְּשַׁלַּח sha.Le.ach te.sha.Lach（H7971H，不定詞加強式）。CT：「取雛不取母，使生命可以延續」；GT《串珠》：「人不可以滅絕神在自然界中所造之物，須保護自然資源」；KC
+    從母性感情讀；BH 講永續與憐憫。'
+  surfaces:
+  - phrase: 不可連母帶雛一併取去
+  - phrase: 總要放母
+  target_path: link_folder/主題/放母取雛的鳥窩條例.md
+- name: 房上安欄杆的條例
+  suggested_type: 主題
+  evidence: 'v8「你若建造房屋，要在房上的四圍安欄杆」。STEP：מַעֲקֶה ma.''a.Keh（H4624，ma.a.qeh: parapet）、גַּג
+    ga.Ge（H1406，gag: roof）。CT：「古時以色列人的房頂是平的，屋外有梯階可上房頂，供人休憩(參書二6)」；GT《精讀本》：「據猶大傳承,此時欄杆的高度當約有1米左右」；KC
+    讀成對新人的照顧；BH 講 bloodguilt。'
+  surfaces:
+  - phrase: 安欄杆
+  target_path: link_folder/主題/房上安欄杆的條例.md
+- name: 貞潔的憑據
+  suggested_type: 文化
+  evidence: 'v14-20 反覆出現「貞潔的憑據」。STEP：בְּתוּלִים be.tu.Lim（H1331，be.tu.lim: virginity，複數）。GT《啟導本》給了兩種說法：「“貞潔的憑據”可指初夜的落紅。也有人說是指結婚前仍有月事，以證明結婚時並未懷孕，確屬童貞」；GT《精讀本》：「就古代猶大的風俗而言,這是女子可證明其貞潔的唯一證據」；BH：「a
+    cloth with bloodstains from the wedding night, which was kept as evidence of the
+    bride''s virginity」。'
+  surfaces:
+  - phrase: 貞潔的憑據
+  target_path: link_folder/文化/貞潔的憑據.md
+- name: 誣告妻子不貞的三種懲罰
+  suggested_type: 主題
+  evidence: v18-19。GT《精讀本》：「記錄了誣告妻子尚未出嫁時有失貞潔的丈夫所要受到的三種刑罰」，即公開杖刑、罰一百舍客勒、終身剝奪休妻權；CT
+    逐項列同樣三點；GT《雷氏研讀本》：「“懲治他”的方法是鞭打他四十下(比較二五3)」；BH：「This lifelong commitment was a
+    safeguard against further injustice.」
+  surfaces:
+  - phrase: 將醜名加在他身上
+  - phrase: 終身不可休他
+    verses:
+    - 19
+  target_path: link_folder/主題/誣告妻子不貞的三種懲罰.md
+- name: 城裡與田野對強姦案的判定
+  suggested_type: 主題
+  evidence: v23-27。GT《精讀本》：「此律例規定了若已許配人的女子遭到強姦時,可根據是在城內(23,24節)還是在城外(25-27節)來判斷是有罪還是無罪」；CT：「『在城裡』指人煙眾多的場所；『沒有喊叫』指默許事情發生」；KC：「In
+    the city, someone who is engaged is not in as great a danger.」；BH 把 v26 的類比讀成「This
+    comparison to murder underscores the severity of the crime and the innocence of
+    the victim.」
+  surfaces:
+  - phrase: 雖在城裡卻沒有喊叫
+    verses:
+    - 24
+  - phrase: 在田野遇見
+  target_path: link_folder/主題/城裡與田野對強姦案的判定.md
+- name: 衣襟（ka.naph）
+  suggested_type: 原文
+  evidence: 'v30「不可掀開他父親的衣襟」與 v12「外衣上四圍」在 STEP 是同一個字：כְּנַף ke.Naf 與 כַּנְפוֹת kan.Fot，都是
+    H3671（ka.naph: wing）。CT：「『掀開他父親的衣襟』指侵犯父親的婚姻關係(參得三9)」；GT《啟導本》：「男子把衣襟覆在女子身上象徵婚姻關係(得三9；結十六8)」。'
+  surfaces:
+  - phrase: 衣襟
+  - phrase: 四圍
+    verses:
+    - 12
+  target_path: link_folder/原文/衣襟（ka.naph）.md
+D_new_candidate: []
+E_skip: []

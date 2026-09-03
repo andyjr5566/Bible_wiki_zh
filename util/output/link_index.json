@@ -1055,6 +1055,16 @@
     "status": "formal",
     "aliases": []
   },
+  "城裡與田野對強姦案的判定": {
+    "path": "link_folder/主題/城裡與田野對強姦案的判定.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "城裡與田野對強姦案的判定",
+    "status": "formal",
+    "aliases": [
+      "城裡與田野的區分"
+    ]
+  },
   "基土拉的地位": {
     "path": "link_folder/主題/基土拉的地位.md",
     "type": "主題",
@@ -1790,6 +1800,18 @@
       "開玩笑"
     ]
   },
+  "房上安欄杆的條例": {
+    "path": "link_folder/主題/房上安欄杆的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "房上安欄杆的條例",
+    "status": "formal",
+    "aliases": [
+      "房上的欄杆"
+    ]
+  },
   "房屋大痲瘋的診斷與潔淨條例": {
     "path": "link_folder/主題/房屋大痲瘋的診斷與潔淨條例.md",
     "type": "主題",
@@ -1999,6 +2021,16 @@
     "title": "支搭帳棚",
     "status": "formal",
     "aliases": []
+  },
+  "放母取雛的鳥窩條例": {
+    "path": "link_folder/主題/放母取雛的鳥窩條例.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "放母取雛的鳥窩條例",
+    "status": "formal",
+    "aliases": [
+      "不可連母帶雛一併取去"
+    ]
   },
   "敬拜": {
     "path": "link_folder/主題/敬拜.md",
@@ -2563,6 +2595,18 @@
     "title": "田角拾穗顧念窮人的條例",
     "status": "formal",
     "aliases": []
+  },
+  "男女不可易服的條例": {
+    "path": "link_folder/主題/男女不可易服的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "男女不可易服的條例",
+    "status": "formal",
+    "aliases": [
+      "不可穿戴異性服飾"
+    ]
   },
   "異樣的香與香壇的禁令": {
     "path": "link_folder/主題/異樣的香與香壇的禁令.md",
@@ -3326,6 +3370,16 @@
     "status": "formal",
     "aliases": [
       "你的道"
+    ]
+  },
+  "誣告妻子不貞的三種懲罰": {
+    "path": "link_folder/主題/誣告妻子不貞的三種懲罰.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "誣告妻子不貞的三種懲罰",
+    "status": "formal",
+    "aliases": [
+      "誣告妻子不貞"
     ]
   },
   "誰也不可出自己的房門": {
@@ -15989,6 +16043,18 @@
     "status": "formal",
     "aliases": []
   },
+  "衣襟（ka.naph）": {
+    "path": "link_folder/原文/衣襟（ka.naph）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "衣襟（ka.naph）",
+    "status": "formal",
+    "aliases": [
+      "掀開父親的衣襟"
+    ]
+  },
   "褻瀆聖名（na.qav）": {
     "path": "link_folder/原文/褻瀆聖名（na.qav）.md",
     "type": "原文",
@@ -19407,6 +19473,18 @@
     "aliases": [
       "豬的不潔淨",
       "豬與異教"
+    ]
+  },
+  "貞潔的憑據": {
+    "path": "link_folder/文化/貞潔的憑據.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "貞潔的憑據",
+    "status": "formal",
+    "aliases": [
+      "貞潔憑據"
     ]
   },
   "贖銀五舍客勒": {
@@ -29881,6 +29959,9 @@
   "坐下吃喝,起來玩耍": {
     "alias_of": "坐下吃喝起來玩耍"
   },
+  "城裡與田野的區分": {
+    "alias_of": "城裡與田野對強姦案的判定"
+  },
   "榮耀的基路伯": {
     "alias_of": "基路伯（施恩座）"
   },
@@ -30079,6 +30160,9 @@
   "開玩笑": {
     "alias_of": "戲言"
   },
+  "房上的欄杆": {
+    "alias_of": "房上安欄杆的條例"
+  },
   "房屋痲瘋條例": {
     "alias_of": "房屋大痲瘋的診斷與潔淨條例"
   },
@@ -30135,6 +30219,9 @@
   },
   "約書亞所得的尊榮": {
     "alias_of": "摩西與約書亞的權柄差異"
+  },
+  "不可連母帶雛一併取去": {
+    "alias_of": "放母取雛的鳥窩條例"
   },
   "worship": {
     "alias_of": "敬拜"
@@ -30291,6 +30378,9 @@
   },
   "生產潔淨禮": {
     "alias_of": "產婦生產潔淨條例（男四十女八十天）"
+  },
+  "不可穿戴異性服飾": {
+    "alias_of": "男女不可易服的條例"
   },
   "異樣的香": {
     "alias_of": "異樣的香與香壇的禁令"
@@ -30483,6 +30573,9 @@
   },
   "你的道": {
     "alias_of": "認識神的道"
+  },
+  "誣告妻子不貞": {
+    "alias_of": "誣告妻子不貞的三種懲罰"
   },
   "直到早晨": {
     "alias_of": "誰也不可出自己的房門"
@@ -32971,6 +33064,9 @@
   "與我反對": {
     "alias_of": "行事與我反對（qe.ri）"
   },
+  "掀開父親的衣襟": {
+    "alias_of": "衣襟（ka.naph）"
+  },
   "褻瀆耶和華名": {
     "alias_of": "褻瀆聖名（na.qav）"
   },
@@ -33750,6 +33846,9 @@
   },
   "豬與異教": {
     "alias_of": "豬與異教祭祀的關聯"
+  },
+  "貞潔憑據": {
+    "alias_of": "貞潔的憑據"
   },
   "贖銀": {
     "alias_of": "贖銀五舍客勒"

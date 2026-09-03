@@ -1,0 +1,222 @@
+book: 申命記
+chapter: 22
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 愛鄰舍與仇敵
+  path: link_folder/主題/愛鄰舍與仇敵.md
+  summary: 第1至4節三次吩咐「不可佯為不見」：弟兄的牛羊失迷了路要牽回來交給他，找不到失主就牽到自己家裡留著等他來尋找，衣服等失物同樣處理，牛驢跌倒在路上要幫他拉起來。CT 給的原文字義是「佯為不見」隱藏，遮掩，並說『失迷了路』原文含有被趕走的意思，顯然不是單純走迷了路，而是被人偷盜牽走；他在話中之光把這一段的原則定為「愛人如己」(利十九18)。GT《啟導本聖經申命記註釋》指出「1～4節的例也見《出埃及記》二十三4～5。這是將守望相助的精神推廣擴大到整個社會，連對待仇敵也應如此(出二十三5)。」KC 從第八誡的反面讀：「Not bringing back something our brother has lost, after having witnessed said loss occurring, is the same as stealing.」（親眼看見弟兄的東西掉了卻不送回去，等於偷竊。）
+  relation: 本章把同一組動作的對象換成了弟兄，並且加上第2節的處理方式：找不到失主要把牲畜牽回自己家裡照看，等失主來尋找。CT 註『牽到你家』一心助人，不避被人嫌疑，光明正大，『留在你那裡』包括提供照看、餵食等——撿到之後還要替別人養著。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:23
+      - 申命記:22
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: '第5節用這個字為男女不可易服的禁令下理由：「因為這樣行都是耶和華─你神所憎惡的」。STEP 顯示這裡是 to.''a.Vat（H8441，簡要詞典義 to.e.vah: abomination）。BH 指出這個字在希伯來文脈絡裡常用來指偶像敬拜或性方面的可憎行為，並說這種強烈的措辭顯示神如何看待違反祂所定次序的行為。'
+  relation: 這是本章唯一一次用到這個字，管的既不是敬拜、祭物、食物，也不是求問的方法，而是身上穿戴的東西。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:14
+      - 申命記:22
+- title: 分別為聖
+  path: link_folder/神學/分別為聖.md
+  summary: '第9節說葡萄園若撒了兩樣種子，「免得你撒種所結的和葡萄園的果子都要充公」。GT《申命記串珠聖經註釋》註：「「充公」：原是「成聖」：指交去聖所。」STEP 顯示這個字是 tik.Dash（H6942I，簡要詞典義 qa.dash: to consecrate: forfeit）。CT 也說『充公』指分別為聖歸給聖所。'
+  relation: 本章讓這個字出現在一個少見的位置：不是人主動把東西分別歸神，而是違例的收成被判歸聖所，人自己反而不能用。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 不可使異類混雜（牲畜種子衣料）
+  path: link_folder/主題/不可使異類混雜（牲畜種子衣料）.md
+  summary: 第9至11節連下三道禁令：不可把兩樣種子種在葡萄園裡、不可並用牛、驢耕地、不可穿羊毛細麻兩樣攙雜料做的衣服。CT 說「本段(9~11節)經文的用意，乃在維持信仰的純潔，不可兼容併蓄(參利十九19註解)」。GT《申命記雷氏研讀本》對第10節說「兩種牲畜的步伐和拉力是不相等的」，對第11節另記一說：「據說拜偶像的祭司所穿的，就是這兩樣攙雜料做的衣服，以為這種衣服會產生魔力。」GT《申命記串珠聖經註釋》對第10節記另一種理解：「「牛驢耕地」：或指牛驢交配。」STEP 顯示第9節的「兩樣」是 kil.a.yim（H3610）。
+  relation: 本章把利未記十九19 的概括禁令換成具體場景，並替混種補上後果——果子要充公。牛與驢的組合也在這裡第一次寫明，CT 指出牛是潔淨的牲畜、驢是不潔淨的牲畜，不可同負一軛。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:19
+      - 申命記:22
+- title: 潔淨與不潔淨
+  path: link_folder/神學/潔淨與不潔淨.md
+  summary: 第10節「不可並用牛、驢耕地」。CT 說「牛是潔淨的牲畜，驢是不潔淨的牲畜(參申十四4~8)，不可同負一軛(參林後六14)。」BH 也說牛按利未記的分類是潔淨的動物（利11:3），驢則是不潔淨的（利11:4）；KC 同樣寫 An ox is a clean animal and a donkey is an unclean animal，並據此說信徒不能與不信的人一同為主作工。
+  relation: 本章用這組分類解釋一條農事禁令：不是體力配不上，而是潔與不潔不能共軛。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: keep
+- title: 衣服邊的繸子與藍細帶子
+  path: link_folder/文化/衣服邊的繸子與藍細帶子.md
+  summary: '第12節：「你要在所披的外衣上四圍做繸子。」CT 給的原文字義是「外衣」遮蔽物、「繸子」搓捻的繩索，(衣服邊的)流蘇，並說繸子含有提醒穿的人遵行律法的意思(參民十五37~41)。GT《啟導本聖經申命記註釋》說「在外衣上作“繸子”，有提醒穿的人常守律法的作用(民十五38～39)，也是民族服裝的一個特色」。STEP 顯示本節的繸子是 ge.di.Lim（H1434，簡要詞典義 ge.dil: tassel），做繸子的位置是 kan.Fot（H3671，本節譯義 [the] corners of）。'
+  relation: 本章的重申只剩一句話，沒有再提藍細帶子，繸子的用字也和民數記不同。KC 為這個差別給了理由：申命記講的是應許之地而不是曠野。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:15
+      - 申命記:22
+- title: 流無辜血的罪
+  path: link_folder/神學/流無辜血的罪.md
+  summary: '第8節：建造房屋要在房上的四圍安欄杆，「免得有人從房上掉下來，流血的罪就歸於你家」。STEP 顯示「流血的罪」是 da.Mim（H1818，dam: blood 的複數形）。BH 說 bloodguilt 指的是流無辜血的責任，在聖經律法裡是嚴重的過犯。GT《啟導本聖經申命記註釋》把這個詞接回同卷前面的討論，並說「律法要求人在照顧自己之外，還應有公德，關心他人」。'
+  relation: 本章讓這個詞出現在還沒有出事之前：屋主不必推人，只要沒有裝欄杆而有人摔下去，罪就歸到他家。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:19
+      - 申命記:21
+      - 申命記:22
+- title: 當孝敬父母
+  path: link_folder/神學/當孝敬父母.md
+  summary: '第7節放走母鳥的規定後面接了一句應許：「這樣你就可以享福，日子得以長久。」KC 指出這個附加語與第五誡（申5:16）有同樣的句型，並把它讀成教會裡長輩與晚輩的關係；BH 也說這讓人想起出20:12 對孝敬父母所應許的長壽。STEP 顯示這裡是 Yi.tav（H3190，ya.tav: be good）與 ve.ha.''a.rakh.Ta ya.Mim（H748 a.rakh: to prolong 加 H3117K yom: day）。'
+  relation: 本章把第五誡的應許句型接在一條與父母無關的規定上，兩套來源都注意到這個借用。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:5
+      - 申命記:22
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: 第15至19節由長老受理誣告新娘不貞的案子：女方父母把貞潔的憑據帶到本城門長老那裡，父親出面陳述，父母把那布鋪在本城的長老面前；長老要拿住那人、懲治他，並罰他一百舍客勒銀子給女子的父親。BH 說城中長老是受人敬重的領袖與審判官，常坐在城門口處理法律與民政事務。GT《啟導本聖經申命記註釋》另指出「在希伯來人社會中，女子的爭訟都由父親或丈夫出面擔負責任」。
+  relation: 本章讓長老處理的是一樁憑物證定案的家事訴訟：他們要看那塊布，然後決定罰誰。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: keep
+- title: 城門口公共場合
+  path: link_folder/歷史/城門口公共場合.md
+  summary: 第15節「帶到本城門長老那裡」、第24節「把這二人帶到本城門」——本章兩次把城門當成審理與行刑的地點。BH 說城門不只是進出的通道，也是公共聚集、法律程序與交易的中心，並引得4:1-2 與箴31:23。
+  relation: 本章在同一道城門完成兩件事：第15節是受理與舉證，第24節是執行石刑。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development:
+      decision: keep
+- title: 舍客勒
+  path: link_folder/原文/舍客勒.md
+  summary: 本章兩次以舍客勒定額：第19節罰誣告的丈夫一百舍客勒銀子給女子的父親，第29節玷污未許配之處女的男子要拿五十舍客勒銀子給女子的父親。GT《啟導本聖經申命記註釋》指出「“一百舍客勒銀”為一個女子聘禮的兩倍(比較29節)」。CT 說一百舍客勒「約折合1150公克重」、五十舍客勒「約折合575公克」；GT《申命記雷氏研讀本》說罰款「約相等於四十八安士(1.1千克)的銀子」。
+  relation: 本章的舍客勒不是議價之後秤出來的重量，而是律法先寫好的定額，而且兩個數字之間有明確的倍數關係。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:24
+      - 申命記:22
+- title: 不可姦淫
+  path: link_folder/神學/不可姦淫.md
+  summary: 第22節：「若遇見人與有丈夫的婦人行淫，就要將姦夫淫婦一併治死。」GT《啟導本聖經申命記註釋》說明這條誡命的適用範圍：「希伯來人執行“不可姦淫”(出二十14)的誡命，只適用於男子與有夫之婦或與已受聘(訂婚)的女子行淫(利二十10；申二十二22～24,28～29)。」BH 也把本節接回出20:14，並說對雙方施以同樣的刑罰顯示兩人共同承擔責任。
+  relation: 本章把第七誡拆成可以判的案子：當事人的身分與是否出於自願，決定判決落在誰身上。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:22
+- title: 引誘處女的律例
+  path: link_folder/事件/引誘處女的律例.md
+  summary: 第28至29節：男子遇見沒有許配人的處女，抓住他與他行淫而被人看見，就要拿五十舍客勒銀子給女子的父親，娶他為妻，終身不可休他。CT 在話中之光說這一段「並不是認可婚前性關係，而是要求男子不可逃避責任」，並補上「男子沒有不娶的權力，但女子卻有拒絕的權力(出二十二16-17)」。GT《啟導本聖經申命記註釋》把後果列成三項：付足聘禮給女子的父親；女家若不許女兒嫁他，不可索還聘禮；娶他之後終身不可休棄。
+  relation: 本章補上了出埃及記沒有寫的兩件事：聘禮的具體金額，以及娶了之後終身不可休妻。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:22
+- title: 不可同日宰母和子
+  path: link_folder/主題/不可同日宰母和子.md
+  summary: 第6至7節的鳥窩條例與這條屬同一組。GT《聖經精讀本──申命記註解》在第6節說：「雖然律法賦予人掌管自然界的特權,但人總要根據神的慈愛與憐憫、維持、保護自然界(出23:19;利22:28)。」CT 說「不可連母帶雛一併取去」乃是顧全人道，愛護動物的表示，取雛不取母，使生命可以延續。
+  relation: 本章的鳥窩條例與利未記那條用的是同一個作法：允許取用，但不准把母與子一併取盡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep

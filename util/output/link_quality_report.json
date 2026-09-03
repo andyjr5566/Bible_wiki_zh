@@ -1,7 +1,7 @@
 {
-  "total_warnings": 167,
+  "total_warnings": 168,
   "critical_count": 0,
-  "warning_count": 167,
+  "warning_count": 168,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -625,6 +625,13 @@
       "source": "link_folder/主題/不可使兒女經火歸摩洛.md",
       "target": "第18章",
       "message": "同一 alias「第18章」指向多個 target: 03 利未記/第18章, 05 申命記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/不可同日宰母和子.md",
+      "target": "第22章",
+      "message": "同一 alias「第22章」指向多個 target: 03 利未記/第22章, 05 申命記/第22章"
     },
     {
       "type": "alias_target_conflict",
