@@ -1,8 +1,15 @@
 {
-  "total_warnings": 177,
+  "total_warnings": 178,
   "critical_count": 0,
-  "warning_count": 177,
+  "warning_count": 178,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "申命記/第28章.md",
+      "target": "咒詛",
+      "message": "同一 alias「咒詛」指向多個 target: 不聽從神的五層漸進懲罰（利26：14-39）, 咒詛（a.rar 與 qa.vav）"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",

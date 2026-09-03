@@ -737,6 +737,16 @@
     "status": "formal",
     "aliases": []
   },
+  "六組祝福與六組咒詛的對稱": {
+    "path": "link_folder/主題/六組祝福與六組咒詛的對稱.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "六組祝福與六組咒詛的對稱",
+    "status": "formal",
+    "aliases": [
+      "六福六禍"
+    ]
+  },
   "冒失發誓": {
     "path": "link_folder/主題/冒失發誓.md",
     "type": "主題",
@@ -1144,6 +1154,18 @@
       "坐下吃喝,起來玩耍"
     ]
   },
+  "坐船回埃及卻無人買": {
+    "path": "link_folder/主題/坐船回埃及卻無人買.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "坐船回埃及卻無人買",
+    "status": "formal",
+    "aliases": [
+      "坐船回埃及"
+    ]
+  },
   "城內住宅與鄉間房屋贖回條例的差異": {
     "path": "link_folder/主題/城內住宅與鄉間房屋贖回條例的差異.md",
     "type": "主題",
@@ -1468,6 +1490,18 @@
       "如天覆地的日子"
     ]
   },
+  "如鷹飛來的遠方之民": {
+    "path": "link_folder/主題/如鷹飛來的遠方之民.md",
+    "type": "主題",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "如鷹飛來的遠方之民",
+    "status": "formal",
+    "aliases": [
+      "遠方之民"
+    ]
+  },
   "娶妻並娶其母用火焚燒的大惡條例": {
     "path": "link_folder/主題/娶妻並娶其母用火焚燒的大惡條例.md",
     "type": "主題",
@@ -1604,6 +1638,18 @@
     "title": "寄居者身份",
     "status": "formal",
     "aliases": []
+  },
+  "富有的時候不歡心樂意地事奉": {
+    "path": "link_folder/主題/富有的時候不歡心樂意地事奉.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "富有的時候不歡心樂意地事奉",
+    "status": "formal",
+    "aliases": [
+      "不歡心樂意地事奉"
+    ]
   },
   "寡婦與被休的婦人可以自主許願": {
     "path": "link_folder/主題/寡婦與被休的婦人可以自主許願.md",
@@ -1829,6 +1875,16 @@
     "status": "formal",
     "aliases": [
       "心中正直手上清潔"
+    ]
+  },
+  "性命懸懸無定": {
+    "path": "link_folder/主題/性命懸懸無定.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "性命懸懸無定",
+    "status": "formal",
+    "aliases": [
+      "懸懸無定"
     ]
   },
   "患漏症者接觸物件的傳染條例": {
@@ -2142,6 +2198,16 @@
     "title": "支搭帳棚",
     "status": "formal",
     "aliases": []
+  },
+  "攻擊身體的七樣災病": {
+    "path": "link_folder/主題/攻擊身體的七樣災病.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "攻擊身體的七樣災病",
+    "status": "formal",
+    "aliases": [
+      "七樣災病"
+    ]
   },
   "放母取雛的鳥窩條例": {
     "path": "link_folder/主題/放母取雛的鳥窩條例.md",
@@ -13719,6 +13785,18 @@
     "status": "formal",
     "aliases": []
   },
+  "作首不作尾居上不居下（rosh 與 za.nav）": {
+    "path": "link_folder/原文/作首不作尾居上不居下（rosh 與 za.nav）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "作首不作尾居上不居下（rosh 與 za.nav）",
+    "status": "formal",
+    "aliases": [
+      "作首不作尾"
+    ]
+  },
   "你且由著我（ra.phah）": {
     "path": "link_folder/原文/你且由著我（ra.phah）.md",
     "type": "原文",
@@ -14117,6 +14195,16 @@
       "te.ru.'Ah"
     ]
   },
+  "咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）": {
+    "path": "link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）",
+    "status": "formal",
+    "aliases": [
+      "咒詛擾亂責罰"
+    ]
+  },
   "咒詛（a.rar 與 qa.vav）": {
     "path": "link_folder/原文/咒詛（a.rar 與 qa.vav）.md",
     "type": "原文",
@@ -14132,6 +14220,18 @@
     "title": "哈抹名字含義",
     "status": "formal",
     "aliases": []
+  },
+  "喜悅善待也喜悅毀滅（su.s）": {
+    "path": "link_folder/原文/喜悅善待也喜悅毀滅（su.s）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "喜悅善待也喜悅毀滅（su.s）",
+    "status": "formal",
+    "aliases": [
+      "喜悅毀滅"
+    ]
   },
   "嚴肅會（a.Tze.ret）": {
     "path": "link_folder/原文/嚴肅會（a.Tze.ret）.md",
@@ -14174,6 +14274,16 @@
     "status": "formal",
     "aliases": [
       "困苦餅"
+    ]
+  },
+  "在萬國中令人驚駭（za.a.vah）": {
+    "path": "link_folder/原文/在萬國中令人驚駭（za.a.vah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "在萬國中令人驚駭（za.a.vah）",
+    "status": "formal",
+    "aliases": [
+      "拋來拋去"
     ]
   },
   "在黃昏的時候": {
@@ -15688,6 +15798,16 @@
       "留意謹守"
     ]
   },
+  "異蹟奇事（ot 與 mo.phet）": {
+    "path": "link_folder/原文/異蹟奇事（ot 與 mo.phet）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "異蹟奇事（ot 與 mo.phet）",
+    "status": "formal",
+    "aliases": [
+      "異蹟奇事"
+    ]
+  },
   "當頭": {
     "path": "link_folder/原文/當頭.md",
     "type": "原文",
@@ -16735,6 +16855,16 @@
     "status": "formal",
     "aliases": []
   },
+  "追隨與臨到（na.sag）": {
+    "path": "link_folder/原文/追隨與臨到（na.sag）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "追隨與臨到（na.sag）",
+    "status": "formal",
+    "aliases": [
+      "追隨與臨到"
+    ]
+  },
   "這地必落給你們為業（na.phal）": {
     "path": "link_folder/原文/這地必落給你們為業（na.phal）.md",
     "type": "原文",
@@ -16913,6 +17043,26 @@
     "status": "formal",
     "aliases": [
       "鐵爐"
+    ]
+  },
+  "鐵軛（ol 與 bar.zel）": {
+    "path": "link_folder/原文/鐵軛（ol 與 bar.zel）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "鐵軛（ol 與 bar.zel）",
+    "status": "formal",
+    "aliases": [
+      "鐵軛"
+    ]
+  },
+  "開天上的府庫（o.tsar）": {
+    "path": "link_folder/原文/開天上的府庫（o.tsar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "開天上的府庫（o.tsar）",
+    "status": "formal",
+    "aliases": [
+      "天上的府庫"
     ]
   },
   "除了我以外": {
@@ -30228,6 +30378,9 @@
   "牛犢": {
     "alias_of": "公牛犢"
   },
+  "六福六禍": {
+    "alias_of": "六組祝福與六組咒詛的對稱"
+  },
   "分蹄倒嚼": {
     "alias_of": "分蹄倒嚼（潔淨走獸的判準）"
   },
@@ -30336,6 +30489,9 @@
   "坐下吃喝,起來玩耍": {
     "alias_of": "坐下吃喝起來玩耍"
   },
+  "坐船回埃及": {
+    "alias_of": "坐船回埃及卻無人買"
+  },
   "城裡與田野的區分": {
     "alias_of": "城裡與田野對強姦案的判定"
   },
@@ -30438,6 +30594,9 @@
   "如天覆地的日子": {
     "alias_of": "如天覆地的日子那樣多"
   },
+  "遠方之民": {
+    "alias_of": "如鷹飛來的遠方之民"
+  },
   "女戰俘條例": {
     "alias_of": "娶被擄女子為妻的條例"
   },
@@ -30473,6 +30632,9 @@
   },
   "家譜單位": {
     "alias_of": "家室與宗族"
+  },
+  "不歡心樂意地事奉": {
+    "alias_of": "富有的時候不歡心樂意地事奉"
   },
   "門簾": {
     "alias_of": "帳幕門簾"
@@ -30524,6 +30686,9 @@
   },
   "心中正直手上清潔": {
     "alias_of": "心正手潔"
+  },
+  "懸懸無定": {
+    "alias_of": "性命懸懸無定"
   },
   "痲瘋患者禮儀": {
     "alias_of": "患痲瘋者的哀悼記號（獨居營外）"
@@ -30602,6 +30767,9 @@
   },
   "約書亞所得的尊榮": {
     "alias_of": "摩西與約書亞的權柄差異"
+  },
+  "七樣災病": {
+    "alias_of": "攻擊身體的七樣災病"
   },
   "不可連母帶雛一併取去": {
     "alias_of": "放母取雛的鳥窩條例"
@@ -32814,6 +32982,9 @@
   "何西阿三章": {
     "alias_of": "何3（Hoshea 3）"
   },
+  "作首不作尾": {
+    "alias_of": "作首不作尾居上不居下（rosh 與 za.nav）"
+  },
   "你且由著我": {
     "alias_of": "你且由著我（ra.phah）"
   },
@@ -32910,6 +33081,12 @@
   "te.ru.'Ah": {
     "alias_of": "吹角的日子（te.ru.'Ah）"
   },
+  "咒詛擾亂責罰": {
+    "alias_of": "咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）"
+  },
+  "喜悅毀滅": {
+    "alias_of": "喜悅善待也喜悅毀滅（su.s）"
+  },
   "a.Tze.ret": {
     "alias_of": "嚴肅會（a.Tze.ret）"
   },
@@ -32921,6 +33098,9 @@
   },
   "困苦餅": {
     "alias_of": "困苦餅（le.chem o.ni）"
+  },
+  "拋來拋去": {
+    "alias_of": "在萬國中令人驚駭（za.a.vah）"
   },
   "兩個黃昏之間": {
     "alias_of": "在黃昏的時候"
@@ -33330,6 +33510,9 @@
   "留意謹守": {
     "alias_of": "留意聽從與留意謹守（雙同字）"
   },
+  "異蹟奇事": {
+    "alias_of": "異蹟奇事（ot 與 mo.phet）"
+  },
   "金合歡木": {
     "alias_of": "皂莢木"
   },
@@ -33600,6 +33783,9 @@
   "路加第九章": {
     "alias_of": "路9（Loukas 9）"
   },
+  "追隨與臨到": {
+    "alias_of": "追隨與臨到（na.sag）"
+  },
   "傳譯員": {
     "alias_of": "通事（傳譯員）"
   },
@@ -33659,6 +33845,12 @@
   },
   "鐵爐": {
     "alias_of": "鐵爐（kur、bar.zel）"
+  },
+  "鐵軛": {
+    "alias_of": "鐵軛（ol 與 bar.zel）"
+  },
+  "天上的府庫": {
+    "alias_of": "開天上的府庫（o.tsar）"
   },
   "在我面前": {
     "alias_of": "除了我以外"
