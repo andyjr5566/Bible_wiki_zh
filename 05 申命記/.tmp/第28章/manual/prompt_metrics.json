@@ -5,15 +5,75 @@
   "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
   "prompts": [
     {
+      "stage": "entry_batch",
+      "path": "entry_batch_1.prompt.md",
+      "before": {
+        "chars": 256131,
+        "bytes": 322227
+      },
+      "after": {
+        "chars": 9186,
+        "bytes": 17499
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_deuteronomy_28.txt",
+          "chars": 17608,
+          "bytes": 49450
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_deuteronomy_28.txt",
+          "chars": 15415,
+          "bytes": 41734
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_deuteronomy_28.txt",
+          "chars": 16956,
+          "bytes": 17118
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_deuteronomy_28.txt",
+          "chars": 136016,
+          "bytes": 136040
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_deuteronomy_28.txt",
+          "selection_mode": "targeted",
+          "raw_chars": 169678,
+          "raw_bytes": 195007,
+          "projected_chars": 2520,
+          "projected_bytes": 2929,
+          "occurrences": 7,
+          "occurrence_count": 7,
+          "lexicon_entries": 7,
+          "selected_verses": [
+            22
+          ],
+          "candidate_count": 7,
+          "selected_candidate_count": 7,
+          "truncated": false,
+          "returned_chars": 2520,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    },
+    {
       "stage": "chapter_content",
       "path": "chapter_content.prompt.md",
       "before": {
-        "chars": 257505,
-        "bytes": 326529
+        "chars": 257221,
+        "bytes": 325931
       },
       "after": {
-        "chars": 14591,
-        "bytes": 26513
+        "chars": 14294,
+        "bytes": 25902
       },
       "commentary_bodies_omitted": [
         {
@@ -47,8 +107,8 @@
           "selection_mode": "selected_candidates",
           "raw_chars": 169678,
           "raw_bytes": 195007,
-          "projected_chars": 6550,
-          "projected_bytes": 7638,
+          "projected_chars": 6537,
+          "projected_bytes": 7625,
           "occurrences": 121,
           "occurrence_count": 121,
           "lexicon_entries": 3,
@@ -109,7 +169,7 @@
           "candidate_count": 40,
           "selected_candidate_count": 3,
           "truncated": true,
-          "returned_chars": 6550,
+          "returned_chars": 6537,
           "budget": 7000,
           "fallback_used": false
         }

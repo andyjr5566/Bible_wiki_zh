@@ -2,26 +2,26 @@
 schema_version: 1
 book: 申命記
 chapter: 28
-candidate_sha256: 84d18adb9e2e265ba32527ec6e5594a80d8476619bcb470e2134b5803b58f91c
-candidate_identity_sha256: fc0f4d176c0ae5dbc61cc7ebf3489986ce0c4dd7dac8347c6dc49a0f29d07962
+candidate_sha256: bc7d21e262a31f9f3ceff7416122b89b754cd06fea6b76462a2efe2f74a095ae
+candidate_identity_sha256: 8185e51133c2747fceae66502030e70a0cfd234a1e0218fb2252a856c5a1dc63
 embedding_model: nvidia/nemotron-3-embed-1b
-embedding_index_fingerprint: 6c7c22b79e322e72
-link_index_sha256: 39b45155f265aa3168e19dccf642481ed283a0575b8620c32e59cd556288be44
+embedding_index_fingerprint: 1b629535e4167286
+link_index_sha256: bc3362cd7d8b9b86f2fac76357c6333d545c635b56d2fc8a1b9f9be30e438124
 homonyms_sha256: b8d042ea4f51253052128b2b289befdcf00b53c88237b67050f3252242c41ab8
 rerank_model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
 rerank_policy_version: 2026.08.4
 calibration_sha256: f63b1218023371bbbece396422aa7a02025bba0da119b49cae75232755734211
 rerank_status: success
-rerankable_candidates: 14
-rerank_attempted: 14
-rerank_succeeded: 14
+rerankable_candidates: 1
+rerank_attempted: 1
+rerank_succeeded: 1
 rerank_retrieve_top_k: 20
-rerank_score_observed: 0.023-0.753
+rerank_score_observed: 0.027-0.177
 -->
 
 # 候選語義近鄰報告：申命記 第28章
 
-- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 3066 條
+- 檢索模型：nvidia/nemotron-3-embed-1b｜重排模型：nvidia/llama-nemotron-rerank-vl-1b-v2:free（未校準/保守模式）｜全庫 3089 條
 - 規則說明：字面確切匹配直接通過；其餘候選先檢索 Top 20 名再由 Reranker 重排，取前 5 名顯示。
   治理優先：同名歧義（D類）與分類不相容永遠標 ⚠。
   重排模型未校準時，⚠ 由檢索相似度規則（≥0.50 且 top-1 非同實體）決定，重排名次只當附加證據。
@@ -35,18 +35,17 @@ query:
 - 本章上下文：第2節「這以下的福必追隨你，臨到你身上」與第15節「這以下的咒詛都必追隨你，臨到你身上」用完全相同的兩個動詞：u./Va.'u（H935G，簡要詞典義 bo: to come）與 ve./hi.si.Gu./kha（H5381，簡要詞典義 na.sag: to overtake，使役語態）。第45節再加一個 u./re.da.Fu./kha（H7291，簡要詞典義 ra.daph: to pursue）。CT 在第2節說追隨你、臨到你意指不必特意去追求，反而自動地追著賞給你；第15節同一句只把賞改成加。GT 說追隨就是不管人在那裡，神的祝福都要跟上他；咒詛也一樣叫悖逆的百姓無處可逃。
 - 經文用詞：追隨
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「追隨與臨到（na.sag）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 眷顧（da.rash） | 0.445 | 0.214 | link_folder/原文/眷顧（da.rash）.md |
-| 2 | 你們的罪必追上你們 | 0.523 | 0.202 | link_folder/神學/你們的罪必追上你們.md |
-| 3 | 十二項咒詛與百姓的阿們 | 0.451 | 0.194 | link_folder/主題/十二項咒詛與百姓的阿們.md |
-| 4 | 擾害（tsa.rar） | 0.453 | 0.186 | link_folder/原文/擾害（tsa.rar）.md |
-| 5 | 匪類（be.liy.ya.al） | 0.452 | 0.169 | link_folder/原文/匪類（be.liy.ya.al）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 追隨與臨到（na.sag） | 0.865 | link_folder/原文/追隨與臨到（na.sag）.md |
+| 2 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.524 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
+| 3 | 你們的罪必追上你們 | 0.523 | link_folder/神學/你們的罪必追上你們.md |
+| 4 | 六組祝福與六組咒詛的對稱 | 0.490 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
+| 5 | 咒詛（a.rar 與 qa.vav） | 0.483 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
 
-rerank_margin: 0.012 (Top1 - Top2)
-判定：⚠ 相似度居中（0.50 ≤ 0.523 < 0.70），最近鄰為 [[你們的罪必追上你們]]——此區間真對應與無對應分數重疊，需逐一人工判斷（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[追隨與臨到（na.sag）]]（同名／字面對應）
 
 ## 六組祝福與六組咒詛的對稱（主題）
 query:
@@ -56,18 +55,17 @@ query:
 - 本章上下文：第3至6節六句祝福與第16至19節六句咒詛逐句相對。STEP 顯示第3節每句開頭是 ba.Rukh（H1288，簡要詞典義 ba.rakh: to bless，被動分詞），第16節每句開頭是 'a.Rur（H779，簡要詞典義 a.rar: to curse，被動分詞），句型其餘部分一字不差。CT：16至19節的六個咒詛，與3至6節的六個祝福正好相反。GT 指出3至6節原文由六組富有節奏感的片語組成，可以用作敬拜中的儀文。KC 說咒詛是在祝福本身上擊中他們。
 - 經文用詞：你在城裡必蒙福，在田間也必蒙福、你在城裡必受咒詛，在田間也必受咒詛
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「六組祝福與六組咒詛的對稱」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 祝福與咒詛 | 0.570 | 0.331 | link_folder/主題/祝福與咒詛.md |
-| 2 | 兩山宣告祝福與咒詛的儀式 | 0.519 | 0.313 | link_folder/主題/兩山宣告祝福與咒詛的儀式.md |
-| 3 | 咒詛（a.rar 與 qa.vav） | 0.591 | 0.302 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
-| 4 | 咒詛你的我必咒詛他（創12：3） | 0.538 | 0.191 | link_folder/互文/咒詛你的我必咒詛他（創12：3）.md |
-| 5 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.497 | 0.190 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 六組祝福與六組咒詛的對稱 | 0.834 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
+| 2 | 咒詛（a.rar 與 qa.vav） | 0.594 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
+| 3 | 祝福與咒詛 | 0.570 | link_folder/主題/祝福與咒詛.md |
+| 4 | 亞倫的祝福（祭司祝福） | 0.542 | link_folder/主題/亞倫的祝福（祭司祝福）.md |
+| 5 | 咒詛你的我必咒詛他（創12：3） | 0.538 | link_folder/互文/咒詛你的我必咒詛他（創12：3）.md |
 
-rerank_margin: 0.018 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=原文），若確為同實體請確認是否改用 [[咒詛（a.rar 與 qa.vav）]]（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[六組祝福與六組咒詛的對稱]]（同名／字面對應）
 
 ## 作首不作尾居上不居下（rosh 與 za.nav）（原文）
 query:
@@ -77,18 +75,17 @@ query:
 - 本章上下文：第13節「使你作首不作尾，但居上不居下」與第44節「他必作首，你必作尾」是同兩個名詞的正反：le./roSh（H7218A，簡要詞典義 rosh: head）與 le./za.Nav（H2180，簡要詞典義 za.nav: tail）。第13節另有 le./Ma'.la/h（H4605，above）與 le./Ma.tah（H4295，beneath）一組。CT：作首不作尾意指佔據領導地位能影響列邦行動的強國。GT《申命記雷氏研讀本》說這表示以色列若遵從神，在列國中間便是一股獨立的勢力，而且會做它們的領袖。BH 指出頭代表權柄與決策，尾代表沒有主導權，這組比喻在以賽亞書九14至15 也用來分辨領袖與假先知。
 - 經文用詞：作首不作尾、他必作首，你必作尾
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「作首不作尾居上不居下（rosh 與 za.nav）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 計算總數（抬起頭） | 0.459 | 0.551 | link_folder/原文/計算總數（抬起頭）.md |
-| 2 | 毀謗 | 0.469 | 0.499 | link_folder/原文/毀謗.md |
-| 3 | 出入（領袖用語） | 0.486 | 0.498 | link_folder/原文/出入（領袖用語）.md |
-| 4 | 沒有牧人的羊群 | 0.454 | 0.459 | link_folder/主題/沒有牧人的羊群.md |
-| 5 | 以色列的長老 | 0.459 | 0.455 | link_folder/文化/以色列的長老.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 作首不作尾居上不居下（rosh 與 za.nav） | 0.880 | link_folder/原文/作首不作尾居上不居下（rosh 與 za.nav）.md |
+| 2 | 摩西立首領 | 0.494 | link_folder/事件/摩西立首領.md |
+| 3 | 出入（領袖用語） | 0.494 | link_folder/原文/出入（領袖用語）.md |
+| 4 | 敬畏神、誠實、恨不義之財 | 0.484 | link_folder/神學/敬畏神、誠實、恨不義之財.md |
+| 5 | 以色列人的官長 | 0.481 | link_folder/人物/以色列人的官長.md |
 
-rerank_margin: 0.051 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=原文 vs 條目=事件），若確為同實體請確認是否改用 [[摩西立首領]]（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[作首不作尾居上不居下（rosh 與 za.nav）]]（同名／字面對應）
 
 ## 開天上的府庫（o.tsar）（原文）
 query:
@@ -98,18 +95,17 @@ query:
 - 本章上下文：第12節「耶和華必為你開天上的府庫，按時降雨在你的地上」。STEP：yif.Tach（H6605A，簡要詞典義 pa.tach: to open）＋ 'o.tza.R/o ha./Tov（H214，簡要詞典義 o.tsar: treasure；H2896A tov）＋ ha./sha.Ma.yim（H8064），字面是他要為你開他那美好的庫房，就是諸天；降雨是 me.tar（H4306）be./'i.T/o（H6256，在它的時候）。CT 說開天上的府庫意指吹來帶雨的雲層，按時降雨意指按照農作物播種和收割的需要而降秋雨春雨。GT《申命記雷氏研讀本》：從天上府庫降雨灌溉土地的是神，不是巴力。GT《啟導本聖經申命記註釋》說天是雨的儲存庫這個觀念由來已久，並列出創一7、七11、八2、詩三十三7 與伯三十八22 天也是雪庫和雹倉。
 - 經文用詞：開天上的府庫
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「開天上的府庫（o.tsar）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 天和天上的天 | 0.529 | 0.233 | link_folder/原文/天和天上的天.md |
-| 2 | 穹蒼（raqia） | 0.475 | 0.211 | link_folder/原文/穹蒼（raqia）.md |
-| 3 | 大淵的泉源與天上的窗戶 | 0.557 | 0.175 | link_folder/神學/大淵的泉源與天上的窗戶.md |
-| 4 | 如天覆地的日子那樣多 | 0.489 | 0.172 | link_folder/主題/如天覆地的日子那樣多.md |
-| 5 | 雨水滋潤（ma.tar、sha.tah） | 0.579 | 0.167 | link_folder/原文/雨水滋潤（ma.tar、sha.tah）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 開天上的府庫（o.tsar） | 0.888 | link_folder/原文/開天上的府庫（o.tsar）.md |
+| 2 | 秋雨春雨（yo.reh、mal.qosh） | 0.638 | link_folder/原文/秋雨春雨（yo.reh、mal.qosh）.md |
+| 3 | 雨水滋潤（ma.tar、sha.tah） | 0.579 | link_folder/原文/雨水滋潤（ma.tar、sha.tah）.md |
+| 4 | 眷顧（da.rash） | 0.559 | link_folder/原文/眷顧（da.rash）.md |
+| 5 | 大淵的泉源與天上的窗戶 | 0.557 | link_folder/神學/大淵的泉源與天上的窗戶.md |
 
-rerank_margin: 0.022 (Top1 - Top2)
-判定：⚠ 相似度居中（0.50 ≤ 0.579 < 0.70），最近鄰為 [[雨水滋潤（ma.tar、sha.tah）]]——此區間真對應與無對應分數重疊，需逐一人工判斷（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[開天上的府庫（o.tsar）]]（同名／字面對應）
 
 ## 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）（原文）
 query:
@@ -119,22 +115,21 @@ query:
 - 本章上下文：第20節「使咒詛、擾亂、責罰臨到你」。STEP 顯示這是三個獨立的陰性名詞：ha./me.'e.Rah（H3994，簡要詞典義 me.e.rah: curse）、ha./me.hu.Mah（H4103，簡要詞典義 me.hu.mah: tumult）、ha./mig.'E.ret（H4045，簡要詞典義 mig.e.ret: rebuke），與第15節的 ha./ke.la.Lot（H7045）不同字。CT：咒詛指將人置於受禍的地位上，擾亂指身心困惑、挫折、受壓，責罰指被神譴責、懲罰、棄絕。GT《申命記串珠聖經註釋》說擾亂指在戰場上恐慌、站不住腳；GT《聖經精讀本──申命記註解》說這是為了強調神對不順服之人的懲罰而使用幾個近義詞的重複手法。BH 指出這個字也可以帶恐慌或方向感錯亂的意思。
 - 經文用詞：咒詛、擾亂、責罰
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 咒詛（a.rar 與 qa.vav） | 0.611 | 0.753 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
-| 2 | 十二項咒詛與百姓的阿們 | 0.550 | 0.574 | link_folder/主題/十二項咒詛與百姓的阿們.md |
-| 3 | 擾害（tsa.rar） | 0.553 | 0.563 | link_folder/原文/擾害（tsa.rar）.md |
-| 4 | 祝福與咒詛 | 0.543 | 0.438 | link_folder/主題/祝福與咒詛.md |
-| 5 | 心中受迷惑（pa.tah） | 0.547 | 0.432 | link_folder/原文/心中受迷惑（pa.tah）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.894 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
+| 2 | 咒詛（a.rar 與 qa.vav） | 0.613 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
+| 3 | 心裡頑梗卻還是平安 | 0.582 | link_folder/主題/心裡頑梗卻還是平安.md |
+| 4 | 在萬國中令人驚駭（za.a.vah） | 0.580 | link_folder/原文/在萬國中令人驚駭（za.a.vah）.md |
+| 5 | 追隨與臨到（na.sag） | 0.570 | link_folder/原文/追隨與臨到（na.sag）.md |
 
-rerank_margin: 0.179 (Top1 - Top2)
-判定：⚠ 相似度居中（0.50 ≤ 0.611 < 0.70），最近鄰為 [[咒詛（a.rar 與 qa.vav）]]——此區間真對應與無對應分數重疊，需逐一人工判斷（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）]]（同名／字面對應）
 
-## 攻擊身體的七樣災病（主題）
+## 攻擊你的七樣災害（主題）
 query:
-- 待建立詞：攻擊身體的七樣災病
+- 待建立詞：攻擊你的七樣災害
 - 出現位置：申命記 第28章
 - 候選類型：主題
 - 本章上下文：第22節一口氣列出七樣。STEP：ba./sha.Che.fet（H7829，consumption）、u./va/k.ka.Da.chat（H6920，fever）、u./va/d.da.Le.ket（H1816，inflammation）、u./va./char.Chur（H2746，feverish heat）、u./va./Che.rev（H2719，sword）、u./va/sh.shi.da.Fon（H7711B，blight）、u./vai./ye.ra.Kon（H3420，mildew）——恰好七項。CT 逐一解釋：癆病指類似肺結核將人的體力耗盡而亡的疾病，熱病指身體發高燒急速消耗體內水分而衰竭的疾病，火症與瘧疾聖經中只見於此處，指體內或體外紅腫如同火燒；並說本節所列舉的七種（七含意完全）災害代表一切神所使用的懲治工具。GT《啟導本聖經申命記註釋》說七為完整之數，因此災難不限七種。GT 華爾頓《申命記背景注釋》說被不同疾病所擾害是亞述條約文獻的咒詛之一。BH 說發燒與發炎在古代世界可能對應瘧疾或傷寒一類的病症。
@@ -144,13 +139,13 @@ query:
 
 | Rank | Candidate | Similarity | Rerank | Path |
 |---|---|---:|---:|---|
-| 1 | 第六災：瘡災 | 0.540 | 0.178 | link_folder/歷史/第六災：瘡災.md |
-| 2 | 災殃 | 0.557 | 0.134 | link_folder/原文/災殃.md |
-| 3 | 炭疽（anthrax） | 0.532 | 0.129 | link_folder/原文/炭疽（anthrax）.md |
-| 4 | 大痲瘋（sara'at） | 0.527 | 0.118 | link_folder/原文/大痲瘋（sara'at）.md |
-| 5 | 起泡的瘡 | 0.582 | 0.104 | link_folder/原文/起泡的瘡.md |
+| 1 | 第六災：瘡災 | 0.596 | 0.177 | link_folder/歷史/第六災：瘡災.md |
+| 2 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.545 | 0.098 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
+| 3 | 災殃 | 0.566 | 0.084 | link_folder/原文/災殃.md |
+| 4 | 炭疽（anthrax） | 0.535 | 0.079 | link_folder/原文/炭疽（anthrax）.md |
+| 5 | 黃蜂 | 0.519 | 0.077 | link_folder/原文/黃蜂.md |
 
-rerank_margin: 0.043 (Top1 - Top2)
+rerank_margin: 0.079 (Top1 - Top2)
 判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=歷史），若確為同實體請確認是否改用 [[第六災：瘡災]]
 
 ## 天如鐵地如銅（乾旱咒詛的意象）（主題）
@@ -165,11 +160,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 天如鐵地如銅（乾旱咒詛的意象） | 0.840 | link_folder/主題/天如鐵地如銅（乾旱咒詛的意象）.md |
+| 1 | 天如鐵地如銅（乾旱咒詛的意象） | 0.885 | link_folder/主題/天如鐵地如銅（乾旱咒詛的意象）.md |
 | 2 | 鐵礦與銅礦（bar.zel、ne.cho.shet） | 0.632 | link_folder/文化/鐵礦與銅礦（bar.zel、ne.cho.shet）.md |
 | 3 | 約15：5 | 0.619 | link_folder/互文/約15：5.md |
-| 4 | 申28：1-68 | 0.584 | link_folder/互文/申28：1-68.md |
-| 5 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.539 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 4 | 鐵軛（ol 與 bar.zel） | 0.594 | link_folder/原文/鐵軛（ol 與 bar.zel）.md |
+| 5 | 開天上的府庫（o.tsar） | 0.592 | link_folder/原文/開天上的府庫（o.tsar）.md |
 
 判定：✅ 建議使用既有條目 [[天如鐵地如銅（乾旱咒詛的意象）]]（同名／字面對應）
 
@@ -181,18 +176,17 @@ query:
 - 本章上下文：第25節末句和合本作「你必在天下萬國中拋來拋去」。STEP：le./za.'a.Vah（H2189，簡要詞典義 za.a.vah: horror），字面是成為天下萬國的一件驚駭之事。GT 指出原文是在天下萬國中成為令人驚駭的事物，比喻不受歡迎。CT 則把拋來拋去理解為被擄分散各國，居無定所、無法安定下來。BH 說成為驚駭的對象意指列國會目睹以色列的敗落而驚愕。CT 另指出第37節的令人驚駭、笑談、譏誚與本節屬交錯配列的同一組。
 - 經文用詞：拋來拋去
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「在萬國中令人驚駭（za.a.vah）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 分散在萬民中 | 0.507 | 0.242 | link_folder/歷史/分散在萬民中.md |
-| 2 | 使天下萬民驚恐懼怕 | 0.640 | 0.210 | link_folder/原文/使天下萬民驚恐懼怕.md |
-| 3 | 古代近東的超脫預言 | 0.459 | 0.169 | link_folder/背景/古代近東的超脫預言.md |
-| 4 | 可憎的物（to.e.vah） | 0.464 | 0.166 | link_folder/原文/可憎的物（to.e.vah）.md |
-| 5 | 申25：17-19 記念亞瑪力 | 0.461 | 0.160 | link_folder/互文/申25：17-19 記念亞瑪力.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 在萬國中令人驚駭（za.a.vah） | 0.862 | link_folder/原文/在萬國中令人驚駭（za.a.vah）.md |
+| 2 | 使天下萬民驚恐懼怕 | 0.640 | link_folder/原文/使天下萬民驚恐懼怕.md |
+| 3 | 分散在萬民中 | 0.525 | link_folder/歷史/分散在萬民中.md |
+| 4 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.502 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
+| 5 | 車輪脫落 | 0.500 | link_folder/解經爭議/車輪脫落.md |
 
-rerank_margin: 0.031 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=原文 vs 條目=歷史），若確為同實體請確認是否改用 [[分散在萬民中]]
+判定：✅ 建議使用既有條目 [[在萬國中令人驚駭（za.a.vah）]]（同名／字面對應）
 
 ## 如鷹飛來的遠方之民（主題）
 query:
@@ -202,18 +196,17 @@ query:
 - 本章上下文：第49至52節。CT：遠方、地極形容離開迦南地甚遠，一國的民即指巴比倫人，如鷹飛來的鷹是巴比倫人的表號（耶四十八40）；並備註49至57節所描述的外敵侵略慘狀也應驗在亞述人攻打北國以色列與主後70年羅馬提多攻打耶路撒冷兩件事上。GT《申命記雷氏研讀本》說顯然是巴比倫，因為聖經把巴比倫比作鷹；GT《啟導本聖經申命記註釋》說如鷹飛來攻擊乃言亞述人攻擊力量的大而且快，並說這民的言語你不懂得說明一般以色列人不懂亞述與巴比倫的語言。KC 說這幾節看來更像羅馬人的壓迫，並指羅馬人的軍旗上就有一隻鷹。BH 說鷹的意象傳達速度、力量與無可避免，語言不通則加深了失去控制與溝通的恐懼。
 - 經文用詞：如鷹飛來攻擊你
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「如鷹飛來的遠方之民」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 申32：11-12 如鷹攪動巢窩 | 0.536 | 0.292 | link_folder/互文/申32：11-12 如鷹攪動巢窩.md |
-| 2 | 如鷹背在翅膀上 | 0.552 | 0.275 | link_folder/神學/如鷹背在翅膀上.md |
-| 3 | 如鷹背在翅膀上是鷹還是兀鷲 | 0.537 | 0.252 | link_folder/解經爭議/如鷹背在翅膀上是鷹還是兀鷲.md |
-| 4 | 黃蜂 | 0.488 | 0.127 | link_folder/原文/黃蜂.md |
-| 5 | 飛鳥吃食物_吃肉 | 0.461 | 0.123 | link_folder/神學/飛鳥吃食物_吃肉.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 如鷹飛來的遠方之民 | 0.861 | link_folder/主題/如鷹飛來的遠方之民.md |
+| 2 | 亞述 | 0.595 | link_folder/地點/亞述.md |
+| 3 | 如鷹背在翅膀上 | 0.552 | link_folder/神學/如鷹背在翅膀上.md |
+| 4 | 如鷹背在翅膀上是鷹還是兀鷲 | 0.537 | link_folder/解經爭議/如鷹背在翅膀上是鷹還是兀鷲.md |
+| 5 | 申32：11-12 如鷹攪動巢窩 | 0.536 | link_folder/互文/申32：11-12 如鷹攪動巢窩.md |
 
-rerank_margin: 0.017 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=互文），若確為同實體請確認是否改用 [[申32：11-12 如鷹攪動巢窩]]
+判定：✅ 建議使用既有條目 [[如鷹飛來的遠方之民]]（同名／字面對應）
 
 ## 鐵軛（ol 與 bar.zel）（原文）
 query:
@@ -223,18 +216,17 @@ query:
 - 本章上下文：第48節「他必把鐵軛加在你的頸項上」。STEP：'ol（H5923，簡要詞典義 ol: yoke）＋ bar.Zel（H1270，簡要詞典義 bar.zel: iron），而 bar.Zel 正是第23節腳下的地要變為鐵的同一個字。CT：鐵軛意指無法掙脫的奴役。GT 說軛是加在牲畜後頸上的橫木，在頭部兩邊的位置穿有軫子，軫子是最易斷裂的部分，鐵軛可能是安有鐵軫的軛，比喻像奴隸一樣服事敵人。GT《聖經精讀本──申命記註解》說鐵軛象徵極其堅固、剛硬的束縛，對死硬著頸項的以色列人而言是非常適合的刑罰。BH 指出軛用來駕馭牲畜，象徵臣服與失去自由，耶利米書二十八13至14 也用軛講巴比倫的統治。
 - 經文用詞：鐵軛
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「鐵軛（ol 與 bar.zel）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 鐵爐（kur、bar.zel） | 0.594 | 0.463 | link_folder/原文/鐵爐（kur、bar.zel）.md |
-| 2 | 鐵礦與銅礦（bar.zel、ne.cho.shet） | 0.499 | 0.401 | link_folder/文化/鐵礦與銅礦（bar.zel、ne.cho.shet）.md |
-| 3 | 天如鐵地如銅（乾旱咒詛的意象） | 0.551 | 0.265 | link_folder/主題/天如鐵地如銅（乾旱咒詛的意象）.md |
-| 4 | 申28：1-68 | 0.462 | 0.265 | link_folder/互文/申28：1-68.md |
-| 5 | 巴珊王噩的鐵床（e.re.s） | 0.498 | 0.247 | link_folder/原文/巴珊王噩的鐵床（e.re.s）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 鐵軛（ol 與 bar.zel） | 0.895 | link_folder/原文/鐵軛（ol 與 bar.zel）.md |
+| 2 | 鐵爐（kur、bar.zel） | 0.594 | link_folder/原文/鐵爐（kur、bar.zel）.md |
+| 3 | 天如鐵地如銅（乾旱咒詛的意象） | 0.549 | link_folder/主題/天如鐵地如銅（乾旱咒詛的意象）.md |
+| 4 | 硬著頸項的百姓 | 0.541 | link_folder/神學/硬著頸項的百姓.md |
+| 5 | 擔子 | 0.500 | link_folder/神學/擔子.md |
 
-rerank_margin: 0.062 (Top1 - Top2)
-判定：⚠ 相似度居中（0.50 ≤ 0.594 < 0.70），最近鄰為 [[鐵爐（kur、bar.zel）]]——此區間真對應與無對應分數重疊，需逐一人工判斷（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[鐵軛（ol 與 bar.zel）]]（同名／字面對應）
 
 ## 異蹟奇事（ot 與 mo.phet）（原文）
 query:
@@ -244,18 +236,17 @@ query:
 - 本章上下文：第46節「這些咒詛必在你和你後裔的身上成為異蹟奇事，直到永遠」。STEP：le./'ot（H226G，簡要詞典義 ot: sign）＋ u./le./mo.Fet（H4159，簡要詞典義 mo.phet: wonder）。CT：異蹟奇事原文與神蹟奇事同字，意指所發生的各種現象乃是從神而來、深具意義的記號，是超過自然現象的奇蹟，含有某種意義的兆頭。GT《聖經精讀本──申命記註解》說異跡具有記號之意，奇事具有徵兆之意，聖經主要用來指神跡，然而在這裡則與以色列的破滅相關而使用，故視其為警告或教訓更為妥當。KC 說這些咒詛因其規模與可怖而使人驚愕，百姓必須從中認出神超自然的介入。
 - 經文用詞：異蹟奇事
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「異蹟奇事（ot 與 mo.phet）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 神蹟奇事不是真先知的憑證 | 0.599 | 0.406 | link_folder/主題/神蹟奇事不是真先知的憑證.md |
-| 2 | 神蹟（miraculous signs） | 0.665 | 0.397 | link_folder/神學/神蹟（miraculous signs）.md |
-| 3 | 神何曾從別的國中將一國的人民領出來 | 0.551 | 0.286 | link_folder/神學/神何曾從別的國中將一國的人民領出來.md |
-| 4 | 十二項咒詛與百姓的阿們 | 0.511 | 0.222 | link_folder/主題/十二項咒詛與百姓的阿們.md |
-| 5 | 手長大痲瘋的神蹟 | 0.541 | 0.214 | link_folder/神學/手長大痲瘋的神蹟.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 異蹟奇事（ot 與 mo.phet） | 0.888 | link_folder/原文/異蹟奇事（ot 與 mo.phet）.md |
+| 2 | 神蹟（miraculous signs） | 0.665 | link_folder/神學/神蹟（miraculous signs）.md |
+| 3 | 神蹟奇事不是真先知的憑證 | 0.599 | link_folder/主題/神蹟奇事不是真先知的憑證.md |
+| 4 | 在萬國中令人驚駭（za.a.vah） | 0.572 | link_folder/原文/在萬國中令人驚駭（za.a.vah）.md |
+| 5 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.558 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
 
-rerank_margin: 0.009 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=原文 vs 條目=主題），若確為同實體請確認是否改用 [[神蹟奇事不是真先知的憑證]]
+判定：✅ 建議使用既有條目 [[異蹟奇事（ot 與 mo.phet）]]（同名／字面對應）
 
 ## 喜悅善待也喜悅毀滅（su.s）（原文）
 query:
@@ -265,18 +256,17 @@ query:
 - 本章上下文：第63節「先前耶和華怎樣喜悅善待你們……也要照樣喜悅毀滅你們」。STEP 顯示前後兩個喜悅是同一個動詞的兩個時態：sas（H7797，完成式）與 ya.Sis（同一個 H7797，未完成式），簡要詞典義 su.s: to rejoice；句末的被拔除是 ve./ni.sach.Tem（H5255，簡要詞典義 na.sach: to pull，被動語態）。CT：喜悅表示神極大的意願，善待指施恩賜福，毀滅指咒詛受禍；拔除意連根拔起，指全然除滅。GT《聖經精讀本──申命記註解》說喜悅毀滅這句話悖論性地表現了神的公義屬性，因為神是斷不喜悅惡人滅在其罪惡之中的神，當理解為神懇切地希望用強有力的懲戒之鞭來鞭打終不肯悔改的百姓，使他們能夠認識到自己的罪惡並悔改。
 - 經文用詞：喜悅毀滅你們
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「喜悅善待也喜悅毀滅（su.s）」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 敗壞與毀滅的文字呼應 | 0.541 | 0.734 | link_folder/原文/敗壞與毀滅的文字呼應.md |
-| 2 | 不聽從神的五層漸進懲罰（利26：14-39） | 0.537 | 0.636 | link_folder/主題/不聽從神的五層漸進懲罰（利26：14-39）.md |
-| 3 | 把那惡從你們中間除掉（ba.ar） | 0.580 | 0.562 | link_folder/神學/把那惡從你們中間除掉（ba.ar）.md |
-| 4 | 滅絕 | 0.600 | 0.522 | link_folder/原文/滅絕.md |
-| 5 | 神厭惡以色列的難題（利26：30與26：44的張力） | 0.549 | 0.495 | link_folder/解經爭議/神厭惡以色列的難題（利26：30與26：44的張力）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 喜悅善待也喜悅毀滅（su.s） | 0.901 | link_folder/原文/喜悅善待也喜悅毀滅（su.s）.md |
+| 2 | 敗壞與滅絕同一字根（sha.chat） | 0.603 | link_folder/原文/敗壞與滅絕同一字根（sha.chat）.md |
+| 3 | 滅絕 | 0.600 | link_folder/原文/滅絕.md |
+| 4 | 滅盡與除滅的雙同字（sha.mad） | 0.585 | link_folder/原文/滅盡與除滅的雙同字（sha.mad）.md |
+| 5 | 把那惡從你們中間除掉（ba.ar） | 0.580 | link_folder/神學/把那惡從你們中間除掉（ba.ar）.md |
 
-rerank_margin: 0.098 (Top1 - Top2)
-判定：⚠ 相似度居中（0.50 ≤ 0.603 < 0.70），最近鄰為 [[敗壞與滅絕同一字根（sha.chat）]]——此區間真對應與無對應分數重疊，需逐一人工判斷（重排模型 nvidia/llama-nemotron-rerank-vl-1b-v2:free 未校準，上表名次僅供參考）
+判定：✅ 建議使用既有條目 [[喜悅善待也喜悅毀滅（su.s）]]（同名／字面對應）
 
 ## 坐船回埃及卻無人買（主題）
 query:
@@ -286,18 +276,17 @@ query:
 - 本章上下文：第68節，全章最後一句。STEP：ve./he.shi.ve./Kha（H7725G，使役語態，他要使你回去）mitz.ra.Yim（H4714G，埃及）bo./'o.ni.yOt（H591，簡要詞典義 o.niy.yah: fleet，坐船）；賣己身是 ve./hit.ma.kar.Tem（H4376，反身語態，你們要把自己賣掉），末句 ve./'Ein ko.Neh（H369＋H7069）字面是沒有買主。CT：出埃及時原本走上了不歸路，如今卻因悖逆而被咒詛受禍，身不由己地被送回埃及，這是咒詛的極峰；從前雖在仇敵手下作苦工還能受到基本生活的照顧與供應，如今卻找不到買主，生活毫無保障。GT《啟導本聖經申命記註釋》說以民和神的歷史關係從此一筆勾銷。GT《聖經精讀本──申命記註解》引 Schultz 的話說若說出埃及是以色列民族的誕生，入埃及則意味著以色列民族的死亡，並指出當時用船交通要快于陸路交通，故本節是意指速速被擄去，也與當時利用海運的奴隸貿易密切相關。KC 說沒有人會在他們身上看見任何用處，連一個銅板都不肯花來買下他們。
 - 經文用詞：坐船回埃及去
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「坐船回埃及卻無人買」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 出埃及 | 0.620 | 0.066 | link_folder/歷史/出埃及.md |
-| 2 | 埃及 | 0.628 | 0.060 | link_folder/地點/埃及.md |
-| 3 | 容我的百姓去 | 0.538 | 0.054 | link_folder/神學/容我的百姓去.md |
-| 4 | 用錢買糧買水 | 0.536 | 0.053 | link_folder/主題/用錢買糧買水.md |
-| 5 | 申28：1-68 | 0.529 | 0.048 | link_folder/互文/申28：1-68.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 坐船回埃及卻無人買 | 0.924 | link_folder/主題/坐船回埃及卻無人買.md |
+| 2 | 埃及 | 0.628 | link_folder/地點/埃及.md |
+| 3 | 出埃及 | 0.620 | link_folder/歷史/出埃及.md |
+| 4 | 催逼離開 | 0.581 | link_folder/歷史/催逼離開.md |
+| 5 | 為奴之家 | 0.569 | link_folder/主題/為奴之家.md |
 
-rerank_margin: 0.006 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=歷史），若確為同實體請確認是否改用 [[出埃及]]
+判定：✅ 建議使用既有條目 [[坐船回埃及卻無人買]]（同名／字面對應）
 
 ## 富有的時候不歡心樂意地事奉（主題）
 query:
@@ -307,18 +296,17 @@ query:
 - 本章上下文：第47至48節。STEP 顯示這兩節用同一個動詞 a.vad：第47節 'a.Vad.ta（H5647H）你沒有事奉耶和華你的神，第48節 ve./'a.vad.Ta（H5647G）你要事奉你的仇敵；兩節都以 kol（H3605，一切）收尾——第47節是 me./Ro Kol（H7230，從一切的豐富），第48節是 u./ve./Cho.ser Kol（H2640，在缺乏一切之中）。CT：富有的時候意指蒙神賜福的時候，不歡心樂意即指不心甘情願；並說神會親自打發仇敵來攻擊他們，管教、挽回自己的百姓。GT《聖經精讀本──申命記註解》把不事奉神的悖逆列為以色列受咒詛的原因之一。KC 說耶和華已豐豐富富地賜福給祂的百姓，這只能成為以喜樂和歡心事奉祂的理由；若不如此，就是最粗暴的忘恩形式。
 - 經文用詞：不歡心樂意地事奉
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「富有的時候不歡心樂意地事奉」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 甘心樂意的奉獻 | 0.554 | 0.459 | link_folder/神學/甘心樂意的奉獻.md |
-| 2 | 奉獻過剩與節制 | 0.539 | 0.430 | link_folder/神學/奉獻過剩與節制.md |
-| 3 | 在耶和華面前歡樂 | 0.561 | 0.356 | link_folder/主題/在耶和華面前歡樂.md |
-| 4 | 心高氣傲（rum） | 0.538 | 0.317 | link_folder/原文/心高氣傲（rum）.md |
-| 5 | 貨財（cha.yil） | 0.539 | 0.260 | link_folder/原文/貨財（cha.yil）.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 富有的時候不歡心樂意地事奉 | 0.924 | link_folder/主題/富有的時候不歡心樂意地事奉.md |
+| 2 | 喜悅善待也喜悅毀滅（su.s） | 0.663 | link_folder/原文/喜悅善待也喜悅毀滅（su.s）.md |
+| 3 | 鐵軛（ol 與 bar.zel） | 0.588 | link_folder/原文/鐵軛（ol 與 bar.zel）.md |
+| 4 | 在耶和華面前歡樂 | 0.561 | link_folder/主題/在耶和華面前歡樂.md |
+| 5 | 神厭惡以色列的難題（利26：30與26：44的張力） | 0.561 | link_folder/解經爭議/神厭惡以色列的難題（利26：30與26：44的張力）.md |
 
-rerank_margin: 0.029 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=神學），若確為同實體請確認是否改用 [[甘心樂意的奉獻]]
+判定：✅ 建議使用既有條目 [[富有的時候不歡心樂意地事奉]]（同名／字面對應）
 
 ## 性命懸懸無定（主題）
 query:
@@ -328,18 +316,17 @@ query:
 - 本章上下文：第65至67節。CT：懸懸無定指千鈞一髮，生死交關；晝夜恐懼指日以繼夜，無時無刻不活在恐懼之中；並解釋第65節的心中跳動指心緒不寧，眼目失明指因盼望落空以致視野茫然，精神消耗指精疲力盡。GT《聖經精讀本──申命記註解》說這猶如用纖細的一根繩索掉在無底懸崖之上的人一樣，具有你的性命暫時也得不到保障之意；並說第67節形象地表現了因極度的痛苦與愁煩，苦苦等待時間流逝的淒慘生活境遇。KC 指出這種懼怕不只來自眼睛所見的真實危險，也來自心裡的恐懼，而人去追查恐懼的原因時，往往發現那只是想像的產物。BH 說失明象徵盼望與洞察力的喪失，心中跳動是舊約裡常見的審判景象。
 - 經文用詞：懸懸無定
 
-字面解析：無字面對應 → 新建（C）
+字面解析：對上既有「性命懸懸無定」（exact，將歸 A/B 累積）
 
-| Rank | Candidate | Similarity | Rerank | Path |
-|---|---|---:|---:|---|
-| 1 | 心消化（ma.sas） | 0.474 | 0.089 | link_folder/原文/心消化（ma.sas）.md |
-| 2 | 凡屬血氣的（ba.sar） | 0.466 | 0.061 | link_folder/原文/凡屬血氣的（ba.sar）.md |
-| 3 | 你要盡心盡性盡力愛耶和華（a.hav） | 0.471 | 0.061 | link_folder/原文/你要盡心盡性盡力愛耶和華（a.hav）.md |
-| 4 | 使天下萬民驚恐懼怕 | 0.523 | 0.058 | link_folder/原文/使天下萬民驚恐懼怕.md |
-| 5 | 信心與恐懼 | 0.507 | 0.052 | link_folder/神學/信心與恐懼.md |
+| Rank | Candidate | Similarity | Path |
+|---|---|---:|---|
+| 1 | 性命懸懸無定 | 0.876 | link_folder/主題/性命懸懸無定.md |
+| 2 | 心能明白眼能看見耳能聽見 | 0.526 | link_folder/主題/心能明白眼能看見耳能聽見.md |
+| 3 | 使天下萬民驚恐懼怕 | 0.523 | link_folder/原文/使天下萬民驚恐懼怕.md |
+| 4 | 百姓懼怕神的顯現 | 0.515 | link_folder/事件/百姓懼怕神的顯現.md |
+| 5 | 信心與恐懼 | 0.507 | link_folder/神學/信心與恐懼.md |
 
-rerank_margin: 0.028 (Top1 - Top2)
-判定：⚠ 近鄰分類不相容（候選=主題 vs 條目=原文），若確為同實體請確認是否改用 [[心消化（ma.sas）]]
+判定：✅ 建議使用既有條目 [[性命懸懸無定]]（同名／字面對應）
 
 ## 祝福與咒詛（主題）
 query:
@@ -355,8 +342,8 @@ query:
 | 1 | 祝福與咒詛 | 0.698 | link_folder/主題/祝福與咒詛.md |
 | 2 | 兩山宣告祝福與咒詛的儀式 | 0.650 | link_folder/主題/兩山宣告祝福與咒詛的儀式.md |
 | 3 | 申28：1-68 | 0.639 | link_folder/互文/申28：1-68.md |
-| 4 | 十二項咒詛與百姓的阿們 | 0.595 | link_folder/主題/十二項咒詛與百姓的阿們.md |
-| 5 | 亞倫的祝福（祭司祝福） | 0.585 | link_folder/主題/亞倫的祝福（祭司祝福）.md |
+| 4 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.631 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 5 | 六組祝福與六組咒詛的對稱 | 0.605 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
 
 判定：✅ 建議使用既有條目 [[祝福與咒詛]]（同名／字面對應）
 
@@ -372,11 +359,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 咒詛（a.rar 與 qa.vav） | 0.720 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
-| 2 | 十二項咒詛與百姓的阿們 | 0.614 | link_folder/主題/十二項咒詛與百姓的阿們.md |
-| 3 | 祝福與咒詛 | 0.539 | link_folder/主題/祝福與咒詛.md |
-| 4 | 咒詛你的我必咒詛他（創12：3） | 0.519 | link_folder/互文/咒詛你的我必咒詛他（創12：3）.md |
-| 5 | 可憎的物（to.e.vah） | 0.514 | link_folder/原文/可憎的物（to.e.vah）.md |
+| 1 | 咒詛（a.rar 與 qa.vav） | 0.731 | link_folder/原文/咒詛（a.rar 與 qa.vav）.md |
+| 2 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.651 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
+| 3 | 十二項咒詛與百姓的阿們 | 0.614 | link_folder/主題/十二項咒詛與百姓的阿們.md |
+| 4 | 六組祝福與六組咒詛的對稱 | 0.607 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
+| 5 | 追隨與臨到（na.sag） | 0.578 | link_folder/原文/追隨與臨到（na.sag）.md |
 
 判定：✅ 建議使用既有條目 [[咒詛（a.rar 與 qa.vav）]]（同名／字面對應）
 
@@ -391,11 +378,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.757 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 1 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.823 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
 | 2 | 申28：1-68 | 0.649 | link_folder/互文/申28：1-68.md |
 | 3 | 祝福與咒詛 | 0.598 | link_folder/主題/祝福與咒詛.md |
 | 4 | 神賜福應許 | 0.588 | link_folder/神學/神賜福應許.md |
-| 5 | 西乃之約 | 0.577 | link_folder/神學/西乃之約.md |
+| 5 | 摩押平原之約 | 0.584 | link_folder/神學/摩押平原之約.md |
 
 判定：✅ 建議使用既有條目 [[遵行誡命必蒙福的七重應許（利26：3-13）]]（同名／字面對應）
 
@@ -410,11 +397,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 不聽從神的五層漸進懲罰（利26：14-39） | 0.801 | link_folder/主題/不聽從神的五層漸進懲罰（利26：14-39）.md |
+| 1 | 不聽從神的五層漸進懲罰（利26：14-39） | 0.839 | link_folder/主題/不聽從神的五層漸進懲罰（利26：14-39）.md |
 | 2 | 申28：1-68 | 0.616 | link_folder/互文/申28：1-68.md |
 | 3 | 結14：21 | 0.610 | link_folder/互文/結14：21.md |
-| 4 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.581 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
-| 5 | 出35-40 逐字複述出25-31 | 0.562 | link_folder/主題/出35-40 逐字複述出25-31.md |
+| 4 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.597 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 5 | 咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret） | 0.576 | link_folder/原文/咒詛擾亂責罰（me.e.rah、me.hu.mah、mig.e.ret）.md |
 
 判定：✅ 建議使用既有條目 [[不聽從神的五層漸進懲罰（利26：14-39）]]（同名／字面對應）
 
@@ -429,7 +416,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 宗主條約 | 0.783 | link_folder/背景/宗主條約.md |
+| 1 | 宗主條約 | 0.792 | link_folder/背景/宗主條約.md |
 | 2 | 古代近東立約 | 0.660 | link_folder/背景/古代近東立約.md |
 | 3 | 盟約 | 0.624 | link_folder/主題/盟約.md |
 | 4 | 古代近東法典 | 0.620 | link_folder/背景/古代近東法典.md |
@@ -448,11 +435,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 筐子（te.ne） | 0.685 | link_folder/原文/筐子（te.ne）.md |
-| 2 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.573 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
-| 3 | 爐灶和摶麵盆 | 0.566 | link_folder/文化/爐灶和摶麵盆.md |
-| 4 | 初熟土產的信仰告白 | 0.540 | link_folder/主題/初熟土產的信仰告白.md |
-| 5 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.538 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 1 | 筐子（te.ne） | 0.773 | link_folder/原文/筐子（te.ne）.md |
+| 2 | 爐灶和摶麵盆 | 0.640 | link_folder/文化/爐灶和摶麵盆.md |
+| 3 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.577 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
+| 4 | 六組祝福與六組咒詛的對稱 | 0.542 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
+| 5 | 初熟土產的信仰告白 | 0.540 | link_folder/主題/初熟土產的信仰告白.md |
 
 判定：✅ 建議使用既有條目 [[筐子（te.ne）]]（同名／字面對應）
 
@@ -468,9 +455,9 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 爐灶和摶麵盆 | 0.690 | link_folder/文化/爐灶和摶麵盆.md |
-| 2 | 素祭的五種形式 | 0.544 | link_folder/主題/素祭的五種形式.md |
-| 3 | 筐子（te.ne） | 0.533 | link_folder/原文/筐子（te.ne）.md |
+| 1 | 爐灶和摶麵盆 | 0.795 | link_folder/文化/爐灶和摶麵盆.md |
+| 2 | 筐子（te.ne） | 0.602 | link_folder/原文/筐子（te.ne）.md |
+| 3 | 素祭的五種形式 | 0.544 | link_folder/主題/素祭的五種形式.md |
 | 4 | 敞口的器皿 | 0.514 | link_folder/文化/敞口的器皿.md |
 | 5 | 壇的器具（盆、鏟子、盤子、肉鍤子、火鼎） | 0.511 | link_folder/主題/壇的器具（盆、鏟子、盤子、肉鍤子、火鼎）.md |
 
@@ -491,7 +478,7 @@ query:
 | 2 | 寄居的 | 0.640 | link_folder/原文/寄居的.md |
 | 3 | 寄居者身份 | 0.588 | link_folder/主題/寄居者身份.md |
 | 4 | 本地人與寄居者同歸一例的律法精神 | 0.582 | link_folder/神學/本地人與寄居者同歸一例的律法精神.md |
-| 5 | 寄居的與本地人同歸一例 | 0.573 | link_folder/主題/寄居的與本地人同歸一例.md |
+| 5 | 作首不作尾居上不居下（rosh 與 za.nav） | 0.581 | link_folder/原文/作首不作尾居上不居下（rosh 與 za.nav）.md |
 
 判定：✅ 建議使用既有條目 [[寄居的]]（同名／字面對應）
 
@@ -506,11 +493,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 分散在萬民中 | 0.623 | link_folder/歷史/分散在萬民中.md |
-| 2 | 利未人分散在各支派中 | 0.521 | link_folder/主題/利未人分散在各支派中.md |
-| 3 | 耶29：18 | 0.518 | link_folder/互文/耶29：18.md |
-| 4 | 滅絕（herem） | 0.474 | link_folder/神學/滅絕（herem）.md |
-| 5 | 散送冥 | 0.469 | link_folder/人物/散送冥.md |
+| 1 | 分散在萬民中 | 0.733 | link_folder/歷史/分散在萬民中.md |
+| 2 | 在萬國中令人驚駭（za.a.vah） | 0.582 | link_folder/原文/在萬國中令人驚駭（za.a.vah）.md |
+| 3 | 利未人分散在各支派中 | 0.521 | link_folder/主題/利未人分散在各支派中.md |
+| 4 | 耶29：18 | 0.518 | link_folder/互文/耶29：18.md |
+| 5 | 如鷹飛來的遠方之民 | 0.488 | link_folder/主題/如鷹飛來的遠方之民.md |
 
 判定：✅ 建議使用既有條目 [[分散在萬民中]]（同名／字面對應）
 
@@ -526,11 +513,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 吃兒女的肉（極端饑荒的咒詛） | 0.722 | link_folder/主題/吃兒女的肉（極端饑荒的咒詛）.md |
+| 1 | 吃兒女的肉（極端饑荒的咒詛） | 0.824 | link_folder/主題/吃兒女的肉（極端饑荒的咒詛）.md |
 | 2 | 王下6：28-29 | 0.631 | link_folder/互文/王下6：28-29.md |
-| 3 | 結22：7 | 0.522 | link_folder/互文/結22：7.md |
-| 4 | 孤兒寡婦 | 0.505 | link_folder/主題/孤兒寡婦.md |
-| 5 | 不聽從神的五層漸進懲罰（利26：14-39） | 0.501 | link_folder/主題/不聽從神的五層漸進懲罰（利26：14-39）.md |
+| 3 | 如鷹飛來的遠方之民 | 0.592 | link_folder/主題/如鷹飛來的遠方之民.md |
+| 4 | 結22：7 | 0.522 | link_folder/互文/結22：7.md |
+| 5 | 孤兒寡婦 | 0.505 | link_folder/主題/孤兒寡婦.md |
 
 判定：✅ 建議使用既有條目 [[吃兒女的肉（極端饑荒的咒詛）]]（同名／字面對應）
 
@@ -546,7 +533,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.740 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
+| 1 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.750 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
 | 2 | 迦南地的七樣出產 | 0.576 | link_folder/主題/迦南地的七樣出產.md |
 | 3 | 進迦南應許 | 0.518 | link_folder/歷史/進迦南應許.md |
 | 4 | 流奶與蜜之地 | 0.502 | link_folder/神學/流奶與蜜之地.md |
@@ -566,7 +553,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 蝗災 | 0.699 | link_folder/歷史/蝗災.md |
+| 1 | 蝗災 | 0.764 | link_folder/歷史/蝗災.md |
 | 2 | 蠅災 | 0.616 | link_folder/歷史/蠅災.md |
 | 3 | 東風與西風 | 0.599 | link_folder/原文/東風與西風.md |
 | 4 | 十災 | 0.569 | link_folder/歷史/十災.md |
@@ -586,7 +573,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 敬畏神 | 0.661 | link_folder/神學/敬畏神.md |
+| 1 | 敬畏神 | 0.696 | link_folder/神學/敬畏神.md |
 | 2 | 敬畏耶和華的話 | 0.621 | link_folder/神學/敬畏耶和華的話.md |
 | 3 | 敬畏與信服 | 0.603 | link_folder/神學/敬畏與信服.md |
 | 4 | 敬畏與可畏同一字根（ya.re） | 0.589 | link_folder/原文/敬畏與可畏同一字根（ya.re）.md |
@@ -605,11 +592,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 亞述 | 0.683 | link_folder/地點/亞述.md |
-| 2 | 巴蘭詩歌中的亞述指哪一個 | 0.654 | link_folder/解經爭議/巴蘭詩歌中的亞述指哪一個.md |
-| 3 | 亞斯她錄 | 0.588 | link_folder/地點/亞斯她錄.md |
-| 4 | 與以色列友好的基尼人為何遭難 | 0.520 | link_folder/解經爭議/與以色列友好的基尼人為何遭難.md |
-| 5 | 亞捫人 | 0.515 | link_folder/人物/亞捫人.md |
+| 1 | 亞述 | 0.795 | link_folder/地點/亞述.md |
+| 2 | 如鷹飛來的遠方之民 | 0.668 | link_folder/主題/如鷹飛來的遠方之民.md |
+| 3 | 巴蘭詩歌中的亞述指哪一個 | 0.654 | link_folder/解經爭議/巴蘭詩歌中的亞述指哪一個.md |
+| 4 | 亞斯她錄 | 0.588 | link_folder/地點/亞斯她錄.md |
+| 5 | 在萬國中令人驚駭（za.a.vah） | 0.545 | link_folder/原文/在萬國中令人驚駭（za.a.vah）.md |
 
 判定：✅ 建議使用既有條目 [[亞述]]（同名／字面對應）
 
@@ -624,11 +611,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 秋雨春雨（yo.reh、mal.qosh） | 0.760 | link_folder/原文/秋雨春雨（yo.reh、mal.qosh）.md |
-| 2 | 眷顧（da.rash） | 0.514 | link_folder/原文/眷顧（da.rash）.md |
-| 3 | 雨水滋潤（ma.tar、sha.tah） | 0.514 | link_folder/原文/雨水滋潤（ma.tar、sha.tah）.md |
-| 4 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.507 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
-| 5 | 心中受迷惑（pa.tah） | 0.486 | link_folder/原文/心中受迷惑（pa.tah）.md |
+| 1 | 秋雨春雨（yo.reh、mal.qosh） | 0.807 | link_folder/原文/秋雨春雨（yo.reh、mal.qosh）.md |
+| 2 | 開天上的府庫（o.tsar） | 0.557 | link_folder/原文/開天上的府庫（o.tsar）.md |
+| 3 | 眷顧（da.rash） | 0.514 | link_folder/原文/眷顧（da.rash）.md |
+| 4 | 雨水滋潤（ma.tar、sha.tah） | 0.514 | link_folder/原文/雨水滋潤（ma.tar、sha.tah）.md |
+| 5 | 五穀、新酒和油（da.gan、ti.rosh、yits.har） | 0.506 | link_folder/原文/五穀、新酒和油（da.gan、ti.rosh、yits.har）.md |
 
 判定：✅ 建議使用既有條目 [[秋雨春雨（yo.reh、mal.qosh）]]（同名／字面對應）
 
@@ -644,11 +631,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 出入（領袖用語） | 0.619 | link_folder/原文/出入（領袖用語）.md |
-| 2 | 祝福與咒詛 | 0.492 | link_folder/主題/祝福與咒詛.md |
-| 3 | 遵行 | 0.489 | link_folder/原文/遵行.md |
-| 4 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.487 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
-| 5 | 得福（ya.tav） | 0.484 | link_folder/原文/得福（ya.tav）.md |
+| 1 | 出入（領袖用語） | 0.737 | link_folder/原文/出入（領袖用語）.md |
+| 2 | 六組祝福與六組咒詛的對稱 | 0.606 | link_folder/主題/六組祝福與六組咒詛的對稱.md |
+| 3 | 祝福與咒詛 | 0.492 | link_folder/主題/祝福與咒詛.md |
+| 4 | 遵行誡命必蒙福的七重應許（利26：3-13） | 0.491 | link_folder/主題/遵行誡命必蒙福的七重應許（利26：3-13）.md |
+| 5 | 遵行 | 0.489 | link_folder/原文/遵行.md |
 
 判定：✅ 建議使用既有條目 [[出入（領袖用語）]]（同名／字面對應）
 
@@ -664,11 +651,11 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 古代近東的圍城戰與營壘 | 0.716 | link_folder/背景/古代近東的圍城戰與營壘.md |
-| 2 | 六十座堅固城與無城牆的鄉村 | 0.597 | link_folder/主題/六十座堅固城與無城牆的鄉村.md |
-| 3 | 圍城不可砍伐果樹的條例 | 0.540 | link_folder/主題/圍城不可砍伐果樹的條例.md |
-| 4 | 遠方城的招降條例 | 0.538 | link_folder/主題/遠方城的招降條例.md |
-| 5 | 牆垣 | 0.531 | link_folder/原文/牆垣.md |
+| 1 | 古代近東的圍城戰與營壘 | 0.751 | link_folder/背景/古代近東的圍城戰與營壘.md |
+| 2 | 如鷹飛來的遠方之民 | 0.666 | link_folder/主題/如鷹飛來的遠方之民.md |
+| 3 | 六十座堅固城與無城牆的鄉村 | 0.597 | link_folder/主題/六十座堅固城與無城牆的鄉村.md |
+| 4 | 圍城不可砍伐果樹的條例 | 0.540 | link_folder/主題/圍城不可砍伐果樹的條例.md |
+| 5 | 遠方城的招降條例 | 0.538 | link_folder/主題/遠方城的招降條例.md |
 
 判定：✅ 建議使用既有條目 [[古代近東的圍城戰與營壘]]（同名／字面對應）
 
@@ -684,7 +671,7 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 王的三禁與抄錄律法書 | 0.672 | link_folder/主題/王的三禁與抄錄律法書.md |
+| 1 | 王的三禁與抄錄律法書 | 0.722 | link_folder/主題/王的三禁與抄錄律法書.md |
 | 2 | 立王的資格（me.lekh） | 0.660 | link_folder/神學/立王的資格（me.lekh）.md |
 | 3 | 耶和華作王 | 0.625 | link_folder/神學/耶和華作王.md |
 | 4 | 不可偏離左右 | 0.526 | link_folder/主題/不可偏離左右.md |
@@ -697,18 +684,17 @@ query:
 - 待建立詞：第六災：瘡災
 - 出現位置：申命記 第28章
 - 候選類型：歷史
-- 本章上下文：第60節「也必使你所懼怕、埃及人的病都臨到你，貼在你身上」，第27節則明指埃及人的瘡。GT《聖經精讀本──申命記註解》說埃及人的病狹義上是指摩西在法老面前所行的十災，在廣義上是統稱神為了懲罰墮落的百姓而使用的所有懲戒手段。BH 說第27節的瘡回指出埃及記九9至11 神降在埃及人身上的第六災。
-- 經文用詞：埃及人的病
+- 本章上下文：第27節「耶和華必用埃及人的瘡並痔瘡、牛皮癬與疥攻擊你，使你不能醫治」——STEP 顯示這裡是 bi/sh.Chin mitz.Ra.yim（H7822），與出埃及記九9至11 第六災是同一個名詞。第60節的「埃及人的病」則是另一個字：STEP 顯示是 kol mad.Veh mitz.Ra.yim（H4064，簡要詞典義 mad.veh: disease），指埃及的一切疾病而不限於瘡。GT《聖經精讀本──申命記註解》在第60節說埃及人的病狹義上是指摩西在法老面前所行的十災，在廣義上是統稱神為了懲罰墮落的百姓而使用的所有懲戒手段；BH 說第27節的瘡回指出埃及記九9至11 神降在埃及人身上的第六災。
 
 字面解析：對上既有「第六災：瘡災」（exact，將歸 A/B 累積）
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 第六災：瘡災 | 0.703 | link_folder/歷史/第六災：瘡災.md |
-| 2 | 災殃 | 0.677 | link_folder/原文/災殃.md |
-| 3 | 十災 | 0.672 | link_folder/歷史/十災.md |
-| 4 | 起泡的瘡 | 0.666 | link_folder/原文/起泡的瘡.md |
-| 5 | 第五災：重重的瘟疫 | 0.616 | link_folder/神學/第五災：重重的瘟疫.md |
+| 1 | 第六災：瘡災 | 0.799 | link_folder/歷史/第六災：瘡災.md |
+| 2 | 起泡的瘡 | 0.758 | link_folder/原文/起泡的瘡.md |
+| 3 | 災殃 | 0.668 | link_folder/原文/災殃.md |
+| 4 | 十災 | 0.651 | link_folder/歷史/十災.md |
+| 5 | 第五災：畜疫之災 | 0.610 | link_folder/歷史/第五災：畜疫之災.md |
 
 判定：✅ 建議使用既有條目 [[第六災：瘡災]]（同名／字面對應）
 
@@ -724,10 +710,10 @@ query:
 
 | Rank | Candidate | Similarity | Path |
 |---|---|---:|---|
-| 1 | 起泡的瘡 | 0.803 | link_folder/原文/起泡的瘡.md |
-| 2 | 大痲瘋（sara'at） | 0.629 | link_folder/原文/大痲瘋（sara'at）.md |
-| 3 | 古代近東的皮膚病與黴斑觀念 | 0.628 | link_folder/背景/古代近東的皮膚病與黴斑觀念.md |
-| 4 | 第六災：瘡災 | 0.616 | link_folder/歷史/第六災：瘡災.md |
+| 1 | 起泡的瘡 | 0.885 | link_folder/原文/起泡的瘡.md |
+| 2 | 第六災：瘡災 | 0.726 | link_folder/歷史/第六災：瘡災.md |
+| 3 | 大痲瘋（sara'at） | 0.629 | link_folder/原文/大痲瘋（sara'at）.md |
+| 4 | 古代近東的皮膚病與黴斑觀念 | 0.628 | link_folder/背景/古代近東的皮膚病與黴斑觀念.md |
 | 5 | 炭疽（anthrax） | 0.593 | link_folder/原文/炭疽（anthrax）.md |
 
 判定：✅ 建議使用既有條目 [[起泡的瘡]]（同名／字面對應）

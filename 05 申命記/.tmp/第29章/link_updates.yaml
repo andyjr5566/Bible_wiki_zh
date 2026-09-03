@@ -56,7 +56,7 @@
     "accumulation_count":
     - !!int "5"
     - !!int "6"
-    "definition": "keep"
+    "definition": "update"
     "development":
       "decision": "update"
       "synthesis_scope":
