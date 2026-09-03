@@ -1,0 +1,253 @@
+book: 申命記
+chapter: 23
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 摩押人
+  path: link_folder/人物/摩押人.md
+  summary: 第3至6節把摩押人與亞捫人一同判為永不可入耶和華的會，理由記了兩筆：出埃及時沒有拿食物和水在路上迎接，又雇巴蘭來咒詛。CT 指出他們是羅得與兩個女兒亂倫所生的子孫(參創十九36~38)，並註明「此處亞捫人和摩押人是用陽性名詞，指男人，故女子若嫁給以色列人不在此限，例如摩押女子路得嫁給波阿斯，大衛王便是他們的第三代子孫(參得四13，17)」；GT《申命記雷氏研讀本》說法一致：「這裏的陽性動詞顯示所指的是“亞捫”或“摩押”的男子。進猶太教的女子，如摩押人路得，可以嫁給以色列的男人。」第5節接著說耶和華不肯聽從巴蘭，卻使咒詛變為祝福。
+  relation: 本章把這個民族與以色列的敵對關係寫成了一條成文的定例，也同時留下了路得那個例外的空間——限制的是男性，不是整個民族。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: already_covered
+      covered_by: 因此有申二三3 的定例：摩押人的子孫雖過十代，也永不可入耶和華的會。
+- title: 巴蘭（比珥的兒子）
+  path: link_folder/人物/巴蘭（比珥的兒子）.md
+  summary: 第4至5節：亞捫人與摩押人「雇了米所波大米的毘奪人比珥的兒子巴蘭來咒詛你們」，「然而耶和華─你的神不肯聽從巴蘭，卻使那咒詛的言語變為祝福的話，因為耶和華─你的神愛你」。CT 註：「神禁止巴蘭咒詛以色列人，又使巴蘭不自覺地說出祝福以色列人的話(參民二十三7~8，11等)。」GT《申命記串珠聖經註釋》：「「巴蘭」：摩押人曾雇請他咒詛選民，但神將他對以色列的咒詛變成祝福（參民22-24章）；這裡提及巴蘭，藉此強調摩押人的罪行。」GT《聖經精讀本》另註米所波大米的毘奪「據推測,是今日位於幼發拉底河沿岸的Tell-Ahmar」。KC 說神提醒百姓的不只是這些國家所行的惡，也提醒他們祂把咒詛翻轉成祝福，因為祂愛他們。
+  relation: 本章沒有再敘述巴蘭的行動，而是把他當成一項罪證引用——被引用的是雇他的人，被證明的是神的愛。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:22
+      - 申命記:23
+- title: 以東
+  path: link_folder/地點/以東.md
+  summary: 第7節：「不可憎惡以東人，因為他是你的弟兄。」第8節接著說他們第三代子孫可以入耶和華的會。CT 說「『以東人』以東人是以掃的後代(參創三十六9)，和以色列人的祖先有血緣關係」；GT《申命記雷氏研讀本》：「以東人是雅各“弟兄”以掃的後裔。」GT《啟導本聖經申命記註釋》另指出以東人曾在曠野中和以色列人作對（民二十10～21），神要以色列人以德報怨。KC 說以東是與神百姓血緣最近的親屬，比亞捫和摩押更近。
+  relation: 創世記那條線走的是相爭，本章給的卻是一條相反方向的吩咐：不可憎惡。判準落在血緣本身，不在以東做過什麼。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:25
+      - 申命記:23
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: 第7節：「不可憎惡埃及人，因為你在他的地上作過寄居的。」CT 指出「在天下鬧飢荒時，埃及的法老曾經允許雅各攜家帶眷移居埃及的蘭塞(參創四十七11)」；GT《聖經精讀本──申命記註解》說以色列曾將埃及的地當作躲避饑謹之地滯留在那裡(創46:7)；GT《啟導本聖經申命記註釋》則認為這裡的埃及人當指寄居以色列地的埃及人，因為只提寄居的事、未提受奴役的事。KC 也注意到這裡回想的只有他們在埃及所經歷的好處。
+  relation: 本章用這段記憶做的是另一件事：不是要求以色列善待住在他們中間的外人，而是禁止以色列記恨曾收留過他們的那個國家。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:23
+- title: 不潔之人出到營外
+  path: link_folder/主題/不潔之人出到營外.md
+  summary: 第10至11節：夜間偶然夢遺的人要出到營外，不可入營；到傍晚用水洗澡，日落了才可以入營。CT 把這種不潔與利未記的其他情形並列——痲瘋病患者(參利十三1~46)、漏症患者(參利十五1~15)、遺精的男人(參利十五16~18)、行經的女人(參利十五19~25)，並說「用水洗澡」指用水洗全身(參利十五16)。GT《聖經精讀本──申命記註解》把本章的潔淨條例定位為爭戰時的軍隊聖潔條例，與日常生活的潔淨條例分開；KC 說這種不潔並非出於人的意志，人不必為它受責備。
+  relation: 本章把出營的規矩搬到行軍的營裡，門檻降低了——出營的只是偶然夢遺的人，隔天日落就回來——理由卻沒有改：第14節說神在營中行走。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:5
+      - 申命記:23
+- title: 神的同在
+  path: link_folder/神學/神的同在.md
+  summary: '第14節：「因為耶和華─你的神常在你營中行走，要救護你，將仇敵交給你，所以你的營理當聖潔，免得他見你那裡有污穢，就離開你。」STEP：mit.ha.Lekh（H1980I，ha.lakh，本節譯義 [is] walking back and forth）、ma.cha.Ne.kha（H4264 ma.cha.neh: camp）、le.ha.tzi.le.Kha（H5337 na.tsal: to rescue）。CT 說「『在你營中行走』形容神的同在和保守」，並說這是藉物質層面的清潔或污穢，來喻指靈性層面的聖潔或污穢。KC 說爭戰的力量就在於耶和華在他們中間；BH 把這個行走的意象連到神在伊甸園中行走。'
+  relation: 本章讓同在出現在行軍的營裡，而維持它的條件落在最日常的細節上——夢遺的人出營一夜，便溺要挖坑掩埋。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:26
+      - 申命記:23
+- title: 聖潔
+  path: link_folder/神學/聖潔.md
+  summary: '第14節：「所以你的營理當聖潔，免得他見你那裡有污穢，就離開你。」STEP：ka.Do.osh（H6918G，qa.dosh: holy）。GT《聖經精讀本──申命記註解》解釋為什麼連生理現象都被列為不潔：「律法之所以規定精液、大便、月經等人身上的自然生理現象為不潔淨的,是為了使以色列百姓藉著日常生活,認識到他們是為聖潔之神所分別為聖的。」CT 說這是藉物質層面的清潔或污穢來喻指靈性層面的聖潔或污穢。'
+  relation: 本章把這個要求放在最不像宗教場合的地方：行軍的營地。要守的不是祭儀規格，而是夢遺、便溺這類每天都會發生的事。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:14
+      - 申命記:23
+- title: 奴僕
+  path: link_folder/原文/奴僕.md
+  summary: '第15至16節：逃到以色列的奴僕不可交還主人，要讓他同住、由他自選城邑、不可欺負他。STEP：''E.ved（H5650，e.ved: servant/slave）、tas.Gir（H5462 sa.gar: to shut）、yi.na.Tzel（H5337 na.tsal，本節譯義 he will deliver himself）。CT 說「『脫了主人的手』非指企圖脫離奴僕身分的逃走，而是指因受到主人的殘酷虐待，甚或折斷手腳的酷刑，為保性命而冒險逃脫的奴僕」；GT《申命記雷氏研讀本》：「這條例所指的是一個非以色列人的奴僕從殘酷的迦南人主人那裏逃走出來。」GT《啟導本聖經申命記註釋》：「巴比倫的《漢慕拉比法典》規定匿藏逃奴者死，與神賜以色列人的律法不同很大。」'
+  relation: 本章講的不是以色列自己的奴僕，而是逃到以色列來的外邦奴僕；律法給的不是年限與贖回，而是收容、自選居所與不被欺負。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:23
+- title: 迦南廟妓風俗
+  path: link_folder/文化/迦南廟妓風俗.md
+  summary: 第17至18節先禁止以色列的女子作妓女、男子作孌童，再禁止把這一行所得帶入耶和華的殿還願。CT：「『妓女』指賣淫的女人，特指異教的廟妓；『孌童』指供人狎玩的男人，特指異教拜神儀式中的男性廟娼。」GT《申命記雷氏研讀本》：「“妓女……孌童”。指迦南宗教裏常見的女性和男性廟妓。」GT《聖經精讀本──申命記註解》說這裡所論及的妓女與孌童「是與外邦的偶像崇拜及祭祀儀式有密切關聯的人,指以宗教性禮拜行為來賣淫的人」；GT《啟導本》說神滅絕迦南地民族正是要杜絕此種惡風俗。KC 指出摩西提出這條禁令本身就說明他知道百姓做得出這種事，後來也確實犯了（何4:14；王下23:7；彌1:7）。
+  relation: 創世記那次是敘事裡的一個誤認，本章則把同一個風俗寫成兩道明文禁令——不可做，也不可拿這一行的錢來還願。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:38
+      - 申命記:23
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: '第18節：「因為這兩樣都是耶和華─你神所憎惡的。」STEP：to.''a.Vat（H8441，to.e.vah: abomination）。CT 在話中之光說：「錯誤的手段並不能成就良善的目的，用行惡、行淫或詭詐而得的錢財奉獻，神絕不悅納。」GT《聖經精讀本──申命記註解》說這句話表明錯誤的手段決不能成為合理解釋良善目的；KC 也說神絕不接受這種人的祭物。'
+  relation: 本章這一次判為可憎的不是物件，而是錢的來源——同一個字從不可吃、不可拜、不可穿，走到了不可獻。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:22
+      - 申命記:23
+- title: 取利
+  path: link_folder/原文/取利.md
+  summary: '第19至20節：借給弟兄的錢財、糧食或無論什麼可生利的物都不可取利，借給外邦人則可以。STEP：Ne.shekh（H5392，ne.shekh: interest）在第19節出現三次，動詞是 ta.Shikh 與 yi.Shakh（H5391B，na.shakh: to pay interest）。GT《啟導本聖經申命記註釋》：「借錢財給人取暴利，自古視為惡事（箴二十二7）。」GT《申命記串珠聖經註釋》說借貸給外邦人可以取利，因為他們不屬於神選民的團體；BH 則把差別放在借款目的上——向弟兄借是為求生，向外人放款多半涉及商業。'
+  relation: 本章把禁令的對象從窮人擴大到全體弟兄，項目也從錢擴到糧食與一切可生利之物，同時第一次明文寫出外邦人不在此限。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:23
+- title: 古代近東放債取利
+  path: link_folder/背景/古代近東放債取利.md
+  summary: 第19至20節區分同族與外邦人。GT《聖經精讀本──申命記註解》把兩種情況分開：同族窮人為維持生計而借用時不可取利，「因為取利會導致使窮人愈加貧困的結果」；借給有商業往來的外邦人則可以取利，因為他們身在律法之外，「並且他們是為了獲取更大的利潤而借用了金錢」。BH 說在古代近東向外邦人收息是常見做法，因為那類借貸往往涉及商業投資。
+  relation: 周邊法典管的是利率上限，本章管的卻是對象：同一筆錢借給誰，決定可不可以收息。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:23
+- title: 許願
+  path: link_folder/文化/許願.md
+  summary: 第21至23節：向神許願，償還不可遲延，神必定追討，不償還就有罪；不許願倒無罪；口中應許甘心所獻的要謹守遵行。CT 說許願是甘心自願的，許了願卻不還願就是欺騙神，並說向神許了願卻不謹守遵行，不只是信用的問題，而是藐視神、不以神為神。GT《申命記串珠聖經註釋》：「許願時必須要謹慎，因為必要向神還願（參箴20:25; 傳5:4-5）。」GT《啟導本聖經申命記註釋》把本段接回民數記第三十章的許願條例；KC 說許願要被嚴肅對待，並提醒唱奉獻詩歌時不該隨口唱過去。
+  relation: 本章把許願寫成了有法律後果的行為：出口就算數，不出口不算數，中間沒有折衷的餘地。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:28
+      - 申命記:23
+- title: 田角拾穗顧念窮人的條例
+  path: link_folder/主題/田角拾穗顧念窮人的條例.md
+  summary: 第24至25節允許路人在鄰舍的葡萄園吃飽、在禾稼中用手摘穗子，但不可裝在器皿中、不可用鐮刀割取。BH 把這一段接到利19:9-10 與路得記第二章的拾穗規定，說這是神為窮人與行路人所作的供應。GT《申命記串珠聖經註釋》說巴勒斯坦有些地方田產豐富，葡萄園和麥田都公開給路人隨便取食，而禁止帶走是為要禁止貪婪、防止盜取。
+  relation: 利未記那條靠收割的人先留下，本章這條靠土地的主人放行；受益的也從住在當地的窮人與寄居的，換成了路過的人。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:19
+      - 申命記:23
+- title: 亞捫人
+  path: link_folder/人物/亞捫人.md
+  summary: 第3至6節把亞捫人與摩押人並列，永不可入耶和華的會。CT 給的原文字義是「亞捫」部落，並指出他們與摩押人同為羅得與兩個女兒亂倫所生的子孫(參創十九36~38)，和以色列人有血緣關係。GT《聖經精讀本──申命記註解》整理出兩項理由：一是以色列流浪曠野時他們不但沒有善待，反而請外邦先知巴蘭咒詛以色列；二是他們敵擋、妨礙根據神的應許進軍迦南的以色列。BH 說他們住在約旦河東、即今日的約旦一帶，以敵視以色列著稱。
+  relation: 這是亞捫人第一次在律法條文裡被指名處置。與同章第7至8節的以東人、埃及人相比，判決的差別不在敵意的多寡，而在有沒有可追溯的血緣或收留之恩。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: keep

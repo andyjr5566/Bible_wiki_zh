@@ -475,6 +475,18 @@
       "宗教曆的起點"
     ]
   },
+  "以東人與埃及人可入會的條例": {
+    "path": "link_folder/主題/以東人與埃及人可入會的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "以東人與埃及人可入會的條例",
+    "status": "formal",
+    "aliases": [
+      "第三代子孫可以入會"
+    ]
+  },
   "以獻祭安排時間": {
     "path": "link_folder/主題/以獻祭安排時間.md",
     "type": "主題",
@@ -1390,6 +1402,18 @@
     "aliases": [
       "女戰俘條例",
       "被擄女子為妻"
+    ]
+  },
+  "娼妓與孌童所得不可帶入神殿": {
+    "path": "link_folder/主題/娼妓與孌童所得不可帶入神殿.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "娼妓與孌童所得不可帶入神殿",
+    "status": "formal",
+    "aliases": [
+      "娼妓所得的錢"
     ]
   },
   "婢女行淫的贖愆祭條例": {
@@ -3475,6 +3499,18 @@
       "蝗蟲類"
     ]
   },
+  "軍營潔淨的條例": {
+    "path": "link_folder/主題/軍營潔淨的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "軍營潔淨的條例",
+    "status": "formal",
+    "aliases": [
+      "營中的潔淨"
+    ]
+  },
   "近親性關係的十二項條例": {
     "path": "link_folder/主題/近親性關係的十二項條例.md",
     "type": "主題",
@@ -3513,6 +3549,18 @@
       "七樣出產"
     ]
   },
+  "逃奴不可交還主人的條例": {
+    "path": "link_folder/主題/逃奴不可交還主人的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "逃奴不可交還主人的條例",
+    "status": "formal",
+    "aliases": [
+      "逃奴條例"
+    ]
+  },
   "進迦南地後的獻祭定例與神愛恩慈": {
     "path": "link_folder/主題/進迦南地後的獻祭定例與神愛恩慈.md",
     "type": "主題",
@@ -3530,6 +3578,18 @@
     "title": "過河的四萬人與留守的七萬人",
     "status": "formal",
     "aliases": []
+  },
+  "過路取食的條例": {
+    "path": "link_folder/主題/過路取食的條例.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "過路取食的條例",
+    "status": "formal",
+    "aliases": [
+      "隨意吃飽了葡萄"
+    ]
   },
   "遠方城的招降條例": {
     "path": "link_folder/主題/遠方城的招降條例.md",
@@ -15574,6 +15634,16 @@
     "status": "formal",
     "aliases": []
   },
+  "私生子（mam.zer）": {
+    "path": "link_folder/原文/私生子（mam.zer）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "私生子（mam.zer）",
+    "status": "formal",
+    "aliases": []
+  },
   "秋雨春雨（yo.reh、mal.qosh）": {
     "path": "link_folder/原文/秋雨春雨（yo.reh、mal.qosh）.md",
     "type": "原文",
@@ -15725,6 +15795,18 @@
     "title": "耶和華的園子",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華的會（qa.hal）": {
+    "path": "link_folder/原文/耶和華的會（qa.hal）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "耶和華的會（qa.hal）",
+    "status": "formal",
+    "aliases": [
+      "入耶和華的會"
+    ]
   },
   "聖膏油": {
     "path": "link_folder/原文/聖膏油.md",
@@ -29827,6 +29909,9 @@
   "宗教曆的起點": {
     "alias_of": "以本月為正月"
   },
+  "第三代子孫可以入會": {
+    "alias_of": "以東人與埃及人可入會的條例"
+  },
   "敬拜時間表": {
     "alias_of": "以獻祭安排時間"
   },
@@ -30066,6 +30151,9 @@
   },
   "被擄女子為妻": {
     "alias_of": "娶被擄女子為妻的條例"
+  },
+  "娼妓所得的錢": {
+    "alias_of": "娼妓與孌童所得不可帶入神殿"
   },
   "有智慧的婦女": {
     "alias_of": "婦女參與建造會幕"
@@ -30598,8 +30686,17 @@
   "蝗蟲類": {
     "alias_of": "蹦跳的蝗蟲類（潔淨昆蟲）"
   },
+  "營中的潔淨": {
+    "alias_of": "軍營潔淨的條例"
+  },
   "七樣出產": {
     "alias_of": "迦南地的七樣出產"
+  },
+  "逃奴條例": {
+    "alias_of": "逃奴不可交還主人的條例"
+  },
+  "隨意吃飽了葡萄": {
+    "alias_of": "過路取食的條例"
   },
   "招降條例": {
     "alias_of": "遠方城的招降條例"
@@ -32982,6 +33079,9 @@
   },
   "snare": {
     "alias_of": "網羅"
+  },
+  "入耶和華的會": {
+    "alias_of": "耶和華的會（qa.hal）"
   },
   "anointing oil": {
     "alias_of": "聖膏油"

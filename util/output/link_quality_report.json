@@ -1,7 +1,7 @@
 {
-  "total_warnings": 168,
+  "total_warnings": 171,
   "critical_count": 0,
-  "warning_count": 168,
+  "warning_count": 171,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -202,6 +202,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/巴蘭（比珥的兒子）.md",
+      "target": "第23章",
+      "message": "同一 alias「第23章」指向多個 target: 04 民數記/第23章, 05 申命記/第23章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/所羅門.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 11 列王紀上/第1章, 14 歷代志下/第1章"
@@ -212,6 +219,13 @@
       "source": "link_folder/人物/拿弗他利.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/摩押人.md",
+      "target": "第23章",
+      "message": "同一 alias「第23章」指向多個 target: 04 民數記/第23章, 05 申命記/第23章"
     },
     {
       "type": "alias_target_conflict",
@@ -828,6 +842,13 @@
       "source": "link_folder/原文/十分之一.md",
       "target": "第14章",
       "message": "同一 alias「第14章」指向多個 target: 01 創世記/第14章, 05 申命記/第14章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/寄居的.md",
+      "target": "第23章",
+      "message": "同一 alias「第23章」指向多個 target: 02 出埃及記/第23章, 05 申命記/第23章"
     },
     {
       "type": "alias_target_conflict",
