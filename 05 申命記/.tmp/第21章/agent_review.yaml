@@ -19,13 +19,13 @@ stages:
       findings_count: 0
     findings_count: 0
   m6:
-    round: 1
-    revision: 1
-    sha256: 01645840d6511af76fde0d1027a25ab5dc63b130e7e5d7eb6dbc12ad810e35f4
-    claude: ready
+    round: 2
+    revision: 2
+    sha256: 631f078fa28ddc1c435b7bb33d7d68367623beed9883cca84367149192b959df
+    claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
-    review_attempts: 1
+    review_attempts: 2
     forced_pass: false
     review_history:
     - attempt: 1
@@ -33,20 +33,30 @@ stages:
       sha256: 01645840d6511af76fde0d1027a25ab5dc63b130e7e5d7eb6dbc12ad810e35f4
       verdict: pass
       findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 631f078fa28ddc1c435b7bb33d7d68367623beed9883cca84367149192b959df
+      verdict: pass
+      findings_count: 0
     findings_count: 0
   link_updates:
-    round: 1
-    revision: 1
-    sha256: e1490e9465b6b432ef6eb32fa23f0c7265147a824a89bd2941d84274f9631f75
-    claude: ready
+    round: 2
+    revision: 2
+    sha256: e875e2bc0b3d6d055d2bb470a0a05f20e32b54d7f890bf3159c417c5fe4002e5
+    claude: revised
     reviewer_status: pass
     reviewer_agent: antigravity
-    review_attempts: 1
+    review_attempts: 2
     forced_pass: false
     review_history:
     - attempt: 1
       reviewer: antigravity
       sha256: e1490e9465b6b432ef6eb32fa23f0c7265147a824a89bd2941d84274f9631f75
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: e875e2bc0b3d6d055d2bb470a0a05f20e32b54d7f890bf3159c417c5fe4002e5
       verdict: pass
       findings_count: 0
     findings_count: 0

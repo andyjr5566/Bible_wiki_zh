@@ -4,75 +4,65 @@ A_use_directly: []
 B_needs_update:
 - name: 以色列的長老
   suggested_type: 文化
-  evidence: '「長老和審判官就要出去」（v2）、「那城的長老就要從牛群中取一隻…母牛犢」（v3）、「那城的眾長老…要在那山谷中…洗手」（v6）、「將他帶到本地的城門、本城的長老那裡」（v19）。STEP
-    顯示是 ze.ke.Nei./cha／zik.Nei（H2205G，za.qen: old: elder）。GT《聖經精讀本》在第6節底下用一整段交代長老的詞源與職分。'
+  evidence: '「長老和審判官就要出去」（v2）、「那城的長老就要從牛群中取一隻…母牛犢」（v3）、「那城的眾長老…要在那山谷中…洗手」（v6）、「將他帶到本地的城門、本城的長老那裡」（v19）。STEP 顯示是 ze.ke.Nei./cha／zik.Nei（H2205G，za.qen: old: elder）。GT《聖經精讀本》在第6節底下用一整段交代長老的詞源與職分。'
   surfaces:
-  - phrase: 長老
+  - 長老
   match_type: exact
   existing_title: 以色列的長老
   existing_path: link_folder/文化/以色列的長老.md
 - name: 審判官
   suggested_type: 原文
-  evidence: '「長老和審判官就要出去，從被殺的人那裡量起」（v2）。STEP 顯示是 ve./sho.fe.Tei./kha（H8199，sha.phat:
-    to judge），與同節「量起」u./ma.de.Du（H4058，ma.dad: to measure）連著出現。CT：「『長老和審判官』指平時負責附近轄區的治安和審理案件的人」。'
+  evidence: '「長老和審判官就要出去，從被殺的人那裡量起」（v2）。STEP 顯示是 ve./sho.fe.Tei./kha（H8199，sha.phat: to judge），與同節「量起」u./ma.de.Du（H4058，ma.dad: to measure）連著出現。CT：「『長老和審判官』指平時負責附近轄區的治安和審理案件的人」。'
   surfaces:
-  - phrase: 審判官
+  - 審判官
   match_type: exact
   existing_title: 審判官
   existing_path: link_folder/原文/審判官.md
 - name: 利未支派
   suggested_type: 人物
-  evidence: '「祭司利未的子孫要近前來；因為耶和華─你的神揀選了他們事奉他，奉耶和華的名祝福，所有爭訟毆打的事都要憑他們判斷」（v5）。STEP 顯示三項職分各有其字：le./Sha.re.T/o（H8334，sha.rat:
-    to minister）、u./le./va.Rekh（H1288，ba.rakh: to bless），而「爭訟」是 riv（H7379），「毆打」是 Na.ga''（H5061）。CT：「祭司擁有最終判決權(參申十七9)，因為他們最親近神、最懂得神的心意。」'
+  evidence: '「祭司利未的子孫要近前來；因為耶和華─你的神揀選了他們事奉他，奉耶和華的名祝福，所有爭訟毆打的事都要憑他們判斷」（v5）。STEP 顯示三項職分各有其字：le./Sha.re.T/o（H8334，sha.rat: to minister）、u./le./va.Rekh（H1288，ba.rakh: to bless），而「爭訟」是 riv（H7379），「毆打」是 Na.ga''（H5061）。CT：「祭司擁有最終判決權(參申十七9)，因為他們最親近神、最懂得神的心意。」'
   surfaces:
-  - phrase: 祭司利未的子孫
+  - 祭司利未的子孫
   match_type: exact
   existing_title: 利未支派
   existing_path: link_folder/人物/利未支派.md
 - name: 流無辜血的罪
   suggested_type: 神學
-  evidence: '「不要使流無辜血的罪歸在你的百姓以色列中間」（v8）、「就可以從你們中間除掉流無辜血的罪」（v9）。STEP 顯示「無辜」是 na.Ki（H5355A，na.qi:
-    innocent），「血」是 dam（H1818）。CT：「『流無辜血的罪』意指：(1)流人血者必被問罪；(2)凡無法查明被害的原因，均視為無辜」。'
+  evidence: '「不要使流無辜血的罪歸在你的百姓以色列中間」（v8）、「就可以從你們中間除掉流無辜血的罪」（v9）。STEP 顯示「無辜」是 na.Ki（H5355A，na.qi: innocent），「血」是 dam（H1818）。CT：「『流無辜血的罪』意指：(1)流人血者必被問罪；(2)凡無法查明被害的原因，均視為無辜」。'
   surfaces:
-  - phrase: 流無辜血的罪
+  - 流無辜血的罪
   match_type: exact
   existing_title: 流無辜血的罪
   existing_path: link_folder/神學/流無辜血的罪.md
 - name: 贖罪
   suggested_type: 神學
-  evidence: '「耶和華啊，求你赦免你所救贖的以色列民…這樣，流血的罪必得赦免」（v8）。STEP 顯示這一節兩次用同一個字根：命令式 ka.Per（H3722A，ki.pher:
-    to atone）與被動的 ve./nik.ka.Per，而「所救贖的」是 pa.Di.ta（H6299，pa.dah: to ransom）。KC 說這裡沒有一般意義上的贖罪，牛犢的血並沒有被使用，這是藉公義成就的贖罪。'
+  evidence: '「耶和華啊，求你赦免你所救贖的以色列民…這樣，流血的罪必得赦免」（v8）。STEP 顯示這一節兩次用同一個字根：命令式 ka.Per（H3722A，ki.pher: to atone）與被動的 ve./nik.ka.Per，而「所救贖的」是 pa.Di.ta（H6299，pa.dah: to ransom）。KC 說這裡沒有一般意義上的贖罪，牛犢的血並沒有被使用，這是藉公義成就的贖罪。'
   surfaces:
-  - phrase: 流血的罪必得赦免
+  - 流血的罪必得赦免
   match_type: exact
   existing_title: 贖罪
   existing_path: link_folder/神學/贖罪.md
 - name: 長子名分
   suggested_type: 主題
-  evidence: '第15至17節：父親分產業時不可因偏愛而改立長子，要認所惡之妻生的兒子為長子，將產業多加一分給他。STEP 顯示「多加一分」是 pi she.Na.yim（H6310K
-    加 H8147），字面是兩份的口；「力量強壯的時候」是 re.Shit ''o.N/o（H7225G 加 H202，on: strength）；「長子的名分」是
-    mish.Pat ha./be.kho.Rah（H4941H 加 H1062）。CT 的原文字義也記下「多加一分(原文雙字)」二，雙(首字)；口(次字)、「名分」判決，判案，律例。'
+  evidence: '第15至17節：父親分產業時不可因偏愛而改立長子，要認所惡之妻生的兒子為長子，將產業多加一分給他。STEP 顯示「多加一分」是 pi she.Na.yim（H6310K 加 H8147），字面是兩份的口；「力量強壯的時候」是 re.Shit ''o.N/o（H7225G 加 H202，on: strength）；「長子的名分」是 mish.Pat ha./be.kho.Rah（H4941H 加 H1062）。CT 的原文字義也記下「多加一分(原文雙字)」二，雙(首字)；口(次字)、「名分」判決，判案，律例。'
   surfaces:
-  - phrase: 長子的名分本當歸他
+  - 長子的名分本當歸他
   match_type: exact
   existing_title: 長子名分
   existing_path: link_folder/主題/長子名分.md
 - name: 申21：18-21
   suggested_type: 互文
-  evidence: '第18至21節：頑梗悖逆、屢懲不改的兒子要被父母帶到城門長老那裡，由本城的眾人用石頭打死。STEP 顯示「頑梗悖逆」是 so.Rer u./mo.Reh（H5637
-    sa.rar 加 H4784 ma.rah，兩個都是叛逆），「懲治」是 ve./yi.se.Ru（H3256，ya.sar: to discipline），「貪食好酒」是
-    zo.Lel ve./so.Ve''（H2151B 加 H5433B）。CT：「『貪食好酒的人』意指好吃懶做、毫無用處的人」。'
+  evidence: '第18至21節：頑梗悖逆、屢懲不改的兒子要被父母帶到城門長老那裡，由本城的眾人用石頭打死。STEP 顯示「頑梗悖逆」是 so.Rer u./mo.Reh（H5637 sa.rar 加 H4784 ma.rah，兩個都是叛逆），「懲治」是 ve./yi.se.Ru（H3256，ya.sar: to discipline），「貪食好酒」是 zo.Lel ve./so.Ve''（H2151B 加 H5433B）。CT：「『貪食好酒的人』意指好吃懶做、毫無用處的人」。'
   surfaces:
-  - phrase: 頑梗悖逆的兒子
+  - 頑梗悖逆的兒子
   match_type: exact
   existing_title: 申21：18-21
   existing_path: link_folder/互文/申21：18-21.md
 - name: 當孝敬父母
   suggested_type: 神學
-  evidence: 「人若有頑梗悖逆的兒子，不聽從父母的話」（v18）。GT《啟導本》：「違反十誡當孝敬父母的規定，因此要處死。」GT《聖經精讀本》說父母的權威是受十誡保障的人倫第一法則，是基於神的權威(出20:12)。CT
-    引弗六2~3 說神如此重視孝敬父母。
+  evidence: 「人若有頑梗悖逆的兒子，不聽從父母的話」（v18）。GT《啟導本》：「違反十誡當孝敬父母的規定，因此要處死。」GT《聖經精讀本》說父母的權威是受十誡保障的人倫第一法則，是基於神的權威(出20:12)。CT 引弗六2~3 說神如此重視孝敬父母。
   surfaces:
-  - phrase: 不聽從父母的話
+  - 不聽從父母的話
   match_type: exact
   existing_title: 當孝敬父母
   existing_path: link_folder/神學/當孝敬父母.md
@@ -80,65 +70,57 @@ B_needs_update:
   suggested_type: 歷史
   evidence: 「父母就要抓住他，將他帶到本地的城門、本城的長老那裡」（v19）。STEP 顯示是 Sha.'ar me.ko.M/o（H8179G 加 H4725），字面是他那地方的城門。CT：「『城門』是古時以色列人審理案件、處裡公務的地方」；GT《串珠》：「「城門」：以色列人審判的地方。」
   surfaces:
-  - phrase: 本地的城門
+  - 本地的城門
   match_type: exact
   existing_title: 城門口公共場合
   existing_path: link_folder/歷史/城門口公共場合.md
 - name: 把那惡從你們中間除掉（ba.ar）
   suggested_type: 神學
-  evidence: '「這樣，就把那惡從你們中間除掉，以色列眾人都要聽見害怕」（v21）。STEP 顯示是 u./vi.''ar.Ta ha./Ra''（H1197I，ba.ar:
-    to burn: purge 加 H7451B），與第9節除掉流無辜血的罪 te.va.''Er（H1197I）是同一個動詞。CT 的原文字義註「除掉」燃燒，消耗。'
+  evidence: '「這樣，就把那惡從你們中間除掉，以色列眾人都要聽見害怕」（v21）。STEP 顯示是 u./vi.''ar.Ta ha./Ra''（H1197I，ba.ar: to burn: purge 加 H7451B），與第9節除掉流無辜血的罪 te.va.''Er（H1197I）是同一個動詞。CT 的原文字義註「除掉」燃燒，消耗。'
   surfaces:
-  - phrase: 把那惡從你們中間除掉
+  - 把那惡從你們中間除掉
   match_type: exact
   existing_title: 把那惡從你們中間除掉（ba.ar）
   existing_path: link_folder/神學/把那惡從你們中間除掉（ba.ar）.md
 - name: 掛在木頭上_懸屍示眾
   suggested_type: 歷史
-  evidence: '「人若犯該死的罪，被治死了，你將他掛在木頭上，他的屍首不可留在木頭上過夜」（v22-23）。STEP 顯示「掛」是 ve./ta.Li.ta（H8518，ta.lah:
-    to hang），「屍首」是 niv.la.T/o（H5038，ne.ve.lah: carcass），「過夜」是 ta.Lin（H3885A，lun: to
-    lodge）。GT《雷氏研讀本》：「絞刑不是常見的處死方法，不過人被治死後屍首會懸掛起來。」CT：「『掛在木頭上』指懸掛屍首示眾，用意在警戒眾人。」'
+  evidence: '「人若犯該死的罪，被治死了，你將他掛在木頭上，他的屍首不可留在木頭上過夜」（v22-23）。STEP 顯示「掛」是 ve./ta.Li.ta（H8518，ta.lah: to hang），「屍首」是 niv.la.T/o（H5038，ne.ve.lah: carcass），「過夜」是 ta.Lin（H3885A，lun: to lodge）。GT《雷氏研讀本》：「絞刑不是常見的處死方法，不過人被治死後屍首會懸掛起來。」CT：「『掛在木頭上』指懸掛屍首示眾，用意在警戒眾人。」'
   surfaces:
-  - phrase: 掛在木頭上
+  - 掛在木頭上
   match_type: exact
   existing_title: 掛在木頭上_懸屍示眾
   existing_path: link_folder/歷史/掛在木頭上_懸屍示眾.md
 - name: 被掛在木頭上與基督被掛在樹上_徒5_30_加3_13
   suggested_type: 互文
-  evidence: '「因為被掛的人是在神面前受咒詛的」（v23）。STEP 顯示是 ki.Lat ''E.lo.Him ta.Lui（H7045 qe.la.lah:
-    curse 加 H430G 加 H8518）。CT：「主耶穌被掛在木頭上，是為罪人成為咒詛(參加三13)」；GT《串珠》說基督卻選擇了這種死法，藉此為世人除去咒詛；KC
-    把本章末段讀成髑髏地十字架的第三個面向。'
+  evidence: '「因為被掛的人是在神面前受咒詛的」（v23）。STEP 顯示是 ki.Lat ''E.lo.Him ta.Lui（H7045 qe.la.lah: curse 加 H430G 加 H8518）。CT：「主耶穌被掛在木頭上，是為罪人成為咒詛(參加三13)」；GT《串珠》說基督卻選擇了這種死法，藉此為世人除去咒詛；KC 把本章末段讀成髑髏地十字架的第三個面向。'
   surfaces:
-  - phrase: 被掛的人是在神面前受咒詛的
+  - 被掛的人是在神面前受咒詛的
   match_type: exact
   existing_title: 被掛在木頭上與基督被掛在樹上_徒5_30_加3_13
   existing_path: link_folder/互文/被掛在木頭上與基督被掛在樹上_徒5_30_加3_13.md
 - name: 產業（na.cha.lah）
   suggested_type: 原文
-  evidence: '「在耶和華─你神所賜你為業的地上」（v1）、「免得玷污了耶和華─你神所賜你為業之地」（v23）。STEP 顯示第23節「為業」是 na.cha.Lah（H5159），而第1節與第23節的「地」都是
-    ''a.da.Mah（H127G，a.da.mah: land: soil），不是 e.rets。全章的首尾因此扣在同一件事上：這片地是神賜的，不可被血玷污。'
+  evidence: '「免得玷污了耶和華─你神所賜你為業之地」（v23）——名詞 na.cha.Lah（H5159）在本章只出現在這一節；第16節「把產業分給兒子承受的時候」則是同字根的動詞 han.chi.L/o（H5157，na.chal: to inherit）。第1節「所賜你為業的地上」不可連此條目：STEP 顯示那裡是 le./rish.Ta/h（H3423H，ya.rash: to possess，本節譯義 to take possession of it）；第17節「將產業多加一分給他」原文也沒有這個字（pi she.Na.yim be./Khol ''a.Sher- yi.ma.Tze'' l/o），「產業」是中文補字。第1節與第23節的「地」都是 ''a.da.Mah（H127G，a.da.mah: land: soil）。'
   surfaces:
-  - phrase: 所賜你為業的地上
-  - phrase: 所賜你為業之地
+  - 所賜你為業之地
+  - phrase: 產業
+    verses:
+    - 16
   match_type: exact
   existing_title: 產業（na.cha.lah）
   existing_path: link_folder/原文/產業（na.cha.lah）.md
 C_new_formal:
 - name: 無主命案的折頸母牛犢條例
   suggested_type: 主題
-  evidence: '第1至9節：田野發現被殺的人卻查不出兇手時，離屍體最近那城的長老要取一隻未曾耕地、未曾負軛的母牛犢，牽到流水未曾耕種的山谷打折頸項，長老在牛犢以上洗手並宣告清白。STEP
-    顯示「打折…頸項」是 ve./''a.re.fu（H6202，a.raph: to break the neck），「母牛犢」是 ''eg.Lat ba.Kar（H5697A
-    加 H1241），「流水」是 Na.chal ''ei.Tan（H5158N 加 H386，e.tan，本節譯義 ever-flowing）。CT：「這是一宗懸案，兇手未能查明緝獲，土地已因血案被玷污，必須贖罪才能潔淨」。'
+  evidence: '第1至9節：田野發現被殺的人卻查不出兇手時，離屍體最近那城的長老要取一隻未曾耕地、未曾負軛的母牛犢，牽到流水未曾耕種的山谷打折頸項，長老在牛犢以上洗手並宣告清白。STEP 顯示「打折…頸項」是 ve./''a.re.fu（H6202，a.raph: to break the neck），「母牛犢」是 ''eg.Lat ba.Kar（H5697A 加 H1241），「流水」是 Na.chal ''ei.Tan（H5158N 加 H386，e.tan，本節譯義 ever-flowing）。CT：「這是一宗懸案，兇手未能查明緝獲，土地已因血案被玷污，必須贖罪才能潔淨」。'
   surfaces:
-  - phrase: 打折母牛犢的頸項
+  - 打折母牛犢的頸項
   target_path: link_folder/主題/無主命案的折頸母牛犢條例.md
 - name: 洗手表明無辜（太27：24）
   suggested_type: 互文
-  evidence: '「那城的眾長老…在所打折頸項的母牛犢以上洗手」（v6）。STEP 顯示是 yir.cha.Tzu ''et- ye.dei./Hem（H7364，ra.chats:
-    to wash）。CT：「『洗手』表示他們與該罪案無關(參太二十七24)」；GT《雷氏研讀本》：「「洗手」象徵他們是無罪的。（彼拉多曾這樣做，參看太二七24的腳註。）」；BH
-    也把它與彼拉多在審判耶穌時洗手相連。KC 的讀法相反，說長老洗手是與祭物認同的記號（詩26:6；73:13），不像彼拉多那樣是要撇清關係。'
+  evidence: '「那城的眾長老…在所打折頸項的母牛犢以上洗手」（v6）。STEP 顯示是 yir.cha.Tzu ''et- ye.dei./Hem（H7364，ra.chats: to wash）。CT：「『洗手』表示他們與該罪案無關(參太二十七24)」；GT《雷氏研讀本》：「「洗手」象徵他們是無罪的。（彼拉多曾這樣做，參看太二七24的腳註。）」；BH 也把它與彼拉多在審判耶穌時洗手相連。KC 的讀法相反，說長老洗手是與祭物認同的記號（詩26:6；73:13），不像彼拉多那樣是要撇清關係。'
   surfaces:
-  - phrase: 洗手
+  - 洗手
   target_path: link_folder/互文/洗手表明無辜（太27：24）.md
   semantic_hint:
   - title: 洗身（水洗）
@@ -152,11 +134,9 @@ C_new_formal:
     type: 主題
 - name: 娶被擄女子為妻的條例
   suggested_type: 主題
-  evidence: '第10至14節：戰後若戀慕被擄的美貌女子要娶她為妻，須先領她回家，剃頭髮、修指甲、脫去被擄時的衣服，哀哭父母一個整月，然後才可同房；日後若不喜悅她，要由她隨意出去，不可為錢賣她，也不可當婢女待她。STEP
-    顯示「戀慕」是 ve./cha.shak.Ta（H2836A，cha.shaq: to desire），「玷污」是 ''i.ni.Ta/h（H6031B，a.nah:
-    to afflict，本節譯義 you have humiliated her）。CT 註明「玷污了她」的原意是使她降卑了。'
+  evidence: '第10至14節：戰後若戀慕被擄的美貌女子要娶她為妻，須先領她回家，剃頭髮、修指甲、脫去被擄時的衣服，哀哭父母一個整月，然後才可同房；日後若不喜悅她，要由她隨意出去，不可為錢賣她，也不可當婢女待她。STEP 顯示「戀慕」是 ve./cha.shak.Ta（H2836A，cha.shaq: to desire），「玷污」是 ''i.ni.Ta/h（H6031B，a.nah: to afflict，本節譯義 you have humiliated her）。CT 註明「玷污了她」的原意是使她降卑了。'
   surfaces:
-  - phrase: 見有美貌的女子
+  - 見有美貌的女子
   target_path: link_folder/主題/娶被擄女子為妻的條例.md
   semantic_hint:
   - title: 引誘處女的律例
