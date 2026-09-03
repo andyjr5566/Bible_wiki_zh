@@ -94,6 +94,18 @@
     "status": "formal",
     "aliases": []
   },
+  "不可再娶被休的前妻": {
+    "path": "link_folder/主題/不可再娶被休的前妻.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "不可再娶被休的前妻",
+    "status": "formal",
+    "aliases": [
+      "前夫不可再娶"
+    ]
+  },
   "不可同日宰母和子": {
     "path": "link_folder/主題/不可同日宰母和子.md",
     "type": "主題",
@@ -2690,6 +2702,18 @@
     "aliases": [
       "covenant",
       "約"
+    ]
+  },
+  "磨石不可作當頭": {
+    "path": "link_folder/主題/磨石不可作當頭.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "磨石不可作當頭",
+    "status": "formal",
+    "aliases": [
+      "不可拿磨石作當頭"
     ]
   },
   "祝福與咒詛": {
@@ -13278,6 +13302,16 @@
       "na.khar"
     ]
   },
+  "不合理的事（er.vat da.var）": {
+    "path": "link_folder/原文/不合理的事（er.vat da.var）.md",
+    "type": "原文",
+    "secondary_types": [
+      "解經爭議"
+    ],
+    "title": "不合理的事（er.vat da.var）",
+    "status": "formal",
+    "aliases": []
+  },
   "不是因你的義（tse.da.qah）": {
     "path": "link_folder/原文/不是因你的義（tse.da.qah）.md",
     "type": "原文",
@@ -13524,6 +13558,18 @@
     "title": "伊迦爾撒哈杜他",
     "status": "formal",
     "aliases": []
+  },
+  "休書（se.fer ke.ri.tut）": {
+    "path": "link_folder/原文/休書（se.fer ke.ri.tut）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "休書（se.fer ke.ri.tut）",
+    "status": "formal",
+    "aliases": [
+      "離婚證明書"
+    ]
   },
   "住久了原文是睡著了（ya.shen）": {
     "path": "link_folder/原文/住久了原文是睡著了（ya.shen）.md",
@@ -27638,6 +27684,16 @@
     "status": "formal",
     "aliases": []
   },
+  "個人擔罪與父罪及子的張力": {
+    "path": "link_folder/解經爭議/個人擔罪與父罪及子的張力.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "個人擔罪與父罪及子的張力",
+    "status": "formal",
+    "aliases": []
+  },
   "兩次普查的關係": {
     "path": "link_folder/解經爭議/兩次普查的關係.md",
     "type": "解經爭議",
@@ -29843,6 +29899,9 @@
   "第二什一奉獻": {
     "alias_of": "三種什一奉獻的區分"
   },
+  "前夫不可再娶": {
+    "alias_of": "不可再娶被休的前妻"
+  },
   "不可挨近死屍": {
     "alias_of": "不可挨近死屍（拿細耳人的潔淨）"
   },
@@ -30487,6 +30546,9 @@
   },
   "約": {
     "alias_of": "盟約"
+  },
+  "不可拿磨石作當頭": {
+    "alias_of": "磨石不可作當頭"
   },
   "God's provision": {
     "alias_of": "神的供應"
@@ -32497,6 +32559,9 @@
   },
   "三俄梅珥": {
     "alias_of": "伊法十分之三（大痲瘋潔淨素祭）"
+  },
+  "離婚證明書": {
+    "alias_of": "休書（se.fer ke.ri.tut）"
   },
   "住久了": {
     "alias_of": "住久了原文是睡著了（ya.shen）"

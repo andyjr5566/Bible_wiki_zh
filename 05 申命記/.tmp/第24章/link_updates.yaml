@@ -1,0 +1,225 @@
+book: 申命記
+chapter: 24
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 免服兵役的四種人
+  path: link_folder/主題/免服兵役的四種人.md
+  summary: 第5節：「新娶妻之人不可從軍出征，也不可託他辦理什麼公事，可以在家清閒一年，使他所娶的妻快活。」CT 原文字義：「從軍」軍隊，群；「清閒」自由，免於義務，並說這意指新婚的男子不可被迫長期遠離家門。GT《啟導本聖經申命記註釋》：「本節乃准許新婚男子免役一年，得享室家之樂，也可以有子嗣承繼家門。」GT 馬唐納《申命記》補上後果：他若出去打仗而陣亡，名字就會從以色列中被刪除。GT《聖經精讀本──申命記註解》說「一年」是增進新婚夫妻感情、傳宗接代所需的最低限度時間。
+  relation: 本章把申二十的豁免再往前推一步：那裡是聘定了妻還沒迎娶的人可以回家，這裡是已經娶了的人整整一年不必從軍，也不必辦公事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+- title: 當頭
+  path: link_folder/原文/當頭.md
+  summary: '本章第6、10-13、17 節反覆規範取當頭。STEP v6：ya.cha.Vol 與 cho.Vel（都是 H2254A，cha.val: to pledge）。CT 註『當頭』指借貸時用來擔保的抵押品，並說再合理的當頭也不能損害借貸者的生命、尊嚴和基本的生活。GT《申命記串珠聖經註釋》註第12節的當頭：「在此指氈型鬥蓬（見出22:26注），以色列的貧苦人日間把它穿在身上作衣裳，晚上用它來作被子蓋。」GT《雷氏研讀本》整段歸納：抵押品不能危害他的生活或生命。'
+  relation: 本章把取當頭寫成一整套程序——不能拿什麼（v6）、不能怎麼拿（v10-11）、不能拿多久（v12-13）、不能拿誰的（v17），每一步都由借的一方保住主導權。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:24
+- title: 古代近東當頭制度
+  path: link_folder/背景/古代近東當頭制度.md
+  summary: 第10至11節：「你借給鄰舍，不拘是什麼，不可進他家拿他的當頭。要站在外面，等那向你借貸的人把當頭拿出來交給你。」CT：「『不可進他家』含意不僅是應當尊重債戶的主權，並且也是在防止債主任意選擇高價抵押品以牟暴利。」GT《聖經精讀本──申命記註解》說這是為了表明即便是債務人，債權人也不能毀壞他們的人格或家庭的神聖性；BH 說在古代近東，人的家是不可擅入的私人空間，這條規定保住了借貸者的尊嚴與主導權。
+  relation: 背景資料描述的是窮人手上通常只剩一件外衣可押，本章規定的是別人不可以走進他家去挑——抵押品的種類由借的一方拿出來決定。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 申命記:24
+- title: 拐帶人口
+  path: link_folder/神學/拐帶人口.md
+  summary: 第7節：「若遇見人拐帶以色列中的一個弟兄，當奴才待他，或是賣了他，那拐帶人的就必治死。這樣，便將那惡從你們中間除掉。」GT《啟導本聖經申命記註釋》：「此法例也見《出埃及記》二十一16，嚴懲販賣人口，犯者處死。」CT 在背景註解指出古代中東雖然到處都有奴隸買賣，但法律都禁止誘拐、綁架自由的公民成為奴隸，當時的奴隸絕大部分都是被自己的家人出賣或是戰俘；他並說拐帶已得自由的弟兄、讓他重新落在奴僕的捆綁下，是對神帶領百姓出埃及的背叛。GT《聖經精讀本》說聖經視誘拐犯為殺人犯，理由是誘拐犯徹底抹殺和蹂躪了按神的形象所創造的人之自由與人格。
+  relation: 本章重申出二十一16 的死罪，並加上被害者的身分與收尾的一句——便將那惡從你們中間除掉。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:21
+      - 申命記:24
+- title: 大痲瘋（sara'at）
+  path: link_folder/原文/大痲瘋（sara'at）.md
+  summary: 第8至9節：「在大痲瘋的災病上，你們要謹慎，照祭司利未人一切所指教你們的留意遵行……當記念出埃及後，在路上，耶和華─你神向米利暗所行的事。」GT《啟導本聖經申命記註釋》：「今天所知的痲瘋病不見於舊約時代的近東，原文saraat應作“皮膚惡疾”解。」BH 說 tzaraath 在希伯來文裡涵蓋多種皮膚病，不只是漢森氏病。CT 說『災病』的字根意思是「擊打」，並解釋大痲瘋狹義指皮膚像鱗片那樣剝落或無知覺，廣義指一切嚴重的皮膚病。GT《聖經精讀本──申命記註解》說這裡是命令百姓謹慎如實地遵行摩西曾在利13、14 章詳細教導利未人的條例；KC 注意到「謹慎」在這一節出現兩次，並說重點在祭司所教導的而不在祭司的檢查。
+  relation: 前面幾卷寫的是這病該怎麼判、怎麼潔淨，本章寫的是百姓該不該聽——話不是對祭司說的，是對全體百姓說的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:13
+      - 申命記:24
+- title: 米利暗
+  path: link_folder/人物/米利暗.md
+  summary: 第9節：「當記念出埃及後，在路上，耶和華─你神向米利暗所行的事。」CT 說米利暗是摩西的姐姐女先知，曾因批評摩西娶古實女子而長大痲瘋(參民十二10)，並說舉這件事是要人記取教訓；他另指出米利暗雖是先知又是婦女的領袖(參出十五20)，神責罰她時她也被關鎖在營外七天，沒有成為例外。GT 馬唐納《申命記》說舉她為例的用意可能是提醒在社會中地位最高者也不能倖免這種疾病；GT《聖經精讀本──申命記註解》說這是為了教訓無論是何人患了麻瘋病都當按照律例處置。KC 讀出的重點不同：她的事不是道德上的惡，而是結黨——她出於嫉妒挑戰摩西的領導，結果百姓七天不能起行。
+  relation: 這是五卷書裡最後一次提到米利暗，而且她的名字被寫進了律法條文本身——不是作為女先知，是作為全民必須記念的鑑戒。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:12
+      - 申命記:24
+- title: 不可欺壓鄰舍雇工工價不可過夜
+  path: link_folder/主題/不可欺壓鄰舍雇工工價不可過夜.md
+  summary: 第14至15節：「困苦窮乏的雇工，無論是你的弟兄或是在你城裡寄居的，你不可欺負他。要當日給他工價，不可等到日落─因為他窮苦，把心放在工價上─恐怕他因你求告耶和華，罪便歸你了。」GT《聖經精讀本──申命記註解》：「這是關於雇工的律例。第一,要尊重其人格(14節),第二,不可遲發工價(15節;利19:13)。」GT《啟導本聖經申命記註釋》說不問是以色列同胞或是寄居的都不可欺壓，日落前應把工資給付；KC 引利19:13b、太20:8 與雅5:4。
+  relation: 本章把利未記那條規定寫得更完整：加上了受雇者的身分不限本國人，也加上了不付工價的後果——他向耶和華求告，罪就歸雇主。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+- title: 工價與雇約
+  path: link_folder/文化/工價與雇約.md
+  summary: 第15節：「要當日給他工價，不可等到日落─因為他窮苦，把心放在工價上─恐怕他因你求告耶和華，罪便歸你了。」CT 說明按時發放工錢乃是雇主的義務：「古時雇用臨時工，泰半按日發放工錢(參太二十8)，特別是窮人，沒有積蓄，只能指望拿到當日的工錢，好買食物養活家人。」GT《聖經精讀本──申命記註解》註「把心放在工價上」：雖然在主人看來那工價是微不足道的，對雇工而言卻是維持自己與家人生計的錢。BH 也說按日給付使工人能應付當天的需要。
+  relation: 創世記那幾份雇約是雙方議定、可以更改的，本章的工價時限則由律法規定，而且違反的後果直接落在神面前。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:30
+      - 申命記:24
+- title: 孤兒寡婦
+  path: link_folder/主題/孤兒寡婦.md
+  summary: 本章四次提到他們：第17節不可向寄居的和孤兒屈枉正直、不可拿寡婦的衣裳作當頭；第19至21節三次「要留給寄居的與孤兒寡婦」。CT 說「『寄居的與孤兒寡婦』是當時最軟弱無助的群體」，並指出神沒有自己另外去供應他們，而是把他們留在百姓當中，頒佈許多律例讓享用恩典的百姓去學習分享恩典。BH 說他們在古代以色列常缺乏家族支持，特別容易被剝削；GT《聖經精讀本──申命記註解》說對弱者的保護與關愛正是律法所不斷關注的（10:18,19；出22:21,22；利19:33,34）。
+  relation: 本章給他們的位置是寫進禁令的受詞——別人不可以對他們做什麼。這是前面幾章那些供養與同席規定的前提。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:24
+- title: 寡婦衣裳
+  path: link_folder/文化/寡婦衣裳.md
+  summary: 第17節：「也不可拿寡婦的衣裳作當頭。」BH 說在古代近東外衣既是衣服也是被褥，拿寡婦的外衣作抵押會讓她在寒夜中失去遮蔽，這條命令強調的是財務往來中的憐憫與慈悲。CT 把寄居的、孤兒、寡婦並列為弱勢族群，並說官長理當為他們主持公義、伸張人權、照顧他們的需要。
+  relation: 創世記那件衣裳標明的是她的身分，本章這件衣裳則被列為任何人都不可以拿走的東西，理由寫在下一節——要記念你在埃及作過奴僕。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:38
+      - 申命記:24
+- title: 寄居的
+  path: link_folder/原文/寄居的.md
+  summary: 本章五次出現：第14節「無論是你的弟兄或是在你城裡寄居的」，第17節不可向寄居的和孤兒屈枉正直，第19至21節三次要留給寄居的與孤兒寡婦。GT《啟導本聖經申命記註釋》說做工的應得工價，不問是以色列同胞或是寄居的，都不可欺壓；BH 指出律法為外人提供保護（出22:21；利19:33-34），顯出神的不偏待人。
+  relation: 本章第14節把他與弟兄並排放在同一條勞資規範底下——同一份工價、同一道司法程序，而不只是被列在需要照顧的一群裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:10
+      - 申命記:24
+- title: 救贖
+  path: link_folder/神學/救贖.md
+  summary: 第18節與第22節兩次以同一句話收尾：「要記念你在埃及作過奴僕。耶和華─你的神從那裡將你救贖，所以我吩咐你這樣行。」CT 原文字義：「救贖」贖回，解救，並說以色列人從前在埃及地被有權有勢的人欺壓，投訴無門，幸而蒙神施予救援，如今理當飲水思源。GT《聖經精讀本──申命記註解》：「神根據滿有恩典與憐憫的出埃及救贖事件,命令以色列百姓當對貧窮而為社會所忽視的人施行恩典與憐憫。」BH 說這裡的救贖同時是身體的與屬靈的，指向神信實守約的作為。
+  relation: 本章把救贖當成一連串社會條例的理由，中間的連接詞是「所以」——不可屈枉正直、不可拿寡婦的衣裳、收割要留下一部分，全都接在這句話後面。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:12
+      - 申命記:24
+- title: 田角拾穗顧念窮人的條例
+  path: link_folder/主題/田角拾穗顧念窮人的條例.md
+  summary: 第19至21節：田間收割若忘下一捆不可回去再取，打橄欖樹枝上剩下的不可再打，摘葡萄所剩下的不可再摘，都要留給寄居的與孤兒寡婦。CT：「田主收割時不可割盡田角，也不可拾取所遺落的(參利十九9)，使窮人有機會充機」，並指出迦南人把遺留在田中的莊稼當作獻給偶像的祭物，但神要求把這些留給窮人。GT《申命記雷氏研讀本》：「路得從這律法中得益（比較得二3）。」GT《啟導本聖經申命記註釋》說拿俄米與路得靠這制度可以在以色列地生活下去。KC 注意到這幾節用的是忘記的角度——被留下的東西是收割的人漏掉的，得著的人仍要自己動身去撿。
+  relation: 本章把這條例講得比利未記更細，並第一次寫進賜福的應許：這樣，耶和華必在你手裡所辦的一切事上賜福與你。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+- title: 追討罪自父及子直到三四代
+  path: link_folder/神學/追討罪自父及子直到三四代.md
+  summary: '第16節：「不可因子殺父，也不可因父殺子；凡被殺的都為本身的罪。」STEP：''a.Vot（H1G av）、ba.Nim（H1121A ben）、be.chet.''/O（H2399 chet: sin）、yu.me.Tu（H4191 mut，使役被動）三次。CT 說神公義的審判只追究犯法者個人，甚至親如父子也不予連坐問罪；GT《啟導本聖經申命記註釋》：「這是摩西律法與當時米所波大米的律法一大不同處。」GT《申命記串珠聖經註釋》註「被殺」指受死刑；GT《聖經精讀本──申命記註解》說立法是為了不使以色列隨從外邦人的連帶處刑法（結18:19,20）。KC 指出這與出20:5 的表面矛盾，並說解法在於分辨罪的刑罰與罪的後果；BH 舉王下14:6 亞瑪謝守此律法的實例。'
+  relation: 本章這一節與出二十5 說話的對象不同：那裡講神怎麼追討，這裡講人的法庭不可以怎麼追討。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:24
