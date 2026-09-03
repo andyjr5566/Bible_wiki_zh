@@ -1,0 +1,160 @@
+book: 申命記
+chapter: 20
+A_use_directly: []
+B_needs_update:
+- name: 耶和華的爭戰
+  suggested_type: 神學
+  evidence: '「因為耶和華─你們的神與你們同去，要為你們與仇敵爭戰，拯救你們」（v4）。STEP 顯示「爭戰」是 le./hi.la.Chem（H3898A，la.cham:
+    to fight，Niphal），「拯救」是 le./ho.Shi.a''（H3467，ya.sha: to save，Hiphil）。GT《聖經精讀本》：「明確地教導他們,爭戰屬於耶和華神(撒上17:47),其勝負並不為刀槍所左右,乃是憑是否信靠神之全能。」'
+  surfaces:
+  - phrase: 要為你們與仇敵爭戰
+  match_type: exact
+  existing_title: 耶和華的爭戰
+  existing_path: link_folder/神學/耶和華的爭戰.md
+- name: 神的同在
+  suggested_type: 神學
+  evidence: '「因為領你出埃及地的耶和華─你神與你同在」（v1）、「因為耶和華─你們的神與你們同去」（v4）。CT〔文意註解〕：「『神與你同在』神的同在是不要怕的原因，無論是攻打或是防守，得勝的秘訣乃在乎神的同在。」STEP
+    顯示 v1「同在」是介系詞 ''i.Ma/kh（H5973A，im: with），v4 是 ha./ho.Lekh ''i.ma./Khem（H1980G，ha.lakh:
+    to go）。'
+  surfaces:
+  - phrase: 與你同在
+  - phrase: 與你們同去
+  match_type: exact
+  existing_title: 神的同在
+  existing_path: link_folder/神學/神的同在.md
+- name: 以色列人的官長
+  suggested_type: 人物
+  evidence: '「官長也要對百姓宣告說」（v5）、「官長又要對百姓宣告說」（v8）、「官長對百姓宣告完了，就當派軍長率領他們」（v9）。STEP 顯示「官長」是
+    ha./sho.te.Rim（H7860，sho.ter: official），「軍長」是 sa.Rei tze.va.''ot（H8269 sar 加 H6635A
+    tsa.va）。CT：「『官長』指奉命徵集士兵的官長，是文官；『軍長』指各級軍隊指揮官，是武官。」'
+  surfaces:
+  - phrase: 官長
+  match_type: exact
+  existing_title: 以色列人的官長
+  existing_path: link_folder/人物/以色列人的官長.md
+- name: 心消化（ma.sas）
+  suggested_type: 原文
+  evidence: '「恐怕他弟兄的心消化，和他一樣」（v8）。STEP 顯示是 yi.Mas（H4549，ma.sas: to melt，Niphal）。BH
+    說這個融化的比喻傳達了恐懼會傳染、會瓦解群體力量。'
+  surfaces:
+  - phrase: 心消化
+  match_type: exact
+  existing_title: 心消化（ma.sas）
+  existing_path: link_folder/原文/心消化（ma.sas）.md
+- name: 可憎的物（to.e.vah）
+  suggested_type: 原文
+  evidence: '「免得他們教導你們學習一切可憎惡的事，就是他們向自己神所行的」（v18）。STEP 顯示是 to.''a.vo.Ta/m（H8441，to.e.vah:
+    abomination）。CT：「他們的信仰風俗習慣已經達到令神極其憎惡的地步。」'
+  surfaces:
+  - phrase: 可憎惡的事
+  match_type: exact
+  existing_title: 可憎的物（to.e.vah）
+  existing_path: link_folder/原文/可憎的物（to.e.vah）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: '「但這些國民的城，耶和華─你神既賜你為業」（v16）。STEP 顯示「為業」是 na.cha.Lah（H5159，na.cha.lah:
+    inheritance）。BH 指出這份基業是神向亞伯拉罕、以撒、雅各所應許的，不只是territory，也是要按神的律法而活的託付。'
+  surfaces:
+  - phrase: 賜你為業
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 迦南七族（迦南地原住民）
+  suggested_type: 背景
+  evidence: 「只要照耶和華─你神所吩咐的將這赫人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人都滅絕淨盡」（v17）——本章只列六族。CT 逐一交代各族的居地與來歷。
+  surfaces:
+  - phrase: 赫人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人
+  match_type: exact
+  existing_title: 迦南七族（迦南地原住民）
+  existing_path: link_folder/背景/迦南七族（迦南地原住民）.md
+- name: 迦南滅絕命令的歷史範圍
+  suggested_type: 解經爭議
+  evidence: 「其中凡有氣息的，一個不可存留」（v16）。GT《串珠》：「有人以為這做法有欠人道，然而此舉正是罪惡滿盈的迦南居民該受的審判（參創15:16），也是保持新興以色列國純正無疵之法（18）。」KC
+    說本章的和平提議只適用於迦南地以外的城。
+  surfaces:
+  - phrase: 其中凡有氣息的，一個不可存留
+  match_type: exact
+  existing_title: 迦南滅絕命令的歷史範圍
+  existing_path: link_folder/解經爭議/迦南滅絕命令的歷史範圍.md
+- name: 平安（shalom）
+  suggested_type: 原文
+  evidence: '「先要對城裡的民宣告和睦的話」（v10）、「他們若以和睦的話回答你」（v11）。STEP 顯示兩處都是 sha.Lom（H7965G），v12「和好」則是動詞
+    tash.Lim（H7999B，sha.lam: to ally，Hiphil）。CT〔話中之光〕：「神希望所有的人都知道神是和睦(原文是平安)的神，是賜平安的神。」'
+  surfaces:
+  - phrase: 和睦的話
+  match_type: exact
+  existing_title: 平安（shalom）
+  existing_path: link_folder/原文/平安（shalom）.md
+- name: 滅絕（herem）
+  suggested_type: 神學
+  evidence: '「都滅絕淨盡」（v17）。STEP 顯示是 ha.cha.Rem ta.cha.ri.Me/m（H2763A，cha.ram: to devote/destroy，不定詞絕對式加未完成式）。GT《舊約背景註釋》：「這習慣希伯來語稱為赫倫，軍事策略中十分罕見。」BH
+    也稱之為 herem。'
+  surfaces:
+  - phrase: 滅絕淨盡
+  match_type: exact
+  existing_title: 滅絕（herem）
+  existing_path: link_folder/神學/滅絕（herem）.md
+- name: 戰利品的分配辦法
+  suggested_type: 主題
+  evidence: '「惟有婦女、孩子、牲畜，和城內一切的財物，你可以取為自己的掠物」（v14）。STEP 顯示「掠物」是 she.la.La/h／she.Lal（H7998，sha.lal:
+    spoil），動詞是 ta.Voz（H962，ba.zaz: to plunder）。GT《舊約背景註釋》說古代近東不發糧餉，而從攻取村鎮的戰利品中分配一部分給士兵。'
+  surfaces:
+  - phrase: 掠物
+  match_type: exact
+  existing_title: 戰利品的分配辦法
+  existing_path: link_folder/主題/戰利品的分配辦法.md
+- name: 迦南地栽種果樹頭三年果子如未受割禮的條例
+  suggested_type: 主題
+  evidence: 「誰種葡萄園，尚未用所結的果子」（v6）。CT：「新種的果樹，頭三年所結的果子，主人不能享用；第四年所結的果子，要當作初熟的果子獻給神；第五年以後所結的果子，才可以享用(參利十九23~25)。」GT《串珠》：「「尚未用所結的果子」：即種葡萄園不足五年」。
+  surfaces:
+  - phrase: 尚未用所結的果子
+  match_type: exact
+  existing_title: 迦南地栽種果樹頭三年果子如未受割禮的條例
+  existing_path: link_folder/主題/迦南地栽種果樹頭三年果子如未受割禮的條例.md
+C_new_formal:
+- name: 爭戰前受膏祭司的宣告
+  suggested_type: 主題
+  evidence: 「你們將要上陣的時候，祭司要到百姓面前宣告」（v2），宣告內容見 v3-4。CT：「『祭司』非指一般祭司，乃是指像非尼哈那樣的隨軍祭司(參民三十一6)，其地位僅次於大祭司，KJV另加說明the
+    anointed of war，即指「為戰爭受膏的祭司」」；GT《聖經精讀本》說猶太拉比稱他們為特地「為爭戰而受膏之人」。STEP 顯示 v3 用四個動詞：ye.Rakh（H7401
+    ra.khakh）、ti.re.'U（H3372G ya.re）、tach.pe.Zu（H2648 cha.phaz）、ta.'ar.Tzu（H6206 a.rats）。
+  surfaces:
+  - phrase: 祭司要到百姓面前宣告
+  target_path: link_folder/主題/爭戰前受膏祭司的宣告.md
+- name: 免服兵役的四種人
+  suggested_type: 主題
+  evidence: '「誰建造房屋，尚未奉獻」（v5）、「誰種葡萄園，尚未用所結的果子」（v6）、「誰聘定了妻，尚未迎娶」（v7）、「誰懼怕膽怯」（v8），四次都是「他可以回家去」。STEP
+    顯示 v5「奉獻」是 cha.na.Kh/o（H2596，cha.nakh: to dedicate），v7「聘定」是 ''e.Ras（H781，a.ra.s:
+    to betroth）。GT《聖經精讀本》：「不論數位的多寡,以色列軍隊皆由完全自願的人組成。」'
+  surfaces:
+  - phrase: 他可以回家去
+  target_path: link_folder/主題/免服兵役的四種人.md
+- name: 遠方城的招降條例
+  suggested_type: 主題
+  evidence: '「離你甚遠的各城，不是這些國民的城，你都要這樣待他」（v15）總結 v10-14 的程序：先宣告和睦的話、開城則全城服勞役、拒絕則圍困、殺盡男丁、婦孺牲畜財物取為掠物。STEP
+    顯示 v11「效勞」是 la./Mas（H4522，mas: taskworker），「服事」是 va./''a.va.Du./kha（H5647G，a.vad:
+    to serve）。'
+  surfaces:
+  - phrase: 離你甚遠的各城
+  target_path: link_folder/主題/遠方城的招降條例.md
+- name: 圍城不可砍伐果樹的條例
+  suggested_type: 主題
+  evidence: '「就不可舉斧子砍壞樹木；因為你可以吃那樹上的果子，不可砍伐。田間的樹木豈是人，叫你蹧蹋嗎？」（v19）、「惟獨你所知道不是結果子的樹木可以毀壞、砍伐」（v20）。STEP
+    顯示「砍壞」是 tash.Chit（H7843，sha.chat: to ruin），「斧子」是 gar.Zen（H1631），v20「不是結果子的樹木」直譯是不是食物之樹（''etz
+    ma.''a.Khal，H3978）。GT《串珠》：「不要把樹木當作那應遭毀滅的敵人而把它們砍掉。」'
+  surfaces:
+  - phrase: 不可舉斧子砍壞樹木
+  target_path: link_folder/主題/圍城不可砍伐果樹的條例.md
+- name: 古代近東的圍城戰與營壘
+  suggested_type: 背景
+  evidence: '「用以修築營壘，攻擊那與你打仗的城，直到攻塌了」（v20）。STEP 顯示「營壘」是 ma.Tzor（H4692，ma.tsor: siege），v12、v19「圍困」是
+    tzar.Ta／ta.Tzur（H6696A，tsur: to confine）。GT《靈修版》：「考古學家在迦南地發掘出許多堅固城邑的遺跡。有些城牆有九公尺高，有堡壘、壕溝與瞭望樓。」BH
+    提到拉吉與夏瑣遺址留下攻城坡道與撞城錘的痕跡。'
+  surfaces:
+  - phrase: 修築營壘
+  target_path: link_folder/背景/古代近東的圍城戰與營壘.md
+  semantic_hint:
+  - title: 古代近東婚姻習俗
+    score: 0.425
+    type: 歷史
+D_new_candidate: []
+E_skip: []

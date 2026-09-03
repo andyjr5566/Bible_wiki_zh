@@ -1,0 +1,164 @@
+book: 申命記
+chapter: 20
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 耶和華的爭戰
+  path: link_folder/神學/耶和華的爭戰.md
+  summary: '第1節「不要怕他們，因為領你出埃及地的耶和華─你神與你同在」與第4節「因為耶和華─你們的神與你們同去，要為你們與仇敵爭戰，拯救你們」。STEP 顯示第4節「爭戰」是 le./hi.la.Chem（H3898A，la.cham: to fight，Niphal），「拯救」是 le./ho.Shi.a''（H3467，ya.sha: to save，Hiphil），兩個動詞的主詞都是耶和華。CT：「『不要怕』士氣往往影響爭戰勝敗；『神與你同在』神的同在是不要怕的原因，無論是攻打或是防守，得勝的秘訣乃在乎神的同在。」GT《申命記串珠聖經註釋》：「勝敵之秘訣乃在乎神的同在。」GT《聖經精讀本》說祭司的宣告是要「明確地教導他們,爭戰屬於耶和華神(撒上17:47),其勝負並不為刀槍所左右,乃是憑是否信靠神之全能」。'
+  relation: 出14 是這個主題的敘事起點，申1、申3 是摩西向下一代的複述；本章第一次把它寫成常規條例的第一條——不是某一場仗的臨場鼓勵，而是每次上陣前祭司都要照著宣告的固定內容。條例接著就用它推出免役規定：既然爭戰的是神，人數就不是關鍵。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 神的同在
+  path: link_folder/神學/神的同在.md
+  summary: '第1節「因為領你出埃及地的耶和華─你神與你同在」與第4節「因為耶和華─你們的神與你們同去」。STEP 顯示第1節是介系詞片語 ''i.Ma/kh（H5973A，im: with），第4節是分詞 ha./ho.Lekh 加 ''i.ma./Khem（H1980G，ha.lakh: to go）——一個講狀態，一個講同行。CT：「『神與你同在』神的同在是不要怕的原因，無論是攻打或是防守，得勝的秘訣乃在乎神的同在。」BH 說神同在的應許是舊約反覆出現的主題，並列出出33:14 與書1:9 作為平行，也指出這份同在在出埃及時是看得見的雲柱火柱（出13:21-22）。'
+  relation: 本章把神的同在放在戰場上，而且用出埃及作保證：第1節說與你同在的，就是那位領你出埃及地的耶和華；第4節再說祂與你們同去，是為了替你們與仇敵爭戰。祭司的宣告因此不談兵力對比，只談神在不在。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: '第5、8、9節三次出現「官長」：他們宣告免役條件，宣告完了「就當派軍長率領他們」。STEP 顯示「官長」是 ha./sho.te.Rim（H7860，sho.ter: official），「軍長」是 sa.Rei tze.va.''ot（H8269 sar 加 H6635A tsa.va），位置在 be./Rosh ha./''Am（H7218H rosh），也就是百姓的前頭。CT 分出兩種職分：「『官長』指奉命徵集士兵的官長，是文官；『軍長』指各級軍隊指揮官，是武官。」BH 說官長在以色列的責任是把神的命令傳達給百姓，並維持軍中的秩序與士氣。'
+  relation: 第5、8、9節寫的是官長在出戰前的職責：向新兵宣告四種豁免，把不能全心投入的人放回家，然後在宣告完了之後派軍長率領隊伍。經文的次序本身就是分工——文官負責動員與篩選，武官負責帶兵。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 心消化（ma.sas）
+  path: link_folder/原文/心消化（ma.sas）.md
+  summary: '第8節「恐怕他弟兄的心消化，和他一樣」。STEP 顯示是 yi.Mas（H4549，ma.sas: to melt），Niphal 未完成，本節譯義 it will be melted；受詞是 ''et- le.Vav ''e.Cha/v（H3824 加 H251I，ach: brother: compatriot）。同節形容這種人用了兩個詞：hai./ya.Re''（H3373，ya.re: afraid）與 ve./Rakh ha./le.Vav（H7390 rakh: tender 加 H3824）。CT 原文字義註「消化」溶化，溶解，並說「膽小者恐會影響士氣」。BH：「The metaphor of hearts melting conveys the contagious nature of fear and its potential to undermine collective strength.」（心融化的比喻表達了恐懼會傳染，也可能瓦解群體的力量。）'
+  relation: 申1:28 是百姓引述探子的話，用的是 Hiphil 使役——有人使我們的心消化；本章第8節是 Niphal，沒有指名施事者，而且經文擔心的是它會從一個人傳到弟兄身上。同一個字在兩章裡分別記下事情已經發生，和律法要防止它再發生。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:1
+      - 申命記:20
+- title: 可憎的物（to.e.vah）
+  path: link_folder/原文/可憎的物（to.e.vah）.md
+  summary: '第18節「免得他們教導你們學習一切可憎惡的事，就是他們向自己神所行的，以致你們得罪耶和華─你們的神」。STEP 顯示是 to.''a.vo.Ta/m（H8441，to.e.vah: abomination），複數帶第三人稱複數詞尾；同節「教導」是 ye.la.me.Du（H3925G，la.mad: to learn: teach），「得罪」是 va./cha.ta.Tem（H2398，cha.ta: to sin）。CT：「這是說明必須消滅迦南各族的理由，他們的信仰風俗習慣已經達到令神極其憎惡的地步。」BH 說迦南人的宗教作法被視為可憎，並指出這節的關切是敬拜的純淨與避免被異教習俗同化。'
+  relation: 第18節是本章滅絕命令唯一給出的理由，而理由不是族群，是傳染：怕的是以色列被教導、學會迦南人向自己神所行的那一套。這個字在本章因此成為區分兩套攻城規則的依據——第16節之後的城不得存留，正是為了不讓第18節說的事發生。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: '第16節「但這些國民的城，耶和華─你神既賜你為業」。STEP 顯示「為業」是 na.cha.Lah（H5159，na.cha.lah: inheritance），動詞「賜」是 no.Ten（H5414G，na.tan: to give）的分詞形，本節譯義 [is] about to give。BH 說這片地是神向亞伯拉罕、以撒、雅各所應許的基業，不只是一塊土地，也是要按神的律法生活、向列國作見證的託付。'
+  relation: 這個字在本章只出現一次，卻正好落在兩套攻城規則的分水嶺上：第15節的遠方之城可以先招降，第16節「賜你為業」的城則不可。地業歸屬在這裡直接決定了作戰規則的適用範圍。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 迦南七族（迦南地原住民）
+  path: link_folder/背景/迦南七族（迦南地原住民）.md
+  summary: 第17節列出「赫人、亞摩利人、迦南人、比利洗人、希未人、耶布斯人」，是六個名字，比申7:1 的七國名單少了革迦撒人。STEP 顯示六個族名分別是 ha./chi.Ti（H2850）、ve./ha./'e.mo.Ri（H567）、ha./ke.na.'a.Ni（H3669A）、ve./ha/p.pe.ri.Zi（H6522）、ha./chi.Vi（H2340）、ve./ha/y.vu.Si（H2983G）。CT 逐一交代各族：赫人比亞伯拉罕較早定居於迦南地、亞摩利人是含子孫中很強大的一支多居住在山地、迦南人居住在迦南地西部谷地和沿海一帶、比利洗人居住在迦南地中部與迦南人相鄰、希未人與耶布斯人也是迦南的子孫，而耶布斯人是耶路撒冷的原住民(參書十五63)。
+  relation: 名單在本章的作用不是族譜，而是規則的適用對象——第15至17節用它把「離你甚遠的各城」和「這些國民的城」分開。第17節列出的是六個名字，比申7:1 的七國名單少了革迦撒人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 迦南滅絕命令的歷史範圍
+  path: link_folder/解經爭議/迦南滅絕命令的歷史範圍.md
+  summary: '第16至18節「但這些國民的城，耶和華─你神既賜你為業，其中凡有氣息的，一個不可存留」，理由寫在第18節：免得他們教導以色列學習一切可憎惡的事。STEP 顯示「凡有氣息的」是 kol- ne.sha.Mah（H5397，ne.sha.mah: breath），「存留」是 te.chai.Yeh（H2421，cha.yah: to live，Piel）。GT《申命記串珠聖經註釋》正面回應這個難處：「有人以為這做法有欠人道，然而此舉正是罪惡滿盈的迦南居民該受的審判（參創15:16），也是保持新興以色列國純正無疵之法（18）。」同一份註釋另註「凡有氣息的」包括一切生物（書10:40; 王上15:29; 詩150:6）。KC 說和平的提議只適用於地界以外的城。BH 說這道全然毀滅的命令是為了防止以色列採納迦南人可憎的作法，並把它讀成神對迦南列國偶像與惡行的審判（申9:4-5）。'
+  relation: 本章的關鍵在於經文自己畫了界線：第10至15節先給遠方的城一套先招降、開城則服勞役、拒絕才圍攻的規則，第15節末尾再用「不是這些國民的城」把兩者切開，第16節才轉向凡有氣息的一個不可存留。滅絕命令的適用範圍因此是條文自己排出來的，不是後人補上的緩衝。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 平安（shalom）
+  path: link_folder/原文/平安（shalom）.md
+  summary: 第10、11節的「和睦的話」是 le./sha.Lom 與 sha.Lom（H7965G），第12節的「和好」則是動詞 tash.Lim（H7999B，sha.lam，本節譯義 it will make peace）——同一組字的名詞與動詞連著出現在三節裡。CT〔文意註解〕說「宣告和睦的話」指講明招降的和平條款，〔話中之光〕另說：「神希望所有的人都知道神是和睦(原文是平安)的神，是賜平安的神，給你效勞服事你，乃是聽從以色列人的話，棄掉偶像歸向神。」BH 說提出和平的命令反映神是和平的神（羅15:33），並在審判之前給對方一個悔改降服的機會。
+  relation: 民6:26 的 shalom 是祝福詞的收尾，本章卻是攻城前的招降條款——同一個字從祝福的內容，變成一份可以接受或拒絕的提議。第11節把接受的結果也講明白了：那是進入服事的關係，不只是停戰。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: '第17節「都滅絕淨盡」。STEP 顯示是 ha.cha.Rem ta.cha.ri.Me/m（H2763A，cha.ram: to devote/destroy），不定詞絕對式加未完成式的強調結構，本節譯義是 certainly to totally destroy 加 you will totally destroy them。GT《申命記背景注釋》從古代近東的角度指出，把俘虜與掠物全數奉獻給賜勝利之神祇的做法「軍事策略中十分罕見」，希伯來語稱為赫倫，並列出聖經裡少數幾次徹底摧毀一座城的例子——約書亞記六17～24的耶利哥、約書亞記十一10～11的夏瑣、士師記一17的洗法、撒母耳記上十五3的亞瑪力人，以及申命記二34～35和三6～7殺盡人口而牲畜成為戰利品的變化形式；聖經以外最早的例證是主前九世紀摩押王米沙與迦得支派的戰爭。BH 也稱這個概念為 herem，並說它是為了防止以色列採納迦南人可憎的作法。'
+  relation: 本章給這個命令加上明文的適用範圍：第10至15節是遠方之城的規則，第16節用「但這些國民的城，耶和華─你神既賜你為業」把凡有氣息的一個不可存留限定在神賜為業的地界之內。第17節的動詞用了不定詞絕對式加未完成式的強調結構，第18節則說明理由在於防止信仰上的傳染。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:13
+      - 申命記:20
+- title: 戰利品的分配辦法
+  path: link_folder/主題/戰利品的分配辦法.md
+  summary: '第14節「惟有婦女、孩子、牲畜，和城內一切的財物，你可以取為自己的掠物。耶和華─你神把你仇敵的財物賜給你，你可以吃用」。STEP 顯示「掠物」是 she.la.La/h 與 she.Lal（H7998，sha.lal: spoil），動詞是 ta.Voz（H962，ba.zaz: to plunder），「吃用」是 ve./''a.khal.Ta（H398，a.khal: to eat）。CT〔文意註解〕說一切戰利品是神給參軍者的賞賜。GT《申命記背景注釋》補上古代近東的慣例：「古代近東的標準慣例是不發給士兵糧餉，而從攻取村鎮的戰利品中分配一部分給他們。由於戰爭被視作神明所下達，有其輔助的使命，戰爭所有的掠物依法來說，都是神明分別為聖的財產。」'
+  relation: 民31 給的是分配比例，申3 是河東兩役的實際處置，本章給的是授權本身——經文先說可以取為自己的掠物，再說那是耶和華賜的。同一節也標出了界線：這條授權屬於第10至15節那套遠方城的規則，第16節之後的迦南城不適用。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:31
+      - 申命記:20
+- title: 迦南地栽種果樹頭三年果子如未受割禮的條例
+  path: link_folder/主題/迦南地栽種果樹頭三年果子如未受割禮的條例.md
+  summary: '第6節「誰種葡萄園，尚未用所結的果子，他可以回家去」。STEP 顯示「種」是 na.Ta''（H5193，na.ta: to plant），「葡萄園」是 ke.rem（H3754），「用」是 chi.le.L/o（H2490I，cha.lal，本節譯義 he has put to use it）。CT 把免役的年限直接接到這條條例上：「新種的果樹，頭三年所結的果子，主人不能享用；第四年所結的果子，要當作初熟的果子獻給神；第五年以後所結的果子，才可以享用(參利十九23~25)。」GT《申命記串珠聖經註釋》：「即種葡萄園不足五年」。KC 也算五年（利19:23-25），並說要先自己享受過福分，才能真實地把它分給別人。BH 在同一節給的數字略短，說葡萄園通常約四年才結出可收的果子。'
+  relation: 利19:23-25 是條例本身，本章是它產生的實際後果：等待期還沒走完的人可以不上戰場。四套註釋裡有三套直接把第6節接回利未記那條規定，等待的長度因此成了免役資格的計算方式。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
