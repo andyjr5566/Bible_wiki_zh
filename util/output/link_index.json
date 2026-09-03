@@ -12,6 +12,16 @@
       "家庭為單位"
     ]
   },
+  "一百二十歲的摩西": {
+    "path": "link_folder/主題/一百二十歲的摩西.md",
+    "type": "主題",
+    "secondary_types": [
+      "人物"
+    ],
+    "title": "一百二十歲的摩西",
+    "status": "formal",
+    "aliases": []
+  },
   "七日承接聖職不出會幕門": {
     "path": "link_folder/主題/七日承接聖職不出會幕門.md",
     "type": "主題",
@@ -1831,6 +1841,18 @@
     "status": "formal",
     "aliases": []
   },
+  "律法書放在約櫃旁": {
+    "path": "link_folder/主題/律法書放在約櫃旁.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "律法書放在約櫃旁",
+    "status": "formal",
+    "aliases": [
+      "律法書"
+    ]
+  },
   "律法與公義": {
     "path": "link_folder/主題/律法與公義.md",
     "type": "主題",
@@ -2489,6 +2511,16 @@
     "title": "母綿羊",
     "status": "formal",
     "aliases": []
+  },
+  "每七年宣讀律法（豁免年的住棚節）": {
+    "path": "link_folder/主題/每七年宣讀律法（豁免年的住棚節）.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "每七年宣讀律法（豁免年的住棚節）",
+    "status": "formal",
+    "aliases": [
+      "七年宣讀律法"
+    ]
   },
   "每支派一千人": {
     "path": "link_folder/主題/每支派一千人.md",
@@ -13875,6 +13907,18 @@
     "status": "formal",
     "aliases": []
   },
+  "作見證的歌（shi.rah 與 ed）": {
+    "path": "link_folder/原文/作見證的歌（shi.rah 與 ed）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "作見證的歌（shi.rah 與 ed）",
+    "status": "formal",
+    "aliases": [
+      "作見證的歌"
+    ]
+  },
   "作首不作尾居上不居下（rosh 與 za.nav）": {
     "path": "link_folder/原文/作首不作尾居上不居下（rosh 與 za.nav）.md",
     "type": "原文",
@@ -14932,6 +14976,14 @@
       "心高氣傲"
     ]
   },
+  "必不撇下你，也不丟棄你（ra.phah 與 a.zav）": {
+    "path": "link_folder/原文/必不撇下你，也不丟棄你（ra.phah 與 a.zav）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "必不撇下你，也不丟棄你（ra.phah 與 a.zav）",
+    "status": "formal",
+    "aliases": []
+  },
   "忌邪（嫉妒）": {
     "path": "link_folder/原文/忌邪（嫉妒）.md",
     "type": "原文",
@@ -15143,6 +15195,18 @@
     "title": "接連的山谷（na.chal）",
     "status": "formal",
     "aliases": []
+  },
+  "掩面不顧（sa.tar）": {
+    "path": "link_folder/原文/掩面不顧（sa.tar）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "掩面不顧（sa.tar）",
+    "status": "formal",
+    "aliases": [
+      "掩面"
+    ]
   },
   "提你出監_抬起頭": {
     "path": "link_folder/原文/提你出監_抬起頭.md",
@@ -30886,6 +30950,9 @@
   "大祭司贖罪禮": {
     "alias_of": "彈血於施恩座與壇（大祭司一年一度贖罪禮）"
   },
+  "律法書": {
+    "alias_of": "律法書放在約櫃旁"
+  },
   "恩典與律法": {
     "alias_of": "律法與恩典"
   },
@@ -31047,6 +31114,9 @@
   },
   "罩棚的蓋": {
     "alias_of": "染紅的公羊皮蓋子"
+  },
+  "七年宣讀律法": {
+    "alias_of": "每七年宣讀律法（豁免年的住棚節）"
   },
   "羊群沒有牧人": {
     "alias_of": "沒有牧人的羊群"
@@ -33211,6 +33281,9 @@
   "何西阿三章": {
     "alias_of": "何3（Hoshea 3）"
   },
+  "作見證的歌": {
+    "alias_of": "作見證的歌（shi.rah 與 ed）"
+  },
   "作首不作尾": {
     "alias_of": "作首不作尾居上不居下（rosh 與 za.nav）"
   },
@@ -33525,6 +33598,9 @@
   },
   "探聽查究細細地訪問": {
     "alias_of": "探聽查究細細地訪問（da.rash、cha.qar、sha.al）"
+  },
+  "掩面": {
+    "alias_of": "掩面不顧（sa.tar）"
   },
   "「提你出監」/「抬起頭」": {
     "alias_of": "提你出監_抬起頭"
