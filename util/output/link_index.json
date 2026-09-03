@@ -237,6 +237,18 @@
     "status": "formal",
     "aliases": []
   },
+  "不在天上也不在海外，卻在你口中你心裡": {
+    "path": "link_folder/主題/不在天上也不在海外，卻在你口中你心裡.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "不在天上也不在海外，卻在你口中你心裡",
+    "status": "formal",
+    "aliases": [
+      "不在天上也不在海外"
+    ]
+  },
   "不潔之人出到營外": {
     "path": "link_folder/主題/不潔之人出到營外.md",
     "type": "主題",
@@ -2154,6 +2166,18 @@
     "status": "formal",
     "aliases": []
   },
+  "揀選生命（ba.char）": {
+    "path": "link_folder/主題/揀選生命（ba.char）.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "揀選生命（ba.char）",
+    "status": "formal",
+    "aliases": [
+      "揀選生命"
+    ]
+  },
   "換成銀子上聖所": {
     "path": "link_folder/主題/換成銀子上聖所.md",
     "type": "主題",
@@ -2768,6 +2792,16 @@
     "status": "formal",
     "aliases": [
       "瓦器盛活水"
+    ]
+  },
+  "生與福，死與禍": {
+    "path": "link_folder/主題/生與福，死與禍.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "生與福，死與禍",
+    "status": "formal",
+    "aliases": [
+      "生死禍福"
     ]
   },
   "生養眾多與治理": {
@@ -13432,6 +13466,16 @@
       "古代下拜"
     ]
   },
+  "七次回轉（shuv）": {
+    "path": "link_folder/原文/七次回轉（shuv）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "七次回轉（shuv）",
+    "status": "formal",
+    "aliases": [
+      "七次回轉"
+    ]
+  },
   "三天": {
     "path": "link_folder/原文/三天.md",
     "type": "原文",
@@ -13533,6 +13577,16 @@
     "status": "formal",
     "aliases": [
       "不是因你的義"
+    ]
+  },
+  "不是難行也不是離你遠（pa.la 與 ra.choq）": {
+    "path": "link_folder/原文/不是難行也不是離你遠（pa.la 與 ra.choq）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "不是難行也不是離你遠（pa.la 與 ra.choq）",
+    "status": "formal",
+    "aliases": [
+      "不是難行也不是離你遠"
     ]
   },
   "乾的兩個希伯來字": {
@@ -14845,6 +14899,17 @@
       "ma.sas"
     ]
   },
+  "心裡偏離與被勾引（pa.nah 與 na.dach）": {
+    "path": "link_folder/原文/心裡偏離與被勾引（pa.nah 與 na.dach）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "心裡偏離與被勾引（pa.nah 與 na.dach）",
+    "status": "formal",
+    "aliases": [
+      "心裡偏離",
+      "被勾引"
+    ]
+  },
   "心裡有智慧": {
     "path": "link_folder/原文/心裡有智慧.md",
     "type": "原文",
@@ -15197,6 +15262,16 @@
     "title": "收藏",
     "status": "formal",
     "aliases": []
+  },
+  "救回被擄的子民（she.vut）": {
+    "path": "link_folder/原文/救回被擄的子民（she.vut）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "救回被擄的子民（she.vut）",
+    "status": "formal",
+    "aliases": [
+      "救回被擄的子民"
+    ]
   },
   "敗壞他們的神": {
     "path": "link_folder/原文/敗壞他們的神.md",
@@ -16182,6 +16257,14 @@
       "誘餌",
       "snare"
     ]
+  },
+  "綽綽有餘（ya.tar）": {
+    "path": "link_folder/原文/綽綽有餘（ya.tar）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "綽綽有餘（ya.tar）",
+    "status": "formal",
+    "aliases": []
   },
   "罷了（rav）": {
     "path": "link_folder/原文/罷了（rav）.md",
@@ -22661,6 +22744,16 @@
     "type": "神學",
     "secondary_types": [],
     "title": "因信稱義",
+    "status": "formal",
+    "aliases": []
+  },
+  "因為他是你的生命": {
+    "path": "link_folder/神學/因為他是你的生命.md",
+    "type": "神學",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "因為他是你的生命",
     "status": "formal",
     "aliases": []
   },
@@ -30391,6 +30484,9 @@
   "不可籠住牛的嘴": {
     "alias_of": "不可籠住踹穀之牛的嘴"
   },
+  "不在天上也不在海外": {
+    "alias_of": "不在天上也不在海外，卻在你口中你心裡"
+  },
   "出營外": {
     "alias_of": "不潔之人出到營外"
   },
@@ -30868,6 +30964,9 @@
   "每天一個首領來獻供物": {
     "alias_of": "按日獻供物（十二天奉獻禮）"
   },
+  "揀選生命": {
+    "alias_of": "揀選生命（ba.char）"
+  },
   "換成銀子": {
     "alias_of": "換成銀子上聖所"
   },
@@ -31041,6 +31140,9 @@
   },
   "瓦器盛活水": {
     "alias_of": "瓦器盛活水（潔淨儀式）"
+  },
+  "生死禍福": {
+    "alias_of": "生與福，死與禍"
   },
   "產婦潔淨條例": {
     "alias_of": "產婦生產潔淨條例（男四十女八十天）"
@@ -33019,6 +33121,9 @@
   "古代下拜": {
     "alias_of": "七次俯伏 (古代朝見禮儀)"
   },
+  "七次回轉": {
+    "alias_of": "七次回轉（shuv）"
+  },
   "不偏私": {
     "alias_of": "不以貌取人"
   },
@@ -33030,6 +33135,9 @@
   },
   "不是因你的義": {
     "alias_of": "不是因你的義（tse.da.qah）"
+  },
+  "不是難行也不是離你遠": {
+    "alias_of": "不是難行也不是離你遠（pa.la 與 ra.choq）"
   },
   "事奉與作奴僕": {
     "alias_of": "事奉與作奴僕同一字根（a.vad）"
@@ -33355,6 +33463,12 @@
   "ma.sas": {
     "alias_of": "心消化（ma.sas）"
   },
+  "心裡偏離": {
+    "alias_of": "心裡偏離與被勾引（pa.nah 與 na.dach）"
+  },
+  "被勾引": {
+    "alias_of": "心裡偏離與被勾引（pa.nah 與 na.dach）"
+  },
   "心中有智慧": {
     "alias_of": "心裡有智慧"
   },
@@ -33438,6 +33552,9 @@
   },
   "na.sa": {
     "alias_of": "擔當（na.sa）"
+  },
+  "救回被擄的子民": {
+    "alias_of": "救回被擄的子民（she.vut）"
   },
   "不滅絕你": {
     "alias_of": "敗壞與滅絕同一字根（sha.chat）"

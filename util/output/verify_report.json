@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 170,
+  "pending_scripture_refs_count": 169,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -505,11 +505,6 @@
       "entity": "申命記",
       "book": "申命記",
       "chapter": 0
-    },
-    {
-      "entity": "05 申命記/第30章",
-      "book": "申命記",
-      "chapter": 30
     },
     {
       "entity": "箴言",
