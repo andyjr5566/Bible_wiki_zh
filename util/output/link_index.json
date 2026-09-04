@@ -5020,6 +5020,18 @@
       "獻祭指示"
     ]
   },
+  "神親自埋葬摩西": {
+    "path": "link_folder/事件/神親自埋葬摩西.md",
+    "type": "事件",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "神親自埋葬摩西",
+    "status": "formal",
+    "aliases": [
+      "沒有人知道他的墳墓"
+    ]
+  },
   "神降臨西乃山": {
     "path": "link_folder/事件/神降臨西乃山.md",
     "type": "事件",
@@ -15479,6 +15491,18 @@
     "status": "formal",
     "aliases": []
   },
+  "智慧的靈（ru.ach chokh.mah）": {
+    "path": "link_folder/原文/智慧的靈（ru.ach chokh.mah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "智慧的靈（ru.ach chokh.mah）",
+    "status": "formal",
+    "aliases": [
+      "ru.ach chokh.mah"
+    ]
+  },
   "智慧與聰明（chokh.mah、bi.nah）": {
     "path": "link_folder/原文/智慧與聰明（chokh.mah、bi.nah）.md",
     "type": "原文",
@@ -16170,6 +16194,18 @@
     "status": "formal",
     "aliases": []
   },
+  "眼目沒有昏花精神沒有衰敗（le.ach）": {
+    "path": "link_folder/原文/眼目沒有昏花精神沒有衰敗（le.ach）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "眼目沒有昏花精神沒有衰敗（le.ach）",
+    "status": "formal",
+    "aliases": [
+      "le.ach"
+    ]
+  },
   "眼目閉住還是睜開（sha.tam）": {
     "path": "link_folder/原文/眼目閉住還是睜開（sha.tam）.md",
     "type": "原文",
@@ -16450,6 +16486,18 @@
     "title": "罷了（rav）",
     "status": "formal",
     "aliases": []
+  },
+  "耶和華的僕人摩西（e.ved 與 al pi）": {
+    "path": "link_folder/原文/耶和華的僕人摩西（e.ved 與 al pi）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "耶和華的僕人摩西（e.ved 與 al pi）",
+    "status": "formal",
+    "aliases": [
+      "耶和華的僕人"
+    ]
   },
   "耶和華的園子": {
     "path": "link_folder/原文/耶和華的園子.md",
@@ -29877,6 +29925,18 @@
       "眾天使一同敬拜"
     ]
   },
+  "申命記34章的作者": {
+    "path": "link_folder/解經爭議/申命記34章的作者.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "申命記34章的作者",
+    "status": "formal",
+    "aliases": [
+      "摩西之死的記載出自誰"
+    ]
+  },
   "申命記十章的非時序編排": {
     "path": "link_folder/解經爭議/申命記十章的非時序編排.md",
     "type": "解經爭議",
@@ -32007,6 +32067,9 @@
   "獻祭指示": {
     "alias_of": "神指示築壇獻祭"
   },
+  "沒有人知道他的墳墓": {
+    "alias_of": "神親自埋葬摩西"
+  },
   "theophany at Sinai": {
     "alias_of": "神降臨西乃山"
   },
@@ -33921,6 +33984,9 @@
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
+  "ru.ach chokh.mah": {
+    "alias_of": "智慧的靈（ru.ach chokh.mah）"
+  },
   "智慧、聰明": {
     "alias_of": "智慧與聰明（chokh.mah、bi.nah）"
   },
@@ -34134,6 +34200,9 @@
   "瞳人": {
     "alias_of": "眼中的瞳人（i.shon）"
   },
+  "le.ach": {
+    "alias_of": "眼目沒有昏花精神沒有衰敗（le.ach）"
+  },
   "tsur": {
     "alias_of": "磐石（tsur）"
   },
@@ -34199,6 +34268,9 @@
   },
   "snare": {
     "alias_of": "網羅"
+  },
+  "耶和華的僕人": {
+    "alias_of": "耶和華的僕人摩西（e.ved 與 al pi）"
   },
   "入耶和華的會": {
     "alias_of": "耶和華的會（qa.hal）"
@@ -37409,6 +37481,9 @@
   },
   "眾天使一同敬拜": {
     "alias_of": "申32：43 外邦人歡呼的異文"
+  },
+  "摩西之死的記載出自誰": {
+    "alias_of": "申命記34章的作者"
   },
   "申十6-9的插敘": {
     "alias_of": "申命記十章的非時序編排"

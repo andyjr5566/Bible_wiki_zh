@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "book": "申命記",
+  "chapter": 34,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 71913,
+        "bytes": 101520
+      },
+      "after": {
+        "chars": 12149,
+        "bytes": 19586
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_deuteronomy_34.txt",
+          "chars": 5844,
+          "bytes": 16517
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_deuteronomy_34.txt",
+          "chars": 4652,
+          "bytes": 12940
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_deuteronomy_34.txt",
+          "chars": 4827,
+          "bytes": 4857
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_deuteronomy_34.txt",
+          "chars": 24264,
+          "bytes": 24270
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_deuteronomy_34.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 27521,
+          "raw_bytes": 32025,
+          "projected_chars": 6730,
+          "projected_bytes": 7655,
+          "occurrences": 72,
+          "occurrence_count": 72,
+          "lexicon_entries": 11,
+          "selected_verses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 11,
+          "truncated": true,
+          "returned_chars": 6730,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}

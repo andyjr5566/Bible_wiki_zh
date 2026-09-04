@@ -1,0 +1,63 @@
+version: 2
+book: 申命記
+chapter: 34
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: 2bb5d90ad5d0e102d272658a401f2dcc56fd7959aa43a938b00ed212d7c694a0
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 12f453b55bd777ac51f3e0733f5103c5dc529d5d1e712f3013180de1f4c30bc7
+      verdict: changes_required
+      findings_count: 2
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 12f453b55bd777ac51f3e0733f5103c5dc529d5d1e712f3013180de1f4c30bc7
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: ca3b32dbdab583babda64fc8f07f17b0b4ba72ce62abf2c1ffe1c2641bcda913
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 606eb0ec71a85e9da0109b1742ed162b318e97649d9426c0e6d9017f0b6a702c
+      verdict: changes_required
+      findings_count: 2
+    - attempt: 2
+      reviewer: antigravity
+      sha256: ca3b32dbdab583babda64fc8f07f17b0b4ba72ce62abf2c1ffe1c2641bcda913
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 70964239ea7a17d398cba1b4a2d9cc1e6a74235ecf3e7de057c498cb456eac5b
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 70964239ea7a17d398cba1b4a2d9cc1e6a74235ecf3e7de057c498cb456eac5b
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
