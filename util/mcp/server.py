@@ -1189,6 +1189,43 @@ def check_accumulation_orphans(book: Optional[str] = None, scan_all: bool = Fals
 
 
 @mcp.tool()
+def check_development_staleness(
+    book: Optional[str] = None,
+    scan_all: bool = False,
+    min_blocks: int = 7,
+) -> Dict[str, Any]:
+    """List entries whose accumulation blocks have outgrown their `## 主題發展`.
+
+    An entry's `development`/`related_entries`/`sources` are only written once,
+    at first M3 authoring; every later chapter only appends a per-chapter
+    accumulation block via `link_updates.py`, never touching those three
+    fields. A heavily-accumulated entry (many blocks, many books) can end up
+    with a `development` section that still only reflects the book/chapter it
+    was first created in. This is a heuristic, not a mechanical error — the
+    tool only lists candidates (block count, book count, development length)
+    for human review; it never judges pass/fail and never blocks a build.
+    Exactly one of ``book`` or ``scan_all=true`` is required. ``min_blocks``
+    is the accumulation-block threshold (default 7, matching the script's
+    default) below which an entry is not surfaced as a candidate.
+    """
+    if bool(book) == bool(scan_all):
+        return _error("必須恰好指定 book 或 scan_all=true 其中一個")
+    try:
+        if scan_all:
+            args = ["--all"]
+            canonical = None
+        else:
+            canonical = _canonical_book(book)
+            args = [canonical]
+    except ValueError as exc:
+        return _error(str(exc))
+    args += ["--min-blocks", str(min_blocks)]
+    result = _run_util_command("check_development_staleness.py", *args, timeout=300)
+    result.update({"book": canonical, "scan_all": scan_all, "min_blocks": min_blocks})
+    return result
+
+
+@mcp.tool()
 def find_duplicate_entries(threshold: float = 0.90, include_intentional: bool = False) -> Dict[str, Any]:
     """Report existing near-duplicate entries via the embedding index (read-only, no merging).
 

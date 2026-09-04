@@ -155,7 +155,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 - `Hermes-Scripture-MCP` 工具（`get_chapter_status`、`search_wiki_entries`／`read_wiki_entry`、`read_chapter_artifact`／`read_chapter_source`、STEP 查詢工具）減少找檔與誤連；**不取代候選判斷、來源複核與收尾閘門**。
 
-- SOP 中**已有 MCP 對應的工作**優先走 MCP；累積類工作依 `preview` → token → `apply` → 再 `preview` 必須 0 變更。不要假設每個 `util/*.py` 都有 MCP 對應；例如 maintenance SOP 明列 `check_accumulation_orphans.py`、`check_development_staleness.py` 目前需直接執行 script。
+- SOP 中**已有 MCP 對應的工作**優先走 MCP；累積類工作依 `preview` → token → `apply` → 再 `preview` 必須 0 變更。不要假設每個 `util/*.py` 都有 MCP 對應；`check_accumulation_orphans`、`check_development_staleness` 都已有 MCP 對應，但例如 `check_chapter_files`（180 秒逾時）與全庫 `run_gates` 目前仍需直接執行 script。
 
 - 大型 corpus 呼叫 `run_gates`：`timeout_seconds=600..900`，MCP client tool-call timeout 設 `600000–900000` ms。
 

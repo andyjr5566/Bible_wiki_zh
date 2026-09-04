@@ -154,10 +154,10 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 本檔引用的 `util/*.py` 也都有 MCP 對應：`extract_stepbible`、`build_source_manifest`、`build_candidate_similarity`、
 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
-`audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates`、`find_step_candidates`、`find_step_occurrences`、`query_step_context` 與
-`rename_markdown`。`check_accumulation_orphans.py`（反向孤兒累積）與
-`check_development_staleness.py`（development 落後累積成長候選清單，見上方「勘誤所有
-link 與條目內容」一節）目前無 MCP 對應，直接用 Bash 跑。`run_chapter` 這個 MCP 名稱固定走
+`audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates`、`find_step_candidates`、`find_step_occurrences`、`query_step_context`、
+`check_accumulation_orphans`（反向孤兒累積）與
+`check_development_staleness`（development 落後累積成長候選清單，見上方「勘誤所有
+link 與條目內容」一節）與 `rename_markdown`。`run_chapter` 這個 MCP 名稱固定走
 `run_chapter_manual.py run` 的人工流程；需要寫入的工具仍依 MCP 回傳的確認要求執行。
 
 大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體

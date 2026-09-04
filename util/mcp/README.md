@@ -42,6 +42,7 @@
 | `check_source_read` | 對應 A0 讀取回執閘門 `check_source_read.py`；開工前先過。 | 否 |
 | `check_quote_fidelity` | 引句逐字回查：本章 payload／章整理裡的「」引句，逐條比對本章 OK 註釋＋全本聖經經文。傳 `entry=<條目路徑>` 改驗單一 link_folder 條目的定義與主題發展，語料換成該條目自己累積過的每一章。傳 `min_chars=2` 降門檻掃短引句（預設 10 以下完全不比對）。閘門驗結構，這一支驗引號裡的話出自哪裡。 | 否 |
 | `check_accumulation_orphans` | 對應反向孤兒累積檢查；`book` 或 `scan_all=true` 二選一。 | 否 |
+| `check_development_staleness` | 對應 development 落後累積成長檢查；`book` 或 `scan_all=true` 二選一，`min_blocks` 可調累積區塊門檻（預設 7）。只列候選供人工複核，不判定對錯。 | 否 |
 | `find_duplicate_entries` | 對應 `embedding_dup_report.py --json`，回報全庫既有近似重複條目對，只出報告。 | 會更新 `util/output/duplicate_entries.json` |
 | `merge_entries` | 對應 `merge_entries.py`；預設 dry-run，正式合併需 `confirm=true`。 | 正式合併會寫入（見下方三個手動收尾項） |
 
