@@ -14,6 +14,10 @@
 
 **Codex = process owner + Evidence Reviewer。** 負責 source/manifest/STEP machine validation、similarity/resolver/prompts、review receipt、check、run/render、B prepare/preview/apply、final gates、commit；Claude交稿後由 Codex獨立查核。
 
+**process owner 與 Evidence Reviewer 是同一角色的兩個不同權限狀態，不是同一種權限。** process owner 的工作（run/render/apply/commit 等）保留專案預設 `workspace-write` sandbox；`agent_evidence_audit_prompt.md` 的 audit 呼叫則用 `--sandbox read-only`，不得在有寫入權限的 process-owner session 裡直接做審查。audit 只回傳 findings 純文字；`verdict`／`gate` 由 process-owner 那個有寫入權限的 session 記錄，reviewer 呼叫本身不寫任何檔案。
+
+**但同一章內的 review 呼叫要延續同一個 thread，不要每個 attempt 都重開。** 第一次進 M3 audit 時開一個 read-only Codex thread，記下 `threadId`；之後 M3 Attempt 2、M6、link_updates 的 audit 一律 `--resume {threadId}`，讓 reviewer 記得自己前面說過什麼、複核過什麼，不必每次重新餵整章上下文。resume 沿用原 session 的 sandbox，不需要（也不應該）重新指定。只有換到 Antigravity 接手，或這個 thread 明顯遺失／不可用時，才開新的。
+
 **Claude = 研經內容作者。** 負責全文讀四套 Commentary + `read_log.md`、`link_candidates.yaml` 語意選擇、M3、M6、B 類內容與依 findings 修稿。Codex不要自己先寫再自己審。
 
 Claude authoring 固定：
@@ -42,13 +46,7 @@ M3、M6、`link_updates` 各自最多 **2 次 substantive reviewer call**。這�
 
 Codex 因 quota/rate-limit/service unavailable 無法繼續時，**不要降級成較弱 Codex 或改 SOP**。交棒給 `agent_antigravity_orchestrator_prompt.md`，讓 Antigravity從磁碟 checkpoint 接手。
 
-Antigravity fallback model policy：使用 `agy models` 中**最新一代 High tier**；目前指定：
-
-```text
-gemini-3.7-flash-high
-```
-
-不要使用舊的 `gemini-3.1-pro-high` 作預設 fallback。High reasoning 由 Antigravity model tier 表達。Codex 已用掉的 review attempt 要保留。
+Antigravity fallback model policy：不寫死特定版本，一律使用當下 `agy models` live catalog 中**最新一代 High tier**；不要沿用舊世代（例如 `gemini-3.1-pro-high`）作預設 fallback。High reasoning 由 Antigravity model tier 表達。Codex 已用掉的 review attempt 要保留。
 
 ## 章節狀態機
 
@@ -72,7 +70,7 @@ Claude依正式 M3 prompt寫 `entry_content/*.yaml`。交稿後 Codex：
 python util/agent_review.py submit 書名 章 m3
 ```
 
-若未 forced-pass，Codex依 `agent_evidence_audit_prompt.md` 做目前 attempt，並記：
+若未 forced-pass，Codex以 `--sandbox read-only` 呼叫（本章首次是新開 thread，之後一律 `--resume` 同一個 thread）依 `agent_evidence_audit_prompt.md` 做目前 attempt，取回 findings 後回到 process-owner session 記：
 
 ```text
 python util/agent_review.py verdict 書名 章 m3 <status> \
@@ -106,7 +104,7 @@ Codex prepare B 類，Claude依 `review_evidence.md` 填 `link_updates.yaml` 的
 ## Review receipt 責任
 
 - `submit`：Claude交稿後由 orchestrator 執行。
-- `verdict`：實際 reviewer（Codex/Antigravity）查完後執行，帶 `--reviewer`。
+- `verdict`：reviewer 在 read-only session 裡跑不了寫入指令，只輸出 verdict 內容；由 orchestrator（process-owner session）依 reviewer 的輸出代為執行，帶 `--reviewer`。
 - `gate`：跨 stage／落地前由 orchestrator 執行。
 - `agent_review.yaml` 的 `review_attempts` 是硬預算；**不能因換 session、換 reviewer、重新開 Codex 就歸零。**
 - `forced_pass: true` 是可接受的流程 PASS，但不是「reviewer 認為零問題」；final mechanical gates 仍全部照跑。

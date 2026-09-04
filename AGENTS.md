@@ -211,7 +211,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 - Codex 是新章預設 host，先讀 `agent_codex_orchestrator_prompt.md`。
 - 負責 source/manifest/STEP machine validation、similarity/resolver/prompts、review receipt、check、run/render、B prepare/preview/apply、final gates、commit。
-- Claude交稿後依 `agent_evidence_audit_prompt.md` 查核；audit 對 Claude-authored content read-only，findings 退 Claude 修。
+- Claude交稿後依 `agent_evidence_audit_prompt.md` 查核；audit 對 Claude-authored content read-only，findings 退 Claude 修。這個 read-only 是技術限制：Codex 走獨立 `--sandbox read-only` 呼叫，Antigravity 走 `~/.gemini/antigravity-cli/settings.json` 的 deny-write 設定；audit 不寫任何檔案，verdict 由有寫入權限的 process-owner session 代記。reviewer 不得修改 `util/agent_review.py` 或任何 gate 腳本讓自己過關；每輪 audit 後先 `git status util/` 再採信 verdict。**同一章的 review 呼叫延續同一個 thread/conversation**（Codex `--resume`、Antigravity `--conversation`），不必每個 attempt 都重開，只有換 reviewer 或找不到可延續的舊 thread 時才開新的。
 - M3 必查已寫內容與 **missing entry candidate**；candidate 根因要退回 `link_candidates.yaml`，再重跑 deterministic steps。
 - Codex 不做第一次語意作者；否則會自己寫、自己審。
 
@@ -225,8 +225,8 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 ### Antigravity：Codex quota fallback + 可選總編輯
 
 - Codex 因 quota/rate-limit/service unavailable 無法繼續時，Antigravity 依 `agent_antigravity_orchestrator_prompt.md` 從當前 disk state 接手 **orchestrator + Evidence Reviewer**。
-- Antigravity fallback 使用 `agy models` 中最新一代 **High** tier Gemini；目前指定 `gemini-3.7-flash-high`（Gemini 3.7 Flash High）。不要把舊 `gemini-3.1-pro-high` 當預設 fallback。
-- Antigravity 的 High reasoning 由 model tier/slug 表達；若 live catalog 出現更新一代 High，改用更新者。
+- Antigravity fallback 一律使用 `agy models` **live catalog** 當下最新一代 **High** tier Gemini；不寫死特定版本號，每次以查到的 catalog 為準，不得沿用快取或記憶中的舊 slug。
+- Antigravity 的 High reasoning 由 model tier/slug 表達；若 live catalog 出現更新一代 High，立即改用更新者。
 - 它接手後仍把 prose 任務交給 Claude Opus/max；自己只做流程與 QA。
 - Codex 已用掉的 `review_attempts` 照算，**換 reviewer 不重置**。
 - Codex 可用時，Antigravity 仍可在複雜章節／數章／整卷完成後做高層 editorial consistency review，但不重做逐句 evidence audit。
@@ -275,7 +275,7 @@ Codex current disk checkpoint → Antigravity(latest High) 接手 → 不重置 
 ### 跨層修改邊界
 
 - Orchestrator 可以執行正式 pipeline／schema-aware scripts，但不得因此成為研經內容作者。
-- Evidence audit 對 Claude-authored M3/M6/B read-only；內容修正由 Claude做。
+- Evidence audit 對 Claude-authored M3/M6/B read-only（技術限制：獨立 `--sandbox read-only` delegated call，非同一 workspace-write session）；內容修正由 Claude做。
 - Claude 內容任務不得順手改 pipeline、schema、resolver 或 MCP server；工程缺陷另開工程任務。
 - 程式工程任務不得順手改寫經文、`link_folder/` 正文、`raw_data/` 或 `.tmp/` production payload 的語意內容。
 - 跨層契約修正要明確指出兩層並各自 validation。

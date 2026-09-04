@@ -238,11 +238,19 @@ class UpdateTests(unittest.TestCase):
             self.assertIn("穩定身分", data["review_guidance"]["definition"])
             self.assertIn("跨章", data["review_guidance"]["development"])
             self.assertIn("本章明確資料", data["review_guidance"]["accumulation"])
+            self.assertEqual(
+                "pending", data["updates"][0]["overview_review"]["definition"]
+            )
             self.assertEqual("keep", data["updates"][0]["overview_review"]["definition"])
             self.assertEqual("keep", data["updates"][0]["overview_review"]["development"])
             self.assertNotIn("reason", data["updates"][0]["overview_review"])
             self.assertTrue((manifest.parent / "link_update_review_baseline.yaml").is_file())
 
+            with patch.object(link_updates, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "尚未完成判斷"):
+                    link_updates.preview_updates(manifest)
+
+            self._fill_keep_review(manifest)
             with patch.object(link_updates, "ROOT", root):
                 preview = link_updates.preview_updates(manifest)
             review = preview["operations"][0]["overview_review"]
@@ -397,6 +405,7 @@ class UpdateTests(unittest.TestCase):
             self.assertEqual("長子名分在創35章斷送", review["covered_by"])
 
     def test_prepare_writes_the_compact_review_evidence_file(self):
+        """證據檔給定義全文與主題發展段落索引，取代逐一開條目。"""
         """證據檔對正常條目給緊湊摘要，對異常條目給段落索引，取代逐一開條目。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -410,6 +419,8 @@ class UpdateTests(unittest.TestCase):
             self.assertIn("穩定身分與辨識邊界。", text)
             self.assertIn("累積 1 章：創世記 1", text)
             self.assertIn("第一段講長子名分。", text)
+            self.assertIn("第二段講河東分地的安排。", text)
+            self.assertIn("段落索引", text)
             self.assertIn("- **定義**", text)
             self.assertIn("- **主題發展**", text)
             with patch.object(link_updates, "ROOT", root), patch("builtins.print"):
