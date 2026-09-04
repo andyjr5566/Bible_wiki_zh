@@ -1,4 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(agy --model:*)",
+      "Bash(agy --print:*)",
+      "Bash(agy models:*)",
+      "Bash(agy agents:*)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {

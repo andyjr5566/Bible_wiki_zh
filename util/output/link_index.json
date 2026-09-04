@@ -13625,6 +13625,19 @@
       "不是難行也不是離你遠"
     ]
   },
+  "乖僻彎曲的世代（i.qesh 與 pe.tal.tol）": {
+    "path": "link_folder/原文/乖僻彎曲的世代（i.qesh 與 pe.tal.tol）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "乖僻彎曲的世代（i.qesh 與 pe.tal.tol）",
+    "status": "formal",
+    "aliases": [
+      "i.qesh",
+      "pe.tal.tol"
+    ]
+  },
   "乾的兩個希伯來字": {
     "path": "link_folder/原文/乾的兩個希伯來字.md",
     "type": "原文",
@@ -13870,6 +13883,19 @@
     "status": "formal",
     "aliases": [
       "離婚證明書"
+    ]
+  },
+  "伸冤報應在我（na.kam 與 shil.lem）": {
+    "path": "link_folder/原文/伸冤報應在我（na.kam 與 shil.lem）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "伸冤報應在我（na.kam 與 shil.lem）",
+    "status": "formal",
+    "aliases": [
+      "na.kam",
+      "shil.lem"
     ]
   },
   "住久了原文是睡著了（ya.shen）": {
@@ -15135,6 +15161,18 @@
       "mo.'ed"
     ]
   },
+  "所祭祀的鬼魔（she.dim）": {
+    "path": "link_folder/原文/所祭祀的鬼魔（she.dim）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "所祭祀的鬼魔（she.dim）",
+    "status": "formal",
+    "aliases": [
+      "she.dim"
+    ]
+  },
   "拔出來扔在別的地上（na.tash）": {
     "path": "link_folder/原文/拔出來扔在別的地上（na.tash）.md",
     "type": "原文",
@@ -16077,6 +16115,19 @@
     "status": "formal",
     "aliases": []
   },
+  "眼中的瞳人（i.shon）": {
+    "path": "link_folder/原文/眼中的瞳人（i.shon）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "眼中的瞳人（i.shon）",
+    "status": "formal",
+    "aliases": [
+      "i.shon",
+      "瞳人"
+    ]
+  },
   "眼目明亮（ga.lah）": {
     "path": "link_folder/原文/眼目明亮（ga.lah）.md",
     "type": "原文",
@@ -16110,6 +16161,18 @@
     "title": "石漆",
     "status": "formal",
     "aliases": []
+  },
+  "磐石（tsur）": {
+    "path": "link_folder/原文/磐石（tsur）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "磐石（tsur）",
+    "status": "formal",
+    "aliases": [
+      "tsur"
+    ]
   },
   "磨子後的婢女": {
     "path": "link_folder/原文/磨子後的婢女.md",
@@ -16360,6 +16423,19 @@
     "status": "formal",
     "aliases": [
       "入耶和華的會"
+    ]
+  },
+  "耶書崙（ye.shu.run）": {
+    "path": "link_folder/原文/耶書崙（ye.shu.run）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "耶書崙（ye.shu.run）",
+    "status": "formal",
+    "aliases": [
+      "ye.shu.run",
+      "耶書崙"
     ]
   },
   "聖膏油": {
@@ -18243,6 +18319,18 @@
     "title": "尼尼微",
     "status": "formal",
     "aliases": []
+  },
+  "尼波山": {
+    "path": "link_folder/地點/尼波山.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "尼波山",
+    "status": "formal",
+    "aliases": [
+      "尼波"
+    ]
   },
   "尼羅河": {
     "path": "link_folder/地點/尼羅河.md",
@@ -23548,6 +23636,18 @@
     "title": "我以為這地方的人總不懼怕神",
     "status": "formal",
     "aliases": []
+  },
+  "我使人死我使人活": {
+    "path": "link_folder/神學/我使人死我使人活.md",
+    "type": "神學",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "我使人死我使人活",
+    "status": "formal",
+    "aliases": [
+      "我損傷我也醫治"
+    ]
   },
   "我所做的事豈可瞞著亞伯拉罕": {
     "path": "link_folder/神學/我所做的事豈可瞞著亞伯拉罕.md",
@@ -29105,6 +29205,18 @@
       "所多瑪罪惡的性質"
     ]
   },
+  "所多瑪的葡萄樹指誰": {
+    "path": "link_folder/解經爭議/所多瑪的葡萄樹指誰.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "所多瑪的葡萄樹指誰",
+    "status": "formal",
+    "aliases": [
+      "毒葡萄"
+    ]
+  },
   "所多瑪與蛾摩拉毀滅的自然機制": {
     "path": "link_folder/解經爭議/所多瑪與蛾摩拉毀滅的自然機制.md",
     "type": "解經爭議",
@@ -29594,6 +29706,18 @@
       "為死人送去"
     ]
   },
+  "照以色列人的數目立定萬民的疆界": {
+    "path": "link_folder/解經爭議/照以色列人的數目立定萬民的疆界.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "照以色列人的數目立定萬民的疆界",
+    "status": "formal",
+    "aliases": [
+      "萬民的疆界"
+    ]
+  },
   "燈臺的杯是燈盞還是承花盤": {
     "path": "link_folder/解經爭議/燈臺的杯是燈盞還是承花盤.md",
     "type": "解經爭議",
@@ -29644,6 +29768,18 @@
     "aliases": [
       "產婦不潔原因",
       "原罪說與血液不潔說"
+    ]
+  },
+  "申32：43 外邦人歡呼的異文": {
+    "path": "link_folder/解經爭議/申32：43 外邦人歡呼的異文.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "申32：43 外邦人歡呼的異文",
+    "status": "formal",
+    "aliases": [
+      "眾天使一同敬拜"
     ]
   },
   "申命記十章的非時序編排": {
@@ -33225,6 +33361,12 @@
   "不是難行也不是離你遠": {
     "alias_of": "不是難行也不是離你遠（pa.la 與 ra.choq）"
   },
+  "i.qesh": {
+    "alias_of": "乖僻彎曲的世代（i.qesh 與 pe.tal.tol）"
+  },
+  "pe.tal.tol": {
+    "alias_of": "乖僻彎曲的世代（i.qesh 與 pe.tal.tol）"
+  },
   "事奉與作奴僕": {
     "alias_of": "事奉與作奴僕同一字根（a.vad）"
   },
@@ -33287,6 +33429,12 @@
   },
   "離婚證明書": {
     "alias_of": "休書（se.fer ke.ri.tut）"
+  },
+  "na.kam": {
+    "alias_of": "伸冤報應在我（na.kam 與 shil.lem）"
+  },
+  "shil.lem": {
+    "alias_of": "伸冤報應在我（na.kam 與 shil.lem）"
   },
   "住久了": {
     "alias_of": "住久了原文是睡著了（ya.shen）"
@@ -33603,6 +33751,9 @@
   "mo.'ed": {
     "alias_of": "所定的節期（mo.'ed）"
   },
+  "she.dim": {
+    "alias_of": "所祭祀的鬼魔（she.dim）"
+  },
   "拔出來扔在別的地上": {
     "alias_of": "拔出來扔在別的地上（na.tash）"
   },
@@ -33864,6 +34015,15 @@
   "眷顧": {
     "alias_of": "眷顧（da.rash）"
   },
+  "i.shon": {
+    "alias_of": "眼中的瞳人（i.shon）"
+  },
+  "瞳人": {
+    "alias_of": "眼中的瞳人（i.shon）"
+  },
+  "tsur": {
+    "alias_of": "磐石（tsur）"
+  },
   "推磨的婢女": {
     "alias_of": "磨子後的婢女"
   },
@@ -33926,6 +34086,12 @@
   },
   "入耶和華的會": {
     "alias_of": "耶和華的會（qa.hal）"
+  },
+  "ye.shu.run": {
+    "alias_of": "耶書崙（ye.shu.run）"
+  },
+  "耶書崙": {
+    "alias_of": "耶書崙（ye.shu.run）"
   },
   "anointing oil": {
     "alias_of": "聖膏油"
@@ -34382,6 +34548,9 @@
   },
   "Migdol": {
     "alias_of": "密奪"
+  },
+  "尼波": {
+    "alias_of": "尼波山"
   },
   "Baal-zephon": {
     "alias_of": "巴力洗分"
@@ -35685,6 +35854,9 @@
   "約瑟哥哥們的認罪": {
     "alias_of": "悔改與良心的覺醒"
   },
+  "我損傷我也醫治": {
+    "alias_of": "我使人死我使人活"
+  },
   "按你的名認識你": {
     "alias_of": "我按你的名認識你"
   },
@@ -36987,6 +37159,9 @@
   "所多瑪罪惡的性質": {
     "alias_of": "所多瑪的罪是什麼"
   },
+  "毒葡萄": {
+    "alias_of": "所多瑪的葡萄樹指誰"
+  },
   "所多瑪蛾摩拉如何毀滅": {
     "alias_of": "所多瑪與蛾摩拉毀滅的自然機制"
   },
@@ -37083,6 +37258,9 @@
   "為死人送去": {
     "alias_of": "為死人送去的意思之爭"
   },
+  "萬民的疆界": {
+    "alias_of": "照以色列人的數目立定萬民的疆界"
+  },
   "幾捧爐灰": {
     "alias_of": "爐灰的出處"
   },
@@ -37097,6 +37275,9 @@
   },
   "原罪說與血液不潔說": {
     "alias_of": "產婦不潔原因之爭（原罪說與血液不潔說）"
+  },
+  "眾天使一同敬拜": {
+    "alias_of": "申32：43 外邦人歡呼的異文"
   },
   "申十6-9的插敘": {
     "alias_of": "申命記十章的非時序編排"

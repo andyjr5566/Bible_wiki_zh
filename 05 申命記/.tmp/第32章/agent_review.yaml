@@ -1,0 +1,68 @@
+version: 2
+book: 申命記
+chapter: 32
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: 9cf7db743b49f1f7f127627b8862ce73c5bcb92b09d1dbe607e2b58621ec7232
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 90050d405916982a301e8d7848405860c916ed575ea77d4785350282a4acd848
+      verdict: changes_required
+      findings_count: 1
+    - attempt: 2
+      reviewer: antigravity
+      sha256: a420ad1534b8ed463854e8c30a0611f10281de980ce3e992dcdbfda0c8187281
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 1efdf4e76714b2f182ec35dbd959152617975997e6fd549fd8a6a6f965e019ac
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 3f4eafbedcd3cbe5e3c71c5a0137560476fe7342a4cbe6c6c3852041b6591b5d
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 1efdf4e76714b2f182ec35dbd959152617975997e6fd549fd8a6a6f965e019ac
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: 8374d29858a46c22b3babfd6496265bedfdc55b12937d38a24617a1a3750d94f
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 8bf25bb66d46e4654975a5cf56ec899d7268fbbf0f02410b857fb0f8cba13c14
+      verdict: changes_required
+      findings_count: 2
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 8374d29858a46c22b3babfd6496265bedfdc55b12937d38a24617a1a3750d94f
+      verdict: pass
+      findings_count: 0
+    findings_count: 0

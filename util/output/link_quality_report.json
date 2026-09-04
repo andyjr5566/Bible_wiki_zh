@@ -1,7 +1,7 @@
 {
-  "total_warnings": 181,
+  "total_warnings": 186,
   "critical_count": 0,
-  "warning_count": 181,
+  "warning_count": 186,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -100,6 +100,13 @@
       "source": "link_folder/人物/亞倫.md",
       "target": "第18章",
       "message": "同一 alias「第18章」指向多個 target: 02 出埃及記/第18章, 04 民數記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/亞倫.md",
+      "target": "第32章",
+      "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -393,7 +400,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第32章",
-      "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 04 民數記/第32章"
+      "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 04 民數記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -484,7 +491,7 @@
       "severity": "warning",
       "source": "link_folder/人物/約書亞.md",
       "target": "第32章",
-      "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 04 民數記/第32章"
+      "message": "同一 alias「第32章」指向多個 target: 02 出埃及記/第32章, 04 民數記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -527,6 +534,13 @@
       "source": "link_folder/人物/迦得（萬幸）.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/雅各.md",
+      "target": "第32章",
+      "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -601,6 +615,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/巴珊.md",
+      "target": "第32章",
+      "message": "同一 alias「第32章」指向多個 target: 04 民數記/第32章, 05 申命記/第32章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/曠野.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 02 出埃及記/第8章, 05 申命記/第8章"
@@ -617,7 +638,7 @@
       "severity": "warning",
       "source": "link_folder/地點/約但河.md",
       "target": "第32章",
-      "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 04 民數記/第32章"
+      "message": "同一 alias「第32章」指向多個 target: 01 創世記/第32章, 04 民數記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -667,6 +688,13 @@
       "source": "link_folder/地點/迦南地.md",
       "target": "第14章",
       "message": "同一 alias「第14章」指向多個 target: 02 出埃及記/第14章, 04 民數記/第14章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/迦南地.md",
+      "target": "第32章",
+      "message": "同一 alias「第32章」指向多個 target: 04 民數記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
@@ -926,6 +954,13 @@
       "source": "link_folder/原文/搖祭.md",
       "target": "第8章",
       "message": "同一 alias「第8章」指向多個 target: 03 利未記/第8章, 04 民數記/第8章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/產業（na.cha.lah）.md",
+      "target": "第32章",
+      "message": "同一 alias「第32章」指向多個 target: 04 民數記/第32章, 05 申命記/第32章"
     },
     {
       "type": "alias_target_conflict",
