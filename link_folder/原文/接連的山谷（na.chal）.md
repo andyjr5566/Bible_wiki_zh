@@ -12,7 +12,7 @@ source_scope: collected_only
 
 民數記24:6：「如接連的山谷，如河旁的園子」——這半節的第一個比喻，各家譯法差距很大。
 
-**STEP 在同一個 Strong 底下給了兩種東西。** 原文是 ki/n.cha.Lim ni.Ta.yu（H5158B），STEP 給的本節譯義是 like wadis（乾河谷）…they are stretched out，簡要義域列的卻是 na.chal: palm-tree（棕樹）。也就是說這個字的義域本身就橫跨「河谷」與「棕樹」兩邊。
+**STEP 在同一個 Strong 底下給了兩種東西。** 原文是 ki/n.cha.Lim ni.Ta.yu（H5158B），STEP 給的本節譯義是 like wadis（乾河谷）…they are stretched out，簡要義域列的卻是 na.chal: palm-tree（棕樹）。也就是說這個字的義域本身就橫跨河谷與棕樹兩邊。
 
 **各家落在不同一邊。**
 
