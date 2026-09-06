@@ -15,6 +15,12 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install PyYAML numpy
+      - name: Verify Genesis book introduction render
+        run: |
+          python util/render_book_introduction.py \
+            "01 創世記/.tmp/introduction/introduction_content.yaml" \
+            > /tmp/genesis-book-intro.md
+          diff -u "01 創世記/書卷導論.md" /tmp/genesis-book-intro.md
       - name: Validate Genesis book introduction
         run: |
           python util/check_book_introduction.py \
