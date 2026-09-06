@@ -14,7 +14,8 @@ JSON Schema：`_config/schemas/introduction_content.schema.json`
 
 不是再做一篇「百科式簡介」，也不是把導論拆成固定十幾點，而是讓一般讀者在開始讀《創世記》以前，先建立一個完整而自然的整卷理解：
 
-- 這卷書的名稱與位置；
+- 先用一張簡短「一覽」表快速掌握書卷位置、作者／年代框架與大分段；
+- 再理解這卷書的名稱與位置；
 - 作者、成書與歷史背景應怎麼理解；
 - 它主要在講什麼、為什麼要寫；
 - 為什麼這卷書重要；
@@ -22,7 +23,7 @@ JSON Schema：`_config/schemas/introduction_content.schema.json`
 - 哪些經文、鑰字與主題最能抓住整卷；
 - 它如何銜接《出埃及記》與後面的聖經。
 
-公開文章必須像一篇真正的「書卷提要／導論」，不是 FAQ、資料卡或 AI 帶讀稿。
+公開文章必須像一篇真正的「書卷提要／導論」，不是 FAQ、固定資料卡或 AI 帶讀稿。
 
 ---
 
@@ -78,6 +79,16 @@ CCBibleStudy `CT00` 提供的是主要的**介紹節奏**：先定位書卷，�
 
 ## v3 payload
 
+### `overview`：可選快速一覽
+
+`overview` 不算正文 module，而是 header 後面的快速掃描區。它只放幾個能幫助讀者立即定位書卷的欄位，欄位依書卷而定，不固定數量。
+
+《創世記》目前使用：位置、章數、希伯來書名、希臘書名、**傳統作者歸屬、傳統成書框架**、全書大分段。
+
+有爭議的欄位必須明確標籤，例如寫「傳統作者歸屬」，不能只寫「作者」就把爭議抹掉；完整分歧仍由 `authorship_context` 解釋。
+
+### 內容 modules
+
 Renderer 只接受 `introduction_scheme.md` 定義的允許模組：
 
 ```text
@@ -104,7 +115,7 @@ canonical_relationship
 - `source_manifest.yaml`：來源 URL、來源角色、預期資料與 provenance 規則。
 - `source_notes.yaml`：人工可讀的正規化來源筆記與跨來源整理；不是網頁全文鏡像。
 - `raw/`：crawler 實際執行時產生的清理後來源文字與 receipt；不可由模型手工杜撰。
-- `introduction_content.yaml`：跨來源整合完成的語意內容。
+- `introduction_content.yaml`：跨來源整合完成的語意內容，包含可選 `overview` 與正文 modules。
 - `Introduction.md`：renderer 產生、給一般讀者看的最終頁面。
 - `_config/schemas/introduction_content.schema.json`：v3 payload 的結構契約。
 
@@ -132,11 +143,12 @@ python util/check_book_introduction.py `
 
 公開頁面的調性要跟 repo 現有章文一致，同時保留 CT00 那種「正式書卷提要」的閱讀感：
 
+- 開頭可用簡短 `overview` 表讓讀者快速掌握基本資料，但它不能取代正文；
 - 正文以連續、自然的導論敘述為主，不寫成聊天式帶讀稿；
 - 不大量使用「如果只記一件事」「你可以問自己」「鏡頭拉近」等 AI 常見導讀句型；
 - 圖表是輔助，不主導文章章法；
 - Mermaid 只在能真正壓縮時間、結構、主線或書卷關係時使用；
-- 表格用來並列不同年代／作者框架、大綱或關鍵經文；
+- 表格用來快速掃描基本資料、並列不同年代／作者框架、大綱或關鍵經文；
 - Obsidian callout 收納容易混淆的概念、爭議層次與補充背景；
 - 使用大眾看得懂的繁體中文，不寫成論文，也避免「以下將介紹」「綜上所述」「本節將探討」這類制式 AI 語氣；
 - 來源與方法收在折疊 callout，避免破壞正文閱讀節奏。
@@ -147,6 +159,7 @@ python util/check_book_introduction.py `
 
 - [x] CT00 從「固定欄位模板」改為「editorial rhythm」
 - [x] schema v3 改為可選模組，不綁固定點數
+- [x] 恢復可選的開頭 `overview` 一覽表，且不把欄位固定成模板
 - [x] CT00、GT00、KC0、BH 四家來源角色分離
 - [x] BibleProject、Enter the Bible、Yale 補強層分離
 - [x] 作者／年代分層，不硬裁決
