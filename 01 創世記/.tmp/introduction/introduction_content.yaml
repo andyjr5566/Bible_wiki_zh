@@ -25,6 +25,25 @@ header:
     以及整本聖經反覆出現的土地、後裔、祝福、約、罪與拯救等主題奠定背景。
   source_ids: [CT00, GT00, KC0, BH, BIBLEPROJECT]
 
+overview:
+  title: 一覽
+  rows:
+    - label: 位置
+      value: 摩西五經第一卷；舊約第一卷
+    - label: 章數
+      value: 50 章
+    - label: 希伯來書名
+      value: בְּרֵאשִׁית（Bereshith，「起初」）
+    - label: 希臘書名
+      value: Genesis，帶有「起源、生成」之意
+    - label: 傳統作者歸屬
+      value: 摩西
+    - label: 傳統成書框架
+      value: 出埃及後的摩西時期，約主前十五至十四世紀
+    - label: 全書大分段
+      value: 1–11章上古史；12–50章列祖史
+  source_ids: [CT00, BH, KC0, GT00, BIBLEPROJECT, YALE]
+
 modules:
   identity:
     title: 書名
