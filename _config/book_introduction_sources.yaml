@@ -1,0 +1,28 @@
+# 書卷級 Introduction 外部補強來源。
+#
+# CT00 / GT00 / KC0 / BH 不在這裡重複維護；它們由 _config/source_catalog.json
+# 的 cc_folder / kc / en 程式化產生。
+#
+# BibleProject / Enter the Bible / Yale 並非每卷都有完全一致的 URL 規則，
+# 因此必須逐卷明示。沒有來源就省略，不讓 agent 猜網址。
+
+books:
+  "01 創世記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Genesis Guide
+      url: https://bibleproject.com/guides/book-of-genesis/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Genesis
+      urls:
+        - https://enterthebible.org/courses/genesis/
+        - https://enterthebible.org/courses/genesis/lessons/summary-of-genesis/
+        - https://enterthebible.org/courses/genesis/lessons/outline-of-genesis/
+        - https://enterthebible.org/courses/genesis/lessons/background-of-genesis/
+        - https://enterthebible.org/courses/genesis/lessons/introductory-issues-in-genesis/
+        - https://enterthebible.org/courses/genesis/lessons/theological-themes-in-genesis/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Genesis Introduction
+      url: https://yalebiblestudy.org/courses/genesis/lessons/genesis-introduction-study-guide/
