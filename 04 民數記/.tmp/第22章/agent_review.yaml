@@ -1,0 +1,68 @@
+version: 2
+book: 民數記
+chapter: 22
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: 8a677f114623277601c0911baf67c983d15e6a5087f4536074c936e91ca18a6d
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 6d6f6146d0c50e0487acb3402035c094d926291ffa5d5a2354e16a88a467025e
+      verdict: changes_required
+      findings_count: 5
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 4c83933a3eb3de795e8ff790ee74648754066995732cbf52bc53dc7e1d655eeb
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 7c2f030fc32bf8112e579b6515a24b322401f226f3facd6767237cbd9f959ba0
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 26e570f291871ae2c4f39ce7d248b846c01361be5487c1e80472e98381016440
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 7c2f030fc32bf8112e579b6515a24b322401f226f3facd6767237cbd9f959ba0
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: 6e345e6def4fee9f4632e73cd12f39cfc7298b97926316a3a97264059bc8ba46
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: b51970fd7910374356da3c308728313119599c39e04373d20605adfbfd60cf3d
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 6e345e6def4fee9f4632e73cd12f39cfc7298b97926316a3a97264059bc8ba46
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
