@@ -21,3 +21,9 @@ jobs:
       - run: python util/link_quality_check.py
       - run: python util/verify_links.py
       - run: python util/audit_knowledge_base.py --check-due
+      - name: Validate Genesis book introduction
+        run: |
+          python util/check_book_introduction.py \
+            "01 創世記/.tmp/introduction/introduction_content.yaml" \
+            --manifest "raw_data/book_intro/創世記/source_manifest.yaml" \
+            --rendered "01 創世記/書卷導論.md"
