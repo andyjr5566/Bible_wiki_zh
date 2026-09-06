@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_13.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 439,
+      "first": "Jos 13:1",
+      "last": "Jos 13:33",
+      "sha256": "d4dee848d67a7b6e9f068b8f4287342755046ebd51a196938665a3a0959e9d51",
+      "bytes": 83414,
+      "chars": 71927,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

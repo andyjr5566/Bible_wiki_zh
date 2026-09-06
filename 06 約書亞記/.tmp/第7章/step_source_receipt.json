@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_7.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 494,
+      "first": "Jos 7:1",
+      "last": "Jos 7:26",
+      "sha256": "eb8e215b136193c59932069300f7daa5cfa5cc553d35992897fbe45397c8881a",
+      "bytes": 95098,
+      "chars": 83016,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

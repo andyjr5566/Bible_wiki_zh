@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_11.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 409,
+      "first": "Jos 11:1",
+      "last": "Jos 11:23",
+      "sha256": "566b54c71aa7642253e3de6c08679dcc94d905d28216b6242cf7261afe8f7774",
+      "bytes": 75224,
+      "chars": 65413,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 21,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_21.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 45,
+      "words": 583,
+      "first": "Jos 21:1",
+      "last": "Jos 21:45",
+      "sha256": "cc754bd5841ff36655c99eefadaeffd8fd47312de2388f2b9170662c2c936e62",
+      "bytes": 108965,
+      "chars": 94086,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

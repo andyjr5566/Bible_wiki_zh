@@ -5,4 +5,6 @@
   "03 利未記":   {"cc_folder": "03Lev",  "kc": "Lev", "en": "leviticus"},
   "04 民數記":   {"cc_folder": "04Num",  "kc": "Num", "en": "numbers"},
   "05 申命記":   {"cc_folder": "05Deut", "kc": "Deu", "en": "deuteronomy"}
+  "05 申命記":   {"cc_folder": "05Deut", "kc": "Deu", "en": "deuteronomy"},
+  "06 約書亞記": {"cc_folder": "06Josh", "kc": "Jos", "en": "joshua"}
 }

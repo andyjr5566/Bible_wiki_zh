@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_19.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 51,
+      "words": 485,
+      "first": "Jos 19:1",
+      "last": "Jos 19:51",
+      "sha256": "ab3d8a62f8b5a48af728b8ad5cf4cf8874781fddeb5d68882276239f3b75de07",
+      "bytes": 98959,
+      "chars": 85600,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

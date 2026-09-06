@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 15,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_15.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 63,
+      "words": 553,
+      "first": "Jos 15:1",
+      "last": "Jos 15:63",
+      "sha256": "b8f1fa2d438bc89eda0a5a20c41cefd5b6590f30dc17579d6f25596d6347d07a",
+      "bytes": 109226,
+      "chars": 94529,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

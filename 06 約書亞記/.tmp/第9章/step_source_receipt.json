@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_9.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 414,
+      "first": "Jos 9:1",
+      "last": "Jos 9:27",
+      "sha256": "694becdc86b47df832578ccaa78d9449a046c83733727cf373bda8a93cc4eb4c",
+      "bytes": 81989,
+      "chars": 71368,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_16.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 123,
+      "first": "Jos 16:1",
+      "last": "Jos 16:10",
+      "sha256": "f886b44191bcdb52d2923e7abccb3f0d9e338ec19ae8e7858892ccb8758844e2",
+      "bytes": 25511,
+      "chars": 22130,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

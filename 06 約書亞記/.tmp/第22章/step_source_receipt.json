@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_22.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 688,
+      "first": "Jos 22:1",
+      "last": "Jos 22:34",
+      "sha256": "6b08bc5b09954d91ffbe807f2dd7a6df5e08d7ddb0bf284d874acae06daa8244",
+      "bytes": 126504,
+      "chars": 109809,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

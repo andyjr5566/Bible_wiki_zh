@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_2.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 403,
+      "first": "Jos 2:1",
+      "last": "Jos 2:24",
+      "sha256": "1d0210224cb2ec9f2bf841609ab1d04dcf529a077317c32e5347410bb95a8faf",
+      "bytes": 79497,
+      "chars": 69612,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

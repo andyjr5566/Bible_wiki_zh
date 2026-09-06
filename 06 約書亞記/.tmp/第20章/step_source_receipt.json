@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_20.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 172,
+      "first": "Jos 20:1",
+      "last": "Jos 20:9",
+      "sha256": "8d85aec059b51e54c2786eafa084018f941cd2bcb6b21aa0c3f902300331b954",
+      "bytes": 32411,
+      "chars": 28322,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

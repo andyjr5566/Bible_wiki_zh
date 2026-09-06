@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joshua_4.txt",
+      "book": "Joshua",
+      "book_code": "Jos",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 390,
+      "first": "Jos 4:1",
+      "last": "Jos 4:24",
+      "sha256": "2fcd8732819b7b38d0843318dfd06e1c84b66bcac57faed43f3728f5a93647fb",
+      "bytes": 73596,
+      "chars": 63862,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
