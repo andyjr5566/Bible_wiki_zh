@@ -26,3 +26,93 @@ books:
       role: academic_context
       label: Yale Bible Study — Genesis Introduction
       url: https://yalebiblestudy.org/courses/genesis/lessons/genesis-introduction-study-guide/
+
+  "02 出埃及記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Exodus Guide
+      url: https://bibleproject.com/guides/book-of-exodus/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Exodus
+      urls:
+        - https://enterthebible.org/courses/exodus/
+        - https://enterthebible.org/courses/exodus/lessons/summary-of-exodus/
+        - https://enterthebible.org/courses/exodus/lessons/outline-of-exodus/
+        - https://enterthebible.org/courses/exodus/lessons/background-of-exodus/
+        - https://enterthebible.org/courses/exodus/lessons/introductory-issues-in-exodus
+        - https://enterthebible.org/courses/exodus/lessons/theological-themes-in-exodus/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Exodus Introduction
+      url: https://yalebiblestudy.org/courses/exodus/lessons/introduction-study-guide/
+
+  "03 利未記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Leviticus Guide
+      url: https://bibleproject.com/guides/book-of-leviticus/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Leviticus
+      urls:
+        - https://enterthebible.org/courses/leviticus/
+        - https://enterthebible.org/courses/leviticus/lessons/summary-of-leviticus/
+        - https://enterthebible.org/courses/leviticus/lessons/outline-of-leviticus/
+        - https://enterthebible.org/courses/leviticus/lessons/background-of-leviticus/
+        - https://enterthebible.org/courses/leviticus/lessons/introductory-issues-in-leviticus/
+        - https://enterthebible.org/courses/leviticus/lessons/theological-themes-in-leviticus/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Leviticus, Numbers, and Deuteronomy
+      urls:
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/introducing-biblical-law-study-guide/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/leviticus-part-1-study-guide/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/leviticus-part-2-study-guide/
+
+  "04 民數記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Numbers Guide
+      url: https://bibleproject.com/guides/book-of-numbers/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Numbers
+      urls:
+        - https://enterthebible.org/courses/numbers/
+        - https://enterthebible.org/courses/numbers/lessons/summary-of-numbers/
+        - https://enterthebible.org/courses/numbers/lessons/outline-of-numbers/
+        - https://enterthebible.org/courses/numbers/lessons/background-of-numbers/
+        - https://enterthebible.org/courses/numbers/lessons/introductory-issues-in-numbers/
+        - https://enterthebible.org/courses/numbers/lessons/theological-themes-in-numbers/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Leviticus, Numbers, and Deuteronomy
+      urls:
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/numbers-part-1-study-guide-2/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/numbers-part-2-study-guide/
+
+  "05 申命記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Deuteronomy Guide
+      url: https://bibleproject.com/guides/book-of-deuteronomy/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Deuteronomy
+      urls:
+        - https://enterthebible.org/courses/deuteronomy/
+        - https://enterthebible.org/courses/deuteronomy/lessons/summary-of-deuteronomy/
+        - https://enterthebible.org/courses/deuteronomy/lessons/outline-of-deuteronomy/
+        - https://enterthebible.org/courses/deuteronomy/lessons/background-of-deuteronomy/
+        - https://enterthebible.org/courses/deuteronomy/lessons/introductory-issues-in-deuteronomy/
+        - https://enterthebible.org/courses/deuteronomy/lessons/theological-themes-in-deuteronomy/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Leviticus, Numbers, and Deuteronomy
+      urls:
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-1-study-guide/
+        - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-2-study-guide/
