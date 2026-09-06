@@ -1,0 +1,58 @@
+book: 出埃及記
+retrieved_on: 2026-09-07
+note: >-
+  這份檔案保存供書卷導論使用的正規化來源筆記，不是網頁全文鏡像。
+  原頁全文由 crawl_book_introduction.py 依 source_manifest.yaml 取得；本檔只保留可追溯的事實、觀點與分歧。
+
+sources:
+  CT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT00.htm
+    notes:
+      - 以摩西為傳統作者，寫作背景置於出埃及後的西乃／曠野時期。
+      - 主線由埃及奴役、神的拯救、西乃立約一路推到會幕與神同在。
+      - 強調本書直接承接《創世記》，並為《利未記》的會幕敬拜背景預備舞台。
+  GT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT00.htm
+    notes:
+      - 是多來源導論合輯，整理書名、作者、時代、救贖、立約、律法與會幕等主題。
+      - 使用個別觀點時必須保留子來源，不可把一位作者的意見寫成 GT00 全體結論。
+  KC0:
+    url: https://www.kingcomments.com/en/bible-studies/Exo/0
+    notes:
+      - 採摩西作者的傳統框架。
+      - 將離開埃及、救贖、西乃與會幕視為全書主要神學進程。
+  BH:
+    url: https://biblehub.com/exodus/
+    notes:
+      - 提供書名、作者、歷史背景、受眾與目的、文體及結構的整卷概覽。
+      - 可用於確認全書從埃及到西乃、從拯救到立約與會幕的宏觀架構。
+  BIBLEPROJECT:
+    url: https://bibleproject.com/guides/book-of-exodus/
+    notes:
+      - 文學主線特別清楚呈現救贖、立約、金牛犢危機與會幕／神同住。
+      - 適合協助圖表與全書敘事設計，不用來單獨裁定作者與年代。
+  ENTER_THE_BIBLE:
+    url: https://enterthebible.org/courses/exodus/
+    notes:
+      - 提供 summary、outline、background、introductory issues 與 theological themes。
+      - 將出埃及事件的歷史問題與五經文本長期形成問題分開討論。
+  YALE:
+    url: https://yalebiblestudy.org/courses/exodus/lessons/introduction-study-guide/
+    notes:
+      - 適合補充五經來源／編輯研究、出埃及歷史與考古問題，以及西乃律法的古代背景。
+      - 研究模型應以「現代研究如何提問」呈現，不寫成唯一已證實答案。
+
+cross_source_synthesis:
+  strong_consensus:
+    - 全書不是只講離開埃及，而是由拯救走向立約與神同住。
+    - 西乃與會幕是後半卷不可省略的核心，40章榮光充滿會幕直接銜接《利未記》。
+    - 逾越節、十誡、約與會幕是後續聖經反覆使用的重要語彙。
+  disputed_or_layered:
+    - topic: 作者與成書
+      traditional: 摩西為主要作者，寫作背景置於出埃及後的曠野時期。
+      academic: 現有文本常被理解為多階段傳承與編整的成果。
+      writing_rule: 分開呈現傳統作者歸屬與現代成書研究。
+    - topic: 出埃及事件年代
+      traditional: 常置於主前十五至十四世紀框架。
+      academic: 事件年代、規模、路線與考古證據仍有不同重建。
+      writing_rule: 不把特定法老或單一年代寫成無爭議事實。
