@@ -112,19 +112,24 @@ canonical_relationship
 
 ## 專案串接
 
-《創世記》prototype 現在採用下列公開路徑：
+《創世記》prototype 採用「書卷目錄先、導論其次」的公開資訊架構：
 
 ```text
 index.md
-→ 01 創世記/書卷導論.md
 → 01 創世記/全書目錄及綱要.md
-→ 01 創世記/第1章.md ... 第50章.md
+   ├─→ 01 創世記/書卷導論.md
+   ├─→ 01 創世記/第1章.md
+   ├─→ 01 創世記/第2章.md
+   └─→ ... 第50章.md
 ```
+
+`全書目錄及綱要.md` 是《創世記》的書卷 hub；`書卷導論.md` 是 hub 下的重要內容頁，不取代 hub。
 
 新增或維護這一層導航時一律寫完整書卷路徑，例如：
 
 ```md
-[[01 創世記/書卷導論|創世記]]
+[[01 創世記/全書目錄及綱要|創世記]]
+[[01 創世記/書卷導論|書卷導論]]
 [[01 創世記/全書目錄及綱要|全書目錄及綱要]]
 [[01 創世記/第1章|開始讀第1章]]
 ```
@@ -139,7 +144,7 @@ index.md
 - `source_notes.yaml`：人工可讀的正規化來源筆記與跨來源整理；不是網頁全文鏡像。
 - `raw/`：crawler 實際執行時產生的清理後來源文字與 receipt；不可由模型手工杜撰。
 - `introduction_content.yaml`：跨來源整合完成的語意內容，包含可選 `overview` 與正文 modules。
-- `書卷導論.md`：renderer 產生、給一般讀者看的最終頁面，也是該卷公開入口。
+- `書卷導論.md`：renderer 產生、給一般讀者看的最終導論頁；由 `全書目錄及綱要.md` 進入。
 - `_config/schemas/introduction_content.schema.json`：v3 payload 的結構契約。
 
 ---
@@ -190,7 +195,7 @@ python util/check_book_introduction.py `
 - [x] 作者／年代分層，不硬裁決
 - [x] 全書主旨、結構與正典關係視覺化
 - [x] Obsidian callout 與完整路徑 wiki-link 導航
-- [x] 首頁 → 書卷導論 → 全書目錄及綱要 → 章節的公開閱讀鏈
+- [x] 首頁 → 全書目錄及綱要 → 書卷導論／各章的公開資訊架構
 - [x] `introduction_content.yaml -> 書卷導論.md` renderer
 - [x] provenance / style / deterministic render checker
 - [x] `_config/schemas/introduction_content.schema.json`
