@@ -1,29 +1,22 @@
 #!/usr/bin/env python3
-"""Validate a book-level Introduction prototype.
+"""Validate a book-level Introduction against ``introduction_scheme.md``.
 
-The checker deliberately validates structure/provenance rather than theology.
-It is meant to keep the book-introduction pipeline aligned with the project rule:
-「模型不碰結構，程式不碰內容」。
+The checker validates structure, provenance and reproducibility rather than
+choosing a theological position.  It deliberately does *not* require a fixed
+number of public sections or a Mermaid diagram for every book.
 
-Prototype usage:
+Example:
 
     python util/check_book_introduction.py \
       "01 創世記/.tmp/introduction/introduction_content.yaml" \
       --manifest "raw_data/book_intro/創世記/source_manifest.yaml" \
       --rendered "01 創世記/Introduction.md"
-
-Checks:
-- all source IDs used by content exist in the manifest;
-- commentary-vote and external-context source roles do not overlap;
-- disputed authorship/date material keeps traditional and academic layers apart;
-- public Introduction.md is exactly reproducible from introduction_content.yaml;
-- the page contains useful Obsidian/Markdown visual structure (Mermaid + callouts);
-- source URLs are present in the rendered references section.
 """
 
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Any, Iterable
@@ -33,181 +26,247 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 
 try:
-    from .render_book_introduction import render
+    from .render_book_introduction import MODULE_ORDER, render
 except ImportError:
-    from render_book_introduction import render
+    from render_book_introduction import MODULE_ORDER, render
 
 
-def load_yaml(path: Path) -> dict[str, Any]:
+COMMENTARY_ROLE = "commentary"
+STYLE_PHRASES = (
+    "一分鐘認識",
+    "如果只記一件事",
+    "你有沒有想過",
+    "先別急著",
+)
+NUMBERED_HEADING = re.compile(
+    r"^##\s+(?:\d+[\.、)]|[壹貳參叁肆伍陸柒捌玖拾]+[、．.])",
+    re.MULTILINE,
+)
+
+
+def _load(path: Path) -> dict[str, Any]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise ValueError(f"{path}: YAML root must be a mapping")
     return data
 
 
-def source_ids_from_tree(value: Any) -> set[str]:
+def _resolve(path: Path) -> Path:
+    return path if path.is_absolute() else ROOT / path
+
+
+def _collect_source_ids(value: Any) -> set[str]:
+    """Collect content provenance IDs, but not policy lists or reference IDs."""
     found: set[str] = set()
     if isinstance(value, dict):
         for key, child in value.items():
-            if key in {"sources", "source_ids"} and isinstance(child, list):
+            if key == "source_ids" and isinstance(child, list):
                 found.update(str(item).strip() for item in child if str(item).strip())
-            else:
-                found.update(source_ids_from_tree(child))
+            elif key not in {"source_policy", "references"}:
+                found.update(_collect_source_ids(child))
     elif isinstance(value, list):
         for child in value:
-            found.update(source_ids_from_tree(child))
+            found.update(_collect_source_ids(child))
     return found
 
 
-def require(condition: bool, message: str, errors: list[str]) -> None:
-    if not condition:
-        errors.append(message)
+def _module_text(module: dict[str, Any]) -> str:
+    parts: list[str] = []
+
+    def walk(value: Any) -> None:
+        if isinstance(value, str):
+            parts.append(value)
+        elif isinstance(value, dict):
+            for key, child in value.items():
+                if key not in {"source_ids", "mermaid"}:
+                    walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                walk(child)
+
+    walk(module)
+    return "\n".join(parts)
 
 
-def as_set(value: Any) -> set[str]:
-    if not isinstance(value, list):
-        return set()
-    return {str(item).strip() for item in value if str(item).strip()}
+def _manifest_roles(manifest: dict[str, Any]) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for source_id, spec in (manifest.get("sources") or {}).items():
+        if isinstance(spec, dict):
+            result[str(source_id)] = str(spec.get("role", "")).strip()
+    return result
 
 
-def reference_ids(content: dict[str, Any]) -> set[str]:
+def _errors_for_policy(
+    content: dict[str, Any], manifest: dict[str, Any], errors: list[str]
+) -> None:
+    policy = content.get("source_policy") or {}
+    commentary = [str(v) for v in policy.get("commentary_vote_sources") or []]
+    external = [str(v) for v in policy.get("external_context_sources") or []]
+    anchor = str(policy.get("editorial_anchor", "")).strip()
+
+    if not commentary:
+        errors.append("source_policy.commentary_vote_sources is required")
+    if set(commentary) & set(external):
+        errors.append("commentary vote sources and external context sources overlap")
+    if anchor and anchor not in commentary:
+        errors.append(f"editorial_anchor {anchor!r} is not a commentary vote source")
+
+    roles = _manifest_roles(manifest)
+    for source_id in commentary:
+        if source_id not in roles:
+            errors.append(f"commentary source {source_id!r} missing from manifest")
+        elif roles[source_id] != COMMENTARY_ROLE:
+            errors.append(
+                f"commentary source {source_id!r} has manifest role {roles[source_id]!r}"
+            )
+    for source_id in external:
+        if source_id not in roles:
+            errors.append(f"external source {source_id!r} missing from manifest")
+        elif roles[source_id] == COMMENTARY_ROLE:
+            errors.append(f"external source {source_id!r} is incorrectly marked commentary")
+
+    manifest_principles = manifest.get("principles") or {}
+    manifest_commentary = {
+        str(v) for v in manifest_principles.get("commentary_vote_sources") or []
+    }
+    if manifest_commentary and set(commentary) != manifest_commentary:
+        errors.append(
+            "content commentary_vote_sources do not match manifest principles: "
+            f"content={sorted(commentary)}, manifest={sorted(manifest_commentary)}"
+        )
+
+    gt = (manifest.get("sources") or {}).get("GT00") or {}
+    if "GT00" in commentary and not str(gt.get("provenance_rule", "")).strip():
+        errors.append("GT00 must declare provenance_rule because it is an anthology")
+
+    bh = (manifest.get("sources") or {}).get("BH") or {}
+    if "BH" in commentary and not str(bh.get("family_rule", "")).strip():
+        errors.append("BH must declare family_rule so its subresources do not add votes")
+
+
+def _errors_for_modules(content: dict[str, Any], errors: list[str]) -> None:
+    if int(content.get("schema_version", 0)) != 3:
+        errors.append("schema_version must be 3")
+        return
+
+    modules = content.get("modules")
+    if not isinstance(modules, dict):
+        errors.append("modules must be a mapping")
+        return
+
+    unknown = sorted(set(modules) - set(MODULE_ORDER))
+    if unknown:
+        errors.append(f"unknown modules: {', '.join(unknown)}")
+
+    # These are the minimum pieces that make a book introduction useful.
+    for required in ("authorship_context", "message_purpose", "structure"):
+        module = modules.get(required)
+        if not isinstance(module, dict) or module.get("enabled") is False:
+            errors.append(f"required module missing or disabled: {required}")
+
+    # When traditional commentary and academic context are both used for
+    # authorship/composition, the prose must visibly keep the layers apart.
+    authorship = modules.get("authorship_context")
+    if isinstance(authorship, dict):
+        ids = set(str(v) for v in authorship.get("source_ids") or [])
+        policy = content.get("source_policy") or {}
+        commentary = set(str(v) for v in policy.get("commentary_vote_sources") or [])
+        external = set(str(v) for v in policy.get("external_context_sources") or [])
+        if ids & commentary and ids & external:
+            text = _module_text(authorship)
+            if "傳統" not in text:
+                errors.append(
+                    "authorship_context mixes commentary and academic sources but does not label the traditional layer"
+                )
+            if "現代" not in text and "近代" not in text and "研究" not in text:
+                errors.append(
+                    "authorship_context mixes commentary and academic sources but does not label the research layer"
+                )
+
+
+def _errors_for_rendered(
+    content: dict[str, Any], rendered_path: Path, manifest: dict[str, Any], errors: list[str]
+) -> None:
+    if not rendered_path.exists():
+        errors.append(f"rendered file missing: {rendered_path.relative_to(ROOT)}")
+        return
+
+    actual = rendered_path.read_text(encoding="utf-8")
+    expected = render(content)
+    if actual != expected:
+        errors.append(
+            "Introduction.md is not exactly reproducible from introduction_content.yaml; "
+            "rerun render_book_introduction.py"
+        )
+
+    if NUMBERED_HEADING.search(actual):
+        errors.append("public Introduction uses numbered H2 headings; the scheme forbids fixed-point presentation")
+
+    for phrase in STYLE_PHRASES:
+        if phrase in actual:
+            errors.append(f"public Introduction contains discouraged AI-guide phrase: {phrase}")
+
+    mermaid_count = actual.count("```mermaid")
+    if mermaid_count > 5:
+        errors.append(f"too many Mermaid blocks ({mermaid_count}); visuals should compress, not repeat, the prose")
+
     refs = content.get("references") or []
-    if not isinstance(refs, list):
-        return set()
-    return {
-        str(ref.get("id", "")).strip()
-        for ref in refs
-        if isinstance(ref, dict) and str(ref.get("id", "")).strip()
-    }
+    manifest_sources = manifest.get("sources") or {}
+    ref_ids = {str(ref.get("id", "")).strip() for ref in refs if isinstance(ref, dict)}
+    used_ids = _collect_source_ids(content)
+    missing_refs = sorted(used_ids - ref_ids)
+    if missing_refs:
+        errors.append(f"used source IDs missing from public references: {', '.join(missing_refs)}")
 
-
-def source_urls(manifest: dict[str, Any]) -> list[str]:
-    urls: list[str] = []
-    for spec in (manifest.get("sources") or {}).values():
-        if not isinstance(spec, dict):
+    for ref in refs:
+        if not isinstance(ref, dict):
             continue
-        url = str(spec.get("url", "")).strip()
-        if url:
-            urls.append(url)
-        values = spec.get("urls")
-        if isinstance(values, list):
-            urls.extend(str(item).strip() for item in values if str(item).strip())
-    return urls
+        source_id = str(ref.get("id", "")).strip()
+        url = str(ref.get("url", "")).strip()
+        if source_id not in manifest_sources:
+            errors.append(f"reference source {source_id!r} missing from manifest")
+        if url and url not in actual:
+            errors.append(f"reference URL for {source_id!r} missing from rendered Markdown")
 
 
-def question_labels(content: dict[str, Any]) -> set[str]:
-    block = content.get("authorship_and_date") or {}
-    questions = block.get("questions") or [] if isinstance(block, dict) else []
-    return {
-        str(item.get("label", "")).strip()
-        for item in questions
-        if isinstance(item, dict) and str(item.get("label", "")).strip()
-    }
+def check(
+    content_path: Path, manifest_path: Path, rendered_path: Path
+) -> list[str]:
+    content = _load(content_path)
+    manifest = _load(manifest_path)
+    errors: list[str] = []
 
+    manifest_ids = set(str(v) for v in (manifest.get("sources") or {}).keys())
+    used_ids = _collect_source_ids(content)
+    unknown_sources = sorted(used_ids - manifest_ids)
+    if unknown_sources:
+        errors.append(f"content uses source IDs absent from manifest: {', '.join(unknown_sources)}")
 
-def count_mermaid(text: str) -> int:
-    return text.count("```mermaid")
-
-
-def count_callouts(text: str) -> int:
-    return text.count("> [!")
+    _errors_for_policy(content, manifest, errors)
+    _errors_for_modules(content, errors)
+    _errors_for_rendered(content, rendered_path, manifest, errors)
+    return errors
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate book Introduction content + rendering")
+    parser = argparse.ArgumentParser(description="Validate a book Introduction prototype")
     parser.add_argument("content", type=Path)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--rendered", type=Path, required=True)
-    parser.add_argument("--min-mermaid", type=int, default=2)
-    parser.add_argument("--min-callouts", type=int, default=3)
     args = parser.parse_args()
 
-    content_path = args.content if args.content.is_absolute() else ROOT / args.content
-    manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest
-    rendered_path = args.rendered if args.rendered.is_absolute() else ROOT / args.rendered
+    content_path = _resolve(args.content)
+    manifest_path = _resolve(args.manifest)
+    rendered_path = _resolve(args.rendered)
 
-    content = load_yaml(content_path)
-    manifest = load_yaml(manifest_path)
-    rendered_text = rendered_path.read_text(encoding="utf-8")
-
-    errors: list[str] = []
-    warnings: list[str] = []
-
-    source_specs = manifest.get("sources") or {}
-    require(isinstance(source_specs, dict) and bool(source_specs), "manifest.sources must be a non-empty mapping", errors)
-    known_sources = set(source_specs) if isinstance(source_specs, dict) else set()
-
-    used_sources = source_ids_from_tree(content)
-    unknown = sorted(used_sources - known_sources)
-    require(not unknown, f"content uses unknown source IDs: {unknown}", errors)
-
-    principles = manifest.get("principles") or {}
-    commentary = as_set(principles.get("commentary_vote_sources")) if isinstance(principles, dict) else set()
-    external = as_set(principles.get("external_context_sources")) if isinstance(principles, dict) else set()
-    require(commentary == {"CT00", "GT00", "KC0", "BH"}, f"commentary vote set changed unexpectedly: {sorted(commentary)}", errors)
-    require(not commentary.intersection(external), "commentary and external-context source roles overlap", errors)
-    require(commentary.union(external).issubset(known_sources), "principle source IDs must exist in manifest.sources", errors)
-
-    for source_id in commentary:
-        spec = source_specs.get(source_id) or {}
-        require(spec.get("role") == "commentary", f"{source_id} must keep role=commentary", errors)
-    for source_id in external:
-        spec = source_specs.get(source_id) or {}
-        require(spec.get("role") != "commentary", f"{source_id} must not be counted as commentary", errors)
-
-    gt = source_specs.get("GT00") or {}
-    require(bool(gt.get("provenance_rule")), "GT00 must define provenance_rule because it is a multi-source anthology", errors)
-    bh = source_specs.get("BH") or {}
-    require(bool(bh.get("family_rule")), "BH must define family_rule so BibleHub subpages do not become extra votes", errors)
-
-    labels = question_labels(content)
-    required_labels = {"故事年代", "傳統作者歸屬", "傳統成書框架", "現代學術成書觀"}
-    missing_labels = sorted(required_labels - labels)
-    require(not missing_labels, f"authorship/date block missing layered questions: {missing_labels}", errors)
-
-    refs = reference_ids(content)
-    require(known_sources.issubset(refs), f"references section missing source IDs: {sorted(known_sources - refs)}", errors)
-
-    expected = render(content)
-    require(
-        expected == rendered_text,
-        "Introduction.md is not in sync with introduction_content.yaml; rerun render_book_introduction.py",
-        errors,
-    )
-
-    mermaid_count = count_mermaid(rendered_text)
-    callout_count = count_callouts(rendered_text)
-    require(mermaid_count >= args.min_mermaid, f"only {mermaid_count} Mermaid diagrams; expected at least {args.min_mermaid}", errors)
-    require(callout_count >= args.min_callouts, f"only {callout_count} Obsidian callouts; expected at least {args.min_callouts}", errors)
-
-    require("[[01 創世記/全書目錄及綱要|全書目錄及綱要]]" in rendered_text, "outline wiki-link missing", errors)
-    require("[[01 創世記/第1章|開始讀第1章]]" in rendered_text, "first-chapter wiki-link missing", errors)
-
-    # Every canonical source landing URL should be discoverable to readers. For
-    # multi-page sources (Enter the Bible), the references section may use the
-    # course landing page rather than every lesson URL.
-    for source_id, spec in source_specs.items():
-        if not isinstance(spec, dict):
-            continue
-        canonical = str(spec.get("url", "")).strip()
-        if not canonical:
-            urls = spec.get("urls")
-            canonical = str(urls[0]).strip() if isinstance(urls, list) and urls else ""
-        if canonical and canonical not in rendered_text:
-            warnings.append(f"{source_id}: canonical source URL is not visible in rendered references: {canonical}")
-
-    print(f"book: {content.get('book', '(unknown)')}")
-    print(f"sources: {len(known_sources)} known / {len(used_sources)} used")
-    print(f"visuals: {mermaid_count} Mermaid / {callout_count} callouts")
-
-    for warning in warnings:
-        print(f"WARN: {warning}")
+    errors = check(content_path, manifest_path, rendered_path)
     if errors:
+        print("❌ Book Introduction check failed:")
         for error in errors:
-            print(f"ERROR: {error}", file=sys.stderr)
+            print(f"  - {error}")
         return 1
 
-    print("PASS: book Introduction prototype is structurally and provenance-consistent")
+    print("✅ Book Introduction check PASS")
     return 0
 
 
