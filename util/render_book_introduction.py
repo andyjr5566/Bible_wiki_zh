@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Render book-level ``introduction_content.yaml`` to Obsidian Markdown.
+"""Render book-level ``introduction_content.yaml`` to public Obsidian Markdown.
 
 Schema v3 keeps a stable editorial reading order while allowing irrelevant
 modules to disappear. The renderer owns module order and Markdown structure;
 the content payload owns prose and source attribution.
+
+Canonical public output: ``<book_folder>/書卷導論.md``.
 
 Project boundary: 「模型不碰結構，程式不碰內容」。
 """
@@ -299,7 +301,7 @@ def render(data: dict[str, Any]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Render a book Introduction.md")
+    parser = argparse.ArgumentParser(description="Render a book 書卷導論.md")
     parser.add_argument("content", type=Path)
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--write", action="store_true")
@@ -315,7 +317,7 @@ def main() -> int:
         folder = str(data.get("book_folder", "")).strip()
         if not folder:
             raise ValueError("book_folder is required when --output is omitted")
-        output = ROOT / folder / "Introduction.md"
+        output = ROOT / folder / "書卷導論.md"
     elif not output.is_absolute():
         output = ROOT / output
 
