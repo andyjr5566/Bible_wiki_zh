@@ -1,0 +1,52 @@
+version: 2
+book: 民數記
+chapter: 31
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: 55896a2ad4e6214d48f0c038da5503771477b29d2e13807edeaabf475ff74eeb
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 55896a2ad4e6214d48f0c038da5503771477b29d2e13807edeaabf475ff74eeb
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: 07bb0184833cb8a9b0a5568c347b80ab6803281fe0fad30fd7acae9dea53a4a5
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 07bb0184833cb8a9b0a5568c347b80ab6803281fe0fad30fd7acae9dea53a4a5
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 6f4b1c9bf638b4447d8a44331bd1de1325f18b8d2d23957cc9e13578b1c54642
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 6f4b1c9bf638b4447d8a44331bd1de1325f18b8d2d23957cc9e13578b1c54642
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
