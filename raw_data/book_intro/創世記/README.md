@@ -1,10 +1,10 @@
 # 《創世記》書卷導論 prototype
 
-這個資料夾是書卷級 `Introduction.md` pipeline 的第一個完整 prototype。
+這個資料夾是書卷級 `書卷導論.md` pipeline 的第一個完整 prototype。
 
 整體設計規範見根目錄：`introduction_scheme.md`。
 
-公開頁面：`01 創世記/Introduction.md`  
+公開頁面：`01 創世記/書卷導論.md`  
 語意 payload：`01 創世記/.tmp/introduction/introduction_content.yaml`  
 JSON Schema：`_config/schemas/introduction_content.schema.json`
 
@@ -68,7 +68,7 @@ CCBibleStudy `CT00` 提供的是主要的**介紹節奏**：先定位書卷，�
 
 ## 最重要的 provenance 規則
 
-- `CT00` 是最終 Introduction 的敘事章法基準，但不是唯一事實來源。
+- `CT00` 是最終書卷導論的敘事章法基準，但不是唯一事實來源。
 - `GT00` 是合輯，不可把其中某一位作者的觀點寫成「GT00 一致認為」。
 - BibleHub 即使整合多個底層資源，仍只算一個 `BH` 來源家族。
 - BibleProject、Enter the Bible、Yale 是不同功能的補強層，不可變成第五、第六、第七家註釋票。
@@ -106,7 +106,30 @@ canonical_relationship
 - Renderer 決定模組順序。
 - 沒有價值的模組可以省略。
 - 公開標題可以依書卷自然調整。
-- `authorship_context`、`message_purpose`、`structure` 是一篇可用 Introduction 的最低核心。
+- `authorship_context`、`message_purpose`、`structure` 是一篇可用書卷導論的最低核心。
+
+---
+
+## 專案串接
+
+《創世記》prototype 現在採用下列公開路徑：
+
+```text
+index.md
+→ 01 創世記/書卷導論.md
+→ 01 創世記/全書目錄及綱要.md
+→ 01 創世記/第1章.md ... 第50章.md
+```
+
+新增或維護這一層導航時一律寫完整書卷路徑，例如：
+
+```md
+[[01 創世記/書卷導論|創世記]]
+[[01 創世記/全書目錄及綱要|全書目錄及綱要]]
+[[01 創世記/第1章|開始讀第1章]]
+```
+
+不使用 `[[書卷導論]]`、`[[全書目錄及綱要]]`、`[[第1章]]` 這類依賴所在資料夾解析的短路徑，因為同一份內容還要 deploy 到網站。
 
 ---
 
@@ -116,7 +139,7 @@ canonical_relationship
 - `source_notes.yaml`：人工可讀的正規化來源筆記與跨來源整理；不是網頁全文鏡像。
 - `raw/`：crawler 實際執行時產生的清理後來源文字與 receipt；不可由模型手工杜撰。
 - `introduction_content.yaml`：跨來源整合完成的語意內容，包含可選 `overview` 與正文 modules。
-- `Introduction.md`：renderer 產生、給一般讀者看的最終頁面。
+- `書卷導論.md`：renderer 產生、給一般讀者看的最終頁面，也是該卷公開入口。
 - `_config/schemas/introduction_content.schema.json`：v3 payload 的結構契約。
 
 ---
@@ -128,14 +151,16 @@ python util/crawl_book_introduction.py "raw_data/book_intro/創世記/source_man
 
 python util/render_book_introduction.py `
   "01 創世記/.tmp/introduction/introduction_content.yaml" `
-  --output "01 創世記/Introduction.md" `
+  --output "01 創世記/書卷導論.md" `
   --write --force
 
 python util/check_book_introduction.py `
   "01 創世記/.tmp/introduction/introduction_content.yaml" `
   --manifest "raw_data/book_intro/創世記/source_manifest.yaml" `
-  --rendered "01 創世記/Introduction.md"
+  --rendered "01 創世記/書卷導論.md"
 ```
+
+若省略 renderer 的 `--output`，預設也必須寫到 `{book_folder}/書卷導論.md`。
 
 ---
 
@@ -164,8 +189,9 @@ python util/check_book_introduction.py `
 - [x] BibleProject、Enter the Bible、Yale 補強層分離
 - [x] 作者／年代分層，不硬裁決
 - [x] 全書主旨、結構與正典關係視覺化
-- [x] Obsidian callout 與 wiki-link 導航
-- [x] `introduction_content.yaml -> Introduction.md` renderer
+- [x] Obsidian callout 與完整路徑 wiki-link 導航
+- [x] 首頁 → 書卷導論 → 全書目錄及綱要 → 章節的公開閱讀鏈
+- [x] `introduction_content.yaml -> 書卷導論.md` renderer
 - [x] provenance / style / deterministic render checker
 - [x] `_config/schemas/introduction_content.schema.json`
 - [ ] 由可連外的本機／CI 實際執行 crawler，產生 `raw/` 與 `receipt.json`
