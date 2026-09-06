@@ -13,6 +13,7 @@ Project boundary: 「模型不碰結構，程式不碰內容」。
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Any, Iterable
@@ -231,6 +232,16 @@ def _render_references(data: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def _normalize_cjk_folded_spacing(text: str) -> str:
+    """Remove spaces introduced by YAML folded scalars after CJK punctuation.
+
+    YAML ``>-`` joins physical lines with a single ASCII space. In Traditional
+    Chinese prose this can create visible drift such as ``「內容。 下一句」``
+    even though the public Markdown convention is ``「內容。下一句」``.
+    """
+    return re.sub(r"(?<=[，。！？；：、）」』】》]) +", "", text)
+
+
 def render(data: dict[str, Any]) -> str:
     if int(data.get("schema_version", 0)) != 3:
         raise ValueError("render_book_introduction.py expects schema_version: 3")
@@ -297,7 +308,8 @@ def render(data: dict[str, Any]) -> str:
         blocks.append(references)
 
     blocks.append(nav_block)
-    return "\n\n---\n\n".join(block.rstrip() for block in blocks if block.strip()) + "\n"
+    rendered = "\n\n---\n\n".join(block.rstrip() for block in blocks if block.strip()) + "\n"
+    return _normalize_cjk_folded_spacing(rendered)
 
 
 def main() -> int:
