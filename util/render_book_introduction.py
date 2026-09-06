@@ -2,7 +2,7 @@
 """Render book-level ``introduction_content.yaml`` to Obsidian Markdown.
 
 Schema v3 keeps a stable editorial reading order while allowing irrelevant
-modules to disappear.  The renderer owns module order and Markdown structure;
+modules to disappear. The renderer owns module order and Markdown structure;
 the content payload owns prose and source attribution.
 
 Project boundary: 「模型不碰結構，程式不碰內容」。
@@ -86,6 +86,20 @@ def _table(headers: list[str], rows: Iterable[Iterable[Any]]) -> str:
         values = [str(v).strip().replace("\n", "<br/>") for v in row]
         lines.append("| " + " | ".join(values) + " |")
     return "\n".join(lines)
+
+
+def _render_overview(spec: dict[str, Any]) -> str:
+    rows = spec.get("rows") or []
+    if not rows:
+        return ""
+    table_rows = [(item.get("label", ""), item.get("value", "")) for item in rows]
+    body = _table(["項目", "資料"], table_rows)
+    title = str(spec.get("title") or "一覽").strip()
+    section = f"## {title}\n\n{body}"
+    source_comment = _sources(spec.get("source_ids"))
+    if source_comment:
+        section += f"\n\n{source_comment}"
+    return section
 
 
 def _render_identity(module: dict[str, Any]) -> str:
@@ -248,6 +262,12 @@ def render(data: dict[str, Any]) -> str:
     if source_comment:
         header_lines.extend(["", source_comment])
     blocks.append("\n".join(header_lines))
+
+    overview = data.get("overview")
+    if isinstance(overview, dict):
+        overview_block = _render_overview(overview).strip()
+        if overview_block:
+            blocks.append(overview_block)
 
     modules = data.get("modules") or {}
     if not isinstance(modules, dict):
