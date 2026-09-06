@@ -189,6 +189,7 @@ def _errors_for_navigation(
     content: dict[str, Any], rendered_path: Path, errors: list[str]
 ) -> None:
     folder = str(content.get("book_folder", "")).strip()
+    book = str(content.get("book", "")).strip()
     if not folder:
         errors.append("book_folder is required for public navigation")
         return
@@ -211,6 +212,38 @@ def _errors_for_navigation(
             errors.append(
                 f"navigation.{key} must use full book path beginning with {prefix!r}"
             )
+
+    # Book-level information architecture: index -> outline hub -> intro/chapters.
+    index_path = ROOT / "index.md"
+    outline_path = ROOT / folder / "全書目錄及綱要.md"
+    if not index_path.exists():
+        errors.append("index.md is missing")
+    else:
+        index_text = index_path.read_text(encoding="utf-8")
+        outline_prefix = f"[[{folder}/全書目錄及綱要"
+        intro_prefix = f"[[{folder}/書卷導論"
+        if outline_prefix not in index_text:
+            errors.append(
+                f"index.md must route {book or folder} through full-path 全書目錄及綱要"
+            )
+        if intro_prefix in index_text:
+            errors.append(
+                f"index.md must not route {book or folder} directly to 書卷導論; 全書目錄及綱要 is the book hub"
+            )
+
+    if not outline_path.exists():
+        errors.append(f"book outline hub missing: {folder}/全書目錄及綱要.md")
+    else:
+        outline_text = outline_path.read_text(encoding="utf-8")
+        required_links = {
+            "書卷導論": f"[[{folder}/書卷導論|",
+            "第1章": f"[[{folder}/第1章|",
+        }
+        for label, prefix in required_links.items():
+            if prefix not in outline_text:
+                errors.append(
+                    f"{folder}/全書目錄及綱要.md must contain full-path link to {label}"
+                )
 
 
 def _errors_for_rendered(
