@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Validate a book-level Introduction against ``introduction_scheme.md``.
+"""Validate a book-level 書卷導論 against ``introduction_scheme.md``.
 
-The checker validates structure, provenance and reproducibility rather than
-choosing a theological position.  It deliberately does *not* require a fixed
-number of public sections or a Mermaid diagram for every book.
+The checker validates structure, provenance, reproducibility and the public
+navigation contract rather than choosing a theological position. It deliberately
+does *not* require a fixed number of public sections or a Mermaid diagram for
+every book.
 
 Example:
 
     python util/check_book_introduction.py \
       "01 創世記/.tmp/introduction/introduction_content.yaml" \
       --manifest "raw_data/book_intro/創世記/source_manifest.yaml" \
-      --rendered "01 創世記/Introduction.md"
+      --rendered "01 創世記/書卷導論.md"
 """
 
 from __future__ import annotations
@@ -19,7 +20,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 import yaml
 
@@ -184,27 +185,59 @@ def _errors_for_modules(content: dict[str, Any], errors: list[str]) -> None:
                 )
 
 
+def _errors_for_navigation(
+    content: dict[str, Any], rendered_path: Path, errors: list[str]
+) -> None:
+    folder = str(content.get("book_folder", "")).strip()
+    if not folder:
+        errors.append("book_folder is required for public navigation")
+        return
+
+    canonical_path = (ROOT / folder / "書卷導論.md").resolve()
+    if rendered_path.resolve() != canonical_path:
+        errors.append(
+            "rendered public file must use canonical path "
+            f"{folder}/書卷導論.md"
+        )
+
+    navigation = content.get("navigation") or {}
+    expected = {
+        "outline": f"[[{folder}/全書目錄及綱要|",
+        "first_chapter": f"[[{folder}/第1章|",
+    }
+    for key, prefix in expected.items():
+        value = str(navigation.get(key, "")).strip()
+        if not value.startswith(prefix):
+            errors.append(
+                f"navigation.{key} must use full book path beginning with {prefix!r}"
+            )
+
+
 def _errors_for_rendered(
     content: dict[str, Any], rendered_path: Path, manifest: dict[str, Any], errors: list[str]
 ) -> None:
     if not rendered_path.exists():
-        errors.append(f"rendered file missing: {rendered_path.relative_to(ROOT)}")
+        try:
+            label = rendered_path.relative_to(ROOT)
+        except ValueError:
+            label = rendered_path
+        errors.append(f"rendered file missing: {label}")
         return
 
     actual = rendered_path.read_text(encoding="utf-8")
     expected = render(content)
     if actual != expected:
         errors.append(
-            "Introduction.md is not exactly reproducible from introduction_content.yaml; "
+            "書卷導論.md is not exactly reproducible from introduction_content.yaml; "
             "rerun render_book_introduction.py"
         )
 
     if NUMBERED_HEADING.search(actual):
-        errors.append("public Introduction uses numbered H2 headings; the scheme forbids fixed-point presentation")
+        errors.append("public 書卷導論 uses numbered H2 headings; the scheme forbids fixed-point presentation")
 
     for phrase in STYLE_PHRASES:
         if phrase in actual:
-            errors.append(f"public Introduction contains discouraged AI-guide phrase: {phrase}")
+            errors.append(f"public 書卷導論 contains discouraged AI-guide phrase: {phrase}")
 
     mermaid_count = actual.count("```mermaid")
     if mermaid_count > 5:
@@ -244,12 +277,13 @@ def check(
 
     _errors_for_policy(content, manifest, errors)
     _errors_for_modules(content, errors)
+    _errors_for_navigation(content, rendered_path, errors)
     _errors_for_rendered(content, rendered_path, manifest, errors)
     return errors
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate a book Introduction prototype")
+    parser = argparse.ArgumentParser(description="Validate a book 書卷導論 prototype")
     parser.add_argument("content", type=Path)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--rendered", type=Path, required=True)
@@ -261,12 +295,12 @@ def main() -> int:
 
     errors = check(content_path, manifest_path, rendered_path)
     if errors:
-        print("❌ Book Introduction check failed:")
+        print("❌ Book 書卷導論 check failed:")
         for error in errors:
             print(f"  - {error}")
         return 1
 
-    print("✅ Book Introduction check PASS")
+    print("✅ Book 書卷導論 check PASS")
     return 0
 
 
