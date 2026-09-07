@@ -18,9 +18,9 @@
 | A4 | ✅ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
 | B1 | ✅ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
 | B2 | ✅ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
-| B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
+| B3 | ✅ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
 | B4 | ✅ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
-| B5 | ⬜ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
+| B5 | ✅ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
 | B6 | ✅ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
 | B7 | 🔷 | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
 | C1 | ⬜ | 重複條目只靠人工判讀擋 | SOP 步驟2 | 條目分岔，閘門不擋 |
@@ -203,6 +203,13 @@ render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse
 - 缺 `quote_adjudication.md` 時 `check_chapter_files` FAIL。
 - SOP 步驟含該指令與裁決紀錄格式。
 
+**狀態**　✅ 完成。硬閘門門檻不動（`--min-chars` 已可調到 2）。
+- `check_chapter_files` 加「步驟5｜短偽引句裁決紀錄（--min-chars 2）」：章 md 已 render 但缺
+  `.tmp/第x章/quote_adjudication.md` ＝FAIL，resume hint 帶指令與裁決格式。
+- `agent_start_prompt.md` 步驟 5b 擴寫：第二行 `--min-chars 2` 標**必跑**，附 `quote_adjudication.md` 範本
+  （逐字命中／已改轉述／已補全截斷／中譯移出「」／強調用法保留）。
+測試：`test_quote_adjudication_record_required_once_rendered`。
+
 ### B4. GT 子來源掛名護欄看不懂裸名寫法
 
 **症狀**　護欄只認 `《》` 包起來的子來源；`── 約書亞記研經資料(蔡哲民等)` 這種寫法會被判成掛名誤植。
@@ -242,6 +249,14 @@ render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse
 **驗收**
 - prompt 文字含該規則。
 - 踩到時的錯誤訊息可直接照著改，不需回頭查 SOP。
+
+**狀態**　✅ 完成。
+- `REVIEW_GUIDANCE["development"]`（v2；寫進 `link_updates.yaml` 的 `review_guidance`，作者讀的就是它）
+  加「正確形狀：從前幾章講起、把本章當終點或轉折、本章細節與引句留在 summary 不重述」。
+  （`REVIEW_GUIDANCE_V1` 不動；`_load_review_snapshot` 只比對 key 齊不齊、不比逐字，既有 manifest 不受影響。）
+- `_v2_verdict` 兩個拒絕點（「與 summary／relation 高度重疊」「新增了單章小標題」）訊息尾端接
+  `_DEVELOPMENT_SHAPE_HINT`（含「synthesis_scope 列本章＋更早的章」的具體照做步驟）。
+測試：`test_development_update_rejects_current_chapter_restatement` 加斷言「訊息含正確形狀」。
 
 ### B6. forced_pass 正在變成常態出口
 

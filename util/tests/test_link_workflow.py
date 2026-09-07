@@ -773,8 +773,11 @@ class UpdateTests(unittest.TestCase):
                 encoding="utf-8",
             )
             with patch.object(link_updates, "ROOT", root):
-                with self.assertRaisesRegex(ValueError, "summary／relation 高度重疊"):
+                with self.assertRaisesRegex(ValueError, "summary／relation 高度重疊") as cm:
                     link_updates.preview_updates(manifest)
+            # B5：拒絕訊息附正確形狀，作者可照著改而不必回查 SOP
+            self.assertIn("正確形狀", str(cm.exception))
+            self.assertIn("終點或轉折", str(cm.exception))
 
     def test_apply_inserts_inside_book_group_in_chapter_order(self):
         with tempfile.TemporaryDirectory() as tmp:

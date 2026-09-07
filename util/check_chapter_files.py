@@ -647,6 +647,15 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         except Exception as exc:  # noqa: BLE001 — infra 問題不擋 production
             appendix_block_detail = f"附錄一致性檢查略過：{exc}"
 
+    # 短偽引句裁決紀錄：常駐引句閘門門檻 10 字，4-7 字的偽逐字引句（自己的措辭
+    # 套「」、截斷經文補句號、中譯冒充英文原句）完全不驗。降門檻會噪音爆量、且
+    # 這一型需人工裁決不能機械刪，所以改成 SOP 必跑一輪 `--min-chars 2` 並把裁決
+    # 寫進 quote_adjudication.md；缺這份紀錄＝這一輪沒做（B3）。
+    quote_adjudication = tmp / "quote_adjudication.md"
+    quote_adjudication_ok = (
+        not chapter_md.is_file() or quote_adjudication.is_file()
+    )
+
     # markdown 相對路徑連結指向不存在的檔案：所有既有連結檢查都只看 wiki-link，
     # `[回目錄](…/全書目錄及綱要.md)` 這種在整卷做完前一直是斷的、完全靜默（C4）。
     # 豁免會逐步補齊的 `第N章.md`（導覽前後章）；`全書目錄及綱要.md` 整卷做完才有，
@@ -800,6 +809,14 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             appendix_block_ok,
             "重 render 會 passthrough 舊檔的附錄區塊；仍缺代表該章從未補跑或曾被舊版吃掉。"
             f"補跑：python util/build_appendix_links.py（{appendix_block_detail}）",
+        ),
+        CheckResult(
+            "步驟5｜短偽引句裁決紀錄（--min-chars 2）",
+            quote_adjudication_ok,
+            "常駐引句閘門門檻 10 字，4-7 字的偽逐字引句不驗。必跑一輪並把裁決寫進紀錄："
+            f"python util/check_quote_fidelity.py {canonical} {chapter} --min-chars 2，"
+            f"逐條裁決（逐字命中／已改為轉述／已補全截斷／中譯已移出「」／確為強調用法保留）"
+            f"寫入 {quote_adjudication}。",
         ),
         CheckResult(
             "步驟6｜章 md 的 markdown 路徑連結目標存在",

@@ -217,6 +217,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
             _write(tmp_dir / "verse_links.yaml", "links")
             _write(tmp_dir / "chapter_content.yaml", "content")
+            _write(tmp_dir / "quote_adjudication.md", "# 裁決\n\n0 處。")
             _write(root / "01 創世記" / f"第{CHAPTER}章.md", "# 第1章")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
@@ -238,6 +239,7 @@ class CheckChapterFilesTests(unittest.TestCase):
         _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
         _write(tmp_dir / "verse_links.yaml", "links")
         _write(tmp_dir / "chapter_content.yaml", "content")
+        _write(tmp_dir / "quote_adjudication.md", "# 裁決\n\n0 處。")
         return root / "01 創世記" / f"第{CHAPTER}章.md"
 
     def test_appendix_block_missing_when_index_has_resources_fails(self):
@@ -267,6 +269,25 @@ class CheckChapterFilesTests(unittest.TestCase):
                 checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             appx = next(c for c in checks if "附錄資源區塊" in c.label)
             self.assertTrue(appx.ok, "區塊補回後應 PASS")
+
+    def test_quote_adjudication_record_required_once_rendered(self):
+        # B3：章 md 已 render → 必須有 --min-chars 2 裁決紀錄，否則 FAIL。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            chapter_md = self._full_valid_vault(root)
+            tmp_dir = chapter_md.parent / ".tmp" / f"第{CHAPTER}章"
+            chapter_md.write_text("# 第1章", encoding="utf-8")
+
+            (tmp_dir / "quote_adjudication.md").unlink()
+            chk = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root)
+                       if "短偽引句裁決" in c.label)
+            self.assertFalse(chk.ok)
+            self.assertIn("--min-chars 2", chk.resume_hint)
+
+            _write(tmp_dir / "quote_adjudication.md", "# 裁決\n\n0 處。")
+            chk = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root)
+                       if "短偽引句裁決" in c.label)
+            self.assertTrue(chk.ok)
 
     def test_broken_markdown_path_link_check(self):
         # C4：organization 打錯的跨檔連結 → FAIL；第N章.md 導覽豁免；

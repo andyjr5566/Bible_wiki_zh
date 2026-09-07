@@ -71,6 +71,8 @@ REVIEW_GUIDANCE = {
     "development": (
         "主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；"
         "不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。"
+        "正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；"
+        "本章的細節與引句留在本章 summary，主題發展不再重述一遍。"
         "定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——"
         "條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。"
     ),
@@ -554,6 +556,13 @@ def _normalized_similarity_text(text):
     return re.sub(r"[\W_]+", "", str(text), flags=re.UNICODE).lower()
 
 
+_DEVELOPMENT_SHAPE_HINT = (
+    "正確形狀：從前幾章講起（synthesis_scope 列出本章＋至少一個更早的章），"
+    "把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句"
+    "留在本章 summary，主題發展不重述。"
+)
+
+
 def _looks_like_accumulation_restatement(added, summary, relation):
     """Catch direct/high-overlap reuse; semantic paraphrases still require human review."""
     sources = [summary, relation, f"{summary}{relation}"]
@@ -809,7 +818,7 @@ def _validate_overview_review(
             raise ValueError(
                 f"{title} 的 {heading} 新增內容與本章 summary／relation 高度重疊；"
                 "逐章累積記單章事實，定義記穩定身分，主題發展做跨章綜合，"
-                "不可把同一內容換句話說後重複貼入"
+                "不可把同一內容換句話說後重複貼入。" + _DEVELOPMENT_SHAPE_HINT
             )
         if decision == "update":
             bad_heading = _current_chapter_heading(added, book, chapter)
@@ -817,7 +826,7 @@ def _validate_overview_review(
                 raise ValueError(
                     f"{title} 的{heading}新增了單章小標題「{bad_heading}」；"
                     "定義只處理穩定身分，主題發展只做跨章／跨卷綜合，"
-                    "兩者都不可另建本章累積的改寫版"
+                    "兩者都不可另建本章累積的改寫版。" + _DEVELOPMENT_SHAPE_HINT
                 )
         item = {
             "decision": decision,
