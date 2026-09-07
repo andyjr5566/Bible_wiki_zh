@@ -16,7 +16,56 @@ jobs:
       - name: Scan completed Pentateuch chapters
         run: |
           python - <<'PY'
-          from util.check_quote_fidelity import check_quotes
+          from pathlib import Path
+          from util.check_quote_fidelity import (
+              normalize, collect_targets, QUOTE_PATTERNS, ELLIPSIS_RE, MIN_FRAGMENT_CHARS,
+          )
+          from util.book_paths import book_directory
+          from util.source_excerpts import parse_manifest
+
+          ROOT = Path.cwd()
+          scripture_parts = []
+          scripture_files = 0
+          for path in sorted((ROOT / 'raw_scripture').glob('*/第*章.txt')):
+              scripture_parts.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
+              scripture_files += 1
+          SCRIPTURE = ''.join(scripture_parts)
+          print(f'PRELOAD scripture_chapters={scripture_files} normalized_chars={len(SCRIPTURE)}')
+
+          def chapter_corpus_fast(book, chapter):
+              manifest = book_directory(ROOT, book) / '.tmp' / f'第{chapter}章' / 'source_manifest.md'
+              if not manifest.is_file():
+                  raise FileNotFoundError(manifest)
+              parts = [SCRIPTURE]
+              for _label, path in parse_manifest(manifest, ROOT):
+                  path = Path(path)
+                  if path.is_file():
+                      parts.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
+              return ''.join(parts)
+
+          def scan(book, chapter, min_chars):
+              corpus = chapter_corpus_fast(book, chapter)
+              total, misses = 0, []
+              for label, text in collect_targets(book, chapter, ROOT):
+                  seen = set()
+                  for pattern in QUOTE_PATTERNS:
+                      for match in pattern.finditer(text):
+                          quote = match.group(1).strip()
+                          if len(quote) < min_chars or quote in seen:
+                              continue
+                          if '／' in quote or '/' in quote:
+                              continue
+                          seen.add(quote)
+                          total += 1
+                          if normalize(quote) in corpus:
+                              continue
+                          if ELLIPSIS_RE.search(quote):
+                              pieces = [f.strip() for f in ELLIPSIS_RE.split(quote) if f.strip()]
+                              fragments = [f for f in pieces if len(f) >= MIN_FRAGMENT_CHARS] or pieces
+                              if fragments and all(normalize(f) in corpus for f in fragments):
+                                  continue
+                          misses.append((label, quote))
+              return total, misses
 
           books = {
               '創世記': 50,
@@ -32,7 +81,7 @@ jobs:
                   bq = bm = bc = bw = 0
                   for chapter in range(1, last + 1):
                       try:
-                          total, misses, _sources = check_quotes(book, chapter, min_chars=floor)
+                          total, misses = scan(book, chapter, floor)
                       except FileNotFoundError:
                           continue
                       chapters_scanned += 1
