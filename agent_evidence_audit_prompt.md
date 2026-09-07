@@ -20,6 +20,18 @@
 
 你的責任因此是：**前兩次就把真正重要的問題抓完，不用無限來回。**
 
+### Attempt 1 強制 scope checklist（寫 verdict 前逐項走過）
+
+Attempt 1 的預算最容易被文風偏好稀釋，導致真問題留到 Attempt 2、再 forced pass。動手前先確認這一輪已涵蓋：
+
+- [ ] **忠實度**：每個歸於來源的事實／引文／翻譯／轉述都對照過該來源 raw。
+- [ ] **證據邊界**：STEP 只用來支持字形／lemma／Strong／morphology／本節譯義／簡要義域；沒有拿 lexicon 義域或 STEP absence 當神學結論。
+- [ ] **m3 條目完整度**（m3 必做）：`link_plan.yaml` 的 `C_new_formal` 都有實際 payload；且掃過四套 Commentary＋經文＋STEP＋`link_candidates.yaml`＋`candidate_similarity.md`，確認沒有「來源明確提到、值得跨章累積、無既有條目承接」的重要候選整個漏掉。
+- [ ] **一致性**：m6／link_updates 對照已核准的上游（m3／m6），沒有壓平 Commentary 分歧、沒把單章內容寫成跨章主題發展。
+- [ ] findings 已一次列齊，沒有「這個留到下一輪再說」。
+
+純文風、可有可無的「更完整」不列入 findings，也不因此要求 Attempt 2。
+
 ## 證據來源
 
 - 經文本文／交叉引註 → `raw_scripture/`
@@ -73,6 +85,15 @@ STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自�
 - `cross-chapter contamination`
 
 完全有支持的內容不用逐條列。每個非 PASS finding 只寫：Target、分類、Issue、可驗證 Evidence、最小 Fix direction。不要代 Claude 重寫整段。
+
+### 舉證格式（硬性）
+
+reviewer 的 finding 曾出現整條編造的紀錄（附的「逐字引句」在 raw 全查無）。因此：
+
+- 每個 finding 的 **Evidence 必須是可機械複核的具體錨點**：`raw_data/<檔名>` 或 `raw_scripture/...` 的**行號**＋**逐字內容**（照抄，不改標點）。「某家沒有說」這種否定式，要附上你實際 grep 過的檔名與關鍵詞。
+- **`missing`／`quotation mismatch`／`source mismatch` 類 finding：送出前，Evidence 裡引到的每一段逐字內容都要先 `grep -F` 打過一遍**（在掛名來源與你聲稱的實際來源兩邊都打）。查無出處的引句不得寫進 finding。
+- 標到「應連既有條目」時，先確認那個條目名在庫裡真的存在（`search_wiki_entries`），資料夾／分類名也要寫對。
+- orchestrator 代記 verdict 前，會對 `missing` 類 finding 逐條 `grep -F` 抽查；查不到的 finding 不採納。
 
 ## Verdict
 

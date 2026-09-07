@@ -21,8 +21,8 @@
 | B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
 | B4 | ✅ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
 | B5 | ⬜ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
-| B6 | ⬜ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
-| B7 | ⬜ | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
+| B6 | ✅ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
+| B7 | 🔷 | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
 | C1 | ⬜ | 重複條目只靠人工判讀擋 | SOP 步驟2 | 條目分岔，閘門不擋 |
 | C2 | ✅ | 正向孤兒沒有全庫掃描 | `util/check_existing_links.py` | 全庫缺漏無人掃 |
 | C3 | ⬜ | Windows 環境摩擦 | venv wrapper | 每支指令都要前綴 |
@@ -258,6 +258,16 @@ render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse
 - 一行指令可查出某書卷各 stage 的 forced_pass 率。
 - `agent_evidence_audit_prompt.md` 的 attempt 1 有 checklist。
 
+**狀態**　✅ 完成。
+- `agent_review.py` forced-pass 路徑補寫一筆 `review_history`（`verdict: forced_pass`、`forced_pass: true`），
+  不再只有 record 上一個布林旗標。
+- 新增 `agent_review.py summary <書名>|--all`：掃各章 `agent_review.yaml`，回報「已 PASS 的 stage 中
+  forced_pass 佔比」，per-book＋合計，≥40% 標「偏高」。實跑約書亞記：`link_updates` 2/3 forced（67%）。
+- `agent_evidence_audit_prompt.md` 加「Attempt 1 強制 scope checklist」（m3 必含條目完整度、忠實度、
+  證據邊界、一致性、findings 一次列齊；文風不列入）。
+- `agent_codex_orchestrator_prompt.md` Review receipt 責任加「卷末跑 summary」。
+測試：`test_forced_pass_is_logged_in_history_and_report`、`test_forced_pass_report_ignores_non_passing_stages`。
+
 ### B7. reviewer finding 不可直接採納
 
 **症狀**　本次全局 review 三項觀察：1 項真（STEP 節號掛錯，`yi.Ka.re.Tu/n` 在書3:13 不在 3:16）、
@@ -270,6 +280,13 @@ render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse
 reviewer 輸出格式強制附 raw 檔名＋行號＋逐字內容（本次全局 review 的 prompt 有要求，應收進正式 prompt 檔）。
 
 **驗收**　`agent_evidence_audit_prompt.md` 含舉證格式的硬性要求。
+
+**狀態**　🔷 完成（doc）。`agent_evidence_audit_prompt.md` 新增「### 舉證格式（硬性）」：
+每個 finding 的 Evidence 必須是可機械複核的錨點（`raw_data/<檔名>` 行號＋逐字內容）；
+`missing`／`quotation mismatch`／`source mismatch` 類 finding 送出前每段逐字內容都要 `grep -F` 打過
+（掛名來源與聲稱的實際來源兩邊）；標「應連既有條目」先 `search_wiki_entries` 確認條目與分類名存在；
+orchestrator 代記前對 `missing` 類逐條抽查、查不到不採納。（`AGENTS.md`「多 Agent 意見不一致時」
+已要求可驗證證據，本次把 reviewer 端的具體步驟寫進 audit prompt。）
 
 ---
 

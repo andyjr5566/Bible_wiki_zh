@@ -228,6 +228,37 @@ class AgentReviewTests(unittest.TestCase):
         self.assertIn("chapter_content.yaml", m6rec["hash_inputs"])
         self.assertTrue(any(x.startswith("parent:m3=") for x in m6rec["hash_inputs"]))
 
+    def test_forced_pass_is_logged_in_history_and_report(self):
+        # B6：forced_pass 要留在 review_history，summary 要能算出比例。
+        tmpdir, root, target = self._root_with_m3()
+        self.addCleanup(tmpdir.cleanup)
+
+        _, first = agent_review.submit("申命記", 1, "m3", root)
+        agent_review.record_verdict("申命記", 1, "m3", "changes_required",
+                                    first["sha256"], reviewer="codex", root=root)
+        target.write_text("content: v2\n", encoding="utf-8")
+        _, second = agent_review.submit("申命記", 1, "m3", root)
+        agent_review.record_verdict("申命記", 1, "m3", "changes_required",
+                                    second["sha256"], reviewer="codex", root=root)
+        target.write_text("content: v3\n", encoding="utf-8")
+        _, final = agent_review.submit("申命記", 1, "m3", root)
+        self.assertTrue(final["forced_pass"])
+        self.assertTrue(final["review_history"][-1].get("forced_pass"))
+
+        rows, per_stage = agent_review.forced_pass_report("申命記", root)
+        self.assertEqual([1, 1], rows[("申命記", "m3")])   # 1 passed, 1 forced
+        self.assertEqual([1, 1], per_stage["m3"])
+
+    def test_forced_pass_report_ignores_non_passing_stages(self):
+        tmpdir, root, _ = self._root_with_m3()
+        self.addCleanup(tmpdir.cleanup)
+        _, first = agent_review.submit("申命記", 1, "m3", root)
+        agent_review.record_verdict("申命記", 1, "m3", "changes_required",
+                                    first["sha256"], reviewer="codex", root=root)
+        rows, per_stage = agent_review.forced_pass_report("申命記", root)
+        self.assertEqual({}, rows)
+        self.assertEqual([0, 0], per_stage["m3"])
+
     def test_no_allow_same_sha_bypass_flag(self):
         # A4：不得存在 --allow-same-sha 這類把 stale verdict 塞進 gate 的旁路。
         source = Path(agent_review.__file__).read_text(encoding="utf-8")

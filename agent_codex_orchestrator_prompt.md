@@ -108,6 +108,7 @@ Codex prepare B 類，Claude依 `review_evidence.md` 填 `link_updates.yaml` 的
 - `gate`：跨 stage／落地前由 orchestrator 執行。
 - `agent_review.yaml` 的 `review_attempts` 是硬預算；**不能因換 session、換 reviewer、重新開 Codex 就歸零。**
 - `forced_pass: true` 是可接受的流程 PASS，但不是「reviewer 認為零問題」；final mechanical gates 仍全部照跑。
+- **卷末（整卷／數章一批完成後）跑 `python util/agent_review.py summary 書名`**：回報各 stage 的 forced_pass 比例。某 stage 比例偏高（≥ 40%）代表 review 預算常被 Attempt 1 的文風偏好稀釋、真問題留到 forced pass——下一卷收緊 Attempt 1 checklist。
 
 ## Claude 最小 delegation
 

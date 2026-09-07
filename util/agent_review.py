@@ -289,6 +289,13 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
         # Hard token-budget rule: after two substantive reviews, Claude may
         # make one final correction but NO third model review is allowed. Bind
         # a forced pass to the new bytes so the old hash cannot leak through.
+        history = list(history) + [{
+            "attempt": None,
+            "reviewer": _reviewer_agent(previous),
+            "sha256": current,
+            "verdict": "forced_pass",
+            "forced_pass": True,
+        }]
         record = {
             "round": MAX_REVIEW_ATTEMPTS,
             "revision": revision,
@@ -470,6 +477,70 @@ def _print_hash_inputs(record: dict):
         print("   hash 涵蓋：" + "、".join(str(x) for x in inputs))
 
 
+def forced_pass_report(book: str | None, root: Path = ROOT):
+    """掃各章 agent_review.yaml，統計「已 PASS 的 stage 裡有多少是 forced_pass」。
+
+    forced_pass 流程上能過 gate，但不是「reviewer 確認零問題」。卷末看比例才知道
+    是不是每章都漂到這個出口。回傳 ((book, stage) -> [passed, forced], 總計 per-stage)。
+    """
+    if book:
+        books = [canonical_book_name(book)]
+    else:
+        books = []
+        for directory in sorted(Path(root).glob("[0-9][0-9] *")):
+            if not directory.is_dir():
+                continue
+            try:
+                books.append(canonical_book_name(directory.name))
+            except ValueError:
+                continue
+    rows: dict[tuple[str, str], list[int]] = {}
+    per_stage: dict[str, list[int]] = {stage: [0, 0] for stage in STAGES}
+    for canonical in books:
+        tmp_root = book_directory(Path(root), canonical) / ".tmp"
+        if not tmp_root.is_dir():
+            continue
+        for state_path in sorted(tmp_root.glob(f"第*章/{STATE_FILENAME}")):
+            try:
+                data = yaml.safe_load(state_path.read_text(encoding="utf-8")) or {}
+            except yaml.YAMLError:
+                continue
+            for stage, record in (data.get("stages") or {}).items():
+                if stage not in STAGES or not isinstance(record, dict):
+                    continue
+                if _review_status(record) != "pass":
+                    continue
+                key = (canonical, stage)
+                rows.setdefault(key, [0, 0])
+                rows[key][0] += 1
+                per_stage[stage][0] += 1
+                if record.get("forced_pass"):
+                    rows[key][1] += 1
+                    per_stage[stage][1] += 1
+    return rows, per_stage
+
+
+def _print_forced_pass_report(book: str | None, root: Path = ROOT) -> int:
+    rows, per_stage = forced_pass_report(book, root)
+    scope = canonical_book_name(book) if book else "全庫"
+    print(f"forced_pass 比例（已 PASS 的 stage 中）：{scope}")
+    if not rows:
+        print("  （沒有任何已 PASS 的 review stage）")
+        return 0
+    for (bk, stage), (passed, forced) in sorted(rows.items()):
+        if forced:
+            pct = 100.0 * forced / passed if passed else 0.0
+            print(f"  {bk} {stage}: {forced}/{passed} forced（{pct:.0f}%）")
+    print("  ── 合計 ──")
+    for stage in STAGES:
+        passed, forced = per_stage[stage]
+        if passed:
+            pct = 100.0 * forced / passed
+            flag = "  ⚠️ 偏高" if pct >= 40 else ""
+            print(f"  {stage}: {forced}/{passed} forced（{pct:.0f}%）{flag}")
+    return 0
+
+
 def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict):
     status = _review_status(record)
     attempts = _review_attempts(record)
@@ -537,6 +608,12 @@ def main() -> int:
     status_parser.add_argument("book")
     status_parser.add_argument("chapter", type=int)
 
+    summary_parser = sub.add_parser(
+        "summary", help="統計某書卷（或全庫）各 stage 的 forced_pass 比例"
+    )
+    summary_parser.add_argument("book", nargs="?", help="標準書卷名；省略＝全庫")
+    summary_parser.add_argument("--all", action="store_true", help="全庫（等同省略 book）")
+
     args = parser.parse_args()
     try:
         if args.command == "submit":
@@ -590,6 +667,10 @@ def main() -> int:
                 except Exception as exc:  # noqa: BLE001 — 凍結失敗不擋 gate
                     print(f"   （link_plan 凍結略過：{exc}）")
             return 0
+
+        if args.command == "summary":
+            book = None if args.all else args.book
+            return _print_forced_pass_report(book)
 
         print(f"Review status：{canonical_book_name(args.book)} 第{args.chapter}章")
         for stage, record, error, fresh in status_rows(args.book, args.chapter):
