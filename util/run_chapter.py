@@ -2471,15 +2471,56 @@ _GT_MARKER_RE = re.compile(
     r"[─－‒–—―]{2,}\s*"
     r"([^─－‒–—―《\n]{0,20})《([^》]+)》"
 )
+# 同一批 raw 還有一種**裸名**出處標記：破折號 ＋子來源名，後面沒有《書名》。
+# ccbiblestudy 對「研經資料(蔡哲民等)」「綜合解讀」「靈修版聖經注釋」「SDA聖經註釋」
+# 「倪柝聲」「佚名」用的就是這種寫法（約書亞記 GT raw 約千處）。舊版 _GT_MARKER_RE
+# 要求《》，看不到這些標記 → search 略過、往下抓到另一家的《》標記 → 把掛名正確的
+# 引句判成誤植（約書亞記 1、2 章實測，逼得作者改寫掛名去迎合機器）。這裡用一組
+# 已知裸名 shape（有界、不貪婪吃到行尾）補回辨識。
+_GT_BARE_NAME = (
+    r"[一-鿿]{0,6}研經資料[（(][^）)\n]{1,14}[）)]"
+    r"|[一-鿿]{0,7}綜合解讀"
+    r"|[一-鿿]{0,6}注釋[（(]靈修版[^）)\n]{1,14}[）)]"
+    r"|SDA聖經[註注]釋"
+    r"|倪柝聲"
+    r"|佚名"
+)
+_GT_BARE_MARKER_RE = re.compile(r"[─－‒–—―]{2,}\s*(" + _GT_BARE_NAME + r")")
 _GT_FRAG_SPLIT_RE = re.compile(r"[…⋯]+|\.\.\.|[，,、。；;：]")
+# 供 _gt_name_norm 去掉「約書亞記研經資料(蔡哲民等)」這類前綴的書卷名，讓作者寫
+# 「研經資料」也能對上裸名標記。只列本語料實際出現過的書卷。
+_GT_BOOK_PREFIXES = (
+    "創世記", "出埃及記", "利未記", "民數記", "申命記",
+    "約書亞記", "士師記", "路得記", "撒母耳記", "列王紀", "歷代志",
+)
 
 
 def _gt_name_norm(s):
-    """子來源名正規化：去「聖經」「註/注」差異與括號空白，供寬鬆比對。"""
-    return (
+    """子來源名正規化：去「聖經」「註/注」差異、全半形括號與空白、書卷名前綴。"""
+    s = (
         str(s).replace("聖經", "").replace("《", "").replace("》", "")
+        .replace("（", "(").replace("）", ")").replace("　", "")
         .replace("註", "注").replace(" ", "").strip()
     )
+    for prefix in _GT_BOOK_PREFIXES:
+        if s.startswith(prefix) and len(s) > len(prefix):
+            s = s[len(prefix):]
+            break
+    return s
+
+
+def _nearest_gt_marker(text, idx):
+    """從 idx 起最接近的出處標記；《》型與裸名型取先出現者。回傳 (author, label)。"""
+    candidates = []
+    m1 = _GT_MARKER_RE.search(text, idx)
+    if m1:
+        candidates.append((m1.start(), (m1.group(1).strip(), m1.group(2).strip())))
+    m2 = _GT_BARE_MARKER_RE.search(text, idx)
+    if m2:
+        candidates.append((m2.start(), (m2.group(1).strip(), "")))
+    if not candidates:
+        return None
+    return min(candidates, key=lambda pair: pair[0])[1]
 
 
 def _gt_names_match(claimed, author, label):
@@ -2546,9 +2587,9 @@ def _gt_subsource_review(ctx):
             idx = gt_ws.find(frag)
             if idx == -1:
                 continue
-            mk = _GT_MARKER_RE.search(gt_ws, idx)
+            mk = _nearest_gt_marker(gt_ws, idx)
             if mk:
-                actual = (mk.group(1).strip(), mk.group(2).strip())
+                actual = mk
                 break
         if actual and not _gt_names_match(claimed, *actual):
             author, label = actual

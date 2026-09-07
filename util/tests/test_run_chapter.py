@@ -1576,6 +1576,70 @@ class FabricatedInterpHistoryReviewTests(unittest.TestCase):
                 [], run_chapter._fabricated_interp_history_review(ctx))
 
 
+class GtNameNormTests(unittest.TestCase):
+    def test_fullwidth_parens_and_book_prefix_normalized(self):
+        # 作者寫「研經資料（蔡哲民等）」、raw 標記是「約書亞記研經資料(蔡哲民等)」
+        self.assertTrue(run_chapter._gt_names_match(
+            "研經資料（蔡哲民等）", "約書亞記研經資料(蔡哲民等)", ""
+        ))
+
+    def test_bare_marker_beats_later_book_marker(self):
+        text = run_chapter._QUOTE_WS_RE.sub("", (
+            "這是被引用的逐字片段內容在這裡。── 約書亞記研經資料(蔡哲民等)\n"
+            "另一段別家的話。──《丁道爾聖經注釋》\n"
+        ))
+        idx = text.find("這是被引用的逐字片段內容在這裡")
+        self.assertEqual(
+            ("約書亞記研經資料(蔡哲民等)", ""),
+            run_chapter._nearest_gt_marker(text, idx),
+        )
+
+
+class GtSubsourceReviewTests(unittest.TestCase):
+    def _ctx(self, tmp, gt_raw, organization):
+        root = Path(tmp)
+        (root / "raw_data").mkdir(parents=True)
+        (root / "raw_data" / "ccbiblestudy_GT_joshua_1.txt").write_text(
+            gt_raw, encoding="utf-8")
+        ch = root / "06 約書亞記" / ".tmp" / "第1章"
+        ch.mkdir(parents=True)
+        (ch / "source_manifest.md").write_text(
+            "| 來源 | 類型 | URL | raw_data 檔案 | 狀態 |\n"
+            "|------|-----|-----|--------------|------|\n"
+            "| 拾穗 | GT | https://www.ccbiblestudy.org/x "
+            "| raw_data/ccbiblestudy_GT_joshua_1.txt | OK |\n",
+            encoding="utf-8")
+        (ch / "chapter_content.yaml").write_text(
+            yaml.safe_dump(
+                {"book": "約書亞記", "chapter": 1, "organization": organization},
+                allow_unicode=True),
+            encoding="utf-8")
+        return run_chapter.ChapterContext("約書亞記", 1, root=root, index={}, homonyms={})
+
+    def test_bare_name_marker_no_longer_false_positive(self):
+        # B4：引句正確掛在裸名子來源，raw 緊接的也是裸名標記——不得誤判為誤植。
+        raw = (
+            "神應許賜下土地，但百姓必須自己去獲取，按神的指示爭戰。"
+            "── 約書亞記研經資料(蔡哲民等)\n"
+            "重述摩西的死，是確認約書亞現今的領導地位。──《丁道爾聖經注釋》\n"
+        )
+        org = ("GT《研經資料(蔡哲民等)》指出「神應許賜下土地，但百姓必須自己去獲取，"
+               "按神的指示爭戰」。")
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, raw, org)
+            self.assertEqual([], run_chapter._gt_subsource_review(ctx))
+
+    def test_cross_subsource_misattribution_still_flagged(self):
+        # 反面：引句實出《丁道爾》，卻掛成《啟導本》——仍要抓。
+        raw = "重述摩西的死是確認約書亞現今的領導地位這句話。──《丁道爾聖經注釋》\n"
+        org = "GT《啟導本》說「重述摩西的死是確認約書亞現今的領導地位這句話」。"
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = self._ctx(tmp, raw, org)
+            notes = run_chapter._gt_subsource_review(ctx)
+            self.assertEqual(1, len(notes))
+            self.assertIn("丁道爾", notes[0])
+
+
 class OrgLinkWhitelistReviewTests(unittest.TestCase):
     """M6 白名單補驗——resume／勘誤路徑（chapter_content.yaml 已存在，_model_step
     跳過 validate）新引入的壞連結，validate_step 要補抓，判準與 fresh 路徑共用

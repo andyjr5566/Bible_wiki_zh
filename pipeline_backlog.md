@@ -19,7 +19,7 @@
 | B1 | ✅ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
 | B2 | ✅ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
 | B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
-| B4 | ⬜ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
+| B4 | ✅ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
 | B5 | ⬜ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
 | B6 | ⬜ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
 | B7 | ⬜ | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
@@ -217,6 +217,17 @@ render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse
 **驗收**
 - 全庫掃描誤報降到 0。
 - 原本能抓到的真陽性（利6 那組跨家誤植）仍然被抓到——兩邊都要有回歸測試。
+
+**狀態**　✅ 完成。根因與 U+2015 碼位那次同型：`_GT_MARKER_RE` 要求 `《》`，看不到
+`── 約書亞記研經資料(蔡哲民等)`、`── 約書亞記綜合解讀`、`── 出埃及記注釋(靈修版聖經注釋)`、
+`── SDA聖經註釋`、`── 倪柝聲`、`── 佚名` 這些**裸名**標記（約書亞記 GT raw 約千處）→ search 略過、
+往下抓到另一家的 `《》` 標記 → 掛名正確判成誤植。
+- 新增 `_GT_BARE_MARKER_RE`（有界的已知裸名 shape，不貪婪吃行尾）＋`_nearest_gt_marker`
+  （`《》`型與裸名型取先出現者）。
+- `_gt_name_norm` 補：全形括號 `（）`→`()`、去書卷名前綴（`約書亞記研經資料(蔡哲民等)` ↔ `研經資料(蔡哲民等)`）。
+- `_quote_attribution_review` 不受影響（它只做整檔子字串比對，不解析 raw 標記）。
+全庫 100+ 章 `_gt_subsource_review` 掃描：修改前後皆 0（完成章節本就被改寫過），確認未新增誤報。
+測試：`GtNameNormTests`（2）＋`GtSubsourceReviewTests`（裸名不再誤報／跨家誤植仍抓到）。
 
 ### B5. 主題發展的形狀規則靠 dry-run 拒絕才學到
 
