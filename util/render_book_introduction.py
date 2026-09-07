@@ -233,13 +233,20 @@ def _render_references(data: dict[str, Any]) -> str:
 
 
 def _normalize_cjk_folded_spacing(text: str) -> str:
-    """Remove spaces introduced by YAML folded scalars after CJK punctuation.
+    """Remove only spaces that YAML folded scalars introduce into CJK prose.
 
-    YAML ``>-`` joins physical lines with a single ASCII space. In Traditional
-    Chinese prose this can create visible drift such as ``「內容。 下一句」``
-    even though the public Markdown convention is ``「內容。下一句」``.
+    ``>-`` joins physical YAML lines with one ASCII space. That is desirable in
+    English, but usually visible noise in Traditional Chinese. Normalization must
+    not touch Markdown structural spacing such as the space before a table's
+    closing ``|``.
     """
-    return re.sub(r"(?<=[，。！？；：、）」』】》]) +", "", text)
+    # After Chinese punctuation/closing marks (or an em dash), collapse a folded
+    # space when the next visible character is prose rather than a table delimiter.
+    text = re.sub(r"(?<=[，。！？；：、）」』】》—]) +(?=[^|\s])", "", text)
+    # Also remove a folded space between adjacent CJK prose tokens, including a
+    # CJK character followed by an opening quote/bracket.
+    text = re.sub(r"(?<=[\u3400-\u9fff]) +(?=[\u3400-\u9fff「『（【《])", "", text)
+    return text
 
 
 def render(data: dict[str, Any]) -> str:
