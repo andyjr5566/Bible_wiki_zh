@@ -1,0 +1,66 @@
+book: 申命記
+book_folder: 05 申命記
+prototype: true
+retrieved_on: 2026-09-07
+
+principles:
+  commentary_vote_sources: [CT00, GT00, KC0, BH]
+  external_context_sources: [BIBLEPROJECT, ENTER_THE_BIBLE, YALE]
+  note: >-
+    CT00、GT00、KC0、BH 延續專案既有四套註釋來源；BibleProject、Enter the Bible、Yale
+    用於講詞結構、古代盟約背景、申命傳統與現代成書研究，不加入四家共識票數。摩西臨別場景與文本形成研究分層呈現。
+
+sources:
+  CT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 申命記提要（CT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT00.htm
+    expected_fields: [書名, 作者, 寫作時地, 主旨要義, 寫作動機, 本書重要性, 本書特點, 與其他書卷關係, 鑰節與鑰字, 內容大綱]
+  GT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 申命記導論拾穗（GT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT00.htm
+    expected_fields: [摩西臨別講詞, 神的愛與守約, 聽與順服, 生命與死亡, 多家導論意見]
+    provenance_rule: GT00 是多來源合輯；使用個別觀點時必須保留子來源，不能把單一觀點寫成 GT00 一致意見。
+  KC0:
+    family: kingcomments
+    role: commentary
+    label: KingComments Deuteronomy Introduction
+    url: https://www.kingcomments.com/en/bible-studies/Deu/0
+    expected_fields: [摩西作者傳統, 摩押平原, 不是單純重複律法, 臨別講詞與應許之地]
+  BH:
+    family: biblehub
+    role: commentary
+    label: BibleHub Deuteronomy Summary and Study Bible
+    url: https://biblehub.com/deuteronomy/
+    expected_fields: [Theme, Summary, Title and Author, Historical Context, Audience and Purpose, Genre and Style, Structure and Content]
+    family_rule: BibleHub 內部即使引用多個底層資源，仍只算一個 BH 來源維度。
+  BIBLEPROJECT:
+    family: bibleproject
+    role: literary_design
+    label: BibleProject Deuteronomy Guide
+    url: https://bibleproject.com/guides/book-of-deuteronomy/
+    expected_fields: [摩西講詞框架, 1–11／12–26／27–34 結構, 愛神與聽從, 約與祝福]
+  ENTER_THE_BIBLE:
+    family: luther_seminary
+    role: academic_context
+    label: Enter the Bible — Deuteronomy
+    urls:
+      - https://enterthebible.org/courses/deuteronomy/
+      - https://enterthebible.org/courses/deuteronomy/lessons/summary-of-deuteronomy/
+      - https://enterthebible.org/courses/deuteronomy/lessons/outline-of-deuteronomy/
+      - https://enterthebible.org/courses/deuteronomy/lessons/background-of-deuteronomy/
+      - https://enterthebible.org/courses/deuteronomy/lessons/introductory-issues-in-deuteronomy/
+      - https://enterthebible.org/courses/deuteronomy/lessons/theological-themes-in-deuteronomy/
+    expected_fields: [Summary, Outline, Background, 申命傳統形成, 約西亞／被擄期研究框架, 申命史]
+  YALE:
+    family: yale_bible_study
+    role: academic_context
+    label: Yale Bible Study — Leviticus, Numbers, and Deuteronomy
+    urls:
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-1-study-guide/
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-2-study-guide/
+    expected_fields: [第二律法的意義, 重述與改革, 古代近東宗主附庸條約比較, 律法與歷史編排]

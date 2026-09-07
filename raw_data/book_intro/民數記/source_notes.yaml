@@ -1,0 +1,56 @@
+book: 民數記
+retrieved_on: 2026-09-07
+note: >-
+  這份檔案保存供書卷導論使用的正規化來源筆記，不是網頁全文鏡像。
+  原頁全文由 crawl_book_introduction.py 依 source_manifest.yaml 取得；本檔只保留可追溯的事實、觀點與分歧。
+
+sources:
+  CT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT00.htm
+    notes:
+      - 希伯來書名「在曠野中」比中文書名更直接描述全書舞台；中文／希臘書名則來自兩次人口數點。
+      - 傳統上歸於摩西，故事從出埃及第二年延續到第四十年。
+      - 全書可依地理分成西乃、曠野旅程與摩押平原；核心張力是不信與神的信實。
+  GT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT00.htm
+    notes:
+      - 是多來源導論合輯，整理數點、營地、曠野叛逆、巴蘭、第二代與進地預備。
+      - 使用個別觀點時必須保留子來源名稱。
+  KC0:
+    url: https://www.kingcomments.com/en/bible-studies/Num/0
+    notes:
+      - 強調百姓帶著會幕與神的同在走曠野，以及旅程中的信心、失敗與爭戰。
+  BH:
+    url: https://biblehub.com/numbers/
+    notes:
+      - 提供書名、作者、背景、受眾、目的、文體及全書結構資料。
+      - 兩次數點與西乃至摩押的旅程是一般讀者掌握全書的重要線索。
+  BIBLEPROJECT:
+    url: https://bibleproject.com/guides/book-of-numbers/
+    notes:
+      - 以地理旅程呈現西乃、巴蘭曠野與摩押幾個主要場景。
+      - 反覆凸顯百姓的叛逆與神仍維持應許、把新世代帶到進地門口的張力。
+  ENTER_THE_BIBLE:
+    url: https://enterthebible.org/courses/numbers/
+    notes:
+      - 將兩次數點理解為舊世代與新世代的重要框架。
+      - 補充多類型材料、祭司傳統與五經長期編整的現代研究。
+  YALE:
+    url: https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+    notes:
+      - 適合補充曠野法律、巴蘭故事、古代外部資料與文學／歷史閱讀問題。
+      - 巴蘭可與 Deir Alla 等古代材料比較，但外部材料與聖經敘事的關係不可過度簡化。
+
+cross_source_synthesis:
+  strong_consensus:
+    - 《民數記》的核心不是人口統計本身，而是西乃到摩押的曠野旅程與世代更替。
+    - 第14章探子事件是重大轉折；第一代因不信倒下，但神的應許沒有因此取消。
+    - 第二次數點、約書亞承接與摩押平原的預備把故事直接送進《申命記》。
+  disputed_or_layered:
+    - topic: 作者與成書
+      traditional: 摩西為主要作者，並記錄曠野行程。
+      academic: 現有文本被視為敘事、法律、祭司、名單與詩歌等多種材料長期編整的成果。
+      writing_rule: 傳統作者歸屬與現代成書研究分層呈現。
+    - topic: 歷史與人口數字
+      note: 人口名單與旅程資料可從不同歷史／文學角度研究。
+      writing_rule: 導論先說明這些資料在文本中的功能，不把單一現代重建寫成定論。

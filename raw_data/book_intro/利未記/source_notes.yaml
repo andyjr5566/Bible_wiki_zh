@@ -1,0 +1,57 @@
+book: 利未記
+retrieved_on: 2026-09-07
+note: >-
+  這份檔案保存供書卷導論使用的正規化來源筆記，不是網頁全文鏡像。
+  原頁全文由 crawl_book_introduction.py 依 source_manifest.yaml 取得；本檔只保留可追溯的事實、觀點與分歧。
+
+sources:
+  CT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT00.htm
+    notes:
+      - 採摩西作者與西乃會幕的傳統框架。
+      - 主題集中於獻祭、祭司、潔淨、贖罪、聖潔與百姓如何親近神。
+      - 第16章贖罪日是全書重要節點，後半卷把聖潔推向日常生活。
+  GT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT00.htm
+    notes:
+      - 是多來源導論合輯，整理五祭、祭司、潔淨、贖罪日、聖潔法典、節期與禧年。
+      - 使用個別觀點時必須保留子來源名稱。
+  KC0:
+    url: https://www.kingcomments.com/en/bible-studies/Lev/0
+    notes:
+      - 把本書放在出埃及記會幕建成之後，重點是神住在百姓中間後如何親近祂。
+      - 強調祭物、祭司與聖潔生活的屬靈關係。
+  BH:
+    url: https://biblehub.com/leviticus/
+    notes:
+      - 提供作者、歷史背景、目的、文體及全書內容結構。
+      - 可用於一般讀者的一覽與背景整理。
+  BIBLEPROJECT:
+    url: https://bibleproject.com/guides/book-of-leviticus/
+    notes:
+      - 把本書視為出埃及記40章「神住進會幕」之後的直接回應。
+      - 文學設計以祭物、祭司、潔淨與第16章贖罪日為核心，再向聖潔生活擴展。
+  ENTER_THE_BIBLE:
+    url: https://enterthebible.org/courses/leviticus/
+    notes:
+      - 補充古代祭祀、潔淨、祭司與社群背景，以及祭司／聖潔傳統的成書研究。
+      - 現代研究常把最後編整置於被擄或被擄後，但應標示為學術模型。
+  YALE:
+    url: https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+    notes:
+      - 補充 biblical law、古代祭祀、潔淨與聖潔的學術分類。
+      - 特別適合提醒讀者禮儀不潔不能一律等同於道德罪。
+
+cross_source_synthesis:
+  strong_consensus:
+    - 《利未記》承接會幕建成後的問題：聖潔的神住在百姓中間，人如何親近並與祂同住。
+    - 祭物、祭司、潔淨、贖罪與聖潔是全書相互連結的主要範疇。
+    - 聖潔不只屬於祭司，也延伸到一般百姓的倫理、時間、土地與社會生活。
+  disputed_or_layered:
+    - topic: 作者與成書
+      traditional: 摩西領受並傳達會幕相關律法。
+      academic: 現有文本常放在祭司與聖潔傳統的長期形成／編整中理解。
+      writing_rule: 故事的西乃時間框架與現代文本形成史分開呈現。
+    - topic: 潔淨與罪
+      distinction: 潔淨／不潔淨包含身體與禮儀狀態，不等於道德善惡。
+      writing_rule: 任何一般讀者說明都必須避免把所有不潔直接寫成犯罪。
