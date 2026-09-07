@@ -1,0 +1,38 @@
+name: Attribution Fidelity Targeted
+
+on:
+  push:
+    branches: [test/attribution-fidelity]
+
+jobs:
+  targeted:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install PyYAML numpy
+      - name: Targeted regression
+        run: python -m unittest util.tests.test_prompt_neutrality util.tests.test_attribution_fidelity_field util.tests.test_quote_fidelity -v
+      - name: Author-facing prompt neutrality
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          files = [
+              Path('agent_start_prompt.md'),
+              Path('agent_maintenance_prompt.md'),
+          ]
+          forbidden = [
+              '只有兩種寫法',
+              '引述註釋請「直接引原話」',
+              '**「」是逐字宣告，不是強調記號，也不是術語標記。**',
+              '**內容**：直接引原話「」',
+          ]
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              hits = [item for item in forbidden if item in text]
+              if hits:
+                  raise SystemExit(f'{path}: forbidden authoring prescriptions remain: {hits}')
+          print('author-facing prompts are neutral')
+          PY
