@@ -647,6 +647,33 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         except Exception as exc:  # noqa: BLE001 — infra 問題不擋 production
             appendix_block_detail = f"附錄一致性檢查略過：{exc}"
 
+    # markdown 相對路徑連結指向不存在的檔案：所有既有連結檢查都只看 wiki-link，
+    # `[回目錄](…/全書目錄及綱要.md)` 這種在整卷做完前一直是斷的、完全靜默（C4）。
+    # 豁免會逐步補齊的 `第N章.md`（導覽前後章）；`全書目錄及綱要.md` 整卷做完才有，
+    # 修正版 render 已不再輸出該連結，仍出現＝舊版 render 的殘留 → 只警告、提示重跑；
+    # 其餘（多半是 organization 裡打錯的跨檔連結）＝FAIL。
+    md_link_ok = True
+    md_link_detail = ""
+    md_link_warning = ""
+    if chapter_md.is_file():
+        broken_hard, broken_catalog = [], []
+        for target in re.findall(r"\]\(([^)\s]+\.md)\)", chapter_md.read_text(encoding="utf-8")):
+            name = target.split("/")[-1]
+            if re.fullmatch(r"第\d+章\.md", name):
+                continue
+            resolved = (chapter_md.parent / target.replace("%20", " ")).resolve()
+            if resolved.is_file():
+                continue
+            (broken_catalog if name == "全書目錄及綱要.md" else broken_hard).append(target)
+        if broken_hard:
+            md_link_ok = False
+            md_link_detail = "、".join(dict.fromkeys(broken_hard))
+        elif broken_catalog:
+            md_link_warning = (
+                f"{chapter_md.name} 還有指向未建立的 全書目錄及綱要.md 的連結"
+                "（舊版 render 殘留；修正版不再輸出）——整卷完成後重跑 render 即消失。"
+            )
+
     checks = [
         CheckResult(
             "步驟1｜經文本地檔",
@@ -773,6 +800,13 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             appendix_block_ok,
             "重 render 會 passthrough 舊檔的附錄區塊；仍缺代表該章從未補跑或曾被舊版吃掉。"
             f"補跑：python util/build_appendix_links.py（{appendix_block_detail}）",
+        ),
+        CheckResult(
+            "步驟6｜章 md 的 markdown 路徑連結目標存在",
+            md_link_ok,
+            "章 md 有指向不存在檔案的 [文字](相對路徑.md) 連結（wiki-link 檢查看不到這一型）："
+            f"{md_link_detail}——請修 chapter_content.yaml 的 organization 或確認目標檔。",
+            warning=md_link_warning,
         ),
     ])
     return checks

@@ -1850,6 +1850,7 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
         markdown = render_chapter.render_chapter(
             verse_links, chapter_content, raw_verses=ctx.raw_verses(),
             map_block=map_block, appendix_block=appendix_block,
+            catalog_exists=(chapter_path.parent / "全書目錄及綱要.md").exists(),
         )
         chapter_path.write_text(markdown, encoding="utf-8")
         written.append(chapter_path)

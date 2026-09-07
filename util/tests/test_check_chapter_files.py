@@ -268,6 +268,37 @@ class CheckChapterFilesTests(unittest.TestCase):
             appx = next(c for c in checks if "附錄資源區塊" in c.label)
             self.assertTrue(appx.ok, "區塊補回後應 PASS")
 
+    def test_broken_markdown_path_link_check(self):
+        # C4：organization 打錯的跨檔連結 → FAIL；第N章.md 導覽豁免；
+        # 全書目錄及綱要.md（舊版 render 殘留）只警告不擋。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            chapter_md = self._full_valid_vault(root)
+
+            chapter_md.write_text(
+                "# 第1章\n\n見 [別處](../link_folder/主題/不存在.md)。\n", encoding="utf-8")
+            link_check = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root)
+                              if "markdown 路徑連結" in c.label)
+            self.assertFalse(link_check.ok)
+            self.assertIn("不存在.md", link_check.resume_hint)
+
+            # 只剩導覽（第N章.md 缺檔豁免 + 全書目錄及綱要.md 只警告）→ 不擋
+            chapter_md.write_text(
+                "# 第1章\n\n[下一章](../01%20創世記/第2章.md) "
+                "[回目錄](../01%20創世記/全書目錄及綱要.md)\n", encoding="utf-8")
+            link_check = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root)
+                              if "markdown 路徑連結" in c.label)
+            self.assertTrue(link_check.ok)
+            self.assertIn("全書目錄及綱要.md", link_check.warning)
+
+            # 全部目標存在 → 乾淨無警告
+            (root / "01 創世記" / "第2章.md").write_text("x", encoding="utf-8")
+            (root / "01 創世記" / "全書目錄及綱要.md").write_text("x", encoding="utf-8")
+            link_check = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root)
+                              if "markdown 路徑連結" in c.label)
+            self.assertTrue(link_check.ok)
+            self.assertEqual("", link_check.warning)
+
     def test_preflight_passes_with_only_steps_1_and_2(self):
         """--preflight 模式驗證前置包（經文、5來源 manifest、read_log、candidates、fresh similarity report）。"""
         with tempfile.TemporaryDirectory() as tmp:

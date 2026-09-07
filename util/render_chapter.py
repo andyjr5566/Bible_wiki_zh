@@ -234,8 +234,13 @@ def render_knowledge_nodes(nodes):
     return "\n\n".join(parts)
 
 
-def render_chapter_navigation(book, chapter):
-    """產生本章頁面頂端／底端的前後章與目錄導覽列。"""
+def render_chapter_navigation(book, chapter, *, catalog_exists=True):
+    """產生本章頁面頂端／底端的前後章與目錄導覽列。
+
+    ``catalog_exists=False`` 時不輸出「回目錄」連結——`全書目錄及綱要.md` 要整卷
+    做完才存在，新書第 1 章一 render 就會產生一條指向缺檔的 markdown 路徑連結，
+    而 `verify_links` 只驗 wiki-link、抓不到，完全靜默（C4）。
+    """
     canonical = canonical_book_name(book)
     total = BOOK_CHAPTERS.get(canonical)
     if total is None:
@@ -249,7 +254,7 @@ def render_chapter_navigation(book, chapter):
     previous = (
         f"[前一章]({link_prefix}第{chapter - 1}章.md)" if chapter > 1 else ""
     )
-    catalog = f"[回目錄]({link_prefix}全書目錄及綱要.md)"
+    catalog = f"[回目錄]({link_prefix}全書目錄及綱要.md)" if catalog_exists else ""
     following = (
         f"[下一章]({link_prefix}第{chapter + 1}章.md)" if chapter < total else ""
     )
@@ -268,7 +273,8 @@ def render_chapter_navigation(book, chapter):
     )
 
 
-def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map_block="", appendix_block=""):
+def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map_block="",
+                   appendix_block="", catalog_exists=True):
     book = verse_links_payload.get("book") or chapter_content.get("book")
     chapter = verse_links_payload.get("chapter") or chapter_content.get("chapter")
     if raw_verses is None:
@@ -289,7 +295,7 @@ def render_chapter(verse_links_payload, chapter_content, *, raw_verses=None, map
         str(r).strip() for r in (chapter_content.get("references") or []) if str(r).strip()
     ] or inline_refs
 
-    navigation = render_chapter_navigation(book, chapter)
+    navigation = render_chapter_navigation(book, chapter, catalog_exists=catalog_exists)
     blocks = [f"# {canonical_book_name(book)} 第{chapter}章", navigation, scripture]
     if map_block.strip():
         blocks.append(map_block.strip())
@@ -426,8 +432,10 @@ def _cmd_render(args):
     if args.preserve_maps and target.exists():
         existing = MAP_BLOCK_RE.search(target.read_text(encoding="utf-8"))
         map_block = existing.group(0) if existing else ""
+    catalog_exists = (target.parent / "全書目錄及綱要.md").exists()
     rendered = render_chapter(
-        verse_links_payload, chapter_content, map_block=map_block
+        verse_links_payload, chapter_content, map_block=map_block,
+        catalog_exists=catalog_exists,
     )
     if args.write:
         if target.exists() and not args.force:

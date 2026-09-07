@@ -88,6 +88,19 @@ class RenderChapterTests(unittest.TestCase):
         self.assertLess(rendered.index(navigation), rendered.index("1. "))
         self.assertTrue(rendered.rstrip().endswith(navigation))
 
+    def test_navigation_omits_catalog_link_when_absent(self):
+        # C4：全書目錄及綱要.md 尚未存在時不輸出「回目錄」連結（否則靜默斷鏈）。
+        from render_chapter import render_chapter_navigation
+        nav = render_chapter_navigation("創世記", 1, catalog_exists=False)
+        self.assertNotIn("全書目錄及綱要", nav)
+        self.assertNotIn("回目錄", nav)
+        rendered = render_chapter(
+            dict(VERSE_LINKS, book="創世記", chapter=1),
+            dict(CHAPTER_CONTENT, book="創世記", chapter=1),
+            raw_verses=RAW, catalog_exists=False,
+        )
+        self.assertNotIn("全書目錄及綱要.md", rendered)
+
     def test_navigation_hides_missing_boundary_links(self):
         first = dict(VERSE_LINKS, book="創世記", chapter=1)
         first_content = dict(CHAPTER_CONTENT, book="創世記", chapter=1)

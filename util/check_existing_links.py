@@ -44,22 +44,93 @@ def resolve_existing(targets, index):
     return list(dict.fromkeys(found))
 
 
+def iter_chapter_files(root, book=None):
+    """庫內所有 `第N章.md`（可依書卷過濾），按書卷序＋章號排序。"""
+    want = canonical_book_name(book) if book else None
+    for book_dir in sorted(root.glob("[0-9][0-9] *")):
+        if not book_dir.is_dir():
+            continue
+        try:
+            canonical = canonical_book_name(book_dir.name)
+        except Exception:
+            continue
+        if want and canonical != want:
+            continue
+        files = [p for p in book_dir.glob("第*章.md") if re.fullmatch(r"第\d+章", p.stem)]
+        for path in sorted(files, key=lambda p: int(p.stem[1:-1])):
+            yield path
+
+
+def chapter_missing_links(filepath, index, root):
+    """(book, chapter, existing, missing)：章節連到的既有條目中，尚無該章累積者。"""
+    book, chapter = parse_chapter_path(filepath)
+    existing = resolve_existing(extract_links(filepath), index)
+    missing = [
+        (name, path) for name, path in existing
+        if not has_book_chapter_data(path, book, chapter, root)
+    ]
+    return book, chapter, existing, missing
+
+
+def _run_corpus(index, book=None):
+    rows = []
+    total_missing = 0
+    for filepath in iter_chapter_files(ROOT, book):
+        try:
+            bk, ch, existing, missing = chapter_missing_links(filepath, index, ROOT)
+        except (ValueError, OSError) as exc:
+            print(f"❌ {filepath.relative_to(ROOT)}：{exc}")
+            continue
+        if missing:
+            total_missing += len(missing)
+            rows.append((bk, ch, missing))
+    scope = f"{canonical_book_name(book)} 全卷" if book else "全庫"
+    if not rows:
+        print(f"✅ {scope}：章節連到的既有條目都已補上對應章節的累積資料。")
+        print("結論：PASS")
+        return 0
+    print(f"⚠️ {scope}：{len(rows)} 章共 {total_missing} 個既有條目被連結、卻尚無該章累積：")
+    for bk, ch, missing in rows:
+        print(f"  {bk}第{ch}章（{len(missing)}）：")
+        for name, path in missing:
+            print(f"    - [[{name}]] → {path}")
+    print("結論：FAIL（逐章走流程步驟 4：link_updates.py prepare → 填 → apply --dry-run → apply）")
+    return 1
+
+
 def main():
     console.utf8_stdio()
     parser = argparse.ArgumentParser()
-    parser.add_argument("chapter_file")
+    parser.add_argument("chapter_file", nargs="?",
+                        help="單章 markdown 路徑；與 --book／--all 三選一")
     parser.add_argument("--missing", action="store_true")
     parser.add_argument("--check")
+    parser.add_argument("--book", help="掃整卷（標準書卷名）")
+    parser.add_argument("--all", action="store_true", help="掃全庫")
     args = parser.parse_args()
 
+    try:
+        index = json.loads(INDEX_FILE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"❌ {exc}")
+        return 1
+
+    if args.all or args.book:
+        if args.chapter_file or args.check:
+            print("❌ --all／--book 是全掃模式，不接受單章路徑或 --check")
+            return 1
+        return _run_corpus(index, book=args.book)
+
+    if not args.chapter_file:
+        print("❌ 需要單章 markdown 路徑，或用 --book／--all 全掃")
+        return 1
     filepath = ROOT / args.chapter_file
     if not filepath.exists():
         print(f"❌ 檔案不存在：{filepath}")
         return 1
     try:
         book, chapter = parse_chapter_path(filepath)
-        index = json.loads(INDEX_FILE.read_text(encoding="utf-8"))
-    except (ValueError, OSError, json.JSONDecodeError) as exc:
+    except (ValueError, OSError) as exc:
         print(f"❌ {exc}")
         return 1
 

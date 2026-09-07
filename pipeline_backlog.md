@@ -24,9 +24,9 @@
 | B6 | ⬜ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
 | B7 | ⬜ | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
 | C1 | ⬜ | 重複條目只靠人工判讀擋 | SOP 步驟2 | 條目分岔，閘門不擋 |
-| C2 | ⬜ | 正向孤兒沒有全庫掃描 | `util/check_existing_links.py` | 全庫缺漏無人掃 |
+| C2 | ✅ | 正向孤兒沒有全庫掃描 | `util/check_existing_links.py` | 全庫缺漏無人掃 |
 | C3 | ⬜ | Windows 環境摩擦 | venv wrapper | 每支指令都要前綴 |
-| C4 | ⬜ | `全書目錄及綱要.md` 對每本新書都會缺 | render 的 nav 區塊 | 每章 nav 斷鏈且無閘門捕捉 |
+| C4 | ✅ | `全書目錄及綱要.md` 對每本新書都會缺 | render 的 nav 區塊 | 每章 nav 斷鏈且無閘門捕捉 |
 
 ---
 
@@ -296,6 +296,12 @@ reviewer 輸出格式強制附 raw 檔名＋行號＋逐字內容（本次全局
 
 **驗收**　全庫跑得動，輸出可讀的缺漏清單。
 
+**狀態**　✅ 完成。抽出 `iter_chapter_files`／`chapter_missing_links`／`_run_corpus`；
+`check_existing_links.py` 位置參數改 optional，新增 `--book <標準書卷名>`／`--all`
+（與單章路徑三選一，全掃模式不接受 `--check`）。全庫跑 0.7 秒，逐章列出「被連結、
+卻尚無該章累積」的既有條目，`結論：PASS/FAIL`。全庫實跑目前 0（memory 記的 08-21 那 20 個已補完）。
+測試：`util/tests/test_check_existing_links.py`（4）。
+
 ### C3. Windows 環境摩擦
 
 **症狀**　每支 python 都要前綴 `PYTHONIOENCODING=utf-8`，否則 cp1252 炸掉。
@@ -317,6 +323,14 @@ reviewer 輸出格式強制附 raw 檔名＋行號＋逐字內容（本次全局
 **驗收**
 - 新書第1章 render 後 nav 無斷鏈。
 - 加一條檢查：章 md 內的 markdown 相對路徑連結指向不存在的檔案 = FAIL（目前所有連結檢查都只看 wiki-link）。
+
+**狀態**　✅ 完成（採「目標檔不存在時 nav 不輸出該連結」）。
+- `render_chapter_navigation(catalog_exists=)`／`render_chapter(catalog_exists=)`：`全書目錄及綱要.md`
+  不存在時不輸出「回目錄」連結。`run_chapter.render_step` 與 `render_chapter.py` CLI 都依實際存在與否傳入。
+- `check_chapter_files` 加「步驟6｜章 md 的 markdown 路徑連結目標存在」：豁免會逐步補齊的 `第N章.md`；
+  `全書目錄及綱要.md` 殘留連結（舊版 render）只**警告**、提示整卷完成後重跑；其餘缺檔 md 連結＝FAIL。
+  （約書亞記 1–3 章因先前用舊 render 產出，各有 2 條殘留 `全書目錄及綱要.md` 連結——不擋、整卷收尾重跑即消。）
+測試：`test_navigation_omits_catalog_link_when_absent`、`test_broken_markdown_path_link_check`。
 
 ---
 
