@@ -50,13 +50,29 @@ def _load(path: Path) -> dict[str, Any]:
     return data
 
 
+def _normalize_prose(value: Any) -> str:
+    """Normalize only prose values loaded from YAML folded scalars.
+
+    YAML ``>-`` joins physical lines with one ASCII space. Traditional Chinese
+    normally does not want that space after Chinese punctuation or between
+    adjacent CJK tokens. This function is deliberately applied *before* Markdown
+    structure is assembled, so table delimiters, reference labels and URLs are
+    never rewritten.
+    """
+    text = str(value or "").strip()
+    text = re.sub(r"(?<=[，。！？；：、）」』】》]) +(?=\S)", "", text)
+    text = re.sub(r"(?<=[\u3400-\u9fff]) +(?=[\u3400-\u9fff「『（【《])", "", text)
+    text = re.sub(r"(?<=—) +(?=[\u3400-\u9fff「『（【《])", "", text)
+    return text
+
+
 def _sources(ids: Any) -> str:
     values = [str(v).strip() for v in (ids or []) if str(v).strip()]
     return f"<!-- sources: {', '.join(values)} -->" if values else ""
 
 
 def _paras(values: Any) -> str:
-    return "\n\n".join(str(v).strip() for v in (values or []) if str(v).strip())
+    return "\n\n".join(_normalize_prose(v) for v in (values or []) if str(v).strip())
 
 
 def _mermaid(code: Any) -> str:
@@ -67,7 +83,7 @@ def _mermaid(code: Any) -> str:
 def _callout(spec: Any) -> str:
     if not isinstance(spec, dict):
         return ""
-    body = str(spec.get("body", "")).strip()
+    body = _normalize_prose(spec.get("body", ""))
     if not body:
         return ""
     kind = str(spec.get("kind", "note")).strip() or "note"
@@ -86,7 +102,7 @@ def _table(headers: list[str], rows: Iterable[Iterable[Any]]) -> str:
         "| " + " | ".join("---" for _ in clean_headers) + " |",
     ]
     for row in rows:
-        values = [str(v).strip().replace("\n", "<br/>") for v in row]
+        values = [_normalize_prose(v).replace("\n", "<br/>") for v in row]
         lines.append("| " + " | ".join(values) + " |")
     return "\n".join(lines)
 
@@ -139,7 +155,7 @@ def _render_importance_features(module: dict[str, Any]) -> str:
         lines: list[str] = []
         for item in features:
             title = str(item.get("title", "")).strip()
-            text = str(item.get("text", "")).strip()
+            text = _normalize_prose(item.get("text", ""))
             if title and text:
                 lines.append(f"**{title}**  \n{text}")
         if lines:
@@ -179,7 +195,7 @@ def _render_key_texts_themes(module: dict[str, Any]) -> str:
         lines = []
         for item in themes:
             name = str(item.get("name", "")).strip()
-            text = str(item.get("text", "")).strip()
+            text = _normalize_prose(item.get("text", ""))
             if name and text:
                 lines.append(f"- **{name}**：{text}")
         if lines:
@@ -226,27 +242,10 @@ def _render_references(data: dict[str, Any]) -> str:
         rid = str(ref.get("id", "")).strip()
         if label and url:
             lines.append(f"> - **{rid}**｜[{label}]({url})")
-    note = str(policy.get("public_note", "")).strip()
+    note = _normalize_prose(policy.get("public_note", ""))
     if note:
         lines.extend([">", *[f"> {line}" if line else ">" for line in note.splitlines()]])
     return "\n".join(lines)
-
-
-def _normalize_cjk_folded_spacing(text: str) -> str:
-    """Remove only spaces that YAML folded scalars introduce into CJK prose.
-
-    ``>-`` joins physical YAML lines with one ASCII space. That is desirable in
-    English, but usually visible noise in Traditional Chinese. Normalization must
-    not touch Markdown structural spacing such as the space before a table's
-    closing ``|``.
-    """
-    # After Chinese punctuation/closing marks (or an em dash), collapse a folded
-    # space when the next visible character is prose rather than a table delimiter.
-    text = re.sub(r"(?<=[，。！？；：、）」』】》—]) +(?=[^|\s])", "", text)
-    # Also remove a folded space between adjacent CJK prose tokens, including a
-    # CJK character followed by an opening quote/bracket.
-    text = re.sub(r"(?<=[\u3400-\u9fff]) +(?=[\u3400-\u9fff「『（【《])", "", text)
-    return text
 
 
 def render(data: dict[str, Any]) -> str:
@@ -272,7 +271,7 @@ def render(data: dict[str, Any]) -> str:
     header = data.get("header") or {}
     title = str(header.get("title") or book).strip()
     subtitle = str(header.get("subtitle", "")).strip()
-    lead = str(header.get("lead", "")).strip()
+    lead = _normalize_prose(header.get("lead", ""))
     header_lines = [f"# {title}"]
     if subtitle:
         header_lines.extend(["", f"*{subtitle}*"])
@@ -315,8 +314,7 @@ def render(data: dict[str, Any]) -> str:
         blocks.append(references)
 
     blocks.append(nav_block)
-    rendered = "\n\n---\n\n".join(block.rstrip() for block in blocks if block.strip()) + "\n"
-    return _normalize_cjk_folded_spacing(rendered)
+    return "\n\n---\n\n".join(block.rstrip() for block in blocks if block.strip()) + "\n"
 
 
 def main() -> int:
