@@ -43,6 +43,7 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 - 改候選名／type 後**務必回頭同步 `chapter_content.yaml` 裡的手寫連結**：resolver 認裸名、
   Obsidian 不認——這是「兩閘門全過卻斷鏈」的老坑。改條目名走 `rename_markdown.py`（見情境 B）。
 - 找不到出處 → 刪；講反／講過頭 → 改正並在 commit 訊息或 relation 註明勘誤依據，不默默改。
+- **來源忠實度裁決**：`check_quote_fidelity` 等字串掃描只作定位，不因未命中直接改文。M3／M6／link_updates 的維護內容沿用 `agent_review.py` 對應 stage 的 Evidence Reviewer checkpoint；來源歸屬、翻譯與轉述是否忠實，以 Reviewer 對正式來源的判定為準。直接維護既有 md 沒有對應 checkpoint 時，仍逐條回 rawdata 核對，不把機械 miss 當錯誤。
 
 **「勘誤所有 link」包含逐個條目的 md 本體，不只本章整理**——這是最常被跳過的一步：
 
