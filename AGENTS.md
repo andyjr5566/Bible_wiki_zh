@@ -113,9 +113,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 - 原文類條目名的括號音譯／希伯來字母**必須是本章來源實際出現過的拼寫**；查無出處的希伯來字母是 P4 error（擋 build），查無出處的新建拉丁音譯是 manual_review。
 
-- **「」是逐字宣告，不是強調或術語記號。** Reader-facing production 內容遇英文 commentary 時，預設用**具名的繁體中文轉述，不加「」且不貼英文原文**；若正式 prompt／驗證產物明確要求 verbatim quote（例如 `read_log.md`），才保留英文原句作逐字引句。中文翻譯不得放進「」冒充英文來源的逐字原話。
-
-- STEP 逐詞的中文字面直譯、自己對經文結構的概括，都不加引號。
+- **來源 attribution 必須忠實**：直接引文、翻譯與轉述都須對回正式來源；跨語言翻譯以語義忠實為準，不要求譯文與原文逐字同形；不得增加、刪除、強化、弱化或反轉來源主張。
 
 - 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
 
