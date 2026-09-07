@@ -24,19 +24,40 @@ jobs:
 
           root = Path.cwd()
           original = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
-          cases = [
+
+          chapter_cases = [
               ('申12 BEFORE', 'abaeded45195a462952d8b50b9c5a86f8d2b6342', '申命記', 12),
               ('申12 AFTER ', 'eec5b5024dcb59d7c6ad303cf8bc0003031f406f', '申命記', 12),
-              ('申25 BEFORE', '1f516f6e7bac30ce289b826f82b7505969f1c418', '申命記', 25),
-              ('申25 AFTER ', '23b735b7d3caa9a505b48c5878c86cf892ab2160', '申命記', 25),
           ]
+          entry_snapshots = [
+              ('申17-entry BEFORE', '1eba86db9241a507461433bd1df86a335b94f847'),
+              ('申17-entry AFTER ', 'be43fcf2d012f053604364a0c85f33ab0b739c58'),
+          ]
+          entry_paths = [
+              'link_folder/主題/憑幾個見證人的口.md',
+              'link_folder/背景/石刑.md',
+          ]
+
           try:
-              for label, sha, book, chapter in cases:
+              for label, sha, book, chapter in chapter_cases:
                   subprocess.run(['git','checkout','--force','--detach',sha], check=True, stdout=subprocess.DEVNULL)
                   print(f'=== {label} {sha[:8]} ===')
                   for floor in (10, 2):
                       total, misses, _ = qf.check_quotes(book, chapter, root=root, min_chars=floor)
                       print(f'floor={floor} quotes={total} misses={len(misses)}')
+                      for source, quote in misses:
+                          print(f'  MISS | {source} | {" ".join(quote.split())}')
+
+              for label, sha in entry_snapshots:
+                  subprocess.run(['git','checkout','--force','--detach',sha], check=True, stdout=subprocess.DEVNULL)
+                  print(f'=== {label} {sha[:8]} ===')
+                  for rel in entry_paths:
+                      path = root / rel
+                      if not path.is_file():
+                          print(f'  SKIP missing {rel}')
+                          continue
+                      total, misses, _ = qf.check_entry_quotes(path, root=root, min_chars=2)
+                      print(f'ENTRY {rel}: quotes={total} misses={len(misses)}')
                       for source, quote in misses:
                           print(f'  MISS | {source} | {" ".join(quote.split())}')
           finally:
