@@ -1,0 +1,53 @@
+name: Old Article Precision Scan
+
+on:
+  push:
+    branches: [test/attribution-fidelity]
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install PyYAML
+      - name: Scan completed Pentateuch chapters
+        run: |
+          python - <<'PY'
+          from util.check_quote_fidelity import check_quotes
+
+          books = {
+              '創世記': 50,
+              '出埃及記': 40,
+              '利未記': 27,
+              '民數記': 36,
+              '申命記': 34,
+          }
+          for floor in (10, 2):
+              print(f'=== FLOOR {floor} ===')
+              grand_quotes = grand_misses = chapters_scanned = chapters_with_miss = 0
+              for book, last in books.items():
+                  bq = bm = bc = bw = 0
+                  for chapter in range(1, last + 1):
+                      try:
+                          total, misses, _sources = check_quotes(book, chapter, min_chars=floor)
+                      except FileNotFoundError:
+                          continue
+                      chapters_scanned += 1
+                      bc += 1
+                      grand_quotes += total
+                      bq += total
+                      grand_misses += len(misses)
+                      bm += len(misses)
+                      if misses:
+                          chapters_with_miss += 1
+                          bw += 1
+                          print(f'CHAPTER {book}{chapter}: quotes={total} misses={len(misses)}')
+                          for label, quote in misses:
+                              q = ' '.join(str(quote).split())
+                              print(f'  MISS | {label} | {q}')
+                  print(f'BOOK {book}: chapters={bc} quotes={bq} misses={bm} chapters_with_miss={bw}')
+              print(f'TOTAL floor={floor}: chapters={chapters_scanned} quotes={grand_quotes} misses={grand_misses} chapters_with_miss={chapters_with_miss}')
+          PY
