@@ -9,6 +9,7 @@ if str(UTIL_DIR) not in sys.path:
 
 import yaml
 
+import resolve_link_candidates as rlc
 from resolve_link_candidates import (
     annotate_plan_semantically,
     base_name,
@@ -275,6 +276,70 @@ class TranslitBaseNameMatchTests(unittest.TestCase):
             self.assertEqual(
                 "皂莢木（atzei shittim）", plan["B_needs_update"][0]["existing_title"]
             )
+
+
+class PlanLockTests(unittest.TestCase):
+    CANDIDATES = parse_candidates_yaml(YAML_DATA)
+
+    def _write_plan(self, root, *, force_replan=False):
+        entry = root / "link_folder" / "人物" / "以撒.md"
+        if not entry.exists():
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            entry.write_text(
+                "# 以撒\n\n## 定義\n\n內容\n\n## 按書卷累積\n\n### 創世記\n"
+                "<!-- accumulation:創世記:26:start -->\n#### 第26章\n"
+                "- 本章重點：x\n- 與本章關聯：y\n"
+                "<!-- accumulation:創世記:26:end -->\n\n## 來源依據\n\n- CT\n",
+                encoding="utf-8",
+            )
+        plan = resolve(self.CANDIDATES, INDEX, "創世記", "26", root=root, homonyms={})
+        rlc.write_plan(plan, "創世記", "26", root=root, force_replan=force_replan)
+        rlc.write_plan_yaml(plan, "創世記", "26", root=root, force_replan=force_replan)
+        return plan
+
+    def test_lock_then_resolve_refuses_without_force(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            plan = self._write_plan(root)
+            tmp_dir = root / "01 創世記" / ".tmp" / "第26章"
+
+            rlc.lock_plan("創世記", "26", root=root)
+            self.assertTrue(rlc.plan_is_locked("創世記", "26", root=root))
+            md_after_lock = (tmp_dir / "link_plan.md").read_bytes()
+            yaml_after_lock = (tmp_dir / "link_plan.yaml").read_bytes()
+
+            with self.assertRaises(rlc.PlanLockedError):
+                rlc.write_plan(plan, "創世記", "26", root=root)
+            with self.assertRaises(rlc.PlanLockedError):
+                rlc.write_plan_yaml(plan, "創世記", "26", root=root)
+
+            # 被凍結後兩個計畫檔一個 byte 都沒動
+            self.assertEqual(md_after_lock, (tmp_dir / "link_plan.md").read_bytes())
+            self.assertEqual(yaml_after_lock, (tmp_dir / "link_plan.yaml").read_bytes())
+
+    def test_lock_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._write_plan(root)
+            first = rlc.lock_plan("創世記", "26", root=root).read_bytes()
+            second = rlc.lock_plan("創世記", "26", root=root).read_bytes()
+            self.assertEqual(first, second)
+
+    def test_force_replan_clears_lock_and_rewrites(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._write_plan(root)
+            rlc.lock_plan("創世記", "26", root=root)
+            self.assertTrue(rlc.plan_is_locked("創世記", "26", root=root))
+
+            self._write_plan(root, force_replan=True)  # 不再拋錯
+            self.assertFalse(rlc.plan_is_locked("創世記", "26", root=root))
+
+    def test_lock_plan_without_plan_file_errors(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            with self.assertRaises(FileNotFoundError):
+                rlc.lock_plan("創世記", "26", root=root)
 
 
 if __name__ == "__main__":

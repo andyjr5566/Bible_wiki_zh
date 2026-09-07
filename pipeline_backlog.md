@@ -16,7 +16,7 @@
 | A2 | ✅ | YAML round-trip 失敗把檔案截成 0 byte | 所有 `.tmp/*.yaml` 寫入點 | payload 靜默清空 |
 | A3 | ✅ | 記 verdict 前先改檔＝review 額度蒸發 | `util/agent_review.py::record_verdict` | 每 stage 只有 2 次，不可回復 |
 | A4 | ✅ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
-| B1 | ⬜ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
+| B1 | ✅ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
 | B2 | ✅ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
 | B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
 | B4 | ⬜ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
@@ -153,6 +153,17 @@ docstring 明列「刻意不留 --allow-same-sha 旁路」。測試：`test_m6_h
 **驗收**
 - gate PASS 後重跑 resolve：不改檔，回非零退出碼。
 - `--force-replan` 可覆寫，且會清掉 `locked_at`。
+
+**狀態**　✅ 完成。實作為 sidecar 記號（`.tmp/第x章/link_plan.lock`，比只寫 `locked_at` 欄位更耐
+「手動 rm link_plan.yaml」）：
+- `resolve_link_candidates.py`：`lock_plan`／`unlock_plan`／`plan_is_locked`／`bucket_digest`／
+  `PlanLockedError`；`write_plan`＋`write_plan_yaml` 有 lock 就拒寫（`PlanLockedError` → `main` 回非零），
+  `--force-replan` 先 `unlock_plan` 再重寫；`lock_plan` 同時在 `link_plan.yaml` 補 `locked_at` 欄位。
+- `agent_review.py gate ... m3` PASS 後自動 `lock_plan`（失敗不擋 gate）。
+- `run_chapter.resolve_step`：plan 檔不見但 lock 還在＝拒絕靜默重生，指向 `--force-replan`。
+- `run_chapter._invalidate_stale`：candidates 正式改動而 `link_plan.yaml` 被作廢時，一併作廢 lock
+  （維護加候選的正規流程照常重算）。`agent_maintenance_prompt.md` 情境坑一／坑二補上 lock 說明。
+測試：`test_resolve_candidate_formats.PlanLockTests`（4）＋`test_run_chapter` 2 項。
 
 ### B2. render 每次都吃掉附錄區塊
 

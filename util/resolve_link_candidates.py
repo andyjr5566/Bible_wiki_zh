@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """將資料驅動的 link candidates 與全域 index 比對並產生 link plan。"""
+import argparse
+import hashlib
 import json
 import re
 import sys
 import unicodedata
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -363,7 +366,8 @@ def annotate_plan_semantically(plan, lookup, threshold, top=3,
     return plan
 
 
-def write_plan(plan, book, chapter, root=ROOT):
+def write_plan(plan, book, chapter, root=ROOT, *, force_replan=False):
+    _guard_plan_not_locked(book, chapter, root, force_replan)
     output_dir = book_directory(root, book) / ".tmp" / f"第{chapter}章"
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / "link_plan.md"
@@ -447,7 +451,93 @@ def build_plan_document(plan, book, chapter):
     return document
 
 
-def write_plan_yaml(plan, book, chapter, root=ROOT):
+# --------------------------------------------------------------------------- #
+# link_plan lock：M3 gate PASS 後凍結 A/B/C 分桶
+#
+# link_plan 是「開工快照」——分桶取決於當下 index 有沒有該條目。等 M3 把 C 類
+# 新條目建進 link_folder／link_index，再跑一次 resolve，那些 C 就會被重新判成
+# 既有條目而併回 A，B 也一樣，check 隨後才報「對不上任何 C 類候選」，只能手工
+# 還原 A=x/B=y/C=z。gate m3 PASS 後呼叫 lock_plan 寫一個 sidecar 記號；之後
+# write_plan／resolve_step 遇到記號就拒絕覆寫，除非明確 --force-replan。
+# --------------------------------------------------------------------------- #
+PLAN_LOCK_FILENAME = "link_plan.lock"
+
+
+class PlanLockedError(RuntimeError):
+    pass
+
+
+def _chapter_tmp(book, chapter, root=ROOT):
+    return book_directory(root, book) / ".tmp" / f"第{chapter}章"
+
+
+def plan_lock_path(book, chapter, root=ROOT):
+    return _chapter_tmp(book, chapter, root) / PLAN_LOCK_FILENAME
+
+
+def bucket_digest(document):
+    """A/B/C/D/E 分桶的內容指紋（只看 bucket＋name，忽略 line_number 等易變欄位）。"""
+    parts = [
+        f"{key}\t{item.get('name')}"
+        for key in PLAN_SECTIONS
+        for item in (document.get(key) or [])
+    ]
+    return hashlib.sha256("\n".join(sorted(parts)).encode("utf-8")).hexdigest()
+
+
+def plan_is_locked(book, chapter, root=ROOT):
+    return plan_lock_path(book, chapter, root).is_file()
+
+
+def lock_plan(book, chapter, root=ROOT):
+    """凍結本章 link_plan 的分桶（冪等）。M3 gate PASS 後呼叫。"""
+    tmp = _chapter_tmp(book, chapter, root)
+    plan_path = tmp / "link_plan.yaml"
+    if not plan_path.is_file():
+        raise FileNotFoundError(f"{plan_path} 不存在，無法凍結 link_plan")
+    lock_path = tmp / PLAN_LOCK_FILENAME
+    if lock_path.is_file():
+        return lock_path
+    document = yaml.safe_load(plan_path.read_text(encoding="utf-8")) or {}
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if not document.get("locked_at"):
+        document["locked_at"] = stamp
+        write_yaml_atomic(plan_path, document)
+    write_yaml_atomic(lock_path, {
+        "book": book,
+        "chapter": int(chapter),
+        "locked_at": stamp,
+        "bucket_digest": bucket_digest(document),
+        "note": "M3 gate PASS 後凍結；重算 A/B/C 分桶需 "
+                "resolve_link_candidates.py --force-replan",
+    })
+    return lock_path
+
+
+def unlock_plan(book, chapter, root=ROOT):
+    """移除凍結記號（--force-replan 或 candidates 正式改動時）。回傳是否真的移除。"""
+    lock_path = plan_lock_path(book, chapter, root)
+    if lock_path.is_file():
+        lock_path.unlink()
+        return True
+    return False
+
+
+def _guard_plan_not_locked(book, chapter, root, force_replan):
+    if force_replan:
+        unlock_plan(book, chapter, root)
+        return
+    if plan_is_locked(book, chapter, root):
+        raise PlanLockedError(
+            f"link_plan 已在 M3 gate PASS 後凍結（{plan_lock_path(book, chapter, root)}）。"
+            "重跑 resolve 會把已建的 C 條目併回 A、B 也併回 A，check 隨後才報錯。"
+            "確定要重算分桶：python util/resolve_link_candidates.py "
+            f"{book} {chapter} --force-replan"
+        )
+
+
+def write_plan_yaml(plan, book, chapter, root=ROOT, *, force_replan=False):
+    _guard_plan_not_locked(book, chapter, root, force_replan)
     output = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "link_plan.yaml"
     write_yaml_atomic(output, build_plan_document(plan, book, chapter))
     print(f"✅ link plan (yaml) 已建立：{output}")
@@ -455,17 +545,28 @@ def write_plan_yaml(plan, book, chapter, root=ROOT):
 
 
 def main():
-    if len(sys.argv) != 3:
-        print("用法：python util/resolve_link_candidates.py <書卷名> <章>")
-        return 2
-    book, chapter = sys.argv[1], sys.argv[2]
+    parser = argparse.ArgumentParser(
+        description="將 link candidates 與全域 index 比對並產生 link plan。"
+    )
+    parser.add_argument("book")
+    parser.add_argument("chapter")
+    parser.add_argument(
+        "--force-replan",
+        action="store_true",
+        help="覆寫 M3 gate PASS 後凍結的 link_plan（清掉 lock 記號），重算 A/B/C 分桶。",
+    )
+    args = parser.parse_args()
+    book, chapter = args.book, args.chapter
     try:
         index = load_index()
         homonyms = load_homonyms()
         candidates = load_candidates(book, chapter)
         plan = resolve(candidates, index, book, chapter, homonyms=homonyms)
-        write_plan(plan, book, chapter)
-        write_plan_yaml(plan, book, chapter)
+        write_plan(plan, book, chapter, force_replan=args.force_replan)
+        write_plan_yaml(plan, book, chapter, force_replan=args.force_replan)
+    except PlanLockedError as exc:
+        print(f"❌ {exc}")
+        return 1
     except (FileNotFoundError, ValueError, json.JSONDecodeError) as exc:
         print(f"❌ {exc}")
         return 1

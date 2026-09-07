@@ -359,9 +359,13 @@ STEP 是否可用一律以當章 `source_manifest.md` 與 machine validation 結
 2. **坑一：`resolve_step` 若 `link_plan.yaml` 已存在就直接回傳、不重算**（見
    `util/run_chapter_manual.py` 所使用的 resolver 實作）
    ——只刪 `pipeline_state.json` 不夠，新候選不會進 plan。要**同時刪 `link_plan.yaml`**。
+   若該章已過 M3 gate，`.tmp/第x章/link_plan.lock` 會擋住重生（避免收工後重跑 resolve
+   把 C 併回 A）——維護時要重算分桶就**一併刪掉 `link_plan.lock`**，或用
+   `python util/resolve_link_candidates.py 書名 章 --force-replan`（重寫 plan 並清掉 lock）。
 3. **坑二：保住手寫的 M6**——`_invalidate_stale` 見 link_candidates 變了會連鎖刪
-   chapter_content。對策同情境 C 步驟5：**先刪 `pipeline_state.json`（無基線＝視為乾淨、不作廢）**，
-   再刪 `link_plan.yaml`，再 `prompts`。prompts 會重生 link_plan（新候選落 B_needs_update）、
+   chapter_content（現改為搬到 `.tmp/第x章/.trash/<UTC 時戳>/`，非直接刪，誤刪可取回）。
+   對策同情境 C 步驟5：**先刪 `pipeline_state.json`（無基線＝視為乾淨、不作廢）**，
+   再刪 `link_plan.yaml`（連同 `link_plan.lock`），再 `prompts`。prompts 會重生 link_plan（新候選落 B_needs_update）、
    但因無基線不動 chapter_content。動前先確認 `.tmp` 已 commit（那就是備份）。
 4. 改 `chapter_content.yaml`：加 knowledge_node（歸對分組）＋在 organization 首次提及處加
    `[[條目名｜行文詞]]`（連結目標要在 A/B 白名單內，check 會驗）。

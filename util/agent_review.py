@@ -577,6 +577,18 @@ def main() -> int:
                 f"{args.stage} review_attempts={_review_attempts(record)}/{MAX_REVIEW_ATTEMPTS} "
                 f"sha256={record['sha256']}"
             )
+            if args.stage == "m3":
+                # M3 分桶定案 → 凍結 link_plan，避免收工後重跑 resolve 把 C 併回 A。
+                try:
+                    try:
+                        from .resolve_link_candidates import lock_plan
+                    except ImportError:
+                        from resolve_link_candidates import lock_plan
+                    lock_path = lock_plan(canonical_book_name(args.book), args.chapter)
+                    print(f"   link_plan 已凍結：{lock_path}"
+                          "（重算分桶需 resolve_link_candidates.py --force-replan）")
+                except Exception as exc:  # noqa: BLE001 — 凍結失敗不擋 gate
+                    print(f"   （link_plan 凍結略過：{exc}）")
             return 0
 
         print(f"Review status：{canonical_book_name(args.book)} 第{args.chapter}章")

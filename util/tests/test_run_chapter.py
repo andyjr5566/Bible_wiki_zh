@@ -487,6 +487,41 @@ class OrchestratorTests(unittest.TestCase):
             self.assertLess(after.index("## 本章整理"), after.index("## 附錄"))
             self.assertLess(after.index("## 附錄"), after.rindex(nav))
 
+    def test_locked_plan_missing_blocks_silent_replan(self):
+        # B1：M3 gate 後 link_plan 被凍結；plan 檔不見了也不許靜默重生（會把 C 併回 A）。
+        import resolve_link_candidates as rlc
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+            rlc.lock_plan("出埃及記", 26, root=root)
+            self.assertTrue(rlc.plan_is_locked("出埃及記", 26, root=root))
+            (tmp_dir / "link_plan.yaml").unlink()
+
+            with self.assertRaises(run_chapter.ModelError) as cm:
+                run_chapter.run_chapter(
+                    "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+                )
+            self.assertIn("--force-replan", str(cm.exception))
+
+    def test_candidate_change_clears_plan_lock_and_replans(self):
+        # 反面：candidates 正式改動時，凍結記號一併作廢，resolve 照常重生。
+        import resolve_link_candidates as rlc
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            rlc.lock_plan("出埃及記", 26, root=root)
+            self._add_candidate(root, "幔子")
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self.assertFalse(rlc.plan_is_locked("出埃及記", 26, root=root))
+            self.assertTrue((root / "02 出埃及記" / "第26章.md").exists())
+
     def test_delete_payloads_flag_skips_trash(self):
         # --delete-payloads / delete_payloads=True：回到直接刪除，不建回收區。
         with tempfile.TemporaryDirectory() as tmp:

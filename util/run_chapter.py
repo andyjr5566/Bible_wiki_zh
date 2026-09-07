@@ -412,6 +412,10 @@ def _invalidate_stale(ctx):
             dirty.add(out_key)
             if _retire_node(ctx, _node_path(ctx, out_key)):
                 removed.append(out_key)
+    if "link_plan.yaml" in removed:
+        # candidates 正式改動 → 分桶本來就該重算：一併作廢 M3 gate 的凍結記號，
+        # 否則 resolve_step 會因記號還在而拒絕重生。
+        _retire_node(ctx, ctx.path(resolver.PLAN_LOCK_FILENAME))
     if removed:
         _log("⟳ 偵測到上游改動，已自動作廢下游並將重生：" + "、".join(removed))
         _log_trash_moves(ctx)
@@ -541,6 +545,12 @@ def resolve_step(ctx):
     plan_path = ctx.path("link_plan.yaml")
     if plan_path.exists():
         return _read_yaml(plan_path)
+    if resolver.plan_is_locked(ctx.book, ctx.chapter, root=ctx.root):
+        raise ModelError(
+            "link_plan.yaml 不見了，但 M3 gate 後的凍結記號還在——重生會把已建的 "
+            "C 條目併回 A。先從 .trash/ 或 git 還原 link_plan.yaml；真要重算分桶："
+            f"python util/resolve_link_candidates.py {ctx.book} {ctx.chapter} --force-replan。"
+        )
     _log(f"▶ P2 resolve：{ctx.book} 第{ctx.chapter}章 連結計畫產生中…")
     index = resolver.load_index() if ctx.index is None else ctx.index
     homonyms = resolver.load_homonyms() if ctx.homonyms is None else ctx.homonyms
