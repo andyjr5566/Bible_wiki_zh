@@ -50,6 +50,28 @@ PROMPT_DIR = "manual"
 # 手寫產物節點：被作廢＝毀掉 agent 已寫的內容，刪除前必須明示確認
 HAND_NODES = ("entry_content", "chapter_content.yaml")
 
+# 真正落地給作者的 prompt 只保留內容責任，不把驗證器的實作方式變成寫作套路。
+_M6_QUOTE_STYLE_RE = re.compile(
+    r"- 所有輸出用繁體中文，但「」是逐字宣告而不是強調記號：引用英文來源.*?"
+    r"只有原文用字本身是重點時，才以括號附註原文詞。\n",
+    re.S,
+)
+_M6_DIRECT_QUOTE_RE = re.compile(
+    r"- 引述註釋請「直接引原話」並標明是哪一家.*?"
+    r"某一家在某處沒有說法，就不要替他生一個。\n",
+    re.S,
+)
+
+
+def neutralize_authoring_prompt(prompt: str) -> str:
+    """移除會迫使作者刻意配合驗證器的寫作指令；保留來源忠實度責任。"""
+    prompt = _M6_QUOTE_STYLE_RE.sub("- 所有輸出用繁體中文。\n", prompt)
+    prompt = _M6_DIRECT_QUOTE_RE.sub(
+        "- 註釋來源歸屬必須正確；標明某一家時，內容必須由該來源支持；來源未提就不要歸給它。\n",
+        prompt,
+    )
+    return prompt
+
 
 def _utf8_console():
     for stream in (sys.stdout, sys.stderr):
@@ -234,6 +256,7 @@ class PromptCapture:
 
     def __call__(self, prompt):
         if FEEDBACK_MARKER not in prompt:
+            prompt = neutralize_authoring_prompt(prompt)
             self.out_dir.mkdir(parents=True, exist_ok=True)
             if self.stem == "chapter_content":
                 path = self.out_dir / "chapter_content.prompt.md"
