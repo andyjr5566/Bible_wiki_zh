@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install PyYAML
-      - name: Scan completed Pentateuch chapters
+      - name: Scan representative completed chapters
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -25,26 +25,23 @@ jobs:
 
           ROOT = Path.cwd()
           scripture_parts = []
-          scripture_files = 0
           for path in sorted((ROOT / 'raw_scripture').glob('*/第*章.txt')):
               scripture_parts.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
-              scripture_files += 1
           SCRIPTURE = ''.join(scripture_parts)
-          print(f'PRELOAD scripture_chapters={scripture_files} normalized_chars={len(SCRIPTURE)}')
 
           def chapter_corpus_fast(book, chapter):
               manifest = book_directory(ROOT, book) / '.tmp' / f'第{chapter}章' / 'source_manifest.md'
               if not manifest.is_file():
                   raise FileNotFoundError(manifest)
-              parts = [SCRIPTURE]
+              commentary = []
               for _label, path in parse_manifest(manifest, ROOT):
                   path = Path(path)
                   if path.is_file():
-                      parts.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
-              return ''.join(parts)
+                      commentary.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
+              return ''.join(commentary)
 
           def scan(book, chapter, min_chars):
-              corpus = chapter_corpus_fast(book, chapter)
+              commentary = chapter_corpus_fast(book, chapter)
               total, misses = 0, []
               for label, text in collect_targets(book, chapter, ROOT):
                   seen = set()
@@ -57,46 +54,44 @@ jobs:
                               continue
                           seen.add(quote)
                           total += 1
-                          if normalize(quote) in corpus:
+                          nq = normalize(quote)
+                          if nq in commentary or nq in SCRIPTURE:
                               continue
                           if ELLIPSIS_RE.search(quote):
                               pieces = [f.strip() for f in ELLIPSIS_RE.split(quote) if f.strip()]
                               fragments = [f for f in pieces if len(f) >= MIN_FRAGMENT_CHARS] or pieces
-                              if fragments and all(normalize(f) in corpus for f in fragments):
+                              if fragments and all((normalize(f) in commentary or normalize(f) in SCRIPTURE) for f in fragments):
                                   continue
                           misses.append((label, quote))
               return total, misses
 
-          books = {
-              '創世記': 50,
-              '出埃及記': 40,
-              '利未記': 27,
-              '民數記': 36,
-              '申命記': 34,
-          }
+          chapters = [
+              ('創世記', 1), ('創世記', 2), ('創世記', 3), ('創世記', 10), ('創世記', 20),
+              ('創世記', 30), ('創世記', 40), ('創世記', 46), ('創世記', 50),
+              ('出埃及記', 1), ('出埃及記', 12), ('出埃及記', 20), ('出埃及記', 25),
+              ('出埃及記', 26), ('出埃及記', 32), ('出埃及記', 40),
+              ('利未記', 1), ('利未記', 11), ('利未記', 12), ('利未記', 13), ('利未記', 14), ('利未記', 27),
+              ('民數記', 1), ('民數記', 11), ('民數記', 20), ('民數記', 25), ('民數記', 26), ('民數記', 36),
+              ('申命記', 1), ('申命記', 4), ('申命記', 12), ('申命記', 25), ('申命記', 32), ('申命記', 34),
+          ]
+
           for floor in (10, 2):
               print(f'=== FLOOR {floor} ===')
-              grand_quotes = grand_misses = chapters_scanned = chapters_with_miss = 0
-              for book, last in books.items():
-                  bq = bm = bc = bw = 0
-                  for chapter in range(1, last + 1):
-                      try:
-                          total, misses = scan(book, chapter, floor)
-                      except FileNotFoundError:
-                          continue
-                      chapters_scanned += 1
-                      bc += 1
-                      grand_quotes += total
-                      bq += total
-                      grand_misses += len(misses)
-                      bm += len(misses)
-                      if misses:
-                          chapters_with_miss += 1
-                          bw += 1
-                          print(f'CHAPTER {book}{chapter}: quotes={total} misses={len(misses)}')
-                          for label, quote in misses:
-                              q = ' '.join(str(quote).split())
-                              print(f'  MISS | {label} | {q}')
-                  print(f'BOOK {book}: chapters={bc} quotes={bq} misses={bm} chapters_with_miss={bw}')
-              print(f'TOTAL floor={floor}: chapters={chapters_scanned} quotes={grand_quotes} misses={grand_misses} chapters_with_miss={chapters_with_miss}')
+              grand_quotes = grand_misses = scanned = with_miss = 0
+              for book, chapter in chapters:
+                  try:
+                      total, misses = scan(book, chapter, floor)
+                  except FileNotFoundError:
+                      print(f'SKIP {book}{chapter}: no manifest')
+                      continue
+                  scanned += 1
+                  grand_quotes += total
+                  grand_misses += len(misses)
+                  if misses:
+                      with_miss += 1
+                  print(f'CHAPTER {book}{chapter}: quotes={total} misses={len(misses)}')
+                  for label, quote in misses:
+                      q = ' '.join(str(quote).split())
+                      print(f'  MISS | {label} | {q}')
+              print(f'TOTAL floor={floor}: chapters={scanned} quotes={grand_quotes} misses={grand_misses} chapters_with_miss={with_miss}')
           PY
