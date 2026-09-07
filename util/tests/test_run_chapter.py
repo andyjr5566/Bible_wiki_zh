@@ -457,6 +457,36 @@ class OrchestratorTests(unittest.TestCase):
                 "第二次作廢不得覆蓋第一次回收區",
             )
 
+    def test_rerender_preserves_appendix_links_block(self):
+        # B2：重 render 不得吃掉 build_appendix_links.py 管理的附錄區塊。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            chapter_md = root / "02 出埃及記" / "第26章.md"
+            text = chapter_md.read_text(encoding="utf-8")
+            block = (
+                "<!-- appendix-links:start -->\n## 附錄\n\n### 相關地圖\n"
+                "- [[appendix/fhl_maps/maps/019|〈出圖二〉]]\n"
+                "<!-- appendix-links:end -->"
+            )
+            # 模擬 build_appendix_links.py 注入的區塊（本章整理之後、底端導覽之前）
+            nav = "<!-- chapter-navigation:start -->"
+            last_nav = text.rindex(nav)
+            text = text[:last_nav] + block + "\n\n" + text[last_nav:]
+            chapter_md.write_text(text, encoding="utf-8")
+
+            # 加候選 → 強制重 render
+            self._add_candidate(root, "幔子")
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            after = chapter_md.read_text(encoding="utf-8")
+            self.assertIn(block, after)
+            self.assertLess(after.index("## 本章整理"), after.index("## 附錄"))
+            self.assertLess(after.index("## 附錄"), after.rindex(nav))
+
     def test_delete_payloads_flag_skips_trash(self):
         # --delete-payloads / delete_payloads=True：回到直接刪除，不建回收區。
         with tempfile.TemporaryDirectory() as tmp:

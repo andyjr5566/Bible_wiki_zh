@@ -1828,12 +1828,18 @@ def render_step(ctx, entry_payloads, verse_links, chapter_content, plan=None):
             return written
         chapter_path = book_directory(ctx.root, ctx.book) / f"第{ctx.chapter}章.md"
         chapter_path.parent.mkdir(parents=True, exist_ok=True)
-        map_block = ""
+        map_block = appendix_block = ""
         if chapter_path.exists():
-            existing = render_chapter.MAP_BLOCK_RE.search(chapter_path.read_text(encoding="utf-8"))
+            old_text = chapter_path.read_text(encoding="utf-8")
+            existing = render_chapter.MAP_BLOCK_RE.search(old_text)
             map_block = existing.group(0) if existing else ""
+            # 附錄資源區塊由 build_appendix_links.py 管理，render 只 passthrough：
+            # 少了這一步，每次重 render 都靜默吃掉整段地圖／資源附錄而閘門全綠。
+            appx = render_chapter.APPENDIX_BLOCK_RE.search(old_text)
+            appendix_block = appx.group(0) if appx else ""
         markdown = render_chapter.render_chapter(
-            verse_links, chapter_content, raw_verses=ctx.raw_verses(), map_block=map_block
+            verse_links, chapter_content, raw_verses=ctx.raw_verses(),
+            map_block=map_block, appendix_block=appendix_block,
         )
         chapter_path.write_text(markdown, encoding="utf-8")
         written.append(chapter_path)

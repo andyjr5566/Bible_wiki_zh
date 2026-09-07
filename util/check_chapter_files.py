@@ -32,6 +32,8 @@ try:
     from . import check_source_read
     from . import check_quote_fidelity
     from . import link_updates
+    from . import build_appendix_links
+    from .render_chapter import APPENDIX_BLOCK_START
 except ImportError:
     from book_paths import book_directory, canonical_book_name
     from console import utf8_stdio
@@ -48,6 +50,8 @@ except ImportError:
     import check_source_read
     import check_quote_fidelity
     import link_updates
+    import build_appendix_links
+    from render_chapter import APPENDIX_BLOCK_START
 
 from collections import Counter
 import yaml
@@ -623,6 +627,26 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         canonical, chapter, root=root, production=True
     )
 
+    # 附錄資源區塊一致性：render_step 每次重跑都會把舊檔的附錄區塊 passthrough，
+    # 但若曾用未修正版 render 過、或 build_appendix_links 沒補跑，區塊就會整段消失
+    # 而其他閘門全綠。索引有本章資源卻沒有區塊 = FAIL。
+    appendix_block_ok = True
+    appendix_block_detail = ""
+    # 附錄 plugin（appendix/*）是 repo-global、非 per-vault：只有對真正的庫根跑才有意義。
+    if chapter_md.is_file() and Path(root).resolve() == ROOT.resolve():
+        try:
+            sections = build_appendix_links.collect_all_appendix_sections(build_indexes=False)
+            ch_sections = sections.get(f"{canonical}/第{chapter}章") or []
+            has_block = APPENDIX_BLOCK_START in chapter_md.read_text(encoding="utf-8")
+            if ch_sections and not has_block:
+                appendix_block_ok = False
+                appendix_block_detail = (
+                    f"附錄索引有本章 {len(ch_sections)} 段資源，但 {chapter_md.name} 沒有附錄區塊"
+                    "——多半是重 render 後沒補跑 build_appendix_links.py。"
+                )
+        except Exception as exc:  # noqa: BLE001 — infra 問題不擋 production
+            appendix_block_detail = f"附錄一致性檢查略過：{exc}"
+
     checks = [
         CheckResult(
             "步驟1｜經文本地檔",
@@ -743,6 +767,12 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             f"（{embedding_detail}）從步驟6續做：python util/build_link_index.py，"
             "再 python util/build_embedding_index.py（增量，通常數秒）——"
             "本章新條目沒進索引，下一章的候選近鄰報告就查不到它們。",
+        ),
+        CheckResult(
+            "步驟6｜附錄資源區塊未被 render 吃掉",
+            appendix_block_ok,
+            "重 render 會 passthrough 舊檔的附錄區塊；仍缺代表該章從未補跑或曾被舊版吃掉。"
+            f"補跑：python util/build_appendix_links.py（{appendix_block_detail}）",
         ),
     ])
     return checks

@@ -223,6 +223,51 @@ class CheckChapterFilesTests(unittest.TestCase):
             failed = [res.label for res in checks if not res.ok]
             self.assertEqual([], failed)
 
+    def _full_valid_vault(self, root):
+        tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+        _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
+        self._write_valid_sources(root, tmp_dir)
+        _write(tmp_dir / "link_candidates.yaml", "candidates")
+        _write(root / "util" / "output" / "link_index.json", "{}")
+        _write(root / "_config" / "link_homonyms.yaml", "{}")
+        _write(root / "util" / "output" / "link_quality_report.json", "{}")
+        _write(root / "util" / "output" / "verify_report.json", "{}")
+        _write(root / "util" / "output" / "verify_result.txt", "ok")
+        self._write_synced_embedding_index(root)
+        self._write_fresh_similarity_report(tmp_dir, root)
+        _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
+        _write(tmp_dir / "verse_links.yaml", "links")
+        _write(tmp_dir / "chapter_content.yaml", "content")
+        return root / "01 創世記" / f"第{CHAPTER}章.md"
+
+    def test_appendix_block_missing_when_index_has_resources_fails(self):
+        # B2：附錄索引有本章資源，但章 md 沒有附錄區塊 → FAIL。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            chapter_md = self._full_valid_vault(root)
+            chapter_md.write_text("# 第1章", encoding="utf-8")
+            fake = {f"{BOOK}/第{CHAPTER}章": ["### 相關地圖\n- x"]}
+            with patch.object(ccf, "ROOT", root), patch.object(
+                ccf.build_appendix_links, "collect_all_appendix_sections",
+                return_value=fake,
+            ):
+                checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            appx = next(c for c in checks if "附錄資源區塊" in c.label)
+            self.assertFalse(appx.ok)
+
+            chapter_md.write_text(
+                "# 第1章\n\n<!-- appendix-links:start -->\n## 附錄\n- x\n"
+                "<!-- appendix-links:end -->\n",
+                encoding="utf-8",
+            )
+            with patch.object(ccf, "ROOT", root), patch.object(
+                ccf.build_appendix_links, "collect_all_appendix_sections",
+                return_value=fake,
+            ):
+                checks = ccf.build_checks(BOOK, CHAPTER, root=root)
+            appx = next(c for c in checks if "附錄資源區塊" in c.label)
+            self.assertTrue(appx.ok, "區塊補回後應 PASS")
+
     def test_preflight_passes_with_only_steps_1_and_2(self):
         """--preflight 模式驗證前置包（經文、5來源 manifest、read_log、candidates、fresh similarity report）。"""
         with tempfile.TemporaryDirectory() as tmp:

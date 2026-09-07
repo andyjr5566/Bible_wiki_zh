@@ -31,6 +31,13 @@ BOOK_CHAPTERS = json.loads(
 MAP_BLOCK_RE = re.compile(
     r"<!-- fhl-map-links:start -->[\s\S]*?<!-- fhl-map-links:end -->"
 )
+# 附錄資源區塊由 build_appendix_links.py 管理（同一組標記），render 只作原樣保留：
+# 重 render 時把舊檔既有的附錄區塊帶回輸出，否則每次 re-render 都靜默吃掉整段。
+APPENDIX_BLOCK_START = "<!-- appendix-links:start -->"
+APPENDIX_BLOCK_END = "<!-- appendix-links:end -->"
+APPENDIX_BLOCK_RE = re.compile(
+    rf"{re.escape(APPENDIX_BLOCK_START)}[\s\S]*?{re.escape(APPENDIX_BLOCK_END)}"
+)
 CHAPTER_NAV_START = "<!-- chapter-navigation:start -->"
 CHAPTER_NAV_END = "<!-- chapter-navigation:end -->"
 CHAPTER_NAV_BLOCK_RE = re.compile(
@@ -345,6 +352,12 @@ def parse_chapter(text):
 
     map_match = MAP_BLOCK_RE.search(content)
     map_block = map_match.group(0) if map_match else ""
+
+    # 附錄區塊在「本章整理」之後，會被下面的 organization 擷取吃進去——先拆掉。
+    appendix_match = APPENDIX_BLOCK_RE.search(content)
+    appendix_block = appendix_match.group(0) if appendix_match else ""
+    if appendix_block:
+        content = content.replace(appendix_block, "")
 
     knowledge = content.find("## 本章知識節點")
     scripture_zone = content[:knowledge] if knowledge >= 0 else content

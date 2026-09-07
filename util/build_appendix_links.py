@@ -71,15 +71,19 @@ def load_category_plugins() -> list[dict]:
     return plugins
 
 
-def collect_all_appendix_sections() -> dict[str, list[str]]:
-    """收集所有 plugin 產出的 Markdown 段落。"""
+def collect_all_appendix_sections(*, build_indexes: bool = True) -> dict[str, list[str]]:
+    """收集所有 plugin 產出的 Markdown 段落。
+
+    ``build_indexes=False`` 時只做唯讀掃描（跳過各 plugin 的 build_maps_and_indexes），
+    供 check_chapter_files 這類「只想知道某章有沒有附錄資源」的一致性檢查用。
+    """
     plugins = load_category_plugins()
     sections_by_chapter: dict[str, list[str]] = defaultdict(list)
 
     for plugin in plugins:
         mod = plugin["module"]
         # 先執行 plugin 內建的檔案/索引建置程序（若有）
-        if hasattr(mod, "build_maps_and_indexes"):
+        if build_indexes and hasattr(mod, "build_maps_and_indexes"):
             try:
                 mod.build_maps_and_indexes()
             except Exception as exc:

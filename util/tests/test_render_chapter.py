@@ -129,6 +129,26 @@ class RenderChapterTests(unittest.TestCase):
         # 地圖必須在經文後、第一條分隔線前
         self.assertLess(rendered.index("相關地圖"), rendered.index("\n---\n"))
 
+    def test_appendix_block_is_preserved_and_placed_after_organization(self):
+        block = (
+            "<!-- appendix-links:start -->\n## 附錄\n\n### 相關地圖\n"
+            "- [[appendix/fhl_maps/maps/019|〈出圖二〉]]\n"
+            "<!-- appendix-links:end -->"
+        )
+        rendered = render_chapter(
+            VERSE_LINKS, CHAPTER_CONTENT, raw_verses=RAW, appendix_block=block
+        )
+        self.assertIn(block, rendered)
+        # 附錄在「本章整理」之後、底端導覽列之前
+        self.assertLess(rendered.index("## 本章整理"), rendered.index("## 附錄"))
+        self.assertLess(
+            rendered.index("## 附錄"), rendered.rindex("<!-- chapter-navigation:start -->")
+        )
+        # round-trip：附錄不得被吞進 organization
+        _, parsed, _ = parse_chapter(rendered)
+        self.assertEqual(CHAPTER_CONTENT["organization"], parsed["organization"])
+        self.assertNotIn("附錄", parsed["organization"])
+
     def test_references_render_and_roundtrip(self):
         content = dict(
             CHAPTER_CONTENT, references=["https://a.example/1", "https://b.example/2"]

@@ -17,7 +17,7 @@
 | A3 | ✅ | 記 verdict 前先改檔＝review 額度蒸發 | `util/agent_review.py::record_verdict` | 每 stage 只有 2 次，不可回復 |
 | A4 | ✅ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
 | B1 | ⬜ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
-| B2 | ⬜ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
+| B2 | ✅ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
 | B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
 | B4 | ⬜ | GT 子來源掛名護欄看不懂裸名寫法 | `util/run_chapter.py::_gt_subsource_review` | 護欄在改寫散文 |
 | B5 | ⬜ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
@@ -159,6 +159,15 @@ docstring 明列「刻意不留 --allow-same-sha 旁路」。測試：`test_m6_h
 **驗收**
 - 對已有附錄的章重 render 後區塊仍在，`build_appendix_links --check` 回報 0 stale。
 - 手工刪掉區塊後 `check_chapter_files` 會 FAIL。
+
+**狀態**　✅ 完成（兩路都做）。
+render 保留：`render_chapter` 新增 `APPENDIX_BLOCK_RE`／constants，`parse_chapter` 先拆附錄區塊
+（否則被吞進 organization）；`run_chapter.render_step` 比照 `map_block` 從舊檔擷取 `appendix_block`
+一併 passthrough 給 `render_chapter(appendix_block=)`（本就支援、但沒人傳）。
+閘門：`build_appendix_links.collect_all_appendix_sections(build_indexes=False)` 唯讀掃描；
+`check_chapter_files` 加「步驟6｜附錄資源區塊未被 render 吃掉」——索引有本章資源但 md 無區塊＝FAIL
+（只對真正庫根跑，plugin 是 repo-global）。測試：`test_appendix_block_is_preserved_and_placed_after_organization`、
+`test_rerender_preserves_appendix_links_block`、`test_appendix_block_missing_when_index_has_resources_fails`。
 
 ### B3. 引句閘門門檻 10 字，4-7 字的偽逐字引句完全不驗
 
