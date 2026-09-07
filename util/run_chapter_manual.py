@@ -27,8 +27,9 @@
      內的注記）→ check 指令對手寫 payload 補跑同一套 validator；
   2. require_sources 空來源護欄只在「要呼叫模型前」觸發，resume 路徑不會跑到
      → prompts／check 都前置明跑（利/民/申全毀的根因，見 memory）；
-  3. _invalidate_stale／_invalidate_after_entry 會連鎖刪除手寫 payload
-     → 各指令跑前先讀-only 模擬，會刪到手寫產物時擋下並說明修法，不靜默毀工。
+  3. _invalidate_stale／_invalidate_after_entry 會連鎖作廢手寫 payload
+     → 各指令跑前先讀-only 模擬，會動到手寫產物時擋下並說明修法，不靜默毀工；
+       真的作廢時 run_chapter 也只把產物搬到 .tmp/第x章/.trash/<UTC 時戳>/，不直接刪。
 """
 import argparse
 import json
@@ -302,10 +303,12 @@ def cmd_prompts(args):
     stale_removed, _ = simulate_invalidation(ctx)
     hand_hit = [k for k in stale_removed if k in HAND_NODES]
     if hand_hit and not args.confirm_stale:
-        print("⚠️ 上游（link_candidates 等）已改動，重跑會作廢並刪除下列產物：")
+        print("⚠️ 上游（link_candidates 等）已改動，重跑會作廢下列產物"
+              "（搬到 .tmp/第%d章/.trash/<UTC 時戳>/，非直接刪除）：" % ctx.chapter)
         for key in stale_removed:
-            print(f"   - {key}" + ("（手寫，刪了要重寫）" if key in HAND_NODES else ""))
+            print(f"   - {key}" + ("（手寫，作廢後要重寫）" if key in HAND_NODES else ""))
         print("確認要作廢請加 --confirm-stale；不想作廢就先還原上游改動。")
+        print("誤作廢時可從 .trash/<最新時戳>/ 取回；--confirm-stale 後回報會列出搬移清單。")
         return 1
     _require_sources(ctx)
     _require_candidate_similarity(ctx)
@@ -347,6 +350,12 @@ def cmd_prompts(args):
     # 只回寫上游兩個節點：手寫的 entry_content／chapter_content 基線仍由 run 收尾
     # 時決定，否則「先寫條目、後寫本章整理」的正常順序會被誤判成條目晚改。
     rc.save_pipeline_nodes(ctx, ("link_candidates.yaml", "link_candidates.md", "link_plan.yaml"))
+
+    trashed = [n for n in ctx.notes if n.startswith(rc._TRASH_NOTE_PREFIX)]
+    if trashed:
+        print("↻ 已作廢過期下游（搬到回收區，未刪除）：")
+        for note in trashed:
+            print(f"   - {note}")
 
     cap_entry = PromptCapture(manual_dir, "entry_batch", ctx=ctx)
     ctx.runner = cap_entry
@@ -664,7 +673,7 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     p_prompts = sub.add_parser("prompts", help="產出 M3/M6 實際 prompt 檔（不呼叫模型）")
     p_prompts.add_argument("--confirm-stale", action="store_true",
-                           help="上游改動會刪手寫 payload 時，確認照刪")
+                           help="上游改動會作廢手寫 payload 時確認照做；產物搬到 .tmp/第x章/.trash/ 不直接刪除")
     p_prompts.add_argument("--batch-size", type=int, default=None,
                            help="指定 M3 prompt 批次大小（預設為全不分批，全部合併入單一 prompt 檔）")
     p_check = sub.add_parser("check", help="以 fresh 路徑同套驗證檢查手寫 payload")

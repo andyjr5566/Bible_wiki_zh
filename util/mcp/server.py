@@ -1903,9 +1903,11 @@ def prepare_manual_payload_prompts(
 ) -> Dict[str, Any]:
     """Run manual ``prompts`` for M3/M6; it never calls a model endpoint.
 
-    When upstream edits would delete hand-written payloads, first call without
+    When upstream edits would retire hand-written payloads, first call without
     ``confirm_stale`` to inspect the warning.  Set it to true only after that
     review, exactly matching ``run_chapter_manual.py prompts --confirm-stale``.
+    Retired payloads are moved to ``.tmp/第x章/.trash/<UTC timestamp>/`` (not
+    deleted); ``confirm_stale=true`` runs list the moved files in the result.
     """
     try:
         canonical, _directory, _tmp = _chapter_context(book, chapter)

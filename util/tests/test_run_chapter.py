@@ -406,6 +406,72 @@ class OrchestratorTests(unittest.TestCase):
             )
             self.assertTrue(verse_links.exists() and chapter_content.exists())
 
+    def _add_candidate(self, root, name):
+        cand = self._candidates_path(root)
+        data = yaml.safe_load(cand.read_text(encoding="utf-8"))
+        data["candidates"].append({"name": name, "type": "原文"})
+        cand.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+    def test_stale_moves_payloads_to_trash(self):
+        # A1：作廢過期下游時，手寫 payload 搬到 .tmp/第x章/.trash/<UTC ts>/ 保命，
+        # 不是無備份的刪除。連跑兩次不互相覆蓋。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+            trash_root = tmp_dir / ".trash"
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            entry_yaml = tmp_dir / "entry_content" / f"{ENTRY_NAME}.yaml"
+            payload_before = entry_yaml.read_bytes()
+
+            self._add_candidate(root, "幔子")
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            # entry_content 目錄被作廢後仍重生；舊版搬進回收區而非刪除
+            self.assertTrue(entry_yaml.exists(), "作廢後 entry_content 應重生")
+            sessions = sorted(p for p in trash_root.iterdir() if p.is_dir())
+            self.assertEqual(1, len(sessions), "第一次作廢：一個回收 session")
+            trashed = sessions[0] / "entry_content" / f"{ENTRY_NAME}.yaml"
+            self.assertTrue(trashed.is_file(), "舊 entry_content 應被搬進回收區")
+            self.assertEqual(payload_before, trashed.read_bytes())
+            first_snapshot = sorted(
+                p.relative_to(sessions[0]).as_posix()
+                for p in sessions[0].rglob("*") if p.is_file()
+            )
+
+            # 第二次作廢：新 session，不覆蓋第一次
+            self._add_candidate(root, "鉤子")
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            sessions2 = sorted(p for p in trash_root.iterdir() if p.is_dir())
+            self.assertEqual(2, len(sessions2), "第二次作廢應建新的回收 session")
+            self.assertEqual(
+                first_snapshot,
+                sorted(
+                    p.relative_to(sessions2[0]).as_posix()
+                    for p in sessions2[0].rglob("*") if p.is_file()
+                ),
+                "第二次作廢不得覆蓋第一次回收區",
+            )
+
+    def test_delete_payloads_flag_skips_trash(self):
+        # --delete-payloads / delete_payloads=True：回到直接刪除，不建回收區。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._make_vault(tmp)
+            tmp_dir = root / "02 出埃及記" / ".tmp" / "第26章"
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+            )
+            self._add_candidate(root, "幔子")
+            run_chapter.run_chapter(
+                "出埃及記", 26, root=root, runner=fake_runner, index={}, homonyms={},
+                delete_payloads=True,
+            )
+            self.assertFalse((tmp_dir / ".trash").exists(), "--delete-payloads 不建回收區")
+
 
 class MatchPayloadTests(unittest.TestCase):
     def test_accepts_translit_suffix(self):

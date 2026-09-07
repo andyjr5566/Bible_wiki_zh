@@ -17,7 +17,7 @@
 | `lint_chapter_content` | 對**傳入文字**做 M6／M3 格式檢查，不讀任何路徑。 | 否 |
 | `scan_unsourced_tokens` | 以全庫 raw_data 補掃該章節點條目與渲染 md 的希伯來字母／拉丁音譯／簡體字。 | 否 |
 | `run_gates` | 跑核心收尾閘門（可選 `rebuild_index`），逐項回報 PASS／FAIL；每個 gate 可用 `timeout_seconds=600..900`。 | 是，`verify_links` 會更新報告；rebuild 時另更新索引 |
-| `prepare_manual_payload_prompts` | 執行 `run_chapter_manual.py prompts` 產出手寫 M3/M6 prompt。 | 是，可能在確認後作廢過期 payload |
+| `prepare_manual_payload_prompts` | 執行 `run_chapter_manual.py prompts` 產出手寫 M3/M6 prompt。 | 是，確認後會作廢過期 payload——搬到 `.tmp/第x章/.trash/<UTC 時戳>/`，非直接刪除 |
 | `check_manual_payloads` | 執行 `run_chapter_manual.py check --no-rewrite`；缺 M3/M6 payload 會明確判為 incomplete。 | 否 |
 | `render_manual_chapter` | 驗證通過後執行 `run_chapter_manual.py run`。 | 是，render／產生 verse links |
 | `preview_chapter_link_updates` | 驗證 B 類累積更新並產生一次性 preview token。 | 否 |

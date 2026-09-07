@@ -1,4 +1,8 @@
 
+# run_chapter 作廢過期下游時的回收區（搬移而非刪除，見 A1）：
+# 誤作廢時的取回點，可隨時清掉，不入庫。
+**/.tmp/**/.trash/
+
 # embedding 索引：大型可重建二進位（build_embedding_index.py 產生），不入庫
 util/output/embedding_index.npz
 util/output/embedding_index.meta.json

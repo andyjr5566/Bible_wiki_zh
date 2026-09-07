@@ -29,6 +29,7 @@ import json
 import re
 import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -78,7 +79,8 @@ def _call_model(prompt, *, validate, runner, label, task=None, extract=None):
 
 
 class ChapterContext:
-    def __init__(self, book, chapter, root=ROOT, runner=None, index=None, homonyms=None):
+    def __init__(self, book, chapter, root=ROOT, runner=None, index=None, homonyms=None,
+                 delete_payloads=False):
         self.book = canonical_book_name(book)
         self.chapter = int(chapter)
         self.root = Path(root)
@@ -86,6 +88,11 @@ class ChapterContext:
         self.index = index  # None → resolver 讀真實 link_index.json
         self.homonyms = homonyms
         self.tmp = book_directory(self.root, book) / ".tmp" / f"第{self.chapter}章"
+        # 作廢下游時預設「搬到 .trash/<UTC ts>/」而非直接刪除——手寫 payload
+        # （entry_content/*.yaml、chapter_content.yaml）是數小時的人工產物，
+        # 無備份的刪除踩過就回不來。真要永久刪除才傳 delete_payloads=True。
+        self.delete_payloads = bool(delete_payloads)
+        self._trash_session = None  # 本次 run 的回收區；lazily 建立
         self.manual_review = []
         # notes 與 manual_review 的差別是「要不要動手」：manual_review 會被
         # remediation 印成「結論：FAIL」，notes 只是說明流程做了什麼。
@@ -307,6 +314,73 @@ def _remove_node(path):
     return False
 
 
+# 作廢下游輸出時的退場路徑：預設搬到本章 .tmp 下的 .trash/<UTC timestamp>/，
+# 保留相對結構，讓「上游一改就連鎖刪掉手寫 payload」不再是無備份的損失。
+_TRASH_DIRNAME = ".trash"
+_TRASH_NOTE_PREFIX = "回收（未刪除）："
+
+
+def _trash_session_dir(ctx):
+    """本次 run 專用的回收區：.tmp/第x章/.trash/<UTC ts>[-N]/。
+
+    同一秒內第二次作廢（或連跑兩次）不覆蓋前一次：時間戳撞了就補序號。
+    第一次呼叫才建目錄，之後同一個 ctx 都用同一個 session 目錄。
+    """
+    if ctx._trash_session is not None:
+        return ctx._trash_session
+    base = ctx.tmp / _TRASH_DIRNAME
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    candidate = base / stamp
+    suffix = 2
+    while candidate.exists():
+        candidate = base / f"{stamp}-{suffix}"
+        suffix += 1
+    candidate.mkdir(parents=True, exist_ok=True)
+    ctx._trash_session = candidate
+    return candidate
+
+
+def _trash_node(ctx, path):
+    """把 path 搬進本次的回收區，保留相對 .tmp/第x章 的路徑；回傳目的地。"""
+    dest_dir = _trash_session_dir(ctx)
+    try:
+        rel = path.relative_to(ctx.tmp)
+    except ValueError:
+        rel = Path(path.name)
+    dest = dest_dir / rel
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(path), str(dest))
+    ctx.notes.append(
+        f"{_TRASH_NOTE_PREFIX}{rel.as_posix()} → "
+        f"{dest.relative_to(ctx.tmp).as_posix()}"
+    )
+    return dest
+
+
+def _retire_node(ctx, path):
+    """作廢一個過期的下游輸出：預設搬到回收區保命，ctx.delete_payloads 才真刪。
+
+    回傳是否真的動了東西（沿用 _remove_node 的語意，供呼叫端統計 removed）。
+    """
+    if not path.exists():
+        return False
+    if ctx.delete_payloads:
+        return _remove_node(path)
+    _trash_node(ctx, path)
+    return True
+
+
+def _log_trash_moves(ctx):
+    """把尚未印過的回收搬移訊息印到 stderr（真刪模式無訊息可印）。"""
+    logged = getattr(ctx, "_trash_logged", None)
+    if logged is None:
+        logged = ctx._trash_logged = set()
+    for note in ctx.notes:
+        if note.startswith(_TRASH_NOTE_PREFIX) and note not in logged:
+            logged.add(note)
+            _log("  ↳ " + note)
+
+
 def _load_pipeline_state(ctx):
     """讀上次跑完存的指紋基線；缺檔或壞檔回空 dict。"""
     state_path = ctx.path(_PIPELINE_STATE_FILE)
@@ -336,10 +410,11 @@ def _invalidate_stale(ctx):
                 break
         if stale:
             dirty.add(out_key)
-            if _remove_node(_node_path(ctx, out_key)):
+            if _retire_node(ctx, _node_path(ctx, out_key)):
                 removed.append(out_key)
     if removed:
         _log("⟳ 偵測到上游改動，已自動作廢下游並將重生：" + "、".join(removed))
+        _log_trash_moves(ctx)
     return removed
 
 
@@ -357,10 +432,11 @@ def _invalidate_edges(ctx, edges, message):
         if dep_key not in prev or current is None:
             continue                            # 無基線＝首次採樣，不作廢既有輸出
         if current != prev[dep_key]:
-            if _remove_node(_node_path(ctx, out_key)):
+            if _retire_node(ctx, _node_path(ctx, out_key)):
                 removed.append(out_key)
     if removed:
         _log(message + "：" + "、".join(dict.fromkeys(removed)))
+        _log_trash_moves(ctx)
     return removed
 
 
@@ -2779,14 +2855,15 @@ def validate_step(ctx, written):
 # orchestrate
 # --------------------------------------------------------------------------- #
 def run_chapter(book, chapter, root=ROOT, runner=None, index=None, homonyms=None,
-                entry_limit=None):
+                entry_limit=None, delete_payloads=False):
     if runner is None and API_DISABLED:
         raise ModelError(
             "run_chapter.py 的模型/API 路徑已停用；請使用 run_chapter_manual.py prompts/check/run，"
             "由人工填寫 M3/M6 payload。"
         )
     ctx = ChapterContext(
-        book, chapter, root=root, runner=runner, index=index, homonyms=homonyms
+        book, chapter, root=root, runner=runner, index=index, homonyms=homonyms,
+        delete_payloads=delete_payloads,
     )
     _invalidate_stale(ctx)
     plan = resolve_step(ctx)
@@ -2911,9 +2988,12 @@ def main():
     parser.add_argument("chapter", type=int)
     parser.add_argument("--limit-entries", type=int, default=None,
                         help="只處理前 N 個 C 類新條目（試跑品質用）")
+    parser.add_argument("--delete-payloads", action="store_true",
+                        help="作廢過期下游時真的刪除，而非搬到 .tmp/第x章/.trash/（預設搬移保命）")
     args = parser.parse_args()
     try:
-        result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries)
+        result = run_chapter(args.book, args.chapter, entry_limit=args.limit_entries,
+                             delete_payloads=args.delete_payloads)
     except (ModelError, OSError, ValueError, yaml.YAMLError) as exc:
         print(f"❌ {exc}")
         return 1
