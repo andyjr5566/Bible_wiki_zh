@@ -85,6 +85,7 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - **原文類候選名的括號音譯必須是本章來源實際出現過的拼寫**（先 `grep -i` raw_data 確認）；來源沒給音譯就用裸中文名，不可憑聖經工具書常識補配（利2「紀念份（azkarah）」實例：來源只給英文 memorial portion）。希伯來字母寫法同理，且更嚴：P4 validate 對候選檔／entry_content／chapter_content 逐字驗證希伯來字母的出處，查無出處＝error 擋 build（全庫實測抓到創47/出28-30/利1 共 18 筆歷史真陽性、0 誤報）；本章新建原文類名稱的拉丁音譯查無出處＝manual_review 提醒（拼寫變體無法機械排除）。
    - **STEP 的使用邊界**：它是原文證據層，不是第五套 commentary。可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域，但 lexicon 只是可能義域，不等於本節必然語境義；morphology 也不自行推出神學結論。STEP 可觸發原文候選，仍只收有研究／跨章累積／實質內容價值者；不為每個功能詞、詞形或 Strong 編號批量建頁，Strong 不是 wiki ID。比較 CT／GT／KC／BH 的共識時不得把 STEP 算一票。**STEP 未在 context projection 出現或 brief lexicon 未列某含義，不等於「STEP 否定該義」或「原文查無此義」；STEP absence 不得作為否定註釋延伸的證據。**
    - **原文資料採正面分層寫法**：先說 STEP 能直接確認的原文字形、lemma、Strong、morphology、本節譯義與簡要義域，再說「部分註釋進一步理解為……」或「結合其他經文，某些解釋進一步討論……」。除非 STEP 與註釋在 Hebrew／Strong／morphology／lexical identification 等事項上有明確、可驗證的衝突，否則避免寫成「不能由這個字推出」「這個字並不證明」「原文沒有這個意思」「這只是神學推論」或「不能從中文譯名倒推」。STEP 負責界定語言證據，commentary 負責呈現解經與神學延伸；兩者層次不同時並列呈現。
+   - **候選寫齊後先做存在性掃描**（`check_chapter_files` 步驟2 會驗這份紀錄）：一次把整章候選名丟給 `search_wiki_entries(queries=[...])`（08-27 起支援批次），把回傳的 `unmatched` 清單寫進 `.tmp/第x章/candidate_existence.md`。有 match 的候選要逐一確認是不是「同一概念、只是措辭不同」——是的話把候選名改成既有條目名（resolver 歸 A/B 累積），不要另建近似重複（承受為業→為業／產業、心都消化→心消化、驚慌與膽氣→使天下萬民驚恐懼怕⋯）。裸名查不到「X（字義）」型檔名，一律用 `search_wiki_entries` 不要用裸字串 find。
    - **候選寫齊後跑語義近鄰與重排報告**（候選定稿前必經，check_chapter_files 與 run_chapter_manual 會驗證 freshness）：
      `python util/semantic_lookup.py --candidates 【書名】 X`
      （`--no-rerank` 僅限離線診斷／除錯；正式生產閘門嚴格拒絕 `disabled` 狀態）

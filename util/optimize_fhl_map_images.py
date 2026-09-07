@@ -118,6 +118,9 @@ def write_manifest(entries: dict[str, dict], quality: int, minimum_reduction: fl
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gid-from", default="001", help="起始 gid（含）")
     parser.add_argument("--gid-to", default="999", help="結束 gid（含）")

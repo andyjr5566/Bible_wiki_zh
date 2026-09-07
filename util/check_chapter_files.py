@@ -683,6 +683,15 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
                 "（舊版 render 殘留；修正版不再輸出）——整卷完成後重跑 render 即消失。"
             )
 
+    # 候選存在性掃描紀錄：resolver 只靠字面比對，「承受為業→為業／產業」「心都消化
+    # →心消化」這種近似重複要由人把候選從新建 C 改成累積既有 B，閘門完全不擋（庫已
+    # 3000+ 條）。開章固定跑 search_wiki_entries(queries=[整章候選]) 把 unmatched
+    # 存成 candidate_existence.md；缺這份＝這一步沒做（C1）。
+    candidate_existence = tmp / "candidate_existence.md"
+    candidate_existence_ok = (
+        not (tmp / "link_candidates.yaml").exists() or candidate_existence.is_file()
+    )
+
     checks = [
         CheckResult(
             "步驟1｜經文本地檔",
@@ -707,6 +716,13 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             (tmp / "link_candidates.yaml").exists(),
             "從步驟2「建 link_candidates.yaml」開始：依 _config/schemas/link_candidates.schema.json "
             f"逐節核對經文與有效 raw text，寫 {tmp / 'link_candidates.yaml'}。",
+        ),
+        CheckResult(
+            "步驟2｜候選存在性掃描紀錄（candidate_existence.md）",
+            candidate_existence_ok,
+            "resolver 只做字面比對，近似重複（承受為業→為業／產業、心都消化→心消化）"
+            "要人把候選從新建 C 改成累積既有 B，閘門不擋。開章一次掃完整章候選："
+            f"search_wiki_entries(queries=[整章候選名])，把 unmatched 清單寫入 {candidate_existence}。",
         ),
         CheckResult(
             "步驟2｜candidate_similarity.md（候選語義近鄰報告與 freshness）",

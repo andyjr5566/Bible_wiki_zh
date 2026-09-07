@@ -104,6 +104,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     args = parse_args()
     urls = list(args.urls)
     if args.url_file:

@@ -576,6 +576,9 @@ def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict)
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
 

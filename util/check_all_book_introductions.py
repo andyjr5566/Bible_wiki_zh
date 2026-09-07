@@ -72,6 +72,9 @@ def _print_render_diff(content_path: Path, rendered_path: Path) -> None:
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     manifests = _configured_manifests()
     if not manifests:
         print("❌ No configured book introduction manifests found")

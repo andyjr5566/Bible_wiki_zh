@@ -13,6 +13,7 @@ Examples:
     python util/build_book_introduction_manifest.py 創世記 --write --force
 """
 
+import sys
 from __future__ import annotations
 
 import argparse
@@ -185,6 +186,9 @@ def _output_path(book_key: str) -> Path:
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(
         description="Build a book-level Introduction source manifest"
     )

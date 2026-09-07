@@ -23,9 +23,9 @@
 | B5 | ✅ | 主題發展的形狀規則靠 dry-run 拒絕才學到 | link_updates prompt | 每章重撞、浪費往返 |
 | B6 | ✅ | forced_pass 正在變成常態出口 | `util/agent_review.py` | gate 逐漸失去意義 |
 | B7 | 🔷 | reviewer finding 不可直接採納 | `agent_evidence_audit_prompt.md` | 依編造的 finding 改動內容 |
-| C1 | ⬜ | 重複條目只靠人工判讀擋 | SOP 步驟2 | 條目分岔，閘門不擋 |
+| C1 | ✅ | 重複條目只靠人工判讀擋 | SOP 步驟2 | 條目分岔，閘門不擋 |
 | C2 | ✅ | 正向孤兒沒有全庫掃描 | `util/check_existing_links.py` | 全庫缺漏無人掃 |
-| C3 | ⬜ | Windows 環境摩擦 | venv wrapper | 每支指令都要前綴 |
+| C3 | ✅ | Windows 環境摩擦 | venv wrapper | 每支指令都要前綴 |
 | C4 | ✅ | `全書目錄及綱要.md` 對每本新書都會缺 | render 的 nav 區塊 | 每章 nav 斷鏈且無閘門捕捉 |
 
 ---
@@ -317,6 +317,12 @@ orchestrator 代記前對 `missing` 類逐條抽查、查不到不採納。（`A
 
 **驗收**　缺該檔時 FAIL。
 
+**狀態**　✅ 完成。`check_chapter_files` 步驟2 加「候選存在性掃描紀錄（candidate_existence.md）」：
+`link_candidates.yaml` 存在但缺 `.tmp/第x章/candidate_existence.md` ＝FAIL（含 `--preflight`）。
+`agent_start_prompt.md` 步驟2 在「跑語義近鄰報告」前加一段：整章候選一次丟 `search_wiki_entries(queries=[...])`，
+`unmatched` 寫進紀錄；有 match 的逐一確認是否「同概念、只是措辭不同」→ 改用既有條目名走 A/B。
+測試：`test_candidate_existence_scan_record_required`。
+
 ### C2. 正向孤兒沒有全庫掃描
 
 **症狀**　反向有 `check_accumulation_orphans --all`，正向 `check_existing_links` 只吃單章 markdown 路徑。
@@ -342,6 +348,11 @@ orchestrator 代記前對 `missing` 類逐條抽查、查不到不採納。（`A
 **解**　`PYTHONIOENCODING=utf-8` 設進 venv 啟動 wrapper 或 `.env`。
 
 **驗收**　不帶前綴直接跑任一 util 腳本不炸。
+
+**狀態**　✅ 完成（採「腳本自帶保險絲」，比 `.venv` 內設定可攜——`.venv` 未入庫、CI 在 Linux）。
+本來就有 `console.utf8_stdio()`；補上所有仍缺的 `main()`：`agent_review.py`、`resolve_link_candidates.py`
+＋10 個 book-introduction／crawl／clean 腳本，`main()` 首行 inline `sys.stdout/stderr.reconfigure("utf-8")`
+（不加新 import，避免 package-context 匯入鏈斷掉）。掃描確認所有帶 `main()` 的 util 腳本都已覆蓋。
 
 ### C4. `全書目錄及綱要.md` 對每本新書都會缺
 

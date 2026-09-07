@@ -545,6 +545,9 @@ def write_plan_yaml(plan, book, chapter, root=ROOT, *, force_replan=False):
 
 
 def main():
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(
         description="將 link candidates 與全域 index 比對並產生 link plan。"
     )

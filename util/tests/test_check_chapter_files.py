@@ -218,6 +218,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(tmp_dir / "verse_links.yaml", "links")
             _write(tmp_dir / "chapter_content.yaml", "content")
             _write(tmp_dir / "quote_adjudication.md", "# 裁決\n\n0 處。")
+            _write(tmp_dir / "candidate_existence.md", "# 候選存在性\n\nunmatched：全部")
             _write(root / "01 創世記" / f"第{CHAPTER}章.md", "# 第1章")
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root)
@@ -240,6 +241,7 @@ class CheckChapterFilesTests(unittest.TestCase):
         _write(tmp_dir / "verse_links.yaml", "links")
         _write(tmp_dir / "chapter_content.yaml", "content")
         _write(tmp_dir / "quote_adjudication.md", "# 裁決\n\n0 處。")
+        _write(tmp_dir / "candidate_existence.md", "# 候選存在性\n\nunmatched：全部")
         return root / "01 創世記" / f"第{CHAPTER}章.md"
 
     def test_appendix_block_missing_when_index_has_resources_fails(self):
@@ -269,6 +271,23 @@ class CheckChapterFilesTests(unittest.TestCase):
                 checks = ccf.build_checks(BOOK, CHAPTER, root=root)
             appx = next(c for c in checks if "附錄資源區塊" in c.label)
             self.assertTrue(appx.ok, "區塊補回後應 PASS")
+
+    def test_candidate_existence_scan_record_required(self):
+        # C1：link_candidates.yaml 存在 → 必須有候選存在性掃描紀錄，否則 FAIL。
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root(tmp)
+            tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
+            _write(tmp_dir / "link_candidates.yaml", "candidates")
+
+            chk = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+                       if "候選存在性掃描" in c.label)
+            self.assertFalse(chk.ok)
+            self.assertIn("search_wiki_entries", chk.resume_hint)
+
+            _write(tmp_dir / "candidate_existence.md", "# 候選存在性\n\nunmatched：全部")
+            chk = next(c for c in ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
+                       if "候選存在性掃描" in c.label)
+            self.assertTrue(chk.ok)
 
     def test_quote_adjudication_record_required_once_rendered(self):
         # B3：章 md 已 render → 必須有 --min-chars 2 裁決紀錄，否則 FAIL。
@@ -328,13 +347,14 @@ class CheckChapterFilesTests(unittest.TestCase):
             _write(root / "raw_scripture" / BOOK / f"第{CHAPTER}章.txt", "1. 起初神創造天地。")
             self._write_valid_sources(root, tmp_dir)
             _write(tmp_dir / "link_candidates.yaml", "candidates")
+            _write(tmp_dir / "candidate_existence.md", "# 候選存在性\n\nunmatched：全部")
             _write(root / "util" / "output" / "link_index.json", "{}")
             _write(root / "_config" / "link_homonyms.yaml", "{}")
             self._write_synced_embedding_index(root)
             self._write_fresh_similarity_report(tmp_dir, root)
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
-            self.assertEqual(5, len(checks))
+            self.assertEqual(6, len(checks))
             failed = [res.label for res in checks if not res.ok]
             self.assertEqual([], failed)
 

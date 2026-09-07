@@ -318,6 +318,9 @@ def render(data: dict[str, Any]) -> str:
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(description="Render a book 書卷導論.md")
     parser.add_argument("content", type=Path)
     parser.add_argument("--output", type=Path, default=None)

@@ -14,6 +14,7 @@ cleaned text is intended as model input; ``source_notes.yaml`` remains the
 human-reviewed normalization layer used to prevent source-role confusion.
 """
 
+import sys
 from __future__ import annotations
 
 import argparse
@@ -108,6 +109,9 @@ def sha256_bytes(raw: bytes) -> str:
 
 
 def main() -> int:
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")  # Windows cp1252 保險絲
     parser = argparse.ArgumentParser(description="Fetch book-level introduction sources")
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output-dir", type=Path, default=None)
