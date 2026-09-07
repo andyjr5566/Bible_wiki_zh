@@ -15,18 +15,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install PyYAML numpy
-      - name: Verify Genesis book introduction render
-        run: |
-          python util/render_book_introduction.py \
-            "01 創世記/.tmp/introduction/introduction_content.yaml" \
-            > /tmp/genesis-book-intro.md
-          diff -u "01 創世記/書卷導論.md" /tmp/genesis-book-intro.md
-      - name: Validate Genesis book introduction
-        run: |
-          python util/check_book_introduction.py \
-            "01 創世記/.tmp/introduction/introduction_content.yaml" \
-            --manifest "raw_data/book_intro/創世記/source_manifest.yaml" \
-            --rendered "01 創世記/書卷導論.md"
+      - name: Validate all configured book introductions
+        run: python util/check_all_book_introductions.py
       - run: python -m unittest discover -s util/tests -v
       - run: python util/build_link_index.py --check
       - run: python util/validate_knowledge_base.py --base HEAD^
