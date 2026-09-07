@@ -9,89 +9,36 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install PyYAML
-      - name: Scan representative completed chapters
+      - name: Historical before-after scan
         run: |
           python - <<'PY'
+          import subprocess
           from pathlib import Path
-          from util.check_quote_fidelity import (
-              normalize, collect_targets, QUOTE_PATTERNS, ELLIPSIS_RE, MIN_FRAGMENT_CHARS,
-          )
-          from util.book_paths import book_directory
-          from util.source_excerpts import parse_manifest
+          import util.check_quote_fidelity as qf
 
-          ROOT = Path.cwd()
-          scripture_parts = []
-          for path in sorted((ROOT / 'raw_scripture').glob('*/第*章.txt')):
-              scripture_parts.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
-          SCRIPTURE = ''.join(scripture_parts)
-
-          def chapter_corpus_fast(book, chapter):
-              manifest = book_directory(ROOT, book) / '.tmp' / f'第{chapter}章' / 'source_manifest.md'
-              if not manifest.is_file():
-                  raise FileNotFoundError(manifest)
-              commentary = []
-              for _label, path in parse_manifest(manifest, ROOT):
-                  path = Path(path)
-                  if path.is_file():
-                      commentary.append(normalize(path.read_text(encoding='utf-8', errors='ignore')))
-              return ''.join(commentary)
-
-          def scan(book, chapter, min_chars):
-              commentary = chapter_corpus_fast(book, chapter)
-              total, misses = 0, []
-              for label, text in collect_targets(book, chapter, ROOT):
-                  seen = set()
-                  for pattern in QUOTE_PATTERNS:
-                      for match in pattern.finditer(text):
-                          quote = match.group(1).strip()
-                          if len(quote) < min_chars or quote in seen:
-                              continue
-                          if '／' in quote or '/' in quote:
-                              continue
-                          seen.add(quote)
-                          total += 1
-                          nq = normalize(quote)
-                          if nq in commentary or nq in SCRIPTURE:
-                              continue
-                          if ELLIPSIS_RE.search(quote):
-                              pieces = [f.strip() for f in ELLIPSIS_RE.split(quote) if f.strip()]
-                              fragments = [f for f in pieces if len(f) >= MIN_FRAGMENT_CHARS] or pieces
-                              if fragments and all((normalize(f) in commentary or normalize(f) in SCRIPTURE) for f in fragments):
-                                  continue
-                          misses.append((label, quote))
-              return total, misses
-
-          chapters = [
-              ('創世記', 1), ('創世記', 2), ('創世記', 3), ('創世記', 10), ('創世記', 20),
-              ('創世記', 30), ('創世記', 40), ('創世記', 46), ('創世記', 50),
-              ('出埃及記', 1), ('出埃及記', 12), ('出埃及記', 20), ('出埃及記', 25),
-              ('出埃及記', 26), ('出埃及記', 32), ('出埃及記', 40),
-              ('利未記', 1), ('利未記', 11), ('利未記', 12), ('利未記', 13), ('利未記', 14), ('利未記', 27),
-              ('民數記', 1), ('民數記', 11), ('民數記', 20), ('民數記', 25), ('民數記', 26), ('民數記', 36),
-              ('申命記', 1), ('申命記', 4), ('申命記', 12), ('申命記', 25), ('申命記', 32), ('申命記', 34),
+          root = Path.cwd()
+          original = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          cases = [
+              ('申12 BEFORE', 'abaeded45195a462952d8b50b9c5a86f8d2b6342', '申命記', 12),
+              ('申12 AFTER ', 'eec5b5024dcb59d7c6ad303cf8bc0003031f406f', '申命記', 12),
+              ('申25 BEFORE', '1f516f6e7bac30ce289b826f82b7505969f1c418', '申命記', 25),
+              ('申25 AFTER ', '23b735b7d3caa9a505b48c5878c86cf892ab2160', '申命記', 25),
           ]
-
-          for floor in (10, 2):
-              print(f'=== FLOOR {floor} ===')
-              grand_quotes = grand_misses = scanned = with_miss = 0
-              for book, chapter in chapters:
-                  try:
-                      total, misses = scan(book, chapter, floor)
-                  except FileNotFoundError:
-                      print(f'SKIP {book}{chapter}: no manifest')
-                      continue
-                  scanned += 1
-                  grand_quotes += total
-                  grand_misses += len(misses)
-                  if misses:
-                      with_miss += 1
-                  print(f'CHAPTER {book}{chapter}: quotes={total} misses={len(misses)}')
-                  for label, quote in misses:
-                      q = ' '.join(str(quote).split())
-                      print(f'  MISS | {label} | {q}')
-              print(f'TOTAL floor={floor}: chapters={scanned} quotes={grand_quotes} misses={grand_misses} chapters_with_miss={with_miss}')
+          try:
+              for label, sha, book, chapter in cases:
+                  subprocess.run(['git','checkout','--force','--detach',sha], check=True, stdout=subprocess.DEVNULL)
+                  print(f'=== {label} {sha[:8]} ===')
+                  for floor in (10, 2):
+                      total, misses, _ = qf.check_quotes(book, chapter, root=root, min_chars=floor)
+                      print(f'floor={floor} quotes={total} misses={len(misses)}')
+                      for source, quote in misses:
+                          print(f'  MISS | {source} | {" ".join(quote.split())}')
+          finally:
+              subprocess.run(['git','checkout','--force','--detach',original], check=True, stdout=subprocess.DEVNULL)
           PY
