@@ -1,0 +1,67 @@
+version: 2
+book: 約書亞記
+chapter: 1
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: 76af5639f57199b597d57645cc1b3b37bef25d5796d9bb2e2fc761191359a64f
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 69beb306a96e7c29832361ee81d977807a619f47d16236081d2db7bd1265e5f6
+      verdict: changes_required
+      findings_count: 6
+    - attempt: 2
+      reviewer: codex
+      sha256: 76af5639f57199b597d57645cc1b3b37bef25d5796d9bb2e2fc761191359a64f
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: 6935e1ed07402a3870acda8be981876fe5fdf331a1130d2e62ceed19906cccc2
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 716a122deb5a52db6c210e9c7ab8cae83fe2c6904e50385ae318081bec2dcb10
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: codex
+      sha256: 6935e1ed07402a3870acda8be981876fe5fdf331a1130d2e62ceed19906cccc2
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 4
+    sha256: 65667b17d5d656cb52e07c6b7048d8313ee78dcb1f78b3c687f2dd98ac641af4
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: e8c7d5ae43d42283ff519859ca4425cb0d455f2e7ba1593f3b986442b4404dc5
+      verdict: changes_required
+      findings_count: 12
+    - attempt: 2
+      reviewer: codex
+      sha256: b01952f1d96a4670c3b0406d643a26583d7c686e520e3faf1de6c6e5cca32d93
+      verdict: changes_required
+      findings_count: 1

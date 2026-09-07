@@ -3896,6 +3896,18 @@
     "status": "formal",
     "aliases": []
   },
+  "過河前當預備食物": {
+    "path": "link_folder/主題/過河前當預備食物.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "過河前當預備食物",
+    "status": "formal",
+    "aliases": [
+      "當預備食物"
+    ]
+  },
   "過河的四萬人與留守的七萬人": {
     "path": "link_folder/主題/過河的四萬人與留守的七萬人.md",
     "type": "主題",
@@ -13754,6 +13766,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亨通與順利（tsa.lech 與 sa.khal）": {
+    "path": "link_folder/原文/亨通與順利（tsa.lech 與 sa.khal）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "亨通與順利（tsa.lech 與 sa.khal）",
+    "status": "formal",
+    "aliases": []
+  },
   "亭子（qub.bah）": {
     "path": "link_folder/原文/亭子（qub.bah）.md",
     "type": "原文",
@@ -14905,6 +14925,16 @@
     "status": "formal",
     "aliases": []
   },
+  "帶著兵器（cha.mush）": {
+    "path": "link_folder/原文/帶著兵器（cha.mush）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "帶著兵器（cha.mush）",
+    "status": "formal",
+    "aliases": []
+  },
   "平安（shalom）": {
     "path": "link_folder/原文/平安（shalom）.md",
     "type": "原文",
@@ -15480,6 +15510,18 @@
     "title": "昂然無懼",
     "status": "formal",
     "aliases": []
+  },
+  "晝夜思想（ha.gah）": {
+    "path": "link_folder/原文/晝夜思想（ha.gah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "晝夜思想（ha.gah）",
+    "status": "formal",
+    "aliases": [
+      "ha.gah"
+    ]
   },
   "晨更": {
     "path": "link_folder/原文/晨更.md",
@@ -17064,6 +17106,18 @@
       "賄賂"
     ]
   },
+  "賜給（na.tan）": {
+    "path": "link_folder/原文/賜給（na.tan）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "賜給（na.tan）",
+    "status": "formal",
+    "aliases": [
+      "na.tan"
+    ]
+  },
   "賠償": {
     "path": "link_folder/原文/賠償.md",
     "type": "原文",
@@ -17324,6 +17378,16 @@
     "type": "原文",
     "secondary_types": [],
     "title": "過去與發怒同一字根（a.var）",
+    "status": "formal",
+    "aliases": []
+  },
+  "違背命令（ma.rah）": {
+    "path": "link_folder/原文/違背命令（ma.rah）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "違背命令（ma.rah）",
     "status": "formal",
     "aliases": []
   },
@@ -28231,6 +28295,16 @@
       "三天路程是否為欺騙"
     ]
   },
+  "三日之內與差派探子的先後之爭": {
+    "path": "link_folder/解經爭議/三日之內與差派探子的先後之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "三日之內與差派探子的先後之爭",
+    "status": "formal",
+    "aliases": []
+  },
   "中閂從這一頭通到那一頭的難題": {
     "path": "link_folder/解經爭議/中閂從這一頭通到那一頭的難題.md",
     "type": "解經爭議",
@@ -31779,6 +31853,9 @@
   "逃奴條例": {
     "alias_of": "逃奴不可交還主人的條例"
   },
+  "當預備食物": {
+    "alias_of": "過河前當預備食物"
+  },
   "隨意吃飽了葡萄": {
     "alias_of": "過路取食的條例"
   },
@@ -33984,6 +34061,9 @@
   "「斬斷你的頭」/「從你將你的頭抬起來」": {
     "alias_of": "斬斷你的頭_從你將你的頭抬起來"
   },
+  "ha.gah": {
+    "alias_of": "晝夜思想（ha.gah）"
+  },
   "ru.ach chokh.mah": {
     "alias_of": "智慧的靈（ru.ach chokh.mah）"
   },
@@ -34412,6 +34492,9 @@
   },
   "賄賂": {
     "alias_of": "賄賂使智慧人的眼變瞎（sha.chad）"
+  },
+  "na.tan": {
+    "alias_of": "賜給（na.tan）"
   },
   "以賽亞書 66": {
     "alias_of": "賽66（Yeshayahu 66）"

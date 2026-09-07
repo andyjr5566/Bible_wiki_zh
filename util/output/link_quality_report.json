@@ -1,15 +1,8 @@
 {
-  "total_warnings": 198,
+  "total_warnings": 202,
   "critical_count": 0,
-  "warning_count": 198,
+  "warning_count": 202,
   "warnings": [
-    {
-      "type": "alias_target_conflict",
-      "severity": "warning",
-      "source": "申命記/第28章.md",
-      "target": "咒詛",
-      "message": "同一 alias「咒詛」指向多個 target: 不聽從神的五層漸進懲罰（利26：14-39）, 咒詛（a.rar 與 qa.vav）"
-    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -449,7 +442,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第1章",
-      "message": "同一 alias「第1章」指向多個 target: 04 民數記/第1章, 05 申命記/第1章"
+      "message": "同一 alias「第1章」指向多個 target: 04 民數記/第1章, 05 申命記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -484,7 +477,7 @@
       "severity": "warning",
       "source": "link_folder/人物/流便.md",
       "target": "第1章",
-      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -499,6 +492,13 @@
       "source": "link_folder/人物/猶大支派.md",
       "target": "第34章",
       "message": "同一 alias「第34章」指向多個 target: 04 民數記/第34章, 05 申命記/第34章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/瑪拿西.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 04 民數記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -545,6 +545,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/人物/約書亞.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 05 申命記/第1章, 06 約書亞記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/人物/約瑟.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 05 申命記/第33章"
@@ -582,7 +589,7 @@
       "severity": "warning",
       "source": "link_folder/人物/迦得（萬幸）.md",
       "target": "第1章",
-      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章"
+      "message": "同一 alias「第1章」指向多個 target: 02 出埃及記/第1章, 04 民數記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -625,6 +632,13 @@
       "source": "link_folder/人物/雅各.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 03 利未記/第26章, 05 申命記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/伯拉大河.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 05 申命記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -702,6 +716,13 @@
       "source": "link_folder/地點/約但河.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 04 民數記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/約但河.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 05 申命記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",
@@ -786,6 +807,13 @@
       "source": "link_folder/主題/內幔（隔聖所至聖所的幔子）.md",
       "target": "第4章",
       "message": "同一 alias「第4章」指向多個 target: 03 利未記/第4章, 04 民數記/第4章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/主題/應許之地的四至.md",
+      "target": "第1章",
+      "message": "同一 alias「第1章」指向多個 target: 05 申命記/第1章, 06 約書亞記/第1章"
     },
     {
       "type": "alias_target_conflict",

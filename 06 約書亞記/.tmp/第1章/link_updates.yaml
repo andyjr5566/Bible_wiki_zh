@@ -1,0 +1,383 @@
+book: 約書亞記
+chapter: 1
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1節神直接對「摩西的幫手，嫩的兒子約書亞」說話，全章的命令、發令與百姓回應都圍著他。第2節命他起來過約但河，第6、7、9節三次要他剛強壯膽，第8節要他晝夜思想律法書。第10、12節他隨即吩咐官長並對河東二支派半說話，第16至18節百姓應允聽從他，如同從前聽從摩西。GT《綜合解讀》說約書亞原來的名字是「何希阿」，被摩西改名為「約書亞」，意思是「耶和華是拯救」；GT《啟導本》說他雖已八十多歲、身經百戰，但初承偉大領袖摩西肩負的大任，面對強敵，難免膽怯。
+  relation: 條目此前記的是他作助手、探子與被按立的階段，申31:23 神也已經親自囑咐過他；本章是他實際承擔全國領導的第一章，命令、發令與百姓的效忠都落在他身上。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第1節「耶和華的僕人摩西死了以後」是全卷的起點；STEP 顯示本章共11次出現摩西（H4872）。第2節神說「我的僕人摩西死了」，第3、7節以摩西為應許與律法的依據，第13、14、15節以摩西為河東分地與約定的依據，第17節百姓以聽從摩西為聽從約書亞的標準。KC 說摩西的名字在約書亞記出現約六十次；照他的說法，摩西保有他的位置，但保有的方式從活著的中保換成了成文的神的話。
+  relation: 條目記到申34 摩西之死為止，本章是他死後的第一章：他本人退場，他的名字卻成為新領袖權柄與百姓順服的共同依據。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 75
+    - 76
+    definition: keep
+    development: keep
+- title: 約書亞承接摩西
+  path: link_folder/事件/約書亞承接摩西.md
+  summary: 第1節摩西一死，神就直接對約書亞說話；第5節「我怎樣與摩西同在，也必照樣與你同在」；第17節百姓說「我們從前在一切事上怎樣聽從摩西，現在也必照樣聽從你」。GT《研經資料》說約書亞在此謙和的把領導權的根源追溯到摩西（第13至15節要兩支派半追念摩西的吩咐），而兩支派半帶頭絕對服從約書亞，也讓其他可能的競爭者很難取的比約書亞優渥的地位。BH 說百姓的順服誓言在以色列預備過河、承受神所應許之地時是必要的。
+  relation: 民27 是按手立他，申31 是當眾交託，本章是實際生效：神親自發令、約書亞立即下令全營預備過河、百姓公開承認。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 耶和華的僕人摩西（e.ved 與 al pi）
+  path: link_folder/原文/耶和華的僕人摩西（e.ved 與 al pi）.md
+  summary: 第1、13、15節三次稱摩西為「耶和華的僕人」，STEP 為 'E.ved（H5650）；第2、7節神自己說「我的僕人摩西」（'av.D/i）。CT 說『耶和華的僕人』指轉達並監督遵行神命令的人。GT《聖經精讀本》說「耶和華的僕人」這個稱號曾用於亞伯拉罕、以撒、雅各、大衛與眾先知，以及全體以色列百姓。BH 說這個稱號尊崇摩西是神忠心的立約領袖、先知與代求者。同一節裡約書亞的身分則是另一個字：摩西的「幫手」me.sha.Ret（H8334）。
+  relation: 申34 用這個稱號送摩西下場，本章用它作為新命令的依據：第13、15節要兩支派半追念的，正是「耶和華的僕人摩西」所吩咐的話。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:34
+      - 約書亞記:1
+- title: 侍立事奉（a.mad、sha.rat）
+  path: link_folder/原文/侍立事奉（a.mad、sha.rat）.md
+  summary: 第1節「摩西的幫手」，STEP 為 me.sha.Ret（H8334，Piel 分詞），與申10:8 利未人的「事奉」同一個字。CT 原文字義給「幫手」伺候，服事；GT《研經資料》說摩西的「幫手」原文是「伺候」、「服事」的分詞型態，是「助手」的意思。GT《綜合解讀》說約書亞自從出埃及以來，一直是「摩西的幫手」，並列出出24:13、出33:11、民11:28。BH 說多年在摩西身邊的謙卑服事預備了他，使他能以順服、勇氣與倚靠神來帶領以色列。
+  relation: 條目此前三章都用這個字描述利未人與祭司的職分，本章是它第一次用在一個非祭司的個人身上——而這個人正要從幫手變成領袖。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第2節「和眾百姓過這約但河」是全章的中心命令，第11、14、15節共四次出現（STEP 均為 hai./yar.Den，H3383）。CT 說約但河源於黑門山西北部，經加利利海，流入死海，平時河寬不足二百公尺，春季洪泛時超過一千公尺，水流湍急，很難過渡。GT《啟導本》說以色列人過約但河時值「收割的日子」，為陽曆四、五月間。KC 通篇把約但河讀成死亡之河，說它表明主耶穌的死與復活，並說以色列必須過約但河才能進入那地。
+  relation: 條目此前累積的多是安營、畫界與河東河西的位置描述，本章把這條河變成一道帶期限的動員令：約書亞就任後第一件事，就是命全營三日之內過這約但河。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第4節「從曠野和這利巴嫩」把曠野列為應許之地的一個界標。GT《啟導本》說「曠野」包括南地與西奈半島，為南邊的界限；GT《串珠》說也許是指東南的阿拉伯曠野；GT《研經資料》說是應許之地南部雨量較少的旱漠區域。GT《舊約背景註釋》的華爾頓另說「曠野」包圍了這地南面和東面的疆界。KC 把它讀成邊界之外世界的一種特質，說曠野代表乾旱。
+  relation: 條目此前記的是以色列在曠野裡的四十年，本章的曠野換了功能：它從走過的路變成新家園的一條邊。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 利巴嫩
+  path: link_folder/地點/利巴嫩.md
+  summary: 第4節「從曠野和這利巴嫩」，各家同指北界。GT《串珠》說「利巴嫩」為以色列領土的北界；GT《啟導本》說「黎巴嫩」即今黎巴嫩境，為北界；GT《研經資料》說字義是「潔白」，是位於以色列北方的一座多樹木的山，並指出七十士譯本和武加大譯本等都沒有這個字。CT 原文字義同樣給「利巴嫩」潔白。GT《舊約背景註釋》則把黎巴嫩與幼發拉底河一起讀成北界的東西兩端。
+  relation: 申3:25 摩西求神容他過去看利巴嫩，申11:24 用它畫界；本章是同一個界標在約書亞名下重述一次，並帶出七十士譯本沒有這個字的異文問題。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 伯拉大河
+  path: link_folder/地點/伯拉大河.md
+  summary: 第4節「直到伯拉大河」，STEP 為 ne.har- pe.Rat（H5104H＋H6578）。GT《串珠》說「伯拉大河」即今日的幼發拉底河，為東界；GT《啟導本》說「伯拉大河」就是幼發拉底河，乃東界。CT 原文字義給「伯拉」豐收。GT《舊約背景註釋》另說在其他有關應許地疆界的討論中，幼發拉底河是指這河在艾瑪爾一帶轉北的地區。KC 把它列為東邊的界標，並說江河象徵豐裕。
+  relation: 條目此前記創2、創15、創31 與申1、申11 的用法，本章是它作為應許地界標在約書亞任內第一次被重述。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 大海（地中海）
+  path: link_folder/地點/大海（地中海）.md
+  summary: 第4節「又到大海日落之處，都要作你們的境界」，STEP 為 hai./Yam ha./ga.Dol me.Vo' ha./Sha.mesh（H3220G、H1419J、H3996、H8121）。CT 說『大海日落之處』指西界地中海（參民三十四6）。GT《串珠》說「大海」指地中海，為西界；GT《綜合解讀》說「大海日落之處」指迦南地西邊的地中海。KC 把海讀成動盪與患難的象徵。
+  relation: 民34 用大海定西界、申11 重述，本章把同一條界線放進神給約書亞的應許裡，並用「日落之處」多給了一個方位說法。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 赫人
+  path: link_folder/人物/赫人.md
+  summary: 第4節「赫人的全地」，STEP 為 ha./chi.Tim（H2850）。各家說法不一：CT 說『赫人的全地』指今敘利亞的北面，神曾應許亞伯拉罕賜給他的後裔；GT《綜合解讀》說「赫人的全地」代稱整個迦南地；GT《啟導本》說赫人退居北疆一隅已數百年，迦南仍稱為「赫人之地」；GT《雷氏研讀本》指出學者常認為是敘利亞北面，但這句子在七十士譯本和申命記十一章24節都沒有出現；GT《舊約背景註釋》說赫人的全地最有可能是指敘利亞，赫人帝國在主前一二○○年左右滅亡之後，很多赫人社群都在附近地區定居。KC 說赫人是迦南七族之一，這裡單提他們，可能因為他們是最可怕的敵人。
+  relation: 條目此前記的是族群本身與他們在創世記、出埃及記的出現，本章把「赫人的全地」當成疆界描述的一部分，也因此帶出這句話究竟指多大範圍的分歧。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 應許之地的四至
+  path: link_folder/主題/應許之地的四至.md
+  summary: 第4節一口氣列出曠野、利巴嫩、伯拉大河、赫人的全地與大海日落之處，末句「都要作你們的境界」，STEP 的「境界」是 ge.vu.le./Khem（H1366H）。GT《串珠》與《啟導本》都把它讀成南、北、東、西四界；GT《舊約背景註釋》的華爾頓另說「曠野」包圍了這地南面和東面的疆界，黎巴嫩和幼發拉底河是北界的東西兩端。各家對這片地何時到手也不一致：GT《啟導本》說以色列人要到所羅門王時代，才得到此廣大土地；GT《雷氏研讀本》說這應許要到千禧年的時候才能完全實現；GT《聖經精讀本》說以色列百姓卻未曾確保這一切地界；KC 說按第4節所呈現的樣子，以色列從來沒有擁有過。
+  relation: 申1:7 與申11:24 兩次畫過同一片地，本章是第三次，也是第一次對約書亞說。申命記的註釋早已討論過這片疆域何時到手，本章的新東西是四家在同一節底下並排給出不同判斷，以及 GT《舊約背景註釋》那種不照四方切的畫法。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:1
+      - 申命記:11
+      - 約書亞記:1
+- title: 腳掌可踏之處
+  path: link_folder/原文/腳掌可踏之處.md
+  summary: 第3節「凡你們腳掌所踏之地，我都照著我所應許摩西的話賜給你們了」，STEP 為 tid.Rokh kaf- rag.le./Khem（H1869 da.rakh、H3709H kaph、H7272 re.gel），與申11:24 是相同的組合；GT《研經資料》明說申11:24-25 是這一段的平行經文。CT 說『腳掌所踏之地』意指征服佔領的地面。GT《啟導本》說「腳」是權力的象徵，被踏在腳下表示征服（參詩一一〇1），以色列人腳掌踏過之地，便取得所有權。KC 用遺產作比方：知道自己因繼承而富有是一回事，去承接並享用又是另一回事，所以必須把腳踏上去。
+  relation: 申2:5 用這個量詞說以東的地連一個腳掌可踏之處都不給以色列，申11:24 用它說以色列腳掌所踏之地都必歸他們；本章是同一句話在真要過河的時刻對新領袖說出來，而且「賜給」在原文是完成式。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:2
+      - 申命記:11
+      - 約書亞記:1
+- title: 勉勵他使他膽壯（cha.zaq、a.mats）
+  path: link_folder/原文/勉勵他使他膽壯（cha.zaq、a.mats）.md
+  summary: 「剛強壯膽」在本章出現四次：第6、7、9節是耶和華對約書亞說，第18節是河東二支派半對他說。STEP 顯示四次都是 cha.Zak（H2388G）加 ve./'e.Matz（H553），第7節在這兩個動詞之後另有一個 me.'Od（H3966，exceedingly）。CT 說『剛強』重在指在信心上信靠神，『壯膽』重在指在心志上勇敢。GT《聖經精讀本》說「剛強」意味著手臂充滿了力量，「壯膽」指膝蓋有力量而站得穩。GT《綜合解讀》說神的「應許」是「剛強壯膽」的根據，神的「律法」是「剛強壯膽」的指引，神的「同在」是「剛強壯膽」的力量。KC 說約書亞雖然是勇敢的人，仍然被鼓勵。
+  relation: 申3:28 是摩西去使他膽壯，申31 是摩西與耶和華先後叫他自己剛強；本章第一次由百姓對領袖說這句話，四次裡有一次是由下往上的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 申命記:31
+      - 約書亞記:1
+- title: 神的同在
+  path: link_folder/神學/神的同在.md
+  summary: 第5節「我怎樣與摩西同在，也必照樣與你同在」，第9節「耶和華─你的神必與你同在」，第17節百姓說「惟願耶和華─你的神與你同在，像與摩西同在一樣」。STEP 顯示這幾處都用介系詞 'im（H5973A）加人稱後綴。CT 說神的同在是成功的保證。GT《綜合解讀》說神的「同在」是「剛強壯膽」的力量，並說約書亞並不是憑著自己的順服而得勝，而是神的同在讓他能夠順服而得勝。BH 說約書亞不需要成為另一個摩西，他需要的是那位曾扶持摩西的同一位信實的神。
+  relation: 條目此前多在會幕、聖所與節期的脈絡裡累積，本章把同在放進領袖交接：神用「像與摩西一樣」作新領袖權柄的憑據，百姓也用同一句話作祝福。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 必不撇下你，也不丟棄你（ra.phah 與 a.zav）
+  path: link_folder/原文/必不撇下你，也不丟棄你（ra.phah 與 a.zav）.md
+  summary: 第5節「我必不撇下你，也不丟棄你」，STEP 為 'ar.pe./Kha（H7503 ra.phah）與 'e.'ez.Ve./ka（H5800A a.zav），與申31:6、8 是同一對動詞。CT 原文字義給「撇下」下沉，放鬆；「丟棄」離去，棄絕，並說「不撇下你」和「不丟棄你」是同義的，並列是為了強調。KC 說不撇下的意思是祂不會失信、永不叫我們失望，不丟棄的意思是祂永不撇下我們獨自一人，並把它接到來13:5。BH 說摩西死前已經把同樣的保證給了以色列與約書亞，希伯來書則把它用在活在神看顧下的信徒身上。
+  relation: 申31 是摩西替神說這句話（第6節對眾人、第8節對約書亞），本章是神親口對約書亞說同一句話——條目此前只有轉述的一層，這裡多了直說的一層。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:31
+      - 約書亞記:1
+- title: 律法書放在約櫃旁
+  path: link_folder/主題/律法書放在約櫃旁.md
+  summary: 第8節「這律法書不可離開你的口」，STEP 為 se.Fer ha./to.Rah（H5612H＋H8451）。GT《啟導本》說「這律法書」指神藉摩西所傳的一切律法，包括《出埃及記》、《利未記》和《民數記》中所記載的律法，以及《申命記》中摩西作的講解。GT《雷氏研讀本》說留意律法在這時已經寫成，而且被奉為權威。BH 說律法書就是藉摩西所傳的五卷書，啟示神的約、命令、應許與作為。KC 說約書亞能治理百姓的前提，是他自己先讓上頭的權柄治理他，所以他必須聽神的話。
+  relation: 申31:9-13 吩咐每七年向全會眾宣讀這律法，申31:26 把它放在約櫃旁作見證；本章則把同一卷書交到領袖個人身上：不離開你的口、晝夜思想、謹守遵行。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:31
+      - 約書亞記:1
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: 第10節「於是，約書亞吩咐百姓的官長說」，第11節官長要走遍營中傳令。CT 原文字義給「官長」官長，官員，並說這表示約書亞負起全責，開始發號司令。GT《啟導本》說「百姓的官長」當為摩西在各支派中所立的千夫長、百夫長等管理百姓的人。GT《聖經精讀本》說在曠野生活中，官長是特定血緣團契的頭目，其作用是將領袖的指示傳達給百姓或召集戰鬥人員。BH 說官長把命令帶遍以色列有秩序的營盤，觸及每一個支派與家庭。
+  relation: 條目此前記的是官長在出埃及、獻祭與戰爭條例中的角色，本章是他們第一次在新領袖手下運作，成為約書亞第一道命令的傳遞管道。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第12節「約書亞對流便人、迦得人，和瑪拿西半支派的人說」。CT 原文字義給「流便」看哪一個兒子；GT《研經資料》說「流便」字義是「看哪! 一個兒子」，是雅各的長子。第13至15節要他們追念摩西的約定：妻子、孩子和牲畜留在約但河東，大能的勇士帶著兵器在弟兄前面過去，等到弟兄也得享平安才可以回來。第16至18節他們應允聽從。
+  relation: 民32 是他們開口求河東之地，申3 是摩西定下條件；本章是條件到期的一章，而他們自己當眾承諾照辦。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 第12節「迦得人」。CT 原文字義給「迦得」軍隊，財富；GT《研經資料》說「迦得」字義是「侵略者」、「軍隊」、「財富」，是利亞的使女悉帕所生的。第14節要他們中間一切大能的勇士帶著兵器在弟兄前面過去。GT《聖經精讀本》根據4:13 說兩個半支派參加戰爭的人數約有四萬人。
+  relation: 條目此前記到申33 的祝福為止，本章是迦得在應許之地戰役中第一次被點名，而且是要走在最前面。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第12節「瑪拿西半支派的人」。CT 原文字義給「瑪拿西」導致遺忘；GT《研經資料》說「瑪拿西」字義是「導致遺忘」，是約瑟的長子。本章把瑪拿西半支派與流便、迦得並列，一同承受第13至15節的條件與第16至18節的承諾。
+  relation: 條目此前記的是這個支派被切成兩半的過程，本章是河東那一半第一次以「半支派」的身分被新領袖點名並被要求履約。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第12至15節約書亞要流便人、迦得人和瑪拿西半支派「追念耶和華的僕人摩西所吩咐你們的話」，並重申三項內容：妻子、孩子和牲畜可以留在河東摩西所給的地；一切大能的勇士要帶著兵器在弟兄前面過去；等到弟兄也得享平安並得著地業，才可以回自己所得之地承受為業。第16至18節他們全部應允，還加上違背者處死的話。GT《綜合解讀》說新上任的領袖約書亞並沒有為了討好他們而改變計畫，反倒提醒他們要「追念耶和華的僕人摩西」所吩咐的話。KC 說他們得以住在約但河曠野那一邊的條件，就是一同去攻取那地，而這是他們答應過的。BH 說安頓好的家園與牲畜並沒有免除他們的立約責任。
+  relation: 民32 是談判、民34 與申3 是分地與定條件，本章是履約的一章：條件被當眾重述，當事人當眾應允。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 申命記:3
+      - 約書亞記:1
+- title: 得享平安（nu.ach）
+  path: link_folder/原文/得享平安（nu.ach）.md
+  summary: 第13節「耶和華─你們的神使你們得享平安」與第15節「等到耶和華使你們的弟兄像你們一樣得享平安」。STEP 顯示第13節是 me.Ni.ach（H5117，Hiphil 分詞）。CT 說『得享平安』指終止飄流，得到定居之地，可以安息下來。GT《研經資料》說「平安」原文作「休息」，型態是單數陽性分詞；GT《綜合解讀》說「得享平安」原文是「得享安息」，並說百姓爭戰的目的是要進入安息，爭戰的結果是要得著安息。BH 說神所應許的安息是在祂所賜的地業裡安穩定居。
+  relation: 申3:20 用這個字定下兩支派半回家的時間點，本章由約書亞把同一個條件再說一次，而且分成兩層：河東的人已經得享平安，河西的弟兄還沒有。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 約書亞記:1
+- title: 勇士（cha.yil）
+  path: link_folder/原文/勇士（cha.yil）.md
+  summary: 第14節「你們中間一切大能的勇士都要帶著兵器在你們的弟兄前面過去」，STEP 為 gi.bo.Rei ha./Cha.yil（H1368 gib.bor 加 H2428G cha.yil）。CT 說『大能的勇士』指戰鬥人員，亦即從二十歲以外、能出去打仗的（參民二十六2）；GT《啟導本》說是年滿20歲，能使用兵器英勇作戰的人；GT《研經資料》說「大能的勇士」原文是「強壯的軍隊」。BH 說他們最強的戰士要與其餘以色列人一同過約但河，並在戰役中站在前列。
+  relation: 申3:18 摩西對兩支派半下的是同一道命令，本章由約書亞再下一次；中文幾乎一樣，原文用的詞卻換了一組——申3:18 是 be.nei- Cha.yil，本章是 gi.bo.Rei ha./Cha.yil，共用的只有 cha.yil 這個字。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 約書亞記:1
+- title: 為業（ye.ru.shah）
+  path: link_folder/原文/為業（ye.ru.shah）.md
+  summary: '第11節「進去得耶和華─你們神賜你們為業之地」與第15節「並且得著耶和華─你們神所賜他們為業之地，那時才可以回你們所得之地，承受為業」。STEP 顯示這四處都是動詞形態 la./Re.shet、le./rish.Ta/h、ve./ya.re.Shu、vi./rish.Tem（H3423H，簡要詞典義 ya.rash: to possess: take），與申2:24、申3:18 是同一個 Extended Strong。GT《研經資料》指出整章裡面出現四次「得、繼承[03423]」。'
+  relation: 條目此前已收申2 的名詞 ye.ru.Shah 與同章第24節的動詞 Rash，以及申3 名詞動詞並用的情形；本章四處全是動詞形態，講的都是要去取得的那個動作。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: '第6節「因為你必使這百姓承受那地為業」，STEP 為 tan.Chil（H5157，簡要詞典義 na.chal: to inherit，Hiphil），是使役語態，動作者是約書亞。GT《研經資料》把「使這百姓承受....為業」譯成「使這百姓繼承」。CT 原文字義給「承受」取得產業。BH 說約書亞要帶領以色列取得迦南，並把地分給各支派。'
+  relation: 條目此前累積的多是名詞 na.cha.lah 處理誰得哪一份；本章這一處是同一字根的使役動詞，主詞是人：神要約書亞去使百姓承受那地。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt

@@ -1,0 +1,160 @@
+book: 約書亞記
+chapter: 1
+candidates:
+  - name: 約書亞
+    type: 人物
+    section: 人物
+    evidence: 第1節「耶和華曉諭摩西的幫手，嫩的兒子約書亞」；第10、12、16節他發令、對河東二支派半說話、接受百姓回應。本章是他正式接任後的第一段記載。
+  - name: 摩西
+    type: 人物
+    section: 人物
+    evidence: 第1節「耶和華的僕人摩西死了以後」；第3、5、7、14、15、17節反覆以摩西為約書亞權柄與命令的依據。
+  - name: 約書亞承接摩西
+    type: 事件
+    section: 人物
+    evidence: 第1節「摩西的幫手，嫩的兒子約書亞」，第5節「我怎樣與摩西同在，也必照樣與你同在」，第17節百姓說「我們從前在一切事上怎樣聽從摩西，現在也必照樣聽從你」。交接在本章實際生效。
+    surfaces:
+      - 嫩的兒子約書亞
+  - name: 耶和華的僕人摩西（e.ved 與 al pi）
+    type: 原文
+    section: 原文
+    evidence: 第1、13、15節三次稱摩西為「耶和華的僕人」；STEP 為 'E.ved（H5650），第2、7節神自稱「我的僕人摩西」（'av.D/i）。
+  - name: 侍立事奉（a.mad、sha.rat）
+    type: 原文
+    section: 原文
+    evidence: 第1節「摩西的幫手」，STEP 為 me.sha.Ret（H8334，sha.rat），Piel 分詞。CT 原文字義「幫手」伺候，服事；GT 說原文是「伺候」、「服事」的分詞型態。與利未人「侍立事奉」同一個字根，用在個人助手身上。
+    surfaces:
+      - 幫手
+  - name: 約但河
+    type: 地點
+    section: 地點
+    evidence: 第2節「和眾百姓過這約但河」，第11、14、15節四次出現。CT 說明河長、河寬與春汛；GT 說平常寬約25-30公尺，春汛時耶利哥附近可達1000公尺。
+  - name: 曠野
+    type: 地點
+    section: 地點
+    evidence: 第4節「從曠野和這利巴嫩」；各家指這是應許之地的南界旱漠地帶。
+  - name: 利巴嫩
+    type: 地點
+    section: 地點
+    evidence: 第4節「從曠野和這利巴嫩」，各家同指北界山地。
+  - name: 伯拉大河
+    type: 地點
+    section: 地點
+    evidence: 第4節「直到伯拉大河」，STEP 為 ne.har- pe.Rat（H5104H＋H6578），即幼發拉底河，各家同指東界。
+  - name: 大海（地中海）
+    type: 地點
+    section: 地點
+    evidence: 第4節「又到大海日落之處」，STEP 為 hai./Yam ha./ga.Dol me.Vo' ha./Sha.mesh，各家同指西界地中海。
+  - name: 赫人
+    type: 人物
+    section: 人物
+    evidence: 第4節「赫人的全地」，STEP 為 ha./chi.Tim（H2850）。各家對這一句的地理指涉有不同說明。
+  - name: 應許之地的四至
+    type: 主題
+    section: 主題
+    evidence: 第4節整節列出曠野、利巴嫩、伯拉大河、赫人全地、大海五個界標，末句「都要作你們的境界」，STEP 的「境界」是 ge.vu.le./Khem（H1366H）。
+    surfaces:
+      - 境界
+  - name: 腳掌可踏之處
+    type: 原文
+    section: 原文
+    evidence: 第3節「凡你們腳掌所踏之地」，STEP 為 tid.Rokh kaf- rag.le./Khem（H1869 da.rakh、H3709H kaph、H7272 re.gel），與申11:24 完全相同的組合；GT 明說申11:24-25 是本段的平行經文。
+    surfaces:
+      - 腳掌所踏之地
+  - name: 賜給（na.tan）
+    type: 原文
+    section: 原文
+    evidence: GT《約書亞記綜合解讀》：動詞「賜給 נָתַן」在本章中出現了七次(2、3、6、11、13、14、15節)；第3節的「賜給」原文是完成式。STEP 顯示第3節是 ne.ta.Ti/v（HVqp1cs，完成式），第2、11、15節是 no.Ten（分詞）。
+  - name: 勉勵他使他膽壯（cha.zaq、a.mats）
+    type: 原文
+    section: 原文
+    evidence: 第6、7、9節神三次、第18節百姓一次說「剛強壯膽」，STEP 均為 cha.Zak（H2388G）＋ve./'e.Matz（H553），與申31:7、23 同一對命令式。
+    surfaces:
+      - 剛強壯膽
+  - name: 神的同在
+    type: 神學
+    section: 神學
+    evidence: 第5節「我怎樣與摩西同在，也必照樣與你同在」，第9節「耶和華─你的神必與你同在」，第17節百姓說「惟願耶和華─你的神與你同在，像與摩西同在一樣」。
+    surfaces:
+      - 與你同在
+  - name: 必不撇下你，也不丟棄你（ra.phah 與 a.zav）
+    type: 原文
+    section: 原文
+    evidence: 第5節「我必不撇下你，也不丟棄你」，STEP 為 'ar.pe./Kha（H7503 ra.phah）與 'e.'ez.Ve./ka（H5800A a.zav），與申31:6、8 同一對動詞。
+  - name: 律法書放在約櫃旁
+    type: 主題
+    section: 主題
+    evidence: 第8節「這律法書不可離開你的口」，STEP 為 se.Fer ha./to.Rah（H5612H＋H8451）。GT《啟導本》說「這律法書」指神藉摩西所傳的一切律法。
+  - name: 晝夜思想（ha.gah）
+    type: 原文
+    section: 原文
+    evidence: "第8節「總要晝夜思想」，STEP 為 ve./ha.Gi.ta（H1897，簡要詞典義 ha.gah: to mutter）加 yo.Mam va./Lay.lah。CT 原文字義「思想」默想，沉思；GT《雷氏研讀本》說包括大聲朗讀和反複誦讀；BH 詳述聖經式默想。"
+  - name: 亨通與順利（tsa.lech 與 sa.khal）
+    type: 原文
+    section: 原文
+    evidence: 第8節「你的道路就可以亨通，凡事順利」，STEP 為 tatz.Li.ach（H6743B tsa.lech）與 tas.Kil（H7919A sa.khal）；第7節末「都可以順利」也是 sa.khal。CT 原文字義「亨通」奔騰，昌盛；「順利」興盛，成功。
+    surfaces:
+      - 亨通
+      - 順利
+  - name: 以色列人的官長
+    type: 人物
+    section: 人物
+    evidence: 第10節「約書亞吩咐百姓的官長」，GT《啟導本》說當為摩西在各支派中所立的千夫長、百夫長等；GT《聖經精讀本》說官長的作用是把領袖指示傳達給百姓或召集戰鬥人員。
+  - name: 過河前當預備食物
+    type: 主題
+    section: 主題
+    evidence: 第11節「當預備食物」，STEP 為 ha.Khi.nu（H3559A kun）加 tzei.Dah（H6720）。GT《綜合解讀》把它與出埃及時不必預備乾糧對比；KC 說這份食物不是官長給的，百姓自己要預備；BH 說嗎哪雖然仍降，百姓仍要為眼前的過河預備。
+  - name: 三日之內與差派探子的先後之爭
+    type: 解經爭議
+    section: 解經爭議
+    evidence: 第11節「三日之內你們要過這約但河」。CT 說顯然約書亞已經接到探子的消息（參書二22~23；三2）；GT《雷氏研讀本》說探子的差遣顯然在約書亞發出這準備的命令之前；GT《串珠》說「三日之內」只是約數，很可能在1:12-15 之後起算；GT《啟導本》說或指三2 所說的三天；GT《綜合解讀》說原文是「再三日」，表明約書亞立即行動。
+    surfaces:
+      - 三日之內
+  - name: 流便
+    type: 人物
+    section: 人物
+    evidence: 第12節「約書亞對流便人、迦得人，和瑪拿西半支派的人說」。
+  - name: 迦得（萬幸）
+    type: 人物
+    section: 人物
+    evidence: 第12節「迦得人」；GT 說迦得字義是「侵略者」、「軍隊」、「財富」，是利亞的使女悉帕所生。
+  - name: 瑪拿西
+    type: 人物
+    section: 人物
+    evidence: 第12節「瑪拿西半支派的人」；GT 說瑪拿西字義是「導致遺忘」，是約瑟的長子。
+  - name: 兩支派半求河東之地為業
+    type: 事件
+    section: 事件
+    evidence: 第12至15節約書亞要他們「追念耶和華的僕人摩西所吩咐你們的話」，並重申妻子孩子牲畜留在河東、勇士先過河的條件；各家都回指民32 與申3:18-20 的約定。
+    surfaces:
+      - 半支派
+  - name: 得享平安（nu.ach）
+    type: 原文
+    section: 原文
+    evidence: 第13節「使你們得享平安」與第15節「像你們一樣得享平安」，STEP 第13節為 me.Ni.ach（H5117 nu.ach，Hiphil 分詞）。GT 說原文作「休息」，型態是單數陽性分詞，並說「得享平安」原文是「得享安息」。
+  - name: 勇士（cha.yil）
+    type: 原文
+    section: 原文
+    evidence: 第14節「一切大能的勇士」，STEP 為 gi.bo.Rei ha./Cha.yil（H1368 gib.bor＋H2428G cha.yil）。GT 說原文是「強壯的軍隊」；GT《啟導本》說是年滿20歲能使用兵器英勇作戰的人。
+    surfaces:
+      - 大能的勇士
+  - name: 帶著兵器（cha.mush）
+    type: 原文
+    section: 原文
+    evidence: "第14節「都要帶著兵器」，STEP 為 cha.mu.Shim（H2571，簡要詞典義 cha.mush: armed，本節譯義 arrayed for battle）。GT《綜合解讀》說「帶著兵器 חָמַשׁ」原文的字根是「第五 חֹמֶשׁ」，可能當時採五人一組的戰鬥隊形；GT《聖經精讀本》同樣說派生於指數字五的詞根，含有「準備參戰」之意。"
+  - name: 違背命令（ma.rah）
+    type: 原文
+    section: 原文
+    evidence: 第18節「無論什麼人違背你的命令」，STEP 為 yam.Reh（H4784 ma.rah，Hiphil）。GT《丁道爾聖經注釋》說動詞違背(希伯來：yamreh)在約書亞記只出現過這一次，申命記則用它描述加低斯巴尼亞的背叛與忤逆之子。
+    surfaces:
+      - 違背
+  - name: 為業（ye.ru.shah）
+    type: 原文
+    section: 原文
+    evidence: "第11節「進去得耶和華─你們神賜你們為業之地」與第15節「得著耶和華─你們神所賜他們為業之地，那時才可以回你們所得之地，承受為業」。STEP 顯示第11節兩次、第15節兩次都是動詞 la./Re.shet、le./rish.Ta/h、ve./ya.re.Shu、vi./rish.Tem（H3423H，簡要詞典義 ya.rash: to possess: take），與申2:24、申3:18 同一個 Extended Strong。GT 指出整章出現四次「得、繼承[03423]」。"
+  - name: 產業（na.cha.lah）
+    type: 原文
+    section: 原文
+    evidence: "第6節「因為你必使這百姓承受那地為業」，STEP 為 tan.Chil（H5157，簡要詞典義 na.chal: to inherit，Hiphil）——使役語態，動作者是約書亞。GT 譯作「使這百姓繼承」。與第11、15節的 ya.rash 屬不同字根。"
+    surfaces:
+      - 承受那地為業
