@@ -14,8 +14,8 @@
 | --- | --- | --- | --- | --- |
 | A1 | ✅ | 作廢流程直接刪手寫 payload | `util/run_chapter.py` `_invalidate_stale` | 數小時的手寫內容無備份消失 |
 | A2 | ⬜ | YAML round-trip 失敗把檔案截成 0 byte | 所有 `.tmp/*.yaml` 寫入點 | payload 靜默清空 |
-| A3 | ⬜ | 記 verdict 前先改檔＝review 額度蒸發 | `util/agent_review.py::record_verdict` | 每 stage 只有 2 次，不可回復 |
-| A4 | ⬜ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
+| A3 | ✅ | 記 verdict 前先改檔＝review 額度蒸發 | `util/agent_review.py::record_verdict` | 每 stage 只有 2 次，不可回復 |
+| A4 | ✅ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
 | B1 | ⬜ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
 | B2 | ⬜ | render 每次吃掉附錄區塊 | `util/run_chapter.py::render_step` | 整段內容消失而四閘門全綠 |
 | B3 | ⬜ | 引句閘門門檻 10 字，短偽引句不驗 | `util/check_quote_fidelity.py` | 偽逐字引句常態漏網 |
@@ -87,6 +87,15 @@ MCP `prepare_manual_payload_prompts` 的 stdout 一併帶出。`.gitignore` 排�
 - 補記不改變當前 hash 的 gate 判定。
 - 未帶 `--observed-sha` 時的錯誤訊息包含可直接複製的補救指令。
 
+**狀態**　✅ 完成。`record_verdict` 加 `observed_sha=`（CLI `--observed-sha`，須等於 `--sha`）：
+sha 對不上時不再靜默丟棄，而是報出 observed／recorded／current 三個 sha ＋可複製的補救指令；
+帶旗標則把該次 attempt 照算、history 標 `late_recorded`，並把 verdict 掛在
+`record["verdict_sha"]`（reviewer 當時看過的 sha）而非目前內容。`require_pass` 新增
+`verdict_sha == current` 檢查（`forced_pass` 例外、缺欄位 fallback 到 `sha256` → v1 receipt 照舊可讀），
+補記過的舊版本不會被當成對目前內容的 PASS。`agent_evidence_audit_prompt.md` 補上補記指令範例。
+測試：`test_late_recorded_verdict_credits_attempt_without_blessing_current`、
+`test_late_recorded_pass_does_not_pass_gate_for_new_bytes`、`test_observed_sha_must_equal_sha`。
+
 ### A4. stage hash 的涵蓋範圍小於 stage 本身
 
 **症狀**　hash 只涵蓋 `entry_content`，但 m6 與 link_updates 的 verdict 也掛在同一套機制上。
@@ -109,7 +118,14 @@ hash 的輸入檔案清單寫進 receipt，事後可稽核。
 - receipt 裡看得到每個 stage 實際涵蓋了哪些檔案。
 - 不存在 `--allow-same-sha` 這類旁路旗標。
 
-**附帶**　reviewer 對 `util/` 應該是硬性 read-only。目前只靠 sandbox 設定＋我每輪人工 `git status util/` 確認。
+**狀態**　✅ 完成。stage 的每-stage 檔案集合本來就已是分離的（m3=`entry_content/*.yaml`、
+m6=`chapter_content.yaml`＋m3 parent、link_updates=`link_updates.yaml`＋m3/m6 parent），
+且已無 `--allow-same-sha`。本次補上**稽核面**：抽出 `_stage_parts` 同時產生 digest 與人可讀
+涵蓋清單，`submit`／forced-pass 都把 `hash_inputs` 寫進 receipt，`submit` 輸出也印「hash 涵蓋：…」。
+docstring 明列「刻意不留 --allow-same-sha 旁路」。測試：`test_m6_hash_isolates_from_m3`、
+`test_receipt_records_hash_inputs_per_stage`、`test_no_allow_same_sha_bypass_flag`。
+
+**附帶**　reviewer 對 `util/` 應該是硬性 read-only。目前只靠 sandbox 設定＋我每輪人工 `git status util/` 確認。（未處理——屬 sandbox／權限設定，非本檔程式碼範圍。）
 
 ---
 

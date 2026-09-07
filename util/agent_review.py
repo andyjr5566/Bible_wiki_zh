@@ -23,10 +23,25 @@ Typical flow::
   python util/agent_review.py submit 申命記 1 m3
   python util/agent_review.py gate 申命記 1 m3
 
-Stages:
+If the content already moved on before the verdict is recorded (the reversed
+order that once evaporated an attempt), record it late against the sha the
+reviewer actually saw::
+
+  python util/agent_review.py verdict 申命記 1 m3 pass --sha <seen> --observed-sha <seen>
+
+The attempt still counts (flagged ``late_recorded``) but is bound only to
+``<seen>``; the current bytes must be re-submitted to pass the gate.
+
+Stages (each fingerprint covers only that stage's own reviewed files, plus the
+approved upstream stage hashes as parents; the exact list is written to the
+receipt as ``hash_inputs`` so a verdict's scope is auditable after the fact):
 - m3: ``entry_content/*.yaml``
 - m6: ``chapter_content.yaml`` + current M3 fingerprint
 - link_updates: ``link_updates.yaml`` + current M3/M6 fingerprints
+
+There is deliberately no ``--allow-same-sha`` style bypass: if the recorded sha
+does not match current content, re-submit (``FORCED PASS`` once the budget is
+spent) — never widen the gate to make a stale verdict fit.
 """
 from __future__ import annotations
 
@@ -117,7 +132,14 @@ def _file_part(path: Path, base: Path) -> tuple[str, bytes]:
     return path.relative_to(base).as_posix(), path.read_bytes()
 
 
-def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) -> str:
+def _stage_parts(book: str, chapter: int, stage: str,
+                 root: Path = ROOT) -> tuple[list[tuple[str, bytes]], list[str]]:
+    """(digest 輸入 parts, 人可讀的涵蓋清單)。
+
+    每個 stage 只涵蓋「該 stage 實際被審的檔案」＋上游已核准 stage 的 hash 當
+    parent，兩者一起決定 fingerprint。涵蓋清單會寫進 receipt 供事後稽核，也讓
+    「只改 chapter_content.yaml → 只有 m6 hash 變」這件事看得見、可回歸。
+    """
     if stage not in STAGES:
         raise ReviewGateError(f"未知 stage：{stage}")
     canonical, chapter_num, tmp = _ctx(book, chapter, root)
@@ -127,7 +149,8 @@ def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) ->
         files = sorted(entry_dir.glob("*.yaml")) if entry_dir.is_dir() else []
         parts = [("stage", b"m3")]
         parts.extend(_file_part(path, tmp) for path in files)
-        return _digest_parts(parts)
+        covered = [path.relative_to(tmp).as_posix() for path in files]
+        return parts, covered
 
     if stage == "m6":
         m3_hash = stage_fingerprint(canonical, chapter_num, "m3", root)
@@ -136,7 +159,7 @@ def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) ->
             ("m3_sha256", m3_hash.encode("ascii")),
             _file_part(tmp / "chapter_content.yaml", tmp),
         ]
-        return _digest_parts(parts)
+        return parts, [f"parent:m3={m3_hash}", "chapter_content.yaml"]
 
     m3_hash = stage_fingerprint(canonical, chapter_num, "m3", root)
     m6_hash = stage_fingerprint(canonical, chapter_num, "m6", root)
@@ -146,7 +169,18 @@ def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) ->
         ("m6_sha256", m6_hash.encode("ascii")),
         _file_part(tmp / "link_updates.yaml", tmp),
     ]
+    return parts, [f"parent:m3={m3_hash}", f"parent:m6={m6_hash}", "link_updates.yaml"]
+
+
+def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) -> str:
+    parts, _covered = _stage_parts(book, chapter, stage, root)
     return _digest_parts(parts)
+
+
+def stage_hash_inputs(book: str, chapter: int, stage: str, root: Path = ROOT) -> list[str]:
+    """該 stage 的 fingerprint 實際涵蓋了哪些檔案／parent hash（寫進 receipt）。"""
+    _parts, covered = _stage_parts(book, chapter, stage, root)
+    return covered
 
 
 def _stage_record(state: dict, stage: str) -> dict:
@@ -198,6 +232,15 @@ def require_pass(book: str, chapter: int, stage: str, root: Path = ROOT) -> dict
             f"{stage} 內容在上次 review 後已變更：recorded={recorded or 'none'} current={current}。"
             "舊 PASS 已失效；重新 submit。若兩次 review 已用完，submit 會建立明示的 FORCED PASS，"
             "不再呼叫 reviewer。"
+        )
+    # 補記（--observed-sha）的 verdict 掛在 reviewer 當時看過的 sha 上；若那不是
+    # 目前內容，這次 PASS 不追認目前版本，仍須重新 submit（額度用盡則 FORCED PASS）。
+    verdict_sha = str(record.get("verdict_sha") or recorded)
+    if verdict_sha != current and not record.get("forced_pass"):
+        raise ReviewGateError(
+            f"{stage} 目前的 PASS 是補記在 reviewer 當時看到的版本（{verdict_sha}），"
+            f"與目前內容（{current}）不同；重新 submit 讓程式對新版本判定"
+            "（兩次 review 已用完時會自動 FORCED PASS）。"
         )
     status = _review_status(record)
     if status != "pass":
@@ -253,6 +296,7 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
             "round": MAX_REVIEW_ATTEMPTS,
             "revision": revision,
             "sha256": current,
+            "verdict_sha": current,
             "claude": "revised",
             "reviewer_status": "pass",
             "reviewer_agent": _reviewer_agent(previous),
@@ -283,6 +327,9 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
     # New v2 records use generic reviewer fields. Remove the old alias after a
     # stage is touched so Antigravity handoffs are represented honestly.
     record.pop("codex", None)
+    # 稽核用：這個 sha 到底涵蓋了哪些檔案／上游 hash。事後看 receipt 就能確認
+    # verdict 掛對了範圍，不必再靠「reviewer 自己加 --allow-same-sha」那種旁路。
+    record["hash_inputs"] = stage_hash_inputs(canonical, chapter_num, stage, root)
     state["stages"][stage] = record
     path = _write_state(canonical, chapter_num, state, root)
     return path, record
@@ -298,6 +345,7 @@ def record_verdict(
     reviewer: str = "codex",
     thread_id: str | None = None,
     findings_count: int | None = None,
+    observed_sha: str | None = None,
     root: Path = ROOT,
 ) -> tuple[Path, dict]:
     if verdict not in VERDICTS:
@@ -312,10 +360,32 @@ def record_verdict(
         raise ReviewGateError(f"{stage} 尚未 submit，不能記錄 reviewer verdict")
 
     current = stage_fingerprint(canonical, chapter_num, stage, root)
-    if review_sha != current or review_sha != record.get("sha256"):
+    recorded = record.get("sha256")
+    if observed_sha is not None and observed_sha != review_sha:
         raise ReviewGateError(
-            "reviewer verdict 的 SHA 與目前內容不一致；拒絕記錄過期 review。"
-            f" expected={current} submitted={record.get('sha256')} got={review_sha}"
+            "--observed-sha 必須等於 --sha（reviewer footer 的 REVIEW_SHA256）；"
+            "這個旗標只是明示「我知道這個 sha 已非最新，仍要為那次 attempt 補記」。"
+        )
+    late_recorded = False
+    if review_sha == current and review_sha == recorded:
+        effective_sha = review_sha
+    elif observed_sha is not None and review_sha == observed_sha:
+        # 補記：reviewer 當時看到的是 observed_sha，之後內容或 submit 記錄已前進
+        # （第1章 m6「搞反順序」那次就是這樣把一個 attempt 直接蒸發掉）。這次
+        # attempt 照算，但只掛在 reviewer 實際看過的 sha 上——不追認目前內容。
+        late_recorded = True
+        effective_sha = observed_sha
+    else:
+        raise ReviewGateError(
+            "reviewer verdict 的 SHA 與目前內容不一致；拒絕靜默丟棄這次 review。\n"
+            f"  reviewer 看到（--sha）     ：{review_sha}\n"
+            f"  submit 當時記錄（recorded）：{recorded or 'none'}\n"
+            f"  目前內容（current）        ：{current}\n"
+            "  若 verdict 確實是對 reviewer 當時看到的版本，明示補記（該次 attempt 照算）：\n"
+            f"    python util/agent_review.py verdict {canonical} {chapter_num} {stage} "
+            f"{verdict} --sha {review_sha} --observed-sha {review_sha}"
+            + (f" --reviewer {reviewer}" if reviewer != "codex" else "")
+            + (f" --findings-count {findings_count}" if findings_count is not None else "")
         )
     if record.get("forced_pass"):
         raise ReviewGateError(
@@ -350,6 +420,9 @@ def record_verdict(
     record["review_attempts"] = attempts
     record["round"] = min(max(1, attempts if substantive else attempts + 1), MAX_REVIEW_ATTEMPTS)
     record["forced_pass"] = False
+    # 這個 verdict 實際適用的 sha。正常情形 == 目前內容；補記時掛在 reviewer
+    # 當時看過的舊 sha 上，require_pass 據此拒絕把補記誤當成對目前內容的 PASS。
+    record["verdict_sha"] = effective_sha
     if thread_id:
         record["thread_id"] = thread_id
     if findings_count is not None:
@@ -360,9 +433,10 @@ def record_verdict(
         {
             "attempt": attempts if substantive else None,
             "reviewer": reviewer,
-            "sha256": review_sha,
+            "sha256": effective_sha,
             "verdict": verdict,
             "findings_count": int(findings_count) if findings_count is not None else None,
+            "late_recorded": late_recorded,
         }
     )
     record["review_history"] = history
@@ -393,6 +467,12 @@ def status_rows(book: str, chapter: int, root: Path = ROOT) -> list[tuple[str, d
     return rows
 
 
+def _print_hash_inputs(record: dict):
+    inputs = record.get("hash_inputs")
+    if isinstance(inputs, list) and inputs:
+        print("   hash 涵蓋：" + "、".join(str(x) for x in inputs))
+
+
 def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict):
     status = _review_status(record)
     attempts = _review_attempts(record)
@@ -402,6 +482,7 @@ def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict)
             f"review_attempts={attempts}/{MAX_REVIEW_ATTEMPTS} revision={record.get('revision')}"
         )
         print(f"   sha256：{record['sha256']}")
+        _print_hash_inputs(record)
         print("   原因：兩次 reviewer 機會已用完；此版是 Claude 最後修正版，不再呼叫第三次 reviewer。")
         print(f"   state：{path}")
         return
@@ -409,6 +490,7 @@ def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict)
     if status == "pass":
         print(f"✅ review checkpoint 已 PASS：{book} 第{chapter}章 {stage}")
         print(f"   sha256：{record['sha256']}")
+        _print_hash_inputs(record)
         print(f"   state：{path}")
         return
 
@@ -418,6 +500,7 @@ def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict)
         f"review round {record['round']}/{MAX_REVIEW_ATTEMPTS}"
     )
     print(f"   sha256：{record['sha256']}")
+    _print_hash_inputs(record)
     print(f"   substantive review 已用：{attempts}/{MAX_REVIEW_ATTEMPTS}；剩餘：{remaining}")
     print(f"   state：{path}")
     print("   下一步：reviewer 讀 agent_evidence_audit_prompt.md。")
@@ -442,6 +525,11 @@ def main() -> int:
     verdict_parser.add_argument("--reviewer", choices=REVIEWERS, default="codex")
     verdict_parser.add_argument("--thread-id")
     verdict_parser.add_argument("--findings-count", type=int)
+    verdict_parser.add_argument(
+        "--observed-sha",
+        help="明示補記：verdict 是對 reviewer 當時看到的這個 sha（須等於 --sha）。"
+        "內容或 submit 記錄已前進時用它，讓那次 attempt 照算但不追認目前內容。",
+    )
 
     gate_parser = sub.add_parser("gate", help="確認目前 hash 已取得 reviewer PASS 或明示 FORCED PASS")
     gate_parser.add_argument("book")
@@ -468,8 +556,12 @@ def main() -> int:
                 reviewer=args.reviewer,
                 thread_id=args.thread_id,
                 findings_count=args.findings_count,
+                observed_sha=args.observed_sha,
             )
             status = _review_status(record)
+            if record.get("review_history") and record["review_history"][-1].get("late_recorded"):
+                print("ℹ️ 已補記（late_recorded）：verdict 掛在 reviewer 當時看到的 sha；"
+                      "目前內容仍需重新 submit 才能過 gate。")
             print(
                 f"✅ reviewer verdict 已記錄：{args.stage}={status} "
                 f"reviewer={record.get('reviewer_agent')} attempts="

@@ -83,6 +83,17 @@ python util/agent_review.py verdict 書名 章 stage <pass|changes_required|bloc
   --sha <目前 sha> --reviewer <codex|antigravity> --findings-count N
 ```
 
+若 orchestrator 代記時內容已被 Claude 改動、sha 對不上，**不要放掉這次 attempt**：
+用 reviewer footer 的 `REVIEW_SHA256` 補記——
+
+```text
+python util/agent_review.py verdict 書名 章 stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+補記的 attempt 照算、標 `late_recorded`，但只掛在 reviewer 當時看過的 sha 上，
+不追認目前內容——目前版本仍要重新 submit 才過 gate（額度用盡則 FORCED PASS）。
+
 最後輸出：
 
 ```text
