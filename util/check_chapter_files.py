@@ -74,20 +74,35 @@ class CheckResult:
         return f"CheckResult(label={self.label!r}, ok={self.ok!r}, warning={self.warning!r})"
 
 
+# git 無限期阻塞時的上限。本模組被 MCP server 以函式庫方式呼叫
+# （`build_checks`），而該 server 跑在不允許建立子行程的 host 上：沒有
+# timeout 的 `subprocess.run` 不是失敗而是永遠不回來（實測 get_chapter_status
+# 卡滿 1800 秒被 client 中止，同一支 CLI 在 shell 只要 2 秒）。逾時與
+# 「不是 repo」同樣視為 git 不可用，照既有契約回 None、不誤擋。
 _GIT_TIMEOUT_SECONDS = 20
 _git_disabled_reason = None
 
 
 def disable_git(reason):
+    """關掉本模組的 git 呼叫；長駐 host 已知不能 spawn 時先行宣告。
+
+    沒有這個開關，這種 host 每次呼叫都要再付一次 `_GIT_TIMEOUT_SECONDS`。
+    """
     global _git_disabled_reason
     _git_disabled_reason = reason
 
 
 def git_disabled_reason():
+    """git 目前被判為不可用的原因；可用時回 None。"""
     return _git_disabled_reason
 
 
 def _git_lines_z(root, *args):
+    """跑 git 並以 NUL 分隔解析輸出（避開 core.quotepath 對中文路徑的轉義）。
+
+    呼叫端須自行把 -z 放在 pathspec（--）之前——放在 args 尾端會被 git
+    當成檔名（實測踩過：三個注入測試檔全數漏抓）。
+    """
     if _git_disabled_reason is not None:
         return None
     try:
@@ -96,6 +111,7 @@ def _git_lines_z(root, *args):
             timeout=_GIT_TIMEOUT_SECONDS,
         )
     except subprocess.TimeoutExpired:
+        # 這台機器上 git 起不來。latch 起來，後續呼叫不必再各付一次逾時。
         disable_git(f"git 逾時（{_GIT_TIMEOUT_SECONDS} 秒），本行程不再呼叫 git")
         return None
     except (OSError, subprocess.CalledProcessError):
@@ -104,6 +120,18 @@ def _git_lines_z(root, *args):
 
 
 def untracked_entry_findings(root, book, chapter):
+    """git 未追蹤的 link_folder 條目檔——「commit 漏了 git add」的攔截網。
+
+    利3／4 實例：run_chapter 實建的新條目 .md 沒進當時的 commit（訊息還寫
+    「新建條目：0個」），以未追蹤狀態晾了兩天才被發現。判準機械可證，
+    以條目檔內的 accumulation 標記歸屬章節：
+    - 標記指向的章節已 commit（該章 第N章.md 已被 git 追蹤）→ 該章 commit
+      漏了它 = error（回傳 errors）
+    - 標記只含本章 → 本章工作產物，commit 時必須一併 git add（回傳 pending）
+    - 標記只含其他未 commit 章節 → 可能是他 agent 進行中的工作，僅提示（notes）
+    - 無任何標記 → 無法歸屬 = error（正常管線產的條目一定有建立章的標記）
+    回傳 (errors, pending, notes)；git 不可用（非 repo 等）時全部回空，不誤擋。
+    """
     canonical = canonical_book_name(book)
     untracked = _git_lines_z(root, "status", "--porcelain", "--untracked-files=all",
                              "-z", "--", "link_folder")
@@ -164,12 +192,14 @@ def _plan_count(plan, key):
 
 
 def _plan_unique_name_count(plan, key):
+    """C_new_formal 計畫可能同名重複（run_chapter.py 建 entry 前會去重）。"""
     if not isinstance(plan, dict):
         return 0
     return len({e["name"] for e in plan.get(key) or [] if isinstance(e, dict) and e.get("name")})
 
 
 def _embedding_index_synced(root):
+    """embedding 索引是否與條目庫同步（純雜湊比對，不打網路）。"""
     summary = stale_summary(root)
     if summary is None:
         return False, "索引不存在（首次請跑 python util/build_embedding_index.py 全量建立）"
@@ -190,10 +220,14 @@ def _embedding_index_synced(root):
 
 
 class _AlreadyApplied(Exception):
-    pass
+    """內部訊號：本章 B 類累積已套用，審查判斷轉為歷史紀錄。"""
 
 
 def check_candidate_similarity_freshness(book, chapter, root=ROOT):
+    """檢查 candidate_similarity.md 是否存在且符合 multi-factor freshness（11 因子 Fail-Closed 驗證）。
+
+    回傳 (fresh: bool, reason: str, status: str)
+    """
     root = Path(root)
     canonical = canonical_book_name(book)
     book_dir = book_directory(root, canonical)
@@ -209,6 +243,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     meta = extract_report_metadata(report_path)
     if not meta:
         return False, "candidate_similarity.md 缺少機器元資料標頭（<!-- candidate_similarity_meta -->）", ""
+
     if meta.get("schema_version") != "1":
         return False, f"元資料 schema_version 不符（報告 {meta.get('schema_version')} vs 預期 1）", ""
     if meta.get("book") != canonical:
@@ -216,6 +251,14 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if str(meta.get("chapter")) != str(chapter):
         return False, f"元資料章節不符（報告 {meta.get('chapter')} vs 目前 {chapter}）", ""
 
+    # 裁決是否已被消化（M3／M6 payload 已寫齊）——下面兩處綁定的鬆緊都取決於它。
+    #
+    # 判準要對著 link_plan 宣告的 C 類數量，不能只問「有沒有任何一個 entry」：
+    # - 全章沒有新建條目（C=0）時 entry_content 永遠是空的，用 any() 會讓這一段
+    #   判斷永遠是 False，放寬形同不存在；
+    # - 反過來，5 個 C 只寫了 1 個就算「已消化」，剩下 4 個候選的 evidence 被改
+    #   動時會被誤放行，而那幾筆裁決根本還沒做。
+    # 判準與本檔 entries_expected 那一段一致。
     plan_for_review = _load_yaml(tmp / "link_plan.yaml")
     entry_dir = tmp / "entry_content"
     written_entries = len(list(entry_dir.glob("*.yaml"))) if entry_dir.is_dir() else 0
@@ -226,23 +269,40 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
             and written_entries >= expected_entries
         )
     else:
+        # 沒有 plan 就數不出應有的 C 類數量，退回舊的啟發式：payload 在就算已消化。
+        # 正式流程不會走到這裡（payload 必然產在 resolve 之後），保留只是不改動
+        # 既有契約。
         adjudication_consumed = (
             (tmp / "chapter_content.yaml").is_file() and written_entries > 0
         )
 
     cur_cand_sha = _file_sha256(candidates_path)
     if meta.get("candidate_sha256") != cur_cand_sha:
+        # 裁決已消化之後，只有「候選集本身增刪」才需要重新裁決。evidence／surfaces
+        # 是送進 embedding／rerank 的查詢文字，裁決前照舊整檔綁定；但修掉一個被長
+        # 別名蓋住的死 surface 必然發生在 payload 寫完之後的 run 階段，那時逼出一
+        # 次整套 rerank 重跑既沒有判斷可做，報告本身也已因條目入庫而失去診斷值。
         report_identity = meta.get("candidate_identity_sha256")
         cur_identity = candidate_identity_sha256(candidates_path)
         relaxed = (
             adjudication_consumed
-            and report_identity
+            and report_identity                      # 舊報告沒這個欄位 → 退回整檔比對
             and cur_identity not in ("missing", "error")
             and report_identity == cur_identity
         )
         if not relaxed:
             return False, f"候選檔已變更（報告 hash {meta.get('candidate_sha256', '')[:8]} vs 目前 {cur_cand_sha[:8]}），需重跑 semantic_lookup.py", ""
 
+    # 索引類因子只在「裁決尚未被消化」時才綁定。
+    #
+    # 這份報告的用途是在寫 payload 以前裁決「候選該連既有條目還是新建」。M3/M6 手寫
+    # 完成之後，那個裁決已經被寫進 payload，而報告本身變成當時的紀錄；此後條目庫每
+    # 長一點（本章 render 出的新條目、下一章新增的條目）都會讓指紋變動，逼出一次沒有
+    # 任何判斷可做的重跑——申4 一章重跑四次，申3 完工後再檢查也照樣卡住。
+    #
+    # 更糟的是 render 之後重跑會讓本章 C 類候選對到自己而變成高可信，報告的診斷值歸零
+    # （全庫 127 份報告回溯：3929 個候選只有 14 個真的送過重排）。所以這裡不是放寬，
+    # 是把索引綁定放回它真正有意義的時點：payload 寫出來以前。
     if not adjudication_consumed:
         cur_link_sha = _file_sha256(root / "util" / "output" / "link_index.json")
         if cur_link_sha == "missing" or meta.get("link_index_sha256") != cur_link_sha:
@@ -251,6 +311,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     cur_homo_sha = _file_sha256(root / "_config" / "link_homonyms.yaml")
     if cur_homo_sha == "missing" or meta.get("homonyms_sha256") != cur_homo_sha:
         return False, "同名詞設定 link_homonyms.yaml 缺失或已變更，需重跑 semantic_lookup.py", ""
+
     if meta.get("rerank_policy_version") != RERANK_POLICY_VERSION:
         return False, f"判定規則版本已升級（報告 {meta.get('rerank_policy_version')} vs 目前 {RERANK_POLICY_VERSION}），需重跑 semantic_lookup.py", ""
 
@@ -282,6 +343,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if not adjudication_consumed and meta.get("embedding_index_fingerprint") != cur_fp:
         return False, "embedding 向量索引指紋已變更，需重跑 semantic_lookup.py", ""
 
+    # 檢查 Embedding 模型設定一致性（Fail-closed）
     try:
         cur_embed_model = select_endpoint(task="embedding", root=root).get("model")
     except Exception as exc:
@@ -291,6 +353,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
     if meta.get("embedding_model") != cur_embed_model:
         return False, f"embedding 模型已變更（報告 {meta.get('embedding_model')} vs 目前 {cur_embed_model}），需重跑 semantic_lookup.py", ""
 
+    # 檢查 Embedding 索引是否與條目庫即時同步（防範跨章新詞未入索引漏查）
     embedding_synced, sync_reason = _embedding_index_synced(root)
     if not adjudication_consumed and not embedding_synced:
         return False, f"embedding 語義索引未與目前條目庫同步（{sync_reason}），需先更新 embedding index 再重跑 semantic_lookup.py", ""
@@ -303,6 +366,7 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
         if req_field not in meta:
             return False, f"元資料缺少運作統計欄位 {req_field}", status
 
+    # 檢查 Rerank 模型設定一致性（Fail-closed）
     if status != "disabled":
         try:
             cur_rerank_model = select_endpoint(task="rerank", root=root).get("model")
@@ -317,6 +381,10 @@ def check_candidate_similarity_freshness(book, chapter, root=ROOT):
 
 
 def check_candidate_similarity_readiness(book, chapter, root=ROOT, production=True):
+    """統一的前置與生產就緒檢查閘門。
+
+    回傳 (ok: bool, hint: str, status: str, warning: str | None)
+    """
     fresh, reason, status = check_candidate_similarity_freshness(book, chapter, root=root)
     canonical = canonical_book_name(book)
     if not fresh:
@@ -342,6 +410,28 @@ def check_candidate_similarity_readiness(book, chapter, root=ROOT, production=Tr
 
 
 def verse_link_coverage_gaps(book, chapter, root=ROOT):
+    """M5 重生失效偵測：本章 plan 自己宣告的詞出現在經文，verse_links 卻沒連上它。
+
+    `verse_links_step` 開頭就是「輸出檔存在就沿用」，而擋在前面的作廢機制
+    (`_invalidate_stale`) 只在 `pipeline_state.json` 有基線時生效——基線一旦被刪，
+    改過 `link_plan.yaml`／`entry_content` 之後重跑會**靜默**沿用上一輪的
+    `verse_links.yaml`。民20 實測整章 30 個候選只渲染出 4 個內文連結，而
+    validate_knowledge_base／verify_links／link_quality_check／check_existing_links
+    全部 PASS：它們驗的是「連出去的對不對」，沒有一道驗「該連的有沒有連」。
+
+    只報**本章自己凍結得住的詞彙**：候選宣告的 surfaces、候選名、條目全名與括號前
+    裸名、本章 entry_content payload 的 aliases。全庫索引的 aliases 不列入回報，因為
+    它隨後續章節成長，拿它當基準會把「語料自然變多」誤判成缺口。
+
+    但**位置競爭仍用完整索引**（含那些 aliases）：M5 是長詞優先、同節不重疊，把索引
+    aliases 抽掉會讓短詞搶到本來屬於長詞的位置而生誤報（創40 實例：v1 的「埃及」其實
+    被 alias「埃及王的酒政」整個蓋住，抽掉 alias 後「埃及」就被誤報成漏連）。
+    因此掃描用完整 surface map，只在「勝出的詞是本章自己宣告的」時才回報。
+
+    比對規則直接沿用 `build_surface_map` 與 `verse_links_step` 本體（含歧義不連、
+    長詞優先、同節不重疊），所以報出來的每一筆都是同一套程式在同一份 plan 上會連、
+    而現檔沒有的。
+    """
     try:
         from . import run_chapter
     except ImportError:
@@ -363,17 +453,22 @@ def verse_link_coverage_gaps(book, chapter, root=ROOT):
 
     index_path = root / "util" / "output" / "link_index.json"
     try:
+        # 明確從 root 讀索引；resolver.load_index() 綁死在真實 repo 路徑，交給它會讓
+        # 其他 root（測試、MCP 工作區）比對到錯的索引。
         full_index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else {}
         if not isinstance(full_index, dict):
             full_index = {}
-        _, own_map = _surfaces({})
-        ctx, surface_map = _surfaces(full_index)
+        _, own_map = _surfaces({})              # 本章自己宣告的詞（回報範圍）
+        ctx, surface_map = _surfaces(full_index)  # 完整索引（位置競爭，避免短詞搶位誤報）
         verses = ctx.raw_verses()
     except (OSError, ValueError, KeyError):
         return []
     own = set(own_map)
 
     linked = {link.get("target") for link in (payload.get("links") or [])}
+    # plan 的候選名可能落後於改名（出12 實例：plan 仍指「寄居的（ger）」，實際條目
+    # 早已改名為「寄居的」，經文其實連得好好的）。目標條目檔不存在＝那是改名漂移，
+    # 不是 verse_links 過期，不報。
     entry_stems = {path.stem for path in (root / "link_folder").rglob("*.md")}
     gaps = {}
     for vnum, verse in enumerate(verses, 1):
@@ -421,6 +516,13 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     if updates_expected and link_updates_path.is_file():
         try:
             update_manifest = _load_yaml(link_updates_path)
+            # 已套用的章節不再重驗審查判斷，只驗累積區塊在不在。
+            #
+            # preview_updates 會拿條目「現在」的定義／主題發展去對本章 prepare 當時的
+            # 基線。等到後面的章節合法更新了同一個條目（申4 補了美地與約但河的主題發展），
+            # 申1-3 的舊 manifest 就會突然報「選了 keep 但區塊已被修改」——完工章節被
+            # 後來的章節追溯性弄壞，而且條目越常被累積壞得越快。
+            # 章節進行中（尚未套用）仍然全驗：那時基線比對正是用來擋「說 keep 卻改了區塊」。
             marker = f"<!-- accumulation:{canonical}:{chapter}:start -->"
             targets = [update.get("path") for update in (update_manifest.get("updates") or [])
                        if isinstance(update, dict) and update.get("path")]
@@ -461,6 +563,7 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
         else []
     )
 
+    # 來源完整性與閱讀回執驗證
     sources_declared_ok = False
     sources_declared_detail = ""
     sources_read_ok = False
@@ -490,30 +593,27 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
     else:
         sources_declared_detail = f"來源清單 {manifest_path} 不存在"
 
-    # 字串層只做輔助疑點掃描。引號本身不能告訴我們這是逐字引文、翻譯、轉述或修辭，
-    # 所以 miss 不擋 production；真正的 attribution fidelity 由 Evidence Reviewer 判斷。
-    quote_scan_detail = ""
-    quote_scan_warning = ""
+    # 引句逐字回查：閘門驗結構，驗不到引號裡的話是不是真的出自來源
+    quote_fidelity_ok, quote_fidelity_detail = True, ""
     if (tmp / "chapter_content.yaml").exists():
         try:
             quote_total, quote_misses, _names = check_quote_fidelity.check_quotes(
                 canonical, chapter, root=root
             )
+            quote_fidelity_ok = not quote_misses
             if quote_misses:
                 preview = "；".join(f"{label}：{quote[:28]}" for label, quote in quote_misses[:3])
-                quote_scan_detail = (
-                    f"引號字串 {quote_total} 處，逐字未命中 {len(quote_misses)} 處——{preview}"
+                quote_fidelity_detail = (
+                    f"引句 {quote_total} 處，回查不到 {len(quote_misses)} 處——{preview}"
                     + ("⋯" if len(quote_misses) > 3 else "")
                 )
-                quote_scan_warning = (
-                    "引號字串掃描有疑點；這不是 FAIL。請由 Evidence Reviewer 對來源 attribution、"
-                    f"翻譯與轉述語義做判斷。{quote_scan_detail}"
-                )
             else:
-                quote_scan_detail = f"引號字串 {quote_total} 處全數逐字命中"
+                quote_fidelity_detail = f"引句 {quote_total} 處全數命中"
         except Exception as exc:
-            quote_scan_warning = f"引號字串輔助掃描失敗（不擋 production）：{exc}"
+            quote_fidelity_detail = f"引句回查失敗：{exc}"
+            quote_fidelity_ok = False
 
+    # 候選相似度與 Preflight / Production Readiness 檢查
     sim_ok, sim_hint, sim_status, sim_warning = check_candidate_similarity_readiness(
         canonical, chapter, root=root, production=True
     )
@@ -611,9 +711,13 @@ def build_checks(book, chapter, root=ROOT, preflight=False):
             warning=link_review_warning,
         ),
         CheckResult(
-            "步驟5｜引號字串疑點掃描（輔助）",
-            True,
-            warning=quote_scan_warning,
+            "步驟5｜引句逐字回查（本章來源＋全卷經文）",
+            quote_fidelity_ok,
+            "有引句在本章正式來源與全卷經文裡都找不到逐字對應——閘門驗結構，"
+            "驗不到引號裡的話是不是真的出自來源。常見成因：截斷後自己補句號、"
+            "換一種引號、把英文來源的中文譯文當成逐字引句、把不相鄰的兩句接成一句。"
+            f"逐條看：python util/check_quote_fidelity.py {canonical} {chapter}。"
+            f"檢查訊息：{quote_fidelity_detail}",
         ),
         CheckResult(
             "步驟6｜util/output/link_index.json",
