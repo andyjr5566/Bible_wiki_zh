@@ -2,6 +2,13 @@
   "note": "主題發展存量欠帳；由 link_updates.py apply 依 basis=standing_debt 記錄，development=update 時清除；維護回合用 link_updates.py debt --settle <path>。",
   "entries": [
     {
+      "path": "link_folder/人物/摩西.md",
+      "title": "摩西",
+      "deferred_at": "約書亞記:3",
+      "accumulated": 77,
+      "fingerprint": "138147e5827c41fd"
+    },
+    {
       "path": "link_folder/人物/亞倫.md",
       "title": "亞倫",
       "deferred_at": "申命記:10",
@@ -49,13 +56,6 @@
       "deferred_at": "申命記:33",
       "accumulated": 22,
       "fingerprint": "8db7c5a9b2395261"
-    },
-    {
-      "path": "link_folder/地點/約但河.md",
-      "title": "約但河",
-      "deferred_at": "約書亞記:2",
-      "accumulated": 22,
-      "fingerprint": "651af1551fb88c7c"
     },
     {
       "path": "link_folder/人物/流便.md",
@@ -121,13 +121,6 @@
       "fingerprint": "06c4f174e956ba59"
     },
     {
-      "path": "link_folder/主題/約櫃.md",
-      "title": "約櫃",
-      "deferred_at": "申命記:10",
-      "accumulated": 10,
-      "fingerprint": "b5c861db26c93adc"
-    },
-    {
       "path": "link_folder/神學/分別為聖.md",
       "title": "分別為聖",
       "deferred_at": "申命記:22",
@@ -184,6 +177,13 @@
       "fingerprint": "20d3d6244231e753"
     },
     {
+      "path": "link_folder/人物/以色列人的官長.md",
+      "title": "以色列人的官長",
+      "deferred_at": "約書亞記:3",
+      "accumulated": 7,
+      "fingerprint": "ad89ce9f6d45d358"
+    },
+    {
       "path": "link_folder/地點/何烈山.md",
       "title": "何烈山",
       "deferred_at": "申命記:18",
@@ -205,6 +205,13 @@
       "fingerprint": "2fb93af6eb9433f3"
     },
     {
+      "path": "link_folder/地點/亞拉巴.md",
+      "title": "亞拉巴",
+      "deferred_at": "約書亞記:3",
+      "accumulated": 6,
+      "fingerprint": "ffc8b6932a3a0273"
+    },
+    {
       "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
       "title": "平安祭的三類（感謝祭、還願祭、甘心祭）",
       "deferred_at": "申命記:16",
@@ -212,11 +219,11 @@
       "fingerprint": "a9205c3ff70c789b"
     },
     {
-      "path": "link_folder/地點/亞拉巴.md",
-      "title": "亞拉巴",
-      "deferred_at": "申命記:11",
+      "path": "link_folder/地點/鹽海.md",
+      "title": "鹽海",
+      "deferred_at": "約書亞記:3",
       "accumulated": 5,
-      "fingerprint": "f2353a1ad2e7886e"
+      "fingerprint": "21645f23300bf054"
     },
     {
       "path": "link_folder/歷史/加低斯巴尼亞事件.md",

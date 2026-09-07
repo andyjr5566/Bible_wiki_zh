@@ -1,0 +1,338 @@
+book: 約書亞記
+chapter: 3
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1節「約書亞清早起來，和以色列眾人都離開什亭」，STEP 為 va/i.yash.Kem ba./Bo.ker（H7925 sha.kham 加 H1242 bo.qer）。第5節他吩咐百姓自潔，第6節吩咐祭司抬約櫃在百姓前頭過去，第9節召百姓「近前來，聽耶和華─你們神的話」，第10至13節宣告神必趕出七族並預告河水斷絕。第7節耶和華對他說「從今日起，我必使你在以色列眾人眼前尊大」。GT《聖經精讀本》說本節表明約書亞是一位敏感於神的旨意且努力盡職的領袖。
+  relation: 書1 他發令、書2 他派人偵察，本章是他第一次在全民面前宣告神要做什麼並且立刻應驗。第7節也是全卷第一次由神親口說要抬高他的地位。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 20
+    definition: keep
+    development: keep
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第7節「使他們知道我怎樣與摩西同在，也必照樣與你同在」。本章只在這一節提到摩西。GT《丁道爾聖經注釋》另指出第17節祭司站在乾地上與摩西將紅海變成乾地（出十四21）用的是同一個字。
+  relation: 摩西在本章不是行動者，是比較的基準：神用他來說明約書亞的權柄從哪裡來，而過河的神蹟本身也照著紅海的樣式重演一次。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 77
+    - 77
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 什亭（亞伯什亭）
+  path: link_folder/地點/什亭（亞伯什亭）.md
+  summary: 第1節「和以色列眾人都離開什亭，來到約但河，就住在那裡，等候過河」。GT《研經資料》說什亭距離約旦河還有8到9公里；GT《綜合解讀》說以色列人在新的領袖約書亞率領下走了大約10公里，開始走上他們「向來沒有走過」的路；GT《丁道爾聖經注釋》說一旦領受了詳細的指示，知道要如何過河之後，以色列人就必須遷移到河旁邊，這樣過河的那天才不會浪費時間。
+  relation: 書2:1 探子從這裡出發，本章是全營從這裡拔營。什亭在約書亞記裡的功能到此結束——它是最後一個河東的營地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 4
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: '本章的主場景，第1、8、11、13、14、15、16、17節反覆出現。第15節「原來約但河水在收割的日子漲過兩岸」，STEP 為 ma.Le'' ''al- kol- ge.do.Ta/v（H4390 加 H1415 ga.dah: bank）加 kol ye.Mei ka.Tzir（H7105A qa.tsir）。GT《綜合解讀》說約旦河平時大約只有30多米寬、3米多深，但春天上游融雪、河水氾濫，耶利哥附近的河面可以超過一公里、有7米多深；GT《聖經精讀本》說「約但河」有「永恆之河」或「急流之溪」之意。第16節河水在亞當城停住、往鹽海的下流全然斷絕，第17節以色列眾人從乾地上過去。'
+  relation: 條目此前二十二章都把它當界線、座標或還沒跨過的門檻，本章是它真的被跨過的那一章——而且是在一年當中水最大的時候。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 23
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:32
+      - 民數記:22
+      - 約書亞記:3
+- title: 以色列人的官長
+  path: link_folder/人物/以色列人的官長.md
+  summary: 第2節「過了三天，官長走遍營中」，第3節他們把跟隨約櫃的指示傳給百姓。BH 說約書亞的官長把指示帶遍各支派，確保每一家都知道約櫃移動時該怎麼反應，並說在以色列站在應許產業邊界上時，順服神所立的領導會帶他們走過人力無法克服的障礙。
+  relation: 書1:10-11 他們傳的是「當預備食物」，本章傳的是看見約櫃就跟著走。同一批人，兩次都是命令的傳遞管道。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 7
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 約櫃
+  path: link_folder/主題/約櫃.md
+  summary: 第3、6、8、11、13、14、15、17節，STEP 為 'a.Ron ha./be.Rit（H727 a.ron 加 H1285 be.rit）。KC 說約櫃在這裡佔中心位置，並說在書3-4 兩章裡約櫃被提到十六次。GT《啟導本》說約櫃是神的座位，約櫃先行表示神的同在與引導，祂不只與以民同在，且走在他們前面；GT《雷氏研讀本》與《啟導本》都說在曠野時抬約櫃的是哥轄的子孫（民四15），但在這特殊情況下由擔任祭司的利未人搬運。第4節規定百姓要與約櫃相離二千肘，第17節祭司抬著約櫃在河中乾地上站定，直到國民盡都過了約但河。
+  relation: 條目此前的累積多在會幕與行進次序的脈絡裡，本章第一次讓約櫃成為神蹟的執行點：水在它下水時停住，在它上岸時流回。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 12
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:25
+      - 民數記:10
+      - 約書亞記:3
+- title: 自潔
+  path: link_folder/神學/自潔.md
+  summary: 第5節「你們要自潔，因為明天耶和華必在你們中間行奇事」，STEP 為 hit.ka.Da.shu（H6942G qa.dash，Hithpael 命令式）加 nif.la.'ot（H6381 pa.la）。CT 說自潔包括沐浴、洗衣、不親近婦女等（參出十九10）；GT《丁道爾聖經注釋》說這個指示讓人想起以色列在西乃山的情景，並推測百姓為何在約但河邊還等了一段時間；GT《研經資料》說「自潔」原文是「分別出來奉為神聖」，並列出它在出19:22、代下29:5 等處的用法，另指出約書亞記除本節外只有書7:13 再要百姓自潔。GT《聖經精讀本》說這種對聖潔的命令並不是行神跡的條件。
+  relation: 出19 的自潔是為了神降臨在山上，本章的自潔是為了神在百姓中間行奇事。同一個動作，一次面向山，一次面向河。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:19
+      - 約書亞記:3
+- title: 耶和華永生神
+  path: link_folder/神學/耶和華永生神.md
+  summary: 第10節「因此你們就知道在你們中間有永生神」，STEP 為 'el chai（H410G el 加 H2416A chay）。CT 說『永生神』意指祂是又真又活的神，是生命的源頭；GT《聖經精讀本》說永生神指神是生命的源頭；BH 說永生神不像迦南無能的偶像，祂實際掌管受造、帶領祂的百姓、成就祂的話。這句話與同段的「普天下主」（第11、13節）並列。
+  relation: 本章把這個名稱放在神蹟之前當作預告：河水斷流是要讓百姓「知道」祂是活的。名稱在這裡不是描述，是即將被驗證的宣告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 3
+    definition: keep
+    development: keep
+- title: 赫人
+  path: link_folder/人物/赫人.md
+  summary: 第10節七族名單，STEP 為 ha./chi.Ti（H2850）。CT 說他們比亞伯拉罕較早定居於迦南地，故亞伯拉罕在他們中間算是寄居的（參創二十三3~4），並說他們人多勢大、擁有大片土地（參書一4）。GT《研經資料》說赫人曾經居住在安那托利亞中部，後來在黎巴嫩北邊。
+  relation: 書1:4 赫人的全地被列為疆界的一部分，本章他們變成要被趕出的對象之一。同一卷書裡，同一個名字先當地標、再當敵人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 9
+    definition: keep
+    development: keep
+- title: 希未人
+  path: link_folder/歷史/希未人.md
+  summary: 第10節七族名單，STEP 為 ha./chi.Vi（H2340）。CT 說相信也是含的兒子迦南的子孫中的一族；GT《研經資料》說字義是「村民」，居住於迦南北方靠近黑門山之處，並指出希未人沒有在聖經以外的文獻出現過。
+  relation: 本章是希未人在約書亞記裡第一次被點名，位置在七族名單的中段。他們後來在書9 以基遍人的身分再出現，本章只列名字。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 6
+    - 6
+    definition: keep
+    development: keep
+- title: 革迦撒人
+  path: link_folder/人物/革迦撒人.md
+  summary: 第10節七族名單，STEP 為 ha./gir.ga.Shi（H1622）。CT 說是含的兒子迦南的子孫中的一族（參創十6，15~16）；GT《研經資料》說目前學界對革迦撒人所知甚少，但烏加列文獻證實了他們的存在。
+  relation: 七族名單裡資料最少的一族，本章給的也只有名字。它出現在這裡的意義在於名單的完整——神要趕出的不是幾個代表，是全部。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 3
+    definition: keep
+    development: keep
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第10節七族名單，STEP 為 ve./ha./'e.mo.Ri（H567）。GT《串珠聖經注釋》說亞摩利人有時候為迦南人之統稱，有時候指住山地的迦南人；GT《研經資料》說字義是「山居者」，原居於幼發拉底河西部，後來遷徙至迦南地。CT 說是含子孫中很強大的一支，多居住在山地。
+  relation: 書2:10 喇合提到的是河東的兩個亞摩利王已經被滅，本章列的是河西還在的亞摩利人。同一個族名在相鄰兩章裡分別站在已成之事與未成之事的兩邊。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 15
+    definition: keep
+    development: keep
+- title: 耶布斯人
+  path: link_folder/人物/耶布斯人.md
+  summary: 第10節七族名單之末，STEP 為 ve./ha/y.vu.Si（H2983G）。CT 說也是迦南的子孫中的一族，是耶路撒冷的原住民（參書十五63）；GT《研經資料》說他們曾經佔領耶路撒冷，原居於迦南山區，是迦南的第三個兒子的後代。CT 原文字義給「耶布斯」被踐踏。
+  relation: 名單以他們作結。條目此前累積的是他們在列祖與律法時期的出現，本章第一次把他們列進神所要趕出的對象裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 4
+    definition: keep
+    development: keep
+- title: 迦南七族（迦南地原住民）
+  path: link_folder/背景/迦南七族（迦南地原住民）.md
+  summary: 第10節一口氣列出迦南人、赫人、希未人、比利洗人、革迦撒人、亞摩利人、耶布斯人，這是本章唯一的族群清單。GT《研經資料》說這份名單與摩西五經一再出現的名單相似，其中迦南、赫人、亞摩利人三個有相當多的文獻紀錄佐證，比利洗人、希未人、耶布斯人則沒有在聖經以外的文獻出現過；它另說目前學界對革迦撒人所知甚少，但烏加列文獻證實了他們的存在。GT《綜合解讀》說希未人、比利洗人、革迦撒人這三族的名字在聖經之外只出現在主前第二千年的文獻中。KC 說這七族代表惡的完全。BH 說這份完整的名單強調迦南沒有任何一國能攔阻神成就祂所應許的。
+  relation: 這份名單在本章的位置很特別：它不是戰報，是過河之前的憑據。約書亞用神必趕出七族來證明「在你們中間有永生神」，名單因此成了信心的內容而不是戰果的統計。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 7
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:15
+      - 申命記:7
+      - 約書亞記:3
+- title: 為業（ye.ru.shah）
+  path: link_folder/原文/為業（ye.ru.shah）.md
+  summary: '第10節「他必在你們面前趕出迦南人」，STEP 為 ve./ho.Resh yo.Rish（H3423H，簡要詞典義 ya.rash: to possess: take，Hiphil 不定詞獨立式加未完成式）。同一個 Extended Strong 在書1:11、15 用來說以色列「得」那地為業，本節換成使役語態，主詞是神、受詞是原住民。'
+  relation: 書1 用這個字根說以色列要去得地，本章用同一個字根說神要把人趕出去。取得與被奪走在原文裡是同一個動作的兩面。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:2
+      - 約書亞記:1
+      - 約書亞記:3
+- title: 鹽海
+  path: link_folder/地點/鹽海.md
+  summary: 第16節「那往亞拉巴的海，就是鹽海，下流的水全然斷絕」。CT 說『那往亞拉巴的海，就是鹽海』亦即流往死海；GT《丁道爾聖經注釋》說亞拉巴的海（鹽海）乃是死海，在亞當城以南十八英哩，不過蜿蜒的約但河則還要長幾哩。GT《研經資料》算出乾涸的河道總長約三十八公里。
+  relation: 鹽海在本章不是地點，是量距離的另一端：經文用它與亞當城把斷流的範圍框出來，讓讀者知道這件事有多大。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 5
+    - 5
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞拉巴
+  path: link_folder/地點/亞拉巴.md
+  summary: 第16節「那往亞拉巴的海」。CT 原文字義給「亞拉巴」沙漠曠野；GT《研經資料》說字義是「荒野」，並說「亞拉巴的海」就是「死海」。
+  relation: 本章用它作為鹽海的限定語，指出水原本要流去的方向。它在這一節的功能是方位詞，不是獨立的地理描述。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 6
+    - 6
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第16節「於是百姓在耶利哥的對面過去了」。GT《研經資料》說水立起成壘之處於亞當城距離耶利哥二十九公里，而約但河終點死海距離耶利哥九公里，這三十八公里的河道都乾掉了。GT《綜合解讀》另說迦南人想不到以色列人會在此時過河，所以不會在岸邊設防。
+  relation: 書2 兩個探子偷偷進過這座城，本章是全國在它對面公開過河。耶利哥從偵察目標變成下一個要面對的城，而它自己什麼都沒能做。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 11
+    - 11
+    definition: keep
+    development: keep
+- title: 紅海分開
+  path: link_folder/歷史/紅海分開.md
+  summary: 本章與過紅海的對照由用字支撐。第13、16節「立起成壘」STEP 為 ned（H5067），GT《綜合解讀》與《研經資料》都說與出15:8 大水直立如「壘」是同一個字；第17節「乾地」STEP 為 be./cha.ra.Vah（H2724），GT《研經資料》說與出14:21 用詞一致。GT《丁道爾聖經注釋》另指出祭司站在乾地上與摩西將紅海變成乾地一樣。GT《綜合解讀》說約書亞特意把過約旦河與過紅海的神跡相提並論（書四23），並說過紅海的老一代以色列人大都去世了，現在神要新一代親身經歷過約旦河的神跡。
+  relation: 條目此前記的是紅海那一次本身，本章是它第一次被當成模板重演：同樣的動詞、同樣的乾地、同樣的水立成壘，換了一條河與一代人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:14
+      - 申命記:11
+      - 約書亞記:3
+- title: 雲柱火柱
+  path: link_folder/歷史/雲柱火柱.md
+  summary: GT《約書亞記綜合解讀》指出一個轉換：在曠野裡，神「夜間在火柱裡，日間在雲柱裡」（申一33）指示百姓所當行的路，如今在即將過約旦河、進入應許的時候，神卻讓百姓從跟隨雲柱、火柱變成「跟著約櫃去」（3節）；它說約櫃和雲柱、火柱一樣都代表神的同在，但神從此不再讓他們跟隨眼見的雲柱、火柱。BH 在第4節也說約櫃走在以色列前面，正如雲柱和火柱曾在曠野引導這個國家。
+  relation: 條目此前九章都是雲柱火柱在帶路，本章是它們讓位的一章。引導的方式從天上看得見的柱子，換成祭司肩上抬著的約櫃。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 10
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:13
+      - 申命記:1
+      - 約書亞記:3
+- title: 神的同在
+  path: link_folder/神學/神的同在.md
+  summary: 第7節「使他們知道我怎樣與摩西同在，也必照樣與你同在」，STEP 為 ha.Yi.ti 'im- mo.Sheh 與 'eh.Yeh 'i.Ma/kh（H5973A im）。BH 說約書亞的果效繫於耶和華的同在，而不是軍事才能或天賦；GT《綜合解讀》說神施行過約旦河神跡的目的之一，是要借著顯明神與約書亞的同在，建立他在神百姓中的權柄。第10節另從另一個角度說同一件事：「在你們中間有永生神」。
+  relation: 書1:5 神把這句話說給約書亞一個人聽，本章加上「使他們知道」——同在從私下的保證變成公開的證據，而證據就是斷流的河。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 21
+    - 21
+    definition: keep
+    development: keep
+- title: 三日之內與差派探子的先後之爭
+  path: link_folder/解經爭議/三日之內與差派探子的先後之爭.md
+  summary: 第2節「過了三天，官長走遍營中」。GT《綜合解讀》說「過了三天」可能就是兩個探子窺探耶利哥的三天（書2:22）；BH 說以色列在約書亞吩咐預備食物之後在約但河邊安營，因為三日之內他們要過河（書1:10-11），這段等待讓百姓整頓事務、預備過河。CT 說這指出埃及後第四十一年正月初十日（參書四19）的前一天。KC 說預備要花三天，主耶穌的死與復活包含在「三」這個數字裡。
+  relation: 書1 給的是期限，書2 給的是探子藏匿的三天，本章給的是官長真正出去傳令的那一天。三章的三個「三」到這裡才全部出現，時序問題也才完整。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:1
+      - 約書亞記:2
+      - 約書亞記:3
+- title: 清早起來
+  path: link_folder/主題/清早起來.md
+  summary: '第1節「約書亞清早起來，和以色列眾人都離開什亭」，STEP 為 va/i.yash.Kem ba./Bo.ker（H7925 sha.kham: to rise，Hiphil，加 H1242 bo.qer）。GT《約書亞記綜合解讀》說「清早起來」這句話在舊約中有特殊的意義，通常表示急切、堅決的態度（創十九3；出九13；民十四40；書七16）；GT《聖經精讀本》說聖經多處描寫清晨是藉著默想禱告在靈裡與神相交的時刻，並說本節表明約書亞是一位敏感於神的旨意且努力盡職的領袖。KC 說清早起來是約書亞的特點（書6:12；7:16；8:10），也是摩西、大衛、希西家等神百姓領袖的特點。BH 說他的殷勤讓人想起亞伯拉罕受命獻以撒時清早的順服。'
+  relation: 這是全章的第一個動作，而它與最後一節的祭司「站定」構成本章的兩端：一個人清早起身，一群人站到最後。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:22
+      - 約書亞記:3
+- title: 約櫃前行尋安歇（書3：3-6）
+  path: link_folder/互文/約櫃前行尋安歇（書3：3-6）.md
+  summary: 第3至6節：百姓看見約櫃就要離開所住的地方跟著去，第6節約書亞吩咐祭司「你們抬起約櫃，在百姓前頭過去」。GT《丁道爾聖經注釋》指出以色列人還沒有離開西乃山之前，就已經規定了行伍的秩序，記在民數記一至二章和第十章，而民數記十33 說約櫃要走在百姓的前頭、領他們到安歇之所，要過約但河的百姓可能也知道這個指示；它接著說這裡的重複或許是一種形式，也許是過河大典的一部分。GT《約書亞記研經資料》轉述同一段，並把它列為百姓與約櫃保持距離的三種可能理由之一。
+  relation: 民10:33 的約櫃在前行是為百姓尋找安歇之處，本章的約櫃在前行是為百姓開出一條過河的路。同一個「在前頭」，一次找地方停，一次找路走。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 1
+    definition: keep
+    development: keep

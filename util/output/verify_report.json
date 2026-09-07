@@ -1,7 +1,7 @@
 {
   "source": "offline-disk-scan",
   "broken_links_count": 0,
-  "pending_scripture_refs_count": 168,
+  "pending_scripture_refs_count": 167,
   "invalid_scripture_refs_count": 0,
   "unknown_links_count": 0,
   "broken_links": [],
@@ -530,11 +530,6 @@
       "entity": "32 約拿書/第4章",
       "book": "約拿書",
       "chapter": 4
-    },
-    {
-      "entity": "06 約書亞記/第3章",
-      "book": "約書亞記",
-      "chapter": 3
     },
     {
       "entity": "06 約書亞記/第9章",

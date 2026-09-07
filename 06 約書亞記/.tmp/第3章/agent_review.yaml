@@ -1,0 +1,63 @@
+version: 2
+book: 約書亞記
+chapter: 3
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: 45b0ba917c866c7f17f668d55ac66914a9045d8365a6dfcc676546fe90c20657
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 45b0ba917c866c7f17f668d55ac66914a9045d8365a6dfcc676546fe90c20657
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: e49523c7f152016e2e905fff92523b6dfd22f0127a7771a3ee509f092da547d4
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 9893380b0f72ed810c73dc311733988b64328cfd1e4b05b2d76ca108db260f2f
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: e49523c7f152016e2e905fff92523b6dfd22f0127a7771a3ee509f092da547d4
+      verdict: pass
+      findings_count: 0
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 3
+    sha256: ec8a464fd84ecfedb502ecdeb358ba9cf6f7ad1472cd35b94e9d15c0e10ca6c9
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 9670aed13d728eae8420095d56b0443fe991d20901cf723f11b7f9d12661d893
+      verdict: pass
+      findings_count: 0
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 80674d690f2b0f85421dba02fdff9da27799a41e784e9b3f67610eb392f9f1d1
+      verdict: pass
+      findings_count: 0
+    forced_from_findings_count: 0

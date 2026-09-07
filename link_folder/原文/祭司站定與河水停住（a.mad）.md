@@ -1,0 +1,55 @@
+---
+type: 原文
+secondary_types: []
+aliases: []
+status: formal
+source_scope: collected_only
+---
+
+# 祭司站定與河水停住（a.mad）
+
+## 定義
+
+書3:16 說河水「停住」，書3:17 說抬約櫃的祭司「站定」。中文用了兩個不同的詞，原文是同一個字。
+
+### 兩組對應
+
+STEP 顯示書3:16 的「停住」是 va/i.ya.'am.Du，書3:17 的「站定」也是 va/i.ya.'am.Du，兩處都是 H5975G（簡要詞典義 a.mad: to stand）。書3:17 的「站定」後面還跟著 ha.Khen（H3559H，簡要詞典義 kun: to establish），本節譯義作 firmly。
+
+第二組是「全然」與「盡都」。書3:17 的「盡都」STEP 為 ta.mu（H8552，簡要詞典義 ta.mam: to finish）。
+
+GT《約書亞記綜合解讀》把兩組並列說明：祭司們的「站定」與河水在亞當城的「停住」原文是同一個字；國民的「盡都」過河與河水的「全然」斷絕，原文也是同一個字。它接著解讀這個對應：祭司的站定帶出了河水的停住，而河水的全然斷絕確保了百姓盡都過河。GT《約書亞記研經資料》記下同樣兩組對應。
+
+### 丁道爾怎麼看這組重複
+
+GT《丁道爾聖經注釋》把它稱為一連串文字遊戲：祭司站定在河當中，與水在亞當城停住一樣；祭司們站在乾地上，與百姓從乾地上過去一樣，又與摩西將紅海變成乾地一樣（出14:21）；河水全然斷絕直到國民盡都過了約但河。它的結論是，這些文字遊戲顯示所有的動作都相關聯，而抬約櫃的祭司首先帶動整個行動，因此在過約但河頭一景的三組人中最受矚目。
+
+### 站著這件事持續了多久
+
+CT 說祭司在乾地上站定的用意在擋住約但河上游的水流，並說他們不單要用信心開路，也要用持久的順服來維持一條暢通的道路；它另外指出一刻的順服比較容易，持久的順服就不容易。KC 說祭司帶著約櫃一動不動地站在約但河中間的乾地上，這種不動顯示整個局面完全由約櫃掌控，水也同樣不動。BH 說祭司留在崗位上直到每一支派都過去了。
+
+## 按書卷累積
+
+### 約書亞記
+
+<!-- accumulation:約書亞記:3:start -->
+#### [[06 約書亞記/第3章|第3章]]
+- 本章重點：第16節河水「停住」與第17節祭司「站定」，STEP 兩處都是 va/i.ya.'am.Du（H5975G，簡要詞典義 a.mad: to stand）；第17節「站定」後面接 ha.Khen（H3559H kun，本節譯義 firmly），「盡都」是 ta.mu（H8552 ta.mam: to finish）。GT《綜合解讀》說祭司們的「站定」與河水在亞當城的「停住」原文是同一個字，國民的「盡都」過河與河水的「全然」斷絕原文也是同一個字，並說祭司的站定帶出了河水的停住、河水的全然斷絕確保了百姓盡都過河。GT《丁道爾聖經注釋》把它稱為一連串文字遊戲，並列出祭司站定對水停住、祭司站乾地對百姓走乾地、又對摩西將紅海變成乾地（出十四21）三組對應，說這顯示所有的動作都相關聯。CT 說祭司站定的用意在擋住上游水流，並說他們要用持久的順服維持道路暢通。KC 說這種不動顯示局面完全由約櫃掌控。
+- 與本章關聯：這組字把本章的兩端縫在一起：祭司做的動作與河水做的動作，經文用同一個字。它也解釋了第17節為什麼要特別交代祭司一直站到「國民盡都過了約但河」——那不是補述，是同一個動詞的兩半。
+<!-- accumulation:約書亞記:3:end -->
+
+## 相關條目
+
+- [[立起成壘（ned）]]
+- [[約櫃]]
+- [[紅海分開]]
+- [[約但河]]
+- [[亞當城與撒拉但]]
+
+## 來源依據
+
+- 原文資料（STEP Bible）: Joshua 3:16、17 — va/i.ya.'am.Du（H5975G，a.mad: to stand）、ha.Khen（H3559H）、ta.mu（H8552，ta.mam: to finish）、be./cha.ra.Vah（H2724）（<https://github.com/STEPBible/STEPBible-Data>）
+- 拾穗（ccbiblestudy GT）: 約書亞記第三章拾穗 — 書三17《丁道爾聖經注釋》《約書亞記綜合解讀》《約書亞記研經資料》論「站定／停住」與「盡都／全然」（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT03.htm>）
+- 逐節註解（ccbiblestudy CT）: 約書亞記第三章註解 — 書三17〔文意註解〕與〔話中之光〕(二)論持久的順服（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT03.htm>）
+- 研經註解（KingComments）: Joshua 3 — 13 - 17 Israel Crosses the Jordan（The priests stand immovably…）（<https://www.kingcomments.com/en/bible-studies/Jos/3>）
+- 研經註解（BibleHub Study）: Joshua 3 — Joshua 3:17「stood firm on dry ground in the middle of the Jordan」段（<https://biblehub.com/study/joshua/3.htm>）

@@ -1115,6 +1115,16 @@
       "呼天喚地"
     ]
   },
+  "和約櫃相離二千肘": {
+    "path": "link_folder/主題/和約櫃相離二千肘.md",
+    "type": "主題",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "和約櫃相離二千肘",
+    "status": "formal",
+    "aliases": []
+  },
   "善待寄居的外人愛他如己": {
     "path": "link_folder/主題/善待寄居的外人愛他如己.md",
     "type": "主題",
@@ -14067,6 +14077,16 @@
       "盡心盡性盡力愛神"
     ]
   },
+  "使你尊大（ga.dal）": {
+    "path": "link_folder/原文/使你尊大（ga.dal）.md",
+    "type": "原文",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "使你尊大（ga.dal）",
+    "status": "formal",
+    "aliases": []
+  },
   "使天下萬民驚恐懼怕": {
     "path": "link_folder/原文/使天下萬民驚恐懼怕.md",
     "type": "原文",
@@ -15553,6 +15573,16 @@
     "status": "formal",
     "aliases": []
   },
+  "普天下主（a.don kol ha.a.retz）": {
+    "path": "link_folder/原文/普天下主（a.don kol ha.a.retz）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "普天下主（a.don kol ha.a.retz）",
+    "status": "formal",
+    "aliases": []
+  },
   "智慧的靈（ru.ach chokh.mah）": {
     "path": "link_folder/原文/智慧的靈（ru.ach chokh.mah）.md",
     "type": "原文",
@@ -16357,6 +16387,14 @@
       "ish ha.e.lo.him"
     ]
   },
+  "祭司站定與河水停住（a.mad）": {
+    "path": "link_folder/原文/祭司站定與河水停住（a.mad）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "祭司站定與河水停住（a.mad）",
+    "status": "formal",
+    "aliases": []
+  },
   "禧年（第五十年）": {
     "path": "link_folder/原文/禧年（第五十年）.md",
     "type": "原文",
@@ -16441,6 +16479,14 @@
     "type": "原文",
     "secondary_types": [],
     "title": "窩巢與基尼的雙關（qen 與 qa.yin）",
+    "status": "formal",
+    "aliases": []
+  },
+  "立起成壘（ned）": {
+    "path": "link_folder/原文/立起成壘（ned）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "立起成壘（ned）",
     "status": "formal",
     "aliases": []
   },
@@ -16708,6 +16754,14 @@
       "腎",
       "兩個腰子"
     ]
+  },
+  "腳一入水（ta.val）": {
+    "path": "link_folder/原文/腳一入水（ta.val）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "腳一入水（ta.val）",
+    "status": "formal",
+    "aliases": []
   },
   "腳掌可踏之處": {
     "path": "link_folder/原文/腳掌可踏之處.md",
@@ -17857,6 +17911,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "亞珥歌伯（ar.gov）",
+    "status": "formal",
+    "aliases": []
+  },
+  "亞當城與撒拉但": {
+    "path": "link_folder/地點/亞當城與撒拉但.md",
+    "type": "地點",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "亞當城與撒拉但",
     "status": "formal",
     "aliases": []
   },
@@ -30335,6 +30399,16 @@
     "type": "解經爭議",
     "secondary_types": [],
     "title": "約伯記與以東地的關聯",
+    "status": "formal",
+    "aliases": []
+  },
+  "約但河斷流的自然解釋之爭": {
+    "path": "link_folder/解經爭議/約但河斷流的自然解釋之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "約但河斷流的自然解釋之爭",
     "status": "formal",
     "aliases": []
   },
