@@ -1,0 +1,59 @@
+book: 申命記
+retrieved_on: 2026-09-07
+note: >-
+  這份檔案保存供書卷導論使用的正規化來源筆記，不是網頁全文鏡像。
+  原頁全文由 crawl_book_introduction.py 依 source_manifest.yaml 取得；本檔只保留可追溯的事實、觀點與分歧。
+
+sources:
+  CT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT00.htm
+    notes:
+      - 採摩西臨別講詞與摩押平原的傳統框架，強調回顧歷史、重申律法與立約更新。
+      - 主題集中在聽、愛神、記念、順服、祝福／咒詛與選擇生命。
+      - 本書既總結摩西五經，也預備《約書亞記》的進地敘事。
+  GT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT00.htm
+    notes:
+      - 是多來源導論合輯，整理摩西講詞、律法重申、約、愛神與進地預備。
+      - 使用個別觀點時必須保留子來源名稱。
+  KC0:
+    url: https://www.kingcomments.com/en/bible-studies/Deu/0
+    notes:
+      - 採摩西作者傳統，將本書理解為摩西在摩押對新世代的最後勸勉。
+      - 「第二律法」不是單純重複，而是在進地前重新陳明神的旨意。
+  BH:
+    url: https://biblehub.com/deuteronomy/
+    notes:
+      - 提供書名、作者、摩押背景、目的、文體與講詞結構的一般概覽。
+      - 適合支援一覽表與全書結構整理。
+  BIBLEPROJECT:
+    url: https://bibleproject.com/guides/book-of-deuteronomy/
+    notes:
+      - 以摩西臨別講詞呈現回顧、愛神與守約、律法、祝福／咒詛與領袖交接。
+      - 適合圖表化「記念 → 愛 → 順服 → 選擇生命」的主線。
+  ENTER_THE_BIBLE:
+    url: https://enterthebible.org/courses/deuteronomy/
+    notes:
+      - 提供申命傳統、主前七世紀改革、被擄期編整與申命史等常見現代研究框架。
+      - 這些是學術重建模型，不應抹去本書自己的摩押臨別敘事場景。
+  YALE:
+    url: https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+    notes:
+      - 補充申命記法律、宗教改革與古代近東條約形式的比較。
+      - 可用來說明歷史回顧、條款、祝福咒詛與見證等形式特徵，但不等同於證明直接抄襲某一條約。
+
+cross_source_synthesis:
+  strong_consensus:
+    - 《申命記》的公開敘事場景是摩西在摩押平原對進地前新世代所作的臨別勸勉。
+    - 記念、聽、愛神、順服與教導下一代是全書反覆出現的核心呼召。
+    - 1–4歷史回顧、5–11約的核心、12–26律法、27–30立約更新、31–34摩西最後的事，是清楚而實用的閱讀骨架。
+    - 本書直接銜接《約書亞記》，並深刻影響約書亞至列王紀及後續先知與新約。
+  disputed_or_layered:
+    - topic: 作者
+      traditional: 摩西為主要作者／講述者；第34章死亡敘事常另作處理。
+      academic: 現有文本常被理解為較長申命傳統形成與編整的成果。
+      writing_rule: 不把「摩西講詞場景」與「現代文本形成史」混成單一問題。
+    - topic: 成書年代
+      traditional: 摩西生命末期、進迦南前。
+      academic: 常見模型討論北國傳統、約西亞改革與被擄期編整，但具體重建並不完全一致。
+      writing_rule: 用「常見學術模型／部分研究」等限定語，避免把單一路線寫成已證實歷史。
