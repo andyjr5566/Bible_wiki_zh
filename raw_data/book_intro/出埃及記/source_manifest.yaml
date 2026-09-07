@@ -1,0 +1,63 @@
+book: 出埃及記
+book_folder: 02 出埃及記
+prototype: true
+retrieved_on: 2026-09-07
+
+principles:
+  commentary_vote_sources: [CT00, GT00, KC0, BH]
+  external_context_sources: [BIBLEPROJECT, ENTER_THE_BIBLE, YALE]
+  note: >-
+    CT00、GT00、KC0、BH 延續專案既有四套註釋來源；BibleProject、Enter the Bible、Yale
+    用於文學結構、歷史背景與學術觀點補強，不加入四家共識票數。作者、出埃及事件年代與文本成書年代分層呈現。
+
+sources:
+  CT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 出埃及記提要（CT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT00.htm
+    expected_fields: [書名, 作者, 寫作時地, 主旨要義, 寫作動機, 本書重要性, 本書特點, 與其他書卷關係, 鑰節與鑰字, 內容大綱]
+  GT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 出埃及記導論拾穗（GT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT00.htm
+    expected_fields: [與創世記的連續性, 作者與年代, 救贖主題, 西乃立約, 會幕, 多家導論意見]
+    provenance_rule: GT00 是多來源合輯；使用個別觀點時必須保留子來源，不能把單一觀點寫成 GT00 一致意見。
+  KC0:
+    family: kingcomments
+    role: commentary
+    label: KingComments Exodus Introduction
+    url: https://www.kingcomments.com/en/bible-studies/Exo/0
+    expected_fields: [Exodus 書名, 救贖主題, 埃及與西乃兩大場景, 會幕與神同在]
+  BH:
+    family: biblehub
+    role: commentary
+    label: BibleHub Exodus Summary and Study Bible
+    url: https://biblehub.com/exodus/
+    expected_fields: [Theme, Summary, Title and Author, Historical Context, Audience and Purpose, Genre and Style, Structure and Content]
+    family_rule: BibleHub 內部即使引用多個底層資源，仍只算一個 BH 來源維度。
+  BIBLEPROJECT:
+    family: bibleproject
+    role: literary_design
+    label: BibleProject Exodus Guide
+    url: https://bibleproject.com/guides/book-of-exodus/
+    expected_fields: [1–18 與 19–40 的大結構, 拯救與立約, 金牛犢危機, 會幕與神同住]
+  ENTER_THE_BIBLE:
+    family: luther_seminary
+    role: academic_context
+    label: Enter the Bible — Exodus
+    urls:
+      - https://enterthebible.org/courses/exodus/
+      - https://enterthebible.org/courses/exodus/lessons/summary-of-exodus/
+      - https://enterthebible.org/courses/exodus/lessons/outline-of-exodus/
+      - https://enterthebible.org/courses/exodus/lessons/background-of-exodus/
+      - https://enterthebible.org/courses/exodus/lessons/introductory-issues-in-exodus
+      - https://enterthebible.org/courses/exodus/lessons/theological-themes-in-exodus/
+    expected_fields: [Summary, Outline, Background, 多階段成書研究, 法律類型, 神學主題]
+  YALE:
+    family: yale_bible_study
+    role: academic_context
+    label: Yale Bible Study — Exodus Introduction
+    url: https://yalebiblestudy.org/courses/exodus/lessons/introduction-study-guide/
+    expected_fields: [出埃及與列祖故事連續性, 五經來源問題, 出埃及歷史與考古討論, 西乃與律法]

@@ -15,6 +15,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install PyYAML numpy
+      - name: Validate all configured book introductions
+        run: python util/check_all_book_introductions.py
       - run: python -m unittest discover -s util/tests -v
       - run: python util/build_link_index.py --check
       - run: python util/validate_knowledge_base.py --base HEAD^

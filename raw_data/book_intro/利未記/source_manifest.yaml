@@ -1,0 +1,67 @@
+book: 利未記
+book_folder: 03 利未記
+prototype: true
+retrieved_on: 2026-09-07
+
+principles:
+  commentary_vote_sources: [CT00, GT00, KC0, BH]
+  external_context_sources: [BIBLEPROJECT, ENTER_THE_BIBLE, YALE]
+  note: >-
+    CT00、GT00、KC0、BH 延續專案既有四套註釋來源；BibleProject、Enter the Bible、Yale
+    用於文學結構、古代祭祀背景與現代成書研究，不加入四家共識票數。潔淨／不潔淨與道德罪必須分開處理。
+
+sources:
+  CT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 利未記提要（CT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT00.htm
+    expected_fields: [書名, 作者, 寫作時地, 主旨要義, 本書重要性, 本書特點, 鑰節與鑰字, 內容大綱]
+  GT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 利未記導論拾穗（GT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT00.htm
+    expected_fields: [聖潔與相交, 贖罪日, 安息與禧年, 獻祭祭司潔淨, 多家導論意見]
+    provenance_rule: GT00 是多來源合輯；使用個別觀點時必須保留子來源，不能把單一觀點寫成 GT00 一致意見。
+  KC0:
+    family: kingcomments
+    role: commentary
+    label: KingComments Leviticus Introduction
+    url: https://www.kingcomments.com/en/bible-studies/Lev/0
+    expected_fields: [Leviticus 名稱, 會幕與神同住, 親近神, 祭司與祭物, 聖潔]
+  BH:
+    family: biblehub
+    role: commentary
+    label: BibleHub Leviticus Summary and Study Bible
+    url: https://biblehub.com/leviticus/
+    expected_fields: [Theme, Summary, Title and Author, Historical Context, Audience and Purpose, Genre and Style, Structure and Content]
+    family_rule: BibleHub 內部即使引用多個底層資源，仍只算一個 BH 來源維度。
+  BIBLEPROJECT:
+    family: bibleproject
+    role: literary_design
+    label: BibleProject Leviticus Guide
+    url: https://bibleproject.com/guides/book-of-leviticus/
+    expected_fields: [由出埃及記40章銜接, 祭物祭司潔淨的結構, 第16章中心, 神與百姓同住]
+  ENTER_THE_BIBLE:
+    family: luther_seminary
+    role: academic_context
+    label: Enter the Bible — Leviticus
+    urls:
+      - https://enterthebible.org/courses/leviticus/
+      - https://enterthebible.org/courses/leviticus/lessons/summary-of-leviticus/
+      - https://enterthebible.org/courses/leviticus/lessons/outline-of-leviticus/
+      - https://enterthebible.org/courses/leviticus/lessons/background-of-leviticus/
+      - https://enterthebible.org/courses/leviticus/lessons/introductory-issues-in-leviticus/
+      - https://enterthebible.org/courses/leviticus/lessons/theological-themes-in-leviticus/
+    expected_fields: [Summary, Outline, Background, 被擄／被擄後最終編整觀點, 聖潔, 祭祀與日常生活]
+  YALE:
+    family: yale_bible_study
+    role: academic_context
+    label: Yale Bible Study — Leviticus, Numbers, and Deuteronomy
+    urls:
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/introducing-biblical-law-study-guide/
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/leviticus-part-1-study-guide/
+      - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/leviticus-part-2-study-guide/
+    expected_fields: [古代祭祀背景, 潔淨與聖潔, 贖罪日, 聖潔法典, Biblical law 的學術分類]

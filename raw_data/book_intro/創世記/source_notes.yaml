@@ -1,0 +1,99 @@
+book: 創世記
+retrieved_on: 2026-09-06
+note: >-
+  這份檔案保存可供 Introduction Agent 使用的「正規化來源筆記」，不是把網頁逐字鏡像進 repo。
+  原頁全文由 crawl_book_introduction.py 依 source_manifest.yaml 取得；本檔只保留可追溯的事實、觀點與分歧。
+
+sources:
+  CT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01CT00.htm
+    notes:
+      - 希伯來傳統以首字「起初」命名；Genesis 來自希臘文，意指起源、源頭、生成。
+      - 傳統觀點把《創世記》放在摩西五經之首，作者歸於摩西。
+      - 寫作時地採傳統摩西時期框架，約主前十五至十四世紀，並把故事內容與寫作年代分開。
+      - 寫作目的包括交代人類起源、以色列先祖的來歷，以及他們如何從迦南進入埃及。
+      - 全書神學主線是創造、人的墮落、神仍持續施行拯救與應許。
+      - 結構分為上古史（1–11）與列祖史（12–50），後者再依亞伯拉罕、以撒／雅各、約瑟展開。
+      - 強調《創世記》為後續聖經主題奠定基礎，並直接銜接《出埃及記》。
+
+  GT00:
+    url: https://www.ccbiblestudy.org/Old%20Testament/01Gen/01GT00.htm
+    notes:
+      - GT00 是導論資料合輯，不是單一作者；其中收錄傳統摩西作者論，也整理近代來源批判史。
+      - 多份材料注意到「這是……的後代／記略」一類 toledot 公式，視為全書重要結構線索。
+      - 全書處理世界、人類、罪、文明、列國、以色列等「起源」。
+      - 神學主題包括神、人按神形像受造、罪、救贖盼望、約與應許。
+      - 使用時必須標示合輯內部來源；不能把其中某一研讀本或註釋家的立場寫成 GT00 全體結論。
+
+  KC0:
+    url: https://www.kingcomments.com/en/bible-studies/Gen/0
+    notes:
+      - 採傳統摩西作者論，約主前1450年、西奈曠野成書。
+      - 希伯來名 Bereshith 取自「起初」；Genesis 表示出生、起源、成為。
+      - 把《創世記》視為「起頭之書」：天地、婚姻家庭、罪與死、獻祭、審判、列國、以色列、約等主題在此開始。
+      - 強調後續聖經真理已在《創世記》中以直接敘述或圖像方式萌芽。
+
+  BH:
+    url: https://biblehub.com/genesis/
+    notes:
+      - 書名資料與其他來源一致：Genesis＝origin/beginning；Bereshith＝in the beginning。
+      - 採傳統摩西作者歸屬，並把寫作背景放在出埃及後的曠野時期。
+      - 原始受眾被描述為以色列人；目的在說明其身份、與神的約，以及世界、人類、罪與神子民的起源。
+      - 文體不是單一形式，包含敘事、家譜、詩性段落等。
+      - 提供清楚的內容分段：創造、墮落與早期世代、洪水、列國與巴別、亞伯拉罕、以撒、雅各、約瑟。
+      - 可提供章數、節數、首尾字等資料，但 Introduction 應只選一般讀者真正有幫助的統計。
+
+  BIBLEPROJECT:
+    url: https://bibleproject.com/guides/book-of-genesis/
+    notes:
+      - 最有用的文學設計是兩大部：1–11 神與全世界；12–50 神與一個人及其家族。
+      - 12:1-3 是全書轉軸：從列國的破裂轉到亞伯拉罕一家，目的仍指向「萬族得福」。
+      - 1–3 呈現神從混亂建立秩序、美善與生命；3章後人持續自行定義善惡，帶來破裂與死亡。
+      - 族長故事反覆出現人的失敗與神仍守住應許的張力。
+      - 《創世記》把後續聖經的重要母題——生命／死亡、祝福／咒詛、後裔、土地、神的同在——放上舞台。
+
+  ENTER_THE_BIBLE:
+    urls:
+      - https://enterthebible.org/courses/genesis/
+      - https://enterthebible.org/courses/genesis/lessons/summary-of-genesis/
+      - https://enterthebible.org/courses/genesis/lessons/outline-of-genesis/
+      - https://enterthebible.org/courses/genesis/lessons/background-of-genesis/
+      - https://enterthebible.org/courses/genesis/lessons/introductory-issues-in-genesis/
+      - https://enterthebible.org/courses/genesis/lessons/theological-themes-in-genesis/
+    notes:
+      - 傳統上把五經及《創世記》歸於摩西；現代研究通常把現有文本理解為長期形成、經過多位作者與編者的成果。
+      - 該站採一種學術成書框架，認為材料發展超過五百年，並在巴比倫被擄期間或其後完成；此為學術觀點，不可寫成唯一結論。
+      - 建議讀者注意《創世記》的文類，不把它當成現代科學教科書；重點在神、受造界、人與應許的神學敘事。
+      - 古代近東已有多個洪水傳統，如 Gilgamesh 與 Atrahasis；相似性與依賴關係需要分開討論。
+      - 家譜不只是名單，也是全書結構骨架；toledot 公式反覆推動敘事。
+      - 神學主題包括祝福、約、創造、揀選、人的善與罪、神的形像、審判與憐憫，以及「兄弟問題／和好」。
+
+  YALE:
+    url: https://yalebiblestudy.org/courses/genesis/lessons/genesis-introduction-study-guide/
+    notes:
+      - 可把全書按文學性質分為：1–11 上古史；12–36 族長故事；37–50 約瑟故事（較接近完整 novella）。
+      - 上古史與美索不達米亞創造／洪水傳統有明顯平行，適合放進「古代近東背景」，而不是簡化為互相抄襲。
+      - Yale 以 J/E/P 等來源模型介紹五經文本形成，並指出學界對各來源年代並無單一共識。
+      - 族長敘事很難用現代史學方式直接定位；文本可能保存較早傳統，同時又有後期編輯與語彙痕跡。
+      - 此來源適合呈現「學界如何問問題」，不適合把特定來源理論寫成已證實的事實。
+
+cross_source_synthesis:
+  strong_consensus:
+    - 《創世記》是「起源／起初」之書，並為整本聖經的敘事與神學奠基。
+    - 1–11 與 12–50 是最重要的宏觀分界；12章亞伯拉罕蒙召是明顯轉折。
+    - 全書從全人類逐步聚焦到亞伯拉罕一家，再透過約瑟把故事帶進埃及，為《出埃及記》預備舞台。
+    - 創造、罪與破裂、神的應許／祝福、約、後裔與土地，是跨來源都高度重要的主題。
+
+  disputed_or_layered:
+    - topic: 作者
+      traditional: 摩西是五經與《創世記》的作者／主要作者。
+      academic: 現有文本被視為長期傳承、撰寫與編輯的結果；作者問題不能只用一個名字概括。
+      writing_rule: 同時呈現，清楚標示「傳統歸屬」與「現代學術成書觀」。
+    - topic: 成書年代
+      traditional: 約主前十五至十四世紀、出埃及後曠野時期。
+      academic: 多階段形成，部分研究把現有形式或重要編輯階段放到君王時期、被擄期或其後。
+      writing_rule: 不把故事發生年代、材料傳承年代、寫作／編輯年代、最終文本年代混成一個日期。
+    - topic: 文類與歷史
+      traditional: 強調真實歷史敘事。
+      academic: 依段落區分上古敘事、族長傳說／家族故事、約瑟 novella 等文學類型，並提醒現代史學驗證的限制。
+      writing_rule: 先描述文本如何自我呈現與如何運作，再介紹不同研究框架；避免用單一標籤裁決整卷。
