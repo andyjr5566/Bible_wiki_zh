@@ -29,13 +29,22 @@
 
 STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自動寫成本節確定義，morphology 不能自行推出神學結論，STEP absence 也不能用來否定 Commentary 延伸。
 
+### Attribution fidelity
+
+凡把內容歸於某一來源，都直接對照該來源判斷忠實度：
+
+- 同語言直接引文：文字內容須忠實，節錄不得改變原意或拼接成來源沒有的句子。
+- 跨語言翻譯：比較語義，不要求中文字串出現在英文來源；不得增加、刪除、強化、弱化或反轉來源的主張、範圍、否定、因果與不確定程度。
+- 具名轉述：不要求逐字，但內容必須由來源支持，且不能把某一家說法改掛給另一家。
+- 不因標點或引號本身判定是否屬直接引文；只有來源 attribution 與實際來源不符時才形成 finding。單純字串回查不到，不足以構成 finding。
+
 ## Stage 範圍
 
 ### m3
 
 同時做 **內容忠實度 + 條目完整度**：
 
-- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、逐字引句、數字、經文、原文、分歧與異章污染。
+- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、引文／翻譯／轉述、數字、經文、原文、分歧與異章污染。
 - 對照 `link_plan.yaml` 的 `C_new_formal`，確認計畫內條目都有實際 M3 payload。
 - 再對照本章四套 Commentary、經文、相關 STEP、`link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki，找出是否有「來源明確提到、具研讀價值、值得跨章累積、有內容可承載、又沒有既有條目承接」的重要候選整個漏掉。
 - 不為功能詞、單次薄弱提及、Strong 編號本身或同義既有條目另建頁。
