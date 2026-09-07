@@ -55,8 +55,10 @@ import yaml
 
 try:
     from .book_paths import book_directory, canonical_book_name
+    from .yaml_io import write_yaml_atomic
 except ImportError:
     from book_paths import book_directory, canonical_book_name
+    from yaml_io import write_yaml_atomic
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_FILENAME = "agent_review.yaml"
@@ -107,13 +109,8 @@ def _read_state(book: str, chapter: int, root: Path = ROOT) -> dict:
 
 def _write_state(book: str, chapter: int, data: dict, root: Path = ROOT) -> Path:
     path = _state_path(book, chapter, root)
-    path.parent.mkdir(parents=True, exist_ok=True)
     data["version"] = STATE_VERSION
-    path.write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False),
-        encoding="utf-8",
-    )
-    return path
+    return write_yaml_atomic(path, data)
 
 
 def _digest_parts(parts: Iterable[tuple[str, bytes]]) -> str:

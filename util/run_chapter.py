@@ -48,6 +48,7 @@ import source_excerpts
 import step_context
 import validate_knowledge_base as vkb
 from model_client import ModelError, ModelValidationError, call_model
+from yaml_io import write_yaml_atomic
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_DIR = ROOT / "_config" / "schemas"
@@ -126,10 +127,9 @@ def _read_yaml(path):
 
 
 def _write_yaml(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
-    )
+    # 原子寫入：dump 先跑，失敗不動原檔；成功才 os.replace 換上——避免
+    # dump 中途丟例外或行程被砍時把手寫 payload 截成 0 byte。
+    write_yaml_atomic(path, data)
 
 
 def _schema_hint(name):

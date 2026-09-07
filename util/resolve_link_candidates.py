@@ -10,8 +10,10 @@ import yaml
 
 try:
     from .book_paths import book_directory
+    from .yaml_io import write_yaml_atomic
 except ImportError:
     from book_paths import book_directory
+    from yaml_io import write_yaml_atomic
 
 UTIL_DIR = Path(__file__).resolve().parent
 ROOT = UTIL_DIR.parent
@@ -447,14 +449,7 @@ def build_plan_document(plan, book, chapter):
 
 def write_plan_yaml(plan, book, chapter, root=ROOT):
     output = book_directory(root, book) / ".tmp" / f"第{chapter}章" / "link_plan.yaml"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(
-        yaml.safe_dump(
-            build_plan_document(plan, book, chapter),
-            allow_unicode=True, sort_keys=False,
-        ),
-        encoding="utf-8",
-    )
+    write_yaml_atomic(output, build_plan_document(plan, book, chapter))
     print(f"✅ link plan (yaml) 已建立：{output}")
     return output
 

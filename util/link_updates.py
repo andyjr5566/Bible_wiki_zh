@@ -15,9 +15,11 @@ import yaml
 try:
     from .book_paths import BOOK_NUMBERS, book_directory, canonical_book_name, chapter_link
     from . import console
+    from .yaml_io import write_yaml_atomic
 except ImportError:
     from book_paths import BOOK_NUMBERS, book_directory, canonical_book_name, chapter_link
     import console
+    from yaml_io import write_yaml_atomic
 
 ROOT = Path(__file__).resolve().parent.parent
 BOOK_ALIASES = {"約書亞記": "約書亞記"}
@@ -452,12 +454,8 @@ def prepare(book, chapter):
         "chapter": int(chapter),
         "entries": baselines,
     }
-    baseline_path.write_text(
-        yaml.safe_dump(baseline, allow_unicode=True, sort_keys=False), encoding="utf-8"
-    )
-    output.write_text(
-        yaml.safe_dump(data, allow_unicode=True, sort_keys=False, default_style='"'), encoding="utf-8"
-    )
+    write_yaml_atomic(baseline_path, baseline)
+    write_yaml_atomic(output, data, default_style='"')
     evidence_path = chapter_dir / REVIEW_EVIDENCE_FILENAME
     evidence_path.write_text(
         review_evidence_markdown(book, int(chapter), evidence_rows), encoding="utf-8"

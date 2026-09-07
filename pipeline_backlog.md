@@ -13,7 +13,7 @@
 | # | 狀態 | 問題 | 主要位置 | 後果 |
 | --- | --- | --- | --- | --- |
 | A1 | ✅ | 作廢流程直接刪手寫 payload | `util/run_chapter.py` `_invalidate_stale` | 數小時的手寫內容無備份消失 |
-| A2 | ⬜ | YAML round-trip 失敗把檔案截成 0 byte | 所有 `.tmp/*.yaml` 寫入點 | payload 靜默清空 |
+| A2 | ✅ | YAML round-trip 失敗把檔案截成 0 byte | 所有 `.tmp/*.yaml` 寫入點 | payload 靜默清空 |
 | A3 | ✅ | 記 verdict 前先改檔＝review 額度蒸發 | `util/agent_review.py::record_verdict` | 每 stage 只有 2 次，不可回復 |
 | A4 | ✅ | stage hash 涵蓋範圍小於 stage 本身 | `util/agent_review.py` | verdict 掛在錯的 hash 上；曾誘發 reviewer 自行改 gate |
 | B1 | ⬜ | link_plan 是開工快照，重跑 resolve 會塌回 A 桶 | `util/resolve_link_candidates.py::resolve` | A/B/C 分類全毀，check 才報錯 |
@@ -70,6 +70,15 @@ MCP `prepare_manual_payload_prompts` 的 stdout 一併帶出。`.gitignore` 排�
 **驗收**
 - 注入一個會在 dump 中途丟例外的物件：原檔內容完全不變，暫存檔被清掉。
 - 確認沒有其他地方直接 `open(..., 'w')` 寫 yaml。
+
+**狀態**　✅ 完成。新增 `util/yaml_io.py::write_yaml_atomic(path, data, **dump_kwargs)`：
+先 `safe_dump`（失敗不動原檔）→ 寫 `<name>.<pid>.tmp` → `os.replace` 換上；任何錯誤刪暫存檔並 re-raise。
+改接的四個 payload 寫入點：`run_chapter._write_yaml`、`resolve_link_candidates.write_plan_yaml`、
+`link_updates`（`link_update_review_baseline.yaml` ＋ `link_updates.yaml`，後者保留 `default_style='"'`）、
+`agent_review._write_state`（`agent_review.yaml`）。其餘 `yaml.safe_dump` 只用於 md frontmatter／manifest
+列印，不在 `.tmp/*.yaml` 範圍。round-trip 把 literal block 攤平／表格插空行是 `safe_dump` 本質，
+仍以「小改用純文字 replace」為人工紀律，不在本次程式範圍。
+測試：`util/tests/test_yaml_io.py`（4 項）。
 
 ### A3. 記 verdict 前先改檔＝該次 review 額度蒸發
 
