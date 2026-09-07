@@ -11894,6 +11894,16 @@
       "善以別"
     ]
   },
+  "喇合": {
+    "path": "link_folder/人物/喇合.md",
+    "type": "人物",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "喇合",
+    "status": "formal",
+    "aliases": []
+  },
   "土八該隱": {
     "path": "link_folder/人物/土八該隱.md",
     "type": "人物",
@@ -12911,6 +12921,16 @@
     "aliases": [
       "羅得妻子"
     ]
+  },
+  "耶利哥王": {
+    "path": "link_folder/人物/耶利哥王.md",
+    "type": "人物",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "耶利哥王",
+    "status": "formal",
+    "aliases": []
   },
   "耶布斯人": {
     "path": "link_folder/人物/耶布斯人.md",
@@ -15555,6 +15575,16 @@
       "智慧、聰明"
     ]
   },
+  "朱紅線繩（chut ha.sha.ni）": {
+    "path": "link_folder/原文/朱紅線繩（chut ha.sha.ni）.md",
+    "type": "原文",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "朱紅線繩（chut ha.sha.ni）",
+    "status": "formal",
+    "aliases": []
+  },
   "杏花杯球花（燈臺裝飾）": {
     "path": "link_folder/原文/杏花杯球花（燈臺裝飾）.md",
     "type": "原文",
@@ -17713,6 +17743,16 @@
     "aliases": [
       "鬼魔"
     ]
+  },
+  "麻秸（pish.teh 與 ets）": {
+    "path": "link_folder/原文/麻秸（pish.teh 與 ets）.md",
+    "type": "原文",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "麻秸（pish.teh 與 ets）",
+    "status": "formal",
+    "aliases": []
   },
   "黃蜂": {
     "path": "link_folder/原文/黃蜂.md",
@@ -20105,6 +20145,16 @@
       "神學"
     ],
     "title": "帳棚生活與定居對比",
+    "status": "formal",
+    "aliases": []
+  },
+  "建在城牆上的房子": {
+    "path": "link_folder/文化/建在城牆上的房子.md",
+    "type": "文化",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "建在城牆上的房子",
     "status": "formal",
     "aliases": []
   },
@@ -28305,6 +28355,16 @@
     "status": "formal",
     "aliases": []
   },
+  "上天下地的神是否一神信仰之爭": {
+    "path": "link_folder/解經爭議/上天下地的神是否一神信仰之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "上天下地的神是否一神信仰之爭",
+    "status": "formal",
+    "aliases": []
+  },
   "中閂從這一頭通到那一頭的難題": {
     "path": "link_folder/解經爭議/中閂從這一頭通到那一頭的難題.md",
     "type": "解經爭議",
@@ -29120,6 +29180,16 @@
       "含看見挪亞赤身",
       "含對挪亞赤身的反應"
     ]
+  },
+  "喇合說謊是否蒙神認可之爭": {
+    "path": "link_folder/解經爭議/喇合說謊是否蒙神認可之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [
+      "主題"
+    ],
+    "title": "喇合說謊是否蒙神認可之爭",
+    "status": "formal",
+    "aliases": []
   },
   "嗎哪是不是自然產物": {
     "path": "link_folder/解經爭議/嗎哪是不是自然產物.md",

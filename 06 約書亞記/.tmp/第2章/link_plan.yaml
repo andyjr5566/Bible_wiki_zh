@@ -1,0 +1,172 @@
+book: 約書亞記
+chapter: 2
+A_use_directly: []
+B_needs_update:
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第1節「嫩的兒子約書亞從什亭暗暗打發兩個人作探子」；第23、24節探子回來向他述說所遭遇的一切事，並說耶和華果然將那全地交在我們手中。
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 什亭（亞伯什亭）
+  suggested_type: 地點
+  evidence: 第1節「從什亭暗暗打發兩個人作探子」。CT 說什亭位於死海東北，與約但河西的耶利哥遙遙相對，是以色列人曠野旅程的最後一站（參民二十五1）；GT《研經資料》說字義是「洋槐」。
+  match_type: exact
+  existing_title: 什亭（亞伯什亭）
+  existing_path: link_folder/地點/什亭（亞伯什亭）.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第1節「你們去窺探那地和耶利哥」，第2、3節耶利哥王。各家都說明它扼守東西南北大道交匯點、是人類最早築有城牆的城市之一。
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第7節「那些人就往約但河的渡口追趕他們去了」，第23節探子「過了河」回到約書亞那裡。各家都說明渡口在城的東面、是探子最可能的逃跑方向。
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 海（紅海）
+  suggested_type: 地點
+  evidence: 第10節「耶和華怎樣在你們前面使紅海的水乾了」，這是喇合所聽見的第一件事。GT《研經資料》說「紅海」原文是「蘆葦海」。
+  match_type: exact
+  existing_title: 海（紅海）
+  existing_path: link_folder/地點/海（紅海）.md
+- name: 紅海分開
+  suggested_type: 歷史
+  evidence: 第10節喇合提到出埃及時神使紅海的水乾了。GT《丁道爾聖經注釋》指出描述耶和華如何使紅海的水乾了之字在聖經中是頭一次出現，並說它在書5:23（原註作五23）再度出現，意味過約但河與過紅海有關聯；BH
+    也把兩次分水並列。
+  match_type: exact
+  existing_title: 紅海分開
+  existing_path: link_folder/歷史/紅海分開.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第10節「你們怎樣待約但河東的兩個亞摩利王西宏和噩」。
+  surfaces:
+  - phrase: 亞摩利王
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  suggested_type: 互文
+  evidence: 第10節「將他們盡行毀滅」。喇合舉出的第二件事就是河東二王之役。GT《研經資料》說「西宏」字義是「勇士」、「噩」字義是「長頸的」、「盡行毀滅」是「完全地毀壞」。
+  surfaces:
+  - phrase: 西宏和噩
+  match_type: exact
+  existing_title: 以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）
+  existing_path: link_folder/互文/以色列戰勝亞摩利王西宏互文（申2：24-37；3：1-7；詩135：10-12；136：17-22）.md
+- name: 十二探子窺探迦南地
+  suggested_type: 事件
+  evidence: 四套註釋都拿本章與民13-14 的十二探子對比：CT 說這兩個探子的眼光與三十八年前的十個探子完全不同；GT《綜合解讀》說三十八年前是大張旗鼓的公開行為，這次卻是暗暗打發；KC
+    說四十年前十二個以色列人窺探全地，其中十人帶著不信回來報惡信；BH 說這次的報告使全體以色列更堅定倚靠耶和華。
+  match_type: exact
+  existing_title: 十二探子窺探迦南地
+  existing_path: link_folder/事件/十二探子窺探迦南地.md
+- name: 使天下萬民驚恐懼怕
+  suggested_type: 原文
+  evidence: 第9節「因你們的緣故我們都驚慌了」STEP 為 na.fe.Lah 'ei.mat./Khem（H5307 na.phal 加 H367 e.mah），第11節「並無一人有膽氣」是
+    ve./lo'- Ka.mah od Ru.ach be./'Ish（H7307G ru.ach）。CT 原文字義給「驚慌(原文雙字)」恐怖，害怕(首字)；仆倒，下沉(次字)、「膽氣」勇氣；GT《研經資料》譯作「對你們的驚駭落在我們身上」與「人裡面的心靈不再立得住」。GT《雷氏研讀本》要讀者參看申2:25
+    的應許；BH 說神曾應許在以色列前面打發驚駭，喇合的話證明這話已經應驗。
+  surfaces:
+  - phrase: 驚慌
+  - phrase: 膽氣
+  match_type: exact
+  existing_title: 使天下萬民驚恐懼怕
+  existing_path: link_folder/原文/使天下萬民驚恐懼怕.md
+- name: 三日之內與差派探子的先後之爭
+  suggested_type: 解經爭議
+  evidence: 第16節喇合叫探子「要在那裡隱藏三天」，第22節「在那裡住了三天」。GT《研經資料》討論這與書1:11 三日之內、書3:2 三天的先後：喇合的建議是要探子不可以直接過河，這樣約書亞的過河時間應該會拖過三天，或者約書亞先派出探子、等探子回來才下令三天過河。
+  surfaces:
+  - phrase: 三天
+  match_type: exact
+  existing_title: 三日之內與差派探子的先後之爭
+  existing_path: link_folder/解經爭議/三日之內與差派探子的先後之爭.md
+- name: 賜給（na.tan）
+  suggested_type: 原文
+  evidence: GT《約書亞記綜合解讀》：在第一章中出現了七次的動詞「賜給 נָתַן」，在本章中又重複了四次(9、12、14、24節)。STEP 顯示第9、24節是完成式
+    na.Tan（本節譯義 he has given），第12節是 u./ne.ta.Tem，第14節是不定詞 be./tet-。GT《研經資料》另說第9節「已經把這地賜給你們」動詞用完成式，表示喇合確信。
+  match_type: exact
+  existing_title: 賜給（na.tan）
+  existing_path: link_folder/原文/賜給（na.tan）.md
+- name: 慈愛誠實
+  suggested_type: 原文
+  evidence: 第14節「我們必以慈愛誠實待你」，STEP 為 Che.sed（H2617A）加 ve./'e.Met（H571G）。第12節喇合先用同一個字求「恩待」（Cha.sed）並求「實在的證據」（'ot
+    'e.Met，H226H 加 H571I）。GT《雷氏研讀本》說「恩待」希伯來文是 hesed，這裡指人與人之間堅定的忠貞。
+  match_type: exact
+  existing_title: 慈愛誠實
+  existing_path: link_folder/原文/慈愛誠實.md
+- name: 心消化（ma.sas）
+  suggested_type: 原文
+  evidence: '第9、24節「心都消化了」STEP 為 na.Mo.gu（H4127，簡要詞典義 mug: to melt，Niphal 完成式）；第11節「心就消化了」則是
+    va/i.yi.Mas（H4549，簡要詞典義 ma.sas: to melt，Niphal），與申1:28、申20:8 同一個字。CT 說『心都消化』形容失去膽量、陷入絕望的狀態，並指出第24節是第三次提到相同的話；GT《研經資料》說「消化了」是「溶解了」；GT《聖經精讀本》說這是希伯來人特有的表達方式，表明陷入絕望的狀態。'
+  surfaces:
+  - phrase: 心都消化
+  - phrase: 心就消化
+  match_type: exact
+  existing_title: 心消化（ma.sas）
+  existing_path: link_folder/原文/心消化（ma.sas）.md
+- name: 他的血要歸到他身上
+  suggested_type: 原文
+  evidence: '第19節「凡出了你家門往街上去的，他的罪（原文是血）必歸到自己的頭上，與我們無干了。凡在你家裡的，若有人下手害他，流他血的罪就歸到我們的頭上」，STEP
+    為 da.M/o ve./ro.Sh/o（H1818 dam 加 H7218A rosh），「無干」是 ne.ki.Yim（H5355A 簡要詞典義 na.qi:
+    innocent）。CT 原文字義給「罪」血、「無干」乾淨的，免除義務；BH 把它接到結33:4-5 的責任歸屬。'
+  surfaces:
+  - phrase: 必歸到自己的頭上
+  match_type: exact
+  existing_title: 他的血要歸到他身上
+  existing_path: link_folder/原文/他的血要歸到他身上.md
+C_new_formal:
+- name: 耶利哥王
+  suggested_type: 人物
+  evidence: 第2、3節耶利哥王聽報後打發人去見喇合要人。GT《雷氏研讀本》說他只是耶利哥城邦的首領，而不是整個地區的領袖；GT《聖經精讀本》與《綜合解讀》都說明當時迦南是由許多自治城邦組成，每城有王。
+  target_path: link_folder/人物/耶利哥王.md
+  semantic_hint:
+  - title: 耶利哥
+    score: 0.434
+    type: 地點
+- name: 喇合
+  suggested_type: 人物
+  evidence: 第1節「來到一個妓女名叫喇合的家裡」，第3至21節全章的主角。STEP 顯示第1節是 'i.Shah zo.Nah（H802G 加 H2181）加
+    ra.Chav（H7343）。CT 說她後來歸化以色列、嫁給撒門，四套註釋都引來11:31 與雅2:25。
+  target_path: link_folder/人物/喇合.md
+- name: 上天下地的神是否一神信仰之爭
+  suggested_type: 解經爭議
+  evidence: 第11節喇合說「耶和華─你們的神本是上天下地的神」。GT《聖經精讀本》說喇合的神觀大大超越了迦南人，她承認以色列的神是廣大無邊的最高之神；KC
+    說她相信耶和華不只是某一族的神，而是天地的神；BH 說這是決定性地離開迦南的偶像轉向永生神。GT《舊約背景註釋》的華爾頓卻說她的話雖反映耶和華的權柄和能力令他們畏懼，卻遠非一神信仰的表示，她沒有宣稱放棄舊神，只是向祂求助。
+  surfaces:
+  - phrase: 上天下地的神
+  target_path: link_folder/解經爭議/上天下地的神是否一神信仰之爭.md
+- name: 喇合說謊是否蒙神認可之爭
+  suggested_type: 解經爭議
+  evidence: 第4、5節喇合對耶利哥王的人說「他們是哪裡來的我卻不知道」「往哪裡去我卻不知道」。CT 列出四種解釋；GT《艾基斯舊約聖經難題彙編》長篇處理並列出亞伯拉罕、大衛的先例；KC
+    說說謊是她的舊人、不該粉飾，但也不該過度苛責；BH 說聖經並沒有稱許欺騙本身，只是清楚呈現神的護理藉喇合保全了探子。
+  surfaces:
+  - phrase: 我卻不知道
+  target_path: link_folder/解經爭議/喇合說謊是否蒙神認可之爭.md
+  semantic_hint:
+  - title: 收生婆的回話是否說謊
+    score: 0.453
+    type: 解經爭議
+  - title: 詭詐
+    score: 0.401
+    type: 主題
+- name: 麻秸（pish.teh 與 ets）
+  suggested_type: 原文
+  evidence: '第6節「將他們藏在那裡所擺的麻秸中」，STEP 為 be./fish.Tei ha./''Etz（H6593 簡要詞典義 pish.teh:
+    flax，加 H6086I 簡要詞典義 ets: tree: stick）。CT 原文字義說「麻稭(原文雙字)」桿，木麻(首字)；亞麻(次字)；GT《綜合解讀》說原文是「亞麻木頭」；GT《研經資料》詳述亞麻的加工與兩種可能狀態。'
+  target_path: link_folder/原文/麻秸（pish.teh 與 ets）.md
+- name: 建在城牆上的房子
+  suggested_type: 文化
+  evidence: 第15節「因他的房子是在城牆邊上，他也住在城牆上」，STEP 為 be./Kir ha./cho.Mah（H7023 qir 加 H2346G
+    cho.mah）。CT 說考古學家的考據證實當時的確有民房建築在城牆內緣邊上；GT《舊約背景註釋》與《聖經精讀本》都給出雙層城牆與屋建其間的考古資料；GT《綜合解讀》提到德國考古學家在北端內外牆之間挖掘到房屋。
+  surfaces:
+  - phrase: 城牆邊上
+  target_path: link_folder/文化/建在城牆上的房子.md
+- name: 朱紅線繩（chut ha.sha.ni）
+  suggested_type: 原文
+  evidence: '第18、21節「這條朱紅線繩」，STEP 為 tik.Vat chut ha./sha.Ni（H8615A 簡要詞典義 tiq.vah:
+    cord、H2339 chut: thread、H8144 sha.ni: scarlet）；第15節縋人的「繩子」則是另一個字 ba./Che.vel（H2256M）。CT
+    指出兩者原文不同字，並說朱紅線繩表徵基督寶血的救贖；GT《研經資料》說古代染料價格高昂；KC 說朱紅是從某種蟲取得的紅色染料；BH 把它接到逾越節的血。'
+  target_path: link_folder/原文/朱紅線繩（chut ha.sha.ni）.md
+D_new_candidate: []
+E_skip: []

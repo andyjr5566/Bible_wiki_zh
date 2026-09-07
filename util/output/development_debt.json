@@ -51,6 +51,13 @@
       "fingerprint": "8db7c5a9b2395261"
     },
     {
+      "path": "link_folder/地點/約但河.md",
+      "title": "約但河",
+      "deferred_at": "約書亞記:2",
+      "accumulated": 22,
+      "fingerprint": "651af1551fb88c7c"
+    },
+    {
       "path": "link_folder/人物/流便.md",
       "title": "流便",
       "deferred_at": "申命記:11",
@@ -70,13 +77,6 @@
       "deferred_at": "約書亞記:1",
       "accumulated": 17,
       "fingerprint": "accea2d0a9fc5eac"
-    },
-    {
-      "path": "link_folder/地點/約但河.md",
-      "title": "約但河",
-      "deferred_at": "申命記:11",
-      "accumulated": 17,
-      "fingerprint": "d3eea46d904fb450"
     },
     {
       "path": "link_folder/神學/平安祭.md",
@@ -149,18 +149,18 @@
       "fingerprint": "8bc56d1505f9fbba"
     },
     {
-      "path": "link_folder/地點/耶利哥.md",
-      "title": "耶利哥",
-      "deferred_at": "申命記:34",
-      "accumulated": 9,
-      "fingerprint": "4a53a3a26417c141"
-    },
-    {
       "path": "link_folder/神學/摩西的代求.md",
       "title": "摩西的代求",
       "deferred_at": "申命記:10",
       "accumulated": 9,
       "fingerprint": "bde53b40160f2baa"
+    },
+    {
+      "path": "link_folder/地點/海（紅海）.md",
+      "title": "海（紅海）",
+      "deferred_at": "約書亞記:2",
+      "accumulated": 8,
+      "fingerprint": "dcb794aedbe5545e"
     },
     {
       "path": "link_folder/神學/不可為自己雕刻偶像.md",
@@ -203,13 +203,6 @@
       "deferred_at": "申命記:33",
       "accumulated": 7,
       "fingerprint": "2fb93af6eb9433f3"
-    },
-    {
-      "path": "link_folder/地點/海（紅海）.md",
-      "title": "海（紅海）",
-      "deferred_at": "申命記:11",
-      "accumulated": 7,
-      "fingerprint": "42f5db5fe06dd4ba"
     },
     {
       "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
