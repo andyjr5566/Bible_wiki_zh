@@ -1,0 +1,270 @@
+book: 約書亞記
+chapter: 5
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第2節神吩咐他製造火石刀、第二次給以色列人行割禮，第3節他照做並在除皮山施行，第7節說曠野出生的一代「約書亞這才給他們行了」。第13節他靠近耶利哥舉目觀看，見一個人手裡有拔出來的刀對面站立，就上前問「你是幫助我們呢，是幫助我們敵人呢？」；第14節他俯伏在地下拜，自稱僕人；第15節照著把鞋脫下來。STEP 顯示他的「俯伏」是 va/i.yi.Pol 'ar.tza/h（H5307G 加 H776H）、「下拜」是 va/i.yish.Ta.chu（H7812 sha.chah），自稱的「僕人」是 av.D/o（H5650）。CT 說約書亞上前詢問對方身分，可見他有過人的膽量，並說俯伏下拜表示輸誠順服；GT《雷氏研讀本》說他把耶和華軍隊的元帥視為耶和華，承認這是祂的戰役；BH 說他把自己的計畫、權柄與領導交了出去。
+  relation: 本章他做了兩件方向相反的事：親手給全國行割禮，把百姓交回立約關係裡；又親自俯伏下拜，把自己交回神的權下。上一章神才使他在眾人眼前尊大，這一章他自稱僕人。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:3
+      - 約書亞記:4
+      - 約書亞記:5
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第1節「約但河西亞摩利人的諸王」，STEP 為 mal.Khei ha./'e.mo.Ri（H4428G 加 H567）。CT 說亞摩利人身材高大「如香柏樹」（摩2:9），佔據約但河兩岸山區，先前河東二王已被以色列人征服（申1:4），與迦南人同為迦南七族中最強大的二族；BH 說亞摩利人佔據大部分山地，是迦南最強的民族之一，他們的王統治著以色列奉命要得的堅固城。GT《聖經精讀本》說出埃及後差到加低斯巴尼亞的十二個探子也曾報告過這些人的情況（民13:28-29），當時百姓聽了就甚懼怕，如今這些曾令以色列懼怕的迦南居民反倒陷入巨大的恐懼。
+  relation: 本章第一節就把攻守的心理形勢寫完了：曾經讓探子回來嚇壞全營的那群人，這回是他們的心先化了。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development: keep
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: 第1節「靠海迦南人的諸王」，STEP 為 mal.Khei ha./ke.na.'a.Ni（H3669A）。CT 說迦南人以含的兒子迦南取名，居住在迦南地西部谷地和沿海一帶；GT《研經資料》說「靠海迦南人的諸王」指的應該是靠地中海邊的迦南君王；BH 說沿海的統治者控制著肥沃土地、貿易路線與通往地中海的門戶，而以色列到來的消息傳遍了迦南每一區。KC 說神的作為在外邦人身上生出的不是敬畏而是憎惡的戰慄，他們退回堅固城裡抵抗。
+  relation: 迦南人在前面幾章一直是被描述的對象，本章第一次寫他們自己的反應，而反應是失去鬥志。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 心消化（ma.sas）
+  path: link_folder/原文/心消化（ma.sas）.md
+  summary: '第1節「他們的心因以色列人的緣故就消化了，不再有膽氣」，STEP 為 va/i.yi.Mas le.va.Va/m（H4549，簡要詞典義 ma.sas: to melt，加 H3824 le.vav: heart）；緊接的「不再有膽氣」是 ve./lo''- Ha.yah va/m ''Od Ru.ach（H7307G，簡要詞典義 ru.ach: spirit）。CT 原文字義給「消化」溶化、溶解，「膽氣」氣、風、靈，並說前者形容恐懼戰兢的心態、後者意指失去鬥志。GT《綜合解讀》說過紅海的神跡已經使迦南人的「心都消化了」（書2:9），現在過約旦河的神跡更使迦南諸王喪失了安全屏障和鬥志。'
+  relation: 這個字在書2:9 由喇合說出，本章由敘事者說出來——喇合當時報告的事，如今寫成了諸王的實況。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 火石刀
+  path: link_folder/文化/火石刀.md
+  summary: '第2、3節「你製造火石刀」「約書亞就製造了火石刀」，STEP 為 char.Vot tzu.Rim（H2719 che.rev 加 H6697H，簡要詞典義 tsur: rock）。CT 原文字義給「火石」岩石、磐石，說火石是一種堅硬的石頭（結3:9），經磨利後有如金屬刀，可用來割除陽皮（出4:25）；GT《啟導本》說火石刀用燧石作成、色灰黑，為尚未結晶成六角形體寶石的粗糙礦石，原始民族因其鋒利用作矛頭、箭矢和剝獸皮的刀，而以色列人此時已在銅器時代仍用火石刀，或亦含有忌金屬之意（出20:25），此外也比金屬刀鋒利且衛生；GT《綜合解讀》另提一個可能：用火石刀是因為可以大批製作。GT《丁道爾聖經注釋》說最佳的解釋是一種黑曜石，並引米拉德指出古代近東許多地方都用黑曜石刀、用途廣泛，這種刀的刀面平滑銳利，即使在金屬刀發明之後仍然通用。BH 說火石能造出極鋒利的刃口，適合這項神聖禮儀。KC 說火石是人手造不出來的材料，是神使它可得的。'
+  relation: 這是這件工具在聖經敘事裡第二次用於割禮，而本章四套來源都在同一個問題上打轉：已經有金屬刀了，為什麼還用石頭。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 割禮之約
+  path: link_folder/神學/割禮之約.md
+  summary: 第2至9節。CT 說以色列人是亞伯拉罕的後裔，神曾與亞伯拉罕立約，他們世世代代的男子都要受割禮，作為立約的證據，否則必從民中剪除（創17:9-14）；GT《綜合解讀》說神把割禮作為與亞伯拉罕和他後裔立約的證據，表明人與犯罪的舊生命隔絕、單單信靠神，而不受割禮就沒有資格守逾越節（出12:48），也沒有資格承受應許；GT《聖經精讀本》說割禮儀式之所以在曠野中斷是因為以色列對神的不順服（民14:26-35），如今中止了40年的割禮重新實行，神與以色列的立約關係也重新得到了恢復；GT《研經資料》說此時行割禮更重要的原因是為了重申神與他們列祖所立的約。BH 說這一代人受割禮公開標明他們是承受應許之地的立約子民。
+  relation: 約已經在那裡，斷掉的是記號。本章不是重新立約，是把中斷四十年的記號補回去，然後才有資格守下一段的逾越節。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 割禮的意義
+  path: link_folder/神學/割禮的意義.md
+  summary: KC 把本章的割禮讀成對肉體的審判（西2:11），說我們要把死應用在自己的肉體上、看自己向它是死的（羅6:11）；它說火石是人手造不出來的材料、刀是把東西割去的器具，火石刀指出神對人罪性的審判（羅8:3），而我們用刀是在審判自己裡面肉體的每一個表現（西3:5）。KC 又引腓3:3「我們才是受割禮的」與羅2:28-29 心裡的割禮，說對我們而言這是內在的割禮，並說吉甲的功課是他們在割禮中學到自己裡面沒有能力。CT 說吉甲的原文字義含有對付肉體的情慾之意（西2:11），並在話中之光說這正如我們得救以後只有經過十字架的對付、經過「基督使你們脫去肉體情欲的割禮」，神才能自由地在人身上做工。
+  relation: 這一層是註釋家從新約讀回來的，本章經文只記下神吩咐、約書亞照做、百姓等到痊癒。四套來源裡以 KC 走得最遠，CT 在靈意註解裡同向。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 「割禮」原文意義
+  path: link_folder/原文/「割禮」原文意義.md
+  summary: '第2、3、8節的「行割禮」在 STEP 顯示為兩個 Extended Strong：第2節的命令 mol 是 H4135B（簡要詞典義 ma.lal: to circumcise），第3節約書亞實際施行的 va/i.Ya.mol 是 H4135A（簡要詞典義 mul: to circumcise），第8節「都受完了割禮」的 le./hi.Mol 同為 H4135A 的 Niphal。CT 原文字義給「割禮」割禮、切除，並在文意註解註明原文是割陽皮；GT《綜合解讀》說「割禮」是割除男性包皮的禮儀；GT《研經資料》說這是以色列人象徵和神立約的儀式（創17:9-14；利12:3），未受割禮也不能守逾越節（出12:48-49）。'
+  relation: 同一件事在三節裡出現三種語態——命令、施行、被施行，而 STEP 顯示第2節與第3節連 Extended Strong 都不同。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 古代近東割禮背景
+  path: link_folder/背景/古代近東割禮背景.md
+  summary: GT《約書亞記綜合解讀》在第2節列出周邊民族的作法：埃及、以東、亞捫、摩押和阿拉伯人都行割禮，但不是出生後第八天，而非利士、迦南、亞述、巴比倫則不行割禮。GT《啟導本》說火石刀用燧石作成，原始民族因其鋒利用作矛頭、箭矢和剝獸皮的刀，以色列人此時已在銅器時代仍用火石刀，或亦含有忌金屬之意（出20:25）；GT《丁道爾聖經注釋》引米拉德說古代近東許多地方都用黑曜石刀，用途廣泛，無論是在儀式中或在日常生活中都為人所愛用，即使在金屬刀發明之後仍然通用，並說這並不意謂約書亞所行的不是儀式，只是表明火石刀並不能否定此事。
+  relation: 本章讓割禮這個記號在迦南門口重新出現，而 GT 列的名單正好說明它為什麼是記號：以色列即將進去的那幾族，恰恰是不行割禮的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 曠野飄流四十年
+  path: link_folder/歷史/曠野飄流四十年.md
+  summary: 第6節「以色列人在曠野走了四十年，等到國民，就是出埃及的兵丁，都消滅了，因為他們沒有聽從耶和華的話」，STEP 為 'ar.ba.'Im sha.Nah ha.le.Khu ... ba./mid.Bar（H705 加 H8141 加 H1980I 加 H4057B）。CT 說『沒有聽從耶和華的話』指他們聚集在一起抵擋神的命令、不肯進取迦南地（民14:1-2），『不容他們看見』意指他們必要死在曠野（民14:29、33、35）；GT《丁道爾聖經注釋》說這句話讓人憶起神對那一代的審判是因為他們的不信（民14:33-34），民數記雖記了好些不順服的例子，但只有第14章同時提到不順服與四十年的飄流；GT《聖經精讀本》說在加低斯事件之前受割禮之兵丁的年齡是20歲，過了38年他們的年齡應是58歲，因不順服全部死在曠野，只剩下約書亞與迦勒。BH 說四十年對應探子窺探那地的四十天，一天算一年。
+  relation: 四十年在本章是用來解釋另一件事的：為什麼要行割禮。經文先說一整代人怎麼結束，才說下一代身上少了什麼記號。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 流奶與蜜之地
+  path: link_folder/神學/流奶與蜜之地.md
+  summary: 第6節「耶和華向他們列祖起誓、應許賜給我們的地，就是流奶與蜜之地」，STEP 為 'E.retz za.Vat cha.Lav u./de.Vash（H776G 加 H2100G zuv 加 H2461 加 H1706）。CT 說『流奶與蜜之地』指迦南地，形容其物產豐富；GT《研經資料》說埃及的文獻、烏加列史詩都提到迦南地是一個自然資源豐富、農產豐盛的地方，這話描繪迦南地有許多放牧之區（盛產奶）和顯花植物（蜜蜂採花成蜜）；BH 說奶與蜜描繪神為以色列預備的豐富供應，與曠野的貧瘠成對比，這地同時顯出神的慷慨與活在祂約下的福分。
+  relation: 這一節是把應許當作判詞來用的：神起誓不容那一代看見這地。同一個描述，前面幾卷是盼望，這裡是他們沒能得到的東西。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 吉甲
+  path: link_folder/地點/吉甲.md
+  summary: '第9節「因此，那地方名叫吉甲，直到今日」與第10節「以色列人在吉甲安營」，STEP 為 gil.Gal（H1537G），同節的「滾去」是 ga.Lo.ti（H1556，簡要詞典義 ga.lal: to roll）。CT 原文字義給「吉甲」滾動、輪子；GT《研經資料》說這名字與希伯來文動詞「滾開(roll away)」(galal)發音相近；GT《丁道爾聖經注釋》說至於吉甲，則可能只是一個暫時的營區。KC 列出吉甲的五個特徵：那裡有從約但河取來的十二塊石頭紀念碑、是行割禮之處、在那裡第一次於應許之地守逾越節、割禮之後神在那裡賜下全新的食物、也在那裡遇見耶和華軍隊的元帥。BH 說吉甲成為以色列在應許之地的第一個主要營地，也是約書亞展開征服的起點。'
+  relation: 上一章這地方只是「安營的地方」，本章它得到名字，而名字是神自己給的解釋——羞辱在這裡被滾去。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第10節「在耶利哥的平原守逾越節」與第13節「約書亞靠近耶利哥的時候」。CT 說『靠近耶利哥』指近距離偵察敵情；GT《啟導本》記下考古情況：1930年代英國考古學家賈思旦發現約在主前1400年此城高大的城牆塌陷、覆蓋在房屋廢堆上，1952年女考古學家肯蓉再事挖掘，發現約書亞時代的古耶利哥城幾已全在風沙的侵蝕中消失；BH 說耶利哥是攔在以色列前面的第一座堅固城，它的城牆不是尋常戰法能攻破的；KC 說約書亞去耶利哥像是要衡量對方的抵抗力，他是軍人，卻從未攻打過堅固城。
+  relation: 本章兩次提到耶利哥，一次是守節的地點，一次是遇見元帥的地點——都不是打仗。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 逾越節
+  path: link_folder/歷史/逾越節.md
+  summary: 第10節「以色列人在吉甲安營。正月十四日晚上，在耶利哥的平原守逾越節」，STEP 第11節的「逾越節」為 ha./Pe.sach（H6453）。CT 說『正月十四日』即渡過約但河之後的第四天。守節的次數各家算法不同：GT《綜合解讀》說這是以色列人第三次守逾越節、也是在應許之地第一次守，前兩次分別是出埃及的那天（出12:11）和出埃及第二年離開西奈山之前（民9:1-5）；GT《串珠》說這次是以色列人離開埃及後第二次守逾越節；GT《聖經精讀本》說這是以色列百姓40年來第一次守逾越節，並說以制定逾越節開始的神之救贖事工，藉著在迦南地守逾越節而告了一段落。GT《啟導本》說受割禮和守逾越節是相連且必須行的事（出12:47-49）。KC 說這是在那地第一次守，就在耶利哥城牆前面，耶和華在他們敵人面前為他們擺設筵席（詩23:5）。
+  relation: 這是逾越節第一次在應許之地舉行，而地點是敵城對面。CT 說神用同一個逾越節來紀念出埃及和進迦南。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 無酵餅
+  path: link_folder/原文/無酵餅.md
+  summary: '第11節「逾越節的次日，他們就吃了那地的出產；正當那日吃無酵餅和烘的穀」，STEP 為 ma.Tzot（H4682，簡要詞典義 mats.tsah: unleavened bread）。CT 說『無酵餅』指未經過發酵的麵包，並在靈訓要義說無酵餅表徵蒙恩的信徒已經成為無酵的新團、應當把舊酵除淨（林前5:7）；GT《啟導本》說逾越節先後一共七天須吃此餅（利23:5-6），並解釋此處說「正月十四日晚上」便守，是因為希伯來人的一天是從頭天黃昏開始至第二天日落為止；GT《研經資料》說無酵餅是不加酵烤制的餅、逾越節後一周須吃此餅（出12:18）。KC 說逾越節之後接著是七天的除酵節（出12:15-20），七這個數字說到完全。BH 說無酵餅象徵純潔與出埃及時的匆促（出12:39）。'
+  relation: 這是無酵餅第一次用那地自己長出來的穀物做成。制度沒有變，變的是材料的來源，而下一節嗎哪就止住了。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:12
+      - 申命記:16
+      - 約書亞記:5
+- title: 嗎哪
+  path: link_folder/主題/嗎哪.md
+  summary: '第12節「他們吃了那地的出產，第二日嗎哪就止住了，以色列人也不再有嗎哪了。那一年，他們卻吃迦南地的出產」，STEP 為 va/i.yish.Bot ha./Man（H7673A，簡要詞典義 sha.vat: to cease，加 H4478A man）。CT 原文字義給「嗎哪」那是甚麼、「止住」停止，說嗎哪是以色列人在曠野四十年間所吃的主食（出16:31；民11:6）、從天隨露水降下（民11:9）、不須人工栽培，並說它突然消失無蹤也是一項神蹟奇事。GT《綜合解讀》說從出埃及當年的二月十六日一直到出埃及第四十一年的一月十五日神每天降下嗎哪；GT《聖經精讀本》說以色列百姓在汛曠野開始吃嗎哪（出16:15），過了40年之後在正月17日終止；GT《研經資料》說止降的時間是逾越節之後的第二日、正月十七，並記下另有學者認為吃土產的那日就是嗎哪止降的那日（把兩個「次日」當成同一天）。KC 說神在祂的護理中供應嗎哪直到不再需要為止，有了正常的供應神蹟就停下來。'
+  relation: 嗎哪的結束是本章唯一一件沒有人做的事。它降了四十年，停在他們吃到那地出產的次日。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 迦南地
+  path: link_folder/地點/迦南地.md
+  summary: 第12節「那一年，他們卻吃迦南地的出產」，STEP 為 'E.retz ke.Na.'an（H776G 加 H3667A）。CT 原文字義給「迦南」低地、熱心、商人。GT《聖經精讀本》說以色列百姓結束了曠野的生活、開始吃迦南地的出產；GT《研經資料》說以色列人在曠野的主食應該是嗎哪和畜牧業的產物，進入迦南地就開始以穀物為主食了。BH 說迦南的出產印證了神給亞伯拉罕後裔這地的古老應許（創17:8），而以色列從此要在這份產業裡忠心勞作，安穩不在地本身、在賜地那位的信實。
+  relation: 這地在前面幾卷一直是要去的地方，本章第一次成為吃飯的地方——名字後面接的是「出產」。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 32
+    - 33
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第1節「聽見耶和華在以色列人前面使約但河的水乾了，等到我們過去」，STEP 為 ho.Vish ... mei hai./yar.Den（H3001 加 H4325G 加 H3383），與書4:23 使水乾了用的是同一個動詞。CT 說約但河當時是迦南七族的天然屏障，特別是春汛時期河水洶湧澎湃、大軍難於渡越；GT《雷氏研讀本》說迦南的居民一直倚靠約但河作為以色列人入侵的屏障；GT《啟導本》說以色列人能在河水如此洶湧的情況下輕易越過敵方的天塹，難怪全地的人聞風膽喪；GT《研經資料》說如此難以逾越的天塹竟在以色列面前彷彿無物，因此迦南人的士氣再次被完全瓦解。
+  relation: 河在本章已經過完了，只以消息的形式出現在敵人耳中。前一章寫百姓怎麼過去，本章寫這件事傳到對岸造成了什麼。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development: keep
+- title: 神的軍兵
+  path: link_folder/神學/神的軍兵.md
+  summary: '第14、15節「耶和華軍隊的元帥」，STEP 為 sar- tze.va''- Yah.weh（H8269，簡要詞典義 sar: ruler，加 H6635A，簡要詞典義 tsa.va: army）。CT 說『耶和華軍隊』指天使天軍，在此也可指以色列人的軍隊；GT《串珠》說即天使眾軍（王上22:19；詩148:2）；GT《綜合解讀》說耶和華軍隊包括肉眼看不見的天使（創32:1-2；王下6:17）和以色列人（出12:41）；GT《聖經精讀本》說耶和華軍隊亦被稱為「天軍」，元帥出現在即將征服迦南的約書亞面前，暗示迦南征服戰是耶和華的聖戰。KC 說耶和華的萬軍是祂地上的百姓，也是祂所統帥的天使軍隊（創32:1-2；王下6:17；太26:53；來1:7、14）。'
+  relation: 天軍在創32 是雅各看見的一個景象，本章則有一位元帥站在人面前說話，而且帶著拔出來的刀。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 耶和華的使者是否為神顯現
+  path: link_folder/解經爭議/耶和華的使者是否為神顯現.md
+  summary: 第13至15節「耶和華軍隊的元帥」的身分，各家答案不一。CT 在文意註解裡加了備註：以人形顯現的神大概就是子神基督。GT《啟導本》並列幾種看法：有的解經家根據第15節的話認為這是神藉人形親自顯現，甚至有人解釋為道成肉身前的基督，但神也常常差遣天使，有的是統率天軍的天使長（但10:13；12:1）。GT《李道生舊約聖經問題總解》主張約書亞所看見的就是耶和華神自己的顯現，理由是他讓約書亞俯伏拜他、稱他為我主，又命約書亞脫鞋分別為聖。GT《綜合解讀》給出三條理由主張他很可能是道成肉身之前的聖子：脫鞋的命令與出3:5 完全相同、只有神同在的地方才是聖的、他接受了約書亞的敬拜而按十誡只有神配得敬拜。BH 說他的權柄與接受敬拜的舉動指向道成肉身前的基督。
+  relation: 這一次與前幾處不同的地方在於，經文自己沒有稱他為「耶和華的使者」，稱謂是「耶和華軍隊的元帥」；各家判斷身分靠的是他接受敬拜與那句脫鞋的命令。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 脫鞋與聖地
+  path: link_folder/文化/脫鞋與聖地.md
+  summary: '第15節「把你腳上的鞋脫下來，因為你所站的地方是聖的。約書亞就照著行了」，STEP 為 shal- na.''al./Kha me./''Al rag.Le./kha（H5394，簡要詞典義 na.shal: to slip，加 H5275 na.al: sandal）。CT 說鞋沾滿地上的污穢塵埃，脫鞋意指對神表示尊敬與對所處聖地的體認（出3:5），並說凡是神臨在的地方都分別為聖而成為聖地；GT《啟導本》說並非其地有何特別不同，但有神的使者在那裡便成為聖地；GT《聖經精讀本》說值得注意的是並不是摩西與約書亞聽到此命令的地方是聖潔的，而是神所臨在之所皆為聖潔；GT《串珠》說約書亞這次經歷類似摩西在何烈山上的遭遇（出3:1-5）。BH 說地之所以成聖是因為耶和華在那裡。KC 說祂所站的每一處都成為聖地。'
+  relation: 同一道命令在出3:5 是給要去救百姓的摩西，在本章是給要去打仗的約書亞。地點從曠野換到耶利哥城外，理由沒有變。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep

@@ -1,0 +1,73 @@
+version: 2
+book: 約書亞記
+chapter: 5
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: c583c8a538f8be11f11e10ab9604bde893bb72eb547a9cd2f6c1e6b2701b9f92
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: c583c8a538f8be11f11e10ab9604bde893bb72eb547a9cd2f6c1e6b2701b9f92
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/「第二次給以色列人行割禮」的含義之爭.yaml
+    - entry_content/埃及的羞辱.yaml
+    - entry_content/戰前行割禮的軍事風險.yaml
+    - entry_content/耶和華軍隊的元帥.yaml
+    - entry_content/那地的出產與烘的穀.yaml
+    - entry_content/都消滅與都受完（ta.mam）.yaml
+    - entry_content/除皮山（吉比亞特哈拉羅）.yaml
+    verdict_sha: c583c8a538f8be11f11e10ab9604bde893bb72eb547a9cd2f6c1e6b2701b9f92
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: af962d937d1aa39748f6468329496f062aa5b731510813214703807887c58767
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: af962d937d1aa39748f6468329496f062aa5b731510813214703807887c58767
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=c583c8a538f8be11f11e10ab9604bde893bb72eb547a9cd2f6c1e6b2701b9f92
+    - chapter_content.yaml
+    verdict_sha: af962d937d1aa39748f6468329496f062aa5b731510813214703807887c58767
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: b9401293b8f49e42014820856c7068317e25401eb7c10fae92c733595e0b5af9
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: b9401293b8f49e42014820856c7068317e25401eb7c10fae92c733595e0b5af9
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=c583c8a538f8be11f11e10ab9604bde893bb72eb547a9cd2f6c1e6b2701b9f92
+    - parent:m6=af962d937d1aa39748f6468329496f062aa5b731510813214703807887c58767
+    - link_updates.yaml
+    verdict_sha: b9401293b8f49e42014820856c7068317e25401eb7c10fae92c733595e0b5af9
+    findings_count: 0
