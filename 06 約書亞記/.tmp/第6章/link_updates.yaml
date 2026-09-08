@@ -1,0 +1,223 @@
+book: 約書亞記
+chapter: 6
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: '第6節召祭司來吩咐抬約櫃，第7節對百姓下令繞城，第10節吩咐不可呼喊、不可出聲，第12節清早起來，第16節在第七次繞城後說「呼喊吧，因為耶和華已經把城交給你們了」，第22節吩咐兩個探子去救喇合，第26節叫眾人起誓咒詛重建耶利哥的人。第27節「耶和華與約書亞同在，約書亞的聲名傳揚遍地」，STEP 為 va/y.Hi Yah.weh ''et- ye.ho.Shu.a''（H854 et，簡要詞典義 with）加 sha.me.''/O be./khol ha./''A.retz（H8089，簡要詞典義 sho.ma: report）。CT 說『傳揚遍地』指傳遍迦南地；KC 說約書亞的成功不在於他傑出的軍事領導，而在於耶和華與他同在，正如聖經也這樣寫約瑟（創39:2、21）。'
+  relation: 本章他一次也沒有下戰術命令，只是把神說的話原樣傳下去，然後在第七圈之後喊一聲。全章結束在他的名聲上，而理由寫在同一句話的前半：耶和華與他同在。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 全章的目標城。第1節城門關得嚴緊，第20節城牆塌陷，第24節全城被火焚燒，第26節被咒詛不可重建。CT 說耶利哥城本身雖然小，卻是一個具有雙重城牆的堅固要塞，並說城牆約有十公尺高。GT《聖經精讀本》說耶利哥距離約但河西8公里、耶路撒冷東北30公里，是方圓6、7公里、面積只有兩萬平方米的小城，卻是約但平原西部的重要防禦據點，以色列首先攻打它是因為它在戰略上非常重要；GT《研經資料》說廢墟長大約370公尺、寬大約180公尺，包含堅固的雙層城牆，並說這個城不是很大、所以一天之內繞城七次是毫不困難的，又說先切入中部可以把迦南地分作兩部分、防止南北聯盟；GT《啟導本》說古代的耶利哥很可能為迦南人敬拜月神的中心。BH 說耶利哥扼守進入迦南中部山地的通道。
+  relation: 前面幾章耶利哥一直是遠處的座標，本章它第一次成為戰場，而且是全書征服迦南的第一站。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 耶利哥王
+  path: link_folder/人物/耶利哥王.md
+  summary: 第2節「我已經把耶利哥和耶利哥的王，並大能的勇士，都交在你手中」。CT 原文字義給「大能」力量、能力，「勇士」強壯的、大能的，並說『大能的勇士』指善於打鬥的戰士，而『都交在你手中』是勝利的宣告——實際的戰爭還沒有開始，卻「已經」宣告得勝。BH 說耶利哥的統治者與治理權柄逃不過神的審判，這城的政治力量、軍事領導與虛假的安全感都在以色列之神的權柄之下。GT《串珠》說本章沒有提及耶利哥王的下場，但從書8:2、29、書10:1 可以曉得他們被殺後給掛在樹上、公開示眾。
+  relation: 他在書2 是追捕探子的人，本章只出現一次，而且是被列在神已經交出去的清單裡；經文沒有再寫他做了什麼，也沒有寫他怎麼死的。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 約櫃
+  path: link_folder/主題/約櫃.md
+  summary: 第4、6、7、8、9、11、12、13節。STEP 第4節為 li/f.Nei ha./'a.Ron（H727 a.ron），第7節為 li/f.Nei 'a.Ron Yah.weh。CT 說吹角的祭司和約櫃位於隊伍的中心，約櫃成了隊伍的中心（參民10:14-28）；GT《串珠》說「在耶和華面前」即在約櫃前，因約櫃象徵神的同在（民10:35-36；撒下6:14）；GT《綜合解讀》說遊行的隊伍以約櫃為中心、一半在約櫃之前一半在約櫃之後，就像他們在曠野中行軍的隊形一樣，並說自從百姓在西奈山與神立約之後，約櫃就開始帶領他們前行；GT《研經資料》說抬約櫃繞城是因為約櫃象徵神的同在，如同書3:6 過約旦河。KC 說重點不在百姓而在約櫃，百姓一切的力量只在約櫃那裡找得到。CT 在話中之光提醒：約櫃是死的，神才是活的，約櫃只不過是一件帶著預表作用的事物。
+  relation: 本章的隊形把約櫃放在正中間，前後各有一半人。攻城的方法沒有任何攻擊動作，唯一持續在動的，是一個被抬著的櫃子。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 帶兵器（cha.lats）
+  path: link_folder/原文/帶兵器（cha.lats）.md
+  summary: '第7節「帶兵器的要走在耶和華的約櫃前」，第9、13節重述隊形。STEP 為 ve./He./cha.Lutz（H2502B，簡要詞典義 cha.lats: to arm）——與書4:13「都準備打仗」同一個字根，而與書1:14、書4:12 的 cha.mush（H2571）不同。CT 說『帶兵器的』指戰士，前隊的戰士走在約櫃前、另有後隊隨在約櫃的後面，並說『後隊』指後衛部隊。GT《研經資料》說約書亞按神的吩咐作出部署：帶兵器的戰士走在最前面，七個拿羊角的祭司跟著，祭司後面是約櫃，最後是百姓的隊伍。BH 說以色列的兵丁各就各位，顯示順服並沒有取消人有紀律的行動，但軍隊是在神的命令之下行軍，不是照一般攻城戰法。'
+  relation: 這是這個字第一次寫的不是承諾而是實況：他們真的列陣走在約櫃前面，而且整整六天沒有出手。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 申命記:3
+      - 約書亞記:6
+- title: 吹角的日子（te.ru.'Ah）
+  path: link_folder/原文/吹角的日子（te.ru.'Ah）.md
+  summary: '第5節「眾百姓要大聲呼喊」與第20節「便大聲呼喊」，STEP 第5節為 ya.Ri.''u ... te.ru.''Ah ge.do.Lah（H7321，簡要詞典義 ru.a: to shout，加 H8643 te.ru.ah: shout，加 H1419A）。GT《研經資料》說大聲「呼喊」這個字可以用來指戰爭或宗教節慶中的大聲呼喊，此處可能是一語雙關，一面有戰爭中示威的意義，同時也是節慶中歡呼神得勝的喊聲。CT 說『大聲呼喊』振奮軍心。'
+  relation: 同一個字在民數記是節期的名字，在本章是攻城的訊號；而經文說城牆是在這聲呼喊之後才塌的。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:29
+      - 約書亞記:6
+- title: 禧年（第五十年）
+  path: link_folder/原文/禧年（第五十年）.md
+  summary: '第4、5節的「羊角」，STEP 為 shof.Rot hai./yov.Lim 與 be./Ke.ren hai./yo.Vel——H3104 的簡要詞典義正是 yo.vel: jubilee/horn，H7161A 是 qe.ren（horn）。KC 說這些號角是公羊角做的，而公羊角宣告禧年，禧年是第五十年、奴僕得釋放、地業歸回原主（利25:8-13），用這種角攻取耶利哥顯示這件事與其說是軍事的、不如說是宗教的，這一點也從祭司在此比戰士更重要看得出來。GT《啟導本》把第七日繞城七次、吹長號、大聲呼喊連到《利未記》第七個安息年的禧年，號角長鳴，宣告自由，土地贖回，各歸本家（利25:8-10）。BH 說公羊角標誌聖日、宣告禧年（利25:9），也在爭戰時召集以色列（士3:27）。'
+  relation: 禧年的號角在利未記是宣告土地歸還的，在本章卻用來攻一座城——而以色列正是來取回神所應許的地。這個雙關是 KC 與 GT《啟導本》各自指出來的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 安息日
+  path: link_folder/神學/安息日.md
+  summary: 第15節「第七日清早，黎明的時候，他們起來，照樣繞城七次」。CT 說據推算這日是安息日，本來安息日不可作工（申16:8），出門遠行就是作工，但所謂「不作工」乃是指「不辦自己的私事，不隨自己的私意，不說自己的私話」（賽58:13），若遵照神的吩咐作工、例如祭司在安息日獻祭則是可以的（太12:5）；GT《綜合解讀》說以色列人繞城的第七日是無酵節的第七日，也就是安息日、嚴肅會、「不可做工」（申16:8），並給出與 CT 相同的分辨，又說耶利哥繞城一圈約600米、所以第七日一天就可以繞七次。
+  relation: 這一天百姓走了七圈路，兩份來源都認為那是安息日，也都用同一個理由說明這不算違例：作的是神吩咐的事，不是自己的事。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: '第17節「這城和其中所有的都要在耶和華面前毀滅」、第18節「不可取那當滅的物」、第21節「都用刀殺盡」。STEP 第17節為 Che.rem（H2764A，簡要詞典義 che.rem: devoted thing）。CT 原文字義給「毀滅」(要毀滅的)禁忌物、「當滅」完全毀壞，並說指必須毀滅或用來奉獻給神的人和物、嚴禁挪做私用；GT《雷氏研讀本》說希伯來文是 herem，指「取締、消滅、奉獻」，有歸屬於一位神的意思；GT《綜合解讀》說第17節的「毀滅」和第18節的「當滅」原文是同一個字，與申20:17 神命令的「滅絕淨盡」是同一個詞，並說第18節「使全營受咒詛」原文是「使以色列營成為當滅的物」；GT《串珠》說原文這字在民18:14 譯作「永獻的」；GT《研經資料》說第17節毀滅、第18節那當滅的物與咒詛都是同一個字，並說神要求以色列將所有耶利哥人與財物都毀滅、有如獻上祭物給神一樣。BH 說耶利哥被置於 herem 之下，作為完全屬神的獻上。'
+  relation: 這是 herem 在約書亞記的第一次實際執行。前面幾卷它是條例，本章它是一整座城的處置方式，而第18節的警告也在同一段裡預告了艾城之敗的原因。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 初熟果子
+  path: link_folder/神學/初熟果子.md
+  summary: 第17、24節耶利哥全城要在耶和華面前毀滅、只有金銀銅鐵入庫。CT 說耶利哥是第一座攻占的迦南城邑，視同出熟的果子、全然奉獻給神；GT《聖經精讀本》說耶利哥城之所以在神面前毀滅，是因為它是迦南地的第一個被征服地（利27:26；民18:12）；GT《綜合解讀》說這表示耶利哥城作為迦南地初熟的果子必須完全奉獻給神（申26:10），並說在以後的迦南戰役中神只要求消滅城中人口而牲畜和財物可以作為戰利品留下（書8:27）；GT《研經資料》說神要整個耶利哥全部獻給耶和華，有可能是將這個城市當作初熟果子的記號；GT《雷氏研讀本》說耶利哥城完全奉獻給神作為迦南地初熟的果子，百姓不能從其中拿去任何戰利品。BH 說耶利哥作為以色列產業的初熟果子完全屬於耶和華。
+  relation: 初熟的規矩本來收的是農產，本章第一次用在一座城上——而正因為第一份要全歸神，第18節才會有「不可取那當滅的物」這道警告。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:22
+      - 利未記:23
+      - 約書亞記:6
+- title: 迦南滅絕命令的歷史範圍
+  path: link_folder/解經爭議/迦南滅絕命令的歷史範圍.md
+  summary: 第17至19節與第21節把滅絕命令實際執行在第一座城上，而各家在同一章裡討論了它的範圍。GT《啟導本》說在以後的迦南戰役中，神只禁止以色列人保存城中人口（書8:26-27；申7:1-3），牲畜和財物可當作戰利品取為己有；GT《綜合解讀》說在以後的迦南戰役中神只要求以色列消滅城中人口（書8:26；申7:2），而牲畜和財物可以作為戰利品留下（書8:27）；GT《研經資料》把這個不一致明白寫出來——「雖然我們不能明白為什麼神前後的要求不一致」——並列出神在毀滅耶利哥前曾容許以色列人掠奪後歸自己所有（申2:35）、在耶利哥之後也可以拿取財物（書8:27、書11:14）的例子，推測神要整個耶利哥全部獻給耶和華有可能是把這城當作初熟果子的記號。它另列出神滅絕命令的兩個可能用意：迦南人拜偶像的習俗會妨礙以色列對耶和華的信心（申20:17-18），以及仇敵的擄物有時是要獻給耶和華作祭祀用途而不是佔為己有（民18:14；結44:29）。
+  relation: 本章是這道命令第一次落在一座具體的城上，而各家都注意到它與後來幾場戰役的規格並不相同——範圍的問題是從這個落差長出來的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 建在城牆上的房子
+  path: link_folder/文化/建在城牆上的房子.md
+  summary: 第20節城牆塌陷，第22至23節兩個探子卻進得了喇合的家把她全家帶出來。GT《雷氏研讀本》說喇合房子所在的城牆並沒有倒塌；GT《啟導本》說耶利哥城牆高約9公尺，城牆應聲倒塌，但建在城牆上喇合的房子無恙，全家和「一切的親眷」都獲救；GT《串珠》說喇合的房子雖在城牆上，但由於神的保守，顯然並沒有像城牆其他部分那樣倒塌下來；GT《研經資料》說聖經並沒有特別說明或記載喇合的家如何得救，有學者認為這完全是神的保守，如同出9:26 神降冰雹在埃及人身上時、居住歌珊的以色列人那邊卻沒有下。CT 說耶利哥城牆約有十公尺高、且是雙重城牆，若非神的作為不容易多處塌陷，而妓女喇合的家所在的城牆卻完好無恙。KC 說喇合房子所在的那一段城牆被存留下來。
+  relation: 書2 這個建築細節是探子的出路，本章它變成一個例外：整道城牆倒了，只有那一段沒有倒。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:2
+      - 約書亞記:6
+- title: 古代近東的圍城戰與營壘
+  path: link_folder/背景/古代近東的圍城戰與營壘.md
+  summary: 第3至5節神給的攻城法完全不是當時的常規。GT《研經資料》列出耶利哥城難以攻下的原因——一般城堡的結構和修築方式會使敵人不容易採取直接攻擊的戰略，而合理攻佔耶利哥城的方式是圍城，但以色列人沒有時間採用這樣的方式；它據此說以色列人並不是藉著人的技巧攻佔城池，而是藉著神的大能才拿下耶利哥城。GT《啟導本》說以此城的防禦工事之堅固，只長於遊牧的以色列人是難攻破的。BH 說神吩咐以色列以順服的信心面對這座設防的城，而不是用一般的圍城戰法。KC 說本章沒有拔出一把刀，並引林後10:4 說我們爭戰的兵器本不是屬血氣的。
+  relation: 這一章是把常規攻城法整套換掉的例子：沒有雲梯、沒有撞城錘、沒有斷糧圍困，而各家都是拿當時的常規來對照，才看出這方法有多不尋常。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 喇合
+  path: link_folder/人物/喇合.md
+  summary: '第17節「只有妓女喇合與他家中所有的可以存活，因為他隱藏了我們所打發的使者」，第22至25節記兩個探子把她全家帶出來、安置在以色列的營外，第25節說「他就住在以色列中，直到今日」。STEP 第17節為 ra.Chav ha./zo.Nah（H7343 加 H2181，簡要詞典義 za.nah: to fornicate）加 hech.be.''A.tah（H2244，簡要詞典義 cha.va: to hide，Hiphil）加 ha./mal.''a.Khim（H4397G，簡要詞典義 ma.le.akh: messenger）。CT 說『安置在以色列的營外』出於禮儀上不潔的理由、須在營外經過潔淨的手續，並說她後來成了探子之一撒門的妻子、有分於主耶穌的家譜（太1:5）；GT《丁道爾聖經注釋》說在喇合的故事中動詞「隱藏」只出現了一次、就是書2:16，而這裡卻用這個字描述她保護探子、誤導王的使者一事；GT《聖經精讀本》說她以這種方式徹底離棄外邦人的生活方式並成為以色列百姓的一員，這表明以色列並不是完全封閉的社會。KC 說喇合沒有與不信的人一同滅亡，因為她信了（來11:31），她的房子是唯一逃脫這城審判的安全地方。BH 說窗上的朱紅線繩標明了受保護的房子，讓人想起逾越節時塗血的以色列家。'
+  relation: 書2 是她做的事，本章是那件事的結果：全城毀滅，只有她一家從裡面被帶出來，而經文說她就住在以色列中直到今日。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:2
+      - 約書亞記:6
+- title: 神的同在
+  path: link_folder/神學/神的同在.md
+  summary: '第27節「耶和華與約書亞同在，約書亞的聲名傳揚遍地」，STEP 為 va/y.Hi Yah.weh ''et- ye.ho.Shu.a''（H854 et，簡要詞典義 with）加 sha.me.''/O be./khol ha./''A.retz（H8089，簡要詞典義 sho.ma: report）。CT 說『傳揚遍地』指傳遍迦南地。KC 說約書亞的成功不在於他傑出的軍事領導，而在於耶和華與他同在，正如聖經也這樣寫約瑟（創39:2、21），並說沒有什麼比「神與他同在」這個確據更能高舉一個人。BH 說耶和華成就了祂在書1:5 對約書亞的應許，而約書亞的名聲成為耶和華聖潔與大能的見證。'
+  relation: 前面幾章的同在是應許與記號，本章它成了戰果——一座城倒了，然後外邦人開始傳說這個人的名字。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:1
+      - 約書亞記:3
+      - 約書亞記:6

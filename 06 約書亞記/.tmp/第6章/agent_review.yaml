@@ -1,0 +1,79 @@
+version: 2
+book: 約書亞記
+chapter: 6
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: 1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 157358eb79eaacb9c9b56a6316510333aa89351080a54f4677b6a13bc6c07f9e
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/來十一30 因信城牆倒塌.yaml
+    - entry_content/歸耶和華為聖的金銀銅鐵.yaml
+    - entry_content/殺盡耶利哥居民的道德難題.yaml
+    - entry_content/繞城七日的攻城指示.yaml
+    - entry_content/耶利哥城陷落的考古與年代之爭.yaml
+    - entry_content/重建耶利哥的咒詛.yaml
+    - entry_content/關得嚴緊（sa.gar）.yaml
+    verdict_sha: 1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    - chapter_content.yaml
+    verdict_sha: a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 04038747e18b927d3ffbb33ca0ecfbaa29839a05135657ff61422ad9b7943773
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 04038747e18b927d3ffbb33ca0ecfbaa29839a05135657ff61422ad9b7943773
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=1125c815ffbbc8fd6c9a52af4136789c258b7e21288c9cd6f4de52435c1280e2
+    - parent:m6=a78e9f5a4e189dbacbfc46cb9665ac8a354d63436cf086a40ad9f2e12437044a
+    - link_updates.yaml
+    verdict_sha: 04038747e18b927d3ffbb33ca0ecfbaa29839a05135657ff61422ad9b7943773
+    findings_count: 0
