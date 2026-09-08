@@ -1,0 +1,360 @@
+book: 約書亞記
+chapter: 7
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: |-
+    第2節打發人去窺探艾城，第6節撕裂衣服、把灰撒在頭上、在約櫃前俯伏到晚上，第7至9節向神哀求，第16節清早起來執行掣籤，第19節稱亞干為「我兒」並勸他認罪，第22節打發人去帳棚取贓，第25節宣告刑罰。GT《丁道爾聖經注釋》說這場戰役的描述可謂獨一無二，只有這裡沒有提到約書亞在率領；GT《研經資料》說許多人提及這場戰役並沒有記載約書亞的領導，或者神的帶領。KC 說約書亞下令時沒有求問耶和華，而且是從耶利哥而不是從吉甲打發人出去，又說他掣籤取出亞干之後並沒有咒罵他、也沒有稱他為賊，稱他「我兒」正顯出約書亞把自己看得與亞干相連；但 KC 同時說，約書亞的禱告帶著一點責備，好像神要為這場敗仗負責，這不是出於信心。BH 說約書亞在約櫃前自卑，並訴諸耶和華在列國中的尊榮，正如摩西在西乃之後所做的（出32:11-14）。
+  relation: 前六章的約書亞一直在領受命令、下達命令；本章是他第一次做完決定才發現沒有問過神，也是他第一次對神說出質問的話。他的名字在本章出現十二次，卻沒有一次是在戰場上。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 艾
+  path: link_folder/地點/艾.md
+  summary: |-
+    第2至5節與全章的戰場。STEP 第5節為 'an.Shei ha./'Ai（H5857G，簡要詞典義 ay: Ai）。CT 說艾是一座小城，可能因其地理外貌奇特故取名艾，原文字義「荒場」；GT《雷氏研讀本》說艾城位於巴勒斯坦山區的中部、在伯特利以東、距離耶利哥約有十五英里；GT《啟導本》說「艾城」有「荒堆」的意思，一說位於伯特利東約1公里半；GT《研經資料》說一般認為這就是耶利哥西北15公里的特珥（et~Tell）遺址，艾城又名「亞雅」（尼11:31）和「亞葉」（賽10:28）；GT《綜合解讀》說艾城海拔890米、耶利哥在海平面以下250米，艾城守軍居高臨下追擊以色列人，CT 也說艾城的海拔約800公尺、耶利哥僅約300公尺。KC 說 Ai means ‘mess’。BH 說艾的意思是 “ruin”，看起來遠不如耶利哥難攻，但接下來的事顯明得勝不在乎以色列的力量或敵人的大小。
+  relation: 這是艾第一次成為事件發生的地點。在創13 它只是伯特利與艾這組座標裡的一半，本章它變成一座打不下來的城，而且是打不下來的原因不在城本身。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:13
+      - 約書亞記:7
+- title: 伯特利
+  path: link_folder/地點/伯特利.md
+  summary: |-
+    第2節「往伯特利東邊、靠近伯亞文的艾城去」。CT 說伯特利是舊約中一個重要城市，位於耶路撒冷北面約十七公里，原文字義「神的家」；GT《綜合解讀》說伯特利字義是「神的殿」，位於耶利哥西面的中央山地，是神第一次向雅各顯現的地方（創28:19）；GT《研經資料》說位於耶路撒冷北方大約18公里，並說許多學者認為約書亞時代艾城並非一個城堡、反倒是附近的伯特利是一個大城。BH 說艾靠近伯特利，而伯特利意為「神的家」，是雅各領受神關於這地與後裔之應許的地方，所以這一帶帶著立約的分量——以色列不只是在取得領土，是在領受應許給亞伯拉罕、以撒、雅各的產業。
+  relation: 本章只把伯特利當座標用，但它與同一節的「伯亞文」（罪孽之家）並列，讓這句定位讀起來像一組對照。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: |-
+    第2節「約書亞從耶利哥打發人往伯特利東邊、靠近伯亞文的艾城去」。CT 說『當下』指攻取耶利哥城之後，並說艾城的海拔約800公尺、耶利哥僅約300公尺，故第5節的地勢呈下坡；GT《綜合解讀》說耶利哥在海平面以下250米、艾城海拔890米。KC 注意到約書亞是從耶利哥而不是從吉甲打發人出去，並問這是不是已經透露了犯罪的緣由。BH 說耶利哥的財物歸神所有，亞干把神所歸己的當作平常的擄物；BH 又說在耶利哥的大勝之後，這場小敗把全營的自信變成了懼怕。
+  relation: 上一章耶利哥是被攻下的城，本章它變成兩件事的出發點——出兵的起點，以及那三樣贓物的來處。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: |-
+    第7節「你為什麼竟領這百姓過約但河……我們不如住在約但河那邊倒好」。STEP 為 he.'a.Var.ta ha.'a.Vir（同一個 H5674C 連用不定詞絕對式與完成式）加 hai./yar.Den（H3383）與 be./'E.ver hai./yar.Den（H5676H，簡要詞典義 e.ver: side: beyond）。CT 說『約但河那邊』即指約但河東邊。GT《研經資料》把約書亞的質問還原出來——如果進入迦南是為了送死，那麼神何必領以色列人過約旦河呢？過約旦河的神蹟又有什麼價值呢。BH 說神已經藉著公開的神蹟領以色列過了約但河、印證了賜地的應許，而艾城之敗並沒有推翻應許，只是揭露營中隱藏的罪。
+  relation: 過河在書3-4 是神蹟與紀念碑，本章卻成了約書亞質問神的理由。這是第一次有人把「過河」說成一件不如不做的事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 25
+    - 26
+    definition: keep
+    development: keep
+- title: 示拿
+  path: link_folder/地點/示拿.md
+  summary: |-
+    第21節「一件美好的示拿衣服」，STEP 為 'a.De.ret shin.'Ar（H155，簡要詞典義 ad.de.ret: clothing，加 H8152）。CT 原文字義給「示拿」吼獅之地、兩河，並說『示拿衣服』產自巴比倫的一種長袍，是以金線和絲線為材料、用精細手工編織成的，價款不貲；GT《啟導本》說示拿即巴比倫之地，故此袍乃舶來品、價值不菲，並推測這可能是禮拜偶像的衣飾；GT《串珠》說示拿為古巴比倫的別名，其文化對巴勒斯坦和敘利亞影響深遠；GT《綜合解讀》說這裡用「示拿」來稱呼巴比倫、用「條」來描述金子，只在主前第二千年的文獻中出現，表明本書的第一手資料很古老；GT《華爾頓約書亞記背景注釋》說這時代的巴比倫（示拿）衣服是有纓絡的，穿起來披在一邊肩膊上。KC 把示拿連到創11:4、9 的城與塔。BH 說這件昂貴的外袍來自與巴比倫相關的示拿地區。
+  relation: 示拿在創世記是一個地名與一段建塔的往事，本章它縮小成一件衣服——一件在迦南出現、卻讓亞干賠上性命的舶來品。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:14
+      - 約書亞記:7
+- title: 猶大支派
+  path: link_folder/人物/猶大支派.md
+  summary: |-
+    第1、16、17、18節。掣籤第一輪取出來的就是猶大支派。GT《聖經精讀本》說猶大支派在12支派中處於領袖地位，在出埃及時人數最多（民1:27），勢力強大，在與外邦人的爭戰中經常充當先鋒。KC 說亞干屬於君尊的猶大支派，而這罪發生在他們中間，正可以救他們脫離自誇。BH 說猶大是雅各祝福中得王權的支派（創49:10），大衛與基督都從猶大出，而如今它因罪進入其中而受查驗，顯明尊貴的身世不能作為背逆神的藉口。
+  relation: 前面幾卷寫的是猶大的領先地位——人數最多、行軍在前、承受王權的應許。本章第一次寫它被查驗，而且是四層掣籤裡第一個被取出來的。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 謝拉
+  path: link_folder/人物/謝拉.md
+  summary: |-
+    第1、17、18、24節「謝拉的曾孫」「謝拉的宗族」。STEP 為 Ze.rach（H2226I）。CT 原文字義給「謝拉」升起；GT《研經資料》說謝拉字義是「升起」，是猶大和他瑪的兒子、法勒斯的雙生兄弟。BH 說掣籤把範圍縮到謝拉的後裔，也就是猶大從他瑪所生的那一支（創38:29-30）。
+  relation: 創38 的謝拉只是一個出生順序上的配角，本章他成了一個宗族的名字——而這個宗族是掣籤第二輪被取出來的那一支。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: |-
+    第7節「將我們交在亞摩利人的手中」。STEP 為 ha./'e.mo.Ri（H567，簡要詞典義 e.mo.ri: Amorite）。CT 說『亞摩利人』身材高大，居住在約但河兩岸高地；GT《研經資料》說「亞摩利人」是「山居者」之意，泛指迦南地的原住民。BH 說亞摩利人是迦南主要的民族之一，約書亞在這裡用這個名字泛稱那地的居民。
+  relation: 條目已經記下這個名字時而指盟友、時而指被逐的對象、時而是迦南諸族的統稱。本章是統稱的用法，而且出自約書亞自己的口——他把敗仗說成「交在亞摩利人的手中」。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 「亞摩利」意為「高處之人」或「西方人」。
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: |-
+    第9節「迦南人和這地一切的居民聽見了就必圍困我們」。STEP 為 ha./ke.na.'a.Ni（H3669A）加 ve./na.Sa.bu（H5437H，簡要詞典義 sa.vav: to turn: surround）。CT 原文字義給「圍困」圍繞、環繞，並說這一戰會讓迦南人認為以色列的神並不是不可戰勝的，迦南人若傾巢而出圍困他們，以色列人退路已斷、必然會被除滅。GT《聖經精讀本》說迦南諸民族本因神的權能而大為懼怕，但他們一旦聽到以色列遭到慘敗的消息之後，便會重振士氣、猛烈地攻打以色列；GT《啟導本》說迦南人一旦發現以軍不堪一擊，必聯手傾巢而出、圍攻以民，後面為洪水氾濫之河流，退路已斷。BH 說艾城之敗有可能壯了迦南各族的膽。
+  relation: 書2 與書5 寫的是迦南人聽見以色列的事就心裡消化，本章反過來——約書亞擔心他們聽見的下一個消息會讓他們重新站起來。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 以色列的長老
+  path: link_folder/文化/以色列的長老.md
+  summary: |-
+    第6節「他和以色列的長老把灰撒在頭上」。STEP 為 ve./zik.Nei Yis.ra.'El（H2205G，簡要詞典義 za.qen: old: elder，形態是陽性複數附屬形）。GT《研經資料》說「以色列的長老」原文是複數型態，應該是指以色列各支派的領袖。BH 說眾長老與約書亞一同自卑，顯示這場失敗被當成全民的事、不是單一將領的挫折。
+  relation: 條目已經收了長老作代表、作證人、作執法者與代全城認責的幾種角色。本章是他們與領袖一同哀慟——沒有開庭、沒有執法，只是陪著俯伏在約櫃前。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: keep
+      basis: single_chapter_only
+- title: 約櫃
+  path: link_folder/主題/約櫃.md
+  summary: |-
+    第6節「在耶和華的約櫃前俯伏在地，直到晚上」。STEP 為 li/f.Nei 'a.Ron Yah.weh（H727，簡要詞典義 a.ron: ark）。CT 說『約櫃前』意指在神面前。KC 注意到一個對比：攻取耶利哥時約櫃佔中心位置，攻打艾城時卻完全沒有提到約櫃，戰敗之後約書亞才回到約櫃前在耶和華面前自卑。BH 說約書亞在約櫃前自卑，約櫃是耶和華在以色列中間居所與立約同在的記號。
+  relation: 書3、書4、書6 的約櫃都在隊伍中間被抬著走，本章它一次也沒有出營。它出現的唯一一次，是有人回到它前面趴下。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 認罪
+  path: link_folder/主題/認罪.md
+  summary: |-
+    第19至21節。約書亞說「在他面前認罪，將你所做的事告訴我，不要向我隱瞞」，亞干回答「我實在得罪了耶和華─以色列的神。我所做的事如此如此」，然後把三樣贓物一一說出來。STEP 第19節為 ve./ten- l/o to.Dah（H8426，簡要詞典義 to.dah: thanksgiving，context gloss 作 confession）加 'al- te.kha.Ched（H3582，簡要詞典義 ka.chad: to hide）。CT 說『將榮耀歸與神』意指承認神是無所不知、無所不能的，在祂面前是不能掩蓋、隱藏的，所以要向祂認罪，而「將你所作的事告訴我」表示同時也要將事情向人有所交代。GT《丁道爾聖經注釋》說這時亞干惟一該做的事，就是把自己所犯的罪一五一十的講出來。KC 說神只說有人偷了東西（第11節），卻沒有說偷了什麼，祂要犯罪的人自己說出來——神不要籠統的認罪，祂要我們把罪指名道出；KC 同時指出，亞干雖然把贓物一一指名說出，卻沒有一處證據顯示他為自己的行為後悔。BH 說舊約的認罪常是公開的承認，並說認罪意味著同意神對自己行為的判斷。
+  relation: 利未記與民數記的認罪是律法條文裡的一個步驟，本章是它第一次以敘事出現——有人真的被要求開口，而且真的開了口。也是第一次看見認罪與悔改可以分開。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:5
+      - 民數記:5
+      - 約書亞記:7
+- title: 直到今日
+  path: link_folder/主題/直到今日.md
+  summary: |-
+    第26節出現兩次：「眾人在亞干身上堆成一大堆石頭，直存到今日」與「因此那地方名叫亞割谷……直到今日」。CT 說堆石作記號（參創31:51-52），並說『轉意』意指不再紀念以色列人的過錯。BH 說石堆的持續存在表示這件事已經進入以色列被記住的歷史，經過那谷的人都要面對背逆的代價與忠心順服的必要（申6:12），並在同一段把它連回書4:9 約書亞在約但河中所立的十二塊石頭。GT《研經資料》另指出「直存到今日」這個片語在七十士譯本中沒有。
+  relation: 書4 的「直到今日」指向一堆紀念神作為的石頭，本章同一個片語指向一堆紀念人犯罪的石頭，而且一節之內用了兩次——一次解釋石堆，一次解釋地名。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:4
+      - 約書亞記:7
+- title: 石刑
+  path: link_folder/背景/石刑.md
+  summary: |-
+    第25節「於是以色列眾人用石頭打死他，將石頭扔在其上，又用火焚燒他所有的」。STEP 顯示這一節用了兩個不同的動詞：va/i.yir.ge.Mu ... 'E.ven（H7275，簡要詞典義 ra.gam: to stone）在前，中間是 va/i.yis.re.Fu ... ba./'Esh（H8313 加 H784），然後是 va/i.yis.ke.Lu ... ba./'a.va.Nim（H5619，簡要詞典義 sa.qal: to stone）。CT 說兩次動用「石頭」，第一次是扔石打死，第二次是扔石掩蓋。GT《靈修版聖經注釋》說以色列人要把亞干全家用石頭打死，不讓罪的痕跡存留在他們中間，並說今天我們處於主張寬容、一人做事一人當的社會，很難理解那樣嚴格處罰的命令，但在古代習俗之中那是普通的刑罰。KC 提醒以色列的管教與基督徒的管教有分別，基督徒的管教一直以靈魂的挽回為念（林前5:5）。
+  relation: 出21 到申17 都是條文——誰該被石打死、由誰先下手、在哪裡執行。本章是這套條文第一次在敘事裡被執行，而且執行的人是「以色列眾人」。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 利未記:24
+      - 申命記:17
+      - 約書亞記:7
+- title: 心消化（ma.sas）
+  path: link_folder/原文/心消化（ma.sas）.md
+  summary: |-
+    第5節「眾民的心就消化如水」。STEP 為 va/i.yi.Mas le.vav- ha./'Am va/y.Hi le./Ma.yim（H4549，簡要詞典義 ma.sas: to melt，加 H3824 le.vav 與 H4325G ma.yim）。CT 原文字義給「消化」溶化、溶解，並說『消化如水』形容士氣渙散、失去勇氣。GT《研經資料》說以色列人本來以為自己有神的帶領、絕對不可能被打敗，事實上他們剛剛經過耶利哥神蹟式的勝利，但現在一個小小的艾城就殺了他們36人，當然導致他們信心崩潰。KC 注意到方向反了過來——這一次融化的是神百姓的心，不是仇敵的心（參書2:9、11；書5:1）。BH 說以軍事標準看這損失很小，但在耶利哥的大勝之後卻是毀滅性的。
+  relation: 申1、書2、書5 這個字都用在敵人或上一代身上，本章第一次用在打了勝仗的這一代自己身上，而且緊接在耶利哥之後。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:2
+      - 約書亞記:5
+      - 約書亞記:7
+- title: 舍客勒
+  path: link_folder/原文/舍客勒.md
+  summary: |-
+    第21節「二百舍客勒銀子，一條金子重五十舍客勒」，STEP 為 she.ka.Lim（H8255，簡要詞典義 she.qel: shekel）加 mish.ka.L/o（H4948，簡要詞典義 mish.qal: weight）。CT 說『二百舍客勒』約折合二點三公斤、『五十舍客勒』約折合575公克；GT《聖經精讀本》說舍客勒是測量重量的基本單位，1舍客勒約有11.4克，後來成為貨幣單位；GT《綜合解讀》說二百舍客勒的銀子重2.28公斤、大約是當時一個雇工17年的工資，五十舍客勒的金子重0.57公斤；GT《雷氏研讀本》說二百舍客勒約重五磅（2.3千克）；GT《華爾頓約書亞記背景注釋》說亞干所藏的包括了五至六磅銀子、半條金子，這代表一般人工作一輩子的所得。
+  relation: 條目已經收了舍客勒在買地、贖價、聖所標準與奉獻上的用法。本章是它第一次用來量一筆贓物，而各家換算出來的結論是同一個方向——那不是小數目。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 貪戀
+  path: link_folder/原文/貪戀.md
+  summary: |-
+    第21節「我就貪愛這些物件」，STEP 為 va./'ech.me.De/m（H2530A，簡要詞典義 cha.mad: to desire）。CT 原文字義給「貪愛」渴望、貪圖，並說這是引動心裡的貪婪，原文與十誡中的「貪戀」相同（出20:17；申5:21）。GT《丁道爾聖經注釋》說動詞「貪愛」和十誡中的第十誡用字完全相同，並指出亞干的罪起於他看見一件美好的東西，而在伊甸園女人犯罪時也是用同一個字描述（創3:6）。KC 把亞干的路數說成看見、貪愛、拿取的老故事（創3:6；約壹2:16；雅1:14-15）。
+  relation: 出20 與申5 是誡命本身，本章是這個動詞第一次出現在一段敘事裡——有人自己說出「我就貪愛」，而且下一句就是「便拿去了」。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 申命記:5
+      - 約書亞記:7
+- title: 烏陵和土明
+  path: link_folder/原文/烏陵和土明.md
+  summary: |-
+    第14至18節按支派、宗族、家室、人丁一層層「取」出亞干，經文沒有說明方法。STEP 第15節為 ha./nil.Kad（H3920，簡要詞典義 la.khad: to capture，context gloss 作 the one who is taken by lot）。GT《雷氏研讀本》說「取」的方法是抽籤；GT《啟導本》說取出亞干所用方法可能是抽籤，舊約時代常用此法尋求神旨（撒上10:20；14:41），所用工具或為掛在大祭司胸牌裡的烏陵和土明；GT《串珠》說這裡沒有說明用什麼方法取出，可能是用烏陵和土明（出28:30；撒上28:6）；GT《華爾頓約書亞記背景注釋》說經文並沒有說明辦法，部分譯本加上「拈鬮」字樣，但在以色列拈鬮通常是在答案有隨機成分之時才用得著，這時他們所尋求的是神諭，若所用步驟與烏陵土明相同，答案必定要超乎或然率的可能才升格為神的諭示，而鑒於事先的自潔程式，他們可能不是用任何方法而是直接領受神的訊息。BH 說很可能是藉著擲聖籤。
+  relation: 這是條目第一次遇到疑似使用、但經文不說的情況。前面幾章寫的是烏陵土明放在哪裡、交給誰；本章寫的是一個需要神諭的場合，而各家只能推測用的是不是它。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: |-
+    第1、11、12、13、15節反覆出現的「當滅的物」，STEP 都是 Che.rem（H2764A，簡要詞典義 che.rem: devoted thing）；第12節「成了被咒詛的」在原文也是同一個字。CT 原文字義給「當滅的物」禁忌、被咒詛的，並在第12節註明「被咒詛的」與「當滅的物」原文同字，意指他們自己成了當滅之物。GT《綜合解讀》說「當滅的物」原文是「被奉獻的東西、完全獻上」，特指必須被奉獻給神的東西，這是在本章反覆出現的關鍵字；GT《研經資料》說第12節「被咒詛的」原文就是「當滅之物」。KC 說本該歸耶和華的東西被亞干偷去歸了自己——東西在耶利哥人手上是放錯了地方，在亞干手上同樣是放錯了地方。BH 說亞干把神所歸己的當作私人戰利品，並把在審判之下的東西帶進以色列營中。
+  relation: 上一章是命令，本章是命令被違反之後的結果——而結果不是罰款，是身分的翻轉：拿了當滅之物的人自己成了當滅之物。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 自潔
+  path: link_folder/神學/自潔.md
+  summary: |-
+    第13節「你起來，叫百姓自潔，對他們說：你們要自潔，預備明天」。STEP 為 ka.Desh ... hit.ka.de.Shu（都是 H6942G，簡要詞典義 qa.dash: to consecrate，前者 Piel 命令式、後者 Hitpael 命令式）。CT 原文字義給「自潔」使成聖、分別，並說指沐浴洗身、洗衣服（出19:10）。GT《丁道爾聖經注釋》說這裡沒有詳述以色列人要怎樣自潔，但利未記17至26章說明了怎樣才是聖潔的子民，而按約書亞記的情境與以下幾節的戰爭用語來看，這裡應當是指為打仗而自潔；GT《雷氏研讀本》說是藉潔淨的行為自潔（參出19:10-15）。BH 說自潔包含離開污穢、把自己分別出來歸給耶和華的聖潔同在與旨意，這道吩咐讓人想起書3:5 過約但河之前的自潔。
+  relation: 出19 與書3 的自潔是為了迎接神要做的事，本章的自潔是為了查出營中的罪。同一個動作，第一次被放在審查程序的開頭。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 申24：16
+  path: link_folder/互文/申24：16.md
+  summary: |-
+    第24節把亞干的兒女一併帶到亞割谷，而申24:16 明說不可因父殺子。CT 在文意註解與話中之光兩處都引這條律法，說本來按照律法條例父親犯罪不可懲罰子女，此案他們可能同謀掩蓋或知罪不揭發，故須連帶處刑；GT《串珠聖經注釋》說按申24:16 亞干的家人原本不會受牽連，但他們明顯是知情不報甚至有分參與；GT《啟導本》說亞干的家人一定也參與其事並代隱瞞，否則不會一起判死刑（申24:16；民26:11）；GT《聖經精讀本》以「據申24:16，父親的罪不能歸到子女身上」開場，然後列出四種解釋。BH 也在同一節下說以色列的律法維持個人在神面前的責任——不可因父殺子、也不可因子殺父。
+  relation: 出20 引這條律法是為了解釋神追討罪自父及子的說法不等於株連，本章引它是因為經文本身看起來就像株連。同一條律法，一次用來排除誤解，一次用來標出難題。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:20
+      - 約書亞記:7
+- title: 古代哀悼習俗
+  path: link_folder/背景/古代哀悼習俗.md
+  summary: |-
+    第6節「約書亞便撕裂衣服；他和以色列的長老把灰撒在頭上」。STEP 為 va/i.yik.Ra' ... sim.lo.Ta/v（H7167，簡要詞典義 qa.ra: to tear，加 H8071 sim.lah）與 va/i.ya.'a.Lu 'a.Far 'al- ro.Sha/m（H5927H 加 H6083，簡要詞典義 a.phar: dust）。CT 說『撕裂衣服……灰撒在頭上』是極其悲痛的表示（參士11:35；撒上4:12）。GT《啟導本》說「撕裂衣服」是極其悲痛的表示（參士11:35）；GT《串珠》說「撕裂衣服」、「把灰撒在頭上」是悲哀的記號；GT《聖經精讀本》說當希伯來人陷入極大的痛苦與苦惱時，他們便會撕裂衣服並把灰撒在頭上，以此表示內心的痛苦（創37:34；民14:6；撒下1:11），後來這種風俗漸漸流於形式，先知約珥以沉痛的心督促人們悔改（珥2:13）；GT《綜合解讀》說這是古代中東人表示痛苦的方式（創37:34；民14:6；伯2:12）；GT《研經資料》列出一串平行經文（創37:29、34；創44:13；民14:6；哀2:10；結27:30），並說「直到晚上」顯示約書亞的哀痛不是短時間的情緒表現。
+  relation: 創37 的兩次撕裂衣服都是為著死人，本章這一次是為著一場敗仗——而哀悼的地點在約櫃前，動作因此同時是禮儀與祈求。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:37
+      - 約書亞記:7

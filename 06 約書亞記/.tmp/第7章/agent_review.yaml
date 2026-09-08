@@ -1,0 +1,86 @@
+version: 2
+book: 約書亞記
+chapter: 7
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: fa4041015819e4ecae1e99b602e3172ae7dc7c198a27502bf4f9779f5bda5dbb
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 2c000d3b1c77fb05450a335b6bfae5eee1830c363c2c2f0ec8720ed4b9423cf1
+      verdict: changes_required
+      findings_count: 3
+      late_recorded: true
+    - attempt: 2
+      reviewer: antigravity
+      sha256: fa4041015819e4ecae1e99b602e3172ae7dc7c198a27502bf4f9779f5bda5dbb
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/一人犯罪全營受累.yaml
+    - entry_content/一條金子（le.shon za.hav）.yaml
+    - entry_content/亞割谷.yaml
+    - entry_content/亞干.yaml
+    - entry_content/亞干犯罪的四個步驟.yaml
+    - entry_content/亞干的兒女為何同受刑罰.yaml
+    - entry_content/伯亞文.yaml
+    - entry_content/何2：15 亞割谷成為指望的門.yaml
+    - entry_content/你為你的大名要怎樣行呢.yaml
+    - entry_content/堆石頭作記號.yaml
+    - entry_content/將榮耀歸給耶和華.yaml
+    - entry_content/攻艾城失敗的原因.yaml
+    - entry_content/犯了罪（ma.al）.yaml
+    - entry_content/示巴琳.yaml
+    verdict_sha: fa4041015819e4ecae1e99b602e3172ae7dc7c198a27502bf4f9779f5bda5dbb
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: 256d8b496cec367be49c3ec68421fd3010c801e5f50cc34637a1a91da70d1cdb
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 256d8b496cec367be49c3ec68421fd3010c801e5f50cc34637a1a91da70d1cdb
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=fa4041015819e4ecae1e99b602e3172ae7dc7c198a27502bf4f9779f5bda5dbb
+    - chapter_content.yaml
+    verdict_sha: 256d8b496cec367be49c3ec68421fd3010c801e5f50cc34637a1a91da70d1cdb
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: bb0c159dc5135e65e6e68f1063677542a3e58c12bdd7186178f3b83d6a917929
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: bb0c159dc5135e65e6e68f1063677542a3e58c12bdd7186178f3b83d6a917929
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=fa4041015819e4ecae1e99b602e3172ae7dc7c198a27502bf4f9779f5bda5dbb
+    - parent:m6=256d8b496cec367be49c3ec68421fd3010c801e5f50cc34637a1a91da70d1cdb
+    - link_updates.yaml
+    verdict_sha: bb0c159dc5135e65e6e68f1063677542a3e58c12bdd7186178f3b83d6a917929
+    findings_count: 0
