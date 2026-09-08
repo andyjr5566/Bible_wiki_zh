@@ -1,0 +1,279 @@
+book: 約書亞記
+chapter: 4
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第4節召齊先前預備的十二個人，第5節吩咐他們下約但河中取石，第9節親自把十二塊石頭立在河中，第17節吩咐祭司從河裡上來，第20節把石頭立在吉甲，第21至24節向以色列人說明石頭的意義。第14節「當那日，耶和華使約書亞在以色列眾人眼前尊大。在他平生的日子，百姓敬畏他，像從前敬畏摩西一樣」，STEP 為 gi.Dal（H1431 ga.dal，Piel 完成式）。CT 說『當那日』即指渡過約但河那日，『平生的日子』指約書亞享年一百一十歲（書24:29）；GT《丁道爾聖經注釋》說這裡應驗了神在書3:7 的應許，也是整段過約但河事件的結語；KC 說第9節約書亞所做的看來並不是神吩咐他的，是他自己去做、沒有交給別人做的一件事。
+  relation: 本章是約書亞第一次在全以色列眼前被神公開高舉。從書1 的受命、書3 的應許到這一章的「當那日」，他的權柄不是自己爭來的，而是在一件百姓親眼看見的事上被立起來的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第10節「是照摩西所吩咐約書亞的一切話」、第12節兩個半支派「都照摩西所吩咐他們的」、第14節「百姓敬畏他，像從前敬畏摩西一樣」。CT 說聖經並未記載摩西曾吩咐約書亞如何渡過約但河之事；GT《研經資料》同樣說找不到出處，並指出七十士譯本中沒有第10節那句話。GT《丁道爾聖經注釋》說本章把摩西和約書亞作了平行比較——摩西怎樣順服神，約書亞也怎樣順服摩西，這進一步顯示約書亞是摩西的接班人。CT 說神當初用分開紅海的神跡建立了摩西的權柄（出14:31），現在也藉著過約但河的神蹟建立了約書亞的權柄。
+  relation: 摩西本人已經去世，本章卻三次提到他，而且每一次都是拿來當約書亞的參照。他在這一章的作用是一把尺：約書亞照他吩咐的行，百姓像敬畏他一樣敬畏約書亞。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 77
+    - 78
+    definition: keep
+    development: keep
+- title: 約櫃
+  path: link_folder/主題/約櫃.md
+  summary: '第5、7、9、11、16、18節。第7節 STEP 為 ''a.Ron be.rit- Yah.weh（H727 加 H1285）；第16節改稱「法櫃」，STEP 為 ''a.Ron ha./''e.Dut（H5715，簡要詞典義 e.dut: testimony），GT《研經資料》說「法櫃」原文是「見證櫃子」，是約櫃的另一名稱。第11節約櫃和祭司在百姓面前過去，CT 說約櫃和祭司最先踏進約但河中、又是最後踏出。KC 說水能不能流回來取決於約櫃在哪裡——約櫃進去水就讓路，約櫃離開水就流回，百姓的安全繫於約櫃的位置。'
+  relation: 本章的石頭是從「祭司腳站定的地方」取的，也就是約櫃停過的那一點。約櫃在這一章不只是同在的記號，它同時是紀念碑的座標。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 全章的場景。第18節「抬耶和華約櫃的祭司從約但河裡上來，腳掌剛落旱地，約但河的水就流到原處，仍舊漲過兩岸」，STEP 為 va/i.ya.Shu.vu（H7725G shuv）加 li/m.ko.Ma/m（H4725 ma.qom）加 'al- kol- ge.do.Ta/v（H1415 ga.dah，簡要詞典義 bank）。CT 由此推斷停在上游亞當城附近的河水早已適時奔流而下，並說水位恢復到原先春季氾濫時的高度。GT《研經資料》說約但河平時寬度約30公尺、深度約1到3公尺，此時應該比平常寬深甚多。第9節有十二塊石頭立在河中，KC 說水一流回來這座紀念碑就再也看不見了。
+  relation: 前一章記河水怎麼斷絕，本章記它怎麼流回來。河在這一章有兩個身分：一條走得過去的通道，以及一座沉在水底的紀念碑的所在。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 吉甲
+  path: link_folder/地點/吉甲.md
+  summary: 第19節「正月初十日，百姓從約但河裡上來，就在吉甲，在耶利哥的東邊安營」，第20節約書亞把從河中取來的十二塊石頭立在吉甲。STEP 為 ba./gil.Gal（H1537G）。CT 說吉甲位於耶利哥城的東邊約二公里，是一片平原，適於紮營；GT《聖經精讀本》說這一名詞具有「滾」之意，此地既是渡河後的第一個宿營地，也是平定迦南的根據地；GT《綜合解讀》列出後續在吉甲發生的事：立石紀念、為曠野出生的人行割禮（書5:2-9）、守逾越節（書5:10）、嗎哪停降（書5:11-12）、遇見耶和華軍隊的元帥（書5:13-15）、分地（書14:6）、約櫃留駐至搬往示羅（書18:1）。GT《啟導本》說此處的吉甲當指耶利哥東北三公里處的卡巴馬夫謝廢墟；GT《丁道爾聖經注釋》與《研經資料》都說確實地點目前並無確鑿的資料。
+  relation: 這是以色列人在應許之地的第一個營地，本章的十二塊石頭就立在這裡。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:11
+      - 約書亞記:4
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第13節「到耶利哥的平原，等候上陣」，STEP 為 ar.Vot ye.ri.Cho（H6160L a.ra.vah 加 H3405G）；第19節百姓在「耶利哥的東邊」安營。GT《研經資料》說當時的耶利哥城估計有1500到2000居民；BH 說耶利哥的堅固城牆扼守以色列進入迦南中部的通道，是接下來第一場大仗的目標。GT《丁道爾聖經注釋》在解釋迦南人為何沒有趁渡河出手時說，晚銅時期迦南只有幾個地方人口比較集中，耶利哥並不是一個主要的聚居之地，那城鎮的居民對以色列人的過河也束手無策。
+  relation: 民數記與申命記一直用「對著耶利哥」標定以色列的位置，本章他們終於站到了它的東邊。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:2
+      - 約書亞記:3
+      - 約書亞記:4
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第12節「流便人、迦得人、瑪拿西半支派的人都照摩西所吩咐他們的，帶著兵器在以色列人前頭過去」，STEP 為 be.nei- re.'u.Ven（H7205）。BH 說他們在全國推進迦南時取了最前面的位置，顯明河東的產業並沒有削弱他們與其他支派的連結，這個行動履行了向摩西所作的承諾；GT《研經資料》說「帶著兵器」是「列以戰陣」，意味著他們在迦南地從事爭戰的開始。
+  relation: 流便支派的產業在約但河東，本章他們卻走在全軍最前面過河。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 迦得（萬幸）
+  path: link_folder/人物/迦得（萬幸）.md
+  summary: 第12節「迦得人」與其餘兩個半支派同列，STEP 為 u./ve.nei- gad（H1410G）。BH 說這幾個支派因牲畜的緣故求得約但河東之地（民32），摩西以協助河西征戰為條件應允，如今他們帶著兵器在以色列人前頭過去，正是履行那個條件。GT《啟導本》說過河參加戰爭的只有這幾個支派能打仗總數的三分之一，其餘留在河東保護新建立的家園。
+  relation: 迦得支派在本章是以履行承諾的身分出現的：他們的地在河東，人卻走在河西作戰的最前面。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第12節「瑪拿西半支派的人」，STEP 為 va./cha.Tzi She.vet ha/m.na.Sheh（H2677 che.tsi 加 H7626H she.vet 加 H4519G）。CT 說這兩支派半二十歲以上能打仗的人數至少有十萬人（民26:7、18、34），可見泰半留在約但河東保護自己的土地和家人。
+  relation: 瑪拿西支派在本章只以「半支派」出現，而且是與流便、迦得並列的河東那一半。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development: keep
+- title: 瑪拿西半支派為何留在河東
+  path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+  summary: 第12至13節。CT 說這兩支派半二十歲以上能打仗的人數至少有十萬人（民26:7、18、34），可見泰半留在約但河東保護自己的土地和家人；GT《啟導本》說民26 所記二支派半20歲以外能打仗的總數為13萬餘，可見過河參加戰爭的只有三分之一，其餘留在河東保護新建立的家園；GT《雷氏研讀本》說這裡的人數比這些支派能出去打仗之人的總數少了一半有多，而這四萬人在前面引路；GT《串珠》說這些支派的其餘壯丁可能為保衛家園而在河東留了下來；GT《研經資料》說看起來這兩支派半是派遣精銳部隊做整個以色列部隊的先鋒，但還留下大部分軍隊維持河東居住地區的安全，而約書亞也沒有對這樣的配置表示意見。
+  relation: 本章是這件事第一次可以從人數上看見：他們確實過了河，但過河的只有一部分。經文沒有評價這個安排，各家的推測也都集中在留守的必要上。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 帶著兵器（cha.mush）
+  path: link_folder/原文/帶著兵器（cha.mush）.md
+  summary: '第12節「帶著兵器在以色列人前頭過去」，STEP 為 cha.mu.Shim（H2571，簡要詞典義 cha.mush: armed，本節 context gloss 是 arrayed for battle）——與書1:14 約書亞下命令時用的是同一個字。GT《研經資料》說「帶著兵器」是「列以戰陣」，並說這意味著他們在迦南地從事爭戰的開始；過了約但河他們就踏進敵人的疆土、危機四伏，所以要全副武裝預備作戰。第13節「都準備打仗」則換成另一個字 cha.lu.Tzei ha./tza.Va''（H2502B 加 H6635H），GT《綜合解讀》說原文是「裝備好的軍隊」。'
+  relation: 書1:14 是命令，本章第12節是執行，兩處用的是同一個字。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:1
+      - 約書亞記:4
+- title: 摩西與約書亞的權柄差異
+  path: link_folder/主題/摩西與約書亞的權柄差異.md
+  summary: 第14節「當那日，耶和華使約書亞在以色列眾人眼前尊大。在他平生的日子，百姓敬畏他，像從前敬畏摩西一樣」。GT《丁道爾聖經注釋》說這裡應驗了神在書3:7 的應許，所用的言辭也類似，以色列人在此承認約書亞是摩西的接班人、是他們的領袖；GT《聖經精讀本》說神所賜的這種權威並不像許多屬世的權威為了個人的通達和利益，乃是為了成就神的旨意；BH 說約書亞的權柄不是出於個人野心或軍事成就，而是出於耶和華的同在與呼召。CT 說神當初用分開紅海的神跡建立了摩西的權柄（出14:31），現在也藉著過約但河的神蹟建立了約書亞的權柄。
+  relation: 本章給的比較是對等的：像從前敬畏摩西一樣。而立這權柄的方式也一樣——一件百姓親眼看見、人做不到的事。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 使你尊大（ga.dal）
+  path: link_folder/原文/使你尊大（ga.dal）.md
+  summary: '第14節「耶和華使約書亞在以色列眾人眼前尊大」，STEP 為 gi.Dal（H1431，簡要詞典義 ga.dal: to magnify，Piel 完成式）加 be./''ei.Nei kol- Yis.ra.''El（H5869H）——與書3:7 的 ga.del./Kha 是同一個動詞。CT 原文字義給「尊大」尊崇、使尊大，並說『眼前尊大』指因所言所行顯出的超越常人效果，而被人視為神的僕人，給予特別的尊敬；GT《聖經精讀本》說「使……尊大」意為「提高名譽和人格」、「使之光榮」（書3:7；代上29:12），並說藉著渡約但河的神跡神鞏固了約書亞的領袖地位；GT《丁道爾聖經注釋》說這裡應驗了神在書3:7 的應許，也是過約但河事件的結語。'
+  relation: 書3:7 是神說要做，本章第14節是做成了，兩節用同一個動詞。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:3
+      - 約書亞記:4
+- title: 敬畏神
+  path: link_folder/神學/敬畏神.md
+  summary: '第14節「百姓敬畏他」與第24節「也要使你們永遠敬畏耶和華─你們的神」，STEP 兩處都是 H3372H（ya.re，簡要詞典義 to fear: revere）：第14節是 va/i.yir.''U 與 ya.re.''U，第24節是 ye.ra.Tem。GT《研經資料》說這個字在利19:3 用在「孝敬」父母、申28:58 用在「敬畏」神；GT《丁道爾聖經注釋》說這個神跡的成就是要以色列人一生敬畏神，而敬畏神便是要全心全意效忠祂；BH 說敬畏耶和華包含在祂的聖潔面前存敬畏、信靠祂的信實，並讓生命順服祂的命令。CT 說「永遠敬畏」指世世代代畏懼並尊崇神手的作為。'
+  relation: 同一個字在本章用了兩次，一次對人、一次對神。百姓敬畏約書亞，是因為先看見了神的作為；而神立這座紀念碑的目的，是要他們永遠敬畏祂。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 15
+    - 16
+    definition: keep
+    development: keep
+- title: 耶和華的手
+  path: link_folder/神學/耶和華的手.md
+  summary: '第24節「要使地上萬民都知道，耶和華的手大有能力」，STEP 為 yad Yah.weh ki cha.za.Kah（H3027H yad，簡要詞典義 hand: power，加 H2389 cha.zaq，簡要詞典義 strong）。CT 說『地上萬民』指所有的外邦人，『手大有能力』指神手的作為顯示能力極大；GT《聖經精讀本》說希伯來人常用「手」象徵神的權能，比如「大能的手」（出3:19）、「你手」（出15:17）、「父手」（約10:29）；GT《丁道爾聖經注釋》說在神責罰反叛者的經文中這個詞經常出現；BH 說神照自己的旨意管理江河、列國、爭戰與歷史，沒有任何阻礙能攔住祂成就聖約的應許。'
+  relation: 本章立石的兩個目的都寫在第24節，向外的那一個就用這個詞：要使地上萬民都知道。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 紅海分開
+  path: link_folder/歷史/紅海分開.md
+  summary: 第23節「就如耶和華─你們的神從前在我們前面使紅海乾了，等著我們過來一樣」，STEP 為 le./yam- suf（H3220G 加 H5488G）加 ho.Vish（H3001，Hiphil 完成式）。CT 說這裡把「使約但河的水乾了」和「使紅海乾了」相提並論，一個是使流水在上游「停住，立起成壘」，一個是「使水分開…水在他們的左右作了牆垣」（出14:21-22）；GT《丁道爾聖經注釋》說第23節特別將過約但河與過紅海相連，並指出雖然出埃及的記錄中沒有用到「乾了」這動詞，但喇合提到過紅海時曾用到（書2:10），同時注意到本節人稱有變——過約但河用第二人稱複數「你們」、過紅海用第一人稱「我們」；KC 說逾越節、紅海、約但河三者都代表基督在十字架上的工作。
+  relation: 這是約書亞自己作的比較，也是本章要父親們講給孩子聽的內容：兩次分水被說成同一位神的同一件事。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 逾越節
+  path: link_folder/歷史/逾越節.md
+  summary: 第19節「正月初十日，百姓從約但河裡上來」。CT 說正月初十日即逾越節前的第四天，也是挑選逾越節羔羊的日子（出12:3、6）；GT《丁道爾聖經注釋》說出12:2-3 提到同一個日期，那裡講的是逾越節的預備而逾越節在十四日，因此這一段等於再次回顧了出埃及，也預備讀者去看書5 章的逾越節；GT《雷氏研讀本》說以色列人剛剛來得及揀選逾越節的羔羊；KC 說神安排他們在每年逾越節前四天、也就是必須開始為逾越節作預備的那一天進入迦南；BH 說以色列進入迦南的日子，正是出埃及前各家挑選逾越節羔羊的同一天。
+  relation: 本章沒有記守節，只記了一個日期，而那個日期把整件事接回四十年前的埃及。書5:10 記的逾越節，就從這一天開始預備。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 希伯來人_過河的人
+  path: link_folder/原文/希伯來人_過河的人.md
+  summary: 第5節「你們下約但河中，過到耶和華─你們神的約櫃前頭」。CT 說『過到』原文與「希伯來人」同一字根，在書3、書4 兩章中共提到22次，正好是希伯來字母的數目，並註明「希伯來人」原文字義是「過河的人」。STEP 顯示本章多處的「過」是 H5674A（a.var，簡要詞典義 to pass），如第13節 'a.ve.Ru、第22節 'a.Var、第23節 'a.ve.re./Khem 與 'a.ve.Re./nu；第3節石頭「帶過去」則換成使役型態的 ve./ha.'a.var.Tem（H5674C），GT《研經資料》說第3、8節的「經過」是 Hiphil，表示這些紀念用的石頭是被人帶過河，正如以色列人被神帶過約但河一樣。
+  relation: 這個字根在本章密集出現，人過河與石頭被帶過河用的是同一個字，只差在語態。CT 統計的22次，正落在書3 與書4 這兩章。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 傳於後代
+  path: link_folder/神學/傳於後代.md
+  summary: 第6節「日後，你們的子孫問你們說：這些石頭是什麼意思？」與第21至24節重述同一問答。GT《聖經精讀本》說在尚未具備系統教育體系的古代以色列社會中，家庭教育所占的比例是相當大的，因此家庭是傳承信仰的所在；KC 說這些真理屬於基督徒家庭，父親必須能解釋主耶穌的死與住在那地有什麼關係，不該把這件事丟給教會裡的教師或帶查經的弟兄，而每個孩子也有責任按著聖經察驗；BH 說父母負有把神的作為與誡命教導下一代的主要責任（申6:6-9），孩子的提問正是父親宣告神作為的機會；CT 說人的問題常是記憶力的失敗，不記得神的恩典。
+  relation: 本章的紀念碑不是為了立碑本身，是為了引出一個問題。第6節與第21節各問一次，第22至24節給出答案。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 出埃及記:12
+      - 出埃及記:13
+      - 申命記:6
+      - 約書亞記:4
+- title: 過河的四萬人與留守的七萬人
+  path: link_folder/主題/過河的四萬人與留守的七萬人.md
+  summary: 第13節「約有四萬人都準備打仗，在耶和華面前過去，到耶利哥的平原，等候上陣」，STEP 為 ke./'ar.ba.'Im 'E.lef cha.lu.Tzei ha./tza.Va'（H705 加 H505G e.leph 加 H2502B cha.lats 加 H6635H tsa.va）。GT《研經資料》說「四萬人」字義是「四十千」，「千」是當時的部隊單位名稱、不一定是「一千人」，並說照民26:2 所記這三支派能打仗的戰士共有十一萬零五百八十人，真正派出去的大約只有三分之一；GT《綜合解讀》說「都準備打仗」原文是「裝備好的軍隊」，表明這些人是特選的精銳；GT《丁道爾聖經注釋》把和合本的「四萬人」讀為四十個「帶兵器的部隊」；CT 說這兩支派半二十歲以上能打仗的人數至少有十萬人（民26:7、18、34）。
+  relation: 民32 只能靠兩份名冊推算出來的那個數字，在本章由經文直接寫了出來。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:32
+      - 約書亞記:4

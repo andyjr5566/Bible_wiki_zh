@@ -1,0 +1,94 @@
+version: 2
+book: 約書亞記
+chapter: 4
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: fe19f3de4dd2874c8962459789ec9101b567ed27951084c0ca0c18e63f28e992
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: cbc038173ae783b8580ba107072038149ddf08408d343428d296154f80a6f316
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: fe19f3de4dd2874c8962459789ec9101b567ed27951084c0ca0c18e63f28e992
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/作為證據的記號（ot）.yaml
+    - entry_content/使水乾了（ho.vish）.yaml
+    - entry_content/十二塊石頭.yaml
+    - entry_content/摩西吩咐約書亞的話出處不明.yaml
+    - entry_content/正月初十日（過河日期）.yaml
+    - entry_content/永遠的紀念（zi.ka.ron）.yaml
+    - entry_content/直到今日.yaml
+    - entry_content/約但河中的十二塊石頭是另一堆還是同一堆.yaml
+    - entry_content/西2：11-12 與基督同死同復活.yaml
+    - entry_content/迦南人未趁渡河攻擊的原因.yaml
+    verdict_sha: fe19f3de4dd2874c8962459789ec9101b567ed27951084c0ca0c18e63f28e992
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: fc1930a825550c41b3046fcca0727df492ea97b4f6229607fb3be86e652da60e
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 8385042bd761f2fa3241e4eff9e03d687e601b27f637fb05e70178abab4f5b68
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: fc1930a825550c41b3046fcca0727df492ea97b4f6229607fb3be86e652da60e
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=fe19f3de4dd2874c8962459789ec9101b567ed27951084c0ca0c18e63f28e992
+    - chapter_content.yaml
+    verdict_sha: fc1930a825550c41b3046fcca0727df492ea97b4f6229607fb3be86e652da60e
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: b7fa665c2281ff1244f0f8040a8a8e5bb3c8c6f9a657f1233bfbc133483d4f09
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: f68b00966931aa5b73e93912f48017fa8bd16419b513f2d72b8406691d88f80c
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: b7fa665c2281ff1244f0f8040a8a8e5bb3c8c6f9a657f1233bfbc133483d4f09
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=fe19f3de4dd2874c8962459789ec9101b567ed27951084c0ca0c18e63f28e992
+    - parent:m6=fc1930a825550c41b3046fcca0727df492ea97b4f6229607fb3be86e652da60e
+    - link_updates.yaml
+    verdict_sha: b7fa665c2281ff1244f0f8040a8a8e5bb3c8c6f9a657f1233bfbc133483d4f09
+    findings_count: 0

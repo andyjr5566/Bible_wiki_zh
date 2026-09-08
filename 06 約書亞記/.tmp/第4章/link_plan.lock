@@ -1,0 +1,5 @@
+book: 約書亞記
+chapter: 4
+locked_at: '2026-09-08T14:49:51Z'
+bucket_digest: 3f3be4028293159339ced97f2d89696e68fca3a984cbf91e57fe600636befd0e
+note: M3 gate PASS 後凍結；重算 A/B/C 分桶需 resolve_link_candidates.py --force-replan
