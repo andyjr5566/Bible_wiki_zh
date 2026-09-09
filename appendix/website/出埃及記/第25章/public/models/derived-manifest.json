@@ -1,6 +1,6 @@
 {
   "schemaVersion": "r12",
-  "generatedAt": "2026-09-09T19:53:23.052Z",
+  "generatedAt": "2026-09-09T22:47:04.675Z",
   "sourceHashMeaning": "source.sha256 always hashes sourceFile; derived.sha256 hashes processedFile; runtime.sha256 hashes runtimeFile.",
   "measurementNotes": {
     "gpuUploadEstimateBytes": "conservative lower-bound estimate equal to derived GLB bytes; no GPU profiler claim",
