@@ -3635,6 +3635,16 @@
       "苦水"
     ]
   },
+  "艾城准取掠物的轉變": {
+    "path": "link_folder/主題/艾城准取掠物的轉變.md",
+    "type": "主題",
+    "secondary_types": [
+      "神學"
+    ],
+    "title": "艾城准取掠物的轉變",
+    "status": "formal",
+    "aliases": []
+  },
   "荊棘與蒺藜": {
     "path": "link_folder/主題/荊棘與蒺藜.md",
     "type": "主題",
@@ -3772,6 +3782,16 @@
       "許願獻人估價表",
       "年齡性別估價表"
     ]
+  },
+  "詐敗誘敵": {
+    "path": "link_folder/主題/詐敗誘敵.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "詐敗誘敵",
+    "status": "formal",
+    "aliases": []
   },
   "詭詐": {
     "path": "link_folder/主題/詭詐.md",
@@ -13088,6 +13108,14 @@
       "埃及王的膳長"
     ]
   },
+  "艾城王": {
+    "path": "link_folder/人物/艾城王.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "艾城王",
+    "status": "formal",
+    "aliases": []
+  },
   "葉忒羅": {
     "path": "link_folder/人物/葉忒羅.md",
     "type": "人物",
@@ -14092,6 +14120,16 @@
     "type": "原文",
     "secondary_types": [],
     "title": "伊迦爾撒哈杜他",
+    "status": "formal",
+    "aliases": []
+  },
+  "伏兵（a.rav）": {
+    "path": "link_folder/原文/伏兵（a.rav）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "伏兵（a.rav）",
     "status": "formal",
     "aliases": []
   },
@@ -15468,6 +15506,14 @@
       "拿細耳人的願"
     ]
   },
+  "按所定的時候（mo.ed）": {
+    "path": "link_folder/原文/按所定的時候（mo.ed）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "按所定的時候（mo.ed）",
+    "status": "formal",
+    "aliases": []
+  },
   "按手": {
     "path": "link_folder/原文/按手.md",
     "type": "原文",
@@ -16491,6 +16537,16 @@
       "神學"
     ],
     "title": "眼都昏迷",
+    "status": "formal",
+    "aliases": []
+  },
+  "短鎗（ki.don）": {
+    "path": "link_folder/原文/短鎗（ki.don）.md",
+    "type": "原文",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "短鎗（ki.don）",
     "status": "formal",
     "aliases": []
   },
@@ -28683,6 +28739,14 @@
     "status": "formal",
     "aliases": []
   },
+  "三萬與五千伏兵人數之爭": {
+    "path": "link_folder/解經爭議/三萬與五千伏兵人數之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "三萬與五千伏兵人數之爭",
+    "status": "formal",
+    "aliases": []
+  },
   "上天下地的神是否一神信仰之爭": {
     "path": "link_folder/解經爭議/上天下地的神是否一神信仰之爭.md",
     "type": "解經爭議",
@@ -28922,6 +28986,14 @@
       "以實瑪利是阿拉伯人祖先嗎",
       "以實瑪利後裔"
     ]
+  },
+  "以巴路山立約段落的位置之爭": {
+    "path": "link_folder/解經爭議/以巴路山立約段落的位置之爭.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "以巴路山立約段落的位置之爭",
+    "status": "formal",
+    "aliases": []
   },
   "以掃三位妻子名單差異": {
     "path": "link_folder/解經爭議/以掃三位妻子名單差異.md",

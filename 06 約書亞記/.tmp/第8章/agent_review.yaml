@@ -1,0 +1,89 @@
+version: 2
+book: 約書亞記
+chapter: 8
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: 0bbe94877acf5e52a09d65dd3f11b568d1d73105eb83a7b32f3f1d1fa1bc2fc3
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 648630171b62b31acdfe322b982bb9cc987a8ea240fb8ab3c4a18ba0edb393fa
+      verdict: pass
+      findings_count: 0
+      late_recorded: true
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 0bbe94877acf5e52a09d65dd3f11b568d1d73105eb83a7b32f3f1d1fa1bc2fc3
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    hash_inputs:
+    - entry_content/三萬與五千伏兵人數之爭.yaml
+    - entry_content/以巴路山立約段落的位置之爭.yaml
+    - entry_content/伏兵（a.rav）.yaml
+    - entry_content/按所定的時候（mo.ed）.yaml
+    - entry_content/短鎗（ki.don）.yaml
+    - entry_content/艾城准取掠物的轉變.yaml
+    - entry_content/艾城王.yaml
+    - entry_content/詐敗誘敵.yaml
+    verdict_sha: 0bbe94877acf5e52a09d65dd3f11b568d1d73105eb83a7b32f3f1d1fa1bc2fc3
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: 12ef416521ae7f50e708ebdda41383e7013f4c0adcaeba9f5271a10ce302b3fd
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 12ef416521ae7f50e708ebdda41383e7013f4c0adcaeba9f5271a10ce302b3fd
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=0bbe94877acf5e52a09d65dd3f11b568d1d73105eb83a7b32f3f1d1fa1bc2fc3
+    - chapter_content.yaml
+    verdict_sha: 12ef416521ae7f50e708ebdda41383e7013f4c0adcaeba9f5271a10ce302b3fd
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: f802eb58054ba5812ea1ccb8e8c3e1ba10012bf149f5485bd40a9e6436c0e408
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 9cd5a46b3f70aefa8a838ff189cac8bc27590810a4a6a1943ff66a7ceecf6b11
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: f802eb58054ba5812ea1ccb8e8c3e1ba10012bf149f5485bd40a9e6436c0e408
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    hash_inputs:
+    - parent:m3=0bbe94877acf5e52a09d65dd3f11b568d1d73105eb83a7b32f3f1d1fa1bc2fc3
+    - parent:m6=12ef416521ae7f50e708ebdda41383e7013f4c0adcaeba9f5271a10ce302b3fd
+    - link_updates.yaml
+    verdict_sha: f802eb58054ba5812ea1ccb8e8c3e1ba10012bf149f5485bd40a9e6436c0e408
+    findings_count: 0
