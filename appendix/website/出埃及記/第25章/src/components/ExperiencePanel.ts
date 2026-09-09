@@ -1,5 +1,5 @@
 import type { AppPort } from '../types/app';
-import type { ExperienceState, ObjectDetailView } from '../types/experience';
+import type { EvidenceClaimView, EvidenceSourceView, ExperienceState, ObjectDetailView } from '../types/experience';
 import type { OfferingComparisonDefinition } from '../types/offerings';
 import type { ExperienceMode } from '../types/ui';
 
@@ -17,6 +17,10 @@ const scriptureContextLabels = {
   service: '事奉規範',
   reflection: '後世回顧',
 } as const;
+const evidenceKindLabels = {
+  scripture: '經文', commentary: '註釋', archaeology: '考古比較', asset: '資產', engineering: '工程假設',
+} as const;
+const profileLabels = { 'desktop-high': '完整會幕', 'desktop-structural': '框架剖面', 'fallback-low': '低模備援' } as const;
 
 export class ExperiencePanel {
   #app: AppPort | null = null;
@@ -25,11 +29,11 @@ export class ExperiencePanel {
   bind(app: AppPort): void { this.#app = app; }
 
   render(mode: ExperienceMode, state: Readonly<ExperienceState>): void {
-    const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.current?.activeHotspotId ?? '', state.tour.current?.hotspots.map(({ id }) => id).join(',') ?? '', state.tour.playing, state.learning.objectId ?? '', state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status, state.character.id, state.character.garmentState].join('|');
+    const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.current?.activeHotspotId ?? '', state.tour.current?.hotspots.map(({ id }) => id).join(',') ?? '', state.tour.playing, state.learning.objectId ?? '', state.learning.selectedPartId ?? '', state.learning.evidence.map(({ id }) => id).join(','), state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status, state.character.id, state.character.garmentState].join('|');
     if (renderKey === this.#renderKey) return;
     this.#renderKey = renderKey;
     const main = mode === 'tour' ? renderTour(state) : mode === 'learning' || mode === 'ritual' ? renderLearning(state) : renderOverview(state);
-    this.element.innerHTML = main + (state.creditsOpen ? renderCredits(this.#app?.getAttributions() ?? []) : '');
+    this.element.innerHTML = main + (state.creditsOpen ? renderCredits(this.#app?.getAttributions() ?? [], this.#app?.getEvidenceSources?.() ?? []) : '');
     this.syncMobileDrawers(state);
   }
 
@@ -42,13 +46,15 @@ export class ExperiencePanel {
   }
 
   readonly #onClick = (event: Event): void => {
-    const target = (event.target as HTMLElement).closest<HTMLElement>('[data-start-cinematic],[data-mode-jump],[data-tour-command],[data-tour-hotspot],[data-learning-object],[data-ritual-id],[data-ritual-command],[data-credits]');
+    const target = (event.target as HTMLElement).closest<HTMLElement>('[data-start-cinematic],[data-mode-jump],[data-tour-command],[data-tour-hotspot],[data-learning-object],[data-learning-part],[data-learning-part-clear],[data-ritual-id],[data-ritual-command],[data-credits]');
     if (!target || !this.#app) return;
     if (target.dataset.startCinematic) this.#app.startCinematicTour();
     if (target.dataset.modeJump) this.#app.transitionTo(target.dataset.modeJump as ExperienceMode, `quick-start:${target.dataset.modeJump}`);
     if (target.dataset.tourCommand) this.#app.commandTour(target.dataset.tourCommand as Parameters<AppPort['commandTour']>[0]);
     if (target.dataset.tourHotspot) this.#app.selectTourHotspot(target.dataset.tourHotspot);
     if (target.dataset.learningObject) this.#app.selectLearningObject(target.dataset.learningObject);
+    if (target.dataset.learningPart) this.#app.selectLearningPart?.(target.dataset.learningPart);
+    if (target.dataset.learningPartClear !== undefined) this.#app.selectLearningPart?.(null);
     if (target.dataset.ritualId) this.#app.startRitual(target.dataset.ritualId);
     if (target.dataset.ritualCommand) this.#app.commandRitual(target.dataset.ritualCommand as Parameters<AppPort['commandRitual']>[0]);
     if (target.dataset.credits) this.#app.setCreditsOpen(target.dataset.credits === 'open');
@@ -90,7 +96,29 @@ function renderLearning(state: Readonly<ExperienceState>): string {
   const offeringLaunchers = learning.offeringBranches.map(({ label, ritualId, instruction }) => `<button type="button" class="primary-button offering-branch-button" data-ritual-id="${escapeHtml(ritualId)}" title="${escapeHtml(instruction)}">${escapeHtml(label)}</button>`).join('');
   const offeringComparison = learning.offeringComparisons.length ? renderOfferingComparison(learning.offeringComparisons) : '';
   const dimensions = detail ? formatDimensions(detail.dimensions) : '';
-  return `<section class="panel-card learning-card" aria-labelledby="learning-title" data-testid="learning-panel"><p class="section-kicker">器物空間研讀 · 考據探索</p><div class="title-with-badge"><h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}</div><p class="location-label">📍 位置：${escapeHtml(learning.locationName ?? '—')}</p>${detail ? `<div class="hebrew-meta-card"><p>${escapeHtml(detail.summary)}</p><div class="meta-row"><span>尺寸：</span><strong>${escapeHtml(dimensions)}</strong></div><div class="meta-row"><span>材料：</span><strong>${escapeHtml(detail.materials.join('、'))}</strong></div><div class="meta-row"><span>部件：</span><strong>${escapeHtml(detail.parts.map(({ label }) => label).join('、'))}</strong></div></div>` : ''}<nav class="object-grid" aria-label="器物選擇">${objects}</nav><details class="mobile-drawer learning-details" open><summary>經文與事奉規範</summary><p class="scripture-intro">依據《出埃及記》25–30章文字記錄重建；展開原文可研讀完整經文段落。</p>${offeringComparison}<ul class="scripture-list">${scriptures}</ul>${offeringLaunchers ? `<div class="ritual-launchers offering-launchers" aria-label="燔祭分支">${offeringLaunchers}</div>` : ''}${rituals ? `<div class="ritual-launchers">${rituals}</div>` : ''}${renderRitual(state)}${renderCharacter(state)}</details></section>`;
+  const purposeClaim = learning.evidence.find(({ status }) => status === 'verified')?.statement ?? '目前沒有可核准的用途主張。';
+  const parts = detail ? renderParts(detail, learning.selectedPartId) : '<p class="empty-detail">目前沒有可核准的部件資料。</p>';
+  const evidence = learning.evidence.length ? `<section class="evidence-section" aria-labelledby="evidence-title"><div class="section-subhead"><h3 id="evidence-title">經文證據與限制</h3><span class="evidence-note">每項主張分開追溯</span></div><div class="evidence-list">${learning.evidence.map(renderEvidenceClaim).join('')}</div><section class="comparison-note"><h4>考古／研究比較</h4><p>${learning.evidence.some(({ kind }) => kind === 'archaeology' || kind === 'commentary') ? '相關比較資料已按來源類型標示於上方。' : '目前沒有本器物可核准的考古比較主張。'}</p></section></section>` : '<section class="evidence-section evidence-empty"><h3>經文證據</h3><p>目前沒有可核准的來源對應，詳細主張暫不顯示。</p></section>';
+  const ritualSection = learning.ritualIds.length ? `<section class="related-procedures"><h3>相關程序</h3><div class="ritual-launchers">${rituals || '<span>此器物的程序另在資料中標示。</span>'}</div></section>` : '<section class="related-procedures"><h3>相關程序</h3><p>目前沒有可核准的程序連結。</p></section>';
+  return `<section class="panel-card learning-card" aria-labelledby="learning-title" data-testid="learning-panel"><p class="section-kicker">器物空間研讀 · 考據探索</p><div class="title-with-badge"><h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}</div><p class="model-status" data-testid="model-status">模型檢視：${escapeHtml(profileLabels[state.assetProfile])} · 教學重建</p><p class="location-label">📍 位置：${escapeHtml(learning.locationName ?? '—')}</p>${detail ? `<div class="object-facts"><p class="object-summary">${escapeHtml(detail.summary)}</p><p class="object-purpose"><strong>用途／角色：</strong>${escapeHtml(purposeClaim)}</p><div class="meta-row"><span>尺寸：</span><strong>${escapeHtml(dimensions)}</strong></div><p class="dimension-note">${escapeHtml(detail.dimensions.displayNote)}</p><div class="meta-row"><span>材料：</span><strong>${escapeHtml(detail.materials.join('、'))}</strong></div><div class="part-section"><div class="section-subhead"><h3>可點部件</h3><button type="button" class="part-clear-button" data-learning-part-clear>清除焦點</button></div>${parts}</div></div>` : ''}<nav class="object-grid" aria-label="器物選擇">${objects}</nav><details class="mobile-drawer learning-details" open><summary>經文、來源與事奉規範</summary><p class="scripture-intro">文字、尺寸與材料只取自已核准資料；模型外觀若屬重建，會保留清楚標示。</p>${evidence}${ritualSection}${offeringComparison}<ul class="scripture-list">${scriptures}</ul>${offeringLaunchers ? `<div class="ritual-launchers offering-launchers" aria-label="燔祭分支">${offeringLaunchers}</div>` : ''}${renderRitual(state)}${renderCharacter(state)}</details></section>`;
+}
+
+function renderParts(detail: ObjectDetailView, selectedPartId: string | null): string {
+  return `<ul class="part-list">${detail.parts.map((part) => `<li><button type="button" class="part-chip ${selectedPartId === part.id ? 'is-active' : ''}" data-learning-part="${escapeHtml(part.id)}" aria-pressed="${String(selectedPartId === part.id)}"><strong>${escapeHtml(part.label)}</strong><span class="part-status ${part.mappingStatus}">${part.mappingStatus === 'verified' && part.nodeNames.length ? '3D 對應' : '重建／未詳'}</span></button></li>`).join('')}</ul>`;
+}
+
+export function renderEvidenceClaim(claim: EvidenceClaimView): string {
+  const status = claim.status === 'verified' ? '已核准' : claim.status === 'unresolved' ? '未詳' : '已排除';
+  const references = claim.references.map((reference) => {
+    const source = reference.source;
+    if (!source) return `<li><span>${escapeHtml(reference.sourceId)} · ${escapeHtml(reference.locator)}</span><em>來源未建檔，無法提供連結</em></li>`;
+    const sourceLabel = `${source.title} · ${evidenceKindLabels[source.sourceType]} · ${source.date} · ${source.scope}`;
+    const safeUrl = getSafeExternalUrl(source.url);
+    const link = safeUrl ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noreferrer">查閱來源</a>` : '<span class="source-no-link">離線來源摘要</span>';
+    return `<li><div><strong>${escapeHtml(sourceLabel)}</strong><span>${escapeHtml(reference.locator)}</span></div>${link}<small>${escapeHtml(source.attribution)}</small></li>`;
+  }).join('');
+  const limits = claim.limits.length ? `<div class="evidence-limits"><b>限制：</b>${claim.limits.map(escapeHtml).join('；')}</div>` : '';
+  return `<details class="evidence-card" data-claim-id="${escapeHtml(claim.id)}"><summary><span class="evidence-kind">${escapeHtml(evidenceKindLabels[claim.kind])}</span><strong>${escapeHtml(claim.id)}</strong><span class="evidence-status ${claim.status}">${status}</span></summary><p class="evidence-claim">${escapeHtml(claim.statement)}</p><ul class="evidence-references">${references}</ul>${limits}</details>`;
 }
 
 function renderOfferingComparison(comparisons: OfferingComparisonDefinition[]): string {
@@ -111,8 +139,8 @@ function renderCharacter(state: Readonly<ExperienceState>): string {
 }
 
 function formatDimensions(dimensions: ObjectDetailView['dimensions']): string {
-  if (dimensions.status === 'unresolved') return `未詳（${dimensions.displayNote}）`;
-  return `長 ${dimensions.lengthCubits} 肘 × 寬 ${dimensions.widthCubits} 肘 × 高 ${dimensions.heightCubits} 肘`;
+  if (dimensions.status === 'unresolved') return '未詳（經文未載數值，不作換算）';
+  return `長 ${dimensions.lengthCubits} 肘 × 寬 ${dimensions.widthCubits} 肘 × 高 ${dimensions.heightCubits} 肘（長度單位：肘）`;
 }
 
 function renderRitual(state: Readonly<ExperienceState>): string {
@@ -122,9 +150,20 @@ function renderRitual(state: Readonly<ExperienceState>): string {
   return `<section class="ritual-player" data-testid="ritual-panel" aria-label="儀式程序播放"><div><span class="ritual-state">${escapeHtml(state.ritual.playback.status)} · ${progress}</span><h3>${escapeHtml(state.ritual.name ?? '')}</h3></div><strong>${escapeHtml(state.ritual.stepTitle ?? '')}</strong><p>${escapeHtml(state.ritual.instruction ?? '')}</p><p class="ritual-cue">${escapeHtml(state.ritual.displayCue ?? '')}</p><p class="reference-line">${state.ritual.scriptureReferences.map(escapeHtml).join(' · ')}</p>${unresolved}<div class="control-row"><button type="button" data-ritual-command="previous" ${state.ritual.stepIndex === 0 ? 'disabled' : ''}>← 上一步</button><button type="button" data-ritual-command="play-pause">${state.ritual.playback.status === 'playing' ? '暫停' : '繼續'}</button><button type="button" data-ritual-command="next" ${state.ritual.playback.status === 'complete' ? 'disabled' : ''}>${state.ritual.playback.status === 'complete' ? '已完成' : '下一步 →'}</button><button type="button" data-ritual-command="replay">重播</button><button type="button" data-ritual-command="close">退出</button></div></section>`;
 }
 
-function renderCredits(attributions: ReturnType<AppPort['getAttributions']>): string {
+function renderCredits(attributions: ReturnType<AppPort['getAttributions']>, sources: EvidenceSourceView[]): string {
   const rows = attributions.map((item) => `<li><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.id)}</a><span>${escapeHtml(item.author)} · ${escapeHtml(item.license)}</span></li>`).join('');
-  return `<section class="credits-sheet" data-testid="credits-panel" aria-label="資產授權與署名"><div class="credits-head"><div><p class="section-kicker">ATTRIBUTION REGISTER</p><h2>資產授權與來源</h2></div><button type="button" data-credits="close">關閉</button></div><p class="noncommercial-notice">網站與其中 CC BY-NC 資產僅供非商業教育及研讀使用；各模型著作權與授權仍歸原作者。</p><ul>${rows}</ul></section>`;
+  const sourceRows = sources.map((source) => { const safeUrl = getSafeExternalUrl(source.url); return `<li>${safeUrl ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noreferrer">${escapeHtml(source.id)}</a>` : `<span>${escapeHtml(source.id)}</span>`}<span>${escapeHtml(source.title)} · ${escapeHtml(source.attribution)}</span></li>`; }).join('');
+  return `<section class="credits-sheet" data-testid="credits-panel" aria-label="資產授權與內容來源"><div class="credits-head"><div><p class="section-kicker">ATTRIBUTION REGISTER</p><h2>資產授權與內容來源</h2></div><button type="button" data-credits="close">關閉</button></div><section class="credits-group"><h3>3D 資產署名</h3><p class="noncommercial-notice">模型著作權與授權歸原作者；本站依各資產標示使用。</p><ul>${rows || '<li><span>目前沒有資產署名資料。</span></li>'}</ul></section><section class="credits-group"><h3>內容來源</h3><p class="noncommercial-notice">經文與研究來源和模型授權分開列示；外鏈失敗時仍保留離線摘要。</p><ul>${sourceRows || '<li><span>目前沒有內容來源資料。</span></li>'}</ul></section></section>`;
+}
+
+function getSafeExternalUrl(url: string | null): string | null {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? parsed.toString() : null;
+  } catch {
+    return null;
+  }
 }
 
 function escapeHtml(value: string): string { return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] ?? character); }

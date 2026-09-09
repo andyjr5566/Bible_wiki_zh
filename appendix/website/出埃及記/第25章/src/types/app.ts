@@ -1,6 +1,6 @@
 import type { ExperienceMode, UIState } from './ui';
 import type { AssetProfile, AssetRuntimeState } from './assets';
-import type { AttributionView, ExperienceState, RitualCommand, TourCommand } from './experience';
+import type { AttributionView, EvidenceSourceView, ExperienceState, RitualCommand, TourCommand } from './experience';
 import type { AudioManager } from '../audio/AudioManager';
 import type { AtmosphereMode } from './atmosphere';
 import type { CinematicState } from '../systems/CinematicTourController';
@@ -30,10 +30,12 @@ export interface AppPort {
   commandTour(command: TourCommand): void;
   selectTourHotspot(hotspotId: string | null): void;
   selectLearningObject(objectId: string): void;
+  selectLearningPart?(partId: string | null): void;
   startRitual(ritualId: string): void;
   commandRitual(command: RitualCommand): void;
   setCreditsOpen(open: boolean): void;
   getAttributions(): AttributionView[];
+  getEvidenceSources?(): EvidenceSourceView[];
   setAtmosphere(mode: AtmosphereMode): void;
   setQuality(preset: 'high' | 'medium' | 'low'): void;
 

@@ -4,6 +4,7 @@ import type { CharacterRole, CharacterVisualPolicy, GarmentState } from './chara
 import type { OfferingComparisonDefinition } from './offerings';
 import type { RitualPlaybackState } from './rituals';
 import type { TourHotspot } from './tours';
+import type { EvidenceKind, EvidenceStatus } from './evidence';
 
 export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; activeHotspotId: string | null; hotspots: readonly TourHotspot[]; }
 export interface TourViewState { playing: boolean; index: number; total: number; current: TourStopView | null; }
@@ -13,8 +14,11 @@ export interface ObjectDetailView {
   summary: string;
   dimensions: { status: 'verified' | 'unresolved'; lengthCubits: number | null; widthCubits: number | null; heightCubits: number | null; displayNote: string };
   materials: string[];
-  parts: Array<{ id: string; label: string }>;
+  parts: Array<{ id: string; label: string; claimIds: string[]; mappingStatus: 'verified' | 'unresolved'; nodeNames: string[] }>;
 }
+export interface EvidenceSourceView { id: string; title: string; sourceType: EvidenceKind; date: string; scope: string; url: string | null; attribution: string; }
+export interface EvidenceReferenceView { sourceId: string; locator: string; source: EvidenceSourceView | null; }
+export interface EvidenceClaimView { id: string; statement: string; kind: EvidenceKind; status: EvidenceStatus; references: EvidenceReferenceView[]; limits: string[]; }
 export interface LearningViewState {
   objectId: string | null;
   objectName: string | null;
@@ -27,6 +31,8 @@ export interface LearningViewState {
   characterIds: string[];
   availableObjects: Array<{ id: string; name: string }>;
   detail: ObjectDetailView | null;
+  selectedPartId: string | null;
+  evidence: EvidenceClaimView[];
 }
 export interface RitualViewState {
   playback: RitualPlaybackState;

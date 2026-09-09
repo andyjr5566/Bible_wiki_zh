@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R17 自驗透過，下一張為 R18；R00–R23 尚未宣稱整站完成。
-- 實際執行模型：本輪總控介面標示 GPT-5；R17 工程由 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
-- 最新測試／build：R17 後 `npm run build` exit 0；typecheck、19 個測試檔／53 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。
+- 當前階段：R18 自驗透過，下一張為 R19；R00–R23 尚未宣稱整站完成。
+- 實際執行模型：本輪總控介面標示 GPT-5；R17、R18 工程由 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
+- 最新測試／build：R18 後 `npm run build` exit 0；typecheck、20 個測試檔／58 個測試、architecture 101 modules、assets 17 assets 均通過；Vite production build 成功。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -33,7 +33,7 @@
 | R15 | 燔祭／五祭 | R13,R14 | 目前 GPT-5 session | 自驗透過 | [R15 說明](../research/R15_OFFERINGS.md)、[五祭截圖](../qa/revamp/screenshots/r15-offering-comparison-desktop.png)、[鳥支截圖](../qa/revamp/screenshots/r15-burnt-bird-desktop.png) |
 | R16 | 贖罪日 | R13,R15 | 目前 session | 自驗透過 | [R16 說明](../research/R16_ATONEMENT_PATH.md)、[空房截圖](../qa/revamp/screenshots/r16-empty-room-desktop.png)、[換衣截圖](../qa/revamp/screenshots/r16-change-clothes-desktop.png)、[曠野路線截圖](../qa/revamp/screenshots/r16-wilderness-route-desktop.png) |
 | R17 | 空間導覽 | R06,R12,R16 | gpt-5.6-luna 子代理 | 自驗透過 | [R17 截圖](../qa/revamp/screenshots/r17-five-station-desktop.png)、[聖所熱點](../qa/revamp/screenshots/r17-holy-place-hotspots-desktop.png) |
-| R18 | 器物／來源介面 | R03,R10,R17 | Luna | 待辦 | — |
+| R18 | 器物／來源介面 | R03,R10,R17 | gpt-5.6-luna 子代理 | 自驗透過 | [R18 證據截圖](../qa/revamp/screenshots/r18-evidence-drawer-desktop.png)、[來源抽屜](../qa/revamp/screenshots/r18-credits-sources-desktop.png) |
 | R19 | 手機／可及性 | R18 | Luna | 待辦 | — |
 | R20 | 效能／診斷 | R19 | Luna | 待辦 | — |
 | R21 | 回歸／故障 | R20 | Luna | 待辦 | — |
@@ -333,3 +333,19 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：導覽對墙、門檻與器具避讓依既有預設取景點驗證，未做 GPU frame-time profiler；自動導覽仍是教學選擇，不宣稱普通人禮儀動線；R18–R23 與 R24 總控驗收尚待執行。
 結論（自驗／總控分開）：R17 自驗透過；尚未交 GPT-6 R24，網站成熟化仍未完成。
 下一張任務 ID、可直接執行的下一步：R18；建立器物、部件、來源閱讀 drawer 與署名追溯。
+
+
+## R18 執行回執
+
+任務ID／起訖日期：R18／2026-09-10（gpt-5.6-luna 子代理，GPT-5 總控）
+執行模型／工具實測：R18 工程由已授權的 gpt-5.6-luna 子代理實作；總控完成來源複核、部件取景修正、TypeScript／Vitest、Vite build 與 Browser preview 驗收。未宣稱總控介面為 Luna。
+開始時工作樹或基準 hash：R17 commit '964cea15'；分支 'feat/appendix-exodus25-revamp'；既有 .blend1 復原備份保留。
+已讀輸入與核准 claim IDs：R03 evidence.json／object-details.json／typed schemas、R06 asset-parts.json、R10 五件器物資產、R17 器物導覽；沿用已核准的 C-EX25-ARK-SPEC、C-EX25-ARK-CHERUB、C-EX25-TABLE、C-LV24-BREAD、C-EX25-MENORAH、C-LV24-LAMP、C-EX27-BURNT-ALTAR、C-EX30-LAVER、C-EX30-INCENSE、C-EX26-ZONES、C-EX27-COURT、C-EX28-ROLE-GARMENT、C-NM-ROLES、C-LV01-BRANCHES、C-LV02-07-FIVE、C-LV16-DAY、C-EX40-CLOUD-FIRE、C-ENG-CUBIT-45。
+變更檔案（含刪除／原因）：新增 evidence source schema／型別與安全網址判斷；研讀面板加入六件器物切換、摘要／用途／位置／尺寸／材料、可點部件、主張來源與限制；AppKernel 串接 claim→source→object part，Canvas 點選可選取已映射部件；AssetRuntimeManager 以 node mapping 高亮與 bounds 取景；修正約櫃部件標籤「金環」；部件有實際 bounds 時不再被整件器物取景覆蓋。沒有修改 raw_scripture、source GLB 或 Blender 場景。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 寫入或重新匯出，沿用 R07–R12 已驗證的 17 件資產與 hashes；外部來源網址未經來源表核准者改為 null，來源抽屜顯示離線正式來源摘要。
+驗收 QA IDs：來源 claim 狀態與限制可展開、未知／不安全網址 fail-closed、六件器物切換、部件選取／清除、高亮與 bounds 取景、約櫃金環標籤、資料來源署名抽屜。
+命令、exit code、log 路徑：npm run build exit 0（typecheck、20 檔／58 tests、architecture 101 modules、assets 17 assets、Vite production build）；git diff --check exit 0。
+畫面與 activeAssetIds／profile／viewport 證據：Browser desktop '?r18-check=1' 器物與經文模式顯示約櫃、經文證據與限制、來源摘要；點選櫃體後 data-learning-part=ark-body，清除後無選取；runtime errors 0、warnings 0、detail asset count 2、profile 'desktop-structural'。截圖：r18-evidence-drawer-desktop.png、r18-credits-sources-desktop.png。
+未驗證項目／限制／需總控判定：僅有 approved node mapping 的部件會真實高亮與取景；約櫃施恩座、基路伯與部分器物部件仍標為重建／未詳；來源抽屜沒有未核准外部連結；R19–R23 與 R24 總控驗收尚待執行。
+結論（自驗／總控分開）：R18 自驗透過；器物研究面板、部件互動、主張來源追溯與署名抽屜已接入，尚未交 GPT-6 R24。
+下一張任務 ID、可直接執行的下一步：R19；在不改變資料來源契約下，驗證手機版抽屜、鍵盤焦點、ARIA 狀態與 reduced-motion 行為。

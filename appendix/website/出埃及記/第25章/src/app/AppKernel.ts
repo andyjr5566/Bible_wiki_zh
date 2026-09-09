@@ -27,6 +27,7 @@ import { UIStateManager } from '../ui/UIStateManager';
 import { EventChannel } from '../utils/EventChannel';
 
 export class AppKernel implements AppPort {
+  readonly #canvas: HTMLCanvasElement;
   readonly data = loadProjectData();
   readonly uiState = new UIStateManager();
   readonly scene: SceneBootstrap;
@@ -67,8 +68,11 @@ export class AppKernel implements AppPort {
   #lastCinematicActKey: string | null = null;
   #lastCinematicSpeed = 1;
   #cinematicWasPaused = false;
+  #selectedPartId: string | null = null;
+  #canvasPointerDown: { x: number; y: number } | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
+    this.#canvas = canvas;
     this.scene = new SceneBootstrap(canvas, this.data.dimensions.specs);
     this.ritualVisuals = new RitualVisualSystem(this.scene.context.worldRoot);
     this.rituals = new RitualPlaybackController(new RitualRegistry(this.data.rituals.rituals), {
@@ -104,6 +108,8 @@ export class AppKernel implements AppPort {
     this.#assetUnsubscribe = this.assetRuntime.subscribe((state) => this.onAssetState(state));
     this.#cinematicUnsubscribe = this.cinematic.subscribe((state) => this.onCinematicState(state));
     this.scene.setUpdate((deltaSeconds) => this.update(deltaSeconds));
+    canvas.addEventListener('pointerdown', this.#onCanvasPointerDown);
+    canvas.addEventListener('pointerup', this.#onCanvasPointerUp);
 
     // Listen to manual orbit dragging to pause cinematic tour cleanly
     this.scene.context.cameraManager.controls?.addEventListener('start', () => {
@@ -279,14 +285,35 @@ export class AppKernel implements AppPort {
         offeringComparisons,
         characterIds,
         availableObjects: this.data.objectDetails.objects.map(({ id, name }) => ({ id, name })),
+        selectedPartId: this.#selectedPartId,
+        evidence: (() => {
+          const detail = object ? this.data.objectDetails.objects.find((candidate) => candidate.id === object.id) : undefined;
+          if (!detail) return [];
+          const claimIds = new Set(detail.claimIds);
+          return this.data.evidence.claims.filter((claim) => claimIds.has(claim.id) && claim.status !== 'rejected').map((claim) => ({
+            id: claim.id,
+            statement: claim.statement,
+            kind: claim.kind,
+            status: claim.status,
+            limits: [...claim.limits],
+            references: claim.references.map((reference) => {
+              const source = this.data.evidence.sources.find((candidate) => candidate.id === reference.sourceId);
+              return { ...reference, source: source ? { ...source } : null };
+            }),
+          }));
+        })(),
         detail: object ? (() => {
           const detail = this.data.objectDetails.objects.find((candidate) => candidate.id === object.id);
+          const mapping = object.assetId ? this.data.assetParts.mappings.find((candidate) => candidate.assetId === object.assetId) : undefined;
           return detail ? {
             id: detail.id,
             summary: detail.summary,
             dimensions: detail.dimensions,
             materials: detail.materials,
-            parts: detail.parts.map(({ id, label }) => ({ id, label })),
+            parts: detail.parts.map(({ id, label, claimIds }) => {
+              const mapped = mapping?.parts.find((part) => part.partId === id);
+              return { id, label, claimIds: [...claimIds], mappingStatus: mapped?.status ?? 'unresolved', nodeNames: mapped ? [...mapped.nodeNames] : [] };
+            }),
           } : null;
         })() : null,
       },
@@ -352,6 +379,29 @@ export class AppKernel implements AppPort {
     this.publishExperience();
   }
 
+  selectLearningPart(partId: string | null): void {
+    const objectId = this.learning.context.objectId;
+    if (!objectId) return;
+    const object = this.objects.require(objectId);
+    const detail = this.data.objectDetails.objects.find((candidate) => candidate.id === objectId);
+    if (partId !== null && !detail?.parts.some((part) => part.id === partId)) return;
+    this.#selectedPartId = partId;
+    let framedPart = false;
+    if (object.assetId) {
+      const mapping = this.data.assetParts.mappings.find((candidate) => candidate.assetId === object.assetId);
+      const selected = mapping?.parts.find((part) => part.partId === partId);
+      this.assetRuntime.highlightPart(object.assetId, selected?.nodeNames ?? []);
+      const partBounds = this.assetRuntime.getPartBounds(object.assetId, selected?.nodeNames ?? []);
+      if (partBounds) {
+        this.scene.context.cameraManager.frameDetailBounds(partBounds);
+        framedPart = true;
+      }
+    }
+    if (!framedPart) this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
+    this.audio.playClick();
+    this.publishExperience();
+  }
+
   startRitual(ritualId: string): void {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     const ritual = this.rituals.registry.require(ritualId);
@@ -404,10 +454,16 @@ export class AppKernel implements AppPort {
     }));
   }
 
+  getEvidenceSources() {
+    return this.data.evidence.sources.map((source) => ({ ...source }));
+  }
+
   dispose(): void {
     this.#unsubscribe?.();
     this.#assetUnsubscribe?.();
     this.#cinematicUnsubscribe?.();
+    this.#canvas.removeEventListener('pointerdown', this.#onCanvasPointerDown);
+    this.#canvas.removeEventListener('pointerup', this.#onCanvasPointerUp);
     this.#experienceEvents.clear();
     this.audio.dispose();
     this.ritualVisuals.dispose();
@@ -497,6 +553,8 @@ export class AppKernel implements AppPort {
   private openLearningObject(objectId: string): void {
     const object = this.objects.require(objectId);
     this.learning.open({ objectId, locationId: object.locationId, scriptureReference: object.scriptureReferences[0] ?? null, ritualId: null, characterId: null });
+    this.#selectedPartId = null;
+    this.assetRuntime.clearPartHighlight();
     this.uiState.selectEntity(objectId, 'object');
     this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
     this.assetRuntime.setInteriorReveal(this.uiState.snapshot.mode === 'learning' && this.assetRuntime.snapshot.profile !== 'desktop-structural');
@@ -564,6 +622,23 @@ export class AppKernel implements AppPort {
     }
     this.publishExperience();
   }
+
+  readonly #onCanvasPointerDown = (event: PointerEvent): void => {
+    this.#canvasPointerDown = { x: event.clientX, y: event.clientY };
+  };
+
+  readonly #onCanvasPointerUp = (event: PointerEvent): void => {
+    const start = this.#canvasPointerDown;
+    this.#canvasPointerDown = null;
+    if (!start || Math.hypot(event.clientX - start.x, event.clientY - start.y) > 6) return;
+    if (this.getState().mode !== 'learning' && this.getState().mode !== 'ritual') return;
+    const objectId = this.learning.context.objectId;
+    const object = objectId ? this.objects.get(objectId) : undefined;
+    if (!object?.assetId) return;
+    const mapping = this.data.assetParts.mappings.find((candidate) => candidate.assetId === object.assetId);
+    const partId = this.assetRuntime.pickPart(object.assetId, mapping?.parts ?? [], this.scene.context.cameraManager.camera, event.clientX, event.clientY, this.#canvas.getBoundingClientRect());
+    this.selectLearningPart(partId);
+  };
 
   readonly #onResize = (): void => this.scene.resize();
 }

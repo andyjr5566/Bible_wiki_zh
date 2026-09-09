@@ -16,7 +16,9 @@ describe('project data contracts', () => {
     const characters = new Set(characterIds);
     const rituals = new Set(ritualIds);
     const assets = new Set(assetIds);
-    [locationIds, objectIds, characterIds, ritualIds, assetIds].forEach(assertUnique);
+    const sourceIds = data.evidence.sources.map(({ id }) => id);
+    const sources = new Set(sourceIds);
+    [locationIds, objectIds, characterIds, ritualIds, assetIds, sourceIds].forEach(assertUnique);
     data.tabernacle.objects.forEach((object) => { expect(locations.has(object.locationId)).toBe(true); if (object.assetId) expect(assets.has(object.assetId)).toBe(true); });
     data.rituals.rituals.forEach((ritual) => {
       expect(locations.has(ritual.locationId)).toBe(true);
@@ -30,13 +32,19 @@ describe('project data contracts', () => {
       passage.links.characterIds.forEach((id) => expect(characters.has(id)).toBe(true));
     });
     const claimIds = new Set(data.evidence.claims.map(({ id }) => id));
+    data.evidence.claims.forEach((claim) => {
+      expect(objects.has(claim.entityId) || ['tabernacle-main', 'outer-court', 'priest', 'burnt-offering', 'five-sacrifices', 'day-of-atonement', 'divine-presence-event', 'dimension-system'].includes(claim.entityId)).toBe(true);
+      claim.references.forEach(({ sourceId }) => expect(sources.has(sourceId)).toBe(true));
+    });
     const excerptIds = new Set(data.scriptureExcerpts.excerpts.map(({ id }) => id));
     data.objectDetails.objects.forEach((detail) => {
       expect(objects.has(detail.id)).toBe(true);
       expect(locations.has(detail.locationId)).toBe(true);
       assertClaimReferences(claimIds, detail.claimIds);
       assertClaimReferences(claimIds, detail.dimensions.sourceClaimIds);
+      detail.parts.forEach((part) => assertClaimReferences(claimIds, part.claimIds));
     });
+    expect(data.objectDetails.objects).toHaveLength(6);
     data.tours.tours.forEach((tour) => {
       expect(locations.has(tour.locationId)).toBe(true);
       if (tour.objectId) expect(objects.has(tour.objectId)).toBe(true);
