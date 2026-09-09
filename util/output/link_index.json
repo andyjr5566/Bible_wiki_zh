@@ -2214,6 +2214,16 @@
       "星辰崇拜"
     ]
   },
+  "指著耶和華起誓的約束力": {
+    "path": "link_folder/主題/指著耶和華起誓的約束力.md",
+    "type": "主題",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "指著耶和華起誓的約束力",
+    "status": "formal",
+    "aliases": []
+  },
   "按名指定": {
     "path": "link_folder/主題/按名指定.md",
     "type": "主題",
@@ -2661,6 +2671,16 @@
     "type": "主題",
     "secondary_types": [],
     "title": "沒有一座城高得使我們不能攻取",
+    "status": "formal",
+    "aliases": []
+  },
+  "沒有求問耶和華": {
+    "path": "link_folder/主題/沒有求問耶和華.md",
+    "type": "主題",
+    "secondary_types": [
+      "原文"
+    ],
+    "title": "沒有求問耶和華",
     "status": "formal",
     "aliases": []
   },
@@ -5355,6 +5375,16 @@
     "type": "事件",
     "secondary_types": [],
     "title": "財物受損的律例",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦南諸王結盟": {
+    "path": "link_folder/事件/迦南諸王結盟.md",
+    "type": "事件",
+    "secondary_types": [
+      "背景"
+    ],
+    "title": "迦南諸王結盟",
     "status": "formal",
     "aliases": []
   },
@@ -12557,6 +12587,16 @@
       "Shua"
     ]
   },
+  "會眾的首領": {
+    "path": "link_folder/人物/會眾的首領.md",
+    "type": "人物",
+    "secondary_types": [
+      "文化"
+    ],
+    "title": "會眾的首領",
+    "status": "formal",
+    "aliases": []
+  },
   "比利": {
     "path": "link_folder/人物/比利.md",
     "type": "人物",
@@ -15344,6 +15384,14 @@
       "快快地"
     ]
   },
+  "忿怒（qe.tseph）": {
+    "path": "link_folder/原文/忿怒（qe.tseph）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "忿怒（qe.tseph）",
+    "status": "formal",
+    "aliases": []
+  },
   "惟願（mi yi.ten）": {
     "path": "link_folder/原文/惟願（mi yi.ten）.md",
     "type": "原文",
@@ -17321,6 +17369,14 @@
       "詩51"
     ]
   },
+  "詭計與謹慎（or.mah）": {
+    "path": "link_folder/原文/詭計與謹慎（or.mah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "詭計與謹慎（or.mah）",
+    "status": "formal",
+    "aliases": []
+  },
   "詭計（ne.khel）": {
     "path": "link_folder/原文/詭計（ne.khel）.md",
     "type": "原文",
@@ -18695,6 +18751,16 @@
     "status": "formal",
     "aliases": []
   },
+  "基列耶琳": {
+    "path": "link_folder/地點/基列耶琳.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "基列耶琳",
+    "status": "formal",
+    "aliases": []
+  },
   "基列胡瑣": {
     "path": "link_folder/地點/基列胡瑣.md",
     "type": "地點",
@@ -18784,6 +18850,24 @@
     "type": "地點",
     "secondary_types": [],
     "title": "基訓",
+    "status": "formal",
+    "aliases": []
+  },
+  "基遍": {
+    "path": "link_folder/地點/基遍.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "基遍",
+    "status": "formal",
+    "aliases": []
+  },
+  "基非拉": {
+    "path": "link_folder/地點/基非拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基非拉",
     "status": "formal",
     "aliases": []
   },
@@ -19262,6 +19346,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "比遜",
+    "status": "formal",
+    "aliases": []
+  },
+  "比錄": {
+    "path": "link_folder/地點/比錄.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "比錄",
     "status": "formal",
     "aliases": []
   },

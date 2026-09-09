@@ -1,0 +1,79 @@
+version: 2
+book: 約書亞記
+chapter: 9
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: a74ad72b6f539fdccd15bc26909f4c91393dd0ddcbad0e4241ae49cdf1faf1ac
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: a74ad72b6f539fdccd15bc26909f4c91393dd0ddcbad0e4241ae49cdf1faf1ac
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/基列耶琳.yaml
+    - entry_content/基遍.yaml
+    - entry_content/基非拉.yaml
+    - entry_content/忿怒（qe.tseph）.yaml
+    - entry_content/指著耶和華起誓的約束力.yaml
+    - entry_content/會眾的首領.yaml
+    - entry_content/比錄.yaml
+    - entry_content/沒有求問耶和華.yaml
+    - entry_content/詭計與謹慎（or.mah）.yaml
+    - entry_content/迦南諸王結盟.yaml
+    verdict_sha: a74ad72b6f539fdccd15bc26909f4c91393dd0ddcbad0e4241ae49cdf1faf1ac
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: c0c84a2ed3ef345fb2084b5ef3d21433a606af505b60cb4ebd571d2ee43108b5
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: c0c84a2ed3ef345fb2084b5ef3d21433a606af505b60cb4ebd571d2ee43108b5
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=a74ad72b6f539fdccd15bc26909f4c91393dd0ddcbad0e4241ae49cdf1faf1ac
+    - chapter_content.yaml
+    verdict_sha: c0c84a2ed3ef345fb2084b5ef3d21433a606af505b60cb4ebd571d2ee43108b5
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 6b0b2ea2bcbbfd58705999b464d1b7e934c75792fd45c348ba4c28438dff94c1
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 6b0b2ea2bcbbfd58705999b464d1b7e934c75792fd45c348ba4c28438dff94c1
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=a74ad72b6f539fdccd15bc26909f4c91393dd0ddcbad0e4241ae49cdf1faf1ac
+    - parent:m6=c0c84a2ed3ef345fb2084b5ef3d21433a606af505b60cb4ebd571d2ee43108b5
+    - link_updates.yaml
+    verdict_sha: 6b0b2ea2bcbbfd58705999b464d1b7e934c75792fd45c348ba4c28438dff94c1
+    thread_id: d12e5d70-3328-4c27-808d-f3f1b0f00bf7
+    findings_count: 0
