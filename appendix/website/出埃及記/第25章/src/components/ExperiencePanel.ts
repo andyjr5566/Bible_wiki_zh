@@ -1,5 +1,5 @@
 import type { AppPort } from '../types/app';
-import type { ExperienceState } from '../types/experience';
+import type { ExperienceState, ObjectDetailView } from '../types/experience';
 import type { ExperienceMode } from '../types/ui';
 
 const confidenceLabels = {
@@ -9,53 +9,6 @@ const confidenceLabels = {
   illustrative: '示意呈現',
 } as const;
 
-const objectMeta: Record<string, { hebrew: string; dimensions: string; materials: string }> = {
-  ark: {
-    hebrew: 'אֲרוֹן הָעֵדוּת (Aron Ha-Edut) / כַּפֹּרֶת (Kapporet)',
-    dimensions: '長 2.5 肘 × 寬 1.5 肘 × 高 1.5 肘 (約 112.5 × 67.5 × 67.5 cm)',
-    materials: '皂莢木、純金內外包裹、二金基路伯',
-  },
-  menorah: {
-    hebrew: 'מְנוֹרַת הַזָּהָב (Menorat HaZahav)',
-    dimensions: '一他連得精金 (約 34~43 kg 純金錘成一體)',
-    materials: '精金、杏花狀杯、球、花、純橄欖油',
-  },
-  'shewbread-table': {
-    hebrew: 'שֻׁלְחָן לֶחֶם הַפָּנִים (Shulchan Lechem HaPanim)',
-    dimensions: '長 2 肘 × 寬 1 肘 × 高 1.5 肘 (約 90 × 45 × 67.5 cm)',
-    materials: '皂莢木、純金包裹、金牙邊、金盤金爵',
-  },
-  'incense-altar': {
-    hebrew: 'מִזְבַּח הַקְּטֹרֶ特 (Mizbeach HaKetoret)',
-    dimensions: '長 1 肘 × 寬 1 肘 × 高 2 肘 (約 45 × 45 × 90 cm)',
-    materials: '皂莢木、四角純金包裹、聖香料',
-  },
-  laver: {
-    hebrew: 'כִּיּוֹר נְחֹשֶׁת (Kiyor Nechoshet)',
-    dimensions: '未詳載（供祭司供職前洗手洗腳）',
-    materials: '銅鏡（會幕門前伺候之婦人的鏡子）',
-  },
-  'burnt-altar': {
-    hebrew: 'מִזְבַּח הָעֹלָה (Mizbeach HaOlah)',
-    dimensions: '長 5 肘 × 寬 5 肘 × 高 3 肘 (約 225 × 225 × 135 cm)',
-    materials: '皂莢木、空心銅包裹、銅網、銅盆',
-  },
-};
-
-const objectOrder = [
-  ['burnt-altar', '燔祭壇'],
-  ['laver', '洗濯盆'],
-  ['incense-altar', '香壇'],
-  ['menorah', '金燈臺'],
-  ['shewbread-table', '陳設餅桌'],
-  ['ark', '約櫃'],
-] as const;
-
-const ritualLabels: Record<string, string> = {
-  'priestly-washing': '播放洗濯程序',
-  'incense-service': '播放獻香程序',
-};
-
 const scriptureContextLabels = {
   design: '製作指示',
   construction: '實作記錄',
@@ -64,14 +17,6 @@ const scriptureContextLabels = {
   reflection: '後世回顧',
 } as const;
 
-const tourDescriptions: Record<string, string> = {
-  'tour-east-gate': '先確認入口與東西向；接著沿同一條中軸向西觀看神聖空間序列。',
-  'tour-burnt-altar': '外院首先遇見燔祭壇。經文描述它的材料、尺寸、器具與搬運方式。',
-  'tour-laver': '洗濯盆位於壇與會幕之間，與祭司進入供職前的洗濯潔淨有關。',
-  'tour-holy-place': '聖所內有金燈臺、陳設餅桌與香壇；依經文指引排列於幔子之前。',
-  'tour-most-holy': '幔子分隔至聖所；純金約櫃與施恩座是整座會幕最核心的神聖所在。',
-};
-
 export class ExperiencePanel {
   #app: AppPort | null = null;
   #renderKey: string | null = null;
@@ -79,19 +24,7 @@ export class ExperiencePanel {
   bind(app: AppPort): void { this.#app = app; }
 
   render(mode: ExperienceMode, state: Readonly<ExperienceState>): void {
-    const renderKey = [
-      mode,
-      state.creditsOpen,
-      state.assetProfile,
-      state.tour.index,
-      state.tour.total,
-      state.tour.current?.id ?? '',
-      state.tour.playing,
-      state.learning.objectId ?? '',
-      state.ritual.playback.ritualId ?? '',
-      state.ritual.playback.stepIndex,
-      state.ritual.playback.status,
-    ].join('|');
+    const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.playing, state.learning.objectId ?? '', state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status].join('|');
     if (renderKey === this.#renderKey) return;
     this.#renderKey = renderKey;
     const main = mode === 'tour' ? renderTour(state) : mode === 'learning' ? renderLearning(state) : renderOverview(state);
@@ -104,9 +37,7 @@ export class ExperiencePanel {
   private syncMobileDrawers(state: Readonly<ExperienceState>): void {
     const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 620px)').matches;
     const ritualOpen = state.ritual.playback.status !== 'idle';
-    this.element.querySelectorAll<HTMLDetailsElement>('.mobile-drawer').forEach((drawer) => {
-      drawer.open = !isMobile || ritualOpen;
-    });
+    this.element.querySelectorAll<HTMLDetailsElement>('.mobile-drawer').forEach((drawer) => { drawer.open = !isMobile || ritualOpen; });
   }
 
   readonly #onClick = (event: Event): void => {
@@ -125,119 +56,51 @@ export class ExperiencePanel {
 function renderOverview(state: Readonly<ExperienceState>): string {
   return `<section class="panel-card intro-card" aria-labelledby="overview-title">
     <p class="section-kicker">3D 探索指南</p>
-    <h2 id="overview-title">拖曳畫面，探索神聖空間</h2>
-    <p class="intro-lede">按住滑鼠左鍵拖曳環視，滾輪縮放；可隨時啟動電影級逐節導覽或點選器物研讀。</p>
-    
-    <button type="button" class="cinema-launch-banner" data-start-cinematic="true">
-      <span class="banner-play-icon">▶</span>
-      <div>
-        <strong>啟動電影級逐節 3D 導覽</strong>
-        <p>自動運鏡 · 逐節經文字幕 · 3D 尺寸標尺</p>
-      </div>
-    </button>
-
-    <ol class="quick-steps">
-      <li><b>拖曳</b><span>旋轉 3D 視角</span></li>
-      <li><b>滾輪</b><span>拉近或縮遠</span></li>
-      <li><b>選器物</b><span>查看考據註解</span></li>
-    </ol>
-    <div class="quick-actions">
-      <button type="button" class="primary-button" data-mode-jump="tour">五站導覽</button>
-      <button type="button" data-mode-jump="learning">查看器物與經文</button>
-    </div>
+    <h2 id="overview-title">拖曳畫面，探索聖所空間</h2>
+    <p class="intro-lede">按住滑鼠左鍵拖曳環視，滾輪縮放；可以啟動逐幕導覽，或點選器物查看考據。</p>
+    <button type="button" class="cinema-launch-banner" data-start-cinematic="true"><span class="banner-play-icon">▶</span><div><strong>啟動逐幕 3D 導覽</strong><p>自動運鏡 · 逐段經文字幕 · 3D 尺寸標尺</p></div></button>
+    <ol class="quick-steps"><li><b>拖曳</b><span>旋轉 3D 視角</span></li><li><b>滾輪</b><span>拉近或縮遠</span></li><li><b>選器物</b><span>查看考據註解</span></li></ol>
+    <div class="quick-actions"><button type="button" class="primary-button" data-mode-jump="tour">五站導覽</button><button type="button" data-mode-jump="learning">查看器物與經文</button></div>
     <p class="orientation-note"><strong>空間方向：</strong>由東門進入，依序經過燔祭壇、洗濯盆、聖所與至聖所。</p>
-    <div class="route-line" aria-label="由東向西的空間順序">
-      <span>東門入口</span><i></i><span>燔祭壇</span><i></i><span>洗濯盆</span><i></i><span>聖所</span><i></i><span>至聖所約櫃</span>
-    </div>
-    <dl class="micro-stats">
-      <div><dt>目前模型方案</dt><dd>${state.assetProfile === 'desktop-high' ? '完整會幕' : state.assetProfile === 'desktop-structural' ? '框架剖面' : '低模備援'}</dd></div>
-      <div><dt>使用性質</dt><dd>非商業 · 聖經研讀</dd></div>
-    </dl>
-    <p class="reconstruction-note">環境光影、沙丘與營帳群依據西奈曠野地理脈絡重現，只作教學重建參考。</p>
+    <div class="route-line" aria-label="由東向西的空間順序"><span>東門入口</span><i></i><span>燔祭壇</span><i></i><span>洗濯盆</span><i></i><span>聖所</span><i></i><span>至聖所約櫃</span></div>
+    <dl class="micro-stats"><div><dt>目前模型方案</dt><dd>${state.assetProfile === 'desktop-high' ? '完整會幕' : state.assetProfile === 'desktop-structural' ? '框架剖面' : '低模備援'}</dd></div><div><dt>使用性質</dt><dd>非商業 · 聖經研讀</dd></div></dl>
+    <p class="reconstruction-note">環境光影、沙丘與營帳群是教學重建參考；尺寸與材質資訊以面板中的 evidence 狀態為準。</p>
   </section>`;
 }
 
 function renderTour(state: Readonly<ExperienceState>): string {
   const stop = state.tour.current;
   return `<section class="panel-card" aria-labelledby="tour-title" data-testid="tour-panel">
-    <p class="section-kicker">五站導覽 · ${state.tour.index + 1}/${state.tour.total}</p>
-    <h2 id="tour-title" data-testid="tour-step">${escapeHtml(stop?.title ?? '導覽')}</h2>
-    <details class="mobile-drawer tour-context-drawer" open>
-      <summary>本站說明</summary>
-      <p class="tour-description">${escapeHtml(stop ? tourDescriptions[stop.id] ?? '' : '')}</p>
-      <p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>
-      ${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote" open><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}
-    </details>
-    <div class="tour-progress"><span style="width:${state.tour.total ? ((state.tour.index + 1) / state.tour.total) * 100 : 0}%"></span></div>
-    <div class="control-row">
-      <button type="button" data-tour-command="previous" ${state.tour.index === 0 ? 'disabled' : ''}>← 上一站</button>
-      <button type="button" class="primary-button" data-tour-command="next" ${state.tour.index >= state.tour.total - 1 ? 'disabled' : ''}>${state.tour.index >= state.tour.total - 1 ? '已到最後一站' : '下一站 →'}</button>
-      <button type="button" data-tour-command="close">結束導覽</button>
-    </div>
+    <p class="section-kicker">五站導覽 · ${state.tour.index + 1}/${state.tour.total}</p><h2 id="tour-title" data-testid="tour-step">${escapeHtml(stop?.title ?? '導覽')}</h2>
+    <details class="mobile-drawer tour-context-drawer" open><summary>本站說明</summary><p class="tour-description">${escapeHtml(stop?.summary ?? '')}</p><p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote" open><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}</details>
+    <div class="tour-progress"><span style="width:${state.tour.total ? ((state.tour.index + 1) / state.tour.total) * 100 : 0}%"></span></div><div class="control-row"><button type="button" data-tour-command="previous" ${state.tour.index === 0 ? 'disabled' : ''}>← 上一站</button><button type="button" class="primary-button" data-tour-command="next" ${state.tour.index >= state.tour.total - 1 ? 'disabled' : ''}>${state.tour.index >= state.tour.total - 1 ? '已到最後一站' : '下一站 →'}</button><button type="button" data-tour-command="close">結束導覽</button></div>
   </section>`;
 }
 
 function renderLearning(state: Readonly<ExperienceState>): string {
   const learning = state.learning;
   const confidence = learning.confidence ? confidenceLabels[learning.confidence] : null;
-  const meta = learning.objectId ? objectMeta[learning.objectId] : null;
-  const objects = objectOrder.map(([id, label]) => `<button type="button" data-learning-object="${id}" class="object-chip ${learning.objectId === id ? 'is-active' : ''}">${label}</button>`).join('');
-  const scriptures = learning.scriptureReferences.length
-    ? learning.scriptureReferences.map(({ id, summary, annotation, originalText, context }) => `<li><div class="scripture-head"><span class="scripture-context">${scriptureContextLabels[context]}</span><strong>${escapeHtml(id)}</strong></div><b>${escapeHtml(summary)}</b><span>${escapeHtml(annotation)}</span><details class="scripture-quote"><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(id)} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(originalText)}</p></details></li>`).join('')
-    : '<li><span>請選擇器物查看經文註解。</span></li>';
-  const rituals = learning.ritualIds.filter((id) => id in ritualLabels).map((id) => `<button type="button" class="primary-button" data-ritual-id="${id}">${ritualLabels[id]}</button>`).join('');
+  const detail = learning.detail;
+  const objects = learning.availableObjects.map(({ id, name }) => `<button type="button" data-learning-object="${escapeHtml(id)}" class="object-chip ${learning.objectId === id ? 'is-active' : ''}">${escapeHtml(name)}</button>`).join('');
+  const scriptures = learning.scriptureReferences.length ? learning.scriptureReferences.map(({ id, summary, annotation, originalText, context }) => `<li><div class="scripture-head"><span class="scripture-context">${scriptureContextLabels[context]}</span><strong>${escapeHtml(id)}</strong></div><b>${escapeHtml(summary)}</b><span>${escapeHtml(annotation)}</span><details class="scripture-quote"><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(id)} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(originalText)}</p></details></li>`).join('') : '<li><span>請選擇器物查看經文註解。</span></li>';
+  const rituals = learning.ritualIds.map((id) => `<button type="button" class="primary-button" data-ritual-id="${escapeHtml(id)}">播放儀式：${escapeHtml(id)}</button>`).join('');
+  const dimensions = detail ? formatDimensions(detail.dimensions) : '';
+  return `<section class="panel-card learning-card" aria-labelledby="learning-title" data-testid="learning-panel"><p class="section-kicker">器物空間研讀 · 考據探索</p><div class="title-with-badge"><h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}</div><p class="location-label">📍 位置：${escapeHtml(learning.locationName ?? '—')}</p>${detail ? `<div class="hebrew-meta-card"><p>${escapeHtml(detail.summary)}</p><div class="meta-row"><span>尺寸：</span><strong>${escapeHtml(dimensions)}</strong></div><div class="meta-row"><span>材料：</span><strong>${escapeHtml(detail.materials.join('、'))}</strong></div><div class="meta-row"><span>部件：</span><strong>${escapeHtml(detail.parts.map(({ label }) => label).join('、'))}</strong></div></div>` : ''}<nav class="object-grid" aria-label="器物選擇">${objects}</nav><details class="mobile-drawer learning-details" open><summary>經文與事奉規範</summary><p class="scripture-intro">依據《出埃及記》25–30章文字記錄重建；展開原文可研讀完整經文段落。</p><ul class="scripture-list">${scriptures}</ul>${rituals ? `<div class="ritual-launchers">${rituals}</div>` : ''}${renderRitual(state)}<details class="disclosure"><summary>人物與服飾的考據界線</summary><p>${escapeHtml(state.character.disclosure)}</p><p data-testid="character-status">人物視覺：以聖經考據資料呈現</p></details></details></section>`;
+}
 
-  return `<section class="panel-card learning-card" aria-labelledby="learning-title" data-testid="learning-panel">
-    <p class="section-kicker">器物空間研讀 · 考據探索</p>
-    <div class="title-with-badge">
-      <h2 id="learning-title">${escapeHtml(learning.objectName ?? '器物研讀')}</h2>
-      ${confidence ? `<span class="confidence ${learning.confidence}">${confidence}</span>` : ''}
-    </div>
-    <p class="location-label">📍 位置：${escapeHtml(learning.locationName ?? '—')}</p>
-    
-    ${meta ? `
-      <div class="hebrew-meta-card">
-        <span class="hebrew-text">${escapeHtml(meta.hebrew)}</span>
-        <div class="meta-row"><span>尺寸：</span><strong>${escapeHtml(meta.dimensions)}</strong></div>
-        <div class="meta-row"><span>材料：</span><strong>${escapeHtml(meta.materials)}</strong></div>
-      </div>
-    ` : ''}
-
-    <nav class="object-grid" aria-label="器物選擇">${objects}</nav>
-    
-    <details class="mobile-drawer learning-details" open>
-      <summary>經文與事奉規範</summary>
-      <p class="scripture-intro">依據《出埃及記》25–30 章文字記錄重建；點「展開和合本原文」可研讀完整經文。</p>
-      <ul class="scripture-list">${scriptures}</ul>
-      ${rituals ? `<div class="ritual-launchers">${rituals}</div>` : ''}
-      ${renderRitual(state)}
-      <details class="disclosure">
-        <summary>人物與服飾的考據界線</summary>
-        <p>${escapeHtml(state.character.disclosure)}</p>
-        <p data-testid="character-status">人物視覺：以聖經考據資料呈現</p>
-      </details>
-    </details>
-  </section>`;
+function formatDimensions(dimensions: ObjectDetailView['dimensions']): string {
+  if (dimensions.status === 'unresolved') return `未詳（${dimensions.displayNote}）`;
+  return `長 ${dimensions.lengthCubits} 肘 × 寬 ${dimensions.widthCubits} 肘 × 高 ${dimensions.heightCubits} 肘`;
 }
 
 function renderRitual(state: Readonly<ExperienceState>): string {
   if (state.ritual.playback.status === 'idle') return '';
-  return `<section class="ritual-player" data-testid="ritual-panel" aria-label="儀式程序播放">
-    <div><span class="ritual-state">${state.ritual.playback.status}</span><h3>${escapeHtml(state.ritual.name ?? '')}</h3></div>
-    <strong>${escapeHtml(state.ritual.stepTitle ?? '')}</strong>
-    <p>${escapeHtml(state.ritual.instruction ?? '')}</p>
-    <p class="reference-line">${state.ritual.scriptureReferences.map(escapeHtml).join(' · ')}</p>
-    <div class="control-row">
-      <button type="button" data-ritual-command="play-pause">${state.ritual.playback.status === 'playing' ? '暫停' : '繼續'}</button>
-      <button type="button" data-ritual-command="next">完成步驟</button>
-      <button type="button" data-ritual-command="close">關閉</button>
-    </div>
-  </section>`;
+  return `<section class="ritual-player" data-testid="ritual-panel" aria-label="儀式程序播放"><div><span class="ritual-state">${escapeHtml(state.ritual.playback.status)}</span><h3>${escapeHtml(state.ritual.name ?? '')}</h3></div><strong>${escapeHtml(state.ritual.stepTitle ?? '')}</strong><p>${escapeHtml(state.ritual.instruction ?? '')}</p><p class="reference-line">${state.ritual.scriptureReferences.map(escapeHtml).join(' · ')}</p><div class="control-row"><button type="button" data-ritual-command="play-pause">${state.ritual.playback.status === 'playing' ? '暫停' : '繼續'}</button><button type="button" data-ritual-command="next">完成步驟</button><button type="button" data-ritual-command="close">關閉</button></div></section>`;
 }
 
 function renderCredits(attributions: ReturnType<AppPort['getAttributions']>): string {
   const rows = attributions.map((item) => `<li><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.id)}</a><span>${escapeHtml(item.author)} · ${escapeHtml(item.license)}</span></li>`).join('');
-  return `<section class="credits-sheet" data-testid="credits-panel" aria-label="資產授權與署名"><div class="credits-head"><div><p class="section-kicker">ATTRIBUTION REGISTER</p><h2>資產授權與來源</h2></div><button type="button" data-credits="close">關閉</button></div><p class="noncommercial-notice">本網站與其中 CC BY-NC 資產僅供非商業教育及研讀使用。各模型著作權與授權仍歸原作者。</p><ul>${rows}</ul></section>`;
+  return `<section class="credits-sheet" data-testid="credits-panel" aria-label="資產授權與署名"><div class="credits-head"><div><p class="section-kicker">ATTRIBUTION REGISTER</p><h2>資產授權與來源</h2></div><button type="button" data-credits="close">關閉</button></div><p class="noncommercial-notice">網站與其中 CC BY-NC 資產僅供非商業教育及研讀使用；各模型著作權與授權仍歸原作者。</p><ul>${rows}</ul></section>`;
 }
 
 function escapeHtml(value: string): string { return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] ?? character); }

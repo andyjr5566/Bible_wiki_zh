@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R00 自驗透過，下一張為 R01；R00–R23 尚未宣稱整站完成。
+- 當前階段：R03 自驗透過，下一張為 R04；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：`npm run build` exit 0；typecheck、16 個測試檔／33 個測試、architecture 81 modules、assets 17 assets 均通過；Vite production build 成功。
+- 最新測試／build：R03 `npm run build` exit 0；typecheck、16 個測試檔／34 個測試、architecture 91 modules、assets 17 assets 均通過；Vite production build 成功。新增來源抽取器 `npm run build:excerpts` 產生 9 段逐節經文。
 - Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -18,7 +18,7 @@
 | R00 | 工具與基準 | — | 目前 GPT-5 session | 自驗透過 | [BASELINE](../qa/revamp/BASELINE.md)、[資產計量](../qa/revamp/BASELINE_ASSETS.json)、[截圖](../qa/revamp/screenshots/) |
 | R01 | 來源臺帳 | R00 | 目前 GPT-5 session | 自驗透過 | [SOURCES](../research/SOURCES.md)、[CLAIMS](../research/CLAIMS.md) |
 | R02 | 角色／程序契約 | R01 | 目前 GPT-5 session | 自驗透過 | [RITUAL_STEPS](../research/RITUAL_STEPS.md)、[ROLE_ACCESS](../research/ROLE_ACCESS.md)、[GARMENTS](../research/GARMENTS.md) |
-| R03 | 資料與抽取 | R01,R02 | Luna | 待辦 | — |
+| R03 | 資料與抽取 | R01,R02 | 目前 GPT-5 session | 自驗透過 | [scripture-excerpts](../../src/data/scripture-excerpts.json)、[object-details](../../src/data/object-details.json)、[evidence](../../src/data/evidence.json)、[tours](../../src/data/tours.json)、[ProjectData.test](../../src/data/ProjectData.test.ts) |
 | R04 | 入口／狀態 | R03 | Luna | 待辦 | — |
 | R05 | detail生命週期 | R04 | Luna | 待辦 | — |
 | R06 | 空間／剖面／取景 | R05 | Luna | 待辦 | — |
@@ -111,3 +111,18 @@ Blender工作檔／recipe／source與derived hashes：未寫入 Blender；proces
 未驗證項目／限制／需總控判定：R03 尚未把契約接到 typed data／schema；角色 mesh 與動畫仍未實作；actor-unspecified、阿撒瀉勒解釋、未詳載服裝外觀保留未知。
 結論（自驗／總控分開）：R02 自驗透過；所有程序列都有 claim IDs、來源定位與未知界線，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R03；建立 evidence／object-details／tours 與擴充 ritual schema，並由庫根 raw_scripture 產生可驗證 excerpts。
+
+## R03 執行回執
+
+任務ID／起訖日期：R03／2026-09-10 02:35–03:00（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；未宣稱 GPT-5.6 Luna。使用 Node 來源抽取器、TypeScript／Zod、Vitest、Vite preview 與瀏覽器驗證；Blender 僅維持既有 read-only 檢查結果。
+開始時工作樹或基準hash：R02 commit `019ae859`，分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准claim IDs：R01 `SOURCES.md`／`CLAIMS.md`、R02 `RITUAL_STEPS.md`／`ROLE_ACCESS.md`／`GARMENTS.md`；runtime claim IDs 涵蓋 C-EX25-ARK-SPEC、C-EX25-ARK-CHERUB、C-EX25-TABLE、C-LV24-BREAD、C-EX25-MENORAH、C-LV24-LAMP、C-EX27-BURNT-ALTAR、C-EX30-LAVER、C-EX30-INCENSE、C-EX26-ZONES、C-EX27-COURT、C-LV01-BRANCHES、C-LV02-07-FIVE、C-LV16-DAY、C-EX40-CLOUD-FIRE；工程與拒絕項保持 unresolved／rejected。
+變更檔案：新增 `src/types/{evidence,objectDetails,tours,scriptureEvidence,dimensions}.ts`、對應 Zod schemas、`evidence.json`、`object-details.json`、`tours.json`、`dimensions.json`、`scripture-excerpt-specs.json`、生成的 `scripture-excerpts.json` 與 `scripts/build-scripture-excerpts.mjs`；更新 `loadProjectData.ts`、`rituals.json`／schema／type、`locations.json`、`ExperiencePanel.ts`、`CinematicTourController.ts`、`DimensionVisualizer.ts`、`SceneBootstrap.ts`、`AppKernel.ts`、`ProjectData.test.ts`、`package.json`。
+Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender；本任務只從庫根 `raw_scripture/` 讀取來源，抽取器在每段 excerpt 記錄 sourcePath 與 SHA-256。
+驗收QA IDs：R03 資料單一來源、schema 解析、cross-reference、重複 ID／缺 claim fail-closed、導覽字幕無省略號、尺寸未詳狀態。
+命令、exit code、log路徑：`npm run build:excerpts` exit 0（9 段）；`npm run typecheck` exit 0；`npm test` exit 0（16 檔／34 tests）；`npm run verify:architecture` exit 0（91 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；瀏覽器 console logs 0；截圖 `docs/qa/revamp/screenshots/r03-cinematic-excerpts-desktop.png`。
+畫面與activeAssetIds／profile／viewport證據：瀏覽器 desktop preview 可見器物面板由 `availableObjects`／`detail` 顯示，導覽顯示 1/8 與出27:9–19 全段文字，逐幕字幕顯示同一 excerpts；目前沒有對 `activeAssetIds` 做新宣稱。
+未驗證項目／限制／需總控判定：肘換算仍是 unresolved 工程假設；燈臺與洗濯盆尺寸不顯示數值；營地三個位置是 reconstructed 示意，不能當歷史配置；R02 詳細六程序分支尚待 R13–R16 完整落地；仍未修改 Blender 場景。
+結論（自驗／總控分開）：R03 自驗透過；typed data、schema、抽取器與現有 consumers 已接合，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R04；建立入口／狀態契約與載入失敗的 fail-closed 行為，先處理資料載入與 UI 狀態邊界。

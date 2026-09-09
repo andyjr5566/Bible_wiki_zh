@@ -1,6 +1,6 @@
 import type { EntityId } from '../types/core';
 
-export interface TourStop { id: EntityId; locationId: EntityId; objectId: EntityId | null; title: string; scriptureReference: string | null; }
+export interface TourStop { id: EntityId; locationId: EntityId; objectId: EntityId | null; title: string; scriptureReference: string | null; summary?: string; }
 export class TourManager {
   #index = 0; #playing = false;
   constructor(readonly stops: readonly TourStop[]) {}

@@ -2,9 +2,16 @@ import type { AssetProfile } from './assets';
 import type { ConfidenceLevel } from './core';
 import type { RitualPlaybackState } from './rituals';
 
-export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; }
+export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; }
 export interface TourViewState { playing: boolean; index: number; total: number; current: TourStopView | null; }
 export type ScriptureContext = 'design' | 'construction' | 'placement' | 'service' | 'reflection';
+export interface ObjectDetailView {
+  id: string;
+  summary: string;
+  dimensions: { status: 'verified' | 'unresolved'; lengthCubits: number | null; widthCubits: number | null; heightCubits: number | null; displayNote: string };
+  materials: string[];
+  parts: Array<{ id: string; label: string }>;
+}
 export interface LearningViewState {
   objectId: string | null;
   objectName: string | null;
@@ -13,6 +20,8 @@ export interface LearningViewState {
   scriptureReferences: Array<{ id: string; summary: string; annotation: string; originalText: string; context: ScriptureContext; sourceUrl: string }>;
   ritualIds: string[];
   characterIds: string[];
+  availableObjects: Array<{ id: string; name: string }>;
+  detail: ObjectDetailView | null;
 }
 export interface RitualViewState {
   playback: RitualPlaybackState;

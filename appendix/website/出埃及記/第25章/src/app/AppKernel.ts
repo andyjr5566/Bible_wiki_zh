@@ -12,7 +12,7 @@ import type { AtmosphereMode } from '../types/atmosphere';
 import { ScriptureMappingService } from '../scripture/ScriptureMappingService';
 import { ScriptureRegistry } from '../scripture/ScriptureRegistry';
 import { LearningModeManager } from '../systems/LearningModeManager';
-import { TourManager, type TourStop } from '../systems/TourManager';
+import { TourManager } from '../systems/TourManager';
 import { CinematicTourController, type CinematicState } from '../systems/CinematicTourController';
 import { AssetManifest } from '../systems/assets/AssetManifest';
 import { GLTFAssetLoader } from '../systems/assets/AssetLoader';
@@ -25,14 +25,6 @@ import type { ExperienceMode, UIState } from '../types/ui';
 import { UIStateManager } from '../ui/UIStateManager';
 import { EventChannel } from '../utils/EventChannel';
 
-const tourStops: TourStop[] = [
-  { id: 'tour-east-gate', locationId: 'east-gate', objectId: null, title: '由東門進入', scriptureReference: 'Exodus 27:9-19' },
-  { id: 'tour-burnt-altar', locationId: 'burnt-altar-location', objectId: 'burnt-altar', title: '燔祭壇', scriptureReference: 'Exodus 27:1-8' },
-  { id: 'tour-laver', locationId: 'laver-location', objectId: 'laver', title: '洗濯盆', scriptureReference: 'Exodus 30:17-21' },
-  { id: 'tour-holy-place', locationId: 'holy-place', objectId: 'incense-altar', title: '聖所與香壇', scriptureReference: 'Exodus 30:1-10' },
-  { id: 'tour-most-holy', locationId: 'most-holy-place', objectId: 'ark', title: '至聖所與約櫃', scriptureReference: 'Exodus 25:10-22' },
-];
-
 const confidenceDisclosure = '本版刻意不展示通用人物模型，避免把未經歷史驗證的服飾與外貌誤當成祭司造型。人物與聖衣研究仍以出埃及記 28、29、39 章為資料基線，待有足夠品質與考據的專用模型後再加入。';
 
 export class AppKernel implements AppPort {
@@ -44,7 +36,14 @@ export class AppKernel implements AppPort {
   readonly characters = new CharacterSystem(new CharacterRegistry(this.data.characters.characters));
   readonly rituals: RitualPlaybackController;
   readonly scriptures = new ScriptureMappingService(new ScriptureRegistry(this.data.scriptures.passages));
-  readonly tour = new TourManager(tourStops);
+  readonly tour = new TourManager(this.data.tours.tours.slice().sort((a, b) => a.order - b.order).map((tour) => ({
+    id: tour.id,
+    locationId: tour.locationId,
+    objectId: tour.objectId,
+    title: tour.title,
+    scriptureReference: tour.scriptureReference,
+    summary: tour.summary,
+  })));
   readonly learning = new LearningModeManager();
   readonly cinematic = new CinematicTourController();
   readonly assets = new AssetManifest(this.data.assets.assets);
@@ -59,7 +58,7 @@ export class AppKernel implements AppPort {
   #cinematicUnsubscribe: (() => void) | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
-    this.scene = new SceneBootstrap(canvas);
+    this.scene = new SceneBootstrap(canvas, this.data.dimensions.specs);
     this.ritualVisuals = new RitualVisualSystem(this.scene.context.worldRoot);
     this.rituals = new RitualPlaybackController(new RitualRegistry(this.data.rituals.rituals), {
       onStepEnter: (ritual) => this.ritualVisuals.play(ritual.id),
@@ -188,6 +187,8 @@ export class AppKernel implements AppPort {
     const ritual = ritualState.ritualId ? this.rituals.registry.get(ritualState.ritualId) : undefined;
     const ritualStep = ritual?.steps[ritualState.stepIndex];
     const currentTour = this.tour.current;
+    const currentTourDefinition = currentTour ? this.data.tours.tours.find(({ id }) => id === currentTour.id) : undefined;
+    const currentTourExcerptText = currentTourDefinition?.excerptIds.map((id) => this.data.scriptureExcerpts.excerpts.find((excerpt) => excerpt.id === id)?.text).filter((text): text is string => Boolean(text)).join('\n\n') ?? null;
     return {
       tour: {
         playing: this.tour.playing,
@@ -195,7 +196,8 @@ export class AppKernel implements AppPort {
         total: this.tour.stops.length,
         current: currentTour ? {
           ...currentTour,
-          scriptureText: currentTour.scriptureReference ? this.scriptures.registry.get(currentTour.scriptureReference)?.originalText ?? null : null,
+          summary: currentTour.summary ?? '',
+          scriptureText: currentTourExcerptText,
         } : null,
       },
       learning: {
@@ -213,6 +215,17 @@ export class AppKernel implements AppPort {
         })),
         ritualIds,
         characterIds,
+        availableObjects: this.data.objectDetails.objects.map(({ id, name }) => ({ id, name })),
+        detail: object ? (() => {
+          const detail = this.data.objectDetails.objects.find((candidate) => candidate.id === object.id);
+          return detail ? {
+            id: detail.id,
+            summary: detail.summary,
+            dimensions: detail.dimensions,
+            materials: detail.materials,
+            parts: detail.parts.map(({ id, label }) => ({ id, label })),
+          } : null;
+        })() : null,
       },
       ritual: {
         playback: ritualState,

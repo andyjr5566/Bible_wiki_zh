@@ -4,6 +4,7 @@ import { DesertEnvironment } from './DesertEnvironment';
 import { ParticleEffects } from './ParticleEffects';
 import { DimensionVisualizer } from './DimensionVisualizer';
 import type { AtmosphereMode } from '../types/atmosphere';
+import type { DimensionSpec } from '../types/dimensions';
 
 export interface SceneContext {
   scene: THREE.Scene;
@@ -24,7 +25,7 @@ export class SceneBootstrap {
   #update: (deltaSeconds: number) => void = () => undefined;
   readonly #canvas: HTMLCanvasElement;
 
-  constructor(canvas: HTMLCanvasElement) {
+  constructor(canvas: HTMLCanvasElement, dimensionSpecs: readonly DimensionSpec[] = []) {
     this.#canvas = canvas;
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -52,7 +53,7 @@ export class SceneBootstrap {
     const cameraManager = new CameraManager(1, canvas);
     const environment = new DesertEnvironment(scene);
     const particles = new ParticleEffects(worldRoot);
-    const dimensions = new DimensionVisualizer(worldRoot);
+    const dimensions = new DimensionVisualizer(worldRoot, dimensionSpecs);
 
     this.context = {
       scene,
