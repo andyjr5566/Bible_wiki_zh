@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "r07",
+  "assetId": "tabernacle-ark-alternative",
+  "generatedAt": "2026-09-09T18:49:03.130016+00:00",
+  "blenderVersion": "5.2.1 LTS",
+  "source": {
+    "path": "assets/source/sketchfab/ark-of-the-covenant-alternative/ark_of_the_covenant_alternative.glb",
+    "sha256": "d8be215800501c9e39d7dc48b0552db75b3a86d11e73216d374aa47ef327e50a",
+    "bytes": 4183752
+  },
+  "staging": {
+    "path": "assets\\staging\\blender\\r07\\tabernacle-ark-alternative.staged.glb",
+    "sha256": "baf0092e029c568ac0001b7b9e8ed3c120abd6b04bc07925899ed3bd90832f2d",
+    "bytes": 3971780
+  },
+  "optimized": {
+    "path": "assets\\staging\\blender\\r07\\tabernacle-ark-alternative.optimized.glb",
+    "sha256": "d909e88e22d6e56c4a7ab38cb4749211149da3c9799973b0e9bde3ff08cbc0d9",
+    "bytes": 2109888
+  },
+  "units": {
+    "system": "METRIC",
+    "scaleLength": 1.0
+  },
+  "axes": {
+    "forward": "-Z",
+    "up": "Y"
+  },
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "materials": [
+    {
+      "name": "ArkGoldImproved",
+      "baseColor": [
+        0.055,
+        0.012,
+        0.001
+      ],
+      "metallic": 0.12,
+      "roughness": 0.58
+    },
+    {
+      "name": "ArkAcaciaWoodImproved",
+      "baseColor": [
+        0.022,
+        0.0035,
+        0.0008
+      ],
+      "metallic": 0.0,
+      "roughness": 0.72
+    }
+  ],
+  "buildMetrics": {
+    "objectCount": 4,
+    "meshCount": 3,
+    "triangleCount": 41380,
+    "bounds": {
+      "min": [
+        -4.503260135650635,
+        -1.3961100578308105,
+        -0.9283999800682068
+      ],
+      "max": [
+        4.496739864349365,
+        0.75,
+        0.9262199997901917
+      ],
+      "size": [
+        9.0,
+        2.1461100578308105,
+        1.8546199798583984
+      ]
+    },
+    "materialCount": 2,
+    "materials": [
+      "ArkAcaciaWoodImproved",
+      "ArkGoldImproved"
+    ]
+  },
+  "reimportMetrics": {
+    "objectCount": 4,
+    "meshCount": 3,
+    "triangleCount": 41380,
+    "bounds": {
+      "min": [
+        -4.503260135650635,
+        -1.3960838317871094,
+        -0.9283643960952759
+      ],
+      "max": [
+        4.496739864349365,
+        0.7497925758361816,
+        0.9261844158172607
+      ],
+      "size": [
+        9.0,
+        2.145876407623291,
+        1.8545488119125366
+      ]
+    },
+    "materialCount": 2,
+    "materials": [
+      "ArkAcaciaWoodImproved",
+      "ArkGoldImproved"
+    ]
+  },
+  "previews": [
+    "assets\\staging\\blender\\r07\\previews\\before-R07_Front.png",
+    "assets\\staging\\blender\\r07\\previews\\before-R07_Side.png",
+    "assets\\staging\\blender\\r07\\previews\\before-R07_Top.png",
+    "assets\\staging\\blender\\r07\\previews\\before-R07_Close.png",
+    "assets\\staging\\blender\\r07\\previews\\after-R07_Front.png",
+    "assets\\staging\\blender\\r07\\previews\\after-R07_Side.png",
+    "assets\\staging\\blender\\r07\\previews\\after-R07_Top.png",
+    "assets\\staging\\blender\\r07\\previews\\after-R07_Close.png"
+  ],
+  "promotion": {
+    "status": "not-promoted",
+    "files": [
+      "assets/processed/sketchfab/ark-of-the-covenant-alternative/ark-alternative.glb",
+      "public/models/ark-alternative.glb"
+    ]
+  }
+}
