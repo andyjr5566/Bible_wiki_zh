@@ -110,6 +110,22 @@ describe('project data contracts', () => {
     expect(data.offerings.comparisons.find(({ id }) => id === 'peace-offering')?.handling).toContain('不把全牲都焚燒');
     expect(data.offerings.comparisons.find(({ id }) => id === 'sin-offering')?.handling).toContain('帶血入會幕');
   });
+
+  it('keeps the atonement path ordered with exclusive and garment states', () => {
+    const atonement = data.rituals.rituals.find(({ id }) => id === 'atonement-entry');
+    expect(atonement?.steps).toHaveLength(14);
+    expect(atonement?.steps.map(({ id }) => id)).toEqual([
+      'atonement-prepare', 'atonement-goats', 'atonement-bull', 'atonement-incense',
+      'atonement-bull-blood', 'atonement-goat-blood', 'atonement-empty-room', 'atonement-altar-clean',
+      'atonement-live-goat', 'atonement-wilderness', 'atonement-change-clothes', 'atonement-burnt-offering',
+      'atonement-outside-burn', 'atonement-wash-return',
+    ]);
+    expect(atonement?.steps[6]?.actorRole).toBe('actor-unspecified');
+    expect(atonement?.steps[6]?.characterIds).toEqual([]);
+    expect(atonement?.steps[0]?.garmentState).toBe('atonement-linen');
+    expect(atonement?.steps[10]?.garmentState).toBe('post-atonement-garments');
+    expect(atonement?.steps[9]?.actorRole).toBe('assigned-person');
+  });
   it('fails closed for duplicate IDs and missing claim references', () => {
     expect(() => assertUnique(['same-id', 'same-id'])).toThrow();
     expect(() => assertClaimReferences(new Set(data.evidence.claims.map(({ id }) => id)), ['C-MISSING'])).toThrow();

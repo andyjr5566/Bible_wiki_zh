@@ -66,6 +66,7 @@ export class AppKernel implements AppPort {
         this.scene.context.particles.clearNarrativeCues();
         if (step.playbackHook.startsWith('effects.incense') && step.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
         if (step.id === 'lamp-light') this.scene.context.particles.setCue('menorah-flames');
+        if (step.id === 'atonement-incense') this.scene.context.particles.setCue('incense-smoke');
       },
       onStateChange: (state) => {
         if (state.status === 'paused') { this.ritualVisuals.pause(); this.scene.context.particles.clearNarrativeCues(); }
@@ -199,7 +200,7 @@ export class AppKernel implements AppPort {
     const object = this.learning.context.objectId ? this.objects.get(this.learning.context.objectId) : undefined;
     const location = object ? this.requireLocation(object.locationId) : null;
     const passages = object ? this.scriptures.threeDToBible({ kind: 'objectIds', entityId: object.id }) : [];
-    const ritualIds = object ? this.rituals.registry.values().filter((ritual) => ritual.trigger.kind === 'interaction' && ritual.trigger.objectId === object.id).map((ritual) => ritual.id) : [];
+    const ritualIds = object ? this.rituals.registry.values().filter((ritual) => (ritual.trigger.kind === 'interaction' && ritual.trigger.objectId === object.id) || (ritual.trigger.kind === 'learning-mode' && ritual.trigger.locationId === object.locationId)).map((ritual) => ritual.id) : [];
     const offeringBranches = object?.id === 'burnt-altar'
       ? this.data.offerings.branches.filter(({ id }) => id !== 'burnt-offering-goat').map(({ id, label, ritualId, instruction }) => ({ id, label, ritualId, instruction }))
       : [];
@@ -208,10 +209,14 @@ export class AppKernel implements AppPort {
     const ritualState = this.rituals.state;
     const ritual = ritualState.ritualId ? this.rituals.registry.get(ritualState.ritualId) : undefined;
     const ritualStep = ritual?.steps[ritualState.stepIndex];
+    const characterOmitted = Boolean(ritualStep?.id.startsWith('atonement-') && ritualStep.characterIds.length === 0);
     const defaultCharacterId = object?.id === 'ark' ? 'aaron-high-priest' : 'serving-priest';
     const selectedCharacterId = ritualStep?.characterIds[0] ?? characterIds[0] ?? this.learning.context.characterId ?? defaultCharacterId;
     const selectedCharacter = this.characters.registry.require(selectedCharacterId);
     const characterAppearance = this.characterAppearance.resolve(selectedCharacter.id, ritualStep?.garmentState ?? selectedCharacter.defaultGarmentState);
+    const omissionDisclosure = ritualStep?.id === 'atonement-empty-room'
+      ? '本步驟依利未記 16:17 顯示會幕裡不可有人；人物模型暫時隱藏。'
+      : '本步驟只標示經文指定的路線或處理範圍；來源未提供可核准的人物身份，人物模型暫時隱藏。';
     const currentTour = this.tour.current;
     const currentTourDefinition = currentTour ? this.data.tours.tours.find(({ id }) => id === currentTour.id) : undefined;
     const currentTourExcerptText = currentTourDefinition?.excerptIds.map((id) => this.data.scriptureExcerpts.excerpts.find((excerpt) => excerpt.id === id)?.text).filter((text): text is string => Boolean(text)).join('\n\n') ?? null;
@@ -275,14 +280,14 @@ export class AppKernel implements AppPort {
         roleLabel: characterAppearance.roleLabel,
         garmentState: characterAppearance.garmentState,
         garmentLabel: characterAppearance.garmentLabel,
-        status: 'study',
+        status: characterOmitted ? 'omitted' : 'study',
         visualPolicy: characterAppearance.visualPolicy,
-        baseAssetId: characterAppearance.baseAssetId,
+        baseAssetId: characterOmitted ? null : characterAppearance.baseAssetId,
         position: null,
-        responsibilities: characterAppearance.responsibilities,
-        parts: characterAppearance.parts.map(({ id, label, claimedMaterials, quantity, function: partFunction, unknowns }) => ({ id, label, claimedMaterials, quantity, function: partFunction, unknowns })),
-        validationNotes: characterAppearance.validationNotes,
-        disclosure: characterAppearance.disclosure,
+        responsibilities: characterOmitted ? [] : characterAppearance.responsibilities,
+        parts: characterOmitted ? [] : characterAppearance.parts.map(({ id, label, claimedMaterials, quantity, function: partFunction, unknowns }) => ({ id, label, claimedMaterials, quantity, function: partFunction, unknowns })),
+        validationNotes: characterOmitted ? [] : characterAppearance.validationNotes,
+        disclosure: characterOmitted ? omissionDisclosure : characterAppearance.disclosure,
       },
       creditsOpen: this.#creditsOpen,
       assetProfile: this.assetRuntime.snapshot.profile,
@@ -312,7 +317,7 @@ export class AppKernel implements AppPort {
   startRitual(ritualId: string): void {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     const ritual = this.rituals.registry.require(ritualId);
-    if (!['washing', 'burnt-offering', 'incense', 'lamp-care', 'shewbread'].includes(ritual.type)) return;
+    if (!['washing', 'burnt-offering', 'incense', 'lamp-care', 'shewbread', 'atonement-entry'].includes(ritual.type)) return;
     if (this.uiState.snapshot.mode !== 'ritual') this.uiState.transitionTo('ritual', `ritual-start:${ritualId}`);
     this.uiState.selectRitual(ritualId, ritual.steps[0]?.branchId ?? null, ritual.steps[0]?.id ?? null);
     this.uiState.setPlaybackOwner('ritual');
@@ -336,6 +341,7 @@ export class AppKernel implements AppPort {
           this.ritualVisuals.play(activeRitual.id, activeStep);
           this.scene.context.particles.clearNarrativeCues();
           if (activeStep.playbackHook.startsWith('effects.incense') && activeStep.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
+          if (activeStep.id === 'atonement-incense') this.scene.context.particles.setCue('incense-smoke');
           if (activeStep.id === 'lamp-light') this.scene.context.particles.setCue('menorah-flames');
         }
       }

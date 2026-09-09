@@ -56,4 +56,20 @@ describe('ritual playback contract', () => {
     expect(bird.steps[1]?.actorRole).toBe('priest');
     expect(bird.steps[1]?.scriptureReferences).toContain('Leviticus 1:15-17');
   });
+
+  it('walks the complete atonement path and restores a paused prior step', () => {
+    const controller = new RitualPlaybackController(new RitualRegistry(loadProjectData().rituals.rituals));
+    controller.start('atonement-entry');
+    expect(controller.registry.get('atonement-entry')?.steps).toHaveLength(14);
+    for (let index = 0; index < 7; index += 1) controller.next();
+    expect(controller.state.stepIndex).toBe(7);
+    controller.pause();
+    controller.previous();
+    expect(controller.state.stepIndex).toBe(6);
+    expect(controller.state.status).toBe('paused');
+    controller.seek(10);
+    expect(controller.state.stepIndex).toBe(10);
+    controller.next();
+    expect(controller.state.status).toBe('paused');
+  });
 });

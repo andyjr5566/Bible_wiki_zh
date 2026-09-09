@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R15 自驗透過，下一張為 R16；R00–R23 尚未宣稱整站完成。
+- 當前階段：R16 自驗透過，下一張為 R17；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：R14 後 `npm run build` exit 0；typecheck、19 個測試檔／46 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
+- 最新測試／build：R16 後 `npm run build` exit 0；typecheck、19 個測試檔／50 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -31,7 +31,7 @@
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | 目前 GPT-5 session | 自驗透過 | [R13 播放器說明](../research/R13_RITUAL_PLAYER.md)、[RitualPlaybackController](../../src/rituals/RitualPlaybackController.ts)、[截圖](../qa/revamp/screenshots/r13-washing-player-desktop.png) |
 | R14 | 燈／餅程序 | R13 | 目前 GPT-5 session | 自驗透過 | [R14 說明](../research/R14_LAMP_BREAD_PLAYER.md)、[燈臺截圖](../qa/revamp/screenshots/r14-lamp-light-desktop.png)、[陳設餅截圖](../qa/revamp/screenshots/r14-bread-eat-desktop.png) |
 | R15 | 燔祭／五祭 | R13,R14 | 目前 GPT-5 session | 自驗透過 | [R15 說明](../research/R15_OFFERINGS.md)、[五祭截圖](../qa/revamp/screenshots/r15-offering-comparison-desktop.png)、[鳥支截圖](../qa/revamp/screenshots/r15-burnt-bird-desktop.png) |
-| R16 | 贖罪日 | R13,R15 | Luna | 待辦 | — |
+| R16 | 贖罪日 | R13,R15 | 目前 session | 自驗透過 | [R16 說明](../research/R16_ATONEMENT_PATH.md)、[空房截圖](../qa/revamp/screenshots/r16-empty-room-desktop.png)、[換衣截圖](../qa/revamp/screenshots/r16-change-clothes-desktop.png)、[曠野路線截圖](../qa/revamp/screenshots/r16-wilderness-route-desktop.png) |
 | R17 | 空間導覽 | R06,R12,R16 | Luna | 待辦 | — |
 | R18 | 器物／來源介面 | R03,R10,R17 | Luna | 待辦 | — |
 | R19 | 手機／可及性 | R18 | Luna | 待辦 | — |
@@ -304,3 +304,18 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：五祭中素祭、平安祭、贖罪祭、贖愆祭目前交付可追溯比較閱讀，尚未各自建立完整播放鏈；山羊資料保留為獨立文字分支但核心 UI 合併在羊類入口；沒有新增牲畜 mesh、寫實屠宰或火焰動作。R16 贖罪日與 R24 總控驗收尚未執行。
 結論（自驗／總控分開）：R15 自驗透過；燔祭分支與五祭比較已接入網站，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R16；接入贖罪日完整步驟、麻衣切換、排他區域與退出恢復。
+
+## R16 執行回執
+
+任務ID／起訂日期：R16／2026-09-10 （本輪 session）
+執行模型／工具實測：目前介面標示 GPT-5；TypeScript、Vitest、Vite production build 與 Browser preview 實測，沒有把本輪呼叫冒稱為 GPT-5.6 Luna；本任務沒有 Blender 寫入。
+開始時工作樹或基準 hash：R15 commit `3cd22065`；分支 `feat/appendix-exodus25-revamp`；既有 `.blend1` 備份保留。
+已讀輸入與核准 claim IDs：R02 `RITUAL_STEPS.md`、`ROLE_ACCESS.md`、`GARMENTS.md`、R11 appearance data、R15 offerings data；R16 只沿用已核准資料，未新增歷史 claim。
+變更檔案（含刪除／原因）：`src/data/rituals.json` 將 `atonement-entry` 由單一入口改為 14 步資料鏈，完整標示大祭司、派定人、會幕裡無人、細麻衣與贖罪日後換回聖衣的步驟；`AppKernel.ts` 把贖罪日觸發接入約櫃學習面板，依 step 同步角色、服裝、香雲 cue 與人物省略狀態；新增 R16 資料測試、播放器測試、研究說明與 Browser 截圖。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 場景或 GLB 變更，沿用 R07–R12 已驗證器物資產與 hash；保留 R07/R10 `.blend1` 備份不入版。
+驗收 QA IDs：14 步 ID 順序、step 7 「會幕裡不可有人」的排他區域、step 10 曠野路線的角色省略、step 11 「post-atonement-garments」換回聖衣、step 14 完成；回退／暫停／重播與不越界。
+命令、exit code、log 路徑：`npm run build` exit 0（含 typecheck、19 檔／50 tests、architecture 100 modules、assets 17 assets）；Browser `?r16-check=2` 顯示 runtime errors 0、warnings 0、active asset count 1。
+畫面與 activeAssetIds／profile／viewport 證據：`docs/qa/revamp/screenshots/r16-empty-room-desktop.png`、`r16-wilderness-route-desktop.png`、`r16-change-clothes-desktop.png`；Browser desktop WebGL preview 可回放 1/14到 14/14，step 7 只留研究文字，step 10 只顯示路線文字，step 11 顯示換回聖衣狀態。
+未驗證項目／限制／需總控判定：贖罪日的香雲目前以 cue 和文字呈現，沒有新增實體香或寫實血祭動作；曠野路線與洗身動作未審定歷史細節；R17–R23 與 R24 總控驗收尚待執行。
+結論（自驗／總控分開）：R16 自驗透過；尚未交 GPT-6 R24，網站成熟化仍未完成。
+下一張任務 ID、可直接執行的下一步：R17；開始空間導覽與切斷總覽、至聖所、燔祭壇、洗濯盆、香壇的方位觀察。
