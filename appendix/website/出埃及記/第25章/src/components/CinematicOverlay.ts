@@ -9,12 +9,12 @@ export class CinematicOverlay {
   constructor(container: HTMLElement) {
     this.element = document.createElement('section');
     this.element.className = 'cinematic-overlay is-hidden';
-    this.element.setAttribute('aria-label', '電影級逐節導覽播放器');
+    this.element.setAttribute('aria-label', '逐幕 3D 導覽播放器');
     this.element.innerHTML = `
       <!-- Top Letterbox Bar -->
       <div class="cinema-letterbox top-bar">
         <div class="cinema-title-lockup">
-          <span class="cinema-badge">BIBLICAL 3D CINEMATIC TOUR</span>
+          <span class="cinema-badge">BIBLICAL 3D GUIDED TOUR</span>
           <h2 id="cinema-act-title">第一幕：曠野中的聖所與東門</h2>
           <span class="cinema-hebrew-tag" id="cinema-hebrew-term">חֲצַר הַמִּשְׁכָּן</span>
         </div>

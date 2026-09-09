@@ -65,6 +65,10 @@ export class AppKernel implements AppPort {
       onStateChange: (state) => {
         if (state.status === 'paused') this.ritualVisuals.pause();
         if (state.status === 'idle' || state.status === 'complete') this.ritualVisuals.stop();
+        const ritual = state.ritualId ? this.rituals?.registry.get(state.ritualId) : undefined;
+        const step = ritual?.steps[state.stepIndex];
+        this.uiState.selectRitual(state.ritualId, step?.branchId ?? null, step?.id ?? null);
+        this.uiState.setPlaybackOwner(state.status === 'idle' || state.status === 'complete' ? 'none' : 'ritual');
         this.publishExperience();
       },
     });
@@ -112,9 +116,15 @@ export class AppKernel implements AppPort {
   transitionTo(mode: ExperienceMode, reason: string): void {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     if (mode === 'tour' && !this.tour.current) return;
+    if (mode !== 'ritual' && this.rituals.state.status !== 'idle') this.resetRitualPlayback();
     const isCurrentMode = this.uiState.snapshot.mode === mode;
     this.uiState.transitionTo(mode, reason);
     this.audio.playNav();
+    if (mode === 'ritual' && this.rituals.state.status === 'idle') {
+      const firstRitual = this.rituals.registry.values().find((ritual) => ritual.type === 'washing' || ritual.type === 'incense');
+      if (firstRitual) this.startRitual(firstRitual.id);
+      return;
+    }
     if (mode === 'tour') { this.tour.reset(); this.focusTourStop(); }
     if (mode === 'learning') this.openLearningObject(this.learning.context.objectId ?? 'burnt-altar');
     if (mode === 'overview' && isCurrentMode) this.scene.context.cameraManager.applyMode('overview');
@@ -123,9 +133,11 @@ export class AppKernel implements AppPort {
 
   // Cinematic Tour Implementation
   startCinematicTour(fromIndex = 0): void {
+    this.resetRitualPlayback();
     void this.audio.enableAudio();
     this.audio.playNav();
     this.assetRuntime.setInteriorReveal(false);
+    this.uiState.setPlaybackOwner('cinematic');
     this.cinematic.start(fromIndex);
   }
 
@@ -134,6 +146,7 @@ export class AppKernel implements AppPort {
     this.scene.context.dimensions.clear();
     this.scene.context.cameraManager.stopFlyTo();
     this.assetRuntime.setInteriorReveal(this.uiState.snapshot.mode === 'learning');
+    if (this.uiState.snapshot.playbackOwner === 'cinematic') this.uiState.setPlaybackOwner('none');
     this.publishExperience();
   }
 
@@ -268,8 +281,12 @@ export class AppKernel implements AppPort {
   }
 
   startRitual(ritualId: string): void {
+    if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     const ritual = this.rituals.registry.require(ritualId);
     if (ritual.type !== 'washing' && ritual.type !== 'incense') return;
+    if (this.uiState.snapshot.mode !== 'ritual') this.uiState.transitionTo('ritual', `ritual-start:${ritualId}`);
+    this.uiState.selectRitual(ritualId, ritual.steps[0]?.branchId ?? null, ritual.steps[0]?.id ?? null);
+    this.uiState.setPlaybackOwner('ritual');
     this.learning.open({ ritualId, locationId: ritual.locationId, characterId: ritual.steps[0]?.characterIds[0] ?? null });
     this.rituals.start(ritualId);
     const ritualLocation = this.requireLocation(ritual.locationId);
@@ -279,7 +296,7 @@ export class AppKernel implements AppPort {
   }
 
   commandRitual(command: RitualCommand): void {
-    if (command === 'close') { this.rituals.reset(); this.ritualVisuals.stop(); this.learning.open({ ritualId: null, characterId: null }); }
+    if (command === 'close') { this.resetRitualPlayback(); this.learning.open({ ritualId: null, characterId: null }); this.uiState.returnToPrevious('ritual-close'); }
     if (command === 'play-pause') {
       if (this.rituals.state.status === 'playing') this.rituals.pause();
       else if (this.rituals.state.status === 'paused') { this.rituals.resume(); if (this.rituals.state.ritualId) this.ritualVisuals.play(this.rituals.state.ritualId); }
@@ -401,6 +418,13 @@ export class AppKernel implements AppPort {
   }
 
   private publishExperience(): void { this.#experienceEvents.emit(this.getExperienceState()); }
+
+  private resetRitualPlayback(): void {
+    if (this.rituals.state.status !== 'idle') this.rituals.reset();
+    this.ritualVisuals.stop();
+    this.uiState.selectRitual(null);
+    if (this.uiState.snapshot.playbackOwner === 'ritual') this.uiState.setPlaybackOwner('none');
+  }
 
   private onAssetState(state: Readonly<AssetRuntimeState>): void {
     this.assetRuntime.setProfileVisible(!(this.getState().mode === 'learning' && state.profile === 'desktop-structural'));

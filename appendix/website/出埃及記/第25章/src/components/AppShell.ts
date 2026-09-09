@@ -60,7 +60,7 @@ export class AppShell {
         </div>
         <nav class="mode-navigation"></nav>
         <div class="header-action-group">
-          <button class="action-pill-button primary-action-glow" type="button" data-open-cinematic>▶ 電影級逐節導覽</button>
+          <button class="action-pill-button primary-action-glow" type="button" data-open-cinematic>▶ 逐幕 3D 導覽</button>
           <button class="action-pill-button" type="button" data-open-scripture>📜 出25章研讀</button>
           <button class="action-pill-button" type="button" data-toggle-map>🗺️ 平面圖</button>
           <button class="action-icon-button" type="button" data-toggle-audio title="切換音效">🔊</button>

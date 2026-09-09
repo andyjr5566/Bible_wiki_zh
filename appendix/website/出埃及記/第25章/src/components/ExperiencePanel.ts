@@ -27,7 +27,7 @@ export class ExperiencePanel {
     const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.playing, state.learning.objectId ?? '', state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status].join('|');
     if (renderKey === this.#renderKey) return;
     this.#renderKey = renderKey;
-    const main = mode === 'tour' ? renderTour(state) : mode === 'learning' ? renderLearning(state) : renderOverview(state);
+    const main = mode === 'tour' ? renderTour(state) : mode === 'learning' || mode === 'ritual' ? renderLearning(state) : renderOverview(state);
     this.element.innerHTML = main + (state.creditsOpen ? renderCredits(this.#app?.getAttributions() ?? []) : '');
     this.syncMobileDrawers(state);
   }

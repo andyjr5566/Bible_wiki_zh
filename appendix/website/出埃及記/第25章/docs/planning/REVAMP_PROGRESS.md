@@ -19,7 +19,7 @@
 | R01 | 來源臺帳 | R00 | 目前 GPT-5 session | 自驗透過 | [SOURCES](../research/SOURCES.md)、[CLAIMS](../research/CLAIMS.md) |
 | R02 | 角色／程序契約 | R01 | 目前 GPT-5 session | 自驗透過 | [RITUAL_STEPS](../research/RITUAL_STEPS.md)、[ROLE_ACCESS](../research/ROLE_ACCESS.md)、[GARMENTS](../research/GARMENTS.md) |
 | R03 | 資料與抽取 | R01,R02 | 目前 GPT-5 session | 自驗透過 | [scripture-excerpts](../../src/data/scripture-excerpts.json)、[object-details](../../src/data/object-details.json)、[evidence](../../src/data/evidence.json)、[tours](../../src/data/tours.json)、[ProjectData.test](../../src/data/ProjectData.test.ts) |
-| R04 | 入口／狀態 | R03 | Luna | 待辦 | — |
+| R04 | 入口／狀態 | R03 | 目前 GPT-5 session | 自驗透過 | [UIStateManager](../../src/ui/UIStateManager.ts)、[ModeNavigation](../../src/components/ModeNavigation.ts)、[UIStateManager.test](../../src/ui/UIStateManager.test.ts) |
 | R05 | detail生命週期 | R04 | Luna | 待辦 | — |
 | R06 | 空間／剖面／取景 | R05 | Luna | 待辦 | — |
 | R07 | Blender流程 | R03,R06 | Luna | 待辦 | — |
@@ -126,3 +126,18 @@ Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender；本
 未驗證項目／限制／需總控判定：肘換算仍是 unresolved 工程假設；燈臺與洗濯盆尺寸不顯示數值；營地三個位置是 reconstructed 示意，不能當歷史配置；R02 詳細六程序分支尚待 R13–R16 完整落地；仍未修改 Blender 場景。
 結論（自驗／總控分開）：R03 自驗透過；typed data、schema、抽取器與現有 consumers 已接合，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R04；建立入口／狀態契約與載入失敗的 fail-closed 行為，先處理資料載入與 UI 狀態邊界。
+
+## R04 執行回執
+
+任務ID／起訖日期：R04／2026-09-10 03:00–03:20（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；以 TypeScript／Vitest 與 Browser preview 實測，未宣稱 GPT-5.6 Luna。
+開始時工作樹或基準hash：R03 commit `17975847`，分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准claim IDs：R03 typed data／schemas、`AppKernel`、`UIStateManager`、`ModeNavigation`、`ExperiencePanel`、`CinematicOverlay`；本卡沒有新增經文 claim。
+變更檔案：`src/types/ui.ts` 新增 ritual／overlay／playback-owner 狀態；`UIStateManager.ts` 新增儀式選取、overlay 與 owner 單一寫入方法；`ModeNavigation.ts` 增加服事程序入口；`AppKernel.ts` 統一 cinematic／ritual 搶佔、重設與返回；`ExperiencePanel.ts` 支援 ritual mode；`AppShell.ts`／`CinematicOverlay.ts` 移除重複電影級入口文案；`UIStateManager.test.ts` 增加 ritual 返回測試。
+Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender 或資產。
+驗收QA IDs：R04 四入口、單一 playbackOwner、ritual 開始／關閉、模式轉換無殘留播放器、aria 入口文案。
+命令、exit code、log路徑：`npm run typecheck` exit 0；`npm test` exit 0（16 檔／35 tests）；`npm run build` exit 0（Vite production）；Browser preview 顯示四個模式按鈕「場景總覽／五站導覽／器物與經文／服事程序」，服事程序自動載入祭司洗濯並可關閉返回，dev logs 0。
+畫面與activeAssetIds／profile／viewport證據：Browser desktop preview、預設 viewport；四入口與 ritual panel DOM 實測；未對 activeAssetIds 做新宣稱。
+未驗證項目／限制／需總控判定：相機 pose、profile 與 overlay 尚未序列化成深連結或瀏覽器 history；R05 才處理 detail 非同步生命週期；R04 沒有 Blender 寫入。
+結論（自驗／總控分開）：R04 自驗透過；四入口與播放所有權已納入狀態契約，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R05；修復六器物 detail 的真實非同步載入、generation/token 與錯誤恢復。

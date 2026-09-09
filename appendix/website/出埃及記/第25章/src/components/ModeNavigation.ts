@@ -5,6 +5,7 @@ const modes: Array<{ id: ExperienceMode; label: string; shortcut?: string }> = [
   { id: 'overview', label: '場景總覽' },
   { id: 'tour', label: '五站導覽' },
   { id: 'learning', label: '器物與經文' },
+  { id: 'ritual', label: '服事程序' },
 ];
 
 export class ModeNavigation {
