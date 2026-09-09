@@ -22,6 +22,7 @@ export interface AppPort {
   subscribe(listener: (state: Readonly<UIState>) => void): () => void;
   transitionTo(mode: ExperienceMode, reason: string): void;
   getAssetState(): Readonly<AssetRuntimeState>;
+  notifyViewportChange?(): void;
   subscribeAssets(listener: (state: Readonly<AssetRuntimeState>) => void): () => void;
   setAssetProfile(profile: AssetProfile): void;
   loadDetail(assetId: string): void;

@@ -45,10 +45,12 @@ export class AppShell {
   #experienceUnsubscribe: (() => void) | null = null;
   #cinematicUnsubscribe: (() => void) | null = null;
   #app: AppPort | null = null;
+  #creditsReturnFocus: HTMLElement | null = null;
 
   constructor(root: HTMLElement) {
     root.innerHTML = `<main class="app-shell">
-      <canvas class="scene-canvas" tabindex="0" aria-label="可拖曳旋轉、滾輪縮放的 3D 會幕場景"></canvas>
+      <canvas class="scene-canvas" tabindex="0" aria-label="可拖曳旋轉、滾輪縮放的 3D 會幕場景" aria-describedby="scene-accessible-description"></canvas>
+      <p id="scene-accessible-description" class="visually-hidden">3D 場景提供同等的文字操作：使用上方四個入口切換場景總覽、五站導覽、器物與經文、服事程序；器物、程序步驟和來源會在左側面板列出。鍵盤可用 Tab 選取按鈕，Escape 關閉目前最上層的視窗。</p>
       
       <!-- Top Museum Header -->
       <header class="museum-header">
@@ -64,14 +66,14 @@ export class AppShell {
           <button class="action-pill-button primary-action-glow" type="button" data-open-cinematic>▶ 逐幕 3D 導覽</button>
           <button class="action-pill-button" type="button" data-open-scripture>📜 出25章研讀</button>
           <button class="action-pill-button" type="button" data-toggle-map>🗺️ 平面圖</button>
-          <button class="action-icon-button" type="button" data-toggle-audio title="切換音效">🔊</button>
-          <button class="action-icon-button" type="button" data-open-settings title="設定與大氣氛圍">⚙️</button>
+          <button class="action-icon-button" type="button" data-toggle-audio title="切換音效" aria-label="切換音效">🔊</button>
+          <button class="action-icon-button" type="button" data-open-settings title="設定與大氣氛圍" aria-label="開啟設定與大氣氛圍">⚙️</button>
           <button class="credits-button" type="button" data-credits-trigger>資料來源</button>
         </div>
       </header>
 
       <!-- Sidebar Research Panel -->
-      <aside class="research-panel is-sheet-collapsed">
+      <aside class="research-panel is-sheet-collapsed" data-sheet-state="collapsed" aria-label="研讀與操作面板">
         <button class="panel-sheet-toggle" type="button" data-sheet-toggle aria-expanded="false" aria-controls="experience-panel">
           <span aria-hidden="true">↑</span><span>展開控制</span>
         </button>
@@ -84,11 +86,6 @@ export class AppShell {
         </details>
       </aside>
 
-      <!-- Floating Proximity Indicator -->
-      <div class="proximity-hud" id="proximity-hud" aria-live="polite" aria-hidden="true">
-        <span class="keycap">E</span><span>靠近查看</span><strong id="proximity-target-name">約櫃</strong>
-      </div>
-
       <!-- Minimap Float Overlay -->
       <aside class="minimap-overlay is-hidden" id="minimap-overlay"></aside>
 
@@ -96,7 +93,7 @@ export class AppShell {
       <footer class="control-legend" aria-label="3D 操作說明">
         <span><i class="mouse-icon" aria-hidden="true"></i><strong>拖曳</strong>旋轉視角</span>
         <span><strong>滾輪</strong>拉近縮遠</span>
-        <span><strong>WASD / 點擊器物</strong>快速聚焦</span>
+        <span><strong>選取器物</strong>開啟研讀面板</span>
       </footer>
     </main>`;
 
@@ -133,6 +130,7 @@ export class AppShell {
     this.#experiencePanel.bind(app);
     this.#miniMap.bind(app);
     this.#sheetToggle.addEventListener('click', this.#onSheetToggle);
+    window.addEventListener('keydown', this.#onKeyDown);
 
     // If app is AppKernel instance, bind modals & cinematic overlay
     if ('scene' in app && 'audio' in app && 'cinematic' in app) {
@@ -146,7 +144,11 @@ export class AppShell {
       app.startCinematicTour();
     });
 
-    document.querySelector('[data-credits-trigger]')?.addEventListener('click', () => app.setCreditsOpen(true));
+    this.#experiencePanel.element.ownerDocument.querySelector('[data-credits-trigger]')?.addEventListener('click', (event) => {
+      this.#creditsReturnFocus = event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
+      app.setCreditsOpen(true);
+      queueMicrotask(() => this.#experiencePanel.element.querySelector<HTMLButtonElement>('.credits-sheet [data-credits="close"]')?.focus());
+    });
     this.#profileButtons.forEach((button, profile) => button.addEventListener('click', () => app.setAssetProfile(profile)));
     this.#detailButtons.forEach((button, assetId) => button.addEventListener('click', () => app.loadDetail(assetId)));
 
@@ -156,7 +158,9 @@ export class AppShell {
     });
     this.#assetUnsubscribe = app.subscribeAssets((state) => this.renderAssetState(state));
     this.#experienceUnsubscribe = app.subscribeExperience((state) => {
+      const wasCreditsOpen = this.#experienceState?.creditsOpen ?? false;
       this.#experienceState = state;
+      if (wasCreditsOpen && !state.creditsOpen) this.restoreCreditsFocus();
       this.render();
     });
     this.#cinematicUnsubscribe = app.subscribeCinematic((state) => {
@@ -171,6 +175,7 @@ export class AppShell {
     this.#experienceUnsubscribe?.();
     this.#cinematicUnsubscribe?.();
     this.#sheetToggle.removeEventListener('click', this.#onSheetToggle);
+    window.removeEventListener('keydown', this.#onKeyDown);
     this.#modeNavigation.dispose();
     this.#experiencePanel.dispose();
     this.#miniMap.dispose();
@@ -181,12 +186,22 @@ export class AppShell {
 
   readonly #onSheetToggle = (): void => {
     this.#app?.pauseCinematicTour();
-    const collapsed = !this.#researchPanel.classList.contains('is-sheet-collapsed');
-    this.#researchPanel.classList.toggle('is-sheet-collapsed', collapsed);
-    this.#sheetToggle.setAttribute('aria-expanded', String(!collapsed));
-    this.#sheetToggle.innerHTML = collapsed
+    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 620px)').matches;
+    const current = this.#researchPanel.dataset.sheetState ?? 'collapsed';
+    const next = isMobile
+      ? current === 'collapsed' ? 'half' : current === 'half' ? 'reading' : 'collapsed'
+      : current === 'collapsed' ? 'reading' : 'collapsed';
+    this.#researchPanel.dataset.sheetState = next;
+    this.#researchPanel.classList.toggle('is-sheet-collapsed', next === 'collapsed');
+    this.#sheetToggle.setAttribute('aria-expanded', String(next !== 'collapsed'));
+    this.#sheetToggle.setAttribute('aria-label', next === 'collapsed' ? '展開研讀控制' : next === 'half' ? '展開完整閱讀面板' : '收合研讀面板');
+    this.#sheetToggle.innerHTML = next === 'collapsed'
       ? '<span aria-hidden="true">↑</span><span>展開控制</span>'
+      : next === 'half'
+      ? '<span aria-hidden="true">↕</span><span>半展面板</span>'
       : '<span aria-hidden="true">↓</span><span>收合控制</span>';
+    this.#experiencePanel.setMobileDrawerState(next);
+    this.#app?.notifyViewportChange?.();
   };
 
   private installHeaderActions(root: HTMLElement): void {
@@ -259,5 +274,19 @@ export class AppShell {
     this.#assetStatus.textContent = state.phase === 'error' && state.error
       ? `載入失敗：${state.error.message}${state.error.fallbackAvailable ? '；可明確選擇低模備援。' : ''}`
       : `${state.phase === 'ready' ? '已就緒' : state.phase === 'loading' ? '載入中' : '待命'}${progress} · ${active}`;
+  }
+
+  readonly #onKeyDown = (event: KeyboardEvent): void => {
+    if (event.key !== 'Escape' || !this.#experienceState?.creditsOpen) return;
+    const higherOverlay = document.querySelector<HTMLElement>('.cinematic-overlay:not(.is-hidden), .settings-modal-overlay:not(.is-hidden), .scripture-modal-overlay:not(.is-hidden)');
+    if (higherOverlay) return;
+    event.preventDefault();
+    this.#app?.setCreditsOpen(false);
+  };
+
+  private restoreCreditsFocus(): void {
+    const returnFocus = this.#creditsReturnFocus;
+    this.#creditsReturnFocus = null;
+    if (returnFocus?.isConnected) returnFocus.focus();
   }
 }

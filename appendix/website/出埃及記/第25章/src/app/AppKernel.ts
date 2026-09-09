@@ -223,6 +223,7 @@ export class AppKernel implements AppPort {
   }
 
   getAssetState(): Readonly<AssetRuntimeState> { return this.assetRuntime.snapshot; }
+  notifyViewportChange(): void { this.scene.resize(); }
   subscribeAssets(listener: (state: Readonly<AssetRuntimeState>) => void): () => void { return this.assetRuntime.subscribe(listener); }
   setAssetProfile(profile: AssetProfile): void { void this.assetRuntime.selectProfile(profile); }
   loadDetail(assetId: string): void { void this.assetRuntime.loadDetail(assetId); }

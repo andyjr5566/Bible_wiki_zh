@@ -24,6 +24,7 @@ export class ParticleEffects {
 
   #nightMode = false;
   #learningDetailFocus = false;
+  #reducedMotion = false;
   readonly #activeCues = new Set<ParticleCue>();
 
   constructor(parent: THREE.Object3D) {
@@ -88,11 +89,13 @@ export class ParticleEffects {
   }
 
   #syncCueVisibility(): void {
-    const canShowNarrativeCue = !this.#learningDetailFocus;
+    this.#reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canShowNarrativeCue = !this.#learningDetailFocus && !this.#reducedMotion;
     this.#menorahFlamesGroup.visible = canShowNarrativeCue && this.#activeCues.has('menorah-flames');
     const altarActive = this.#activeCues.has('burnt-offering-fire');
     this.#incenseSmokeGroup.visible = canShowNarrativeCue && this.#activeCues.has('incense-smoke');
     this.#altarFireGroup.visible = canShowNarrativeCue && altarActive;
+    this.#dustMotesGroup.visible = !this.#reducedMotion;
     this.#altarLight.intensity = altarActive ? (this.#nightMode ? 5.5 : 3.5) : 0;
   }
 
@@ -190,6 +193,14 @@ export class ParticleEffects {
   }
 
   update(deltaSeconds: number, timeSeconds: number): void {
+    const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion !== this.#reducedMotion) this.#syncCueVisibility();
+    if (reducedMotion) {
+      this.#menorahLights.forEach((light) => { light.intensity = 0; });
+      this.#altarLight.intensity = 0;
+      return;
+    }
+
     // Flicker Menorah lights & flames
     const flicker = Math.sin(timeSeconds * 12.0) * 0.08 + Math.cos(timeSeconds * 23.0) * 0.05;
     this.#menorahLights.forEach((light, i) => {

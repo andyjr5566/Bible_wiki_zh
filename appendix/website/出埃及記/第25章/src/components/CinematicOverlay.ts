@@ -5,10 +5,14 @@ export class CinematicOverlay {
   readonly element: HTMLElement;
   #kernel: AppKernel | null = null;
   #state: Readonly<CinematicState> | null = null;
+  #returnFocus: HTMLElement | null = null;
 
   constructor(container: HTMLElement) {
     this.element = document.createElement('section');
     this.element.className = 'cinematic-overlay is-hidden';
+    this.element.setAttribute('role', 'dialog');
+    this.element.setAttribute('aria-modal', 'true');
+    this.element.setAttribute('aria-labelledby', 'cinema-act-title');
     this.element.setAttribute('aria-label', '逐幕 3D 導覽播放器');
     this.element.innerHTML = `
       <!-- Top Letterbox Bar -->
@@ -67,13 +71,23 @@ export class CinematicOverlay {
   }
 
   render(state: Readonly<CinematicState>): void {
+    const wasPlaying = this.#state?.isPlaying ?? false;
     this.#state = state;
     if (!state.isPlaying) {
       this.element.classList.add('is-hidden');
+      if (wasPlaying) {
+        const returnFocus = this.#returnFocus;
+        this.#returnFocus = null;
+        if (returnFocus?.isConnected) returnFocus.focus();
+      }
       return;
     }
 
     this.element.classList.remove('is-hidden');
+    if (!wasPlaying) {
+      this.#returnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      queueMicrotask(() => this.element.querySelector<HTMLButtonElement>('.cinema-close-btn')?.focus());
+    }
 
     const actTitle = this.element.querySelector('#cinema-act-title');
     const hebrewTerm = this.element.querySelector('#cinema-hebrew-term');
@@ -165,7 +179,7 @@ export class CinematicOverlay {
     } else if (e.code === 'ArrowLeft') {
       e.preventDefault();
       this.#kernel.prevCinematicAct();
-    } else if (e.code === 'Escape') {
+    } else if (e.code === 'Escape' && isTopOverlay(this.element)) {
       e.preventDefault();
       this.#kernel.stopCinematicTour();
     } else if (e.code === 'KeyD') {
@@ -173,6 +187,11 @@ export class CinematicOverlay {
       this.#kernel.toggleCinematicDimensions();
     }
   };
+}
+
+function isTopOverlay(element: HTMLElement): boolean {
+  const overlays = Array.from(document.querySelectorAll<HTMLElement>('.cinematic-overlay:not(.is-hidden), .settings-modal-overlay:not(.is-hidden), .scripture-modal-overlay:not(.is-hidden), .credits-sheet'));
+  return overlays[overlays.length - 1] === element;
 }
 
 function escapeHtml(value: string): string { return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] ?? character); }

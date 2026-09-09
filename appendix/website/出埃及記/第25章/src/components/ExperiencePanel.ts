@@ -28,6 +28,13 @@ export class ExperiencePanel {
   constructor(readonly element: HTMLElement) { element.addEventListener('click', this.#onClick); }
   bind(app: AppPort): void { this.#app = app; }
 
+  setMobileDrawerState(state: 'collapsed' | 'half' | 'reading'): void {
+    if (typeof window === 'undefined' || !window.matchMedia('(max-width: 620px)').matches) return;
+    this.element.querySelectorAll<HTMLDetailsElement>('.mobile-drawer').forEach((drawer) => {
+      drawer.open = state === 'reading';
+    });
+  }
+
   render(mode: ExperienceMode, state: Readonly<ExperienceState>): void {
     const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.current?.activeHotspotId ?? '', state.tour.current?.hotspots.map(({ id }) => id).join(',') ?? '', state.tour.playing, state.learning.objectId ?? '', state.learning.selectedPartId ?? '', state.learning.evidence.map(({ id }) => id).join(','), state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status, state.character.id, state.character.garmentState].join('|');
     if (renderKey === this.#renderKey) return;
