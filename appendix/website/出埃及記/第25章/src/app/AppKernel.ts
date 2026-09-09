@@ -1,6 +1,7 @@
 import { AudioManager } from '../audio/AudioManager';
 import { CharacterRegistry } from '../characters/CharacterRegistry';
 import { CharacterSystem } from '../characters/CharacterSystem';
+import { CharacterAppearanceResolver } from '../characters/CharacterAppearanceResolver';
 import { runtimeConfig } from '../config/runtime';
 import { loadProjectData } from '../data/loadProjectData';
 import { RitualPlaybackController } from '../rituals/RitualPlaybackController';
@@ -25,8 +26,6 @@ import type { ExperienceMode, UIState } from '../types/ui';
 import { UIStateManager } from '../ui/UIStateManager';
 import { EventChannel } from '../utils/EventChannel';
 
-const confidenceDisclosure = '本版刻意不展示通用人物模型，避免把未經歷史驗證的服飾與外貌誤當成祭司造型。人物與聖衣研究仍以出埃及記 28、29、39 章為資料基線，待有足夠品質與考據的專用模型後再加入。';
-
 export class AppKernel implements AppPort {
   readonly data = loadProjectData();
   readonly uiState = new UIStateManager();
@@ -34,6 +33,7 @@ export class AppKernel implements AppPort {
   readonly audio = new AudioManager();
   readonly objects = new ObjectRegistry(this.data.tabernacle.objects);
   readonly characters = new CharacterSystem(new CharacterRegistry(this.data.characters.characters));
+  readonly characterAppearance = new CharacterAppearanceResolver(this.data.characters.characters, this.data.garments.states, this.data.roleCostumes.roles);
   readonly rituals: RitualPlaybackController;
   readonly scriptures = new ScriptureMappingService(new ScriptureRegistry(this.data.scriptures.passages));
   readonly tour = new TourManager(this.data.tours.tours.slice().sort((a, b) => a.order - b.order).map((tour) => ({
@@ -199,6 +199,10 @@ export class AppKernel implements AppPort {
     const ritualState = this.rituals.state;
     const ritual = ritualState.ritualId ? this.rituals.registry.get(ritualState.ritualId) : undefined;
     const ritualStep = ritual?.steps[ritualState.stepIndex];
+    const defaultCharacterId = object?.id === 'ark' ? 'aaron-high-priest' : 'serving-priest';
+    const selectedCharacterId = ritualStep?.characterIds[0] ?? characterIds[0] ?? this.learning.context.characterId ?? defaultCharacterId;
+    const selectedCharacter = this.characters.registry.require(selectedCharacterId);
+    const characterAppearance = this.characterAppearance.resolve(selectedCharacter.id, ritualStep?.garmentState ?? selectedCharacter.defaultGarmentState);
     const currentTour = this.tour.current;
     const currentTourDefinition = currentTour ? this.data.tours.tours.find(({ id }) => id === currentTour.id) : undefined;
     const currentTourExcerptText = currentTourDefinition?.excerptIds.map((id) => this.data.scriptureExcerpts.excerpts.find((excerpt) => excerpt.id === id)?.text).filter((text): text is string => Boolean(text)).join('\n\n') ?? null;
@@ -249,11 +253,20 @@ export class AppKernel implements AppPort {
         scriptureReferences: ritualStep ? [...ritualStep.scriptureReferences] : [],
       },
       character: {
-        id: 'serving-priest',
-        name: '供職祭司（教學重建）',
-        status: 'omitted',
+        id: characterAppearance.characterId,
+        name: characterAppearance.name,
+        role: characterAppearance.role,
+        roleLabel: characterAppearance.roleLabel,
+        garmentState: characterAppearance.garmentState,
+        garmentLabel: characterAppearance.garmentLabel,
+        status: 'study',
+        visualPolicy: characterAppearance.visualPolicy,
+        baseAssetId: characterAppearance.baseAssetId,
         position: null,
-        disclosure: confidenceDisclosure,
+        responsibilities: characterAppearance.responsibilities,
+        parts: characterAppearance.parts.map(({ id, label, claimedMaterials, quantity, function: partFunction, unknowns }) => ({ id, label, claimedMaterials, quantity, function: partFunction, unknowns })),
+        validationNotes: characterAppearance.validationNotes,
+        disclosure: characterAppearance.disclosure,
       },
       creditsOpen: this.#creditsOpen,
       assetProfile: this.assetRuntime.snapshot.profile,

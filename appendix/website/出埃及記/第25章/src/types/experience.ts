@@ -1,5 +1,6 @@
 import type { AssetProfile } from './assets';
 import type { ConfidenceLevel } from './core';
+import type { CharacterRole, CharacterVisualPolicy, GarmentState } from './characters';
 import type { RitualPlaybackState } from './rituals';
 
 export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; }
@@ -32,7 +33,22 @@ export interface RitualViewState {
   scriptureReferences: string[];
 }
 export interface MapMarkerView { id: string; label: string; x: number; y: number; kind: 'location' | 'player'; }
-export interface CharacterViewState { id: string; name: string; status: 'omitted'; position: null; disclosure: string; }
+export interface CharacterViewState {
+  id: string;
+  name: string;
+  role: CharacterRole;
+  roleLabel: string;
+  garmentState: GarmentState;
+  garmentLabel: string;
+  status: 'study' | 'omitted';
+  visualPolicy: CharacterVisualPolicy;
+  baseAssetId: string | null;
+  position: null;
+  responsibilities: string[];
+  parts: Array<{ id: string; label: string; claimedMaterials: string[]; quantity: string; function: string; unknowns: string[] }>;
+  validationNotes: string[];
+  disclosure: string;
+}
 export interface AttributionView { id: string; title: string; author: string; sourceUrl: string; license: string; attribution: string; }
 
 export interface ExperienceState {

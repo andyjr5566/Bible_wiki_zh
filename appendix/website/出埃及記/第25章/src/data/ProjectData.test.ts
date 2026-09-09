@@ -54,6 +54,27 @@ describe('project data contracts', () => {
     const highPriest = data.characters.characters.find(({ role }) => role === 'HighPriest');
     expect(highPriest?.garments.map(({ slot }) => slot)).toEqual(expect.arrayContaining(['Ephod', 'Breastpiece', 'TurbanMiter', 'Robe', 'Tunic', 'GoldPlate']));
   });
+  it('keeps costume states and offering representations traceable', () => {
+    const claimIds = new Set(data.evidence.claims.map(({ id }) => id));
+    const assetIds = new Set(data.assets.assets.map(({ id }) => id));
+    expect(data.garments.states.map(({ id }) => id)).toEqual(expect.arrayContaining(['daily-priest', 'daily-high-priest', 'atonement-linen', 'post-atonement-garments', 'unspecified']));
+    data.garments.states.forEach((state) => {
+      state.sourceClaimIds.forEach((id) => expect(claimIds.has(id)).toBe(true));
+      state.parts.forEach((part) => part.sourceClaimIds.forEach((id) => expect(claimIds.has(id)).toBe(true)));
+    });
+    data.offerings.animals.forEach((animal) => {
+      animal.sourceClaimIds.forEach((id) => expect(claimIds.has(id)).toBe(true));
+      if (animal.assetId) expect(assetIds.has(animal.assetId)).toBe(true);
+      if (animal.representation === 'symbol-with-label') expect(animal.assetId).toBeNull();
+    });
+    data.offerings.branches.forEach((branch) => {
+      const animal = data.offerings.animals.find(({ id }) => id === branch.animalId);
+      expect(animal?.kind).toBe(branch.branchKind);
+      expect(animal?.sourceClaimIds).toContain('C-LV01-BRANCHES');
+    });
+    expect(data.offerings.branches.find(({ id }) => id === 'burnt-offering-cattle')?.animalId).toBe('offering-bull');
+    expect(data.offerings.branches.some(({ animalId }) => animalId === 'offering-cow-candidate')).toBe(false);
+  });
   it('fails closed for duplicate IDs and missing claim references', () => {
     expect(() => assertUnique(['same-id', 'same-id'])).toThrow();
     expect(() => assertClaimReferences(new Set(data.evidence.claims.map(({ id }) => id)), ['C-MISSING'])).toThrow();

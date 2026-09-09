@@ -4,7 +4,7 @@
 
 ## 總狀態
 
-- 當前階段：R10 自驗透過，下一張為 R11；R00–R23 尚未宣稱整站完成。
+- 當前階段：R11 自驗透過，下一張為 R12；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
 - 最新測試／build：R03 `npm run build` exit 0；typecheck、16 個測試檔／34 個測試、architecture 91 modules、assets 17 assets 均通過；Vite production build 成功。新增來源抽取器 `npm run build:excerpts` 產生 9 段逐節經文。
 - Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
@@ -26,7 +26,7 @@
 | R08 | 約櫃修正 | R07,R01 | 目前 GPT-5 session | 自驗透過 | [ARK_PARTS](../research/ARK_PARTS.md)、[assets](../../src/data/assets.json) |
 | R09 | 完整會幕／照明 | R07,R08 | 目前 GPT-5 session | 自驗透過 | [R09 policy](../research/R09_LIGHTING_POLICY.md)、[screenshots](../qa/revamp/screenshots/) |
 | R10 | 五件器物 | R07,R09 | 目前 GPT-5 session | 自驗透過 | [R10 register](../research/R10_ASSET_REGISTER.md)、[Blender configs](../../scripts/blender/config/) |
-| R11 | 角色／服飾／牲畜 | R02,R07,R10 | Luna | 待辦 | — |
+| R11 | 角色／服飾／牲畜 | R02,R07,R10 | 目前 GPT-5 session | 自驗透過 | [角色資產登記](../research/R11_CHARACTER_ASSET_REGISTER.md)、[CharacterAppearanceResolver](../../src/characters/CharacterAppearanceResolver.ts)、[截圖](../qa/revamp/screenshots/r11-character-card-desktop.png) |
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | Luna | 待辦 | — |
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | Luna | 待辦 | — |
 | R14 | 燈／餅程序 | R13 | Luna | 待辦 | — |
@@ -229,3 +229,18 @@ Blender工作檔／recipe／source與derived hashes：五件 source SHA 分別�
 未驗證項目／限制／需總控判定：五件來源材質與幾何仍屬 reconstructed 資產；尺寸真值與 R14 餅／燈程序要由後續資料任務處理；R12 尚未完成全資產 GPU／bounds 統整。
 結論（自驗／總控分開）：R10 自驗透過；五件 detail 資產已可獨立載入與重建，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R11；先檢查可合法複用的人物 rig，再建立角色／服飾／必要牲畜資源。
+
+## R11 執行回執
+
+任務ID／起訖日期：R11／2026-09-10 03:40–03:55（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；以 TypeScript／Zod／Vitest、Vite production build 與 Browser preview 實測。未把本輪呼叫冒稱為 GPT-5.6 Luna；沒有新增 Blender 寫入，沿用 R07–R10 已驗證的 Blender／GLB 產物。
+開始時工作樹或基準hash：R10 commit `940c5ae4`；保留既有未追蹤 `.blend1` 復原備份。
+已讀輸入與核准claim IDs：R02 `GARMENTS.md`、`ROLE_ACCESS.md`、R01 `CLAIMS.md`、R07–R10 資產臺帳；新增資料只使用 `C-EX28-ROLE-GARMENT`、`C-LV16-DAY`、`C-EX30-LAVER`、`C-EX30-INCENSE`、`C-LV24-LAMP`、`C-LV01-BRANCHES`、`C-NM-ROLES`。
+變更檔案（含刪除／原因）：新增 `src/types/garment` 相關角色與服飾型別、`src/types/offerings.ts`、`src/data/garments.json`、`role-costumes.json`、`offerings.json` 及 Zod schemas；角色資料補上技術基底、職責、預設服裝與 disclosure；新增 `CharacterAppearanceResolver` 與測試；獻香角色修正為供職祭司，避免把普通祭司職責誤標成大祭司；研讀面板新增人物／服飾考據卡與必要樣式；新增 `R11_CHARACTER_ASSET_REGISTER.md`。
+Blender工作檔／recipe／source與derived hashes（適用時）：本任務沒有寫入場景或重新匯出 GLB；角色模型維持 `priest-basic-human-library`、`priest-arab-man-library` 的 technical-base metadata，服飾專用 `assetId` 全部維持 `null`。
+驗收QA IDs：角色職責分離、普通祭司／大祭司／贖罪日細麻衣三狀態、非法角色服裝組合 fail-closed、利未人角色位置示意、牛／羊／山羊／鳥分支與公牛性別要求、cow 候選不被分支引用、每個部件與 claim 可追溯。
+命令、exit code、log路徑：`npm run typecheck` exit 0；`npm test` exit 0（18 檔／41 tests）；`npm run verify:architecture` exit 0（99 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；Browser preview `?r11=1` runtime errors 0、warnings 0。
+畫面與activeAssetIds／profile／viewport證據：`docs/qa/revamp/screenshots/r11-character-study-desktop.png`、`r11-character-card-desktop.png`；學習面板顯示供職祭司、普通祭司日常聖衣、四個可追溯部件與技術基底 disclosure；本卡未宣稱角色 GLB 已載入世界場景。
+未驗證項目／限制／需總控判定：R13–R16 尚未把角色 appearance 與播放器每一 step 的場景骨架、動作與贖罪日完整路徑接起來；服飾 mesh、山羊／鳥 mesh 沒有核准來源，維持文字／符號；角色位置仍是資料與面板展示，不是歷史實況動畫。
+結論（自驗／總控分開）：R11 自驗透過；角色身份、職責、服裝狀態與供物分支已進入 typed data，技術基底與歷史服飾界線明示，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R12；依序檢查本批全部資產的 source／derived hash、重匯入、manifest 與重現流程，維持 source hash 語義不變。

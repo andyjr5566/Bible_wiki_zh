@@ -13,7 +13,7 @@
     {
       "id": "incense-service", "name": "獻香", "type": "incense", "locationId": "holy-place", "confidence": "textual",
       "trigger": { "kind": "interaction", "objectId": "incense-altar" },
-      "steps": [{ "id": "offer-incense", "branchId": "incense-daily", "actorRole": "priest", "locationId": "holy-place", "order": 1, "title": "燒馨香", "instruction": "在香壇呈現獻香位置與經文脈絡。", "confidence": "textual", "objectIds": ["incense-altar"], "characterIds": ["aaron-high-priest"], "scriptureReferences": ["Exodus 30:1-10"], "playbackHook": "effects.incense", "uiHook": "learning.show-incense", "garmentState": "daily-priest", "actionClaimIds": ["C-EX30-INCENSE"], "nextStepIds": [], "displayCue": "以香壇與幔外位置標籤聚焦日常獻香。", "unresolved": ["香煙物理形狀未詳。"] }]
+      "steps": [{ "id": "offer-incense", "branchId": "incense-daily", "actorRole": "priest", "locationId": "holy-place", "order": 1, "title": "燒馨香", "instruction": "在香壇呈現獻香位置與經文脈絡。", "confidence": "textual", "objectIds": ["incense-altar"], "characterIds": ["serving-priest"], "scriptureReferences": ["Exodus 30:1-10"], "playbackHook": "effects.incense", "uiHook": "learning.show-incense", "garmentState": "daily-priest", "actionClaimIds": ["C-EX30-INCENSE"], "nextStepIds": [], "displayCue": "以香壇與幔外位置標籤聚焦日常獻香。", "unresolved": ["香煙物理形狀未詳。"] }]
     },
     {
       "id": "lampstand-care", "name": "整理燈臺", "type": "lamp-care", "locationId": "holy-place", "confidence": "textual",

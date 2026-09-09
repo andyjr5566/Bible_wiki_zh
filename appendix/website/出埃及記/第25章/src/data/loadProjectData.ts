@@ -1,5 +1,8 @@
 import assetsJson from './assets.json';
 import charactersJson from './characters.json';
+import garmentsJson from './garments.json';
+import roleCostumesJson from './role-costumes.json';
+import offeringsJson from './offerings.json';
 import dimensionsJson from './dimensions.json';
 import assetPartsJson from './asset-parts.json';
 import evidenceJson from './evidence.json';
@@ -12,6 +15,8 @@ import tabernacleJson from './tabernacle.json';
 import toursJson from './tours.json';
 import { assetsSchema } from './schemas/assets';
 import { charactersSchema } from './schemas/characters';
+import { garmentsSchema, roleCostumesSchema } from './schemas/garments';
+import { offeringsSchema } from './schemas/offerings';
 import { dimensionSpecsSchema } from './schemas/dimensions';
 import { assetPartsSchema } from './schemas/assetParts';
 import { evidenceSchema } from './schemas/evidence';
@@ -27,6 +32,9 @@ export function loadProjectData() {
   return {
     assets: assetsSchema.parse(assetsJson),
     characters: charactersSchema.parse(charactersJson),
+    garments: garmentsSchema.parse(garmentsJson),
+    roleCostumes: roleCostumesSchema.parse(roleCostumesJson),
+    offerings: offeringsSchema.parse(offeringsJson),
     dimensions: dimensionSpecsSchema.parse(dimensionsJson),
     assetParts: assetPartsSchema.parse(assetPartsJson),
     evidence: evidenceSchema.parse(evidenceJson),

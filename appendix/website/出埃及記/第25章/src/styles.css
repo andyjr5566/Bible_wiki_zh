@@ -124,6 +124,13 @@ kbd { min-width: 18px; padding: 1px 4px; border: 1px solid rgba(255, 255, 255, 0
 .scripture-list strong { color: #ead698; font-size: 13px; }
 .scripture-list li > b { color: #ddd5c4; font-size: 13px; font-weight: 500; }
 .scripture-list li > span { color: #b8b1a5; font-size: 12px; line-height: 1.6; }
+.character-disclosure { margin-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 10px; }
+.character-card { display: grid; gap: 8px; margin-top: 10px; padding: 12px; border: 1px solid rgba(210, 184, 117, 0.28); border-radius: 5px; background: rgba(7, 8, 6, 0.45); }
+.character-meta, .character-policy, .character-card [data-testid="character-status"] { color: #b8b1a5; font-size: 12px; line-height: 1.6; }
+.character-responsibilities, .character-parts { display: grid; gap: 4px; margin: 0; padding-left: 18px; color: #ddd5c4; font-size: 12px; line-height: 1.55; }
+.character-parts li { display: grid; gap: 2px; }
+.character-parts span { color: #aaa394; font-size: 11px; }
+.character-empty, .character-warning { margin: 0; color: #d6b77b; font-size: 12px; line-height: 1.55; }
 .scripture-context { padding: 2px 6px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 3px; color: #9fbab8 !important; font-size: 10px !important; letter-spacing: .06em; }
 .scripture-quote { margin-top: 4px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 6px; }
 .scripture-quote summary { cursor: pointer; color: var(--gold-primary); font-size: 12px; }
