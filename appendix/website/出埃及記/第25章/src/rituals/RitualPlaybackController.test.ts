@@ -20,4 +20,23 @@ describe('ritual playback contract', () => {
     controller.start('incense-service');
     expect(() => controller.seek(3)).toThrow('Invalid ritual step index');
   });
+
+  it('plays the three-step lampstand care sequence and reaches the light cue', () => {
+    const controller = new RitualPlaybackController(new RitualRegistry(loadProjectData().rituals.rituals));
+    controller.start('lampstand-care');
+    expect(controller.state.stepIndex).toBe(0);
+    controller.next(); expect(controller.state.stepIndex).toBe(1);
+    controller.next(); expect(controller.state.stepIndex).toBe(2);
+    controller.next(); expect(controller.state.status).toBe('complete');
+  });
+
+  it('keeps the four-step shewbread sequence in graph order', () => {
+    const controller = new RitualPlaybackController(new RitualRegistry(loadProjectData().rituals.rituals));
+    controller.start('shewbread-service');
+    expect(controller.registry.get('shewbread-service')?.steps).toHaveLength(4);
+    controller.next(); controller.next(); controller.next();
+    expect(controller.state.stepIndex).toBe(3);
+    expect(controller.state.status).toBe('playing');
+    controller.next(); expect(controller.state.status).toBe('complete');
+  });
 });

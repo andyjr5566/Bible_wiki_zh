@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R13 自驗透過，下一張為 R14；R00–R23 尚未宣稱整站完成。
+- 當前階段：R14 自驗透過，下一張為 R15；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：R13 後 `npm run build` exit 0；typecheck、19 個測試檔／43 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
+- 最新測試／build：R14 後 `npm run build` exit 0；typecheck、19 個測試檔／46 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -29,7 +29,7 @@
 | R11 | 角色／服飾／牲畜 | R02,R07,R10 | 目前 GPT-5 session | 自驗透過 | [角色資產登記](../research/R11_CHARACTER_ASSET_REGISTER.md)、[CharacterAppearanceResolver](../../src/characters/CharacterAppearanceResolver.ts)、[截圖](../qa/revamp/screenshots/r11-character-card-desktop.png) |
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | 目前 GPT-5 session | 自驗透過 | [R12 sidecar](../../assets/derived/r12-derived-assets.json)、[驗證器](../../scripts/verify-derived-assets.mjs)、[Blender README](../../scripts/blender/README.md) |
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | 目前 GPT-5 session | 自驗透過 | [R13 播放器說明](../research/R13_RITUAL_PLAYER.md)、[RitualPlaybackController](../../src/rituals/RitualPlaybackController.ts)、[截圖](../qa/revamp/screenshots/r13-washing-player-desktop.png) |
-| R14 | 燈／餅程序 | R13 | Luna | 待辦 | — |
+| R14 | 燈／餅程序 | R13 | 目前 GPT-5 session | 自驗透過 | [R14 說明](../research/R14_LAMP_BREAD_PLAYER.md)、[燈臺截圖](../qa/revamp/screenshots/r14-lamp-light-desktop.png)、[陳設餅截圖](../qa/revamp/screenshots/r14-bread-eat-desktop.png) |
 | R15 | 燔祭／五祭 | R13,R14 | Luna | 待辦 | — |
 | R16 | 贖罪日 | R13,R15 | Luna | 待辦 | — |
 | R17 | 空間導覽 | R06,R12,R16 | Luna | 待辦 | — |
@@ -274,3 +274,18 @@ Blender工作檔／recipe／source與derived hashes（適用時）：沒有 Blen
 未驗證項目／限制／需總控判定：R14 尚未接燈臺與陳設餅完整資料；洗濯與獻香目前只接 R02 兩程序，燔祭分支與贖罪日仍待 R15/R16；角色 mesh 仍為技術基底，位置與動作以標籤／高亮示意。
 結論（自驗／總控分開）：R13 自驗透過；兩個程序共用可回復播放器並同步角色／服飾／器物／來源，未宣稱未載的寫實動作或永久特效，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R14；沿用同一播放器接入燈臺與陳設餅的計數、時段與 cue，建立完整 step snapshots。
+
+## R14 執行回執
+
+任務ID／起訖日期：R14／2026-09-10（本輪 session）
+執行模型／工具實測：目前介面標示 GPT-5；TypeScript、Vitest、Vite production build 與 Browser preview 實測。沒有把本輪呼叫冒稱為 GPT-5.6 Luna；本輪沒有 Blender 寫入。
+開始時工作樹或基準 hash：R13 commit `d10e8d90`；分支 `feat/appendix-exodus25-revamp`；保留既有 `.blend1` 備份。
+已讀輸入與核准 claim IDs：R02 `RITUAL_STEPS.md`、`ROLE_ACCESS.md`、`GARMENTS.md`，R09 cue policy、R11 appearance data；C-EX25-MENORAH、C-LV24-LAMP、C-EX25-TABLE、C-LV24-BREAD。
+變更檔案（含刪除／原因）：`src/data/rituals.json` 將燈臺改為三步（清橄欖油、整理燈盞、常常點著），陳設餅改為四步（預備十二個餅、兩行／摞排列、每安息日更換、祭司在聖處食用）；`AppKernel` 允許兩個程序啟動並只在 `lamp-light` 啟用 `menorah-flames`；新增 R14 資料與播放器測試、研究說明與兩張 Browser 截圖。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 場景或 GLB 變更，沿用 R07–R12 已驗證資產與 hash。
+驗收 QA IDs：燈臺 1/3→2/3→3/3，第三步顯示七盞燈與 `menorah-flames` cue；陳設餅 1/4→2/4→3/4→4/4，分別保留十二個餅、兩行／摞、安息日、亞倫和子孫／聖處資料；每步角色與服飾狀態正確。
+命令、exit code、log 路徑：`npm test -- --run` exit 0（19 檔／46 tests）；`npm run typecheck` exit 0；`npm run verify:architecture` exit 0（100 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；Browser R14 preview document diagnostics errors 0、warnings 0，active asset count 2、profile `desktop-structural`。
+畫面與 activeAssetIds／profile／viewport 證據：`docs/qa/revamp/screenshots/r14-lamp-light-desktop.png`、`r14-bread-eat-desktop.png`；Browser selected detail 分別為 `tabernacle-menorah-detail`、`tabernacle-table-shewbread-detail`，R14 截圖保留真實 WebGL 預覽與程序面板。
+未驗證項目／限制／需總控判定：燈火與陳設餅目前以 cue、文字、物件高亮表達；沒有新增角色動作、烘焙／進食寫實動畫或新 Blender 模型。R15 燔祭、R16 贖罪日仍未接入；R24 總控驗收尚未執行。
+結論（自驗／總控分開）：R14 自驗透過；燈臺與陳設餅已接入共用播放器，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R15；接入燔祭程序與供物分支，維持來源不明細節的文字／符號呈現。

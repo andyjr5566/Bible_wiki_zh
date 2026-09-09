@@ -65,6 +65,7 @@ export class AppKernel implements AppPort {
         this.ritualVisuals.play(ritual.id, step);
         this.scene.context.particles.clearNarrativeCues();
         if (step.playbackHook.startsWith('effects.incense') && step.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
+        if (step.id === 'lamp-light') this.scene.context.particles.setCue('menorah-flames');
       },
       onStateChange: (state) => {
         if (state.status === 'paused') { this.ritualVisuals.pause(); this.scene.context.particles.clearNarrativeCues(); }
@@ -305,7 +306,7 @@ export class AppKernel implements AppPort {
   startRitual(ritualId: string): void {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     const ritual = this.rituals.registry.require(ritualId);
-    if (ritual.type !== 'washing' && ritual.type !== 'incense') return;
+    if (!['washing', 'incense', 'lamp-care', 'shewbread'].includes(ritual.type)) return;
     if (this.uiState.snapshot.mode !== 'ritual') this.uiState.transitionTo('ritual', `ritual-start:${ritualId}`);
     this.uiState.selectRitual(ritualId, ritual.steps[0]?.branchId ?? null, ritual.steps[0]?.id ?? null);
     this.uiState.setPlaybackOwner('ritual');
@@ -329,6 +330,7 @@ export class AppKernel implements AppPort {
           this.ritualVisuals.play(activeRitual.id, activeStep);
           this.scene.context.particles.clearNarrativeCues();
           if (activeStep.playbackHook.startsWith('effects.incense') && activeStep.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
+          if (activeStep.id === 'lamp-light') this.scene.context.particles.setCue('menorah-flames');
         }
       }
     }

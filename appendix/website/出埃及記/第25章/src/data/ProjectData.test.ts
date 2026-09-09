@@ -75,6 +75,19 @@ describe('project data contracts', () => {
     expect(data.offerings.branches.find(({ id }) => id === 'burnt-offering-cattle')?.animalId).toBe('offering-bull');
     expect(data.offerings.branches.some(({ animalId }) => animalId === 'offering-cow-candidate')).toBe(false);
   });
+
+  it('keeps lampstand and shewbread teaching steps source-linked', () => {
+    const lampstand = data.rituals.rituals.find(({ id }) => id === 'lampstand-care');
+    const shewbread = data.rituals.rituals.find(({ id }) => id === 'shewbread-service');
+    expect(lampstand?.steps.map(({ id }) => id)).toEqual(['lamp-oil-present', 'lamp-tend', 'lamp-light']);
+    expect(lampstand?.steps[2]?.objectIds).toContain('menorah');
+    expect(lampstand?.steps[2]?.displayCue).toContain('七盞燈');
+    expect(shewbread?.steps).toHaveLength(4);
+    expect(shewbread?.steps[1]?.instruction).toContain('十二個餅');
+    expect(shewbread?.steps[2]?.instruction).toContain('安息日');
+    expect(shewbread?.steps[3]?.instruction).toContain('亞倫和子孫');
+    expect(shewbread?.steps.every(({ actorRole }) => actorRole === 'priest' || actorRole === 'actor-unspecified')).toBe(true);
+  });
   it('fails closed for duplicate IDs and missing claim references', () => {
     expect(() => assertUnique(['same-id', 'same-id'])).toThrow();
     expect(() => assertClaimReferences(new Set(data.evidence.claims.map(({ id }) => id)), ['C-MISSING'])).toThrow();
