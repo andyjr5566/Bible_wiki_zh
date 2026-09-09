@@ -61,10 +61,14 @@ export class AppKernel implements AppPort {
     this.scene = new SceneBootstrap(canvas, this.data.dimensions.specs);
     this.ritualVisuals = new RitualVisualSystem(this.scene.context.worldRoot);
     this.rituals = new RitualPlaybackController(new RitualRegistry(this.data.rituals.rituals), {
-      onStepEnter: (ritual) => this.ritualVisuals.play(ritual.id),
+      onStepEnter: (ritual, step) => {
+        this.ritualVisuals.play(ritual.id, step);
+        this.scene.context.particles.clearNarrativeCues();
+        if (step.playbackHook.startsWith('effects.incense') && step.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
+      },
       onStateChange: (state) => {
-        if (state.status === 'paused') this.ritualVisuals.pause();
-        if (state.status === 'idle' || state.status === 'complete') this.ritualVisuals.stop();
+        if (state.status === 'paused') { this.ritualVisuals.pause(); this.scene.context.particles.clearNarrativeCues(); }
+        if (state.status === 'idle' || state.status === 'complete') { this.ritualVisuals.stop(); this.scene.context.particles.clearNarrativeCues(); }
         const ritual = state.ritualId ? this.rituals?.registry.get(state.ritualId) : undefined;
         const step = ritual?.steps[state.stepIndex];
         this.uiState.selectRitual(state.ritualId, step?.branchId ?? null, step?.id ?? null);
@@ -246,11 +250,16 @@ export class AppKernel implements AppPort {
       },
       ritual: {
         playback: ritualState,
+        stepIndex: ritualState.stepIndex,
+        stepCount: ritual?.steps.length ?? 0,
+        branchId: ritualStep?.branchId ?? null,
         name: ritual?.name ?? null,
         stepTitle: ritualStep?.title ?? null,
         instruction: ritualStep?.instruction ?? null,
         confidence: ritualStep?.confidence ?? null,
         scriptureReferences: ritualStep ? [...ritualStep.scriptureReferences] : [],
+        displayCue: ritualStep?.displayCue ?? null,
+        unresolved: ritualStep ? [...ritualStep.unresolved] : [],
       },
       character: {
         id: characterAppearance.characterId,
@@ -312,9 +321,20 @@ export class AppKernel implements AppPort {
     if (command === 'close') { this.resetRitualPlayback(); this.learning.open({ ritualId: null, characterId: null }); this.uiState.returnToPrevious('ritual-close'); }
     if (command === 'play-pause') {
       if (this.rituals.state.status === 'playing') this.rituals.pause();
-      else if (this.rituals.state.status === 'paused') { this.rituals.resume(); if (this.rituals.state.ritualId) this.ritualVisuals.play(this.rituals.state.ritualId); }
+      else if (this.rituals.state.status === 'paused') {
+        this.rituals.resume();
+        const activeRitual = this.rituals.state.ritualId ? this.rituals.registry.get(this.rituals.state.ritualId) : undefined;
+        const activeStep = activeRitual?.steps[this.rituals.state.stepIndex];
+        if (activeRitual && activeStep) {
+          this.ritualVisuals.play(activeRitual.id, activeStep);
+          this.scene.context.particles.clearNarrativeCues();
+          if (activeStep.playbackHook.startsWith('effects.incense') && activeStep.id !== 'incense-boundary') this.scene.context.particles.setCue('incense-smoke');
+        }
+      }
     }
+    if (command === 'previous') this.rituals.previous();
     if (command === 'next') this.rituals.next();
+    if (command === 'replay') this.rituals.replay();
     this.audio.playClick();
     this.publishExperience();
   }
@@ -444,6 +464,7 @@ export class AppKernel implements AppPort {
   private resetRitualPlayback(): void {
     if (this.rituals.state.status !== 'idle') this.rituals.reset();
     this.ritualVisuals.stop();
+    this.scene.context.particles.clearNarrativeCues();
     this.uiState.selectRitual(null);
     if (this.uiState.snapshot.playbackOwner === 'ritual') this.uiState.setPlaybackOwner('none');
   }

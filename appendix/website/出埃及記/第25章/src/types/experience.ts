@@ -26,11 +26,16 @@ export interface LearningViewState {
 }
 export interface RitualViewState {
   playback: RitualPlaybackState;
+  stepIndex: number;
+  stepCount: number;
+  branchId: string | null;
   name: string | null;
   stepTitle: string | null;
   instruction: string | null;
   confidence: ConfidenceLevel | null;
   scriptureReferences: string[];
+  displayCue: string | null;
+  unresolved: string[];
 }
 export interface MapMarkerView { id: string; label: string; x: number; y: number; kind: 'location' | 'player'; }
 export interface CharacterViewState {
@@ -61,4 +66,4 @@ export interface ExperienceState {
 }
 
 export type TourCommand = 'previous' | 'next' | 'close';
-export type RitualCommand = 'play-pause' | 'next' | 'close';
+export type RitualCommand = 'play-pause' | 'previous' | 'next' | 'replay' | 'close';

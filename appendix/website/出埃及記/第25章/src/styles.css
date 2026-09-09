@@ -131,6 +131,8 @@ kbd { min-width: 18px; padding: 1px 4px; border: 1px solid rgba(255, 255, 255, 0
 .character-parts li { display: grid; gap: 2px; }
 .character-parts span { color: #aaa394; font-size: 11px; }
 .character-empty, .character-warning { margin: 0; color: #d6b77b; font-size: 12px; line-height: 1.55; }
+.ritual-cue, .ritual-unresolved { margin: 6px 0; color: #b9cbe1; font-size: 12px; line-height: 1.55; }
+.ritual-unresolved { color: #d6b77b; }
 .scripture-context { padding: 2px 6px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 3px; color: #9fbab8 !important; font-size: 10px !important; letter-spacing: .06em; }
 .scripture-quote { margin-top: 4px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 6px; }
 .scripture-quote summary { cursor: pointer; color: var(--gold-primary); font-size: 12px; }

@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R11 自驗透過，下一張為 R12；R00–R23 尚未宣稱整站完成。
+- 當前階段：R13 自驗透過，下一張為 R14；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：R11 後 `npm run build` exit 0；typecheck、18 個測試檔／41 個測試、architecture 99 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
+- 最新測試／build：R13 後 `npm run build` exit 0；typecheck、19 個測試檔／43 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -28,7 +28,7 @@
 | R10 | 五件器物 | R07,R09 | 目前 GPT-5 session | 自驗透過 | [R10 register](../research/R10_ASSET_REGISTER.md)、[Blender configs](../../scripts/blender/config/) |
 | R11 | 角色／服飾／牲畜 | R02,R07,R10 | 目前 GPT-5 session | 自驗透過 | [角色資產登記](../research/R11_CHARACTER_ASSET_REGISTER.md)、[CharacterAppearanceResolver](../../src/characters/CharacterAppearanceResolver.ts)、[截圖](../qa/revamp/screenshots/r11-character-card-desktop.png) |
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | 目前 GPT-5 session | 自驗透過 | [R12 sidecar](../../assets/derived/r12-derived-assets.json)、[驗證器](../../scripts/verify-derived-assets.mjs)、[Blender README](../../scripts/blender/README.md) |
-| R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | Luna | 待辦 | — |
+| R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | 目前 GPT-5 session | 自驗透過 | [R13 播放器說明](../research/R13_RITUAL_PLAYER.md)、[RitualPlaybackController](../../src/rituals/RitualPlaybackController.ts)、[截圖](../qa/revamp/screenshots/r13-washing-player-desktop.png) |
 | R14 | 燈／餅程序 | R13 | Luna | 待辦 | — |
 | R15 | 燔祭／五祭 | R13,R14 | Luna | 待辦 | — |
 | R16 | 贖罪日 | R13,R15 | Luna | 待辦 | — |
@@ -259,3 +259,18 @@ Blender工作檔／recipe／source與derived hashes：17 件 source SHA 全部�
 未驗證項目／限制／需總控判定：GPU 實際上傳量與 frame-time 沒有 profiler 證據，sidecar 只記錄 processed bytes 的保守估計；未重跑未修改資產的 Blender recipe，只重新解析 processed GLB；R13 尚未把角色／服飾接入播放器。
 結論（自驗／總控分開）：R12 自驗透過；source hash、derived hash、runtime 對應、17 件 GLB 重新讀取與 manifest/sidecar 均完成，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R13；以 R04–R06 的單一 owner 與 R11 appearance 資料建立通用程序播放器，先完成洗濯與日常獻香的逐步可回復流程。
+
+## R13 執行回執
+
+任務ID／起訖日期：R13／2026-09-10 04:20–04:45（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；TypeScript／Vitest、Vite production build 與 Browser preview 實測，沒有把本輪呼叫冒稱為 GPT-5.6 Luna。未寫入 Blender。
+開始時工作樹或基準hash：R12 commit `2a8976d8`；R07–R12 資產與 sidecar 保持原狀。
+已讀輸入與核准claim IDs：R02 `RITUAL_STEPS.md`、`ROLE_ACCESS.md`、`GARMENTS.md`，R09 cue policy、R11 appearance data；C-EX30-LAVER、C-EX30-INCENSE。
+變更檔案（含刪除／原因）：洗濯與日常獻香各由單步改為三步資料鏈，補齊 actor／character／garment／object／location／source／displayCue／unresolved；`RitualPlaybackController` 新增依 `nextStepIds` 前進、上一部、seek、replay 與越界 fail；`RitualVisualSystem` 依 step 隱藏獻香界線煙霧；`ParticleEffects` 增加清除 narrative cues；AppKernel 將 step 與 cue、角色服飾同步並在退出清理；程序面板加入進度、上一／下一步、暫停／重播／退出與未知項目；新增 R13 controller／visual tests、說明文件與截圖。
+Blender工作檔／recipe／source與derived hashes（適用時）：沒有 Blender 寫入或 GLB 變更；沿用 R12 verified asset hashes。
+驗收QA IDs：洗濯「走近→洗手洗腳→前往服事」；獻香「早晨→黃昏→日常界線」；nextStep graph、previous、pause/resume、replay、seek、complete、idle／越界錯誤、角色與 daily-priest 狀態、日常煙霧 cue 與 boundary 隱藏。
+命令、exit code、log路徑：`npm run typecheck` exit 0；`npm test` exit 0（19 檔／43 tests）；`npm run verify:architecture` exit 0（100 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；Browser `?r13-final=1` console/runtime errors 0、warnings 0；畫面為真實 WebGL preview，非 DOM-only 模擬。
+畫面與activeAssetIds／profile／viewport證據：`docs/qa/revamp/screenshots/r13-washing-player-desktop.png` 顯示服事程序、1/3 進度、洗濯盆高亮與操作列；先前 `r13-incense-boundary-desktop.png` 顯示獻香界線資料。R13 未更換 detail asset，active detail 仍依 R10/R12 證據。
+未驗證項目／限制／需總控判定：R14 尚未接燈臺與陳設餅完整資料；洗濯與獻香目前只接 R02 兩程序，燔祭分支與贖罪日仍待 R15/R16；角色 mesh 仍為技術基底，位置與動作以標籤／高亮示意。
+結論（自驗／總控分開）：R13 自驗透過；兩個程序共用可回復播放器並同步角色／服飾／器物／來源，未宣稱未載的寫實動作或永久特效，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R14；沿用同一播放器接入燈臺與陳設餅的計數、時段與 cue，建立完整 step snapshots。

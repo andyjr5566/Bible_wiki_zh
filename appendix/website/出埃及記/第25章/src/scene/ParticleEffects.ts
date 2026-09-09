@@ -77,6 +77,11 @@ export class ParticleEffects {
     this.#syncCueVisibility();
   }
 
+  clearNarrativeCues(): void {
+    this.#activeCues.clear();
+    this.#syncCueVisibility();
+  }
+
   setLearningDetailFocus(focused: boolean): void {
     this.#learningDetailFocus = focused;
     this.#syncCueVisibility();
