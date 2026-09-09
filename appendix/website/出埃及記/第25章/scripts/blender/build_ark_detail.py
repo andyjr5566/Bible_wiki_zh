@@ -158,11 +158,15 @@ def replace_materials(objects: list[bpy.types.Object], config: dict[str, Any]) -
             raise RuntimeError(f"material assignment object missing: {assignment['object']}")
         obj.data.materials.clear()
         obj.data.materials.append(materials[assignment["material"]])
-        if assignment.get("materialByCenterX"):
-            obj.data.materials.append(materials[assignment["materialByCenterX"]])
-            threshold = float(assignment.get("centerXThreshold", 0.5))
+        if assignment.get("regionMaterial") and assignment.get("region"):
+            obj.data.materials.append(materials[assignment["regionMaterial"]])
+            region = assignment["region"]
+            bounds_min = region["min"]
+            bounds_max = region["max"]
             for polygon in obj.data.polygons:
-                polygon.material_index = 1 if abs(polygon.center.x) < threshold else 0
+                center = polygon.center
+                inside = all(bounds_min[i] <= center[i] <= bounds_max[i] for i in range(3))
+                polygon.material_index = 1 if inside else 0
 
 
 def add_cameras_and_lights(scene: bpy.types.Scene, collection: bpy.types.Collection, config: dict[str, Any]) -> None:
@@ -197,6 +201,7 @@ def set_metadata(scene: bpy.types.Scene, config: dict[str, Any], source: Path, o
     root["axis_forward"] = config["axes"]["forward"]
     root["axis_up"] = config["axes"]["up"]
     root["historical_status"] = "reconstructed"
+    root["section_note"] = config.get("section", {}).get("note", "")
 
 
 def export_glb(path: Path, objects: list[bpy.types.Object], scene: bpy.types.Scene) -> None:
@@ -305,7 +310,8 @@ def manifest(config: dict[str, Any], source: Path, staged: Path, optimized: Path
         "staging": {"path": str(staged.relative_to(PROJECT_ROOT)), "sha256": sha256(staged), "bytes": staged.stat().st_size},
         "optimized": {"path": str(optimized.relative_to(PROJECT_ROOT)), "sha256": sha256(optimized), "bytes": optimized.stat().st_size},
         "units": config["units"], "axes": config["axes"], "origin": config.get("origin", [0, 0, 0]),
-        "materials": config["materials"], "buildMetrics": build_metrics, "reimportMetrics": check_metrics,
+        "materials": config["materials"], "parts": config.get("parts", []), "section": config.get("section", {}),
+        "buildMetrics": build_metrics, "reimportMetrics": check_metrics,
         "previews": previews,
         "promotion": {"status": "not-promoted", "files": [config["processedRelative"], config["publicRelative"]]},
     }

@@ -12,14 +12,22 @@
   "axes": { "forward": "-Z", "up": "Y" },
   "origin": [0.0, 0.0, 0.0],
   "materials": [
-    { "name": "ArkGoldImproved", "baseColor": [0.055, 0.012, 0.001], "metallic": 0.12, "roughness": 0.58 },
-    { "name": "ArkAcaciaWoodImproved", "baseColor": [0.022, 0.0035, 0.0008], "metallic": 0.0, "roughness": 0.72 }
+    { "name": "ArkGoldImproved", "baseColor": [0.8, 0.45, 0.08], "metallic": 0.28, "roughness": 0.34 },
+    { "name": "ArkAcaciaWoodImproved", "baseColor": [0.12, 0.035, 0.01], "metallic": 0.0, "roughness": 0.72 }
   ],
   "materialAssignments": [
-    { "object": "Ark_0", "material": "ArkGoldImproved", "materialByCenterX": "ArkAcaciaWoodImproved", "centerXThreshold": 0.5 },
+    { "object": "Ark_0", "material": "ArkGoldImproved", "regionMaterial": "ArkAcaciaWoodImproved", "region": { "min": [-1.22, -1.35, -0.72], "max": [1.22, 0.4, 0.72] } },
     { "object": "Ark_0.001", "material": "ArkGoldImproved" },
-    { "object": "Ark_1", "material": "ArkAcaciaWoodImproved" }
+    { "object": "Ark_1", "material": "ArkGoldImproved" }
   ],
+  "parts": [
+    { "id": "ark-body", "label": "櫃體（木芯剖面示意）", "object": "Ark_0", "mappingStatus": "source-bounds-region", "claimIds": ["C-EX25-ARK-SPEC"] },
+    { "id": "mercy-seat", "label": "施恩座", "object": "Ark_1", "mappingStatus": "object-level", "claimIds": ["C-EX25-ARK-CHERUB"] },
+    { "id": "cherubim", "label": "二基路伯", "object": "Ark_0.001", "mappingStatus": "object-level", "claimIds": ["C-EX25-ARK-CHERUB"] },
+    { "id": "rings", "label": "四個環（來源未分離節點）", "object": "Ark_0", "mappingStatus": "unresolved", "claimIds": ["C-EX25-ARK-SPEC"] },
+    { "id": "poles", "label": "兩根杠（來源未分離節點）", "object": "Ark_0", "mappingStatus": "unresolved", "claimIds": ["C-EX25-ARK-SPEC"] }
+  ],
+  "section": { "label": "剖面示意：木芯與精金包覆", "note": "教學示意；不代表古物原貌或考古剖面" },
   "cameras": [
     { "name": "R07_Front", "location": [0.0, -6.0, 2.4], "rotation": [1.42, 0.0, 0.0], "lens": 52 },
     { "name": "R07_Side", "location": [6.0, 0.0, 2.4], "rotation": [1.42, 0.0, 1.57], "lens": 52 },
