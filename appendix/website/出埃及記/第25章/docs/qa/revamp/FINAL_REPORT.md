@@ -1,4 +1,52 @@
-# R23 Production 自驗與 GPT-6 交接報告
+# R24 最終驗收：NEEDS_CHANGES
+
+日期：2026-09-10（Asia/Taipei）。執行者：GPT-6 Astra 總控驗收代理；基準 `685da044`，分支 `feat/appendix-exodus25-revamp`。R24 已完成本輪審計，**整站未通過總控驗收，也未發布**。以下結論優先於後方保留的 R23 自驗歷史。
+
+建置與磁碟一致性通過，但仍有來源語意錯置、五祭流程缺失、角色／衣裝未接入場景、跨模式播放殘留、部件映射缺漏。R23 的 PASS 不能代表這些 R24 要求已完成。精確檔案、重現路徑、正式經節、修正範圍與完成條件見 [R24 返工卡](R24_REWORK.md)。本輪沒有委派 Luna、修改網站程式或寫入 Blender；這些卡尚待實作與復驗。
+
+## 本輪實測結果
+
+- [build](r24-build.log)：`npm run build` exit 0，21 個測試檔／65 個測試、architecture 104 modules、assets 17，Vite build 成功。大 chunk 警告仍存在；PowerShell 將該 stderr 記成 NativeCommandError，程序實際 exit 0。
+- [derived](r24-derived.log)：`npm run verify:derived` exit 0。僅 generatedAt 變動的兩份 sidecar 已還原，沒有混入網站修改。
+- [靜態審計](r24-static-audit.json)：17 件 source 宣告符合；processed／public／dist GLB hash 全相同；27 筆正式經文來源臺帳 hash 不一致 0；9 段重新抽取經文忽略 generatedAt 後完全相同；dist 禁止檔案 0。這是機械 PASS，不能替代程序轉述語意審查。
+- 真 Browser 經中文 `/驗收/` 路徑重載；六器物依序 ready，DOM 每次 selectedAsset 各異、activeAssetCount=2、profile=desktop-structural、正常 runtime errors／warnings=0。15 筆成功模型回應（9 種資源，含六 detail）的 SHA-256 全與 dist 相符。見 [ready](r24-detail-ready.json)、[HTTP 回應](r24-http-responses.jsonl)。缺少完整 activeAssetIds 與相機/FOV，且退出未還原，QA02 仍 FAIL。
+- HTTP500 注入 hero／detail：明確選擇低模備援後 ready；燔祭壇 detail 失敗後改選約櫃 ready；文字仍可讀。這是故障子案例通過，不是 QA16 全通過。見 [故障](r24-fault-evidence.json)。
+- 五站逐站 DOM 與來源覆層可用；Escape 關閉來源覆層後焦點回到「資料來源」。見 [五站](r24-tour-evidence.json)、[來源／鍵盤](r24-source-keyboard-evidence.json)。
+
+## R24 QA01–QA18 判定
+
+判定單位是完整 QA 規格；只完成其中子案例時，不標整項 PASS。共 **FAIL 8、UNVERIFIED 10、完整 QA PASS 0**。這不否認上方已通過的機械與操作子案例。
+
+| ID | R24 狀態 | 證據、問題與下一步 |
+| --- | --- | --- |
+| QA01 啟動 | UNVERIFIED | [中文重載](r24-nested-startup.json) 與五入口可用、正常載入無錯；未完成完整冷啟動 cache／所有入口返回矩陣及正式主機配置。 |
+| QA02 真 detail | FAIL | 六 GLB 真回應 hash 已補；[返回總覽](r24-detail-evidence.json) 仍 structural+ark、2資產，未恢復原 profile。完整 active IDs／camera 證據不足。P1-04、05。 |
+| QA03 競態 | UNVERIFIED | 本輪 controlled promise 測試隨 build 通過；未做 A 延遲/B 先到的真實網路矩陣。HTTP500 不是競態注入。P1-07。 |
+| QA04 空間／剖面 | FAIL | 17 可點部件中11缺映射、4 unresolved、2 verified；shell 尚有名稱猜測，十次完整恢復未驗。P1-05。 |
+| QA05 取景 | UNVERIFIED | [手機矩形](r24-mobile-evidence.json) 已記，安全區算法有缺口；缺六器物各鏡位/FOV/本體與槓邊界，過渡截圖不能作充分裁切判定。P1-05。 |
+| QA06 來源 | FAIL | 核准臺帳與 runtime 比較來源未接通、衣裝／動作具體來源入口不足，且程序已有語意錯置。P0-01、P1-06。 |
+| QA07 經文 | UNVERIFIED | 9 段再抽取全量一致，27來源 hash 全符；未完整重做越界負例及多段／逐節閱讀操作矩陣。 |
+| QA08 洗濯／香 | FAIL | 有洗濯與日常香步驟 DOM；幔內香仍綁聖所香壇位置與共用 cue，角色／區域未實作同步。P0-01、P1-02、04。 |
+| QA09 燈／餅 | FAIL | 燈油供應者被錯標未詳；餅步驟漏乳香；七燈／十二餅文字不等於全契約完成。P0-01、P1-02。 |
+| QA10 燔祭／五祭 | FAIL | 四祭流程不存在，燔祭分工錯置；比較表和牛羊鳥播放完成不足以通過。P0-01、P1-03。 |
+| QA11 贖罪日 | FAIL | 14步文字可走查，但香／換衣位置、彈血次數表述與實際角色狀態有缺口；壇識別 U-R24-01 unresolved。P0-01、P1-02。 |
+| QA12 角色／服飾 | FAIL | 獻祭者步顯示供職祭司卡、無四職責完整入口；CharacterSystem 未綁 scene hooks。P1-02。 |
+| QA13 五站／自動 | UNVERIFIED | 五站逐站 DOM 成功；未重做速度／拖動暫停／退出 context 全矩陣；相關跨模式殘留已在 QA02／08 判 FAIL。P1-04。 |
+| QA14 手機／鍵盤 | UNVERIFIED | R24 三視口與 drawer 走查、來源 Escape 焦點成功；未全鍵盤、200% 字體及其餘兩視口完整核心路徑。P1-07。 |
+| QA15 氣氛／效果 | UNVERIFIED | 未做固定照明標樣、reduced-motion 開關、音效與動畫暫停完整實測；不沿用 R23 美觀判定。P1-07。 |
+| QA16 失敗恢復 | UNVERIFIED | 真 hero/detail HTTP500 及恢復成功；離線、WebGL 不可用／context loss 未實測，且啟動前錯誤處理有缺口。P1-07。 |
+| QA17 效能／洩漏 | UNVERIFIED | 無三次60秒、20次往返與真手機資料；firstUsefulFrame 記錄點不符定義，需先修量測。P1-08。 |
+| QA18 可重現交付 | UNVERIFIED | source／derived／dist／response 一致性成功；未空目錄重建 Blender 全鏈，完整部件交付仍有缺口。P1-05、08。 |
+
+## 限制、未決與交付
+
+完整環境、截圖可能落後 DOM、工具限制及復驗條件詳見 [R24_REWORK](R24_REWORK.md)。沒有真手機 GPU、GPU timer、精確20Mbps／50ms RTT或真人新讀者數據。U-R24-01 壇的識別維持 unresolved，不由總控猜測。原始過渡／失敗截圖保留，不能靠檔名認定步驟已驗。
+
+本輪只提交 QA 文件、可重現審計工具與 receipts，保留所有無關工作樹與六個 `.blend1`。提交／push 結果記於本輪收尾回執；本節在提交前不預填成功。下一步先處理 P0-01，再依 P1 卡落地並重做受影響驗收；任何歷史自驗不自動升格為總控透過。
+
+---
+
+# R23 Production 自驗與 GPT-6 交接報告（歷史保留）
 
 日期：2026-09-10（Asia/Taipei）
 基準：R22 commit `a29adc94`，分支 `feat/appendix-exodus25-revamp`

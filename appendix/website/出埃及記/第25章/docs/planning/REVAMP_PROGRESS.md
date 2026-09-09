@@ -4,9 +4,11 @@
 
 ## 總狀態
 
-- 當前階段：R23 自驗透過，下一張為 R24；R00–R23 尚未宣稱整站完成。
+R24 更新：以下 R00–R23 的「自驗透過」保留為當時回報歷史；R24 已對照完整規格發現功能缺口，不能據此宣稱相關任務已完成。R24 由 GPT-6 Astra 驗收代理實際執行，沒有新增 Luna 工程呼叫。
+
+- 當前階段：R24 總控審計完成，結論 NEEDS_CHANGES；整站未通過驗收。P0/P1 返工卡見 [R24_REWORK](../qa/revamp/R24_REWORK.md)，R23 自驗不升格為總控透過。
 - 實際執行模型：本輪總控介面標示 GPT-5；R17、R18、R19、R20、R21 與 R23 production 走查由已授權的 gpt-5.6-luna 子代理實際執行並回報，R22 與 R23 交接整理由目前 GPT-5 總控完成。R22 的 Luna 子代理呼叫未產生可用交付，未將總控介面冒稱為 Luna。
-- 最新測試／build：R23 `npm run build` exit 0；typecheck、21 個測試檔／65 個測試、architecture 104 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 亦 exit 0。
+- 最新測試／build：R24 獨立執行 `npm run build` exit 0；typecheck、21 個測試檔／65 個測試、architecture 104 modules、assets 17 assets 均通過；`npm run verify:derived` exit 0。17 件 source／derived／dist 及成功模型 HTTP 回應 hash 一致，27筆正式經文來源臺帳不一致0、9段引文再抽取一致。機械通過不代表功能驗收通過。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -39,7 +41,7 @@
 | R21 | 回歸／故障 | R20 | gpt-5.6-luna 子代理 | 自驗透過 | [R21 回歸報告](../qa/revamp/R21_REGRESSION.md)、[完整性驗證器](../../src/data/validateProjectData.ts) |
 | R22 | 清理／檔案 | R21 | 目前 GPT-5 session | 自驗透過 | [R22 清理審計](../qa/revamp/R22_CLEANUP.md)、[文件登記](DOCUMENT_REGISTER.md) |
 | R23 | Production自驗 | R22 | gpt-5.6-luna 子代理／GPT-5 總控整合 | 自驗透過 | [FINAL_REPORT](../qa/revamp/FINAL_REPORT.md)、[R23 證據](../qa/revamp/)、[R23 截圖](../qa/revamp/screenshots/) |
-| R24 | 總控驗收 | R23 | GPT-6 | 待辦 | — |
+| R24 | 總控驗收 | R23 | GPT-6 Astra 驗收代理 | NEEDS_CHANGES／待返工 | [FINAL_REPORT](../qa/revamp/FINAL_REPORT.md)、[P0/P1 返工卡](../qa/revamp/R24_REWORK.md)、[R24 靜態回執](../qa/revamp/r24-static-audit.json) |
 
 狀態用「待辦／進行中／自驗透過／受阻／待總控驗收／總控透過」。自驗透過的依賴可讓 Luna 繼續；歷史PASS或僅建立檔案不可當功能自驗透過。來源爭議要記具體受影響工作，停在該邊界，不停掉其他已授權獨立工作。
 
@@ -425,3 +427,15 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：未執�
 未驗證項目／限制／需總控判定：QA02–QA05、QA12、QA14–QA18 的部分或全部仍未完成；角色四入口與日常香／贖罪日用香 scripted check 分別為 UNVERIFIED；真實離線／HTTP 500／WebGL context loss、200% 文字、GPU profiler、三次 60 秒效能與乾淨目錄 Blender 全鏈仍待 R24。`r23-static-audit.json` 的 source 與 derived hash 必須按檔案語義解讀，不能要求三者相等；source map 仍含 `raw_scripture` 字串，是否關閉由 R24 判定。
 結論（自驗／總控分開）：R23 自驗透過，production 交接包已完成；R00–R23 尚未宣稱整站完成，尚未交 GPT-6 R24。
 下一張任務 ID、可直接執行的下一步：R24；由 GPT-6 讀取 `docs/qa/revamp/FINAL_REPORT.md`，重新驗證未驗證項、處理角色／來源／架構 unresolved，必要時建立精確 Luna 返工卡，再決定總控透過或需修改。
+
+
+## R24 執行回執
+
+任務 ID／日期：R24／2026-09-10（Asia/Taipei）。執行模型：GPT-6 Astra 驗收代理；沒有新增 Luna 子代理工作。
+開始基準：`685da044`，`feat/appendix-exodus25-revamp`。本輪只新增／更新 QA 文件、工具、回執與截圖；保留六個既有 `.blend1`，沒有修改正式經文、raw_data、production、網站程式或 Blender。derived 驗證的 generatedAt 變動已還原。
+已讀：LUNA_START、REVAMP_MASTER／TASKS／ACCEPTANCE／PROGRESS、R23 FINAL_REPORT 與 receipts、研究／程序／角色／服飾契約、具名實作、正式來源經文；沒有新增內容 claim。
+命令：`npm run build` exit 0（21檔65測試、104 modules、17 assets）；`npm run verify:derived` exit 0；經文抽取與 `r24-static-audit.py` exit 0。來源臺帳27筆錯配0、引文9段一致、17資產來源與衍生／dist一致。日誌位於 `docs/qa/revamp/r24-*.log`。
+Browser：production dist、中文巢狀重載、六器物 ready、五站、來源覆層 Escape 焦點、六程序與贖罪日14步文字、手機 drawer、真 HTTP500／恢復。15筆成功模型回應 hash 與 dist 相符；此數字不代表15次完整驗收。臨時 localhost:4179 測試伺服器已停止，viewport override 已清除。
+結論：NEEDS_CHANGES；完整 QA 為 FAIL 8、UNVERIFIED 10。P0-01 修正來源語意，P1-02～08 處理角色場景、五祭、模式還原、部件／取景、來源入口、故障可及性與量測／重建。詳見 FINAL_REPORT、R24_REWORK；R00–R23 自驗保留歷史，不代表總控核准。
+未決／限制：U-R24-01 壇識別 unresolved；完整 activeAssetIds／camera、受控網路競態、WebGL故障、reduced-motion、全鍵盤200%、效能長測、真手機GPU、乾淨Blender全鏈與真人新讀者未驗證。部分原始截圖落後 DOM，已明確排除其狀態證明效力。
+提交／push：以本輪收尾回執記錄實際命令結果，不預填成功。下一步依 P0/P1 卡安排已授權 Luna 修正，再由總控復驗；整站未發布。
