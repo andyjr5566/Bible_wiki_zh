@@ -1,6 +1,7 @@
 import assetsJson from './assets.json';
 import charactersJson from './characters.json';
 import dimensionsJson from './dimensions.json';
+import assetPartsJson from './asset-parts.json';
 import evidenceJson from './evidence.json';
 import locationsJson from './locations.json';
 import objectDetailsJson from './object-details.json';
@@ -12,6 +13,7 @@ import toursJson from './tours.json';
 import { assetsSchema } from './schemas/assets';
 import { charactersSchema } from './schemas/characters';
 import { dimensionSpecsSchema } from './schemas/dimensions';
+import { assetPartsSchema } from './schemas/assetParts';
 import { evidenceSchema } from './schemas/evidence';
 import { worldSchema } from './schemas/locations';
 import { objectDetailsSchema } from './schemas/objectDetails';
@@ -26,6 +28,7 @@ export function loadProjectData() {
     assets: assetsSchema.parse(assetsJson),
     characters: charactersSchema.parse(charactersJson),
     dimensions: dimensionSpecsSchema.parse(dimensionsJson),
+    assetParts: assetPartsSchema.parse(assetPartsJson),
     evidence: evidenceSchema.parse(evidenceJson),
     world: worldSchema.parse(locationsJson),
     objectDetails: objectDetailsSchema.parse(objectDetailsJson),

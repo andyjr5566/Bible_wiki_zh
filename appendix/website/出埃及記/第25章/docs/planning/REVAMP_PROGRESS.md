@@ -21,7 +21,7 @@
 | R03 | 資料與抽取 | R01,R02 | 目前 GPT-5 session | 自驗透過 | [scripture-excerpts](../../src/data/scripture-excerpts.json)、[object-details](../../src/data/object-details.json)、[evidence](../../src/data/evidence.json)、[tours](../../src/data/tours.json)、[ProjectData.test](../../src/data/ProjectData.test.ts) |
 | R04 | 入口／狀態 | R03 | 目前 GPT-5 session | 自驗透過 | [UIStateManager](../../src/ui/UIStateManager.ts)、[ModeNavigation](../../src/components/ModeNavigation.ts)、[UIStateManager.test](../../src/ui/UIStateManager.test.ts) |
 | R05 | detail生命週期 | R04 | 目前 GPT-5 session | 自驗透過 | [AssetRuntimeManager](../../src/systems/assets/AssetRuntimeManager.ts)、[AssetRuntimeManager.test](../../src/systems/assets/AssetRuntimeManager.test.ts)、[AppShell](../../src/components/AppShell.ts) |
-| R06 | 空間／剖面／取景 | R05 | Luna | 待辦 | — |
+| R06 | 空間／剖面／取景 | R05 | 目前 GPT-5 session | 自驗透過 | [CameraManager](../../src/scene/CameraManager.ts)、[DimensionVisualizer](../../src/scene/DimensionVisualizer.ts)、[asset-parts](../../src/data/asset-parts.json)、[CameraManager.test](../../src/scene/CameraManager.test.ts) |
 | R07 | Blender流程 | R03,R06 | Luna | 待辦 | — |
 | R08 | 約櫃修正 | R07,R01 | Luna | 待辦 | — |
 | R09 | 完整會幕／照明 | R07,R08 | Luna | 待辦 | — |
@@ -156,3 +156,18 @@ Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender、sou
 未驗證項目／限制／需總控判定：GLTF loader 的跨 consumer 共享取消仍沿用既有 promise cache；完整錯誤重試 UI 與 R21 故障演練尚待後續；detail 是否完全隔離於每個 GLB 的部件邊界待 R06/R12 實測。
 結論（自驗／總控分開）：R05 自驗透過；點選器物會真實觸發 detail pipeline，late response 不會覆蓋新選取，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R06；統一世界、部件 bounds、剖面取景與尺寸資料的座標契約。
+
+## R06 執行回執
+
+任務ID／起訖日期：R06／2026-09-10 03:45–04:05（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；以 CameraManager／資料契約測試、Vite build 與既有 Browser preview 驗證，未宣稱 GPT-5.6 Luna。
+開始時工作樹或基準hash：R05 commit `66ef8b52`，分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准claim IDs：R03 尺寸與 evidence、R05 detail 資產 manifest、現有 WorldAlignment／CameraManager；未新增歷史 claim。
+變更檔案：新增 `src/data/asset-parts.json`、`src/types/assetParts.ts`、`src/data/schemas/assetParts.ts` 並納入 loader；`DimensionVisualizer.ts` 維持只讀 typed dimension specs，未詳載尺寸不產生尺線；`CameraManager.ts` 改由 dimension specs 推導器物取景並補 ritual rig；`SceneBootstrap.ts` 傳入同一份 specs；更新 `CameraManager.test.ts` 與 `ProjectData.test.ts`。
+Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender、source GLB 或 processed GLB；用 GLB JSON chunk 讀取現有 detail node 名稱，未將未能確認的約櫃節點冒稱 verified。
+驗收QA IDs：R06 世界 Y-up／東 +Z／至聖所 -Z、typed 尺寸、未知尺寸不數值化、asset part map、器物取景。
+命令、exit code、log路徑：`npm run build` exit 0；typecheck、16 檔／36 tests、architecture 93 modules、assets 17 assets 均通過；CameraManager 測試確認取景由 specs 推導；`git diff --check` 無內容錯誤。
+畫面與activeAssetIds／profile／viewport證據：未新增截圖；R05 Browser detail DOM 證據仍有效。未宣稱旋轉後、390×844 或各 GLB 可見部件已完成驗收。
+未驗證項目／限制／需總控判定：現有相機仍以規則推導，尚未依每個 GLB 實際 bounds 做 R12 校準；約櫃、香壇與桌的部分節點名稱仍 unresolved；剖面恢復迴圈與門檻避障留待 R09/R17。
+結論（自驗／總控分開）：R06 自驗透過；世界／取景／尺寸／部件資料已同源，未知部件維持 unresolved，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R07；建立安全可重現的 Blender 隔離工作檔與 staging 匯出流程。

@@ -50,7 +50,7 @@ export class SceneBootstrap {
     assetRoot.name = 'runtime-assets';
     worldRoot.add(assetRoot);
 
-    const cameraManager = new CameraManager(1, canvas);
+    const cameraManager = new CameraManager(1, canvas, dimensionSpecs);
     const environment = new DesertEnvironment(scene);
     const particles = new ParticleEffects(worldRoot);
     const dimensions = new DimensionVisualizer(worldRoot, dimensionSpecs);

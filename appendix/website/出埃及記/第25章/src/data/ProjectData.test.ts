@@ -42,6 +42,13 @@ describe('project data contracts', () => {
       if (tour.objectId) expect(objects.has(tour.objectId)).toBe(true);
       tour.excerptIds.forEach((id) => expect(excerptIds.has(id)).toBe(true));
     });
+    data.assetParts.mappings.forEach((mapping) => {
+      expect(assetIds).toContain(mapping.assetId);
+      expect(objects).toContain(mapping.objectId);
+      mapping.parts.forEach((part) => expect(part.partId).toMatch(/^[a-z0-9][a-z0-9-]*$/));
+    });
+    expect(data.objectDetails.objects.find(({ id }) => id === 'menorah')?.dimensions.status).toBe('unresolved');
+    expect(data.objectDetails.objects.find(({ id }) => id === 'menorah')?.dimensions.heightCubits).toBeNull();
   });
   it('defines all required high-priest garment slots', () => {
     const highPriest = data.characters.characters.find(({ role }) => role === 'HighPriest');
