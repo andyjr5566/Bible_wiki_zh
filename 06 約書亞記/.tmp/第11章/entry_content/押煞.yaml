@@ -1,0 +1,27 @@
+name: 押煞
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: |-
+  押煞是書11:1 北方聯軍名單上的最後一座城，同樣只寫「押煞王」而沒有名字。
+
+  CT 的原文字義給「押煞」咒語，並說押煞位於伸崙的西方約16公里、靠近地中海海岸。GT《約書亞記研經資料》給的字義不同：「我將被迷惑」，並說一般認為此處就是凱桑遺址（Tell Keisan），位於伸崙西北偏北約20公里、距離地中海約5公里。GT《串珠聖經注釋》說押煞在北部沿岸地區、近亞柯之東南。
+
+  BH 把伸崙與押煞一起處理，說這個聯盟顯出迦南抵抗力量的強大，卻也為神顯明沒有任何地上勢力的集結能攔阻祂對以色列的應許鋪了路。
+accumulations:
+- book: 約書亞記
+  chapter: 11
+  summary: |-
+    第1節「就打發人去見瑪頓王約巴、伸崙王、押煞王」。CT 原文字義給「押煞」咒語，並說押煞位於伸崙的西方約16公里、靠近地中海海岸。GT《研經資料》說字義是「我將被迷惑」，一般認為此處就是凱桑遺址（Tell Keisan），位於伸崙西北偏北約20公里、距離地中海約5公里；GT《串珠》說押煞在北部沿岸地區、近亞柯之東南。BH 說這個聯盟顯出迦南抵抗力量的強大，卻也為神顯明沒有任何地上勢力的集結能攔阻祂的應許鋪了路。
+  relation: 名單的最後一站，也是最靠海的一站。第1節從夏瑣一路點到押煞，等於把整個北方由內陸畫到地中海岸。
+related_entries:
+- 夏瑣
+- 耶賓
+- 瑪頓
+- 伸崙
+- 多珥
+sources:
+- '逐節註解（ccbiblestudy CT）: 約書亞記第十一章註解 — 書十一1〔原文字義〕「押煞」咒語與位置（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT11.htm>）'
+- '拾穗（ccbiblestudy GT）: 約書亞記第十一章拾穗 — 書十一1《研經資料》凱桑遺址、《串珠》近亞柯之東南（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT11.htm>）'
+- '研經註解（BibleHub Study）: Joshua 11:1 — Shimron and Achshaph joined the growing northern coalition（<https://biblehub.com/study/joshua/11.htm>）'

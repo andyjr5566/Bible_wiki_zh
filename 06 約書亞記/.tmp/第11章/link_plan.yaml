@@ -1,0 +1,553 @@
+book: 約書亞記
+chapter: 11
+A_use_directly:
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 第3節「與山地的亞摩利人、赫人、比利洗人、耶布斯人」。CT 原文字義給「比利洗」屬於某一村莊。GT《研經資料》說「比利洗人」原意是「屬於某一村莊的人」、「鄉村人」，應該是居住城市的迦南人之外的另一個民族。BH
+    把他們列在控制迦南中部山區設防城與高地的民族之中。
+  surfaces:
+  - phrase: 比利洗人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 希未人
+  suggested_type: 歷史
+  evidence: 第3節「並黑門山根米斯巴地的希未人」；第19節「除了基遍的希未人之外，沒有一城與以色列人講和的」。CT 原文字義給「希未」村民。GT《研經資料》說「希未人」字義是「村民」，居住於迦南北方靠近黑門山之處；GT《丁道爾聖經注釋》說只有基遍人的領袖和以色列人講和，而在約書亞記的前文這個動詞只出現於亞多尼洗德聽見基遍人與以色列人立了和約（十1）；GT《綜合解讀》說如果迦南人願意，其它城市也可以效法基遍人與以色列人講和。BH
+    說 The Hivites lived in the northern territory near Mount Hermon，把這個聯盟從南部與中部一直延伸到迦南的北界；BH
+    又在第19節說基遍人單獨尋求與以色列立約，雖然是用欺騙的方式取得，卻顯出他們聽見了耶和華的能力並懼怕祂的審判。
+  surfaces:
+  - phrase: 希未人
+    verses:
+    - 3
+    - 19
+  match_type: exact
+  existing_title: 希未人
+  existing_path: link_folder/歷史/希未人.md
+B_needs_update:
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第6節耶和華對他說不要因他們懼怕；第7節他率領一切兵丁在米倫水邊突然向前攻打；第9節他照耶和華所吩咐的砍斷馬蹄筋、焚燒車輛；第10至13節他轉回奪了夏瑣、殺夏瑣王、焚燒夏瑣；第15節「凡耶和華所吩咐摩西的，約書亞沒有一件懈怠不行的」；第16至18節他奪了那全地、和這諸王爭戰了許多年日；第21節他剪除亞衲族人；第23節他按支派宗族將地分給他們為業。CT
+    原文字義給「懈怠不行」置之一旁、棄絕，並說『沒有一件懈怠不行的』意指不折不扣地遵行了神的命令。GT《聖經精讀本》說以色列軍隊獲勝是因為神的幫助、約書亞卓越的戰術，以及整個以色列軍兵充滿確信的英勇進攻；GT《綜合解讀》說無論是艾城之戰、基遍之戰還是米倫水之戰，約書亞都是「突然」進攻，一面是完全倚靠神、一面是竭盡全力，並說「凡耶和華所吩咐摩西的，約書亞沒有一件懈怠不行的」正是他每一次得勝的秘訣。KC
+    說 At the end of the battle, the writer recalls that victory and blessing are the
+    result of obedience. Joshua did everything as the LORD commanded him by Moses。BH
+    說約書亞在爭戰、分地與除去迦南堡壘上都以耶和華所立的僕人身分行事，並說 Joshua did not set aside difficult commands
+    when they required courage, endurance, or costly conflict。
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第12節「正如耶和華僕人摩西所吩咐的」；第15節「耶和華怎樣吩咐他僕人摩西，摩西就照樣吩咐約書亞，約書亞也照樣行」；第20節「正如耶和華所吩咐摩西的」；第23節「約書亞照著耶和華所吩咐摩西的一切話奪了那全地」。CT
+    說『摩西所吩咐的』請參閱申七2，又說摩西曾忠心地將神的命令交付約書亞、要他去得迦南地為業（申三十一7~8）。GT《丁道爾聖經注釋》在第15節問為什麼這些城要毀掉，答案是摩西曾忠心地將神的命令交付約書亞，並請讀者參照申31:7~8；GT《研經資料》說「耶和華所吩咐摩西的」指的應該是申20:1~20。BH
+    說這句話強調摩西所領受之命令背後的神聖權柄，也顯出神的約與吩咐從摩西到約書亞的延續，並說約書亞承接的不是個人的異象或修訂過的使命，而是執行神既定之約的責任。
+  surfaces:
+  - phrase: 摩西
+    verses:
+    - 12
+    - 15
+    - 20
+    - 23
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第3節「與山地的亞摩利人、赫人、比利洗人、耶布斯人」。CT 原文字義給「亞摩利」山居者。GT《研經資料》說「亞摩利人」是「山居者」之意、泛指迦南地的原住民；GT《丁道爾聖經注釋》說南方的聯盟被稱為是亞摩利人，但北方則不同、是由不同的種族組成；GT《綜合解讀》說南方五王聯軍都是「亞摩利人」（十6），但北方諸王聯軍則由許多的種族組成。BH
+    說這些民族控制了迦南中部山區的設防城與戰略高地。
+  surfaces:
+  - phrase: 亞摩利人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 第3節「與山地的亞摩利人、赫人、比利洗人、耶布斯人」。CT 原文字義給「赫」恐懼、恐怖，並說迦南七族中這裡共列了六族、僅缺革迦撒人。GT《研經資料》說「赫人」是「赫的子孫」，「赫」是迦南的第二個兒子。BH
+    把赫人與亞摩利人、比利洗人、耶布斯人並列，說他們控制了迦南中部山區的設防城與戰略高地，而他們聯合的抵抗無法推翻耶和華把這地賜給祂百姓的旨意。
+  surfaces:
+  - phrase: 赫人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 第3節「與山地的亞摩利人、赫人、比利洗人、耶布斯人」。CT 原文字義給「耶布斯」被踐踏。GT《丁道爾聖經注釋》說這裡的耶布斯人是住在山地的人，有關這些人沒有進一步的資料可尋；GT《研經資料》說耶布斯人曾經佔領耶路撒冷、原居於迦南山區。BH
+    說 The Jebusites held Jerusalem until David captured it and made it Israel's capital（撒下5:6-9）。
+  surfaces:
+  - phrase: 耶布斯人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 第3節「又去見東方和西方的迦南人」。CT 原文字義給「迦南」熱心的、商人，並說『東方和西方的迦南人』指住在內陸（東方）和沿海地區（西方）的迦南人。GT《聖經精讀本》說居住在山地的亞摩利人與居住在海岸線的迦南人有著明顯的區別（書10:5
+    註）。BH 說 The Canaanites occupied broad regions on both sides of the central hill
+    country，並說他們的偶像崇拜與敗壞行為長久玷污了這地，神對他們的審判同時成就了祂對亞伯拉罕關於這地為業的應許。
+  surfaces:
+  - phrase: 迦南人
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 亞衲族與偉人拿非林
+  suggested_type: 背景
+  evidence: '第21節「當時約書亞來到，將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了」；第22節「在以色列人的地沒有留下一個亞衲族人，只在迦薩、迦特，和亞實突有留下的」。STEP
+    顯示第21節是 ha./''a.na.Kim（H6062，簡要詞典義 a.na.qi: Anakite）。CT 原文字義給「亞衲」頸，並說『亞衲族人』指一種身材魁偉的巨人族（參民十三33）。GT《雷氏研讀本》說亞衲族人是住在南部的巨人、他們在四十年前曾嚇跑以色列人的探子；GT《綜合解讀》說亞衲族人是巨人、他們在四十多年前曾叫老一代的以色列人恐懼退縮（民十三），唯有約書亞和迦勒沒有懼怕，而現在約書亞帶領百姓剪除了所有的亞衲族人，印證了老一代以色列人的愚昧；GT《研經資料》說「亞衲」字義是「頸」，這一族人通常被視為「巨人」，聖經以外沒有其他文獻明確提起亞衲族人、但埃及的碎陶咒詛文獻可能提及他們，並說西元前十三世紀的阿納斯塔西第一蒲草紙記載迦南地有些戰士身高270到210公分，另外也挖到兩具身高210公分的女性骸骨；GT《華爾頓約書亞記背景注釋》說「巨大」可能是更合適的形容，並說兩副來自主前十二世紀、體高七呎左右的女性骸骨亦在外約但的薩伊德葉遺址出土。KC
+    說 Without God we are nothing and we lose to dwarves. With God we can do everything
+    and giants are nothing，並說仍有少數巨人存留、其中一個後裔就是歌利亞。BH 說 The Anakim had terrified the
+    unbelieving spies forty years earlier，並說約書亞的得勝顯明沒有任何仇敵能廢掉神的話。'
+  surfaces:
+  - phrase: 亞衲族人
+    verses:
+    - 21
+    - 22
+  match_type: exact
+  existing_title: 亞衲族與偉人拿非林
+  existing_path: link_folder/背景/亞衲族與偉人拿非林.md
+- name: 基尼烈湖
+  suggested_type: 地點
+  evidence: 第2節「與北方山地、基尼烈南邊的亞拉巴高原」。CT 原文字義給「基尼烈」豎琴，並說『基尼烈』指加利利海的西北地區。GT《雷氏研讀本》說「基尼烈」就是加利利海；GT《啟導本》說基尼烈湖即加利利海；GT《串珠聖經注釋》說基尼烈或許是近基尼烈湖（即加利利海）的一個城，其南邊的「亞拉巴」大概指加利利海南部之約但河谷；GT《研經資料》說「基尼烈」字義是「豎琴」，就是「加利利海」的早期名稱；GT《丁道爾聖經注釋》說基尼烈就是烏瑞瑪廢墟（Tel
+    Kinrot），它俯瞰加利利海的西北岸。BH 說 The Arabah lay in the Jordan Rift Valley south of the
+    Sea of Chinnereth, later called the Sea of Galilee。
+  surfaces:
+  - phrase: 基尼烈
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 基尼烈湖
+  existing_path: link_folder/地點/基尼烈湖.md
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: 第2節「基尼烈南邊的亞拉巴高原」；第16節「就是山地、一帶南地、歌珊全地、高原、亞拉巴、以色列的山地，和山下的高原」。CT 原文字義給「亞拉巴」沙漠高原，並說第2節的『亞拉巴高原』原文是「亞拉巴低原」、指約但河西面河谷的丘陵地帶，第16節的『亞拉巴』指北部約但河西面河谷的丘陵地帶。GT《串珠聖經注釋》說第2節應譯作「與北方山地、基尼烈南邊的亞拉巴、低原、並西邊多珥山崗的諸王」；GT《研經資料》說「亞拉巴高原」原文應該是「亞拉巴、高原」，兩個字都有冠詞、指的是兩個地方，「亞拉巴」是指約旦河旁邊的曠野，並說第16節的「亞拉巴」是「沙漠曠野」、「乾草原」，也可以是專有地名、此處有冠詞比較可能是專有地名；GT《綜合解讀》說第16節的「亞拉巴」指約旦河穀。BH
+    說 The Arabah included the deep valley associated with the Jordan and Dead Sea
+    region and extended southward toward the Gulf of Aqaba。
+  surfaces:
+  - phrase: 亞拉巴
+    verses:
+    - 2
+    - 16
+  match_type: exact
+  existing_title: 亞拉巴
+  existing_path: link_folder/地點/亞拉巴.md
+- name: 黑門山
+  suggested_type: 地點
+  evidence: 第3節「並黑門山根米斯巴地的希未人」；第17節「直到黑門山下利巴嫩平原的巴力迦得」。CT 原文字義給「黑門」聖所，並說『黑門山』是迦南地北方最高的山，『米斯巴地』是黑門山腳的坡地和平原。GT《串珠聖經注釋》說黑門山於利巴嫩山對面、為北部最高的山；GT《研經資料》說「黑門」字義是「聖所」，「黑門山」是巴勒斯坦和黎巴嫩東北邊界上的一座山，而「黑門山根」是「黑門山腳下」、指黑門山西邊坡地的一些山谷平原帶；GT《丁道爾聖經注釋》說黑門山可以包括利巴嫩前山（Ante~Lebanon）的草場，就是今天的黑門山北方的一片地區；GT《啟導本》說黑門山為巴勒斯坦地最高的一座山、有兩個山峰、海拔2813公尺、山脈全長33公里。BH
+    說希未人住在黑門山腳一帶的北方境內。
+  surfaces:
+  - phrase: 黑門山
+    verses:
+    - 3
+    - 17
+  match_type: exact
+  existing_title: 黑門山
+  existing_path: link_folder/地點/黑門山.md
+- name: 利巴嫩
+  suggested_type: 地點
+  evidence: 第17節「直到黑門山下利巴嫩平原的巴力迦得」。CT 原文字義給「利巴嫩」潔白，並說第2節的『北方山地』指利巴嫩南部山區。GT《華爾頓約書亞記背景注釋》說學者一般認為利巴嫩平原即是米斯巴穀，與利坦尼河谷會合、注入胡列穀；GT《丁道爾聖經注釋》在第3節說黑門山可以包括利巴嫩前山的草場，而米斯巴應當含括裡他尼河的東部，這條河是從貝卡平原的南端沿著瑪迦雲平原、經過呼勒盆地的北端然後再轉西流向推羅。BH
+    在同一節說巴力迦得所在的利巴嫩平原標出了所征服土地的北端。
+  surfaces:
+  - phrase: 利巴嫩
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 利巴嫩
+  existing_path: link_folder/地點/利巴嫩.md
+- name: 米斯巴
+  suggested_type: 原文
+  evidence: 第3節「並黑門山根米斯巴地的希未人」；第8節「直到東邊米斯巴的平原」。CT 原文字義兩處分別給「米斯巴」暸望台與守望台，並說『米斯巴地』是黑門山腳的坡地和平原、『米斯巴的平原』位於黑門山腳下的平原、是迦南地的東北界。GT《研經資料》說「米斯巴」字義是「瞭望台」；GT《丁道爾聖經注釋》說至於黑門山根、米斯巴地的希未人，可參第8節的東邊米斯巴的平原和第17節的黑門山下利巴嫩平原，這是指黑門山西邊坡地的一些山谷平原帶，並說米斯巴應當含括裡他尼河的東部；GT《綜合解讀》說「米斯巴的平原」在米倫水的東面。BH
+    說 The Valley of Mizpeh, meaning "watchtower," lay in the northern interior, likely
+    near the region of Mount Hermon。
+  surfaces:
+  - phrase: 米斯巴地
+    verses:
+    - 3
+  - phrase: 米斯巴的平原
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 米斯巴
+  existing_path: link_folder/原文/米斯巴.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 第16節「約書亞奪了那全地，就是山地、一帶南地、歌珊全地、高原、亞拉巴、以色列的山地，和山下的高原」。CT 原文字義給「一帶南地」南方、尼吉，並說『一帶南地』原文是「南地全部」，指南部山地以南、直至與尋的曠野接壤的一片貧瘠乾地。GT《綜合解讀》說「一帶南地」原文是「南地全部」、指猶大山地南邊的乾旱曠野；GT《研經資料》說「一帶南地」是「整個南地」，「南地」是指「猶大南方之地」。BH
+    說 The Negev lay south of the hill country, extending through dry pasturelands
+    and desert terrain，並說它雖然嚴酷而人煙稀少，仍屬於神應許給以色列的產業、後來成為猶大境內的一部分。
+  surfaces:
+  - phrase: 一帶南地
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 歌珊（迦南南部）
+  suggested_type: 地點
+  evidence: 第16節「歌珊全地」。CT 原文字義給「歌珊」拉近，並說『歌珊全地』不是指埃及的歌珊，而是指死海東面、山地南面的一塊地區。GT《研經資料》說「歌珊」並非指埃及的歌珊地，而是迦薩與基遍之間的一個區域。BH
+    說 Goshen in Canaan was distinct from the Goshen where Jacob's family lived in
+    Egypt，並說它位於迦南南部、為以色列所征服的領土增添了可耕之地。書10:41 的歌珊與本節是同一個地方——GT《丁道爾聖經注釋》在書10:41 就說那裡的歌珊是書11:16
+    的歌珊、和書15:51 相關。
+  surfaces:
+  - phrase: 歌珊
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 歌珊（迦南南部）
+  existing_path: link_folder/地點/歌珊（迦南南部）.md
+- name: 高原（Shephelah）
+  suggested_type: 地點
+  evidence: 第2節「基尼烈南邊的亞拉巴高原」；第16節「歌珊全地、高原、亞拉巴」與「山下的高原」。CT 說第16節的『高原』原文是「低地」，指介於中央山地和沿海平原之間的丘陵地帶，而『山下的高原』原文是「山下的低原」、指中部山下的低地。GT《串珠聖經注釋》說第16節的「高原」應作「低原」；GT《綜合解讀》說「高原」原文是「低地」，特指猶大山地和沿海平原之間的丘陵地帶「示非拉
+    Shephelah」，而「山下的高原」原文是「山下的低地」、指北方的丘陵地帶；GT《研經資料》說「高原」字義是「低地」，或者是「猶大山區之西的地帶」的專有名詞，並說第2節的「亞拉巴高原」原文應該是「亞拉巴、高原」兩個地方。BH
+    說 The western foothills, commonly called the Shephelah, formed the rolling lowland
+    between the Judean mountains and the coastal plain，並在第2節說這片低地提供了良田、也把守著通往內陸的入口。
+  surfaces:
+  - phrase: 高原
+    verses:
+    - 2
+    - 16
+  match_type: exact
+  existing_title: 高原（Shephelah）
+  existing_path: link_folder/地點/高原（Shephelah）.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: '第21節「將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了」。STEP 為 chev.rOn（H2275A，簡要詞典義
+    chev.ron: Hebron）。CT 原文字義給「希伯崙」聯合，並說希伯崙位於耶路撒冷西南方三十公里。BH 說 Hebron, long associated
+    with Abraham and the patriarchs, would later be given to Caleb, who had trusted
+    God when others feared the Anakim。GT《綜合解讀》把本節接回民13：亞衲族人四十多年前曾叫老一代的以色列人恐懼退縮，而現在約書亞帶領百姓剪除了所有的亞衲族人。'
+  surfaces:
+  - phrase: 希伯崙
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 底璧（城）
+  suggested_type: 地點
+  evidence: '第21節「將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了」。STEP 為 de.Vir（H1688A，簡要詞典義
+    de.vir: Debir）。CT 原文字義給「底璧」聖所，並說底璧位於希伯崙西南方十八公里。BH 說這幾座城都位於迦南南部的高地。本章的底璧與書10:38-39
+    攻取的是同一座城，本節記的是後續剪除亞衲族人的行動。'
+  surfaces:
+  - phrase: 底璧
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 底璧（城）
+  existing_path: link_folder/地點/底璧（城）.md
+- name: 基遍
+  suggested_type: 地點
+  evidence: 第19節「除了基遍的希未人之外，沒有一城與以色列人講和的，都是以色列人爭戰奪來的」。CT 原文字義給「基遍」丘陵城市、「講和」締結和約、和好，並說『基遍的希未人…與以色列人講和』詳情記載於書九章。GT《丁道爾聖經注釋》說只有基遍人的領袖和以色列人講和，而在約書亞記的前文這個動詞只出現於亞多尼洗德聽見的消息、就是基遍人與以色列人立了和約（十1）；GT《研經資料》說與以色列人「講和」是「締結和平之約」，這個動詞在舊約出現多次但在約書亞記只出現三次，另外兩次就是記載耶路撒冷王聽見基遍人與以色列人「立了和約」（10:1、10:4），並說七十士譯本沒有「除了基遍的希未人之外」此句；GT《綜合解讀》說如果迦南人願意，其它城市也可以效法基遍人與以色列人講和，但他們就像法老一樣自己「心裡剛硬」。KC
+    說 The example of Rahab and the Gibeonites makes clear that God is unaltered in
+    His desire to save people。BH 說基遍人單獨尋求與以色列立約，顯出他們聽見了耶和華的能力並懼怕祂的審判。
+  surfaces:
+  - phrase: 基遍
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 基遍
+  existing_path: link_folder/地點/基遍.md
+- name: 迦薩
+  suggested_type: 地點
+  evidence: 第22節「只在迦薩、迦特，和亞實突有留下的」。CT 原文字義給「迦薩」強壯，並說迦薩、迦特和亞實突是地中海沿岸屬於非利士人的地方，當時神沒有命令以色列人攻打非利士人、到大衛王的時代才被以色列人征服。GT《研經資料》說「迦薩」字義為「強壯」，是非利士人的一個城市，位於巴勒斯坦的極西南邊、靠近地中海；GT《綜合解讀》說「迦薩、迦特和亞實突」是非利士人的地方。BH
+    說 These coastal cities remained in Philistine territory and lay beyond the areas
+    secured during Joshua's campaigns。
+  surfaces:
+  - phrase: 迦薩
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 迦薩
+  existing_path: link_folder/地點/迦薩.md
+- name: 滅絕（herem）
+  suggested_type: 神學
+  evidence: '第11節「以色列人用刀擊殺城中的人口，將他們盡行殺滅；凡有氣息的沒有留下一個」；第12節「將他們盡行殺滅，正如耶和華僕人摩西所吩咐的」；第20節「好叫他們盡被殺滅，不蒙憐憫」；第21節「約書亞將他們和他們的城邑盡都毀滅」。STEP
+    顯示第20節「盡被殺滅」是 ha.cha.ri.Ma/m（H2763A，簡要詞典義 cha.ram: to devote/destroy），同節另有 hash.mi.Da/m（H8045，簡要詞典義
+    sha.mad: to destroy），第21節「盡都毀滅」是同一個 H2763A 的 he.che.ri.Ma/m。CT 原文字義給「盡行殺滅」完全地毀壞，並說『盡行殺滅』包括諸王和居民，『摩西所吩咐的』請參閱申七2。GT《綜合解讀》說在10~15節的北方戰役清單裡一次又一次地重複了「盡行殺滅」，表明約書亞和百姓不折不扣地遵行了神的命令；GT《啟導本》說以色列人進迦南是一次聖戰，神的土地必須潔淨、沒有拜偶像的異教信仰者居住，以色列人既為聖潔的子民不可與拜偶像的人混合、以免信仰受損。KC
+    用整整一段回答這個難題，說 the judgment only comes when the measure of sin is full and man
+    has not wanted to repent，並列出三個理由：神從不在沒有警告與足夠時間之下審判、神的寬容等了四百年直到亞摩利人的罪孽滿盈、以及他們知道神是審判者卻沒有一城善待以色列人。BH
+    說這些迦南民族因長期的偶像崇拜、暴力與敗壞而落在神的審判之下，這也保護以色列免於落入使那地被玷污的敬拜與行為。'
+  surfaces:
+  - phrase: 盡行殺滅
+    verses:
+    - 11
+    - 12
+  match_type: exact
+  existing_title: 滅絕（herem）
+  existing_path: link_folder/神學/滅絕（herem）.md
+- name: 荒堆（tel）
+  suggested_type: 原文
+  evidence: '第13節「至於造在山岡上的城，除了夏瑣以外，以色列人都沒有焚燒」。STEP 顯示「造在山岡上」是 ha./''o.me.dOt（H5975G，簡要詞典義
+    a.mad: to stand: stand）''al- ti.La/m（H8510，簡要詞典義 tel: mound）——字面是「站立在它們的土堆上」。CT
+    原文字義給「山崗」山丘、高地，並說『都沒有焚燒』是留下供自己居住（參申六10）。GT《雷氏研讀本》說「山岡」是由早期城鎮的瓦礫堆積而成的山丘或廢丘；GT《研經資料》說「山岡」上的城是「廢墟堆」、「土堆」；GT《綜合解讀》說「造在山岡上的城」是因為迦南地的城通常都建在多石的山上，以利於防禦、也留出平地來種植糧食，並說其他的城市都沒有被焚燒是因為神要把這些城市作為白白的恩典賜給百姓，引申6:10~12。BH
+    說 Israel preserved most of the captured hilltop cities for settlement, receiving
+    houses, fields, and established communities they had not built, as God had promised。'
+  surfaces:
+  - phrase: 造在山岡上的城
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 荒堆（tel）
+  existing_path: link_folder/原文/荒堆（tel）.md
+- name: 剪除
+  suggested_type: 原文
+  evidence: '第21節「將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了」。STEP 顯示這個動詞是 va/i.yakh.Ret（H3772I，簡要詞典義
+    ka.rat: to cut: eliminate），是 Hiphil 使役語幹、主詞是約書亞。CT 原文字義給「剪除」砍掉、毀滅。GT《研經資料》說「剪除」字義是「剪除」、「毀滅」，猶太版英文聖經（TNK，1985）作
+    wiped out（消滅）。BH 說 Joshua proceeded to eliminate the Anakim from the hill country，這場戰役橫跨中部與南部山地、鞏固了以色列定居所必需的地區。同一節後半的「盡都毀滅」用的是另一個字
+    he.che.ri.Ma/m（H2763A cha.ram），兩個動詞在一節裡並列。'
+  surfaces:
+  - phrase: 剪除
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 剪除
+  existing_path: link_folder/原文/剪除.md
+- name: 勉勵他使他膽壯（cha.zaq、a.mats）
+  suggested_type: 原文
+  evidence: '第20節「因為耶和華的意思是要使他們心裡剛硬，來與以色列人爭戰」。STEP 顯示「使他們心裡剛硬」是 le./cha.Zek（H2388G，簡要詞典義
+    cha.zaq: to strengthen: strengthen）加 ''et- li.Ba/m（H3820A，簡要詞典義 lev: heart）——動詞正是本條目所收的
+    cha.zaq，只是受詞換成了迦南諸王的心。CT 原文字義給「剛硬」住下、留下、堅持，並說『使他們心裡剛硬』意指神容許他們心裡剛硬、為要達成神的旨意。GT《綜合解讀》說如果迦南人願意，其它城市也可以效法基遍人與以色列人講和，但他們就像法老一樣自己「心裡剛硬」、同心合意地「來與以色列人爭戰」，所以神就任憑他們繼續「心裡剛硬」；GT《聖經精讀本》說作者用這種表達方式強有力地表示了惡人因自己的頑梗悖逆而落到了只能被遺棄的境地。KC
+    說 God hardens a heart only if someone has hardened his heart first. Hardening
+    is a judgment from God, after man has refused to submit to God。BH 說 God gave the
+    Canaanite kings over to the rebellion they had long chosen，並說這種剛硬讓人想起法老在出埃及時對神的抵擋，同時顯出神的主權與人的責任。'
+  surfaces:
+  - phrase: 心裡剛硬
+    verses:
+    - 20
+  match_type: exact
+  existing_title: 勉勵他使他膽壯（cha.zaq、a.mats）
+  existing_path: link_folder/原文/勉勵他使他膽壯（cha.zaq、a.mats）.md
+- name: 法老心剛硬
+  suggested_type: 神學
+  evidence: 第20節「因為耶和華的意思是要使他們心裡剛硬，來與以色列人爭戰，好叫他們盡被殺滅，不蒙憐憫」。GT《綜合解讀》直接把它接到出埃及記：他們就像法老一樣（出七13）自己「心裡剛硬」，所以神就任憑他們繼續「心裡剛硬」（出十1）、讓他們自取滅亡；GT《啟導本》說此處和申命記七章及二十16~18
+    說明了以色列人在戰爭中殺滅敵人的理由。KC 說 There is a hardening of the Gentiles (Rom 1:24,26,28),
+    the Jews (Rom 11:25) and the nominal Christians (2Thes 2:11-12)，並強調 God hardens
+    a heart only if someone has hardened his heart first。BH 說 Their hardening recalls
+    Pharaoh's opposition to God in the Exodus and displays both divine sovereignty
+    and human accountability。本章經文用的字是 cha.zaq（H2388G），與出埃及記記述法老時所用的其中一個動詞相同。
+  match_type: exact
+  existing_title: 法老心剛硬
+  existing_path: link_folder/神學/法老心剛硬.md
+- name: 艾城准取掠物的轉變
+  suggested_type: 主題
+  evidence: 第14節「那些城邑所有的財物和牲畜，以色列人都取為自己的掠物；惟有一切人口都用刀擊殺，直到殺盡」。CT 原文字義給「取為…掠物」搶劫、掠奪，並說『掠物』指戰利品。GT《聖經精讀本》說這意味著神允許以色列佔有所擄獲的財物與家畜（八2）；GT《研經資料》在比較耶利哥、艾城與夏瑣三城時列出戰利品的差別：耶利哥是金屬器皿歸耶和華、財物與牲畜可歸己用，艾城是財物、牲畜可歸己用，夏瑣則是不留牲畜。KC
+    說 God has promised His people that they will live in cities which they themselves
+    have not built (Deu 6:10-11). Not everything should be destroyed. Things that
+    are of use to them must be spared。BH 說 Unlike Jericho, whose wealth was devoted
+    wholly to the Lord, the captured goods of these northern cities were given to
+    Israel，這些牲畜、糧食、金屬與其他財物在征服期間供養各支派、也為在這地定居提供了資源。
+  surfaces:
+  - phrase: 掠物
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 艾城准取掠物的轉變
+  existing_path: link_folder/主題/艾城准取掠物的轉變.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: '第23節「就按著以色列支派的宗族將地分給他們為業」。STEP 顯示「為業」是 le./na.cha.Lah（H5159，簡要詞典義 na.cha.lah:
+    inheritance），動詞是 va/i.yi.te./Nah（H5414G，簡要詞典義 na.tan: to give）——地是「給」的，不是「賺」的。CT
+    原文字義給「為業」產業、基業、地業，並說『支派的宗族』指各支派之下以宗族為單位分配產業之地。GT《綜合解讀》說雖然「還有許多未得之地」（十三1），但以色列人已經征服了迦南地的主要城邑、消滅了有組織的政權和抵抗，而那些尚未攻佔的地神應許「要漸漸地將他們從你面前攆出去，等到你的人數加多，承受那地為業」（出二十三30）。BH
+    說 The land belonged to the Lord, who granted it to the descendants of Abraham,
+    Isaac, and Jacob as a covenant gift，並說約書亞分地標誌著以色列從漂流的百姓轉成在神所指定之地上立定的國。'
+  surfaces:
+  - phrase: 為業
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 家室與宗族
+  suggested_type: 主題
+  evidence: '第23節「就按著以色列支派的宗族將地分給他們為業」。STEP 顯示「宗族」是 ke./mach.le.ko.Ta/m（H4256，簡要詞典義
+    ma.cha.lo.qet: division），「支派」是 le./shiv.tei./Hem（H7626H，簡要詞典義 she.vet: tribe）。CT
+    說『支派的宗族』指各支派之下以宗族為單位、分配產業之地。GT《綜合解讀》說「宗族 Clans」原文是「部族、家族」，是十二「支派 Tribes」與各個「父家
+    Fathers'' houses」之間的單位，由長老領導，分配土地是按「宗族」為單位的（十一23；十二7；十三15；十五1；民三十六6），同一「宗族」的土地形成一個行政區。BH
+    說 Each tribe received its assigned territory, preserving both the unity of Israel
+    and the distinct identity of the tribes，並說分配是在耶和華面前用鬮決定的，顯示這分配由祂的主權掌管。'
+  surfaces:
+  - phrase: 宗族
+    verses:
+    - 23
+  match_type: exact
+  existing_title: 家室與宗族
+  existing_path: link_folder/主題/家室與宗族.md
+C_new_formal:
+- name: 夏瑣
+  suggested_type: 地點
+  evidence: '第1節夏瑣王耶賓聽見這事就發起北方聯軍；第10節「當時，約書亞轉回奪了夏瑣，用刀擊殺夏瑣王。（素來夏瑣在這諸國中是為首的。）」；第11節以色列人盡行殺滅城中人口，約書亞又用火焚燒夏瑣；第13節「至於造在山岡上的城，除了夏瑣以外，以色列人都沒有焚燒。約書亞只將夏瑣焚燒了。」STEP
+    第13節為 cha.Tzor（H2674G，簡要詞典義 cha.tsor: Hazor）。CT 原文字義給「夏瑣」城堡、圍牆，並說夏瑣是迦南北部一座防守堅固的大城，位於加利利海以北16公里，扼守從美索不達米亞到埃及的國際貿易路線「沿海大道
+    Via Maris」，是古代迦南的政治、經濟中心，城內可住4萬人；CT 又說在迦南諸城中，只有耶利哥、艾城和夏瑣被焚燒：耶利哥是獻給神的初熟果子；艾城是用徹底的得勝來恢復失敗的百姓；而夏瑣是『在這諸國中是為首的』，是迦南惡俗的象徵，必須被徹底清除。GT《雷氏研讀本》說夏瑣是今天已乾涸的戶勒湖西南面約五英里（8公里）、加利利海以北十英里（16公里）以外的一座城；GT《啟導本》說考古學家發現古時的夏瑣人煙稠密，是政治、經濟中心；GT《聖經精讀本》說夏瑣是北部迦南的重要王都，位於呼勒湖西北8公里處，此城雖被約書亞所毀滅後卻被重建、成為外邦人的王都（士4:2，17；撒上12:9）；GT《研經資料》說夏瑣位於呼勒湖西南6.4公里的戰略性位置，是埃及往返西亞帝國的主要通道，當時人口估計有四萬人（耶利哥估計約1500人），西元前18~17世紀的馬里文獻和西元前14世紀的亞馬拿文獻都提到此城，並說1955年有學者成功在「基達廢坵」（Tell
+    el~Qedah）發掘出夏瑣遺跡，城內包括高的建築物、高於路面50.3公尺、佔地10.12公頃，此城有三次被焚毀的痕跡分別是西元前1400、1300、1230年，一般認為西元前1300年那一次是埃及法老塞提一世的戰績，其餘兩次之一可能就是約書亞所為。KC
+    說 In Hazor we meet the capital of all kings, the main stronghold of demons，並說
+    God does not allow the seat of worldly power and influence to become the seat
+    of His people，夏瑣不會成為以色列的新首都、而要被完全毀滅。BH 說夏瑣控制了重要的貿易路線、擁有可觀的防禦工事，是迦南的政治與軍事中心，並說夏瑣的考古挖掘發現了與這城暴力傾覆一致的大規模火焚層。'
+  surfaces:
+  - phrase: 夏瑣
+    verses:
+    - 1
+    - 10
+    - 11
+    - 13
+  target_path: link_folder/地點/夏瑣.md
+- name: 耶賓
+  suggested_type: 人物
+  evidence: 第1節「夏瑣王耶賓聽見這事，就打發人去見瑪頓王約巴、伸崙王、押煞王」。CT 原文字義給「耶賓」神所看見的人、他知道，並說『耶賓』是迦南王的頭銜而不是名字（參士四2），正如埃及王的頭銜「法老」（參創十二15）、非利士王的「亞比米勒」（參創二十2）一樣。GT《丁道爾聖經注釋》說耶賓是西閃族人的名字，在主前二千年左右這名字在夏瑣可以找得到；GT《研經資料》說字義是「神所看見的人」、是西閃族人的名字，有學者根據馬里文獻認為這可能只是夏瑣王的稱號或朝代名而非人名，並指出士4:2
+    的夏瑣王也稱為「耶賓」；GT《聖經精讀本》說夏瑣王耶賓是當時迦南地的最高領袖，具有很大的權柄且有超人的智謀，因此他在使北部迦南的所有君王結成聯盟的過程中起了決定性作用；GT《靈修版聖經註釋》說有兩個夏瑣王名字皆叫作耶賓，士師記所記的那一個顯然不如這一個。KC
+    說 Jabin, that means 'the wise' or 'the intelligent', the king of Hazor, is not
+    just any king，並說他統管眾王之首，因此可以在他身上看見群鬼之首、撒但自己的圖畫。BH 說 Jabin was a royal title used
+    by the rulers of Hazor, the leading Canaanite city-state in the north。
+  target_path: link_folder/人物/耶賓.md
+- name: 瑪頓
+  suggested_type: 地點
+  evidence: 第1節「就打發人去見瑪頓王約巴」。CT 原文字義給「瑪頓」爭吵、延伸、高地，「約巴」沙漠、傳令兵，並說瑪頓位於加利利海西面約8公里。GT《研經資料》說「瑪頓」字義是「爭吵」，並指出許多學者認為「瑪頓」就是「米倫」，因為在七十士譯本裡兩者的名字完全一樣；又說「約巴」字義是「沙漠」。GT《串珠聖經注釋》說瑪頓在加利利海以西。BH
+    說 Jobab ruled Madon, one of the northern Canaanite city-states，並說耶賓召集鄰近的統治者聯合起來對抗以色列，是當時面對更強大敵人時常見的軍事結盟作法。
+  target_path: link_folder/地點/瑪頓.md
+- name: 伸崙
+  suggested_type: 地點
+  evidence: 第1節「伸崙王、押煞王」。CT 原文字義給「伸崙」看守、警衛，並說伸崙位於瑪頓的西南方約20公里。GT《研經資料》說「伸崙」字義是「守望高處」，一般認為是拿撒勒以西八公里的
+    Khirbet Sammuniya。GT《串珠聖經注釋》說伸崙於西布倫境。BH 說 Shimron and Achshaph joined the growing
+    northern coalition because Israel's advance endangered every Canaanite kingdom
+    that resisted the Lord's command。
+  target_path: link_folder/地點/伸崙.md
+- name: 押煞
+  suggested_type: 地點
+  evidence: 第1節「伸崙王、押煞王」。CT 原文字義給「押煞」咒語，並說押煞位於伸崙的西方約16公里、靠近地中海海岸。GT《研經資料》說「押煞」字義是「我將被迷惑」，一般認為此處就是凱桑遺址（Tell
+    Keisan），位於伸崙西北偏北約20公里、距離地中海約5公里。GT《串珠聖經注釋》說押煞在北部沿岸地區、近亞柯之東南。BH 把它與伸崙並列，說這個聯盟顯出迦南抵抗力量的強大，卻也為神顯明沒有任何地上勢力的集結能攔阻祂對以色列的應許鋪了路。
+  target_path: link_folder/地點/押煞.md
+- name: 多珥
+  suggested_type: 地點
+  evidence: 第2節「並西邊多珥山岡的諸王」。CT 原文字義給「多珥」世代，並說『多珥山崗』位於地中海岸、靠近迦密山。GT《雷氏研讀本》說「多珥」位於地中海沿岸、在該撒利亞和迦密山中間；GT《啟導本》說多珥山岡在地中海旁迦密山以南，包括該撒利亞以北的地區；GT《串珠聖經注釋》說多珥位於地中海岸、靠近迦密山，故被描述為多珥山崗；GT《研經資料》說「多珥」字義是「世代」，位於地中海旁、迦密山以南。BH
+    說 Naphoth-dor included the coastal region around Dor, a Canaanite city with access
+    to the Mediterranean and its trade routes，並說從山地、河谷、低地到海岸都有王加入，顯出敵對以色列的範圍之廣。
+  surfaces:
+  - phrase: 多珥山岡
+    verses:
+    - 2
+  target_path: link_folder/地點/多珥.md
+- name: 米倫水
+  suggested_type: 地點
+  evidence: 第5節「這諸王會合，來到米倫水邊，一同安營，要與以色列人爭戰」；第7節「於是約書亞率領一切兵丁，在米倫水邊突然向前攻打他們」。CT 原文字義給「米倫」高處，並說『米倫水邊』位於加利利海西北約15公里處的一條溪水邊，又說敵人有意引以色列人到平原決戰以發揮他們的長處。GT《雷氏研讀本》說米倫水邊明顯不是戶勒湖，而是在戶勒和加利利海中間的眾多水泉；GT《串珠聖經注釋》說米倫水指米倫湖與加利利海之間的水泉；GT《聖經精讀本》說一般認為米倫是位於加利利海西北約15公里處的現在的
+    Meiron，但其確切位置還未確定，並說米倫水邊之戰是決定以色列征服迦南的決定性戰爭，因為迦南的所有殘餘勢力全都聚集在米倫水邊參加決定勝負的一戰；GT《研經資料》說「米倫水邊」字義是「高處」，應該是今日的
+    Hula Lake（胡拉湖），位於加利利海北方約23公里；GT《丁道爾聖經注釋》說瓜納希丁廢丘的北邊是哈曼溪（el~Hamam），這可能就是米倫的水邊所在，並說這場戰爭的規模與南方聯盟之役旗鼓相當，不過這群軍隊更可怕，因為擁有馬匹和車輛。KC
+    說 The hostile armies gather at the waters of Merom，並把它讀成末世大戰的圖畫，說 The battle in
+    Har-Magedon will take place in the vicinity of Merom mentioned here。BH 說米倫水位於加利利海以北肥沃的胡列地區，為大軍提供了空間與資源，神卻把他們自以為有利的地方變成他們敗亡的所在。
+  surfaces:
+  - phrase: 米倫水
+    verses:
+    - 5
+    - 7
+  target_path: link_folder/地點/米倫水.md
+- name: 西頓
+  suggested_type: 地點
+  evidence: 第8節「追趕他們到西頓大城，到米斯利弗瑪音」。CT 原文字義給「西頓」打獵，並說『西頓大城』位於利巴嫩境內腓尼基海岸，是迦南地的西北界。GT《啟導本》說西頓乃腓尼基的大城邦；GT《串珠聖經注釋》說西頓位於腓尼基海岸；GT《研經資料》說「西頓」字義是「打獵」，是位於推羅北方的地中海岸旁的腓尼基古城；GT《丁道爾聖經注釋》假定西頓大城是各支派地業的西北界，並描述以色列軍隊沿著加利利的邊界順時針方向走、繞著「推羅之梯」略過推羅向北直到西頓。BH
+    說 The pursuit reached northward toward the Phoenician center of Greater Sidon，這些遙遠的地點顯出這場勝利的規模與耶賓聯盟在北迦南的全面瓦解。
+  surfaces:
+  - phrase: 西頓大城
+    verses:
+    - 8
+  target_path: link_folder/地點/西頓.md
+- name: 米斯利弗瑪音
+  suggested_type: 地點
+  evidence: 第8節「追趕他們到西頓大城，到米斯利弗瑪音」。CT 原文字義給「米斯利弗瑪音」燃燒的水，並說它位於米倫西面的地中海岸，是迦南地的西界。GT《串珠聖經注釋》說米斯利弗瑪音在亞柯平原之盡頭，這些地方是西部界限；GT《研經資料》說字義是「燃燒的水」，另外有學者認為可能是「靠水的石灰窯」（lime~kilns
+    by the water）之意，是一個沿海城市、可能附屬於西頓城，有學者認為在西頓以南但位置不明；GT《丁道爾聖經注釋》假定米斯利弗瑪音是東北界、位於裡他尼河旁；GT《綜合解讀》說「米斯利弗·瑪音」在米倫水的西面、「米斯巴的平原」在米倫水的東面，以色列人向東西兩面追趕敵軍、徹底殲滅了他們。BH
+    說 Misrephoth-maim, possibly meaning "burning waters," near the coast。
+  target_path: link_folder/地點/米斯利弗瑪音.md
+- name: 巴力迦得
+  suggested_type: 地點
+  evidence: 第17節「從上西珥的哈拉山，直到黑門山下利巴嫩平原的巴力迦得」。CT 原文字義給「巴力迦得」財神，並說『巴力迦得』在此代表迦南地的最北端。GT《串珠聖經注釋》說巴力迦得大概是位於黑門山西面之山谷；GT《聖經精讀本》說巴力迦得是位於黎巴嫩平原的城邑、是迦南地的北部邊境；GT《研經資料》說字義是「財神」、「財富之主」；GT《華爾頓約書亞記背景注釋》說巴力迦得是這地的北界，位於夏瑣以北、但／拉億一帶，部分學者認為它是但城東面不遠的班雅斯（Banias），又說學者一般認為利巴嫩平原即是米斯巴穀，與利坦尼河谷會合、注入胡列穀；GT《啟導本》說巴力迦得為黑門山西邊的一個谷地。BH
+    在同一節說這兩個地標描述了所征服土地的南北兩端。
+  target_path: link_folder/地點/巴力迦得.md
+  semantic_hint:
+  - title: 巴力（迦南主神）
+    score: 0.45
+    type: 背景
+  - title: 巴力毘珥
+    score: 0.406
+    type: 背景
+- name: 哈拉山
+  suggested_type: 地點
+  evidence: 第17節「從上西珥的哈拉山」。CT 原文字義給「西珥」多毛的、「哈拉」平滑的，並說『上西珥』不同於以東人的西珥山，是在迦南地的南端，而『哈拉山』位於別是巴以南四十九公里處、在此代表迦南地的最南端。GT《串珠聖經注釋》說西珥約在亞拉巴以西、後屬猶大支派，與約但河東以東人的西珥山有別（書15:10），又說哈拉山在別是巴以南四十九公里（廿七英里）；GT《雷氏研讀本》說哈拉山位於南部、在別是巴東南約二十三英里（37公里）以外；GT《聖經精讀本》說哈拉山位於迦南地南部邊境，與今日位於別是巴南42公里處的
+    Jebel Halap 是同一處；GT《研經資料》說「哈拉」山字義是「平滑的」，在加低斯的東邊、別是巴以南40公里，是沙漠中的山峰，有考證認為是位於馬拉幹河畔、別是巴和尋的曠野之間的哈拉克山（Jebel
+    Halaq），如果是這個地點就是面對西珥、亞拉巴以東的以東地區；GT《華爾頓約書亞記背景注釋》說哈拉山接近南部以東的邊境，通常被考證為位於馬拉幹河畔、別是巴和尋的曠野之間的哈拉克山。四家對「上西珥」是否就是以東的西珥並不一致，CT
+    明說不同，GT《研經資料》與《華爾頓》則把它接到以東邊境，這一點要並陳。
+  target_path: link_folder/地點/哈拉山.md
+- name: 亞拿伯
+  suggested_type: 地點
+  evidence: '第21節「將住山地、希伯崙、底璧、亞拿伯、猶大山地、以色列山地所有的亞衲族人剪除了」。STEP 為 ''a.Nav（H6024，簡要詞典義
+    a.nav: Anab）。CT 原文字義給「亞拿伯」果實，並說亞拿伯位於底璧以南約六公里。GT《串珠聖經注釋》說亞拿伯在底璧以南約五點六公里（三英里半）。BH
+    說 These cities lay in the southern highlands of Canaan，並說希伯崙長久以來與亞伯拉罕和列祖相連，後來歸給那位在別人懼怕亞衲族人時仍信靠神的迦勒。'
+  target_path: link_folder/地點/亞拿伯.md
+  semantic_hint:
+  - title: 亞拿（何利人）
+    score: 0.442
+    type: 人物
+  - title: 亞乃
+    score: 0.421
+    type: 人物
+- name: 迦特
+  suggested_type: 地點
+  evidence: 第22節「只在迦薩、迦特，和亞實突有留下的」。CT 原文字義給「迦特」酒醡，並說迦薩、迦特和亞實突是地中海沿岸屬於非利士人的地方，當時神沒有命令以色列人攻打非利士人，到大衛王的時代才被以色列人征服。GT《串珠聖經注釋》說迦特在迦薩之東北約卅二公里（二十英里）；GT《研經資料》說「迦特」字義是「酒醡」，是非利士的五個主要城巿之一；GT《綜合解讀》說大衛殺死的迦特巨人歌利亞（撒上十七4）可能就是剩餘亞衲族人的後裔。KC
+    說 One of their descendants will be Goliath，並說若把仇敵的任何殘餘留下來，日後必帶來最大的麻煩。BH 說 The
+    surviving giants in Gath especially anticipate later conflicts, including David's
+    defeat of Goliath, a giant from Gath。
+  target_path: link_folder/地點/迦特.md
+- name: 亞實突
+  suggested_type: 地點
+  evidence: 第22節「只在迦薩、迦特，和亞實突有留下的」。CT 原文字義給「亞實突」強而有力的，並把它與迦薩、迦特並列為地中海沿岸屬於非利士人的地方。GT《研經資料》說「亞實突」字義是「強而有力的」，是非利士人的一個主要城市，位於地中海沿岸、耶路撒冷西邊，即現在的
+    Esdud；GT《啟導本》說這裡所舉迦薩等城為當日非利士人所居，非利士人到大衛時代才被以色列人控制。BH 說 These coastal cities remained
+    in Philistine territory and lay beyond the areas secured during Joshua's campaigns。
+  target_path: link_folder/地點/亞實突.md
+- name: 砍斷馬的蹄筋與焚燒車輛
+  suggested_type: 主題
+  evidence: '第6節神吩咐約書亞「你要砍斷他們馬的蹄筋，用火焚燒他們的車輛」；第9節「約書亞就照耶和華所吩咐他的去行，砍斷他們馬的蹄筋，用火焚燒他們的車輛」。STEP
+    顯示第6節「砍斷…蹄筋」是 te.''a.Ker（H6131B，簡要詞典義 iq.qer: to hamstring），「車輛」是 mar.ke.vo.tei./Hem（H4818，簡要詞典義
+    mer.ka.vah: chariot），「焚燒」是 tis.Rof（H8313，簡要詞典義 sa.raph: to burn）。CT 原文字義給「砍斷」切斷腿筋，並說即指不能再使用它們，又說有人認為這樣作的結果是叫以色列人不靠車馬而單純倚靠神；CT
+    在話中之光說他們不是倚靠人的所有去獲取得勝，乃是倚靠他們的元帥作他們的得勝，而保留人以為可靠的事物常會把人的眼睛從神的身上轉移到人以為可靠的事物上。GT《雷氏研讀本》說神吩咐約書亞砍斷敵人馬的蹄筋使之癱瘓、並焚燒他們的戰車而不是把他們捉回來，這樣以色列人便不會把信心放在馬匹和戰車上；GT《串珠》說免得百姓倚靠這些；GT《聖經精讀本》說意指以色列不可像外邦人一樣想靠著馬匹與車輛之力爭戰乃要依靠神的大能；GT《研經資料》說「砍斷馬的蹄筋」是「割斷馬的小腿韌帶」、這樣會讓戰馬殘廢，並說撒下8:3~8
+    記載大衛打敗瑣巴王和亞蘭人時也是這樣對付戰車馬，表示到了大衛時期以色列人還是無法駕馭這種先進的戰爭工具，而所羅門王以後以色列人就有自己的戰車部隊了、但耶和華曾警告君王不可依靠馬匹（申17:16）；GT《綜合解讀》說約書亞忠實地執行了神的命令，因此以色列人一直到大衛王的時候都沒有使用「馬匹車輛」，並引詩20:7。KC
+    說 The enemy''s means of combat must be disabled and destroyed. That makes reuse
+    impossible, both for the enemy and for Israel，並說 God does not want His people
+    to use the means of the world to achieve victories through which the world can
+    claim the honor of victory。BH 說毀掉戰車除去了迦南人最令人畏懼的兵器，也顯明以色列不可保存神已審判的東西，那位在紅海淹沒法老戰車的耶和華再一次顯明人的力量站立不住。'
+  surfaces:
+  - phrase: 砍斷他們馬的蹄筋
+    verses:
+    - 6
+    - 9
+  - phrase: 用火焚燒他們的車輛
+    verses:
+    - 6
+    - 9
+  target_path: link_folder/主題/砍斷馬的蹄筋與焚燒車輛.md
+- name: 馬匹車輛
+  suggested_type: 文化
+  evidence: '第4節「這些王和他們的眾軍都出來，人數多如海邊的沙，並有許多馬匹車輛」。STEP 為 ve./Sus（H5483M，簡要詞典義 sus:
+    horse）va./Re.khev（H7393G，簡要詞典義 re.khev: chariot），前面的「多如海邊的沙」是 ka./Chol（H2344，簡要詞典義
+    chol: sand）加 se.fat- hai./Yam（H8193J 加 H3220G）。CT 說當時的以色列人尚無馬匹和戰車，並說根據猶太歷史學家約瑟夫稱步兵多達三十萬人、另有騎兵一萬、戰車二萬。GT《研經資料》說此時的迦南戰車是由兩匹馬拖拉的、幾乎沒有裝甲、輪子有四輻，後來稱為「鐵車」的則是有裝甲、輪子有六幅，給徒手戰鬥的以色列人帶來很大壓力，並說埃及、亞述的戰車每車有兩個馬兵、赫人的戰車每車有三個馬兵、亞述的戰車是由兩匹或四匹馬拉的；GT《丁道爾聖經注釋》說馬匹車輛這個說法在希伯來聖經還出現在八個地方，所描述的是當時最可怕的戰爭工具，例如埃及人追趕以色列人時馬匹車輛都進入海中（出十五1、21），而申命記二十1
+    則提到以色列在面對這樣的狀況時神會保護他們；GT《聖經精讀本》說「如海邊的沙」聖經多處使用了這句話，在本節是指迦南聯軍的數量多得不計其數；GT《綜合解讀》說迦南人有強大的「馬匹車輛」而以色列人只有步兵。BH
+    說 Horses and chariots represented the height of Canaanite military power and gave
+    armies a major advantage on open ground，並指出這支龐大軍隊與神應許亞伯拉罕後裔如同海邊沙的話形成刻意的對照。'
+  surfaces:
+  - phrase: 馬匹車輛
+    verses:
+    - 4
+  target_path: link_folder/文化/馬匹車輛.md
+- name: 國中太平（sha.qat）
+  suggested_type: 原文
+  evidence: 第23節「這樣，約書亞照著耶和華所吩咐摩西的一切話奪了那全地……於是國中太平，沒有爭戰了」。CT 原文字義給「國中」遍地、「太平」平靜，並說軍事的目的算是達到了、承受產業的安排正要開始。GT《綜合解讀》說「太平」原文的意思是「平靜、安靜，不受干擾」，這個詞在士師記中也不斷出現（士三11、30；五31；八28），又譯為「安息」（亞一11），並說約書亞讓百姓所享用的安息只是暫時的（來四8），這個暫時的安息到士師的時代將不斷因著百姓的不順服被破壞，因此「必另有一安息日的安息為神的子民存留」（來四9）；GT《研經資料》說「太平」是「平靜」、「不受干擾的」，又說其實征服迦南地的工作尚未完成，因此這裡的「太平」SH
+    8252 只是暫時的（14:15 又出現一遍；士師記中每段暫時的太平也使用此字）。KC 說 This mention of rest in the land
+    appears three times in the book——一次在此與約書亞相連，一次在書14 與迦勒相連（書14:15），一次在書21 與利未人在以色列中的產業相連（書21:44）；KC
+    並說 Rest is good, but it should not lead to carelessness，又說 The biggest defeat
+    is often suffered after the biggest victory。BH 說擊敗迦南主要勢力使以色列從持續的征戰中得著喘息，這安息見證了耶和華的得勝，也使各支派能安頓、建造、耕種並在祂的律法之下安排生活，而以色列在地上的安息指向神藉信心與順服所賜、最終在基督裡成全的更深安息。
+  surfaces:
+  - phrase: 國中太平
+    verses:
+    - 23
+  target_path: link_folder/原文/國中太平（sha.qat）.md
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-09-09T16:20:41Z'
