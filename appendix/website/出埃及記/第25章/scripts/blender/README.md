@@ -46,3 +46,13 @@ blender --background --factory-startup --python scripts/blender/build_ark_detail
 R10 沿用同一入口處理五件器物，config 位於 `scripts/blender/config/r10-*.json`。這些 config 的 `autoCameras` 會依來源 bounds 產生 Front、Side、Top、Close 四個取景；每件的 staging、blend 與 r10 manifest 放在 `assets/staging/blender/r10/<asset-id>/`。`stageId` 會讓 manifest 保留任務版本，避免把 R10 的驗證誤記成 R07。
 
 R10 的 Blender 呼叫仍須逐件依序執行。只有該件的 reimport metrics 通過後，才可對該件使用 `--promote`；來源 GLB 與其他器物不會被清空或覆蓋。
+
+## R12 全資產重現驗收
+
+網站根目錄可執行：
+
+```powershell
+npm run verify:derived
+```
+
+這個驗證器逐一重新讀取 17 件 processed GLB，核對 source SHA-256、processed/runtime 位元組、mesh／三角面／材質／貼圖／動畫數量與既有 bounds。R07/R10 的 Blender stage manifest 會另外保留 build/reimport metrics；Blender 對重複使用的 mesh 會以物件實例計數，因此 sidecar 同時記錄 NodeIO 的唯一 mesh 計量，不把兩種計數混為一談。結果寫入 `assets/derived/r12-derived-assets.json` 及 `public/models/derived-manifest.json`；`src/data/assets.json` 與 `public/models/manifest.json` 的 `sha256` 仍只代表 sourceFile，`derivedHash` 代表 processedFile。

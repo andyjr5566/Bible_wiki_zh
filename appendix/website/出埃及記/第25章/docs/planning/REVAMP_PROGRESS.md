@@ -6,8 +6,8 @@
 
 - 當前階段：R11 自驗透過，下一張為 R12；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：R03 `npm run build` exit 0；typecheck、16 個測試檔／34 個測試、architecture 91 modules、assets 17 assets 均通過；Vite production build 成功。新增來源抽取器 `npm run build:excerpts` 產生 9 段逐節經文。
-- Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
+- 最新測試／build：R11 後 `npm run build` exit 0；typecheck、18 個測試檔／41 個測試、architecture 99 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
+- Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
 
@@ -27,7 +27,7 @@
 | R09 | 完整會幕／照明 | R07,R08 | 目前 GPT-5 session | 自驗透過 | [R09 policy](../research/R09_LIGHTING_POLICY.md)、[screenshots](../qa/revamp/screenshots/) |
 | R10 | 五件器物 | R07,R09 | 目前 GPT-5 session | 自驗透過 | [R10 register](../research/R10_ASSET_REGISTER.md)、[Blender configs](../../scripts/blender/config/) |
 | R11 | 角色／服飾／牲畜 | R02,R07,R10 | 目前 GPT-5 session | 自驗透過 | [角色資產登記](../research/R11_CHARACTER_ASSET_REGISTER.md)、[CharacterAppearanceResolver](../../src/characters/CharacterAppearanceResolver.ts)、[截圖](../qa/revamp/screenshots/r11-character-card-desktop.png) |
-| R12 | 匯出／資產登記 | R08,R09,R10,R11 | Luna | 待辦 | — |
+| R12 | 匯出／資產登記 | R08,R09,R10,R11 | 目前 GPT-5 session | 自驗透過 | [R12 sidecar](../../assets/derived/r12-derived-assets.json)、[驗證器](../../scripts/verify-derived-assets.mjs)、[Blender README](../../scripts/blender/README.md) |
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | Luna | 待辦 | — |
 | R14 | 燈／餅程序 | R13 | Luna | 待辦 | — |
 | R15 | 燔祭／五祭 | R13,R14 | Luna | 待辦 | — |
@@ -244,3 +244,18 @@ Blender工作檔／recipe／source與derived hashes（適用時）：本任務�
 未驗證項目／限制／需總控判定：R13–R16 尚未把角色 appearance 與播放器每一 step 的場景骨架、動作與贖罪日完整路徑接起來；服飾 mesh、山羊／鳥 mesh 沒有核准來源，維持文字／符號；角色位置仍是資料與面板展示，不是歷史實況動畫。
 結論（自驗／總控分開）：R11 自驗透過；角色身份、職責、服裝狀態與供物分支已進入 typed data，技術基底與歷史服飾界線明示，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R12；依序檢查本批全部資產的 source／derived hash、重匯入、manifest 與重現流程，維持 source hash 語義不變。
+
+## R12 執行回執
+
+任務ID／起訖日期：R12／2026-09-10 04:00–04:15（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；Node.js `@gltf-transform/core`＋KHRONOS extensions 實測重新讀取全部 17 件 processed GLB，未把本輪呼叫冒稱為 GPT-5.6 Luna。沒有新增 Blender 寫入。
+開始時工作樹或基準hash：R11 commit `37f15c17`；R07/R10 staging blend、manifest 與既有 `.blend1` 備份保留。
+已讀輸入與核准claim IDs：`src/data/assets.json`、`public/models/manifest.json`、R00 `BASELINE_ASSETS.json`、R07/R10 stage manifests、`verify-assets.mjs`；本卡不新增經文 claim。
+變更檔案（含刪除／原因）：新增 `scripts/verify-derived-assets.mjs` 與 `npm run verify:derived`；新增 `assets/derived/r12-derived-assets.json`、`public/models/derived-manifest.json`；typed/public asset manifest 增加 `derivedHash`／`derivedBytes` 與 sidecar 路徑；型別／schema同步；README 補上全資產重現說明。沒有刪除來源、processed 或 public runtime 資產。
+Blender工作檔／recipe／source與derived hashes：17 件 source SHA 全部與 typed manifest 相同；17 件 processed/runtime SHA 逐件相同；R07/R10 stage optimized SHA 與 processed 對應。完整 source／derived／runtime hashes、bytes、bounds、materials、textures、animations 與 stage metrics 見 `assets/derived/r12-derived-assets.json`。
+驗收QA IDs：source hash 語義不變、processed/runtime 對應、NodeIO reimport 可讀、mesh／三角面計數、材質／貼圖／動畫數量、軸向／單位、bounds、GPU upload conservative estimate、nodeMap／工具版本、R07/R10 instanced mesh 計數差異明示。
+命令、exit code、log路徑：`npm run verify:derived` exit 0（17 assets）；`npm run verify:assets` exit 0（17 assets）；`npm run typecheck` exit 0；完整 `npm run build` 將在本階段收尾重跑。
+畫面與activeAssetIds／profile／viewport證據：R12 為資產與部署資料驗收，未新增畫面；R10 Browser 逐件 detail 證據與 R11 角色面板截圖維持有效。
+未驗證項目／限制／需總控判定：GPU 實際上傳量與 frame-time 沒有 profiler 證據，sidecar 只記錄 processed bytes 的保守估計；未重跑未修改資產的 Blender recipe，只重新解析 processed GLB；R13 尚未把角色／服飾接入播放器。
+結論（自驗／總控分開）：R12 自驗透過；source hash、derived hash、runtime 對應、17 件 GLB 重新讀取與 manifest/sidecar 均完成，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R13；以 R04–R06 的單一 owner 與 R11 appearance 資料建立通用程序播放器，先完成洗濯與日常獻香的逐步可回復流程。

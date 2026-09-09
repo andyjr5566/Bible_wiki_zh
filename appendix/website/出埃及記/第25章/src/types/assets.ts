@@ -31,6 +31,8 @@ export interface AssetDefinition {
   commercialUse: false;
   downloadDate: string;
   sha256: string;
+  derivedHash?: string | undefined;
+  derivedBytes?: number | undefined;
   triangleCount: number;
   vertexCount: number;
   attribution: string;
