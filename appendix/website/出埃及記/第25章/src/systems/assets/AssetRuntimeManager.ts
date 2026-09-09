@@ -61,6 +61,7 @@ export class AssetRuntimeManager {
     const generation = ++this.#detailGeneration;
     this.#detailRequest = { assetId, generation };
     this.#clearDetails(assetId);
+    this.#cancelPendingDetailsExcept(assetId);
     const revision = this.#revision;
     this.#setState({ phase: 'loading', progress: null, error: null, diagnostics: { ...this.#state.diagnostics, selectedAssetId: assetId, detailGeneration: generation } });
     try {
@@ -240,6 +241,12 @@ export class AssetRuntimeManager {
 
   #cancelPendingNotIn(desired: Set<string>): void {
     [...this.#loadingAssetIds].forEach((assetId) => { if (!desired.has(assetId)) this.loader.unload(assetId); });
+  }
+
+  #cancelPendingDetailsExcept(assetId: string): void {
+    [...this.#loadingAssetIds].forEach((pendingId) => {
+      if (pendingId !== assetId && this.manifest.get(pendingId)?.qualityTier === 'detail') this.loader.unload(pendingId);
+    });
   }
 
   #setState(patch: Partial<AssetRuntimeState>): void {

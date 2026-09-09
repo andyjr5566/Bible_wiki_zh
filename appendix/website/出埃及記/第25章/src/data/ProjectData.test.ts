@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { loadProjectData } from './loadProjectData';
+import { assertProjectDataIntegrity, findProjectDataIntegrityIssues } from './validateProjectData';
 
 describe('project data contracts', () => {
   const data = loadProjectData();
@@ -137,5 +138,62 @@ describe('project data contracts', () => {
   it('fails closed for duplicate IDs and missing claim references', () => {
     expect(() => assertUnique(['same-id', 'same-id'])).toThrow();
     expect(() => assertClaimReferences(new Set(data.evidence.claims.map(({ id }) => id)), ['C-MISSING'])).toThrow();
+  });
+
+  it('runs the complete cross-file integrity contract on the production fixture', () => {
+    expect(findProjectDataIntegrityIssues(data)).toEqual([]);
+    expect(() => assertProjectDataIntegrity(data)).not.toThrow();
+  });
+
+  it('fails closed for duplicate and dangling evidence, part, step, and role references', () => {
+    const clone = () => JSON.parse(JSON.stringify(data)) as typeof data;
+
+    const duplicateSource = clone();
+    duplicateSource.evidence.sources.push({ ...duplicateSource.evidence.sources[0]! });
+    expect(() => assertProjectDataIntegrity(duplicateSource)).toThrow('evidence source duplicate id');
+
+    const danglingSource = clone();
+    danglingSource.evidence.claims[0]!.references[0]!.sourceId = 'S-MISSING';
+    expect(() => assertProjectDataIntegrity(danglingSource)).toThrow('dangling reference');
+
+    const danglingPartClaim = clone();
+    danglingPartClaim.objectDetails.objects[0]!.parts[0]!.claimIds = ['C-MISSING'];
+    expect(() => assertProjectDataIntegrity(danglingPartClaim)).toThrow('detail part');
+
+    const danglingStep = clone();
+    danglingStep.rituals.rituals[0]!.steps[0]!.nextStepIds = ['missing-step'];
+    expect(() => assertProjectDataIntegrity(danglingStep)).toThrow('nextStepId');
+
+    const danglingRole = clone();
+    danglingRole.roleCostumes.roles[0]!.defaultGarmentState = 'missing-garment' as never;
+    expect(() => assertProjectDataIntegrity(danglingRole)).toThrow('defaultGarmentState');
+
+    const duplicatePart = clone();
+    duplicatePart.assetParts.mappings[0]!.parts.push({ ...duplicatePart.assetParts.mappings[0]!.parts[0]! });
+    expect(() => assertProjectDataIntegrity(duplicatePart)).toThrow('part duplicate id');
+
+    const cyclicRitual = clone();
+    cyclicRitual.rituals.rituals[0]!.steps[2]!.nextStepIds = [cyclicRitual.rituals.rituals[0]!.steps[0]!.id];
+    expect(() => assertProjectDataIntegrity(cyclicRitual)).toThrow('cyclic nextStepIds');
+
+    const duplicateMapping = clone();
+    duplicateMapping.assetParts.mappings.push({ ...duplicateMapping.assetParts.mappings[0]! });
+    expect(() => assertProjectDataIntegrity(duplicateMapping)).toThrow('asset mapping asset duplicate id');
+  });
+
+  it('keeps the semantic fixtures for atonement, offering actors, twelve breads, and seven lamps', () => {
+    const atonement = data.rituals.rituals.find(({ id }) => id === 'atonement-entry')!;
+    expect(atonement.steps.filter(({ characterIds }) => characterIds.length === 0).map(({ id }) => id)).toEqual([
+      'atonement-empty-room', 'atonement-wilderness', 'atonement-outside-burn', 'atonement-wash-return',
+    ]);
+    expect(atonement.steps[0]?.garmentState).toBe('atonement-linen');
+    expect(atonement.steps[10]?.garmentState).toBe('post-atonement-garments');
+
+    expect(data.offerings.branches.map(({ actorRole }) => actorRole)).toEqual(['offering-person', 'offering-person', 'offering-person', 'priest']);
+    const lampstand = data.rituals.rituals.find(({ id }) => id === 'lampstand-care')!;
+    expect(lampstand.steps[2]?.displayCue).toContain('七盞燈');
+    const shewbread = data.rituals.rituals.find(({ id }) => id === 'shewbread-service')!;
+    expect(shewbread.steps[0]?.instruction).toContain('十二個餅');
+    expect(shewbread.steps[3]?.instruction).toContain('亞倫和子孫');
   });
 });

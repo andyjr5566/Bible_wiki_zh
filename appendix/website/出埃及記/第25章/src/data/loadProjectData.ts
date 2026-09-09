@@ -27,9 +27,10 @@ import { scripturesSchema } from './schemas/scriptures';
 import { scriptureExcerptsSchema } from './schemas/scriptureEvidence';
 import { tabernacleSchema } from './schemas/tabernacle';
 import { toursSchema } from './schemas/tours';
+import { assertProjectDataIntegrity } from './validateProjectData';
 
 export function loadProjectData() {
-  return {
+  const data = {
     assets: assetsSchema.parse(assetsJson),
     characters: charactersSchema.parse(charactersJson),
     garments: garmentsSchema.parse(garmentsJson),
@@ -46,6 +47,8 @@ export function loadProjectData() {
     tabernacle: tabernacleSchema.parse(tabernacleJson),
     tours: toursSchema.parse(toursJson),
   };
+  assertProjectDataIntegrity(data);
+  return data;
 }
 
 export type ProjectData = ReturnType<typeof loadProjectData>;
