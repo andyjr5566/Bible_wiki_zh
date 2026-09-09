@@ -4,11 +4,11 @@
 
 ## 本輪工作入口
 
-整站翻新已完成規劃，尚未完成實作。GPT-5.6 Luna 請從 [整站總規格](docs/planning/REVAMP_MASTER.md) 與 [接手提示詞](docs/planning/LUNA_START.md) 開始，依 R00–R23 執行，最後交 GPT-6 執行 R24。狀態只看 [實作進度](docs/planning/REVAMP_PROGRESS.md)。
+整站翻新依 [整站總規格](docs/planning/REVAMP_MASTER.md) 執行；目前 R00–R21 已自驗，R22–R24 仍在收尾。任務狀態只看 [實作進度](docs/planning/REVAMP_PROGRESS.md)，最後由 GPT-6 執行 R24 總控驗收。
 
 本輪涵蓋六件器物、會幕剖面、角色／服飾、六種完整程序、五祭比較、經文與考古證據、手機與鍵盤操作、載入可靠性及效能。所有造型與事實依來源，未知保留未知。
 
-目前程式已有3D總覽、五站導覽、器物研讀與自動運鏡，但儀式與證據仍有缺口；詳見 [已核對現況](docs/planning/REVAMP_BASELINE.md)。不要以舊PASS或資料中存在角色／儀式ID推定功能完整。舊工作指示已封存，見 [檔案登記](docs/planning/DOCUMENT_REGISTER.md)。
+目前程式提供 3D 總覽、五站導覽、六件器物研讀、六種服事程序、五祭比較、來源抽屜、手機抽屜與鍵盤操作。尚未驗證的瀏覽器故障、GPU 與實機效能項目，仍以進度檔和 QA 報告為準；舊工作指示已封存，見 [檔案登記](docs/planning/DOCUMENT_REGISTER.md)。
 
 ## 本機啟動
 

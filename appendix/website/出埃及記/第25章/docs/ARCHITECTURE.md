@@ -2,7 +2,7 @@
 
 更新日期：2026-09-10。
 
-現行程式採 TypeScript、Three.js、Zod；新架構工作依 R03–R06。舊 Walking／Map 與 skeleton 說明已移出。
+現行程式採 TypeScript、Three.js、Zod。`AppKernel` 統一模式、選取、資產與播放狀態；資料由 Zod schema 載入並經跨檔完整性驗證；`SceneBootstrap`、`AssetRuntimeManager`、各 controller 與元件維持分層。效能資料只在 QA 明確啟用時收集。
 
 請讀 [整站現行規格](planning/REVAMP_MASTER.md)。本頁只作相容入口，不另發工作指示。
 

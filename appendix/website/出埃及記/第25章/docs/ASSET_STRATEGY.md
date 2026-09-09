@@ -2,7 +2,7 @@
 
 更新日期：2026-09-10。
 
-桌面保留完整會幕；detail 須由器物選取可靠觸發；框架供結構探索，低模僅明示備援。契約更新依 R05，素材來源與授權保留。
+桌面保留完整會幕；器物選取會由 `AssetRuntimeManager` 載入對應 detail，框架供結構探索，低模只作明示備援。現行 manifest 管理 17 件資產的 source／processed／runtime 對應與 SHA-256；R12 sidecar 另記 derived hash，不改寫 source hash。素材來源與授權保留。
 
 請讀 [整站現行規格](planning/REVAMP_MASTER.md)。本頁只作相容入口，不另發工作指示。
 

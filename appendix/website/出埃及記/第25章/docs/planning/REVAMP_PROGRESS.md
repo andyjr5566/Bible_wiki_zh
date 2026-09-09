@@ -4,8 +4,8 @@
 
 ## 總狀態
 
-- 當前階段：R21 自驗透過，下一張為 R22；R00–R23 尚未宣稱整站完成。
-- 實際執行模型：本輪總控介面標示 GPT-5；R17、R18、R19、R20、R21 工程由已授權的 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
+- 當前階段：R22 自驗透過，下一張為 R23；R00–R23 尚未宣稱整站完成。
+- 實際執行模型：本輪總控介面標示 GPT-5；R17、R18、R19、R20、R21 工程由已授權的 gpt-5.6-luna 子代理實際執行並回報，R22 由目前 GPT-5 總控依同規格完成。R22 的 Luna 子代理呼叫未產生可用交付，未將總控介面冒稱為 Luna。
 - 最新測試／build：R21 後 npm run build exit 0；typecheck、21 個測試檔／65 個測試、architecture 104 modules、assets 17 assets 均通過；Vite production build 成功。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
@@ -37,7 +37,7 @@
 | R19 | 桌面／手機可用性與可及性 | R18 | gpt-5.6-luna 子代理 | 自驗透過 | [R19 1440×900](../qa/revamp/screenshots/r19-1440x900.png)、[768×1024](../qa/revamp/screenshots/r19-768x1024.png)、[390×844](../qa/revamp/screenshots/r19-390x844.png)、[360×800](../qa/revamp/screenshots/r19-360x800.png) |
 | R20 | 效能／診斷 | R19 | gpt-5.6-luna 子代理 | 自驗透過 | [效能說明](../qa/revamp/PERFORMANCE.md)、[原始量測格式](../qa/revamp/r20-performance.json)、[PerformanceRecorder](../../src/diagnostics/PerformanceRecorder.ts) |
 | R21 | 回歸／故障 | R20 | gpt-5.6-luna 子代理 | 自驗透過 | [R21 回歸報告](../qa/revamp/R21_REGRESSION.md)、[完整性驗證器](../../src/data/validateProjectData.ts) |
-| R22 | 清理／檔案 | R21 | Luna | 待辦 | — |
+| R22 | 清理／檔案 | R21 | 目前 GPT-5 session | 自驗透過 | [R22 清理審計](../qa/revamp/R22_CLEANUP.md)、[文件登記](DOCUMENT_REGISTER.md) |
 | R23 | Production自驗 | R22 | Luna | 待辦 | — |
 | R24 | 總控驗收 | R23 | GPT-6 | 待辦 | — |
 
@@ -380,6 +380,21 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：尚未在指定實體裝置完成每個 scenario 三次、每次 60 秒的量測；GPU profiler、200% 文字縮放、實體觸控與 repeated load／unload 資源增長仍待後續驗證；build 仍有約 807 kB（gzip 約 222 kB）的 AppKernel chunk 警告。
 結論（自驗／總控分開）：R20 自驗透過；可重現的效能與診斷介面已接入，測量邊界與未驗證狀態如實記錄，尚未交 GPT-6 R24。
 下一張任務 ID、可直接執行的下一步：R21；依 R20 的診斷介面執行回歸／故障注入，驗證延遲、失敗、重試、fallback 與 runtime diagnostics。
+
+## R22 執行回執
+
+任務ID／起訖日期：R22／2026-09-10（目前 GPT-5 總控 session）
+執行模型／工具實測：R22 依 R22 任務卡完成活躍入口、引用與文件審計；兩次已授權的 gpt-5.6-luna 子代理呼叫未產生可用交付，未將總控介面冒稱為 Luna。Blender MCP 與 Blender 場景本卡未需寫入。
+開始時工作樹或基準 hash：R21 commit `9767220b`；分支 `feat/appendix-exodus25-revamp`；既有 `.blend1` 備份保留。
+已讀輸入與核准 claim IDs：LUNA_START、REVAMP_TASKS R22、REVAMP_MASTER、DOCUMENT_REGISTER、R21 回歸報告；本卡不新增經文 claim。
+變更檔案（含刪除／原因）：同步根 `README.md` 與 `docs/ARCHITECTURE.md`、`RITUALS.md`、`ASSET_STRATEGY.md`、`3D_PIPELINE.md`、`DEPLOYMENT.md` 的現行狀態；新增 `docs/qa/revamp/R22_CLEANUP.md`，記錄 import／入口／文件與保留檔案審計。沒有刪除尚有產品或測試契約的程式、模型、來源或測試檔。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 寫入或重新匯出；R07–R12 的 recipe、17 件資產與 source／derived hashes 維持不變；六個未追蹤 `.blend1` 備份未納入提交。
+驗收 QA IDs：唯一活躍規格入口、舊入口維持封存／刪除、README 與現行六程序／五祭／六器物相符、架構與資產流程文件同步、部署仍只取 dist、不誤刪核心 runtime／測試／資產。
+命令、exit code、log 路徑：`npm run build` exit 0（typecheck、21 檔／65 tests、architecture 104 modules、assets 17 assets、Vite production build）；`git diff --check` exit 0。
+畫面與 activeAssetIds／profile／viewport 證據：R22 是文件與入口審計，未新增畫面；沿用 R19／R20 的視口與資產證據，沒有把文件更新宣稱成新的 WebGL 視覺驗收。
+未驗證項目／限制／需總控判定：R21 報告列出的真實瀏覽器 WebGL 不支援、context loss、offline／HTTP 500 注入仍未驗證；R20 實機 60 秒效能與 GPU profiler 仍未驗證。
+結論（自驗／總控分開）：R22 自驗透過；現行文件與活躍入口已和 R00–R21 實作同步，沒有安全可刪的活躍檔案，尚未交 GPT-6 R24。
+下一張任務 ID、可直接執行的下一步：R23；依 QA01–QA18 進行 production preview、來源／資產核對與初學者 scripted learning check，產出 FINAL_REPORT。
 
 ## R21 執行回執
 
