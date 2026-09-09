@@ -1,0 +1,317 @@
+book: 約書亞記
+chapter: 10
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第7節他率一切兵丁與大能的勇士從吉甲上去；第9節終夜行軍猛然臨到；第12節在以色列人眼前禱告求日月停住；第18至19節下令封洞並繼續追擊；第24至25節召軍長來把腳踏在五王頸項上並勉勵他們不要懼怕；第26至27節處死五王並在日落前取下屍首；第28至39節連續攻取南方六城。CT 在第7節話中之光說約書亞和首領受基遍人欺騙以後本可以慢慢地前往援救，但是他們仍立刻趕去施援，顯出他的正直；CT 又說第8節「不要怕他們」是因亞摩利人身材高大、以色列人素來害怕巨人族（民13:32~33）。GT《綜合解讀》說神勉勵約書亞「不要懼怕」（8節；一9；八1），約書亞也勉勵部下「不要懼怕」（25節），一個屬靈的領袖應該借一切機會把從神而來的信心傳遞出去；GT《聖經精讀本》說約書亞不愧是卓越的戰略家，使用襲擊戰術令敵人魂飛魄散。KC 說本章的約書亞與前幾章那個失敗的約書亞不同，他在這裡顯出那使他如此像主耶穌的神聖能力。BH 說約書亞毫不遲延地回應立約盟友的求告。
+  relation: 本章是他第一次同時做三件事：守約出兵、當眾禱告、公開審判被擒的王。第12節的禱告尤其特別——CT 說那是用眾人能聽見的聲音大聲禱告，而第14節說耶和華聽人的禱告沒有像這日的。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 26
+    - 27
+    definition: keep
+    development:
+      decision: keep
+      basis: standing_debt
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: '第6節基遍人求援時說「因為住山地亞摩利人的諸王都聚集攻擊我們」；第12節「當耶和華將亞摩利人交付以色列人的日子」。STEP 第12節為 ha./''e.mo.Ri（H567，簡要詞典義 e.mo.ri: Amorite）。CT 說『山地亞摩利人』指亞摩利人多住在山區，又說第5節『五個亞摩利王』可能是山地諸城之統治者的泛稱，因耶路撒冷居民多為耶布斯人、希伯崙居民為赫人（創23:2~3）。GT《綜合解讀》說「亞摩利」有時指亞摩利人、有時是迦南人的統稱，這五個城可能都是亞摩利人，而基遍人是「希未人」、屬於不同的民族；GT《聖經精讀本》說居住在山地的亞摩利人與居住在海岸線的迦南人有著明顯的區別；GT《研經資料》說基遍人口中的「諸王」應該是誇大用語。BH 說 Amorite 這個稱謂廣泛涵蓋在山地與周邊地區抵擋以色列的迦南勢力。'
+  relation: 本章把「亞摩利人」用成一個勢力範圍的稱呼而不是族譜分類——同一批王，第5節叫五個亞摩利王，第6節叫住山地亞摩利人的諸王，而其中耶路撒冷王其實屬耶布斯族。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 耶路撒冷
+  path: link_folder/地點/耶路撒冷.md
+  summary: 第1、3節耶路撒冷王亞多尼洗德聽見消息、發起聯軍；第5節五王名單以它為首；第23節它的王被從洞裡帶出來。CT 原文字義給「耶路撒冷」平安的訓誨，並說耶路撒冷又名耶布斯（書15:8），位於基遍東南方約十公里，城內居民多為耶布斯人。GT《研經資料》說當時的名字應該叫「耶布斯」（撒下5:6~8），此處可能是後來的文士為了讀者加以修訂的，而書15:8、18:28 的「耶布斯就是耶路撒冷」也顯出這個地名的演變傳統，並記下西元前十四世紀亞馬拿書信中耶路撒冷王至少寫過五封信給埃及法老；GT《綜合解讀》說在這五城中耶路撒冷地勢最高，其他各城位於較低的示非拉丘陵，所以耶路撒冷王說「上來幫助我」；GT《啟導本》說耶路撒冷最近基遍，以色列人南下該城首當其衝。KC 說除了創世記14章提到撒冷王麥基洗德之外，這裡是耶路撒冷第一次被提及，並說本章沒有攻取耶路撒冷。BH 說耶路撒冷當時是設防的耶布斯城，後來才成為大衛的京城與以色列敬拜的中心。
+  relation: 這是耶路撒冷以本名進入敘事的第一次，而它出場的身分是敵方盟主。本章殺了它的王，卻沒有攻下它的城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 耶路撒冷（Jerusalem），古稱撒冷（Salem），意為「平安/和平之城」
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:14
+      - 申命記:12
+      - 約書亞記:10
+- title: 希伯崙
+  path: link_folder/地點/希伯崙.md
+  summary: 第3、5、23節希伯崙王何咸列於五王；第36至37節以色列人從伊磯倫上希伯崙去，奪了希伯崙和屬希伯崙的諸城邑。CT 原文字義給「希伯崙」聯合，說它位於耶路撒冷西南方三十公里、伊磯倫的東方，並說第37節的「與王」大概是指繼任的王，因原來的希伯崙王何咸已經被殺。GT《研經資料》說字義是「聯合」、「同盟」，是目前的 Tell er~Ruemideh，亞伯拉罕曾在此築壇（創13:18），大衛作王的前七年以該城為猶大國首都（撒下5:5），並說書15:13~14 說是迦勒趕出當地的亞納族人；GT《華爾頓約書亞記背景注釋》說由於晚銅器時代的文化層尚未在希伯崙發現，考古學不能提供什麼約書亞和以色列人滅城的資料，因為現代希伯崙市建於古城原址之上；GT《綜合解讀》與 GT《啟導本》都說南方戰役中被殺的希伯崙王可能是繼任者。BH 說希伯崙是與亞伯拉罕、以撒、雅各相連的古老要城，後來成為迦勒的產業，再後來成為大衛第一個王都。
+  relation: 本章的希伯崙出現兩次而且身分不同：第3至23節是五王聯軍的成員，第36至39節是南征清單裡的一座城，兩處的王還可能不是同一個人。它也是南征路線由低地折回山地的那一站。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 加低斯
+  path: link_folder/地點/加低斯.md
+  summary: '第41節「約書亞從加低斯巴尼亞攻擊到迦薩」。STEP 為 mi./ka.Desh bar.Ne.a''（H6947，簡要詞典義 qa.desh bar.ne.a: Kadesh-barnea）。CT 原文字義給「加低斯巴尼亞」神聖的，說它位於尋的曠野，並說本句的意思是從南到北、代表此次戰役的西界。GT《研經資料》說在尋的曠野（民20:1；33:36），距別是巴83公里，代表應許地尼革地區和西乃曠野的邊界，它是以色列人最初想進入迦南的地點但他們卻在那裡遭逐回（申9:23）；GT《丁道爾聖經注釋》說加低斯巴尼亞是和西乃曠野交界之處；GT《華爾頓約書亞記背景注釋》說它代表應許地尼革地區和西乃曠野的邊界；GT《串珠》說在別是巴以南約八十九公里。BH 說加低斯巴尼亞標誌著以色列從南邊進入迦南的入口，也讓人想起那使全國滯留曠野的不信（民13-14），而進入這地的一代領受了上一代不肯信靠神而拒絕的產業。'
+  relation: 在本章它是一個界標，不是一個事件現場。但它的位置本身帶著記憶——同一個地方，上一代從那裡被逐回，這一代從那裡打進來。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 10
+    - 11
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 位於南地，是以色列人出埃及後最重要的曠野駐紮地，也是探子出發窺探迦南的地方
+    development: keep
+- title: 迦薩
+  path: link_folder/地點/迦薩.md
+  summary: '第41節「約書亞從加低斯巴尼亞攻擊到迦薩」。STEP 為 ''a.Zah（H5804，簡要詞典義 az.zah: Gaza）。CT 原文字義給「迦薩」強壯，並說迦薩位於希伯崙以西約五十公里的地中海岸邊一條狹長平地、又在加低斯巴尼亞的正北方。GT《串珠》說迦薩在希伯崙以西約五十公里（卅七英里）；GT《丁道爾聖經注釋》說迦薩代表和埃及在西邊的交界，在歷史上一離開埃及之後頭一個碰到的迦南人之城就是迦薩；GT《華爾頓約書亞記背景注釋》說迦薩在加低斯巴尼亞正北面約六十哩外，代表地中海沿岸、巴勒斯坦和西乃半島埃及屬地之間的邊界，這兩個地點形成應許之地西南方的疆界。BH 說迦薩位於西南方的沿海平原，後來成為非利士人的主要城市。'
+  relation: 迦薩在本章與加低斯巴尼亞成對，一南一北標出南方戰役的西界。經文說「攻擊到」而不是「奪了」——它是範圍的端點，不是被攻下的城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: update
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:2
+      - 約書亞記:10
+- title: 基遍
+  path: link_folder/地點/基遍.md
+  summary: 第1至5節五王因基遍與以色列立和約而聯合來攻；第6節基遍人打發人往吉甲求援；第10節「約書亞在基遍大大的殺敗他們」；第12節「日頭啊，你要停在基遍」；第41節基遍是南方戰役東界最北的一點。CT 說第2節『如都城一般』意指好像有王治理的城一般，暗示基遍並沒有王、是由長老治理的。GT《丁道爾聖經注釋》說以色列人控制了便雅憫高地，再通過伯和崙隘口可達沿海的平原和西邊的低地，南方諸王深恐失去這個險要的中心；GT《綜合解讀》說基遍離耶路撒冷只有13公里，扼守從約旦河谷經中央山地向西到沿海平原的東西大道，不但控制著迦南地的東西要道而且直接威脅到耶路撒冷；GT《華爾頓約書亞記背景注釋》說山地和平原之間的主要通道之一是伯和崙和亞雅崙谷之間的山隘，這是基遍所控制的地區；GT《聖經精讀本》說基遍不僅比伯特利或艾城大而且離耶路撒冷更近。KC 說基遍人透過友誼使以色列人如今也有義務為他們動員。BH 說基遍雖由長老治理而非以王為首，卻具有王城等級的地位、力量與影響力。
+  relation: 上一章基遍靠詭計換來一紙和約，本章那紙和約立刻要以色列人付代價——也立刻替以色列人打開了南方的戰局。同一座城，前一章是被審問的一方，這一章是被拯救的一方。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:9
+      - 約書亞記:10
+- title: 吉甲
+  path: link_folder/地點/吉甲.md
+  summary: 第6節基遍人打發人往吉甲的營中去見約書亞；第7、9節約書亞從吉甲上去、終夜行軍；第15、43節「約書亞和以色列眾人回到吉甲的營中」。CT 原文字義給「吉甲」滾動、滾去，並在第43節話中之光說吉甲是以色列人過約但河以後全體在那裡行割禮的地方，每一次屬靈爭戰的開始和結束都應該像約書亞那樣回到吉甲的營中。GT《綜合解讀》說9至15節是概述南方戰役、16至43節是詳述南方戰役，兩者都是以回到吉甲為結束，每次爭戰結束他們都是全體回到吉甲的約櫃面前；GT《研經資料》說耶利哥到基遍直線距離大約25公里、走山路大約30公里，吉甲位於耶利哥附近，並說七十士譯本沒有10:15；GT《丁道爾聖經注釋》說以色列人是從吉甲出發的，現在他們返回聖所所在之地。KC 說軍隊總是留在吉甲，在那裡他們總是被提醒割禮這件事，而這是為下一場爭戰得力所必需的。BH 說吉甲是以色列過約但河後的中央營地，他們在那裡藉割禮重新立約、守逾越節。
+  relation: 本章兩次寫「回到吉甲的營中」（第15、43節），一次收束概述、一次收束詳述。南征打到迦南最南端，大本營始終沒有前移。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第1節亞多尼洗德聽見以色列人「怎樣待耶利哥和耶利哥的王，也照樣待艾城和艾城的王」；第28、30節瑪基大王與立拿王的處置都是「像從前待耶利哥王一樣」。CT 說第28節這是根據神的命令，迦南地各城均不留活口，以免以色列人被誘惑去敬拜偶像假神。GT《丁道爾聖經注釋》說亞多尼洗德聽見的消息是以色列人不但勝過了艾城和耶利哥並且將其盡行毀滅。BH 說耶利哥是藉神蹟式的介入而傾覆、艾城則是藉神所賜的策略，兩場得勝都顯明結果不在於以色列的人數或軍事技巧。
+  relation: 耶利哥在本章沒有再發生任何事，卻被引用了三次——一次作為敵人恐懼的理由，兩次作為處置的標準。它已經從一座城變成一個量度別的城的尺。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 艾
+  path: link_folder/地點/艾.md
+  summary: 第1節「耶路撒冷王亞多尼洗德聽見約書亞奪了艾城，盡行毀滅」；第2節「因為基遍是一座大城，如都城一般，比艾城更大」。CT 原文字義給「盡行毀滅」完全地毀壞。GT《聖經精讀本》說以色列藉著佔領伯特利、艾並與基遍締結同盟，將迦南劃分為兩半、確保了重要中央根據地。BH 說艾城的傾覆顯明恢復與神的相交帶來重新的得勝，並說基遍在規模與重要性上都超過艾城。
+  relation: 本章兩次提到艾城都是拿它當比例尺：第1節用它說明以色列人怎麼處置攻下的城，第2節用它說明基遍有多大。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 南地
+  path: link_folder/地點/南地.md
+  summary: 第40節「約書亞擊殺全地的人，就是山地、南地、高原、山坡的人」。CT 說『南地』指山地以南、直至與尋的曠野接壤的一片貧瘠乾地。GT《綜合解讀》說「南地」指猶大山地南邊的乾旱曠野；GT《研經資料》說原意是「乾旱」、「燒焦」，指耶路撒冷以南、死海西南方的曠野。BH 說以色列的征服橫跨迦南的中央山區、南方曠野、西部低地與相鄰的坡地。
+  relation: 南地在本章是總結句裡的一個地形項，用來說明約書亞打下的範圍不只是幾座城，而是整片地形。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 高原（Shephelah）
+  path: link_folder/地點/高原（Shephelah）.md
+  summary: 第40節「就是山地、南地、高原、山坡的人」。CT 說『高原』或翻作「低原」、「丘陵」。GT《串珠》說「高原」應作「低地」，即山地與沿海之間的山麓；GT《綜合解讀》說「高原」原文是「低地」，特指猶大山地和沿海平原之間的丘陵地帶「示非拉 Shephelah」，是後來以色列人與非利士人長期爭戰的地方；GT《研經資料》說原文作「雪非拉」（Shephelah），指「猶大山區之西的地帶」；GT《華爾頓約書亞記背景注釋》說本段所述的全部都是山地南部和薩非拉南部的城市。BH 說示非拉是山地與沿海平原之間的西部低地，控制這一帶就打斷了南方迦南城邦的軍事力量。
+  relation: 本章是示非拉第一次成為實際戰場：立拿、拉吉、伊磯倫、亞西加、瑪基大都在這一帶，第40節再把它列進總結的地形清單裡。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:1
+      - 約書亞記:9
+      - 約書亞記:10
+- title: 滅絕（herem）
+  path: link_folder/神學/滅絕（herem）.md
+  summary: 第1節「約書亞奪了艾城，盡行毀滅」；第28、35、37、39、40節反覆出現「盡行殺滅」。CT 原文字義給「盡行殺滅」完全地毀壞，並說第28節這是根據神的命令，迦南地各城均不留活口，以免以色列人被誘惑去敬拜偶像假神。GT《研經資料》說「盡行毀滅」原意是「滅絕」、「完全毀壞」，此字在第10章總共出現六次（10:1，28，35，37，39，40）；GT《綜合解讀》說在28~39節的戰役清單裡一次又一次地重複了「盡行殺滅」，表明約書亞和百姓不折不扣地遵行了神的命令；GT《華爾頓約書亞記背景注釋》說在征服的敘述中用誇張的字眼形容毀滅的徹底是很平常的事，並舉書15:13~16 提到希伯崙和底璧仍有居民為證，說本節具有誇飾成分，法老梅雷他的碑文與米沙碑文用的也是這種渲染手法，而這並不表示記述有失准、欺騙、誤導的意思；GT《研經資料》另說神容忍約但河西的亞摩利人已達四百多年之久（創15:16），目的是要他們悔改。BH 說這是神命定的判決，是嚴肅的神聖審判、不是後世列國或戰爭的樣板。
+  relation: 同一個字在本章出現六次，密度是全卷最高的一段。也因為密集，本章成了「誇飾修辭」與「神聖審判」兩種讀法正面碰上的地方——華爾頓談的是這句話在古代戰報裡怎麼說，BH 談的是這件事的性質，兩者不互相取消。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 掛在木頭上_懸屍示眾
+  path: link_folder/歷史/掛在木頭上_懸屍示眾.md
+  summary: '第26節「隨後約書亞將這五王殺死，掛在五棵樹上。他們就在樹上直掛到晚上」；第27節日頭要落的時候把屍首從樹上取下來。STEP 顯示第26節是 va/i.yit.Le/m（H8518，簡要詞典義 ta.lah: to hang）''al cha.mi.Shah ''e.Tzim（H2568 加 H6086H）。CT 說『直掛到晚上』是以色列人的慣例，不將屍首掛在樹上過夜（申21:23）。GT《研經資料》說第26節強調五王是首先被殺、然後才掛在樹上，可見這與處死無關而是對待屍首的方法，屍首被丟在這些王曾躲藏的洞內表示沒有被安葬、算是能給敵人最高的羞辱；GT《華爾頓約書亞記背景注釋》說很多學者相信它所指的是將屍體插在刑架上，類似後世亞述和波斯的作法，埃及偶爾亦有曝屍的作法，而曝屍代表最後一次的侮辱和褻瀆；GT《綜合解讀》說即使是在歡慶得勝的時候，約書亞也沒有忘記順服神的命令。BH 說屍體掛在木頭上帶著神咒詛的記號（申21:22-23），最終指向基督為祂的百姓擔當了咒詛（加3:13）。'
+  relation: 本章一次掛了五個王，是這個作法在約書亞記裡規模最大的一次；也是唯一一次經文明寫「日頭要落的時候」就取下來，把申21:23 的規定與延長了的那一天接在一起。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 創世記40:19約瑟對膳長說「法老必斬斷你的頭，把你掛在木頭上」；22節「把膳長掛起來」
+    development: keep
+- title: 耶和華是戰士
+  path: link_folder/神學/耶和華是戰士.md
+  summary: 第10節耶和華使他們潰亂；第11節耶和華從天上降大冰雹；第14節「在這日以前，這日以後，耶和華聽人的禱告，沒有像這日的，是因耶和華為以色列爭戰」；第42節「因為耶和華─以色列的神為以色列爭戰」。CT 說第11節「被冰雹打死的，比以色列人用刀殺死的還多」意指戰爭的勝利歸於神，並在話中之光說表明決定爭戰勝敗的是神而不是人；CT 又說第14節「是因耶和華為以色列爭戰」只因神視這一次的爭戰全然屬於祂。GT《聖經精讀本》說本章再一次證明神「為以色列而爭戰」（14節；出14:14；申1:30），降冰雹擊殺仇敵並使太陽停住；GT《丁道爾聖經注釋》說這場戰役的得勝，神和約書亞都有份。KC 說耶和華一同爭戰，祂使敵人混亂好讓百姓得勝，並說祂在冰雹裡有祂自己的兵器。BH 說耶和華是為祂百姓爭戰的勇士，忠實地保護那些藉約與祂相連的人。
+  relation: 本章把這句話用兩次收尾：第14節收束日月停住那一段，第42節收束整場南征。中間夾著潰亂、冰雹、延長的白日三件事，全部沒有一件是以色列人做的。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 直到今日
+  path: link_folder/主題/直到今日.md
+  summary: '第27節「把幾塊大石頭放在洞口，直存到今日」。STEP 顯示這一句是 ''ad- ''E.tzem hai./Yom ha./Zeh（H5704 加 H6106H，簡要詞典義 e.tsem: bone: same，加 H3117G 與 H2088）。CT 說這意指將五王的屍首丟在山洞裡作為紀念。BH 說封住的洞口成為耶和華勝過迦南諸王聯盟的可見紀念，那些石頭宣告人的力量不能推翻神的旨意，而這個持續存在的紀念向後代作見證：耶和華曾照祂所應許的為以色列爭戰。'
+  relation: 這一次「直到今日」指的是一個墳墓的封口。前面幾次指向的是紀念神做了什麼（書4:9）或人做了什麼（書7:26），這一次兩者合在一起：石頭底下是敵人的屍首，石頭本身是神得勝的記號。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: already_covered
+      covered_by: 書4:9 在講完約書亞把十二塊石頭立在河中之後，加了一句「直到今日，那石頭還在那裡」
+    development: keep
+- title: 堆石頭作記號
+  path: link_folder/主題/堆石頭作記號.md
+  summary: 第18節約書亞吩咐「你們把幾塊大石頭滾到洞口，派人看守」；第27節屍首丟進洞裡之後「把幾塊大石頭放在洞口，直存到今日」。STEP 顯示第27節是 'a.va.Nim ge.do.lOt（H68G 加 H1419A）——與第11節從天上降下的「大石頭」是同一個詞組。CT 說第18節是防備他們逃脫，第27節意指將五王的屍首丟在山洞裡作為紀念。GT《丁道爾聖經注釋》說在約書亞的指揮之下以色列人仿效神的作為、也用到圓形大石，而洞口的大石頭在第27節又再度提及，以大石封住的洞先成了這些首領的監牢、後來又成了他們的墳墓；GT《研經資料》說當時有些傳統故事的內容是把大石頭滾到仇敵躲藏的洞口、目的是要把仇敵餓死。BH 說封住的石頭立起了一個可見的紀念，宣告人的力量無法推翻神的旨意。
+  relation: 本章的石頭一次做了三件事：先當門閂（第18節）、再當墓封（第27節）、最後當記號（直存到今日）。而丁道爾指出的那層對照更值得記——神從天上扔下的和人滾到洞口的，原文是同一個詞。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:10
+- title: 約伯記 38-22-23（神所存留的冰雹）
+  path: link_folder/互文/約伯記 38-22-23（神所存留的冰雹）.md
+  summary: 第11節「耶和華從天上降大冰雹在他們身上（冰雹原文作石頭）……被冰雹打死的，比以色列人用刀殺死的還多」。KC 在這一節直接引伯38:22b-23：“Have you seen the storehouses of the hail, which I have reserved for the time of distress, for the day of war and battle?”，並說耶和華在冰雹裡有祂自己的兵器（並比較出9:24-25）。GT《聖經精讀本》說在聖經中冰雹是神的審判工具（出9:13~34；賽28:2，17；結38:22）。BH 說耶和華以創造主與審判者的身分公開介入，如同降在埃及的雹災一樣用祂的受造物顯明祂在列國與軍隊之上的權柄。
+  relation: 伯38 說那些冰雹是為打仗和爭戰的日子存留的。本章就是被 KC 認定的那種日子之一——存留的東西被拿出來用了。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 耶利哥王
+  path: link_folder/人物/耶利哥王.md
+  summary: 第28節「他待瑪基大王，像從前待耶利哥王一樣」；第30節立拿王同此。CT 在第28節說這是根據神的命令，迦南地各城均不留活口，以免以色列人被誘惑去敬拜偶像假神，並在第30節說請參閱28節註解。BH 說瑪基大的王受到與耶利哥王同樣的判決，顯出整場戰役中神的命令被一貫地執行，也說約書亞的順服與迦南諸王的抗拒形成對照。
+  relation: 他本人早已不在敘事裡，名字卻成了南征清單的計量單位。書2 他是追捕探子的人，書6 他被列在神已交出的清單裡，本章他變成別的王受同樣處置的參照點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:2
+      - 約書亞記:6
+      - 約書亞記:10
+- title: 勉勵他使他膽壯（cha.zaq、a.mats）
+  path: link_folder/原文/勉勵他使他膽壯（cha.zaq、a.mats）.md
+  summary: '第25節「約書亞對他們說：你們不要懼怕，也不要驚惶。應當剛強壯膽，因為耶和華必這樣待你們所要攻打的一切仇敵」。STEP 顯示「剛強壯膽」是兩個並列的命令式 chiz.Ku（H2388G，簡要詞典義 cha.zaq: to strengthen: strengthen）與 ve./''im.Tzu（H553，簡要詞典義 a.mats: to strengthen），前半的「不要懼怕」是 ''al- ti.re.''U（H408 加 H3372G），「不要驚惶」是 ve./''al- te.Cha.tu（H408 加 H2865，簡要詞典義 cha.tat: to to be dismayed）。CT 說這意指以此次軍事行動為例，顯示今後征服迦南全土之事不足為懼。GT《綜合解讀》說神勉勵約書亞「不要懼怕」（8節；一9；八1），約書亞也勉勵部下「不要懼怕」（25節），一個屬靈的領袖應該借一切機會把從神而來的信心傳遞出去；GT《研經資料》說第25節這段約書亞對大家講的話讓人不禁想起書1:7、9 神激勵約書亞所講的話。BH 說爭戰有真實的危險、仇敵頑強、順服要持久，所以需要勇氣，而耶和華已經在耶利哥、艾城和基遍顯明祂的能力，過去的信實給了將來順服的保證。'
+  relation: 這是本章唯一一次由約書亞說出這組命令，而且對象是軍長。神在第8節對他說的話，他在第25節原封不動轉出去——同一組動詞從書1 到這裡換了說話的人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 祭司站定與河水停住（a.mad）
+  path: link_folder/原文/祭司站定與河水停住（a.mad）.md
+  summary: '第13節「於是日頭停留，月亮止住」。STEP 顯示「日頭停留」是 va/i.yi.Dom（H1826A，簡要詞典義 da.mam: to silence: stationary），而「月亮止住」是 ''a.Mad（H5975G，簡要詞典義 a.mad: to stand: stand）——中文一個「停」一個「止」，原文卻是兩個不同的動詞。H5975G 在本章一共出現四次：第8節神應許「無一人能在你面前站立得住」、第13節兩次、第19節「你們卻不可耽延」。GT《研經資料》說「停在」、「止在」、「停留」原文都是同一個字（SH 1826），而「止住」原文只有「站立」、「停留」的意思（SH 5975），並在第19節指出「不可耽延」與第8節的「站立」是同一個字。GT《丁道爾聖經注釋》說第19節的動詞與神在第8節給約書亞的應許相同，這個字也與日頭和月亮在空中停住有關，而描述日頭不急速下落的同一個動詞在第19節則指以色列人不容仇敵進自己的城邑——天上的星體、地上的軍隊，都聽從了約書亞的命令。'
+  relation: 這個條目原本記的是約但河：河水停住、祭司站定，用的是同一個字。本章把同一個動詞放到天上——月亮止住，用的也是它。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:3
+      - 約書亞記:10
+- title: 啟示錄 16-21（末世大冰雹）
+  path: link_folder/互文/啟示錄 16-21（末世大冰雹）.md
+  summary: 第11節耶和華從天上降大冰雹打死亞摩利聯軍。KC 在這一段之後直接接上末世的應用：The prophetic application is obvious when we think of the book of Revelation, where we also see hailstones coming as judgment from heaven (Rev 16:21)，並說 The events in Joshua indicate the final victory（約書亞記裡的事件指向最終的得勝），又說若我們因主耶穌的顯現而歡喜，也會樂見神潔淨全地一切的惡、我們的爭戰在最終的得勝裡結束。GT《聖經精讀本》也說在聖經中冰雹是神的審判工具（出9:13~34；賽28:2，17；結38:22）。
+  relation: KC 把本章的冰雹讀成一個預告：同樣是從天而降的雹，一次落在亞摩利聯軍身上，一次要落在末世的世界上。本條目在本章沒有對應的經文字面詞，只出現在本章整理的知識節點。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep

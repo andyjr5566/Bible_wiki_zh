@@ -1,0 +1,97 @@
+version: 2
+book: 約書亞記
+chapter: 10
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: b8e168a08da932ff6bdc9110d782975a9d13c7b71c122461e72669ae652782c2
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: b8e168a08da932ff6bdc9110d782975a9d13c7b71c122461e72669ae652782c2
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/亞多尼洗德.yaml
+    - entry_content/亞摩利五王.yaml
+    - entry_content/亞西加.yaml
+    - entry_content/亞雅崙谷.yaml
+    - entry_content/伊磯倫.yaml
+    - entry_content/伯和崙.yaml
+    - entry_content/基色.yaml
+    - entry_content/大冰雹原文作大石頭（ba.rad）.yaml
+    - entry_content/底璧（城）.yaml
+    - entry_content/拉吉.yaml
+    - entry_content/日頭停住月亮止住的解釋之爭.yaml
+    - entry_content/歌珊（迦南南部）.yaml
+    - entry_content/潰亂（ha.mam）.yaml
+    - entry_content/瑪基大.yaml
+    - entry_content/瑪基大洞裡的五王.yaml
+    - entry_content/立拿.yaml
+    - entry_content/耶末.yaml
+    - entry_content/腳踏在王的頸項上.yaml
+    - entry_content/雅煞珥書.yaml
+    verdict_sha: b8e168a08da932ff6bdc9110d782975a9d13c7b71c122461e72669ae652782c2
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: b7bbd0176bcc37d8b5280f864c9eadaa1036acedd6875cc0cea73b66cd2cb9a7
+    verdict_sha: b7bbd0176bcc37d8b5280f864c9eadaa1036acedd6875cc0cea73b66cd2cb9a7
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: e38a48fb1cbdd15a32fd33df290ddb545dea949891fca597036b0f87fa24b5fd
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: true
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 8bd91ff22d97ce4bad4c16e273623d56b44dcbbbd80ba4b712b22b1252571af9
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: antigravity
+      sha256: b7bbd0176bcc37d8b5280f864c9eadaa1036acedd6875cc0cea73b66cd2cb9a7
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    hash_inputs:
+    - parent:m3=b8e168a08da932ff6bdc9110d782975a9d13c7b71c122461e72669ae652782c2
+    - chapter_content.yaml
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: d2cabe7bc55b663b98824e96252703ae05c6d4e6d554d17394c2e50077b84273
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: d2cabe7bc55b663b98824e96252703ae05c6d4e6d554d17394c2e50077b84273
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=b8e168a08da932ff6bdc9110d782975a9d13c7b71c122461e72669ae652782c2
+    - parent:m6=b7bbd0176bcc37d8b5280f864c9eadaa1036acedd6875cc0cea73b66cd2cb9a7
+    - link_updates.yaml
+    verdict_sha: d2cabe7bc55b663b98824e96252703ae05c6d4e6d554d17394c2e50077b84273
+    findings_count: 0
