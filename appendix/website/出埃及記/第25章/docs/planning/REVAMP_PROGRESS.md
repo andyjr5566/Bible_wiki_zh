@@ -438,4 +438,4 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：未執�
 Browser：production dist、中文巢狀重載、六器物 ready、五站、來源覆層 Escape 焦點、六程序與贖罪日14步文字、手機 drawer、真 HTTP500／恢復。15筆成功模型回應 hash 與 dist 相符；此數字不代表15次完整驗收。臨時 localhost:4179 測試伺服器已停止，viewport override 已清除。
 結論：NEEDS_CHANGES；完整 QA 為 FAIL 8、UNVERIFIED 10。P0-01 修正來源語意，P1-02～08 處理角色場景、五祭、模式還原、部件／取景、來源入口、故障可及性與量測／重建。詳見 FINAL_REPORT、R24_REWORK；R00–R23 自驗保留歷史，不代表總控核准。
 未決／限制：U-R24-01 壇識別 unresolved；完整 activeAssetIds／camera、受控網路競態、WebGL故障、reduced-motion、全鍵盤200%、效能長測、真手機GPU、乾淨Blender全鏈與真人新讀者未驗證。部分原始截圖落後 DOM，已明確排除其狀態證明效力。
-提交／push：以本輪收尾回執記錄實際命令結果，不預填成功。下一步依 P0/P1 卡安排已授權 Luna 修正，再由總控復驗；整站未發布。
+提交／push：驗收證據 commit `d58fec76` 已成功 push 至 `origin/feat/appendix-exodus25-revamp`，exit 0；見 [收尾回執](../qa/revamp/r24-handoff.json)。本狀態補記另作後續提交。下一步依 P0/P1 卡安排已授權 Luna 修正，再由總控復驗；整站未發布。
