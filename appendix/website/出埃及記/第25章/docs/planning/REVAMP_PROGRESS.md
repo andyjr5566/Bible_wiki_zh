@@ -1,13 +1,13 @@
 # 整站翻新執行進度
 
-計畫版本：2026-09-10。GPT-6 已完成規劃與檔案整理；Luna 尚未開始本輪 R00–R23。舊 Blender T0–T5 的完成宣告不轉換為新任務完成。
+計畫版本：2026-09-10。GPT-6 已完成規劃與檔案整理；R00 已由目前 session 執行並完成基線產物。執行介面目前標示為 GPT-5，沒有把這次呼叫冒稱為 GPT-5.6 Luna；後續若使用者切換 Luna，從下一張未完成任務繼續。舊 Blender T0–T5 的完成宣告不轉換為新任務完成。
 
 ## 總狀態
 
-- 當前階段：待 Luna 接手 R00。
-- 實際執行模型：未開始；由接手者記錄介面可確認的資訊，不從檔名推定。
-- 最新測試／build：本輪尚未執行網站 build；本輪只驗證檔案一致性與工作樹邊界。
-- Blender：本輪 get_scene_info 唯讀呼叫成功，Scene 有24個物件、5個材質，回傳含 Sketchfab_model／Root。未改場景；儲存／dirty狀態未由該回應確認，接手時依R00保護原工作。
+- 當前階段：R00 自驗透過，下一張為 R01；R00–R23 尚未宣稱整站完成。
+- 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
+- 最新測試／build：`npm run build` exit 0；typecheck、16 個測試檔／33 個測試、architecture 81 modules、assets 17 assets 均通過；Vite production build 成功。
+- Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
 
@@ -15,7 +15,7 @@
 
 | ID | 任務 | 最小相依 | 執行者 | 狀態 | 證據 |
 | --- | --- | --- | --- | --- | --- |
-| R00 | 工具與基準 | — | Luna | 待辦 | — |
+| R00 | 工具與基準 | — | 目前 GPT-5 session | 自驗透過 | [BASELINE](../qa/revamp/BASELINE.md)、[資產計量](../qa/revamp/BASELINE_ASSETS.json)、[截圖](../qa/revamp/screenshots/) |
 | R01 | 來源臺帳 | R00 | Luna | 待辦 | — |
 | R02 | 角色／程序契約 | R01 | Luna | 待辦 | — |
 | R03 | 資料與抽取 | R01,R02 | Luna | 待辦 | — |
@@ -68,4 +68,18 @@ Blender工作檔／recipe／source與derived hashes（適用時）：
 
 - 本組總規格／25任務／18 QA／證據規格已落地，當前所有實作卡待辦。
 - 舊指令與當前入口分離；封存清單及hash見 [DOCUMENT_REGISTER.md](DOCUMENT_REGISTER.md)。
-- 本輪未改runtime／GLB／Blender腳本；先前未提交改動與使用者已刪文件保留原狀。
+
+## R00 執行回執
+
+任務ID／起訖日期：R00／2026-09-10 01:35–01:45（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；Node/npm、Browser、Blender MCP 均實測；命令列 `blender` 不在 PATH。
+開始時工作樹或基準hash：`feat/appendix-exodus25-revamp`、`c0aefae8`；本站 tracked 差異為 0。
+已讀輸入與核准claim IDs：LUNA_START、REVAMP_MASTER、REVAMP_TASKS R00、package.json、vite.config.ts；R00 只做工程／工具基線，未新增內容 claim。
+變更檔案：`docs/qa/revamp/BASELINE.md`、`BASELINE_ASSETS.json`、`screenshots/r00-*.png`、本進度檔。未改 runtime、GLB、source GLB、raw_scripture 或 Blender 場景。
+Blender工作檔／recipe／source與derived hashes：未寫入 Blender；processed 17 GLB 的 bytes／三角面／材質／貼圖／local bounds 見 `BASELINE_ASSETS.json`。
+驗收QA IDs：R00 基線驗收；桌面 1920×945、手機 390×844；未把 DOM 名稱當成 detail 載入證據。
+命令、exit code、log路徑：`npm run build` exit 0；`npx vite preview --host 127.0.0.1 --port 4173` 成功；Browser console warning/error 0；原始命令輸出保留於本次工作回執。
+畫面與activeAssetIds／profile／viewport證據：五張截圖連結於 BASELINE；Browser 未暴露 activeAssetIds／profile 診斷，標為未驗證。
+未驗證項目／限制／需總控判定：獨立 detail 實際 GLB 請求、GPU frame 指標、Blender dirty／檔名、六種完整服事、角色與來源內容均未在 R00 判定。
+結論（自驗／總控分開）：R00 自驗透過；尚未交 GPT-6 R24，網站成熟化仍未完成。
+下一張任務ID、可直接執行的下一步：R01；建立來源／主張臺帳，先隔離無依據的尺寸、原文、角色與特效內容。
