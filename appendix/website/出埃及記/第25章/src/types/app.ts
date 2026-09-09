@@ -28,6 +28,7 @@ export interface AppPort {
   getExperienceState(): Readonly<ExperienceState>;
   subscribeExperience(listener: (state: Readonly<ExperienceState>) => void): () => void;
   commandTour(command: TourCommand): void;
+  selectTourHotspot(hotspotId: string | null): void;
   selectLearningObject(objectId: string): void;
   startRitual(ritualId: string): void;
   commandRitual(command: RitualCommand): void;
@@ -39,11 +40,14 @@ export interface AppPort {
   // Cinematic Tour APIs
   startCinematicTour(fromIndex?: number): void;
   stopCinematicTour(): void;
+  pauseCinematicTour(): void;
   toggleCinematicPlayPause(): void;
   nextCinematicAct(): void;
   prevCinematicAct(): void;
   toggleCinematicDimensions(): void;
   setCinematicDimensionUnit(unit: DimensionUnit): void;
   setCinematicSpeed(speed: number): void;
+  replayCinematicTour(): void;
+  selectCinematicHotspot(hotspotId: string | null): void;
   subscribeCinematic(listener: (state: Readonly<CinematicState>) => void): () => void;
 }

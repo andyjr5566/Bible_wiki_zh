@@ -262,6 +262,10 @@ body.cinematic-tour-active .minimap-overlay {
   background: rgba(15, 18, 12, 0.85); box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
   backdrop-filter: blur(20px); text-align: center;
 }
+.cinema-hotspots { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 2px; }
+.cinema-hotspots button, .tour-hotspots button { min-height: 32px; padding: 5px 10px; border: 1px solid rgba(210, 184, 117, .45); border-radius: 999px; background: rgba(17, 20, 25, .78); color: #e8dfcb; cursor: pointer; }
+.cinema-hotspots button.is-active, .tour-hotspots button.is-active, .cinema-hotspots button:hover, .tour-hotspots button:hover { background: rgba(210, 184, 117, .22); border-color: var(--gold-light); color: #fff; }
+.tour-hotspots { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
 .subtitle-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .scripture-ref-pill {
   padding: 3px 10px; border-radius: 12px; background: rgba(210, 184, 117, 0.2); color: var(--gold-light);

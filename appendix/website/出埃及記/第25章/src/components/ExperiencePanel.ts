@@ -25,7 +25,7 @@ export class ExperiencePanel {
   bind(app: AppPort): void { this.#app = app; }
 
   render(mode: ExperienceMode, state: Readonly<ExperienceState>): void {
-    const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.playing, state.learning.objectId ?? '', state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status, state.character.id, state.character.garmentState].join('|');
+    const renderKey = [mode, state.creditsOpen, state.assetProfile, state.tour.index, state.tour.total, state.tour.current?.id ?? '', state.tour.current?.activeHotspotId ?? '', state.tour.current?.hotspots.map(({ id }) => id).join(',') ?? '', state.tour.playing, state.learning.objectId ?? '', state.ritual.playback.ritualId ?? '', state.ritual.playback.stepIndex, state.ritual.playback.status, state.character.id, state.character.garmentState].join('|');
     if (renderKey === this.#renderKey) return;
     this.#renderKey = renderKey;
     const main = mode === 'tour' ? renderTour(state) : mode === 'learning' || mode === 'ritual' ? renderLearning(state) : renderOverview(state);
@@ -42,11 +42,12 @@ export class ExperiencePanel {
   }
 
   readonly #onClick = (event: Event): void => {
-    const target = (event.target as HTMLElement).closest<HTMLElement>('[data-start-cinematic],[data-mode-jump],[data-tour-command],[data-learning-object],[data-ritual-id],[data-ritual-command],[data-credits]');
+    const target = (event.target as HTMLElement).closest<HTMLElement>('[data-start-cinematic],[data-mode-jump],[data-tour-command],[data-tour-hotspot],[data-learning-object],[data-ritual-id],[data-ritual-command],[data-credits]');
     if (!target || !this.#app) return;
     if (target.dataset.startCinematic) this.#app.startCinematicTour();
     if (target.dataset.modeJump) this.#app.transitionTo(target.dataset.modeJump as ExperienceMode, `quick-start:${target.dataset.modeJump}`);
     if (target.dataset.tourCommand) this.#app.commandTour(target.dataset.tourCommand as Parameters<AppPort['commandTour']>[0]);
+    if (target.dataset.tourHotspot) this.#app.selectTourHotspot(target.dataset.tourHotspot);
     if (target.dataset.learningObject) this.#app.selectLearningObject(target.dataset.learningObject);
     if (target.dataset.ritualId) this.#app.startRitual(target.dataset.ritualId);
     if (target.dataset.ritualCommand) this.#app.commandRitual(target.dataset.ritualCommand as Parameters<AppPort['commandRitual']>[0]);
@@ -71,9 +72,10 @@ function renderOverview(state: Readonly<ExperienceState>): string {
 
 function renderTour(state: Readonly<ExperienceState>): string {
   const stop = state.tour.current;
+  const hotspots = stop?.hotspots?.length ? `<nav class="tour-hotspots" aria-label="${escapeHtml(stop.title)}熱點">${stop.hotspots.map((hotspot) => `<button type="button" data-tour-hotspot="${escapeHtml(hotspot.id)}" class="${stop.activeHotspotId === hotspot.id ? 'is-active' : ''}" aria-pressed="${String(stop.activeHotspotId === hotspot.id)}">${escapeHtml(hotspot.label)}</button>`).join('')}</nav>` : '';
   return `<section class="panel-card" aria-labelledby="tour-title" data-testid="tour-panel">
     <p class="section-kicker">五站導覽 · ${state.tour.index + 1}/${state.tour.total}</p><h2 id="tour-title" data-testid="tour-step">${escapeHtml(stop?.title ?? '導覽')}</h2>
-    <details class="mobile-drawer tour-context-drawer" open><summary>本站說明</summary><p class="tour-description">${escapeHtml(stop?.summary ?? '')}</p><p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote" open><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}</details>
+    <details class="mobile-drawer tour-context-drawer" open><summary>本站說明</summary><p class="tour-description">${escapeHtml(stop?.summary ?? '')}</p><p class="tour-reference">經文起點：${escapeHtml(stop?.scriptureReference ?? '依據會幕空間順序')}</p>${hotspots}${stop?.scriptureText ? `<details class="scripture-quote tour-scripture-quote" open><summary>展開和合本原文</summary><p class="scripture-quote-label">${escapeHtml(stop.scriptureReference ?? '')} · 和合本（UNV）</p><p class="scripture-quote-text">${escapeHtml(stop.scriptureText)}</p></details>` : ''}</details>
     <div class="tour-progress"><span style="width:${state.tour.total ? ((state.tour.index + 1) / state.tour.total) * 100 : 0}%"></span></div><div class="control-row"><button type="button" data-tour-command="previous" ${state.tour.index === 0 ? 'disabled' : ''}>← 上一站</button><button type="button" class="primary-button" data-tour-command="next" ${state.tour.index >= state.tour.total - 1 ? 'disabled' : ''}>${state.tour.index >= state.tour.total - 1 ? '已到最後一站' : '下一站 →'}</button><button type="button" data-tour-command="close">結束導覽</button></div>
   </section>`;
 }

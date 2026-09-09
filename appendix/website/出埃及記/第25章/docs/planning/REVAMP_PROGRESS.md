@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R16 自驗透過，下一張為 R17；R00–R23 尚未宣稱整站完成。
-- 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
-- 最新測試／build：R16 後 `npm run build` exit 0；typecheck、19 個測試檔／50 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。
+- 當前階段：R17 自驗透過，下一張為 R18；R00–R23 尚未宣稱整站完成。
+- 實際執行模型：本輪總控介面標示 GPT-5；R17 工程由 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
+- 最新測試／build：R17 後 `npm run build` exit 0；typecheck、19 個測試檔／53 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -32,7 +32,7 @@
 | R14 | 燈／餅程序 | R13 | 目前 GPT-5 session | 自驗透過 | [R14 說明](../research/R14_LAMP_BREAD_PLAYER.md)、[燈臺截圖](../qa/revamp/screenshots/r14-lamp-light-desktop.png)、[陳設餅截圖](../qa/revamp/screenshots/r14-bread-eat-desktop.png) |
 | R15 | 燔祭／五祭 | R13,R14 | 目前 GPT-5 session | 自驗透過 | [R15 說明](../research/R15_OFFERINGS.md)、[五祭截圖](../qa/revamp/screenshots/r15-offering-comparison-desktop.png)、[鳥支截圖](../qa/revamp/screenshots/r15-burnt-bird-desktop.png) |
 | R16 | 贖罪日 | R13,R15 | 目前 session | 自驗透過 | [R16 說明](../research/R16_ATONEMENT_PATH.md)、[空房截圖](../qa/revamp/screenshots/r16-empty-room-desktop.png)、[換衣截圖](../qa/revamp/screenshots/r16-change-clothes-desktop.png)、[曠野路線截圖](../qa/revamp/screenshots/r16-wilderness-route-desktop.png) |
-| R17 | 空間導覽 | R06,R12,R16 | Luna | 待辦 | — |
+| R17 | 空間導覽 | R06,R12,R16 | gpt-5.6-luna 子代理 | 自驗透過 | [R17 截圖](../qa/revamp/screenshots/r17-five-station-desktop.png)、[聖所熱點](../qa/revamp/screenshots/r17-holy-place-hotspots-desktop.png) |
 | R18 | 器物／來源介面 | R03,R10,R17 | Luna | 待辦 | — |
 | R19 | 手機／可及性 | R18 | Luna | 待辦 | — |
 | R20 | 效能／診斷 | R19 | Luna | 待辦 | — |
@@ -319,3 +319,17 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：贖罪日的香雲目前以 cue 和文字呈現，沒有新增實體香或寫實血祭動作；曠野路線與洗身動作未審定歷史細節；R17–R23 與 R24 總控驗收尚待執行。
 結論（自驗／總控分開）：R16 自驗透過；尚未交 GPT-6 R24，網站成熟化仍未完成。
 下一張任務 ID、可直接執行的下一步：R17；開始空間導覽與切斷總覽、至聖所、燔祭壇、洗濯盆、香壇的方位觀察。
+
+## R17 執行回執
+
+任務ID／起訂日期：R17／2026-09-10 （gpt-5.6-luna 子代理，GPT-5 總控）
+開始時工作樹或基準 hash：R16 commit `dd9cab54`；分支 `feat/appendix-exodus25-revamp`；既有 `.blend1` 備份保留。
+已讀輸入與核准 claim IDs：R03 tours 與 scripture excerpts、R04 playback owner、R06 camera、R16 贖罪日導覽；本卡未新增歷史 claim。
+變更檔案（含刪除／原因）：`src/data/tours.json` 將導覽資料收斂為東門、燔祭壇、洗濯盆、聖所、至聖所五站，聖所保留燈臺、陳設餅桌、香壇三個熱點；新增 `TourHotspot` schema/type、`TourManager` hotspot 選取與導覽狀態、`CinematicTourController` 從同一份 tours/excerpts 建立字幕與取景；`AppKernel`、`ExperiencePanel`、`CinematicOverlay`、`CameraManager` 接上熱點、暂停、重播、調速、reduced-motion 與退出清理。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 場景或 GLB 變更，沿用 R07–R12 已驗證資產與 hash；保留 `.blend1` 備份不入版。
+驗收 QA IDs：五站順序往返、聖所三熱點與香壇來源同步、自動播放 1/5、暫停／繼續、1.5x、上一幕、退出；Browser runtime errors 0、warnings 0。
+命令、exit code、log 路徑：`npm run build` exit 0（含 typecheck、19 檔／53 tests、architecture 100 modules、assets 17 assets）；`git diff --check` exit 0。
+畫面與 activeAssetIds／profile／viewport 證據：`r17-five-station-desktop.png`、`r17-holy-place-hotspots-desktop.png`；Browser desktop WebGL preview 顯示五站、1/5、聖所熱點、字幕與和合本引文。
+未驗證項目／限制／需總控判定：導覽對墙、門檻與器具避讓依既有預設取景點驗證，未做 GPU frame-time profiler；自動導覽仍是教學選擇，不宣稱普通人禮儀動線；R18–R23 與 R24 總控驗收尚待執行。
+結論（自驗／總控分開）：R17 自驗透過；尚未交 GPT-6 R24，網站成熟化仍未完成。
+下一張任務 ID、可直接執行的下一步：R18；建立器物、部件、來源閱讀 drawer 與署名追溯。

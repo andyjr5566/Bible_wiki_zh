@@ -44,6 +44,7 @@ export class AppShell {
   #assetUnsubscribe: (() => void) | null = null;
   #experienceUnsubscribe: (() => void) | null = null;
   #cinematicUnsubscribe: (() => void) | null = null;
+  #app: AppPort | null = null;
 
   constructor(root: HTMLElement) {
     root.innerHTML = `<main class="app-shell">
@@ -127,6 +128,7 @@ export class AppShell {
   }
 
   bind(app: AppPort): void {
+    this.#app = app;
     this.#modeNavigation.bind(app);
     this.#experiencePanel.bind(app);
     this.#miniMap.bind(app);
@@ -178,6 +180,7 @@ export class AppShell {
   }
 
   readonly #onSheetToggle = (): void => {
+    this.#app?.pauseCinematicTour();
     const collapsed = !this.#researchPanel.classList.contains('is-sheet-collapsed');
     this.#researchPanel.classList.toggle('is-sheet-collapsed', collapsed);
     this.#sheetToggle.setAttribute('aria-expanded', String(!collapsed));

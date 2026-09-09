@@ -40,6 +40,7 @@ export class CinematicOverlay {
           <p class="subtitle-text" id="cinema-verse-text">
             你要做帳幕的院子。院子的南面當用撚的細麻做帷子... 院子的門當有簾子，長二十肘...
           </p>
+          <nav class="cinema-hotspots" id="cinema-hotspots" aria-label="本站器物熱點"></nav>
           <div class="act-timeline-track">
             <div class="act-timeline-fill" id="cinema-timeline-fill" style="width: 0%"></div>
           </div>
@@ -50,6 +51,7 @@ export class CinematicOverlay {
           <button type="button" class="cinema-transport-btn" data-cinema-action="prev" title="上一幕 (←)">⏮ 上一幕</button>
           <button type="button" class="cinema-transport-btn primary-play" data-cinema-action="toggle-play" id="cinema-play-btn" title="播放/暫停 (Space)">⏸ 暫停</button>
           <button type="button" class="cinema-transport-btn" data-cinema-action="next" title="下一幕 (→)">下一幕 ⏭</button>
+          <button type="button" class="cinema-transport-btn" data-cinema-action="replay" title="重播本站">↻ 重播</button>
           <button type="button" class="cinema-transport-btn" data-cinema-action="speed" id="cinema-speed-btn" title="播放速度">1.0x</button>
         </nav>
       </div>
@@ -84,6 +86,7 @@ export class CinematicOverlay {
     const dimLabel = this.element.querySelector('#cinema-dim-label');
     const unitLabel = this.element.querySelector('#cinema-unit-label');
     const speedBtn = this.element.querySelector('#cinema-speed-btn');
+    const hotspots = this.element.querySelector<HTMLElement>('#cinema-hotspots');
 
     if (actTitle) actTitle.textContent = state.currentAct.title;
     if (hebrewTerm) hebrewTerm.textContent = state.currentAct.hebrewTerm ?? '';
@@ -104,6 +107,11 @@ export class CinematicOverlay {
           : '英吋 (in)';
     }
     if (speedBtn) speedBtn.textContent = `${state.playbackSpeed.toFixed(1)}x`;
+    if (hotspots) {
+      hotspots.innerHTML = state.currentAct.hotspots.length
+        ? state.currentAct.hotspots.map((hotspot) => `<button type="button" data-cinema-action="hotspot" data-hotspot-id="${escapeAttribute(hotspot.id)}" aria-pressed="${String(state.currentAct.hotspotId === hotspot.id)}" class="${state.currentAct.hotspotId === hotspot.id ? 'is-active' : ''}">${escapeHtml(hotspot.label)}</button>`).join('')
+        : '';
+    }
   }
 
   dispose(): void {
@@ -138,6 +146,10 @@ export class CinematicOverlay {
     } else if (action === 'speed') {
       const nextSpeed = this.#state?.playbackSpeed === 1.0 ? 1.5 : 1.0;
       this.#kernel.setCinematicSpeed(nextSpeed);
+    } else if (action === 'replay') {
+      this.#kernel.replayCinematicTour();
+    } else if (action === 'hotspot') {
+      this.#kernel.selectCinematicHotspot(target.dataset.hotspotId ?? null);
     }
   };
 
@@ -162,3 +174,6 @@ export class CinematicOverlay {
     }
   };
 }
+
+function escapeHtml(value: string): string { return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character] ?? character); }
+function escapeAttribute(value: string): string { return escapeHtml(value); }

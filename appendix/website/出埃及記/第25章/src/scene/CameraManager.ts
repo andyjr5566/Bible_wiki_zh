@@ -162,6 +162,13 @@ export class CameraManager {
     this.#activeTransition = null;
   }
 
+  get isFlying(): boolean { return this.#activeTransition !== null; }
+
+  /** Apply a teaching pose immediately for reduced-motion users or a paused tour. */
+  applyCinematicPose(pose: { position: Vector3Data; target: Vector3Data; fov: number }): void {
+    this.applyRig(pose);
+  }
+
   dispose(): void {
     this.#controls?.dispose();
   }

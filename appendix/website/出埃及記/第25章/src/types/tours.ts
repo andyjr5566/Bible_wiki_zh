@@ -2,6 +2,19 @@ import type { EntityId, Vector3Data } from './core';
 
 export interface CameraPose { position: Vector3Data; target: Vector3Data; fov: number; }
 
+export interface TourHotspot {
+  id: string;
+  label: string;
+  objectId: EntityId;
+  scriptureReference: string;
+  excerptIds: readonly string[];
+  summary: string;
+  cameraStart: CameraPose;
+  cameraEnd: CameraPose;
+  durationSeconds?: number | undefined;
+  dimensionTargetId?: string | undefined;
+}
+
 export interface TourDefinition {
   id: string;
   order: number;
@@ -15,8 +28,9 @@ export interface TourDefinition {
   durationSeconds: number;
   cameraStart: CameraPose;
   cameraEnd: CameraPose;
-  dimensionTargetId?: string;
-  peelRoof?: boolean;
+  dimensionTargetId?: string | undefined;
+  peelRoof?: boolean | undefined;
+  hotspots?: TourHotspot[] | undefined;
 }
 
 export interface ToursData { tours: TourDefinition[]; }

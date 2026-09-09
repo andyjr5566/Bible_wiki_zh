@@ -3,8 +3,9 @@ import type { ConfidenceLevel } from './core';
 import type { CharacterRole, CharacterVisualPolicy, GarmentState } from './characters';
 import type { OfferingComparisonDefinition } from './offerings';
 import type { RitualPlaybackState } from './rituals';
+import type { TourHotspot } from './tours';
 
-export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; }
+export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; activeHotspotId: string | null; hotspots: readonly TourHotspot[]; }
 export interface TourViewState { playing: boolean; index: number; total: number; current: TourStopView | null; }
 export type ScriptureContext = 'design' | 'construction' | 'placement' | 'service' | 'reflection';
 export interface ObjectDetailView {
