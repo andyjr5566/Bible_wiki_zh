@@ -5,6 +5,7 @@ import { ParticleEffects } from './ParticleEffects';
 import { DimensionVisualizer } from './DimensionVisualizer';
 import type { AtmosphereMode } from '../types/atmosphere';
 import type { DimensionSpec } from '../types/dimensions';
+import type { PerformanceRecorderApi } from '../diagnostics/PerformanceRecorder';
 
 export interface SceneContext {
   scene: THREE.Scene;
@@ -23,6 +24,7 @@ export class SceneBootstrap {
   #lastTime = 0;
   #elapsedTime = 0;
   #update: (deltaSeconds: number) => void = () => undefined;
+  #performanceRecorder: PerformanceRecorderApi | null = null;
   readonly #canvas: HTMLCanvasElement;
 
   constructor(canvas: HTMLCanvasElement, dimensionSpecs: readonly DimensionSpec[] = []) {
@@ -92,6 +94,11 @@ export class SceneBootstrap {
     this.#update = update;
   }
 
+  /** Enables opt-in QA collection; normal rendering does not collect metrics. */
+  setPerformanceRecorder(recorder: PerformanceRecorderApi | null): void {
+    this.#performanceRecorder = recorder;
+  }
+
   start(): void {
     if (this.#animationFrame) return;
     this.#lastTime = performance.now();
@@ -128,6 +135,7 @@ export class SceneBootstrap {
     this.context.particles.update(deltaSeconds, this.#elapsedTime);
     this.context.cameraManager.update(deltaSeconds);
     this.context.renderer.render(this.context.scene, this.context.cameraManager.camera);
+    this.#performanceRecorder?.recordFrame(time);
     this.#animationFrame = requestAnimationFrame(this.#tick);
   };
 }

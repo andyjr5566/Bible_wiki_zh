@@ -4,9 +4,9 @@
 
 ## 總狀態
 
-- 當前階段：R19 自驗透過，下一張為 R20；R00–R23 尚未宣稱整站完成。
-- 實際執行模型：本輪總控介面標示 GPT-5；R17、R18、R19 工程由 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
-- 最新測試／build：R19 後 npm run build exit 0；typecheck、20 個測試檔／58 個測試、architecture 101 modules、assets 17 assets 均通過；Vite production build 成功。
+- 當前階段：R20 自驗透過，下一張為 R21；R00–R23 尚未宣稱整站完成。
+- 實際執行模型：本輪總控介面標示 GPT-5；R17、R18、R19、R20 工程由已授權的 gpt-5.6-luna 子代理實際執行並回報，未將總控介面冒稱為 Luna。
+- 最新測試／build：R20 後 npm run build exit 0；typecheck、21 個測試檔／60 個測試、architecture 103 modules、assets 17 assets 均通過；Vite production build 成功。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
 - 網站成熟化：未完成。發布：未執行。
 - 前一批缺口：見 [REVAMP_BASELINE](REVAMP_BASELINE.md) B01–B15。
@@ -35,7 +35,7 @@
 | R17 | 空間導覽 | R06,R12,R16 | gpt-5.6-luna 子代理 | 自驗透過 | [R17 截圖](../qa/revamp/screenshots/r17-five-station-desktop.png)、[聖所熱點](../qa/revamp/screenshots/r17-holy-place-hotspots-desktop.png) |
 | R18 | 器物／來源介面 | R03,R10,R17 | gpt-5.6-luna 子代理 | 自驗透過 | [R18 證據截圖](../qa/revamp/screenshots/r18-evidence-drawer-desktop.png)、[來源抽屜](../qa/revamp/screenshots/r18-credits-sources-desktop.png) |
 | R19 | 桌面／手機可用性與可及性 | R18 | gpt-5.6-luna 子代理 | 自驗透過 | [R19 1440×900](../qa/revamp/screenshots/r19-1440x900.png)、[768×1024](../qa/revamp/screenshots/r19-768x1024.png)、[390×844](../qa/revamp/screenshots/r19-390x844.png)、[360×800](../qa/revamp/screenshots/r19-360x800.png) |
-| R20 | 效能／診斷 | R19 | Luna | 待辦 | — |
+| R20 | 效能／診斷 | R19 | gpt-5.6-luna 子代理 | 自驗透過 | [效能說明](../qa/revamp/PERFORMANCE.md)、[原始量測格式](../qa/revamp/r20-performance.json)、[PerformanceRecorder](../../src/diagnostics/PerformanceRecorder.ts) |
 | R21 | 回歸／故障 | R20 | Luna | 待辦 | — |
 | R22 | 清理／檔案 | R21 | Luna | 待辦 | — |
 | R23 | Production自驗 | R22 | Luna | 待辦 | — |
@@ -365,3 +365,18 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：200% 瀏覽器文字縮放、實體觸控裝置與完整螢幕閱讀器語意仍未在本輪獨立工具中驗證；R20–R23 與 R24 總控驗收尚待執行。
 結論（自驗／總控分開）：R19 自驗透過；響應式布局、鍵盤焦點、overlay 退出、替代文字與 reduced-motion 已接入，尚未交 GPT-6 R24。
 下一張任務 ID、可直接執行的下一步：R20；記錄可重現的載入／frame／資產診斷與效能預算，不以 requestAnimationFrame 間隔冒稱 GPU 時間。
+
+## R20 執行回執
+
+任務ID／起訖日期：R20／2026-09-10（gpt-5.6-luna 子代理，GPT-5 總控）
+執行模型／工具實測：R20 工程由已授權的 gpt-5.6-luna 子代理實作；總控獨立重跑 npm run build 並檢查效能報告的未驗證界線。確認 `gpt-5.6-luna` 可用；Blender MCP 本卡未需寫入場景。
+開始時工作樹或基準 hash：R19 commit `692ab6e3`；分支 `feat/appendix-exodus25-revamp`；既有 `.blend1` 備份保留。
+已讀輸入與核准 claim IDs：REVAMP_TASKS R20、R12 derived asset sidecar、R05 asset lifecycle／diagnostics；本卡不新增經文 claim。
+變更檔案（含刪除／原因）：新增 `src/diagnostics/PerformanceRecorder.ts` 與測試；`main.ts` 建立隱藏式 `window.__TABERNACLE_PERFORMANCE__`，記錄 browser／WebGL／viewport／DPR／profile／cache／network／build hash、資產 URL／source／processed／SHA-256、activeAssetIds；`SceneBootstrap` 在明確啟用後收集 rAF interval 與 renderer.info；`AppKernel` 在資產 ready 時標記 load／first useful frame；新增 `docs/qa/revamp/PERFORMANCE.md` 與 `r20-performance.json`。沒有修改 raw_scripture、source GLB 或 Blender 場景。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 寫入或重新匯出，沿用 R07–R12 已驗證的 17 件資產與 hashes；六個未追蹤 `.blend1` 備份未納入提交。
+驗收 QA IDs：rAF median／p95、long task（瀏覽器支援時）、Three.js calls／triangles／geometry／texture、load／first useful frame、資產 URL／hash、profile／快取／網路與 WebGL 欄位；GPU 計時明確標示 `unavailable without EXT_disjoint_timer_query`，未以 rAF 間隔冒稱 GPU wall time。
+命令、exit code、log 路徑：`npm run build` exit 0（typecheck、21 檔／60 tests、architecture 103 modules、assets 17 assets、Vite production build）；`git diff --check` exit 0。
+畫面與 activeAssetIds／profile／viewport 證據：本卡交付隱藏式 Console API 與可重現 JSON；`r20-performance.json` 的 hero、六個 detail、贖罪日 scenario 均明確標記 `unverified`，沒有把未量測資料宣稱為 PASS。
+未驗證項目／限制／需總控判定：尚未在指定實體裝置完成每個 scenario 三次、每次 60 秒的量測；GPU profiler、200% 文字縮放、實體觸控與 repeated load／unload 資源增長仍待後續驗證；build 仍有約 807 kB（gzip 約 222 kB）的 AppKernel chunk 警告。
+結論（自驗／總控分開）：R20 自驗透過；可重現的效能與診斷介面已接入，測量邊界與未驗證狀態如實記錄，尚未交 GPT-6 R24。
+下一張任務 ID、可直接執行的下一步：R21；依 R20 的診斷介面執行回歸／故障注入，驗證延遲、失敗、重試、fallback 與 runtime diagnostics。

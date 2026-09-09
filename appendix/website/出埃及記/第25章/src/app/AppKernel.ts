@@ -25,6 +25,7 @@ import type { AttributionView, ExperienceState, RitualCommand, TourCommand } fro
 import type { ExperienceMode, UIState } from '../types/ui';
 import { UIStateManager } from '../ui/UIStateManager';
 import { EventChannel } from '../utils/EventChannel';
+import type { PerformanceRecorderApi } from '../diagnostics/PerformanceRecorder';
 
 export class AppKernel implements AppPort {
   readonly #canvas: HTMLCanvasElement;
@@ -70,6 +71,7 @@ export class AppKernel implements AppPort {
   #cinematicWasPaused = false;
   #selectedPartId: string | null = null;
   #canvasPointerDown: { x: number; y: number } | null = null;
+  #performanceRecorder: PerformanceRecorderApi | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.#canvas = canvas;
@@ -124,6 +126,11 @@ export class AppKernel implements AppPort {
     window.addEventListener('resize', this.#onResize);
     this.scene.start();
     void this.startAssets();
+  }
+
+  setPerformanceRecorder(recorder: PerformanceRecorderApi | null): void {
+    this.#performanceRecorder = recorder;
+    this.scene.setPerformanceRecorder(recorder);
   }
 
   setAtmosphere(mode: AtmosphereMode): void {
@@ -600,6 +607,10 @@ export class AppKernel implements AppPort {
   }
 
   private onAssetState(state: Readonly<AssetRuntimeState>): void {
+    if (state.phase === 'ready') {
+      this.#performanceRecorder?.markLoadComplete();
+      this.#performanceRecorder?.markUsefulFrame();
+    }
     this.assetRuntime.setProfileVisible(!(this.getState().mode === 'learning' && state.profile === 'desktop-structural'));
     this.assetRuntime.setInteriorReveal(this.getState().mode === 'learning' && state.profile !== 'desktop-structural');
     if (state.phase === 'ready') {
