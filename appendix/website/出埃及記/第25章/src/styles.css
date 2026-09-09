@@ -140,6 +140,18 @@ kbd { min-width: 18px; padding: 1px 4px; border: 1px solid rgba(255, 255, 255, 0
 .scripture-quote-text { margin: 0 !important; color: #e4ddcf !important; font-size: 13px !important; line-height: 1.75 !important; white-space: pre-line; }
 
 .ritual-launchers { display: flex; gap: 8px; margin-top: 12px; }
+.offering-comparison { display: grid; gap: 8px; margin: 14px 0; padding: 12px; border: 1px solid rgba(210, 184, 117, 0.28); border-radius: 5px; background: rgba(210, 184, 117, 0.045); }
+.offering-comparison > h3, .offering-comparison .title-with-badge h3 { margin: 0; color: #ead698; font: 500 16px 'Noto Serif TC', serif; }
+.offering-intro { margin: 0 !important; color: #b8b1a5 !important; font-size: 11px !important; line-height: 1.55 !important; }
+.offering-row { display: grid; gap: 6px; padding: 10px; border-left: 2px solid rgba(210, 184, 117, 0.55); border-radius: 0 4px 4px 0; background: rgba(7, 8, 6, 0.55); }
+.offering-row-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; cursor: pointer; }
+.offering-row-head h3 { margin: 0; color: #e8d8a7; font-size: 13px; font-weight: 600; }
+.offering-facts { display: grid; gap: 4px; margin: 0; }
+.offering-facts div { display: grid; grid-template-columns: 72px 1fr; gap: 8px; font-size: 11px; line-height: 1.5; }
+.offering-facts dt { color: #9fbab8; }
+.offering-facts dd { margin: 0; color: #d2cabc; }
+.offering-launchers { flex-wrap: wrap; }
+.offering-branch-button { font-size: 11px !important; }
 .primary-button { color: #15160e !important; border-color: var(--gold-primary) !important; background: linear-gradient(135deg, #e5cea2, #cbb06d) !important; font-weight: 600 !important; }
 .ritual-player { margin-top: 14px; padding: 12px; border: 1px solid rgba(166, 207, 204, 0.35); border-radius: 4px; background: rgba(111, 166, 162, 0.08); }
 .ritual-player h3 { margin: 2px 0 10px; font: 500 16px 'Noto Serif TC', serif; color: #a9dedb; }

@@ -200,6 +200,10 @@ export class AppKernel implements AppPort {
     const location = object ? this.requireLocation(object.locationId) : null;
     const passages = object ? this.scriptures.threeDToBible({ kind: 'objectIds', entityId: object.id }) : [];
     const ritualIds = object ? this.rituals.registry.values().filter((ritual) => ritual.trigger.kind === 'interaction' && ritual.trigger.objectId === object.id).map((ritual) => ritual.id) : [];
+    const offeringBranches = object?.id === 'burnt-altar'
+      ? this.data.offerings.branches.filter(({ id }) => id !== 'burnt-offering-goat').map(({ id, label, ritualId, instruction }) => ({ id, label, ritualId, instruction }))
+      : [];
+    const offeringComparisons = object?.id === 'burnt-altar' ? this.data.offerings.comparisons : [];
     const characterIds = object ? [...new Set(this.rituals.registry.values().filter((ritual) => ritualIds.includes(ritual.id)).flatMap((ritual) => ritual.steps.flatMap((step) => step.characterIds)))] : [];
     const ritualState = this.rituals.state;
     const ritual = ritualState.ritualId ? this.rituals.registry.get(ritualState.ritualId) : undefined;
@@ -236,6 +240,8 @@ export class AppKernel implements AppPort {
           sourceUrl: passage.sourceUrl,
         })),
         ritualIds,
+        offeringBranches,
+        offeringComparisons,
         characterIds,
         availableObjects: this.data.objectDetails.objects.map(({ id, name }) => ({ id, name })),
         detail: object ? (() => {
@@ -306,7 +312,7 @@ export class AppKernel implements AppPort {
   startRitual(ritualId: string): void {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     const ritual = this.rituals.registry.require(ritualId);
-    if (!['washing', 'incense', 'lamp-care', 'shewbread'].includes(ritual.type)) return;
+    if (!['washing', 'burnt-offering', 'incense', 'lamp-care', 'shewbread'].includes(ritual.type)) return;
     if (this.uiState.snapshot.mode !== 'ritual') this.uiState.transitionTo('ritual', `ritual-start:${ritualId}`);
     this.uiState.selectRitual(ritualId, ritual.steps[0]?.branchId ?? null, ritual.steps[0]?.id ?? null);
     this.uiState.setPlaybackOwner('ritual');

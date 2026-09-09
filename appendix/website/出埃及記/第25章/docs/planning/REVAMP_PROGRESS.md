@@ -4,7 +4,7 @@
 
 ## 總狀態
 
-- 當前階段：R14 自驗透過，下一張為 R15；R00–R23 尚未宣稱整站完成。
+- 當前階段：R15 自驗透過，下一張為 R16；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
 - 最新測試／build：R14 後 `npm run build` exit 0；typecheck、19 個測試檔／46 個測試、architecture 100 modules、assets 17 assets 均通過；Vite production build 成功。`npm run verify:derived` 逐一讀取 17 件 processed GLB 並寫入 R12 sidecar。
 - Blender：R07–R10 隔離工作檔與 stage manifest 已保留；R12 未寫入場景，只用 NodeIO 重新讀取 17 件 processed GLB。R07/R10 的 build/reimport metrics 與 R12 parsed metrics 分開記錄。
@@ -30,7 +30,7 @@
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | 目前 GPT-5 session | 自驗透過 | [R12 sidecar](../../assets/derived/r12-derived-assets.json)、[驗證器](../../scripts/verify-derived-assets.mjs)、[Blender README](../../scripts/blender/README.md) |
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | 目前 GPT-5 session | 自驗透過 | [R13 播放器說明](../research/R13_RITUAL_PLAYER.md)、[RitualPlaybackController](../../src/rituals/RitualPlaybackController.ts)、[截圖](../qa/revamp/screenshots/r13-washing-player-desktop.png) |
 | R14 | 燈／餅程序 | R13 | 目前 GPT-5 session | 自驗透過 | [R14 說明](../research/R14_LAMP_BREAD_PLAYER.md)、[燈臺截圖](../qa/revamp/screenshots/r14-lamp-light-desktop.png)、[陳設餅截圖](../qa/revamp/screenshots/r14-bread-eat-desktop.png) |
-| R15 | 燔祭／五祭 | R13,R14 | Luna | 待辦 | — |
+| R15 | 燔祭／五祭 | R13,R14 | 目前 GPT-5 session | 自驗透過 | [R15 說明](../research/R15_OFFERINGS.md)、[五祭截圖](../qa/revamp/screenshots/r15-offering-comparison-desktop.png)、[鳥支截圖](../qa/revamp/screenshots/r15-burnt-bird-desktop.png) |
 | R16 | 贖罪日 | R13,R15 | Luna | 待辦 | — |
 | R17 | 空間導覽 | R06,R12,R16 | Luna | 待辦 | — |
 | R18 | 器物／來源介面 | R03,R10,R17 | Luna | 待辦 | — |
@@ -289,3 +289,18 @@ Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任�
 未驗證項目／限制／需總控判定：燈火與陳設餅目前以 cue、文字、物件高亮表達；沒有新增角色動作、烘焙／進食寫實動畫或新 Blender 模型。R15 燔祭、R16 贖罪日仍未接入；R24 總控驗收尚未執行。
 結論（自驗／總控分開）：R14 自驗透過；燈臺與陳設餅已接入共用播放器，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R15；接入燔祭程序與供物分支，維持來源不明細節的文字／符號呈現。
+
+## R15 執行回執
+
+任務ID／起訖日期：R15／2026-09-10（本輪 session）
+執行模型／工具實測：目前介面標示 GPT-5；TypeScript、Vitest、Vite production build 與 Browser preview 實測。沒有把本輪呼叫冒稱為 GPT-5.6 Luna；本輪沒有 Blender 寫入。
+開始時工作樹或基準 hash：R14 commit `db4dbc9b`；分支 `feat/appendix-exodus25-revamp`；保留既有 `.blend1` 備份。
+已讀輸入與核准 claim IDs：R02 `RITUAL_STEPS.md`、`ROLE_ACCESS.md`、`GARMENTS.md`、R11 `offerings.json`；C-LV01-BRANCHES、C-LV02-07-FIVE。
+變更檔案（含刪除／原因）：擴充 `src/types/offerings.ts` 與 schema，新增五祭比較資料；把 `burnt-offering-service` 拆成獻祭者／祭司三步牛支，另加羊、山羊文字與鳥支的獨立程序鏈；`AppKernel` 允許燔祭程序並提供三條核心啟動按鈕；研究面板加入可展開五祭比較卡片、材料／目的／行動者／地點／處理與可食界線；新增 R15 測試、說明與兩張 Browser 截圖。
+Blender 工作檔／recipe／source 與 derived hashes（適用時）：本任務沒有 Blender 場景或 GLB 變更；沿用 R07–R12 已驗證器物資產與 hash。
+驗收 QA IDs：燔祭壇頁顯示五祭五列與牛／羊／山羊、鳥資料界線；牛支 1/3→3/3 後完成並可回退；羊支第二步顯示北邊規則，牛與鳥支沒有套用；鳥支由獻祭者交接祭司處理；未知 mesh 維持文字／符號。
+命令、exit code、log 路徑：`npm run typecheck` exit 0；`npm test -- --run` exit 0（19 檔／48 tests）；`npm run verify:architecture` exit 0（100 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；Browser R15 preview document diagnostics errors 0、warnings 0，active asset count 2、profile `desktop-structural`。
+畫面與 activeAssetIds／profile／viewport 證據：`docs/qa/revamp/screenshots/r15-offering-comparison-desktop.png`、`r15-burnt-bird-desktop.png`；selected detail 為 `tabernacle-burnt-altar-detail`，截圖保留真實 WebGL 預覽、五祭卡片與鳥支步驟面板。
+未驗證項目／限制／需總控判定：五祭中素祭、平安祭、贖罪祭、贖愆祭目前交付可追溯比較閱讀，尚未各自建立完整播放鏈；山羊資料保留為獨立文字分支但核心 UI 合併在羊類入口；沒有新增牲畜 mesh、寫實屠宰或火焰動作。R16 贖罪日與 R24 總控驗收尚未執行。
+結論（自驗／總控分開）：R15 自驗透過；燔祭分支與五祭比較已接入網站，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R16；接入贖罪日完整步驟、麻衣切換、排他區域與退出恢復。

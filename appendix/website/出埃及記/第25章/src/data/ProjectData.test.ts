@@ -57,6 +57,7 @@ describe('project data contracts', () => {
   it('keeps costume states and offering representations traceable', () => {
     const claimIds = new Set(data.evidence.claims.map(({ id }) => id));
     const assetIds = new Set(data.assets.assets.map(({ id }) => id));
+    const rituals = new Set(data.rituals.rituals.map(({ id }) => id));
     expect(data.garments.states.map(({ id }) => id)).toEqual(expect.arrayContaining(['daily-priest', 'daily-high-priest', 'atonement-linen', 'post-atonement-garments', 'unspecified']));
     data.garments.states.forEach((state) => {
       state.sourceClaimIds.forEach((id) => expect(claimIds.has(id)).toBe(true));
@@ -74,6 +75,13 @@ describe('project data contracts', () => {
     });
     expect(data.offerings.branches.find(({ id }) => id === 'burnt-offering-cattle')?.animalId).toBe('offering-bull');
     expect(data.offerings.branches.some(({ animalId }) => animalId === 'offering-cow-candidate')).toBe(false);
+    expect(data.offerings.branches.map(({ ritualId }) => ritualId)).toEqual([
+      'burnt-offering-service',
+      'burnt-offering-sheep-service',
+      'burnt-offering-goat-service',
+      'burnt-offering-bird-service',
+    ]);
+    data.offerings.branches.forEach((branch) => expect(rituals.has(branch.ritualId)).toBe(true));
   });
 
   it('keeps lampstand and shewbread teaching steps source-linked', () => {
@@ -87,6 +95,20 @@ describe('project data contracts', () => {
     expect(shewbread?.steps[2]?.instruction).toContain('安息日');
     expect(shewbread?.steps[3]?.instruction).toContain('亞倫和子孫');
     expect(shewbread?.steps.every(({ actorRole }) => actorRole === 'priest' || actorRole === 'actor-unspecified')).toBe(true);
+  });
+
+  it('defines five offering comparisons without merging handling rules', () => {
+    const claimIds = new Set(data.evidence.claims.map(({ id }) => id));
+    const comparisonIds = data.offerings.comparisons.map(({ id }) => id);
+    expect(comparisonIds).toEqual(['burnt-offering', 'grain-offering', 'peace-offering', 'sin-offering', 'guilt-offering']);
+    expect(new Set(comparisonIds).size).toBe(5);
+    data.offerings.comparisons.forEach((comparison) => {
+      comparison.sourceClaimIds.forEach((id) => expect(claimIds.has(id)).toBe(true));
+      expect(comparison.scriptureReferences.length).toBeGreaterThan(0);
+      expect(comparison.handling.length).toBeGreaterThan(0);
+    });
+    expect(data.offerings.comparisons.find(({ id }) => id === 'peace-offering')?.handling).toContain('不把全牲都焚燒');
+    expect(data.offerings.comparisons.find(({ id }) => id === 'sin-offering')?.handling).toContain('帶血入會幕');
   });
   it('fails closed for duplicate IDs and missing claim references', () => {
     expect(() => assertUnique(['same-id', 'same-id'])).toThrow();

@@ -1,6 +1,7 @@
 import type { AssetProfile } from './assets';
 import type { ConfidenceLevel } from './core';
 import type { CharacterRole, CharacterVisualPolicy, GarmentState } from './characters';
+import type { OfferingComparisonDefinition } from './offerings';
 import type { RitualPlaybackState } from './rituals';
 
 export interface TourStopView { id: string; title: string; locationId: string; objectId: string | null; scriptureReference: string | null; scriptureText: string | null; summary: string; }
@@ -20,6 +21,8 @@ export interface LearningViewState {
   locationName: string | null;
   scriptureReferences: Array<{ id: string; summary: string; annotation: string; originalText: string; context: ScriptureContext; sourceUrl: string }>;
   ritualIds: string[];
+  offeringBranches: Array<{ id: string; label: string; ritualId: string; instruction: string }>;
+  offeringComparisons: OfferingComparisonDefinition[];
   characterIds: string[];
   availableObjects: Array<{ id: string; name: string }>;
   detail: ObjectDetailView | null;

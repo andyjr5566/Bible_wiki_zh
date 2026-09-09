@@ -39,4 +39,21 @@ describe('ritual playback contract', () => {
     expect(controller.state.status).toBe('playing');
     controller.next(); expect(controller.state.status).toBe('complete');
   });
+
+  it('keeps burnt-offering animal branches isolated and reversible', () => {
+    const registry = new RitualRegistry(loadProjectData().rituals.rituals);
+    const controller = new RitualPlaybackController(registry);
+    controller.start('burnt-offering-service');
+    controller.next(); expect(controller.state.stepIndex).toBe(1);
+    controller.next(); expect(controller.state.stepIndex).toBe(2);
+    controller.next(); expect(controller.state.status).toBe('complete');
+    controller.previous(); expect(controller.state.stepIndex).toBe(1); expect(controller.state.status).toBe('paused');
+
+    const sheep = registry.require('burnt-offering-sheep-service');
+    expect(sheep.steps.map(({ branchId }) => branchId)).toEqual(['burnt-sheep', 'burnt-sheep', 'burnt-sheep']);
+    expect(sheep.steps[1]?.instruction).toContain('北邊');
+    const bird = registry.require('burnt-offering-bird-service');
+    expect(bird.steps[1]?.actorRole).toBe('priest');
+    expect(bird.steps[1]?.scriptureReferences).toContain('Leviticus 1:15-17');
+  });
 });

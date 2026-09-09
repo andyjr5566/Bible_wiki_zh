@@ -27,7 +27,21 @@ export interface OfferingBranchDefinition {
   instruction: string;
 }
 
+export interface OfferingComparisonDefinition {
+  id: EntityId;
+  label: string;
+  materials: string;
+  purpose: string;
+  actorRole: 'offering-person' | 'priest' | 'both';
+  location: string;
+  handling: string;
+  scriptureReferences: ScriptureReference[];
+  sourceClaimIds: string[];
+  limitations: string[];
+}
+
 export interface OfferingsData {
   animals: OfferingAnimalDefinition[];
   branches: OfferingBranchDefinition[];
+  comparisons: OfferingComparisonDefinition[];
 }

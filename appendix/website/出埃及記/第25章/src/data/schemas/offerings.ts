@@ -25,4 +25,17 @@ const branchSchema = z.object({
   instruction: z.string().min(1),
 });
 
-export const offeringsSchema = z.object({ animals: z.array(animalSchema).min(1), branches: z.array(branchSchema).min(1) });
+const comparisonSchema = z.object({
+  id: idSchema,
+  label: z.string().min(1),
+  materials: z.string().min(1),
+  purpose: z.string().min(1),
+  actorRole: z.enum(['offering-person', 'priest', 'both']),
+  location: z.string().min(1),
+  handling: z.string().min(1),
+  scriptureReferences: z.array(referenceSchema).min(1),
+  sourceClaimIds: z.array(z.string().regex(/^C-[A-Z0-9-]+$/)).min(1),
+  limitations: z.array(z.string().min(1)).min(1),
+});
+
+export const offeringsSchema = z.object({ animals: z.array(animalSchema).min(1), branches: z.array(branchSchema).min(1), comparisons: z.array(comparisonSchema).length(5) });
