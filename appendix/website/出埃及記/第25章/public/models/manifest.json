@@ -69,7 +69,7 @@
       "variant": "standalone-detail",
       "standalone": true,
       "desktopOnly": true,
-      "url": "models/ark-alternative.glb",
+      "url": "models/ark-alternative.glb?rev=20260909-material-3",
       "author": "thedeserttabernacle",
       "sourceUrl": "https://sketchfab.com/3d-models/ark-of-the-covenant-alternative-48d613a98e964200932c1395c1d34f68",
       "license": "CC Attribution-NonCommercial",
@@ -78,7 +78,7 @@
       "sourceFile": "assets/source/sketchfab/ark-of-the-covenant-alternative/ark_of_the_covenant_alternative.glb",
       "processedFile": "assets/processed/sketchfab/ark-of-the-covenant-alternative/ark-alternative.glb",
       "sha256": "D8BE215800501C9E39D7DC48B0552DB75B3A86D11E73216D374AA47EF327E50A",
-      "processing": "glTF Transform 4.2.0 optimize: quantize, dedup, weld, resample, prune, sparse; hierarchy preserved; flatten/join/instance/simplify disabled; textures capped at 2048px",
+      "processing": "Blender 5.2.1 material pass: ArkAcaciaWoodImproved for chest panels and ArkGoldImproved for gold overlay, cover, cherubim and poles; then glTF Transform 4.4.2 optimize: quantize, dedup, weld, resample, prune, sparse; hierarchy preserved; flatten/join/instance/simplify disabled; textures capped at 2048px",
       "position": [0, 0, -8.2],
       "rotation": [0, 0, 0],
       "scale": 0.3

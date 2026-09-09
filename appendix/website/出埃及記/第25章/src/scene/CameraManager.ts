@@ -198,7 +198,9 @@ export class CameraManager {
       'incense-altar': { position: { x: 0.45, y: 1.7, z: -2.15 }, target: { x: 0, y: 1, z: -5.85 }, fov: 41 },
       menorah: { position: { x: 0.28, y: 1.5, z: -2.45 }, target: { x: -1.2, y: 0.82, z: -4.35 }, fov: 40 },
       'shewbread-table': { position: { x: -0.28, y: 1.5, z: -2.45 }, target: { x: 1.2, y: 0.78, z: -4.35 }, fov: 40 },
-      ark: { position: { x: -1.45, y: 1.32, z: -7.85 }, target: { x: 0, y: 0.72, z: -9.18 }, fov: 47 },
+      // Keep the full reconstructed ark in frame; the source asset is wider
+      // than the other detail props and the old close rig clipped its cover.
+      ark: { position: { x: -2.1, y: 2.05, z: -5.8 }, target: { x: 0, y: 0.75, z: -8.2 }, fov: 43 },
     };
     const rig = rigs[objectId];
     if (rig) this.applyRig(rig);

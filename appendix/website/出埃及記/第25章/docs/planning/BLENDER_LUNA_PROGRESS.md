@@ -1,8 +1,8 @@
-# 現行入口：SOL_COMPLETION_AUDIT
+# 現行入口：BLENDER_LUNA_PROGRESS
 
 更新日期：2026-09-10。
 
-舊易用性稽核與本輪功能範圍不同；歷史 PASS 不能替代 R23/R24。
+前一批紀錄保留於封存，未經最終總控驗收；約櫃包金、detail 載入與截圖證據仍有缺口。新進度只記 REVAMP_PROGRESS.md。
 
 請讀 [整站現行規格](REVAMP_BASELINE.md)。本頁只作相容入口，不另發工作指示。
 

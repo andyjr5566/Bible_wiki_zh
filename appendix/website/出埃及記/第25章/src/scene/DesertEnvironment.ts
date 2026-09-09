@@ -65,8 +65,8 @@ export class DesertEnvironment {
       this.#warmFillLight.color.setHex(0xdf8450);
       this.#warmFillLight.intensity = 0.6;
 
-      this.#holyPlaceGlow.intensity = 16;
-      this.#arkLight.intensity = 38;
+      this.#holyPlaceGlow.intensity = 9;
+      this.#arkLight.intensity = 11;
       if (this.#starfield) this.#starfield.visible = false;
     } else if (mode === 'night') {
       this.#scene.fog = new THREE.Fog(0x101524, 45, 140);
@@ -86,8 +86,8 @@ export class DesertEnvironment {
       this.#warmFillLight.color.setHex(0x2d3a58);
       this.#warmFillLight.intensity = 0.2;
 
-      this.#holyPlaceGlow.intensity = 28;
-      this.#arkLight.intensity = 55;
+      this.#holyPlaceGlow.intensity = 14;
+      this.#arkLight.intensity = 16;
       if (this.#starfield) this.#starfield.visible = true;
     } else {
       // Midday (Default)
@@ -108,8 +108,10 @@ export class DesertEnvironment {
       this.#warmFillLight.color.setHex(0xe8b87a);
       this.#warmFillLight.intensity = 0.52;
 
-      this.#holyPlaceGlow.intensity = 18;
-      this.#arkLight.intensity = 42;
+      // Detail views place the camera close to the ark. Keep the dedicated
+      // highlight readable without washing out the model or nearby ground.
+      this.#holyPlaceGlow.intensity = 10;
+      this.#arkLight.intensity = 12;
       if (this.#starfield) this.#starfield.visible = false;
     }
   }
@@ -310,12 +312,12 @@ export class DesertEnvironment {
     this.#warmFillLight.position.set(34, 16, -42);
     this.#root.add(this.#warmFillLight);
 
-    this.#holyPlaceGlow = new THREE.PointLight(0xffca82, 18, 13, 2);
+    this.#holyPlaceGlow = new THREE.PointLight(0xffca82, 10, 13, 2);
     this.#holyPlaceGlow.name = 'holy-place-warm-glow';
     this.#holyPlaceGlow.position.set(0, 3.2, -4.7);
     this.#root.add(this.#holyPlaceGlow);
 
-    this.#arkLight = new THREE.SpotLight(0xffd58f, 42, 16, Math.PI / 7, 0.72, 1.7);
+    this.#arkLight = new THREE.SpotLight(0xffd58f, 12, 16, Math.PI / 7, 0.72, 1.7);
     this.#arkLight.name = 'most-holy-focused-light';
     this.#arkLight.position.set(-1.2, 7.2, -6.7);
     this.#arkLight.target.position.set(0, 0.6, -9.1);

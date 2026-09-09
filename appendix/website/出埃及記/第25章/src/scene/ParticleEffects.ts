@@ -73,6 +73,14 @@ export class ParticleEffects {
     this.#altarLight.intensity = this.#nightMode ? 7.0 : 4.5;
   }
 
+  setLearningDetailFocus(focused: boolean): void {
+    // The additive Shekinah shaft is intentionally visible in the overview,
+    // but it sits directly behind the ark detail camera and can wash out the
+    // reconstructed asset. Hide only that effect while a learning object is
+    // being inspected; the dedicated point light and asset remain active.
+    this.#shekinahGroup.visible = !focused;
+  }
+
   #buildShekinahRays(): void {
     // Volumetric Shekinah Light Shaft
     const rayGeo = new THREE.CylinderGeometry(0.18, 1.4, 3.8, 24, 1, true);

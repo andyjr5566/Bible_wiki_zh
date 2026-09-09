@@ -306,6 +306,7 @@ export class AppKernel implements AppPort {
   private applyMode(mode: ExperienceMode): void {
     this.assetRuntime.setProfileVisible(!(mode === 'learning' && this.assetRuntime.snapshot.profile === 'desktop-structural'));
     this.assetRuntime.setInteriorReveal(mode === 'learning' && this.assetRuntime.snapshot.profile !== 'desktop-structural');
+    this.scene.context.particles.setLearningDetailFocus(mode === 'learning');
     this.scene.context.cameraManager.applyMode(mode);
     if (mode !== 'tour') this.tour.pause();
     this.publishExperience();
