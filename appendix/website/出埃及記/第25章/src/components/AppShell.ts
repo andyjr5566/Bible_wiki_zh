@@ -249,7 +249,10 @@ export class AppShell {
     });
 
     const progress = state.progress?.ratio == null ? '' : ` · ${Math.round(state.progress.ratio * 100)}%`;
-    const active = state.activeAssetIds.length ? state.activeAssetIds.join('、') : '尚未載入';
+    this.#assetStatus.dataset.runtimeProfile = state.profile;
+    this.#assetStatus.dataset.activeAssetCount = String(state.activeAssetIds.length);
+    this.#assetStatus.dataset.selectedAsset = state.diagnostics.selectedAssetId ?? '';
+    const active = state.activeAssetIds.length ? `已載入 ${state.activeAssetIds.length} 項模型` : '尚未載入';
     this.#assetStatus.textContent = state.phase === 'error' && state.error
       ? `載入失敗：${state.error.message}${state.error.fallbackAvailable ? '；可明確選擇低模備援。' : ''}`
       : `${state.phase === 'ready' ? '已就緒' : state.phase === 'loading' ? '載入中' : '待命'}${progress} · ${active}`;

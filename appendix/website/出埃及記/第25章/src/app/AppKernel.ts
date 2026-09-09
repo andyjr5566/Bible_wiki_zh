@@ -351,6 +351,7 @@ export class AppKernel implements AppPort {
   }
 
   #lastHandledActId: string | null = null;
+  #detailSelectionGeneration = 0;
   private onCinematicState(state: Readonly<CinematicState>): void {
     if (!state.isPlaying) {
       this.#lastHandledActId = null;
@@ -395,7 +396,15 @@ export class AppKernel implements AppPort {
     this.uiState.selectEntity(objectId, 'object');
     this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
     this.assetRuntime.setInteriorReveal(this.uiState.snapshot.mode === 'learning' && this.assetRuntime.snapshot.profile !== 'desktop-structural');
-    if (this.assetRuntime.snapshot.profile === 'desktop-structural' && object.assetId) this.loadDetail(object.assetId);
+    if (object.assetId) void this.ensureDetailAsset(object.assetId, ++this.#detailSelectionGeneration);
+  }
+
+  private async ensureDetailAsset(assetId: string, selectionGeneration: number): Promise<void> {
+    if (this.assetRuntime.snapshot.profile !== 'desktop-structural') {
+      await this.assetRuntime.selectProfile('desktop-structural');
+    }
+    if (selectionGeneration !== this.#detailSelectionGeneration) return;
+    if (this.getState().mode === 'learning' || this.getState().mode === 'ritual') await this.assetRuntime.loadDetail(assetId);
   }
 
   private focusTourStop(): void {

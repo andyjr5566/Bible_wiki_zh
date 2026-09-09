@@ -22,6 +22,21 @@ class FixtureLoader implements AssetLoader {
   dispose(): void { [...this.loaded.keys()].forEach((id) => this.unload(id)); }
 }
 
+class DelayedDetailLoader extends FixtureLoader {
+  readonly pending = new Map<string, { resolve: (asset: LoadedAsset) => void; definition: AssetDefinition }>();
+  override load(definition: AssetDefinition): Promise<LoadedAsset> {
+    if (definition.qualityTier !== 'detail') return super.load(definition);
+    return new Promise((resolve) => { this.pending.set(definition.id, { resolve, definition }); });
+  }
+  resolveDetail(assetId: string): void {
+    const entry = this.pending.get(assetId); if (!entry) throw new Error(`No pending detail: ${assetId}`);
+    this.pending.delete(assetId);
+    const material = new THREE.MeshBasicMaterial();
+    const resource = new THREE.Group(); resource.add(new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material));
+    entry.resolve({ definition: entry.definition, resource, diagnostics: { meshCount: 1, materialCount: 1, textureCount: 0, bounds: { min: [-0.5, -0.5, -0.5], max: [0.5, 0.5, 0.5] }, issues: [] } });
+  }
+}
+
 describe('runtime asset profiles', () => {
   it('loads hero, structural, fallback, and details only under their explicit policies', async () => {
     const manifest = new AssetManifest(loadProjectData().assets.assets); const loader = new FixtureLoader(); const root = new THREE.Group();
@@ -52,6 +67,22 @@ describe('runtime asset profiles', () => {
     expect(loader.unloaded).toContain('tabernacle-ark-alternative');
     await runtime.selectProfile('fallback-low');
     expect(runtime.snapshot.activeAssetIds).toEqual(['tabernacle-lowpoly']);
+    runtime.dispose();
+  });
+
+  it('ignores a late detail response after a newer selection', async () => {
+    const manifest = new AssetManifest(loadProjectData().assets.assets); const loader = new DelayedDetailLoader(); const root = new THREE.Group();
+    const runtime = new AssetRuntimeManager(manifest, loader, root, 'desktop-structural');
+    await runtime.selectProfile('desktop-structural');
+    const first = runtime.loadDetail('tabernacle-ark-alternative');
+    const second = runtime.loadDetail('tabernacle-menorah-detail');
+    loader.resolveDetail('tabernacle-ark-alternative');
+    await first;
+    expect(runtime.snapshot.activeAssetIds).toEqual(['tabernacle-framework']);
+    loader.resolveDetail('tabernacle-menorah-detail');
+    await second;
+    expect(runtime.snapshot.activeAssetIds).toEqual(['tabernacle-framework', 'tabernacle-menorah-detail']);
+    expect(runtime.snapshot.diagnostics.selectedAssetId).toBe('tabernacle-menorah-detail');
     runtime.dispose();
   });
 });

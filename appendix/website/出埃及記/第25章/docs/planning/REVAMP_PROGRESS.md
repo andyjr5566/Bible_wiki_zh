@@ -20,7 +20,7 @@
 | R02 | 角色／程序契約 | R01 | 目前 GPT-5 session | 自驗透過 | [RITUAL_STEPS](../research/RITUAL_STEPS.md)、[ROLE_ACCESS](../research/ROLE_ACCESS.md)、[GARMENTS](../research/GARMENTS.md) |
 | R03 | 資料與抽取 | R01,R02 | 目前 GPT-5 session | 自驗透過 | [scripture-excerpts](../../src/data/scripture-excerpts.json)、[object-details](../../src/data/object-details.json)、[evidence](../../src/data/evidence.json)、[tours](../../src/data/tours.json)、[ProjectData.test](../../src/data/ProjectData.test.ts) |
 | R04 | 入口／狀態 | R03 | 目前 GPT-5 session | 自驗透過 | [UIStateManager](../../src/ui/UIStateManager.ts)、[ModeNavigation](../../src/components/ModeNavigation.ts)、[UIStateManager.test](../../src/ui/UIStateManager.test.ts) |
-| R05 | detail生命週期 | R04 | Luna | 待辦 | — |
+| R05 | detail生命週期 | R04 | 目前 GPT-5 session | 自驗透過 | [AssetRuntimeManager](../../src/systems/assets/AssetRuntimeManager.ts)、[AssetRuntimeManager.test](../../src/systems/assets/AssetRuntimeManager.test.ts)、[AppShell](../../src/components/AppShell.ts) |
 | R06 | 空間／剖面／取景 | R05 | Luna | 待辦 | — |
 | R07 | Blender流程 | R03,R06 | Luna | 待辦 | — |
 | R08 | 約櫃修正 | R07,R01 | Luna | 待辦 | — |
@@ -141,3 +141,18 @@ Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender 或�
 未驗證項目／限制／需總控判定：相機 pose、profile 與 overlay 尚未序列化成深連結或瀏覽器 history；R05 才處理 detail 非同步生命週期；R04 沒有 Blender 寫入。
 結論（自驗／總控分開）：R04 自驗透過；四入口與播放所有權已納入狀態契約，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R05；修復六器物 detail 的真實非同步載入、generation/token 與錯誤恢復。
+
+## R05 執行回執
+
+任務ID／起訖日期：R05／2026-09-10 03:20–03:45（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；以 AssetRuntimeManager 單元測試、production build 與 Browser preview 實測，未宣稱 GPT-5.6 Luna。
+開始時工作樹或基準hash：R04 commit `aea22c51`，分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准claim IDs：R03 typed object IDs／asset manifest、R04 playback owner；沒有新增經文 claim。detail 資產仍沿用既有授權與 source hash。
+變更檔案：`AssetRuntimeManager.ts` 增加 detail generation／request guard、profile 切換失效化與 runtime diagnostics；`AssetRuntimeState` 增加 selected／pending 診斷；`AppKernel.ts` 由器物選取自動切至 structural profile 並要求對應 detail，加入 selection generation；`AppShell.ts` 將產品狀態改為可讀數量並把技術診斷放 data attributes；`AssetRuntimeManager.test.ts` 新增延遲 A→B 快切負例。
+Blender工作檔／recipe／source與derived hashes：沒有寫入 Blender、source GLB 或 processed GLB。
+驗收QA IDs：R05 detail 真載入、A→B late response、profile revision、錯誤狀態與產品面板不洩露技術名詞。
+命令、exit code、log路徑：`npm run build` exit 0（含 typecheck、36 tests、architecture 91 modules、assets 17 assets）；Browser preview 點選「器物與經文 → 約櫃」後 `data-runtime-profile=desktop-structural`、`data-active-asset-count=2`、`data-selected-asset=tabernacle-ark-alternative`，textContent 為「已就緒 · 已載入 2 項模型」；dev logs 0。
+畫面與activeAssetIds／profile／viewport證據：Browser production preview 預設 desktop viewport；DOM 診斷確認 framework + ark detail 兩項 active 資產，學習面板顯示約櫃 typed detail；尚未宣稱手機取景或 GPU 指標。
+未驗證項目／限制／需總控判定：GLTF loader 的跨 consumer 共享取消仍沿用既有 promise cache；完整錯誤重試 UI 與 R21 故障演練尚待後續；detail 是否完全隔離於每個 GLB 的部件邊界待 R06/R12 實測。
+結論（自驗／總控分開）：R05 自驗透過；點選器物會真實觸發 detail pipeline，late response 不會覆蓋新選取，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R06；統一世界、部件 bounds、剖面取景與尺寸資料的座標契約。

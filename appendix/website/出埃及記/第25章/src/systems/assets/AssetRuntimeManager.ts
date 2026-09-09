@@ -16,11 +16,13 @@ export class AssetRuntimeManager {
   readonly #originalShellNodeVisibility = new Map<THREE.Object3D, boolean>();
   #state: AssetRuntimeState;
   #revision = 0;
+  #detailGeneration = 0;
+  #detailRequest: { assetId: string; generation: number } | null = null;
 
   constructor(readonly manifest: AssetManifest, readonly loader: AssetLoader, parent: THREE.Object3D, initialProfile: AssetProfile) {
     this.#profileRoot.name = 'profile-assets'; this.#detailRoot.name = 'on-demand-details'; this.#libraryRoot.name = 'runtime-library-assets';
     parent.add(this.#profileRoot, this.#detailRoot, this.#libraryRoot);
-    this.#state = { phase: 'idle', profile: initialProfile, activeAssetIds: [], boundsByAssetId: {}, progress: null, error: null };
+    this.#state = { phase: 'idle', profile: initialProfile, activeAssetIds: [], boundsByAssetId: {}, progress: null, error: null, diagnostics: { selectedAssetId: null, detailGeneration: 0, pendingAssetIds: [] } };
   }
 
   get snapshot(): Readonly<AssetRuntimeState> { return cloneState(this.#state); }
@@ -28,6 +30,8 @@ export class AssetRuntimeManager {
 
   async selectProfile(profile: AssetProfile): Promise<void> {
     const revision = ++this.#revision;
+    this.#detailGeneration += 1;
+    this.#detailRequest = null;
     const plan = this.manifest.createLoadPlan(profile);
     this.#setState({ phase: 'loading', profile, progress: null, error: null });
     this.#clearDetails();
@@ -53,14 +57,17 @@ export class AssetRuntimeManager {
       this.#setState({ phase: 'error', error: { assetId, message: 'Detail assets are available in structural mode so they do not overlap the complete hero model.', fallbackAvailable: true } });
       return;
     }
+    const generation = ++this.#detailGeneration;
+    this.#detailRequest = { assetId, generation };
     this.#clearDetails(assetId);
     const revision = this.#revision;
-    this.#setState({ phase: 'loading', progress: null, error: null });
+    this.#setState({ phase: 'loading', progress: null, error: null, diagnostics: { ...this.#state.diagnostics, selectedAssetId: assetId, detailGeneration: generation } });
     try {
       await this.#mount(definition, this.#detailRoot, revision);
-      if (revision === this.#revision) this.#setState({ phase: 'ready', progress: null, error: null });
+      if (revision === this.#revision && generation === this.#detailGeneration && this.#detailRequest?.assetId === assetId) this.#setState({ phase: 'ready', progress: null, error: null });
+      else if (this.#detailRequest?.assetId !== assetId) this.unload(assetId);
     } catch (error) {
-      if (revision === this.#revision) this.#setState({ phase: 'error', progress: null, error: { assetId, message: toMessage(error), fallbackAvailable: true } });
+      if (revision === this.#revision && generation === this.#detailGeneration && this.#detailRequest?.assetId === assetId) this.#setState({ phase: 'error', progress: null, error: { assetId, message: toMessage(error), fallbackAvailable: true } });
     }
   }
 
@@ -131,6 +138,8 @@ export class AssetRuntimeManager {
 
   dispose(): void {
     this.#revision += 1;
+    this.#detailGeneration += 1;
+    this.#detailRequest = null;
     this.setInteriorReveal(false);
     [...this.#mounted.keys()].forEach((assetId) => this.unload(assetId));
     this.loader.dispose(); this.#profileRoot.removeFromParent(); this.#detailRoot.removeFromParent(); this.#libraryRoot.removeFromParent(); this.#events.clear();
@@ -170,13 +179,14 @@ export class AssetRuntimeManager {
   }
 
   #setState(patch: Partial<AssetRuntimeState>): void {
-    this.#state = { ...this.#state, ...patch };
+    const diagnostics = patch.diagnostics ?? this.#state.diagnostics;
+    this.#state = { ...this.#state, ...patch, diagnostics: { ...diagnostics, pendingAssetIds: [...this.#loadingAssetIds] } };
     this.#events.emit(this.snapshot);
   }
 }
 
 function cloneState(state: AssetRuntimeState): AssetRuntimeState {
-  return { ...state, activeAssetIds: [...state.activeAssetIds], boundsByAssetId: { ...state.boundsByAssetId }, progress: state.progress ? { ...state.progress } : null, error: state.error ? { ...state.error } : null };
+  return { ...state, activeAssetIds: [...state.activeAssetIds], boundsByAssetId: { ...state.boundsByAssetId }, progress: state.progress ? { ...state.progress } : null, error: state.error ? { ...state.error } : null, diagnostics: { ...state.diagnostics, pendingAssetIds: [...state.diagnostics.pendingAssetIds] } };
 }
 
 function toMessage(error: unknown): string { return error instanceof Error ? error.message : String(error); }

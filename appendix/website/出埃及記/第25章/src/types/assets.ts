@@ -59,4 +59,5 @@ export interface AssetRuntimeState {
   boundsByAssetId: Readonly<Record<string, AssetWorldBounds>>;
   progress: { assetId: string; phase: 'download' | 'parse' | 'validate' | 'ready' | 'error'; loadedBytes: number; totalBytes: number | null; ratio: number | null } | null;
   error: AssetRuntimeError | null;
+  diagnostics: { selectedAssetId: string | null; detailGeneration: number; pendingAssetIds: string[] };
 }
