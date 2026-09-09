@@ -4,7 +4,7 @@
 
 ## 總狀態
 
-- 當前階段：R03 自驗透過，下一張為 R04；R00–R23 尚未宣稱整站完成。
+- 當前階段：R09 自驗透過，下一張為 R10；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
 - 最新測試／build：R03 `npm run build` exit 0；typecheck、16 個測試檔／34 個測試、architecture 91 modules、assets 17 assets 均通過；Vite production build 成功。新增來源抽取器 `npm run build:excerpts` 產生 9 段逐節經文。
 - Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
@@ -22,9 +22,9 @@
 | R04 | 入口／狀態 | R03 | 目前 GPT-5 session | 自驗透過 | [UIStateManager](../../src/ui/UIStateManager.ts)、[ModeNavigation](../../src/components/ModeNavigation.ts)、[UIStateManager.test](../../src/ui/UIStateManager.test.ts) |
 | R05 | detail生命週期 | R04 | 目前 GPT-5 session | 自驗透過 | [AssetRuntimeManager](../../src/systems/assets/AssetRuntimeManager.ts)、[AssetRuntimeManager.test](../../src/systems/assets/AssetRuntimeManager.test.ts)、[AppShell](../../src/components/AppShell.ts) |
 | R06 | 空間／剖面／取景 | R05 | 目前 GPT-5 session | 自驗透過 | [CameraManager](../../src/scene/CameraManager.ts)、[DimensionVisualizer](../../src/scene/DimensionVisualizer.ts)、[asset-parts](../../src/data/asset-parts.json)、[CameraManager.test](../../src/scene/CameraManager.test.ts) |
-| R07 | Blender流程 | R03,R06 | Luna | 待辦 | — |
-| R08 | 約櫃修正 | R07,R01 | Luna | 待辦 | — |
-| R09 | 完整會幕／照明 | R07,R08 | Luna | 待辦 | — |
+| R07 | Blender流程 | R03,R06 | 目前 GPT-5 session | 自驗透過 | [README](../../scripts/blender/README.md)、[manifest](../../assets/staging/blender/r07/tabernacle-ark-alternative.r07-manifest.json) |
+| R08 | 約櫃修正 | R07,R01 | 目前 GPT-5 session | 自驗透過 | [ARK_PARTS](../research/ARK_PARTS.md)、[assets](../../src/data/assets.json) |
+| R09 | 完整會幕／照明 | R07,R08 | 目前 GPT-5 session | 自驗透過 | [R09 policy](../research/R09_LIGHTING_POLICY.md)、[screenshots](../qa/revamp/screenshots/) |
 | R10 | 五件器物 | R07,R09 | Luna | 待辦 | — |
 | R11 | 角色／服飾／牲畜 | R02,R07,R10 | Luna | 待辦 | — |
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | Luna | 待辦 | — |
@@ -201,3 +201,17 @@ Blender????recipe?source?derived hashes?source SHA-256 ?? `d8be215800501c9e39d7d
 ???????????????source GLB ????????????????? unresolved????????????? R12 ?????R07 staging blend ? Blender ??????????????? `.001`???????????????
 ????????????R08 ???????????????????? mapping ????????????? GPT-6 R24?
 ?????ID???????????R09?? R07 ????????????????????? zones?court?camp ??????
+## R09 執行回執
+
+任務ID／起訖日期：R09／2026-09-10 03:05–03:25（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；TypeScript、Vitest、Vite preview 與 Browser 實測；本卡沒有 Blender 寫入，沿用 R07/R08 已驗證的 GLB。
+開始時工作樹或基準 hash：R08 commit `99df79d8`；分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准 claim IDs：R09 `REVAMP_TASKS.md`；R07/R08 Blender manifest、R08 `ARK_PARTS.md`；未新增經文 claim。
+變更檔案（含刪除／原因）：`ParticleEffects.ts` 移除 Shekinah 光球／光柱、夜間火柱與粗錐體祭壇火；新增 `ParticleCue` opt-in 閘門與分組名稱，煙／燈火只在 cue 啟用且非學習細節焦點時顯示。`DesertEnvironment.ts` 將 midday 設為明確預設，降低三種氣氛的局部燈強度、背景山脊／地形飽和度、營地 instance（每組 24→12，合計 36）與營火亮度。`SceneBootstrap.ts` 曝光改為 0.98。`SettingsModal.ts` 移除「火柱」文案，改成已校準時間光影說明。新增 `ParticleEffects.test.ts` 與 `R09_LIGHTING_POLICY.md`。
+Blender工作檔／recipe／source與derived hashes（適用時）：無；R08 公共 GLB hash 維持 `3298d4c9ae45b1bb9c45239b55a4b698d1a3e6fa5507891b4815125a3b324dcf`。
+驗收QA IDs：R09 光照基線、無預設神聖光柱／粗錐體、cue 預設隱藏、遠景低干擾、總覽→器物細節可辨金材質。
+命令、exit code、log路徑：`npm run typecheck` exit 0；`npm test` exit 0（17 檔／37 tests）；`npm run verify:architecture` exit 0（94 modules）；`npm run verify:assets` exit 0（17 assets）；`npm run build` exit 0；Browser preview console logs 0。
+畫面與activeAssetIds／profile／viewport證據：`docs/qa/revamp/screenshots/r09-before-ark-detail-desktop.png`、`r09-ark-detail-desktop.png`、`r09-overview-desktop.png`；desktop preview 器物面板顯示「約櫃」，GLB 金材質與輪廓可辨，總覽無預設光柱。
+未驗證項目／限制／需總控判定：R13–R15 尚未把程序 cue 接到播放器；營地與山脊仍是中性 reconstructed 背景，不能當歷史配置；R12 尚未逐一以 GLB bounds 校準所有器物。
+結論（自驗／總控分開）：R09 自驗透過；已完成場景閱讀基線與 cue 邊界，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R10；依 R09 背景與 cue 邊界補齊五件器物的資料、分件與細節資產。

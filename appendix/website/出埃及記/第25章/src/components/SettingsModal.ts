@@ -20,11 +20,11 @@ export class SettingsModal {
           <!-- Atmosphere Switcher -->
           <section class="settings-section">
             <h3>🌄 大氣氛圍與時間 (Atmosphere)</h3>
-            <p class="settings-desc">切換曠野的時間光影與上帝同在的火柱顯現（出 40:38）。</p>
+            <p class="settings-desc">切換三種已校準的時間光影；預設採用中性、清楚的閱讀光照。</p>
             <div class="settings-btn-group" data-group="atmosphere">
               <button type="button" class="settings-opt-btn" data-atmosphere="dawn">🌅 晨曦 (Dawn)</button>
               <button type="button" class="settings-opt-btn is-active" data-atmosphere="midday">☀️ 曠野正午 (Midday)</button>
-              <button type="button" class="settings-opt-btn" data-atmosphere="night">✨ 聖夜火柱 (Night / Fire)</button>
+              <button type="button" class="settings-opt-btn" data-atmosphere="night">✨ 夜間照明 (Night)</button>
             </div>
           </section>
 
