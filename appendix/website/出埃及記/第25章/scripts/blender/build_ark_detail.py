@@ -169,23 +169,60 @@ def replace_materials(objects: list[bpy.types.Object], config: dict[str, Any]) -
                 polygon.material_index = 1 if inside else 0
 
 
-def add_cameras_and_lights(scene: bpy.types.Scene, collection: bpy.types.Collection, config: dict[str, Any]) -> None:
-    for camera_spec in config.get("cameras", []):
+def add_cameras_and_lights(scene: bpy.types.Scene, collection: bpy.types.Collection, config: dict[str, Any], objects: list[bpy.types.Object]) -> None:
+    camera_specs = config.get("cameras", [])
+    if config.get("autoCameras"):
+        bounds = object_bounds(objects)
+        bounds_min = bounds.get("min")
+        bounds_max = bounds.get("max")
+        if not bounds_min or not bounds_max or not bounds.get("size"):
+            raise RuntimeError("auto camera framing requires mesh bounds")
+        center = Vector((
+            (bounds_min[0] + bounds_max[0]) * 0.5,
+            (bounds_min[1] + bounds_max[1]) * 0.5,
+            (bounds_min[2] + bounds_max[2]) * 0.5,
+        ))
+        size = max(float(value) for value in bounds["size"])
+        distance = max(size * 2.15, 2.5)
+        camera_specs = [
+            {"name": "Front", "location": [center.x, center.y + size * 0.18, center.z + distance]},
+            {"name": "Side", "location": [center.x + distance, center.y + size * 0.18, center.z]},
+            {"name": "Top", "location": [center.x, center.y + distance, center.z + size * 0.18]},
+            {"name": "Close", "location": [center.x + distance * 0.95, center.y + size * 0.28, center.z + distance * 0.95]},
+        ]
+    for camera_spec in camera_specs:
         data = bpy.data.cameras.new(camera_spec["name"])
         camera = bpy.data.objects.new(camera_spec["name"], data)
         collection.objects.link(camera)
         camera.location = camera_spec["location"]
-        camera.rotation_euler = camera_spec["rotation"]
+        if "rotation" in camera_spec:
+            camera.rotation_euler = camera_spec["rotation"]
+        elif config.get("autoCameras"):
+            camera.rotation_euler = (center - camera.location).to_track_quat("-Z", "Y").to_euler()
         data.lens = camera_spec.get("lens", 50)
     light_spec = config.get("light", {})
     light_data = bpy.data.lights.new("R07_Key_Light", type="AREA")
-    light_data.energy = light_spec.get("energy", 900)
+    base_energy = float(light_spec.get("energy", 900))
+    light_data.energy = base_energy * max(1.0, (distance / 6.0) ** 2) if config.get("autoCameras") else base_energy
     light_data.shape = "DISK"
     light_data.size = light_spec.get("size", 5)
     light = bpy.data.objects.new("R07_Key_Light", light_data)
     collection.objects.link(light)
-    light.location = light_spec.get("location", [3, -3, 4])
-    light.rotation_euler = light_spec.get("rotation", [0.4, 0, 0.7])
+    if config.get("autoCameras"):
+        light.location = center + Vector((distance * 0.8, distance * 0.9, distance * 0.7))
+        light.rotation_euler = (center - light.location).to_track_quat("-Z", "Y").to_euler()
+    else:
+        light.location = light_spec.get("location", [3, -3, 4])
+        light.rotation_euler = light_spec.get("rotation", [0.4, 0, 0.7])
+    if config.get("autoCameras"):
+        fill_data = bpy.data.lights.new("R07_Fill_Light", type="AREA")
+        fill_data.energy = light_data.energy * 0.42
+        fill_data.shape = "DISK"
+        fill_data.size = light_spec.get("size", 5) * 1.35
+        fill = bpy.data.objects.new("R07_Fill_Light", fill_data)
+        collection.objects.link(fill)
+        fill.location = center + Vector((-distance * 0.72, distance * 0.42, -distance * 0.65))
+        fill.rotation_euler = (center - fill.location).to_track_quat("-Z", "Y").to_euler()
     scene.camera = next((obj for obj in collection.objects if obj.type == "CAMERA"), None)
 
 
@@ -284,7 +321,7 @@ def render_previews(scene: bpy.types.Scene, collection: bpy.types.Collection, st
     scene.render.image_settings.file_format = "PNG"
     scene.render.film_transparent = False
     if scene.world:
-        scene.world.color = (0.025, 0.025, 0.025)
+        scene.world.color = (0.12, 0.12, 0.12)
     outputs: list[str] = []
     for camera in (obj for obj in collection.objects if obj.type == "CAMERA"):
         scene.camera = camera
@@ -302,7 +339,7 @@ def render_previews(scene: bpy.types.Scene, collection: bpy.types.Collection, st
 
 def manifest(config: dict[str, Any], source: Path, staged: Path, optimized: Path, build_metrics: dict[str, Any], check_metrics: dict[str, Any], previews: list[str]) -> dict[str, Any]:
     return {
-        "schemaVersion": "r07",
+        "schemaVersion": config.get("stageId", "r07"),
         "assetId": config["assetId"],
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "blenderVersion": bpy.app.version_string,
@@ -356,7 +393,7 @@ def main() -> None:
     for obj in imported:
         if obj not in model:
             bpy.data.objects.remove(obj, do_unlink=True)
-    add_cameras_and_lights(scene, collection, config)
+    add_cameras_and_lights(scene, collection, config, model)
     previews = render_previews(scene, collection, staging_dir, "before")
     replace_materials(model, config)
     set_metadata(scene, config, source, model)
@@ -376,7 +413,8 @@ def main() -> None:
         raise RuntimeError(f"re-import check mismatch: build={build_metrics} check={check_metrics}")
     purge_unused_materials(config)
     report = manifest(config, source, staged, optimized, build_metrics, check_metrics, previews)
-    report_path = staging_dir / f"{config['assetId']}.r07-manifest.json"
+    stage_id = config.get("stageId", "r07")
+    report_path = staging_dir / f"{config['assetId']}.{stage_id}-manifest.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     blend.parent.mkdir(parents=True, exist_ok=True)

@@ -40,3 +40,9 @@ blender --background --factory-startup --python scripts/blender/build_ark_detail
 ## 目前限制
 
 本專案沒有把新的壓縮 decoder 放進瀏覽器；流程沿用已安裝的 `@gltf-transform/cli` quantize optimize，並以 re-import metrics 驗證 hierarchy、mesh 數量和 bounds。任何新壓縮擴充套件都必須先同時交付 decoder 與比較報告，不能只改副檔名或參數。
+
+## R10 五件 detail 資產
+
+R10 沿用同一入口處理五件器物，config 位於 `scripts/blender/config/r10-*.json`。這些 config 的 `autoCameras` 會依來源 bounds 產生 Front、Side、Top、Close 四個取景；每件的 staging、blend 與 r10 manifest 放在 `assets/staging/blender/r10/<asset-id>/`。`stageId` 會讓 manifest 保留任務版本，避免把 R10 的驗證誤記成 R07。
+
+R10 的 Blender 呼叫仍須逐件依序執行。只有該件的 reimport metrics 通過後，才可對該件使用 `--promote`；來源 GLB 與其他器物不會被清空或覆蓋。

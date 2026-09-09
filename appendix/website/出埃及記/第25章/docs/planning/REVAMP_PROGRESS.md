@@ -4,7 +4,7 @@
 
 ## 總狀態
 
-- 當前階段：R09 自驗透過，下一張為 R10；R00–R23 尚未宣稱整站完成。
+- 當前階段：R10 自驗透過，下一張為 R11；R00–R23 尚未宣稱整站完成。
 - 實際執行模型：本輪介面標示 GPT-5；GPT-5.6 Luna 尚未由工具實際呼叫確認。
 - 最新測試／build：R03 `npm run build` exit 0；typecheck、16 個測試檔／34 個測試、architecture 91 modules、assets 17 assets 均通過；Vite production build 成功。新增來源抽取器 `npm run build:excerpts` 產生 9 段逐節經文。
 - Blender：本輪 `get_scene_info` 唯讀呼叫成功，Scene 有 24 個物件、5 個材質，回傳含 `Sketchfab_model`／`Root`。未改場景；儲存／dirty 狀態未由該回應確認，後續依 R07 隔離工作檔規則。
@@ -25,7 +25,7 @@
 | R07 | Blender流程 | R03,R06 | 目前 GPT-5 session | 自驗透過 | [README](../../scripts/blender/README.md)、[manifest](../../assets/staging/blender/r07/tabernacle-ark-alternative.r07-manifest.json) |
 | R08 | 約櫃修正 | R07,R01 | 目前 GPT-5 session | 自驗透過 | [ARK_PARTS](../research/ARK_PARTS.md)、[assets](../../src/data/assets.json) |
 | R09 | 完整會幕／照明 | R07,R08 | 目前 GPT-5 session | 自驗透過 | [R09 policy](../research/R09_LIGHTING_POLICY.md)、[screenshots](../qa/revamp/screenshots/) |
-| R10 | 五件器物 | R07,R09 | Luna | 待辦 | — |
+| R10 | 五件器物 | R07,R09 | 目前 GPT-5 session | 自驗透過 | [R10 register](../research/R10_ASSET_REGISTER.md)、[Blender configs](../../scripts/blender/config/) |
 | R11 | 角色／服飾／牲畜 | R02,R07,R10 | Luna | 待辦 | — |
 | R12 | 匯出／資產登記 | R08,R09,R10,R11 | Luna | 待辦 | — |
 | R13 | 播放器／洗濯／香 | R04,R05,R06,R12 | Luna | 待辦 | — |
@@ -215,3 +215,17 @@ Blender工作檔／recipe／source與derived hashes（適用時）：無；R08 �
 未驗證項目／限制／需總控判定：R13–R15 尚未把程序 cue 接到播放器；營地與山脊仍是中性 reconstructed 背景，不能當歷史配置；R12 尚未逐一以 GLB bounds 校準所有器物。
 結論（自驗／總控分開）：R09 自驗透過；已完成場景閱讀基線與 cue 邊界，尚未交 GPT-6 R24。
 下一張任務ID、可直接執行的下一步：R10；依 R09 背景與 cue 邊界補齊五件器物的資料、分件與細節資產。
+## R10 執行回執
+
+任務ID／起訖日期：R10／2026-09-10 03:25–03:45（Asia/Taipei）
+執行模型／工具實測：目前 session 標示 GPT-5；Blender 5.2.1 CLI、glTF Transform 4.4.2、TypeScript、Vitest、Vite preview 與 Browser 實測；五件 Blender 寫入嚴格逐件執行。
+開始時工作樹或基準 hash：R09 commit `bc996b77`；分支 `feat/appendix-exodus25-revamp`。
+已讀輸入與核准 claim IDs：R01/R03 資產規格、R06 part map、R07 pipeline、R09 lighting policy；C-EX27-BURNT-ALTAR、C-EX30-LAVER、C-EX30-INCENSE、C-EX25-MENORAH、C-LV24-LAMP、C-EX25-TABLE、C-LV24-BREAD。
+變更檔案（含刪除／原因）：擴充 `build_ark_detail.py` 的 `autoCameras` 與 `stageId`，建立五個 R10 config；五件各自輸出 blend、staging GLB、optimized GLB、r10 manifest 與八張前後預覽；更新五個 runtime URL revision 與 public processing metadata；新增 `R10_ASSET_REGISTER.md`；README 補上多資產重跑規則。未改 raw_scripture 或來源 GLB。
+Blender工作檔／recipe／source與derived hashes：五件 source SHA 分別為燔祭壇 `cfce6b18f5467ddecf325e0883f8aa6400bcd7cd99ab1a5640a84a8918bdd14b`、洗濯盆 `e50a5b0d54d39bab61abbbdad24dd00a731089eea218197ae45d376b0c7c15f3`、香壇 `03b8863c97c51c007ea02268fcd1b3de5f31df927e1f25acd2bed64e6b2028fb`、金燈臺 `eebae6562001cf9470e15d09da96061050da4f435d07401d1e8d4a81ff2252a8`、陳設餅桌 `3568f0a6208701a1fe34d7a43e691474037e5025496d35de65969ae9fbbb0160`；processed/public 已逐件 hash 相等，完整 derived hash 見 R10 register。
+驗收QA IDs：五件各通過 source inspect、四視角預覽、材質／bounds、staging export、glTF Transform optimize、reimport metrics；來源節點不足的餅堆、水面與香壇部位保持 unresolved 或 source-node。
+命令、exit code、log路徑：五次 `blender --background --factory-startup --python scripts/blender/build_ark_detail.py -- --config scripts/blender/config/r10-*.json --promote` 均 exit 0；`npm run verify:assets` exit 0（17 assets）；Browser 依序點選五個器物後 active detail 與 profile 正確，console logs 0。
+畫面與activeAssetIds／profile／viewport證據：每件八張預覽位於 `assets/staging/blender/r10/<asset-id>/previews/`；Browser desktop preview 五件依序回報 `data-runtime-profile=desktop-structural`、active asset count 2，selected asset 分別為 `tabernacle-burnt-altar-detail`、`tabernacle-laver-detail`、`tabernacle-incense-altar-detail`、`tabernacle-menorah-detail`、`tabernacle-table-shewbread-detail`。
+未驗證項目／限制／需總控判定：五件來源材質與幾何仍屬 reconstructed 資產；尺寸真值與 R14 餅／燈程序要由後續資料任務處理；R12 尚未完成全資產 GPU／bounds 統整。
+結論（自驗／總控分開）：R10 自驗透過；五件 detail 資產已可獨立載入與重建，尚未交 GPT-6 R24。
+下一張任務ID、可直接執行的下一步：R11；先檢查可合法複用的人物 rig，再建立角色／服飾／必要牲畜資源。
