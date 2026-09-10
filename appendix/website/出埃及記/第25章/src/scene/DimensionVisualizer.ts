@@ -21,9 +21,16 @@ export class DimensionVisualizer {
     parent.add(this.root);
   }
 
-  setUnit(unit: DimensionUnit): void { this.#currentUnit = unit; if (this.#activeSpecId) this.showObjectDimensions(this.#activeSpecId); }
+  setUnit(unit: DimensionUnit): void {
+    if (unit === this.#currentUnit) return;
+    this.#currentUnit = unit;
+    const activeId = this.#activeSpecId;
+    this.clear();
+    if (activeId) this.showObjectDimensions(activeId);
+  }
 
   showObjectDimensions(specId: string): void {
+    if (specId === this.#activeSpecId) return;
     this.clear();
     const spec = this.#specs.get(specId);
     if (!spec || spec.status !== 'verified' || !spec.sizeCubits) return;
@@ -89,7 +96,10 @@ export class DimensionVisualizer {
     const ctx = canvas.getContext('2d');
     if (ctx) { ctx.fillStyle = 'rgba(18, 20, 14, 0.85)'; ctx.roundRect(8, 8, 368, 80, 12); ctx.fill(); ctx.strokeStyle = '#d2b875'; ctx.lineWidth = 3; ctx.stroke(); ctx.fillStyle = '#fff4d6'; ctx.font = 'bold 28px "Noto Sans TC", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 192, 48); }
     const texture = new THREE.CanvasTexture(canvas); texture.minFilter = THREE.LinearFilter;
-    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false })); sprite.scale.set(0.95, 0.24, 1); return sprite;
+    // Labels retain a small screen size when a close-up camera approaches them.
+    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false, sizeAttenuation: false }));
+    sprite.scale.set(0.12, 0.03, 1);
+    return sprite;
   }
 
   dispose(): void { this.clear(); this.root.removeFromParent(); }

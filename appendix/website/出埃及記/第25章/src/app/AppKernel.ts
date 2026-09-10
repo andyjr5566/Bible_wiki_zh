@@ -72,6 +72,7 @@ export class AppKernel implements AppPort {
   #selectedPartId: string | null = null;
   #canvasPointerDown: { x: number; y: number } | null = null;
   #performanceRecorder: PerformanceRecorderApi | null = null;
+  #appliedMode: ExperienceMode | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.#canvas = canvas;
@@ -147,6 +148,9 @@ export class AppKernel implements AppPort {
     if (this.cinematic.snapshot.isPlaying) this.stopCinematicTour();
     if (mode === 'tour' && !this.tour.current) return;
     if (mode !== 'ritual' && this.rituals.state.status !== 'idle') this.resetRitualPlayback();
+    if (mode === 'overview' || mode === 'tour') {
+      if (this.assetRuntime.snapshot.profile === 'desktop-structural') void this.assetRuntime.selectProfile('desktop-high');
+    }
     const isCurrentMode = this.uiState.snapshot.mode === mode;
     this.uiState.transitionTo(mode, reason);
     this.audio.playNav();
@@ -164,13 +168,16 @@ export class AppKernel implements AppPort {
   // Cinematic Tour Implementation
   startCinematicTour(fromIndex = 0): void {
     this.resetRitualPlayback();
+    if (this.assetRuntime.snapshot.profile !== 'desktop-high') void this.assetRuntime.selectProfile('desktop-high');
+    this.assetRuntime.setProfileVisible(true);
+    this.scene.context.particles.setLearningDetailFocus(true);
     this.assetRuntime.setInteriorReveal(false);
     this.uiState.setPlaybackOwner('cinematic');
+    this.#lastCinematicActKey = null;
     this.cinematic.start(fromIndex);
   }
 
   stopCinematicTour(): void {
-    this.tour.goTo(this.cinematic.snapshot.currentActIndex, this.cinematic.snapshot.currentAct.hotspotId);
     this.cinematic.stop();
     this.scene.context.dimensions.clear();
     this.scene.context.cameraManager.stopFlyTo();
@@ -216,7 +223,7 @@ export class AppKernel implements AppPort {
     this.audio.playClick();
   }
 
-  replayCinematicTour(): void { this.cinematic.replay(); this.audio.playClick(); }
+  replayCinematicTour(): void { this.#lastCinematicActKey = null; this.cinematic.replay(); this.audio.playClick(); }
 
   selectCinematicHotspot(hotspotId: string | null): void {
     this.pauseCinematicTour();
@@ -483,6 +490,8 @@ export class AppKernel implements AppPort {
   private async startAssets(): Promise<void> { await this.assetRuntime.selectProfile(runtimeConfig.assetProfile); }
 
   private applyMode(mode: ExperienceMode): void {
+    if (mode === this.#appliedMode) return;
+    this.#appliedMode = mode;
     this.assetRuntime.setProfileVisible(!(mode === 'learning' && this.assetRuntime.snapshot.profile === 'desktop-structural'));
     this.assetRuntime.setInteriorReveal(mode === 'learning' && this.assetRuntime.snapshot.profile !== 'desktop-structural');
     this.scene.context.particles.setLearningDetailFocus(mode === 'learning');
@@ -499,63 +508,64 @@ export class AppKernel implements AppPort {
     this.audio.updatePlayerState(cameraPose.position, false, deltaSeconds);
   }
 
-  #detailSelectionGeneration = 0;
   private onCinematicState(state: Readonly<CinematicState>): void {
     if (!state.isPlaying) {
+      const wasPlaying = this.#lastCinematicActKey !== null;
       this.#lastCinematicActKey = null;
       this.#cinematicWasPaused = false;
       this.scene.context.dimensions.clear();
       this.scene.context.cameraManager.stopFlyTo();
       this.assetRuntime.setInteriorReveal(this.uiState.snapshot.mode === 'learning');
       if (this.uiState.snapshot.playbackOwner === 'cinematic') this.uiState.setPlaybackOwner('none');
+      if (wasPlaying) {
+        const mode = this.getState().mode;
+        this.scene.context.particles.setLearningDetailFocus(mode === 'learning');
+        this.scene.context.cameraManager.applyMode(mode);
+        if (mode === 'learning' && this.learning.context.objectId) {
+          const object = this.objects.require(this.learning.context.objectId);
+          this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
+        }
+        if (mode === 'tour') this.focusTourStop();
+      }
       this.publishExperience();
       return;
     }
 
     const act = state.currentAct;
-    this.tour.goTo(state.currentActIndex, act.hotspotId);
     const actKey = `${act.id}:${act.hotspotId ?? ''}`;
-    const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (actKey !== this.#lastCinematicActKey) {
       this.#lastCinematicActKey = actKey;
       this.#lastCinematicSpeed = state.playbackSpeed;
+      this.#cinematicWasPaused = state.isPaused;
 
       // Keep tabernacle and curtains fully visible during cinematic walkthrough
       this.assetRuntime.setInteriorReveal(!!act.peelRoof);
 
       // Start camera smooth flight from act.cameraStart to act.cameraEnd
-      if (state.isPaused || reducedMotion) {
-        this.scene.context.cameraManager.applyCinematicPose(act.cameraEnd);
+      // Starting this player explicitly requests its advertised camera motion.
+      // Pause and manual orbit remain available; CSS still reduces UI animation.
+      if (state.isPaused) {
+        this.scene.context.cameraManager.applyCinematicPose(act.cameraStart);
         if (state.isPaused) this.scene.context.cameraManager.stopFlyTo();
       } else this.scene.context.cameraManager.flyAlongPath(act.cameraStart, act.cameraEnd, act.durationSeconds / state.playbackSpeed);
 
-      // Trigger 3D Dimensions
-      if (state.showDimensions && act.dimensionTargetId) {
-        this.scene.context.dimensions.setUnit(state.dimensionUnit);
-        this.scene.context.dimensions.showObjectDimensions(act.dimensionTargetId);
-      } else {
-        this.scene.context.dimensions.clear();
-      }
     } else if (state.isPaused) {
       this.scene.context.cameraManager.stopFlyTo();
       this.#cinematicWasPaused = true;
     } else {
       if (this.#cinematicWasPaused) {
         this.#cinematicWasPaused = false;
-        if (reducedMotion) this.scene.context.cameraManager.applyCinematicPose(act.cameraEnd);
-        else this.scene.context.cameraManager.flyToPath(act.cameraEnd, Math.max(0.5, act.durationSeconds * (1 - state.progressRatio) / state.playbackSpeed));
+        this.scene.context.cameraManager.flyToPath(act.cameraEnd, Math.max(0.5, act.durationSeconds * (1 - state.progressRatio) / state.playbackSpeed));
       } else if (state.playbackSpeed !== this.#lastCinematicSpeed) {
         this.#lastCinematicSpeed = state.playbackSpeed;
-        if (!reducedMotion) this.scene.context.cameraManager.flyToPath(act.cameraEnd, Math.max(0.5, act.durationSeconds * (1 - state.progressRatio) / state.playbackSpeed));
-      }
-      // Dynamic dimension toggle during the same act
-      if (state.showDimensions && act.dimensionTargetId) {
-        this.scene.context.dimensions.setUnit(state.dimensionUnit);
-        this.scene.context.dimensions.showObjectDimensions(act.dimensionTargetId);
-      } else if (!state.showDimensions) {
-        this.scene.context.dimensions.clear();
+        this.scene.context.cameraManager.flyToPath(act.cameraEnd, Math.max(0.5, act.durationSeconds * (1 - state.progressRatio) / state.playbackSpeed));
       }
     }
+    // Measurements remain interactive while the camera is paused.
+    if (state.showDimensions && act.dimensionTargetId) {
+      this.scene.context.dimensions.setUnit(state.dimensionUnit);
+      this.scene.context.dimensions.showObjectDimensions(act.dimensionTargetId);
+    } else this.scene.context.dimensions.clear();
   }
 
   private openLearningObject(objectId: string): void {
@@ -566,15 +576,9 @@ export class AppKernel implements AppPort {
     this.uiState.selectEntity(objectId, 'object');
     this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
     this.assetRuntime.setInteriorReveal(this.uiState.snapshot.mode === 'learning' && this.assetRuntime.snapshot.profile !== 'desktop-structural');
-    if (object.assetId) void this.ensureDetailAsset(object.assetId, ++this.#detailSelectionGeneration);
-  }
-
-  private async ensureDetailAsset(assetId: string, selectionGeneration: number): Promise<void> {
-    if (this.assetRuntime.snapshot.profile !== 'desktop-structural') {
-      await this.assetRuntime.selectProfile('desktop-structural');
-    }
-    if (selectionGeneration !== this.#detailSelectionGeneration) return;
-    if (this.getState().mode === 'learning' || this.getState().mode === 'ritual') await this.assetRuntime.loadDetail(assetId);
+    // Keep the assembled model and the original object-specific camera rigs.
+    // Extracted detail meshes are not interchangeable with this scene's geometry.
+    if (this.assetRuntime.snapshot.profile !== 'desktop-high') void this.assetRuntime.selectProfile('desktop-high');
   }
 
   private focusTourStop(): void {
@@ -611,6 +615,12 @@ export class AppKernel implements AppPort {
       this.#performanceRecorder?.markLoadComplete();
       this.#performanceRecorder?.markUsefulFrame();
     }
+    if (this.cinematic.snapshot.isPlaying) {
+      this.assetRuntime.setProfileVisible(true);
+      this.assetRuntime.setInteriorReveal(!!this.cinematic.snapshot.currentAct.peelRoof);
+      this.publishExperience();
+      return;
+    }
     this.assetRuntime.setProfileVisible(!(this.getState().mode === 'learning' && state.profile === 'desktop-structural'));
     this.assetRuntime.setInteriorReveal(this.getState().mode === 'learning' && state.profile !== 'desktop-structural');
     if (state.phase === 'ready') {
@@ -622,13 +632,7 @@ export class AppKernel implements AppPort {
       }
       if (mode === 'learning' && this.learning.context.objectId) {
         const object = this.objects.require(this.learning.context.objectId);
-        if (state.profile === 'desktop-structural' && object.assetId && !state.activeAssetIds.includes(object.assetId)) {
-          this.loadDetail(object.assetId);
-        } else {
-          const detailBounds = object.assetId ? state.boundsByAssetId[object.assetId] : undefined;
-          if (detailBounds) this.scene.context.cameraManager.frameDetailBounds(detailBounds);
-          else this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
-        }
+        this.scene.context.cameraManager.focusObject(object.id, object.interactionPosition);
       }
       if (mode === 'tour') this.focusTourStop();
     }
@@ -649,7 +653,7 @@ export class AppKernel implements AppPort {
     if (!object?.assetId) return;
     const mapping = this.data.assetParts.mappings.find((candidate) => candidate.assetId === object.assetId);
     const partId = this.assetRuntime.pickPart(object.assetId, mapping?.parts ?? [], this.scene.context.cameraManager.camera, event.clientX, event.clientY, this.#canvas.getBoundingClientRect());
-    this.selectLearningPart(partId);
+    if (partId) this.selectLearningPart(partId);
   };
 
   readonly #onResize = (): void => this.scene.resize();

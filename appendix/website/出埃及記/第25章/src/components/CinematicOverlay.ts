@@ -30,9 +30,6 @@ export class CinematicOverlay {
       </div>
 
       <!-- Center Click Area to Pause/Play or Orbit -->
-      <div class="cinema-interaction-hint" data-cinema-action="toggle-play">
-        <div class="hint-pill"><span id="cinema-hint-icon">⏸</span><span>點擊畫面或按空白鍵暫停 · 可隨時滑鼠拖曳 360° 環視</span></div>
-      </div>
 
       <!-- Bottom Letterbox Bar & Subtitle Card -->
       <div class="cinema-letterbox bottom-bar">
@@ -44,7 +41,7 @@ export class CinematicOverlay {
           <p class="subtitle-text" id="cinema-verse-text">
             你要做帳幕的院子。院子的南面當用撚的細麻做帷子... 院子的門當有簾子，長二十肘...
           </p>
-          <nav class="cinema-hotspots" id="cinema-hotspots" aria-label="本站器物熱點"></nav>
+          <details class="cinema-full-scripture"><summary>閱讀本幕完整經文</summary><p id="cinema-full-text"></p></details>
           <div class="act-timeline-track">
             <div class="act-timeline-fill" id="cinema-timeline-fill" style="width: 0%"></div>
           </div>
@@ -72,6 +69,7 @@ export class CinematicOverlay {
 
   render(state: Readonly<CinematicState>): void {
     const wasPlaying = this.#state?.isPlaying ?? false;
+    const changedAct = this.#state?.currentAct.id !== state.currentAct.id || this.#state?.currentAct.hotspotId !== state.currentAct.hotspotId;
     this.#state = state;
     if (!state.isPlaying) {
       this.element.classList.add('is-hidden');
@@ -104,8 +102,15 @@ export class CinematicOverlay {
 
     if (actTitle) actTitle.textContent = state.currentAct.title;
     if (hebrewTerm) hebrewTerm.textContent = state.currentAct.hebrewTerm ?? '';
-    if (verseRef) verseRef.textContent = state.currentAct.scriptureReference;
-    if (verseText) verseText.textContent = state.currentAct.scriptureText;
+    if (verseRef) verseRef.textContent = `${state.currentAct.scriptureReference} · 節錄`;
+    const lines = state.currentAct.scriptureText.split('\n').filter(Boolean);
+    if (verseText) verseText.textContent = lines.find((line) => !line.endsWith('說：')) ?? lines[0] ?? '';
+    const fullText = this.element.querySelector('#cinema-full-text');
+    if (fullText) fullText.textContent = state.currentAct.scriptureText;
+    if (changedAct) {
+      const drawer = this.element.querySelector<HTMLDetailsElement>('.cinema-full-scripture');
+      if (drawer) drawer.open = false;
+    }
     if (actCounter) actCounter.textContent = `${state.currentAct.actNumber} / ${state.currentAct.totalActs}`;
     if (timelineFill) timelineFill.style.width = `${Math.round(state.progressRatio * 100)}%`;
 

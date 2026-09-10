@@ -1,5 +1,6 @@
 import excerptsJson from '../data/scripture-excerpts.json';
 import toursJson from '../data/tours.json';
+import cameraPaths from '../data/cinematic-paths.json';
 import { scriptureExcerptsSchema } from '../data/schemas/scriptureEvidence';
 import { toursSchema } from '../data/schemas/tours';
 import { EventChannel, type Unsubscribe } from '../utils/EventChannel';
@@ -74,21 +75,25 @@ function toHotspot(hotspot: TourHotspot, byId: ReadonlyMap<string, ScriptureExce
 /** Build the automatic view from the same tour source records used by TourManager. */
 export function createCinematicActs(tours: readonly TourDefinition[], excerpts: readonly ScriptureExcerpt[]): CinematicAct[] {
   const excerptById = new Map(excerpts.map((excerpt) => [excerpt.id, excerpt]));
-  const ordered = tours.slice().sort((a, b) => a.order - b.order);
+  // Restore the eight-shot walkthrough; the manual tour retains five stations.
+  const ordered = tours.slice().sort((a, b) => a.order - b.order).flatMap((tour) => [
+    tour,
+    ...(tour.hotspots ?? []).map((hotspot) => ({ ...tour, ...hotspot, title: hotspot.label, subtitle: hotspot.label, hotspots: [], durationSeconds: hotspot.durationSeconds ?? 8 })),
+  ]);
   return ordered.map((tour, index) => ({
     id: tour.id,
     actNumber: index + 1,
     totalActs: ordered.length,
-    title: tour.title,
+    title: tour.id === 'holy-place' ? '進入聖所' : tour.title,
     subtitle: tour.subtitle,
     scriptureReference: tour.scriptureReference,
     sourceReference: tour.scriptureReference,
     scriptureText: excerptText(tour.excerptIds, excerptById),
-    durationSeconds: tour.durationSeconds,
-    cameraStart: tour.cameraStart,
-    cameraEnd: tour.cameraEnd,
+    durationSeconds: cameraPaths[index]?.durationSeconds ?? tour.durationSeconds,
+    cameraStart: cameraPaths[index]?.cameraStart ?? tour.cameraStart,
+    cameraEnd: cameraPaths[index]?.cameraEnd ?? tour.cameraEnd,
     dimensionTargetId: tour.dimensionTargetId,
-    peelRoof: tour.peelRoof,
+    peelRoof: false,
     hotspots: (tour.hotspots ?? []).map((hotspot) => toHotspot(hotspot, excerptById)),
     hotspotId: null,
   }));
@@ -105,7 +110,7 @@ export class CinematicTourController {
   #isPaused = false;
   #actElapsed = 0;
   #speed = 1;
-  #showDimensions = true;
+  #showDimensions = false;
   #dimensionUnit: DimensionUnit = 'cubit';
   #hotspotId: string | null = null;
 

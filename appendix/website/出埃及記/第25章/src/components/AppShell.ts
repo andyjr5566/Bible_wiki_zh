@@ -16,14 +16,7 @@ const profiles: Array<{ id: AssetProfile; label: string }> = [
   { id: 'fallback-low', label: '低模備援' },
 ];
 
-const details = [
-  ['tabernacle-ark-alternative', '約櫃'],
-  ['tabernacle-burnt-altar-detail', '燔祭壇'],
-  ['tabernacle-table-shewbread-detail', '陳設餅桌'],
-  ['tabernacle-incense-altar-detail', '香壇'],
-  ['tabernacle-menorah-detail', '金燈臺'],
-  ['tabernacle-laver-detail', '洗濯盆'],
-] as const;
+const details: readonly (readonly [string, string])[] = [];
 
 export class AppShell {
   readonly canvas: HTMLCanvasElement;
@@ -50,7 +43,7 @@ export class AppShell {
   constructor(root: HTMLElement) {
     root.innerHTML = `<main class="app-shell">
       <canvas class="scene-canvas" tabindex="0" aria-label="可拖曳旋轉、滾輪縮放的 3D 會幕場景" aria-describedby="scene-accessible-description"></canvas>
-      <p id="scene-accessible-description" class="visually-hidden">3D 場景提供同等的文字操作：使用上方四個入口切換場景總覽、五站導覽、器物與經文、服事程序；器物、程序步驟和來源會在左側面板列出。鍵盤可用 Tab 選取按鈕，Escape 關閉目前最上層的視窗。</p>
+      <p id="scene-accessible-description" class="visually-hidden">3D 場景提供同等的文字操作：使用上方三個入口切換場景總覽、五站導覽、器物與經文；器物、程序步驟和來源會在左側面板列出。鍵盤可用 Tab 選取按鈕，Escape 關閉目前最上層的視窗。</p>
       
       <!-- Top Museum Header -->
       <header class="museum-header">
@@ -188,17 +181,13 @@ export class AppShell {
     this.#app?.pauseCinematicTour();
     const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 620px)').matches;
     const current = this.#researchPanel.dataset.sheetState ?? 'collapsed';
-    const next = isMobile
-      ? current === 'collapsed' ? 'half' : current === 'half' ? 'reading' : 'collapsed'
-      : current === 'collapsed' ? 'reading' : 'collapsed';
+    const next = current === 'collapsed' ? 'reading' : 'collapsed';
     this.#researchPanel.dataset.sheetState = next;
     this.#researchPanel.classList.toggle('is-sheet-collapsed', next === 'collapsed');
     this.#sheetToggle.setAttribute('aria-expanded', String(next !== 'collapsed'));
-    this.#sheetToggle.setAttribute('aria-label', next === 'collapsed' ? '展開研讀控制' : next === 'half' ? '展開完整閱讀面板' : '收合研讀面板');
+    this.#sheetToggle.setAttribute('aria-label', next === 'collapsed' ? '展開研讀控制' : '收合研讀面板');
     this.#sheetToggle.innerHTML = next === 'collapsed'
       ? '<span aria-hidden="true">↑</span><span>展開控制</span>'
-      : next === 'half'
-      ? '<span aria-hidden="true">↕</span><span>半展面板</span>'
       : '<span aria-hidden="true">↓</span><span>收合控制</span>';
     this.#experiencePanel.setMobileDrawerState(next);
     this.#app?.notifyViewportChange?.();

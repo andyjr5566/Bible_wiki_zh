@@ -135,6 +135,10 @@ export class SceneBootstrap {
     this.context.particles.update(deltaSeconds, this.#elapsedTime);
     this.context.cameraManager.update(deltaSeconds);
     this.context.renderer.render(this.context.scene, this.context.cameraManager.camera);
+    if (import.meta.env.DEV) {
+      this.#canvas.dataset.cameraPosition = JSON.stringify(this.context.cameraManager.pose.position);
+      this.#canvas.dataset.cameraFlying = String(this.context.cameraManager.isFlying);
+    }
     this.#performanceRecorder?.recordFrame(time);
     this.#animationFrame = requestAnimationFrame(this.#tick);
   };

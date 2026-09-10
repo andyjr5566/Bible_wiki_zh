@@ -2,12 +2,22 @@ import { describe, expect, it } from 'vitest';
 import { CinematicTourController, CINEMATIC_ACTS } from './CinematicTourController';
 
 describe('CinematicTourController', () => {
-  it('initializes with the five spatial stations', () => {
+  it('visits all six objects automatically with distinct moving camera endpoints', () => {
+    expect(CINEMATIC_ACTS.map(({ id }) => id)).toEqual([
+      'east-gate', 'burnt-altar', 'laver', 'holy-place',
+      'holy-place-menorah', 'holy-place-shewbread', 'holy-place-incense', 'most-holy-place',
+    ]);
+    for (const act of CINEMATIC_ACTS) {
+      expect(act.cameraStart.position).not.toEqual(act.cameraEnd.position);
+      expect(act.scriptureText.length).toBeGreaterThan(0);
+    }
+  });
+  it('initializes with the restored eight camera shots', () => {
     const controller = new CinematicTourController();
     expect(controller.snapshot.isPlaying).toBe(false);
     expect(controller.snapshot.isPaused).toBe(false);
     expect(controller.snapshot.currentActIndex).toBe(0);
-    expect(controller.snapshot.currentAct.totalActs).toBe(5);
+    expect(controller.snapshot.currentAct.totalActs).toBe(8);
   });
 
   it('starts, pauses, resumes, and navigates acts', () => {
@@ -36,11 +46,11 @@ describe('CinematicTourController', () => {
 
   it('toggles dimensions and dimension units', () => {
     const controller = new CinematicTourController();
-    expect(controller.snapshot.showDimensions).toBe(true);
+    expect(controller.snapshot.showDimensions).toBe(false);
     expect(controller.snapshot.dimensionUnit).toBe('cubit');
 
     controller.toggleDimensions();
-    expect(controller.snapshot.showDimensions).toBe(false);
+    expect(controller.snapshot.showDimensions).toBe(true);
 
     controller.setDimensionUnit('cm');
     expect(controller.snapshot.dimensionUnit).toBe('cm');

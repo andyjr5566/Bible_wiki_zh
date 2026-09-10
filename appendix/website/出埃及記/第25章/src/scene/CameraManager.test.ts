@@ -20,11 +20,11 @@ describe('CameraManager', () => {
     expect(camera.pose.fov).toBe(46);
   });
 
-  it('frames an object from its typed dimension spec', () => {
+  it('restores the close-up framing for the assembled menorah', () => {
     const camera = new CameraManager(1);
     camera.applyMode('learning');
     camera.focusObject('menorah', { x: -1.2, y: 0, z: -4.35 });
     expect(camera.pose.position.z).toBeGreaterThan(-4.35);
-    expect(camera.pose.fov).toBe(43);
+    expect(camera.pose.fov).toBe(40);
   });
 });

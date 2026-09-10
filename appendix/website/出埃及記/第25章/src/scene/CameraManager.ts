@@ -203,11 +203,17 @@ export class CameraManager {
   }
 
   focusObject(objectId: string, target: Vector3Data): void {
-    const spec = this.#dimensionSpecs.get(objectId);
-    const extent = spec?.sizeCubits ? Math.max(spec.sizeCubits.x, spec.sizeCubits.y, spec.sizeCubits.z) * 0.45 : 2.2;
-    const distance = Math.max(3.8, extent * 2.25);
-    const side = this.#mode === 'tour' ? 0.18 : 0.32;
-    this.applyRig({ position: { x: target.x + distance * side, y: target.y + Math.max(1.2, extent * 0.65), z: target.z + distance }, target: { x: target.x, y: target.y + Math.max(0.55, extent * 0.2), z: target.z }, fov: extent > 2 ? 43 : 40 });
+    const rigs: Record<string, { position: Vector3Data; target: Vector3Data; fov: number }> = {
+      'burnt-altar': { position: { x: 1.3, y: 3.1, z: 15.2 }, target: { x: 0, y: 1.05, z: 9 }, fov: 43 },
+      laver: { position: { x: 1.05, y: 2.45, z: 4.9 }, target: { x: 0, y: 0.8, z: 0 }, fov: 43 },
+      'incense-altar': { position: { x: 0.45, y: 1.7, z: -2.15 }, target: { x: 0, y: 1, z: -5.85 }, fov: 41 },
+      menorah: { position: { x: 0.28, y: 1.5, z: -2.45 }, target: { x: -1.2, y: 0.82, z: -4.35 }, fov: 40 },
+      'shewbread-table': { position: { x: -0.28, y: 1.5, z: -2.45 }, target: { x: 1.2, y: 0.78, z: -4.35 }, fov: 40 },
+      ark: { position: { x: -1.45, y: 1.32, z: -7.85 }, target: { x: 0, y: 0.72, z: -9.18 }, fov: 47 },
+    };
+    const rig = rigs[objectId];
+    if (rig) this.applyRig(rig);
+    else this.focus(target);
   }
 
   frameBounds(bounds: WorldBounds): void {
