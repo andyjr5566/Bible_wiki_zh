@@ -1,8 +1,15 @@
 {
-  "total_warnings": 229,
+  "total_warnings": 234,
   "critical_count": 0,
-  "warning_count": 229,
+  "warning_count": 234,
   "warnings": [
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "約書亞記/第11章.md",
+      "target": "心裡剛硬",
+      "message": "同一 alias「心裡剛硬」指向多個 target: 勉勵他使他膽壯（cha.zaq、a.mats）, 法老心剛硬"
+    },
     {
       "type": "alias_target_conflict",
       "severity": "warning",
@@ -337,7 +344,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第11章",
-      "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章"
+      "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 03 利未記/第11章, 06 約書亞記/第11章"
     },
     {
       "type": "alias_target_conflict",
@@ -567,6 +574,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/約書亞.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 04 民數記/第11章, 06 約書亞記/第11章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/約書亞.md",
       "target": "第31章",
       "message": "同一 alias「第31章」指向多個 target: 04 民數記/第31章, 05 申命記/第31章"
     },
@@ -713,9 +727,23 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/地點/亞拉巴.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 05 申命記/第11章, 06 約書亞記/第11章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/地點/伯拉大河.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 05 申命記/第1章, 06 約書亞記/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/利巴嫩.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 05 申命記/第11章, 06 約書亞記/第11章"
     },
     {
       "type": "alias_target_conflict",
@@ -1409,6 +1437,13 @@
       "source": "link_folder/神學/永恆國度.md",
       "target": "第1章",
       "message": "同一 alias「第1章」指向多個 target: 42 路加福音/第1章, 49 以弗所書/第1章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/法老心剛硬.md",
+      "target": "第11章",
+      "message": "同一 alias「第11章」指向多個 target: 02 出埃及記/第11章, 06 約書亞記/第11章"
     },
     {
       "type": "alias_target_conflict",

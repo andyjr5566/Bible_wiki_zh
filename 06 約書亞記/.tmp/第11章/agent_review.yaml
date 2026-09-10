@@ -38,3 +38,58 @@ stages:
     - entry_content/馬匹車輛.yaml
     verdict_sha: 2b14769b4cae5a2a87328c88e4bb04a78d2905c815b01d51e84bcf32ef40172e
     findings_count: 0
+  m6:
+    round: 2
+    revision: 2
+    sha256: 182668f9c3cc1cd3f5cd70ce210945c48728f3190e5ceef46240fdc0155e2b7a
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: fb79f15925dafbc2890bc5d2b15c989ef18bdb39641f4eafe8b78d583136b6e8
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: 182668f9c3cc1cd3f5cd70ce210945c48728f3190e5ceef46240fdc0155e2b7a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=2b14769b4cae5a2a87328c88e4bb04a78d2905c815b01d51e84bcf32ef40172e
+    - chapter_content.yaml
+    verdict_sha: 182668f9c3cc1cd3f5cd70ce210945c48728f3190e5ceef46240fdc0155e2b7a
+    findings_count: 0
+  link_updates:
+    round: 2
+    revision: 3
+    sha256: b6759cbbd605cbbb4bd674b674004b5352d35b0ceea1c619eaf24649755835d3
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 35fbb72d7afdb809e99faaafd7e9472ef21f571252f4fa7ed3b5d572b7987f14
+      verdict: changes_required
+      findings_count: 5
+      late_recorded: false
+    - attempt: 2
+      reviewer: antigravity
+      sha256: b6759cbbd605cbbb4bd674b674004b5352d35b0ceea1c619eaf24649755835d3
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=2b14769b4cae5a2a87328c88e4bb04a78d2905c815b01d51e84bcf32ef40172e
+    - parent:m6=182668f9c3cc1cd3f5cd70ce210945c48728f3190e5ceef46240fdc0155e2b7a
+    - link_updates.yaml
+    verdict_sha: b6759cbbd605cbbb4bd674b674004b5352d35b0ceea1c619eaf24649755835d3
+    findings_count: 0
