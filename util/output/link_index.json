@@ -49,6 +49,16 @@
     "status": "formal",
     "aliases": []
   },
+  "三十一個王的名單": {
+    "path": "link_folder/主題/三十一個王的名單.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "三十一個王的名單",
+    "status": "formal",
+    "aliases": [
+      "三十一個王"
+    ]
+  },
   "三十歲直到五十歲（利未人任職年齡）": {
     "path": "link_folder/主題/三十歲直到五十歲（利未人任職年齡）.md",
     "type": "主題",
@@ -12258,6 +12268,14 @@
     "status": "formal",
     "aliases": []
   },
+  "巴珊王噩": {
+    "path": "link_folder/人物/巴珊王噩.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "巴珊王噩",
+    "status": "formal",
+    "aliases": []
+  },
   "巴蘭（比珥的兒子）": {
     "path": "link_folder/人物/巴蘭（比珥的兒子）.md",
     "type": "人物",
@@ -13244,6 +13262,14 @@
     "aliases": [
       "Zipporah"
     ]
+  },
+  "西宏": {
+    "path": "link_folder/人物/西宏.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "西宏",
+    "status": "formal",
+    "aliases": []
   },
   "西布倫（同住）": {
     "path": "link_folder/人物/西布倫（同住）.md",
@@ -15173,6 +15199,16 @@
     "title": "屈枉",
     "status": "formal",
     "aliases": []
+  },
+  "山坡（a.she.dah）": {
+    "path": "link_folder/原文/山坡（a.she.dah）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "山坡（a.she.dah）",
+    "status": "formal",
+    "aliases": [
+      "a.she.dah"
+    ]
   },
   "工作（baabodath）": {
     "path": "link_folder/原文/工作（baabodath）.md",
@@ -18220,6 +18256,14 @@
       "亞巴琳山地"
     ]
   },
+  "亞弗": {
+    "path": "link_folder/地點/亞弗.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞弗",
+    "status": "formal",
+    "aliases": []
+  },
   "亞拉巴": {
     "path": "link_folder/地點/亞拉巴.md",
     "type": "地點",
@@ -18398,6 +18442,22 @@
     "aliases": [
       "焚燒"
     ]
+  },
+  "他普亞": {
+    "path": "link_folder/地點/他普亞.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "他普亞",
+    "status": "formal",
+    "aliases": []
+  },
+  "他納": {
+    "path": "link_folder/地點/他納.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "他納",
+    "status": "formal",
+    "aliases": []
   },
   "以倘": {
     "path": "link_folder/地點/以倘.md",
@@ -18585,6 +18645,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伯耶西末": {
+    "path": "link_folder/地點/伯耶西末.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯耶西末",
+    "status": "formal",
+    "aliases": []
+  },
   "伸崙": {
     "path": "link_folder/地點/伸崙.md",
     "type": "地點",
@@ -18747,6 +18815,14 @@
     "status": "formal",
     "aliases": []
   },
+  "吉甲的戈印": {
+    "path": "link_folder/地點/吉甲的戈印.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "吉甲的戈印",
+    "status": "formal",
+    "aliases": []
+  },
   "吾珥": {
     "path": "link_folder/地點/吾珥.md",
     "type": "地點",
@@ -18853,6 +18929,14 @@
       "城外不潔淨之處"
     ]
   },
+  "基低斯": {
+    "path": "link_folder/地點/基低斯.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基低斯",
+    "status": "formal",
+    "aliases": []
+  },
   "基列": {
     "path": "link_folder/地點/基列.md",
     "type": "地點",
@@ -18933,6 +19017,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "基底莫",
+    "status": "formal",
+    "aliases": []
+  },
+  "基德": {
+    "path": "link_folder/地點/基德.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基德",
     "status": "formal",
     "aliases": []
   },
@@ -19232,6 +19324,14 @@
     "status": "formal",
     "aliases": []
   },
+  "希弗": {
+    "path": "link_folder/地點/希弗.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "希弗",
+    "status": "formal",
+    "aliases": []
+  },
   "幔利": {
     "path": "link_folder/地點/幔利.md",
     "type": "地點",
@@ -19280,6 +19380,14 @@
     "status": "formal",
     "aliases": []
   },
+  "得撒": {
+    "path": "link_folder/地點/得撒.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "得撒",
+    "status": "formal",
+    "aliases": []
+  },
   "戈印": {
     "path": "link_folder/地點/戈印.md",
     "type": "地點",
@@ -19325,6 +19433,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "拉末",
+    "status": "formal",
+    "aliases": []
+  },
+  "拉沙崙": {
+    "path": "link_folder/地點/拉沙崙.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拉沙崙",
     "status": "formal",
     "aliases": []
   },
@@ -19863,6 +19979,14 @@
     "status": "formal",
     "aliases": []
   },
+  "米吉多": {
+    "path": "link_folder/地點/米吉多.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "米吉多",
+    "status": "formal",
+    "aliases": []
+  },
   "米所波大米": {
     "path": "link_folder/地點/米所波大米.md",
     "type": "地點",
@@ -19905,6 +20029,14 @@
       "Jordan River",
       "約旦河"
     ]
+  },
+  "約念": {
+    "path": "link_folder/地點/約念.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "約念",
+    "status": "formal",
+    "aliases": []
   },
   "紅海曠野": {
     "path": "link_folder/地點/紅海曠野.md",
@@ -20113,6 +20245,14 @@
     "status": "formal",
     "aliases": []
   },
+  "迦密": {
+    "path": "link_folder/地點/迦密.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦密",
+    "status": "formal",
+    "aliases": []
+  },
   "迦特": {
     "path": "link_folder/地點/迦特.md",
     "type": "地點",
@@ -20134,6 +20274,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "除皮山（吉比亞特哈拉羅）",
+    "status": "formal",
+    "aliases": []
+  },
+  "雅博河": {
+    "path": "link_folder/地點/雅博河.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "雅博河",
     "status": "formal",
     "aliases": []
   },
@@ -31808,6 +31956,9 @@
   "七天不可出會幕的門": {
     "alias_of": "七日承接聖職不出會幕門"
   },
+  "三十一個王": {
+    "alias_of": "三十一個王的名單"
+  },
   "三種什一奉獻": {
     "alias_of": "三種什一奉獻的區分"
   },
@@ -34810,6 +34961,9 @@
   },
   "hod": {
     "alias_of": "尊榮（hod）"
+  },
+  "a.she.dah": {
+    "alias_of": "山坡（a.she.dah）"
   },
   "希伯來人 (過河的人)": {
     "alias_of": "希伯來人_過河的人"

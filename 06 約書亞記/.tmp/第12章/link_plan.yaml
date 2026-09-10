@@ -1,0 +1,451 @@
+book: 約書亞記
+chapter: 12
+A_use_directly: []
+B_needs_update:
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第7節「約書亞和以色列人在約但河西擊殺了諸王」
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第6節兩次「耶和華僕人摩西」
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第2節「亞摩利人的王西宏」、第8節六族名單
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 赫人
+  suggested_type: 人物
+  evidence: 第8節六族名單
+  match_type: exact
+  existing_title: 赫人
+  existing_path: link_folder/人物/赫人.md
+- name: 比利洗人
+  suggested_type: 人物
+  evidence: 第8節六族名單
+  match_type: exact
+  existing_title: 比利洗人
+  existing_path: link_folder/人物/比利洗人.md
+- name: 希未人
+  suggested_type: 歷史
+  evidence: 第8節六族名單
+  match_type: exact
+  existing_title: 希未人
+  existing_path: link_folder/歷史/希未人.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 第8節六族名單
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 第8節六族名單
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 亞捫人
+  suggested_type: 人物
+  evidence: 第2節「直到亞捫人的境界」
+  match_type: exact
+  existing_title: 亞捫人
+  existing_path: link_folder/人物/亞捫人.md
+- name: 利乏音人
+  suggested_type: 人物
+  evidence: 第4節「他是利乏音人所剩下的」
+  match_type: exact
+  existing_title: 利乏音人
+  existing_path: link_folder/人物/利乏音人.md
+- name: 基述人和瑪迦人
+  suggested_type: 人物
+  evidence: 第5節「直到基述人和瑪迦人的境界」
+  match_type: exact
+  existing_title: 基述人和瑪迦人
+  existing_path: link_folder/人物/基述人和瑪迦人.md
+- name: 亞嫩河
+  suggested_type: 地點
+  evidence: 第1、2節「亞嫩谷」；STEP mi./Na.chal 'ar.nOn（H5158N 加 H769）
+  surfaces:
+  - phrase: 亞嫩谷
+  match_type: exact
+  existing_title: 亞嫩河
+  existing_path: link_folder/地點/亞嫩河.md
+- name: 黑門山
+  suggested_type: 地點
+  evidence: 第1、5節
+  match_type: exact
+  existing_title: 黑門山
+  existing_path: link_folder/地點/黑門山.md
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: 第1、3、8節
+  match_type: exact
+  existing_title: 亞拉巴
+  existing_path: link_folder/地點/亞拉巴.md
+- name: 希實本
+  suggested_type: 地點
+  evidence: 第2、5節
+  match_type: exact
+  existing_title: 希實本
+  existing_path: link_folder/地點/希實本.md
+- name: 亞羅珥
+  suggested_type: 地點
+  evidence: 第2節「亞嫩谷邊的亞羅珥」
+  match_type: exact
+  existing_title: 亞羅珥
+  existing_path: link_folder/地點/亞羅珥.md
+- name: 基列
+  suggested_type: 地點
+  evidence: 第2、5節「基列一半」
+  match_type: exact
+  existing_title: 基列
+  existing_path: link_folder/地點/基列.md
+- name: 基尼烈湖
+  suggested_type: 地點
+  evidence: 第3節「直到基尼烈海」；STEP yam kin.Rot（H3220G 加 H3672G）
+  surfaces:
+  - phrase: 基尼烈海
+  match_type: exact
+  existing_title: 基尼烈湖
+  existing_path: link_folder/地點/基尼烈湖.md
+- name: 鹽海
+  suggested_type: 地點
+  evidence: 第3節「又到亞拉巴的海，就是鹽海」
+  match_type: exact
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 瑣腓田與毘斯迦山頂
+  suggested_type: 地點
+  evidence: 第3節「直到毘斯迦的山根」；STEP 'ash.Dot ha./pis.Gah（H798 加 H6449）
+  surfaces:
+  - phrase: 毘斯迦
+  match_type: exact
+  existing_title: 瑣腓田與毘斯迦山頂
+  existing_path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+- name: 巴珊
+  suggested_type: 地點
+  evidence: 第4、5節「巴珊全地」
+  match_type: exact
+  existing_title: 巴珊
+  existing_path: link_folder/地點/巴珊.md
+- name: 亞斯她錄
+  suggested_type: 地點
+  evidence: 第4節「住在亞斯她錄和以得來」
+  match_type: exact
+  existing_title: 亞斯她錄
+  existing_path: link_folder/地點/亞斯她錄.md
+- name: 以得來
+  suggested_type: 地點
+  evidence: 第4節「住在亞斯她錄和以得來」
+  match_type: exact
+  existing_title: 以得來
+  existing_path: link_folder/地點/以得來.md
+- name: 撒迦
+  suggested_type: 地點
+  evidence: 第5節「是黑門山、撒迦、巴珊全地」
+  match_type: exact
+  existing_title: 撒迦
+  existing_path: link_folder/地點/撒迦.md
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第6節「賜給流便人、迦得人，和瑪拿西半支派的人為業」
+  surfaces:
+  - phrase: 流便人、迦得人，和瑪拿西半支派的人
+  match_type: exact
+  existing_title: 兩支派半求河東之地為業
+  existing_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 賜給（na.tan）
+  suggested_type: 原文
+  evidence: 第6節「將他們的地賜給」；STEP Va/i.yi.te./nah（H5414G）
+  surfaces:
+  - phrase: 賜給
+  match_type: exact
+  existing_title: 賜給（na.tan）
+  existing_path: link_folder/原文/賜給（na.tan）.md
+- name: 為業（ye.ru.shah）
+  suggested_type: 原文
+  evidence: 第6、7節「為業」；STEP ye.ru.Shah（H3425），與書11:23 的 na.cha.lah（H5159）不同字
+  surfaces:
+  - phrase: 為業
+  match_type: exact
+  existing_title: 為業（ye.ru.shah）
+  existing_path: link_folder/原文/為業（ye.ru.shah）.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第1、3、7節
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 利巴嫩
+  suggested_type: 地點
+  evidence: 第7節「利巴嫩平原的巴力迦得」
+  match_type: exact
+  existing_title: 利巴嫩
+  existing_path: link_folder/地點/利巴嫩.md
+- name: 巴力迦得
+  suggested_type: 地點
+  evidence: 第7節
+  match_type: exact
+  existing_title: 巴力迦得
+  existing_path: link_folder/地點/巴力迦得.md
+- name: 哈拉山
+  suggested_type: 地點
+  evidence: 第7節「直到上西珥的哈拉山」
+  match_type: exact
+  existing_title: 哈拉山
+  existing_path: link_folder/地點/哈拉山.md
+- name: 家室與宗族
+  suggested_type: 主題
+  evidence: 第7節「按著以色列支派的宗族分給他們為業」；STEP ke./mach.le.ko.Ta/m（H4256）
+  surfaces:
+  - phrase: 宗族
+  match_type: exact
+  existing_title: 家室與宗族
+  existing_path: link_folder/主題/家室與宗族.md
+- name: 高原（Shephelah）
+  suggested_type: 地點
+  evidence: 第8節「高原亞拉巴」；STEP u./va./she.fe.Lah（H8219）
+  surfaces:
+  - phrase: 高原
+  match_type: exact
+  existing_title: 高原（Shephelah）
+  existing_path: link_folder/地點/高原（Shephelah）.md
+- name: 曠野
+  suggested_type: 地點
+  evidence: 第8節「山坡、曠野，和南地」；STEP u./va./mid.Bar（H4057B）
+  match_type: exact
+  existing_title: 曠野
+  existing_path: link_folder/地點/曠野.md
+- name: 南地
+  suggested_type: 地點
+  evidence: 第8節「和南地」；STEP u./va./Ne.gev（H5045G）
+  match_type: exact
+  existing_title: 南地
+  existing_path: link_folder/地點/南地.md
+- name: 耶利哥王
+  suggested_type: 人物
+  evidence: 第9節「一個是耶利哥王」
+  match_type: exact
+  existing_title: 耶利哥王
+  existing_path: link_folder/人物/耶利哥王.md
+- name: 艾城王
+  suggested_type: 人物
+  evidence: 第9節「一個是靠近伯特利的艾城王」
+  match_type: exact
+  existing_title: 艾城王
+  existing_path: link_folder/人物/艾城王.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 第9節「靠近伯特利的艾城王」、第16節「一個是伯特利王」
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 耶路撒冷
+  suggested_type: 地點
+  evidence: 第10節「一個是耶路撒冷王」
+  match_type: exact
+  existing_title: 耶路撒冷
+  existing_path: link_folder/地點/耶路撒冷.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 第10節「一個是希伯崙王」
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 耶末
+  suggested_type: 地點
+  evidence: 第11節「一個是耶末王」
+  match_type: exact
+  existing_title: 耶末
+  existing_path: link_folder/地點/耶末.md
+- name: 拉吉
+  suggested_type: 地點
+  evidence: 第11節「一個是拉吉王」
+  match_type: exact
+  existing_title: 拉吉
+  existing_path: link_folder/地點/拉吉.md
+- name: 伊磯倫
+  suggested_type: 地點
+  evidence: 第12節「一個是伊磯倫王」
+  match_type: exact
+  existing_title: 伊磯倫
+  existing_path: link_folder/地點/伊磯倫.md
+- name: 基色
+  suggested_type: 地點
+  evidence: 第12節「一個是基色王」
+  match_type: exact
+  existing_title: 基色
+  existing_path: link_folder/地點/基色.md
+- name: 底璧（城）
+  suggested_type: 地點
+  evidence: 第13節「一個是底璧王」
+  surfaces:
+  - phrase: 底璧
+  match_type: exact
+  existing_title: 底璧（城）
+  existing_path: link_folder/地點/底璧（城）.md
+- name: 迦南大敗直到何珥瑪
+  suggested_type: 歷史
+  evidence: 第14節「一個是何珥瑪王」
+  surfaces:
+  - phrase: 何珥瑪
+  match_type: exact
+  existing_title: 迦南大敗直到何珥瑪
+  existing_path: link_folder/歷史/迦南大敗直到何珥瑪.md
+- name: 戰勝亞拉得王
+  suggested_type: 歷史
+  evidence: 第14節「一個是亞拉得王」
+  surfaces:
+  - phrase: 亞拉得
+  match_type: exact
+  existing_title: 戰勝亞拉得王
+  existing_path: link_folder/歷史/戰勝亞拉得王.md
+- name: 立拿
+  suggested_type: 地點
+  evidence: 第15節「一個是立拿王」
+  match_type: exact
+  existing_title: 立拿
+  existing_path: link_folder/地點/立拿.md
+- name: 亞杜蘭
+  suggested_type: 地點
+  evidence: 第15節「一個是亞杜蘭王」
+  match_type: exact
+  existing_title: 亞杜蘭
+  existing_path: link_folder/地點/亞杜蘭.md
+- name: 瑪基大
+  suggested_type: 地點
+  evidence: 第16節「一個是瑪基大王」
+  match_type: exact
+  existing_title: 瑪基大
+  existing_path: link_folder/地點/瑪基大.md
+- name: 瑪頓
+  suggested_type: 地點
+  evidence: 第19節「一個是瑪頓王」
+  match_type: exact
+  existing_title: 瑪頓
+  existing_path: link_folder/地點/瑪頓.md
+- name: 夏瑣
+  suggested_type: 地點
+  evidence: 第19節「一個是夏瑣王」
+  match_type: exact
+  existing_title: 夏瑣
+  existing_path: link_folder/地點/夏瑣.md
+- name: 伸崙
+  suggested_type: 地點
+  evidence: 第20節「一個是伸崙米崙王」
+  surfaces:
+  - phrase: 伸崙米崙
+  match_type: exact
+  existing_title: 伸崙
+  existing_path: link_folder/地點/伸崙.md
+- name: 押煞
+  suggested_type: 地點
+  evidence: 第20節「一個是押煞王」
+  match_type: exact
+  existing_title: 押煞
+  existing_path: link_folder/地點/押煞.md
+- name: 多珥
+  suggested_type: 地點
+  evidence: 第23節「一個是多珥山岡的多珥王」
+  match_type: exact
+  existing_title: 多珥
+  existing_path: link_folder/地點/多珥.md
+C_new_formal:
+- name: 西宏
+  suggested_type: 人物
+  evidence: 第2、5節「亞摩利人的王西宏」「希實本王西宏」；STEP si.chOn（H5511）
+  target_path: link_folder/人物/西宏.md
+- name: 巴珊王噩
+  suggested_type: 人物
+  evidence: 第4節「又有巴珊王噩。他是利乏音人所剩下的」
+  target_path: link_folder/人物/巴珊王噩.md
+  semantic_hint:
+  - title: 巴珊
+    score: 0.401
+    type: 地點
+- name: 雅博河
+  suggested_type: 地點
+  evidence: 第2節「直到亞捫人的境界，雅博河」；STEP ya.Bok（H2999）
+  target_path: link_folder/地點/雅博河.md
+  semantic_hint:
+  - title: 雅博渡口
+    score: 0.445
+    type: 地點
+- name: 伯耶西末
+  suggested_type: 地點
+  evidence: 第3節「通伯耶西末的路」；STEP beit ha/y.shi.Mot（H1020）
+  target_path: link_folder/地點/伯耶西末.md
+- name: 基德
+  suggested_type: 地點
+  evidence: 第13節「一個是基德王」
+  target_path: link_folder/地點/基德.md
+- name: 他普亞
+  suggested_type: 地點
+  evidence: 第17節「一個是他普亞王」
+  target_path: link_folder/地點/他普亞.md
+- name: 希弗
+  suggested_type: 地點
+  evidence: 第17節「一個是希弗王」
+  target_path: link_folder/地點/希弗.md
+- name: 亞弗
+  suggested_type: 地點
+  evidence: 第18節「一個是亞弗王」
+  target_path: link_folder/地點/亞弗.md
+  semantic_hint:
+  - title: 雅弗
+    score: 0.431
+    type: 人物
+- name: 拉沙崙
+  suggested_type: 地點
+  evidence: 第18節「一個是拉沙崙王」
+  target_path: link_folder/地點/拉沙崙.md
+- name: 他納
+  suggested_type: 地點
+  evidence: 第21節「一個是他納王」
+  target_path: link_folder/地點/他納.md
+- name: 米吉多
+  suggested_type: 地點
+  evidence: 第21節「一個是米吉多王」
+  target_path: link_folder/地點/米吉多.md
+- name: 基低斯
+  suggested_type: 地點
+  evidence: 第22節「一個是基低斯王」
+  target_path: link_folder/地點/基低斯.md
+- name: 迦密
+  suggested_type: 地點
+  evidence: 第22節「靠近迦密的約念王」
+  target_path: link_folder/地點/迦密.md
+- name: 約念
+  suggested_type: 地點
+  evidence: 第22節「靠近迦密的約念王」
+  target_path: link_folder/地點/約念.md
+- name: 吉甲的戈印
+  suggested_type: 地點
+  evidence: 第23節「吉甲的戈印王」；與創14:1 提達所治的戈印不同實體，故用經文自己的片語命名以免被 base 比對誤併
+  target_path: link_folder/地點/吉甲的戈印.md
+- name: 得撒
+  suggested_type: 地點
+  evidence: 第24節「一個是得撒王」
+  target_path: link_folder/地點/得撒.md
+- name: 山坡（a.she.dah）
+  suggested_type: 原文
+  evidence: '第8節「山坡」STEP ''a.she.Dot（H794，a.she.dah: slope）；與第3節「山根」的 H798（Slopes
+    of Pisgah）不同編號'
+  surfaces:
+  - phrase: 山坡
+  target_path: link_folder/原文/山坡（a.she.dah）.md
+- name: 三十一個王的名單
+  suggested_type: 主題
+  evidence: 第9至24節逐一列名，第24節「共計三十一個王」
+  surfaces:
+  - phrase: 三十一個王
+  target_path: link_folder/主題/三十一個王的名單.md
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-09-10T06:10:57Z'

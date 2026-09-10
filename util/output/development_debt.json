@@ -4,9 +4,9 @@
     {
       "path": "link_folder/人物/摩西.md",
       "title": "摩西",
-      "deferred_at": "約書亞記:3",
-      "accumulated": 77,
-      "fingerprint": "138147e5827c41fd"
+      "deferred_at": "約書亞記:12",
+      "accumulated": 82,
+      "fingerprint": "515845fcee1132d7"
     },
     {
       "path": "link_folder/人物/亞倫.md",
@@ -35,6 +35,13 @@
       "deferred_at": "約書亞記:10",
       "accumulated": 27,
       "fingerprint": "cd0494598acb217b"
+    },
+    {
+      "path": "link_folder/地點/約但河.md",
+      "title": "約但河",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 27,
+      "fingerprint": "3cae0d184c5b413b"
     },
     {
       "path": "link_folder/人物/亞伯拉罕.md",
@@ -70,6 +77,13 @@
       "deferred_at": "申命記:11",
       "accumulated": 17,
       "fingerprint": "c4de0e08f56119fb"
+    },
+    {
+      "path": "link_folder/人物/迦南人.md",
+      "title": "迦南人",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 17,
+      "fingerprint": "21a96a6ae8904261"
     },
     {
       "path": "link_folder/原文/產業（na.cha.lah）.md",
@@ -121,11 +135,11 @@
       "fingerprint": "8bc14ef4d9b50fbc"
     },
     {
-      "path": "link_folder/人物/迦南人.md",
-      "title": "迦南人",
-      "deferred_at": "申命記:7",
+      "path": "link_folder/人物/赫人.md",
+      "title": "赫人",
+      "deferred_at": "約書亞記:12",
       "accumulated": 12,
-      "fingerprint": "08eeb3b8c2d813b3"
+      "fingerprint": "3a3e6348b55d94ec"
     },
     {
       "path": "link_folder/人物/迦得（萬幸）.md",
@@ -163,13 +177,6 @@
       "fingerprint": "bde53b40160f2baa"
     },
     {
-      "path": "link_folder/地點/巴珊.md",
-      "title": "巴珊",
-      "deferred_at": "約書亞記:9",
-      "accumulated": 8,
-      "fingerprint": "42de0b6a5434b8f3"
-    },
-    {
       "path": "link_folder/地點/海（紅海）.md",
       "title": "海（紅海）",
       "deferred_at": "約書亞記:2",
@@ -198,6 +205,13 @@
       "fingerprint": "20d3d6244231e753"
     },
     {
+      "path": "link_folder/人物/亞捫人.md",
+      "title": "亞捫人",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "78c28cb0dc4dde20"
+    },
+    {
       "path": "link_folder/人物/以色列人的官長.md",
       "title": "以色列人的官長",
       "deferred_at": "約書亞記:3",
@@ -212,11 +226,25 @@
       "fingerprint": "b7e530ea0ec057ce"
     },
     {
+      "path": "link_folder/人物/耶布斯人.md",
+      "title": "耶布斯人",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "5e07842f3085d907"
+    },
+    {
       "path": "link_folder/地點/何烈山.md",
       "title": "何烈山",
       "deferred_at": "申命記:18",
       "accumulated": 7,
       "fingerprint": "04639a02b6f186e3"
+    },
+    {
+      "path": "link_folder/地點/南地.md",
+      "title": "南地",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "931c41d4d4c2671c"
     },
     {
       "path": "link_folder/地點/基列.md",
@@ -226,6 +254,34 @@
       "fingerprint": "dc5f8f4b39f57349"
     },
     {
+      "path": "link_folder/地點/希伯崙.md",
+      "title": "希伯崙",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "71ca5dcdbeccf6fd"
+    },
+    {
+      "path": "link_folder/地點/希實本.md",
+      "title": "希實本",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "d90a5f52990af040"
+    },
+    {
+      "path": "link_folder/歷史/希未人.md",
+      "title": "希未人",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 7,
+      "fingerprint": "e273bfa01f9862ad"
+    },
+    {
+      "path": "link_folder/地點/鹽海.md",
+      "title": "鹽海",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 6,
+      "fingerprint": "07e6d19bbc4c1fd2"
+    },
+    {
       "path": "link_folder/主題/平安祭的三類（感謝祭、還願祭、甘心祭）.md",
       "title": "平安祭的三類（感謝祭、還願祭、甘心祭）",
       "deferred_at": "申命記:16",
@@ -233,18 +289,18 @@
       "fingerprint": "a9205c3ff70c789b"
     },
     {
-      "path": "link_folder/地點/鹽海.md",
-      "title": "鹽海",
-      "deferred_at": "約書亞記:3",
-      "accumulated": 5,
-      "fingerprint": "21645f23300bf054"
-    },
-    {
       "path": "link_folder/歷史/加低斯巴尼亞事件.md",
       "title": "加低斯巴尼亞事件",
       "deferred_at": "申命記:9",
       "accumulated": 5,
       "fingerprint": "66219ada973fa61e"
+    },
+    {
+      "path": "link_folder/地點/亞羅珥.md",
+      "title": "亞羅珥",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 4,
+      "fingerprint": "6bbe2046ec1ef0a9"
     },
     {
       "path": "link_folder/地點/何珥山.md",
@@ -287,6 +343,20 @@
       "deferred_at": "申命記:32",
       "accumulated": 3,
       "fingerprint": "cee27d93b3d7887b"
+    },
+    {
+      "path": "link_folder/地點/亞斯她錄.md",
+      "title": "亞斯她錄",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 3,
+      "fingerprint": "cb78738c51a7d7bf"
+    },
+    {
+      "path": "link_folder/地點/以得來.md",
+      "title": "以得來",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 3,
+      "fingerprint": "780f83c07f0e05b3"
     },
     {
       "path": "link_folder/地點/伯毘珥.md",
@@ -338,11 +408,11 @@
       "fingerprint": "cb4885e25c881157"
     },
     {
-      "path": "link_folder/地點/亞斯她錄.md",
-      "title": "亞斯她錄",
-      "deferred_at": "約書亞記:9",
+      "path": "link_folder/人物/基述人和瑪迦人.md",
+      "title": "基述人和瑪迦人",
+      "deferred_at": "約書亞記:12",
       "accumulated": 2,
-      "fingerprint": "abec193a27cb223b"
+      "fingerprint": "6b7b9b64db099215"
     },
     {
       "path": "link_folder/地點/他備拉.md",
@@ -350,6 +420,90 @@
       "deferred_at": "申命記:9",
       "accumulated": 2,
       "fingerprint": "4811e169a8c4e64f"
+    },
+    {
+      "path": "link_folder/地點/伊磯倫.md",
+      "title": "伊磯倫",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
+    },
+    {
+      "path": "link_folder/地點/伸崙.md",
+      "title": "伸崙",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/基色.md",
+      "title": "基色",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
+    },
+    {
+      "path": "link_folder/地點/夏瑣.md",
+      "title": "夏瑣",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/多珥.md",
+      "title": "多珥",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/押煞.md",
+      "title": "押煞",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/拉吉.md",
+      "title": "拉吉",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
+    },
+    {
+      "path": "link_folder/地點/撒迦.md",
+      "title": "撒迦",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "6b7b9b64db099215"
+    },
+    {
+      "path": "link_folder/地點/瑪基大.md",
+      "title": "瑪基大",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
+    },
+    {
+      "path": "link_folder/地點/瑪頓.md",
+      "title": "瑪頓",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/立拿.md",
+      "title": "立拿",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
+    },
+    {
+      "path": "link_folder/地點/耶末.md",
+      "title": "耶末",
+      "deferred_at": "約書亞記:12",
+      "accumulated": 2,
+      "fingerprint": "7f8c575a3be72206"
     }
   ]
 }

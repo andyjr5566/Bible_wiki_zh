@@ -1,0 +1,770 @@
+"book": "約書亞記"
+"chapter": !!int "12"
+"review_schema_version": !!int "2"
+"review_baseline": "link_update_review_baseline.yaml"
+"review_guidance":
+  "review_input": "判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章\
+    \ summary／relation 與既有內容一起判斷。"
+  "review_evidence": "review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代\
+    \ already_covered 的逐字舉證。"
+  "definition": "定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。"
+  "development": "主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation\
+    \ 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。"
+  "accumulation": "逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。"
+  "decision_rule": "每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部\
+    \ keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。"
+  "keep_basis": "definition 可用 no_identity_change／already_covered／insufficient_evidence；development\
+    \ 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有\
+    \ challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是\
+    \ already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json\
+    \ 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。"
+  "signals": "first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達\
+    \ 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。"
+"updates":
+- "title": "約書亞"
+  "path": "link_folder/人物/約書亞.md"
+  "summary": "第7節「約書亞和以色列人在約但河西擊殺了諸王」，並把那地按著以色列支派的宗族分給他們為業。CT 的分段把全章讀成兩半：摩西在河東殺二王（第1至6節），約書亞在河西殺三十一王（第7至24節）。"
+  "relation": "本章不記他打哪一仗，只記結果的總數。GT《綜合解讀》說表面上河西的爭戰是在約書亞的帶領下、約書亞完成了摩西所開始的工作，但實際上摩西是神的僕人，約書亞也是神的僕人，真正為百姓爭戰的乃是神自己。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "28"
+    - !!int "29"
+    "definition": "keep"
+    "development": "keep"
+- "title": "摩西"
+  "path": "link_folder/人物/摩西.md"
+  "summary": "第6節兩次稱「耶和華僕人摩西」：這二王是耶和華僕人摩西和以色列人所擊殺的，耶和華僕人摩西又將他們的地賜給流便人、迦得人，和瑪拿西半支派的人為業。"
+  "relation": "本章把他與約書亞並列成一組分工。CT 的話中之光說神在不同的時代、不同的地方使用不同的人；不論摩西如何為神重用，他的年日在神手中，神定規他所能征服的地界，而征服約但河西的土地，神定規是約書亞的工作；CT 並提醒不要拿兩人比較，因為如果沒有摩西領以色列人出埃及，約書亞甚麼都不能作。BH 說摩西擔得起這個稱號，是因為他的權柄與帶領都是照著神的話而行。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "81"
+    - !!int "82"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "亞摩利人"
+  "path": "link_folder/人物/亞摩利人.md"
+  "summary": "第2節「亞摩利人的王西宏」，以及第8節六族名單中的一族。"
+  "relation": "本章讓這個族名同時出現在河東與河西兩張清單上：河東是西宏的王號，河西是被奪之地的居民之一。CT 指出第8節迦南七族中這裡共列了六族，僅缺革迦撒人。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "20"
+    - !!int "21"
+    "definition": "keep"
+    "development": "keep"
+- "title": "赫人"
+  "path": "link_folder/人物/赫人.md"
+  "summary": "第8節六族名單之首：「就是赫人、亞摩利人，迦南人、比利洗人、希未人、耶布斯人的山地、高原亞拉巴、山坡、曠野，和南地」。"
+  "relation": "本章把六族與五種地形排在同一節裡——人與地一起被列成「那全地」的內容。BH 說這些民族在以色列進迦南之前住在城邑、村莊、山區堡壘與農業區裡。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "11"
+    - !!int "12"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "比利洗人"
+  "path": "link_folder/人物/比利洗人.md"
+  "summary": "第8節六族名單中的一族。"
+  "relation": "本章的比利洗人不是事件裡的角色，而是清單上的一項。與書11:3 不同的是，那裡他們是北方聯軍的成員，這裡他們屬於「約書亞奪了那全地」的內容。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "7"
+    - !!int "8"
+    "definition": "keep"
+    "development": "keep"
+- "title": "希未人"
+  "path": "link_folder/歷史/希未人.md"
+  "summary": "第8節六族名單中的一族。"
+  "relation": "上一章第19節把希未人單獨提出來，說除了基遍的希未人之外沒有一城與以色列人講和；本章不再重提那個例外，只把他們放回六族名單裡。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "耶布斯人"
+  "path": "link_folder/人物/耶布斯人.md"
+  "summary": "第8節六族名單中的一族。CT 給的原文字義是「被踐踏」。"
+  "relation": "本章第10節列了「耶路撒冷王」，第8節又列了耶布斯人，兩者其實指向同一座城。BH 說耶布斯人一直守住耶路撒冷，直到大衛攻取他們的堡壘、立那城為他國度的中心——王被擊殺了，城還沒有換人。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "迦南人"
+  "path": "link_folder/人物/迦南人.md"
+  "summary": "第8節六族名單中的一族。"
+  "relation": "「迦南人」在本章既是六族之一，也是三十一王所屬的整體。GT《綜合解讀》從三十一這個數字讀出他們的內部狀態：這些王代表各城不同的利益，彼此各持己見、爭鬥不休，只有在抵擋神的事上才能「同心合意」。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "16"
+    - !!int "17"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "亞捫人"
+  "path": "link_folder/人物/亞捫人.md"
+  "summary": "第2節「直到亞捫人的境界，雅博河」。CT 說亞捫人是羅得小女兒的後裔（創19:38），住在基列的東面，而雅博河的上游是與亞捫人的交界。"
+  "relation": "本章用他們當界線而不是對手。BH 說雅博標出西宏王國的北界，也是以色列奉命不再往前、不去侵擾亞捫的界線（申2:19）——西宏的地可以奪，亞捫的地不可以。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "利乏音人"
+  "path": "link_folder/人物/利乏音人.md"
+  "summary": "第4節「又有巴珊王噩。他是利乏音人所剩下的」。GT《丁道爾聖經注釋》說在聖經其餘地方，利乏音人是指死去之人（詩88:10）、或巨人、或大能的戰士（創14:5）；GT《華爾頓約書亞記背景注釋》說這個詞不是指人死後的靈魂，就是如本節一樣指外約但巴珊地區的原住民，這些人以身材高大著稱，並且與亞衲人和摩押地的以米人一樣，被入侵的以色列人所逐。"
+  "relation": "本章給了這一族一個結尾式的說法：「所剩下的」。GT《華爾頓約書亞記背景注釋》說擁有巨大鐵床的噩王被稱為這民族的最後一人，這是他們在以色列人入侵時衰亡的另一個證據。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "5"
+    - !!int "6"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "創世記:14"
+      - "申命記:3"
+      - "約書亞記:12"
+- "title": "基述人和瑪迦人"
+  "path": "link_folder/人物/基述人和瑪迦人.md"
+  "summary": "第5節「直到基述人和瑪迦人的境界」，是巴珊王噩地界的西北端。CT 說這是指巴珊地的北面、加利利海東面的兩個小邦，基述在南、瑪迦在北，這兩個小邦直到大衛王的時代仍存在（撒下3:3；撒下10:6）；GT《串珠聖經注釋》說基述在加利利之東北，瑪迦在黑門山以南、基述以北。"
+  "relation": "本章用他們當界線，而不是對手——他們標出的是以色列沒有進去的那一邊。BH 說基述與瑪迦位於巴珊之北與東北，超出以色列實際佔領的範圍，他們後來的存在顯出以色列並未把周邊民族除盡，即使噩的國本身已被徹底擊敗。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "亞嫩河"
+  "path": "link_folder/地點/亞嫩河.md"
+  "summary": "第1、2節「亞嫩谷」。STEP 顯示是 mi./Na.chal 'ar.nOn（H5158N 加 H769）。CT 說亞嫩谷是東岸最南端與摩押人的邊界（民21:13），原文字義是「湍急的溪流」；GT《聖經精讀本》說亞嫩谷是源自摩押高原的兩條河川彙聚在一起流淌的險峻山谷，形成了摩押地與分給流便支派之地的天然分界；GT《研經資料》說此谷位於隱基底的對面。"
+  "relation": "本章兩次用它畫線：第1節是河東所得之地的南端，第2節是西宏地界的南端。在前面幾卷它分開的是摩押與亞摩利，本章它成了以色列產業的南界。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition":
+      "decision": "keep"
+      "basis": "already_covered"
+      "covered_by": "它是一條界河"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "民數記:22"
+      - "申命記:2"
+      - "約書亞記:12"
+- "title": "黑門山"
+  "path": "link_folder/地點/黑門山.md"
+  "summary": "第1、5節。第1節「從亞嫩谷直到黑門山」是河東所得之地的北端，第5節是巴珊王噩地界的北端。CT 說黑門山位於利巴嫩之南、南北蜿蜒約達八十公里山脈中的最高峰，約有三千公尺高，長年積雪，是東岸最北端的界標；GT《聖經精讀本》說黑門山位於亞拉伯地與分給瑪拿西支派之地的分界，四季被白雪所覆蓋。"
+  "relation": "上一章它是河西征服的北界（書11:17），本章它是河東的北界。同一座山在相鄰兩章各站一次，一次在河的這邊、一次在那邊。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development": "keep"
+- "title": "亞拉巴"
+  "path": "link_folder/地點/亞拉巴.md"
+  "summary": "第1、3、8節三次出現。第1節「東邊的全亞拉巴之地」，第3節「約但河東邊的亞拉巴，直到基尼烈海，又到亞拉巴的海，就是鹽海」，第8節列在六種地形之中。CT 說「全亞拉巴之地」指東岸佔領之地的總稱；GT《串珠聖經注釋》說「全亞拉巴」（即約但河谷南段之東部）是河東領地之西界；GT《綜合解讀》說「東邊的全亞拉巴之地」指東部的沙漠。"
+  "relation": "本章同時用到它的兩種用法：第1、3節是河東的專有地名，第8節是河西六種地形之一。這正好對應這個條目一直記著的分歧——它既可以是整條裂谷，也可以是其中一段，還可以是那片海的限定語。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "8"
+    - !!int "9"
+    "definition": "keep"
+    "development": "keep"
+- "title": "希實本"
+  "path": "link_folder/地點/希實本.md"
+  "summary": "第2、5節。第2節「這二王，有住希實本、亞摩利人的王西宏」，第5節「直到希實本王西宏的境界」。GT《研經資料》說希實本這國位於亞嫩河與雅博河之間的約但河東，在現今約但國首都安曼之北偏西約二十公里之處；GT《聖經精讀本》說希實本是亞摩利王西宏的都城（民21:26），位於約但河東32公里處，以色列佔領此地之後分配給了流便支派（書13:17），後來成了利未支派的逃城（書21:39）。"
+  "relation": "本章給了這座城一個雙重身分：第2節它是西宏的居所，第5節它成了西宏的頭銜。CT 說希實本是亞摩利王西宏的京城，故有時稱西宏為希實本王（申2:26）。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "亞羅珥"
+  "path": "link_folder/地點/亞羅珥.md"
+  "summary": "第2節「他所管之地是從亞嫩谷邊的亞羅珥和谷中的城」。CT 說亞羅珥位於死海中部東方約20公里處，是亞嫩河北畔的一座城，原文字義是「毀滅」；GT《串珠聖經注釋》說亞羅珥在亞嫩河之岸、俯瞰河谷；GT《研經資料》說它在亞嫩河北岸，是亞摩利王西宏領土之南端，後來為流便族的領土。"
+  "relation": "它在本章是西宏地界的起點。GT《華爾頓約書亞記背景注釋》說西宏領土的東部地區，就是從位於亞嫩谷邊緣、控制當地貿易和道路的邊城亞羅珥開始——這座城的價值不在城本身，在它扼住的路。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "基列"
+  "path": "link_folder/地點/基列.md"
+  "summary": "第2、5節兩次「基列一半」。CT 說基列廣義泛指約但河東以色列人所佔領之地，狹義僅指雅博河以北包括巴珊地區在內，本處應指廣義的基列；GT《串珠聖經注釋》說基列大概指雅博河兩岸一帶的山地。"
+  "relation": "本章兩次用「一半」這個說法，GT《綜合解讀》解釋了為什麼：基列位於約但河東，巴珊王噩控制「雅博河」以北的部分，亞摩利人的王西宏控制「雅博河」以南的部分，所以說他們分別佔據「基列一半」。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "7"
+    - !!int "8"
+    "definition":
+      "decision": "keep"
+      "basis": "already_covered"
+      "covered_by": "指約旦河東岸的山地地區"
+    "development": "keep"
+- "title": "基尼烈湖"
+  "path": "link_folder/地點/基尼烈湖.md"
+  "summary": "第3節「直到基尼烈海」。STEP 顯示是 yam kin.Rot（H3220G 加 H3672G）。CT 說基尼烈海就是加利利海，約但河的上段流入加利利海，下段從加利利海流出直到死海；GT《研經資料》說「基尼烈」海字義是「豎琴」，就是「加利利海」的早期名稱。"
+  "relation": "本章用它當西宏地界西側的北端，與同一節的鹽海（南端）成一組。上一章它是北方聯軍徵召範圍的一部分（書11:2），本章它是河東疆域的界標。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development": "keep"
+- "title": "鹽海"
+  "path": "link_folder/地點/鹽海.md"
+  "summary": "第3節「又到亞拉巴的海，就是鹽海」。CT 說「亞拉巴的海，就是鹽海」也就是死海；GT《串珠聖經注釋》說鹽海即今日的死海，伯耶西末則近死海東北岸。"
+  "relation": "本章把它與基尼烈海排在同一句話裡，成為西宏地界西側的南端。經文自己在這一節替兩個名字做了對照：「亞拉巴的海」與「鹽海」是同一片水。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "5"
+    - !!int "6"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "瑣腓田與毘斯迦山頂"
+  "path": "link_folder/地點/瑣腓田與毘斯迦山頂.md"
+  "summary": "第3節「以及南方，直到毘斯迦的山根」。STEP 顯示是 'ash.Dot ha./pis.Gah（H798 加 H6449，簡要詞典義 ash.dot hap.pis.gah: Slopes (of Pisgah)）。CT 說毘斯迦位於死海的東北角，亦即摩西所登遠望迦南之山峰，在死海東邊摩押平原的尼波山上（申34:1），「山根」指山腳下；GT《串珠聖經注釋》說毘斯迦為西宏所管之地的南界，在死海東北角；GT《研經資料》說「毗斯迦」字義是「裂縫」或「峰」，此山脈的最高峰就是尼波山。"
+  "relation": "這個條目原本記的是巴蘭的第二個觀察點（民23:14），本章記的是同一座山的另一種用途：它是西宏地界的南端座標。BH 說毘斯迦高出摩押平原，摩西在那裡觀看應許之地，而約書亞這一代得著的，正是摩西只被允許看見的。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition": "keep"
+    "development": "keep"
+- "title": "巴珊"
+  "path": "link_folder/地點/巴珊.md"
+  "summary": "第4、5節。第4節說巴珊王噩住在亞斯她錄和以得來，第5節說他所管之地是黑門山、撒迦、巴珊全地。CT 說巴珊位於雅博河以北、黑門山以南的高原（即今戈蘭高原），境內牧草繁茂，盛產牛羊；GT《聖經精讀本》說巴珊王噩的領土北抵黑門山、南達雅博河、東至撒迦、西至約但河邊的巴珊與基列，此地肥沃並以畜牧業著稱（民32:1），並說巴珊王國的居民屬利乏音族，具有強大的戰鬥力。"
+  "relation": "本章是巴珊第一次以疆域清單的形式被記下來——前面幾卷記的是那一仗，本章記的是那片地有多大，以及它已經歸給了瑪拿西半支派。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "8"
+    - !!int "9"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "民數記:21"
+      - "申命記:3"
+      - "約書亞記:12"
+- "title": "亞斯她錄"
+  "path": "link_folder/地點/亞斯她錄.md"
+  "summary": "第4節「住在亞斯她錄和以得來」。CT 說亞斯他錄是巴珊地一城鎮，與以得來同為巴珊王噩的王城（申1:4；書9:10；書13:12、書13:31），原文字義是「星辰」；GT《研經資料》說它與迦南的女神同名，是約但河東邊巴珊的一個城市，後來分給瑪拿西支派，此處指的是巴珊的首都「亞斯他錄」。"
+  "relation": "本章把兩座王城並列。GT《綜合解讀》說「亞斯他錄」是噩王國敬拜偶像亞斯她錄女神的中心，巴珊王在「以得來」和「亞斯他錄」輪流居住——這替條目原本記下的城名與迦南女神同源那一點補上了實際的用途。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition":
+      "decision": "keep"
+      "basis": "already_covered"
+      "covered_by": "亞斯她錄是巴珊王噩的首都"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "以得來"
+  "path": "link_folder/地點/以得來.md"
+  "summary": "第4節「住在亞斯她錄和以得來」。CT 說以得來是巴珊的副都，位於加利利海的東面約一百多公里，原文字義是「好的牧草地」；GT《研經資料》說以得來位於雅博河北方、亞斯他錄東南、在雅穆河南支流上，因為在懸崖上所以可以留意到從南面或東面入侵的敵人，是噩重要的防禦地點。"
+  "relation": "條目原本記的是它作為決戰地點（申3:1）；本章記的是它作為居所——GT《綜合解讀》說巴珊王在「以得來」和「亞斯他錄」輪流居住。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "撒迦"
+  "path": "link_folder/地點/撒迦.md"
+  "summary": "第5節「他所管之地是黑門山、撒迦、巴珊全地」。CT 說撒迦位於約但河東、巴珊地的南端，原文字義是「遷移」；GT《研經資料》說「撒迦」字義是「遷移」，位於巴珊地區的東界；GT《串珠聖經注釋》說撒迦位於巴珊東邊的一座城。"
+  "relation": "CT 說它是巴珊地的南端，GT 兩家都說它是東界，這一點來源並不一致；但四家都同意它標的是巴珊的邊緣。GT《聖經精讀本》在整理噩的四界時，把撒迦列為東界。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "兩支派半求河東之地為業"
+  "path": "link_folder/事件/兩支派半求河東之地為業.md"
+  "summary": "第6節「耶和華僕人摩西將他們的地賜給流便人、迦得人，和瑪拿西半支派的人為業」。GT《研經資料》註明分地給兩支派半記載於民32:33-42。"
+  "relation": "這個條目記的是他們怎麼求、摩西怎麼答應；本章記的是結果被登記在冊。KC 從這一節讀出另一層區別：河東二王所管的地並不在應許之地裡面，是不必過約但河就能得到的地，而第24節的三十一個王也不把他們算進去；KC 並把這兩個半支派讀成一種只以地上福分為滿足的圖畫。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition": "keep"
+    "development": "keep"
+- "title": "賜給（na.tan）"
+  "path": "link_folder/原文/賜給（na.tan）.md"
+  "summary": "第6節「將他們的地賜給流便人、迦得人，和瑪拿西半支派的人為業」。STEP 顯示是 Va/i.yi.te./nah（H5414G，簡要詞典義 na.tan: to give: give），本節逐字譯義是 and/ he gave/ it；第7節約書亞分地時同樣是 va/i.yi.te./Nah（H5414G）。"
+  "relation": "這個條目原本收的是書1 那七次神把地賜給以色列的宣告。本章兩次出現時主詞都換成了人：第6節是摩西，第7節是約書亞。同一個動詞，這次是把神所賜的地再分下去。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development": "keep"
+- "title": "為業（ye.ru.shah）"
+  "path": "link_folder/原文/為業（ye.ru.shah）.md"
+  "summary": "第6、7節兩次「為業」。STEP 顯示都是 ye.ru.Shah（H3425，簡要詞典義 ye.rush.shah: possession）；第1節「得他們的地」則是同字根的動詞 va/i.yir.Shu（H3423H，簡要詞典義 ya.rash: to possess: take）。"
+  "relation": "這個條目原本記的是申2 那三次否定句——名詞用在以東、摩押、亞捫身上，說明神也把地分給了別的民族。本章第一次把同一個名詞用在以色列自己身上，而且河東（第6節）河西（第7節）各一次。值得留意的是書11:23 分地時用的是另一個字 na.cha.lah（H5159），本章兩節都是 ye.ru.shah。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition": "keep"
+    "development": "keep"
+- "title": "約但河"
+  "path": "link_folder/地點/約但河.md"
+  "summary": "第1節「以色列人在約但河外向日出之地」，第3節「約但河東邊的亞拉巴」，第7節「約書亞和以色列人在約但河西擊殺了諸王」。"
+  "relation": "本章用這條河把全章切成兩半。GT《丁道爾聖經注釋》指出河兩邊的王性質不同：河東的王是控制一片地區，而不是一座城。KC 也用同一條線分：河東的地是不必過約但河就能得到的地。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "26"
+    - !!int "27"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "利巴嫩"
+  "path": "link_folder/地點/利巴嫩.md"
+  "summary": "第7節「他們的地是從利巴嫩平原的巴力迦得」。GT《啟導本》說這是從黎巴嫩的巴力迦得（在北方）到哈拉山（在南方沙漠），一南一北，代表約但河西全境。"
+  "relation": "上一章它是實際推進到的北端（書11:17），本章重述同一個座標，但用途不同：GT《研經資料》說書12:7-8 列出約但河西所征服的土地，是「作為各支派分地的根據」。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "5"
+    - !!int "6"
+    "definition": "keep"
+    "development": "keep"
+- "title": "巴力迦得"
+  "path": "link_folder/地點/巴力迦得.md"
+  "summary": "第7節「他們的地是從利巴嫩平原的巴力迦得，直到上西珥的哈拉山」。CT 說巴力迦得在此代表迦南地的最北端，原文字義是「財神」；GT《研經資料》給的字義是「財神」、「財富之主」；GT《啟導本》說從黎巴嫩的巴力迦得（在北方）到哈拉山（在南方沙漠），一南一北，代表約但河西全境。"
+  "relation": "與書11:17 不同的是，本章緊接著這個座標之後就說「約書亞就將那地按著以色列支派的宗族分給他們為業」——同一個北端，一次是征服的終點，一次是分地的起點。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "約書亞記:11"
+      - "約書亞記:12"
+- "title": "哈拉山"
+  "path": "link_folder/地點/哈拉山.md"
+  "summary": "第7節「直到上西珥的哈拉山」。CT 說哈拉山位於別是巴以南四十九公里處，在此代表迦南地的最南端（參書11:17），原文字義是「平滑的」；GT《研經資料》說「哈拉」山字義是「平滑的」，「上」西珥的意思是「上升」、「登上」。"
+  "relation": "本章的座標與書11:17 相同，順序卻反過來——那裡是先哈拉山後巴力迦得，這裡是先巴力迦得後哈拉山。條目原本記著各家對「上西珥」的分歧，本章 CT 仍然維持同一個判斷：『上西珥』不同於以東人的西珥山，是在迦南地的南端。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "約書亞記:11"
+      - "約書亞記:12"
+- "title": "家室與宗族"
+  "path": "link_folder/主題/家室與宗族.md"
+  "summary": "第7節「約書亞就將那地按著以色列支派的宗族分給他們為業」。STEP 顯示「宗族」是 ke./mach.le.ko.Ta/m（H4256，簡要詞典義 ma.cha.lo.qet: division），與書11:23 同字。GT《綜合解讀》說「宗族 Clans」原文是「部族、家族」，是十二「支派 Tribes」與各個「父家 Fathers’ houses」之間的單位，由長老領導。"
+  "relation": "這是連續第二章用 H4256 而不是民1 點名造冊所用的 mish.pa.chah（H4940）。GT《綜合解讀》把分地按宗族為單位的經文列成一串：十一23；十二7；十三15；十五1；民三十六6——本章正是這一串的第二個。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development": "keep"
+- "title": "高原（Shephelah）"
+  "path": "link_folder/地點/高原（Shephelah）.md"
+  "summary": "第8節「高原亞拉巴」。STEP 顯示是 u./va./she.fe.Lah（H8219）。GT《研經資料》說「高原」字義是「低地」，或者是「猶大山區之西的地帶」的專有名詞。"
+  "relation": "本章是這個譯名第三次出現在同一種地形清單裡。GT《聖經精讀本》說本節說明了以色列征服的迦南地的地界，與書10:40-42 及書11:16-17 相符合——三份清單並不是重複，而是同一份地籍被抄了三次。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "4"
+    - !!int "5"
+    "definition": "keep"
+    "development": "keep"
+- "title": "曠野"
+  "path": "link_folder/地點/曠野.md"
+  "summary": "第8節「山坡、曠野，和南地」。STEP 顯示是 u./va./mid.Bar（H4057B）。"
+  "relation": "GT《聖經精讀本》指出這是這串地形清單的新增項：本節與書10:40-42 及書11:16-17 相符合，只是此處新添加了「曠野」這一詞，指亞拉巴東南部的不毛之地。GT《華爾頓約書亞記背景注釋》也把「山坡」和「曠野」一起列為本段新添的地理特徵，並說這是後來猶大支派定居的地區（書15:61）。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "9"
+    - !!int "10"
+    "definition": "keep"
+    "development": "keep"
+- "title": "南地"
+  "path": "link_folder/地點/南地.md"
+  "summary": "第8節「和南地」，是六種地形的最後一項。STEP 顯示是 u./va./Ne.gev（H5045G）。GT《研經資料》說「南地」原意是「乾旱」、「燒焦」，指耶路撒冷以南、死海西南方的曠野。"
+  "relation": "本章把它排在清單最後，作為河西全境的南界。它與同節的山地、高原、亞拉巴、山坡、曠野一起，把「那全地」拆成幾塊可以指認的地形。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "耶利哥王"
+  "path": "link_folder/人物/耶利哥王.md"
+  "summary": "第9節「他們的王：一個是耶利哥王」，這是三十一王名單的第一個名字。"
+  "relation": "這個條目原本就記著 CT 把他放進全書名單的那句話（迦南地三十一王之一，參書12:9）；本章就是那份名單本身。BH 說耶利哥是約但河西第一座被攻取的迦南城，成為那地屬乎以色列、是神所賜而非人力所得的決定性見證，並說這座城把神的審判與神的憐憫寫在一起——喇合與她全家因信與投靠以色列的神而蒙保全。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development": "keep"
+- "title": "艾城王"
+  "path": "link_folder/人物/艾城王.md"
+  "summary": "第9節「一個是靠近伯特利的艾城王」。"
+  "relation": "條目原本記的是書8 那一戰的全過程；本章只留一行，而且加了一個定位詞「靠近伯特利」。BH 說艾城的敗亡跟在亞干之罪所帶來的羞辱之後——以色列在營中的罪未除之前無法得勝，經過審判、潔淨與重新順服，約書亞才照神所吩咐的設伏得勝。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "伯特利"
+  "path": "link_folder/地點/伯特利.md"
+  "summary": "第9節「靠近伯特利的艾城王」與第16節「一個是伯特利王」。CT 說伯特利是舊約中一個重要城市，位於耶路撒冷北面約十七公里。"
+  "relation": "本章讓伯特利出現兩次：一次是替艾城定位，一次是它自己的王。GT《SDA聖經註釋》說雖然沒有提供細節，伯特利無疑就是在這次征戰中攻克的。BH 說伯特利的意思是神的家，與亞伯拉罕的壇和雅各的天梯異象相連（創28:10-19），而它日後在耶羅波安手下成了拜偶像的中心——擁有一個蒙神賜福的地方，並不保住一個轉離神的百姓。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "9"
+    - !!int "10"
+    "definition": "keep"
+    "development": "keep"
+- "title": "耶路撒冷"
+  "path": "link_folder/地點/耶路撒冷.md"
+  "summary": "第10節「一個是耶路撒冷王」。CT 說耶路撒冷又名耶布斯（書15:8），位於伯特利南方約十七公里，城內居民多為耶布斯人。"
+  "relation": "BH 說當時耶路撒冷是耶布斯人的堡壘，它的王亞多尼洗德領頭結盟攻打基遍與以色列（書10:1-5）；王被擊敗了，城本身卻仍在耶布斯人手中，直到大衛攻取它、立為以色列的京城。名單記的是王，不是城的歸屬。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development": "keep"
+- "title": "希伯崙"
+  "path": "link_folder/地點/希伯崙.md"
+  "summary": "第10節「一個是希伯崙王」。CT 說希伯崙位於耶路撒冷西南方三十公里。"
+  "relation": "BH 說希伯崙是與亞伯拉罕、撒拉、以撒、雅各及麥比拉洞相連的古城（創23:17-20；創25:9-10），它的王何咸加入耶路撒冷的聯盟攻打基遍而被約書亞擊敗；這場得勝為迦勒承受希伯崙、以及它後來作為利未人的城與逃城鋪了路（書14:13-15；書21:11-13）。"
+  "overview_review":
+    "signals":
+    - "many_accumulations"
+    "accumulation_count":
+    - !!int "6"
+    - !!int "7"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "耶末"
+  "path": "link_folder/地點/耶末.md"
+  "summary": "第11節「一個是耶末王」。CT 說耶末位於耶路撒冷西二十六公里，原文字義是「高地」。"
+  "relation": "BH 說耶末位於猶大山地與沿海平原之間的示非拉；它的王毘蘭在基遍與約書亞立和之後加入亞摩利聯盟（書10:3-5），而耶和華為以色列爭戰，把諸王擊潰在約書亞面前——設防的位置與區域影響力都擋不住那位把這地應許給祂百姓的神。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "拉吉"
+  "path": "link_folder/地點/拉吉.md"
+  "summary": "第11節「一個是拉吉王」。CT 說拉吉位於希伯侖西方二十三公里，原文字義是「難以攻克的」。"
+  "relation": "BH 說拉吉是示非拉的一座重要設防城，扼守通往猶大山地的要道；考古遺存證明它的堅固與長期的重要性，而它後來的歷史包括希西家年間西拿基立的亞述圍城。本章把這座城壓成一行，正好對照它在歷史上的份量。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "伊磯倫"
+  "path": "link_folder/地點/伊磯倫.md"
+  "summary": "第12節「一個是伊磯倫王」。CT 說伊磯倫位於拉吉西方十公里，原文字義是「似小牛」。"
+  "relation": "BH 說伊磯倫在猶大的示非拉，在基遍與以色列立和之後加入抵擋約書亞的亞摩利聯盟；它的位置靠近幾條重要道路，所以它的陷落對以色列控制這一帶意義重大。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "基色"
+  "path": "link_folder/地點/基色.md"
+  "summary": "第12節「一個是基色王」。CT 說基色位於耶路撒冷西北約二十九公里，原文字義是「部分」。"
+  "relation": "BH 說基色的位置俯瞰沿海平原與山地之間的主要交通與貿易路線；它的王何蘭在約書亞的戰役中前來幫助拉吉，結果與他的軍兵一同被殺（書10:33）——迦南的援軍救不了在神審判之下的城。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "底璧（城）"
+  "path": "link_folder/地點/底璧（城）.md"
+  "summary": "第13節「一個是底璧王」。CT 說底璧位於希伯崙西南方十八公里，原文字義是「聖所」。"
+  "relation": "BH 說底璧原名基列西弗，意思是 “City of Books”（書籍之城），是猶大山地的一座迦南設防城；約書亞在南方戰役中攻取它（書10:38-39），而它後來與迦勒、押撒和俄陀聶相連（書15:15-19）。這是本條目累積到的第三章，也把它與迦勒那一線接了起來。"
+  "overview_review":
+    "signals": []
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development": "keep"
+- "title": "迦南大敗直到何珥瑪"
+  "path": "link_folder/歷史/迦南大敗直到何珥瑪.md"
+  "summary": "第14節「一個是何珥瑪王」。BH 說何珥瑪位於後來歸西緬的迦南南部，名字的意思是毀滅或當滅之物；以色列曾在何珥瑪一帶因擅自行動而戰敗（民14:40-45），後來卻在憑信順服尋求神時得了勝（民21:1-3）；這座城的名字記念了歸神的毀滅。"
+  "relation": "條目原本收的是民14:45 那場敗仗與民21 的翻盤；本章把同一個地名放進被擊殺的王的名單裡——那個曾經標記以色列失敗的地方，最後列在戰績總表上。GT《SDA聖經註釋》也把何珥瑪列進名單中「新提到的名字」那一組。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "3"
+    - !!int "4"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "民數記:14"
+      - "民數記:21"
+      - "約書亞記:12"
+- "title": "戰勝亞拉得王"
+  "path": "link_folder/歷史/戰勝亞拉得王.md"
+  "summary": "第14節「一個是亞拉得王」。CT 說亞拉得位於別是巴的東北面約三十公里（民21:1），原文字義是「野驢」；GT《研經資料》說亞拉得位於希伯崙的南方約26公里處，是一處軍事要點。BH 說亞拉得是南地的一座迦南設防城，在希伯崙以南；它的王曾在曠野的路上攻擊以色列並擄掠人口，因而引出以色列在耶和華面前所許的願（民21:1-3）。"
+  "relation": "條目原本收的是民21 那一仗與民33 的行程記錄；本章把亞拉得王列進三十一王之中。BH 說本章這條記錄確認了神應允那次禱告的信實，把攔阻祂百姓進入應許之地的統治者除去。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    - "development_blank"
+    "accumulation_count":
+    - !!int "2"
+    - !!int "3"
+    "definition": "keep"
+    "development":
+      "decision": "update"
+      "synthesis_scope":
+      - "民數記:21"
+      - "民數記:33"
+      - "約書亞記:12"
+- "title": "立拿"
+  "path": "link_folder/地點/立拿.md"
+  "summary": "第15節「一個是立拿王」。CT 說立拿位於拉吉的東北面僅數公里處，原文字義是「鋪過的道路」；GT《研經資料》說這城築於澤塔乾河畔，位於耶路撒冷西南40公里，扼守海岸通往希伯崙的大路，極具戰略價值。"
+  "relation": "BH 說立拿在猶大的示非拉，後來歸給祭司作利未人的城（書15:42；書21:13）；它在約蘭年間背叛猶大（王下8:22），顯出它一直具有戰略地位。條目原本收的是書10 的攻取，本章補上它在名單上的位置與後來的角色。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "亞杜蘭"
+  "path": "link_folder/地點/亞杜蘭.md"
+  "summary": "第15節「一個是亞杜蘭王」。CT 說亞杜蘭位於拉吉和希伯崙之間偏北，形成等距扁三角型（創38:1），原文字義是「人的正義」；GT《研經資料》說亞杜蘭位於伯利恆西南20公里處，字義是「人民的正義」，此處位於希伯崙西北。"
+  "relation": "GT《華爾頓約書亞記背景注釋》說按考證亞杜蘭是位於猶大南部的薩非拉、耶路撒冷西南約十六哩的瑪德庫爾酋長遺址；它在此雖然只是在被征服君王名單中曇花一現，別處經文卻提到它與大衛有關（撒上22:1），並且為所羅門的設防城之一（代下11:7），先知彌迦在預言中因它在亞述侵略時被毀而哀哭（彌1:15）。"
+  "overview_review":
+    "signals":
+    - "first_in_book"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development": "keep"
+- "title": "瑪基大"
+  "path": "link_folder/地點/瑪基大.md"
+  "summary": "第16節「一個是瑪基大王」。CT 說瑪基大位於伯利恆西方約24公里，亞實突東方約26公里，原文字義是「牧人之地」。"
+  "relation": "BH 說瑪基大大概在猶大示非拉南邊；亞摩利聯盟攻打基遍之後，五王從約書亞的軍隊逃走，藏在瑪基大的洞裡，約書亞把洞口封住直到追擊完成，再把諸王提出來公開處置（書10:16-27）。條目原本收的是書10 那一段，本章把這座城放回名單上的位置。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "瑪頓"
+  "path": "link_folder/地點/瑪頓.md"
+  "summary": "第19節「一個是瑪頓王」。CT 說瑪頓位於加利利海西面約8公里，原文字義是「爭吵」。"
+  "relation": "BH 說瑪頓加入耶賓的北方聯軍而被約書亞攻取，確切位置仍不確定，可能在夏瑣影響範圍內的迦南北部。條目原本收的是書11:1 的結盟，本章記的是結果。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "夏瑣"
+  "path": "link_folder/地點/夏瑣.md"
+  "summary": "第19節「一個是夏瑣王」。CT 說夏瑣是迦南北部一座防守堅固的大城，位於加利利海以北16公里，扼守從美索不達米亞到埃及的國際貿易路線「沿海大道 Via Maris」，是古代迦南的政治、經濟中心，城內可住4萬人（參書11:1、書11:10）。"
+  "relation": "BH 說夏瑣是迦南北方諸國之首，耶賓王召集龐大的聯盟抵擋以色列；約書亞在米倫水邊擊敗聯軍、攻取夏瑣、擊殺其王並焚燒那城，北方最強的抵抗中心就此瓦解。本章把上一章十幾節的敘事壓成一行。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "伸崙"
+  "path": "link_folder/地點/伸崙.md"
+  "summary": "第20節「一個是伸崙米崙王」。CT 說伸崙米崙位於米吉多北面約13公里、約念的東北約9公里，原文字義是「高地眺望處」；GT《研經資料》說「伸崙米崙」字義是「米倫的眺遠處」。"
+  "relation": "本章用的名字比書11:1 多了兩個字。GT《綜合解讀》說「伸侖米侖」可能是伸侖；BH 也說伸崙米崙是加入夏瑣王耶賓聯盟的迦南北部城市，大概在下加利利。條目原本收的是書11:1 的「伸崙王」，本章補上這個較長的寫法。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "押煞"
+  "path": "link_folder/地點/押煞.md"
+  "summary": "第20節「一個是押煞王」。CT 說押煞位於伸崙的西方約16公里，靠近地中海海岸，原文字義是「我將被迷惑」；GT《研經資料》在本章說押煞位於迦密山腳下。"
+  "relation": "BH 說押煞也在結盟抵擋以色列的北方城市之中，後來被劃進亞設的地業。條目原本收的是書11:1 的結盟，本章記的是它的王在名單上；GT 在本章給的定位（迦密山腳下）與上一章給的凱桑遺址不完全一樣，兩說並存。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"
+- "title": "多珥"
+  "path": "link_folder/地點/多珥.md"
+  "summary": "第23節「一個是多珥山岡的多珥王」。CT 說多珥山崗位於迦密山西麓的海邊、米吉多西面約25公里，原文字義是「世代」；GT《研經資料》說「多珥」字義是「世代」，位於迦密山南邊。"
+  "relation": "GT《華爾頓約書亞記背景注釋》說臨海城市多珥的創建，最有可能與主前十三世紀時蘭塞二世試圖促進敘利亞─巴勒斯坦和愛琴之間貿易的計畫有關；非利士人在此居住一段時期之後，這城歸所羅門所有，並且成為他的行政中心之一（王上4:11）；它是瑪拿西支派的屬地，但要到王國時代才被攻取（書11:2；士1:27）。這與本章把它列在被擊殺的王之中形成對照：王被殺了，城要很久以後才真正歸屬以色列。"
+  "overview_review":
+    "signals":
+    - "development_blank"
+    "accumulation_count":
+    - !!int "1"
+    - !!int "2"
+    "definition": "keep"
+    "development":
+      "decision": "keep"
+      "basis": "standing_debt"

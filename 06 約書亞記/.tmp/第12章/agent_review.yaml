@@ -1,0 +1,84 @@
+version: 2
+book: 約書亞記
+chapter: 12
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: cc16be7b0fa8fade9465aeefd228cee7fc526cfa83805e2330f82603aa8c30f4
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: cc16be7b0fa8fade9465aeefd228cee7fc526cfa83805e2330f82603aa8c30f4
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/三十一個王的名單.yaml
+    - entry_content/亞弗.yaml
+    - entry_content/他普亞.yaml
+    - entry_content/他納.yaml
+    - entry_content/伯耶西末.yaml
+    - entry_content/吉甲的戈印.yaml
+    - entry_content/基低斯.yaml
+    - entry_content/基德.yaml
+    - entry_content/山坡（a.she.dah）.yaml
+    - entry_content/巴珊王噩.yaml
+    - entry_content/希弗.yaml
+    - entry_content/得撒.yaml
+    - entry_content/拉沙崙.yaml
+    - entry_content/米吉多.yaml
+    - entry_content/約念.yaml
+    - entry_content/西宏.yaml
+    - entry_content/迦密.yaml
+    - entry_content/雅博河.yaml
+    verdict_sha: cc16be7b0fa8fade9465aeefd228cee7fc526cfa83805e2330f82603aa8c30f4
+    findings_count: 0
+  m6:
+    round: 1
+    revision: 1
+    sha256: 267817aaee335f1ab7a908e49596c61f473bfec9956920aabafef83eac1aaf48
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 267817aaee335f1ab7a908e49596c61f473bfec9956920aabafef83eac1aaf48
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=cc16be7b0fa8fade9465aeefd228cee7fc526cfa83805e2330f82603aa8c30f4
+    - chapter_content.yaml
+    verdict_sha: 267817aaee335f1ab7a908e49596c61f473bfec9956920aabafef83eac1aaf48
+    findings_count: 0
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 41fa4c157900afb7b2156143802c5672e4e58ad95d8e37927ace80be5eeaca7e
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: antigravity
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: antigravity
+      sha256: 41fa4c157900afb7b2156143802c5672e4e58ad95d8e37927ace80be5eeaca7e
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=cc16be7b0fa8fade9465aeefd228cee7fc526cfa83805e2330f82603aa8c30f4
+    - parent:m6=267817aaee335f1ab7a908e49596c61f473bfec9956920aabafef83eac1aaf48
+    - link_updates.yaml
+    verdict_sha: 41fa4c157900afb7b2156143802c5672e4e58ad95d8e37927ace80be5eeaca7e
+    findings_count: 0
