@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_16.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 259,
+      "first": "2Ch 16:1",
+      "last": "2Ch 16:14",
+      "sha256": "052a9fa856a3c6ab858080df88ebcf398376084f7f89779f2fda23666ebf1ebd",
+      "bytes": 48197,
+      "chars": 41833,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

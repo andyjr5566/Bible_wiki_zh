@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_6.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 528,
+      "first": "2Ki 6:1",
+      "last": "2Ki 6:33",
+      "sha256": "a036707eb398dcc1ed51ffb8d6a9a53f852ad72de313e75ad7644c6fc0812147",
+      "bytes": 103651,
+      "chars": 90850,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

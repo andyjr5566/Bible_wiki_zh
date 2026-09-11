@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_14.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 105,
+      "first": "Hos 14:1",
+      "last": "Hos 14:9",
+      "sha256": "d1e4ad0e6599416b5d609e78611c8b504234a3f9bbc37ddc71aeaf9049298626",
+      "bytes": 21471,
+      "chars": 18791,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

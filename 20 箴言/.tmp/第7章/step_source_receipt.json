@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_7.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 193,
+      "first": "Pro 7:1",
+      "last": "Pro 7:27",
+      "sha256": "41436fa6ad5e825b750bc0195be4a3337c204f3c18b0639387281b86a48f9801",
+      "bytes": 41159,
+      "chars": 36205,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

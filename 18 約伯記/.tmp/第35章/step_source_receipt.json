@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 35,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_35.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 35,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 116,
+      "first": "Job 35:1",
+      "last": "Job 35:16",
+      "sha256": "d91c151340e928438c533f92f3eb592c9ee7538d747328e146893109b8cc984e",
+      "bytes": 24067,
+      "chars": 21231,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

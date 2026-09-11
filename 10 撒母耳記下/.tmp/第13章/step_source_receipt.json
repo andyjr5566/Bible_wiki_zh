@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_13.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 39,
+      "words": 658,
+      "first": "2Sa 13:1",
+      "last": "2Sa 13:39",
+      "sha256": "73e90f72cf3a0076039c86be0ccb5ed4e95f30e6e18bec5520cac4d5aa33c7c8",
+      "bytes": 129122,
+      "chars": 113187,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

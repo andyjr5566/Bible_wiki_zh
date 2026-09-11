@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_1.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 266,
+      "first": "Jer 1:1",
+      "last": "Jer 1:19",
+      "sha256": "7b30f9476ea28cb9346412f0ada99a709e7c012400d062c4962d7e73b2c122e1",
+      "bytes": 51877,
+      "chars": 45254,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

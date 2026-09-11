@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約拿書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jonah_1.txt",
+      "book": "Jonah",
+      "book_code": "Jon",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 269,
+      "first": "Jon 1:1",
+      "last": "Jon 1:17",
+      "sha256": "d01c3520e960431d123c0f128a367d0e4438650aa54b34999ee78eb2add11353",
+      "bytes": 52210,
+      "chars": 45695,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

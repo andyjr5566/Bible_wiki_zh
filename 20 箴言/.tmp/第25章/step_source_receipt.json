@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_25.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 239,
+      "first": "Pro 25:1",
+      "last": "Pro 25:28",
+      "sha256": "a4ecb231528a2e9abda4cc648f362d0569a1f99d51236783db8f9ad7fab602e0",
+      "bytes": 46639,
+      "chars": 40888,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

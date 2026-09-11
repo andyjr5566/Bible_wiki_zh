@@ -116,3 +116,28 @@ books:
         - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/
         - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-1-study-guide/
         - https://yalebiblestudy.org/courses/leviticus-numbers-and-deuteronomy/lessons/deuteronomy-part-2-study-guide/
+
+  "06 約書亞記":
+    BIBLEPROJECT:
+      role: literary_design
+      label: BibleProject — Book of Joshua Guide
+      url: https://bibleproject.com/guides/book-of-joshua/
+    ENTER_THE_BIBLE:
+      role: academic_context
+      label: Enter the Bible — Joshua
+      urls:
+        - https://enterthebible.org/courses/joshua/
+        - https://enterthebible.org/courses/joshua/lessons/summary-of-joshua/
+        - https://enterthebible.org/courses/joshua/lessons/outline-of-joshua/
+        - https://enterthebible.org/courses/joshua/lessons/background-of-joshua/
+        - https://enterthebible.org/courses/joshua/lessons/introductory-issues-in-joshua/
+        - https://enterthebible.org/courses/joshua/lessons/theological-themes-in-joshua/
+    YALE:
+      role: academic_context
+      label: Yale Bible Study — Joshua and Judges
+      urls:
+        - https://yalebiblestudy.org/courses/joshua-and-judges/
+        - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-historical-problem-of-conquest-study-guide/
+        - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-story-of-jericho-study-guide/
+        - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-case-of-achan-study-guide/
+        - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-moral-problem-of-conquest-study-guide/

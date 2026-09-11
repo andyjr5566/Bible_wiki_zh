@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 119,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_119.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 119,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 176,
+      "words": 1064,
+      "first": "Psa 119:1",
+      "last": "Psa 119:176",
+      "sha256": "7322add80d1a31cfaac7ffc99025fe8a3ef8875187ec4c3acf99b82b55f41b4f",
+      "bytes": 244287,
+      "chars": 215871,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 50,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_50.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 50,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 46,
+      "words": 691,
+      "first": "Jer 50:1",
+      "last": "Jer 50:46",
+      "sha256": "64eac535530921d415407892084384c5bcfa5b22240ec0f111f6113d9e6f196e",
+      "bytes": 131205,
+      "chars": 114632,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

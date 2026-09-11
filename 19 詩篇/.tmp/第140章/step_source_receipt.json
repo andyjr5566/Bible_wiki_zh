@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 140,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_140.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 140,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 116,
+      "first": "Psa 140:0",
+      "last": "Psa 140:13",
+      "sha256": "e67f58f15423ff9be1c3abdc30ebbe1ca7f5d2b8310c2cc038c98f0b1335af14",
+      "bytes": 23611,
+      "chars": 20631,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

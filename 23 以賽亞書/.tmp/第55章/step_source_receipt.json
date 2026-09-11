@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 55,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_55.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 55,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 185,
+      "first": "Isa 55:1",
+      "last": "Isa 55:13",
+      "sha256": "ac48678db71eab8d2b1c91cf5ed451faa52b3d1b191f4c663da4e7ede2269072",
+      "bytes": 37116,
+      "chars": 32468,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

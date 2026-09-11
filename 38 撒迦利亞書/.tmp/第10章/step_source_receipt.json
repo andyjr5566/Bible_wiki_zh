@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_10.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 166,
+      "first": "Zec 10:1",
+      "last": "Zec 10:12",
+      "sha256": "9df94dce20399279fb74768a13897a572ebff5b6507014bdf77e47cd45a00921",
+      "bytes": 34431,
+      "chars": 30215,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

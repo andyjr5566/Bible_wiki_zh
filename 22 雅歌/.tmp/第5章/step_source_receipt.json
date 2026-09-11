@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "雅歌",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_song_of_songs_5.txt",
+      "book": "Song of Songs",
+      "book_code": "Sng",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 185,
+      "first": "Sng 5:1",
+      "last": "Sng 5:16",
+      "sha256": "36be0ca5a93fd3ae5f2430c6db82750cdd7f872814f86d7fca30f99673e1dbcd",
+      "bytes": 37904,
+      "chars": 33150,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

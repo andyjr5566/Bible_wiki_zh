@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "路得記",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ruth_2.txt",
+      "book": "Ruth",
+      "book_code": "Rut",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 378,
+      "first": "Rut 2:1",
+      "last": "Rut 2:23",
+      "sha256": "f688c9e4b12015f2e50c938f1935d7be6ed2acd33ad3b5adf9d5147b2d2efdb5",
+      "bytes": 76219,
+      "chars": 66900,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_25.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 160,
+      "first": "Psa 25:0",
+      "last": "Psa 25:22",
+      "sha256": "220be071da9bfc133bb12fee21f210def406bfd9d069769036067874c6f1ad51",
+      "bytes": 33993,
+      "chars": 29936,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

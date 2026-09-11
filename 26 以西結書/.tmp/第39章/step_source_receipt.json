@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 39,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_39.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 39,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 434,
+      "first": "Ezk 39:1",
+      "last": "Ezk 39:29",
+      "sha256": "c66d718d3201004d78c893c47a675f3f2e3bb01639af851670ceabcf784798d8",
+      "bytes": 84075,
+      "chars": 73579,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

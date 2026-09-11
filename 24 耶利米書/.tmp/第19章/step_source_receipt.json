@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_19.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 283,
+      "first": "Jer 19:1",
+      "last": "Jer 19:15",
+      "sha256": "7dd9d82290eb224835d26b4d5970f6259e050947ebdbab93e33466abc76609ca",
+      "bytes": 53517,
+      "chars": 46565,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

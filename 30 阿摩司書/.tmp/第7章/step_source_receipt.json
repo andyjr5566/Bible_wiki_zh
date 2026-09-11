@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "阿摩司書",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_amos_7.txt",
+      "book": "Amos",
+      "book_code": "Amo",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 255,
+      "first": "Amo 7:1",
+      "last": "Amo 7:17",
+      "sha256": "b6cb90f2f831013ef3c9c00b3b96c4f9b3cc024b6c1b538f5ac54bc75d3d8cc0",
+      "bytes": 45889,
+      "chars": 39966,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

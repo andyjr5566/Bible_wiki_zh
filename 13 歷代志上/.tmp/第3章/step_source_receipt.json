@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_3.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 195,
+      "first": "1Ch 3:1",
+      "last": "1Ch 3:24",
+      "sha256": "a3ca760413ccf8d92cb4bb029fbf39b3fe34145184c4304fa6f57182c142ca55",
+      "bytes": 39978,
+      "chars": 34092,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 40,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_40.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 365,
+      "first": "Jer 40:1",
+      "last": "Jer 40:16",
+      "sha256": "a182fca15d2bb76590cd8decdfbcfdb1867d177eab1ee5fc35f4e7842210623d",
+      "bytes": 68606,
+      "chars": 59440,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

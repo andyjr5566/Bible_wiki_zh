@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 27,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_27.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 27,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 129,
+      "first": "2Ch 27:1",
+      "last": "2Ch 27:9",
+      "sha256": "7548fee3a6372d4b3e82621b83f56021d947609d7f90f1f78e9de5ca9d53bf31",
+      "bytes": 24811,
+      "chars": 21482,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

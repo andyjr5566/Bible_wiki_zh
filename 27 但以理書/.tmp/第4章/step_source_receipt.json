@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_4.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 634,
+      "first": "Dan 4:1",
+      "last": "Dan 4:37",
+      "sha256": "f6c336ce7d8b5493e350324d6008ed5317c4dbca8a2403b31639a20164bba056",
+      "bytes": 125470,
+      "chars": 109283,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

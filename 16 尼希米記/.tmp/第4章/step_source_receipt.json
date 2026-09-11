@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_4.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 339,
+      "first": "Neh 4:1",
+      "last": "Neh 4:23",
+      "sha256": "5972c5b891c0355a88de9c7386d098fe312385b6ae3cd20a83dfe10d8def4d66",
+      "bytes": 69920,
+      "chars": 61013,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

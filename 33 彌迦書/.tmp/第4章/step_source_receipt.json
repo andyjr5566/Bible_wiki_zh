@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "彌迦書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_micah_4.txt",
+      "book": "Micah",
+      "book_code": "Mic",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 208,
+      "first": "Mic 4:1",
+      "last": "Mic 4:13",
+      "sha256": "3a8ccb284cf052851eef7de4b52e6392d5eaa28d8ed613c80ca9e164e274c770",
+      "bytes": 41478,
+      "chars": 36182,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

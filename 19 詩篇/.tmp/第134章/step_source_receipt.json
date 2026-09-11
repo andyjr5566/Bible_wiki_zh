@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 134,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_134.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 134,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 4,
+      "words": 25,
+      "first": "Psa 134:0",
+      "last": "Psa 134:3",
+      "sha256": "8e32e1911147f89e2b4d0e0b707145fe21921d1c2a5687d78924a52a4d125274",
+      "bytes": 5334,
+      "chars": 4603,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

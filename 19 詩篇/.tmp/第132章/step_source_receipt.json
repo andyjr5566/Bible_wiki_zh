@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 132,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_132.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 132,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 131,
+      "first": "Psa 132:0",
+      "last": "Psa 132:18",
+      "sha256": "cd2b60e8cd9578ff42326255ed1a7ba2a8f4c9fe48d7858f10055b95d10613b0",
+      "bytes": 28260,
+      "chars": 24842,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

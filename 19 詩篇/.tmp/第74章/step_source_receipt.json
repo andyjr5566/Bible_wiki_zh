@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 74,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_74.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 74,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 195,
+      "first": "Psa 74:0",
+      "last": "Psa 74:23",
+      "sha256": "27b058fab70172ba3c4e61587f9f6f9f9d9314d3561ebe29cf0235444f6bfe0b",
+      "bytes": 40111,
+      "chars": 35256,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

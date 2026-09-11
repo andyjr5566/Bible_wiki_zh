@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 36,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_36.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 618,
+      "first": "Jer 36:1",
+      "last": "Jer 36:32",
+      "sha256": "430b39c06a117b41a13ffc892c8f23f647f54c12ef4126c79411a11d9ce25344",
+      "bytes": 115230,
+      "chars": 99810,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

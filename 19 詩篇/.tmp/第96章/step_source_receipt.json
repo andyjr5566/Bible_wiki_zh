@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 96,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_96.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 96,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 112,
+      "first": "Psa 96:1",
+      "last": "Psa 96:13",
+      "sha256": "a98ac149b37ed0802c84dd7844b7ff3b2e03a2e89d2e9ed577074287b90682fc",
+      "bytes": 22443,
+      "chars": 19598,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

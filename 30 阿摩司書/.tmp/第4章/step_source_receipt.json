@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "阿摩司書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_amos_4.txt",
+      "book": "Amos",
+      "book_code": "Amo",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 215,
+      "first": "Amo 4:1",
+      "last": "Amo 4:13",
+      "sha256": "b7298e87a0099e3774b323f23cc22a5672e1f7bf001ad1f0dad0b67979f52b73",
+      "bytes": 40875,
+      "chars": 35432,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

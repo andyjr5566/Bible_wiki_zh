@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "阿摩司書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_amos_8.txt",
+      "book": "Amos",
+      "book_code": "Amo",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 190,
+      "first": "Amo 8:1",
+      "last": "Amo 8:14",
+      "sha256": "88382cd331c0d7520d2d26f72c4cc601cdcf9cb3268688d558a44545af7de95b",
+      "bytes": 37097,
+      "chars": 32356,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

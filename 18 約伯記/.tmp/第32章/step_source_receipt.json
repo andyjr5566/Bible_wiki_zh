@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_32.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 197,
+      "first": "Job 32:1",
+      "last": "Job 32:22",
+      "sha256": "2f688814c4583bf5fdbb7bd3804b9fda35e9fecf61bca8b255e89fafa5aca3cd",
+      "bytes": 39592,
+      "chars": 34758,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

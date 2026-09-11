@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 52,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_52.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 52,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 202,
+      "first": "Isa 52:1",
+      "last": "Isa 52:15",
+      "sha256": "07d17b3559639d95d9c5137e7990d09a6843c1ed515a56c3c57a5c107fe271f2",
+      "bytes": 38431,
+      "chars": 33488,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "路得記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ruth_1.txt",
+      "book": "Ruth",
+      "book_code": "Rut",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 325,
+      "first": "Rut 1:1",
+      "last": "Rut 1:22",
+      "sha256": "5488cfb0cb3358fd033a0c62a2be93ba41a69b727b57e5695d69fd5b03b590a8",
+      "bytes": 64106,
+      "chars": 56137,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

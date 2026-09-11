@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_16.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 172,
+      "first": "Job 16:1",
+      "last": "Job 16:22",
+      "sha256": "ceac7423508e91de981e98a67e64788aa1876d2631c86422b900440110c4197e",
+      "bytes": 36972,
+      "chars": 32658,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

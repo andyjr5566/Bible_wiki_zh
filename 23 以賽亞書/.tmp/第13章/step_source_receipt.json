@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_13.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 253,
+      "first": "Isa 13:1",
+      "last": "Isa 13:22",
+      "sha256": "7ab809dbdc7ee1a0d7e9f60fa66726f48cfbcd9a38bff3b70525f0b4fa96675a",
+      "bytes": 49803,
+      "chars": 43566,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 27,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_27.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 27,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 212,
+      "first": "Pro 27:1",
+      "last": "Pro 27:27",
+      "sha256": "ada9158b0521402f3503beb691648f61dc55cd03ca57339409ea96ea116597fb",
+      "bytes": 43595,
+      "chars": 38306,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 41,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_41.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 41,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 226,
+      "first": "Job 41:1",
+      "last": "Job 41:34",
+      "sha256": "b0f8c32a03d23103abfac82114536b689fe2ef46ed32c858973105cbb90403da",
+      "bytes": 48671,
+      "chars": 42854,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

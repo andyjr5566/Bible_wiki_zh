@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_19.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 230,
+      "first": "Pro 19:1",
+      "last": "Pro 19:29",
+      "sha256": "da0c0ec71f96e13cc3d5fd2dec3e25c577c3c5c72fb4dfbfa6bbbbce4fe470fa",
+      "bytes": 45824,
+      "chars": 40293,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

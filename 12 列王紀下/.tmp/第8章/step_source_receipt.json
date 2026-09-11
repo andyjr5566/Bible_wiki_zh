@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_8.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 516,
+      "first": "2Ki 8:1",
+      "last": "2Ki 8:29",
+      "sha256": "559a40fda406edbd3cc061b916b146fbededc6b6379f48b3d2fb384bd10c25fe",
+      "bytes": 98088,
+      "chars": 85551,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

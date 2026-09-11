@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 26,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_26.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 26,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 307,
+      "first": "Ezk 26:1",
+      "last": "Ezk 26:21",
+      "sha256": "43d4857d2b57b2888c080a038694ac4800c9b945d0f717a2c670e1dd5c7d598b",
+      "bytes": 62027,
+      "chars": 54175,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_8.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 154,
+      "first": "Hos 8:1",
+      "last": "Hos 8:14",
+      "sha256": "d4b9b5c2c76ef1e024f4a3a3c31d5f267a024cd1410ab614c492930c6b89fe4e",
+      "bytes": 30597,
+      "chars": 26740,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

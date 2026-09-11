@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_24.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 203,
+      "first": "Job 24:1",
+      "last": "Job 24:25",
+      "sha256": "ae44aea0c87281126db6c63445fdf0daf1a00b935d83423cfc2754c1adffc0b1",
+      "bytes": 42219,
+      "chars": 37041,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

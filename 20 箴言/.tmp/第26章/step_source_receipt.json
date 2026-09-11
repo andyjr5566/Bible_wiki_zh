@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 26,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_26.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 26,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 211,
+      "first": "Pro 26:1",
+      "last": "Pro 26:28",
+      "sha256": "ac610a32c2632ad62758b07b082191f8f292bfce58fbd948158372d18971016b",
+      "bytes": 42516,
+      "chars": 37277,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

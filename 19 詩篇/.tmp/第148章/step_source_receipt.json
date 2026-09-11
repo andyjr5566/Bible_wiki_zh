@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 148,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_148.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 148,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 111,
+      "first": "Psa 148:1",
+      "last": "Psa 148:14",
+      "sha256": "7eb31de0cf46c94192024c2541b81d12085524375914c0f25956905180090854",
+      "bytes": 22036,
+      "chars": 19269,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

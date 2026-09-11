@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 126,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_126.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 126,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 7,
+      "words": 50,
+      "first": "Psa 126:0",
+      "last": "Psa 126:6",
+      "sha256": "a76f057954a5483994276a6d7bf43d2cd73a44e158dd7d709671427f878be25a",
+      "bytes": 10647,
+      "chars": 9253,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

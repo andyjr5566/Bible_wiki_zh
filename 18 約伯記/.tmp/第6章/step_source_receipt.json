@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_6.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 220,
+      "first": "Job 6:1",
+      "last": "Job 6:30",
+      "sha256": "7293c9963c7960e8f0399a1a8d6eb4e5f684b7f4a3de1800ad30283ee3b774a6",
+      "bytes": 45967,
+      "chars": 40550,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

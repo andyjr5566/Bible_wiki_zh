@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 30,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_30.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 30,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 432,
+      "first": "2Ch 30:1",
+      "last": "2Ch 30:27",
+      "sha256": "5400e9f54225b129ab6a2b16d2d43e4b795b41c34b5cf320e3edf5aa69e86d67",
+      "bytes": 86079,
+      "chars": 74515,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

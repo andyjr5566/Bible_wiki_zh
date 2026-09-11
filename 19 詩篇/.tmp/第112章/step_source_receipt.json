@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 112,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_112.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 112,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 79,
+      "first": "Psa 112:1",
+      "last": "Psa 112:10",
+      "sha256": "454dca9aa13e80286e7a4e4fb95c5c1bcfa103fc76cbc5e65804eccc1aeba723",
+      "bytes": 16754,
+      "chars": 14730,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

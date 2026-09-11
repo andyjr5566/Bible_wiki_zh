@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 64,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_64.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 64,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 135,
+      "first": "Isa 64:1",
+      "last": "Isa 64:12",
+      "sha256": "fb9ba8ff3b27539f668ef1b01a2415f5becc0100aebd1772eb3879cc7e8d1441",
+      "bytes": 28428,
+      "chars": 24950,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_8.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 527,
+      "first": "Jdg 8:1",
+      "last": "Jdg 8:35",
+      "sha256": "76acdf1020360cd713246282cbb7f53b9d67b1a5f8a9ea69b58f6f78314b4d99",
+      "bytes": 100844,
+      "chars": 87753,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_19.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 43,
+      "words": 794,
+      "first": "2Sa 19:1",
+      "last": "2Sa 19:43",
+      "sha256": "90c1370a7d159f2c64f9a945aefb77ddb21eea9dfa18e269d9dfb1d3f922a9ee",
+      "bytes": 150542,
+      "chars": 131515,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

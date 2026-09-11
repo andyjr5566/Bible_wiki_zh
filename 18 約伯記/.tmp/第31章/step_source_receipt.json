@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 31,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_31.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 40,
+      "words": 310,
+      "first": "Job 31:1",
+      "last": "Job 31:40",
+      "sha256": "af6c8ec7f521b3867c662c104a6b34f027824fcb269aadef6e563550dedf7ade",
+      "bytes": 64088,
+      "chars": 56604,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

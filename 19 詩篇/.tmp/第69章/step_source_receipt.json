@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 69,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_69.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 69,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 291,
+      "first": "Psa 69:0",
+      "last": "Psa 69:36",
+      "sha256": "0bbae752a56248241fa57042ddf9f0573e9f1cba45c23558f9cf4ee6b4fa2c4b",
+      "bytes": 63290,
+      "chars": 55746,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

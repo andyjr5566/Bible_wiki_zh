@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 77,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_77.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 77,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 154,
+      "first": "Psa 77:0",
+      "last": "Psa 77:20",
+      "sha256": "96458e03dd71e17fbcb051dce7f92358b55804520ee0dc60e960d7f70d9b2fea",
+      "bytes": 33255,
+      "chars": 29244,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 48,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_48.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 111,
+      "first": "Psa 48:0",
+      "last": "Psa 48:14",
+      "sha256": "a37be7b40b644e24cfe92824b49d136c29f43a15d23338124936e26a14083477",
+      "bytes": 22813,
+      "chars": 19864,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

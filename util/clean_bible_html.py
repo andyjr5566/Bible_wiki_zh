@@ -356,9 +356,9 @@ def extract_kingcomments(root: Node) -> str:
 
 
 def extract_biblehub(root: Node) -> str:
-    content = root.find(tag="div", class_="chap")
+    content = root.find(tag="div", class_="chap") or root.find(tag="div", id_="leftbox") or root.find(tag="div", class_="maintable2")
     if content is None:
-        raise ValueError("BibleHub .chap content was not found")
+        raise ValueError("BibleHub .chap or #leftbox content was not found")
     return normalize_text(node_text(content))
 
 
@@ -370,7 +370,7 @@ def detect_source(path: Path, root: Node, source: str) -> str:
         return "ccb"
     if name.startswith("kc_") or root.find(tag="main", id_="main-container"):
         return "kingcomments"
-    if name.startswith("bh_") or root.find(tag="div", class_="chap"):
+    if name.startswith("bh_") or root.find(tag="div", class_="chap") or root.find(tag="div", id_="leftbox"):
         return "biblehub"
     raise ValueError("source could not be detected; use --source")
 

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 53,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_53.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 53,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 166,
+      "first": "Isa 53:1",
+      "last": "Isa 53:12",
+      "sha256": "53934bc0fa2d4817dee2f30ef1ce07c8e7cf1317fd17c5dedb88482248c1f147",
+      "bytes": 34149,
+      "chars": 30011,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

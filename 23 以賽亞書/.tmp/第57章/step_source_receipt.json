@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 57,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_57.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 57,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 260,
+      "first": "Isa 57:1",
+      "last": "Isa 57:21",
+      "sha256": "8f085fb351fbbb578cbb2ee5573fc9aa49f4b6990b7cbec84a471709e549a8f5",
+      "bytes": 52709,
+      "chars": 46316,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 150,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_150.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 150,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 6,
+      "words": 37,
+      "first": "Psa 150:1",
+      "last": "Psa 150:6",
+      "sha256": "3ef99b2b725f1c69e1e855040e2058d859bafda7ab1424223fe2703eab1baaa9",
+      "bytes": 9092,
+      "chars": 7958,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

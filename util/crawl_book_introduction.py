@@ -14,12 +14,12 @@ cleaned text is intended as model input; ``source_notes.yaml`` remains the
 human-reviewed normalization layer used to prevent source-role confusion.
 """
 
-import sys
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import sys
 import time
 import urllib.request
 from datetime import datetime, timezone

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 34,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_34.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 220,
+      "first": "Isa 34:1",
+      "last": "Isa 34:17",
+      "sha256": "b9d97f873ef33f7f79ba40fd53f35d18580d6553d7c3b25863f91ad8d7a161d0",
+      "bytes": 44184,
+      "chars": 38754,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_22.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 419,
+      "first": "1Sa 22:1",
+      "last": "1Sa 22:23",
+      "sha256": "73f140ca9ac5a688b0d94dd73498bc8f7a3fa5e3a5c3484a72d6cee85fe1b220",
+      "bytes": 78204,
+      "chars": 68470,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

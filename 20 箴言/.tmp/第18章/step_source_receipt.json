@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 18,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_18.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 175,
+      "first": "Pro 18:1",
+      "last": "Pro 18:24",
+      "sha256": "2515b7bf31ac2399e84a8697a9fd3118ff2e4629f4b17485e273f9ce51c7de79",
+      "bytes": 36468,
+      "chars": 31992,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_32.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 44,
+      "words": 747,
+      "first": "Jer 32:1",
+      "last": "Jer 32:44",
+      "sha256": "a53fabc369cc90ff042482c6989aad0a1ff2265b8b2f27791eab7149eda5c78e",
+      "bytes": 142346,
+      "chars": 124066,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_22.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 243,
+      "first": "2Ch 22:1",
+      "last": "2Ch 22:12",
+      "sha256": "709753eb754f1f98c0e1c2b53e8a76bf7fc8f524abc13b255ca9cf1f39b2c09b",
+      "bytes": 46543,
+      "chars": 40265,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 34,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_34.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 458,
+      "first": "Ezk 34:1",
+      "last": "Ezk 34:31",
+      "sha256": "19a9ab0e6fbf31b314a18378b65c366394a68544ec7cbd8720a403e398ba46fc",
+      "bytes": 90440,
+      "chars": 79355,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

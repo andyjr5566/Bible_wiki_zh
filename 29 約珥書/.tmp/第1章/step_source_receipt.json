@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約珥書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_joel_1.txt",
+      "book": "Joel",
+      "book_code": "Jol",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 235,
+      "first": "Jol 1:1",
+      "last": "Jol 1:20",
+      "sha256": "b7bfaf8719a15bb3ab7a26445b58702e98991e4d58dae4dc87217abfae93d73d",
+      "bytes": 45660,
+      "chars": 39839,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

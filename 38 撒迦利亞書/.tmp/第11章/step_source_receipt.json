@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_11.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 254,
+      "first": "Zec 11:1",
+      "last": "Zec 11:17",
+      "sha256": "c25d3be6804874551235879a4092800137e39cdc022eab891abb7d02a1842e33",
+      "bytes": 49765,
+      "chars": 43684,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

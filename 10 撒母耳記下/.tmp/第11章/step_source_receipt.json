@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_11.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 442,
+      "first": "2Sa 11:1",
+      "last": "2Sa 11:27",
+      "sha256": "1c01fdb6d7bf3b5e0eb0d4a8e315390dd58f7ffb9c4db89b8615e078b708588b",
+      "bytes": 87183,
+      "chars": 76309,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

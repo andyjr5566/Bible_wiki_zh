@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 26,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_26.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 26,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 475,
+      "first": "1Sa 26:1",
+      "last": "1Sa 26:25",
+      "sha256": "eaba96c6682f4bd70fc935ab678f5bb75a13e721d57eb1971948f05d7606ec9b",
+      "bytes": 88621,
+      "chars": 77404,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

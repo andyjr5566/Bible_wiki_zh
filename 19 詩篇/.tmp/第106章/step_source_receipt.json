@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 106,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_106.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 106,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 48,
+      "words": 330,
+      "first": "Psa 106:1",
+      "last": "Psa 106:48",
+      "sha256": "732596a86caef263b73e3a111961e4717564efca927f90ef23f5d23e3ba0173e",
+      "bytes": 75493,
+      "chars": 66581,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

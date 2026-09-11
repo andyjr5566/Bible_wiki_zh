@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_14.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 479,
+      "first": "2Ki 14:1",
+      "last": "2Ki 14:29",
+      "sha256": "6d44d79f2fb56132968a902072b37650c7b2f7023794c46448a5969e92e17e18",
+      "bytes": 89760,
+      "chars": 77612,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

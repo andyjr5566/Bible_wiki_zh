@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 86,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_86.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 86,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 147,
+      "first": "Psa 86:0",
+      "last": "Psa 86:17",
+      "sha256": "9d32c9b86a40c1b90fe478923fa191274d83ec3aee7b72a80d4e0e3e263d81ae",
+      "bytes": 31423,
+      "chars": 27558,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

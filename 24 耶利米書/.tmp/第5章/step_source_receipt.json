@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_5.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 430,
+      "first": "Jer 5:1",
+      "last": "Jer 5:31",
+      "sha256": "00a9357c28676c2113c1af3be9b22a4cffa5cd27fd53924a5e0bd1e27221be85",
+      "bytes": 83616,
+      "chars": 73302,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

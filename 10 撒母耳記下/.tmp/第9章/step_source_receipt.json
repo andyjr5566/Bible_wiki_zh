@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_9.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 222,
+      "first": "2Sa 9:1",
+      "last": "2Sa 9:13",
+      "sha256": "8e7bb5e8531858122f78f7d7a95997e70f85ca3bad6546cee82fb3ed10c79987",
+      "bytes": 42696,
+      "chars": 37227,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

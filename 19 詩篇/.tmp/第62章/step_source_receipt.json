@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 62,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_62.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 62,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 117,
+      "first": "Psa 62:0",
+      "last": "Psa 62:12",
+      "sha256": "1e8222ff2d6d2c9180a5a848a3ad2d42c7bb0ff5e35643c6f538ad1acb4d0825",
+      "bytes": 22910,
+      "chars": 19983,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

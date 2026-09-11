@@ -812,6 +812,8 @@ def parse_tahot(
                 continue
 
             word = parts[1].strip() if len(parts) > 1 else ""
+            if not word:
+                continue
             transliteration = parts[2].strip() if len(parts) > 2 else ""
             gloss = parts[3].strip() if len(parts) > 3 else ""
             strong_field = parts[4].strip() if len(parts) > 4 else ""

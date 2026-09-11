@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "彌迦書",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_micah_2.txt",
+      "book": "Micah",
+      "book_code": "Mic",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 176,
+      "first": "Mic 2:1",
+      "last": "Mic 2:13",
+      "sha256": "4f4685440e7cfea969b49bca699a175e880afca75f2217142e8fd49a6c34c66e",
+      "bytes": 35780,
+      "chars": 31444,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

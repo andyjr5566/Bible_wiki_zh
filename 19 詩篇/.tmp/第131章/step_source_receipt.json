@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 131,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_131.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 131,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 4,
+      "words": 33,
+      "first": "Psa 131:0",
+      "last": "Psa 131:3",
+      "sha256": "b7dbae9bf1575dd63327418169ca68f3387ba5f657835bd912a48345ccc5a2ae",
+      "bytes": 6908,
+      "chars": 6005,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

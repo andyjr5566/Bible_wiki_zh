@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_7.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 172,
+      "first": "Job 7:1",
+      "last": "Job 7:21",
+      "sha256": "1a14a97d71ae5b551c788e42a9ee6e19a48989145c7c38a78242051725a5fa12",
+      "bytes": 36002,
+      "chars": 31795,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

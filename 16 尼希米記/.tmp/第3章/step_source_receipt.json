@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_3.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 466,
+      "first": "Neh 3:1",
+      "last": "Neh 3:32",
+      "sha256": "be79931b92b4d195926e4dcc9c88f2f8fdf48b0303b4be5d0c37489607e625ee",
+      "bytes": 92112,
+      "chars": 79984,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_32.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 203,
+      "first": "Isa 32:1",
+      "last": "Isa 32:20",
+      "sha256": "ad2a361f86fb2eb73ecc042d29f5c58a7d6599caf1803806ab27f78db5869171",
+      "bytes": 40175,
+      "chars": 35044,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

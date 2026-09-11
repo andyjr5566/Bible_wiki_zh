@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_20.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 363,
+      "first": "2Ki 20:1",
+      "last": "2Ki 20:21",
+      "sha256": "fee2a1bca5eb63c73dae22334bf3cf554800d45bfce0997307a695581f0f83cf",
+      "bytes": 68950,
+      "chars": 59900,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

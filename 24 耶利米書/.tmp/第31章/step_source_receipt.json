@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 31,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_31.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 40,
+      "words": 621,
+      "first": "Jer 31:1",
+      "last": "Jer 31:40",
+      "sha256": "1fea78632799fb60229abf35fbd7a3008d57c8a2e0bfa7c333c7091132fdda81",
+      "bytes": 118606,
+      "chars": 103612,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_22.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 225,
+      "first": "Pro 22:1",
+      "last": "Pro 22:29",
+      "sha256": "5e1ed2b61e316afbce1db3d898588ac64354938a10c1734ccbb33075c7e0e14b",
+      "bytes": 45696,
+      "chars": 40212,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

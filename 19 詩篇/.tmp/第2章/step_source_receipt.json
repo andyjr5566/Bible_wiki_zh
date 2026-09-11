@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_2.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 92,
+      "first": "Psa 2:1",
+      "last": "Psa 2:12",
+      "sha256": "4a1aac3c78f1aa321085d6ad2d706d2b6a4891edbafb313884cad637cf1e2e61",
+      "bytes": 19540,
+      "chars": 17132,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

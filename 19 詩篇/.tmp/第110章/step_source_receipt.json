@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 110,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_110.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 110,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 8,
+      "words": 65,
+      "first": "Psa 110:0",
+      "last": "Psa 110:7",
+      "sha256": "a6fcbd08e330e72ea7c1d34de2cefe31b283b32e03f70c1e456b71a64b923a4d",
+      "bytes": 13161,
+      "chars": 11488,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

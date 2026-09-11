@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_2.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 363,
+      "first": "Jdg 2:1",
+      "last": "Jdg 2:23",
+      "sha256": "15210cf01de96a177a7df78c98c35985c6852df37fffef1cf303e5da8c5dce35",
+      "bytes": 71295,
+      "chars": 62309,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_11.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 40,
+      "words": 663,
+      "first": "Jdg 11:1",
+      "last": "Jdg 11:40",
+      "sha256": "ebd81d2672be8f0e5ca98c183a2ed3593652e786805283e49b760dc465c6e2aa",
+      "bytes": 126373,
+      "chars": 110207,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_19.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 395,
+      "first": "1Sa 19:1",
+      "last": "1Sa 19:24",
+      "sha256": "5e63ea43377f312bafa4cd35076934c4ee231b14b8d9950e89ba2bfea05efcb7",
+      "bytes": 78543,
+      "chars": 68770,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

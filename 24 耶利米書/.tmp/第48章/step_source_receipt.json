@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 48,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_48.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 47,
+      "words": 580,
+      "first": "Jer 48:1",
+      "last": "Jer 48:47",
+      "sha256": "e4110d4d7f9479cf8704f40755e0f79b7c45181f712d969ecc132b68126a1fe2",
+      "bytes": 109248,
+      "chars": 95268,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_16.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 252,
+      "first": "Pro 16:1",
+      "last": "Pro 16:33",
+      "sha256": "fb4134a707db9a3f34087f92853e845187116e7d147e208f9fff587e7ce45d19",
+      "bytes": 49991,
+      "chars": 43744,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

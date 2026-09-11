@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_8.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 281,
+      "first": "Ecc 8:1",
+      "last": "Ecc 8:17",
+      "sha256": "f5e9bfa94a01a286a4ba899c88b0709c7ba9740bc1eddf3a35c38cbf730a5310",
+      "bytes": 51096,
+      "chars": 44600,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

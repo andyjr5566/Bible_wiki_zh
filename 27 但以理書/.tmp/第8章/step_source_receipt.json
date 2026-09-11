@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_8.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 383,
+      "first": "Dan 8:1",
+      "last": "Dan 8:27",
+      "sha256": "4e5b4c475a575c0b0815e0588dd974a081f33183c793f20bc043ac53d8953d03",
+      "bytes": 78862,
+      "chars": 69088,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

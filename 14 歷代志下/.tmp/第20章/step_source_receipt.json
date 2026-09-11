@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_20.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 578,
+      "first": "2Ch 20:1",
+      "last": "2Ch 20:37",
+      "sha256": "69eeac9424514f5954359454a200c5b87f91e644ec5b74913d77565d97613e4d",
+      "bytes": 113335,
+      "chars": 98352,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

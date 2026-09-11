@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 40,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_40.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 185,
+      "first": "Psa 40:0",
+      "last": "Psa 40:17",
+      "sha256": "3a5658d4ae3652502f705341a526938d7b933e96d536fca43f9dbb85b3d3aa87",
+      "bytes": 39314,
+      "chars": 34456,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_22.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 51,
+      "words": 382,
+      "first": "2Sa 22:1",
+      "last": "2Sa 22:51",
+      "sha256": "67fa114c3c3d43b83317433ca59ce29b6130d8652df38b6eae401282f39ab224",
+      "bytes": 85918,
+      "chars": 76175,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

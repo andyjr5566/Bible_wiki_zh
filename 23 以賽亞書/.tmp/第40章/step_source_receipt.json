@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 40,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_40.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 357,
+      "first": "Isa 40:1",
+      "last": "Isa 40:31",
+      "sha256": "151132dbcc6fe11420734f19ae12e7a07ff03c79c5422efc7bc231fbc3431a5a",
+      "bytes": 72078,
+      "chars": 63341,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

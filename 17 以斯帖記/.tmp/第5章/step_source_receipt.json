@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_5.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 265,
+      "first": "Est 5:1",
+      "last": "Est 5:14",
+      "sha256": "4e3b88185e0ff2ce919a1aa6a3385ca4a93b8ff31d9e997b4f4bdbbef8b8befc",
+      "bytes": 50462,
+      "chars": 43973,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

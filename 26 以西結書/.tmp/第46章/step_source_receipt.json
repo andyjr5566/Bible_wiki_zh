@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 46,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_46.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 46,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 381,
+      "first": "Ezk 46:1",
+      "last": "Ezk 46:24",
+      "sha256": "9a016621fdce60a522176d6438b413e1d942a5d4a29ee9334653c4c665882d04",
+      "bytes": 75769,
+      "chars": 66068,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

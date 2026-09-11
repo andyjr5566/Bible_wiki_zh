@@ -1,0 +1,485 @@
+# STEP Bible — Ruth 1
+
+> Source: STEP Bible / STEPBible-Data — https://github.com/STEPBible/STEPBible-Data
+> License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+> 本檔是「原文證據層」資料，不是 Commentary。
+> Lexicon 列的是詞彙可能義域；不可直接把所有字典義都當成本節語境義。
+
+## Ruth 1:1
+
+**Original:** וַיְהִ֗י בִּימֵי֙ שְׁפֹ֣ט הַשֹּׁפְטִ֔ים וַיְהִ֥י רָעָ֖ב בָּאָ֑רֶץ וַיֵּ֨לֶךְ אִ֜ישׁ מִבֵּ֧ית לֶ֣חֶם יְהוּדָ֗ה לָגוּר֙ בִּשְׂדֵ֣י מוֹאָ֔ב ה֥וּא וְאִשְׁתּ֖וֹ וּשְׁנֵ֥י בָנָֽיו׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יְהִ֗י | va/y.Hi | and/ it was | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | בִּ/ימֵי֙ | bi./Mei | in/ [the] days of | H3117G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | יוֹם (yom): day |
+| 3 | שְׁפֹ֣ט | she.Fot | [the] judging of | H8199 | HVqcc — Verb : Qal (Simple, Active) Infinitive Construct | שָׁפַט (sha.phat): to judge |
+| 4 | הַ/שֹּׁפְטִ֔ים | ha./sho.fe.Tim | the/ judges | H8199 | HTd/Vqrmpa — Definite article (Hebrew) + Verb : Qal (Simple, Active) Participle (Plural Masculine, Absolute) | שָׁפַט (sha.phat): to judge |
+| 5 | וַ/יְהִ֥י | va/y.Hi | and/ it was | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 6 | רָעָ֖ב | ra.'Av | a famine | H7458 | HNcmsa — Noun (Singular Masculine, Absolute) | רָעָב (ra.av): famine |
+| 7 | בָּ/אָ֑רֶץ | ba./'A.retz | in the/ land | H776G | HRd/Ncfsa — Preposition (Definite) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 8 | וַ/יֵּ֨לֶךְ | va/i.Ye.lekh | and/ he went | H1980G | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 9 | אִ֜ישׁ | 'ish | a man | H376G | HNcmsa — Noun (Singular Masculine, Absolute) | אִישׁ (ish): man |
+| 10 | מִ/בֵּ֧ית | mi./Beit | from/ Beth- | H1035G | HR/Npl — Preposition + Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 11 | לֶ֣חֶם | Le.chem | -lehem | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 12 | יְהוּדָ֗ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 13 | לָ/גוּר֙ | la./Gur | to/ sojourn | H1481A | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | גּוּר (gur): to sojourn |
+| 14 | בִּ/שְׂדֵ֣י | bi/s.Dei | in/ [the] region<s> of | H7704G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | שָׂדֶה (sa.deh): land: country |
+| 15 | מוֹאָ֔ב | mo.'Av | Moab | H4124G | HNpl — Proper Noun (Location) | מוֹאָב (mo.av): Moab |
+| 16 | ה֥וּא | hu' | he | H1931 | HPp3ms — Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 17 | וְ/אִשְׁתּ֖/וֹ | ve./'ish.T/o | and/ wife/ his | H802H | HC/Ncfsc/Sp3ms — Conjunction + Noun (Singular Feminine, Construct) + Suffix (Third Singular Masculine) | אִשָּׁה (ish.shah): woman: wife |
+| 18 | וּ/שְׁנֵ֥י | u./she.Nei | and/ [the] two | H8147 | HC/Ncbdc — Conjunction + Noun (Dual Either gender, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 19 | בָנָֽי/ו\׃ | va.Na/v | sons/ his | H1121A | HNcmpc/Sp3ms — Noun (Plural Masculine, Construct) + Suffix (Third Singular Masculine) | בֵּן (ben): son: child |
+
+## Ruth 1:2
+
+**Original:** וְשֵׁ֣ם הָאִ֣ישׁ אֱֽלִימֶ֡לֶךְ וְשֵׁם֩ אִשְׁתּ֨וֹ נָעֳמִ֜י וְשֵׁ֥ם שְׁנֵֽי־ בָנָ֣יו׀ מַחְל֤וֹן וְכִלְיוֹן֙ אֶפְרָתִ֔ים מִבֵּ֥ית לֶ֖חֶם יְהוּדָ֑ה וַיָּבֹ֥אוּ שְׂדֵי־ מוֹאָ֖ב וַיִּֽהְיוּ־ שָֽׁם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/שֵׁ֣ם | ve./Shem | and/ [the] name of | H8034 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 2 | הָ/אִ֣ישׁ | ha./'Ish | the/ man | H376G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | אִישׁ (ish): man |
+| 3 | אֱֽלִימֶ֡לֶךְ | 'eli.Me.lekh | [was] Elimelech | H458 | HNpm — Proper Noun (Masculine individual) | אֱלִימֶ֫לֶךְ (e.li.me.lekh): Elimelech |
+| 4 | וְ/שֵׁם֩ | ve./Shem | and/ [the] name of | H8034 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 5 | אִשְׁתּ֨/וֹ | 'ish.T/o | wife/ his | H802H | HNcfsc/Sp3ms — Noun (Singular Feminine, Construct) + Suffix (Third Singular Masculine) | אִשָּׁה (ish.shah): woman: wife |
+| 6 | נָעֳמִ֜י | no.'o.Mi | [was] Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 7 | וְ/שֵׁ֥ם | ve./Shem | and/ [the] name of | H8034 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 8 | שְׁנֵֽי\־ | she.nei- | [the] two | H8147 | HNcbdc — Noun (Dual Either gender, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 9 | בָנָ֣י/ו\׀ | va.Na/v | sons/ his | H1121A | HNcmpc/Sp3ms — Noun (Plural Masculine, Construct) + Suffix (Third Singular Masculine) | בֵּן (ben): son: child |
+| 10 | מַחְל֤וֹן | mach.Lon | [was] Mahlon | H4248 | HNpm — Proper Noun (Masculine individual) | מַחְלוֹן (mach.lon): Mahlon |
+| 11 | וְ/כִלְיוֹן֙ | ve./khil.yOn | and/ Kilion | H3630 | HC/Npm — Conjunction + Proper Noun (Masculine individual) | כִּלְיוֹן (kil.yon): Chilion |
+| 12 | אֶפְרָתִ֔ים | 'ef.ra.Tim | Ephrathites | H673H | HNgmpa — Noun (Gentilic, Plural Masculine, Absolute) | אֶפְרָתִי (eph.ra.ti): Ephrathite |
+| 13 | מִ/בֵּ֥ית | mi./Beit | from/ Beth- | H1035G | HR/Npl — Preposition + Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 14 | לֶ֖חֶם | Le.chem | -lehem | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 15 | יְהוּדָ֑ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 16 | וַ/יָּבֹ֥אוּ | va/i.ya.Vo.'u | and/ they came | H935G | Hc/Vqw3mp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Masculine | בּוֹא (bo): to come (in): come |
+| 17 | שְׂדֵי\־ | se.dei- | [the] region<s> of | H7704G | HNcmpc — Noun (Plural Masculine, Construct) | שָׂדֶה (sa.deh): land: country |
+| 18 | מוֹאָ֖ב | mo.'Av | Moab | H4124G | HNpl — Proper Noun (Location) | מוֹאָב (mo.av): Moab |
+| 19 | וַ/יִּֽהְיוּ\־ | va/i.yih.yu- | and/ they were | H1961 | Hc/Vqw3mp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Masculine | הָיָה (ha.yah): to be |
+| 20 | שָֽׁם\׃ | Sham | there | H8033G | HD — Adverb | שָׁם (sham): there |
+
+## Ruth 1:3
+
+**Original:** וַיָּ֥מָת אֱלִימֶ֖לֶךְ אִ֣ישׁ נָעֳמִ֑י וַתִּשָּׁאֵ֥ר הִ֖יא וּשְׁנֵ֥י בָנֶֽיהָ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יָּ֥מָת | va/i.Ya.mot | and/ he died | H4191 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | מוּת (mut): to die |
+| 2 | אֱלִימֶ֖לֶךְ | 'e.li.Me.lekh | Elimelech | H458 | HNpm — Proper Noun (Masculine individual) | אֱלִימֶ֫לֶךְ (e.li.me.lekh): Elimelech |
+| 3 | אִ֣ישׁ | 'ish | [the] husband of | H376H | HNcmsc — Noun (Singular Masculine, Construct) | אִישׁ (ish): man: husband |
+| 4 | נָעֳמִ֑י | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 5 | וַ/תִּשָּׁאֵ֥ר | va./ti.sha.'Er | and/ she was left | H7604 | Hc/VNw3fs — Consecutive Conjunction + Verb : Niphal (Simple, Passive) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | שָׁאַר (sha.ar): to remain |
+| 6 | הִ֖יא | hi' | she | H1931 | HPp3fs — Pronoun (Third Singular Feminine) | הוּא (hu): he/she/it |
+| 7 | וּ/שְׁנֵ֥י | u./she.Nei | and/ [the] two | H8147 | HC/Ncbdc — Conjunction + Noun (Dual Either gender, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 8 | בָנֶֽי/הָ\׃ | va.Nei./ha | sons/ her | H1121A | HNcmpc/Sp3fs — Noun (Plural Masculine, Construct) + Suffix (Third Singular Feminine) | בֵּן (ben): son: child |
+
+## Ruth 1:4
+
+**Original:** וַיִּשְׂא֣וּ לָהֶ֗ם נָשִׁים֙ מֹֽאֲבִיּ֔וֹת שֵׁ֤ם הָֽאַחַת֙ עָרְפָּ֔ה וְשֵׁ֥ם הַשֵּׁנִ֖ית ר֑וּת וַיֵּ֥שְׁבוּ שָׁ֖ם כְּעֶ֥שֶׂר שָׁנִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יִּשְׂא֣וּ | va/i.yis.'U | and/ they took | H5375U | Hc/Vqw3mp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Masculine | נָשָׂא (na.sa): to lift: marry |
+| 2 | לָ/הֶ֗ם | la./Hem | for <the>/ themselves | H9005 | HRd/Sp3mp — Preposition (Definite) + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 3 | נָשִׁים֙ | na.Shim | wives | H802H | HNcmpa — Noun (Plural Masculine, Absolute) | אִשָּׁה (ish.shah): woman: wife |
+| 4 | מֹֽאֲבִיּ֔וֹת | mo.'a.vi.Yot | Moabite | H4125 | HNgfpa — Noun (Gentilic, Plural Feminine, Absolute) | מוֹאָבִי (mo.a.vi): Moabite |
+| 5 | שֵׁ֤ם | shem | [the] name of | H8034 | HNcmsc — Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 6 | הָֽ/אַחַת֙ | ha./'a.Chat | the/ one | H259 | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 7 | עָרְפָּ֔ה | 'a.re.Pah | [was] Orpah | H6204 | HNpf — Proper Noun (Feminine individual) | עׇרְפָּה (or.pah): Orpah |
+| 8 | וְ/שֵׁ֥ם | ve./Shem | and/ [the] name of | H8034 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 9 | הַ/שֵּׁנִ֖ית | ha./she.Nit | the/ second | H8145 | HTd/Aofsa — Definite article (Hebrew) + Aofsa | שֵׁנִי (she.ni): second |
+| 10 | ר֑וּת | Rut | [was] Ruth | H7327 | HNpf — Proper Noun (Feminine individual) | רוּת (rut): Ruth |
+| 11 | וַ/יֵּ֥שְׁבוּ | va/i.Ye.she.vu | and/ they dwelt | H3427 | Hc/Vqw3mp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Masculine | יָשַׁב (ya.shav): to dwell |
+| 12 | שָׁ֖ם | sham | there | H8033G | HD — Adverb | שָׁם (sham): there |
+| 13 | כְּ/עֶ֥שֶׂר | ke./'E.ser | about/ ten | H6235 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | עֶשֶׂר (e.ser): ten |
+| 14 | שָׁנִֽים\׃ | sha.Nim | years | H8141 | HNcmpa — Noun (Plural Masculine, Absolute) | שָׁנָה (sha.neh): year |
+
+## Ruth 1:5
+
+**Original:** וַיָּמ֥וּתוּ גַם־ שְׁנֵיהֶ֖ם מַחְל֣וֹן וְכִלְי֑וֹן וַתִּשָּׁאֵר֙ הָֽאִשָּׁ֔ה מִשְּׁנֵ֥י יְלָדֶ֖יהָ וּמֵאִישָֽׁהּ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יָּמ֥וּתוּ | va/i.ya.Mu.tu | and/ they died | H4191 | Hc/Vqw3mp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Masculine | מוּת (mut): to die |
+| 2 | גַם\־ | gam- | also | H1571 | HD — Adverb | גַּם (gam): also |
+| 3 | שְׁנֵי/הֶ֖ם | she.nei./Hem | both of/ them | H8147 | HNcbdc/Sp3mp — Noun (Dual Either gender, Construct) + Suffix (Third Plural Masculine) | שְׁנַ֫יִם (she.na.yim): two |
+| 4 | מַחְל֣וֹן | mach.Lon | Mahlon | H4248 | HNpm — Proper Noun (Masculine individual) | מַחְלוֹן (mach.lon): Mahlon |
+| 5 | וְ/כִלְי֑וֹן | ve./khil.Yon | and/ Kilion | H3630 | HC/Npm — Conjunction + Proper Noun (Masculine individual) | כִּלְיוֹן (kil.yon): Chilion |
+| 6 | וַ/תִּשָּׁאֵר֙ | va./ti.sha.'Er | and/ she was left | H7604 | Hc/VNw3fs — Consecutive Conjunction + Verb : Niphal (Simple, Passive) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | שָׁאַר (sha.ar): to remain |
+| 7 | הָֽ/אִשָּׁ֔ה | ha./'i.Shah | the/ woman | H802G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אִשָּׁה (ish.shah): woman |
+| 8 | מִ/שְּׁנֵ֥י | mi./she.Nei | from/ both | H8147 | HR/Ncbdc — Preposition + Noun (Dual Either gender, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 9 | יְלָדֶ֖י/הָ | ye.la.Dei./ha | children/ her | H3206 | HNcmpc/Sp3fs — Noun (Plural Masculine, Construct) + Suffix (Third Singular Feminine) | יֶ֫לֶד (ye.led): youth |
+| 10 | וּ/מֵ/אִישָֽׁ/הּ\׃ | u./me./'i.Sha/h | and/ from/ husband/ her | H376H | HC/R/Ncmsc/Sp3fs — Conjunction + Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Feminine) | אִישׁ (ish): man: husband |
+
+## Ruth 1:6
+
+**Original:** וַתָּ֤קָם הִיא֙ וְכַלֹּתֶ֔יהָ וַתָּ֖שָׁב מִשְּׂדֵ֣י מוֹאָ֑ב כִּ֤י שָֽׁמְעָה֙ בִּשְׂדֵ֣ה מוֹאָ֔ב כִּֽי־ פָקַ֤ד יְהוָה֙ אֶת־ עַמּ֔וֹ לָתֵ֥ת לָהֶ֖ם לָֽחֶם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תָּ֤קָם | va./Ta.kom | and/ she arose | H6965B | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | קוּם (qum): to arise: rise |
+| 2 | הִיא֙ | hi' | she | H1931 | HPp3fs — Pronoun (Third Singular Feminine) | הוּא (hu): he/she/it |
+| 3 | וְ/כַלֹּתֶ֔י/הָ | ve./kha.lo.Tei./ha | and/ daughters-in-law/ her | H3618H | HC/Ncfpc/Sp3fs — Conjunction + Noun (Plural Feminine, Construct) + Suffix (Third Singular Feminine) | כַּלָּה (kal.lah): daughter-in-law |
+| 4 | וַ/תָּ֖שָׁב | va./Ta.shov | and/ she returned | H7725G | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | שׁוּב (shuv): to return: return |
+| 5 | מִ/שְּׂדֵ֣י | mi./se.Dei | from/ [the] region<s> of | H7704G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | שָׂדֶה (sa.deh): land: country |
+| 6 | מוֹאָ֑ב | mo.'Av | Moab | H4124G | HNpl — Proper Noun (Location) | מוֹאָב (mo.av): Moab |
+| 7 | כִּ֤י | ki | if | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 8 | שָֽׁמְעָה֙ | sha.me.'Ah | she had heard | H8085G | HVqp3fs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | שָׁמַע (sha.ma): to hear: hear |
+| 9 | בִּ/שְׂדֵ֣ה | bi/s.Deh | in/ [the] region of | H7704G | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | שָׂדֶה (sa.deh): land: country |
+| 10 | מוֹאָ֔ב | mo.'Av | Moab | H4124G | HNpl — Proper Noun (Location) | מוֹאָב (mo.av): Moab |
+| 11 | כִּֽי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 12 | פָקַ֤ד | fa.Kad | he had visited | H6485I | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | פָּקַד (pa.qad): to reckon: visit |
+| 13 | יְהוָה֙ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 14 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 15 | עַמּ֔/וֹ | a.M/o | people/ his | H5971A | HNcmsc/Sp3ms — Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | עַם (am): people |
+| 16 | לָ/תֵ֥ת | la./Tet | by/ giving | H5414G | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | נָתַן (na.tan): to give: give |
+| 17 | לָ/הֶ֖ם | la./Hem | to <the>/ them | H9005 | HRd/Sp3mp — Preposition (Definite) + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 18 | לָֽחֶם\׃ | La.chem | food | H3899G | HNcmsa — Noun (Singular Masculine, Absolute) | לֶ֫חֶם (le.chem): food |
+
+## Ruth 1:7
+
+**Original:** וַתֵּצֵ֗א מִן־ הַמָּקוֹם֙ אֲשֶׁ֣ר הָיְתָה־ שָׁ֔מָּה וּשְׁתֵּ֥י כַלֹּתֶ֖יהָ עִמָּ֑הּ וַתֵּלַ֣כְנָה בַדֶּ֔רֶךְ לָשׁ֖וּב אֶל־ אֶ֥רֶץ יְהוּדָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֵּצֵ֗א | va./te.Tze' | and/ she went out | H3318G | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | יָצָא (ya.tsa): to come out: come |
+| 2 | מִן\־ | min- | from | H4480A | HR — Preposition | from |
+| 3 | הַ/מָּקוֹם֙ | ha./ma.kOm | the/ place | H4725 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | מָקוֹם (ma.qom): place |
+| 4 | אֲשֶׁ֣ר | 'a.Sher | where | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 5 | הָיְתָה\־ | ha.ye.tah- | she had been | H1961 | HVqp3fs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 6 | שָׁ֔מָּ/ה | Sha.ma/h | there/ <towards> | H8033G | HD/Sd — Adverb + Directional Suffix | שָׁם (sham): there |
+| 7 | וּ/שְׁתֵּ֥י | u./she.Tei | and/ [the] two | H8147 | HC/Ncfdc — Conjunction + Noun (Dual Feminine, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 8 | כַלֹּתֶ֖י/הָ | kha.lo.Tei./ha | daughters-in-law/ her | H3618H | HNcfpc/Sp3fs — Noun (Plural Feminine, Construct) + Suffix (Third Singular Feminine) | כַּלָּה (kal.lah): daughter-in-law |
+| 9 | עִמָּ֑/הּ | 'i.Ma/h | [were] with/ her | H5973A | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | עִם (im): with |
+| 10 | וַ/תֵּלַ֣כְנָה | va./te.Lakh.nah | and/ they went | H1980G | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | הָלַךְ (ha.lakh): to go: went |
+| 11 | בַ/דֶּ֔רֶךְ | va./De.rekh | on the/ way | H1870L | HRd/Ncbsa — Preposition (Definite) + Noun (Singular Either gender, Absolute) | דֶּ֫רֶךְ (de.rekh): way: journey |
+| 12 | לָ/שׁ֖וּב | la./Shuv | to/ return | H7725G | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | שׁוּב (shuv): to return: return |
+| 13 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 14 | אֶ֥רֶץ | 'E.retz | [the] land of | H776G | HNcfsc — Noun (Singular Feminine, Construct) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 15 | יְהוּדָֽה\׃ | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+
+## Ruth 1:8
+
+**Original:** וַתֹּ֤אמֶר נָעֳמִי֙ לִשְׁתֵּ֣י כַלֹּתֶ֔יהָ לֵ֣כְנָה שֹּׁ֔בְנָה אִשָּׁ֖ה לְבֵ֣ית אִמָּ֑הּ יַ֣עַשׂ יְהוָ֤ה עִמָּכֶם֙ חֶ֔סֶד כַּאֲשֶׁ֧ר עֲשִׂיתֶ֛ם עִם־ הַמֵּתִ֖ים וְעִמָּדִֽי׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּ֤אמֶר | va./To.mer | and/ she said | H559 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | אָמַר (a.mar): to say |
+| 2 | נָעֳמִי֙ | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 3 | לִ/שְׁתֵּ֣י | li/sh.Tei | to/ [the] two | H8147 | HR/Ncfdc — Preposition + Noun (Dual Feminine, Construct) | שְׁנַ֫יִם (she.na.yim): two |
+| 4 | כַלֹּתֶ֔י/הָ | kha.lo.Tei./ha | daughters-in-law/ her | H3618H | HNcfpc/Sp3fs — Noun (Plural Feminine, Construct) + Suffix (Third Singular Feminine) | כַּלָּה (kal.lah): daughter-in-law |
+| 5 | לֵ֣כְנָה | Le.khe.nah | go | H1980G | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | הָלַךְ (ha.lakh): to go: went |
+| 6 | שֹּׁ֔בְנָה | Shoe.nah | return | H7725G | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | שׁוּב (shuv): to return: return |
+| 7 | אִשָּׁ֖ה | 'i.Shah | [each] woman | H802I | HNcfsa — Noun (Singular Feminine, Absolute) | אִשָּׁה (ish.shah): woman: another |
+| 8 | לְ/בֵ֣ית | le./Veit | to/ [the] house of | H1004M | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 9 | אִמָּ֑/הּ | 'i.Ma/h | mother/ her | H517 | HNcfsc/Sp3fs — Noun (Singular Feminine, Construct) + Suffix (Third Singular Feminine) | אֵם (em): mother |
+| 10 | יַ֣עַשׂ | ya.'a.seh | may he deal | H6213A | HVqj3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Jussive) Third Singular Masculine | עָשָׂה (a.sah): to make: do |
+| 11 | יְהוָ֤ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 12 | עִמָּ/כֶם֙ | 'i.ma./Khem | with/ you | H5973A | HRd/Sp2mp — Preposition (Definite) + Suffix (Second Plural Masculine) | עִם (im): with |
+| 13 | חֶ֔סֶד | Che.sed | covenant loyalty | H2617A | HNcmsa — Noun (Singular Masculine, Absolute) | חֶ֫סֶד (che.sed): kindness |
+| 14 | כַּ/אֲשֶׁ֧ר | ka./'a.Sher | just/ as | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 15 | עֲשִׂיתֶ֛ם | 'a.si.Tem | you have dealt | H6213A | HVqp2mp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Plural Masculine | עָשָׂה (a.sah): to make: do |
+| 16 | עִם\־ | 'im- | with | H5973A | HR — Preposition | עִם (im): with |
+| 17 | הַ/מֵּתִ֖ים | ha./me.Tim | the/ dead | H4191 | HTd/Vqrmpa — Definite article (Hebrew) + Verb : Qal (Simple, Active) Participle (Plural Masculine, Absolute) | מוּת (mut): to die |
+| 18 | וְ/עִמָּדִֽ/י\׃ | ve./'i.ma.D/i | and/ with/ me | H5973A | HC/R/Sp1bs — Conjunction + Preposition + Suffix (First Singular Either gender) | עִם (im): with |
+
+## Ruth 1:9
+
+**Original:** יִתֵּ֤ן יְהוָה֙ לָכֶ֔ם וּמְצֶ֣אןָ מְנוּחָ֔ה אִשָּׁ֖ה בֵּ֣ית אִישָׁ֑הּ וַתִּשַּׁ֣ק לָהֶ֔ן וַתִּשֶּׂ֥אנָה קוֹלָ֖ן וַתִּבְכֶּֽינָה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | יִתֵּ֤ן | yi.Ten | may he give | H5414G | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | נָתַן (na.tan): to give: give |
+| 2 | יְהוָה֙ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 3 | לָ/כֶ֔ם | la./Khem | to <the>/ you | H9005 | HRd/Sp2mp — Preposition (Definite) + Suffix (Second Plural Masculine) | /ל (l): to/for |
+| 4 | וּ/מְצֶ֣אןָ | u./me.Tze.na | and/ find | H4672 | HC/Vqv2fp — Conjunction + Verb : Qal (Simple, Active) Imperative Second Plural Feminine | מָצָא (ma.tsa): to find |
+| 5 | מְנוּחָ֔ה | me.nu.Chah | rest | H4496H | HNcfsa — Noun (Singular Feminine, Absolute) | מְנוּחָה (me.nu.chah): resting |
+| 6 | אִשָּׁ֖ה | 'i.Shah | [each] woman | H802I | HNcfsa — Noun (Singular Feminine, Absolute) | אִשָּׁה (ish.shah): woman: another |
+| 7 | בֵּ֣ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 8 | אִישָׁ֑/הּ | 'i.Sha/h | husband/ her | H376H | HNcmsc/Sp3fs — Noun (Singular Masculine, Construct) + Suffix (Third Singular Feminine) | אִישׁ (ish): man: husband |
+| 9 | וַ/תִּשַּׁ֣ק | va./ti.Shak | and/ she kissed | H5401A | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | נָשַׁק (na.shaq): to kiss |
+| 10 | לָ/הֶ֔ן | la./Hen | <to> <the>/ them | H9005 | HRd/Sp3fp — Preposition (Definite) + Suffix (Third Plural Feminine) | /ל (l): to/for |
+| 11 | וַ/תִּשֶּׂ֥אנָה | va./ti.Se.nah | and/ they raised | H5375N | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | נָשָׂא (na.sa): to lift: loud |
+| 12 | קוֹלָ֖/ן | ko.La/n | voice/ their | H6963A | HNcmsc/Sp3fp — Noun (Singular Masculine, Construct) + Suffix (Third Plural Feminine) | קוֹל (qol): voice |
+| 13 | וַ/תִּבְכֶּֽינָה\׃ | va./tiv.Kei.nah | and/ they wept | H1058 | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | בָּכָה (ba.khah): to weep |
+
+## Ruth 1:10
+
+**Original:** וַתֹּאמַ֖רְנָה־ לָּ֑הּ כִּי־ אִתָּ֥ךְ נָשׁ֖וּב לְעַמֵּֽךְ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּאמַ֖רְנָה\־ | va./to.Mar.nah- | and/ they said | H559 | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | אָמַר (a.mar): to say |
+| 2 | לָּ֑/הּ | La/h | to <the>/ her | H9005 | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | /ל (l): to/for |
+| 3 | כִּי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 4 | אִתָּ֥/ךְ | 'i.Ta/kh | with/ you | H854 | HRd/Sp2fs — Preposition (Definite) + Suffix (Second Singular Feminine) | אֵת (et): with |
+| 5 | נָשׁ֖וּב | na.Shuv | we will return | H7725G | HVqi1cp — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Plural Either gender | שׁוּב (shuv): to return: return |
+| 6 | לְ/עַמֵּֽ/ךְ\׃ | le./'a.Me/kh | to/ people/ your | H5971A | HR/Ncmsc/Sp2fs — Preposition + Noun (Singular Masculine, Construct) + Suffix (Second Singular Feminine) | עַם (am): people |
+
+## Ruth 1:11
+
+**Original:** וַתֹּ֤אמֶר נָעֳמִי֙ שֹׁ֣בְנָה בְנֹתַ֔י לָ֥מָּה תֵלַ֖כְנָה עִמִּ֑י הַֽעֽוֹד־ לִ֤י בָנִים֙ בְּֽמֵעַ֔י וְהָי֥וּ לָכֶ֖ם לַאֲנָשִֽׁים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּ֤אמֶר | va./To.mer | and/ she said | H559 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | אָמַר (a.mar): to say |
+| 2 | נָעֳמִי֙ | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 3 | שֹׁ֣בְנָה | Shoe.nah | go back | H7725G | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | שׁוּב (shuv): to return: return |
+| 4 | בְנֹתַ֔/י | ve.no.Ta/i | O daughters/ my | H1323G | HNcfpc/Sp1bs — Noun (Plural Feminine, Construct) + Suffix (First Singular Either gender) | בַּת (bat): daughter |
+| 5 | לָ֥/מָּה | La./mah | <to>/ why? | H4100 | HR/Pi — Preposition + Interrogative Pronoun | מָה (mah): what? |
+| 6 | תֵלַ֖כְנָה | te.Lakh.nah | will you go | H1980G | HVqi2fp — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Plural Feminine | הָלַךְ (ha.lakh): to go: went |
+| 7 | עִמִּ֑/י | 'i.M/i | with/ me | H5973A | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | עִם (im): with |
+| 8 | הַֽ/עֽוֹד\־ | ha./'od- | ¿/ still | H5750 | HTi/Acmsa — Interrogative Particle + Acmsa | עוֹד (od): still |
+| 9 | לִ֤/י | l/i | [belong] to <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 10 | בָנִים֙ | va.Nim | [do] sons | H1121A | HNcmpa — Noun (Plural Masculine, Absolute) | בֵּן (ben): son: child |
+| 11 | בְּֽ/מֵעַ֔/י | be./me.'A/i | in/ inward parts/ my | H4578 | HR/Ncmpc/Sp1bs — Preposition + Noun (Plural Masculine, Construct) + Suffix (First Singular Either gender) | מֵעֶה (me.eh): belly |
+| 12 | וְ/הָי֥וּ | ve./ha.Yu | and/ they will become | H1961 | Hc/Vqq3cp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Plural Either gender | הָיָה (ha.yah): to be |
+| 13 | לָ/כֶ֖ם | la./Khem | of/ you | H9005 | HRd/Sp2mp — Preposition (Definite) + Suffix (Second Plural Masculine) | /ל (l): to/for |
+| 14 | לַ/אֲנָשִֽׁים\׃ | la./'a.na.Shim | <into>/ husbands | H582 | HR/Ncmpa — Preposition + Noun (Plural Masculine, Absolute) | אֱנוֹשׁ (e.nosh): human |
+
+## Ruth 1:12
+
+**Original:** שֹׁ֤בְנָה בְנֹתַי֙ לֵ֔כְןָ כִּ֥י זָקַ֖נְתִּי מִהְי֣וֹת לְאִ֑ישׁ כִּ֤י אָמַ֙רְתִּי֙ יֶשׁ־ לִ֣י תִקְוָ֔ה גַּ֣ם הָיִ֤יתִי הַלַּ֙יְלָה֙ לְאִ֔ישׁ וְגַ֖ם יָלַ֥דְתִּי בָנִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | שֹׁ֤בְנָה | Shoe.nah | go back | H7725G | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | שׁוּב (shuv): to return: return |
+| 2 | בְנֹתַ/י֙ | ve.no.Ta/i | O daughters/ my | H1323G | HNcfpc/Sp1bs — Noun (Plural Feminine, Construct) + Suffix (First Singular Either gender) | בַּת (bat): daughter |
+| 3 | לֵ֔כְןָ | Le.khe.na | go | H1980G | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | הָלַךְ (ha.lakh): to go: went |
+| 4 | כִּ֥י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 5 | זָקַ֖נְתִּי | za.Kan.ti | I am [too] old | H2204 | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | זָקֵן (za.qen): be old |
+| 6 | מִ/הְי֣וֹת | mi/h.Yot | for/ belonging | H1961 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | הָיָה (ha.yah): to be |
+| 7 | לְ/אִ֑ישׁ | le./'Ish | to/ a husband | H376H | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | אִישׁ (ish): man: husband |
+| 8 | כִּ֤י | ki | if | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 9 | אָמַ֙רְתִּי֙ | 'a.Mar.ti | I said | H559 | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | אָמַר (a.mar): to say |
+| 10 | יֶשׁ\־ | yesh- | there | H3426 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | יֵשׁ (yesh): there |
+| 11 | לִ֣/י | l/i | for <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 12 | תִקְוָ֔ה | tik.Vah | [is] hope | H8615B | HNcfsa — Noun (Singular Feminine, Absolute) | תִּקְוָה (tiq.vah): hope |
+| 13 | גַּ֣ם | gam | also | H1571 | HD — Adverb | גַּם (gam): also |
+| 14 | הָיִ֤יתִי | ha.Yi.ti | I belonged | H1961 | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | הָיָה (ha.yah): to be |
+| 15 | הַ/לַּ֙יְלָה֙ | ha./Lay.lah | this/ night | H3915 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | לַ֫יְלָה (lay.lah): night |
+| 16 | לְ/אִ֔ישׁ | le./'Ish | to/ a husband | H376H | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | אִישׁ (ish): man: husband |
+| 17 | וְ/גַ֖ם | ve./Gam | and/ also | H1571 | HC/D — Conjunction + Adverb | גַּם (gam): also |
+| 18 | יָלַ֥דְתִּי | ya.Lad.ti | I bore | H3205 | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | יָלַד (ya.lad): to beget |
+| 19 | בָנִֽים\׃ | va.Nim | sons | H1121A | HNcmpa — Noun (Plural Masculine, Absolute) | בֵּן (ben): son: child |
+
+## Ruth 1:13
+
+**Original:** הֲלָהֵ֣ן׀ תְּשַׂבֵּ֗רְנָה עַ֚ד אֲשֶׁ֣ר יִגְדָּ֔לוּ הֲלָהֵן֙ תֵּֽעָגֵ֔נָה לְבִלְתִּ֖י הֱי֣וֹת לְאִ֑ישׁ אַ֣ל בְּנֹתַ֗י כִּֽי־ מַר־ לִ֤י מְאֹד֙ מִכֶּ֔ם כִּֽי־ יָצְאָ֥ה בִ֖י יַד־ יְהוָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | הֲ/לָהֵ֣ן\׀ | ha./la.Hen | ¿/ therefore | H3860 | HTi/C — Interrogative Particle + Conjunction | לָהֵן (la.hen): therefore |
+| 2 | תְּשַׂבֵּ֗רְנָה | te.sa.Be.re.nah | will you wait | H7663B | HVpi2fp — Verb : Piel (Intensive/resultive/transtive, Active) Imperfect (Future/present Indicative/jussive) Second Plural Feminine | שָׂבַר (sa.var): to await |
+| 3 | עַ֚ד | 'ad | until | H5704 | HR — Preposition | עַד (ad): till |
+| 4 | אֲשֶׁ֣ר | 'a.Sher | that | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 5 | יִגְדָּ֔לוּ | yig.Da.lu | they will grow up | H1431 | HVqi3mp — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Plural Masculine | גָּדַל (ga.dal): to magnify |
+| 6 | הֲ/לָהֵן֙ | ha./la.Hen | ¿/ therefore | H3860 | HTi/C — Interrogative Particle + Conjunction | לָהֵן (la.hen): therefore |
+| 7 | תֵּֽעָגֵ֔נָה | te.'a.Ge.nah | will you shut yourselves off | H5702 | HVNi2fp — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Second Plural Feminine | עָגַן (a.gan): to refrain |
+| 8 | לְ/בִלְתִּ֖י | le./vil.Ti | to/ not | H1115 | HR/Ncbsa — Preposition + Noun (Singular Either gender, Absolute) | בִּלְתִּי (bil.ti): lest |
+| 9 | הֱי֣וֹת | he.Yot | to belong | H1961 | HVqcc — Verb : Qal (Simple, Active) Infinitive Construct | הָיָה (ha.yah): to be |
+| 10 | לְ/אִ֑ישׁ | le./'Ish | to/ a husband | H376H | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | אִישׁ (ish): man: husband |
+| 11 | אַ֣ל | 'al | may not [it be] | H408 | HTn — Negative Particle | אַל (al): not |
+| 12 | בְּנֹתַ֗/י | be.no.Ta/i | O daughters/ my | H1323G | HNcfpc/Sp1bs — Noun (Plural Feminine, Construct) + Suffix (First Singular Either gender) | בַּת (bat): daughter |
+| 13 | כִּֽי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 14 | מַר\־ | mar- | it is bitter | H4843 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | מָרַר (ma.rar): to provoke |
+| 15 | לִ֤/י | l/i | to <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 16 | מְאֹד֙ | me.'Od | very | H3966 | HAcmsa — Adjective (Singular Masculine, Absolute) | מְאֹד (me.od): much |
+| 17 | מִ/כֶּ֔ם | mi./Kem | more than/ you | H9006 | HRd/Sp2mp — Preposition (Definite) + Suffix (Second Plural Masculine) | /מ (m): from |
+| 18 | כִּֽי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 19 | יָצְאָ֥ה | ya.tze.'Ah | it has gone forth | H3318G | HVqp3fs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | יָצָא (ya.tsa): to come out: come |
+| 20 | בִ֖/י | v/i | on <the>/ me | H9003 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ב (b): in/on/with |
+| 21 | יַד\־ | yad- | [the] hand of | H3027G | HNcbsc — Noun (Singular Either gender, Construct) | יָד (yad): hand |
+| 22 | יְהוָֽה\׃ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+
+## Ruth 1:14
+
+**Original:** וַתִּשֶּׂ֣נָה קוֹלָ֔ן וַתִּבְכֶּ֖ינָה ע֑וֹד וַתִּשַּׁ֤ק עָרְפָּה֙ לַחֲמוֹתָ֔הּ וְר֖וּת דָּ֥בְקָה בָּֽהּ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תִּשֶּׂ֣נָה | va./ti.Se.nah | and/ they raised | H5375N | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | נָשָׂא (na.sa): to lift: loud |
+| 2 | קוֹלָ֔/ן | ko.La/n | voice/ their | H6963A | HNcmsc/Sp3fp — Noun (Singular Masculine, Construct) + Suffix (Third Plural Feminine) | קוֹל (qol): voice |
+| 3 | וַ/תִּבְכֶּ֖ינָה | va./tiv.Kei.nah | and/ they wept | H1058 | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | בָּכָה (ba.khah): to weep |
+| 4 | ע֑וֹד | od | again | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 5 | וַ/תִּשַּׁ֤ק | va./ti.Shak | and/ she kissed | H5401A | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | נָשַׁק (na.shaq): to kiss |
+| 6 | עָרְפָּה֙ | 'a.re.Pah | Orpah | H6204 | HNpf — Proper Noun (Feminine individual) | עׇרְפָּה (or.pah): Orpah |
+| 7 | לַ/חֲמוֹתָ֔/הּ | la./cha.mo.Ta/h | <to>/ mother-in-law/ her | H2545 | HR/Ncfsc/Sp3fs — Preposition + Noun (Singular Feminine, Construct) + Suffix (Third Singular Feminine) | חֲמוֹת (cha.mot): mother-in-law |
+| 8 | וְ/ר֖וּת | ve./Rut | and/ Ruth | H7327 | HC/Npf — Conjunction + Proper Noun (Feminine individual) | רוּת (rut): Ruth |
+| 9 | דָּ֥בְקָה | Da.ve.kah | she clung | H1692 | HVqp3fs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | דָּבַק (da.vaq): to cleave |
+| 10 | בָּֽ/הּ\׃ | Ba/h | to/ her | H9003 | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | /ב (b): in/on/with |
+
+## Ruth 1:15
+
+**Original:** וַתֹּ֗אמֶר הִנֵּה֙ שָׁ֣בָה יְבִמְתֵּ֔ךְ אֶל־ עַמָּ֖הּ וְאֶל־ אֱלֹהֶ֑יהָ שׁ֖וּבִי אַחֲרֵ֥י יְבִמְתֵּֽךְ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּ֗אמֶר | va./To.mer | and/ she said | H559 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | אָמַר (a.mar): to say |
+| 2 | הִנֵּה֙ | hi.Neh | there! | H2009 | HTj — Interjection | הִנֵּה (hin.neh): behold |
+| 3 | שָׁ֣בָה | Sha.vah | she has returned | H7725G | HVqp3fs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | שׁוּב (shuv): to return: return |
+| 4 | יְבִמְתֵּ֔/ךְ | ye.vim.Te/kh | sister-in-law/ your | H2994 | HNcfsc/Sp2fs — Noun (Singular Feminine, Construct) + Suffix (Second Singular Feminine) | יְבֵ֫מֶת (ye.ve.met): sister-in-law |
+| 5 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 6 | עַמָּ֖/הּ | 'a.Ma/h | people/ her | H5971A | HNcmsc/Sp3fs — Noun (Singular Masculine, Construct) + Suffix (Third Singular Feminine) | עַם (am): people |
+| 7 | וְ/אֶל\־ | ve./'el- | and/ to | H413 | HC/R — Conjunction + Preposition | אֶל (el): to(wards) |
+| 8 | אֱלֹהֶ֑י/הָ | 'e.lo.Hei./ha | gods/ her | H430J | HNcmpc/Sp3fs — Noun (Plural Masculine, Construct) + Suffix (Third Singular Feminine) | אֱלֹהִים (e.lo.him): God |
+| 9 | שׁ֖וּבִי | Shu.vi | go back | H7725G | HVqv2fs — Verb : Qal (Simple, Active) Imperative Second Singular Feminine | שׁוּב (shuv): to return: return |
+| 10 | אַחֲרֵ֥י | 'a.cha.Rei | after | H310A | HAcmpc — Numerical Adjective (Plural Masculine, Construct) | אַחַר (a.char): after |
+| 11 | יְבִמְתֵּֽ/ךְ\׃ | ye.vim.Te/kh | sister-in-law/ your | H2994 | HNcfsc/Sp2fs — Noun (Singular Feminine, Construct) + Suffix (Second Singular Feminine) | יְבֵ֫מֶת (ye.ve.met): sister-in-law |
+
+## Ruth 1:16
+
+**Original:** וַתֹּ֤אמֶר רוּת֙ אַל־ תִּפְגְּעִי־ בִ֔י לְעָזְבֵ֖ךְ לָשׁ֣וּב מֵאַחֲרָ֑יִךְ כִּ֠י אֶל־ אֲשֶׁ֨ר תֵּלְכִ֜י אֵלֵ֗ךְ וּבַאֲשֶׁ֤ר תָּלִ֙ינִי֙ אָלִ֔ין עַמֵּ֣ךְ עַמִּ֔י וֵאלֹהַ֖יִךְ אֱלֹהָֽי׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּ֤אמֶר | va./To.mer | and/ she said | H559 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | אָמַר (a.mar): to say |
+| 2 | רוּת֙ | rut | Ruth | H7327 | HNpf — Proper Noun (Feminine individual) | רוּת (rut): Ruth |
+| 3 | אַל\־ | 'al- | may not | H408 | HTn — Negative Particle | אַל (al): not |
+| 4 | תִּפְגְּעִי\־ | tif.ge.'i- | you entreat | H6293 | HVqj2fs — Verb : Qal (Simple, Active) Imperfect (Future/present Jussive) Second Singular Feminine | פָּגַע (pa.ga): to fall on |
+| 5 | בִ֔/י | V/i | <on> <the>/ me | H9003 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ב (b): in/on/with |
+| 6 | לְ/עָזְבֵ֖/ךְ | le./'a.ze.Ve/kh | to/ abandon/ you | H5800A | HR/Vqcc/Sp2fs — Preposition + Verb : Qal (Simple, Active) Infinitive Construct + Suffix (Second Singular Feminine) | עָזַב (a.zav): to leave: forsake |
+| 7 | לָ/שׁ֣וּב | la./Shuv | to/ turn back | H7725I | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | שׁוּב (shuv): to return: turn back |
+| 8 | מֵ/אַחֲרָ֑יִ/ךְ | me./'a.cha.Ra.yi/kh | from/ after/ you | H310A | HR/Acmpc/Sp2fs — Preposition + Acmpc + Suffix (Second Singular Feminine) | אַחַר (a.char): after |
+| 9 | כִּ֠י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 10 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 11 | אֲשֶׁ֨ר | 'a.Sher | where | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 12 | תֵּלְכִ֜י | te.le.Khi | you will go | H1980G | HVqi2fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Singular Feminine | הָלַךְ (ha.lakh): to go: went |
+| 13 | אֵלֵ֗ךְ | 'e.Lekh | I will go | H1980G | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | הָלַךְ (ha.lakh): to go: went |
+| 14 | וּ/בַ/אֲשֶׁ֤ר | u./va./'a.Sher | and/ at/ where | H834B | HC/R/Tr — Conjunction + Preposition + Relative Particle | בַאֲשֶׁר (ba.a.sher): in which |
+| 15 | תָּלִ֙ינִי֙ | ta.Li.ni | you will lodge | H3885A | HVqi2fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Singular Feminine | לוּן (lun): to lodge |
+| 16 | אָלִ֔ין | 'a.Lin | I will lodge | H3885A | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | לוּן (lun): to lodge |
+| 17 | עַמֵּ֣/ךְ | 'a.Me/kh | people/ your | H5971A | HNcmsc/Sp2fs — Noun (Singular Masculine, Construct) + Suffix (Second Singular Feminine) | עַם (am): people |
+| 18 | עַמִּ֔/י | 'a.M/i | [will be] people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 19 | וֵ/אלֹהַ֖יִ/ךְ | ve./lo.Ha.yi/kh | and/ God/ your | H430G | HC/Ncmpc/Sp2fs — Conjunction + Noun (Plural Masculine, Construct) + Suffix (Second Singular Feminine) | אֱלֹהִים (e.lo.him): God |
+| 20 | אֱלֹהָֽ/י\׃ | 'e.lo.Ha/i | [will be] God/ my | H430G | HNcmpc/Sp1bs — Noun (Plural Masculine, Construct) + Suffix (First Singular Either gender) | אֱלֹהִים (e.lo.him): God |
+
+## Ruth 1:17
+
+**Original:** בַּאֲשֶׁ֤ר תָּמ֙וּתִי֙ אָמ֔וּת וְשָׁ֖ם אֶקָּבֵ֑ר כֹּה֩ יַעֲשֶׂ֨ה יְהוָ֥ה לִי֙ וְכֹ֣ה יֹסִ֔יף כִּ֣י הַמָּ֔וֶת יַפְרִ֖יד בֵּינִ֥י וּבֵינֵֽךְ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | בַּ/אֲשֶׁ֤ר | ba./'a.Sher | at/ where | H834B | HR/Tr — Preposition + Relative Particle | בַאֲשֶׁר (ba.a.sher): in which |
+| 2 | תָּמ֙וּתִי֙ | ta.Mu.ti | you will die | H4191 | HVqi2fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Singular Feminine | מוּת (mut): to die |
+| 3 | אָמ֔וּת | 'a.Mut | I will die | H4191 | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | מוּת (mut): to die |
+| 4 | וְ/שָׁ֖ם | ve./Sham | and/ there | H8033G | HC/D — Conjunction + Adverb | שָׁם (sham): there |
+| 5 | אֶקָּבֵ֑ר | 'e.ka.Ver | I will be buried | H6912 | HVNi1cs — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | קָבַר (qa.var): to bury |
+| 6 | כֹּה֩ | koh | thus | H3541 | HD — Adverb | כֹּה (koh): thus |
+| 7 | יַעֲשֶׂ֨ה | ya.'a.Seh | may he do | H6213A | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | עָשָׂה (a.sah): to make: do |
+| 8 | יְהוָ֥ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 9 | לִ/י֙ | l/i | to <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 10 | וְ/כֹ֣ה | ve./Khoh | and/ thus | H3541 | HC/D — Conjunction + Adverb | כֹּה (koh): thus |
+| 11 | יֹסִ֔יף | yo.Sif | may he add | H3254H | HVhi3ms — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | יָסַף (ya.saph): to add |
+| 12 | כִּ֣י | ki | if | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 13 | הַ/מָּ֔וֶת | ha./Ma.vet | <the>/ death | H4194 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | מָ֫וֶת (ma.vet): death |
+| 14 | יַפְרִ֖יד | yaf.Rid | it will separate | H6504 | HVhi3ms — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | פָּרַד (pa.rad): to separate |
+| 15 | בֵּינִ֥/י | bei./Ni | between/ me | H996G | HAcmsc/Sp1bs — Adjective (Singular Masculine, Construct) + Suffix (First Singular Either gender) | בַּ֫יִן (ba.yin): between |
+| 16 | וּ/בֵינֵֽ/ךְ\׃ | u./vei.Ne/kh | and/ between/ you | H996G | HC/Acmsc/Sp2fs — Conjunction + Acmsc + Suffix (Second Singular Feminine) | בַּ֫יִן (ba.yin): between |
+
+## Ruth 1:18
+
+**Original:** וַתֵּ֕רֶא כִּֽי־ מִתְאַמֶּ֥צֶת הִ֖יא לָלֶ֣כֶת אִתָּ֑הּ וַתֶּחְדַּ֖ל לְדַבֵּ֥ר אֵלֶֽיהָ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֵּ֕רֶא | va./Te.re' | and/ she saw | H7200G | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | רָאָה (ra.ah): to see: see |
+| 2 | כִּֽי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 3 | מִתְאַמֶּ֥צֶת | mit.'a.Me.tzet | [was] determined | H553 | HVtrfsa — Verb : Hithpael (Intensive/resultive/transtive, Reflexive/iterative) Participle (Singular Feminine, Absolute) | אָמֵץ (a.mats): to strengthen |
+| 4 | הִ֖יא | hi' | she | H1931 | HPp3fs — Pronoun (Third Singular Feminine) | הוּא (hu): he/she/it |
+| 5 | לָ/לֶ֣כֶת | la./Le.khet | to/ go | H1980G | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | הָלַךְ (ha.lakh): to go: went |
+| 6 | אִתָּ֑/הּ | 'i.Ta/h | with/ her | H854 | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | אֵת (et): with |
+| 7 | וַ/תֶּחְדַּ֖ל | va./tech.Dal | and/ she ceased | H2308 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | חָדַל (cha.dal): to cease |
+| 8 | לְ/דַבֵּ֥ר | le./da.Ber | to/ speak | H1696G | HR/Vpcc — Preposition + Verb : Piel (Intensive/resultive/transtive, Active) Infinitive Construct | דָבַר (da.var): to speak: speak |
+| 9 | אֵלֶֽי/הָ\׃ | 'e.Lei./ha | to/ her | H413 | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | אֶל (el): to(wards) |
+
+## Ruth 1:19
+
+**Original:** וַתֵּלַ֣כְנָה שְׁתֵּיהֶ֔ם עַד־ בֹּאָ֖נָה בֵּ֣ית לָ֑חֶם וַיְהִ֗י כְּבֹאָ֙נָה֙ בֵּ֣ית לֶ֔חֶם וַתֵּהֹ֤ם כָּל־ הָעִיר֙ עֲלֵיהֶ֔ן וַתֹּאמַ֖רְנָה הֲזֹ֥את נָעֳמִֽי׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֵּלַ֣כְנָה | va./te.Lakh.nah | and/ they went | H1980G | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | הָלַךְ (ha.lakh): to go: went |
+| 2 | שְׁתֵּי/הֶ֔ם | she.tei./Hem | [the] two of/ them | H8147 | HNcfdc/Sp3mp — Noun (Dual Feminine, Construct) + Suffix (Third Plural Masculine) | שְׁנַ֫יִם (she.na.yim): two |
+| 3 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 4 | בֹּאָ֖/נָה | bo.'A./nah | came/ they | H935G | HVqcc/Sp3fp — Verb : Qal (Simple, Active) Infinitive Construct + Suffix (Third Plural Feminine) | בּוֹא (bo): to come (in): come |
+| 5 | בֵּ֣ית | beit | Beth- | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 6 | לָ֑חֶם | La.chem | -lehem | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 7 | וַ/יְהִ֗י | va/y.Hi | and/ it was | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 8 | כְּ/בֹאָ֙/נָה֙ | ke./vo.'A./nah | when/ came/ they | H935G | HR/Vqcc/Sp3fp — Preposition + Verb : Qal (Simple, Active) Infinitive Construct + Suffix (Third Plural Feminine) | בּוֹא (bo): to come (in): come |
+| 9 | בֵּ֣ית | beit | Beth- | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 10 | לֶ֔חֶם | Le.chem | -lehem | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 11 | וַ/תֵּהֹ֤ם | va./te.Hom | and/ it was excited | H1949 | Hc/VNw3fs — Consecutive Conjunction + Verb : Niphal (Simple, Passive) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | הוּם (hum): to make noise |
+| 12 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 13 | הָ/עִיר֙ | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 14 | עֲלֵי/הֶ֔ן | 'a.lei./Hen | on/ them | H5921A | HRd/Sp3fp — Preposition (Definite) + Suffix (Third Plural Feminine) | עַל (al): upon |
+| 15 | וַ/תֹּאמַ֖רְנָה | va./to.Mar.nah | and/ they [fem] said | H559 | Hc/Vqw3fp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Plural Feminine | אָמַר (a.mar): to say |
+| 16 | הֲ/זֹ֥את | ha./Zot | ¿/ [is] this | H2063 | HTi/Tm — Interrogative Particle + Demonstrative Particle | זֹאת (zot): this |
+| 17 | נָעֳמִֽי\׃ | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+
+## Ruth 1:20
+
+**Original:** וַתֹּ֣אמֶר אֲלֵיהֶ֔ן אַל־ תִּקְרֶ֥אנָה לִ֖י נָעֳמִ֑י קְרֶ֤אןָ לִי֙ מָרָ֔א כִּי־ הֵמַ֥ר שַׁדַּ֛י לִ֖י מְאֹֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תֹּ֣אמֶר | va./To.mer | and/ she said | H559 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | אָמַר (a.mar): to say |
+| 2 | אֲלֵי/הֶ֔ן | 'a.lei./Hen | to/ them | H413 | HRd/Sp3fp — Preposition (Definite) + Suffix (Third Plural Feminine) | אֶל (el): to(wards) |
+| 3 | אַל\־ | 'al- | may not | H408 | HTn — Negative Particle | אַל (al): not |
+| 4 | תִּקְרֶ֥אנָה | tik.Re.nah | you call | H7121H | HVqj2fp — Verb : Qal (Simple, Active) Imperfect (Future/present Jussive) Second Plural Feminine | קָרָא (qa.ra): to call: call by |
+| 5 | לִ֖/י | l/i | <to> <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 6 | נָעֳמִ֑י | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 7 | קְרֶ֤אןָ | ke.Re.na | call | H7121H | HVqv2fp — Verb : Qal (Simple, Active) Imperative Second Plural Feminine | קָרָא (qa.ra): to call: call by |
+| 8 | לִ/י֙ | l/i | <to> <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 9 | מָרָ֔א | ma.Ra' | Mara | H4755 | HAafsa — Adjective (Singular Feminine, Absolute) | מָרָא (ma.ra): Mara |
+| 10 | כִּי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 11 | הֵמַ֥ר | he.Mar | he has caused bitterness | H4843 | HVhp3ms — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) Third Singular Masculine | מָרַר (ma.rar): to provoke |
+| 12 | שַׁדַּ֛י | sha.Dai | [the] Almighty | H7706 | HNpt — Proper Noun (Title) | שַׁדַּי (shad.day): Almighty |
+| 13 | לִ֖/י | l/i | to <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 14 | מְאֹֽד\׃ | me.'Od | exceedingly | H3966 | HAcmsa — Adjective (Singular Masculine, Absolute) | מְאֹד (me.od): much |
+
+## Ruth 1:21
+
+**Original:** אֲנִי֙ מְלֵאָ֣ה הָלַ֔כְתִּי וְרֵיקָ֖ם הֱשִׁיבַ֣נִי יְהוָ֑ה לָ֣מָּה תִקְרֶ֤אנָה לִי֙ נָעֳמִ֔י וַֽיהוָה֙ עָ֣נָה בִ֔י וְשַׁדַּ֖י הֵ֥רַֽע לִֽי׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | אֲנִי֙ | 'a.Ni | I | H589 | HPp1bs — Pronoun (First Singular Either gender) | אֲנִי (a.ni): I |
+| 2 | מְלֵאָ֣ה | me.le.'Ah | full | H4392 | HAafsa — Adjective (Singular Feminine, Absolute) | מָלֵא (ma.le): full |
+| 3 | הָלַ֔כְתִּי | ha.Lakh.ti | I went | H1980G | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | הָלַךְ (ha.lakh): to go: went |
+| 4 | וְ/רֵיקָ֖ם | ve./rei.Kam | and/ empty | H7387 | HC/D — Conjunction + Adverb | רֵיקָם (re.qam): emptily |
+| 5 | הֱשִׁיבַ֣/נִי | he.shi.Va./ni | he has brought back/ me | H7725G | HVhp3ms/Sp1bs — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) Third Singular Masculine + Suffix (First Singular Either gender) | שׁוּב (shuv): to return: return |
+| 6 | יְהוָ֑ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 7 | לָ֣/מָּה | La./mah | <to>/ why? | H4100 | HR/Pi — Preposition + Interrogative Pronoun | מָה (mah): what? |
+| 8 | תִקְרֶ֤אנָה | tik.Re.nah | do you call | H7121H | HVqi2fp — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Plural Feminine | קָרָא (qa.ra): to call: call by |
+| 9 | לִ/י֙ | l/i | <to> <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 10 | נָעֳמִ֔י | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 11 | וַֽ/יהוָה֙ | va./Yah.weh | and/ Yahweh | H3068G | HC/Npt — Conjunction + Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 12 | עָ֣נָה | 'A.nah | he has testified | H6030B | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | עָנָה (a.nah): to answer |
+| 13 | בִ֔/י | V/i | against <the>/ me | H9003 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ב (b): in/on/with |
+| 14 | וְ/שַׁדַּ֖י | ve./sha.Dai | and/ [the] Almighty | H7706 | HC/Npt — Conjunction + Proper Noun (Title) | שַׁדַּי (shad.day): Almighty |
+| 15 | הֵ֥רַֽע | He.ra' | he has done harm | H7489A | HVhp3ms — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) Third Singular Masculine | רָעַע (ra.a): be evil |
+| 16 | לִֽ/י\׃ | L/i | to <the>/ me | H9005 | HRd/Sp1bs — Preposition (Definite) + Suffix (First Singular Either gender) | /ל (l): to/for |
+
+## Ruth 1:22
+
+**Original:** וַתָּ֣שָׁב נָעֳמִ֗י וְר֨וּת הַמּוֹאֲבִיָּ֤ה כַלָּתָהּ֙ עִמָּ֔הּ הַשָּׁ֖בָה מִשְּׂדֵ֣י מוֹאָ֑ב וְהֵ֗מָּה בָּ֚אוּ בֵּ֣ית לֶ֔חֶם בִּתְחִלַּ֖ת קְצִ֥יר שְׂעֹרִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תָּ֣שָׁב | va./Ta.shov | and/ she returned | H7725G | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | שׁוּב (shuv): to return: return |
+| 2 | נָעֳמִ֗י | no.'o.Mi | Naomi | H5281 | HNpf — Proper Noun (Feminine individual) | נׇעֳמִי (no.o.mi): Naomi |
+| 3 | וְ/ר֨וּת | ve./Rut | and/ Ruth | H7327 | HC/Npf — Conjunction + Proper Noun (Feminine individual) | רוּת (rut): Ruth |
+| 4 | הַ/מּוֹאֲבִיָּ֤ה | ha./mo.'a.vi.Yah | the/ Moabite [woman] | H4125 | HTd/Ngfsa — Definite article (Hebrew) + Noun (Gentilic, Singular Feminine, Absolute) | מוֹאָבִי (mo.a.vi): Moabite |
+| 5 | כַלָּתָ/הּ֙ | kha.la.Ta/h | daughter-in-law/ her | H3618H | HNcfsc/Sp3fs — Noun (Singular Feminine, Construct) + Suffix (Third Singular Feminine) | כַּלָּה (kal.lah): daughter-in-law |
+| 6 | עִמָּ֔/הּ | 'i.Ma/h | [was] with/ her | H5973A | HRd/Sp3fs — Preposition (Definite) + Suffix (Third Singular Feminine) | עִם (im): with |
+| 7 | הַ/שָּׁ֖בָה | ha./Sha.vah | who/ returned | H7725G | HTd/Vqp3fs — Definite article (Hebrew) + Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Feminine | שׁוּב (shuv): to return: return |
+| 8 | מִ/שְּׂדֵ֣י | mi./se.Dei | from/ [the] region<s> of | H7704G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | שָׂדֶה (sa.deh): land: country |
+| 9 | מוֹאָ֑ב | mo.'Av | Moab | H4124G | HNpl — Proper Noun (Location) | מוֹאָב (mo.av): Moab |
+| 10 | וְ/הֵ֗מָּה | ve./He.mah | and/ they | H1992 | HC/Pp3mp — Conjunction + Pronoun (Third Plural Masculine) | הֵ֫מָּה (hem.mah): they(masc.) |
+| 11 | בָּ֚אוּ | Ba.'u | they came | H935G | HVqp3cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Plural Either gender | בּוֹא (bo): to come (in): come |
+| 12 | בֵּ֣ית | beit | Beth- | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 13 | לֶ֔חֶם | Le.chem | -lehem | H1035G | HNpl — Proper Noun (Location) | בֵּית לֶ֫חֶם (bet le.chem): Bethlehem |
+| 14 | בִּ/תְחִלַּ֖ת | bi/t.chi.Lat | at/ [the] beginning of | H8462 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | תְּחִלָּה (te.chil.lah): beginning |
+| 15 | קְצִ֥יר | ke.Tzir | [the] harvest of | H7105A | HNcmsc — Noun (Singular Masculine, Construct) | קָצִיר (qa.tsir): harvest |
+| 16 | שְׂעֹרִֽים\׃ | se.'o.Rim | barley<s> | H8184 | HNcmpa — Noun (Plural Masculine, Absolute) | שְׂעֹרָה (se.o.rah): barley |

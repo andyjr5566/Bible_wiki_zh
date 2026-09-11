@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 29,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_29.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 29,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 344,
+      "first": "Ezk 29:1",
+      "last": "Ezk 29:21",
+      "sha256": "64199a865d68aefc2d58be520adc1794144d5043ac26b8dd1190e8a9fdf357e4",
+      "bytes": 65473,
+      "chars": 56936,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

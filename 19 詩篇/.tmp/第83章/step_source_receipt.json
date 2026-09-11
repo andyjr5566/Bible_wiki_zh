@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 83,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_83.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 83,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 130,
+      "first": "Psa 83:0",
+      "last": "Psa 83:18",
+      "sha256": "0a3fa407c186d2b40e2109436db6797622c03387115f483a76ff88e1257f835a",
+      "bytes": 27237,
+      "chars": 23862,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

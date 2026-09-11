@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_12.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 6,
+      "words": 62,
+      "first": "Isa 12:1",
+      "last": "Isa 12:6",
+      "sha256": "fc68dff3de82b43a0e459d6ca821743c63ea51bbbef70aa2b247a21c2633f6e7",
+      "bytes": 13078,
+      "chars": 11432,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

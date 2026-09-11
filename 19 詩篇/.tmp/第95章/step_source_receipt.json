@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 95,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_95.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 95,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 11,
+      "words": 89,
+      "first": "Psa 95:1",
+      "last": "Psa 95:11",
+      "sha256": "c7e7191253ffd8c8625e9254be6b285b20cf43fd82b438fee60690e702fbeb66",
+      "bytes": 18496,
+      "chars": 16226,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

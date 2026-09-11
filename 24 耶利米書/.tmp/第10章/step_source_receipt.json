@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_10.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 319,
+      "first": "Jer 10:1",
+      "last": "Jer 10:25",
+      "sha256": "9ee7b219fbfbcf43889de7f03ebffe493e847b8cca97aa243c9217b558d98219",
+      "bytes": 61456,
+      "chars": 53726,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_1.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 215,
+      "first": "Ecc 1:1",
+      "last": "Ecc 1:18",
+      "sha256": "4e820e1ffa40638c83087f50ea643e5b777ef2a1fa1a22194e8f4efe255e1668",
+      "bytes": 41292,
+      "chars": 36074,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

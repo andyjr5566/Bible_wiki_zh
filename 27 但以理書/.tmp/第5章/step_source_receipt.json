@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_5.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 532,
+      "first": "Dan 5:1",
+      "last": "Dan 5:31",
+      "sha256": "6594c1634fc9fe1f749704cf604e1209e37f2e7d977d9fe7a376e96633bca06b",
+      "bytes": 107605,
+      "chars": 93326,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

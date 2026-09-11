@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_9.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 310,
+      "first": "Ecc 9:1",
+      "last": "Ecc 9:18",
+      "sha256": "c99ee5cceebd5b1ed4c07a20c67730465c63040c97a836e1ccc6d7dd65d61c29",
+      "bytes": 56416,
+      "chars": 49119,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀上",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_kings_22.txt",
+      "book": "1 Kings",
+      "book_code": "1Ki",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 53,
+      "words": 808,
+      "first": "1Ki 22:1",
+      "last": "1Ki 22:53",
+      "sha256": "aaaa0b7e292cd85b15f6e1a019aaccbecfe18033a262ec798033932a2d874fc2",
+      "bytes": 153241,
+      "chars": 133331,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

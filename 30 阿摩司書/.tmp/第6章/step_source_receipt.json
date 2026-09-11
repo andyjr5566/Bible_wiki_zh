@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "阿摩司書",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_amos_6.txt",
+      "book": "Amos",
+      "book_code": "Amo",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 177,
+      "first": "Amo 6:1",
+      "last": "Amo 6:14",
+      "sha256": "5784d50ae70d19c67b11f3889c9c06bccd73570240b36930727ecf48fe5fb82d",
+      "bytes": 34805,
+      "chars": 30268,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

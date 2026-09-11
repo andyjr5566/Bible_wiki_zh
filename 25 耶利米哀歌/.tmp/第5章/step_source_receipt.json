@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米哀歌",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_lamentations_5.txt",
+      "book": "Lamentations",
+      "book_code": "Lam",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 145,
+      "first": "Lam 5:1",
+      "last": "Lam 5:22",
+      "sha256": "74a7d4ccdbf3ccc5f203468dbde040adfb9fb5b49995ae8e45508ff5615ad70b",
+      "bytes": 30957,
+      "chars": 27167,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

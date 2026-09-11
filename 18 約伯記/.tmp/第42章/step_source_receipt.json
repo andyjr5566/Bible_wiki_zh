@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 42,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_42.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 42,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 241,
+      "first": "Job 42:1",
+      "last": "Job 42:17",
+      "sha256": "de62af8ed92787fbc184daa1547beb392307c29e27f2150cc30d8b59dca73e41",
+      "bytes": 46157,
+      "chars": 40263,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

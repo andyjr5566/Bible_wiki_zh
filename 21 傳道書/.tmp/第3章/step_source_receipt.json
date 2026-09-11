@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_3.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 273,
+      "first": "Ecc 3:1",
+      "last": "Ecc 3:22",
+      "sha256": "fe3a05b1145792ef891dc27b165961614d9585ef67118ba68239076f642ff8ae",
+      "bytes": 50840,
+      "chars": 44614,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

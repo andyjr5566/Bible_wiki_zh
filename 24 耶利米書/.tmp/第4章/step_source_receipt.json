@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_4.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 422,
+      "first": "Jer 4:1",
+      "last": "Jer 4:31",
+      "sha256": "b96f7fe439ff7bfc766a5c9376ca4247d222924c8f29366155f373c7942204a8",
+      "bytes": 82031,
+      "chars": 71785,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_6.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 271,
+      "first": "Pro 6:1",
+      "last": "Pro 6:35",
+      "sha256": "c316458eb4daf94f2d80aad55709081f43e76154eb099ba95c18a288d0b4d995",
+      "bytes": 55348,
+      "chars": 48656,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

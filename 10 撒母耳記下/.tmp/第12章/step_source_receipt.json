@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_12.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 528,
+      "first": "2Sa 12:1",
+      "last": "2Sa 12:31",
+      "sha256": "5093f357c1ff3b9cab779971d816da9c67115b103fdcdc175e1fad0f43537b63",
+      "bytes": 102685,
+      "chars": 90291,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

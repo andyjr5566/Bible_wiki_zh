@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_9.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 127,
+      "first": "Pro 9:1",
+      "last": "Pro 9:18",
+      "sha256": "b7d8a66fcbfbcd529191d4bde7ed82a8acc07db477cafca6acf5f2c77140ee84",
+      "bytes": 26609,
+      "chars": 23417,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

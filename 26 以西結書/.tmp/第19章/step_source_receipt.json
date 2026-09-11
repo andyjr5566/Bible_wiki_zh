@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_19.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 157,
+      "first": "Ezk 19:1",
+      "last": "Ezk 19:14",
+      "sha256": "3efff016c07e69f6a77fa13a56f5ce5df8437a74482955f9dff32fc63bcb68de",
+      "bytes": 33283,
+      "chars": 29202,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

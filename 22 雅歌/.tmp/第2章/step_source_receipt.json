@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "雅歌",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_song_of_songs_2.txt",
+      "book": "Song of Songs",
+      "book_code": "Sng",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 177,
+      "first": "Sng 2:1",
+      "last": "Sng 2:17",
+      "sha256": "259f2b8a2b63136645773590e2148702afe219fe5a7af2875bf5f39182a13b06",
+      "bytes": 36228,
+      "chars": 31720,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

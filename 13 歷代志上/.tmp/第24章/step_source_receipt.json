@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_24.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 270,
+      "first": "1Ch 24:1",
+      "last": "1Ch 24:31",
+      "sha256": "05ba1432b29184e64b6150f0a75e15e03f1ed253774e1d241ce7c48e9a8c4e45",
+      "bytes": 54685,
+      "chars": 46973,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_2.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 159,
+      "first": "Zec 2:1",
+      "last": "Zec 2:13",
+      "sha256": "f180c26201cfa2d28b7230554c4a6a1cbcfc394363ed54ca89a76e750aa9a815",
+      "bytes": 30976,
+      "chars": 27093,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

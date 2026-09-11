@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_9.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 164,
+      "first": "Psa 9:0",
+      "last": "Psa 9:20",
+      "sha256": "a589b41bfbb1fa2d5f7387b56ffbfb5176493f61c99ddc2cb90c0f48c22cfe82",
+      "bytes": 34605,
+      "chars": 30300,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

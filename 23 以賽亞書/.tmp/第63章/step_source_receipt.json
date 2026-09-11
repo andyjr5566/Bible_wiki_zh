@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 63,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_63.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 63,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 232,
+      "first": "Isa 63:1",
+      "last": "Isa 63:19",
+      "sha256": "aaf7e17d767a9ccf7d0b473b9f8d59360f0dbb874d5fde2dac38dff268249805",
+      "bytes": 48926,
+      "chars": 43033,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

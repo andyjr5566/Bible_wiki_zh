@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 68,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_68.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 68,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 36,
+      "words": 310,
+      "first": "Psa 68:0",
+      "last": "Psa 68:35",
+      "sha256": "42a9a499353b90b904003f8c7e6acaae3daf9d8595c6e8fedab07472a1a39e24",
+      "bytes": 63344,
+      "chars": 55093,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

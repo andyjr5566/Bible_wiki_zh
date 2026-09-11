@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_7.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 187,
+      "first": "Est 7:1",
+      "last": "Est 7:10",
+      "sha256": "f62c0a16c99161ebc037837bcdc693a5921ca2c376e5a707b3d8f5bf225ae299",
+      "bytes": 35965,
+      "chars": 31239,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

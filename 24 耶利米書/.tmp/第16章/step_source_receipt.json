@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_16.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 367,
+      "first": "Jer 16:1",
+      "last": "Jer 16:21",
+      "sha256": "45af2f84ee5548c7228da488f426246a5f72e7d878a4b0de6e804787418e477a",
+      "bytes": 68593,
+      "chars": 59969,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

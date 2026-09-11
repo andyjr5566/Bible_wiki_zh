@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 48,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_48.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 265,
+      "first": "Isa 48:1",
+      "last": "Isa 48:22",
+      "sha256": "64d86a4b5c8688d9dad62e02720ae5c06db08961219822295aca8731b6221cd4",
+      "bytes": 54142,
+      "chars": 47448,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

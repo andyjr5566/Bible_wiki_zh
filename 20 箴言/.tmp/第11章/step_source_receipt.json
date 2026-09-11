@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_11.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 223,
+      "first": "Pro 11:1",
+      "last": "Pro 11:31",
+      "sha256": "f2ab05703cc3dc3f0466347b5a613bd9d5e7f3b9d1adbd3b89f0d281ec138913",
+      "bytes": 46757,
+      "chars": 41112,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_25.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 6,
+      "words": 43,
+      "first": "Job 25:1",
+      "last": "Job 25:6",
+      "sha256": "8b048cbcef3301367a40074bddc65b4dfafbbc502c1b721f53453be17c5b497a",
+      "bytes": 8510,
+      "chars": 7417,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

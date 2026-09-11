@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_10.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 169,
+      "first": "Job 10:1",
+      "last": "Job 10:22",
+      "sha256": "71376b192b1c77a834bc9a3ad879fff824513239f1e644967892ed816efb4287",
+      "bytes": 36811,
+      "chars": 32459,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

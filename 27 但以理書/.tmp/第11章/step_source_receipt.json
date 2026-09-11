@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_11.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 45,
+      "words": 611,
+      "first": "Dan 11:1",
+      "last": "Dan 11:45",
+      "sha256": "f000cc880f5421c1326302787543f3843cf088c0e1561da7b4ef90b5e0f3950e",
+      "bytes": 128358,
+      "chars": 112945,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

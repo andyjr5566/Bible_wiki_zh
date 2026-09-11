@@ -1,0 +1,64 @@
+book: 約書亞記
+book_folder: 06 約書亞記
+principles:
+  editorial_anchor: CT00
+  commentary_vote_sources:
+  - CT00
+  - GT00
+  - KC0
+  - BH
+  external_context_sources:
+  - BIBLEPROJECT
+  - ENTER_THE_BIBLE
+  - YALE
+  note: CT00 提供 Introduction 的 editorial rhythm；CT00、GT00、KC0、BH 才是四套 commentary 維度。外部來源只補強文學、背景與學術研究，不加入四家票數。
+sources:
+  CT00:
+    family: ccbiblestudy
+    role: commentary
+    editorial_anchor: true
+    label: CCBibleStudy 約書亞記提要（CT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT00.htm
+  GT00:
+    family: ccbiblestudy
+    role: commentary
+    label: CCBibleStudy 約書亞記導論拾穗（GT00）
+    url: https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT00.htm
+    provenance_rule: GT00 是多來源合輯；萃取時必須保留內部分來源名稱，不得把單一子來源寫成 GT00 全體結論。
+  KC0:
+    family: kingcomments
+    role: commentary
+    label: KingComments joshua Introduction
+    url: https://www.kingcomments.com/en/bible-studies/Jos/0
+  BH:
+    family: biblehub
+    role: commentary
+    label: BibleHub joshua overview
+    url: https://biblehub.com/joshua/
+    family_rule: BibleHub 內部即使引用多個底層資源，仍只算一個 BH 來源維度。
+  BIBLEPROJECT:
+    role: literary_design
+    label: BibleProject — Book of Joshua Guide
+    url: https://bibleproject.com/guides/book-of-joshua/
+    family: bibleproject
+  ENTER_THE_BIBLE:
+    role: academic_context
+    label: Enter the Bible — Joshua
+    urls:
+    - https://enterthebible.org/courses/joshua/
+    - https://enterthebible.org/courses/joshua/lessons/summary-of-joshua/
+    - https://enterthebible.org/courses/joshua/lessons/outline-of-joshua/
+    - https://enterthebible.org/courses/joshua/lessons/background-of-joshua/
+    - https://enterthebible.org/courses/joshua/lessons/introductory-issues-in-joshua/
+    - https://enterthebible.org/courses/joshua/lessons/theological-themes-in-joshua/
+    family: enter_the_bible
+  YALE:
+    role: academic_context
+    label: Yale Bible Study — Joshua and Judges
+    urls:
+    - https://yalebiblestudy.org/courses/joshua-and-judges/
+    - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-historical-problem-of-conquest-study-guide/
+    - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-story-of-jericho-study-guide/
+    - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-case-of-achan-study-guide/
+    - https://yalebiblestudy.org/courses/joshua-and-judges/lessons/the-moral-problem-of-conquest-study-guide/
+    family: yale

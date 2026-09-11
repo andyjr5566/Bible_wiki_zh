@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_6.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 81,
+      "words": 771,
+      "first": "1Ch 6:1",
+      "last": "1Ch 6:81",
+      "sha256": "341682931c503d092538e8c249d67f1e0437974f8ffbb83295137a09d2fc4c27",
+      "bytes": 145646,
+      "chars": 125954,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

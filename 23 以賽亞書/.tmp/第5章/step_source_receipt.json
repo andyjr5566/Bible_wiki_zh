@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_5.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 384,
+      "first": "Isa 5:1",
+      "last": "Isa 5:30",
+      "sha256": "3273c802f60fdb263858767e1d63ff7ca1e9b51b35e32a3e202a156eb439bbe2",
+      "bytes": 76871,
+      "chars": 67311,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

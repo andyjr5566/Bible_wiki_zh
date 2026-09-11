@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 27,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_27.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 27,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 420,
+      "first": "Jer 27:1",
+      "last": "Jer 27:22",
+      "sha256": "4045e39ba989f8c5be1d2cb34a1fb7a0d6070b215d492bdc2d8eba8c526253c8",
+      "bytes": 76857,
+      "chars": 66612,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

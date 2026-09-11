@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 38,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_38.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 38,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 168,
+      "first": "Psa 38:0",
+      "last": "Psa 38:22",
+      "sha256": "a806afa04fcf0f65330d83b972983372bbdd4f1a32374f2f7d8dec9c48692cfe",
+      "bytes": 36314,
+      "chars": 31981,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

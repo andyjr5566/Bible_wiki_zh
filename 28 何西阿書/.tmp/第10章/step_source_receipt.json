@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_10.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 201,
+      "first": "Hos 10:1",
+      "last": "Hos 10:15",
+      "sha256": "0c9c1380af7afe0810fef58c7b375d85c888b1b35045b5309627bf4db7f645aa",
+      "bytes": 39472,
+      "chars": 34396,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

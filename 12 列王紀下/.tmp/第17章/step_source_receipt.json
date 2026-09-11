@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_17.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 41,
+      "words": 689,
+      "first": "2Ki 17:1",
+      "last": "2Ki 17:41",
+      "sha256": "a08498b18b613816586fa4fbdafe44807bed1c377d1cac72086da7b54bc0d4f0",
+      "bytes": 132137,
+      "chars": 114871,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

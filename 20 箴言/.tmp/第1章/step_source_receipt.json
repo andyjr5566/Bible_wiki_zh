@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_1.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 237,
+      "first": "Pro 1:1",
+      "last": "Pro 1:33",
+      "sha256": "926b784a261a40c86ba2a249beaec53eec79aa26ad02944ad09d3c08dc03711b",
+      "bytes": 50594,
+      "chars": 44432,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

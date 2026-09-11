@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀下",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_kings_9.txt",
+      "book": "2 Kings",
+      "book_code": "2Ki",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 611,
+      "first": "2Ki 9:1",
+      "last": "2Ki 9:37",
+      "sha256": "67a982df1a4fca94e663c1cd7be8c02416aff01e5863209d92a90b836217f0fa",
+      "bytes": 120476,
+      "chars": 105313,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

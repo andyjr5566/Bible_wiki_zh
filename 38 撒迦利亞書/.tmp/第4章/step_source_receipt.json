@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_4.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 187,
+      "first": "Zec 4:1",
+      "last": "Zec 4:14",
+      "sha256": "e4753cc37bdadf0078db2a8cc520783fe4a1297de85308d1881df6d6b5c5ee59",
+      "bytes": 36110,
+      "chars": 31615,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

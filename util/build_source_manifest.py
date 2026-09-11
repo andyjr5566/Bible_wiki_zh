@@ -59,15 +59,18 @@ def source_specs(book, chapter):
         )
     meta = catalog[matched_key]
     cc_folder = meta["cc_folder"]
-    num = "".join(c for c in cc_folder if c.isdigit())  # 01Gen → 01
+    num = meta.get("num", cc_folder[:2])
+    pad = meta.get("pad", 2)
+    ch = int(chapter)
+    ch_str = f"{ch:0{pad}d}"
+    ct_code = meta.get("ct_code", "CT")
     kc = meta["kc"]
     en = meta["en"]
-    ch = int(chapter)
     base_cc = f"https://www.ccbiblestudy.org/Old%20Testament/{cc_folder}"
     return [
-        ("ccbiblestudy CT", "逐節註解", f"{base_cc}/{num}CT{ch:02d}.htm",
+        ("ccbiblestudy CT", "逐節註解", f"{base_cc}/{num}{ct_code}{ch_str}.htm",
          f"ccbiblestudy_CT_{en}_{ch}.txt"),
-        ("ccbiblestudy GT", "拾穗", f"{base_cc}/{num}GT{ch:02d}.htm",
+        ("ccbiblestudy GT", "拾穗", f"{base_cc}/{num}GT{ch_str}.htm",
          f"ccbiblestudy_GT_{en}_{ch}.txt"),
         ("KingComments", "研經註解", f"https://www.kingcomments.com/en/bible-studies/{kc}/{ch}",
          f"kingcomments_{en}_{ch}.txt"),
@@ -225,7 +228,10 @@ def render_manifest(book, chapter, *, root=ROOT):
 
 def manifest_path_for(book, chapter, root=ROOT):
     # 與 run_chapter.ChapterContext 相同：【NN 書名】/.tmp/第x章/source_manifest.md
-    import book_paths  # noqa: local import 避免循環
+    try:
+        from . import book_paths  # noqa: local import 避免循環
+    except ImportError:
+        import book_paths
     return book_paths.book_directory(Path(root), book) / ".tmp" / f"第{int(chapter)}章" / "source_manifest.md"
 
 

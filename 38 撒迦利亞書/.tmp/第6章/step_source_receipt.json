@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_6.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 203,
+      "first": "Zec 6:1",
+      "last": "Zec 6:15",
+      "sha256": "ec115129f585fac526449b22fb06d5948f1d3fd07d1a5fdfea0300e33cecf680",
+      "bytes": 41281,
+      "chars": 35973,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

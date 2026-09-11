@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_1.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 415,
+      "first": "1Sa 1:1",
+      "last": "1Sa 1:28",
+      "sha256": "2cf7d16ac648dd8af2d150c458ec991223ee0ba28c835df6350f06da91a32e90",
+      "bytes": 80948,
+      "chars": 70877,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

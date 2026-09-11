@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_9.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 462,
+      "first": "Dan 9:1",
+      "last": "Dan 9:27",
+      "sha256": "bc31d89381159ea094ac9769287b7ef10960b396163be6c7efc4788ba7148b76",
+      "bytes": 92061,
+      "chars": 79955,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

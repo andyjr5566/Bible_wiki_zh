@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_11.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 8,
+      "words": 68,
+      "first": "Psa 11:0",
+      "last": "Psa 11:7",
+      "sha256": "f70594c6f6cb890901a79ad53a61ceebfd9e4f98b0f2f0b51a2bc7dc5c2207c0",
+      "bytes": 13843,
+      "chars": 12055,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

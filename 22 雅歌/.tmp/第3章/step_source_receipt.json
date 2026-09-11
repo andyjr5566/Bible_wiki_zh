@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "雅歌",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_song_of_songs_3.txt",
+      "book": "Song of Songs",
+      "book_code": "Sng",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 11,
+      "words": 133,
+      "first": "Sng 3:1",
+      "last": "Sng 3:11",
+      "sha256": "99b7c07b7744536bbf467e18833be607f0f592a76967566c67f4bd70e4f7a9b9",
+      "bytes": 27720,
+      "chars": 24140,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

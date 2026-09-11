@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 135,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_135.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 135,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 167,
+      "first": "Psa 135:1",
+      "last": "Psa 135:21",
+      "sha256": "a4c3bb0c390f34d659290a17eb9e984c799b1d2a5c610efdd6e6ad98b27c5ce3",
+      "bytes": 32773,
+      "chars": 28562,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

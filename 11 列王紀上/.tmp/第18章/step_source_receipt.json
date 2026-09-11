@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀上",
+  "chapter": 18,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_kings_18.txt",
+      "book": "1 Kings",
+      "book_code": "1Ki",
+      "chapter": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 46,
+      "words": 741,
+      "first": "1Ki 18:1",
+      "last": "1Ki 18:46",
+      "sha256": "79a6ff252c5cfe908391e1f5f5f473547595c9601da5af8f9b6bbe10cd2431a6",
+      "bytes": 143618,
+      "chars": 125455,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_8.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 343,
+      "first": "Est 8:1",
+      "last": "Est 8:17",
+      "sha256": "612788726c6b6cbca5181692d0fb11d11b8417e44b34743c67f8c4474c984f7f",
+      "bytes": 67611,
+      "chars": 58490,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

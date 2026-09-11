@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_7.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 395,
+      "first": "2Ch 7:1",
+      "last": "2Ch 7:22",
+      "sha256": "855033b1d782210b362cf5f54551680b4b46b413a7c38cbc8d344a1eb8e9be58",
+      "bytes": 76831,
+      "chars": 66994,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

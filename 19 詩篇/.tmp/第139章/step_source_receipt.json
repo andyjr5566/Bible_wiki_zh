@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 139,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_139.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 139,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 177,
+      "first": "Psa 139:0",
+      "last": "Psa 139:24",
+      "sha256": "048778ad1b4020d03a923b8252eb172cdb11e3a1e3b1a69c86c057a71263e45e",
+      "bytes": 38650,
+      "chars": 34094,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

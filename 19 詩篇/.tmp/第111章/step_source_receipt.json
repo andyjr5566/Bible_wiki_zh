@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 111,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_111.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 111,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 74,
+      "first": "Psa 111:1",
+      "last": "Psa 111:10",
+      "sha256": "ff5dd4e92bfbe9373feebb86a1ea954a86709bc9f13d2bc881a855e2787dad8c",
+      "bytes": 15817,
+      "chars": 13854,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

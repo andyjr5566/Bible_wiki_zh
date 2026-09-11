@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_11.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 36,
+      "words": 378,
+      "first": "Neh 11:1",
+      "last": "Neh 11:36",
+      "sha256": "59e9575e21e20af54b53a88b253a416baaf74a59c75957882353728af3d68693",
+      "bytes": 73688,
+      "chars": 63257,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

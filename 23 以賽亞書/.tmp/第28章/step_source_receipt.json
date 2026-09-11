@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 28,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_28.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 380,
+      "first": "Isa 28:1",
+      "last": "Isa 28:29",
+      "sha256": "965fae80e019c383650abf5cef47b1b796c81bba6174a8d1d94a1e03b781202e",
+      "bytes": 73329,
+      "chars": 64018,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

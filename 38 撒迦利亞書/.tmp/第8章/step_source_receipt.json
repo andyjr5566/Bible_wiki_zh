@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_8.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 356,
+      "first": "Zec 8:1",
+      "last": "Zec 8:23",
+      "sha256": "964614f4a77f9ccae0e15319ec697a155046e37de4a8b9d11f862798bca7c9b9",
+      "bytes": 66914,
+      "chars": 58059,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

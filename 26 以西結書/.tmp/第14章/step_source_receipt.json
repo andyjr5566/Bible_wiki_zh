@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_14.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 391,
+      "first": "Ezk 14:1",
+      "last": "Ezk 14:23",
+      "sha256": "49e98fc112b968b0e2beb33e5dc503b6b81b1ffa26e3d263552d05df5de4de41",
+      "bytes": 75427,
+      "chars": 65920,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_23.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 333,
+      "first": "1Ch 23:1",
+      "last": "1Ch 23:32",
+      "sha256": "7b1201e57ca908861295b68d4e9e967994b2c39ead33dcd2de32cd5b2c81278b",
+      "bytes": 65804,
+      "chars": 56833,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_20.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 49,
+      "words": 804,
+      "first": "Ezk 20:1",
+      "last": "Ezk 20:49",
+      "sha256": "64121d1595b5b4999e0d8fb1d0d9aeaf7cd3f77da91bf2f0015263964e045926",
+      "bytes": 154407,
+      "chars": 134973,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

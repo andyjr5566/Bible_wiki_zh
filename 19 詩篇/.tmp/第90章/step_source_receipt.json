@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 90,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_90.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 90,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 140,
+      "first": "Psa 90:0",
+      "last": "Psa 90:17",
+      "sha256": "6a890bcb613d5d7958df1ab58affba3e69e67ac9639738bd081bd8c208f2eed7",
+      "bytes": 29994,
+      "chars": 26345,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

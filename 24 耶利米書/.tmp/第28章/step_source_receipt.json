@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 28,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_28.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 304,
+      "first": "Jer 28:1",
+      "last": "Jer 28:17",
+      "sha256": "05f18a75cd1c48ea9bdae4e966b75e1674ccb2459f47d3ac5a63a8f66b854991",
+      "bytes": 55587,
+      "chars": 47995,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

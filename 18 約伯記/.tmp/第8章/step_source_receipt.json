@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_8.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 166,
+      "first": "Job 8:1",
+      "last": "Job 8:22",
+      "sha256": "e0089414f0fc3dd0ca251bdb026c6f5aa6a63bad853f85688817e7d90bf1e43c",
+      "bytes": 33737,
+      "chars": 29766,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

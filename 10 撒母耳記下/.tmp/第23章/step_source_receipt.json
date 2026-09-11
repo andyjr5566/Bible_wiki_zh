@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_23.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 39,
+      "words": 445,
+      "first": "2Sa 23:1",
+      "last": "2Sa 23:39",
+      "sha256": "9fbbbe0e4d9fe605574b27ce14b64f0a15554a8c5834ac68f1ca3c8d6ea19334",
+      "bytes": 86731,
+      "chars": 75267,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

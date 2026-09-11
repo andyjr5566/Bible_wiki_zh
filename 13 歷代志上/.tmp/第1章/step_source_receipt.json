@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_1.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 54,
+      "words": 422,
+      "first": "1Ch 1:1",
+      "last": "1Ch 1:54",
+      "sha256": "3cc7c47e64ef9cd85218a54a5cc8bcfae2cb80e3b934fdb5c0883bd1cf0c0379",
+      "bytes": 80565,
+      "chars": 69646,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

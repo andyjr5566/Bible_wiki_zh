@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_8.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 357,
+      "first": "Neh 8:1",
+      "last": "Neh 8:18",
+      "sha256": "5a0e2e6c4cb9bcb773fef0afc31f228217a6a9cd2b598941b3e57a7e0a362fb9",
+      "bytes": 68404,
+      "chars": 59388,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 46,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_46.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 46,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 150,
+      "first": "Isa 46:1",
+      "last": "Isa 46:13",
+      "sha256": "04a54577dd216c0a656a795e318c8a22961f13c8be8ff9b73eb6419921686f66",
+      "bytes": 31243,
+      "chars": 27386,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

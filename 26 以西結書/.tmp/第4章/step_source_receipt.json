@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_4.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 264,
+      "first": "Ezk 4:1",
+      "last": "Ezk 4:17",
+      "sha256": "0852a815bc8962d4feafe9155a6670e25b5cd28d6abca32c515e1eb600e7cac7",
+      "bytes": 51559,
+      "chars": 44998,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

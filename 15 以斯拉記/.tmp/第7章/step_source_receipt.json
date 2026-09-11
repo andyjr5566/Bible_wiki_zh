@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯拉記",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezra_7.txt",
+      "book": "Ezra",
+      "book_code": "Ezr",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 436,
+      "first": "Ezr 7:1",
+      "last": "Ezr 7:28",
+      "sha256": "fe46c4e41a5fd67074976146a5e2fe55a841d1c0f1421e9f0d06aa02c3c2e42d",
+      "bytes": 81522,
+      "chars": 70321,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

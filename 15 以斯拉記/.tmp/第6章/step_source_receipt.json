@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯拉記",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezra_6.txt",
+      "book": "Ezra",
+      "book_code": "Ezr",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 393,
+      "first": "Ezr 6:1",
+      "last": "Ezr 6:22",
+      "sha256": "b0f160d4851ff4671ce305da10168f85a36ac6bc7fc0267fa8c8bef010cf6930",
+      "bytes": 74968,
+      "chars": 64635,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 84,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_84.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 84,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 116,
+      "first": "Psa 84:0",
+      "last": "Psa 84:12",
+      "sha256": "8a20f85121b765cb5adcce214d5480f4056d2a642db1208d87bd50e86d83fa12",
+      "bytes": 22872,
+      "chars": 19895,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 31,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_31.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 156,
+      "first": "Isa 31:1",
+      "last": "Isa 31:9",
+      "sha256": "664e8865f1eabaaadd384511cdbab674de7176d406fb26283849f82209742ff9",
+      "bytes": 28866,
+      "chars": 25195,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

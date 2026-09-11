@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_7.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 461,
+      "first": "2Sa 7:1",
+      "last": "2Sa 7:29",
+      "sha256": "9599cdc17b3c7605a06197af1ecd0ab437872f55f902decc5fd8ad50a60e9987",
+      "bytes": 87744,
+      "chars": 76618,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

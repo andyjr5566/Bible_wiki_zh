@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_7.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 187,
+      "first": "Zec 7:1",
+      "last": "Zec 7:14",
+      "sha256": "eac768fe53350a4ea05e9e03a9110cd47d02ca78e7343cde1f5583c4b7e8f3c3",
+      "bytes": 36536,
+      "chars": 31711,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

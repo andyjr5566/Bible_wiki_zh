@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_17.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 408,
+      "first": "1Ch 17:1",
+      "last": "1Ch 17:27",
+      "sha256": "cd7597b0fcc5ffaf6840ebe49de301a6537d65f2114106a7435f6305dde6d7ee",
+      "bytes": 78090,
+      "chars": 68212,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

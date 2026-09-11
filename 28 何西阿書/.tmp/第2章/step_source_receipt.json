@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_2.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 297,
+      "first": "Hos 2:1",
+      "last": "Hos 2:23",
+      "sha256": "a48a983e51d3439803837ba2cd278fd6fc175cf3d67b71b65c7263277cd095ad",
+      "bytes": 63139,
+      "chars": 55600,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

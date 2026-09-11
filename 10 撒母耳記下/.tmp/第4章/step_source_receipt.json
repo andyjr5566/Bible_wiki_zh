@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_4.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 237,
+      "first": "2Sa 4:1",
+      "last": "2Sa 4:12",
+      "sha256": "8b2b7a8b70744edc8eba73240a2b7ed90f289c89424a8199453769f5d514ffcb",
+      "bytes": 46136,
+      "chars": 40173,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

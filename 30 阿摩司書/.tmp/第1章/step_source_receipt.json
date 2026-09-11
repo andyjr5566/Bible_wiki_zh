@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "阿摩司書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_amos_1.txt",
+      "book": "Amos",
+      "book_code": "Amo",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 212,
+      "first": "Amo 1:1",
+      "last": "Amo 1:15",
+      "sha256": "9ce88f380a8ca287cf18d60e665893ac1045d99270944fba9ac39e2c5f1c03c7",
+      "bytes": 41304,
+      "chars": 35822,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_13.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 174,
+      "first": "Hos 13:1",
+      "last": "Hos 13:16",
+      "sha256": "db26314c1e70ae7547a3a7a7fba2f6f0729204d45eb70bdd57d6b6eba26a85bb",
+      "bytes": 36415,
+      "chars": 31935,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

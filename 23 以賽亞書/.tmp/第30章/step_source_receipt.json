@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 30,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_30.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 30,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 492,
+      "first": "Isa 30:1",
+      "last": "Isa 30:33",
+      "sha256": "f4f2e99c39c52ddd1594cb8e8348c092181f7ef507adc5871ad36d3b80d32403",
+      "bytes": 92286,
+      "chars": 80574,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

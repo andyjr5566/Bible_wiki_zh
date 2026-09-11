@@ -13,12 +13,12 @@ Examples:
     python util/build_book_introduction_manifest.py 創世記 --write --force
 """
 
-import sys
 from __future__ import annotations
 
 import argparse
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
 import yaml

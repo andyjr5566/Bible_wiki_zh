@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 34,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_34.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 613,
+      "first": "2Ch 34:1",
+      "last": "2Ch 34:33",
+      "sha256": "eb11d99d19ff319097edcf38247f889abd6a4ff5136f6904cb84d9bde60036f6",
+      "bytes": 119579,
+      "chars": 103755,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 53,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_53.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 53,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 7,
+      "words": 77,
+      "first": "Psa 53:0",
+      "last": "Psa 53:6",
+      "sha256": "8101bd28e3fc589c58457cc42548102979377477f3d2680595fe399274b43e24",
+      "bytes": 14951,
+      "chars": 13010,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

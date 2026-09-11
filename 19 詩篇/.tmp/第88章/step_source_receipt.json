@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 88,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_88.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 88,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 142,
+      "first": "Psa 88:0",
+      "last": "Psa 88:18",
+      "sha256": "e083b21acb77c0495799d3af551af56d17ba00bd52de4b71588e65390839d6c9",
+      "bytes": 31721,
+      "chars": 27839,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

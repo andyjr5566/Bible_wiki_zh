@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 54,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_54.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 54,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 8,
+      "words": 62,
+      "first": "Psa 54:0",
+      "last": "Psa 54:7",
+      "sha256": "f9c548850ba00b0aae1a65117849240cf19a697899ff202fbf3e8f29bfa9a9ee",
+      "bytes": 13834,
+      "chars": 12123,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

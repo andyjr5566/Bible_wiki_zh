@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 133,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_133.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 133,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 4,
+      "words": 40,
+      "first": "Psa 133:0",
+      "last": "Psa 133:3",
+      "sha256": "0a245479a5202cbe0b8a29935c8c998cb709cdaa1788013b2f663a5e9d931f1e",
+      "bytes": 7208,
+      "chars": 6229,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 89,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_89.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 89,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 53,
+      "words": 384,
+      "first": "Psa 89:0",
+      "last": "Psa 89:52",
+      "sha256": "bd2adbe15c922f0e3444e389d00f9191d91e4d6513f745d2781da55cbc22ac80",
+      "bytes": 82854,
+      "chars": 72962,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

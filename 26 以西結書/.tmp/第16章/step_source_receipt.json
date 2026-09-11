@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 16,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_16.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 63,
+      "words": 833,
+      "first": "Ezk 16:1",
+      "last": "Ezk 16:63",
+      "sha256": "6fff8ef98c6f48cc871fa340e6038e8a47f363fc566b495b2999e012d2a6757c",
+      "bytes": 171940,
+      "chars": 150643,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

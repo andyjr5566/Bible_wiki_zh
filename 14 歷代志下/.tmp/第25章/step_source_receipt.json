@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_25.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 493,
+      "first": "2Ch 25:1",
+      "last": "2Ch 25:28",
+      "sha256": "553c15c2b458e78c071b6a14d7a9ee60f4a71445b5b4d53eda781396a0378af8",
+      "bytes": 96337,
+      "chars": 83618,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

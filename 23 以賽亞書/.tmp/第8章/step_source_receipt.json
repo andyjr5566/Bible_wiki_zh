@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_8.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 278,
+      "first": "Isa 8:1",
+      "last": "Isa 8:22",
+      "sha256": "c70e396c46f558a3b4c5e7ff7d94b5b6944b30cb3620b5e65fb3e45262d7826c",
+      "bytes": 54911,
+      "chars": 48073,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_10.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 260,
+      "first": "Jdg 10:1",
+      "last": "Jdg 10:18",
+      "sha256": "ede7057b939f886889575f4910ca4f68afc93c64785df0ad94f2364d3847ff4e",
+      "bytes": 50615,
+      "chars": 43897,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

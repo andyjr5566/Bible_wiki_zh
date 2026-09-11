@@ -1,0 +1,777 @@
+# STEP Bible — Ezekiel 48
+
+> Source: STEP Bible / STEPBible-Data — https://github.com/STEPBible/STEPBible-Data
+> License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+> 本檔是「原文證據層」資料，不是 Commentary。
+> Lexicon 列的是詞彙可能義域；不可直接把所有字典義都當成本節語境義。
+
+## Ezekiel 48:1
+
+**Original:** וְאֵ֖לֶּה שְׁמ֣וֹת הַשְּׁבָטִ֑ים מִקְצֵ֣ה צָפ֡וֹנָה אֶל־ יַ֣ד דֶּֽרֶךְ־ חֶתְלֹ֣ן׀ לְֽבוֹא־ חֲמָ֡ת חֲצַ֣ר עֵינָן֩ גְּב֨וּל דַּמֶּ֤שֶׂק צָפ֙וֹנָה֙ אֶל־ יַ֣ד חֲמָ֔ת וְהָיוּ־ ל֧וֹ פְאַת־ קָדִ֛ים הַיָּ֖ם דָּ֥ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/אֵ֖לֶּה | ve./'E.leh | and/ these | H428 | HC/Tm — Conjunction + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 2 | שְׁמ֣וֹת | she.Mot | [are] [the] names of | H8034 | HNcfpc — Noun (Plural Feminine, Construct) | שֵׁם (shem): name |
+| 3 | הַ/שְּׁבָטִ֑ים | ha./she.va.Tim | the/ tribes | H7626H | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | שֵׁ֫בֶט (she.vet): tribe |
+| 4 | מִ/קְצֵ֣ה | mi/k.Tzeh | from/ [the] end of | H7097A | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | קָצֶה (qa.tseh): end |
+| 5 | צָפ֡וֹנָ/ה | tza.Fo.na/h | north/ -ward | H6828G | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | צָפוֹן (tsa.phon): north |
+| 6 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 7 | יַ֣ד | yad | [the] hand of | H3027K | HNcbsc — Noun (Singular Either gender, Construct) | יָד (yad): hand: to |
+| 8 | דֶּֽרֶךְ\־ | de.rekh- | [the] road of | H1870K | HNcbsc — Noun (Singular Either gender, Construct) | דֶּ֫רֶךְ (de.rekh): way: road |
+| 9 | חֶתְלֹ֣ן\׀ | chet.Lon | Hethlon | H2855 | HNpl — Proper Noun (Location) | חֶתְלֹן (chet.lon): Hethlon |
+| 10 | לְֽבוֹא\־ | le.Vo'- | Lebo | H935H | HVqcc — Verb : Qal (Simple, Active) Infinitive Construct | לְב֥וֹא (bo): Lebo-(Hamath) |
+| 11 | חֲמָ֡ת | cha.Mat | Hamath | H2574G | HNpl — Proper Noun (Location) | חֲמָת (cha.mat): Hamath |
+| 12 | חֲצַ֣ר | cha.Tzar | Hazar | H2704 | HNpl — Proper Noun (Location) | חֲצַר עֵינוֹן (cha.tsar e.nan): Hazar-enan |
+| 13 | עֵינָן֩ | 'ei.Nan | Enan | H2704 | HNpl — Proper Noun (Location) | חֲצַר עֵינוֹן (cha.tsar e.nan): Hazar-enan |
+| 14 | גְּב֨וּל | ge.Vul | [the] border of | H1366G | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: boundary |
+| 15 | דַּמֶּ֤שֶׂק | da.Me.sek | Damascus | H1834 | HNpl — Proper Noun (Location) | דַּמֶּ֫שֶׂק (dam.me.seq): Damascus |
+| 16 | צָפ֙וֹנָ/ה֙ | tza.Fo.na/h | north/ -ward | H6828G | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | צָפוֹן (tsa.phon): north |
+| 17 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 18 | יַ֣ד | yad | [the] hand of | H3027K | HNcbsc — Noun (Singular Either gender, Construct) | יָד (yad): hand: to |
+| 19 | חֲמָ֔ת | cha.Mat | Hamath | H2574G | HNpl — Proper Noun (Location) | חֲמָת (cha.mat): Hamath |
+| 20 | וְ/הָיוּ\־ | ve./ha.yu- | and/ they will belong | H1961 | Hc/Vqq3cp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Plural Either gender | הָיָה (ha.yah): to be |
+| 21 | ל֧/וֹ | l/o | to/ him | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 22 | פְאַת\־ | fe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 23 | קָדִ֛ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 24 | הַ/יָּ֖ם | hai./Yam | the/ sea | H3220H | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | יָם (yam): sea: west |
+| 25 | דָּ֥ן | dan | Dan | H1835G | HNpl — Proper Noun (Location) | דָּן (dan): Dan |
+| 26 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:2
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל דָּ֗ן מִפְּאַ֥ת קָדִ֛ים עַד־ פְּאַת־ יָ֖מָּה אָשֵׁ֥ר אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | דָּ֗ן | Dan | Dan | H1835G | HNpl — Proper Noun (Location) | דָּן (dan): Dan |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | אָשֵׁ֥ר | 'a.Sher | Asher | H836 | HNpm — Proper Noun (Masculine individual) | אָשֵׁר (a.sher): Asher |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:3
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל אָשֵׁ֗ר מִפְּאַ֥ת קָדִ֛ימָה וְעַד־ פְּאַת־ יָ֖מָּה נַפְתָּלִ֥י אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | אָשֵׁ֗ר | 'a.Sher | Asher | H836 | HNpm — Proper Noun (Masculine individual) | אָשֵׁר (a.sher): Asher |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | וְ/עַד\־ | ve./'ad- | and/ to | H5704 | HC/R — Conjunction + Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | נַפְתָּלִ֥י | naf.ta.Li | Naphtali | H5321G | HNpm — Proper Noun (Masculine individual) | נַפְתָּלִי (naph.ta.li): Naphtali |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:4
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל נַפְתָּלִ֗י מִפְּאַ֥ת קָדִ֛מָה עַד־ פְּאַת־ יָ֖מָּה מְנַשֶּׁ֥ה אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | נַפְתָּלִ֗י | naf.ta.Li | Naphtali | H5321G | HNpm — Proper Noun (Masculine individual) | נַפְתָּלִי (naph.ta.li): Naphtali |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛מָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | מְנַשֶּׁ֥ה | me.na.Sheh | Manasseh | H4519G | HNpm — Proper Noun (Masculine individual) | מְנַשֶּׁה (me.nash.sheh): Manasseh |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:5
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל מְנַשֶּׁ֗ה מִפְּאַ֥ת קָדִ֛מָה עַד־ פְּאַת־ יָ֖מָּה אֶפְרַ֥יִם אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | מְנַשֶּׁ֗ה | me.na.Sheh | Manasseh | H4519G | HNpm — Proper Noun (Masculine individual) | מְנַשֶּׁה (me.nash.sheh): Manasseh |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛מָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | אֶפְרַ֥יִם | 'ef.Ra.yim | Ephraim | H669G | HNpm — Proper Noun (Masculine individual) | אֶפְרַ֫יִם (eph.ra.yim): Ephraim |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:6
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל אֶפְרַ֗יִם מִפְּאַ֥ת קָדִ֛ים וְעַד־ פְּאַת־ יָ֖מָּה רְאוּבֵ֥ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | אֶפְרַ֗יִם | 'ef.Ra.yim | Ephraim | H669G | HNpm — Proper Noun (Masculine individual) | אֶפְרַ֫יִם (eph.ra.yim): Ephraim |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 6 | וְ/עַד\־ | ve./'ad- | and/ to | H5704 | HC/R — Conjunction + Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | רְאוּבֵ֥ן | re.'u.Ven | Reuben | H7205 | HNpm — Proper Noun (Masculine individual) | רְאוּבֵן (re.u.ven): Reuben |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:7
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל רְאוּבֵ֗ן מִפְּאַ֥ת קָדִ֛ים עַד־ פְּאַת־ יָ֖מָּה יְהוּדָ֥ה אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | רְאוּבֵ֗ן | re.'u.Ven | Reuben | H7205 | HNpm — Proper Noun (Masculine individual) | רְאוּבֵן (re.u.ven): Reuben |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | יְהוּדָ֥ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:8
+
+**Original:** וְעַל֙ גְּב֣וּל יְהוּדָ֔ה מִפְּאַ֥ת קָדִ֖ים עַד־ פְּאַת־ יָ֑מָּה תִּהְיֶ֣ה הַתְּרוּמָ֣ה אֲֽשֶׁר־ תָּרִ֡ימוּ חֲמִשָּׁה֩ וְעֶשְׂרִ֨ים אֶ֜לֶף רֹ֗חַב וְאֹ֜רֶךְ כְּאַחַ֤ד הַחֲלָקִים֙ מִפְּאַ֤ת קָדִ֙ימָה֙ עַד־ פְּאַת־ יָ֔מָּה וְהָיָ֥ה הַמִּקְדָּ֖שׁ בְּתוֹכֽוֹ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַל֙ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | יְהוּדָ֔ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֖ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֑מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | תִּהְיֶ֣ה | tih.Yeh | it will be | H1961 | HVqi3fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 10 | הַ/תְּרוּמָ֣ה | ha./te.ru.Mah | the/ contribution | H8641 | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | תְּרוּמָה (te.ru.mah): contribution |
+| 11 | אֲֽשֶׁר\־ | 'asher- | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 12 | תָּרִ֡ימוּ | ta.Ri.mu | you will offer up | H7311A | HVhi2mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Second Plural Masculine | רוּם (rum): to exalt |
+| 13 | חֲמִשָּׁה֩ | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 14 | וְ/עֶשְׂרִ֨ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 15 | אֶ֜לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 16 | רֹ֗חַב | Ro.chav | [the] breadth | H7341 | HNcmsa — Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 17 | וְ/אֹ֜רֶךְ | ve./'O.rekh | and/ [the] length | H753 | HC/Ncmsa — Conjunction + Noun (Singular Masculine, Absolute) | אֹ֫רֶךְ (o.rekh): length |
+| 18 | כְּ/אַחַ֤ד | ke./'a.Chad | [will be] like/ one of | H259 | HR/Acfsc — Preposition + Acfsc | אֶחָד (e.chad): one |
+| 19 | הַ/חֲלָקִים֙ | ha./cha.la.Kim | the/ portions | H2506A | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | חֵ֫לֶק (che.leq): portion |
+| 20 | מִ/פְּאַ֤ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 21 | קָדִ֙ימָ/ה֙ | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 22 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 23 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 24 | יָ֔מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 25 | וְ/הָיָ֥ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 26 | הַ/מִּקְדָּ֖שׁ | ha./mik.Dash | the/ sanctuary | H4720 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | מִקְדָּשׁ (miq.dash): sanctuary |
+| 27 | בְּ/תוֹכֽ/וֹ\׃ | be./to.Kh/o | in/ [the] middle of/ it | H8432 | HR/Ncmsc/Sp3ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | תָּ֫וֶךְ (ta.vekh): midst |
+
+## Ezekiel 48:9
+
+**Original:** הַתְּרוּמָ֕ה אֲשֶׁ֥ר תָּרִ֖ימוּ לַֽיהוָ֑ה אֹ֗רֶךְ חֲמִשָּׁ֤ה וְעֶשְׂרִים֙ אֶ֔לֶף וְרֹ֖חַב עֲשֶׂ֥רֶת אֲלָפִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | הַ/תְּרוּמָ֕ה | ha./te.ru.Mah | the/ contribution | H8641 | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | תְּרוּמָה (te.ru.mah): contribution |
+| 2 | אֲשֶׁ֥ר | 'a.Sher | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 3 | תָּרִ֖ימוּ | ta.Ri.mu | you will contribute | H7311A | HVhi2mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Second Plural Masculine | רוּם (rum): to exalt |
+| 4 | לַֽ/יהוָ֑ה | la./Yah.weh | to/ Yahweh | H3068G | HR/Npt — Preposition + Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 5 | אֹ֗רֶךְ | 'O.rekh | [the] length | H753 | HNcmsc — Noun (Singular Masculine, Construct) | אֹ֫רֶךְ (o.rekh): length |
+| 6 | חֲמִשָּׁ֤ה | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 7 | וְ/עֶשְׂרִים֙ | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 8 | אֶ֔לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 9 | וְ/רֹ֖חַב | ve./Ro.chav | and/ [the] breadth | H7341 | HC/Ncmsa — Conjunction + Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 10 | עֲשֶׂ֥רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsa — Noun (Singular Feminine, Absolute) | עֶשֶׂר (e.ser): ten |
+| 11 | אֲלָפִֽים\׃ | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+
+## Ezekiel 48:10
+
+**Original:** וּ֠לְאֵ֜לֶּה תִּהְיֶ֣ה תְרֽוּמַת־ הַקֹּדֶשׁ֮ לַכֹּֽהֲנִים֒ צָפ֜וֹנָה חֲמִשָּׁ֧ה וְעֶשְׂרִ֣ים אֶ֗לֶף וְיָ֙מָּה֙ רֹ֚חַב עֲשֶׂ֣רֶת אֲלָפִ֔ים וְקָדִ֗ימָה רֹ֚חַב עֲשֶׂ֣רֶת אֲלָפִ֔ים וְנֶ֕גְבָּה אֹ֕רֶךְ חֲמִשָּׁ֥ה וְעֶשְׂרִ֖ים אָ֑לֶף וְהָיָ֥ה מִקְדַּשׁ־ יְהוָ֖ה בְּתוֹכֽוֹ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וּ֠/לְ/אֵ֜לֶּה | u./le./'E.leh | and/ to/ these | H428 | HC/R/Tm — Conjunction + Preposition + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 2 | תִּהְיֶ֣ה | tih.Yeh | it will belong | H1961 | HVqi3fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 3 | תְרֽוּמַת\־ | te.ru.mat- | [the] contribution of | H8641 | HNcfsc — Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 4 | הַ/קֹּדֶשׁ֮ | ha./ko.Desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 5 | לַ/כֹּֽהֲנִים֒ | la./ko.ha.Nim | to the/ priests | H3548 | HRd/Ncmpa — Preposition (Definite) + Noun (Plural Masculine, Absolute) | כֹּהֵן (ko.hen): priest |
+| 6 | צָפ֜וֹנָ/ה | tza.Fo.na/h | north/ -ward | H6828G | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | צָפוֹן (tsa.phon): north |
+| 7 | חֲמִשָּׁ֧ה | cha.mi.Shah | five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 8 | וְ/עֶשְׂרִ֣ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 9 | אֶ֗לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 10 | וְ/יָ֙מָּ/ה֙ | ve./Ya.ma/h | and/ west/ -ward | H3220H | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 11 | רֹ֚חַב | Ro.chav | [the] breadth | H7341 | HNcmsa — Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 12 | עֲשֶׂ֣רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsa — Noun (Singular Feminine, Absolute) | עֶשֶׂר (e.ser): ten |
+| 13 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 14 | וְ/קָדִ֗ימָ/ה | ve./ka.Di.ma/h | and/ east/ -ward | H6921 | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 15 | רֹ֚חַב | Ro.chav | [the] breadth | H7341 | HNcmsa — Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 16 | עֲשֶׂ֣רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsa — Noun (Singular Feminine, Absolute) | עֶשֶׂר (e.ser): ten |
+| 17 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 18 | וְ/נֶ֕גְבָּ/ה | ve./Neg.ba/h | and/ south/ -ward | H5045H | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | נֶ֫גֶב (ne.gev): south |
+| 19 | אֹ֕רֶךְ | 'O.rekh | [the] length | H753 | HNcmsc — Noun (Singular Masculine, Construct) | אֹ֫רֶךְ (o.rekh): length |
+| 20 | חֲמִשָּׁ֥ה | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 21 | וְ/עֶשְׂרִ֖ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 22 | אָ֑לֶף | 'A.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 23 | וְ/הָיָ֥ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 24 | מִקְדַּשׁ\־ | mik.dash- | [the] sanctuary of | H4720 | HNcmsc — Noun (Singular Masculine, Construct) | מִקְדָּשׁ (miq.dash): sanctuary |
+| 25 | יְהוָ֖ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 26 | בְּ/תוֹכֽ/וֹ\׃ | be./to.Kh/o | in/ [the] middle of/ it | H8432 | HR/Ncmsc/Sp3ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | תָּ֫וֶךְ (ta.vekh): midst |
+
+## Ezekiel 48:11
+
+**Original:** לַכֹּהֲנִ֤ים הַֽמְקֻדָּשׁ֙ מִבְּנֵ֣י צָד֔וֹק אֲשֶׁ֥ר שָׁמְר֖וּ מִשְׁמַרְתִּ֑י אֲשֶׁ֣ר לֹֽא־ תָע֗וּ בִּתְעוֹת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל כַּאֲשֶׁ֥ר תָּע֖וּ הַלְוִיִּֽם׃\ \ס
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | לַ/כֹּהֲנִ֤ים | la./ko.ha.Nim | to the/ priests | H3548 | HRd/Ncmpa — Preposition (Definite) + Noun (Plural Masculine, Absolute) | כֹּהֵן (ko.hen): priest |
+| 2 | הַֽ/מְקֻדָּשׁ֙ | ha/m.ku.Dash | the/ consecrated [one] | H6942G | HTd/VPsmsa — Definite article (Hebrew) + Verb : Pual (Intensive/resultive/transtive, Passive) Participle passive (Singular Masculine, Absolute) | קָדַשׁ (qa.dash): to consecrate: consecate |
+| 3 | מִ/בְּנֵ֣י | mi./be.Nei | from/ [the] sons of | H1121A | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | בֵּן (ben): son: child |
+| 4 | צָד֔וֹק | tza.Dok | Zadok | H6659G | HNpm — Proper Noun (Masculine individual) | צָדוֹק (tsa.doq): Zadok |
+| 5 | אֲשֶׁ֥ר | 'a.Sher | who | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 6 | שָׁמְר֖וּ | sha.me.Ru | they kept | H8104G | HVqp3cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Plural Either gender | שָׁמַר (sha.mar): to keep: obey |
+| 7 | מִשְׁמַרְתִּ֑/י | mish.mar.T/i | charge/ my | H4931 | HNcfsc/Sp1bs — Noun (Singular Feminine, Construct) + Suffix (First Singular Either gender) | מִשְׁמֶ֫רֶת (mish.me.ret): charge |
+| 8 | אֲשֶׁ֣ר | 'a.Sher | who | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 9 | לֹֽא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 10 | תָע֗וּ | ta.'U | they went astray | H8582 | HVqp3cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Plural Either gender | תָּעָה (ta.ah): to go astray |
+| 11 | בִּ/תְעוֹת֙ | bi/t.'Ot | when/ went astray | H8582 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | תָּעָה (ta.ah): to go astray |
+| 12 | בְּנֵ֣י | be.Nei | [the] people of | H1121G | HNcmpc — Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 13 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 14 | כַּ/אֲשֶׁ֥ר | ka./'a.Sher | just/ as | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 15 | תָּע֖וּ | ta.'U | they went astray | H8582 | HVqp3cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Plural Either gender | תָּעָה (ta.ah): to go astray |
+| 16 | הַ/לְוִיִּֽם\׃\ \ס | ha/l.vi.Yim | the/ Levites | H3881 | HTd/Ngmpa — Definite article (Hebrew) + Noun (Gentilic, Plural Masculine, Absolute) | לֵוִי (le.viy.yi): Levi |
+
+## Ezekiel 48:12
+
+**Original:** וְהָיְתָ֨ה לָהֶ֧ם תְּרוּמִיָּ֛ה מִתְּרוּמַ֥ת הָאָ֖רֶץ קֹ֣דֶשׁ קָדָשִׁ֑ים אֶל־ גְּב֖וּל הַלְוִיִּֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הָיְתָ֨ה | ve./ha.ye.Tah | and/ it will belong | H1961 | Hc/Vqq3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 2 | לָ/הֶ֧ם | la./Hem | to/ them | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 3 | תְּרוּמִיָּ֛ה | te.ru.mi.Yah | a contribution | H8642 | HNcfsa — Noun (Singular Feminine, Absolute) | תְּרוּמִיָּה (te.ru.miy.yah): contribution |
+| 4 | מִ/תְּרוּמַ֥ת | mi./te.ru.Mat | from/ [the] contribution of | H8641 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 5 | הָ/אָ֖רֶץ | ha./'A.retz | the/ land | H776G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 6 | קֹ֣דֶשׁ | Ko.desh | a holy place of | H6944G | HNcmsc — Noun (Singular Masculine, Construct) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 7 | קָדָשִׁ֑ים | ka.da.Shim | holy places | H6944G | HNcmpa — Noun (Plural Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 8 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 9 | גְּב֖וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 10 | הַ/לְוִיִּֽם\׃ | ha/l.vi.Yim | the/ Levites | H3881 | HTd/Ngmpa — Definite article (Hebrew) + Noun (Gentilic, Plural Masculine, Absolute) | לֵוִי (le.viy.yi): Levi |
+
+## Ezekiel 48:13
+
+**Original:** וְהַלְוִיִּ֗ם לְעֻמַּת֙ גְּב֣וּל הַכֹּהֲנִ֔ים חֲמִשָּׁ֨ה וְעֶשְׂרִ֥ים אֶ֙לֶף֙ אֹ֔רֶךְ וְרֹ֖חַב עֲשֶׂ֣רֶת אֲלָפִ֑ים כָּל־ אֹ֗רֶךְ חֲמִשָּׁ֤ה וְעֶשְׂרִים֙ אֶ֔לֶף וְרֹ֖חַב עֲשֶׂ֥רֶת אֲלָפִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הַ/לְוִיִּ֗ם | ve./ha/l.vi.Yim | and/ the/ Levites | H3881 | HC/Td/Ngmpa — Conjunction + Definite article (Hebrew) + Noun (Gentilic, Plural Masculine, Absolute) | לֵוִי (le.viy.yi): Levi |
+| 2 | לְ/עֻמַּת֙ | le./'u.Mat | <to>/ close to | H5980 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | עֻמָּה (um.mah): close |
+| 3 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 4 | הַ/כֹּהֲנִ֔ים | ha./ko.ha.Nim | the/ priests | H3548 | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | כֹּהֵן (ko.hen): priest |
+| 5 | חֲמִשָּׁ֨ה | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 6 | וְ/עֶשְׂרִ֥ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 7 | אֶ֙לֶף֙ | 'e.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 8 | אֹ֔רֶךְ | 'O.rekh | [the] length | H753 | HNcmsa — Noun (Singular Masculine, Absolute) | אֹ֫רֶךְ (o.rekh): length |
+| 9 | וְ/רֹ֖חַב | ve./Ro.chav | and/ [the] breadth | H7341 | HC/Ncmsa — Conjunction + Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 10 | עֲשֶׂ֣רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsc — Noun (Singular Feminine, Construct) | עֶשֶׂר (e.ser): ten |
+| 11 | אֲלָפִ֑ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 12 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 13 | אֹ֗רֶךְ | 'O.rekh | [the] length | H753 | HNcmsa — Noun (Singular Masculine, Absolute) | אֹ֫רֶךְ (o.rekh): length |
+| 14 | חֲמִשָּׁ֤ה | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 15 | וְ/עֶשְׂרִים֙ | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 16 | אֶ֔לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 17 | וְ/רֹ֖חַב | ve./Ro.chav | and/ [the] breadth | H7341 | HC/Ncmsa — Conjunction + Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 18 | עֲשֶׂ֥רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsc — Noun (Singular Feminine, Construct) | עֶשֶׂר (e.ser): ten |
+| 19 | אֲלָפִֽים\׃ | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+
+## Ezekiel 48:14
+
+**Original:** וְלֹא־ יִמְכְּר֣וּ מִמֶּ֗נּוּ וְלֹ֥א יָמֵ֛ר וְלֹ֥א יַעֲבִ֖יר רֵאשִׁ֣ית הָאָ֑רֶץ כִּי־ קֹ֖דֶשׁ לַיהוָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/לֹא\־ | ve./lo'- | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 2 | יִמְכְּר֣וּ | yim.ke.Ru | they will sell | H4376 | HVqi3mp — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Plural Masculine | מָכַר (ma.khar): to sell |
+| 3 | מִמֶּ֗/נּוּ | mi.Me./nu | any of/ it | H4480A | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | מִן־ (min): from |
+| 4 | וְ/לֹ֥א | ve./Lo' | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 5 | יָמֵ֛ר | ya.Mer | anyone will exchange | H4171 | HVhi3ms — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | מוּר (mur): to change |
+| 6 | וְ/לֹ֥א | ve./Lo' | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 7 | יַעֲבִ֖יר | ya.'a.vur | one will make pass over | H5674A | HVhi3ms — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | עָבַר (a.var): to pass |
+| 8 | רֵאשִׁ֣ית | re.Shit | [the] choicest of | H7225H | HNcfsc — Noun (Singular Feminine, Construct) | רֵאשִׁית (re.shit): first: best |
+| 9 | הָ/אָ֑רֶץ | ha./'A.retz | the/ land | H776G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 10 | כִּי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 11 | קֹ֖דֶשׁ | Ko.desh | [it is] a holy place | H6944G | HNcmsa — Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 12 | לַ/יהוָֽה\׃ | la./Yah.weh | to/ Yahweh | H3068G | HR/Npt — Preposition + Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+
+## Ezekiel 48:15
+
+**Original:** וַחֲמֵ֨שֶׁת אֲלָפִ֜ים הַנּוֹתָ֣ר בָּרֹ֗חַב עַל־ פְּנֵ֨י חֲמִשָּׁ֤ה וְעֶשְׂרִים֙ אֶ֔לֶף חֹֽל־ ה֣וּא לָעִ֔יר לְמוֹשָׁ֖ב וּלְמִגְרָ֑שׁ וְהָיְתָ֥ה הָעִ֖יר בְּתוֹכֽוֹ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/חֲמֵ֨שֶׁת | va./cha.Me.shet | and/ five | H2568 | HC/Acbsc — Conjunction + Acbsc | חָמֵשׁ (cha.mesh): five |
+| 2 | אֲלָפִ֜ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 3 | הַ/נּוֹתָ֣ר | ha./no.Tar | which/ remain | H3498 | HTd/VNrmsa — Definite article (Hebrew) + Verb : Niphal (Simple, Passive) Participle (Singular Masculine, Absolute) | יָתַר (ya.tar): to remain |
+| 4 | בָּ/רֹ֗חַב | ba./Ro.chav | in the/ breadth | H7341 | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | רֹ֫חַב (ro.chav): width |
+| 5 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 6 | פְּנֵ֨י | pe.Nei | [the] face of | H6440G | HNcmpc — Noun (Plural Masculine, Construct) | פָּנֶה (pa.neh): face: before |
+| 7 | חֲמִשָּׁ֤ה | cha.mi.Shah | five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 8 | וְ/עֶשְׂרִים֙ | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 9 | אֶ֔לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 10 | חֹֽל\־ | chol- | [will be] a profane area | H2455 | HAamsa — Adjective (Singular Masculine, Absolute) | חֹל (chol): common |
+| 11 | ה֣וּא | hu' | it | H1931 | HPp3ms — Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 12 | לָ/עִ֔יר | la./'Ir | for the/ city | H5892B | HRd/Ncfsa — Preposition (Definite) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 13 | לְ/מוֹשָׁ֖ב | le./mo.Shav | for/ dwelling place | H4186 | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | מוֹשָׁב (mo.shav): seat |
+| 14 | וּ/לְ/מִגְרָ֑שׁ | u./le./mig.Rash | and/ for/ open land | H4054 | HC/R/Ncmsa — Conjunction + Preposition + Noun (Singular Masculine, Absolute) | מִגְרָשׁ (mig.rash): pasture |
+| 15 | וְ/הָיְתָ֥ה | ve./ha.ye.Tah | and/ it will be | H1961 | Hc/Vqq3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 16 | הָ/עִ֖יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 17 | בְּ/תוֹכֽ/וֹ\׃ | be./to.kh/o | in/ [the] middle of/ it | H8432 | HR/Ncmsc/Sp3ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | תָּ֫וֶךְ (ta.vekh): midst |
+
+## Ezekiel 48:16
+
+**Original:** וְאֵלֶּה֮ מִדּוֹתֶיהָ֒ פְּאַ֣ת צָפ֗וֹן חֲמֵ֤שׁ מֵאוֹת֙ וְאַרְבַּ֣עַת אֲלָפִ֔ים וּפְאַת־ נֶ֕גֶב חֲמֵ֥שׁ מֵא֖וֹת וְאַרְבַּ֣עַת אֲלָפִ֑ים וּמִפְּאַ֣ת קָדִ֗ים חֲמֵ֤שׁ מֵאוֹת֙ וְאַרְבַּ֣עַת אֲלָפִ֔ים וּפְאַת־ יָ֕מָּה חֲמֵ֥שׁ מֵא֖וֹת וְאַרְבַּ֥עַת אֲלָפִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/אֵלֶּה֮ | ve./'e.Leh | and/ these | H428 | HC/Tm — Conjunction + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 2 | מִדּוֹתֶי/הָ֒ | mi.do.tei./Ha | [will be] measurements/ its | H4060A | HNcfpc/Sp3fs — Noun (Plural Feminine, Construct) + Suffix (Third Singular Feminine) | מִדָּה (mid.dah): measure |
+| 3 | פְּאַ֣ת | pe.'At | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 4 | צָפ֗וֹן | tza.Fon | [the] north | H6828G | HNcfsa — Noun (Singular Feminine, Absolute) | צָפוֹן (tsa.phon): north |
+| 5 | חֲמֵ֤שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 6 | מֵאוֹת֙ | me.'Ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 7 | וְ/אַרְבַּ֣עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 8 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 9 | וּ/פְאַת\־ | u./fe.'at- | and/ [the] side of | H6285 | HC/Ncfsc — Conjunction + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 10 | נֶ֕גֶב | Ne.gev | [the] south | H5045H | HNcmsa — Noun (Singular Masculine, Absolute) | נֶ֫גֶב (ne.gev): south |
+| 11 | חֲמֵ֥שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 13 | מֵא֖וֹת | me.'ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 14 | וְ/אַרְבַּ֣עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 15 | אֲלָפִ֑ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 16 | וּ/מִ/פְּאַ֣ת | u./mi./pe.'At | and/ from/ [the] side of | H6285 | HC/R/Ncfsc — Conjunction + Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 17 | קָדִ֗ים | ka.Dim | [the] east | H6921 | HNcmsa — Noun (Singular Masculine, Absolute) | קָדִים (qa.dim): east |
+| 18 | חֲמֵ֤שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 19 | מֵאוֹת֙ | me.'Ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 20 | וְ/אַרְבַּ֣עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 21 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 22 | וּ/פְאַת\־ | u./fe.'at- | and/ [the] side of | H6285 | HC/Ncfsc — Conjunction + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 23 | יָ֕מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 24 | חֲמֵ֥שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 25 | מֵא֖וֹת | me.'ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 26 | וְ/אַרְבַּ֥עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 27 | אֲלָפִֽים\׃ | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+
+## Ezekiel 48:17
+
+**Original:** וְהָיָ֣ה מִגְרָשׁ֮ לָעִיר֒ צָפ֙וֹנָה֙ חֲמִשִּׁ֣ים וּמָאתַ֔יִם וְנֶ֖גְבָּה חֲמִשִּׁ֣ים וּמָאתָ֑יִם וְקָדִ֙ימָה֙ חֲמִשִּׁ֣ים וּמָאתַ֔יִם וְיָ֖מָּה חֲמִשִּׁ֥ים וּמָאתָֽיִם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הָיָ֣ה | ve./ha.Yah | and/ it will belong | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | מִגְרָשׁ֮ | mig.Rash | open land | H4054 | HNcmsa — Noun (Singular Masculine, Absolute) | מִגְרָשׁ (mig.rash): pasture |
+| 3 | לָ/עִיר֒ | la./'Ir | to the/ city | H5892B | HRd/Ncfsa — Preposition (Definite) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 4 | צָפ֙וֹנָ/ה֙ | tza.Fo.na/h | north/ -ward | H6828G | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | צָפוֹן (tsa.phon): north |
+| 5 | חֲמִשִּׁ֣ים | cha.mi.Shim | fifty | H2572 | HAcmpa — Numerical Adjective (Plural Masculine, Absolute) | חֲמִשִּׁים (cha.mish.shim): fifty |
+| 6 | וּ/מָאתַ֔יִם | u./ma.Ta.yim | and/ two hundred [cubits] | H3967 | HC/Acfda — Conjunction + Acfda | מֵאָה (me.ah): hundred |
+| 7 | וְ/נֶ֖גְבָּ/ה | ve./Neg.ba/h | and/ south/ -ward | H5045H | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | נֶ֫גֶב (ne.gev): south |
+| 8 | חֲמִשִּׁ֣ים | cha.mi.Shim | fifty | H2572 | HAcmpa — Numerical Adjective (Plural Masculine, Absolute) | חֲמִשִּׁים (cha.mish.shim): fifty |
+| 9 | וּ/מָאתָ֑יִם | u./ma.Ta.yim | and/ two hundred [cubits] | H3967 | HC/Acfda — Conjunction + Acfda | מֵאָה (me.ah): hundred |
+| 10 | וְ/קָדִ֙ימָ/ה֙ | ve./ka.Di.ma/h | and/ east/ -ward | H6921 | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 11 | חֲמִשִּׁ֣ים | cha.mi.Shim | fifty | H2572 | HAcmpa — Numerical Adjective (Plural Masculine, Absolute) | חֲמִשִּׁים (cha.mish.shim): fifty |
+| 12 | וּ/מָאתַ֔יִם | u./ma.Ta.yim | and/ two hundred [cubits] | H3967 | HC/Acfda — Conjunction + Acfda | מֵאָה (me.ah): hundred |
+| 13 | וְ/יָ֖מָּ/ה | ve./Ya.ma/h | and/ west/ -ward | H3220H | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 14 | חֲמִשִּׁ֥ים | cha.mi.Shim | fifty | H2572 | HAcmpa — Numerical Adjective (Plural Masculine, Absolute) | חֲמִשִּׁים (cha.mish.shim): fifty |
+| 15 | וּ/מָאתָֽיִם\׃ | u./ma.Ta.yim | and/ two hundred [cubits] | H3967 | HC/Acfda — Conjunction + Acfda | מֵאָה (me.ah): hundred |
+
+## Ezekiel 48:18
+
+**Original:** וְהַנּוֹתָ֨ר בָּאֹ֜רֶךְ לְעֻמַּ֣ת׀ תְּרוּמַ֣ת הַקֹּ֗דֶשׁ עֲשֶׂ֨רֶת אֲלָפִ֤ים קָדִ֙ימָה֙ וַעֲשֶׂ֤רֶת אֲלָפִים֙ יָ֔מָּה וְהָיָ֕ה לְעֻמַּ֖ת תְּרוּמַ֣ת הַקֹּ֑דֶשׁ וְהָיְתָ֤ה תְבֽוּאָתוֹ֙ לְלֶ֔חֶם לְעֹבְדֵ֖י הָעִֽיר׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הַ/נּוֹתָ֨ר | ve./ha./no.Tar | and/ <the>/ [what] remains | H3498 | HC/Td/VNrmsa — Conjunction + Definite article (Hebrew) + Verb : Niphal (Simple, Passive) Participle (Singular Masculine, Absolute) | יָתַר (ya.tar): to remain |
+| 2 | בָּ/אֹ֜רֶךְ | ba./'O.rekh | in the/ length | H753 | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | אֹ֫רֶךְ (o.rekh): length |
+| 3 | לְ/עֻמַּ֣ת\׀ | le./'u.Mat | <to>/ close to | H5980 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | עֻמָּה (um.mah): close |
+| 4 | תְּרוּמַ֣ת | te.ru.Mat | [the] contribution of | H8641 | HNcfsc — Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 5 | הַ/קֹּ֗דֶשׁ | ha./Ko.desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 6 | עֲשֶׂ֨רֶת | 'a.Se.ret | [will be] ten | H6235 | HNcfsc — Noun (Singular Feminine, Construct) | עֶשֶׂר (e.ser): ten |
+| 7 | אֲלָפִ֤ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 8 | קָדִ֙ימָ/ה֙ | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 9 | וַ/עֲשֶׂ֤רֶת | va./'a.Se.ret | and/ ten | H6235 | HC/Ncfsc — Conjunction + Noun (Singular Feminine, Construct) | עֶשֶׂר (e.ser): ten |
+| 10 | אֲלָפִים֙ | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 11 | יָ֔מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 12 | וְ/הָיָ֕ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 13 | לְ/עֻמַּ֖ת | le./'u.Mat | <to>/ close to | H5980 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | עֻמָּה (um.mah): close |
+| 14 | תְּרוּמַ֣ת | te.ru.Mat | [the] contribution of | H8641 | HNcfsc — Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 15 | הַ/קֹּ֑דֶשׁ | ha./Ko.desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 16 | וְ/הָיְתָ֤ה | ve./ha.ye.Tah | and/ it will become | H1961 | Hc/Vqq3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 17 | תְבֽוּאָת/וֹ֙ | te.vu.'a.t/o | produce/ its | H8393 | HNcfsc/Sp3ms — Noun (Singular Feminine, Construct) + Suffix (Third Singular Masculine) | תְּבוּאָה (te.vu.ah): produce |
+| 18 | לְ/לֶ֔חֶם | le./Le.chem | <into>/ food | H3899G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | לֶ֫חֶם (le.chem): food |
+| 19 | לְ/עֹבְדֵ֖י | le./'oe.Dei | for/ [the] workers of | H5647I | HR/Vqrmpc — Preposition + Verb : Qal (Simple, Active) Participle (Plural Masculine, Construct) | עָבַד (a.vad): to serve: labour |
+| 20 | הָ/עִֽיר\׃ | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+
+## Ezekiel 48:19
+
+**Original:** וְהָעֹבֵ֖ד הָעִ֑יר יַעַבְד֕וּהוּ מִכֹּ֖ל שִׁבְטֵ֥י יִשְׂרָאֵֽל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הָ/עֹבֵ֖ד | ve./ha./'o.Ved | and/ the/ worker | H5647I | HC/Td/Vqrmsa — Conjunction + Definite article (Hebrew) + Verb : Qal (Simple, Active) Participle (Singular Masculine, Absolute) | עָבַד (a.vad): to serve: labour |
+| 2 | הָ/עִ֑יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 3 | יַעַבְד֕וּ/הוּ | ya.'av.Du./hu | they will serve/ it | H5647I | HVqi3mp/Sp3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Plural Masculine + Suffix (Third Singular Masculine) | עָבַד (a.vad): to serve: labour |
+| 4 | מִ/כֹּ֖ל | mi./Kol | from/ all | H3605 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 5 | שִׁבְטֵ֥י | shiv.Tei | [the] tribes of | H7626H | HNcmpc — Noun (Plural Masculine, Construct) | שֵׁ֫בֶט (she.vet): tribe |
+| 6 | יִשְׂרָאֵֽל\׃ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+
+## Ezekiel 48:20
+
+**Original:** כָּל־ הַתְּרוּמָ֗ה חֲמִשָּׁ֤ה וְעֶשְׂרִים֙ אֶ֔לֶף בַּחֲמִשָּׁ֥ה וְעֶשְׂרִ֖ים אָ֑לֶף רְבִיעִ֗ית תָּרִ֙ימוּ֙ אֶת־ תְּרוּמַ֣ת הַקֹּ֔דֶשׁ אֶל־ אֲחֻזַּ֖ת הָעִֽיר׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 2 | הַ/תְּרוּמָ֗ה | ha./te.ru.Mah | the/ contribution | H8641 | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | תְּרוּמָה (te.ru.mah): contribution |
+| 3 | חֲמִשָּׁ֤ה | cha.mi.Shah | [will be] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 4 | וְ/עֶשְׂרִים֙ | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 5 | אֶ֔לֶף | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 6 | בַּ/חֲמִשָּׁ֥ה | ba./cha.mi.Shah | by/ five | H2568 | HR/Acbsa — Preposition + Acbsa | חָמֵשׁ (cha.mesh): five |
+| 7 | וְ/עֶשְׂרִ֖ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 8 | אָ֑לֶף | 'A.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 9 | רְבִיעִ֗ית | re.vi.'It | fourth | H7243 | HAofsa — Numerical position Adjective (Singular Feminine, Absolute) | רְבִיעִי (re.vi.i): fourth |
+| 10 | תָּרִ֙ימוּ֙ | ta.Ri.mu | you will offer up | H7311A | HVhi2mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Second Plural Masculine | רוּם (rum): to exalt |
+| 11 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 12 | תְּרוּמַ֣ת | te.ru.Mat | [the] contribution of | H8641 | HNcfsc — Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 13 | הַ/קֹּ֔דֶשׁ | ha./Ko.desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 14 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 15 | אֲחֻזַּ֖ת | 'a.chu.Zat | [the] possession of | H272 | HNcfsc — Noun (Singular Feminine, Construct) | אֲחֻזָּה (a.chuz.zah): possession |
+| 16 | הָ/עִֽיר\׃ | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+
+## Ezekiel 48:21
+
+**Original:** וְהַנּוֹתָ֣ר לַנָּשִׂ֣יא מִזֶּ֣ה׀ וּמִזֶּ֣ה׀ לִתְרֽוּמַת־ הַקֹּ֣דֶשׁ וְלַאֲחֻזַּ֪ת הָעִ֟יר אֶל־ פְּנֵ֣י חֲמִשָּׁה֩ וְעֶשְׂרִ֨ים אֶ֥לֶף׀ תְּרוּמָה֮ עַד־ גְּב֣וּל קָדִימָה֒ וְיָ֗מָּה עַל־ פְּ֠נֵי חֲמִשָּׁ֨ה וְעֶשְׂרִ֥ים אֶ֙לֶף֙ עַל־ גְּב֣וּל יָ֔מָּה לְעֻמַּ֥ת חֲלָקִ֖ים לַנָּשִׂ֑יא וְהָֽיְתָה֙ תְּרוּמַ֣ת הַקֹּ֔דֶשׁ וּמִקְדַּ֥שׁ הַבַּ֖יִת בְּתוֹכֽוֹ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הַ/נּוֹתָ֣ר | ve./ha./no.Tar | and/ <the>/ [what] remains | H3498 | HC/Td/VNrmsa — Conjunction + Definite article (Hebrew) + Verb : Niphal (Simple, Passive) Participle (Singular Masculine, Absolute) | יָתַר (ya.tar): to remain |
+| 2 | לַ/נָּשִׂ֣יא | la./na.Si' | [will belong] to the/ prince | H5387A | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | נָשִׂיא (na.si): leader |
+| 3 | מִ/זֶּ֣ה\׀ | mi./Zeh | from/ this | H2088 | HR/Tm — Preposition + Demonstrative Particle | זֶה (zeh): this |
+| 4 | וּ/מִ/זֶּ֣ה\׀ | u./mi./Zeh | and/ from/ this | H2088 | HC/R/Tm — Conjunction + Preposition + Demonstrative Particle | זֶה (zeh): this |
+| 5 | לִ/תְרֽוּמַת\־ | li/t.ru.mat- | of/ [the] contribution of | H8641 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 6 | הַ/קֹּ֣דֶשׁ | ha./Ko.desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 7 | וְ/לַ/אֲחֻזַּ֪ת | ve./la./'a.chu.Zat | and/ of/ [the] possession of | H272 | HC/R/Ncfsc — Conjunction + Preposition + Noun (Singular Feminine, Construct) | אֲחֻזָּה (a.chuz.zah): possession |
+| 8 | הָ/עִ֟יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 9 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 10 | פְּנֵ֣י | pe.Nei | [the] face of | H6440G | HNcmpc — Noun (Plural Masculine, Construct) | פָּנֶה (pa.neh): face: before |
+| 11 | חֲמִשָּׁה֩ | cha.mi.Shah | [the] five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 12 | וְ/עֶשְׂרִ֨ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 13 | אֶ֥לֶף\׀ | 'E.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 14 | תְּרוּמָה֮ | te.ru.Mah | a contribution | H8641 | HNcfsa — Noun (Singular Feminine, Absolute) | תְּרוּמָה (te.ru.mah): contribution |
+| 15 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 16 | גְּב֣וּל | ge.Vul | [the] border of | H1366G | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: boundary |
+| 17 | קָדִימָ/ה֒ | ka.di.Ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 18 | וְ/יָ֗מָּ/ה | ve./Ya.ma/h | and/ west/ -ward | H3220H | HC/Ncmsa/Sd — Conjunction + Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 19 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 20 | פְּ֠נֵי | Pe.nei | [the] face of | H6440G | HNcmpc — Noun (Plural Masculine, Construct) | פָּנֶה (pa.neh): face: before |
+| 21 | חֲמִשָּׁ֨ה | cha.mi.Shah | five | H2568 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | חָמֵשׁ (cha.mesh): five |
+| 22 | וְ/עֶשְׂרִ֥ים | ve./'es.Rim | and/ twenty | H6242 | HC/Acmpa — Conjunction + Acmpa | עֶשְׂרִים (es.rim): twenty |
+| 23 | אֶ֙לֶף֙ | 'e.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 24 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 25 | גְּב֣וּל | ge.Vul | [the] border of | H1366G | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: boundary |
+| 26 | יָ֔מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 27 | לְ/עֻמַּ֥ת | le./'u.Mat | <to>/ close to | H5980 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | עֻמָּה (um.mah): close |
+| 28 | חֲלָקִ֖ים | cha.la.Kim | [the] portions | H2506A | HNcmpa — Noun (Plural Masculine, Absolute) | חֵ֫לֶק (che.leq): portion |
+| 29 | לַ/נָּשִׂ֑יא | la./na.Si' | [will belong] to the/ prince | H5387A | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | נָשִׂיא (na.si): leader |
+| 30 | וְ/הָֽיְתָה֙ | ve./ha.ye.Tah | and/ it will be | H1961 | Hc/Vqq3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Feminine | הָיָה (ha.yah): to be |
+| 31 | תְּרוּמַ֣ת | te.ru.Mat | [the] contribution of | H8641 | HNcfsc — Noun (Singular Feminine, Construct) | תְּרוּמָה (te.ru.mah): contribution |
+| 32 | הַ/קֹּ֔דֶשׁ | ha./Ko.desh | <the>/ holiness | H6944G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | קֹ֫דֶשׁ (qo.desh): holiness |
+| 33 | וּ/מִקְדַּ֥שׁ | u./mik.Dash | and/ [the] sanctuary of | H4720 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | מִקְדָּשׁ (miq.dash): sanctuary |
+| 34 | הַ/בַּ֖יִת | ha./Ba.yit | the/ house | H1004B | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: home |
+| 35 | בְּ/תוֹכֽ/וֹ\׃ | be./to.kh/o | in/ [the] middle of/ it | H8432 | HR/Ncmsc/Sp3ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | תָּ֫וֶךְ (ta.vekh): midst |
+
+## Ezekiel 48:22
+
+**Original:** וּמֵאֲחֻזַּ֤ת הַלְוִיִּם֙ וּמֵאֲחֻזַּ֣ת הָעִ֔יר בְּת֛וֹךְ אֲשֶׁ֥ר לַנָּשִׂ֖יא יִֽהְיֶ֑ה בֵּ֣ין׀ גְּב֣וּל יְהוּדָ֗ה וּבֵין֙ גְּב֣וּל בִּנְיָמִ֔ן לַנָּשִׂ֖יא יִהְיֶֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וּ/מֵ/אֲחֻזַּ֤ת | u./me./'a.chu.Zat | and/ from/ [the] possession of | H272 | HC/R/Ncfsc — Conjunction + Preposition + Noun (Singular Feminine, Construct) | אֲחֻזָּה (a.chuz.zah): possession |
+| 2 | הַ/לְוִיִּם֙ | ha/l.vi.Yim | the/ Levites | H3881 | HTd/Ngmpa — Definite article (Hebrew) + Noun (Gentilic, Plural Masculine, Absolute) | לֵוִי (le.viy.yi): Levi |
+| 3 | וּ/מֵ/אֲחֻזַּ֣ת | u./me./'a.chu.Zat | and/ from/ [the] possession of | H272 | HC/R/Ncfsc — Conjunction + Preposition + Noun (Singular Feminine, Construct) | אֲחֻזָּה (a.chuz.zah): possession |
+| 4 | הָ/עִ֔יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 5 | בְּ/ת֛וֹךְ | be./Tokh | in/ [the] middle of | H8432 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | תָּ֫וֶךְ (ta.vekh): midst |
+| 6 | אֲשֶׁ֥ר | 'a.Sher | [that] which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 7 | לַ/נָּשִׂ֖יא | la./na.Si' | to the/ prince | H5387A | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | נָשִׂיא (na.si): leader |
+| 8 | יִֽהְיֶ֑ה | yih.Yeh | it will belong | H1961 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 9 | בֵּ֣ין\׀ | bein | between | H996G | HAcmsc — Adjective (Singular Masculine, Construct) | בַּ֫יִן (ba.yin): between |
+| 10 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 11 | יְהוּדָ֗ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 12 | וּ/בֵין֙ | u./Vein | and/ between | H996G | HC/Acmsc — Conjunction + Acmsc | בַּ֫יִן (ba.yin): between |
+| 13 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 14 | בִּנְיָמִ֔ן | bin.ya.Min | Benjamin | H1144G | HNpm — Proper Noun (Masculine individual) | בִּנְיָמִין (bin.ya.min): Benjamin |
+| 15 | לַ/נָּשִׂ֖יא | la./na.Si' | to the/ prince | H5387A | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | נָשִׂיא (na.si): leader |
+| 16 | יִהְיֶֽה\׃ | yih.Yeh | it will belong | H1961 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | הָיָה (ha.yah): to be |
+
+## Ezekiel 48:23
+
+**Original:** וְיֶ֖תֶר הַשְּׁבָטִ֑ים מִפְּאַ֥ת קָדִ֛ימָה עַד־ פְּאַת־ יָ֖מָּה בִּנְיָמִ֥ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/יֶ֖תֶר | ve./Ye.ter | and/ [the] remainder of | H3499A | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | יֶ֫תֶר (ye.ter): remainder |
+| 2 | הַ/שְּׁבָטִ֑ים | ha./she.va.Tim | the/ tribes | H7626H | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | שֵׁ֫בֶט (she.vet): tribe |
+| 3 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 4 | קָדִ֛ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 5 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 6 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 7 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 8 | בִּנְיָמִ֥ן | bin.ya.Min | Benjamin | H1144G | HNpm — Proper Noun (Masculine individual) | בִּנְיָמִין (bin.ya.min): Benjamin |
+| 9 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:24
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל בִּנְיָמִ֗ן מִפְּאַ֥ת קָדִ֛ימָה עַד־ פְּאַת־ יָ֖מָּה שִׁמְע֥וֹן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | בִּנְיָמִ֗ן | bin.ya.Min | Benjamin | H1144G | HNpm — Proper Noun (Masculine individual) | בִּנְיָמִין (bin.ya.min): Benjamin |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | שִׁמְע֥וֹן | shim.'on | Simeon | H8095G | HNpm — Proper Noun (Masculine individual) | שִׁמְעוֹן (shim.on): Simeon |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:25
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל שִׁמְע֗וֹן מִפְּאַ֥ת קָדִ֛ימָה עַד־ פְּאַת־ יָ֖מָּה יִשָׂשכָ֥ר אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | שִׁמְע֗וֹן | shim.'on | Simeon | H8095G | HNpm — Proper Noun (Masculine individual) | שִׁמְעוֹן (shim.on): Simeon |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | יִשָׂשכָ֥ר | yi.so.sh.Khar | Issachar | H3485G | HNpm — Proper Noun (Masculine individual) | יִשָּׂשכָר (yis.sa.s.khar): Issachar |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:26
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל יִשָׂשכָ֗ר מִפְּאַ֥ת קָדִ֛ימָה עַד־ פְּאַת־ יָ֖מָּה זְבוּלֻ֥ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | יִשָׂשכָ֗ר | yi.so.sh.Khar | Issachar | H3485G | HNpm — Proper Noun (Masculine individual) | יִשָּׂשכָר (yis.sa.s.khar): Issachar |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | זְבוּלֻ֥ן | ze.vu.Lun | Zebulun | H2074 | HNpm — Proper Noun (Masculine individual) | זְבוּלֻן (ze.vu.lun): Zebulun |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:27
+
+**Original:** וְעַ֣ל׀ גְּב֣וּל זְבוּלֻ֗ן מִפְּאַ֥ת קָדִ֛מָה עַד־ פְּאַת־ יָ֖מָּה גָּ֥ד אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַ֣ל\׀ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | זְבוּלֻ֗ן | ze.vu.Lun | Zebulun | H2074 | HNpm — Proper Noun (Masculine individual) | זְבוּלֻן (ze.vu.lun): Zebulun |
+| 4 | מִ/פְּאַ֥ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | קָדִ֛מָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 6 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 7 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 8 | יָ֖מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 9 | גָּ֥ד | gad | Gad | H1410G | HNpm — Proper Noun (Masculine individual) | גָּד (gad): Gad |
+| 10 | אֶחָֽד\׃ | 'e.Chad | one [portion] | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:28
+
+**Original:** וְעַל֙ גְּב֣וּל גָּ֔ד אֶל־ פְּאַ֖ת נֶ֣גֶב תֵּימָ֑נָה וְהָיָ֨ה גְב֜וּל מִתָּמָ֗ר מֵ֚י מְרִיבַ֣ת קָדֵ֔שׁ נַחֲלָ֖ה עַל־ הַיָּ֥ם הַגָּדֽוֹל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַל֙ | ve./'Al | and/ at | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 2 | גְּב֣וּל | ge.Vul | [the] border of | H1366H | HNcmsc — Noun (Singular Masculine, Construct) | גְּבוּל (ge.vul): border: area |
+| 3 | גָּ֔ד | Gad | Gad | H1410G | HNpm — Proper Noun (Masculine individual) | גָּד (gad): Gad |
+| 4 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 5 | פְּאַ֖ת | pe.'At | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 6 | נֶ֣גֶב | Ne.gev | [the] south | H5045H | HNcmsa — Noun (Singular Masculine, Absolute) | נֶ֫גֶב (ne.gev): south |
+| 7 | תֵּימָ֑נָ/ה | tei.Ma.na/h | south/ -ward | H8486 | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | תֵּימָן (te.man): south |
+| 8 | וְ/הָיָ֨ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 9 | גְב֜וּל | ge.Vul | [the] border | H1366G | HNcmsa — Noun (Singular Masculine, Absolute) | גְּבוּל (ge.vul): border: boundary |
+| 10 | מִ/תָּמָ֗ר | mi./ta.Mar | from/ Tamar | H8559J | HR/Npl — Preposition + Proper Noun (Location) | תָּמָר (ta.mar): Tamar |
+| 11 | מֵ֚י | mei | [the] waters of | H4325G | HNcmpc — Noun (Plural Masculine, Construct) | מַי (ma.yim): water |
+| 12 | מְרִיבַ֣ת | me.ri.Vat | Meribath | H4809H | HNcfsc — Noun (Singular Feminine, Construct) | מְרִיבָה (me.ri.vah): Meribah |
+| 13 | קָדֵ֔שׁ | ka.Desh | Kadesh | H6946H | HNpl — Proper Noun (Location) | קָדֵשׁ (qa.desh): (Meribath)-kadesh |
+| 14 | נַחֲלָ֖ה | na.cha.Lah | [the] wadi | H5158M | HNcfsa — Noun (Singular Feminine, Absolute) | נַ֫חַל (na.chal): Brook |
+| 15 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 16 | הַ/יָּ֥ם | hai./Yam | the/ sea | H3220G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | יָם (yam): sea |
+| 17 | הַ/גָּדֽוֹל\׃ | ha./ga.Dol | <the>/ great | H1419J | HTd/Aamsa — Definite article (Hebrew) + Aamsa | גָּדוֹל (ga.dol): Great (Sea) |
+
+## Ezekiel 48:29
+
+**Original:** זֹ֥את הָאָ֛רֶץ אֲשֶׁר־ תַּפִּ֥ילוּ מִֽנַּחֲלָ֖ה לְשִׁבְטֵ֣י יִשְׂרָאֵ֑ל וְאֵ֙לֶּה֙ מַחְלְקוֹתָ֔ם נְאֻ֖ם אֲדֹנָ֥י יְהוִֽה׃\ \פ
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | זֹ֥את | zot | this | H2063 | HTm — Demonstrative Particle | זֹאת (zot): this |
+| 2 | הָ/אָ֛רֶץ | ha./'A.retz | [is] the/ land | H776G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 3 | אֲשֶׁר\־ | 'a.Sher- | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 4 | תַּפִּ֥ילוּ | ta.Pi.lu | you will make fall | H5307I | HVhi2mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Second Plural Masculine | נָפַל (na.phal): to fall: allot |
+| 5 | מִֽ/נַּחֲלָ֖ה | mi./na.cha.Lah | from/ [the] inheritance | H5159 | HR/Ncfsa — Preposition + Noun (Singular Feminine, Absolute) | נַחֲלָה (na.cha.lah): inheritance |
+| 6 | לְ/שִׁבְטֵ֣י | le./shiv.Tei | to/ [the] tribes of | H7626H | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | שֵׁ֫בֶט (she.vet): tribe |
+| 7 | יִשְׂרָאֵ֑ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 8 | וְ/אֵ֙לֶּה֙ | ve./'E.leh | and/ these | H428 | HC/Tm — Conjunction + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 9 | מַחְלְקוֹתָ֔/ם | mach.le.ko.Ta/m | [are] portions/ their | H4256 | HNcfpc/Sp3mp — Noun (Plural Feminine, Construct) + Suffix (Third Plural Masculine) | מַחֲלֹ֫קֶת (ma.cha.lo.qet): division |
+| 10 | נְאֻ֖ם | ne.'Um | [the] utterance of | H5002 | HNcmsc — Noun (Singular Masculine, Construct) | נְאֻם (ne.um): utterance |
+| 11 | אֲדֹנָ֥י | 'a.do.Nai | [the] Lord | H136 | HNpt — Proper Noun (Title) | אֲדֹנָי (a.do.nai): Lord |
+| 12 | יְהוִֽה\׃\ \פ | Yah.weh | Yahweh | H3069 | HNpt — Proper Noun (Title) | יְהֹוִה (ye.ho.vih): YHWH/God |
+
+## Ezekiel 48:30
+
+**Original:** וְאֵ֖לֶּה תּוֹצְאֹ֣ת הָעִ֑יר מִפְּאַ֣ת צָפ֔וֹן חֲמֵ֥שׁ מֵא֛וֹת וְאַרְבַּ֥עַת אֲלָפִ֖ים מִדָּֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/אֵ֖לֶּה | ve./'E.leh | and/ these | H428 | HC/Tm — Conjunction + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 2 | תּוֹצְאֹ֣ת | totz.'Ot | [will be] [the] exits of | H8444 | HNcfpc — Noun (Plural Feminine, Construct) | תּוֹצָאָה (to.tsa.ah): outgoing |
+| 3 | הָ/עִ֑יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 4 | מִ/פְּאַ֣ת | mi./pe.'At | from/ [the] side of | H6285 | HR/Ncfsc — Preposition + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 5 | צָפ֔וֹן | tza.Fon | [the] north | H6828G | HNcfsa — Noun (Singular Feminine, Absolute) | צָפוֹן (tsa.phon): north |
+| 6 | חֲמֵ֥שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 7 | מֵא֛וֹת | me.'ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 8 | וְ/אַרְבַּ֥עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 9 | אֲלָפִ֖ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 10 | מִדָּֽה\׃ | mi.Dah | [the] measurement | H4060A | HNcfsa — Noun (Singular Feminine, Absolute) | מִדָּה (mid.dah): measure |
+
+## Ezekiel 48:31
+
+**Original:** וְשַׁעֲרֵ֣י הָעִ֗יר עַל־ שְׁמוֹת֙ שִׁבְטֵ֣י יִשְׂרָאֵ֔ל שְׁעָרִ֥ים שְׁלוֹשָׁ֖ה צָפ֑וֹנָה שַׁ֣עַר רְאוּבֵ֞ן אֶחָ֗ד שַׁ֤עַר יְהוּדָה֙ אֶחָ֔ד שַׁ֥עַר לֵוִ֖י אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/שַׁעֲרֵ֣י | ve./sha.'a.Rei | and/ [the] gates of | H8179G | HC/Ncmpc — Conjunction + Noun (Plural Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 2 | הָ/עִ֗יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 3 | עַל\־ | 'al- | [will be] on | H5921A | HR — Preposition | עַל (al): upon |
+| 4 | שְׁמוֹת֙ | she.mOt | [the] names of | H8034 | HNcfpc — Noun (Plural Feminine, Construct) | שֵׁם (shem): name |
+| 5 | שִׁבְטֵ֣י | shiv.Tei | [the] tribes of | H7626H | HNcmpc — Noun (Plural Masculine, Construct) | שֵׁ֫בֶט (she.vet): tribe |
+| 6 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 7 | שְׁעָרִ֥ים | she.'a.Rim | gates | H8179G | HNcmpa — Noun (Plural Masculine, Absolute) | שַׁ֫עַר (sha.ar): gate |
+| 8 | שְׁלוֹשָׁ֖ה | she.lo.Shah | three | H7969 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | שָׁלֹשׁ (sha.losh): three |
+| 9 | צָפ֑וֹנָ/ה | tza.Fo.na/h | [will be] north/ -ward | H6828G | HNcfsa/Sd — Noun (Singular Feminine, Absolute) + Directional Suffix | צָפוֹן (tsa.phon): north |
+| 10 | שַׁ֣עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 11 | רְאוּבֵ֞ן | re.'u.Ven | Reuben | H7205 | HNpm — Proper Noun (Masculine individual) | רְאוּבֵן (re.u.ven): Reuben |
+| 12 | אֶחָ֗ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 13 | שַׁ֤עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 14 | יְהוּדָה֙ | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 15 | אֶחָ֔ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 16 | שַׁ֥עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 17 | לֵוִ֖י | le.Vi | Levi | H3881 | HNpm — Proper Noun (Masculine individual) | לֵוִי (le.viy.yi): Levi |
+| 18 | אֶחָֽד\׃ | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:32
+
+**Original:** וְאֶל־ פְּאַ֣ת קָדִ֗ימָה חֲמֵ֤שׁ מֵאוֹת֙ וְאַרְבַּ֣עַת אֲלָפִ֔ים וּשְׁעָרִ֖ים שְׁלֹשָׁ֑ה וְשַׁ֨עַר יוֹסֵ֜ף אֶחָ֗ד שַׁ֤עַר בִּנְיָמִן֙ אֶחָ֔ד שַׁ֥עַר דָּ֖ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/אֶל\־ | ve./'el- | and/ to | H413 | HC/R — Conjunction + Preposition | אֶל (el): to(wards) |
+| 2 | פְּאַ֣ת | pe.'At | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 3 | קָדִ֗ימָ/ה | ka.Di.ma/h | east/ -ward | H6921 | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | קָדִים (qa.dim): east |
+| 4 | חֲמֵ֤שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 5 | מֵאוֹת֙ | me.'Ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 6 | וְ/אַרְבַּ֣עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 7 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 8 | וּ/שְׁעָרִ֖ים | u./she.'a.Rim | and/ gates | H8179G | HC/Ncmpa — Conjunction + Noun (Plural Masculine, Absolute) | שַׁ֫עַר (sha.ar): gate |
+| 9 | שְׁלֹשָׁ֑ה | she.lo.Shah | three | H7969 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | שָׁלֹשׁ (sha.losh): three |
+| 10 | וְ/שַׁ֨עַר | ve./Sha.'ar | and/ [the] gate of | H8179G | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 11 | יוֹסֵ֜ף | yo.Sef | Joseph | H3130G | HNpm — Proper Noun (Masculine individual) | יוֹסֵף (yo.seph): Joseph |
+| 12 | אֶחָ֗ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 13 | שַׁ֤עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 14 | בִּנְיָמִן֙ | bin.ya.Min | Benjamin | H1144G | HNpm — Proper Noun (Masculine individual) | בִּנְיָמִין (bin.ya.min): Benjamin |
+| 15 | אֶחָ֔ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 16 | שַׁ֥עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 17 | דָּ֖ן | dan | Dan | H1835G | HNpl — Proper Noun (Location) | דָּן (dan): Dan |
+| 18 | אֶחָֽד\׃ | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:33
+
+**Original:** וּפְאַת־ נֶ֗גְבָּה חֲמֵ֨שׁ מֵא֜וֹת וְאַרְבַּ֤עַת אֲלָפִים֙ מִדָּ֔ה וּשְׁעָרִ֖ים שְׁלֹשָׁ֑ה שַׁ֣עַר שִׁמְע֞וֹן אֶחָ֗ד שַׁ֤עַר יִשָּׂשכָר֙ אֶחָ֔ד שַׁ֥עַר זְבוּלֻ֖ן אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וּ/פְאַת\־ | u./fe.'at- | and/ [the] side of | H6285 | HC/Ncfsc — Conjunction + Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 2 | נֶ֗גְבָּ/ה | Neg.ba/h | south/ -ward | H5045H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | נֶ֫גֶב (ne.gev): south |
+| 3 | חֲמֵ֨שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 4 | מֵא֜וֹת | me.'ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 5 | וְ/אַרְבַּ֤עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 6 | אֲלָפִים֙ | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 7 | מִדָּ֔ה | mi.Dah | [the] measurement | H4060A | HNcfsa — Noun (Singular Feminine, Absolute) | מִדָּה (mid.dah): measure |
+| 8 | וּ/שְׁעָרִ֖ים | u./she.'a.Rim | and/ gates | H8179G | HC/Ncmpa — Conjunction + Noun (Plural Masculine, Absolute) | שַׁ֫עַר (sha.ar): gate |
+| 9 | שְׁלֹשָׁ֑ה | she.lo.Shah | three | H7969 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | שָׁלֹשׁ (sha.losh): three |
+| 10 | שַׁ֣עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 11 | שִׁמְע֞וֹן | shim.'on | Simeon | H8095G | HNpm — Proper Noun (Masculine individual) | שִׁמְעוֹן (shim.on): Simeon |
+| 12 | אֶחָ֗ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 13 | שַׁ֤עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 14 | יִשָּׂשכָר֙ | yi.sa.sh.Khar | Issachar | H3485G | HNpm — Proper Noun (Masculine individual) | יִשָּׂשכָר (yis.sa.s.khar): Issachar |
+| 15 | אֶחָ֔ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 16 | שַׁ֥עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 17 | זְבוּלֻ֖ן | ze.vu.Lun | Zebulun | H2074 | HNpm — Proper Noun (Masculine individual) | זְבוּלֻן (ze.vu.lun): Zebulun |
+| 18 | אֶחָֽד\׃ | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:34
+
+**Original:** פְּאַת־ יָ֗מָּה חֲמֵ֤שׁ מֵאוֹת֙ וְאַרְבַּ֣עַת אֲלָפִ֔ים שַֽׁעֲרֵיהֶ֖ם שְׁלֹשָׁ֑ה שַׁ֣עַר גָּ֞ד אֶחָ֗ד שַׁ֤עַר אָשֵׁר֙ אֶחָ֔ד שַׁ֥עַר נַפְתָּלִ֖י אֶחָֽד׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | פְּאַת\־ | pe.'at- | [the] side of | H6285 | HNcfsc — Noun (Singular Feminine, Construct) | פֵּאָה (pe.ah): side |
+| 2 | יָ֗מָּ/ה | Ya.ma/h | west/ -ward | H3220H | HNcmsa/Sd — Noun (Singular Masculine, Absolute) + Directional Suffix | יָם (yam): sea: west |
+| 3 | חֲמֵ֤שׁ | cha.Mesh | [will be] five | H2568 | HAcbsc — Numerical Adjective (Singular Either gender, Construct) | חָמֵשׁ (cha.mesh): five |
+| 4 | מֵאוֹת֙ | me.'Ot | hundred<s> | H3967 | HAcfpa — Numerical Adjective (Plural Feminine, Absolute) | מֵאָה (me.ah): hundred |
+| 5 | וְ/אַרְבַּ֣עַת | ve./'ar.Ba.'at | and/ four | H702 | HC/Acbsc — Conjunction + Acbsc | אַרְבַּע (ar.ba): four |
+| 6 | אֲלָפִ֔ים | 'a.la.Fim | thousand [cubits] | H505G | HAcbpa — Numerical Adjective (Plural Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 7 | שַֽׁעֲרֵי/הֶ֖ם | sha.'a.rei./Hem | gates/ their | H8179G | HNcmpc/Sp3mp — Noun (Plural Masculine, Construct) + Suffix (Third Plural Masculine) | שַׁ֫עַר (sha.ar): gate |
+| 8 | שְׁלֹשָׁ֑ה | she.lo.Shah | three | H7969 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | שָׁלֹשׁ (sha.losh): three |
+| 9 | שַׁ֣עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 10 | גָּ֞ד | gad | Gad | H1410G | HNpm — Proper Noun (Masculine individual) | גָּד (gad): Gad |
+| 11 | אֶחָ֗ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 12 | שַׁ֤עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 13 | אָשֵׁר֙ | 'a.Sher | Asher | H836 | HNpm — Proper Noun (Masculine individual) | אָשֵׁר (a.sher): Asher |
+| 14 | אֶחָ֔ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 15 | שַׁ֥עַר | Sha.'ar | [the] gate of | H8179G | HNcmsc — Noun (Singular Masculine, Construct) | שַׁ֫עַר (sha.ar): gate |
+| 16 | נַפְתָּלִ֖י | naf.ta.Li | Naphtali | H5321G | HNpm — Proper Noun (Masculine individual) | נַפְתָּלִי (naph.ta.li): Naphtali |
+| 17 | אֶחָֽד\׃ | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+
+## Ezekiel 48:35
+
+**Original:** סָבִ֕יב שְׁמֹנָ֥ה עָשָׂ֖ר אָ֑לֶף וְשֵׁם־ הָעִ֥יר מִיּ֖וֹם יְהוָ֥ה׀ שָֽׁמָּה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | סָבִ֕יב | sa.Viv | [the] circuit | H5439G | HNcbsa — Noun (Singular Either gender, Absolute) | סָבִיב (sa.viv): around |
+| 2 | שְׁמֹנָ֥ה | she.mo.Nah | [will be] eight- | H8083 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | שְׁמֹנֶה (she.mo.neh): eight |
+| 3 | עָשָׂ֖ר | 'a.Sar | teen | H6240 | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | עָשָׂר (a.sar): ten |
+| 4 | אָ֑לֶף | 'A.lef | thousand [cubits] | H505G | HAcbsa — Numerical Adjective (Singular Either gender, Absolute) | אֶ֫לֶף (e.leph): thousand |
+| 5 | וְ/שֵׁם\־ | ve./shem- | and/ [the] name of | H8034 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 6 | הָ/עִ֥יר | ha./'Ir | the/ city | H5892B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | עִיר (ir): city |
+| 7 | מִ/יּ֖וֹם | mi./Yom | from/ [the] day | H3117G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | יוֹם (yom): day |
+| 8 | יְהוָ֥ה\׀ | Yah.weh | [will be] Yahweh | H3068H | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): The Lord |
+| 9 | שָֽׁמָּ/ה\׃ | Sha.ma/h | [Is] There/ <towards> | H8033H | HD/Sd — Adverb + Directional Suffix | שָׁם (sham): (Jerusalem) Is There |

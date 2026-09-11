@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_24.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 375,
+      "first": "Ezk 24:1",
+      "last": "Ezk 24:27",
+      "sha256": "0456d9c5f81832bece69527755f6f0696414ccda5fb8966c06e9982f0dc8394d",
+      "bytes": 72440,
+      "chars": 63403,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

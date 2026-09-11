@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_24.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 256,
+      "first": "Isa 24:1",
+      "last": "Isa 24:23",
+      "sha256": "108310d6f44427720ffacbc48cde0356efb4bb92a49da7bffd98b049b91a83ee",
+      "bytes": 52508,
+      "chars": 46141,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

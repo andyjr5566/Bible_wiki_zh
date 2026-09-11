@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_22.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 30,
+      "words": 468,
+      "first": "Jer 22:1",
+      "last": "Jer 22:30",
+      "sha256": "e1c958173cc77dae6a38adec50e2d0dfb77455e3ec63e58df4d07b96c69dfd2f",
+      "bytes": 86870,
+      "chars": 75836,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

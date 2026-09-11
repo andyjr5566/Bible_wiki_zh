@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 149,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_149.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 149,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 64,
+      "first": "Psa 149:1",
+      "last": "Psa 149:9",
+      "sha256": "fd221954f054291b0e6fa9a22067f7a0c380555e5c673ddaea4035e35ff5b5be",
+      "bytes": 13796,
+      "chars": 12000,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

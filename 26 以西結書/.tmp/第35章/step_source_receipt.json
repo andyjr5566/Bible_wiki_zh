@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 35,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_35.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 35,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 194,
+      "first": "Ezk 35:1",
+      "last": "Ezk 35:15",
+      "sha256": "612eecb7623afef0888ccccbc35e81319a31f966a6775a4dce144491247c69ea",
+      "bytes": 37643,
+      "chars": 32980,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

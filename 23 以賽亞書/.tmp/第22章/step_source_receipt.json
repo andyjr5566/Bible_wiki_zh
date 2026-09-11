@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 22,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_22.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 308,
+      "first": "Isa 22:1",
+      "last": "Isa 22:25",
+      "sha256": "51cba9bab0615badf75425d0ef2bff54e884b916fcd5087a4923228f4bce7036",
+      "bytes": 60882,
+      "chars": 53225,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 33,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_33.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 33,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 418,
+      "first": "Jer 33:1",
+      "last": "Jer 33:26",
+      "sha256": "aceb6b490defd91c51a1b136c5f9e51dac12026eda9c07186e93d29d1e1a530a",
+      "bytes": 78681,
+      "chars": 68622,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

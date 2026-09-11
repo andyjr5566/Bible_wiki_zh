@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 147,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_147.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 147,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 141,
+      "first": "Psa 147:1",
+      "last": "Psa 147:20",
+      "sha256": "b63432b3c20b511c68197456bdfc0a1c103985d8beb90809cfecab514bc84df4",
+      "bytes": 30284,
+      "chars": 26525,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

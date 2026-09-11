@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_3.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 411,
+      "first": "Ezk 3:1",
+      "last": "Ezk 3:27",
+      "sha256": "cca9f1725ccadbba2b9e9181635083b9e82b7f7e622ec6493c1c3d58577616d1",
+      "bytes": 79769,
+      "chars": 70069,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

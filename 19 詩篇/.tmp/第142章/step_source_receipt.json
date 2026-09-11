@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 142,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_142.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 142,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 8,
+      "words": 75,
+      "first": "Psa 142:0",
+      "last": "Psa 142:7",
+      "sha256": "13733259a6c69ad8138b4456aa9463c34baab48bac138feea9aa903d1ce62516",
+      "bytes": 15971,
+      "chars": 14018,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 7,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_7.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 492,
+      "first": "Dan 7:1",
+      "last": "Dan 7:28",
+      "sha256": "1a5a982cd16baf6af8346fb9f0fe571bb4faabebedbf20351a68ce39b2bb1141",
+      "bytes": 94294,
+      "chars": 82033,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

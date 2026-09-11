@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_20.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 208,
+      "first": "Job 20:1",
+      "last": "Job 20:29",
+      "sha256": "307211a0980a799c2c3d731c70ff07e9232939480ba34bcd042781e94a2d4f25",
+      "bytes": 45259,
+      "chars": 40011,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

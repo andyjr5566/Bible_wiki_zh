@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 28,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_28.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 28,
+      "words": 207,
+      "first": "Job 28:1",
+      "last": "Job 28:28",
+      "sha256": "0e979f6f2daf30f40f10a87603acc25e73abc6e90803ec68d7f5a738c7afc945",
+      "bytes": 42184,
+      "chars": 37051,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

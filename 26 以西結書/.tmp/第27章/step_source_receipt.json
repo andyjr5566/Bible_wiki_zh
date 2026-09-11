@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 27,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_27.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 27,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 36,
+      "words": 407,
+      "first": "Ezk 27:1",
+      "last": "Ezk 27:36",
+      "sha256": "e5d6269d1806c5ce7ca5462af5c501fceea001a8d964ebb7bd2c696abdc3232e",
+      "bytes": 81917,
+      "chars": 71275,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 28,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_28.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 381,
+      "first": "1Ch 28:1",
+      "last": "1Ch 28:21",
+      "sha256": "7e702e2cb803bbc028a16ef56919095b54af0d88b4609448aa07b2d95c9ba847",
+      "bytes": 73872,
+      "chars": 64072,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

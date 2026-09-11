@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 43,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_43.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 43,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 237,
+      "first": "Jer 43:1",
+      "last": "Jer 43:13",
+      "sha256": "72bce13717ea6d5902ae775b12222261a7f2e6a69839a308e04ce67f6d71075c",
+      "bytes": 44450,
+      "chars": 38453,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_9.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 544,
+      "first": "Est 9:1",
+      "last": "Est 9:32",
+      "sha256": "a602ab710fbed17bce31a84b77485ea8967c48de3c81f95bf5ee8e946f5ca7d8",
+      "bytes": 103370,
+      "chars": 89438,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

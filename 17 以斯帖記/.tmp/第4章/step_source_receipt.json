@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_4.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 285,
+      "first": "Est 4:1",
+      "last": "Est 4:17",
+      "sha256": "f70c2458fd253f178a66ca7923e4ce47d6cdd5c0581147d3497c9410ac5778cb",
+      "bytes": 54528,
+      "chars": 47462,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

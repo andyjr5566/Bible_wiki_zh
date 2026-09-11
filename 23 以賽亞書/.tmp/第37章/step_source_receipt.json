@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 37,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_37.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 37,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 38,
+      "words": 566,
+      "first": "Isa 37:1",
+      "last": "Isa 37:38",
+      "sha256": "f132f7a0011b9a1246589a3ed8194bf028cd5891292af928dfad1be556888d08",
+      "bytes": 109813,
+      "chars": 95493,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

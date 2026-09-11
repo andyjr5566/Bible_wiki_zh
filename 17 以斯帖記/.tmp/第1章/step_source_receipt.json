@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_1.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 371,
+      "first": "Est 1:1",
+      "last": "Est 1:22",
+      "sha256": "a86a6a8d259a7a02cf47e1daa3315abe20e5a0ace50f4c6d67589dd0ffb007cf",
+      "bytes": 70397,
+      "chars": 60753,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

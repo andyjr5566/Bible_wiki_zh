@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_12.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 262,
+      "first": "Jer 12:1",
+      "last": "Jer 12:17",
+      "sha256": "c05bfe5b674e742b0e448a69980b31dd4a361cd0e6794d0ae90fa6c3f02d0963",
+      "bytes": 51072,
+      "chars": 44792,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

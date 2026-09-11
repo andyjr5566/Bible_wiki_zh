@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 44,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_44.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 44,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 501,
+      "first": "Ezk 44:1",
+      "last": "Ezk 44:31",
+      "sha256": "c88d59d1c38f585d44de1087f4df950d8299517035a4fe71068967644de4e10e",
+      "bytes": 97237,
+      "chars": 84864,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

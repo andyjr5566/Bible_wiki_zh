@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "西番雅書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zephaniah_1.txt",
+      "book": "Zephaniah",
+      "book_code": "Zep",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 269,
+      "first": "Zep 1:1",
+      "last": "Zep 1:18",
+      "sha256": "8a8b784ab95e8088801eca2410e642bda740d1e2a63b4c4004c27b1d1ac83a6d",
+      "bytes": 50832,
+      "chars": 44250,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

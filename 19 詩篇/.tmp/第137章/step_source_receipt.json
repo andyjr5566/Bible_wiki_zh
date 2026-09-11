@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 137,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_137.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 137,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 84,
+      "first": "Psa 137:1",
+      "last": "Psa 137:9",
+      "sha256": "5791ea421c9eb1796ea9b9d1d821769053cf7a1ab0810ff87c3c1bb9134afd38",
+      "bytes": 16559,
+      "chars": 14373,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

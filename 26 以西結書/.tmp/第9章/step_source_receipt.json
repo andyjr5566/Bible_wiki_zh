@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_9.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 11,
+      "words": 198,
+      "first": "Ezk 9:1",
+      "last": "Ezk 9:11",
+      "sha256": "8e3ab9128ab97f70fd8c23df629bd64283e5e0242406afe12bb2c822830e9902",
+      "bytes": 39401,
+      "chars": 34301,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

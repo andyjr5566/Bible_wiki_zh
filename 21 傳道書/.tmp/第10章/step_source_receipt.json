@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_10.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 20,
+      "words": 196,
+      "first": "Ecc 10:1",
+      "last": "Ecc 10:20",
+      "sha256": "54a0acd0fcd6bc62406c91ea08463e81c016f53ff1430f8b9587ea98b39254b9",
+      "bytes": 39620,
+      "chars": 34701,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

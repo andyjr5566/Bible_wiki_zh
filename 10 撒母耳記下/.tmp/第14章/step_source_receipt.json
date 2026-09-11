@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_14.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 598,
+      "first": "2Sa 14:1",
+      "last": "2Sa 14:33",
+      "sha256": "e5e968730ca41c3966ec90aebb0cf3c65e1a4bc16a23391472d72024d756a1d1",
+      "bytes": 116466,
+      "chars": 102045,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

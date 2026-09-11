@@ -1,0 +1,603 @@
+# STEP Bible — 1 Chronicles 17
+
+> Source: STEP Bible / STEPBible-Data — https://github.com/STEPBible/STEPBible-Data
+> License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+> 本檔是「原文證據層」資料，不是 Commentary。
+> Lexicon 列的是詞彙可能義域；不可直接把所有字典義都當成本節語境義。
+
+## 1 Chronicles 17:1
+
+**Original:** וַיְהִ֕י כַּאֲשֶׁ֛ר יָשַׁ֥ב דָּוִ֖יד בְּבֵית֑וֹ וַיֹּ֨אמֶר דָּוִ֜יד אֶל־ נָתָ֣ן הַנָּבִ֗יא הִנֵּ֨ה אָנֹכִ֤י יוֹשֵׁב֙ בְּבֵ֣ית הָֽאֲרָזִ֔ים וַאֲר֥וֹן בְּרִית־ יְהוָ֖ה תַּ֥חַת יְרִיעֽוֹת׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יְהִ֕י | va/y.Hi | and/ it was | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | כַּ/אֲשֶׁ֛ר | ka./'a.Sher | just/ when | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 3 | יָשַׁ֥ב | ya.Shav | he dwelt | H3427 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | יָשַׁב (ya.shav): to dwell |
+| 4 | דָּוִ֖יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 5 | בְּ/בֵית֑/וֹ | be./vei.T/o | in/ house/ his | H1004B | HR/Ncmsc/Sp3ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | בַּ֫יִת (ba.yit): house: home |
+| 6 | וַ/יֹּ֨אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 7 | דָּוִ֜יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 8 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 9 | נָתָ֣ן | na.Tan | Nathan | H5416H | HNpm — Proper Noun (Masculine individual) | נָתָן (na.tan): Nathan |
+| 10 | הַ/נָּבִ֗יא | ha./na.Vi' | the/ prophet | H5030 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | נָבִיא (na.vi): prophet |
+| 11 | הִנֵּ֨ה | hi.Neh | here! | H2009 | HTj — Interjection | הִנֵּה (hin.neh): behold |
+| 12 | אָנֹכִ֤י | 'a.no.Khi | I | H595 | HPp1bs — Pronoun (First Singular Either gender) | אָֽנֹכִ֫י (a.no.khi): I |
+| 13 | יוֹשֵׁב֙ | yo.Shev | [am] dwelling | H3427 | HVqrmsa — Verb : Qal (Simple, Active) Participle (Singular Masculine, Absolute) | יָשַׁב (ya.shav): to dwell |
+| 14 | בְּ/בֵ֣ית | be./Veit | in/ [the] house of | H1004B | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: home |
+| 15 | הָֽ/אֲרָזִ֔ים | ha./'a.ra.Zim | <the>/ cedar<s> | H730 | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | אֶ֫רֶז (e.rez): cedar |
+| 16 | וַ/אֲר֥וֹן | va./'a.Ron | and/ [the] ark of | H727 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | אֲרוֹן (a.ron): ark |
+| 17 | בְּרִית\־ | be.rit- | [the] covenant of | H1285 | HNcfsc — Noun (Singular Feminine, Construct) | בְּרִית (be.rit): covenant |
+| 18 | יְהוָ֖ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 19 | תַּ֥חַת | Ta.chat | [is] under | H8478G | HNcmsc — Noun (Singular Masculine, Construct) | תַּחַת (ta.chat): underneath: under |
+| 20 | יְרִיעֽוֹת\׃ | ye.ri.'ot | tent curtains | H3407 | HNcfpa — Noun (Plural Feminine, Absolute) | יְרִיעָה (ye.ri.ah): curtain |
+
+## 1 Chronicles 17:2
+
+**Original:** וַיֹּ֤אמֶר נָתָן֙ אֶל־ דָּוִ֔יד כֹּ֛ל אֲשֶׁ֥ר בִּֽלְבָבְךָ֖ עֲשֵׂ֑ה כִּ֥י הָאֱלֹהִ֖ים עִמָּֽךְ׃\ \ס
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יֹּ֤אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 2 | נָתָן֙ | na.Tan | Nathan | H5416H | HNpm — Proper Noun (Masculine individual) | נָתָן (na.tan): Nathan |
+| 3 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 4 | דָּוִ֔יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 5 | כֹּ֛ל | kol | all | H3605 | HNcmsa — Noun (Singular Masculine, Absolute) | כֹּל (kol): all |
+| 6 | אֲשֶׁ֥ר | 'a.Sher | that | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 7 | בִּֽ/לְבָבְ/ךָ֖ | bi/l.va.ve./Kha | [is] in/ heart/ your | H3824 | HR/Ncmsc/Sp2ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | לֵבָב (le.vav): heart |
+| 8 | עֲשֵׂ֑ה | 'a.Seh | do | H6213A | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | עָשָׂה (a.sah): to make: do |
+| 9 | כִּ֥י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 10 | הָ/אֱלֹהִ֖ים | ha./'E.lo.Him | <the>/ God | H430G | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 11 | עִמָּֽ/ךְ\׃\ \ס | 'i.Ma/kh | [is] with/ you | H5973A | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | עִם (im): with |
+
+## 1 Chronicles 17:3
+
+**Original:** וַֽיְהִ֖י בַּלַּ֣יְלָה הַה֑וּא וַיְהִי֙ דְּבַר־ אֱלֹהִ֔ים אֶל־ נָתָ֖ן לֵאמֹֽר׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַֽ/יְהִ֖י | va/y.Hi | and/ it was | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | בַּ/לַּ֣יְלָה | ba./Lay.lah | in the/ night | H3915 | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | לַ֫יְלָה (lay.lah): night |
+| 3 | הַ/ה֑וּא | ha./Hu' | <the>/ that | H1931 | HTd/Pp3ms — Definite article (Hebrew) + Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 4 | וַ/יְהִי֙ | va/y.Hi | and/ it came | H1961 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 5 | דְּבַר\־ | de.var- | [the] word of | H1697G | HNcmsc — Noun (Singular Masculine, Construct) | דָּבָר (da.var): word |
+| 6 | אֱלֹהִ֔ים | 'E.lo.Him | God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 7 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 8 | נָתָ֖ן | na.Tan | Nathan | H5416H | HNpm — Proper Noun (Masculine individual) | נָתָן (na.tan): Nathan |
+| 9 | לֵ/אמֹֽר\׃ | le./Mor | <to>/ saying | H559 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | אָמַר (a.mar): to say |
+
+## 1 Chronicles 17:4
+
+**Original:** לֵ֤ךְ וְאָמַרְתָּ֙ אֶל־ דָּוִ֣יד עַבְדִּ֔י כֹּ֖ה אָמַ֣ר יְהוָ֑ה לֹ֥א אַתָּ֛ה תִּבְנֶה־ לִּ֥י הַבַּ֖יִת לָשָֽׁבֶת׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | לֵ֤ךְ | lekh | go | H1980G | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 2 | וְ/אָמַרְתָּ֙ | ve./'a.mar.Ta | and/ you will say | H559 | Hc/Vqq2ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Second Singular Masculine | אָמַר (a.mar): to say |
+| 3 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 4 | דָּוִ֣יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 5 | עַבְדִּ֔/י | 'av.D/i | servant/ my | H5650 | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עֶ֫בֶד (e.ved): servant/slave |
+| 6 | כֹּ֖ה | koh | thus | H3541 | HD — Adverb | כֹּה (koh): thus |
+| 7 | אָמַ֣ר | 'a.Mar | he says | H559 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 8 | יְהוָ֑ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 9 | לֹ֥א | lo' | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 10 | אַתָּ֛ה | 'a.Tah | you | H859A | HPp2ms — Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 11 | תִּבְנֶה\־ | tiv.neh- | you will build | H1129 | HVqi2ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Singular Masculine | בָּנָה (ba.nah): to build |
+| 12 | לִּ֥/י | l/i | for/ me | H9005 | HR/Sp1bs — Preposition + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 13 | הַ/בַּ֖יִת | ha./Ba.yit | the/ house | H1004B | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: home |
+| 14 | לָ/שָֽׁבֶת\׃ | la./Sha.vet | to/ dwell in | H3427 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | יָשַׁב (ya.shav): to dwell |
+
+## 1 Chronicles 17:5
+
+**Original:** כִּ֣י לֹ֤א יָשַׁ֙בְתִּי֙ בְּבַ֔יִת מִן־ הַיּ֗וֹם אֲשֶׁ֤ר הֶעֱלֵ֙יתִי֙ אֶת־ יִשְׂרָאֵ֔ל עַ֖ד הַיּ֣וֹם הַזֶּ֑ה וָֽאֶהְיֶ֛ה מֵאֹ֥הֶל אֶל־ אֹ֖הֶל וּמִמִּשְׁכָּֽן׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | כִּ֣י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 2 | לֹ֤א | lo' | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 3 | יָשַׁ֙בְתִּי֙ | ya.Shav.ti | I have dwelt | H3427 | HVqp1cs — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender | יָשַׁב (ya.shav): to dwell |
+| 4 | בְּ/בַ֔יִת | be./Va.yit | in/ a house | H1004Q | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: temple |
+| 5 | מִן\־ | min- | since | H4480A | HR — Preposition | from |
+| 6 | הַ/יּ֗וֹם | hai./Yom | the/ day | H3117L | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | יוֹם (yom): day: today |
+| 7 | אֲשֶׁ֤ר | 'a.Sher | when | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 8 | הֶעֱלֵ֙יתִי֙ | he.'e.Lei.ti | I brought up | H5927H | HVhp1cs — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) First Singular Either gender | עָלָה (a.lah): to ascend: establish |
+| 9 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 10 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 11 | עַ֖ד | 'ad | until | H5704 | HR — Preposition | עַד (ad): till |
+| 12 | הַ/יּ֣וֹם | hai./Yom | the/ day | H3117L | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | יוֹם (yom): day: today |
+| 13 | הַ/זֶּ֑ה | ha./Zeh | <the>/ this | H2088 | HTd/Tm — Definite article (Hebrew) + Demonstrative Particle | זֶה (zeh): this |
+| 14 | וָֽ/אֶהְיֶ֛ה | va./'eh.Yeh | and/ I have been | H1961 | Hc/Vqw1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) First Singular Either gender | הָיָה (ha.yah): to be |
+| 15 | מֵ/אֹ֥הֶל | me./'O.hel | from/ tent | H168G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | אֹ֫הֶל (o.hel): tent |
+| 16 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 17 | אֹ֖הֶל | 'O.hel | tent | H168G | HNcmsa — Noun (Singular Masculine, Absolute) | אֹ֫הֶל (o.hel): tent |
+| 18 | וּ/מִ/מִּשְׁכָּֽן\׃ | u./mi./mish.Kan | and/ from/ tabernacle | H4908 | HC/R/Ncmsa — Conjunction + Preposition + Noun (Singular Masculine, Absolute) | מִשְׁכָּן (mish.kan): tabernacle |
+
+## 1 Chronicles 17:6
+
+**Original:** בְּכֹ֥ל אֲשֶֽׁר־ הִתְהַלַּכְתִּי֮ בְּכָל־ יִשְׂרָאֵל֒ הֲדָבָ֣ר דִּבַּ֗רְתִּי אֶת־ אַחַד֙ שֹׁפְטֵ֣י יִשְׂרָאֵ֔ל אֲשֶׁ֥ר צִוִּ֛יתִי לִרְע֥וֹת אֶת־ עַמִּ֖י לֵאמֹ֑ר לָ֛מָּה לֹא־ בְנִיתֶ֥ם לִ֖י בֵּ֥ית אֲרָזִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | בְּ/כֹ֥ל | be./Khol | in/ every | H3605 | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | כֹּל (kol): all |
+| 2 | אֲשֶֽׁר\־ | 'a.Sher- | where | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 3 | הִתְהַלַּכְתִּי֮ | hit.ha.lakh.Ti | I went about | H1980I | HVtp1cs — Verb : Hithpael (Intensive/resultive/transtive, Reflexive/iterative) Perfect (Past/present Indicative) First Singular Either gender | הָלַךְ (ha.lakh): to go: walk |
+| 4 | בְּ/כָל\־ | be./khol | in/ all | H3605 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 5 | יִשְׂרָאֵל֒ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 6 | הֲ/דָבָ֣ר | ha./da.Var | ¿/ a word | H1697G | HTi/Ncmsa — Interrogative Particle + Noun (Singular Masculine, Absolute) | דָּבָר (da.var): word |
+| 7 | דִּבַּ֗רְתִּי | di.Bar.ti | did I speak | H1696G | HVpp1cs — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) First Singular Either gender | דָבַר (da.var): to speak: speak |
+| 8 | אֶת\־ | 'et- | with | H854 | HR — Preposition | אֵת (et): with |
+| 9 | אַחַד֙ | 'a.Chad | one of | H259 | HNcfsc — Noun (Singular Feminine, Construct) | אֶחָד (e.chad): one |
+| 10 | שֹׁפְטֵ֣י | sho.fe.Tei | [the] judges of | H8199 | HVqrmpc — Verb : Qal (Simple, Active) Participle (Plural Masculine, Construct) | שָׁפַט (sha.phat): to judge |
+| 11 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 12 | אֲשֶׁ֥ר | 'a.Sher | whom | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 13 | צִוִּ֛יתִי | tzi.Vi.ti | I commanded | H6680 | HVpp1cs — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) First Singular Either gender | צָוָה (tsa.vah): to command |
+| 14 | לִ/רְע֥וֹת | li/r.'ot | to/ shepherd | H7462B | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | רָעָה (ra.ah): to pasture |
+| 15 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 16 | עַמִּ֖/י | 'a.M/i | people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 17 | לֵ/אמֹ֑ר | le./Mor | <to>/ saying | H559 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | אָמַר (a.mar): to say |
+| 18 | לָ֛/מָּה | La./mah | <to>/ why? | H4100 | HR/Pi — Preposition + Interrogative Pronoun | מָה (mah): what? |
+| 19 | לֹא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 20 | בְנִיתֶ֥ם | ve.ni.Tem | have you built | H1129 | HVqp2mp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Plural Masculine | בָּנָה (ba.nah): to build |
+| 21 | לִ֖/י | l/i | for/ me | H9005 | HR/Sp1bs — Preposition + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 22 | בֵּ֥ית | beit | a house of | H1004B | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: home |
+| 23 | אֲרָזִֽים\׃ | 'a.ra.Zim | cedar<s> | H730 | HNcmpa — Noun (Plural Masculine, Absolute) | אֶ֫רֶז (e.rez): cedar |
+
+## 1 Chronicles 17:7
+
+**Original:** וְ֠עַתָּה כֹּֽה־ תֹאמַ֞ר לְעַבְדִּ֣י לְדָוִ֗יד\ \ס כֹּ֤ה אָמַר֙ יְהוָ֣ה צְבָא֔וֹת אֲנִ֤י לְקַחְתִּ֙יךָ֙ מִן־ הַנָּוֶ֔ה מִֽן־ אַחֲרֵ֖י הַצֹּ֑אן לִהְי֣וֹת נָגִ֔יד עַ֖ל עַמִּ֥י יִשְׂרָאֵֽל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ֠/עַתָּה | Ve./'a.tah | and/ therefore | H6258 | HC/D — Conjunction + Adverb | עַתָּ֫ה (at.tah): now |
+| 2 | כֹּֽה\־ | koh- | thus | H3541 | HD — Adverb | כֹּה (koh): thus |
+| 3 | תֹאמַ֞ר | to.Mar | you will say | H559 | HVqi2ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Second Singular Masculine | אָמַר (a.mar): to say |
+| 4 | לְ/עַבְדִּ֣/י | le./'av.D/i | to/ servant/ my | H5650 | HR/Ncmsc/Sp1bs — Preposition + Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עֶ֫בֶד (e.ved): servant/slave |
+| 5 | לְ/דָוִ֗יד\ \ס | le./da.Vid | to/ David | H1732 | HR/Npm — Preposition + Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 6 | כֹּ֤ה | koh | thus | H3541 | HD — Adverb | כֹּה (koh): thus |
+| 7 | אָמַר֙ | 'a.Mar | he says | H559 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 8 | יְהוָ֣ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 9 | צְבָא֔וֹת | tze.va.'ot | of hosts | H6635B | HNcfpa — Noun (Plural Feminine, Absolute) | צָבָא (tsa.va): Hosts |
+| 10 | אֲנִ֤י | 'a.Ni | I | H589 | HPp1bs — Pronoun (First Singular Either gender) | אֲנִי (a.ni): I |
+| 11 | לְקַחְתִּ֙י/ךָ֙ | le.kach.Ti./kha | I took/ you | H3947G | HVqp1cs/Sp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Singular Either gender + Suffix (Second Singular Masculine) | לָקַח (la.qach): to take: take |
+| 12 | מִן\־ | min- | from | H4480A | HR — Preposition | from |
+| 13 | הַ/נָּוֶ֔ה | ha./na.Veh | the/ pasture | H5116A | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | נָוֶה (na.veh): pasture |
+| 14 | מִֽן\־ | min- | from | H4480A | HR — Preposition | מִן־ (min): from |
+| 15 | אַחֲרֵ֖י | 'a.cha.Rei | after | H310A | HAcmpc — Numerical Adjective (Plural Masculine, Construct) | אַחַר (a.char): after |
+| 16 | הַ/צֹּ֑אן | ha./Tzon | the/ flock | H6629G | HTd/Ncbsa — Definite article (Hebrew) + Noun (Singular Either gender, Absolute) | צֹאן (tson): flock |
+| 17 | לִ/הְי֣וֹת | li/h.Yot | to/ be | H1961 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | הָיָה (ha.yah): to be |
+| 18 | נָגִ֔יד | na.Gid | ruler | H5057 | HNcmsa — Noun (Singular Masculine, Absolute) | נָגִיד (na.gid): leader |
+| 19 | עַ֖ל | 'al | over | H5921A | HR — Preposition | עַל (al): upon |
+| 20 | עַמִּ֥/י | 'a.M/i | people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 21 | יִשְׂרָאֵֽל\׃ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+
+## 1 Chronicles 17:8
+
+**Original:** וָֽאֶהְיֶ֣ה עִמְּךָ֗ בְּכֹל֙ אֲשֶׁ֣ר הָלַ֔כְתָּ וָאַכְרִ֥ית אֶת־ כָּל־ אוֹיְבֶ֖יךָ מִפָּנֶ֑יךָ וְעָשִׂ֤יתִֽי לְךָ֙ שֵׁ֔ם כְּשֵׁ֥ם הַגְּדוֹלִ֖ים אֲשֶׁ֥ר בָּאָֽרֶץ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וָֽ/אֶהְיֶ֣ה | va./'eh.Yeh | and/ I was | H1961 | Hc/Vqw1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) First Singular Either gender | הָיָה (ha.yah): to be |
+| 2 | עִמְּ/ךָ֗ | 'i.me./Kha | with/ you | H5973A | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | עִם (im): with |
+| 3 | בְּ/כֹל֙ | be./Khol | in/ every | H3605 | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | כֹּל (kol): all |
+| 4 | אֲשֶׁ֣ר | 'a.Sher | where | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 5 | הָלַ֔כְתָּ | ha.Lakh.ta | you went | H1980G | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 6 | וָ/אַכְרִ֥ית | va./'akh.Rit | and/ I cut off | H3772I | Hc/Vhw1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Imperfect (Past/present Indicative) First Singular Either gender | כָּרַת (ka.rat): to cut: eliminate |
+| 7 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 8 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 9 | אוֹיְבֶ֖י/ךָ | 'oy.Vei./kha | enemies/ your | H341 | HVqrmpc/Sp2ms — Verb : Qal (Simple, Active) Participle (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | אֹיֵב (o.yev): enemy |
+| 10 | מִ/פָּנֶ֑י/ךָ | mi./pa.Nei./kha | from/ before/ you | H6440G | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | פָּנֶה (pa.neh): face: before |
+| 11 | וְ/עָשִׂ֤יתִֽי | ve./'a.Si.ti | and/ I will make | H6213H | Hc/Vqq1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | עָשָׂה (a.sah): to make |
+| 12 | לְ/ךָ֙ | le./Kha | for/ you | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 13 | שֵׁ֔ם | Shem | a name | H8034 | HNcmsa — Noun (Singular Masculine, Absolute) | שֵׁם (shem): name |
+| 14 | כְּ/שֵׁ֥ם | ke./Shem | like/ [the] name of | H8034 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | שֵׁם (shem): name |
+| 15 | הַ/גְּדוֹלִ֖ים | ha./ge.do.Lim | the/ great [people] | H1419A | HTd/Aampa — Definite article (Hebrew) + Aampa | גָּדוֹל (ga.dol): great: large |
+| 16 | אֲשֶׁ֥ר | 'a.Sher | who | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 17 | בָּ/אָֽרֶץ\׃ | ba./'A.retz | [are] on the/ earth | H776G | HRd/Ncfsa — Preposition (Definite) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+
+## 1 Chronicles 17:9
+
+**Original:** וְשַׂמְתִּ֣י מָ֠קוֹם לְעַמִּ֨י יִשְׂרָאֵ֤ל וּנְטַעְתִּ֙יהוּ֙ וְשָׁכַ֣ן תַּחְתָּ֔יו וְלֹ֥א יִרְגַּ֖ז ע֑וֹד וְלֹא־ יוֹסִ֤יפוּ בְנֵי־ עַוְלָה֙ לְבַלֹּת֔וֹ כַּאֲשֶׁ֖ר בָּרִאשׁוֹנָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/שַׂמְתִּ֣י | ve./sam.Ti | and/ I will establish | H7760L | Hc/Vqq1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | שׂוּם (sum): to set: appoint |
+| 2 | מָ֠קוֹם | Ma.kom | a place | H4725 | HNcmsa — Noun (Singular Masculine, Absolute) | מָקוֹם (ma.qom): place |
+| 3 | לְ/עַמִּ֨/י | le./'a.M/i | for/ people/ my | H5971A | HR/Ncmsc/Sp1bs — Preposition + Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 4 | יִשְׂרָאֵ֤ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 5 | וּ/נְטַעְתִּ֙י/הוּ֙ | u./ne.ta'.Ti./hu | and/ I will plant/ it | H5193 | Hc/Vqq1cs/Sp3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender + Suffix (Third Singular Masculine) | נָטַע (na.ta): to plant |
+| 6 | וְ/שָׁכַ֣ן | ve./sha.Khan | and/ it will dwell | H7931 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | שָׁכַן (sha.khan): to dwell |
+| 7 | תַּחְתָּ֔י/ו | tach.Ta/v | in place/ its | H8478I | HNcmpc/Sp3ms — Noun (Plural Masculine, Construct) + Suffix (Third Singular Masculine) | תַּחַת (ta.chat): underneath: stand |
+| 8 | וְ/לֹ֥א | ve./Lo' | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 9 | יִרְגַּ֖ז | yir.Gaz | it will be agitated | H7264 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | רָגַז (ra.gaz): to tremble |
+| 10 | ע֑וֹד | od | again | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 11 | וְ/לֹא\־ | ve./lo'- | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 12 | יוֹסִ֤יפוּ | yo.Si.fu | they will repeat | H3254G | HVhi3mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Plural Masculine | יָסַף (ya.saph): to add: again |
+| 13 | בְנֵי\־ | ve.nei- | [the] sons of | H1121G | HNcmpc — Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 14 | עַוְלָה֙ | 'av.Lah | injustice | H5766B | HNcfsa — Noun (Singular Feminine, Absolute) | עַוְלָה (av.lah): injustice |
+| 15 | לְ/בַלֹּת֔/וֹ | le./va.lo.T/o | to/ consume/ it | H1086 | HR/Vpcc/Sp3ms — Preposition + Verb : Piel (Intensive/resultive/transtive, Active) Infinitive Construct + Suffix (Third Singular Masculine) | בָּלָה (ba.lah): to become old |
+| 16 | כַּ/אֲשֶׁ֖ר | ka./'a.Sher | just/ as | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 17 | בָּ/רִאשׁוֹנָֽה\׃ | ba./ri.sho.Nah | at the/ former [time] | H7223H | HRd/Aofsa — Preposition (Definite) + Aofsa | רִאשׁוֹן (ri.shon): first: previous |
+
+## 1 Chronicles 17:10
+
+**Original:** וּלְמִיָּמִ֗ים אֲשֶׁ֨ר צִוִּ֤יתִי שֹֽׁפְטִים֙ עַל־ עַמִּ֣י יִשְׂרָאֵ֔ל וְהִכְנַ֖עְתִּי אֶת־ כָּל־ אוֹיְבֶ֑יךָ וָאַגִּ֣ד לָ֔ךְ וּבַ֖יִת יִֽבְנֶה־ לְּךָ֥ יְהוָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וּ/לְ/מִ/יָּמִ֗ים | u./le./mi./ya.Mim | and/ <to>/ from/ days | H3117G | HC/R/R/Ncmpa — Conjunction + Preposition + Preposition + Noun (Plural Masculine, Absolute) | יוֹם (yom): day |
+| 2 | אֲשֶׁ֨ר | 'a.Sher | when | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 3 | צִוִּ֤יתִי | tzi.Vi.ti | I appointed | H6680 | HVpp1cs — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) First Singular Either gender | צָוָה (tsa.vah): to command |
+| 4 | שֹֽׁפְטִים֙ | sho.fe.Tim | judges | H8199 | HVqrmpa — Verb : Qal (Simple, Active) Participle (Plural Masculine, Absolute) | שָׁפַט (sha.phat): to judge |
+| 5 | עַל\־ | 'al- | over | H5921A | HR — Preposition | עַל (al): upon |
+| 6 | עַמִּ֣/י | 'a.M/i | people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 7 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 8 | וְ/הִכְנַ֖עְתִּי | ve./hikh.Na'.ti | and/ I will subdue | H3665 | Hc/Vhq1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | כָּנַע (ka.na): be humble |
+| 9 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 10 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 11 | אוֹיְבֶ֑י/ךָ | 'oy.Vei./kha | enemies/ your | H341 | HVqrmpc/Sp2ms — Verb : Qal (Simple, Active) Participle (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | אֹיֵב (o.yev): enemy |
+| 12 | וָ/אַגִּ֣ד | va./'a.Gid | and/ I have told | H5046 | Hc/Vhw1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Imperfect (Past/present Indicative) First Singular Either gender | נָגַד (na.gad): to tell |
+| 13 | לָ֔/ךְ | La/kh | to/ you | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 14 | וּ/בַ֖יִת | u./Va.yit | and/ a house | H1004B | HC/Ncmsa — Conjunction + Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: home |
+| 15 | יִֽבְנֶה\־ | yiv.neh- | he will build | H1129 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | בָּנָה (ba.nah): to build |
+| 16 | לְּ/ךָ֥ | le./Kha | for/ you | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 17 | יְהוָֽה\׃ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+
+## 1 Chronicles 17:11
+
+**Original:** וְהָיָ֗ה כִּֽי־ מָלְא֤וּ יָמֶ֙יךָ֙ לָלֶ֣כֶת עִם־ אֲבֹתֶ֔יךָ וַהֲקִֽימוֹתִ֤י אֶֽת־ זַרְעֲךָ֙ אַחֲרֶ֔יךָ אֲשֶׁ֥ר יִהְיֶ֖ה מִבָּנֶ֑יךָ וַהֲכִינוֹתִ֖י אֶת־ מַלְכוּתֽוֹ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הָיָ֗ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | כִּֽי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 3 | מָלְא֤וּ | mal.'U | they have been completed | H4390 | HVqp3cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Plural Either gender | מָלֵא (ma.le): to fill |
+| 4 | יָמֶ֙י/ךָ֙ | ya.Mei./kha | days/ your | H3117G | HNcmpc/Sp2ms — Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | יוֹם (yom): day |
+| 5 | לָ/לֶ֣כֶת | la./Le.khet | to/ go | H1980I | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | הָלַךְ (ha.lakh): to go: walk |
+| 6 | עִם\־ | 'im- | with | H5973A | HR — Preposition | עִם (im): with |
+| 7 | אֲבֹתֶ֔י/ךָ | 'a.vo.Tei./kha | ancestors/ your | H1G | HNcfpc/Sp2ms — Noun (Plural Feminine, Construct) + Suffix (Second Singular Masculine) | אָב (av): father |
+| 8 | וַ/הֲקִֽימוֹתִ֤י | va./ha.ki.mo.Ti | and/ I will raise up | H6965I | Hc/Vhq1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | קוּם (qum): to arise: establish |
+| 9 | אֶֽת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 10 | זַרְעֲ/ךָ֙ | zar.'a./Kha | offspring/ your | H2233H | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | זֶ֫רַע (ze.ra): seed: children |
+| 11 | אַחֲרֶ֔י/ךָ | 'a.cha.Rei./kha | after/ you | H310A | HAcmpc/Sp2ms — Numerical Adjective (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | אַחַר (a.char): after |
+| 12 | אֲשֶׁ֥ר | 'a.Sher | who | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 13 | יִהְיֶ֖ה | yih.Yeh | he will be | H1961 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 14 | מִ/בָּנֶ֑י/ךָ | mi./ba.Nei./kha | one of/ descendants/ your | H1121A | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | בֵּן (ben): son: child |
+| 15 | וַ/הֲכִינוֹתִ֖י | va./ha.khi.no.Ti | and/ I will establish | H3559H | Hc/Vhq1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | כּוּן (kun): to establish: establish |
+| 16 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 17 | מַלְכוּתֽ/וֹ\׃ | mal.khu.T/o | kingdom/ his | H4438 | HNcfsc/Sp3ms — Noun (Singular Feminine, Construct) + Suffix (Third Singular Masculine) | מַלְכוּת (mal.khut): royalty |
+
+## 1 Chronicles 17:12
+
+**Original:** ה֥וּא יִבְנֶה־ לִּ֖י בָּ֑יִת וְכֹנַנְתִּ֥י אֶת־ כִּסְא֖וֹ עַד־ עוֹלָֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | ה֥וּא | hu' | he | H1931 | HPp3ms — Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 2 | יִבְנֶה\־ | yiv.neh- | he will build | H1129 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | בָּנָה (ba.nah): to build |
+| 3 | לִּ֖/י | l/i | for/ me | H9005 | HR/Sp1bs — Preposition + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 4 | בָּ֑יִת | Ba.yit | a house | H1004B | HNcmsa — Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: home |
+| 5 | וְ/כֹנַנְתִּ֥י | ve./kho.nan.Ti | and/ I will establish | H3559H | Hc/Vpq1cs — Consecutive Conjunction + Verb : Piel (Intensive/resultive/transtive, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | כּוּן (kun): to establish: establish |
+| 6 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 7 | כִּסְא֖/וֹ | kis.'/O | throne/ his | H3678G | HNcmsc/Sp3ms — Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | כִּסֵּא (kis.se): throne |
+| 8 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 9 | עוֹלָֽם\׃ | o.Lam | perpetuity | H5769G | HNcmsa — Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+
+## 1 Chronicles 17:13
+
+**Original:** אֲנִי֙ אֶֽהְיֶה־ לּ֣וֹ לְאָ֔ב וְה֖וּא יִֽהְיֶה־ לִּ֣י לְבֵ֑ן וְחַסְדִּי֙ לֹא־ אָסִ֣יר מֵֽעִמּ֔וֹ כַּאֲשֶׁ֣ר הֲסִיר֔וֹתִי מֵאֲשֶׁ֥ר הָיָ֖ה לְפָנֶֽיךָ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | אֲנִי֙ | 'a.Ni | I | H589 | HPp1bs — Pronoun (First Singular Either gender) | אֲנִי (a.ni): I |
+| 2 | אֶֽהְיֶה\־ | 'eh.yeh- | I will become | H1961 | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | הָיָה (ha.yah): to be |
+| 3 | לּ֣/וֹ | l/o | of/ him | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 4 | לְ/אָ֔ב | le./'Av | <into>/ a father | H1G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | אָב (av): father |
+| 5 | וְ/ה֖וּא | ve./Hu' | and/ he | H1931 | HC/Pp3ms — Conjunction + Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 6 | יִֽהְיֶה\־ | yih.yeh- | he will become | H1961 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 7 | לִּ֣/י | l/i | of/ me | H9005 | HR/Sp1bs — Preposition + Suffix (First Singular Either gender) | /ל (l): to/for |
+| 8 | לְ/בֵ֑ן | le./Ven | <into>/ a son | H1121A | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | בֵּן (ben): son: child |
+| 9 | וְ/חַסְדִּ/י֙ | ve./chas.D/i | and/ covenant loyalty/ my | H2617A | HC/Ncmsc/Sp1bs — Conjunction + Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | חֶ֫סֶד (che.sed): kindness |
+| 10 | לֹא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 11 | אָסִ֣יר | 'a.Sir | I will remove | H5493G | HVhi1cs — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | סוּר (sur): to turn aside: remove |
+| 12 | מֵֽ/עִמּ֔/וֹ | me./'i.M/o | from/ with <the>/ him | H5973B | HR/Rd/Sp3ms — Preposition + Preposition (Definite) + Suffix (Third Singular Masculine) | מֵעִם (me.im): from with |
+| 13 | כַּ/אֲשֶׁ֣ר | ka./'a.Sher | just/ as | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 14 | הֲסִיר֔וֹתִי | ha.si.Ro.ti | I removed [it] | H5493G | HVhp1cs — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) First Singular Either gender | סוּר (sur): to turn aside: remove |
+| 15 | מֵ/אֲשֶׁ֥ר | me./'a.Sher | from/ [the one] who | H834C | HR/Tr — Preposition + Relative Particle | מֵאֲשֶׁר (me.a.sher): whence |
+| 16 | הָיָ֖ה | ha.Yah | he was | H1961 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 17 | לְ/פָנֶֽי/ךָ\׃ | le./fa.Nei./kha | <to>/ before/ you | H6440G | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | פָּנֶה (pa.neh): face: before |
+
+## 1 Chronicles 17:14
+
+**Original:** וְהַֽעֲמַדְתִּ֛יהוּ בְּבֵיתִ֥י וּבְמַלְכוּתִ֖י עַד־ הָעוֹלָ֑ם וְכִסְא֕וֹ יִהְיֶ֥ה נָכ֖וֹן עַד־ עוֹלָֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הַֽעֲמַדְתִּ֛י/הוּ | ve./ha.'a.mad.Ti./hu | and/ I will appoint/ him | H5975H | Hc/Vhq1cs/Sp3ms — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender + Suffix (Third Singular Masculine) | עָמַד (a.mad): to stand: appoint |
+| 2 | בְּ/בֵיתִ֥/י | be./vei.T/i | in/ house/ my | H1004Q | HR/Ncmsc/Sp1bs — Preposition + Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | בַּ֫יִת (ba.yit): house: temple |
+| 3 | וּ/בְ/מַלְכוּתִ֖/י | u./ve./mal.khu.T/i | and/ in/ kingdom/ my | H4438 | HC/R/Ncfsc/Sp1bs — Conjunction + Preposition + Noun (Singular Feminine, Construct) + Suffix (First Singular Either gender) | מַלְכוּת (mal.khut): royalty |
+| 4 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 5 | הָ/עוֹלָ֑ם | ha./'o.Lam | <the>/ perpetuity | H5769G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+| 6 | וְ/כִסְא֕/וֹ | ve./khis.'/O | and/ throne/ his | H3678G | HC/Ncmsc/Sp3ms — Conjunction + Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | כִּסֵּא (kis.se): throne |
+| 7 | יִהְיֶ֥ה | yih.Yeh | it will be | H1961 | HVqi3ms — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 8 | נָכ֖וֹן | na.Khon | established | H3559H | HVNrmsa — Verb : Niphal (Simple, Passive) Participle (Singular Masculine, Absolute) | כּוּן (kun): to establish: establish |
+| 9 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 10 | עוֹלָֽם\׃ | o.Lam | perpetuity | H5769G | HNcmsa — Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+
+## 1 Chronicles 17:15
+
+**Original:** כְּכֹל֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וּכְכֹ֖ל הֶחָז֣וֹן הַזֶּ֑ה כֵּ֛ן דִּבֶּ֥ר נָתָ֖ן אֶל־ דָּוִֽיד׃\ \פ
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | כְּ/כֹל֙ | ke./Khol | according to/ all | H3605 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 2 | הַ/דְּבָרִ֣ים | ha./de.va.Rim | the/ words | H1697G | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | דָּבָר (da.var): word |
+| 3 | הָ/אֵ֔לֶּה | ha./'E.leh | <the>/ these | H428 | HTd/Tm — Definite article (Hebrew) + Demonstrative Particle | אֵ֫לֶּה (el.leh): these |
+| 4 | וּ/כְ/כֹ֖ל | u./khe./Khol | and/ according to/ all | H3605 | HC/R/Ncmsc — Conjunction + Preposition + Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 5 | הֶ/חָז֣וֹן | he./cha.Zon | the/ vision | H2377 | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | חָזוֹן (cha.zon): vision |
+| 6 | הַ/זֶּ֑ה | ha./Zeh | <the>/ this | H2088 | HTd/Tm — Definite article (Hebrew) + Demonstrative Particle | זֶה (zeh): this |
+| 7 | כֵּ֛ן | ken | so | H3651C | HD — Adverb | כֵּן (ken): so |
+| 8 | דִּבֶּ֥ר | di.Ber | he spoke | H1696G | HVpp3ms — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) Third Singular Masculine | דָבַר (da.var): to speak: speak |
+| 9 | נָתָ֖ן | na.Tan | Nathan | H5416H | HNpm — Proper Noun (Masculine individual) | נָתָן (na.tan): Nathan |
+| 10 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 11 | דָּוִֽיד\׃\ \פ | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+
+## 1 Chronicles 17:16
+
+**Original:** וַיָּבֹא֙ הַמֶּ֣לֶךְ דָּוִ֔יד וַיֵּ֖שֶׁב לִפְנֵ֣י יְהוָ֑ה וַיֹּ֗אמֶר מִֽי־ אֲנִ֞י יְהוָ֤ה אֱלֹהִים֙ וּמִ֣י בֵיתִ֔י כִּ֥י הֲבִיאֹתַ֖נִי עַד־ הֲלֹֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יָּבֹא֙ | va/i.ya.Vo' | and/ he went | H935G | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | בּוֹא (bo): to come (in): come |
+| 2 | הַ/מֶּ֣לֶךְ | ha./Me.lekh | the/ king | H4428G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | מֶ֫לֶךְ (me.lekh): king |
+| 3 | דָּוִ֔יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 4 | וַ/יֵּ֖שֶׁב | va/i.Ye.shev | and/ he sat | H3427 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | יָשַׁב (ya.shav): to dwell |
+| 5 | לִ/פְנֵ֣י | li/f.Nei | <to>/ before | H6440G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | פָּנֶה (pa.neh): face: before |
+| 6 | יְהוָ֑ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 7 | וַ/יֹּ֗אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 8 | מִֽי\־ | mi- | who? | H4310 | HPi — Interrogative Pronoun | מִי (mi): who? |
+| 9 | אֲנִ֞י | 'a.Ni | [am] I | H589 | HPp1bs — Pronoun (First Singular Either gender) | אֲנִי (a.ni): I |
+| 10 | יְהוָ֤ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 11 | אֱלֹהִים֙ | 'E.lo.Him | God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 12 | וּ/מִ֣י | u./Mi | and/ who? | H4310 | HC/Pi — Conjunction + Interrogative Pronoun | מִי (mi): who? |
+| 13 | בֵיתִ֔/י | vei.T/i | [is] house/ my | H1004M | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | בַּ֫יִת (ba.yit): house: household |
+| 14 | כִּ֥י | ki | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 15 | הֲבִיאֹתַ֖/נִי | ha.vi.'o.Ta./ni | you have brought/ me | H935P | HVhp2ms/Sp1bs — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) Second Singular Masculine + Suffix (First Singular Either gender) | בּוֹא (bo): to come (in): bring |
+| 16 | עַד\־ | 'ad- | to | H5704 | HR — Preposition | עַד (ad): till |
+| 17 | הֲלֹֽם\׃ | ha.Lom | here | H1988 | HD — Adverb | הֲלֹם (ha.lom): here |
+
+## 1 Chronicles 17:17
+
+**Original:** וַתִּקְטַ֨ן זֹ֤את בְּעֵינֶ֙יךָ֙ אֱלֹהִ֔ים וַתְּדַבֵּ֥ר עַל־ בֵּֽית־ עַבְדְּךָ֖ לְמֵרָח֑וֹק וּרְאִיתַ֗נִי כְּת֧וֹר הָאָדָ֛ם הַֽמַּעֲלָ֖ה יְהוָ֥ה אֱלֹהִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תִּקְטַ֨ן | va./tik.Tan | and/ it was small | H6994 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | קָטֹן (qa.ton): be small |
+| 2 | זֹ֤את | zot | this | H2063 | HTm — Demonstrative Particle | זֹאת (zot): this |
+| 3 | בְּ/עֵינֶ֙י/ךָ֙ | be./'ei.Nei./kha | in/ view/ your | H5869I | HR/Ncfdc/Sp2ms — Preposition + Noun (Dual Feminine, Construct) + Suffix (Second Singular Masculine) | עַ֫יִן (a.yin): eye: appearance |
+| 4 | אֱלֹהִ֔ים | 'E.lo.Him | O God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 5 | וַ/תְּדַבֵּ֥ר | va./te.da.Ber | and/ you have spoken | H1696G | Hc/Vpw2ms — Consecutive Conjunction + Verb : Piel (Intensive/resultive/transtive, Active) Consecutive Imperfect (Past/present Indicative) Second Singular Masculine | דָבַר (da.var): to speak: speak |
+| 6 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 7 | בֵּֽית\־ | beit- | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 8 | עַבְדְּ/ךָ֖ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 9 | לְ/מֵ/רָח֑וֹק | le./me./ra.Chok | <to>/ from/ distant [time] | H7350 | HR/R/Aamsa — Preposition + Preposition + Aamsa | רָחֹק (ra.choq): distant |
+| 10 | וּ/רְאִיתַ֗/נִי | u./re.'i.Ta./ni | and/ you have seen/ me | H7200G | Hc/Vqq2ms/Sp1bs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Second Singular Masculine + Suffix (First Singular Either gender) | רָאָה (ra.ah): to see: see |
+| 11 | כְּ/ת֧וֹר | ke./Tor | according to/ [the] order of | H8448 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | תּוֹר (tor): border |
+| 12 | הָ/אָדָ֛ם | ha./'a.Dam | <the>/ humankind | H120G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | אָדָם (a.dam): man |
+| 13 | הַֽ/מַּעֲלָ֖ה | ha./ma.'a.Lah | the/ going up | H4609B | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | מַעֲלָה (ma.a.lah): step |
+| 14 | יְהוָ֥ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 15 | אֱלֹהִֽים\׃ | 'E.lo.Him | God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+
+## 1 Chronicles 17:18
+
+**Original:** מַה־ יּוֹסִ֨יף ע֥וֹד דָּוִ֛יד אֵלֶ֖יךָ לְכָב֣וֹד אֶת־ עַבְדֶּ֑ךָ וְאַתָּ֖ה אֶֽת־ עַבְדְּךָ֥ יָדָֽעְתָּ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | מַה\־ | mah- | what? | H4100 | HPi — Interrogative Pronoun | מָה (mah): what? |
+| 2 | יּוֹסִ֨יף | yo.Sif | will he add | H3254H | HVhi3ms — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | יָסַף (ya.saph): to add |
+| 3 | ע֥וֹד | od | again | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 4 | דָּוִ֛יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 5 | אֵלֶ֖י/ךָ | 'e.Lei./kha | to/ you | H413 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | אֶל (el): to(wards) |
+| 6 | לְ/כָב֣וֹד | le./kha.Vod | for/ honor | H3519 | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | כָּבוֹד (ka.vod): glory |
+| 7 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 8 | עַבְדֶּ֑/ךָ | 'av.De./kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 9 | וְ/אַתָּ֖ה | ve./'a.Tah | and/ you | H859A | HC/Pp2ms — Conjunction + Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 10 | אֶֽת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 11 | עַבְדְּ/ךָ֥ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 12 | יָדָֽעְתָּ\׃ | ya.Da.'e.ta | you know | H3045 | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | יָדַע (ya.da): to know |
+
+## 1 Chronicles 17:19
+
+**Original:** יְהוָ֕ה בַּעֲב֤וּר עַבְדְּךָ֙ וּֽכְלִבְּךָ֔ עָשִׂ֕יתָ אֵ֥ת כָּל־ הַגְּדוּלָּ֖ה הַזֹּ֑את לְהֹדִ֖יעַ אֶת־ כָּל־ הַגְּדֻלּֽוֹת׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | יְהוָ֕ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 2 | בַּ/עֲב֤וּר | ba./'a.Vur | for/sake of | H5668 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | עָבוּר (a.vur): for the sake of |
+| 3 | עַבְדְּ/ךָ֙ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 4 | וּֽ/כְ/לִבְּ/ךָ֔ | u./khe./li.be./Kha | and/ according to/ heart/ your | H3820A | HC/R/Ncmsc/Sp2ms — Conjunction + Preposition + Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | לֵב (lev): heart |
+| 5 | עָשִׂ֕יתָ | 'a.Si.ta | you have done | H6213A | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | עָשָׂה (a.sah): to make: do |
+| 6 | אֵ֥ת | 'et | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 7 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 8 | הַ/גְּדוּלָּ֖ה | ha./ge.du.Lah | the/ greatness | H1420 | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | גְּדוּלָּה (ge.du.lah): greatness |
+| 9 | הַ/זֹּ֑את | ha./Zot | <the>/ this | H2063 | HTd/Tm — Definite article (Hebrew) + Demonstrative Particle | זֹאת (zot): this |
+| 10 | לְ/הֹדִ֖יעַ | le./ho.Di.a' | by/ making known | H3045 | HR/Vhcc — Preposition + Verb : Hiphil (Causative/declarative, Active) Infinitive Construct | יָדַע (ya.da): to know |
+| 11 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 12 | כָּל\־ | kol- | all | H3605 | HNcmsc — Noun (Singular Masculine, Construct) | כֹּל (kol): all |
+| 13 | הַ/גְּדֻלּֽוֹת\׃ | ha./ge.du.Lot | the/ greatness<es> | H1420 | HTd/Ncfpa — Definite article (Hebrew) + Noun (Plural Feminine, Absolute) | גְּדוּלָּה (ge.du.lah): greatness |
+
+## 1 Chronicles 17:20
+
+**Original:** יְהוָה֙ אֵ֣ין כָּמ֔וֹךָ וְאֵ֥ין אֱלֹהִ֖ים זוּלָתֶ֑ךָ בְּכֹ֥ל אֲשֶׁר־ שָׁמַ֖עְנוּ בְּאָזְנֵֽינוּ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | יְהוָה֙ | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 2 | אֵ֣ין | 'ein | there not | H369 | HNcmsc — Noun (Singular Masculine, Construct) | אַ֫יִן (a.yin): nothing |
+| 3 | כָּמ֔וֹ/ךָ | ka.Mo./kha | [is] like/ you | H3644G | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | כְּמוֹ (ke.mo): like |
+| 4 | וְ/אֵ֥ין | ve./'Ein | and/ there not | H369 | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | אַ֫יִן (a.yin): nothing |
+| 5 | אֱלֹהִ֖ים | 'E.lo.Him | [is] a God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 6 | זוּלָתֶ֑/ךָ | zu.la.Te./kha | except/ you | H2108 | HNcfsc/Sp2ms — Noun (Singular Feminine, Construct) + Suffix (Second Singular Masculine) | זוּלָה (zu.lah): exception |
+| 7 | בְּ/כֹ֥ל | be./Khol | in/ all | H3605 | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | כֹּל (kol): all |
+| 8 | אֲשֶׁר\־ | 'a.Sher- | that | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 9 | שָׁמַ֖עְנוּ | sha.Ma'.nu | we have heard | H8085G | HVqp1cp — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) First Plural Either gender | שָׁמַע (sha.ma): to hear: hear |
+| 10 | בְּ/אָזְנֵֽי/נוּ\׃ | be./'a.ze.Nei./nu | with/ ears/ our | H241G | HR/Ncfdc/Sp1bp — Preposition + Noun (Dual Feminine, Construct) + Suffix (First Plural Either gender) | אֹ֫זֶן (o.zen): ear |
+
+## 1 Chronicles 17:21
+
+**Original:** וּמִי֙ כְּעַמְּךָ֣ יִשְׂרָאֵ֔ל גּ֥וֹי אֶחָ֖ד בָּאָ֑רֶץ אֲשֶׁר֩ הָלַ֨ךְ הָאֱלֹהִ֜ים לִפְדּ֧וֹת ל֣וֹ עָ֗ם לָשׂ֤וּם לְךָ֙ שֵׁ֚ם גְּדֻלּ֣וֹת וְנֹרָא֔וֹת לְגָרֵ֗שׁ מִפְּנֵ֧י עַמְּךָ֛ אֲשֶׁר־ פָּדִ֥יתָ מִמִּצְרַ֖יִם גּוֹיִֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וּ/מִי֙ | u./Mi | and/ who? | H4310 | HC/Pi — Conjunction + Interrogative Pronoun | מִי (mi): who? |
+| 2 | כְּ/עַמְּ/ךָ֣ | ke./'a.me./Kha | [is] like/ people/ your | H5971A | HR/Ncmsc/Sp2ms — Preposition + Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עַם (am): people |
+| 3 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 4 | גּ֥וֹי | Goy | a nation | H1471A | HNcmsa — Noun (Singular Masculine, Absolute) | גּוֹי (goy): nation |
+| 5 | אֶחָ֖ד | 'e.Chad | one | H259 | HNcfsa — Noun (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 6 | בָּ/אָ֑רֶץ | ba./'A.retz | on the/ earth | H776G | HRd/Ncfsa — Preposition (Definite) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 7 | אֲשֶׁר֩ | 'a.Sher | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 8 | הָלַ֨ךְ | ha.Lakh | he went | H1980G | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 9 | הָ/אֱלֹהִ֜ים | ha./'E.lo.Him | <the>/ God | H430G | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 10 | לִ/פְדּ֧וֹת | li/f.Dot | to/ redeem | H6299 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | פָּדָה (pa.dah): to ransom |
+| 11 | ל֣/וֹ | l/o | for/ himself | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 12 | עָ֗ם | 'Am | a people | H5971A | HNcmsa — Noun (Singular Masculine, Absolute) | עַם (am): people |
+| 13 | לָ/שׂ֤וּם | la./Sum | to/ make | H7760A | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | שׂוּם (sum): to set: make |
+| 14 | לְ/ךָ֙ | le./Kha | for/ yourself | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 15 | שֵׁ֚ם | Shem | a name | H8034 | HNcmsa — Noun (Singular Masculine, Absolute) | שֵׁם (shem): name |
+| 16 | גְּדֻלּ֣וֹת | ge.du.Lot | great things | H1420 | HNcfpa — Noun (Plural Feminine, Absolute) | גְּדוּלָּה (ge.du.lah): greatness |
+| 17 | וְ/נֹרָא֔וֹת | ve./no.ra.'ot | and/ awesome [deeds] | H3372H | HC/VNrfpa — Conjunction + Verb : Niphal (Simple, Passive) Participle (Plural Feminine, Absolute) | יָרֵא (ya.re): to fear: revere |
+| 18 | לְ/גָרֵ֗שׁ | le./ga.Resh | by/ driving out | H1644G | HR/Vpcc — Preposition + Verb : Piel (Intensive/resultive/transtive, Active) Infinitive Construct | גָּרַשׁ (ga.rash): to drive out: drive out |
+| 19 | מִ/פְּנֵ֧י | mi./pe.Nei | from/ before | H6440G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | פָּנֶה (pa.neh): face: before |
+| 20 | עַמְּ/ךָ֛ | 'a.me./Kha | people/ your | H5971A | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עַם (am): people |
+| 21 | אֲשֶׁר\־ | 'a.Sher- | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 22 | פָּדִ֥יתָ | pa.Di.ta | you had redeemed | H6299 | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | פָּדָה (pa.dah): to ransom |
+| 23 | מִ/מִּצְרַ֖יִם | mi./mitz.Ra.yim | from/ Egypt | H4714G | HR/Npl — Preposition + Proper Noun (Location) | מִצְרַ֫יִם (mits.ra.yim): Egypt |
+| 24 | גּוֹיִֽם\׃ | go.Yim | nations | H1471A | HNcmpa — Noun (Plural Masculine, Absolute) | גּוֹי (goy): nation |
+
+## 1 Chronicles 17:22
+
+**Original:** וַ֠תִּתֵּן אֶת־ עַמְּךָ֨ יִשְׂרָאֵ֧ל׀ לְךָ֛ לְעָ֖ם עַד־ עוֹלָ֑ם וְאַתָּ֣ה יְהוָ֔ה הָיִ֥יתָ לָהֶ֖ם לֵאלֹהִֽים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ֠/תִּתֵּן | Va./ti.ten | and/ you made | H5414I | Hc/Vqw2ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Second Singular Masculine | נָתַן (na.tan): to give: make |
+| 2 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 3 | עַמְּ/ךָ֨ | 'a.me./Kha | people/ your | H5971A | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עַם (am): people |
+| 4 | יִשְׂרָאֵ֧ל\׀ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 5 | לְ/ךָ֛ | le./Kha | for/ yourself | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 6 | לְ/עָ֖ם | le./'Am | <into>/ a people | H5971A | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | עַם (am): people |
+| 7 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 8 | עוֹלָ֑ם | o.Lam | perpetuity | H5769G | HNcmsa — Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+| 9 | וְ/אַתָּ֣ה | ve./'a.Tah | and/ you | H859A | HC/Pp2ms — Conjunction + Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 10 | יְהוָ֔ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 11 | הָיִ֥יתָ | ha.Yi.ta | you became | H1961 | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | הָיָה (ha.yah): to be |
+| 12 | לָ/הֶ֖ם | la./Hem | for/ them | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 13 | לֵ/אלֹהִֽים\׃ | le./lo.Him | <into>/ God | H430G | HR/Ncmpa — Preposition + Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+
+## 1 Chronicles 17:23
+
+**Original:** וְעַתָּ֣ה יְהוָ֔ה הַדָּבָ֗ר אֲשֶׁ֨ר דִּבַּ֤רְתָּ עַֽל־ עַבְדְּךָ֙ וְעַל־ בֵּית֔וֹ יֵאָמֵ֖ן עַד־ עוֹלָ֑ם וַעֲשֵׂ֖ה כַּאֲשֶׁ֥ר דִּבַּֽרְתָּ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַתָּ֣ה | ve./'a.Tah | and/ now | H6258 | HC/D — Conjunction + Adverb | עַתָּ֫ה (at.tah): now |
+| 2 | יְהוָ֔ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 3 | הַ/דָּבָ֗ר | ha./da.Var | the/ word | H1697G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | דָּבָר (da.var): word |
+| 4 | אֲשֶׁ֨ר | 'a.Sher | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 5 | דִּבַּ֤רְתָּ | di.Bar.ta | you have spoken | H1696G | HVpp2ms — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) Second Singular Masculine | דָבַר (da.var): to speak: speak |
+| 6 | עַֽל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 7 | עַבְדְּ/ךָ֙ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 8 | וְ/עַל\־ | ve./'al- | and/ on | H5921A | HC/R — Conjunction + Preposition | עַל (al): upon |
+| 9 | בֵּית֔/וֹ | bei.T/o | house/ his | H1004M | HNcmsc/Sp3ms — Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | בַּ֫יִת (ba.yit): house: household |
+| 10 | יֵאָמֵ֖ן | ye.'a.Men | let it be established | H539 | HVNi3ms — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | אָמַן (a.man): be faithful |
+| 11 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 12 | עוֹלָ֑ם | o.Lam | perpetuity | H5769G | HNcmsa — Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+| 13 | וַ/עֲשֵׂ֖ה | va./'a.Seh | and/ do | H6213A | HC/Vqv2ms — Conjunction + Verb : Qal (Simple, Active) Imperative Second Singular Masculine | עָשָׂה (a.sah): to make: do |
+| 14 | כַּ/אֲשֶׁ֥ר | ka./'a.Sher | just/ as | H834D | HR/Tr — Preposition + Relative Particle | כַּאֲשֶׁר (ka.a.sher): as which |
+| 15 | דִּבַּֽרְתָּ\׃ | di.Bar.ta | you have spoken | H1696G | HVpp2ms — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) Second Singular Masculine | דָבַר (da.var): to speak: speak |
+
+## 1 Chronicles 17:24
+
+**Original:** וְ֠יֵֽאָמֵן וְיִגְדַּ֨ל שִׁמְךָ֤ עַד־ עוֹלָם֙ לֵאמֹ֔ר יְהוָ֤ה צְבָאוֹת֙ אֱלֹהֵ֣י יִשְׂרָאֵ֔ל אֱלֹהִ֖ים לְיִשְׂרָאֵ֑ל וּבֵית־ דָּוִ֥יד עַבְדְּךָ֖ נָכ֥וֹן לְפָנֶֽיךָ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ֠/יֵֽאָמֵן | Ve./ye.'a.men | and/ it may be established | H539 | HC/VNu3ms — Conjunction + Verb : Niphal (Simple, Passive) Conjunction+Imperfect (Future/present Indicative) Third Singular Masculine | אָמַן (a.man): be faithful |
+| 2 | וְ/יִגְדַּ֨ל | ve./yig.Dal | so/ it may be great | H1431 | HC/Vqu3ms — Conjunction + Verb : Qal (Simple, Active) Conjunction+Imperfect (Future/present Indicative) Third Singular Masculine | גָּדַל (ga.dal): to magnify |
+| 3 | שִׁמְ/ךָ֤ | shim./Kha | name/ your | H8034 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | שֵׁם (shem): name |
+| 4 | עַד\־ | 'ad- | until | H5704 | HR — Preposition | עַד (ad): till |
+| 5 | עוֹלָם֙ | o.Lam | perpetuity | H5769G | HNcmsa — Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+| 6 | לֵ/אמֹ֔ר | le./Mor | <to>/ saying | H559 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | אָמַר (a.mar): to say |
+| 7 | יְהוָ֤ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 8 | צְבָאוֹת֙ | tze.va.'Ot | of hosts | H6635B | HNcfpa — Noun (Plural Feminine, Absolute) | צָבָא (tsa.va): Hosts |
+| 9 | אֱלֹהֵ֣י | 'e.lo.Hei | [is] [the] God of | H430G | HNcmpc — Noun (Plural Masculine, Construct) | אֱלֹהִים (e.lo.him): God |
+| 10 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 11 | אֱלֹהִ֖ים | 'E.lo.Him | God | H430G | HNcmpa — Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 12 | לְ/יִשְׂרָאֵ֑ל | le./Yis.ra.'El | to/ Israel | H3478 | HR/Npl — Preposition + Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 13 | וּ/בֵית\־ | u./veit- | and/ [the] house of | H1004M | HC/Ncmsc — Conjunction + Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 14 | דָּוִ֥יד | da.Vid | David | H1732 | HNpm — Proper Noun (Masculine individual) | דָּוִד (da.vid): David |
+| 15 | עַבְדְּ/ךָ֖ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 16 | נָכ֥וֹן | na.Khon | [is] established | H3559H | HVNrmsa — Verb : Niphal (Simple, Passive) Participle (Singular Masculine, Absolute) | כּוּן (kun): to establish: establish |
+| 17 | לְ/פָנֶֽי/ךָ\׃ | le./fa.Nei./kha | <to>/ before/ you | H6440G | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | פָּנֶה (pa.neh): face: before |
+
+## 1 Chronicles 17:25
+
+**Original:** כִּ֣י׀ אַתָּ֣ה אֱלֹהַ֗י גָּלִ֙יתָ֙ אֶת־ אֹ֣זֶן עַבְדְּךָ֔ לִבְנ֥וֹת ל֖וֹ בָּ֑יִת עַל־ כֵּן֙ מָצָ֣א עַבְדְּךָ֔ לְהִתְפַּלֵּ֖ל לְפָנֶֽיךָ׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | כִּ֣י\׀ | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 2 | אַתָּ֣ה | 'a.Tah | you | H859A | HPp2ms — Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 3 | אֱלֹהַ֗/י | 'e.lo.Ha/i | O God/ my | H430G | HNcmpc/Sp1bs — Noun (Plural Masculine, Construct) + Suffix (First Singular Either gender) | אֱלֹהִים (e.lo.him): God |
+| 4 | גָּלִ֙יתָ֙ | ga.Li.ta | you have uncovered | H1540H | HVqp2ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Second Singular Masculine | גָּלָה (ga.lah): to reveal: reveal |
+| 5 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 6 | אֹ֣זֶן | 'O.zen | [the] ear of | H241I | HNcfsc — Noun (Singular Feminine, Construct) | אֹ֫זֶן (o.zen): ear: to ears |
+| 7 | עַבְדְּ/ךָ֔ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 8 | לִ/בְנ֥וֹת | li/v.Not | to/ build | H1129 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | בָּנָה (ba.nah): to build |
+| 9 | ל֖/וֹ | l/o | for/ him | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 10 | בָּ֑יִת | Ba.yit | a house | H1004B | HNcmsa — Noun (Singular Masculine, Absolute) | בַּ֫יִת (ba.yit): house: home |
+| 11 | עַל\־ | 'al- | there- | H5921A | HR — Preposition | עַל (al): upon |
+| 12 | כֵּן֙ | ken | -fore | H3651C | HD — Adverb | כֵּן (ken): so |
+| 13 | מָצָ֣א | ma.Tza' | he has found | H4672 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | מָצָא (ma.tsa): to find |
+| 14 | עַבְדְּ/ךָ֔ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 15 | לְ/הִתְפַּלֵּ֖ל | le./hit.pa.Lel | to/ pray | H6419 | HR/Vtcc — Preposition + Verb : Hithpael (Intensive/resultive/transtive, Reflexive/iterative) Infinitive Construct | פָּלַל (pa.lal): to pray |
+| 16 | לְ/פָנֶֽי/ךָ\׃ | le./fa.Nei./kha | <to>/ before/ you | H6440G | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | פָּנֶה (pa.neh): face: before |
+
+## 1 Chronicles 17:26
+
+**Original:** וְעַתָּ֣ה יְהוָ֔ה אַתָּה־ ה֖וּא הָאֱלֹהִ֑ים וַתְּדַבֵּר֙ עַֽל־ עַבְדְּךָ֔ הַטּוֹבָ֖ה הַזֹּֽאת׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַתָּ֣ה | ve./'a.Tah | and/ now | H6258 | HC/D — Conjunction + Adverb | עַתָּ֫ה (at.tah): now |
+| 2 | יְהוָ֔ה | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 3 | אַתָּה\־ | 'a.tah- | you | H859A | HPp2ms — Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 4 | ה֖וּא | hu' | he | H1931 | HPp3ms — Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 5 | הָ/אֱלֹהִ֑ים | ha./'E.lo.Him | [are] <the>/ God | H430G | HTd/Ncmpa — Definite article (Hebrew) + Noun (Plural Masculine, Absolute) | אֱלֹהִים (e.lo.him): God |
+| 6 | וַ/תְּדַבֵּר֙ | va./te.da.Ber | and/ you have spoken | H1696I | Hc/Vpw2ms — Consecutive Conjunction + Verb : Piel (Intensive/resultive/transtive, Active) Consecutive Imperfect (Past/present Indicative) Second Singular Masculine | דָבַר (da.var): to speak: promise |
+| 7 | עַֽל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 8 | עַבְדְּ/ךָ֔ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 9 | הַ/טּוֹבָ֖ה | ha./to.Vah | the/ good thing | H2896C | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | טוֹבָה (to.vah): welfare |
+| 10 | הַ/זֹּֽאת\׃ | ha./Zot | <the>/ this | H2063 | HTd/Tm — Definite article (Hebrew) + Demonstrative Particle | זֹאת (zot): this |
+
+## 1 Chronicles 17:27
+
+**Original:** וְעַתָּ֗ה הוֹאַ֙לְתָּ֙ לְבָרֵךְ֙ אֶת־ בֵּ֣ית עַבְדְּךָ֔ לִהְי֥וֹת לְעוֹלָ֖ם לְפָנֶ֑יךָ כִּֽי־ אַתָּ֤ה יְהוָה֙ בֵּרַ֔כְתָּ וּמְבֹרָ֖ךְ לְעוֹלָֽם׃\ \פ
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/עַתָּ֗ה | ve./'a.Tah | and/ now | H6258 | HC/D — Conjunction + Adverb | עַתָּ֫ה (at.tah): now |
+| 2 | הוֹאַ֙לְתָּ֙ | ho.'Al.ta | you have determined | H2974 | HVhp2ms — Verb : Hiphil (Causative/declarative, Active) Perfect (Past/present Indicative) Second Singular Masculine | יָאַל (ya.al): be willing |
+| 3 | לְ/בָרֵךְ֙ | le./va.reKh | to/ bless | H1288 | HR/Vpcc — Preposition + Verb : Piel (Intensive/resultive/transtive, Active) Infinitive Construct | בָּרַךְ (ba.rakh): to bless |
+| 4 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 5 | בֵּ֣ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 6 | עַבְדְּ/ךָ֔ | 'av.de./Kha | servant/ your | H5650 | HNcmsc/Sp2ms — Noun (Singular Masculine, Construct) + Suffix (Second Singular Masculine) | עֶ֫בֶד (e.ved): servant/slave |
+| 7 | לִ/הְי֥וֹת | li/h.Yot | to/ be | H1961 | HR/Vqcc — Preposition + Verb : Qal (Simple, Active) Infinitive Construct | הָיָה (ha.yah): to be |
+| 8 | לְ/עוֹלָ֖ם | le./'o.Lam | for/ ever | H5769G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |
+| 9 | לְ/פָנֶ֑י/ךָ | le./fa.Nei./kha | <to>/ before/ you | H6440G | HR/Ncmpc/Sp2ms — Preposition + Noun (Plural Masculine, Construct) + Suffix (Second Singular Masculine) | פָּנֶה (pa.neh): face: before |
+| 10 | כִּֽי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 11 | אַתָּ֤ה | 'a.Tah | you | H859A | HPp2ms — Pronoun (Second Singular Masculine) | אַתָּ֫ה (at.tah): you(m.s.) |
+| 12 | יְהוָה֙ | Yah.weh | O Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 13 | בֵּרַ֔כְתָּ | be.Rakh.ta | you have blessed | H1288 | HVpp2ms — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) Second Singular Masculine | בָּרַךְ (ba.rakh): to bless |
+| 14 | וּ/מְבֹרָ֖ךְ | u./me.vo.Rakh | and/ [it is] blessed | H1288 | HC/VPsmsa — Conjunction + Verb : Pual (Intensive/resultive/transtive, Passive) Participle passive (Singular Masculine, Absolute) | בָּרַךְ (ba.rakh): to bless |
+| 15 | לְ/עוֹלָֽם\׃\ \פ | le./'o.Lam | for/ ever | H5769G | HR/Ncmsa — Preposition + Noun (Singular Masculine, Absolute) | עוֹלָם (o.lam): forever: enduring |

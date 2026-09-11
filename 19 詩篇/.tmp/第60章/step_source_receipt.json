@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 60,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_60.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 60,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 113,
+      "first": "Psa 60:0",
+      "last": "Psa 60:12",
+      "sha256": "82070f44d1bbd64739360d8d94316809bbf802f6547b10a7c7cc49fb8a853007",
+      "bytes": 23849,
+      "chars": 20872,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

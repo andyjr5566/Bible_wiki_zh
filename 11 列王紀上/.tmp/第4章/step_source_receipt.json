@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "列王紀上",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_kings_4.txt",
+      "book": "1 Kings",
+      "book_code": "1Ki",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 404,
+      "first": "1Ki 4:1",
+      "last": "1Ki 4:34",
+      "sha256": "672d54d49d9977a732232b0ebbdff31ec4989ae2eee8927c2803634a33bd2a67",
+      "bytes": 74899,
+      "chars": 64640,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

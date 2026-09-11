@@ -1061,12 +1061,15 @@ def validate_step_source(
         )
 
     verse_numbers = sorted(document.verses)
+    start_v = 0 if (verse_numbers and verse_numbers[0] == 0) else 1
     if reference.verse_start is not None:
         expected_verses = list(range(reference.verse_start, reference.verse_end + 1))
     elif scripture_verse_count is not None:
         expected_verses = list(range(1, int(scripture_verse_count) + 1))
+        expected_verses = list(range(start_v, int(scripture_verse_count) + 1))
     else:
         expected_verses = list(range(1, verse_numbers[-1] + 1))
+        expected_verses = list(range(start_v, verse_numbers[-1] + 1))
     if verse_numbers != expected_verses:
         raise StepValidationError(
             f"STEP verse coverage 不符：實際 {verse_numbers}，預期 {expected_verses}"

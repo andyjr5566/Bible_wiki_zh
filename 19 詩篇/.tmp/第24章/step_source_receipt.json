@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_24.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 11,
+      "words": 89,
+      "first": "Psa 24:0",
+      "last": "Psa 24:10",
+      "sha256": "d3fd33d72451c2bbadb2d84009fedce451390c7957fb2451133f40055120828d",
+      "bytes": 17464,
+      "chars": 15194,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯拉記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezra_10.txt",
+      "book": "Ezra",
+      "book_code": "Ezr",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 44,
+      "words": 465,
+      "first": "Ezr 10:1",
+      "last": "Ezr 10:44",
+      "sha256": "36fa4c09aae698d92f15e51508c66a177af9f41c82181ff6f16ffccba20bc561",
+      "bytes": 93088,
+      "chars": 80184,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

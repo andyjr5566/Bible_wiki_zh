@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 29,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_29.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 29,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 326,
+      "first": "Isa 29:1",
+      "last": "Isa 29:24",
+      "sha256": "0fde53853e4102d9cbcb677082e83903471458ba58b1288f6a918f8794821d71",
+      "bytes": 65630,
+      "chars": 57560,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

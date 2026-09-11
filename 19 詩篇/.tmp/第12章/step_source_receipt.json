@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_12.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 79,
+      "first": "Psa 12:0",
+      "last": "Psa 12:8",
+      "sha256": "88021764b3cc2cf473c53ccaaa3769807878cfdb53ca144af0f9102fad8de7ba",
+      "bytes": 15997,
+      "chars": 13921,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

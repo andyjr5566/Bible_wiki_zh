@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 27,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_27.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 27,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 23,
+      "words": 169,
+      "first": "Job 27:1",
+      "last": "Job 27:23",
+      "sha256": "c3c073e2ba993a73fe54cd06f97c3b36cccf32c88a388f11c96df8660b3c0f86",
+      "bytes": 35866,
+      "chars": 31671,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

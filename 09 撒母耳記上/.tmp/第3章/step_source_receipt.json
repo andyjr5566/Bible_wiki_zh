@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_3.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 304,
+      "first": "1Sa 3:1",
+      "last": "1Sa 3:21",
+      "sha256": "57268d85a28988b416a5a266939de187a8334100bf8162013be8627cfd9a2888",
+      "bytes": 58504,
+      "chars": 51269,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

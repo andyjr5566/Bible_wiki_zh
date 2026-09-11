@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯帖記",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_esther_10.txt",
+      "book": "Esther",
+      "book_code": "Est",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 3,
+      "words": 46,
+      "first": "Est 10:1",
+      "last": "Est 10:3",
+      "sha256": "7adeadf110ed5242803fdf657d44f802863ce39dd1077e3f4b6d21ef4593c9d0",
+      "bytes": 9283,
+      "chars": 7992,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

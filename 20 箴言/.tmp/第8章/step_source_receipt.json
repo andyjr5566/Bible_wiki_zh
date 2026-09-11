@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 8,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_8.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 36,
+      "words": 258,
+      "first": "Pro 8:1",
+      "last": "Pro 8:36",
+      "sha256": "2dcfbf2a007795930858463ae1f10c3da753f25275e78309d304e054f07d25fc",
+      "bytes": 53443,
+      "chars": 46899,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

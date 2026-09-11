@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "但以理書",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_daniel_2.txt",
+      "book": "Daniel",
+      "book_code": "Dan",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 49,
+      "words": 842,
+      "first": "Dan 2:1",
+      "last": "Dan 2:49",
+      "sha256": "127752e0de3d3998b9947bfd9fdb3d6937f8ef3fd45919b61e941474aad08908",
+      "bytes": 160835,
+      "chars": 139751,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

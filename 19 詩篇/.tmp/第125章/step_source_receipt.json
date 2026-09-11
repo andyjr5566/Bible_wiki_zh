@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 125,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_125.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 125,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 6,
+      "words": 49,
+      "first": "Psa 125:0",
+      "last": "Psa 125:5",
+      "sha256": "9204e4d7e19d5151ddfedab0753dc5b4a57a13a33319bdb5696aed2cb2d6b8cb",
+      "bytes": 10121,
+      "chars": 8739,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

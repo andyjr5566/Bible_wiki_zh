@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 25,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_25.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 161,
+      "first": "Isa 25:1",
+      "last": "Isa 25:12",
+      "sha256": "f4297d74972e1b83a8ee1b989475cd18e91ab922ea8a2f8b789fa78b9a7e1ac9",
+      "bytes": 31538,
+      "chars": 27574,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

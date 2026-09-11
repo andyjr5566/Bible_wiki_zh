@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_17.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 239,
+      "first": "2Ch 17:1",
+      "last": "2Ch 17:19",
+      "sha256": "ceea9e1a2677b495f3d72f40f7fdd66a8d40879bf6d80495575796aee1997941",
+      "bytes": 47546,
+      "chars": 41012,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_3.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 5,
+      "words": 81,
+      "first": "Hos 3:1",
+      "last": "Hos 3:5",
+      "sha256": "ff9e5f2d1ff8d5ef124a655c578775c7de2a69136b93ebdda8643c8639ea2e86",
+      "bytes": 15043,
+      "chars": 13043,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 2,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_2.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 37,
+      "words": 512,
+      "first": "Jer 2:1",
+      "last": "Jer 2:37",
+      "sha256": "dfe0a6eee091934495a8a3897b564d18675d168e55d3b30bf14d339c10f9d2c6",
+      "bytes": 99118,
+      "chars": 86635,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

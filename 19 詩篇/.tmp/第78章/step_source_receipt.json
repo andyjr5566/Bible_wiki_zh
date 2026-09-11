@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 78,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_78.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 78,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 73,
+      "words": 530,
+      "first": "Psa 78:0",
+      "last": "Psa 78:72",
+      "sha256": "ace45195db8e138bb019fa93de7d7e53d26db12f4c8ecbe9aafc02e741be8376",
+      "bytes": 118687,
+      "chars": 104707,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

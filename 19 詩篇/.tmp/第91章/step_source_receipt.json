@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 91,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_91.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 91,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 112,
+      "first": "Psa 91:1",
+      "last": "Psa 91:16",
+      "sha256": "3098552abe1a91bede8ddc4f0e8a63b6b6752a577cf3ad7c40281c6f637231ab",
+      "bytes": 25072,
+      "chars": 22115,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

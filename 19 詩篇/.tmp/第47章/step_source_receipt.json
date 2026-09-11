@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 47,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_47.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 47,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 77,
+      "first": "Psa 47:0",
+      "last": "Psa 47:9",
+      "sha256": "d6bc34281c5acf3cc4ca9e132b099154958dfba68c913e9f5305332e8c021f86",
+      "bytes": 15109,
+      "chars": 13125,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

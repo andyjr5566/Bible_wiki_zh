@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 15,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_15.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 529,
+      "first": "1Sa 15:1",
+      "last": "1Sa 15:35",
+      "sha256": "aa49825aa0a65cf647e286b87e7ad5f8c83e24e3078fdd0b4e26e4483fbfd26b",
+      "bytes": 100636,
+      "chars": 87794,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

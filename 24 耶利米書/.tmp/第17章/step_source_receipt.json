@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 17,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_17.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 402,
+      "first": "Jer 17:1",
+      "last": "Jer 17:27",
+      "sha256": "47e51b37caa6f6eb5d4c232b4765e9e73f5b719026e9eb610b57dd187280b8a0",
+      "bytes": 78678,
+      "chars": 68566,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

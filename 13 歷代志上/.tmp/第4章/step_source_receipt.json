@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_4.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 43,
+      "words": 476,
+      "first": "1Ch 4:1",
+      "last": "1Ch 4:43",
+      "sha256": "85cc5d1665a1621f2a1c65f3b3af38bbe36fbfa52cb8215b711d4d67bacb365a",
+      "bytes": 89834,
+      "chars": 77530,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 21,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_21.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 459,
+      "first": "Ezk 21:1",
+      "last": "Ezk 21:32",
+      "sha256": "b707b45065fb2b4fc602a7af0414dd920b4787d84efbae9034a586833c44baf1",
+      "bytes": 86188,
+      "chars": 75268,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 33,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_33.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 33,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 517,
+      "first": "Ezk 33:1",
+      "last": "Ezk 33:33",
+      "sha256": "77effc3c18cf9fbb02ca492a8d7f1382908e7f6b2ad2dea5bce6dc7256faed13",
+      "bytes": 101986,
+      "chars": 89610,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

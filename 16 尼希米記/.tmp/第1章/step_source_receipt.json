@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_1.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 11,
+      "words": 202,
+      "first": "Neh 1:1",
+      "last": "Neh 1:11",
+      "sha256": "cd64db346fc3072350b92cf10ee6723b7e927062171ebf35037cdde24b9e9d60",
+      "bytes": 40390,
+      "chars": 35120,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

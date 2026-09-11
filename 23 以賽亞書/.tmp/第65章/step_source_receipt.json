@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 65,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_65.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 65,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 361,
+      "first": "Isa 65:1",
+      "last": "Isa 65:25",
+      "sha256": "2ab672a7278dbbcf20aec385088c764dc35c71b79786699eb7d623aa19dee151",
+      "bytes": 71836,
+      "chars": 62897,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

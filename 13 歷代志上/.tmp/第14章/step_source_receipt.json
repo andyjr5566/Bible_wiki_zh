@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志上",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_chronicles_14.txt",
+      "book": "1 Chronicles",
+      "book_code": "1Ch",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 194,
+      "first": "1Ch 14:1",
+      "last": "1Ch 14:17",
+      "sha256": "72f1f6dc877473ac6c14a532fbf97888f7c69cfdad26b3599744355a23b5124e",
+      "bytes": 40127,
+      "chars": 34895,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+# STEP Bible — Hosea 1
+
+> Source: STEP Bible / STEPBible-Data — https://github.com/STEPBible/STEPBible-Data
+> License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+> 本檔是「原文證據層」資料，不是 Commentary。
+> Lexicon 列的是詞彙可能義域；不可直接把所有字典義都當成本節語境義。
+
+## Hosea 1:1
+
+**Original:** דְּבַר־ יְהוָ֣ה׀ אֲשֶׁ֣ר הָיָ֗ה אֶל־ הוֹשֵׁ֙עַ֙ בֶּן־ בְּאֵרִ֔י בִּימֵ֨י עֻזִּיָּ֥ה יוֹתָ֛ם אָחָ֥ז יְחִזְקִיָּ֖ה מַלְכֵ֣י יְהוּדָ֑ה וּבִימֵ֛י יָרָבְעָ֥ם בֶּן־ יוֹאָ֖שׁ מֶ֥לֶךְ יִשְׂרָאֵֽל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | דְּבַר\־ | de.var- | [the] word of | H1697G | HNcmsc — Noun (Singular Masculine, Construct) | דָּבָר (da.var): word |
+| 2 | יְהוָ֣ה\׀ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 3 | אֲשֶׁ֣ר | 'a.Sher | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 4 | הָיָ֗ה | ha.Yah | it came | H1961 | HVqp3ms — Verb : Qal (Simple, Active) Perfect (Past/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 5 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 6 | הוֹשֵׁ֙עַ֙ | ho.She.a' | Hosea | H1954J | HNpm — Proper Noun (Masculine individual) | הוֹשֵׁעַ (ho.she.a): Hosea |
+| 7 | בֶּן\־ | ben- | [the] son of | H1121A | HNcmsc — Noun (Singular Masculine, Construct) | בֵּן (ben): son: child |
+| 8 | בְּאֵרִ֔י | be.'e.Ri | Beeri | H882H | HNpm — Proper Noun (Masculine individual) | בְּאֵרִי (be.e.ri): Beeri |
+| 9 | בִּ/ימֵ֨י | bi./Mei | in/ [the] days of | H3117G | HR/Ncmpc — Preposition + Noun (Plural Masculine, Construct) | יוֹם (yom): day |
+| 10 | עֻזִּיָּ֥ה | 'u.zi.Yah | Uzziah | H5818G | HNpm — Proper Noun (Masculine individual) | עֻזִּיָּהוּ (uz.ziy.yah): Uzziah |
+| 11 | יוֹתָ֛ם | yo.Tam | Jotham | H3147H | HNpm — Proper Noun (Masculine individual) | יוֹתָם (yo.tam): Jotham |
+| 12 | אָחָ֥ז | 'a.Chaz | Ahaz | H271G | HNpm — Proper Noun (Masculine individual) | אָחָז (a.chaz): Ahaz |
+| 13 | יְחִזְקִיָּ֖ה | ye.chiz.ki.Yah | Hezekiah | H3169H | HNpm — Proper Noun (Masculine individual) | יְחִזְקִיָּה (ye.chiz.qiy.yah): Hezekiah |
+| 14 | מַלְכֵ֣י | mal.Khei | [the] kings of | H4428G | HNcmpc — Noun (Plural Masculine, Construct) | מֶ֫לֶךְ (me.lekh): king |
+| 15 | יְהוּדָ֑ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 16 | וּ/בִ/ימֵ֛י | u./vi./Mei | and/ in/ [the] days of | H3117G | HC/R/Ncmpc — Conjunction + Preposition + Noun (Plural Masculine, Construct) | יוֹם (yom): day |
+| 17 | יָרָבְעָ֥ם | ya.ra.ve.'Am | Jeroboam | H3379H | HNpm — Proper Noun (Masculine individual) | יָֽרָבְעָם (ya.rov.am): Jeroboam |
+| 18 | בֶּן\־ | ben- | [the] son of | H1121A | HNcmsc — Noun (Singular Masculine, Construct) | בֵּן (ben): son: child |
+| 19 | יוֹאָ֖שׁ | yo.'Ash | Joash | H3101J | HNpm — Proper Noun (Masculine individual) | יוֹאָשׁ (yo.ash): Joash |
+| 20 | מֶ֥לֶךְ | Me.lekh | [the] king of | H4428G | HNcmsc — Noun (Singular Masculine, Construct) | מֶ֫לֶךְ (me.lekh): king |
+| 21 | יִשְׂרָאֵֽל\׃ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+
+## Hosea 1:2
+
+**Original:** תְּחִלַּ֥ת דִּבֶּר־ יְהוָ֖ה בְּהוֹשֵׁ֑עַ\ \פ וַיֹּ֨אמֶר יְהוָ֜ה אֶל־ הוֹשֵׁ֗עַ לֵ֣ךְ קַח־ לְךָ֞ אֵ֤שֶׁת זְנוּנִים֙ וְיַלְדֵ֣י זְנוּנִ֔ים כִּֽי־ זָנֹ֤ה תִזְנֶה֙ הָאָ֔רֶץ מֵֽאַחֲרֵ֖י יְהוָֽה׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | תְּחִלַּ֥ת | te.chi.Lat | [the] beginning | H8462 | HNcfsc — Noun (Singular Feminine, Construct) | תְּחִלָּה (te.chil.lah): beginning |
+| 2 | דִּבֶּר\־ | di.ber- | <of> [when] he spoke | H1696G | HVpp3ms — Verb : Piel (Intensive/resultive/transtive, Active) Perfect (Past/present Indicative) Third Singular Masculine | דָבַר (da.var): to speak: speak |
+| 3 | יְהוָ֖ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 4 | בְּ/הוֹשֵׁ֑עַ\ \פ | be./ho.She.a' | by/ Hosea | H1954J | HR/Npm — Preposition + Proper Noun (Masculine individual) | הוֹשֵׁעַ (ho.she.a): Hosea |
+| 5 | וַ/יֹּ֨אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 6 | יְהוָ֜ה | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 7 | אֶל\־ | 'el- | to | H413 | HR — Preposition | אֶל (el): to(wards) |
+| 8 | הוֹשֵׁ֗עַ | ho.She.a' | Hosea | H1954J | HNpm — Proper Noun (Masculine individual) | הוֹשֵׁעַ (ho.she.a): Hosea |
+| 9 | לֵ֣ךְ | lekh | go | H1980G | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 10 | קַח\־ | kach- | take | H3947I | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | לָקַח (la.qach): to take: marry |
+| 11 | לְ/ךָ֞ | le./Kha | for/ yourself | H9005 | HR/Sp2ms — Preposition + Suffix (Second Singular Masculine) | /ל (l): to/for |
+| 12 | אֵ֤שֶׁת | 'E.shet | a wife of | H802H | HNcfsc — Noun (Singular Feminine, Construct) | אִשָּׁה (ish.shah): woman: wife |
+| 13 | זְנוּנִים֙ | ze.nu.Nim | prostitution<s> | H2183 | HNcmpa — Noun (Plural Masculine, Absolute) | זְנוּנִים (za.nun): fornication |
+| 14 | וְ/יַלְדֵ֣י | ve./yal.Dei | and/ children of | H3206 | HC/Ncmpc — Conjunction + Noun (Plural Masculine, Construct) | יֶ֫לֶד (ye.led): youth |
+| 15 | זְנוּנִ֔ים | ze.nu.Nim | prostitution<s> | H2183 | HNcmpa — Noun (Plural Masculine, Absolute) | זְנוּנִים (za.nun): fornication |
+| 16 | כִּֽי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 17 | זָנֹ֤ה | za.Noh | continually <prostitute itself> | H2181 | HVqaa — Verb : Qal (Simple, Active) Infinitive Absolute | זָנָה (za.nah): to fornicate |
+| 18 | תִזְנֶה֙ | tiz.Neh | it prostitutes itself | H2181 | HVqi3fs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/jussive) Third Singular Feminine | זָנָה (za.nah): to fornicate |
+| 19 | הָ/אָ֔רֶץ | ha./'A.retz | the/ land | H776G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 20 | מֵֽ/אַחֲרֵ֖י | me./'a.cha.Rei | from/ after | H310A | HR/Acmpc — Preposition + Acmpc | אַחַר (a.char): after |
+| 21 | יְהוָֽה\׃ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+
+## Hosea 1:3
+
+**Original:** וַיֵּ֙לֶךְ֙ וַיִּקַּ֔ח אֶת־ גֹּ֖מֶר בַּת־ דִּבְלָ֑יִם וַתַּ֥הַר וַתֵּֽלֶד־ ל֖וֹ בֵּֽן׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יֵּ֙לֶךְ֙ | va/i.Ye.lekh | and/ he went | H1980G | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | הָלַךְ (ha.lakh): to go: went |
+| 2 | וַ/יִּקַּ֔ח | va/i.yi.Kach | and/ he took | H3947I | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | לָקַח (la.qach): to take: marry |
+| 3 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 4 | גֹּ֖מֶר | Go.mer | Gomer | H1586H | HNpf — Proper Noun (Feminine individual) | גֹּ֫מֶר (go.mer): Gomer |
+| 5 | בַּת\־ | bat- | [the] daughter of | H1323G | HNcfsc — Noun (Singular Feminine, Construct) | בַּת (bat): daughter |
+| 6 | דִּבְלָ֑יִם | div.La.yim | Diblaim | H1691 | HNpm — Proper Noun (Masculine individual) | דִּבְלַ֫יִם (div.la.yim): Diblaim |
+| 7 | וַ/תַּ֥הַר | va./Ta.har | and/ she conceived | H2029 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | הָרָה (ha.rah): to conceive |
+| 8 | וַ/תֵּֽלֶד\־ | va./te.led- | and/ she bore | H3205 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | יָלַד (ya.lad): to beget |
+| 9 | ל֖/וֹ | l/o | to/ him | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 10 | בֵּֽן\׃ | Ben | a son | H1121A | HNcmsa — Noun (Singular Masculine, Absolute) | בֵּן (ben): son: child |
+
+## Hosea 1:4
+
+**Original:** וַיֹּ֤אמֶר יְהוָה֙ אֵלָ֔יו קְרָ֥א שְׁמ֖וֹ יִזְרְעֶ֑אל כִּי־ ע֣וֹד מְעַ֗ט וּפָ֨קַדְתִּ֜י אֶת־ דְּמֵ֤י יִזְרְעֶאל֙ עַל־ בֵּ֣ית יֵה֔וּא וְהִ֨שְׁבַּתִּ֔י מַמְלְכ֖וּת בֵּ֥ית יִשְׂרָאֵֽל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יֹּ֤אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 2 | יְהוָה֙ | Yah.weh | Yahweh | H3068G | HNpt — Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 3 | אֵלָ֔י/ו | 'e.La/v | to/ him | H413 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | אֶל (el): to(wards) |
+| 4 | קְרָ֥א | ke.Ra' | call | H7121H | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | קָרָא (qa.ra): to call: call by |
+| 5 | שְׁמ֖/וֹ | she.M/o | name/ his | H8034 | HNcmsc/Sp3ms — Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | שֵׁם (shem): name |
+| 6 | יִזְרְעֶ֑אל | yiz.re.'El | Jezreel | H3157K | HNpm — Proper Noun (Masculine individual) | יִזְרְעֶאל (yiz.re.el): Jezreel |
+| 7 | כִּי\־ | ki- | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 8 | ע֣וֹד | od | yet | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 9 | מְעַ֗ט | me.'At | a little | H4592 | HNcmsa — Noun (Singular Masculine, Absolute) | מְעַט (me.at): little |
+| 10 | וּ/פָ֨קַדְתִּ֜י | u./Fa.kad.Ti | and/ I will visit | H6485H | Hc/Vqq1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | פָּקַד (pa.qad): to reckon: punish |
+| 11 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 12 | דְּמֵ֤י | de.Mei | [the] blood<s> of | H1818 | HNcmpc — Noun (Plural Masculine, Construct) | דָּם (dam): blood |
+| 13 | יִזְרְעֶאל֙ | yiz.re.'eL | Jezreel | H3157K | HNpl — Proper Noun (Location) | יִזְרְעֶאל (yiz.re.el): Jezreel |
+| 14 | עַל\־ | 'al- | on | H5921A | HR — Preposition | עַל (al): upon |
+| 15 | בֵּ֣ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 16 | יֵה֔וּא | ye.Hu' | Jehu | H3058H | HNpm — Proper Noun (Masculine individual) | יֵהוּא (ye.hu): Jehu |
+| 17 | וְ/הִ֨שְׁבַּתִּ֔י | ve./Hish.ba.Ti | and/ I will put an end to | H7673A | Hc/Vhq1cs — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | שָׁבַת (sha.vat): to cease |
+| 18 | מַמְלְכ֖וּת | mam.le.Khut | [the] kingdom of | H4468 | HNcfsc — Noun (Singular Feminine, Construct) | מַמְלָכוּת (mam.la.khut): kingdom |
+| 19 | בֵּ֥ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 20 | יִשְׂרָאֵֽל\׃ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+
+## Hosea 1:5
+
+**Original:** וְהָיָ֖ה בַּיּ֣וֹם הַה֑וּא וְשָֽׁבַרְתִּי֙ אֶת־ קֶ֣שֶׁת יִשְׂרָאֵ֔ל בְּעֵ֖מֶק יִזְרְעֶֽאל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/הָיָ֖ה | ve./ha.Yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | בַּ/יּ֣וֹם | ba/i.Yom | on the/ day | H3117G | HRd/Ncmsa — Preposition (Definite) + Noun (Singular Masculine, Absolute) | יוֹם (yom): day |
+| 3 | הַ/ה֑וּא | ha./Hu' | <the>/ that | H1931 | HTd/Pp3ms — Definite article (Hebrew) + Pronoun (Third Singular Masculine) | הוּא (hu): he/she/it |
+| 4 | וְ/שָֽׁבַרְתִּי֙ | ve./sha.var.Ti | and/ I will break | H7665 | Hc/Vqq1cs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender | שָׁבַר (sha.var): to break |
+| 5 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 6 | קֶ֣שֶׁת | Ke.shet | [the] bow of | H7198 | HNcfsc — Noun (Singular Feminine, Construct) | קֶ֫שֶׁת (qe.shet): bow |
+| 7 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 8 | בְּ/עֵ֖מֶק | be./'E.mek | in/ [the] valley of | H6010M | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | עֵ֫מֶק (e.meq): Valley (of Jezreel) |
+| 9 | יִזְרְעֶֽאל\׃ | yiz.re.'El | Jezreel | H3157L | HNpl — Proper Noun (Location) | יִזְרְעֶאל (yiz.re.el): (Valley of) Jezreel |
+
+## Hosea 1:6
+
+**Original:** וַתַּ֤הַר עוֹד֙ וַתֵּ֣לֶד בַּ֔ת וַיֹּ֣אמֶר ל֔וֹ קְרָ֥א שְׁמָ֖הּ לֹ֣א רֻחָ֑מָה כִּי֩ לֹ֨א אוֹסִ֜יף ע֗וֹד אֲרַחֵם֙ אֶת־ בֵּ֣ית יִשְׂרָאֵ֔ל כִּֽי־ נָשֹׂ֥א אֶשָּׂ֖א לָהֶֽם׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תַּ֤הַר | va./Ta.har | and/ she conceived | H2029 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | הָרָה (ha.rah): to conceive |
+| 2 | עוֹד֙ | 'Od | again | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 3 | וַ/תֵּ֣לֶד | va./Te.led | and/ she bore | H3205 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | יָלַד (ya.lad): to beget |
+| 4 | בַּ֔ת | Bat | a daughter | H1323G | HNcfsa — Noun (Singular Feminine, Absolute) | בַּת (bat): daughter |
+| 5 | וַ/יֹּ֣אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 6 | ל֔/וֹ | l/o | to/ him | H9005 | HR/Sp3ms — Preposition + Suffix (Third Singular Masculine) | /ל (l): to/for |
+| 7 | קְרָ֥א | ke.Ra' | call | H7121H | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | קָרָא (qa.ra): to call: call by |
+| 8 | שְׁמָ֖/הּ | she.Ma/h | name/ her | H8034 | HNcmsc/Sp3fs — Noun (Singular Masculine, Construct) + Suffix (Third Singular Feminine) | שֵׁם (shem): name |
+| 9 | לֹ֣א | lo' | Lo- | H3819 | HNpf — Proper Noun (Feminine individual) | לֹא רֻחָ֫מָה (lo ru.cha.mah): No Mercy |
+| 10 | רֻחָ֑מָה | ru.Cha.mah | Ruhamah | H3819 | HNpf — Proper Noun (Feminine individual) | לֹא רֻחָ֫מָה (lo ru.cha.mah): No Mercy |
+| 11 | כִּי֩ | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 12 | לֹ֨א | lo' | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 13 | אוֹסִ֜יף | 'o.Sif | I will repeat | H3254G | HVhi1cs — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | יָסַף (ya.saph): to add: again |
+| 14 | ע֗וֹד | od | again | H5750 | HAcmsa — Adjective (Singular Masculine, Absolute) | עוֹד (od): still |
+| 15 | אֲרַחֵם֙ | 'a.ra.Chem | I will have compassion on | H7355 | HVpi1cs — Verb : Piel (Intensive/resultive/transtive, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | רָחַם (ra.cham): to have compassion |
+| 16 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 17 | בֵּ֣ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 18 | יִשְׂרָאֵ֔ל | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 19 | כִּֽי\־ | ki- | that | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 20 | נָשֹׂ֥א | na.So' | certainly <forgive> | H5375I | HVqaa — Verb : Qal (Simple, Active) Infinitive Absolute | נָשָׂא (na.sa): to lift: forgive |
+| 21 | אֶשָּׂ֖א | 'e.Sa' | I will forgive | H5375I | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | נָשָׂא (na.sa): to lift: forgive |
+| 22 | לָ/הֶֽם\׃ | la./Hem | <to>/ them | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+
+## Hosea 1:7
+
+**Original:** וְאֶת־ בֵּ֤ית יְהוּדָה֙ אֲרַחֵ֔ם וְהֽוֹשַׁעְתִּ֖ים בַּיהוָ֣ה אֱלֹֽהֵיהֶ֑ם וְלֹ֣א אֽוֹשִׁיעֵ֗ם בְּקֶ֤שֶׁת וּבְחֶ֙רֶב֙ וּבְמִלְחָמָ֔ה בְּסוּסִ֖ים וּבְפָרָשִֽׁים׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ/אֶת\־ | ve./'Et | and/ <obj.> | H853 | HC/To — Conjunction + Object indicator | אֵת (et): [Obj.] |
+| 2 | בֵּ֤ית | beit | [the] house of | H1004M | HNcmsc — Noun (Singular Masculine, Construct) | בַּ֫יִת (ba.yit): house: household |
+| 3 | יְהוּדָה֙ | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 4 | אֲרַחֵ֔ם | 'a.ra.Chem | I will have compassion on | H7355 | HVpi1cs — Verb : Piel (Intensive/resultive/transtive, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | רָחַם (ra.cham): to have compassion |
+| 5 | וְ/הֽוֹשַׁעְתִּ֖י/ם | ve./ho.sha'.Ti/m | and/ I will save/ them | H3467 | Hc/Vhq1cs/Sp3mp — Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender + Suffix (Third Plural Masculine) | יָשַׁע (ya.sah): to save |
+| 6 | בַּ/יהוָ֣ה | ba./Yah.weh | by/ Yahweh | H3068G | HR/Npt — Preposition + Proper Noun (Title) | יְהֹוָה (ye.ho.vah): LORD |
+| 7 | אֱלֹֽהֵי/הֶ֑ם | 'e.lo.hei./Hem | God/ their | H430G | HNcmpc/Sp3mp — Noun (Plural Masculine, Construct) + Suffix (Third Plural Masculine) | אֱלֹהִים (e.lo.him): God |
+| 8 | וְ/לֹ֣א | ve./Lo' | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 9 | אֽוֹשִׁיעֵ֗/ם | 'o.shi.'E/m | I will save/ them | H3467 | HVhi1cs/Sp3mp — Verb : Hiphil (Causative/declarative, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender + Suffix (Third Plural Masculine) | יָשַׁע (ya.sah): to save |
+| 10 | בְּ/קֶ֤שֶׁת | be./Ke.shet | by/ bow | H7198 | HR/Ncfsa — Preposition + Noun (Singular Feminine, Absolute) | קֶ֫שֶׁת (qe.shet): bow |
+| 11 | וּ/בְ/חֶ֙רֶב֙ | u./ve./Che.rev | and/ by/ sword | H2719 | HC/R/Ncfsa — Conjunction + Preposition + Noun (Singular Feminine, Absolute) | חֶ֫רֶב (che.rev): sword |
+| 12 | וּ/בְ/מִלְחָמָ֔ה | u./ve./mil.cha.Mah | and/ by/ battle | H4421 | HC/R/Ncfsa — Conjunction + Preposition + Noun (Singular Feminine, Absolute) | מִלְחָמָה (mil.cha.mah): battle |
+| 13 | בְּ/סוּסִ֖ים | be./su.Sim | by/ horses | H5483M | HR/Ncmpa — Preposition + Noun (Plural Masculine, Absolute) | סוּס (sus): horse |
+| 14 | וּ/בְ/פָרָשִֽׁים\׃ | u./ve./fa.ra.Shim | and/ by/ horsemen | H6571B | HC/R/Ncmpa — Conjunction + Preposition + Noun (Plural Masculine, Absolute) | פָּרָשׁ (pa.rash): horseman |
+
+## Hosea 1:8
+
+**Original:** וַתִּגְמֹ֖ל אֶת־ לֹ֣א רֻחָ֑מָה וַתַּ֖הַר וַתֵּ֥לֶד בֵּֽן׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/תִּגְמֹ֖ל | va./tig.Mol | and/ she weaned | H1580 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | גָּמַל (ga.mal): to wean |
+| 2 | אֶת\־ | 'et- | <obj.> | H853 | HTo — Object indicator | אֵת (et): [Obj.] |
+| 3 | לֹ֣א | lo' | Lo- | H3819 | HNpf — Proper Noun (Feminine individual) | לֹא רֻחָ֫מָה (lo ru.cha.mah): No Mercy |
+| 4 | רֻחָ֑מָה | ru.Cha.mah | Ruhamah | H3819 | HNpf — Proper Noun (Feminine individual) | לֹא רֻחָ֫מָה (lo ru.cha.mah): No Mercy |
+| 5 | וַ/תַּ֖הַר | va./Ta.har | and/ she conceived | H2029 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | הָרָה (ha.rah): to conceive |
+| 6 | וַ/תֵּ֥לֶד | va./Te.led | and/ she bore | H3205 | Hc/Vqw3fs — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Feminine | יָלַד (ya.lad): to beget |
+| 7 | בֵּֽן\׃ | Ben | a son | H1121A | HNcmsa — Noun (Singular Masculine, Absolute) | בֵּן (ben): son: child |
+
+## Hosea 1:9
+
+**Original:** וַיֹּ֕אמֶר קְרָ֥א שְׁמ֖וֹ לֹ֣א עַמִּ֑י כִּ֤י אַתֶּם֙ לֹ֣א עַמִּ֔י וְאָנֹכִ֖י לֹֽא־ אֶהְיֶ֥ה לָכֶֽם׃\ \ס
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וַ/יֹּ֕אמֶר | va/i.Yo.mer | and/ he said | H559 | Hc/Vqw3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine | אָמַר (a.mar): to say |
+| 2 | קְרָ֥א | ke.Ra' | call | H7121H | HVqv2ms — Verb : Qal (Simple, Active) Imperative Second Singular Masculine | קָרָא (qa.ra): to call: call by |
+| 3 | שְׁמ֖/וֹ | she.M/o | name/ his | H8034 | HNcmsc/Sp3ms — Noun (Singular Masculine, Construct) + Suffix (Third Singular Masculine) | שֵׁם (shem): name |
+| 4 | לֹ֣א | lo' | Lo- | H3818 | HNpm — Proper Noun (Masculine individual) | לֹא עַמִּי (lo am.mi): Not My People |
+| 5 | עַמִּ֑י | 'a.Mi | Ammi | H3818 | HNpm — Proper Noun (Masculine individual) | לֹא עַמִּי (lo am.mi): Not My People |
+| 6 | כִּ֤י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 7 | אַתֶּם֙ | 'a.Tem | you | H859D | HPp2mp — Pronoun (Second Plural Masculine) | אַתֶּם (at.tem): you(m.p.) |
+| 8 | לֹ֣א | lo' | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 9 | עַמִּ֔/י | 'a.M/i | [are] people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 10 | וְ/אָנֹכִ֖י | ve./'a.no.Khi | and/ I | H595 | HC/Pp1bs — Conjunction + Pronoun (First Singular Either gender) | אָֽנֹכִ֫י (a.no.khi): I |
+| 11 | לֹֽא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 12 | אֶהְיֶ֥ה | 'eh.Yeh | I will belong | H1961 | HVqi1cs — Verb : Qal (Simple, Active) Imperfect (Future/present Indicative/cohortative) First Singular Either gender | הָיָה (ha.yah): to be |
+| 13 | לָ/כֶֽם\׃\ \ס | la./Khem | to/ you | H9005 | HR/Sp2mp — Preposition + Suffix (Second Plural Masculine) | /ל (l): to/for |
+
+## Hosea 1:10
+
+**Original:** וְֽ֠הָיָה מִסְפַּ֤ר בְּנֵֽי־ יִשְׂרָאֵל֙ כְּח֣וֹל הַיָּ֔ם אֲשֶׁ֥ר לֹֽא־ יִמַּ֖ד וְלֹ֣א יִסָּפֵ֑ר וְֽ֠הָיָה בִּמְק֞וֹם אֲשֶׁר־ יֵאָמֵ֤ר לָהֶם֙ לֹֽא־ עַמִּ֣י אַתֶּ֔ם יֵאָמֵ֥ר לָהֶ֖ם בְּנֵ֥י אֵֽל־ חָֽי׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְֽ֠/הָיָה | Ve./ha.yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 2 | מִסְפַּ֤ר | mis.Par | [the] number of | H4557 | HNcmsc — Noun (Singular Masculine, Construct) | מִסְפָּר (mis.par): number |
+| 3 | בְּנֵֽי\־ | be.nei- | [the] people of | H1121G | HNcmpc — Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 4 | יִשְׂרָאֵל֙ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 5 | כְּ/ח֣וֹל | ke./Chol | like/ [the] sand of | H2344 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | חוֹל (chol): sand |
+| 6 | הַ/יָּ֔ם | hai./Yam | the/ sea | H3220G | HTd/Ncmsa — Definite article (Hebrew) + Noun (Singular Masculine, Absolute) | יָם (yam): sea |
+| 7 | אֲשֶׁ֥ר | 'a.Sher | which | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 8 | לֹֽא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 9 | יִמַּ֖ד | yi.Mad | it will be measured | H4058 | HVNi3ms — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | מָדַד (ma.dad): to measure |
+| 10 | וְ/לֹ֣א | ve./Lo' | and/ not | H3808 | HC/Tn — Conjunction + Negative Particle | לֹא (lo): not |
+| 11 | יִסָּפֵ֑ר | yi.sa.Fer | it will be counted | H5608A | HVNi3ms — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | סָפַר (sa.phar): to recount |
+| 12 | וְֽ֠/הָיָה | Ve./ha.yah | and/ it will be | H1961 | Hc/Vqq3ms — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine | הָיָה (ha.yah): to be |
+| 13 | בִּ/מְק֞וֹם | bi/m.Kom | in/ [the] place | H4725 | HR/Ncmsc — Preposition + Noun (Singular Masculine, Construct) | מָקוֹם (ma.qom): place |
+| 14 | אֲשֶׁר\־ | 'a.Sher- | <of> where | H834A | HTr — Relative Particle | אֲשֶׁר (a.sher): which |
+| 15 | יֵאָמֵ֤ר | ye.'a.Mer | it was said | H559 | HVNi3ms — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | אָמַר (a.mar): to say |
+| 16 | לָ/הֶם֙ | la./Hem | to/ them | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 17 | לֹֽא\־ | lo'- | not | H3808 | HTn — Negative Particle | לֹא (lo): not |
+| 18 | עַמִּ֣/י | 'a.M/i | [are] people/ my | H5971A | HNcmsc/Sp1bs — Noun (Singular Masculine, Construct) + Suffix (First Singular Either gender) | עַם (am): people |
+| 19 | אַתֶּ֔ם | 'a.Tem | you | H859D | HPp2mp — Pronoun (Second Plural Masculine) | אַתֶּם (at.tem): you(m.p.) |
+| 20 | יֵאָמֵ֥ר | ye.'a.Mer | it will be said | H559 | HVNi3ms — Verb : Niphal (Simple, Passive) Imperfect (Future/present Indicative/jussive) Third Singular Masculine | אָמַר (a.mar): to say |
+| 21 | לָ/הֶ֖ם | la./Hem | to/ them | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 22 | בְּנֵ֥י | be.Nei | children of | H1121G | HNcmpc — Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 23 | אֵֽל\־ | 'el- | [the] God | H410G | HNcmsa — Noun (Singular Masculine, Absolute) | אֵל (el): God |
+| 24 | חָֽי\׃ | Chai | living | H2416A | HAamsa — Adjective (Singular Masculine, Absolute) | חַי (chay): alive |
+
+## Hosea 1:11
+
+**Original:** וְ֠נִקְבְּצוּ בְּנֵֽי־ יְהוּדָ֤ה וּבְנֵֽי־ יִשְׂרָאֵל֙ יַחְדָּ֔ו וְשָׂמ֥וּ לָהֶ֛ם רֹ֥אשׁ אֶחָ֖ד וְעָל֣וּ מִן־ הָאָ֑רֶץ כִּ֥י גָד֖וֹל י֥וֹם יִזְרְעֶֽאל׃
+
+| # | 原文 | Transliteration | Context gloss | Strong | Morphology | Brief lexicon |
+|---:|---|---|---|---|---|---|
+| 1 | וְ֠/נִקְבְּצוּ | Ve./nik.be.tzu | and/ they will be gathered | H6908 | Hc/VNq3cp — Consecutive Conjunction + Verb : Niphal (Simple, Passive) Consecutive Perfect (Future/present Indicative) Third Plural Either gender | קָבַץ (qa.vats): to gather |
+| 2 | בְּנֵֽי\־ | be.nei- | [the] people of | H1121G | HNcmpc — Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 3 | יְהוּדָ֤ה | ye.hu.Dah | Judah | H3063G | HNpl — Proper Noun (Location) | יְהוּדָה (ye.hu.dah): Judah |
+| 4 | וּ/בְנֵֽי\־ | u./ve.nei- | and/ [the] people of | H1121G | HC/Ncmpc — Conjunction + Noun (Plural Masculine, Construct) | בֵּן (ben): son: descendant/people |
+| 5 | יִשְׂרָאֵל֙ | Yis.ra.'El | Israel | H3478 | HNpl — Proper Noun (Location) | יִשְׂרָאֵל (yis.ra.el): Israel |
+| 6 | יַחְדָּ֔ו | yach.Dav | together | H3162B | HD — Adverb | יָחְדָּו (yach.dav): together |
+| 7 | וְ/שָׂמ֥וּ | ve./sa.Mu | and/ they will appoint | H7760L | Hc/Vqq3cp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Plural Either gender | שׂוּם (sum): to set: appoint |
+| 8 | לָ/הֶ֛ם | la./Hem | for/ themselves | H9005 | HR/Sp3mp — Preposition + Suffix (Third Plural Masculine) | /ל (l): to/for |
+| 9 | רֹ֥אשׁ | rosh | a chief | H7218H | HNcmsa — Noun (Singular Masculine, Absolute) | רֹאשׁ (rosh): head: leader |
+| 10 | אֶחָ֖ד | 'e.Chad | one | H259 | HAcfsa — Numerical Adjective (Singular Feminine, Absolute) | אֶחָד (e.chad): one |
+| 11 | וְ/עָל֣וּ | ve./'a.Lu | and/ they will go up | H5927G | Hc/Vqq3cp — Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) Third Plural Either gender | עָלָה (a.lah): to ascend: rise |
+| 12 | מִן\־ | min- | from | H4480A | HR — Preposition | from |
+| 13 | הָ/אָ֑רֶץ | ha./'A.retz | the/ land | H776G | HTd/Ncfsa — Definite article (Hebrew) + Noun (Singular Feminine, Absolute) | אֶ֫רֶץ (e.rets): land: country/planet |
+| 14 | כִּ֥י | ki | for | H3588A | HTc — Conditional Particle | כִּי (ki): for |
+| 15 | גָד֖וֹל | ga.Dol | [will be] great | H1419A | HAamsa — Adjective (Singular Masculine, Absolute) | גָּדוֹל (ga.dol): great: large |
+| 16 | י֥וֹם | Yom | [the] day of | H3117G | HNcmsc — Noun (Singular Masculine, Construct) | יוֹם (yom): day |
+| 17 | יִזְרְעֶֽאל\׃ | yiz.re.'El | Jezreel | H3157H | HNpl — Proper Noun (Location) | יִזְרְעֶאל (yiz.re.el): Jezreel |

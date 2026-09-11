@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 36,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_36.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 38,
+      "words": 565,
+      "first": "Ezk 36:1",
+      "last": "Ezk 36:38",
+      "sha256": "337c61db06b503965fe8eb9878ed6d1217a4256f7bf6be49f887f9d13f2f1a96",
+      "bytes": 111848,
+      "chars": 97605,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

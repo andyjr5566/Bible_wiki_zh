@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 104,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_104.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 104,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 271,
+      "first": "Psa 104:1",
+      "last": "Psa 104:35",
+      "sha256": "ac63712c1601c344b04a67414a21f770ad72446d4212385e9d7007cc3a78882a",
+      "bytes": 57505,
+      "chars": 50483,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

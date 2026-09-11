@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 35,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_35.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 35,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 368,
+      "first": "Jer 35:1",
+      "last": "Jer 35:19",
+      "sha256": "eb66c1fac5756bcb0ab75947cf95488923f21ebda49ed790d69bfda60bb0ebd2",
+      "bytes": 68240,
+      "chars": 59235,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 146,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_146.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 146,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 85,
+      "first": "Psa 146:1",
+      "last": "Psa 146:10",
+      "sha256": "15ad34c9a9a7d838484f882718df165f981615aa8a1cf31fbce357a523e9ada9",
+      "bytes": 17365,
+      "chars": 15161,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

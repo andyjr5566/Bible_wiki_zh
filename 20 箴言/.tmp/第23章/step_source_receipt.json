@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_23.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 274,
+      "first": "Pro 23:1",
+      "last": "Pro 23:35",
+      "sha256": "23cbe66c1f3a5eb76bf2c4d6f18ed1891b336bb94433dbbf3b2784c2314f1d9e",
+      "bytes": 56713,
+      "chars": 50003,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

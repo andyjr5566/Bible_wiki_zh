@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 99,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_99.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 99,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 83,
+      "first": "Psa 99:1",
+      "last": "Psa 99:9",
+      "sha256": "c07a727e68d5db599980ad1843f0eab114c0a90dd28e8c8ba7b8638293c4a71b",
+      "bytes": 17077,
+      "chars": 14890,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

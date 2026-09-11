@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "箴言",
+  "chapter": 10,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_proverbs_10.txt",
+      "book": "Proverbs",
+      "book_code": "Pro",
+      "chapter": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 32,
+      "words": 234,
+      "first": "Pro 10:1",
+      "last": "Pro 10:32",
+      "sha256": "3bcdcdcd93e050aea1f67c9fdb36fb39107bbdb8b11d66a672d3e4a6b8a62191",
+      "bytes": 47732,
+      "chars": 41703,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

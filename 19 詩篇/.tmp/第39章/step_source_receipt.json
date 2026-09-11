@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 39,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_39.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 39,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 129,
+      "first": "Psa 39:0",
+      "last": "Psa 39:13",
+      "sha256": "1b9e3a88e69ccd1fd3bf969064222317b5cc51cce2c8e2cbf9ddd0dd9658f8c3",
+      "bytes": 26512,
+      "chars": 23235,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

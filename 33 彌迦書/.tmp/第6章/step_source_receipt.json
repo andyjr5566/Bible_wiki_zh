@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "彌迦書",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_micah_6.txt",
+      "book": "Micah",
+      "book_code": "Mic",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 204,
+      "first": "Mic 6:1",
+      "last": "Mic 6:16",
+      "sha256": "ccf208f1d8b995a866322ee7fe29c060a73cf18ce540fc3de7c907b8f22ba2ab",
+      "bytes": 39903,
+      "chars": 34880,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

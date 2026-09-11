@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 6,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_6.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 42,
+      "words": 741,
+      "first": "2Ch 6:1",
+      "last": "2Ch 6:42",
+      "sha256": "db0acedcf4bac3f6578b71273ec8c245b35bac6a19bb9ce39a2f144311b43d7c",
+      "bytes": 144433,
+      "chars": 126124,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

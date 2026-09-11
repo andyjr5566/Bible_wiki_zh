@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 18,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_18.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 548,
+      "first": "Jdg 18:1",
+      "last": "Jdg 18:31",
+      "sha256": "9e70006bc65a57bb837aaba27f49183631cf59266b83402d5c925555b7834004",
+      "bytes": 104033,
+      "chars": 90923,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_4.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 19,
+      "words": 223,
+      "first": "Hos 4:1",
+      "last": "Hos 4:19",
+      "sha256": "6b9d494ea961faa07cb7342db69b6c9ed9ff9befa94dc8d3baf7ff77c7085889",
+      "bytes": 44574,
+      "chars": 39170,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

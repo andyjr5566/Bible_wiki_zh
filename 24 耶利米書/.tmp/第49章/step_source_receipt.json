@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 49,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_49.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 49,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 39,
+      "words": 584,
+      "first": "Jer 49:1",
+      "last": "Jer 49:39",
+      "sha256": "44776c3e7e06776f69341c0b9b151512d7fa658a0e689fa6e8d3c52f433978a9",
+      "bytes": 111981,
+      "chars": 97764,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

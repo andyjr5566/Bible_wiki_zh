@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 32,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_32.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 32,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 33,
+      "words": 549,
+      "first": "2Ch 32:1",
+      "last": "2Ch 32:33",
+      "sha256": "07df4327f59736373e22e971b593dbf6975a4aa5076f70b2631fd5570bb18644",
+      "bytes": 107244,
+      "chars": 93032,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

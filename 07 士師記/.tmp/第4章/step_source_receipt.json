@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 4,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_4.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 24,
+      "words": 422,
+      "first": "Jdg 4:1",
+      "last": "Jdg 4:24",
+      "sha256": "6bf3c7fcbdfa3042ea4939adfd8f0915e67840477d4622f2d486dad66d5af5b9",
+      "bytes": 79007,
+      "chars": 68880,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

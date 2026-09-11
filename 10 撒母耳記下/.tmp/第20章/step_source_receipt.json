@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記下",
+  "chapter": 20,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_samuel_20.txt",
+      "book": "2 Samuel",
+      "book_code": "2Sa",
+      "chapter": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 443,
+      "first": "2Sa 20:1",
+      "last": "2Sa 20:26",
+      "sha256": "234d46e46d5474ea455071a9b00dd02ad3d93bdf3a597c721a323c09c4ebeb10",
+      "bytes": 85067,
+      "chars": 74177,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

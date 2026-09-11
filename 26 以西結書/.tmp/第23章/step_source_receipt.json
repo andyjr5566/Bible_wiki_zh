@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_23.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 49,
+      "words": 621,
+      "first": "Ezk 23:1",
+      "last": "Ezk 23:49",
+      "sha256": "f642869d7946542ce1df491d7457fac15442e08553648ff804609de9420bb7f5",
+      "bytes": 126326,
+      "chars": 110163,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

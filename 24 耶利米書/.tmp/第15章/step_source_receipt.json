@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 15,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_15.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 315,
+      "first": "Jer 15:1",
+      "last": "Jer 15:21",
+      "sha256": "6b79427e4db6067d680d2503aff8576a98ceaed824fb537e319adf9f1360d96a",
+      "bytes": 63254,
+      "chars": 55562,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 39,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_39.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 39,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 18,
+      "words": 302,
+      "first": "Jer 39:1",
+      "last": "Jer 39:18",
+      "sha256": "8b68a7a343d666ac21bb2b4483df02620926e5e1a367832189cf4f38f9bd0402",
+      "bytes": 59005,
+      "chars": 50980,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

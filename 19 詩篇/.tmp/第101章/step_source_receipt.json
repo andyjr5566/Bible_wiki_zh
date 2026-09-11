@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 101,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_101.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 101,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 83,
+      "first": "Psa 101:0",
+      "last": "Psa 101:8",
+      "sha256": "f5c1cc6cc2a868e8bb06e6269cc6637b523def2eb727eac3b37e5a00de2deb00",
+      "bytes": 17091,
+      "chars": 14975,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

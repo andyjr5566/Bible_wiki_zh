@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "尼希米記",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_nehemiah_12.txt",
+      "book": "Nehemiah",
+      "book_code": "Neh",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 47,
+      "words": 471,
+      "first": "Neh 12:1",
+      "last": "Neh 12:47",
+      "sha256": "e9b6bbb2906b2b24fa31d6adc9ad09bf8bd9e4392286ce7fbc585861cf37537f",
+      "bytes": 96120,
+      "chars": 82391,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

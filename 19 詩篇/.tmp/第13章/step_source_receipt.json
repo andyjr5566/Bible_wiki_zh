@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 13,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_13.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 13,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 7,
+      "words": 55,
+      "first": "Psa 13:0",
+      "last": "Psa 13:6",
+      "sha256": "f224e2b2691cd149c51b5dff4a2daec0f44cba4b619ee86f67272412eda0993b",
+      "bytes": 11538,
+      "chars": 10149,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 145,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_145.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 145,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 22,
+      "words": 159,
+      "first": "Psa 145:0",
+      "last": "Psa 145:21",
+      "sha256": "e41545d67ad97126737d7fabb8945c81b24ad1eeffaeeee6ec01655bf88852f7",
+      "bytes": 34865,
+      "chars": 30668,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

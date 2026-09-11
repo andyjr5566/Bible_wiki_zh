@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 65,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_65.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 65,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 109,
+      "first": "Psa 65:0",
+      "last": "Psa 65:13",
+      "sha256": "8bdd65f1db2f87f53ae36453d9650cf9bcb5a1df9c6043373bc7eaf674520202",
+      "bytes": 24395,
+      "chars": 21365,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

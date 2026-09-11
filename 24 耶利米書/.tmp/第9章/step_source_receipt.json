@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_9.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 389,
+      "first": "Jer 9:1",
+      "last": "Jer 9:26",
+      "sha256": "7b3f57b4577da2d99aeb02d103dc5cfafe9d55e289c2fd2a330c8d31137d5604",
+      "bytes": 74596,
+      "chars": 65244,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

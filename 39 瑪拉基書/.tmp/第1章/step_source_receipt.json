@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "瑪拉基書",
+  "chapter": 1,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_malachi_1.txt",
+      "book": "Malachi",
+      "book_code": "Mal",
+      "chapter": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 239,
+      "first": "Mal 1:1",
+      "last": "Mal 1:14",
+      "sha256": "1432f395e75cbd4329ea08ff2a04ba9af65cfa21db0f6f0037d7c3d824d89b02",
+      "bytes": 45976,
+      "chars": 40223,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

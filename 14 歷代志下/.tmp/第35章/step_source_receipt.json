@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 35,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_35.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 35,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 431,
+      "first": "2Ch 35:1",
+      "last": "2Ch 35:27",
+      "sha256": "62b4b025f0b8851dc268f004f191aed0022d81f5eedbab450e67dc351d94d8e0",
+      "bytes": 87576,
+      "chars": 75836,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

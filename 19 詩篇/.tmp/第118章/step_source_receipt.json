@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 118,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_118.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 118,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 29,
+      "words": 198,
+      "first": "Psa 118:1",
+      "last": "Psa 118:29",
+      "sha256": "abbee946faecd5d56e55e6b3075475eb2896c0bb0a71ffbfc9c755d3da28fa18",
+      "bytes": 40846,
+      "chars": 36064,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

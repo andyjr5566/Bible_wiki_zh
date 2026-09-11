@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "士師記",
+  "chapter": 21,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_judges_21.txt",
+      "book": "Judges",
+      "book_code": "Jdg",
+      "chapter": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 375,
+      "first": "Jdg 21:1",
+      "last": "Jdg 21:25",
+      "sha256": "01ee8e70f088825b0582c051f34de0093407326df370cc25e9cadd880aaebbcc",
+      "bytes": 73362,
+      "chars": 63775,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

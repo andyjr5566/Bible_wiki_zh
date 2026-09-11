@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 45,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_45.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 45,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 396,
+      "first": "Ezk 45:1",
+      "last": "Ezk 45:25",
+      "sha256": "111f32a62212dba5e21f95bf9b463b6492adb3d1acf6128c5a2141294db85275",
+      "bytes": 75970,
+      "chars": 65845,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

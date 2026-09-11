@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 23,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_23.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 385,
+      "first": "2Ch 23:1",
+      "last": "2Ch 23:21",
+      "sha256": "0394b065b3990fb2d439afd0e211b435004defc87b7d06d57226e316fed79b19",
+      "bytes": 75590,
+      "chars": 65784,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

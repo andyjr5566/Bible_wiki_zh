@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 124,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_124.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 124,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 9,
+      "words": 57,
+      "first": "Psa 124:0",
+      "last": "Psa 124:8",
+      "sha256": "eed647b474ca073477103ebb234bdc3dd091ec4cfa3e81ed1a01fd51fd87ba23",
+      "bytes": 12092,
+      "chars": 10559,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

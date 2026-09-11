@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "傳道書",
+  "chapter": 12,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ecclesiastes_12.txt",
+      "book": "Ecclesiastes",
+      "book_code": "Ecc",
+      "chapter": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 186,
+      "first": "Ecc 12:1",
+      "last": "Ecc 12:14",
+      "sha256": "99165d49501ebff124251e1d1e6a5fcd0fdf0f3cf749bef4c6a39d674747e31a",
+      "bytes": 37248,
+      "chars": 32638,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

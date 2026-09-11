@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "耶利米書",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_jeremiah_3.txt",
+      "book": "Jeremiah",
+      "book_code": "Jer",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 410,
+      "first": "Jer 3:1",
+      "last": "Jer 3:25",
+      "sha256": "b09008d82a61f046168b4cbf20c714e8842a661f206d28f1274e56a278c5bd78",
+      "bytes": 78739,
+      "chars": 68782,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

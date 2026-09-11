@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 33,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_33.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 33,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 25,
+      "words": 380,
+      "first": "2Ch 33:1",
+      "last": "2Ch 33:25",
+      "sha256": "ea24ad08320b565927ef036febff4cfbbc51476ecbfe6c168891f88257e6a579",
+      "bytes": 76193,
+      "chars": 66236,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

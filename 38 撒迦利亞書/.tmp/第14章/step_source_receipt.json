@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒迦利亞書",
+  "chapter": 14,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_zechariah_14.txt",
+      "book": "Zechariah",
+      "book_code": "Zec",
+      "chapter": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 21,
+      "words": 362,
+      "first": "Zec 14:1",
+      "last": "Zec 14:21",
+      "sha256": "a78c05d22ff578b83b5d463b5f66c5e76efa40d359028611de52f87e6f9702f8",
+      "bytes": 69711,
+      "chars": 60764,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

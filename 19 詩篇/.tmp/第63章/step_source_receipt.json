@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 63,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_63.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 63,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 93,
+      "first": "Psa 63:0",
+      "last": "Psa 63:11",
+      "sha256": "fe1f12e75cb456a89a3f67d94e5632ce69d9ea9464213d17c29091c713f8519c",
+      "bytes": 20357,
+      "chars": 17870,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

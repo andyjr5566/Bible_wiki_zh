@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "撒母耳記上",
+  "chapter": 30,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_1_samuel_30.txt",
+      "book": "1 Samuel",
+      "book_code": "1Sa",
+      "chapter": 30,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 31,
+      "words": 487,
+      "first": "1Sa 30:1",
+      "last": "1Sa 30:31",
+      "sha256": "412f25cde0b082cca24dae19bdf9ca334a93713d95308c075923f17271b84243",
+      "bytes": 94881,
+      "chars": 82894,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

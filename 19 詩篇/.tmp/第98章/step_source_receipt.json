@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 98,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_98.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 98,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 10,
+      "words": 75,
+      "first": "Psa 98:0",
+      "last": "Psa 98:9",
+      "sha256": "e3959dc1d6f820d4e1687ce57b51b9221b3e5227b1fcb5c412518e05d4efe023",
+      "bytes": 16054,
+      "chars": 14009,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

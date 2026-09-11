@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 5,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_5.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 246,
+      "first": "2Ch 5:1",
+      "last": "2Ch 5:14",
+      "sha256": "94f1f88b2bc25cfdd996a12658b257cacfb356edb85d129943b1b03c35af1d1b",
+      "bytes": 47182,
+      "chars": 40931,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

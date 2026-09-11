@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 19,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_19.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 15,
+      "words": 126,
+      "first": "Psa 19:0",
+      "last": "Psa 19:14",
+      "sha256": "f334644524e39c03d812f29e6fd89da8dbdac3d4145dd468e1ed4067b9fd75c9",
+      "bytes": 25909,
+      "chars": 22626,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

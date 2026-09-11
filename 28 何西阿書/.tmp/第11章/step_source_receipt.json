@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_11.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 12,
+      "words": 137,
+      "first": "Hos 11:1",
+      "last": "Hos 11:12",
+      "sha256": "3d646c5e4fafb1bedad8db3e57a1c0dad2e53166832474244016ecc045182574",
+      "bytes": 28455,
+      "chars": 24932,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

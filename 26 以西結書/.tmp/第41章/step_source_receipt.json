@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 41,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_41.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 41,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 26,
+      "words": 370,
+      "first": "Ezk 41:1",
+      "last": "Ezk 41:26",
+      "sha256": "4dd7a4afb47a94708191a2449ef92cb409a84a9100aed09f3fe28cf3fe913bb6",
+      "bytes": 70677,
+      "chars": 61144,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

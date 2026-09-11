@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以賽亞書",
+  "chapter": 11,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_isaiah_11.txt",
+      "book": "Isaiah",
+      "book_code": "Isa",
+      "chapter": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 16,
+      "words": 219,
+      "first": "Isa 11:1",
+      "last": "Isa 11:16",
+      "sha256": "f3bb631606137af10cb30dd04160e2b5331832538fab2b90abdf020e750fe145",
+      "bytes": 43738,
+      "chars": 38188,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

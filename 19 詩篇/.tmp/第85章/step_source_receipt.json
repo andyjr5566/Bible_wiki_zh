@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "詩篇",
+  "chapter": 85,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_psalms_85.txt",
+      "book": "Psalms",
+      "book_code": "Psa",
+      "chapter": 85,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 14,
+      "words": 96,
+      "first": "Psa 85:0",
+      "last": "Psa 85:13",
+      "sha256": "e4b9bc43361e025a476dc5f5a8c538101c5ccd6e9b0fdbc842f9d84ca702ddfe",
+      "bytes": 21285,
+      "chars": 18752,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

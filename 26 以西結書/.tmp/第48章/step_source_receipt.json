@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以西結書",
+  "chapter": 48,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezekiel_48.txt",
+      "book": "Ezekiel",
+      "book_code": "Ezk",
+      "chapter": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 35,
+      "words": 526,
+      "first": "Ezk 48:1",
+      "last": "Ezk 48:35",
+      "sha256": "f657648ee4d4ed8b8a6f5f4a0e1cacdda5fff4ccf68d6e11a4ebba7a136e44d7",
+      "bytes": 97103,
+      "chars": 83783,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

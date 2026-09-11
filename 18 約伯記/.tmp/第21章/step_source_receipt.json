@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "約伯記",
+  "chapter": 21,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_job_21.txt",
+      "book": "Job",
+      "book_code": "Job",
+      "chapter": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 34,
+      "words": 240,
+      "first": "Job 21:1",
+      "last": "Job 21:34",
+      "sha256": "bc3ad7c656ad2d8ec2816f5b306fed6920f7f6392e85f556ed122d21f6973546",
+      "bytes": 51618,
+      "chars": 45530,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

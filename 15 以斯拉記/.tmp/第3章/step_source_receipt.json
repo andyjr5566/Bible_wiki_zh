@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "以斯拉記",
+  "chapter": 3,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_ezra_3.txt",
+      "book": "Ezra",
+      "book_code": "Ezr",
+      "chapter": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 13,
+      "words": 250,
+      "first": "Ezr 3:1",
+      "last": "Ezr 3:13",
+      "sha256": "2ee899b65e4e25aceb2a0926e22e1cd084c0c67b92d97ae65697cbcece6e7003",
+      "bytes": 49250,
+      "chars": 42594,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

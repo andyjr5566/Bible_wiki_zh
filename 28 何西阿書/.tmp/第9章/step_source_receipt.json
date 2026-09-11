@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "何西阿書",
+  "chapter": 9,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_hosea_9.txt",
+      "book": "Hosea",
+      "book_code": "Hos",
+      "chapter": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 17,
+      "words": 213,
+      "first": "Hos 9:1",
+      "last": "Hos 9:17",
+      "sha256": "1d02bf7f4baec7ed5b8768da25df1372b0d195a180a35936899ff73435b153d7",
+      "bytes": 42450,
+      "chars": 37117,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}

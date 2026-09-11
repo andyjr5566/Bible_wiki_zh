@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "book": "歷代志下",
+  "chapter": 24,
+  "validation": "deterministic structured STEP source",
+  "sources": [
+    {
+      "validation": "machine",
+      "status": "PASS",
+      "path": "raw_data/stepbible_2_chronicles_24.txt",
+      "book": "2 Chronicles",
+      "book_code": "2Ch",
+      "chapter": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "verses": 27,
+      "words": 454,
+      "first": "2Ch 24:1",
+      "last": "2Ch 24:27",
+      "sha256": "8ba0400cc4ced33d65ede777960154f4e1b2c6a8731ee11b68e6fc81a823f6fe",
+      "bytes": 89879,
+      "chars": 78177,
+      "canonical_source": "原文資料（STEP Bible）"
+    }
+  ]
+}
