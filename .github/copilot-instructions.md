@@ -7,7 +7,7 @@
 1. **四來源（CT／GT／KC／BH）全部讀完才動筆寫 candidates 或 organization。** GT 夾帶丁良才、啟導本、精讀本、雷氏研讀本、串珠、《舊約聖經背景註釋》等多家，密度最高，不可跳讀。
 2. **內容只能出自 rawdata。** 沒有出處的話不准寫，再合理也不行。包括希伯來文音譯／字母——rawdata 沒給就不能寫，即使那是真實存在的聖經常識。
 3. **經文一個字都不能改。** surface 對不上就改 surface，不是改經文。
-4. **所有輸出用繁體中文。** 英文來源（KC、BH）引用時譯成繁體中文，保留引號與出處。只有原文用字本身是重點時才以括號附註原文。
+4. **所有輸出用繁體中文。** 引用英文來源（KC、BH）時，英文原句放進「」、繁體中文翻譯緊接放在（）內；或具名轉述、不加引號。不可把中譯放進「」。只有原文用字本身是重點時才以括號附註原文。
 5. **勘誤是每章固定動作，不是選做。** 閘門全過只代表結構合法，不代表內容對 rawdata 忠實。commit 前必須逐條複核。
 
 ## 每章流程速覽
@@ -18,11 +18,11 @@
 |------|------|----------|
 | 1 | 準備來源 | `python util/build_source_manifest.py 【書名】 X`（不可手寫 manifest） |
 | 2 | 建 candidates | 讀完四來源 → 寫 `link_candidates.yaml` → `python util/semantic_lookup.py --candidates 【書名】 X` |
-| 3 | 跑 orchestrator | `python util/build_link_index.py` → `python util/run_chapter.py 【書名】 X` |
+| 3 | 跑 orchestrator | `python util/build_link_index.py` → `python util/run_chapter_manual.py prompts 【書名】 X` → 手寫 payload → `check` → `run` |
 | 4 | B 類累積 | `python util/link_updates.py prepare 【書名】 X` → 填 yaml → `apply --dry-run` → `apply` |
 | 5 | 人工決策點 | 處理 `manual_review` 與 D 類衝突 |
 | 6 | 勘誤複核 | 逐條核對四來源（見下方「勘誤複核」完整章節） |
-| 7 | 收尾驗證 | `build_fhl_maps.py` → `check_existing_links.py` → `build_link_index.py` → `build_embedding_index.py` → `validate_knowledge_base.py` → `link_quality_check.py 【書名】` → `verify_links.py 【書名】` → `audit_knowledge_base.py --check-due` |
+| 7 | 收尾驗證 | `build_appendix_links.py` → `check_existing_links.py` → `build_link_index.py` → `build_embedding_index.py` → `validate_knowledge_base.py` → `link_quality_check.py 【書名】` → `verify_links.py 【書名】` → `audit_knowledge_base.py --check-due` |
 | 8 | 檔案完整性 | `python util/check_chapter_files.py 【書名】 X` → `git status` 確認新建條目全進 staging → commit + push |
 
 ---
@@ -163,7 +163,7 @@ grep -in "西1:20\|西1：20" raw_data/*<book>_<chapter>*
 
 #### E. 英文未譯
 
-KC／BH 引句若仍為英文，譯成繁體中文。掃描法：
+KC／BH 引句若只有英文、後面沒有（）中譯，補上繁體中文翻譯；中譯不可取代「」裡的英文原句。掃描法（命中的英文逐條看是否已附中譯）：
 ```powershell
 # 在 chapter_content.yaml 和 entry_content/*.yaml 中搜尋英文段落
 grep -in "[a-zA-Z]{20,}" .tmp/第X章/chapter_content.yaml
@@ -189,7 +189,7 @@ GT 是多家合訂本（丁良才、啟導本、聖經精讀本、雷氏研讀�
 ### 閘門指令（全 PASS 才 commit）
 
 ```powershell
-python util/build_fhl_maps.py
+python util/build_appendix_links.py
 python util/check_existing_links.py "【序號 書名】/第x章.md" --missing
 python util/build_link_index.py
 python util/build_embedding_index.py          # 必須在 build_link_index.py 之後跑

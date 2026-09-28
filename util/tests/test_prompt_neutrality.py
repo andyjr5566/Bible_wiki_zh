@@ -31,6 +31,7 @@ class PromptNeutralityTests(unittest.TestCase):
         )
         cleaned = manual.neutralize_authoring_prompt(raw)
         self.assertIn("- 所有輸出用繁體中文。", cleaned)
+        self.assertIn("英文原句放進「」", cleaned)
         self.assertIn("註釋來源歸屬必須正確", cleaned)
         self.assertNotIn("只有兩種寫法", cleaned)
         self.assertNotIn("直接引原話", cleaned)
@@ -56,7 +57,39 @@ class PromptNeutralityTests(unittest.TestCase):
             with self.assertRaises(ModelValidationError):
                 cap(raw)
             text = (Path(tmp) / "chapter_content.prompt.md").read_text(encoding="utf-8")
-            self.assertEqual("- 所有輸出用繁體中文。\n", text)
+            self.assertEqual(manual._M6_QUOTE_RULE, text)
+
+    def test_m3_reply_format_becomes_per_entry_files(self):
+        raw = (
+            "【輸出格式範例——照此結構輸出一個 YAML 陣列】\n- name: 施恩座（kapporet）\n"
+            "【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），不要任何說明文字。"
+        )
+        cleaned = manual.neutralize_authoring_prompt(raw)
+        self.assertNotIn("只輸出一個 YAML 陣列", cleaned)
+        self.assertIn("entry_content/<name>.yaml", cleaned)
+        self.assertIn("每個條目一個檔", cleaned)
+
+    def test_m6_reply_format_becomes_chapter_content_yaml(self):
+        delim = manual.rc.ORG_DELIM
+        raw = (
+            "organization（本章整理）用「裸 markdown」直接寫在分隔線之後"
+            "（輸出格式見文末）——不是 YAML 欄位、不用縮排、不用任何跳脫，"
+            "mermaid／表格／callout 照一般 markdown 寫即可。\n\n"
+            f"【輸出格式，極重要】輸出分成兩段，中間用單獨一行「{delim}」隔開：\n"
+            "第一段：只含 book/chapter/knowledge_nodes 的 YAML。\n"
+            "```yaml\nbook: 約書亞記\nchapter: 12\n"
+            "knowledge_nodes:\n  神學: [山上的樣式]\n```\n"
+            f"{delim}\n### 標題一（v1-6）\n文字…\n\n"
+            "### 標題二（v7-13）\n文字…\n\n"
+            "payload 欄位：book, chapter。"
+        )
+        cleaned = manual.neutralize_authoring_prompt(raw)
+        self.assertNotIn(delim, cleaned)
+        self.assertNotIn("裸 markdown", cleaned)
+        self.assertIn("organization: |", cleaned)
+        self.assertIn(".tmp/第12章/chapter_content.yaml", cleaned)
+        self.assertIn("book: 約書亞記", cleaned)
+        self.assertTrue(cleaned.endswith("payload 欄位：book, chapter。"))
 
 
 if __name__ == "__main__":

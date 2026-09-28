@@ -27,7 +27,7 @@
 rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 payload 必填欄
 （accumulations、sources）。經文裡的關鍵詞沒連結 → 補 surface。常見坑：
 
-- **斜線候選名**建不出 `entry_content/<name>.yaml`，整鏈靜默失效。
+- **斜線候選名**建不出 `entry_content/<name>.yaml`，整鏈落空；`run` 的 P4 validate 會報 error，但要在寫候選時就避開。
 - **surface 衝突**（兩候選搶同詞）要判 ambiguous；原文候選拿經文本義詞、主題候選拿詮釋詞。
 - **STEP 只觸發有研究／跨章累積／實質內容價值的原文候選**；不可替每個功能詞、詞形或
   Strong 編號批量建頁，Strong 編號不是 wiki ID。
@@ -152,7 +152,7 @@ rawdata 裡值得跨章累積、卻沒候選的概念 → 新增候選並補齊 
 讀本章經文或 manifest 宣告為 OK 的註釋來源（structured STEP 原文資料禁止透過此工具讀 raw 全文）、用 `search_wiki_entries`／`read_wiki_entry` 核對
 既有條目與 alias。STEP 原文候選發現用 `find_step_candidates`、相鄰章節出現次數查核用 `find_step_occurrences`、精確查詢用 `query_step_context`。這些工具有路徑與預算白名單，不能用來讀任意檔案。
 
-本檔引用的 `util/*.py` 也都有 MCP 對應：`extract_stepbible`、`build_source_manifest`、`build_candidate_similarity`、
+本檔引用的 `util/*.py` 多數有 MCP 對應（`check_chapter_files` 例外：它會呼叫 git，在 MCP 下可能卡到 180 秒逾時，改在 shell 執行 script）：`extract_stepbible`、`build_source_manifest`、`build_candidate_similarity`、
 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
 `check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
 `audit_knowledge_base`、`check_chapter_files`、`prepare_chapter_link_updates`、`find_step_candidates`、`find_step_occurrences`、`query_step_context`、

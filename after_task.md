@@ -18,7 +18,7 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
 你的任務是走 agent_start_prompt.md 的步驟3–8 把這章做完並驗證通過，不要重做候選。
 
 治理規範：完整讀 C:\Obsidian\Hermes\scripture\agent_start_prompt.md，一切照它走；
-所有輸出用繁體中文（英文來源 KC/BH 要譯不要貼原文）。
+所有輸出用繁體中文（引用英文來源（KC、BH）時，英文原句放進「」、繁體中文翻譯緊接放在（）內；或具名轉述、不加引號。不可把中譯放進「」。）
 
 前置狀態（已備好，不要重做，也不要動 link_candidates.yaml）：
   raw_data 四套註釋＋STEP 原文資料、.tmp/第{X}章/{source_manifest.md, link_candidates.yaml, candidate_similarity.md}
@@ -47,7 +47,7 @@ Worker 起手 prompt（可直接貼，換 {書名}/{X}）
   語言事實，不是 commentary 共識票，lexicon 義域／morphology 不可越界推出神學結論。
 
 步驟7–8 收尾（全 PASS 才 commit）：
-  python util/build_fhl_maps.py
+  python util/build_appendix_links.py
   python util/check_existing_links.py 【{序號 書名}】/第{X}章.md --missing
   python util/build_link_index.py
   python util/build_embedding_index.py

@@ -64,13 +64,66 @@ _M6_DIRECT_QUOTE_RE = re.compile(
 )
 
 
+_M6_QUOTE_RULE = (
+    "- 所有輸出用繁體中文。引用英文來源（KC、BH）時，英文原句放進「」、"
+    "繁體中文翻譯緊接放在（）內；或具名轉述、不加引號。不可把中譯放進「」。\n"
+)
+
+# 原版 M3／M6 prompt 的「輸出格式」寫的是 API 路徑的回覆解析格式（YAML 陣列、
+# ===ORGANIZATION=== 分隔線）；手寫模式的 payload 是檔案，check／run 只讀
+# entry_content/<name>.yaml 與 chapter_content.yaml，落地時換成檔案格式。
+_M3_REPLY_EXAMPLE_HEADING = "【輸出格式範例——照此結構輸出一個 YAML 陣列】"
+_M3_FILE_EXAMPLE_HEADING = (
+    "【檔案格式範例——下例是陣列元素的寫法；手寫時每個條目各存一個 "
+    "entry_content/<name>.yaml（檔名＝name），檔案內容是單一 mapping，"
+    "去掉開頭的「- 」與那一層縮排】"
+)
+_M3_REPLY_RULE = "【輸出】只輸出一個 YAML 陣列（每個元素以 - 開頭），不要任何說明文字。"
+_M3_FILE_RULE = "【檔案】每個條目一個檔，不要把多個條目寫進同一個陣列檔。"
+_M6_ORG_REPLY_RE = re.compile(
+    r"organization（本章整理）用「裸 markdown」直接寫在分隔線之後.*?"
+    r"照一般 markdown 寫即可。\n",
+    re.S,
+)
+_M6_ORG_FILE_RULE = (
+    "organization（本章整理）寫在 chapter_content.yaml 的 organization 欄位，"
+    "用 YAML 字面區塊（`organization: |`，換行後整段縮排兩格）；區塊內照一般 "
+    "markdown 寫 mermaid／表格／callout。\n"
+)
+_M6_REPLY_FORMAT_RE = re.compile(
+    r"【輸出格式，極重要】.*?```yaml\nbook: (?P<book>[^\n]*)\nchapter: (?P<chapter>[^\n]*)\n"
+    r".*?### 標題二（v7-13）\n文字…\n\n",
+    re.S,
+)
+
+
+def _m6_file_format(match):
+    book, chapter = match.group("book"), match.group("chapter")
+    return (
+        f"【檔案格式】寫成 .tmp/第{chapter}章/chapter_content.yaml，頂層只有 book、"
+        f"chapter、knowledge_nodes、organization 四個鍵，例如：\n"
+        f"```yaml\nbook: {book}\nchapter: {chapter}\n"
+        f"knowledge_nodes:\n  神學: [山上的樣式]\n  原文: [皂莢木（atzei shittim）]\n"
+        f"organization: |\n  ### 標題一（v1-6）\n"
+        f"  文字…神吩咐用 [[皂莢木（atzei shittim）|皂莢木]] 做櫃…\n\n"
+        f"  ### 標題二（v7-13）\n  文字…\n```\n"
+    )
+
+
 def neutralize_authoring_prompt(prompt: str) -> str:
-    """移除會迫使作者刻意配合驗證器的寫作指令；保留來源忠實度責任。"""
-    prompt = _M6_QUOTE_STYLE_RE.sub("- 所有輸出用繁體中文。\n", prompt)
+    """移除會迫使作者刻意配合驗證器的寫作指令；保留來源忠實度責任。
+
+    也把 API 路徑的回覆解析格式換成手寫模式實際讀取的檔案格式。
+    """
+    prompt = _M6_QUOTE_STYLE_RE.sub(lambda _m: _M6_QUOTE_RULE, prompt)
     prompt = _M6_DIRECT_QUOTE_RE.sub(
         "- 註釋來源歸屬必須正確；標明某一家時，內容必須由該來源支持；來源未提就不要歸給它。\n",
         prompt,
     )
+    prompt = prompt.replace(_M3_REPLY_EXAMPLE_HEADING, _M3_FILE_EXAMPLE_HEADING)
+    prompt = prompt.replace(_M3_REPLY_RULE, _M3_FILE_RULE)
+    prompt = _M6_ORG_REPLY_RE.sub(lambda _m: _M6_ORG_FILE_RULE, prompt)
+    prompt = _M6_REPLY_FORMAT_RE.sub(_m6_file_format, prompt)
     return prompt
 
 

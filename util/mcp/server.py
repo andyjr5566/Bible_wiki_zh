@@ -774,7 +774,16 @@ def extract_stepbible(
 
 @mcp.tool()
 def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> Dict[str, Any]:
-    """Generate or validate the four-commentary + STEP ``source_manifest.md``."""
+    """Generate or validate the four-commentary + STEP ``source_manifest.md``.
+
+    The manifest is always generated from what is on disk in ``raw_data/``;
+    never hand-write it (a bare file name in a hand-written manifest is dropped
+    without any error, leaving M3/M6 with no sources). It downloads nothing:
+    missing commentary comes from ``crawl_bible_source`` and missing STEP data
+    from ``extract_stepbible``, and the output names what is missing.
+    ``check_only=True`` compares the existing manifest with the generated
+    version without writing.
+    """
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
         args = [canonical, str(chapter)]
@@ -935,7 +944,14 @@ def check_link_quality(book: Optional[str] = None) -> Dict[str, Any]:
 
 @mcp.tool()
 def verify_links(book: Optional[str] = None) -> Dict[str, Any]:
-    """Run the offline broken-link and scripture-reference verifier."""
+    """Run the offline broken-link and scripture-reference verifier.
+
+    Resolves wiki-links the way Obsidian does (exact file names; aliases are not
+    accepted) for one canonical book name, or for the whole vault when ``book``
+    is omitted. Pass the book name, not a chapter path. The gate passes when
+    BROKEN, INVALID and UNKNOWN are all 0; PENDING_SCRIPTURE_REFS may remain
+    under the rules in ``scheme.md``. Times out after 300 seconds.
+    """
     try:
         args = [] if book is None else [_canonical_book(book)]
     except ValueError as exc:
@@ -981,7 +997,20 @@ def audit_knowledge_base(
 
 @mcp.tool()
 def check_chapter_files(book: str, chapter: int) -> Dict[str, Any]:
-    """Check that every required artefact in the start workflow exists."""
+    """Check that every required artefact in the start workflow exists.
+
+    Walks the ``agent_start_prompt.md`` steps in order (source manifest,
+    candidates, the candidate existence log, candidate_similarity.md, link plan,
+    entry and chapter payloads, verse_links.yaml, the quote adjudication record,
+    the rendered chapter, link_updates.yaml, gate reports), stops at the first
+    missing file and names the step to resume from. It also checks that
+    verse_links.yaml covers the surfaces link_plan.yaml declares, that the
+    embedding index is in sync with the entries, and which new ``link_folder``
+    entries git does not track yet. The script shells out to git; on a host that
+    stalls grandchild processes this call hits its 180-second timeout although
+    the same check takes about a second in a shell, so for closing validation
+    run ``python util/check_chapter_files.py`` there.
+    """
     try:
         canonical, _directory, _tmp = _chapter_context(book, chapter)
         result = _run_util_command("check_chapter_files.py", canonical, str(chapter), timeout=180)
@@ -1945,7 +1974,17 @@ def check_manual_payloads(book: str, chapter: int) -> Dict[str, Any]:
 
 @mcp.tool()
 def render_manual_chapter(book: str, chapter: int, keep_chapter: bool = False) -> Dict[str, Any]:
-    """Render M3/M6 through manual ``run`` only after the read-only payload gate passes."""
+    """Render M3/M6 through manual ``run`` only after the read-only payload gate passes.
+
+    Runs ``check_manual_payloads`` first and refuses to render when it fails;
+    otherwise runs ``run_chapter_manual.py run`` (M5/P3/P4, no model calls),
+    which renders the chapter Markdown and new entries from the hand-written
+    ``.tmp`` payloads. ``keep_chapter=True`` is for entry payloads that changed
+    after ``chapter_content.yaml`` was written when the chapter text already
+    reflects them: it keeps ``chapter_content.yaml`` and regenerates only
+    ``verse_links.yaml``. Without it, ``run`` stops rather than invalidate the
+    hand-written chapter content.
+    """
     preflight = check_manual_payloads(book, chapter)
     if not preflight.get("passed"):
         return _error(
@@ -2292,7 +2331,7 @@ def biblical_chapter_sop(book: str = "民數記", chapter: int = 22) -> str:
 0. 全文讀 manifest 中四套 OK commentary、寫好 `.tmp/第X章/read_log.md`；STEP 完整 raw 不做人工逐詞回執，由 `check_source_read` machine-validate 並寫 receipt。兩路未過都不准動內容 yaml/md。
 1. 先呼叫 `get_chapter_status`；依回傳的 resume hint 完成來源、候選與語義近鄰步驟。
 2. 四套註釋用 `crawl_bible_source`；STEP 原文資料用 `extract_stepbible`；再用 `build_source_manifest`，候選近鄰用 `build_candidate_similarity`。
-3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`。
+3. 收尾可依序呼叫 `build_appendix_links`、`check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`；`check_chapter_files` 會呼叫 git，在 MCP 下可能卡到 180 秒逾時，依 `agent_start_prompt.md` 步驟 8 在 shell 執行。
 4. 用 `search_wiki_entries` 查既有 title／alias；需要原文時用 `read_wiki_entry`。不可自創名稱、alias 或音譯。
 5. M3/M6 **只走人工流程**：`prepare_manual_payload_prompts` → 依 `manual/sources.md` 全文讀四套 commentary、確認 STEP receipt → 讀 M3 task projection（細查用 `query_step_context`）→ 手寫 entry payload → 再 prepare 取得更新後 M6 chapter projection → 手寫 `chapter_content.yaml` → `check_manual_payloads` → `render_manual_chapter`。Prompt 不重貼 commentary raw body。
 6. `lint_chapter_content` 驗格式硬規（Mermaid `[[ ]]`、`![[ ]]`、HTML、`#標籤`、參考資料清單、表格內帶別名連結、正文流程註記、`knowledge_nodes` 自包 `[[ ]]`）；M3/M6 的真閘門是 `check_manual_payloads`，內容忠實性仍須人工逐條對 manifest 正式來源。STEP 只支持語言事實，不算 commentary 共識票；lexicon 義域不等於本節語境義，morphology 也不自行推出神學結論。
@@ -2311,7 +2350,7 @@ def biblical_maintenance_sop(book: str = "民數記", chapter: int = 22) -> str:
 以 `agent_maintenance_prompt.md` 為完整且優先的規格。先全文讀 manifest 中四套註釋；STEP 完整 raw 走 machine gate，寫作時讀 projection／按需 query。STEP 不是第五套註釋、不計入註釋共識，lexicon／morphology 不可越界推出語境義或神學結論。結構通過不等於內容正確。
 
 - 先用 `get_chapter_status` 看目前管線狀態，用 `read_chapter_artifact` 讀受限的 `.tmp` payload，用 `search_wiki_entries`／`read_wiki_entry` 核對既有條目與 aliases。
-- 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`、`check_chapter_files`；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。
+- 收尾或單獨檢查可用 `check_existing_links`、`sync_link_index`、`sync_embedding_index`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、`audit_knowledge_base`（`check_chapter_files` 會呼叫 git，在 MCP 下可能卡到 180 秒逾時，改在 shell 執行 script）；需要建立 B 類骨架時用 `prepare_chapter_link_updates`。
 - 修改 M3／M6 時固定走人工流程：手寫 yaml → `check_manual_payloads`（唯讀，不會重寫 alias）→ `render_manual_chapter`。改 entry payload 且本章整理已同步時，才帶 `keep_chapter=true`。
 - 修改 candidates 前先呼叫 `prepare_manual_payload_prompts(confirm_stale=false)` 看作廢清單；確認手寫 payload 可刪後才設為 true，然後補寫 payload、check、render。
 - B 類累積只能走 `preview_chapter_link_updates` → 人工核對 source → 使用 token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。

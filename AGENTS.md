@@ -113,7 +113,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 - 原文類條目名的括號音譯／希伯來字母**必須是本章來源實際出現過的拼寫**；查無出處的希伯來字母是 P4 error（擋 build），查無出處的新建拉丁音譯是 manual_review。
 
-- **來源 attribution 必須忠實**：直接引文、翻譯與轉述都須對回正式來源；跨語言翻譯以語義忠實為準，不要求譯文與原文逐字同形；不得增加、刪除、強化、弱化或反轉來源主張。
+- **來源 attribution 必須忠實**：直接引文、翻譯與轉述都須對回正式來源；跨語言翻譯以語義忠實為準，不要求譯文與原文逐字同形；不得增加、刪除、強化、弱化或反轉來源主張。引用英文來源（KC、BH）時，英文原句放進「」、繁體中文翻譯緊接放在（）內；或具名轉述、不加引號。不可把中譯放進「」。
 
 - 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
 
@@ -145,9 +145,8 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 - 但若來源複核確認 definition 有事實錯誤、來源錯配、過度推論，
   或 development 已明顯落後既有跨章累積範圍，則應依
   `agent_maintenance_prompt.md` 的規則做必要的點狀修正或重新綜整。
-- 不得只為了「更完整」「更漂亮」而重寫。
+- 不得只為了「更完整」「更漂亮」「更嚴謹」而重寫來源支撐無誤的內容。
 - 不 100% 相信舊版（全稱詞、對照類敘述最容易錯），但勘誤是**點狀修正**，不是整段重寫。
-- 不因為想顯得更完整／更嚴謹而重寫來源支撐無誤的內容。
 
 ## MCP／Hermes Scripture 使用原則
 
@@ -218,7 +217,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 - 完整讀四套 Commentary、完成 `read_log.md`、做 candidate 語意判斷、手寫 M3/M6/B 類內容，依 reviewer findings 修 source-of-truth payload。
 - 固定 `model=opus`、`effort=max`；同一章優先沿用同一 `session_id`。
 - 不得靜默 fallback Sonnet/Haiku；Opus 不可用就 `BLOCKED`，除非使用者另允許。
-- Claude 不主導 run/render/apply/final gates/commit，也不得替 reviewer 宣告 PASS。
+- Claude 不主導 run/render/apply/final gates/commit，也不得替 reviewer 宣告 PASS。例外：使用者直接叫 Claude 跑 `agent_start_prompt.md` 主流程時，Claude 兼任 process owner（submit、依 reviewer footer 代記 verdict、gate、run、apply、commit）；reviewer 仍必須是唯讀的 Codex 或 Antigravity。
 
 ### Antigravity：Codex quota fallback + 可選總編輯
 
