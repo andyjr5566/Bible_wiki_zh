@@ -57,6 +57,7 @@ from book_paths import BOOK_NUMBERS, book_directory, canonical_book_name
 # aliased: a tool below is also named ``check_chapter_files`` and would
 # otherwise rebind this module name at import time.
 import check_chapter_files as chapter_file_checks
+from model_client import rerank_enabled
 from check_chapter_files import build_checks
 import extract_stepbible as step_extractor
 import link_updates
@@ -805,10 +806,16 @@ def build_source_manifest(book: str, chapter: int, check_only: bool = False) -> 
 def build_candidate_similarity(
     book: str, chapter: int, top: int = 5, no_rerank: bool = False,
 ) -> Dict[str, Any]:
-    """Run ``semantic_lookup.py --candidates`` and write the two-stage retrieval + reranker report.
+    """Run ``semantic_lookup.py --candidates`` and write ``candidate_similarity.md``.
 
-    ``no_rerank=true`` is strictly for offline diagnostic/debug purposes; formal production
-    gates (preflight and manual prompts) strictly reject ``rerank_status: disabled``.
+    For each candidate the report lists the nearest existing entries from the
+    embedding index and a verdict; it opens with a summary of the candidates
+    that need a judgement, and candidates that match an existing entry by name
+    get a single verdict line. Reranking is off unless
+    ``_config/model_endpoints.yaml`` sets ``tasks.rerank.enabled: true``;
+    ``rerank_status: disabled`` is accepted by every gate. ``no_rerank=true``
+    turns reranking off for this run even when it is enabled. Needs the
+    embedding endpoint and an embedding index in sync with the entries.
     """
     try:
         canonical, _directory, tmp = _chapter_context(book, chapter)
@@ -825,7 +832,7 @@ def build_candidate_similarity(
             "chapter": chapter,
             "report": _relative_to_root(tmp / "candidate_similarity.md"),
             "top": bounded_top,
-            "rerank_enabled": not no_rerank,
+            "rerank_enabled": (not no_rerank) and rerank_enabled(),
         })
         return result
     except (TypeError, ValueError, OSError) as exc:

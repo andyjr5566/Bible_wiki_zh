@@ -398,13 +398,8 @@ def check_candidate_similarity_readiness(book, chapter, root=ROOT, production=Tr
             status,
             None,
         )
-    if production and status == "disabled":
-        return (
-            False,
-            "正式生產流程禁止 rerank_status: disabled（--no-rerank 僅供診斷/除錯）；請配置 Reranker 並重跑 semantic_lookup.py",
-            status,
-            None,
-        )
+    # rerank_status: disabled 是正常狀態：重排預設關閉（tasks.rerank.enabled），
+    # 判定由 embedding 規則決定，不因沒有重排而擋住生產。
     if status in {"partial", "degraded"}:
         warning = f"candidate_similarity fresh，但 Reranker 狀態為 {status}，本次使用降級結果"
         hint = "依報告檢視 ⚠ 高相似候選是否改用既有條目名（走 B 類累積），再進步驟3。"

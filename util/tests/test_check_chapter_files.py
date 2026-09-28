@@ -501,8 +501,8 @@ class CheckChapterFilesTests(unittest.TestCase):
             self.assertFalse(source_decl_check.ok)
             self.assertIn("來源宣告不符合正好五套", source_decl_check.resume_hint)
 
-    def test_preflight_fails_when_rerank_disabled(self):
-        """正式 preflight 階段不接受 rerank_status: disabled（--no-rerank 產物）。"""
+    def test_preflight_accepts_rerank_disabled(self):
+        """重排預設關閉：preflight 接受 rerank_status: disabled。"""
         with tempfile.TemporaryDirectory() as tmp:
             root = self._root(tmp)
             tmp_dir = root / "01 創世記" / ".tmp" / f"第{CHAPTER}章"
@@ -516,11 +516,10 @@ class CheckChapterFilesTests(unittest.TestCase):
 
             checks = ccf.build_checks(BOOK, CHAPTER, root=root, preflight=True)
             sim_check = next(c for c in checks if "candidate_similarity" in c.label)
-            self.assertFalse(sim_check.ok)
-            self.assertIn("禁止 rerank_status: disabled", sim_check.resume_hint)
+            self.assertTrue(sim_check.ok, sim_check.resume_hint)
 
-    def test_manual_prompts_fails_when_rerank_disabled(self):
-        """run_chapter_manual.py prompts 正式生產流程禁止 rerank_status: disabled。"""
+    def test_manual_prompts_accepts_rerank_disabled(self):
+        """重排預設關閉：run_chapter_manual.py 的候選報告閘門接受 rerank_status: disabled。"""
         import run_chapter_manual as rcm
         import run_chapter as rc
         with tempfile.TemporaryDirectory() as tmp:
@@ -535,9 +534,7 @@ class CheckChapterFilesTests(unittest.TestCase):
             self._write_fresh_similarity_report(tmp_dir, root, overrides={"rerank_status": "disabled", "rerank_model": "none"})
 
             ctx = rc.ChapterContext(BOOK, CHAPTER, root=root)
-            with self.assertRaises(rcm.SourceError) as cm:
-                rcm._require_candidate_similarity(ctx)
-            self.assertIn("禁止 rerank_status: disabled", str(cm.exception))
+            rcm._require_candidate_similarity(ctx)  # 不應拋出 SourceError
 
     def test_preflight_warns_and_passes_when_rerank_degraded(self):
         """當 rerank_status 為 partial 或 degraded 時，Preflight 放行 PASS 並附帶 warning。"""

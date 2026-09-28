@@ -330,5 +330,54 @@ class RerankDocumentsTests(unittest.TestCase):
         self.assertEqual(0.99, results[0]["relevance_score"])
 
 
+class RerankSwitchAndJevTests(unittest.TestCase):
+    def test_rerank_disabled_by_config_flag(self):
+        config = {"active": "a", "endpoints": {"a": {"type": "openai"}},
+                  "tasks": {"rerank": {"endpoint": "a", "model": "m", "kind": "rerank",
+                                        "enabled": False}}}
+        self.assertFalse(model_client.rerank_enabled(config=config))
+        config["tasks"]["rerank"]["enabled"] = True
+        self.assertTrue(model_client.rerank_enabled(config=config))
+        del config["tasks"]["rerank"]["enabled"]
+        self.assertTrue(model_client.rerank_enabled(config=config))
+        del config["tasks"]["rerank"]
+        self.assertFalse(model_client.rerank_enabled(config=config))
+
+    def test_jev_body_offers_every_document_plus_none(self):
+        body = model_client.jev_rerank_body("候選甲", ["條目一", "條目二"])
+        question = body["questions"]["match"]
+        self.assertEqual("choice", question["type"])
+        self.assertEqual({"E1": "條目一", "E2": "條目二", "NONE": question["criteria"]["NONE"]},
+                         question["criteria"])
+        self.assertEqual("候選甲", body["state"])
+        self.assertEqual("jev-latest", body["model"])
+
+    def test_jev_results_map_probabilities_back_to_documents(self):
+        data = {"answers": {"match": {"type": "choice", "choice": "E2",
+                                      "probabilities": {"E1": 0.1, "E2": 0.8, "NONE": 0.1}}}}
+        results = model_client.jev_rerank_results(data, ["條目一", "條目二"])
+        self.assertEqual([1, 0], [r["index"] for r in results])
+        self.assertAlmostEqual(0.8, results[0]["relevance_score"])
+
+    def test_jev_results_reject_unexpected_shape(self):
+        with self.assertRaises(model_client.ModelError):
+            model_client.jev_rerank_results({"answers": {}}, ["條目一"])
+
+    def test_rerank_documents_routes_jev_endpoint(self):
+        endpoint = {"name": "jev", "type": "jev", "base_url": "https://example.test/v1"}
+        captured = {}
+
+        def fake_runner(query, documents, **kwargs):
+            captured.update(kwargs)
+            return [{"index": 0, "relevance_score": 0.9, "document": documents[0]}]
+
+        with patch.object(model_client, "select_endpoint", return_value=endpoint), \
+                patch.object(model_client, "jev_rerank_runner", side_effect=fake_runner):
+            results = model_client.rerank_documents("q", ["d"])
+        self.assertEqual(0.9, results[0]["relevance_score"])
+        self.assertEqual("https://example.test/v1", captured["base_url"])
+        self.assertEqual("jev-latest", captured["model"])
+
+
 if __name__ == "__main__":
     unittest.main()

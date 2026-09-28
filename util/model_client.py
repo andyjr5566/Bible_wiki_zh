@@ -36,6 +36,10 @@ ENV_ENDPOINT = "MODEL_ENDPOINT"
 FENCE_RE = re.compile(r"```(?:ya?ml|json)?\s*\n(.*?)```", re.S)
 DEFAULT_OPENAI_BASE_URL = "http://localhost:4000/v1"
 DEFAULT_OPENAI_MODEL = "deepseek-ai/deepseek-v4-pro"
+DEFAULT_JEV_BASE_URL = "https://thejevai.com/v1"
+DEFAULT_JEV_MODEL = "jev-latest"
+JEV_NONE_OPTION = "NONE"
+JEV_MAX_OPTIONS = 255  # Jev choice 題上限（含 NONE 這一個選項）
 
 
 class ModelError(RuntimeError):
@@ -123,6 +127,8 @@ def _endpoint_api_key(endpoint):
 def make_runner(endpoint):
     """把端點設定轉成 runner 函式（prompt → 文字）。"""
     kind = endpoint.get("type", "openai")
+    if kind == "jev":
+        raise ModelError("jev 端點只能用在 rerank 任務，不能當 chat runner")
     if kind == "claude":
         model = endpoint.get("model")
         effort = endpoint.get("effort")
@@ -268,6 +274,91 @@ def openai_rerank_runner(query, documents, *, base_url=DEFAULT_OPENAI_BASE_URL,
     return results
 
 
+def rerank_enabled(task="rerank", config=None, root=None):
+    """tasks.<task> 有設定且沒有寫 `enabled: false` 時才啟用重排。
+
+    重排預設關閉：現有 nvidia 重排模型在本語料上分不出「有／沒有對應條目」
+    （見 _config/reranker_calibration.yaml）。換模型（例如 Jev）並校準過後，
+    把 tasks.rerank.enabled 改成 true 即可重新啟用。
+    """
+    try:
+        config = config or load_endpoints(root=root)
+        task_cfg = _task_config(config, task)
+    except ModelError:
+        return False
+    if not task_cfg:
+        return False
+    return task_cfg.get("enabled", True) is not False
+
+
+def jev_rerank_body(query, documents, model=DEFAULT_JEV_MODEL):
+    """把「候選 vs 既有條目」組成 Jev 的 choice 題：選出同一個對象，或選 NONE。"""
+    criteria = {f"E{i + 1}": str(doc) for i, doc in enumerate(documents)}
+    criteria[JEV_NONE_OPTION] = "以上既有條目都不是這個候選所指的同一個人、事、物或概念"
+    return {
+        "model": model or DEFAULT_JEV_MODEL,
+        "state": str(query),
+        "questions": {
+            "match": {
+                "type": "choice",
+                "instructions": (
+                    "state 是本章打算建立的候選條目。它是否就是下列某一個既有條目"
+                    "所指的同一個人、事、物或概念？選出那個條目；都不是就選 NONE。"
+                ),
+                "criteria": criteria,
+            }
+        },
+    }
+
+
+def jev_rerank_results(data, documents):
+    """Jev choice 回應 → 與 openai_rerank_runner 相同的結果格式（依機率排序）。
+
+    每個既有條目的 relevance_score 就是 Jev 給它的機率；Jev 判定 NONE 時，
+    所有條目的機率都會偏低，下游依校準門檻 score_low 判成「建新條目」。
+    """
+    answers = data.get("answers") if isinstance(data, dict) else None
+    answer = answers.get("match") if isinstance(answers, dict) else None
+    probabilities = answer.get("probabilities") if isinstance(answer, dict) else None
+    if not isinstance(probabilities, dict):
+        raise ModelError(f"Jev 回應格式非預期：{str(data)[:300]}")
+    results = []
+    for index, document in enumerate(documents):
+        score = probabilities.get(f"E{index + 1}")
+        if score is None:
+            continue
+        results.append({
+            "index": index,
+            "relevance_score": float(score),
+            "document": document,
+        })
+    results.sort(key=lambda r: r["relevance_score"], reverse=True)
+    return results
+
+
+def jev_rerank_runner(query, documents, *, base_url=DEFAULT_JEV_BASE_URL,
+                      model=DEFAULT_JEV_MODEL, api_key=None, timeout=60):
+    """Jev `/systemone` 端點當重排用（見 https://thejevai.com/docs）。"""
+    if not documents:
+        return []
+    documents = [str(d) for d in documents][: JEV_MAX_OPTIONS - 1]
+    url = base_url.rstrip("/") + "/systemone"
+    body = json.dumps(jev_rerank_body(query, documents, model)).encode("utf-8")
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:300]
+        raise ModelError(f"呼叫 {url} 失敗：HTTP {exc.code} {detail}") from exc
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise ModelError(f"呼叫 {url} 失敗：{exc}") from exc
+    return jev_rerank_results(data, documents)
+
+
 def rerank_documents(query, documents, *, task="rerank", endpoint_name=None,
                      top_n=None, runner=None):
     """將 query 與候選 documents 進行語意重排打分。
@@ -280,18 +371,26 @@ def rerank_documents(query, documents, *, task="rerank", endpoint_name=None,
         return []
     if runner is None:
         endpoint = select_endpoint(endpoint_name, task=task)
-        if endpoint.get("type", "openai") != "openai":
-            raise ModelError(
-                f"端點「{endpoint['name']}」type={endpoint.get('type')} 不支援 rerank"
-            )
-        model = endpoint.get("model")
-        if not model:
-            raise ModelError(f"端點「{endpoint['name']}」未指定 rerank 模型")
-        base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
+        kind = endpoint.get("type", "openai")
         api_key = _endpoint_api_key(endpoint)
-        runner = lambda q, docs: openai_rerank_runner(
-            q, docs, base_url=base_url, model=model, api_key=api_key, top_n=top_n
-        )
+        if kind == "jev":
+            base_url = endpoint.get("base_url", DEFAULT_JEV_BASE_URL)
+            model = endpoint.get("model") or DEFAULT_JEV_MODEL
+            runner = lambda q, docs: jev_rerank_runner(
+                q, docs, base_url=base_url, model=model, api_key=api_key
+            )
+        elif kind == "openai":
+            model = endpoint.get("model")
+            if not model:
+                raise ModelError(f"端點「{endpoint['name']}」未指定 rerank 模型")
+            base_url = endpoint.get("base_url", DEFAULT_OPENAI_BASE_URL)
+            runner = lambda q, docs: openai_rerank_runner(
+                q, docs, base_url=base_url, model=model, api_key=api_key, top_n=top_n
+            )
+        else:
+            raise ModelError(
+                f"端點「{endpoint['name']}」type={kind} 不支援 rerank"
+            )
     return runner(query, documents)
 
 

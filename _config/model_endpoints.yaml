@@ -51,6 +51,12 @@ tasks:
     endpoint: local-4001
     model: nvidia/llama-nemotron-rerank-vl-1b-v2:free
     kind: rerank
+    # 預設關閉：這個模型在本語料上分不出「有／沒有對應條目」（見 reranker_calibration.yaml），
+    # 候選判定一律由 embedding 規則決定。換模型並校準、分得開之後才改成 true。
+    # 試 Jev：在 endpoints 加一個 `type: jev` 的端點（base_url 預設 https://thejevai.com/v1、
+    # api_key_env 指到存 Jev key 的環境變數、model 預設 jev-latest），這裡的 endpoint 改指它，
+    # 再用 util/tests/smoke_reranker_calibration.py 校準。Jev 官方只列英文與簡體中文。
+    enabled: false
 # local-4000 proxy 可用的 chat 模型（換 entry／chapter 的 model 即可）：
 #   z-ai/glm-5.2、minimaxai/minimax-m3、deepseek-ai/deepseek-v4-pro、
 #   nvidia/nemotron-3-ultra-550b-a55b、minimaxai/minimax-m2.7

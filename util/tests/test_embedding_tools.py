@@ -2,6 +2,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 UTIL_DIR = Path(__file__).resolve().parents[1]
@@ -696,6 +697,67 @@ class CandidateReportTests(unittest.TestCase):
         self.assertEqual(0, flagged)
         self.assertIn("對上既有「亞伯拉罕」（exact，將歸 A/B 累積）", content)
         self.assertIn("判定：✅ 建議使用既有條目 [[亞伯拉罕]]（同名／字面對應）", content)
+
+    def test_report_summary_lists_only_items_needing_judgment(self):
+        """摘要只列需判斷的候選；字面直接命中的候選只留一行判定、不附近鄰表。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({
+                    "book": "創世記", "chapter": 1,
+                    "candidates": [
+                        {"name": "亞伯拉罕", "type": "人物"},
+                        {"name": "近似候選", "type": "主題"},
+                    ],
+                }, allow_unicode=True),
+            )
+            link_index = {
+                "亞伯拉罕": {"title": "亞伯拉罕", "type": "人物", "path": "link_folder/人物/亞伯拉罕.md"},
+            }
+            fake = _FakeIndex([
+                [("亞伯拉罕", 0.95, {"type": "人物", "path": "link_folder/人物/亞伯拉罕.md"})],
+                [("既有近似條目", 0.75, {"type": "主題", "path": "link_folder/主題/既有近似條目.md"})],
+            ])
+            path, total, flagged = candidate_report(
+                "創世記", 1, root=root, index=fake, link_index=link_index, homonyms={},
+                use_rerank=False,
+            )
+            content = path.read_text(encoding="utf-8")
+
+        self.assertEqual(1, flagged)
+        summary = content.split("## 摘要：需要判斷的項目", 1)[1].split("\n## ", 1)[0]
+        self.assertIn("- 近似候選：⚠ 語義相似度高", summary)
+        self.assertNotIn("- 亞伯拉罕：", summary)
+        self.assertIn("字面直接對上既有條目、不需判斷：1 個（亞伯拉罕）", summary)
+        literal = content.split("## 亞伯拉罕（人物）", 1)[1].split("\n## ", 1)[0]
+        self.assertNotIn("| Rank |", literal)
+        self.assertNotIn("query:", literal)
+        self.assertIn("| 1 | 既有近似條目 | 0.750 |", content)
+        self.assertLess(content.index("## 摘要"), content.index("## 亞伯拉罕（人物）"))
+
+    def test_rerank_follows_config_switch_when_not_forced(self):
+        """未指定 use_rerank 且沒注入 reranker 時，依 tasks.rerank.enabled 決定。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "01 創世記").mkdir(parents=True)
+            _write(
+                root / "01 創世記" / ".tmp" / "第1章" / "link_candidates.yaml",
+                yaml.safe_dump({"book": "創世記", "chapter": 1,
+                                "candidates": [{"name": "近似候選", "type": "主題"}]},
+                               allow_unicode=True),
+            )
+            fake = _FakeIndex([[("既有近似條目", 0.75, {"type": "主題", "path": "p.md"})]])
+            with patch("semantic_lookup.rerank_enabled", return_value=False) as switch, \
+                    patch("semantic_lookup.rerank_documents") as rerank:
+                path, _total, _flagged = candidate_report(
+                    "創世記", 1, root=root, index=fake, link_index={}, homonyms={},
+                )
+                content = path.read_text(encoding="utf-8")
+        switch.assert_called_once()
+        rerank.assert_not_called()
+        self.assertIn("rerank_status: disabled", content)
 
     def test_lexical_preview_flags_alias_redirect(self):
         """alias 導向不同名條目（安密巴誤含以實各谷型）要標「請確認」。"""

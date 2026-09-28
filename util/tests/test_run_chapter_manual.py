@@ -137,8 +137,8 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
                 rcm.cmd_prompts(args)
             self.assertIn("candidate_similarity.md 不存在或已過期", str(ctx.exception))
 
-    def test_check_fails_when_rerank_disabled(self):
-        """當 candidate_similarity.md 狀態為 disabled 時，cmd_check 回報 check 未過。"""
+    def test_similarity_gate_accepts_rerank_disabled_for_check(self):
+        """重排預設關閉：rerank_status: disabled 的報告可以通過 check 前的候選報告閘門。"""
         from build_embedding_index import compute_index_fingerprint
         with tempfile.TemporaryDirectory() as tmp:
             root, tmp_dir = self._setup_root(tmp)
@@ -166,12 +166,16 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             _write(tmp_dir / "candidate_similarity.md", meta)
             _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
 
-            args = argparse.Namespace(book="創世記", chapter=1, no_rewrite=True, root=root)
-            rc = rcm.cmd_check(args)
-            self.assertEqual(1, rc, "disabled 報告必須使 cmd_check 回傳 1 失敗")
+            from check_chapter_files import check_candidate_similarity_readiness
+            ok, hint, status, warning = check_candidate_similarity_readiness(
+                "創世記", 1, root=root, production=True
+            )
+            self.assertTrue(ok, hint)
+            self.assertEqual("disabled", status)
+            self.assertIsNone(warning)
 
-    def test_run_fails_when_rerank_disabled(self):
-        """當 candidate_similarity.md 狀態為 disabled 時，cmd_run 拋出 SourceError 拒絕執行。"""
+    def test_run_does_not_reject_rerank_disabled(self):
+        """重排預設關閉：cmd_run 不會因 rerank_status: disabled 而拒絕執行。"""
         from build_embedding_index import compute_index_fingerprint
         with tempfile.TemporaryDirectory() as tmp:
             root, tmp_dir = self._setup_root(tmp)
@@ -200,9 +204,11 @@ class RunChapterManualFreshnessTests(unittest.TestCase):
             _write_yaml(tmp_dir / "link_plan.yaml", {"C_new_formal": [], "B_needs_update": []})
 
             args = argparse.Namespace(book="創世記", chapter=1, keep_chapter=False, root=root)
-            with self.assertRaises(SourceError) as ctx:
+            try:
                 rcm.cmd_run(args)
-            self.assertIn("禁止 rerank_status: disabled", str(ctx.exception))
+            except Exception as exc:  # 其他缺件可能讓 run 失敗，但原因不能是重排關閉
+                self.assertNotIn("rerank_status", str(exc))
+                self.assertNotIn("candidate_similarity", str(exc))
 
 
 class CmdPromptsInvalidationTests(unittest.TestCase):

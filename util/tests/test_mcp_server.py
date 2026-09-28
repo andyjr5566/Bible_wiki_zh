@@ -960,20 +960,21 @@ class BuildCandidateSimilarityMCPTests(unittest.TestCase):
         self.assertFalse(res["rerank_enabled"])
         self.assertEqual(8, res["top"])
 
-    def test_build_candidate_similarity_default_enables_rerank(self):
+    def test_build_candidate_similarity_default_follows_rerank_config(self):
         recorded_calls = []
 
         def fake_run(*cmd, timeout=300):
             recorded_calls.append((cmd, timeout))
             return {"success": True, "returncode": 0, "stdout": "ok", "stderr": ""}
 
-        with patch.object(server, "_run_util_command", fake_run):
-            res = server.build_candidate_similarity("創世記", 25)
-
-        self.assertTrue(res["success"])
-        cmd, _ = recorded_calls[0]
-        self.assertNotIn("--no-rerank", cmd)
-        self.assertTrue(res["rerank_enabled"])
+        for configured in (True, False):
+            with patch.object(server, "_run_util_command", fake_run), \
+                    patch.object(server, "rerank_enabled", return_value=configured):
+                res = server.build_candidate_similarity("創世記", 25)
+            self.assertTrue(res["success"])
+            cmd, _ = recorded_calls[-1]
+            self.assertNotIn("--no-rerank", cmd)
+            self.assertEqual(configured, res["rerank_enabled"])
 
     def test_render_manual_chapter_rejects_when_check_fails(self):
         def fake_check(book, chapter):

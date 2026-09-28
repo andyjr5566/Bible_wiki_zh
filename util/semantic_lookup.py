@@ -5,6 +5,11 @@
 意思相同的既有條目——字面比對（resolve_link_candidates）看不出來，
 只有語義相似度能揪出，避免建出近似重複條目。
 
+重排（第二階段）預設關閉：由 _config/model_endpoints.yaml 的 tasks.rerank.enabled
+決定。現有 nvidia 重排模型在本語料上分不出「有／沒有對應條目」，關掉不影響判定
+（判定本來就回落到 embedding 規則）。換模型並校準後再開；--rerank／--no-rerank
+可以單次覆寫。
+
 一切結果只供人工判斷：本模組不建立、不改動任何連結。相似度不是機械
 可證的判準，門檻只用來排序與提示，永遠不當作自動決策的依據。
 
@@ -37,14 +42,18 @@ import numpy as np
 import yaml
 
 try:
-    from .model_client import ModelError, embed_texts, rerank_documents, select_endpoint
+    from .model_client import (
+        ModelError, embed_texts, rerank_documents, rerank_enabled, select_endpoint,
+    )
     from .build_embedding_index import (
         META_FILE, VECTORS_FILE, compute_index_fingerprint, entry_embed_text,
     )
     from .book_paths import book_directory, canonical_book_name
     from . import resolve_link_candidates as resolver
 except ImportError:
-    from model_client import ModelError, embed_texts, rerank_documents, select_endpoint
+    from model_client import (
+        ModelError, embed_texts, rerank_documents, rerank_enabled, select_endpoint,
+    )
     import book_paths
     from book_paths import book_directory, canonical_book_name
     from build_embedding_index import (
@@ -437,7 +446,7 @@ def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod,
 
 def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                      threshold=None, link_index=None, homonyms=None,
-                     reranker=None, use_rerank=True, require_rerank=False,
+                     reranker=None, use_rerank=None, require_rerank=False,
                      rerank_top_k=RERANK_RETRIEVE_TOP_K):
     """對整章 link_candidates 產生二階段語義近鄰與重排報告，寫入 .tmp/第x章/。
 
@@ -455,8 +464,14 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     5. 候選互查：比對本章內部各候選之間的語義重複。
     6. 寫入包含完整 Multi-factor 指紋的結構化元資料標頭（供 Freshness Gate 檢驗）。
 
+    use_rerank=None 時依設定決定（tasks.rerank.enabled，預設關閉）；有注入 reranker
+    時視為啟用。報告開頭先列「需要判斷的項目」摘要；字面直接對上既有條目的候選只留
+    一行判定，不再附近鄰表。
+
     回傳 (report_path, 候選數, 有 ⚠／ⓘ 的候選數＋互查配對數)。
     """
+    if use_rerank is None:
+        use_rerank = True if reranker is not None else rerank_enabled(root=root)
     if threshold is None:
         threshold = REPORT_FLAG_FLOOR
     root = Path(root)
@@ -540,6 +555,9 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         for w in surface_warnings:
             print(f"⚠️ {w.strip()}")
 
+    summary_insert_at = len(lines)
+    review_items = []     # (候選名, 判定) — 需要 agent 判斷的項目
+    literal_matches = []  # 字面直接對上既有條目、不需判斷
     flagged = 0
     rerankable_candidates = 0
     rerank_attempted = 0
@@ -577,6 +595,16 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                 and lexical_type_compat
                 and resolver.base_name(lexical_title) == base
             )
+            verdict = None
+
+            if is_safe_lexical_match:
+                # 字面直接對上、無歧義、分類相容：沒有判斷可做，不附近鄰表。
+                lines.append(f"## {name}（{suggested or '?'}）")
+                lines.append(f"字面解析：{preview}")
+                lines.append(f"判定：✅ 建議使用既有條目 [[{lexical_title}]]（同名／字面對應）")
+                lines.append("")
+                literal_matches.append(name)
+                continue
 
             lines.append(f"## {name}（{suggested or '?'}）")
             
@@ -758,6 +786,8 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
             else:
                 lines.append("（無相似條目）")
             lines.append("")
+            if verdict and not verdict.startswith("✅"):
+                review_items.append((name, verdict))
 
         # 候選互查：本章候選彼此比對（query-query 空間）
         pair_scores = matrix @ matrix.T
@@ -780,6 +810,24 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                 flagged += 1
         else:
             lines.append("（無 ≥ 門檻的配對）")
+
+        summary = ["## 摘要：需要判斷的項目", ""]
+        if review_items or pairs:
+            for item_name, item_verdict in review_items:
+                summary.append(f"- {item_name}：{item_verdict}")
+            for score, name_a, name_b in pairs:
+                summary.append(f"- 候選互查 {score:.3f}：{name_a} ↔ {name_b}")
+            summary.append("")
+            summary.append("只需細看上面列出的候選（下方同名小節有近鄰表）。")
+        else:
+            summary.append("（沒有需要判斷的候選）")
+        if literal_matches:
+            summary.append(
+                f"字面直接對上既有條目、不需判斷：{len(literal_matches)} 個"
+                f"（{'、'.join(literal_matches)}）"
+            )
+        summary.append("")
+        lines[summary_insert_at:summary_insert_at] = summary
 
     # 計算狀態
     if not use_rerank or rerank_model is None:
@@ -851,7 +899,9 @@ def main():
     )
     parser.add_argument("--top", type=int, default=DEFAULT_TOP, help="每詞取前幾名")
     parser.add_argument("--threshold", type=float, default=None, help="相似度門檻")
-    parser.add_argument("--no-rerank", action="store_true", help="停用 Reranker 語意裁判")
+    parser.add_argument("--rerank", action="store_true",
+                        help="本次強制啟用 Reranker（校準或試新模型用；預設依 tasks.rerank.enabled）")
+    parser.add_argument("--no-rerank", action="store_true", help="本次停用 Reranker 語意裁判")
     parser.add_argument("--require-rerank", action="store_true", help="強制要求 Reranker 成功（降級/失敗則 exit 1）")
     parser.add_argument("--json", action="store_true", help="輸出 JSON")
     args = parser.parse_args()
@@ -862,7 +912,7 @@ def main():
             path, total, flagged = candidate_report(
                 book, chapter, top=max(3, min(args.top, 10)),
                 threshold=args.threshold,
-                use_rerank=not args.no_rerank,
+                use_rerank=(True if args.rerank else False if args.no_rerank else None),
                 require_rerank=args.require_rerank,
             )
         except (ModelError, FileNotFoundError, ValueError) as exc:
