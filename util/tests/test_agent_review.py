@@ -286,5 +286,101 @@ class AgentReviewTests(unittest.TestCase):
         self.assertEqual("codex", agent_review._reviewer_agent(record))
 
 
+    def _m6_passed(self, root):
+        _, m6 = agent_review.submit("申命記", 1, "m6", root)
+        agent_review.record_verdict("申命記", 1, "m6", "pass", m6["sha256"],
+                                    reviewer="codex", findings_count=0, root=root)
+        return m6
+
+    def _repass_m3(self, root, tmp, text):
+        (tmp / "entry_content" / "測試.yaml").write_text(text, encoding="utf-8")
+        _, m3 = agent_review.submit("申命記", 1, "m3", root)
+        agent_review.record_verdict("申命記", 1, "m3", "pass", m3["sha256"],
+                                    reviewer="codex", findings_count=0, root=root)
+
+    def test_upstream_only_change_opens_free_delta_review(self):
+        tmpdir, root, tmp, _cc = self._root_with_m3_pass()
+        self.addCleanup(tmpdir.cleanup)
+        self._m6_passed(root)
+        self._repass_m3(root, tmp, "content: v2\n")
+
+        _, delta = agent_review.submit("申命記", 1, "m6", root)
+        self.assertEqual("delta", delta["review_mode"])
+        self.assertEqual("pending", delta["reviewer_status"])
+        self.assertEqual(1, delta["review_attempts"])
+        with self.assertRaises(agent_review.ReviewGateError):
+            agent_review.require_pass("申命記", 1, "m6", root)
+
+        _, done = agent_review.record_verdict("申命記", 1, "m6", "pass", delta["sha256"],
+                                              reviewer="codex", findings_count=0, root=root)
+        self.assertEqual(1, done["review_attempts"])          # 差異複核不耗額度
+        self.assertEqual("delta", done["review_history"][-1]["mode"])
+        self.assertIsNone(done["review_history"][-1]["attempt"])
+        self.assertEqual("pass", agent_review.require_pass("申命記", 1, "m6", root)["reviewer_status"])
+
+    def test_upstream_only_change_after_budget_spent_is_reviewed_not_forced(self):
+        tmpdir, root, tmp, cc = self._root_with_m3_pass()
+        self.addCleanup(tmpdir.cleanup)
+        _, m6 = agent_review.submit("申命記", 1, "m6", root)
+        agent_review.record_verdict("申命記", 1, "m6", "changes_required", m6["sha256"],
+                                    reviewer="codex", findings_count=1, root=root)
+        cc.write_text("organization: v2\n", encoding="utf-8")
+        _, m6b = agent_review.submit("申命記", 1, "m6", root)
+        agent_review.record_verdict("申命記", 1, "m6", "pass", m6b["sha256"],
+                                    reviewer="codex", findings_count=0, root=root)
+        self._repass_m3(root, tmp, "content: v2\n")
+
+        _, delta = agent_review.submit("申命記", 1, "m6", root)
+        self.assertFalse(delta["forced_pass"])                # 以前這裡會直接 FORCED PASS
+        self.assertEqual("delta", delta["review_mode"])
+        _, done = agent_review.record_verdict("申命記", 1, "m6", "pass", delta["sha256"],
+                                              reviewer="antigravity", root=root)
+        self.assertEqual(2, done["review_attempts"])
+
+    def test_own_change_after_pass_is_a_normal_review(self):
+        tmpdir, root, _tmp, cc = self._root_with_m3_pass()
+        self.addCleanup(tmpdir.cleanup)
+        self._m6_passed(root)
+        cc.write_text("organization: v2\n", encoding="utf-8")
+        _, record = agent_review.submit("申命記", 1, "m6", root)
+        self.assertNotIn("review_mode", record)
+        _, done = agent_review.record_verdict("申命記", 1, "m6", "pass", record["sha256"],
+                                              reviewer="codex", root=root)
+        self.assertEqual(2, done["review_attempts"])
+
+    def test_skip_passes_gate_and_is_listed_for_backfill(self):
+        tmpdir, root, _target = self._root_with_m3()
+        self.addCleanup(tmpdir.cleanup)
+        _, first = agent_review.submit("申命記", 1, "m3", root)
+        with self.assertRaises(agent_review.ReviewGateError):
+            agent_review.skip_review("申命記", 1, "m3", "  ", root)
+        _, skipped = agent_review.skip_review("申命記", 1, "m3", "no reviewer subscription", root)
+        self.assertEqual("skipped", skipped["reviewer_status"])
+        self.assertEqual(0, skipped["review_attempts"])
+        self.assertTrue(agent_review.require_pass("申命記", 1, "m3", root)["review_skipped"])
+        self.assertEqual([("申命記", 1, "m3", "no reviewer subscription")],
+                         agent_review.skipped_stages("申命記", root))
+
+        # 補審：reviewer 回來後對同一版內容做正常審查，SKIPPED 標記隨之清除
+        _, reviewed = agent_review.record_verdict("申命記", 1, "m3", "pass", first["sha256"],
+                                                  reviewer="codex", findings_count=0, root=root)
+        self.assertEqual(1, reviewed["review_attempts"])
+        self.assertNotIn("review_skipped", reviewed)
+        self.assertEqual([], agent_review.skipped_stages("申命記", root))
+
+    def test_skip_rejects_stale_or_already_passed_content(self):
+        tmpdir, root, target = self._root_with_m3()
+        self.addCleanup(tmpdir.cleanup)
+        _, first = agent_review.submit("申命記", 1, "m3", root)
+        target.write_text("content: v2\n", encoding="utf-8")
+        with self.assertRaises(agent_review.ReviewGateError):
+            agent_review.skip_review("申命記", 1, "m3", "no reviewer", root)
+        _, again = agent_review.submit("申命記", 1, "m3", root)
+        agent_review.record_verdict("申命記", 1, "m3", "pass", again["sha256"],
+                                    reviewer="codex", root=root)
+        with self.assertRaises(agent_review.ReviewGateError):
+            agent_review.skip_review("申命記", 1, "m3", "no reviewer", root)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -39,6 +39,24 @@ receipt as ``hash_inputs`` so a verdict's scope is auditable after the fact):
 - m6: ``chapter_content.yaml`` + current M3 fingerprint
 - link_updates: ``link_updates.yaml`` + current M3/M6 fingerprints
 
+Two situations do not spend the two-review budget:
+
+- Upstream-only change (delta review): a stage that already passed is
+  re-submitted with its own files unchanged and only a parent hash moved
+  (e.g. M3 was corrected after M6 passed). ``submit`` marks it
+  ``review_mode: delta``; the reviewer only checks whether the upstream change
+  affects this stage, and that verdict does not count as an attempt::
+
+    python util/agent_review.py submit 申命記 1 m6      # -> delta review pending
+    python util/agent_review.py verdict 申命記 1 m6 pass --sha <sha> --reviewer codex
+
+- No reviewer available (subscriptions lapsed)::
+
+    python util/agent_review.py skip 申命記 1 m3 --reason "no reviewer subscription"
+
+  The gate then passes as SKIPPED; ``summary`` lists every skipped stage so it
+  can be reviewed later with a normal ``verdict`` once a reviewer is back.
+
 There is deliberately no ``--allow-same-sha`` style bypass: if the recorded sha
 does not match current content, re-submit (``FORCED PASS`` once the budget is
 spent) — never widen the gate to make a stale verdict fit.
@@ -65,6 +83,10 @@ STATE_FILENAME = "agent_review.yaml"
 STATE_VERSION = 2
 STAGES = ("m3", "m6", "link_updates")
 VERDICTS = ("pass", "changes_required", "blocked")
+# 可以讓 gate 放行的狀態：reviewer PASS（含程式記的 FORCED PASS），或沒有 reviewer
+# 可用時明示記錄的 SKIPPED（待補審）。
+GATE_OK_STATUSES = ("pass", "skipped")
+_PARENT_LABELS = ("m3_sha256", "m6_sha256")
 REVIEWERS = ("codex", "antigravity")
 MAX_REVIEW_ATTEMPTS = 2
 
@@ -174,6 +196,16 @@ def stage_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) ->
     return _digest_parts(parts)
 
 
+def stage_own_fingerprint(book: str, chapter: int, stage: str, root: Path = ROOT) -> str:
+    """只涵蓋本 stage 自己被審的檔案（不含上游 parent hash）的指紋。
+
+    用來分辨「本 stage 內容真的改了」與「只是上游 hash 變了」：後者走差異複核，
+    不耗兩次審查額度。
+    """
+    parts, _covered = _stage_parts(book, chapter, stage, root)
+    return _digest_parts(part for part in parts if part[0] not in _PARENT_LABELS)
+
+
 def stage_hash_inputs(book: str, chapter: int, stage: str, root: Path = ROOT) -> list[str]:
     """該 stage 的 fingerprint 實際涵蓋了哪些檔案／parent hash（寫進 receipt）。"""
     _parts, covered = _stage_parts(book, chapter, stage, root)
@@ -233,16 +265,17 @@ def require_pass(book: str, chapter: int, stage: str, root: Path = ROOT) -> dict
     # 補記（--observed-sha）的 verdict 掛在 reviewer 當時看過的 sha 上；若那不是
     # 目前內容，這次 PASS 不追認目前版本，仍須重新 submit（額度用盡則 FORCED PASS）。
     verdict_sha = str(record.get("verdict_sha") or recorded)
-    if verdict_sha != current and not record.get("forced_pass"):
+    if verdict_sha != current and not record.get("forced_pass") and not record.get("review_skipped"):
         raise ReviewGateError(
             f"{stage} 目前的 PASS 是補記在 reviewer 當時看到的版本（{verdict_sha}），"
             f"與目前內容（{current}）不同；重新 submit 讓程式對新版本判定"
             "（兩次 review 已用完時會自動 FORCED PASS）。"
         )
     status = _review_status(record)
-    if status != "pass":
+    if status not in GATE_OK_STATUSES:
+        mode = "（差異複核待審：只有上游變動，不耗額度）" if record.get("review_mode") == "delta" else ""
         raise ReviewGateError(
-            f"{stage} 尚未 PASS（目前 {status}，review_attempts="
+            f"{stage} 尚未 PASS{mode}（目前 {status}，review_attempts="
             f"{_review_attempts(record)}/{MAX_REVIEW_ATTEMPTS}）。"
         )
     return record
@@ -258,7 +291,14 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
     state = _read_state(canonical, chapter_num, root)
     previous = _stage_record(state, stage)
     current = stage_fingerprint(canonical, chapter_num, stage, root)
+    own = stage_own_fingerprint(canonical, chapter_num, stage, root)
     changed = previous.get("sha256") != current
+    # 已過關的 stage 若自己的檔案沒變、只有上游 hash 變了，改走差異複核（不耗額度）。
+    upstream_only = bool(
+        previous and changed
+        and previous.get("own_sha256") == own
+        and _review_status(previous) == "pass"
+    )
 
     if previous:
         try:
@@ -285,6 +325,22 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
         record.setdefault("review_history", history)
         record["round"] = min(max(1, int(record.get("round") or next_review_round)), MAX_REVIEW_ATTEMPTS)
         record["sha256"] = current
+    elif upstream_only:
+        record = {
+            "round": min(max(1, int(previous.get("round") or 1)), MAX_REVIEW_ATTEMPTS),
+            "revision": revision,
+            "sha256": current,
+            "claude": "unchanged",
+            "reviewer_status": "pending",
+            "reviewer_agent": None,
+            "review_attempts": attempts,
+            "forced_pass": False,
+            "review_mode": "delta",
+            "delta_from_sha": previous.get("sha256"),
+            "review_history": history,
+        }
+        if previous.get("thread_id"):
+            record["thread_id"] = previous["thread_id"]
     elif previous and changed and attempts >= MAX_REVIEW_ATTEMPTS:
         # Hard token-budget rule: after two substantive reviews, Claude may
         # make one final correction but NO third model review is allowed. Bind
@@ -334,6 +390,44 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
     # 稽核用：這個 sha 到底涵蓋了哪些檔案／上游 hash。事後看 receipt 就能確認
     # verdict 掛對了範圍，不必再靠「reviewer 自己加 --allow-same-sha」那種旁路。
     record["hash_inputs"] = stage_hash_inputs(canonical, chapter_num, stage, root)
+    record["own_sha256"] = own
+    state["stages"][stage] = record
+    path = _write_state(canonical, chapter_num, state, root)
+    return path, record
+
+
+def skip_review(book: str, chapter: int, stage: str, reason: str,
+                root: Path = ROOT) -> tuple[Path, dict]:
+    """沒有 reviewer 可用時，明示把目前 sha 記成 SKIPPED（gate 放行、待補審）。"""
+    reason = (reason or "").strip()
+    if not reason:
+        raise ReviewGateError("skip 必須附 --reason，說明為什麼沒有 reviewer")
+    canonical, chapter_num, _ = _ctx(book, chapter, root)
+    state = _read_state(canonical, chapter_num, root)
+    record = _stage_record(state, stage)
+    if not record:
+        raise ReviewGateError(
+            f"{stage} 尚未 submit；先跑：python util/agent_review.py submit {canonical} {chapter_num} {stage}"
+        )
+    current = stage_fingerprint(canonical, chapter_num, stage, root)
+    if record.get("sha256") != current:
+        raise ReviewGateError(f"{stage} 內容在 submit 後已變更；先重新 submit 再 skip")
+    if _review_status(record) == "pass" and str(record.get("verdict_sha") or current) == current:
+        raise ReviewGateError(f"{stage} 目前內容已 PASS，不需要 skip")
+    history = _history(record)
+    history.append({
+        "attempt": None,
+        "reviewer": None,
+        "sha256": current,
+        "verdict": "skipped",
+        "reason": reason,
+    })
+    record["review_history"] = history
+    record["reviewer_status"] = "skipped"
+    record["review_skipped"] = True
+    record["skip_reason"] = reason
+    record["verdict_sha"] = current
+    record["forced_pass"] = False
     state["stages"][stage] = record
     path = _write_state(canonical, chapter_num, state, root)
     return path, record
@@ -397,7 +491,9 @@ def record_verdict(
         )
 
     attempts = _review_attempts(record)
-    substantive = verdict in ("pass", "changes_required")
+    delta = record.get("review_mode") == "delta" and _review_status(record) == "pending"
+    # 差異複核（只有上游變動）不算 substantive：不耗額度，額度用完也可以做。
+    substantive = verdict in ("pass", "changes_required") and not delta
     if substantive:
         last_substantive = next(
             (item for item in reversed(_history(record)) if item.get("attempt") is not None),
@@ -421,6 +517,8 @@ def record_verdict(
 
     record["reviewer_status"] = verdict
     record["reviewer_agent"] = reviewer
+    record.pop("review_skipped", None)
+    record.pop("skip_reason", None)
     record["review_attempts"] = attempts
     record["round"] = min(max(1, attempts if substantive else attempts + 1), MAX_REVIEW_ATTEMPTS)
     record["forced_pass"] = False
@@ -441,10 +539,13 @@ def record_verdict(
             "verdict": verdict,
             "findings_count": int(findings_count) if findings_count is not None else None,
             "late_recorded": late_recorded,
+            **({"mode": "delta"} if delta else {}),
         }
     )
     record["review_history"] = history
-    if verdict == "changes_required" and attempts >= MAX_REVIEW_ATTEMPTS:
+    if delta and verdict in ("pass", "changes_required"):
+        record["review_mode"] = "delta_reviewed"
+    if verdict == "changes_required" and attempts >= MAX_REVIEW_ATTEMPTS and not delta:
         record["final_revision_required"] = True
     else:
         record.pop("final_revision_required", None)
@@ -520,7 +621,38 @@ def forced_pass_report(book: str | None, root: Path = ROOT):
     return rows, per_stage
 
 
+def skipped_stages(book: str | None, root: Path = ROOT) -> list[tuple[str, int, str, str]]:
+    """列出記為 SKIPPED（沒有 reviewer 時放行）的 stage：(書卷, 章, stage, 原因)。"""
+    books = [canonical_book_name(book)] if book else []
+    if not book:
+        for directory in sorted(Path(root).glob("[0-9][0-9] *")):
+            try:
+                books.append(canonical_book_name(directory.name))
+            except ValueError:
+                continue
+    rows = []
+    for canonical in books:
+        tmp_root = book_directory(Path(root), canonical) / ".tmp"
+        if not tmp_root.is_dir():
+            continue
+        for state_path in sorted(tmp_root.glob(f"第*章/{STATE_FILENAME}")):
+            try:
+                data = yaml.safe_load(state_path.read_text(encoding="utf-8")) or {}
+            except yaml.YAMLError:
+                continue
+            for stage, record in (data.get("stages") or {}).items():
+                if isinstance(record, dict) and _review_status(record) == "skipped":
+                    rows.append((canonical, int(data.get("chapter") or 0), stage,
+                                 str(record.get("skip_reason") or "")))
+    return sorted(rows, key=lambda r: (r[0], r[1], STAGES.index(r[2]) if r[2] in STAGES else 9))
+
+
 def _print_forced_pass_report(book: str | None, root: Path = ROOT) -> int:
+    skipped = skipped_stages(book, root)
+    if skipped:
+        print(f"待補審（SKIPPED，未經 reviewer）：{len(skipped)} 個 stage")
+        for bk, ch, stage, reason in skipped:
+            print(f"  {bk} 第{ch}章 {stage}（{reason}）")
     rows, per_stage = forced_pass_report(book, root)
     scope = canonical_book_name(book) if book else "全庫"
     print(f"forced_pass 比例（已 PASS 的 stage 中）：{scope}")
@@ -559,6 +691,15 @@ def _print_submit(book: str, chapter: int, stage: str, path: Path, record: dict)
         print(f"✅ review checkpoint 已 PASS：{book} 第{chapter}章 {stage}")
         print(f"   sha256：{record['sha256']}")
         _print_hash_inputs(record)
+        print(f"   state：{path}")
+        return
+
+    if record.get("review_mode") == "delta" and status == "pending":
+        print(f"🔁 差異複核：{book} 第{chapter}章 {stage}（本 stage 檔案未變，只有上游 hash 變動）")
+        print(f"   sha256：{record['sha256']}（上一版 {record.get('delta_from_sha')}）")
+        _print_hash_inputs(record)
+        print(f"   不耗審查額度（已用 {attempts}/{MAX_REVIEW_ATTEMPTS}）。"
+              "reviewer 只需確認上游的修改有沒有讓本 stage 內容失準。")
         print(f"   state：{path}")
         return
 
@@ -602,6 +743,12 @@ def main() -> int:
         "內容或 submit 記錄已前進時用它，讓那次 attempt 照算但不追認目前內容。",
     )
 
+    skip_parser = sub.add_parser("skip", help="沒有 reviewer 可用時，把目前 sha 記為 SKIPPED（gate 放行、待補審）")
+    skip_parser.add_argument("book")
+    skip_parser.add_argument("chapter", type=int)
+    skip_parser.add_argument("stage", choices=STAGES)
+    skip_parser.add_argument("--reason", required=True, help="為什麼沒有 reviewer（寫進收據）")
+
     gate_parser = sub.add_parser("gate", help="確認目前 hash 已取得 reviewer PASS 或明示 FORCED PASS")
     gate_parser.add_argument("book")
     gate_parser.add_argument("chapter", type=int)
@@ -612,7 +759,7 @@ def main() -> int:
     status_parser.add_argument("chapter", type=int)
 
     summary_parser = sub.add_parser(
-        "summary", help="統計某書卷（或全庫）各 stage 的 forced_pass 比例"
+        "summary", help="統計某書卷（或全庫）各 stage 的 forced_pass 比例，並列出待補審的 SKIPPED stage"
     )
     summary_parser.add_argument("book", nargs="?", help="標準書卷名；省略＝全庫")
     summary_parser.add_argument("--all", action="store_true", help="全庫（等同省略 book）")
@@ -649,9 +796,18 @@ def main() -> int:
                 print("   請讓 Claude 完成最後修正後重新 submit；新 hash 會自動 FORCED PASS，禁止第三次 review。")
             print(f"   state：{path}")
             return 0 if status == "pass" else 2
+        if args.command == "skip":
+            path, record = skip_review(args.book, args.chapter, args.stage, args.reason)
+            print(f"⚠️ review SKIPPED：{canonical_book_name(args.book)} 第{args.chapter}章 {args.stage}"
+                  f"（{record['skip_reason']}）")
+            print(f"   sha256：{record['sha256']}；gate 會放行，summary 會列為待補審。")
+            print(f"   state：{path}")
+            return 0
         if args.command == "gate":
             record = require_pass(args.book, args.chapter, args.stage)
             forced = " FORCED" if record.get("forced_pass") else ""
+            if record.get("review_skipped"):
+                forced = " SKIPPED（未經 reviewer，待補審）"
             print(
                 f"✅ review gate PASS{forced}：{canonical_book_name(args.book)} 第{args.chapter}章 "
                 f"{args.stage} review_attempts={_review_attempts(record)}/{MAX_REVIEW_ATTEMPTS} "
@@ -685,6 +841,8 @@ def main() -> int:
                 continue
             freshness = "fresh" if fresh else "STALE"
             forced = " forced-pass" if record.get("forced_pass") else ""
+            if record.get("review_mode") == "delta" and _review_status(record) == "pending":
+                forced += " delta-review-pending"
             reviewer = _reviewer_agent(record) or "none"
             thread = f" thread={record.get('thread_id')}" if record.get("thread_id") else ""
             print(
