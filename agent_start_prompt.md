@@ -1,198 +1,123 @@
-寫作方式 必須是要對一般大眾看得懂的 
+# Agent Start Prompt — 新章製作清單
 
-# Agent Start Prompt
+寫作方式必須是要讓一般大眾看得懂；所有輸出用繁體中文。
 
-## Production 核心規則（優先於本文歷史說明）
+這份是每章照做的操作清單。規則背後的原因、實例與排錯細節在 `agent_start_reference.md`
+（清單裡標 §A–§I 的地方），出錯或拿不定時再查。共通規則（來源、STEP 邊界、寫作要求、
+review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷見 `scheme.md`。M3／M6 的寫作格式
+以本章 `run_chapter_manual.py prompts` 落地的 prompt 為最終規格。
 
-1. M3 / M6 一律人工 payload，不使用外部模型 API 自動生成。
-2. 每章的四套 Commentary 都必須各自全文閱讀一次；M3/M6 prompt 不重複內嵌全文。
-3. STEP full raw 不要求 Agent 全文逐詞閱讀；由 machine validation 驗證。
-4. M3 只接收 candidate-matched STEP evidence，不接收整節或整章 STEP raw。
-5. M6 只接收 selected HIGH/MEDIUM STEP evidence。
-6. STEP 不足時使用 MCP 精確 query，不猜測、不 dump full raw。
-7. `find_step_occurrences` 可 bounded 查相鄰章，但每章都必須使用正式且驗證通過的 STEP source。
-8. 實際 M3/M6 寫作格式，以 `run_chapter_manual.py prompts` 當次產生的 prompt 為最終規格。
-9. M3、M6、B 類寫完各過一道 reviewer gate（Codex／Antigravity 唯讀審查，見步驟 3）；gate 沒 PASS 不往下走。
+## 核心規則
 
-處理書卷章節時，流程由 `util/run_chapter_manual.py` 與人工 payload 共同主導；你負責「準備輸入、讀來源、填內容、處理人工決策點」。設計原則與決策記錄見 `scheme.md`；所有輸出用繁體中文。
+1. M3／M6 一律人工手寫 payload，不用任何模型 API 自動生成。
+2. 四套 Commentary 各自全文閱讀一次。STEP 全 raw 由 machine validation 驗證，寫作時讀
+   projection，需要時用 MCP 精確 query；不猜、不 dump 全 raw、不查網路 STEP。
+3. M3、M6、B 類寫完各過一道 reviewer gate（步驟 3），gate 沒過不往下。
+4. `.tmp/第x章/` 的 yaml 是 source of truth，不手改渲染出來的 markdown。
+5. 閘門全綠只代表結構合法；步驟 6 的內容勘誤每章都要做。
 
-## MCP 輔助（可用時；不取代本流程）
+## MCP（可用時）
 
-連上 `Hermes-Scripture-MCP` 時，可用 `get_chapter_status` 看目前缺口、
-`search_wiki_entries`／`read_wiki_entry` 查正式條目與 alias、`read_chapter_artifact`／
-`read_chapter_source` 讀受限的本章資料。這些工具只減少找檔與誤連；候選判斷、manifest 正式來源
-內容複核及步驟 7–8 的收尾閘門仍完全照本檔執行。
+工具表與用法見 `util/mcp/README.md`。要點：
 
-STEP 使用規則：
-
-- 本章原文查詢以本章 manifest 宣告的正式 STEP source 為準。
-- STEP full raw 由 machine validation 驗證，不要求 Agent 人工全文逐詞閱讀，也不得整份塞進 M3/M6 prompt。
-- `find_step_candidates`：探索本章原文候選。
-- `query_step_context`：精確查 verses / exact Strong / base Strong / word。
-- `find_step_occurrences`：bounded 查相鄰章出現情況；每章正式 source 必須 validation PASS。
-- 不查網路 STEP。
-- `read_chapter_source` 不得讀取 structured STEP raw 全文。
-
-
-本檔下面列出的 `util/*.py` 多數有對應 MCP 工具：註釋抓取用 `crawl_bible_source`、STEP 原文擷取用
-`extract_stepbible`，manifest 用
-`build_source_manifest`，候選報告用 `build_candidate_similarity`；
-索引與收尾檢查依序用 `sync_link_index`、`sync_embedding_index`、`build_appendix_links`、
-`check_existing_links`、`validate_knowledge_base`、`check_link_quality`、`verify_links`、
-`audit_knowledge_base`。`check_chapter_files` 會呼叫 git，在 MCP 下可能卡到 180 秒逾時，照步驟 8 在 shell 執行；
-`link_updates.py evidence`／`debt` 與 `appendix/website/build.py` 沒有 MCP 對應。B 類先用 `prepare_chapter_link_updates`，再沿用
-下方的 preview/token apply 工具。`run_chapter` 是 MCP 的相容名稱，但固定走
-`run_chapter_manual.py`；MCP 與本檔都只走人工 payload。改名使用 `rename_markdown`
-（預設 dry-run；正式執行必須明確確認）。
-
-大型 corpus 呼叫 `run_gates` 時，傳 `timeout_seconds=600..900`，並把 MCP client 的整體
-tool-call timeout 設為 `600000–900000` ms；這是 server 內部 timeout 之外的另一層設定。
-
-**經 MCP 處理 M3／M6 時，一律走人工模式**：
-`prepare_manual_payload_prompts` → 手寫 M3 `entry_content/*.yaml` → 再 prepare 取得更新的
-M6 prompt → 手寫 `chapter_content.yaml` → `check_manual_payloads` →
-`render_manual_chapter`。這條路實際執行的是 `util/run_chapter_manual.py`，不可以 MCP
-工具偷換成自動生成。`lint_chapter_content` 只是格式提示；M3/M6 的
-結構閘門是 `check_manual_payloads`。內容正確性仍須逐條回到 manifest 正式來源：四套
-commentary 已由 Agent 全文閱讀；STEP 全 raw 由 machine gate 驗證，Agent 使用 prompt projection
-與按需 query 核對語言事實。
-
-B 類累積只可走 `preview_chapter_link_updates` → 人工核對 `link_updates.yaml` 與來源 →
-帶 preview token 的 `apply_chapter_link_updates` → 再 preview 必須 0 變更。它不取代本檔
-步驟 6 的內容複核或步驟 7–8 的最終驗證。
-
-M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯來字母、拉丁音譯與
-簡體字；它比對的是**全庫** raw_data，報出是強力刪除線索，未報出卻不代表該詞出自本章或
-該條目實際累積來源，仍要按 manifest／累積章節核對。`run_gates` 只包裝部分核心機械閘門，
-會更新驗證報告（`rebuild_index=true` 時也更新索引）；不得視為步驟 7–8 的完整替代品。
+- M3／M6 經 MCP 也只走人工路：`prepare_manual_payload_prompts` → 手寫 → `check_manual_payloads`
+  → `render_manual_chapter`。
+- B 類只走 `preview_chapter_link_updates` → token → `apply_chapter_link_updates` → 再 preview
+  必須 0 變更。
+- `check_chapter_files` 會呼叫 git，在 MCP 下可能卡到 180 秒逾時，照步驟 8 在 shell 執行。
+  `link_updates.py evidence`／`debt` 與網站 build 沒有 MCP 對應。
+- `run_gates` 只包部分閘門（`timeout_seconds=600..900`，client timeout 600000–900000 ms），
+  不取代步驟 7–8。
+- `scan_unsourced_tokens` 比對的是全庫 raw_data：報出＝強力刪除線索，沒報出不代表出自本章。
 
 ## 每章流程
 
-1. **準備來源**（章節的 `.tmp` 資料夾：`【序號 書名】/.tmp/第x章/`）
-   - 經文已在本地：`raw_scripture/{標準書名}/第{章}.txt`（缺檔即停，回報使用者）。
-   - 四套註釋（ccbiblestudy CT/GT、KingComments、BibleHub Study）用既有記錄或目錄頁確認 URL（禁止硬猜），執行：
+1. **準備來源**（`【序號 書名】/.tmp/第x章/`）
+   - 經文：`raw_scripture/{標準書名}/第{章}.txt`，缺檔即停，回報使用者。
+   - 四套註釋：用既有記錄或目錄頁確認 URL（禁止硬猜）；已存在的 raw_data 直接沿用，不加
+     `--overwrite`。
      `python util/crawl_bible_text.py "{URL}" --output_path raw_data --output_filename "{source}_{book_slug}_{chapter}"`
-     已存在的 raw_data 檔直接沿用，不加 `--overwrite`。
-   - STEP 原文資料用：`python util/extract_stepbible.py "【書名】 X" --data_path .stepbible_data --output_path raw_data --download`。它只下載該書卷所需 tagged text、lexicon、morphology 檔到 gitignored cache，再輸出 canonical `stepbible_*.txt`。
-   - **不要手寫 `source_manifest.md`**，改用：`python util/build_source_manifest.py 【書名】 X`（四套註釋位址規則在 `_config/source_catalog.json`；STEP 的 66 卷檔名契約在 extractor）。它產生四套註釋＋STEP 原文資料列，raw_data 路徑一律帶 `raw_data/` 前綴。缺註釋依提示用 crawler；缺 STEP 依提示用 extractor。
-   - `run_chapter_manual.py` 的 `prompts`／`check`／`run` 開跑前都會檢查來源讀得到；manifest 宣告 OK 卻讀不到任何 raw_data 檔就丟 `SourceError` 中止（防止在空來源上寫內容）。照訊息修 manifest 或補 raw_data 再重跑。
-   - **來源驗證分流**：CT／GT／KingComments／BibleHub 必須全文閱讀，在 `.tmp/第x章/read_log.md` 各留三段逐字引句（至少一段出自後 1/3）；STEP 不寫人工逐詞引句，改由 `python util/check_source_read.py 【書名】 X` 正式 parser 驗 book/chapter、verse coverage、word rows、Strong、morphology、原文字元與 SHA-256，receipt 寫入 `step_source_receipt.json`。兩路都 PASS 才動內容。
+   - STEP：`python util/extract_stepbible.py "【書名】 X" --data_path .stepbible_data --output_path raw_data --download`
+   - manifest 不可手寫：`python util/build_source_manifest.py 【書名】 X`，缺檔依提示補 crawl／extract。
+   - 全文讀四套 Commentary，在 `read_log.md` 各留三段逐字引句（至少一段出自後 1/3），再跑
+     `python util/check_source_read.py 【書名】 X`；commentary 回執與 STEP machine receipt 都 PASS
+     才動內容。（§A）
 
 2. **建 link_candidates.yaml**（唯一由你判斷「哪些詞值得成為知識節點」的步驟）
-   - 依 `_config/schemas/link_candidates.schema.json`：`{book, chapter, candidates: [{name, type, evidence?, surfaces?}]}`。
-   - 只放經文或有效 raw text 明確觸發的候選；分類用 `link_folder/` 現有資料夾名。
-   - **一個候選只能對一個條目，`name` 不可含斜線**。斜線在檔名裡是路徑分隔字元，`entry_content/<name>.yaml` 建不出來，該候選的 surfaces、knowledge_nodes、本章累積，以及別的條目指向它的 related_entries 會一起落空。`run` 的 P4 validate 會報 error，但那時 payload 多半已經寫完，所以寫候選時就要避開。想涵蓋多個詞用 `surfaces`，不要塞進 `name`。
-   - **`type` 只能是 `link_folder/` 底下真的存在的資料夾**：主題、事件、互文、人物、原文、地點、文化、歷史、神學、背景、解經爭議。自己造一個看起來很合理的分類（利10 的「祭禮」、民9 的「儀式」、民10 的「器具」），resolver 認不得，會把候選降級成 `D_new_candidate`（plan 裡只附一句 note「未知分類：X」），條目不會建；`run` 的 P4 validate 會報 error。祭祀相關的歸 `主題`（制度）或 `原文`（術語），器物歸 `主題`／`文化`。
-   - **逐節核對經文用詞**：程式自動比對候選名、條目全名、括號前裸名與 aliases；經文用這些都對不上的簡稱時（「桌子」→陳設餅桌子），為該候選宣告 `surfaces: [桌子]`。同詞在本章多義用 `{phrase, verses}` 限定節次（出26「幔子」v1-13 是幕幔、v31-33 是內幔 → `surfaces: [{phrase: 幔子, verses: [31,32,33]}]`）。
-   - **原文類候選名的括號音譯必須是本章來源實際出現過的拼寫**（先 `grep -i` raw_data 確認）；來源沒給音譯就用裸中文名，不可憑聖經工具書常識補配（利2「紀念份（azkarah）」實例：來源只給英文 memorial portion）。希伯來字母寫法同理，且更嚴：P4 validate 對候選檔／entry_content／chapter_content 逐字驗證希伯來字母的出處，查無出處＝error 擋 build；本章新建原文類名稱的拉丁音譯查無出處＝manual_review 提醒（拼寫變體無法機械排除）。
-   - **STEP 的使用邊界**：它是原文證據層，不是第五套 commentary。可支持詞形、lemma、Strong、morphology、context gloss 與 lexicon 義域，但 lexicon 只是可能義域，不等於本節必然語境義；morphology 也不自行推出神學結論。STEP 可觸發原文候選，仍只收有研究／跨章累積／實質內容價值者；不為每個功能詞、詞形或 Strong 編號批量建頁，Strong 不是 wiki ID。比較 CT／GT／KC／BH 的共識時不得把 STEP 算一票。**STEP 未在 context projection 出現或 brief lexicon 未列某含義，不等於「STEP 否定該義」或「原文查無此義」；STEP absence 不得作為否定註釋延伸的證據。**
-   - **原文資料採正面分層寫法**：先說 STEP 能直接確認的原文字形、lemma、Strong、morphology、本節譯義與簡要義域，再說「部分註釋進一步理解為……」或「結合其他經文，某些解釋進一步討論……」。除非 STEP 與註釋在 Hebrew／Strong／morphology／lexical identification 等事項上有明確、可驗證的衝突，否則避免寫成「不能由這個字推出」「這個字並不證明」「原文沒有這個意思」「這只是神學推論」或「不能從中文譯名倒推」。STEP 負責界定語言證據，commentary 負責呈現解經與神學延伸；兩者層次不同時並列呈現。
-   - **候選寫齊後先做存在性掃描**（`check_chapter_files` 步驟2 會驗這份紀錄）：一次把整章候選名丟給 `search_wiki_entries(queries=[...])`，把回傳的 `unmatched` 清單寫進 `.tmp/第x章/candidate_existence.md`。有 match 的候選要逐一確認是不是「同一概念、只是措辭不同」——是的話把候選名改成既有條目名（resolver 歸 A/B 累積），不要另建近似重複（承受為業→為業／產業、心都消化→心消化、驚慌與膽氣→使天下萬民驚恐懼怕⋯）。裸名查不到「X（字義）」型檔名，一律用 `search_wiki_entries` 不要用裸字串 find。
-   - **候選寫齊後跑語義近鄰與重排報告**（候選定稿前必經，check_chapter_files 與 run_chapter_manual 會驗證 freshness）：
-     `python util/semantic_lookup.py --candidates 【書名】 X`
-     （`--no-rerank` 僅限離線診斷／除錯；正式生產閘門嚴格拒絕 `disabled` 狀態）
-     程式先以字面規則篩選（同名／alias 確切命中直接通過不打 API），對模糊／衝突／新建候選由 Embedding 索引撈出 Top K 近鄰，再交由 Cross-Encoder Reranker 進行精細打分裁判，寫報告到 `.tmp/第x章/candidate_similarity.md`。報告資訊請依序判讀：
-     - **字面解析**：resolver 實際會把候選對到哪（同名／裸名／alias／新建）。標「請確認」的多半是 alias 導向不同名條目——alias 登記錯誤會把候選靜默導去錯的條目（實例：安密巴 aliases 誤含以實各谷），這裡是唯一的事前攔截點。
-     - **候選重排表格與判定**：
-       - `| Rank | Candidate | Similarity | Rerank | Path |` 表格：列出 Top K 既有條目與重排分數。
-       - `rerank_margin`：Top1 與 Top2 分數差距。
-       - `✅ 建議使用既有條目 [[條目]]`（高可信領先且分類相容）→ 若確認為同概念，把候選名改成該既有條目名（resolver 歸 A/B 累積），避免建近似重複。
-       - `⚠ 需 Agent / 人工判斷`（候選相近、分數差距過小或跨分類）→ 需人工核對上下文與經文實體。
-       - `🆕 建議建立新條目`（相關度低）→ 確為新概念，維持 C 類照建。
-     - **候選互查的 ⚠**（本章兩個候選彼此相似 ≥0.8）：新章條目都還不在索引裡，「兩個候選其實同概念」只有互查抓得到——考慮合併成一個候選（另一個詞用 surfaces 涵蓋），或確認確為兩事再照建。
-     報告是分類輔助，不是硬規則；evidence 寫得越具體（含經文引句），重排裁判越準。
-   - 資料驅動判準見 `scheme.md` §3；語義近鄰與重排架構見 `scheme.md` §3.5。
+   - 格式依 `_config/schemas/link_candidates.schema.json`；只放經文或有效 raw text 明確觸發的候選。
+   - 一個候選對一個條目，`name` 不可含斜線；多個詞用 `surfaces`。（§B1）
+   - `type` 只能是 `link_folder/` 下的資料夾：主題、事件、互文、人物、原文、地點、文化、歷史、
+     神學、背景、解經爭議。祭祀制度歸 `主題`、術語歸 `原文`，器物歸 `主題`／`文化`。（§B1）
+   - 經文用詞對不上候選名時宣告 `surfaces`；同詞多義用 `{phrase, verses}` 限定節次。（§B2）
+   - 原文類候選的括號音譯、希伯來字母必須在本章來源出現過（先 `grep -i` raw_data），沒有就用
+     裸中文名。（§B3）
+   - STEP 可觸發原文候選，但只收有研究或跨章累積價值的；Strong 編號不是 wiki ID。
+   - 存在性掃描：整章候選名一次丟給 `search_wiki_entries(queries=[...])`，把 `unmatched` 寫進
+     `candidate_existence.md`。有 match 的確認是不是同概念，是就改用既有條目名。（§B4）
+   - 近鄰報告：`python util/semantic_lookup.py --candidates 【書名】 X`。先讀開頭的「摘要：
+     需要判斷的項目」，只細看列出的候選：✅ 確認同概念就改用既有條目名，⚠ 人工判斷，🆕 照建；
+     候選互查 ⚠ 考慮合併。（§B5）
 
-3. **跑人工 orchestrator**（M3/M6 手寫，結構、渲染、驗證由程式處理）
+3. **手寫 M3／M6，逐段過 reviewer gate**
    ```text
    python util/build_link_index.py
    python util/run_chapter_manual.py prompts 【書名】 X
    ```
-   `prompts` 會落地 `manual/sources.md`、M3/M6 實際 prompt 與 `prompt_metrics.json`。Agent
-   必須依 sources.md 全文讀四套 commentary 並完成 read_log；STEP 全 raw 由 machine gate 驗證。
-   M3 的 STEP 使用方式：
-   - evidence / surfaces / verses 只是 candidate 的搜尋範圍，不代表把該節全部 STEP words 放進 prompt。
-   - selector 只注入與本批 candidate 實際匹配的 STEP evidence，例如 Strong / Extended Strong、Hebrew / Greek token、transliteration 或可機械確認的 surface。
-   - 找不到的 candidate fail-small，不猜詞。
-   - evidence=全章 的 candidate 只略過該 candidate，不得讓同一 large batch 其他 candidate 失去 STEP evidence。
-   - 絕不 fallback 成整節或整章 STEP raw。
-   - 需要更多資料時才使用 MCP query。
-   M6 只注入 HIGH / MEDIUM selected STEP candidates，不用 LOW 填滿預算；需要更多原文細節時再用 MCP query。
-   手寫 `.tmp/第x章/entry_content/*.yaml`，過 M3 reviewer gate 後重跑 `prompts`
-   更新 M6 prompt，再手寫 `chapter_content.yaml`、過 M6 reviewer gate，然後依序執行 `check`、`run`；`run` 只做 M5/P3/P4，若缺 payload 會直接報錯，不會自動產生內容。
-   - **本章整理（organization）的 wiki-link 有白名單限制**：只能連到本章 `link_plan.yaml` 的 A／B 類既有條目，或本章實際建出的 C 類條目；連到 vault 裡真實存在、但不在本章候選清單內的其他條目一律被擋（錯誤：「wiki-link 目標不在本章可連清單」）。想在本章整理提到清單外的既有概念，要嘛把它也列成本章候選（走 B 類累積），要嘛只能用不帶連結的純文字提及，不要嘗試連結。目標若是白名單條目的合法 alias（如 [[鹽約]]→立約的鹽），程式會自動改寫成 [[全名|原詞]] 再驗。
-   - **M3 的 alias 撞名由程式處理**：alias 撞上既有／同批條目時（利2「素祭」配「禮物」），程式直接剔除該 alias 並記 manual_review「已自動移除（僅通知）」，其餘人工 payload 保留。
-   - **人工內容流程**：`prompts` → 依 `sources.md` 全文讀四套 commentary、完成 `read_log.md`，確認 STEP machine receipt PASS → 讀 M3 projection、必要時 query STEP、手寫 `entry_content/*.yaml` → M3 reviewer gate → 重跑 prompts 更新 M6 → 讀 M6 projection、必要時 query、手寫 `chapter_content.yaml` → M6 reviewer gate → `check` → `run`。manual prompt 不內嵌四套 commentary 全文；這是避免重讀，不是摘要或降低全文閱讀要求。其餘步驟（1、2、4–8）不變；步驟6 不可省略。事後維護見 `agent_maintenance_prompt.md`。
-   - **Reviewer gate（M3、M6、B 類各一道）**：寫完一個 stage 後執行
-     `python util/agent_review.py submit 【書名】 X m3`（M6 用 `m6`，B 類用 `link_updates`），再請另一個 agent 唯讀審查：
-     預設 Codex（`--sandbox read-only`，同一章延續同一個 thread），Codex 額度用完或無法使用時改 Antigravity
-     （見 `agent_antigravity_orchestrator_prompt.md`）；審查範圍依 `agent_evidence_audit_prompt.md`。
-     依 reviewer 輸出的 footer 代記
-     `python util/agent_review.py verdict 【書名】 X m3 <pass|changes_required|blocked> --sha <REVIEW_SHA256> --reviewer <codex|antigravity> --findings-count N`；
-     有 findings 就修 `.tmp` 的 source-of-truth yaml 再 submit。採納 finding 前，它引的原文先對 raw_data `grep -F`，查不到的不採納。
-     每個 stage 最多兩次 reviewer 審查；第二次仍要改時，修完再 submit 會自動記 FORCED PASS，不開第三次。
-     最後 `python util/agent_review.py gate 【書名】 X m3` PASS 才進下一步。寫作者不審自己的稿、不自己記 PASS；
-     也不得為了過關修改 `util/agent_review.py` 或任何 gate 腳本（每輪審查後先 `git status util/`）。
+   - 讀 M3 prompt 與 STEP projection，手寫 `entry_content/<name>.yaml`（每個條目一個檔）。
+   - M3 gate 通過後重跑 `prompts` 取得正式 M6 prompt，手寫 `chapter_content.yaml`，過 M6 gate。
+   - 接著 `python util/run_chapter_manual.py check 【書名】 X`，再 `run`。`run` 缺 payload 會直接
+     報錯，不會自動產生內容。
+   - 本章整理的 wiki-link 只能連本章可連清單（A／B 既有條目＋本章實建 C 條目），清單外的概念用
+     純文字。M3 的 alias 撞名由 `check` 報出，自己從 payload 移除。（§C）
+   - **Reviewer gate**（M3、M6、B 類各一道）：
+     1. `python util/agent_review.py submit 【書名】 X m3`（M6 用 `m6`，B 類用 `link_updates`）。
+     2. 請另一個 agent 唯讀審查：預設 Codex（`--sandbox read-only`），不能用時改 Antigravity
+        （`agent_antigravity_orchestrator_prompt.md`）。同一章延續同一個 thread（Codex `--resume`、
+        agy `--conversation`）。只給書卷、章、stage、目前 sha，請它依
+        `agent_evidence_audit_prompt.md` 審查，不另寫審查標準。
+     3. 依 reviewer 的 footer 代記：
+        `python util/agent_review.py verdict 【書名】 X m3 <pass|changes_required|blocked> --sha <REVIEW_SHA256> --reviewer <codex|antigravity> --findings-count N`
+     4. 有 findings 就修 `.tmp` 的 yaml 再 submit。採納前先對 raw_data `grep -F` 核對它引的原文，
+        查不到的不採納。
+     5. `python util/agent_review.py gate 【書名】 X m3` 通過才往下。
+     - 每個 stage 最多兩次審查；第二次仍要改時，修完再 submit 會自動記 FORCED PASS，不開第三次。
+     - 已過關的 stage 只因上游修改而 hash 變動（例如 M6 過後又改了 M3）時，submit 會標成差異複核：
+       請 reviewer 只確認上游修改有沒有波及本 stage，這次不耗額度。
+     - Codex 與 Antigravity 都不能用時，改記
+       `python util/agent_review.py skip 【書名】 X m3 --reason "無可用 reviewer"`，gate 會以
+       SKIPPED 放行。commit 訊息要註明，日後用 `python util/agent_review.py summary` 找出來補審。
+     - 寫作者不審自己的稿、不自己記 PASS；不得為了過關改 `util/agent_review.py` 或任何 gate 腳本
+       （每輪審查後 `git status util/`）。
 
 4. **B 類累積**（既有條目補本章資料）
    ```text
    python util/link_updates.py prepare 【書名】 X
    ```
-   prepare 會同時產生 `review_evidence.md`：逐條給出目標條目的**定義**（400 字以內
-   全文，較長的給主張索引：首段全文＋其餘段落的粗體導語）、**主題發展索引**（有 H3
-   小標題時只列小標題，沒有才列段落開頭、上限 8 段）與**已累積章清單**（依書卷分組）。
-   判 `overview_review` 前先讀這一份，不要逐一開啟每個條目——它只收判斷要用的那一部分，
-   篇幅遠小於條目原文。實戰上**最有用的是累積
-   章清單那一行**：章號並排＋主題發展寫著空白，就是一條沒人寫的跨章線。
-   **索引是分流用的：只要判斷不是單純 keep，就開條目原檔再確認**；要引用逐字內容
-   （尤其 `covered_by`）一律開檔。
-   （條目被改過或舊章要補產生：`python util/link_updates.py evidence 【書名】 X`。）
-   再回到經文與有效 raw text 填 `summary`／`relation`，並逐條完成
-   `overview_review`。三個區塊的功能絕對不同：
-   - **定義**：回答「這是誰／什麼、如何辨識、範圍與邊界是什麼」；只在本章資料改變或澄清穩定身分時更新，不寫本章事件摘要。
-   - **主題發展**：綜合至少兩個章節（可跨卷），說明推進、轉折、對照或整體意義；不是逐章累積的加長版。
-   - **逐章累積**：`summary`／`relation` 只記本章明確事實與本章關聯，每章各自成塊。
+   - 先讀 `review_evidence.md`；判斷不是單純 keep，或要引逐字內容時，才開條目原檔。
+   - `summary`／`relation` 只記本章明確事實與本章關聯。
+   - `overview_review` 的 `definition`、`development` 各選 `keep` 或 `update`。keep 是正常結果；
+     只有明確的新定義或跨章發展才 update，不為了顯得有做事而硬湊。
+   - preview 提出 challenge 而仍選 keep 時才填 `basis`；`already_covered` 要附 `covered_by`
+     逐字節錄；條目欠帳而本章只一句帶過時填 `standing_debt`。（§D）
+   - `development=update` 要在 `synthesis_scope` 列本章與至少另一章，並先改條目的
+     `## 主題發展`；不可把本章 summary／relation 換句話說貼進定義或主題發展。
+   - 過 `link_updates` gate 後才 apply，重跑 apply 必須 0 變更：
+     ```text
+     python util/link_updates.py apply 【書名】 X --dry-run
+     python util/link_updates.py apply 【書名】 X
+     ```
 
-   `definition`／`development` 必須各選 `keep` 或 `update`；這是**審查義務，不是
-   更新配額**。`keep` 是正常且完整的結果，一章全部 `keep` 也可通過；只有 agent 能明確指出
-   真正的新定義或跨章發展時才選 `update`，否則必須 `keep`，不准為了顯得有做事而硬湊。
-   若 preview 依空白區塊、累積數或 `summary`／`relation` 的跨章語句提出 `challenge`，仍選
-   `keep` 時才填一個受控 `basis`（如 `already_covered`、`single_chapter_only`、
-   `insufficient_evidence`）。`update` 由實際正式區塊 diff 證明。
-   **`already_covered` 必須同時給 `covered_by`**：從該區塊現有內容逐字節錄一句，程式會
-   比對；引不出來就不是 `already_covered`，該改判 `update` 或換一個 basis。
-   注意 `single_chapter_only` 的意思是「本章素材形不成跨章綜合」——若該條目自己的
-   累積清單裡已經有別章在講同一件事，這個 basis 就是假的。
-   **條目本身欠帳（`many_accumulations` 或 `development_blank_with_history`）而本章
-   只給了一句帶過的提及時，填 `standing_debt`**：三個舊 basis 沒有一個誠實描述這種
-   狀況，而 `insufficient_evidence` 在有欠帳訊號時已被擋掉（它會把欠帳抹掉）。
-   `standing_debt` 由 apply 記進 `util/output/development_debt.json`，日後在別章或維護
-   回合把該條目的主題發展補成跨章綜合、填 `development=update`，apply 就會自動清除該筆。
-   隨時可用 `python util/link_updates.py debt` 看目前欠帳清單。
-   `development=update` 必須在 `synthesis_scope` 列出
-   本章與至少另一章，並先修改條目的 `## 主題發展`。**絕對不可把本章的
-   `summary`／`relation` 換句話說後貼進定義或主題發展，也不可用「民35」這類單章小標題
-   在主題發展再做一份逐章補充。**
-   填完後先過 reviewer gate（stage `link_updates`，做法同步驟 3）；`python util/agent_review.py gate 【書名】 X link_updates`
-   PASS 才往下 apply：
-   ```text
-   python util/link_updates.py apply 【書名】 X --dry-run
-   python util/link_updates.py apply 【書名】 X
-   ```
-   重跑 apply 必須 0 變更。
+5. **人工決策點**：處理 `manual_review` 項目與 `link_plan.yaml` 的 D 類（同名、分類衝突）。D 類
+   不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑。C／D 候選附有 `semantic_hint` 時，
+   確認是不是該改走 B 類累積。
 
-5. **處理人工決策點**：run_chapter 回報的 `manual_review` 項目，與 `link_plan.yaml` 的 D 類（同名衝突、分類衝突）。D 類不得自動建立或連結；判斷後修 candidates 或人工建檔再續跑（run_chapter 可斷點續跑，已完成的步驟不重做）。
-   - **看 `link_plan.yaml` 的 `semantic_hint`**：C（新建）與 D（待判斷）候選若程式附上了語義近鄰既有條目（措辭不同、意思相同者），要回頭確認這個候選是不是其實該連到那個既有條目（改走 B 類累積），而非另建近似重複。這是附註線索、不是自動判定；索引或 embedding 端點不可用時該欄位不出現，流程照跑。門檻與原理見 `scheme.md` §3.5。
-
-5b. **引句字串疑點掃描（review 線索）**
+5b. **短引句裁決**
    ```text
    python util/check_quote_fidelity.py 【書名】 X
    python util/check_quote_fidelity.py 【書名】 X --min-chars 2
    ```
-   第一行是常駐閘門的同套掃描（門檻 10 字），只用來定位可能需要回查的文字；未命中不等於內容錯誤，也不得為了讓字串比對通過而改寫內容。
-
-   第二行**必跑**：常駐閘門門檻 10 字，4-7 字的偽逐字引句（自己的措辭套「」、截斷經文補句號、中譯冒充英文原句）完全不驗，而這一型幾乎每章都有。`--min-chars 2` 會噪音偏多且需人工裁決不能機械刪，所以不降硬閘門門檻，改為必跑一輪並把**每一條**的裁決寫進 `.tmp/第x章/quote_adjudication.md`：
-
+   第二行必跑，每一條未命中都要裁決並寫進 `quote_adjudication.md`（缺這份會被
+   `check_chapter_files` 擋）。字串沒命中不等於內容錯，不要為了讓比對通過而改寫內容。（§E）
    ```markdown
    # 第X章 短引句裁決（--min-chars 2）
 
@@ -204,75 +129,48 @@ M3/M6 render 後可用 `scan_unsourced_tokens` 補掃已渲染條目中的希伯
    - [—] 「⋯⋯」→ 確為強調用法（非逐字宣告），保留
    ```
 
-   缺這份紀錄會被 `check_chapter_files` 擋（步驟5）。來源歸屬、翻譯與轉述是否忠實，仍由 Evidence Reviewer 回到本章正式來源判定。
+6. **內容勘誤（commit 前必做）**：把新寫的本章整理、新建條目、B 類累積逐條對回 manifest 正式來源，
+   優先查四類：來源誤植、全稱詞／方向性誤讀、rawdata 沒出現過的經文交叉引註、查無出處的格言式
+   總結句。（實例與 grep 查法 §F）
+   - 解經爭議類條目只陳述四套註釋實際記載的立場，不可自編解經史。
+   - knowledge_nodes 一項只放一個條目名，不要用頓號把兩個條目名黏成一項。
+   - 發現錯誤就改 `.tmp` 的 yaml，再 `check` → `run`；B 類改 `link_updates.yaml` 後重跑 apply；
+     改了 `link_candidates.yaml` 要重跑 `prompts`。
+   - 本章累積到的既有條目若帶著舊錯，一併修正，勘誤依據寫在 relation 或 commit 訊息。
 
-6. **M3/M6 與 B 類內容的勘誤複核（commit 前必做）**：手寫的 `entry_content`、`chapter_content`，以及 `link_updates.py` 填的 summary／relation，都不是程式能證明正確的——**閘門全過只代表結構合法，不代表內容對 rawdata 忠實**。你必須把新產出的本章整理、新建條目、B 類累積內容，逐條回頭核對 manifest 正式來源：
-   - 抓法同 §「內容勘誤」四類高風險：內容是否把某來源沒說的話講成是它說的（來源誤植）、把「常見」講成「罕見」或反過來（全稱詞／方向性誤讀）、引了 rawdata 沒有出現過的經文交叉引註（憑常識腦補書卷章節）、或編出聽起來合理但查無出處的格言式總結句。
-   - P4 已有數道 manual_review 輔助（實錯做成的，只提醒不擋 build，人工複核仍是主力）：①本章整理行文／表格裡查無出處的拉丁音譯（M6 每次重新生成都可能在新位置編一個，改 entry_content 觸發重生後要整份重查）；②引句掛名來源查無、卻在別家 raw 檔逐字找到＝誤植嫌疑（GT 是丁良才／啟導本／串珠／背景註釋等多家合訂本，最常被錯拆成「BH」；兩邊都查無的引句多半是英文來源的中譯，機器不可驗，仍要人工比對）；③**解經爭議類條目的「主題發展／定義」被塞進查無出處的解經史**（利12／利13 實錯：`type=解經爭議` 且 evidence 描述雙方交鋒時，M3／M6 會 develop 出一段來源根本沒提的解經史分期；判準是「條目含具名學者／經典／分期用語、但該詞在本章正式來源與經文查無出處」）。解經爭議條目只能陳述四套註釋實際記載的立場，不可自行編造解經史；STEP 僅可補語言事實，不得被當成第五家解經立場。
-   - **knowledge_nodes 一項只放一個條目名**，不要用頓號把兩個條目名黏成一項（如「摩西、亞倫和他兒子（祭司）」）：整項對不上任何條目時，節點連同各自的本章累積會被丟棄。P4 validate 對這一型報 error；名字本身帶頓號的合法條目（如「肉體的情慾、眼目的情慾、今生的驕傲」）不受影響。
-   - 發現有誤：**source of truth 是 `.tmp/第x章/` 裡的 yaml，不是渲染出來的 markdown**。改 `chapter_content.yaml` 或 `entry_content/*.yaml` 後，重跑 `python util/run_chapter_manual.py check` → `run` 讓 render 重新產出 markdown——**只改渲染後的 markdown 而不改 yaml，下次 render 會覆蓋回錯的舊內容**。唯一例外是 `link_updates.yaml` 的 B 類累積——它是 `link_updates.py apply` 寫進既有條目 `.md`，改完 yaml 要重跑 `apply`。
-   - 改動 `link_candidates.yaml` 後要重跑 `python util/run_chapter_manual.py prompts`，確認過期清單後再手寫缺少的 payload；改 `entry_content/*.yaml` 後則重新 `check`，必要時重跑 `prompts` 取得新的白名單。
-   - 順手複查既有條目：本章若累積到的既有條目本身帶著更早期的錯（例如某地名被錯記成同音異義的另一地名），連同勘誤一併修正，並在 relation 裡註明勘誤依據，不要默默改。
-   - 這一步做完才進入下一步收尾驗證；驗證閘門不會幫你抓這類語意錯誤。
-
-7. **收尾驗證與提交**
+7. **收尾驗證**
    ```text
    python util/build_appendix_links.py
    python util/check_existing_links.py 【序號 書名】/第x章.md --missing
    python util/build_link_index.py
-   python util/build_embedding_index.py          # 增量更新語義索引（本章新條目要進索引，下一章才查得到）
+   python util/build_embedding_index.py
    python util/validate_knowledge_base.py
    python util/link_quality_check.py 【書名】
    python util/verify_links.py 【書名】
    python util/audit_knowledge_base.py --check-due
    ```
-   全 PASS（條件見 `scheme.md` §6）才 commit + push；回報只列結論數字與 D 類決策，不貼完整報告。
-   `build_embedding_index.py` 必須在 `build_link_index.py` 之後跑：它只重嵌新增／變動的條目（沿用其餘），耗時通常幾秒。**這步不可略過**——本章新條目沒進索引，下一章的候選近鄰報告就查不到它們，而且是靜默失效；步驟7 的 check_chapter_files 會用雜湊比對驗證索引同步（`build_embedding_index.py --check` 可單獨驗，不打網路）。
+   - `build_embedding_index.py` 一定要在 `build_link_index.py` 之後跑，不可略過。
+   - 閘門吃書卷名，不是路徑（`check_existing_links.py` 例外，要章節 md 路徑）。看 PASS／FAIL 與
+     exit code，不要用 grep 計數判斷通過。
+   - 有改 `appendix/website/**` 時另見 §G。
 
-若本次同時修改 `appendix/website/**` 的互動網站，先在 repository 根目錄執行網站自己的 production build，再同步附錄索引：
-
-```text
-python appendix/website/build.py --build --deploy-dir .tmp/website-deploy
-python util/build_appendix_links.py
-```
-
-`build_appendix_links.py` 會動態載入網站 plugin 的 `scan_all_entries()`；它只應讀取已產生的 `dist/index.html` 與靜態 HTML，不會在索引階段自行執行 npm。Vite 章節的根目錄 `index.html` 是開發入口，附錄連結應指向 `dist/index.html`；部署目錄只供靜態主機發布。靜態 HTML 章節則維持原檔案入口。
-
-8. **檔案完整性驗證**（commit 前的最後把關）
+8. **檔案完整性驗證**
    ```text
    python util/check_chapter_files.py 【書名】 X
    ```
-   依上述 1–6 的流程順序，逐一檢查每步驟該產生的主要檔案是否存在（`source_manifest.md`、
-   `link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml`、`entry_content/*.yaml`、
-   `verse_links.yaml`、`chapter_content.yaml`、`第x章.md`、`link_updates.yaml`、
-   `util/output/` 下的驗證報告），最後以雜湊比對驗證 embedding 語義索引與條目庫同步。
-   除了「檔案在不在」，它還驗一項**內容涵蓋**：`verse_links.yaml` 有沒有涵蓋本章
-   `link_plan.yaml` 自己宣告的經文詞。`verse_links_step` 是「輸出檔存在就沿用」，而擋在
-   前面的作廢機制只在 `pipeline_state.json` 有基線時生效——**基線一旦被刪就整套失效**，
-   改過 candidates／plan／entry_content 之後重跑會靜默沿用上一輪的 `verse_links.yaml`
-   （民20 實測：整章 30 個候選只渲染出 4 個內文連結，其餘六道閘門全 PASS，因為它們驗的是
-   「連出去的對不對」，沒有一道驗「該連的有沒有連」）。要讓某一步重生就**直接刪那一步的
-   輸出檔**。
-   作廢比對的是「下游真正讀到的那一面」而不是整檔雜湊：`entry_content` 只跟著
-   plan 的 C 類名單走，`chapter_content.yaml` 只跟著可連白名單與條目名／aliases 走，
-   `verse_links.yaml` 才吃 plan 全檔（surfaces 在裡面）。所以**只改 `surfaces`、或在
-   審查回合只改條目的定義／主題發展正文，都不會作廢手寫 payload**，直接重跑即可。
-   新增／刪除候選或改動條目 aliases 會作廢下游。`prompts` 跑完會把 candidates 與
-   plan 的基線一起前推，之後的 `run` 以這組新基線判斷上游有沒有變動。
-   一旦某檔缺失，程式會停在第一個缺檔處並印出「該回到哪個動作續做」的具體指令
-   （例：缺 `link_plan.yaml` → 回步驟3重跑 `run_chapter_manual.py prompts`；缺 `link_updates.yaml`
-   → 回步驟4跑 `link_updates.py prepare`）；照該指令補完後，再從那一步依序把後面
-   的流程走完，直到本檢查全數 PASS 才 commit + push。
-   本檢查最後會掃 git 未追蹤的 `link_folder/**.md`（利3／4 曾漏 git add 新建條目、
-   commit 訊息還寫「新建條目：0個」）：列為「本章待 git add」的檔案 commit 時**必須
-   一併加入**；標為「屬已 commit 章節」的是先前漏提交＝FAIL，驗證內容後補提交。
-   **staging 完建議再跑一次 `git status` 對照清單，不要只信 commit 訊息裡的數字。**
+   - 缺檔時照它印的指令回到那一步，依序做完再重跑，直到全數 PASS。（§H）
+   - 它列為「本章待 git add」的 `link_folder/**.md` 要一併 staging，staging 後用 `git status` 對照。
 
-## 行為邊界（內容層，程式無法代勞）
+9. **全局 review 與 commit**
+   - commit 前請 Antigravity 做一次唯讀全局 review：重大遺漏、內容失衡、M3／M6 或跨章條目不一致；
+     wording 偏好不改。有實質問題就修 yaml、重跑受影響的驗證。
+   - Antigravity 不能用時跳過，commit 訊息註明「全局 review：略過（無 reviewer）」。
+   - 全部 PASS 後 commit + push，一章一個 commit。回報只列結論數字與需要人工決定的項目，不貼完整報告。
 
-- 一切內容由已收集資料驅動：candidates、summary/relation、條目敘述都必須能對回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
-- **run_chapter／link_updates 產出後，agent 必須以 manifest 正式來源為基準逐條複核，不可假設產出的內容已經對** ——見步驟6。這不是選做，是每章都要做的固定動作。
-- 來源 attribution 必須忠實：標明某一來源時，相關主張必須由該來源支持；翻譯與轉述要保留原意。格式本身不作內容真假的判準。
-- 不假裝無效來源有效；不為湊條目而亂搜薄弱資料。
-- 檔案改名一律用 `python util/rename_markdown.py <src> <dst> [--dry-run]`（會同步全庫 WikiLink）。
-- 已完成且驗證通過的章節不重做。
+## 行為邊界
+
+- 一切內容對得回經文或有效 raw text；來源未提的不寫，不憑神學常識外推。
+- 來源 attribution 必須忠實，翻譯與轉述保留原意；格式本身不作內容真假的判準。
+- 不假裝無效來源有效；不為湊條目亂搜薄弱資料。
+- 改名一律 `python util/rename_markdown.py <src> <dst> [--dry-run]`（會同步全庫 WikiLink）。
+- 已完成且驗證通過的章節不重做；維護見 `agent_maintenance_prompt.md`。新建條目的規則見 §I。

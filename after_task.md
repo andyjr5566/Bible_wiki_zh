@@ -1,60 +1,25 @@
-worker 開工前，這一章的 .tmp/第x章/ 要備齊四樣，缺一它就會靜默失效或半途卡住：
+worker 開工前，這一章要先備齊前置包（`agent_start_prompt.md` 步驟1–2 的產物）：
 
-檔案	誰產的	狀態要求
-raw_data/{commentary}_{book}_{chapter} ×4	crawl_bible_text.py	四套註釋都爬到，source_manifest 標 OK
-raw_data/stepbible_{book}_{chapter}.txt	extract_stepbible.py	STEP 原文資料擷取成功，source_manifest 標 OK
-.tmp/第x章/source_manifest.md	build_source_manifest.py {書名} X	不可手寫；依缺檔提示補 crawl／extract
-.tmp/第x章/link_candidates.yaml	你判斷定稿	候選名無斜線、type 是 link_folder/ 真實資料夾
-.tmp/第x章/candidate_similarity.md	semantic_lookup.py --candidates {書名} X	候選定稿後才跑，是最後一道事前攔截
-一行驗證交接包完整（缺哪步它會指回哪裡）：
+| 檔案 | 誰產的 | 狀態要求 |
+|---|---|---|
+| raw_data 四套註釋＋`stepbible_{book}_{chapter}.txt` | crawl_bible_text.py／extract_stepbible.py | source_manifest 都標 OK |
+| `.tmp/第x章/source_manifest.md` | build_source_manifest.py | 不可手寫 |
+| `.tmp/第x章/read_log.md`＋STEP receipt | 全文閱讀／check_source_read.py | 兩路都 PASS |
+| `.tmp/第x章/link_candidates.yaml`、`candidate_existence.md` | 上游判斷定稿 | 候選名無斜線、type 是真實資料夾 |
+| `.tmp/第x章/candidate_similarity.md` | semantic_lookup.py --candidates | 候選定稿後才跑，且 fresh |
 
+一行驗證前置包（缺哪步它會指回哪裡）：
 
-python util/check_chapter_files.py {書名} {X}
-注意：如果它回報缺 candidates 或 similarity，代表前置包沒備齊——這是你的判斷工作，worker 不該自己補候選（會犯方向書列的斜線名／亂造分類那些靜默坑）。
+    python util/check_chapter_files.py {書名} {X} --preflight
 
-Worker 起手 prompt（可直接貼，換 {書名}/{X}）
+如果它說缺 candidates 或 similarity，代表前置包沒備齊。候選是上游的判斷工作，worker 不自己補。
 
-你要接手【{書名} 第{X}章】的知識連結流程。link_candidates.yaml 已由上游判斷定稿，
-你的任務是走 agent_start_prompt.md 的步驟3–8 把這章做完並驗證通過，不要重做候選。
+## Worker 起手 prompt（換 {書名}/{X} 直接貼）
 
-治理規範：完整讀 C:\Obsidian\Hermes\scripture\agent_start_prompt.md，一切照它走；
-所有輸出用繁體中文（引用英文來源（KC、BH）時，英文原句放進「」、繁體中文翻譯緊接放在（）內；或具名轉述、不加引號。不可把中譯放進「」。）
+你要接手【{書名} 第{X}章】的知識連結流程。link_candidates.yaml 已由上游定稿，不要重做候選。
+照 `agent_start_prompt.md` 的步驟3–9 把這章做完並驗證通過；原因與排錯細節查
+`agent_start_reference.md`，共通規則以 `AGENTS.md` 為準（已自動載入的話不必重讀）。
+所有輸出用繁體中文。
 
-前置狀態（已備好，不要重做，也不要動 link_candidates.yaml）：
-  raw_data 四套註釋＋STEP 原文資料、.tmp/第{X}章/{source_manifest.md, link_candidates.yaml, candidate_similarity.md}
-
-開工前先驗前置包：python util/check_chapter_files.py {書名} {X}
-  ——若它說缺 candidates/similarity，代表前置包沒備齊，停下回報上游，不要自己補候選。
-
-步驟3–4：
-  python util/build_link_index.py
-  python util/run_chapter_manual.py prompts {書名} {X}
-  （依 manual/sources.md 全文讀 CT/GT/KC/BH 並完成 read_log；STEP 全 raw 看 machine receipt，
-   M3/M6 讀 task-aware projection，細查用 step_context.py/query_step_context；再手寫 payload、check → run。
-   prompt 不再重複內嵌四套 commentary 全文。）
-  python util/link_updates.py prepare {書名} {X}
-  → 回經文與 manifest 正式來源填 link_updates.yaml 的 summary/relation（繁中）
-  python util/link_updates.py apply {書名} {X} --dry-run
-  python util/link_updates.py apply {書名} {X}      （重跑須 0 變更）
-
-步驟6 勘誤複核（閘門全過≠內容忠實，commit 前必做）：
-  逐條把「本章整理、新建條目、B類累積」回 manifest 正式來源核對，抓四類錯——
-  來源誤植、全稱詞/方向性誤讀、腦補的經文交叉引註、查無出處的格言式總結句。
-  source of truth 是 .tmp 裡的 yaml（chapter_content.yaml / entry_content/*.yaml），
-  不是渲染出的 .md；改 yaml 後重跑 run_chapter_manual.py check → run 讓 render 帶出。
-  改 entry_content 後先 check；若本章整理同步受影響，重跑 prompts 重新取得規格再修正。
-  解經爭議類條目只能陳述四套註釋實際立場，不可自編解經史/學者/教父；STEP 只支持
-  語言事實，不是 commentary 共識票，lexicon 義域／morphology 不可越界推出神學結論。
-
-步驟7–8 收尾（全 PASS 才 commit）：
-  python util/build_appendix_links.py
-  python util/check_existing_links.py 【{序號 書名}】/第{X}章.md --missing
-  python util/build_link_index.py
-  python util/build_embedding_index.py
-  python util/validate_knowledge_base.py
-  python util/link_quality_check.py {書名}
-  python util/verify_links.py {書名}          ← 離線掃描（不需開 Obsidian）；用 Obsidian 解析規則（確切檔名、不認 alias）抓 broken，逮得到 [[按手]] 這類 alias 漏網之魚
-  python util/audit_knowledge_base.py --check-due
-  python util/check_chapter_files.py {書名} {X}
-  commit 前跑 git status，把它列的「本章待 git add」新建 link_folder/**.md 一併加入；
-  一章一 commit，訊息寫清楚本章做了什麼；不要 git add 整個 link_folder。
+開工前先跑 `python util/check_chapter_files.py {書名} {X} --preflight`；若缺 candidates 或
+similarity，停下回報上游。

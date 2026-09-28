@@ -189,7 +189,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 | 情境 | 權威文件 |
 | --- | --- |
-| 新章 production | `agent_start_prompt.md` |
+| 新章 production | `agent_start_prompt.md`（每章清單；原因與排錯細節在 `agent_start_reference.md`） |
 | Codex 主導新章協作 | `agent_codex_orchestrator_prompt.md`（角色／review/fallback；實際步驟仍以 `agent_start_prompt.md` 為準） |
 | Codex 額度耗盡後 Antigravity 接手 | `agent_antigravity_orchestrator_prompt.md` |
 | Evidence review | `agent_evidence_audit_prompt.md` |
@@ -239,6 +239,8 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 - 兩次預算屬於 stage，不屬於 agent/session；換 Codex session、換 Antigravity、重開 IDE 都不能歸零。
 - `forced_pass` 是流程上可跨 gate 的 PASS，但不是「reviewer 確認零問題」；final mechanical/semantic sanity gates 仍全部照 SOP 跑。
 - v1 舊 receipt 的 `codex: pass` 仍可讀；新 receipt 使用 `reviewer_status` / `reviewer_agent` / `review_attempts` / `review_history`。
+- 已 PASS 的 stage 只因上游 hash 變動（本身檔案沒改）而重新 submit 時，程式標為差異複核（`review_mode: delta`）：reviewer 只確認上游修改有沒有波及本 stage，不計入兩次額度。
+- Codex 與 Antigravity 都不可用時，用 `agent_review.py skip ... --reason` 記 SKIPPED：gate 放行但標明未經 reviewer；commit 訊息要註明，`agent_review.py summary` 會列出待補審的 stage，reviewer 恢復後用一般 `verdict` 補審。
 
 ### Pre-landing gates
 
