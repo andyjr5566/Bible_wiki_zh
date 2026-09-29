@@ -121,13 +121,15 @@ export function mountStory(root: HTMLElement, engine: Engine, sound: Sound, labe
   let auto = 0;
   let autoLast = 0;
   const SECONDS_PER_SCENE = 11;
+  const emitAuto = () => document.dispatchEvent(new CustomEvent('auto-change', { detail: !!auto }));
   function stopAuto() {
     if (!auto) return;
     cancelAnimationFrame(auto);
     auto = 0;
     playBtn.setAttribute('aria-pressed', 'false');
-    playBtn.querySelector('span')!.textContent = '自動播放';
+    playBtn.replaceChildren(svg(ICONS.play), h('span', null, '自動播放'));
     document.body.classList.remove('autoplay');
+    emitAuto();
   }
   function stepAuto(now: number) {
     const dt = Math.min(0.05, (now - autoLast) / 1000);
@@ -138,23 +140,40 @@ export function mountStory(root: HTMLElement, engine: Engine, sound: Sound, labe
     if (endTop < innerHeight * 0.5) return stopAuto();
     auto = requestAnimationFrame(stepAuto);
   }
+  /** 播放；已在播就暫停。還沒進故事就從第一幕開始，故事看完了就從頭再來 */
   function startAuto() {
     if (auto) return stopAuto();
-    if (scrollY < secs[1].offsetTop - innerHeight) scrollTo(0, secs[1].getBoundingClientRect().top + scrollY - innerHeight * 0.5);
+    const endTop = end.getBoundingClientRect().top;
+    if (scrollY < secs[1].offsetTop - innerHeight || endTop < innerHeight * 0.6) {
+      const r = secs[1].getBoundingClientRect();
+      scrollTo(0, r.top + scrollY + r.height * 0.05 - innerHeight * 0.5);
+    }
     autoLast = performance.now();
     auto = requestAnimationFrame(stepAuto);
     playBtn.setAttribute('aria-pressed', 'true');
-    playBtn.querySelector('span')!.textContent = '停止播放';
+    playBtn.replaceChildren(svg(ICONS.pause), h('span', null, '暫停'));
     document.body.classList.add('autoplay');
+    emitAuto();
   }
   playBtn.addEventListener('click', startAuto);
-  for (const evn of ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const) {
+  // 使用者自己捲動就暫停；播放鍵本身不算
+  for (const evn of ['wheel', 'touchstart', 'pointerdown'] as const) {
     addEventListener(evn, (e) => {
       if (!auto) return;
-      if (evn === 'pointerdown' && (e.target as HTMLElement).closest?.('.hbtn, .autoplay-stop')) return;
+      if (evn !== 'wheel' && (e.target as HTMLElement).closest?.('.hbtn, .playtool')) return;
       stopAuto();
     }, { passive: true });
   }
+  // 空白鍵：播放／暫停（焦點在按鈕、輸入框時不攔）
+  addEventListener('keydown', (e) => {
+    const t = e.target as HTMLElement;
+    if (e.key === ' ' && !t.closest('button, a, input, textarea, select, summary, [contenteditable]') && !document.body.classList.contains('exploring')) {
+      e.preventDefault();
+      startAuto();
+      return;
+    }
+    if (auto && ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End'].includes(e.key)) stopAuto();
+  });
 
   const syncSound = () => {
     const on = sound.on;

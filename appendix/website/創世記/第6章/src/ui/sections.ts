@@ -9,7 +9,7 @@ import { STATUS_HELP } from './meta';
 import { reveal } from './motion';
 
 /* ============================================================ 走進方舟 */
-export function mountExplore(sec: HTMLElement, engine: Engine) {
+export function mountExplore(sec: HTMLElement, engine: Engine, spots: { on: boolean; set(v: boolean): void; onChange(f: (v: boolean) => void): void }) {
   const touch = matchMedia('(pointer: coarse)').matches;
   const btn = (icon: string, label: string, on: () => void, pressed?: boolean) => {
     const b = h('button', { class: 'xbtn', type: 'button', ...(pressed !== undefined ? { 'aria-pressed': String(pressed) } : {}) }, svg(ICONS[icon]), h('span', null, label));
@@ -20,8 +20,8 @@ export function mountExplore(sec: HTMLElement, engine: Engine) {
   const hint = h('p', { class: 'xhint' });
   const setHint = () => {
     hint.textContent = walking
-      ? touch ? '用下方的方向鍵走動，拖曳畫面轉頭。' : 'W A S D 或方向鍵走動，按住滑鼠拖曳轉頭，Shift 走快一點。'
-      : touch ? '按「轉動視角」之後，用一根手指拖曳旋轉。' : '拖曳旋轉，右鍵拖曳平移。';
+      ? touch ? '用方向鍵走動，拖曳畫面轉頭。' : 'W A S D 或方向鍵走動，按住滑鼠拖曳轉頭，Shift 走快一點。'
+      : touch ? '按「轉動視角」之後，用一根手指拖曳旋轉。' : '拖曳旋轉，右鍵拖曳平移。H 收起面板，L 開關標示。';
   };
   const cutBtn = btn('cut', '剖開船身', () => {
     cut = !cut;
@@ -33,6 +33,9 @@ export function mountExplore(sec: HTMLElement, engine: Engine) {
     lampBtn.setAttribute('aria-pressed', String(lamps));
     engine.setExplore({ lamps: lamps || cut ? 1 : 0 });
   }, false);
+  const tagBtn = btn('tag', '標示', () => spots.set(!spots.on), spots.on);
+  tagBtn.title = '顯示／隱藏標示（L）';
+  spots.onChange((v) => tagBtn.setAttribute('aria-pressed', String(v)));
   const deckBtns = ['下層', '中層', '上層'].map((n, i) => btn('walk', n, () => enterWalk(i), false));
   const outBtn = btn('x', '走出來', () => leaveWalk());
   const rotBtn = btn('hand', '轉動視角', () => {
@@ -75,10 +78,24 @@ export function mountExplore(sec: HTMLElement, engine: Engine) {
     btn('minus', '拉遠', () => engine.zoom(1.33)),
     touch ? rotBtn : null);
   const inside = h('div', { class: 'xgroup' }, h('span', { class: 'xlabel' }, '走進去'), ...deckBtns, outBtn);
-  const more = h('div', { class: 'xgroup' }, h('span', { class: 'xlabel' }, '其他'), cutBtn, lampBtn);
+  const more = h('div', { class: 'xgroup' }, h('span', { class: 'xlabel' }, '其他'), tagBtn, cutBtn, lampBtn);
+  // 收起控制面板，整個畫面留給方舟；左下角留一顆鈕叫回來
+  const hideBtn = h('button', { class: 'xhide', type: 'button', 'aria-label': '收起控制面板', title: '收起（H）' }, svg(ICONS.chev));
+  const showBtn = h('button', { class: 'xshow', type: 'button', 'aria-label': '顯示控制面板', title: '顯示控制（H）' }, svg(ICONS.sliders), h('span', null, '控制'));
+  const setHidden = (v: boolean) => {
+    sec.classList.toggle('panel-off', v);
+    document.body.classList.toggle('xfull', v && document.body.classList.contains('exploring'));
+    (v ? showBtn : hideBtn).focus({ preventScroll: true });
+  };
+  hideBtn.addEventListener('click', () => setHidden(true));
+  showBtn.addEventListener('click', () => setHidden(false));
+  addEventListener('keydown', (e) => {
+    if ((e.key === 'h' || e.key === 'H') && document.body.classList.contains('exploring') && !(e.target as HTMLElement).closest('input, textarea')) setHidden(!sec.classList.contains('panel-off'));
+  });
+  sec.append(showBtn);
   sec.append(h('div', { class: 'xpanel' },
-    h('h2', { id: 'explore-h' }, '走進方舟'),
-    h('p', { class: 'xlede' }, '長寬高照經文，艙內的隔間、梯子、油燈是示意。'),
+    h('div', { class: 'xhead' }, h('h2', { id: 'explore-h' }, '走進方舟'), hideBtn),
+    h('p', { class: 'xlede' }, '長寬高照經文，艙內擺設是示意。點畫面上的標籤看說明。'),
     views, inside, more, hint), pad);
   engine.setExplore({ rotate });
   // 捲到這一區才交給使用者操作
@@ -86,6 +103,7 @@ export function mountExplore(sec: HTMLElement, engine: Engine) {
     const on = e.intersectionRatio > 0.55;
     engine.setMode(on ? 'explore' : 'story');
     document.body.classList.toggle('exploring', on);
+    document.body.classList.toggle('xfull', on && sec.classList.contains('panel-off'));
     if (!on && walking) leaveWalk();
   }, { threshold: [0, 0.55, 1] }).observe(sec);
 }

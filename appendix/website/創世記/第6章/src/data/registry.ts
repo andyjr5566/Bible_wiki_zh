@@ -1,4 +1,5 @@
 import { DEBATES } from './debates';
+import { SPOTS } from './inside';
 import { EPIGRAPH, SCENES } from './scenes';
 import { DAYS } from './timeline';
 import type { Fact, Voice } from './types';
@@ -12,9 +13,10 @@ export function allFacts(): Fact[] {
   }
   for (const d of DEBATES) out.push(d.said);
   for (const d of DAYS) out.push(d.what);
+  for (const sp of SPOTS) out.push(...sp.facts);
   return out;
 }
 
 export function allVoices(): Voice[] {
-  return [...SCENES.flatMap((s) => s.voices ?? []), ...DEBATES.flatMap((d) => d.voices)];
+  return [...SCENES.flatMap((s) => s.voices ?? []), ...DEBATES.flatMap((d) => d.voices), ...SPOTS.flatMap((s) => s.voices ?? [])];
 }

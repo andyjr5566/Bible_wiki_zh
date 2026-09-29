@@ -5,6 +5,7 @@ import type { SceneId } from '../data/types';
 import { DRAFT, setupArk, type Ark } from './ark';
 import { BEATS, EXPLORE, HERO, beatAt, mix, type Look, type V3 } from './director';
 import { createAltarFx, createPost } from './fx';
+import { createInterior } from './interior';
 import { createLife, SPECIES } from './life';
 import { createOcean, waveAt } from './ocean';
 import { createSky, skyHorizon, skyZenith } from './sky';
@@ -121,10 +122,12 @@ export function createEngine(host: HTMLElement, order: SceneId[], ev: EngineEven
   const loader = new GLTFLoader();
   const models = new Map<string, GLTF>();
   let ark: Ark | null = null;
+  let interior: ReturnType<typeof createInterior> | null = null;
   const loadOne = (name: string, file: string) => loader.loadAsync(MODEL_URL(file)).then((g) => (models.set(name, g), g));
   const arkP = loadOne('ark', 'ark.glb').then((g) => {
     ark = setupArk(g, quality);
     scene.add(ark.root, ark.yard);
+    interior = createInterior(ark.root);
   });
   let loaded = 0;
   const extras = ['figures', 'birds', 'altar'];
@@ -280,6 +283,8 @@ export function createEngine(host: HTMLElement, order: SceneId[], ev: EngineEven
       ark.setWet(L.wet);
       ark.setContact(1 - arkPose.floating);
       ark.setLamps(L.lamps, time);
+      // 船艙擺設：探索時、故事裡在艙內或剖開時才畫
+      interior?.update(time, inExplore || L.anchor === 'local' || L.cut > 0.05, (inExplore && walk.on) || L.anchor === 'local');
       ark.update();
     }
 
@@ -379,8 +384,8 @@ export function createEngine(host: HTMLElement, order: SceneId[], ev: EngineEven
     altarFx.update(time, L.altar, new THREE.Vector2(0.4, 0.15));
     if (ark) {
       life.update({
-        dt, time, mode: inExplore ? 'none' : L.life, spawn: L.spawn > 0.5, family: L.family, familyMode: inExplore ? 'none' : L.familyMode,
-        flock: inExplore ? 0 : L.flock, birds: L.birds, ark: ark.root, altarPos,
+        dt, time, mode: inExplore ? 'pens' : L.life, spawn: L.spawn > 0.5, family: L.family, familyMode: inExplore ? 'home' : L.familyMode,
+        flock: inExplore ? 0 : L.flock, birds: inExplore ? 0 : L.birds, ark: ark.root, altarPos, perch: inExplore,
       });
     }
 
@@ -499,6 +504,20 @@ export function createEngine(host: HTMLElement, order: SceneId[], ev: EngineEven
       const map = { f: 'w', b: 's', l: 'a', r: 'd' } as const;
       if (on) walk.keys.add(map[dir]);
       else walk.keys.delete(map[dir]);
+    },
+    /** 方舟本地座標 → 螢幕座標；給船艙標示用 */
+    project(at: V3) {
+      if (!ark) return null;
+      const w = ark.root.localToWorld(new THREE.Vector3(...at));
+      const dist = w.distanceTo(camera.position);
+      const v = w.clone().project(camera);
+      return { x: ((v.x + 1) / 2) * host.clientWidth, y: ((1 - v.y) / 2) * host.clientHeight, front: v.z < 1 && v.z > -1, dist };
+    },
+    get walking() {
+      return walk.on && mode === 'explore';
+    },
+    get deck() {
+      return walk.deck;
     },
     addDimLabel(el: HTMLElement, at: V3) {
       dimLabels.push({ el, at: new THREE.Vector3(...at) });

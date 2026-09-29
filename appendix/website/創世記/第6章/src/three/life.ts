@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { clone as skClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import { ARK_POINTS } from './ark';
+import { DECK_Y, innerHalf } from './interior';
 import { heightAt } from './terrain';
 import { clamp, lerp, mulberry32, smooth, span } from './util';
 
@@ -243,7 +244,7 @@ export function createLife(scene: THREE.Scene) {
      */
     update(o: {
       dt: number; time: number; mode: 'procession' | 'pens' | 'exit' | 'none'; spawn: boolean;
-      family: number; familyMode: 'board' | 'altar' | 'none'; flock: number; birds: number;
+      family: number; familyMode: 'board' | 'altar' | 'home' | 'none'; flock: number; birds: number; perch?: boolean;
       ark: THREE.Object3D; altarPos: THREE.Vector3 | null;
     }) {
       if (!ready) return;
@@ -284,20 +285,27 @@ export function createLife(scene: THREE.Scene) {
           void doorAt;
         });
       } else if (mode === 'pens') {
-        // 下層隔欄裡的一部分動物（本地座標，跟著船搖）
-        const spots = [-40, -31, -22, -13, -4, 5, 14, 23, 32, 41];
-        let i = 0;
-        pairs.forEach((pr) => pr.forEach((w, j) => {
-          const k = i++;
-          if (k >= spots.length * 2 || w.sp.file === 'giraffe') { w.obj.visible = false; return; }
-          if (w.obj.parent !== ark) ark.add(w.obj);
-          const x = spots[k % spots.length] + (j ? 1.2 : -1.2);
-          const z = (k < spots.length ? 1 : -1) * (5.4 + w.width * 0.5);
-          w.obj.position.set(x, ARK_POINTS.lowerDeck.y + 0.05, z);
-          w.obj.rotation.set(0, (k < spots.length ? Math.PI : 0) + (j ? 0.3 : -0.2), 0);
-          w.obj.visible = true;
-          setGait(w, false, (k + j) % 3 === 0);
-        }));
+        // 下層隔欄：每一對住一欄，左右兩排；太高的縮一點免得頂到上層的樑
+        const PENS: number[] = [];
+        for (let x = -45; x <= 45; x += 6) PENS.push(x);
+        let p = 0;
+        pairs.forEach((pr) => {
+          if (pr[0].sp.file === 'giraffe') { pr.forEach((w) => (w.obj.visible = false)); return; }
+          const k = p++;
+          const side = k % 2 ? -1 : 1;
+          const x0 = PENS[Math.floor(k / 2) % PENS.length];
+          pr.forEach((w, j) => {
+            if (w.obj.parent !== ark) ark.add(w.obj);
+            const fit = Math.min(1, 3.0 / Math.max(0.1, w.height));
+            w.obj.scale.setScalar(fit);
+            const len = w.sp.len * fit;
+            const z = side * Math.min(innerHalf(x0) - 0.4 - len / 2, 4.6 + len / 2);
+            w.obj.position.set(x0 + 1.5 + (j ? 1 : -1) * Math.min(1.3, 0.4 + w.width * fit * 0.6), ARK_POINTS.lowerDeck.y + 0.05, z);
+            w.obj.rotation.set(0, (side > 0 ? Math.PI : 0) + (j ? 0.25 : -0.2), 0);
+            w.obj.visible = true;
+            setGait(w, false, (k + j) % 3 === 0);
+          });
+        });
       } else if (mode === 'exit') {
         // 從門口往山坡四散，走遠了再從門口出來
         const R = mulberry32(3);
@@ -322,11 +330,24 @@ export function createLife(scene: THREE.Scene) {
       } else {
         all.forEach((w) => (w.obj.visible = false));
       }
-      if (mode !== 'pens') all.forEach((w) => w.obj.parent === ark && group.add(w.obj));
+      if (mode !== 'pens') all.forEach((w) => {
+        if (w.obj.parent === ark) group.add(w.obj);
+        w.obj.scale.setScalar(1);
+      });
 
       // ---------------------------------------------------------------- 挪亞一家
       figures.forEach((f, i) => {
-        if (o.familyMode === 'board') {
+        if (o.familyMode !== 'home' && f.parent === ark) group.add(f);
+        if (o.familyMode === 'home') {
+          // 上層：四個人圍著餐桌，四個人在房間門口
+          if (f.parent !== ark) ark.add(f);
+          const HOME: [number, number, number][] = [[-26, -4.2, 0], [-22, -4.2, Math.PI], [-24, -3.3, -Math.PI / 2], [-24, -6.4, Math.PI / 2],
+            [-12, -3.2, -Math.PI / 2], [-4.2, -3.1, -Math.PI / 2], [3.4, -3.2, -Math.PI / 2], [10.8, -3.0, -Math.PI / 2]];
+          const [x, z, r] = HOME[i % HOME.length];
+          f.visible = true;
+          f.position.set(x, DECK_Y[2], z);
+          f.rotation.set(0, r, 0);
+        } else if (o.familyMode === 'board') {
           const s = o.family * (famPath.length + 8 * 2.2) - i * 2.2;
           f.visible = s > 0 && s < famPath.length - 0.3;
           famPath.at(s, P, D);
@@ -349,6 +370,20 @@ export function createLife(scene: THREE.Scene) {
         const t = o.time;
         const top = ark.localToWorld(ARK_POINTS.tsohar.clone());
         birds.flock.forEach((b, i) => {
+          const m = birds!.mixers[i + 2];
+          if (o.perch) {
+            // 上層的棲木上
+            if (b.parent !== ark) ark.add(b);
+            const x = -34 + (i % 12) * 6.2 + (i >= 12 ? 3 : 0);
+            b.visible = true;
+            b.position.set(x, DECK_Y[2] + (i % 2 ? 1.75 : 1.05) + 0.12, innerHalf(x) - 0.8);
+            b.rotation.set(0, Math.PI + (i % 3 - 1) * 0.4, 0);
+            b.scale.setScalar(1.2);
+            if (m) m.timeScale = 0.06;
+            return;
+          }
+          if (b.parent === ark) group.add(b);
+          if (m) m.timeScale = 1;
           b.visible = o.flock > 0.01;
           if (!b.visible) return;
           const r = 16 + (i % 5) * 6, sp = 0.35 + (i % 4) * 0.05, ph = i * 1.7;

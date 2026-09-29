@@ -8,6 +8,7 @@ import { ICONS } from './ui/icons';
 import { smoothScrollTo } from './ui/motion';
 import { mountAbout, mountDebates, mountExplore, mountOutside, mountTimeline } from './ui/sections';
 import { mountStory } from './ui/story';
+import { mountSpots } from './ui/inside';
 
 /* ------------------------------------------------------------ 使用者設定（只存在這台裝置） */
 const root = document.documentElement;
@@ -29,7 +30,18 @@ function toolButton(icon: string, label: string, pressed: () => boolean, toggle:
 const isDark = () => root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
 const soundTool = toolButton('sound', '聲音', () => sound.on, async () => { await sound.toggle(); document.dispatchEvent(new CustomEvent('sound-change')); });
 document.addEventListener('sound-change', () => soundTool.setAttribute('aria-pressed', String(sound.on)));
+// 右上角的播放／暫停：自動往下捲，隨時停
+const playTool = h('button', { class: 'iconbtn playtool', type: 'button', title: '播放（空白鍵）', 'aria-label': '播放', 'aria-pressed': 'false' }, svg(ICONS.play));
+playTool.addEventListener('click', () => storyUi.startAuto());
+document.addEventListener('auto-change', (e) => {
+  const on = (e as CustomEvent<boolean>).detail;
+  playTool.setAttribute('aria-pressed', String(on));
+  playTool.setAttribute('aria-label', on ? '暫停' : '播放');
+  playTool.title = on ? '暫停（空白鍵）' : '播放（空白鍵）';
+  playTool.replaceChildren(svg(on ? ICONS.pause : ICONS.play));
+});
 const tools = h('div', { class: 'tools' },
+  playTool,
   soundTool,
   toolButton('text', '大字模式', () => root.dataset.big === '1', () => { root.dataset.big = root.dataset.big === '1' ? '0' : '1'; store.set('big', root.dataset.big); }),
   toolButton('motion', '減少動態', () => root.dataset.motion === 'off', () => { root.dataset.motion = root.dataset.motion === 'off' ? 'on' : 'off'; store.set('motion', root.dataset.motion); }),
@@ -74,7 +86,8 @@ const engine = createEngine(stage, SCENES.map((s) => s.id), {
   onThunder: (d) => sound.thunder(d),
 });
 const storyUi = mountStory(story, engine, sound, labels);
-mountExplore(explore, engine);
+const spots = mountSpots(labels, engine);
+mountExplore(explore, engine, spots);
 mountTimeline(days.body);
 mountDebates(unsaid.body);
 mountOutside(outside.body);

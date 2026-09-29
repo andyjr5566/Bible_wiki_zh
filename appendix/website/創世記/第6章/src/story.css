@@ -4,9 +4,9 @@ body { background: transparent; }
 .stage { position: fixed; inset: 0; z-index: 0; background: #0c0e11; }
 .stage canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 1.6s ease; touch-action: pan-y; }
 .stage.ready canvas { opacity: 1; }
-.stage-veil { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgb(6 7 9 / 42%), transparent 46%); transition: opacity .8s; }
+.stage-veil { z-index: 1; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgb(6 7 9 / 42%), transparent 46%); transition: opacity .8s; }
 body.exploring .stage-veil { opacity: 0; }
-.labels3d { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.labels3d { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
 .dimlabel {
   position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; will-change: transform;
   font: 600 0.9rem var(--serif); color: #fbf2dc; letter-spacing: .04em;
@@ -223,3 +223,64 @@ body.autoplay .srail .dot.on span { opacity: 1; }
 }
 :root[data-motion='off'] .rv, :root[data-motion='off'] .rv .facts li, :root[data-motion='off'] .title-block h1 .ch,
 :root[data-motion='off'] .title-block .epi, :root[data-motion='off'] .hero-copy > * { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; }
+
+/* ============================================================ 播放鍵、探索面板收合 */
+.topbar .playtool[aria-pressed='true'] { background: #e3b54b !important; color: #1d1710 !important; border-color: #e3b54b !important; }
+.xhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.xhide { border: 1px solid rgb(255 244 222 / 24%); background: rgb(255 255 255 / 6%); color: #f1e7d4; border-radius: 999px; width: 32px; height: 32px; display: grid; place-items: center; cursor: pointer; flex: none; }
+.xhide svg { width: 18px; height: 18px; }
+.xhide:hover { background: rgb(255 255 255 / 14%); }
+.xpanel { transition: opacity .35s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+.explore.panel-off .xpanel { opacity: 0; transform: translateY(24px); pointer-events: none; }
+.xshow {
+  position: absolute; left: max(16px, 4vw); bottom: 26px; display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid rgb(255 244 222 / 30%); background: rgb(14 13 12 / 62%); backdrop-filter: blur(12px); color: #f1e7d4;
+  border-radius: 999px; padding: 8px 14px; cursor: pointer; font-weight: 700; font-size: .88rem;
+  opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity .35s ease, transform .35s ease;
+}
+.xshow svg { width: 17px; height: 17px; }
+.explore.panel-off .xshow { opacity: 1; transform: none; pointer-events: auto; }
+/* 全螢幕觀看：頂列也退開，滑到畫面頂端再出現 */
+.topbar { transition: background .4s, border-color .4s, color .4s, opacity .35s, transform .35s; }
+body.xfull .topbar { opacity: 0; transform: translateY(-100%); }
+body.xfull .topbar:hover, body.xfull .topbar:focus-within { opacity: 1; transform: none; }
+body.xfull::before { content: ''; position: fixed; left: 0; right: 0; top: 0; height: 14px; z-index: 59; }
+body.xfull .stage-veil { opacity: 0; }
+@media (max-width: 760px) { .xshow { left: 10px; bottom: 12px; } }
+
+/* ============================================================ 船艙標示 */
+.spot {
+  position: absolute; left: 0; top: 0; display: none; align-items: center; gap: 6px; pointer-events: auto; cursor: pointer;
+  border: 1px solid rgb(255 236 200 / 45%); background: rgb(18 15 11 / 78%); color: #fbf2dc; border-radius: 999px;
+  padding: 3px 11px 3px 3px; font: 700 .82rem var(--sans); white-space: nowrap; transform-origin: 50% 100%;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 35%); backdrop-filter: blur(6px); will-change: transform;
+}
+.spot::after { content: ''; position: absolute; left: 50%; bottom: -9px; width: 1.5px; height: 9px; background: rgb(255 236 200 / 60%); }
+.spots-on .spot.vis { display: inline-flex; animation: spot-in .35s ease both; }
+@keyframes spot-in { from { opacity: 0; } }
+.spot-dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: #e3b54b; color: #1d1710; font-size: .75rem; }
+.spot:hover, .spot.active { background: #efe2c6; color: #1d1710; }
+.spot.far .spot-name { display: none; }
+.spot.far { padding-right: 3px; }
+.spotcard {
+  position: fixed; right: 20px; top: 76px; z-index: 70; width: min(380px, calc(100% - 24px)); max-height: calc(100vh - 110px); overflow: auto;
+  background: rgb(18 16 13 / 88%); backdrop-filter: blur(16px); border: 1px solid rgb(255 238 208 / 16%); border-radius: 16px; padding: 14px 16px;
+  color: #f3eadb; box-shadow: 0 20px 60px rgb(0 0 0 / 45%);
+  --ink: #f3eadb; --ink-2: #d5c9b4; --ink-3: #a3957f; --line: rgb(255 255 255 / 12%); --line-2: rgb(255 255 255 / 22%);
+  --surface: rgb(30 26 21 / 80%); --surface-2: rgb(255 255 255 / 7%); --bronze: #e6ad6d;
+  --ev-explicit: #86d4a2; --ev-synthesis: #e6c870; --ev-interp: #c9b0f5; --ev-unsaid: #bcae96;
+  opacity: 0; transform: translateX(16px); transition: opacity .25s ease, transform .25s ease;
+}
+.spotcard.open { opacity: 1; transform: none; }
+.spothead { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.spothead h3 { font-size: 1.2rem; color: #fbf3e2; }
+.spotclose { border: 0; background: rgb(255 255 255 / 8%); color: #f3eadb; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; flex: none; }
+.spotclose svg { width: 16px; height: 16px; }
+.spottext { font-size: .94rem; color: var(--ink-2); margin-bottom: 8px; }
+.spotcard .facts { font-size: .88rem; }
+.spotcard .ref { background: rgb(230 173 109 / 16%); }
+@media (max-width: 760px) {
+  .spotcard { right: 10px; left: 10px; top: auto; bottom: 12px; width: auto; max-height: 55vh; transform: translateY(16px); }
+  .spot { font-size: .74rem; }
+}
+body.xfull .spotcard { top: 20px; }

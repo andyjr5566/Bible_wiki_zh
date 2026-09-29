@@ -49,6 +49,8 @@ export const ICONS: Record<string, string> = {
   lamp: wrap('<path d="M9 18h6M10 21h4"/><path d="M12 3c-3 3-4.5 5.3-4.5 8a4.5 4.5 0 0 0 9 0C16.5 8.3 15 6 12 3z"/>'),
   top: wrap('<rect x="3" y="8" width="18" height="8" rx="3"/><path d="M3 12h18" stroke-dasharray="2 2"/><path d="M12 2v4M10 4l2 2 2-2"/>'),
   side: wrap('<path d="M2.5 13h19l-2.3 5H4.8z"/><path d="M5 13V9h14v4"/><path d="M1 21h22"/>'),
+  sliders: wrap('<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>'),
+  tag: wrap('<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>'),
   plus: wrap('<path d="M12 5v14M5 12h14"/>'),
   minus: wrap('<path d="M5 12h14"/>'),
   hand: wrap('<path d="M8 13V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v7c0 4-2.5 7-6 7-2.5 0-4-1.5-5.5-4L4 13a1.5 1.5 0 0 1 2.5-1.5L8 13"/>'),

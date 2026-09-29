@@ -22,6 +22,7 @@ npm run preview    # http://127.0.0.1:4193/
 | `src/data/scenes.ts` | 19 幕的經文、白話說明、事實條目、註釋家讀法、畫面說明 |
 | `src/data/debates.ts` | 經文沒說的事；知識庫以外的現代重建研究 |
 | `src/data/timeline.ts` | 洪水期間的日期 |
+| `src/data/inside.ts` | 「走進方舟」裡的標示與說明 |
 | `src/data/credits.ts` | 動物模型的來源與授權 |
 | `src/data/verses.json` | 由 `npm run verses` 從庫根 `raw_scripture/` 產生，不手改 |
 
@@ -45,7 +46,8 @@ KRISO、Tim Lovett、Ark Encounter、Kircher 這幾項現代研究不在本庫�
 | `src/three/ocean.ts` | 洪水水面（Gerstner 浪），方舟的起伏用同一套公式 |
 | `src/three/sky.ts` | 天空、雲、彩虹（以反日點為中心約 42°） |
 | `src/three/weather.ts` | 雨、閃電 |
-| `src/three/life.ts` | 動物隊伍、挪亞一家、烏鴉與鴿子 |
+| `src/three/life.ts` | 動物隊伍、挪亞一家、烏鴉與鴿子；探索時動物進隔欄、鳥上棲木 |
+| `src/three/interior.ts` | 船艙擺設：飼槽、墊草、水桶、乾草、吊籃、鳥籠、爐灶、補光 |
 | `src/audio/sound.ts` | 雨、風、浪、雷、木頭嘎吱、火、鴿子，預設靜音 |
 
 山的高度、距離、動物種類、船艙擺設都是示意，各幕卡片最下方的「畫面說明」會註明。
@@ -65,6 +67,11 @@ python send.py slim_animals.py   # 需要先下載原始動物模型，路徑見
 ```
 
 腳本都在自己的場景裡建模，不會動到 Blender 裡其他開著的東西。
+
+## 操作
+
+- 右上角播放鍵或空白鍵：自動往下捲，再按一次暫停；自己捲動也會暫停。
+- 走進方舟：H 收起／顯示控制面板（收起時頂列也退開），L 開關標示，點標示看說明。
 
 ## 除錯
 
