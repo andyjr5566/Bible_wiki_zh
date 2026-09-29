@@ -213,7 +213,9 @@ body.autoplay .srail .dot.on span { opacity: 1; }
   .xgroup::-webkit-scrollbar { display: none; }
   .xbtn { flex: none; font-size: .8rem; padding: 5px 10px; }
   .xlabel { flex: none; min-width: 3.2em; }
-  .dpad { right: 50%; transform: translateX(50%); bottom: auto; top: 90px; }
+  .dpad { right: 50%; transform: translateX(50%); bottom: auto; top: 90px; grid-template-columns: repeat(3, 48px); grid-template-rows: repeat(3, 48px); opacity: .85; }
+  /* 面板收起後方向鍵移到右下角，不擋畫面中間 */
+  .explore.panel-off .dpad { right: 16px; transform: none; top: auto; bottom: 24px; }
   .nav { display: none; }
   .credit-list { columns: 1; }
 }
@@ -282,5 +284,8 @@ body.xfull .stage-veil { opacity: 0; }
 @media (max-width: 760px) {
   .spotcard { right: 10px; left: 10px; top: auto; bottom: 12px; width: auto; max-height: 55vh; transform: translateY(16px); }
   .spot { font-size: .74rem; }
+  /* 在船外看時標籤很多，手機上只留編號，點開才看名稱 */
+  .spots-out .spot:not(.active) { padding-right: 3px; }
+  .spots-out .spot:not(.active) .spot-name { display: none; }
 }
 body.xfull .spotcard { top: 20px; }

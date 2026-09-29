@@ -68,16 +68,21 @@ export function mountSpots(layer: HTMLElement, engine: Engine) {
     }
     const walking = engine.walking;
     const deck = engine.deck;
+    layer.classList.toggle('spots-out', !walking);
+    const W = layer.clientWidth;
     for (const m of markers) {
       const want = walking ? m.sp.deck === deck : m.sp.deck === 'out';
       const p = want ? engine.project(m.sp.at) : null;
       const maxD = walking ? 38 : 260;
-      const vis = !!p && p.front && p.dist < maxD;
+      const vis = !!p && p.front && p.dist < maxD && p.x > -70 && p.x < W + 70;
       m.el.classList.toggle('vis', vis);
       m.el.tabIndex = vis ? 0 : -1;
       if (!vis || !p) continue;
       const near = walking ? Math.max(0.82, 1 - p.dist / (maxD * 1.6)) : 1;
-      m.el.style.transform = `translate(${p.x}px, ${p.y}px) translate(-50%, -100%) scale(${near.toFixed(3)})`;
+      // 標籤快出畫面時貼齊邊緣，手機上才不會被切掉
+      const hw = m.el.offsetWidth / 2 * near;
+      const x = Math.min(Math.max(p.x, hw + 6), W - hw - 6);
+      m.el.style.transform = `translate(${x}px, ${p.y}px) translate(-50%, -100%) scale(${near.toFixed(3)})`;
       m.el.style.zIndex = String(1000 - Math.round(p.dist));
       m.el.classList.toggle('far', walking && p.dist > 22);
     }
