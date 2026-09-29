@@ -9,6 +9,18 @@
       ],
       "cwd": "c:/Obsidian/Hermes/scripture"
     },
+    "blender": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--no-build",
+        "blender-mcp",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9876"
+      ]
+    },
     "codex-cli": {
       "type": "stdio",
       "command": "codex",
