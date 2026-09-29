@@ -181,6 +181,9 @@
   `build_appendix_links.py` 動態載入網站 plugin 的 `scan_all_entries()`，只讀已產生的
   `dist/index.html` 與靜態 HTML，不會自行執行 npm。Vite 章節的根目錄 `index.html` 是開發入口，
   附錄連結應指向 `dist/index.html`；部署目錄只供靜態主機發布。靜態 HTML 章節維持原檔案入口。
+  plugin 模組若宣告 `BOOK_INDEX_HEADING`（`appendix/website/build.py` 已宣告），同一支程式也會依章號
+  順序把該類連結整理進該卷 `全書目錄及綱要.md` 的 `appendix-index:<plugin>` 標記區塊（放在「🎬」
+  影片段之前）；該卷沒有入口時清掉舊區塊，目錄頁其餘手寫內容不動。不想進目錄頁就刪掉那個宣告。
 
 ## §H check_chapter_files 還驗什麼
 

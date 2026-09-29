@@ -71,16 +71,13 @@ def load_category_plugins() -> list[dict]:
     return plugins
 
 
-def collect_all_appendix_sections(*, build_indexes: bool = True) -> dict[str, list[str]]:
-    """收集所有 plugin 產出的 Markdown 段落。
+def collect_plugin_entries(*, build_indexes: bool = True) -> list[dict]:
+    """掃描每個 plugin，回傳 ``[{"plugin": ..., "title": ..., "entries": {ch_key: [item, ...]}}]``。
 
-    ``build_indexes=False`` 時只做唯讀掃描（跳過各 plugin 的 build_maps_and_indexes），
-    供 check_chapter_files 這類「只想知道某章有沒有附錄資源」的一致性檢查用。
+    ``build_indexes=False`` 時只做唯讀掃描（跳過各 plugin 的 build_maps_and_indexes）。
     """
-    plugins = load_category_plugins()
-    sections_by_chapter: dict[str, list[str]] = defaultdict(list)
-
-    for plugin in plugins:
+    results: list[dict] = []
+    for plugin in load_category_plugins():
         mod = plugin["module"]
         # 先執行 plugin 內建的檔案/索引建置程序（若有）
         if build_indexes and hasattr(mod, "build_maps_and_indexes"):
@@ -90,19 +87,119 @@ def collect_all_appendix_sections(*, build_indexes: bool = True) -> dict[str, li
                 print(f"⚠️ [{plugin['name']}] 建置索引時發生提示：{exc}")
 
         if hasattr(mod, "scan_all_entries"):
-            entries = mod.scan_all_entries()
-            category_title = getattr(mod, "CATEGORY_NAME", plugin["name"])
-            for ch_key, items in entries.items():
-                if not items:
-                    continue
-                lines = [f"### {category_title}"]
-                for item in items:
-                    if item.get("is_wikilink"):
-                        lines.append(f"- [[{item['path']}|{item['title']}]]")
-                    else:
-                        lines.append(f"- [{item['title']}]({item['path']})")
-                sections_by_chapter[ch_key].append("\n".join(lines))
+            results.append({
+                "plugin": plugin,
+                "title": getattr(mod, "CATEGORY_NAME", plugin["name"]),
+                "entries": mod.scan_all_entries(),
+            })
+    return results
+
+
+def sections_by_chapter_from(plugin_entries: list[dict]) -> dict[str, list[str]]:
+    """把各 plugin 的入口整理成「每章一串 Markdown 段落」。"""
+    sections_by_chapter: dict[str, list[str]] = defaultdict(list)
+    for result in plugin_entries:
+        for ch_key, items in result["entries"].items():
+            if not items:
+                continue
+            lines = [f"### {result['title']}"]
+            for item in items:
+                if item.get("is_wikilink"):
+                    lines.append(f"- [[{item['path']}|{item['title']}]]")
+                else:
+                    lines.append(f"- [{item['title']}]({item['path']})")
+            sections_by_chapter[ch_key].append("\n".join(lines))
     return sections_by_chapter
+
+
+def collect_all_appendix_sections(*, build_indexes: bool = True) -> dict[str, list[str]]:
+    """收集所有 plugin 產出的 Markdown 段落。
+
+    ``build_indexes=False`` 時只做唯讀掃描（跳過各 plugin 的 build_maps_and_indexes），
+    供 check_chapter_files 這類「只想知道某章有沒有附錄資源」的一致性檢查用。
+    """
+    return sections_by_chapter_from(collect_plugin_entries(build_indexes=build_indexes))
+
+
+# ---------------------------------------------------------------- 全書目錄及綱要
+#
+# plugin 若在模組裡宣告 ``BOOK_INDEX_HEADING = "🕹️ 互動網站"``，本程式除了把連結寫進各章，
+# 也會依章節順序，把同一批連結整理成一段，放進該卷的「全書目錄及綱要.md」。
+# 沒宣告的 plugin（例如 fhl_maps、video）不會動目錄頁。
+
+BOOK_INDEX_FILE = "全書目錄及綱要.md"
+BOOK_INDEX_BEFORE = re.compile(r"^## 🎬", re.MULTILINE)
+
+
+def book_index_markers(plugin_name: str) -> tuple[str, str]:
+    return (f"<!-- appendix-index:{plugin_name}:start -->", f"<!-- appendix-index:{plugin_name}:end -->")
+
+
+def _chapter_sort_key(chapter_name: str) -> tuple[int, str]:
+    m = re.search(r"第(\d+)", chapter_name)
+    return (int(m.group(1)) if m else 10**6, chapter_name)
+
+
+def book_index_block(plugin_name: str, heading: str, folder: str, items_by_chapter: dict[str, list[dict]]) -> str:
+    """產出目錄頁裡屬於某個 plugin 的整段（含 start/end 標記）。章節依章號排序。"""
+    start, end = book_index_markers(plugin_name)
+    lines = [start, f"## {heading}", ""]
+    for chapter_name in sorted(items_by_chapter, key=_chapter_sort_key):
+        links = "、".join(
+            f"[[{item['path']}|{item['title']}]]" if item.get("is_wikilink") else f"[{item['title']}]({item['path']})"
+            for item in items_by_chapter[chapter_name]
+        )
+        lines.append(f"- [[{folder}/{chapter_name}|{chapter_name}]]：{links}")
+    lines.append(end)
+    return "\n".join(lines)
+
+
+def sync_book_index(text: str, plugin_name: str, block: str | None) -> str:
+    """把某 plugin 的目錄段放進（或更新、或移除）目錄頁文字。
+
+    已有標記就原地取代；沒有就放在「🎬 大衛鮑森舊約縱覽」之前，沒有那一段就放在檔尾。
+    ``block`` 為 None 表示這一卷沒有入口，把舊的段落清掉。
+    """
+    start, end = book_index_markers(plugin_name)
+    block_re = re.compile(rf"\n*{re.escape(start)}.*?{re.escape(end)}\n*", re.DOTALL)
+    if block_re.search(text):
+        replacement = f"\n\n{block}\n\n" if block else "\n\n"
+        text = block_re.sub(lambda _m: replacement, text, count=1)
+    elif block is not None:
+        match = BOOK_INDEX_BEFORE.search(text)
+        if match:
+            text = f"{text[:match.start()].rstrip()}\n\n{block}\n\n{text[match.start():]}"
+        else:
+            text = f"{text.rstrip()}\n\n{block}\n"
+    else:
+        return text  # 這一卷沒有入口、目錄頁也沒有舊段落：原樣不動，不重排空白
+    return text.rstrip() + "\n"
+
+
+def book_index_updates(plugin_entries: list[dict]) -> dict[Path, str]:
+    """回傳 ``{目錄頁路徑: 更新後全文}``，只含有宣告 BOOK_INDEX_HEADING 的 plugin。"""
+    updates: dict[Path, str] = {}
+    for result in plugin_entries:
+        plugin = result["plugin"]
+        heading = getattr(plugin["module"], "BOOK_INDEX_HEADING", None)
+        if not heading:
+            continue
+        by_folder: dict[Path, dict[str, list[dict]]] = defaultdict(dict)
+        for ch_key, items in result["entries"].items():
+            if not items:
+                continue
+            book, chapter_name = ch_key.split("/", 1)
+            folder = book_directory(ROOT, book)
+            if (folder / f"{chapter_name}.md").exists():
+                by_folder[folder][chapter_name] = items
+        # 每一卷的目錄頁都要走一遍：沒有入口的卷，舊段落要清掉
+        for outline in sorted(ROOT.glob(f"*/{BOOK_INDEX_FILE}")):
+            folder = outline.parent
+            items_by_chapter = by_folder.get(folder)
+            block = book_index_block(plugin["name"], heading, folder.name, items_by_chapter) if items_by_chapter else None
+            text = updates.get(outline, outline.read_text(encoding="utf-8"))
+            updates[outline] = sync_book_index(text, plugin["name"], block)
+    return updates
 
 
 def chapter_appendix_block(sections: list[str]) -> str:
@@ -157,7 +254,8 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    sections_by_chapter = collect_all_appendix_sections()
+    plugin_entries = collect_plugin_entries()
+    sections_by_chapter = sections_by_chapter_from(plugin_entries)
     changed: list[Path] = []
 
     for ch_key, sections in sections_by_chapter.items():
@@ -168,8 +266,12 @@ def main() -> int:
         content = sync_chapter(path, sections)
         write_or_check(path, content, args.check, changed)
 
+    # 宣告了 BOOK_INDEX_HEADING 的 plugin，同一批連結也整理進各卷的全書目錄及綱要
+    for path, content in book_index_updates(plugin_entries).items():
+        write_or_check(path, content, args.check, changed)
+
     action = "需要更新" if args.check else "已更新"
-    print(f"{action} {len(changed)} 個章節檔案附錄區塊。")
+    print(f"{action} {len(changed)} 個章節／目錄檔案附錄區塊。")
     if args.check and changed:
         for path in changed:
             print(f"  {path.relative_to(ROOT)}")

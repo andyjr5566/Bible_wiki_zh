@@ -123,6 +123,64 @@ class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
             tf_path.unlink(missing_ok=True)
 
 
+class BookIndexSyncTests(unittest.TestCase):
+    OUTLINE = (
+        "## 🗂️ 民數記目錄\n\n### 預備（1-10 章）\n[[04 民數記/第1章|第1章]]\n\n\n"
+        "## 🎬 大衛鮑森舊約縱覽\n\n影片\n"
+    )
+
+    def _block(self, chapters):
+        items = {name: [{"title": t, "path": f"appendix/website/民數記/{name}/dist/index.html"}] for name, t in chapters}
+        return build_appendix_links.book_index_block("website", "🕹️ 互動網站", "04 民數記", items)
+
+    def test_block_is_sorted_by_chapter_number_not_by_text(self):
+        block = self._block([("第10章", "十"), ("第2章", "二"), ("第1章", "一")])
+        order = [block.index(f"[[04 民數記/{n}|{n}]]") for n in ("第1章", "第2章", "第10章")]
+        self.assertEqual(order, sorted(order))
+        self.assertIn("[二](appendix/website/民數記/第2章/dist/index.html)", block)
+
+    def test_inserted_before_video_section_then_idempotent(self):
+        block = self._block([("第2章", "環繞會幕")])
+        once = build_appendix_links.sync_book_index(self.OUTLINE, "website", block)
+        self.assertLess(once.index("## 🕹️ 互動網站"), once.index("## 🎬"))
+        self.assertGreater(once.index("## 🕹️ 互動網站"), once.index("## 🗂️"))
+        twice = build_appendix_links.sync_book_index(once, "website", block)
+        self.assertEqual(once, twice)
+
+    def test_existing_block_is_replaced_in_place(self):
+        once = build_appendix_links.sync_book_index(self.OUTLINE, "website", self._block([("第2章", "舊名")]))
+        new = build_appendix_links.sync_book_index(once, "website", self._block([("第2章", "新名"), ("第4章", "四")]))
+        self.assertNotIn("舊名", new)
+        self.assertIn("新名", new)
+        self.assertEqual(new.count("<!-- appendix-index:website:start -->"), 1)
+        self.assertLess(new.index("appendix-index:website:end"), new.index("## 🎬"))
+
+    def test_without_entries_the_outline_is_left_byte_for_byte(self):
+        self.assertEqual(build_appendix_links.sync_book_index(self.OUTLINE, "website", None), self.OUTLINE)
+
+    def test_stale_block_is_removed_when_book_has_no_entries(self):
+        once = build_appendix_links.sync_book_index(self.OUTLINE, "website", self._block([("第2章", "x")]))
+        gone = build_appendix_links.sync_book_index(once, "website", None)
+        self.assertNotIn("appendix-index", gone)
+        self.assertNotIn("互動網站", gone)
+        self.assertIn("## 🎬 大衛鮑森舊約縱覽", gone)
+
+    def test_appended_at_end_when_no_video_section(self):
+        outline = "## 🗂️ 目錄\n\n[[04 民數記/第1章|第1章]]\n"
+        text = build_appendix_links.sync_book_index(outline, "website", self._block([("第2章", "x")]))
+        self.assertTrue(text.rstrip().endswith("<!-- appendix-index:website:end -->"))
+
+    def test_only_plugins_that_opt_in_touch_the_outline(self):
+        plugin = lambda mod: {"name": "p", "module": mod}  # noqa: E731
+        optout = MagicMock(spec=[])  # 沒有 BOOK_INDEX_HEADING
+        entries = [{"plugin": plugin(optout), "title": "地圖", "entries": {"民數記/第2章": [{"title": "t", "path": "p"}]}}]
+        self.assertEqual(build_appendix_links.book_index_updates(entries), {})
+
+    def test_website_plugin_opts_in(self):
+        self.assertTrue(getattr(website_build, "BOOK_INDEX_HEADING", ""))
+        self.assertFalse(hasattr(fhl_maps_build, "BOOK_INDEX_HEADING"))
+
+
 class AppendixValidationEdgeCaseTests(unittest.TestCase):
     def test_mismatched_appendix_comment_tags(self):
         """測試只有 start 標籤或重複標籤時 validate_knowledge_base 報錯。"""
