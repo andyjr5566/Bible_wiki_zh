@@ -114,3 +114,77 @@ details.voices summary { cursor: pointer; font-size: .88em; font-weight: 700; co
   .title-block h1 { font-size: 2.2rem; }
   .title-block .epigraph { font-size: .85rem; }
 }
+
+/* ============================================================ 動態：讓它像一段連續的鏡頭，不像換投影片 */
+html { scroll-behavior: auto; }
+.rv { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.rv.in { opacity: 1; transform: none; }
+.rv .facts li, .rv .mat li { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--i, 0) * 70ms + 180ms); }
+.rv.in .facts li, .rv.in .mat li { opacity: 1; transform: none; }
+
+/* 目前這一站亮起來，其他站退後一點 */
+.stops .stop { transition: opacity .6s ease, transform .6s ease, box-shadow .5s ease, filter .6s ease; }
+.stops .stop.in:not(.on) { opacity: .55; filter: saturate(.7); }
+.stops .stop.on { box-shadow: var(--shadow-lg); transform: translateX(4px); }
+.stops.reorder .stop { opacity: 0 !important; transform: translateY(10px) !important; transition-duration: .25s; }
+
+/* 標題逐字浮現 */
+.title-block h1 .ch { display: inline-block; opacity: 0; transform: translateX(12px); animation: ch-in .9s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(var(--i) * 110ms + 150ms); }
+@keyframes ch-in { to { opacity: 1; transform: none; } }
+.title-block .epi { opacity: 0; animation: appear 1.2s ease .9s forwards; }
+.intro-lede, .tour-intro .entry-line, .giving, .scroll-hint { opacity: 0; animation: appear .9s ease forwards; }
+.intro-lede { animation-delay: 1.1s; }
+.tour-intro .entry-line { animation-delay: 1.3s; }
+.giving { animation-delay: 1.5s; }
+.scroll-hint { animation-delay: 1.8s; }
+.uses li { animation: appear .45s ease both; animation-delay: calc(var(--i) * 80ms); }
+.scroll-hint { border: 0; background: none; padding: 0; cursor: pointer; font: inherit; font-size: .88em; color: var(--bronze); text-align: left; justify-self: start; }
+.scroll-hint::after { content: ' ↓'; display: inline-block; animation: nudge 1.8s ease-in-out 2.4s infinite; }
+@keyframes nudge { 50% { transform: translateY(4px); } }
+
+/* 3D 區：載入畫面淡出、目前站名交叉淡入 */
+.stage-poster { transition: opacity .6s ease; }
+.stage-poster.gone { opacity: 0; pointer-events: none; }
+.stage-now.swap { animation: now-in .5s cubic-bezier(.2,.7,.2,1); }
+@keyframes now-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* 進度軌 */
+.rail { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); display: grid; gap: 14px; padding: 6px 0; z-index: 2; }
+.rail-fill { position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: #6b4b1f; transform-origin: top; transform: scaleY(0); transition: transform .15s linear; }
+.rail::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: rgb(107 75 31 / 25%); }
+.rail .dot { position: relative; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #6b4b1f; background: #f6efe2; padding: 0; cursor: pointer; transition: transform .3s, background .3s; }
+.rail .dot.past { background: #6b4b1f; }
+.rail .dot.on { background: #c9982c; border-color: #6b4b1f; transform: scale(1.35); }
+.rail .dot span { position: absolute; left: 22px; top: 50%; transform: translate(-4px, -50%); white-space: nowrap; font-size: 12px; color: #2a2017; background: rgb(255 250 240 / 92%); border-radius: 6px; padding: 1px 7px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.rail .dot:hover span, .rail .dot:focus-visible span, .rail .dot.on span { opacity: 1; transform: translate(0, -50%); }
+@media (max-width: 900px) { .rail { left: 8px; gap: 9px; } .rail .dot { width: 11px; height: 11px; } .rail .dot:not(:hover):not(:focus-visible) span { opacity: 0; } }
+
+/* 細部模型、展開的註釋：淡入 */
+.detail-view canvas { opacity: 0; transition: opacity .8s ease; }
+.detail-view.ready canvas { opacity: 1; }
+.detail-view.ready .loading { display: none; }
+details[open] > .voices-in, details.deb[open] > .body { animation: open-in .4s cubic-bezier(.2,.7,.2,1); }
+@keyframes open-in { from { opacity: 0; transform: translateY(-6px); } }
+
+/* 金屬條由外往內長出來 */
+.zones .zone-bar { transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.zones.in .zone-bar { transform: scaleX(1); }
+.zones .zone:nth-child(2) .zone-bar { transition-delay: .15s; }
+.zones .zone:nth-child(3) .zone-bar { transition-delay: .3s; }
+.zones .zone:nth-child(4) .zone-bar { transition-delay: .45s; }
+.zones .zone:nth-child(5) .zone-bar { transition-delay: .6s; }
+
+/* 手感：按下去有回饋 */
+.btn, .chipbtn, .opt, .layer, .go, .dot { transition: transform .15s ease, background .2s, border-color .2s, opacity .2s; }
+.btn:active, .chipbtn:active, .opt:active, .layer:active { transform: scale(.97); }
+.mat.card, .deb.card { transition: transform .25s ease, box-shadow .25s ease; }
+.mat.card:hover, .deb.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rv .facts li, .rv .mat li, .title-block h1 .ch, .title-block .epi, .intro-lede, .tour-intro .entry-line, .giving, .scroll-hint { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+}
+:root[data-motion='off'] .rv, :root[data-motion='off'] .rv .facts li, :root[data-motion='off'] .title-block h1 .ch,
+:root[data-motion='off'] .title-block .epi, :root[data-motion='off'] .intro-lede, :root[data-motion='off'] .tour-intro .entry-line,
+:root[data-motion='off'] .giving, :root[data-motion='off'] .scroll-hint { opacity: 1 !important; transform: none !important; }
+
+@keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }

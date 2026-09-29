@@ -23,10 +23,15 @@ export type LayerId = keyof typeof LAYER_MATERIALS;
 export const MODEL_HAS_LAYER = (id: LayerId) => LAYER_MATERIALS[id].length > 0;
 
 export interface Stage {
+  /** 導覽路徑（第 0 站固定是全景） */
+  setPath(views: View[], peels: number[]): void;
+  /** 捲動進度，以站為單位的浮點數：1.5 代表第 1 站和第 2 站的正中間 */
+  setProgress(p: number): void;
+  /** 直接飛到某個視角（按鈕用），下一次捲動就回到路徑 */
   go(view: View, peel: boolean): void;
+  setPeel(v: boolean | null): void;
   setLayer(id: LayerId, visible: boolean): void;
   resetLayers(): void;
-  setAutoRotate(on: boolean): void;
   interact(fn: () => void): void;
   debug: { materials(): string[]; scene: THREE.Scene };
 }
@@ -170,15 +175,43 @@ export async function createStage(host: HTMLElement, opts: { reducedMotion: bool
   }
   scene.add(model);
 
-  const layerState: Record<LayerId, boolean> = { linen: true, goathair: true, ramskin: true, seacow: true };
-  let peeled = false;
-  const applyLayers = () => {
-    for (const id of Object.keys(layerMeshes) as LayerId[]) {
-      for (const m of layerMeshes[id]) m.visible = !peeled && layerState[id];
+  /* ---------------------------------------------------------- 燔祭壇的火與煙（出27 的壇；利6:13 壇上的火常常燒著） */
+  const altarFire = new THREE.PointLight(0xff8a3a, 0, 9, 1.6);
+  altarFire.position.set(0, 1.1, 9);
+  scene.add(altarFire);
+  const smokeTex = (() => {
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const g = c.getContext('2d')!;
+    const grd = g.createRadialGradient(32, 32, 2, 32, 32, 30);
+    grd.addColorStop(0, 'rgba(255,255,255,0.55)');
+    grd.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = grd;
+    g.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(c);
+  })();
+  const puffCount = opts.lowPower ? 8 : 18;
+  const puffs = Array.from({ length: puffCount }, (_, i) => {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: smokeTex, color: 0xd9d2c7, transparent: true, depthWrite: false, opacity: 0 }));
+    sp.userData.phase = i / puffCount;
+    sp.userData.dx = (Math.random() - 0.5) * 0.5;
+    scene.add(sp);
+    return sp;
+  });
+
+  /* ---------------------------------------------------------- 四層頂蓋：淡入淡出，不是瞬間消失 */
+  const layerMats = new Map<LayerId, THREE.Material[]>();
+  for (const id of Object.keys(layerMeshes) as LayerId[]) {
+    const mats: THREE.Material[] = [];
+    for (const m of layerMeshes[id]) {
+      const list = Array.isArray(m.material) ? m.material : [m.material];
+      m.material = list.length === 1 ? list[0].clone() : list.map((x) => x.clone());
+      mats.push(...(Array.isArray(m.material) ? m.material : [m.material]));
     }
-    const open = peeled || !layerState.linen;
-    inner.intensity = open ? 6 : 0;
-  };
+    layerMats.set(id, mats);
+  }
+  const layerOn: Record<LayerId, boolean> = { linen: true, goathair: true, ramskin: true, seacow: true };
+  const layerOp: Record<LayerId, number> = { linen: 1, goathair: 1, ramskin: 1, seacow: 1 };
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(...OVERVIEW.target);
@@ -186,15 +219,18 @@ export async function createStage(host: HTMLElement, opts: { reducedMotion: bool
   controls.maxPolarAngle = Math.PI * 0.49;
   controls.minDistance = 0.8;
   controls.maxDistance = 90;
-  controls.autoRotate = !opts.reducedMotion;
-  controls.autoRotateSpeed = 0.3;
 
-  // 以時間計算，而不是以幀數：模型大、機器慢的時候，鏡頭也在固定時間內到位
-  let tween: { from: View; to: View; start: number; dur: number } | null = null;
-  const current = (): View => ({ pos: camera.position.toArray() as View['pos'], target: controls.target.toArray() as View['target'], fov: camera.fov });
+  /* ---------------------------------------------------------- 鏡頭：沿路徑跟隨，帶阻尼 */
+  let path: View[] = [OVERVIEW];
+  let peels: number[] = [0];
+  let progress = 0;
+  let manual: { view: View; peel: number } | null = null;
+  let free = false;
+  let peelOverride: number | null = null;
+  let peelCur = 0;
   const listeners: (() => void)[] = [];
   controls.addEventListener('start', () => {
-    tween = null;
+    free = true;
     listeners.forEach((f) => f());
   });
 
@@ -211,19 +247,84 @@ export async function createStage(host: HTMLElement, opts: { reducedMotion: bool
   new ResizeObserver(resize).observe(host);
   resize();
 
-  const a = new THREE.Vector3();
-  const b = new THREE.Vector3();
+  const P = new THREE.Vector3();
+  const T = new THREE.Vector3();
+  const A = new THREE.Vector3();
+  const B = new THREE.Vector3();
+  const smooth = (x: number) => x * x * (3 - 2 * x);
+  const clock = new THREE.Clock();
+
+  /** 目前進度應有的鏡頭姿勢；兩站之間走弧線，飛過屋頂而不是穿牆 */
+  function pose(time: number): { fov: number; peel: number } {
+    if (manual) {
+      P.set(...manual.view.pos);
+      T.set(...manual.view.target);
+      return { fov: manual.view.fov, peel: manual.peel };
+    }
+    const n = path.length;
+    const i = Math.max(0, Math.min(n - 1, Math.floor(progress)));
+    const j = Math.min(n - 1, i + 1);
+    const f = i === j ? 0 : smooth(Math.min(1, Math.max(0, progress - i)));
+    const a = path[i];
+    const b = path[j];
+    P.lerpVectors(A.set(...a.pos), B.set(...b.pos), f);
+    const dist = A.distanceTo(B);
+    P.y += Math.min(3.2, dist * 0.22) * Math.sin(Math.PI * f);
+    T.lerpVectors(A.set(...a.target), B.set(...b.target), f);
+    // 停在全景（第 0 站）時，院子慢慢繞著轉；越往第一站走，轉得越少
+    if (i === 0 && !opts.reducedMotion) {
+      const ang = time * 0.05 * (1 - f);
+      const dx = P.x - T.x;
+      const dz = P.z - T.z;
+      P.x = T.x + dx * Math.cos(ang) - dz * Math.sin(ang);
+      P.z = T.z + dx * Math.sin(ang) + dz * Math.cos(ang);
+    }
+    // 往室內飛：頂先掀開；往外飛：晚一點才蓋回去。免得半透明的頂擋在鏡頭前
+    const raw = i === j ? 0 : Math.min(1, Math.max(0, progress - i));
+    const pf = peels[j] > peels[i] ? smooth(Math.min(1, raw * 2.2)) : peels[j] < peels[i] ? smooth(Math.max(0, (raw - 0.55) / 0.45)) : 0;
+    return { fov: a.fov + (b.fov - a.fov) * f, peel: peels[i] + (peels[j] - peels[i]) * pf };
+  }
+
+  const ease = (dt: number, rate: number) => (opts.reducedMotion ? 1 : 1 - Math.exp(-dt * rate));
+  let last = performance.now();
   function frame() {
     requestAnimationFrame(frame);
+    const now = performance.now();
+    const dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
     if (!visible || document.hidden) return;
-    if (tween) {
-      const t = tween.dur ? Math.min(1, (performance.now() - tween.start) / tween.dur) : 1;
-      const e = t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2;
-      camera.position.lerpVectors(a.set(...tween.from.pos), b.set(...tween.to.pos), e);
-      controls.target.lerpVectors(a.set(...tween.from.target), b.set(...tween.to.target), e);
-      camera.fov = tween.from.fov + (tween.to.fov - tween.from.fov) * e;
+    const time = clock.getElapsedTime();
+    const want = pose(time);
+    if (!free) {
+      // 停著的時候有極輕微的呼吸感
+      if (!opts.reducedMotion) P.y += Math.sin(time * 0.6) * 0.03;
+      const k = ease(dt, 4.5);
+      camera.position.lerp(P, k);
+      controls.target.lerp(T, k);
+      camera.fov += (want.fov - camera.fov) * k;
       camera.updateProjectionMatrix();
-      if (t >= 1) tween = null;
+    }
+    const peelWant = peelOverride ?? want.peel;
+    peelCur += (peelWant - peelCur) * ease(dt, 3.5);
+    for (const id of Object.keys(layerOp) as LayerId[]) {
+      const target = layerOn[id] ? 1 - peelCur : 0;
+      layerOp[id] += (target - layerOp[id]) * ease(dt, 4);
+      const op = layerOp[id];
+      for (const m of layerMats.get(id) ?? []) {
+        m.transparent = op < 0.995;
+        m.opacity = op;
+        m.depthWrite = op > 0.6;
+      }
+      for (const mesh of layerMeshes[id]) mesh.visible = op > 0.02;
+    }
+    inner.intensity = 6 * Math.max(peelCur, 1 - layerOp.linen);
+    altarFire.intensity = 3 + Math.sin(time * 9) * 0.6 + Math.sin(time * 23) * 0.4;
+    for (const sp of puffs) {
+      const ph = (time * 0.12 + sp.userData.phase) % 1;
+      sp.position.set(sp.userData.dx * ph * 2, 0.9 + ph * 3.2, 9 + ph * 0.6);
+      const sc = 0.4 + ph * 1.6;
+      sp.scale.set(sc, sc, 1);
+      (sp.material as THREE.SpriteMaterial).opacity = opts.reducedMotion ? 0 : Math.sin(Math.PI * ph) * 0.35;
     }
     controls.update();
     renderer.render(scene, camera);
@@ -231,22 +332,27 @@ export async function createStage(host: HTMLElement, opts: { reducedMotion: bool
   frame();
 
   return {
+    setPath(views, ps) {
+      path = [OVERVIEW, ...views];
+      peels = [0, ...ps];
+    },
+    setProgress(p) {
+      progress = p;
+      manual = null;
+      free = false;
+    },
     go(view, peel) {
-      controls.autoRotate = false;
-      peeled = peel;
-      applyLayers();
-      tween = { from: current(), to: view, start: performance.now(), dur: opts.reducedMotion ? 0 : 1600 };
+      manual = { view, peel: peel ? 1 : 0 };
+      free = false;
+    },
+    setPeel(v) {
+      peelOverride = v === null ? null : v ? 1 : 0;
     },
     setLayer(id, v) {
-      layerState[id] = v;
-      applyLayers();
+      layerOn[id] = v;
     },
     resetLayers() {
-      (Object.keys(layerState) as LayerId[]).forEach((k) => (layerState[k] = true));
-      applyLayers();
-    },
-    setAutoRotate(on) {
-      controls.autoRotate = on && !opts.reducedMotion;
+      (Object.keys(layerOn) as LayerId[]).forEach((k) => (layerOn[k] = true));
     },
     interact(fn) {
       listeners.push(fn);

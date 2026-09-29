@@ -53,7 +53,7 @@ export function mountHero(host: HTMLElement) {
 
   // 直排的標題與題辭
   const title = h('div', { class: 'hero-title' },
-    h('h1', null, '會幕前的一天'),
+    h('h1', { 'aria-label': '會幕前的一天' }, ...[...'會幕前的一天'].map((c, i) => h('span', { class: 'ch', style: `--i:${i}`, 'aria-hidden': 'true' }, c))),
     h('div', { class: 'epi' }, h('p', { class: 'epigraph' }, `「${EPIGRAPH.text}」`), refChip(EPIGRAPH.ref, EPIGRAPH.text)),
   );
 

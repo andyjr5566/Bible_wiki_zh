@@ -7,6 +7,7 @@ import { ICONS } from './ui/icons';
 import { STATUS_HELP } from './ui/meta';
 import { mountMaterials, mountUnsaid } from './ui/sections';
 import { mountTour } from './ui/tour';
+import { smoothScrollTo } from './ui/motion';
 
 /* ------------------------------------------------------------ 使用者設定（只存在這台裝置） */
 const root = document.documentElement;
@@ -83,6 +84,16 @@ const footer = h('footer', null, h('div', { class: 'wrap' }, '非商業的研經
 document.body.prepend(topbar, tour, materials.el, unsaid.el, about, footer);
 
 mountTour(tour);
+// 導覽列用自己的平滑捲動（瀏覽器內建的 smooth 會和逐格捲動互相干擾）
+document.addEventListener('click', (e) => {
+  const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
+  if (!a) return;
+  const el = document.getElementById(a.hash.slice(1));
+  if (!el) return;
+  e.preventDefault();
+  smoothScrollTo(a.hash === '#top' ? 0 : el.getBoundingClientRect().top + scrollY - 60);
+  history.replaceState(null, '', a.hash);
+});
 mountMaterials(materials.body);
 mountUnsaid(unsaid.body);
 

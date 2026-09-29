@@ -78,7 +78,15 @@ export function createMap(): MapApi {
   const marks = s('g');
   const tokens = s('g', { class: 'tokens' });
   const overlay = s('g');
-  root.append(base, marks, tokens, overlay);
+  // guide：人物與「這一步在哪裡」的虛線圈，換步驟時滑過去，不重建
+  const guide = s('g');
+  root.append(base, marks, tokens, overlay, guide);
+  const hlG = s('g', { class: 'hl-g', style: 'opacity:0' });
+  const hlCircle = s('circle', { cx: 0, cy: 0, r: 38, class: 'place-hl' });
+  hlG.append(hlCircle);
+  const actorG = s('g', { class: 'actor actor-g', style: 'opacity:0' });
+  guide.append(hlG, actorG);
+  let actorKey = '';
 
   function rect(x: number, y: number, w: number, hgt: number, attrs: Record<string, string | number> = {}) {
     const [x1, y1] = P([x, y]);
@@ -210,8 +218,6 @@ export function createMap(): MapApi {
   }
 
   let fire: SVGGElement;
-  let hl: SVGElement | null = null;
-  let actorEl: SVGGElement | null = null;
   const placed = new Map<string, SVGGElement>();
   let sprinkleCount = 0;
 
@@ -315,35 +321,49 @@ export function createMap(): MapApi {
       tokens.replaceChildren();
       overlay.replaceChildren();
       placed.clear();
-      hl = null;
-      actorEl = null;
       sprinkleCount = 0;
       fire.style.opacity = '0.35';
     },
     highlight(place, color) {
-      hl?.remove();
-      if (!place) return;
+      if (!place) {
+        hlG.style.opacity = '0';
+        return;
+      }
       const [x, y] = P(PLACES[place]);
       const r = place === 'around' || place === 'altar' || place === 'horns' ? 92 : 38;
-      hl = s('circle', { cx: x, cy: y, r, class: 'place-hl', style: `--c:${color}` });
-      overlay.prepend(hl);
+      hlCircle.setAttribute('r', String(r));
+      hlCircle.style.setProperty('--c', color);
+      hlG.style.transform = `translate(${x}px, ${y}px)`;
+      hlG.style.opacity = '1';
     },
     actor(actor, place) {
-      actorEl?.remove();
-      actorEl = null;
-      if (!actor) return;
+      if (!actor) {
+        actorG.style.opacity = '0';
+        actorKey = '';
+        return;
+      }
       const a = ACTOR[actor];
       const [x, y] = P(PLACES[place]);
       const dx = place === 'veil' || place === 'incense' || place === 'door' ? 0 : -58;
       const dy = place === 'veil' || place === 'incense' || place === 'door' ? -70 : place === 'court' || place === 'north' ? 0 : -54;
-      const g = s('g', { class: 'actor', transform: `translate(${x + dx} ${y + dy})` });
-      g.append(s('circle', { r: 22, fill: a.color, stroke: 'var(--surface)', 'stroke-width': 3 }));
-      g.append(s('text', { y: 6, 'text-anchor': 'middle', style: 'font-size:17px' }, a.glyph));
-      const lbl = s('text', { y: 42, 'text-anchor': 'middle', style: 'fill:var(--ink);font-size:17px;font-weight:700;paint-order:stroke;stroke:var(--surface);stroke-width:5px' }, a.label);
-      g.append(lbl);
-      if (!motionOff()) g.animate([{ opacity: 0, transform: `translate(${x + dx}px, ${y + dy + 10}px)` }, { opacity: 1, transform: `translate(${x + dx}px, ${y + dy}px)` }], { duration: 250 });
-      overlay.append(g);
-      actorEl = g;
+      const fresh = actorG.style.opacity === '0';
+      if (actorKey !== actor) {
+        // 換了一個人：內容換掉，輕輕跳一下
+        actorG.replaceChildren(
+          s('circle', { r: 22, fill: a.color, stroke: 'var(--surface)', 'stroke-width': 3 }),
+          s('text', { y: 6, 'text-anchor': 'middle', style: 'font-size:17px' }, a.glyph),
+          s('text', { y: 42, 'text-anchor': 'middle', style: 'fill:var(--ink);font-size:17px;font-weight:700;paint-order:stroke;stroke:var(--surface);stroke-width:5px' }, a.label));
+        if (!motionOff() && !fresh) actorG.firstElementChild?.animate([{ transform: 'scale(.6)' }, { transform: 'scale(1.15)' }, { transform: 'scale(1)' }], { duration: 420 });
+        actorKey = actor;
+      }
+      if (fresh) {
+        // 第一次出現：直接放到位置再淡入，不從上一個變體的位置滑過來
+        actorG.style.transition = 'none';
+        actorG.style.transform = `translate(${x + dx}px, ${y + dy}px)`;
+        void actorG.getBoundingClientRect();
+        actorG.style.transition = '';
+      } else actorG.style.transform = `translate(${x + dx}px, ${y + dy}px)`;
+      actorG.style.opacity = '1';
     },
     async play(move, animate) {
       const to = P(PLACES[move.to]);
@@ -464,6 +484,8 @@ export function createMap(): MapApi {
       portrait = p;
       drawBase();
       api.reset();
+      hlG.style.opacity = '0';
+      actorG.style.opacity = '0';
     },
   };
   drawBase();

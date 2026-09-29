@@ -116,6 +116,16 @@ mountObjects(blocks.objects);
 mountPriesthood(blocks.priests);
 mountDebates(blocks.unsaid);
 
+// 各區的卡片捲進畫面時浮上來；同一列的依序出現
+import('./ui/motion').then(({ reveal }) => {
+  const groups = ['.portions', '.obj-grid', '.deb-grid', '.flips', '.about-grid', '.pr-grid'];
+  for (const g of groups) document.querySelectorAll(g).forEach((grid) => {
+    [...grid.children].forEach((c, i) => (c as HTMLElement).style.setProperty('--d', String(i % 6)));
+    reveal(grid.children);
+  });
+  reveal(document.querySelectorAll('.matrix-wrap, #simulator .sim, .finale, .timeline'));
+});
+
 // 目前讀到哪一區
 const links = [...nav.querySelectorAll('a')];
 const io = new IntersectionObserver((entries) => {

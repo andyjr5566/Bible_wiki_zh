@@ -4,9 +4,13 @@ import { ORDER_VOICES, STOPS } from '../data/stops';
 import { h, svg } from './dom';
 import { badge, factLine, interpHeading, refChip, voiceBlock } from './evidence';
 import { ICONS } from './icons';
+import { reveal, smoothScrollTo } from './motion';
 
 const stopTitle = (id?: string) => STOPS.find((s) => s.id === id)?.title;
-const jump = (id: string) => document.getElementById(`stop-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+const jump = (id: string) => {
+  const el = document.getElementById(`stop-${id}`);
+  if (el) smoothScrollTo(el.getBoundingClientRect().top + scrollY - innerHeight * 0.3);
+};
 
 /** 百姓送來的禮物，與「越往裡面越貴重」 */
 export function mountMaterials(host: HTMLElement) {
@@ -16,7 +20,7 @@ export function mountMaterials(host: HTMLElement) {
     h('span', { class: 'zone-fact' }, factLine(z.fact)))));
   const grid = h('div', { class: 'mat-grid' }, ...MATERIALS.map((m) => h('div', { class: 'card mat' },
     h('div', { class: 'mat-head' }, h('span', { class: 'swatch big', style: `background:${m.swatch}` }), h('h3', null, m.name), refChip(m.listed.refs![0], m.listed.q)),
-    h('ul', null, ...m.uses.map((u) => h('li', null, u.text, ' ', refChip(u.ref, u.q),
+    h('ul', null, ...m.uses.map((u, i) => h('li', { style: `--i:${i}` }, u.text, ' ', refChip(u.ref, u.q),
       u.stop ? h('button', { class: 'go', type: 'button', onclick: () => jump(u.stop!) }, stopTitle(u.stop), svg(ICONS.next)) : null))),
     m.voice ? voiceBlock(m.voice) : null)));
   host.append(
@@ -28,6 +32,8 @@ export function mountMaterials(host: HTMLElement) {
     h('p', { class: 'sub-lede' }, '出25:3-7 列出百姓可以送來的東西。點經節看原文，點站名跳回導覽。'),
     grid,
   );
+  reveal([strip], '0px 0px -20% 0px');
+  reveal(grid.children);
 }
 
 /** 經文沒說的事 */
@@ -48,4 +54,5 @@ export function mountUnsaid(host: HTMLElement) {
       h('p', { class: 'interp-hidden-note' }, '註釋解讀層已隱藏（右上角可以打開）。'),
       h('button', { class: 'go', type: 'button', onclick: () => jump(d.stop) }, `回到「${stopTitle(d.stop)}」`, svg(ICONS.next))))));
   host.append(eleven, grid);
+  reveal([eleven, ...grid.children]);
 }

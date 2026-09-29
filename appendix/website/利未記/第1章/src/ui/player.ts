@@ -77,6 +77,13 @@ export class Player {
     this.go(-1, false);
   }
 
+  /** 卡片內容換掉時交叉淡入，不要瞬間跳 */
+  private swap() {
+    this.now.classList.remove('swap');
+    void this.now.offsetWidth;
+    this.now.classList.add('swap');
+  }
+
   get steps(): Step[] {
     return this.variant?.steps ?? [];
   }
@@ -140,7 +147,8 @@ export class Player {
     if (!st) {
       this.map.highlight(null, this.color);
       this.map.actor(null, 'front');
-      fill(this.now, 
+      this.swap();
+      fill(this.now,
         h('div', { class: 'who' }, '準備好了'),
         h('div', { class: 'text' }, `共 ${steps.length} 步。按「開始」，或直接點步驟清單裡的任何一步。`),
         this.variant?.note ? h('div', { class: 'note' }, this.variant.note) : null,
@@ -151,7 +159,8 @@ export class Player {
     const a = ACTOR[st.actor];
     this.map.highlight(st.at, this.color);
     this.map.actor(st.actor, st.at);
-    fill(this.now, 
+    this.swap();
+    fill(this.now,
       h('div', { class: 'who' },
         h('span', { class: 'dot', style: `background:${a.color}` }, a.glyph), a.label,
         h('span', { style: 'font-weight:400;color:var(--ink-3)' }, `・${PLACE_LABEL[st.at]}`),
