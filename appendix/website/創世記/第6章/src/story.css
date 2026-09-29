@@ -200,6 +200,8 @@ body.autoplay .srail .dot.on span { opacity: 1; }
   .title-block h1 { font-size: 3.6rem; }
   .stage-veil { background: linear-gradient(transparent 35%, rgb(6 7 9 / 55%)); }
   .scene { height: 170vh; }
+  .scard.rv.in { opacity: var(--fade, 1); transition: opacity .12s linear, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .scard[style*="--fade: 0.00"], .scard[style*="--fade:0.00"] { pointer-events: none; }
   .scard { top: auto; position: sticky; top: 46vh; top: 46svh; margin: 0 12px; width: calc(100% - 24px); max-height: 50vh; max-height: 50svh; padding: 14px 16px; }
   .scard h2 { font-size: 1.3rem; margin-bottom: 8px; }
   .verse p { font-size: 1rem; }
@@ -289,3 +291,7 @@ body.xfull .stage-veil { opacity: 0; }
   .spots-out .spot:not(.active) .spot-name { display: none; }
 }
 body.xfull .spotcard { top: 20px; }
+
+/* 減少動態時卡片不淡入，但手機上仍要在離開停駐位置時淡出，才不會蓋住上半部畫面 */
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) { .scard.rv { opacity: var(--fade, 1) !important; } }
+@media (max-width: 760px) { :root[data-motion='off'] .scard.rv { opacity: var(--fade, 1) !important; } }

@@ -113,9 +113,23 @@ export function mountStory(root: HTMLElement, engine: Engine, sound: Sound, labe
     fill.style.transform = `scaleY(${Math.max(0, Math.min(1, (P - 1) / (SCENES.length - 0.001)))})`;
     rail.classList.toggle('show', P > 0.9 && P < SCENES.length + 1);
   }
-  addEventListener('scroll', measure, { passive: true });
-  addEventListener('resize', measure);
+  // 手機上卡片停在畫面下半，這一幕結束時卡片會被推著往上滑，蓋住上半部的 3D 畫面；
+  // 卡片一離開停住的位置就淡出，不讓它滑過上半部
+  const narrow = matchMedia('(max-width: 760px)');
+  const cards = [...root.querySelectorAll<HTMLElement>('.scard')];
+  function fadeCards() {
+    const stuck = innerHeight * 0.46;
+    for (const c of cards) {
+      const r = c.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) continue;
+      const v = narrow.matches ? Math.max(0, Math.min(1, 1 - (stuck - r.top - 2) / 56)) : 1;
+      c.style.setProperty('--fade', v.toFixed(2));
+    }
+  }
+  addEventListener('scroll', () => { measure(); fadeCards(); }, { passive: true });
+  addEventListener('resize', () => { measure(); fadeCards(); });
   measure();
+  fadeCards();
 
   // ---------------------------------------------------------------- 自動播放：勻速往下捲，碰到就停
   let auto = 0;
