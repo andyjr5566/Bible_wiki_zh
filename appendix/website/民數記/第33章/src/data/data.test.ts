@@ -384,13 +384,13 @@ describe('地點條目與 verses.json', () => {
     for (const v of Object.values(stored) as string[]) expect(v.length).toBeGreaterThan(20);
   });
   it('條目連結是公開的網頁網址（GitHub 上渲染的條目頁），不是 obsidian://', () => {
-    expect(entryUrl('加低斯')).toBe('https://github.com/andyjr5566/Bible_wiki_zh/blob/main/link_folder/%E5%9C%B0%E9%BB%9E/%E5%8A%A0%E4%BD%8E%E6%96%AF.md');
+    expect(entryUrl('加低斯')).toBe('https://andyjr5566.github.io/Bible_wiki_zh_website/link_folder/%E5%9C%B0%E9%BB%9E/%E5%8A%A0%E4%BD%8E%E6%96%AF');
     for (const s of STATIONS) {
       if (!s.entry) continue;
       const u = entryUrl(s.entry);
       expect(u.startsWith('https://'), s.entry).toBe(true);
       expect(u).not.toMatch(/obsidian/i);
-      expect(decodeURIComponent(u).endsWith(`/link_folder/地點/${s.entry}.md`), s.entry).toBe(true);
+      expect(decodeURIComponent(u).endsWith(`/link_folder/地點/${s.entry}`), s.entry).toBe(true);
     }
   });
   it.skipIf(!IN_VAULT)('每個有條目的站，網址指到的檔案在知識庫裡真的存在', () => {

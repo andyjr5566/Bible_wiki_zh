@@ -27,7 +27,7 @@ npm run preview    # http://127.0.0.1:4195/
 
 資訊卡內容：經文摘句與節、時間、現代位置、位置可信度與 OpenBible 候選（可在地圖上看）、各家怎麼說位置、發生的事（水、食物、爭戰、審判、死亡、律法、引路）、CT 的字義與靈意、知識庫地點條目的定義節錄，以及「查看完整條目」的連結。
 
-完整條目連到公開 GitHub 專案裡渲染好的網頁（`https://github.com/andyjr5566/Bible_wiki_zh/blob/main/link_folder/地點/<條目>.md`，`entryUrl()`）。網站會部署到公開網域，所以不用只在本機有效的 `obsidian://` 網址；閘門檢查每個網址都是 `https://`、沒有 obsidian，且指到的條目檔在知識庫裡真的存在。
+完整條目連到知識庫的公開網站（預設 `https://andyjr5566.github.io/Bible_wiki_zh_website/link_folder/地點/<條目>`，`entryUrl()`）。網域換了的話，建置時設環境變數 `VITE_WIKI_BASE=<新網址>` 即可，不必改程式。網站會部署到公開網域，所以不用只在本機有效的 `obsidian://` 網址；閘門檢查每個網址都是 `https://`、沒有 obsidian，且指到的條目檔在知識庫裡真的存在。
 
 ## 頁面不會被自動捲動
 

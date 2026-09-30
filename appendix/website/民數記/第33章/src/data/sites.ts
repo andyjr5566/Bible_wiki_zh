@@ -109,8 +109,9 @@ export function candLabel(name: string): string {
  * 完整的地點條目：連到公開 GitHub 專案裡渲染好的網頁（不需要 Obsidian、任何裝置都打得開）。
  * 網站會部署到公開網域，所以不能連到只在本機有用的 obsidian:// 網址。
  */
-export const REPO_BLOB = 'https://github.com/andyjr5566/Bible_wiki_zh/blob/main';
-export const entryUrl = (entry: string): string => `${REPO_BLOB}/link_folder/${encodeURIComponent('地點')}/${encodeURIComponent(entry)}.md`;
+// 知識庫網站的網址。換網域時建置前設 VITE_WIKI_BASE（例如 VITE_WIKI_BASE=https://example.org/wiki npm run build），不必改程式。
+export const WIKI_BASE = ((import.meta.env?.VITE_WIKI_BASE as string | undefined) || 'https://andyjr5566.github.io/Bible_wiki_zh_website').replace(/\/+$/, '');
+export const entryUrl = (entry: string): string => `${WIKI_BASE}/link_folder/${encodeURIComponent('地點')}/${encodeURIComponent(entry)}`;
 
 export const LEVEL_LABEL: Record<Level, string> = { high: '高', mid: '中', low: '低', none: '不詳' };
 export const LEVEL_HELP: Record<Level, string> = {
