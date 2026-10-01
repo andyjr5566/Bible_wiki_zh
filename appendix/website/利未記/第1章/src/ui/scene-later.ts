@@ -69,6 +69,7 @@ export function buildManual(): HTMLElement {
 export function buildOrdination(): HTMLElement {
   const theater = mountTheater(listSource('承接聖職', 'var(--priest)', '三隻祭牲', ORDINATION));
   const dressHost = h('div');
+  mountDress(dressHost);
   const marksHost = h('div');
   return h('article', { class: 'scene', style: '--c:var(--priest)' },
     h('div', { class: 'wrap' }, head('ordination', '七天承接聖職', ORDAIN.lede, omark('priesthood' as never))),
@@ -77,8 +78,8 @@ export function buildOrdination(): HTMLElement {
       layer('重點', null, h('div', { class: 'keys' },
         keyCard({ title: '先後次序', lines: [] }, timeline(SEVEN_DAYS)),
         ...ORDAIN.cards.map((c) => keyCard(c)))),
+      layer('照經文的次序穿上聖衣', '亞倫七件、兒子三件：猜猜看先穿哪一件', dressHost),
       layer('細節', '想多知道一點，再點開', h('div', { class: 'mores' },
-        more('照經文的次序穿上聖衣', '亞倫七件、兒子三件：猜猜看先穿哪一件', () => { mountDress(dressHost); return dressHost; }),
         more('血抹在三個地方', '右耳垂、右手大拇指、右腳大拇指', () => { mountMarks(marksHost); return marksHost; }),
         readingMore(ORDAIN.read))),
       voicesLink('聖衣的次序、抹血的三處，各家註釋讀法不同', '例如：耳朵、手、腳代表什麼？'),
