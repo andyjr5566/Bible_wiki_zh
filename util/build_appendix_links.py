@@ -144,12 +144,28 @@ def book_index_block(plugin_name: str, heading: str, folder: str, items_by_chapt
     """產出目錄頁裡屬於某個 plugin 的整段（含 start/end 標記）。章節依章號排序。"""
     start, end = book_index_markers(plugin_name)
     lines = [start, f"## {heading}", ""]
+    # 同一組入口掛在好幾章時只列一次：連續的章節併成「第a–b章」，連到第一章
+    groups: dict[tuple, list[str]] = {}
     for chapter_name in sorted(items_by_chapter, key=_chapter_sort_key):
-        links = "、".join(
-            f"[[{item['path']}|{item['title']}]]" if item.get("is_wikilink") else f"[{item['title']}]({item['path']})"
-            for item in items_by_chapter[chapter_name]
-        )
-        lines.append(f"- [[{folder}/{chapter_name}|{chapter_name}]]：{links}")
+        key = tuple((item["title"], item["path"], bool(item.get("is_wikilink"))) for item in items_by_chapter[chapter_name])
+        groups.setdefault(key, []).append(chapter_name)
+    rows: list[tuple[int, str]] = []
+    for key, chapters in groups.items():
+        links = "、".join(f"[[{path}|{title}]]" if wiki else f"[{title}]({path})" for title, path, wiki in key)
+        runs: list[list[str]] = []
+        for name in chapters:
+            n = _chapter_sort_key(name)[0]
+            if runs and _chapter_sort_key(runs[-1][-1])[0] + 1 == n:
+                runs[-1].append(name)
+            else:
+                runs.append([name])
+        # 同一組入口只出一列；不連續的章節（例如第2、10章）用頓號接在同一列
+        labels = []
+        for run in runs:
+            a, b = _chapter_sort_key(run[0])[0], _chapter_sort_key(run[-1])[0]
+            labels.append(f"第{a}章" if a == b else f"第{a}–{b}章")
+        rows.append((_chapter_sort_key(runs[0][0])[0], f"- [[{folder}/{runs[0][0]}|{'、'.join(labels)}]]：{links}"))
+    lines.extend(line for _, line in sorted(rows, key=lambda r: r[0]))
     lines.append(end)
     return "\n".join(lines)
 
