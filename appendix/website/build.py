@@ -40,6 +40,12 @@ CATEGORY_NAME = "互動網站"
 BOOK_INDEX_HEADING = "🕹️ 互動網站"
 CATEGORY_DIR = Path(__file__).resolve().parent
 REPOSITORY_ROOT = CATEGORY_DIR.parent.parent
+BOOK_ORDER = {
+    book: index
+    for index, book in enumerate(
+        json.loads((REPOSITORY_ROOT / "_config" / "bible_books.json").read_text(encoding="utf-8"))
+    )
+}
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 VITE_CONFIG_NAMES = ("vite.config.ts", "vite.config.js", "vite.config.mjs")
 BACKUP_MARKER = "_backup_"
@@ -331,6 +337,45 @@ def _print_entries(entries: dict[str, list[dict[str, str]]]) -> None:
             print(f"      - {item['title']} → {item['path']}")
 
 
+def render_index_markdown(entries: dict[str, list[dict[str, str]]]) -> str:
+    """Render the website directory index from the discovered entry points."""
+    lines = ["# 互動網站", ""]
+    titles: dict[str, str] = {}
+    chapters_by_path: defaultdict[str, set[str]] = defaultdict(set)
+    for chapter_key in sorted(entries):
+        for item in entries[chapter_key]:
+            path = item["path"]
+            titles.setdefault(path, item["title"])
+            chapters_by_path[path].add(chapter_key)
+
+    def chapter_order_key(chapter_key: str) -> tuple[int, int, str, str]:
+        book, chapter = chapter_key.split("/", 1)
+        match = re.search(r"\d+", chapter)
+        return (
+            BOOK_ORDER.get(book, len(BOOK_ORDER)),
+            int(match.group()) if match else 0,
+            book,
+            chapter,
+        )
+
+    def entry_order_key(path: str) -> tuple[tuple[int, int, str, str], str, str]:
+        first_chapter = min(chapters_by_path[path], key=chapter_order_key)
+        return chapter_order_key(first_chapter), titles[path], path
+
+    for path in sorted(chapters_by_path, key=entry_order_key):
+        target = REPOSITORY_ROOT / path
+        relative_path = os.path.relpath(target, CATEGORY_DIR).replace("\\", "/")
+        chapters = "、".join(
+            f"{book} {chapter}"
+            for book, chapter in (
+                key.split("/", 1)
+                for key in sorted(chapters_by_path[path], key=chapter_order_key)
+            )
+        )
+        lines.append(f"- [{titles[path]}](<{relative_path}>)（{chapters}）")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def main(argv: list[str] | None = None) -> int:
     configure_stdio()
     parser = argparse.ArgumentParser(description=__doc__)
@@ -362,7 +407,15 @@ def main(argv: list[str] | None = None) -> int:
         records = export_vite_apps(apps, args.deploy_dir)
         print(f"[部署] 已匯出 {len(records)} 筆網站入口到 {args.deploy_dir.resolve()}")
 
-    _print_entries(scan_all_entries())
+    entries = scan_all_entries()
+    index_path = CATEGORY_DIR / "index.md"
+    index_path.write_text(
+        render_index_markdown(entries),
+        encoding="utf-8",
+        newline="\n",
+    )
+    print(f"[索引] 已更新 {index_path.relative_to(REPOSITORY_ROOT).as_posix()}")
+    _print_entries(entries)
     return 0
 
 
