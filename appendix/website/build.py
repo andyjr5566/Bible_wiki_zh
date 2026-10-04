@@ -40,12 +40,18 @@ CATEGORY_NAME = "互動網站"
 BOOK_INDEX_HEADING = "🕹️ 互動網站"
 CATEGORY_DIR = Path(__file__).resolve().parent
 REPOSITORY_ROOT = CATEGORY_DIR.parent.parent
-BOOK_ORDER = {
-    book: index
-    for index, book in enumerate(
-        json.loads((REPOSITORY_ROOT / "_config" / "bible_books.json").read_text(encoding="utf-8"))
-    )
-}
+def _load_book_order() -> dict[str, int]:
+    # 這份程式也會被複製到 Quartz 網站專案的 quartz/static/website/ 在 CI 執行，
+    # 那裡沒有 _config/bible_books.json，找不到就退回五經的順序，不要讓部署當掉。
+    config = REPOSITORY_ROOT / "_config" / "bible_books.json"
+    try:
+        books = list(json.loads(config.read_text(encoding="utf-8")))
+    except (OSError, ValueError):
+        books = ["創世記", "出埃及記", "利未記", "民數記", "申命記"]
+    return {book: index for index, book in enumerate(books)}
+
+
+BOOK_ORDER = _load_book_order()
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 VITE_CONFIG_NAMES = ("vite.config.ts", "vite.config.js", "vite.config.mjs")
 BACKUP_MARKER = "_backup_"
