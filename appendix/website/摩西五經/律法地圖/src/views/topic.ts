@@ -33,16 +33,36 @@ export function topicView(route: Route): HTMLElement {
   );
 }
 
+/** 一欄先放幾張卡片；條文很多的主題，其餘按一下在原地補上（有連線的卡片一定先放） */
+const LANE_FIRST = 12;
+
 function lanes(ls: Law[]): HTMLElement {
   const used = books.filter((b) => ls.some((l) => l.book === b.name));
   const svg = s('svg', { class: 'lm-links', 'aria-hidden': 'true' });
+  const ids = new Set(ls.map((l) => l.id));
+  const linked = new Set(DB.relations.filter((r) => ids.has(r.from) && ids.has(r.to)).flatMap((r) => [r.from, r.to]));
+  let draw = () => {};
   const wrap = h('div', { class: 'lm-lanes', style: `--n: ${used.length}` },
     ...used.map((b) => {
       const mine = ls.filter((l) => l.book === b.name);
-      return h('section', { class: 'lm-lane' }, h('h2', { class: 'lm-lane-head' }, b.name, h('small', null, `${mine.length} 條`)), ...mine.map((l) => lawCard(l)));
+      const cards = mine.map((l) => lawCard(l));
+      let shown = 0;
+      cards.forEach((c, i) => {
+        if (i < LANE_FIRST || linked.has(mine[i].id)) shown++;
+        else c.hidden = true;
+      });
+      const rest = mine.length - shown;
+      const more = rest > 0
+        ? h('button', { type: 'button', class: 'lm-btn lm-lane-more', onclick: (e: MouseEvent) => {
+          cards.forEach((c) => { c.hidden = false; });
+          (e.currentTarget as HTMLElement).remove();
+          draw();
+        } }, `再看 ${rest} 條`)
+        : null;
+      return h('section', { class: 'lm-lane' }, h('h2', { class: 'lm-lane-head' }, b.name, h('small', null, `${mine.length} 條`)), ...cards, more);
     }));
   const box = h('div', { class: 'lm-lanes-box' }, svg, wrap);
-  const draw = () => { if (box.isConnected) drawLinks(box, svg, ls); };
+  draw = () => { if (box.isConnected) drawLinks(box, svg, ls); };
   // 卡片放進頁面、量得到位置之後才畫線；視窗或字級改變時重畫
   let tries = 0;
   const wait = () => (box.isConnected ? draw() : ++tries < 60 && requestAnimationFrame(wait));
@@ -67,7 +87,7 @@ function drawLinks(box: HTMLElement, svg: SVGSVGElement, ls: Law[]) {
     if (!ids.has(r.from) || !ids.has(r.to)) continue;
     const a = box.querySelector<HTMLElement>(`[data-law="${r.from}"]`)?.getBoundingClientRect();
     const b = box.querySelector<HTMLElement>(`[data-law="${r.to}"]`)?.getBoundingClientRect();
-    if (!a || !b || Math.abs(a.left - b.left) < 20) continue;
+    if (!a || !b || !a.height || !b.height || Math.abs(a.left - b.left) < 20) continue;
     const [l, rr, lid, rid] = a.left < b.left ? [a, b, r.from, r.to] : [b, a, r.to, r.from];
     const x1 = l.right - base.left;
     const y1 = l.top + slot(lid) - base.top;

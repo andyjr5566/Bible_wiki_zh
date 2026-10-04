@@ -11,7 +11,18 @@ type Kind = 'law' | 'topic' | 'entry';
 interface GNode { kind: Kind; label: string; target: string }
 
 const MAX = 24;
-const short = (t: string, n = 8) => ([...t].length > n ? `${[...t].slice(0, n - 1).join('')}…` : t);
+/** 長標題折成幾行，每行 per 個字，超過 maxLines 行才用「…」收尾（完整名稱在滑過時的提示裡） */
+function wrap(t: string, per: number, maxLines: number): string[] {
+  const cs = [...t];
+  const out: string[] = [];
+  for (let i = 0; i < cs.length && out.length < maxLines; i += per) out.push(cs.slice(i, i + per).join(''));
+  if (cs.length > per * maxLines) out[maxLines - 1] = `${out[maxLines - 1].slice(0, -1)}…`;
+  return out;
+}
+/** 一段多行文字：每行一個 tspan，第一行從 y 開始 */
+function lines(x: number, y: number, rows: string[], cls: string, lh = 15) {
+  return s('text', { x, y, 'text-anchor': 'middle', class: cls }, ...rows.map((r, i) => s('tspan', { x, dy: i ? lh : 0 }, r)));
+}
 
 function neighbors(kind: 'law' | 'entry', id: string): GNode[] {
   if (kind === 'law') {
@@ -39,13 +50,16 @@ export function egoGraph(kind: 'law' | 'entry', id: string, centerLabel: string)
     return [C + R * Math.cos(a), C + R * Math.sin(a)] as const;
   });
   ns.forEach((_, i) => svg.append(s('line', { x1: C, y1: C, x2: pos[i][0], y2: pos[i][1], class: 'lm-g-edge' })));
-  svg.append(s('circle', { cx: C, cy: C, r: 34, class: `lm-g-node lm-g-${kind} lm-g-center` }), s('text', { x: C, y: C + 5, 'text-anchor': 'middle', class: 'lm-g-label lm-g-center-label' }, short(centerLabel, 7)));
+  svg.append(s('circle', { cx: C, cy: C, r: 24, class: `lm-g-node lm-g-${kind} lm-g-center` }), lines(C, C + 44, wrap(centerLabel, 11, 3), 'lm-g-label lm-g-center-label', 16));
   ns.forEach((n, i) => {
     const [x, y] = pos[i];
     const a = s('a', { href: n.target, class: 'lm-g-link' },
       s('title', {}, n.label),
       s('circle', { cx: x, cy: y, r: 10, class: `lm-g-node lm-g-${n.kind}` }),
-      s('text', { x, y: y + (y < C ? -16 : 26), 'text-anchor': 'middle', class: 'lm-g-label' }, short(n.label)));
+      (() => {
+        const rows = wrap(n.label, 9, 2);
+        return lines(x, y < C ? y - 16 - (rows.length - 1) * 14 : y + 26, rows, 'lm-g-label', 14);
+      })());
     svg.append(a);
   });
   return h('figure', { class: 'lm-graph' }, svg,

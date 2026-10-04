@@ -500,16 +500,3 @@ chapters:
             topics: [war, one-god]
             summary: 不可和他們並他們的神立約；他們不可住在你的地上，恐怕他們使你得罪耶和華。
             basis: [32, 33]
-  - chapter: 34
-    excluded: []
-    sections:
-      - id: ex34-s1
-        title: 更新之約裡的初熟之物
-        verses: 26
-        laws:
-          - id: ex34-26
-            title: 初熟之物與不可煮山羊羔
-            refs: ["26"]
-            topics: [tithes, clean-food]
-            summary: 地裡首先初熟之物，要送到耶和華你神的殿；不可用山羊羔母的奶煮山羊羔。
-            basis: [26]
