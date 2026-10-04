@@ -390,7 +390,7 @@ details.lm-layer[open] .lm-preview { display: none; }
   .lm-thread-line { justify-content: flex-start; }
   .lm-rib-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .lm-rib-row .lm-rib-name { padding-bottom: 0; font-size: 0.9rem; }
-  .lm-rib-row .lm-rib-cells { grid-template-rows: 44px auto; column-gap: 1px; }
+  .lm-rib-row .lm-rib-cells { grid-template-rows: 44px auto; column-gap: 1px; grid-template-columns: repeat(var(--cols), minmax(12px, 1fr)); overflow-x: auto; padding-bottom: 4px; }
   .lm-rib-big .lm-rib-cell { height: 44px; }
   .lm-ladder { padding-left: 26px; }
   .lm-ladder::before { left: 6px; }
