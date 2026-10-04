@@ -39,6 +39,44 @@ class AppendixWebsiteBuildEdgeCaseTests(unittest.TestCase):
             tf_path.unlink(missing_ok=True)
 
 
+class AppendixWebsiteCrossBookTests(unittest.TestCase):
+    """跨卷網站（例如 摩西五經/律法地圖）掛到多卷章節。"""
+
+    def _vite_site(self, root: Path, folder: str, chapters) -> Path:
+        site = root / "appendix" / "website" / folder
+        (site / "src").mkdir(parents=True)
+        (site / "dist").mkdir()
+        (site / "package.json").write_text("{}", encoding="utf-8")
+        (site / "vite.config.ts").write_text("", encoding="utf-8")
+        (site / "dist" / "index.html").write_text("<title>站</title>", encoding="utf-8")
+        import json
+        (site / "appendix-chapters.json").write_text(json.dumps(chapters, ensure_ascii=False), encoding="utf-8")
+        return site
+
+    def _scan(self, root: Path):
+        category = root / "appendix" / "website"
+        with patch.object(website_build, "CATEGORY_DIR", category), patch.object(website_build, "REPOSITORY_ROOT", root):
+            return website_build.scan_all_entries()
+
+    def test_book_qualified_keys_and_non_book_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "02 出埃及記").mkdir()
+            (root / "05 申命記").mkdir()
+            self._vite_site(root, "摩西五經/律法地圖", ["出埃及記/第20章", "申命記/第5章"])
+            entries = self._scan(root)
+            self.assertEqual(sorted(entries), ["出埃及記/第20章", "申命記/第5章"])
+            self.assertNotIn("摩西五經/律法地圖", entries)
+
+    def test_same_book_short_keys_unchanged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "03 利未記").mkdir()
+            self._vite_site(root, "利未記/第1章", ["第2章"])
+            entries = self._scan(root)
+            self.assertEqual(sorted(entries), ["利未記/第1章", "利未記/第2章"])
+
+
 class AppendixLinksSyncEdgeCaseTests(unittest.TestCase):
     def test_navigation_stays_at_document_end_after_appendix_sync(self):
         original = (

@@ -1,0 +1,42 @@
+# 出埃及記的律法段落與條文（手寫 source of truth）。格式見 README.md「資料格式」。
+# 目前只有框架用的示範條文；出20–23 其餘條文待補（覆蓋率報告會列出還沒收的節）。
+book: 出埃及記
+chapters:
+  - chapter: 20
+    excluded: []
+    sections:
+      - id: ex20-s1
+        title: 向著神的四誡
+        verses: 3-11
+        laws:
+          - id: ex20-08
+            title: 守安息日為聖日
+            refs: ["8-11"]
+            topics: [sabbath]
+            summary: 要記念安息日守為聖日：六日勞碌做工，第七日全家、僕婢、牲畜和寄居的客旅都不可做工，因為耶和華六日造天地，第七日便安息。
+            basis: [8, 9, 10, 11]
+  - chapter: 21
+    excluded: []
+    sections:
+      - id: ex21-s1
+        title: 希伯來奴僕的律例
+        verses: 1-6
+        laws:
+          - id: ex21-02
+            title: 希伯來男僕第七年自由
+            refs: ["2-6"]
+            topics: [slavery]
+            summary: 買來的希伯來男僕服事六年，第七年可以白白地出去；若他自己不願意走，就要穿耳，永遠服事主人。
+            basis: [2, 5, 6]
+            entries: [希伯來奴僕的律例]
+      - id: ex21-s2
+        title: 希伯來女僕的律例
+        verses: 7-11
+        laws:
+          - id: ex21-07
+            title: 被賣作婢女的女子的保障
+            refs: ["7-11"]
+            topics: [slavery, marriage]
+            summary: 被賣作婢女的女子不像男僕那樣出去；主人若不供給他吃食、衣服和好合的事，他就可以不用錢贖，白白地出去。
+            basis: [7, 10, 11]
+            entries: [希伯來女僕的律例]

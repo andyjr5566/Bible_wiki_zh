@@ -1,0 +1,29 @@
+# 申命記的律法段落與條文（手寫 source of truth）。目前只有框架用的示範條文。
+book: 申命記
+chapters:
+  - chapter: 5
+    excluded: []
+    sections:
+      - id: deut5-s2
+        title: 十誡前半：獨一、形像、名與日子
+        verses: 6-15
+        laws:
+          - id: deut5-12
+            title: 照神的吩咐守安息日
+            refs: ["12-15"]
+            topics: [sabbath]
+            summary: 要照神的吩咐守安息日：六日做工，第七日連僕婢、牛驢和寄居的客旅都不可做工，使僕婢可以和你一樣安息；也要記念你在埃及地作過奴僕。
+            basis: [12, 13, 14, 15]
+  - chapter: 15
+    excluded: []
+    sections:
+      - id: deut15-s2
+        title: 第七年讓人走出去
+        verses: 12-18
+        laws:
+          - id: deut15-12
+            title: 釋放希伯來弟兄不可空手
+            refs: ["12-18"]
+            topics: [slavery]
+            summary: 被賣的希伯來男人或女人服事你六年，第七年要任他自由出去，而且要從羊群、禾場、酒醡之中多多地給他，不可使他空手而去。
+            basis: [12, 13, 14]

@@ -1,0 +1,16 @@
+# 利未記的律法段落與條文（手寫 source of truth）。目前只有框架用的示範條文。
+book: 利未記
+chapters:
+  - chapter: 25
+    excluded: []
+    sections:
+      - id: lev25-s5
+        title: 因為他們是我的僕人
+        verses: 39-55
+        laws:
+          - id: lev25-39
+            title: 窮乏賣身的弟兄不可當奴僕
+            refs: ["39-43"]
+            topics: [slavery, poor, sabbath-year]
+            summary: 弟兄窮乏賣身給你，不可叫他像奴僕服事你，要像雇工人一樣待他；到了禧年，他和兒女要一同離開你，歸回本家。
+            basis: [39, 40, 41]

@@ -1,0 +1,24 @@
+# 律法之間的關聯（手寫）。每一條都必須有證據，否則不畫線。
+# type：parallel（平行重述）／supplement（補充修訂）／case（案例）／cites（引用）
+# evidence 二選一：
+#   { entry: 知識庫條目標題, quote: 條目 md 裡逐字出現的一句 }
+#   { chapter: "申命記/第15章", quote: 該章「本章整理」裡逐字出現的一句 }
+# 閘門：條目標題＋引句裡解析出的經文參照必須同時蓋到 from 與 to；用章節當證據時，該章本身算一端。
+- from: ex20-08
+  to: deut5-12
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十11以神的創造為基礎
+- from: ex21-02
+  to: deut15-12
+  type: supplement
+  evidence:
+    entry: 申15：12-18
+    quote: 申命記15章補充了出21:2-6的希伯來奴僕釋放條例
+- from: ex21-02
+  to: lev25-39
+  type: supplement
+  evidence:
+    entry: 利25：39-43
+    quote: 此條例補充了出21:2-6的奴僕律例
