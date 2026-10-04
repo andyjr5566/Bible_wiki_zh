@@ -94,7 +94,8 @@ export function buildAll() {
   const chapterInfo = []; // {book, chapter, excluded}
   const lawsDir = resolve(dataDir, 'laws');
   const files = existsSync(lawsDir) ? readdirSync(lawsDir).filter((f) => f.endsWith('.yaml')) : [];
-  const bookOrder = (name) => BOOK_BY_NAME[name]?.num ?? 99;
+  // 檔名可以是「利未記-01-04」：同一卷分成幾個檔案時，取最前面的書名排序
+  const bookOrder = (name) => BOOK_BY_NAME[name.split('-')[0]]?.num ?? 99;
   for (const f of files.sort((a, b) => bookOrder(a.replace(/\.yaml$/, '')) - bookOrder(b.replace(/\.yaml$/, '')))) {
     const src = loadYaml(resolve(lawsDir, f));
     const book = src.book;
