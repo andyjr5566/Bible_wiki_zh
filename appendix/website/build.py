@@ -148,11 +148,11 @@ def _chapter_html_entries(
             # 一個網站涵蓋好幾章時，在專案根目錄放 appendix-chapters.json，
             # 例如 ["第12章", "第13章"]，其他章的附錄也會列出同一個入口。
             # 跨卷時寫完整的「書名/第N章」，例如 ["出埃及記/第20章", "申命記/第5章"]。
-            extras = _extra_chapters(chapter_dir)
-            if not _is_book_folder(book):
-                extras = _first_chapter_per_book(extras)
-            for extra in extras:
-                _append_entry(entries, extra if "/" in extra else f"{book}/{extra}", built_index)
+            # 跨卷網站（例如 摩西五經的律法）涵蓋近百章，不掛到章節附錄與各卷全書目錄，
+            # 只列在本資料夾的 index.md（見 scan_cross_book_entries）。
+            if _is_book_folder(book):
+                for extra in _extra_chapters(chapter_dir):
+                    _append_entry(entries, extra if "/" in extra else f"{book}/{extra}", built_index)
 
         # A Vite chapter may also contain hand-authored static pages.  Keep
         # those links, but never expose the Vite source index as a live page.
@@ -161,19 +161,6 @@ def _chapter_html_entries(
 
     for html_file in sorted(html_files, key=lambda path: path.name.lower()):
         _append_entry(entries, key, html_file)
-
-
-def _first_chapter_per_book(extras: list[str]) -> list[str]:
-    """跨卷網站（例如 摩西五經的律法）涵蓋近百章，不要掛到每一章的附錄；
-    每一卷只掛在它涵蓋的第一章，各卷全書目錄仍會列出這個入口。"""
-    first: dict[str, tuple[int, str]] = {}
-    for extra in extras:
-        book, _, chapter = extra.partition("/")
-        match = re.search(r"\d+", chapter)
-        number = int(match.group()) if match else 10**6
-        if book not in first or number < first[book][0]:
-            first[book] = (number, extra)
-    return [extra for _, extra in first.values()]
 
 
 def _is_book_folder(book: str) -> bool:
@@ -212,6 +199,21 @@ def scan_all_entries() -> dict[str, list[dict[str, str]]]:
     entries: defaultdict[str, list[dict[str, str]]] = defaultdict(list)
     for book, chapter, chapter_dir in iter_chapters():
         _chapter_html_entries(entries, book, chapter, chapter_dir)
+    return dict(entries)
+
+
+def scan_cross_book_entries() -> dict[str, list[dict[str, str]]]:
+    """跨卷網站（放在非書卷資料夾）涵蓋的章節；只供 index.md 使用，附錄工具看不到。"""
+    entries: defaultdict[str, list[dict[str, str]]] = defaultdict(list)
+    for book, _chapter, chapter_dir in iter_chapters():
+        if _is_book_folder(book) or not is_vite_app(chapter_dir):
+            continue
+        built_index = chapter_dir / "dist" / "index.html"
+        if not built_index.is_file():
+            continue
+        for extra in _extra_chapters(chapter_dir):
+            if "/" in extra:
+                _append_entry(entries, extra, built_index)
     return dict(entries)
 
 
@@ -427,6 +429,16 @@ def render_index_markdown(entries: dict[str, list[dict[str, str]]]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def _merge_entries(
+    *groups: dict[str, list[dict[str, str]]],
+) -> dict[str, list[dict[str, str]]]:
+    merged: defaultdict[str, list[dict[str, str]]] = defaultdict(list)
+    for group in groups:
+        for key, items in group.items():
+            merged[key].extend(items)
+    return dict(merged)
+
+
 def main(argv: list[str] | None = None) -> int:
     configure_stdio()
     parser = argparse.ArgumentParser(description=__doc__)
@@ -461,7 +473,7 @@ def main(argv: list[str] | None = None) -> int:
     entries = scan_all_entries()
     index_path = CATEGORY_DIR / "index.md"
     index_path.write_text(
-        render_index_markdown(entries),
+        render_index_markdown(_merge_entries(entries, scan_cross_book_entries())),
         encoding="utf-8",
         newline="\n",
     )
