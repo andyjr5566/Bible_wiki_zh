@@ -5,7 +5,7 @@
   --surface-2: #ece5d7;
   --ink: #221e18;
   --ink-2: #625a4d;
-  --ink-3: #988f80;
+  --ink-3: #6e665a;
   --line: #dcd3c2;
   --accent: #2f4f9a;
   --focus: #b88a1c;
@@ -13,11 +13,11 @@
   /* 六大類 */
   --g0: #8a8172;
   --g1: #3553a0; /* 敬拜與聖所 */
-  --g2: #2f7a6a; /* 聖潔與潔淨 */
-  --g3: #b07a12; /* 聖日與節期 */
+  --g2: #2a7363; /* 聖潔與潔淨 */
+  --g3: #8f6209; /* 聖日與節期 */
   --g4: #a6466b; /* 家庭與身體 */
   --g5: #b0461f; /* 生命、財產與賠償 */
-  --g6: #4f7a2f; /* 公義、弱勢與治理 */
+  --g6: #46702a; /* 公義、弱勢與治理 */
   /* 條目類型 */
   --t-person: #a6466b; --t-place: #2f7a6a; --t-event: #b0461f; --t-topic: #3553a0; --t-theology: #6b4fa0;
   --t-background: #8a6a2a; --t-culture: #8a6a2a; --t-history: #6e6658; --t-original: #2d6d8f; --t-intertext: #4f7a2f; --t-debate: #9f1d3a;
@@ -32,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #161512; --surface: #201e1a; --surface-2: #2b2823; --ink: #ede7db; --ink-2: #b6ad9d; --ink-3: #847b6d; --line: #3a362f;
+    --bg: #161512; --surface: #201e1a; --surface-2: #2b2823; --ink: #ede7db; --ink-2: #b6ad9d; --ink-3: #9a9181; --line: #3a362f;
     --accent: #93acec; --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
     --g1: #8fa8e8; --g2: #6fc2ae; --g3: #e0b052; --g4: #e08aa9; --g5: #ec8b62; --g6: #9cc77a;
     --t-person: #e08aa9; --t-place: #6fc2ae; --t-event: #ec8b62; --t-topic: #8fa8e8; --t-theology: #b8a0ec; --t-background: #d5b47a;
@@ -41,7 +41,7 @@
   }
 }
 :root[data-theme='dark'] {
-  --bg: #161512; --surface: #201e1a; --surface-2: #2b2823; --ink: #ede7db; --ink-2: #b6ad9d; --ink-3: #847b6d; --line: #3a362f;
+  --bg: #161512; --surface: #201e1a; --surface-2: #2b2823; --ink: #ede7db; --ink-2: #b6ad9d; --ink-3: #9a9181; --line: #3a362f;
   --accent: #93acec; --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
   --g1: #8fa8e8; --g2: #6fc2ae; --g3: #e0b052; --g4: #e08aa9; --g5: #ec8b62; --g6: #9cc77a;
   --t-person: #e08aa9; --t-place: #6fc2ae; --t-event: #ec8b62; --t-topic: #8fa8e8; --t-theology: #b8a0ec; --t-background: #d5b47a;
