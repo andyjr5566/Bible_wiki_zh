@@ -101,19 +101,43 @@ function others(ls: Law[]): HTMLElement | null {
 
 // ---- 經文自己交代的理由 ----
 
-/** 首頁最多先放幾條 */
+/** 首頁先放幾條 */
 const FIRST_REASONS = 6;
 
+function reasonCard(l: Law): HTMLElement {
+  return h('article', { class: 'lm-reason', style: `--c: ${groupColor(l)}`, 'data-laws': l.id },
+    h('div', { class: 'lm-reason-quotes' }, ...lawWhy(l).map((w) => h('blockquote', null, h('p', null, w.text), h('cite', null, w.ref)))),
+    h('a', { class: 'lm-reason-go', href: href('law', l.id) }, l.title, ' →'));
+}
+
 function reasons(): HTMLElement | null {
-  const items = laws.flatMap((l) => lawWhy(l).map((w) => ({ l, w }))).slice(0, FIRST_REASONS);
-  if (!items.length) return null;
+  const withWhy = laws.filter((l) => lawWhy(l).length);
+  if (!withWhy.length) return null;
+  // 先放的幾條輪流從各卷挑，不要全擠在創世記
+  const perBook = books.map((b) => withWhy.filter((l) => l.book === b.name));
+  const first: Law[] = [];
+  for (let round = 0; first.length < FIRST_REASONS && round < FIRST_REASONS; round++) {
+    for (const ls of perBook) if (ls[round * 3] && first.length < FIRST_REASONS) first.push(ls[round * 3]);
+  }
+  const sample = h('div', { class: 'lm-rgrid' }, ...first.map(reasonCard));
+  const all = h('div', { class: 'lm-reasons-all', hidden: true }, ...books.map((b, i) => perBook[i].length
+    ? h('details', { class: 'lm-reasons-book' },
+      h('summary', null, b.name, h('small', null, ` ${perBook[i].length} 條`)),
+      h('div', { class: 'lm-rgrid' }, ...perBook[i].map(reasonCard)))
+    : null));
+  const toggle = h('button', { type: 'button', class: 'lm-btn lm-more-q', 'aria-expanded': 'false' }, `看全部 ${withWhy.length} 條，依書卷分開`);
+  toggle.addEventListener('click', () => {
+    const open = all.hidden;
+    all.hidden = !open;
+    sample.hidden = open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '收起，只看幾條' : `看全部 ${withWhy.length} 條，依書卷分開`;
+  });
   return h('section', { class: 'lm-block lm-reasons' },
     h('div', { class: 'lm-block-head' },
       h('h2', null, '經文自己交代的理由'),
-      h('p', { class: 'lm-block-note' }, '不少律法旁邊跟著一句原因。下面是和合本的原句，點標題看整條律法。')),
-    h('div', { class: 'lm-rgrid' }, ...items.map(({ l, w }) => h('article', { class: 'lm-reason', style: `--c: ${groupColor(l)}`, 'data-laws': l.id },
-      h('blockquote', null, h('p', null, w.text), h('cite', null, w.ref)),
-      h('a', { class: 'lm-reason-go', href: href('law', l.id) }, l.title, ' →')))));
+      h('p', { class: 'lm-block-note' }, `${withWhy.length} 條律法的經文自己說了原因。下面是和合本的原句，點標題看整條律法。`)),
+    toggle, sample, all);
 }
 
 // ---- 五經律法帶 ----

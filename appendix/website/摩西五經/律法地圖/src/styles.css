@@ -134,6 +134,13 @@ code { font-size: 0.9em; }
 .lm-reason { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border-top: 3px solid var(--c); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
 .lm-reason blockquote { margin: 0; flex: 1; }
 .lm-reason blockquote p { margin: 0; font-family: var(--serif); line-height: 1.8; }
+.lm-reasons .lm-rgrid[hidden], .lm-reasons-all[hidden] { display: none; }
+.lm-reason-quotes { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.lm-reasons-book { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+.lm-reasons-book summary { cursor: pointer; font-family: var(--serif); font-size: 1.1rem; font-weight: 700; padding: 4px 0; }
+.lm-reasons-book summary small { font-weight: 400; color: var(--ink-2); font-size: 0.85rem; }
+.lm-reasons-book .lm-rgrid { margin-top: 10px; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.lm-reasons .lm-more-q { margin: 0 0 14px; }
 .lm-reason-go { font-size: 0.92rem; text-decoration: none; color: var(--c); }
 .lm-reason-go:hover { text-decoration: underline; }
 /* 條文頁：經文自己交代的理由 */
