@@ -16,7 +16,6 @@ chapters:
             topics: [clean-food]
             summary: 神賜福給人，要生養眾多、遍滿地面、治理並管理活物；把結種子的菜蔬和有核果子賜人作食物，青草賜地上活物作食物。
             basis: [28, 29, 30]
-            why: [28, 29]
   - chapter: 2
     excluded:
       - { verses: "1", reason: 創世記的敘事、家譜或預言，沒有要百姓遵行的條文 }

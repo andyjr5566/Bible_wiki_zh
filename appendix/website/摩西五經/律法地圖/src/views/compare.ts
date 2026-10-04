@@ -31,7 +31,8 @@ export function compareView(route: Route): HTMLElement {
       ? h('section', null, h('h2', null, '這幾段的關係'),
         h('ul', { class: 'lm-plain-list' }, ...rels.map(({ rel }) => h('li', null, `${relationSentence(rel!)}。`, evidenceLine(rel!.evidence)))))
       : h('p', { class: 'lm-note' }, '這幾段之間目前沒有找到出處說明它們的關係，可能只是主題相同。'),
-    h('details', { class: 'lm-sub', open: true }, h('summary', null, `逐字比較 ${refText(ls[0])} 和 ${refText(ls[1])}`), diffBlock(ls[0], ls[1], text)));
+    ...ls.slice(1).map((l, i) => h('details', { class: 'lm-sub', open: i === 0 },
+      h('summary', null, `逐字比較 ${refText(ls[i])} 和 ${refText(l)}`), diffBlock(ls[i], l, text))));
 }
 
 function diffBlock(a: Law, b: Law, text: (l: Law) => string): HTMLElement {

@@ -17,7 +17,8 @@ function cell(b: Book, c: number, slim: boolean): HTMLElement {
   if (!ls.length) return h('span', { class: 'lm-rib-cell lm-rib-empty', 'data-k': key, title: `${b.abbr}${c}` });
   const bar = h('span', { class: 'lm-rib-bar', style: slim ? null : `--n: ${ls.length}` },
     ...ls.map((l) => h('span', { class: 'lm-rib-seg', 'data-law': l.id, style: `--c: var(--g${groupOfLaw(l)?.color ?? 0})` })));
-  return h('a', { class: 'lm-rib-cell', href: href('ref', key), 'data-k': key, 'data-laws': ls.map((l) => l.id).join(' '), title: `${b.name}第${c}章：${ls.map((l) => l.title).join('、')}` }, bar);
+  const label = `${b.name}第${c}章：${ls.map((l) => l.title).join('、')}`;
+  return h('a', { class: 'lm-rib-cell', href: href('ref', key), 'data-k': key, 'data-laws': ls.map((l) => l.id).join(' '), title: label, 'aria-label': label }, bar);
 }
 
 export function ribbon(size: 'big' | 'slim'): HTMLElement {
@@ -42,12 +43,22 @@ export function ribbon(size: 'big' | 'slim'): HTMLElement {
 // ---- 亮起與標記 ----
 let base: Set<string> | null = null;
 let mark: string | null = null;
+/** 點了問題卡之後留著亮：離開滑鼠也不熄，直到換頁或再點一次 */
+let pinned: Set<string> | null = null;
 
 /** 這一頁的預設狀態：亮哪幾條律法（null＝全部照常）、標記哪一章或哪一卷 */
 export function setRibbonBase(ids: string[] | null, markKey: string | null = null) {
   base = ids ? new Set(ids) : null;
   mark = markKey;
+  pinned = null;
   apply(base);
+}
+
+/** 讓帶子一直亮出這幾條律法（null＝取消） */
+export function pinRibbon(ids: string[] | null) {
+  pinned = ids?.length ? new Set(ids) : null;
+  hovering = null;
+  apply(pinned ?? base);
 }
 
 function apply(on: Set<string> | null, ribs: Iterable<HTMLElement> = document.querySelectorAll<HTMLElement>('.lm-rib')) {
@@ -65,11 +76,11 @@ function track(e: Event) {
   if (t === hovering) return;
   hovering = t;
   const ids = t?.getAttribute('data-laws')?.split(' ').filter(Boolean);
-  apply(ids?.length ? new Set(ids) : base);
+  apply(ids?.length ? new Set(ids) : pinned ?? base);
 }
 document.addEventListener('pointerover', track);
 document.addEventListener('focusin', track);
-document.addEventListener('pointerleave', () => { hovering = null; apply(base); });
+document.addEventListener('pointerleave', () => { hovering = null; apply(pinned ?? base); });
 
 /** 有收律法的章數，給首頁說明用 */
 export const chaptersWithLaws = () => new Set(laws.map((l) => `${l.book}${l.chapter}`)).size;

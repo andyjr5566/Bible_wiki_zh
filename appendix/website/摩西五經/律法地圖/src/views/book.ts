@@ -15,11 +15,28 @@ export function bookView(route: Route): HTMLElement {
     h('nav', { class: 'lm-crumbs', 'aria-label': '位置' }, h('a', { href: '#/' }, '首頁')),
     h('header', { class: 'lm-page-head' }, h('h1', null, b.name),
       h('p', { class: 'lm-lede' }, groups.length ? '這一卷收錄的律法，依全書目錄的段落和章排列。' : '這一卷還沒有收錄條文。')),
+    groups.length ? h('div', { class: 'lm-book-tools' },
+      h('button', { type: 'button', class: 'lm-btn', onclick: () => toggleAll(true) }, '全部展開'),
+      h('button', { type: 'button', class: 'lm-btn', onclick: () => toggleAll(false) }, '全部收起')) : null,
     ...groups.map(({ title, sections }) => h('section', { class: 'lm-code' },
       title ? h('h2', null, title) : null,
-      ...chapters(sections).map(([ch, secs]) => h('section', { class: 'lm-chapter' },
-        h('h3', null, h('a', { href: href('ref', `${b.abbr}${ch}`) }, `第${ch}章`)),
-        ...secs.map(sectionBlock))))));
+      ...chapters(sections).map(([ch, secs]) => chapterBlock(b.abbr, ch, secs)))));
+}
+
+/** 一章一個可收合的區塊：先看到章號、條數和段落標題，要看條文再點開（原生 details，不換頁、不捲動） */
+function chapterBlock(abbr: string, ch: number, secs: Section[]): HTMLElement {
+  const n = secs.reduce((sum, s) => sum + s.laws.length, 0);
+  return h('details', { class: 'lm-chapter' },
+    h('summary', null,
+      h('span', { class: 'lm-chapter-no' }, `第${ch}章`),
+      h('span', { class: 'lm-chapter-n' }, `${n} 條`),
+      h('span', { class: 'lm-chapter-secs' }, secs.map((s) => s.title).join('、'))),
+    h('p', { class: 'lm-chapter-link' }, h('a', { href: href('ref', `${abbr}${ch}`) }, `只看第${ch}章 →`)),
+    ...secs.map(sectionBlock));
+}
+
+function toggleAll(open: boolean) {
+  document.querySelectorAll<HTMLDetailsElement>('.lm-book-page details.lm-chapter').forEach((d) => { d.open = open; });
 }
 
 /** #/ref/出21：從章節附錄連過來時落在這裡 */

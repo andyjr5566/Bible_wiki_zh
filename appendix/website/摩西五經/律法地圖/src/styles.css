@@ -329,6 +329,17 @@ details.lm-layer[open] .lm-preview { display: none; }
 
 /* ---------- 書卷、條目 ---------- */
 .lm-code > h2 { border-bottom: 2px solid var(--line); padding-bottom: 4px; }
+.lm-book-tools { display: flex; gap: 8px; margin: 0 0 6px; }
+.lm-chapter { border-bottom: 1px solid var(--line); }
+.lm-chapter > summary { display: flex; align-items: baseline; gap: 12px; padding: 10px 2px; cursor: pointer; list-style: none; }
+.lm-chapter > summary::-webkit-details-marker { display: none; }
+.lm-chapter > summary::before { content: '▸'; color: var(--ink-2); flex: none; }
+.lm-chapter[open] > summary::before { content: '▾'; }
+.lm-chapter-no { font-family: var(--serif); font-weight: 700; flex: none; }
+.lm-chapter-n { color: var(--ink-2); font-size: 0.85rem; flex: none; }
+.lm-chapter-secs { color: var(--ink-2); font-size: 0.92rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lm-chapter-link { margin: 0 0 4px; font-size: 0.92rem; }
+.lm-chapter[open] { padding-bottom: 10px; }
 .lm-section h4 { margin: 14px 0 6px; }
 .lm-section h4 small { font-weight: 400; color: var(--ink-2); }
 .lm-bybook h3 { margin-bottom: 8px; }

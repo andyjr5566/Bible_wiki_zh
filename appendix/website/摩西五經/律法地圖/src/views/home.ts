@@ -4,7 +4,7 @@ import { href } from '../router';
 import { glossText, groupColor } from '../ui/cards';
 import { openGuide } from '../ui/guide';
 import { h } from '../ui/dom';
-import { chaptersWithLaws, ribbon } from '../ui/ribbon';
+import { chaptersWithLaws, pinRibbon, ribbon } from '../ui/ribbon';
 import { searchBox } from '../ui/searchbox';
 
 /**
@@ -87,6 +87,7 @@ function qCard(q: Question, i: number): HTMLElement {
     btn.setAttribute('aria-expanded', String(open));
     answer.hidden = !open;
     card.classList.toggle('lm-q-open', open);
+    pinRibbon(open ? ls.map((l) => l.id) : null);
   });
   return card;
 }
