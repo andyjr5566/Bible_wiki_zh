@@ -120,17 +120,11 @@ def _append_entry(
     entries: defaultdict[str, list[dict[str, str]]],
     key: str,
     html_file: Path,
-    *,
-    toc_only: bool = False,
 ) -> None:
-    item = {
+    entries[key].append({
         "title": extract_title(html_file),
         "path": _relative_path(html_file),
-    }
-    if toc_only:
-        # 只列在各卷「全書目錄及綱要」，不寫進章節檔的附錄區塊
-        item["toc_only"] = True
-    entries[key].append(item)
+    })
 
 
 def _chapter_html_entries(
@@ -154,13 +148,11 @@ def _chapter_html_entries(
             # 一個網站涵蓋好幾章時，在專案根目錄放 appendix-chapters.json，
             # 例如 ["第12章", "第13章"]，其他章的附錄也會列出同一個入口。
             # 跨卷時寫完整的「書名/第N章」，例如 ["出埃及記/第20章", "申命記/第5章"]。
-            for extra in _extra_chapters(chapter_dir):
-                _append_entry(
-                    entries,
-                    extra if "/" in extra else f"{book}/{extra}",
-                    built_index,
-                    toc_only=not _is_book_folder(book),
-                )
+            extras = _extra_chapters(chapter_dir)
+            if not _is_book_folder(book):
+                extras = _first_chapter_per_book(extras)
+            for extra in extras:
+                _append_entry(entries, extra if "/" in extra else f"{book}/{extra}", built_index)
 
         # A Vite chapter may also contain hand-authored static pages.  Keep
         # those links, but never expose the Vite source index as a live page.
@@ -169,6 +161,19 @@ def _chapter_html_entries(
 
     for html_file in sorted(html_files, key=lambda path: path.name.lower()):
         _append_entry(entries, key, html_file)
+
+
+def _first_chapter_per_book(extras: list[str]) -> list[str]:
+    """跨卷網站（例如 摩西五經的律法）涵蓋近百章，不要掛到每一章的附錄；
+    每一卷只掛在它涵蓋的第一章，各卷全書目錄仍會列出這個入口。"""
+    first: dict[str, tuple[int, str]] = {}
+    for extra in extras:
+        book, _, chapter = extra.partition("/")
+        match = re.search(r"\d+", chapter)
+        number = int(match.group()) if match else 10**6
+        if book not in first or number < first[book][0]:
+            first[book] = (number, extra)
+    return [extra for _, extra in first.values()]
 
 
 def _is_book_folder(book: str) -> bool:
