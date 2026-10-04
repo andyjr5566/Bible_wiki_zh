@@ -58,6 +58,7 @@ chapters:
             topics: [marriage, sexual, courts]
             summary: 丈夫若疑妻暗中行淫且無見證，就帶妻和疑恨素祭見祭司；婦人起誓喝致咒詛的苦水，有罪必受災，清潔則免災且可懷孕。
             basis: [12, 13, 14, 15, 16, 19, 20, 24, 27, 28]
+            why: [15]
             entries: [疑恨的素祭（大麥面不加油乳香）]
   - chapter: 6
     excluded:
@@ -82,6 +83,7 @@ chapters:
             topics: [vows, corpse, burnt-offering, guilt-offering, sin-offering]
             summary: 旁邊忽然有人死了，沾染離俗的頭；第七日潔淨時剃頭，第八日獻兩隻斑鳩或雛鴿，一隻作贖罪祭、一隻作燔祭，另獻一歲公羊羔作贖愆祭；先前日子歸徒然，須重選日子。
             basis: [9, 10, 11, 12]
+            why: [12]
             entries: [不可挨近死屍（拿細耳人的潔淨）, 拿細耳人滿期還俗條例]
           - id: num06-13
             title: 離俗的日子滿了，獻燔祭、贖罪祭、平安祭，剃頭放在火上

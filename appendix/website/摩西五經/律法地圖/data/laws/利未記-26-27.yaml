@@ -17,6 +17,7 @@ chapters:
             topics: [sabbath, idolatry]
             summary: 你們不可做什麼虛無的神像，不可立雕刻的偶像或是柱像，也不可在你們的地上安什麼鏨成的石像，向它跪拜；你們要守我的安息日，敬我的聖所。
             basis: [1, 2]
+            why: [1]
   - chapter: 27
     excluded:
       - { verses: "1", reason: 耶和華對摩西說話的引言 }
@@ -80,6 +81,7 @@ chapters:
             topics: [vows]
             summary: 一切永獻的，無論是人、牲畜，或是承受為業的地，都不可賣，也不可贖；凡從人中當滅的都不可贖，必被治死。
             basis: [28, 29]
+            why: [28]
       - id: lev27-s4
         title: 十分之一
         verses: 30-33

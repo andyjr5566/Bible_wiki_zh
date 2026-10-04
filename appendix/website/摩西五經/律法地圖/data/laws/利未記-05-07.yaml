@@ -35,6 +35,7 @@ chapters:
             topics: [poor, sin-offering]
             summary: 力量不夠獻兩隻斑鳩或雛鴿，就帶細麵伊法十分之一為贖罪祭，不可加上油和乳香；祭司取出一把作為紀念燒在壇上，剩下的麵歸與祭司，和素祭一樣。
             basis: [11, 12, 13]
+            why: [11]
             entries: [贖罪祭]
       - id: lev05-s2
         title: 贖愆祭
@@ -53,6 +54,7 @@ chapters:
             topics: [guilt-offering]
             summary: 行了耶和華所吩咐不可行的事，雖然不知道，還是有了罪，要擔當罪孽；要照所估定的價，牽一隻沒有殘疾的公綿羊給祭司作贖愆祭，祭司為他贖罪，他必蒙赦免。
             basis: [17, 18]
+            why: [19]
             entries: [贖愆祭（asham）]
   - chapter: 6
     excluded:
@@ -164,4 +166,5 @@ chapters:
             topics: [peace-offering, priest-portions]
             summary: 獻平安祭的，要把脂油和胸帶來，胸在耶和華面前搖一搖；脂油由祭司在壇上焚燒，胸歸亞倫和他的子孫；右腿作舉祭奉給祭司，是祭司世世代代永得的分。
             basis: [29, 30, 31, 32, 33, 34]
+            why: [34]
             entries: [平安祭]

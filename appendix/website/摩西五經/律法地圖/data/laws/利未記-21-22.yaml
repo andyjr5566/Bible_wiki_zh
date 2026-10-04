@@ -16,6 +16,7 @@ chapters:
             topics: [priests, corpse]
             summary: 祭司不可為民中的死人沾染自己，除非是為骨肉之親的父母、兒女、弟兄，和未曾出嫁的處女姊妹；祭司既在民中為首，就不可從俗沾染自己。
             basis: [1, 2, 3, 4]
+            why: [4]
           - id: lev21-05
             title: 不可使頭光禿、剃鬍鬚、用刀劃身，要歸神為聖
             refs: ["5-6"]
@@ -36,6 +37,7 @@ chapters:
             topics: [priests, sexual]
             summary: 祭司的女兒若行淫辱沒自己，就辱沒了父親，必用火將他焚燒。
             basis: [9]
+            why: [9]
       - id: lev21-s2
         title: 大祭司的規矩
         verses: 10-15
@@ -81,6 +83,7 @@ chapters:
             topics: [offerings, corpse, priest-portions]
             summary: 亞倫的後裔身上有污穢，或長大痲瘋、有漏症的，不可吃聖物，直等他潔淨了；摸了使他不潔淨的，必不潔淨到晚上，不用水洗身就不可吃聖物，日落時潔淨了才可以吃；自死的或被野獸撕裂的，不可吃。
             basis: [2, 3, 4, 5, 6, 7, 8]
+            why: [2, 9]
           - id: lev22-10
             title: 外人、雇工人不可吃聖物，祭司買的人和家人可以
             refs: ["10-13"]
@@ -93,6 +96,7 @@ chapters:
             topics: [offerings, priest-portions]
             summary: 有人誤吃了聖物，要照聖物的原數加上五分之一交給祭司；祭司不可褻瀆以色列人所獻給耶和華的聖物，免得他們在吃聖物上自取罪孽。
             basis: [14, 15, 16]
+            why: [16]
       - id: lev22-s2
         title: 獻上的祭牲
         verses: 18-33
@@ -103,6 +107,7 @@ chapters:
             topics: [offerings]
             summary: 許願或甘心獻燔祭、平安祭，要獻無殘疾的公牛、綿羊或山羊；瞎眼、折傷等有殘疾的不可獻，肢體多或少的只可作甘心祭；有殘疾的外來牲畜也不可收。
             basis: [18, 19, 20, 21, 22, 23, 24, 25]
+            why: [20, 25]
           - id: lev22-27
             title: 才生的牲畜，七天跟著母，第八天以後可獻
             refs: ["27"]
@@ -127,3 +132,4 @@ chapters:
             topics: [divine-name]
             summary: 你們要謹守遵行我的誡命；不可褻瀆我的聖名，我在以色列人中卻要被尊為聖；我是叫你們成聖的耶和華，把你們從埃及地領出來，作你們的神。
             basis: [31, 32, 33]
+            why: [32]

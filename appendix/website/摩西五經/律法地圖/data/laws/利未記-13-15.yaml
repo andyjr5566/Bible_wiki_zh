@@ -22,6 +22,7 @@ chapters:
             topics: [skin-disease, priests]
             summary: 皮上長了白癤使毛變白，又有紅瘀肉，是舊大痲瘋，祭司定他為不潔淨，不用關鎖；大痲瘋長滿全身，全身變為白，定為潔淨；紅肉顯在身上就不潔淨，變白了就潔淨。
             basis: [10, 11, 12, 13, 14, 15, 17]
+            why: [11]
           - id: lev13-18
             title: 瘡與火毒的痕跡
             refs: ["18-28"]
@@ -56,6 +57,7 @@ chapters:
             topics: [skin-disease, priests]
             summary: 衣服或皮子上的災病發綠、發紅要關鎖七天；發散就焚燒；未發散，洗後再關七天，未變色且未消散仍焚燒，發暗就撕去；若又出現要焚燒，災病離開後再洗就潔淨。
             basis: [47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58]
+            why: [52]
   - chapter: 14
     excluded:
       - { verses: "1", reason: 耶和華曉諭摩西的引言 }
@@ -94,12 +96,14 @@ chapters:
             topics: [skin-disease, priests]
             summary: 房屋有災病，祭司先令騰空再察看；牆有紅綠凹斑就封鎖七天，發散便挖石、刮牆重墁；重墁後若再發且擴散就拆屋；封鎖時入屋者不潔到晚上，在屋內躺或吃的要洗衣服。
             basis: [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+            why: [36]
           - id: lev14-48
             title: 房子的災病止住，用鳥行潔淨之禮
             refs: ["48-53"]
             topics: [skin-disease, priests]
             summary: 房子墁了以後，災病沒有發散，祭司定房子為潔淨；要取兩隻鳥、香柏木、朱紅色線和牛膝草，用鳥血和活水潔淨那房子，把活鳥放在城外田野裡。
             basis: [48, 49, 50, 52, 53]
+            why: [48]
   - chapter: 15
     excluded:
       - { verses: "1", reason: 耶和華對摩西、亞倫說話的引言 }
@@ -121,6 +125,7 @@ chapters:
             topics: [body-discharge, burnt-offering, sin-offering]
             summary: 患漏症的人痊癒了，要計算七天，洗衣服，用活水洗身；第八天取兩隻斑鳩或雛鴿，帶到會幕門口交給祭司，一隻為贖罪祭，一隻為燔祭。
             basis: [13, 14, 15]
+            why: [15]
       - id: lev15-s2
         title: 精液與月經
         verses: 16-30
@@ -143,6 +148,7 @@ chapters:
             topics: [body-discharge, burnt-offering, sin-offering]
             summary: 女人在經期以外患多日的血漏，或經期過長，就不潔淨，所躺所坐的物也不潔淨；血漏好了，計算七天才潔淨；第八天取兩隻斑鳩或雛鴿給祭司，一隻為贖罪祭，一隻為燔祭。
             basis: [25, 26, 27, 28, 29, 30]
+            why: [30]
       - id: lev15-s3
         title: 與污穢隔絕
         verses: 31

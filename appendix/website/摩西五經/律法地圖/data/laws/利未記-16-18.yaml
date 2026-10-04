@@ -126,18 +126,21 @@ chapters:
             topics: [sexual]
             summary: 骨肉之親的下體不可露，不可親近他們；母親、繼母、姊妹（無論異母同父或異父同母）、孫女或外孫女，以及繼母從父親生的女兒，都不可露他們的下體。
             basis: [6, 7, 8, 9, 10, 11]
+            why: [7, 8]
           - id: lev18-12
             title: 姑母、姨母、伯叔母，不可親近
             refs: ["12-14"]
             topics: [sexual]
             summary: 不可露你姑母的下體，他是你父親的骨肉之親；不可露你姨母的下體，他是你母親的骨肉之親；不可親近你伯叔之妻。
             basis: [12, 13, 14]
+            why: [12, 13]
           - id: lev18-15
             title: 兒婦、弟兄的妻子、婦人和他的女兒，不可露下體
             refs: ["15-18"]
             topics: [sexual, marriage]
             summary: 不可露你兒婦或弟兄妻子的下體；不可既露了婦人的下體，又露他女兒的下體，也不可娶他的孫女或外孫女；你妻還在的時候，不可另娶他的姊妹作對頭。
             basis: [15, 16, 17, 18]
+            why: [16, 17]
           - id: lev18-19
             title: 女人行經的時候，不可親近
             refs: ["19"]
@@ -154,6 +157,7 @@ chapters:
             topics: [sexual, marriage]
             summary: 不可與鄰舍的妻行淫，玷污自己。
             basis: [20]
+            why: [20]
           - id: lev18-21
             title: 不可使兒女經火歸與摩洛，也不可褻瀆神的名
             refs: ["21"]
@@ -166,12 +170,14 @@ chapters:
             topics: [sexual]
             summary: 不可與男人苟合，像與女人一樣；這本是可憎惡的。
             basis: [22]
+            why: [22]
           - id: lev18-23
             title: 不可與獸淫合
             refs: ["23"]
             topics: [sexual]
             summary: 不可與獸淫合，玷污自己；女人也不可站在獸前，與牠淫合；這本是逆性的事。
             basis: [23]
+            why: [23]
       - id: lev18-s4
         title: 地會把人吐出來
         verses: 24-30

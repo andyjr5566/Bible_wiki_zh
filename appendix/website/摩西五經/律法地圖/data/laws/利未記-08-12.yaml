@@ -31,6 +31,7 @@ chapters:
             topics: [grain-offering, peace-offering, priest-portions]
             summary: 火祭中所剩的素祭，要在壇旁不帶酵而吃，因為是至聖的；搖的胸和舉的腿，祭司和他的兒女要在潔淨地方同吃，這是永得的分。
             basis: [12, 13, 14, 15]
+            why: [12, 13, 14]
   - chapter: 11
     excluded:
       - { verses: "1", reason: 耶和華對摩西、亞倫說話的引言 }
@@ -51,6 +52,7 @@ chapters:
             topics: [clean-food, corpse]
             summary: 駱駝、沙番、兔子倒嚼不分蹄，豬蹄分兩瓣卻不倒嚼，都與你們不潔淨；這些獸的肉不可吃，死的也不可摸。
             basis: [4, 5, 6, 7, 8]
+            why: [4, 7]
           - id: lev11-09
             title: 水中有翅有鱗的可以吃
             refs: ["9"]
@@ -113,6 +115,7 @@ chapters:
             topics: [clean-food]
             summary: 凡地上的爬物都是可憎的，不可吃；用肚子行走的、四足行走的、有許多足的，都不可吃；不可因這些使自己成為可憎，染了污穢。
             basis: [41, 42, 43]
+            why: [42]
           - id: lev11-44
             title: 要成為聖潔，因為耶和華是聖潔的
             refs: ["44-47"]

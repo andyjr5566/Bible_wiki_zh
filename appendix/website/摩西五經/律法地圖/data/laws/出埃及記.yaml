@@ -32,6 +32,7 @@ chapters:
             topics: [divine-name]
             summary: 不可妄稱耶和華你神的名，因為妄稱耶和華名的，耶和華必不以他為無罪。
             basis: [7]
+            why: [7]
             entries: [不可妄稱耶和華你神的名]
           - id: ex20-08
             title: 守安息日為聖日
@@ -51,6 +52,7 @@ chapters:
             topics: [parents]
             summary: 要孝敬父母，使你的日子在耶和華所賜的地上得以長久。
             basis: [12]
+            why: [12]
             entries: [當孝敬父母]
           - id: ex20-13
             title: 不可殺人
@@ -173,6 +175,7 @@ chapters:
             topics: [slavery, injury]
             summary: 用棍子打奴僕或婢女，立時死在手下，必要受刑；若過一兩天才死，可以不受刑，因為是用錢買的。
             basis: [20, 21]
+            why: [21]
           - id: ex21-22
             title: 爭鬥傷了有孕的婦人
             refs: ["22-23"]
@@ -304,6 +307,7 @@ chapters:
             topics: [theft, loans]
             summary: 向鄰舍借什麼，所借的受傷或死了，本主沒有同在一處，借的人總要賠還；本主同在一處，或是雇來的，就不必賠還。
             basis: [14, 15]
+            why: [15]
       - id: ex22-s4
         title: 婚姻、邪術與祭祀別神的律例
         verses: 16-20
@@ -386,6 +390,7 @@ chapters:
             topics: [clean-food]
             summary: 你們要在耶和華面前為聖潔的人；田間被野獸撕裂牲畜的肉，不可吃，要丟給狗吃。
             basis: [31]
+            why: [31]
   - chapter: 23
     excluded:
       - { verses: "20-23", reason: 差遣使者保護引領的應許與警告 }
@@ -457,6 +462,7 @@ chapters:
             topics: [sabbath]
             summary: 六日要做工，第七日要安息，使牛、驢可以歇息，並使婢女的兒子和寄居的都可以舒暢。
             basis: [12]
+            why: [12]
             entries: [安息日]
           - id: ex23-13
             title: 謹守耶和華的話，別神的名不可提
@@ -481,6 +487,7 @@ chapters:
             topics: [passover]
             summary: 要守除酵節，在亞筆月內所定的日期，吃無酵餅七天；誰也不可空手朝見耶和華。
             basis: [15]
+            why: [15]
           - id: ex23-16
             title: 守收割節和收藏節
             refs: ["16"]
@@ -516,3 +523,4 @@ chapters:
             topics: [war, idolatry]
             summary: 不可和他們並他們的神立約；他們不可住在你的地上，恐怕他們使你得罪耶和華。
             basis: [32, 33]
+            why: [33]

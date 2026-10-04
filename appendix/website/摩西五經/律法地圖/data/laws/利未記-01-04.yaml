@@ -15,6 +15,7 @@ chapters:
             topics: [burnt-offering]
             summary: 若以牛為燔祭，要在會幕門口獻沒有殘疾的公牛；獻的人按手在牛頭上，宰牛，祭司把血灑在壇的周圍，把肉塊和頭並脂油擺在壇上，全燒。
             basis: [3, 4, 5, 8, 9]
+            why: [3]
             entries: [燔祭]
           - id: lev01-10
             title: 燔祭用羊，獻沒有殘疾的公羊
@@ -96,6 +97,7 @@ chapters:
             topics: [blood-fat, peace-offering]
             summary: 平安祭若獻山羊，要按手在山羊頭上，宰於會幕前，血灑在壇的周圍；脂油、腰子和肝上的網子都取下，由祭司在壇上焚燒；脂油都是耶和華的。
             basis: [12, 13, 14, 16]
+            why: [16]
             entries: [平安祭]
           - id: lev03-17
             title: 脂油和血都不可吃
