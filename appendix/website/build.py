@@ -343,17 +343,21 @@ def _print_entries(entries: dict[str, list[dict[str, str]]]) -> None:
             print(f"      - {item['title']} → {item['path']}")
 
 
-def _format_chapter_ranges(chapter_keys: list[str]) -> str:
-    """把 ``書名/第N章`` 依書卷合併連續章號，例如「出埃及記 第19–23、25–31章」。"""
-    by_book: dict[str, list[int | str]] = {}
+def _chapter_links(chapter_keys: list[str]) -> str:
+    """把 ``書名/第N章`` 依書卷合併連續章號，每卷一個連到該卷第一章的 wikilink。
+
+    例如 ``[[02 出埃及記/第19章|出埃及記 第19–23、25–31章]]``，格式比照各卷全書目錄。
+    """
+    by_book: dict[str, list[int]] = {}
     for key in chapter_keys:
         book, chapter = key.split("/", 1)
         match = re.fullmatch(r"第(\d+)章", chapter)
-        by_book.setdefault(book, []).append(int(match.group(1)) if match else chapter)
+        if match:
+            by_book.setdefault(book, []).append(int(match.group(1)))
 
-    parts: list[str] = []
+    links: list[str] = []
     for book, items in by_book.items():
-        numbers = sorted({item for item in items if isinstance(item, int)})
+        numbers = sorted(set(items))
         spans: list[str] = []
         start = previous = None
         for number in [*numbers, None]:
@@ -363,11 +367,14 @@ def _format_chapter_ranges(chapter_keys: list[str]) -> str:
             if start is not None:
                 spans.append(str(start) if start == previous else f"{start}–{previous}")
             start = previous = number
-        spans.extend(str(item) for item in items if not isinstance(item, int))
-        all_numeric = all(isinstance(item, int) for item in items)
-        label = f"第{'、'.join(spans)}章" if all_numeric else "、".join(spans)
-        parts.append(f"{book} {label}")
-    return "、".join(parts)
+        label = f"{book} 第{'、'.join(spans)}章"
+        if book in BOOK_ORDER:
+            # 書卷資料夾是「NN 書名」，順序與 _config/bible_books.json 相同
+            folder = f"{BOOK_ORDER[book] + 1:02d} {book}"
+            links.append(f"[[{folder}/第{numbers[0]}章|{label}]]")
+        else:
+            links.append(label)
+    return "、".join(links)
 
 
 def render_index_markdown(entries: dict[str, list[dict[str, str]]]) -> str:
@@ -398,10 +405,9 @@ def render_index_markdown(entries: dict[str, list[dict[str, str]]]) -> str:
     for path in sorted(chapters_by_path, key=entry_order_key):
         target = REPOSITORY_ROOT / path
         relative_path = os.path.relpath(target, CATEGORY_DIR).replace("\\", "/")
-        chapters = _format_chapter_ranges(
-            sorted(chapters_by_path[path], key=chapter_order_key)
-        )
-        lines.append(f"- [{titles[path]}](<{relative_path}>)（{chapters}）")
+        chapters = _chapter_links(sorted(chapters_by_path[path], key=chapter_order_key))
+        vault_path = (CATEGORY_DIR.relative_to(REPOSITORY_ROOT) / relative_path).as_posix()
+        lines.append(f"- {chapters}：[{titles[path]}]({vault_path})")
     return "\n".join(lines).rstrip() + "\n"
 
 
