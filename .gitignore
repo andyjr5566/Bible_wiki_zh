@@ -48,3 +48,7 @@ CLAUDE.local.md
 # per-run working state (findings + fix statuses), not authored content.
 .cc-suite/audits/
 # <<< cc-suite <<<
+
+# npx skills add 安裝的 skill（連結到 .agents/skills）與其紀錄檔
+.claude/skills/
+skills-lock.json
