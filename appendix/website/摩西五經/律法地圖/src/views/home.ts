@@ -2,6 +2,7 @@ import { books, DB, groupById, lawById, laws, lawsOfGroup, lawsOfTopic, lawWhy, 
 import type { Law, Question } from '../data/types';
 import { href } from '../router';
 import { glossText, groupColor } from '../ui/cards';
+import { openGuide } from '../ui/guide';
 import { h } from '../ui/dom';
 import { chaptersWithLaws, ribbon } from '../ui/ribbon';
 import { searchBox } from '../ui/searchbox';
@@ -19,7 +20,8 @@ export function homeView(): HTMLElement {
       h('p', { class: 'lm-lede lm-lede-hebrew' }, '希伯來文 ', h('span', { lang: 'he', dir: 'rtl' }, 'תּוֹרָה'), '（妥拉）的字義是指引、教導，字根 ', h('span', { lang: 'he', dir: 'rtl' }, 'יָרָה'), ' 也有射箭的意思。'),
       h('p', { class: 'lm-lede' }, '每一條附上和合本經文，經文自己交代的理由和別卷又記了一次的，都接在一起。'),
       searchBox(true),
-      quickTopics()),
+      quickTopics(),
+      h('p', { class: 'lm-hero-help' }, '第一次來？', h('button', { type: 'button', class: 'lm-link-btn', onclick: () => openGuide() }, '看七張小圖，認識這個網站怎麼用'))),
     questions(),
     reasons(),
     where(),

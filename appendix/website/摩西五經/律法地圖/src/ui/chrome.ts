@@ -1,5 +1,6 @@
 import { store } from '../store';
 import { fill, h } from './dom';
+import { openGuide } from './guide';
 import { ribbon } from './ribbon';
 import { searchBox } from './searchbox';
 
@@ -19,7 +20,7 @@ export function buildChrome(): HTMLElement {
     h('div', { class: 'lm-top-row' },
       h('a', { class: 'lm-brand', href: '#/' }, h('span', { class: 'lm-brand-mark', 'aria-hidden': 'true' }), '摩西五經的律法'),
       searchBox(false),
-      h('nav', { class: 'lm-top-nav' }, h('a', { href: '#/about' }, '關於')),
+      h('nav', { class: 'lm-top-nav' }, h('button', { type: 'button', class: 'lm-top-guide', onclick: () => openGuide() }, '導覽'), h('a', { href: '#/about' }, '關於')),
       prefs),
     h('div', { class: 'lm-top-rib' }, ribbon('slim')));
 }

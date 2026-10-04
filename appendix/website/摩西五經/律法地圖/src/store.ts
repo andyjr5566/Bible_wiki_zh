@@ -30,6 +30,8 @@ const listeners = new Map<Topic, Set<() => void>>();
 export const store = {
   theme: load<'auto' | 'light' | 'dark'>('theme', 'auto'),
   big: load<boolean>('big', false),
+  /** 看過導覽了（第一次來才自動打開） */
+  guided: load<boolean>('guided', false),
   layers: new Set<Layer>(load<Layer[]>('layers', []).filter((l) => l !== 'sources')),
 
   on(topic: Topic, fn: () => void) {
@@ -52,6 +54,10 @@ export const store = {
     this.theme = t;
     save('theme', t);
     this.emit('prefs');
+  },
+  setGuided(g: boolean) {
+    this.guided = g;
+    save('guided', g);
   },
   setBig(b: boolean) {
     this.big = b;
