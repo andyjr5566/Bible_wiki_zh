@@ -2,7 +2,7 @@ import { lawById, lawVerses, refText, relationBetween, relationSentence } from '
 import type { Law } from '../data/types';
 import { charDiff, similarity } from '../lib/diff';
 import { href, type Route } from '../router';
-import { evidenceLine, groupColor, scripture } from '../ui/cards';
+import { evidenceLine, groupColor, scripture, whyBlock } from '../ui/cards';
 import { h } from '../ui/dom';
 import { setRibbonBase } from '../ui/ribbon';
 
@@ -25,6 +25,7 @@ export function compareView(route: Route): HTMLElement {
     h('div', { class: 'lm-compare-cols', style: `--n: ${ls.length}` }, ...ls.map((l) => h('section', { class: 'lm-compare-col', style: `--c: ${groupColor(l)}`, 'data-laws': l.id },
       h('h2', null, h('a', { href: href('law', l.id) }, l.title), h('small', null, refText(l))),
       h('p', { class: 'lm-other-sum' }, l.summary),
+      whyBlock(l),
       scripture(l)))),
     rels.length
       ? h('section', null, h('h2', null, '這幾段的關係'),

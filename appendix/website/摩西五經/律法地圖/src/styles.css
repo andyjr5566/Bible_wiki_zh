@@ -95,6 +95,8 @@ code { font-size: 0.9em; }
 .lm-sr:last-child { border-bottom: 0; }
 .lm-sr:hover, .lm-sr:focus { background: var(--surface-2); }
 .lm-sr small { color: var(--ink-2); white-space: nowrap; }
+.lm-sr { flex-wrap: wrap; }
+.lm-sr-why { flex-basis: 100%; min-width: 0; font-family: var(--serif); font-size: 0.88rem; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lm-sr-none { color: var(--ink-2); }
 
 /* ---------- 版面 ---------- */
@@ -140,6 +142,12 @@ code { font-size: 0.9em; }
 .lm-why-q { margin: 0; padding: 2px 0 2px 14px; border-left: 3px solid var(--c); }
 .lm-why-q + .lm-why-q { margin-top: 8px; }
 .lm-why-q p { margin: 0; font-family: var(--serif); line-height: 1.8; }
+/* 卡片上的理由：比條文頁小一號，標籤與原句貼在一起 */
+.lm-why-compact { margin: 8px 0 0; max-width: none; }
+.lm-why-compact .lm-why-label { font-size: 0.76rem; margin-bottom: 2px; }
+.lm-why-compact .lm-why-q { padding-left: 10px; border-left-width: 2px; }
+.lm-why-compact .lm-why-q p { font-size: 0.88rem; line-height: 1.7; }
+.lm-why-compact .lm-why-q cite { font-size: 0.78rem; margin-top: 0; }
 .lm-quick { display: flex; flex-wrap: wrap; gap: 8px; }
 .lm-quick-label { align-self: center; color: var(--ink-2); font-size: 0.88rem; margin-right: 4px; }
 .lm-quick-chip { padding: 5px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 0.95rem; }

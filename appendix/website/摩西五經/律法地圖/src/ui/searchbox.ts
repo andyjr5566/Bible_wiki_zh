@@ -1,4 +1,5 @@
-import { refText } from '../data/db';
+import { lawWhy, refText } from '../data/db';
+import type { Law } from '../data/types';
 import { search } from '../lib/search';
 import { go, href } from '../router';
 import { fill, h } from './dom';
@@ -14,13 +15,15 @@ export function searchBox(big = false): HTMLElement {
   const render = () => {
     const r = search(input.value);
     const rows: HTMLElement[] = [];
-    const row = (label: string, sub: string, target: string, laws = '') =>
-      rows.push(h('a', { class: 'lm-sr', href: target, role: 'option', onclick: close, 'data-laws': laws || null }, h('span', null, label), h('small', null, sub)));
+    const row = (label: string, sub: string, target: string, laws = '', reason = '') =>
+      rows.push(h('a', { class: 'lm-sr', href: target, role: 'option', onclick: close, 'data-laws': laws || null },
+        h('span', null, label), h('small', null, sub), reason ? h('span', { class: 'lm-sr-why' }, reason) : null));
+    const why = (l: Law) => lawWhy(l).map((w) => w.text).join('　');
     if (r.ref) {
-      if (r.ref.laws.length) r.ref.laws.forEach((l) => row(l.title, refText(l), href('law', l.id), l.id));
+      if (r.ref.laws.length) r.ref.laws.forEach((l) => row(l.title, refText(l), href('law', l.id), l.id, why(l)));
       else rows.push(h('div', { class: 'lm-sr lm-sr-none' }, `${r.ref.label}：這裡還沒有收錄律法`));
     }
-    r.laws.forEach((l) => row(l.title, `律法 · ${refText(l)}`, href('law', l.id), l.id));
+    r.laws.forEach((l) => row(l.title, `律法 · ${refText(l)}`, href('law', l.id), l.id, why(l)));
     r.topics.forEach((t) => row(t.plain === t.name ? t.name : `${t.plain}（${t.name}）`, '主題', href('topic', t.id)));
     r.entries.forEach((e) => row(e, '人物、地方與觀念', href('entry', e)));
     fill(results, ...(rows.length ? rows : [h('div', { class: 'lm-sr lm-sr-none' }, '找不到。可以試試經文出處，例如「出21」。')]));

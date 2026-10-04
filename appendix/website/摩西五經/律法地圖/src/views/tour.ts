@@ -1,6 +1,6 @@
 import { DB, lawById, refText, relationBetween, relationSentence } from '../data/db';
 import { href, type Route } from '../router';
-import { evidenceLine, glossText, groupColor, scripture } from '../ui/cards';
+import { evidenceLine, glossText, groupColor, scripture, whyBlock } from '../ui/cards';
 import { h } from '../ui/dom';
 import { setRibbonBase } from '../ui/ribbon';
 
@@ -27,6 +27,7 @@ export function tourView(route: Route): HTMLElement {
       h('h2', null, l.title, h('small', null, refText(l))),
       rel && prev ? h('div', { class: 'lm-stop-rel' }, `${relationSentence(rel)}。`, evidenceLine(rel.evidence, false)) : null,
       h('p', { class: 'lm-say' }, ...glossText(l.summary)),
+      whyBlock(l),
       scripture(l),
       h('p', null, h('a', { href: href('law', l.id) }, '這一條的出處與相關條目 →'))),
     h('nav', { class: 'lm-tour-nav' },

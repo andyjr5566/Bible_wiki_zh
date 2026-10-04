@@ -1,8 +1,8 @@
-import { abbrOf, bookByName, chapterHref, DB, entryHref, lawById, lawEntries, laws, lawWhy, refText, relationLabel, relationsOf, sectionOf, topicsOf } from '../data/db';
+import { abbrOf, bookByName, chapterHref, DB, entryHref, lawById, lawEntries, laws, refText, relationLabel, relationsOf, sectionOf, topicsOf } from '../data/db';
 import type { Law } from '../data/types';
 import { href, type Route } from '../router';
 import { store, type Layer } from '../store';
-import { entryChip, evidenceLine, glossText, groupColor, scripture, scripturePreview, topicChip, TYPE_PLAIN } from '../ui/cards';
+import { entryChip, evidenceLine, glossText, groupColor, scripture, scripturePreview, topicChip, TYPE_PLAIN, whyBlock } from '../ui/cards';
 import { ext, h, type Child } from '../ui/dom';
 import { egoGraph } from '../ui/graph';
 import { setRibbonBase } from '../ui/ribbon';
@@ -52,15 +52,6 @@ export function lawView(route: Route): HTMLElement {
       ...layers),
     neighbors(l),
   );
-}
-
-/** 經文自己交代的理由：只放和合本原句與節號，網站不另寫理由 */
-function whyBlock(l: Law): HTMLElement | null {
-  const ws = lawWhy(l);
-  if (!ws.length) return null;
-  return h('div', { class: 'lm-why' },
-    h('span', { class: 'lm-why-label' }, '經文給的理由'),
-    ...ws.map((w) => h('blockquote', { class: 'lm-why-q' }, h('p', null, w.text), h('cite', null, w.ref))));
 }
 
 /** 一層：原生 <details>，打開不換頁、不捲動；記住讀者打開過哪幾層 */

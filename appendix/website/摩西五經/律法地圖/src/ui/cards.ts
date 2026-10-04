@@ -1,4 +1,4 @@
-import { DB, chapterHref, entryHref, groupOfLaw, groupOfTopic, lawsOfEntry, lawVerses, refText, relationLabel, relationsOf } from '../data/db';
+import { DB, chapterHref, entryHref, groupOfLaw, groupOfTopic, lawsOfEntry, lawVerses, lawWhy, refText, relationLabel, relationsOf } from '../data/db';
 import type { Evidence, Law, Topic } from '../data/types';
 import { href } from '../router';
 import { ext, h, type Child } from './dom';
@@ -68,6 +68,15 @@ export function topicChip(t: Topic): HTMLAnchorElement {
 }
 const lawIdsOfTopic = (id: string) => DB.laws.filter((l) => l.topics.includes(id)).map((l) => l.id).join(' ');
 
+/** 經文自己交代的理由：只放和合本原句與節號，網站不另寫理由。compact 給卡片用，字小、不放標籤的大字。 */
+export function whyBlock(l: Law, compact = false): HTMLElement | null {
+  const ws = lawWhy(l);
+  if (!ws.length) return null;
+  return h('div', { class: `lm-why${compact ? ' lm-why-compact' : ''}` },
+    h('span', { class: 'lm-why-label' }, '經文給的理由'),
+    ...ws.map((w) => h('blockquote', { class: 'lm-why-q' }, h('p', null, w.text), h('cite', null, w.ref))));
+}
+
 /** 條文卡（主題頁、書卷頁）：標題、出處、一句話；有別卷重述就標出來 */
 export function lawCard(l: Law): HTMLElement {
   const rels = relationsOf(l.id);
@@ -76,6 +85,7 @@ export function lawCard(l: Law): HTMLElement {
       h('span', { class: 'lm-card-ref' }, refText(l)),
       h('span', { class: 'lm-card-title' }, l.title)),
     h('p', { class: 'lm-card-sum' }, l.summary),
+    whyBlock(l, true),
     rels.length
       ? h('div', { class: 'lm-card-rels' }, ...rels.map(({ rel, other, outgoing }) =>
         h('a', { class: 'lm-rel', href: href('law', other.id), title: relationLabel(rel.type, outgoing) }, refText(other))))
