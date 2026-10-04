@@ -222,7 +222,9 @@ code { font-size: 0.9em; }
 .lm-rib-book.lm-here .lm-rib-name { color: var(--accent); font-weight: 700; }
 .lm-rib-slim .lm-rib-cells { display: flex; gap: 1px; height: 14px; }
 .lm-rib-slim .lm-rib-cell { position: relative; flex: 1 1 0; min-width: 0; display: flex; background: var(--surface-2); border-radius: 1px; }
-.lm-rib-slim .lm-rib-bar { display: flex; flex-direction: column; width: 100%; }
+.lm-rib-slim .lm-rib-bar { display: flex; flex-direction: column; width: 100%; height: 100%; overflow: hidden; }
+.lm-rib-slim .lm-rib-seg { min-height: 0; }
+.lm-rib-slim .lm-rib-seg + .lm-rib-seg { border-top-width: 0; }
 .lm-rib-slim .lm-rib-cell.lm-here { outline: 2px solid var(--ink); outline-offset: 1px; z-index: 1; }
 .lm-rib-slim .lm-rib-cell.lm-here::after { content: ''; position: absolute; left: 50%; bottom: calc(100% + 3px); transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--ink); }
 

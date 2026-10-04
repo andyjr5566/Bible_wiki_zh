@@ -1,13 +1,33 @@
-# 申命記的律法段落與條文（手寫 source of truth）。目前只有框架用的示範條文。
+# 申命記的律法段落與條文（手寫 source of truth）。目前收與出20–23 對照的幾段：申5 十誡、申15 豁免與奴僕、申19 逃城、申22–24 的零星條文。
 book: 申命記
 chapters:
   - chapter: 5
-    excluded: []
+    excluded:
+      - { verses: "6", reason: 十誡的引言 }
     sections:
       - id: deut5-s2
-        title: 十誡前半：獨一、形像、名與日子
-        verses: 6-15
+        title: 向著神的四誡
+        verses: 7-15
         laws:
+          - id: deut5-07
+            title: 除了耶和華，不可有別的神
+            refs: ["7"]
+            topics: [one-god]
+            summary: 除了耶和華以外，不可有別的神。
+            basis: [7]
+          - id: deut5-08
+            title: 不可雕刻偶像，也不可跪拜
+            refs: ["8-10"]
+            topics: [one-god]
+            summary: 不可為自己雕刻偶像，也不可做天上、地下、水中百物的形像，不可跪拜事奉，因為耶和華是忌邪的神。
+            basis: [8, 9]
+            why: [9]
+          - id: deut5-11
+            title: 不可妄稱耶和華的名
+            refs: ["11"]
+            topics: [one-god]
+            summary: 不可妄稱耶和華你神的名，因為妄稱耶和華名的，耶和華必不以他為無罪。
+            basis: [11]
           - id: deut5-12
             title: 照神的吩咐守安息日
             refs: ["12-15"]
@@ -15,9 +35,80 @@ chapters:
             summary: 要照神的吩咐守安息日：六日做工，第七日連僕婢、牛驢和寄居的客旅都不可做工，使僕婢可以和你一樣安息；也要記念你在埃及地作過奴僕。
             basis: [12, 13, 14, 15]
             why: [15]
+      - id: deut5-s3
+        title: 向著人的六誡
+        verses: 16-21
+        laws:
+          - id: deut5-16
+            title: 孝敬父母
+            refs: ["16"]
+            topics: [parents]
+            summary: 要照耶和華你神所吩咐的孝敬父母，使你得福，並使你的日子在耶和華所賜的地上得以長久。
+            basis: [16]
+          - id: deut5-17
+            title: 不可殺人
+            refs: ["17"]
+            topics: [homicide]
+            summary: 不可殺人。
+            basis: [17]
+          - id: deut5-18
+            title: 不可姦淫
+            refs: ["18"]
+            topics: [sexual, marriage]
+            summary: 不可姦淫。
+            basis: [18]
+          - id: deut5-19
+            title: 不可偷盜
+            refs: ["19"]
+            topics: [theft]
+            summary: 不可偷盜。
+            basis: [19]
+          - id: deut5-20
+            title: 不可作假見證陷害人
+            refs: ["20"]
+            topics: [courts]
+            summary: 不可作假見證陷害人。
+            basis: [20]
+          - id: deut5-21
+            title: 不可貪戀人的妻子、房屋和一切所有
+            refs: ["21"]
+            topics: [animals-property]
+            summary: 不可貪戀人的妻子；也不可貪圖人的房屋、田地、僕婢、牛、驢，和他一切所有的。
+            basis: [21]
+  - chapter: 14
+    excluded: []
+    sections:
+      - id: deut14-s1
+        title: 食物條例的末尾
+        verses: 21
+        laws:
+          - id: deut14-21
+            title: 自死的不可吃，不可煮山羊羔
+            refs: ["21"]
+            topics: [clean-food]
+            summary: 凡自死的都不可吃，可以給城裡寄居的吃，或賣給外人吃，因為你是歸耶和華你神為聖潔的民；不可用山羊羔母的奶煮山羊羔。
+            basis: [21]
+            why: [21]
   - chapter: 15
     excluded: []
     sections:
+      - id: deut15-s1
+        title: 第七年的豁免
+        verses: 1-11
+        laws:
+          - id: deut15-01
+            title: 每逢七年末一年，豁免弟兄的債
+            refs: ["1-3"]
+            topics: [sabbath-year, loans, poor]
+            summary: 每逢七年末一年要施行豁免：債主要把借給鄰舍的豁免了，不可向鄰舍和弟兄追討；借給外邦人可以追討，借給弟兄要鬆手豁免。
+            basis: [1, 2, 3]
+          - id: deut15-07
+            title: 對窮乏的弟兄要鬆開手
+            refs: ["7-11"]
+            topics: [loans, poor]
+            summary: 弟兄中若有窮人，不可忍著心、揝著手不幫補，總要向他鬆開手，照他所缺乏的借給他；不可因第七年的豁免年快到了，就什麼都不給他。
+            basis: [7, 8, 9]
+            why: [10]
       - id: deut15-s2
         title: 第七年讓人走出去
         verses: 12-18
@@ -29,3 +120,82 @@ chapters:
             summary: 被賣的希伯來男人或女人服事你六年，第七年要任他自由出去，而且要從羊群、禾場、酒醡之中多多地給他，不可使他空手而去。
             basis: [12, 13, 14]
             why: [15]
+  - chapter: 16
+    excluded: []
+    sections:
+      - id: deut16-s1
+        title: 設立審判官
+        verses: 18-20
+        laws:
+          - id: deut16-18
+            title: 設立審判官，不可屈枉正直，不可受賄賂
+            refs: ["18-20"]
+            topics: [courts]
+            summary: 要在各城裡按著各支派設立審判官和官長，他們必按公義的審判判斷百姓；不可屈枉正直，不可看人的外貌，也不可受賄賂。
+            basis: [18, 19]
+            why: [19]
+  - chapter: 19
+    excluded:
+      - { verses: "1", reason: 進入應許之地的引言 }
+      - { verses: "8-10", reason: 境界擴張後再添三座城的條件式預告 }
+    sections:
+      - id: deut19-s1
+        title: 逃城
+        verses: 2-13
+        laws:
+          - id: deut19-02
+            title: 分定三座逃城，誤殺人的可以逃去
+            refs: ["2-7"]
+            topics: [homicide]
+            summary: 要在耶和華所賜為業的地上分定三座城，預備道路，使誤殺人的可以逃到那裡存活，免得報血仇的追上將他殺死。
+            basis: [2, 3, 4]
+            why: [6]
+          - id: deut19-11
+            title: 蓄意殺人的，逃進城也要交出來
+            refs: ["11-13"]
+            topics: [homicide]
+            summary: 人恨鄰舍，埋伏擊殺他，以致於死，又逃進這些城的一座，本城的長老要打發人把他帶出來，交在報血仇的手中治死，眼不可顧惜他。
+            basis: [11, 12, 13]
+            why: [13]
+  - chapter: 22
+    excluded: []
+    sections:
+      - id: deut22-s1
+        title: 男女之間的條例
+        verses: 28-29
+        laws:
+          - id: deut22-28
+            title: 與沒有許配人的處女行淫
+            refs: ["28-29"]
+            topics: [marriage, sexual]
+            summary: 男子遇見沒有許配人的處女，抓住他，與他行淫，被人看見，就要拿五十舍客勒銀子給女子的父親，娶他為妻，終身不可休他。
+            basis: [28, 29]
+            why: [29]
+  - chapter: 23
+    excluded: []
+    sections:
+      - id: deut23-s1
+        title: 借貸與利息
+        verses: 19-20
+        laws:
+          - id: deut23-19
+            title: 借給弟兄不可取利，借給外邦人可以
+            refs: ["19-20"]
+            topics: [loans, poor]
+            summary: 借給弟兄的，錢財或糧食，無論什麼可生利的物，都不可取利；借給外邦人可以取利，只是借給弟兄不可取利。
+            basis: [19, 20]
+            why: [20]
+  - chapter: 24
+    excluded: []
+    sections:
+      - id: deut24-s1
+        title: 當頭的條例
+        verses: 10-13
+        laws:
+          - id: deut24-10
+            title: 向窮人取當頭，日落時要還他
+            refs: ["10-13"]
+            topics: [loans, poor]
+            summary: 借給鄰舍，不可進他家拿他的當頭，要站在外面等他拿出來；他若是窮人，不可留他的當頭過夜，日落的時候總要還他，使他用那件衣服蓋著睡覺。
+            basis: [10, 11, 12, 13]
+            why: [13]

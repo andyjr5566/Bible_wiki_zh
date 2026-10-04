@@ -131,18 +131,31 @@ function where(): HTMLElement {
 
 // ---- 別卷又記了一次 ----
 
+/** 首頁先放幾組，其餘按一下在原地補上 */
+const FIRST_THREADS = 6;
+
 function restated(): HTMLElement | null {
-  const clusters = relationClusters();
+  // 記載最多卷的先放前面；同樣多的照經文順序
+  const clusters = relationClusters().map((c, i) => ({ c, i })).sort((x, y) => new Set(y.c.map((l) => l.book)).size - new Set(x.c.map((l) => l.book)).size || x.i - y.i).map((x) => x.c);
   if (!clusters.length) return null;
+  const rows = clusters.map((c, i) => h('li', { hidden: i >= FIRST_THREADS },
+    h('a', { class: 'lm-thread', href: href('compare', c.map((l) => l.id).join(',')), 'data-laws': c.map((l) => l.id).join(' ') },
+      h('span', { class: 'lm-thread-title' }, c[0].title),
+      h('span', { class: 'lm-thread-line' }, ...books.filter((b) => c.some((l) => l.book === b.name)).map((b) =>
+        h('span', { class: 'lm-thread-node' }, h('b', null, b.name), c.filter((l) => l.book === b.name).map(refText).join('、')))))));
+  const rest = clusters.length - FIRST_THREADS;
+  const more = rest > 0
+    ? h('button', { type: 'button', class: 'lm-btn lm-more-q', onclick: (e: MouseEvent) => {
+      rows.forEach((r) => { r.hidden = false; });
+      (e.currentTarget as HTMLElement).remove();
+    } }, `再看 ${rest} 組`)
+    : null;
   return h('section', { class: 'lm-block lm-restated' },
     h('div', { class: 'lm-block-head' },
       h('h2', null, '別卷又記了一次的律法'),
       h('p', { class: 'lm-block-note' }, '同一件事，出埃及記、利未記、申命記的說法常常不完全一樣。點一組，幾段經文並排看。')),
-    h('ul', { class: 'lm-threads' }, ...clusters.map((c) => h('li', null,
-      h('a', { class: 'lm-thread', href: href('compare', c.map((l) => l.id).join(',')), 'data-laws': c.map((l) => l.id).join(' ') },
-        h('span', { class: 'lm-thread-title' }, c[0].title),
-        h('span', { class: 'lm-thread-line' }, ...books.filter((b) => c.some((l) => l.book === b.name)).map((b) =>
-          h('span', { class: 'lm-thread-node' }, h('b', null, b.name), c.filter((l) => l.book === b.name).map(refText).join('、')))))))),
+    h('ul', { class: 'lm-threads' }, ...rows),
+    more,
     DB.tours.length
       ? h('p', { class: 'lm-tours' }, '照順序一段一段讀：', ...DB.tours.flatMap((t, k) => [k ? '　' : '', h('a', { href: href('tour', t.id, 0), 'data-laws': t.stops.join(' ') }, t.title)]))
       : null);

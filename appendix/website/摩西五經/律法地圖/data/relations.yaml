@@ -22,3 +22,153 @@
   evidence:
     entry: 利25：39-43
     quote: 此條例補充了出21:2-6的奴僕律例
+- from: ex20-03
+  to: deut5-07
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-04
+  to: deut5-08
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-07
+  to: deut5-11
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-12
+  to: deut5-16
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-13
+  to: deut5-17
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-14
+  to: deut5-18
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-15
+  to: deut5-19
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-16
+  to: deut5-20
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex20-17
+  to: deut5-21
+  type: parallel
+  evidence:
+    entry: 申5：6-21
+    quote: 出二十1-17是十誡的首次頒布
+- from: ex21-12
+  to: num35-10
+  type: supplement
+  evidence:
+    entry: 民35：9-34
+    quote: 為出21:13「誤殺人者可逃往神所指定的地方」提供了完整的制度框架
+- from: ex21-12
+  to: deut19-02
+  type: supplement
+  evidence:
+    entry: 申19：1-13
+    quote: 出21:13 只說神會設下一個地方，民35:9-34 定出六座城與住到大祭司死為止的規則
+- from: ex21-12
+  to: deut19-11
+  type: supplement
+  evidence:
+    entry: 申19：1-13
+    quote: 出21:13 只說神會設下一個地方，民35:9-34 定出六座城與住到大祭司死為止的規則
+- from: ex21-24
+  to: lev24-17
+  type: parallel
+  evidence:
+    entry: 利24：19-20
+    quote: 利未記24:19-20重申出21:24的同態復仇法
+- from: ex22-16
+  to: deut22-28
+  type: parallel
+  evidence:
+    entry: 申22：28-29
+    quote: 引誘處女須交五十舍客勒聘禮，與出22:16-17平行
+- from: ex22-25
+  to: lev25-35
+  type: parallel
+  evidence:
+    entry: 利25：35-37
+    quote: 不可向窮人取利，與出22:25相同規定
+- from: ex22-25
+  to: deut23-19
+  type: supplement
+  evidence:
+    entry: 申23：19-20
+    quote: 出二十二25 的對象是「我民中有貧窮人」，申二十三19-20 則把範圍擴大到一切以色列弟兄
+- from: ex22-25
+  to: deut15-07
+  type: supplement
+  evidence:
+    entry: 申15：1-11
+    quote: 出二十二25 禁止向窮乏的弟兄取利，那是最基本的一條。出二十三10-11 加上第七年地要休耕，自長的留給窮人。申十五1-11 把兩件事合起來推進
+- from: ex22-26
+  to: deut24-10
+  type: parallel
+  evidence:
+    entry: 申24：10-13
+    quote: 取當頭須日落前歸還，與出22:26-27平行
+- from: ex22-28
+  to: lev24-15
+  type: supplement
+  evidence:
+    entry: 利24：16
+    quote: 褻瀆神名者必治死，與出22:28不可毀謗神平行
+- from: ex23-10
+  to: lev25-02
+  type: parallel
+  evidence:
+    entry: 利25：1-7
+    quote: 安息年地歇息，出23:10-11平行
+- from: ex23-10
+  to: deut15-01
+  type: supplement
+  evidence:
+    entry: 申15：1-11
+    quote: 出二十二25 禁止向窮乏的弟兄取利，那是最基本的一條。出二十三10-11 加上第七年地要休耕，自長的留給窮人。申十五1-11 把兩件事合起來推進
+- from: ex20-08
+  to: ex23-12
+  type: supplement
+  evidence:
+    entry: 出20：8-11
+    quote: 出20:8-11與出埃及記第二十三章的關聯：第四誡安息日，出23:12安息日使牛驢僕婢寄居者歇息。
+- from: ex23-19
+  to: ex34-26
+  type: parallel
+  evidence:
+    entry: 出23：19不可用山羊羔母奶煮山羊羔
+    quote: 出二十三19 與出三十四26 都收在節期條款的末尾，緊接著初熟之物的規定
+- from: ex23-19
+  to: deut14-21
+  type: parallel
+  evidence:
+    entry: 出23：19不可用山羊羔母奶煮山羊羔
+    quote: 出二十三19 與出三十四26 都收在節期條款的末尾，緊接著初熟之物的規定；申命記十四21 則收在食物條例的末尾
+- from: ex23-08
+  to: deut16-18
+  type: parallel
+  evidence:
+    entry: 以色列刑罰的節制與程序保障
+    quote: 不可受賄賂（出23:8；申16:19）
