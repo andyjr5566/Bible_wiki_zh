@@ -147,3 +147,22 @@ describe('介面文字不用公式句', () => {
     }
   });
 });
+
+describe('帶路用到的示範資料', () => {
+  // 帶路（src/ui/coach.ts）會請讀者點第一張問題卡、進它的律法、打開「別卷」、並排、再進利25:39。資料變動時要先確認這條路還走得通。
+  it('第一張問題卡的律法有別卷記載，並且能並排到利25:39 與申15:12', async () => {
+    const { DB, lawById, relationsOf } = await import('./db');
+    const demo = DB.questions[0].laws[0];
+    expect(lawById.has(demo)).toBe(true);
+    const others = relationsOf(demo).map((r) => r.other.id);
+    expect(others).toContain('lev25-39');
+    expect(others).toContain('deut15-12');
+  });
+  it('利25:39 有「經文給的理由」，並且屬於「奴僕與自由」這個主題', async () => {
+    const { lawById, lawWhy, topicById } = await import('./db');
+    const l = lawById.get('lev25-39')!;
+    expect(lawWhy(l).length).toBeGreaterThan(0);
+    expect(l.topics[0]).toBe('slavery');
+    expect(topicById.has('slavery')).toBe(true);
+  });
+});

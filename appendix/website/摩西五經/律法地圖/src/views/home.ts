@@ -2,7 +2,7 @@ import { books, DB, groupById, lawById, laws, lawsOfGroup, lawsOfTopic, lawWhy, 
 import type { Law, Question } from '../data/types';
 import { href } from '../router';
 import { glossText, groupColor } from '../ui/cards';
-import { openGuide } from '../ui/guide';
+import { startCoach } from '../ui/coach';
 import { h } from '../ui/dom';
 import { chaptersWithLaws, pinRibbon, ribbon } from '../ui/ribbon';
 import { searchBox } from '../ui/searchbox';
@@ -21,7 +21,7 @@ export function homeView(): HTMLElement {
       h('p', { class: 'lm-lede' }, '每一條附上和合本經文，經文自己交代的理由和別卷又記了一次的，都接在一起。'),
       searchBox(true),
       quickTopics(),
-      h('p', { class: 'lm-hero-help' }, '第一次來？', h('button', { type: 'button', class: 'lm-link-btn', onclick: () => openGuide() }, '看七張小圖，認識這個網站怎麼用'))),
+      h('p', { class: 'lm-hero-help' }, '第一次來？', h('button', { type: 'button', class: 'lm-link-btn', onclick: () => startCoach() }, '跟著做一遍，學會怎麼用（約三分鐘）'))),
     questions(),
     reasons(),
     where(),

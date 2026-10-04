@@ -3,7 +3,7 @@ import { bookByAbbr, groupById, lawById, topicById } from './data/db';
 import { parse, type Route } from './router';
 import { store } from './store';
 import { buildChrome } from './ui/chrome';
-import { offerGuide } from './ui/guide';
+import { coachSync, offerCoach } from './ui/coach';
 import { fill, h } from './ui/dom';
 import { setRibbonBase } from './ui/ribbon';
 import { aboutView } from './views/about';
@@ -66,10 +66,11 @@ function render() {
   document.title = t ? `${t}｜摩西五經的律法` : '摩西五經的律法';
   // 換頁一律回到頂端（只有換頁時；頁內打開收合區塊不會捲動）
   window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  coachSync();
 }
 
 window.addEventListener('hashchange', render);
 store.on('prefs', applyPrefs);
 applyPrefs();
 render();
-offerGuide(!parse().name);
+offerCoach(!parse().name);
