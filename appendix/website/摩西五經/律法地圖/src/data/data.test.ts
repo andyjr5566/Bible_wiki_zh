@@ -1,8 +1,8 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { buildAll, lintPlain, renderOutputs } from '../../scripts/build-data.mjs';
-import { extractRefs, IN_VAULT, ROOT, GIST_MAX } from '../../scripts/lib.mjs';
+import { BANNED, buildAll, lintCopy, lintPlain, renderOutputs } from '../../scripts/build-data.mjs';
+import { extractRefs, IN_VAULT, ROOT, GIST_MAX, SITE } from '../../scripts/lib.mjs';
 import data from './explorer.json';
 import type { Explorer } from './types';
 import { chapterUrl, entryUrl, WIKI_BASE } from './links';
@@ -93,5 +93,43 @@ describe('經文參照解析（證據引句用）', () => {
   });
   it('一般文字不會被當成參照', () => {
     expect(extractRefs('他們出去歸回本家，利益歸主人')).toEqual([]);
+  });
+});
+
+describe('首頁的問題卡', () => {
+  it('問句過 lint、以問號結尾，答案的條文都存在', () => {
+    const ids = new Set(DB.laws.map((l) => l.id));
+    for (const q of DB.questions) {
+      expect(lintCopy(q.q), q.q).toEqual([]);
+      expect(q.q.endsWith('？'), q.q).toBe(true);
+      expect(q.laws.length, q.q).toBeGreaterThan(0);
+      for (const id of q.laws) expect(ids.has(id), `${q.q} ${id}`).toBe(true);
+    }
+  });
+  it('標題 lint 擋得住標語式寫法與導覽口吻', () => {
+    expect(lintCopy('同一條律法說了三次：奴僕的自由').length).toBeGreaterThan(0);
+    expect(lintCopy('讓我們一起看安息日').length).toBeGreaterThan(0);
+    expect(lintCopy('被賣的弟兄什麼時候自由')).toEqual([]);
+  });
+});
+
+describe('介面文字不用公式句', () => {
+  // 掃 src 底下所有程式裡的中文字串（註解也算），命中白話說明的禁用清單就失敗
+  const files: string[] = [];
+  const walk = (dir: string) => {
+    for (const f of readdirSync(dir, { withFileTypes: true })) {
+      const p = resolve(dir, f.name);
+      if (f.isDirectory()) walk(p);
+      else if (/\.ts$/.test(f.name) && !/\.test\.ts$/.test(f.name)) files.push(p);
+    }
+  };
+  walk(resolve(SITE, 'src'));
+  it.each(files.map((f) => [f.slice(resolve(SITE, 'src').length + 1), f]))('%s', (_name, file) => {
+    const text = readFileSync(file as string, 'utf8');
+    const strings = text.match(/'[^'\n]*[一-鿿][^'\n]*'|`[^`]*[一-鿿][^`]*`/g) ?? [];
+    for (const str of strings) for (const [re, why] of BANNED as [RegExp, string][]) {
+      if (why.includes('她') || why.includes('來源代號') || why.includes('Strong')) continue;
+      expect(re.test(str), `${why}：${str}`).toBe(false);
+    }
   });
 });

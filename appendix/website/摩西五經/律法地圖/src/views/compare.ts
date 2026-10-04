@@ -1,45 +1,41 @@
-import { lawById, lawVerses, refText, relationBetween } from '../data/db';
+import { lawById, lawVerses, refText, relationBetween, relationSentence } from '../data/db';
 import type { Law } from '../data/types';
 import { charDiff, similarity } from '../lib/diff';
 import { href, type Route } from '../router';
-import { store } from '../store';
-import { evidenceLine, lawLink } from '../ui/cards';
+import { evidenceLine, groupColor, scripture } from '../ui/cards';
 import { h } from '../ui/dom';
-import { lbl, more } from '../ui/more';
-import { RELATION_LABEL } from '../data/db';
+import { setRibbonBase } from '../ui/ribbon';
 
-/** 對照頁：2–4 段經文並排。差在哪裡的完整說明在互文條目裡，這裡只放一句關係＋連結。 */
+/** 並排：2–4 段經文。差在哪裡的完整說明在知識庫的互文條目，這裡只放關係、出處和逐字比較。 */
 export function compareView(route: Route): HTMLElement {
-  const ids = (route.params[0] ?? '').split(',').filter(Boolean);
-  const ls = (ids.length ? ids : store.compare).map((id) => lawById.get(id)).filter((l): l is Law => !!l).slice(0, 4);
+  const ls = (route.params[0] ?? '').split(',').map((id) => lawById.get(id)).filter((l): l is Law => !!l).slice(0, 4);
   if (ls.length < 2) {
-    return h('div', { class: 'lm-page' }, h('h1', null, '對照'),
-      h('p', null, '在條文頁按「加入對照」，選兩到四條，就可以在這裡並排看。'),
-      ls.length ? h('p', null, '目前選了：', lawLink(ls[0])) : null);
+    return h('div', { class: 'lm-page' }, h('h1', null, '並排看'),
+      h('p', null, '在條文頁打開「別卷」那一層，按「這幾段並排」，就會來到這裡。'));
   }
+  setRibbonBase(ls.map((l) => l.id));
   const text = (l: Law) => lawVerses(l).map((v) => v.text).join('');
   const pairs: [Law, Law][] = [];
   for (let i = 0; i < ls.length; i++) for (let j = i + 1; j < ls.length; j++) pairs.push([ls[i], ls[j]]);
   const rels = pairs.map(([a, b]) => ({ a, b, rel: relationBetween(a.id, b.id) })).filter((x) => x.rel);
 
   return h('div', { class: 'lm-page lm-compare-page' },
-    h('h1', null, ls.map((l) => refText(l)).join(' ／ ')),
+    h('nav', { class: 'lm-crumbs', 'aria-label': '位置' }, h('a', { href: '#/' }, '首頁'), h('a', { href: href('law', ls[0].id) }, ls[0].title)),
+    h('h1', null, ls.map((l) => refText(l)).join('　')),
+    h('div', { class: 'lm-compare-cols', style: `--n: ${ls.length}` }, ...ls.map((l) => h('section', { class: 'lm-compare-col', style: `--c: ${groupColor(l)}`, 'data-laws': l.id },
+      h('h2', null, h('a', { href: href('law', l.id) }, l.title), h('small', null, refText(l))),
+      h('p', { class: 'lm-other-sum' }, l.summary),
+      scripture(l)))),
     rels.length
-      ? h('ul', { class: 'lm-rel-list' }, ...rels.map(({ a, b, rel }) => h('li', null,
-        `${refText(a)} 與 ${refText(b)}：${lbl(...RELATION_LABEL[rel!.type])}。`, evidenceLine(rel!.evidence))))
-      : h('p', { class: 'lm-note' }, '這幾條之間目前沒有有證據的關聯；可能只是同一個主題。'),
-    h('div', { class: 'lm-compare-cols', style: `--n: ${ls.length}` }, ...ls.map((l) => h('section', { class: 'lm-compare-col' },
-      h('h2', null, lawLink(l), h('small', null, refText(l))),
-      h('p', { class: 'lm-card-sum' }, l.summary),
-      h('ol', { class: 'lm-verses' }, ...lawVerses(l).map((v) => h('li', { value: String(v.n) }, v.text))),
-      h('a', { href: href('compare', ls.filter((x) => x.id !== l.id).map((x) => x.id).join(',')), class: 'lm-muted' }, '從對照移除')))),
-    ls.length >= 2 ? more('research', '字面差異（機械比對）', diffBlock(ls[0], ls[1], text)) : null,
-  );
+      ? h('section', null, h('h2', null, '這幾段的關係'),
+        h('ul', { class: 'lm-plain-list' }, ...rels.map(({ rel }) => h('li', null, `${relationSentence(rel!)}。`, evidenceLine(rel!.evidence)))))
+      : h('p', { class: 'lm-note' }, '這幾段之間目前沒有找到出處說明它們的關係，可能只是主題相同。'),
+    h('details', { class: 'lm-sub', open: true }, h('summary', null, `逐字比較 ${refText(ls[0])} 和 ${refText(ls[1])}`), diffBlock(ls[0], ls[1], text)));
 }
 
 function diffBlock(a: Law, b: Law, text: (l: Law) => string): HTMLElement {
   const parts = charDiff(text(a), text(b));
   return h('div', null,
-    h('p', { class: 'lm-note' }, `逐字比對 ${refText(a)}（刪線）與 ${refText(b)}（底色）。只看字面，不判斷意思；相同字數約佔 ${Math.round(similarity(parts) * 100)}%。`),
+    h('p', { class: 'lm-note' }, `刪除線是只在 ${refText(a)} 的字，底色是只在 ${refText(b)} 的字。只比字面，不判斷意思；相同的字約佔 ${Math.round(similarity(parts) * 100)}%。`),
     h('p', { class: 'lm-diff' }, ...parts.map((p) => (p.kind === 'same' ? p.text : h(p.kind === 'a' ? 'del' : 'ins', null, p.text)))));
 }

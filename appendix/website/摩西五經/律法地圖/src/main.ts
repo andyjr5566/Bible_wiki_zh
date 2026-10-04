@@ -1,20 +1,21 @@
 import './styles.css';
 import { bookByAbbr, groupById, lawById, topicById } from './data/db';
 import { parse, type Route } from './router';
-import { applyQuery, store } from './store';
+import { store } from './store';
 import { buildChrome } from './ui/chrome';
 import { fill, h } from './ui/dom';
+import { setRibbonBase } from './ui/ribbon';
 import { aboutView } from './views/about';
 import { bookView, refView } from './views/book';
 import { compareView } from './views/compare';
 import { entryView } from './views/entry';
+import { homeView } from './views/home';
 import { lawView } from './views/law';
-import { overview } from './views/overview';
 import { topicView } from './views/topic';
 import { tourView } from './views/tour';
 
 const VIEWS: Record<string, (r: Route) => HTMLElement> = {
-  '': overview,
+  '': homeView,
   topic: topicView,
   law: lawView,
   compare: compareView,
@@ -25,19 +26,19 @@ const VIEWS: Record<string, (r: Route) => HTMLElement> = {
   about: aboutView,
 };
 
-/** 足跡列上的名字 */
-function trailLabel(r: Route): string {
+/** 分頁標題 */
+function pageTitle(r: Route): string {
   const p = r.params[0] ?? '';
   switch (r.name) {
     case 'law': return lawById.get(p)?.title ?? p;
-    case 'topic': return topicById.get(p)?.plain ?? groupById.get(p)?.plain ?? p;
+    case 'topic': return topicById.get(p)?.plain ?? groupById.get(p)?.name ?? p;
     case 'entry': return p;
     case 'book': return bookByAbbr.get(p)?.name ?? p;
     case 'ref': return p;
-    case 'tour': return '導覽路線';
-    case 'compare': return '對照';
+    case 'tour': return '照順序讀';
+    case 'compare': return '並排看';
     case 'about': return '關於';
-    default: return '總覽';
+    default: return '';
   }
 }
 
@@ -46,7 +47,6 @@ function applyPrefs() {
   if (store.theme === 'auto') delete root.dataset.theme;
   else root.dataset.theme = store.theme;
   root.dataset.big = String(store.big);
-  root.dataset.depth = store.depth;
 }
 
 const app = document.getElementById('app')!;
@@ -55,24 +55,19 @@ const main = h('main', { class: 'lm-main', id: 'main', tabindex: '-1' });
 const skip = h('a', { class: 'lm-skip', href: '#/', onclick: (e: MouseEvent) => { e.preventDefault(); main.focus(); } }, '跳到內容');
 fill(app, skip, buildChrome(), main);
 
-let lastHash = '';
 function render() {
   const r = parse();
-  applyQuery(r.query);
-  const view = VIEWS[r.name] ?? overview;
+  document.documentElement.dataset.route = r.name || 'home';
+  setRibbonBase(null);
+  const view = VIEWS[r.name] ?? homeView;
   fill(main, view(r));
-  document.title = r.name ? `${trailLabel(r)}｜摩西五經律法地圖` : '摩西五經律法地圖';
-  // 換頁時回到頂端；同一頁因深度或篩選重畫時不動捲動位置
-  if (location.hash !== lastHash) {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-    store.visit({ hash: location.hash || '#/', label: trailLabel(r) });
-  }
-  lastHash = location.hash;
+  const t = pageTitle(r);
+  document.title = t ? `${t}｜摩西五經的律法` : '摩西五經的律法';
+  // 換頁一律回到頂端（只有換頁時；頁內打開收合區塊不會捲動）
+  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
 }
 
 window.addEventListener('hashchange', render);
-store.on('depth', () => { applyPrefs(); render(); });
-store.on('books', render);
 store.on('prefs', applyPrefs);
 applyPrefs();
 render();

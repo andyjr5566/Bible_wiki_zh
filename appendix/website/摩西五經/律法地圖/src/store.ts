@@ -1,8 +1,8 @@
-import type { Depth } from './data/types';
-
 /**
- * 全站狀態：閱讀深度、書卷篩選、足跡、對照清單、深淺色、大字。
- * 個人偏好存 localStorage（前綴 lawmap:），讀寫都包 try/catch——私密視窗或被擋時照樣能用。
+ * 全站狀態：深淺色、大字，以及條文頁上讀者打開過哪幾層。
+ * 沒有「閱讀深度」模式：每條律法都由淺到深排好，讀者自己決定打開到哪一層；
+ * 換到下一條時沿用剛才打開的層，免得每條都要重按。
+ * 存 localStorage（前綴 lawmap:），讀寫都包 try/catch——私密視窗或被擋時照樣能用。
  */
 const KEY = 'lawmap:';
 const load = <T>(k: string, fallback: T): T => {
@@ -21,27 +21,16 @@ const save = (k: string, v: unknown) => {
   }
 };
 
-export const DEPTHS: Depth[] = ['basic', 'study', 'research'];
-export const DEPTH_LABEL: Record<Depth, string> = { basic: '入門', study: '查經', research: '研究' };
-export const depthRank = (d: Depth) => DEPTHS.indexOf(d);
+/** 條文頁的四層：一句話（永遠開著）之後的三層 */
+export type Layer = 'text' | 'others' | 'sources';
 
-export interface TrailItem {
-  hash: string;
-  label: string;
-}
-
-type Topic = 'depth' | 'books' | 'trail' | 'compare' | 'prefs';
+type Topic = 'prefs';
 const listeners = new Map<Topic, Set<() => void>>();
 
 export const store = {
-  /** 第一次來預設入門 */
-  depth: load<Depth>('depth', 'basic'),
-  /** 書卷篩選：空集合＝全部 */
-  books: new Set<string>(load<string[]>('books', [])),
-  trail: [] as TrailItem[],
-  compare: load<string[]>('compare', []),
   theme: load<'auto' | 'light' | 'dark'>('theme', 'auto'),
   big: load<boolean>('big', false),
+  layers: new Set<Layer>(load<Layer[]>('layers', []).filter((l) => l !== 'sources')),
 
   on(topic: Topic, fn: () => void) {
     if (!listeners.has(topic)) listeners.set(topic, new Set());
@@ -51,41 +40,12 @@ export const store = {
     listeners.get(topic)?.forEach((fn) => fn());
   },
 
-  setDepth(d: Depth) {
-    if (d === this.depth) return;
-    this.depth = d;
-    save('depth', d);
-    this.emit('depth');
-  },
-  /** 深度至少到某一層 */
-  atLeast(d: Depth) {
-    return depthRank(this.depth) >= depthRank(d);
-  },
-
-  toggleBook(name: string) {
-    if (this.books.has(name)) this.books.delete(name);
-    else this.books.add(name);
-    save('books', [...this.books]);
-    this.emit('books');
-  },
-  clearBooks() {
-    this.books.clear();
-    save('books', []);
-    this.emit('books');
-  },
-  bookVisible(name: string) {
-    return this.books.size === 0 || this.books.has(name);
-  },
-
-  visit(item: TrailItem) {
-    this.trail = [item, ...this.trail.filter((t) => t.hash !== item.hash)].slice(0, 8);
-    this.emit('trail');
-  },
-
-  toggleCompare(id: string) {
-    this.compare = this.compare.includes(id) ? this.compare.filter((x) => x !== id) : [...this.compare, id].slice(-4);
-    save('compare', this.compare);
-    this.emit('compare');
+  setLayer(l: Layer, open: boolean) {
+    // 「出處」那一層資料多，打開了也不帶到下一條，免得蓋過下一條的一句話
+    if (l === 'sources') return;
+    if (open) this.layers.add(l);
+    else this.layers.delete(l);
+    save('layers', [...this.layers]);
   },
 
   setTheme(t: 'auto' | 'light' | 'dark') {
@@ -99,9 +59,3 @@ export const store = {
     this.emit('prefs');
   },
 };
-
-/** 只看網址就能決定深度（分享連結時用 ?d=research） */
-export function applyQuery(q: URLSearchParams) {
-  const d = q.get('d');
-  if (d && (DEPTHS as string[]).includes(d)) store.setDepth(d as Depth);
-}

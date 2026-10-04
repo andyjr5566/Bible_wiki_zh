@@ -2,7 +2,6 @@
 
 export type Range = [number, number];
 export type RelationType = 'parallel' | 'supplement' | 'case' | 'cites';
-export type Depth = 'basic' | 'study' | 'research';
 
 export interface Book {
   abbr: string;
@@ -77,6 +76,12 @@ export interface Relation {
   evidence: Evidence;
 }
 
+/** 首頁的生活問題卡：問句是手寫的，答案用條文自己的白話說明 */
+export interface Question {
+  q: string;
+  laws: string[];
+}
+
 export interface Tour {
   id: string;
   title: string;
@@ -105,6 +110,7 @@ export interface Explorer {
   links: Record<string, VerseLink[]>;
   entries: Record<string, EntryInfo>;
   relations: Relation[];
+  questions: Question[];
   tours: Tour[];
   glossary: { term: string; entry: string }[];
   coverage: Coverage[];

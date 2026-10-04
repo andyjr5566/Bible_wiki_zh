@@ -93,13 +93,33 @@ export function relationClusters(): Law[][] {
   return [...groups.values()].filter((g) => g.length > 1);
 }
 
-/** 用語三層：入門／查經／研究 */
-export const RELATION_LABEL: Record<RelationType, [string, string, string]> = {
-  parallel: ['在別卷又說了一次', '平行', '平行重述'],
-  supplement: ['在別卷補充了這一條', '補充', '補充修訂'],
-  case: ['有一段經文照這條處理', '案例', '案例'],
-  cites: ['別處引用了這一條', '引用', '引用'],
-};
+/**
+ * 關聯的說法，從「目前這一條」看另一條。
+ * relations.yaml 的 from 是先出現的那一條，to 是後來補充、重述或引用它的那一條。
+ */
+export function relationLabel(type: RelationType, otherIsLater: boolean): string {
+  switch (type) {
+    case 'parallel': return '同一條又記了一次';
+    case 'supplement': return otherIsLater ? '後來補充了這一條' : '這一條補充了它';
+    case 'case': return otherIsLater ? '照這一條處理的事例' : '這件事照它處理';
+    case 'cites': return otherIsLater ? '引用了這一條' : '這一條引用了它';
+  }
+}
+
+/** 兩條之間的關係寫成一句：「申15:12-18 補充了出21:2-6」 */
+export function relationSentence(rel: Relation): string {
+  const a = refText(lawById.get(rel.from)!);
+  const b = refText(lawById.get(rel.to)!);
+  switch (rel.type) {
+    case 'parallel': return `${b}和${a}記的是同一條`;
+    case 'supplement': return `${b}補充了${a}`;
+    case 'case': return `${b}是照${a}處理的事例`;
+    case 'cites': return `${b}引用了${a}`;
+  }
+}
+
+/** 某一章的律法 */
+export const lawsOfChapter = (bookName: string, chapter: number): Law[] => laws.filter((l) => l.book === bookName && l.chapter === chapter);
 
 export const sectionOf = (l: Law): Section | undefined => sectionById.get(l.section);
 export const topicsOf = (l: Law): Topic[] => l.topics.map((t) => topicById.get(t)!).filter(Boolean);

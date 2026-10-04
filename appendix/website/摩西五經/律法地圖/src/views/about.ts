@@ -1,30 +1,64 @@
-import { DB, laws, refText, topicById } from '../data/db';
+import { books, DB, laws, lawsOfGroup, lawsOfTopic, refText, topicById } from '../data/db';
 import { WIKI_BASE } from '../data/links';
 import { download, lawsCsv } from '../lib/csv';
+import { href } from '../router';
 import { ext, h } from '../ui/dom';
-import { more } from '../ui/more';
+import { setRibbonBase } from '../ui/ribbon';
 
+/** 關於：資料從哪裡來、收錄進度、分布表與下載。給想查證或拿資料去用的人。 */
 export function aboutView(): HTMLElement {
+  setRibbonBase(null);
   return h('div', { class: 'lm-page lm-about' },
-    h('h1', null, '關於律法地圖'),
-    h('p', null, '這是一份導覽，不是註釋書。它把摩西五經的律法依主題排好、把在別卷又說了一次的律法連起來，再帶你回到知識庫讀完整的內容。'),
+    h('h1', null, '關於這個網站'),
+    h('p', { class: 'lm-lede' }, '這裡把摩西五經的律法一條一條整理出來，標上主題，接上別卷的記載，再連回知識庫。解經的內容都在知識庫，這裡只整理律法在哪裡、彼此怎麼連。'),
     h('h2', null, '畫面上的東西從哪裡來'),
     h('ul', null,
-      h('li', null, '經文：和合本，原文照錄，不改寫。'),
-      h('li', null, '每條律法的一句白話說明、主題分類、段落：本站整理。白話說明只重述經文說了什麼，不加解釋，並標出依據哪幾節。'),
-      h('li', null, '律法之間的關聯（「在別卷又說了一次」等）：每一條都要有知識庫裡的出處，找不到出處的就不連。'),
-      h('li', null, '經文裡劃線的人物、地方、觀念：連到知識庫的條目。本站只給名稱和一句簡介，完整內容請按「查看完整條目」到知識庫讀。')),
+      h('li', null, '經文用和合本，照錄，不改寫。'),
+      h('li', null, '每條律法的標題、一句話、主題和段落由本站整理。那一句話只重述經文說了什麼，並標出依據哪幾節。'),
+      h('li', null, '首頁的問題由本站撰寫，只問經文本身回答得了的事；翻開看到的是條文自己的那一句話和經文。'),
+      h('li', null, '說某條律法在別卷又記了一次，都要有知識庫裡的出處，出處的原句寫在條文頁最後一層。找不到出處的就不連。'),
+      h('li', null, '經文裡劃線的人物、地方與觀念連到知識庫的條目。這裡只給名稱和一句簡介，完整內容請按「查看完整條目」到知識庫讀。')),
     h('p', null, '知識庫：', ext(WIKI_BASE, WIKI_BASE)),
-    h('h2', null, '三種閱讀深度'),
-    h('ul', null,
-      h('li', null, '入門：先給一句話看懂，其他收起來。可以從首頁的導覽路線開始。'),
-      h('li', null, '查經：展開經文、相關律法與五卷並排。'),
-      h('li', null, '研究：再展開證據出處、分布數字、字面差異與資料下載。')),
-    h('p', null, '不管選哪一種，收起來的區塊都按得開。'),
-    more('research', '下載本站資料',
-      h('p', null, `目前 ${laws.length} 條條文、${DB.relations.length} 條關聯。`),
-      h('div', { class: 'lm-actions' },
-        h('button', { type: 'button', class: 'lm-btn', onclick: () => download('律法地圖-條文.csv', lawsCsv(laws, refText, (id) => topicById.get(id)?.name ?? id), 'text/csv;charset=utf-8') }, '條文清單（CSV）'),
-        h('button', { type: 'button', class: 'lm-btn', onclick: () => download('律法地圖.json', JSON.stringify(DB, null, 2), 'application/json') }, '完整資料（JSON）'))),
+
+    h('h2', null, '每一類在各卷收了幾條'),
+    matrix(),
+
+    h('h2', null, '收錄進度'),
+    h('p', { class: 'lm-note' }, '「不收」是刻意不收的敘事或勸勉；「還沒整理」是還沒處理的節。'),
+    coverage(),
+
+    h('h2', null, '下載'),
+    h('p', null, `目前 ${laws.length} 條、${DB.relations.length} 條關聯。`),
+    h('div', { class: 'lm-actions' },
+      h('button', { type: 'button', class: 'lm-btn', onclick: () => download('摩西五經律法-條文.csv', lawsCsv(laws, refText, (id) => topicById.get(id)?.name ?? id), 'text/csv;charset=utf-8') }, '條文清單（CSV）'),
+      h('button', { type: 'button', class: 'lm-btn', onclick: () => download('摩西五經律法.json', JSON.stringify(DB, null, 2), 'application/json') }, '完整資料（JSON）')),
     h('p', { class: 'lm-note' }, '本站僅供非商業的教育與聖經研讀使用。'));
+}
+
+function matrix(): HTMLElement {
+  const cell = (n: number, target: string) => h('td', { class: n ? 'lm-cell' : 'lm-cell lm-cell-empty' }, n ? h('a', { href: target }, String(n)) : '·');
+  const rows: HTMLElement[] = [];
+  for (const g of DB.groups) {
+    const gl = lawsOfGroup(g.id);
+    rows.push(h('tr', { class: 'lm-mrow-group', style: `--c: var(--g${g.color})` }, h('th', { scope: 'row' }, h('a', { href: href('topic', g.id) }, g.name)), ...books.map((b) => cell(gl.filter((l) => l.book === b.name).length, href('topic', g.id)))));
+    for (const tid of g.topics) {
+      const ls = lawsOfTopic(tid);
+      if (!ls.length) continue;
+      rows.push(h('tr', { class: 'lm-mrow-topic' }, h('th', { scope: 'row' }, h('a', { href: href('topic', tid) }, topicById.get(tid)!.name)), ...books.map((b) => cell(ls.filter((l) => l.book === b.name).length, href('topic', tid)))));
+    }
+  }
+  return h('div', { class: 'lm-table-wrap' },
+    h('table', { class: 'lm-table lm-matrix' },
+      h('thead', null, h('tr', null, h('th', null, ''), ...books.map((b) => h('th', { scope: 'col' }, b.name)))),
+      h('tbody', null, ...rows)),
+    h('p', { class: 'lm-note' }, '一條律法可以同時屬於好幾個主題，所以各列相加會大於總條數。'));
+}
+
+function coverage(): HTMLElement {
+  return h('div', { class: 'lm-table-wrap' }, h('table', { class: 'lm-table' },
+    h('thead', null, h('tr', null, ...['章', '節數', '已收', '不收', '還沒整理'].map((t) => h('th', null, t)))),
+    h('tbody', null, ...DB.coverage.map((c) => h('tr', null,
+      h('td', null, h('a', { href: href('ref', `${books.find((b) => b.name === c.book)!.abbr}${c.chapter}`) }, `${c.book}${c.chapter}`)),
+      h('td', null, String(c.total)), h('td', null, String(c.covered)), h('td', null, String(c.excluded)),
+      h('td', null, c.missing.map(([a, b]) => (a === b ? `${a}` : `${a}-${b}`)).join('、') || '—'))))));
 }

@@ -24,7 +24,14 @@ export const BANNED = [
   [/她/, '和合本女性主詞用「他」'],
   [/\b(?:CT|GT|KC|BH|STEP)\b/, '來源代號不進白話說明'],
   [/\bH\d{3,}/, 'Strong 編號不進白話說明'],
+  [/不只是[^。；]*?更|與其說[^。；]*?不如說|是[^。；，]{1,12}，不是/, '對仗轉折'],
+  [/讓我們|一起來|帶你|探索|旅程|踏上|揭開|奧秘|值得注意|值得一提|事實上|換句話說|自古以來/, '導覽口吻或套話'],
 ];
+/** 網站自己寫的標題、問句：平實交代內容，不寫成「X：Y」標語 */
+export const COPY_BANNED = [[/[：:]/, '標題不用「X：Y」標語式寫法']];
+export function lintCopy(text, max = 30) {
+  return [...lintPlain(text, max), ...COPY_BANNED.filter(([re]) => re.test(text ?? '')).map(([, why]) => why)];
+}
 const OVERLAP_WARN = 0.4;
 
 const loadYaml = (p) => YAML.parse(read(p));
@@ -217,10 +224,20 @@ export function buildAll() {
   const tours = [];
   for (const t of loadYaml(resolve(dataDir, 'tours.yaml')) ?? []) {
     for (const s of t.stops ?? []) if (!lawById.has(s)) err(`tours.${t.id}`, `沒有這條條文：${s}`);
-    for (const e of lintPlain(t.title, 30)) err(`tours.${t.id}`, `名稱：${e}`);
+    for (const e of lintCopy(t.title)) err(`tours.${t.id}`, `名稱：${e}`);
     for (const e of lintPlain(t.intro)) err(`tours.${t.id}`, `開場：${e}`);
     tours.push({ id: t.id, title: t.title, intro: t.intro, stops: t.stops ?? [] });
   }
+  const questions = [];
+  (loadYaml(resolve(dataDir, 'questions.yaml')) ?? []).forEach((x, i) => {
+    const where = `questions[${i}]`;
+    for (const e of lintCopy(x.q)) err(where, `問句：${e}`);
+    if (!/？$/.test(x.q ?? '')) err(where, '問句要以「？」結尾');
+    const ls = x.laws ?? [];
+    if (!ls.length || ls.length > 3) err(where, 'laws 要 1–3 條');
+    for (const id of ls) if (!lawById.has(id)) err(where, `沒有這條條文：${id}`);
+    questions.push({ q: x.q, laws: ls });
+  });
   const glossary = [];
   for (const [term, name] of Object.entries(loadYaml(resolve(dataDir, 'glossary.yaml')) ?? {})) {
     const t = needEntry(`glossary.${term}`, name);
@@ -251,7 +268,7 @@ export function buildAll() {
     })),
     groups, topics, sections,
     laws: laws.map(({ _overlap, ...l }) => l),
-    verses, links, entries: entryMap, relations, tours, glossary, coverage,
+    verses, links, entries: entryMap, relations, questions, tours, glossary, coverage,
   };
 
   const chaptersJson = [...new Set(laws.map((l) => `${l.book}/第${l.chapter}章`))]

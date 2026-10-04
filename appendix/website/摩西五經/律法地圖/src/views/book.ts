@@ -3,20 +3,23 @@ import type { Book, Section } from '../data/types';
 import { href, type Route } from '../router';
 import { lawCard } from '../ui/cards';
 import { ext, h } from '../ui/dom';
-import { lbl } from '../ui/more';
+import { setRibbonBase } from '../ui/ribbon';
 
 /** #/book/出：依法典段落 → 章 → 律法段落 → 條文 */
 export function bookView(route: Route): HTMLElement {
   const b = bookByAbbr.get(route.params[0]);
   if (!b) return notFound();
+  setRibbonBase(DB.laws.filter((l) => l.book === b.name).map((l) => l.id), b.abbr);
+  const groups = codesOf(b);
   return h('div', { class: 'lm-page lm-book-page' },
-    h('header', { class: 'lm-page-head' }, h('h1', null, b.name), h('p', { class: 'lm-lede' }, lbl('這一卷收錄的律法，依段落排列。', '依全書目錄的法典段落、章、律法段落排列。'))),
-    ...codesOf(b).map(({ title, sections }) => h('section', { class: 'lm-code' },
+    h('nav', { class: 'lm-crumbs', 'aria-label': '位置' }, h('a', { href: '#/' }, '首頁')),
+    h('header', { class: 'lm-page-head' }, h('h1', null, b.name),
+      h('p', { class: 'lm-lede' }, groups.length ? '這一卷收錄的律法，依全書目錄的段落和章排列。' : '這一卷還沒有收錄條文。')),
+    ...groups.map(({ title, sections }) => h('section', { class: 'lm-code' },
       title ? h('h2', null, title) : null,
       ...chapters(sections).map(([ch, secs]) => h('section', { class: 'lm-chapter' },
         h('h3', null, h('a', { href: href('ref', `${b.abbr}${ch}`) }, `第${ch}章`)),
-        ...secs.map(sectionBlock))))),
-    DB.sections.some((s) => s.book === b.name) ? null : h('p', { class: 'lm-muted' }, '這一卷還沒有收錄條文。'));
+        ...secs.map(sectionBlock))))));
 }
 
 /** #/ref/出21：從章節附錄連過來時落在這裡 */
@@ -26,16 +29,17 @@ export function refView(route: Route): HTMLElement {
   if (!m || !b) return notFound();
   const ch = Number(m[2]);
   const secs = DB.sections.filter((s) => s.book === b.name && s.chapter === ch);
+  setRibbonBase(secs.flatMap((s) => s.laws), `${b.abbr}${ch}`);
   return h('div', { class: 'lm-page lm-book-page' },
-    h('nav', { class: 'lm-crumbs' }, h('a', { href: href('book', b.abbr) }, b.name), h('span', null, `第${ch}章`)),
-    h('h1', null, `${b.name} 第${ch}章的律法`),
+    h('nav', { class: 'lm-crumbs', 'aria-label': '位置' }, h('a', { href: '#/' }, '首頁'), h('a', { href: href('book', b.abbr) }, b.name)),
+    h('h1', null, `${b.name}第${ch}章的律法`),
     secs.length ? secs.map(sectionBlock) : h('p', null, '這一章還沒有收錄律法。'),
-    h('p', null, ext(chapterHref(b.name, ch), `讀${b.name}第${ch}章的經文與本章整理（另開網頁）`)));
+    h('p', null, ext(chapterHref(b.name, ch), `讀${b.name}第${ch}章全文與本章整理（另開網頁）`)));
 }
 
 function sectionBlock(s: Section): HTMLElement {
-  return h('section', { class: 'lm-section' }, h('h4', null, s.title, h('small', null, ` v${s.from}-${s.to}`)),
-    ...s.laws.map((id) => lawById.get(id)!).map((l) => lawCard(l)),
+  return h('section', { class: 'lm-section' }, h('h4', null, s.title, h('small', null, ` 第${s.from}-${s.to}節`)),
+    h('div', { class: 'lm-cards' }, ...s.laws.map((id) => lawById.get(id)!).map((l) => lawCard(l))),
     s.laws.length ? null : h('p', { class: 'lm-muted' }, '還沒有整理成條文。'));
 }
 
@@ -57,4 +61,4 @@ function chapters(secs: Section[]): [number, Section[]][] {
   return [...m.entries()];
 }
 
-const notFound = () => h('div', { class: 'lm-page' }, h('h1', null, '找不到這一卷或這一章'), h('a', { href: '#/' }, '回總覽'));
+const notFound = () => h('div', { class: 'lm-page' }, h('h1', null, '找不到這一卷或這一章'), h('a', { href: '#/' }, '回首頁'));
