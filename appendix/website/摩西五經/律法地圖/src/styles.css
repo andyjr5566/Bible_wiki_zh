@@ -122,6 +122,24 @@ code { font-size: 0.9em; }
 .lm-hero { padding: 28px 0 8px; }
 .lm-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: 0.04em; margin: 0; }
 .lm-hero .lm-lede { font-size: 1.12rem; margin-top: 10px; }
+.lm-motto { margin: 0 0 18px; padding: 0 0 0 16px; border-left: 3px solid var(--accent); max-width: 40em; }
+.lm-motto p { margin: 0; text-wrap: balance; font-family: var(--serif); font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.7; }
+.lm-motto cite, .lm-why-q cite, .lm-reason cite { display: block; margin-top: 2px; font-style: normal; font-size: 0.85rem; color: var(--ink-2); }
+.lm-hero .lm-lede-main { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-top: 14px; }
+.lm-hero .lm-lede-hebrew { font-size: 0.95rem; margin-top: 2px; }
+.lm-hero .lm-lede-hebrew [lang='he'] { font-size: 1.15em; padding: 0 2px; }
+.lm-reasons .lm-rgrid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.lm-reason { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border-top: 3px solid var(--c); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.lm-reason blockquote { margin: 0; flex: 1; }
+.lm-reason blockquote p { margin: 0; font-family: var(--serif); line-height: 1.8; }
+.lm-reason-go { font-size: 0.92rem; text-decoration: none; color: var(--c); }
+.lm-reason-go:hover { text-decoration: underline; }
+/* 條文頁：經文自己交代的理由 */
+.lm-why { margin: 0 0 14px; max-width: 34em; }
+.lm-why-label { display: inline-block; font-size: 0.82rem; font-weight: 700; color: var(--c); margin-bottom: 4px; }
+.lm-why-q { margin: 0; padding: 2px 0 2px 14px; border-left: 3px solid var(--c); }
+.lm-why-q + .lm-why-q { margin-top: 8px; }
+.lm-why-q p { margin: 0; font-family: var(--serif); line-height: 1.8; }
 .lm-quick { display: flex; flex-wrap: wrap; gap: 8px; }
 .lm-quick-label { align-self: center; color: var(--ink-2); font-size: 0.88rem; margin-right: 4px; }
 .lm-quick-chip { padding: 5px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 0.95rem; }

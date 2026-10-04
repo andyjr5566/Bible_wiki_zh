@@ -12,8 +12,11 @@ import YAML from 'yaml';
 import {
   BOOKS, BOOK_BY_NAME, SITE, IN_VAULT, read, chapterVerses, parseRange, versesOf, toRanges,
   extractRefs, refTouchesLaw, verseLinksPath, resolveEntry, entries, entryGist, entryText,
-  chapterMdPath, chapterOrganization, bookCodes,
+  chapterMdPath, chapterOrganization, bookCodes, ROOT,
 } from './lib.mjs';
+
+/** 首頁標語取自這一節的和合本原文（逐字讀 raw_scripture，不手抄） */
+const MOTTO = { book: '詩篇', chapter: 1, verse: 2 };
 
 export const RELATION_TYPES = ['parallel', 'supplement', 'case', 'cites'];
 export const SUMMARY_MAX = 90;
@@ -127,13 +130,16 @@ export function buildAll() {
           const basis = l.basis ?? [];
           if (!basis.length) err(lw, '要寫 basis（依據經節）');
           for (const v of basis) if (!covered.has(v)) err(lw, `basis 第 ${v} 節不在 refs 內`);
+          // why：經文自己交代理由的節（只標節號，畫面上顯示和合本原句，網站不另寫理由）
+          const why = l.why ?? [];
+          for (const v of why) if (!covered.has(v)) err(lw, `why 第 ${v} 節不在 refs 內`);
           const ts = l.topics ?? [];
           if (!ts.length) err(lw, '至少要一個子題');
           for (const t of ts) if (!topicIds.has(t)) err(lw, `沒有這個子題：${t}`);
           for (const e of lintPlain(l.summary)) err(lw, `白話說明：${e}`);
           for (const e of lintPlain(l.title, 30)) err(lw, `標題：${e}`);
           const ents = (l.entries ?? []).map((e) => needEntry(lw, e)).filter(Boolean);
-          const law = { id: l.id, title: l.title, book, chapter: ch.chapter, refs: good, topics: ts, summary: l.summary, basis, entries: ents, section: s.id };
+          const law = { id: l.id, title: l.title, book, chapter: ch.chapter, refs: good, topics: ts, summary: l.summary, basis, why, entries: ents, section: s.id };
           laws.push(law);
           lawById.set(l.id, law);
           sec.laws.push(l.id);
@@ -161,6 +167,7 @@ export function buildAll() {
     const chapter = Number(chs);
     const text = chapterVerses(book, chapter);
     for (const v of vs) verses[`${abbr(book)}${chapter}:${v}`] = text[v - 1];
+    // 理由節一定在 refs 內，已隨 vs 收進 verses
     const p = verseLinksPath(book, chapter);
     if (!p) { warnings.push(`${book}${chapter}: 找不到 verse_links.yaml，經文不會劃出知識節點`); continue; }
     const vl = YAML.parse(read(p));
@@ -244,6 +251,20 @@ export function buildAll() {
     if (t) glossary.push({ term, entry: t });
   }
 
+  // ---- 首頁標語：詩1:2 和合本原句 ----
+  const mottoVerses = chapterVerses(MOTTO.book, MOTTO.chapter);
+  const motto = { ref: `${MOTTO.book}${MOTTO.chapter}:${MOTTO.verse}`, text: mottoVerses?.[MOTTO.verse - 1] ?? '' };
+  if (!motto.text.includes('喜愛耶和華的律法')) err('motto', `${motto.ref} 在 raw_scripture 找不到預期的經文`);
+
+  // ---- 「律法」的原文字義：核對 STEP 簡明詞典，畫面上的字義不得超出詞典 ----
+  const lex = resolve(ROOT, '.stepbible_data/Lexicons/TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt');
+  if (existsSync(lex)) {
+    const rows = readFileSync(lex, 'utf8').split(/\r?\n/);
+    const row = (id) => rows.find((r) => r.startsWith(`${id}\t`)) ?? '';
+    if (!/direction, instruction/.test(row('H8451'))) err('torah', 'STEP 詞典的 H8451 查不到「direction, instruction」');
+    if (!/to shoot/.test(row('H3384a')) || !/direct, teach/.test(row('H3384b'))) err('torah', 'STEP 詞典的 H3384 查不到射箭與指出、教導兩個義域');
+  } else warnings.push('找不到 .stepbible_data 詞典，未核對「律法」原文字義');
+
   // ---- 條目：只留類型與一句簡介 ----
   const entryMap = {};
   for (const title of [...usedEntries].sort()) {
@@ -268,7 +289,7 @@ export function buildAll() {
     })),
     groups, topics, sections,
     laws: laws.map(({ _overlap, ...l }) => l),
-    verses, links, entries: entryMap, relations, questions, tours, glossary, coverage,
+    motto, verses, links, entries: entryMap, relations, questions, tours, glossary, coverage,
   };
 
   const chaptersJson = [...new Set(laws.map((l) => `${l.book}/第${l.chapter}章`))]

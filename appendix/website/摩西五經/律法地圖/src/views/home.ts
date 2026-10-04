@@ -1,4 +1,4 @@
-import { books, DB, groupById, lawById, laws, lawsOfGroup, lawsOfTopic, refText, relationClusters, relationsOf } from '../data/db';
+import { books, DB, groupById, lawById, laws, lawsOfGroup, lawsOfTopic, lawWhy, refText, relationClusters, relationsOf } from '../data/db';
 import type { Law, Question } from '../data/types';
 import { href } from '../router';
 import { glossText, groupColor } from '../ui/cards';
@@ -13,15 +13,24 @@ import { searchBox } from '../ui/searchbox';
 export function homeView(): HTMLElement {
   return h('div', { class: 'lm-home' },
     h('section', { class: 'lm-hero' },
+      motto(),
       h('h1', null, '摩西五經的律法'),
-      h('p', { class: 'lm-lede' }, '每一條附上和合本經文，別卷又記了一次的也接在一起。'),
+      h('p', { class: 'lm-lede lm-lede-main' }, '律法是神給人的指引。'),
+      h('p', { class: 'lm-lede lm-lede-hebrew' }, '希伯來文 ', h('span', { lang: 'he', dir: 'rtl' }, 'תּוֹרָה'), '（妥拉）的字義是指引、教導，字根 ', h('span', { lang: 'he', dir: 'rtl' }, 'יָרָה'), ' 也有射箭的意思。'),
+      h('p', { class: 'lm-lede' }, '每一條附上和合本經文，經文自己交代的理由和別卷又記了一次的，都接在一起。'),
       searchBox(true),
       quickTopics()),
     questions(),
+    reasons(),
     where(),
     restated(),
     allTopics(),
   );
+}
+
+/** 標語：詩1:2 的和合本原句（build-data 逐字讀 raw_scripture） */
+function motto(): HTMLElement {
+  return h('blockquote', { class: 'lm-motto' }, h('p', null, DB.motto.text), h('cite', null, DB.motto.ref));
 }
 
 function quickTopics(): HTMLElement | null {
@@ -86,6 +95,23 @@ function others(ls: Law[]): HTMLElement | null {
   const rest = ls.flatMap((l) => relationsOf(l.id).map((r) => r.other)).filter((o) => !shown.has(o.id) && (shown.add(o.id), true));
   if (!rest.length) return null;
   return h('p', { class: 'lm-q-also' }, '別卷也記了：', ...rest.flatMap((o, k) => [k ? '、' : '', h('a', { href: href('law', o.id) }, refText(o))]));
+}
+
+// ---- 經文自己交代的理由 ----
+
+/** 首頁最多先放幾條 */
+const FIRST_REASONS = 6;
+
+function reasons(): HTMLElement | null {
+  const items = laws.flatMap((l) => lawWhy(l).map((w) => ({ l, w }))).slice(0, FIRST_REASONS);
+  if (!items.length) return null;
+  return h('section', { class: 'lm-block lm-reasons' },
+    h('div', { class: 'lm-block-head' },
+      h('h2', null, '經文自己交代的理由'),
+      h('p', { class: 'lm-block-note' }, '不少律法旁邊跟著一句原因。下面是和合本的原句，點標題看整條律法。')),
+    h('div', { class: 'lm-rgrid' }, ...items.map(({ l, w }) => h('article', { class: 'lm-reason', style: `--c: ${groupColor(l)}`, 'data-laws': l.id },
+      h('blockquote', null, h('p', null, w.text), h('cite', null, w.ref)),
+      h('a', { class: 'lm-reason-go', href: href('law', l.id) }, l.title, ' →')))));
 }
 
 // ---- 五經律法帶 ----

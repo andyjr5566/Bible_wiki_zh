@@ -11,6 +11,9 @@ export function aboutView(): HTMLElement {
   return h('div', { class: 'lm-page lm-about' },
     h('h1', null, '關於這個網站'),
     h('p', { class: 'lm-lede' }, '這裡把摩西五經的律法一條一條整理出來，標上主題，接上別卷的記載，再連回知識庫。解經的內容都在知識庫，這裡只整理律法在哪裡、彼此怎麼連。'),
+    h('h2', null, '這個網站怎麼看律法'),
+    h('p', null, '律法在希伯來文叫 ', he('תּוֹרָה'), '（妥拉）。STEP Bible 簡明詞典（H8451）列的字義有律法、指引、教導，所以這裡把每一條律法當作一段指引來讀。字根 ', he('יָרָה'), ' 在同一部詞典（H3384）裡有射箭，也有指出、教導的意思。'),
+    h('p', null, '每條律法先給一句話和經文。經文自己交代了理由的，把那一節的和合本原句放在一句話下面，網站不替經文解釋。別卷又記了一次的，接在後面，可以並排逐字比較。'),
     h('h2', null, '畫面上的東西從哪裡來'),
     h('ul', null,
       h('li', null, '經文用和合本，照錄，不改寫。'),
@@ -34,6 +37,8 @@ export function aboutView(): HTMLElement {
       h('button', { type: 'button', class: 'lm-btn', onclick: () => download('摩西五經律法.json', JSON.stringify(DB, null, 2), 'application/json') }, '完整資料（JSON）')),
     h('p', { class: 'lm-note' }, '本站僅供非商業的教育與聖經研讀使用。'));
 }
+
+const he = (t: string) => h('span', { lang: 'he', dir: 'rtl' }, t);
 
 function matrix(): HTMLElement {
   const cell = (n: number, target: string) => h('td', { class: n ? 'lm-cell' : 'lm-cell lm-cell-empty' }, n ? h('a', { href: target }, String(n)) : '·');

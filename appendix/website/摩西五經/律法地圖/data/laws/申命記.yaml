@@ -14,6 +14,7 @@ chapters:
             topics: [sabbath]
             summary: 要照神的吩咐守安息日：六日做工，第七日連僕婢、牛驢和寄居的客旅都不可做工，使僕婢可以和你一樣安息；也要記念你在埃及地作過奴僕。
             basis: [12, 13, 14, 15]
+            why: [15]
   - chapter: 15
     excluded: []
     sections:
@@ -27,3 +28,4 @@ chapters:
             topics: [slavery]
             summary: 被賣的希伯來男人或女人服事你六年，第七年要任他自由出去，而且要從羊群、禾場、酒醡之中多多地給他，不可使他空手而去。
             basis: [12, 13, 14]
+            why: [15]

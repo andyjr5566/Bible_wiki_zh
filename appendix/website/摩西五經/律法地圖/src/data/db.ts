@@ -39,6 +39,10 @@ export const lawVerses = (l: Law): VerseView[] =>
     return { n, text: DB.verses[key] ?? '', links: DB.links[key] ?? [] };
   });
 
+/** 經文自己交代理由的節（和合本原句） */
+export const lawWhy = (l: Law): { n: number; ref: string; text: string }[] =>
+  l.why.map((n) => ({ n, ref: `${abbrOf(l.book)}${l.chapter}:${n}`, text: DB.verses[`${abbrOf(l.book)}${l.chapter}:${n}`] ?? '' })).filter((x) => x.text);
+
 /** 這條律法的經文連到的條目（依出現順序、不重複） */
 export function lawEntries(l: Law): string[] {
   const seen = new Set<string>();

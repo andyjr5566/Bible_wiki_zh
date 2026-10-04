@@ -48,6 +48,8 @@ export interface Law {
   topics: string[];
   summary: string;
   basis: number[];
+  /** 經文自己交代這條律法理由的節（refs 內）；畫面上顯示和合本原句 */
+  why: number[];
   entries: string[];
   section: string;
 }
@@ -105,6 +107,8 @@ export interface Explorer {
   topics: Topic[];
   sections: Section[];
   laws: Law[];
+  /** 首頁標語：和合本原句與出處（詩1:2） */
+  motto: { ref: string; text: string };
   /** key：「出21:2」 */
   verses: Record<string, string>;
   links: Record<string, VerseLink[]>;

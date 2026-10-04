@@ -32,6 +32,20 @@ describe('資料閘門（要在 vault 裡跑）', () => {
     }
   });
 
+  it.skipIf(!IN_VAULT)('首頁標語與「經文給的理由」都是和合本原句，理由節落在條文的經文範圍內', () => {
+    const line = (book: string, ch: number, v: number) =>
+      readFileSync(resolve(ROOT, 'raw_scripture', book, `第${ch}章.txt`), 'utf8').replace(/^﻿/, '').split(/\r?\n/).filter(Boolean)[v - 1];
+    expect(DB.motto.text).toBe(line('詩篇', 1, 2));
+    for (const l of DB.laws) {
+      const inRefs = (n: number) => l.refs.some(([a, b]) => n >= a && n <= b);
+      for (const n of l.why) {
+        expect(inRefs(n), `${l.id} why ${n}`).toBe(true);
+        const abbr = DB.books.find((b) => b.name === l.book)!.abbr;
+        expect(DB.verses[`${abbr}${l.chapter}:${n}`], `${l.id} ${n}`).toBe(line(l.book, l.chapter, n));
+      }
+    }
+  });
+
   it.skipIf(!IN_VAULT)('每個條目連結都對應 link_folder 裡真的存在的檔案', () => {
     for (const [title, info] of Object.entries(DB.entries)) {
       expect(existsSync(resolve(ROOT, 'link_folder', info.type, `${title}.md`)), title).toBe(true);
