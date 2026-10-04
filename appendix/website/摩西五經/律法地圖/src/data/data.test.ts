@@ -148,8 +148,8 @@ describe('介面文字不用公式句', () => {
   });
 });
 
-describe('帶路用到的示範資料', () => {
-  // 帶路（src/ui/coach.ts）會請讀者點第一張問題卡、進它的律法、打開「別卷」、並排、再進利25:39。資料變動時要先確認這條路還走得通。
+describe('新手教學用到的示範資料', () => {
+  // 新手教學（src/ui/coach.ts）會請讀者點第一張問題卡、進它的律法、打開「別卷」、並排、再進利25:39。資料變動時要先確認這條路還走得通。
   it('第一張問題卡的律法有別卷記載，並且能並排到利25:39 與申15:12', async () => {
     const { DB, lawById, relationsOf } = await import('./db');
     const demo = DB.questions[0].laws[0];
@@ -164,5 +164,13 @@ describe('帶路用到的示範資料', () => {
     expect(lawWhy(l).length).toBeGreaterThan(0);
     expect(l.topics[0]).toBe('slavery');
     expect(topicById.has('slavery')).toBe(true);
+  });
+});
+
+describe('新手教學開場引用的經文', () => {
+  it('開場引的那句是出21:2 的和合本原句', async () => {
+    const { DB } = await import('./db');
+    const { DEMO_QUOTE } = await import('../ui/coach');
+    expect(DB.verses['出21:2']).toContain(DEMO_QUOTE);
   });
 });

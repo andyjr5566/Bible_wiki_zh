@@ -430,22 +430,39 @@ details.lm-layer[open] .lm-preview { display: none; }
 .lm-card[hidden] { display: none; }
 
 /* ---------- 導覽 ---------- */
-.lm-top-guide { background: none; border: 0; padding: 0; font: inherit; color: var(--ink-2); text-decoration: underline; cursor: pointer; margin-right: 12px; }
-.lm-top-guide:hover { color: var(--ink); }
 .lm-hero-help { margin: 16px 0 0; color: var(--ink-2); font-size: 0.95rem; }
-/* 帶路面板：固定在畫面下方（要點的東西在下半部時移到上方），不蓋住頁面 */
-.lm-coach { position: fixed; z-index: 60; left: 12px; right: 12px; bottom: 12px; margin: 0 auto; max-width: 560px; max-height: 46vh; overflow: auto; padding: 12px 18px 14px; border-radius: 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+/* 新手教學：面板固定在畫面下方（要點的東西在下半部時移到上方），不蓋住頁面 */
+.lm-top-guide { background: var(--accent); color: var(--bg); border: 0; border-radius: 999px; padding: 3px 14px; font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; margin-right: 12px; text-decoration: none; }
+.lm-top-guide:hover { filter: brightness(1.1); }
+.lm-coach { position: fixed; z-index: 60; left: 12px; right: 12px; bottom: 12px; margin: 0 auto; max-width: 580px; max-height: 50vh; overflow: auto; padding: 10px 18px 14px; border-radius: 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
 .lm-coach-top { bottom: auto; top: 12px; }
-.lm-coach-head { display: flex; align-items: center; justify-content: space-between; }
-.lm-coach-count { color: var(--ink-2); font-size: 0.82rem; }
+.lm-coach-flash { animation: lm-coach-flash 0.8s ease-out; }
+@keyframes lm-coach-flash { 0% { box-shadow: 0 0 0 0 rgba(184, 138, 28, 0.9), 0 10px 40px rgba(0, 0, 0, 0.3); } 100% { box-shadow: 0 0 0 14px rgba(184, 138, 28, 0), 0 10px 40px rgba(0, 0, 0, 0.3); } }
+.lm-coach-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lm-coach-headr { display: flex; align-items: center; gap: 6px; flex: none; }
+.lm-coach-prog { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex: 1; min-width: 0; }
+.lm-coach-prog li { flex: 1; min-width: 0; font-size: 0.72rem; color: var(--ink-2); }
+.lm-coach-prog li i { display: block; height: 4px; border-radius: 2px; background: var(--line); margin-bottom: 3px; }
+.lm-coach-prog li.lm-cur i { background: var(--accent); }
+.lm-coach-prog li.lm-done i { background: var(--g6); }
+.lm-coach-prog li.lm-cur { color: var(--ink); font-weight: 700; }
+.lm-coach-prog li span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lm-coach-count { color: var(--ink-2); font-size: 0.8rem; white-space: nowrap; }
 .lm-coach-x { border: 0; background: none; font-size: 1.5rem; line-height: 1; color: var(--ink-2); cursor: pointer; padding: 0 4px; }
-.lm-coach-title { margin: 2px 0 6px; font-size: 1.15rem; }
+.lm-coach-title { margin: 6px 0 6px; font-size: 1.15rem; }
 .lm-coach-body p { margin: 0 0 8px; line-height: 1.75; }
-.lm-coach-ask { font-weight: 700; }
+.lm-coach-ask { font-weight: 700; font-size: 1.02rem; }
 .lm-coach-hint { color: var(--ink-2); font-size: 0.92rem; }
-.lm-coach-ok { color: var(--g6); font-weight: 700; }
+.lm-coach-ok { color: var(--g6); font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.lm-coach-check { display: inline-flex; align-items: center; justify-content: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--g6); color: var(--bg); font-size: 0.85rem; animation: lm-coach-pop 0.35s ease-out; }
+@keyframes lm-coach-pop { 0% { transform: scale(0.3); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
 .lm-coach-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
+.lm-coach-foot-r { display: flex; gap: 8px; }
 .lm-coach-hl { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 8px; animation: lm-coach-pulse 1.6s ease-in-out infinite; }
 @keyframes lm-coach-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(184, 138, 28, 0.45); } 50% { box-shadow: 0 0 0 8px rgba(184, 138, 28, 0); } }
-@media (prefers-reduced-motion: reduce) { .lm-coach-hl { animation: none; } }
-@media (max-width: 560px) { .lm-coach { left: 8px; right: 8px; padding: 10px 14px 12px; } }
+.lm-coach-pin { position: fixed; z-index: 61; border: 0; border-radius: 999px; padding: 4px 14px; background: var(--focus); color: #1c1608; font: inherit; font-size: 0.88rem; font-weight: 700; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
+.lm-coach-pin[hidden] { display: none; }
+.lm-coach-pin-here { pointer-events: none; }
+.lm-coach-pin-edge { transform: translateX(-50%); cursor: pointer; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .lm-coach-hl, .lm-coach-check, .lm-coach-flash { animation: none; } }
+@media (max-width: 560px) { .lm-coach { left: 8px; right: 8px; padding: 8px 14px 12px; } .lm-coach-prog li span { font-size: 0.68rem; } }

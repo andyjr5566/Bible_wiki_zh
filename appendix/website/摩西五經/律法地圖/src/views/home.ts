@@ -21,7 +21,7 @@ export function homeView(): HTMLElement {
       h('p', { class: 'lm-lede' }, '每一條附上和合本經文，經文自己交代的理由和別卷又記了一次的，都接在一起。'),
       searchBox(true),
       quickTopics(),
-      h('p', { class: 'lm-hero-help' }, '第一次來？', h('button', { type: 'button', class: 'lm-link-btn', onclick: () => startCoach() }, '跟著做一遍，學會怎麼用（約三分鐘）'))),
+      h('p', { class: 'lm-hero-help' }, '第一次來？', h('button', { type: 'button', class: 'lm-link-btn', onclick: () => startCoach() }, '新手教學：跟著點幾下，三分鐘學會怎麼用'))),
     questions(),
     reasons(),
     where(),
