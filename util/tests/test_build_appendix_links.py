@@ -214,6 +214,24 @@ class BookIndexSyncTests(unittest.TestCase):
         entries = [{"plugin": plugin(optout), "title": "地圖", "entries": {"民數記/第2章": [{"title": "t", "path": "p"}]}}]
         self.assertEqual(build_appendix_links.book_index_updates(entries), {})
 
+    def test_toc_only_entries_stay_out_of_chapter_files(self):
+        plugin = {"name": "website", "module": MagicMock(CATEGORY_NAME="互動網站")}
+        entries = {
+            "創世記/第6章": [
+                {"title": "方舟", "path": "創世記/第6章/dist/index.html"},
+                {"title": "律法", "path": "摩西五經/律法地圖/dist/index.html", "toc_only": True},
+            ],
+            "出埃及記/第20章": [
+                {"title": "律法", "path": "摩西五經/律法地圖/dist/index.html", "toc_only": True},
+            ],
+        }
+        sections = build_appendix_links.sections_by_chapter_from(
+            [{"plugin": plugin, "title": "互動網站", "entries": entries}]
+        )
+        self.assertIn("方舟", sections["創世記/第6章"][0])
+        self.assertNotIn("律法", sections["創世記/第6章"][0])
+        self.assertNotIn("出埃及記/第20章", sections)
+
     def test_website_plugin_opts_in(self):
         self.assertTrue(getattr(website_build, "BOOK_INDEX_HEADING", ""))
         self.assertFalse(hasattr(fhl_maps_build, "BOOK_INDEX_HEADING"))

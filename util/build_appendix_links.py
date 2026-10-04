@@ -100,6 +100,8 @@ def sections_by_chapter_from(plugin_entries: list[dict]) -> dict[str, list[str]]
     sections_by_chapter: dict[str, list[str]] = defaultdict(list)
     for result in plugin_entries:
         for ch_key, items in result["entries"].items():
+            # toc_only 的入口（例如跨卷的網站）只列在全書目錄，不寫進章節檔
+            items = [item for item in items if not item.get("toc_only")]
             if not items:
                 continue
             lines = [f"### {result['title']}"]

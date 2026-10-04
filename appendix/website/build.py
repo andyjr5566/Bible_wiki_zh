@@ -120,11 +120,17 @@ def _append_entry(
     entries: defaultdict[str, list[dict[str, str]]],
     key: str,
     html_file: Path,
+    *,
+    toc_only: bool = False,
 ) -> None:
-    entries[key].append({
+    item = {
         "title": extract_title(html_file),
         "path": _relative_path(html_file),
-    })
+    }
+    if toc_only:
+        # 只列在各卷「全書目錄及綱要」，不寫進章節檔的附錄區塊
+        item["toc_only"] = True
+    entries[key].append(item)
 
 
 def _chapter_html_entries(
@@ -149,7 +155,12 @@ def _chapter_html_entries(
             # 例如 ["第12章", "第13章"]，其他章的附錄也會列出同一個入口。
             # 跨卷時寫完整的「書名/第N章」，例如 ["出埃及記/第20章", "申命記/第5章"]。
             for extra in _extra_chapters(chapter_dir):
-                _append_entry(entries, extra if "/" in extra else f"{book}/{extra}", built_index)
+                _append_entry(
+                    entries,
+                    extra if "/" in extra else f"{book}/{extra}",
+                    built_index,
+                    toc_only=not _is_book_folder(book),
+                )
 
         # A Vite chapter may also contain hand-authored static pages.  Keep
         # those links, but never expose the Vite source index as a live page.
