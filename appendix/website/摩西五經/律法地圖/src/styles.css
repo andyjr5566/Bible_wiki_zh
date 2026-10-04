@@ -414,6 +414,7 @@ details.lm-layer[open] .lm-preview { display: none; }
   .lm-lanes, .lm-compare-cols { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .lm-thread { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .lm-thread-line { justify-content: flex-start; }
+  .lm-thread-node { white-space: normal; max-width: 100%; border-radius: 14px; }
   .lm-rib-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .lm-rib-row .lm-rib-name { padding-bottom: 0; font-size: 0.9rem; }
   .lm-rib-row .lm-rib-cells { grid-template-rows: 44px auto; column-gap: 1px; grid-template-columns: repeat(var(--cols), minmax(12px, 1fr)); overflow-x: auto; padding-bottom: 4px; }
@@ -442,6 +443,14 @@ details.lm-layer[open] .lm-preview { display: none; }
 .lm-coach-headr { display: flex; align-items: center; gap: 6px; flex: none; }
 .lm-coach-prog { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex: 1; min-width: 0; }
 .lm-coach-prog li { flex: 1; min-width: 0; font-size: 0.72rem; color: var(--ink-2); }
+.lm-coach-seg { display: block; width: 100%; border: 0; background: none; padding: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.lm-coach-seg:hover i { filter: brightness(1.4); }
+.lm-coach-opts { display: flex; flex-direction: column; gap: 8px; }
+.lm-coach-opt { display: flex; flex-direction: column; gap: 2px; text-align: left; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); padding: 8px 12px; font: inherit; color: var(--ink); cursor: pointer; }
+.lm-coach-opt:hover { border-color: var(--accent); }
+.lm-coach-opt-first { border-color: var(--accent); }
+.lm-coach-opt b em { margin-left: 8px; font-style: normal; font-size: 0.75rem; color: var(--bg); background: var(--accent); border-radius: 999px; padding: 1px 8px; }
+.lm-coach-opt small { color: var(--ink-2); }
 .lm-coach-prog li i { display: block; height: 4px; border-radius: 2px; background: var(--line); margin-bottom: 3px; }
 .lm-coach-prog li.lm-cur i { background: var(--accent); }
 .lm-coach-prog li.lm-done i { background: var(--g6); }

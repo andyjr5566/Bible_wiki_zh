@@ -1,4 +1,4 @@
-import { DB, lawById, laws, lawsOfTopic, refText, relationsOf } from '../data/db';
+import { DB, lawById, laws, lawsOfTopic, lawWhy, refText, relationClusters, relationsOf } from '../data/db';
 import { go, href, parse, type Route } from '../router';
 import { store } from '../store';
 import { h } from './dom';
@@ -34,6 +34,8 @@ interface Step {
 
 interface Chapter {
   name: string;
+  /** 選單上的一句說明 */
+  desc: string;
   /** 做完這一段之後的小結 */
   sum: string[];
 }
@@ -54,9 +56,10 @@ const anyPage = () => true;
 const layerOpen = (key: string) => () => !!document.querySelector<HTMLDetailsElement>(`details[data-layer="${key}"]`)?.open;
 
 const CHAPTERS: Chapter[] = [
-  { name: '看懂一條律法', sum: ['先看那一句話，再對照原文。不用先讀懂整段，就知道這一條在講什麼。'] },
-  { name: '別卷與理由', sum: ['同一件事在別卷怎麼說，一眼對照得出來。', '很多律法旁邊，經文自己就說了理由。'] },
-  { name: '自己找', sum: ['有疑問，從問題卡開始；想看一個主題，進主題頁。', '讀到某一章看不懂，搜章節，或進書卷頁展開那一章。'] },
+  { name: '看懂一條律法', desc: '從一個問題走到經文原文', sum: ['先看那一句話，再對照原文。不用先讀懂整段，就知道這一條在講什麼。', '最下面「出處」那一層，放知識庫的條目、人物地方，和別卷關聯的證據，需要查來源時再打開。'] },
+  { name: '別卷與理由', desc: '別卷怎麼記，以及經文自己說的理由', sum: ['同一件事在別卷怎麼說，一眼對照得出來。', '很多律法旁邊，經文自己就說了理由。'] },
+  { name: '自己找', desc: '主題頁、搜尋、書卷頁', sum: ['想看一個主題，進主題頁；有想找的字，用搜尋。', '讀到某一章看不懂，搜章節，或進書卷頁展開那一章。'] },
+  { name: '首頁其他區塊', desc: '經文給的理由、別卷重述、五經分布', sum: ['首頁每一區都是一個入口：問題卡、經文給的理由、別卷重述的律法組、五經的分布圖。', `最下面「全部主題」按 ${DB.groups.length} 大類列出所有主題，「照順序一段一段讀」有 ${DB.tours.length} 條照經文順序讀的路線。`] },
 ];
 
 function buildSteps(): Step[] {
@@ -66,6 +69,8 @@ function buildSteps(): Step[] {
   const topicN = lawsOfTopic(DEMO_TOPIC).length;
   const otherRefs = relationsOf(DEMO_LAW).map((r) => refText(r.other)).join('、');
   const home = (r: Route) => r.name === '';
+  const nWhy = laws.filter((l) => lawWhy(l).length).length;
+  const nGroups = relationClusters().length;
   return [
     {
       chapter: 0, title: '先問一個問題', at: home, goHash: '#/',
@@ -166,6 +171,39 @@ function buildSteps(): Step[] {
       ],
       sayTarget: '.lm-book-tools',
     },
+    {
+      chapter: 3, title: '經文自己交代的理由', at: home, goHash: '#/',
+      target: '.lm-reasons .lm-more-q',
+      ask: `首頁這一區，集中放了經文自己說了理由的律法。點「看全部 ${nWhy} 條，依書卷分開」。`,
+      done: () => document.querySelector('.lm-reasons .lm-more-q')?.getAttribute('aria-expanded') === 'true',
+      say: [
+        `${nWhy} 條律法的經文自己說了理由，依書卷分成五組。點開一卷，每張卡都是經文的原句，標題可以點進那條律法。`,
+        '想快速讀神為什麼這樣吩咐，從這一區一條一條讀就行。',
+      ],
+      sayTarget: '.lm-reasons',
+    },
+    {
+      chapter: 3, title: '別卷重述的律法組', at: home, goHash: '#/',
+      target: '.lm-restated .lm-more-q',
+      ask: `這一區列出別卷重述同一件事的律法。點「再看 ${nGroups - 6} 組」，把全部展開。`,
+      done: () => !document.querySelector('.lm-restated .lm-more-q'),
+      say: [
+        `共 ${nGroups} 組。每一組標出在哪幾卷、哪幾節，點一組就並排比較。`,
+        '想知道一件事在三卷書裡怎麼寫，從這一區找最快。',
+      ],
+      sayTarget: '.lm-restated',
+    },
+    {
+      chapter: 3, title: '律法在五經的哪裡', at: home, goHash: '#/',
+      target: '.lm-where a.lm-rib-cell[data-k="利1"]',
+      ask: '這張圖是整個五經：一格一章，柱子越高，那一章收的律法越多，顏色是類別。點利未記第1章那一格。',
+      done: (r) => r.name === 'ref',
+      say: [
+        '這一頁列出那一章收錄的所有律法，照段落排。',
+        '圖上空白的格子，是那一章沒有收律法（多半是敘事或歌）。讀到哪一章，就從圖上點那一格。',
+      ],
+      sayTarget: '.lm-book-page h1',
+    },
   ];
 }
 
@@ -174,6 +212,9 @@ let steps: Step[] = [];
 let idx = 0;
 /** 正在看哪一段的小結（null＝在做步驟） */
 let summaryOf: number | null = null;
+/** 顯示「想從哪一段開始」的選單 */
+let menu = false;
+let started = false;
 let panel: HTMLElement | null = null;
 let pin: HTMLElement | null = null;
 let doneSet = new Set<number>();
@@ -196,26 +237,27 @@ function mark(el: HTMLElement | null) {
 
 export const coachActive = () => !!panel;
 
-export function startCoach(from = 0) {
+export function startCoach() {
   if (panel) {
-    pulsePanel();
+    // 已經開著：再按頂列的按鈕，就打開選單，可以改選別段
+    menu = true;
+    lastSig = '';
+    update();
     return;
   }
   steps = buildSteps();
-  idx = Math.min(Math.max(from, 0), steps.length - 1);
+  idx = 0;
   summaryOf = null;
   doneSet = new Set();
   lastSig = '';
-  // 「經文」「別卷」兩層一開始收著，才看得到打開的那一下
-  store.setLayer('text', false);
-  store.setLayer('others', false);
+  menu = true;
+  started = false;
   panel = h('aside', { class: 'lm-coach', role: 'region', 'aria-label': '新手教學' });
   pin = h('button', { type: 'button', class: 'lm-coach-pin', hidden: true });
   document.body.append(panel, pin);
   for (const ev of ['click', 'input', 'toggle'] as const) document.addEventListener(ev, schedule, true);
   window.addEventListener('resize', schedule);
   window.addEventListener('scroll', schedule, { passive: true });
-  if (parse().name !== '') go('#/');
   update();
 }
 
@@ -230,13 +272,6 @@ export function stopCoach() {
   panel = null;
   pin = null;
   store.setGuided(true);
-}
-
-/** 頂列的按鈕：還沒開就開；已經開著就讓面板閃一下，不要關掉（關掉要按面板上的 ×） */
-function pulsePanel() {
-  panel?.classList.remove('lm-coach-flash');
-  void panel?.offsetWidth;
-  panel?.classList.add('lm-coach-flash');
 }
 
 /** 第一次來到首頁時自動出現 */
@@ -259,11 +294,29 @@ function schedule() {
 
 // ---- 前進後退 ----
 const lastOfChapter = (i: number) => i === steps.length - 1 || steps[i + 1].chapter !== steps[i].chapter;
+/** 跳到某一段的第一步；不在那一頁就直接帶過去 */
+function jump(c: number) {
+  const i = steps.findIndex((x) => x.chapter === c);
+  if (i < 0) return;
+  idx = i;
+  summaryOf = null;
+  menu = false;
+  started = true;
+  doneSet = new Set();
+  lastSig = '';
+  // 「經文」「別卷」兩層一開始收著，才看得到打開的那一下
+  store.setLayer('text', false);
+  store.setLayer('others', false);
+  if (!steps[i].at(parse())) go(steps[i].goHash);
+  update();
+}
+
 function next() {
   if (summaryOf !== null) {
     if (summaryOf >= CHAPTERS.length - 1) return;
     summaryOf = null;
     idx += 1;
+    if (!steps[idx].at(parse())) go(steps[idx].goHash);
   } else if (lastOfChapter(idx)) {
     summaryOf = steps[idx].chapter;
   } else {
@@ -280,12 +333,38 @@ function prev() {
 // ---- 畫面 ----
 function progress(cur: number, finished: boolean): HTMLElement {
   return h('ol', { class: 'lm-coach-prog', 'aria-label': '進度' }, ...CHAPTERS.map((c, i) =>
-    h('li', { class: i < cur || (finished && i === cur) ? 'lm-done' : i === cur ? 'lm-cur' : '', 'aria-current': i === cur ? 'step' : null }, h('i'), h('span', null, c.name))));
+    h('li', { class: i < cur || (finished && i === cur) ? 'lm-done' : i === cur ? 'lm-cur' : '', 'aria-current': i === cur ? 'step' : null },
+      h('button', { type: 'button', class: 'lm-coach-seg', 'aria-label': `跳到第 ${i + 1} 段：${c.name}`, title: `跳到第 ${i + 1} 段：${c.name}`, onclick: () => jump(i) }, h('i'), h('span', null, c.name)))));
 }
 
 function update() {
   if (!panel || !pin) return;
   const r = parse();
+
+  // ---- 選單：想從哪一段開始 ----
+  if (menu) {
+    mark(null);
+    pin.hidden = true;
+    const sig = `menu|${started}`;
+    if (sig === lastSig) return;
+    lastSig = sig;
+    panel.className = 'lm-coach';
+    panel.replaceChildren(
+      h('div', { class: 'lm-coach-head' }, h('span', { class: 'lm-coach-count' }, '新手教學'),
+        h('button', { type: 'button', class: 'lm-coach-x', 'aria-label': '結束教學', onclick: () => stopCoach() }, '×')),
+      h('h2', { class: 'lm-coach-title' }, '想從哪一段開始？'),
+      h('div', { class: 'lm-coach-body' },
+        h('p', { class: 'lm-coach-hint' }, '每一段三步，都是你自己動手點。第一次來，建議從第 1 段開始。'),
+        h('div', { class: 'lm-coach-opts' }, ...CHAPTERS.map((c, i) =>
+          h('button', { type: 'button', class: `lm-coach-opt${i === 0 ? ' lm-coach-opt-first' : ''}`, onclick: () => jump(i) },
+            h('b', null, `第 ${i + 1} 段　${c.name}`, i === 0 ? h('em', null, '建議先做') : null),
+            h('small', null, c.desc))))),
+      ...(started
+        ? [h('div', { class: 'lm-coach-foot' },
+          h('button', { type: 'button', class: 'lm-btn', onclick: () => { menu = false; lastSig = ''; update(); } }, '回到剛才那一步'), h('span'))]
+        : []));
+    return;
+  }
 
   // ---- 小結 ----
   if (summaryOf !== null) {
