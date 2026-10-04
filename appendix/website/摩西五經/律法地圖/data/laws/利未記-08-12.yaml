@@ -28,7 +28,7 @@ chapters:
           - id: lev10-12
             title: 祭司在聖處吃素祭、搖的胸和舉的腿
             refs: ["12-15"]
-            topics: [priests, offerings]
+            topics: [grain-offering, peace-offering, priest-portions]
             summary: 火祭中所剩的素祭，要在壇旁不帶酵而吃，因為是至聖的；搖的胸和舉的腿，祭司和他的兒女要在潔淨地方同吃，這是永得的分。
             basis: [12, 13, 14, 15]
   - chapter: 11
@@ -143,6 +143,6 @@ chapters:
           - id: lev12-06
             title: 潔淨的日子滿了，獻燔祭和贖罪祭
             refs: ["6-8"]
-            topics: [body-discharge, offerings, poor]
+            topics: [body-discharge, poor, burnt-offering, sin-offering]
             summary: 滿了潔淨的日子，要把一歲的羊羔為燔祭，一隻雛鴿或斑鳩為贖罪祭，帶到會幕門口交給祭司；力量不夠獻羊羔，可以取兩隻斑鳩或雛鴿，一隻為燔祭，一隻為贖罪祭。
             basis: [6, 7, 8]

@@ -33,13 +33,13 @@ chapters:
           - id: deut04-15
             title: 不可敗壞自己，雕刻偶像
             refs: ["15-19"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 你們要分外謹慎，因為耶和華在何烈山從火中對你們說話的那日，你們沒有看見什麼形像；惟恐你們雕刻偶像，彷彿男像女像、走獸、飛鳥、爬物、水中魚的像，又恐你向天觀看，被引誘去敬拜日月星。
             basis: [15, 16, 17, 18, 19]
           - id: deut04-23
             title: 不可忘記耶和華所立的約，為自己雕刻偶像
             refs: ["23-24"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 你們要謹慎，免得忘記耶和華你們神與你們所立的約，為自己雕刻偶像，就是耶和華你神所禁止的，因為耶和華你的神乃是烈火，是忌邪的神。
             basis: [23, 24]
             why: [24]
@@ -55,22 +55,25 @@ chapters:
           - id: deut5-07
             title: 除了耶和華，不可有別的神
             refs: ["7"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 除了耶和華以外，不可有別的神。
             basis: [7]
+            entries: [除了我以外你不可有別的神]
           - id: deut5-08
             title: 不可雕刻偶像，也不可跪拜
             refs: ["8-10"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 不可為自己雕刻偶像，也不可做天上、地下、水中百物的形像，不可跪拜事奉，因為耶和華是忌邪的神。
             basis: [8, 9]
             why: [9]
+            entries: [不可為自己雕刻偶像]
           - id: deut5-11
             title: 不可妄稱耶和華的名
             refs: ["11"]
             topics: [one-god]
             summary: 不可妄稱耶和華你神的名，因為妄稱耶和華名的，耶和華必不以他為無罪。
             basis: [11]
+            entries: [不可妄稱耶和華你神的名]
           - id: deut5-12
             title: 照神的吩咐守安息日
             refs: ["12-15"]
@@ -78,6 +81,7 @@ chapters:
             summary: 要照神的吩咐守安息日：六日做工，第七日連僕婢、牛驢和寄居的客旅都不可做工，使僕婢可以和你一樣安息；也要記念你在埃及地作過奴僕。
             basis: [12, 13, 14, 15]
             why: [15]
+            entries: [安息日]
       - id: deut5-s3
         title: 向著人的六誡
         verses: 16-21
@@ -88,36 +92,42 @@ chapters:
             topics: [parents]
             summary: 要照耶和華你神所吩咐的孝敬父母，使你得福，並使你的日子在耶和華所賜的地上得以長久。
             basis: [16]
+            entries: [當孝敬父母]
           - id: deut5-17
             title: 不可殺人
             refs: ["17"]
             topics: [homicide]
             summary: 不可殺人。
             basis: [17]
+            entries: [不可殺人]
           - id: deut5-18
             title: 不可姦淫
             refs: ["18"]
             topics: [sexual, marriage]
             summary: 不可姦淫。
             basis: [18]
+            entries: [不可姦淫]
           - id: deut5-19
             title: 不可偷盜
             refs: ["19"]
             topics: [theft]
             summary: 不可偷盜。
             basis: [19]
+            entries: [不可偷盜]
           - id: deut5-20
             title: 不可作假見證陷害人
             refs: ["20"]
             topics: [courts]
             summary: 不可作假見證陷害人。
             basis: [20]
+            entries: [不可作假見證陷害人]
           - id: deut5-21
             title: 不可貪戀人的妻子、房屋和一切所有
             refs: ["21"]
             topics: [animals-property]
             summary: 不可貪戀人的妻子；也不可貪圖人的房屋、田地、僕婢、牛、驢，和他一切所有的。
             basis: [21]
+            entries: [不可貪戀]
   - chapter: 6
     excluded:
       - { verses: "1-3", reason: 這些誡命的目的與引言 }
@@ -151,7 +161,7 @@ chapters:
           - id: deut06-13
             title: 要敬畏事奉耶和華，指著他的名起誓，不可隨從別神
             refs: ["13-15"]
-            topics: [one-god]
+            topics: [one-god, divine-name]
             summary: 你要敬畏耶和華你的神，事奉他，指著他的名起誓；不可隨從四圍國民的別神，因為在你們中間的耶和華你神是忌邪的神。
             basis: [13, 14]
             why: [15]
@@ -186,7 +196,7 @@ chapters:
           - id: deut07-01
             title: 滅絕七族，不可與他們立約、結親，要拆毀他們的祭壇
             refs: ["1-5"]
-            topics: [war, one-god, marriage]
+            topics: [war, marriage, idolatry]
             summary: 耶和華把七族交給你擊殺，你要把他們滅絕淨盡，不可與他們立約，也不可憐恤他們；不可與他們結親，不可嫁女兒給他們的兒子，也不可娶他們的女兒；要拆毀他們的祭壇，打碎柱像。
             basis: [1, 2, 3, 5]
             why: [4]
@@ -203,13 +213,13 @@ chapters:
           - id: deut07-16
             title: 要除滅耶和華交給你的人民，不可事奉他們的神
             refs: ["16"]
-            topics: [war, one-god]
+            topics: [war, idolatry]
             summary: 耶和華你神所要交給你的一切人民，你要將他們除滅；你眼不可顧惜他們，也不可事奉他們的神。
             basis: [16]
           - id: deut07-25
             title: 雕刻的神像要用火焚燒，金銀不可貪圖，可憎的物不可帶進家
             refs: ["25-26"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 他們雕刻的神像，你們要用火焚燒；其上的金銀，你不可貪圖，也不可收取；可憎的物，你不可帶進家去，不然就成了當毀滅的，與那物一樣。
             basis: [25, 26]
             why: [25]
@@ -293,7 +303,7 @@ chapters:
             refs: ["18-19"]
             topics: [sojourner]
             summary: 耶和華為孤兒寡婦伸冤，又憐愛寄居的，賜給他衣食；所以你們要憐愛寄居的，因為你們在埃及地也作過寄居的。
-            basis: [19]
+            basis: [18, 19]
             why: [18, 19]
           - id: deut10-20
             title: 要敬畏耶和華，事奉他，專靠他，指著他的名起誓
@@ -327,7 +337,7 @@ chapters:
           - id: deut11-16
             title: 謹慎，免得心中受迷惑去事奉別神
             refs: ["16-17"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 你們要謹慎，免得心中受迷惑，就偏離正路，去事奉敬拜別神；耶和華的怒氣向你們發作，就使天閉塞不下雨，地也不出產。
             basis: [16, 17]
           - id: deut11-18

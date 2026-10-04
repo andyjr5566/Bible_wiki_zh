@@ -3,12 +3,12 @@ book: 申命記
 chapter: 16
 stages:
   m3:
-    round: 1
-    revision: 1
-    sha256: cdd2f92dbc80a6ecf6d7249574ca1158130e0dbef9bf98b4e0de007b4a0b70d8
-    claude: ready
-    reviewer_status: pass
-    reviewer_agent: antigravity
+    round: 2
+    revision: 2
+    sha256: 00488b306c2f0f9a548b42c144a8e33ea292daafb82d23191c630c9fd3c82058
+    claude: revised
+    reviewer_status: pending
+    reviewer_agent: null
     review_attempts: 1
     forced_pass: false
     review_history:
@@ -17,7 +17,12 @@ stages:
       sha256: cdd2f92dbc80a6ecf6d7249574ca1158130e0dbef9bf98b4e0de007b4a0b70d8
       verdict: pass
       findings_count: 0
-    findings_count: 0
+    hash_inputs:
+    - entry_content/困苦餅（le.chem o.ni）.yaml
+    - entry_content/至公至義（tse.deq tse.deq）.yaml
+    - entry_content/賄賂使智慧人的眼變瞎（sha.chad）.yaml
+    - entry_content/逾越節與無酵節的名稱重疊.yaml
+    own_sha256: 00488b306c2f0f9a548b42c144a8e33ea292daafb82d23191c630c9fd3c82058
   m6:
     round: 1
     revision: 1

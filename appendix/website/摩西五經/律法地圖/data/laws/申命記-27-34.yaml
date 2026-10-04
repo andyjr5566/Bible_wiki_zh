@@ -19,9 +19,10 @@ chapters:
           - id: deut27-05
             title: 用沒有鑿過的石頭築壇，在壇上獻燔祭和平安祭
             refs: ["5-7"]
-            topics: [altar-tabernacle, offerings]
+            topics: [altar-tabernacle, burnt-offering, peace-offering]
             summary: 要為耶和華你的神築一座石壇，在石頭上不可動鐵器；要用沒有鑿過的石頭築壇，在壇上獻燔祭，又獻平安祭，在那裡吃，在耶和華面前歡樂。
             basis: [5, 6, 7]
+            entries: [燔祭, 平安祭]
       - id: deut27-s2
         title: 基利心山與以巴路山，以及十二樣咒詛
         verses: 11-26
@@ -75,7 +76,7 @@ chapters:
           - id: deut31-10
             title: 每逢七年末一年的住棚節，將律法念給眾人聽
             refs: ["10-13"]
-            topics: [sabbath-year, booths, priests]
+            topics: [sabbath-year, booths, levites]
             summary: 每逢七年的末一年，就在豁免年的定期住棚節的時候，以色列眾人來到耶和華所選擇的地方朝見他，要將這律法念給他們聽；招聚男女、孩子和寄居的，使他們聽、學習，好敬畏耶和華，謹守遵行。
             basis: [10, 11, 12]
             why: [12]

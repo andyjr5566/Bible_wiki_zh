@@ -9,10 +9,21 @@ groups:
     plain: 怎樣敬拜神
     color: 1
     topics:
-      - { id: one-god, name: 獨一敬拜與偶像禁令, plain: 只敬拜一位神, entry: 不可為自己雕刻偶像 }
+      - { id: one-god, name: 專一事奉耶和華, plain: 忠心敬拜耶和華 }
+      - { id: idolatry, name: 偶像與別神崇拜, plain: 不可敬拜偶像或別神, entry: 不可為自己雕刻偶像 }
+      - { id: witchcraft, name: 巫術與交鬼, plain: 不可行巫術或交鬼, entry: 不可偏向交鬼行巫術的 }
+      - { id: divine-name, name: 耶和華的名, plain: 尊重耶和華的名 }
       - { id: altar-tabernacle, name: 祭壇與會幕, plain: 祭壇與會幕 }
-      - { id: priests, name: 祭司與利未人, plain: 祭司與利未人 }
-      - { id: offerings, name: 獻祭, plain: 獻祭 }
+      - { id: priests, name: 祭司職任與聖潔, plain: 祭司的工作和聖潔 }
+      - { id: priest-garments-tools, name: 祭司的衣服與器具, plain: 祭司穿戴和使用的器具 }
+      - { id: priest-portions, name: 祭司所得的分, plain: 祭司可以領取的分, entry: 祭司的分（靠祭物養生） }
+      - { id: levites, name: 利未人的職任與產業, plain: 利未人的工作和產業, entry: 利未支派 }
+      - { id: burnt-offering, name: 燔祭, plain: 全部燒在壇上的祭, entry: 燔祭 }
+      - { id: grain-offering, name: 素祭, plain: 麵和穀物所獻的祭, entry: 素祭（minchah） }
+      - { id: peace-offering, name: 平安祭, plain: 與神分享的祭, entry: 平安祭 }
+      - { id: sin-offering, name: 贖罪祭, plain: 為罪獻上的祭, entry: 贖罪祭 }
+      - { id: guilt-offering, name: 贖愆祭, plain: 為過犯和虧欠所獻的祭, entry: 贖愆祭（asham） }
+      - { id: offerings, name: 一般祭物規定, plain: 祭物的一般規定 }
       - { id: vows, name: 許願與奉獻, plain: 許願與奉獻 }
       - { id: tithes, name: 什一與初熟, plain: 十分之一與初熟的果子, entry: 三種什一奉獻的區分 }
       - { id: firstborn, name: 頭生歸神, plain: 頭生的歸給神 }

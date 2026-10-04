@@ -14,13 +14,14 @@ chapters:
           - id: ex20-03
             title: 除了耶和華，不可有別的神
             refs: ["3"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 除了耶和華以外，不可有別的神。
             basis: [3]
+            entries: [除了我以外你不可有別的神]
           - id: ex20-04
             title: 不可雕刻偶像，也不可跪拜
             refs: ["4-6"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 不可為自己雕刻偶像，也不可做天上、地下、水中百物的形像，不可跪拜事奉，因為耶和華是忌邪的神。
             basis: [4, 5]
             why: [5]
@@ -28,9 +29,10 @@ chapters:
           - id: ex20-07
             title: 不可妄稱耶和華的名
             refs: ["7"]
-            topics: [one-god]
+            topics: [divine-name]
             summary: 不可妄稱耶和華你神的名，因為妄稱耶和華名的，耶和華必不以他為無罪。
             basis: [7]
+            entries: [不可妄稱耶和華你神的名]
           - id: ex20-08
             title: 守安息日為聖日
             refs: ["8-11"]
@@ -38,6 +40,7 @@ chapters:
             summary: 要記念安息日守為聖日：六日勞碌做工，第七日全家、僕婢、牲畜和寄居的客旅都不可做工，因為耶和華六日造天地，第七日便安息。
             basis: [8, 9, 10, 11]
             why: [11]
+            entries: [安息日]
       - id: ex20-s2
         title: 向著人的六誡
         verses: 12-17
@@ -48,36 +51,42 @@ chapters:
             topics: [parents]
             summary: 要孝敬父母，使你的日子在耶和華所賜的地上得以長久。
             basis: [12]
+            entries: [當孝敬父母]
           - id: ex20-13
             title: 不可殺人
             refs: ["13"]
             topics: [homicide]
             summary: 不可殺人。
             basis: [13]
+            entries: [不可殺人]
           - id: ex20-14
             title: 不可姦淫
             refs: ["14"]
             topics: [sexual, marriage]
             summary: 不可姦淫。
             basis: [14]
+            entries: [不可姦淫]
           - id: ex20-15
             title: 不可偷盜
             refs: ["15"]
             topics: [theft]
             summary: 不可偷盜。
             basis: [15]
+            entries: [不可偷盜]
           - id: ex20-16
             title: 不可作假見證陷害人
             refs: ["16"]
             topics: [courts]
             summary: 不可作假見證陷害人。
             basis: [16]
+            entries: [不可作假見證陷害人]
           - id: ex20-17
             title: 不可貪戀人的房屋、妻子和一切所有
             refs: ["17"]
             topics: [animals-property]
             summary: 不可貪戀人的房屋，也不可貪戀人的妻子、僕婢、牛驢，和他一切所有的。
             basis: [17]
+            entries: [不可貪戀]
       - id: ex20-s3
         title: 築壇的規定
         verses: 22-26
@@ -85,15 +94,17 @@ chapters:
           - id: ex20-23
             title: 不可做神像與耶和華相配
             refs: ["23"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 不可做什麼神像與耶和華相配，也不可為自己做金銀的神像。
             basis: [23]
+            entries: [不可為自己雕刻偶像]
           - id: ex20-24
             title: 築土壇獻燔祭和平安祭
             refs: ["24"]
-            topics: [altar-tabernacle, offerings]
+            topics: [altar-tabernacle, burnt-offering, peace-offering]
             summary: 要為耶和華築土壇，在上面以牛羊獻為燔祭和平安祭；凡記下他名的地方，他必到那裡賜福。
             basis: [24]
+            entries: [燔祭, 平安祭]
           - id: ex20-25
             title: 石壇不可用鑿成的石頭，上壇不可用臺階
             refs: ["25-26"]
@@ -137,6 +148,7 @@ chapters:
             topics: [homicide]
             summary: 打人致死的，要處死；人若沒有埋伏，是神交在他手中，可以逃到所設的地方；任意用詭計殺人的，逃到壇那裡也要捉去處死。
             basis: [12, 13, 14]
+            entries: [逃城]
           - id: ex21-15
             title: 打罵父母的要處死
             refs: ["15", "17"]
@@ -302,10 +314,11 @@ chapters:
             topics: [marriage, sexual]
             summary: 人引誘沒有受聘的處女，與他行淫，總要交出聘禮，娶他為妻；若女子的父親決不肯將女子給他，他就要按處女的聘禮交出錢來。
             basis: [16, 17]
+            entries: [引誘處女的律例]
           - id: ex22-18
             title: 行邪術的女人不可容他存活
             refs: ["18"]
-            topics: [one-god]
+            topics: [witchcraft]
             summary: 行邪術的女人，不可容他存活。
             basis: [18]
           - id: ex22-19
@@ -317,7 +330,7 @@ chapters:
           - id: ex22-20
             title: 祭祀別神的要滅絕
             refs: ["20"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 祭祀別神，不單單祭祀耶和華的，那人必要滅絕。
             basis: [20]
       - id: ex22-s5
@@ -444,10 +457,11 @@ chapters:
             topics: [sabbath]
             summary: 六日要做工，第七日要安息，使牛、驢可以歇息，並使婢女的兒子和寄居的都可以舒暢。
             basis: [12]
+            entries: [安息日]
           - id: ex23-13
             title: 謹守耶和華的話，別神的名不可提
             refs: ["13"]
-            topics: [one-god]
+            topics: [divine-name]
             summary: 凡耶和華所說的話，你們要謹守；別神的名不可提，也不可從口中傳說。
             basis: [13]
       - id: ex23-s3
@@ -460,6 +474,7 @@ chapters:
             topics: [three-feasts]
             summary: 一年三次，要向耶和華守節；一切的男丁要一年三次朝見主耶和華。
             basis: [14, 17]
+            entries: [三大節期]
           - id: ex23-15
             title: 守除酵節
             refs: ["15"]
@@ -472,6 +487,7 @@ chapters:
             topics: [weeks, booths]
             summary: 要守收割節，所收的是田間所種、勞碌得來初熟之物；並在年底收藏的時候，要守收藏節。
             basis: [16]
+            entries: [三大節期]
           - id: ex23-18
             title: 祭牲的血與有酵的餅，節上祭牲的脂油
             refs: ["18"]
@@ -491,12 +507,12 @@ chapters:
           - id: ex23-24
             title: 不可跪拜迦南人的神，要事奉耶和華
             refs: ["24-25"]
-            topics: [one-god]
+            topics: [idolatry]
             summary: 不可跪拜他們的神，不可事奉他，也不可效法他們的行為，要把神像盡行拆毀，打碎他們的柱像；要事奉耶和華你們的神。
             basis: [24, 25]
           - id: ex23-32
             title: 不可和迦南人立約，不可讓他們住在你的地上
             refs: ["32-33"]
-            topics: [war, one-god]
+            topics: [war, idolatry]
             summary: 不可和他們並他們的神立約；他們不可住在你的地上，恐怕他們使你得罪耶和華。
             basis: [32, 33]

@@ -62,7 +62,7 @@ chapters:
             title: 有殘疾的祭司後裔不可近前來獻食物，卻可以吃
             refs: ["17-23"]
             topics: [priests]
-            summary: 亞倫的後裔凡有殘疾的，都不可近前來獻神的食物；至聖的、聖的食物，他都可以吃；但不可進到幔子前，也不可就近壇前，免得褻瀆耶和華的聖所。
+            summary: 亞倫後裔身有污穢卻親近聖物的，必從民中剪除；患大痲瘋、漏症或摸不潔之物的，要等潔淨才可吃聖物，摸後須洗身、日落才潔淨；自死或被獸撕裂的不可吃。
             basis: [17, 21, 22, 23]
             why: [23]
   - chapter: 22
@@ -78,19 +78,19 @@ chapters:
           - id: lev22-02
             title: 祭司身上有污穢，不可吃聖物
             refs: ["2-9"]
-            topics: [priests, offerings, corpse]
+            topics: [offerings, corpse, priest-portions]
             summary: 亞倫的後裔身上有污穢，或長大痲瘋、有漏症的，不可吃聖物，直等他潔淨了；摸了使他不潔淨的，必不潔淨到晚上，不用水洗身就不可吃聖物，日落時潔淨了才可以吃；自死的或被野獸撕裂的，不可吃。
-            basis: [2, 4, 6, 7, 8]
+            basis: [2, 3, 4, 5, 6, 7, 8]
           - id: lev22-10
             title: 外人、雇工人不可吃聖物，祭司買的人和家人可以
             refs: ["10-13"]
-            topics: [priests, offerings]
+            topics: [offerings, priest-portions]
             summary: 外人、寄居在祭司家的或雇工人，都不可吃聖物；祭司用錢買的人和生在他家的人可以吃；祭司的女兒若嫁外人，就不可吃舉祭的聖物，若是寡婦或被休的，沒有孩子，歸回父家，就可以吃。
             basis: [10, 11, 12, 13]
           - id: lev22-14
             title: 誤吃聖物，要加五分之一交給祭司
             refs: ["14-16"]
-            topics: [priests, offerings]
+            topics: [offerings, priest-portions]
             summary: 有人誤吃了聖物，要照聖物的原數加上五分之一交給祭司；祭司不可褻瀆以色列人所獻給耶和華的聖物，免得他們在吃聖物上自取罪孽。
             basis: [14, 15, 16]
       - id: lev22-s2
@@ -101,8 +101,8 @@ chapters:
             title: 獻的牲畜要沒有殘疾，才蒙悅納
             refs: ["18-25"]
             topics: [offerings]
-            summary: 獻燔祭、平安祭，要將沒有殘疾的公牛、綿羊或山羊獻上，如此方蒙悅納；瞎眼的、折傷的、殘廢的、有瘤子的、長癬的、長疥的都不可獻；肢體有餘或缺少的，只可作甘心祭，用以還願卻不蒙悅納。
-            basis: [18, 19, 20, 22, 23, 25]
+            summary: 許願或甘心獻燔祭、平安祭，要獻無殘疾的公牛、綿羊或山羊；瞎眼、折傷等有殘疾的不可獻，肢體多或少的只可作甘心祭；有殘疾的外來牲畜也不可收。
+            basis: [18, 19, 20, 21, 22, 23, 24, 25]
           - id: lev22-27
             title: 才生的牲畜，七天跟著母，第八天以後可獻
             refs: ["27"]
@@ -118,12 +118,12 @@ chapters:
           - id: lev22-29
             title: 感謝祭要當天吃，一點不可留到早晨
             refs: ["29-30"]
-            topics: [offerings]
+            topics: [peace-offering]
             summary: 你們獻感謝祭給耶和華，要獻得可蒙悅納；要當天吃，一點不可留到早晨。
             basis: [29, 30]
           - id: lev22-31
             title: 謹守耶和華的誡命，不可褻瀆聖名
             refs: ["31-33"]
-            topics: [one-god]
+            topics: [divine-name]
             summary: 你們要謹守遵行我的誡命；不可褻瀆我的聖名，我在以色列人中卻要被尊為聖；我是叫你們成聖的耶和華，把你們從埃及地領出來，作你們的神。
             basis: [31, 32, 33]
