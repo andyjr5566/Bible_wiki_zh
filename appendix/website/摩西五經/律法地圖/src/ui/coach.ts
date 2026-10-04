@@ -221,6 +221,8 @@ let doneSet = new Set<number>();
 let marked: Element | null = null;
 let timer = 0;
 let lastSig = '';
+/** 這一步已經自動捲過了（每一步只自動捲一次，之後讀者想往哪捲就往哪捲） */
+let scrolledKey = '';
 
 const visible = (el: Element) => (el as HTMLElement).getClientRects().length > 0 && !(el as HTMLElement).closest('[hidden]');
 function find(sel?: string): HTMLElement | null {
@@ -252,6 +254,7 @@ export function startCoach() {
   lastSig = '';
   menu = true;
   started = false;
+  scrolledKey = '';
   panel = h('aside', { class: 'lm-coach', role: 'region', 'aria-label': '新手教學' });
   pin = h('button', { type: 'button', class: 'lm-coach-pin', hidden: true });
   document.body.append(panel, pin);
@@ -304,6 +307,7 @@ function jump(c: number) {
   started = true;
   doneSet = new Set();
   lastSig = '';
+  scrolledKey = '';
   // 「經文」「別卷」兩層一開始收著，才看得到打開的那一下
   store.setLayer('text', false);
   store.setLayer('others', false);
@@ -409,6 +413,13 @@ function update() {
   // 要點的東西在下半部，面板就放上面
   const top = inView && rect!.top > window.innerHeight * 0.42;
 
+  // 換到新的一步（或做完、要說明了），目標不在畫面裡，就把它帶進畫面。每一步只做一次。
+  const key = `${idx}|${done}`;
+  if (el && !inView && scrolledKey !== key) {
+    scrolledKey = key;
+    scrollTo(el);
+  }
+
   placePin(el, rect, inView, dir, done);
 
   const sig = [idx, onPage, done, top, dir, !!el, sel ?? ''].join('|');
@@ -449,6 +460,14 @@ function head(chapter: number, finished: boolean, nth = 0, total = 0): HTMLEleme
       h('button', { type: 'button', class: 'lm-coach-x', 'aria-label': '結束教學', onclick: () => stopCoach() }, '×')));
 }
 
+/** 把目標帶進畫面：矮的放中間，高的（整個區塊）對齊上緣並留出空間 */
+function scrollTo(el: HTMLElement) {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tall = el.getBoundingClientRect().height > window.innerHeight * 0.55;
+  el.style.scrollMarginTop = '84px';
+  el.scrollIntoView({ block: tall ? 'start' : 'center', behavior: reduce ? 'auto' : 'smooth' });
+}
+
 /** 標示按鈕：在畫面內就貼在目標旁邊寫「點這裡」；在畫面外就在邊緣放一顆按鈕，按了才捲過去 */
 function placePin(el: HTMLElement | null, rect: DOMRect | undefined, inView: boolean, dir: string, done: boolean) {
   if (!pin) return;
@@ -474,8 +493,7 @@ function placePin(el: HTMLElement | null, rect: DOMRect | undefined, inView: boo
     pin.style.top = dir === 'up' ? '64px' : 'auto';
     pin.style.bottom = dir === 'down' ? `${(panel?.getBoundingClientRect().height ?? 200) + 24}px` : 'auto';
     pin.onclick = () => {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      scrollTo(el);
     };
   }
 }
