@@ -146,11 +146,12 @@ def book_index_block(plugin_name: str, heading: str, folder: str, items_by_chapt
     """產出目錄頁裡屬於某個 plugin 的整段（含 start/end 標記）。章節依章號排序。"""
     start, end = book_index_markers(plugin_name)
     lines = [start, f"## {heading}", ""]
-    # 同一組入口掛在好幾章時只列一次：連續的章節併成「第a–b章」，連到第一章
+    # 每個入口（網站）一列：它掛的章節，連續的併成「第a–b章」，連到第一章
     groups: dict[tuple, list[str]] = {}
     for chapter_name in sorted(items_by_chapter, key=_chapter_sort_key):
-        key = tuple((item["title"], item["path"], bool(item.get("is_wikilink"))) for item in items_by_chapter[chapter_name])
-        groups.setdefault(key, []).append(chapter_name)
+        for item in items_by_chapter[chapter_name]:
+            key = ((item["title"], item["path"], bool(item.get("is_wikilink"))),)
+            groups.setdefault(key, []).append(chapter_name)
     rows: list[tuple[int, str]] = []
     for key, chapters in groups.items():
         links = "、".join(f"[[{path}|{title}]]" if wiki else f"[{title}]({path})" for title, path, wiki in key)
