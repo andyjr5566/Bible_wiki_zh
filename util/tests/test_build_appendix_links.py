@@ -64,13 +64,38 @@ class AppendixWebsiteCrossBookTests(unittest.TestCase):
             (root / "02 出埃及記").mkdir()
             (root / "05 申命記").mkdir()
             self._vite_site(root, "摩西五經/律法地圖", ["出埃及記/第20章", "申命記/第5章"])
-            # 跨卷網站不進附錄工具看得到的入口（不掛章節、不進各卷全書目錄）
-            self.assertEqual(self._scan(root), {})
-            # 只給 index.md 用，以完整的「書名/第N章」為 key
-            category = root / "appendix" / "website"
-            with patch.object(website_build, "CATEGORY_DIR", category), patch.object(website_build, "REPOSITORY_ROOT", root):
-                cross = website_build.scan_cross_book_entries()
-            self.assertEqual(sorted(cross), ["出埃及記/第20章", "申命記/第5章"])
+            entries = self._scan(root)
+            self.assertEqual(sorted(entries), ["出埃及記/第20章", "申命記/第5章"])
+            self.assertNotIn("摩西五經/律法地圖", entries)
+            self.assertFalse(any(item.get("toc_only") for items in entries.values() for item in items))
+
+    def test_toc_only_declaration_marks_entries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "02 出埃及記").mkdir()
+            (root / "05 申命記").mkdir()
+            self._vite_site(root, "摩西五經/律法地圖", {"toc_only": True, "chapters": ["出埃及記/第20章", "申命記/第5章"]})
+            entries = self._scan(root)
+            self.assertEqual(sorted(entries), ["出埃及記/第20章", "申命記/第5章"])
+            self.assertTrue(all(item.get("toc_only") for items in entries.values() for item in items))
+
+    def test_toc_only_entries_stay_out_of_chapter_files(self):
+        plugin = {"name": "website", "module": MagicMock(CATEGORY_NAME="互動網站")}
+        entries = {
+            "創世記/第6章": [
+                {"title": "方舟", "path": "創世記/第6章/dist/index.html"},
+                {"title": "律法", "path": "摩西五經/律法地圖/dist/index.html", "toc_only": True},
+            ],
+            "出埃及記/第20章": [
+                {"title": "律法", "path": "摩西五經/律法地圖/dist/index.html", "toc_only": True},
+            ],
+        }
+        sections = build_appendix_links.sections_by_chapter_from(
+            [{"plugin": plugin, "title": "互動網站", "entries": entries}]
+        )
+        self.assertIn("方舟", sections["創世記/第6章"][0])
+        self.assertNotIn("律法", sections["創世記/第6章"][0])
+        self.assertNotIn("出埃及記/第20章", sections)
 
     def test_same_book_short_keys_unchanged(self):
         with tempfile.TemporaryDirectory() as tmp:
