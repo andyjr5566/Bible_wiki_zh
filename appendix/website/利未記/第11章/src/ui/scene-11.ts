@@ -23,6 +23,8 @@ import { sil } from './sil';
 
 const yes = (on: boolean, label: string) => h('span', { class: `crit ${on ? 'ok' : 'no'}` }, svg(ICONS[on ? 'check' : 'x']), label);
 const reduce = () => motionOff() || animOff();
+/** 讀者自己按下去的動畫（分欄、打破瓦器、跳到某一段）只看本站的開關，和 3D 故事的播放一樣 */
+const pressedOff = () => animOff();
 
 /* ------------------------------------------------------------ 1. 開場：一條線 */
 
@@ -166,7 +168,7 @@ function realms(): HTMLElement {
   const index = h('ol', { class: 'realm-index', 'aria-label': '五類活物' }, ...REALMS.map((r) => h('li', null,
     h('a', { href: `#/c11`, 'data-to': r.id, onclick: (e: MouseEvent) => {
       e.preventDefault();
-      document.getElementById(`realm-${r.id}`)?.scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' });
+      document.getElementById(`realm-${r.id}`)?.scrollIntoView({ behavior: pressedOff() ? 'auto' : 'smooth', block: 'start' });
     } }, h('b', null, r.name), h('small', null, r.how)))));
   const steps = REALMS.map((r) => h('section', { class: 'realm', id: `realm-${r.id}`, 'data-id': r.id },
     h('div', { class: 'realm-text' },
@@ -220,7 +222,7 @@ function sorter(): HTMLElement {
     const v = k.id === 'clay' ? VOICES_11.clay : k.id === 'spring' ? VOICES_11.spring : null;
     let shards: HTMLElement | null = null;
     if (k.id === 'clay' && canWebGL()) {
-      jar ??= import('../three/jar').then((m) => m.mountJar(jarBox, reduce())).catch((e) => { console.error(e); return null; });
+      jar ??= import('../three/jar').then((m) => m.mountJar(jarBox, pressedOff())).catch((e) => { console.error(e); return null; });
       requestAnimationFrame(() => jar!.then((p) => p?.play()));
       shards = jarBox;
     }
@@ -246,7 +248,7 @@ function sorter(): HTMLElement {
     pile.hidden = sorted;
     btn.setAttribute('aria-pressed', String(sorted));
     btn.textContent = sorted ? '混在一起' : '依結果分欄';
-    if (reduce()) return;
+    if (pressedOff()) return;
     for (const t of tiles) {
       const a = before.get(t)!;
       const b = t.getBoundingClientRect();

@@ -1,12 +1,13 @@
 import { RETURN } from '../data/story';
-import { animOff, h, motionOff } from './dom';
+import { animOff, h } from './dom';
 import { quoteLine } from './evidence';
 
 /**
  * 「怎麼走回來」的鏡頭：Blender 渲染的 100 格畫面（public/images/fly/），
  * 從營外沿著營中的路走進院門，停在會幕門口（利14:3-20 的五站）。
  * 往下捲，鏡頭往前走；每一站的經文疊在畫面上。
- * 減少動態時改成五張靜止畫面並排，內容一樣。
+ * 鏡頭跟著讀者自己的捲動走，所以和 3D 故事的播放一樣，只看本站的「減少動態」開關（animOff）；
+ * 開關打開時改成五張靜止畫面並排，內容一樣。
  */
 const FRAMES = 100;
 /** 五站各落在第幾格（和 Blender 的鏡頭關鍵格一致） */
@@ -20,7 +21,7 @@ export function flythrough(): HTMLElement {
     h('span', { class: 'fly-text' }, r.fact.text),
     h('span', { class: 'fly-q' }, quoteLine(r.fact))));
 
-  if (motionOff() || animOff()) {
+  if (animOff()) {
     return h('figure', { class: 'fly fly-still' },
       h('ol', { class: 'fly-stills' }, ...STOPS.map((f, i) => h('li', null,
         h('img', { src: src(f), alt: '', loading: 'lazy', decoding: 'async' }), steps[i]))),
