@@ -1,0 +1,188 @@
+/*
+ * 新版視覺（2026-10）：疊在 styles.css／story.css／purity.css 之後，只改呈現，不動內容。
+ *
+ * 版面概念：入夜的營地。
+ *   這五章講的是「能離會幕多近」和「要等多久」：一個是距離，一個是時間。
+ *   頂端導覽是一條夜色的路，八幕是路上的站；封面是 Blender 渲染的黃昏營地，雲中有火（出40:38）。
+ *
+ * 三種聲音，三種字：
+ *   --serif  明體：和合本經文與網站的標題
+ *   --sans   黑體：說明、規矩整理、註釋家的話
+ *   --hand   手寫體（芫荽）：故事裡那一家人說的話。一看就知道是示意情境，不是經文
+ *
+ * 顏色：白天是石灰牆的白（晝），晚上是營地的夜色（夜）；主色是火光，只用在經節、目前位置與重點。
+ */
+:root {
+  --bg: #f2f0eb;
+  --bg-2: #e7e4dc;
+  --surface: #fbfaf7;
+  --surface-2: #f0ede6;
+  --ink: #1a1a20;
+  --ink-2: #4a4a53;
+  --ink-3: #64646d;
+  --line: #d9d5cb;
+  --line-2: #c2bdb0;
+  --night: #141a2a;
+  --night-2: #222a40;
+  --night-ink: #ece8e0;
+  --night-ink-2: #a9adbd;
+  --fire: #d9661c;
+  --bronze: #a4461a;      /* 舊名稱：連結、經節、強調都用它，改成火光的深色 */
+  --bronze-2: #d9661c;
+  --gold: #a87516;
+  --focus: #2f6bd8;
+  --shadow: 0 1px 0 rgb(26 26 32 / 4%);
+  --shadow-lg: 0 2px 6px rgb(26 26 32 / 6%), 0 22px 44px -18px rgb(26 26 32 / 26%);
+  --r: 12px;
+  --r-sm: 8px;
+  --serif: 'Noto Serif TC', 'Source Han Serif TC', 'Songti TC', 'PMingLiU', serif;
+  --sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  --hand: 'Iansui', 'Kaiti TC', 'BiauKai', 'Noto Serif TC', serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0f1320; --bg-2: #141a2a; --surface: #161c2d; --surface-2: #1d2438; --linen: #262e45;
+    --ink: #ece8e0; --ink-2: #b9b8c0; --ink-3: #8f919e; --line: #273049; --line-2: #39425f;
+    --night: #0b0f1a; --night-2: #1a2134;
+    --fire: #f08a3c; --bronze: #f0a060; --bronze-2: #f08a3c; --gold: #e6bb5a; --focus: #8fb2ff;
+    --shadow: 0 1px 0 rgb(0 0 0 / 30%);
+    --shadow-lg: 0 2px 6px rgb(0 0 0 / 35%), 0 22px 44px -18px rgb(0 0 0 / 60%);
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #0f1320; --bg-2: #141a2a; --surface: #161c2d; --surface-2: #1d2438; --linen: #262e45;
+  --ink: #ece8e0; --ink-2: #b9b8c0; --ink-3: #8f919e; --line: #273049; --line-2: #39425f;
+  --night: #0b0f1a; --night-2: #1a2134;
+  --fire: #f08a3c; --bronze: #f0a060; --bronze-2: #f08a3c; --gold: #e6bb5a; --focus: #8fb2ff;
+  --shadow: 0 1px 0 rgb(0 0 0 / 30%);
+  --shadow-lg: 0 2px 6px rgb(0 0 0 / 35%), 0 22px 44px -18px rgb(0 0 0 / 60%);
+}
+
+body { font: 400 var(--fs) / 1.85 var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: color-mix(in srgb, var(--fire) 26%, transparent); }
+h1, h2, h3, h4 { text-wrap: balance; }
+a { text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
+/* ============================================================ 頂列：夜色的路，八幕是路上的站 */
+.topbar { background: var(--night); border-bottom: 0; color: var(--night-ink); backdrop-filter: none; }
+.topbar .brand { color: var(--night-ink); letter-spacing: 0.06em; }
+.topbar .brand small { color: var(--night-ink-2); letter-spacing: 0.02em; }
+.topbar .brand svg { color: var(--fire); }
+.topbar .iconbtn { background: transparent; border-color: rgb(255 255 255 / 14%); color: var(--night-ink-2); }
+.topbar .iconbtn:hover { color: var(--night-ink); border-color: rgb(255 255 255 / 30%); }
+.topbar .iconbtn[aria-pressed='true'] { background: var(--night-ink); color: var(--night); border-color: var(--night-ink); }
+.rail { padding-bottom: 10px; }
+.rail-items { position: relative; gap: 0; }
+.rail-items::before { content: ''; position: absolute; left: 0; right: 0; top: 9px; border-top: 1px solid rgb(255 255 255 / 16%); }
+.rail-item { position: relative; background: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0; padding: 20px 14px 2px; color: var(--night-ink-2); }
+.rail-item::before { content: ''; position: absolute; left: 50%; top: 5px; margin-left: -4.5px; width: 9px; height: 9px; border-radius: 50%; background: var(--night); border: 1.5px solid rgb(255 255 255 / 34%); transition: background .2s, border-color .2s, transform .2s; }
+.rail-item b { color: var(--night-ink-2); font-weight: 500; }
+.rail-item small { color: rgb(169 173 189 / 70%); }
+.rail-item:hover b { color: var(--night-ink); }
+.rail-item.past::before { background: rgb(255 255 255 / 34%); border-color: transparent; }
+.rail-item.past b { color: var(--night-ink); }
+.rail-item[aria-current]::before { background: var(--fire); border-color: var(--fire); transform: scale(1.35); box-shadow: 0 0 0 4px rgb(240 138 60 / 22%); }
+.rail-item[aria-current] b { color: #fff; font-weight: 700; }
+.rail-progress { height: 2px; background: rgb(255 255 255 / 6%); }
+.rail-progress i { background: linear-gradient(90deg, #8a3a12, var(--fire)); }
+
+/* ============================================================ 每一幕的開頭：大的章號 */
+.scene { padding-top: 48px; }
+.scene-head { max-width: none; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 36px; }
+.scene-head[data-num] { grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(20px, 4vw, 48px); align-items: end; }
+.scene-head[data-num]::before {
+  content: attr(data-num); grid-row: 1 / span 3; align-self: start;
+  font: 900 clamp(5rem, 13vw, 9.5rem) / 0.82 var(--serif); letter-spacing: -0.04em;
+  color: transparent; -webkit-text-stroke: 1.5px var(--c, var(--ink)); font-variant-numeric: lining-nums;
+}
+.scene-head[data-num] > * { grid-column: 2; }
+.scene-head .kicker { font-size: 0.78em; letter-spacing: 0.16em; color: var(--c, var(--ink-3)); font-weight: 700; }
+.scene-head h1 { font-size: clamp(2.1rem, 5.2vw, 3.4rem); font-weight: 900; letter-spacing: 0.02em; line-height: 1.15; }
+.scene-head .lede { max-width: 36em; color: var(--ink-2); font-weight: 500; line-height: 1.8; }
+
+/* 一層：細線在上，標題靠左，說明靠右 */
+.layer { margin-top: 64px; }
+.layer-title { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); align-items: baseline; gap: 4px 24px;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 900; letter-spacing: 0.03em; border-top: 1px solid var(--ink); border-bottom: 0; padding: 14px 0 0; margin-bottom: 22px; }
+.layer-title small { justify-self: end; text-align: right; font-size: 0.5em; letter-spacing: 0.02em; color: var(--ink-3); }
+@media (max-width: 720px) {
+  .layer-title { grid-template-columns: minmax(0, 1fr); }
+  .layer-title small { justify-self: start; text-align: left; }
+  .scene-head[data-num] { grid-template-columns: minmax(0, 1fr); }
+  .scene-head[data-num]::before { grid-row: auto; font-size: 4.6rem; margin-bottom: -6px; }
+  .scene-head[data-num] > * { grid-column: 1; }
+}
+
+/* ============================================================ 卡片：細框，不用陰影堆層次 */
+.card { border-radius: var(--r); box-shadow: none; border-color: var(--line); }
+.card:where(a, button):hover { box-shadow: var(--shadow-lg); }
+.key { border-top-width: 1px; }
+
+/* ============================================================ 三種聲音 */
+/* 經文：明體 */
+.q { font-family: var(--serif); font-weight: 500; letter-spacing: 0.02em; }
+/* 經節：小小的火光標籤 */
+.ref { font-family: var(--sans); font-variant-numeric: tabular-nums; letter-spacing: 0.01em; border-radius: 4px;
+  color: var(--bronze); background: color-mix(in srgb, var(--fire) 10%, transparent); border: 0; }
+.ref:hover { background: color-mix(in srgb, var(--fire) 22%, transparent); }
+/* 註釋家：黑體，左邊一條紫線，名字在上 */
+.voice { border-left: 2px solid var(--ev-interp); background: color-mix(in srgb, var(--ev-interp) 5%, transparent); border-radius: 0 8px 8px 0; padding: 10px 14px; }
+.voice .who { letter-spacing: 0.06em; }
+/* 故事裡的一家人：手寫體 */
+.bridge-bubble { border: 0; background: transparent; box-shadow: none; padding: 6px 4px 4px; max-width: 780px; text-align: center; }
+.bridge-bubble::before { display: none; }
+.bridge-bubble p { font-family: var(--hand); font-size: clamp(1.3rem, 2.8vw, 1.7rem); line-height: 1.7; color: var(--ink); }
+.bridge-who { justify-content: center; }
+.bridge-line { border-left-width: 1.5px; height: 56px; }
+.th-voice, .th-voice .q { font-family: var(--hand); }
+
+/* ============================================================ 封面（序幕）：渲染的黃昏營地 */
+.hero-camp { background: #0f1320; height: min(90vh, 920px); margin-bottom: 0; }
+.hero-poster-render { background: #0f1320; display: block; }
+.hero-poster-render picture, .hero-poster-render img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.hero-poster-render::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgb(10 12 20 / 72%) 0%, rgb(10 12 20 / 18%) 34%, transparent 55%), linear-gradient(0deg, rgb(10 12 20 / 70%) 0%, transparent 28%); }
+.hero-camp:not(.is-3d) .hero-title { color: #f3eee6; }
+.hero-camp:not(.is-3d) .hero-title h1 { text-shadow: 0 2px 30px rgb(0 0 0 / 55%); font-weight: 900; }
+.hero-camp:not(.is-3d) .hero-title .epigraph { color: #e6dccd; text-shadow: 0 1px 12px rgb(0 0 0 / 70%); }
+.hero-camp:not(.is-3d) .hero-title .epi .ref { color: #ffc89a; background: rgb(255 255 255 / 10%); }
+.hero-camp:not(.is-3d) .hero-hint, .hero-camp.is-3d .hero-cap { display: none; }
+.hero-cap { position: absolute; z-index: 2; left: max(20px, calc((100vw - 1180px) / 2)); bottom: 22px; right: 220px; margin: 0;
+  display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; color: #d9d2c6; font-size: 0.82em; }
+.hero-cap .fact { color: #f3eee6; }
+.hero-cap .ref { color: #ffc89a; background: rgb(255 255 255 / 10%); }
+.hero-cap .ev { color: #e6dccd; border-color: rgb(255 255 255 / 30%); background: none; }
+.hero-3d { position: absolute; z-index: 3; right: max(20px, calc((100vw - 1180px) / 2)); bottom: 20px; display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px 9px 14px; border-radius: 999px; border: 1px solid rgb(255 255 255 / 28%); background: rgb(15 19 32 / 55%); color: #f3eee6;
+  font: 700 0.92em var(--sans); letter-spacing: 0.04em; cursor: pointer; backdrop-filter: blur(8px); transition: background .2s, border-color .2s; }
+.hero-3d svg { width: 20px; height: 20px; color: var(--fire); }
+.hero-3d:hover { background: rgb(15 19 32 / 80%); border-color: rgb(255 255 255 / 55%); }
+.hero-3d:disabled { opacity: 0.8; cursor: progress; }
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion='off']) .hero-poster-render img { animation: hero-drift 24s ease-in-out infinite alternate; }
+}
+@keyframes hero-drift { from { transform: scale(1.02); } to { transform: scale(1.08) translateY(-1%); } }
+@media (max-width: 720px) {
+  .hero-camp { height: 78vh; }
+  .hero-cap { right: 20px; bottom: 74px; font-size: 0.76em; }
+  .hero-3d { left: 20px; right: auto; bottom: 18px; }
+  .hero-poster-render::after { background: linear-gradient(0deg, rgb(10 12 20 / 80%) 0%, transparent 45%), linear-gradient(180deg, rgb(10 12 20 / 55%) 0%, transparent 30%); }
+}
+
+/* 序幕標題下的第一段 */
+.scene-intro .intro-h { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 900; }
+.scene.scene-intro { padding-top: 0; }
+.scene-intro .scene-head { margin-top: 56px; }
+
+/* ============================================================ 第 11 章：瓦罐碎在地上（Blender 動畫） */
+.k-jar { height: 230px; margin: -6px -6px 6px; border-radius: 10px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 70%, color-mix(in srgb, #b07a4a 14%, var(--surface)) 0%, var(--surface) 70%); }
+.k-jar canvas { display: block; width: 100%; height: 100%; }
+
+/* ============================================================ 頁尾 */
+footer { background: var(--night); color: var(--night-ink-2); margin-top: 72px; }
+footer a { color: #ffc89a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rail-item::before { transition: none; }
+}

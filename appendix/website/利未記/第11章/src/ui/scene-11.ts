@@ -4,7 +4,8 @@ import {
   type KitchenThing, type NamedCreature,
 } from '../data/ch11';
 import { REEL_11 } from '../data/reels';
-import { fill, h, svg } from './dom';
+import { animOff, fill, h, motionOff, svg } from './dom';
+import type { JarPlayer } from '../three/jar';
 import { factLine, quoteLine, refChip, refChips, voiceBlock } from './evidence';
 import { ICONS } from './icons';
 import { answerBridge, layer, readingMore, study } from './common';
@@ -128,10 +129,23 @@ function kitchen(): HTMLElement {
     h('p', { class: 'k-empty' }, '把死蜥蜴拖到一樣東西上，或直接點那樣東西。'));
   const tiles = KITCHEN.map((k) => h('button', { class: 'k-tile', type: 'button', 'data-id': k.id, onclick: () => choose(k) },
     h('span', { class: 'k-ico' }, svg(ICONS[k.icon] ?? ICONS.q)), h('b', null, k.name)));
+  // 瓦罐：放一段 Blender 做的碎裂動畫（利11:33）。第一次選到才載入 3D
+  const jarBox = h('div', { class: 'k-jar', 'aria-hidden': 'true' });
+  let jar: Promise<JarPlayer | null> | null = null;
+  const canWebGL = () => {
+    try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; }
+  };
+  function shatter(): HTMLElement | null {
+    if (!canWebGL()) return null;
+    jar ??= import('../three/jar').then((m) => m.mountJar(jarBox, motionOff() || animOff())).catch((e) => { console.error(e); return null; });
+    requestAnimationFrame(() => jar!.then((p) => p?.play()));
+    return jarBox;
+  }
   function choose(k: KitchenThing) {
     tiles.forEach((t) => t.classList.toggle('on', t.dataset.id === k.id));
     const v = k.id === 'clay' ? VOICES_11.clay : k.id === 'spring' ? VOICES_11.spring : null;
     fill(out,
+      k.id === 'clay' ? shatter() : null,
       h('div', { class: `k-verdict r-${k.result}` }, h('small', null, `掉在${k.name}上`), h('b', null, RESULT_TEXT[k.result])),
       h('p', { class: 'k-q' }, quoteLine(k.fact)),
       h('p', { class: 'k-plain' }, k.fact.text),

@@ -32,6 +32,14 @@ npm run build     # 型別檢查 + 資料閘門 + vite build → dist/
 
 原文與詞義取自本庫 `raw_data/stepbible_leviticus_11.txt` 到 `_15.txt`（STEP Bible／STEPBible-Data，CC BY 4.0）。
 
+## 視覺（2026-10 新版）
+
+`src/edition.css` 疊在其他樣式之後，只改呈現、不動內容：頂端導覽是一條夜色的路，八幕是路上的站；每章開頭有大的章號；三種聲音三種字：經文與標題用明體、說明與註釋家用黑體、故事裡那一家人說的話用手寫體（芫荽 Iansui），一看就知道是示意情境。
+
+用 Blender 5.0 做的素材：
+- `public/images/camp-dusk-*.jpg`：序幕封面，黃昏的營地，會幕上方雲中有火（出40:38）。院子沿用 `courtyard.glb`，帳棚與雲柱是示意。按「轉動 3D 營地」才載入原本的 3D 場景。
+- `public/models/clay-jar.glb`：第 11 章「死了掉進來怎麼辦」選瓦罐時播放的碎裂動畫（利11:33），由 `src/three/jar.ts` 播放；減少動態時直接停在碎片落地的畫面。
+
 ## 3D
 
 `src/three/camp.ts`：營地（會幕院子沿用利未記 1–9 章網站的 `courtyard.glb`）、帳棚、這一家人、晝夜、不潔淨的標示圈。營地大小與帳棚數目是示意，不按比例。

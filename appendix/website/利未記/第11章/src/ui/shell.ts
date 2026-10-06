@@ -85,6 +85,9 @@ export function mountShell(build: (id: SceneId | 'about') => HTMLElement) {
       el = build(id);
       cache.set(id, el);
     }
+    // 每一章的開頭放大的章號（11–15）；序幕、總覽、各家怎麼讀不放
+    const num = /^c(\d+)$/.exec(id)?.[1];
+    if (num) el.querySelector('.scene-head')?.setAttribute('data-num', num);
     main.replaceChildren(el);
     el.classList.remove('scene-in');
     void el.offsetWidth;
