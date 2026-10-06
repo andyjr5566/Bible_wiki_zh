@@ -187,22 +187,6 @@ footer a { color: #ffc89a; }
   .rail-item::before { transition: none; }
 }
 
-/* ============================================================ 第 11 章：走獸依兩個條件排（蹄分兩瓣 × 倒嚼） */
-.guide-tools { gap: 8px; }
-.beast-matrix { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin: 6px 0 10px; }
-.beast-matrix[hidden] { display: none; }
-.bm-axis { display: flex; align-items: center; justify-content: center; font-size: 0.86em; font-weight: 700; color: var(--ink-2); padding: 4px 8px; }
-.bm-row { justify-content: flex-end; align-items: flex-start; padding-top: 16px; }
-.bm-cell { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; align-content: start; min-height: 150px; padding: 10px; border-radius: 12px;
-  border: 1px dashed var(--line-2); background: color-mix(in srgb, var(--surface-2) 60%, transparent); }
-.bm-cell[data-hoof='true'][data-cud='true'] { border-style: solid; border-color: color-mix(in srgb, var(--clean) 55%, var(--line)); background: color-mix(in srgb, var(--clean) 7%, var(--surface)); }
-.bm-cell[data-hoof='false'][data-cud='false']::after { content: '—'; align-self: center; justify-self: center; color: var(--ink-3); grid-column: 1 / -1; }
-.bm-cell .beast { min-width: 0; }
-@media (max-width: 720px) {
-  .beast-matrix { grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); gap: 6px; }
-  .bm-cell { grid-template-columns: minmax(0, 1fr); padding: 6px; min-height: 110px; }
-}
-
 /* ============================================================ 序幕：從營外走回會幕門口（Blender 渲染，跟著捲動） */
 .fly { position: relative; height: 520vh; margin: 8px calc(50% - 50vw) 40px; }
 .fly-sticky { position: sticky; top: var(--fly-top, 98px); height: calc(100vh - var(--fly-top, 98px)); overflow: hidden; background: #0f1320; color: #f3eee6; }
@@ -263,3 +247,174 @@ footer a { color: #ffc89a; }
 .lens-interpretation { text-decoration-color: #c2a6f0; text-decoration-style: wavy; }
 .lens-not_stated { text-decoration-color: #b6a78f; text-decoration-style: dashed; }
 @media (max-width: 560px) { .lens-key { border-radius: 14px; gap: 4px 10px; } }
+
+/* ============================================================ 第 11 章（重新編排） */
+/* 1. 開場：一條線把活物分在兩邊 */
+.divide { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); margin: 8px 0 0; }
+.divide-side h3 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; margin-bottom: 18px; }
+.divide-side.yes h3 { color: var(--clean); text-align: right; }
+.divide-side.no h3 { color: var(--unclean); }
+.divide-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 18px 8px; }
+.divide-side.yes ul { justify-content: flex-end; }
+.spec { width: 128px; display: grid; justify-items: center; gap: 2px; text-align: center; }
+.spec .sil { width: 92px; height: 64px; display: grid; place-items: center; }
+.spec .sil svg { max-width: 100%; max-height: 100%; }
+.divide-side.yes .spec .sil { color: var(--clean); }
+.divide-side.no .spec .sil { color: var(--unclean); }
+.spec.ghost .sil svg * { fill: none !important; stroke: var(--unclean); stroke-width: 1.4px; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.spec b { font-family: var(--serif); font-size: 1.02em; }
+.spec .ref { font-size: 0.72em; }
+.divide-line { justify-self: center; width: 2px; background: var(--ink); transform-origin: top; }
+.divide-cap { margin: 30px auto 0; text-align: center; max-width: 40em; font-size: 1.12em; }
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion='off']) .divide:not(.still) .divide-line { animation: draw-line 1.2s cubic-bezier(.6, 0, .2, 1) .2s both; }
+  :root:not([data-motion='off']) .divide:not(.still) .spec { animation: spec-in .6s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(1s + var(--i) * 60ms); }
+}
+@keyframes draw-line { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes spec-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 720px) {
+  .divide { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .divide-line { width: 100%; height: 2px; transform-origin: left; }
+  .divide-side.yes h3 { text-align: left; }
+  .divide-side.yes ul { justify-content: flex-start; }
+  .spec { width: calc((100% - 16px) / 3); }
+  .spec .sil { width: 72px; height: 50px; }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion='off']) .divide:not(.still) .divide-line { animation-name: draw-line-x; }
+}
+@keyframes draw-line-x { from { transform: scaleX(0); } to { transform: none; } }
+
+/* 2. 圖鑑：五類活物，左邊文字、右邊黏住的圖 */
+.realms { display: grid; gap: 0; }
+.realm-index { position: sticky; top: var(--fly-top, 100px); z-index: 4; list-style: none; margin: 0 0 8px; padding: 10px 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  background: var(--bg); border-bottom: 1px solid var(--line); }
+.realm-index a { display: grid; padding: 4px 12px; border-radius: 8px; text-decoration: none; color: var(--ink-2); white-space: nowrap; line-height: 1.35; }
+.realm-index a b { font-size: 0.92em; }
+.realm-index a small { font-size: 0.72em; color: var(--ink-3); }
+.realm-index a[aria-current] { background: var(--ink); color: var(--bg); }
+.realm-index a[aria-current] small { color: color-mix(in srgb, var(--bg) 75%, transparent); }
+.realm { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(24px, 4vw, 56px); align-items: start; min-height: 92vh; padding: 48px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 170px; }
+.realm:last-child { border-bottom: 0; }
+.realm-text { display: grid; gap: 14px; align-content: start; }
+.realm-text h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; display: grid; gap: 2px; }
+.realm-text h3 small { font: 700 0.42em var(--sans); color: var(--c11); letter-spacing: 0.06em; }
+.realm-rule { font-size: 1.12em; margin: 0; }
+.realm-fig { position: sticky; top: 190px; margin: 0; min-height: 380px; display: grid; place-items: center; padding: 22px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+@media (max-width: 900px) {
+  .realm { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .realm-fig { position: static; order: -1; min-height: 0; }
+}
+/* 走獸：四格 */
+.fig-land { width: 100%; }
+.beast-matrix { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+.bm-axis { display: flex; align-items: center; justify-content: center; font-size: 0.86em; padding: 2px 4px; }
+.bm-row { justify-content: flex-end; }
+.bm-cell { display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 10px 14px; min-height: 130px; padding: 12px; border-radius: 12px; border: 1px dashed var(--line-2); }
+.bm-cell.pass { border-style: solid; border-color: color-mix(in srgb, var(--clean) 60%, var(--line)); background: color-mix(in srgb, var(--clean) 8%, transparent); }
+.bm-beast { display: grid; justify-items: center; font-size: 0.86em; }
+.bm-beast .sil { width: 70px; height: 50px; display: grid; place-items: center; }
+.bm-beast .sil svg { max-width: 100%; max-height: 100%; }
+.bm-beast.v-clean { color: var(--clean); }
+.bm-beast.v-unclean { color: var(--unclean); }
+.bm-beast b { color: var(--ink); font-family: var(--serif); }
+.bm-empty { color: var(--ink-3); }
+/* 水族：兩道關卡 */
+.fig-water { width: 100%; display: grid; gap: 14px; }
+.gate-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--line); }
+.gate-row .sil { width: 100px; height: 56px; display: grid; place-items: center; color: var(--clean); }
+.gate-row .sil svg { max-width: 100%; max-height: 100%; }
+.gate-row.fail .sil { color: transparent; }
+.gate-row.fail .sil svg * { fill: none !important; stroke: var(--unclean); stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.gate-crit { display: flex; flex-wrap: wrap; gap: 6px; }
+.gate-row b { font: 900 1.15em var(--serif); }
+.gate-row.pass b { color: var(--clean); }
+.gate-row.fail b { color: var(--unclean); }
+.fig-note { font-size: 0.86em; color: var(--ink-2); margin: 0; }
+/* 飛鳥：二十種的名單 */
+.fig-birds { width: 100%; display: grid; gap: 14px; }
+.fig-birds .fig-art { display: flex; justify-content: center; gap: 30px; color: var(--unclean); }
+.fig-birds .fig-art .sil { width: 90px; height: 60px; display: grid; place-items: center; }
+.fig-birds .fig-art .sil svg { max-width: 100%; max-height: 100%; }
+.roster { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.roster li { display: flex; align-items: baseline; gap: 4px; padding: 6px 8px; border-radius: 8px; background: var(--surface-2); font-family: var(--serif); font-size: 0.95em; }
+.roster li small { font: 0.68em var(--sans); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.roster li.last { outline: 1.5px solid var(--unclean); }
+@media (max-width: 560px) { .roster { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* 一律＋例外：外框是整類，裡面劃出一小塊 */
+.fig-set { width: 100%; }
+.set-outer { position: relative; display: grid; gap: 14px; padding: 18px; border-radius: 16px; border: 2px solid var(--unclean); background: color-mix(in srgb, var(--unclean) 6%, transparent); }
+.set-inner { display: grid; justify-items: center; gap: 8px; padding: 14px; border-radius: 12px; border: 2px solid var(--clean); background: var(--surface); }
+.set-inner.touch { border-color: var(--evening); }
+.set-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 0.92em; color: var(--ink-2); }
+.set-label b { font: 900 1.1em var(--serif); }
+.set-outer > .set-label b { color: var(--unclean); }
+.set-inner .set-label b { color: var(--clean); }
+.set-inner.touch .set-label b { color: var(--evening); }
+.set-inner .sil { width: 90px; height: 60px; display: grid; place-items: center; color: var(--clean); }
+.set-inner .sil svg { max-width: 100%; max-height: 100%; }
+.set-names { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.set-names li { padding: 3px 10px; border-radius: 999px; background: var(--surface-2); font-family: var(--serif); }
+.gaits { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: center; }
+.gaits span { display: grid; justify-items: center; font-size: 0.82em; color: var(--ink-2); }
+.gaits .sil, .gaits svg { width: 70px; height: 44px; color: var(--unclean); }
+.gaits .sil { display: grid; place-items: center; }
+.gaits .sil svg { max-width: 100%; max-height: 100%; }
+
+/* 3. 碰到死的 */
+.lede-s { color: var(--ink-2); max-width: 44em; }
+.sorter { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 20px; align-items: start; }
+.k-tools { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.k-token { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px 4px 6px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
+.k-token .sil { width: 54px; height: 22px; display: grid; place-items: center; color: var(--ink); }
+.k-token .sil svg { max-width: 100%; max-height: 100%; }
+.k-pile { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.k-pile[hidden], .k-table[hidden] { display: none; }
+.k-table { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.k-col { display: grid; gap: 8px; align-content: start; padding: 8px; border-radius: 12px; background: var(--surface-2); }
+.k-col h4 { font: 700 0.8em var(--sans); padding: 4px 6px; border-radius: 6px; text-align: center; color: #fff; }
+.k-col.r-break h4 { background: var(--unclean); }
+.k-col.r-water h4 { background: var(--water); }
+.k-col.r-unclean h4 { background: color-mix(in srgb, var(--unclean) 70%, #000); }
+.k-col.r-clean h4 { background: var(--clean); }
+.k-col.r-evening h4 { background: var(--evening); color: #2a1800; }
+.k-tile { display: grid; justify-items: center; gap: 4px; padding: 12px 6px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 0.88em; }
+.k-tile:hover { border-color: var(--ink-3); }
+.k-tile.on { outline: 2px solid var(--ink); outline-offset: 1px; }
+.k-tile .k-ico svg { width: 24px; height: 24px; }
+.sorter .k-out { position: sticky; top: 180px; min-height: 200px; }
+@media (max-width: 900px) {
+  .sorter { grid-template-columns: minmax(0, 1fr); }
+  .k-table { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sorter .k-out { position: static; }
+}
+/* 摸、拿、吃：兩階 */
+.ladder2 { display: grid; gap: 10px; }
+.stair { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 4px 18px; padding: 16px 20px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.stair.s2 { margin-left: clamp(0px, 8vw, 96px); border-color: color-mix(in srgb, var(--water) 50%, var(--line)); }
+.stair-verbs { grid-row: 1 / span 2; font: 900 clamp(1.6rem, 3vw, 2.2rem) / 1.1 var(--serif); }
+.stair-out { display: flex; flex-wrap: wrap; gap: 8px; }
+.out { padding: 3px 12px; border-radius: 999px; font-weight: 700; font-size: 0.92em; }
+.out.evening { background: color-mix(in srgb, var(--evening) 22%, transparent); color: color-mix(in srgb, var(--evening) 60%, var(--ink)); }
+.out.wash { background: color-mix(in srgb, var(--water) 18%, transparent); color: color-mix(in srgb, var(--water) 60%, var(--ink)); }
+.stair-refs { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.86em; color: var(--ink-2); }
+.ladder-voices { display: grid; gap: 4px; margin-top: 6px; }
+
+/* 4. 為什麼 */
+.why-big { font: 500 clamp(1.4rem, 3.2vw, 2.1rem) / 1.6 var(--serif); color: var(--c11); margin: 6px 0 18px; }
+.why-big .ref { font-size: 0.45em; vertical-align: middle; }
+.why-fig { margin: 0 0 16px; padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.why-svg { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto; }
+.wd-node rect { fill: var(--surface-2); stroke: var(--line-2); }
+.wd-node.key rect { fill: color-mix(in srgb, var(--c11) 12%, var(--surface)); stroke: var(--c11); }
+.wd-ref { font: 700 14px var(--sans); fill: var(--ink-2); }
+.wd-label { font: 600 15px var(--serif); fill: var(--ink); }
+.wd-arc, .wd-line { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.wd-arc { stroke: var(--c11); stroke-width: 2; }
+.wd-arc-label { font: 700 13px var(--sans); fill: var(--ink-2); }
+.wd-he { font: 500 18px 'Noto Serif Hebrew', 'SBL Hebrew', serif; fill: var(--c11); }
+.why-fig figcaption { margin-top: 10px; font-size: 0.86em; color: var(--ink-2); }
+@media (max-width: 640px) {
+  .why-fig { overflow-x: auto; padding: 12px; }
+  .why-svg { min-width: 620px; }
+}
