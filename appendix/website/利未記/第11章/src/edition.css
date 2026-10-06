@@ -394,9 +394,9 @@ footer a { color: #ffc89a; }
 .stair.s2 { margin-left: clamp(0px, 8vw, 96px); border-color: color-mix(in srgb, var(--water) 50%, var(--line)); }
 .stair-verbs { grid-row: 1 / span 2; font: 900 clamp(1.6rem, 3vw, 2.2rem) / 1.1 var(--serif); }
 .stair-out { display: flex; flex-wrap: wrap; gap: 8px; }
-.out { padding: 3px 12px; border-radius: 999px; font-weight: 700; font-size: 0.92em; }
-.out.evening { background: color-mix(in srgb, var(--evening) 22%, transparent); color: color-mix(in srgb, var(--evening) 60%, var(--ink)); }
-.out.wash { background: color-mix(in srgb, var(--water) 18%, transparent); color: color-mix(in srgb, var(--water) 60%, var(--ink)); }
+.stair-out .out { padding: 3px 12px; border-radius: 999px; font-weight: 700; font-size: 0.92em; }
+.stair-out .out.evening { background: color-mix(in srgb, var(--evening) 22%, transparent); color: color-mix(in srgb, var(--evening) 60%, var(--ink)); }
+.stair-out .out.wash { background: color-mix(in srgb, var(--water) 18%, transparent); color: color-mix(in srgb, var(--water) 60%, var(--ink)); }
 .stair-refs { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.86em; color: var(--ink-2); }
 .ladder-voices { display: grid; gap: 4px; margin-top: 6px; }
 
