@@ -3,6 +3,7 @@ import { animOff, h, motionOff, s, svg } from './dom';
 import { badge, factLine, quoteLine, refChip, refChips, voiceBlock } from './evidence';
 import { ICONS } from './icons';
 import { layer } from './common';
+import { flythrough } from './flythrough';
 import { sceneHref, sceneNav } from './shell';
 
 /**
@@ -162,7 +163,7 @@ export function buildIntro(): HTMLElement {
         h('h2', { class: 'intro-h' }, '我們用一家人為例子，走一遍利未記 11–15 章'),
         h('p', { class: 'lede' }, '第十章最後，神吩咐祭司要分辨潔淨的和不潔淨的。', ...refChips(['利10:10']), ' 第十一到十五章把這件事講得很細：吃什麼、生孩子以後、皮膚和衣服上的病、房屋、身體的漏症。這些都是一般人家裡會碰到的事，所以我們用營中的一家人為例子，一章一章看下去。')),
       layer('這一家人', '人物是虛構的，規矩照經文', cast),
-      layer('能走多近', '這五章的規矩，決定一個人能離會幕多近', rings,
+      layer('能走多近', '這五章的規矩，決定一個人能離會幕多近', flythrough(), rings,
         h('p', { class: 'cloud-note' }, svg(ICONS.fire), factLine(CLOUD))),
       layer('不潔淨有多久', '短的到晚上，長的要等病好', lengths),
       layer('五章各講什麼', '點一章進去', road),
