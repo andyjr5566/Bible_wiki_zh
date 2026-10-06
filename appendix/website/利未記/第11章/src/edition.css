@@ -418,3 +418,84 @@ footer a { color: #ffc89a; }
   .why-fig { overflow-x: auto; padding: 12px; }
   .why-svg { min-width: 620px; }
 }
+
+/* ============================================================ 第 12 章（重新編排）：全部限定在 .scene-12 */
+.scene-12 { --ph-unclean: #b3263a; --ph-purify: #b07610; --ph-ink: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .scene-12 { --ph-unclean: #e05a70; --ph-purify: #a87a2c; --ph-ink: #0f1320; } }
+:root[data-theme='dark'] .scene-12 { --ph-unclean: #e05a70; --ph-purify: #a87a2c; --ph-ink: #0f1320; }
+.scene-12 .dur { margin: 0; padding: 22px 24px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+.scene-12 .dur-legend { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 0.86em; color: var(--ink-2); margin-bottom: 18px; }
+.scene-12 .dur-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.scene-12 .dur-sw { width: 22px; height: 12px; border-radius: 3px; display: inline-block; }
+.scene-12 .dur-sw.unclean { background: var(--ph-unclean); }
+.scene-12 .dur-sw.purify, .scene-12 .dur-seg.purify { background: var(--ph-purify) repeating-linear-gradient(135deg, rgb(255 255 255 / 0%) 0 6px, rgb(255 255 255 / 22%) 6px 8px); }
+.scene-12 .dur-plot { position: relative; display: grid; gap: 28px; padding: 26px 0 4px; }
+.scene-12 .dur-row, .scene-12 .dur-axis { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 14px; align-items: center; }
+.scene-12 .dur-name { display: grid; line-height: 1.3; }
+.scene-12 .dur-name b { font: 900 1.1em var(--serif); }
+.scene-12 .dur-name small { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.scene-12 .dur-track { position: relative; height: 24px; }
+.scene-12 .dur-axis .dur-track { height: 18px; border-top: 1px solid var(--line-2); }
+.scene-12 .dur-seg { position: absolute; top: 0; height: 24px; border-radius: 0 4px 4px 0; overflow: hidden; display: flex; align-items: center; }
+.scene-12 .dur-seg.unclean { background: var(--ph-unclean); border-radius: 0; }
+.scene-12 .dur-seg-label { padding: 0 8px; font-size: 0.78em; font-weight: 700; color: var(--ph-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scene-12 .dur-row[data-baby='boy'] .dur-seg.unclean .dur-seg-label { font-size: 0.68em; padding: 0 4px; }
+.scene-12 .dur-mark { position: absolute; top: -20px; transform: translateX(-50%); display: grid; justify-items: center; pointer-events: none; }
+.scene-12 .dur-mark i { order: 2; width: 2px; height: 44px; background: var(--c12); }
+.scene-12 .dur-mark small { order: 1; font-size: 0.7em; font-weight: 700; color: var(--c12); white-space: nowrap; }
+.scene-12 .dur-end { position: absolute; top: 2px; transform: translateX(6px); display: flex; align-items: center; gap: 4px; color: var(--clean); white-space: nowrap; }
+.scene-12 .dur-end svg { width: 20px; height: 20px; }
+.scene-12 .dur-end small { font-size: 0.74em; font-weight: 700; }
+.scene-12 .dur-row[data-baby='girl'] .dur-end { transform: translateX(-100%); top: 28px; }
+.scene-12 .dur-tick { position: absolute; top: 2px; transform: translateX(-50%); font-size: 0.74em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.scene-12 .dur-tick::before { content: ''; position: absolute; left: 50%; top: -6px; height: 5px; border-left: 1px solid var(--line-2); }
+.scene-12 .dur-unit { position: absolute; right: -18px; top: 2px; font-size: 0.7em; color: var(--ink-3); }
+.scene-12 .dur-overlay { position: absolute; top: 0; bottom: 26px; left: calc(6.5em + 14px); right: 0; pointer-events: none; }
+.scene-12 .dur-cursor { position: absolute; top: 0; bottom: 0; width: 0; }
+.scene-12 .dur-cursor b { position: absolute; top: 0; bottom: 0; left: 0; border-left: 2px solid var(--ink); }
+.scene-12 .dur-ctl { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 14px; align-items: center; margin-top: 8px; }
+.scene-12 .dur-day { font: 900 1.1em var(--serif); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.scene-12 .dur-range { width: 100%; accent-color: var(--ink); }
+.scene-12 .dur-read { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.scene-12 .dur-card { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); border-top: 4px solid var(--ph-purify); background: var(--bg); }
+.scene-12 .dur-card.unclean { border-top-color: var(--ph-unclean); }
+.scene-12 .dur-card.done { border-top-color: var(--clean); }
+.scene-12 .dur-card-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.scene-12 .dur-card-head b { font: 900 1.05em var(--serif); }
+.scene-12 .dur-card-head span { font-size: 0.86em; color: var(--ink-2); }
+.scene-12 .dur-card p { margin: 6px 0 0; }
+.scene-12 .dur figcaption { margin-top: 14px; }
+.scene-12 .c12-voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.scene-12 .c12-day8 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.scene-12 .c12-day8-q { font-size: 1.12em; margin: 0; }
+/* 祭物 */
+.scene-12 .dur-offer-done { font-size: 1.08em; }
+.scene-12 .dur-off-wrap { overflow-x: auto; }
+.scene-12 .dur-off-t { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--surface); }
+.scene-12 .dur-off-t th, .scene-12 .dur-off-t td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+.scene-12 .dur-off-t thead th { font: 900 1.05em var(--serif); background: var(--surface-2); }
+.scene-12 .dur-off-t tbody th { font: 700 0.95em var(--sans); white-space: nowrap; width: 8em; }
+.scene-12 .dur-off-t tbody td { font: 600 1.05em var(--serif); }
+.scene-12 .dur-off-t td.dur-chg { background: color-mix(in srgb, var(--c12) 12%, transparent); }
+.scene-12 .dur-off-t tr.dur-q-row td { font: 400 0.92em var(--sans); color: var(--ink-2); padding-top: 4px; }
+.scene-12 .dur-off-t tr:last-child td { border-bottom: 0; }
+.scene-12 .dur-off-nt { display: block; margin-top: 6px; }
+.scene-12 .dur-two-voices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.scene-12 .dur-ord { margin: 18px 0 0; display: grid; gap: 8px; }
+.scene-12 .dur-ord-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.scene-12 .dur-ord-row b { width: 7.5em; font-size: 0.9em; color: var(--ink-2); }
+.scene-12 .dur-ord-step { padding: 3px 14px; border-radius: 6px; font-weight: 700; font-size: 0.92em; border: 1px solid var(--line-2); background: var(--surface); }
+.scene-12 .dur-ord-step.burnt { border-color: color-mix(in srgb, var(--burnt) 60%, var(--line)); }
+.scene-12 .dur-ord-step.sin { border-color: color-mix(in srgb, var(--sin) 60%, var(--line)); }
+.scene-12 .dur-ord-arrow { color: var(--ink-3); }
+.scene-12 .dur-ord figcaption { font-size: 0.88em; color: var(--ink-2); }
+@media (max-width: 720px) {
+  .scene-12 .dur { padding: 16px 14px; }
+  .scene-12 .dur-row, .scene-12 .dur-axis { grid-template-columns: 3.6em minmax(0, 1fr); gap: 8px; }
+  .scene-12 .dur-ctl { grid-template-columns: auto minmax(0, 1fr); gap: 10px; }
+  .scene-12 .dur-overlay { left: calc(3.6em + 8px); }
+  .scene-12 .dur-name b { font-size: 0.92em; }
+  .scene-12 .dur-seg-label { display: none; }
+  .scene-12 .dur-read, .scene-12 .c12-voices, .scene-12 .c12-day8, .scene-12 .dur-two-voices { grid-template-columns: minmax(0, 1fr); }
+  .scene-12 .dur-end small { display: none; }
+}
