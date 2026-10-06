@@ -499,3 +499,80 @@ footer a { color: #ffc89a; }
   .scene-12 .dur-read, .scene-12 .c12-voices, .scene-12 .c12-day8, .scene-12 .dur-two-voices { grid-template-columns: minmax(0, 1fr); }
   .scene-12 .dur-end small { display: none; }
 }
+
+/* ============================================================ 第 13 章（重新編排）：全部限定在 .scene-13，名稱用 c13 開頭 */
+.scene-13 { --o-unclean: var(--unclean); --o-wait: var(--c15); --o-clean: var(--clean); --o-burn: var(--burnt); --o-tear: var(--c13); }
+.scene-13 .c13f-fig { margin: 0; padding: 18px 20px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+.scene-13 .c13f-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.scene-13 .c13f-key { display: flex; flex-wrap: wrap; gap: 6px; }
+.scene-13 .c13f-scroll { overflow-x: auto; }
+.scene-13 .c13f { --cols: 9em repeat(4, minmax(150px, 1fr)); display: grid; gap: 14px; min-width: 760px; }
+.scene-13 .c13f-heads, .scene-13 .c13f-lane { display: grid; grid-template-columns: var(--cols); gap: 10px; }
+.scene-13 .c13f-heads span { font: 900 1.05em var(--serif); padding: 0 4px 6px; border-bottom: 2px solid var(--c13); }
+.scene-13 .c13f-heads span:first-child { border-bottom: 0; }
+.scene-13 .c13f-lane { position: relative; padding: 12px 0; border-top: 1px solid var(--line); }
+.scene-13 .c13f-lane::before { content: ''; position: absolute; left: 9em; right: 0; top: 34px; border-top: 2px dashed var(--line-2); z-index: 0; }
+.scene-13 .c13f-lane-name { display: grid; align-content: start; gap: 2px; }
+.scene-13 .c13f-lane-name b { font: 900 1.02em var(--serif); }
+.scene-13 .c13f-lane-name small { color: var(--ink-3); font-size: 0.78em; }
+.scene-13 .c13f-step { grid-column: var(--col); position: relative; z-index: 1; display: grid; gap: 8px; align-content: start; }
+.scene-13 .c13f-ask { display: grid; padding: 6px 10px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); font-size: 0.88em; }
+.scene-13 .c13f-ask small { display: none; color: var(--ink-3); font-size: 0.85em; }
+.scene-13 .c13f-branches { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.scene-13 .c13f-br { display: grid; gap: 4px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); border-left: 4px solid var(--o, var(--line-2)); background: var(--bg); font-size: 0.86em; line-height: 1.6; transition: opacity .2s, box-shadow .2s; }
+.scene-13 .c13f-tag { justify-self: start; padding: 1px 9px; border-radius: 999px; font-size: 0.78em; font-weight: 700; color: #fff; background: var(--o, var(--ink-3)); }
+.scene-13 .o-unclean { --o: var(--o-unclean); } .scene-13 .o-wait { --o: var(--o-wait); } .scene-13 .o-clean { --o: var(--o-clean); }
+.scene-13 .o-burn { --o: var(--o-burn); } .scene-13 .o-tear { --o: var(--o-tear); } .scene-13 .o-again { --o: var(--ink-2); }
+.scene-13 .c13f-key .c13f-tag { font-size: 0.8em; }
+.scene-13 .c13f.show-father .c13f-br:not(.father) { opacity: 0.32; }
+.scene-13 .c13f.show-father [data-lane='cloth'] { opacity: 0.32; }
+.scene-13 .c13f.show-father .c13f-br.father { box-shadow: 0 0 0 2px var(--c13); }
+@media (max-width: 760px) {
+  .scene-13 .c13f-fig { padding: 14px; }
+  .scene-13 .c13f { min-width: 0; }
+  .scene-13 .c13f-heads { display: none; }
+  .scene-13 .c13f-lane { grid-template-columns: minmax(0, 1fr); }
+  .scene-13 .c13f-lane::before { display: none; }
+  .scene-13 .c13f-step { grid-column: 1; border-left: 2px dashed var(--line-2); padding-left: 10px; }
+  .scene-13 .c13f-ask small { display: block; }
+}
+.scene-13 .c13-voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.scene-13 .c13-voices.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* 特別的情況 */
+.scene-13 .c13s { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.scene-13 .c13s-col { display: grid; gap: 10px; padding: 14px; border-radius: 14px; border: 1px solid var(--line); border-top: 4px solid var(--o-clean); background: var(--surface); }
+.scene-13 .c13s-col.v-unclean { border-top-color: var(--o-unclean); }
+.scene-13 .c13s-col h3 { font: 900 1.3em var(--serif); }
+.scene-13 .c13s-col.v-clean h3 { color: var(--o-clean); }
+.scene-13 .c13s-col.v-unclean h3 { color: var(--o-unclean); }
+.scene-13 .c13s-item { padding-top: 10px; border-top: 1px solid var(--line); }
+.scene-13 .c13s-item b { font: 700 1.02em var(--serif); }
+.scene-13 .c13s-item p { margin: 4px 0 0; }
+.scene-13 .c13s-link { display: block; color: var(--ink-3); font-size: 0.8em; }
+@media (max-width: 760px) { .scene-13 .c13s-link { display: none; } }
+/* 確診以後：鏡子 */
+.scene-13 .c13m-acts { list-style: none; margin: 0 0 16px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; counter-reset: act; }
+.scene-13 .c13m-acts li { counter-increment: act; display: grid; gap: 6px; justify-items: start; padding: 12px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.scene-13 .c13m-acts li::before { content: counter(act); font: 900 1.4em var(--serif); color: var(--c13); line-height: 1; }
+.scene-13 .c13m-acts b { font: 700 1em var(--serif); }
+.scene-13 .c13m-mirror { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 14px; align-items: center; }
+.scene-13 .c13m-side { padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.scene-13 .c13m-side small { font-weight: 700; font-size: 0.82em; }
+.scene-13 .c13m-side.sick small { color: var(--o-unclean); }
+.scene-13 .c13m-side.priest small { color: var(--priest); }
+.scene-13 .c13m-side p { margin: 6px 0 0; }
+.scene-13 .c13m-words { display: grid; gap: 8px; }
+.scene-13 .c13m-words span { position: relative; display: grid; justify-items: center; padding: 6px 18px; border-radius: 10px; background: color-mix(in srgb, var(--c13) 12%, var(--surface)); }
+.scene-13 .c13m-words span::before, .scene-13 .c13m-words span::after { content: ''; position: absolute; top: 50%; width: 14px; border-top: 2px solid var(--c13); }
+.scene-13 .c13m-words span::before { right: 100%; } .scene-13 .c13m-words span::after { left: 100%; }
+.scene-13 .c13m-words b { font: 500 1.4em 'Noto Serif Hebrew', 'SBL Hebrew', serif; color: var(--c13); }
+.scene-13 .c13m-words small { font-size: 0.78em; color: var(--ink-2); }
+.scene-13 .c13m-note { font-size: 0.88em; color: var(--ink-2); margin-top: 10px; }
+@media (max-width: 760px) {
+  .scene-13 .c13-voices, .scene-13 .c13-voices.two, .scene-13 .c13s, .scene-13 .c13m-mirror { grid-template-columns: minmax(0, 1fr); }
+  .scene-13 .c13m-acts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scene-13 .c13m-words { grid-auto-flow: column; justify-content: center; }
+  .scene-13 .c13m-words span::before, .scene-13 .c13m-words span::after { display: none; }
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .scene-13 .c13f-tag { color: #0f1320; } }
+:root[data-theme='dark'] .scene-13 .c13f-tag { color: #0f1320; }
