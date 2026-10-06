@@ -240,9 +240,9 @@ footer a { color: #ffc89a; }
 @media (max-width: 720px) {
   .fly { height: 460vh; }
   .fly-shade { background: linear-gradient(0deg, rgb(10 12 20 / 88%) 0%, rgb(10 12 20 / 40%) 48%, transparent 70%); }
-  .fly-steps { top: auto; bottom: 40px; transform: none; }
+  .fly-steps { top: auto; bottom: 64px; transform: none; }
   .fly-step:not(.on) { display: none; }
-  .fly-note { left: 20px; right: auto; bottom: 10px; }
+  .fly-note { left: 20px; right: 20px; bottom: 12px; font-size: 0.68em; line-height: 1.5; }
 }
 @media (prefers-reduced-motion: reduce) { .fly-step { transition: none; } }
 
