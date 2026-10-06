@@ -477,7 +477,7 @@ details.lm-layer[open] .lm-preview { display: none; }
 .lm-chapter[open] { padding-bottom: 14px; }
 .lm-section h4 { margin: 18px 0 8px; font-size: 1.02rem; }
 .lm-section h4 small { font-family: var(--f-ui); font-weight: 400; color: var(--ink-3); font-size: 0.82rem; }
-.lm-book-page .lm-cards, .lm-entry-page .lm-cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); align-items: start; }
+.lm-book-page .lm-cards, .lm-entry-page .lm-cards { max-width: 760px; }
 .lm-bybook h3 { margin-bottom: 10px; }
 
 /* ---------- 並排 ---------- */
@@ -488,8 +488,9 @@ details.lm-layer[open] .lm-preview { display: none; }
 .lm-compare-col h2 a:hover { color: var(--accent); }
 .lm-compare-col h2 small { display: flex; align-items: center; gap: 7px; margin: 0 0 4px; font-size: 0.76rem; letter-spacing: 0.04em; }
 .lm-compare-col h2 small::before { content: ''; width: 7px; height: 7px; border-radius: 1px; background: var(--c); }
+.lm-compare-page > section > h2 { border-top: 1px solid var(--ink); padding-top: 12px; font-weight: 900; }
 .lm-compare-col .lm-verses { font-size: 1.04rem; padding-left: 2em; }
-.lm-diff { font-size: 1.12rem; line-height: 2.1; max-width: 40em; }
+.lm-diff { font-size: 1.12rem; line-height: 2.1; max-width: 42em; margin: 8px 0 0; padding: 18px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 .lm-diff del { color: var(--t-debate); text-decoration-thickness: 1.5px; }
 .lm-diff ins { text-decoration: none; background: color-mix(in srgb, var(--g6) 24%, transparent); border-radius: 2px; }
 
@@ -520,6 +521,10 @@ details.lm-layer[open] .lm-preview { display: none; }
 .lm-table tbody tr:hover { background: var(--surface); }
 .lm-matrix { min-width: 520px; }
 .lm-matrix td { text-align: center; }
+/* 熱度表：條數越多底色越深，一眼看出哪一類集中在哪一卷 */
+.lm-matrix td.lm-cell:not(.lm-cell-empty) { background: color-mix(in srgb, var(--c, var(--accent)) calc(var(--v, 0) * 34%), transparent); }
+.lm-matrix td a { display: block; color: var(--ink); font-weight: 500; }
+.lm-matrix td a:hover { color: var(--accent); text-decoration: underline; }
 .lm-matrix td a { text-decoration: none; }
 .lm-mrow-group th[scope='row'] { font-weight: 700; box-shadow: inset 4px 0 0 var(--c); padding-left: 14px; }
 .lm-mrow-group th[scope='row'] a { color: var(--ink); text-decoration: none; }
