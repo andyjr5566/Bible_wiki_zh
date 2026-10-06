@@ -186,3 +186,80 @@ footer a { color: #ffc89a; }
 @media (prefers-reduced-motion: reduce) {
   .rail-item::before { transition: none; }
 }
+
+/* ============================================================ 第 11 章：走獸依兩個條件排（蹄分兩瓣 × 倒嚼） */
+.guide-tools { gap: 8px; }
+.beast-matrix { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin: 6px 0 10px; }
+.beast-matrix[hidden] { display: none; }
+.bm-axis { display: flex; align-items: center; justify-content: center; font-size: 0.86em; font-weight: 700; color: var(--ink-2); padding: 4px 8px; }
+.bm-row { justify-content: flex-end; align-items: flex-start; padding-top: 16px; }
+.bm-cell { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; align-content: start; min-height: 150px; padding: 10px; border-radius: 12px;
+  border: 1px dashed var(--line-2); background: color-mix(in srgb, var(--surface-2) 60%, transparent); }
+.bm-cell[data-hoof='true'][data-cud='true'] { border-style: solid; border-color: color-mix(in srgb, var(--clean) 55%, var(--line)); background: color-mix(in srgb, var(--clean) 7%, var(--surface)); }
+.bm-cell[data-hoof='false'][data-cud='false']::after { content: '—'; align-self: center; justify-self: center; color: var(--ink-3); grid-column: 1 / -1; }
+.bm-cell .beast { min-width: 0; }
+@media (max-width: 720px) {
+  .beast-matrix { grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); gap: 6px; }
+  .bm-cell { grid-template-columns: minmax(0, 1fr); padding: 6px; min-height: 110px; }
+}
+
+/* ============================================================ 序幕：從營外走回會幕門口（Blender 渲染，跟著捲動） */
+.fly { position: relative; height: 520vh; margin: 8px calc(50% - 50vw) 40px; }
+.fly-sticky { position: sticky; top: var(--fly-top, 98px); height: calc(100vh - var(--fly-top, 98px)); overflow: hidden; background: #0f1320; color: #f3eee6; }
+.fly-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.fly-shade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgb(10 12 20 / 78%) 0%, rgb(10 12 20 / 30%) 38%, transparent 60%), linear-gradient(0deg, rgb(10 12 20 / 60%) 0%, transparent 25%); }
+.fly-steps { position: absolute; left: max(20px, calc((100vw - 1180px) / 2)); top: 50%; transform: translateY(-50%); width: min(420px, calc(100vw - 40px));
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.fly-step { display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 12px; align-items: baseline; opacity: 0.38; transition: opacity .35s, transform .35s; transform: translateX(-4px); }
+.fly-step > :not(.fly-n) { grid-column: 2; }
+.fly-step .fly-n { grid-row: 1 / span 3; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font: 700 0.8em var(--sans);
+  border: 1.5px solid rgb(255 255 255 / 45%); color: #f3eee6; }
+.fly-step b { font: 900 1.25em/1.4 var(--serif); letter-spacing: 0.04em; }
+.fly-step .fly-text, .fly-step .fly-q { display: none; }
+.fly-step.on { opacity: 1; transform: none; }
+.fly-step.on .fly-n { background: var(--fire); border-color: var(--fire); color: #1a0e04; }
+.fly-step.on b { font-size: 1.7em; }
+.fly-step.on .fly-text { display: block; font-size: 1.02em; color: #ece6dc; margin-top: 2px; }
+.fly-step.on .fly-q { display: block; margin-top: 6px; font-size: 0.95em; color: #d8cfc2; }
+.fly-step .q { color: #fff4e6; }
+.fly-step .ref { color: #ffc89a; background: rgb(255 255 255 / 10%); }
+.fly-step .ev { color: #e6dccd; border-color: rgb(255 255 255 / 30%); background: none; }
+.fly-prog { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgb(255 255 255 / 10%); }
+.fly-prog i { display: block; height: 100%; width: 0; background: var(--fire); }
+.fly-note { position: absolute; right: max(20px, calc((100vw - 1180px) / 2)); bottom: 14px; margin: 0; font-size: 0.74em; color: rgb(236 230 220 / 70%); }
+/* 減少動態：五張靜止畫面 */
+.fly-still { height: auto; margin-inline: 0; }
+.fly-stills { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.fly-stills li { display: grid; gap: 8px; }
+.fly-stills img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
+.fly-stills .fly-step { opacity: 1; transform: none; }
+.fly-stills .fly-step .fly-n { color: var(--ink); border-color: var(--line-2); }
+.fly-stills .fly-step .fly-text, .fly-stills .fly-step .fly-q { display: block; }
+.fly-still figcaption { font-size: 0.8em; color: var(--ink-3); margin-top: 8px; }
+@media (max-width: 720px) {
+  .fly { height: 460vh; }
+  .fly-shade { background: linear-gradient(0deg, rgb(10 12 20 / 88%) 0%, rgb(10 12 20 / 40%) 48%, transparent 70%); }
+  .fly-steps { top: auto; bottom: 40px; transform: none; }
+  .fly-step:not(.on) { display: none; }
+  .fly-note { left: 20px; right: auto; bottom: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .fly-step { transition: none; } }
+
+/* ============================================================ 證據透鏡：依證據等級標出每一句 */
+:root[data-lens='1'] .fact[data-status], :root[data-lens='1'] .quote-line[data-status] { text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; text-decoration-skip-ink: none; }
+:root[data-lens='1'] [data-status='explicit'] { text-decoration-color: var(--ev-explicit); text-decoration-style: solid; }
+:root[data-lens='1'] [data-status='synthesis'] { text-decoration-color: var(--ev-synthesis); text-decoration-style: dotted; text-decoration-thickness: 3px; }
+:root[data-lens='1'] [data-status='interpretation'] { text-decoration-color: var(--ev-interp); text-decoration-style: wavy; background: color-mix(in srgb, var(--ev-interp) 9%, transparent); border-radius: 3px; }
+:root[data-lens='1'] [data-status='not_stated'] { text-decoration-color: var(--ev-unsaid); text-decoration-style: dashed; }
+:root[data-lens='1'] .voice { background: color-mix(in srgb, var(--ev-interp) 12%, transparent); }
+.lens-key { position: fixed; z-index: 45; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: none; align-items: center; gap: 6px 16px; flex-wrap: wrap; justify-content: center;
+  max-width: calc(100vw - 32px); padding: 8px 18px; border-radius: 999px; background: var(--night); color: var(--night-ink); font-size: 0.82em; box-shadow: 0 10px 30px -8px rgb(0 0 0 / 45%); }
+:root[data-lens='1'] .lens-key { display: flex; }
+.lens-key b { letter-spacing: 0.08em; color: #ffc89a; }
+.lens-k { text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.lens-explicit { text-decoration-color: #7fcf9b; }
+.lens-synthesis { text-decoration-color: #e0c26a; text-decoration-style: dotted; text-decoration-thickness: 3px; }
+.lens-interpretation { text-decoration-color: #c2a6f0; text-decoration-style: wavy; }
+.lens-not_stated { text-decoration-color: #b6a78f; text-decoration-style: dashed; }
+@media (max-width: 560px) { .lens-key { border-radius: 14px; gap: 4px 10px; } }

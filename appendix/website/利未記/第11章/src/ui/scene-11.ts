@@ -35,10 +35,50 @@ function landPanel(): HTMLElement {
   });
   const foot = h('div', { class: 'beast-foot' }, '點一張卡，先猜，再翻開看經文怎麼說。');
   const all = h('button', { class: 'chipbtn', type: 'button', onclick: () => cards.forEach((c) => c.setAttribute('aria-pressed', 'true')) }, '全部翻開');
+
+  // 依兩個條件排：卡片移進「蹄分兩瓣 × 倒嚼」的四格，看得出經文點名的四種各只合一個條件
+  const beasts = h('div', { class: 'beasts' }, ...cards);
+  const cell = (hoof: boolean, cud: boolean) => h('div', { class: 'bm-cell', 'data-hoof': String(hoof), 'data-cud': String(cud) });
+  const cells = [cell(true, true), cell(false, true), cell(true, false), cell(false, false)];
+  const axis = (cls: string, label: string) => h('div', { class: `bm-axis ${cls}` }, label);
+  const matrix = h('div', { class: 'beast-matrix', hidden: true },
+    h('div', { class: 'bm-corner' }),
+    axis('bm-col', ''), axis('bm-col', ''),
+    axis('bm-row', ''), cells[0], cells[1],
+    axis('bm-row', ''), cells[2], cells[3]);
+  const [, c1, c2, r1, , , r2] = [...matrix.children] as HTMLElement[];
+  c1.append(yes(true, '蹄分兩瓣')); c2.append(yes(false, '蹄分兩瓣'));
+  r1.append(yes(true, '倒嚼')); r2.append(yes(false, '倒嚼'));
+  let sorted = false;
+  const sortBtn = h('button', { class: 'chipbtn', type: 'button', 'aria-pressed': 'false' }, '依兩個條件排列');
+  sortBtn.addEventListener('click', () => {
+    sorted = !sorted;
+    // FLIP：先記下位置，搬家，再從舊位置滑到新位置
+    const before = new Map(cards.map((c) => [c, c.getBoundingClientRect()]));
+    if (sorted) {
+      cards.forEach((c) => c.setAttribute('aria-pressed', 'true'));
+      LAND.forEach((a, i) => cells[(a.hoof ? 0 : 1) + (a.cud ? 0 : 2)].append(cards[i]));
+    } else {
+      beasts.append(...cards);
+    }
+    matrix.hidden = !sorted;
+    beasts.hidden = sorted;
+    sortBtn.setAttribute('aria-pressed', String(sorted));
+    sortBtn.textContent = sorted ? '回到原本排列' : '依兩個條件排列';
+    if (motionOff() || animOff()) return;
+    for (const c of cards) {
+      const a = before.get(c)!;
+      const b = c.getBoundingClientRect();
+      const dx = a.left - b.left;
+      const dy = a.top - b.top;
+      if (!dx && !dy) continue;
+      c.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'none' }], { duration: 520, easing: 'cubic-bezier(.2,.75,.2,1)' });
+    }
+  });
   return h('div', { class: 'guide-panel' },
     h('p', { class: 'guide-rule' }, quoteLine(LAND_RULE)),
-    h('div', { class: 'guide-tools' }, h('span', { class: 'legend' }, yes(true, '有'), yes(false, '沒有')), all),
-    h('div', { class: 'beasts' }, ...cards),
+    h('div', { class: 'guide-tools' }, h('span', { class: 'legend' }, yes(true, '有'), yes(false, '沒有')), sortBtn, all),
+    beasts, matrix,
     foot,
     h('ul', { class: 'key-lines' }, ...LAND_EXTRA.map((f) => h('li', null, factLine(f)))),
     voiceBlock(VOICES_11.pair),
