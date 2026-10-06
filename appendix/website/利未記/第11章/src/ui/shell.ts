@@ -1,7 +1,6 @@
 import { SCENES, SCENE_BY_ID, neighbors, type Scene, type SceneId } from '../data/story';
 import { emit, h, svg } from './dom';
 import { ICONS } from './icons';
-import { STATUS_HELP, STATUS_LABEL } from './meta';
 
 const root = document.documentElement;
 export const store = {
@@ -12,7 +11,7 @@ export const store = {
     try { localStorage.setItem(`lev-purity:${k}`, v); } catch { /* 私密模式等情況，不保存也能用 */ }
   },
 };
-for (const k of ['theme', 'big', 'motion', 'study', 'lens']) {
+for (const k of ['theme', 'big', 'motion', 'study']) {
   const v = store.get(k);
   if (v) root.dataset[k] = v;
 }
@@ -46,10 +45,6 @@ export function mountShell(build: (id: SceneId | 'about') => HTMLElement) {
       root.dataset.study = root.dataset.study === '1' ? '0' : '1';
       store.set('study', root.dataset.study);
     }),
-    toolButton('eye', '證據透鏡：依證據等級標出每一句', () => root.dataset.lens === '1', () => {
-      root.dataset.lens = root.dataset.lens === '1' ? '0' : '1';
-      store.set('lens', root.dataset.lens);
-    }),
     toolButton('moon', '深色模式', isDark, () => { root.dataset.theme = isDark() ? 'light' : 'dark'; store.set('theme', root.dataset.theme); }),
     toolButton('text', '大字模式', () => root.dataset.big === '1', () => { root.dataset.big = root.dataset.big === '1' ? '0' : '1'; store.set('big', root.dataset.big); }),
     toolButton('motion', '減少動態', () => root.dataset.motion === 'off', () => {
@@ -76,10 +71,7 @@ export function mountShell(build: (id: SceneId | 'about') => HTMLElement) {
   const footer = h('footer', null, h('div', { class: 'wrap' },
     '非商業的研經教材。經文引自和合本。故事裡的一家人是虛構的，規矩都附經節。',
     ' ', h('a', { href: sceneHref('about') }, '這個網站怎麼做的')));
-  const lensKey = h('div', { class: 'lens-key', role: 'note', 'aria-label': '證據透鏡的圖例' },
-    h('b', null, '證據透鏡'),
-    ...(['explicit', 'synthesis', 'interpretation', 'not_stated'] as const).map((st) => h('span', { class: `lens-k lens-${st}`, title: STATUS_HELP[st] }, STATUS_LABEL[st])));
-  document.body.prepend(topbar, main, footer, lensKey);
+  document.body.prepend(topbar, main, footer);
 
   const cache = new Map<string, HTMLElement>();
   let shown: string | null = null;
@@ -93,9 +85,6 @@ export function mountShell(build: (id: SceneId | 'about') => HTMLElement) {
       el = build(id);
       cache.set(id, el);
     }
-    // 每一章的開頭放大的章號（11–15）；序幕、總覽、各家怎麼讀不放
-    const num = /^c(\d+)$/.exec(id)?.[1];
-    if (num) el.querySelector('.scene-head')?.setAttribute('data-num', num);
     main.replaceChildren(el);
     el.classList.remove('scene-in');
     void el.offsetWidth;

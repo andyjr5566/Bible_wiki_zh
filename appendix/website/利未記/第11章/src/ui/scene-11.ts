@@ -4,8 +4,7 @@ import {
   type KitchenThing, type NamedCreature,
 } from '../data/ch11';
 import { REEL_11 } from '../data/reels';
-import { animOff, fill, h, motionOff, svg } from './dom';
-import type { JarPlayer } from '../three/jar';
+import { fill, h, svg } from './dom';
 import { factLine, quoteLine, refChip, refChips, voiceBlock } from './evidence';
 import { ICONS } from './icons';
 import { answerBridge, layer, readingMore, study } from './common';
@@ -35,50 +34,10 @@ function landPanel(): HTMLElement {
   });
   const foot = h('div', { class: 'beast-foot' }, '點一張卡，先猜，再翻開看經文怎麼說。');
   const all = h('button', { class: 'chipbtn', type: 'button', onclick: () => cards.forEach((c) => c.setAttribute('aria-pressed', 'true')) }, '全部翻開');
-
-  // 依兩個條件排：卡片移進「蹄分兩瓣 × 倒嚼」的四格，看得出經文點名的四種各只合一個條件
-  const beasts = h('div', { class: 'beasts' }, ...cards);
-  const cell = (hoof: boolean, cud: boolean) => h('div', { class: 'bm-cell', 'data-hoof': String(hoof), 'data-cud': String(cud) });
-  const cells = [cell(true, true), cell(false, true), cell(true, false), cell(false, false)];
-  const axis = (cls: string, label: string) => h('div', { class: `bm-axis ${cls}` }, label);
-  const matrix = h('div', { class: 'beast-matrix', hidden: true },
-    h('div', { class: 'bm-corner' }),
-    axis('bm-col', ''), axis('bm-col', ''),
-    axis('bm-row', ''), cells[0], cells[1],
-    axis('bm-row', ''), cells[2], cells[3]);
-  const [, c1, c2, r1, , , r2] = [...matrix.children] as HTMLElement[];
-  c1.append(yes(true, '蹄分兩瓣')); c2.append(yes(false, '蹄分兩瓣'));
-  r1.append(yes(true, '倒嚼')); r2.append(yes(false, '倒嚼'));
-  let sorted = false;
-  const sortBtn = h('button', { class: 'chipbtn', type: 'button', 'aria-pressed': 'false' }, '依兩個條件排列');
-  sortBtn.addEventListener('click', () => {
-    sorted = !sorted;
-    // FLIP：先記下位置，搬家，再從舊位置滑到新位置
-    const before = new Map(cards.map((c) => [c, c.getBoundingClientRect()]));
-    if (sorted) {
-      cards.forEach((c) => c.setAttribute('aria-pressed', 'true'));
-      LAND.forEach((a, i) => cells[(a.hoof ? 0 : 1) + (a.cud ? 0 : 2)].append(cards[i]));
-    } else {
-      beasts.append(...cards);
-    }
-    matrix.hidden = !sorted;
-    beasts.hidden = sorted;
-    sortBtn.setAttribute('aria-pressed', String(sorted));
-    sortBtn.textContent = sorted ? '回到原本排列' : '依兩個條件排列';
-    if (motionOff() || animOff()) return;
-    for (const c of cards) {
-      const a = before.get(c)!;
-      const b = c.getBoundingClientRect();
-      const dx = a.left - b.left;
-      const dy = a.top - b.top;
-      if (!dx && !dy) continue;
-      c.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'none' }], { duration: 520, easing: 'cubic-bezier(.2,.75,.2,1)' });
-    }
-  });
   return h('div', { class: 'guide-panel' },
     h('p', { class: 'guide-rule' }, quoteLine(LAND_RULE)),
-    h('div', { class: 'guide-tools' }, h('span', { class: 'legend' }, yes(true, '有'), yes(false, '沒有')), sortBtn, all),
-    beasts, matrix,
+    h('div', { class: 'guide-tools' }, h('span', { class: 'legend' }, yes(true, '有'), yes(false, '沒有')), all),
+    h('div', { class: 'beasts' }, ...cards),
     foot,
     h('ul', { class: 'key-lines' }, ...LAND_EXTRA.map((f) => h('li', null, factLine(f)))),
     voiceBlock(VOICES_11.pair),
@@ -169,23 +128,10 @@ function kitchen(): HTMLElement {
     h('p', { class: 'k-empty' }, '把死蜥蜴拖到一樣東西上，或直接點那樣東西。'));
   const tiles = KITCHEN.map((k) => h('button', { class: 'k-tile', type: 'button', 'data-id': k.id, onclick: () => choose(k) },
     h('span', { class: 'k-ico' }, svg(ICONS[k.icon] ?? ICONS.q)), h('b', null, k.name)));
-  // 瓦罐：放一段 Blender 做的碎裂動畫（利11:33）。第一次選到才載入 3D
-  const jarBox = h('div', { class: 'k-jar', 'aria-hidden': 'true' });
-  let jar: Promise<JarPlayer | null> | null = null;
-  const canWebGL = () => {
-    try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; }
-  };
-  function shatter(): HTMLElement | null {
-    if (!canWebGL()) return null;
-    jar ??= import('../three/jar').then((m) => m.mountJar(jarBox, motionOff() || animOff())).catch((e) => { console.error(e); return null; });
-    requestAnimationFrame(() => jar!.then((p) => p?.play()));
-    return jarBox;
-  }
   function choose(k: KitchenThing) {
     tiles.forEach((t) => t.classList.toggle('on', t.dataset.id === k.id));
     const v = k.id === 'clay' ? VOICES_11.clay : k.id === 'spring' ? VOICES_11.spring : null;
     fill(out,
-      k.id === 'clay' ? shatter() : null,
       h('div', { class: `k-verdict r-${k.result}` }, h('small', null, `掉在${k.name}上`), h('b', null, RESULT_TEXT[k.result])),
       h('p', { class: 'k-q' }, quoteLine(k.fact)),
       h('p', { class: 'k-plain' }, k.fact.text),
