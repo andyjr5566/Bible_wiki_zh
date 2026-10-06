@@ -4,7 +4,7 @@ import {
 import type { Fact } from '../data/types';
 import { h } from './dom';
 import { factLine, quoteLine, refChips, voiceBlock } from './evidence';
-import { layer, ntCard, readingMore, study, voicesLink } from './common';
+import { answerBridge, layer, ntCard, readingMore, study, voicesLink } from './common';
 import { mountReel } from './reel';
 import { kicker, sceneNav } from './shell';
 
@@ -96,6 +96,10 @@ function mourning(): HTMLElement {
 
 export function buildC13(): HTMLElement {
   const reel = mountReel(REEL_13);
+  const specialsLayer = layer('幾種特別的情況', '有的看起來很嚴重，卻是潔淨的', specials());
+  // 女兒在故事最後問「爸爸什麼時候可以回來？」：母親的回答接在故事下面
+  const bridge = answerBridge({ id: 'mother', label: '母親回答女兒' },
+    '「要等爸爸身上的病好了。病在他身上的日子，他就要一個人住在營外。病好了，祭司會出營去看他；還要照著潔淨的條例一步一步做完，他才能回到營裡，回到我們身邊。」', reel.el, specialsLayer);
   return h('article', { class: 'scene scene-13', style: '--c:var(--c13)' },
     h('div', { class: 'wrap' },
       h('header', { class: 'scene-head' },
@@ -108,7 +112,8 @@ export function buildC13(): HTMLElement {
     h('div', { class: 'wrap' }, layer('父親的例子', '第 1 天關鎖、第 7 天再關、第 14 天擴散了', null)),
     reel.el,
     h('div', { class: 'wrap' },
-      layer('幾種特別的情況', '有的看起來很嚴重，卻是潔淨的', specials()),
+      bridge,
+      specialsLayer,
       layer('確診以後', '四個動作，都是喪禮上的動作', mourning()),
       layer('今天怎麼讀', '新約裡的一句話', ntCard(h('p', null, factLine(NT_13, { quote: true })), voiceBlock(VOICES_13.outsideBH))),
       study('原文裡看得見的事', ...HEBREW_13.map((f) => h('p', { class: 'study-p' }, factLine(f))), voiceBlock(VOICES_13.heal)),

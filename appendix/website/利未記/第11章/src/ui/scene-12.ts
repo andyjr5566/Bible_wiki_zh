@@ -5,7 +5,7 @@ import { LIKE_MENSES } from '../data/ch12';
 import { fill, h, svg } from './dom';
 import { factLine, quoteLine, voiceBlock } from './evidence';
 import { ICONS } from './icons';
-import { layer, ntCard, readingMore, study, voicesLink } from './common';
+import { answerBridge, layer, ntCard, readingMore, study, voicesLink } from './common';
 import { mountReel } from './reel';
 import { kicker, sceneNav } from './shell';
 
@@ -103,6 +103,10 @@ function offerings(): HTMLElement {
 
 export function buildC12(): HTMLElement {
   const reel = mountReel(REEL_12);
+  const bring = layer('帶什麼來', '同樣的禮，兩種預備法', offerings());
+  // 女兒在故事最後問「為什麼要等四十天？如果是妹妹呢？」：父親的回答接在故事下面
+  const bridge = answerBridge({ id: 'father', label: '父親回答女兒' },
+    '「生男孩，媽媽不潔淨七天，再等三十三天，一共四十天。如果是妹妹，日子加倍：不潔淨兩個七天，再等六十六天。為什麼要這麼多天、為什麼生女孩要加倍，經文沒有說。日子滿了，就像今天，帶一歲的羊羔和一隻雛鴿到會幕門口。」', reel.el, bring);
   return h('article', { class: 'scene scene-12', style: '--c:var(--c12)' },
     h('div', { class: 'wrap' },
       h('header', { class: 'scene-head' },
@@ -115,7 +119,8 @@ export function buildC12(): HTMLElement {
     h('div', { class: 'wrap' }, layer('一家人的例子', '生了男孩：四十天怎麼過', null)),
     reel.el,
     h('div', { class: 'wrap' },
-      layer('帶什麼來', '同樣的禮，兩種預備法', offerings()),
+      bridge,
+      bring,
       layer('今天怎麼讀', '新約裡的兩句話',
         ntCard(h('p', null, factLine(NT_12, { quote: true })), h('p', null, factLine(NT_12B, { quote: true })), voiceBlock(VOICES_12.mary))),
       study('原文裡看得見的事', ...HEBREW_12.map((f) => h('p', { class: 'study-p' }, factLine(f))), voiceBlock(VOICES_12.forty), voiceBlock(VOICES_12.eight), voiceBlock(VOICES_12.ritual)),

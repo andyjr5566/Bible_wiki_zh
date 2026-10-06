@@ -4,7 +4,7 @@ import {
 import type { Fact } from '../data/types';
 import { h, s } from './dom';
 import { factLine, quoteLine, refChips, voiceBlock } from './evidence';
-import { layer, ntCard, readingMore, study, voicesLink } from './common';
+import { answerBridge, layer, ntCard, readingMore, study, voicesLink } from './common';
 import { mountReel } from './reel';
 import { kicker, sceneNav } from './shell';
 
@@ -137,6 +137,10 @@ function house(): HTMLElement {
 
 export function buildC14(): HTMLElement {
   const reel = mountReel(REEL_14);
+  const ordain = layer('第八天：耳、手、腳', '和承接聖職的祭司抹在同樣的三處；求潔淨的人多一道油', ordination());
+  // 女兒在故事最後問「那些鳥和羊，到底是做什麼的？」：父親的回答接在故事下面
+  const bridge = answerBridge({ id: 'father', label: '父親回答女兒' },
+    '「在營外，一隻鳥宰在活水上面；另一隻活鳥和香柏木、朱紅色線、牛膝草一起蘸了血，向我灑了七次，祭司就定我為潔淨，那隻活鳥放到田野裡飛走了。今天在會幕門口，一隻公羊羔作贖愆祭，牠的血抹在我的右耳垂、右手大拇指、右腳大拇指上；另外的羊羔作贖罪祭和燔祭，祭司用這些為我贖罪，我就潔淨了。為什麼要這樣做，經文沒有一樣一樣說明。」', reel.el, ordain);
   return h('article', { class: 'scene scene-14', style: '--c:var(--c14)' },
     h('div', { class: 'wrap' },
       h('header', { class: 'scene-head' },
@@ -151,7 +155,8 @@ export function buildC14(): HTMLElement {
     h('div', { class: 'wrap' }, layer('父親的例子', '從營外回到家', null)),
     reel.el,
     h('div', { class: 'wrap' },
-      layer('第八天：耳、手、腳', '和承接聖職的祭司抹在同樣的三處；求潔淨的人多一道油', ordination()),
+      bridge,
+      ordain,
       layer('窮人怎麼辦', '有的可以減，有的不能減', richPoor()),
       layer('房屋上的斑', '這是到了迦南、住進房子以後的條例', house()),
       layer('今天怎麼讀', '新約裡的一句話', ntCard(h('p', null, factLine(NT_14, { quote: true })), voiceBlock(VOICES_14.bloodWater))),

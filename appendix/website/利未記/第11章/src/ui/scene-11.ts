@@ -8,7 +8,7 @@ import { animOff, fill, h, motionOff, s, svg } from './dom';
 import type { JarPlayer } from '../three/jar';
 import { factLine, quoteLine, refChip, refChips, voiceBlock } from './evidence';
 import { ICONS } from './icons';
-import { layer, readingMore, study } from './common';
+import { answerBridge, layer, readingMore, study } from './common';
 import { mountReel } from './reel';
 import { kicker, sceneHref, sceneNav } from './shell';
 import { sil } from './sil';
@@ -288,8 +288,11 @@ function whyDiagram(): HTMLElement {
 /* ------------------------------------------------------------ 這一幕 */
 
 export function buildC11(): HTMLElement {
-  // 3D 故事放在「碰到死的」當實例：只演到晚上那一步，後面直接接器物和摸／拿／吃
-  const reel = mountReel({ ...REEL_11, beats: REEL_11.beats.slice(0, 7), next: undefined });
+  // 3D 故事放在「碰到死的」當實例：最後女兒問「掉在別的東西上呢？」，母親的回答接到下面的器物
+  const reel = mountReel(REEL_11);
+  const things = layer('死了掉進來怎麼辦', '利11:32-38：同一隻死蜥蜴，掉在不同的東西上，結果不一樣', sorter());
+  const bridge = answerBridge({ id: 'mother', label: '母親回答女兒' },
+    '「掉在木器、衣服、皮子、口袋上，就像今天的木碗，泡在水裡，到晚上就好了。掉進瓦器裡，就像那個瓦罐，要打破；爐子、鍋臺也要打碎。泉源和聚水的池子還是潔淨的，只是碰到那死的就不潔淨。要種的種子還是潔淨的，可是種子已經澆了水，就不潔淨了。」', reel.el, things);
 
   return h('article', { class: 'scene scene-11', style: '--c:var(--c11)' },
     h('div', { class: 'wrap' },
@@ -307,7 +310,8 @@ export function buildC11(): HTMLElement {
       layer('碰到死的', '傍晚的一隻死蜥蜴', h('p', { class: 'lede-s' }, factLine(REEL_11.beats[1].rule), ' ', factLine(REEL_11.beats[4].rule)))),
     reel.el,
     h('div', { class: 'wrap' },
-      layer('死了掉進來怎麼辦', '利11:32-38：同一隻死蜥蜴，掉在不同的東西上，結果不一樣', sorter()),
+      bridge,
+      things,
       layer('摸、拿、吃', '拿和吃，比摸多一道洗衣服的手續', ladder()),
 
       layer('為什麼', '全章的理由寫在最後',
