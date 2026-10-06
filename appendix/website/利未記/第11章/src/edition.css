@@ -215,7 +215,7 @@ footer a { color: #ffc89a; }
 /* 減少動態：五張靜止畫面 */
 .fly-still { height: auto; margin-inline: 0; }
 .fly-stills { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
-.fly-stills li { display: grid; gap: 8px; }
+.fly-stills li { display: grid; gap: 8px; align-content: start; }
 .fly-stills img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
 .fly-stills .fly-step { opacity: 1; transform: none; }
 .fly-stills .fly-step .fly-n { color: var(--ink); border-color: var(--line-2); }
