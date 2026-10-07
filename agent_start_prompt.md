@@ -15,6 +15,34 @@ review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷
 3. M3、M6、B 類寫完各過一道 reviewer gate（步驟 3），gate 沒過不往下。
 4. `.tmp/第x章/` 的 yaml 是 source of truth，不手改渲染出來的 markdown。
 5. 閘門全綠只代表結構合法；步驟 6 的內容勘誤每章都要做。
+6. 每章維護 `.tmp/第x章/progress.md`（見下節），每完成一步就更新。被 compact 後以它為準。
+
+## 進度檔與 compact
+
+長時間連續作業會被 auto compact，讀過的來源只剩摘要。進度記在磁碟上，不靠記憶：
+
+- 開工第一步就建 `progress.md`，每完成一個步驟（含 reviewer 每一輪）立刻更新：
+  ```markdown
+  # 利未記 第16章 進度
+  狀態：進行中
+  目前步驟：3 M3 reviewer attempt 1 已回 changes_required
+  下一步：依 findings 修 entry_content/贖罪日.yaml 後再 submit m3
+
+  ## 已完成步驟
+  - 1 來源準備、read_log、check_source_read PASS
+  - 2 link_candidates.yaml（18 個候選）
+
+  ## 判斷紀錄
+  - 「阿撒瀉勒」併入既有條目，不另建
+  - reviewer finding #3 引句 grep 不到 raw_data，不採納
+  ```
+- 判斷紀錄只記會影響後續步驟的決定與理由（合併／不建／不採納 finding 等），不抄內容。
+- commit 前把「狀態」改為 `已完成`，隨本章一起 commit。
+- 被 compact 後，`.claude/hooks/post_compact_reentry.py` 會自動提示重新進場（只在本 session
+  寫過 progress.md 且狀態不是「已完成」時觸發；只讀過本檔、或在做網站等其他工作都不觸發）：先讀本檔與
+  progress.md，再把本章四套 commentary 與經文全文重讀，才能繼續寫內容。重讀是恢復記憶，
+  不改 `read_log.md`。
+- 一章完成並 commit 後，優先開新 session 做下一章，不帶著壓縮過的上下文硬接。
 
 ## MCP（可用時）
 
