@@ -52,3 +52,7 @@ CLAUDE.local.md
 # npx skills add 安裝的 skill（連結到 .agents/skills）與其紀錄檔
 .claude/skills/
 skills-lock.json
+
+# Python bytecode
+__pycache__/
+*.pyc
