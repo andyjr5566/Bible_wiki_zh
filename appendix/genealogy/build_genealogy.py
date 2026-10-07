@@ -8,7 +8,7 @@
 - 所有「」引句必須逐字出現在同一條目所引的經節。
 - 平行經文對照兩邊的字串、人數表的數字字串、城邑名都要逐字出現在各自經節。
 - 範圍內每一節都要被資料涵蓋，或在 `uncovered` 註明理由。
-- 產出頁面不得含 `[[`（相關卷書尚未建條目，避免空連結）。
+- 產出頁面不得含跨檔 `[[` 連結（相關卷書尚未建條目，避免空連結；內部 # 標題錨點連結除外）。
 
 用法：
     python appendix/genealogy/build_genealogy.py 歷代志上            # 驗證＋產生頁面
@@ -512,9 +512,19 @@ class Builder:
         for sec in d["sections"]:
             if sec["chapter"] != current:
                 current = sec["chapter"]
-                out.append(f"- **第 {current} 章**")
-            out.append(f"  - [[#{sec['title']}]]".replace("[[", "[").replace("]]", "]") if False else
-                       f"  - {sec['title']}　`{fmt_ref(sec['range'], self.book)}`")
+                ch_title = f"第 {current} 章　{d['chapters'][current]}"
+                out.append(f"- **[[#{ch_title}|第 {current} 章]]**")
+            out.append(f"  - [[#{sec['title']}|{sec['title']}]]　`{fmt_ref(sec['range'], self.book)}`")
+        if ex.get("parallels") or ex.get("homonyms") or ex.get("troops") or ex.get("cities"):
+            out.append("- **[[#附表|附表]]**")
+            if ex.get("parallels"):
+                out.append("  - [[#平行經文對照|平行經文對照]]")
+            if ex.get("homonyms"):
+                out.append("  - [[#同名不同人|同名不同人]]")
+            if ex.get("troops"):
+                out.append("  - [[#經文記下的人數|經文記下的人數]]")
+            if ex.get("cities"):
+                out.append("  - [[#利未人的城邑（6:54–81）|利未人的城邑（6:54–81）]]")
         out.append("")
         # 各段
         cards = defaultdict(list)
@@ -561,11 +571,13 @@ class Builder:
                 for note in sec["notes"]:
                     out.append(f"> - {note['text'].strip()}　`{note['refs']}`")
                 out.append("")
+            out += ["[[#目錄|↑ 回到目錄]] · [[#歷代志上 1–9 章 人物族譜圖|回到頂部]]", ""]
         out += self.tables()
         out += ["---", "", d["footer"].strip(), ""]
         page = "\n".join(out)
-        if "[[" in page:
-            self.err("render", "頁面含 [[ 連結（目前不加連結，避免空連結）")
+        cross_links = [m for m in re.findall(r"\[\[([^#\]][^\]]*)\]\]", page)]
+        if cross_links:
+            self.err("render", f"頁面含跨檔 [[ 連結（目前不加外部條目連結，避免空連結）：{cross_links[:5]}")
         return page
 
     def count_section(self, sid: str) -> int:
@@ -615,6 +627,7 @@ class Builder:
             for r in ex["parallels"]:
                 out.append(f"| {r['topic']} | {r['a_text']}　`{r['a_ref']}` | {r['b_text']}　`{r['b_ref']}` | {r.get('note', '')} |")
             out.append("")
+            out += ["[[#目錄|↑ 回到目錄]] · [[#歷代志上 1–9 章 人物族譜圖|回到頂部]]", ""]
         if ex.get("homonyms"):
             out += ["### 同名不同人", "", "名字相同、但在族譜上是不同的人。讀到時先看他掛在誰底下：", "",
                     "| 名字 | 各是誰 |", "|---|---|"]
@@ -631,11 +644,13 @@ class Builder:
                     who.append(f"{desc}　`{n['ref']}`")
                 out.append(f"| {name}（{len(who)} 人） | {'<br/>'.join(who)} |")
             out.append("")
+            out += ["[[#目錄|↑ 回到目錄]] · [[#歷代志上 1–9 章 人物族譜圖|回到頂部]]", ""]
         if ex.get("troops"):
             out += ["### 經文記下的人數", "", "| 誰 | 數目 | 經文原句 | 經節 |", "|---|---:|---|---|"]
             for r in ex["troops"]:
                 out.append(f"| {r['who']} | {r['number']:,} | {r['text']} | `{r['ref']}` |")
             out.append("")
+            out += ["[[#目錄|↑ 回到目錄]] · [[#歷代志上 1–9 章 人物族譜圖|回到頂部]]", ""]
         if ex.get("cities"):
             out += ["### 利未人的城邑（6:54–81）", "", "標 \\* 的是經文在這裡明說的逃城。", "",
                     "| 宗族 | 在哪個支派的地 | 城邑 | 經節 |", "|---|---|---|---|"]
@@ -645,6 +660,7 @@ class Builder:
             out.append("")
             if ex.get("cities_note"):
                 out += [ex["cities_note"].strip(), ""]
+            out += ["[[#目錄|↑ 回到目錄]] · [[#歷代志上 1–9 章 人物族譜圖|回到頂部]]", ""]
         return out
 
     def review(self) -> str:
