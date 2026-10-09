@@ -1,0 +1,96 @@
+# 網站自己的白話敘述，一拍一段。寫給一般讀者：先講白話，段落短，原文編號不寫進句子。
+# cue：場景提示（渲染器據此切換畫面）；verse：這一拍的主經文（建置時從 raw_scripture 抽全文）；
+# notes：就地展開的註釋（commentary.yaml 的 id）；words：可點開的原文字（step.yaml 的 id）；
+# reason: true 表示這一拍是「經文自己交代的理由」。
+# 文字裡用 ==…== 標出這一段唯一的關鍵詞（說明框裡以血紅色呈現），每段最多一處。
+
+opening:
+  - id: title
+    cue: title
+    day: 1
+    verse: 利23:2
+    text: 以色列的一年裡，有幾個日子是神親自定下的。利未記把它們叫作==耶和華的節期==：日子一到，百姓就要聚集。
+
+  - id: first-month
+    cue: month
+    day: 3
+    verse: 出12:2
+    text: 這一年從哪個月算起，是在埃及的最後幾天定下的。神對摩西、亞倫說，這個月要作==正月==。
+    notes: [ct-abib, kc-abib, bh-abib, gt-bg-abib]
+    words: [abib]
+
+  - id: tenth-day
+    cue: day-10
+    day: 10
+    verse: 出12:3
+    text: 正月初十，每一家要挑一隻==羊羔==。人口少的人家，可以和隔壁的鄰舍合吃一隻。羊羔要留到十四日。
+
+  - id: full-moon
+    cue: day-14
+    day: 14
+    verse: 出12:6
+    text: 十四日黃昏，全會眾宰羊。這天正在月中。《舊約聖經背景註釋》說，宰羊的黃昏正是一年第一個==滿月==初升的時候。
+    notes: [gt-bg-fullmoon]
+    words: [bein-haarbayim]
+
+passover:
+  - id: blood
+    cue: dusk-street
+    verse: 出12:7
+    text: 各家取一點羊羔的血，塗在吃羊羔那間房子的左右門框和==門楣==上。
+    notes: [ct-threshold, kc-threshold]
+
+  - id: hyssop
+    cue: hyssop
+    interaction: hyssop
+    verse: 出12:22
+    text: 摩西把做法交代給長老：拿一把==牛膝草==，蘸盆裡的血，打在門楣和左右的門框上。
+    prompt: 按住牛膝草，拖到盆裡蘸血，再打在門楣和左右兩邊的門框上。
+    notes: [ct-hyssop, gt-dlc-hyssop, kc-hyssop, bh-hyssop]
+    words: [ezov, saph]
+
+  - id: door
+    cue: door-shut
+    verse: 出12:22
+    text: 打完血，全家進屋。經文說，誰也不可出自己的房門，直到==早晨==。
+
+  - id: meal
+    cue: meal
+    verse: 出12:11
+    text: 屋裡的人吃烤羊羔，配無酵餅和苦菜。腰間束上帶子，腳上穿著鞋，手裡拿著杖，==趕緊==地吃。
+    notes: [kc-only, ct-bitter]
+    words: [matzot, merorim, pesach]
+
+  - id: midnight
+    cue: midnight
+    verse: 出12:23
+    text: 半夜，耶和華巡行埃及。看見門上有血，就==越過==那門，不讓滅命的進屋。
+    notes: [ct-destroyer, bh-destroyer, gt-bg-protect, kc-passover-word]
+    words: [pasach, mashchit]
+
+  - id: wailing
+    cue: wailing
+    verse: 出12:29-30
+    text: 從坐寶座的法老的長子，到監裡囚犯的長子，埃及地所有的長子都死了，頭生的牲畜也死了。那一夜埃及==大哀號==，沒有一家不死一個人。
+    notes: [bh-wailing, gt-jingdu-silence]
+
+  - id: depart
+    cue: depart
+    verse: 出12:31-34
+    text: 當夜，法老召來摩西、亞倫，叫他們帶著百姓和牛羊出去。百姓等不及麵發起來，把摶麵盆包在衣服裡，==扛在肩上==就走。
+    notes: [ct-dough, gt-bg-dough, kc-dough, bh-dough]
+
+  - id: vigil
+    cue: vigil
+    reason: true
+    verse: 出12:42
+    text: 經文把這一夜叫作==耶和華的夜==：因為耶和華領他們出了埃及，以色列人世世代代都要在這一夜向耶和華謹守。
+    notes: [ct-vigil, gt-qidao-vigil, gt-tyndale-vigil, bh-vigil]
+    words: [shimmurim]
+
+  - id: children
+    cue: children
+    reason: true
+    verse: 出12:26-27
+    text: 日後到了應許之地，兒女會問：行這禮是什麼意思？經文連答案都先寫好了，要父母這樣==回答==。
+    notes: [gt-tyndale-children, kc-children]

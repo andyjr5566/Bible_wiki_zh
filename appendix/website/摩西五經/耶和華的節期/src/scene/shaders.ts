@@ -1,0 +1,475 @@
+﻿// 所有 GLSL 都在這裡。版畫刻線的核心是 hatchCov：螢幕空間的平行線，線寬跟著暗度 t 變化。
+// three 會替 ShaderMaterial 自動補上 precision、attribute position/normal/uv、modelMatrix 等宣告。
+
+export const GLSL_COMMON = /* glsl */ `
+uniform vec2 uViewport;
+uniform vec2 uRes;
+uniform float uDpr;
+uniform float uTime;
+uniform float uDark;
+
+float hash11(float p){ p = fract(p * .1031); p *= p + 33.33; p *= p + p; return fract(p); }
+float hash21(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * .1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+float hash31(vec3 p3){ p3 = fract(p3 * .1031); p3 += dot(p3, p3.zyx + 31.32); return fract((p3.x + p3.y) * p3.z); }
+float vnoise(vec2 p){
+  vec2 i = floor(p); vec2 f = fract(p); f = f * f * (3. - 2. * f);
+  float a = hash21(i), b = hash21(i + vec2(1., 0.)), c = hash21(i + vec2(0., 1.)), d = hash21(i + vec2(1., 1.));
+  return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+float fbm(vec2 p){
+  float v = 0.; float a = .5;
+  for (int i = 0; i < 4; i++){ v += a * vnoise(p); p = p * 2.03 + vec2(17.1, 9.2); a *= .5; }
+  return v;
+}
+
+// 螢幕空間平行刻線。t：0..1 線寬比例；ang：弧度；spacingPx：CSS px 的線距。
+// 低頻噪聲讓線略微抖動、粗細不均，並在亮部斷成短線，像手刻。
+float hatchCov(vec2 frag, float t, float ang, float spacingPx, float seed){
+  float s = spacingPx * uDpr;
+  float ca = cos(ang), sa = sin(ang);
+  vec2 p = vec2(ca * frag.x + sa * frag.y, -sa * frag.x + ca * frag.y);
+  float px = p.x / uDpr;
+  float wob = (vnoise(vec2(px * .018 + seed * 3.1, p.y * .0035 / uDpr + seed)) - .5) * .8;
+  float cell = p.y / s + wob;
+  float id = floor(cell);
+  float fr = fract(cell) - .5;
+  float thick = vnoise(vec2(px * .03 + id * 7.13 + seed, id * 3.7 + seed * 5.)) - .5;
+  float w = clamp(t + thick * 1.8 * t * (1. - t), 0., 1.);
+  float dash = vnoise(vec2(px * .045 + id * 13.1 + seed * 2., id * 1.7));
+  w *= mix(smoothstep(.12, .42, dash + t * .9), 1., smoothstep(.45, .7, t));
+  float hw = mix(w * .5, .8, smoothstep(.9, 1., w));
+  float aa = 1. / s;
+  float c = clamp((hw - abs(fr)) / aa + .5, 0., 1.);
+  return c * smoothstep(.015, .09, w);
+}
+`;
+
+// ---------- 刻線光照材質（泛用） ----------
+export const LIT_VERT = /* glsl */ `
+varying vec3 vN;
+varying vec3 vW;
+varying vec3 vObj;
+#ifdef USE_PART
+attribute float aPart;
+varying float vPart;
+#endif
+#ifdef USE_INSTANCING_COLOR
+varying vec3 vIC;
+#endif
+uniform float uTime;
+uniform float uWind;
+void main(){
+  vec4 p = vec4(position, 1.);
+  vec3 n = normal;
+  float hgt = position.y;
+  #ifdef USE_INSTANCING
+    p = instanceMatrix * p;
+    n = mat3(instanceMatrix) * n;
+  #endif
+  #ifdef USE_INSTANCING_COLOR
+    vIC = instanceColor;
+  #endif
+  #ifdef USE_PART
+    vPart = aPart;
+  #endif
+  vec4 wp = modelMatrix * p;
+  #ifdef WIND
+    float ph = wp.x * .35 + wp.z * .22;
+    float sw = sin(uTime * 1.7 + ph) * .6 + sin(uTime * .9 + ph * 1.7) * .4;
+    wp.x += sw * uWind * hgt * hgt * .5;
+    wp.z += cos(uTime * 1.3 + ph * 1.2) * uWind * hgt * hgt * .25;
+  #endif
+  vW = wp.xyz;
+  vN = normalize(mat3(modelMatrix) * n);
+  vObj = position;
+  gl_Position = projectionMatrix * viewMatrix * wp;
+}
+`;
+
+export const LIT_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec3 vN;
+varying vec3 vW;
+varying vec3 vObj;
+#ifdef USE_PART
+varying float vPart;
+uniform vec3 uPartCol[6];
+uniform vec3 uPartAlt;
+#endif
+#ifdef USE_INSTANCING_COLOR
+varying vec3 vIC;
+#endif
+uniform vec3 uBase;
+uniform vec3 uLineCol;
+uniform float uInvert;
+uniform float uAngle;
+uniform float uAngle2;
+uniform float uSpace;
+uniform float uBias;
+uniform float uSeed;
+uniform float uCross;
+uniform vec3 uLightDir;
+uniform float uAmb;
+uniform float uGain;
+uniform vec4 uPt;
+void main(){
+  vec3 N = normalize(vN);
+  if (!gl_FrontFacing) N = -N;
+  float lam;
+  #ifdef POINT
+    vec3 Lp = uPt.xyz - vW;
+    float d = length(Lp);
+    Lp /= max(d, .001);
+    lam = clamp(max(dot(N, Lp), 0.) * uPt.w / (1. + .16 * d * d), 0., 1.);
+  #else
+    lam = max(dot(N, normalize(uLightDir)), 0.);
+  #endif
+  float lum = clamp((uAmb + (1. - uAmb) * lam) * uGain + uBias, 0., 1.);
+  float t = 1. - lum;
+  vec3 base = uBase;
+  #ifdef USE_PART
+    int pidx = int(vPart + .5);
+    base = uPartCol[pidx];
+    #ifdef USE_INSTANCING_COLOR
+      if (pidx == 0) base = mix(base, uPartAlt, vIC.r);
+    #endif
+  #endif
+  float te = mix(t, 1. - t, uDark * uInvert);
+  float ang = mix(uAngle, uAngle2, step(.6, N.y));
+  float cov = hatchCov(gl_FragCoord.xy, te, ang, uSpace, uSeed);
+  if (uCross > .5){
+    float t2 = smoothstep(.55, 1., te) * .85;
+    cov = max(cov, hatchCov(gl_FragCoord.xy, t2, ang + 1.05, uSpace * 1.1, uSeed + 4.3));
+  }
+  gl_FragColor = vec4(mix(base, uLineCol, cov), 1.);
+}
+`;
+
+// ---------- 倒殼輪廓（inverted hull）：螢幕空間固定像素寬 ----------
+export const HULL_VERT = /* glsl */ `
+uniform vec2 uViewport;
+uniform float uDpr;
+uniform float uOutlinePx;
+void main(){
+  vec4 p = vec4(position, 1.);
+  vec3 n = normal;
+  #ifdef USE_INSTANCING
+    p = instanceMatrix * p;
+    n = mat3(instanceMatrix) * n;
+  #endif
+  vec4 mv = modelViewMatrix * p;
+  vec4 clip = projectionMatrix * mv;
+  vec3 nv = normalize(normalMatrix * n);
+  vec4 cn = projectionMatrix * vec4(nv, 0.);
+  vec2 dir = cn.xy;
+  float l = length(dir);
+  dir = l > 1e-5 ? dir / l : vec2(0.);
+  clip.xy += dir * (uOutlinePx * uDpr) * 2. / uViewport * clip.w;
+  gl_Position = clip;
+}
+`;
+export const HULL_FRAG = /* glsl */ `
+uniform vec3 uOutCol;
+void main(){ gl_FragColor = vec4(uOutCol, 1.); }
+`;
+
+// ---------- 平塗發光（門內燈光、窗、火炬） ----------
+export const GLOW_VERT = /* glsl */ `
+varying vec2 vUv;
+varying float vTh;
+#ifdef USE_INSTANCING_COLOR
+varying vec3 vIC;
+#endif
+void main(){
+  vUv = uv;
+  vec4 p = vec4(position, 1.);
+  #ifdef USE_INSTANCING
+    p = instanceMatrix * p;
+  #endif
+  #ifdef USE_INSTANCING_COLOR
+    vIC = instanceColor;
+    vTh = instanceColor.r;
+  #else
+    vTh = 1.;
+  #endif
+  gl_Position = projectionMatrix * modelViewMatrix * p;
+}
+`;
+export const GLOW_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec2 vUv;
+varying float vTh;
+uniform vec3 uOnCol;
+uniform vec3 uOffCol;
+uniform vec3 uEdgeCol;
+uniform float uOn;      // 0..1：整體亮度（火炬熄滅用）
+uniform float uOff;     // 窗戶門檻：vTh < uOff 的窗熄燈
+uniform float uHatch;   // 邊緣刻線強度
+uniform float uFlick;
+void main(){
+  #ifdef SPILL
+    float vv = clamp(1. - length((vUv - vec2(.5, 1.)) * vec2(1.15, 1.)) * 1.12, 0., 1.);
+    float cv = hatchCov(gl_FragCoord.xy, vv * vv * 1.1, 1.62, 5., 3.7);
+    gl_FragColor = vec4(uOnCol, cv * uOn);
+    return;
+  #endif
+  vec2 c = vUv - .5;
+  float v = length(c * vec2(1., 1.15)) * 1.55;
+  float on = uOn * step(uOff, vTh);
+  float t = uHatch * smoothstep(.3, 1., v);
+  float cov = hatchCov(gl_FragCoord.xy, t, 1.5708, 4.6, 2.2);
+  vec3 col = mix(uOffCol, uOnCol, on);
+  col = mix(col, uEdgeCol, cov * (.35 + .65 * on));
+  col *= 1. + uFlick * (vnoise(vec2(uTime * 9., vUv.y * 3.)) - .5);
+  gl_FragColor = vec4(col, 1.);
+}
+`;
+
+// ---------- 血跡貼花 ----------
+export const DECAL_VERT = /* glsl */ `
+varying vec2 vUv;
+void main(){
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.);
+}
+`;
+export const DECAL_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec2 vUv;
+uniform vec3 uCol;
+uniform vec3 uCol2;
+uniform float uGrow;
+uniform float uSeed;
+uniform vec2 uSize;
+uniform vec2 uRad;
+void main(){
+  vec2 p = (vUv - .5) * uSize;
+  float g = smoothstep(0., 1., uGrow);
+  vec2 q = p / (uRad * (.2 + .8 * g));
+  float ang = atan(q.y, q.x);
+  float r = length(q);
+  float edge = 1. + .38 * (vnoise(vec2(ang * 2.1 + uSeed, uSeed * 2.)) - .5) * 2.
+             + pow(vnoise(vec2(ang * 6.5 + uSeed * 3., 1.7)), 3.) * 1.1 * g;
+  float body = 1. - smoothstep(edge - .07, edge, r);
+  float drop = 0.;
+  for (int i = 0; i < 10; i++){
+    float fi = float(i);
+    vec2 c = (vec2(hash11(fi * 3.1 + uSeed), hash11(fi * 5.7 + uSeed * 1.3)) - .5) * uSize * .92;
+    float rr = (.012 + .03 * hash11(fi * 9.3 + uSeed)) * g;
+    drop = max(drop, 1. - smoothstep(rr * .7, rr, length(p - c)));
+  }
+  float drip = 0.;
+  for (int i = 0; i < 3; i++){
+    float fi = float(i);
+    float cx = (hash11(fi * 4.3 + uSeed * 2.) - .5) * uRad.x * 1.5;
+    float len = (.12 + .32 * hash11(fi * 6.1 + uSeed)) * g;
+    float top = -uRad.y * .3;
+    float inx = 1. - smoothstep(.012, .02, abs(p.x - cx));
+    float iny = step(p.y, top) * step(top - len - uRad.y * .3, p.y);
+    float endcap = 1. - smoothstep(.0, .03, (top - len - uRad.y * .3) - p.y + .03);
+    drip = max(drip, inx * iny * (.4 + .6 * endcap));
+  }
+  float a = max(max(body, drop), drip);
+  float inner = smoothstep(.4, 1., r);
+  float cov = hatchCov(gl_FragCoord.xy, .18 + .42 * inner, 1.3, 5., uSeed);
+  vec3 col = mix(uCol, uCol2, cov * .85);
+  if (a < .01) discard;
+  gl_FragColor = vec4(col, a);
+}
+`;
+
+// ---------- 月亮：刻線球，光源方向在視圖空間（相位）----------
+export const MOON_VERT = /* glsl */ `
+varying vec3 vNv;
+varying vec3 vObj;
+void main(){
+  vNv = normalize(normalMatrix * normal);
+  vObj = position;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.);
+}
+`;
+export const MOON_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec3 vNv;
+varying vec3 vObj;
+uniform vec3 uLightV;
+uniform vec3 uBaseL;
+uniform vec3 uBaseD;
+uniform vec3 uLineL;
+uniform vec3 uLineD;
+void main(){
+  vec3 N = normalize(vNv);
+  float lam = dot(N, normalize(uLightV));
+  float lum = smoothstep(.0, .5, lam);
+  vec3 on = normalize(vObj);
+  vec2 sph = vec2(atan(on.z, on.x), asin(clamp(on.y, -1., 1.)));
+  float cr = 0.;
+  for (int k = 0; k < 2; k++){
+    float sc = k == 0 ? 1. : 2.1;
+    vec2 g = sph * vec2(5.5, 8.5) * sc;
+    vec2 id = floor(g);
+    vec2 f = fract(g) - .5;
+    vec2 off = (vec2(hash21(id), hash21(id + 7.7)) - .5) * .5;
+    float rad = .14 + .12 * hash21(id + 3.3);
+    float d = length(f - off);
+    float has = step(.52, hash21(id + 11.));
+    cr += has * ((1. - smoothstep(rad * .6, rad, d)) * .55 - (smoothstep(rad * .8, rad, d) * (1. - smoothstep(rad, rad * 1.3, d))) * .35);
+  }
+  float mare = smoothstep(.46, .68, fbm(sph * vec2(1.3, 2.1) + 3.));
+  lum = clamp(lum - cr * .32 * smoothstep(.1, .5, lum) - mare * .22 * smoothstep(.1, .5, lum), 0., 1.);
+  float t = 1. - lum;
+  float te = mix(t, 1. - t, uDark);
+  float cov = hatchCov(gl_FragCoord.xy, te, -.38, 4.2, 1.7);
+  vec3 base = mix(uBaseL, uBaseD, uDark);
+  vec3 lc = mix(uLineL, uLineD, uDark);
+  gl_FragColor = vec4(mix(base, lc, cov), 1.);
+}
+`;
+
+// ---------- 夜空（全螢幕，依視線方向算仰角）----------
+export const FS_VERT = /* glsl */ `
+varying vec2 vNdc;
+void main(){
+  vNdc = position.xy;
+  gl_Position = vec4(position.xy, 1., 1.);
+}
+`;
+export const SKY_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec2 vNdc;
+uniform mat4 uInvProj;
+uniform mat4 uCamWorld;
+uniform float uHorizon;
+uniform vec3 uHorizonCol;
+uniform float uSkyDay;
+uniform float uStars;
+uniform float uTwinkle;
+uniform vec3 uNightL;
+uniform vec3 uNightD;
+uniform vec3 uDaySky;
+uniform vec3 uInk;
+uniform vec3 uPaper;
+void main(){
+  vec4 v = uInvProj * vec4(vNdc, 1., 1.);
+  vec3 dir = normalize((uCamWorld * vec4(v.xyz / v.w, 0.)).xyz);
+  float el = dir.y;
+  float hz = uHorizon * pow(1. - smoothstep(0., .5, el), 1.7);
+  vec3 night = mix(uNightL, uNightD, uDark);
+  vec3 base = mix(night, uHorizonCol, hz * .96);
+  base = mix(base, uDaySky, uSkyDay);
+  float z = smoothstep(.02, .85, el);
+  float tL = mix(.16, .8, z) * (1. - hz * .85);
+  float tD = (1. - z) * .5 * (1. - hz * .4) + .06;
+  float tt = mix(tL, tD, uDark);
+  vec3 lineN = mix(uNightL * .38, uNightD * 2.6 + vec3(.05, .06, .12), uDark);
+  float dayT = mix(.1 + .22 * z, (.1 + .22 * (1. - z)) * .7, uDark);
+  tt = mix(tt, dayT, uSkyDay);
+  vec3 lc = mix(lineN, uInk, uSkyDay);
+  float cov = hatchCov(gl_FragCoord.xy, tt, .02, 5.6, 3.1);
+  vec3 col = mix(base, lc, cov);
+  // 星星：在刻線上挖掉的小白點
+  vec3 sp = dir * 62.;
+  vec3 ic = floor(sp);
+  vec3 fc = sp - ic;
+  float hh = hash31(ic);
+  vec3 cc = vec3(hash31(ic + 1.3), hash31(ic + 2.7), hash31(ic + 4.1));
+  float rs = .1 + .12 * hash31(ic + 9.1);
+  float d = length(fc - cc);
+  float st = step(.45, hh) * (1. - smoothstep(rs * .55, rs, d));
+  float tw = 1. - uTwinkle * .45 * (.5 + .5 * sin(uTime * (1. + hh * 3.) + hh * 40.));
+  st *= smoothstep(.015, .09, el) * (1. - hz) * (1. - uSkyDay) * uStars * tw;
+  vec3 starCol = mix(uPaper * .98 + vec3(.04), uInk, uDark);
+  col = mix(col, starCol, st);
+  gl_FragColor = vec4(col, 1.);
+}
+`;
+
+// ---------- 半夜的黑暗：沿 x 掃過的帶狀遮罩，繞過有血的門 ----------
+export const DARK_FRAG = /* glsl */ `
+${GLSL_COMMON}
+uniform vec4 uDoors[10];
+uniform float uDoorN;
+uniform float uFront;
+uniform float uBand;
+uniform float uAmt;
+uniform float uHorizonY;
+uniform float uFlow;
+uniform float uRise;
+uniform vec3 uCol;
+void main(){
+  vec2 f = gl_FragCoord.xy;
+  float H = uRes.y;
+  vec2 q = f / H;
+  vec2 warp = vec2(0.);
+  float prot = 0.;
+  for (int i = 0; i < 10; i++){
+    if (float(i) >= uDoorN) break;
+    vec4 d = uDoors[i];
+    vec2 c = d.xy / H;
+    vec2 r = d.zw / H;
+    vec2 dv = q - c;
+    vec2 e2 = dv / r;
+    e2.y *= e2.y > 0. ? (1. / 3.4) : (1. / 1.15);
+    float e = length(e2);
+    prot = max(prot, 1. - smoothstep(.78, 1.3, e));
+    float push = exp(-e * e * .4) * .2;
+    warp += normalize(dv + vec2(1e-4)) * push * r.x * 3.2;
+  }
+  vec2 w = q + warp;
+  float n = fbm(vec2(w.x * 2.2 - uFlow * .6, w.y * 7. + uFlow * .1));
+  float n2 = fbm(vec2(w.x * 5.5 - uFlow * 1.4, w.y * 15.));
+  float b = (f.x - uFront) / uBand;
+  float edgeN = (n - .5) * .9 + (n2 - .5) * .4;
+  float cov = 1. - smoothstep(.55, 1., abs(b) + edgeN);
+  float top = uHorizonY + (n2 * .6 + n) * uRise * H;
+  cov *= 1. - smoothstep(top - .03 * H, top + .02 * H, f.y);
+  cov *= 1. - prot * .98;
+  cov *= uAmt;
+  float h = hatchCov(f, cov, -.16, 5.2, 8.1);
+  gl_FragColor = vec4(uCol, h);
+}
+`;
+
+// ---------- 整片直向刻線抹除轉場 ----------
+export const WIPE_FRAG = /* glsl */ `
+${GLSL_COMMON}
+uniform float uWipe;
+uniform vec3 uCol;
+void main(){
+  vec2 f = gl_FragCoord.xy / uDpr;
+  vec2 uvn = gl_FragCoord.xy / uRes;
+  float colw = 7.;
+  float cx = f.x / colw;
+  float id = floor(cx);
+  float fr = fract(cx) - .5;
+  float h = hash11(id * 1.37);
+  float h2 = hash11(id * 7.77 + 3.);
+  float prog = clamp(uWipe * 1.7 - h * .5 - (1. - uvn.y) * .38 - (h2 - .5) * .15, 0., 1.);
+  float ragged = vnoise(vec2(id * .7, f.y * .012));
+  float widthT = clamp(prog * 1.25 - ragged * .22, 0., 1.);
+  float hw = widthT * .62;
+  float aa = 1. / (colw * uDpr);
+  float c = clamp((hw - abs(fr)) / aa + .5, 0., 1.) * smoothstep(.02, .1, widthT);
+  c = max(c, smoothstep(.97, 1., uWipe));
+  gl_FragColor = vec4(uCol, c);
+}
+`;
+
+// ---------- 紙紋：multiply 疊在整個畫面最上層 ----------
+export const GRAIN_FRAG = /* glsl */ `
+${GLSL_COMMON}
+uniform float uJitter;
+void main(){
+  vec2 f = gl_FragCoord.xy / uDpr;
+  float tt = floor(uJitter * 8.);
+  float n1 = hash21(floor(f * .9) + tt * 17.3);
+  float n2 = vnoise(f * .35 + tt * 3.1);
+  float n3 = vnoise(f * .05);
+  float g = (n1 - .5) * .075 + (n2 - .5) * .06 + (n3 - .5) * .06;
+  float fleck = step(.9985, hash21(floor(f) + 3.3 + tt)) * .22;
+  gl_FragColor = vec4(vec3(1. + g - fleck), 1.);
+}
+`;
+
+
+

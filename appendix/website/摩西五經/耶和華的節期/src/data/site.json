@@ -1,0 +1,1348 @@
+{
+  "audio": [
+    {
+      "author": "felix.blume",
+      "downloaded": "2026-10-09",
+      "edit": "取 20–60 秒，淡入淡出，單聲道",
+      "file": "night-wind.mp3",
+      "id": "night-wind",
+      "license": "CC0",
+      "loop": true,
+      "page": "https://freesound.org/people/felix.blume/sounds/651241/",
+      "title": "Slight cricket singing with silent breeze recorded at night in the desert at Bagdad California"
+    },
+    {
+      "author": "swiftoid",
+      "downloaded": "2026-10-09",
+      "edit": "去頭尾靜音，單聲道",
+      "file": "lamb.mp3",
+      "id": "lamb",
+      "license": "CC0",
+      "page": "https://freesound.org/people/swiftoid/sounds/182509/",
+      "title": "Lamb and Mother"
+    },
+    {
+      "author": "Wigglesworth",
+      "downloaded": "2026-10-09",
+      "edit": "取 1.40–2.70 秒一段水聲，單聲道",
+      "file": "dip.mp3",
+      "id": "dip",
+      "license": "CC0",
+      "page": "https://freesound.org/people/Wigglesworth/sounds/842637/",
+      "title": "Hands through water in ceramic bowl."
+    },
+    {
+      "author": "adviseme333",
+      "downloaded": "2026-10-09",
+      "edit": "去頭尾靜音，單聲道",
+      "file": "strike.mp3",
+      "id": "strike",
+      "license": "CC0",
+      "page": "https://freesound.org/people/adviseme333/sounds/679391/",
+      "title": "wet thwack"
+    },
+    {
+      "author": "nozefian",
+      "downloaded": "2026-10-09",
+      "edit": "響度調整，單聲道",
+      "file": "door.mp3",
+      "id": "door",
+      "license": "CC0",
+      "page": "https://freesound.org/people/nozefian/sounds/397917/",
+      "title": "Close Wooden Door"
+    },
+    {
+      "author": "ShangusBurger",
+      "downloaded": "2026-10-09",
+      "edit": "淡入淡出，響度調整",
+      "file": "wailing.mp3",
+      "id": "wailing",
+      "license": "CC0",
+      "page": "https://freesound.org/people/ShangusBurger/sounds/764080/",
+      "title": "CRWDMisc_Crowd Wailing, Crying_ShaneVincent_GSC24_FUMA-AmbeoVR.wav"
+    },
+    {
+      "author": "felix.blume；beautifuldaymonster1968",
+      "downloaded": "2026-10-09",
+      "edit": "牛群取 30–60 秒，混入群眾腳步聲（重複一次），淡入淡出",
+      "file": "depart.mp3",
+      "id": "depart",
+      "license": "CC0",
+      "loop": true,
+      "page": "https://freesound.org/people/felix.blume/sounds/174860/",
+      "pages": [
+        "https://freesound.org/people/felix.blume/sounds/174860/",
+        "https://freesound.org/people/beautifuldaymonster1968/sounds/758223/"
+      ],
+      "title": "Cows herd walking in the bush in Africa (Mali)（與 Group Walking, Group Footsteps 混音）"
+    }
+  ],
+  "chapters": [
+    {
+      "beats": [
+        {
+          "cue": "title",
+          "day": 1,
+          "id": "title",
+          "text": "以色列的一年裡，有幾個日子是神親自定下的。利未記把它們叫作==耶和華的節期==：日子一到，百姓就要聚集。",
+          "verse": "利23:2"
+        },
+        {
+          "cue": "month",
+          "day": 3,
+          "id": "first-month",
+          "notes": [
+            "ct-abib",
+            "kc-abib",
+            "bh-abib",
+            "gt-bg-abib"
+          ],
+          "text": "這一年從哪個月算起，是在埃及的最後幾天定下的。神對摩西、亞倫說，這個月要作==正月==。",
+          "verse": "出12:2",
+          "words": [
+            "abib"
+          ]
+        },
+        {
+          "cue": "day-10",
+          "day": 10,
+          "id": "tenth-day",
+          "text": "正月初十，每一家要挑一隻==羊羔==。人口少的人家，可以和隔壁的鄰舍合吃一隻。羊羔要留到十四日。",
+          "verse": "出12:3"
+        },
+        {
+          "cue": "day-14",
+          "day": 14,
+          "id": "full-moon",
+          "notes": [
+            "gt-bg-fullmoon"
+          ],
+          "text": "十四日黃昏，全會眾宰羊。這天正在月中。《舊約聖經背景註釋》說，宰羊的黃昏正是一年第一個==滿月==初升的時候。",
+          "verse": "出12:6",
+          "words": [
+            "bein-haarbayim"
+          ]
+        }
+      ],
+      "entries": [
+        "亞筆月",
+        "以本月為正月"
+      ],
+      "id": "opening",
+      "kind": "opening",
+      "nt": [],
+      "palette": {
+        "accent": "#b9832e",
+        "glow": "#f7efd8",
+        "ink": "#1a2342",
+        "paper": "#efe5cf"
+      },
+      "passages": [
+        "出12:1-6",
+        "出13:3-4"
+      ],
+      "scene": "night-moon",
+      "title": "正月"
+    },
+    {
+      "beats": [
+        {
+          "cue": "dusk-street",
+          "id": "blood",
+          "notes": [
+            "ct-threshold",
+            "kc-threshold"
+          ],
+          "text": "各家取一點羊羔的血，塗在吃羊羔那間房子的左右門框和==門楣==上。",
+          "verse": "出12:7"
+        },
+        {
+          "cue": "hyssop",
+          "id": "hyssop",
+          "interaction": "hyssop",
+          "notes": [
+            "ct-hyssop",
+            "gt-dlc-hyssop",
+            "kc-hyssop",
+            "bh-hyssop"
+          ],
+          "prompt": "按住牛膝草，拖到盆裡蘸血，再打在門楣和左右兩邊的門框上。",
+          "text": "摩西把做法交代給長老：拿一把==牛膝草==，蘸盆裡的血，打在門楣和左右的門框上。",
+          "verse": "出12:22",
+          "words": [
+            "ezov",
+            "saph"
+          ]
+        },
+        {
+          "cue": "door-shut",
+          "id": "door",
+          "text": "打完血，全家進屋。經文說，誰也不可出自己的房門，直到==早晨==。",
+          "verse": "出12:22"
+        },
+        {
+          "cue": "meal",
+          "id": "meal",
+          "notes": [
+            "kc-only",
+            "ct-bitter"
+          ],
+          "text": "屋裡的人吃烤羊羔，配無酵餅和苦菜。腰間束上帶子，腳上穿著鞋，手裡拿著杖，==趕緊==地吃。",
+          "verse": "出12:11",
+          "words": [
+            "matzot",
+            "merorim",
+            "pesach"
+          ]
+        },
+        {
+          "cue": "midnight",
+          "id": "midnight",
+          "notes": [
+            "ct-destroyer",
+            "bh-destroyer",
+            "gt-bg-protect",
+            "kc-passover-word"
+          ],
+          "text": "半夜，耶和華巡行埃及。看見門上有血，就==越過==那門，不讓滅命的進屋。",
+          "verse": "出12:23",
+          "words": [
+            "pasach",
+            "mashchit"
+          ]
+        },
+        {
+          "cue": "wailing",
+          "id": "wailing",
+          "notes": [
+            "bh-wailing",
+            "gt-jingdu-silence"
+          ],
+          "text": "從坐寶座的法老的長子，到監裡囚犯的長子，埃及地所有的長子都死了，頭生的牲畜也死了。那一夜埃及==大哀號==，沒有一家不死一個人。",
+          "verse": "出12:29-30"
+        },
+        {
+          "cue": "depart",
+          "id": "depart",
+          "notes": [
+            "ct-dough",
+            "gt-bg-dough",
+            "kc-dough",
+            "bh-dough"
+          ],
+          "text": "當夜，法老召來摩西、亞倫，叫他們帶著百姓和牛羊出去。百姓等不及麵發起來，把摶麵盆包在衣服裡，==扛在肩上==就走。",
+          "verse": "出12:31-34"
+        },
+        {
+          "cue": "vigil",
+          "id": "vigil",
+          "notes": [
+            "ct-vigil",
+            "gt-qidao-vigil",
+            "gt-tyndale-vigil",
+            "bh-vigil"
+          ],
+          "reason": true,
+          "text": "經文把這一夜叫作==耶和華的夜==：因為耶和華領他們出了埃及，以色列人世世代代都要在這一夜向耶和華謹守。",
+          "verse": "出12:42",
+          "words": [
+            "shimmurim"
+          ]
+        },
+        {
+          "cue": "children",
+          "id": "children",
+          "notes": [
+            "gt-tyndale-children",
+            "kc-children"
+          ],
+          "reason": true,
+          "text": "日後到了應許之地，兒女會問：行這禮是什麼意思？經文連答案都先寫好了，要父母這樣==回答==。",
+          "verse": "出12:26-27"
+        }
+      ],
+      "date": "正月十四日黃昏",
+      "day": 14,
+      "entries": [
+        "逾越節",
+        "逾越節羔羊",
+        "牛膝草",
+        "滅命的",
+        "苦菜",
+        "無酵餅",
+        "第十災（殺長子之災）",
+        "三大節期"
+      ],
+      "id": "passover",
+      "kind": "feast",
+      "month": 1,
+      "next": {
+        "date": "正月十五日起，共七日",
+        "title": "無酵節"
+      },
+      "nt": [
+        "基督預表（逾越節羔羊）"
+      ],
+      "palette": {
+        "accent": "#a3231b",
+        "glow": "#f0c46a",
+        "ink": "#131a33",
+        "paper": "#eadfc8"
+      },
+      "passages": [
+        "出12:1-14",
+        "出12:21-30",
+        "出12:43-51",
+        "利23:5",
+        "民28:16",
+        "申16:1-7"
+      ],
+      "scene": "egypt-street",
+      "title": "逾越節"
+    }
+  ],
+  "commentary": {
+    "bh-abib": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-abib",
+      "quote": "The month referred to is Nisan (also known as Abib), which corresponds to March-April in the Gregorian calendar.",
+      "quoteZh": "這裡說的月份是尼散月（又稱亞筆月），相當於公曆的三月到四月。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:2",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-destroyer": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-destroyer",
+      "quote": "The \"destroyer\" is often understood as an angel of death or a divine agent executing God's judgment.",
+      "quoteZh": "「滅命的」通常被理解為死亡天使，或執行神審判的使者。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:23",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-dough": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-dough",
+      "quote": "The unleavened dough symbolizes haste, as there was no time to let the dough rise.",
+      "quoteZh": "沒有發酵的麵團代表匆忙，因為沒有時間等麵發起來。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:34",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-hyssop": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-hyssop",
+      "quote": "Hyssop is a small, bushy plant used in ancient rituals for purification and cleansing.",
+      "quoteZh": "牛膝草是一種矮小叢生的植物，古代的儀式用它來潔淨。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:22",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-vigil": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-vigil",
+      "quote": "The term \"vigil\" implies watchfulness and protection.",
+      "quoteZh": "「守夜」這個詞含有看守和保護的意思。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:42",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-wailing": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-wailing",
+      "quote": "The loud wailing signifies profound grief and despair.",
+      "quoteZh": "大哀號表示極深的悲痛和絕望。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:30",
+      "work": "BibleHub 研經註解"
+    },
+    "ct-abib": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-abib",
+      "paraphrase": "黃迦勒也說，這個月當時約在陽曆三、四月間。",
+      "quote": "『正月』即一月，又稱亞筆月(參十三4)，字義結穗；被擄後改稱尼散月(參尼二1)",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:2",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-bitter": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-bitter",
+      "quote": "『苦菜』指有苦味的菜，暗示以色列人從前在法老的奴役之下過著痛苦的生活。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:8",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-destroyer": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-destroyer",
+      "quote": "『滅命的』指奉神命令執行擊殺各家長子的天使，有謂就是神自己(參29節)，端視觀點而有不同的解釋。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:23",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-dough": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-dough",
+      "quote": "『生麵』指麵粉和水，但未放入酵粉，也未等它自己發起來的生麵團。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:34",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-hyssop": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-hyssop",
+      "quote": "『牛膝草』一種生長在牆上石縫中的草本植物，枝葉有毛，能吸水，以色列人在儀式中用它來蘸取血和水",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:22",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-threshold": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-threshold",
+      "quote": "注意，血不是塗在門檻上，以免被人踐踏(參來十29)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:7",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-vigil": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-vigil",
+      "quote": "『耶和華的夜』或另譯『耶和華親自守夜』，指耶和華巡行埃及，擊殺埃及人的長子之夜；也指耶和華保守以色列人之夜。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:42",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "gt-bg-abib": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-bg-abib",
+      "quote": "亞筆月在每年春分（spring equinox）之後第一個新月開始，通常是從公曆三月中延伸到四月中。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:2",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-dough": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-bg-dough",
+      "quote": "運輸已經摶好、供明日食用之麵團最簡易的辦法，是正如本節所言，把麵團放在摶麵盆中，蓋布以防弄髒。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:34",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-fullmoon": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-bg-fullmoon",
+      "quote": "宰羊在黃昏進行，正值以色列每年第一個滿月初升之時。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:6",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-protect": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-bg-protect",
+      "paraphrase": "《舊約聖經背景註釋》從以賽亞書31:5 看出這個動詞有保護的意思，認為經文描繪的是神在門口護衛。",
+      "quote": "祂在門口護衛，不容滅命的天使進入（參十二23）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:11",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-dlc-hyssop": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-dlc-hyssop",
+      "quote": "這草在埃及國，西奈曠野，和迦南地的各處都有，多長在牆上，和石隙中，是成捆的小草",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:22",
+      "work": "丁良才《出埃及記註釋》"
+    },
+    "gt-jingdu-silence": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-jingdu-silence",
+      "quote": "埃及人由於失去代表家族的長子而嚎哭的當晚,對以色列人來說是,連狗都不叫一聲的平安之夜。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:29-32",
+      "work": "《聖經精讀本──出埃及記註解》"
+    },
+    "gt-qidao-vigil": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-qidao-vigil",
+      "quote": "這一晚，神保守、看顧以色列人，帶領他們安全走出埃及。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:42",
+      "work": "《啟導本聖經腳註》"
+    },
+    "gt-tyndale-children": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-tyndale-children",
+      "quote": "稍懂兒童心理之人，都知道兒童看見如此充滿象徵意味的儀式，不發問是不可能的。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:26",
+      "work": "《丁道爾聖經註釋》"
+    },
+    "gt-tyndale-vigil": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-tyndale-vigil",
+      "quote": "這句雙關語同時解釋了逾越節為何是個夜間守的節日。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:42",
+      "work": "《丁道爾聖經註釋》"
+    },
+    "kc-abib": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-abib",
+      "quote": "Abib means ‘fresh, young ears’, for example from the barley.",
+      "quoteZh": "亞筆的意思是「新鮮的嫩穗」，例如大麥的穗。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:2",
+      "work": "KingComments"
+    },
+    "kc-children": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-children",
+      "paraphrase": "KingComments 接著說，在父母的回答裡聽得出感恩和讚嘆。",
+      "quote": "The children will ask about the meaning of the celebration of the Passover.",
+      "quoteZh": "兒女會問守逾越節是什麼意思。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:26",
+      "work": "KingComments"
+    },
+    "kc-dough": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-dough",
+      "quote": "They leave so hastily that the dough has not had a chance to do its job.",
+      "quoteZh": "他們走得太匆忙，麵團還來不及發起來。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:39",
+      "work": "KingComments"
+    },
+    "kc-hyssop": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-hyssop",
+      "quote": "Hyssop speaks of man’s smallness, his insignificance (1Kgs 4:33a).",
+      "quoteZh": "牛膝草說出人的微小、不起眼（王上4:33上）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:22",
+      "work": "KingComments"
+    },
+    "kc-only": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-only",
+      "quote": "The Passover is the only feast Israel has celebrated in Egypt.",
+      "quoteZh": "逾越節是以色列在埃及守過的唯一節期。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:1-2",
+      "work": "KingComments"
+    },
+    "kc-passover-word": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-passover-word",
+      "quote": "This is also connected to the word Passover, because it means ‘to pass over’.",
+      "quoteZh": "這也和「逾越節」這個詞有關，因為它的意思就是「越過」。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:13",
+      "work": "KingComments"
+    },
+    "kc-threshold": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-threshold",
+      "quote": "Not on the threshold, because that could show contempt for the blood, there it could be trampled on.",
+      "quoteZh": "不塗在門檻上，因為那樣可能顯出輕看這血，血在那裡會被人踐踏。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:7",
+      "work": "KingComments"
+    }
+  },
+  "entries": {
+    "三大節期": {
+      "gist": "一年三次朝見神的節期：除酵節、收割節、收藏節（出23:14-17）。",
+      "title": "三大節期",
+      "type": "神學"
+    },
+    "亞筆月": {
+      "gist": "以色列宗教曆的正月，名字意思是「初熟之穀」；被擄後改稱尼散月。",
+      "title": "亞筆月",
+      "type": "原文"
+    },
+    "以本月為正月": {
+      "gist": "出12:2 把出埃及的那個月定為一年之首，重訂了整套年曆的起算點。",
+      "title": "以本月為正月",
+      "type": "主題"
+    },
+    "基督預表（逾越節羔羊）": {
+      "gist": "新約把基督稱為「我們逾越節的羔羊」（林前5:7）。",
+      "title": "基督預表（逾越節羔羊）",
+      "type": "神學"
+    },
+    "滅命的": {
+      "gist": "出12:23 擊殺埃及長子的那一位；是天使還是神自己，解法不一。",
+      "title": "滅命的",
+      "type": "神學"
+    },
+    "無酵餅": {
+      "gist": "沒有發酵的餅；逾越節當夜同吃，無酵節七日都要吃。",
+      "title": "無酵餅",
+      "type": "原文"
+    },
+    "牛膝草": {
+      "gist": "拿來蘸血、打在門楣和門框上的小草；後來也用在潔淨的儀式裡。",
+      "title": "牛膝草",
+      "type": "原文"
+    },
+    "第十災（殺長子之災）": {
+      "gist": "十災的最後一災：半夜擊殺埃及地所有的長子和頭生的牲畜。",
+      "title": "第十災（殺長子之災）",
+      "type": "歷史"
+    },
+    "苦菜": {
+      "gist": "逾越節當夜和羊羔、無酵餅同吃的苦味菜，記念在埃及為奴的苦。",
+      "title": "苦菜",
+      "type": "原文"
+    },
+    "逾越節": {
+      "gist": "正月十四日黃昏宰羊、塗血、吃羊羔的節期，記念耶和華越過以色列人的家。",
+      "title": "逾越節",
+      "type": "歷史"
+    },
+    "逾越節羔羊": {
+      "gist": "正月初十挑選、十四日宰殺的無殘疾一歲公羊羔，綿羊山羊都可以。",
+      "title": "逾越節羔羊",
+      "type": "歷史"
+    }
+  },
+  "motto": {
+    "book": "利未記",
+    "chapter": 23,
+    "from": 2,
+    "lines": [
+      {
+        "text": "你曉諭以色列人說：耶和華的節期，你們要宣告為聖會的節期。",
+        "v": 2
+      }
+    ],
+    "ref": "利23:2",
+    "to": 2
+  },
+  "sources": [
+    {
+      "book": "出埃及記",
+      "chapter": 12,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 12,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 12,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 12,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 12,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 13,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    }
+  ],
+  "step": {
+    "abib": {
+      "gloss": "<the> Abib",
+      "hebrew": "הָאָבִֽיב׃",
+      "id": "abib",
+      "label": "亞筆月",
+      "lexicon": "אָבִיב (a.viv): Abib",
+      "morph": "HTd/Ntbsa",
+      "morphText": "Definite article (Hebrew) + Noun (Title, Singular Either gender, Absolute)",
+      "note": "STEP 把這個字標為月份的名稱「亞筆」。字義部分由註釋補充：黃迦勒解作「結穗」，KingComments 說是「新鮮的嫩穗」，例如大麥。",
+      "position": 5,
+      "ref": "出13:4",
+      "strong": "H24",
+      "translit": "ha.'a.Viv"
+    },
+    "bein-haarbayim": {
+      "gloss": "the two evenings",
+      "hebrew": "הָעַרְבָּֽיִם׃",
+      "id": "bein-haarbayim",
+      "label": "黃昏",
+      "lexicon": "עֶ֫רֶב (e.rev): evening",
+      "morph": "HTd/Ncmda",
+      "morphText": "Definite article (Hebrew) + Noun (Dual Masculine, Absolute)",
+      "note": "和合本譯作「黃昏」。STEP 在這裡的本節譯義是「兩個黃昏」，前一個字是「之間」，這個字的詞形是雙數。這段時間確切從何時算起，註釋有不同說法：《串珠聖經註釋》和《丁道爾聖經註釋》都提到，法利賽人解作從下午日頭熱力減退到日落。",
+      "position": 17,
+      "ref": "出12:6",
+      "strong": "H6153",
+      "translit": "ha.'ar.Ba.yim"
+    },
+    "ezov": {
+      "gloss": "hyssop",
+      "hebrew": "אֵז֗וֹב",
+      "id": "ezov",
+      "label": "牛膝草",
+      "lexicon": "אֵזוֹב (e.zov): hyssop",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "STEP 的本節譯義是 hyssop。這種草相當於今天哪一種植物，註釋這樣描述：《舊約聖經背景註釋》說它是一種墨角蘭（marjoram）屬的植物，質地很適合做刷子；黃迦勒和丁良才都說它長在牆上或石縫裡。",
+      "position": 3,
+      "ref": "出12:22",
+      "strong": "H231",
+      "translit": "'e.Zov"
+    },
+    "mashchit": {
+      "gloss": "the destroyer",
+      "hebrew": "הַמַּשְׁחִ֔ית",
+      "id": "mashchit",
+      "label": "滅命的",
+      "lexicon": "שָׁחַת (sha.chat): to ruin",
+      "morph": "HTd/Ncmsa",
+      "morphText": "Definite article (Hebrew) + Noun (Singular Masculine, Absolute)",
+      "note": "STEP 的本節譯義是 the destroyer，這裡標為帶冠詞的名詞；對應的字典條目是動詞「毀壞」。經文沒有描寫滅命的是什麼樣子。黃迦勒說一般理解為奉命擊殺的天使，也有人認為就是神自己。",
+      "position": 20,
+      "ref": "出12:23",
+      "strong": "H7843",
+      "translit": "ha.mash.Chit"
+    },
+    "matzot": {
+      "gloss": "and unleavened bread<s>",
+      "hebrew": "וּמַצּ֔וֹת",
+      "id": "matzot",
+      "label": "無酵餅",
+      "lexicon": "מַצָּה (mats.tsah): unleavened bread",
+      "morph": "HC/Ncfpa",
+      "morphText": "Conjunction + Noun (Plural Feminine, Absolute)",
+      "note": "STEP 的本節譯義是 unleavened bread，詞形是複數。《丁道爾聖經註釋》提到，和合本的「無酵餅」和「除酵節」在原文是同一個字。",
+      "position": 8,
+      "ref": "出12:8",
+      "strong": "H4682",
+      "translit": "u.ma.Tzot"
+    },
+    "merorim": {
+      "gloss": "bitter herbs",
+      "hebrew": "מְרֹרִ֖ים",
+      "id": "merorim",
+      "label": "苦菜",
+      "lexicon": "מָרֹר (me.ror): bitterness",
+      "morph": "HAampa",
+      "morphText": "Adjective (Plural Masculine, Absolute)",
+      "note": "STEP 的本節譯義是 bitter herbs，詞形標為複數，字典義是「苦味」。經文沒有說是哪一種菜。《舊約聖經背景註釋》列出後期猶太文獻的幾種說法，像萵苣、菊苣，也說無法確定聖經的字眼是否包括這些。",
+      "position": 10,
+      "ref": "出12:8",
+      "strong": "H4844",
+      "translit": "me.ro.Rim"
+    },
+    "pasach": {
+      "gloss": "and I will pass over",
+      "hebrew": "וּפָסַחְתִּ֖י",
+      "id": "pasach",
+      "label": "越過",
+      "lexicon": "פָּסַח (pa.sach): to pass",
+      "morph": "Hc/Vqq1cs",
+      "morphText": "Consecutive Conjunction + Verb : Qal (Simple, Active) Consecutive Perfect (Future/present Indicative) First Singular Either gender",
+      "note": "第13節和第23節用的是同一個字根的動詞，STEP 在第13節的本節譯義是「我要越過」，字典義是 to pass。這個動詞怎麼理解，註釋有兩種說法：黃迦勒在原文字義裡把「越過」解作略過、跳過；《舊約聖經背景註釋》從以賽亞書31:5 看出它有保護的意思，認為這裡是神在門口護衛。",
+      "position": 13,
+      "ref": "出12:13",
+      "strong": "H6452A",
+      "translit": "u.fa.sach.Ti"
+    },
+    "pesach": {
+      "gloss": "[is] a passover",
+      "hebrew": "פֶּ֥סַח",
+      "id": "pesach",
+      "label": "逾越節",
+      "lexicon": "פֶּ֫סַח (pe.sach): Passover",
+      "morph": "HNtmsa",
+      "morphText": "Noun (Title, Singular Masculine, Absolute)",
+      "note": "這是節期的名稱，STEP 標為名詞，字典義是 Passover。《丁道爾聖經註釋》認為這個字主要指祭物，其次才指以祭物為中心的節期。",
+      "position": 13,
+      "ref": "出12:11",
+      "strong": "H6453",
+      "translit": "Pe.sach"
+    },
+    "saph": {
+      "gloss": "[is] in the basin",
+      "hebrew": "בַּסַּף֒",
+      "id": "saph",
+      "label": "盆",
+      "lexicon": "סַף (saph): basin",
+      "morph": "HRd/Ncmsa",
+      "morphText": "Preposition (Definite) + Noun (Singular Masculine, Absolute)",
+      "note": "和合本譯作「盆」。這個字在本節出現兩次，STEP 兩處的本節譯義都是 basin（盆），字典義也是 basin。黃迦勒解釋出12:7「取點血」時說，是宰羊羔的時候用盆取血備用；KingComments 也說，羊羔的血要接在盆裡，再用牛膝草抹在門框和門楣上。",
+      "position": 7,
+      "ref": "出12:22",
+      "strong": "H5592A",
+      "translit": "ba.Saf"
+    },
+    "shimmurim": {
+      "gloss": "vigil<s>",
+      "hebrew": "שִׁמֻּרִ֛ים",
+      "id": "shimmurim",
+      "label": "謹守",
+      "lexicon": "שִׁמֻּר (shim.mur): vigil",
+      "morph": "HNcmpa",
+      "morphText": "Noun (Plural Masculine, Absolute)",
+      "note": "STEP 的本節譯義是 vigil，也就是守夜，詞形是複數；這個字在本節出現兩次。黃迦勒和《啟導本聖經腳註》都提到，「耶和華的夜」可以另譯為「耶和華親自守夜」。",
+      "position": 12,
+      "ref": "出12:42",
+      "strong": "H8107",
+      "translit": "shi.mu.Rim"
+    }
+  },
+  "title": "耶和華的節期",
+  "verses": {
+    "出12:1-14": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 1,
+      "lines": [
+        {
+          "text": "耶和華在埃及地曉諭摩西、亞倫說：",
+          "v": 1
+        },
+        {
+          "text": "你們要以本月為正月，為一年之首。",
+          "v": 2
+        },
+        {
+          "text": "你們吩咐以色列全會眾說：本月初十日，各人要按著父家取羊羔，一家一隻。",
+          "v": 3
+        },
+        {
+          "text": "若是一家的人太少，吃不了一隻羊羔，本人就要和他隔壁的鄰舍共取一隻。你們預備羊羔，要按著人數和飯量計算。",
+          "v": 4
+        },
+        {
+          "text": "要無殘疾、一歲的公羊羔，你們或從綿羊裡取，或從山羊裡取，都可以。",
+          "v": 5
+        },
+        {
+          "text": "要留到本月十四日，在黃昏的時候，以色列全會眾把羊羔宰了。",
+          "v": 6
+        },
+        {
+          "text": "各家要取點血，塗在吃羊羔的房屋左右的門框上和門楣上。",
+          "v": 7
+        },
+        {
+          "text": "當夜要吃羊羔的肉；用火烤了，與無酵餅和苦菜同吃。",
+          "v": 8
+        },
+        {
+          "text": "不可吃生的，斷不可吃水煮的，要帶著頭、腿、五臟，用火烤了吃。",
+          "v": 9
+        },
+        {
+          "text": "不可剩下一點留到早晨；若留到早晨，要用火燒了。",
+          "v": 10
+        },
+        {
+          "text": "你們吃羊羔當腰間束帶，腳上穿鞋，手中拿杖，趕緊地吃；這是耶和華的逾越節。",
+          "v": 11
+        },
+        {
+          "text": "因為那夜我要巡行埃及地，把埃及地一切頭生的，無論是人是牲畜，都擊殺了，又要敗壞埃及一切的神。我是耶和華。",
+          "v": 12
+        },
+        {
+          "text": "這血要在你們所住的房屋上作記號；我一見這血，就越過你們去。我擊殺埃及地頭生的時候，災殃必不臨到你們身上滅你們。",
+          "v": 13
+        },
+        {
+          "text": "你們要記念這日，守為耶和華的節，作為你們世世代代永遠的定例。",
+          "v": 14
+        }
+      ],
+      "ref": "出12:1-14",
+      "to": 14
+    },
+    "出12:1-6": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 1,
+      "lines": [
+        {
+          "text": "耶和華在埃及地曉諭摩西、亞倫說：",
+          "v": 1
+        },
+        {
+          "text": "你們要以本月為正月，為一年之首。",
+          "v": 2
+        },
+        {
+          "text": "你們吩咐以色列全會眾說：本月初十日，各人要按著父家取羊羔，一家一隻。",
+          "v": 3
+        },
+        {
+          "text": "若是一家的人太少，吃不了一隻羊羔，本人就要和他隔壁的鄰舍共取一隻。你們預備羊羔，要按著人數和飯量計算。",
+          "v": 4
+        },
+        {
+          "text": "要無殘疾、一歲的公羊羔，你們或從綿羊裡取，或從山羊裡取，都可以。",
+          "v": 5
+        },
+        {
+          "text": "要留到本月十四日，在黃昏的時候，以色列全會眾把羊羔宰了。",
+          "v": 6
+        }
+      ],
+      "ref": "出12:1-6",
+      "to": 6
+    },
+    "出12:11": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 11,
+      "lines": [
+        {
+          "text": "你們吃羊羔當腰間束帶，腳上穿鞋，手中拿杖，趕緊地吃；這是耶和華的逾越節。",
+          "v": 11
+        }
+      ],
+      "ref": "出12:11",
+      "to": 11
+    },
+    "出12:2": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 2,
+      "lines": [
+        {
+          "text": "你們要以本月為正月，為一年之首。",
+          "v": 2
+        }
+      ],
+      "ref": "出12:2",
+      "to": 2
+    },
+    "出12:21-30": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 21,
+      "lines": [
+        {
+          "text": "於是，摩西召了以色列的眾長老來，對他們說：你們要按著家口取出羊羔，把這逾越節的羊羔宰了。",
+          "v": 21
+        },
+        {
+          "text": "拿一把牛膝草，蘸盆裡的血，打在門楣上和左右的門框上。你們誰也不可出自己的房門，直到早晨。",
+          "v": 22
+        },
+        {
+          "text": "因為耶和華要巡行擊殺埃及人，他看見血在門楣上和左右的門框上，就必越過那門，不容滅命的進你們的房屋，擊殺你們。",
+          "v": 23
+        },
+        {
+          "text": "這例，你們要守著，作為你們和你們子孫永遠的定例。",
+          "v": 24
+        },
+        {
+          "text": "日後，你們到了耶和華按著所應許賜給你們的那地，就要守這禮。",
+          "v": 25
+        },
+        {
+          "text": "你們的兒女問你們說：行這禮是什麼意思？",
+          "v": 26
+        },
+        {
+          "text": "你們就說：這是獻給耶和華逾越節的祭。當以色列人在埃及的時候，他擊殺埃及人，越過以色列人的房屋，救了我們各家。於是百姓低頭下拜。",
+          "v": 27
+        },
+        {
+          "text": "耶和華怎樣吩咐摩西、亞倫，以色列人就怎樣行。",
+          "v": 28
+        },
+        {
+          "text": "到了半夜，耶和華把埃及地所有的長子，就是從坐寶座的法老，直到被擄囚在監裡之人的長子，以及一切頭生的牲畜，盡都殺了。",
+          "v": 29
+        },
+        {
+          "text": "法老和一切臣僕，並埃及眾人，夜間都起來了。在埃及有大哀號，無一家不死一個人的。",
+          "v": 30
+        }
+      ],
+      "ref": "出12:21-30",
+      "to": 30
+    },
+    "出12:22": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 22,
+      "lines": [
+        {
+          "text": "拿一把牛膝草，蘸盆裡的血，打在門楣上和左右的門框上。你們誰也不可出自己的房門，直到早晨。",
+          "v": 22
+        }
+      ],
+      "ref": "出12:22",
+      "to": 22
+    },
+    "出12:23": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 23,
+      "lines": [
+        {
+          "text": "因為耶和華要巡行擊殺埃及人，他看見血在門楣上和左右的門框上，就必越過那門，不容滅命的進你們的房屋，擊殺你們。",
+          "v": 23
+        }
+      ],
+      "ref": "出12:23",
+      "to": 23
+    },
+    "出12:26-27": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 26,
+      "lines": [
+        {
+          "text": "你們的兒女問你們說：行這禮是什麼意思？",
+          "v": 26
+        },
+        {
+          "text": "你們就說：這是獻給耶和華逾越節的祭。當以色列人在埃及的時候，他擊殺埃及人，越過以色列人的房屋，救了我們各家。於是百姓低頭下拜。",
+          "v": 27
+        }
+      ],
+      "ref": "出12:26-27",
+      "to": 27
+    },
+    "出12:29-30": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 29,
+      "lines": [
+        {
+          "text": "到了半夜，耶和華把埃及地所有的長子，就是從坐寶座的法老，直到被擄囚在監裡之人的長子，以及一切頭生的牲畜，盡都殺了。",
+          "v": 29
+        },
+        {
+          "text": "法老和一切臣僕，並埃及眾人，夜間都起來了。在埃及有大哀號，無一家不死一個人的。",
+          "v": 30
+        }
+      ],
+      "ref": "出12:29-30",
+      "to": 30
+    },
+    "出12:3": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 3,
+      "lines": [
+        {
+          "text": "你們吩咐以色列全會眾說：本月初十日，各人要按著父家取羊羔，一家一隻。",
+          "v": 3
+        }
+      ],
+      "ref": "出12:3",
+      "to": 3
+    },
+    "出12:31-34": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 31,
+      "lines": [
+        {
+          "text": "夜間，法老召了摩西、亞倫來，說：起來！連你們帶以色列人，從我民中出去，依你們所說的，去事奉耶和華吧！",
+          "v": 31
+        },
+        {
+          "text": "也依你們所說的，連羊群牛群帶著走吧！並要為我祝福。",
+          "v": 32
+        },
+        {
+          "text": "埃及人催促百姓，打發他們快快出離那地，因為埃及人說：我們都要死了。",
+          "v": 33
+        },
+        {
+          "text": "百姓就拿著沒有酵的生麵，把摶麵盆包在衣服中，扛在肩頭上。",
+          "v": 34
+        }
+      ],
+      "ref": "出12:31-34",
+      "to": 34
+    },
+    "出12:42": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 42,
+      "lines": [
+        {
+          "text": "這夜是耶和華的夜；因耶和華領他們出了埃及地，所以當向耶和華謹守，是以色列眾人世世代代該謹守的。",
+          "v": 42
+        }
+      ],
+      "ref": "出12:42",
+      "to": 42
+    },
+    "出12:43-51": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 43,
+      "lines": [
+        {
+          "text": "耶和華對摩西、亞倫說：逾越節的例是這樣：外邦人都不可吃這羊羔。",
+          "v": 43
+        },
+        {
+          "text": "但各人用銀子買的奴僕，既受了割禮就可以吃。",
+          "v": 44
+        },
+        {
+          "text": "寄居的和雇工人都不可吃。",
+          "v": 45
+        },
+        {
+          "text": "應當在一個房子裡吃；不可把一點肉從房子裡帶到外頭去。羊羔的骨頭一根也不可折斷。",
+          "v": 46
+        },
+        {
+          "text": "以色列全會眾都要守這禮。",
+          "v": 47
+        },
+        {
+          "text": "若有外人寄居在你們中間，願向耶和華守逾越節，他所有的男子務要受割禮，然後才容他前來遵守，他也就像本地人一樣；但未受割禮的，都不可吃這羊羔。",
+          "v": 48
+        },
+        {
+          "text": "本地人和寄居在你們中間的外人同歸一例。",
+          "v": 49
+        },
+        {
+          "text": "耶和華怎樣吩咐摩西、亞倫，以色列眾人就怎樣行了。",
+          "v": 50
+        },
+        {
+          "text": "正當那日，耶和華將以色列人按著他們的軍隊，從埃及地領出來。",
+          "v": 51
+        }
+      ],
+      "ref": "出12:43-51",
+      "to": 51
+    },
+    "出12:6": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 6,
+      "lines": [
+        {
+          "text": "要留到本月十四日，在黃昏的時候，以色列全會眾把羊羔宰了。",
+          "v": 6
+        }
+      ],
+      "ref": "出12:6",
+      "to": 6
+    },
+    "出12:7": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 7,
+      "lines": [
+        {
+          "text": "各家要取點血，塗在吃羊羔的房屋左右的門框上和門楣上。",
+          "v": 7
+        }
+      ],
+      "ref": "出12:7",
+      "to": 7
+    },
+    "出13:3-4": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "from": 3,
+      "lines": [
+        {
+          "text": "摩西對百姓說：你們要記念從埃及為奴之家出來的這日，因為耶和華用大能的手將你們從這地方領出來。有酵的餅都不可吃。",
+          "v": 3
+        },
+        {
+          "text": "亞筆月間的這日是你們出來的日子。",
+          "v": 4
+        }
+      ],
+      "ref": "出13:3-4",
+      "to": 4
+    },
+    "利23:2": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 2,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：耶和華的節期，你們要宣告為聖會的節期。",
+          "v": 2
+        }
+      ],
+      "ref": "利23:2",
+      "to": 2
+    },
+    "利23:5": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 5,
+      "lines": [
+        {
+          "text": "正月十四日，黃昏的時候，是耶和華的逾越節。",
+          "v": 5
+        }
+      ],
+      "ref": "利23:5",
+      "to": 5
+    },
+    "民28:16": {
+      "book": "民數記",
+      "chapter": 28,
+      "from": 16,
+      "lines": [
+        {
+          "text": "正月十四日是耶和華的逾越節。",
+          "v": 16
+        }
+      ],
+      "ref": "民28:16",
+      "to": 16
+    },
+    "申16:1-7": {
+      "book": "申命記",
+      "chapter": 16,
+      "from": 1,
+      "lines": [
+        {
+          "text": "你要注意亞筆月，向耶和華─你的神守逾越節，因為耶和華─你的神在亞筆月夜間領你出埃及。",
+          "v": 1
+        },
+        {
+          "text": "你當在耶和華所選擇要立為他名的居所，從牛群羊群中，將逾越節的祭牲獻給耶和華─你的神。",
+          "v": 2
+        },
+        {
+          "text": "你吃這祭牲，不可吃有酵的餅；七日之內要吃無酵餅，就是困苦餅─你本是急忙出了埃及地─要叫你一生一世記念你從埃及地出來的日子。",
+          "v": 3
+        },
+        {
+          "text": "在你四境之內，七日不可見麵酵，頭一日晚上所獻的肉，一點不可留到早晨。",
+          "v": 4
+        },
+        {
+          "text": "在耶和華─你神所賜的各城中，你不可獻逾越節的祭；",
+          "v": 5
+        },
+        {
+          "text": "只當在耶和華─你神所選擇要立為他名的居所，晚上日落的時候，乃是你出埃及的時候，獻逾越節的祭。",
+          "v": 6
+        },
+        {
+          "text": "當在耶和華─你神所選擇的地方把肉烤了吃（烤：或作煮），次日早晨就回到你的帳棚去。",
+          "v": 7
+        }
+      ],
+      "ref": "申16:1-7",
+      "to": 7
+    }
+  }
+}

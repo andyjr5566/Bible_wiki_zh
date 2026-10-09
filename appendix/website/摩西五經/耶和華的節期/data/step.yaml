@@ -1,0 +1,75 @@
+# 原文關鍵字：只寫「哪一節、STEP 表格第幾個字」和網站自己的說明。
+# 希伯來字、音譯、Strong、詞形、本節譯義、字典義全部由建置腳本從 raw_data/stepbible_*.txt 抽出，不手打。
+# expect_strong 是防呆：腳本抽到的 Strong 不一致就報錯（代表位置寫錯）。
+# note 的寫法：先寫 STEP 能確認的（詞形、本節譯義、字典義），再寫「部分註釋進一步理解為……」。
+#   STEP 沒列出的意思不是反證；lexicon 是可能義域，不等於本節語境義。
+
+- id: abib
+  label: 亞筆月
+  ref: 出13:4
+  position: 5
+  expect_strong: H24
+  note: STEP 把這個字標為月份的名稱「亞筆」。字義部分由註釋補充：黃迦勒解作「結穗」，KingComments 說是「新鮮的嫩穗」，例如大麥。
+
+- id: bein-haarbayim
+  label: 黃昏
+  ref: 出12:6
+  position: 17
+  expect_strong: H6153
+  note: 和合本譯作「黃昏」。STEP 在這裡的本節譯義是「兩個黃昏」，前一個字是「之間」，這個字的詞形是雙數。這段時間確切從何時算起，註釋有不同說法：《串珠聖經註釋》和《丁道爾聖經註釋》都提到，法利賽人解作從下午日頭熱力減退到日落。
+
+- id: ezov
+  label: 牛膝草
+  ref: 出12:22
+  position: 3
+  expect_strong: H231
+  note: STEP 的本節譯義是 hyssop。這種草相當於今天哪一種植物，註釋這樣描述：《舊約聖經背景註釋》說它是一種墨角蘭（marjoram）屬的植物，質地很適合做刷子；黃迦勒和丁良才都說它長在牆上或石縫裡。
+
+- id: saph
+  label: 盆
+  ref: 出12:22
+  position: 7
+  expect_strong: H5592A
+  note: 和合本譯作「盆」。這個字在本節出現兩次，STEP 兩處的本節譯義都是 basin（盆），字典義也是 basin。黃迦勒解釋出12:7「取點血」時說，是宰羊羔的時候用盆取血備用；KingComments 也說，羊羔的血要接在盆裡，再用牛膝草抹在門框和門楣上。
+
+- id: matzot
+  label: 無酵餅
+  ref: 出12:8
+  position: 8
+  expect_strong: H4682
+  note: STEP 的本節譯義是 unleavened bread，詞形是複數。《丁道爾聖經註釋》提到，和合本的「無酵餅」和「除酵節」在原文是同一個字。
+
+- id: merorim
+  label: 苦菜
+  ref: 出12:8
+  position: 10
+  expect_strong: H4844
+  note: STEP 的本節譯義是 bitter herbs，詞形標為複數，字典義是「苦味」。經文沒有說是哪一種菜。《舊約聖經背景註釋》列出後期猶太文獻的幾種說法，像萵苣、菊苣，也說無法確定聖經的字眼是否包括這些。
+
+- id: pesach
+  label: 逾越節
+  ref: 出12:11
+  position: 13
+  expect_strong: H6453
+  note: 這是節期的名稱，STEP 標為名詞，字典義是 Passover。《丁道爾聖經註釋》認為這個字主要指祭物，其次才指以祭物為中心的節期。
+
+- id: pasach
+  label: 越過
+  ref: 出12:13
+  position: 13
+  expect_strong: H6452A
+  note: 第13節和第23節用的是同一個字根的動詞，STEP 在第13節的本節譯義是「我要越過」，字典義是 to pass。這個動詞怎麼理解，註釋有兩種說法：黃迦勒在原文字義裡把「越過」解作略過、跳過；《舊約聖經背景註釋》從以賽亞書31:5 看出它有保護的意思，認為這裡是神在門口護衛。
+
+- id: mashchit
+  label: 滅命的
+  ref: 出12:23
+  position: 20
+  expect_strong: H7843
+  note: STEP 的本節譯義是 the destroyer，這裡標為帶冠詞的名詞；對應的字典條目是動詞「毀壞」。經文沒有描寫滅命的是什麼樣子。黃迦勒說一般理解為奉命擊殺的天使，也有人認為就是神自己。
+
+- id: shimmurim
+  label: 謹守
+  ref: 出12:42
+  position: 12
+  expect_strong: H8107
+  note: STEP 的本節譯義是 vigil，也就是守夜，詞形是複數；這個字在本節出現兩次。黃迦勒和《啟導本聖經腳註》都提到，「耶和華的夜」可以另譯為「耶和華親自守夜」。

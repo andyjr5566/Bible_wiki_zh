@@ -1,0 +1,232 @@
+# 註釋：每則一筆。quote 是逐字引文（建置時在該章 raw_data 逐字比對）；英文來源（KC、BH）另填 quoteZh 中譯。
+# paraphrase 是具名轉述（網站自己的話，不加引號）。quote 和 paraphrase 至少要有一個。
+# work：讀者看到的出處。GT（ccbiblestudy 拾穗）彙集多家註釋，work 必須寫到子來源，
+#       建置時會檢查引文在 raw 裡確實落在「──《子來源》」那一段。
+# 原站網址不在這裡寫：建置腳本從該章 source_manifest.md 抽出。
+
+passover:
+  # ---------- 正月 ----------
+  - id: ct-abib
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:2
+    quote: 『正月』即一月，又稱亞筆月(參十三4)，字義結穗；被擄後改稱尼散月(參尼二1)
+    paraphrase: 黃迦勒也說，這個月當時約在陽曆三、四月間。
+
+  - id: kc-abib
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:2
+    quote: Abib means ‘fresh, young ears’, for example from the barley.
+    quoteZh: 亞筆的意思是「新鮮的嫩穗」，例如大麥的穗。
+
+  - id: bh-abib
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:2
+    quote: The month referred to is Nisan (also known as Abib), which corresponds to March-April in the Gregorian calendar.
+    quoteZh: 這裡說的月份是尼散月（又稱亞筆月），相當於公曆的三月到四月。
+
+  - id: gt-bg-abib
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 出12
+    verse: 出12:2
+    quote: 亞筆月在每年春分（spring equinox）之後第一個新月開始，通常是從公曆三月中延伸到四月中。
+
+  - id: gt-bg-fullmoon
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 出12
+    verse: 出12:6
+    quote: 宰羊在黃昏進行，正值以色列每年第一個滿月初升之時。
+
+  # ---------- 塗血 ----------
+  - id: ct-threshold
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:7
+    quote: 注意，血不是塗在門檻上，以免被人踐踏(參來十29)。
+
+  - id: kc-threshold
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:7
+    quote: Not on the threshold, because that could show contempt for the blood, there it could be trampled on.
+    quoteZh: 不塗在門檻上，因為那樣可能顯出輕看這血，血在那裡會被人踐踏。
+
+  - id: ct-hyssop
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:22
+    quote: 『牛膝草』一種生長在牆上石縫中的草本植物，枝葉有毛，能吸水，以色列人在儀式中用它來蘸取血和水
+
+  - id: gt-dlc-hyssop
+    source: GT
+    work: 丁良才《出埃及記註釋》
+    chapter: 出12
+    verse: 出12:22
+    quote: 這草在埃及國，西奈曠野，和迦南地的各處都有，多長在牆上，和石隙中，是成捆的小草
+
+  - id: kc-hyssop
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:22
+    quote: Hyssop speaks of man’s smallness, his insignificance (1Kgs 4:33a).
+    quoteZh: 牛膝草說出人的微小、不起眼（王上4:33上）。
+
+  - id: bh-hyssop
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:22
+    quote: Hyssop is a small, bushy plant used in ancient rituals for purification and cleansing.
+    quoteZh: 牛膝草是一種矮小叢生的植物，古代的儀式用它來潔淨。
+
+  # ---------- 吃羊羔 ----------
+  - id: kc-only
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:1-2
+    quote: The Passover is the only feast Israel has celebrated in Egypt.
+    quoteZh: 逾越節是以色列在埃及守過的唯一節期。
+
+  - id: ct-bitter
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:8
+    quote: 『苦菜』指有苦味的菜，暗示以色列人從前在法老的奴役之下過著痛苦的生活。
+
+  # ---------- 半夜 ----------
+  - id: ct-destroyer
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:23
+    quote: 『滅命的』指奉神命令執行擊殺各家長子的天使，有謂就是神自己(參29節)，端視觀點而有不同的解釋。
+
+  - id: bh-destroyer
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:23
+    quote: The "destroyer" is often understood as an angel of death or a divine agent executing God's judgment.
+    quoteZh: 「滅命的」通常被理解為死亡天使，或執行神審判的使者。
+
+  - id: gt-bg-protect
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 出12
+    verse: 出12:11
+    quote: 祂在門口護衛，不容滅命的天使進入（參十二23）。
+    paraphrase: 《舊約聖經背景註釋》從以賽亞書31:5 看出這個動詞有保護的意思，認為經文描繪的是神在門口護衛。
+
+  - id: kc-passover-word
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:13
+    quote: This is also connected to the word Passover, because it means ‘to pass over’.
+    quoteZh: 這也和「逾越節」這個詞有關，因為它的意思就是「越過」。
+
+  - id: bh-wailing
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:30
+    quote: The loud wailing signifies profound grief and despair.
+    quoteZh: 大哀號表示極深的悲痛和絕望。
+
+  - id: gt-jingdu-silence
+    source: GT
+    work: 《聖經精讀本──出埃及記註解》
+    chapter: 出12
+    verse: 出12:29-32
+    quote: 埃及人由於失去代表家族的長子而嚎哭的當晚,對以色列人來說是,連狗都不叫一聲的平安之夜。
+
+  # ---------- 出發 ----------
+  - id: ct-dough
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:34
+    quote: 『生麵』指麵粉和水，但未放入酵粉，也未等它自己發起來的生麵團。
+
+  - id: gt-bg-dough
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 出12
+    verse: 出12:34
+    quote: 運輸已經摶好、供明日食用之麵團最簡易的辦法，是正如本節所言，把麵團放在摶麵盆中，蓋布以防弄髒。
+
+  - id: kc-dough
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:39
+    quote: They leave so hastily that the dough has not had a chance to do its job.
+    quoteZh: 他們走得太匆忙，麵團還來不及發起來。
+
+  - id: bh-dough
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:34
+    quote: The unleavened dough symbolizes haste, as there was no time to let the dough rise.
+    quoteZh: 沒有發酵的麵團代表匆忙，因為沒有時間等麵發起來。
+
+  # ---------- 耶和華的夜 ----------
+  - id: ct-vigil
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:42
+    quote: 『耶和華的夜』或另譯『耶和華親自守夜』，指耶和華巡行埃及，擊殺埃及人的長子之夜；也指耶和華保守以色列人之夜。
+
+  - id: gt-qidao-vigil
+    source: GT
+    work: 《啟導本聖經腳註》
+    chapter: 出12
+    verse: 出12:42
+    quote: 這一晚，神保守、看顧以色列人，帶領他們安全走出埃及。
+
+  - id: gt-tyndale-vigil
+    source: GT
+    work: 《丁道爾聖經註釋》
+    chapter: 出12
+    verse: 出12:42
+    quote: 這句雙關語同時解釋了逾越節為何是個夜間守的節日。
+
+  - id: bh-vigil
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:42
+    quote: The term "vigil" implies watchfulness and protection.
+    quoteZh: 「守夜」這個詞含有看守和保護的意思。
+
+  # ---------- 兒女的問題 ----------
+  - id: gt-tyndale-children
+    source: GT
+    work: 《丁道爾聖經註釋》
+    chapter: 出12
+    verse: 出12:26
+    quote: 稍懂兒童心理之人，都知道兒童看見如此充滿象徵意味的儀式，不發問是不可能的。
+
+  - id: kc-children
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:26
+    quote: The children will ask about the meaning of the celebration of the Passover.
+    quoteZh: 兒女會問守逾越節是什麼意思。
+    paraphrase: KingComments 接著說，在父母的回答裡聽得出感恩和讚嘆。
