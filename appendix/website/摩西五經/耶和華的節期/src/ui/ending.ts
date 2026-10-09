@@ -9,6 +9,7 @@ import { SITE } from '../data/site';
 import { chapterUrl, entryUrl } from '../data/links';
 import { ext, h } from './dom';
 import { STEP_REPO } from './panels';
+import type { EchoUI } from './echo';
 import { fullRef } from './text';
 
 const uniq = <T>(xs: T[]): T[] => [...new Set(xs)];
@@ -51,10 +52,11 @@ function otItem(o: OtNote): HTMLElement | null {
         block.kb ? h('p', { class: 'jf-ot-kb' }, ext(chapterUrl(block.bookNum, block.book, block.chapter), '知識庫這一章（另開網頁）')) : null)));
 }
 
-function otBlock(ot: OtNote[] | undefined): HTMLElement | null {
-  if (!ot?.length) return null;
+function otBlock(ot: OtNote[], echoes: HTMLElement[]): HTMLElement | null {
+  if (!ot.length && !echoes.length) return null;
   const subs = OT_SECTIONS.map((sec) => {
-    const items = ot.filter((o) => o.kind === sec.kind).map(otItem).filter(Boolean);
+    // 「後來的人怎麼守」：本章的回聲拍排在最前面，其餘 ot 照原順序接在後面
+    const items = [...(sec.kind === 'kept' ? echoes : []), ...ot.filter((o) => o.kind === sec.kind).map(otItem).filter(Boolean)];
     if (!items.length) return null;
     return h('section', { class: 'jf-ot-sub', 'data-kind': sec.kind },
       h('h4', { class: 'jf-ot-h' }, sec.title),
@@ -67,7 +69,21 @@ function otBlock(ot: OtNote[] | undefined): HTMLElement | null {
     subs);
 }
 
-export function buildEndings(): HTMLElement[] {
+/** 本章的回聲拍（有 echoes 的拍）：自動列在「後來的人怎麼守」的最前面，內容只有出處、經文、跳回故事的連結 */
+function echoItem(beatId: string, ref: string, echo: EchoUI): HTMLElement | null {
+  const block = SITE.verses[ref];
+  if (!block) return null;
+  return h('li', { class: 'jf-ot-item jf-ot-echo', 'data-kind': 'kept', 'data-beat': beatId },
+    h('p', { class: 'jf-ot-ref' }, fullRef(block)),
+    h('details', { class: 'jf-pass jf-ot-pass' },
+      h('summary', { class: 'jf-pass-sum' }, h('span', { class: 'jf-pass-ref' }, '經文')),
+      h('div', { class: 'jf-pass-body' },
+        block.lines.map((ln) => h('p', { class: 'jf-pass-line' }, h('span', { class: 'jf-vn jf-vn-inline', 'aria-label': `第${ln.v}節` }, String(ln.v)), ln.text)))),
+    h('p', { class: 'jf-ot-go' },
+      h('button', { type: 'button', class: 'jf-echo-link jf-ot-story', 'data-to': beatId, onclick: () => echo.jumpToBeat(beatId) }, '看故事裡的這一段')));
+}
+
+export function buildEndings(echo: EchoUI): HTMLElement[] {
   const out: HTMLElement[] = [];
   let carry: StoryChapter[] = [];
   for (const chapter of SITE.chapters) {
@@ -79,12 +95,12 @@ export function buildEndings(): HTMLElement[] {
     if (chapter.kind === 'passage') continue;
     const group = [...carry, chapter];
     carry = [];
-    out.push(buildEnding(chapter, group));
+    out.push(buildEnding(chapter, group, echo));
   }
   return out;
 }
 
-function buildEnding(chapter: StoryChapter, group: StoryChapter[]): HTMLElement {
+function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI): HTMLElement {
   // 開場章併進來的經文，若已被這章較大的一段完整包含（例如出12:1-6 之於出12:1-14），就不重複列
   const all = uniq(group.flatMap((c) => c.passages));
   const contained = (a: string, b: string) => {
@@ -128,7 +144,7 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[]): HTMLElement 
           h('h3', { class: 'jf-end-h' }, '新約'),
           h('ul', { class: 'jf-entries jf-entries-one' }, ntEls))
         : null,
-      otBlock(chapter.ot),
+      otBlock(group.flatMap((c) => c.ot ?? []), chapter.beats.filter((b) => b.echoes?.length && b.verse).map((b) => echoItem(b.id, b.verse!, echo)).filter((x): x is HTMLElement => !!x)),
       n
         ? h('div', { class: 'jf-end-block jf-next' },
           h('h3', { class: 'jf-end-h' }, '下一個節期'),

@@ -53,7 +53,7 @@ function boot() {
   const main = h('main', { class: 'jf-story', id: 'jf-story' });
   const beats = buildBeats(main, { hyssop, bake, wave, count, blow, bars, echo });
   app.append(main);
-  for (const end of buildEndings()) {
+  for (const end of buildEndings(echo)) {
     const cid = end.getAttribute('data-chapter');
     const lastOfChapter = [...beats].reverse().find((b) => b.chapter.id === cid);
     if (lastOfChapter) lastOfChapter.el.after(end);

@@ -7,7 +7,7 @@ import type { CreateScene, SceneHandle, SceneOptions } from './api';
 import { HyssopCtl } from './hyssop';
 import { Interior } from './interior';
 import { darknessMat, disposeShared, grainMat, PalVec, setLook, tjMat, U, wipeMat } from './materials';
-import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, TJ_DIR, tjAmt, wipeAmt } from './tracks';
+import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, stepSummer, SUMMER, TJ_DIR, tjAmt, wipeAmt } from './tracks';
 import { clamp } from './util';
 import { WaveCtl } from './wave';
 import { World, type Frame } from './world';
@@ -238,7 +238,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     fr.s = lastIdx + clamp(story.beatProgress, 0, 1);
 
     const hasPanel = findPanel(fr.s);
-    const busy = world.busy || hyssop.busy || wave.busy;
+    const busy = world.busy || hyssop.busy || wave.busy || SUMMER.busy;
     const hm = story.hyssop.marks;
     sig[0] = fr.s;
     sig[1] = story.day;
@@ -269,6 +269,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     if (fr.motionOff && !busy && !dirty && same) return;
     dirty = false;
 
+    stepSummer(fr.s, dt);
     sampleTracks(fr.s, tracks, W <= 720);
     if (camOverride) for (let i = 0; i < 8; i++) tracks.cam[i] = camOverride[i];
     U.uDark.value = darkF;

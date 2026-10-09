@@ -90,6 +90,46 @@ async function run(mobile, port) {
     }
   }
 
+  // 章末「後來的人怎麼守」：本章的回聲拍自動列在最前面，「看故事裡的這一段」跳回該回聲拍
+  const ends = JSON.parse(await b.evaluate(`JSON.stringify([...document.querySelectorAll('.jf-end')].map((e) => ({
+    chapter: e.dataset.chapter,
+    ot: e.querySelectorAll('.jf-ot-item').length,
+    echoes: [...e.querySelectorAll('.jf-ot-echo')].map((x) => x.dataset.beat),
+    firstIsEcho: e.querySelector('.jf-ot-sub[data-kind="kept"] .jf-ot-item')?.classList.contains('jf-ot-echo') ?? false,
+    hasOt: !!e.querySelector('.jf-ot'),
+  })))`));
+  for (const e of ends) console.log(`  章末 ${e.chapter}：舊約其他書卷 ${e.hasOt ? e.ot + ' 筆' : '（不顯示）'}，其中回聲拍 ${e.echoes.length}（${e.echoes.join('、') || '—'}）`);
+  const expectEnds = { firstfruits: ['gilgal'], 'second-passover': ['hezekiah'], weeks: ['ruth'], trumpets: ['ezra-reads'], booths: ['neh-booths'] };
+  for (const [ch, ids] of Object.entries(expectEnds)) {
+    const e = ends.find((x) => x.chapter === ch);
+    e && JSON.stringify(e.echoes) === JSON.stringify(ids) && e.firstIsEcho ? ok(`章末 ${ch}：回聲拍 ${ids.join('、')} 列在「後來的人怎麼守」最前面`) : fail(`章末 ${ch}：回聲拍 ${JSON.stringify(e?.echoes)}、排最前面 ${e?.firstIsEcho}`);
+  }
+  const atone = ends.find((x) => x.chapter === 'atonement');
+  atone && !atone.hasOt ? ok('章末 atonement：沒有回聲拍也沒有 ot，不顯示這一欄') : fail('章末 atonement 不該顯示舊約欄');
+  for (const e of ends.filter((x) => x.echoes.length)) {
+    for (const beatId of e.echoes) {
+      const info = JSON.parse(await b.evaluate(`JSON.stringify((() => {
+        const btn = document.querySelector('.jf-end[data-chapter="${e.chapter}"] .jf-ot-story[data-to="${beatId}"]');
+        const y = btn.getBoundingClientRect().top + scrollY - innerHeight / 2;
+        window.scrollTo(0, Math.max(0, y));
+        return null;
+      })())`));
+      void info;
+      await sleep(900);
+      const pos = JSON.parse(await b.evaluate(`JSON.stringify((() => { const r = document.querySelector('.jf-end[data-chapter="${e.chapter}"] .jf-ot-story[data-to="${beatId}"]').getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2, inView: r.top >= 0 && r.bottom <= innerHeight, text: document.querySelector('.jf-end[data-chapter="${e.chapter}"] .jf-ot-story[data-to="${beatId}"]').textContent }; })())`));
+      const label = `章末 ${e.chapter} →「${pos.text}」→ ${beatId}`;
+      if (!pos.inView) { fail(`${label}：連結不在視野內`); continue; }
+      await sampleStart();
+      await tap(pos.x, pos.y);
+      await sleep(1100);
+      const ys = await sampleStop();
+      const beat = await beatNow();
+      beat === beatId ? ok(`${label}：story.beat = ${beat}`) : fail(`${label}：story.beat 是 ${beat}`);
+      ys.length <= 2 ? ok(`  無平滑捲動（scrollY 取樣值 ${ys.length} 個）`) : fail(`${label}：scrollY 取樣到 ${ys.length} 個值，疑似平滑捲動`);
+      (await backText()) === null ? ok('  章末的跳轉不出現「回到」按鈕') : fail(`${label}：多出「回到」按鈕`);
+    }
+  }
+
   // 8 秒後自動消失、以及捲動超過一個螢幕高就消失
   if (pairs.length) {
     const p = pairs.find((x) => x.to);

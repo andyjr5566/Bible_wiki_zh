@@ -283,6 +283,14 @@
   border: 2px solid var(--jf-ink);
   background: var(--jf-paper);
 }
+.jf-ot-go {
+  margin: 8px 0 0;
+}
+.jf-ot-story {
+  min-height: 44px;
+  padding: 0;
+  font-size: 15px;
+}
 /* 「同樣的字」：一眼看出不是這裡的節期，左側虛線，其餘三邊淡一點 */
 .jf-ot-item[data-kind='word'] {
   border-width: 2px 2px 2px 4px;

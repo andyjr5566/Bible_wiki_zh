@@ -25,6 +25,8 @@ export interface EchoUI {
   /** 被呼應的拍反向的「後來」連結；沒有人呼應它回 null */
   laterLinks(beat: Beat): HTMLElement | null;
   setNav(nav: Nav): void;
+  /** 跳到某一拍（刻線抹除＋瞬間定位）；不顯示「回到」按鈕。章末「看故事裡的這一段」用 */
+  jumpToBeat(beatId: string): void;
   /** 每幀呼叫（便宜）：「回到」按鈕捲動超過一個螢幕高就收起來 */
   update(): void;
 }
@@ -118,6 +120,10 @@ export function createEchoUI(host: HTMLElement): EchoUI {
     },
     setNav(n) {
       nav = n;
+    },
+    jumpToBeat(beatId) {
+      const e = byId.get(beatId);
+      if (e) go(e, null);
     },
     update() {
       if (back.hidden) return;

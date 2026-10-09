@@ -604,14 +604,15 @@ export function createTrackOut(): TrackOut {
 
 // ---------------------------------------------------------------- 日月交替（夏日過場、贖罪日末拍）
 const LIGHT_DAY = [0.5, 0.75, 0.55, 0.52, 1.02];
-const LIGHT_NIGHT = [0.3, 0.8, 0.5, 0.32, 0.88];
+const LIGHT_NIGHT = [0.3, 0.8, 0.5, 0.4, 0.96];
 /** 依太陽仰角（度）算天空與光線 */
 function skyFromSun(el: number, out: TrackOut): void {
-  const day = smooth(-5, 14, el);
-  const horizon = smooth(-13, -3, el) * (1 - smooth(3, 20, el));
+  // 黃昏拉長成連續的過渡；夜色比一般的夜淺一點（天色混進一點白天的紙色），亮暗差變小
+  const day = smooth(-14, 24, el);
+  const horizon = smooth(-18, -3, el) * (1 - smooth(4, 28, el));
   out.sky[0] = horizon * 0.95;
-  out.sky[1] = 1 - smooth(-9, 2, el);
-  out.sky[2] = day;
+  out.sky[1] = 1 - smooth(-12, 4, el);
+  out.sky[2] = lerp(0.3, 1, day);
   out.sky[3] = 1;
   for (let i = 0; i < 5; i++) out.light[i] = lerp(LIGHT_NIGHT[i], LIGHT_DAY[i], day);
 }
@@ -632,9 +633,34 @@ function sunMoon(phi: number, out: TrackOut): void {
 }
 export const SUMMER_DAYS = 6.25;
 /** 夏日過場：6 個日夜，結束在黃昏（日落）；最後西邊低空一彎極細新月 */
-function summerSky(s: number, out: TrackOut): void {
-  // 頭尾被抹除蓋住：6 個日夜排在 0.08–0.78，結束在黃昏的新月
-  const p = clamp((s - c('summer') - 0.08) / 0.7);
+/**
+ * 夏日過場的日夜進度（阻尼後）：6 個日夜壓在約一個螢幕高的捲動裡，讀者快滾時畫面不能整片翻閃。
+ * 所以天色不直接等於捲動值，而是隨時間追上去：時間常數 0.5 秒，並限制最大速度 0.08 進度／秒
+ * （＝每秒最多半個日夜循環，亮暗翻轉每秒不超過 1 次）。這是捲動帶動的，動態關也照常追（不卡住）。
+ */
+export const SUMMER = { sp: 0, was: false, busy: false };
+const SUMMER_TAU = 0.5;
+const SUMMER_MAX = 0.08;
+const summerTarget = (s: number): number => clamp((s - c('summer') - 0.08) / 0.7);
+/** 每幀在算鏡頭之前呼叫；dt 已夾在 0–0.1。進入過場（或跳著進來）時直接對齊，不追 */
+export function stepSummer(s: number, dt: number): void {
+  const tgt = summerTarget(s);
+  if (!inSummer(s) || !SUMMER.was) {
+    SUMMER.sp = tgt;
+    SUMMER.was = inSummer(s);
+    SUMMER.busy = false;
+    return;
+  }
+  const d = tgt - SUMMER.sp;
+  let step = d * (1 - Math.exp(-Math.max(0, dt) / SUMMER_TAU));
+  const mx = SUMMER_MAX * Math.max(0, dt);
+  step = step > mx ? mx : step < -mx ? -mx : step;
+  SUMMER.sp += step;
+  if (Math.abs(tgt - SUMMER.sp) < 1e-4) SUMMER.sp = tgt;
+  SUMMER.busy = SUMMER.sp !== tgt;
+}
+function summerSky(_s: number, out: TrackOut): void {
+  const p = SUMMER.sp;
   const phi = 0.25 + SUMMER_DAYS * p;
   sunMoon(phi, out);
   // 月相：由下弦虧到不見，最後換成新月
