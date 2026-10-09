@@ -1,7 +1,6 @@
 ﻿// 夜間世界與隔日世界：所有場景物件與它們隨 s（cue＋進度）的狀態。
 import {
   BoxGeometry,
-  BufferGeometry,
   Color,
   CylinderGeometry,
   DoubleSide,
@@ -22,12 +21,10 @@ import {
   barleyGeo,
   basinGeo,
   bedGeo,
-  cattleGeo,
   doorFrameGeo,
   doorLeafGeo,
   flameGeo,
   houseBodyGeo,
-  lambGeo,
   mergeParts,
   palmFrondsGeo,
   palmTrunkGeo,
@@ -37,8 +34,10 @@ import {
   type Part,
   type PersonOpts,
 } from './geo';
-import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, skyMat, solid, solidInstanced, U } from './materials';
-import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, setGlowFlick, skyMat, solid, solidInstanced, U } from './materials';
+import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { makeFx, type FxSet } from './fx';
+import { Animal, AnimalCrowd, PersonCrowd, RigPerson } from './rig';
 import { Camp } from './camp';
 import { Fields } from './fields';
 import { Home } from './home';
@@ -100,6 +99,8 @@ export class World {
   private leftHouse!: Group;
   private ground!: Mesh;
   private childrenPair = new Group();
+  private father!: RigPerson;
+  private child!: RigPerson;
   houses: HouseRig[] = [];
   hero!: HouseRig;
   basinPos = new Vector3(-1.35, 0, 0.95);
@@ -111,15 +112,22 @@ export class World {
   private shutFired = false;
 
   // 動態物件
-  private lamb = new Group();
+  private lamb!: Animal;
   private lambProps = new Group();
-  private doorwayPerson = new Group();
+  private doorwayPerson!: RigPerson;
+  private leader!: RigPerson;
+  private basinG = new Group();
+  private bender!: RigPerson;
+  private fxTorchSpark!: FxSet;
+  private fxTorchSmoke!: FxSet;
+  private fxDust!: FxSet;
+  private ppl: RigPerson[] = [];
   private winMat: ShaderMaterial;
   private torchMat: ShaderMaterial;
   private barleyGroups: InstancedMesh[] = [];
   private procG = new Group();
-  private procPeople: { mesh: InstancedMesh; items: { x0: number; z: number; ph: number; sc: number }[] }[] = [];
-  private procAnimals: { mesh: InstancedMesh; items: { x0: number; z: number; ph: number; sc: number }[] }[] = [];
+  private procPeople: { crowd: PersonCrowd; x0: number[] }[] = [];
+  private procAnimals: { crowd: AnimalCrowd; x0: number[] }[] = [];
   private farLine: Group;
   private farLineMesh: InstancedMesh;
   private doorGlowMat: ShaderMaterial;
@@ -153,7 +161,7 @@ export class World {
     const mMudPaper = litMat({ base: 'paper', angle: 84, angle2: 6, space: 5, seed: 4 });
     const mWood = litMat({ base: '#6e5433', angle: 74, angle2: 10, space: 4.4, seed: 5 });
     const mTrunk = litMat({ base: '#8f7145', angle: 82, angle2: 10, space: 4.6, seed: 7, cross: true });
-    const mFrond = litMat({ base: '#5c5836', angle: 28, angle2: 28, space: 4.6, seed: 8, side: DoubleSide });
+    const mFrond = litMat({ base: '#5c5836', angle: 28, angle2: 28, space: 4.6, seed: 8, side: DoubleSide, sway: true });
     const mSilh = litMat({ base: 'silh' });
     const mBlood = litMat({ base: FIXED.blood, line: '#3a0c09', angle: 20, space: 4.6, bias: 0.25 });
     this.doorGlowMat = glowMat({ hatch: 0.75, edge: '#2a1c0a' });
@@ -257,12 +265,11 @@ export class World {
       this.barleyGroups.push(barley);
       this.night.add(barley);
     });
-    // ---- 羊羔（拴在主角家門口）
+    // ---- 羊羔（day-10 被牽到主角家門口拴好）
     const lmat = litMat({ base: 'paper', parts: ['#e9e1cc', '#14110e'], angle: 52, space: 4.4, seed: 12 });
-    this.lamb.add(solid(lambGeo(), lmat, 2.2));
-    this.lamb.position.set(1.95, 0, 1.55);
-    this.lamb.rotation.y = 0.9;
-    this.night.add(this.lamb);
+    this.lamb = new Animal('lamb', lmat, 2.2, 12);
+    this.lamb.baseScale = 1;
+    this.night.add(this.lamb.group);
     const stake = new Mesh(new CylinderGeometry(0.04, 0.05, 0.6, 5), mWood);
     stake.position.set(1.45, 0.3, 0.95);
     this.lambProps.add(stake);
@@ -277,6 +284,10 @@ export class World {
     }
     this.lambProps.add(rope);
     this.night.add(this.lambProps);
+    // 牽羊羔的人：從畫面左邊走來，拴好後往右走開
+    this.leader = new RigPerson({ staff: true, staffSide: 'R', belt: true, armL: [0.3, 0.14], armR: [0.5, 0.12], seed: 3 }, litMat({ base: FIXED.ochre, parts: ['#a88758', '#14110e', '#2b2218', '#4e3a22', '#14110e', '#d8cdb4'], angle: 40, space: 4.4, seed: 17 }));
+    this.night.add(this.leader.group);
+    this.ppl.push(this.leader);
 
     // ---- 埃及的城、宮殿與火炬
     const city = this.buildCity(mSilh);
@@ -384,20 +395,20 @@ export class World {
     });
     this.hero = this.houses[0];
 
-    // 主角家的門內人影、門口的盆與羊羔的血盆
-    const personG = personGeo({ armL: [0.06, 0.12], armR: [0.06, 0.12], belt: true });
+    // 主角家的門內人影（dusk-street 把盆端出來）、門口的盆與羊羔的血盆
     const mDoorMan = litMat({ base: '#10132a', line: '#6b5a3a', angle: 62, angle2: 20, space: 4.6, bias: -0.1, seed: 41, parts: ['#10132a', '#0d0f1f', '#0d0f1f', '#10132a', '#10132a', '#10132a'] });
-    this.doorwayPerson.add(solid(personG, mDoorMan, 2.2));
-    this.doorwayPerson.position.set(0, 0, -0.35);
-    this.hero.group.add(this.doorwayPerson);
+    this.doorwayPerson = new RigPerson({ belt: true, armL: [0.06, 0.12], armR: [0.06, 0.12], seed: 8 }, mDoorMan);
+    this.doorwayPerson.group.position.set(0, 0, -0.35);
+    this.hero.group.add(this.doorwayPerson.group);
+    this.ppl.push(this.doorwayPerson);
 
     const bs = basinGeo();
     const mBowl = litMat({ base: '#7b5a39', angle: 20, space: 4.4, seed: 13 });
-    const basin = new Group();
-    basin.add(solid(bs.bowl, mBowl, 2.2));
-    basin.add(new Mesh(bs.blood, mBlood));
-    basin.position.copy(this.basinPos);
-    this.night.add(basin);
+    this.basinG.add(solid(bs.bowl, mBowl, 2.2));
+    this.basinG.add(new Mesh(bs.blood, mBlood));
+    this.basinG.position.copy(this.basinPos);
+    this.basinG.visible = false;
+    this.night.add(this.basinG);
   }
 
   // ------------------------------------------------------------- 埃及的城
@@ -459,7 +470,7 @@ export class World {
     this.night.add(winMesh);
 
     // 火炬
-    const torchM = glowMat({ on: '#f0c46a', edge: '#b24a14', hatch: 0.9, flick: 0.35 });
+    const torchM = glowMat({ on: '#f0c46a', edge: '#b24a14', hatch: 0.9, flick: 0.35, fixedFlick: true });
     const tg = solid(torchGeo(), mSilh, 1.5);
     for (const x of [51.5, 68.5]) {
       const t = tg.clone();
@@ -470,6 +481,10 @@ export class World {
       fl.scale.setScalar(6);
       this.night.add(fl);
     }
+    const tf: [number, number, number][] = [[51.5, py + 2.1, -69.5], [68.5, py + 2.1, -69.5]];
+    this.fxTorchSpark = makeFx('spark', tf, 9, 0.3, 11);
+    this.fxTorchSmoke = makeFx('smoke', tf, 5, 1.3, 12);
+    this.night.add(this.fxTorchSpark.mesh, this.fxTorchSmoke.mesh);
     return { winMat, torchMat: torchM };
   }
 
@@ -505,10 +520,11 @@ export class World {
     const bed = solid(bedGeo(), mBed, 1.6);
     bed.position.set(wcx + 0.05, 0.2, -0.95);
     g.add(bed);
-    const bender = solid(personGeo({ bow: 0.95, armL: [0.9, 0.15], armR: [0.9, 0.15], wrap: true }), mSilh, 2.0);
-    bender.position.set(wcx - 0.12, 0, -0.45);
-    bender.rotation.y = Math.PI;
-    g.add(bender);
+    this.bender = new RigPerson({ bow: 0.95, armL: [0.9, 0.15], armR: [0.9, 0.15], wrap: true, outline: 2.0, seed: 21 }, mSilh);
+    this.bender.group.position.set(wcx - 0.12, 0, -0.45);
+    this.bender.group.rotation.y = Math.PI;
+    g.add(this.bender.group);
+    this.ppl.push(this.bender);
     this.night.add(g);
   }
 
@@ -518,26 +534,32 @@ export class World {
     const mP = litMat({ base: FIXED.ochre, parts: ['#a88758', '#14110e', '#2b2218', '#4e3a22', '#14110e', '#d8cdb4'], partAlt: '#cdbf9e', angle: 40, space: 4.4, seed: 14 });
     const mSheep = litMat({ base: 'paper', parts: ['#e9e1cc', '#14110e'], angle: 50, space: 4.4, seed: 15 });
     const mCow = litMat({ base: '#6b5030', parts: ['#6b5030', '#14110e'], angle: 50, space: 4.4, seed: 16 });
-    const mk = (geo: BufferGeometry, mat: ShaderMaterial, n: number, outline: number) => {
-      const r = solidInstanced(geo, mat, n, outline);
-      this.procG.add(r.group);
-      return r.main;
-    };
     const A: PersonOpts = { bundle: true, staff: false, belt: true, armL: [0.1, 0.15], armR: [0.55, 0.1], low: true };
     const B: PersonOpts = { staff: true, staffSide: 'R', belt: true, armL: [0.2, 0.15], armR: [0.35, 0.15], low: true };
-    const peopleA = mk(personGeo(A), mP, 22, 1.8);
-    const peopleB = mk(personGeo(B), mP, 18, 1.8);
-    const sheep = mk(lambGeo(true), mSheep, 22, 1.5);
-    const cattle = mk(cattleGeo(true), mCow, 8, 1.5);
-    const mkItems = (n: number, startX: number, gap: number, zLo: number, zHi: number, scLo: number, scHi: number) => {
-      const out: { x0: number; z: number; ph: number; sc: number }[] = [];
-      for (let i = 0; i < n; i++) out.push({ x0: startX + i * gap + rnd() * gap * 0.8, z: zLo + rnd() * (zHi - zLo), ph: rnd() * 6.28, sc: scLo + rnd() * (scHi - scLo) });
-      return out;
+    const peopleA = new PersonCrowd(personGeo(A), mP, 22, 1.8);
+    const peopleB = new PersonCrowd(personGeo(B), mP, 18, 1.8);
+    const sheep = new AnimalCrowd('lamb', mSheep, 22, 1.5);
+    const cattle = new AnimalCrowd('cow', mCow, 8, 1.5);
+    this.procG.add(peopleA.group, peopleB.group, sheep.group, cattle.group);
+    const mk = (n: number, startX: number, gap: number, zLo: number, zHi: number, scLo: number, scHi: number, items: { ph: number; sc: number; z: number }[]): number[] => {
+      const x0: number[] = [];
+      for (let i = 0; i < n; i++) {
+        x0.push(startX + i * gap + rnd() * gap * 0.8);
+        items[i].z = zLo + rnd() * (zHi - zLo);
+        items[i].sc = scLo + rnd() * (scHi - scLo);
+        items[i].ph = rnd() * 6.28;
+      }
+      return x0;
     };
-    this.procPeople.push({ mesh: peopleA, items: mkItems(22, 3, 4.4, 6.8, 9.4, 0.95, 1.06) });
-    this.procPeople.push({ mesh: peopleB, items: mkItems(18, 4.2, 5.2, 4.8, 7.2, 0.95, 1.08) });
-    this.procAnimals.push({ mesh: sheep, items: mkItems(22, 2, 4.4, 8.2, 10.6, 0.85, 1.15) });
-    this.procAnimals.push({ mesh: cattle, items: mkItems(8, 6, 12, 4.4, 6.2, 0.95, 1.1) });
+    this.procPeople.push({ crowd: peopleA, x0: mk(22, 3, 4.4, 6.8, 9.4, 0.95, 1.06, peopleA.items) });
+    this.procPeople.push({ crowd: peopleB, x0: mk(18, 4.2, 5.2, 4.8, 7.2, 0.95, 1.08, peopleB.items) });
+    this.procAnimals.push({ crowd: sheep, x0: mk(22, 2, 4.4, 8.2, 10.6, 0.85, 1.15, sheep.items) });
+    this.procAnimals.push({ crowd: cattle, x0: mk(8, 6, 12, 4.4, 6.2, 0.95, 1.1, cattle.items) });
+    // 腳下的塵土：每個人身後兩團
+    const org: [number, number, number][] = [];
+    for (const g of this.procPeople) g.x0.forEach((x, i) => org.push([x, 0, g.crowd.items[i].z]));
+    this.fxDust = makeFx('dust', org, 2, 1.1, 41);
+    this.procG.add(this.fxDust.mesh);
   }
 
   private buildFarLine(): { group: Group; mesh: InstancedMesh } {
@@ -583,14 +605,15 @@ export class World {
     // 父親與孩子：背對鏡頭看著門框
     const mFather = litMat({ base: FIXED.ochre, parts: ['#a88758', '#14110e', '#2b2218', '#4e3a22', '#14110e', '#d8cdb4'], angle: 40, space: 4.4, seed: 17 });
     const mChild = litMat({ base: FIXED.ochre, parts: ['#cdbf9e', '#14110e', '#3a2e22', '#4e3a22', '#14110e', '#d8cdb4'], angle: 40, space: 4.4, seed: 18 });
-    const father = solid(personGeo({ staff: true, staffSide: 'R', belt: true, slim: true, armL: [0.25, 0.14], armR: [0.5, 0.12] }), mFather, 2.4);
-    father.position.set(0.95, 0, 2.3);
-    father.rotation.y = Math.PI - 0.35;
-    this.childrenPair.add(father);
-    const child = solid(personGeo({ scale: 0.56, armL: [0.35, 0.95], armR: [1.45, 0.45], wrap: true }), mChild, 2.2);
-    child.position.set(0.25, 0, 2.4);
-    child.rotation.y = Math.PI + 0.1;
-    this.childrenPair.add(child);
+    this.father = new RigPerson({ staff: true, staffSide: 'R', belt: true, slim: true, armL: [0.25, 0.14], armR: [0.5, 0.12], seed: 31, outline: 2.4 }, mFather);
+    this.father.group.position.set(0.95, 0, 2.3);
+    this.father.group.rotation.y = Math.PI - 0.35;
+    this.childrenPair.add(this.father.group);
+    this.child = new RigPerson({ scale: 0.56, armL: [0.35, 0.95], armR: [1.45, 0.45], wrap: true, kid: true, seed: 32 }, mChild);
+    this.child.group.position.set(0.25, 0, 2.4);
+    this.child.group.rotation.y = Math.PI + 0.1;
+    this.childrenPair.add(this.child.group);
+    this.ppl.push(this.father, this.child);
     g.add(this.childrenPair);
     g.visible = false;
   }
@@ -664,8 +687,11 @@ export class World {
       shiftPx += wM * (panelCx - W * 0.5);
     }
     const drift = fr.motionOff ? 0 : 1;
-    const dx = Math.sin(fr.time * 0.31) * 0.05 * drift;
-    const dy = Math.sin(fr.time * 0.23 + 1.3) * 0.035 * drift;
+    // 手持漂移：幅度隨鏡頭到目標的距離略增（遠景才看得出來）
+    const dd = Math.hypot(c[0] - c[3], c[1] - c[4], c[2] - c[5]);
+    const amp = Math.min(0.14, 0.03 + 0.0028 * dd);
+    const dx = Math.sin(fr.time * 0.31) * amp * drift;
+    const dy = Math.sin(fr.time * 0.23 + 1.3) * amp * 0.7 * drift;
     let px = c[0] + dx;
     let py = c[1] + dy;
     let pz = c[2];
@@ -701,7 +727,7 @@ export class World {
     U.uLightDir.value.set(L[0], L[1], L[2]).normalize();
     U.uAmb.value = L[3];
     U.uGain.value = L[4];
-    U.uWind.value = fr.motionOff ? 0 : 0.34;
+    U.uWind.value = fr.motionOff ? 0 : 1 + 0.7 * smooth(cu('count', -0.1), cu('count', 0.2), s) * (1 - smooth(cu('count', 0.9), cu('two-loaves', 0.3), s));
 
     // 天空
     const sk = this.skyM.uniforms;
@@ -821,9 +847,9 @@ export class World {
     }
     this.busy = busy;
     this.spillMat.uniforms.uOn.value = 1 - 0.55 * smooth(0.3, 1, this.doorD);
-    // 主角家門內的人影：關門前先退進屋裡
-    this.doorwayPerson.position.z = -0.35 - 1.05 * smooth(0, 0.45, this.doorD);
-    this.doorwayPerson.visible = this.doorD < 0.999 && s < DAY_S;
+    const t = fr.time;
+    const mo = !fr.motionOff;
+    setGlowFlick(mo);
 
     // ---- 麥田分群（控制三角形數）
     const field = s < DAY_S;
@@ -832,57 +858,215 @@ export class World {
     this.barleyGroups[1].visible = wide;
     this.barleyGroups[2].visible = wide;
 
-    // ---- 羊羔：十四日黃昏被牽走
-    const lg = smooth(cu('day-14', 0.8), cu('dusk-street', 0.05), s);
-    this.lamb.visible = lg < 0.999;
-    this.lambProps.visible = lg < 0.999;
-    this.lamb.position.x = 1.95 + 7 * lg;
-    this.lamb.scale.setScalar(1 - lg);
+    // ---- day-10：一個人牽著羊羔從畫面左邊走來，在門口拴好（隨捲動）；十四日黃昏羊羔被牽走
+    this.updateDay10(s);
+    // ---- dusk-street：門口的人把盆端出來放在門檻邊
+    this.updateDusk(s);
 
-    // ---- 埃及城：窗一扇一扇熄燈、火炬熄滅
+    // ---- 埃及城：窗一扇一扇熄燈（黑暗掃過時）、火炬熄滅
     this.winMat.uniforms.uOff.value = windowOff(s);
-    this.torchMat.uniforms.uOn.value = torchOn(s);
-    this.torchMat.uniforms.uFlick.value = fr.motionOff ? 0 : 0.35;
+    const ton = torchOn(s);
+    this.torchMat.uniforms.uOn.value = ton;
+    this.torchMat.uniforms.uFlick.value = mo ? 0.35 : 0;
+    const nightOn = s < DAY_S;
+    const sparkOn = mo && nightOn && ton > 0.01 ? ton : 0;
+    this.fxTorchSpark.mat.uniforms.uOn.value = sparkOn;
+    this.fxTorchSmoke.mat.uniforms.uOn.value = sparkOn;
+    this.fxTorchSpark.mesh.visible = sparkOn > 0;
+    this.fxTorchSmoke.mesh.visible = sparkOn > 0;
 
-    // ---- 隊伍
+    // ---- wailing：亮窗裡俯身的人上身緩慢前後起伏
+    const pw = lp(s, 'wailing');
+    this.bender.bow = 0.95 + 0.13 * Math.sin(pw * 15) + 0.06 * Math.sin(pw * 6.3);
+    this.bender.swingL = 0.9 + 0.2 * Math.sin(pw * 15 + 1);
+    this.bender.swingR = 0.9 + 0.2 * Math.sin(pw * 15 + 2);
+
+    // ---- 隊伍與塵土
     const procOn = s >= cu('wailing', 0.85) && s < DAY_S;
     this.procG.visible = procOn;
-    if (procOn) this.updateProcession(s);
+    if (procOn) this.updateProcession(s, t, mo);
     this.farLine.visible = s >= cu('depart', 0.55) && s < DAY_S;
     if (this.farLine.visible) {
       const k = smooth(cu('depart', 0.55), cu('vigil'), s);
       this.farLine.scale.set(1, k, 1);
-      this.farLine.position.x = -1.5 * (s - cu('depart', 0.55));
+      this.farLine.position.x = -3.2 * (s - cu('depart', 0.55));
     }
+
+    // ---- children：孩子拉父親的衣角，父親轉身看向門框
+    const pc = lp(s, 'children');
+    this.father.group.rotation.y = lerp(Math.PI + 0.9, Math.PI - 0.35, smooth(0.25, 0.65, pc));
+    this.father.headYaw = lerp(0.5, 0, smooth(0.3, 0.7, pc));
+    this.child.swingL = 0.35 + 0.5 * Math.sin(pc * 34) * (1 - smooth(0.45, 0.65, pc));
+    this.child.swingR = lerp(0.25, 1.45, smooth(0.5, 0.78, pc));
+    this.child.splayR = lerp(0.2, 0.45, smooth(0.5, 0.78, pc));
+    this.child.group.rotation.y = lerp(Math.PI + 0.7, Math.PI + 0.1, smooth(0.35, 0.7, pc));
+
+    for (const r of this.ppl) r.update(t, mo);
+    this.lamb.update(t, mo);
 
     // ---- 春季新場景
     this.childrenPair.visible = s < CUT['bake'];
     this.leftHouse.visible = s < CUT['no-leaven'];
-    this.home.update(s);
+    this.home.update(s, t, mo);
     const wd = worldAt(s);
     if (wd === 'succoth' || wd === 'sinai') this.camp.update(fr, s);
-    if (wd === 'wheat') this.fields.update(fr, s);
+    if (wd === 'barley' || wd === 'wheat') this.fields.update(fr, s);
   }
 
-  private updateProcession(s: number): void {
-    const dist = departDist(s);
-    for (let k = 0; k < this.procPeople.length; k++) this.moveGroup(this.procPeople[k].mesh, this.procPeople[k].items, 0.07, false, dist);
-    for (let k = 0; k < this.procAnimals.length; k++) this.moveGroup(this.procAnimals[k].mesh, this.procAnimals[k].items, 0.04, true, dist);
-  }
-
-  private moveGroup(mesh: InstancedMesh, items: { x0: number; z: number; ph: number; sc: number }[], bob: number, animal: boolean, dist: number): void {
-    const stride = 0.78;
-    for (let i = 0; i < items.length; i++) {
-      const it = items[i];
-      const phase = dist / stride + it.ph;
-      _dummy.position.set(it.x0 - dist, Math.abs(Math.sin(phase)) * bob, it.z);
-      _dummy.rotation.set(0, -Math.PI / 2 + (animal ? 0 : 0.05), Math.sin(phase) * (animal ? 0.03 : 0.045));
-      _dummy.scale.setScalar(it.sc);
-      _dummy.updateMatrix();
-      mesh.setMatrixAt(i, _dummy.matrix);
+  private updateDay10(s: number): void {
+    const p = lp(s, 'day-10');
+    const lead = this.leader;
+    const lamb = this.lamb;
+    const lg = smooth(cu('day-14', 0.8), cu('dusk-street', 0.05), s);
+    const shown = s >= cu('day-10') && lg < 0.999;
+    this.lambProps.visible = shown && p > 0.7;
+    lamb.group.visible = shown;
+    const inCue = s >= cu('day-10') && s < cu('day-14');
+    lead.group.visible = inCue;
+    // 牽的人
+    let lx = lerp(-10, 0.9, smooth(0, 0.6, p));
+    const lz = lerp(3.4, 2.2, smooth(0, 0.6, p));
+    let yaw = Math.PI / 2 - 0.1;
+    let bob = 0;
+    lead.bow = 0;
+    lead.twist = 0;
+    if (p < 0.6) {
+      bob = lead.gait(lx / 0.8, 1);
+    } else if (p < 0.85) {
+      yaw = lerp(Math.PI / 2 - 0.1, 2.1, smooth(0.6, 0.68, p));
+      const dip = smooth(0.66, 0.72, p) * (1 - smooth(0.8, 0.85, p));
+      lead.bow = 0.7 * dip;
+      lead.swingL = 0.3 + 0.9 * dip;
+      lead.swingR = 0.5;
+      lead.twist = 0;
+    } else {
+      const e = smooth(0.85, 1, p);
+      lx = lerp(0.9, 9, e);
+      yaw = lerp(2.1, Math.PI / 2, smooth(0.85, 0.9, p));
+      bob = lead.gait(lx / 0.8, 1);
     }
-    mesh.instanceMatrix.needsUpdate = true;
+    lead.group.position.set(lx, bob, lz);
+    lead.group.rotation.y = yaw;
+    // 羊羔：跟在後面，之後走向拴羊的樁
+    const e1 = smooth(0, 0.6, p);
+    let ax = lerp(-10, 0.9, e1) - 1.5;
+    let az = lerp(3.0, 1.9, e1);
+    let ay = Math.PI / 2;
+    if (p >= 0.55) {
+      const k = smooth(0.55, 0.7, p);
+      const e55 = smooth(0, 0.6, 0.55);
+      ax = lerp(lerp(-10, 0.9, e55) - 1.5, 1.95, k);
+      az = lerp(lerp(3.0, 1.9, e55), 1.55, k);
+      ay = lerp(Math.PI / 2, 0.9, smooth(0.62, 0.78, p));
+    }
+    if (s >= cu('day-14')) {
+      ax = 1.95;
+      az = 1.55;
+      ay = 0.9;
+    }
+    const walking = inCue && p < 0.7;
+    lamb.stomp = !walking && p > 0.72;
+    lamb.graze = !walking;
+    lamb.group.position.set(ax + 7 * lg, 0, az);
+    lamb.group.rotation.y = ay;
+    lamb.baseScale = 1 - lg;
+    if (walking) lamb.group.position.y = Math.abs(Math.sin(ax / 0.5)) * 0.03;
+    else lamb.setBaseY(0);
   }
+
+  private updateDusk(s: number): void {
+    const person = this.doorwayPerson;
+    const pd = lp(s, 'dusk-street');
+    const door = this.doorD;
+    // 位置：門內 → 走到盆邊 → 回到門內
+    let x = 0;
+    let z = -0.35;
+    let yaw = 0;
+    let bow = 0;
+    let carry = 0;
+    let bob = 0;
+    const inDusk = s >= cu('dusk-street') && s < cu('hyssop');
+    person.twist = 0;
+    if (inDusk) {
+      if (pd < 0.12) {
+        carry = 1;
+      } else if (pd < 0.5) {
+        const e = smooth(0.12, 0.5, pd);
+        x = lerp(0, -0.85, e);
+        z = lerp(-0.35, 0.6, e);
+        yaw = Math.atan2(-0.85, 0.95);
+        carry = 1;
+        bob = person.gait(e * 7, 1);
+      } else if (pd < 0.72) {
+        x = -0.85;
+        z = 0.6;
+        yaw = Math.atan2(-0.5, 0.35);
+        const dip = smooth(0.5, 0.6, pd) * (1 - smooth(0.64, 0.72, pd));
+        bow = 0.9 * dip;
+        carry = 1 - smooth(0.58, 0.66, pd);
+      } else {
+        const e = smooth(0.72, 1, pd);
+        x = lerp(-0.85, 0, e);
+        z = lerp(0.6, -0.35, e);
+        yaw = lerp(Math.atan2(0.85, -0.95), 0, smooth(0.9, 1, pd));
+        bob = person.gait(e * 7, 1);
+      }
+    } else if (s >= cu('door-shut')) {
+      z = -0.35 - 1.05 * smooth(0, 0.45, door);
+    }
+    person.bow = bow;
+    person.group.position.set(x, bob, z);
+    person.group.rotation.y = yaw;
+    if (carry > 0.01) {
+      person.swingL = 0.95 * carry + 0.06 * (1 - carry);
+      person.swingR = 0.95 * carry + 0.06 * (1 - carry);
+    } else {
+      person.swingL = 0.06;
+      person.swingR = 0.06;
+    }
+    // 盆：先在人手裡，放下後留在門檻邊
+    const b = this.basinG;
+    b.visible = s >= cu('dusk-street') && s < DAY_S;
+    if (inDusk && pd < 0.72) {
+      const k = smooth(0.5, 0.68, pd);
+      const fx = x + Math.sin(yaw) * 0.45;
+      const fz = z + Math.cos(yaw) * 0.45;
+      b.position.set(lerp(fx, this.basinPos.x, k), lerp(0.85, 0.0, k), lerp(fz, this.basinPos.z, k));
+    } else {
+      b.position.copy(this.basinPos);
+    }
+    // 門內的人在關門前先退進屋裡（door-shut 以後）
+    person.group.visible = door < 0.999 && s < DAY_S;
+  }
+
+  private updateProcession(s: number, t: number, mo: boolean): void {
+    const dist = departDist(s);
+    const stride = 0.78;
+    for (const g of this.procPeople) {
+      for (let i = 0; i < g.x0.length; i++) {
+        const it = g.crowd.items[i];
+        const phase = dist / stride + it.ph;
+        it.x = g.x0[i] - dist;
+        it.y = Math.abs(Math.sin(phase)) * 0.07;
+        it.yaw = -Math.PI / 2 + 0.05;
+      }
+      g.crowd.update(t, mo);
+    }
+    for (const g of this.procAnimals) {
+      for (let i = 0; i < g.x0.length; i++) {
+        const it = g.crowd.items[i];
+        const phase = dist / stride + it.ph;
+        it.x = g.x0[i] - dist;
+        it.y = Math.abs(Math.sin(phase)) * 0.04;
+        it.yaw = -Math.PI / 2;
+        it.roll = Math.sin(phase) * 0.03;
+        it.walking = true;
+      }
+      g.crowd.update(t, mo, 0);
+    }
+    this.fxDust.mat.uniforms.uDist.value = dist;
+  }
+
   get farLineRef(): InstancedMesh {
     return this.farLineMesh;
   }

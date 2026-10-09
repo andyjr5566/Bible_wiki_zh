@@ -3,7 +3,7 @@
 import { Group, type PerspectiveCamera, type ShaderMaterial, Vector3, Quaternion } from 'three';
 import { story } from '../story/state';
 import type { SceneEvent } from './api';
-import { personGeo } from './geo';
+import { RigPerson } from './rig';
 import { handGeo, limbGeo, sheafGeo } from './geo2';
 import { U, litMat, solid } from './materials';
 import { BX, WAVE_IDX, worldAt } from './tracks';
@@ -43,7 +43,7 @@ export class WaveCtl {
   group = new Group();
   /** 動畫進行中（減少動態時用來判斷要不要繼續畫） */
   busy = false;
-  private priest: Group;
+  private priest: RigPerson;
   private sheaf: Group;
   private limbs: Group[] = [];
   private hands: Group[] = [];
@@ -73,10 +73,9 @@ export class WaveCtl {
 
   constructor(private canvas: HTMLCanvasElement, private cam: PerspectiveCamera, private emit: (e: SceneEvent) => void) {
     // 祭司：長袍、頭巾，不畫胸牌、以弗得等經文這裡沒提的服飾；手臂另外裝
-    this.priest = new Group();
-    this.priest.add(solid(personGeo({ noArms: true, wrap: true, belt: false }), robeMat('#e4dac0', 23, '#14110e', '#cfc4a6'), 2.4));
-    this.priest.position.set(PX, 0, PZ);
-    this.group.add(this.priest);
+    this.priest = new RigPerson({ noArms: true, wrap: true, belt: false, seed: 23, outline: 2.4 }, robeMat('#e4dac0', 23, '#14110e', '#cfc4a6'));
+    this.priest.group.position.set(PX, 0, PZ);
+    this.group.add(this.priest.group);
 
     const mSheaf = litMat({ base: '#c6a35a', parts: ['#b79a55', '#d9b861', '#6a4a26'], angle: 70, space: 4, seed: 71 });
     this.sheaf = solid(sheafGeo(7), mSheaf, 1.6);
@@ -300,8 +299,8 @@ export class WaveCtl {
   private layout(tilt: number): void {
     const sx = clamp(this.cur.x - REST.x, -RANGE_X, RANGE_X);
     const bodyX = PX + sx * 0.3;
-    this.priest.position.x = bodyX;
-    this.priest.rotation.z = -sx * 0.1;
+    this.priest.group.position.x = bodyX;
+    this.priest.lean = -sx * 0.1;
     this.sheaf.position.copy(this.cur);
     this.sheaf.rotation.set(0, 0, tilt);
     for (let i = 0; i < 2; i++) {
@@ -323,7 +322,7 @@ export class WaveCtl {
     }
   }
 
-  update(dt: number, s: number, idx: number): void {
+  update(dt: number, s: number, idx: number, t = 0, mo = false): void {
     // 讀者沒做完就捲走：自動補完
     if (idx > WAVE_IDX && !story.wave.done) {
       story.wave.swings = 3;
@@ -382,6 +381,7 @@ export class WaveCtl {
     if (dt > 1e-4) this.vel.set((this.cur.x - px) / dt, (this.cur.y - py) / dt, 0);
     const tilt = clamp(-this.vel.x * 0.16, -0.55, 0.55);
     this.layout(tilt);
+    this.priest.update(t, mo);
 
     this.group.visible = worldAt(s) === 'barley';
     this.busy = this.mode !== 'rest' || gustOn || this.cur.distanceToSquared(REST) > 1e-5;

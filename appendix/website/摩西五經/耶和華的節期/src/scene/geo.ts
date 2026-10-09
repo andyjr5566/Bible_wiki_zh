@@ -166,48 +166,53 @@ export function personHand(o: PersonOpts, side: 'L' | 'R'): Vector3 {
 }
 
 // ---------------------------------------------------------------- 羊與牛
-/** 朝 +z。part：0 羊毛／身體、1 頭與腿 */
-export function lambGeo(low = false, kind: 'lamb' | 'ram' | 'goat' = 'lamb'): BufferGeometry {
-  const parts: Part[] = [];
+/** 朝 +z。part：0 羊毛／身體、1 頭與腿。piece：整隻、只有身體（含腿）、只有頭（含耳與角） */
+export type Piece = 'all' | 'body' | 'head';
+export const LAMB_NECK = new Vector3(0, 0.6, 0.42);
+export const COW_NECK = new Vector3(0, 1.1, 0.55);
+export function lambGeo(low = false, kind: 'lamb' | 'ram' | 'goat' = 'lamb', piece: Piece = 'all'): BufferGeometry {
+  const body: Part[] = [];
+  const head: Part[] = [];
+  const S = (r: number) => new SphereGeometry(r, low ? 6 : 9, low ? 4 : 7);
   if (kind === 'ram') {
     // 公綿羊：頭兩側盤角
-    for (const sx of [1, -1]) {
-      parts.push({ g: new TorusGeometry(0.085, 0.024, 4, 9, Math.PI * 1.45), m: T(sx * 0.1, 0.72, 0.5, 0, sx * 1.35, sx * 0.25), part: 1 });
-    }
+    for (const sx of [1, -1]) head.push({ g: new TorusGeometry(0.085, 0.024, 4, 9, Math.PI * 1.45), m: T(sx * 0.1, 0.72, 0.5, 0, sx * 1.35, sx * 0.25), part: 1 });
   } else if (kind === 'goat') {
     // 公山羊：向後的短角與下巴的鬚
-    for (const sx of [1, -1]) parts.push({ g: new ConeGeometry(0.03, 0.26, 4), m: T(sx * 0.07, 0.8, 0.46, -0.9, 0, sx * 0.25), part: 1 });
-    parts.push({ g: new ConeGeometry(0.03, 0.15, 4), m: T(0, 0.52, 0.7, 3.4), part: 1 });
+    for (const sx of [1, -1]) head.push({ g: new ConeGeometry(0.03, 0.26, 4), m: T(sx * 0.07, 0.8, 0.46, -0.9, 0, sx * 0.25), part: 1 });
+    head.push({ g: new ConeGeometry(0.03, 0.15, 4), m: T(0, 0.52, 0.7, 3.4), part: 1 });
   }
-  const S = (r: number) => new SphereGeometry(r, low ? 6 : 9, low ? 4 : 7);
-  parts.push({ g: S(1), m: T(0, 0.52, 0, 0, 0, 0, 0.3, 0.33, 0.54), part: 0 });
+  body.push({ g: S(1), m: T(0, 0.52, 0, 0, 0, 0, 0.3, 0.33, 0.54), part: 0 });
   for (let i = 0; i < 6; i++) {
     const z = -0.38 + i * 0.15;
-    parts.push({ g: S(0.17), m: T(i % 2 ? 0.1 : -0.1, 0.62, z), part: 0 });
+    body.push({ g: S(0.17), m: T(i % 2 ? 0.1 : -0.1, 0.62, z), part: 0 });
   }
-  parts.push({ g: S(0.075), m: T(0, 0.55, -0.56), part: 0 });
+  body.push({ g: S(0.075), m: T(0, 0.55, -0.56), part: 0 });
   for (const [x, z] of [[0.12, 0.3], [-0.12, 0.3], [0.12, -0.3], [-0.12, -0.3]]) {
-    parts.push({ g: new CylinderGeometry(0.035, 0.028, 0.36, 5), m: T(x, 0.18, z), part: 1 });
+    body.push({ g: new CylinderGeometry(0.035, 0.028, 0.36, 5), m: T(x, 0.18, z), part: 1 });
   }
-  parts.push({ g: S(0.13), m: T(0, 0.66, 0.56, 0, 0, 0, 1, 1, 1.15), part: 1 });
-  parts.push({ g: S(0.055), m: T(0, 0.6, 0.69), part: 1 });
-  parts.push({ g: S(0.07), m: T(0.13, 0.74, 0.5, 0, 0, 0.6, 1.5, 0.45, 0.6), part: 1 });
-  parts.push({ g: S(0.07), m: T(-0.13, 0.74, 0.5, 0, 0, -0.6, 1.5, 0.45, 0.6), part: 1 });
-  return mergeParts(parts, true);
+  head.push({ g: S(0.13), m: T(0, 0.66, 0.56, 0, 0, 0, 1, 1, 1.15), part: 1 });
+  head.push({ g: S(0.055), m: T(0, 0.6, 0.69), part: 1 });
+  head.push({ g: S(0.07), m: T(0.13, 0.74, 0.5, 0, 0, 0.6, 1.5, 0.45, 0.6), part: 1 });
+  head.push({ g: S(0.07), m: T(-0.13, 0.74, 0.5, 0, 0, -0.6, 1.5, 0.45, 0.6), part: 1 });
+  const list = piece === 'all' ? [...body, ...head] : piece === 'body' ? body : head;
+  return mergeParts(list, true);
 }
 
-export function cattleGeo(low = false): BufferGeometry {
-  const parts: Part[] = [];
+export function cattleGeo(low = false, piece: Piece = 'all'): BufferGeometry {
+  const body: Part[] = [];
+  const head: Part[] = [];
   const S = (r: number) => new SphereGeometry(r, low ? 6 : 9, low ? 4 : 7);
-  parts.push({ g: S(1), m: T(0, 1.02, 0, 0, 0, 0, 0.42, 0.5, 1.0), part: 0 });
-  parts.push({ g: S(0.3), m: T(0, 1.12, 0.85, 0, 0, 0, 0.9, 0.95, 1.2), part: 1 });
+  body.push({ g: S(1), m: T(0, 1.02, 0, 0, 0, 0, 0.42, 0.5, 1.0), part: 0 });
+  head.push({ g: S(0.3), m: T(0, 1.12, 0.85, 0, 0, 0, 0.9, 0.95, 1.2), part: 1 });
   for (const [x, z] of [[0.2, 0.55], [-0.2, 0.55], [0.2, -0.55], [-0.2, -0.55]]) {
-    parts.push({ g: new CylinderGeometry(0.07, 0.055, 0.85, 5), m: T(x, 0.42, z), part: 1 });
+    body.push({ g: new CylinderGeometry(0.07, 0.055, 0.85, 5), m: T(x, 0.42, z), part: 1 });
   }
-  parts.push({ g: new ConeGeometry(0.045, 0.28, 5), m: T(0.17, 1.4, 0.82, 0, 0, -0.9), part: 1 });
-  parts.push({ g: new ConeGeometry(0.045, 0.28, 5), m: T(-0.17, 1.4, 0.82, 0, 0, 0.9), part: 1 });
-  parts.push({ g: new CylinderGeometry(0.03, 0.02, 0.6, 4), m: T(0, 1.0, -1.0, 0.4), part: 1 });
-  return mergeParts(parts, true);
+  head.push({ g: new ConeGeometry(0.045, 0.28, 5), m: T(0.17, 1.4, 0.82, 0, 0, -0.9), part: 1 });
+  head.push({ g: new ConeGeometry(0.045, 0.28, 5), m: T(-0.17, 1.4, 0.82, 0, 0, 0.9), part: 1 });
+  body.push({ g: new CylinderGeometry(0.03, 0.02, 0.6, 4), m: T(0, 1.0, -1.0, 0.4), part: 1 });
+  const list = piece === 'all' ? [...body, ...head] : piece === 'body' ? body : head;
+  return mergeParts(list, true);
 }
 
 // ---------------------------------------------------------------- 椰棗樹
@@ -227,6 +232,7 @@ export function palmTrunkGeo(h = 7, lean = 0.9): BufferGeometry {
 export function palmFrondsGeo(h = 7, lean = 0.9, seed = 3): BufferGeometry {
   const rnd = mulberry32(seed);
   const pos: number[] = [];
+  const sw: number[] = [];
   const idx: number[] = [];
   const n = 11;
   const seg = 6;
@@ -246,6 +252,7 @@ export function palmFrondsGeo(h = 7, lean = 0.9, seed = 3): BufferGeometry {
       const px = -dz * w;
       const pz = dx * w;
       pos.push(cx + px, cy, cz + pz, cx - px, cy, cz - pz);
+      sw.push(s, s);
     }
     for (let i = 0; i < seg; i++) {
       const a = base + i * 2;
@@ -254,6 +261,7 @@ export function palmFrondsGeo(h = 7, lean = 0.9, seed = 3): BufferGeometry {
   }
   const g = new BufferGeometry();
   g.setAttribute('position', new BufferAttribute(new Float32Array(pos), 3));
+  g.setAttribute('aS', new BufferAttribute(new Float32Array(sw), 1));
   g.setIndex(idx);
   g.computeVertexNormals();
   return g;

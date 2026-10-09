@@ -33,7 +33,15 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   // 開發用：lab 頁可強制指定鏡頭（px,py,pz,tx,ty,tz,fov,fitW）
   let camOverride: number[] | null = null;
   Object.defineProperty(canvas, '__jfCam', { configurable: true, value: (v: number[] | null) => { camOverride = v; dirty = true; } });
-  Object.defineProperty(canvas, '__jfInfo', { configurable: true, value: () => ({ triangles: renderer.info.render.triangles, calls: renderer.info.render.calls, geometries: renderer.info.memory.geometries }) });
+  // 開發用：每幀花的時間（毫秒，含 gl.finish，只在 __jfBench 開啟時量）。rAF 在 headless 被鎖在約 30，量不出餘裕，所以另外量這個。
+  let bench = false;
+  let benchMs = 0;
+  let gpuMs = -1;
+  const gl2 = renderer.getContext() as WebGL2RenderingContext;
+  const timerExt = gl2.getExtension('EXT_disjoint_timer_query_webgl2') as { TIME_ELAPSED_EXT: number; GPU_DISJOINT_EXT: number } | null;
+  const pendingQ: WebGLQuery[] = [];
+  Object.defineProperty(canvas, '__jfBench', { configurable: true, value: (on: boolean) => { bench = on; benchMs = 0; } });
+  Object.defineProperty(canvas, '__jfInfo', { configurable: true, value: () => ({ triangles: renderer.info.render.triangles, calls: renderer.info.render.calls, geometries: renderer.info.memory.geometries, frameMs: benchMs, gpuMs }) });
   renderer.setClearColor(0x15130f, 1);
 
   const pals = CHAPTER_IDS.map((id) => new PalVec(palettes[id] ?? palettes['passover'] ?? palettes['opening'] ?? DEFAULT_PAL));
@@ -201,6 +209,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     if (disposed) return;
     raf = requestAnimationFrame(frame);
     if (document.hidden) return;
+    const t0 = bench ? performance.now() : 0;
     const dt = clamp((now - last) / 1000, 0, 0.1);
     last = now;
     fr.dt = dt;
@@ -233,8 +242,9 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     sig[12] = story.count;
     sig[13] = story.wave.swings + (story.wave.done ? 10 : 0);
     sig[14] = story.month;
+    sig[15] = story.motionOff ? 1 : 0;
     let same = true;
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 16; i++) {
       if (sig[i] !== lastSig[i]) {
         same = false;
         lastSig[i] = sig[i];
@@ -247,18 +257,32 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     if (camOverride) for (let i = 0; i < 8; i++) tracks.cam[i] = camOverride[i];
     U.uDark.value = darkF;
     U.uTime.value = fr.time;
+    if (!fr.motionOff) U.uAnim.value += dt;
     const pk = paletteAt(fr.s);
     setLook(pals[pk.a], pals[pk.b], pk.k, darkF);
     world.updateScene(fr, tracks, W, H, hasPanel ? panelBox : null);
     world.updateObjects(fr);
     hyssop.update(dt, fr.s, fr.idx);
-    wave.update(dt, fr.s, fr.idx);
+    wave.update(dt, fr.s, fr.idx, fr.time, !fr.motionOff);
     updateDarkness(fr.s);
     wMat.uniforms.uWipe.value = wipeAmt(fr.s);
     wipe.visible = wMat.uniforms.uWipe.value > 0.002;
     gMat.uniforms.uJitter.value = fr.motionOff ? 0 : fr.time;
 
     // 主場景
+    let q: WebGLQuery | null = null;
+    if (bench && timerExt) {
+      while (pendingQ.length && gl2.getQueryParameter(pendingQ[0], gl2.QUERY_RESULT_AVAILABLE)) {
+        const old = pendingQ.shift()!;
+        if (!gl2.getParameter(timerExt.GPU_DISJOINT_EXT)) {
+          const ms = (gl2.getQueryParameter(old, gl2.QUERY_RESULT) as number) / 1e6;
+          gpuMs = gpuMs < 0 ? ms : gpuMs * 0.9 + ms * 0.1;
+        }
+        gl2.deleteQuery(old);
+      }
+      q = gl2.createQuery();
+      gl2.beginQuery(timerExt.TIME_ELAPSED_EXT, q);
+    }
     renderer.info.reset();
     renderer.setScissorTest(false);
     renderer.setViewport(0, 0, W, H);
@@ -270,7 +294,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     // meal 分格：同一個 renderer 以 scissor 畫在 DOM 矩形內
     if (hasPanel) {
       const dpr = bufW / W;
-      interior.update(fr.time, fr.motionOff, panelBox.w / panelBox.h);
+      interior.update(fr.time, fr.motionOff, panelBox.w / panelBox.h, clamp(fr.s - CUE_IDX['meal'], 0, 1));
       renderer.setViewport(panelBox.x, H - panelBox.y - panelBox.h, panelBox.w, panelBox.h);
       renderer.setScissor(panelBox.cx, H - panelBox.cy - panelBox.ch, panelBox.cw, panelBox.ch);
       renderer.setScissorTest(true);
@@ -286,6 +310,14 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     renderer.clearDepth();
     renderer.render(overlay, ortho);
 
+    if (q) {
+      gl2.endQuery(timerExt!.TIME_ELAPSED_EXT);
+      pendingQ.push(q);
+    }
+    if (bench) {
+      renderer.getContext().finish();
+      benchMs = benchMs === 0 ? performance.now() - t0 : benchMs * 0.9 + (performance.now() - t0) * 0.1;
+    }
     if (!readySent) {
       readySent = true;
       onEvent({ type: 'ready' });

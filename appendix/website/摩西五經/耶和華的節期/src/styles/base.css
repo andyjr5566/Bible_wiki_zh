@@ -181,14 +181,12 @@ figcaption {
   cursor: not-allowed;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .jf-btn,
-  .jf-btn:hover,
-  .jf-btn:active {
+html[data-motion='off'] .jf-btn,
+html[data-motion='off'] .jf-btn:hover,
+html[data-motion='off'] .jf-btn:active {
     transition: background-color 0.15s, color 0.15s;
   }
-  .jf-btn:hover,
-  .jf-btn:active {
+html[data-motion='off'] .jf-btn:hover,
+html[data-motion='off'] .jf-btn:active {
     transform: none;
   }
-}

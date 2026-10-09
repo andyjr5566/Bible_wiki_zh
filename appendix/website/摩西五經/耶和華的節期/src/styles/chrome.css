@@ -90,6 +90,14 @@
   }
 }
 
+.jf-motion[aria-pressed='true'] .jf-wv-off,
+.jf-motion[aria-pressed='false'] .jf-wv-on {
+  display: none;
+}
+.jf-motion[aria-pressed='false'] {
+  color: var(--jf-mute);
+}
+
 /* ---------- 月份導覽：桌機右側細直線 ---------- */
 .jf-months {
   position: fixed;
@@ -404,19 +412,35 @@
     gap: 6px;
   }
   .jf-brand {
-    font-size: 18px;
-    padding: 4px 10px 3px;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 4px 8px 3px;
     box-shadow: 2px 2px 0 var(--jf-ink);
   }
   .jf-bar {
-    gap: 8px;
+    gap: 6px;
   }
   .jf-btn {
-    padding: 0 12px;
+    padding: 0 9px;
+    gap: 6px;
+    white-space: nowrap;
   }
   .jf-sound {
     position: static;
-    padding: 0 12px 0 10px;
+    padding: 0 9px 0 8px;
+  }
+  /* 手機：動態鈕只留圖示，免得標題列塞不下 */
+  .jf-motion {
+    position: relative;
+    padding: 0 10px;
+  }
+  .jf-motion-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   /* 頂部細橫線 */
@@ -504,32 +528,30 @@
 }
 
 /* ---------- 減少動態 ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .jf-sound[aria-pressed='true'] .jf-eq-bar {
+html[data-motion='off'] .jf-sound[aria-pressed='true'] .jf-eq-bar {
     animation: none;
   }
-  .jf-sound[aria-pressed='true'] .jf-eq-1 {
+html[data-motion='off'] .jf-sound[aria-pressed='true'] .jf-eq-1 {
     transform: scaleY(0.55);
   }
-  .jf-sound[aria-pressed='true'] .jf-eq-2 {
+html[data-motion='off'] .jf-sound[aria-pressed='true'] .jf-eq-2 {
     transform: scaleY(1);
   }
-  .jf-sound[aria-pressed='true'] .jf-eq-3 {
+html[data-motion='off'] .jf-sound[aria-pressed='true'] .jf-eq-3 {
     transform: scaleY(0.75);
   }
-  .jf-sound[aria-pressed='true'] .jf-eq-4 {
+html[data-motion='off'] .jf-sound[aria-pressed='true'] .jf-eq-4 {
     transform: scaleY(0.45);
   }
-  .jf-ready.jf-at-top .jf-scrollcue svg {
+html[data-motion='off'].jf-ready.jf-at-top .jf-scrollcue svg {
     animation: none;
   }
-  .jf-coach[open] {
+html[data-motion='off'] .jf-coach[open] {
     animation: jf-fade 0.25s linear both;
   }
-  .jf-m-label {
+html[data-motion='off'] .jf-m-label {
     transition: background-color 0.15s, color 0.15s;
   }
-  .jf-m:hover .jf-m-label {
+html[data-motion='off'] .jf-m:hover .jf-m-label {
     transform: none;
   }
-}

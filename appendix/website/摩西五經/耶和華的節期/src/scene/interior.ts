@@ -1,6 +1,8 @@
 ﻿// meal 分格的室內：一家人站著吃，腰間束帶、手拿杖；桌上有餅和一盤菜。人物一律剪影。
-import { BoxGeometry, Group, Mesh, PerspectiveCamera, PlaneGeometry, Scene, SphereGeometry, Vector4 } from 'three';
-import { breadGeo, dishGeo, mergeParts, personGeo, T, tableGeo, type Part } from './geo';
+import { BoxGeometry, Mesh, PerspectiveCamera, PlaneGeometry, Scene, SphereGeometry, Vector4 } from 'three';
+import { breadGeo, dishGeo, mergeParts, T, tableGeo, type Part } from './geo';
+import { RigPerson, type RigOpts } from './rig';
+import { smooth, lerp } from './util';
 import { FIXED, glowMat, litMat, solid } from './materials';
 
 const RAD = Math.PI / 180;
@@ -15,7 +17,9 @@ export class Interior {
   scene = new Scene();
   camera = new PerspectiveCamera(40, 1, 0.1, 100);
   private pt = new Vector4(0.2, 2.3, -0.4, 1.7);
-  private people: Group[] = [];
+  private people: RigPerson[] = [];
+  private baseArm: [number, number][] = [];
+  private eatSide: ('L' | 'R')[] = [];
   private lamp: Mesh;
 
   constructor() {
@@ -61,19 +65,25 @@ export class Interior {
     this.scene.add(bread, bread2, dish, herb);
 
     // 全家人：站在桌後，面向鏡頭
-    const spec: Array<{ x: number; opts: Parameters<typeof personGeo>[0]; mat: ReturnType<typeof robe>; yaw: number }> = [
+    const spec: Array<{ x: number; opts: RigOpts; mat: ReturnType<typeof robe>; yaw: number }> = [
       { x: -1.35, opts: { staff: true, staffSide: 'R', belt: true, armL: [0.55, 0.1], armR: [0.4, 0.2] }, mat: robe('#a88758'), yaw: 0.25 },
       { x: -0.5, opts: { belt: true, armL: [0.7, 0.1], armR: [0.5, 0.12], scale: 0.94 }, mat: robe('#cdbf9e'), yaw: 0.1 },
       { x: 0.55, opts: { belt: true, scale: 0.6, armL: [0.8, 0.12], armR: [0.4, 0.2] }, mat: robe('#b79a68'), yaw: -0.1 },
       { x: 1.3, opts: { staff: true, staffSide: 'L', belt: true, armL: [0.4, 0.2], armR: [0.6, 0.1], scale: 0.9 }, mat: robe('#8f7550'), yaw: -0.3 },
     ];
     spec.forEach((p, i) => {
-      const g = new Group();
-      g.add(solid(personGeo(p.opts), p.mat, 2.2));
-      g.position.set(p.x, 0, -1.35 + (i % 2) * 0.15);
-      g.rotation.y = p.yaw;
-      this.scene.add(g);
-      this.people.push(g);
+      const r = new RigPerson({ ...p.opts, seed: 90 + i }, p.mat);
+      r.group.position.set(p.x, 0, -1.35 + (i % 2) * 0.15);
+      r.group.rotation.y = p.yaw;
+      this.scene.add(r.group);
+      this.people.push(r);
+      const side: 'L' | 'R' = p.opts.staff && p.opts.staffSide === 'L' ? 'R' : 'L';
+      this.eatSide.push(side);
+      this.baseArm.push(side === 'L' ? [p.opts.armL?.[0] ?? 0.05, p.opts.armL?.[1] ?? 0.12] : [p.opts.armR?.[0] ?? 0.05, p.opts.armR?.[1] ?? 0.12]);
+      const b = new Mesh(breadGeo(), mBread);
+      b.scale.setScalar(0.8);
+      b.rotation.x = 0.3;
+      (side === 'L' ? r.handL : r.handR).add(b);
     });
 
     // 燈
@@ -95,10 +105,30 @@ export class Interior {
    * 依分格的寬高比取景：寬度要容納一家人（含手杖），高度要從地板到頭頂上方都在框裡。
    * 兩個限制取較遠者，所以很扁的橫框也不會切到頭。
    */
-  update(time: number, motionOff: boolean, aspect: number): void {
+  update(time: number, motionOff: boolean, aspect: number, p = 0): void {
     const t = motionOff ? 0 : time;
     this.pt.w = 1.7 * (1 + Math.sin(t * 7.3) * 0.035 + Math.sin(t * 3.1) * 0.03);
-    for (let k = 0; k < this.people.length; k++) this.people[k].rotation.x = Math.sin(t * 1.4 + k * 1.3) * 0.012;
+    // meal：輪流把餅舉到嘴邊；拿杖的手換握（隨捲動）
+    for (let k = 0; k < this.people.length; k++) {
+      const r = this.people[k];
+      const w0 = 0.08 + 0.2 * k;
+      const up = smooth(w0, w0 + 0.07, p) * (1 - smooth(w0 + 0.13, w0 + 0.2, p));
+      const side = this.eatSide[k];
+      const base = this.baseArm[k];
+      const bite = 0.04 * Math.sin(p * 90 + k) * up;
+      if (side === 'L') {
+        r.aim('L', -0.28, 0.5, 0.7);
+        r.swingL = lerp(base[0], r.swingL + bite, up);
+        r.splayL = lerp(base[1], r.splayL, up);
+      } else {
+        r.aim('R', 0.28, 0.5, 0.7);
+        r.swingR = lerp(base[0], r.swingR + bite, up);
+        r.splayR = lerp(base[1], r.splayR, up);
+      }
+      r.headPitch = 0.14 * up;
+      if (k === 0) r.staffMix = smooth(0.44, 0.58, p);
+      r.update(time, !motionOff);
+    }
     const cam = this.camera;
     const fov = 40;
     const tanH = Math.tan(fov * 0.5 * RAD);

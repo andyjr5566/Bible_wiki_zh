@@ -100,9 +100,56 @@
   max-height: calc(100vh - var(--jf-box-top) - 84px);
   max-height: calc(100svh - var(--jf-box-top) - 84px);
   margin-left: clamp(24px, 6vw, 96px);
-  padding: 22px 26px 20px;
+  padding: 0;
   pointer-events: auto;
   color: var(--jf-ink);
+}
+/* 內容放在 .jf-box-body：超過 max-height 時只有它捲動，框線與偏移墨塊（::before）留在原地 */
+.jf-box-body {
+  position: relative; /* 面板的 offsetTop 以它為準 */
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  padding: 22px 26px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--jf-ink) transparent;
+}
+.jf-box-body > * {
+  flex-shrink: 0;
+}
+/* 「往下看」：掛在框底邊線上，不蓋住文字 */
+.jf-box-hint {
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 12px 2px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  color: var(--jf-ink);
+  background: var(--jf-paper);
+  border: 2px solid var(--jf-ink);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.jf-box-hint[hidden] {
+  display: none;
+}
+.jf-box-hint::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 7px solid var(--jf-blood);
+  border-bottom: 0;
 }
 .jf-box[data-open] {
   z-index: 12;
@@ -263,8 +310,7 @@
 .jf-more {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto; /* 不被壓縮：內容照常高度，由說明框自己捲 */
   margin-top: 14px;
   border-top: 3px solid var(--jf-ink);
 }
@@ -311,15 +357,8 @@
   color: var(--jf-paper);
 }
 .jf-more-body {
-  flex: 1 1 auto;
-  min-height: 0;
-  max-height: 52vh;
-  max-height: 52svh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  flex: 0 0 auto;
   padding: 4px 8px 4px 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--jf-ink) transparent;
 }
 
 /* 四家怎麼說 */
@@ -869,6 +908,13 @@
     margin-left: 8px;
     padding: 16px 16px 14px;
   }
+  .jf-box-body {
+    padding: 0;
+    overflow: visible;
+  }
+  .jf-box-hint {
+    display: none;
+  }
   .jf-box::before,
   .jf-coach-card::before,
   .jf-plate::before {
@@ -914,7 +960,7 @@
     font-size: 13.5px;
   }
   /* 互動那一拍：收成小條，讓出畫面上要拖的牛膝草、盆和門框 */
-  html:not(.jf-no-scene) .jf-box[data-compact='true'] > :is(.jf-reason, .jf-text, .jf-verse, .jf-actions) {
+  html:not(.jf-no-scene) .jf-box[data-compact='true'] .jf-box-body > :is(.jf-reason, .jf-text, .jf-verse, .jf-actions) {
     display: none;
   }
   html:not(.jf-no-scene) .jf-box[data-compact='true'] .jf-hyssop,
@@ -1020,38 +1066,42 @@
     border-bottom: 2px solid var(--jf-line);
   }
   .jf-more-body {
+    flex: 1 1 auto;
+    min-height: 0;
     max-height: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--jf-ink) transparent;
     padding-top: 12px;
   }
 }
 
-/* ---------- 減少動態：說明框的進場位移改成淡入；面板淡入 ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .jf-js .jf-box {
+/* ---------- 動態關閉（html[data-motion="off"]）：說明框的進場位移改成淡入；面板淡入 ---------- */
+html[data-motion='off'].jf-js .jf-box {
     transform: none;
     transition: opacity 0.6s linear;
   }
-  .jf-badge.is-on {
+html[data-motion='off'] .jf-badge.is-on {
     animation: none;
   }
-  .jf-panel {
+html[data-motion='off'] .jf-panel {
     transform: none;
     transition: opacity 0.5s linear;
   }
-  .jf-more {
+html[data-motion='off'] .jf-more {
     animation: jf-fade 0.25s linear both !important;
   }
-  .jf-chip,
-  .jf-key-btn {
+html[data-motion='off'] .jf-chip,
+html[data-motion='off'] .jf-key-btn {
     transition: background-color 0.15s, color 0.15s;
   }
-  .jf-cell-sab {
+html[data-motion='off'] .jf-cell-sab {
     transition: none;
   }
-  .jf-chip:hover,
-  .jf-chip:active,
-  .jf-key-btn:hover,
-  .jf-key-btn:active {
+html[data-motion='off'] .jf-chip:hover,
+html[data-motion='off'] .jf-chip:active,
+html[data-motion='off'] .jf-key-btn:hover,
+html[data-motion='off'] .jf-key-btn:active {
     transform: none;
   }
-}

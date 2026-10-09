@@ -5,6 +5,7 @@
 import { SITE } from '../data/site';
 import type { AudioController } from '../audio/audio';
 import { h, s } from './dom';
+import { readMotion, setMotion } from './motion';
 
 function eqIcon(): SVGElement {
   const bar = (x: number, i: number) => s('rect', { x, y: 2, width: 3, height: 16, rx: 1.5, class: `jf-eq-bar jf-eq-${i}` });
@@ -12,10 +13,24 @@ function eqIcon(): SVGElement {
     bar(2, 1), bar(7.5, 2), bar(13, 3), bar(18.5, 4));
 }
 
+/** 開：一條小波浪；關：一條直線 */
+function motionIcon(): SVGElement {
+  return s('svg', { class: 'jf-wv', viewBox: '0 0 26 14', width: 26, height: 14, 'aria-hidden': 'true', focusable: 'false' },
+    s('path', { class: 'jf-wv-on', d: 'M1.5 7 C5 -0.5 8.5 -0.5 13 7 S21 14.5 24.5 7', fill: 'none', stroke: 'currentColor', 'stroke-width': 2.6, 'stroke-linecap': 'round' }),
+    s('path', { class: 'jf-wv-off', d: 'M1.5 7 H24.5', fill: 'none', stroke: 'currentColor', 'stroke-width': 2.6, 'stroke-linecap': 'round' }));
+}
+
 export function createChrome(host: HTMLElement, audio: AudioController, openCoach: () => void): void {
   const sound = h('button', { type: 'button', class: 'jf-btn jf-sound', 'aria-pressed': 'false' }, eqIcon(), h('span', null, '聲音'));
   sound.addEventListener('click', () => audio.setEnabled(!audio.enabled));
   audio.onChange((on) => sound.setAttribute('aria-pressed', on ? 'true' : 'false'));
+
+  const motion = h('button', { type: 'button', class: 'jf-btn jf-motion', 'aria-pressed': readMotion() ? 'true' : 'false', title: '動態' }, motionIcon(), h('span', { class: 'jf-motion-label' }, '動態'));
+  motion.addEventListener('click', () => {
+    const on = motion.getAttribute('aria-pressed') !== 'true';
+    motion.setAttribute('aria-pressed', on ? 'true' : 'false');
+    setMotion(on);
+  });
 
   const help = h('button', { type: 'button', class: 'jf-btn jf-help', onclick: openCoach }, '怎麼讀');
 
@@ -24,7 +39,7 @@ export function createChrome(host: HTMLElement, audio: AudioController, openCoac
     h('div', { class: 'jf-topbg', 'aria-hidden': 'true' }),
     h('header', { class: 'jf-top' },
       h('p', { class: 'jf-brand' }, SITE.title),
-      h('div', { class: 'jf-bar' }, sound, help)),
+      h('div', { class: 'jf-bar' }, sound, motion, help)),
     h('p', { class: 'jf-scrollcue', 'aria-hidden': 'true' },
       h('span', null, '往下捲'),
       s('svg', { viewBox: '0 0 16 22', width: 16, height: 22, 'aria-hidden': 'true' },

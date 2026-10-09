@@ -12,6 +12,8 @@ export const CUES = [
 export const CUE_IDX: Record<string, number> = {};
 CUES.forEach((c, i) => (CUE_IDX[c] = i));
 export const N_CUES = CUES.length;
+/** 在某個 cue 裡的進度 0..1（還沒到＝0，已經過＝1） */
+export const lp = (s: number, name: string): number => Math.min(1, Math.max(0, s - CUE_IDX[name]));
 /** cue 名＋進度 → s */
 export const c = (name: string, p = 0): number => CUE_IDX[name] + p;
 export const HYSSOP_IDX = CUE_IDX['hyssop'];
@@ -83,10 +85,10 @@ const POSES: Record<string, PosePair> = {
   // 無酵節：疏割野地 → 家中
   bake: [[SX + 0.7, 1.05, 4.0, SX + 0.2, 0.3, 0, 42, 0], [SX + 0.55, 1.0, 3.7, SX + 0.15, 0.3, 0, 42, 0]],
   'seven-days': [[SX + 0.2, 1.3, 5, SX + 1, 3.0, -20, 60, 0], [SX + 0.2, 1.3, 5, SX + 2, 9.0, -20, 62, 0]],
-  'no-leaven': [[OX - 8.1, 1.5, 5.0, OX - 8.1, 1.45, -2.2, 40, 0], [OX - 8.1, 1.5, 4.5, OX - 8.1, 1.45, -2.2, 40, 0]],
+  'no-leaven': [[OX - 8.5, 1.5, 1.6, OX - 8.5, 1.45, -4.4, 40, 0], [OX - 8.3, 1.5, 1.1, OX - 8.3, 1.45, -4.4, 40, 0]],
   remember: [[OX + 1.7, 1.3, 8.5, OX + 1.7, 1.0, 2.6, 38, 0], [OX + 1.7, 1.3, 7.8, OX + 1.7, 1.0, 2.6, 38, 0]],
   // 初熟的禾捆
-  'barley-ripe': [[BX + 0.7, 1.25, 4.8, BX + 0.2, 0.75, -0.3, 42, 0], [BX + 0.5, 1.15, 4.3, BX + 0.2, 0.75, -0.3, 42, 0]],
+  'barley-ripe': [[BX + 1.4, 1.25, 4.8, BX + 0.9, 0.75, -0.3, 42, 0], [BX - 0.3, 1.15, 4.3, BX - 0.9, 0.75, -0.3, 42, 0]],
   wave: [[BX + 9.2, 1.45, 5.7, BX + 9.2, 1.5, -1, 40, 0], [BX + 9.2, 1.45, 5.7, BX + 9.2, 1.5, -1, 40, 0]],
   'lamb-offering': [[BX + 17.4, 0.9, 4.4, BX + 17, 0.55, 0.6, 38, 0], [BX + 17.2, 0.9, 4.0, BX + 17, 0.55, 0.6, 38, 0]],
   'not-yet': [[BX + 25.7, 1.2, 6.4, BX + 25.4, 0.6, 0.5, 40, 0], [BX + 25.5, 1.2, 6.0, BX + 25.4, 0.6, 0.5, 40, 0]],
@@ -108,8 +110,10 @@ const MOBILE_POSES: Record<string, PosePair> = {
   'day-14': [[-0.3, 1.5, 18, 0, 1.4, 0, 46, 0], [-0.3, 1.5, 16.5, 0, 1.4, 0, 46, 0]],
   wailing: [[50, 2.9, -1, 45.5, 3.8, -23, 52, 0], [49, 2.8, -4, 45.2, 3.9, -23, 50, 0]],
   depart: [[7, 2.0, 20, -1, 1.2, 7, 46, 0], [-3, 2.0, 20, -11, 1.2, 7, 46, 0]],
+  // 拾穗的人走在 x=52–55 之間，鏡頭對準那一帶
+  corners: [[WX + 54.2, 1.5, 6.4, WX + 54.2, 0.8, -3, 44, 0], [WX + 54.2, 1.45, 6.0, WX + 54.2, 0.8, -3, 44, 0]],
   // 疏割的夜空：仰角大一點，月亮在上半、營火在中段
-  'seven-days': [[SX + 0.2, 1.3, 5, SX + 1, 4.5, -20, 62, 0], [SX + 0.2, 1.3, 5, SX + 2, 7.0, -20, 62, 0]],
+  'seven-days': [[SX + 0.2, 1.3, 5, SX + 1, 3.4, -20, 62, 0], [SX + 0.2, 1.3, 5, SX + 2, 5.4, -20, 62, 0]],
   // 西乃：手機看到的是營地的一段與月亮
   sinai: [[NX - 4, 4.2, 13, NX - 6, 2.4, -40, 58, 0], [NX - 4.5, 3.6, 10, NX - 6, 2.6, -40, 58, 0]],
 };
@@ -160,6 +164,79 @@ function buildCam(mobile: boolean): Key[] {
 }
 const CAM = buildCam(false);
 const CAM_M = buildCam(true);
+
+// ---------------------------------------------------------------- D. 運鏡加強
+// 每個 cue 一種明確的運鏡，疊在上面的基礎鏡頭上：[拉遠比例, 繞目標轉的角度(度), 升降(公尺)]。
+// 值都是「cue 開始時」的數字，cue 結束時等於下一個 cue 的開始值（連續）；下一個 cue 要抹除轉場的，另外在 XEND 給結束值。
+type X3 = [number, number, number];
+const XS: Record<string, X3> = {
+  title: [0.16, -12, 0.4], // 推近＋繞行
+  'new-moon': [0, 0, 0], // 緩升（月亮在沉）
+  month: [-0.05, 8, 0.5],
+  'day-10': [0, 0, 0],
+  'day-14': [-0.04, -10, 0.1],
+  'dusk-street': [0.08, 6, 0.15],
+  hyssop: [0, 0, 0],
+  'door-shut': [0, 0, 0],
+  meal: [-0.06, 8, 0.1],
+  midnight: [0, 0, 0],
+  wailing: [0.06, -8, 0.2],
+  depart: [-0.1, 10, 0],
+  vigil: [0, -6, 0.4],
+  children: [0.14, 10, 0.05],
+  bake: [0.12, -12, 0.15],
+  'seven-days': [0, 6, 0.2],
+  'no-leaven': [0.12, 0, 0],
+  remember: [-0.06, -6, 0.05],
+  'barley-ripe': [0.1, 12, 0.1],
+  wave: [0, 0, 0],
+  'lamb-offering': [-0.02, -3, 0],
+  'not-yet': [0.12, 12, 0.15],
+  sinai: [0.1, -12, 0.4],
+  unclean: [-0.05, 6, 0],
+  wait: [0.05, -8, 0],
+  'second-month': [0.1, 10, 0.1],
+  count: [0.1, -10, 0.2],
+  'two-loaves': [-0.08, 6, 0],
+  'weeks-offerings': [0.06, -6, 0.2],
+  rejoice: [-0.1, 8, 0.1],
+  corners: [0.08, -8, 0.2],
+};
+const XEND: Record<string, X3> = {
+  vigil: [0.06, -14, 0.5],
+  children: [-0.06, -8, 0.1],
+  'seven-days': [0.08, -6, 0.5],
+  remember: [-0.08, -10, 0.2],
+  'not-yet': [-0.05, -6, 0.4],
+  'second-month': [-0.06, -8, 0.2],
+  corners: [-0.06, 10, 0.4],
+};
+function buildExtra(): Key[] {
+  const out: Key[] = [];
+  CUES.forEach((name, i) => {
+    const st = XS[name] ?? [0, 0, 0];
+    out.push({ s: i === 0 ? 0 : isCut(i) ? CUT_BY_IDX[i] + 0.03 : i, v: st, e: 1 });
+    if (i === N_CUES - 1) out.push({ s: N_CUES, v: XEND[name] ?? st, e: 1 });
+    else if (isCut(i + 1)) out.push({ s: CUT_BY_IDX[i + 1] - 0.03, v: XEND[name] ?? st, e: 1 });
+  });
+  return out;
+}
+const EXTRA = buildExtra();
+const _xt = [0, 0, 0];
+const RADIAN = Math.PI / 180;
+function applyExtra(s: number, c: number[]): void {
+  sampleKeys(EXTRA, s, _xt);
+  const k = 1 + _xt[0];
+  const om = _xt[1] * RADIAN;
+  const co = Math.cos(om);
+  const so = Math.sin(om);
+  const dx = c[0] - c[3];
+  const dy = c[1] - c[4];
+  const dz = c[2] - c[5];
+  c[0] = c[3] + (dx * co + dz * so) * k;
+  c[2] = c[5] + (-dx * so + dz * co) * k;
+  c[1] = c[4] + dy * k + _xt[2];
+}
 
 /** 每個 cue 一個定值的軌道：進入新 cue 時平順換值 */
 function perCue(vals: Record<string, number[]>, dflt: number[]): Key[] {
@@ -220,7 +297,7 @@ const UP = perCue(
     vigil: [0.2],
     children: [0.2],
     bake: [0.17],
-    'seven-days': [0.15],
+    'seven-days': [0.22],
     'no-leaven': [0.17],
     remember: [0.17],
     'barley-ripe': [0.17],
@@ -232,10 +309,10 @@ const UP = perCue(
     wait: [0.15],
     'second-month': [0.17],
     count: [0.15],
-    'two-loaves': [0.17],
-    'weeks-offerings': [0.17],
-    rejoice: [0.17],
-    corners: [0.17],
+    'two-loaves': [0.2],
+    'weeks-offerings': [0.28],
+    rejoice: [0.26],
+    corners: [0.26],
   },
   [0.15],
 );
@@ -255,8 +332,9 @@ export function dxShiftAt(s: number): number {
 const MOON_S: Key[] = [
   { s: 0, v: [1, 0.46, 0.3], e: 1 },
   { s: c('new-moon', 0.3), v: [1, 0.62, 0.3], e: 1 },
-  { s: c('new-moon', 1), v: [1, 0.62, 0.3], e: 1 },
-  { s: c('month'), v: [1, 0.46, 0.3], e: 1 },
+  { s: c('new-moon', 0.85), v: [1, 0.62, 0.38], e: 1 },
+  { s: c('month', 0.02), v: [1, 0.46, 0.38], e: 1 },
+  { s: c('month', 0.4), v: [1, 0.46, 0.3], e: 1 },
   { s: c('month', 1), v: [1, 0.46, 0.3], e: 1 },
   { s: c('day-10', 0.5), v: [1, 0.46, 0.27], e: 1 },
   { s: c('day-14', 0.6), v: [1, 0.42, 0.25], e: 1 },
@@ -282,9 +360,10 @@ const MOON_S: Key[] = [
 // 月亮：[方位角(從 -z 轉向 +x，弧度), 仰角(度), 視直徑(度)]
 const MOON: Key[] = [
   { s: 0, v: [0.32, 9, 8.5], e: 1 },
-  { s: c('new-moon', 0.3), v: [0.17, 16, 11], e: 1 },
-  { s: c('new-moon', 1), v: [0.16, 16, 11], e: 1 },
-  { s: c('month'), v: [0.26, 15, 9.5], e: 1 },
+  { s: c('new-moon', 0.3), v: [0.17, 17, 11], e: 1 },
+  { s: c('new-moon', 0.97), v: [0.16, 8, 11], e: 1 },
+  { s: c('month', 0.03), v: [0.26, 9, 9.5], e: 1 },
+  { s: c('month', 0.9), v: [0.23, 17, 10.5], e: 1 },
   { s: c('day-10'), v: [0.2, 22, 11.5], e: 1 },
   { s: c('day-14'), v: [0.1, 27, 14], e: 1 },
   { s: c('dusk-street'), v: [0.55, 29, 11], e: 1 },
@@ -342,7 +421,7 @@ const DAYSKY = [0, 0, 1, 0];
 const SKYK: Key[] = [
   { s: 0, v: [0.06, 1, 0, 0], e: 1 },
   { s: c('new-moon', 0.2), v: [0.38, 0.75, 0, 0.55], e: 1 },
-  { s: c('new-moon', 1), v: [0.34, 0.8, 0, 0.55], e: 1 },
+  { s: c('new-moon', 0.99), v: [0.34, 0.8, 0, 0.55], e: 1 },
   { s: c('month', 0.4), v: [0.12, 1, 0, 0], e: 1 },
   { s: c('day-10', 1), v: [0.3, 0.9, 0, 0], e: 1 },
   { s: c('day-14', 0.9), v: [0.92, 0.35, 0, 0], e: 0 },
@@ -381,6 +460,7 @@ export function createTrackOut(): TrackOut {
 
 export function sampleTracks(s: number, out: TrackOut, mobile = false): void {
   sampleKeys(mobile ? CAM_M : CAM, s, out.cam);
+  applyExtra(s, out.cam);
   sampleKeys(MOON_S, s, out.moonS);
   sampleKeys(MOON, s, out.moon);
   sampleKeys(LIGHT, s, out.light);
@@ -425,7 +505,7 @@ export const midnightP = (s: number): number => clamp(s - c('midnight'), 0, 1);
 export const inMidnight = (s: number): boolean => s >= c('midnight') && s < c('midnight') + 1.02;
 
 /** 埃及城的窗：從 wailing 起一扇一扇熄燈（回傳門檻；亮燈 = 窗的隨機值 ≥ 門檻） */
-export const windowOff = (s: number): number => smooth(c('wailing', 0.12), c('wailing', 0.92), s) * 1.02;
+export const windowOff = (s: number): number => smooth(c('midnight', 0.3), c('wailing', 0.35), s) * 1.02;
 /** 火炬熄滅 */
 export const torchOn = (s: number): number => 1 - smooth(c('wailing', 0.55), c('wailing', 0.9), s);
 

@@ -5,6 +5,7 @@
  */
 import type { Beat, StoryChapter } from '../data/types';
 import { SITE } from '../data/site';
+import { story } from '../story/state';
 import { h } from './dom';
 import type { BakeUI } from './bake';
 import type { CountUI } from './count';
@@ -67,7 +68,7 @@ type Kind = 'notes' | 'words';
 const KIND_LABEL: Record<Kind, string> = { notes: '四家怎麼說', words: '原文' };
 
 /** 目前展開中的面板（全頁同時只開一個） */
-let openRef: { close(returnFocus: boolean): void } | null = null;
+let openRef: { close(returnFocus: boolean, keepTop?: boolean): void } | null = null;
 
 export function closeOpenPanel(returnFocus = false): void {
   openRef?.close(returnFocus);
@@ -121,12 +122,16 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
 
   const boxId = `jf-box-${chapter.id}-${beat.id}`;
   const box = h('article', { class: 'jf-box', id: boxId, 'data-compact': beat.interaction ? 'true' : null, 'data-offers': beat.offerings?.length ?? null });
-  if (beat.reason) box.append(h('p', { class: 'jf-reason' }, '經文自己說的理由'));
-  box.append(h('p', { class: 'jf-text' }, richText(beat.text)));
+  // 說明框的內容放進 .jf-box-body：桌機超過 max-height 時只有它捲動，框線與偏移墨塊（::before）不動
+  const body = h('div', { class: 'jf-box-body' });
+  const hint = h('span', { class: 'jf-box-hint', 'aria-hidden': 'true', hidden: true }, '往下看');
+  box.append(body, hint);
+  if (beat.reason) body.append(h('p', { class: 'jf-reason' }, '經文自己說的理由'));
+  body.append(h('p', { class: 'jf-text' }, richText(beat.text)));
 
   const block = beat.verse ? SITE.verses[beat.verse] : undefined;
   if (block) {
-    box.append(
+    body.append(
       h('figure', { class: 'jf-verse' },
         h('figcaption', { class: 'jf-verse-ref' }, block.ref),
         h('blockquote', { class: 'jf-verse-text' }, verseNodes(block))),
@@ -134,13 +139,13 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   }
 
   const offers = offeringList(beat.offerings, beat.offeringsLabel);
-  if (offers) box.append(offers);
+  if (offers) body.append(offers);
 
   if (beat.prompt) {
-    if (beat.interaction === 'hyssop') box.append(ui.hyssop.controls(beat.prompt));
-    else if (beat.interaction === 'bake') box.append(ui.bake.controls(beat.prompt));
-    else if (beat.interaction === 'wave') box.append(ui.wave.controls(beat.prompt));
-    else if (beat.interaction === 'count') box.append(ui.count.controls(beat.prompt));
+    if (beat.interaction === 'hyssop') body.append(ui.hyssop.controls(beat.prompt));
+    else if (beat.interaction === 'bake') body.append(ui.bake.controls(beat.prompt));
+    else if (beat.interaction === 'wave') body.append(ui.wave.controls(beat.prompt));
+    else if (beat.interaction === 'count') body.append(ui.count.controls(beat.prompt));
   }
 
   // ---- 就地展開 ----
@@ -148,12 +153,14 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   const hasWords = !!beat.words?.length;
   const parts: Partial<Record<Kind, { chip: HTMLButtonElement; more: HTMLElement; closeBtn: HTMLButtonElement }>> = {};
   let current: Kind | null = null;
+  const mobileQ = window.matchMedia('(max-width: 720px)');
 
   const handle = {
-    close(returnFocus: boolean) {
+    close(returnFocus: boolean, keepTop = false) {
       const k = current;
       setOpen(null);
-      if (returnFocus && k) parts[k]?.chip.focus();
+      // 用滑鼠或觸控收起時，框的捲動位置要停在頂端（focus 預設會把按鈕捲進來），鍵盤操作才讓焦點按鈕可見
+      if (returnFocus && k) parts[k]?.chip.focus({ preventScroll: keepTop });
     },
   };
 
@@ -169,14 +176,28 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     box.dataset.open = kind ?? '';
     if (kind) openRef = handle;
     else if (openRef === handle) openRef = null;
+    // 桌機：展開後把面板標題捲進框內（只捲框自己，不用 scrollIntoView，免得整頁跟著動）；收起就回到頂端
+    if (!mobileQ.matches) {
+      const target = kind ? parts[kind]?.more : null;
+      const top = target ? Math.max(0, target.offsetTop - 10) : 0;
+      body.scrollTo({ top, behavior: kind && !story.motionOff ? 'smooth' : 'auto' });
+    }
+    updateHint();
   }
 
-  function addPart(kind: Kind, body: HTMLElement) {
+  /** 框內還能往下捲時，框底掛一個「往下看」小標籤（掛在邊線上，不蓋住文字） */
+  function updateHint() {
+    const more = body.scrollHeight - body.clientHeight > 4 && body.scrollTop + body.clientHeight < body.scrollHeight - 4;
+    hint.hidden = mobileQ.matches || !more;
+  }
+  body.addEventListener('scroll', updateHint, { passive: true });
+
+  function addPart(kind: Kind, content: HTMLElement) {
     const moreId = `${boxId}-${kind}`;
-    const closeBtn = h('button', { type: 'button', class: 'jf-more-x', 'aria-label': `關閉「${KIND_LABEL[kind]}」`, onclick: () => handle.close(true) }, '關閉');
+    const closeBtn = h('button', { type: 'button', class: 'jf-more-x', 'aria-label': `關閉「${KIND_LABEL[kind]}」`, onclick: (e: MouseEvent) => handle.close(true, e.detail > 0) }, '關閉');
     const more = h('div', { class: 'jf-more', id: moreId, role: 'region', 'aria-label': KIND_LABEL[kind], hidden: true },
       h('div', { class: 'jf-more-head' }, h('span', { class: 'jf-more-title' }, KIND_LABEL[kind]), closeBtn),
-      h('div', { class: 'jf-more-body' }, body));
+      h('div', { class: 'jf-more-body' }, content));
     const chip = h('button', {
       type: 'button',
       class: 'jf-chip',
@@ -189,7 +210,7 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
           closeOpenPanel(false);
           setOpen(kind);
           // 手機的面板蓋在說明框上方：把焦點帶進去，讀報讀器的人才知道面板開了
-          if (window.matchMedia('(max-width: 720px)').matches) closeBtn.focus({ preventScroll: true });
+          if (mobileQ.matches) closeBtn.focus({ preventScroll: true });
         }
       },
     }, KIND_LABEL[kind]);
@@ -200,8 +221,8 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   if (hasWords) addPart('words', wordsPanelBody(beat.words!));
 
   if (parts.notes || parts.words) {
-    box.append(h('div', { class: 'jf-actions' }, parts.notes?.chip, parts.words?.chip));
-    for (const k of ['notes', 'words'] as Kind[]) if (parts[k]) box.append(parts[k]!.more);
+    body.append(h('div', { class: 'jf-actions' }, parts.notes?.chip, parts.words?.chip));
+    for (const k of ['notes', 'words'] as Kind[]) if (parts[k]) body.append(parts[k]!.more);
   }
 
   // 說明框的 sticky 範圍限在 .jf-pin 裡，所以開場大標題、章標題那一段不會被說明框蓋住
@@ -210,6 +231,11 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   const panel = beat.cue === 'meal'
     ? h('div', { class: 'jf-panel', 'data-jf-panel': 'meal', 'aria-hidden': 'true', hidden: true })
     : undefined;
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(updateHint);
+    ro.observe(body);
+    for (const c of Array.from(body.children)) ro.observe(c);
+  }
   el.append(h('div', { class: 'jf-pin' }, panel, box));
   return {
     chapter,

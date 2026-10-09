@@ -18,6 +18,7 @@ import { h } from './ui/dom';
 import { buildCredits, buildEndings } from './ui/ending';
 import { createHeadFade } from './ui/headfade';
 import { createHyssopUI } from './ui/hyssop';
+import { initMotion } from './ui/motion';
 import { createNav } from './ui/nav';
 import { createWaveUI } from './ui/wave';
 import { createStage, type Stage } from './ui/stage';
@@ -30,6 +31,7 @@ function boot() {
   const loading = document.getElementById('jf-loading');
 
   bindPreferences();
+  initMotion();
 
   // ---- 版面：每一拍一個 section ----
   const hyssop = createHyssopUI(canvas, app);

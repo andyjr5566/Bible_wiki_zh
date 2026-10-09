@@ -1,13 +1,21 @@
-// 日後的屋子（OX）：no-leaven 的室內（剖開的鄰屋，擦乾淨倒扣的摶麵盆）與 remember 的桌邊（父親坐著、孩子在旁、桌上薄餅）。
+// 日後的屋子（OX）：no-leaven 的室內（剖開的鄰屋，一個人把空摶麵盆擦過一遍、翻過來倒扣）與 remember 的桌邊（父親坐著說話、孩子點頭）。
 // 加進 world.day 這個 Group（原點在 OX）。
 import { BoxGeometry, CylinderGeometry, DoubleSide, Group, Mesh, PlaneGeometry } from 'three';
-import { basinGeo, mergeParts, personGeo, tableGeo, T, type Part } from './geo';
+import { basinGeo, mergeParts, tableGeo, T, type Part } from './geo';
 import { flatBreadGeo, shelfGeo } from './geo2';
 import { FIXED, glowMat, litMat, solid } from './materials';
-import { CUT } from './tracks';
+import { CUT, lp } from './tracks';
 import { robeMat } from './props';
+import { RigPerson } from './rig';
+import { lerp, smooth } from './util';
 
 const box = (w: number, h: number, d: number, x = 0, y = 0, z = 0): Part => ({ g: new BoxGeometry(w, h, d), m: T(x, y, z) });
+
+const D = 4.6;
+const SHELF_X = -1.5;
+const BOWL_Y = 1.335;
+const PX = -0.3;
+const PZ = -3.85;
 
 export class Home {
   group = new Group();
@@ -15,6 +23,12 @@ export class Home {
   kitchen = new Group();
   /** remember 的桌邊 */
   table = new Group();
+  private bowlG = new Group();
+  private cook!: RigPerson;
+  private cloth!: Mesh;
+  private father!: RigPerson;
+  private child!: RigPerson;
+  private people: RigPerson[] = [];
 
   constructor() {
     this.buildKitchen();
@@ -31,7 +45,6 @@ export class Home {
     const mFloor = litMat({ base: '#8a6a45', angle: 4, angle2: 4, space: 5, seed: 32 });
     const mWood = litMat({ base: '#6e5433', angle: 74, angle2: 10, space: 4.4, seed: 33 });
     const W = 6;
-    const D = 4.6;
     const H = 2.9;
     // 牆、地、頂
     k.add(solid(mergeParts([box(W + 0.6, H, 0.3, 0, H / 2, -D - 0.15), box(0.3, H, D, -W / 2 - 0.15, H / 2, -D / 2), box(0.3, H, D, W / 2 + 0.15, H / 2, -D / 2), box(W + 0.9, 0.24, D + 0.3, 0, H + 0.12, -D / 2)]), mWall, 2.6));
@@ -58,27 +71,37 @@ export class Home {
     pool.renderOrder = 4;
     k.add(pool);
 
-    // 架板與倒扣的摶麵盆（擦乾淨了）
+    // 架板與摶麵盆（擦乾淨後倒扣）
     const shelf = solid(shelfGeo(2.1), mWood, 2.0);
-    shelf.position.set(-0.7, 1.3, -D + 0.22);
+    shelf.position.set(SHELF_X, 1.3, -D + 0.22);
     k.add(shelf);
     const bs = basinGeo();
     const mBowl = litMat({ base: '#7b5a39', angle: 20, space: 4.4, seed: 13 });
     const bowl = solid(bs.bowl, mBowl, 2.2);
     bowl.scale.setScalar(1.5);
-    bowl.rotation.x = Math.PI;
-    bowl.position.set(-0.7, 1.335 + 0.3 * 1.5, -D + 0.22);
-    k.add(bowl);
+    bowl.position.y = -0.225;
+    this.bowlG.add(bowl);
+    this.bowlG.position.set(SHELF_X, BOWL_Y + 0.225, -D + 0.22);
+    k.add(this.bowlG);
     // 釘子上掛著擦盆的布
     const peg = new Mesh(new CylinderGeometry(0.03, 0.03, 0.2, 5), mWood);
     peg.rotation.x = Math.PI / 2;
-    peg.position.set(0.7, 1.6, -D + 0.12);
+    peg.position.set(0.9, 1.6, -D + 0.12);
     k.add(peg);
     const mCloth = litMat({ base: '#dcd2bb', angle: 10, space: 4.4, seed: 54, side: DoubleSide });
-    const cloth = solid(new BoxGeometry(0.3, 0.55, 0.025), mCloth, 1.5);
-    cloth.position.set(0.7, 1.3, -D + 0.17);
-    cloth.rotation.z = 0.04;
-    k.add(cloth);
+    const hang = solid(new BoxGeometry(0.3, 0.55, 0.025), mCloth, 1.5);
+    hang.position.set(0.9, 1.3, -D + 0.17);
+    hang.rotation.z = 0.04;
+    k.add(hang);
+
+    // 擦盆的人（背對鏡頭）：手裡握著布
+    this.cook = new RigPerson({ slim: true, belt: true, armL: [0.2, 0.1], armR: [0.1, 0.12], seed: 51 }, robeMat('#8f7550', 51));
+    this.cook.group.position.set(PX, 0, PZ);
+    this.cook.group.rotation.y = Math.PI;
+    k.add(this.cook.group);
+    this.cloth = new Mesh(new BoxGeometry(0.16, 0.025, 0.12), mCloth);
+    this.cook.handL.add(this.cloth);
+    this.people.push(this.cook);
   }
 
   private buildTable(): void {
@@ -101,18 +124,61 @@ export class Home {
     cush.position.set(0.55, 0.035, 2.65);
     t.add(cush);
     // 父親坐著，孩子站在桌的另一邊
-    const father = solid(personGeo({ sit: true, slim: true, belt: true, armL: [0.9, 0.14], armR: [0.7, 0.14] }), robeMat('#a88758', 17), 2.4);
-    father.position.set(0.55, 0.07, 2.65);
-    father.rotation.y = Math.PI / 2 - 0.1;
-    const child = solid(personGeo({ scale: 0.58, wrap: true, armL: [0.2, 0.2], armR: [0.95, 0.3] }), robeMat('#cdbf9e', 18, '#14110e', '#3a2e22'), 2.2);
-    child.position.set(2.85, 0, 2.75);
-    child.rotation.y = -Math.PI / 2 + 0.15;
-    t.add(father, child);
+    this.father = new RigPerson({ sit: true, slim: true, belt: true, armL: [0.9, 0.14], armR: [0.7, 0.14], seed: 61, outline: 2.4 }, robeMat('#a88758', 17));
+    this.father.group.position.set(0.55, 0.07, 2.65);
+    this.father.group.rotation.y = Math.PI / 2 - 0.1;
+    this.child = new RigPerson({ scale: 0.58, wrap: true, armL: [0.2, 0.2], armR: [0.95, 0.3], kid: true, seed: 62 }, robeMat('#cdbf9e', 18, '#14110e', '#3a2e22'));
+    this.child.group.position.set(2.85, 0, 2.75);
+    this.child.group.rotation.y = -Math.PI / 2 + 0.15;
+    t.add(this.father.group, this.child.group);
+    this.people.push(this.father, this.child);
   }
 
-  update(s: number): void {
+  update(s: number, t: number, mo: boolean): void {
     const inside = s >= CUT['no-leaven'];
     this.kitchen.visible = inside;
     this.table.visible = inside;
+    if (!inside) return;
+    // ---- no-leaven：擦過一遍，翻過來倒扣（隨捲動）
+    const p = lp(s, 'no-leaven');
+    const wipe = smooth(0.04, 0.12, p) * (1 - smooth(0.46, 0.52, p));
+    const flip = smooth(0.52, 0.8, p);
+    const ph = p * 15;
+    // 手的位置：碗口上方繞圈；翻盆時跟著碗的右緣
+    const lift = Math.sin(Math.PI * flip) * 0.35;
+    this.bowlG.rotation.x = Math.PI * flip;
+    this.bowlG.position.y = BOWL_Y + 0.225 + lift;
+    const rimX = SHELF_X + 0.45;
+    const fk = smooth(0.48, 0.56, p);
+    const hx = lerp(SHELF_X + Math.cos(ph) * 0.28, rimX, fk);
+    const hz = -D + 0.22 + Math.sin(ph) * 0.1 * wipe;
+    const hy = lerp(BOWL_Y + 0.75 + Math.sin(ph * 2) * 0.03, BOWL_Y + 0.25 + lift, fk);
+    // 人的左手（+x 邊）；人轉了 π，所以世界座標的 x、z 要取反
+    const sx = PX - 0.235;
+    const dx = hx - (sx + 0.0);
+    const dy = hy - 1.38;
+    const dz = hz - PZ;
+    this.cook.aim('L', -dx, dy, -dz);
+    // 手不在碗上時垂下
+    const useArm = smooth(0.0, 0.05, p) * (1 - smooth(0.88, 0.96, p));
+    if (useArm < 0.99) {
+      this.cook.swingL *= useArm;
+      this.cook.splayL = lerp(0.1, this.cook.splayL, useArm);
+    }
+    this.cloth.visible = p < 0.5;
+    this.cook.bow = 0.12 + 0.12 * Math.sin(ph) * wipe;
+    this.cook.twist = 0.1 * Math.sin(ph * 0.5) * wipe;
+    // ---- remember：父親說話時一隻手抬起比劃，孩子點頭
+    const pr = lp(s, 'remember');
+    const g1 = smooth(0.12, 0.22, pr) * (1 - smooth(0.4, 0.5, pr));
+    const g2 = smooth(0.58, 0.66, pr) * (1 - smooth(0.82, 0.9, pr));
+    const g = Math.max(g1, g2);
+    this.father.swingR = 0.7 + g * (0.9 + 0.2 * Math.sin(pr * 40));
+    this.father.splayR = 0.14 + g * 0.35;
+    this.father.headYaw = 0;
+    this.father.bow = 0.04 * g;
+    const nod = Math.max(0, Math.sin(pr * 30)) * (smooth(0.2, 0.3, pr) * (1 - smooth(0.5, 0.58, pr)) + smooth(0.62, 0.7, pr) * (1 - smooth(0.88, 0.95, pr)));
+    this.child.headPitch = 0.22 * nod;
+    for (const r of this.people) r.update(t, mo);
   }
 }

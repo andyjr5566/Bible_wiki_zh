@@ -307,7 +307,7 @@ export class HyssopCtl {
   }
 
   private strikeSpeed(): number {
-    return clamp(0.7 * Math.min(this.cssW, this.cssH), 320, 700);
+    return clamp(0.4 * Math.min(this.cssW, this.cssH), 150, 450);
   }
 
   private onUp(e: PointerEvent): void {

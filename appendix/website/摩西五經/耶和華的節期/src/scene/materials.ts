@@ -24,6 +24,8 @@ import {
   DECAL_FRAG,
   DECAL_VERT,
   FLAME_FRAG,
+  FX_FRAG,
+  FX_VERT,
   FS_VERT,
   GLOW_FRAG,
   GLOW_VERT,
@@ -59,6 +61,8 @@ export const U = {
   uRes: { value: new Vector2(1, 1) },
   uDpr: { value: 1 },
   uTime: { value: 0 },
+  /** 只在動態開著時前進的時間（火星、煙、雲用） */
+  uAnim: { value: 0 },
   uDark: { value: 0 },
   uPaper: { value: new Vector3() },
   uInk: { value: new Vector3() },
@@ -80,6 +84,7 @@ const COMMON: Record<string, IUniform> = {
   uRes: U.uRes,
   uDpr: U.uDpr,
   uTime: U.uTime,
+  uAnim: U.uAnim,
   uDark: U.uDark,
 };
 
@@ -155,6 +160,12 @@ export interface LitOpts {
   crop?: boolean;
   /** 烤餅（uBake） */
   bake?: boolean;
+  /** 葉片慢搖（需要 aS 屬性） */
+  sway?: boolean;
+  /** 帳棚布面波動 */
+  flap?: boolean;
+  /** 割麥的收割線（uCutX） */
+  cutx?: boolean;
 }
 
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -198,6 +209,12 @@ export function litMat(o: LitOpts): ShaderMaterial {
     defines.CROP = '';
     uniforms.uGrow = { value: 1 };
     uniforms.uCut = { value: 0 };
+  }
+  if (o.sway) defines.SWAY = '';
+  if (o.flap) defines.FLAP = '';
+  if (o.cutx) {
+    defines.CUTX = '';
+    uniforms.uCutX = { value: 99 };
   }
   if (o.bake) {
     defines.BAKE = '';
@@ -274,9 +291,16 @@ export interface GlowOpts {
   spill?: boolean;
   /** 光斑改成圓形光池（營火） */
   pool?: boolean;
+  /** 閃動幅度由呼叫端每幀自己設（火炬） */
+  fixedFlick?: boolean;
+}
+const GLOW_ALL: { m: ShaderMaterial; base: number }[] = [];
+/** 窗光、門縫光、燈、光池的閃動：動態開時用各自的幅度，關掉就停 */
+export function setGlowFlick(on: boolean): void {
+  for (const g of GLOW_ALL) g.m.uniforms.uFlick.value = on ? g.base : 0;
 }
 export function glowMat(o: GlowOpts = {}): ShaderMaterial {
-  return new ShaderMaterial({
+  const mat = new ShaderMaterial({
     uniforms: {
       ...COMMON,
       uOnCol: o.on ? { value: v3(o.on) } : U.uGlow,
@@ -297,6 +321,8 @@ export function glowMat(o: GlowOpts = {}): ShaderMaterial {
     polygonOffsetFactor: -1,
     polygonOffsetUnits: -1,
   });
+  if (!o.fixedFlick) GLOW_ALL.push({ m: mat, base: o.flick ?? (o.pool ? 0.3 : o.spill ? 0.14 : 0.16) });
+  return mat;
 }
 
 // ---------------------------------------------------------------- 火焰
@@ -305,6 +331,19 @@ export function flameMat(on = '#ffd070', edge = '#d2511a'): ShaderMaterial {
     uniforms: { ...COMMON, uFlick: { value: 1 }, uCol: { value: v3(on) }, uEdge: { value: v3(edge) } },
     vertexShader: GLOW_VERT,
     fragmentShader: FLAME_FRAG,
+    side: DoubleSide,
+  });
+}
+
+// ---------------------------------------------------------------- 火星、煙、塵土
+export function fxMat(kind: 'spark' | 'smoke' | 'dust', size: number): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: { ...COMMON, uSize: { value: size }, uDist: { value: 0 }, uOn: { value: 1 } },
+    defines: kind === 'spark' ? { SPARK: '' } : kind === 'smoke' ? { SMOKE: '' } : { DUST: '' },
+    vertexShader: FX_VERT,
+    fragmentShader: FX_FRAG,
+    transparent: true,
+    depthWrite: false,
     side: DoubleSide,
   });
 }

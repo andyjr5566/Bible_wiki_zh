@@ -6,6 +6,7 @@ uniform vec2 uViewport;
 uniform vec2 uRes;
 uniform float uDpr;
 uniform float uTime;
+uniform float uAnim;
 uniform float uDark;
 
 float hash11(float p){ p = fract(p * .1031); p *= p + 33.33; p *= p + p; return fract(p); }
@@ -58,6 +59,12 @@ varying vec3 vIC;
 #endif
 uniform float uTime;
 uniform float uWind;
+#ifdef SWAY
+attribute float aS;
+#endif
+#ifdef CUTX
+uniform float uCutX;
+#endif
 #ifdef GUST
 uniform float uGustT[4];
 uniform vec2 uGustP;
@@ -70,6 +77,12 @@ void main(){
   vec4 p = vec4(position, 1.);
   vec3 n = normal;
   float hgt = position.y;
+  #if defined(CUTX) && defined(USE_INSTANCING) && defined(USE_PART)
+    // 割麥：收割線以左的麥子還站著，以右（身後）只剩殘茬
+    vec4 io = modelMatrix * instanceMatrix * vec4(0., 0., 0., 1.);
+    float cm = step(uCutX, io.x) * step(abs(io.z + .8), 2.9) * step(io.x, 4.7);
+    if (aPart > .5 && aPart < 1.5) p.xyz *= 1. - cm; else p.y *= mix(1., .13, cm);
+  #endif
   #if defined(CROP) && defined(USE_PART) && defined(USE_INSTANCING_COLOR)
     // 作物：uGrow 是整體生長（殘茬→全高）；instanceColor.g＝1 的田角不被割（uCut）
     float zone = instanceColor.g;
@@ -94,10 +107,32 @@ void main(){
   #endif
   vec4 wp = modelMatrix * p;
   #ifdef WIND
+    // 基礎擺動約 0.08 rad，加上順風移動的陣風（每 4–7 秒一波推過）
+    vec2 wd = vec2(.94, .34);
     float ph = wp.x * .35 + wp.z * .22;
     float sw = sin(uTime * 1.7 + ph) * .6 + sin(uTime * .9 + ph * 1.7) * .4;
-    wp.x += sw * uWind * hgt * hgt * .5;
-    wp.z += cos(uTime * 1.3 + ph * 1.2) * uWind * hgt * hgt * .25;
+    float along = dot(wp.xz, wd);
+    float gph = along * .085 - uTime * .8 + .7 * sin(wp.z * .09 + uTime * .13);
+    float gust = pow(.5 + .5 * sin(gph), 3.) * (.65 + .35 * sin(uTime * 1.07 + along * .02));
+    float hh = hgt * hgt;
+    float bend = (sw * .1 + gust * .26) * uWind;
+    wp.xz += wd * bend * hh;
+    wp.z += cos(uTime * 1.3 + ph * 1.2) * uWind * hh * .035;
+    wp.y -= abs(bend) * hh * .22;
+  #endif
+  #ifdef SWAY
+    float sp = wp.x * .21 + wp.z * .33;
+    wp.xyz += vec3(sin(uTime * .9 + sp) * .26, sin(uTime * 1.35 + sp * 1.6) * .17, cos(uTime * .8 + sp * 1.2) * .22) * aS * aS * uWind;
+  #endif
+  #ifdef FLAP
+    {
+      float fh = clamp(position.y / 2.1, 0., 1.);
+      vec3 nw = normalize(mat3(modelMatrix) * n);
+      float wf = .5 + .5 * dot(normalize(nw.xz + vec2(1e-4)), vec2(-.94, -.34));
+      float fl = sin(uTime * 1.9 + wp.x * .6 + wp.z * .4) * .6 + sin(uTime * 3.3 + wp.z * .9 + wp.x * .3) * .4;
+      wp.xz += vec2(.94, .34) * fl * .05 * fh * (.3 + .7 * wf) * uWind;
+      wp.y += fl * .018 * fh * uWind;
+    }
   #endif
   #ifdef GUST
     // 禾捆搖一下，一陣風浪從近（z 大）往遠（z 小）推開
@@ -262,6 +297,7 @@ void main(){
       float vv = clamp(1. - length((vUv - vec2(.5, 1.)) * vec2(1.15, 1.)) * 1.12, 0., 1.);
     #endif
     float cv = hatchCov(gl_FragCoord.xy, vv * vv * 1.1, 1.62, 5., 3.7);
+    cv *= 1. + uFlick * 2. * (vnoise(vec2(uTime * 7., 3.3)) - .5);
     gl_FragColor = vec4(uOnCol, cv * uOn);
     return;
   #endif
@@ -272,7 +308,7 @@ void main(){
   float cov = hatchCov(gl_FragCoord.xy, t, 1.5708, 4.6, 2.2);
   vec3 col = mix(uOffCol, uOnCol, on);
   col = mix(col, uEdgeCol, cov * (.35 + .65 * on));
-  col *= 1. + uFlick * (vnoise(vec2(uTime * 9., vUv.y * 3.)) - .5);
+  col *= 1. + uFlick * (vnoise(vec2(uTime * 4. + vTh * 17., vUv.y * 3.)) - .5) * 2.;
   gl_FragColor = vec4(col, 1.);
 }
 `;
@@ -449,10 +485,21 @@ void main(){
   float rs = .1 + .12 * hash31(ic + 9.1);
   float d = length(fc - cc);
   float st = step(.45, hh) * (1. - smoothstep(rs * .55, rs, d));
-  float tw = 1. - uTwinkle * .45 * (.5 + .5 * sin(uTime * (1. + hh * 3.) + hh * 40.));
+  // 只有約 5% 的星慢慢明滅
+  float tw = 1. - uTwinkle * (step(.955, hash31(ic + 7.7)) * .8 + .04) * (.5 + .5 * sin(uTime * (.7 + hh * 1.2) + hh * 40.));
   st *= smoothstep(.015, .09, el) * (1. - hz) * (1. - uSkyDay) * uStars * tw;
   vec3 starCol = mix(uPaper * .98 + vec3(.04), uInk, uDark);
   col = mix(col, starCol, st);
+  // 白天的雲帶：幾條淡淡的刻線雲，緩慢橫移
+  if (uSkyDay > .01){
+    vec2 cu = dir.xz / max(el + .16, .08) * vec2(.5, 1.3) + vec2(uAnim * .018, 0.);
+    float cn = fbm(cu * .9 + 4.);
+    float cl = smoothstep(.5, .7, cn) * smoothstep(.02, .14, el) * (1. - smoothstep(.4, .75, el)) * uSkyDay;
+    vec3 cloudCol = mix(vec3(1.), mix(uDaySky, uInk, .16), uDark * .85 + .12);
+    float cov2 = hatchCov(gl_FragCoord.xy, .3, .015, 5.6, 6.3);
+    col = mix(col, cloudCol, cl * .62);
+    col = mix(col, lc, cl * cov2 * .35);
+  }
   gl_FragColor = vec4(col, 1.);
 }
 `;
@@ -546,3 +593,71 @@ void main(){
 
 
 
+
+// ---------- 火星、煙、塵土：實例化的 billboard 方塊，位置全在頂點著色器算 ----------
+export const FX_VERT = /* glsl */ `
+attribute vec4 aOrg;
+uniform float uAnim;
+uniform float uSize;
+uniform float uDist;
+uniform float uOn;
+varying vec2 vUv;
+varying float vLife;
+float h11(float p){ p = fract(p * .1031); p *= p + 33.33; p *= p + p; return fract(p); }
+void main(){
+  float seed = aOrg.w;
+  vec3 org = (modelMatrix * vec4(aOrg.xyz, 1.)).xyz;
+  float life = 0.;
+  vec3 pos = org;
+  float size = uSize;
+  #if defined(SPARK)
+    float rate = .32 + .4 * h11(seed * 7.1);
+    life = fract(uAnim * rate + seed);
+    float j = h11(seed * 3.3);
+    pos += vec3((j - .5) * .3 + sin(uAnim * 2.2 + seed * 31.) * .14 * life, life * (1.1 + 1.6 * h11(seed * 5.7)) + .1, (h11(seed * 9.1) - .5) * .3);
+    size *= (1. - life * .75) * (.6 + .6 * h11(seed * 2.2));
+  #elif defined(SMOKE)
+    life = fract(uAnim * .075 + seed);
+    pos += vec3(life * 1.4 + sin(uAnim * .8 + seed * 20.) * .25 * life, .5 + life * 3.4, sin(seed * 40. + uAnim * .6) * .3 * life);
+    size *= .45 + life * 2.2;
+  #else
+    // 塵土：位置由 uDist（隊伍走過的距離）決定，往回捲就倒回
+    life = fract(uDist / 3.1 + seed);
+    pos += vec3(-uDist + life * 2.2, .06 + life * .7, (h11(seed * 4.3) - .5) * .9);
+    size *= .5 + life * 1.6;
+  #endif
+  vLife = life;
+  vUv = uv;
+  vec3 right = vec3(viewMatrix[0][0], viewMatrix[1][0], viewMatrix[2][0]);
+  vec3 up = vec3(viewMatrix[0][1], viewMatrix[1][1], viewMatrix[2][1]);
+  vec3 wp = pos + (right * position.x + up * position.y) * size * uOn;
+  gl_Position = projectionMatrix * viewMatrix * vec4(wp, 1.);
+}
+`;
+export const FX_FRAG = /* glsl */ `
+${GLSL_COMMON}
+uniform float uOn;
+varying vec2 vUv;
+varying float vLife;
+void main(){
+  vec2 c = vUv - .5;
+  float d = length(c) * 2.;
+  if (d > 1.) discard;
+  #if defined(SPARK)
+    float a = (1. - smoothstep(.2, 1., d)) * pow(1. - vLife, .8);
+    vec3 col = mix(vec3(1., .82, .4), vec3(1., .42, .12), vLife);
+    gl_FragColor = vec4(col, a * uOn);
+  #else
+    float a = (1. - d * d);
+    float cov = hatchCov(gl_FragCoord.xy, .5 + .3 * a, 1.2, 4.2, 5.2);
+    #if defined(SMOKE)
+      float fade = (1. - vLife) * smoothstep(0., .12, vLife) * .72;
+      vec3 col = vec3(.82, .78, .7);
+    #else
+      float fade = (1. - vLife) * smoothstep(0., .1, vLife) * .55;
+      vec3 col = vec3(.72, .6, .42);
+    #endif
+    gl_FragColor = vec4(col, cov * a * fade);
+  #endif
+}
+`;

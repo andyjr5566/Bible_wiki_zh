@@ -37,22 +37,15 @@ export interface ScrollController {
 /** 畫面上的這條線（視窗高度的比例）決定「目前這一拍」 */
 const LINE = 0.6;
 
-/** 系統偏好：暗色、減少動態。每次變化都即時寫進 story。 */
+/** 系統偏好：暗色。即時寫進 story。動態開關另見 src/ui/motion.ts（預設有動態，不跟系統的減少動態）。 */
 export function bindPreferences(): void {
   const dark = window.matchMedia('(prefers-color-scheme: dark)');
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   story.dark = dark.matches;
-  story.motionOff = reduce.matches;
-  const on = (mq: MediaQueryList, fn: (m: boolean) => void) => {
-    if (mq.addEventListener) mq.addEventListener('change', (e) => fn(e.matches));
-    else (mq as MediaQueryList).addListener((e) => fn(e.matches));
-  };
-  on(dark, (m) => {
+  const fn = (m: boolean) => {
     story.dark = m;
-  });
-  on(reduce, (m) => {
-    story.motionOff = m;
-  });
+  };
+  if (dark.addEventListener) dark.addEventListener('change', (e) => fn(e.matches));
+  else (dark as MediaQueryList).addListener((e) => fn(e.matches));
 }
 
 export function initScroll(beats: BeatInfo[], onBeat: (index: number, prev: number) => void): ScrollController {

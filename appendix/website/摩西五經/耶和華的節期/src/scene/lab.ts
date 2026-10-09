@@ -1,5 +1,5 @@
 // 開發用的場景實驗室：全螢幕 canvas＋浮動控制列。只在 dev server 使用（scene-lab.html），不進正式建置。
-// 網址參數：?cue=midnight&p=0.5&day=14&dark=1&motion=1&ui=0&panel=1&boxes=1&side=left&count=30&bake=0.5
+// 網址參數：?cue=midnight&p=0.5&day=14&dark=1&motion=off（關掉動態）&ui=0&panel=1&boxes=1&side=left&count=30&bake=0.5
 import { SITE } from '../data/site';
 import type { Palette } from '../data/types';
 import { story } from '../story/state';
@@ -91,7 +91,7 @@ dRange.value = q.get('day') ?? String(dayOf[cueSel.value] ?? 14);
 cRange.value = q.get('count') ?? (cueSel.value === 'count' ? '25' : cueSel.value === 'title' ? '0' : '50');
 bRange.value = q.get('bake') ?? '0';
 darkChk.checked = q.get('dark') === '1';
-motionChk.checked = q.get('motion') === '1';
+motionChk.checked = q.get('motion') === 'off' || q.get('motion') === '0';
 apply();
 for (const el of [cueSel, pRange, dRange, cRange, bRange, darkChk, motionChk]) el.addEventListener('input', apply);
 cueSel.addEventListener('change', () => {
