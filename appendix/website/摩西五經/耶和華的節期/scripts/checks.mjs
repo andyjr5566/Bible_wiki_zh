@@ -59,7 +59,7 @@ const sameWork = (line, work) => {
 };
 
 /**
- * 從 from 位置往後找第一個「歸屬標記」：兩個以上的 ─（U+2500）。
+ * 從 from 位置往後找第一個「歸屬標記」：兩個以上的破折號字元（─ U+2500、－ U+FF0D、‒ U+2012、– U+2013、— U+2014、― U+2015，可混用）。
  * 標記後面（可換一行）接的是出處名稱：很短、沒有句讀。
  * 正文裡當破折號用的 ──（後面接的是整句話）會略過，免得被當成歸屬。
  * 只在引文所在的段落裡找（遇到空行就停）：GT 常有整段沒標出處，
@@ -71,7 +71,7 @@ export function attributionAfter(raw, from) {
   blank.lastIndex = from;
   const b = blank.exec(raw);
   const paraEnd = b ? b.index : raw.length;
-  const re = /─{2,}/g;
+  const re = /[─－‒–—―]{2,}/g;
   re.lastIndex = from;
   for (let m = re.exec(raw); m && m.index < paraEnd; m = re.exec(raw)) {
     const after = raw.slice(m.index + m[0].length);
@@ -216,4 +216,71 @@ export function checkAudioEntry(a) {
 /** 未知欄位（多半是打錯字） */
 export function unknownKeys(obj, allowed) {
   return Object.keys(obj ?? {}).filter((k) => !allowed.includes(k));
+}
+
+// ---------- 獻祭數字（檢查 #5）：數字只從經文算，yaml 不手抄 ----------
+
+/** 動物詞照經文原字；長詞優先，免得「公綿羊」吃掉「公綿羊羔」的前半 */
+export const OFFERING_ANIMALS = ['公牛犢', '公綿羊羔', '公綿羊', '公羊羔', '羊羔', '公山羊'];
+const ANIMAL_ALT = [...OFFERING_ANIMALS].sort((a, b) => b.length - a.length).join('|');
+const NUMERALS = { 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const NUM = '[一二兩三四五六七八九十]';
+const ROLE_NAMES = '燔祭|贖罪祭|平安祭';
+/** 同時獻的素祭、奠祭的份量（伊法、欣、奠酒）：這種句子裡的「隻」是在說配搭的份量，不是祭牲的數目 */
+const ACCOMPANIMENT = /伊法|欣|奠酒/;
+const CLAUSE_SPLIT = /[，；]/;
+const MODIFIER_MAX = 12;
+
+/**
+ * 從一段經文（每節一個字串）解析祭牲清單。回傳 { items:[{animal,count,role}], errors:[字串] }。
+ * 規則：
+ *  1. 以「，；」切子句、以「。」切句。
+ *  2. 抓「動物＋數字＋隻」（先）與「數字＋隻＋（修飾語）＋動物」（後）；只認緊接「隻」的數字，「一歲」不是數量。
+ *  3. role：本子句的「(為|作|作為)(燔祭|贖罪祭|平安祭)」；沒有，本子句有「贖罪」→「贖罪」；
+ *     再沒有，同一句（以「。」為界）出現的燔祭／贖罪祭／平安祭；再沒有，同一節出現的；都沒有 → 空字串。
+ *  4. 含「伊法／欣／奠酒」的句子是在說素祭、奠祭的份量，其中的「隻」算被吃掉，但不產生祭牲。
+ *  5. 其餘每一個「隻」都必須被某一筆吃掉，否則回報是哪一句。
+ */
+export function parseOfferings(verseTexts) {
+  const items = [];
+  const errors = [];
+  const roleIn = (s) => new RegExp(ROLE_NAMES).exec(s)?.[0] ?? '';
+  verseTexts.forEach((verse) => {
+    for (const sentence of verse.split('。')) {
+      if (!sentence.includes('隻')) continue;
+      if (ACCOMPANIMENT.test(sentence)) continue;
+      const sentenceRole = roleIn(sentence);
+      let offset = 0;
+      for (const clause of sentence.split(CLAUSE_SPLIT)) {
+        const clauseStart = sentence.indexOf(clause, offset);
+        offset = clauseStart + clause.length;
+        if (!clause.includes('隻')) continue;
+        const eaten = new Set(); // 已被吃掉的「隻」在子句內的位置
+        const found = []; // { at, animal, count }
+        // 動物＋數字＋隻
+        for (const m of clause.matchAll(new RegExp(`(${ANIMAL_ALT})(${NUM})隻`, 'g'))) {
+          const pos = m.index + m[1].length + 1;
+          eaten.add(pos);
+          found.push({ at: m.index, animal: m[1], count: NUMERALS[m[2]] });
+        }
+        // 數字＋隻＋（修飾語）＋動物
+        const pre = new RegExp(`(?<!${NUM})(${NUM})隻([^，；。隻]{0,${MODIFIER_MAX}}?)(${ANIMAL_ALT})`, 'g');
+        for (let m = pre.exec(clause); m; m = pre.exec(clause)) {
+          const pos = m.index + m[1].length;
+          if (eaten.has(pos)) { pre.lastIndex = m.index + 1; continue; }
+          eaten.add(pos);
+          found.push({ at: m.index, animal: m[3], count: NUMERALS[m[1]] });
+          pre.lastIndex = m.index + m[0].length;
+        }
+        for (let i = clause.indexOf('隻'); i >= 0; i = clause.indexOf('隻', i + 1)) {
+          if (!eaten.has(i)) errors.push(`「隻」沒有被解析成祭牲：「${clause}」（出自：${sentence}。）`);
+        }
+        const direct = new RegExp(`(?:作為|為|作)(${ROLE_NAMES})`).exec(clause)?.[1];
+        const role = direct ?? (clause.includes('贖罪') ? '贖罪' : (sentenceRole || roleIn(verse)));
+        found.sort((a, b) => a.at - b.at).forEach((f) => items.push({ animal: f.animal, count: f.count, role }));
+      }
+    }
+  });
+  if (!items.length && !errors.length) errors.push('這段經文沒有解析出任何祭牲');
+  return { items, errors };
 }

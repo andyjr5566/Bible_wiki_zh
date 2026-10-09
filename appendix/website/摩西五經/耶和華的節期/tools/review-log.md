@@ -47,3 +47,25 @@
   - 丁道爾第 138、225、267 行；
   - 背景註釋第 176、227、412 行；
   - 丁良才第 390–391 行。
+
+---
+
+# 第二階段第一批（春季：月朔、無酵節、初熟的禾捆、二月逾越節、七七節）
+
+## 第 1 輪（2026-10-09）
+
+- 指令：`tools/codex-review-3.md`。
+- 範圍：本批新增的內容，包括 story.yaml 18 拍、commentary.yaml 68 則、step.yaml 8 字、條目簡介 16 句。
+- 結果：`VERDICT: CHANGES_REQUIRED`，2 條 finding，見 `tools/codex-review-3.out.md`。兩條同一個問題：BibleHub 利23:17「Unlike other offerings that required unleavened bread」被譯成「別的祭都要用無酵餅」，擴大了來源的說法。
+- 主筆回查 `raw_data/biblehub_study_leviticus_23.txt` 第 251 行，屬實。已修 `bh-leaven-unlike` 的中譯和 `chamets` 的說明。
+- Codex 另外說明：
+  - 67 則逐字引文都在指定 raw 找到；
+  - GT 引文都有本段標記；
+  - STEP、敘述、條目簡介都核過。
+- 審查前後 `git status util/` 無變動。
+
+## 第 2 輪（2026-10-09，最後一輪）
+
+- 指令：`tools/codex-review-4.md`，只複核上述兩處。
+- 結果：`VERDICT: PASS`，無 finding，見 `tools/codex-review-4.out.md`。
+- 審查前後 `git status util/` 無變動。

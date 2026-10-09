@@ -23,6 +23,7 @@ import {
   DARK_FRAG,
   DECAL_FRAG,
   DECAL_VERT,
+  FLAME_FRAG,
   FS_VERT,
   GLOW_FRAG,
   GLOW_VERT,
@@ -69,6 +70,9 @@ export const U = {
   uAmb: { value: 0.3 },
   uGain: { value: 1 },
   uWind: { value: 0 },
+  /** 禾捆風浪：四個浪的年齡（秒，<0 表示沒有）、起點 z 與速度 */
+  uGustT: { value: new Float32Array([-1, -1, -1, -1]) },
+  uGustP: { value: new Vector2(8, 16) },
 };
 
 const COMMON: Record<string, IUniform> = {
@@ -145,6 +149,12 @@ export interface LitOpts {
   point?: boolean;
   wind?: boolean;
   side?: Side;
+  /** 禾捆風浪（大麥田） */
+  gust?: boolean;
+  /** 作物生長／收割（uGrow、uCut，instanceColor.g 標田角） */
+  crop?: boolean;
+  /** 烤餅（uBake） */
+  bake?: boolean;
 }
 
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -179,6 +189,21 @@ export function litMat(o: LitOpts): ShaderMaterial {
   }
   if (o.point) defines.POINT = '';
   if (o.wind) defines.WIND = '';
+  if (o.gust) {
+    defines.GUST = '';
+    uniforms.uGustT = U.uGustT;
+    uniforms.uGustP = U.uGustP;
+  }
+  if (o.crop) {
+    defines.CROP = '';
+    uniforms.uGrow = { value: 1 };
+    uniforms.uCut = { value: 0 };
+  }
+  if (o.bake) {
+    defines.BAKE = '';
+    uniforms.uBake = { value: 0 };
+    uniforms.uBurnCol = { value: v3('#4a2310') };
+  }
   return new ShaderMaterial({
     uniforms,
     defines,
@@ -247,6 +272,8 @@ export interface GlowOpts {
   flick?: number;
   /** 地面上的光斑：只畫刻線，半透明疊加 */
   spill?: boolean;
+  /** 光斑改成圓形光池（營火） */
+  pool?: boolean;
 }
 export function glowMat(o: GlowOpts = {}): ShaderMaterial {
   return new ShaderMaterial({
@@ -263,12 +290,22 @@ export function glowMat(o: GlowOpts = {}): ShaderMaterial {
     vertexShader: GLOW_VERT,
     fragmentShader: GLOW_FRAG,
     side: DoubleSide,
-    defines: o.spill ? { SPILL: '' } : {},
-    transparent: !!o.spill,
-    depthWrite: !o.spill,
-    polygonOffset: !!o.spill,
+    defines: o.spill || o.pool ? (o.pool ? { SPILL: '', POOL: '' } : { SPILL: '' }) : {},
+    transparent: !!(o.spill || o.pool),
+    depthWrite: !(o.spill || o.pool),
+    polygonOffset: !!(o.spill || o.pool),
     polygonOffsetFactor: -1,
     polygonOffsetUnits: -1,
+  });
+}
+
+// ---------------------------------------------------------------- 火焰
+export function flameMat(on = '#ffd070', edge = '#d2511a'): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: { ...COMMON, uFlick: { value: 1 }, uCol: { value: v3(on) }, uEdge: { value: v3(edge) } },
+    vertexShader: GLOW_VERT,
+    fragmentShader: FLAME_FRAG,
+    side: DoubleSide,
   });
 }
 

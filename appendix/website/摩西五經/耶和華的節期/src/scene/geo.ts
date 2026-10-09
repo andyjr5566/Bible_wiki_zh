@@ -82,6 +82,12 @@ export interface PersonOpts {
   low?: boolean;
   /** 更低：只有袍與頭 */
   tiny?: boolean;
+  /** 坐姿：袍擺收成一堆，膝向前 */
+  sit?: boolean;
+  /** 不畫手臂與杖（手臂由程式另外裝，例如舉禾捆的祭司） */
+  noArms?: boolean;
+  /** 長頭巾（披到肩上） */
+  veil?: boolean;
 }
 
 /** part：0 長袍、1 頭與手（剪影墨色）、2 頭巾、3 杖、4 腰帶、5 包袱布 */
@@ -92,10 +98,16 @@ export function personGeo(o: PersonOpts = {}): BufferGeometry {
   const skirtPts = o.slim
     ? [new Vector2(0.235, 0), new Vector2(0.255, 0.02), new Vector2(0.245, 0.32), new Vector2(0.225, 0.7), new Vector2(0.2, 0.96)]
     : [new Vector2(0.31, 0), new Vector2(0.37, 0.02), new Vector2(0.345, 0.32), new Vector2(0.285, 0.7), new Vector2(0.225, 0.96)];
-  parts.push({ g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1, 1, 0.78), part: 0 });
+  const hipY = o.sit ? 0.5 : 0.95;
+  if (o.sit) {
+    parts.push({ g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1.2, 0.52, 0.98), part: 0 });
+    parts.push({ g: new SphereGeometry(0.17, low ? 6 : 9, low ? 4 : 6), m: T(0, 0.15, 0.2, 0, 0, 0, 1.5, 0.85, 1.25), part: 0 });
+  } else {
+    parts.push({ g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1, 1, 0.78), part: 0 });
+  }
 
   const bow = o.bow ?? 0;
-  const hip = T(0, 0.95, 0, bow, 0, 0);
+  const hip = T(0, hipY, 0, bow, 0, 0);
   const up = (m: Matrix4) => hip.clone().multiply(m);
 
   const torsoPts = [new Vector2(0.225, 0), new Vector2(0.245, 0.18), new Vector2(0.27, 0.36), new Vector2(0.22, 0.45), new Vector2(0.09, 0.49), new Vector2(0.001, 0.5)];
@@ -110,6 +122,10 @@ export function personGeo(o: PersonOpts = {}): BufferGeometry {
   if (o.wrap !== false) {
     parts.push({ g: new SphereGeometry(0.14, low ? 7 : 10, low ? 3 : 6, 0, Math.PI * 2, 0, Math.PI * 0.58), m: up(T(0, 0.655, -0.005)), part: 2 });
     parts.push({ g: new BoxGeometry(0.2, 0.2, 0.05), m: up(T(0, 0.55, -0.1, 0.25)), part: 2 });
+    if (o.veil) {
+      parts.push({ g: new SphereGeometry(0.155, low ? 7 : 10, low ? 4 : 7, 0, Math.PI * 2, 0, Math.PI * 0.72), m: up(T(0, 0.65, -0.015)), part: 2 });
+      parts.push({ g: new BoxGeometry(0.34, 0.46, 0.07), m: up(T(0, 0.38, -0.12, 0.12)), part: 2 });
+    }
   }
   if (o.belt) parts.push({ g: new TorusGeometry(0.235, 0.022, low ? 3 : 5, low ? 8 : 14), m: up(T(0, 0.03, 0, Math.PI / 2, 0, 0, 1, 0.74, 1)), part: 4 });
 
@@ -124,10 +140,10 @@ export function personGeo(o: PersonOpts = {}): BufferGeometry {
   };
   const aL = o.armL ?? [0.05, 0.12];
   const aR = o.armR ?? [0.05, 0.12];
-  const handL = addArm(1, aL[0], aL[1]);
-  const handR = addArm(-1, aR[0], aR[1]);
+  const handL = o.noArms ? new Vector3() : addArm(1, aL[0], aL[1]);
+  const handR = o.noArms ? new Vector3() : addArm(-1, aR[0], aR[1]);
 
-  if (o.staff) {
+  if (o.staff && !o.noArms) {
     const h = o.staffSide === 'R' ? handR : handL;
     parts.push({ g: new CylinderGeometry(0.02, 0.025, 1.85, low ? 4 : 6), m: T(h.x, 0.9, h.z), part: 3 });
   }
@@ -140,10 +156,29 @@ export function personGeo(o: PersonOpts = {}): BufferGeometry {
   if (sc !== 1) g.scale(sc, sc, sc);
   return g;
 }
+/** 人物手的位置（人物本地座標，未縮放）：拿東西的道具用 */
+export function personHand(o: PersonOpts, side: 'L' | 'R'): Vector3 {
+  const hip = T(0, o.sit ? 0.5 : 0.95, 0, o.bow ?? 0, 0, 0);
+  const a = (side === 'L' ? o.armL : o.armR) ?? [0.05, 0.12];
+  const sd = side === 'L' ? 1 : -1;
+  const m = hip.clone().multiply(T(sd * 0.235, 0.43, 0, -a[0], 0, sd * a[1], 1, 1, 1, 'ZYX'));
+  return new Vector3(0, -0.64, 0).applyMatrix4(m).multiplyScalar(o.scale ?? 1);
+}
+
 // ---------------------------------------------------------------- 羊與牛
 /** 朝 +z。part：0 羊毛／身體、1 頭與腿 */
-export function lambGeo(low = false): BufferGeometry {
+export function lambGeo(low = false, kind: 'lamb' | 'ram' | 'goat' = 'lamb'): BufferGeometry {
   const parts: Part[] = [];
+  if (kind === 'ram') {
+    // 公綿羊：頭兩側盤角
+    for (const sx of [1, -1]) {
+      parts.push({ g: new TorusGeometry(0.085, 0.024, 4, 9, Math.PI * 1.45), m: T(sx * 0.1, 0.72, 0.5, 0, sx * 1.35, sx * 0.25), part: 1 });
+    }
+  } else if (kind === 'goat') {
+    // 公山羊：向後的短角與下巴的鬚
+    for (const sx of [1, -1]) parts.push({ g: new ConeGeometry(0.03, 0.26, 4), m: T(sx * 0.07, 0.8, 0.46, -0.9, 0, sx * 0.25), part: 1 });
+    parts.push({ g: new ConeGeometry(0.03, 0.15, 4), m: T(0, 0.52, 0.7, 3.4), part: 1 });
+  }
   const S = (r: number) => new SphereGeometry(r, low ? 6 : 9, low ? 4 : 7);
   parts.push({ g: S(1), m: T(0, 0.52, 0, 0, 0, 0, 0.3, 0.33, 0.54), part: 0 });
   for (let i = 0; i < 6; i++) {
@@ -342,7 +377,11 @@ export function hyssopGeo(): { bundle: BufferGeometry; arm: BufferGeometry } {
 
 // ---------------------------------------------------------------- 麥穗
 /** 單株麥：莖（高度正規化為 1）＋穗。part：0 莖、1 穗 */
-export function barleyGeo(): BufferGeometry {
+export function barleyGeo(o: { earW?: number; earTop?: number; leafLen?: number; stem?: number } = {}): BufferGeometry {
+  const stem = o.stem ?? 1;
+  const earW = o.earW ?? 0.034;
+  const earTop = o.earTop ?? 1.18;
+  const leafLen = o.leafLen ?? 1;
   const pos: number[] = [];
   const nor: number[] = [];
   const part: number[] = [];
@@ -351,7 +390,7 @@ export function barleyGeo(): BufferGeometry {
     for (let i = 0; i < 3; i++) nor.push(0, 0, 1);
     part.push(p, p, p);
   };
-  const widths = [0.02, 0.014, 0.006];
+  const widths = [0.02 * stem, 0.014 * stem, 0.006 * stem];
   const ys = [0, 0.5, 0.9];
   for (let i = 0; i < 2; i++) {
     const y0 = ys[i];
@@ -366,9 +405,9 @@ export function barleyGeo(): BufferGeometry {
     const c = Math.cos(rot);
     const s = Math.sin(rot);
     const a = [0, 0.84, 0];
-    const b = [-0.034 * c, 0.97, -0.034 * s];
-    const d = [0.034 * c, 0.97, 0.034 * s];
-    const e = [0, 1.18, 0];
+    const b = [-earW * c, 0.97, -earW * s];
+    const d = [earW * c, 0.97, earW * s];
+    const e = [0, earTop, 0];
     tri(a, d, b, 1);
     tri(b, d, e, 1);
   };
@@ -380,8 +419,8 @@ export function barleyGeo(): BufferGeometry {
     const s = Math.sin(rot);
     tri([0.016 * s, 0.1, -0.016 * c], [-0.016 * s, 0.1, 0.016 * c], [len * c, 0.1 + len * 1.6, len * s], 0);
   };
-  leaf(0.7, 0.2);
-  leaf(3.9, 0.17);
+  leaf(0.7, 0.2 * leafLen);
+  leaf(3.9, 0.17 * leafLen);
   const g = new BufferGeometry();
   g.setAttribute('position', new BufferAttribute(new Float32Array(pos), 3));
   g.setAttribute('normal', new BufferAttribute(new Float32Array(nor), 3));

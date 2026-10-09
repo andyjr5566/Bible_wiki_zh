@@ -70,3 +70,32 @@
   downloaded: 2026-10-09
   loop: true
   edit: 牛群取 30–60 秒，混入群眾腳步聲（重複一次），淡入淡出
+
+# 第二階段第一批（春季）：2026-10-09 實際抓取確認授權為 creativecommons.org/publicdomain/zero/1.0。
+- id: fire
+  file: fire.mp3
+  title: Campfire 01
+  author: HECKFRICKER
+  license: CC0
+  page: https://freesound.org/people/HECKFRICKER/sounds/729395/
+  downloaded: 2026-10-09
+  loop: true
+  edit: 取 20–50 秒，淡入淡出，單聲道，響度調整
+
+- id: field-wind
+  file: field-wind.mp3
+  title: WIND, Wind through Wheatfield.wav
+  author: Uganda
+  license: CC0
+  page: https://freesound.org/people/Uganda/sounds/38976/
+  downloaded: 2026-10-09
+  edit: 取 24–32 秒一陣風，淡入淡出，單聲道，響度調整
+
+- id: harvest
+  file: harvest.mp3
+  title: Silencyo_COUNTRY_DAY_Sickle_Wheat.aif
+  author: silencyo
+  license: CC0
+  page: https://freesound.org/people/silencyo/sounds/81721/
+  downloaded: 2026-10-09
+  edit: 取前 12 秒鐮刀割麥聲，淡出，單聲道，響度調整

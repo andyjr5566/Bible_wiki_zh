@@ -504,13 +504,17 @@
 .jf-fold {
   display: none;
 }
-.jf-hyssop-status {
+.jf-hyssop-status,
+.jf-wave-status,
+.jf-bake-status {
   margin: 10px 0 0;
   font-size: 14.5px;
   font-weight: 700;
   line-height: 1.6;
 }
-.jf-hyssop-status::before {
+.jf-hyssop-status::before,
+.jf-wave-status::before,
+.jf-bake-status::before {
   content: '';
   display: inline-block;
   width: 9px;
@@ -519,6 +523,237 @@
   background: var(--jf-blood);
   vertical-align: 0.05em;
 }
+/* ---------- 獻祭清單、烤餅、搖禾捆、數算（春季） ---------- */
+.jf-interact {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 2px solid var(--jf-line);
+}
+.jf-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.jf-offer {
+  display: grid;
+  gap: 12px 18px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 2px solid var(--jf-line);
+}
+.jf-offer[data-n='2'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.jf-offer-label {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--jf-blood);
+}
+.jf-offer-set {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+}
+.jf-offer-row {
+  display: grid;
+  gap: 4px;
+}
+.jf-offer-role {
+  justify-self: start;
+  padding: 0 7px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  color: var(--jf-paper);
+  background: var(--jf-ink);
+}
+.jf-offer-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.jf-offer-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.jf-tally {
+  flex: none;
+  overflow: visible;
+}
+.jf-tally-line {
+  stroke: var(--jf-ink);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.jf-offer-n {
+  min-width: 0.8em;
+  font-variant-numeric: tabular-nums;
+}
+.jf-offer-ref {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--jf-mute);
+}
+
+/* 烤餅：圓形大按鈕，外圈是進度 */
+.jf-bake-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.jf-bake-side {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.jf-bake-btn {
+  appearance: none;
+  position: relative;
+  flex: none;
+  display: grid;
+  place-content: center;
+  width: 112px;
+  height: 112px;
+  margin: 10px;
+  padding: 0;
+  font: 700 19px/1.3 var(--jf-font-sans);
+  letter-spacing: 0.08em;
+  color: var(--jf-ink);
+  background: var(--jf-paper);
+  border: 3px solid var(--jf-ink);
+  border-radius: 50%;
+  box-shadow: 4px 4px 0 var(--jf-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.12s var(--jf-ease-out), box-shadow 0.12s var(--jf-ease-out), background-color 0.15s, color 0.15s;
+}
+.jf-bake-btn::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: conic-gradient(var(--jf-blood) calc(var(--p, 0) * 360deg), var(--jf-line) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+  pointer-events: none;
+}
+.jf-bake-btn:hover {
+  background: color-mix(in srgb, var(--jf-blood) 12%, var(--jf-paper));
+}
+.jf-bake-btn.is-held,
+.jf-bake-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--jf-ink);
+  background: color-mix(in srgb, var(--jf-blood) 18%, var(--jf-paper));
+}
+.jf-bake-btn.is-done {
+  cursor: default;
+  color: var(--jf-paper);
+  background: var(--jf-ink);
+  transform: none;
+  box-shadow: 4px 4px 0 var(--jf-ink);
+}
+.jf-bake-btn:focus-visible {
+  outline: 3px solid var(--jf-blood);
+  outline-offset: 10px;
+}
+.jf-keys-one {
+  grid-template-columns: minmax(0, 12rem);
+}
+.jf-wave-btn {
+  min-height: 52px;
+  font-size: 17px;
+}
+
+/* 數算：7×7 格＋第 50 格；刻線填滿 */
+.jf-count-grid {
+  --cell: 25px;
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell)) auto;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+.jf-cell {
+  position: relative;
+  display: block;
+  width: var(--cell);
+  height: var(--cell);
+  overflow: hidden;
+  background: var(--jf-paper);
+  border: 2px solid var(--jf-ink);
+}
+.jf-cell-fill {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, var(--jf-ink) 0 1.6px, transparent 1.6px 4.2px);
+  clip-path: inset(0 calc((1 - var(--f, 0)) * 100%) 0 0);
+}
+.jf-cell-label {
+  padding-left: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--jf-ink);
+}
+.jf-cell-sab {
+  opacity: 0;
+  transition: opacity 0.25s var(--jf-ease-out);
+}
+.jf-cell-sab.is-on {
+  opacity: 1;
+}
+.jf-cell-50 {
+  grid-column: 1 / span 2;
+  width: auto;
+  margin-top: 6px;
+}
+.jf-cell-50 b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  font-size: 14px;
+  line-height: 1;
+}
+.jf-cell-50 b::before {
+  content: '';
+  position: absolute;
+  inset: 5px 8px;
+  z-index: -1;
+  background: var(--jf-paper);
+}
+.jf-cell-new {
+  grid-column: 3 / -1;
+  margin-top: 6px;
+}
+
 /* 沒有場景（WebGL 不可用）時，互動用不了：整塊收起來 */
 .jf-no-scene .jf-hyssop {
   display: none;
@@ -682,7 +917,8 @@
   html:not(.jf-no-scene) .jf-box[data-compact='true'] > :is(.jf-reason, .jf-text, .jf-verse, .jf-actions) {
     display: none;
   }
-  html:not(.jf-no-scene) .jf-box[data-compact='true'] .jf-hyssop {
+  html:not(.jf-no-scene) .jf-box[data-compact='true'] .jf-hyssop,
+  .jf-box[data-compact='true'] .jf-interact {
     margin-top: 0;
     padding-top: 0;
     border-top: 0;
@@ -698,9 +934,43 @@
     gap: 10px;
     margin-top: 6px;
   }
-  .jf-status-row .jf-hyssop-status {
+  .jf-status-row .jf-hyssop-status,
+  .jf-status-row .jf-wave-status,
+  .jf-status-row .jf-bake-status {
     margin: 0;
     font-size: 14px;
+  }
+  .jf-bake-row {
+    gap: 14px;
+  }
+  .jf-bake-btn {
+    width: 88px;
+    height: 88px;
+    margin: 8px;
+    font-size: 17px;
+  }
+  .jf-bake-btn::before {
+    inset: -10px;
+  }
+  .jf-offer {
+    gap: 10px 12px;
+  }
+  .jf-offer-items {
+    gap: 2px 12px;
+  }
+  .jf-offer-item {
+    gap: 5px;
+    font-size: 15px;
+  }
+  /* 兩組獻祭並排時整個說明框會太高：經文限高、自己捲 */
+  .jf-box[data-offers='2'] .jf-verse-text {
+    max-height: 5.6em;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--jf-ink) transparent;
+  }
+  .jf-keys-one {
+    grid-template-columns: minmax(0, 1fr);
   }
   .jf-fold {
     appearance: none;
@@ -774,6 +1044,9 @@
   .jf-chip,
   .jf-key-btn {
     transition: background-color 0.15s, color 0.15s;
+  }
+  .jf-cell-sab {
+    transition: none;
   }
   .jf-chip:hover,
   .jf-chip:active,

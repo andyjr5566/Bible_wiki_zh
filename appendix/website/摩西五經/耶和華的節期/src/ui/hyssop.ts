@@ -9,6 +9,8 @@
 import type { SceneEvent, SceneHandle } from '../scene/api';
 import { story, type HyssopPart } from '../story/state';
 import { h } from './dom';
+import { makeFold } from './fold';
+import { placeBadge } from './place';
 
 const PART_NAME: Record<HyssopPart, string> = { lintel: '門楣', left: '左門框', right: '右門框' };
 const PART_ORDER: HyssopPart[] = ['lintel', 'left', 'right'];
@@ -153,15 +155,7 @@ export function createHyssopUI(canvas: HTMLCanvasElement, host: HTMLElement): Hy
     const status = h('p', { class: 'jf-hyssop-status', role: 'status', 'aria-live': 'polite' });
     statuses.push(status);
     // 手機上說明框貼底，會蓋住要拖的東西：互動那一拍預設收成小條，讀者要看說明與經文再展開
-    const fold = h('button', { type: 'button', class: 'jf-fold', 'aria-expanded': 'false' }, '看說明與經文');
-    fold.addEventListener('click', () => {
-      const box = fold.closest<HTMLElement>('.jf-box');
-      if (!box) return;
-      const open = box.dataset.compact !== 'false';
-      box.dataset.compact = open ? 'false' : 'true';
-      fold.setAttribute('aria-expanded', open ? 'true' : 'false');
-      fold.textContent = open ? '收起說明' : '看說明與經文';
-    });
+    const fold = makeFold();
     const root = h('div', { class: 'jf-hyssop' },
       h('p', { class: 'jf-prompt' }, prompt),
       h('div', { class: 'jf-keys', role: 'group', 'aria-label': '不用拖曳，也可以用按鈕操作' },
@@ -218,47 +212,8 @@ export function createHyssopUI(canvas: HTMLCanvasElement, host: HTMLElement): Hy
     const r0 = rects[0];
     const showBadge = !!r0 && r0.width > 0 && !used && dragging === 0 && !story.hyssop.done;
     badge.classList.toggle('is-on', showBadge);
-    if (showBadge && r0) placeBadge(r0, avoid);
+    if (showBadge && r0) placeBadge(badge, r0, avoid);
     return rects;
-  }
-
-  /**
-   * 徽章貼在把手旁。順序：右側 → 正上方（水平置中於把手）→ 正下方 → 左側；
-   * 第一個「不出畫面、也不壓到任何固定介面」的位置就用它。
-   */
-  function placeBadge(r: DOMRect, avoid: readonly DOMRect[]) {
-    const size = badge.offsetWidth || 88;
-    const gap = 10;
-    const W = window.innerWidth;
-    const H = window.innerHeight;
-    const pad = 8;
-    const cx = r.left + r.width / 2 - size / 2;
-    const cy = r.top + r.height / 2 - size / 2;
-    const cands: [number, number][] = [
-      [r.right + gap, cy],
-      [cx, r.top - size - gap],
-      [cx, r.bottom + gap],
-      [r.left - size - gap, cy],
-    ];
-    const hits = (x: number, y: number) => {
-      for (const a of avoid) {
-        if (a.width <= 0 || a.height <= 0) continue;
-        if (x < a.right + pad && x + size > a.left - pad && y < a.bottom + pad && y + size > a.top - pad) return true;
-      }
-      return false;
-    };
-    let pick = cands[1];
-    for (const [x, y] of cands) {
-      if (x < pad || y < pad || x + size > W - pad || y + size > H - pad) continue;
-      if (hits(x, y)) continue;
-      pick = [x, y];
-      break;
-    }
-    const x = Math.min(Math.max(pick[0], pad), W - size - pad);
-    const y = Math.min(Math.max(pick[1], pad), H - size - pad);
-    // 用 left/top 擺位：脈動動畫用的是獨立的 scale 屬性，和 transform 的位移疊在一起會把位置放大（偏移上百 px）
-    badge.style.left = `${x.toFixed(1)}px`;
-    badge.style.top = `${y.toFixed(1)}px`;
   }
 
   return {

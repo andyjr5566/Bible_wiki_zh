@@ -15,7 +15,8 @@
 //   e. story.yaml 的 notes／words 引用都存在；每段 ==…== 最多一處；沒被用到的註釋與原文字只警告
 //   f. audio-sources.yaml：檔案存在、license 是 CC0、page 與 pages 是網址、downloaded 是日期，
 //      public/audio/ 底下每個檔案都有一筆
-// TODO（第二階段）：民28–29 獻祭數字檢查（見 checks.mjs 檔頭）。
+//   g. offerings：每個出處都從 raw_scripture 解析出祭牲（動物、數目、獻祭種類），寫進 SITE.offerings；
+//      經文裡每一個「隻」都要被吃掉，吃不掉就列出是哪一句。數字不手抄。
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -25,11 +26,11 @@ import {
   chapterSources, chapterVerses, entries, entryGist, listAudioFiles, parseChapterRef, parseRef,
   read, readRaw, readStepFile, resolveEntry,
 } from './lib.mjs';
-import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, unknownKeys } from './checks.mjs';
+import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, parseOfferings, unknownKeys } from './checks.mjs';
 
 export const OUT = resolve(SITE_DIR, 'src/data/site.json');
 const SOURCE_IDS = ['CT', 'GT', 'KC', 'BH'];
-const INTERACTIONS = ['hyssop'];
+const INTERACTIONS = ['hyssop', 'bake', 'wave', 'count'];
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
@@ -226,9 +227,20 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
 
   // ---------- story.yaml（e）＋ 章 ----------
   const storySrc = loadYaml('story.yaml') ?? {};
+  const offerings = {};
+  /** 獻祭出處：解析經文裡的祭牲；同一出處只算一次 */
+  const needOffering = (where, ref) => {
+    if (!isStr(ref)) { err(where, `獻祭出處要是非空字串（目前是 ${JSON.stringify(ref)}）`); return; }
+    if (offerings[ref]) return;
+    const block = resolveVerse(where, ref, false);
+    if (!block) return;
+    const { items, errors: offErrors } = parseOfferings(block.lines.map((l) => l.text));
+    for (const e of offErrors) err(`${where} ${ref}`, e);
+    if (!offErrors.length) offerings[ref] = { ref, items };
+  };
   const usedNotes = new Set();
   const usedWords = new Set();
-  const BEAT_KEYS = ['id', 'cue', 'day', 'verse', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
+  const BEAT_KEYS = ['id', 'cue', 'day', 'dayTo', 'badge', 'offerings', 'offeringsLabel', 'verse', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
   for (const k of Object.keys(storySrc)) if (!chapterIds.has(k)) err(`story.yaml ${k}`, '這個 key 不是 feasts.yaml 的章 id');
 
   const chapters = [];
@@ -286,7 +298,23 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       if (b.interaction !== undefined && !INTERACTIONS.includes(b.interaction)) err(`${bw}.interaction`, `只能是 ${INTERACTIONS.join('/')}（目前是 ${JSON.stringify(b.interaction)}）`);
       if (b.interaction && !isStr(b.prompt)) warn(bw, '有 interaction 的拍應該有 prompt');
       if (b.prompt && !b.interaction) warn(bw, '有 prompt 但沒有 interaction');
-      if (b.day !== undefined && !(typeof b.day === 'number' && b.day >= 1 && b.day <= 14)) err(`${bw}.day`, '要是 1–14 的數字');
+      const okDay = (x) => typeof x === 'number' && x >= 1 && x <= 30;
+      if (b.day !== undefined && !okDay(b.day)) err(`${bw}.day`, '要是 1–30 的數字');
+      if (b.dayTo !== undefined) {
+        if (!okDay(b.dayTo)) err(`${bw}.dayTo`, '要是 1–30 的數字');
+        else if (b.day === undefined) err(`${bw}.dayTo`, '有 dayTo 就一定要有 day');
+        else if (okDay(b.day) && !(b.dayTo > b.day)) err(`${bw}.dayTo`, `要大於 day（day ${b.day}、dayTo ${b.dayTo}）`);
+      }
+      if (b.badge !== undefined && !isStr(b.badge)) err(`${bw}.badge`, '要是非空字串');
+      if (b.offeringsLabel !== undefined) {
+        if (!isStr(b.offeringsLabel)) err(`${bw}.offeringsLabel`, '要是非空字串');
+        else if ([...b.offeringsLabel].length > 12) err(`${bw}.offeringsLabel`, `超過 12 字（${[...b.offeringsLabel].length} 字）`);
+        if (b.offerings === undefined) err(`${bw}.offeringsLabel`, '有 offeringsLabel 就一定要有 offerings');
+      }
+      if (b.offerings !== undefined) {
+        if (!isStrArray(b.offerings) || !b.offerings.length) err(`${bw}.offerings`, '要是經文出處的字串陣列（例如 [民28:19-22]）');
+        else b.offerings.forEach((ref, k) => needOffering(`${bw}.offerings[${k}]`, ref));
+      }
       if (b.reason !== undefined && typeof b.reason !== 'boolean') err(`${bw}.reason`, '要是 true/false');
       for (const [key, declared, used] of [['notes', declaredNotes, usedNotes], ['words', declaredWords, usedWords]]) {
         if (b[key] === undefined) continue;
@@ -307,6 +335,10 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
         ...(b.words !== undefined ? { words: b.words } : {}),
         ...(b.reason !== undefined ? { reason: b.reason } : {}),
         ...(b.day !== undefined ? { day: b.day } : {}),
+        ...(b.dayTo !== undefined ? { dayTo: b.dayTo } : {}),
+        ...(b.badge !== undefined ? { badge: b.badge } : {}),
+        ...(b.offerings !== undefined ? { offerings: b.offerings } : {}),
+        ...(b.offeringsLabel !== undefined ? { offeringsLabel: b.offeringsLabel } : {}),
       };
     }).filter(Boolean);
 
@@ -385,6 +417,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     commentary,
     step,
     entries: Object.fromEntries(Object.entries(entryMap).map(([k, { type, gist }]) => [k, { title: k, type, gist }])),
+    offerings,
     audio,
     sources,
   };
@@ -415,7 +448,7 @@ function main() {
   const summary =
     `${data.chapters.length} 章、${data.chapters.reduce((n, c) => n + c.beats.length, 0)} 拍、` +
     `${Object.keys(data.verses).length} 段經文、${Object.keys(data.commentary).length} 則註釋、` +
-    `${Object.keys(data.step).length} 個原文字、${Object.keys(data.entries).length} 個條目、` +
+    `${Object.keys(data.step).length} 個原文字、${Object.keys(data.offerings).length} 組獻祭、${Object.keys(data.entries).length} 個條目、` +
     `${data.audio.length} 個音檔、${data.sources.length} 筆來源`;
   if (check) {
     if (!existsSync(OUT) || readFileSync(OUT, 'utf8') !== out) {

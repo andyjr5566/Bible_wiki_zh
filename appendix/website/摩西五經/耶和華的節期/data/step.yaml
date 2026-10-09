@@ -73,3 +73,60 @@
   position: 12
   expect_strong: H8107
   note: STEP 的本節譯義是 vigil，也就是守夜，詞形是複數；這個字在本節出現兩次。黃迦勒和《啟導本聖經腳註》都提到，「耶和華的夜」可以另譯為「耶和華親自守夜」。
+
+# ================= 第二階段第一批（春季） =================
+- id: chodesh
+  label: 月朔
+  ref: 民28:11
+  position: 2
+  expect_strong: H2320G
+  note: 和合本譯作「每月朔」。STEP 把這一句分成兩個字：前一個字的本節譯義是「beginnings of」（起頭），這個字是 months（你們的月份），詞形是複數，字典義是 month（月）。黃迦勒說，月朔是每月的第一日，或新月出現的日子。
+
+- id: omer
+  label: 一捆
+  ref: 利23:10
+  position: 20
+  expect_strong: H6016A
+  note: STEP 在這裡的本節譯義與字典義都是 sheaf（一捆）。部分註釋進一步指出，同一個字也是量器的名稱：黃迦勒解作一伊法的十分之一；丁良才說這字有時是捆的意思，也是一種量器的名字。
+
+- id: shabbat
+  label: 安息日
+  ref: 利23:11
+  position: 8
+  expect_strong: H7676
+  note: STEP 在這裡的本節譯義是 the sabbath（那安息日），帶定冠詞，字典義是 Sabbath。這個安息日指哪一天，註釋有不同說法：丁良才記下撒都該人說是無酵節中尋常的安息日，法利賽人說是無酵節的頭一個聖會日；黃迦勒也提到七十士譯本作「第一日的次日」。
+
+- id: nuph
+  label: 搖一搖
+  ref: 利23:11
+  position: 1
+  expect_strong: H5130B
+  note: STEP 的本節譯義是 he will wave（他要搖），詞形是使役式（Hiphil），字典義是 to wave。實際的動作怎麼做，部分註釋看法不同：黃迦勒說是水平方向前後擺動；《舊約聖經背景註釋》說是搖一搖或抬起。
+
+- id: chamets
+  label: 酵
+  ref: 利23:17
+  position: 10
+  expect_strong: H2557A
+  note: 和合本譯作「加酵」。STEP 的本節譯義是 leaven，詞形是形容詞，字典義也是 leaven。部分註釋進一步解釋這酵的意思：黃迦勒認為這是見證奉獻的人承認自己有罪；BibleHub 指出，這份祭物含有酵，和其他規定要用無酵餅的祭物不同。
+
+- id: oni
+  label: 困苦
+  ref: 申16:3
+  position: 11
+  expect_strong: H6040
+  note: 和合本「困苦餅」的「困苦」。STEP 的本節譯義和字典義都是 affliction。同一節經文接著說明了原因：你本是急忙出了埃及地。黃迦勒說，無酵餅的滋味不如有酵餅，用來紀念在埃及所過困苦的日子。
+
+- id: tame
+  label: 不潔淨
+  ref: 民9:6
+  position: 5
+  expect_strong: H2931
+  note: STEP 的本節譯義是 unclean，詞形是形容詞複數，字典義相同。黃迦勒說，因死屍而不潔淨要算七天；BibleHub 說這是禮儀上的狀態，不是道德上的過失。
+
+- id: shavuot
+  label: 七七節
+  ref: 申16:10
+  position: 3
+  expect_strong: H7620G
+  note: 「七七節」的「七七」在原文是一個字。STEP 的本節譯義是 weeks（週），詞形是複數，標為節期名稱；字典義是 Weeks。申16:9 說要計算七七日；黃迦勒說，到了第五十天就是五旬節當天。

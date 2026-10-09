@@ -5,7 +5,7 @@ import { story, type HyssopPart } from '../story/state';
 import type { SceneEvent } from './api';
 import { hyssopGeo, HYSSOP_LEN } from './geo';
 import { FIXED, litMat, solid } from './materials';
-import { DAY_S, HYSSOP_IDX } from './tracks';
+import { c, DAY_S, HYSSOP_IDX } from './tracks';
 import { clamp, smooth } from './util';
 
 const PLANE_Z = 0.78;
@@ -404,7 +404,7 @@ export class HyssopCtl {
     this.busy = this.mode !== 'rest' || this.grab > 0.01 || this.shake > 0 || this.recoil > 0 || this.cur.distanceToSquared(REST_TIP) > 1e-5;
 
     // 只在塗血那段時間之後到逃離前才顯示
-    this.group.visible = s >= 3.9 && s < DAY_S;
+    this.group.visible = s >= c('day-14', 0.9) && s < DAY_S;
   }
 
   dispose(): void {

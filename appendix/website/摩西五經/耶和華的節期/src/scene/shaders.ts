@@ -58,10 +58,30 @@ varying vec3 vIC;
 #endif
 uniform float uTime;
 uniform float uWind;
+#ifdef GUST
+uniform float uGustT[4];
+uniform vec2 uGustP;
+#endif
+#ifdef CROP
+uniform float uGrow;
+uniform float uCut;
+#endif
 void main(){
   vec4 p = vec4(position, 1.);
   vec3 n = normal;
   float hgt = position.y;
+  #if defined(CROP) && defined(USE_PART) && defined(USE_INSTANCING_COLOR)
+    // 作物：uGrow 是整體生長（殘茬→全高）；instanceColor.g＝1 的田角不被割（uCut）
+    float zone = instanceColor.g;
+    float hk = mix(mix(uGrow, 0.17, uCut), uGrow, zone);
+    float earK = smoothstep(.3, .55, hk);
+    if (aPart > .5 && aPart < 1.5) {
+      p.xz *= earK;
+      p.y = hk * .84 + (p.y - .84) * earK;
+    } else {
+      p.y *= hk;
+    }
+  #endif
   #ifdef USE_INSTANCING
     p = instanceMatrix * p;
     n = mat3(instanceMatrix) * n;
@@ -78,6 +98,22 @@ void main(){
     float sw = sin(uTime * 1.7 + ph) * .6 + sin(uTime * .9 + ph * 1.7) * .4;
     wp.x += sw * uWind * hgt * hgt * .5;
     wp.z += cos(uTime * 1.3 + ph * 1.2) * uWind * hgt * hgt * .25;
+  #endif
+  #ifdef GUST
+    // 禾捆搖一下，一陣風浪從近（z 大）往遠（z 小）推開
+    float amp = 0.;
+    for (int gi = 0; gi < 4; gi++){
+      float ga = uGustT[gi];
+      if (ga >= 0.){
+        float gd = wp.z - (uGustP.x - ga * uGustP.y);
+        amp += exp(-gd * gd * .03) * (1. - smoothstep(2.6, 3.8, ga)) * smoothstep(0., .22, ga);
+      }
+    }
+    amp = min(amp, 1.3);
+    float gh = hgt * hgt;
+    wp.z -= amp * gh * .5;
+    wp.y -= amp * gh * .22;
+    wp.x += amp * gh * .3 * sin(wp.x * .8 + wp.z * .6);
   #endif
   vW = wp.xyz;
   vN = normalize(mat3(modelMatrix) * n);
@@ -112,6 +148,10 @@ uniform vec3 uLightDir;
 uniform float uAmb;
 uniform float uGain;
 uniform vec4 uPt;
+#ifdef BAKE
+uniform float uBake;
+uniform vec3 uBurnCol;
+#endif
 void main(){
   vec3 N = normalize(vN);
   if (!gl_FrontFacing) N = -N;
@@ -135,6 +175,14 @@ void main(){
     #endif
   #endif
   float te = mix(t, 1. - t, uDark * uInvert);
+  #ifdef BAKE
+    // 烤餅：焦痕斑點隨 uBake 擴大，刻線加密；生麵團是淺色，烤過偏深黃
+    float bn = vnoise(vObj.xz * 5.5 + 3.1) * .62 + vnoise(vObj.xz * 14.) * .38;
+    float burn = smoothstep(.76 - uBake * .2, .88 - uBake * .12, bn) * smoothstep(.04, .45, uBake);
+    base = mix(base, vec3(.74, .53, .27), smoothstep(0., 1., uBake) * .72);
+    base = mix(base, uBurnCol, burn);
+    te = clamp(te + burn * .5 + uBake * .12, 0., 1.);
+  #endif
   float ang = mix(uAngle, uAngle2, step(.6, N.y));
   float cov = hatchCov(gl_FragCoord.xy, te, ang, uSpace, uSeed);
   if (uCross > .5){
@@ -208,7 +256,11 @@ uniform float uHatch;   // 邊緣刻線強度
 uniform float uFlick;
 void main(){
   #ifdef SPILL
-    float vv = clamp(1. - length((vUv - vec2(.5, 1.)) * vec2(1.15, 1.)) * 1.12, 0., 1.);
+    #ifdef POOL
+      float vv = clamp(1. - length(vUv - .5) * 2.1, 0., 1.);
+    #else
+      float vv = clamp(1. - length((vUv - vec2(.5, 1.)) * vec2(1.15, 1.)) * 1.12, 0., 1.);
+    #endif
     float cv = hatchCov(gl_FragCoord.xy, vv * vv * 1.1, 1.62, 5., 3.7);
     gl_FragColor = vec4(uOnCol, cv * uOn);
     return;
@@ -221,6 +273,27 @@ void main(){
   vec3 col = mix(uOffCol, uOnCol, on);
   col = mix(col, uEdgeCol, cov * (.35 + .65 * on));
   col *= 1. + uFlick * (vnoise(vec2(uTime * 9., vUv.y * 3.)) - .5);
+  gl_FragColor = vec4(col, 1.);
+}
+`;
+
+// ---------- 火焰：兩片交叉的豎面，水滴形，邊緣刻線，會搖 ----------
+export const FLAME_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec2 vUv;
+uniform float uFlick;
+uniform vec3 uCol;
+uniform vec3 uEdge;
+void main(){
+  float y = vUv.y;
+  float x = (vUv.x - .5) * 2.;
+  float wob = (vnoise(vec2(y * 2.6 + uTime * 3.4, 1.7)) - .5) * .9 * uFlick * y;
+  float env = pow(sin(3.14159 * pow(clamp(y, 0., 1.), .72)), .85) * (1. - y * .28);
+  float d = abs(x - wob) / max(env * (.85 + .3 * uFlick * vnoise(vec2(y * 5., uTime * 5.))), .001);
+  if (d > 1. || y > .985) discard;
+  float cov = hatchCov(gl_FragCoord.xy, .22 + .55 * d, 1.5708, 4.2, 2.2);
+  vec3 col = mix(uCol, uEdge, smoothstep(.35, 1., d) * .85 + y * .25);
+  col = mix(col, uEdge * .45, cov * .6);
   gl_FragColor = vec4(col, 1.);
 }
 `;

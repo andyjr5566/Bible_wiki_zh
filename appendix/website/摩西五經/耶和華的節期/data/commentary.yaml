@@ -230,3 +230,523 @@ passover:
     quote: The children will ask about the meaning of the celebration of the Passover.
     quoteZh: 兒女會問守逾越節是什麼意思。
     paraphrase: KingComments 接著說，在父母的回答裡聽得出感恩和讚嘆。
+
+# ================= 第二階段第一批（春季） =================
+opening:
+  # ---------- 月朔 ----------
+  - id: ct-newmoon
+    source: CT
+    work: 黃迦勒《民數記註解》
+    chapter: 民10
+    verse: 民10:10
+    quote: 『月朔』指每月的第一日，或新月出現的日子
+
+  - id: gt-dlc-newmoon
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民28
+    verse: 民28:11
+    quote: 每逢月朔，除了獻本節所說應獻的祭以外，祭司須要吹號（十10），使百姓不做勞碌的工（摩八5），又都要去敬拜神（詩八十一1-4，王下四23）。
+
+  - id: gt-chuanzhu-newmoon
+    source: GT
+    work: 《民數記串珠聖經註釋》
+    chapter: 民28
+    verse: 民28:11-15
+    quote: 每月的第一日要獻祭，月月如此（14），祭物的數量與其他重要節日相同。
+
+  - id: bh-newmoon
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 民28
+    verse: 民28:11
+    quote: The Hebrew calendar is lunar-based, and the New Moon was a time for both religious observance and civil administration.
+    quoteZh: 希伯來曆法以月亮為準；月朔既是宗教上守節的日子，也是處理民事的時候。
+
+unleavened:
+  # ---------- 烤無酵餅 ----------
+  - id: ct-bake
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出12
+    verse: 出12:39
+    quote: 意指他們所攜帶的生麵團(參34節)還沒有發起來，因此烤成無酵餅來吃，剛好符合七天無酵節的要求(參15節)。
+
+  - id: gt-qidao-bake
+    source: GT
+    work: 《啟導本聖經腳註》
+    chapter: 出12
+    verse: 出12:39
+    quote: 以色列人用無酵餅，因為走得太匆忙，得把摶面盆攜在身邊（34節），現在才有時間烤無酵餅來吃。
+
+  - id: kc-first-food
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:39
+    quote: The first food they eat after leaving Egypt is unleavened cakes.
+    quoteZh: 他們離開埃及以後吃的第一樣食物，就是無酵餅。
+
+  - id: bh-on-hand
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出12
+    verse: 出12:39
+    quote: They had to use what they had on hand, emphasizing their reliance on God for sustenance.
+    quoteZh: 他們只能用手邊有的東西，這顯出他們的飲食要倚靠神。
+
+  # ---------- 七日 ----------
+  - id: ct-labor
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:7
+    quote: 『勞碌的工』指身體勞動的工，例如建築、紡織、收割、打榖、推磨等。
+
+  - id: gt-dlc-same-name
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:6
+    quote: 無酵節，（出十二17），或作除酵節（出二十三15三十四18），這兩個名稱在原文上是一樣的字
+
+  - id: gt-qidao-order
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利23
+    verse: 利23:6
+    quote: 逾越節在先，表明信徒是先得著救贖；無酵節在後，說明有了救贖然後去過聖潔的生活
+
+  - id: kc-seven
+    source: KC
+    work: KingComments
+    chapter: 出12
+    verse: 出12:15-20
+    quote: The Feast of Unleavened Bread lasted seven days, from the fifteenth to the twenty-first of the month.
+    quoteZh: 無酵節一共七天，從這月十五日到二十一日。
+
+  # ---------- 除酵 ----------
+  - id: ct-whole-seven
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出13
+    verse: 出13:7
+    quote: 『七日之久』意指從頭到尾，沒有一天例外。
+
+  - id: kc-nowhere
+    source: KC
+    work: KingComments
+    chapter: 出13
+    verse: 出13:7
+    quote: The leaven may not be eaten. It should not even be present anywhere in the land.
+    quoteZh: 酵不可以吃，甚至在境內任何地方都不可以有。
+
+  - id: gt-jingdu-leaven
+    source: GT
+    work: 《聖經精讀本──出埃及記註解》
+    chapter: 出13
+    verse: 出13:7
+    quote: 這裡酵象徵具有傳染性的一切罪惡(太16:12;林前5:8;加5:9)。
+
+  # ---------- 困苦餅（理由） ----------
+  - id: ct-affliction
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申16
+    verse: 申16:3
+    quote: 『困苦餅』無酵餅的滋味不如有酵餅，用來表示紀念在埃及地所過困苦、悲慘的日子。
+
+  - id: bh-affliction
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 申16
+    verse: 申16:3
+    quote: Unleavened bread is called the "bread of affliction" because it reminds the Israelites of their suffering and hardship in Egypt.
+    quoteZh: 無酵餅叫作「困苦餅」，因為它讓以色列人想起在埃及受的苦難。
+
+  - id: kc-testimony
+    source: KC
+    work: KingComments
+    chapter: 出13
+    verse: 出13:8
+    quote: The explanation is not a theological treatise on what happened in Egypt, but a personal testimony of the head of the family.
+    quoteZh: 這個解釋不是一篇談埃及那段歷史的神學論文，而是一家之主親身的見證。
+
+  - id: gt-zhongwen-teach
+    source: GT
+    work: 《中文聖經註釋》
+    chapter: 出13
+    verse: 出13:8
+    quote: 這段記述明顯是為教育之用──要告訴你的兒子，而不是為律例之用。
+
+firstfruits:
+  # ---------- 帶初熟的一捆 ----------
+  - id: ct-omer
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:10
+    quote: 『一捆』原文是俄梅珥，固體容量單位，為一伊法的十分之一，折合約2.2公升，相當於一個人三餐的份量
+
+  - id: gt-dlc-omer
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:10
+    quote: 這字有時是捆的意思（申二十四19，得二7、15，伯二十四10），卻也是一種量器的名字
+
+  - id: gt-qidao-giver
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利23
+    verse: 利23:10
+    quote: 初熟節的獻祭儀式，把收穫之物一捆獻在神面前，承認神才是全地莊稼的真正賜予者。
+
+  - id: kc-in-land
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:10
+    quote: The feast of the sheaf of the first fruits can only take place in the land.
+    quoteZh: 獻初熟禾捆的節期，只能在那地上守。
+
+  - id: bh-barley
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:11
+    quote: The sheaf, or omer, represents the first portion of the barley harvest, symbolizing the Israelites' acknowledgment of God's provision.
+    quoteZh: 這一捆（俄梅珥）是大麥收成的頭一份，象徵以色列人承認是神供應他們。
+
+  # ---------- 搖禾捆 ----------
+  - id: ct-wave-motion
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:11
+    quote: 『搖一搖』指水平方向前後擺動，是獻搖祭的動作(參七30)，表示一面感謝神賜與糧食，另一面象徵所有的收穫都歸神為聖。
+
+  - id: gt-bg-lift
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:11
+    quote: 祭司要在主的祭壇前面，搖一搖或抬起這捆莊稼。這是吸引神注意祭物的作法，表示一切禮物和祭物都是出乎神，並且屬於神。
+
+  - id: ct-sabbath
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:11
+    quote: 『安息日的次日』有兩種解釋：(1)七十士譯本作“第一日的次日”，即無酵節第一日的次日，亦即正月十六日；(2)法利賽人則認為是指無酵節期間的頭一個聖會日，即正月十五日。
+
+  - id: gt-dlc-sabbath
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:11
+    quote: 撒都該人以為本句的“安息日”三個字是指著無酵節中之尋常的安息日，但法利賽人以為是指著除酵節中的頭一個聖會日（就是正月十五日）說的。
+
+  - id: bh-first-day
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:11
+    quote: This timing is significant as it places the offering on the first day of the week, which later becomes the day of Christ's resurrection.
+    quoteZh: 這個時間很重要：它把獻禾捆定在一週的第一日，後來那正是基督復活的日子。
+
+  # ---------- 同獻的羊羔 ----------
+  - id: ct-lamb
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:12
+    quote: 這是在早晚常獻的燔祭以外(參民二十八23)，另外伴隨獻初熟的莊稼之搖祭而獻的燔祭。
+
+  - id: gt-dlc-no-sin
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:12
+    quote: 當初熟節不獻贖罪祭，因為這節期是預表耶穌的復活。
+
+  - id: gt-bg-three
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:12-13
+    quote: 一歲羊羔的燔祭、雙倍平常分量的素祭，和澆酒的奠祭，代表以色列的三大主要物產
+
+  # ---------- 先不可吃 ----------
+  - id: ct-not-yet
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:14
+    quote: 意指在獻初熟的莊稼給神以前，不可吃當年新熟的穀物所作的餅，所烘的子粒或穗子。
+
+  - id: kc-begin-god
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:14
+    quote: We can learn from this that we must always begin with God, every day, every meal, every intention, every work (cf. Mt 6:33).
+    quoteZh: 我們從這裡學到，凡事都要先從神開始：每一天、每一餐、每個打算、每件工作（參太6:33）。
+
+  - id: gt-bg-release
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:14
+    quote: 它又有開放其餘莊稼，供百姓自由使用的功用
+
+second-passover:
+  - id: gt-bg-sinai
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 民9
+    verse: 民9:1
+    quote: 這是西乃山周圍的曠野地帶
+
+  - id: kc-third
+    source: KC
+    work: KingComments
+    chapter: 民9
+    verse: 民9:1-5
+    quote: The first Passover was observed in Egypt. So here we read about the second Passover. Only in Joshua 5 do we read about the observance of the Passover for the third time (Jos 5:10).
+    quoteZh: 第一次逾越節是在埃及守的，這裡讀到的是第二次；要到約書亞記5章，才讀到第三次守逾越節（書5:10）。
+
+  - id: gt-dlc-no-unleavened
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民9
+    verse: 民9:5
+    quote: 聖書上沒有提到以色列人當時守了除酵節（參出十二18），或是因為他們不能得夠那麼多的面，使百姓吃七天的無酵餅。
+
+  - id: ct-who
+    source: CT
+    work: 黃迦勒《民數記註解》
+    chapter: 民9
+    verse: 民9:6
+    quote: 『有幾個人』可能是指米沙利、以利撒反和幫助他們的人，他們在幾天前剛奉摩西的命令，處理堂姪兒拿答、亞比戶的屍首(參利十4)
+
+  - id: ct-seven-unclean
+    source: CT
+    work: 黃迦勒《民數記註解》
+    chapter: 民9
+    verse: 民9:6
+    quote: 『因死屍而不潔淨』指為著辦理親人死亡而接觸到屍體，七天內算不潔淨(參十九11)。
+
+  - id: gt-dlc-obeyed
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民9
+    verse: 民9:7
+    quote: 意思說，我們染這不潔，並不怨我們自己，乃因為我們聽了你（摩西）的命（6注）。
+
+  - id: bh-ritual
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 民9
+    verse: 民9:7
+    quote: This uncleanness was not a moral failing but a ritual state that required purification.
+    quoteZh: 這種不潔淨不是道德上的過失，而是禮儀上的狀態，需要經過潔淨。
+
+  - id: kc-not-know
+    source: KC
+    work: KingComments
+    chapter: 民9
+    verse: 民9:8
+    quote: Moses does not pretend to know the answer to their question.
+    quoteZh: 摩西沒有裝作自己知道他們問題的答案。
+
+  - id: gt-jingdu-wait
+    source: GT
+    work: 《聖經精讀本──民數記註解》
+    chapter: 民9
+    verse: 民9:8
+    quote: 摩西所求的是神的旨意,而不是人操之過急的結論(詩37:7;箴20:22;賽30:18)。
+
+  - id: bh-pause
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 民9
+    verse: 民9:8
+    quote: This phrase indicates a pause for divine guidance, emphasizing the importance of seeking God's will before making decisions.
+    quoteZh: 這句話表示停下來等候神的指引，強調做決定之前要先尋求神的旨意。
+
+  - id: ct-postpone
+    source: CT
+    work: 黃迦勒《民數記註解》
+    chapter: 民9
+    verse: 民9:11
+    quote: 意指他們可以順延一個月，而在二月十四日黃昏時辰，守逾越節。
+
+  - id: gt-dlc-tradition
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民9
+    verse: 民9:11
+    quote: 猶太人有遺傳說，第二月的逾越節只有一天，不必除酵，但這是與聖書不合。
+
+  - id: gt-chuanzhu-no-excuse
+    source: GT
+    work: 《民數記串珠聖經註釋》
+    chapter: 民9
+    verse: 民9:10
+    quote: 若錯過了節期，無論是因不潔或遠行（10），是否有藉口不守一次呢？答案是不可以。
+
+  - id: bh-journey
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 民9
+    verse: 民9:10
+    quote: This provision accounts for those who are physically unable to participate in the Passover due to travel.
+    quoteZh: 這項規定顧及了因為出門在外、實在無法參加逾越節的人。
+
+weeks:
+  # ---------- 數算 ----------
+  - id: ct-49
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:15
+    quote: 意指從初熟節安息日的次日(請參閱11節註解)算起，七乘七一共四十九天。
+
+  - id: bh-counting
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:15
+    quote: This period of counting, known as the Counting of the Omer, is a time of anticipation and preparation.
+    quoteZh: 這段數算的日子稱為「數俄梅珥」，是期待和預備的時候。
+
+  - id: gt-jingdu-wheat
+    source: GT
+    work: 《聖經精讀本──利未記註解》
+    chapter: 利23
+    verse: 利23:15-16
+    quote: 這時大麥收割接近尾聲,小麥開始收割。
+
+  - id: kc-barley-wheat
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:17
+    quote: The sheaf of the first fruits is of barley. The first fruits of the Feast of Weeks is of wheat.
+    quoteZh: 初熟的禾捆是大麥；七七節的初熟之物是小麥。
+
+  # ---------- 兩個有酵的餅 ----------
+  - id: ct-leaven-sin
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:17
+    quote: 五旬節作搖祭的兩個餅要加酵，這是見證(兩個)奉獻的人承認自己有罪(酵)。
+
+  - id: bh-leaven-unlike
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:17
+    quote: Unlike other offerings that required unleavened bread, this offering includes leaven, which is yeast.
+    quoteZh: 和其他規定要用無酵餅的祭物不同，這一份含有酵，也就是酵母。
+
+  - id: gt-bg-not-altar
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:17
+    quote: 兩個餅是加酵的，但不會燒在壇上（見七13的規例）。
+
+  - id: kc-church
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:17
+    quote: The wave breads do not represent the Lord Jesus, but the church.
+    quoteZh: 這兩個搖祭的餅代表的不是主耶穌，而是教會。
+
+  # ---------- 兩份祭牲 ----------
+  - id: gt-dlc-order
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:18-19
+    paraphrase: 丁良才記下主耶穌在世時猶太人守七七節的次序：先獻民數記28章所列的那一組祭牲，隨後祭司把兩個餅和利未記23章所列的那一組一同奉上。
+
+  - id: kc-same-offerings
+    source: KC
+    work: KingComments
+    chapter: 民28
+    verse: 民28:11-31
+    quote: The first three feasts belong together. This can be seen from the fact that the same offerings are brought at these feasts.
+    quoteZh: 頭三個節期是一組的；從這幾個節期獻上同樣的祭物就看得出來。
+
+  - id: kc-sin-offering
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:19
+    quote: There is now also a sin offering included in the offerings (verse 19).
+    quoteZh: 這一次的祭物裡也有贖罪祭（19節）。
+
+  - id: gt-bg-unclear
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:19
+    quote: 所獻之祭包括一隻山羊為贖罪祭卻理由不明
+
+  # ---------- 一同歡樂（理由） ----------
+  - id: ct-all
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申16
+    verse: 申16:11
+    quote: 守七七節(收割節)不限對象，以色列人、無分無業的利未人、寄居的外邦人、孤兒寡婦等均可參與歡度節日。
+
+  - id: ct-remember-poor
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申16
+    verse: 申16:12
+    quote: 意指藉著紀念先祖從前也曾度過貧困、悲慘的日子，轉而顧念自己周遭那些貧困、無依無靠的人們，如此守節乃是遵行律例的最好表現。
+
+  - id: bh-justice
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 申16
+    verse: 申16:11
+    quote: The inclusion of foreigners, orphans, and widows demonstrates the social justice aspect of the law, ensuring that all people, regardless of status, are part of the covenant community.
+    quoteZh: 把寄居的、孤兒和寡婦都包括在內，顯出律法顧到社會公義，讓每個人不論身分，都在立約的群體裡。
+
+  # ---------- 田角 ----------
+  - id: ct-corners
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:22
+    quote: 這個條例的目的是為留些麥穗給窮人有機會得糧吃。
+
+  - id: gt-dlc-corners
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:22
+    quote: 神又用這樣的話提醒百姓，使他們知道單行謝恩的禮是不夠的
+
+  - id: gt-chuanzhu-poor
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利23
+    verse: 利23:22
+    quote: 守五旬節時要紀念窮人的需要，故此處重提拾取麥穗的律例（22）。
+
+  - id: bh-dignity
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:22
+    quote: The practice of leaving gleanings was a way to provide for the poor and the foreigner, allowing them to gather food with dignity.
+    quoteZh: 留下遺落的穗子，是供應窮人和寄居者的方式，讓他們能有尊嚴地撿拾糧食。

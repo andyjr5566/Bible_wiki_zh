@@ -45,18 +45,36 @@ await send('Page.startScreencast', { format: 'jpeg', quality: 80, maxWidth: W * 
 const total = await b.evaluate('document.documentElement.scrollHeight - innerHeight');
 const hyssopTop = await b.evaluate(`(() => { const el = document.querySelector('[data-cue="hyssop"], [data-beat="hyssop"]'); return el ? el.getBoundingClientRect().top + scrollY : -1; })()`);
 const clickText = (txt) => b.evaluate(`(() => { const el = [...document.querySelectorAll('button')].find(e => e.textContent.trim() === ${JSON.stringify(txt)}); if (el) { el.click(); return true } return false })()`);
+const topOf = (cue) => b.evaluate(`(() => { const el = document.querySelector('[data-cue="${cue}"]'); return el ? el.getBoundingClientRect().top + scrollY : -1; })()`);
+// 長按某個按鈕（例如「按住烤餅」）：在按鈕中心按下、停 ms 毫秒、放開
+const holdText = async (txt, ms) => {
+  const r = await b.evaluate(`(() => { const el = [...document.querySelectorAll('button')].find(e => e.textContent.trim() === ${JSON.stringify(txt)} && e.offsetParent); if (!el) return null; const q = el.getBoundingClientRect(); return [q.x + q.width / 2, q.y + q.height / 2]; })()`);
+  if (!r) return false;
+  await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: r[0], y: r[1] });
+  await send('Input.dispatchMouseEvent', { type: 'mousePressed', x: r[0], y: r[1], button: 'left', clickCount: 1 });
+  await sleep(ms);
+  await send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: r[0], y: r[1], button: 'left', clickCount: 1 });
+  return true;
+};
+// 到了這些拍就停下來操作一次
+const actions = [
+  { at: hyssopTop, run: async () => { for (const t of ['蘸血', '打門楣', '蘸血', '打左門框', '蘸血', '打右門框']) { await clickText(t); await sleep(1100); } } },
+  { at: await topOf('bake'), run: async () => { await holdText('按住烤餅', 2400); } },
+  { at: await topOf('wave'), run: async () => { for (let i = 0; i < 3; i++) { await clickText('搖一搖'); await sleep(1000); } } },
+].filter((a) => a.at > 0);
 let y = 0;
 const step = mobile ? 14 : 18;
-let didHyssop = false;
 while (y < total) {
   y = Math.min(total, y + step);
   await b.evaluate(`window.scrollTo(0, ${y})`);
   await sleep(33);
-  if (!didHyssop && hyssopTop > 0 && y >= hyssopTop + H * 0.3) {
-    didHyssop = true;
-    await sleep(800);
-    for (const t of ['蘸血', '打門楣', '蘸血', '打左門框', '蘸血', '打右門框']) { await clickText(t); await sleep(1100); }
-    await sleep(1200);
+  for (const a of actions) {
+    if (!a.done && y >= a.at + H * 0.3) {
+      a.done = true;
+      await sleep(800);
+      await a.run();
+      await sleep(1200);
+    }
   }
 }
 await sleep(1500);

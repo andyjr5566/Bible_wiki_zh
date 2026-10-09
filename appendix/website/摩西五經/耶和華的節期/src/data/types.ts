@@ -78,23 +78,48 @@ export interface Beat {
   text: string;
   /** 互動提示文字（有互動的拍才有） */
   prompt?: string;
-  interaction?: 'hyssop';
+  /**
+   * hyssop：拖曳牛膝草塗血（場景）；bake：長按烤無酵餅（介面按鈕＋場景畫麵團）；
+   * wave：拖曳搖禾捆（場景）；count：捲動數算七七日（介面的 7×7 格＋場景麥田轉色）
+   */
+  interaction?: 'hyssop' | 'bake' | 'wave' | 'count';
   /** 這一拍就地展開的註釋 id */
   notes?: string[];
   /** 這一拍可點開的原文字 id */
   words?: string[];
   /** 這一拍屬於「經文自己交代的理由」 */
   reason?: boolean;
-  /** 開場用：這一拍月亮對應的日子（1–14） */
+  /**
+   * 這一拍月亮對應的日子（1–30）。介面層寫入 story.day 的規則：
+   * 同一章裡相鄰兩個有 day 的拍之間依捲動內插；有 dayTo 的拍在拍內從 day 走到 dayTo。
+   */
   day?: number;
+  dayTo?: number;
+  /**
+   * 日數牌改顯示這段文字（例如「安息日的次日」「第二年正月十四日」）；有 badge 時 day 只用來畫月亮。
+   * 沒有 badge 也沒有 day 的拍，日數牌隱藏。count 拍的日數牌由 story.count 產生「第 n 日」。
+   */
+  badge?: string;
+  /** 這一拍要顯示的獻祭清單：經文出處（key 對到 SiteData.offerings），例如「民28:19-22」 */
+  offerings?: string[];
+  /** 獻祭清單前面的短標籤，例如「每日（共七日）」；經文有說才寫（民28:24「一連七日，每日要照這例」） */
+  offeringsLabel?: string;
+}
+
+/** 一段經文列出的祭牲：建置腳本從 raw_scripture 的經文本文解析出數目，不手抄 */
+export interface OfferingGroup {
+  ref: string;
+  /** 照經文出現的順序；role 取自同一句的「為燔祭／為贖罪祭／為平安祭」，經文沒說就是空字串 */
+  items: { animal: string; count: number; role: string }[];
 }
 
 export interface StoryChapter {
   id: string; // opening、passover……
   kind: 'opening' | 'feast';
   title: string;
-  /** 經文給的日期，例如「正月十四日黃昏」 */
+  /** 經文給的日期，例如「正月十四日黃昏」；沒有月日的節期寫經文的說法，例如「安息日的次日」 */
   date?: string;
+  /** 經文有月份才填；沒填的章，月份導覽維持前一個位置並顯示為「不定日期」 */
   month?: number;
   day?: number;
   scene: string; // night-moon、egypt-street……
@@ -133,6 +158,8 @@ export interface SiteData {
   commentary: Record<string, CommentaryNote>;
   step: Record<string, StepWord>;
   entries: Record<string, EntryLink>;
+  /** 獻祭清單，key 是 story.yaml 裡寫的經文出處 */
+  offerings: Record<string, OfferingGroup>;
   audio: AudioSource[];
   /** 授權頁：每章用到的來源與網址 */
   sources: { book: string; chapter: number; source: SourceId | 'STEP'; site: string; url: string }[];

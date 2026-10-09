@@ -1,54 +1,69 @@
-# 交接：耶和華的節期（第一階段：開場＋逾越節）
+# 交接：耶和華的節期
 
-最後更新：2026-10-09。目標與規則看 `GOAL.md`（使用者已用 `/goal` 設為本工作的目標），設計與分鏡看 `SPEC.md`。這份只記「做到哪、接下來做什麼」。
+最後更新：2026-10-09。這份只記「做到哪、接下來做什麼」，其他文件看這裡：
 
-## 第一階段狀態：完成，待使用者驗收
+| 想知道 | 看哪裡 |
+|---|---|
+| 總目標與規則 | `GOAL.md` |
+| 第二階段的目標提示詞（使用者用 `/goal` 設定） | `GOAL-2.md` |
+| 設計與分鏡 | `SPEC.md` |
+| 審查紀錄 | `tools/review-log.md` |
+
+## 進度
+
+| 階段 | 內容 | 狀態 |
+|---|---|---|
+| 第一階段 | 開場＋逾越節，13 拍 | 已 commit `300746b5`；使用者：「大致上都沒有問題」 |
+| 第二階段第一批（春季） | 月朔（併入開場）、無酵節、初熟的禾捆、二月逾越節、七七節，18 拍 | 完成，待使用者驗收 |
+| 第二階段第二批（秋季） | 吹角節、贖罪日、住棚節＋第八日；民29 數字檢查 | 未開始 |
+| 第二階段第三批（結尾） | 七的節奏（安息日→禧年）、首頁入口卡、律法地圖互連、部署前確認 | 未開始 |
+
+## 第一批（春季）做了什麼
 
 - **內容**（Opus）：
-  - `data/feasts.yaml`、`data/story.yaml`（開場 4 拍＋逾越節 9 拍）；
-  - `data/commentary.yaml`（29 則，四家都有）；
-  - `data/step.yaml`（10 個原文字）。
-- **審查**：Codex 唯讀兩輪已用完。
-  - 第 1 輪 PASS；
-  - 第 2 輪 1 條 finding（GT 段落沒標出處卻掛名丁道爾）。主筆依同一判準全面複查，共修 4 處，做最後修正。
-  - 不再有第 3 輪。細節見 `tools/review-log.md`。
-- **工程**（Sonnet 兩個子代理＋主筆整合）：
-  - 場景 `src/scene/**`＋`scene-lab.html`；
-  - 介面 `index.html`、`src/main.ts`、`src/story/scroll.ts`、`src/ui/**`、`src/audio/**`、`src/styles/**`；
-  - 資料腳本 `scripts/**`。GT 歸屬檢查已改成段落級。
-- **檢查**：
-  - `npm run build` 全過：data:check、typecheck、56 項測試；`dist/index.html` 約 736 kB 單檔，`dist/audio` 7 個檔，`dist/fallback` 13 張。
-  - `file://` 打開正常：13 拍、場景、插圖、音檔都能載入，console 無錯誤。
-  - 桌機 1440×900、手機 390×844，亮色與暗色，13 拍全部截圖看過；手機 scrollWidth 都是 390。
-- **WebGL 不可用時的插圖**：`public/fallback/<cue>.webp`，13 張共約 3.4 MB，用 `tools/shoot-fallback.mjs` 從 lab 頁截。
-- **錄影與截圖**：交件用的在 `review/`（已列入 .gitignore，不 commit）。
-  - 4 支影片：桌機亮、桌機暗、手機亮、手機減少動態；
-  - 13 拍總覽圖 4 張：桌機／手機 × 亮／暗。
-- **主筆驗收時抓到並修好的**：
-  - meal 室內分格：介面沒建框，場景畫不出來；
-  - 徽章壓到月份導覽；
-  - 章標題被標題列壓住；
-  - 手機構圖被說明框蓋住；
-  - 父親像帳篷；
-  - **減少動態開著時拖曳牛膝草不跟手**：場景閒置跳幀沒被 pointer 事件叫醒。已在 `src/scene/index.ts` 修。
-  - 以上用 `tools/check-drag.mjs` 與 scratchpad 的 `site-drag*.mjs` 驗過：滑鼠、觸控、減少動態開或關，甩到三處停住都能打上。
-
-## 待使用者決定（交件時已問）
-
-- 音效是盲選的（無法試聽），請使用者實際聽過，尤其「群眾哀號」與「打門框」。
-- 畫風依實際看過 Santioni 後改為「刻線為主、網點為輔」（GOAL.md §1 已註記），請使用者確認。
-- 這個資料夾還沒 commit（使用者沒要求）。
-- 部署：要放到現有網站的同一處，部署前須先問使用者。
+  - 18 拍敘述；
+  - 68 則註釋；
+  - 8 個原文字；
+  - 16 句條目簡介；
+  - 4 組獻祭清單：數字由建置腳本從經文解析，不手抄。
+  - 註釋讀法：先由 Haiku 的 `tools/raw-index/` 經節行號索引定位，再完整讀相關段落。
+- **審查**：Codex 兩輪。
+  - 第 1 輪 2 條 finding：BibleHub 一句的中譯被擴大，已修；
+  - 第 2 輪 PASS。
+- **工程**（Sonnet `jf-engineer` ×2）：
+  - 場景：新增 `camp.ts`、`fields.ts`、`home.ts`、`wave.ts`、`geo2.ts`、`props.ts`，`tracks.ts` 改用 cue 名定位時間點；
+  - 介面：新增 `src/ui/{offerings,bake,wave,count,fold,place}.ts`；
+  - 資料腳本：新欄位、獻祭解析（建置檢查 #5）、GT 標記破折號加寬。
+- **新互動**：
+  - bake：長按烤餅；
+  - wave：拖曳或按鈕搖禾捆；
+  - count：捲動數算 7×7 加第 50 日。
+  - 三者在桌機與手機、減少動態開與關都實測過。
+- **新音效**：`fire`、`field-wind`、`harvest`，都是 CC0，主筆逐頁確認授權。
+- **契約新增**：
+  - Beat 的 `interaction`（bake／wave／count）、`badge`、`dayTo`、`offerings`、`offeringsLabel`；
+  - `SiteData.offerings`；
+  - state 的 `month`／`count`／`bake`／`wave`；
+  - api 的 `waveAction`、`wave-*` 事件。
 
 ## 已知、可接受的小問題
 
 - 桌機 midnight 拍的說明框壓到那排有血的門上方一小段。
-- 讀者跳過塗血時，場景會自動補上三處的血（狀態列寫「已替你補上三處的血」）。之後捲回這一拍不能再操作。
+- 讀者跳過塗血、烤餅、搖禾捆時會自動補完，捲回來不能再操作。
+- 手機有幾拍主體和說明框稍有重疊（場景用 `MOBILE_K` 統一後退，沒有逐拍微調）。
+- weeks-offerings 的祭牲剪影離得遠時，牛羊不易分辨。
 - iOS Safari 的音檔解鎖沒有實機驗證。
 
-## 下一步（使用者同意後）
+## 待使用者決定
 
-第二階段才做其他節日。這次 GOAL.md 明定垂直切片做完就停。
+- 新音效同樣是盲選，請實際聽：火、麥田風、鐮刀。
+- 部署：放到現有網站的同一處，部署前須先問使用者。
+
+## 子代理（repo 根目錄 `.claude/agents/`）
+
+- `jf-engineer`：Sonnet 5.5，effort high；
+- `jf-collector`：Haiku。
+- 兩者都設 `omitClaudeMd: true`。要修改就用 SendMessage 續用同一個代理。
 
 ## 工具（`tools/`）
 
@@ -56,13 +71,12 @@
 |---|---|
 | `cdp.mjs` | headless Chrome 驅動 |
 | `shoot-site.mjs <url> <outDir> [--mobile] [--dark] [--reduced]` | 逐拍截圖＋量 scrollWidth |
-| `shoot-fallback.mjs [port]` | 產生靜態插圖 |
+| `shoot-fallback.mjs [port]` | 產生靜態插圖（新 cue 要加進 SHOTS） |
 | `check-file-url.mjs [png]` | 用 file:// 驗 dist |
-| `check-drag.mjs <url> [--mobile] [outDir]` | 在整合後的網站上用滑鼠或觸控拖曳塗血 |
-| `record.mjs <url> <out.mp4> [--mobile] [--dark] [--reduced]` | 錄影 |
+| `check-drag.mjs`、`check-wave.mjs`、`check-bake.mjs` | 在整合後的網站上實測三種互動 |
+| `record.mjs <url> <out.mp4> [--mobile] [--dark] [--reduced]` | 錄影，會在塗血、烤餅、搖禾捆三拍停下操作 |
+| `raw-index/build_index.py <book> <ch> …` | raw 經節行號索引；GT 子來源欄不可靠，以 raw 與建置檢查為準 |
 | `fs.mjs` | Freesound 查詢與下載 |
-| `codex-review-1.md`、`codex-review-2.md` | 審查指令 |
-| `codex-review-2.out.md` | 第 2 輪結果 |
-| `review-log.md` | 審查紀錄 |
+| `codex-review-*.md`、`*.out.md`、`review-log.md` | 審查指令、結果、紀錄 |
 
-注意：這台機器的系統是暗色主題，截亮色圖要明確用 `Emulation.setEmulatedMedia` 設 `prefers-color-scheme: light`（腳本已處理）。
+注意：這台機器是暗色主題，而且開著減少動態。截圖一律明確設定 `prefers-color-scheme` 與 `prefers-reduced-motion`（腳本已處理）。

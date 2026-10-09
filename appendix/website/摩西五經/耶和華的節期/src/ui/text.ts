@@ -29,6 +29,10 @@ export function verseNodes(block: VerseBlock, numbered = block.lines.length > 1)
   return out;
 }
 
-/** 開場日數牌上的日子：1 → 初一 … 14 → 十四 */
-const DAY_NAMES = ['初一', '初二', '初三', '初四', '初五', '初六', '初七', '初八', '初九', '初十', '十一', '十二', '十三', '十四'];
+/** 日數牌上的日子：1 → 初一 … 14 → 十四 … 21 → 二十一 … 30 → 三十 */
+const DAY_NAMES = [
+  '初一', '初二', '初三', '初四', '初五', '初六', '初七', '初八', '初九', '初十',
+  '十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十',
+  '二十一', '二十二', '二十三', '二十四', '二十五', '二十六', '二十七', '二十八', '二十九', '三十',
+];
 export const dayName = (d: number): string => DAY_NAMES[Math.min(DAY_NAMES.length, Math.max(1, Math.round(d))) - 1];

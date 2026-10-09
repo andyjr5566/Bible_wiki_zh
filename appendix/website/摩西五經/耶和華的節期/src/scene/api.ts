@@ -11,6 +11,10 @@ export type SceneEvent =
   | { type: 'hyssop-miss' }
   | { type: 'hyssop-done'; auto: boolean }
   | { type: 'door-shut' }
+  /** 初熟禾捆：搖了一下（拖曳甩動或按鈕） */
+  | { type: 'wave-swing' }
+  /** 搖滿三下；讀者沒做就捲過去時 auto=true */
+  | { type: 'wave-done'; auto: boolean }
   | { type: 'ready' }
   | { type: 'webgl-lost' };
 
@@ -32,7 +36,13 @@ export interface SceneHandle {
    * 'dip' 蘸血；'lintel'/'left'/'right' 打在該處。行為與拖曳完全相同（含動畫與事件）。
    */
   hyssopAction(action: 'dip' | HyssopPart): void;
-  /** 畫布上目前可互動的區域（介面層據此只在這些區域攔截觸控，其餘照常捲動）。座標是 CSS px。 */
+  /** 初熟禾捆的按鈕替代操作：搖一下（與拖曳甩動一下相同，含動畫與事件） */
+  waveAction(): void;
+  /**
+   * 畫布上目前可互動的區域（介面層據此只在這些區域攔截觸控，其餘照常捲動）。座標是 CSS px。
+   * cue 是 hyssop 時：[把手, 盆, 門框區]；cue 是 wave 時：[禾捆把手]；其他 cue 回傳空陣列。
+   * 第一個矩形一律是「按住拖曳」的把手（介面層對它用 touch-action: none）。
+   */
   interactiveRects(): DOMRect[];
 }
 

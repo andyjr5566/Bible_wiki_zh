@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path';
 import YAML from 'yaml';
 import { afterAll, describe, expect, it } from 'vitest';
 import { buildAll, renderOutput, stableStringify } from './build-data.mjs';
+import { parseOfferings } from './checks.mjs';
 import { IN_VAULT, SITE_DIR } from './lib.mjs';
 
 describe('stableStringify', () => {
@@ -26,6 +27,47 @@ describe.skipIf(!IN_VAULT)('完整建置（需要 vault）', () => {
     expect(a.errors).toEqual([]);
     const b = buildAll();
     expect(renderOutput(a.data)).toBe(renderOutput(b.data));
+  });
+});
+
+const flat = (g) => g.items.map((i) => `${i.animal}${i.count}${i.role}`);
+
+describe.skipIf(!IN_VAULT)('獻祭數字（檢查 #5）：parser 算出的結果要等於主筆讀經文得出的期望值', () => {
+  const { data } = buildAll();
+  const expected = {
+    '民28:11-15': ['公牛犢2燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
+    '民28:19-22': ['公牛犢2燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
+    '民28:27-30': ['公牛犢2燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪'],
+    '利23:18-19': ['羊羔7燔祭', '公牛犢1燔祭', '公綿羊2燔祭', '公山羊1贖罪祭', '公綿羊羔2平安祭'],
+  };
+  for (const [ref, want] of Object.entries(expected)) {
+    it(ref, () => {
+      expect(data.offerings[ref]?.ref).toBe(ref);
+      expect(flat(data.offerings[ref])).toEqual(want);
+    });
+  }
+  it('story.yaml 用到的獻祭出處都有解析結果，沒有多餘的', () => {
+    const used = new Set(data.chapters.flatMap((c) => c.beats.flatMap((b) => b.offerings ?? [])));
+    expect([...used].sort()).toEqual(Object.keys(data.offerings).sort());
+  });
+});
+
+describe('獻祭 parser 反例：有一個「隻」沒被解析就要失敗', () => {
+  it('多一隻鴿子（不在動物詞表）', () => {
+    const r = parseOfferings(['又要將一隻公山羊為贖罪祭，三隻斑鳩為燔祭。']);
+    expect(r.errors.length).toBe(1);
+    expect(r.errors[0]).toContain('三隻斑鳩為燔祭');
+  });
+  it('數字不是一到十（十二隻）', () => {
+    expect(parseOfferings(['要獻十二隻公牛犢為燔祭。']).errors.length).toBe(1);
+  });
+  it('份量句裡的「隻」不算祭牲，也不報錯', () => {
+    const r = parseOfferings(['要獻兩隻公牛犢為燔祭。', '為那七隻羊羔，每隻要獻伊法十分之一。']);
+    expect(r.errors).toEqual([]);
+    expect(flat(r)).toEqual(['公牛犢2燔祭']);
+  });
+  it('沒有任何祭牲也算失敗', () => {
+    expect(parseOfferings(['要獻調油的細麵。']).errors.length).toBe(1);
   });
 });
 
@@ -91,6 +133,37 @@ describe.skipIf(!IN_VAULT)('故意弄壞資料：錯誤要指出哪一筆、哪�
     expect(hit(errors, 'story.yaml passover[blood].notes', 'no-such-note')).toBe(true);
     expect(hit(errors, 'story.yaml passover[blood].words', 'no-such-word')).toBe(true);
     expect(hit(errors, 'story.yaml passover[blood].text', '最多一處')).toBe(true);
+  });
+  it('beat 欄位：interaction、day、dayTo、badge、offerings', () => {
+    const errors = broken((d) => {
+      const [a, b, c, e] = d.story.unleavened;
+      a.interaction = 'jump';
+      b.day = 31;
+      c.day = 15; c.dayTo = 15;
+      e.badge = '';
+      d.story.passover[0].dayTo = 20;
+      d.story.passover[1].offerings = ['出12:99'];
+      d.story.passover[2].offerings = ['出12:21-28'];
+    }, { audio: allAudio() });
+    expect(hit(errors, 'unleavened[bake].interaction', 'hyssop/bake/wave/count')).toBe(true);
+    expect(hit(errors, 'unleavened[seven-days].day', '1–30')).toBe(true);
+    expect(hit(errors, 'unleavened[no-leaven].dayTo', '大於 day')).toBe(true);
+    expect(hit(errors, 'unleavened[remember].badge')).toBe(true);
+    expect(hit(errors, 'passover[blood].dayTo', '一定要有 day')).toBe(true);
+    expect(hit(errors, 'passover[hyssop].offerings[0]', '超出')).toBe(true);
+    expect(hit(errors, 'passover[door].offerings[0]', '沒有解析出任何祭牲')).toBe(true);
+  });
+  it('offeringsLabel：沒有 offerings、太長、空字串', () => {
+    const errors = broken((d) => {
+      d.story.passover[0].offeringsLabel = '每日';
+      d.story.passover[1].offerings = ['民28:19-22'];
+      d.story.passover[1].offeringsLabel = '這個標籤實在是太長太長太長了';
+      d.story.passover[2].offerings = ['民28:19-22'];
+      d.story.passover[2].offeringsLabel = '';
+    }, { audio: allAudio() });
+    expect(hit(errors, 'passover[blood].offeringsLabel', '一定要有 offerings')).toBe(true);
+    expect(hit(errors, 'passover[hyssop].offeringsLabel', '超過 12 字')).toBe(true);
+    expect(hit(errors, 'passover[door].offeringsLabel', '非空字串')).toBe(true);
   });
   it('音檔：沒有授權紀錄、檔案不存在、授權不是 CC0、pages 不含 page', () => {
     const errors = broken((d) => {

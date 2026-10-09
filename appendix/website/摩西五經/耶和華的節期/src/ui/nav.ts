@@ -4,14 +4,18 @@
  *   有內容的月份可以點；沒有內容的月份顯示為淡色、不可點。
  * - 點擊跳轉：先播約 250ms 的直向刻線抹除遮罩，再 window.scrollTo({ behavior: 'instant' })，再抹開。
  *   不用 smooth scroll、不用 scrollIntoView。
- * - 右上角小日數牌「正月　初三」，只在開場章顯示，跟著 story.day 的整數變化。
+ * - 右上角小日數牌：badge 優先，其次 day（「正月　十五」），再其次 count 拍的「第 n 日」，都沒有就隱藏。
+ * - 沒有 month 的章，標記停在前一個位置並改成空心。
  */
 import { gsap } from 'gsap';
 import { SITE } from '../data/site';
 import { story } from '../story/state';
+import type { Beat, StoryChapter } from '../data/types';
 import type { BeatRef } from './beats';
-import { h } from './dom';
+import { clamp, h } from './dom';
 import { dayName } from './text';
+
+const HOLLOW_TITLE = '經文沒有給這個節期月日';
 
 const MONTHS = ['正月', '二月', '三月', '四月', '五月', '六月', '七月'];
 const STRIPES = 24;
@@ -94,41 +98,67 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
   host.append(nav, dayEl, wipeEl);
 
   const chapters = new Map(SITE.chapters.map((c) => [c.id, c]));
-  let lastDay = -1;
-  let lastShow: boolean | null = null;
+  const beatByKey = new Map(beats.map((r) => [`${r.chapter.id}/${r.beat.id}`, r.beat]));
+  const span = MONTHS.length - 1;
+  const posOf = (month: number, day: number) => Math.round((((month - 1) + (day - 1) / 30) / span) * 10000) / 10000;
+
+  // 沒有 month 的章：標記停在前一個有月份的章的章末位置
+  const holdPos = new Map<string, number>();
+  {
+    let prev = posOf(1, 14);
+    for (const c of SITE.chapters) {
+      if (c.kind === 'opening') prev = posOf(1, 14);
+      else if (c.month) prev = posOf(c.month, (c.day ?? 1) + 1);
+      else holdPos.set(c.id, prev);
+    }
+  }
+
+  let lastText: string | null | undefined;
   let lastP = -1;
   let lastMonth = -1;
+  let lastHollow: boolean | null = null;
+
+  function dayText(c: StoryChapter | undefined, b: Beat | undefined): string | null {
+    if (!c || !b) return null;
+    if (b.badge) return b.badge;
+    const month = c.kind === 'opening' ? 1 : c.month;
+    if (b.day !== undefined && month) return `${MONTHS[month - 1] ?? `${month}月`}　${dayName(story.day)}`;
+    if (b.interaction === 'count') return `第 ${clamp(Math.ceil(story.count), 1, 50)} 日`;
+    return null;
+  }
 
   function update() {
     const c = chapters.get(story.chapter);
-    const isOpening = c?.kind === 'opening';
+    const b = beatByKey.get(`${story.chapter}/${story.beat}`);
 
-    // 日數牌：整數改變才更新文字（避免報讀器一直唸）
-    if (isOpening !== lastShow) {
-      lastShow = isOpening;
-      dayEl.classList.toggle('is-on', isOpening);
-      dayEl.setAttribute('aria-hidden', isOpening ? 'false' : 'true');
-    }
-    if (isOpening) {
-      const d = Math.min(14, Math.max(1, Math.round(story.day)));
-      if (d !== lastDay) {
-        lastDay = d;
-        dayEl.textContent = `正月　${dayName(d)}`;
-      }
+    // 日數牌：文字改變才更新（避免報讀器一直唸）
+    const text = dayText(c, b);
+    if (text !== lastText) {
+      lastText = text;
+      dayEl.classList.toggle('is-on', text !== null);
+      dayEl.setAttribute('aria-hidden', text !== null ? 'false' : 'true');
+      if (text !== null) dayEl.textContent = text;
     }
 
-    // 目前位置：開場照 story.day；節期章從節期日起，隨章進度走到隔天
-    const month = c ? (c.kind === 'opening' ? 1 : c.month ?? 1) : 1;
-    const d = c?.kind === 'opening' ? story.day : (c?.day ?? 1) + story.chapterProgress;
-    const pos = ((month - 1) + (d - 1) / 30) / (MONTHS.length - 1);
-    const n = Math.round(pos * 10000) / 10000;
+    // 目前位置：開場照 story.day；有月份的節期章從節期日起，隨章進度走到隔天；沒有月份的章停在前一個位置
+    const hollow = !!c && c.kind === 'feast' && !c.month;
+    let n: number;
+    if (hollow) n = holdPos.get(c!.id) ?? 0;
+    else if (c?.kind === 'opening') n = posOf(1, story.day);
+    else n = posOf(c?.month ?? 1, (c?.day ?? 1) + story.chapterProgress);
     if (n !== lastP) {
       lastP = n;
       marker.style.setProperty('--n', String(n));
     }
-    if (month !== lastMonth) {
-      lastMonth = month;
-      for (const t of ticks) t.li.classList.toggle('is-current', t.month === month);
+    if (hollow !== lastHollow) {
+      lastHollow = hollow;
+      marker.classList.toggle('is-hollow', hollow);
+      if (hollow) marker.setAttribute('title', HOLLOW_TITLE);
+      else marker.removeAttribute('title');
+    }
+    if (story.month !== lastMonth) {
+      lastMonth = story.month;
+      for (const t of ticks) t.li.classList.toggle('is-current', t.month === story.month);
     }
   }
 

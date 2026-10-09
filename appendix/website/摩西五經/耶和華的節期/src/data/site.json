@@ -75,6 +75,37 @@
         "https://freesound.org/people/beautifuldaymonster1968/sounds/758223/"
       ],
       "title": "Cows herd walking in the bush in Africa (Mali)（與 Group Walking, Group Footsteps 混音）"
+    },
+    {
+      "author": "HECKFRICKER",
+      "downloaded": "2026-10-09",
+      "edit": "取 20–50 秒，淡入淡出，單聲道，響度調整",
+      "file": "fire.mp3",
+      "id": "fire",
+      "license": "CC0",
+      "loop": true,
+      "page": "https://freesound.org/people/HECKFRICKER/sounds/729395/",
+      "title": "Campfire 01"
+    },
+    {
+      "author": "Uganda",
+      "downloaded": "2026-10-09",
+      "edit": "取 24–32 秒一陣風，淡入淡出，單聲道，響度調整",
+      "file": "field-wind.mp3",
+      "id": "field-wind",
+      "license": "CC0",
+      "page": "https://freesound.org/people/Uganda/sounds/38976/",
+      "title": "WIND, Wind through Wheatfield.wav"
+    },
+    {
+      "author": "silencyo",
+      "downloaded": "2026-10-09",
+      "edit": "取前 12 秒鐮刀割麥聲，淡出，單聲道，響度調整",
+      "file": "harvest.mp3",
+      "id": "harvest",
+      "license": "CC0",
+      "page": "https://freesound.org/people/silencyo/sounds/81721/",
+      "title": "Silencyo_COUNTRY_DAY_Sickle_Wheat.aif"
     }
   ],
   "chapters": [
@@ -86,6 +117,25 @@
           "id": "title",
           "text": "以色列的一年裡，有幾個日子是神親自定下的。利未記把它們叫作==耶和華的節期==：日子一到，百姓就要聚集。",
           "verse": "利23:2"
+        },
+        {
+          "cue": "new-moon",
+          "day": 1,
+          "id": "new-moon",
+          "notes": [
+            "ct-newmoon",
+            "gt-dlc-newmoon",
+            "gt-chuanzhu-newmoon",
+            "bh-newmoon"
+          ],
+          "offerings": [
+            "民28:11-15"
+          ],
+          "text": "每個月的頭一天叫「月朔」。後來在曠野，神吩咐以色列人每逢月朔都要獻上燔祭和贖罪祭，也要==吹號==，在神面前作為紀念。",
+          "verse": "民28:11",
+          "words": [
+            "chodesh"
+          ]
         },
         {
           "cue": "month",
@@ -126,7 +176,9 @@
       ],
       "entries": [
         "亞筆月",
-        "以本月為正月"
+        "以本月為正月",
+        "月朔",
+        "銀號"
       ],
       "id": "opening",
       "kind": "opening",
@@ -139,7 +191,9 @@
       },
       "passages": [
         "出12:1-6",
-        "出13:3-4"
+        "出13:3-4",
+        "民10:10",
+        "民28:11-15"
       ],
       "scene": "night-moon",
       "title": "正月"
@@ -299,6 +353,382 @@
       ],
       "scene": "egypt-street",
       "title": "逾越節"
+    },
+    {
+      "beats": [
+        {
+          "cue": "bake",
+          "id": "bake",
+          "interaction": "bake",
+          "notes": [
+            "ct-bake",
+            "gt-qidao-bake",
+            "kc-first-food",
+            "bh-on-hand"
+          ],
+          "prompt": "按住按鈕，把沒有發起的生麵烤成餅。",
+          "text": "以色列人從蘭塞起行，往疏割去。他們把從埃及帶出來的生麵烤成==無酵餅==。麵還沒有發起；他們被催逼離開埃及，不能耽延，也沒有為自己預備什麼食物。",
+          "verse": "出12:39"
+        },
+        {
+          "cue": "seven-days",
+          "day": 15,
+          "dayTo": 21,
+          "id": "seven-days",
+          "notes": [
+            "ct-labor",
+            "gt-dlc-same-name",
+            "gt-qidao-order",
+            "kc-seven"
+          ],
+          "offerings": [
+            "民28:19-22"
+          ],
+          "offeringsLabel": "每日（共七日）",
+          "text": "正月十五日是無酵節，要吃無酵餅==七日==。頭一日和第七日都有聖會，什麼勞碌的工都不可做；這七日，每天都要把火祭獻給耶和華。",
+          "verse": "利23:6-8"
+        },
+        {
+          "cue": "no-leaven",
+          "id": "no-leaven",
+          "notes": [
+            "ct-whole-seven",
+            "kc-nowhere",
+            "gt-jingdu-leaven"
+          ],
+          "text": "頭一日就要把酵從各家中==除去==。這七日之內，家裡不可有酵，四境之內也不可見發酵的物；吃有酵之物的，要從以色列中剪除。",
+          "verse": "出13:7"
+        },
+        {
+          "cue": "remember",
+          "id": "remember",
+          "notes": [
+            "ct-affliction",
+            "bh-affliction",
+            "kc-testimony",
+            "gt-zhongwen-teach"
+          ],
+          "reason": true,
+          "text": "這餅叫==困苦餅==。你本是急忙出了埃及地，吃這餅，是要你一生一世記念出埃及的日子。當那日，還要告訴兒子：這是因耶和華在我出埃及的時候為我所行的事。",
+          "verse": "申16:3",
+          "words": [
+            "oni"
+          ]
+        }
+      ],
+      "date": "正月十五日起，共七日",
+      "day": 15,
+      "entries": [
+        "無酵節",
+        "除酵",
+        "無酵餅",
+        "聖會"
+      ],
+      "id": "unleavened",
+      "kind": "feast",
+      "month": 1,
+      "next": {
+        "date": "安息日的次日",
+        "title": "初熟的禾捆"
+      },
+      "nt": [
+        "林前5：6-8"
+      ],
+      "palette": {
+        "accent": "#b5562a",
+        "glow": "#f2b45a",
+        "ink": "#1d2236",
+        "paper": "#ece3cc"
+      },
+      "passages": [
+        "出12:15-20",
+        "出12:34-39",
+        "出13:3-10",
+        "出23:15",
+        "出34:18",
+        "利23:6-8",
+        "民28:17-25",
+        "申16:3-8"
+      ],
+      "scene": "succoth-camp",
+      "title": "無酵節"
+    },
+    {
+      "beats": [
+        {
+          "cue": "barley-ripe",
+          "id": "barley-ripe",
+          "notes": [
+            "ct-omer",
+            "gt-dlc-omer",
+            "gt-qidao-giver",
+            "kc-in-land",
+            "bh-barley"
+          ],
+          "text": "這是給將來的條例：到了神所賜的地，收割莊稼的時候，要把==初熟==的莊稼一捆帶給祭司。",
+          "verse": "利23:10",
+          "words": [
+            "omer"
+          ]
+        },
+        {
+          "badge": "安息日的次日",
+          "cue": "wave",
+          "id": "wave",
+          "interaction": "wave",
+          "notes": [
+            "ct-wave-motion",
+            "gt-bg-lift",
+            "ct-sabbath",
+            "gt-dlc-sabbath",
+            "bh-first-day"
+          ],
+          "prompt": "按住禾捆，來回搖三下。",
+          "reason": true,
+          "text": "祭司要在安息日的次日，把這一捆在耶和華面前==搖一搖==，使你們得蒙悅納。",
+          "verse": "利23:11",
+          "words": [
+            "nuph",
+            "shabbat"
+          ]
+        },
+        {
+          "cue": "lamb-offering",
+          "id": "lamb-offering",
+          "notes": [
+            "ct-lamb",
+            "gt-dlc-no-sin",
+            "gt-bg-three"
+          ],
+          "text": "搖禾捆的那一天，要獻一隻一歲、沒有殘疾的公綿羊羔為==燔祭==，同獻調油的細麵和奠祭的酒。",
+          "verse": "利23:12-13"
+        },
+        {
+          "cue": "not-yet",
+          "id": "not-yet",
+          "notes": [
+            "ct-not-yet",
+            "kc-begin-god",
+            "gt-bg-release"
+          ],
+          "text": "在把供物帶來的那一天以前，無論是餅、烘的子粒，還是新穗子，都==不可吃==。這是世世代代永遠的定例。",
+          "verse": "利23:14"
+        }
+      ],
+      "date": "安息日的次日",
+      "entries": [
+        "初熟",
+        "搖祭",
+        "七七節安息日算法的兩種解讀之爭",
+        "燔祭"
+      ],
+      "id": "firstfruits",
+      "kind": "feast",
+      "next": {
+        "date": "二月十四日黃昏",
+        "title": "二月逾越節"
+      },
+      "nt": [],
+      "palette": {
+        "accent": "#b8872f",
+        "glow": "#f6e3a8",
+        "ink": "#2a2418",
+        "paper": "#f1e8cf"
+      },
+      "passages": [
+        "利23:9-14"
+      ],
+      "scene": "barley-land",
+      "title": "初熟的禾捆"
+    },
+    {
+      "beats": [
+        {
+          "badge": "第二年正月十四日",
+          "cue": "sinai",
+          "day": 14,
+          "id": "sinai",
+          "notes": [
+            "gt-bg-sinai",
+            "kc-third",
+            "gt-dlc-no-unleavened"
+          ],
+          "text": "出埃及以後的第二年，正月十四日黃昏，以色列人在==西乃的曠野==守逾越節，凡耶和華吩咐的都照樣行了。",
+          "verse": "民9:5"
+        },
+        {
+          "cue": "unclean",
+          "id": "unclean",
+          "notes": [
+            "ct-who",
+            "ct-seven-unclean",
+            "gt-dlc-obeyed",
+            "bh-ritual"
+          ],
+          "text": "有幾個人因死屍而==不潔淨==，不能在那日守節。他們來到摩西、亞倫面前問：為什麼我們被攔阻，不能和以色列人在所定的日期獻耶和華的供物？",
+          "verse": "民9:6-7",
+          "words": [
+            "tame"
+          ]
+        },
+        {
+          "cue": "wait",
+          "id": "wait",
+          "notes": [
+            "kc-not-know",
+            "gt-jingdu-wait",
+            "bh-pause"
+          ],
+          "text": "摩西對他們說：你們暫且==等候==，我去聽耶和華指著你們怎樣吩咐。",
+          "verse": "民9:8"
+        },
+        {
+          "cue": "second-month",
+          "day": 14,
+          "id": "second-month",
+          "notes": [
+            "ct-postpone",
+            "gt-dlc-tradition",
+            "gt-chuanzhu-no-excuse",
+            "bh-journey"
+          ],
+          "text": "耶和華說：因死屍不潔淨的，或在遠方行路的，要在==二月十四日==黃昏守逾越節，照逾越節的一切律例，用無酵餅、苦菜和羊羔同吃。潔淨又不行路、卻推辭不守的，要從民中剪除；寄居的外人願意守，也同歸一例。",
+          "verse": "民9:10-11"
+        }
+      ],
+      "date": "二月十四日黃昏",
+      "day": 14,
+      "entries": [
+        "二月逾越節是否只有一天、不必除酵",
+        "曠野"
+      ],
+      "id": "second-passover",
+      "kind": "feast",
+      "month": 2,
+      "next": {
+        "date": "從獻禾捆那日算起第五十天",
+        "title": "七七節"
+      },
+      "nt": [],
+      "palette": {
+        "accent": "#8a5a2b",
+        "glow": "#efd9a0",
+        "ink": "#151a30",
+        "paper": "#e9e2d0"
+      },
+      "passages": [
+        "民9:1-14"
+      ],
+      "scene": "sinai-camp",
+      "title": "二月逾越節"
+    },
+    {
+      "beats": [
+        {
+          "cue": "count",
+          "id": "count",
+          "interaction": "count",
+          "notes": [
+            "ct-49",
+            "bh-counting",
+            "gt-jingdu-wheat",
+            "kc-barley-wheat"
+          ],
+          "prompt": "往下捲，一天一天數。",
+          "text": "從搖禾捆的那一天算起，要滿七個安息日；到第七個安息日的次日，共計==五十天==，再把新素祭獻給耶和華。",
+          "verse": "利23:15-16"
+        },
+        {
+          "cue": "two-loaves",
+          "id": "two-loaves",
+          "notes": [
+            "ct-leaven-sin",
+            "bh-leaven-unlike",
+            "gt-bg-not-altar",
+            "kc-church"
+          ],
+          "text": "這一次要從住處拿細麵，==加酵==，烤成兩個搖祭的餅，當作初熟之物獻給耶和華。無酵節七日不可見酵，這兩個餅卻明說要加酵。",
+          "verse": "利23:17",
+          "words": [
+            "chamets"
+          ]
+        },
+        {
+          "cue": "weeks-offerings",
+          "id": "weeks-offerings",
+          "notes": [
+            "gt-dlc-order",
+            "kc-same-offerings",
+            "kc-sin-offering",
+            "gt-bg-unclear"
+          ],
+          "offerings": [
+            "利23:18-19",
+            "民28:27-30"
+          ],
+          "text": "這一天的祭牲，利未記和民數記各列了一份，兩份的==數目不一樣==。",
+          "verse": "利23:18-19"
+        },
+        {
+          "cue": "rejoice",
+          "id": "rejoice",
+          "notes": [
+            "ct-all",
+            "ct-remember-poor",
+            "bh-justice"
+          ],
+          "reason": true,
+          "text": "要照神所賜的福，手裡拿著甘心祭來守這節。你和兒女、僕婢，城裡的利未人，寄居的，孤兒寡婦，都要在神面前一同==歡樂==。也要記念你在埃及作過奴僕。",
+          "verse": "申16:10-12",
+          "words": [
+            "shavuot"
+          ]
+        },
+        {
+          "cue": "corners",
+          "id": "corners",
+          "notes": [
+            "ct-corners",
+            "gt-dlc-corners",
+            "gt-chuanzhu-poor",
+            "bh-dignity"
+          ],
+          "text": "收割的時候，不可割盡田角，也不可拾取遺落的，要==留給==窮人和寄居的。",
+          "verse": "利23:22"
+        }
+      ],
+      "date": "從獻禾捆那日算起第五十天",
+      "entries": [
+        "七七節（五旬節）",
+        "新素祭",
+        "五旬節兩個有酵餅的搖祭條例",
+        "七七節安息日算法的兩種解讀之爭",
+        "三大節期"
+      ],
+      "id": "weeks",
+      "kind": "feast",
+      "next": {
+        "date": "七月初一",
+        "title": "吹角節"
+      },
+      "nt": [
+        "聖靈分賜預表五旬節（徒2：1-4）"
+      ],
+      "palette": {
+        "accent": "#c08a2a",
+        "glow": "#f7e2a0",
+        "ink": "#2b2416",
+        "paper": "#f2e9d2"
+      },
+      "passages": [
+        "出23:16",
+        "出34:22",
+        "利23:15-22",
+        "民28:26-31",
+        "申16:9-12"
+      ],
+      "scene": "wheat-land",
+      "title": "七七節"
     }
   ],
   "commentary": {
@@ -314,6 +744,42 @@
       "verse": "出12:2",
       "work": "BibleHub 研經註解"
     },
+    "bh-affliction": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "bh-affliction",
+      "quote": "Unleavened bread is called the \"bread of affliction\" because it reminds the Israelites of their suffering and hardship in Egypt.",
+      "quoteZh": "無酵餅叫作「困苦餅」，因為它讓以色列人想起在埃及受的苦難。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/16.htm",
+      "verse": "申16:3",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-barley": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-barley",
+      "quote": "The sheaf, or omer, represents the first portion of the barley harvest, symbolizing the Israelites' acknowledgment of God's provision.",
+      "quoteZh": "這一捆（俄梅珥）是大麥收成的頭一份，象徵以色列人承認是神供應他們。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:11",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-counting": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-counting",
+      "quote": "This period of counting, known as the Counting of the Omer, is a time of anticipation and preparation.",
+      "quoteZh": "這段數算的日子稱為「數俄梅珥」，是期待和預備的時候。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:15",
+      "work": "BibleHub 研經註解"
+    },
     "bh-destroyer": {
       "book": "出埃及記",
       "chapter": 12,
@@ -324,6 +790,18 @@
       "source": "BH",
       "url": "https://biblehub.com/study/exodus/12.htm",
       "verse": "出12:23",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-dignity": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-dignity",
+      "quote": "The practice of leaving gleanings was a way to provide for the poor and the foreigner, allowing them to gather food with dignity.",
+      "quoteZh": "留下遺落的穗子，是供應窮人和寄居者的方式，讓他們能有尊嚴地撿拾糧食。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:22",
       "work": "BibleHub 研經註解"
     },
     "bh-dough": {
@@ -338,6 +816,18 @@
       "verse": "出12:34",
       "work": "BibleHub 研經註解"
     },
+    "bh-first-day": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-first-day",
+      "quote": "This timing is significant as it places the offering on the first day of the week, which later becomes the day of Christ's resurrection.",
+      "quoteZh": "這個時間很重要：它把獻禾捆定在一週的第一日，後來那正是基督復活的日子。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:11",
+      "work": "BibleHub 研經註解"
+    },
     "bh-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -348,6 +838,90 @@
       "source": "BH",
       "url": "https://biblehub.com/study/exodus/12.htm",
       "verse": "出12:22",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-journey": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "bh-journey",
+      "quote": "This provision accounts for those who are physically unable to participate in the Passover due to travel.",
+      "quoteZh": "這項規定顧及了因為出門在外、實在無法參加逾越節的人。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/9.htm",
+      "verse": "民9:10",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-justice": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "bh-justice",
+      "quote": "The inclusion of foreigners, orphans, and widows demonstrates the social justice aspect of the law, ensuring that all people, regardless of status, are part of the covenant community.",
+      "quoteZh": "把寄居的、孤兒和寡婦都包括在內，顯出律法顧到社會公義，讓每個人不論身分，都在立約的群體裡。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/16.htm",
+      "verse": "申16:11",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-leaven-unlike": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-leaven-unlike",
+      "quote": "Unlike other offerings that required unleavened bread, this offering includes leaven, which is yeast.",
+      "quoteZh": "和其他規定要用無酵餅的祭物不同，這一份含有酵，也就是酵母。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:17",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-newmoon": {
+      "book": "民數記",
+      "chapter": 28,
+      "id": "bh-newmoon",
+      "quote": "The Hebrew calendar is lunar-based, and the New Moon was a time for both religious observance and civil administration.",
+      "quoteZh": "希伯來曆法以月亮為準；月朔既是宗教上守節的日子，也是處理民事的時候。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/28.htm",
+      "verse": "民28:11",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-on-hand": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "bh-on-hand",
+      "quote": "They had to use what they had on hand, emphasizing their reliance on God for sustenance.",
+      "quoteZh": "他們只能用手邊有的東西，這顯出他們的飲食要倚靠神。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/12.htm",
+      "verse": "出12:39",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-pause": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "bh-pause",
+      "quote": "This phrase indicates a pause for divine guidance, emphasizing the importance of seeking God's will before making decisions.",
+      "quoteZh": "這句話表示停下來等候神的指引，強調做決定之前要先尋求神的旨意。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/9.htm",
+      "verse": "民9:8",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-ritual": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "bh-ritual",
+      "quote": "This uncleanness was not a moral failing but a ritual state that required purification.",
+      "quoteZh": "這種不潔淨不是道德上的過失，而是禮儀上的狀態，需要經過潔淨。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/9.htm",
+      "verse": "民9:7",
       "work": "BibleHub 研經註解"
     },
     "bh-vigil": {
@@ -374,6 +948,17 @@
       "verse": "出12:30",
       "work": "BibleHub 研經註解"
     },
+    "ct-49": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-49",
+      "quote": "意指從初熟節安息日的次日(請參閱11節註解)算起，七乘七一共四十九天。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:15",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-abib": {
       "book": "出埃及記",
       "chapter": 12,
@@ -386,6 +971,39 @@
       "verse": "出12:2",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-affliction": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "ct-affliction",
+      "quote": "『困苦餅』無酵餅的滋味不如有酵餅，用來表示紀念在埃及地所過困苦、悲慘的日子。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
+      "verse": "申16:3",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-all": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "ct-all",
+      "quote": "守七七節(收割節)不限對象，以色列人、無分無業的利未人、寄居的外邦人、孤兒寡婦等均可參與歡度節日。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
+      "verse": "申16:11",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-bake": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "ct-bake",
+      "quote": "意指他們所攜帶的生麵團(參34節)還沒有發起來，因此烤成無酵餅來吃，剛好符合七天無酵節的要求(參15節)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
+      "verse": "出12:39",
+      "work": "黃迦勒《出埃及記註解》"
+    },
     "ct-bitter": {
       "book": "出埃及記",
       "chapter": 12,
@@ -396,6 +1014,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
       "verse": "出12:8",
       "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-corners": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-corners",
+      "quote": "這個條例的目的是為留些麥穗給窮人有機會得糧吃。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:22",
+      "work": "黃迦勒《利未記註解》"
     },
     "ct-destroyer": {
       "book": "出埃及記",
@@ -430,6 +1059,116 @@
       "verse": "出12:22",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-labor": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-labor",
+      "quote": "『勞碌的工』指身體勞動的工，例如建築、紡織、收割、打榖、推磨等。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:7",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lamb": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-lamb",
+      "quote": "這是在早晚常獻的燔祭以外(參民二十八23)，另外伴隨獻初熟的莊稼之搖祭而獻的燔祭。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:12",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-leaven-sin": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-leaven-sin",
+      "quote": "五旬節作搖祭的兩個餅要加酵，這是見證(兩個)奉獻的人承認自己有罪(酵)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:17",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-newmoon": {
+      "book": "民數記",
+      "chapter": 10,
+      "id": "ct-newmoon",
+      "quote": "『月朔』指每月的第一日，或新月出現的日子",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT10.htm",
+      "verse": "民10:10",
+      "work": "黃迦勒《民數記註解》"
+    },
+    "ct-not-yet": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-not-yet",
+      "quote": "意指在獻初熟的莊稼給神以前，不可吃當年新熟的穀物所作的餅，所烘的子粒或穗子。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:14",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-omer": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-omer",
+      "quote": "『一捆』原文是俄梅珥，固體容量單位，為一伊法的十分之一，折合約2.2公升，相當於一個人三餐的份量",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:10",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-postpone": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "ct-postpone",
+      "quote": "意指他們可以順延一個月，而在二月十四日黃昏時辰，守逾越節。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm",
+      "verse": "民9:11",
+      "work": "黃迦勒《民數記註解》"
+    },
+    "ct-remember-poor": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "ct-remember-poor",
+      "quote": "意指藉著紀念先祖從前也曾度過貧困、悲慘的日子，轉而顧念自己周遭那些貧困、無依無靠的人們，如此守節乃是遵行律例的最好表現。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
+      "verse": "申16:12",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-sabbath": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-sabbath",
+      "quote": "『安息日的次日』有兩種解釋：(1)七十士譯本作“第一日的次日”，即無酵節第一日的次日，亦即正月十六日；(2)法利賽人則認為是指無酵節期間的頭一個聖會日，即正月十五日。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:11",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-seven-unclean": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "ct-seven-unclean",
+      "quote": "『因死屍而不潔淨』指為著辦理親人死亡而接觸到屍體，七天內算不潔淨(參十九11)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm",
+      "verse": "民9:6",
+      "work": "黃迦勒《民數記註解》"
+    },
     "ct-threshold": {
       "book": "出埃及記",
       "chapter": 12,
@@ -450,6 +1189,39 @@
       "source": "CT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
       "verse": "出12:42",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-wave-motion": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-wave-motion",
+      "quote": "『搖一搖』指水平方向前後擺動，是獻搖祭的動作(參七30)，表示一面感謝神賜與糧食，另一面象徵所有的收穫都歸神為聖。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:11",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-who": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "ct-who",
+      "quote": "『有幾個人』可能是指米沙利、以利撒反和幫助他們的人，他們在幾天前剛奉摩西的命令，處理堂姪兒拿答、亞比戶的屍首(參利十4)",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm",
+      "verse": "民9:6",
+      "work": "黃迦勒《民數記註解》"
+    },
+    "ct-whole-seven": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "id": "ct-whole-seven",
+      "quote": "『七日之久』意指從頭到尾，沒有一天例外。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT13.htm",
+      "verse": "出13:7",
       "work": "黃迦勒《出埃及記註解》"
     },
     "gt-bg-abib": {
@@ -485,6 +1257,28 @@
       "verse": "出12:6",
       "work": "《舊約聖經背景註釋》"
     },
+    "gt-bg-lift": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-lift",
+      "quote": "祭司要在主的祭壇前面，搖一搖或抬起這捆莊稼。這是吸引神注意祭物的作法，表示一切禮物和祭物都是出乎神，並且屬於神。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:11",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-not-altar": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-not-altar",
+      "quote": "兩個餅是加酵的，但不會燒在壇上（見七13的規例）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:17",
+      "work": "《舊約聖經背景註釋》"
+    },
     "gt-bg-protect": {
       "book": "出埃及記",
       "chapter": 12,
@@ -497,6 +1291,94 @@
       "verse": "出12:11",
       "work": "《舊約聖經背景註釋》"
     },
+    "gt-bg-release": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-release",
+      "quote": "它又有開放其餘莊稼，供百姓自由使用的功用",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:14",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-sinai": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-bg-sinai",
+      "quote": "這是西乃山周圍的曠野地帶",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:1",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-three": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-three",
+      "quote": "一歲羊羔的燔祭、雙倍平常分量的素祭，和澆酒的奠祭，代表以色列的三大主要物產",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:12-13",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-unclear": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-unclear",
+      "quote": "所獻之祭包括一隻山羊為贖罪祭卻理由不明",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:19",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-chuanzhu-newmoon": {
+      "book": "民數記",
+      "chapter": 28,
+      "id": "gt-chuanzhu-newmoon",
+      "quote": "每月的第一日要獻祭，月月如此（14），祭物的數量與其他重要節日相同。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT28.htm",
+      "verse": "民28:11-15",
+      "work": "《民數記串珠聖經註釋》"
+    },
+    "gt-chuanzhu-no-excuse": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-chuanzhu-no-excuse",
+      "quote": "若錯過了節期，無論是因不潔或遠行（10），是否有藉口不守一次呢？答案是不可以。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:10",
+      "work": "《民數記串珠聖經註釋》"
+    },
+    "gt-chuanzhu-poor": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-chuanzhu-poor",
+      "quote": "守五旬節時要紀念窮人的需要，故此處重提拾取麥穗的律例（22）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:22",
+      "work": "《串珠聖經註釋》"
+    },
+    "gt-dlc-corners": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-corners",
+      "quote": "神又用這樣的話提醒百姓，使他們知道單行謝恩的禮是不夠的",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:22",
+      "work": "丁良才《利未記註釋》"
+    },
     "gt-dlc-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -508,6 +1390,116 @@
       "verse": "出12:22",
       "work": "丁良才《出埃及記註釋》"
     },
+    "gt-dlc-newmoon": {
+      "book": "民數記",
+      "chapter": 28,
+      "id": "gt-dlc-newmoon",
+      "quote": "每逢月朔，除了獻本節所說應獻的祭以外，祭司須要吹號（十10），使百姓不做勞碌的工（摩八5），又都要去敬拜神（詩八十一1-4，王下四23）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT28.htm",
+      "verse": "民28:11",
+      "work": "丁良才《民數記註釋》"
+    },
+    "gt-dlc-no-sin": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-no-sin",
+      "quote": "當初熟節不獻贖罪祭，因為這節期是預表耶穌的復活。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:12",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-no-unleavened": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-dlc-no-unleavened",
+      "quote": "聖書上沒有提到以色列人當時守了除酵節（參出十二18），或是因為他們不能得夠那麼多的面，使百姓吃七天的無酵餅。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:5",
+      "work": "丁良才《民數記註釋》"
+    },
+    "gt-dlc-obeyed": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-dlc-obeyed",
+      "quote": "意思說，我們染這不潔，並不怨我們自己，乃因為我們聽了你（摩西）的命（6注）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:7",
+      "work": "丁良才《民數記註釋》"
+    },
+    "gt-dlc-omer": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-omer",
+      "quote": "這字有時是捆的意思（申二十四19，得二7、15，伯二十四10），卻也是一種量器的名字",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:10",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-order": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-order",
+      "paraphrase": "丁良才記下主耶穌在世時猶太人守七七節的次序：先獻民數記28章所列的那一組祭牲，隨後祭司把兩個餅和利未記23章所列的那一組一同奉上。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:18-19",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-sabbath": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-sabbath",
+      "quote": "撒都該人以為本句的“安息日”三個字是指著無酵節中之尋常的安息日，但法利賽人以為是指著除酵節中的頭一個聖會日（就是正月十五日）說的。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:11",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-same-name": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-same-name",
+      "quote": "無酵節，（出十二17），或作除酵節（出二十三15三十四18），這兩個名稱在原文上是一樣的字",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:6",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-tradition": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-dlc-tradition",
+      "quote": "猶太人有遺傳說，第二月的逾越節只有一天，不必除酵，但這是與聖書不合。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:11",
+      "work": "丁良才《民數記註釋》"
+    },
+    "gt-jingdu-leaven": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "id": "gt-jingdu-leaven",
+      "quote": "這裡酵象徵具有傳染性的一切罪惡(太16:12;林前5:8;加5:9)。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT13.htm",
+      "verse": "出13:7",
+      "work": "《聖經精讀本──出埃及記註解》"
+    },
     "gt-jingdu-silence": {
       "book": "出埃及記",
       "chapter": 12,
@@ -518,6 +1510,61 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
       "verse": "出12:29-32",
       "work": "《聖經精讀本──出埃及記註解》"
+    },
+    "gt-jingdu-wait": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "gt-jingdu-wait",
+      "quote": "摩西所求的是神的旨意,而不是人操之過急的結論(詩37:7;箴20:22;賽30:18)。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm",
+      "verse": "民9:8",
+      "work": "《聖經精讀本──民數記註解》"
+    },
+    "gt-jingdu-wheat": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-jingdu-wheat",
+      "quote": "這時大麥收割接近尾聲,小麥開始收割。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:15-16",
+      "work": "《聖經精讀本──利未記註解》"
+    },
+    "gt-qidao-bake": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "gt-qidao-bake",
+      "quote": "以色列人用無酵餅，因為走得太匆忙，得把摶面盆攜在身邊（34節），現在才有時間烤無酵餅來吃。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
+      "verse": "出12:39",
+      "work": "《啟導本聖經腳註》"
+    },
+    "gt-qidao-giver": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-qidao-giver",
+      "quote": "初熟節的獻祭儀式，把收穫之物一捆獻在神面前，承認神才是全地莊稼的真正賜予者。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:10",
+      "work": "《啟導本聖經利未記註釋》"
+    },
+    "gt-qidao-order": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-qidao-order",
+      "quote": "逾越節在先，表明信徒是先得著救贖；無酵節在後，說明有了救贖然後去過聖潔的生活",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:6",
+      "work": "《啟導本聖經利未記註釋》"
     },
     "gt-qidao-vigil": {
       "book": "出埃及記",
@@ -552,6 +1599,17 @@
       "verse": "出12:42",
       "work": "《丁道爾聖經註釋》"
     },
+    "gt-zhongwen-teach": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "id": "gt-zhongwen-teach",
+      "quote": "這段記述明顯是為教育之用──要告訴你的兒子，而不是為律例之用。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT13.htm",
+      "verse": "出13:8",
+      "work": "《中文聖經註釋》"
+    },
     "kc-abib": {
       "book": "出埃及記",
       "chapter": 12,
@@ -562,6 +1620,30 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
       "verse": "出12:2",
+      "work": "KingComments"
+    },
+    "kc-barley-wheat": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-barley-wheat",
+      "quote": "The sheaf of the first fruits is of barley. The first fruits of the Feast of Weeks is of wheat.",
+      "quoteZh": "初熟的禾捆是大麥；七七節的初熟之物是小麥。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:17",
+      "work": "KingComments"
+    },
+    "kc-begin-god": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-begin-god",
+      "quote": "We can learn from this that we must always begin with God, every day, every meal, every intention, every work (cf. Mt 6:33).",
+      "quoteZh": "我們從這裡學到，凡事都要先從神開始：每一天、每一餐、每個打算、每件工作（參太6:33）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:14",
       "work": "KingComments"
     },
     "kc-children": {
@@ -577,12 +1659,36 @@
       "verse": "出12:26",
       "work": "KingComments"
     },
+    "kc-church": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-church",
+      "quote": "The wave breads do not represent the Lord Jesus, but the church.",
+      "quoteZh": "這兩個搖祭的餅代表的不是主耶穌，而是教會。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:17",
+      "work": "KingComments"
+    },
     "kc-dough": {
       "book": "出埃及記",
       "chapter": 12,
       "id": "kc-dough",
       "quote": "They leave so hastily that the dough has not had a chance to do its job.",
       "quoteZh": "他們走得太匆忙，麵團還來不及發起來。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:39",
+      "work": "KingComments"
+    },
+    "kc-first-food": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-first-food",
+      "quote": "The first food they eat after leaving Egypt is unleavened cakes.",
+      "quoteZh": "他們離開埃及以後吃的第一樣食物，就是無酵餅。",
       "site": "KingComments 研經註解",
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
@@ -599,6 +1705,42 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
       "verse": "出12:22",
+      "work": "KingComments"
+    },
+    "kc-in-land": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-in-land",
+      "quote": "The feast of the sheaf of the first fruits can only take place in the land.",
+      "quoteZh": "獻初熟禾捆的節期，只能在那地上守。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:10",
+      "work": "KingComments"
+    },
+    "kc-not-know": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "kc-not-know",
+      "quote": "Moses does not pretend to know the answer to their question.",
+      "quoteZh": "摩西沒有裝作自己知道他們問題的答案。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/9",
+      "verse": "民9:8",
+      "work": "KingComments"
+    },
+    "kc-nowhere": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "id": "kc-nowhere",
+      "quote": "The leaven may not be eaten. It should not even be present anywhere in the land.",
+      "quoteZh": "酵不可以吃，甚至在境內任何地方都不可以有。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/13",
+      "verse": "出13:7",
       "work": "KingComments"
     },
     "kc-only": {
@@ -625,6 +1767,66 @@
       "verse": "出12:13",
       "work": "KingComments"
     },
+    "kc-same-offerings": {
+      "book": "民數記",
+      "chapter": 28,
+      "id": "kc-same-offerings",
+      "quote": "The first three feasts belong together. This can be seen from the fact that the same offerings are brought at these feasts.",
+      "quoteZh": "頭三個節期是一組的；從這幾個節期獻上同樣的祭物就看得出來。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/28",
+      "verse": "民28:11-31",
+      "work": "KingComments"
+    },
+    "kc-seven": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "id": "kc-seven",
+      "quote": "The Feast of Unleavened Bread lasted seven days, from the fifteenth to the twenty-first of the month.",
+      "quoteZh": "無酵節一共七天，從這月十五日到二十一日。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
+      "verse": "出12:15-20",
+      "work": "KingComments"
+    },
+    "kc-sin-offering": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-sin-offering",
+      "quote": "There is now also a sin offering included in the offerings (verse 19).",
+      "quoteZh": "這一次的祭物裡也有贖罪祭（19節）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:19",
+      "work": "KingComments"
+    },
+    "kc-testimony": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "id": "kc-testimony",
+      "quote": "The explanation is not a theological treatise on what happened in Egypt, but a personal testimony of the head of the family.",
+      "quoteZh": "這個解釋不是一篇談埃及那段歷史的神學論文，而是一家之主親身的見證。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/13",
+      "verse": "出13:8",
+      "work": "KingComments"
+    },
+    "kc-third": {
+      "book": "民數記",
+      "chapter": 9,
+      "id": "kc-third",
+      "quote": "The first Passover was observed in Egypt. So here we read about the second Passover. Only in Joshua 5 do we read about the observance of the Passover for the third time (Jos 5:10).",
+      "quoteZh": "第一次逾越節是在埃及守的，這裡讀到的是第二次；要到約書亞記5章，才讀到第三次守逾越節（書5:10）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/9",
+      "verse": "民9:1-5",
+      "work": "KingComments"
+    },
     "kc-threshold": {
       "book": "出埃及記",
       "chapter": 12,
@@ -639,10 +1841,30 @@
     }
   },
   "entries": {
+    "七七節安息日算法的兩種解讀之爭": {
+      "gist": "利23:11「安息日的次日」的安息日指哪一天，各家算法不同。",
+      "title": "七七節安息日算法的兩種解讀之爭",
+      "type": "解經爭議"
+    },
+    "七七節（五旬節）": {
+      "gist": "逾越節後數算七週、在第五十日舉行的收割節，後來又稱五旬節。",
+      "title": "七七節（五旬節）",
+      "type": "歷史"
+    },
     "三大節期": {
       "gist": "一年三次朝見神的節期：除酵節、收割節、收藏節（出23:14-17）。",
       "title": "三大節期",
       "type": "神學"
+    },
+    "二月逾越節是否只有一天、不必除酵": {
+      "gist": "二月十四日補守的逾越節，是否只守一天、不必除酵的爭議。",
+      "title": "二月逾越節是否只有一天、不必除酵",
+      "type": "解經爭議"
+    },
+    "五旬節兩個有酵餅的搖祭條例": {
+      "gist": "利23:17 要加酵烤兩個搖祭的餅，和素祭不可有酵的規定相反。",
+      "title": "五旬節兩個有酵餅的搖祭條例",
+      "type": "主題"
     },
     "亞筆月": {
       "gist": "以色列宗教曆的正月，名字意思是「初熟之穀」；被擄後改稱尼散月。",
@@ -654,20 +1876,60 @@
       "title": "以本月為正月",
       "type": "主題"
     },
+    "初熟": {
+      "gist": "當年最先的收成；和長子、頭生的牲畜一樣，原都屬於神。",
+      "title": "初熟",
+      "type": "原文"
+    },
     "基督預表（逾越節羔羊）": {
       "gist": "新約把基督稱為「我們逾越節的羔羊」（林前5:7）。",
       "title": "基督預表（逾越節羔羊）",
       "type": "神學"
+    },
+    "搖祭": {
+      "gist": "把祭物在耶和華面前搖動或舉起呈獻的方法；實際怎麼做，各家說法不一。",
+      "title": "搖祭",
+      "type": "原文"
+    },
+    "新素祭": {
+      "gist": "七七節用當年新收成獻給耶和華的素祭。",
+      "title": "新素祭",
+      "type": "主題"
+    },
+    "曠野": {
+      "gist": "埃及勢力範圍以外的地方；摩西向法老要求到那裡祭祀耶和華。",
+      "title": "曠野",
+      "type": "地點"
+    },
+    "月朔": {
+      "gist": "每個月開始的那一天；民28:11-15 規定這天另獻一整套燔祭和贖罪祭。",
+      "title": "月朔",
+      "type": "歷史"
+    },
+    "林前5：6-8": {
+      "gist": "林前5:6-8 講清除舊酵、守除酵節，與出23:15 的除酵節相連。",
+      "title": "林前5：6-8",
+      "type": "互文"
     },
     "滅命的": {
       "gist": "出12:23 擊殺埃及長子的那一位；是天使還是神自己，解法不一。",
       "title": "滅命的",
       "type": "神學"
     },
+    "無酵節": {
+      "gist": "正月十四日晚上到二十一日晚上，吃無酵餅、從家中除酵的七日節期。",
+      "title": "無酵節",
+      "type": "歷史"
+    },
     "無酵餅": {
       "gist": "沒有發酵的餅；逾越節當夜同吃，無酵節七日都要吃。",
       "title": "無酵餅",
       "type": "原文"
+    },
+    "燔祭": {
+      "gist": "把祭牲完全焚燒、使煙氣上升獻給神的祭，是舊約最基本的獻祭。",
+      "title": "燔祭",
+      "type": "神學"
     },
     "牛膝草": {
       "gist": "拿來蘸血、打在門楣和門框上的小草；後來也用在潔淨的儀式裡。",
@@ -678,6 +1940,16 @@
       "gist": "十災的最後一災：半夜擊殺埃及地所有的長子和頭生的牲畜。",
       "title": "第十災（殺長子之災）",
       "type": "歷史"
+    },
+    "聖會": {
+      "gist": "召集會眾、特為敬拜神而設的聚會，百姓要放下日常的工作。",
+      "title": "聖會",
+      "type": "文化"
+    },
+    "聖靈分賜預表五旬節（徒2：1-4）": {
+      "gist": "使徒行傳2章五旬節聖靈降臨，和民11章靈分賜長老對照。",
+      "title": "聖靈分賜預表五旬節（徒2：1-4）",
+      "type": "互文"
     },
     "苦菜": {
       "gist": "逾越節當夜和羊羔、無酵餅同吃的苦味菜，記念在埃及為奴的苦。",
@@ -693,6 +1965,16 @@
       "gist": "正月初十挑選、十四日宰殺的無殘疾一歲公羊羔，綿羊山羊都可以。",
       "title": "逾越節羔羊",
       "type": "歷史"
+    },
+    "銀號": {
+      "gist": "用純銀錘出的兩枝號，由祭司吹奏，用來召集會眾、指揮起行。",
+      "title": "銀號",
+      "type": "文化"
+    },
+    "除酵": {
+      "gist": "出23:15「除酵節」的「除酵」，原文字義是「沒放酵」。",
+      "title": "除酵",
+      "type": "原文"
     }
   },
   "motto": {
@@ -707,6 +1989,113 @@
     ],
     "ref": "利23:2",
     "to": 2
+  },
+  "offerings": {
+    "利23:18-19": {
+      "items": [
+        {
+          "animal": "羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公牛犢",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 2,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        },
+        {
+          "animal": "公綿羊羔",
+          "count": 2,
+          "role": "平安祭"
+        }
+      ],
+      "ref": "利23:18-19"
+    },
+    "民28:11-15": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 2,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民28:11-15"
+    },
+    "民28:19-22": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 2,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民28:19-22"
+    },
+    "民28:27-30": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 2,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪"
+        }
+      ],
+      "ref": "民28:27-30"
+    }
   },
   "sources": [
     {
@@ -747,6 +2136,153 @@
     {
       "book": "出埃及記",
       "chapter": 13,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT13.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 13,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT13.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 13,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Exo/13"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 13,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "利未記",
+      "chapter": 23,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 23,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 23,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23"
+    },
+    {
+      "book": "利未記",
+      "chapter": 23,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 23,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "民數記",
+      "chapter": 9,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT09.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 9,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT09.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 9,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/9"
+    },
+    {
+      "book": "民數記",
+      "chapter": 9,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/9.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 9,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "民數記",
+      "chapter": 10,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT10.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 28,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT28.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 28,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/28"
+    },
+    {
+      "book": "民數記",
+      "chapter": 28,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/28.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 28,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "申命記",
+      "chapter": 16,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm"
+    },
+    {
+      "book": "申命記",
+      "chapter": 16,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/16.htm"
+    },
+    {
+      "book": "申命記",
+      "chapter": 16,
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
@@ -780,6 +2316,34 @@
       "ref": "出12:6",
       "strong": "H6153",
       "translit": "ha.'ar.Ba.yim"
+    },
+    "chamets": {
+      "gloss": "leaven",
+      "hebrew": "חָמֵ֖ץ",
+      "id": "chamets",
+      "label": "酵",
+      "lexicon": "חָמֵץ (cha.mets): leaven",
+      "morph": "HAamsa",
+      "morphText": "Adjective (Singular Masculine, Absolute)",
+      "note": "和合本譯作「加酵」。STEP 的本節譯義是 leaven，詞形是形容詞，字典義也是 leaven。部分註釋進一步解釋這酵的意思：黃迦勒認為這是見證奉獻的人承認自己有罪；BibleHub 指出，這份祭物含有酵，和其他規定要用無酵餅的祭物不同。",
+      "position": 10,
+      "ref": "利23:17",
+      "strong": "H2557A",
+      "translit": "cha.Metz"
+    },
+    "chodesh": {
+      "gloss": "months your",
+      "hebrew": "חָדְשֵׁיכֶ֔ם",
+      "id": "chodesh",
+      "label": "月朔",
+      "lexicon": "חֹ֫דֶשׁ (cho.desh): month",
+      "morph": "HNcmpc/Sp2mp",
+      "morphText": "Noun (Plural Masculine, Construct) + Suffix (Second Plural Masculine)",
+      "note": "和合本譯作「每月朔」。STEP 把這一句分成兩個字：前一個字的本節譯義是「beginnings of」（起頭），這個字是 months（你們的月份），詞形是複數，字典義是 month（月）。黃迦勒說，月朔是每月的第一日，或新月出現的日子。",
+      "position": 2,
+      "ref": "民28:11",
+      "strong": "H2320G",
+      "translit": "cha.de.shei.Khem"
     },
     "ezov": {
       "gloss": "hyssop",
@@ -837,6 +2401,48 @@
       "strong": "H4844",
       "translit": "me.ro.Rim"
     },
+    "nuph": {
+      "gloss": "and he will wave",
+      "hebrew": "וְהֵנִ֧יף",
+      "id": "nuph",
+      "label": "搖一搖",
+      "lexicon": "נוּף (nuph): to wave",
+      "morph": "Hc/Vhq3ms",
+      "morphText": "Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Perfect (Future/present Indicative) Third Singular Masculine",
+      "note": "STEP 的本節譯義是 he will wave（他要搖），詞形是使役式（Hiphil），字典義是 to wave。實際的動作怎麼做，部分註釋看法不同：黃迦勒說是水平方向前後擺動；《舊約聖經背景註釋》說是搖一搖或抬起。",
+      "position": 1,
+      "ref": "利23:11",
+      "strong": "H5130B",
+      "translit": "ve.he.Nif"
+    },
+    "omer": {
+      "gloss": "<the> sheaf of",
+      "hebrew": "עֹ֛מֶר",
+      "id": "omer",
+      "label": "一捆",
+      "lexicon": "עֹ֫מֶר (o.mer): sheaf",
+      "morph": "HNcmsc",
+      "morphText": "Noun (Singular Masculine, Construct)",
+      "note": "STEP 在這裡的本節譯義與字典義都是 sheaf（一捆）。部分註釋進一步指出，同一個字也是量器的名稱：黃迦勒解作一伊法的十分之一；丁良才說這字有時是捆的意思，也是一種量器的名字。",
+      "position": 20,
+      "ref": "利23:10",
+      "strong": "H6016A",
+      "translit": "'O.mer"
+    },
+    "oni": {
+      "gloss": "affliction",
+      "hebrew": "עֹ֑נִי",
+      "id": "oni",
+      "label": "困苦",
+      "lexicon": "עֳנִי (o.ni): affliction",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "和合本「困苦餅」的「困苦」。STEP 的本節譯義和字典義都是 affliction。同一節經文接著說明了原因：你本是急忙出了埃及地。黃迦勒說，無酵餅的滋味不如有酵餅，用來紀念在埃及所過困苦的日子。",
+      "position": 11,
+      "ref": "申16:3",
+      "strong": "H6040",
+      "translit": "'O.ni"
+    },
     "pasach": {
       "gloss": "and I will pass over",
       "hebrew": "וּפָסַחְתִּ֖י",
@@ -879,6 +2485,34 @@
       "strong": "H5592A",
       "translit": "ba.Saf"
     },
+    "shabbat": {
+      "gloss": "the sabbath",
+      "hebrew": "הַשַּׁבָּ֔ת",
+      "id": "shabbat",
+      "label": "安息日",
+      "lexicon": "שַׁבָּת (shab.bat): Sabbath",
+      "morph": "HTd/Ncfsa",
+      "morphText": "Definite article (Hebrew) + Noun (Singular Feminine, Absolute)",
+      "note": "STEP 在這裡的本節譯義是 the sabbath（那安息日），帶定冠詞，字典義是 Sabbath。這個安息日指哪一天，註釋有不同說法：丁良才記下撒都該人說是無酵節中尋常的安息日，法利賽人說是無酵節的頭一個聖會日；黃迦勒也提到七十士譯本作「第一日的次日」。",
+      "position": 8,
+      "ref": "利23:11",
+      "strong": "H7676",
+      "translit": "ha.sha.Bat"
+    },
+    "shavuot": {
+      "gloss": "weeks",
+      "hebrew": "שָׁבֻעוֹת֙",
+      "id": "shavuot",
+      "label": "七七節",
+      "lexicon": "שָׁבוּעַ (sha.vu.a): Weeks",
+      "morph": "HNtfpa",
+      "morphText": "Noun (Title, Plural Feminine, Absolute)",
+      "note": "「七七節」的「七七」在原文是一個字。STEP 的本節譯義是 weeks（週），詞形是複數，標為節期名稱；字典義是 Weeks。申16:9 說要計算七七日；黃迦勒說，到了第五十天就是五旬節當天。",
+      "position": 3,
+      "ref": "申16:10",
+      "strong": "H7620G",
+      "translit": "sha.vu.'Ot"
+    },
     "shimmurim": {
       "gloss": "vigil<s>",
       "hebrew": "שִׁמֻּרִ֛ים",
@@ -892,6 +2526,20 @@
       "ref": "出12:42",
       "strong": "H8107",
       "translit": "shi.mu.Rim"
+    },
+    "tame": {
+      "gloss": "unclean",
+      "hebrew": "טְמֵאִים֙",
+      "id": "tame",
+      "label": "不潔淨",
+      "lexicon": "טָמֵא (ta.me): unclean",
+      "morph": "HAampa",
+      "morphText": "Adjective (Plural Masculine, Absolute)",
+      "note": "STEP 的本節譯義是 unclean，詞形是形容詞複數，字典義相同。黃迦勒說，因死屍而不潔淨要算七天；BibleHub 說這是禮儀上的狀態，不是道德上的過失。",
+      "position": 5,
+      "ref": "民9:6",
+      "strong": "H2931",
+      "translit": "te.me.'Im"
     }
   },
   "title": "耶和華的節期",
@@ -1006,6 +2654,39 @@
       ],
       "ref": "出12:11",
       "to": 11
+    },
+    "出12:15-20": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 15,
+      "lines": [
+        {
+          "text": "你們要吃無酵餅七日。頭一日要把酵從你們各家中除去；因為從頭一日起，到第七日為止，凡吃有酵之餅的，必從以色列中剪除。",
+          "v": 15
+        },
+        {
+          "text": "頭一日你們當有聖會，第七日也當有聖會。這兩日之內，除了預備各人所要吃的以外，無論何工都不可做。",
+          "v": 16
+        },
+        {
+          "text": "你們要守無酵節，因為我正當這日把你們的軍隊從埃及地領出來。所以，你們要守這日，作為世世代代永遠的定例。",
+          "v": 17
+        },
+        {
+          "text": "從正月十四日晚上，直到二十一日晚上，你們要吃無酵餅。",
+          "v": 18
+        },
+        {
+          "text": "在你們各家中，七日之內不可有酵；因為凡吃有酵之物的，無論是寄居的，是本地的，必從以色列的會中剪除。",
+          "v": 19
+        },
+        {
+          "text": "有酵的物，你們都不可吃；在你們一切住處要吃無酵餅。",
+          "v": 20
+        }
+      ],
+      "ref": "出12:15-20",
+      "to": 20
     },
     "出12:2": {
       "book": "出埃及記",
@@ -1167,6 +2848,52 @@
       "ref": "出12:31-34",
       "to": 34
     },
+    "出12:34-39": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 34,
+      "lines": [
+        {
+          "text": "百姓就拿著沒有酵的生麵，把摶麵盆包在衣服中，扛在肩頭上。",
+          "v": 34
+        },
+        {
+          "text": "以色列人照著摩西的話行，向埃及人要金器、銀器，和衣裳。",
+          "v": 35
+        },
+        {
+          "text": "耶和華叫百姓在埃及人眼前蒙恩，以致埃及人給他們所要的。他們就把埃及人的財物奪去了。",
+          "v": 36
+        },
+        {
+          "text": "以色列人從蘭塞起行，往疏割去；除了婦人孩子，步行的男人約有六十萬。",
+          "v": 37
+        },
+        {
+          "text": "又有許多閒雜人，並有羊群牛群，和他們一同上去。",
+          "v": 38
+        },
+        {
+          "text": "他們用埃及帶出來的生麵烤成無酵餅。這生麵原沒有發起；因為他們被催逼離開埃及，不能耽延，也沒有為自己預備什麼食物。",
+          "v": 39
+        }
+      ],
+      "ref": "出12:34-39",
+      "to": 39
+    },
+    "出12:39": {
+      "book": "出埃及記",
+      "chapter": 12,
+      "from": 39,
+      "lines": [
+        {
+          "text": "他們用埃及帶出來的生麵烤成無酵餅。這生麵原沒有發起；因為他們被催逼離開埃及，不能耽延，也沒有為自己預備什麼食物。",
+          "v": 39
+        }
+      ],
+      "ref": "出12:39",
+      "to": 39
+    },
     "出12:42": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1251,6 +2978,47 @@
       "ref": "出12:7",
       "to": 7
     },
+    "出13:3-10": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "from": 3,
+      "lines": [
+        {
+          "text": "摩西對百姓說：你們要記念從埃及為奴之家出來的這日，因為耶和華用大能的手將你們從這地方領出來。有酵的餅都不可吃。",
+          "v": 3
+        },
+        {
+          "text": "亞筆月間的這日是你們出來的日子。",
+          "v": 4
+        },
+        {
+          "text": "將來耶和華領你進迦南人、赫人、亞摩利人、希未人、耶布斯人之地，就是他向你的祖宗起誓應許給你那流奶與蜜之地，那時你要在這月間守這禮。",
+          "v": 5
+        },
+        {
+          "text": "你要吃無酵餅七日，到第七日要向耶和華守節。",
+          "v": 6
+        },
+        {
+          "text": "這七日之久，要吃無酵餅；在你四境之內不可見有酵的餅，也不可見發酵的物。",
+          "v": 7
+        },
+        {
+          "text": "當那日，你要告訴你的兒子說：這是因耶和華在我出埃及的時候為我所行的事。",
+          "v": 8
+        },
+        {
+          "text": "這要在你手上作記號，在你額上作記念，使耶和華的律法常在你口中，因為耶和華曾用大能的手將你從埃及領出來。",
+          "v": 9
+        },
+        {
+          "text": "所以你每年要按著日期守這例。",
+          "v": 10
+        }
+      ],
+      "ref": "出13:3-10",
+      "to": 10
+    },
     "出13:3-4": {
       "book": "出埃及記",
       "chapter": 13,
@@ -1268,6 +3036,215 @@
       "ref": "出13:3-4",
       "to": 4
     },
+    "出13:7": {
+      "book": "出埃及記",
+      "chapter": 13,
+      "from": 7,
+      "lines": [
+        {
+          "text": "這七日之久，要吃無酵餅；在你四境之內不可見有酵的餅，也不可見發酵的物。",
+          "v": 7
+        }
+      ],
+      "ref": "出13:7",
+      "to": 7
+    },
+    "出23:15": {
+      "book": "出埃及記",
+      "chapter": 23,
+      "from": 15,
+      "lines": [
+        {
+          "text": "你要守除酵節，照我所吩咐你的，在亞筆月內所定的日期，吃無酵餅七天。誰也不可空手朝見我，因為你是這月出了埃及。",
+          "v": 15
+        }
+      ],
+      "ref": "出23:15",
+      "to": 15
+    },
+    "出23:16": {
+      "book": "出埃及記",
+      "chapter": 23,
+      "from": 16,
+      "lines": [
+        {
+          "text": "又要守收割節，所收的是你田間所種、勞碌得來初熟之物。並在年底收藏，要守收藏節。",
+          "v": 16
+        }
+      ],
+      "ref": "出23:16",
+      "to": 16
+    },
+    "出34:18": {
+      "book": "出埃及記",
+      "chapter": 34,
+      "from": 18,
+      "lines": [
+        {
+          "text": "你要守除酵節，照我所吩咐你的，在亞筆月內所定的日期吃無酵餅七天，因為你是這亞筆月內出了埃及。",
+          "v": 18
+        }
+      ],
+      "ref": "出34:18",
+      "to": 18
+    },
+    "出34:22": {
+      "book": "出埃及記",
+      "chapter": 34,
+      "from": 22,
+      "lines": [
+        {
+          "text": "在收割初熟麥子的時候要守七七節；又在年底要守收藏節。",
+          "v": 22
+        }
+      ],
+      "ref": "出34:22",
+      "to": 22
+    },
+    "利23:10": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 10,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：你們到了我賜給你們的地，收割莊稼的時候，要將初熟的莊稼一捆帶給祭司。",
+          "v": 10
+        }
+      ],
+      "ref": "利23:10",
+      "to": 10
+    },
+    "利23:11": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 11,
+      "lines": [
+        {
+          "text": "他要把這一捆在耶和華面前搖一搖，使你們得蒙悅納。祭司要在安息日的次日把這捆搖一搖。",
+          "v": 11
+        }
+      ],
+      "ref": "利23:11",
+      "to": 11
+    },
+    "利23:12-13": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 12,
+      "lines": [
+        {
+          "text": "搖這捆的日子，你們要把一歲、沒有殘疾的公綿羊羔獻給耶和華為燔祭。",
+          "v": 12
+        },
+        {
+          "text": "同獻的素祭，就是調油的細麵伊法十分之二，作為馨香的火祭，獻給耶和華。同獻的奠祭，要酒一欣四分之一。",
+          "v": 13
+        }
+      ],
+      "ref": "利23:12-13",
+      "to": 13
+    },
+    "利23:14": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 14,
+      "lines": [
+        {
+          "text": "無論是餅，是烘的子粒，是新穗子，你們都不可吃，直等到把你們獻給神的供物帶來的那一天才可以吃。這在你們一切的住處作為世世代代永遠的定例。",
+          "v": 14
+        }
+      ],
+      "ref": "利23:14",
+      "to": 14
+    },
+    "利23:15-16": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 15,
+      "lines": [
+        {
+          "text": "你們要從安息日的次日，獻禾捆為搖祭的那日算起，要滿了七個安息日。",
+          "v": 15
+        },
+        {
+          "text": "到第七個安息日的次日，共計五十天，又要將新素祭獻給耶和華。",
+          "v": 16
+        }
+      ],
+      "ref": "利23:15-16",
+      "to": 16
+    },
+    "利23:15-22": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 15,
+      "lines": [
+        {
+          "text": "你們要從安息日的次日，獻禾捆為搖祭的那日算起，要滿了七個安息日。",
+          "v": 15
+        },
+        {
+          "text": "到第七個安息日的次日，共計五十天，又要將新素祭獻給耶和華。",
+          "v": 16
+        },
+        {
+          "text": "要從你們的住處取出細麵伊法十分之二，加酵，烤成兩個搖祭的餅，當作初熟之物獻給耶和華。",
+          "v": 17
+        },
+        {
+          "text": "又要將一歲、沒有殘疾的羊羔七隻、公牛犢一隻、公綿羊兩隻，和餅一同奉上。這些與同獻的素祭和奠祭要作為燔祭獻給耶和華，就是作馨香的火祭獻給耶和華。",
+          "v": 18
+        },
+        {
+          "text": "你們要獻一隻公山羊為贖罪祭，兩隻一歲的公綿羊羔為平安祭。",
+          "v": 19
+        },
+        {
+          "text": "祭司要把這些和初熟麥子做的餅一同作搖祭，在耶和華面前搖一搖；這是獻與耶和華為聖物歸給祭司的。",
+          "v": 20
+        },
+        {
+          "text": "當這日，你們要宣告聖會；什麼勞碌的工都不可做。這在你們一切的住處作為世世代代永遠的定例。",
+          "v": 21
+        },
+        {
+          "text": "在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的；要留給窮人和寄居的。我是耶和華─你們的神。",
+          "v": 22
+        }
+      ],
+      "ref": "利23:15-22",
+      "to": 22
+    },
+    "利23:17": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 17,
+      "lines": [
+        {
+          "text": "要從你們的住處取出細麵伊法十分之二，加酵，烤成兩個搖祭的餅，當作初熟之物獻給耶和華。",
+          "v": 17
+        }
+      ],
+      "ref": "利23:17",
+      "to": 17
+    },
+    "利23:18-19": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 18,
+      "lines": [
+        {
+          "text": "又要將一歲、沒有殘疾的羊羔七隻、公牛犢一隻、公綿羊兩隻，和餅一同奉上。這些與同獻的素祭和奠祭要作為燔祭獻給耶和華，就是作馨香的火祭獻給耶和華。",
+          "v": 18
+        },
+        {
+          "text": "你們要獻一隻公山羊為贖罪祭，兩隻一歲的公綿羊羔為平安祭。",
+          "v": 19
+        }
+      ],
+      "ref": "利23:18-19",
+      "to": 19
+    },
     "利23:2": {
       "book": "利未記",
       "chapter": 23,
@@ -1280,6 +3257,19 @@
       ],
       "ref": "利23:2",
       "to": 2
+    },
+    "利23:22": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 22,
+      "lines": [
+        {
+          "text": "在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的；要留給窮人和寄居的。我是耶和華─你們的神。",
+          "v": 22
+        }
+      ],
+      "ref": "利23:22",
+      "to": 22
     },
     "利23:5": {
       "book": "利未記",
@@ -1294,6 +3284,115 @@
       "ref": "利23:5",
       "to": 5
     },
+    "利23:6-8": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 6,
+      "lines": [
+        {
+          "text": "這月十五日是向耶和華守的無酵節；你們要吃無酵餅七日。",
+          "v": 6
+        },
+        {
+          "text": "第一日當有聖會，什麼勞碌的工都不可做；",
+          "v": 7
+        },
+        {
+          "text": "要將火祭獻給耶和華七日。第七日是聖會，什麼勞碌的工都不可做。",
+          "v": 8
+        }
+      ],
+      "ref": "利23:6-8",
+      "to": 8
+    },
+    "利23:9-14": {
+      "book": "利未記",
+      "chapter": 23,
+      "from": 9,
+      "lines": [
+        {
+          "text": "耶和華對摩西說：",
+          "v": 9
+        },
+        {
+          "text": "你曉諭以色列人說：你們到了我賜給你們的地，收割莊稼的時候，要將初熟的莊稼一捆帶給祭司。",
+          "v": 10
+        },
+        {
+          "text": "他要把這一捆在耶和華面前搖一搖，使你們得蒙悅納。祭司要在安息日的次日把這捆搖一搖。",
+          "v": 11
+        },
+        {
+          "text": "搖這捆的日子，你們要把一歲、沒有殘疾的公綿羊羔獻給耶和華為燔祭。",
+          "v": 12
+        },
+        {
+          "text": "同獻的素祭，就是調油的細麵伊法十分之二，作為馨香的火祭，獻給耶和華。同獻的奠祭，要酒一欣四分之一。",
+          "v": 13
+        },
+        {
+          "text": "無論是餅，是烘的子粒，是新穗子，你們都不可吃，直等到把你們獻給神的供物帶來的那一天才可以吃。這在你們一切的住處作為世世代代永遠的定例。",
+          "v": 14
+        }
+      ],
+      "ref": "利23:9-14",
+      "to": 14
+    },
+    "民10:10": {
+      "book": "民數記",
+      "chapter": 10,
+      "from": 10,
+      "lines": [
+        {
+          "text": "在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。我是耶和華─你們的神。",
+          "v": 10
+        }
+      ],
+      "ref": "民10:10",
+      "to": 10
+    },
+    "民28:11": {
+      "book": "民數記",
+      "chapter": 28,
+      "from": 11,
+      "lines": [
+        {
+          "text": "每月朔，你們要將兩隻公牛犢，一隻公綿羊，七隻沒有殘疾、一歲的公羊羔，獻給耶和華為燔祭。",
+          "v": 11
+        }
+      ],
+      "ref": "民28:11",
+      "to": 11
+    },
+    "民28:11-15": {
+      "book": "民數記",
+      "chapter": 28,
+      "from": 11,
+      "lines": [
+        {
+          "text": "每月朔，你們要將兩隻公牛犢，一隻公綿羊，七隻沒有殘疾、一歲的公羊羔，獻給耶和華為燔祭。",
+          "v": 11
+        },
+        {
+          "text": "每隻公牛要用調油的細麵伊法十分之三作為素祭；那隻公羊也用調油的細麵伊法十分之二作為素祭；",
+          "v": 12
+        },
+        {
+          "text": "每隻羊羔要用調油的細麵伊法十分之一作為素祭和馨香的燔祭，是獻給耶和華的火祭。",
+          "v": 13
+        },
+        {
+          "text": "一隻公牛要奠酒半欣，一隻公羊要奠酒一欣三分之一，一隻羊羔也奠酒一欣四分之一。這是每月的燔祭，一年之中要月月如此。",
+          "v": 14
+        },
+        {
+          "text": "又要將一隻公山羊為贖罪祭，獻給耶和華；要獻在常獻的燔祭和同獻的奠祭以外。",
+          "v": 15
+        }
+      ],
+      "ref": "民28:11-15",
+      "to": 15
+    },
     "民28:16": {
       "book": "民數記",
       "chapter": 28,
@@ -1306,6 +3405,209 @@
       ],
       "ref": "民28:16",
       "to": 16
+    },
+    "民28:17-25": {
+      "book": "民數記",
+      "chapter": 28,
+      "from": 17,
+      "lines": [
+        {
+          "text": "這月十五日是節期，要吃無酵餅七日。",
+          "v": 17
+        },
+        {
+          "text": "第一日當有聖會；什麼勞碌的工都不可做。",
+          "v": 18
+        },
+        {
+          "text": "當將公牛犢兩隻，公綿羊一隻，一歲的公羊羔七隻，都要沒有殘疾的，用火獻給耶和華為燔祭。",
+          "v": 19
+        },
+        {
+          "text": "同獻的素祭用調油的細麵；為一隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；",
+          "v": 20
+        },
+        {
+          "text": "為那七隻羊羔，每隻要獻伊法十分之一。",
+          "v": 21
+        },
+        {
+          "text": "並獻一隻公山羊作贖罪祭，為你們贖罪。",
+          "v": 22
+        },
+        {
+          "text": "你們獻這些，要在早晨常獻的燔祭以外。",
+          "v": 23
+        },
+        {
+          "text": "一連七日，每日要照這例把馨香火祭的食物獻給耶和華，是在常獻的燔祭和同獻的奠祭以外。",
+          "v": 24
+        },
+        {
+          "text": "第七日當有聖會，什麼勞碌的工都不可做。",
+          "v": 25
+        }
+      ],
+      "ref": "民28:17-25",
+      "to": 25
+    },
+    "民28:26-31": {
+      "book": "民數記",
+      "chapter": 28,
+      "from": 26,
+      "lines": [
+        {
+          "text": "七七節莊稼初熟，你們獻新素祭給耶和華的日子，當有聖會；什麼勞碌的工都不可做。",
+          "v": 26
+        },
+        {
+          "text": "只要將公牛犢兩隻，公綿羊一隻，一歲的公羊羔七隻，作為馨香的燔祭獻給耶和華。",
+          "v": 27
+        },
+        {
+          "text": "同獻的素祭用調油的細麵；為每隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；",
+          "v": 28
+        },
+        {
+          "text": "為那七隻羊羔，每隻要獻伊法十分之一。",
+          "v": 29
+        },
+        {
+          "text": "並獻一隻公山羊為你們贖罪。",
+          "v": 30
+        },
+        {
+          "text": "這些，你們要獻在常獻的燔祭和同獻的素祭並同獻的奠祭以外，都要沒有殘疾的。",
+          "v": 31
+        }
+      ],
+      "ref": "民28:26-31",
+      "to": 31
+    },
+    "民9:1-14": {
+      "book": "民數記",
+      "chapter": 9,
+      "from": 1,
+      "lines": [
+        {
+          "text": "以色列人出埃及地以後，第二年正月，耶和華在西乃的曠野吩咐摩西說：",
+          "v": 1
+        },
+        {
+          "text": "以色列人應當在所定的日期守逾越節，",
+          "v": 2
+        },
+        {
+          "text": "就是本月十四日黃昏的時候，你們要在所定的日期守這節，要按這節的律例典章而守。",
+          "v": 3
+        },
+        {
+          "text": "於是摩西吩咐以色列人守逾越節。",
+          "v": 4
+        },
+        {
+          "text": "他們就在西乃的曠野，正月十四日黃昏的時候，守逾越節。凡耶和華所吩咐摩西的，以色列人都照樣行了。",
+          "v": 5
+        },
+        {
+          "text": "有幾個人因死屍而不潔淨，不能在那日守逾越節。當日他們到摩西、亞倫面前，",
+          "v": 6
+        },
+        {
+          "text": "說：我們雖因死屍而不潔淨，為何被阻止、不得同以色列人在所定的日期獻耶和華的供物呢？",
+          "v": 7
+        },
+        {
+          "text": "摩西對他們說：你們暫且等候，我可以去聽耶和華指著你們是怎樣吩咐的。",
+          "v": 8
+        },
+        {
+          "text": "耶和華對摩西說：",
+          "v": 9
+        },
+        {
+          "text": "你曉諭以色列人說：你們和你們後代中，若有人因死屍而不潔淨，或在遠方行路，還要向耶和華守逾越節。",
+          "v": 10
+        },
+        {
+          "text": "他們要在二月十四日黃昏的時候，守逾越節。要用無酵餅與苦菜，和逾越節的羊羔同吃。",
+          "v": 11
+        },
+        {
+          "text": "一點不可留到早晨；羊羔的骨頭一根也不可折斷。他們要照逾越節的一切律例而守。",
+          "v": 12
+        },
+        {
+          "text": "那潔淨而不行路的人若推辭不守逾越節，那人要從民中剪除；因為他在所定的日期不獻耶和華的供物，應該擔當他的罪。",
+          "v": 13
+        },
+        {
+          "text": "若有外人寄居在你們中間，願意向耶和華守逾越節，他要照逾越節的律例典章行，不管是寄居的是本地人，同歸一例。",
+          "v": 14
+        }
+      ],
+      "ref": "民9:1-14",
+      "to": 14
+    },
+    "民9:10-11": {
+      "book": "民數記",
+      "chapter": 9,
+      "from": 10,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：你們和你們後代中，若有人因死屍而不潔淨，或在遠方行路，還要向耶和華守逾越節。",
+          "v": 10
+        },
+        {
+          "text": "他們要在二月十四日黃昏的時候，守逾越節。要用無酵餅與苦菜，和逾越節的羊羔同吃。",
+          "v": 11
+        }
+      ],
+      "ref": "民9:10-11",
+      "to": 11
+    },
+    "民9:5": {
+      "book": "民數記",
+      "chapter": 9,
+      "from": 5,
+      "lines": [
+        {
+          "text": "他們就在西乃的曠野，正月十四日黃昏的時候，守逾越節。凡耶和華所吩咐摩西的，以色列人都照樣行了。",
+          "v": 5
+        }
+      ],
+      "ref": "民9:5",
+      "to": 5
+    },
+    "民9:6-7": {
+      "book": "民數記",
+      "chapter": 9,
+      "from": 6,
+      "lines": [
+        {
+          "text": "有幾個人因死屍而不潔淨，不能在那日守逾越節。當日他們到摩西、亞倫面前，",
+          "v": 6
+        },
+        {
+          "text": "說：我們雖因死屍而不潔淨，為何被阻止、不得同以色列人在所定的日期獻耶和華的供物呢？",
+          "v": 7
+        }
+      ],
+      "ref": "民9:6-7",
+      "to": 7
+    },
+    "民9:8": {
+      "book": "民數記",
+      "chapter": 9,
+      "from": 8,
+      "lines": [
+        {
+          "text": "摩西對他們說：你們暫且等候，我可以去聽耶和華指著你們是怎樣吩咐的。",
+          "v": 8
+        }
+      ],
+      "ref": "民9:8",
+      "to": 8
     },
     "申16:1-7": {
       "book": "申命記",
@@ -1343,6 +3645,98 @@
       ],
       "ref": "申16:1-7",
       "to": 7
+    },
+    "申16:10-12": {
+      "book": "申命記",
+      "chapter": 16,
+      "from": 10,
+      "lines": [
+        {
+          "text": "你要照耶和華─你神所賜你的福，手裡拿著甘心祭，獻在耶和華─你的神面前，守七七節。",
+          "v": 10
+        },
+        {
+          "text": "你和你兒女、僕婢，並住在你城裡的利未人，以及在你們中間寄居的與孤兒寡婦，都要在耶和華─你神所選擇立為他名的居所，在耶和華─你的神面前歡樂。",
+          "v": 11
+        },
+        {
+          "text": "你也要記念你在埃及作過奴僕。你要謹守遵行這些律例。",
+          "v": 12
+        }
+      ],
+      "ref": "申16:10-12",
+      "to": 12
+    },
+    "申16:3": {
+      "book": "申命記",
+      "chapter": 16,
+      "from": 3,
+      "lines": [
+        {
+          "text": "你吃這祭牲，不可吃有酵的餅；七日之內要吃無酵餅，就是困苦餅─你本是急忙出了埃及地─要叫你一生一世記念你從埃及地出來的日子。",
+          "v": 3
+        }
+      ],
+      "ref": "申16:3",
+      "to": 3
+    },
+    "申16:3-8": {
+      "book": "申命記",
+      "chapter": 16,
+      "from": 3,
+      "lines": [
+        {
+          "text": "你吃這祭牲，不可吃有酵的餅；七日之內要吃無酵餅，就是困苦餅─你本是急忙出了埃及地─要叫你一生一世記念你從埃及地出來的日子。",
+          "v": 3
+        },
+        {
+          "text": "在你四境之內，七日不可見麵酵，頭一日晚上所獻的肉，一點不可留到早晨。",
+          "v": 4
+        },
+        {
+          "text": "在耶和華─你神所賜的各城中，你不可獻逾越節的祭；",
+          "v": 5
+        },
+        {
+          "text": "只當在耶和華─你神所選擇要立為他名的居所，晚上日落的時候，乃是你出埃及的時候，獻逾越節的祭。",
+          "v": 6
+        },
+        {
+          "text": "當在耶和華─你神所選擇的地方把肉烤了吃（烤：或作煮），次日早晨就回到你的帳棚去。",
+          "v": 7
+        },
+        {
+          "text": "你要吃無酵餅六日，第七日要向耶和華─你的神守嚴肅會，不可做工。",
+          "v": 8
+        }
+      ],
+      "ref": "申16:3-8",
+      "to": 8
+    },
+    "申16:9-12": {
+      "book": "申命記",
+      "chapter": 16,
+      "from": 9,
+      "lines": [
+        {
+          "text": "你要計算七七日：從你開鐮收割禾稼時算起，共計七七日。",
+          "v": 9
+        },
+        {
+          "text": "你要照耶和華─你神所賜你的福，手裡拿著甘心祭，獻在耶和華─你的神面前，守七七節。",
+          "v": 10
+        },
+        {
+          "text": "你和你兒女、僕婢，並住在你城裡的利未人，以及在你們中間寄居的與孤兒寡婦，都要在耶和華─你神所選擇立為他名的居所，在耶和華─你的神面前歡樂。",
+          "v": 11
+        },
+        {
+          "text": "你也要記念你在埃及作過奴僕。你要謹守遵行這些律例。",
+          "v": 12
+        }
+      ],
+      "ref": "申16:9-12",
+      "to": 12
     }
   }
 }

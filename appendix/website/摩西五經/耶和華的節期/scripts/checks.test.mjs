@@ -61,6 +61,24 @@ describe('GT 歸屬', () => {
   it('單行歸屬：串珠', () => {
     expect(checkGtAttribution(GT, hitsOf('後來在西乃還會重提'), '《串珠聖經註釋》')).toBeNull();
   });
+  it('歸屬標記的破折號字元：－－ 換行、―― 同行、—— 當正文破折號仍略過', () => {
+    const raw = [
+      '利二十三章的第一段。',
+      '－－',
+      '《聖經精讀本──利未記註解》',
+      '',
+      '“一歲的”——預表基督沒有瑕疵，這是整句話不是出處。――《靈修版聖經註釋》',
+      '',
+      '“一歲的”——預表基督沒有瑕疵，這是整句話不是出處，後面沒有任何標記。',
+    ].join('\n');
+    const a1 = attributionAfter(raw, raw.indexOf('第一段') + 3);
+    expect(a1?.line).toBe('《聖經精讀本──利未記註解》');
+    const a2 = attributionAfter(raw, raw.indexOf('“一歲的”'));
+    expect(a2?.line).toBe('《靈修版聖經註釋》');
+    const last = raw.lastIndexOf('“一歲的”');
+    expect(attributionAfter(raw, last)).toBeNull();
+    expect(checkGtAttribution(raw, [{ start: 0, end: raw.indexOf('第一段') + 3 }], '《聖經精讀本──利未記註解》')).toBeNull();
+  });
   it('正文裡的 ── 破折號不當歸屬', () => {
     expect(attributionAfter(GT, hitsOf('逾越節的祭牲是一歲大的綿羊')[0].end)?.line).toBe('《丁道爾聖經註釋》');
     expect(checkGtAttribution(GT, hitsOf('逾越節的祭牲是一歲大的綿羊'), '《丁道爾聖經註釋》')).toBeNull();

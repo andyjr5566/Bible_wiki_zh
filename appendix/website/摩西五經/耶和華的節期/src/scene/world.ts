@@ -38,14 +38,21 @@ import {
   type PersonOpts,
 } from './geo';
 import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, skyMat, solid, solidInstanced, U } from './materials';
-import { CUE_IDX, DAY_S, HYSSOP_IDX, OX, departDist, torchOn, upShiftAt, windowOff, type TrackOut } from './tracks';
-import { clamp, lerp, mulberry32, smooth } from './util';
+import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { Camp } from './camp';
+import { Fields } from './fields';
+import { Home } from './home';
+import { clamp, hexTo, lerp, mulberry32, smooth } from './util';
 
 const RAD = Math.PI / 180;
 const DESK_HYSSOP = [0, 0, 0, 0, 0, 0, 0, 0];
 const DESK_MEAL = [0, 0, 0, 0, 0, 0, 0, 0];
 const PARTS = ['lintel', 'left', 'right'] as const;
 const MOON_R = 900;
+const AMBER = new Vector3();
+const BLOOD = new Vector3();
+hexTo('#d98a3c', AMBER);
+hexTo('#a3231b', BLOOD);
 
 export interface Frame {
   s: number;
@@ -87,6 +94,12 @@ export class World {
   moonM: ShaderMaterial;
   night = new Group();
   day = new Group();
+  camp = new Camp();
+  fields = new Fields();
+  home = new Home();
+  private leftHouse!: Group;
+  private ground!: Mesh;
+  private childrenPair = new Group();
   houses: HouseRig[] = [];
   hero!: HouseRig;
   basinPos = new Vector3(-1.35, 0, 0.95);
@@ -115,7 +128,7 @@ export class World {
   constructor(onShut: () => void) {
     this.onShut = onShut;
     const sc = this.scene;
-    sc.add(this.night, this.day);
+    sc.add(this.night, this.day, this.camp.succoth, this.camp.sinai, this.fields.barley, this.fields.wheat);
 
     // ---- 天空與月亮
     this.skyM = skyMat();
@@ -150,6 +163,7 @@ export class World {
     const ground = new Mesh(new PlaneGeometry(9000, 9000), mGround);
     ground.rotation.x = -Math.PI / 2;
     sc.add(ground);
+    this.ground = ground;
     const hill = (x: number, z: number, sx: number, sy: number, sz: number) => {
       const m = new Mesh(new SphereGeometry(1, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2), mHill);
       m.position.set(x, 0, z);
@@ -283,6 +297,7 @@ export class World {
 
     // ---- 隔日（應許之地）
     this.buildDay(mMud, mWood, mSilh);
+    this.day.add(this.home.group);
 
   }
 
@@ -560,6 +575,7 @@ export class World {
     const left = solid(l, mMud, 2.6);
     left.position.set(-7.4, 0, -0.4);
     g.add(left);
+    this.leftHouse = left;
     const r = houseBodyGeo({ w: 5.6, h: 3.4, d: 4.6 });
     const right = solid(r, mMud, 2.6);
     right.position.set(7.2, 0, -0.8);
@@ -570,11 +586,12 @@ export class World {
     const father = solid(personGeo({ staff: true, staffSide: 'R', belt: true, slim: true, armL: [0.25, 0.14], armR: [0.5, 0.12] }), mFather, 2.4);
     father.position.set(0.95, 0, 2.3);
     father.rotation.y = Math.PI - 0.35;
-    g.add(father);
+    this.childrenPair.add(father);
     const child = solid(personGeo({ scale: 0.56, armL: [0.35, 0.95], armR: [1.45, 0.45], wrap: true }), mChild, 2.2);
     child.position.set(0.25, 0, 2.4);
     child.rotation.y = Math.PI + 0.1;
-    g.add(child);
+    this.childrenPair.add(child);
+    g.add(this.childrenPair);
     g.visible = false;
   }
 
@@ -596,7 +613,7 @@ export class World {
     const aw = mobileUI ? 0 : smooth(1.05, 1.3, aspect);
     if (aw > 0) {
       // 塗血那一拍：說明框固定在左邊，門＋盆＋把手整組擺在右側
-      const wH = aw * smooth(4.6, 5.15, s) * (1 - smooth(6.0, 6.3, s));
+      const wH = aw * smooth(cu('hyssop', -0.4), cu('hyssop', 0.15), s) * (1 - smooth(cu('hyssop', 1.0), cu('hyssop', 1.3), s));
       if (wH > 0) {
         const left = W * 0.47;
         const right = W - Math.max(140, W * 0.1);
@@ -617,11 +634,13 @@ export class World {
         shiftPx += wH * ((left + right) * 0.5 - W * 0.5);
       }
       // 日後：說明框改放左邊，父子與門框往右偏
-      const wC = aw * smooth(11.7, 11.97, s);
+      const wC = aw * smooth(cu('children', -0.3), cu('children', -0.03), s) * (1 - smooth(CUT['bake'] - 0.2, CUT['bake'] - 0.03, s));
       shiftPx += wC * W * 0.1;
+      // 其餘拍：依各拍的說明框在左或右，把主體推向另一側
+      shiftPx += aw * dxShiftAt(s) * W;
     }
     // 吃羊羔：DOM 分格是「屋內」，有血的那扇門整個擺在分格正下方（桌機）／分格與說明框之間（手機）
-    const wM = smooth(6.75, 7.25, s) * (1 - smooth(7.85, 8.3, s));
+    const wM = smooth(cu('meal', -0.25), cu('meal', 0.25), s) * (1 - smooth(cu('meal', 0.85), cu('meal', 1.3), s));
     if (wM > 0) {
       const panelBottom = panel ? panel.y + panel.h : H * 0.5;
       const panelCx = panel ? panel.x + panel.w * 0.5 : W * 0.5;
@@ -692,6 +711,7 @@ export class World {
     sk.uStars.value = tr.sky[1];
     sk.uSkyDay.value = tr.sky[2];
     sk.uTwinkle.value = fr.motionOff ? 0 : 1;
+    (sk.uHorizonCol.value as Vector3).lerpVectors(BLOOD, AMBER, tr.sky[3]);
 
     // 月亮：方位角／仰角是世界固定的方向；相位由 day 決定，光源方向在視圖空間
     const az = tr.moon[0];
@@ -722,14 +742,33 @@ export class World {
     const showMoon = tr.sky[2] < 0.5;
     this.moon.visible = showMoon;
     this.moonHull.visible = showMoon;
-    const dayN = clamp((story.day - 1) / 13);
-    const th = lerp(0.3 * Math.PI, Math.PI, dayN);
-    (this.moonM.uniforms.uLightV.value as Vector3).set(Math.sin(th), 0.28 * (1 - dayN), -Math.cos(th));
+    // 月相 1–30：初一細鉤（亮面朝右＝西）、十四滿月、十五起由西側（畫面右）開始虧缺、二十一約下弦
+    const inSinai = s >= CUT['sinai'] && s < CUT['count'];
+    const day = inSinai ? 14 : story.day;
+    let th: number;
+    let ly: number;
+    if (day <= 14) {
+      const dayN = clamp((day - 1) / 13);
+      th = lerp(0.26 * Math.PI, Math.PI, dayN);
+      ly = 0.28 * (1 - dayN);
+    } else if (day <= 21) {
+      th = lerp(Math.PI, 1.5 * Math.PI, clamp((day - 14) / 7));
+      ly = 0.1 * smooth(14, 21, day);
+    } else {
+      th = lerp(1.5 * Math.PI, 1.8 * Math.PI, clamp((day - 21) / 9));
+      ly = 0.1 + 0.18 * smooth(21, 30, day);
+    }
+    (this.moonM.uniforms.uLightV.value as Vector3).set(Math.sin(th), ly, -Math.cos(th));
 
     // 夜與日兩個世界的可見性
-    const dayView = s >= DAY_S;
-    this.night.visible = !dayView;
-    this.day.visible = dayView;
+    const w = worldAt(s);
+    this.night.visible = w === 'night';
+    this.day.visible = w === 'home';
+    this.camp.succoth.visible = w === 'succoth';
+    this.camp.sinai.visible = w === 'sinai';
+    this.fields.barley.visible = w === 'barley';
+    this.fields.wheat.visible = w === 'wheat';
+    this.ground.visible = w !== 'barley' && w !== 'wheat';
   }
 
   updateObjects(fr: Frame): void {
@@ -788,12 +827,13 @@ export class World {
 
     // ---- 麥田分群（控制三角形數）
     const field = s < DAY_S;
-    this.barleyGroups[0].visible = s < 3.3;
-    this.barleyGroups[1].visible = field && (s < 4.3 || s >= 7.6);
-    this.barleyGroups[2].visible = field && (s < 4.3 || s >= 7.6);
+    this.barleyGroups[0].visible = s < cu('day-14', 0.3);
+    const wide = field && (s < cu('dusk-street', 0.3) || s >= cu('meal', 0.6));
+    this.barleyGroups[1].visible = wide;
+    this.barleyGroups[2].visible = wide;
 
     // ---- 羊羔：十四日黃昏被牽走
-    const lg = smooth(3.8, 4.05, s);
+    const lg = smooth(cu('day-14', 0.8), cu('dusk-street', 0.05), s);
     this.lamb.visible = lg < 0.999;
     this.lambProps.visible = lg < 0.999;
     this.lamb.position.x = 1.95 + 7 * lg;
@@ -805,15 +845,23 @@ export class World {
     this.torchMat.uniforms.uFlick.value = fr.motionOff ? 0 : 0.35;
 
     // ---- 隊伍
-    const procOn = s >= 9.85 && s < DAY_S;
+    const procOn = s >= cu('wailing', 0.85) && s < DAY_S;
     this.procG.visible = procOn;
     if (procOn) this.updateProcession(s);
-    this.farLine.visible = s >= 10.55 && s < DAY_S;
+    this.farLine.visible = s >= cu('depart', 0.55) && s < DAY_S;
     if (this.farLine.visible) {
-      const k = smooth(10.55, 11.0, s);
+      const k = smooth(cu('depart', 0.55), cu('vigil'), s);
       this.farLine.scale.set(1, k, 1);
-      this.farLine.position.x = -1.5 * (s - 10.55);
+      this.farLine.position.x = -1.5 * (s - cu('depart', 0.55));
     }
+
+    // ---- 春季新場景
+    this.childrenPair.visible = s < CUT['bake'];
+    this.leftHouse.visible = s < CUT['no-leaven'];
+    this.home.update(s);
+    const wd = worldAt(s);
+    if (wd === 'succoth' || wd === 'sinai') this.camp.update(fr, s);
+    if (wd === 'wheat') this.fields.update(fr, s);
   }
 
   private updateProcession(s: number): void {

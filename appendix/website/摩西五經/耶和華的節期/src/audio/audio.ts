@@ -1,8 +1,9 @@
 /**
  * 聲音：預設關閉；讀者按下開關才建立 <audio> 元素（不用 Web Audio，file:// 也能播）。
- * - 環境音（night-wind、depart）用 requestAnimationFrame 淡入淡出。
+ * - 環境音（night-wind、depart、fire、field-wind）用 requestAnimationFrame 淡入淡出。
  * - 單次音效（lamb、dip、strike、door）直接播放；wailing 進入時淡入、離開時淡出。
- * - 檔案載入或播放失敗一律安靜略過。
+ * - fire（烤餅那一拍 loop）、field-wind（8 秒一陣風，每搖一下播一次，同時最多兩陣）、harvest（單次，barley-ripe 與 rejoice 那兩拍）。
+ * - 檔案載入或播放失敗、或 audio-sources.yaml 還沒登記的音檔，一律安靜略過。
  * 音檔清單與授權在 data/audio-sources.yaml，授權頁由 src/ui/ending.ts 列出。
  */
 import type { AudioSource } from '../data/types';
@@ -33,7 +34,13 @@ const SPEC: Record<string, Pick<Track, 'max' | 'fadeIn' | 'fadeOut'>> = {
   dip: { max: 0.9, fadeIn: 0.02, fadeOut: 0.3 },
   strike: { max: 0.95, fadeIn: 0.02, fadeOut: 0.3 },
   door: { max: 0.9, fadeIn: 0.02, fadeOut: 0.6 },
+  fire: { max: 0.5, fadeIn: 1.2, fadeOut: 1.4 },
+  'field-wind': { max: 0.45, fadeIn: 1.6, fadeOut: 1.6 },
+  harvest: { max: 0.5, fadeIn: 1.4, fadeOut: 1.8 },
 };
+
+/** field-wind 每搖一下播一陣，同時最多這麼多陣 */
+const MAX_GUSTS = 2;
 
 export interface AudioController {
   readonly enabled: boolean;
@@ -55,6 +62,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
   let beat = 0;
   let raf = 0;
   let last = 0;
+  const gusts: HTMLAudioElement[] = [];
 
   const idxOf = (cue: string) => cues.indexOf(cue);
 
@@ -155,6 +163,8 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     setWant('night-wind', mid < 0 || beat < mid ? SPEC['night-wind'].max : 0);
     setWant('depart', dep >= 0 && beat >= dep && beat <= (vig < 0 ? dep : vig) ? SPEC.depart.max : 0);
     setWant('wailing', cue === 'wailing' ? SPEC.wailing.max : 0);
+    setWant('fire', cue === 'bake' ? SPEC.fire.max : 0);
+    setWant('harvest', cue === 'rejoice' || cue === 'barley-ripe' ? SPEC.harvest.max : 0);
   }
 
   function fire(id: string) {
@@ -172,9 +182,31 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     play(t, true);
   }
 
+  /** 搖一下放一陣風：每陣用自己的元素，同時最多 MAX_GUSTS 陣，滿了這一下就不再疊 */
+  function gust() {
+    const t = tracks.get('field-wind');
+    if (!t || !enabled || t.failed) return;
+    for (let i = gusts.length - 1; i >= 0; i--) if (gusts[i].ended || gusts[i].paused) gusts.splice(i, 1);
+    if (gusts.length >= MAX_GUSTS) return;
+    const el = new Audio(`./audio/${t.file}`);
+    el.volume = t.max;
+    el.addEventListener('error', () => {
+      t.failed = true;
+    });
+    const drop = () => {
+      const k = gusts.indexOf(el);
+      if (k >= 0) gusts.splice(k, 1);
+    };
+    el.addEventListener('ended', drop);
+    gusts.push(el);
+    const p = el.play();
+    if (p && typeof p.catch === 'function') p.catch(drop);
+  }
+
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       for (const t of tracks.values()) t.el?.pause();
+      for (const g of gusts) g.pause();
     } else {
       reapply();
     }
@@ -196,6 +228,8 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
           t.vol = 0;
           t.el?.pause();
         }
+        for (const g of gusts) g.pause();
+        gusts.length = 0;
       }
       for (const cb of listeners) cb(enabled);
     },
@@ -214,6 +248,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
           setWant('wailing', SPEC.wailing.max, true);
         }
         if (prev === 'day-10') setWant('lamb', 0);
+        if (cue === 'rejoice' || cue === 'barley-ripe') setWant('harvest', SPEC.harvest.max, true);
       }
       reapply();
     },
@@ -221,6 +256,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
       if (e.type === 'hyssop-dip') fire('dip');
       else if (e.type === 'hyssop-strike') fire('strike');
       else if (e.type === 'door-shut') fire('door');
+      else if (e.type === 'wave-swing') gust();
     },
     onChange(cb) {
       listeners.push(cb);

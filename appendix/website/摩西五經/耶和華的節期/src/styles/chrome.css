@@ -209,6 +209,11 @@
   pointer-events: none;
 }
 
+.jf-marker.is-hollow {
+  background: var(--jf-paper);
+  pointer-events: auto;
+}
+
 /* ---------- 日數牌 ---------- */
 .jf-day {
   position: fixed;
@@ -473,6 +478,16 @@
     border: 0;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
     transform: translateX(-50%);
+  }
+  .jf-marker.is-hollow {
+    background: var(--jf-ink);
+  }
+  .jf-marker.is-hollow::after {
+    content: '';
+    position: absolute;
+    inset: 3px 4px 0;
+    background: var(--jf-paper);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
   .jf-day {
     top: calc(max(12px, var(--jf-safe-t)) + 104px);

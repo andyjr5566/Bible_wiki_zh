@@ -7,8 +7,9 @@ import type { CreateScene, SceneHandle, SceneOptions } from './api';
 import { HyssopCtl } from './hyssop';
 import { Interior } from './interior';
 import { darknessMat, disposeShared, grainMat, PalVec, setLook, U, wipeMat } from './materials';
-import { CUE_IDX, createTrackOut, inMidnight, midnightP, palK, sampleTracks, wipeAmt } from './tracks';
+import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, wipeAmt } from './tracks';
 import { clamp } from './util';
+import { WaveCtl } from './wave';
 import { World, type Frame } from './world';
 
 const DEFAULT_PAL: Palette = { paper: '#efe5cf', ink: '#1a2342', accent: '#b9832e', glow: '#f7efd8' };
@@ -35,13 +36,14 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   Object.defineProperty(canvas, '__jfInfo', { configurable: true, value: () => ({ triangles: renderer.info.render.triangles, calls: renderer.info.render.calls, geometries: renderer.info.memory.geometries }) });
   renderer.setClearColor(0x15130f, 1);
 
-  const palA = new PalVec(palettes['opening'] ?? DEFAULT_PAL);
-  const palB = new PalVec(palettes['passover'] ?? palettes['opening'] ?? DEFAULT_PAL);
+  const pals = CHAPTER_IDS.map((id) => new PalVec(palettes[id] ?? palettes['passover'] ?? palettes['opening'] ?? DEFAULT_PAL));
 
   const world = new World(() => onEvent({ type: 'door-shut' }));
   const interior = new Interior();
   const hyssop = new HyssopCtl(canvas, world.camera, onEvent);
   world.scene.add(hyssop.group);
+  const wave = new WaveCtl(canvas, world.camera, onEvent);
+  world.scene.add(wave.group);
 
   // 半夜的黑暗（世界場景最上層）
   const dMat = darknessMat();
@@ -81,6 +83,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     U.uRes.value.set(bufW, bufH);
     U.uViewport.value.set(bufW, bufH);
     hyssop.setSize(W, H);
+    wave.setSize(W, H);
     dirty = true;
   };
 
@@ -113,7 +116,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   };
 
   const findPanel = (s: number): boolean => {
-    if (s < 6.5 || s > 8.5) return false; // 只有吃羊羔前後才畫室內
+    if (s < cu('meal', -0.5) || s > cu('meal', 1.5)) return false; // 只有吃羊羔前後才畫室內
     if (!panelEl || !panelEl.isConnected || panelTick++ % 45 === 0) panelEl = document.querySelector<HTMLElement>('[data-jf-panel="meal"]');
     if (!panelEl) return false;
     if (effectiveOpacity(panelEl) < 0.5) return false;
@@ -213,7 +216,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     fr.s = lastIdx + clamp(story.beatProgress, 0, 1);
 
     const hasPanel = findPanel(fr.s);
-    const busy = world.busy || hyssop.busy;
+    const busy = world.busy || hyssop.busy || wave.busy;
     const hm = story.hyssop.marks;
     sig[0] = fr.s;
     sig[1] = story.day;
@@ -226,8 +229,12 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     sig[8] = panelBox.y;
     sig[9] = panelBox.w;
     sig[10] = panelBox.h;
+    sig[11] = story.bake.progress;
+    sig[12] = story.count;
+    sig[13] = story.wave.swings + (story.wave.done ? 10 : 0);
+    sig[14] = story.month;
     let same = true;
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 15; i++) {
       if (sig[i] !== lastSig[i]) {
         same = false;
         lastSig[i] = sig[i];
@@ -240,10 +247,12 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     if (camOverride) for (let i = 0; i < 8; i++) tracks.cam[i] = camOverride[i];
     U.uDark.value = darkF;
     U.uTime.value = fr.time;
-    setLook(palA, palB, palK(fr.s), darkF);
+    const pk = paletteAt(fr.s);
+    setLook(pals[pk.a], pals[pk.b], pk.k, darkF);
     world.updateScene(fr, tracks, W, H, hasPanel ? panelBox : null);
     world.updateObjects(fr);
     hyssop.update(dt, fr.s, fr.idx);
+    wave.update(dt, fr.s, fr.idx);
     updateDarkness(fr.s);
     wMat.uniforms.uWipe.value = wipeAmt(fr.s);
     wipe.visible = wMat.uniforms.uWipe.value > 0.002;
@@ -323,6 +332,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
       canvas.removeEventListener('webglcontextlost', onLost);
       for (const t of ['pointerdown', 'pointermove', 'pointerup', 'pointercancel'] as const) canvas.removeEventListener(t, wake);
       hyssop.dispose();
+      wave.dispose();
       interior.dispose();
       world.dispose();
       disposeShared();
@@ -332,8 +342,12 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
       hyssop.hyssopAction(a);
       dirty = true;
     },
+    waveAction() {
+      wave.waveAction();
+      dirty = true;
+    },
     interactiveRects() {
-      return hyssop.interactiveRects();
+      return story.cue === 'wave' ? wave.interactiveRects() : hyssop.interactiveRects();
     },
   };
 };

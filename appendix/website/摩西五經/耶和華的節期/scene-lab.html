@@ -19,6 +19,7 @@
     /* ?boxes=1：假的說明框，用來檢查構圖有沒有被蓋住（桌機在右；手機貼底，蓋住 y>0.55h；上方有標題列與月份導覽） */
     #lab-box { position: fixed; display: none; z-index: 3; pointer-events: none; background: rgba(255,255,255,.55); border: 2px dashed #a00; box-sizing: border-box; }
     #lab-box.on { display: block; left: 56vw; top: 15vh; width: 35vw; height: 50vh; }
+    #lab-box.on.left { left: 6vw; }
     #lab-top { position: fixed; display: none; z-index: 3; pointer-events: none; background: rgba(255,255,255,.55); border: 2px dashed #a00; box-sizing: border-box; left: 0; right: 0; top: 0; height: 13vh; }
     @media (max-width: 720px) { #lab-box.on { left: 8px; right: 8px; width: auto; top: 55vh; height: 44vh; } #lab-top.on { display: block; } }    body.lab-hide #lab-bar, body.lab-hide #lab-log { display: none; }
   </style>
@@ -29,10 +30,12 @@
   <div id="lab-box"></div>
   <div id="lab-top"></div>
   <div id="lab-bar">
-    <label>章 <select id="lab-chapter"><option>opening</option><option>passover</option></select></label>
+    <label>章 <select id="lab-chapter"></select></label>
     <label>cue <select id="lab-cue"></select></label>
     <label>beatProgress <input id="lab-p" type="range" min="0" max="1" step="0.005" value="0.5" /><output id="lab-pv"></output></label>
-    <label>day <input id="lab-day" type="range" min="1" max="14" step="0.05" value="14" /><output id="lab-dv"></output></label>
+    <label>day <input id="lab-day" type="range" min="1" max="30" step="0.05" value="14" /><output id="lab-dv"></output></label>
+    <label>count <input id="lab-count" type="range" min="0" max="50" step="0.5" value="0" /><output id="lab-cv"></output></label>
+    <label>bake <input id="lab-bake" type="range" min="0" max="1" step="0.01" value="0" /></label>
     <label><input id="lab-dark" type="checkbox" /> 暗色</label>
     <label><input id="lab-motion" type="checkbox" /> 減少動態</label>
     <button data-act="dip">蘸血</button>
@@ -40,6 +43,8 @@
     <button data-act="left">左門柱</button>
     <button data-act="right">右門柱</button>
     <button id="lab-reset">重設塗血</button>
+    <button id="lab-wave">搖一搖</button>
+    <button id="lab-wave-reset">重設搖禾捆</button>
   </div>
   <pre id="lab-log"></pre>
   <script type="module" src="/src/scene/lab.ts"></script>

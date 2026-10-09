@@ -15,9 +15,14 @@ const SHOTS = [
   ['title', 0.5], ['month', 0.6], ['day-10', 0.6], ['day-14', 0.6],
   ['dusk-street', 0.6], ['hyssop', 0.5], ['door-shut', 0.8], ['meal', 0.5],
   ['midnight', 0.6], ['wailing', 0.5], ['depart', 0.5], ['vigil', 0.5], ['children', 0.5],
+  // 第二階段第一批（春季）
+  ['new-moon', 0.5], ['bake', 0.5], ['seven-days', 0.5], ['no-leaven', 0.5], ['remember', 0.5],
+  ['barley-ripe', 0.5], ['wave', 0.5], ['lamb-offering', 0.5], ['not-yet', 0.5],
+  ['sinai', 0.5], ['unclean', 0.5], ['wait', 0.5], ['second-month', 0.5],
+  ['count', 0.9], ['two-loaves', 0.5], ['weeks-offerings', 0.5], ['rejoice', 0.5], ['corners', 0.5],
 ];
 
-const b = await launch({ width: 1600, height: 1000, gpu: true, port: 9341 });
+const b = await launch({ width: 1280, height: 800, gpu: true, port: 9341 });
 let failed = 0;
 try {
   for (const [cue, p] of SHOTS) {
@@ -25,7 +30,7 @@ try {
     await sleep(3500);
     const info = await b.evaluate('JSON.stringify(window.__lab ? window.__lab.story.cue : null)');
     if (JSON.parse(info) !== cue) { console.log(`✗ ${cue}：實驗室沒有切到這個 cue（${info}）`); failed++; continue; }
-    const { data } = await b.send('Page.captureScreenshot', { format: 'webp', quality: 72 });
+    const { data } = await b.send('Page.captureScreenshot', { format: 'webp', quality: 62 });
     const file = join(out, `${cue}.webp`);
     writeFileSync(file, Buffer.from(data, 'base64'));
     console.log(`✓ ${cue}  ${(statSync(file).size / 1024).toFixed(0)} KB`);

@@ -11,6 +11,15 @@ opening:
     verse: 利23:2
     text: 以色列的一年裡，有幾個日子是神親自定下的。利未記把它們叫作==耶和華的節期==：日子一到，百姓就要聚集。
 
+  - id: new-moon
+    cue: new-moon
+    day: 1
+    verse: 民28:11
+    offerings: [民28:11-15]
+    text: 每個月的頭一天叫「月朔」。後來在曠野，神吩咐以色列人每逢月朔都要獻上燔祭和贖罪祭，也要==吹號==，在神面前作為紀念。
+    notes: [ct-newmoon, gt-dlc-newmoon, gt-chuanzhu-newmoon, bh-newmoon]
+    words: [chodesh]
+
   - id: first-month
     cue: month
     day: 3
@@ -94,3 +103,133 @@ passover:
     verse: 出12:26-27
     text: 日後到了應許之地，兒女會問：行這禮是什麼意思？經文連答案都先寫好了，要父母這樣==回答==。
     notes: [gt-tyndale-children, kc-children]
+
+unleavened:
+  - id: bake
+    cue: bake
+    interaction: bake
+    verse: 出12:39
+    prompt: 按住按鈕，把沒有發起的生麵烤成餅。
+    text: 以色列人從蘭塞起行，往疏割去。他們把從埃及帶出來的生麵烤成==無酵餅==。麵還沒有發起；他們被催逼離開埃及，不能耽延，也沒有為自己預備什麼食物。
+    notes: [ct-bake, gt-qidao-bake, kc-first-food, bh-on-hand]
+
+  - id: seven-days
+    cue: seven-days
+    day: 15
+    dayTo: 21
+    verse: 利23:6-8
+    offerings: [民28:19-22]
+    offeringsLabel: 每日（共七日）
+    text: 正月十五日是無酵節，要吃無酵餅==七日==。頭一日和第七日都有聖會，什麼勞碌的工都不可做；這七日，每天都要把火祭獻給耶和華。
+    notes: [ct-labor, gt-dlc-same-name, gt-qidao-order, kc-seven]
+
+  - id: no-leaven
+    cue: no-leaven
+    verse: 出13:7
+    text: 頭一日就要把酵從各家中==除去==。這七日之內，家裡不可有酵，四境之內也不可見發酵的物；吃有酵之物的，要從以色列中剪除。
+    notes: [ct-whole-seven, kc-nowhere, gt-jingdu-leaven]
+
+  - id: remember
+    cue: remember
+    reason: true
+    verse: 申16:3
+    text: 這餅叫==困苦餅==。你本是急忙出了埃及地，吃這餅，是要你一生一世記念出埃及的日子。當那日，還要告訴兒子：這是因耶和華在我出埃及的時候為我所行的事。
+    notes: [ct-affliction, bh-affliction, kc-testimony, gt-zhongwen-teach]
+    words: [oni]
+
+firstfruits:
+  - id: barley-ripe
+    cue: barley-ripe
+    verse: 利23:10
+    text: 這是給將來的條例：到了神所賜的地，收割莊稼的時候，要把==初熟==的莊稼一捆帶給祭司。
+    notes: [ct-omer, gt-dlc-omer, gt-qidao-giver, kc-in-land, bh-barley]
+    words: [omer]
+
+  - id: wave
+    cue: wave
+    interaction: wave
+    reason: true
+    badge: 安息日的次日
+    verse: 利23:11
+    prompt: 按住禾捆，來回搖三下。
+    text: 祭司要在安息日的次日，把這一捆在耶和華面前==搖一搖==，使你們得蒙悅納。
+    notes: [ct-wave-motion, gt-bg-lift, ct-sabbath, gt-dlc-sabbath, bh-first-day]
+    words: [nuph, shabbat]
+
+  - id: lamb-offering
+    cue: lamb-offering
+    verse: 利23:12-13
+    text: 搖禾捆的那一天，要獻一隻一歲、沒有殘疾的公綿羊羔為==燔祭==，同獻調油的細麵和奠祭的酒。
+    notes: [ct-lamb, gt-dlc-no-sin, gt-bg-three]
+
+  - id: not-yet
+    cue: not-yet
+    verse: 利23:14
+    text: 在把供物帶來的那一天以前，無論是餅、烘的子粒，還是新穗子，都==不可吃==。這是世世代代永遠的定例。
+    notes: [ct-not-yet, kc-begin-god, gt-bg-release]
+
+second-passover:
+  - id: sinai
+    cue: sinai
+    day: 14
+    badge: 第二年正月十四日
+    verse: 民9:5
+    text: 出埃及以後的第二年，正月十四日黃昏，以色列人在==西乃的曠野==守逾越節，凡耶和華吩咐的都照樣行了。
+    notes: [gt-bg-sinai, kc-third, gt-dlc-no-unleavened]
+
+  - id: unclean
+    cue: unclean
+    verse: 民9:6-7
+    text: 有幾個人因死屍而==不潔淨==，不能在那日守節。他們來到摩西、亞倫面前問：為什麼我們被攔阻，不能和以色列人在所定的日期獻耶和華的供物？
+    notes: [ct-who, ct-seven-unclean, gt-dlc-obeyed, bh-ritual]
+    words: [tame]
+
+  - id: wait
+    cue: wait
+    verse: 民9:8
+    text: 摩西對他們說：你們暫且==等候==，我去聽耶和華指著你們怎樣吩咐。
+    notes: [kc-not-know, gt-jingdu-wait, bh-pause]
+
+  - id: second-month
+    cue: second-month
+    day: 14
+    verse: 民9:10-11
+    text: 耶和華說：因死屍不潔淨的，或在遠方行路的，要在==二月十四日==黃昏守逾越節，照逾越節的一切律例，用無酵餅、苦菜和羊羔同吃。潔淨又不行路、卻推辭不守的，要從民中剪除；寄居的外人願意守，也同歸一例。
+    notes: [ct-postpone, gt-dlc-tradition, gt-chuanzhu-no-excuse, bh-journey]
+
+weeks:
+  - id: count
+    cue: count
+    interaction: count
+    verse: 利23:15-16
+    prompt: 往下捲，一天一天數。
+    text: 從搖禾捆的那一天算起，要滿七個安息日；到第七個安息日的次日，共計==五十天==，再把新素祭獻給耶和華。
+    notes: [ct-49, bh-counting, gt-jingdu-wheat, kc-barley-wheat]
+
+  - id: two-loaves
+    cue: two-loaves
+    verse: 利23:17
+    text: 這一次要從住處拿細麵，==加酵==，烤成兩個搖祭的餅，當作初熟之物獻給耶和華。無酵節七日不可見酵，這兩個餅卻明說要加酵。
+    notes: [ct-leaven-sin, bh-leaven-unlike, gt-bg-not-altar, kc-church]
+    words: [chamets]
+
+  - id: weeks-offerings
+    cue: weeks-offerings
+    verse: 利23:18-19
+    offerings: [利23:18-19, 民28:27-30]
+    text: 這一天的祭牲，利未記和民數記各列了一份，兩份的==數目不一樣==。
+    notes: [gt-dlc-order, kc-same-offerings, kc-sin-offering, gt-bg-unclear]
+
+  - id: rejoice
+    cue: rejoice
+    reason: true
+    verse: 申16:10-12
+    text: 要照神所賜的福，手裡拿著甘心祭來守這節。你和兒女、僕婢，城裡的利未人，寄居的，孤兒寡婦，都要在神面前一同==歡樂==。也要記念你在埃及作過奴僕。
+    notes: [ct-all, ct-remember-poor, bh-justice]
+    words: [shavuot]
+
+  - id: corners
+    cue: corners
+    verse: 利23:22
+    text: 收割的時候，不可割盡田角，也不可拾取遺落的，要==留給==窮人和寄居的。
+    notes: [ct-corners, gt-dlc-corners, gt-chuanzhu-poor, bh-dignity]

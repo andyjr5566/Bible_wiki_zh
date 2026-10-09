@@ -7,15 +7,19 @@ import './styles/end.css';
 import { SITE } from './data/site';
 import { createAudio } from './audio/audio';
 import { bindPreferences, initScroll, type BeatInfo } from './story/scroll';
+import type { SceneEvent } from './scene/api';
 import { story } from './story/state';
 import { anyPanelOpen, buildBeats, closeOpenPanel, setPanelOn } from './ui/beats';
+import { createBakeUI } from './ui/bake';
 import { createChrome } from './ui/chrome';
+import { createCountUI } from './ui/count';
 import { createCoach } from './ui/coach';
 import { h } from './ui/dom';
 import { buildCredits, buildEndings } from './ui/ending';
 import { createHeadFade } from './ui/headfade';
 import { createHyssopUI } from './ui/hyssop';
 import { createNav } from './ui/nav';
+import { createWaveUI } from './ui/wave';
 import { createStage, type Stage } from './ui/stage';
 
 function boot() {
@@ -29,8 +33,13 @@ function boot() {
 
   // ---- 版面：每一拍一個 section ----
   const hyssop = createHyssopUI(canvas, app);
+  const bake = createBakeUI();
+  const count = createCountUI();
+  // 沒有場景時搖禾捆的事件由介面層自己送給音效（audio 在下面才建立）
+  let emitUi: (e: SceneEvent) => void = () => undefined;
+  const wave = createWaveUI(canvas, app, (e) => emitUi(e));
   const main = h('main', { class: 'jf-story', id: 'jf-story' });
-  const beats = buildBeats(main, hyssop);
+  const beats = buildBeats(main, { hyssop, bake, wave, count });
   app.append(main);
   for (const end of buildEndings()) {
     const cid = end.getAttribute('data-chapter');
@@ -50,8 +59,12 @@ function boot() {
       audio.onSceneEvent(e);
       hyssop.onEvent(e);
     },
-    (scene) => hyssop.setScene(scene),
+    (scene) => {
+      hyssop.setScene(scene);
+      wave.setScene(scene);
+    },
   );
+  emitUi = (e) => audio.onSceneEvent(e);
   const nav = createNav(app, beats);
   const coach = createCoach(app);
   createChrome(app, audio, () => coach.open());
@@ -65,15 +78,25 @@ function boot() {
     beatId: b.beat.id,
     cue: b.beat.cue,
     day: b.beat.day,
+    dayTo: b.beat.dayTo,
+    month: b.chapter.kind === 'opening' ? 1 : b.chapter.month,
+    interaction: b.beat.interaction,
     el: b.el,
     box: b.box,
   }));
   const hyssopRef = beats.find((b) => b.beat.interaction === 'hyssop');
+  const waveRef = beats.find((b) => b.beat.interaction === 'wave');
   let sideLocked = false;
+  let settled = false;
   const mealRef = beats.find((b) => b.panel);
 
   const scroll = initScroll(infos, (index) => {
     audio.onBeat(index);
+    // 版面量好之前的 index 不可靠（ScrollTrigger 還沒算出每一拍的位置），不能拿來判斷「捲過去了」
+    if (settled) {
+      bake.sync(index);
+      wave.sync(index);
+    }
     stage?.setCue(story.cue);
     // 手機的面板蓋在說明框上方：離開那一拍就收起來
     if (mobileQ.matches && anyPanelOpen()) {
@@ -122,6 +145,7 @@ function boot() {
   // 徽章要避開的固定介面：標題列、月份導覽、聲音鈕、日數牌（顯示時）、往下捲提示，再加上說明框
   const fixedUi = [...document.querySelectorAll<HTMLElement>('.jf-brand, .jf-bar .jf-btn, .jf-months, .jf-day, .jf-scrollcue')];
   const avoidRects: DOMRect[] = [];
+  const NO_RECTS: DOMRect[] = [];
   function collectAvoid(box: HTMLElement): DOMRect[] {
     avoidRects.length = 0;
     for (const el of fixedUi) {
@@ -155,8 +179,11 @@ function boot() {
     headFade.update();
     root.classList.toggle('jf-at-top', window.scrollY < 40);
     if (firstEnd) root.classList.toggle('jf-past-story', firstEnd.getBoundingClientRect().top < 110);
+    count.update();
+    const onWave = story.cue === 'wave';
+    wave.update(onWave, onWave && waveRef ? collectAvoid(waveRef.box) : NO_RECTS);
     const onHyssop = story.cue === 'hyssop';
-    const rects = hyssop.update(onHyssop, onHyssop && hyssopRef ? collectAvoid(hyssopRef.box) : []);
+    const rects = hyssop.update(onHyssop, onHyssop && hyssopRef ? collectAvoid(hyssopRef.box) : NO_RECTS);
     if (story.cue === 'meal') fitMealPanel();
     if (onHyssop && hyssopRef && !sideLocked && rects && rects.length && !mobileQ.matches) {
       hyssopRef.el.dataset.side = pickSide(rects);
@@ -174,6 +201,9 @@ function boot() {
     loading?.classList.add('is-gone');
     window.setTimeout(() => loading?.remove(), 700);
     scroll.refresh();
+    settled = true;
+    bake.sync(scroll.index());
+    wave.sync(scroll.index());
     coach.openIfFirstVisit();
   });
   fontsReady.then(() => scroll.refresh());

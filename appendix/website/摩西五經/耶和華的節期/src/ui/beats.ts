@@ -6,7 +6,11 @@
 import type { Beat, StoryChapter } from '../data/types';
 import { SITE } from '../data/site';
 import { h } from './dom';
+import type { BakeUI } from './bake';
+import type { CountUI } from './count';
 import type { HyssopUI } from './hyssop';
+import { offeringList } from './offerings';
+import type { WaveUI } from './wave';
 import { notesPanelBody, wordsPanelBody } from './panels';
 import { richText, verseNodes } from './text';
 
@@ -24,11 +28,40 @@ export interface BeatRef {
   hasPanelOpen(): boolean;
 }
 
-/** 說明框左右的固定指定（依 cue）；沒列到的照奇偶交替，互動那一拍固定在左 */
+/** 說明框左右的固定指定（依 cue）；沒列到的照奇偶交替 */
 const FIXED_SIDE: Record<string, 'left' | 'right'> = {
+  title: 'right',
   meal: 'right', // 左邊是室內分格
   children: 'left', // 人物在畫面中間偏右，放右邊會蓋住父親的頭
+  // 春季：左
+  'new-moon': 'left',
+  'seven-days': 'left',
+  remember: 'left',
+  wave: 'left',
+  'not-yet': 'left',
+  unclean: 'left',
+  'second-month': 'left',
+  count: 'left',
+  'weeks-offerings': 'left',
+  corners: 'left',
+  // 春季：右
+  bake: 'right',
+  'no-leaven': 'right',
+  'barley-ripe': 'right',
+  'lamb-offering': 'right',
+  sinai: 'right',
+  wait: 'right',
+  'two-loaves': 'right',
+  rejoice: 'right',
 };
+
+/** 各種互動的介面（說明框裡的提示、按鈕、狀態；塗血與搖禾捆另有觸控層） */
+export interface InteractionUIs {
+  hyssop: HyssopUI;
+  bake: BakeUI;
+  wave: WaveUI;
+  count: CountUI;
+}
 
 type Kind = 'notes' | 'words';
 const KIND_LABEL: Record<Kind, string> = { notes: '四家怎麼說', words: '原文' };
@@ -41,7 +74,7 @@ export function closeOpenPanel(returnFocus = false): void {
 }
 export const anyPanelOpen = (): boolean => openRef !== null;
 
-export function buildBeats(main: HTMLElement, hyssop: HyssopUI): BeatRef[] {
+export function buildBeats(main: HTMLElement, ui: InteractionUIs): BeatRef[] {
   const refs: BeatRef[] = [];
   // 說明框左右交替；有互動的那一拍固定落在左邊（牛膝草把手在畫面右側），其餘照奇偶往前後推
   const flat = SITE.chapters.flatMap((c) => c.beats);
@@ -51,7 +84,7 @@ export function buildBeats(main: HTMLElement, hyssop: HyssopUI): BeatRef[] {
   for (const chapter of SITE.chapters) {
     chapter.beats.forEach((beat, bi) => {
       const side = FIXED_SIDE[beat.cue] ?? ((index + offset) % 2 === 0 ? 'left' : 'right');
-      const ref = buildBeat(chapter, beat, bi, index, side, hyssop);
+      const ref = buildBeat(chapter, beat, bi, index, side, ui);
       main.append(ref.el);
       refs.push(ref);
       index++;
@@ -60,7 +93,7 @@ export function buildBeats(main: HTMLElement, hyssop: HyssopUI): BeatRef[] {
   return refs;
 }
 
-function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number, side: 'left' | 'right', hyssop: HyssopUI): BeatRef {
+function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number, side: 'left' | 'right', ui: InteractionUIs): BeatRef {
   const el = h('section', {
     class: 'jf-beat',
     id: `jf-beat-${chapter.id}-${beat.id}`,
@@ -87,7 +120,7 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   }
 
   const boxId = `jf-box-${chapter.id}-${beat.id}`;
-  const box = h('article', { class: 'jf-box', id: boxId, 'data-compact': beat.interaction ? 'true' : null });
+  const box = h('article', { class: 'jf-box', id: boxId, 'data-compact': beat.interaction ? 'true' : null, 'data-offers': beat.offerings?.length ?? null });
   if (beat.reason) box.append(h('p', { class: 'jf-reason' }, '經文自己說的理由'));
   box.append(h('p', { class: 'jf-text' }, richText(beat.text)));
 
@@ -100,7 +133,15 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     );
   }
 
-  if (beat.interaction === 'hyssop' && beat.prompt) box.append(hyssop.controls(beat.prompt));
+  const offers = offeringList(beat.offerings, beat.offeringsLabel);
+  if (offers) box.append(offers);
+
+  if (beat.prompt) {
+    if (beat.interaction === 'hyssop') box.append(ui.hyssop.controls(beat.prompt));
+    else if (beat.interaction === 'bake') box.append(ui.bake.controls(beat.prompt));
+    else if (beat.interaction === 'wave') box.append(ui.wave.controls(beat.prompt));
+    else if (beat.interaction === 'count') box.append(ui.count.controls(beat.prompt));
+  }
 
   // ---- 就地展開 ----
   const hasNotes = !!beat.notes?.length;

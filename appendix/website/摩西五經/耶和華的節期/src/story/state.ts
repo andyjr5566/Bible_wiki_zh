@@ -21,8 +21,19 @@ export interface StoryState {
   chapterProgress: number;
   /** 0–1：整頁 */
   pageProgress: number;
-  /** 開場的月亮日子（1–14，可為小數，隨捲動連續變化） */
+  /**
+   * 月亮的日子（1–30，可為小數，隨捲動連續變化）：開場 1→14、無酵節 15→21、二月逾越節 14。
+   * 介面層依各拍的 day 內插寫入；場景據此畫月相。
+   */
   day: number;
+  /** 目前的月份（1–12）；沒有經文日期的章（初熟禾捆、七七節）維持前一個值 */
+  month: number;
+  /** 七七節的數算：0–50，可為小數（介面層依 count 拍的捲動寫入；其他時候是 0 或 50） */
+  count: number;
+  /** 烤無酵餅：介面層的長按按鈕寫入 progress（0–1）；場景讀取畫麵團變化 */
+  bake: { progress: number; done: boolean; auto: boolean };
+  /** 搖禾捆：場景寫入（拖曳甩動或 waveAction），介面層讀取更新提示 */
+  wave: { swings: number; done: boolean; auto: boolean };
   /** 系統偏好：暗色模式 */
   dark: boolean;
   /**
@@ -49,6 +60,10 @@ export const story: StoryState = {
   chapterProgress: 0,
   pageProgress: 0,
   day: 1,
+  month: 1,
+  count: 0,
+  bake: { progress: 0, done: false, auto: false },
+  wave: { swings: 0, done: false, auto: false },
   dark: false,
   motionOff: false,
   hyssop: {
