@@ -500,6 +500,37 @@ firstfruits:
     verse: 利23:14
     quote: 它又有開放其餘莊稼，供百姓自由使用的功用
 
+  # ---------- 回聲：書5 ----------
+  - id: ct-josh-produce
+    source: CT
+    work: 黃迦勒《約書亞記註解》
+    chapter: 書5
+    verse: 書5:11
+    quote: '『逾越節的次日』即指無酵節第一日；『那地的出產』即指迦南地生長的穀物。'
+
+  - id: gt-chuanzhu-josh-grain
+    source: GT
+    work: 《串珠聖經注釋》
+    chapter: 書5
+    verse: 書5:11
+    quote: '「烘的榖」：如取自初熟的禾稼，須首先向神獻上一捆，另獻上燔祭、素祭和奠祭（見利23:9-14）。'
+
+  - id: bh-josh-provision
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 書5
+    verse: 書5:11
+    quote: 'This change marks a shift from God’s miraculous provision to His provision through the land He promised.'
+    quoteZh: '這個轉變，標誌著神的供應從神蹟般的方式，轉為藉著祂所應許的那地。'
+
+  - id: kc-josh-manna
+    source: KC
+    work: KingComments
+    chapter: 書5
+    verse: 書5:12
+    quote: 'God gives in His providence the manna for as long as it is necessary.'
+    quoteZh: '神照著祂的護理賜下嗎哪，需要多久，就賜多久。'
+
 second-passover:
   - id: gt-bg-sinai
     source: GT
@@ -603,6 +634,44 @@ second-passover:
     verse: 民9:10
     quote: This provision accounts for those who are physically unable to participate in the Passover due to travel.
     quoteZh: 這項規定顧及了因為出門在外、實在無法參加逾越節的人。
+
+  # ---------- 回聲：代下30 ----------
+  - id: gt-qidao-month
+    source: GT
+    work: 《啟導本聖經註釋》
+    chapter: 代下30
+    verse: 代下30:2-3
+    quote: '延遲一個月才守逾越節的辦法，在摩西時代已有過(民九10~11)。現在把適用於個人的規例用於全會眾，不僅祭司有時間自潔(3節)，全以色列民也有時間來耶路撒冷(3，13節)。'
+
+  - id: kc-hezekiah-num9
+    source: KC
+    work: KingComments
+    chapter: 代下30
+    verse: 代下30:2
+    quote: 'But Hezekiah knows the provision that the LORD has made to celebrate it on the fourteenth day of the second month in case it is not possible to celebrate it at the appointed time (Num 9:10-11).'
+    quoteZh: '希西家知道耶和華預備的辦法：如果不能在指定的日子守，可以在二月十四日守（民9:10-11）。'
+
+  - id: ct-hezekiah-heart
+    source: CT
+    work: 黃迦勒《歷代志下註解》
+    chapter: 代下30
+    verse: 代下30:18
+    quote: '『凡專心尋求神』表示神看重人的內心過於外面的禮儀'
+
+  - id: gt-bg-north
+    source: GT
+    work: 《舊約聖經背景注釋》
+    chapter: 代下30
+    verse: 代下30:2-3
+    quote: '但律法亦有規定(民九6~13)，容許當日不潔或遠行的人，在二月補守。希西家延期舉行慶典，使北國的人可以出席。'
+
+  - id: bh-hezekiah-pray
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 代下30
+    verse: 代下30:18
+    quote: 'His prayer did not excuse disobedience, but sought mercy for those whose hearts had turned sincerely toward God.'
+    quoteZh: '他的禱告並沒有替違命開脫，是為那些真心轉向神的人求憐憫。'
 
 weeks:
   # ---------- 數算 ----------
@@ -750,3 +819,571 @@ weeks:
     verse: 利23:22
     quote: The practice of leaving gleanings was a way to provide for the poor and the foreigner, allowing them to gather food with dignity.
     quoteZh: 留下遺落的穗子，是供應窮人和寄居者的方式，讓他們能有尊嚴地撿拾糧食。
+
+  # ---------- 回聲：得2 ----------
+  - id: gt-qidao-glean-law
+    source: GT
+    work: 《啟導本聖經路得記註釋》
+    chapter: 得2
+    verse: 得2:2
+    quote: '收割麥子不可割盡田的四角（利十九9），不可拾回已掉在地上的（利二十三22），也不可回去取回已掉在田裡忘記拿走的禾捆（申二十四19）。這些都得留下來給貧苦人拾取。'
+
+  - id: kc-ruth-grace
+    source: KC
+    work: KingComments
+    chapter: 得2
+    verse: 得2:2
+    quote: 'Ruth will not have known much about God’s gracious provisions in a case like hers (Lev 23:22; 19:9; Deu 24:19).'
+    quoteZh: '路得大概不太知道，神為這種處境的人定下了恩典的條例（利23:22；19:9；申24:19）。'
+
+  - id: gt-chuanzhu-beyond-law
+    source: GT
+    work: 《串珠聖經注釋》
+    chapter: 得2
+    verse: 得2:15-16
+    quote: '按摩西律法，拾麥穗者要等收割的人割了禾稼、打了捆，才可以在田間拾取剩下或遺留的麥穗，不能從禾捆中撿取。波阿斯囑咐僕人待路得之法實在遠超過律法的要求。'
+
+  - id: ct-ruth-season
+    source: CT
+    work: 黃迦勒《路得記註解》
+    chapter: 得2
+    verse: 得2:23
+    quote: '收割季節開始於收割大麥的時候(撒下廿一9)，整個收割季節持續七個星期，直至七七節(利廿三15~21；申十六9~12)，收割完小麥。'
+
+  - id: bh-ruth-law
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 得2
+    verse: 得2:23
+    quote: 'Israel’s law commanded landowners to leave portions of the harvest for the poor, the widow, and the foreigner (Leviticus 19:9–10; Deuteronomy 24:19–22).'
+    quoteZh: '以色列的律法吩咐地主，要把一部分收成留給窮人、寡婦和寄居的（利19:9-10；申24:19-22）。'
+
+trumpets:
+  - id: ct-trumpet-gather
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:24
+    quote: '吹角的用意是宣告喜樂的消息，號召四散的以色列人聚集，迎接彌賽亞的來臨(亦即基督再臨)。'
+
+  - id: kc-trumpet-rest
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:24
+    quote: 'The day starts with rest, to come to reflection. That is always the start of something new.'
+    quoteZh: '這一天從安息開始，讓人靜下來省思；新的開始總是這樣起頭。'
+
+  - id: gt-qidao-trumpet-day
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利23
+    verse: 利23:24
+    quote: '吹角節在宗教曆的七月一日舉行，是“聖安息日”（24節），要吹角通知百姓會聚（民十10），當眾宣讀摩西五經，是一個歡樂的日子。'
+
+  - id: gt-bg-ram-horn
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:24
+    quote: '七月（以色列曆法中至聖的一個月）的第一日要以吹公綿羊的角（shofar）為記'
+
+  - id: gt-chuanzhu-not-silver
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利23
+    verse: 利23:24
+    quote: '按猶太人的遺傳，此時所用的角並非民10:2-10提及的銀號，而是公羊的角，這角只在特別嚴肅的場合中才使用'
+
+  - id: bh-shofar
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利23
+    verse: 利23:24
+    quote: 'The trumpet blasts, or shofar, serve as a call to worship and a reminder of God''s presence and sovereignty.'
+    quoteZh: '吹角（shofar）是召人敬拜的信號，也提醒人神的同在與主權。'
+
+  - id: kc-num10
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:24
+    quote: 'The starting signal is given by the trumpet (Num 10:3,10; Isa 27:13).'
+    quoteZh: '開始的信號由號聲發出（民10:3、10；賽27:13）。'
+
+  - id: gt-dlc-one-bull
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民29
+    verse: 民29:2
+    quote: '在大贖罪日，也是一隻（8）。在月朔（二十八11），無酵節（二十八17），卻是兩隻。在吹角節所獻的，和大贖罪日（8），並住棚節第八日（36）所獻一樣。'
+
+  - id: gt-dlc-repeat-newmoon
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:25
+    quote: '這樣，吹角節的特別祭是重複月朔的祭，不過比月朔祭少獻一隻公牛。'
+
+  - id: kc-added-offerings
+    source: KC
+    work: KingComments
+    chapter: 民29
+    verse: 民29:1-11
+    quote: 'On the Feast of blowing of trumpets on the first day (verses 1-6) and on the day of atonement on the tenth day (verses 7-11) are offered as offerings added to the other offerings to be made on that day'
+    quoteZh: '初一的吹角節（1-6節）和初十的贖罪日（7-11節）所獻的，是加在當天其他該獻的祭以外的。'
+
+  - id: ct-neh-holy-day
+    source: CT
+    work: 黃迦勒《尼希米記註解》
+    chapter: 尼8
+    verse: 尼8:9
+    quote: '當日即七月初一日(參2節)，乃是神在律法書中所頒定的吹角節，又是安息日(參利二十三24)，故是聖日。'
+
+  - id: kc-neh-word-first
+    source: KC
+    work: KingComments
+    chapter: 尼8
+    verse: 尼8:2
+    quote: 'It is the first day of the seventh month. On that day the Feast of blowing the trumpet should be celebrated. Yet they do not come together for that.'
+    quoteZh: '這天是七月初一，本該守吹角節；他們卻不是為了守節聚集。'
+
+  - id: gt-leishi-weep
+    source: GT
+    work: 《雷氏研讀本》
+    chapter: 尼8
+    verse: 尼8:9
+    quote: '眾民因堅信自己有罪而“哭泣”，這反應與贖罪日（在該月的初十日）配合，但與吹角節和慶祝城牆重建完成的慶典不吻合。'
+
+  - id: gt-qidao-share
+    source: GT
+    work: 《啟導本聖經》
+    chapter: 尼8
+    verse: 尼8:10
+    quote: '尼希米訓勉百姓，樂享節日筵席的同時，應把食物分給窮苦人，一同歡樂。'
+
+  - id: bh-neh-holy
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 尼8
+    verse: 尼8:9
+    quote: 'The gathering occurred on the first day of the seventh month, a sacred day appointed for trumpet blasts and holy rest (Leviticus 23:23–25).'
+    quoteZh: '這次聚集在七月初一，是經上定為吹角、聖安息的日子（利23:23-25）。'
+
+atonement:
+  - id: ct-once-a-year
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利16
+    verse: 利16:2
+    quote: '唯獨一年一度的大贖罪日(參29~31節)，才容許大祭司進到施恩座前，為以色列全會眾贖罪(參32~34節)。'
+
+  - id: kc-not-without-blood
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:2
+    quote: 'On that one day he may enter the holy place. But not without blood, that he must offer for himself and for the people (Heb 9:7).'
+    quoteZh: '只有那一天他可以進入聖所，但必須帶著血，為自己和百姓獻上（來9:7）。'
+
+  - id: gt-bg-purpose
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利16
+    verse: 利16:6-10
+    quote: '一年一度行這儀式的用意，則是摒除百姓的罪。'
+
+  - id: bh-cloud
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:2
+    quote: 'The cloud represents God''s presence and glory, often associated with divine revelation and guidance (Exodus 13:21-22).'
+    quoteZh: '雲代表神的同在與榮耀，常和神的啟示與引導連在一起（出13:21-22）。'
+
+  - id: gt-bg-linen
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利16
+    verse: 利16:4
+    quote: '他在此並沒有穿上全套禮服，只是穿著簡單的細麻布衣裳，以表謙卑。'
+
+  - id: bh-linen-simple
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:4
+    quote: 'The tunic''s simplicity contrasts with the usual ornate garments of the high priest, highlighting humility and the solemnity of the occasion.'
+    quoteZh: '內袍的簡樸，和大祭司平日華美的衣服成了對比，顯出謙卑和這日子的莊嚴。'
+
+  - id: kc-linen
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:4
+    quote: 'When entering the holy place Aaron does not wear his official garments for glory and for beauty with which he represents the people before God. He wears simple white linen clothes.'
+    quoteZh: '亞倫進聖所時，不穿他在神面前代表百姓的那套榮耀華美的禮服；他穿的是簡單的白色細麻衣服。'
+
+  - id: ct-azazel-two-views
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利16
+    verse: 利16:8
+    quote: '至於阿撒瀉勒是誰，有兩種推理：(1)既然前面的一隻歸給神，另一隻應當歸給那與神相對的專有名詞，就是魔鬼撒但，由魔鬼承擔罪責，猶太聖經學者同意此種說法；(2)阿撒瀉勒的原文字意是完全除去，指道成肉身的耶穌基督，祂被釘在十字架上，承擔我們的罪刑，完全除去我們的罪。'
+
+  - id: gt-bg-azazel-name
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利16
+    verse: 利16:8
+    quote: '第8節說一隻羊「歸與耶和華」，另一隻「歸與阿撒瀉勒」，所以最一致的作法，是將「阿撒瀉勒」解釋成專有名詞，大概是個鬼魔的名字。這是早期猶太釋經學者的理解，偽經以諾書（主前二世紀）就是例證。這羊不是「獻」給阿撒瀉勒（與十七7相合），而是「放」給阿撒瀉勒（26節）。'
+
+  - id: gt-chuanzhu-azazel-remove
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利16
+    verse: 利16:8
+    quote: '「阿撒瀉勒」：此字的字根是「移去」，與贖罪祭所代表的挪移罪咎有密切關係。'
+
+  - id: gt-jingdu-azazel-three
+    source: GT
+    work: 《聖經精讀本──利未記註解》
+    chapter: 利16
+    verse: 利16:8
+    paraphrase: '《聖經精讀本》列出三種看法：一是「奉差遣的山羊」；二是被逐的邪靈的名字，把山羊放到曠野，象徵把罪惡歸還給罪惡的禍首；三是山羊被逐以後所居住的場所。並說各說一致的地方，是這隻山羊背負以色列的罪遠離他們。'
+
+  - id: bh-azazel
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:10
+    quote: 'The term "scapegoat" comes from the Hebrew word "Azazel," which has been interpreted in various ways, including as a reference to a demon or a rugged place.'
+    quoteZh: '「scapegoat」（替罪羊）一詞來自希伯來文「Azazel」，解釋有好幾種，包括指一個鬼魔，或指一處崎嶇之地。'
+
+  - id: gt-qidao-smoke
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利16
+    verse: 利16:13
+    quote: '香的煙雲遮掩法櫃，好讓大祭司進到至聖所的施恩座前（2節），見不到神的面，以免死亡。'
+
+  - id: gt-chuanzhu-smoke
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利16
+    verse: 利16:13
+    quote: '用意是避免大祭司注視神聖潔的顯現，也有避免神忿怒臨到之意（參民16:46-49）。'
+
+  - id: bh-incense-shield
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:13
+    quote: 'The cloud of incense serves as a protective barrier, shielding the high priest from the direct presence of God, which dwells above the mercy seat.'
+    quoteZh: '香的煙雲成了一道保護的屏障，使大祭司不直接面對住在施恩座上方的神的同在。'
+
+  - id: kc-incense
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:12-13
+    quote: 'The cloud of incense fills the sanctuary and envelops him.'
+    quoteZh: '香的煙雲充滿聖所，把他包圍起來。'
+
+  - id: ct-sprinkle-once-seven
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利16
+    verse: 利16:14
+    quote: '『施恩座的前面』指施恩座前面的地上，要彈七次。'
+    paraphrase: '黃迦勒也說，彈在施恩座東面的那一下，是朝著施恩座只彈一次。'
+
+  - id: gt-leishi-altar
+    source: GT
+    work: 《利未記雷氏研讀本》
+    chapter: 利16
+    verse: 利16:16
+    quote: '至聖所和獻燔祭的“壇”也要潔淨，因為會幕是在有罪的百姓當中（比較16節）。'
+
+  - id: kc-blood-sanctuary
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:14
+    quote: 'Blood is applied to the sanctuary, to the objects which are therein, and to the tent of meeting and the altar.'
+    quoteZh: '血要用在聖所、聖所裡的器物，以及會幕和壇上。'
+
+  - id: bh-confess
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:21
+    quote: 'Confession here involves acknowledging specific sins, which underscores the comprehensive nature of atonement.'
+    quoteZh: '這裡的承認，是把具體的罪說出來，顯出贖罪涵蓋得多完全。'
+
+  - id: kc-identify
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:21
+    quote: 'Aaron identifies himself with the live goat – laying on hands is identification.'
+    quoteZh: '亞倫把自己和這隻活羊連在一起；按手就是認同。'
+
+  - id: gt-jingdu-hands
+    source: GT
+    work: 《聖經精讀本──利未記註解》
+    chapter: 利16
+    verse: 利16:21
+    quote: '意為把大祭司和所有以色列百姓的罪轉移給山羊(出29:10)。'
+
+  - id: ct-wilderness-alone
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利16
+    verse: 利16:22
+    quote: '『曠野』即『無人之地』；本節意指讓那隻活羊獨自擔當以色列人的一切罪愆。'
+
+  - id: gt-chuanzhu-no-return
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利16
+    verse: 利16:22
+    quote: '「帶到無人之地」：叫羊永不能自己轉回，也不會被人尋見帶回來。'
+
+  - id: bh-solitary
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:22
+    quote: 'The solitary place, or wilderness, represents a realm outside the camp, symbolizing separation from the community and from God’s presence.'
+    quoteZh: '無人之地，也就是曠野，代表營外的範圍，象徵與群體、與神的同在隔絕。'
+
+  - id: kc-solitary-land
+    source: KC
+    work: KingComments
+    chapter: 利16
+    verse: 利16:22
+    quote: 'Where sin is, there is no dwelling place for God, neither for people who are reconciled to God.'
+    quoteZh: '罪在哪裡，那裡就沒有神的居所，也沒有與神和好之人的居所。'
+
+  - id: ct-afflict
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利16
+    verse: 利16:29
+    quote: '『七月初十日』指大贖罪日；『刻苦己心』指禁食、懺悔及禱告。'
+
+  - id: gt-leishi-fast
+    source: GT
+    work: 《利未記雷氏研讀本》
+    chapter: 利16
+    verse: 利16:29-31
+    quote: '“刻苦己心”包括禁食。贖罪日是惟一要求禁食的日子，但後期又加上其它的日子。'
+
+  - id: bh-humble
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利16
+    verse: 利16:29
+    quote: 'This phrase refers to the practice of afflicting one''s soul, traditionally understood as fasting and engaging in self-denial.'
+    quoteZh: '這句話是指刻苦己心的做法，傳統上理解為禁食和克己。'
+
+  - id: kc-humble-before-joy
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:27
+    quote: 'The joy of the Feast of Booths – the next and concluding feast – must necessarily be preceded by humiliation.'
+    quoteZh: '住棚節是接下來、也是最後的一個節期；它的喜樂之前，必須先有謙卑自省。'
+
+booths:
+  - id: gt-chuanzhu-autumn
+    source: GT
+    work: 《申命記串珠聖經註釋》
+    chapter: 申16
+    verse: 申16:13
+    quote: '這是一個秋天的節，又名收藏節（13），乃是在收割葡萄和橄欖之後，表示一年農事的結束。'
+
+  - id: gt-dlc-ingathering
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:39
+    quote: '本句是指著秋天所收成的出產說的，因此神也解這節期為收藏節（出二十三16，三十四22）。'
+
+  - id: kc-harvest-in
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:39
+    quote: 'The entire harvest of the land has been gathered in.'
+    quoteZh: '地裡的收成全都收藏了。'
+
+  - id: ct-branches-booth
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:40
+    quote: '枝子、枝條並柳枝是為搭棚，果子是為表示美地出產的豐盈；歡樂乃是收藏產物(參39節)後喜樂之情的自然流露。'
+
+  - id: gt-dlc-hold-or-build
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:40
+    paraphrase: '丁良才記下兩派的分歧：撒都該人說，這些樹枝和果子是用來支搭、妝飾棚子的；法利賽人說，第42節才講搭棚，這一節是要人把四種樹枝紮成一束拿在手中，又拿著香櫞，在耶和華面前歡樂。'
+
+  - id: gt-bg-species
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:40
+    quote: '經文指示以色列人慶祝這節，要用果子（柑橘屬）與棕樹、柳樹的枝葉裝飾所築的棚，來代表土地的豐盈和茂盛。'
+
+  - id: kc-booths-made
+    source: KC
+    work: KingComments
+    chapter: 利23
+    verse: 利23:40
+    quote: 'From the different fruits and branches of trees, booths have to be made.'
+    quoteZh: '要用各樣的果子和樹枝搭成棚。'
+
+  - id: gt-bg-booth-wilderness
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利23
+    verse: 利23:42-43
+    quote: '以色列人必須在住棚節的七天中築棚居住，來紀念曠野的生涯。這些臨時住處的另一個實際應用，是為節期結束分派收穫之前看守莊稼的工人，提供棲息的所在。'
+
+  - id: gt-dlc-tent-not-booth
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:43
+    paraphrase: '丁良才說，聖經講以色列人在曠野的住處，除了這一節以外都用「帳幕」，沒有用過「棚」字；帳幕和棚都是暫時居住的地方，所以用住棚節的棚來記念曠野的帳幕也很合適。'
+
+  - id: kc-tents-not-houses
+    source: KC
+    work: KingComments
+    chapter: 尼8
+    verse: 尼8:14
+    quote: 'The LORD wants them to celebrate this feast to remind them of the time when He led them through the wilderness, where they lived in tents and not in houses.'
+    quoteZh: '耶和華要他們守這節，好記起祂帶領他們走過曠野的日子；那時他們住在帳棚裡，沒有房子。'
+
+  - id: ct-most-offerings
+    source: CT
+    work: 黃迦勒《民數記註解》
+    chapter: 民29
+    verse: 民29:13
+    quote: '住棚節中所獻的祭牲，是全年所有的節期中最多的，其中公牛犢從第一日的十三隻，逐日遞減一隻'
+
+  - id: gt-bg-decrease
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 民29
+    verse: 民29:13
+    quote: '所獻公牛的數目在節期中每日遞減。理由可能是反映時間的過去，或免得國家最貴重的牲口過度損耗。'
+
+  - id: gt-dlc-seventy
+    source: GT
+    work: 丁良才《民數記註釋》
+    chapter: 民29
+    verse: 民29:13
+    quote: '每天減去一隻，到七天有七隻，共有七十只。'
+
+  - id: kc-seven-bulls
+    source: KC
+    work: KingComments
+    chapter: 民29
+    verse: 民29:32
+    quote: 'But the diminishing goes no further than until seven bulls on the seventh day (verse 32).'
+    quoteZh: '不過遞減到第七日的七隻公牛就停了（32節）。'
+
+  - id: gt-chuanzhu-rejoice
+    source: GT
+    work: 《申命記串珠聖經註釋》
+    chapter: 申16
+    verse: 申16:14
+    quote: '「都要歡樂」：這是守住棚節的特色（12:18）。'
+
+  - id: ct-deut-produce
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申16
+    verse: 申16:15
+    quote: '『一切的土產』指五穀、酒、油、牲畜等；『非常地歡樂』指極度地、確實地歡喜快樂。'
+
+  - id: bh-foreigner-egypt
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 申16
+    verse: 申16:14
+    quote: 'It is a reminder of Israel''s own history as foreigners in Egypt and God''s command to love the foreigner (Leviticus 19:34).'
+    quoteZh: '這提醒以色列人自己在埃及作過寄居的，也提醒神吩咐他們要愛寄居的（利19:34）。'
+
+  - id: ct-eighth-day
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利23
+    verse: 利23:36
+    quote: '『嚴肅會』指住棚節後次日，七月二十二日，繼續慶祝一天，稱為嚴肅會。這日視同安息日，不可作工，百姓要到會幕前聚集。'
+
+  - id: gt-dlc-eighth-apart
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利23
+    verse: 利23:36
+    paraphrase: '丁良才說，第八日的嚴肅會雖然和住棚節相連，卻在七日的節期以外，例如第八天所獻的祭和前七天不同；但因為它和住棚節的七天相連，有時也稱為住棚節的末日。'
+
+  - id: kc-same-as-atonement
+    source: KC
+    work: KingComments
+    chapter: 民29
+    verse: 民29:36
+    quote: 'On the eighth day the same offerings are brought as on the day of atonement.'
+    quoteZh: '第八日所獻的祭，和贖罪日所獻的一樣。'
+
+  - id: bh-transition
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 民29
+    verse: 民29:35
+    quote: 'This day signifies a transition from the festival period to regular life, emphasizing renewal and dedication to God.'
+    quoteZh: '這一天標誌著從節期回到日常生活，強調更新和向神委身。'
+
+  - id: ct-neh-scale
+    source: CT
+    work: 黃迦勒《尼希米記註解》
+    chapter: 尼8
+    verse: 尼8:17
+    quote: '本句並不表示以色列人從未守過住棚節(參拉三4)，乃是說他們從前沒有像今日這樣大規模的守住棚節'
+
+  - id: gt-jingdu-never-so
+    source: GT
+    work: 《聖經精讀本》
+    chapter: 尼8
+    verse: 尼8:17
+    quote: '不是說沒有住棚節慶祝活動,而是指以色列從來沒有如此合而為一地守過住棚節(王下23:22;代下35:18)。'
+
+  - id: gt-jingdu-olive
+    source: GT
+    work: 《聖經精讀本》
+    chapter: 尼8
+    verse: 尼8:15
+    quote: '利23:40中,沒有把橄欖樹、芭樂、野橄欖樹當作帳棚的材料。'
+
+  - id: kc-only-in-land
+    source: KC
+    work: KingComments
+    chapter: 尼8
+    verse: 尼8:14
+    quote: 'Unlike the Passover, which can be celebrated in the wilderness, the Feast of Booths cannot be celebrated in the wilderness, but only in the land.'
+    quoteZh: '逾越節在曠野也能守；住棚節卻不能在曠野守，只能在那地守。'
+
+  - id: bh-neh-unity
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 尼8
+    verse: 尼8:17
+    quote: 'Israel had observed the feast at other times, but not with the same comprehensive, wholehearted unity displayed in Jerusalem under Ezra and Nehemiah.'
+    quoteZh: '以色列在別的時候也守過這節，卻不像以斯拉、尼希米時在耶路撒冷那樣全體一心。'

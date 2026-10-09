@@ -8,12 +8,15 @@ import { SITE } from '../data/site';
 import { story } from '../story/state';
 import { h } from './dom';
 import type { BakeUI } from './bake';
+import type { BarsUI } from './bars';
+import type { BlowUI } from './blow';
 import type { CountUI } from './count';
+import { beatDomId, type EchoUI } from './echo';
 import type { HyssopUI } from './hyssop';
 import { offeringList } from './offerings';
 import type { WaveUI } from './wave';
 import { notesPanelBody, wordsPanelBody } from './panels';
-import { richText, verseNodes } from './text';
+import { fullRef, richText, verseNodes } from './text';
 
 export interface BeatRef {
   chapter: StoryChapter;
@@ -62,6 +65,11 @@ export interface InteractionUIs {
   bake: BakeUI;
   wave: WaveUI;
   count: CountUI;
+  blow: BlowUI;
+  /** 長條圖（Beat.bars） */
+  bars: BarsUI;
+  /** 回聲拍的「呼應」與被呼應的拍的「後來」連結 */
+  echo: EchoUI;
 }
 
 type Kind = 'notes' | 'words';
@@ -95,9 +103,24 @@ export function buildBeats(main: HTMLElement, ui: InteractionUIs): BeatRef[] {
 }
 
 function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number, side: 'left' | 'right', ui: InteractionUIs): BeatRef {
+  // 無字的時光過場：沒有標題卡、說明框、章末、日數牌，只有一段捲動的高度（CSS 100–120vh）
+  if (chapter.kind === 'passage') {
+    const el = h('section', {
+      class: 'jf-beat jf-passage',
+      id: beatDomId(chapter, beat),
+      'data-chapter': chapter.id,
+      'data-beat': beat.id,
+      'data-cue': beat.cue,
+      'aria-hidden': 'true',
+    });
+    // 其他程式（捲動綁定、避讓計算）都預期每一拍有個 box：給一個不顯示的空殼
+    const box = h('div', { class: 'jf-box jf-box-none', hidden: true });
+    el.append(box);
+    return { chapter, beat, index, el, box, closePanel: () => undefined, hasPanelOpen: () => false };
+  }
   const el = h('section', {
     class: 'jf-beat',
-    id: `jf-beat-${chapter.id}-${beat.id}`,
+    id: beatDomId(chapter, beat),
     'data-chapter': chapter.id,
     'data-beat': beat.id,
     'data-cue': beat.cue,
@@ -121,11 +144,21 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   }
 
   const boxId = `jf-box-${chapter.id}-${beat.id}`;
-  const box = h('article', { class: 'jf-box', id: boxId, 'data-compact': beat.interaction ? 'true' : null, 'data-offers': beat.offerings?.length ?? null });
+  const later = !!beat.echoes?.length;
+  const box = h('article', {
+    class: 'jf-box',
+    id: boxId,
+    'data-compact': beat.interaction ? 'true' : null,
+    'data-offers': beat.offerings?.length ?? null,
+    'data-later': later ? 'true' : null,
+    'data-bars': beat.bars?.length ? 'true' : null,
+  });
   // 說明框的內容放進 .jf-box-body：桌機超過 max-height 時只有它捲動，框線與偏移墨塊（::before）不動
   const body = h('div', { class: 'jf-box-body' });
   const hint = h('span', { class: 'jf-box-hint', 'aria-hidden': 'true', hidden: true }, '往下看');
   box.append(body, hint);
+  // 回聲拍（後來的歷史）：左上一個小標籤
+  if (later) box.append(h('span', { class: 'jf-later-tag' }, '後來'));
   if (beat.reason) body.append(h('p', { class: 'jf-reason' }, '經文自己說的理由'));
   body.append(h('p', { class: 'jf-text' }, richText(beat.text)));
 
@@ -133,19 +166,41 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   if (block) {
     body.append(
       h('figure', { class: 'jf-verse' },
-        h('figcaption', { class: 'jf-verse-ref' }, block.ref),
+        // 回聲拍的經文出處寫全書名（約書亞記 5:10-12）；其餘照簡稱
+        h('figcaption', { class: 'jf-verse-ref' }, later ? fullRef(block) : block.ref),
         h('blockquote', { class: 'jf-verse-text' }, verseNodes(block))),
     );
   }
 
+  // 補充經文：主經文後面依序顯示，每段標出處（回聲拍用全書名）
+  for (const ref of beat.moreVerses ?? []) {
+    const more = SITE.verses[ref];
+    if (!more) continue;
+    body.append(
+      h('figure', { class: 'jf-verse jf-verse-more' },
+        h('figcaption', { class: 'jf-verse-ref' }, later ? fullRef(more) : more.ref),
+        h('blockquote', { class: 'jf-verse-text' }, verseNodes(more))),
+    );
+  }
+
+  const echoes = ui.echo.echoesSection(beat);
+  if (echoes) body.append(echoes);
+  const laters = ui.echo.laterLinks(beat);
+  if (laters) body.append(laters);
+
   const offers = offeringList(beat.offerings, beat.offeringsLabel);
   if (offers) body.append(offers);
+
+  // 長條圖：手機放在說明框裡（經文下方）；桌機放在說明框旁邊（fixed，另一側）
+  const bars = ui.bars.build(beat, side === 'left' ? 'right' : 'left');
+  if (bars) body.append(bars.inline);
 
   if (beat.prompt) {
     if (beat.interaction === 'hyssop') body.append(ui.hyssop.controls(beat.prompt));
     else if (beat.interaction === 'bake') body.append(ui.bake.controls(beat.prompt));
     else if (beat.interaction === 'wave') body.append(ui.wave.controls(beat.prompt));
     else if (beat.interaction === 'count') body.append(ui.count.controls(beat.prompt));
+    else if (beat.interaction === 'blow') body.append(ui.blow.controls(beat.prompt));
   }
 
   // ---- 就地展開 ----
@@ -188,7 +243,7 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   /** 框內還能往下捲時，框底掛一個「往下看」小標籤（掛在邊線上，不蓋住文字） */
   function updateHint() {
     const more = body.scrollHeight - body.clientHeight > 4 && body.scrollTop + body.clientHeight < body.scrollHeight - 4;
-    hint.hidden = mobileQ.matches || !more;
+    hint.hidden = !more;
   }
   body.addEventListener('scroll', updateHint, { passive: true });
 
@@ -236,7 +291,7 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     ro.observe(body);
     for (const c of Array.from(body.children)) ro.observe(c);
   }
-  el.append(h('div', { class: 'jf-pin' }, panel, box));
+  el.append(h('div', { class: 'jf-pin' }, panel, box, bars?.side));
   return {
     chapter,
     beat,

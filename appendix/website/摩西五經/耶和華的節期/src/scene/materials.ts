@@ -36,7 +36,11 @@ import {
   LIT_VERT,
   MOON_FRAG,
   MOON_VERT,
+  RING_FRAG,
+  RING_VERT,
   SKY_FRAG,
+  SUN_FRAG,
+  TJ_FRAG,
   WIPE_FRAG,
 } from './shaders';
 import { hexTo } from './util';
@@ -77,6 +81,10 @@ export const U = {
   /** 禾捆風浪：四個浪的年齡（秒，<0 表示沒有）、起點 z 與速度 */
   uGustT: { value: new Float32Array([-1, -1, -1, -1]) },
   uGustP: { value: new Vector2(8, 16) },
+  /** 吹角：聲波中心（世界 xz）、強度（story.blow.level）、時鐘（秒）：帳棚布面被推動 */
+  uBlowC: { value: new Vector2(0, 0) },
+  uBlowA: { value: 0 },
+  uBlowT: { value: 0 },
 };
 
 const COMMON: Record<string, IUniform> = {
@@ -166,6 +174,10 @@ export interface LitOpts {
   flap?: boolean;
   /** 割麥的收割線（uCutX） */
   cutx?: boolean;
+  /** 收割線沿 x 走（uReap）：線以左是殘茬（伯大麥田） */
+  reap?: boolean;
+  /** 葉片慢搖的幅度倍率（搭配 sway） */
+  swayK?: number;
 }
 
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -209,9 +221,22 @@ export function litMat(o: LitOpts): ShaderMaterial {
     defines.CROP = '';
     uniforms.uGrow = { value: 1 };
     uniforms.uCut = { value: 0 };
+    uniforms.uCutAll = { value: 0 };
   }
-  if (o.sway) defines.SWAY = '';
-  if (o.flap) defines.FLAP = '';
+  if (o.reap) {
+    defines.REAP = '';
+    uniforms.uReap = { value: -999 };
+  }
+  if (o.sway) {
+    defines.SWAY = '';
+    uniforms.uSwayK = { value: o.swayK ?? 1 };
+  }
+  if (o.flap) {
+    defines.FLAP = '';
+    uniforms.uBlowC = U.uBlowC;
+    uniforms.uBlowA = U.uBlowA;
+    uniforms.uBlowT = U.uBlowT;
+  }
   if (o.cutx) {
     defines.CUTX = '';
     uniforms.uCutX = { value: 99 };
@@ -336,10 +361,10 @@ export function flameMat(on = '#ffd070', edge = '#d2511a'): ShaderMaterial {
 }
 
 // ---------------------------------------------------------------- 火星、煙、塵土
-export function fxMat(kind: 'spark' | 'smoke' | 'dust', size: number): ShaderMaterial {
+export function fxMat(kind: 'spark' | 'smoke' | 'dust' | 'cloud', size: number): ShaderMaterial {
   return new ShaderMaterial({
-    uniforms: { ...COMMON, uSize: { value: size }, uDist: { value: 0 }, uOn: { value: 1 } },
-    defines: kind === 'spark' ? { SPARK: '' } : kind === 'smoke' ? { SMOKE: '' } : { DUST: '' },
+    uniforms: { ...COMMON, uSize: { value: size }, uDist: { value: 0 }, uOn: { value: 1 }, uP: { value: 0 } },
+    defines: kind === 'spark' ? { SPARK: '' } : kind === 'smoke' ? { SMOKE: '' } : kind === 'cloud' ? { CLOUD: '' } : { DUST: '' },
     vertexShader: FX_VERT,
     fragmentShader: FX_FRAG,
     transparent: true,
@@ -463,5 +488,40 @@ export function grainMat(): ShaderMaterial {
   });
 }
 
+// ---------------------------------------------------------------- 太陽
+export function sunMat(): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: { ...COMMON, uCol: { value: v3('#f7d27a') }, uLine: { value: v3('#9a5a1a') } },
+    vertexShader: MOON_VERT,
+    fragmentShader: SUN_FRAG,
+  });
+}
 
+// ---------------------------------------------------------------- 聲波環（吹角）
+export function ringMat(vertical: boolean): ShaderMaterial {
+  const r = new Float32Array(8).fill(-1);
+  const a = new Float32Array(8);
+  return new ShaderMaterial({
+    uniforms: { ...COMMON, uC: { value: new Vector3() }, uR: { value: r }, uA: { value: a }, uSpd: { value: 14 } },
+    defines: vertical ? { VERT: '' } : {},
+    vertexShader: RING_VERT,
+    fragmentShader: RING_FRAG,
+    transparent: true,
+    depthWrite: false,
+    side: DoubleSide,
+    polygonOffset: true,
+    polygonOffsetFactor: -3,
+    polygonOffsetUnits: -3,
+  });
+}
 
+// ---------------------------------------------------------------- 時間跳躍抹除（回聲拍進出）
+export function tjMat(): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: { ...COMMON, tScene: { value: null }, uTJ: { value: 0 }, uDirT: { value: 1 }, uPaperC: { value: new Vector3() }, uInkC: { value: new Vector3() } },
+    vertexShader: FS_VERT,
+    fragmentShader: TJ_FRAG,
+    depthTest: false,
+    depthWrite: false,
+  });
+}

@@ -1,13 +1,13 @@
 ﻿// 場景層入口：createScene。Three.js 低面數 3D＋版畫刻線著色器。
 // 渲染流程：主場景（天空→世界→半夜黑暗）→ meal 分格（scissor）→ 覆蓋層（抹除轉場＋紙紋）。
-import { Mesh, OrthographicCamera, PlaneGeometry, Scene, Vector3, WebGLRenderer } from 'three';
+import { Mesh, OrthographicCamera, PlaneGeometry, Scene, Vector3, WebGLRenderer, WebGLRenderTarget } from 'three';
 import type { Palette } from '../data/types';
 import { story } from '../story/state';
 import type { CreateScene, SceneHandle, SceneOptions } from './api';
 import { HyssopCtl } from './hyssop';
 import { Interior } from './interior';
-import { darknessMat, disposeShared, grainMat, PalVec, setLook, U, wipeMat } from './materials';
-import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, wipeAmt } from './tracks';
+import { darknessMat, disposeShared, grainMat, PalVec, setLook, tjMat, U, wipeMat } from './materials';
+import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, TJ_DIR, tjAmt, wipeAmt } from './tracks';
 import { clamp } from './util';
 import { WaveCtl } from './wave';
 import { World, type Frame } from './world';
@@ -17,7 +17,7 @@ const DEFAULT_PAL: Palette = { paper: '#efe5cf', ink: '#1a2342', accent: '#b9832
 const _v = new Vector3();
 
 export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null => {
-  const { canvas, palettes, onEvent } = opts;
+  const { canvas, palettes, laterPalette, onEvent } = opts;
   let renderer: WebGLRenderer;
   try {
     renderer = new WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance', stencil: false });
@@ -45,8 +45,13 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   renderer.setClearColor(0x15130f, 1);
 
   const pals = CHAPTER_IDS.map((id) => new PalVec(palettes[id] ?? palettes['passover'] ?? palettes['opening'] ?? DEFAULT_PAL));
+  // 回聲拍（後來的歷史）用的舊紙配色放在最後
+  const laterPV = new PalVec(laterPalette ?? { paper: '#e2d2ad', ink: '#38291a', accent: '#8a5a2b', glow: '#efd9a8' });
+  pals.push(laterPV);
 
   const world = new World(() => onEvent({ type: 'door-shut' }));
+  // 開發用：lab 頁檢查物件狀態
+  Object.defineProperty(canvas, '__jfWorld', { configurable: true, value: world });
   const interior = new Interior();
   const hyssop = new HyssopCtl(canvas, world.camera, onEvent);
   world.scene.add(hyssop.group);
@@ -73,6 +78,14 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   grain.frustumCulled = false;
   grain.renderOrder = 2;
   overlay.add(wipe, grain);
+
+  // 時間跳躍抹除（回聲拍進出）：先把世界畫到離screen的畫布，再用斜向舊紙抹除合成
+  const tMat = tjMat();
+  const tjScene = new Scene();
+  const tjQuad = new Mesh(new PlaneGeometry(2, 2), tMat);
+  tjQuad.frustumCulled = false;
+  tjScene.add(tjQuad);
+  let tjRT: WebGLRenderTarget | null = null;
 
   // ---------------------------------------------------------------- 尺寸
   let W = canvas.clientWidth || window.innerWidth;
@@ -105,8 +118,8 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   let disposed = false;
   let readySent = false;
   let dirty = true;
-  const sig = new Float64Array(16);
-  const lastSig = new Float64Array(16);
+  const sig = new Float64Array(20);
+  const lastSig = new Float64Array(20);
   let panelEl: HTMLElement | null = null;
   let panelTick = 0;
   const panelBox = { x: 0, y: 0, w: 0, h: 0, cx: 0, cy: 0, cw: 0, ch: 0 };
@@ -243,8 +256,11 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     sig[13] = story.wave.swings + (story.wave.done ? 10 : 0);
     sig[14] = story.month;
     sig[15] = story.motionOff ? 1 : 0;
+    sig[16] = story.blow.level;
+    sig[17] = story.blow.holding ? 1 : 0;
+    sig[18] = story.later ? 1 : 0;
     let same = true;
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 20; i++) {
       if (sig[i] !== lastSig[i]) {
         same = false;
         lastSig[i] = sig[i];
@@ -288,8 +304,28 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     renderer.setViewport(0, 0, W, H);
     U.uViewport.value.set(bufW, bufH);
     renderer.setClearColor(0x15130f, 1);
+    const tjv = tjAmt(fr.s);
+    const useTJ = tjv > 0.002;
+    if (useTJ) {
+      if (!tjRT) tjRT = new WebGLRenderTarget(bufW, bufH, { samples: 4 });
+      if (tjRT.width !== bufW || tjRT.height !== bufH) tjRT.setSize(bufW, bufH);
+      renderer.setRenderTarget(tjRT);
+    }
     renderer.clear(true, true, true);
     renderer.render(world.scene, world.camera);
+    if (useTJ) {
+      renderer.setRenderTarget(null);
+      renderer.setViewport(0, 0, W, H);
+      renderer.clear(true, true, true);
+      const tu = tMat.uniforms;
+      tu.tScene.value = tjRT!.texture;
+      tu.uTJ.value = tjv;
+      tu.uDirT.value = TJ_DIR.dir;
+      const dk = darkF;
+      (tu.uPaperC.value as Vector3).set(laterPV.paper.x * (1 - dk * 0.82), laterPV.paper.y * (1 - dk * 0.82), laterPV.paper.z * (1 - dk * 0.82));
+      (tu.uInkC.value as Vector3).copy(laterPV.ink).lerp(laterPV.glow, dk * 0.8);
+      renderer.render(tjScene, ortho);
+    }
 
     // meal 分格：同一個 renderer 以 scissor 畫在 DOM 矩形內
     if (hasPanel) {
@@ -366,6 +402,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
       hyssop.dispose();
       wave.dispose();
       interior.dispose();
+      tjRT?.dispose();
       world.dispose();
       disposeShared();
       renderer.dispose();

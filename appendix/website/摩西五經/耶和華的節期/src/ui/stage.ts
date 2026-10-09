@@ -93,7 +93,7 @@ export function createStage(
   };
 
   try {
-    scene = createScene({ canvas, story, palettes, onEvent: handle });
+    scene = createScene({ canvas, story, palettes, laterPalette: SITE.laterPalette, onEvent: handle });
   } catch (err) {
     console.warn('場景建立失敗，改用靜態插圖', err);
     scene = null;

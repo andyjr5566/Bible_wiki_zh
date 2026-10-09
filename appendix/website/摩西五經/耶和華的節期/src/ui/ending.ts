@@ -4,11 +4,12 @@
  *   開場章（opening）沒有自己的章末，它的經文與條目併進接下來第一個節期章的章末。
  * - 頁尾「資料來源與授權」。
  */
-import type { AudioSource, StoryChapter } from '../data/types';
+import type { AudioSource, OtNote, StoryChapter } from '../data/types';
 import { SITE } from '../data/site';
-import { entryUrl } from '../data/links';
+import { chapterUrl, entryUrl } from '../data/links';
 import { ext, h } from './dom';
 import { STEP_REPO } from './panels';
+import { fullRef } from './text';
 
 const uniq = <T>(xs: T[]): T[] => [...new Set(xs)];
 
@@ -30,6 +31,42 @@ function passageItem(ref: string): HTMLElement | null {
       block.lines.map((ln) => h('p', { class: 'jf-pass-line' }, h('span', { class: 'jf-vn jf-vn-inline', 'aria-label': `第${ln.v}節` }, String(ln.v)), ln.text))));
 }
 
+/** 章末「舊約其他書卷」的兩小節：標題照規格；「同樣的字」那一節另有一行固定說明 */
+const OT_SECTIONS: { kind: OtNote['kind']; title: string; note?: string }[] = [
+  { kind: 'kept', title: '後來的人怎麼守' },
+  { kind: 'word', title: '同樣的字，不同的場合', note: '這些經文用了同一個字，說的是別的聚會。' },
+];
+
+function otItem(o: OtNote): HTMLElement | null {
+  const block = SITE.verses[o.ref];
+  if (!block) return null;
+  return h('li', { class: 'jf-ot-item', 'data-kind': o.kind },
+    h('p', { class: 'jf-ot-ref' }, fullRef(block)),
+    h('p', { class: 'jf-ot-note' }, o.note),
+    h('details', { class: 'jf-pass jf-ot-pass' },
+      h('summary', { class: 'jf-pass-sum' }, h('span', { class: 'jf-pass-ref' }, '經文')),
+      h('div', { class: 'jf-pass-body' },
+        block.lines.map((ln) => h('p', { class: 'jf-pass-line' }, h('span', { class: 'jf-vn jf-vn-inline', 'aria-label': `第${ln.v}節` }, String(ln.v)), ln.text)),
+        // 知識庫有這一章的章頁才放連結
+        block.kb ? h('p', { class: 'jf-ot-kb' }, ext(chapterUrl(block.bookNum, block.book, block.chapter), '知識庫這一章（另開網頁）')) : null)));
+}
+
+function otBlock(ot: OtNote[] | undefined): HTMLElement | null {
+  if (!ot?.length) return null;
+  const subs = OT_SECTIONS.map((sec) => {
+    const items = ot.filter((o) => o.kind === sec.kind).map(otItem).filter(Boolean);
+    if (!items.length) return null;
+    return h('section', { class: 'jf-ot-sub', 'data-kind': sec.kind },
+      h('h4', { class: 'jf-ot-h' }, sec.title),
+      sec.note ? h('p', { class: 'jf-ot-fixed' }, sec.note) : null,
+      h('ul', { class: 'jf-ot-list' }, items));
+  }).filter(Boolean);
+  if (!subs.length) return null;
+  return h('div', { class: 'jf-end-block jf-ot' },
+    h('h3', { class: 'jf-end-h' }, '舊約其他書卷'),
+    subs);
+}
+
 export function buildEndings(): HTMLElement[] {
   const out: HTMLElement[] = [];
   let carry: StoryChapter[] = [];
@@ -38,6 +75,8 @@ export function buildEndings(): HTMLElement[] {
       carry.push(chapter);
       continue;
     }
+    // 無字的時光過場沒有章末
+    if (chapter.kind === 'passage') continue;
     const group = [...carry, chapter];
     carry = [];
     out.push(buildEnding(chapter, group));
@@ -89,6 +128,7 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[]): HTMLElement 
           h('h3', { class: 'jf-end-h' }, '新約'),
           h('ul', { class: 'jf-entries jf-entries-one' }, ntEls))
         : null,
+      otBlock(chapter.ot),
       n
         ? h('div', { class: 'jf-end-block jf-next' },
           h('h3', { class: 'jf-end-h' }, '下一個節期'),

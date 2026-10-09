@@ -2,6 +2,8 @@
 import { Vector3 } from 'three';
 
 export const clamp = (x: number, a = 0, b = 1): number => (x < a ? a : x > b ? b : x);
+/** 把進度 p 的 [a,b] 一段攤成 0..1：回聲拍與有抹除轉場的拍，頭尾各有一段被抹除蓋住，動作排在中間 */
+export const win = (p: number, a = 0.1, b = 0.76): number => clamp((p - a) / (b - a));
 export const lerp = (a: number, b: number, t: number): number => a + (b - a) * t;
 export const smooth = (a: number, b: number, x: number): number => {
   const t = clamp((x - a) / (b - a));

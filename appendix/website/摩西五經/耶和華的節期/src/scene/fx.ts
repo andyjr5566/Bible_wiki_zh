@@ -9,7 +9,7 @@ export interface FxSet {
 }
 
 /** origins：每個發射點 [x,y,z]；per：每個發射點的粒子數 */
-export function makeFx(kind: 'spark' | 'smoke' | 'dust', origins: [number, number, number][], per: number, size: number, seed = 1): FxSet {
+export function makeFx(kind: 'spark' | 'smoke' | 'dust' | 'cloud', origins: [number, number, number][], per: number, size: number, seed = 1): FxSet {
   const n = origins.length * per;
   const geo = new PlaneGeometry(1, 1);
   const org = new Float32Array(n * 4);

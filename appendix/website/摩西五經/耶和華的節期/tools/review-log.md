@@ -69,3 +69,17 @@
 - 指令：`tools/codex-review-4.md`，只複核上述兩處。
 - 結果：`VERDICT: PASS`，無 finding，見 `tools/codex-review-4.out.md`。
 - 審查前後 `git status util/` 無變動。
+
+## 第二階段第二批（秋季＋舊約回聲）
+
+- **第 1 輪**（`codex-review-5.md` → `.out.md`）：CHANGES_REQUIRED，14 條。
+  - 13 條是同一類：敘述講到的背景不在該拍列出的經文範圍裡（例如 `veil` 提到亞倫兩個兒子死了，在利16:1；`hezekiah` 的召集與改期在代下30:1-3）。
+  - 修法：連續的擴大 `verse`；不連續的在契約新增 `Beat.moreVerses`，說明框接著顯示；少數刪去未涵蓋的句子。
+  - 1 條：王下4:22-23 只是提到月朔，不是在守，從「後來的人怎麼守」移除。
+  - 85 則註釋的逐字引文、GT 子來源標記、9 個原文字的 STEP 描述、23 句條目簡介：審查者確認無誤。
+  - 審後 `git status util/`：無變動。
+- **第 2 輪**（`codex-review-6.md` → `.out.md`）：
+  - 第一次執行時 Codex 的 Windows 唯讀沙箱報 `setup refresh had errors`，沒有讀到任何檔，不算一輪；重跑後完成。
+  - CHANGES_REQUIRED，2 條：`hezekiah` 的召集在代下30:1；`bulls` 概括七日，但只列了第一、二、七日。
+  - 主筆最後修正：`hezekiah` 改列代下30:1-3；`bulls` 補列民29:20、23、26、29。依規則不叫第 3 輪。
+  - 審後 `git status util/`：無變動。

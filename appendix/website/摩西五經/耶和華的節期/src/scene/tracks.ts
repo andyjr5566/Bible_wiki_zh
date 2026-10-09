@@ -1,13 +1,22 @@
 // 時間軸：s = cue 序號 + beatProgress。鏡頭、月亮、光線都是 s 的純函數（捲回去就倒回去）。
 // 所有時間點一律用 c('cue 名', 進度) 寫，cue 順序改動時不用重算數字。
-import { clamp, sampleKeys, smooth, type Key } from './util';
+import { clamp, lerp, sampleKeys, smooth, type Key } from './util';
+import { BLX, BX, CX, CZ, GTX, GX, JRX, JX, NX, OX, RX, SX, WX } from './layout';
+import { DX2, MOBILE_K2, MOBILE_POSES2, POSES2, UP2, XEND2, XS2, type Pose, type PosePair } from './poses2';
 
+export { BLX, BX, CX, CZ, GTX, GX, JRX, JX, NX, OX, RX, SX, WX };
+
+// cue 順序＝story.yaml 的 chapters→beats 順序（cues.test.ts 會和 site.json 對）
 export const CUES = [
   'title', 'new-moon', 'month', 'day-10', 'day-14', 'dusk-street', 'hyssop', 'door-shut', 'meal', 'midnight', 'wailing', 'depart', 'vigil', 'children',
   'bake', 'seven-days', 'no-leaven', 'remember',
-  'barley-ripe', 'wave', 'lamb-offering', 'not-yet',
-  'sinai', 'unclean', 'wait', 'second-month',
-  'count', 'two-loaves', 'weeks-offerings', 'rejoice', 'corners',
+  'barley-ripe', 'wave', 'lamb-offering', 'not-yet', 'echo-gilgal',
+  'sinai', 'unclean', 'wait', 'second-month', 'echo-hezekiah',
+  'count', 'two-loaves', 'weeks-offerings', 'rejoice', 'corners', 'echo-ruth',
+  'summer',
+  'seventh-moon', 'blow', 'trumpet-offerings', 'echo-water-gate',
+  'veil', 'linen', 'lots', 'incense', 'sprinkle', 'confess', 'scapegoat', 'afflict',
+  'ingathering', 'branches', 'booth', 'bulls', 'booths-rejoice', 'eighth-day', 'echo-roofs',
 ] as const;
 export const CUE_IDX: Record<string, number> = {};
 CUES.forEach((c, i) => (CUE_IDX[c] = i));
@@ -20,20 +29,19 @@ export const HYSSOP_IDX = CUE_IDX['hyssop'];
 export const WAVE_IDX = CUE_IDX['wave'];
 
 // ---------------------------------------------------------------- 世界與地點轉換
-/** 各個地點搭在遠處，互不相干（x 方向相隔 300 公尺） */
-export const OX = 300; // 日後的屋子（children、no-leaven、remember）
-export const SX = 600; // 疏割
-export const BX = 900; // 大麥田
-export const NX = 1200; // 西乃營地
-export const WX = 1500; // 小麥田
+// 世界座標的配置在 layout.ts（各個地點搭在遠處，互不相干）
 
-export type WorldId = 'night' | 'home' | 'succoth' | 'barley' | 'sinai' | 'wheat';
+export type WorldId =
+  | 'night' | 'home' | 'succoth' | 'barley' | 'gilgal' | 'sinai' | 'temple' | 'wheat' | 'ruth' | 'gate' | 'booths' | 'roofs';
 
 /** 進入這些 cue 時用直向刻線抹除轉場；抹除全蓋的時刻在 cue 開始前 0.07 */
-export const WIPE_CUES = ['children', 'bake', 'no-leaven', 'barley-ripe', 'sinai', 'count'] as const;
+export const WIPE_CUES = ['children', 'bake', 'no-leaven', 'barley-ripe', 'seventh-moon', 'veil', 'incense', 'confess', 'ingathering'] as const;
+/** 回聲拍的「時間跳躍」抹除：進入回聲拍（正向）與離開回聲拍（反向）。離開 water-gate 回聲拍走一般的直向抹除（進 veil，規格指定）。 */
+export const TJ_IN = ['echo-gilgal', 'echo-hezekiah', 'echo-ruth', 'echo-water-gate', 'echo-roofs'] as const;
+export const TJ_OUT = ['sinai', 'count', 'summer'] as const;
 export const CUT: Record<string, number> = {};
 const CUT_BY_IDX: Record<number, number> = {};
-for (const n of WIPE_CUES) {
+for (const n of [...WIPE_CUES, ...TJ_IN, ...TJ_OUT]) {
   CUT[n] = CUE_IDX[n] - 0.07;
   CUT_BY_IDX[CUE_IDX[n]] = CUT[n];
 }
@@ -45,9 +53,40 @@ export function worldAt(s: number): WorldId {
   if (s < CUT['bake']) return 'home';
   if (s < CUT['no-leaven']) return 'succoth';
   if (s < CUT['barley-ripe']) return 'home';
-  if (s < CUT['sinai']) return 'barley';
-  if (s < CUT['count']) return 'sinai';
-  return 'wheat';
+  if (s < CUT['echo-gilgal']) return 'barley';
+  if (s < CUT['sinai']) return 'gilgal';
+  if (s < CUT['echo-hezekiah']) return 'sinai';
+  if (s < CUT['count']) return 'temple';
+  if (s < CUT['echo-ruth']) return 'wheat';
+  if (s < CUT['summer']) return 'ruth';
+  if (s < CUT['seventh-moon']) return 'wheat';
+  if (s < CUT['echo-water-gate']) return 'sinai';
+  if (s < CUT['veil']) return 'gate';
+  if (s < CUT['ingathering']) return 'sinai';
+  if (s < CUT['echo-roofs']) return 'booths';
+  return 'roofs';
+}
+
+/** 夏日過場（沿用七七節的麥田）：只在 summer 這一個 cue 裡 */
+export const inSummer = (s: number): boolean => s >= CUT['summer'] && s < CUT['seventh-moon'];
+/** 曠野的會幕營地是秋季的樣子（院子、帳幕）：吹角節與贖罪日 */
+export const isAutumnCamp = (s: number): boolean => (s >= CUT['seventh-moon'] && s < CUT['echo-water-gate']) || (s >= CUT['veil'] && s < CUT['ingathering']);
+/** 贖罪日 */
+export const inAtonement = (s: number): boolean => s >= CUT['veil'] && s < CUT['ingathering'];
+
+// ---- 回聲拍：進場的切換點（時間跳躍抹除全蓋的時刻）與離場的切換點
+/** 回聲拍的 [進, 出]：出＝下一個非回聲 cue 的切換點；最後一個回聲拍沒有出口（到頁尾） */
+export const ECHO_RANGES: Array<[string, number, number]> = [
+  ['echo-gilgal', CUT['echo-gilgal'], CUT['sinai']],
+  ['echo-hezekiah', CUT['echo-hezekiah'], CUT['count']],
+  ['echo-ruth', CUT['echo-ruth'], CUT['summer']],
+  ['echo-water-gate', CUT['echo-water-gate'], CUT['veil']],
+  ['echo-roofs', CUT['echo-roofs'], 1e9],
+];
+/** 回聲拍（後來的歷史）：場景改用舊紙配色 */
+export function laterAt(s: number): boolean {
+  for (const r of ECHO_RANGES) if (s >= r[1] && s < r[2]) return true;
+  return false;
 }
 
 /** 抹除轉場的量（0..1）：每個轉場在 cut 前約 0.15 開始、cut 後約 0.17 結束 */
@@ -61,11 +100,24 @@ export const wipeAmt = (s: number): number => {
   return w;
 };
 
+/**
+ * 時間跳躍抹除（回聲拍進出）：回傳 0..2（0＝沒有；1＝舊紙色全蓋；2＝抹完），並用 dir 回報方向。
+ * 進回聲拍 dir=+1（斜向由左下抹到右上），離開 dir=-1（反向抹回）。
+ */
+export const TJ_DIR = { dir: 1 };
+const TJ_ALL: Array<[number, number]> = [...TJ_IN.map((n): [number, number] => [CUT[n], 1]), ...TJ_OUT.map((n): [number, number] => [CUT[n], -1])];
+export function tjAmt(s: number): number {
+  for (let i = 0; i < TJ_ALL.length; i++) {
+    const cut = TJ_ALL[i][0];
+    if (s < cut - 0.2 || s > cut + 0.2) continue;
+    TJ_DIR.dir = TJ_ALL[i][1];
+    return smooth(cut - 0.17, cut - 0.02, s) + smooth(cut + 0.02, cut + 0.17, s);
+  }
+  return 0;
+}
+
 // ---------------------------------------------------------------- 鏡頭
 // 鏡頭欄位：[px, py, pz, tx, ty, tz, fov(垂直度), fitW(目標處至少要容納的水平寬度，公尺)]
-type Pose = [number, number, number, number, number, number, number, number];
-type PosePair = [Pose, Pose];
-
 const POSES: Record<string, PosePair> = {
   // 開場與逾越節
   title: [[0, 1.2, 36, 3, 3.3, -15, 56, 0], [0.3, 1.1, 32, 2, 3.2, -15, 56, 0]],
@@ -137,6 +189,10 @@ const MOBILE_K: Record<string, number> = {
   corners: 1.2,
 };
 
+Object.assign(POSES, POSES2);
+Object.assign(MOBILE_POSES, MOBILE_POSES2);
+Object.assign(MOBILE_K, MOBILE_K2);
+
 function scalePose(p: Pose, k: number): Pose {
   const o = p.slice() as Pose;
   for (let i = 0; i < 3; i++) o[i] = p[3 + i] + (p[i] - p[3 + i]) * k;
@@ -145,7 +201,9 @@ function scalePose(p: Pose, k: number): Pose {
 
 const isCut = (i: number): boolean => CUT_BY_IDX[i] !== undefined;
 /** 一個 cue 的「開始鏡頭」在 s 的哪裡：進入新地點的 cue 在抹除全蓋之後，其餘在 cue 開始後 0.3 */
-const startS = (i: number): number => (isCut(i) ? CUT_BY_IDX[i] + 0.03 : i + 0.3);
+/** 這些 cue 的開始鏡頭從 cue 一開始就到位（人物一開始就在畫面裡出發） */
+const EARLY_START = new Set(['scapegoat']);
+const startS = (i: number): number => (isCut(i) ? CUT_BY_IDX[i] + 0.03 : EARLY_START.has(CUES[i]) ? i + 0.02 : i + 0.3);
 /** 「結束鏡頭」：下一個 cue 要抹除轉場時，在全蓋之前就到位 */
 const endS = (i: number): number => (isCut(i + 1) ? CUT_BY_IDX[i + 1] - 0.03 : i + 1);
 
@@ -211,6 +269,8 @@ const XEND: Record<string, X3> = {
   'second-month': [-0.06, -8, 0.2],
   corners: [-0.06, 10, 0.4],
 };
+Object.assign(XS, XS2);
+Object.assign(XEND, XEND2);
 function buildExtra(): Key[] {
   const out: Key[] = [];
   CUES.forEach((name, i) => {
@@ -273,6 +333,7 @@ const DX = perCue(
     'weeks-offerings': [BOX_LEFT],
     rejoice: [BOX_RIGHT],
     corners: [BOX_LEFT],
+    ...DX2,
   },
   [0],
 );
@@ -313,6 +374,7 @@ const UP = perCue(
     'weeks-offerings': [0.28],
     rejoice: [0.26],
     corners: [0.26],
+    ...UP2,
   },
   [0.15],
 );
@@ -355,6 +417,18 @@ const MOON_S: Key[] = [
   // 西乃的夜空
   { s: CUT['sinai'] + 0.03, v: [1, 0.5, 0.25], e: 1 },
   { s: c('second-month', 1), v: [1, 0.5, 0.25], e: 1 },
+  { s: CUT['count'] - 0.03, v: [0, 0.5, 0.25], e: 0 },
+  // 吹角節：西邊低空的細月；住棚節：東邊升起的滿月與夜祭
+  { s: CUT['seventh-moon'] + 0.03, v: [1, 0.64, 0.3], e: 1 },
+  { s: c('blow', 1), v: [1, 0.64, 0.3], e: 1 },
+  { s: c('trumpet-offerings', 0.2), v: [0, 0.5, 0.3], e: 0 },
+  { s: CUT['ingathering'] + 0.03, v: [1, 0.3, 0.38], e: 1 },
+  { s: c('ingathering', 1), v: [1, 0.3, 0.28], e: 1 },
+  { s: c('branches', 0.3), v: [0, 0.5, 0.3], e: 0 },
+  { s: c('bulls', 0.0), v: [0, 0.5, 0.3], e: 0 },
+  { s: c('bulls', 0.3), v: [1, 0.5, 0.26], e: 1 },
+  { s: c('bulls', 1), v: [1, 0.5, 0.26], e: 1 },
+  { s: c('booths-rejoice', 0.2), v: [0, 0.5, 0.3], e: 0 },
 ];
 
 // 月亮：[方位角(從 -z 轉向 +x，弧度), 仰角(度), 視直徑(度)]
@@ -386,6 +460,20 @@ const MOON: Key[] = [
   { s: c('wait'), v: [-0.3, 34, 12.5], e: 1 },
   { s: c('second-month'), v: [-0.2, 40, 12.5], e: 1 },
   { s: c('second-month', 1), v: [-0.2, 42, 12.5], e: 0 },
+  // 吹角節：黃昏剛過，西邊低空一彎極細的新月，隨捲動往地平線沉
+  { s: CUT['seventh-moon'] + 0.03, v: [0.2, 11, 10.5], e: 1 },
+  { s: c('seventh-moon', 1), v: [0.16, 9, 10.5], e: 1 },
+  { s: c('blow', 1), v: [0.04, 7, 10.5], e: 1 },
+  { s: c('trumpet-offerings', 1), v: [0.2, 5, 10.5], e: 0 },
+  { s: CUT['veil'] + 0.03, v: [0.2, 40, 11], e: 0 },
+  // 住棚節：東邊滿月升起；七夜虧月
+  { s: CUT['ingathering'] + 0.03, v: [-0.78, 3, 13], e: 1 },
+  { s: c('ingathering', 1), v: [-0.7, 19, 13], e: 1 },
+  { s: c('branches', 1), v: [-0.5, 34, 12], e: 1 },
+  { s: c('bulls', 0), v: [-0.4, 40, 12], e: 1 },
+  { s: c('bulls', 1), v: [0.1, 48, 12], e: 1 },
+  { s: c('eighth-day', 0.5), v: [0.4, 40, 12], e: 1 },
+  { s: N_CUES, v: [0.4, 38, 12], e: 0 },
 ];
 
 // 光線：[lx, ly, lz, 環境光, 增益]
@@ -411,9 +499,37 @@ const LIGHT: Key[] = [
   { s: CUT['barley-ripe'] + 0.03, v: [0.55, 0.7, 0.45, 0.5, 1.02], e: 0 },
   { s: CUT['sinai'] - 0.03, v: [0.55, 0.7, 0.45, 0.5, 1.02], e: 0 },
   { s: CUT['sinai'] + 0.03, v: [0.35, 0.85, 0.45, 0.3, 0.9], e: 0 },
-  { s: CUT['count'] - 0.03, v: [0.35, 0.85, 0.45, 0.3, 0.9], e: 0 },
+  { s: CUT['echo-hezekiah'] - 0.03, v: [0.35, 0.85, 0.45, 0.3, 0.9], e: 0 },
+  { s: CUT['echo-hezekiah'] + 0.03, v: [0.5, 0.75, 0.55, 0.5, 1.02], e: 0 },
+  { s: CUT['count'] - 0.03, v: [0.5, 0.75, 0.55, 0.5, 1.02], e: 0 },
   { s: CUT['count'] + 0.03, v: [0.6, 0.7, 0.4, 0.5, 1.02], e: 0 },
-  { s: N_CUES, v: [0.6, 0.7, 0.4, 0.5, 1.02], e: 0 },
+  { s: CUT['seventh-moon'] - 0.03, v: [0.6, 0.7, 0.4, 0.5, 1.02], e: 0 },
+  // 吹角節：夜（營火與月光）
+  { s: CUT['seventh-moon'] + 0.03, v: [0.4, 0.75, 0.5, 0.34, 0.92], e: 1 },
+  { s: CUT['echo-water-gate'] - 0.03, v: [0.35, 0.8, 0.5, 0.32, 0.9], e: 0 },
+  { s: CUT['echo-water-gate'] + 0.03, v: [0.5, 0.75, 0.55, 0.5, 1.02], e: 0 },
+  { s: CUT['veil'] - 0.03, v: [0.5, 0.75, 0.55, 0.5, 1.02], e: 0 },
+  // 贖罪日：清晨 → 進聖所（暗）→ 白天
+  { s: CUT['veil'] + 0.03, v: [-0.45, 0.4, 0.8, 0.46, 0.96], e: 1 },
+  { s: c('veil', 0.4), v: [-0.45, 0.45, 0.8, 0.46, 0.96], e: 1 },
+  { s: c('veil', 0.7), v: [0.2, 0.6, 0.6, 0.24, 0.62], e: 1 },
+  { s: c('veil', 1), v: [0.2, 0.6, 0.6, 0.24, 0.62], e: 0 },
+  { s: c('linen', 0.15), v: [0.5, 0.75, 0.55, 0.5, 1.0], e: 1 },
+  { s: CUT['incense'] - 0.03, v: [0.5, 0.75, 0.55, 0.5, 1.0], e: 0 },
+  { s: CUT['incense'] + 0.03, v: [0.2, 0.6, 0.7, 0.14, 0.72], e: 0 },
+  { s: CUT['confess'] - 0.03, v: [0.2, 0.6, 0.7, 0.14, 0.72], e: 0 },
+  { s: CUT['confess'] + 0.03, v: [0.55, 0.7, 0.5, 0.5, 1.02], e: 0 },
+  { s: CUT['ingathering'] - 0.03, v: [0.6, 0.8, 0.4, 0.5, 1.04], e: 0 },
+  // 住棚節
+  { s: CUT['ingathering'] + 0.03, v: [-0.6, 0.35, 0.5, 0.42, 0.98], e: 1 },
+  { s: c('ingathering', 1), v: [-0.5, 0.4, 0.6, 0.44, 1.0], e: 1 },
+  { s: c('branches', 0.4), v: [0.5, 0.75, 0.55, 0.52, 1.02], e: 1 },
+  { s: c('booth', 1), v: [0.5, 0.75, 0.55, 0.52, 1.02], e: 1 },
+  { s: c('bulls', 0.3), v: [0.3, 0.8, 0.5, 0.3, 0.86], e: 1 },
+  { s: c('bulls', 1), v: [0.3, 0.8, 0.5, 0.3, 0.86], e: 1 },
+  { s: c('booths-rejoice', 0.35), v: [0.6, 0.55, 0.5, 0.5, 1.02], e: 1 },
+  { s: c('eighth-day', 0.1), v: [-0.5, 0.5, 0.7, 0.5, 1.0], e: 1 },
+  { s: N_CUES, v: [0.5, 0.75, 0.55, 0.5, 1.02], e: 0 },
 ];
 
 // 天空：[地平線暈染強度, 星星強度, 白天程度, 暈染偏琥珀（0＝血紅，1＝琥珀）]
@@ -440,8 +556,32 @@ const SKYK: Key[] = [
   { s: CUT['no-leaven'] + 0.03, v: DAYSKY, e: 0 },
   { s: CUT['sinai'] - 0.03, v: DAYSKY, e: 0 },
   { s: CUT['sinai'] + 0.03, v: [0.0, 1, 0, 0], e: 0 },
-  { s: CUT['count'] - 0.03, v: [0.0, 1, 0, 0], e: 1 },
+  { s: CUT['echo-hezekiah'] - 0.03, v: [0.0, 1, 0, 0], e: 0 },
+  { s: CUT['echo-hezekiah'] + 0.03, v: DAYSKY, e: 0 },
+  { s: CUT['count'] - 0.03, v: DAYSKY, e: 0 },
   { s: CUT['count'] + 0.03, v: DAYSKY, e: 0 },
+  { s: CUT['seventh-moon'] - 0.03, v: DAYSKY, e: 0 },
+  // 吹角節：日落後的曠野
+  { s: CUT['seventh-moon'] + 0.03, v: [0.62, 0.7, 0, 1], e: 1 },
+  { s: c('blow', 0.5), v: [0.36, 0.95, 0, 1], e: 1 },
+  { s: CUT['echo-water-gate'] - 0.03, v: [0.12, 1, 0, 0.6], e: 0 },
+  { s: CUT['echo-water-gate'] + 0.03, v: DAYSKY, e: 0 },
+  { s: CUT['veil'] - 0.03, v: DAYSKY, e: 0 },
+  // 贖罪日：天剛亮 → 白天
+  { s: CUT['veil'] + 0.03, v: [0.82, 0.25, 0.2, 1], e: 1 },
+  { s: c('veil', 0.8), v: [0.5, 0.05, 0.6, 1], e: 1 },
+  { s: c('linen', 0.2), v: [0.12, 0, 1, 0.5], e: 1 },
+  { s: CUT['ingathering'] - 0.03, v: DAYSKY, e: 0 },
+  // 住棚節：黃昏東邊月出 → 白天 → 夜祭 → 白天 → 第八日清晨
+  { s: CUT['ingathering'] + 0.03, v: [0.55, 0.45, 0.05, 0.9], e: 1 },
+  { s: c('ingathering', 0.9), v: [0.45, 0.6, 0.0, 0.9], e: 1 },
+  { s: c('branches', 0.5), v: DAYSKY, e: 0 },
+  { s: c('bulls', 0), v: DAYSKY, e: 0 },
+  { s: c('bulls', 0.25), v: [0.18, 1, 0, 0.5], e: 1 },
+  { s: c('bulls', 1), v: [0.18, 1, 0, 0.5], e: 1 },
+  { s: c('booths-rejoice', 0.3), v: DAYSKY, e: 0 },
+  { s: c('eighth-day', 0.05), v: [0.5, 0.1, 0.55, 1], e: 1 },
+  { s: c('eighth-day', 0.5), v: [0.0, 0, 1, 0.3], e: 1 },
   { s: N_CUES, v: DAYSKY, e: 0 },
 ];
 
@@ -452,19 +592,125 @@ export interface TrackOut {
   sky: number[];
   /** 手機用：月亮的畫面位置 [權重, x, y] */
   moonS: number[];
+  /** 太陽：[方位角, 仰角(度), 視直徑(度)]；仰角 < -6 表示看不到 */
+  sun: number[];
+  /** 夏日過場自己算的月相（0 表示照 story.day） */
+  moonDay: number;
 }
 
 export function createTrackOut(): TrackOut {
-  return { cam: new Array(8).fill(0), moon: new Array(3).fill(0), light: new Array(5).fill(0), sky: new Array(4).fill(0), moonS: new Array(3).fill(0) };
+  return { cam: new Array(8).fill(0), moon: new Array(3).fill(0), light: new Array(5).fill(0), sky: new Array(4).fill(0), moonS: new Array(3).fill(0), sun: [0, -40, 6], moonDay: 0 };
+}
+
+// ---------------------------------------------------------------- 日月交替（夏日過場、贖罪日末拍）
+const LIGHT_DAY = [0.5, 0.75, 0.55, 0.52, 1.02];
+const LIGHT_NIGHT = [0.3, 0.8, 0.5, 0.32, 0.88];
+/** 依太陽仰角（度）算天空與光線 */
+function skyFromSun(el: number, out: TrackOut): void {
+  const day = smooth(-5, 14, el);
+  const horizon = smooth(-13, -3, el) * (1 - smooth(3, 20, el));
+  out.sky[0] = horizon * 0.95;
+  out.sky[1] = 1 - smooth(-9, 2, el);
+  out.sky[2] = day;
+  out.sky[3] = 1;
+  for (let i = 0; i < 5; i++) out.light[i] = lerp(LIGHT_NIGHT[i], LIGHT_DAY[i], day);
+}
+/** 太陽、月亮的位置：phi 是「日數」（整數＝日出；.25 正午；.5 日落；.75 子夜）。月亮與太陽相反。 */
+function sunMoon(phi: number, out: TrackOut): void {
+  const f = phi - Math.floor(phi);
+  const sunEl = 58 * Math.sin(2 * Math.PI * f);
+  // 日出在畫面左（-x），日落在右（+x，和開場「亮面朝西＝畫面右側」一致）
+  const dayT = clamp(f * 2);
+  out.sun[0] = lerp(-0.95, 0.95, dayT);
+  out.sun[1] = sunEl;
+  out.sun[2] = 7;
+  const nightT = clamp((f - 0.5) * 2);
+  out.moon[0] = lerp(-0.9, 0.9, nightT);
+  out.moon[1] = f >= 0.5 ? 52 * Math.sin(Math.PI * nightT) : -20;
+  out.moon[2] = 11;
+  skyFromSun(sunEl, out);
+}
+export const SUMMER_DAYS = 6.25;
+/** 夏日過場：6 個日夜，結束在黃昏（日落）；最後西邊低空一彎極細新月 */
+function summerSky(s: number, out: TrackOut): void {
+  // 頭尾被抹除蓋住：6 個日夜排在 0.08–0.78，結束在黃昏的新月
+  const p = clamp((s - c('summer') - 0.08) / 0.7);
+  const phi = 0.25 + SUMMER_DAYS * p;
+  sunMoon(phi, out);
+  // 月相：由下弦虧到不見，最後換成新月
+  const end = smooth(0.9, 0.975, p);
+  out.moonDay = lerp(lerp(19, 29, p), 1.3, end);
+  if (end > 0) {
+    out.moon[0] = lerp(out.moon[0], 0.5, end);
+    out.moon[1] = lerp(out.moon[1], 9, end);
+    out.moon[2] = lerp(out.moon[2], 11, end);
+  }
+  // 結束時的黃昏：日落後的暈染
+  out.sky[0] = Math.max(out.sky[0], 0.5 * end);
+}
+/** 贖罪日末拍 afflict：從日落到日落（初九晚上到初十晚上）：日落 → 夜 → 日出 → 白天 → 日落 */
+function afflictSky(s: number, out: TrackOut): void {
+  sunMoon(afflictPhi(s), out);
+}
+export const afflictPhi = (s: number): number => 0.49 + clamp((s - c('afflict')) / 0.8);
+
+// ---------------------------------------------------------------- scapegoat：長距離走路
+/** 羊（與人）在路上走過的距離（公尺）：起步與到達用常速（各約 12 公尺），中段高速 */
+export const scapeDist = (p: number): number => 12 * smooth(0, 0.2, p) + 176 * smooth(0.18, 0.86, p) + 12 * smooth(0.84, 1, p);
+/** 路線（院子座標）：出院子門往 +z 走到 TURN_Z，再轉向 -x 走進曠野 */
+export const SCAPE_GATE_Z = 9.7;
+export const SCAPE_TURN_Z = 40;
+const _sc = [0, 0, 0, 0, 0, 0, 0, 0];
+/** scapegoat 的鏡頭：先貼身跟著出營的人與羊，再慢慢拉遠、升高，營地縮成地平線上的一條線 */
+function scapeCam(s: number, out: number[], mobile: boolean): void {
+  const p = clamp(s - c('scapegoat'));
+  const D = scapeDist(p);
+  const seg1 = SCAPE_TURN_Z - SCAPE_GATE_Z;
+  const gx = D < seg1 ? 0.9 : 0.9 - (D - seg1);
+  const gz = D < seg1 ? SCAPE_GATE_Z + D : SCAPE_TURN_Z;
+  const e = smooth(0.6, 1, p);
+  const ox = NX + CX;
+  const oz = CZ;
+  const far = mobile ? 1.35 : 1;
+  const camX = lerp(gx + 7, -96, e);
+  const camY = lerp(2.2 + 1.2 * smooth(0.1, 0.6, p), 30, e * e);
+  const camZ = lerp(gz + (14 + 6 * smooth(0.2, 0.6, p)) * far, 150 * far, e);
+  const tX = lerp(gx - 2.5, -100, e);
+  const tZ = lerp(gz, 25, e);
+  _sc[0] = ox + camX;
+  _sc[1] = camY;
+  _sc[2] = oz + camZ;
+  _sc[3] = ox + tX;
+  _sc[4] = lerp(1.0, 1.5, e);
+  _sc[5] = oz + tZ;
+  _sc[6] = lerp(50, 60, e);
+  _sc[7] = 0;
+  const w = smooth(c('scapegoat'), c('scapegoat') + 0.12, s);
+  for (let i = 0; i < 8; i++) out[i] = lerp(out[i], _sc[i], w);
 }
 
 export function sampleTracks(s: number, out: TrackOut, mobile = false): void {
   sampleKeys(mobile ? CAM_M : CAM, s, out.cam);
   applyExtra(s, out.cam);
+  // scapegoat 的結束鏡頭（poses2 的第二組）就是 scapeCam(p=1)，和後面 afflict 的開始鏡頭接得上
+  if (s >= c('scapegoat') && s < c('afflict')) scapeCam(s, out.cam, mobile);
   sampleKeys(MOON_S, s, out.moonS);
   sampleKeys(MOON, s, out.moon);
   sampleKeys(LIGHT, s, out.light);
   sampleKeys(SKYK, s, out.sky);
+  out.sun[0] = 0;
+  out.sun[1] = -40;
+  out.sun[2] = 7;
+  out.moonDay = 0;
+  if (inSummer(s)) summerSky(s, out);
+  else if (s >= c('afflict') - 0.001 && s < CUT['ingathering'] - 0.04) afflictSky(s, out);
+  else if (s >= CUT['veil'] && s < c('veil', 1)) {
+    // 天剛亮：太陽在畫面左側地平線上升起
+    const k = clamp((s - CUT['veil']) / 1.07);
+    out.sun[0] = -0.75;
+    out.sun[1] = lerp(1, 16, k);
+    out.sun[2] = 7;
+  }
 }
 
 // 各種由 s 推導的單一量 ------------------------------------------------
@@ -476,8 +722,21 @@ const CH_START: Array<[string, number]> = [
   ['firstfruits', c('barley-ripe')],
   ['second-passover', c('sinai')],
   ['weeks', c('count')],
+  ['summer', c('summer')],
+  ['trumpets', c('seventh-moon')],
+  ['atonement', c('veil')],
+  ['booths', c('ingathering')],
 ];
+/** 回聲拍的舊紙配色放在配色陣列的最後（index.ts 把 laterPalette 接在 CHAPTER_IDS 之後） */
+export const LATER_IDX = CH_START.length;
 export const CHAPTER_IDS = CH_START.map((x) => x[0]);
+/** cue → 所在章 id（回聲拍屬於被呼應的那一章）；lab 與備用用 */
+export const CUE_CHAPTER: Record<string, string> = {};
+CUES.forEach((name, i) => {
+  let id = CH_START[0][0];
+  for (const [cid, st] of CH_START) if (st <= i) id = cid;
+  CUE_CHAPTER[name] = id;
+});
 const _pal = { a: 0, b: 1, k: 0 };
 export function paletteAt(s: number): { a: number; b: number; k: number } {
   // 開場→逾越節：平順插值（黃昏漸暗）；其餘章界都有抹除轉場，在全蓋的瞬間換
@@ -495,6 +754,11 @@ export function paletteAt(s: number): { a: number; b: number; k: number } {
   _pal.a = i;
   _pal.b = i;
   _pal.k = 0;
+  // 回聲拍：舊紙色（進出都在時間跳躍抹除全蓋的瞬間換）
+  if (laterAt(s)) {
+    _pal.a = LATER_IDX;
+    _pal.b = LATER_IDX;
+  }
   return _pal;
 }
 /** 開場→逾越節的配色插值（保留給舊程式；現在用 paletteAt） */

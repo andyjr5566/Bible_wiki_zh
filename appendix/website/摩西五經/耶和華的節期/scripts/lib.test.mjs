@@ -1,6 +1,6 @@
 // lib.mjs 的純函式測試（不碰 vault）：經文參照、manifest 表格、STEP 表格、第一句。
 import { describe, expect, it } from 'vitest';
-import { firstSentence, parseChapterRef, parseManifest, parseRef, parseStepFile } from './lib.mjs';
+import { BOOK_BY_NAME, firstSentence, isMergedVerse, parseChapterRef, parseManifest, parseRef, parseStepFile } from './lib.mjs';
 
 describe('經文參照解析', () => {
   it('單節與節範圍', () => {
@@ -12,14 +12,42 @@ describe('經文參照解析', () => {
     expect(parseRef('創1:1')?.book).toBe('創世記');
   });
   it('格式不對、倒過來的範圍、不是五經都回 null', () => {
-    for (const bad of ['', '出12', '出12:', '出12:28-21', '出12:0', '詩1:2', '出十二22', '出12：22', '出12:1–5', undefined, null]) {
+    for (const bad of ['', '出12', '出12:', '出12:28-21', '出12:0', '太1:2', '出十二22', '出12：22', '出12:1–5', undefined, null]) {
       expect(parseRef(bad), String(bad)).toBeNull();
     }
   });
   it('章參照', () => {
     expect(parseChapterRef('出12')).toEqual({ abbr: '出', book: '出埃及記', chapter: 12 });
     expect(parseChapterRef('出12:1')).toBeNull();
-    expect(parseChapterRef('詩1')).toBeNull();
+    expect(parseChapterRef('太1')).toBeNull();
+  });
+  it('書卷對照：兩個字的簡稱與詩篇（STEP 複數、BH 單數）', () => {
+    expect(parseRef('書5:10-12')).toEqual({ abbr: '書', book: '約書亞記', chapter: 5, from: 10, to: 12 });
+    expect(parseRef('撒上20:24-26')?.book).toBe('撒母耳記上');
+    expect(parseRef('王上8:65-66')?.book).toBe('列王紀上');
+    expect(parseRef('王下4:22-23')?.book).toBe('列王紀下');
+    expect(parseRef('代下30:18-20')?.book).toBe('歷代志下');
+    expect(parseRef('詩81:3-4')?.book).toBe('詩篇');
+    expect(parseRef('亞14:16-19')?.book).toBe('撒迦利亞書');
+    expect(parseChapterRef('尼8')).toEqual({ abbr: '尼', book: '尼希米記', chapter: 8 });
+    expect(parseRef('撒下1:1')).toBeNull(); // 本站沒用到的書
+  });
+  it('書卷序號、資料夾、STEP 書名', () => {
+    const pairs = [
+      ['約書亞記', 6, '06 約書亞記', 'Joshua'], ['路得記', 8, '08 路得記', 'Ruth'], ['撒母耳記上', 9, '09 撒母耳記上', '1 Samuel'],
+      ['列王紀上', 11, '11 列王紀上', '1 Kings'], ['列王紀下', 12, '12 列王紀下', '2 Kings'], ['歷代志下', 14, '14 歷代志下', '2 Chronicles'],
+      ['以斯拉記', 15, '15 以斯拉記', 'Ezra'], ['尼希米記', 16, '16 尼希米記', 'Nehemiah'], ['詩篇', 19, '19 詩篇', 'Psalms'],
+      ['以賽亞書', 23, '23 以賽亞書', 'Isaiah'], ['約珥書', 29, '29 約珥書', 'Joel'], ['阿摩司書', 30, '30 阿摩司書', 'Amos'],
+      ['撒迦利亞書', 38, '38 撒迦利亞書', 'Zechariah'],
+    ];
+    for (const [name, num, dir, en] of pairs) expect(BOOK_BY_NAME[name], name).toMatchObject({ num, dir, en });
+    expect(BOOK_BY_NAME['詩篇'].bh).toBe('Psalm');
+  });
+  it('「併於上節。」整行才算併節', () => {
+    expect(isMergedVerse('併於上節。')).toBe(true);
+    expect(isMergedVerse('併於上節')).toBe(true);
+    expect(isMergedVerse('耶和華垂聽希西家的禱告，併於上節。')).toBe(false);
+    expect(isMergedVerse('')).toBe(false);
   });
 });
 

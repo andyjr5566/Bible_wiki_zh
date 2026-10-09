@@ -9,6 +9,7 @@
  */
 import { gsap } from 'gsap';
 import { SITE } from '../data/site';
+import { LINE } from '../story/scroll';
 import { story } from '../story/state';
 import type { Beat, StoryChapter } from '../data/types';
 import type { BeatRef } from './beats';
@@ -22,16 +23,27 @@ const STRIPES = 24;
 
 export interface Nav {
   update(): void;
-  /** 跳轉到某個元素的頂端（含刻線抹除轉場） */
-  jumpTo(el: HTMLElement): void;
+  /** 跳轉到某個元素的頂端（含刻線抹除轉場）；after 在畫面蓋住、捲動位置已經換好之後呼叫 */
+  jumpTo(el: HTMLElement, after?: () => void): void;
 }
 
 export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
-  // 每個月份第一個有內容的拍
-  const target = new Map<number, HTMLElement>();
+  // 每個月份第一個有內容的拍；passage（無字過場）的每個月份落在該月被點亮的那一段中間
+  const target = new Map<number, () => number>();
+  const topOf = (el: HTMLElement) => () => Math.max(0, window.scrollY + el.getBoundingClientRect().top);
   for (const ref of beats) {
-    const m = ref.chapter.kind === 'opening' ? 1 : ref.chapter.month;
-    if (m && !target.has(m)) target.set(m, ref.el);
+    const { chapter } = ref;
+    if (chapter.kind === 'passage' && chapter.month !== undefined && chapter.monthTo !== undefined) {
+      const months = chapter.monthTo - chapter.month + 1;
+      for (let k = 0; k < months; k++) {
+        const m = chapter.month + k;
+        // 捲動進度 p＝0 的位置是這一拍的上緣落在畫面 LINE 處；落在第 k 段（p＝(k+0.5)/months）中間
+        if (!target.has(m)) target.set(m, () => Math.max(0, window.scrollY + ref.el.getBoundingClientRect().top - LINE * window.innerHeight + ((k + 0.5) / months) * ref.el.offsetHeight));
+      }
+      continue;
+    }
+    const m = chapter.kind === 'opening' ? 1 : chapter.month;
+    if (m && !target.has(m)) target.set(m, topOf(ref.el));
   }
 
   // ---- 刻線抹除遮罩 ----
@@ -71,9 +83,14 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
       .to(stripes, { scaleY: 0, duration: 0.16, ease: 'power2.inOut', stagger: { amount: 0.09, from: 'random' } });
   }
 
-  function jumpTo(el: HTMLElement) {
-    const top = Math.max(0, window.scrollY + el.getBoundingClientRect().top);
-    wipe(() => window.scrollTo({ top, behavior: 'instant' }));
+  function scrollInstant(top: number, after?: () => void) {
+    wipe(() => {
+      window.scrollTo({ top, behavior: 'instant' });
+      after?.();
+    });
+  }
+  function jumpTo(el: HTMLElement, after?: () => void) {
+    scrollInstant(Math.max(0, window.scrollY + el.getBoundingClientRect().top), after);
   }
 
   // ---- 月份刻度 ----
@@ -82,10 +99,10 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
   const rail = h('ol', { class: 'jf-rail' });
   MONTHS.forEach((name, i) => {
     const month = i + 1;
-    const el = target.get(month);
+    const at = target.get(month);
     const li = h('li', { class: 'jf-tick', style: `--n:${(i / (MONTHS.length - 1)).toFixed(5)}` },
-      el
-        ? h('button', { type: 'button', class: 'jf-m', onclick: () => jumpTo(el), 'aria-label': `跳到${name}` }, h('span', { class: 'jf-m-label' }, name))
+      at
+        ? h('button', { type: 'button', class: 'jf-m', onclick: () => scrollInstant(at()), 'aria-label': `跳到${name}` }, h('span', { class: 'jf-m-label' }, name))
         : h('button', { type: 'button', class: 'jf-m is-off', disabled: true }, h('span', { class: 'jf-m-label' }, name)));
     ticks.push({ month, li });
     rail.append(li);
@@ -101,6 +118,8 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
   const beatByKey = new Map(beats.map((r) => [`${r.chapter.id}/${r.beat.id}`, r.beat]));
   const span = MONTHS.length - 1;
   const posOf = (month: number, day: number) => Math.round((((month - 1) + (day - 1) / 30) / span) * 10000) / 10000;
+  /** 無字過場的標記：隨章進度從 month 的刻度連續走到 monthTo 的刻度 */
+  const posPassage = (c: StoryChapter, p: number) => posOf(c.month! + (c.monthTo! - c.month!) * p, 1);
 
   // 沒有 month 的章：標記停在前一個有月份的章的章末位置
   const holdPos = new Map<string, number>();
@@ -145,6 +164,7 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
     let n: number;
     if (hollow) n = holdPos.get(c!.id) ?? 0;
     else if (c?.kind === 'opening') n = posOf(1, story.day);
+    else if (c?.kind === 'passage' && c.month !== undefined && c.monthTo !== undefined) n = posPassage(c, story.chapterProgress);
     else n = posOf(c?.month ?? 1, (c?.day ?? 1) + story.chapterProgress);
     if (n !== lastP) {
       lastP = n;

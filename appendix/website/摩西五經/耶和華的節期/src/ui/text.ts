@@ -29,6 +29,13 @@ export function verseNodes(block: VerseBlock, numbered = block.lines.length > 1)
   return out;
 }
 
+/** 全書名的出處：「約書亞記 5:10-12」「詩篇 81:3-4」（單節不加範圍） */
+export const fullRef = (b: VerseBlock): string =>
+  `${b.book} ${b.chapter}:${b.from === b.to ? b.from : `${b.from}-${b.to}`}`;
+
+/** 「約書亞記 5 章」 */
+export const chapterLabel = (b: VerseBlock): string => `${b.book} ${b.chapter} 章`;
+
 /** 日數牌上的日子：1 → 初一 … 14 → 十四 … 21 → 二十一 … 30 → 三十 */
 const DAY_NAMES = [
   '初一', '初二', '初三', '初四', '初五', '初六', '初七', '初八', '初九', '初十',

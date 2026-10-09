@@ -17,20 +17,23 @@
 //      public/audio/ 底下每個檔案都有一筆
 //   g. offerings：每個出處都從 raw_scripture 解析出祭牲（動物、數目、獻祭種類），寫進 SITE.offerings；
 //      經文裡每一個「隻」都要被吃掉，吃不掉就列出是哪一句。數字不手抄。
+//   h. 第二階段第二批：echoes 指到存在的拍（不能指自己）；bars 的每條 ref 都有祭牲、至少一筆「公牛」；
+//      passage 章的 month／monthTo、無字的拍；ot 的 kind／ref／note；later_palette。
+//   i. 經文裡整行「併於上節。」的節不收進 VerseBlock.lines（節號不變，例如代下30:19）。
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import {
   BOOK_BY_NAME, IN_VAULT, SITE_DIR, SOURCE_ORDER, SOURCE_SITE,
-  chapterSources, chapterVerses, entries, entryGist, listAudioFiles, parseChapterRef, parseRef,
+  chapterSources, chapterVerses, entries, entryGist, hasKbChapter, isMergedVerse, listAudioFiles, parseChapterRef, parseRef,
   read, readRaw, readStepFile, resolveEntry,
 } from './lib.mjs';
 import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, parseOfferings, unknownKeys } from './checks.mjs';
 
 export const OUT = resolve(SITE_DIR, 'src/data/site.json');
 const SOURCE_IDS = ['CT', 'GT', 'KC', 'BH'];
-const INTERACTIONS = ['hyssop', 'bake', 'wave', 'count'];
+const INTERACTIONS = ['hyssop', 'bake', 'wave', 'count', 'blow'];
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
@@ -71,13 +74,19 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     const text = chapterVerses(r.book, r.chapter);
     if (!text) { err(where, `raw_scripture 找不到 ${r.book}第${r.chapter}章（參照 ${ref}）`); return null; }
     if (r.to > text.length) { err(where, `${ref} 超出本章節數（${r.book}${r.chapter} 章只有 ${text.length} 節）`); return null; }
+    // 和合本把這一節併進上一節，整行只有「併於上節。」：不收進 lines，其他節的節號不變
+    const lines = Array.from({ length: r.to - r.from + 1 }, (_, i) => ({ v: r.from + i, text: text[r.from + i - 1] }))
+      .filter((l) => !isMergedVerse(l.text));
+    if (!lines.length) { err(where, `${ref} 整段都是「併於上節。」，沒有自己的經文`); return null; }
     const block = {
       ref,
       book: r.book,
+      bookNum: BOOK_BY_NAME[r.book].num,
       chapter: r.chapter,
       from: r.from,
       to: r.to,
-      lines: Array.from({ length: r.to - r.from + 1 }, (_, i) => ({ v: r.from + i, text: text[r.from + i - 1] })),
+      lines,
+      kb: hasKbChapter(r.book, r.chapter),
     };
     if (collect) verses[ref] = block;
     return block;
@@ -106,7 +115,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
 
   // ---------- feasts.yaml ----------
   const feasts = loadYaml('feasts.yaml') ?? {};
-  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'entry_gists', 'chapters']);
+  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'later_palette', 'entry_gists', 'chapters']);
   if (!isStr(feasts.title)) err('feasts.yaml', 'title 要是非空字串');
   gistOverrides = feasts.entry_gists ?? {};
   if (typeof gistOverrides !== 'object' || Array.isArray(gistOverrides)) { err('feasts.yaml', 'entry_gists 要是「條目標題: 一句簡介」的對照表'); gistOverrides = {}; }
@@ -117,6 +126,9 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     else if (resolveEntry(t) !== t) err(`feasts.yaml entry_gists [${t}]`, `要用正式標題「${resolveEntry(t)}」`);
   }
   const motto = resolveVerse('feasts.yaml motto', feasts.motto, true);
+  const laterPal = feasts.later_palette ?? {};
+  checkKeys('feasts.yaml later_palette', laterPal, ['paper', 'ink', 'accent', 'glow']);
+  for (const k of ['paper', 'ink', 'accent', 'glow']) if (!HEX.test(laterPal[k] ?? '')) err(`feasts.yaml later_palette.${k}`, `要是 #rrggbb 色碼（目前是 ${JSON.stringify(laterPal[k])}）`);
   const chapterSrc = Array.isArray(feasts.chapters) ? feasts.chapters : [];
   if (!chapterSrc.length) err('feasts.yaml', 'chapters 要是非空陣列');
   const chapterIds = new Set(chapterSrc.map((c) => c?.id));
@@ -240,11 +252,20 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   };
   const usedNotes = new Set();
   const usedWords = new Set();
-  const BEAT_KEYS = ['id', 'cue', 'day', 'dayTo', 'badge', 'offerings', 'offeringsLabel', 'verse', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
+  const BEAT_KEYS = ['id', 'cue', 'day', 'dayTo', 'badge', 'offerings', 'offeringsLabel', 'bars', 'echoes', 'verse', 'moreVerses', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
+  const BAR_KEYS = ['label', 'ref'];
+  const OT_KEYS = ['kind', 'ref', 'note'];
+  const OT_KINDS = ['kept', 'word'];
+  const OT_NOTE_MAX = 60;
+  const KINDS = ['opening', 'feast', 'passage'];
+  /** 回聲拍的 echoes 要等所有拍都收齊才能查：[{where, id, self}] */
+  const echoRefs = [];
+  /** 拍 id → 出現在哪幾章（回聲只能指到唯一的拍） */
+  const beatHome = new Map();
   for (const k of Object.keys(storySrc)) if (!chapterIds.has(k)) err(`story.yaml ${k}`, '這個 key 不是 feasts.yaml 的章 id');
 
   const chapters = [];
-  const CHAPTER_KEYS = ['id', 'kind', 'title', 'date', 'month', 'day', 'scene', 'palette', 'passages', 'entries', 'nt', 'next'];
+  const CHAPTER_KEYS = ['id', 'kind', 'title', 'date', 'month', 'monthTo', 'day', 'scene', 'palette', 'passages', 'entries', 'nt', 'next', 'ot'];
   const seenChapters = new Set();
   chapterSrc.forEach((c, i) => {
     const where = `feasts.yaml chapters[${c?.id ?? i}]`;
@@ -253,11 +274,17 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     if (!isStr(c.id)) { err(where, 'id 要是非空字串'); return; }
     if (seenChapters.has(c.id)) { err(where, '章 id 重複'); return; }
     seenChapters.add(c.id);
-    if (c.kind !== 'opening' && c.kind !== 'feast') err(`${where}.kind`, `只能是 opening 或 feast（目前是 ${JSON.stringify(c.kind)}）`);
+    if (!KINDS.includes(c.kind)) err(`${where}.kind`, `只能是 ${KINDS.join('、')}（目前是 ${JSON.stringify(c.kind)}）`);
     if (!isStr(c.title)) err(`${where}.title`, '要是非空字串');
     if (!isStr(c.scene)) err(`${where}.scene`, '要是非空字串');
     if (c.date !== undefined && !isStr(c.date)) err(`${where}.date`, '要是非空字串');
     if (c.month !== undefined && !(Number.isInteger(c.month) && c.month >= 1 && c.month <= 12)) err(`${where}.month`, '要是 1–12 的整數');
+    if (c.kind === 'passage') {
+      if (c.month === undefined) err(`${where}.month`, 'passage 章一定要有 month');
+      if (c.monthTo === undefined) err(`${where}.monthTo`, 'passage 章一定要有 monthTo');
+      else if (!(Number.isInteger(c.monthTo) && c.monthTo >= 1 && c.monthTo <= 12)) err(`${where}.monthTo`, '要是 1–12 的整數');
+      else if (Number.isInteger(c.month) && !(c.month < c.monthTo)) err(`${where}.monthTo`, `要大於 month（month ${c.month}、monthTo ${c.monthTo}）`);
+    } else if (c.monthTo !== undefined) err(`${where}.monthTo`, '只有 passage 章可以有 monthTo');
     if (c.day !== undefined && !(Number.isInteger(c.day) && c.day >= 1 && c.day <= 30)) err(`${where}.day`, '要是 1–30 的整數');
     const pal = c.palette ?? {};
     checkKeys(`${where}.palette`, pal, ['paper', 'ink', 'accent', 'glow']);
@@ -290,11 +317,54 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       checkKeys(bw, b, BEAT_KEYS);
       if (!isStr(b.id)) err(bw, 'id 要是非空字串');
       else if (beatIds.has(b.id)) err(bw, '拍 id 在這一章重複');
-      else beatIds.add(b.id);
+      else {
+        beatIds.add(b.id);
+        beatHome.set(b.id, [...(beatHome.get(b.id) ?? []), c.id]);
+      }
       if (!isStr(b.cue)) err(`${bw}.cue`, '要是非空字串');
-      if (!isStr(b.text)) err(`${bw}.text`, '要是非空字串');
-      else for (const e of checkHighlights(b.text)) err(`${bw}.text`, e);
+      const isPassage = c.kind === 'passage';
+      // passage（無字的時光過場）的拍：text 可以是空字串，而且不可有任何文字內容
+      if (isPassage && b.text === '') {
+        /* 無字 */
+      } else if (!isStr(b.text)) err(`${bw}.text`, isPassage ? '要是字串（passage 的拍可以是空字串）' : '要是非空字串（只有 passage 的拍可以是空字串）');
+      else {
+        if (isPassage) err(`${bw}.text`, 'passage 的拍不寫文字（要是空字串）');
+        for (const e of checkHighlights(b.text)) err(`${bw}.text`, e);
+      }
+      if (isPassage) {
+        for (const k of ['notes', 'words', 'offerings', 'verse', 'moreVerses', 'bars', 'echoes']) {
+          if (b[k] !== undefined) err(`${bw}.${k}`, 'passage 的拍不可有這個欄位');
+        }
+      }
       if (b.verse !== undefined) resolveVerse(`${bw}.verse`, b.verse, true);
+      if (b.moreVerses !== undefined) {
+        if (!isStrArray(b.moreVerses) || !b.moreVerses.length) err(`${bw}.moreVerses`, '要是經文出處的字串陣列（例如 [得2:23]）');
+        else {
+          b.moreVerses.forEach((ref, k) => {
+            if (ref === b.verse) err(`${bw}.moreVerses[${k}]`, `和 verse（${b.verse}）重複`);
+            else if (b.moreVerses.indexOf(ref) !== k) err(`${bw}.moreVerses[${k}]`, `「${ref}」在 moreVerses 裡重複`);
+            resolveVerse(`${bw}.moreVerses[${k}]`, ref, true);
+          });
+        }
+      }
+      if (b.echoes !== undefined) {
+        if (!isStrArray(b.echoes) || !b.echoes.length) err(`${bw}.echoes`, '要是拍 id 的字串陣列（例如 [not-yet]）');
+        else b.echoes.forEach((id, k) => echoRefs.push({ where: `${bw}.echoes[${k}]`, id, self: b.id, chapter: c.id }));
+      }
+      if (b.bars !== undefined) {
+        if (!Array.isArray(b.bars) || !b.bars.length) err(`${bw}.bars`, '要是 [{label, ref}] 陣列');
+        else {
+          b.bars.forEach((bar, k) => {
+            const bwk = `${bw}.bars[${k}]`;
+            if (!bar || typeof bar !== 'object' || Array.isArray(bar)) { err(bwk, '要是 {label, ref} 物件'); return; }
+            checkKeys(bwk, bar, BAR_KEYS);
+            if (!isStr(bar.label)) err(`${bwk}.label`, '要是非空字串');
+            needOffering(`${bwk}.ref`, bar.ref);
+            const group = isStr(bar.ref) ? offerings[bar.ref] : null;
+            if (group && !group.items.some((it) => it.animal.startsWith('公牛'))) err(`${bwk}.ref`, `${bar.ref} 裡沒有名稱以「公牛」開頭的祭牲，畫不出長條`);
+          });
+        }
+      }
       if (b.interaction !== undefined && !INTERACTIONS.includes(b.interaction)) err(`${bw}.interaction`, `只能是 ${INTERACTIONS.join('/')}（目前是 ${JSON.stringify(b.interaction)}）`);
       if (b.interaction && !isStr(b.prompt)) warn(bw, '有 interaction 的拍應該有 prompt');
       if (b.prompt && !b.interaction) warn(bw, '有 prompt 但沒有 interaction');
@@ -328,6 +398,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
         id: b.id,
         cue: b.cue,
         ...(b.verse !== undefined ? { verse: b.verse } : {}),
+        ...(b.moreVerses !== undefined && Array.isArray(b.moreVerses) ? { moreVerses: b.moreVerses } : {}),
         text: b.text,
         ...(b.prompt !== undefined ? { prompt: b.prompt } : {}),
         ...(b.interaction !== undefined ? { interaction: b.interaction } : {}),
@@ -339,8 +410,29 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
         ...(b.badge !== undefined ? { badge: b.badge } : {}),
         ...(b.offerings !== undefined ? { offerings: b.offerings } : {}),
         ...(b.offeringsLabel !== undefined ? { offeringsLabel: b.offeringsLabel } : {}),
+        ...(b.bars !== undefined && Array.isArray(b.bars) ? { bars: b.bars.map((x) => ({ label: x?.label, ref: x?.ref })) } : {}),
+        ...(b.echoes !== undefined && Array.isArray(b.echoes) ? { echoes: b.echoes } : {}),
       };
     }).filter(Boolean);
+
+    // 章末「舊約其他書卷」
+    let ot;
+    if (c.ot !== undefined) {
+      if (!Array.isArray(c.ot) || !c.ot.length) err(`${where}.ot`, '要是 [{kind, ref, note}] 陣列（沒有就不要寫這個欄位）');
+      else {
+        ot = [];
+        c.ot.forEach((o, k) => {
+          const ow = `${where}.ot[${k}]`;
+          if (!o || typeof o !== 'object' || Array.isArray(o)) { err(ow, '要是 {kind, ref, note} 物件'); return; }
+          checkKeys(ow, o, OT_KEYS);
+          if (!OT_KINDS.includes(o.kind)) err(`${ow}.kind`, `只能是 ${OT_KINDS.join('／')}（目前是 ${JSON.stringify(o.kind)}）`);
+          if (!isStr(o.note)) err(`${ow}.note`, '要是非空字串');
+          else if ([...o.note].length > OT_NOTE_MAX) err(`${ow}.note`, `超過 ${OT_NOTE_MAX} 字（${[...o.note].length} 字）`);
+          const block = resolveVerse(`${ow}.ref`, o.ref, true);
+          if (block && isStr(o.note) && OT_KINDS.includes(o.kind)) ot.push({ kind: o.kind, ref: o.ref, note: o.note });
+        });
+      }
+    }
 
     chapters.push({
       id: c.id,
@@ -348,6 +440,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       title: c.title,
       ...(c.date !== undefined ? { date: c.date } : {}),
       ...(c.month !== undefined ? { month: c.month } : {}),
+      ...(c.monthTo !== undefined ? { monthTo: c.monthTo } : {}),
       ...(c.day !== undefined ? { day: c.day } : {}),
       scene: c.scene,
       palette: { paper: pal.paper, ink: pal.ink, accent: pal.accent, glow: pal.glow },
@@ -356,8 +449,17 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       entries: chEntries,
       nt: chNt,
       ...(c.next ? { next: { title: c.next.title, date: c.next.date } } : {}),
+      ...(ot ? { ot } : {}),
     });
   });
+
+  // 回聲：每個 id 都要是存在的拍（全書唯一）、不能指自己
+  for (const { where, id, self } of echoRefs) {
+    const homes = beatHome.get(id);
+    if (!homes) err(where, `沒有 id 是「${id}」的拍`);
+    else if (id === self) err(where, '回聲拍不能指向自己');
+    else if (homes.length > 1) err(where, `拍 id「${id}」在多章都有（${homes.join('、')}），指不到唯一的拍`);
+  }
 
   for (const id of Object.keys(commentary)) if (!usedNotes.has(id)) warn(`commentary.yaml [${id}]`, '有定義但沒有被任何一拍用到');
   for (const id of Object.keys(step)) if (!usedWords.has(id)) warn(`step.yaml [${id}]`, '有定義但沒有被任何一拍用到');
@@ -418,6 +520,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     step,
     entries: Object.fromEntries(Object.entries(entryMap).map(([k, { type, gist }]) => [k, { title: k, type, gist }])),
     offerings,
+    laterPalette: { paper: laterPal.paper, ink: laterPal.ink, accent: laterPal.accent, glow: laterPal.glow },
     audio,
     sources,
   };

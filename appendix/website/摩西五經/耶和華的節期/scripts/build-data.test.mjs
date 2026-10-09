@@ -39,6 +39,17 @@ describe.skipIf(!IN_VAULT)('獻祭數字（檢查 #5）：parser 算出的結果
     '民28:19-22': ['公牛犢2燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
     '民28:27-30': ['公牛犢2燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪'],
     '利23:18-19': ['羊羔7燔祭', '公牛犢1燔祭', '公綿羊2燔祭', '公山羊1贖罪祭', '公綿羊羔2平安祭'],
+    // 民29（吹角節、贖罪日、住棚節七日與第八日）；期望值是主筆讀經文得出的，parser 不一致時先回報、不改這裡
+    '民29:2-5': ['公牛犢1燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
+    '民29:8-11': ['公牛犢1燔祭', '公綿羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
+    '民29:13-16': ['公牛犢13燔祭', '公綿羊2燔祭', '公羊羔14燔祭', '公山羊1贖罪祭'],
+    '民29:17-19': ['公牛犢12', '公綿羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:20-22': ['公牛11', '公羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:23-25': ['公牛10', '公羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:26-28': ['公牛9', '公羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:29-31': ['公牛8', '公羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:32-34': ['公牛7', '公羊2', '公羊羔14', '公山羊1贖罪祭'],
+    '民29:36-38': ['公牛1燔祭', '公羊1燔祭', '公羊羔7燔祭', '公山羊1贖罪祭'],
   };
   for (const [ref, want] of Object.entries(expected)) {
     it(ref, () => {
@@ -46,9 +57,35 @@ describe.skipIf(!IN_VAULT)('獻祭數字（檢查 #5）：parser 算出的結果
       expect(flat(data.offerings[ref])).toEqual(want);
     });
   }
-  it('story.yaml 用到的獻祭出處都有解析結果，沒有多餘的', () => {
-    const used = new Set(data.chapters.flatMap((c) => c.beats.flatMap((b) => b.offerings ?? [])));
+  it('story.yaml 用到的獻祭出處（offerings、bars）都有解析結果，沒有多餘的', () => {
+    const used = new Set(data.chapters.flatMap((c) => c.beats.flatMap((b) => [...(b.offerings ?? []), ...(b.bars ?? []).map((x) => x.ref)])));
     expect([...used].sort()).toEqual(Object.keys(data.offerings).sort());
+  });
+  it('住棚節七日的公牛合計是 70（13+12+11+10+9+8+7）', () => {
+    const days = ['民29:13-16', '民29:17-19', '民29:20-22', '民29:23-25', '民29:26-28', '民29:29-31', '民29:32-34'];
+    const bulls = days.map((r) => data.offerings[r].items.filter((i) => i.animal.startsWith('公牛')).reduce((n, i) => n + i.count, 0));
+    expect(bulls).toEqual([13, 12, 11, 10, 9, 8, 7]);
+    expect(bulls.reduce((a, b) => a + b, 0)).toBe(70);
+  });
+  it('bulls 拍的長條圖：七條，ref 照第一到第七日', () => {
+    const bulls = data.chapters.flatMap((c) => c.beats).find((b) => b.id === 'bulls');
+    expect(bulls?.bars?.map((x) => x.label)).toEqual(['第一日', '第二日', '第三日', '第四日', '第五日', '第六日', '第七日']);
+  });
+  it('整行「併於上節。」的節不收進 lines，其他節號不變（代下30:19）', () => {
+    const v = data.verses['代下30:18-20'];
+    expect(v.lines.map((l) => l.v)).toEqual([18, 20]);
+    expect(v.lines.some((l) => l.text.includes('併於上節'))).toBe(false);
+    expect(v.from).toBe(18);
+    expect(v.to).toBe(20);
+  });
+  it('每段經文都有 bookNum；kb 是布林；約書亞記 5 章有知識庫章頁', () => {
+    for (const v of Object.values(data.verses)) {
+      expect(Number.isInteger(v.bookNum), v.ref).toBe(true);
+      expect(typeof v.kb, v.ref).toBe('boolean');
+    }
+    expect(data.verses['書5:10-12'].bookNum).toBe(6);
+    expect(data.verses['書5:10-12'].kb).toBe(true);
+    expect(data.verses['利23:2'].bookNum).toBe(3);
   });
 });
 
@@ -58,8 +95,23 @@ describe('獻祭 parser 反例：有一個「隻」沒被解析就要失敗', ()
     expect(r.errors.length).toBe(1);
     expect(r.errors[0]).toContain('三隻斑鳩為燔祭');
   });
-  it('數字不是一到十（十二隻）', () => {
-    expect(parseOfferings(['要獻十二隻公牛犢為燔祭。']).errors.length).toBe(1);
+  it('數字超出十到十九（公牛二十隻）：報錯，不誤解析', () => {
+    const r = parseOfferings(['第一日要獻公牛二十隻，公羊兩隻。']);
+    expect(r.errors.length).toBe(1);
+    expect(r.errors[0]).toContain('公牛二十隻');
+    expect(flat(r)).not.toContain('公牛20');
+    expect(flat(r)).not.toContain('公牛2');
+    expect(parseOfferings(['要獻二十隻公牛犢為燔祭。']).errors.length).toBe(1);
+    expect(parseOfferings(['要獻公牛三十一隻為燔祭。']).errors.length).toBe(1);
+  });
+  it('十、十一到十九：公牛犢十三隻是 13，十二隻、十九隻、十隻照數', () => {
+    expect(flat(parseOfferings(['要獻公牛犢十三隻為燔祭。']))).toEqual(['公牛犢13燔祭']);
+    expect(flat(parseOfferings(['要獻十二隻公牛犢為燔祭。']))).toEqual(['公牛犢12燔祭']);
+    expect(flat(parseOfferings(['要獻公牛十九隻，公羊十隻為燔祭。']))).toEqual(['公牛19燔祭', '公羊10燔祭']);
+    expect(flat(parseOfferings(['要獻公牛十一隻為燔祭。']))).toEqual(['公牛11燔祭']);
+  });
+  it('公羊兩隻是公羊、不是公羊羔；公羊羔十四隻是公羊羔；公牛犢不被公牛吃掉', () => {
+    expect(flat(parseOfferings(['要獻公羊兩隻，公羊羔十四隻，公牛犢一隻為燔祭。']))).toEqual(['公羊2燔祭', '公羊羔14燔祭', '公牛犢1燔祭']);
   });
   it('份量句裡的「隻」不算祭牲，也不報錯', () => {
     const r = parseOfferings(['要獻兩隻公牛犢為燔祭。', '為那七隻羊羔，每隻要獻伊法十分之一。']);
@@ -164,6 +216,81 @@ describe.skipIf(!IN_VAULT)('故意弄壞資料：錯誤要指出哪一筆、哪�
     expect(hit(errors, 'passover[blood].offeringsLabel', '一定要有 offerings')).toBe(true);
     expect(hit(errors, 'passover[hyssop].offeringsLabel', '超過 12 字')).toBe(true);
     expect(hit(errors, 'passover[door].offeringsLabel', '非空字串')).toBe(true);
+  });
+  const chapterOf = (docs, id) => docs.feasts.chapters.find((c) => c.id === id);
+  it('回聲 echoes：指到不存在的拍、指自己、空陣列', () => {
+    const errors = broken((d) => {
+      d.story.firstfruits.find((b) => b.id === 'gilgal').echoes = ['no-such-beat'];
+      d.story.weeks.find((b) => b.id === 'ruth').echoes = ['ruth'];
+      d.story.trumpets.find((b) => b.id === 'ezra-reads').echoes = [];
+    }, { audio: allAudio() });
+    expect(hit(errors, 'firstfruits[gilgal].echoes[0]', 'no-such-beat')).toBe(true);
+    expect(hit(errors, 'weeks[ruth].echoes[0]', '自己')).toBe(true);
+    expect(hit(errors, 'trumpets[ezra-reads].echoes')).toBe(true);
+  });
+  it('長條圖 bars：ref 沒有公牛、ref 解析不出、缺 label、多餘欄位', () => {
+    const errors = broken((d) => {
+      const bars = d.story.booths.find((b) => b.id === 'bulls').bars;
+      bars[0].ref = '出29:38';
+      bars[1].ref = '民29:99';
+      delete bars[2].label;
+      bars[3].extra = 1;
+    }, { audio: allAudio() });
+    expect(hit(errors, 'booths[bulls].bars[0].ref', '公牛')).toBe(true);
+    expect(hit(errors, 'booths[bulls].bars[1].ref', '民29:99')).toBe(true);
+    expect(hit(errors, 'booths[bulls].bars[2].label')).toBe(true);
+    expect(hit(errors, 'booths[bulls].bars[3]', 'extra')).toBe(true);
+  });
+  it('passage 章：缺 month／monthTo、monthTo 不大於 month、拍不可有文字與註釋', () => {
+    const errors = broken((d) => {
+      delete chapterOf(d, 'summer').monthTo;
+      d.story.summer[0].text = '有字';
+      d.story.summer[0].notes = ['ct-abib'];
+      chapterOf(d, 'trumpets').monthTo = 8;
+    }, { audio: allAudio() });
+    expect(hit(errors, 'chapters[summer].monthTo', '一定要有')).toBe(true);
+    expect(hit(errors, 'summer[summer].text', '空字串')).toBe(true);
+    expect(hit(errors, 'summer[summer].notes', 'passage')).toBe(true);
+    expect(hit(errors, 'chapters[trumpets].monthTo', '只有 passage')).toBe(true);
+    const e2 = broken((d) => { delete chapterOf(d, 'summer').month; }, { audio: allAudio() });
+    expect(hit(e2, 'chapters[summer].month', '一定要有')).toBe(true);
+    const e3 = broken((d) => { chapterOf(d, 'summer').monthTo = 3; }, { audio: allAudio() });
+    expect(hit(e3, 'chapters[summer].monthTo', '大於 month')).toBe(true);
+  });
+  it('moreVerses：和 verse 重複、重複的出處、對不到經文、空陣列、passage 不可有', () => {
+    const errors = broken((d) => {
+      const bs = d.story.weeks.find((b) => b.id === 'ruth');
+      bs.moreVerses = [bs.verse, '得2:99', '得2:23', '得2:23'];
+      d.story.trumpets.find((b) => b.id === 'ezra-reads').moreVerses = [];
+      d.story.summer[0].moreVerses = ['得2:23'];
+    }, { audio: allAudio() });
+    expect(hit(errors, 'weeks[ruth].moreVerses[0]', '重複')).toBe(true);
+    expect(hit(errors, 'weeks[ruth].moreVerses[1]', '得2:99', '超出')).toBe(true);
+    expect(hit(errors, 'weeks[ruth].moreVerses[3]', '重複')).toBe(true);
+    expect(hit(errors, 'trumpets[ezra-reads].moreVerses')).toBe(true);
+    expect(hit(errors, 'summer[summer].moreVerses', 'passage')).toBe(true);
+  });
+  it('非 passage 的拍 text 不可以是空字串', () => {
+    const errors = broken((d) => { d.story.trumpets[0].text = ''; }, { audio: allAudio() });
+    expect(hit(errors, 'trumpets[seventh-month].text', '非空字串')).toBe(true);
+  });
+  it('ot：kind 不對、ref 對不到經文、note 空或超過 60 字', () => {
+    const errors = broken((d) => {
+      const ot = chapterOf(d, 'trumpets').ot;
+      ot[0].kind = 'later';
+      ot[1].ref = '詩81:99';
+      ot[2].note = '';
+      ot[3].note = '字'.repeat(61);
+    }, { audio: allAudio() });
+    expect(hit(errors, 'chapters[trumpets].ot[0].kind', 'kept')).toBe(true);
+    expect(hit(errors, 'chapters[trumpets].ot[1].ref', '超出')).toBe(true);
+    expect(hit(errors, 'chapters[trumpets].ot[2].note', '非空字串')).toBe(true);
+    expect(hit(errors, 'chapters[trumpets].ot[3].note', '60 字')).toBe(true);
+  });
+  it('later_palette：缺色、色碼不對', () => {
+    const errors = broken((d) => { delete d.feasts.later_palette.glow; d.feasts.later_palette.paper = 'beige'; }, { audio: allAudio() });
+    expect(hit(errors, 'later_palette.glow')).toBe(true);
+    expect(hit(errors, 'later_palette.paper')).toBe(true);
   });
   it('音檔：沒有授權紀錄、檔案不存在、授權不是 CC0、pages 不含 page', () => {
     const errors = broken((d) => {

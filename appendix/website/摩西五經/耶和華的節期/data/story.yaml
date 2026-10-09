@@ -168,6 +168,14 @@ firstfruits:
     text: 在把供物帶來的那一天以前，無論是餅、烘的子粒，還是新穗子，都==不可吃==。這是世世代代永遠的定例。
     notes: [ct-not-yet, kc-begin-god, gt-bg-release]
 
+  # 回聲拍（後來的歷史）：echoes 指回被呼應的拍
+  - id: gilgal
+    cue: echo-gilgal
+    echoes: [not-yet]
+    verse: 書5:10-12
+    text: 以色列人在吉甲安營。正月十四日晚上，他們在耶利哥的平原守逾越節；次日，吃了那地的出產，就是無酵餅和==烘的穀==。再過一天，嗎哪就止住了；那一年，他們吃迦南地的出產。
+    notes: [ct-josh-produce, gt-chuanzhu-josh-grain, bh-josh-provision, kc-josh-manna]
+
 second-passover:
   - id: sinai
     cue: sinai
@@ -196,6 +204,14 @@ second-passover:
     verse: 民9:10-11
     text: 耶和華說：因死屍不潔淨的，或在遠方行路的，要在==二月十四日==黃昏守逾越節，照逾越節的一切律例，用無酵餅、苦菜和羊羔同吃。潔淨又不行路、卻推辭不守的，要從民中剪除；寄居的外人願意守，也同歸一例。
     notes: [ct-postpone, gt-dlc-tradition, gt-chuanzhu-no-excuse, bh-journey]
+
+  - id: hezekiah
+    cue: echo-hezekiah
+    echoes: [unclean, second-month]
+    verse: 代下30:1-3
+    moreVerses: [代下30:18-20]
+    text: 猶大王希西家召全以色列到耶路撒冷守逾越節。正月間自潔的祭司不夠，百姓也還沒有聚集，他們就改在==二月==守。以法蓮、瑪拿西等支派有許多人沒有自潔，也吃了羊羔。希西家為他們禱告，耶和華垂聽，就饒恕了百姓。
+    notes: [gt-qidao-month, kc-hezekiah-num9, ct-hezekiah-heart, gt-bg-north, bh-hezekiah-pray]
 
 weeks:
   - id: count
@@ -233,3 +249,183 @@ weeks:
     verse: 利23:22
     text: 收割的時候，不可割盡田角，也不可拾取遺落的，要==留給==窮人和寄居的。
     notes: [ct-corners, gt-dlc-corners, gt-chuanzhu-poor, bh-dignity]
+
+  - id: ruth
+    cue: echo-ruth
+    echoes: [corners]
+    verse: 得2:2-3
+    moreVerses: [得2:15-16, 得2:23]
+    text: 摩押女子路得到田間去，在收割的人身後拾取麥穗，恰巧到了波阿斯的田裡。波阿斯吩咐僕人，要從捆裡抽出些來，==留在地下==任他拾取。路得就這樣拾取麥穗，直到收完了大麥和小麥。
+    notes: [gt-qidao-glean-law, kc-ruth-grace, gt-chuanzhu-beyond-law, ct-ruth-season, bh-ruth-law]
+
+# 無字的時光過場：沒有說明框，只有場景與月份導覽
+summer:
+  - id: summer
+    cue: summer
+    text: ''
+
+trumpets:
+  - id: seventh-month
+    cue: seventh-moon
+    day: 1
+    verse: 利23:24-25
+    text: 七月初一，又是一個月朔。這一天要守為聖安息日，要==吹角==作紀念，當有聖會，什麼勞碌的工都不可做。
+    notes: [ct-trumpet-gather, kc-trumpet-rest, gt-qidao-trumpet-day]
+    words: [teruah]
+
+  - id: blow
+    cue: blow
+    interaction: blow
+    day: 1
+    verse: 民29:1
+    prompt: 按住「吹」，放開就停。
+    text: 民數記把這一天叫作「==吹角的日子==」。經文沒有寫吹的是哪一種角或號，只說要發出響亮的聲音；用的是什麼，註釋各有說法。
+    notes: [gt-bg-ram-horn, gt-chuanzhu-not-silver, bh-shofar, kc-num10]
+
+  - id: trumpet-offerings
+    cue: trumpet-offerings
+    day: 1
+    verse: 民29:6
+    offerings: [民29:2-5]
+    text: 這一天另有一套祭牲。經文特別交代，這些是在==月朔==的燔祭和每天常獻的燔祭以外再加上的。
+    notes: [gt-dlc-one-bull, gt-dlc-repeat-newmoon, kc-added-offerings]
+
+  - id: ezra-reads
+    cue: echo-water-gate
+    echoes: [seventh-month]
+    verse: 尼8:2-4
+    moreVerses: [尼8:9-10]
+    text: 七月初一，男女會眾聚集在水門前的寬闊處，聽文士以斯拉站在木臺上，從清早到晌午宣讀律法書。眾民聽了都哭。尼希米、以斯拉和利未人卻對他們說：今日是耶和華的聖日，==不要悲哀哭泣==；去吃喝，也分給沒有預備的人。
+    notes: [ct-neh-holy-day, kc-neh-word-first, gt-leishi-weep, gt-qidao-share, bh-neh-holy]
+
+atonement:
+  - id: veil
+    cue: veil
+    day: 10
+    verse: 利16:1-2
+    text: 亞倫的兩個兒子近到耶和華面前死了以後，神吩咐摩西告訴亞倫：不可隨時進聖所的==幔子==內，到約櫃上的施恩座前，免得他死亡，因為神要從雲中顯現在施恩座上。
+    notes: [ct-once-a-year, kc-not-without-blood, gt-bg-purpose, bh-cloud]
+    words: [kapporet]
+
+  - id: linen
+    cue: linen
+    day: 10
+    verse: 利16:4
+    text: 亞倫進聖所以前，要先用水洗身，再穿上==細麻布==的聖服：內袍、褲子、腰帶、冠冕。
+    notes: [gt-bg-linen, bh-linen-simple, kc-linen]
+    words: [bad]
+
+  - id: lots
+    cue: lots
+    day: 10
+    verse: 利16:5-8
+    text: 亞倫先為自己和本家獻一隻公牛犢作贖罪祭。又從會眾取兩隻公山羊，安置在會幕門口、耶和華面前，為這兩隻羊==拈鬮==：一鬮歸與耶和華，一鬮歸與阿撒瀉勒。
+    notes: [ct-azazel-two-views, gt-bg-azazel-name, gt-chuanzhu-azazel-remove, gt-jingdu-azazel-three, bh-azazel]
+    words: [azazel]
+
+  - id: incense
+    cue: incense
+    day: 10
+    verse: 利16:12-13
+    text: 他從壇上盛滿一香爐的火炭，又拿一捧搗細的香料，帶入幔子內，把香放在火上，使香的==煙雲==遮掩法櫃上的施恩座，免得他死亡。
+    notes: [gt-qidao-smoke, gt-chuanzhu-smoke, bh-incense-shield, kc-incense]
+
+  - id: sprinkle
+    cue: sprinkle
+    day: 10
+    verse: 利16:14-16
+    text: 他用指頭把公牛的血彈在施恩座的東面，又在施恩座前彈血==七次==。接著宰那為百姓作贖罪祭的公山羊，把血帶入幔子內，照樣彈。經文說，這是因以色列人諸般的污穢、過犯，為聖所贖罪。
+    notes: [ct-sprinkle-once-seven, gt-leishi-altar, kc-blood-sanctuary]
+
+  - id: confess
+    cue: confess
+    day: 10
+    verse: 利16:20-21
+    text: 為聖所、會幕和壇贖完了罪，亞倫把那隻活著的公山羊奉上，兩手==按在羊頭上==，承認以色列人一切的罪孽過犯，把這罪都歸在羊的頭上。
+    notes: [bh-confess, kc-identify, gt-jingdu-hands]
+
+  - id: wilderness
+    cue: scapegoat
+    day: 10
+    verse: 利16:21-22
+    text: 然後藉著所派之人的手，把羊送到曠野去。這羊要擔當他們一切的罪孽，帶到==無人之地==。
+    notes: [ct-wilderness-alone, gt-chuanzhu-no-return, bh-solitary, kc-solitary-land]
+    words: [gezerah]
+
+  - id: afflict
+    cue: afflict
+    day: 10
+    reason: true
+    verse: 利16:29-30
+    moreVerses: [利23:32]
+    offerings: [民29:8-11]
+    text: 每逢七月初十，本地人和寄居的外人都要==刻苦己心==，什麼工都不可做。經文交代原因：因在這日要為你們贖罪，使你們潔淨，在耶和華面前脫盡一切的罪愆。這一天從初九日晚上守到次日晚上。
+    notes: [ct-afflict, gt-leishi-fast, bh-humble, kc-humble-before-joy]
+    words: [anah]
+
+booths:
+  - id: ingathering
+    cue: ingathering
+    day: 15
+    verse: 申16:13
+    moreVerses: [利23:39]
+    text: 利未記說，收藏了地的出產，就從七月十五日起守這節。申命記說得更具體：禾場的穀、酒醡的酒都==收藏==以後，就要守住棚節七日。
+    notes: [gt-chuanzhu-autumn, gt-dlc-ingathering, kc-harvest-in]
+
+  - id: branches
+    cue: branches
+    day: 15
+    verse: 利23:40
+    text: 第一日要拿美好樹上的果子、棕樹上的枝子、茂密樹的枝條和河旁的柳枝，在耶和華面前==歡樂==七日。
+    notes: [ct-branches-booth, gt-dlc-hold-or-build, gt-bg-species, kc-booths-made]
+    words: [hadar]
+
+  - id: booth
+    cue: booth
+    reason: true
+    day: 15
+    verse: 利23:42-43
+    text: 凡以色列家的人都要住在==棚==裡七日。經文交代理由：好叫世世代代知道，耶和華領以色列人出埃及地的時候，曾使他們住在棚裡。
+    notes: [gt-bg-booth-wilderness, gt-dlc-tent-not-booth, kc-tents-not-houses]
+    words: [sukkah]
+
+  - id: bulls
+    cue: bulls
+    day: 15
+    dayTo: 21
+    verse: 民29:12-13
+    moreVerses: [民29:17, 民29:20, 民29:23, 民29:26, 民29:29, 民29:32]
+    bars:
+      - { label: 第一日, ref: '民29:13-16' }
+      - { label: 第二日, ref: '民29:17-19' }
+      - { label: 第三日, ref: '民29:20-22' }
+      - { label: 第四日, ref: '民29:23-25' }
+      - { label: 第五日, ref: '民29:26-28' }
+      - { label: 第六日, ref: '民29:29-31' }
+      - { label: 第七日, ref: '民29:32-34' }
+    text: 這七日每天都要獻燔祭。公綿羊和羊羔每天一樣多，只有==公牛==一天比一天少。
+    notes: [ct-most-offerings, gt-bg-decrease, gt-dlc-seventy, kc-seven-bulls]
+
+  - id: booths-rejoice
+    cue: booths-rejoice
+    reason: true
+    verse: 申16:14-15
+    text: 守節的時候，你和兒女、僕婢，城裡的利未人，寄居的與孤兒寡婦，都要歡樂。申命記交代原因：神要在你一切的土產上和手裡所辦的事上賜福給你，你就==非常地歡樂==。
+    notes: [gt-chuanzhu-rejoice, ct-deut-produce, bh-foreigner-egypt]
+
+  - id: eighth-day
+    cue: eighth-day
+    day: 22
+    badge: 第八日
+    verse: 利23:36
+    offerings: [民29:36-38]
+    text: 七日過後，第八日還要守聖會，將火祭獻給耶和華。經文說：這是==嚴肅會==，什麼勞碌的工都不可做。
+    notes: [ct-eighth-day, gt-dlc-eighth-apart, kc-same-as-atonement, bh-transition]
+    words: [atzeret]
+
+  - id: neh-booths
+    cue: echo-roofs
+    echoes: [booth, eighth-day]
+    verse: 尼8:13-18
+    text: 宣讀律法的次日，族長、祭司和利未人讀到住棚的條例。百姓就去取樹枝，在==房頂上==、院內、神殿的院內和城門前的寬闊處搭棚。經文說，從約書亞的時候直到這日，以色列人沒有這樣行。他們守節七日，第八日照例有嚴肅會。
+    notes: [ct-neh-scale, gt-jingdu-never-so, gt-jingdu-olive, kc-only-in-land, bh-neh-unity]

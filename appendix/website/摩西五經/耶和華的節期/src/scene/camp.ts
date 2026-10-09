@@ -8,6 +8,7 @@ import { flameMat, litMat, solid, solidInstanced } from './materials';
 import { type FrameLite, hillMesh, poolGlow, poolMesh, robeMat, setInst } from './props';
 import { AnimalCrowd, PersonCrowd, RigPerson } from './rig';
 import { c, lp, NX, SX } from './tracks';
+import { CX, CZ } from './layout';
 import { clamp, lerp, mulberry32, smooth } from './util';
 
 type P3 = [number, number, number];
@@ -40,6 +41,14 @@ export class Camp {
   private walkers!: PersonCrowd;
   private walkLane: number[] = [];
   private breads: Mesh[] = [];
+  /** 二月逾越節的那一角（帳棚、布、餅、圍著吃的人）：秋季不要 */
+  private second = new Group();
+  private big!: Group;
+  private tentMain!: InstancedMesh;
+  private tentSpots: { x: number; z: number; yaw: number; sc: number }[] = [];
+  private tentHidden = false;
+  /** 營火的總開關（0..1），目前一律 1 */
+  fireK = 1;
 
   constructor() {
     this.doughMat = litMat({ base: '#dccb9c', angle: 25, space: 4, seed: 52, bake: true });
@@ -212,8 +221,6 @@ export class Camp {
     // 帳棚：人字形低面數帳棚，門朝向中央；布面隨風波動
     const tg = tentGeo();
     const mTent = litMat({ base: '#3b2e22', parts: ['#403328', '#e7b55a'], partAlt: '#56422e', angle: 70, space: 4.4, seed: 61, cross: true, flap: true });
-    const CX = -6;
-    const CZ = -36;
     const spots: { x: number; z: number; yaw: number; sc: number; a: number }[] = [];
     for (let x = -62; x <= 46; x += 6.8) {
       for (let z = -78; z <= -3; z += 6.4) {
@@ -227,6 +234,8 @@ export class Camp {
     }
     const tents = solidInstanced(tg, mTent, spots.length, 1.5);
     g.add(tents.group);
+    this.tentMain = tents.main;
+    this.tentSpots = spots;
     spots.forEach((p, i) => {
       setInst(tents.main, i, p.x, 0, p.z, p.yaw, p.sc);
       tents.main.setColorAt(i, new Color(p.a, 0, 0));
@@ -240,6 +249,7 @@ export class Camp {
     big.position.set(CX, 0, CZ);
     big.scale.set(2.5, 2.3, 2.5);
     g.add(big);
+    this.big = big;
     // 營火的光點：帳棚之間幾處小火
     const fires: [number, number][] = [[-30, -30], [14, -26], [-20, -58], [24, -52], [-4, -62], [30, -68], [-40, -18], [8, -14]];
     const fxp: P3[] = [];
@@ -290,23 +300,24 @@ export class Camp {
     this.near.add(this.aaron.group);
 
     // second-month：一個營帳前，幾個人圍著站著吃（戶外）
+    g.add(this.second);
     const t2 = solid(tg, mTent, 1.8);
     t2.position.set(22, 0, -2.6);
     t2.scale.setScalar(1.3);
-    g.add(t2);
+    this.second.add(t2);
     const mCl = litMat({ base: '#d8cdb4', angle: 8, space: 4.4, seed: 63, side: DoubleSide });
     const mat = solid(clothGeo(1.5, 1.0), mCl, 1.4);
     mat.position.set(22, 0, 3.6);
-    g.add(mat);
+    this.second.add(mat);
     const mBread = litMat({ base: '#c9b27a', angle: 20, space: 4, seed: 34, bias: 0.1 });
     for (const [bx, bz] of [[-0.35, 2.55], [-0.15, 2.8]]) {
       const b = new Mesh(breadGeo(), mBread);
       b.position.set(22 + bx, 0.03, bz + 0.9);
-      g.add(b);
+      this.second.add(b);
     }
     const dish = solid(dishGeo(), litMat({ base: '#8a6a45', angle: 30, space: 4, seed: 35 }), 1.4);
     dish.position.set(22.35, 0.02, 3.55);
-    g.add(dish);
+    this.second.add(dish);
     const eaters: { a: number; r: number; robe: string; o: Parameters<typeof personGeo>[0]; sc: number }[] = [
       { a: -2.6, r: 1.5, robe: '#a88758', o: { staff: true, staffSide: 'R', belt: true, armL: [0.8, 0.1], armR: [0.4, 0.2] }, sc: 1 },
       { a: -1.95, r: 1.45, robe: '#cdbf9e', o: { belt: true, armL: [0.9, 0.1], armR: [0.5, 0.12] }, sc: 0.94 },
@@ -319,7 +330,7 @@ export class Camp {
       const r = new RigPerson({ ...e.o, scale: e.sc, seed: 30 + i, kid: i === 3 }, robeMat(e.robe, 30 + i));
       r.group.position.set(px, 0, pz);
       r.group.rotation.y = Math.atan2(22.1 - px, 3.6 - pz) + (i % 2 ? 0.15 : -0.12);
-      g.add(r.group);
+      this.second.add(r.group);
       this.eaters.push(r);
       const b = new Mesh(breadGeo(), mBread);
       b.scale.setScalar(0.7);
@@ -328,27 +339,42 @@ export class Camp {
     });
   }
 
+  /** 秋季的營地（吹角節、贖罪日）：拿掉春天的近景與大帳棚，會幕院子範圍內的帳棚收起來（hw、hd＝院子半寬半深，含餘裕） */
+  setAutumn(on: boolean, hw: number, hd: number): void {
+    if (on === this.tentHidden) return;
+    this.tentHidden = on;
+    for (let i = 0; i < this.tentSpots.length; i++) {
+      const p = this.tentSpots[i];
+      const hide = on && Math.abs(p.x - CX) < hw && Math.abs(p.z - CZ) < hd;
+      setInst(this.tentMain, i, p.x, 0, p.z, p.yaw, hide ? 0.0001 : p.sc);
+    }
+    this.tentMain.instanceMatrix.needsUpdate = true;
+  }
+
   // ---------------------------------------------------------------- 每幀
   update(fr: FrameLite, s: number): void {
     const t = fr.time;
     const mo = !fr.motionOff;
     const inSuccoth = this.succoth.visible;
     const inSinai = this.sinai.visible;
-    this.near.visible = s >= c('unclean');
+    this.near.visible = s >= c('unclean') && !this.tentHidden;
+    this.second.visible = !this.tentHidden;
+    this.big.visible = !this.tentHidden;
     // 火：形狀抖動、伸縮；seven-days 一夜一夜明暗交替
     const k7 = clamp(story.day - 15, 0, 6);
     const night = s >= c('seven-days') ? 0.7 + 0.3 * (0.5 + 0.5 * Math.cos(Math.PI * 2 * k7)) : 1;
     const fl = mo ? 1 : 0;
+    const fk = this.fireK;
     for (const m of this.flameMats) m.uniforms.uFlick.value = fl;
     for (const f of this.flames) {
       if ((f.group === 'succoth') !== inSuccoth && (f.group === 'sinai') !== inSinai) continue;
       const w = mo ? 1 + 0.14 * Math.sin(t * 8.7 + f.ph) + 0.08 * Math.sin(t * 14.3 + f.ph * 2) : 1;
-      f.m.scale.y = f.base * w * (f.group === 'succoth' ? night : 1);
+      f.m.scale.y = Math.max(0.0001, f.base * w * (f.group === 'succoth' ? night : 1) * fk);
     }
-    for (const pm of this.pools) pm.uniforms.uOn.value = inSuccoth ? night : 1;
+    for (const pm of this.pools) pm.uniforms.uOn.value = (inSuccoth ? night : 1) * fk;
     const fxOn = mo ? 1 : 0;
-    for (const f of this.fxS) f.mat.uniforms.uOn.value = fxOn * (inSuccoth ? night : 1);
-    for (const f of this.fxN) f.mat.uniforms.uOn.value = fxOn;
+    for (const f of this.fxS) f.mat.uniforms.uOn.value = fxOn * (inSuccoth ? night : 1) * fk;
+    for (const f of this.fxN) f.mat.uniforms.uOn.value = fxOn * fk;
 
     if (inSuccoth) {
       const p = clamp(story.bake.progress);
@@ -385,7 +411,7 @@ export class Camp {
         it.z = this.walkLane[i];
         it.y = Math.abs(Math.sin(run / 0.8)) * 0.04;
         it.yaw = dir > 0 ? Math.PI / 2 : -Math.PI / 2;
-        it.sc = 1.0 + (i % 3) * 0.04;
+        it.sc = this.tentHidden && Math.abs(this.walkLane[i] - CZ) < 10 ? 0.0001 : 1.0 + (i % 3) * 0.04;
       }
       this.walkers.update(t, mo);
       // unclean：那幾個人隨捲動走向摩西、亞倫，停在一段距離外

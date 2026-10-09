@@ -12,23 +12,41 @@ export const ROOT = resolve(SITE_DIR, '../../../..');
 /** 在 scripture 專案裡才有 vault；部署（CI）時只有網站本身 */
 export const IN_VAULT = existsSync(resolve(ROOT, 'raw_scripture')) && existsSync(resolve(ROOT, 'link_folder'));
 
-/** 摩西五經：簡稱、書名、STEP 檔案裡的英文書名、書卷資料夾（與 util/book_paths.py 的「01 創世記」一致） */
+/**
+ * 本站用到的書卷：簡稱、書名、STEP 檔案裡的英文書名（en）、書卷序號、書卷資料夾
+ * （與 util/book_paths.py 的「01 創世記」一致）。
+ * 詩篇的 STEP 書名是複數「Psalms」，BibleHub 標題是單數「Psalm」（bh）。
+ */
 export const BOOKS = [
   { abbr: '創', name: '創世記', en: 'Genesis', num: 1 },
   { abbr: '出', name: '出埃及記', en: 'Exodus', num: 2 },
   { abbr: '利', name: '利未記', en: 'Leviticus', num: 3 },
   { abbr: '民', name: '民數記', en: 'Numbers', num: 4 },
   { abbr: '申', name: '申命記', en: 'Deuteronomy', num: 5 },
+  { abbr: '書', name: '約書亞記', en: 'Joshua', num: 6 },
+  { abbr: '得', name: '路得記', en: 'Ruth', num: 8 },
+  { abbr: '撒上', name: '撒母耳記上', en: '1 Samuel', num: 9 },
+  { abbr: '王上', name: '列王紀上', en: '1 Kings', num: 11 },
+  { abbr: '王下', name: '列王紀下', en: '2 Kings', num: 12 },
+  { abbr: '代下', name: '歷代志下', en: '2 Chronicles', num: 14 },
+  { abbr: '拉', name: '以斯拉記', en: 'Ezra', num: 15 },
+  { abbr: '尼', name: '尼希米記', en: 'Nehemiah', num: 16 },
+  { abbr: '詩', name: '詩篇', en: 'Psalms', bh: 'Psalm', num: 19 },
+  { abbr: '賽', name: '以賽亞書', en: 'Isaiah', num: 23 },
+  { abbr: '珥', name: '約珥書', en: 'Joel', num: 29 },
+  { abbr: '摩', name: '阿摩司書', en: 'Amos', num: 30 },
+  { abbr: '亞', name: '撒迦利亞書', en: 'Zechariah', num: 38 },
 ].map((b) => ({ ...b, dir: `${String(b.num).padStart(2, '0')} ${b.name}` }));
 export const BOOK_BY_NAME = Object.fromEntries(BOOKS.map((b) => [b.name, b]));
 export const BOOK_BY_ABBR = Object.fromEntries(BOOKS.map((b) => [b.abbr, b]));
+const ABBR_ALT = BOOKS.map((b) => b.abbr).sort((a, b) => b.length - a.length).join('|');
 
 export const read = (p) => readFileSync(p, 'utf8').replace(/^﻿/, '');
 
 // ---------- 經文參照 ----------
 
-const REF_RE = /^(創|出|利|民|申)(\d+):(\d+)(?:-(\d+))?$/;
-const CHAPTER_RE = /^(創|出|利|民|申)(\d+)$/;
+const REF_RE = new RegExp(`^(${ABBR_ALT})(\\d+):(\\d+)(?:-(\\d+))?$`);
+const CHAPTER_RE = new RegExp(`^(${ABBR_ALT})(\\d+)$`);
 
 /** 「出12:21-28」→ {abbr, book, chapter, from, to}；格式不對回 null（只收單章，節範圍用半形連字號） */
 export function parseRef(text) {
@@ -56,6 +74,16 @@ export function chapterVerses(book, chapter) {
     verseCache.set(key, existsSync(p) ? read(p).split(/\r?\n/).filter((l) => l.length > 0) : null);
   }
   return verseCache.get(key);
+}
+
+/** 整行只有「併於上節。」的節：和合本把這一節併進上一節，沒有自己的經文（例如代下30:19） */
+export const MERGED_VERSE = /^併於上節。?$/;
+export const isMergedVerse = (text) => MERGED_VERSE.test(String(text ?? '').trim());
+
+/** 「<NN 書名>/第N章.md」存在才有章頁可連（VerseBlock.kb） */
+export function hasKbChapter(book, chapter) {
+  const b = BOOK_BY_NAME[book];
+  return !!b && existsSync(resolve(ROOT, b.dir, `第${chapter}章.md`));
 }
 
 // ---------- 每章來源清單（source_manifest.md） ----------

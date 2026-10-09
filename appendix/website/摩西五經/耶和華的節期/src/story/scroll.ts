@@ -15,7 +15,7 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 
 export interface BeatInfo {
   chapterId: string;
-  chapterKind: 'opening' | 'feast';
+  chapterKind: 'opening' | 'feast' | 'passage';
   beatId: string;
   cue: string;
   /** 這一拍月亮對應的日子（1–30）；dayTo 有值時在拍內從 day 走到 dayTo */
@@ -23,7 +23,11 @@ export interface BeatInfo {
   dayTo?: number;
   /** 這一拍所屬章的月份（開場章是 1）；沒有就是 undefined，story.month 維持前一個值 */
   month?: number;
-  interaction?: 'hyssop' | 'bake' | 'wave' | 'count';
+  /** passage（無字過場）：月份導覽隨這一拍的捲動從 month 依序走到 monthTo */
+  monthTo?: number;
+  /** 回聲拍（後來的歷史）：寫進 story.later */
+  later?: boolean;
+  interaction?: 'hyssop' | 'bake' | 'wave' | 'count' | 'blow';
   el: HTMLElement;
   box: HTMLElement;
 }
@@ -35,7 +39,7 @@ export interface ScrollController {
 }
 
 /** 畫面上的這條線（視窗高度的比例）決定「目前這一拍」 */
-const LINE = 0.6;
+export const LINE = 0.6;
 
 /** 系統偏好：暗色。即時寫進 story。動態開關另見 src/ui/motion.ts（預設有動態，不跟系統的減少動態）。 */
 export function bindPreferences(): void {
@@ -149,7 +153,13 @@ export function initScroll(beats: BeatInfo[], onBeat: (index: number, prev: numb
     story.chapterProgress = clamp((y - c0) / Math.max(1, c1 - c0));
     story.pageProgress = clamp(y / Math.max(1, ScrollTrigger.maxScroll(window)));
     story.day = dayAt(i, p);
+    story.later = !!b.later;
     story.month = monthOf[i];
+    if (b.chapterKind === 'passage' && b.month !== undefined && b.monthTo !== undefined) {
+      // 無字過場：依拍內進度把 month..monthTo 逐月點亮（三、四、五、六月各佔四分之一）
+      const months = b.monthTo - b.month + 1;
+      story.month = b.month + Math.min(months - 1, Math.floor(p * months));
+    }
     if (countIdx >= 0) story.count = i < countIdx ? 0 : i > countIdx ? 50 : 50 * clamp((p - COUNT_FROM) / (COUNT_TO - COUNT_FROM));
   }
 

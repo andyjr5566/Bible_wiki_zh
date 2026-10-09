@@ -34,11 +34,19 @@ export interface StoryState {
   bake: { progress: number; done: boolean; auto: boolean };
   /** 搖禾捆：場景寫入（拖曳甩動或 waveAction），介面層讀取更新提示 */
   wave: { swings: number; done: boolean; auto: boolean };
+  /**
+   * 吹角：介面層的長按按鈕寫入。按住時 level 0→1（約 1.2 秒），放開後回落；
+   * level 到 1 算吹了一聲（blasts+1），第一聲就 done。場景依 level 畫聲波與畫面震動。
+   * 讀者觸發的動作：動態關也照常播放。捲過去沒做 → auto: true、done: true（不補畫聲波）。
+   */
+  blow: { level: number; holding: boolean; blasts: number; done: boolean; auto: boolean };
+  /** 目前這一拍是回聲拍（後來的歷史）：介面層依 Beat.echoes 寫入；場景改用舊紙配色 */
+  later: boolean;
   /** 系統偏好：暗色模式 */
   dark: boolean;
   /**
-   * 系統偏好「減少動態」。只停背景裝飾性的動態（風吹麥浪、紙紋閃動、鏡頭漂移），
-   * 讀者自己觸發的動作（打門框、關門）照常播放，不能變成跳格。
+   * 讀者用標題列「動態」開關關掉動態（不跟作業系統）。只停環境與小動作（風吹麥浪、紙紋閃動、鏡頭漂移），
+   * 捲動帶動的動作與讀者自己觸發的動作照常播放，不能變成跳格。
    */
   motionOff: boolean;
   /** 塗血互動的進度：由場景寫入（讀者在畫布上操作），介面層讀取更新提示與音效 */
@@ -64,6 +72,8 @@ export const story: StoryState = {
   count: 0,
   bake: { progress: 0, done: false, auto: false },
   wave: { swings: 0, done: false, auto: false },
+  blow: { level: 0, holding: false, blasts: 0, done: false, auto: false },
+  later: false,
   dark: false,
   motionOff: false,
   hyssop: {

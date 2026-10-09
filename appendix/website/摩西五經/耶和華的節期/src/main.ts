@@ -5,15 +5,18 @@ import './styles/chrome.css';
 import './styles/end.css';
 
 import { SITE } from './data/site';
-import { createAudio } from './audio/audio';
+import { createAudio, type AudioController } from './audio/audio';
 import { bindPreferences, initScroll, type BeatInfo } from './story/scroll';
 import type { SceneEvent } from './scene/api';
 import { story } from './story/state';
 import { anyPanelOpen, buildBeats, closeOpenPanel, setPanelOn } from './ui/beats';
 import { createBakeUI } from './ui/bake';
+import { createBarsUI } from './ui/bars';
+import { createBlowUI } from './ui/blow';
 import { createChrome } from './ui/chrome';
 import { createCountUI } from './ui/count';
 import { createCoach } from './ui/coach';
+import { createEchoUI } from './ui/echo';
 import { h } from './ui/dom';
 import { buildCredits, buildEndings } from './ui/ending';
 import { createHeadFade } from './ui/headfade';
@@ -32,16 +35,23 @@ function boot() {
 
   bindPreferences();
   initMotion();
+  // 回聲拍說明框的舊紙配色（亮色模式；見 story.css 的 .jf-box[data-later]）
+  for (const k of ['paper', 'ink', 'accent', 'glow'] as const) root.style.setProperty(`--jf-later-${k}`, SITE.laterPalette[k]);
 
   // ---- 版面：每一拍一個 section ----
   const hyssop = createHyssopUI(canvas, app);
   const bake = createBakeUI();
   const count = createCountUI();
+  // 吹角的聲音由 audio 合成；audio 在下面才建立，所以先用 ref 接
+  let audioRef: AudioController | null = null;
+  const blow = createBlowUI((holding, level) => audioRef?.blow(holding, level));
+  const bars = createBarsUI();
+  const echo = createEchoUI(app);
   // 沒有場景時搖禾捆的事件由介面層自己送給音效（audio 在下面才建立）
   let emitUi: (e: SceneEvent) => void = () => undefined;
   const wave = createWaveUI(canvas, app, (e) => emitUi(e));
   const main = h('main', { class: 'jf-story', id: 'jf-story' });
-  const beats = buildBeats(main, { hyssop, bake, wave, count });
+  const beats = buildBeats(main, { hyssop, bake, wave, count, blow, bars, echo });
   app.append(main);
   for (const end of buildEndings()) {
     const cid = end.getAttribute('data-chapter');
@@ -66,8 +76,10 @@ function boot() {
       wave.setScene(scene);
     },
   );
+  audioRef = audio;
   emitUi = (e) => audio.onSceneEvent(e);
   const nav = createNav(app, beats);
+  echo.setNav(nav);
   const coach = createCoach(app);
   createChrome(app, audio, () => coach.open());
   const mobileQ = window.matchMedia('(max-width: 720px)');
@@ -82,6 +94,8 @@ function boot() {
     day: b.beat.day,
     dayTo: b.beat.dayTo,
     month: b.chapter.kind === 'opening' ? 1 : b.chapter.month,
+    monthTo: b.chapter.monthTo,
+    later: !!b.beat.echoes?.length,
     interaction: b.beat.interaction,
     el: b.el,
     box: b.box,
@@ -91,6 +105,9 @@ function boot() {
   let sideLocked = false;
   let settled = false;
   const mealRef = beats.find((b) => b.panel);
+  const barBeats = new Set(beats.filter((b) => b.beat.bars?.length).map((b) => b.beat.id));
+  // 驗收腳本（tools/check-*.mjs）從這裡讀 story；不影響網站本身
+  (window as unknown as { __jfStory: typeof story }).__jfStory = story;
 
   const scroll = initScroll(infos, (index) => {
     audio.onBeat(index);
@@ -98,7 +115,9 @@ function boot() {
     if (settled) {
       bake.sync(index);
       wave.sync(index);
+      blow.sync(index);
     }
+    bars.setBeat(story.beat);
     stage?.setCue(story.cue);
     // 手機的面板蓋在說明框上方：離開那一拍就收起來
     if (mobileQ.matches && anyPanelOpen()) {
@@ -182,6 +201,9 @@ function boot() {
     root.classList.toggle('jf-at-top', window.scrollY < 40);
     if (firstEnd) root.classList.toggle('jf-past-story', firstEnd.getBoundingClientRect().top < 110);
     count.update();
+    echo.update();
+    audio.onProgress(story.cue, story.beatProgress);
+    if (barBeats.has(story.beat)) bars.update(story.beat, story.beatProgress);
     const onWave = story.cue === 'wave';
     wave.update(onWave, onWave && waveRef ? collectAvoid(waveRef.box) : NO_RECTS);
     const onHyssop = story.cue === 'hyssop';
@@ -206,6 +228,7 @@ function boot() {
     settled = true;
     bake.sync(scroll.index());
     wave.sync(scroll.index());
+    blow.sync(scroll.index());
     coach.openIfFirstVisit();
   });
   fontsReady.then(() => scroll.refresh());

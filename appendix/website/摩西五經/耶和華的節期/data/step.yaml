@@ -130,3 +130,67 @@
   position: 3
   expect_strong: H7620G
   note: 「七七節」的「七七」在原文是一個字。STEP 的本節譯義是 weeks（週），詞形是複數，標為節期名稱；字典義是 Weeks。申16:9 說要計算七七日；黃迦勒說，到了第五十天就是五旬節當天。
+
+# ---------- 秋季 ----------
+- id: teruah
+  label: 吹角
+  ref: 利23:24
+  position: 14
+  expect_strong: H8643
+  note: 和合本譯作「吹角」。STEP 的本節譯義是「a sound of a loud blast」（響亮的聲音），字典義是「shout」（呼喊）；這一節的原文字裡沒有樂器的名稱，民29:1 的「吹角的日子」也是這個字。後來詩81:3 說在月朔吹角，那裡用的字 STEP 譯為 a ram's horn（公羊角）；民10:10 說月朔和節期吹的是銀號。部分註釋進一步理解為七月初一吹的是公綿羊的角：《舊約聖經背景註釋》這樣說，《串珠聖經註釋》說這是按猶太人的遺傳。
+
+- id: kapporet
+  label: 施恩座
+  ref: 利16:2
+  position: 19
+  expect_strong: H3727
+  note: 和合本譯作「施恩座」。STEP 的本節譯義是 atonement cover（贖罪的蓋子），字典義是 mercy seat。這一節出現兩次。黃迦勒說它是約櫃上面的一塊精金做的厚蓋板，原文字根有「遮蓋」的意思。
+
+- id: bad
+  label: 細麻布
+  ref: 利16:4
+  position: 2
+  expect_strong: H906
+  note: 和合本譯作「細麻布」。這個字在本節出現四次，內袍、褲子、腰帶、冠冕都用它；STEP 的本節譯義是 linen（細麻）。《舊約聖經背景註釋》說，祭司穿的細麻是從埃及進口的，在當地也是祭司特有的衣料。
+
+- id: azazel
+  label: 阿撒瀉勒
+  ref: 利16:8
+  position: 12
+  expect_strong: H5799
+  note: 和合本音譯作「阿撒瀉勒」。STEP 把它標為專有名詞，本節譯義是「[the] escape goat」（放走的羊），字典義是 Azazel。這個字指的是什麼，註釋說法不同，請看「四家怎麼說」。
+
+- id: gezerah
+  label: 無人之地
+  ref: 利16:22
+  position: 9
+  expect_strong: H1509
+  note: 和合本的「無人之地」是兩個字：「地」和這個字。STEP 的本節譯義是 infertile（不毛的），字典義是 isolation（隔絕）。黃迦勒把這個字的字義寫作「分離」，並說經文裡的「曠野」就是「無人之地」。
+
+- id: anah
+  label: 刻苦
+  ref: 利16:29
+  position: 9
+  expect_strong: H6031B
+  note: 和合本譯作「刻苦」，下一個字是「己心」。STEP 的本節譯義是 you will afflict（你們要刻苦），詞形是 Piel 未完成式，字典義是 to afflict。部分註釋進一步理解為包括禁食：《利未記雷氏研讀本》這樣說，BibleHub 說傳統上理解為禁食和克己。
+
+- id: hadar
+  label: 美好
+  ref: 利23:40
+  position: 7
+  expect_strong: H1926
+  note: 和合本的「美好樹上的果子」是三個字：「果子」「樹」和這個字。STEP 的本節譯義是 splendor，字典義是 glory。經文沒有說是哪一種樹；《舊約聖經背景註釋》說是柑橘屬，丁良才提到法利賽人以為是香櫞。
+
+- id: sukkah
+  label: 棚
+  ref: 利23:42
+  position: 1
+  expect_strong: H5521
+  note: 和合本譯作「棚」。STEP 的字典義是 booth，詞形是陰性複數；利23:34「住棚節」的「棚」也是這個字。丁良才說，聖經講以色列人在曠野的住處，除了這裡以外都用「帳幕」，沒有用過「棚」字。
+
+- id: atzeret
+  label: 嚴肅會
+  ref: 利23:36
+  position: 15
+  expect_strong: H6116
+  note: 和合本譯作「嚴肅會」。STEP 的本節譯義是 a solemn assembly，字典義是 assembly（聚會）。同一個字也出現在珥1:14、珥2:15（禁食的聚會）、摩5:21、王下10:20（為巴力宣告的聚會）。黃迦勒說，第八日的嚴肅會是住棚節後次日再慶祝一天，不可作工，百姓到會幕前聚集。

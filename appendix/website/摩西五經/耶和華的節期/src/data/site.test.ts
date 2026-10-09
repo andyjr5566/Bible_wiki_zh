@@ -37,12 +37,77 @@ describe('site.json 一致性', () => {
     for (const c of SITE.chapters) for (const p of c.passages) expect(SITE.verses[p]?.lines.length, `${c.id} ${p}`).toBeGreaterThan(0);
   });
 
-  it('經文每節有字、節號連續', () => {
+  it('經文每節有字、節號遞增且都在範圍內（整行「併於上節。」的節不收，例如代下30:19）', () => {
     for (const [ref, v] of Object.entries(SITE.verses)) {
       expect(v.ref).toBe(ref);
-      expect(v.lines.map((l) => l.v), ref).toEqual(Array.from({ length: v.to - v.from + 1 }, (_, i) => v.from + i));
-      for (const l of v.lines) expect(l.text.trim().length, `${ref}:${l.v}`).toBeGreaterThan(0);
+      const nums = v.lines.map((l) => l.v);
+      expect(nums.length, ref).toBeGreaterThan(0);
+      expect(nums, ref).toEqual([...nums].sort((a, b) => a - b));
+      expect(new Set(nums).size, ref).toBe(nums.length);
+      expect(nums[0], ref).toBeGreaterThanOrEqual(v.from);
+      expect(nums[nums.length - 1], ref).toBeLessThanOrEqual(v.to);
+      // 缺的節只能是併於上節的那一節
+      expect(nums.length, ref).toBeGreaterThanOrEqual(v.to - v.from + 1 - (ref === '代下30:18-20' ? 1 : 0));
+      for (const l of v.lines) {
+        expect(l.text.trim().length, `${ref}:${l.v}`).toBeGreaterThan(0);
+        expect(l.text.trim(), `${ref}:${l.v}`).not.toMatch(/^併於上節。?$/);
+      }
+      expect(Number.isInteger(v.bookNum), ref).toBe(true);
+      expect(typeof v.kb, ref).toBe('boolean');
     }
+    expect(SITE.verses['代下30:18-20'].lines.map((l) => l.v)).toEqual([18, 20]);
+  });
+
+  it('回聲、長條圖、passage、ot：欄位彼此對得起來', () => {
+    const byId = new Map<string, string[]>();
+    for (const c of SITE.chapters) for (const b of c.beats) byId.set(b.id, [...(byId.get(b.id) ?? []), c.id]);
+    for (const b of beats) {
+      for (const id of b.echoes ?? []) {
+        expect(byId.get(id)?.length, `${b.id} echoes ${id}`).toBe(1);
+        expect(id, `${b.id} 不能指自己`).not.toBe(b.id);
+      }
+      for (const bar of b.bars ?? []) {
+        const g = SITE.offerings[bar.ref];
+        expect(g, `${b.id} bars ${bar.ref}`).toBeDefined();
+        expect(g.items.some((i) => i.animal.startsWith('公牛')), `${b.id} bars ${bar.ref}`).toBe(true);
+      }
+    }
+    for (const c of SITE.chapters) {
+      if (c.kind === 'passage') {
+        expect(c.month, c.id).toBeDefined();
+        expect(c.monthTo!, c.id).toBeGreaterThan(c.month!);
+        for (const b of c.beats) {
+          expect(b.text, c.id).toBe('');
+          expect(b.notes ?? b.words ?? b.offerings ?? b.verse, c.id).toBeUndefined();
+        }
+      } else {
+        expect(c.monthTo, c.id).toBeUndefined();
+        for (const b of c.beats) expect(b.text.length, `${c.id}/${b.id}`).toBeGreaterThan(0);
+      }
+      for (const o of c.ot ?? []) {
+        expect(['kept', 'word'], c.id).toContain(o.kind);
+        expect(SITE.verses[o.ref], `${c.id} ot ${o.ref}`).toBeDefined();
+        expect(o.note.trim().length, o.ref).toBeGreaterThan(0);
+        expect([...o.note].length, o.ref).toBeLessThanOrEqual(60);
+      }
+    }
+    for (const k of ['paper', 'ink', 'accent', 'glow'] as const) expect(SITE.laterPalette[k]).toMatch(/^#[0-9a-fA-F]{6}$/);
+  });
+
+  it('moreVerses 都有經文、不和 verse 重複', () => {
+    for (const b of beats) {
+      for (const ref of b.moreVerses ?? []) {
+        expect(SITE.verses[ref]?.lines.length, `${b.id} moreVerses ${ref}`).toBeGreaterThan(0);
+        expect(ref, `${b.id}`).not.toBe(b.verse);
+      }
+    }
+  });
+
+  it('bulls 拍的長條圖：七條，公牛合計 70', () => {
+    const bulls = beats.find((b) => b.id === 'bulls')!;
+    const counts = bulls.bars!.map((bar) => SITE.offerings[bar.ref].items.filter((i) => i.animal.startsWith('公牛')).reduce((n, i) => n + i.count, 0));
+    expect(counts).toEqual([13, 12, 11, 10, 9, 8, 7]);
+    expect(counts.reduce((a, b) => a + b, 0)).toBe(70);
   });
 
   it('每則註釋有原站網址，且有 quote 或 paraphrase；英文來源的引文附中譯', () => {

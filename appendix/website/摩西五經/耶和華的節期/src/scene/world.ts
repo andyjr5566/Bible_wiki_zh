@@ -34,8 +34,12 @@ import {
   type Part,
   type PersonOpts,
 } from './geo';
-import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, setGlowFlick, skyMat, solid, solidInstanced, U } from './materials';
-import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, setGlowFlick, skyMat, solid, solidInstanced, sunMat, U } from './materials';
+import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, isAutumnCamp, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { Autumn } from './autumn';
+import { BlowFx } from './blowfx';
+import { Gate, Gilgal, Ruth, Temple } from './echoes';
+import { Jerusalem, Village } from './booths';
 import { makeFx, type FxSet } from './fx';
 import { Animal, AnimalCrowd, PersonCrowd, RigPerson } from './rig';
 import { Camp } from './camp';
@@ -96,6 +100,16 @@ export class World {
   camp = new Camp();
   fields = new Fields();
   home = new Home();
+  autumn = new Autumn();
+  blowfx = new BlowFx();
+  gilgal = new Gilgal();
+  temple = new Temple();
+  ruth = new Ruth();
+  gate = new Gate();
+  village = new Village();
+  jerusalem = new Jerusalem();
+  sun: Mesh;
+  private dayK = 1;
   private leftHouse!: Group;
   private ground!: Mesh;
   private childrenPair = new Group();
@@ -153,6 +167,14 @@ export class World {
     this.moonHull.renderOrder = -91;
     this.moonHull.frustumCulled = false;
     sc.add(this.moonHull, this.moon);
+    this.sun = new Mesh(new SphereGeometry(1, 28, 18), sunMat());
+    this.sun.renderOrder = -89;
+    this.sun.frustumCulled = false;
+    this.sun.visible = false;
+    sc.add(this.sun);
+    this.camp.sinai.add(this.autumn.group);
+    sc.add(this.gilgal.group, this.temple.group, this.ruth.group, this.gate.group, this.village.group, this.jerusalem.group);
+    sc.add(this.blowfx.vert, this.blowfx.flat);
 
     // ---- 材質
     const mGround = litMat({ base: 'paper', angle: 0, angle2: 0, space: 5.4, seed: 2, bias: -0.26 });
@@ -717,6 +739,13 @@ export class World {
     cam.aspect = aspect;
     cam.position.set(px, py, pz);
     cam.lookAt(tx, ty, tz);
+    // 吹角：鏡頭震動，幅度正比於 story.blow.level，最大約畫面高度的 0.6%（讀者觸發，動態關也照常）
+    const bl = story.blow.level;
+    if (bl > 0.001) {
+      const amp = bl * 0.006 * H * 0.62;
+      shiftPx += (Math.sin(fr.time * 61.3) + 0.6 * Math.sin(fr.time * 97.1 + 1.3)) * amp;
+      shiftY += (Math.sin(fr.time * 53.7 + 0.7) + 0.6 * Math.sin(fr.time * 89.9)) * amp;
+    }
     if (Math.abs(shiftPx) > 0.5 || Math.abs(shiftY) > 0.5) cam.setViewOffset(W, H, -shiftPx, shiftY, W, H);
     else if (cam.view !== null) cam.clearViewOffset();
     cam.updateProjectionMatrix();
@@ -765,12 +794,22 @@ export class World {
     this.moon.scale.setScalar(r);
     this.moonHull.position.copy(this.moon.position);
     this.moonHull.scale.setScalar(r);
-    const showMoon = tr.sky[2] < 0.5;
+    const showMoon = tr.sky[2] < 0.5 && (tr.moon[1] > -3);
     this.moon.visible = showMoon;
     this.moonHull.visible = showMoon;
+    // 太陽（夏日過場、贖罪日、清晨）
+    if (tr.sun[1] > -3) {
+      const sa = tr.sun[0];
+      const se = tr.sun[1] * RAD;
+      _v.set(Math.sin(sa) * Math.cos(se), Math.sin(se), -Math.cos(sa) * Math.cos(se));
+      this.sun.position.copy(cam.position).addScaledVector(_v, MOON_R * 0.98);
+      this.sun.scale.setScalar(MOON_R * 0.98 * Math.tan((tr.sun[2] * RAD) / 2));
+      this.sun.visible = true;
+    } else this.sun.visible = false;
+    this.dayK = tr.sky[2];
     // 月相 1–30：初一細鉤（亮面朝右＝西）、十四滿月、十五起由西側（畫面右）開始虧缺、二十一約下弦
-    const inSinai = s >= CUT['sinai'] && s < CUT['count'];
-    const day = inSinai ? 14 : story.day;
+    const inSinai = s >= CUT['sinai'] && s < CUT['echo-hezekiah'];
+    const day = tr.moonDay > 0 ? tr.moonDay : inSinai ? 14 : story.day;
     let th: number;
     let ly: number;
     if (day <= 14) {
@@ -794,7 +833,14 @@ export class World {
     this.camp.sinai.visible = w === 'sinai';
     this.fields.barley.visible = w === 'barley';
     this.fields.wheat.visible = w === 'wheat';
-    this.ground.visible = w !== 'barley' && w !== 'wheat';
+    this.gilgal.group.visible = w === 'gilgal';
+    this.temple.group.visible = w === 'temple';
+    this.ruth.group.visible = w === 'ruth';
+    this.gate.group.visible = w === 'gate';
+    this.village.group.visible = w === 'booths';
+    this.jerusalem.group.visible = w === 'roofs';
+    this.ground.visible = w !== 'barley' && w !== 'wheat' && w !== 'ruth' && w !== 'gilgal' && w !== 'booths';
+    this.camp.setAutumn(isAutumnCamp(s), 17.5, 12.5);
   }
 
   updateObjects(fr: Frame): void {
@@ -911,6 +957,17 @@ export class World {
     const wd = worldAt(s);
     if (wd === 'succoth' || wd === 'sinai') this.camp.update(fr, s);
     if (wd === 'barley' || wd === 'wheat') this.fields.update(fr, s);
+    if (wd === 'gilgal') this.gilgal.update(fr, s);
+    if (wd === 'temple') this.temple.update(fr, s);
+    if (wd === 'ruth') this.ruth.update(fr, s);
+    if (wd === 'gate') this.gate.update(fr, s);
+    if (wd === 'booths') this.village.update(fr, s);
+    if (wd === 'roofs') this.jerusalem.update(fr, s);
+    // 秋季：會幕院子的人物與器物、吹角的聲波
+    this.autumn.update(fr, s, this.dayK);
+    this.camp.fireK = this.autumn.fireK;
+    this.blowfx.update(dt, story.blow.level, isAutumnCamp(s) && s < CUT['echo-water-gate']);
+    if (this.blowfx.busy) this.busy = true;
   }
 
   private updateDay10(s: number): void {

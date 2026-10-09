@@ -20,13 +20,18 @@ const SHOTS = [
   ['barley-ripe', 0.5], ['wave', 0.5], ['lamb-offering', 0.5], ['not-yet', 0.5],
   ['sinai', 0.5], ['unclean', 0.5], ['wait', 0.5], ['second-month', 0.5],
   ['count', 0.9], ['two-loaves', 0.5], ['weeks-offerings', 0.5], ['rejoice', 0.5], ['corners', 0.5],
+  // 第二階段第二批（秋季＋舊約回聲）
+  ['echo-gilgal', 0.35], ['echo-hezekiah', 0.75], ['echo-ruth', 0.6], ['summer', 0.3],
+  ['seventh-moon', 0.5], ['blow', 0.5, { blow: 0.7 }], ['trumpet-offerings', 0.6], ['echo-water-gate', 0.5],
+  ['veil', 0.6], ['linen', 0.5], ['lots', 0.4], ['incense', 0.6], ['sprinkle', 0.5], ['confess', 0.7], ['scapegoat', 0.55], ['afflict', 0.3],
+  ['ingathering', 0.5], ['branches', 0.5], ['booth', 0.8], ['bulls', 0.4], ['booths-rejoice', 0.5], ['eighth-day', 0.6], ['echo-roofs', 0.8],
 ];
 
 const b = await launch({ width: 1280, height: 800, gpu: true, port: 9341 });
 let failed = 0;
 try {
-  for (const [cue, p] of SHOTS) {
-    await b.send('Page.navigate', { url: `http://127.0.0.1:${port}/scene-lab.html?cue=${cue}&p=${p}&ui=0&motion=1` });
+  for (const [cue, p, extra] of SHOTS) {
+    await b.send('Page.navigate', { url: `http://127.0.0.1:${port}/scene-lab.html?cue=${cue}&p=${p}&ui=0&motion=1${extra?.blow ? '&blow=' + extra.blow : ''}` });
     await sleep(3500);
     const info = await b.evaluate('JSON.stringify(window.__lab ? window.__lab.story.cue : null)');
     if (JSON.parse(info) !== cue) { console.log(`✗ ${cue}：實驗室沒有切到這個 cue（${info}）`); failed++; continue; }

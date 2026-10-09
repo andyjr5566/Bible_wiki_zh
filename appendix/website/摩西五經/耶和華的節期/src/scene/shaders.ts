@@ -72,6 +72,18 @@ uniform vec2 uGustP;
 #ifdef CROP
 uniform float uGrow;
 uniform float uCut;
+uniform float uCutAll;
+#endif
+#ifdef REAP
+uniform float uReap;
+#endif
+#ifdef FLAP
+uniform vec2 uBlowC;
+uniform float uBlowA;
+uniform float uBlowT;
+#endif
+#ifdef SWAY
+uniform float uSwayK;
 #endif
 void main(){
   vec4 p = vec4(position, 1.);
@@ -83,10 +95,17 @@ void main(){
     float cm = step(uCutX, io.x) * step(abs(io.z + .8), 2.9) * step(io.x, 4.7);
     if (aPart > .5 && aPart < 1.5) p.xyz *= 1. - cm; else p.y *= mix(1., .13, cm);
   #endif
+  #if defined(REAP) && defined(USE_INSTANCING) && defined(USE_PART)
+    // 收割線（沿 x 走）：線以左已割成殘茬，線附近 1 公尺內漸漸倒下
+    vec4 ior = modelMatrix * instanceMatrix * vec4(0., 0., 0., 1.);
+    float cmr = 1. - smoothstep(uReap - .5, uReap + .5, ior.x);
+    if (aPart > .5 && aPart < 1.5) p.xyz *= 1. - cmr; else p.y *= mix(1., .13, cmr);
+  #endif
   #if defined(CROP) && defined(USE_PART) && defined(USE_INSTANCING_COLOR)
     // 作物：uGrow 是整體生長（殘茬→全高）；instanceColor.g＝1 的田角不被割（uCut）
     float zone = instanceColor.g;
     float hk = mix(mix(uGrow, 0.17, uCut), uGrow, zone);
+    hk = mix(hk, 0.17, uCutAll);
     float earK = smoothstep(.3, .55, hk);
     if (aPart > .5 && aPart < 1.5) {
       p.xz *= earK;
@@ -122,7 +141,7 @@ void main(){
   #endif
   #ifdef SWAY
     float sp = wp.x * .21 + wp.z * .33;
-    wp.xyz += vec3(sin(uTime * .9 + sp) * .26, sin(uTime * 1.35 + sp * 1.6) * .17, cos(uTime * .8 + sp * 1.2) * .22) * aS * aS * uWind;
+    wp.xyz += vec3(sin(uTime * .9 + sp) * .26, sin(uTime * 1.35 + sp * 1.6) * .17, cos(uTime * .8 + sp * 1.2) * .22) * aS * aS * uWind * uSwayK;
   #endif
   #ifdef FLAP
     {
@@ -132,6 +151,12 @@ void main(){
       float fl = sin(uTime * 1.9 + wp.x * .6 + wp.z * .4) * .6 + sin(uTime * 3.3 + wp.z * .9 + wp.x * .3) * .4;
       wp.xz += vec2(.94, .34) * fl * .05 * fh * (.3 + .7 * wf) * uWind;
       wp.y += fl * .018 * fh * uWind;
+      // 吹角：聲波從會幕院子門口推過來，帳棚布面被推開一下（讀者觸發，動態關也照常）
+      vec2 bd = wp.xz - uBlowC;
+      float br = length(bd);
+      float bw = sin(br * .5 - uBlowT * 8.) * exp(-br * .035);
+      wp.xz += bd / max(br, .01) * bw * uBlowA * .3 * fh;
+      wp.y += abs(bw) * uBlowA * .09 * fh;
     }
   #endif
   #ifdef GUST
@@ -601,6 +626,7 @@ uniform float uAnim;
 uniform float uSize;
 uniform float uDist;
 uniform float uOn;
+uniform float uP;
 varying vec2 vUv;
 varying float vLife;
 float h11(float p){ p = fract(p * .1031); p *= p + 33.33; p *= p + p; return fract(p); }
@@ -616,6 +642,16 @@ void main(){
     float j = h11(seed * 3.3);
     pos += vec3((j - .5) * .3 + sin(uAnim * 2.2 + seed * 31.) * .14 * life, life * (1.1 + 1.6 * h11(seed * 5.7)) + .1, (h11(seed * 9.1) - .5) * .3);
     size *= (1. - life * .75) * (.6 + .6 * h11(seed * 2.2));
+  #elif defined(CLOUD)
+    // 香的煙雲：由 uP（捲動進度）決定，往回捲就倒回；漫開後整個遮住施恩座
+    float birth = seed * .5;
+    float age = clamp((uP - birth) / .5, 0., 1.4);
+    float h1 = h11(seed * 3.7), h2 = h11(seed * 5.9), h3 = h11(seed * 8.3);
+    float ang = h1 * 6.2832;
+    float rad = (.15 + .85 * h2) * (.3 + 1.7 * min(age, 1.));
+    pos += vec3(cos(ang) * rad * 1.6 + sin(uAnim * .35 + seed * 17.) * .12 * age, .2 + age * (.6 + 1.6 * h3) + sin(uAnim * .5 + seed * 13.) * .1 * age, sin(ang) * rad * 1.1 + cos(uAnim * .3 + seed * 11.) * .12 * age);
+    life = clamp(age, 0., 1.);
+    size *= (age > 0.001 ? 1. : 0.) * (.15 + 1.35 * smoothstep(0., 1., min(age, 1.)));
   #elif defined(SMOKE)
     life = fract(uAnim * .075 + seed);
     pos += vec3(life * 1.4 + sin(uAnim * .8 + seed * 20.) * .25 * life, .5 + life * 3.4, sin(seed * 40. + uAnim * .6) * .3 * life);
@@ -650,7 +686,10 @@ void main(){
   #else
     float a = (1. - d * d);
     float cov = hatchCov(gl_FragCoord.xy, .5 + .3 * a, 1.2, 4.2, 5.2);
-    #if defined(SMOKE)
+    #if defined(CLOUD)
+      float fade = smoothstep(0., .1, vLife) * .68;
+      vec3 col = vec3(.72, .68, .6);
+    #elif defined(SMOKE)
       float fade = (1. - vLife) * smoothstep(0., .12, vLife) * .72;
       vec3 col = vec3(.82, .78, .7);
     #else
@@ -659,5 +698,119 @@ void main(){
     #endif
     gl_FragColor = vec4(col, cov * a * fade);
   #endif
+}
+`;
+
+// ---------- 太陽：刻線球，邊緣加密，朝向鏡頭 ----------
+export const SUN_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec3 vNv;
+uniform vec3 uCol;
+uniform vec3 uLine;
+void main(){
+  vec3 N = normalize(vNv);
+  float lam = clamp(N.z, 0., 1.);
+  float t = pow(1. - lam, 1.7) * 1.15 + .06;
+  float cov = hatchCov(gl_FragCoord.xy, t, .9, 4.0, 2.3);
+  float cov2 = hatchCov(gl_FragCoord.xy, smoothstep(.55, 1., 1. - lam) * .9, -.6, 4.4, 5.1);
+  gl_FragColor = vec4(mix(uCol, uLine, max(cov, cov2)), 1.);
+}
+`;
+
+// ---------- 聲波環：刻線同心環。VERT：垂直面（以院子門口為圓心，朝鏡頭）；否則平放在地面上 ----------
+export const RING_VERT = /* glsl */ `
+varying vec3 vP;
+void main(){
+  vec4 wp = modelMatrix * vec4(position, 1.);
+  vP = wp.xyz;
+  gl_Position = projectionMatrix * viewMatrix * wp;
+}
+`;
+export const RING_FRAG = /* glsl */ `
+${GLSL_COMMON}
+varying vec3 vP;
+uniform vec3 uC;
+uniform float uR[8];
+uniform float uA[8];
+uniform float uSpd;
+void main(){
+  #ifdef VERT
+    vec2 d = vP.xy - uC.xy;
+  #else
+    vec2 d = vP.xz - uC.xz;
+  #endif
+  float r = length(d);
+  float cov = 0.;
+  float amp = 0.;
+  for (int i = 0; i < 8; i++){
+    float R = uR[i];
+    if (R < 0.) continue;
+    float w = .32 + R * .02;
+    float dd = abs(r - R);
+    // 一圈 = 三道刻線（外粗內細），線寬隨年齡變細
+    float m = 0.;
+    for (int k = 0; k < 3; k++){
+      float off = float(k) * .34 * (1. + R * .03);
+      float lw = (.1 - float(k) * .028) * (1. - R * .015);
+      m = max(m, 1. - smoothstep(lw * .6, lw, abs(r - R + off)));
+    }
+    float env = 1. - smoothstep(w * 4., w * 5.5, dd);
+    // 線條斷成短刻痕
+    float ang = atan(d.y, d.x);
+    float dash = step(.22, vnoise(vec2(ang * 5. + float(i) * 3.1, R * .6)));
+    cov = max(cov, m * env * dash * uA[i]);
+    amp = max(amp, uA[i]);
+  }
+  if (cov < .01) discard;
+  gl_FragColor = vec4(mix(vec3(.96, .9, .74), vec3(.99, .97, .88), cov), cov * .92);
+}
+`;
+
+// ---------- 時間跳躍抹除：帶紙纖維紋理的舊紙色斜向抹除，抹過時畫面短暫褪成單色 ----------
+export const TJ_FRAG = /* glsl */ `
+${GLSL_COMMON}
+uniform sampler2D tScene;
+uniform float uTJ;      // 0..2：0＝無；1＝舊紙色全蓋；2＝抹完
+uniform float uDirT;    // +1：左下→右上；-1：反向
+uniform vec3 uPaperC;
+uniform vec3 uInkC;
+float fibers(vec2 f){
+  // 幾組不同方向的細長纖維
+  float v = 0.;
+  for (int k = 0; k < 3; k++){
+    float a = .5 + float(k) * 2.1;
+    vec2 p = vec2(cos(a) * f.x + sin(a) * f.y, -sin(a) * f.x + cos(a) * f.y);
+    float n = vnoise(vec2(p.x * .55 + float(k) * 9., p.y * .018 + float(k) * 4.));
+    v = max(v, smoothstep(.62, .78, n));
+  }
+  return v;
+}
+void main(){
+  vec2 uv = gl_FragCoord.xy / uRes;
+  vec3 sc = texture2D(tScene, uv).rgb;
+  float asp = uRes.x / uRes.y;
+  float d = (uv.x * asp * .5 + uv.y * .866) / (asp * .5 + .866);
+  if (uDirT < 0.) d = 1. - d;
+  vec2 f = gl_FragCoord.xy / uDpr;
+  float fib = fibers(f);
+  float rag = (vnoise(f * .045) - .5) * .16 + (vnoise(f * .21) - .5) * .05 + (fib - .5) * .03;
+  float a = clamp(uTJ, 0., 1.);
+  float b = clamp(uTJ - 1., 0., 1.);
+  float front = a * 1.5 - d + rag;
+  float back = b * 1.5 - d + rag;
+  float cover = smoothstep(0., .05, front) * (1. - smoothstep(0., .05, back));
+  float afterB = step(0., back);
+  float mono = smoothstep(-.32, 0., front) * (1. - afterB) + afterB * (1. - smoothstep(0., .32, back));
+  mono *= 1. - cover;
+  float g = dot(sc, vec3(.299, .587, .114));
+  vec3 sepia = mix(vec3(g), uPaperC * (.35 + g * .85), .45);
+  vec3 col = mix(sc, sepia, clamp(mono, 0., 1.));
+  // 舊紙：底色＋細纖維＋斑駁；前緣有一道深色的燒邊
+  float stain = vnoise(f * .012) * .08 + vnoise(f * .09) * .04;
+  vec3 paper = uPaperC * (.97 - stain) - uInkC * fib * .1;
+  float edge = (1. - smoothstep(.0, .035, abs(front))) + (1. - smoothstep(.0, .035, abs(back))) * afterB;
+  paper = mix(paper, uInkC * .8 + uPaperC * .2, edge * .5 * step(.001, uTJ) * step(uTJ, 1.999));
+  col = mix(col, paper, cover);
+  gl_FragColor = vec4(col, 1.);
 }
 `;

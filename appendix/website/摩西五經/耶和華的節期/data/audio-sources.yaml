@@ -99,3 +99,25 @@
   page: https://freesound.org/people/silencyo/sounds/81721/
   downloaded: 2026-10-09
   edit: 取前 12 秒鐮刀割麥聲，淡出，單聲道，響度調整
+
+- id: desert-wind
+  file: desert-wind.mp3
+  title: Looping Gentle Wind Ambience on an Open Desert Plain.wav
+  author: dhallcomposer
+  license: CC0
+  page: https://freesound.org/people/dhallcomposer/sounds/697217/
+  downloaded: 2026-10-09
+  loop: true
+  edit: 取前 40 秒，頭尾 30 毫秒淡入淡出，單聲道，響度調整
+
+- id: branches
+  file: branches.mp3
+  title: Leaves_Rustling_Edited.wav；pile of boughs and branches breaks, close up, H6.wav
+  author: AmberdeMeillon；Bini_trns
+  license: CC0
+  page: https://freesound.org/people/AmberdeMeillon/sounds/443065/
+  pages:
+    - https://freesound.org/people/AmberdeMeillon/sounds/443065/
+    - https://freesound.org/people/Bini_trns/sounds/354099/
+  downloaded: 2026-10-09
+  edit: 葉子沙沙取前 3.6 秒，疊上延後 0.4 秒的枝條堆疊聲，淡入淡出，單聲道，響度調整

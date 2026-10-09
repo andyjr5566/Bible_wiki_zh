@@ -11,6 +11,10 @@ export interface VerseBlock {
   from: number;
   to: number;
   lines: { v: number; text: string }[];
+  /** 書卷在全本聖經的序號（1–66），給 chapterUrl() 用 */
+  bookNum: number;
+  /** 知識庫裡有這一章的章頁（「06 約書亞記/第5章.md」存在）才是 true；false 時不放連結 */
+  kb: boolean;
 }
 
 export type SourceId = 'CT' | 'GT' | 'KC' | 'BH';
@@ -74,15 +78,21 @@ export interface Beat {
   cue: string;
   /** 這一拍的主經文（顯示全文），例如「出12:22」 */
   verse?: string;
+  /**
+   * 補充經文：敘述提到、但不在主經文範圍裡的經節（例如代下30:2-3 的背景＋30:18-20 的主事件）。
+   * 說明框在主經文後面依序顯示，每段標出處；全文同樣由建置腳本從 raw_scripture 抽進 SiteData.verses。
+   */
+  moreVerses?: string[];
   /** 網站自己的白話敘述 */
   text: string;
   /** 互動提示文字（有互動的拍才有） */
   prompt?: string;
   /**
    * hyssop：拖曳牛膝草塗血（場景）；bake：長按烤無酵餅（介面按鈕＋場景畫麵團）；
-   * wave：拖曳搖禾捆（場景）；count：捲動數算七七日（介面的 7×7 格＋場景麥田轉色）
+   * wave：拖曳搖禾捆（場景）；count：捲動數算七七日（介面的 7×7 格＋場景麥田轉色）；
+   * blow：長按「吹」（介面按鈕寫 story.blow，場景畫聲波與震動）
    */
-  interaction?: 'hyssop' | 'bake' | 'wave' | 'count';
+  interaction?: 'hyssop' | 'bake' | 'wave' | 'count' | 'blow';
   /** 這一拍就地展開的註釋 id */
   notes?: string[];
   /** 這一拍可點開的原文字 id */
@@ -104,6 +114,28 @@ export interface Beat {
   offerings?: string[];
   /** 獻祭清單前面的短標籤，例如「每日（共七日）」；經文有說才寫（民28:24「一連七日，每日要照這例」） */
   offeringsLabel?: string;
+  /**
+   * 長條圖（介面層 DOM）：每條是一組獻祭（ref 對到 SiteData.offerings），
+   * 長度＝該組裡祭牲名稱以「公牛」開頭的數目合計；label 照經文寫，例如「第一日」。
+   * 介面不寫死任何數字；總數由程式加總。
+   */
+  bars?: { label: string; ref: string }[];
+  /**
+   * 回聲拍：被呼應的拍 id（可跨章）。有這欄的拍是「後來的歷史」：
+   * 說明框顯示「後來」標籤與「呼應」連結（跳回被呼應的拍），場景改用舊紙配色並以時間跳躍抹除進場。
+   * 被呼應的拍則反向顯示一個「後來」連結跳到回聲拍（由介面層從 echoes 反推）。
+   */
+  echoes?: string[];
+}
+
+/** 章末「舊約其他書卷」的一筆 */
+export interface OtNote {
+  /** kept：後來的人怎麼守這個節期；word：同樣的字，用在不同的場合（不是這裡的節期） */
+  kind: 'kept' | 'word';
+  /** 經文出處，例如「拉6:19-22」；全文由建置腳本從 raw_scripture 抽進 SiteData.verses */
+  ref: string;
+  /** 網站自己的一句話：只寫經文自己交代的場合 */
+  note: string;
 }
 
 /** 一段經文列出的祭牲：建置腳本從 raw_scripture 的經文本文解析出數目，不手抄 */
@@ -115,12 +147,15 @@ export interface OfferingGroup {
 
 export interface StoryChapter {
   id: string; // opening、passover……
-  kind: 'opening' | 'feast';
+  /** passage：無字的時光過場（沒有說明框、標題卡、章末），只有場景與月份導覽 */
+  kind: 'opening' | 'feast' | 'passage';
   title: string;
   /** 經文給的日期，例如「正月十四日黃昏」；沒有月日的節期寫經文的說法，例如「安息日的次日」 */
   date?: string;
   /** 經文有月份才填；沒填的章，月份導覽維持前一個位置並顯示為「不定日期」 */
   month?: number;
+  /** passage 章：月份導覽隨捲動從 month 走到 monthTo */
+  monthTo?: number;
   day?: number;
   scene: string; // night-moon、egypt-street……
   palette: Palette;
@@ -133,6 +168,8 @@ export interface StoryChapter {
   nt: string[];
   /** 章末的「下一個節期」預告（只放名稱與日期） */
   next?: { title: string; date: string };
+  /** 章末「舊約其他書卷」：分「後來的人怎麼守」與「同樣的字，不同的場合」兩小節，沒有資料的小節不顯示 */
+  ot?: OtNote[];
 }
 
 export interface AudioSource {
@@ -160,6 +197,8 @@ export interface SiteData {
   entries: Record<string, EntryLink>;
   /** 獻祭清單，key 是 story.yaml 裡寫的經文出處 */
   offerings: Record<string, OfferingGroup>;
+  /** 回聲拍用的舊紙配色（feasts.yaml 的 later_palette） */
+  laterPalette: Palette;
   audio: AudioSource[];
   /** 授權頁：每章用到的來源與網址 */
   sources: { book: string; chapter: number; source: SourceId | 'STEP'; site: string; url: string }[];

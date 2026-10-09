@@ -3,6 +3,8 @@
  * - 環境音（night-wind、depart、fire、field-wind）用 requestAnimationFrame 淡入淡出。
  * - 單次音效（lamb、dip、strike、door）直接播放；wailing 進入時淡入、離開時淡出。
  * - fire（烤餅那一拍 loop）、field-wind（8 秒一陣風，每搖一下播一次，同時最多兩陣）、harvest（單次，barley-ripe 與 rejoice 那兩拍）。
+ * - 秋季：desert-wind（scapegoat 那一拍 loop）、branches（branches 拍進入時一次；booth、echo-roofs 拍隨拍內進度每過 0.2 一次）。
+ * - 吹角（blow）不是檔案：用 WebAudio 合成，見檔尾的 createBlowVoice。受聲音開關控制；動態開關不影響。
  * - 檔案載入或播放失敗、或 audio-sources.yaml 還沒登記的音檔，一律安靜略過。
  * 音檔清單與授權在 data/audio-sources.yaml，授權頁由 src/ui/ending.ts 列出。
  */
@@ -37,7 +39,13 @@ const SPEC: Record<string, Pick<Track, 'max' | 'fadeIn' | 'fadeOut'>> = {
   fire: { max: 0.5, fadeIn: 1.2, fadeOut: 1.4 },
   'field-wind': { max: 0.45, fadeIn: 1.6, fadeOut: 1.6 },
   harvest: { max: 0.5, fadeIn: 1.4, fadeOut: 1.8 },
+  'desert-wind': { max: 0.5, fadeIn: 2, fadeOut: 1.6 },
+  branches: { max: 0.7, fadeIn: 0.05, fadeOut: 0.6 },
 };
+
+/** 每過拍內進度 0.2 觸發一次樹枝沙沙聲的拍 */
+const RUSTLE_STEP = 0.2;
+const RUSTLE_CUES = new Set(['booth', 'echo-roofs']);
 
 /** field-wind 每搖一下播一陣，同時最多這麼多陣 */
 const MAX_GUSTS = 2;
@@ -48,6 +56,13 @@ export interface AudioController {
   /** 目前所在的拍改變時呼叫 */
   onBeat(index: number): void;
   onSceneEvent(e: SceneEvent): void;
+  /** 每幀呼叫：目前拍的 cue 與拍內進度。booth、echo-roofs 每過 0.2 響一次樹枝聲 */
+  onProgress(cue: string, progress: number): void;
+  /**
+   * 吹角：holding 為按住中、level 為 0–1。按下的那一刻（手勢內）就要呼叫一次，才能建立 AudioContext。
+   * 聲音關著、或瀏覽器沒有 WebAudio 時什麼都不做。
+   */
+  blow(holding: boolean, level: number): void;
   onChange(cb: (enabled: boolean) => void): void;
 }
 
@@ -63,6 +78,8 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
   let raf = 0;
   let last = 0;
   const gusts: HTMLAudioElement[] = [];
+  const blowVoice = createBlowVoice(() => enabled);
+  let rustleStep = -1;
 
   const idxOf = (cue: string) => cues.indexOf(cue);
 
@@ -165,6 +182,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     setWant('wailing', cue === 'wailing' ? SPEC.wailing.max : 0);
     setWant('fire', cue === 'bake' ? SPEC.fire.max : 0);
     setWant('harvest', cue === 'rejoice' || cue === 'barley-ripe' ? SPEC.harvest.max : 0);
+    setWant('desert-wind', cue === 'scapegoat' ? SPEC['desert-wind'].max : 0);
   }
 
   function fire(id: string) {
@@ -230,6 +248,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
         }
         for (const g of gusts) g.pause();
         gusts.length = 0;
+        blowVoice.stop();
       }
       for (const cb of listeners) cb(enabled);
     },
@@ -237,6 +256,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
       const prev = cues[beat];
       beat = index;
       const cue = cues[index];
+      if (cue !== prev) rustleStep = -1; // 進入新的一拍：第一次 onProgress 只記下所在的位置，不響
       if (!enabled) return;
       if (cue !== prev) {
         if (cue === 'day-10') {
@@ -249,6 +269,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
         }
         if (prev === 'day-10') setWant('lamb', 0);
         if (cue === 'rejoice' || cue === 'barley-ripe') setWant('harvest', SPEC.harvest.max, true);
+        if (cue === 'branches') fire('branches');
       }
       reapply();
     },
@@ -258,8 +279,146 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
       else if (e.type === 'door-shut') fire('door');
       else if (e.type === 'wave-swing') gust();
     },
+    onProgress(cue: string, progress: number) {
+      if (!RUSTLE_CUES.has(cue)) return;
+      const step = Math.min(5, Math.floor(progress / RUSTLE_STEP));
+      // 往回捲不響；往前每跨過一個 0.2 響一次。進入這一拍時所在的位置不算
+      if (rustleStep >= 0 && step > rustleStep && enabled && !document.hidden) fire('branches');
+      rustleStep = step;
+    },
+    blow(holding: boolean, level: number) {
+      blowVoice.update(holding, level);
+    },
     onChange(cb) {
       listeners.push(cb);
     },
   };
+}
+
+// ---------------------------------------------------------------------------
+// 吹角：WebAudio 合成（不用錄音檔，也不假裝是哪一種樂器——經文只說 teruah，響亮的聲音）。
+// 約 233 Hz 的基音，兩個略微失諧的振盪器（波形含二、三次泛音），低通約 1.8 kHz；
+// 起音時音高從低一個半音在 150 ms 內滑上來；疊一層 10% 的帶通噪聲當氣息；
+// 音量跟著 level，放開後 300 ms 收尾。
+// ---------------------------------------------------------------------------
+
+const BLOW_F0 = 233.08; // B♭3
+const BLOW_GAIN = 0.3;
+const BLOW_RELEASE = 0.3; // 秒
+
+interface Voice {
+  master: GainNode;
+  oscs: OscillatorNode[];
+  noise: AudioBufferSourceNode;
+  released: boolean;
+}
+
+function createBlowVoice(isEnabled: () => boolean) {
+  let ctx: AudioContext | null = null;
+  let voice: Voice | null = null;
+  let wave: PeriodicWave | null = null;
+  let noiseBuf: AudioBuffer | null = null;
+  let unavailable = false;
+
+  function ensureCtx(): AudioContext | null {
+    if (unavailable) return null;
+    if (!ctx) {
+      const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (!Ctor) {
+        unavailable = true;
+        return null;
+      }
+      try {
+        ctx = new Ctor();
+      } catch {
+        unavailable = true;
+        return null;
+      }
+    }
+    if (ctx.state === 'suspended') void ctx.resume().catch(() => undefined);
+    return ctx;
+  }
+
+  function start(c: AudioContext): Voice {
+    // 基音 1、二次 0.42、三次 0.26、四次 0.1：偏圓潤的銅管感，不是鋸齒波的刺
+    if (!wave) wave = c.createPeriodicWave(new Float32Array([0, 0, 0, 0, 0]), new Float32Array([0, 1, 0.42, 0.26, 0.1]));
+    if (!noiseBuf) {
+      noiseBuf = c.createBuffer(1, c.sampleRate, c.sampleRate);
+      const d = noiseBuf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    }
+    const now = c.currentTime;
+    const master = c.createGain();
+    master.gain.value = 0;
+    const low = c.createBiquadFilter();
+    low.type = 'lowpass';
+    low.frequency.value = 1800;
+    low.Q.value = 0.7;
+    low.connect(master);
+    master.connect(c.destination);
+
+    const oscs = [-6, 6].map((cents) => {
+      const o = c.createOscillator();
+      o.setPeriodicWave(wave!);
+      o.detune.value = cents;
+      // 起音：從低一個半音，150 ms 內滑上來
+      o.frequency.setValueAtTime(BLOW_F0 / 2 ** (1 / 12), now);
+      o.frequency.exponentialRampToValueAtTime(BLOW_F0, now + 0.15);
+      const g = c.createGain();
+      g.gain.value = 0.45;
+      o.connect(g);
+      g.connect(low);
+      o.start(now);
+      return o;
+    });
+
+    // 氣息：10% 的帶通噪聲
+    const noise = c.createBufferSource();
+    noise.buffer = noiseBuf;
+    noise.loop = true;
+    const band = c.createBiquadFilter();
+    band.type = 'bandpass';
+    band.frequency.value = 900;
+    band.Q.value = 0.9;
+    const ng = c.createGain();
+    ng.gain.value = 0.1;
+    noise.connect(band);
+    band.connect(ng);
+    ng.connect(master);
+    noise.start(now);
+    return { master, oscs, noise, released: false };
+  }
+
+  function end(v: Voice, c: AudioContext) {
+    const now = c.currentTime;
+    v.master.gain.cancelScheduledValues(now);
+    v.master.gain.setValueAtTime(v.master.gain.value, now);
+    v.master.gain.linearRampToValueAtTime(0, now + BLOW_RELEASE);
+    v.released = true;
+    const stopAt = now + BLOW_RELEASE + 0.05;
+    for (const o of v.oscs) o.stop(stopAt);
+    v.noise.stop(stopAt);
+  }
+
+  const api = {
+    update(holding: boolean, level: number) {
+      if (!isEnabled()) {
+        api.stop();
+        return;
+      }
+      if (holding) {
+        const c = ensureCtx();
+        if (!c) return;
+        if (!voice || voice.released) voice = start(c);
+        // 音量跟著 level；短的平滑避免每幀階梯
+        voice.master.gain.setTargetAtTime(BLOW_GAIN * Math.max(0.05, level), c.currentTime, 0.03);
+      } else if (voice && !voice.released && ctx) {
+        end(voice, ctx);
+      }
+    },
+    stop() {
+      if (voice && !voice.released && ctx) end(voice, ctx);
+    },
+  };
+  return api;
 }

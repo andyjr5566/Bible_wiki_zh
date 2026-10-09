@@ -106,6 +106,31 @@
       "license": "CC0",
       "page": "https://freesound.org/people/silencyo/sounds/81721/",
       "title": "Silencyo_COUNTRY_DAY_Sickle_Wheat.aif"
+    },
+    {
+      "author": "dhallcomposer",
+      "downloaded": "2026-10-09",
+      "edit": "取前 40 秒，頭尾 30 毫秒淡入淡出，單聲道，響度調整",
+      "file": "desert-wind.mp3",
+      "id": "desert-wind",
+      "license": "CC0",
+      "loop": true,
+      "page": "https://freesound.org/people/dhallcomposer/sounds/697217/",
+      "title": "Looping Gentle Wind Ambience on an Open Desert Plain.wav"
+    },
+    {
+      "author": "AmberdeMeillon；Bini_trns",
+      "downloaded": "2026-10-09",
+      "edit": "葉子沙沙取前 3.6 秒，疊上延後 0.4 秒的枝條堆疊聲，淡入淡出，單聲道，響度調整",
+      "file": "branches.mp3",
+      "id": "branches",
+      "license": "CC0",
+      "page": "https://freesound.org/people/AmberdeMeillon/sounds/443065/",
+      "pages": [
+        "https://freesound.org/people/AmberdeMeillon/sounds/443065/",
+        "https://freesound.org/people/Bini_trns/sounds/354099/"
+      ],
+      "title": "Leaves_Rustling_Edited.wav；pile of boughs and branches breaks, close up, H6.wav"
     }
   ],
   "chapters": [
@@ -183,6 +208,18 @@
       "id": "opening",
       "kind": "opening",
       "nt": [],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "掃羅王在初一設席吃飯，大衛的座位空著；掃羅心想，他大概是偶然染了不潔。",
+          "ref": "撒上20:24-26"
+        },
+        {
+          "kind": "kept",
+          "note": "神藉以賽亞說，他們的月朔、安息日和嚴肅會，神都不能容忍；經文說的原因是他們一面作罪孽，一面守節。",
+          "ref": "賽1:13-14"
+        }
+      ],
       "palette": {
         "accent": "#b9832e",
         "glow": "#f7efd8",
@@ -337,6 +374,23 @@
       "nt": [
         "基督預表（逾越節羔羊）"
       ],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "約西亞王照約書上所寫的守逾越節；經文說，從士師的時候直到那時，沒有守過這樣的逾越節。",
+          "ref": "王下23:21-23"
+        },
+        {
+          "kind": "kept",
+          "note": "歷代志記同一次逾越節：自從先知撒母耳以來，以色列中沒有守過這樣的逾越節。",
+          "ref": "代下35:17-18"
+        },
+        {
+          "kind": "kept",
+          "note": "被擄歸回的人在正月十四日守逾越節；祭司和利未人一同自潔，沒有一人不潔淨。",
+          "ref": "拉6:19-20"
+        }
+      ],
       "palette": {
         "accent": "#a3231b",
         "glow": "#f0c46a",
@@ -434,6 +488,18 @@
       "nt": [
         "林前5：6-8"
       ],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "希西家那一次，眾人在耶路撒冷守除酵節七日，又商議再守七日。",
+          "ref": "代下30:21-23"
+        },
+        {
+          "kind": "kept",
+          "note": "被擄歸回的人歡歡喜喜地守除酵節七日，因為耶和華使他們歡喜。",
+          "ref": "拉6:21-22"
+        }
+      ],
       "palette": {
         "accent": "#b5562a",
         "glow": "#f2b45a",
@@ -513,6 +579,21 @@
           ],
           "text": "在把供物帶來的那一天以前，無論是餅、烘的子粒，還是新穗子，都==不可吃==。這是世世代代永遠的定例。",
           "verse": "利23:14"
+        },
+        {
+          "cue": "echo-gilgal",
+          "echoes": [
+            "not-yet"
+          ],
+          "id": "gilgal",
+          "notes": [
+            "ct-josh-produce",
+            "gt-chuanzhu-josh-grain",
+            "bh-josh-provision",
+            "kc-josh-manna"
+          ],
+          "text": "以色列人在吉甲安營。正月十四日晚上，他們在耶利哥的平原守逾越節；次日，吃了那地的出產，就是無酵餅和==烘的穀==。再過一天，嗎哪就止住了；那一年，他們吃迦南地的出產。",
+          "verse": "書5:10-12"
         }
       ],
       "date": "安息日的次日",
@@ -520,7 +601,8 @@
         "初熟",
         "搖祭",
         "七七節安息日算法的兩種解讀之爭",
-        "燔祭"
+        "燔祭",
+        "嗎哪"
       ],
       "id": "firstfruits",
       "kind": "feast",
@@ -594,13 +676,34 @@
           ],
           "text": "耶和華說：因死屍不潔淨的，或在遠方行路的，要在==二月十四日==黃昏守逾越節，照逾越節的一切律例，用無酵餅、苦菜和羊羔同吃。潔淨又不行路、卻推辭不守的，要從民中剪除；寄居的外人願意守，也同歸一例。",
           "verse": "民9:10-11"
+        },
+        {
+          "cue": "echo-hezekiah",
+          "echoes": [
+            "unclean",
+            "second-month"
+          ],
+          "id": "hezekiah",
+          "moreVerses": [
+            "代下30:18-20"
+          ],
+          "notes": [
+            "gt-qidao-month",
+            "kc-hezekiah-num9",
+            "ct-hezekiah-heart",
+            "gt-bg-north",
+            "bh-hezekiah-pray"
+          ],
+          "text": "猶大王希西家召全以色列到耶路撒冷守逾越節。正月間自潔的祭司不夠，百姓也還沒有聚集，他們就改在==二月==守。以法蓮、瑪拿西等支派有許多人沒有自潔，也吃了羊羔。希西家為他們禱告，耶和華垂聽，就饒恕了百姓。",
+          "verse": "代下30:1-3"
         }
       ],
       "date": "二月十四日黃昏",
       "day": 14,
       "entries": [
         "二月逾越節是否只有一天、不必除酵",
-        "曠野"
+        "曠野",
+        "希西家守二月逾越節（代下三十）"
       ],
       "id": "second-passover",
       "kind": "feast",
@@ -695,6 +798,26 @@
           ],
           "text": "收割的時候，不可割盡田角，也不可拾取遺落的，要==留給==窮人和寄居的。",
           "verse": "利23:22"
+        },
+        {
+          "cue": "echo-ruth",
+          "echoes": [
+            "corners"
+          ],
+          "id": "ruth",
+          "moreVerses": [
+            "得2:15-16",
+            "得2:23"
+          ],
+          "notes": [
+            "gt-qidao-glean-law",
+            "kc-ruth-grace",
+            "gt-chuanzhu-beyond-law",
+            "ct-ruth-season",
+            "bh-ruth-law"
+          ],
+          "text": "摩押女子路得到田間去，在收割的人身後拾取麥穗，恰巧到了波阿斯的田裡。波阿斯吩咐僕人，要從捆裡抽出些來，==留在地下==任他拾取。路得就這樣拾取麥穗，直到收完了大麥和小麥。",
+          "verse": "得2:2-3"
         }
       ],
       "date": "從獻禾捆那日算起第五十天",
@@ -714,6 +837,13 @@
       "nt": [
         "聖靈分賜預表五旬節（徒2：1-4）"
       ],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "所羅門照摩西的吩咐，在除酵節、七七節、住棚節這一年三節獻祭。",
+          "ref": "代下8:12-13"
+        }
+      ],
       "palette": {
         "accent": "#c08a2a",
         "glow": "#f7e2a0",
@@ -729,6 +859,533 @@
       ],
       "scene": "wheat-land",
       "title": "七七節"
+    },
+    {
+      "beats": [
+        {
+          "cue": "summer",
+          "id": "summer",
+          "text": ""
+        }
+      ],
+      "entries": [],
+      "id": "summer",
+      "kind": "passage",
+      "month": 3,
+      "monthTo": 6,
+      "nt": [],
+      "palette": {
+        "accent": "#c4782a",
+        "glow": "#f8dd96",
+        "ink": "#2e2414",
+        "paper": "#f2e4c0"
+      },
+      "passages": [],
+      "scene": "summer",
+      "title": "夏"
+    },
+    {
+      "beats": [
+        {
+          "cue": "seventh-moon",
+          "day": 1,
+          "id": "seventh-month",
+          "notes": [
+            "ct-trumpet-gather",
+            "kc-trumpet-rest",
+            "gt-qidao-trumpet-day"
+          ],
+          "text": "七月初一，又是一個月朔。這一天要守為聖安息日，要==吹角==作紀念，當有聖會，什麼勞碌的工都不可做。",
+          "verse": "利23:24-25",
+          "words": [
+            "teruah"
+          ]
+        },
+        {
+          "cue": "blow",
+          "day": 1,
+          "id": "blow",
+          "interaction": "blow",
+          "notes": [
+            "gt-bg-ram-horn",
+            "gt-chuanzhu-not-silver",
+            "bh-shofar",
+            "kc-num10"
+          ],
+          "prompt": "按住「吹」，放開就停。",
+          "text": "民數記把這一天叫作「==吹角的日子==」。經文沒有寫吹的是哪一種角或號，只說要發出響亮的聲音；用的是什麼，註釋各有說法。",
+          "verse": "民29:1"
+        },
+        {
+          "cue": "trumpet-offerings",
+          "day": 1,
+          "id": "trumpet-offerings",
+          "notes": [
+            "gt-dlc-one-bull",
+            "gt-dlc-repeat-newmoon",
+            "kc-added-offerings"
+          ],
+          "offerings": [
+            "民29:2-5"
+          ],
+          "text": "這一天另有一套祭牲。經文特別交代，這些是在==月朔==的燔祭和每天常獻的燔祭以外再加上的。",
+          "verse": "民29:6"
+        },
+        {
+          "cue": "echo-water-gate",
+          "echoes": [
+            "seventh-month"
+          ],
+          "id": "ezra-reads",
+          "moreVerses": [
+            "尼8:9-10"
+          ],
+          "notes": [
+            "ct-neh-holy-day",
+            "kc-neh-word-first",
+            "gt-leishi-weep",
+            "gt-qidao-share",
+            "bh-neh-holy"
+          ],
+          "text": "七月初一，男女會眾聚集在水門前的寬闊處，聽文士以斯拉站在木臺上，從清早到晌午宣讀律法書。眾民聽了都哭。尼希米、以斯拉和利未人卻對他們說：今日是耶和華的聖日，==不要悲哀哭泣==；去吃喝，也分給沒有預備的人。",
+          "verse": "尼8:2-4"
+        }
+      ],
+      "date": "七月初一",
+      "day": 1,
+      "entries": [
+        "吹角節（七月初一）",
+        "吹角的日子（te.ru.'Ah）",
+        "聖會",
+        "月朔",
+        "銀號"
+      ],
+      "id": "trumpets",
+      "kind": "feast",
+      "month": 7,
+      "next": {
+        "date": "七月初十",
+        "title": "贖罪日"
+      },
+      "nt": [],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "被擄歸回的人從七月初一日起向耶和華獻燔祭，那時耶和華殿的根基還沒有立定。",
+          "ref": "拉3:6"
+        },
+        {
+          "kind": "kept",
+          "note": "詩人說：當在月朔並月望、我們過節的日期吹角，因這是為以色列定的律例。",
+          "ref": "詩81:3-4"
+        },
+        {
+          "kind": "word",
+          "note": "在錫安吹角，是因為耶和華的日子將到，國中的居民都要發顫。",
+          "ref": "珥2:1"
+        },
+        {
+          "kind": "word",
+          "note": "在錫安吹角，是要分定禁食的日子、宣告嚴肅會，祭司在廊子和祭壇中間哭求。",
+          "ref": "珥2:15-17"
+        }
+      ],
+      "palette": {
+        "accent": "#9a6a2a",
+        "glow": "#efd8a2",
+        "ink": "#161b2e",
+        "paper": "#e8e0cf"
+      },
+      "passages": [
+        "利23:23-25",
+        "民29:1-6",
+        "民10:10"
+      ],
+      "scene": "sinai-camp",
+      "title": "吹角節"
+    },
+    {
+      "beats": [
+        {
+          "cue": "veil",
+          "day": 10,
+          "id": "veil",
+          "notes": [
+            "ct-once-a-year",
+            "kc-not-without-blood",
+            "gt-bg-purpose",
+            "bh-cloud"
+          ],
+          "text": "亞倫的兩個兒子近到耶和華面前死了以後，神吩咐摩西告訴亞倫：不可隨時進聖所的==幔子==內，到約櫃上的施恩座前，免得他死亡，因為神要從雲中顯現在施恩座上。",
+          "verse": "利16:1-2",
+          "words": [
+            "kapporet"
+          ]
+        },
+        {
+          "cue": "linen",
+          "day": 10,
+          "id": "linen",
+          "notes": [
+            "gt-bg-linen",
+            "bh-linen-simple",
+            "kc-linen"
+          ],
+          "text": "亞倫進聖所以前，要先用水洗身，再穿上==細麻布==的聖服：內袍、褲子、腰帶、冠冕。",
+          "verse": "利16:4",
+          "words": [
+            "bad"
+          ]
+        },
+        {
+          "cue": "lots",
+          "day": 10,
+          "id": "lots",
+          "notes": [
+            "ct-azazel-two-views",
+            "gt-bg-azazel-name",
+            "gt-chuanzhu-azazel-remove",
+            "gt-jingdu-azazel-three",
+            "bh-azazel"
+          ],
+          "text": "亞倫先為自己和本家獻一隻公牛犢作贖罪祭。又從會眾取兩隻公山羊，安置在會幕門口、耶和華面前，為這兩隻羊==拈鬮==：一鬮歸與耶和華，一鬮歸與阿撒瀉勒。",
+          "verse": "利16:5-8",
+          "words": [
+            "azazel"
+          ]
+        },
+        {
+          "cue": "incense",
+          "day": 10,
+          "id": "incense",
+          "notes": [
+            "gt-qidao-smoke",
+            "gt-chuanzhu-smoke",
+            "bh-incense-shield",
+            "kc-incense"
+          ],
+          "text": "他從壇上盛滿一香爐的火炭，又拿一捧搗細的香料，帶入幔子內，把香放在火上，使香的==煙雲==遮掩法櫃上的施恩座，免得他死亡。",
+          "verse": "利16:12-13"
+        },
+        {
+          "cue": "sprinkle",
+          "day": 10,
+          "id": "sprinkle",
+          "notes": [
+            "ct-sprinkle-once-seven",
+            "gt-leishi-altar",
+            "kc-blood-sanctuary"
+          ],
+          "text": "他用指頭把公牛的血彈在施恩座的東面，又在施恩座前彈血==七次==。接著宰那為百姓作贖罪祭的公山羊，把血帶入幔子內，照樣彈。經文說，這是因以色列人諸般的污穢、過犯，為聖所贖罪。",
+          "verse": "利16:14-16"
+        },
+        {
+          "cue": "confess",
+          "day": 10,
+          "id": "confess",
+          "notes": [
+            "bh-confess",
+            "kc-identify",
+            "gt-jingdu-hands"
+          ],
+          "text": "為聖所、會幕和壇贖完了罪，亞倫把那隻活著的公山羊奉上，兩手==按在羊頭上==，承認以色列人一切的罪孽過犯，把這罪都歸在羊的頭上。",
+          "verse": "利16:20-21"
+        },
+        {
+          "cue": "scapegoat",
+          "day": 10,
+          "id": "wilderness",
+          "notes": [
+            "ct-wilderness-alone",
+            "gt-chuanzhu-no-return",
+            "bh-solitary",
+            "kc-solitary-land"
+          ],
+          "text": "然後藉著所派之人的手，把羊送到曠野去。這羊要擔當他們一切的罪孽，帶到==無人之地==。",
+          "verse": "利16:21-22",
+          "words": [
+            "gezerah"
+          ]
+        },
+        {
+          "cue": "afflict",
+          "day": 10,
+          "id": "afflict",
+          "moreVerses": [
+            "利23:32"
+          ],
+          "notes": [
+            "ct-afflict",
+            "gt-leishi-fast",
+            "bh-humble",
+            "kc-humble-before-joy"
+          ],
+          "offerings": [
+            "民29:8-11"
+          ],
+          "reason": true,
+          "text": "每逢七月初十，本地人和寄居的外人都要==刻苦己心==，什麼工都不可做。經文交代原因：因在這日要為你們贖罪，使你們潔淨，在耶和華面前脫盡一切的罪愆。這一天從初九日晚上守到次日晚上。",
+          "verse": "利16:29-30",
+          "words": [
+            "anah"
+          ]
+        }
+      ],
+      "date": "七月初十",
+      "day": 10,
+      "entries": [
+        "大贖罪日（Yom Kippur）條例",
+        "至聖所",
+        "內幔（隔聖所至聖所的幔子）",
+        "施恩座",
+        "拈鬮定羊的歸屬",
+        "阿撒瀉勒（Azazel）歸屬之爭",
+        "搗細香料遮掩施恩座",
+        "彈血於施恩座與壇（大祭司一年一度贖罪禮）",
+        "刻苦己心（禁食悔改）",
+        "聖安息日（大贖罪日雙重安息）",
+        "贖罪日的節期獻祭（民29：7-11）"
+      ],
+      "id": "atonement",
+      "kind": "feast",
+      "month": 7,
+      "next": {
+        "date": "七月十五日起，共七日",
+        "title": "住棚節"
+      },
+      "nt": [
+        "來9：11-12",
+        "來10：19-20"
+      ],
+      "palette": {
+        "accent": "#8c1f1a",
+        "glow": "#ece6d6",
+        "ink": "#14182a",
+        "paper": "#e6e1d6"
+      },
+      "passages": [
+        "利16:1-34",
+        "利23:26-32",
+        "民29:7-11"
+      ],
+      "scene": "tabernacle",
+      "title": "贖罪日"
+    },
+    {
+      "beats": [
+        {
+          "cue": "ingathering",
+          "day": 15,
+          "id": "ingathering",
+          "moreVerses": [
+            "利23:39"
+          ],
+          "notes": [
+            "gt-chuanzhu-autumn",
+            "gt-dlc-ingathering",
+            "kc-harvest-in"
+          ],
+          "text": "利未記說，收藏了地的出產，就從七月十五日起守這節。申命記說得更具體：禾場的穀、酒醡的酒都==收藏==以後，就要守住棚節七日。",
+          "verse": "申16:13"
+        },
+        {
+          "cue": "branches",
+          "day": 15,
+          "id": "branches",
+          "notes": [
+            "ct-branches-booth",
+            "gt-dlc-hold-or-build",
+            "gt-bg-species",
+            "kc-booths-made"
+          ],
+          "text": "第一日要拿美好樹上的果子、棕樹上的枝子、茂密樹的枝條和河旁的柳枝，在耶和華面前==歡樂==七日。",
+          "verse": "利23:40",
+          "words": [
+            "hadar"
+          ]
+        },
+        {
+          "cue": "booth",
+          "day": 15,
+          "id": "booth",
+          "notes": [
+            "gt-bg-booth-wilderness",
+            "gt-dlc-tent-not-booth",
+            "kc-tents-not-houses"
+          ],
+          "reason": true,
+          "text": "凡以色列家的人都要住在==棚==裡七日。經文交代理由：好叫世世代代知道，耶和華領以色列人出埃及地的時候，曾使他們住在棚裡。",
+          "verse": "利23:42-43",
+          "words": [
+            "sukkah"
+          ]
+        },
+        {
+          "bars": [
+            {
+              "label": "第一日",
+              "ref": "民29:13-16"
+            },
+            {
+              "label": "第二日",
+              "ref": "民29:17-19"
+            },
+            {
+              "label": "第三日",
+              "ref": "民29:20-22"
+            },
+            {
+              "label": "第四日",
+              "ref": "民29:23-25"
+            },
+            {
+              "label": "第五日",
+              "ref": "民29:26-28"
+            },
+            {
+              "label": "第六日",
+              "ref": "民29:29-31"
+            },
+            {
+              "label": "第七日",
+              "ref": "民29:32-34"
+            }
+          ],
+          "cue": "bulls",
+          "day": 15,
+          "dayTo": 21,
+          "id": "bulls",
+          "moreVerses": [
+            "民29:17",
+            "民29:20",
+            "民29:23",
+            "民29:26",
+            "民29:29",
+            "民29:32"
+          ],
+          "notes": [
+            "ct-most-offerings",
+            "gt-bg-decrease",
+            "gt-dlc-seventy",
+            "kc-seven-bulls"
+          ],
+          "text": "這七日每天都要獻燔祭。公綿羊和羊羔每天一樣多，只有==公牛==一天比一天少。",
+          "verse": "民29:12-13"
+        },
+        {
+          "cue": "booths-rejoice",
+          "id": "booths-rejoice",
+          "notes": [
+            "gt-chuanzhu-rejoice",
+            "ct-deut-produce",
+            "bh-foreigner-egypt"
+          ],
+          "reason": true,
+          "text": "守節的時候，你和兒女、僕婢，城裡的利未人，寄居的與孤兒寡婦，都要歡樂。申命記交代原因：神要在你一切的土產上和手裡所辦的事上賜福給你，你就==非常地歡樂==。",
+          "verse": "申16:14-15"
+        },
+        {
+          "badge": "第八日",
+          "cue": "eighth-day",
+          "day": 22,
+          "id": "eighth-day",
+          "notes": [
+            "ct-eighth-day",
+            "gt-dlc-eighth-apart",
+            "kc-same-as-atonement",
+            "bh-transition"
+          ],
+          "offerings": [
+            "民29:36-38"
+          ],
+          "text": "七日過後，第八日還要守聖會，將火祭獻給耶和華。經文說：這是==嚴肅會==，什麼勞碌的工都不可做。",
+          "verse": "利23:36",
+          "words": [
+            "atzeret"
+          ]
+        },
+        {
+          "cue": "echo-roofs",
+          "echoes": [
+            "booth",
+            "eighth-day"
+          ],
+          "id": "neh-booths",
+          "notes": [
+            "ct-neh-scale",
+            "gt-jingdu-never-so",
+            "gt-jingdu-olive",
+            "kc-only-in-land",
+            "bh-neh-unity"
+          ],
+          "text": "宣讀律法的次日，族長、祭司和利未人讀到住棚的條例。百姓就去取樹枝，在==房頂上==、院內、神殿的院內和城門前的寬闊處搭棚。經文說，從約書亞的時候直到這日，以色列人沒有這樣行。他們守節七日，第八日照例有嚴肅會。",
+          "verse": "尼8:13-18"
+        }
+      ],
+      "date": "七月十五日起，共七日",
+      "day": 15,
+      "entries": [
+        "住棚節（利23節期規定）",
+        "住棚節四種植物",
+        "住棚節公牛逐日遞減",
+        "住棚節第八日的嚴肅會",
+        "嚴肅會（a.Tze.ret）",
+        "三大節期"
+      ],
+      "id": "booths",
+      "kind": "feast",
+      "month": 7,
+      "nt": [
+        "約7：38-39 活水的江河"
+      ],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "所羅門在七月獻殿，眾人守節七日又七日；第八日王遣散眾民，他們心中喜樂，各歸各家。",
+          "ref": "王上8:65-66"
+        },
+        {
+          "kind": "kept",
+          "note": "被擄歸回的人照律法書上所寫的守住棚節，按數照例獻每日所當獻的燔祭。",
+          "ref": "拉3:4"
+        },
+        {
+          "kind": "kept",
+          "note": "神藉阿摩司說：我厭惡你們的節期，也不喜悅你們的嚴肅會。",
+          "ref": "摩5:21"
+        },
+        {
+          "kind": "kept",
+          "note": "先知說的是將來：列國剩下的人要年年上耶路撒冷守住棚節；不上來的，他們的地必無雨。",
+          "ref": "亞14:16-19"
+        },
+        {
+          "kind": "word",
+          "note": "分定禁食的日子，宣告嚴肅會，招聚長老和居民到神的殿裡哀求。",
+          "ref": "珥1:14"
+        },
+        {
+          "kind": "word",
+          "note": "耶戶下令為巴力宣告嚴肅會，把拜巴力的人都招進巴力廟。",
+          "ref": "王下10:20-21"
+        }
+      ],
+      "palette": {
+        "accent": "#5f7a2c",
+        "glow": "#f4d98e",
+        "ink": "#22301e",
+        "paper": "#eee5cb"
+      },
+      "passages": [
+        "出23:16",
+        "出34:22",
+        "利23:33-43",
+        "民29:12-38",
+        "申16:13-15",
+        "申31:10-13"
+      ],
+      "scene": "booths-land",
+      "title": "住棚節"
     }
   ],
   "commentary": {
@@ -756,6 +1413,18 @@
       "verse": "申16:3",
       "work": "BibleHub 研經註解"
     },
+    "bh-azazel": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-azazel",
+      "quote": "The term \"scapegoat\" comes from the Hebrew word \"Azazel,\" which has been interpreted in various ways, including as a reference to a demon or a rugged place.",
+      "quoteZh": "「scapegoat」（替罪羊）一詞來自希伯來文「Azazel」，解釋有好幾種，包括指一個鬼魔，或指一處崎嶇之地。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:10",
+      "work": "BibleHub 研經註解"
+    },
     "bh-barley": {
       "book": "利未記",
       "chapter": 23,
@@ -766,6 +1435,30 @@
       "source": "BH",
       "url": "https://biblehub.com/study/leviticus/23.htm",
       "verse": "利23:11",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-cloud": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-cloud",
+      "quote": "The cloud represents God's presence and glory, often associated with divine revelation and guidance (Exodus 13:21-22).",
+      "quoteZh": "雲代表神的同在與榮耀，常和神的啟示與引導連在一起（出13:21-22）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:2",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-confess": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-confess",
+      "quote": "Confession here involves acknowledging specific sins, which underscores the comprehensive nature of atonement.",
+      "quoteZh": "這裡的承認，是把具體的罪說出來，顯出贖罪涵蓋得多完全。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:21",
       "work": "BibleHub 研經註解"
     },
     "bh-counting": {
@@ -828,6 +1521,42 @@
       "verse": "利23:11",
       "work": "BibleHub 研經註解"
     },
+    "bh-foreigner-egypt": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "bh-foreigner-egypt",
+      "quote": "It is a reminder of Israel's own history as foreigners in Egypt and God's command to love the foreigner (Leviticus 19:34).",
+      "quoteZh": "這提醒以色列人自己在埃及作過寄居的，也提醒神吩咐他們要愛寄居的（利19:34）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/16.htm",
+      "verse": "申16:14",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-hezekiah-pray": {
+      "book": "歷代志下",
+      "chapter": 30,
+      "id": "bh-hezekiah-pray",
+      "quote": "His prayer did not excuse disobedience, but sought mercy for those whose hearts had turned sincerely toward God.",
+      "quoteZh": "他的禱告並沒有替違命開脫，是為那些真心轉向神的人求憐憫。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/2_chronicles/30.htm",
+      "verse": "代下30:18",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-humble": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-humble",
+      "quote": "This phrase refers to the practice of afflicting one's soul, traditionally understood as fasting and engaging in self-denial.",
+      "quoteZh": "這句話是指刻苦己心的做法，傳統上理解為禁食和克己。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:29",
+      "work": "BibleHub 研經註解"
+    },
     "bh-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -838,6 +1567,30 @@
       "source": "BH",
       "url": "https://biblehub.com/study/exodus/12.htm",
       "verse": "出12:22",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-incense-shield": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-incense-shield",
+      "quote": "The cloud of incense serves as a protective barrier, shielding the high priest from the direct presence of God, which dwells above the mercy seat.",
+      "quoteZh": "香的煙雲成了一道保護的屏障，使大祭司不直接面對住在施恩座上方的神的同在。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:13",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-josh-provision": {
+      "book": "約書亞記",
+      "chapter": 5,
+      "id": "bh-josh-provision",
+      "quote": "This change marks a shift from God’s miraculous provision to His provision through the land He promised.",
+      "quoteZh": "這個轉變，標誌著神的供應從神蹟般的方式，轉為藉著祂所應許的那地。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/joshua/5.htm",
+      "verse": "書5:11",
       "work": "BibleHub 研經註解"
     },
     "bh-journey": {
@@ -874,6 +1627,42 @@
       "source": "BH",
       "url": "https://biblehub.com/study/leviticus/23.htm",
       "verse": "利23:17",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-linen-simple": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-linen-simple",
+      "quote": "The tunic's simplicity contrasts with the usual ornate garments of the high priest, highlighting humility and the solemnity of the occasion.",
+      "quoteZh": "內袍的簡樸，和大祭司平日華美的衣服成了對比，顯出謙卑和這日子的莊嚴。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:4",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-neh-holy": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "bh-neh-holy",
+      "quote": "The gathering occurred on the first day of the seventh month, a sacred day appointed for trumpet blasts and holy rest (Leviticus 23:23–25).",
+      "quoteZh": "這次聚集在七月初一，是經上定為吹角、聖安息的日子（利23:23-25）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/nehemiah/8.htm",
+      "verse": "尼8:9",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-neh-unity": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "bh-neh-unity",
+      "quote": "Israel had observed the feast at other times, but not with the same comprehensive, wholehearted unity displayed in Jerusalem under Ezra and Nehemiah.",
+      "quoteZh": "以色列在別的時候也守過這節，卻不像以斯拉、尼希米時在耶路撒冷那樣全體一心。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/nehemiah/8.htm",
+      "verse": "尼8:17",
       "work": "BibleHub 研經註解"
     },
     "bh-newmoon": {
@@ -924,6 +1713,54 @@
       "verse": "民9:7",
       "work": "BibleHub 研經註解"
     },
+    "bh-ruth-law": {
+      "book": "路得記",
+      "chapter": 2,
+      "id": "bh-ruth-law",
+      "quote": "Israel’s law commanded landowners to leave portions of the harvest for the poor, the widow, and the foreigner (Leviticus 19:9–10; Deuteronomy 24:19–22).",
+      "quoteZh": "以色列的律法吩咐地主，要把一部分收成留給窮人、寡婦和寄居的（利19:9-10；申24:19-22）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/ruth/2.htm",
+      "verse": "得2:23",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-shofar": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "bh-shofar",
+      "quote": "The trumpet blasts, or shofar, serve as a call to worship and a reminder of God's presence and sovereignty.",
+      "quoteZh": "吹角（shofar）是召人敬拜的信號，也提醒人神的同在與主權。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/23.htm",
+      "verse": "利23:24",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-solitary": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "bh-solitary",
+      "quote": "The solitary place, or wilderness, represents a realm outside the camp, symbolizing separation from the community and from God’s presence.",
+      "quoteZh": "無人之地，也就是曠野，代表營外的範圍，象徵與群體、與神的同在隔絕。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm",
+      "verse": "利16:22",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-transition": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "bh-transition",
+      "quote": "This day signifies a transition from the festival period to regular life, emphasizing renewal and dedication to God.",
+      "quoteZh": "這一天標誌著從節期回到日常生活，強調更新和向神委身。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/29.htm",
+      "verse": "民29:35",
+      "work": "BibleHub 研經註解"
+    },
     "bh-vigil": {
       "book": "出埃及記",
       "chapter": 12,
@@ -971,6 +1808,17 @@
       "verse": "出12:2",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-afflict": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "ct-afflict",
+      "quote": "『七月初十日』指大贖罪日；『刻苦己心』指禁食、懺悔及禱告。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm",
+      "verse": "利16:29",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-affliction": {
       "book": "申命記",
       "chapter": 16,
@@ -992,6 +1840,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
       "verse": "申16:11",
       "work": "黃迦勒《申命記註解》"
+    },
+    "ct-azazel-two-views": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "ct-azazel-two-views",
+      "quote": "至於阿撒瀉勒是誰，有兩種推理：(1)既然前面的一隻歸給神，另一隻應當歸給那與神相對的專有名詞，就是魔鬼撒但，由魔鬼承擔罪責，猶太聖經學者同意此種說法；(2)阿撒瀉勒的原文字意是完全除去，指道成肉身的耶穌基督，祂被釘在十字架上，承擔我們的罪刑，完全除去我們的罪。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm",
+      "verse": "利16:8",
+      "work": "黃迦勒《利未記註解》"
     },
     "ct-bake": {
       "book": "出埃及記",
@@ -1015,6 +1874,17 @@
       "verse": "出12:8",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-branches-booth": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-branches-booth",
+      "quote": "枝子、枝條並柳枝是為搭棚，果子是為表示美地出產的豐盈；歡樂乃是收藏產物(參39節)後喜樂之情的自然流露。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:40",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-corners": {
       "book": "利未記",
       "chapter": 23,
@@ -1037,6 +1907,17 @@
       "verse": "出12:23",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-deut-produce": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "ct-deut-produce",
+      "quote": "『一切的土產』指五穀、酒、油、牲畜等；『非常地歡樂』指極度地、確實地歡喜快樂。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
+      "verse": "申16:15",
+      "work": "黃迦勒《申命記註解》"
+    },
     "ct-dough": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1048,6 +1929,28 @@
       "verse": "出12:34",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-eighth-day": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-eighth-day",
+      "quote": "『嚴肅會』指住棚節後次日，七月二十二日，繼續慶祝一天，稱為嚴肅會。這日視同安息日，不可作工，百姓要到會幕前聚集。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:36",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-hezekiah-heart": {
+      "book": "歷代志下",
+      "chapter": 30,
+      "id": "ct-hezekiah-heart",
+      "quote": "『凡專心尋求神』表示神看重人的內心過於外面的禮儀",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14CT30.htm",
+      "verse": "代下30:18",
+      "work": "黃迦勒《歷代志下註解》"
+    },
     "ct-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1058,6 +1961,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
       "verse": "出12:22",
       "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-josh-produce": {
+      "book": "約書亞記",
+      "chapter": 5,
+      "id": "ct-josh-produce",
+      "quote": "『逾越節的次日』即指無酵節第一日；『那地的出產』即指迦南地生長的穀物。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT05.htm",
+      "verse": "書5:11",
+      "work": "黃迦勒《約書亞記註解》"
     },
     "ct-labor": {
       "book": "利未記",
@@ -1092,6 +2006,39 @@
       "verse": "利23:17",
       "work": "黃迦勒《利未記註解》"
     },
+    "ct-most-offerings": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "ct-most-offerings",
+      "quote": "住棚節中所獻的祭牲，是全年所有的節期中最多的，其中公牛犢從第一日的十三隻，逐日遞減一隻",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT29.htm",
+      "verse": "民29:13",
+      "work": "黃迦勒《民數記註解》"
+    },
+    "ct-neh-holy-day": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "ct-neh-holy-day",
+      "quote": "當日即七月初一日(參2節)，乃是神在律法書中所頒定的吹角節，又是安息日(參利二十三24)，故是聖日。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT08.htm",
+      "verse": "尼8:9",
+      "work": "黃迦勒《尼希米記註解》"
+    },
+    "ct-neh-scale": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "ct-neh-scale",
+      "quote": "本句並不表示以色列人從未守過住棚節(參拉三4)，乃是說他們從前沒有像今日這樣大規模的守住棚節",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT08.htm",
+      "verse": "尼8:17",
+      "work": "黃迦勒《尼希米記註解》"
+    },
     "ct-newmoon": {
       "book": "民數記",
       "chapter": 10,
@@ -1125,6 +2072,17 @@
       "verse": "利23:10",
       "work": "黃迦勒《利未記註解》"
     },
+    "ct-once-a-year": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "ct-once-a-year",
+      "quote": "唯獨一年一度的大贖罪日(參29~31節)，才容許大祭司進到施恩座前，為以色列全會眾贖罪(參32~34節)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm",
+      "verse": "利16:2",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-postpone": {
       "book": "民數記",
       "chapter": 9,
@@ -1146,6 +2104,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm",
       "verse": "申16:12",
       "work": "黃迦勒《申命記註解》"
+    },
+    "ct-ruth-season": {
+      "book": "路得記",
+      "chapter": 2,
+      "id": "ct-ruth-season",
+      "quote": "收割季節開始於收割大麥的時候(撒下廿一9)，整個收割季節持續七個星期，直至七七節(利廿三15~21；申十六9~12)，收割完小麥。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/08Ruth/08CT02.htm",
+      "verse": "得2:23",
+      "work": "黃迦勒《路得記註解》"
     },
     "ct-sabbath": {
       "book": "利未記",
@@ -1169,6 +2138,18 @@
       "verse": "民9:6",
       "work": "黃迦勒《民數記註解》"
     },
+    "ct-sprinkle-once-seven": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "ct-sprinkle-once-seven",
+      "paraphrase": "黃迦勒也說，彈在施恩座東面的那一下，是朝著施恩座只彈一次。",
+      "quote": "『施恩座的前面』指施恩座前面的地上，要彈七次。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm",
+      "verse": "利16:14",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-threshold": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1179,6 +2160,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
       "verse": "出12:7",
       "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-trumpet-gather": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "ct-trumpet-gather",
+      "quote": "吹角的用意是宣告喜樂的消息，號召四散的以色列人聚集，迎接彌賽亞的來臨(亦即基督再臨)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT23.htm",
+      "verse": "利23:24",
+      "work": "黃迦勒《利未記註解》"
     },
     "ct-vigil": {
       "book": "出埃及記",
@@ -1224,6 +2216,17 @@
       "verse": "出13:7",
       "work": "黃迦勒《出埃及記註解》"
     },
+    "ct-wilderness-alone": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "ct-wilderness-alone",
+      "quote": "『曠野』即『無人之地』；本節意指讓那隻活羊獨自擔當以色列人的一切罪愆。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm",
+      "verse": "利16:22",
+      "work": "黃迦勒《利未記註解》"
+    },
     "gt-bg-abib": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1233,6 +2236,39 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
       "verse": "出12:2",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-azazel-name": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-bg-azazel-name",
+      "quote": "第8節說一隻羊「歸與耶和華」，另一隻「歸與阿撒瀉勒」，所以最一致的作法，是將「阿撒瀉勒」解釋成專有名詞，大概是個鬼魔的名字。這是早期猶太釋經學者的理解，偽經以諾書（主前二世紀）就是例證。這羊不是「獻」給阿撒瀉勒（與十七7相合），而是「放」給阿撒瀉勒（26節）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:8",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-booth-wilderness": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-booth-wilderness",
+      "quote": "以色列人必須在住棚節的七天中築棚居住，來紀念曠野的生涯。這些臨時住處的另一個實際應用，是為節期結束分派收穫之前看守莊稼的工人，提供棲息的所在。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:42-43",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-decrease": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "gt-bg-decrease",
+      "quote": "所獻公牛的數目在節期中每日遞減。理由可能是反映時間的過去，或免得國家最貴重的牲口過度損耗。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT29.htm",
+      "verse": "民29:13",
       "work": "《舊約聖經背景註釋》"
     },
     "gt-bg-dough": {
@@ -1268,6 +2304,28 @@
       "verse": "利23:11",
       "work": "《舊約聖經背景註釋》"
     },
+    "gt-bg-linen": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-bg-linen",
+      "quote": "他在此並沒有穿上全套禮服，只是穿著簡單的細麻布衣裳，以表謙卑。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:4",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-north": {
+      "book": "歷代志下",
+      "chapter": 30,
+      "id": "gt-bg-north",
+      "quote": "但律法亦有規定(民九6~13)，容許當日不潔或遠行的人，在二月補守。希西家延期舉行慶典，使北國的人可以出席。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14GT30.htm",
+      "verse": "代下30:2-3",
+      "work": "《舊約聖經背景注釋》"
+    },
     "gt-bg-not-altar": {
       "book": "利未記",
       "chapter": 23,
@@ -1289,6 +2347,28 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
       "verse": "出12:11",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-purpose": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-bg-purpose",
+      "quote": "一年一度行這儀式的用意，則是摒除百姓的罪。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:6-10",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-ram-horn": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-ram-horn",
+      "quote": "七月（以色列曆法中至聖的一個月）的第一日要以吹公綿羊的角（shofar）為記",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:24",
       "work": "《舊約聖經背景註釋》"
     },
     "gt-bg-release": {
@@ -1313,6 +2393,17 @@
       "verse": "民9:1",
       "work": "《舊約聖經背景註釋》"
     },
+    "gt-bg-species": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-bg-species",
+      "quote": "經文指示以色列人慶祝這節，要用果子（柑橘屬）與棕樹、柳樹的枝葉裝飾所築的棚，來代表土地的豐盈和茂盛。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:40",
+      "work": "《舊約聖經背景註釋》"
+    },
     "gt-bg-three": {
       "book": "利未記",
       "chapter": 23,
@@ -1334,6 +2425,50 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
       "verse": "利23:19",
       "work": "《舊約聖經背景註釋》"
+    },
+    "gt-chuanzhu-autumn": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "gt-chuanzhu-autumn",
+      "quote": "這是一個秋天的節，又名收藏節（13），乃是在收割葡萄和橄欖之後，表示一年農事的結束。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT16.htm",
+      "verse": "申16:13",
+      "work": "《申命記串珠聖經註釋》"
+    },
+    "gt-chuanzhu-azazel-remove": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-chuanzhu-azazel-remove",
+      "quote": "「阿撒瀉勒」：此字的字根是「移去」，與贖罪祭所代表的挪移罪咎有密切關係。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:8",
+      "work": "《串珠聖經註釋》"
+    },
+    "gt-chuanzhu-beyond-law": {
+      "book": "路得記",
+      "chapter": 2,
+      "id": "gt-chuanzhu-beyond-law",
+      "quote": "按摩西律法，拾麥穗者要等收割的人割了禾稼、打了捆，才可以在田間拾取剩下或遺留的麥穗，不能從禾捆中撿取。波阿斯囑咐僕人待路得之法實在遠超過律法的要求。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/08Ruth/08GT02.htm",
+      "verse": "得2:15-16",
+      "work": "《串珠聖經注釋》"
+    },
+    "gt-chuanzhu-josh-grain": {
+      "book": "約書亞記",
+      "chapter": 5,
+      "id": "gt-chuanzhu-josh-grain",
+      "quote": "「烘的榖」：如取自初熟的禾稼，須首先向神獻上一捆，另獻上燔祭、素祭和奠祭（見利23:9-14）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT05.htm",
+      "verse": "書5:11",
+      "work": "《串珠聖經注釋》"
     },
     "gt-chuanzhu-newmoon": {
       "book": "民數記",
@@ -1357,6 +2492,28 @@
       "verse": "民9:10",
       "work": "《民數記串珠聖經註釋》"
     },
+    "gt-chuanzhu-no-return": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-chuanzhu-no-return",
+      "quote": "「帶到無人之地」：叫羊永不能自己轉回，也不會被人尋見帶回來。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:22",
+      "work": "《串珠聖經註釋》"
+    },
+    "gt-chuanzhu-not-silver": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-chuanzhu-not-silver",
+      "quote": "按猶太人的遺傳，此時所用的角並非民10:2-10提及的銀號，而是公羊的角，這角只在特別嚴肅的場合中才使用",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:24",
+      "work": "《串珠聖經註釋》"
+    },
     "gt-chuanzhu-poor": {
       "book": "利未記",
       "chapter": 23,
@@ -1366,6 +2523,28 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
       "verse": "利23:22",
+      "work": "《串珠聖經註釋》"
+    },
+    "gt-chuanzhu-rejoice": {
+      "book": "申命記",
+      "chapter": 16,
+      "id": "gt-chuanzhu-rejoice",
+      "quote": "「都要歡樂」：這是守住棚節的特色（12:18）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT16.htm",
+      "verse": "申16:14",
+      "work": "《申命記串珠聖經註釋》"
+    },
+    "gt-chuanzhu-smoke": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-chuanzhu-smoke",
+      "quote": "用意是避免大祭司注視神聖潔的顯現，也有避免神忿怒臨到之意（參民16:46-49）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:13",
       "work": "《串珠聖經註釋》"
     },
     "gt-dlc-corners": {
@@ -1379,6 +2558,28 @@
       "verse": "利23:22",
       "work": "丁良才《利未記註釋》"
     },
+    "gt-dlc-eighth-apart": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-eighth-apart",
+      "paraphrase": "丁良才說，第八日的嚴肅會雖然和住棚節相連，卻在七日的節期以外，例如第八天所獻的祭和前七天不同；但因為它和住棚節的七天相連，有時也稱為住棚節的末日。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:36",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-hold-or-build": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-hold-or-build",
+      "paraphrase": "丁良才記下兩派的分歧：撒都該人說，這些樹枝和果子是用來支搭、妝飾棚子的；法利賽人說，第42節才講搭棚，這一節是要人把四種樹枝紮成一束拿在手中，又拿著香櫞，在耶和華面前歡樂。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:40",
+      "work": "丁良才《利未記註釋》"
+    },
     "gt-dlc-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1389,6 +2590,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
       "verse": "出12:22",
       "work": "丁良才《出埃及記註釋》"
+    },
+    "gt-dlc-ingathering": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-ingathering",
+      "quote": "本句是指著秋天所收成的出產說的，因此神也解這節期為收藏節（出二十三16，三十四22）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:39",
+      "work": "丁良才《利未記註釋》"
     },
     "gt-dlc-newmoon": {
       "book": "民數記",
@@ -1445,6 +2657,17 @@
       "verse": "利23:10",
       "work": "丁良才《利未記註釋》"
     },
+    "gt-dlc-one-bull": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "gt-dlc-one-bull",
+      "quote": "在大贖罪日，也是一隻（8）。在月朔（二十八11），無酵節（二十八17），卻是兩隻。在吹角節所獻的，和大贖罪日（8），並住棚節第八日（36）所獻一樣。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT29.htm",
+      "verse": "民29:2",
+      "work": "丁良才《民數記註釋》"
+    },
     "gt-dlc-order": {
       "book": "利未記",
       "chapter": 23,
@@ -1454,6 +2677,17 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
       "verse": "利23:18-19",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-repeat-newmoon": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-repeat-newmoon",
+      "quote": "這樣，吹角節的特別祭是重複月朔的祭，不過比月朔祭少獻一隻公牛。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:25",
       "work": "丁良才《利未記註釋》"
     },
     "gt-dlc-sabbath": {
@@ -1478,6 +2712,28 @@
       "verse": "利23:6",
       "work": "丁良才《利未記註釋》"
     },
+    "gt-dlc-seventy": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "gt-dlc-seventy",
+      "quote": "每天減去一隻，到七天有七隻，共有七十只。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT29.htm",
+      "verse": "民29:13",
+      "work": "丁良才《民數記註釋》"
+    },
+    "gt-dlc-tent-not-booth": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-dlc-tent-not-booth",
+      "paraphrase": "丁良才說，聖經講以色列人在曠野的住處，除了這一節以外都用「帳幕」，沒有用過「棚」字；帳幕和棚都是暫時居住的地方，所以用住棚節的棚來記念曠野的帳幕也很合適。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:43",
+      "work": "丁良才《利未記註釋》"
+    },
     "gt-dlc-tradition": {
       "book": "民數記",
       "chapter": 9,
@@ -1489,6 +2745,28 @@
       "verse": "民9:11",
       "work": "丁良才《民數記註釋》"
     },
+    "gt-jingdu-azazel-three": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-jingdu-azazel-three",
+      "paraphrase": "《聖經精讀本》列出三種看法：一是「奉差遣的山羊」；二是被逐的邪靈的名字，把山羊放到曠野，象徵把罪惡歸還給罪惡的禍首；三是山羊被逐以後所居住的場所。並說各說一致的地方，是這隻山羊背負以色列的罪遠離他們。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:8",
+      "work": "《聖經精讀本──利未記註解》"
+    },
+    "gt-jingdu-hands": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-jingdu-hands",
+      "quote": "意為把大祭司和所有以色列百姓的罪轉移給山羊(出29:10)。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:21",
+      "work": "《聖經精讀本──利未記註解》"
+    },
     "gt-jingdu-leaven": {
       "book": "出埃及記",
       "chapter": 13,
@@ -1499,6 +2777,28 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT13.htm",
       "verse": "出13:7",
       "work": "《聖經精讀本──出埃及記註解》"
+    },
+    "gt-jingdu-never-so": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "gt-jingdu-never-so",
+      "quote": "不是說沒有住棚節慶祝活動,而是指以色列從來沒有如此合而為一地守過住棚節(王下23:22;代下35:18)。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16GT08.htm",
+      "verse": "尼8:17",
+      "work": "《聖經精讀本》"
+    },
+    "gt-jingdu-olive": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "gt-jingdu-olive",
+      "quote": "利23:40中,沒有把橄欖樹、芭樂、野橄欖樹當作帳棚的材料。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16GT08.htm",
+      "verse": "尼8:15",
+      "work": "《聖經精讀本》"
     },
     "gt-jingdu-silence": {
       "book": "出埃及記",
@@ -1533,6 +2833,39 @@
       "verse": "利23:15-16",
       "work": "《聖經精讀本──利未記註解》"
     },
+    "gt-leishi-altar": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-leishi-altar",
+      "quote": "至聖所和獻燔祭的“壇”也要潔淨，因為會幕是在有罪的百姓當中（比較16節）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:16",
+      "work": "《利未記雷氏研讀本》"
+    },
+    "gt-leishi-fast": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-leishi-fast",
+      "quote": "“刻苦己心”包括禁食。贖罪日是惟一要求禁食的日子，但後期又加上其它的日子。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:29-31",
+      "work": "《利未記雷氏研讀本》"
+    },
+    "gt-leishi-weep": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "gt-leishi-weep",
+      "quote": "眾民因堅信自己有罪而“哭泣”，這反應與贖罪日（在該月的初十日）配合，但與吹角節和慶祝城牆重建完成的慶典不吻合。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16GT08.htm",
+      "verse": "尼8:9",
+      "work": "《雷氏研讀本》"
+    },
     "gt-qidao-bake": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1555,6 +2888,28 @@
       "verse": "利23:10",
       "work": "《啟導本聖經利未記註釋》"
     },
+    "gt-qidao-glean-law": {
+      "book": "路得記",
+      "chapter": 2,
+      "id": "gt-qidao-glean-law",
+      "quote": "收割麥子不可割盡田的四角（利十九9），不可拾回已掉在地上的（利二十三22），也不可回去取回已掉在田裡忘記拿走的禾捆（申二十四19）。這些都得留下來給貧苦人拾取。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/08Ruth/08GT02.htm",
+      "verse": "得2:2",
+      "work": "《啟導本聖經路得記註釋》"
+    },
+    "gt-qidao-month": {
+      "book": "歷代志下",
+      "chapter": 30,
+      "id": "gt-qidao-month",
+      "quote": "延遲一個月才守逾越節的辦法，在摩西時代已有過(民九10~11)。現在把適用於個人的規例用於全會眾，不僅祭司有時間自潔(3節)，全以色列民也有時間來耶路撒冷(3，13節)。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14GT30.htm",
+      "verse": "代下30:2-3",
+      "work": "《啟導本聖經註釋》"
+    },
     "gt-qidao-order": {
       "book": "利未記",
       "chapter": 23,
@@ -1564,6 +2919,39 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
       "verse": "利23:6",
+      "work": "《啟導本聖經利未記註釋》"
+    },
+    "gt-qidao-share": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "gt-qidao-share",
+      "quote": "尼希米訓勉百姓，樂享節日筵席的同時，應把食物分給窮苦人，一同歡樂。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16GT08.htm",
+      "verse": "尼8:10",
+      "work": "《啟導本聖經》"
+    },
+    "gt-qidao-smoke": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "gt-qidao-smoke",
+      "quote": "香的煙雲遮掩法櫃，好讓大祭司進到至聖所的施恩座前（2節），見不到神的面，以免死亡。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
+      "verse": "利16:13",
+      "work": "《啟導本聖經利未記註釋》"
+    },
+    "gt-qidao-trumpet-day": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "gt-qidao-trumpet-day",
+      "quote": "吹角節在宗教曆的七月一日舉行，是“聖安息日”（24節），要吹角通知百姓會聚（民十10），當眾宣讀摩西五經，是一個歡樂的日子。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT23.htm",
+      "verse": "利23:24",
       "work": "《啟導本聖經利未記註釋》"
     },
     "gt-qidao-vigil": {
@@ -1622,6 +3010,18 @@
       "verse": "出12:2",
       "work": "KingComments"
     },
+    "kc-added-offerings": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "kc-added-offerings",
+      "quote": "On the Feast of blowing of trumpets on the first day (verses 1-6) and on the day of atonement on the tenth day (verses 7-11) are offered as offerings added to the other offerings to be made on that day",
+      "quoteZh": "初一的吹角節（1-6節）和初十的贖罪日（7-11節）所獻的，是加在當天其他該獻的祭以外的。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/29",
+      "verse": "民29:1-11",
+      "work": "KingComments"
+    },
     "kc-barley-wheat": {
       "book": "利未記",
       "chapter": 23,
@@ -1644,6 +3044,30 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
       "verse": "利23:14",
+      "work": "KingComments"
+    },
+    "kc-blood-sanctuary": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-blood-sanctuary",
+      "quote": "Blood is applied to the sanctuary, to the objects which are therein, and to the tent of meeting and the altar.",
+      "quoteZh": "血要用在聖所、聖所裡的器物，以及會幕和壇上。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:14",
+      "work": "KingComments"
+    },
+    "kc-booths-made": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-booths-made",
+      "quote": "From the different fruits and branches of trees, booths have to be made.",
+      "quoteZh": "要用各樣的果子和樹枝搭成棚。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:40",
       "work": "KingComments"
     },
     "kc-children": {
@@ -1695,6 +3119,42 @@
       "verse": "出12:39",
       "work": "KingComments"
     },
+    "kc-harvest-in": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-harvest-in",
+      "quote": "The entire harvest of the land has been gathered in.",
+      "quoteZh": "地裡的收成全都收藏了。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:39",
+      "work": "KingComments"
+    },
+    "kc-hezekiah-num9": {
+      "book": "歷代志下",
+      "chapter": 30,
+      "id": "kc-hezekiah-num9",
+      "quote": "But Hezekiah knows the provision that the LORD has made to celebrate it on the fourteenth day of the second month in case it is not possible to celebrate it at the appointed time (Num 9:10-11).",
+      "quoteZh": "希西家知道耶和華預備的辦法：如果不能在指定的日子守，可以在二月十四日守（民9:10-11）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/2Chr/30",
+      "verse": "代下30:2",
+      "work": "KingComments"
+    },
+    "kc-humble-before-joy": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-humble-before-joy",
+      "quote": "The joy of the Feast of Booths – the next and concluding feast – must necessarily be preceded by humiliation.",
+      "quoteZh": "住棚節是接下來、也是最後的一個節期；它的喜樂之前，必須先有謙卑自省。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:27",
+      "work": "KingComments"
+    },
     "kc-hyssop": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1705,6 +3165,18 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
       "verse": "出12:22",
+      "work": "KingComments"
+    },
+    "kc-identify": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-identify",
+      "quote": "Aaron identifies himself with the live goat – laying on hands is identification.",
+      "quoteZh": "亞倫把自己和這隻活羊連在一起；按手就是認同。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:21",
       "work": "KingComments"
     },
     "kc-in-land": {
@@ -1719,6 +3191,54 @@
       "verse": "利23:10",
       "work": "KingComments"
     },
+    "kc-incense": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-incense",
+      "quote": "The cloud of incense fills the sanctuary and envelops him.",
+      "quoteZh": "香的煙雲充滿聖所，把他包圍起來。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:12-13",
+      "work": "KingComments"
+    },
+    "kc-josh-manna": {
+      "book": "約書亞記",
+      "chapter": 5,
+      "id": "kc-josh-manna",
+      "quote": "God gives in His providence the manna for as long as it is necessary.",
+      "quoteZh": "神照著祂的護理賜下嗎哪，需要多久，就賜多久。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Jos/5",
+      "verse": "書5:12",
+      "work": "KingComments"
+    },
+    "kc-linen": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-linen",
+      "quote": "When entering the holy place Aaron does not wear his official garments for glory and for beauty with which he represents the people before God. He wears simple white linen clothes.",
+      "quoteZh": "亞倫進聖所時，不穿他在神面前代表百姓的那套榮耀華美的禮服；他穿的是簡單的白色細麻衣服。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:4",
+      "work": "KingComments"
+    },
+    "kc-neh-word-first": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "kc-neh-word-first",
+      "quote": "It is the first day of the seventh month. On that day the Feast of blowing the trumpet should be celebrated. Yet they do not come together for that.",
+      "quoteZh": "這天是七月初一，本該守吹角節；他們卻不是為了守節聚集。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Neh/8",
+      "verse": "尼8:2",
+      "work": "KingComments"
+    },
     "kc-not-know": {
       "book": "民數記",
       "chapter": 9,
@@ -1729,6 +3249,18 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Num/9",
       "verse": "民9:8",
+      "work": "KingComments"
+    },
+    "kc-not-without-blood": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-not-without-blood",
+      "quote": "On that one day he may enter the holy place. But not without blood, that he must offer for himself and for the people (Heb 9:7).",
+      "quoteZh": "只有那一天他可以進入聖所，但必須帶著血，為自己和百姓獻上（來9:7）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:2",
       "work": "KingComments"
     },
     "kc-nowhere": {
@@ -1743,6 +3275,18 @@
       "verse": "出13:7",
       "work": "KingComments"
     },
+    "kc-num10": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-num10",
+      "quote": "The starting signal is given by the trumpet (Num 10:3,10; Isa 27:13).",
+      "quoteZh": "開始的信號由號聲發出（民10:3、10；賽27:13）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:24",
+      "work": "KingComments"
+    },
     "kc-only": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1755,6 +3299,18 @@
       "verse": "出12:1-2",
       "work": "KingComments"
     },
+    "kc-only-in-land": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "kc-only-in-land",
+      "quote": "Unlike the Passover, which can be celebrated in the wilderness, the Feast of Booths cannot be celebrated in the wilderness, but only in the land.",
+      "quoteZh": "逾越節在曠野也能守；住棚節卻不能在曠野守，只能在那地守。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Neh/8",
+      "verse": "尼8:14",
+      "work": "KingComments"
+    },
     "kc-passover-word": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1765,6 +3321,30 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
       "verse": "出12:13",
+      "work": "KingComments"
+    },
+    "kc-ruth-grace": {
+      "book": "路得記",
+      "chapter": 2,
+      "id": "kc-ruth-grace",
+      "quote": "Ruth will not have known much about God’s gracious provisions in a case like hers (Lev 23:22; 19:9; Deu 24:19).",
+      "quoteZh": "路得大概不太知道，神為這種處境的人定下了恩典的條例（利23:22；19:9；申24:19）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Rth/2",
+      "verse": "得2:2",
+      "work": "KingComments"
+    },
+    "kc-same-as-atonement": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "kc-same-as-atonement",
+      "quote": "On the eighth day the same offerings are brought as on the day of atonement.",
+      "quoteZh": "第八日所獻的祭，和贖罪日所獻的一樣。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/29",
+      "verse": "民29:36",
       "work": "KingComments"
     },
     "kc-same-offerings": {
@@ -1791,6 +3371,18 @@
       "verse": "出12:15-20",
       "work": "KingComments"
     },
+    "kc-seven-bulls": {
+      "book": "民數記",
+      "chapter": 29,
+      "id": "kc-seven-bulls",
+      "quote": "But the diminishing goes no further than until seven bulls on the seventh day (verse 32).",
+      "quoteZh": "不過遞減到第七日的七隻公牛就停了（32節）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/29",
+      "verse": "民29:32",
+      "work": "KingComments"
+    },
     "kc-sin-offering": {
       "book": "利未記",
       "chapter": 23,
@@ -1801,6 +3393,30 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
       "verse": "利23:19",
+      "work": "KingComments"
+    },
+    "kc-solitary-land": {
+      "book": "利未記",
+      "chapter": 16,
+      "id": "kc-solitary-land",
+      "quote": "Where sin is, there is no dwelling place for God, neither for people who are reconciled to God.",
+      "quoteZh": "罪在哪裡，那裡就沒有神的居所，也沒有與神和好之人的居所。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16",
+      "verse": "利16:22",
+      "work": "KingComments"
+    },
+    "kc-tents-not-houses": {
+      "book": "尼希米記",
+      "chapter": 8,
+      "id": "kc-tents-not-houses",
+      "quote": "The LORD wants them to celebrate this feast to remind them of the time when He led them through the wilderness, where they lived in tents and not in houses.",
+      "quoteZh": "耶和華要他們守這節，好記起祂帶領他們走過曠野的日子；那時他們住在帳棚裡，沒有房子。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Neh/8",
+      "verse": "尼8:14",
       "work": "KingComments"
     },
     "kc-testimony": {
@@ -1837,6 +3453,18 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Exo/12",
       "verse": "出12:7",
+      "work": "KingComments"
+    },
+    "kc-trumpet-rest": {
+      "book": "利未記",
+      "chapter": 23,
+      "id": "kc-trumpet-rest",
+      "quote": "The day starts with rest, to come to reflection. That is always the start of something new.",
+      "quoteZh": "這一天從安息開始，讓人靜下來省思；新的開始總是這樣起頭。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
+      "verse": "利23:24",
       "work": "KingComments"
     }
   },
@@ -1876,9 +3504,69 @@
       "title": "以本月為正月",
       "type": "主題"
     },
+    "住棚節公牛逐日遞減": {
+      "gist": "住棚節七天裡，只有公牛的數目每天遞減，其餘祭牲每天一樣。",
+      "title": "住棚節公牛逐日遞減",
+      "type": "主題"
+    },
+    "住棚節四種植物": {
+      "gist": "利23:40 的果子、棕枝、茂密樹枝、柳枝：拿來搭棚還是拿在手中，兩說相反。",
+      "title": "住棚節四種植物",
+      "type": "文化"
+    },
+    "住棚節第八日的嚴肅會": {
+      "gist": "七天之後另加的一日；祭牲回到和吹角節、贖罪日一樣的規格。",
+      "title": "住棚節第八日的嚴肅會",
+      "type": "事件"
+    },
+    "住棚節（利23節期規定）": {
+      "gist": "七月十五日起守節七日，百姓住在棚裡；第一日和第八日都是聖安息。",
+      "title": "住棚節（利23節期規定）",
+      "type": "歷史"
+    },
+    "來10：19-20": {
+      "gist": "藉耶穌的血得以坦然進入至聖所；希伯來書說那幔子就是祂的身體。",
+      "title": "來10：19-20",
+      "type": "互文"
+    },
+    "來9：11-12": {
+      "gist": "基督用自己的血只一次進入聖所，對照大祭司每年帶牛羊的血進至聖所。",
+      "title": "來9：11-12",
+      "type": "互文"
+    },
+    "內幔（隔聖所至聖所的幔子）": {
+      "gist": "繡著基路伯的幔子，把聖所和至聖所隔開（出26:31-33）。",
+      "title": "內幔（隔聖所至聖所的幔子）",
+      "type": "主題"
+    },
     "初熟": {
       "gist": "當年最先的收成；和長子、頭生的牲畜一樣，原都屬於神。",
       "title": "初熟",
+      "type": "原文"
+    },
+    "刻苦己心（禁食悔改）": {
+      "gist": "贖罪日百姓要「苦待自己」，什麼工都不可做；各家多理解為禁食悔改。",
+      "title": "刻苦己心（禁食悔改）",
+      "type": "主題"
+    },
+    "吹角的日子（te.ru.'Ah）": {
+      "gist": "民29:1 給七月初一的名稱；原文是「日子」加「大聲呼喊」，沒有樂器名。",
+      "title": "吹角的日子（te.ru.'Ah）",
+      "type": "原文"
+    },
+    "吹角節（七月初一）": {
+      "gist": "七月初一的聖安息日，要吹角作紀念；吹的是銀號還是公羊角，各家說法不同。",
+      "title": "吹角節（七月初一）",
+      "type": "歷史"
+    },
+    "嗎哪": {
+      "gist": "神在曠野四十年間從天降下、供應以色列人的糧食，每天早晨隨露水降下。",
+      "title": "嗎哪",
+      "type": "主題"
+    },
+    "嚴肅會（a.Tze.ret）": {
+      "gist": "第八日「嚴肅會」的原文字，和前面幾次的「聖會」不是同一個詞。",
+      "title": "嚴肅會（a.Tze.ret）",
       "type": "原文"
     },
     "基督預表（逾越節羔羊）": {
@@ -1886,14 +3574,44 @@
       "title": "基督預表（逾越節羔羊）",
       "type": "神學"
     },
+    "大贖罪日（Yom Kippur）條例": {
+      "gist": "七月初十，大祭司一年一次進至聖所為全會眾贖罪，百姓要刻苦己心。",
+      "title": "大贖罪日（Yom Kippur）條例",
+      "type": "歷史"
+    },
+    "希西家守二月逾越節（代下三十）": {
+      "gist": "希西家依照民9:10-11 的補守條例，在二月十四日守逾越節。",
+      "title": "希西家守二月逾越節（代下三十）",
+      "type": "互文"
+    },
+    "彈血於施恩座與壇（大祭司一年一度贖罪禮）": {
+      "gist": "用指頭把公牛和公山羊的血彈在施恩座上、施恩座前和壇上。",
+      "title": "彈血於施恩座與壇（大祭司一年一度贖罪禮）",
+      "type": "主題"
+    },
+    "拈鬮定羊的歸屬": {
+      "gist": "為兩隻公山羊拈鬮：一隻歸耶和華作贖罪祭，一隻活著送到曠野。",
+      "title": "拈鬮定羊的歸屬",
+      "type": "主題"
+    },
     "搖祭": {
       "gist": "把祭物在耶和華面前搖動或舉起呈獻的方法；實際怎麼做，各家說法不一。",
       "title": "搖祭",
       "type": "原文"
     },
+    "搗細香料遮掩施恩座": {
+      "gist": "大祭司在幔子內把搗細的香放在火上，使煙雲遮掩施恩座。",
+      "title": "搗細香料遮掩施恩座",
+      "type": "主題"
+    },
     "新素祭": {
       "gist": "七七節用當年新收成獻給耶和華的素祭。",
       "title": "新素祭",
+      "type": "主題"
+    },
+    "施恩座": {
+      "gist": "約櫃的精金蓋子；原文字根有「遮蓋」的意思，贖罪日要把血彈在上面。",
+      "title": "施恩座",
       "type": "主題"
     },
     "曠野": {
@@ -1941,6 +3659,16 @@
       "title": "第十災（殺長子之災）",
       "type": "歷史"
     },
+    "約7：38-39 活水的江河": {
+      "gist": "耶穌說信祂的人要流出活水的江河，約翰註明這是指聖靈說的。",
+      "title": "約7：38-39 活水的江河",
+      "type": "互文"
+    },
+    "聖安息日（大贖罪日雙重安息）": {
+      "gist": "利16:31 稱贖罪日為「安息的安息日」，原文是兩個安息字疊在一起。",
+      "title": "聖安息日（大贖罪日雙重安息）",
+      "type": "主題"
+    },
     "聖會": {
       "gist": "召集會眾、特為敬拜神而設的聚會，百姓要放下日常的工作。",
       "title": "聖會",
@@ -1951,10 +3679,20 @@
       "title": "聖靈分賜預表五旬節（徒2：1-4）",
       "type": "互文"
     },
+    "至聖所": {
+      "gist": "會幕最內層，只放法櫃；除了大祭司一年一次，沒有人可以進去。",
+      "title": "至聖所",
+      "type": "地點"
+    },
     "苦菜": {
       "gist": "逾越節當夜和羊羔、無酵餅同吃的苦味菜，記念在埃及為奴的苦。",
       "title": "苦菜",
       "type": "原文"
+    },
+    "贖罪日的節期獻祭（民29：7-11）": {
+      "gist": "七月初十在壇上另獻的燔祭和贖罪祭，補上利16 沒寫的部分。",
+      "title": "贖罪日的節期獻祭（民29：7-11）",
+      "type": "互文"
     },
     "逾越節": {
       "gist": "正月十四日黃昏宰羊、塗血、吃羊羔的節期，記念耶和華越過以色列人的家。",
@@ -1971,16 +3709,29 @@
       "title": "銀號",
       "type": "文化"
     },
+    "阿撒瀉勒（Azazel）歸屬之爭": {
+      "gist": "利16「歸與阿撒瀉勒」的那隻羊歸給誰，各家讀法不同，彼此互駁。",
+      "title": "阿撒瀉勒（Azazel）歸屬之爭",
+      "type": "解經爭議"
+    },
     "除酵": {
       "gist": "出23:15「除酵節」的「除酵」，原文字義是「沒放酵」。",
       "title": "除酵",
       "type": "原文"
     }
   },
+  "laterPalette": {
+    "accent": "#8a5a2b",
+    "glow": "#efd9a8",
+    "ink": "#38291a",
+    "paper": "#e2d2ad"
+  },
   "motto": {
     "book": "利未記",
+    "bookNum": 3,
     "chapter": 23,
     "from": 2,
+    "kb": true,
     "lines": [
       {
         "text": "你曉諭以色列人說：耶和華的節期，你們要宣告為聖會的節期。",
@@ -2095,6 +3846,256 @@
         }
       ],
       "ref": "民28:27-30"
+    },
+    "民29:13-16": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 13,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 2,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:13-16"
+    },
+    "民29:17-19": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 12,
+          "role": ""
+        },
+        {
+          "animal": "公綿羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:17-19"
+    },
+    "民29:2-5": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:2-5"
+    },
+    "民29:20-22": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 11,
+          "role": ""
+        },
+        {
+          "animal": "公羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:20-22"
+    },
+    "民29:23-25": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 10,
+          "role": ""
+        },
+        {
+          "animal": "公羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:23-25"
+    },
+    "民29:26-28": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 9,
+          "role": ""
+        },
+        {
+          "animal": "公羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:26-28"
+    },
+    "民29:29-31": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 8,
+          "role": ""
+        },
+        {
+          "animal": "公羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:29-31"
+    },
+    "民29:32-34": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 7,
+          "role": ""
+        },
+        {
+          "animal": "公羊",
+          "count": 2,
+          "role": ""
+        },
+        {
+          "animal": "公羊羔",
+          "count": 14,
+          "role": ""
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:32-34"
+    },
+    "民29:36-38": {
+      "items": [
+        {
+          "animal": "公牛",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:36-38"
+    },
+    "民29:8-11": {
+      "items": [
+        {
+          "animal": "公牛犢",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公綿羊",
+          "count": 1,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公羊羔",
+          "count": 7,
+          "role": "燔祭"
+        },
+        {
+          "animal": "公山羊",
+          "count": 1,
+          "role": "贖罪祭"
+        }
+      ],
+      "ref": "民29:8-11"
     }
   },
   "sources": [
@@ -2157,6 +4158,41 @@
     {
       "book": "出埃及記",
       "chapter": 13,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "利未記",
+      "chapter": 16,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT16.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 16,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 16,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/16"
+    },
+    {
+      "book": "利未記",
+      "chapter": 16,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/16.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 16,
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
@@ -2267,11 +4303,46 @@
       "url": "https://github.com/STEPBible/STEPBible-Data"
     },
     {
+      "book": "民數記",
+      "chapter": 29,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04CT29.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 29,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT29.htm"
+    },
+    {
+      "book": "民數記",
+      "chapter": 29,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Num/29"
+    },
+    {
+      "book": "民數記",
+      "chapter": 29,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/numbers/29.htm"
+    },
+    {
       "book": "申命記",
       "chapter": 16,
       "site": "ccbiblestudy 逐節註解",
       "source": "CT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT16.htm"
+    },
+    {
+      "book": "申命記",
+      "chapter": 16,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05GT16.htm"
     },
     {
       "book": "申命記",
@@ -2286,6 +4357,118 @@
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "約書亞記",
+      "chapter": 5,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT05.htm"
+    },
+    {
+      "book": "約書亞記",
+      "chapter": 5,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT05.htm"
+    },
+    {
+      "book": "約書亞記",
+      "chapter": 5,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Jos/5"
+    },
+    {
+      "book": "約書亞記",
+      "chapter": 5,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/joshua/5.htm"
+    },
+    {
+      "book": "路得記",
+      "chapter": 2,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/08Ruth/08CT02.htm"
+    },
+    {
+      "book": "路得記",
+      "chapter": 2,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/08Ruth/08GT02.htm"
+    },
+    {
+      "book": "路得記",
+      "chapter": 2,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Rth/2"
+    },
+    {
+      "book": "路得記",
+      "chapter": 2,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/ruth/2.htm"
+    },
+    {
+      "book": "歷代志下",
+      "chapter": 30,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14CT30.htm"
+    },
+    {
+      "book": "歷代志下",
+      "chapter": 30,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14GT30.htm"
+    },
+    {
+      "book": "歷代志下",
+      "chapter": 30,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/2Chr/30"
+    },
+    {
+      "book": "歷代志下",
+      "chapter": 30,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/2_chronicles/30.htm"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 8,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT08.htm"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 8,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16GT08.htm"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 8,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Neh/8"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 8,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/nehemiah/8.htm"
     }
   ],
   "step": {
@@ -2302,6 +4485,62 @@
       "ref": "出13:4",
       "strong": "H24",
       "translit": "ha.'a.Viv"
+    },
+    "anah": {
+      "gloss": "you will afflict",
+      "hebrew": "תְּעַנּ֣וּ",
+      "id": "anah",
+      "label": "刻苦",
+      "lexicon": "עָנָה (a.nah): to afflict",
+      "morph": "HVpi2mp",
+      "morphText": "Verb : Piel (Intensive/resultive/transtive, Active) Imperfect (Future/present Indicative/jussive) Second Plural Masculine",
+      "note": "和合本譯作「刻苦」，下一個字是「己心」。STEP 的本節譯義是 you will afflict（你們要刻苦），詞形是 Piel 未完成式，字典義是 to afflict。部分註釋進一步理解為包括禁食：《利未記雷氏研讀本》這樣說，BibleHub 說傳統上理解為禁食和克己。",
+      "position": 9,
+      "ref": "利16:29",
+      "strong": "H6031B",
+      "translit": "te.'a.Nu"
+    },
+    "atzeret": {
+      "gloss": "[is] a solemn assembly",
+      "hebrew": "עֲצֶ֣רֶת",
+      "id": "atzeret",
+      "label": "嚴肅會",
+      "lexicon": "עֲצָרָה (a.tsa.rah): assembly",
+      "morph": "HNcfsa",
+      "morphText": "Noun (Singular Feminine, Absolute)",
+      "note": "和合本譯作「嚴肅會」。STEP 的本節譯義是 a solemn assembly，字典義是 assembly（聚會）。同一個字也出現在珥1:14、珥2:15（禁食的聚會）、摩5:21、王下10:20（為巴力宣告的聚會）。黃迦勒說，第八日的嚴肅會是住棚節後次日再慶祝一天，不可作工，百姓到會幕前聚集。",
+      "position": 15,
+      "ref": "利23:36",
+      "strong": "H6116",
+      "translit": "'a.Tze.ret"
+    },
+    "azazel": {
+      "gloss": "for [the] escape goat",
+      "hebrew": "לַעֲזָאזֵֽל׃",
+      "id": "azazel",
+      "label": "阿撒瀉勒",
+      "lexicon": "עֲזָאזֵל (a.za.zel): Azazel",
+      "morph": "HR/Npt",
+      "morphText": "Preposition + Proper Noun (Title)",
+      "note": "和合本音譯作「阿撒瀉勒」。STEP 把它標為專有名詞，本節譯義是「[the] escape goat」（放走的羊），字典義是 Azazel。這個字指的是什麼，註釋說法不同，請看「四家怎麼說」。",
+      "position": 12,
+      "ref": "利16:8",
+      "strong": "H5799",
+      "translit": "la.'a.za.Zel"
+    },
+    "bad": {
+      "gloss": "linen of",
+      "hebrew": "בַּ֨ד",
+      "id": "bad",
+      "label": "細麻布",
+      "lexicon": "בַּד (bad): linen",
+      "morph": "HNcmsc",
+      "morphText": "Noun (Singular Masculine, Construct)",
+      "note": "和合本譯作「細麻布」。這個字在本節出現四次，內袍、褲子、腰帶、冠冕都用它；STEP 的本節譯義是 linen（細麻）。《舊約聖經背景註釋》說，祭司穿的細麻是從埃及進口的，在當地也是祭司特有的衣料。",
+      "position": 2,
+      "ref": "利16:4",
+      "strong": "H906",
+      "translit": "bad"
     },
     "bein-haarbayim": {
       "gloss": "the two evenings",
@@ -2358,6 +4597,48 @@
       "ref": "出12:22",
       "strong": "H231",
       "translit": "'e.Zov"
+    },
+    "gezerah": {
+      "gloss": "infertile",
+      "hebrew": "גְּזֵרָ֑ה",
+      "id": "gezerah",
+      "label": "無人之地",
+      "lexicon": "גְּזֵרָה (ge.ze.rah): isolation",
+      "morph": "HNcfsa",
+      "morphText": "Noun (Singular Feminine, Absolute)",
+      "note": "和合本的「無人之地」是兩個字：「地」和這個字。STEP 的本節譯義是 infertile（不毛的），字典義是 isolation（隔絕）。黃迦勒把這個字的字義寫作「分離」，並說經文裡的「曠野」就是「無人之地」。",
+      "position": 9,
+      "ref": "利16:22",
+      "strong": "H1509",
+      "translit": "ge.ze.Rah"
+    },
+    "hadar": {
+      "gloss": "splendor",
+      "hebrew": "הָדָר֙",
+      "id": "hadar",
+      "label": "美好",
+      "lexicon": "הָדָר (ha.dar): glory",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "和合本的「美好樹上的果子」是三個字：「果子」「樹」和這個字。STEP 的本節譯義是 splendor，字典義是 glory。經文沒有說是哪一種樹；《舊約聖經背景註釋》說是柑橘屬，丁良才提到法利賽人以為是香櫞。",
+      "position": 7,
+      "ref": "利23:40",
+      "strong": "H1926",
+      "translit": "ha.Dar"
+    },
+    "kapporet": {
+      "gloss": "the atonement cover",
+      "hebrew": "הַכַּפֹּ֜רֶת",
+      "id": "kapporet",
+      "label": "施恩座",
+      "lexicon": "כַּפֹּרֶת (kap.po.ret): mercy seat",
+      "morph": "HTd/Ncfsa",
+      "morphText": "Definite article (Hebrew) + Noun (Singular Feminine, Absolute)",
+      "note": "和合本譯作「施恩座」。STEP 的本節譯義是 atonement cover（贖罪的蓋子），字典義是 mercy seat。這一節出現兩次。黃迦勒說它是約櫃上面的一塊精金做的厚蓋板，原文字根有「遮蓋」的意思。",
+      "position": 19,
+      "ref": "利16:2",
+      "strong": "H3727",
+      "translit": "ha.ka.Po.ret"
     },
     "mashchit": {
       "gloss": "the destroyer",
@@ -2527,6 +4808,20 @@
       "strong": "H8107",
       "translit": "shi.mu.Rim"
     },
+    "sukkah": {
+      "gloss": "in <the> booths",
+      "hebrew": "בַּסֻּכֹּ֥ת",
+      "id": "sukkah",
+      "label": "棚",
+      "lexicon": "סֻכָּה (suk.kah): booth",
+      "morph": "HRd/Ncfpa",
+      "morphText": "Preposition (Definite) + Noun (Plural Feminine, Absolute)",
+      "note": "和合本譯作「棚」。STEP 的字典義是 booth，詞形是陰性複數；利23:34「住棚節」的「棚」也是這個字。丁良才說，聖經講以色列人在曠野的住處，除了這裡以外都用「帳幕」，沒有用過「棚」字。",
+      "position": 1,
+      "ref": "利23:42",
+      "strong": "H5521",
+      "translit": "ba.su.Kot"
+    },
     "tame": {
       "gloss": "unclean",
       "hebrew": "טְמֵאִים֙",
@@ -2540,14 +4835,160 @@
       "ref": "民9:6",
       "strong": "H2931",
       "translit": "te.me.'Im"
+    },
+    "teruah": {
+      "gloss": "a sound of a loud blast",
+      "hebrew": "תְּרוּעָ֖ה",
+      "id": "teruah",
+      "label": "吹角",
+      "lexicon": "תְּרוּעָה (te.ru.ah): shout",
+      "morph": "HNcfsa",
+      "morphText": "Noun (Singular Feminine, Absolute)",
+      "note": "和合本譯作「吹角」。STEP 的本節譯義是「a sound of a loud blast」（響亮的聲音），字典義是「shout」（呼喊）；這一節的原文字裡沒有樂器的名稱，民29:1 的「吹角的日子」也是這個字。後來詩81:3 說在月朔吹角，那裡用的字 STEP 譯為 a ram's horn（公羊角）；民10:10 說月朔和節期吹的是銀號。部分註釋進一步理解為七月初一吹的是公綿羊的角：《舊約聖經背景註釋》這樣說，《串珠聖經註釋》說這是按猶太人的遺傳。",
+      "position": 14,
+      "ref": "利23:24",
+      "strong": "H8643",
+      "translit": "te.ru.'Ah"
     }
   },
   "title": "耶和華的節期",
   "verses": {
+    "亞14:16-19": {
+      "book": "撒迦利亞書",
+      "bookNum": 38,
+      "chapter": 14,
+      "from": 16,
+      "kb": false,
+      "lines": [
+        {
+          "text": "所有來攻擊耶路撒冷列國中剩下的人，必年年上來敬拜大君王─萬軍之耶和華，並守住棚節。",
+          "v": 16
+        },
+        {
+          "text": "地上萬族中，凡不上耶路撒冷敬拜大君王─萬軍之耶和華的，必無雨降在他們的地上。",
+          "v": 17
+        },
+        {
+          "text": "埃及族若不上來，雨也不降在他們的地上；凡不上來守住棚節的列國人，耶和華也必用這災攻擊他們。",
+          "v": 18
+        },
+        {
+          "text": "這就是埃及的刑罰和那不上來守住棚節之列國的刑罰。",
+          "v": 19
+        }
+      ],
+      "ref": "亞14:16-19",
+      "to": 19
+    },
+    "代下30:1-3": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 30,
+      "from": 1,
+      "kb": false,
+      "lines": [
+        {
+          "text": "希西家差遣人去見以色列和猶大眾人，又寫信給以法蓮和瑪拿西人，叫他們到耶路撒冷耶和華的殿，向耶和華─以色列的神守逾越節；",
+          "v": 1
+        },
+        {
+          "text": "因為王和眾首領，並耶路撒冷全會眾已經商議，要在二月內守逾越節。",
+          "v": 2
+        },
+        {
+          "text": "正月【原文作那時】間他們不能守；因為自潔的祭司尚不敷用，百姓也沒有聚集在耶路撒冷；",
+          "v": 3
+        }
+      ],
+      "ref": "代下30:1-3",
+      "to": 3
+    },
+    "代下30:18-20": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 30,
+      "from": 18,
+      "kb": false,
+      "lines": [
+        {
+          "text": "以法蓮、瑪拿西、以薩迦、西布倫有許多人尚未自潔，他們卻也吃逾越節的羊羔，不合所記錄的定例。希西家為他們禱告說：凡專心尋求神，就是耶和華─他列祖之神的，雖不照著聖所潔淨之禮自潔，求至善的耶和華也饒恕他。",
+          "v": 18
+        },
+        {
+          "text": "耶和華垂聽希西家的禱告，就饒恕【原文作醫治】百姓。",
+          "v": 20
+        }
+      ],
+      "ref": "代下30:18-20",
+      "to": 20
+    },
+    "代下30:21-23": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 30,
+      "from": 21,
+      "kb": false,
+      "lines": [
+        {
+          "text": "在耶路撒冷的以色列人大大喜樂，守除酵節七日。利未人和祭司用響亮的樂器，日日頌讚耶和華。",
+          "v": 21
+        },
+        {
+          "text": "希西家慰勞一切善於事奉耶和華的利未人。於是眾人吃節筵七日，又獻平安祭，且向耶和華─他們列祖的神認罪。",
+          "v": 22
+        },
+        {
+          "text": "全會眾商議，要再守節七日；於是歡歡喜喜地又守節七日。",
+          "v": 23
+        }
+      ],
+      "ref": "代下30:21-23",
+      "to": 23
+    },
+    "代下35:17-18": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 35,
+      "from": 17,
+      "kb": false,
+      "lines": [
+        {
+          "text": "當時在耶路撒冷的以色列人守逾越節，又守除酵節七日。",
+          "v": 17
+        },
+        {
+          "text": "自從先知撒母耳以來，在以色列中沒有守過這樣的逾越節，以色列諸王也沒有守過，像約西亞、祭司、利未人、在那裡的猶大人，和以色列人，以及耶路撒冷居民所守的逾越節。",
+          "v": 18
+        }
+      ],
+      "ref": "代下35:17-18",
+      "to": 18
+    },
+    "代下8:12-13": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 8,
+      "from": 12,
+      "kb": false,
+      "lines": [
+        {
+          "text": "所羅門在耶和華的壇上，就是在廊子前他所築的壇上，與耶和華獻燔祭；",
+          "v": 12
+        },
+        {
+          "text": "又遵著摩西的吩咐在安息日、月朔，並一年三節，就是除酵節、七七節、住棚節，獻每日所當獻的祭。",
+          "v": 13
+        }
+      ],
+      "ref": "代下8:12-13",
+      "to": 13
+    },
     "出12:1-14": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 1,
+      "kb": true,
       "lines": [
         {
           "text": "耶和華在埃及地曉諭摩西、亞倫說：",
@@ -2611,8 +5052,10 @@
     },
     "出12:1-6": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 1,
+      "kb": true,
       "lines": [
         {
           "text": "耶和華在埃及地曉諭摩西、亞倫說：",
@@ -2644,8 +5087,10 @@
     },
     "出12:11": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 11,
+      "kb": true,
       "lines": [
         {
           "text": "你們吃羊羔當腰間束帶，腳上穿鞋，手中拿杖，趕緊地吃；這是耶和華的逾越節。",
@@ -2657,8 +5102,10 @@
     },
     "出12:15-20": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 15,
+      "kb": true,
       "lines": [
         {
           "text": "你們要吃無酵餅七日。頭一日要把酵從你們各家中除去；因為從頭一日起，到第七日為止，凡吃有酵之餅的，必從以色列中剪除。",
@@ -2690,8 +5137,10 @@
     },
     "出12:2": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 2,
+      "kb": true,
       "lines": [
         {
           "text": "你們要以本月為正月，為一年之首。",
@@ -2703,8 +5152,10 @@
     },
     "出12:21-30": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 21,
+      "kb": true,
       "lines": [
         {
           "text": "於是，摩西召了以色列的眾長老來，對他們說：你們要按著家口取出羊羔，把這逾越節的羊羔宰了。",
@@ -2752,8 +5203,10 @@
     },
     "出12:22": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 22,
+      "kb": true,
       "lines": [
         {
           "text": "拿一把牛膝草，蘸盆裡的血，打在門楣上和左右的門框上。你們誰也不可出自己的房門，直到早晨。",
@@ -2765,8 +5218,10 @@
     },
     "出12:23": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 23,
+      "kb": true,
       "lines": [
         {
           "text": "因為耶和華要巡行擊殺埃及人，他看見血在門楣上和左右的門框上，就必越過那門，不容滅命的進你們的房屋，擊殺你們。",
@@ -2778,8 +5233,10 @@
     },
     "出12:26-27": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 26,
+      "kb": true,
       "lines": [
         {
           "text": "你們的兒女問你們說：行這禮是什麼意思？",
@@ -2795,8 +5252,10 @@
     },
     "出12:29-30": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 29,
+      "kb": true,
       "lines": [
         {
           "text": "到了半夜，耶和華把埃及地所有的長子，就是從坐寶座的法老，直到被擄囚在監裡之人的長子，以及一切頭生的牲畜，盡都殺了。",
@@ -2812,8 +5271,10 @@
     },
     "出12:3": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 3,
+      "kb": true,
       "lines": [
         {
           "text": "你們吩咐以色列全會眾說：本月初十日，各人要按著父家取羊羔，一家一隻。",
@@ -2825,8 +5286,10 @@
     },
     "出12:31-34": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 31,
+      "kb": true,
       "lines": [
         {
           "text": "夜間，法老召了摩西、亞倫來，說：起來！連你們帶以色列人，從我民中出去，依你們所說的，去事奉耶和華吧！",
@@ -2850,8 +5313,10 @@
     },
     "出12:34-39": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 34,
+      "kb": true,
       "lines": [
         {
           "text": "百姓就拿著沒有酵的生麵，把摶麵盆包在衣服中，扛在肩頭上。",
@@ -2883,8 +5348,10 @@
     },
     "出12:39": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 39,
+      "kb": true,
       "lines": [
         {
           "text": "他們用埃及帶出來的生麵烤成無酵餅。這生麵原沒有發起；因為他們被催逼離開埃及，不能耽延，也沒有為自己預備什麼食物。",
@@ -2896,8 +5363,10 @@
     },
     "出12:42": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 42,
+      "kb": true,
       "lines": [
         {
           "text": "這夜是耶和華的夜；因耶和華領他們出了埃及地，所以當向耶和華謹守，是以色列眾人世世代代該謹守的。",
@@ -2909,8 +5378,10 @@
     },
     "出12:43-51": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 43,
+      "kb": true,
       "lines": [
         {
           "text": "耶和華對摩西、亞倫說：逾越節的例是這樣：外邦人都不可吃這羊羔。",
@@ -2954,8 +5425,10 @@
     },
     "出12:6": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 6,
+      "kb": true,
       "lines": [
         {
           "text": "要留到本月十四日，在黃昏的時候，以色列全會眾把羊羔宰了。",
@@ -2967,8 +5440,10 @@
     },
     "出12:7": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 12,
       "from": 7,
+      "kb": true,
       "lines": [
         {
           "text": "各家要取點血，塗在吃羊羔的房屋左右的門框上和門楣上。",
@@ -2980,8 +5455,10 @@
     },
     "出13:3-10": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 13,
       "from": 3,
+      "kb": true,
       "lines": [
         {
           "text": "摩西對百姓說：你們要記念從埃及為奴之家出來的這日，因為耶和華用大能的手將你們從這地方領出來。有酵的餅都不可吃。",
@@ -3021,8 +5498,10 @@
     },
     "出13:3-4": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 13,
       "from": 3,
+      "kb": true,
       "lines": [
         {
           "text": "摩西對百姓說：你們要記念從埃及為奴之家出來的這日，因為耶和華用大能的手將你們從這地方領出來。有酵的餅都不可吃。",
@@ -3038,8 +5517,10 @@
     },
     "出13:7": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 13,
       "from": 7,
+      "kb": true,
       "lines": [
         {
           "text": "這七日之久，要吃無酵餅；在你四境之內不可見有酵的餅，也不可見發酵的物。",
@@ -3051,8 +5532,10 @@
     },
     "出23:15": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 23,
       "from": 15,
+      "kb": true,
       "lines": [
         {
           "text": "你要守除酵節，照我所吩咐你的，在亞筆月內所定的日期，吃無酵餅七天。誰也不可空手朝見我，因為你是這月出了埃及。",
@@ -3064,8 +5547,10 @@
     },
     "出23:16": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 23,
       "from": 16,
+      "kb": true,
       "lines": [
         {
           "text": "又要守收割節，所收的是你田間所種、勞碌得來初熟之物。並在年底收藏，要守收藏節。",
@@ -3077,8 +5562,10 @@
     },
     "出34:18": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 34,
       "from": 18,
+      "kb": true,
       "lines": [
         {
           "text": "你要守除酵節，照我所吩咐你的，在亞筆月內所定的日期吃無酵餅七天，因為你是這亞筆月內出了埃及。",
@@ -3090,8 +5577,10 @@
     },
     "出34:22": {
       "book": "出埃及記",
+      "bookNum": 2,
       "chapter": 34,
       "from": 22,
+      "kb": true,
       "lines": [
         {
           "text": "在收割初熟麥子的時候要守七七節；又在年底要守收藏節。",
@@ -3101,10 +5590,319 @@
       "ref": "出34:22",
       "to": 22
     },
+    "利16:1-2": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "亞倫的兩個兒子近到耶和華面前死了。死了之後，耶和華曉諭摩西說：",
+          "v": 1
+        },
+        {
+          "text": "要告訴你哥哥亞倫，不可隨時進聖所的幔子內、到櫃上的施恩座前，免得他死亡，因為我要從雲中顯現在施恩座上。",
+          "v": 2
+        }
+      ],
+      "ref": "利16:1-2",
+      "to": 2
+    },
+    "利16:1-34": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "亞倫的兩個兒子近到耶和華面前死了。死了之後，耶和華曉諭摩西說：",
+          "v": 1
+        },
+        {
+          "text": "要告訴你哥哥亞倫，不可隨時進聖所的幔子內、到櫃上的施恩座前，免得他死亡，因為我要從雲中顯現在施恩座上。",
+          "v": 2
+        },
+        {
+          "text": "亞倫進聖所，要帶一隻公牛犢為贖罪祭，一隻公綿羊為燔祭。",
+          "v": 3
+        },
+        {
+          "text": "要穿上細麻布聖內袍，把細麻布褲子穿在身上，腰束細麻布帶子，頭戴細麻布冠冕；這都是聖服。他要用水洗身，然後穿戴。",
+          "v": 4
+        },
+        {
+          "text": "要從以色列會眾取兩隻公山羊為贖罪祭，一隻公綿羊為燔祭。",
+          "v": 5
+        },
+        {
+          "text": "亞倫要把贖罪祭的公牛奉上，為自己和本家贖罪；",
+          "v": 6
+        },
+        {
+          "text": "也要把兩隻公山羊安置在會幕門口、耶和華面前，",
+          "v": 7
+        },
+        {
+          "text": "為那兩隻羊拈鬮，一鬮歸與耶和華，一鬮歸與阿撒瀉勒。",
+          "v": 8
+        },
+        {
+          "text": "亞倫要把那拈鬮歸與耶和華的羊獻為贖罪祭，",
+          "v": 9
+        },
+        {
+          "text": "但那拈鬮歸與阿撒瀉勒的羊要活著安置在耶和華面前，用以贖罪，打發人送到曠野去，歸與阿撒瀉勒。",
+          "v": 10
+        },
+        {
+          "text": "亞倫要把贖罪祭的公牛牽來宰了，為自己和本家贖罪；",
+          "v": 11
+        },
+        {
+          "text": "拿香爐，從耶和華面前的壇上盛滿火炭，又拿一捧搗細的香料，都帶入幔子內，",
+          "v": 12
+        },
+        {
+          "text": "在耶和華面前，把香放在火上，使香的煙雲遮掩法櫃上的施恩座，免得他死亡；",
+          "v": 13
+        },
+        {
+          "text": "也要取些公牛的血，用指頭彈在施恩座的東面，又在施恩座的前面彈血七次。",
+          "v": 14
+        },
+        {
+          "text": "隨後他要宰那為百姓作贖罪祭的公山羊，把羊的血帶入幔子內，彈在施恩座的上面和前面，好像彈公牛的血一樣。",
+          "v": 15
+        },
+        {
+          "text": "他因以色列人諸般的污穢、過犯，就是他們一切的罪愆，當這樣在聖所行贖罪之禮，並因會幕在他們污穢之中，也要照樣而行。",
+          "v": 16
+        },
+        {
+          "text": "他進聖所贖罪的時候，會幕裡不可有人，直等到他為自己和本家並以色列全會眾贖了罪出來。",
+          "v": 17
+        },
+        {
+          "text": "他出來，要到耶和華面前的壇那裡，在壇上行贖罪之禮，又要取些公牛的血和公山羊的血，抹在壇上四角的周圍；",
+          "v": 18
+        },
+        {
+          "text": "也要用指頭把血彈在壇上七次，潔淨了壇，從壇上除掉以色列人諸般的污穢，使壇成聖。",
+          "v": 19
+        },
+        {
+          "text": "亞倫為聖所和會幕並壇獻完了贖罪祭，就要把那隻活著的公山羊奉上。",
+          "v": 20
+        },
+        {
+          "text": "兩手按在羊頭上，承認以色列人諸般的罪孽過犯，就是他們一切的罪愆，把這罪都歸在羊的頭上，藉著所派之人的手，送到曠野去。",
+          "v": 21
+        },
+        {
+          "text": "要把這羊放在曠野，這羊要擔當他們一切的罪孽，帶到無人之地。",
+          "v": 22
+        },
+        {
+          "text": "亞倫要進會幕，把他進聖所時所穿的細麻布衣服脫下，放在那裡，",
+          "v": 23
+        },
+        {
+          "text": "又要在聖處用水洗身，穿上衣服，出來，把自己的燔祭和百姓的燔祭獻上，為自己和百姓贖罪。",
+          "v": 24
+        },
+        {
+          "text": "贖罪祭牲的脂油要在壇上焚燒。",
+          "v": 25
+        },
+        {
+          "text": "那放羊歸與阿撒瀉勒的人要洗衣服，用水洗身，然後進營。",
+          "v": 26
+        },
+        {
+          "text": "作贖罪祭的公牛和公山羊的血既帶入聖所贖罪，這牛羊就要搬到營外，將皮、肉、糞用火焚燒。",
+          "v": 27
+        },
+        {
+          "text": "焚燒的人要洗衣服，用水洗身，然後進營。",
+          "v": 28
+        },
+        {
+          "text": "每逢七月初十日，你們要刻苦己心，無論是本地人，是寄居在你們中間的外人，什麼工都不可做；這要作你們永遠的定例。",
+          "v": 29
+        },
+        {
+          "text": "因在這日要為你們贖罪，使你們潔淨。你們要在耶和華面前得以潔淨，脫盡一切的罪愆。",
+          "v": 30
+        },
+        {
+          "text": "這日你們要守為聖安息日，要刻苦己心；這為永遠的定例。",
+          "v": 31
+        },
+        {
+          "text": "那受膏、接續他父親承接聖職的祭司要穿上細麻布的聖衣，行贖罪之禮。",
+          "v": 32
+        },
+        {
+          "text": "他要在至聖所和會幕與壇行贖罪之禮，並要為眾祭司和會眾的百姓贖罪。",
+          "v": 33
+        },
+        {
+          "text": "這要作你們永遠的定例─就是因以色列人一切的罪，要一年一次為他們贖罪。於是，亞倫照耶和華所吩咐摩西的行了。",
+          "v": 34
+        }
+      ],
+      "ref": "利16:1-34",
+      "to": 34
+    },
+    "利16:12-13": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 12,
+      "kb": true,
+      "lines": [
+        {
+          "text": "拿香爐，從耶和華面前的壇上盛滿火炭，又拿一捧搗細的香料，都帶入幔子內，",
+          "v": 12
+        },
+        {
+          "text": "在耶和華面前，把香放在火上，使香的煙雲遮掩法櫃上的施恩座，免得他死亡；",
+          "v": 13
+        }
+      ],
+      "ref": "利16:12-13",
+      "to": 13
+    },
+    "利16:14-16": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 14,
+      "kb": true,
+      "lines": [
+        {
+          "text": "也要取些公牛的血，用指頭彈在施恩座的東面，又在施恩座的前面彈血七次。",
+          "v": 14
+        },
+        {
+          "text": "隨後他要宰那為百姓作贖罪祭的公山羊，把羊的血帶入幔子內，彈在施恩座的上面和前面，好像彈公牛的血一樣。",
+          "v": 15
+        },
+        {
+          "text": "他因以色列人諸般的污穢、過犯，就是他們一切的罪愆，當這樣在聖所行贖罪之禮，並因會幕在他們污穢之中，也要照樣而行。",
+          "v": 16
+        }
+      ],
+      "ref": "利16:14-16",
+      "to": 16
+    },
+    "利16:20-21": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 20,
+      "kb": true,
+      "lines": [
+        {
+          "text": "亞倫為聖所和會幕並壇獻完了贖罪祭，就要把那隻活著的公山羊奉上。",
+          "v": 20
+        },
+        {
+          "text": "兩手按在羊頭上，承認以色列人諸般的罪孽過犯，就是他們一切的罪愆，把這罪都歸在羊的頭上，藉著所派之人的手，送到曠野去。",
+          "v": 21
+        }
+      ],
+      "ref": "利16:20-21",
+      "to": 21
+    },
+    "利16:21-22": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 21,
+      "kb": true,
+      "lines": [
+        {
+          "text": "兩手按在羊頭上，承認以色列人諸般的罪孽過犯，就是他們一切的罪愆，把這罪都歸在羊的頭上，藉著所派之人的手，送到曠野去。",
+          "v": 21
+        },
+        {
+          "text": "要把這羊放在曠野，這羊要擔當他們一切的罪孽，帶到無人之地。",
+          "v": 22
+        }
+      ],
+      "ref": "利16:21-22",
+      "to": 22
+    },
+    "利16:29-30": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 29,
+      "kb": true,
+      "lines": [
+        {
+          "text": "每逢七月初十日，你們要刻苦己心，無論是本地人，是寄居在你們中間的外人，什麼工都不可做；這要作你們永遠的定例。",
+          "v": 29
+        },
+        {
+          "text": "因在這日要為你們贖罪，使你們潔淨。你們要在耶和華面前得以潔淨，脫盡一切的罪愆。",
+          "v": 30
+        }
+      ],
+      "ref": "利16:29-30",
+      "to": 30
+    },
+    "利16:4": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 4,
+      "kb": true,
+      "lines": [
+        {
+          "text": "要穿上細麻布聖內袍，把細麻布褲子穿在身上，腰束細麻布帶子，頭戴細麻布冠冕；這都是聖服。他要用水洗身，然後穿戴。",
+          "v": 4
+        }
+      ],
+      "ref": "利16:4",
+      "to": 4
+    },
+    "利16:5-8": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 16,
+      "from": 5,
+      "kb": true,
+      "lines": [
+        {
+          "text": "要從以色列會眾取兩隻公山羊為贖罪祭，一隻公綿羊為燔祭。",
+          "v": 5
+        },
+        {
+          "text": "亞倫要把贖罪祭的公牛奉上，為自己和本家贖罪；",
+          "v": 6
+        },
+        {
+          "text": "也要把兩隻公山羊安置在會幕門口、耶和華面前，",
+          "v": 7
+        },
+        {
+          "text": "為那兩隻羊拈鬮，一鬮歸與耶和華，一鬮歸與阿撒瀉勒。",
+          "v": 8
+        }
+      ],
+      "ref": "利16:5-8",
+      "to": 8
+    },
     "利23:10": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 10,
+      "kb": true,
       "lines": [
         {
           "text": "你曉諭以色列人說：你們到了我賜給你們的地，收割莊稼的時候，要將初熟的莊稼一捆帶給祭司。",
@@ -3116,8 +5914,10 @@
     },
     "利23:11": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 11,
+      "kb": true,
       "lines": [
         {
           "text": "他要把這一捆在耶和華面前搖一搖，使你們得蒙悅納。祭司要在安息日的次日把這捆搖一搖。",
@@ -3129,8 +5929,10 @@
     },
     "利23:12-13": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 12,
+      "kb": true,
       "lines": [
         {
           "text": "搖這捆的日子，你們要把一歲、沒有殘疾的公綿羊羔獻給耶和華為燔祭。",
@@ -3146,8 +5948,10 @@
     },
     "利23:14": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 14,
+      "kb": true,
       "lines": [
         {
           "text": "無論是餅，是烘的子粒，是新穗子，你們都不可吃，直等到把你們獻給神的供物帶來的那一天才可以吃。這在你們一切的住處作為世世代代永遠的定例。",
@@ -3159,8 +5963,10 @@
     },
     "利23:15-16": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 15,
+      "kb": true,
       "lines": [
         {
           "text": "你們要從安息日的次日，獻禾捆為搖祭的那日算起，要滿了七個安息日。",
@@ -3176,8 +5982,10 @@
     },
     "利23:15-22": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 15,
+      "kb": true,
       "lines": [
         {
           "text": "你們要從安息日的次日，獻禾捆為搖祭的那日算起，要滿了七個安息日。",
@@ -3217,8 +6025,10 @@
     },
     "利23:17": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 17,
+      "kb": true,
       "lines": [
         {
           "text": "要從你們的住處取出細麵伊法十分之二，加酵，烤成兩個搖祭的餅，當作初熟之物獻給耶和華。",
@@ -3230,8 +6040,10 @@
     },
     "利23:18-19": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 18,
+      "kb": true,
       "lines": [
         {
           "text": "又要將一歲、沒有殘疾的羊羔七隻、公牛犢一隻、公綿羊兩隻，和餅一同奉上。這些與同獻的素祭和奠祭要作為燔祭獻給耶和華，就是作馨香的火祭獻給耶和華。",
@@ -3247,8 +6059,10 @@
     },
     "利23:2": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 2,
+      "kb": true,
       "lines": [
         {
           "text": "你曉諭以色列人說：耶和華的節期，你們要宣告為聖會的節期。",
@@ -3260,8 +6074,10 @@
     },
     "利23:22": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 22,
+      "kb": true,
       "lines": [
         {
           "text": "在你們的地收割莊稼，不可割盡田角，也不可拾取所遺落的；要留給窮人和寄居的。我是耶和華─你們的神。",
@@ -3271,10 +6087,227 @@
       "ref": "利23:22",
       "to": 22
     },
+    "利23:23-25": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 23,
+      "kb": true,
+      "lines": [
+        {
+          "text": "耶和華對摩西說：",
+          "v": 23
+        },
+        {
+          "text": "你曉諭以色列人說：七月初一，你們要守為聖安息日，要吹角作紀念，當有聖會。",
+          "v": 24
+        },
+        {
+          "text": "什麼勞碌的工都不可做；要將火祭獻給耶和華。",
+          "v": 25
+        }
+      ],
+      "ref": "利23:23-25",
+      "to": 25
+    },
+    "利23:24-25": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 24,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：七月初一，你們要守為聖安息日，要吹角作紀念，當有聖會。",
+          "v": 24
+        },
+        {
+          "text": "什麼勞碌的工都不可做；要將火祭獻給耶和華。",
+          "v": 25
+        }
+      ],
+      "ref": "利23:24-25",
+      "to": 25
+    },
+    "利23:26-32": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 26,
+      "kb": true,
+      "lines": [
+        {
+          "text": "耶和華曉諭摩西說：",
+          "v": 26
+        },
+        {
+          "text": "七月初十是贖罪日；你們要守為聖會，並要刻苦己心，也要將火祭獻給耶和華。",
+          "v": 27
+        },
+        {
+          "text": "當這日，什麼工都不可做；因為是贖罪日，要在耶和華─你們的神面前贖罪。",
+          "v": 28
+        },
+        {
+          "text": "當這日，凡不刻苦己心的，必從民中剪除。",
+          "v": 29
+        },
+        {
+          "text": "凡這日做什麼工的，我必將他從民中除滅。",
+          "v": 30
+        },
+        {
+          "text": "你們什麼工都不可做。這在你們一切的住處作為世世代代永遠的定例。",
+          "v": 31
+        },
+        {
+          "text": "你們要守這日為聖安息日，並要刻苦己心。從這月初九日晚上到次日晚上，要守為安息日。",
+          "v": 32
+        }
+      ],
+      "ref": "利23:26-32",
+      "to": 32
+    },
+    "利23:32": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 32,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你們要守這日為聖安息日，並要刻苦己心。從這月初九日晚上到次日晚上，要守為安息日。",
+          "v": 32
+        }
+      ],
+      "ref": "利23:32",
+      "to": 32
+    },
+    "利23:33-43": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 33,
+      "kb": true,
+      "lines": [
+        {
+          "text": "耶和華對摩西說：",
+          "v": 33
+        },
+        {
+          "text": "你曉諭以色列人說：這七月十五日是住棚節，要在耶和華面前守這節七日。",
+          "v": 34
+        },
+        {
+          "text": "第一日當有聖會，什麼勞碌的工都不可做。",
+          "v": 35
+        },
+        {
+          "text": "七日內要將火祭獻給耶和華。第八日當守聖會，要將火祭獻給耶和華。這是嚴肅會，什麼勞碌的工都不可做。",
+          "v": 36
+        },
+        {
+          "text": "這是耶和華的節期，就是你們要宣告為聖會的節期；要將火祭、燔祭、素祭、祭物，並奠祭，各歸各日，獻給耶和華。",
+          "v": 37
+        },
+        {
+          "text": "這是在耶和華的安息日以外，又在你們的供物和所許的願，並甘心獻給耶和華的以外。",
+          "v": 38
+        },
+        {
+          "text": "你們收藏了地的出產，就從七月十五日起，要守耶和華的節七日。第一日為聖安息；第八日也為聖安息。",
+          "v": 39
+        },
+        {
+          "text": "第一日要拿美好樹上的果子和棕樹上的枝子，與茂密樹的枝條並河旁的柳枝，在耶和華─你們的神面前歡樂七日。",
+          "v": 40
+        },
+        {
+          "text": "每年七月間，要向耶和華守這節七日。這為你們世世代代永遠的定例。",
+          "v": 41
+        },
+        {
+          "text": "你們要住在棚裡七日；凡以色列家的人都要住在棚裡，",
+          "v": 42
+        },
+        {
+          "text": "好叫你們世世代代知道，我領以色列人出埃及地的時候曾使他們住在棚裡。我是耶和華─你們的神。",
+          "v": 43
+        }
+      ],
+      "ref": "利23:33-43",
+      "to": 43
+    },
+    "利23:36": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 36,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七日內要將火祭獻給耶和華。第八日當守聖會，要將火祭獻給耶和華。這是嚴肅會，什麼勞碌的工都不可做。",
+          "v": 36
+        }
+      ],
+      "ref": "利23:36",
+      "to": 36
+    },
+    "利23:39": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 39,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你們收藏了地的出產，就從七月十五日起，要守耶和華的節七日。第一日為聖安息；第八日也為聖安息。",
+          "v": 39
+        }
+      ],
+      "ref": "利23:39",
+      "to": 39
+    },
+    "利23:40": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 40,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第一日要拿美好樹上的果子和棕樹上的枝子，與茂密樹的枝條並河旁的柳枝，在耶和華─你們的神面前歡樂七日。",
+          "v": 40
+        }
+      ],
+      "ref": "利23:40",
+      "to": 40
+    },
+    "利23:42-43": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 42,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你們要住在棚裡七日；凡以色列家的人都要住在棚裡，",
+          "v": 42
+        },
+        {
+          "text": "好叫你們世世代代知道，我領以色列人出埃及地的時候曾使他們住在棚裡。我是耶和華─你們的神。",
+          "v": 43
+        }
+      ],
+      "ref": "利23:42-43",
+      "to": 43
+    },
     "利23:5": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 5,
+      "kb": true,
       "lines": [
         {
           "text": "正月十四日，黃昏的時候，是耶和華的逾越節。",
@@ -3286,8 +6319,10 @@
     },
     "利23:6-8": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 6,
+      "kb": true,
       "lines": [
         {
           "text": "這月十五日是向耶和華守的無酵節；你們要吃無酵餅七日。",
@@ -3307,8 +6342,10 @@
     },
     "利23:9-14": {
       "book": "利未記",
+      "bookNum": 3,
       "chapter": 23,
       "from": 9,
+      "kb": true,
       "lines": [
         {
           "text": "耶和華對摩西說：",
@@ -3338,10 +6375,271 @@
       "ref": "利23:9-14",
       "to": 14
     },
+    "尼8:13-18": {
+      "book": "尼希米記",
+      "bookNum": 16,
+      "chapter": 8,
+      "from": 13,
+      "kb": false,
+      "lines": [
+        {
+          "text": "次日，眾民的族長、祭司，和利未人都聚集到文士以斯拉那裡，要留心聽律法上的話。",
+          "v": 13
+        },
+        {
+          "text": "他們見律法上寫著，耶和華藉摩西吩咐以色列人要在七月節住棚，",
+          "v": 14
+        },
+        {
+          "text": "並要在各城和耶路撒冷宣傳報告說：你們當上山，將橄欖樹、野橄欖樹、番石榴樹、棕樹，和各樣茂密樹的枝子取來，照著所寫的搭棚。",
+          "v": 15
+        },
+        {
+          "text": "於是百姓出去，取了樹枝來，各人在自己的房頂上，或院內，或神殿的院內，或水門的寬闊處，或以法蓮門的寬闊處搭棚。",
+          "v": 16
+        },
+        {
+          "text": "從擄到之地歸回的全會眾就搭棚，住在棚裡。從嫩的兒子約書亞的時候直到這日，以色列人沒有這樣行。於是眾人大大喜樂。",
+          "v": 17
+        },
+        {
+          "text": "從頭一天直到末一天，以斯拉每日念神的律法書。眾人守節七日，第八日照例有嚴肅會。",
+          "v": 18
+        }
+      ],
+      "ref": "尼8:13-18",
+      "to": 18
+    },
+    "尼8:2-4": {
+      "book": "尼希米記",
+      "bookNum": 16,
+      "chapter": 8,
+      "from": 2,
+      "kb": false,
+      "lines": [
+        {
+          "text": "七月初一日，祭司以斯拉將律法書帶到聽了能明白的男女會眾面前。",
+          "v": 2
+        },
+        {
+          "text": "在水門前的寬闊處，從清早到晌午，在眾男女、一切聽了能明白的人面前讀這律法書。眾民側耳而聽。",
+          "v": 3
+        },
+        {
+          "text": "文士以斯拉站在為這事特備的木臺上。瑪他提雅、示瑪、亞奈雅、烏利亞、希勒家，和瑪西雅站在他的右邊；毘大雅、米沙利、瑪基雅、哈順、哈拔大拿、撒迦利亞，和米書蘭站在他的左邊。",
+          "v": 4
+        }
+      ],
+      "ref": "尼8:2-4",
+      "to": 4
+    },
+    "尼8:9-10": {
+      "book": "尼希米記",
+      "bookNum": 16,
+      "chapter": 8,
+      "from": 9,
+      "kb": false,
+      "lines": [
+        {
+          "text": "省長尼希米和作祭司的文士以斯拉，並教訓百姓的利未人，對眾民說：今日是耶和華─你們神的聖日，不要悲哀哭泣。這是因為眾民聽見律法書上的話都哭了；",
+          "v": 9
+        },
+        {
+          "text": "又對他們說：你們去吃肥美的，喝甘甜的，有不能預備的就分給他，因為今日是我們主的聖日。你們不要憂愁，因靠耶和華而得的喜樂是你們的力量。",
+          "v": 10
+        }
+      ],
+      "ref": "尼8:9-10",
+      "to": 10
+    },
+    "得2:15-16": {
+      "book": "路得記",
+      "bookNum": 8,
+      "chapter": 2,
+      "from": 15,
+      "kb": false,
+      "lines": [
+        {
+          "text": "他起來又拾取麥穗，波阿斯吩咐僕人說：他就是在捆中拾取麥穗，也可以容他，不可羞辱他；",
+          "v": 15
+        },
+        {
+          "text": "並要從捆裡抽出些來，留在地下任他拾取，不可叱嚇他。",
+          "v": 16
+        }
+      ],
+      "ref": "得2:15-16",
+      "to": 16
+    },
+    "得2:2-3": {
+      "book": "路得記",
+      "bookNum": 8,
+      "chapter": 2,
+      "from": 2,
+      "kb": false,
+      "lines": [
+        {
+          "text": "摩押女子路得對拿俄米說：容我往田間去，我蒙誰的恩，就在誰的身後拾取麥穗。拿俄米說：女兒啊，你只管去。",
+          "v": 2
+        },
+        {
+          "text": "路得就去了，來到田間，在收割的人身後拾取麥穗。他恰巧到了以利米勒本族的人波阿斯那塊田裡。",
+          "v": 3
+        }
+      ],
+      "ref": "得2:2-3",
+      "to": 3
+    },
+    "得2:23": {
+      "book": "路得記",
+      "bookNum": 8,
+      "chapter": 2,
+      "from": 23,
+      "kb": false,
+      "lines": [
+        {
+          "text": "於是路得與波阿斯的使女常在一處拾取麥穗，直到收完了大麥和小麥。路得仍與婆婆同住。",
+          "v": 23
+        }
+      ],
+      "ref": "得2:23",
+      "to": 23
+    },
+    "拉3:4": {
+      "book": "以斯拉記",
+      "bookNum": 15,
+      "chapter": 3,
+      "from": 4,
+      "kb": false,
+      "lines": [
+        {
+          "text": "又照律法書上所寫的守住棚節，按數照例獻每日所當獻的燔祭；",
+          "v": 4
+        }
+      ],
+      "ref": "拉3:4",
+      "to": 4
+    },
+    "拉3:6": {
+      "book": "以斯拉記",
+      "bookNum": 15,
+      "chapter": 3,
+      "from": 6,
+      "kb": false,
+      "lines": [
+        {
+          "text": "從七月初一日起，他們就向耶和華獻燔祭。但耶和華殿的根基尚未立定。",
+          "v": 6
+        }
+      ],
+      "ref": "拉3:6",
+      "to": 6
+    },
+    "拉6:19-20": {
+      "book": "以斯拉記",
+      "bookNum": 15,
+      "chapter": 6,
+      "from": 19,
+      "kb": false,
+      "lines": [
+        {
+          "text": "正月十四日，被擄歸回的人守逾越節。",
+          "v": 19
+        },
+        {
+          "text": "原來，祭司和利未人一同自潔，無一人不潔淨。利未人為被擄歸回的眾人和他們的弟兄眾祭司，並為自己宰逾越節的羊羔。",
+          "v": 20
+        }
+      ],
+      "ref": "拉6:19-20",
+      "to": 20
+    },
+    "拉6:21-22": {
+      "book": "以斯拉記",
+      "bookNum": 15,
+      "chapter": 6,
+      "from": 21,
+      "kb": false,
+      "lines": [
+        {
+          "text": "從擄到之地歸回的以色列人和一切除掉所染外邦人污穢、歸附他們、要尋求耶和華─以色列神的人都吃這羊羔，",
+          "v": 21
+        },
+        {
+          "text": "歡歡喜喜地守除酵節七日；因為耶和華使他們歡喜，又使亞述王的心轉向他們，堅固他們的手，作以色列神殿的工程。",
+          "v": 22
+        }
+      ],
+      "ref": "拉6:21-22",
+      "to": 22
+    },
+    "摩5:21": {
+      "book": "阿摩司書",
+      "bookNum": 30,
+      "chapter": 5,
+      "from": 21,
+      "kb": false,
+      "lines": [
+        {
+          "text": "我厭惡你們的節期，也不喜悅你們的嚴肅會。",
+          "v": 21
+        }
+      ],
+      "ref": "摩5:21",
+      "to": 21
+    },
+    "撒上20:24-26": {
+      "book": "撒母耳記上",
+      "bookNum": 9,
+      "chapter": 20,
+      "from": 24,
+      "kb": false,
+      "lines": [
+        {
+          "text": "大衛就去藏在田野。到了初一日，王坐席要吃飯。",
+          "v": 24
+        },
+        {
+          "text": "王照常坐在靠牆的位上，約拿單侍立，押尼珥坐在掃羅旁邊，大衛的座位空設。",
+          "v": 25
+        },
+        {
+          "text": "然而這日掃羅沒有說什麼，他想大衛遇事，偶染不潔，他必定是不潔。",
+          "v": 26
+        }
+      ],
+      "ref": "撒上20:24-26",
+      "to": 26
+    },
+    "書5:10-12": {
+      "book": "約書亞記",
+      "bookNum": 6,
+      "chapter": 5,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "以色列人在吉甲安營。正月十四日晚上，在耶利哥的平原守逾越節。",
+          "v": 10
+        },
+        {
+          "text": "逾越節的次日，他們就吃了那地的出產；正當那日吃無酵餅和烘的穀。",
+          "v": 11
+        },
+        {
+          "text": "他們吃了那地的出產，第二日嗎哪就止住了，以色列人也不再有嗎哪了。那一年，他們卻吃迦南地的出產。",
+          "v": 12
+        }
+      ],
+      "ref": "書5:10-12",
+      "to": 12
+    },
     "民10:10": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 10,
       "from": 10,
+      "kb": true,
       "lines": [
         {
           "text": "在你們快樂的日子和節期，並月朔，獻燔祭和平安祭，也要吹號，這都要在你們的神面前作為紀念。我是耶和華─你們的神。",
@@ -3353,8 +6651,10 @@
     },
     "民28:11": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 28,
       "from": 11,
+      "kb": true,
       "lines": [
         {
           "text": "每月朔，你們要將兩隻公牛犢，一隻公綿羊，七隻沒有殘疾、一歲的公羊羔，獻給耶和華為燔祭。",
@@ -3366,8 +6666,10 @@
     },
     "民28:11-15": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 28,
       "from": 11,
+      "kb": true,
       "lines": [
         {
           "text": "每月朔，你們要將兩隻公牛犢，一隻公綿羊，七隻沒有殘疾、一歲的公羊羔，獻給耶和華為燔祭。",
@@ -3395,8 +6697,10 @@
     },
     "民28:16": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 28,
       "from": 16,
+      "kb": true,
       "lines": [
         {
           "text": "正月十四日是耶和華的逾越節。",
@@ -3408,8 +6712,10 @@
     },
     "民28:17-25": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 28,
       "from": 17,
+      "kb": true,
       "lines": [
         {
           "text": "這月十五日是節期，要吃無酵餅七日。",
@@ -3453,8 +6759,10 @@
     },
     "民28:26-31": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 28,
       "from": 26,
+      "kb": true,
       "lines": [
         {
           "text": "七七節莊稼初熟，你們獻新素祭給耶和華的日子，當有聖會；什麼勞碌的工都不可做。",
@@ -3484,10 +6792,336 @@
       "ref": "民28:26-31",
       "to": 31
     },
+    "民29:1": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月初一日，你們當有聖會；什麼勞碌的工都不可做，是你們當守為吹角的日子。",
+          "v": 1
+        }
+      ],
+      "ref": "民29:1",
+      "to": 1
+    },
+    "民29:1-6": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月初一日，你們當有聖會；什麼勞碌的工都不可做，是你們當守為吹角的日子。",
+          "v": 1
+        },
+        {
+          "text": "你們要將公牛犢一隻，公綿羊一隻，沒有殘疾、一歲的公羊羔七隻，作為馨香的燔祭獻給耶和華。",
+          "v": 2
+        },
+        {
+          "text": "同獻的素祭用調油的細麵；為一隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；",
+          "v": 3
+        },
+        {
+          "text": "為那七隻羊羔，每隻要獻伊法十分之一。",
+          "v": 4
+        },
+        {
+          "text": "又獻一隻公山羊作贖罪祭，為你們贖罪。",
+          "v": 5
+        },
+        {
+          "text": "這些是在月朔的燔祭和同獻的素祭，並常獻的燔祭與同獻的素祭，以及照例同獻的奠祭以外，都作為馨香的火祭獻給耶和華。",
+          "v": 6
+        }
+      ],
+      "ref": "民29:1-6",
+      "to": 6
+    },
+    "民29:12-13": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 12,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月十五日，你們當有聖會；什麼勞碌的工都不可做，要向耶和華守節七日。",
+          "v": 12
+        },
+        {
+          "text": "又要將公牛犢十三隻，公綿羊兩隻，一歲的公羊羔十四隻，都要沒有殘疾的，用火獻給耶和華為馨香的燔祭。",
+          "v": 13
+        }
+      ],
+      "ref": "民29:12-13",
+      "to": 13
+    },
+    "民29:12-38": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 12,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月十五日，你們當有聖會；什麼勞碌的工都不可做，要向耶和華守節七日。",
+          "v": 12
+        },
+        {
+          "text": "又要將公牛犢十三隻，公綿羊兩隻，一歲的公羊羔十四隻，都要沒有殘疾的，用火獻給耶和華為馨香的燔祭。",
+          "v": 13
+        },
+        {
+          "text": "同獻的素祭用調油的細麵；為那十三隻公牛，每隻要獻伊法十分之三；為那兩隻公羊，每隻要獻伊法十分之二；",
+          "v": 14
+        },
+        {
+          "text": "為那十四隻羊羔，每隻要獻伊法十分之一。",
+          "v": 15
+        },
+        {
+          "text": "並獻一隻公山羊為贖罪祭，這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 16
+        },
+        {
+          "text": "第二日要獻公牛犢十二隻，公綿羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 17
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 18
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 19
+        },
+        {
+          "text": "第三日要獻公牛十一隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 20
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 21
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 22
+        },
+        {
+          "text": "第四日要獻公牛十隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 23
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 24
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 25
+        },
+        {
+          "text": "第五日要獻公牛九隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 26
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 27
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 28
+        },
+        {
+          "text": "第六日要獻公牛八隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 29
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 30
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 31
+        },
+        {
+          "text": "第七日要獻公牛七隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 32
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 33
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 34
+        },
+        {
+          "text": "第八日你們當有嚴肅會；什麼勞碌的工都不可做；",
+          "v": 35
+        },
+        {
+          "text": "只要將公牛一隻，公羊一隻，沒有殘疾、一歲的公羊羔七隻作火祭，獻給耶和華為馨香的燔祭；",
+          "v": 36
+        },
+        {
+          "text": "並為公牛、公羊，和羊羔，按數照例，獻同獻的素祭和同獻的奠祭。",
+          "v": 37
+        },
+        {
+          "text": "又要獻一隻公山羊為贖罪祭。這是在常獻的燔祭和同獻的素祭並同獻的奠祭以外。",
+          "v": 38
+        }
+      ],
+      "ref": "民29:12-38",
+      "to": 38
+    },
+    "民29:17": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 17,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第二日要獻公牛犢十二隻，公綿羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 17
+        }
+      ],
+      "ref": "民29:17",
+      "to": 17
+    },
+    "民29:20": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 20,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第三日要獻公牛十一隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 20
+        }
+      ],
+      "ref": "民29:20",
+      "to": 20
+    },
+    "民29:23": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 23,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第四日要獻公牛十隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 23
+        }
+      ],
+      "ref": "民29:23",
+      "to": 23
+    },
+    "民29:26": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 26,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第五日要獻公牛九隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 26
+        }
+      ],
+      "ref": "民29:26",
+      "to": 26
+    },
+    "民29:29": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 29,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第六日要獻公牛八隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 29
+        }
+      ],
+      "ref": "民29:29",
+      "to": 29
+    },
+    "民29:32": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 32,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第七日要獻公牛七隻，公羊兩隻，沒有殘疾、一歲的公羊羔十四隻；",
+          "v": 32
+        }
+      ],
+      "ref": "民29:32",
+      "to": 32
+    },
+    "民29:6": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 6,
+      "kb": true,
+      "lines": [
+        {
+          "text": "這些是在月朔的燔祭和同獻的素祭，並常獻的燔祭與同獻的素祭，以及照例同獻的奠祭以外，都作為馨香的火祭獻給耶和華。",
+          "v": 6
+        }
+      ],
+      "ref": "民29:6",
+      "to": 6
+    },
+    "民29:7-11": {
+      "book": "民數記",
+      "bookNum": 4,
+      "chapter": 29,
+      "from": 7,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月初十日，你們當有聖會；要刻苦己心，什麼工都不可做。",
+          "v": 7
+        },
+        {
+          "text": "只要將公牛犢一隻，公綿羊一隻，一歲的公羊羔七隻，都要沒有殘疾的，作為馨香的燔祭獻給耶和華。",
+          "v": 8
+        },
+        {
+          "text": "同獻的素祭用調油的細麵：為一隻公牛要獻伊法十分之三；為一隻公羊要獻伊法十分之二；",
+          "v": 9
+        },
+        {
+          "text": "為那七隻羊羔，每隻要獻伊法十分之一。",
+          "v": 10
+        },
+        {
+          "text": "又獻一隻公山羊為贖罪祭。這是在贖罪祭和常獻的燔祭，與同獻的素祭並同獻的奠祭以外。",
+          "v": 11
+        }
+      ],
+      "ref": "民29:7-11",
+      "to": 11
+    },
     "民9:1-14": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 9,
       "from": 1,
+      "kb": true,
       "lines": [
         {
           "text": "以色列人出埃及地以後，第二年正月，耶和華在西乃的曠野吩咐摩西說：",
@@ -3551,8 +7185,10 @@
     },
     "民9:10-11": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 9,
       "from": 10,
+      "kb": true,
       "lines": [
         {
           "text": "你曉諭以色列人說：你們和你們後代中，若有人因死屍而不潔淨，或在遠方行路，還要向耶和華守逾越節。",
@@ -3568,8 +7204,10 @@
     },
     "民9:5": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 9,
       "from": 5,
+      "kb": true,
       "lines": [
         {
           "text": "他們就在西乃的曠野，正月十四日黃昏的時候，守逾越節。凡耶和華所吩咐摩西的，以色列人都照樣行了。",
@@ -3581,8 +7219,10 @@
     },
     "民9:6-7": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 9,
       "from": 6,
+      "kb": true,
       "lines": [
         {
           "text": "有幾個人因死屍而不潔淨，不能在那日守逾越節。當日他們到摩西、亞倫面前，",
@@ -3598,8 +7238,10 @@
     },
     "民9:8": {
       "book": "民數記",
+      "bookNum": 4,
       "chapter": 9,
       "from": 8,
+      "kb": true,
       "lines": [
         {
           "text": "摩西對他們說：你們暫且等候，我可以去聽耶和華指著你們是怎樣吩咐的。",
@@ -3609,10 +7251,126 @@
       "ref": "民9:8",
       "to": 8
     },
+    "王上8:65-66": {
+      "book": "列王紀上",
+      "bookNum": 11,
+      "chapter": 8,
+      "from": 65,
+      "kb": false,
+      "lines": [
+        {
+          "text": "那時，所羅門和以色列眾人，就是從哈馬口直到埃及小河所有的以色列人，都聚集成為大會，在耶和華─我們的神面前守節七日又七日，共十四日。",
+          "v": 65
+        },
+        {
+          "text": "第八日，王遣散眾民；他們都為王祝福。因見耶和華向他僕人大衛和他民以色列所施的一切恩惠，就都心中喜樂，各歸各家去了。",
+          "v": 66
+        }
+      ],
+      "ref": "王上8:65-66",
+      "to": 66
+    },
+    "王下10:20-21": {
+      "book": "列王紀下",
+      "bookNum": 12,
+      "chapter": 10,
+      "from": 20,
+      "kb": false,
+      "lines": [
+        {
+          "text": "耶戶說：要為巴力宣告嚴肅會！於是宣告了。",
+          "v": 20
+        },
+        {
+          "text": "耶戶差人走遍以色列地；凡拜巴力的人都來齊了，沒有一個不來的。他們進了巴力廟，巴力廟中從前邊直到後邊都滿了人。",
+          "v": 21
+        }
+      ],
+      "ref": "王下10:20-21",
+      "to": 21
+    },
+    "王下23:21-23": {
+      "book": "列王紀下",
+      "bookNum": 12,
+      "chapter": 23,
+      "from": 21,
+      "kb": false,
+      "lines": [
+        {
+          "text": "王吩咐眾民說：你們當照這約書上所寫的，向耶和華─你們的神守逾越節。",
+          "v": 21
+        },
+        {
+          "text": "自從士師治理以色列人和以色列王、猶大王的時候，直到如今，實在沒有守過這樣的逾越節；",
+          "v": 22
+        },
+        {
+          "text": "只有約西亞王十八年在耶路撒冷向耶和華守這逾越節。",
+          "v": 23
+        }
+      ],
+      "ref": "王下23:21-23",
+      "to": 23
+    },
+    "珥1:14": {
+      "book": "約珥書",
+      "bookNum": 29,
+      "chapter": 1,
+      "from": 14,
+      "kb": false,
+      "lines": [
+        {
+          "text": "你們要分定禁食的日子，宣告嚴肅會，招聚長老和國中的一切居民到耶和華─你們神的殿，向耶和華哀求。",
+          "v": 14
+        }
+      ],
+      "ref": "珥1:14",
+      "to": 14
+    },
+    "珥2:1": {
+      "book": "約珥書",
+      "bookNum": 29,
+      "chapter": 2,
+      "from": 1,
+      "kb": false,
+      "lines": [
+        {
+          "text": "你們要在錫安吹角，在我聖山吹出大聲。國中的居民都要發顫；因為耶和華的日子將到，已經臨近。",
+          "v": 1
+        }
+      ],
+      "ref": "珥2:1",
+      "to": 1
+    },
+    "珥2:15-17": {
+      "book": "約珥書",
+      "bookNum": 29,
+      "chapter": 2,
+      "from": 15,
+      "kb": false,
+      "lines": [
+        {
+          "text": "你們要在錫安吹角，分定禁食的日子，宣告嚴肅會。",
+          "v": 15
+        },
+        {
+          "text": "聚集眾民，使會眾自潔：招聚老者，聚集孩童和吃奶的；使新郎出離洞房，新婦出離內室。",
+          "v": 16
+        },
+        {
+          "text": "事奉耶和華的祭司要在廊子和祭壇中間哭泣，說：耶和華啊，求你顧惜你的百姓，不要使你的產業受羞辱，列邦管轄他們。為何容列國的人說：他們的神在哪裡呢？",
+          "v": 17
+        }
+      ],
+      "ref": "珥2:15-17",
+      "to": 17
+    },
     "申16:1-7": {
       "book": "申命記",
+      "bookNum": 5,
       "chapter": 16,
       "from": 1,
+      "kb": true,
       "lines": [
         {
           "text": "你要注意亞筆月，向耶和華─你的神守逾越節，因為耶和華─你的神在亞筆月夜間領你出埃及。",
@@ -3648,8 +7406,10 @@
     },
     "申16:10-12": {
       "book": "申命記",
+      "bookNum": 5,
       "chapter": 16,
       "from": 10,
+      "kb": true,
       "lines": [
         {
           "text": "你要照耶和華─你神所賜你的福，手裡拿著甘心祭，獻在耶和華─你的神面前，守七七節。",
@@ -3667,10 +7427,69 @@
       "ref": "申16:10-12",
       "to": 12
     },
+    "申16:13": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 16,
+      "from": 13,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你把禾場的穀、酒醡的酒收藏以後，就要守住棚節七日。",
+          "v": 13
+        }
+      ],
+      "ref": "申16:13",
+      "to": 13
+    },
+    "申16:13-15": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 16,
+      "from": 13,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你把禾場的穀、酒醡的酒收藏以後，就要守住棚節七日。",
+          "v": 13
+        },
+        {
+          "text": "守節的時候，你和你兒女、僕婢，並住在你城裡的利未人，以及寄居的與孤兒寡婦，都要歡樂。",
+          "v": 14
+        },
+        {
+          "text": "在耶和華所選擇的地方，你當向耶和華─你的神守節七日；因為耶和華─你神在你一切的土產上和你手裡所辦的事上要賜福與你，你就非常地歡樂。",
+          "v": 15
+        }
+      ],
+      "ref": "申16:13-15",
+      "to": 15
+    },
+    "申16:14-15": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 16,
+      "from": 14,
+      "kb": true,
+      "lines": [
+        {
+          "text": "守節的時候，你和你兒女、僕婢，並住在你城裡的利未人，以及寄居的與孤兒寡婦，都要歡樂。",
+          "v": 14
+        },
+        {
+          "text": "在耶和華所選擇的地方，你當向耶和華─你的神守節七日；因為耶和華─你神在你一切的土產上和你手裡所辦的事上要賜福與你，你就非常地歡樂。",
+          "v": 15
+        }
+      ],
+      "ref": "申16:14-15",
+      "to": 15
+    },
     "申16:3": {
       "book": "申命記",
+      "bookNum": 5,
       "chapter": 16,
       "from": 3,
+      "kb": true,
       "lines": [
         {
           "text": "你吃這祭牲，不可吃有酵的餅；七日之內要吃無酵餅，就是困苦餅─你本是急忙出了埃及地─要叫你一生一世記念你從埃及地出來的日子。",
@@ -3682,8 +7501,10 @@
     },
     "申16:3-8": {
       "book": "申命記",
+      "bookNum": 5,
       "chapter": 16,
       "from": 3,
+      "kb": true,
       "lines": [
         {
           "text": "你吃這祭牲，不可吃有酵的餅；七日之內要吃無酵餅，就是困苦餅─你本是急忙出了埃及地─要叫你一生一世記念你從埃及地出來的日子。",
@@ -3715,8 +7536,10 @@
     },
     "申16:9-12": {
       "book": "申命記",
+      "bookNum": 5,
       "chapter": 16,
       "from": 9,
+      "kb": true,
       "lines": [
         {
           "text": "你要計算七七日：從你開鐮收割禾稼時算起，共計七七日。",
@@ -3737,6 +7560,71 @@
       ],
       "ref": "申16:9-12",
       "to": 12
+    },
+    "申31:10-13": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 31,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "摩西吩咐他們說：每逢七年的末一年，就在豁免年的定期住棚節的時候，",
+          "v": 10
+        },
+        {
+          "text": "以色列眾人來到耶和華─你神所選擇的地方朝見他。那時，你要在以色列眾人面前將這律法念給他們聽。",
+          "v": 11
+        },
+        {
+          "text": "要招聚他們男、女、孩子，並城裡寄居的，使他們聽，使他們學習，好敬畏耶和華─你們的神，謹守、遵行這律法的一切話，",
+          "v": 12
+        },
+        {
+          "text": "也使他們未曾曉得這律法的兒女得以聽見，學習敬畏耶和華─你們的神，在你們過約但河要得為業之地，存活的日子，常常這樣行。",
+          "v": 13
+        }
+      ],
+      "ref": "申31:10-13",
+      "to": 13
+    },
+    "詩81:3-4": {
+      "book": "詩篇",
+      "bookNum": 19,
+      "chapter": 81,
+      "from": 3,
+      "kb": false,
+      "lines": [
+        {
+          "text": "當在月朔並月望─我們過節的日期吹角，",
+          "v": 3
+        },
+        {
+          "text": "因這是為以色列定的律例，是雅各神的典章。",
+          "v": 4
+        }
+      ],
+      "ref": "詩81:3-4",
+      "to": 4
+    },
+    "賽1:13-14": {
+      "book": "以賽亞書",
+      "bookNum": 23,
+      "chapter": 1,
+      "from": 13,
+      "kb": false,
+      "lines": [
+        {
+          "text": "你們不要再獻虛浮的供物。香品是我所憎惡的；月朔和安息日，並宣召的大會，也是我所憎惡的；作罪孽，又守嚴肅會，我也不能容忍。",
+          "v": 13
+        },
+        {
+          "text": "你們的月朔和節期，我心裡恨惡，我都以為麻煩；我擔當，便不耐煩。",
+          "v": 14
+        }
+      ],
+      "ref": "賽1:13-14",
+      "to": 14
     }
   }
 }

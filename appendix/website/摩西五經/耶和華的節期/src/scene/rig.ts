@@ -70,11 +70,13 @@ export interface RigOpts {
   outline?: number;
   /** 不畫手臂（手臂由程式另外裝，例如舉禾捆的祭司） */
   noArms?: boolean;
+  /** 細麻布的內袍加褲子（利16:4）：袍擺提高，下面露出兩條褲管 */
+  linen?: boolean;
 }
 
 const partCache = new Map<string, PersonParts>();
 function personParts(o: RigOpts): PersonParts {
-  const key = `${o.slim ? 1 : 0}${o.sit ? 1 : 0}${o.veil ? 1 : 0}${o.wrap === false ? 0 : 1}${o.belt ? 1 : 0}${o.bundle ? 1 : 0}`;
+  const key = `${o.slim ? 1 : 0}${o.sit ? 1 : 0}${o.veil ? 1 : 0}${o.wrap === false ? 0 : 1}${o.belt ? 1 : 0}${o.bundle ? 1 : 0}${o.linen ? 1 : 0}`;
   let c = partCache.get(key);
   if (c) return c;
   const seg = 12;
@@ -86,7 +88,13 @@ function personParts(o: RigOpts): PersonParts {
         { g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1.2, 0.52, 0.98), part: 0 },
         { g: new SphereGeometry(0.17, 9, 6), m: T(0, 0.15, 0.2, 0, 0, 0, 1.5, 0.85, 1.25), part: 0 },
       ]
-    : [{ g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1, 1, 0.78), part: 0 }];
+    : o.linen
+      ? [
+          { g: new LatheGeometry(skirtPts, seg), m: T(0, 0.22, 0, 0, 0, 0, 0.9, 0.77, 0.7), part: 0 },
+          { g: new CylinderGeometry(0.085, 0.07, 0.3, 7), m: T(0.1, 0.15, 0), part: 0 },
+          { g: new CylinderGeometry(0.085, 0.07, 0.3, 7), m: T(-0.1, 0.15, 0), part: 0 },
+        ]
+      : [{ g: new LatheGeometry(skirtPts, seg), m: T(0, 0, 0, 0, 0, 0, 1, 1, 0.78), part: 0 }];
   const torsoPts = [new Vector2(0.225, 0), new Vector2(0.245, 0.18), new Vector2(0.27, 0.36), new Vector2(0.22, 0.45), new Vector2(0.09, 0.49), new Vector2(0.001, 0.5)];
   const torsoParts: Part[] = [{ g: new LatheGeometry(torsoPts, seg), m: T(0, 0, 0, 0, 0, 0, 1, 1, 0.74), part: 0 }];
   if (o.belt) torsoParts.push({ g: new TorusGeometry(0.235, 0.022, 5, 14), m: T(0, 0.03, 0, Math.PI / 2, 0, 0, 1, 0.74, 1), part: 4 });

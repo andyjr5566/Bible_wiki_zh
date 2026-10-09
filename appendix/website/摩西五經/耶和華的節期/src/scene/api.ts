@@ -23,6 +23,8 @@ export interface SceneOptions {
   story: StoryState;
   /** 各章配色（feasts.yaml），key 是章 id */
   palettes: Record<string, Palette>;
+  /** 回聲拍（story.later）用的舊紙配色 */
+  laterPalette: Palette;
   onEvent: (e: SceneEvent) => void;
 }
 

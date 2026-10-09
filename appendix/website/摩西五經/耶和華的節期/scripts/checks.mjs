@@ -221,10 +221,19 @@ export function unknownKeys(obj, allowed) {
 // ---------- 獻祭數字（檢查 #5）：數字只從經文算，yaml 不手抄 ----------
 
 /** 動物詞照經文原字；長詞優先，免得「公綿羊」吃掉「公綿羊羔」的前半 */
-export const OFFERING_ANIMALS = ['公牛犢', '公綿羊羔', '公綿羊', '公羊羔', '羊羔', '公山羊'];
+export const OFFERING_ANIMALS = ['公牛犢', '公綿羊羔', '公綿羊', '公羊羔', '羊羔', '公山羊', '公牛', '公羊'];
 const ANIMAL_ALT = [...OFFERING_ANIMALS].sort((a, b) => b.length - a.length).join('|');
-const NUMERALS = { 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
-const NUM = '[一二兩三四五六七八九十]';
+const DIGITS = { 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+/** 支援一到九、十、十一到十九；「二十」「三十」等不支援（不匹配，隻就沒被吃掉，會報錯，不會誤解析） */
+const NUM = '(?:十[一二三四五六七八九]?|[一二兩三四五六七八九])';
+/** 單字的數字字元（lookbehind 用：「二十隻」的「十」前面是數字，不是十） */
+const NUM_CH = '[一二兩三四五六七八九十]';
+/** 「十」「十一」…「十九」「一」…「九」→ 數目；不認得回 NaN */
+export function parseNumeral(s) {
+  if (s === '十') return 10;
+  if (s.length === 2 && s[0] === '十') return 10 + (DIGITS[s[1]] ?? NaN);
+  return s.length === 1 ? (DIGITS[s] ?? NaN) : NaN;
+}
 const ROLE_NAMES = '燔祭|贖罪祭|平安祭';
 /** 同時獻的素祭、奠祭的份量（伊法、欣、奠酒）：這種句子裡的「隻」是在說配搭的份量，不是祭牲的數目 */
 const ACCOMPANIMENT = /伊法|欣|奠酒/;
@@ -259,17 +268,17 @@ export function parseOfferings(verseTexts) {
         const found = []; // { at, animal, count }
         // 動物＋數字＋隻
         for (const m of clause.matchAll(new RegExp(`(${ANIMAL_ALT})(${NUM})隻`, 'g'))) {
-          const pos = m.index + m[1].length + 1;
+          const pos = m.index + m[1].length + m[2].length;
           eaten.add(pos);
-          found.push({ at: m.index, animal: m[1], count: NUMERALS[m[2]] });
+          found.push({ at: m.index, animal: m[1], count: parseNumeral(m[2]) });
         }
         // 數字＋隻＋（修飾語）＋動物
-        const pre = new RegExp(`(?<!${NUM})(${NUM})隻([^，；。隻]{0,${MODIFIER_MAX}}?)(${ANIMAL_ALT})`, 'g');
+        const pre = new RegExp(`(?<!${NUM_CH})(${NUM})隻([^，；。隻]{0,${MODIFIER_MAX}}?)(${ANIMAL_ALT})`, 'g');
         for (let m = pre.exec(clause); m; m = pre.exec(clause)) {
           const pos = m.index + m[1].length;
           if (eaten.has(pos)) { pre.lastIndex = m.index + 1; continue; }
           eaten.add(pos);
-          found.push({ at: m.index, animal: m[3], count: NUMERALS[m[1]] });
+          found.push({ at: m.index, animal: m[3], count: parseNumeral(m[1]) });
           pre.lastIndex = m.index + m[0].length;
         }
         for (let i = clause.indexOf('隻'); i >= 0; i = clause.indexOf('隻', i + 1)) {

@@ -1,5 +1,5 @@
 // 兩片田：初熟的大麥田（BX）與七七節的小麥田（WX）。
-import { type BufferGeometry, Color, DoubleSide, Group, InstancedMesh, Mesh, type ShaderMaterial, Vector3 } from 'three';
+import { type BufferGeometry, Color, DoubleSide, Group, InstancedMesh, Mesh, type Object3D, type ShaderMaterial, Vector3 } from 'three';
 import { SITE } from '../data/site';
 import { story } from '../story/state';
 import { barleyGeo, personGeo } from './geo';
@@ -7,7 +7,8 @@ import { clothGeo, fieldGeo, griddleGeo, loafGeo, rockGeo, sheafGeo, sickleGeo }
 import { litMat, solid } from './materials';
 import { type FrameLite, hillMesh, robeMat, setInst } from './props';
 import { Animal, ArmProp, PersonCrowd, RigPerson, type Species } from './rig';
-import { BX, WX, c, lp } from './tracks';
+import { BX, CUT, WX, c, lp } from './tracks';
+import { Summer } from './summer';
 import { clamp, hexTo, lerp, mulberry32, smooth } from './util';
 
 /** 田地起伏：靠近鏡頭（z≥-2）平坦，越遠越有起伏 */
@@ -28,7 +29,7 @@ function mix3(out: Vector3, a: string, b: string, t: number): Vector3 {
 }
 
 /** 供應量的名稱 → 剪影種類 */
-function animalKind(name: string): { kind: Species; sc: number } {
+export function animalKind(name: string): { kind: Species; sc: number } {
   if (name.includes('牛')) return { kind: 'cow', sc: 0.78 };
   if (name.includes('山羊')) return { kind: 'goat', sc: 1.05 };
   if (name.includes('綿羊羔')) return { kind: 'lamb', sc: 1.12 };
@@ -54,6 +55,8 @@ export class Fields {
   barley = new Group();
   wheat = new Group();
   private wheatMat!: ShaderMaterial;
+  private wheatInst!: InstancedMesh;
+  private wheatTotal = 0;
   private wheatGround!: ShaderMaterial;
   private barleyMat!: ShaderMaterial;
   private cutSheaves = new Group();
@@ -76,12 +79,18 @@ export class Fields {
   private loaves: Group[] = [];
   private loafBase: Vector3[] = [];
   private hands: ArmProp[] = [];
+  /** 夏日過場：田收完，田邊的葡萄與果樹 */
+  summer = new Summer();
+  /** 夏日過場要收起來的東西：靜態的（每幀依 s 設）與自己每幀設可見度的（過場時強制收起） */
+  private summerStatic: Object3D[] = [];
+  private summerForce: Object3D[] = [];
 
   constructor() {
     this.buildBarley();
     this.buildWheat();
     this.barley.visible = false;
     this.wheat.visible = false;
+    this.wheat.add(this.summer.group);
   }
 
   // ---------------------------------------------------------------- 大麥田
@@ -258,6 +267,8 @@ export class Fields {
       n++;
     }
     g.add(wheat);
+    this.wheatInst = wheat;
+    this.wheatTotal = total;
 
     // 收完的田：散放的禾捆
     const mSheaf = litMat({ base: '#d2b05a', parts: ['#cdac55', '#e6c25f', '#6a4a26'], angle: 70, space: 4, seed: 74 });
@@ -279,6 +290,7 @@ export class Fields {
     cloth.position.set(6.3, 0.04, 0.95);
     cloth.rotation.y = -0.1;
     g.add(cloth);
+    this.summerStatic.push(cloth);
     const mLoaf = litMat({ base: '#c58a45', parts: ['#c9904a', '#6b3f1a'], angle: 28, space: 3.8, seed: 75 });
     const lg = loafGeo();
     const lb: [number, number, number, number][] = [[5.65, 0.14, 0.82, 0.18], [6.4, 0.14, 1.0, -0.22]];
@@ -288,6 +300,7 @@ export class Fields {
       l.rotation.y = ry;
       l.scale.setScalar(1.1);
       g.add(l);
+      this.summerStatic.push(l);
       this.loaves.push(l);
       this.loafBase.push(new Vector3(x, y, z));
     }
@@ -296,12 +309,14 @@ export class Fields {
     sw.rotation.set(0, 0.5, Math.PI / 2 - 0.1);
     sw.scale.setScalar(0.85);
     g.add(sw);
+    this.summerStatic.push(sw);
     const armMat = litMat({ base: '#a88758', line: '#14110e', angle: 40, space: 4.4, seed: 24 });
     const handMat = litMat({ base: 'silh' });
     for (let i = 0; i < 2; i++) {
       const a = new ArmProp(armMat, handMat);
       a.group.visible = false;
       g.add(a.group);
+      this.summerForce.push(a.group);
       this.hands.push(a);
     }
 
@@ -323,6 +338,7 @@ export class Fields {
       a.baseScale = it.sc;
       a.group.rotation.y = Math.PI / 2 - 0.08;
       g.add(a.group);
+      this.summerForce.push(a.group);
       const rank = items.length - 1 - i; // 最右邊的先到位
       const fin = 0.3 + (0.66 * rank) / Math.max(1, items.length - 1);
       const dur = (xs[i] - 2) / 80;
@@ -349,12 +365,14 @@ export class Fields {
       r.group.position.set(f.x, 0, f.z);
       r.group.rotation.y = (46 - f.x) * 0.05 + (i % 2 ? 0.08 : -0.08);
       g.add(r.group);
+      this.summerStatic.push(r.group);
       this.folks.push(r);
     });
     // 兩三個孩子在大人之間繞著跑
     for (let i = 0; i < 3; i++) {
       const r = new RigPerson({ scale: 0.5, wrap: true, kid: true, seed: 140 + i, armL: [0.3, 0.3], armR: [0.3, 0.3] }, robeMat(['#d8cdb4', '#b79a68', '#cdbf9e'][i], 140 + i));
       g.add(r.group);
+      this.summerForce.push(r.group);
       this.kids.push(r);
     }
 
@@ -363,15 +381,18 @@ export class Fields {
     this.gleaner.group.position.set(54.8, 0, -2.4);
     this.gleaner.group.rotation.y = Math.PI / 2 + 0.3;
     g.add(this.gleaner.group);
+    this.summerForce.push(this.gleaner.group);
     const earGeo = sheafGeo(11, 4, 0.6);
     const mEar = litMat({ base: '#d2b05a', parts: ['#cdac55', '#e6c25f', '#6a4a26'], angle: 70, space: 4, seed: 76 });
     this.ears = new InstancedMesh(earGeo, mEar, 9);
     this.ears.frustumCulled = false;
     g.add(this.ears);
+    this.summerStatic.push(this.ears);
     for (let i = 0; i < 9; i++) this.earPos.push({ x: 56.4 - i * 0.38, z: -2.0 - (i % 3) * 0.35, r: rnd() * 6 });
     // 遠處有人在割
     this.farReapers = new PersonCrowd(personGeo({ bow: 0.9, belt: true, low: true, armL: [1.0, 0.1], armR: [1.0, 0.1] }), robeMat('#b59a68', 19), 4, 1.5);
     g.add(this.farReapers.group);
+    this.summerStatic.push(this.farReapers.group);
     const fr: [number, number][] = [[28, -12], [33.5, -15.5], [39, -11], [44, -17]];
     fr.forEach(([x, z], i) => {
       const it = this.farReapers.items[i];
@@ -388,7 +409,18 @@ export class Fields {
     const t = fr.time;
     const mo = !fr.motionOff;
     if (this.barley.visible) this.updateBarley(t, mo, s);
-    if (this.wheat.visible) this.updateWheat(t, mo, s);
+    if (this.wheat.visible) {
+      this.updateWheat(t, mo, s);
+      // 夏日過場：田收完，只剩麥茬；七七節那些人與器物全部收起來
+      const sm = s >= CUT['summer'];
+      for (const o of this.summerStatic) o.visible = !sm;
+      if (sm) for (const o of this.summerForce) o.visible = false;
+      (this.wheatMat.uniforms.uCutAll as { value: number }).value = sm ? 1 : 0;
+      // 麥茬不需要那麼多株：少畫一些（三角形數）
+      const want = sm ? Math.floor(this.wheatTotal * 0.4) : this.wheatTotal;
+      if (this.wheatInst.count !== want) this.wheatInst.count = want;
+      this.summer.update(fr, s);
+    }
   }
 
   private updateBarley(t: number, mo: boolean, s: number): void {
