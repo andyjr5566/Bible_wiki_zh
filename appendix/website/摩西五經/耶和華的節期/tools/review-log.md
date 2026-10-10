@@ -105,3 +105,12 @@
   - 46 則註釋、5 個原文字、10 句條目簡介、3 筆章末 note：審查者未列 finding。
   - 審後 `git status util/`：無變動。
 - **第 2 輪**（`codex-review-10.md` → `.out.md`）：PASS，無 finding。審後 `git status util/`：無變動。資料檢查（引文逐字、GT 段落歸屬）0 錯。
+
+## 第三批：使用者看過後改寫五拍說明（差異複核）
+
+- 使用者反映 `seven-weeks`、`month-seven` 看不懂；同病的 `sabbath`、`sabbath-year`、`forty-nine` 一併改寫。
+- **第 1 輪**（`codex-review-11.md` → `.out.md`）：CHANGES_REQUIRED，2 條，主筆回查 raw_scripture 確認成立並修正：
+  - `seven-weeks`：利23:15-16 沒有「七七節」這個名稱；改照經文寫「共計五十天，又要將新素祭獻給耶和華」；
+  - `forty-nine`：利25:8 沒提七七節；刪去比較，只留「七七年，共是四十九年」。
+  - 審後 `git status util/`：無變動。
+- **第 2 輪**（`codex-review-12.md` → `.out.md`）：第一次呼叫因審查者讀不到檔案而受阻（不算一輪），重跑後 PASS，無 finding。審後 `git status util/`：無變動。
