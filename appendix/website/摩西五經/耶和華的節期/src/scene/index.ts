@@ -7,7 +7,8 @@ import type { CreateScene, SceneHandle, SceneOptions } from './api';
 import { HyssopCtl } from './hyssop';
 import { Interior } from './interior';
 import { darknessMat, disposeShared, grainMat, PalVec, setLook, tjMat, U, wipeMat } from './materials';
-import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inMidnight, midnightP, paletteAt, sampleTracks, stepSummer, SUMMER, TJ_DIR, tjAmt, wipeAmt } from './tracks';
+import { c as cu, CHAPTER_IDS, CUE_IDX, createTrackOut, inCoda, inMidnight, midnightP, paletteAt, REST, sampleTracks, stepRest, stepSummer, SUMMER, TJ_DIR, tjAmt, wipeAmt } from './tracks';
+import { Vortex } from './vortex';
 import { clamp } from './util';
 import { WaveCtl } from './wave';
 import { World, type Frame } from './world';
@@ -34,12 +35,16 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   let camOverride: number[] | null = null;
   Object.defineProperty(canvas, '__jfCam', { configurable: true, value: (v: number[] | null) => { camOverride = v; dirty = true; } });
   // 開發用：每幀花的時間（毫秒，含 gl.finish，只在 __jfBench 開啟時量）。rAF 在 headless 被鎖在約 30，量不出餘裕，所以另外量這個。
+  let vortexLast: () => { x: number; y: number; r: number; on: boolean } = () => ({ x: 0, y: 0, r: 0, on: false });
   let bench = false;
   let benchMs = 0;
   let gpuMs = -1;
   const gl2 = renderer.getContext() as WebGL2RenderingContext;
   const timerExt = gl2.getExtension('EXT_disjoint_timer_query_webgl2') as { TIME_ELAPSED_EXT: number; GPU_DISJOINT_EXT: number } | null;
   const pendingQ: WebGLQuery[] = [];
+  // 開發用：目前這一幀的鏡頭軌道值（px,py,pz,tx,ty,tz,fov,fitW）與收起程度，tools/check-subject-box.mjs 用來找「鏡頭目標點」
+  Object.defineProperty(canvas, '__jfTrack', { configurable: true, value: () => ({ cam: Array.from(tracks.cam), fold: foldF }) });
+  Object.defineProperty(canvas, '__jfVortex', { configurable: true, value: () => vortexLast() });
   Object.defineProperty(canvas, '__jfBench', { configurable: true, value: (on: boolean) => { bench = on; benchMs = 0; } });
   Object.defineProperty(canvas, '__jfInfo', { configurable: true, value: () => ({ triangles: renderer.info.render.triangles, calls: renderer.info.render.calls, geometries: renderer.info.memory.geometries, frameMs: benchMs, gpuMs }) });
   renderer.setClearColor(0x15130f, 1);
@@ -77,7 +82,10 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   const grain = new Mesh(new PlaneGeometry(2, 2), gMat);
   grain.frustumCulled = false;
   grain.renderOrder = 2;
-  overlay.add(wipe, grain);
+  // 七的節奏的漩渦：畫在抹除之上、紙紋之下（抹除掃過時漩渦不跟著閃）
+  const vortex = new Vortex();
+  vortexLast = () => vortex.last;
+  overlay.add(wipe, vortex.mesh, grain);
 
   // 時間跳躍抹除（回聲拍進出）：先把世界畫到離screen的畫布，再用斜向舊紙抹除合成
   const tMat = tjMat();
@@ -113,6 +121,16 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   const fr: Frame = { s: 0, idx: 0, dt: 0, time: 0, dark: 0, motionOff: false };
   let lastIdx = 0;
   let darkF = story.dark ? 1 : 0;
+  // 說明框收起：由 <html data-fold> 的變化通知（MutationObserver，不在每幀查 DOM）。
+  // foldF 以時間阻尼追 foldT（約 0.5 秒），動態關閉時直接到位。
+  const root = document.documentElement;
+  let foldT = root.hasAttribute('data-fold') ? 1 : 0;
+  let foldF = foldT;
+  const foldObs = new MutationObserver(() => {
+    foldT = root.hasAttribute('data-fold') ? 1 : 0;
+    dirty = true;
+  });
+  foldObs.observe(root, { attributes: true, attributeFilter: ['data-fold'] });
   let last = performance.now();
   let raf = 0;
   let disposed = false;
@@ -237,8 +255,14 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     fr.idx = lastIdx;
     fr.s = lastIdx + clamp(story.beatProgress, 0, 1);
 
+    if (foldF !== foldT) {
+      foldF = fr.motionOff ? foldT : foldF + (foldT - foldF) * (1 - Math.exp(-dt * 5.5));
+      if (Math.abs(foldF - foldT) < 0.002) foldF = foldT;
+    }
+    fr.fold = foldF;
+
     const hasPanel = findPanel(fr.s);
-    const busy = world.busy || hyssop.busy || wave.busy || SUMMER.busy;
+    const busy = world.busy || hyssop.busy || wave.busy || SUMMER.busy || REST.busy || foldF !== foldT;
     const hm = story.hyssop.marks;
     sig[0] = fr.s;
     sig[1] = story.day;
@@ -259,6 +283,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     sig[16] = story.blow.level;
     sig[17] = story.blow.holding ? 1 : 0;
     sig[18] = story.later ? 1 : 0;
+    sig[19] = foldF;
     let same = true;
     for (let i = 0; i < 20; i++) {
       if (sig[i] !== lastSig[i]) {
@@ -270,6 +295,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     dirty = false;
 
     stepSummer(fr.s, dt);
+    stepRest(fr.s, dt);
     sampleTracks(fr.s, tracks, W <= 720);
     if (camOverride) for (let i = 0; i < 8; i++) tracks.cam[i] = camOverride[i];
     U.uDark.value = darkF;
@@ -279,6 +305,14 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     setLook(pals[pk.a], pals[pk.b], pk.k, darkF);
     world.updateScene(fr, tracks, W, H, hasPanel ? panelBox : null);
     world.updateObjects(fr);
+    // 漩渦：coda 時要收進開場的那一彎月，所以把月亮的螢幕位置（CSS px）傳進去
+    let moonX = W * 0.5;
+    let moonY = H * 0.3;
+    if (inCoda(fr.s) && projBuf(world.moon.position, pa)) {
+      moonX = pa.x / (bufW / W);
+      moonY = (bufH - pa.y) / (bufH / H);
+    }
+    vortex.update(fr.s, W, H, bufW / Math.max(W, 1), W <= 720, darkF, 1 - tracks.sky[2], moonX, moonY);
     hyssop.update(dt, fr.s, fr.idx);
     wave.update(dt, fr.s, fr.idx, fr.time, !fr.motionOff);
     updateDarkness(fr.s);
@@ -397,6 +431,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     dispose() {
       disposed = true;
       cancelAnimationFrame(raf);
+      foldObs.disconnect();
       document.removeEventListener('visibilitychange', onVis);
       canvas.removeEventListener('webglcontextlost', onLost);
       for (const t of ['pointerdown', 'pointermove', 'pointerup', 'pointercancel'] as const) canvas.removeEventListener(t, wake);

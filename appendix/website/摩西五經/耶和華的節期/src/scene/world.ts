@@ -35,11 +35,12 @@ import {
   type PersonOpts,
 } from './geo';
 import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, setGlowFlick, skyMat, solid, solidInstanced, sunMat, U } from './materials';
-import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, isAutumnCamp, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, foldReliefAt, inCoda, inEgyptReplay, isAutumnCamp, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
 import { Autumn } from './autumn';
 import { BlowFx } from './blowfx';
 import { Gate, Gilgal, Ruth, Temple } from './echoes';
 import { Jerusalem, Village } from './booths';
+import { Sevens } from './sevens';
 import { makeFx, type FxSet } from './fx';
 import { Animal, AnimalCrowd, PersonCrowd, RigPerson } from './rig';
 import { Camp } from './camp';
@@ -64,6 +65,8 @@ export interface Frame {
   time: number;
   dark: number;
   motionOff: boolean;
+  /** 說明框收起程度 0..1（1＝完全收起）；構圖的左右／上推移依此平順歸零。省略視為 0 */
+  fold?: number;
 }
 
 export interface DecalRig {
@@ -108,6 +111,7 @@ export class World {
   gate = new Gate();
   village = new Village();
   jerusalem = new Jerusalem();
+  sevens = new Sevens();
   sun: Mesh;
   private dayK = 1;
   private leftHouse!: Group;
@@ -173,7 +177,7 @@ export class World {
     this.sun.visible = false;
     sc.add(this.sun);
     this.camp.sinai.add(this.autumn.group);
-    sc.add(this.gilgal.group, this.temple.group, this.ruth.group, this.gate.group, this.village.group, this.jerusalem.group);
+    sc.add(this.gilgal.group, this.temple.group, this.ruth.group, this.gate.group, this.village.group, this.jerusalem.group, this.sevens.group);
     sc.add(this.blowfx.vert, this.blowfx.flat);
 
     // ---- 材質
@@ -654,7 +658,9 @@ export class World {
     // 以 view offset 平移整個畫面（不動鏡頭本身）：shiftPx > 0 把畫面推向右，shiftY > 0 把畫面推向上
     let shiftPx = 0;
     let shiftY = 0;
-    if (mobileUI) shiftY = upShiftAt(s) * H;
+    // 說明框收起時，留給說明框的推移（左右／往上）依 fold 歸零；有互動按鈕留著的拍不歸零（foldReliefAt）
+    const relief = 1 - (fr.fold ?? 0) * foldReliefAt(s);
+    if (mobileUI) shiftY = upShiftAt(s) * H * relief;
     const aw = mobileUI ? 0 : smooth(1.05, 1.3, aspect);
     if (aw > 0) {
       // 塗血那一拍：說明框固定在左邊，門＋盆＋把手整組擺在右側
@@ -680,9 +686,9 @@ export class World {
       }
       // 日後：說明框改放左邊，父子與門框往右偏
       const wC = aw * smooth(cu('children', -0.3), cu('children', -0.03), s) * (1 - smooth(CUT['bake'] - 0.2, CUT['bake'] - 0.03, s));
-      shiftPx += wC * W * 0.1;
+      shiftPx += wC * W * 0.1 * relief;
       // 其餘拍：依各拍的說明框在左或右，把主體推向另一側
-      shiftPx += aw * dxShiftAt(s) * W;
+      shiftPx += aw * dxShiftAt(s) * W * relief;
     }
     // 吃羊羔：DOM 分格是「屋內」，有血的那扇門整個擺在分格正下方（桌機）／分格與說明框之間（手機）
     const wM = smooth(cu('meal', -0.25), cu('meal', 0.25), s) * (1 - smooth(cu('meal', 0.85), cu('meal', 1.3), s));
@@ -809,7 +815,8 @@ export class World {
     this.dayK = tr.sky[2];
     // 月相 1–30：初一細鉤（亮面朝右＝西）、十四滿月、十五起由西側（畫面右）開始虧缺、二十一約下弦
     const inSinai = s >= CUT['sinai'] && s < CUT['echo-hezekiah'];
-    const day = tr.moonDay > 0 ? tr.moonDay : inSinai ? 14 : story.day;
+    // 七的節奏的夜：月相固定在近滿（日數牌沒有 day）；sv-egypt 是逾越節的夜（十四日）；coda 回到開場的新月（初一）
+    const day = inCoda(s) ? 1 : worldAt(s) === 'sevens' ? 12 : inEgyptReplay(s) ? 14 : tr.moonDay > 0 ? tr.moonDay : inSinai ? 14 : story.day;
     let th: number;
     let ly: number;
     if (day <= 14) {
@@ -839,14 +846,18 @@ export class World {
     this.gate.group.visible = w === 'gate';
     this.village.group.visible = w === 'booths';
     this.jerusalem.group.visible = w === 'roofs';
-    this.ground.visible = w !== 'barley' && w !== 'wheat' && w !== 'ruth' && w !== 'gilgal' && w !== 'booths';
+    this.ground.visible = w !== 'barley' && w !== 'wheat' && w !== 'ruth' && w !== 'gilgal' && w !== 'booths' && w !== 'sevens';
     this.camp.setAutumn(isAutumnCamp(s), 17.5, 12.5);
   }
 
   updateObjects(fr: Frame): void {
-    const s = fr.s;
+    const sReal = fr.s;
     const dt = fr.dt;
-    const idx = fr.idx;
+    // 夜景（埃及街道）的物件狀態：sv-egypt 重演「門已關、血在門框上」；coda-night 回到開場的第一個畫面（一律當作 s = 0）
+    const egy = inEgyptReplay(sReal);
+    const coda = inCoda(sReal);
+    const s = coda ? 0 : egy ? cu('door-shut', 0.9) : sReal;
+    const idx = coda ? 0 : egy ? CUE_IDX['door-shut'] : fr.idx;
 
     // ---- 門：時間追蹤，播放不受 motionOff 影響
     const target = idx >= CUE_IDX['door-shut'] && s < DAY_S ? 1 : 0;
@@ -854,7 +865,7 @@ export class World {
     this.doorD = clamp(this.doorD + Math.sign(target - this.doorD) * (dt / 0.95), 0, 1);
     if (Math.abs(this.doorD - target) < 1e-4) this.doorD = target;
     let busy = this.doorD !== target;
-    if (this.doorD >= 1 && prevD < 1 && !this.shutFired) {
+    if (this.doorD >= 1 && prevD < 1 && !this.shutFired && !egy) {
       this.shutFired = true;
       this.onShut();
     }
@@ -863,7 +874,8 @@ export class World {
     // ---- 血跡
     const marksOn = idx >= HYSSOP_IDX && s < DAY_S;
     const hy = story.hyssop;
-    this.doneTimer = marksOn && hy.done ? this.doneTimer + dt : 0;
+    const hdone = hy.done || egy;
+    this.doneTimer = marksOn && hdone ? (egy ? 99 : this.doneTimer + dt) : 0;
     for (let i = 0; i < this.houses.length; i++) {
       const hh = this.houses[i];
       // 門板與人影
@@ -874,15 +886,15 @@ export class World {
       if (i === 0) {
         for (let k = 0; k < 3; k++) {
           const dr = hh.decals[k];
-          const want = marksOn && hy.marks[PARTS[k]] ? 1 : 0;
+          const want = marksOn && (egy || hy.marks[PARTS[k]]) ? 1 : 0;
           dr.grow = clamp(dr.grow + (want ? dt / 0.3 : -dt / 0.12) * (want || dr.grow > 0 ? 1 : 0), 0, 1);
           dr.mesh.visible = dr.grow > 0.001;
           dr.mat.uniforms.uGrow.value = dr.grow;
           if (dr.grow !== want) busy = true;
         }
       } else {
-        hh.markT = marksOn && hy.done ? clamp((this.doneTimer - hh.delay) / 0.5, 0, 1) : 0;
-        if (marksOn && hy.done && hh.markT < 1) busy = true;
+        hh.markT = marksOn && hdone ? clamp((this.doneTimer - hh.delay) / 0.5, 0, 1) : 0;
+        if (marksOn && hdone && hh.markT < 1) busy = true;
         for (let k = 0; k < 3; k++) {
           const dr = hh.decals[k];
           dr.grow = clamp(hh.markT * 1.7 - k * 0.3, 0, 1);
@@ -950,23 +962,27 @@ export class World {
     for (const r of this.ppl) r.update(t, mo);
     this.lamb.update(t, mo);
 
-    // ---- 春季新場景
-    this.childrenPair.visible = s < CUT['bake'];
-    this.leftHouse.visible = s < CUT['no-leaven'];
-    this.home.update(s, t, mo);
-    const wd = worldAt(s);
-    if (wd === 'succoth' || wd === 'sinai') this.camp.update(fr, s);
-    if (wd === 'barley' || wd === 'wheat') this.fields.update(fr, s);
-    if (wd === 'gilgal') this.gilgal.update(fr, s);
-    if (wd === 'temple') this.temple.update(fr, s);
-    if (wd === 'ruth') this.ruth.update(fr, s);
-    if (wd === 'gate') this.gate.update(fr, s);
-    if (wd === 'booths') this.village.update(fr, s);
-    if (wd === 'roofs') this.jerusalem.update(fr, s);
+    // ---- 春季新場景（以下一律用真實的 s）
+    const sr = sReal;
+    this.childrenPair.visible = sr < CUT['bake'];
+    this.leftHouse.visible = sr < CUT['no-leaven'];
+    this.home.update(sr, t, mo);
+    const wd = worldAt(sr);
+    if (wd === 'succoth' || wd === 'sinai') this.camp.update(fr, sr);
+    if (wd === 'barley' || wd === 'wheat') this.fields.update(fr, sr);
+    if (wd === 'gilgal') this.gilgal.update(fr, sr);
+    if (wd === 'temple') this.temple.update(fr, sr);
+    if (wd === 'ruth') this.ruth.update(fr, sr);
+    if (wd === 'gate') this.gate.update(fr, sr);
+    if (wd === 'booths') this.village.update(fr, sr);
+    if (wd === 'roofs') this.jerusalem.update(fr, sr);
+    // 第三批：七的節奏的各個小地點（sevens 這個世界裡每個 cue 各有自己的地點）
+    this.sevens.update(fr, sr);
+    if (this.sevens.busy) this.busy = true;
     // 秋季：會幕院子的人物與器物、吹角的聲波
-    this.autumn.update(fr, s, this.dayK);
+    this.autumn.update(fr, sr, this.dayK);
     this.camp.fireK = this.autumn.fireK;
-    this.blowfx.update(dt, story.blow.level, isAutumnCamp(s) && s < CUT['echo-water-gate']);
+    this.blowfx.update(dt, story.blow.level, isAutumnCamp(sr) && sr < CUT['echo-water-gate']);
     if (this.blowfx.busy) this.busy = true;
   }
 

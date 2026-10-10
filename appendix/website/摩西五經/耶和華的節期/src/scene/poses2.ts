@@ -52,11 +52,12 @@ export const MOBILE_POSES2: Record<string, PosePair> = {
 };
 /** 手機：沿視線往後退的倍數（直式畫面水平視野窄，主體才進得了框） */
 export const MOBILE_K2: Record<string, number> = {
-  'echo-gilgal': 1.5,
-  'echo-hezekiah': 1.3,
-  'echo-ruth': 1.7,
+  'echo-gilgal': 2.05,
+  'echo-hezekiah': 1.65,
+  'echo-ruth': 2.1,
   'echo-water-gate': 1.5,
   'echo-roofs': 1.4,
+  'second-month': 2.6,
   summer: 1.3,
   'seventh-moon': 1.3,
   blow: 1.3,
@@ -83,8 +84,8 @@ export const DX2: Record<string, number[]> = {
 };
 /** 手機：畫面整體往上推的比例（說明框蓋住下半） */
 export const UP2: Record<string, number[]> = {
-  'echo-gilgal': [0.17], 'echo-hezekiah': [0.2], 'echo-ruth': [0.2], summer: [0.04],
-  'seventh-moon': [0.17], blow: [0.17], 'trumpet-offerings': [0.2], 'echo-water-gate': [0.2],
-  veil: [0.12], linen: [0.17], lots: [0.17], incense: [0.14], sprinkle: [0.14], confess: [0.17], scapegoat: [0.15], afflict: [0.3],
-  ingathering: [0.1], branches: [0.18], booth: [0.2], bulls: [0.3], 'booths-rejoice': [0.2], 'eighth-day': [0.2], 'echo-roofs': [0.2],
+  'echo-gilgal': [0.29], 'echo-hezekiah': [0.27], 'echo-ruth': [0.28], summer: [0.04],
+  'seventh-moon': [0.17], blow: [0.17], 'trumpet-offerings': [0.2], 'echo-water-gate': [0.254],
+  veil: [0.12], linen: [0.17], lots: [0.17], incense: [0.14], sprinkle: [0.27], confess: [0.17], scapegoat: [0.15], afflict: [0.3],
+  ingathering: [0.1], branches: [0.18], booth: [0.2], bulls: [0.3], 'booths-rejoice': [0.2], 'eighth-day': [0.287], 'echo-roofs': [0.3], 'second-month': [0.23], 'seven-days': [0.29],
 };

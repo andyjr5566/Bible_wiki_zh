@@ -257,6 +257,51 @@ describe.skipIf(!IN_VAULT)('故意弄壞資料：錯誤要指出哪一筆、哪�
     const e3 = broken((d) => { chapterOf(d, 'summer').monthTo = 3; }, { audio: allAudio() });
     expect(hit(e3, 'chapters[summer].monthTo', '大於 month')).toBe(true);
   });
+  it('passage 章可以沒有 month／monthTo（coda）；只有 monthTo 或只有 month 才報錯', () => {
+    const ok = broken((d) => { delete chapterOf(d, 'summer').month; delete chapterOf(d, 'summer').monthTo; }, { audio: allAudio() });
+    expect(ok.filter((e) => e.includes('chapters[summer]'))).toEqual([]);
+    const e1 = broken((d) => { delete chapterOf(d, 'summer').monthTo; }, { audio: allAudio() });
+    expect(hit(e1, 'chapters[summer].monthTo', '有 month 就一定要有 monthTo')).toBe(true);
+    const e2 = broken((d) => { delete chapterOf(d, 'summer').month; }, { audio: allAudio() });
+    expect(hit(e2, 'chapters[summer].month', '有 monthTo 就一定要有 month')).toBe(true);
+  });
+  it('回看 recall：指到不存在的拍、指自己、重複、空陣列、passage 不可有', () => {
+    const errors = broken((d) => {
+      d.story.sevens.find((b) => b.id === 'seven-weeks').recall = ['no-such-beat'];
+      d.story.sevens.find((b) => b.id === 'month-seven').recall = ['month-seven'];
+      d.story.sevens.find((b) => b.id === 'read-law').recall = ['booth', 'booth'];
+      d.story.sevens.find((b) => b.id === 'jubilee-horn').recall = [];
+      d.story.coda[0].recall = ['count'];
+    }, { audio: allAudio() });
+    expect(hit(errors, 'sevens[seven-weeks].recall[0]', 'no-such-beat')).toBe(true);
+    expect(hit(errors, 'sevens[month-seven].recall[0]', '自己')).toBe(true);
+    expect(hit(errors, 'sevens[read-law].recall[1]', '重複')).toBe(true);
+    expect(hit(errors, 'sevens[jubilee-horn].recall')).toBe(true);
+    expect(hit(errors, 'coda[', 'recall', 'passage')).toBe(true);
+  });
+  it('law_links：章 id 不存在、律法地圖沒有這個條文、重複、空陣列；正常時標題寫進 StoryChapter.laws', () => {
+    const errors = broken((d) => {
+      d.feasts.law_links['no-such-chapter'] = ['lev23-03'];
+      d.feasts.law_links.trumpets = ['no-such-law', 'lev23-24', 'lev23-24'];
+      d.feasts.law_links.atonement = [];
+    }, { audio: allAudio() });
+    expect(hit(errors, 'law_links [no-such-chapter]', '章 id')).toBe(true);
+    expect(hit(errors, 'law_links [trumpets]', 'no-such-law')).toBe(true);
+    expect(hit(errors, 'law_links [trumpets]', 'lev23-24', '重複')).toBe(true);
+    expect(hit(errors, 'law_links [atonement]')).toBe(true);
+    const sevens = buildAll().data.chapters.find((c) => c.id === 'sevens');
+    expect(sevens.laws?.every((l) => l.id && l.title)).toBe(true);
+    expect(sevens.laws?.find((l) => l.id === 'lev23-03')?.title).toContain('安息日');
+  });
+  it('七的倍數（#6）：SiteData.sevens 是 7、49、50', () => {
+    expect(buildAll().data.sevens).toEqual({ days: 7, weeks49: 49, fifty: 50 });
+  });
+  it('書卷簡稱「耶」「結」：commentary 的 chapter 欄與經文參照都認得', () => {
+    const { data } = buildAll();
+    expect(data.verses['耶34:8-11']?.book).toBe('耶利米書');
+    expect(data.verses['結46:16-17']?.book).toBe('以西結書');
+    expect(Object.values(data.commentary).some((n) => n.book === '耶利米書' && n.chapter === 34)).toBe(true);
+  });
   it('moreVerses：和 verse 重複、重複的出處、對不到經文、空陣列、passage 不可有', () => {
     const errors = broken((d) => {
       const bs = d.story.weeks.find((b) => b.id === 'ruth');

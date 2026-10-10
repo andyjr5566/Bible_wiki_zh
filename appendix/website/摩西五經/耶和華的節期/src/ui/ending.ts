@@ -6,7 +6,7 @@
  */
 import type { AudioSource, OtNote, StoryChapter } from '../data/types';
 import { SITE } from '../data/site';
-import { chapterUrl, entryUrl } from '../data/links';
+import { chapterUrl, entryUrl, lawUrl } from '../data/links';
 import { ext, h } from './dom';
 import { STEP_REPO } from './panels';
 import type { EchoUI } from './echo';
@@ -21,6 +21,13 @@ function entryItem(title: string): HTMLElement | null {
     h('p', { class: 'jf-entry-name' }, e.title),
     h('p', { class: 'jf-entry-gist' }, e.gist),
     h('p', { class: 'jf-entry-go' }, ext(entryUrl(e.type, e.title), '查看完整條目（另開網頁）')));
+}
+
+/** 章末「律法地圖」的一筆：條文名稱（取自律法地圖）＋連過去的另開連結 */
+function lawItem(law: { id: string; title: string }): HTMLElement {
+  return h('li', { class: 'jf-entry jf-law', 'data-law': law.id },
+    h('p', { class: 'jf-entry-name' }, law.title),
+    h('p', { class: 'jf-entry-go' }, ext(lawUrl(law.id), '在律法地圖看這一條（另開網頁）')));
 }
 
 function passageItem(ref: string): HTMLElement | null {
@@ -125,6 +132,9 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI)
   });
   const entries = uniq(group.flatMap((c) => c.entries));
   const nt = uniq(group.flatMap((c) => c.nt));
+  // 律法地圖：本章自己的條文（開場章併進來的不重複列，它的 law_links 併進這一章）
+  const lawSeen = new Set<string>();
+  const laws = group.flatMap((c) => c.laws ?? []).filter((l) => (lawSeen.has(l.id) ? false : (lawSeen.add(l.id), true)));
   const passageEls = passages.map(passageItem).filter(Boolean);
   const entryEls = entries.map(entryItem).filter(Boolean);
   const ntEls = nt.map(entryItem).filter(Boolean);
@@ -144,6 +154,11 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI)
         ? h('div', { class: 'jf-end-block' },
           h('h3', { class: 'jf-end-h' }, '延伸閱讀'),
           h('ul', { class: 'jf-entries' }, entryEls))
+        : null,
+      laws.length
+        ? h('div', { class: 'jf-end-block jf-laws' },
+          h('h3', { class: 'jf-end-h' }, '律法地圖'),
+          h('ul', { class: 'jf-entries' }, laws.map(lawItem)))
         : null,
       ntEls.length
         ? h('div', { class: 'jf-end-block' },

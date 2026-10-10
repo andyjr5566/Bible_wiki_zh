@@ -2,6 +2,8 @@
  * 回聲：舊約後來的歷史（Beat.echoes）與被它呼應的拍之間的連結。
  * - 回聲拍的說明框：左上「後來」小標籤（beats.ts）、經文出處寫全書名、文字下方「呼應」小標列出被呼應的拍。
  * - 被呼應的拍反向顯示一行「後來：約書亞記 5 章」（從 echoes 反推，不寫在 yaml）。
+ * - 回看（Beat.recall）：說明框裡一行「回看」小標＋被回看的拍，點了用同一套跳轉；不是「後來」，
+ *   不換舊紙配色、不顯示「後來」標籤，被回看的拍也不反向顯示連結。
  * - 點連結 → 沿用月份導覽的跳轉（刻線抹除＋window.scrollTo({behavior:'instant'})）；
  *   跳過去以後，畫面角落出現「回到：…」小按鈕，8 秒後或捲動超過一個螢幕高就消失。
  * - 沒有平滑捲動、沒有 scrollIntoView。
@@ -22,6 +24,8 @@ interface Entry {
 export interface EchoUI {
   /** 回聲拍說明框裡的「呼應」小節；不是回聲拍回 null */
   echoesSection(beat: Beat): HTMLElement | null;
+  /** 回看小節（Beat.recall）：「回看」小標＋被回看的拍；沒有 recall 回 null */
+  recallSection(beat: Beat): HTMLElement | null;
   /** 被呼應的拍反向的「後來」連結；沒有人呼應它回 null */
   laterLinks(beat: Beat): HTMLElement | null;
   setNav(nav: Nav): void;
@@ -108,6 +112,16 @@ export function createEchoUI(host: HTMLElement): EchoUI {
         h('p', { class: 'jf-echoes-h' }, '呼應'),
         h('ul', { class: 'jf-echoes-list' },
           items.map((e) => h('li', null, link(targetLabel(e), e, origin, 'jf-echo-to')))));
+    },
+    recallSection(beat) {
+      if (!beat.recall?.length) return null;
+      const origin = byId.get(beat.id)!;
+      const items = beat.recall.map((id) => byId.get(id)).filter((e): e is Entry => !!e);
+      if (!items.length) return null;
+      return h('div', { class: 'jf-echoes jf-recall' },
+        h('p', { class: 'jf-echoes-h' }, '回看'),
+        h('ul', { class: 'jf-echoes-list' },
+          items.map((e) => h('li', null, link(targetLabel(e), e, origin, 'jf-echo-to jf-recall-to')))));
     },
     laterLinks(beat) {
       const list = echoedBy.get(beat.id);

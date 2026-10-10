@@ -18,6 +18,9 @@ from typing import Dict, List, Tuple, Optional
 # en -> cn (和合本書名 = raw_scripture dir), ct (CT/GT title abbreviation),
 # bh (BibleHub English name, regex), step (STEPBible English name)
 BOOKS = {
+    'genesis':      {'cn': '創世記',     'ct': '創',   'bh': 'Genesis',      'step': 'Genesis'},
+    'jeremiah':     {'cn': '耶利米書',   'ct': '耶',   'bh': 'Jeremiah',     'step': 'Jeremiah'},
+    'ezekiel':      {'cn': '以西結書',   'ct': '結',   'bh': 'Ezekiel',      'step': 'Ezekiel'},
     'exodus':       {'cn': '出埃及記',   'ct': '出',   'bh': 'Exodus',       'step': 'Exodus'},
     'leviticus':    {'cn': '利未記',     'ct': '利',   'bh': 'Leviticus',    'step': 'Leviticus'},
     'numbers':      {'cn': '民數記',     'ct': '民',   'bh': 'Numbers',      'step': 'Numbers'},
@@ -212,13 +215,17 @@ def extract_verses_from_kc(raw_data: List[str]) -> Dict[int, List[Tuple[int, int
 
 def extract_verses_from_kc_para(para: str) -> List[int]:
     """Extract verse numbers from (verse N) or (verses N-M) patterns."""
+    # 支援：(verse 23)、(verses 21-23)、(verses 42,45)、(verse 20b)、(verses 35,39,47; cf. verse 25)
+    # 分號之後的內容（如 cf.、交叉引用）不計入本段的節。
     result = []
-    matches = re.finditer(r'\(verses?\s+(\d+)(?:[–—-](\d+))?\)', para)
-
-    for match in matches:
-        start = int(match.group(1))
-        end = int(match.group(2)) if match.group(2) else start
-        result.extend(range(start, end + 1))
+    for match in re.finditer(r'\(verses?\s+([^();]+?)\s*(?=[;)])', para):
+        for piece in match.group(1).split(','):
+            m = re.fullmatch(r'\s*(\d+)[a-z]?(?:\s*[–—-]\s*(\d+)[a-z]?)?\s*', piece)
+            if not m:
+                continue
+            start = int(m.group(1))
+            end = int(m.group(2)) if m.group(2) else start
+            result.extend(range(start, end + 1))
 
     return list(set(result))
 

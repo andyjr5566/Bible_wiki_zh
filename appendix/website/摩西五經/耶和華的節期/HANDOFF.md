@@ -16,7 +16,22 @@
 | 第一階段 | 開場＋逾越節，13 拍 | 已 commit `300746b5`；使用者：「大致上都沒有問題」 |
 | 第二階段第一批（春季） | 月朔（併入開場）、無酵節、初熟的禾捆、二月逾越節、七七節，18 拍 | 已 commit `67380ab3`；使用者：「大致上都沒有問題」 |
 | 第二階段第二批（秋季＋舊約回聲） | 夏日過場、吹角節、贖罪日（利16 完整）、住棚節＋第八日；5 個回聲拍；章末「舊約其他書卷」；民29 數字檢查 | 已 commit；使用者：「全部沒問題 做得很好」 |
-| 第二階段第三批（結尾） | 七的節奏（安息日→禧年）＋回聲拍、首頁入口卡、律法地圖互連、兩個小缺點；目標提示詞 `GOAL-4.md` | 未開始 |
+| 第二階段第三批（結尾） | 七的節奏（安息日→禧年）＋回聲拍、首頁入口、律法地圖互連、兩個小缺點；目標提示詞 `GOAL-4.md` | 進行中，見下方「第三批做到哪」 |
+
+## 第三批做到哪（2026-10-10 收工時）
+
+**已完成**
+- 內容（Opus）：sevens 章 17 拍（含 3 個回聲拍：耶34、代下36、尼10）＋無字 coda；46 則註釋、5 個原文字（shabbaton、shemittah、shofar、deror、yovel）、10 句條目簡介、章末 ot 3 筆、law_links（每章對應的律法地圖條文）。SPEC.md 有本批分鏡。Codex 兩輪（9、10）：第 1 輪 4 條已修，第 2 輪 PASS；資料檢查引文逐字與 GT 歸屬 0 錯。
+- 資料與介面（Sonnet）：`Beat.recall`（回看）、`StoryChapter.laws`、`SITE.sevens`（7／49／50 從經文解析，建置檢查 #6）、passage 章可無 month；章末「律法地圖」欄；深連結 `#ch=`／`#beat=`；兩個 blow 拍狀態分開；律法地圖條文頁反向連回節期；首頁 index.md 多一行節期（`appendix-chapters.json`，toc_only）；`scene-lab.html` 移到 `lab/`。check-echo 446、check-blow 88、check-lawmap-links 66 項全過。
+- 兩個小缺點（Sonnet）：收起說明框時構圖推移平順歸零（約 0.55 秒）；手機主角被說明框蓋住 ≥15% 的拍由 8 拍降到 0（`tools/check-subject-box.mjs`）。
+- 場景（Sonnet，做到一半被主筆叫停）：新增 `src/scene/vortex.ts`（漩渦）、`poses3.ts`，新 cue 都已註冊（cues.test 過）。tsc 0 錯、npm test 111 過、npm run build 成功。
+
+**還沒做（下次從這裡接）**
+- 場景的視覺驗收一項都還沒做：先在瀏覽器逐拍截圖看 sevens／coda 的畫面是否照 SPEC 表格完成（代理被叫停時可能還有半成品）。
+- 新拍的機械檢查：check-idle-motion（桌機、手機，--only 列新 cue）、check-subject-box（手機 <15%）、面板高度。
+- 從 neh-booths 錄到 coda 的影片＋scene>0.4 掃描（穿模、硬切）。
+- 靜態插圖 shoot-fallback 補新 cue；四組截圖（桌機／手機 × 亮／暗）；file://。
+- 白話回報給使用者，然後停。
 
 ## 第一批（春季）做了什麼
 

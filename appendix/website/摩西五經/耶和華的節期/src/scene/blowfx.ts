@@ -21,20 +21,27 @@ export class BlowFx {
   /** 有環還在擴散，或按鈕還按著／還沒回落 */
   busy = false;
 
-  constructor() {
+  /** cx、cz、y：聲波的中心（世界座標；預設是會幕院子門口）；drive：要不要驅動帳棚布面的全域 uniform（一次只讓一個實例驅動） */
+  private drive: boolean;
+  private cx: number;
+  private cz: number;
+  constructor(cx = GATE_X, cz = GATE_Z, y = 1.6, drive = true) {
+    this.drive = drive;
+    this.cx = cx;
+    this.cz = cz;
     this.matV = ringMat(true);
     this.matF = ringMat(false);
     this.vert = new Mesh(new PlaneGeometry(90, 70), this.matV);
-    this.vert.position.set(GATE_X, 24, GATE_Z + 0.5);
+    this.vert.position.set(cx, 24 + (y - 1.6), cz + 0.5);
     this.vert.renderOrder = 8;
     this.vert.frustumCulled = false;
     this.flat = new Mesh(new PlaneGeometry(90, 90), this.matF);
     this.flat.rotation.x = -Math.PI / 2;
-    this.flat.position.set(GATE_X, 0.07, GATE_Z);
+    this.flat.position.set(cx, 0.07 + y - 1.6, cz);
     this.flat.renderOrder = 8;
     this.flat.frustumCulled = false;
-    (this.matV.uniforms.uC.value as { set: (x: number, y: number, z: number) => void }).set(GATE_X, 1.6, GATE_Z + 0.5);
-    (this.matF.uniforms.uC.value as { set: (x: number, y: number, z: number) => void }).set(GATE_X, 0, GATE_Z);
+    (this.matV.uniforms.uC.value as { set: (x: number, y: number, z: number) => void }).set(cx, y, cz + 0.5);
+    (this.matF.uniforms.uC.value as { set: (x: number, y: number, z: number) => void }).set(cx, y - 1.6, cz);
     this.vert.visible = false;
     this.flat.visible = false;
   }
@@ -42,9 +49,11 @@ export class BlowFx {
   /** dt：秒（已夾在 0–0.1）；level：story.blow.level；show：現在在不在吹角節的營地 */
   update(dt: number, level: number, show: boolean): void {
     // 帳棚布面被推動：全域 uniform
-    U.uBlowC.value.set(GATE_X, GATE_Z);
-    U.uBlowA.value = level;
-    U.uBlowT.value += dt;
+    if (this.drive) {
+      U.uBlowC.value.set(this.cx, this.cz);
+      U.uBlowA.value = level;
+      U.uBlowT.value += dt;
+    }
     if (level > 0.02) {
       this.timer -= dt;
       if (this.timer <= 0) {

@@ -194,3 +194,35 @@
   position: 15
   expect_strong: H6116
   note: 和合本譯作「嚴肅會」。STEP 的本節譯義是 a solemn assembly，字典義是 assembly（聚會）。同一個字也出現在珥1:14、珥2:15（禁食的聚會）、摩5:21、王下10:20（為巴力宣告的聚會）。黃迦勒說，第八日的嚴肅會是住棚節後次日再慶祝一天，不可作工，百姓到會幕前聚集。
+
+# ================= 第三批：七的節奏 =================
+- id: shabbaton
+  label: 聖安息日
+  ref: 利23:3
+  position: 8
+  expect_strong: H7677
+  note: 和合本的「聖安息日」在原文是兩個字連用：前一字 STEP 譯作 a sabbath of（安息日），這一字 STEP 譯作 sabbath observance（守安息），字典義同。利25:4 地在第七年要守的「聖安息」，原文也是這兩個字；黃迦勒在那一節註明「原文雙字」。
+- id: shemittah
+  label: 豁免
+  ref: 申15:1
+  position: 5
+  expect_strong: H8059
+  note: 和合本譯作「豁免」。STEP 的本節譯義是 a remission（免除），字典義也是 remission；下一節「豁免了」用的是動詞，STEP 字典義是 to release（鬆開、釋放）。黃迦勒說「豁免」原意指休耕（參出23:11），在申15 指免除債務。
+- id: shofar
+  label: 角
+  ref: 利25:9
+  position: 2
+  expect_strong: H7782
+  note: 和合本「大發角聲」的「角」。STEP 的本節譯義是 a ram's horn（公羊角），字典義是 trumpet；後面緊接的字就是利23:24 那個 teruah（響亮的聲音）。利23:24 只有 teruah、沒有樂器名，這一節兩個字都出現，「角」在本節出現兩次。
+- id: deror
+  label: 自由
+  ref: 利25:10
+  position: 7
+  expect_strong: H1865
+  note: 和合本譯作「自由」。STEP 的本節譯義和字典義都是 liberty。同一個字也出現在耶34:8、15、17（西底家與眾民立約宣告自由，第17節出現兩次）、賽61:1（和合本譯作「被擄的得釋放」的「釋放」）、結46:17（「自由之年」）。
+- id: yovel
+  label: 禧年
+  ref: 利25:10
+  position: 11
+  expect_strong: H3104
+  note: 和合本譯作「禧年」。STEP 的本節譯義是 a jubilee，字典義是 jubilee/horn：同一個字也可以指那支角。部分註釋就從這裡解釋名稱：KingComments 說這個字的意思是「吹公羊角」；《聖經精讀本》說名稱來自吹公羊角宣告禧年開始。

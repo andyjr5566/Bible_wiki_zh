@@ -12,6 +12,12 @@ export const WIKI_BASE = ((import.meta.env?.VITE_WIKI_BASE as string | undefined
 export const entryUrl = (type: string, title: string): string =>
   `${WIKI_BASE}/link_folder/${encodeURIComponent(type)}/${encodeURIComponent(title)}`;
 
+/**
+ * 律法地圖的條文頁（姊妹網站，同在 摩西五經/ 底下）：從 dist/index.html 往上兩層再進 律法地圖/dist。
+ * 兩個網站都是單一 HTML，file:// 與公開網域都能用相對路徑互連。
+ */
+export const lawUrl = (id: string): string => `../../律法地圖/dist/index.html#/law/${encodeURIComponent(id)}`;
+
 /** 章節頁：…/02-出埃及記/第21章（公開網站把資料夾的空白換成連字號） */
 export const chapterUrl = (bookNum: number, bookName: string, chapter: number): string =>
   `${WIKI_BASE}/${encodeURIComponent(`${String(bookNum).padStart(2, '0')}-${bookName}`)}/${encodeURIComponent(`第${chapter}章`)}`;

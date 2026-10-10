@@ -188,7 +188,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     setWant('wailing', cue === 'wailing' ? SPEC.wailing.max : 0);
     setWant('fire', cue === 'bake' ? SPEC.fire.max : 0);
     setWant('harvest', cue === 'rejoice' || cue === 'barley-ripe' ? SPEC.harvest.max : 0);
-    setWant('desert-wind', cue === 'scapegoat' ? SPEC['desert-wind'].max : 0);
+    setWant('desert-wind', cue === 'scapegoat' || cue === 'echo-land-rest' ? SPEC['desert-wind'].max : 0);
     setWant('music', SPEC.music.max * (cue === 'wailing' || blowing ? MUSIC_DUCK : 1));
   }
 

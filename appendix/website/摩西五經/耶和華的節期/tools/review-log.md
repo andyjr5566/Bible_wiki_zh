@@ -94,3 +94,14 @@
   - 珥2 兩條沒有明說原文同字與否，和固定說明不符。
   - 審後 `git status util/`：無變動。
 - **第 2 輪**（`codex-review-8.md` → `.out.md`）：PASS，無 finding。審後 `git status util/`：無變動。
+
+## 第二階段第三批（七的節奏）
+
+- **第 1 輪**（`codex-review-9.md` → `.out.md`）：CHANGES_REQUIRED，4 條，主筆逐條回查 raw_scripture 確認成立並修正：
+  - `jubilee-horn` 和七月初一比較，但沒列利23:24；補列，並改寫成「和合本兩處都譯作角，原文不一樣」；
+  - `land-mine` 的「人要放回」在利25:41-42；補列；
+  - `land-rest` 的「耶路撒冷陷落」在代下36:19；經文改為代下36:19-21，敘述照第19節寫「城牆被拆毀」；
+  - `neh-oath` 的「被擄歸回」不在尼10:28-29；改照經文列出起誓的人。
+  - 46 則註釋、5 個原文字、10 句條目簡介、3 筆章末 note：審查者未列 finding。
+  - 審後 `git status util/`：無變動。
+- **第 2 輪**（`codex-review-10.md` → `.out.md`）：PASS，無 finding。審後 `git status util/`：無變動。資料檢查（引文逐字、GT 段落歸屬）0 錯。

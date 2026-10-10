@@ -54,8 +54,8 @@ const hyssopTop = await b.evaluate(`(() => { const el = document.querySelector('
 const clickText = (txt) => b.evaluate(`(() => { const el = [...document.querySelectorAll('button')].find(e => e.textContent.trim() === ${JSON.stringify(txt)}); if (el) { el.click(); return true } return false })()`);
 const topOf = (cue) => b.evaluate(`(() => { const el = document.querySelector('[data-cue="${cue}"]'); return el ? el.getBoundingClientRect().top + scrollY : -1; })()`);
 // 長按某個按鈕（例如「按住烤餅」）：在按鈕中心按下、停 ms 毫秒、放開
-const holdText = async (txt, ms, doneExpr = null) => {
-  const r = await b.evaluate(`(() => { const el = [...document.querySelectorAll('button')].find(e => e.textContent.trim() === ${JSON.stringify(txt)} && e.offsetParent); if (!el) return null; const q = el.getBoundingClientRect(); return [q.x + q.width / 2, q.y + q.height / 2]; })()`);
+const holdText = async (txt, ms, doneExpr = null, scope = 'body') => {
+  const r = await b.evaluate(`(() => { const el = [...document.querySelectorAll(${JSON.stringify(scope + ' button')})].find(e => e.textContent.trim() === ${JSON.stringify(txt)} && e.offsetParent); if (!el) return null; const q = el.getBoundingClientRect(); return [q.x + q.width / 2, q.y + q.height / 2]; })()`);
   if (!r) return false;
   if (mobile) await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: r[0], y: r[1] }] });
   else {
@@ -77,6 +77,8 @@ const actions = [
   { at: hyssopTop, run: async () => { for (const t of ['蘸血', '打門楣', '蘸血', '打左門框', '蘸血', '打右門框']) { await clickText(t); await sleep(1100); } } },
   { at: await topOf('bake'), run: async () => { await holdText('按住烤餅', 2400); } },
   { at: await topOf('blow'), run: async () => { await holdText('吹', 6000, 'window.__jfStory.blow.done'); await sleep(900); } },
+  // 七的節奏的禧年角聲（第二個吹角互動，按鈕在自己那一拍的說明框裡）
+  { at: await topOf('sv-horn'), run: async () => { await holdText('吹', 6000, 'window.__jfStory.blow.done', '[data-cue="sv-horn"]'); await sleep(900); } },
   { at: await topOf('wave'), run: async () => { for (let i = 0; i < 3; i++) { await clickText('搖一搖'); await sleep(1000); } } },
 ].filter((a) => a.at > 0);
 // 起訖：--from 那一拍的上緣往上留半個畫面；--to-end 那一章的章末上緣

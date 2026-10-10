@@ -429,3 +429,148 @@ booths:
     verse: 尼8:13-18
     text: 宣讀律法的次日，族長、祭司和利未人讀到住棚的條例。百姓就去取樹枝，在==房頂上==、院內、神殿的院內和城門前的寬闊處搭棚。經文說，從約書亞的時候直到這日，以色列人沒有這樣行。他們守節七日，第八日照例有嚴肅會。
     notes: [ct-neh-scale, gt-jingdu-never-so, gt-jingdu-olive, kc-only-in-land, bh-neh-unity]
+
+# ================= 第三批：七的節奏 =================
+# recall：回看先前的拍（跳回去，不是「後來」，不換舊紙配色）
+sevens:
+  - id: sabbath
+    cue: sv-sabbath
+    badge: 第七日
+    verse: 利23:3
+    text: 利未記列出耶和華的節期，頭一個說的是安息日：六日要做工，第七日是==聖安息日==，當有聖會，什麼工都不可做。這一章從這個「七」開始，一圈一圈往外數。
+    notes: [kc-lev25-week-year, bh-lev25-six-cycle]
+    words: [shabbaton]
+
+  - id: sabbath-why
+    cue: sv-creation
+    reason: true
+    badge: 第七日
+    verse: 出20:8-11
+    moreVerses: [創2:2-3]
+    text: 為什麼是第七日？十誡自己交代：六日之內耶和華造天、地、海和其中的萬物，第七日便安息，所以==賜福與安息日==，定為聖日。創世記也說，神在第七日歇了他一切創造的工。
+    notes: [ct-ex20-example, bh-ex20-not-tired]
+
+  - id: sabbath-rest-for
+    cue: sv-ox
+    reason: true
+    badge: 第七日
+    verse: 出23:12
+    text: 出埃及記另給了一個理由：第七日要安息，==使牛、驢可以歇息==，也使婢女的兒子和寄居的都可以舒暢。
+    notes: [ct-ex23-weary]
+
+  - id: seven-weeks
+    cue: sv-weeks
+    recall: [count]
+    verse: 利23:15-16
+    text: 七天再乘七：從獻禾捆的那天算起，要數滿==七個安息日==，到第五十天就是七七節。這一圈本站在七七節那一章已經數過。
+    notes: [bh-lev25-omer]
+
+  - id: month-seven
+    cue: sv-month7
+    recall: [seventh-month, veil, ingathering]
+    verse: 利23:24
+    moreVerses: [利23:27, 利23:34]
+    text: 一年的第七個月最滿：初一吹角，初十是贖罪日，十五日起守住棚節。==第七個月==的這三個節期，前面三章都走過了。
+
+  - id: sabbath-year
+    cue: sv-fallow
+    badge: 第七年
+    verse: 利25:2-7
+    moreVerses: [出23:10-11]
+    text: 再往外數到年。到了神所賜的那地，六年耕種、修理葡萄園，第七年地要向耶和華守==安息==：不耕種、不修剪，自己長出來的也不收割。這一年地裡自長的，人、僕婢、雇工、寄居的、牲畜和走獸都可以吃；出埃及記說，要使民中的窮人有吃的。
+    notes: [ct-lev25-for-land, kc-lev25-not-punish, kc-lev25-for-all, gt-bg-fallow-parts]
+
+  - id: what-eat
+    cue: sv-sixth
+    reason: true
+    badge: 第六年
+    verse: 利25:20-22
+    text: 經文自己替人問了：「這第七年我們不耕種，也不收藏土產，==吃什麼呢==？」神的回答是：第六年我要賜福，地便生三年的土產；第八年再耕種，陳糧一直吃到第九年收成的時候。
+    notes: [ct-lev25-three-fold, gt-chuanzhu-test-faith, gt-dlc-no-nation, bh-lev25-trust]
+
+  - id: release
+    cue: sv-release
+    badge: 第七年
+    verse: 申15:1-2
+    moreVerses: [申15:12-14]
+    text: 第七年也是==豁免==的年。債主要把借給鄰舍的豁免了，不可向弟兄追討；希伯來弟兄賣身服事了六年，第七年要任他自由出去，還不可讓他空手走，要從羊群、禾場、酒醡中多多地給他。
+    notes: [ct-deut15-fallow-word, ct-deut15-not-empty, kc-deut15-master, kc-deut15-twice]
+    words: [shemittah]
+
+  - id: release-why
+    cue: sv-egypt
+    reason: true
+    verse: 申15:15
+    text: 理由就寫在下一節：「要紀念你在埃及地==作過奴僕==，耶和華你的神將你救贖。」
+    notes: [ct-deut15-remember]
+
+  - id: read-law
+    cue: sv-reading
+    recall: [booth]
+    badge: 第七年的住棚節
+    verse: 申31:10-12
+    text: 每逢七年的末一年，就是豁免年的住棚節，眾人來到神所選擇的地方朝見他，要把==這律法==念給他們聽。男、女、孩子，連城裡寄居的都要招聚來，使他們聽，使他們學習。
+    notes: [ct-deut31-who-reads, ct-deut31-steps, bh-deut31-foreigners]
+
+  - id: forty-nine
+    cue: sv-49
+    badge: 第四十九年
+    verse: 利25:8
+    text: 再數七個這樣的七年：==七七年==，共是四十九年。和數七七節的日子一樣是七乘七，只是這一次一格是一年。
+    notes: [ct-lev25-seven-sevens, gt-dlc-64th-year]
+
+  - id: jubilee-horn
+    cue: sv-horn
+    interaction: blow
+    recall: [veil]
+    badge: 七月初十
+    verse: 利25:9
+    moreVerses: [利23:24]
+    prompt: 按住「吹」，在遍地發出角聲。
+    text: 「當年七月初十日」要大發角聲，在遍地發出角聲。那一天正是==贖罪日==。和合本兩處都譯作「角」，原文不一樣：七月初一的「吹角」只說響亮的聲音，這一節原文寫明吹的是公羊角。
+    notes: [ct-lev25-which-year, gt-dlc-atonement-first, kc-lev25-horn-again, bh-lev25-shofar]
+    words: [shofar]
+
+  - id: liberty
+    cue: sv-liberty
+    badge: 第五十年
+    verse: 利25:10-12
+    text: 第五十年要當作聖年，在遍地給一切的居民宣告==自由==。這年是禧年，各人要歸自己的產業，各歸本家；這一年也不耕種、不收割，吃地中自出的土產。
+    notes: [ct-lev25-fiftieth, gt-dlc-two-readings, gt-jingdu-both-rest, kc-lev25-ramshorn, gt-qidao-never-kept]
+    words: [deror, yovel]
+
+  - id: land-mine
+    cue: sv-land
+    reason: true
+    verse: 利25:23
+    moreVerses: [利25:15-16, 利25:41-42, 利25:55]
+    text: 為什麼地要歸還、人要放回？經文自己說：「地不可永賣，因為==地是我的==；你們在我面前是客旅，是寄居的。」人也一樣：「以色列人都是我的僕人，是我從埃及地領出來的。」
+    notes: [ct-lev25-land-gods, gt-qidao-even-king, gt-bg-inalienable, kc-lev25-crops-sold]
+
+  - id: zedekiah
+    cue: echo-zedekiah
+    echoes: [release]
+    verse: 耶34:8-11
+    moreVerses: [耶34:14, 耶34:17]
+    text: 西底家王與耶路撒冷的眾民立約，宣告自由，各人任他希伯來的僕人婢女自由出去；大家都順從，將他們釋放了。後來卻又==反悔==，叫他們回來，勉強他們仍為僕婢。神提醒他們律法說的「到第七年你們各人就要任他自由出去」，又說：我向你們宣告一樣自由，就是自由於刀劍、饑荒、瘟疫之下。
+    notes: [ct-jer34-why-release, ct-jer34-why-turn, kc-jer34-longer, kc-jer34-not-whole]
+
+  - id: land-rest
+    cue: echo-land-rest
+    echoes: [sabbath-year]
+    verse: 代下36:19-21
+    text: 耶路撒冷的城牆被拆毀，脫離刀劍的人都被擄到巴比倫。歷代志說，這就應驗耶和華藉耶利米口所說的話：「地享受安息；因為==地土荒涼便守安息==，直滿了七十年。」
+    notes: [ct-chr36-seventy, kc-lev25-exile, kc-chr36-from-first]
+
+  - id: neh-oath
+    cue: echo-oath
+    echoes: [sabbath-year, release]
+    verse: 尼10:28-29
+    moreVerses: [尼10:31]
+    text: 眾民、祭司、利未人和一切歸服神律法的人發咒起誓，必遵行神藉摩西所傳的律法。誓約裡寫著：安息日或聖日，有人帶貨物糧食來賣，我們必不買；==每逢第七年==必不耕種，凡欠我們債的必不追討。
+    notes: [ct-neh10-seventh, bh-neh10-commerce]
+
+coda:
+  - id: coda
+    cue: coda-night
+    text: ''

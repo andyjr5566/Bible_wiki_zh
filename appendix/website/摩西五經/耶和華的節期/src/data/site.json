@@ -218,6 +218,20 @@
       ],
       "id": "opening",
       "kind": "opening",
+      "laws": [
+        {
+          "id": "ex12-02",
+          "title": "以本月為正月，為一年之首"
+        },
+        {
+          "id": "num28-11",
+          "title": "每月朔獻公牛犢、公綿羊、公羊羔和公山羊"
+        },
+        {
+          "id": "num10-02",
+          "title": "用銀子做兩枝號，招聚會眾，叫眾營起行，打仗和節期也吹號"
+        }
+      ],
       "nt": [],
       "ot": [
         {
@@ -377,6 +391,32 @@
       ],
       "id": "passover",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "ex12-03",
+          "title": "初十日取羊羔，十四日黃昏宰了，塗血在門框上，當夜烤了吃"
+        },
+        {
+          "id": "ex12-21",
+          "title": "長老按家口取羊羔宰逾越節的祭，兒女問時要講給他們聽"
+        },
+        {
+          "id": "ex12-43",
+          "title": "逾越節的例：外人不可吃，在一個房子裡吃，骨頭不可折斷"
+        },
+        {
+          "id": "lev23-05",
+          "title": "正月十四日逾越節，十五日起守無酵節七日"
+        },
+        {
+          "id": "num28-16",
+          "title": "逾越節與無酵節，七日每日獻公牛犢、公綿羊、公羊羔和公山羊"
+        },
+        {
+          "id": "deut16-01",
+          "title": "在所選擇的地方守逾越節，吃無酵餅七日"
+        }
+      ],
       "month": 1,
       "next": {
         "date": "正月十五日起，共七日",
@@ -491,6 +531,28 @@
       ],
       "id": "unleavened",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "ex12-14",
+          "title": "記念這日，吃無酵餅七日，除去家中的酵"
+        },
+        {
+          "id": "ex13-03",
+          "title": "記念出埃及的日子，吃無酵餅七日，要告訴兒子"
+        },
+        {
+          "id": "lev23-05",
+          "title": "正月十四日逾越節，十五日起守無酵節七日"
+        },
+        {
+          "id": "num28-16",
+          "title": "逾越節與無酵節，七日每日獻公牛犢、公綿羊、公羊羔和公山羊"
+        },
+        {
+          "id": "deut16-16",
+          "title": "一年三次在所選擇的地方朝見，不可空手"
+        }
+      ],
       "month": 1,
       "next": {
         "date": "安息日的次日",
@@ -617,6 +679,12 @@
       ],
       "id": "firstfruits",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "lev23-10",
+          "title": "收割莊稼，要把初熟的一捆帶給祭司搖一搖"
+        }
+      ],
       "next": {
         "date": "二月十四日黃昏",
         "title": "二月逾越節"
@@ -718,6 +786,20 @@
       ],
       "id": "second-passover",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "num09-02",
+          "title": "在所定的日期守逾越節"
+        },
+        {
+          "id": "num09-10",
+          "title": "因死屍不潔淨或在遠方行路的，二月十四日守逾越節"
+        },
+        {
+          "id": "num09-13",
+          "title": "潔淨又不行路的人若不守逾越節，要從民中剪除；寄居的也同歸一例"
+        }
+      ],
       "month": 2,
       "next": {
         "date": "從獻禾捆那日算起第五十天",
@@ -841,6 +923,28 @@
       ],
       "id": "weeks",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "lev23-15",
+          "title": "數七個安息日，第五十天獻新素祭，守七七節"
+        },
+        {
+          "id": "lev23-22",
+          "title": "收割莊稼，不可割盡田角，要留給窮人和寄居的"
+        },
+        {
+          "id": "num28-26",
+          "title": "七七節初熟的日子，獻新素祭，當有聖會"
+        },
+        {
+          "id": "deut16-09",
+          "title": "數七七日，守七七節，與眾人一同歡樂"
+        },
+        {
+          "id": "ex34-22",
+          "title": "守七七節和收藏節，一年三次朝見主耶和華"
+        }
+      ],
       "next": {
         "date": "七月初一",
         "title": "吹角節"
@@ -973,6 +1077,20 @@
       ],
       "id": "trumpets",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "lev23-24",
+          "title": "七月初一吹角作紀念，守為聖安息日"
+        },
+        {
+          "id": "num29-01",
+          "title": "七月初一日有聖會，獻公牛犢、公綿羊、公羊羔和公山羊"
+        },
+        {
+          "id": "num10-02",
+          "title": "用銀子做兩枝號，招聚會眾，叫眾營起行，打仗和節期也吹號"
+        }
+      ],
       "month": 7,
       "next": {
         "date": "七月初十",
@@ -1159,6 +1277,40 @@
       ],
       "id": "atonement",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "lev16-02",
+          "title": "亞倫不可隨時進幔子內，進去要先預備"
+        },
+        {
+          "id": "lev16-06",
+          "title": "公牛為自己贖罪，兩隻公山羊拈鬮"
+        },
+        {
+          "id": "lev16-11",
+          "title": "帶香入幔子內，彈血七次，潔淨聖所和壇"
+        },
+        {
+          "id": "lev16-20",
+          "title": "活山羊擔當罪孽，帶到曠野"
+        },
+        {
+          "id": "lev16-23",
+          "title": "獻燔祭之後的善後"
+        },
+        {
+          "id": "lev16-29",
+          "title": "七月初十日刻苦己心，什麼工都不可做"
+        },
+        {
+          "id": "lev23-27",
+          "title": "七月初十日贖罪日，刻苦己心，什麼工都不可做"
+        },
+        {
+          "id": "num29-07",
+          "title": "七月初十日有聖會，刻苦己心，獻燔祭和贖罪祭"
+        }
+      ],
       "month": 7,
       "next": {
         "date": "七月十五日起，共七日",
@@ -1345,6 +1497,32 @@
       ],
       "id": "booths",
       "kind": "feast",
+      "laws": [
+        {
+          "id": "lev23-34",
+          "title": "七月十五日起守住棚節七日，第八日有嚴肅會"
+        },
+        {
+          "id": "lev23-39",
+          "title": "收藏出產之後，守節七日，住在棚裡"
+        },
+        {
+          "id": "num29-12",
+          "title": "七月十五日守住棚節七日，每日獻的公牛逐日減少"
+        },
+        {
+          "id": "deut16-13",
+          "title": "收藏之後守住棚節七日"
+        },
+        {
+          "id": "deut16-16",
+          "title": "一年三次在所選擇的地方朝見，不可空手"
+        },
+        {
+          "id": "deut31-10",
+          "title": "每逢七年末一年的住棚節，將律法念給眾人聽"
+        }
+      ],
       "month": 7,
       "nt": [
         "約7：38-39 活水的江河"
@@ -1397,6 +1575,388 @@
       ],
       "scene": "booths-land",
       "title": "住棚節"
+    },
+    {
+      "beats": [
+        {
+          "badge": "第七日",
+          "cue": "sv-sabbath",
+          "id": "sabbath",
+          "notes": [
+            "kc-lev25-week-year",
+            "bh-lev25-six-cycle"
+          ],
+          "text": "利未記列出耶和華的節期，頭一個說的是安息日：六日要做工，第七日是==聖安息日==，當有聖會，什麼工都不可做。這一章從這個「七」開始，一圈一圈往外數。",
+          "verse": "利23:3",
+          "words": [
+            "shabbaton"
+          ]
+        },
+        {
+          "badge": "第七日",
+          "cue": "sv-creation",
+          "id": "sabbath-why",
+          "moreVerses": [
+            "創2:2-3"
+          ],
+          "notes": [
+            "ct-ex20-example",
+            "bh-ex20-not-tired"
+          ],
+          "reason": true,
+          "text": "為什麼是第七日？十誡自己交代：六日之內耶和華造天、地、海和其中的萬物，第七日便安息，所以==賜福與安息日==，定為聖日。創世記也說，神在第七日歇了他一切創造的工。",
+          "verse": "出20:8-11"
+        },
+        {
+          "badge": "第七日",
+          "cue": "sv-ox",
+          "id": "sabbath-rest-for",
+          "notes": [
+            "ct-ex23-weary"
+          ],
+          "reason": true,
+          "text": "出埃及記另給了一個理由：第七日要安息，==使牛、驢可以歇息==，也使婢女的兒子和寄居的都可以舒暢。",
+          "verse": "出23:12"
+        },
+        {
+          "cue": "sv-weeks",
+          "id": "seven-weeks",
+          "notes": [
+            "bh-lev25-omer"
+          ],
+          "recall": [
+            "count"
+          ],
+          "text": "七天再乘七：從獻禾捆的那天算起，要數滿==七個安息日==，到第五十天就是七七節。這一圈本站在七七節那一章已經數過。",
+          "verse": "利23:15-16"
+        },
+        {
+          "cue": "sv-month7",
+          "id": "month-seven",
+          "moreVerses": [
+            "利23:27",
+            "利23:34"
+          ],
+          "recall": [
+            "seventh-month",
+            "veil",
+            "ingathering"
+          ],
+          "text": "一年的第七個月最滿：初一吹角，初十是贖罪日，十五日起守住棚節。==第七個月==的這三個節期，前面三章都走過了。",
+          "verse": "利23:24"
+        },
+        {
+          "badge": "第七年",
+          "cue": "sv-fallow",
+          "id": "sabbath-year",
+          "moreVerses": [
+            "出23:10-11"
+          ],
+          "notes": [
+            "ct-lev25-for-land",
+            "kc-lev25-not-punish",
+            "kc-lev25-for-all",
+            "gt-bg-fallow-parts"
+          ],
+          "text": "再往外數到年。到了神所賜的那地，六年耕種、修理葡萄園，第七年地要向耶和華守==安息==：不耕種、不修剪，自己長出來的也不收割。這一年地裡自長的，人、僕婢、雇工、寄居的、牲畜和走獸都可以吃；出埃及記說，要使民中的窮人有吃的。",
+          "verse": "利25:2-7"
+        },
+        {
+          "badge": "第六年",
+          "cue": "sv-sixth",
+          "id": "what-eat",
+          "notes": [
+            "ct-lev25-three-fold",
+            "gt-chuanzhu-test-faith",
+            "gt-dlc-no-nation",
+            "bh-lev25-trust"
+          ],
+          "reason": true,
+          "text": "經文自己替人問了：「這第七年我們不耕種，也不收藏土產，==吃什麼呢==？」神的回答是：第六年我要賜福，地便生三年的土產；第八年再耕種，陳糧一直吃到第九年收成的時候。",
+          "verse": "利25:20-22"
+        },
+        {
+          "badge": "第七年",
+          "cue": "sv-release",
+          "id": "release",
+          "moreVerses": [
+            "申15:12-14"
+          ],
+          "notes": [
+            "ct-deut15-fallow-word",
+            "ct-deut15-not-empty",
+            "kc-deut15-master",
+            "kc-deut15-twice"
+          ],
+          "text": "第七年也是==豁免==的年。債主要把借給鄰舍的豁免了，不可向弟兄追討；希伯來弟兄賣身服事了六年，第七年要任他自由出去，還不可讓他空手走，要從羊群、禾場、酒醡中多多地給他。",
+          "verse": "申15:1-2",
+          "words": [
+            "shemittah"
+          ]
+        },
+        {
+          "cue": "sv-egypt",
+          "id": "release-why",
+          "notes": [
+            "ct-deut15-remember"
+          ],
+          "reason": true,
+          "text": "理由就寫在下一節：「要紀念你在埃及地==作過奴僕==，耶和華你的神將你救贖。」",
+          "verse": "申15:15"
+        },
+        {
+          "badge": "第七年的住棚節",
+          "cue": "sv-reading",
+          "id": "read-law",
+          "notes": [
+            "ct-deut31-who-reads",
+            "ct-deut31-steps",
+            "bh-deut31-foreigners"
+          ],
+          "recall": [
+            "booth"
+          ],
+          "text": "每逢七年的末一年，就是豁免年的住棚節，眾人來到神所選擇的地方朝見他，要把==這律法==念給他們聽。男、女、孩子，連城裡寄居的都要招聚來，使他們聽，使他們學習。",
+          "verse": "申31:10-12"
+        },
+        {
+          "badge": "第四十九年",
+          "cue": "sv-49",
+          "id": "forty-nine",
+          "notes": [
+            "ct-lev25-seven-sevens",
+            "gt-dlc-64th-year"
+          ],
+          "text": "再數七個這樣的七年：==七七年==，共是四十九年。和數七七節的日子一樣是七乘七，只是這一次一格是一年。",
+          "verse": "利25:8"
+        },
+        {
+          "badge": "七月初十",
+          "cue": "sv-horn",
+          "id": "jubilee-horn",
+          "interaction": "blow",
+          "moreVerses": [
+            "利23:24"
+          ],
+          "notes": [
+            "ct-lev25-which-year",
+            "gt-dlc-atonement-first",
+            "kc-lev25-horn-again",
+            "bh-lev25-shofar"
+          ],
+          "prompt": "按住「吹」，在遍地發出角聲。",
+          "recall": [
+            "veil"
+          ],
+          "text": "「當年七月初十日」要大發角聲，在遍地發出角聲。那一天正是==贖罪日==。和合本兩處都譯作「角」，原文不一樣：七月初一的「吹角」只說響亮的聲音，這一節原文寫明吹的是公羊角。",
+          "verse": "利25:9",
+          "words": [
+            "shofar"
+          ]
+        },
+        {
+          "badge": "第五十年",
+          "cue": "sv-liberty",
+          "id": "liberty",
+          "notes": [
+            "ct-lev25-fiftieth",
+            "gt-dlc-two-readings",
+            "gt-jingdu-both-rest",
+            "kc-lev25-ramshorn",
+            "gt-qidao-never-kept"
+          ],
+          "text": "第五十年要當作聖年，在遍地給一切的居民宣告==自由==。這年是禧年，各人要歸自己的產業，各歸本家；這一年也不耕種、不收割，吃地中自出的土產。",
+          "verse": "利25:10-12",
+          "words": [
+            "deror",
+            "yovel"
+          ]
+        },
+        {
+          "cue": "sv-land",
+          "id": "land-mine",
+          "moreVerses": [
+            "利25:15-16",
+            "利25:41-42",
+            "利25:55"
+          ],
+          "notes": [
+            "ct-lev25-land-gods",
+            "gt-qidao-even-king",
+            "gt-bg-inalienable",
+            "kc-lev25-crops-sold"
+          ],
+          "reason": true,
+          "text": "為什麼地要歸還、人要放回？經文自己說：「地不可永賣，因為==地是我的==；你們在我面前是客旅，是寄居的。」人也一樣：「以色列人都是我的僕人，是我從埃及地領出來的。」",
+          "verse": "利25:23"
+        },
+        {
+          "cue": "echo-zedekiah",
+          "echoes": [
+            "release"
+          ],
+          "id": "zedekiah",
+          "moreVerses": [
+            "耶34:14",
+            "耶34:17"
+          ],
+          "notes": [
+            "ct-jer34-why-release",
+            "ct-jer34-why-turn",
+            "kc-jer34-longer",
+            "kc-jer34-not-whole"
+          ],
+          "text": "西底家王與耶路撒冷的眾民立約，宣告自由，各人任他希伯來的僕人婢女自由出去；大家都順從，將他們釋放了。後來卻又==反悔==，叫他們回來，勉強他們仍為僕婢。神提醒他們律法說的「到第七年你們各人就要任他自由出去」，又說：我向你們宣告一樣自由，就是自由於刀劍、饑荒、瘟疫之下。",
+          "verse": "耶34:8-11"
+        },
+        {
+          "cue": "echo-land-rest",
+          "echoes": [
+            "sabbath-year"
+          ],
+          "id": "land-rest",
+          "notes": [
+            "ct-chr36-seventy",
+            "kc-lev25-exile",
+            "kc-chr36-from-first"
+          ],
+          "text": "耶路撒冷的城牆被拆毀，脫離刀劍的人都被擄到巴比倫。歷代志說，這就應驗耶和華藉耶利米口所說的話：「地享受安息；因為==地土荒涼便守安息==，直滿了七十年。」",
+          "verse": "代下36:19-21"
+        },
+        {
+          "cue": "echo-oath",
+          "echoes": [
+            "sabbath-year",
+            "release"
+          ],
+          "id": "neh-oath",
+          "moreVerses": [
+            "尼10:31"
+          ],
+          "notes": [
+            "ct-neh10-seventh",
+            "bh-neh10-commerce"
+          ],
+          "text": "眾民、祭司、利未人和一切歸服神律法的人發咒起誓，必遵行神藉摩西所傳的律法。誓約裡寫著：安息日或聖日，有人帶貨物糧食來賣，我們必不買；==每逢第七年==必不耕種，凡欠我們債的必不追討。",
+          "verse": "尼10:28-29"
+        }
+      ],
+      "date": "第七日・第七年・第五十年",
+      "entries": [
+        "安息日",
+        "安息年",
+        "豁免（she.mit.tah）",
+        "每七年宣讀律法（豁免年的住棚節）",
+        "禧年（第五十年）",
+        "禧年宣告自由與地業歸還",
+        "自由",
+        "奴僕與自由",
+        "救贖goel"
+      ],
+      "id": "sevens",
+      "kind": "feast",
+      "laws": [
+        {
+          "id": "lev23-03",
+          "title": "六日做工，第七日是聖安息日，什麼工都不可做"
+        },
+        {
+          "id": "ex20-08",
+          "title": "守安息日為聖日"
+        },
+        {
+          "id": "ex23-10",
+          "title": "第七年要叫地歇息"
+        },
+        {
+          "id": "lev25-02",
+          "title": "第七年地要向耶和華守安息"
+        },
+        {
+          "id": "lev25-08",
+          "title": "第五十年作聖年，宣告自由，各人歸自己的產業"
+        },
+        {
+          "id": "lev25-23",
+          "title": "地不可永賣，因為地是耶和華的"
+        },
+        {
+          "id": "lev25-39",
+          "title": "窮乏賣身的弟兄不可當奴僕"
+        },
+        {
+          "id": "deut15-01",
+          "title": "每逢七年末一年，豁免弟兄的債"
+        },
+        {
+          "id": "deut15-12",
+          "title": "釋放希伯來弟兄不可空手"
+        },
+        {
+          "id": "deut31-10",
+          "title": "每逢七年末一年的住棚節，將律法念給眾人聽"
+        }
+      ],
+      "nt": [
+        "來4：9-10"
+      ],
+      "ot": [
+        {
+          "kind": "kept",
+          "note": "亞哈王要拿伯的葡萄園，出價、要換更好的園子都行；拿伯說：「我敬畏耶和華，萬不敢將我先人留下的產業給你。」可以對照利25:23「地不可永賣」。",
+          "ref": "王上21:2-3"
+        },
+        {
+          "kind": "kept",
+          "note": "這是以西結看見的將來：王把產業賜給臣僕，「到自由之年仍要歸與王」；下一節說王不可奪取民的產業（結46:18）。「自由」原文和利25:10 同字。",
+          "ref": "結46:16-17"
+        },
+        {
+          "kind": "word",
+          "note": "先知說耶和華用膏膏他，差他「報告被擄的得釋放」；這「釋放」原文和利25:10「宣告自由」的「自由」同字。說的是先知受差遣的使命，不是在守某一個禧年。",
+          "ref": "賽61:1-2"
+        }
+      ],
+      "palette": {
+        "accent": "#8c3b2a",
+        "glow": "#f0d58a",
+        "ink": "#1f2433",
+        "paper": "#ece4d2"
+      },
+      "passages": [
+        "創2:1-3",
+        "出20:8-11",
+        "出23:10-12",
+        "利23:3",
+        "利25:1-24",
+        "利25:39-55",
+        "申15:1-18",
+        "申31:9-13"
+      ],
+      "scene": "sevens-spiral",
+      "title": "七的節奏"
+    },
+    {
+      "beats": [
+        {
+          "cue": "coda-night",
+          "id": "coda",
+          "text": ""
+        }
+      ],
+      "entries": [],
+      "id": "coda",
+      "kind": "passage",
+      "nt": [],
+      "palette": {
+        "accent": "#9b3a2a",
+        "glow": "#f3dc96",
+        "ink": "#1b2030",
+        "paper": "#e9e1cc"
+      },
+      "passages": [],
+      "scene": "coda-night",
+      "title": "夜"
     }
   ],
   "commentary": {
@@ -1496,6 +2056,18 @@
       "verse": "出12:23",
       "work": "BibleHub 研經註解"
     },
+    "bh-deut31-foreigners": {
+      "book": "申命記",
+      "chapter": 31,
+      "id": "bh-deut31-foreigners",
+      "quote": "The inclusion of \"foreigners\" highlights the openness of Israel's society to those who were not ethnically Israelite but lived among them.",
+      "quoteZh": "把「寄居的」也算進來，顯出以色列社會對住在他們中間、卻不是以色列血統的人是敞開的。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/31.htm",
+      "verse": "申31:12",
+      "work": "BibleHub 研經註解"
+    },
     "bh-dignity": {
       "book": "利未記",
       "chapter": 23,
@@ -1518,6 +2090,18 @@
       "source": "BH",
       "url": "https://biblehub.com/study/exodus/12.htm",
       "verse": "出12:34",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-ex20-not-tired": {
+      "book": "出埃及記",
+      "chapter": 20,
+      "id": "bh-ex20-not-tired",
+      "quote": "This phrase introduces the concept of divine rest, which is not due to fatigue but signifies completion and satisfaction with creation.",
+      "quoteZh": "這一句帶出神的安息：神安息不是因為累了，而是表示創造已經完成，並且他對所造的滿意。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/20.htm",
+      "verse": "出20:11",
       "work": "BibleHub 研經註解"
     },
     "bh-first-day": {
@@ -1640,6 +2224,54 @@
       "verse": "利23:17",
       "work": "BibleHub 研經註解"
     },
+    "bh-lev25-omer": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "bh-lev25-omer",
+      "quote": "This mirrors the counting of the Omer between Passover and Shavuot, which is also a period of seven weeks (Leviticus 23:15-16).",
+      "quoteZh": "這和逾越節到七七節之間數算禾捆的日子相對應，那也是七個七（利23:15-16）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/25.htm",
+      "verse": "利25:8",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-lev25-shofar": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "bh-lev25-shofar",
+      "quote": "The shofar, typically made from a ram's horn, was used for various purposes, including calling people to worship, signaling the start of festivals, and announcing important events.",
+      "quoteZh": "角（shofar）通常用公羊角做成，用途很多：召集人敬拜、宣告節期開始、通告重大的事。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/25.htm",
+      "verse": "利25:9",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-lev25-six-cycle": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "bh-lev25-six-cycle",
+      "quote": "The concept of a six-year cycle is rooted in the creation narrative, where God created the world in six days and rested on the seventh (Genesis 1:31-2:2).",
+      "quoteZh": "六年一循環的觀念，根源在創造的記載：神用六天創造世界，第七天安息（創1:31-2:2）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/25.htm",
+      "verse": "利25:3",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-lev25-trust": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "bh-lev25-trust",
+      "quote": "The Sabbath year is a test of faith, requiring trust in God's provision.",
+      "quoteZh": "安息年是對信心的考驗，要人信靠神的供應。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/25.htm",
+      "verse": "利25:20",
+      "work": "BibleHub 研經註解"
+    },
     "bh-linen-simple": {
       "book": "利未記",
       "chapter": 16,
@@ -1674,6 +2306,18 @@
       "source": "BH",
       "url": "https://biblehub.com/study/nehemiah/8.htm",
       "verse": "尼8:17",
+      "work": "BibleHub 研經註解"
+    },
+    "bh-neh10-commerce": {
+      "book": "尼希米記",
+      "chapter": 10,
+      "id": "bh-neh10-commerce",
+      "quote": "Commercial traffic could easily turn the Sabbath into an ordinary workday, as later happened in Jerusalem (Nehemiah 13:15–22).",
+      "quoteZh": "買賣往來很容易把安息日變成普通的工作日；後來耶路撒冷就發生了這種事（尼13:15-22）。",
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/nehemiah/10.htm",
+      "verse": "尼10:31",
       "work": "BibleHub 研經註解"
     },
     "bh-newmoon": {
@@ -1896,6 +2540,17 @@
       "verse": "利23:40",
       "work": "黃迦勒《利未記註解》"
     },
+    "ct-chr36-seventy": {
+      "book": "歷代志下",
+      "chapter": 36,
+      "id": "ct-chr36-seventy",
+      "quote": "補足百姓所沒有遵守的律法規定的70個安息年",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14CT36.htm",
+      "verse": "代下36:21",
+      "work": "黃迦勒《歷代志下註解》"
+    },
     "ct-corners": {
       "book": "利未記",
       "chapter": 23,
@@ -1929,6 +2584,61 @@
       "verse": "申16:15",
       "work": "黃迦勒《申命記註解》"
     },
+    "ct-deut15-fallow-word": {
+      "book": "申命記",
+      "chapter": 15,
+      "id": "ct-deut15-fallow-word",
+      "quote": "『豁免』原意指休耕(參出二十三11)，在此指免除債務(參2~3節)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm",
+      "verse": "申15:1",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-deut15-not-empty": {
+      "book": "申命記",
+      "chapter": 15,
+      "id": "ct-deut15-not-empty",
+      "quote": "如果奴隸空手得自由，可能很快又會因為貧困而再次欠債淪為奴隸。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm",
+      "verse": "申15:14",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-deut15-remember": {
+      "book": "申命記",
+      "chapter": 15,
+      "id": "ct-deut15-remember",
+      "quote": "自己既蒙神施拯救，就當成為幫助別人的動機。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm",
+      "verse": "申15:15",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-deut31-steps": {
+      "book": "申命記",
+      "chapter": 31,
+      "id": "ct-deut31-steps",
+      "quote": "本節指明使眾人明白而遵行律法的程序：(1)招聚；(2)使聽；(3)學習；(4)敬畏神；(5)謹守；(6)遵行。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT31.htm",
+      "verse": "申31:12",
+      "work": "黃迦勒《申命記註解》"
+    },
+    "ct-deut31-who-reads": {
+      "book": "申命記",
+      "chapter": 31,
+      "id": "ct-deut31-who-reads",
+      "quote": "『你』指祭司和長老(參9節)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT31.htm",
+      "verse": "申31:11",
+      "work": "黃迦勒《申命記註解》"
+    },
     "ct-dough": {
       "book": "出埃及記",
       "chapter": 12,
@@ -1951,6 +2661,28 @@
       "verse": "利23:36",
       "work": "黃迦勒《利未記註解》"
     },
+    "ct-ex20-example": {
+      "book": "出埃及記",
+      "chapter": 20,
+      "id": "ct-ex20-example",
+      "quote": "表示神自己先做榜樣，然後才要求人也要六日勞碌做工(參9節)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT20.htm",
+      "verse": "出20:11",
+      "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-ex23-weary": {
+      "book": "出埃及記",
+      "chapter": 23,
+      "id": "ct-ex23-weary",
+      "quote": "使牲口有機會休息，而最勞苦的人們也能夠身心都舒暢。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT23.htm",
+      "verse": "出23:12",
+      "work": "黃迦勒《出埃及記註解》"
+    },
     "ct-hezekiah-heart": {
       "book": "歷代志下",
       "chapter": 30,
@@ -1972,6 +2704,28 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT12.htm",
       "verse": "出12:22",
       "work": "黃迦勒《出埃及記註解》"
+    },
+    "ct-jer34-why-release": {
+      "book": "耶利米書",
+      "chapter": 34,
+      "id": "ct-jer34-why-release",
+      "quote": "儘管不清楚其原因，有可能防衛城邑，需要主僕併肩作戰，或圍城饑荒中，奴婢需要口糧存活。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/24Jer/24AT34.htm",
+      "verse": "耶34:10",
+      "work": "黃迦勒《耶利米書註解》"
+    },
+    "ct-jer34-why-turn": {
+      "book": "耶利米書",
+      "chapter": 34,
+      "id": "ct-jer34-why-turn",
+      "quote": "尼布甲尼撒撤軍，可能曾是誘因，促使他們變心毀約，不守他們對奴婢釋放的保證。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/24Jer/24AT34.htm",
+      "verse": "耶34:11",
+      "work": "黃迦勒《耶利米書註解》"
     },
     "ct-josh-produce": {
       "book": "約書亞記",
@@ -2017,6 +2771,72 @@
       "verse": "利23:17",
       "work": "黃迦勒《利未記註解》"
     },
+    "ct-lev25-fiftieth": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-fiftieth",
+      "quote": "『第五十年』應當是指第七個安息年的次年，猶太歷史學家約瑟夫也同意這個解釋",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:10",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lev25-for-land": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-for-land",
+      "quote": "安息日是為人，安息年是為地，但仍舊是為人，只有地得安息，人才能得安息",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:4",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lev25-land-gods": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-land-gods",
+      "quote": "土地不可賣斷或買斷，因為土地是屬於神的。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:23",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lev25-seven-sevens": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-seven-sevens",
+      "quote": "這樣到了第七個安息年，便是過了四十九年。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:8",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lev25-three-fold": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-three-fold",
+      "quote": "『生三年的土產』指三倍於平常的產量",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:21",
+      "work": "黃迦勒《利未記註解》"
+    },
+    "ct-lev25-which-year": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "ct-lev25-which-year",
+      "quote": "『當年』指第四十九年；『大發角聲』指多人在多地發出角聲。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm",
+      "verse": "利25:9",
+      "work": "黃迦勒《利未記註解》"
+    },
     "ct-most-offerings": {
       "book": "民數記",
       "chapter": 29,
@@ -2048,6 +2868,17 @@
       "source": "CT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT08.htm",
       "verse": "尼8:17",
+      "work": "黃迦勒《尼希米記註解》"
+    },
+    "ct-neh10-seventh": {
+      "book": "尼希米記",
+      "chapter": 10,
+      "id": "ct-neh10-seventh",
+      "quote": "第七年即安息年，律法規定要休耕(參出二十三11；利二十五4)，且要豁免債務(參申十五2)。",
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT10.htm",
+      "verse": "尼10:31",
       "work": "黃迦勒《尼希米記註解》"
     },
     "ct-newmoon": {
@@ -2293,6 +3124,17 @@
       "verse": "出12:34",
       "work": "《舊約聖經背景註釋》"
     },
+    "gt-bg-fallow-parts": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-bg-fallow-parts",
+      "quote": "這政策可能是每年在同一塊田的不同部分實施，使每一部分至終都能休息。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:4",
+      "work": "《舊約聖經背景註釋》"
+    },
     "gt-bg-fullmoon": {
       "book": "出埃及記",
       "chapter": 12,
@@ -2302,6 +3144,17 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02GT12.htm",
       "verse": "出12:6",
+      "work": "《舊約聖經背景註釋》"
+    },
+    "gt-bg-inalienable": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-bg-inalienable",
+      "quote": "以色列律法的核心觀念，是百姓對土地有不可剝奪的權利。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:8-55",
       "work": "《舊約聖經背景註釋》"
     },
     "gt-bg-lift": {
@@ -2558,6 +3411,39 @@
       "verse": "利16:13",
       "work": "《串珠聖經註釋》"
     },
+    "gt-chuanzhu-test-faith": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-chuanzhu-test-faith",
+      "quote": "藉著安息年及禧年的律例，也可試驗以色列人對神應許的信心。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:18-22",
+      "work": "《串珠聖經註釋》"
+    },
+    "gt-dlc-64th-year": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-dlc-64th-year",
+      "quote": "倘若他們到了迦南以後，第二十一年才守了第一個安息年（2注），就是在第六十四年才初次守禧年。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:8",
+      "work": "丁良才《利未記註釋》"
+    },
+    "gt-dlc-atonement-first": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-dlc-atonement-first",
+      "quote": "禧年從大贖罪日起是要顯明真實的豁免和自由必須本著贖罪。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:9",
+      "work": "丁良才《利未記註釋》"
+    },
     "gt-dlc-corners": {
       "book": "利未記",
       "chapter": 23,
@@ -2623,6 +3509,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/04Num/04GT28.htm",
       "verse": "民28:11",
       "work": "丁良才《民數記註釋》"
+    },
+    "gt-dlc-no-nation": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-dlc-no-nation",
+      "quote": "自古至今除了以色列人以外，再沒有一國有這樣的條例，叫百姓每七年停止務農一年，每五十年就一連停止兩年。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:21",
+      "work": "丁良才《利未記註釋》"
     },
     "gt-dlc-no-sin": {
       "book": "利未記",
@@ -2756,6 +3653,18 @@
       "verse": "民9:11",
       "work": "丁良才《民數記註釋》"
     },
+    "gt-dlc-two-readings": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-dlc-two-readings",
+      "paraphrase": "丁良才也列出第二種解法：每第七個安息年本身就算禧年；他認為這種解法與18至22節的意思不合。",
+      "quote": "禧年有兩樣解法：（一）有人以為第四十九年是安息年，第五十年是禧年，所以這兩年全然不能種地",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:10",
+      "work": "丁良才《利未記註釋》"
+    },
     "gt-jingdu-azazel-three": {
       "book": "利未記",
       "chapter": 16,
@@ -2765,6 +3674,17 @@
       "source": "GT",
       "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT16.htm",
       "verse": "利16:8",
+      "work": "《聖經精讀本──利未記註解》"
+    },
+    "gt-jingdu-both-rest": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-jingdu-both-rest",
+      "quote": "即第四十九年和五十年都是休息的年份。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:8",
       "work": "《聖經精讀本──利未記註解》"
     },
     "gt-jingdu-hands": {
@@ -2888,6 +3808,17 @@
       "verse": "出12:39",
       "work": "《啟導本聖經腳註》"
     },
+    "gt-qidao-even-king": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-qidao-even-king",
+      "quote": "在以色列人歷史中，連君王也不可違背這條立法（參王上二十一3～4）。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:23",
+      "work": "《啟導本聖經利未記註釋》"
+    },
     "gt-qidao-giver": {
       "book": "利未記",
       "chapter": 23,
@@ -2920,6 +3851,17 @@
       "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14GT30.htm",
       "verse": "代下30:2-3",
       "work": "《啟導本聖經註釋》"
+    },
+    "gt-qidao-never-kept": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "gt-qidao-never-kept",
+      "quote": "說明以色列的社會未曾真正遵行禧年的定例。",
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm",
+      "verse": "利25:8-17",
+      "work": "《啟導本聖經利未記註釋》"
     },
     "gt-qidao-order": {
       "book": "利未記",
@@ -3094,6 +4036,18 @@
       "verse": "出12:26",
       "work": "KingComments"
     },
+    "kc-chr36-from-first": {
+      "book": "歷代志下",
+      "chapter": 36,
+      "id": "kc-chr36-from-first",
+      "quote": "This period of seventy years is counted from the first carrying away to Babylon.",
+      "quoteZh": "這七十年是從第一次被擄到巴比倫算起。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/2Chr/36",
+      "verse": "代下36:21",
+      "work": "KingComments"
+    },
     "kc-church": {
       "book": "利未記",
       "chapter": 23,
@@ -3104,6 +4058,30 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Lev/23",
       "verse": "利23:17",
+      "work": "KingComments"
+    },
+    "kc-deut15-master": {
+      "book": "申命記",
+      "chapter": 15,
+      "id": "kc-deut15-master",
+      "quote": "The emphasis here, however, is not on the attitude of the slave, but on the mind of the master.",
+      "quoteZh": "不過這裡的重點不在奴僕的態度，而在主人的心意。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Deu/15",
+      "verse": "申15:12-18",
+      "work": "KingComments"
+    },
+    "kc-deut15-twice": {
+      "book": "申命記",
+      "chapter": 15,
+      "id": "kc-deut15-twice",
+      "quote": "If he had had to hire a man for all the work the slave did, it would have cost him twice as much.",
+      "quoteZh": "奴僕做的這些工，主人若要雇人來做，得花上兩倍的錢。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Deu/15",
+      "verse": "申15:12-18",
       "work": "KingComments"
     },
     "kc-dough": {
@@ -3214,6 +4192,30 @@
       "verse": "利16:12-13",
       "work": "KingComments"
     },
+    "kc-jer34-longer": {
+      "book": "耶利米書",
+      "chapter": 34,
+      "id": "kc-jer34-longer",
+      "quote": "It seems that the rich made the poor serve as servants for longer than the seven years prescribed by God in the law",
+      "quoteZh": "看來富人讓窮人當奴僕的年數，超過了神在律法裡定的七年。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Jer/34",
+      "verse": "耶34:8-9",
+      "work": "KingComments"
+    },
+    "kc-jer34-not-whole": {
+      "book": "耶利米書",
+      "chapter": 34,
+      "id": "kc-jer34-not-whole",
+      "quote": "The covenant was not made wholeheartedly.",
+      "quoteZh": "這個約不是全心立的。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Jer/34",
+      "verse": "耶34:11",
+      "work": "KingComments"
+    },
     "kc-josh-manna": {
       "book": "約書亞記",
       "chapter": 5,
@@ -3224,6 +4226,90 @@
       "source": "KC",
       "url": "https://www.kingcomments.com/en/bible-studies/Jos/5",
       "verse": "書5:12",
+      "work": "KingComments"
+    },
+    "kc-lev25-crops-sold": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-crops-sold",
+      "quote": "When a piece of land is sold, in reality it is not the land, but a number of crops that are sold.",
+      "quoteZh": "賣一塊地，實際上賣的不是地，而是幾年的收成。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:15",
+      "work": "KingComments"
+    },
+    "kc-lev25-exile": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-exile",
+      "quote": "Then God makes sure that His land gets rest by sending the people into exile (2Chr 36:21).",
+      "quoteZh": "於是神讓百姓被擄，好叫他的地得著安息（代下36:21）。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:4",
+      "work": "KingComments"
+    },
+    "kc-lev25-for-all": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-for-all",
+      "quote": "that food is for everyone, not just for the owner of the land.",
+      "quoteZh": "那些食物是給每一個人的，不只是給地主的。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:6",
+      "work": "KingComments"
+    },
+    "kc-lev25-horn-again": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-horn-again",
+      "quote": "But in this fiftieth year the horn will sound another time in the seventh month.",
+      "quoteZh": "但在這第五十年，七月裡角聲還要再響一次。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:9",
+      "work": "KingComments"
+    },
+    "kc-lev25-not-punish": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-not-punish",
+      "quote": "This is not a punishment, but a blessing: they do not have to work.",
+      "quoteZh": "這不是懲罰，而是福氣：他們不必做工。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:4",
+      "work": "KingComments"
+    },
+    "kc-lev25-ramshorn": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-ramshorn",
+      "quote": "The word “jubilee” means “blowing on the ramshorn”.",
+      "quoteZh": "「禧年」這個字的意思是「吹公羊角」。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:10",
+      "work": "KingComments"
+    },
+    "kc-lev25-week-year": {
+      "book": "利未記",
+      "chapter": 25,
+      "id": "kc-lev25-week-year",
+      "quote": "Just as the people have to work six days and rest on the seventh day, so the land in which they will live must be worked for six years and be given a year’s rest in the seventh year.",
+      "quoteZh": "百姓要六天做工、第七天安息；同樣，他們將要住的地也要耕種六年，第七年讓它安息一年。",
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25",
+      "verse": "利25:4",
       "work": "KingComments"
     },
     "kc-linen": {
@@ -3540,6 +4626,11 @@
       "title": "來10：19-20",
       "type": "互文"
     },
+    "來4：9-10": {
+      "gist": "必另有一安息日的安息，為神的子民存留。",
+      "title": "來4：9-10",
+      "type": "互文"
+    },
     "來9：11-12": {
       "gist": "基督用自己的血只一次進入聖所，對照大祭司每年帶牛羊的血進至聖所。",
       "title": "來9：11-12",
@@ -3590,6 +4681,21 @@
       "title": "大贖罪日（Yom Kippur）條例",
       "type": "歷史"
     },
+    "奴僕與自由": {
+      "gist": "出21:2-11 把為奴和得自由放在同一組條例，自由有期限也有代價。",
+      "title": "奴僕與自由",
+      "type": "主題"
+    },
+    "安息年": {
+      "gist": "第七年叫地歇息；出23:10-11 是約書裡第一次這樣規定。",
+      "title": "安息年",
+      "type": "神學"
+    },
+    "安息日": {
+      "gist": "神賜福給第七日，把它分別為聖，因為神在這日歇了創造的工。",
+      "title": "安息日",
+      "type": "神學"
+    },
     "希西家守二月逾越節（代下三十）": {
       "gist": "希西家依照民9:10-11 的補守條例，在二月十四日守逾越節。",
       "title": "希西家守二月逾越節（代下三十）",
@@ -3614,6 +4720,11 @@
       "gist": "大祭司在幔子內把搗細的香放在火上，使煙雲遮掩施恩座。",
       "title": "搗細香料遮掩施恩座",
       "type": "主題"
+    },
+    "救贖goel": {
+      "gist": "原文 ga'al；《串珠》說字義是「要求歸還，重申自己的權益」。",
+      "title": "救贖goel",
+      "type": "神學"
     },
     "新素祭": {
       "gist": "七七節用當年新收成獻給耶和華的素祭。",
@@ -3640,6 +4751,11 @@
       "title": "林前5：6-8",
       "type": "互文"
     },
+    "每七年宣讀律法（豁免年的住棚節）": {
+      "gist": "每逢七年末一年的住棚節，要把律法念給以色列眾人聽。",
+      "title": "每七年宣讀律法（豁免年的住棚節）",
+      "type": "主題"
+    },
     "滅命的": {
       "gist": "出12:23 擊殺埃及長子的那一位；是天使還是神自己，解法不一。",
       "title": "滅命的",
@@ -3663,6 +4779,16 @@
     "牛膝草": {
       "gist": "拿來蘸血、打在門楣和門框上的小草；後來也用在潔淨的儀式裡。",
       "title": "牛膝草",
+      "type": "原文"
+    },
+    "禧年宣告自由與地業歸還": {
+      "gist": "第五十年在遍地宣告自由，各人歸自己的產業，各歸本家。",
+      "title": "禧年宣告自由與地業歸還",
+      "type": "神學"
+    },
+    "禧年（第五十年）": {
+      "gist": "利25章「禧年」的原文，詞典義兼指這一年和那支角。",
+      "title": "禧年（第五十年）",
       "type": "原文"
     },
     "第十災（殺長子之災）": {
@@ -3690,6 +4816,11 @@
       "title": "聖靈分賜預表五旬節（徒2：1-4）",
       "type": "互文"
     },
+    "自由": {
+      "gist": "出21:2「第七年他可以自由，白白地出去」裡「自由」的字義。",
+      "title": "自由",
+      "type": "原文"
+    },
     "至聖所": {
       "gist": "會幕最內層，只放法櫃；除了大祭司一年一次，沒有人可以進去。",
       "title": "至聖所",
@@ -3698,6 +4829,11 @@
     "苦菜": {
       "gist": "逾越節當夜和羊羔、無酵餅同吃的苦味菜，記念在埃及為奴的苦。",
       "title": "苦菜",
+      "type": "原文"
+    },
+    "豁免（she.mit.tah）": {
+      "gist": "申15:1「每逢七年末一年，你要施行豁免」裡的「豁免」。",
+      "title": "豁免（she.mit.tah）",
       "type": "原文"
     },
     "贖罪日的節期獻祭（民29：7-11）": {
@@ -4109,6 +5245,11 @@
       "ref": "民29:8-11"
     }
   },
+  "sevens": {
+    "days": 7,
+    "fifty": 50,
+    "weeks49": 49
+  },
   "sources": [
     {
       "book": "出埃及記",
@@ -4172,6 +5313,27 @@
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 20,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT20.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 20,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/exodus/20.htm"
+    },
+    {
+      "book": "出埃及記",
+      "chapter": 23,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/02Exo/02CT23.htm"
     },
     {
       "book": "利未記",
@@ -4239,6 +5401,41 @@
     {
       "book": "利未記",
       "chapter": 23,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "利未記",
+      "chapter": 25,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03CT25.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 25,
+      "site": "ccbiblestudy 拾穗",
+      "source": "GT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/03Lev/03GT25.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 25,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Lev/25"
+    },
+    {
+      "book": "利未記",
+      "chapter": 25,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/leviticus/25.htm"
+    },
+    {
+      "book": "利未記",
+      "chapter": 25,
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
@@ -4343,6 +5540,27 @@
     },
     {
       "book": "申命記",
+      "chapter": 15,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT15.htm"
+    },
+    {
+      "book": "申命記",
+      "chapter": 15,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Deu/15"
+    },
+    {
+      "book": "申命記",
+      "chapter": 15,
+      "site": "STEP Bible 原文資料",
+      "source": "STEP",
+      "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "申命記",
       "chapter": 16,
       "site": "ccbiblestudy 逐節註解",
       "source": "CT",
@@ -4368,6 +5586,20 @@
       "site": "STEP Bible 原文資料",
       "source": "STEP",
       "url": "https://github.com/STEPBible/STEPBible-Data"
+    },
+    {
+      "book": "申命記",
+      "chapter": 31,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/05Deut/05CT31.htm"
+    },
+    {
+      "book": "申命記",
+      "chapter": 31,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/deuteronomy/31.htm"
     },
     {
       "book": "約書亞記",
@@ -4454,6 +5686,20 @@
       "url": "https://biblehub.com/study/2_chronicles/30.htm"
     },
     {
+      "book": "歷代志下",
+      "chapter": 36,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/14%202Chro/14CT36.htm"
+    },
+    {
+      "book": "歷代志下",
+      "chapter": 36,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/2Chr/36"
+    },
+    {
       "book": "尼希米記",
       "chapter": 8,
       "site": "ccbiblestudy 逐節註解",
@@ -4480,6 +5726,34 @@
       "site": "BibleHub 研經註解",
       "source": "BH",
       "url": "https://biblehub.com/study/nehemiah/8.htm"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 10,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/16Neh/16CT10.htm"
+    },
+    {
+      "book": "尼希米記",
+      "chapter": 10,
+      "site": "BibleHub 研經註解",
+      "source": "BH",
+      "url": "https://biblehub.com/study/nehemiah/10.htm"
+    },
+    {
+      "book": "耶利米書",
+      "chapter": 34,
+      "site": "ccbiblestudy 逐節註解",
+      "source": "CT",
+      "url": "https://www.ccbiblestudy.org/Old%20Testament/24Jer/24AT34.htm"
+    },
+    {
+      "book": "耶利米書",
+      "chapter": 34,
+      "site": "KingComments 研經註解",
+      "source": "KC",
+      "url": "https://www.kingcomments.com/en/bible-studies/Jer/34"
     }
   ],
   "step": {
@@ -4594,6 +5868,20 @@
       "ref": "民28:11",
       "strong": "H2320G",
       "translit": "cha.de.shei.Khem"
+    },
+    "deror": {
+      "gloss": "liberty",
+      "hebrew": "דְּר֛וֹר",
+      "id": "deror",
+      "label": "自由",
+      "lexicon": "דְּרוֹר (de.ror): liberty",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "和合本譯作「自由」。STEP 的本節譯義和字典義都是 liberty。同一個字也出現在耶34:8、15、17（西底家與眾民立約宣告自由，第17節出現兩次）、賽61:1（和合本譯作「被擄的得釋放」的「釋放」）、結46:17（「自由之年」）。",
+      "position": 7,
+      "ref": "利25:10",
+      "strong": "H1865",
+      "translit": "de.Ror"
     },
     "ezov": {
       "gloss": "hyssop",
@@ -4791,6 +6079,20 @@
       "strong": "H7676",
       "translit": "ha.sha.Bat"
     },
+    "shabbaton": {
+      "gloss": "sabbath observance",
+      "hebrew": "שַׁבָּתוֹן֙",
+      "id": "shabbaton",
+      "label": "聖安息日",
+      "lexicon": "שַׁבָּתוֹן (shab.ba.ton): sabbath observance",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "和合本的「聖安息日」在原文是兩個字連用：前一字 STEP 譯作 a sabbath of（安息日），這一字 STEP 譯作 sabbath observance（守安息），字典義同。利25:4 地在第七年要守的「聖安息」，原文也是這兩個字；黃迦勒在那一節註明「原文雙字」。",
+      "position": 8,
+      "ref": "利23:3",
+      "strong": "H7677",
+      "translit": "sha.ba.tOn"
+    },
     "shavuot": {
       "gloss": "weeks",
       "hebrew": "שָׁבֻעוֹת֙",
@@ -4805,6 +6107,20 @@
       "strong": "H7620G",
       "translit": "sha.vu.'Ot"
     },
+    "shemittah": {
+      "gloss": "a remission",
+      "hebrew": "שְׁמִטָּֽה׃",
+      "id": "shemittah",
+      "label": "豁免",
+      "lexicon": "שְׁמִטָּה (she.mit.tah): remission",
+      "morph": "HNcfsa",
+      "morphText": "Noun (Singular Feminine, Absolute)",
+      "note": "和合本譯作「豁免」。STEP 的本節譯義是 a remission（免除），字典義也是 remission；下一節「豁免了」用的是動詞，STEP 字典義是 to release（鬆開、釋放）。黃迦勒說「豁免」原意指休耕（參出23:11），在申15 指免除債務。",
+      "position": 5,
+      "ref": "申15:1",
+      "strong": "H8059",
+      "translit": "she.mi.Tah"
+    },
     "shimmurim": {
       "gloss": "vigil<s>",
       "hebrew": "שִׁמֻּרִ֛ים",
@@ -4818,6 +6134,20 @@
       "ref": "出12:42",
       "strong": "H8107",
       "translit": "shi.mu.Rim"
+    },
+    "shofar": {
+      "gloss": "a ram's horn of",
+      "hebrew": "שׁוֹפַ֤ר",
+      "id": "shofar",
+      "label": "角",
+      "lexicon": "שֹׁפָר (sho.phar): trumpet",
+      "morph": "HNcmsc",
+      "morphText": "Noun (Singular Masculine, Construct)",
+      "note": "和合本「大發角聲」的「角」。STEP 的本節譯義是 a ram's horn（公羊角），字典義是 trumpet；後面緊接的字就是利23:24 那個 teruah（響亮的聲音）。利23:24 只有 teruah、沒有樂器名，這一節兩個字都出現，「角」在本節出現兩次。",
+      "position": 2,
+      "ref": "利25:9",
+      "strong": "H7782",
+      "translit": "sho.Far"
     },
     "sukkah": {
       "gloss": "in <the> booths",
@@ -4860,6 +6190,20 @@
       "ref": "利23:24",
       "strong": "H8643",
       "translit": "te.ru.'Ah"
+    },
+    "yovel": {
+      "gloss": "a jubilee",
+      "hebrew": "יוֹבֵ֥ל",
+      "id": "yovel",
+      "label": "禧年",
+      "lexicon": "יוֹבֵל (yo.vel): jubilee/horn",
+      "morph": "HNcmsa",
+      "morphText": "Noun (Singular Masculine, Absolute)",
+      "note": "和合本譯作「禧年」。STEP 的本節譯義是 a jubilee，字典義是 jubilee/horn：同一個字也可以指那支角。部分註釋就從這裡解釋名稱：KingComments 說這個字的意思是「吹公羊角」；《聖經精讀本》說名稱來自吹公羊角宣告禧年開始。",
+      "position": 11,
+      "ref": "利25:10",
+      "strong": "H3104",
+      "translit": "yo.Vel"
     }
   },
   "title": "耶和華的節期",
@@ -4974,6 +6318,29 @@
       ],
       "ref": "代下35:17-18",
       "to": 18
+    },
+    "代下36:19-21": {
+      "book": "歷代志下",
+      "bookNum": 14,
+      "chapter": 36,
+      "from": 19,
+      "kb": false,
+      "lines": [
+        {
+          "text": "迦勒底人焚燒神的殿，拆毀耶路撒冷的城牆，用火燒了城裡的宮殿，毀壞了城裡寶貴的器皿。",
+          "v": 19
+        },
+        {
+          "text": "凡脫離刀劍的，迦勒底王都擄到巴比倫去，作他和他子孫的僕婢，直到波斯國興起來。",
+          "v": 20
+        },
+        {
+          "text": "這就應驗耶和華藉耶利米口所說的話：地享受安息；因為地土荒涼便守安息，直滿了七十年。",
+          "v": 21
+        }
+      ],
+      "ref": "代下36:19-21",
+      "to": 21
     },
     "代下8:12-13": {
       "book": "歷代志下",
@@ -5540,6 +6907,90 @@
       ],
       "ref": "出13:7",
       "to": 7
+    },
+    "出20:8-11": {
+      "book": "出埃及記",
+      "bookNum": 2,
+      "chapter": 20,
+      "from": 8,
+      "kb": true,
+      "lines": [
+        {
+          "text": "當記念安息日，守為聖日。",
+          "v": 8
+        },
+        {
+          "text": "六日要勞碌做你一切的工，",
+          "v": 9
+        },
+        {
+          "text": "但第七日是向耶和華─你神當守的安息日。這一日你和你的兒女、僕婢、牲畜，並你城裡寄居的客旅，無論何工都不可做；",
+          "v": 10
+        },
+        {
+          "text": "因為六日之內，耶和華造天、地、海，和其中的萬物，第七日便安息，所以耶和華賜福與安息日，定為聖日。",
+          "v": 11
+        }
+      ],
+      "ref": "出20:8-11",
+      "to": 11
+    },
+    "出23:10-11": {
+      "book": "出埃及記",
+      "bookNum": 2,
+      "chapter": 23,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "六年你要耕種田地，收藏土產，",
+          "v": 10
+        },
+        {
+          "text": "只是第七年要叫地歇息，不耕不種，使你民中的窮人有吃的；他們所剩下的，野獸可以吃。你的葡萄園和橄欖園也要照樣辦理。",
+          "v": 11
+        }
+      ],
+      "ref": "出23:10-11",
+      "to": 11
+    },
+    "出23:10-12": {
+      "book": "出埃及記",
+      "bookNum": 2,
+      "chapter": 23,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "六年你要耕種田地，收藏土產，",
+          "v": 10
+        },
+        {
+          "text": "只是第七年要叫地歇息，不耕不種，使你民中的窮人有吃的；他們所剩下的，野獸可以吃。你的葡萄園和橄欖園也要照樣辦理。",
+          "v": 11
+        },
+        {
+          "text": "六日你要做工，第七日要安息，使牛、驢可以歇息，並使你婢女的兒子和寄居的都可以舒暢。",
+          "v": 12
+        }
+      ],
+      "ref": "出23:10-12",
+      "to": 12
+    },
+    "出23:12": {
+      "book": "出埃及記",
+      "bookNum": 2,
+      "chapter": 23,
+      "from": 12,
+      "kb": true,
+      "lines": [
+        {
+          "text": "六日你要做工，第七日要安息，使牛、驢可以歇息，並使你婢女的兒子和寄居的都可以舒暢。",
+          "v": 12
+        }
+      ],
+      "ref": "出23:12",
+      "to": 12
     },
     "出23:15": {
       "book": "出埃及記",
@@ -6121,6 +7572,21 @@
       "ref": "利23:23-25",
       "to": 25
     },
+    "利23:24": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 24,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：七月初一，你們要守為聖安息日，要吹角作紀念，當有聖會。",
+          "v": 24
+        }
+      ],
+      "ref": "利23:24",
+      "to": 24
+    },
     "利23:24-25": {
       "book": "利未記",
       "bookNum": 3,
@@ -6178,6 +7644,36 @@
       ],
       "ref": "利23:26-32",
       "to": 32
+    },
+    "利23:27": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 27,
+      "kb": true,
+      "lines": [
+        {
+          "text": "七月初十是贖罪日；你們要守為聖會，並要刻苦己心，也要將火祭獻給耶和華。",
+          "v": 27
+        }
+      ],
+      "ref": "利23:27",
+      "to": 27
+    },
+    "利23:3": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 3,
+      "kb": true,
+      "lines": [
+        {
+          "text": "六日要做工，第七日是聖安息日，當有聖會；你們什麼工都不可做。這是在你們一切的住處向耶和華守的安息日。",
+          "v": 3
+        }
+      ],
+      "ref": "利23:3",
+      "to": 3
     },
     "利23:32": {
       "book": "利未記",
@@ -6248,6 +7744,21 @@
       ],
       "ref": "利23:33-43",
       "to": 43
+    },
+    "利23:34": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 23,
+      "from": 34,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：這七月十五日是住棚節，要在耶和華面前守這節七日。",
+          "v": 34
+        }
+      ],
+      "ref": "利23:34",
+      "to": 34
     },
     "利23:36": {
       "book": "利未記",
@@ -6385,6 +7896,447 @@
       ],
       "ref": "利23:9-14",
       "to": 14
+    },
+    "利25:1-24": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "耶和華在西乃山對摩西說：",
+          "v": 1
+        },
+        {
+          "text": "你曉諭以色列人說：你們到了我所賜你們那地的時候，地就要向耶和華守安息。",
+          "v": 2
+        },
+        {
+          "text": "六年要耕種田地，也要修理葡萄園，收藏地的出產。",
+          "v": 3
+        },
+        {
+          "text": "第七年，地要守聖安息，就是向耶和華守的安息，不可耕種田地，也不可修理葡萄園。",
+          "v": 4
+        },
+        {
+          "text": "遺落自長的莊稼不可收割；沒有修理的葡萄樹也不可摘取葡萄。這年，地要守聖安息。",
+          "v": 5
+        },
+        {
+          "text": "地在安息年所出的，要給你和你的僕人、婢女、雇工人，並寄居的外人當食物。",
+          "v": 6
+        },
+        {
+          "text": "這年的土產也要給你的牲畜和你地上的走獸當食物。",
+          "v": 7
+        },
+        {
+          "text": "你要計算七個安息年，就是七七年。這便為你成了七個安息年，共是四十九年。",
+          "v": 8
+        },
+        {
+          "text": "當年七月初十日，你要大發角聲；這日就是贖罪日，要在遍地發出角聲。",
+          "v": 9
+        },
+        {
+          "text": "第五十年，你們要當作聖年，在遍地給一切的居民宣告自由。這年必為你們的禧年，各人要歸自己的產業，各歸本家。",
+          "v": 10
+        },
+        {
+          "text": "第五十年要作為你們的禧年。這年不可耕種；地中自長的，不可收割；沒有修理的葡萄樹也不可摘取葡萄。",
+          "v": 11
+        },
+        {
+          "text": "因為這是禧年，你們要當作聖年，吃地中自出的土產。",
+          "v": 12
+        },
+        {
+          "text": "這禧年，你們各人要歸自己的地業。",
+          "v": 13
+        },
+        {
+          "text": "你若賣什麼給鄰舍，或是從鄰舍的手中買什麼，彼此不可虧負。",
+          "v": 14
+        },
+        {
+          "text": "你要按禧年以後的年數向鄰舍買；他也要按年數的收成賣給你。",
+          "v": 15
+        },
+        {
+          "text": "年歲若多，要照數加添價值；年歲若少，要照數減去價值，因為他照收成的數目賣給你。",
+          "v": 16
+        },
+        {
+          "text": "你們彼此不可虧負，只要敬畏你們的神，因為我是耶和華─你們的神。",
+          "v": 17
+        },
+        {
+          "text": "我的律例，你們要遵行，我的典章，你們要謹守，就可以在那地上安然居住。",
+          "v": 18
+        },
+        {
+          "text": "地必出土產，你們就要吃飽，在那地上安然居住。",
+          "v": 19
+        },
+        {
+          "text": "你們若說：這第七年我們不耕種，也不收藏土產，吃什麼呢？",
+          "v": 20
+        },
+        {
+          "text": "我必在第六年將我所命的福賜給你們，地便生三年的土產。",
+          "v": 21
+        },
+        {
+          "text": "第八年，你們要耕種，也要吃陳糧，等到第九年出產收來的時候，你們還吃陳糧。",
+          "v": 22
+        },
+        {
+          "text": "地不可永賣，因為地是我的；你們在我面前是客旅，是寄居的。",
+          "v": 23
+        },
+        {
+          "text": "在你們所得為業的全地，也要准人將地贖回。",
+          "v": 24
+        }
+      ],
+      "ref": "利25:1-24",
+      "to": 24
+    },
+    "利25:10-12": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "第五十年，你們要當作聖年，在遍地給一切的居民宣告自由。這年必為你們的禧年，各人要歸自己的產業，各歸本家。",
+          "v": 10
+        },
+        {
+          "text": "第五十年要作為你們的禧年。這年不可耕種；地中自長的，不可收割；沒有修理的葡萄樹也不可摘取葡萄。",
+          "v": 11
+        },
+        {
+          "text": "因為這是禧年，你們要當作聖年，吃地中自出的土產。",
+          "v": 12
+        }
+      ],
+      "ref": "利25:10-12",
+      "to": 12
+    },
+    "利25:15-16": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 15,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你要按禧年以後的年數向鄰舍買；他也要按年數的收成賣給你。",
+          "v": 15
+        },
+        {
+          "text": "年歲若多，要照數加添價值；年歲若少，要照數減去價值，因為他照收成的數目賣給你。",
+          "v": 16
+        }
+      ],
+      "ref": "利25:15-16",
+      "to": 16
+    },
+    "利25:2-7": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 2,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你曉諭以色列人說：你們到了我所賜你們那地的時候，地就要向耶和華守安息。",
+          "v": 2
+        },
+        {
+          "text": "六年要耕種田地，也要修理葡萄園，收藏地的出產。",
+          "v": 3
+        },
+        {
+          "text": "第七年，地要守聖安息，就是向耶和華守的安息，不可耕種田地，也不可修理葡萄園。",
+          "v": 4
+        },
+        {
+          "text": "遺落自長的莊稼不可收割；沒有修理的葡萄樹也不可摘取葡萄。這年，地要守聖安息。",
+          "v": 5
+        },
+        {
+          "text": "地在安息年所出的，要給你和你的僕人、婢女、雇工人，並寄居的外人當食物。",
+          "v": 6
+        },
+        {
+          "text": "這年的土產也要給你的牲畜和你地上的走獸當食物。",
+          "v": 7
+        }
+      ],
+      "ref": "利25:2-7",
+      "to": 7
+    },
+    "利25:20-22": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 20,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你們若說：這第七年我們不耕種，也不收藏土產，吃什麼呢？",
+          "v": 20
+        },
+        {
+          "text": "我必在第六年將我所命的福賜給你們，地便生三年的土產。",
+          "v": 21
+        },
+        {
+          "text": "第八年，你們要耕種，也要吃陳糧，等到第九年出產收來的時候，你們還吃陳糧。",
+          "v": 22
+        }
+      ],
+      "ref": "利25:20-22",
+      "to": 22
+    },
+    "利25:23": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 23,
+      "kb": true,
+      "lines": [
+        {
+          "text": "地不可永賣，因為地是我的；你們在我面前是客旅，是寄居的。",
+          "v": 23
+        }
+      ],
+      "ref": "利25:23",
+      "to": 23
+    },
+    "利25:39-55": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 39,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你的弟兄若在你那裡漸漸窮乏，將自己賣給你，不可叫他像奴僕服事你。",
+          "v": 39
+        },
+        {
+          "text": "他要在你那裡像雇工人和寄居的一樣，要服事你直到禧年。",
+          "v": 40
+        },
+        {
+          "text": "到了禧年，他和他兒女要離開你，一同出去歸回本家，到他祖宗的地業那裡去。",
+          "v": 41
+        },
+        {
+          "text": "因為他們是我的僕人，是我從埃及地領出來的，不可賣為奴僕。",
+          "v": 42
+        },
+        {
+          "text": "不可嚴嚴地轄管他，只要敬畏你的神。",
+          "v": 43
+        },
+        {
+          "text": "至於你的奴僕、婢女，可以從你四圍的國中買。",
+          "v": 44
+        },
+        {
+          "text": "並且那寄居在你們中間的外人和他們的家屬，在你們地上所生的，你們也可以從其中買人；他們要作你們的產業。",
+          "v": 45
+        },
+        {
+          "text": "你們要將他們遺留給你們的子孫為產業，要永遠從他們中間揀出奴僕；只是你們的弟兄以色列人，你們不可嚴嚴地轄管。",
+          "v": 46
+        },
+        {
+          "text": "住在你那裡的外人，或是寄居的，若漸漸富足，你的弟兄卻漸漸窮乏，將自己賣給那外人，或是寄居的，或是外人的宗族，",
+          "v": 47
+        },
+        {
+          "text": "賣了以後，可以將他贖回。無論是他的弟兄，",
+          "v": 48
+        },
+        {
+          "text": "或伯叔、伯叔的兒子，本家的近支，都可以贖他。他自己若漸漸富足，也可以自贖。",
+          "v": 49
+        },
+        {
+          "text": "他要和買主計算，從賣自己的那年起，算到禧年；所賣的價值照著年數多少，好像工人每年的工價。",
+          "v": 50
+        },
+        {
+          "text": "若缺少的年數多，就要按著年數從買價中償還他的贖價。",
+          "v": 51
+        },
+        {
+          "text": "若到禧年只缺少幾年，就要按著年數和買主計算，償還他的贖價。",
+          "v": 52
+        },
+        {
+          "text": "他和買主同住，要像每年雇的工人，買主不可嚴嚴地轄管他。",
+          "v": 53
+        },
+        {
+          "text": "他若不這樣被贖，到了禧年，要和他的兒女一同出去。",
+          "v": 54
+        },
+        {
+          "text": "因為以色列人都是我的僕人，是我從埃及地領出來的。我是耶和華─你們的神。",
+          "v": 55
+        }
+      ],
+      "ref": "利25:39-55",
+      "to": 55
+    },
+    "利25:41-42": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 41,
+      "kb": true,
+      "lines": [
+        {
+          "text": "到了禧年，他和他兒女要離開你，一同出去歸回本家，到他祖宗的地業那裡去。",
+          "v": 41
+        },
+        {
+          "text": "因為他們是我的僕人，是我從埃及地領出來的，不可賣為奴僕。",
+          "v": 42
+        }
+      ],
+      "ref": "利25:41-42",
+      "to": 42
+    },
+    "利25:55": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 55,
+      "kb": true,
+      "lines": [
+        {
+          "text": "因為以色列人都是我的僕人，是我從埃及地領出來的。我是耶和華─你們的神。",
+          "v": 55
+        }
+      ],
+      "ref": "利25:55",
+      "to": 55
+    },
+    "利25:8": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 8,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你要計算七個安息年，就是七七年。這便為你成了七個安息年，共是四十九年。",
+          "v": 8
+        }
+      ],
+      "ref": "利25:8",
+      "to": 8
+    },
+    "利25:9": {
+      "book": "利未記",
+      "bookNum": 3,
+      "chapter": 25,
+      "from": 9,
+      "kb": true,
+      "lines": [
+        {
+          "text": "當年七月初十日，你要大發角聲；這日就是贖罪日，要在遍地發出角聲。",
+          "v": 9
+        }
+      ],
+      "ref": "利25:9",
+      "to": 9
+    },
+    "創2:1-3": {
+      "book": "創世記",
+      "bookNum": 1,
+      "chapter": 2,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "天地萬物都造齊了。",
+          "v": 1
+        },
+        {
+          "text": "到第七日，神造物的工已經完畢，就在第七日歇了他一切的工，安息了。",
+          "v": 2
+        },
+        {
+          "text": "神賜福給第七日，定為聖日；因為在這日，神歇了他一切創造的工，就安息了。",
+          "v": 3
+        }
+      ],
+      "ref": "創2:1-3",
+      "to": 3
+    },
+    "創2:2-3": {
+      "book": "創世記",
+      "bookNum": 1,
+      "chapter": 2,
+      "from": 2,
+      "kb": true,
+      "lines": [
+        {
+          "text": "到第七日，神造物的工已經完畢，就在第七日歇了他一切的工，安息了。",
+          "v": 2
+        },
+        {
+          "text": "神賜福給第七日，定為聖日；因為在這日，神歇了他一切創造的工，就安息了。",
+          "v": 3
+        }
+      ],
+      "ref": "創2:2-3",
+      "to": 3
+    },
+    "尼10:28-29": {
+      "book": "尼希米記",
+      "bookNum": 16,
+      "chapter": 10,
+      "from": 28,
+      "kb": false,
+      "lines": [
+        {
+          "text": "其餘的民、祭司、利未人、守門的、歌唱的、尼提寧，和一切離絕鄰邦居民歸服神律法的，並他們的妻子、兒女，凡有知識能明白的，",
+          "v": 28
+        },
+        {
+          "text": "都隨從他們貴冑的弟兄，發咒起誓，必遵行神藉他僕人摩西所傳的律法，謹守遵行耶和華─我們主的一切誡命、典章、律例；",
+          "v": 29
+        }
+      ],
+      "ref": "尼10:28-29",
+      "to": 29
+    },
+    "尼10:31": {
+      "book": "尼希米記",
+      "bookNum": 16,
+      "chapter": 10,
+      "from": 31,
+      "kb": false,
+      "lines": [
+        {
+          "text": "這地的居民若在安息日，或什麼聖日，帶了貨物或糧食來賣給我們，我們必不買。每逢第七年必不耕種，凡欠我們債的必不追討。",
+          "v": 31
+        }
+      ],
+      "ref": "尼10:31",
+      "to": 31
     },
     "尼8:13-18": {
       "book": "尼希米記",
@@ -7262,6 +9214,25 @@
       "ref": "民9:8",
       "to": 8
     },
+    "王上21:2-3": {
+      "book": "列王紀上",
+      "bookNum": 11,
+      "chapter": 21,
+      "from": 2,
+      "kb": false,
+      "lines": [
+        {
+          "text": "亞哈對拿伯說：你將你的葡萄園給我作菜園，因為是靠近我的宮；我就把更好的葡萄園換給你，或是你要銀子，我就按著價值給你。",
+          "v": 2
+        },
+        {
+          "text": "拿伯對亞哈說：我敬畏耶和華，萬不敢將我先人留下的產業給你。",
+          "v": 3
+        }
+      ],
+      "ref": "王上21:2-3",
+      "to": 3
+    },
     "王上8:65-66": {
       "book": "列王紀上",
       "bookNum": 11,
@@ -7375,6 +9346,142 @@
       ],
       "ref": "珥2:15-17",
       "to": 17
+    },
+    "申15:1-18": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 15,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "每逢七年末一年，你要施行豁免。",
+          "v": 1
+        },
+        {
+          "text": "豁免的定例乃是這樣：凡債主要把所借給鄰舍的豁免了；不可向鄰舍和弟兄追討，因為耶和華的豁免年已經宣告了。",
+          "v": 2
+        },
+        {
+          "text": "若借給外邦人，你可以向他追討；但借給你弟兄，無論是什麼，你要鬆手豁免了。",
+          "v": 3
+        },
+        {
+          "text": "你若留意聽從耶和華─你神的話，謹守遵行我今日所吩咐你這一切的命令，就必在你們中間沒有窮人了（在耶和華─你神所賜你為業的地上，耶和華必大大賜福與你。）",
+          "v": 4
+        },
+        {
+          "text": "因為耶和華─你的神必照他所應許你的賜福與你。你必借給許多國民，卻不致向他們借貸；你必管轄許多國民，他們卻不能管轄你。",
+          "v": 6
+        },
+        {
+          "text": "在耶和華─你神所賜你的地上，無論哪一座城裡，你弟兄中若有一個窮人，你不可忍著心、揝著手不幫補你窮乏的弟兄。",
+          "v": 7
+        },
+        {
+          "text": "總要向他鬆開手，照他所缺乏的借給他，補他的不足。",
+          "v": 8
+        },
+        {
+          "text": "你要謹慎，不可心裡起惡念，說：第七年的豁免年快到了，你便惡眼看你窮乏的弟兄，什麼都不給他，以致他因你求告耶和華，罪便歸於你了。",
+          "v": 9
+        },
+        {
+          "text": "你總要給他，給他的時候心裡不可愁煩；因耶和華─你的神必在你這一切所行的，並你手裡所辦的事上，賜福與你。",
+          "v": 10
+        },
+        {
+          "text": "原來那地上的窮人永不斷絕；所以我吩咐你說：總要向你地上困苦窮乏的弟兄鬆開手。",
+          "v": 11
+        },
+        {
+          "text": "你弟兄中，若有一個希伯來男人或希伯來女人被賣給你，服事你六年，到第七年就要任他自由出去。",
+          "v": 12
+        },
+        {
+          "text": "你任他自由的時候，不可使他空手而去，",
+          "v": 13
+        },
+        {
+          "text": "要從你羊群、禾場、酒醡之中多多地給他；耶和華─你的神怎樣賜福與你，你也要照樣給他。",
+          "v": 14
+        },
+        {
+          "text": "要記念你在埃及地作過奴僕，耶和華─你的神將你救贖；因此，我今日吩咐你這件事。",
+          "v": 15
+        },
+        {
+          "text": "他若對你說：我不願意離開你，是因他愛你和你的家，且因在你那裡很好，",
+          "v": 16
+        },
+        {
+          "text": "你就要拿錐子將他的耳朵在門上刺透，他便永為你的奴僕了。你待婢女也要這樣。",
+          "v": 17
+        },
+        {
+          "text": "你任他自由的時候，不可以為難事，因他服事你六年，較比雇工的工價多加一倍了。耶和華─你的神就必在你所做的一切事上賜福與你。",
+          "v": 18
+        }
+      ],
+      "ref": "申15:1-18",
+      "to": 18
+    },
+    "申15:1-2": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 15,
+      "from": 1,
+      "kb": true,
+      "lines": [
+        {
+          "text": "每逢七年末一年，你要施行豁免。",
+          "v": 1
+        },
+        {
+          "text": "豁免的定例乃是這樣：凡債主要把所借給鄰舍的豁免了；不可向鄰舍和弟兄追討，因為耶和華的豁免年已經宣告了。",
+          "v": 2
+        }
+      ],
+      "ref": "申15:1-2",
+      "to": 2
+    },
+    "申15:12-14": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 15,
+      "from": 12,
+      "kb": true,
+      "lines": [
+        {
+          "text": "你弟兄中，若有一個希伯來男人或希伯來女人被賣給你，服事你六年，到第七年就要任他自由出去。",
+          "v": 12
+        },
+        {
+          "text": "你任他自由的時候，不可使他空手而去，",
+          "v": 13
+        },
+        {
+          "text": "要從你羊群、禾場、酒醡之中多多地給他；耶和華─你的神怎樣賜福與你，你也要照樣給他。",
+          "v": 14
+        }
+      ],
+      "ref": "申15:12-14",
+      "to": 14
+    },
+    "申15:15": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 15,
+      "from": 15,
+      "kb": true,
+      "lines": [
+        {
+          "text": "要記念你在埃及地作過奴僕，耶和華─你的神將你救贖；因此，我今日吩咐你這件事。",
+          "v": 15
+        }
+      ],
+      "ref": "申15:15",
+      "to": 15
     },
     "申16:1-7": {
       "book": "申命記",
@@ -7572,6 +9679,29 @@
       "ref": "申16:9-12",
       "to": 12
     },
+    "申31:10-12": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 31,
+      "from": 10,
+      "kb": true,
+      "lines": [
+        {
+          "text": "摩西吩咐他們說：每逢七年的末一年，就在豁免年的定期住棚節的時候，",
+          "v": 10
+        },
+        {
+          "text": "以色列眾人來到耶和華─你神所選擇的地方朝見他。那時，你要在以色列眾人面前將這律法念給他們聽。",
+          "v": 11
+        },
+        {
+          "text": "要招聚他們男、女、孩子，並城裡寄居的，使他們聽，使他們學習，好敬畏耶和華─你們的神，謹守、遵行這律法的一切話，",
+          "v": 12
+        }
+      ],
+      "ref": "申31:10-12",
+      "to": 12
+    },
     "申31:10-13": {
       "book": "申命記",
       "bookNum": 5,
@@ -7598,6 +9728,109 @@
       ],
       "ref": "申31:10-13",
       "to": 13
+    },
+    "申31:9-13": {
+      "book": "申命記",
+      "bookNum": 5,
+      "chapter": 31,
+      "from": 9,
+      "kb": true,
+      "lines": [
+        {
+          "text": "摩西將這律法寫出來，交給抬耶和華約櫃的祭司利未子孫和以色列的眾長老。",
+          "v": 9
+        },
+        {
+          "text": "摩西吩咐他們說：每逢七年的末一年，就在豁免年的定期住棚節的時候，",
+          "v": 10
+        },
+        {
+          "text": "以色列眾人來到耶和華─你神所選擇的地方朝見他。那時，你要在以色列眾人面前將這律法念給他們聽。",
+          "v": 11
+        },
+        {
+          "text": "要招聚他們男、女、孩子，並城裡寄居的，使他們聽，使他們學習，好敬畏耶和華─你們的神，謹守、遵行這律法的一切話，",
+          "v": 12
+        },
+        {
+          "text": "也使他們未曾曉得這律法的兒女得以聽見，學習敬畏耶和華─你們的神，在你們過約但河要得為業之地，存活的日子，常常這樣行。",
+          "v": 13
+        }
+      ],
+      "ref": "申31:9-13",
+      "to": 13
+    },
+    "結46:16-17": {
+      "book": "以西結書",
+      "bookNum": 26,
+      "chapter": 46,
+      "from": 16,
+      "kb": false,
+      "lines": [
+        {
+          "text": "主耶和華如此說：王若將產業賜給他的兒子，就成了他兒子的產業，那是他們承受為業的。",
+          "v": 16
+        },
+        {
+          "text": "倘若王將一分產業賜給他的臣僕，就成了他臣僕的產業；到自由之年仍要歸與王。至於王的產業，必歸與他的兒子。",
+          "v": 17
+        }
+      ],
+      "ref": "結46:16-17",
+      "to": 17
+    },
+    "耶34:14": {
+      "book": "耶利米書",
+      "bookNum": 24,
+      "chapter": 34,
+      "from": 14,
+      "kb": false,
+      "lines": [
+        {
+          "text": "你的一個希伯來弟兄若賣給你，服事你六年，到第七年你們各人就要任他自由出去。只是你們列祖不聽從我，也不側耳而聽。",
+          "v": 14
+        }
+      ],
+      "ref": "耶34:14",
+      "to": 14
+    },
+    "耶34:17": {
+      "book": "耶利米書",
+      "bookNum": 24,
+      "chapter": 34,
+      "from": 17,
+      "kb": false,
+      "lines": [
+        {
+          "text": "所以耶和華如此說：你們沒有聽從我，各人向弟兄鄰舍宣告自由。看哪！我向你們宣告一樣自由，就是使你們自由於刀劍、饑荒、瘟疫之下，並且使你們在天下萬國中拋來拋去。這是耶和華說的。",
+          "v": 17
+        }
+      ],
+      "ref": "耶34:17",
+      "to": 17
+    },
+    "耶34:8-11": {
+      "book": "耶利米書",
+      "bookNum": 24,
+      "chapter": 34,
+      "from": 8,
+      "kb": false,
+      "lines": [
+        {
+          "text": "西底家王與耶路撒冷的眾民立約，要向他們宣告自由，叫各人任他希伯來的僕人和婢女自由出去，誰也不可使他的一個猶大弟兄作奴僕。（此後，有耶和華的話臨到耶利米。）",
+          "v": 8
+        },
+        {
+          "text": "所有立約的首領和眾民就任他的僕人婢女自由出去，誰也不再叫他們作奴僕。大家都順從，將他們釋放了；",
+          "v": 10
+        },
+        {
+          "text": "後來卻又反悔，叫所任去自由的僕人婢女回來，勉強他們仍為僕婢。",
+          "v": 11
+        }
+      ],
+      "ref": "耶34:8-11",
+      "to": 11
     },
     "詩81:3-4": {
       "book": "詩篇",
@@ -7636,6 +9869,25 @@
       ],
       "ref": "賽1:13-14",
       "to": 14
+    },
+    "賽61:1-2": {
+      "book": "以賽亞書",
+      "bookNum": 23,
+      "chapter": 61,
+      "from": 1,
+      "kb": false,
+      "lines": [
+        {
+          "text": "主耶和華的靈在我身上；因為耶和華用膏膏我，叫我傳好信息給謙卑的人（或譯：傳福音給貧窮的人），差遣我醫好傷心的人，報告被擄的得釋放，被囚的出監牢；",
+          "v": 1
+        },
+        {
+          "text": "報告耶和華的恩年，和我們神報仇的日子；安慰一切悲哀的人，",
+          "v": 2
+        }
+      ],
+      "ref": "賽61:1-2",
+      "to": 2
     }
   }
 }

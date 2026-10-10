@@ -216,6 +216,25 @@ function boot() {
   };
   tick();
 
+  // ---- 深連結：#ch=<章 id>、#beat=<拍 id>（律法地圖那邊的連結用）。抹除＋瞬間定位，不做平滑捲動；hash 無效就不動 ----
+  function deepTarget(hash: string): HTMLElement | null {
+    const m = /^#(ch|beat)=(.+)$/.exec(hash);
+    if (!m) return null;
+    let id = m[2];
+    try {
+      id = decodeURIComponent(id);
+    } catch {
+      return null;
+    }
+    const ref = m[1] === 'ch' ? beats.find((b) => b.chapter.id === id) : beats.find((b) => b.beat.id === id);
+    return ref?.el ?? null;
+  }
+  function followHash() {
+    const el = deepTarget(window.location.hash);
+    if (el) nav.jumpTo(el);
+  }
+  window.addEventListener('hashchange', followHash);
+
   // ---- 載入畫面：資料就緒（字型與場景）後淡出，不做假進度條 ----
   const fonts = (document as Document & { fonts?: FontFaceSet }).fonts;
   const fontsReady = fonts ? fonts.ready.then(() => undefined) : Promise.resolve();
@@ -229,6 +248,7 @@ function boot() {
     bake.sync(scroll.index());
     wave.sync(scroll.index());
     blow.sync(scroll.index());
+    followHash();
     coach.openIfFirstVisit();
   });
   fontsReady.then(() => scroll.refresh());

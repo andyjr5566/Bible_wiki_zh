@@ -293,3 +293,53 @@ export function parseOfferings(verseTexts) {
   if (!items.length && !errors.length) errors.push('這段經文沒有解析出任何祭牲');
   return { items, errors };
 }
+
+// ---------- 七的倍數（檢查 #6）：七、四十九、五十只從經文解析，場景的格數讀這些值 ----------
+
+const TENS = { 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+/** 一到九十九的中文數字（七、十、十二、二十、四十九、五十）→ 數目；不認得回 NaN */
+export function parseCnCount(s) {
+  const t = String(s ?? '');
+  if (t === '十') return 10;
+  if (/^[一二兩三四五六七八九]$/.test(t)) return DIGITS[t];
+  let m = /^十([一二三四五六七八九])$/.exec(t);
+  if (m) return 10 + DIGITS[m[1]];
+  m = /^([二三四五六七八九])十([一二三四五六七八九])?$/.exec(t);
+  if (m) return TENS[m[1]] * 10 + (m[2] ? DIGITS[m[2]] : 0);
+  return NaN;
+}
+
+const CN_COUNT = '[一二兩三四五六七八九十]+';
+/**
+ * 從三段經文解析七的倍數。
+ *  lev23_15_16：利23:15-16 的兩節文字合併（「要滿了七個安息日」「共計五十天」）
+ *  lev25_8：利25:8（「七個安息年，就是七七年」「共是四十九年」）
+ *  lev25_10：利25:10（「第五十年」）
+ * 回傳 {days, weeks49, fifty, errors}：
+ *  days＝七個安息日的「七」；weeks49＝七個安息年共是的年數；fifty＝禧年是第幾年。
+ *  另外檢查：利23:16 的天數＝第五十（七個安息日之後的次日）、七七＝四十九、禧年＝四十九加一。
+ */
+export function parseSevens({ lev23_15_16 = '', lev25_8 = '', lev25_10 = '' } = {}) {
+  const errors = [];
+  const num = (re, text, where, label) => {
+    const m = re.exec(text);
+    if (!m) { errors.push(`${where} 找不到「${label}」`); return NaN; }
+    const n = parseCnCount(m[1]);
+    if (Number.isNaN(n)) errors.push(`${where}「${label}」的數字「${m[1]}」認不得`);
+    return n;
+  };
+  const days = num(new RegExp(`要滿了(${CN_COUNT})個安息日`), lev23_15_16, '利23:15', '要滿了N個安息日');
+  const fiftyDays = num(new RegExp(`共計(${CN_COUNT})天`), lev23_15_16, '利23:16', '共計N天');
+  const sabbathYears = num(new RegExp(`計算(${CN_COUNT})個安息年`), lev25_8, '利25:8', '計算N個安息年');
+  const sevenSevens = /就是七七年/.test(lev25_8);
+  if (!sevenSevens) errors.push('利25:8 找不到「就是七七年」');
+  const weeks49 = num(new RegExp(`共是(${CN_COUNT})年`), lev25_8, '利25:8', '共是N年');
+  const jubilee = num(new RegExp(`第(${CN_COUNT})年`), lev25_10, '利25:10', '第N年');
+  if (!errors.length) {
+    if (sabbathYears !== days) errors.push(`利25:8 的安息年數（${sabbathYears}）和利23:15 的安息日數（${days}）不同`);
+    if (weeks49 !== days * days) errors.push(`七七應為 ${days * days}，利25:8 寫 ${weeks49}`);
+    if (fiftyDays !== days * days + 1) errors.push(`利23:16 的天數（${fiftyDays}）應為 ${days * days + 1}（${days} 個安息日加次日）`);
+    if (jubilee !== weeks49 + 1) errors.push(`利25:10 的第 ${jubilee} 年應為 ${weeks49 + 1}`);
+  }
+  return { days, weeks49, fifty: jubilee, errors };
+}

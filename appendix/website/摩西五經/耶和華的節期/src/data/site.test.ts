@@ -2,7 +2,15 @@
 // 每個原文字有希伯來文、經文與條目都收齊。內容本身的對 vault 檢查在 scripts/build-data.mjs。
 import { describe, expect, it } from 'vitest';
 import { SITE } from './site';
-import { chapterUrl, entryUrl } from './links';
+import { chapterUrl, entryUrl, lawUrl } from './links';
+
+/** 和合本整行「併於上節。」的節：不收進 VerseBlock.lines */
+const MERGED_VERSES = [
+  { book: '歷代志下', chapter: 30, verse: 19 },
+  { book: '申命記', chapter: 15, verse: 5 },
+  { book: '耶利米書', chapter: 34, verse: 9 },
+  { book: '耶利米書', chapter: 34, verse: 19 },
+];
 
 const beats = SITE.chapters.flatMap((c) => c.beats.map((b) => ({ chapter: c.id, ...b })));
 
@@ -46,8 +54,9 @@ describe('site.json 一致性', () => {
       expect(new Set(nums).size, ref).toBe(nums.length);
       expect(nums[0], ref).toBeGreaterThanOrEqual(v.from);
       expect(nums[nums.length - 1], ref).toBeLessThanOrEqual(v.to);
-      // 缺的節只能是併於上節的那一節
-      expect(nums.length, ref).toBeGreaterThanOrEqual(v.to - v.from + 1 - (ref === '代下30:18-20' ? 1 : 0));
+      // 缺的節只能是併於上節的那一節（代下30:19、申15:5、耶34:9）
+      const merged = MERGED_VERSES.filter((m) => m.book === v.book && m.chapter === v.chapter && m.verse >= v.from && m.verse <= v.to).length;
+      expect(nums.length, ref).toBeGreaterThanOrEqual(v.to - v.from + 1 - merged);
       for (const l of v.lines) {
         expect(l.text.trim().length, `${ref}:${l.v}`).toBeGreaterThan(0);
         expect(l.text.trim(), `${ref}:${l.v}`).not.toMatch(/^併於上節。?$/);
@@ -74,8 +83,9 @@ describe('site.json 一致性', () => {
     }
     for (const c of SITE.chapters) {
       if (c.kind === 'passage') {
-        expect(c.month, c.id).toBeDefined();
-        expect(c.monthTo!, c.id).toBeGreaterThan(c.month!);
+        // 有 month 就一定有 monthTo；兩個都沒有（coda）月份導覽維持「不定日期」
+        expect(c.monthTo === undefined, c.id).toBe(c.month === undefined);
+        if (c.month !== undefined) expect(c.monthTo!, c.id).toBeGreaterThan(c.month);
         for (const b of c.beats) {
           expect(b.text, c.id).toBe('');
           expect(b.notes ?? b.words ?? b.offerings ?? b.verse, c.id).toBeUndefined();
@@ -92,6 +102,29 @@ describe('site.json 一致性', () => {
       }
     }
     for (const k of ['paper', 'ink', 'accent', 'glow'] as const) expect(SITE.laterPalette[k]).toMatch(/^#[0-9a-fA-F]{6}$/);
+  });
+
+  it('回看 recall：指到唯一存在的拍、不指自己、不是回聲拍；律法地圖 laws 有 id 與標題；sevens 是 7、49、50', () => {
+    const byId = new Map<string, string[]>();
+    for (const c of SITE.chapters) for (const b of c.beats) byId.set(b.id, [...(byId.get(b.id) ?? []), c.id]);
+    const recalls = beats.filter((b) => b.recall);
+    expect(recalls.length).toBeGreaterThan(0);
+    for (const b of recalls) {
+      expect(b.recall!.length, b.id).toBeGreaterThan(0);
+      for (const id of b.recall!) {
+        expect(byId.get(id)?.length, `${b.id} recall ${id}`).toBe(1);
+        expect(id, `${b.id} 不能指自己`).not.toBe(b.id);
+      }
+      expect(b.echoes, `${b.id} 回看不是回聲`).toBeUndefined();
+    }
+    for (const c of SITE.chapters) {
+      for (const l of c.laws ?? []) {
+        expect(l.id, c.id).toMatch(/^[a-z]+\d+-\d+$/);
+        expect(l.title.trim().length, `${c.id} ${l.id}`).toBeGreaterThan(0);
+      }
+    }
+    expect(SITE.chapters.find((c) => c.id === 'sevens')?.laws?.length).toBeGreaterThan(0);
+    expect(SITE.sevens).toEqual({ days: 7, weeks49: 49, fifty: 50 });
   });
 
   it('moreVerses 都有經文、不和 verse 重複', () => {
@@ -177,6 +210,7 @@ describe('site.json 一致性', () => {
 describe('links.ts', () => {
   it('條目與章節網址有編碼', () => {
     expect(entryUrl('歷史', '逾越節')).toMatch(/\/link_folder\/%E6%AD%B7%E5%8F%B2\/%E9%80%BE%E8%B6%8A%E7%AF%80$/);
+    expect(lawUrl('lev25-08')).toBe('../../律法地圖/dist/index.html#/law/lev25-08');
     expect(chapterUrl(2, '出埃及記', 12)).toMatch(/\/02-%E5%87%BA%E5%9F%83%E5%8F%8A%E8%A8%98\/%E7%AC%AC12%E7%AB%A0$/);
   });
 });

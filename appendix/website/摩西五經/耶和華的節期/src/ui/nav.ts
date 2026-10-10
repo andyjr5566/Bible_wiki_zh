@@ -5,7 +5,7 @@
  * - 點擊跳轉：先播約 250ms 的直向刻線抹除遮罩，再 window.scrollTo({ behavior: 'instant' })，再抹開。
  *   不用 smooth scroll、不用 scrollIntoView。
  * - 右上角小日數牌：badge 優先，其次 day（「正月　十五」），再其次 count 拍的「第 n 日」，都沒有就隱藏。
- * - 沒有 month 的章，標記停在前一個位置並改成空心。
+ * - 沒有 month 的章（七的節奏、coda），標記停在前一個位置並改成空心（「不定日期」）。
  */
 import { gsap } from 'gsap';
 import { SITE } from '../data/site';
@@ -160,7 +160,7 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
     }
 
     // 目前位置：開場照 story.day；有月份的節期章從節期日起，隨章進度走到隔天；沒有月份的章停在前一個位置
-    const hollow = !!c && c.kind === 'feast' && !c.month;
+    const hollow = !!c && c.kind !== 'opening' && !c.month;
     let n: number;
     if (hollow) n = holdPos.get(c!.id) ?? 0;
     else if (c?.kind === 'opening') n = posOf(1, story.day);

@@ -4,9 +4,9 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   attributionAfter, checkAudioEntry, checkGtAttribution, checkHighlights, checkQuote, countHighlights,
-  extractStepWord, findQuote, gtWorkInRaw, mismatchHint, stepWordFrom, stripSpaces,
+  extractStepWord, findQuote, gtWorkInRaw, mismatchHint, parseCnCount, parseSevens, stepWordFrom, stripSpaces,
 } from './checks.mjs';
-import { IN_VAULT, ROOT, parseStepFile, readRaw } from './lib.mjs';
+import { IN_VAULT, ROOT, chapterVerses, parseStepFile, readRaw } from './lib.mjs';
 
 // 仿 ccbiblestudy 拾穗的格式：歸屬接在段尾，可能換行；一組歸屬可蓋住前面好幾段；正文也有當破折號用的 ──
 const GT = [
@@ -223,5 +223,34 @@ describe.skipIf(!IN_VAULT)('真實 raw 的反例', () => {
     expect(checkQuote({ source: 'GT', quote, work: '《舊約聖經背景註釋》' }, gt, 'GT12')).toEqual([]);
     expect(checkQuote({ source: 'GT', quote, work: '《丁道爾聖經註釋》' }, gt, 'GT12')[0]).toContain('歸屬不符');
     expect(checkQuote({ source: 'GT', quote: `${quote}多一句`, work: '《舊約聖經背景註釋》' }, gt, 'GT12')[0]).toContain('找不到逐字原文');
+  });
+});
+
+describe('七的倍數（檢查 #6）', () => {
+  const L23 = '你們要從安息日的次日，獻禾捆為搖祭的那日算起，要滿了七個安息日。到第七個安息日的次日，共計五十天，又要將新素祭獻給耶和華。';
+  const L258 = '你要計算七個安息年，就是七七年。這便為你成了七個安息年，共是四十九年。';
+  const L2510 = '第五十年，你們要當作聖年，在遍地給一切的居民宣告自由。這年必為你們的禧年，各人要歸自己的產業，各歸本家。';
+  const ok = { lev23_15_16: L23, lev25_8: L258, lev25_10: L2510 };
+  it('中文數字：七、十、十二、二十、四十九、五十', () => {
+    expect(['七', '十', '十二', '二十', '四十九', '五十'].map(parseCnCount)).toEqual([7, 10, 12, 20, 49, 50]);
+    expect(parseCnCount('百')).toBeNaN();
+  });
+  it('固定字串：解析出 7、49、50', () => {
+    expect(parseSevens(ok)).toEqual({ days: 7, weeks49: 49, fifty: 50, errors: [] });
+  });
+  it('反例：改壞文字要報錯', () => {
+    const bad = (patch) => parseSevens({ ...ok, ...patch }).errors;
+    expect(bad({ lev23_15_16: L23.replace('七個安息日', '八個安息日') }).join()).toContain('應為');
+    expect(bad({ lev23_15_16: L23.replace('五十天', '四十九天') }).join()).toContain('利23:16');
+    expect(bad({ lev25_8: L258.replace('四十九年', '五十年') }).join()).toContain('七七應為 49');
+    expect(bad({ lev25_8: L258.replace('就是七七年', '就是七年') }).join()).toContain('七七年');
+    expect(bad({ lev25_10: L2510.replace('第五十年', '第四十九年') }).join()).toContain('應為 50');
+    expect(bad({ lev25_10: '這年必為你們的禧年。' }).join()).toContain('利25:10');
+    expect(bad({ lev23_15_16: '' }).length).toBeGreaterThan(0);
+  });
+  it.skipIf(!IN_VAULT)('真實 raw_scripture：7、49、50', () => {
+    const lev = (ch, a, b) => chapterVerses('利未記', ch).slice(a - 1, b).join('');
+    const r = parseSevens({ lev23_15_16: lev(23, 15, 16), lev25_8: lev(25, 8, 8), lev25_10: lev(25, 10, 10) });
+    expect(r).toEqual({ days: 7, weeks49: 49, fifty: 50, errors: [] });
   });
 });

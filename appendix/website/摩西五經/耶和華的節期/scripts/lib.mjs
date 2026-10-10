@@ -4,11 +4,14 @@
 // 純驗證邏輯（不碰檔案系統）放在 checks.mjs，方便用測試固定行為。
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import YAML from 'yaml';
 import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const SITE_DIR = resolve(here, '..');
 export const ROOT = resolve(SITE_DIR, '../../../..');
+/** 姊妹網站「律法地圖」（唯讀）：章末的律法地圖欄取條文標題 */
+export const LAWMAP_DIR = resolve(SITE_DIR, '../律法地圖');
 /** 在 scripture 專案裡才有 vault；部署（CI）時只有網站本身 */
 export const IN_VAULT = existsSync(resolve(ROOT, 'raw_scripture')) && existsSync(resolve(ROOT, 'link_folder'));
 
@@ -33,6 +36,8 @@ export const BOOKS = [
   { abbr: '尼', name: '尼希米記', en: 'Nehemiah', num: 16 },
   { abbr: '詩', name: '詩篇', en: 'Psalms', bh: 'Psalm', num: 19 },
   { abbr: '賽', name: '以賽亞書', en: 'Isaiah', num: 23 },
+  { abbr: '耶', name: '耶利米書', en: 'Jeremiah', num: 24 },
+  { abbr: '結', name: '以西結書', en: 'Ezekiel', num: 26 },
   { abbr: '珥', name: '約珥書', en: 'Joel', num: 29 },
   { abbr: '摩', name: '阿摩司書', en: 'Amos', num: 30 },
   { abbr: '亞', name: '撒迦利亞書', en: 'Zechariah', num: 38 },
@@ -279,4 +284,20 @@ export function listAudioFiles(dir = resolve(SITE_DIR, 'public/audio')) {
     .filter((d) => d.isFile() && !d.name.startsWith('.'))
     .map((d) => resolve(d.parentPath ?? d.path, d.name).slice(dir.length + 1).replace(/\\/g, '/'))
     .sort();
+}
+
+// ---------- 律法地圖（唯讀） ----------
+
+/**
+ * 讀律法地圖 data/laws/*.yaml（結構 book → chapters[] → sections[] → laws[]），回傳 Map(條文 id → title)。
+ * 資料夾不存在回 null。
+ */
+export function readLawTitles(dir = resolve(LAWMAP_DIR, 'data/laws')) {
+  if (!existsSync(dir)) return null;
+  const out = new Map();
+  for (const f of readdirSync(dir).filter((n) => n.endsWith('.yaml')).sort()) {
+    const doc = YAML.parse(read(resolve(dir, f)));
+    for (const ch of doc?.chapters ?? []) for (const sec of ch.sections ?? []) for (const law of sec.laws ?? []) if (law?.id) out.set(law.id, String(law.title ?? ''));
+  }
+  return out;
 }

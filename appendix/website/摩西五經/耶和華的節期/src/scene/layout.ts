@@ -20,3 +20,15 @@ export const COURT_D = 19;
 /** 院子門（前，+z 側）的世界座標 */
 export const GATE_X = NX + CX;
 export const GATE_Z = CZ + COURT_D / 2;
+
+// ---- 第三批（七的節奏）：各個小場景搭在更遠的地方，互不相干
+export const SVH = 3600; // 一戶人家的院子（安息日、牛驢、豁免）
+export const SVC = 3900; // 天、地、海（創造）
+export const SVF = 4200; // 不耕的田；+90 是第六年的穀堆
+export const SVV = 4500; // 住棚節的村子（宣讀律法）
+export const SVP = 4800; // 遍地的山頭（禧年的角聲）
+export const SVL = 5100; // 第五十年：走回自己的田與家
+export const SVW = 5400; // 廣闊的那地（地是我的）
+export const SVJ = 5700; // 耶路撒冷的街（西底家）
+export const SVR = 6000; // 荒涼的田（七十年）
+export const SVO = 6300; // 歸回的人起誓

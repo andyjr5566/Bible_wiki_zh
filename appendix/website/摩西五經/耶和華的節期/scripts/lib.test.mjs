@@ -29,6 +29,9 @@ describe('經文參照解析', () => {
     expect(parseRef('代下30:18-20')?.book).toBe('歷代志下');
     expect(parseRef('詩81:3-4')?.book).toBe('詩篇');
     expect(parseRef('亞14:16-19')?.book).toBe('撒迦利亞書');
+    expect(parseRef('耶34:8-11')).toEqual({ abbr: '耶', book: '耶利米書', chapter: 34, from: 8, to: 11 });
+    expect(parseRef('結46:16-17')?.book).toBe('以西結書');
+    expect(parseChapterRef('耶34')).toEqual({ abbr: '耶', book: '耶利米書', chapter: 34 });
     expect(parseChapterRef('尼8')).toEqual({ abbr: '尼', book: '尼希米記', chapter: 8 });
     expect(parseRef('撒下1:1')).toBeNull(); // 本站沒用到的書
   });
@@ -37,7 +40,7 @@ describe('經文參照解析', () => {
       ['約書亞記', 6, '06 約書亞記', 'Joshua'], ['路得記', 8, '08 路得記', 'Ruth'], ['撒母耳記上', 9, '09 撒母耳記上', '1 Samuel'],
       ['列王紀上', 11, '11 列王紀上', '1 Kings'], ['列王紀下', 12, '12 列王紀下', '2 Kings'], ['歷代志下', 14, '14 歷代志下', '2 Chronicles'],
       ['以斯拉記', 15, '15 以斯拉記', 'Ezra'], ['尼希米記', 16, '16 尼希米記', 'Nehemiah'], ['詩篇', 19, '19 詩篇', 'Psalms'],
-      ['以賽亞書', 23, '23 以賽亞書', 'Isaiah'], ['約珥書', 29, '29 約珥書', 'Joel'], ['阿摩司書', 30, '30 阿摩司書', 'Amos'],
+      ['以賽亞書', 23, '23 以賽亞書', 'Isaiah'], ['耶利米書', 24, '24 耶利米書', 'Jeremiah'], ['以西結書', 26, '26 以西結書', 'Ezekiel'], ['約珥書', 29, '29 約珥書', 'Joel'], ['阿摩司書', 30, '30 阿摩司書', 'Amos'],
       ['撒迦利亞書', 38, '38 撒迦利亞書', 'Zechariah'],
     ];
     for (const [name, num, dir, en] of pairs) expect(BOOK_BY_NAME[name], name).toMatchObject({ num, dir, en });

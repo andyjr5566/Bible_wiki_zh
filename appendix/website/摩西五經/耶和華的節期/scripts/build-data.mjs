@@ -20,16 +20,18 @@
 //   h. 第二階段第二批：echoes 指到存在的拍（不能指自己）；bars 的每條 ref 都有祭牲、至少一筆「公牛」；
 //      passage 章的 month／monthTo、無字的拍；ot 的 kind／ref／note；later_palette。
 //   i. 經文裡整行「併於上節。」的節不收進 VerseBlock.lines（節號不變，例如代下30:19）。
+//   j. 第三批：recall 指到存在的拍（不能指自己）；law_links 的條文 id 都在律法地圖 data/laws/*.yaml 找得到（標題一併寫進 StoryChapter.laws）；
+//      七的倍數（#6）：利23:15-16 七個安息日、五十天，利25:8 七七＝四十九年，利25:10 第五十年，解析值寫進 SiteData.sevens。
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import {
-  BOOK_BY_NAME, IN_VAULT, SITE_DIR, SOURCE_ORDER, SOURCE_SITE,
-  chapterSources, chapterVerses, entries, entryGist, hasKbChapter, isMergedVerse, listAudioFiles, parseChapterRef, parseRef,
+  BOOK_BY_NAME, IN_VAULT, LAWMAP_DIR, SITE_DIR, SOURCE_ORDER, SOURCE_SITE,
+  chapterSources, chapterVerses, entries, entryGist, hasKbChapter, isMergedVerse, listAudioFiles, parseChapterRef, parseRef, readLawTitles,
   read, readRaw, readStepFile, resolveEntry,
 } from './lib.mjs';
-import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, parseOfferings, unknownKeys } from './checks.mjs';
+import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, parseOfferings, parseSevens, unknownKeys } from './checks.mjs';
 
 export const OUT = resolve(SITE_DIR, 'src/data/site.json');
 const SOURCE_IDS = ['CT', 'GT', 'KC', 'BH'];
@@ -50,7 +52,7 @@ export function stableStringify(value) {
 }
 
 /** dataDir、audioDir 可以換掉，測試用來餵故意弄壞的資料 */
-export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resolve(SITE_DIR, 'public/audio') } = {}) {
+export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resolve(SITE_DIR, 'public/audio'), lawsDir = resolve(LAWMAP_DIR, 'data/laws') } = {}) {
   const errors = [];
   const warnings = [];
   const err = (where, msg) => errors.push(`${where}: ${msg}`);
@@ -115,7 +117,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
 
   // ---------- feasts.yaml ----------
   const feasts = loadYaml('feasts.yaml') ?? {};
-  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'later_palette', 'entry_gists', 'chapters']);
+  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'later_palette', 'entry_gists', 'law_links', 'chapters']);
   if (!isStr(feasts.title)) err('feasts.yaml', 'title 要是非空字串');
   gistOverrides = feasts.entry_gists ?? {};
   if (typeof gistOverrides !== 'object' || Array.isArray(gistOverrides)) { err('feasts.yaml', 'entry_gists 要是「條目標題: 一句簡介」的對照表'); gistOverrides = {}; }
@@ -132,6 +134,32 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   const chapterSrc = Array.isArray(feasts.chapters) ? feasts.chapters : [];
   if (!chapterSrc.length) err('feasts.yaml', 'chapters 要是非空陣列');
   const chapterIds = new Set(chapterSrc.map((c) => c?.id));
+
+  // ---------- law_links（j）：章 id → 律法地圖條文，標題取自律法地圖 data/laws/*.yaml ----------
+  /** 章 id → [{id, title}] */
+  const lawLinks = {};
+  if (feasts.law_links !== undefined) {
+    const src = feasts.law_links;
+    if (!src || typeof src !== 'object' || Array.isArray(src)) err('feasts.yaml law_links', '要是「章 id: [條文 id, …]」的對照表');
+    else {
+      const titles = readLawTitles(lawsDir);
+      if (!titles) err('feasts.yaml law_links', `找不到律法地圖的條文資料夾：${lawsDir}`);
+      for (const [ch, ids] of Object.entries(src)) {
+        const w = `feasts.yaml law_links [${ch}]`;
+        if (!chapterIds.has(ch)) err(w, '不是 feasts.yaml 的章 id');
+        if (!isStrArray(ids) || !ids.length) { err(w, '要是條文 id 的字串陣列'); continue; }
+        const seen = new Set();
+        lawLinks[ch] = [];
+        for (const id of ids) {
+          if (seen.has(id)) { err(w, `條文 id「${id}」重複`); continue; }
+          seen.add(id);
+          const title = titles?.get(id);
+          if (titles && !title) err(w, `律法地圖沒有條文 id「${id}」`);
+          else if (title) lawLinks[ch].push({ id, title });
+        }
+      }
+    }
+  }
 
   // ---------- commentary.yaml（b） ----------
   const commentarySrc = loadYaml('commentary.yaml') ?? {};
@@ -252,7 +280,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   };
   const usedNotes = new Set();
   const usedWords = new Set();
-  const BEAT_KEYS = ['id', 'cue', 'day', 'dayTo', 'badge', 'offerings', 'offeringsLabel', 'bars', 'echoes', 'verse', 'moreVerses', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
+  const BEAT_KEYS = ['id', 'cue', 'day', 'dayTo', 'badge', 'offerings', 'offeringsLabel', 'bars', 'echoes', 'recall', 'verse', 'moreVerses', 'text', 'prompt', 'interaction', 'notes', 'words', 'reason'];
   const BAR_KEYS = ['label', 'ref'];
   const OT_KEYS = ['kind', 'ref', 'note'];
   const OT_KINDS = ['kept', 'word'];
@@ -261,6 +289,8 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   const KINDS = ['opening', 'feast', 'passage'];
   /** 回聲拍的 echoes 要等所有拍都收齊才能查：[{where, id, self}] */
   const echoRefs = [];
+  /** recall 同樣等所有拍收齊才查 */
+  const recallRefs = [];
   /** 拍 id → 出現在哪幾章（回聲只能指到唯一的拍） */
   const beatHome = new Map();
   for (const k of Object.keys(storySrc)) if (!chapterIds.has(k)) err(`story.yaml ${k}`, '這個 key 不是 feasts.yaml 的章 id');
@@ -280,11 +310,14 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     if (!isStr(c.scene)) err(`${where}.scene`, '要是非空字串');
     if (c.date !== undefined && !isStr(c.date)) err(`${where}.date`, '要是非空字串');
     if (c.month !== undefined && !(Number.isInteger(c.month) && c.month >= 1 && c.month <= 12)) err(`${where}.month`, '要是 1–12 的整數');
+    // passage 可以完全沒有月份（coda：月份導覽維持「不定日期」）；有 month 就一定要有 monthTo
     if (c.kind === 'passage') {
-      if (c.month === undefined) err(`${where}.month`, 'passage 章一定要有 month');
-      if (c.monthTo === undefined) err(`${where}.monthTo`, 'passage 章一定要有 monthTo');
-      else if (!(Number.isInteger(c.monthTo) && c.monthTo >= 1 && c.monthTo <= 12)) err(`${where}.monthTo`, '要是 1–12 的整數');
-      else if (Number.isInteger(c.month) && !(c.month < c.monthTo)) err(`${where}.monthTo`, `要大於 month（month ${c.month}、monthTo ${c.monthTo}）`);
+      if (c.month !== undefined && c.monthTo === undefined) err(`${where}.monthTo`, 'passage 章有 month 就一定要有 monthTo');
+      if (c.month === undefined && c.monthTo !== undefined) err(`${where}.month`, '有 monthTo 就一定要有 month');
+      if (c.monthTo !== undefined) {
+        if (!(Number.isInteger(c.monthTo) && c.monthTo >= 1 && c.monthTo <= 12)) err(`${where}.monthTo`, '要是 1–12 的整數');
+        else if (Number.isInteger(c.month) && !(c.month < c.monthTo)) err(`${where}.monthTo`, `要大於 month（month ${c.month}、monthTo ${c.monthTo}）`);
+      }
     } else if (c.monthTo !== undefined) err(`${where}.monthTo`, '只有 passage 章可以有 monthTo');
     if (c.day !== undefined && !(Number.isInteger(c.day) && c.day >= 1 && c.day <= 30)) err(`${where}.day`, '要是 1–30 的整數');
     const pal = c.palette ?? {};
@@ -333,7 +366,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
         for (const e of checkHighlights(b.text)) err(`${bw}.text`, e);
       }
       if (isPassage) {
-        for (const k of ['notes', 'words', 'offerings', 'verse', 'moreVerses', 'bars', 'echoes']) {
+        for (const k of ['notes', 'words', 'offerings', 'verse', 'moreVerses', 'bars', 'echoes', 'recall']) {
           if (b[k] !== undefined) err(`${bw}.${k}`, 'passage 的拍不可有這個欄位');
         }
       }
@@ -351,6 +384,13 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       if (b.echoes !== undefined) {
         if (!isStrArray(b.echoes) || !b.echoes.length) err(`${bw}.echoes`, '要是拍 id 的字串陣列（例如 [not-yet]）');
         else b.echoes.forEach((id, k) => echoRefs.push({ where: `${bw}.echoes[${k}]`, id, self: b.id, chapter: c.id }));
+      }
+      if (b.recall !== undefined) {
+        if (!isStrArray(b.recall) || !b.recall.length) err(`${bw}.recall`, '要是拍 id 的字串陣列（例如 [count]）');
+        else b.recall.forEach((id, k) => {
+          if (b.recall.indexOf(id) !== k) err(`${bw}.recall[${k}]`, `「${id}」在 recall 裡重複`);
+          recallRefs.push({ where: `${bw}.recall[${k}]`, id, self: b.id, chapter: c.id });
+        });
       }
       if (b.bars !== undefined) {
         if (!Array.isArray(b.bars) || !b.bars.length) err(`${bw}.bars`, '要是 [{label, ref}] 陣列');
@@ -413,6 +453,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
         ...(b.offeringsLabel !== undefined ? { offeringsLabel: b.offeringsLabel } : {}),
         ...(b.bars !== undefined && Array.isArray(b.bars) ? { bars: b.bars.map((x) => ({ label: x?.label, ref: x?.ref })) } : {}),
         ...(b.echoes !== undefined && Array.isArray(b.echoes) ? { echoes: b.echoes } : {}),
+        ...(b.recall !== undefined && Array.isArray(b.recall) ? { recall: b.recall } : {}),
       };
     }).filter(Boolean);
 
@@ -451,6 +492,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       nt: chNt,
       ...(c.next ? { next: { title: c.next.title, date: c.next.date } } : {}),
       ...(ot ? { ot } : {}),
+      ...(lawLinks[c.id]?.length ? { laws: lawLinks[c.id] } : {}),
     });
   });
 
@@ -459,6 +501,14 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     const homes = beatHome.get(id);
     if (!homes) err(where, `沒有 id 是「${id}」的拍`);
     else if (id === self) err(where, '回聲拍不能指向自己');
+    else if (homes.length > 1) err(where, `拍 id「${id}」在多章都有（${homes.join('、')}），指不到唯一的拍`);
+  }
+
+  // 回看：同樣的規則（存在、唯一、不能指自己）
+  for (const { where, id, self } of recallRefs) {
+    const homes = beatHome.get(id);
+    if (!homes) err(where, `沒有 id 是「${id}」的拍`);
+    else if (id === self) err(where, '回看不能指向自己');
     else if (homes.length > 1) err(where, `拍 id「${id}」在多章都有（${homes.join('、')}），指不到唯一的拍`);
   }
 
@@ -512,6 +562,14 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
       url: chapterSources(book, chapter)?.[source]?.url ?? '',
     }));
 
+  // ---------- 七的倍數（檢查 #6）：七、四十九、五十只從經文解析 ----------
+  const lev = (ch, from, to) => (chapterVerses('利未記', ch) ?? []).slice(from - 1, to).join('');
+  const sevens = parseSevens({ lev23_15_16: lev(23, 15, 16), lev25_8: lev(25, 8, 8), lev25_10: lev(25, 10, 10) });
+  for (const e of sevens.errors) err('七的倍數', e);
+  if (!sevens.errors.length && (sevens.days !== 7 || sevens.weeks49 !== 49 || sevens.fifty !== 50)) {
+    err('七的倍數', `解析值應為 7、49、50，實際是 ${sevens.days}、${sevens.weeks49}、${sevens.fifty}`);
+  }
+
   const data = {
     title: feasts.title,
     motto,
@@ -524,6 +582,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     laterPalette: { paper: laterPal.paper, ink: laterPal.ink, accent: laterPal.accent, glow: laterPal.glow },
     audio,
     sources,
+    sevens: { days: sevens.days, weeks49: sevens.weeks49, fifty: sevens.fifty },
   };
   return { data, errors, warnings };
 }

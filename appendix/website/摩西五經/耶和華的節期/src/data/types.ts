@@ -126,6 +126,13 @@ export interface Beat {
    * 被呼應的拍則反向顯示一個「後來」連結跳到回聲拍（由介面層從 echoes 反推）。
    */
   echoes?: string[];
+  /**
+   * 回看：這一拍回頭看的先前的拍 id（可跨章，不可指向自己）。
+   * 說明框在敘述下面列一行「回看」小標與被回看的拍（顯示「章名・拍的一句短名」），點了用回聲拍的同一套跳轉
+   * （抹除＋瞬間定位＋「回到」小按鈕）。和 echoes 不同：不是「後來」，不換舊紙配色、不顯示「後來」標籤，
+   * 被回看的拍也不反向顯示連結。
+   */
+  recall?: string[];
 }
 
 /** 章末「舊約其他書卷」的一筆 */
@@ -154,7 +161,7 @@ export interface StoryChapter {
   date?: string;
   /** 經文有月份才填；沒填的章，月份導覽維持前一個位置並顯示為「不定日期」 */
   month?: number;
-  /** passage 章：月份導覽隨捲動從 month 走到 monthTo */
+  /** passage 章：月份導覽隨捲動從 month 走到 monthTo；有 month 就一定有 monthTo，兩個都沒有（coda）則維持「不定日期」 */
   monthTo?: number;
   day?: number;
   scene: string; // night-moon、egypt-street……
@@ -168,6 +175,8 @@ export interface StoryChapter {
   nt: string[];
   /** 章末的「下一個節期」預告（只放名稱與日期） */
   next?: { title: string; date: string };
+  /** 章末「律法地圖」：feasts.yaml law_links 的條文（標題取自律法地圖 data/laws），連到 ../../律法地圖/dist/index.html#/law/<id> */
+  laws?: { id: string; title: string }[];
   /** 章末「舊約其他書卷」：分「後來的人怎麼守」與「同樣的字，不同的場合」兩小節，沒有資料的小節不顯示 */
   ot?: OtNote[];
 }
@@ -202,4 +211,9 @@ export interface SiteData {
   audio: AudioSource[];
   /** 授權頁：每章用到的來源與網址 */
   sources: { book: string; chapter: number; source: SourceId | 'STEP'; site: string; url: string }[];
+  /**
+   * 七的倍數（建置檢查 #6，只從 raw_scripture 解析）：days＝利23:15「七個安息日」的七；
+   * weeks49＝利25:8「七七年…共是四十九年」；fifty＝利25:10「第五十年」。漩渦的格數只能讀這些值。
+   */
+  sevens: { days: number; weeks49: number; fifty: number };
 }

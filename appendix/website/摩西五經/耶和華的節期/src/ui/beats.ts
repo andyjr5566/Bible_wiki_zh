@@ -212,6 +212,8 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
 
   const echoes = ui.echo.echoesSection(beat);
   if (echoes) body.append(echoes);
+  const recall = ui.echo.recallSection(beat);
+  if (recall) body.append(recall);
   const laters = ui.echo.laterLinks(beat);
   if (laters) body.append(laters);
 
@@ -228,7 +230,7 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     else if (beat.interaction === 'bake') ctl = ui.bake.controls(beat.prompt);
     else if (beat.interaction === 'wave') ctl = ui.wave.controls(beat.prompt);
     else if (beat.interaction === 'count') ctl = ui.count.controls(beat.prompt);
-    else if (beat.interaction === 'blow') ctl = ui.blow.controls(beat.prompt);
+    else if (beat.interaction === 'blow') ctl = ui.blow.controls(beat.prompt, beat.id);
     if (ctl) {
       // 收起說明框時，互動按鈕留著
       ctl.classList.add('jf-ctl');

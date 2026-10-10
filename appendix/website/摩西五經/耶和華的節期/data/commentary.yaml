@@ -1387,3 +1387,306 @@ booths:
     verse: 尼8:17
     quote: 'Israel had observed the feast at other times, but not with the same comprehensive, wholehearted unity displayed in Jerusalem under Ezra and Nehemiah.'
     quoteZh: '以色列在別的時候也守過這節，卻不像以斯拉、尼希米時在耶路撒冷那樣全體一心。'
+
+# ================= 第三批：七的節奏 =================
+sevens:
+  # ---------- 安息日 ----------
+  - id: kc-lev25-week-year
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:4
+    quote: 'Just as the people have to work six days and rest on the seventh day, so the land in which they will live must be worked for six years and be given a year’s rest in the seventh year.'
+    quoteZh: '百姓要六天做工、第七天安息；同樣，他們將要住的地也要耕種六年，第七年讓它安息一年。'
+  - id: bh-lev25-six-cycle
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利25
+    verse: 利25:3
+    quote: 'The concept of a six-year cycle is rooted in the creation narrative, where God created the world in six days and rested on the seventh (Genesis 1:31-2:2).'
+    quoteZh: '六年一循環的觀念，根源在創造的記載：神用六天創造世界，第七天安息（創1:31-2:2）。'
+  - id: ct-ex20-example
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出20
+    verse: 出20:11
+    quote: 表示神自己先做榜樣，然後才要求人也要六日勞碌做工(參9節)。
+  - id: bh-ex20-not-tired
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 出20
+    verse: 出20:11
+    quote: 'This phrase introduces the concept of divine rest, which is not due to fatigue but signifies completion and satisfaction with creation.'
+    quoteZh: '這一句帶出神的安息：神安息不是因為累了，而是表示創造已經完成，並且他對所造的滿意。'
+  - id: ct-ex23-weary
+    source: CT
+    work: 黃迦勒《出埃及記註解》
+    chapter: 出23
+    verse: 出23:12
+    quote: 使牲口有機會休息，而最勞苦的人們也能夠身心都舒暢。
+  - id: bh-lev25-omer
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利25
+    verse: 利25:8
+    quote: 'This mirrors the counting of the Omer between Passover and Shavuot, which is also a period of seven weeks (Leviticus 23:15-16).'
+    quoteZh: '這和逾越節到七七節之間數算禾捆的日子相對應，那也是七個七（利23:15-16）。'
+  # ---------- 第七年 ----------
+  - id: ct-lev25-for-land
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:4
+    quote: 安息日是為人，安息年是為地，但仍舊是為人，只有地得安息，人才能得安息
+  - id: kc-lev25-not-punish
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:4
+    quote: 'This is not a punishment, but a blessing: they do not have to work.'
+    quoteZh: '這不是懲罰，而是福氣：他們不必做工。'
+  - id: kc-lev25-for-all
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:6
+    quote: 'that food is for everyone, not just for the owner of the land.'
+    quoteZh: '那些食物是給每一個人的，不只是給地主的。'
+  - id: gt-bg-fallow-parts
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利25
+    verse: 利25:4
+    quote: 這政策可能是每年在同一塊田的不同部分實施，使每一部分至終都能休息。
+  - id: ct-lev25-three-fold
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:21
+    quote: 『生三年的土產』指三倍於平常的產量
+  - id: gt-chuanzhu-test-faith
+    source: GT
+    work: 《串珠聖經註釋》
+    chapter: 利25
+    verse: 利25:18-22
+    quote: 藉著安息年及禧年的律例，也可試驗以色列人對神應許的信心。
+  - id: gt-dlc-no-nation
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利25
+    verse: 利25:21
+    quote: 自古至今除了以色列人以外，再沒有一國有這樣的條例，叫百姓每七年停止務農一年，每五十年就一連停止兩年。
+  - id: bh-lev25-trust
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利25
+    verse: 利25:20
+    quote: 'The Sabbath year is a test of faith, requiring trust in God''s provision.'
+    quoteZh: '安息年是對信心的考驗，要人信靠神的供應。'
+  - id: ct-deut15-fallow-word
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申15
+    verse: 申15:1
+    quote: 『豁免』原意指休耕(參出二十三11)，在此指免除債務(參2~3節)。
+  - id: ct-deut15-not-empty
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申15
+    verse: 申15:14
+    quote: 如果奴隸空手得自由，可能很快又會因為貧困而再次欠債淪為奴隸。
+  - id: kc-deut15-master
+    source: KC
+    work: KingComments
+    chapter: 申15
+    verse: 申15:12-18
+    quote: 'The emphasis here, however, is not on the attitude of the slave, but on the mind of the master.'
+    quoteZh: '不過這裡的重點不在奴僕的態度，而在主人的心意。'
+  - id: kc-deut15-twice
+    source: KC
+    work: KingComments
+    chapter: 申15
+    verse: 申15:12-18
+    quote: 'If he had had to hire a man for all the work the slave did, it would have cost him twice as much.'
+    quoteZh: '奴僕做的這些工，主人若要雇人來做，得花上兩倍的錢。'
+  - id: ct-deut15-remember
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申15
+    verse: 申15:15
+    quote: 自己既蒙神施拯救，就當成為幫助別人的動機。
+  - id: ct-deut31-who-reads
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申31
+    verse: 申31:11
+    quote: 『你』指祭司和長老(參9節)。
+  - id: ct-deut31-steps
+    source: CT
+    work: 黃迦勒《申命記註解》
+    chapter: 申31
+    verse: 申31:12
+    quote: 本節指明使眾人明白而遵行律法的程序：(1)招聚；(2)使聽；(3)學習；(4)敬畏神；(5)謹守；(6)遵行。
+  - id: bh-deut31-foreigners
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 申31
+    verse: 申31:12
+    quote: 'The inclusion of "foreigners" highlights the openness of Israel''s society to those who were not ethnically Israelite but lived among them.'
+    quoteZh: '把「寄居的」也算進來，顯出以色列社會對住在他們中間、卻不是以色列血統的人是敞開的。'
+  # ---------- 四十九年到禧年 ----------
+  - id: ct-lev25-seven-sevens
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:8
+    quote: 這樣到了第七個安息年，便是過了四十九年。
+  - id: gt-dlc-64th-year
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利25
+    verse: 利25:8
+    quote: 倘若他們到了迦南以後，第二十一年才守了第一個安息年（2注），就是在第六十四年才初次守禧年。
+  - id: ct-lev25-which-year
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:9
+    quote: 『當年』指第四十九年；『大發角聲』指多人在多地發出角聲。
+  - id: gt-dlc-atonement-first
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利25
+    verse: 利25:9
+    quote: 禧年從大贖罪日起是要顯明真實的豁免和自由必須本著贖罪。
+  - id: kc-lev25-horn-again
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:9
+    quote: 'But in this fiftieth year the horn will sound another time in the seventh month.'
+    quoteZh: '但在這第五十年，七月裡角聲還要再響一次。'
+  - id: bh-lev25-shofar
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 利25
+    verse: 利25:9
+    quote: 'The shofar, typically made from a ram''s horn, was used for various purposes, including calling people to worship, signaling the start of festivals, and announcing important events.'
+    quoteZh: '角（shofar）通常用公羊角做成，用途很多：召集人敬拜、宣告節期開始、通告重大的事。'
+  - id: ct-lev25-fiftieth
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:10
+    quote: 『第五十年』應當是指第七個安息年的次年，猶太歷史學家約瑟夫也同意這個解釋
+  - id: gt-dlc-two-readings
+    source: GT
+    work: 丁良才《利未記註釋》
+    chapter: 利25
+    verse: 利25:10
+    quote: 禧年有兩樣解法：（一）有人以為第四十九年是安息年，第五十年是禧年，所以這兩年全然不能種地
+    paraphrase: 丁良才也列出第二種解法：每第七個安息年本身就算禧年；他認為這種解法與18至22節的意思不合。
+  - id: gt-jingdu-both-rest
+    source: GT
+    work: 《聖經精讀本──利未記註解》
+    chapter: 利25
+    verse: 利25:8
+    quote: 即第四十九年和五十年都是休息的年份。
+  - id: kc-lev25-ramshorn
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:10
+    quote: 'The word “jubilee” means “blowing on the ramshorn”.'
+    quoteZh: '「禧年」這個字的意思是「吹公羊角」。'
+  - id: gt-qidao-never-kept
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利25
+    verse: 利25:8-17
+    quote: 說明以色列的社會未曾真正遵行禧年的定例。
+  - id: ct-lev25-land-gods
+    source: CT
+    work: 黃迦勒《利未記註解》
+    chapter: 利25
+    verse: 利25:23
+    quote: 土地不可賣斷或買斷，因為土地是屬於神的。
+  - id: gt-qidao-even-king
+    source: GT
+    work: 《啟導本聖經利未記註釋》
+    chapter: 利25
+    verse: 利25:23
+    quote: 在以色列人歷史中，連君王也不可違背這條立法（參王上二十一3～4）。
+  - id: gt-bg-inalienable
+    source: GT
+    work: 《舊約聖經背景註釋》
+    chapter: 利25
+    verse: 利25:8-55
+    quote: 以色列律法的核心觀念，是百姓對土地有不可剝奪的權利。
+  - id: kc-lev25-crops-sold
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:15
+    quote: 'When a piece of land is sold, in reality it is not the land, but a number of crops that are sold.'
+    quoteZh: '賣一塊地，實際上賣的不是地，而是幾年的收成。'
+  # ---------- 回聲 ----------
+  - id: ct-jer34-why-release
+    source: CT
+    work: 黃迦勒《耶利米書註解》
+    chapter: 耶34
+    verse: 耶34:10
+    quote: 儘管不清楚其原因，有可能防衛城邑，需要主僕併肩作戰，或圍城饑荒中，奴婢需要口糧存活。
+  - id: ct-jer34-why-turn
+    source: CT
+    work: 黃迦勒《耶利米書註解》
+    chapter: 耶34
+    verse: 耶34:11
+    quote: 尼布甲尼撒撤軍，可能曾是誘因，促使他們變心毀約，不守他們對奴婢釋放的保證。
+  - id: kc-jer34-longer
+    source: KC
+    work: KingComments
+    chapter: 耶34
+    verse: 耶34:8-9
+    quote: 'It seems that the rich made the poor serve as servants for longer than the seven years prescribed by God in the law'
+    quoteZh: '看來富人讓窮人當奴僕的年數，超過了神在律法裡定的七年。'
+  - id: kc-jer34-not-whole
+    source: KC
+    work: KingComments
+    chapter: 耶34
+    verse: 耶34:11
+    quote: 'The covenant was not made wholeheartedly.'
+    quoteZh: '這個約不是全心立的。'
+  - id: ct-chr36-seventy
+    source: CT
+    work: 黃迦勒《歷代志下註解》
+    chapter: 代下36
+    verse: 代下36:21
+    quote: 補足百姓所沒有遵守的律法規定的70個安息年
+  - id: kc-lev25-exile
+    source: KC
+    work: KingComments
+    chapter: 利25
+    verse: 利25:4
+    quote: 'Then God makes sure that His land gets rest by sending the people into exile (2Chr 36:21).'
+    quoteZh: '於是神讓百姓被擄，好叫他的地得著安息（代下36:21）。'
+  - id: kc-chr36-from-first
+    source: KC
+    work: KingComments
+    chapter: 代下36
+    verse: 代下36:21
+    quote: 'This period of seventy years is counted from the first carrying away to Babylon.'
+    quoteZh: '這七十年是從第一次被擄到巴比倫算起。'
+  - id: ct-neh10-seventh
+    source: CT
+    work: 黃迦勒《尼希米記註解》
+    chapter: 尼10
+    verse: 尼10:31
+    quote: 第七年即安息年，律法規定要休耕(參出二十三11；利二十五4)，且要豁免債務(參申十五2)。
+  - id: bh-neh10-commerce
+    source: BH
+    work: BibleHub 研經註解
+    chapter: 尼10
+    verse: 尼10:31
+    quote: 'Commercial traffic could easily turn the Sabbath into an ordinary workday, as later happened in Jerusalem (Nehemiah 13:15–22).'
+    quoteZh: '買賣往來很容易把安息日變成普通的工作日；後來耶路撒冷就發生了這種事（尼13:15-22）。'
