@@ -114,3 +114,13 @@
   - `forty-nine`：利25:8 沒提七七節；刪去比較，只留「七七年，共是四十九年」。
   - 審後 `git status util/`：無變動。
 - **第 2 輪**（`codex-review-12.md` → `.out.md`）：第一次呼叫因審查者讀不到檔案而受阻（不算一輪），重跑後 PASS，無 finding。審後 `git status util/`：無變動。
+
+## 頁尾「聖經裡還有的節期」（使用者 2026-10-11 要求）
+
+- **第 1 輪**（`codex-review-13.md` → `.out.md`）：PASS，無 finding。審後 `git status util/`：無變動。
+- 使用者接著要求每項說明「是什麼、怎麼來的」，主筆改寫 4 項、增加 refs 與 sources（修殿節：BibleHub 但8；禁食：黃迦勒 亞8）。
+- **第 2 輪**（`codex-review-14.md` → `.out.md`）：CHANGES_REQUIRED，2 條，回查 raw_scripture 成立：
+  - 普珥日「哈曼設謀要殺盡」在斯9:24，補列；
+  - 「省長基大利」在王下25:22，補列。
+  - 審後 `git status util/`：無變動。
+- 第 2 輪是最後一輪；主筆最後修正後依規則 forced pass，不做第三次審查。

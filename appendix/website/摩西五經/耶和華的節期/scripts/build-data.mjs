@@ -27,11 +27,11 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import {
-  BOOK_BY_NAME, IN_VAULT, LAWMAP_DIR, SITE_DIR, SOURCE_ORDER, SOURCE_SITE,
+  BOOK_BY_NAME, IN_VAULT, LAWMAP_DIR, RAW_DATA_DIR, SITE_DIR, SOURCE_ORDER, SOURCE_SITE,
   chapterSources, chapterVerses, entries, entryGist, hasKbChapter, isMergedVerse, listAudioFiles, parseChapterRef, parseRef, readLawTitles,
-  read, readRaw, readStepFile, resolveEntry,
+  parseRawName, read, readRaw, readStepFile, resolveEntry,
 } from './lib.mjs';
-import { checkAudioEntry, checkHighlights, checkQuote, extractStepWord, parseOfferings, parseSevens, unknownKeys } from './checks.mjs';
+import { checkAudioEntry, checkHighlights, checkNoteQuotes, checkQuote, extractStepWord, parseOfferings, parseSevens, unknownKeys } from './checks.mjs';
 
 export const OUT = resolve(SITE_DIR, 'src/data/site.json');
 const SOURCE_IDS = ['CT', 'GT', 'KC', 'BH'];
@@ -117,7 +117,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
 
   // ---------- feasts.yaml ----------
   const feasts = loadYaml('feasts.yaml') ?? {};
-  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'later_palette', 'entry_gists', 'law_links', 'chapters']);
+  checkKeys('feasts.yaml', feasts, ['title', 'motto', 'later_palette', 'entry_gists', 'law_links', 'chapters', 'others']);
   if (!isStr(feasts.title)) err('feasts.yaml', 'title 要是非空字串');
   gistOverrides = feasts.entry_gists ?? {};
   if (typeof gistOverrides !== 'object' || Array.isArray(gistOverrides)) { err('feasts.yaml', 'entry_gists 要是「條目標題: 一句簡介」的對照表'); gistOverrides = {}; }
@@ -515,6 +515,60 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   for (const id of Object.keys(commentary)) if (!usedNotes.has(id)) warn(`commentary.yaml [${id}]`, '有定義但沒有被任何一拍用到');
   for (const id of Object.keys(step)) if (!usedWords.has(id)) warn(`step.yaml [${id}]`, '有定義但沒有被任何一拍用到');
 
+  // ---------- others（k）：頁尾「聖經裡還有的節期」 ----------
+  // 每個 ref 的經文從 raw_scripture 取；note 裡每個「…」引文要逐字出現在該項 refs 的經文裡
+  const others = { title: '', intro: '', items: [] };
+  const OTHERS_KEYS = ['title', 'intro', 'items'];
+  const OTHERS_ITEM_KEYS = ['name', 'refs', 'note', 'sources'];
+  if (feasts.others === undefined) err('feasts.yaml others', '缺少這個欄位（頁尾「聖經裡還有的節期」）');
+  else if (!feasts.others || typeof feasts.others !== 'object' || Array.isArray(feasts.others)) err('feasts.yaml others', '要是 {title, intro, items} 物件');
+  else {
+    const o = feasts.others;
+    checkKeys('feasts.yaml others', o, OTHERS_KEYS);
+    if (!isStr(o.title)) err('feasts.yaml others.title', '要是非空字串');
+    if (!isStr(o.intro)) err('feasts.yaml others.intro', '要是非空字串');
+    if (!Array.isArray(o.items) || !o.items.length) err('feasts.yaml others.items', '要是非空陣列');
+    others.title = isStr(o.title) ? o.title : '';
+    others.intro = isStr(o.intro) ? o.intro : '';
+    (Array.isArray(o.items) ? o.items : []).forEach((it, i) => {
+      const w = `feasts.yaml others.items[${it?.name ?? i}]`;
+      if (!it || typeof it !== 'object' || Array.isArray(it)) { err(w, '要是 {name, refs, note} 物件'); return; }
+      checkKeys(w, it, OTHERS_ITEM_KEYS);
+      if (!isStr(it.name)) err(`${w}.name`, '要是非空字串');
+      if (!isStr(it.note)) err(`${w}.note`, '要是非空字串');
+      if (!isStrArray(it.refs) || !it.refs.length) { err(`${w}.refs`, '要是經文出處的字串陣列（例如 [斯9:20-22]）'); return; }
+      // sources：註釋的 raw_data 檔名（不含 .txt）；原站網址從該章 source_manifest.md 取，並併進頁尾的來源清單
+      const srcs = [];
+      if (it.sources !== undefined) {
+        if (!isStrArray(it.sources) || !it.sources.length) err(`${w}.sources`, '要是 raw_data 檔名（不含 .txt）的字串陣列');
+        else it.sources.forEach((name, k) => {
+          const sw = `${w}.sources[${k}]`;
+          const p = parseRawName(name);
+          if (!p) { err(sw, `檔名格式不對或書卷不在書卷表：${JSON.stringify(name)}（要寫成「biblehub_study_daniel_8」）`); return; }
+          if (!existsSync(resolve(RAW_DATA_DIR, `${name}.txt`))) { err(sw, `raw_data/${name}.txt 不存在`); return; }
+          const s = chapterSources(p.book, p.chapter)?.[p.id];
+          if (!s) { err(sw, `${p.book}第${p.chapter}章的 source_manifest.md 沒有這個來源`); return; }
+          if (s.status !== 'OK' || !s.url) { err(sw, `manifest 的狀態是「${s.status}」或沒有 URL`); return; }
+          if (!String(s.rawRel ?? '').endsWith(`${name}.txt`)) { err(sw, `manifest 登記的 raw 檔是 ${s.rawRel}，和「${name}」不符`); return; }
+          useSource(p.book, p.chapter, p.id);
+          srcs.push({ site: SOURCE_SITE[p.id], book: p.book, chapter: p.chapter, url: s.url });
+        });
+      }
+      const blocks = it.refs.map((ref, k) => resolveVerse(`${w}.refs[${k}]`, ref, false));
+      if (blocks.some((b) => !b)) return;
+      if (isStr(it.note)) for (const e of checkNoteQuotes(it.note, blocks.map((b) => b.lines.map((l) => l.text).join('')))) err(`${w}.note`, e);
+      if (isStr(it.name) && isStr(it.note)) {
+        others.items.push({
+          name: it.name,
+          refs: it.refs,
+          note: it.note,
+          verses: blocks.map((b) => ({ ref: b.ref, text: b.lines.map((l) => l.text).join('') })),
+          ...(srcs.length ? { sources: srcs } : {}),
+        });
+      }
+    });
+  }
+
   // ---------- audio-sources.yaml（f） ----------
   const audioSrc = loadYaml('audio-sources.yaml') ?? [];
   const audio = [];
@@ -583,6 +637,7 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
     audio,
     sources,
     sevens: { days: sevens.days, weeks49: sevens.weeks49, fifty: sevens.fifty },
+    others,
   };
   return { data, errors, warnings };
 }

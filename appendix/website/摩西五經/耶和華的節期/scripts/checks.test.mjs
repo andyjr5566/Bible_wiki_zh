@@ -3,8 +3,8 @@
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
-  attributionAfter, checkAudioEntry, checkGtAttribution, checkHighlights, checkQuote, countHighlights,
-  extractStepWord, findQuote, gtWorkInRaw, mismatchHint, parseCnCount, parseSevens, stepWordFrom, stripSpaces,
+  attributionAfter, checkAudioEntry, checkGtAttribution, checkHighlights, checkNoteQuotes, checkQuote, countHighlights,
+  extractStepWord, findQuote, gtWorkInRaw, mismatchHint, parseCnCount, parseSevens, quotedParts, stepWordFrom, stripSpaces,
 } from './checks.mjs';
 import { IN_VAULT, ROOT, chapterVerses, parseStepFile, readRaw } from './lib.mjs';
 
@@ -252,5 +252,24 @@ describe('七的倍數（檢查 #6）', () => {
     const lev = (ch, a, b) => chapterVerses('利未記', ch).slice(a - 1, b).join('');
     const r = parseSevens({ lev23_15_16: lev(23, 15, 16), lev25_8: lev(25, 8, 8), lev25_10: lev(25, 10, 10) });
     expect(r).toEqual({ days: 7, weeks49: 49, fifty: 50, errors: [] });
+  });
+});
+
+describe('頁尾「聖經裡還有的節期」：note 引文', () => {
+  const verses = ['猶大人照著末底改寫給他們的書信，按年按時守這兩日。', '所以猶大人照著普珥的名字，稱這兩日為普珥日。'];
+  it('逐字出現就過（空白不計）', () => {
+    expect(checkNoteQuotes('稱這兩日為「普珥 的名字」。', verses)).toEqual([]);
+    expect(checkNoteQuotes('沒有引文的一句話。', verses)).toEqual([]);
+  });
+  it('引文跨節也算（把各節接起來比對）', () => {
+    expect(checkNoteQuotes('「按年按時守這兩日。所以猶大人」', verses)).toEqual([]);
+  });
+  it('對不上就報錯，每個壞引文一筆', () => {
+    const e = checkNoteQuotes('「普珥的名稱」與「按年按時守這兩日」與「不存在的句子」', verses);
+    expect(e).toHaveLength(2);
+    expect(e[0]).toContain('普珥的名稱');
+  });
+  it('quotedParts 取出所有「…」', () => {
+    expect(quotedParts('甲「一」乙「二三」丙')).toEqual(['一', '二三']);
   });
 });

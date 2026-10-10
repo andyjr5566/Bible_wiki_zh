@@ -175,6 +175,28 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI)
 
 // ---------------------------------------------------------------------------
 
+/** 頁尾「聖經裡還有的節期」：標題、intro、逐項（名稱、note、經文）。文字全部來自 SITE.others（feasts.yaml 的 others），這裡不加任何字。 */
+export function buildOthers(): HTMLElement {
+  const o = SITE.others;
+  return h('section', { class: 'jf-others', id: 'jf-others', 'aria-labelledby': 'jf-others-h' },
+    h('div', { class: 'jf-others-inner' },
+      h('h2', { class: 'jf-others-h', id: 'jf-others-h' }, o.title),
+      h('p', { class: 'jf-others-intro' }, o.intro),
+      h('ul', { class: 'jf-others-list' },
+        o.items.map((it) =>
+          h('li', { class: 'jf-others-item' },
+            h('h3', { class: 'jf-others-name' }, it.name),
+            h('p', { class: 'jf-others-note' }, it.note),
+            h('div', { class: 'jf-others-verses' },
+              it.verses.map((v) =>
+                h('div', { class: 'jf-others-verse' },
+                  h('p', { class: 'jf-others-ref' }, v.ref),
+                  h('p', { class: 'jf-others-text' }, v.text)))),
+            it.sources?.length
+              ? h('p', { class: 'jf-others-src' }, '註釋：', it.sources.map((s, i) => [i > 0 ? '　' : '', ext(s.url, `${s.site} ${s.book}${s.chapter}章`)]))
+              : null)))));
+}
+
 const CC0 = 'https://creativecommons.org/publicdomain/zero/1.0/';
 const CC_BY = 'https://creativecommons.org/licenses/by/4.0/';
 const IMING_REPO = 'https://github.com/ichitenfont/I.Ming';

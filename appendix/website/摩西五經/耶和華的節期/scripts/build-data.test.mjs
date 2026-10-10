@@ -337,6 +337,54 @@ describe.skipIf(!IN_VAULT)('故意弄壞資料：錯誤要指出哪一筆、哪�
     expect(hit(errors, 'later_palette.glow')).toBe(true);
     expect(hit(errors, 'later_palette.paper')).toBe(true);
   });
+  it('others：ref 解析失敗、經節不存在、未知欄位', () => {
+    const errors = broken((d) => {
+      d.feasts.others.items[0].refs = ['斯9:20-22', '斯99:1'];
+      d.feasts.others.items[1].refs = ['約10:99'];
+      d.feasts.others.items[2].refs = ['亞七3'];
+      d.feasts.others.items[3].extra = 'x';
+      d.feasts.others.sub = 'x';
+    }, { audio: allAudio() });
+    expect(hit(errors, 'others.items[普珥日].refs[1]', '斯99')).toBe(true);
+    expect(hit(errors, 'others.items[修殿節].refs[0]', '超出')).toBe(true);
+    expect(hit(errors, 'others.items[', '經文參照格式不對')).toBe(true);
+    expect(hit(errors, 'others.items[耶羅波安定的八月節期]', '不認得的欄位「extra」')).toBe(true);
+    expect(hit(errors, 'feasts.yaml others', '不認得的欄位「sub」')).toBe(true);
+  });
+  it('others：note 的「…」引文不在該項經文裡（含只在別項經文裡）', () => {
+    const errors = broken((d) => {
+      d.feasts.others.items[0].note = '猶大人稱這兩日為「普珥的名稱」。';
+      d.feasts.others.items[1].note = '耶穌在殿裡行走，又說「每年按時必守這兩日」。';
+    }, { audio: allAudio() });
+    expect(hit(errors, 'others.items[普珥日].note', '普珥的名稱')).toBe(true);
+    expect(hit(errors, 'others.items[修殿節].note', '每年按時必守這兩日')).toBe(true);
+  });
+  it('others：sources 的檔名格式不對、檔案不存在；合法的檔名不報錯', () => {
+    const errors = broken((d) => {
+      d.feasts.others.items[0].sources = ['隨便寫', 'biblehub_study_daniel_99', 'ccbiblestudy_CT_esther_3'];  // 第三個是合法的
+    }, { audio: allAudio() });
+    expect(hit(errors, 'others.items[普珥日].sources[0]', '檔名格式不對')).toBe(true);
+    expect(hit(errors, 'others.items[普珥日].sources[1]', 'daniel_99.txt 不存在')).toBe(true);
+    expect(hit(errors, 'others.items[普珥日].sources[2]')).toBe(false);
+  });
+  it('others：sources 併進 SiteData.sources（但以理書 8 章 BibleHub、撒迦利亞書 8 章 CT），網址取自 manifest', () => {
+    const { data } = buildAll();
+    const find = (book, ch, src) => data.sources.find((x) => x.book === book && x.chapter === ch && x.source === src);
+    expect(find('但以理書', 8, 'BH')?.url).toMatch(/^https:\/\/biblehub\.com\/study\/daniel\/8\.htm/);
+    expect(find('撒迦利亞書', 8, 'CT')?.url).toMatch(/^https:\/\/www\.ccbiblestudy\.org\//);
+    const withSrc = data.others.items.filter((it) => it.sources?.length);
+    expect(withSrc.length).toBeGreaterThan(0);
+  });
+  it('others：正例——產出 verses，每個 ref 一筆', () => {
+    const { data, errors } = buildAll();
+    expect(errors).toEqual([]);
+    const o = data.others;
+    expect(o.items.length).toBeGreaterThan(0);
+    for (const it of o.items) {
+      expect(it.verses.map((v) => v.ref)).toEqual(it.refs);
+      for (const v of it.verses) expect(v.text.length).toBeGreaterThan(0);
+    }
+  });
   it('音檔：沒有授權紀錄、檔案不存在、授權不是 CC0、pages 不含 page', () => {
     const errors = broken((d) => {
       d['audio-sources'][0].license = 'CC-BY';

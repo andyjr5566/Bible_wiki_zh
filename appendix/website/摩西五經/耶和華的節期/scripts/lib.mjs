@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 export const SITE_DIR = resolve(here, '..');
 export const ROOT = resolve(SITE_DIR, '../../../..');
+export const RAW_DATA_DIR = resolve(ROOT, 'raw_data');
 /** 姊妹網站「律法地圖」（唯讀）：章末的律法地圖欄取條文標題 */
 export const LAWMAP_DIR = resolve(SITE_DIR, '../律法地圖');
 /** 在 scripture 專案裡才有 vault；部署（CI）時只有網站本身 */
@@ -34,13 +35,16 @@ export const BOOKS = [
   { abbr: '代下', name: '歷代志下', en: '2 Chronicles', num: 14 },
   { abbr: '拉', name: '以斯拉記', en: 'Ezra', num: 15 },
   { abbr: '尼', name: '尼希米記', en: 'Nehemiah', num: 16 },
+  { abbr: '斯', name: '以斯帖記', en: 'Esther', num: 17 },
   { abbr: '詩', name: '詩篇', en: 'Psalms', bh: 'Psalm', num: 19 },
   { abbr: '賽', name: '以賽亞書', en: 'Isaiah', num: 23 },
   { abbr: '耶', name: '耶利米書', en: 'Jeremiah', num: 24 },
   { abbr: '結', name: '以西結書', en: 'Ezekiel', num: 26 },
+  { abbr: '但', name: '但以理書', en: 'Daniel', num: 27 },
   { abbr: '珥', name: '約珥書', en: 'Joel', num: 29 },
   { abbr: '摩', name: '阿摩司書', en: 'Amos', num: 30 },
   { abbr: '亞', name: '撒迦利亞書', en: 'Zechariah', num: 38 },
+  { abbr: '約', name: '約翰福音', en: 'John', num: 43 },
 ].map((b) => ({ ...b, dir: `${String(b.num).padStart(2, '0')} ${b.name}` }));
 export const BOOK_BY_NAME = Object.fromEntries(BOOKS.map((b) => [b.name, b]));
 export const BOOK_BY_ABBR = Object.fromEntries(BOOKS.map((b) => [b.abbr, b]));
@@ -92,6 +96,25 @@ export function hasKbChapter(book, chapter) {
 }
 
 // ---------- 每章來源清單（source_manifest.md） ----------
+
+/** raw_data 檔名前綴 → 來源代號（頁尾「聖經裡還有的節期」的 sources 欄用檔名指定註釋） */
+export const SOURCE_BY_RAW_PREFIX = {
+  biblehub_study: 'BH',
+  ccbiblestudy_CT: 'CT',
+  ccbiblestudy_GT: 'GT',
+  kingcomments: 'KC',
+};
+
+/**
+ * 「biblehub_study_daniel_8」→ {id: 'BH', book, chapter}；格式不對或書卷不在書卷表回 null。
+ * 書名部分對 BOOKS 的英文名（小寫、空白換底線，例如 1_kings）。
+ */
+export function parseRawName(name) {
+  const m = /^(biblehub_study|ccbiblestudy_CT|ccbiblestudy_GT|kingcomments)_(.+)_(\d+)$/.exec(String(name ?? '').trim());
+  if (!m) return null;
+  const b = BOOKS.find((x) => x.en.toLowerCase().replace(/\s+/g, '_') === m[2]);
+  return b ? { id: SOURCE_BY_RAW_PREFIX[m[1]], book: b.name, chapter: Number(m[3]) } : null;
+}
 
 /** manifest「來源」欄 → 來源代號 */
 export const SOURCE_BY_MANIFEST = {

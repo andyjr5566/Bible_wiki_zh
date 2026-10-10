@@ -18,7 +18,7 @@ import { createCountUI } from './ui/count';
 import { createCoach } from './ui/coach';
 import { createEchoUI } from './ui/echo';
 import { h } from './ui/dom';
-import { buildCredits, buildEndings } from './ui/ending';
+import { buildCredits, buildEndings, buildOthers } from './ui/ending';
 import { createHeadFade } from './ui/headfade';
 import { createHyssopUI } from './ui/hyssop';
 import { initMotion } from './ui/motion';
@@ -59,7 +59,7 @@ function boot() {
     if (lastOfChapter) lastOfChapter.el.after(end);
     else main.append(end);
   }
-  app.append(buildCredits());
+  app.append(buildOthers(), buildCredits());
 
   // ---- 場景、聲音、導覽 ----
   let stage: Stage | null = null;

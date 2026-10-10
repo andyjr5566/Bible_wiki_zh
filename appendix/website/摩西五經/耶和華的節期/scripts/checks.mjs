@@ -124,6 +124,24 @@ export function checkQuote({ source, quote, paraphrase, work }, raw, rawName) {
   return errs;
 }
 
+// ---------- 頁尾「聖經裡還有的節期」 ----------
+
+/** 一段話裡所有「…」引文（不含引號） */
+export const quotedParts = (text) => [...String(text ?? '').matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+
+/**
+ * note 裡每個「…」引文都要逐字出現在該項 refs 的經文裡（比對規則同註釋 quote：只忽略空白）。
+ * verseTexts：該項所有 ref 的經文（字串陣列）。回傳錯誤訊息陣列。
+ */
+export function checkNoteQuotes(note, verseTexts) {
+  const errs = [];
+  const joined = verseTexts.join('');
+  for (const q of quotedParts(note)) {
+    if (!findQuote(joined, q).length) errs.push(`引文「${q}」沒有逐字出現在這一項的經文裡（${mismatchHint(joined, q)}）`);
+  }
+  return errs;
+}
+
 // ---------- ==高亮== ----------
 
 /** 文字裡 ==…== 的處數；stray 表示有落單的 == */

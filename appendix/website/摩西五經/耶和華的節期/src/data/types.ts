@@ -216,4 +216,21 @@ export interface SiteData {
    * weeks49＝利25:8「七七年…共是四十九年」；fifty＝利25:10「第五十年」。漩渦的格數只能讀這些值。
    */
   sevens: { days: number; weeks49: number; fifty: number };
+  /**
+   * 頁尾「聖經裡還有的節期」（feasts.yaml 的 others）：不是摩西律法定下的節期與禁食日。
+   * title、intro、name、note 是主筆的話；verses 由建置腳本從 raw_scripture 抽（每個 ref 一筆，text 是該段全部節數接在一起）。
+   * 建置檢查：note 裡每個「…」引文都要逐字出現在該項 refs 的經文裡。
+   */
+  others: {
+    title: string;
+    intro: string;
+    items: {
+      name: string;
+      refs: string[];
+      note: string;
+      verses: { ref: string; text: string }[];
+      /** 這一項 note 轉述的註釋原站（feasts.yaml 的 sources：raw_data 檔名；網址從該章 source_manifest.md 取），同時併進 SiteData.sources */
+      sources?: { site: string; book: string; chapter: number; url: string }[];
+    }[];
+  };
 }

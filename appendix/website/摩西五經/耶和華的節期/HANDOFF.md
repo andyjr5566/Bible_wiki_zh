@@ -37,6 +37,7 @@
 - 漩渦（使用者稱「太陽」，喜歡、要保留）看不出每圈代表什麼：使用者選「刻在太陽上的字」，每圈旁刻小標籤、正下方一行大字（字見 SPEC.md）。
 - 字體不合版畫風格：使用者看過字樣比較後選「一點明體」。它是 IPA Font License v1.0，抽子集算派生字型，所以**不嵌字型**，用 `tools/build-vortex-glyphs.py` 預先畫成圖集 `src/scene/vortex-glyphs.png`；字串唯一來源 `src/scene/vortex-strings.json`，改字要重跑腳本（字型檔不進版控，下載網址在腳本裡）。頁尾授權加「字型」。
 - 手機說明框最多佔半個畫面（`story.css` 66svh→50svh）；手機構圖各 cue 往上推移統一少 0.07（`tracks.ts` 的 `boxEaseAt`，wailing、veil 不減）。
+- 收工後使用者要求補頁尾「聖經裡還有的節期」（普珥日、修殿節、四個禁食、耶羅波安的節期，各說明是什麼、怎麼來的）：內容在 `feasts.yaml` 的 `others`，Codex 13、14。
 - 2026-10-11 使用者確認收工，GOAL-4 全部勾選。部署與 iPhone 聲音測試照使用者決定，部署後再說。
 
 ## 第一批（春季）做了什麼
