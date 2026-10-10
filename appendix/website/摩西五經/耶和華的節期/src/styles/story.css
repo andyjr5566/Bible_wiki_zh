@@ -954,7 +954,7 @@
   }
 }
 
-/* ---------- 手機：說明框貼底，面板從底部升起 ---------- */
+/* ---------- 手機：說明框貼底，面板從底部升起；說明框最多佔半個畫面（使用者要求），其餘框內捲動 ---------- */
 @media (max-width: 720px) {
   .jf-box {
     --jf-box-top: auto;
@@ -964,8 +964,8 @@
     margin-top: auto;
     align-self: stretch;
     width: auto;
-    max-height: 66vh;
-    max-height: 66svh;
+    max-height: 50vh;
+    max-height: 50svh;
     margin-right: 8px;
     margin-left: 8px;
     padding: 16px 16px 14px;
@@ -1489,8 +1489,8 @@ html[data-motion='off'] .jf-return:active {
 /* ---------- 手機：內容比說明框高時（回聲拍有補充經文、長條圖）框內自己捲，不要把下半截擠出畫面 ---------- */
 @media (max-width: 720px) {
   .jf-box-body {
-    max-height: calc(66vh - 30px);
-    max-height: calc(66svh - 30px);
+    max-height: calc(50vh - 30px);
+    max-height: calc(50svh - 30px);
     overflow-y: auto;
     overscroll-behavior: auto; /* 捲到頭就把捲動交還給頁面，不卡住 */
     scrollbar-width: thin;
