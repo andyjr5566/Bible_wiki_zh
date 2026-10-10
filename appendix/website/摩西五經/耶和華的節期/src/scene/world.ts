@@ -1,4 +1,4 @@
-﻿// 夜間世界與隔日世界：所有場景物件與它們隨 s（cue＋進度）的狀態。
+// 夜間世界與隔日世界：所有場景物件與它們隨 s（cue＋進度）的狀態。
 import {
   BoxGeometry,
   Color,
@@ -35,7 +35,7 @@ import {
   type PersonOpts,
 } from './geo';
 import { decalMat, FIXED, glowMat, hullMat, litMat, moonMat, setGlowFlick, skyMat, solid, solidInstanced, sunMat, U } from './materials';
-import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, foldReliefAt, inCoda, inEgyptReplay, isAutumnCamp, lp, torchOn, upShiftAt, windowOff, worldAt, type TrackOut } from './tracks';
+import { c as cu, CUE_IDX, CUT, DAY_S, HYSSOP_IDX, OX, departDist, dxShiftAt, foldReliefAt, inCoda, inEgyptReplay, isAutumnCamp, lp, torchOn, upShiftAt, boxEaseAt, windowOff, worldAt, type TrackOut } from './tracks';
 import { Autumn } from './autumn';
 import { BlowFx } from './blowfx';
 import { Gate, Gilgal, Ruth, Temple } from './echoes';
@@ -660,7 +660,8 @@ export class World {
     let shiftY = 0;
     // 說明框收起時，留給說明框的推移（左右／往上）依 fold 歸零；有互動按鈕留著的拍不歸零（foldReliefAt）
     const relief = 1 - (fr.fold ?? 0) * foldReliefAt(s);
-    if (mobileUI) shiftY = upShiftAt(s) * H * relief;
+    // 各 cue 的 UP 是照說明框最高 66svh 調的；說明框上限改成 50svh 後可用的上方空間變大，整體少推 boxEaseAt，主體落在新可用帶的中段
+    if (mobileUI) shiftY = Math.max(0, upShiftAt(s) - boxEaseAt(s)) * H * relief;
     const aw = mobileUI ? 0 : smooth(1.05, 1.3, aspect);
     if (aw > 0) {
       // 塗血那一拍：說明框固定在左邊，門＋盆＋把手整組擺在右側

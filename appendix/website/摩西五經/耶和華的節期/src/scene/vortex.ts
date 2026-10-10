@@ -418,8 +418,8 @@ export class Vortex {
     const endN = outer + 0.06;
     const endPx = endN * sc;
     const codaF = inCoda ? 1 - smooth(0.04, 0.3, lp(s, 'coda-night')) : 1;
-    const smallPx = mobile ? 12 : clamp(Math.round(H * 0.0165), 13, 17);
-    const bigPx = mobile ? 17 : clamp(Math.round(H * 0.031), 22, 30);
+    const smallPx = mobile ? 13 : clamp(Math.round(H * 0.0185), 14, 19);
+    const bigPx = mobile ? 18 : clamp(Math.round(H * 0.035), 24, 33);
     this.text.setSize(smallPx, bigPx, dpr);
     const rowMode = mobile && !BIG.has(cur);
     const rowGap = Math.min(18, (0.9 * endPx) / 2.5);

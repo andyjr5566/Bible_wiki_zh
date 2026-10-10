@@ -412,6 +412,13 @@ export function foldReliefAt(s: number): number {
   sampleKeys(FOLD_RELIEF, s, _fr);
   return _fr[0];
 }
+/** 手機說明框上限 66svh→50svh 之後，往上推移統一減掉的量（畫面高度比例）；主體本來就偏低的 cue 不減 */
+const BOX_EASE = perCue({ wailing: [0], veil: [0] }, [0.07]);
+const _be = [0];
+export function boxEaseAt(s: number): number {
+  sampleKeys(BOX_EASE, s, _be);
+  return _be[0];
+}
 const _up = [0];
 export function upShiftAt(s: number): number {
   sampleKeys(UP, s, _up);

@@ -177,6 +177,8 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI)
 
 const CC0 = 'https://creativecommons.org/publicdomain/zero/1.0/';
 const CC_BY = 'https://creativecommons.org/licenses/by/4.0/';
+const IMING_REPO = 'https://github.com/ichitenfont/I.Ming';
+const IPA_LICENSE = 'https://opensource.org/license/ipa';
 
 function audioItem(a: AudioSource): HTMLElement {
   const pages = a.pages && a.pages.length ? a.pages : [a.page];
@@ -219,5 +221,8 @@ export function buildCredits(): HTMLElement {
       h('div', { class: 'jf-credit-block' },
         h('h3', null, '音檔'),
         h('ul', { class: 'jf-audio-list' }, SITE.audio.map(audioItem))),
+      h('div', { class: 'jf-credit-block' },
+        h('h3', null, '字型'),
+        h('p', null, '漩渦上的字以一點明體（', ext(IMING_REPO, 'I.Ming'), '）預先繪成圖片使用；一點明體依 ', ext(IPA_LICENSE, 'IPA Font License v1.0'), ' 授權。')),
       h('p', { class: 'jf-credits-note' }, '本網站僅供非商業教育與聖經研讀使用。')));
 }

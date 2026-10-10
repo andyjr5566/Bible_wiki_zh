@@ -1,13 +1,17 @@
 // 漩渦上的字：每一圈旁邊一個小標籤、太陽正下方一行大字。
-// 字畫在 2D canvas 上、一次建好一張貼圖（系統中文字型；file:// 單檔輸出不能 fetch 字型檔），再套進場景的一個網格（7 個四邊形：6 個標籤＋1 個大字）。
+// 字是用一點明體（I.Ming，IPA Font License v1.0）預先畫好的圖集（src/scene/vortex-glyphs.png，tools/build-vortex-glyphs.py 產生；
+// 字型檔本身不進專案、不嵌進網站）。這裡把圖集縮放畫進 2D canvas、一次建好一張貼圖（file:// 單檔輸出：圖集被內嵌成 data URI），
+// 再套進場景的一個網格（7 個四邊形：6 個標籤＋1 個大字）。圖集還沒載入完不顯示字。
 // 螢幕座標（和漩渦同一個覆蓋層），跟漩渦一起動、一起淡出。貼圖的 R 通道＝字，G 通道＝字外的一圈底色暈（讓字壓在刻線上也看得清楚）。
 // 每幀不配置新物件：頂點屬性是預先配好的 Float32Array。尺寸（手機／桌機、DPR）變了才重建貼圖。
 import { BufferAttribute, BufferGeometry, CanvasTexture, LinearFilter, Mesh, ShaderMaterial, Vector3 } from 'three';
 import { U } from './materials';
+import glyphUrl from './vortex-glyphs.png?inline';
+import glyphMeta from './vortex-glyphs.json';
+import strings from './vortex-strings.json';
 
-export const RING_LABELS = ['第七日', '七個安息日', '七月', '第七年', '七個安息年', '第五十年'] as const;
-export const BIG_LINES = ['第七日', '七個安息日，共計五十天', '七月', '第七年', '七七年，共是四十九年', '第五十年'] as const;
-export const FONT = '"Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", "Microsoft JhengHei", serif';
+export const RING_LABELS: readonly string[] = strings.ringLabels;
+export const BIG_LINES: readonly string[] = strings.bigLines;
 
 const N = BIG_LINES.length + RING_LABELS.length; // 貼圖裡的字串數：0..5 標籤，6..11 大字
 const QUADS = 7; // 0..5 標籤，6 大字
@@ -38,7 +42,7 @@ varying float vA;
 varying float vH;
 void main() {
   vec4 t = texture2D(uTex, vUv);
-  float fill = t.r;
+  float fill = pow(t.r, 0.5); // 明體的細筆畫縮小後覆蓋率偏低，用 gamma 補回對比（不改字形）
   float halo = t.g * 0.95;
   float a0 = max(fill, halo);
   float a = a0 * vA;
@@ -79,6 +83,7 @@ export class VortexText {
   private kS = 0;
   private kB = 0;
   private kD = 0;
+  private glyphs: HTMLImageElement | null = null;
   private pad = 0;
   private atlasW = 1;
   private atlasH = 1;
@@ -119,10 +124,19 @@ export class VortexText {
     this.mesh.frustumCulled = false;
     this.mesh.renderOrder = 1.6;
     this.mesh.visible = false;
+    this.busy = true; // 圖集載入完要再畫一次，閒置跳幀的迴圈先別睡
+    const img = new Image();
+    img.onload = () => {
+      this.glyphs = img;
+      this.kS = 0; // 強制重建貼圖
+    };
+    img.src = glyphUrl;
   }
 
   /** 尺寸有變才重建貼圖。smallPx／bigPx：CSS px；dpr：緩衝／CSS */
   setSize(smallPx: number, bigPx: number, dpr: number): void {
+    const img = this.glyphs;
+    if (!img) return;
     if (smallPx === this.kS && bigPx === this.kB && Math.abs(dpr - this.kD) < 0.0005) return;
     this.kS = smallPx;
     this.kB = bigPx;
@@ -132,19 +146,18 @@ export class VortexText {
     const pad = Math.ceil(Math.max(smallPx, bigPx) * dpr * 0.2) + 2;
     this.pad = pad;
     const make = (): HTMLCanvasElement => document.createElement('canvas');
-    const probe = make().getContext('2d')!;
-    // 量每個字串的大小，排成一欄
-    const px = (i: number): number => (i < RING_LABELS.length ? smallPx : bigPx) * dpr;
-    const text = (i: number): string => (i < RING_LABELS.length ? RING_LABELS[i] : BIG_LINES[i - RING_LABELS.length]);
+    // 各字串縮放後的大小，排成一欄。縮放比 = 要的字高（緩衝 px）／圖集的繪製字高
+    const rects = glyphMeta.rects;
+    const sc = (i: number): number => ((i < RING_LABELS.length ? smallPx : bigPx) * dpr) / rects[i].px;
     this.slots.length = 0;
     let y = 0;
     let maxW = 1;
     for (let i = 0; i < N; i++) {
-      probe.font = `700 ${px(i)}px ${FONT}`;
-      const tw = probe.measureText(text(i)).width;
-      const w = Math.ceil(tw) + pad * 2;
-      const h = Math.ceil(px(i) * 1.3) + pad * 2;
-      this.slots.push({ x: 0, y, w, h, textW: tw / dpr });
+      const r = rects[i];
+      const w = Math.round(r.w * sc(i)) + pad * 2;
+      const h = Math.round(r.h * sc(i)) + pad * 2;
+      // 字本身（扣掉圖集裡的邊）的寬，CSS px
+      this.slots.push({ x: 0, y, w, h, textW: ((r.w - 8) * sc(i)) / dpr });
       y += h;
       maxW = Math.max(maxW, w);
     }
@@ -158,24 +171,23 @@ export class VortexText {
     fillC.height = haloC.height = y;
     const f = fillC.getContext('2d', { willReadFrequently: true })!;
     const h = haloC.getContext('2d', { willReadFrequently: true })!;
-    for (const g of [f, h]) {
-      g.textAlign = 'center';
-      g.textBaseline = 'middle';
-      g.lineJoin = 'round';
-      g.fillStyle = '#fff';
-      g.strokeStyle = '#fff';
-    }
+    f.imageSmoothingQuality = 'high';
+    h.imageSmoothingQuality = 'high';
     for (let i = 0; i < N; i++) {
       const s = this.slots[i];
-      const cy = s.y + s.h / 2 + px(i) * 0.04;
-      const cx = s.x + s.w / 2;
-      const font = `700 ${px(i)}px ${FONT}`;
-      f.font = font;
-      h.font = font;
-      f.fillText(text(i), cx, cy);
-      h.lineWidth = px(i) * 0.3;
-      h.strokeText(text(i), cx, cy);
-      h.fillText(text(i), cx, cy);
+      const r = rects[i];
+      const dw = s.w - pad * 2;
+      const dh = s.h - pad * 2;
+      f.drawImage(img, r.x, r.y, r.w, r.h, s.x + pad, s.y + pad, dw, dh);
+      // 暈：同一張圖在兩圈、各 12 個角度位移各畫一次（半徑 0.15、0.075 個字高）
+      const px = (i < RING_LABELS.length ? smallPx : bigPx) * dpr;
+      for (const rad of [0.15, 0.075]) {
+        for (let a = 0; a < 12; a++) {
+          const t = (a / 12) * Math.PI * 2;
+          h.drawImage(img, r.x, r.y, r.w, r.h, s.x + pad + Math.cos(t) * rad * px, s.y + pad + Math.sin(t) * rad * px, dw, dh);
+        }
+      }
+      h.drawImage(img, r.x, r.y, r.w, r.h, s.x + pad, s.y + pad, dw, dh);
     }
     const out = make();
     out.width = maxW;
@@ -263,6 +275,12 @@ export class VortexText {
     ink: Vector3,
     lit: Vector3,
   ): boolean {
+    if (this.slots.length === 0) {
+      // 圖集還沒載入：不顯示字，載入後下一幀會重建貼圖
+      this.busy = true;
+      this.mesh.visible = false;
+      return false;
+    }
     // 顏色：暈用「另一個」底色；白天亮色模式的亮橘壓深一點，不然壓在淡黃的天上看不清
     this.inkC.copy(ink);
     const sum = (U.uPaper.value as Vector3).x + (U.uInk.value as Vector3).x;
