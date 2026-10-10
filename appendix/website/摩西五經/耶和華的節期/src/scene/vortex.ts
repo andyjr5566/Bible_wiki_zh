@@ -9,6 +9,7 @@ import { SITE } from '../data/site';
 import { U } from './materials';
 import { c, CUE_IDX, CUES, CUT, lp } from './tracks';
 import { clamp, hexTo, lerp, smooth } from './util';
+import { VortexText } from './vortex-text';
 
 const MONTHS = 12;
 const RINGS = 6;
@@ -39,6 +40,10 @@ uniform vec3 uInk;
 uniform vec3 uLit;
 uniform float uDpr;
 uniform float uAnim;
+uniform vec2 uDir[6];   // 各圈標籤的引線方向（單位向量，y 向上）
+uniform float uLab[6];  // 標籤（引線）的可見度
+uniform float uHi[6];   // 標籤亮起的程度
+uniform float uEnd;     // 引線外端（RAD 單位）
 const float PI = 3.14159265;
 const float TAU = 6.2831853;
 float RAD[6]; // 各圈的半徑（漩渦半徑的比例）
@@ -156,6 +161,22 @@ void main() {
       ink += (1.0 - smoothstep(aa * 0.4, aa * 1.5, abs(d))) * g * (0.3 + 0.65 * on) * (last > 0.5 ? 1.25 : 1.0);
     }
   }
+  // 標籤的引線：從該圈往外一條細線到標籤；目前那圈的線與圓點亮橘色
+  float lw = 0.85 * uDpr / uR;
+  float lfeather = 0.8 * uDpr / uR;
+  for (int k = 0; k < 6; k++) {
+    float v = uLab[k];
+    if (v <= 0.001) continue;
+    vec2 dr = uDir[k];
+    float t = dot(p, dr);
+    float dp = abs(p.x * dr.y - p.y * dr.x);
+    float a0 = RAD[k] + 0.032;
+    float seg = smoothstep(a0 - lfeather, a0, t) * (1.0 - smoothstep(uEnd - lfeather, uEnd, t));
+    float ln = (1.0 - smoothstep(lw, lw + lfeather, dp)) * seg;
+    float dot0 = 1.0 - smoothstep(0.016 - aa * 0.6, 0.016 + aa * 0.6, length(p - dr * RAD[k]));
+    ink += ln * v * 0.7;
+    lit += (ln * 0.9 + dot0) * v * uHi[k];
+  }
   halo *= 0.86 + 0.14 * sin(uAnim * 2.2);
   float a = clamp(ink * 0.92 + lit * 0.95 + halo, 0.0, 1.0) * uA;
   if (a < 0.003) discard;
@@ -182,8 +203,34 @@ const DESK_X: Record<string, number> = {
   'sv-horn': -0.22, 'sv-liberty': 0.2, 'sv-land': -0.22, 'echo-zedekiah': 0.2, 'echo-land-rest': -0.22, 'echo-oath': 0.2,
 };
 
+// 大字（太陽正下方一行）：各拍對應 BIG_LINES 的第幾行；沒列的拍（回聲拍、coda）不顯示
+const BIG_OF: Record<string, number> = {
+  'sv-sabbath': 0, 'sv-creation': 0, 'sv-ox': 0,
+  'sv-weeks': 1,
+  'sv-month7': 2,
+  'sv-fallow': 3, 'sv-sixth': 3, 'sv-release': 3, 'sv-egypt': 3, 'sv-reading': 3,
+  'sv-49': 4,
+  'sv-horn': 5, 'sv-liberty': 5, 'sv-land': 5,
+};
+// 各圈標籤的引線角度（從三點鐘方向往上為正）：內圈在上、外圈在下，標籤在漩渦右側排成一欄
+const PHI = [55, 33, 11, -11, -33, -55].map((d) => (d * Math.PI) / 180);
+
 export class Vortex {
   mesh: Mesh;
+  /** 漩渦上的字（標籤＋大字）的網格；要和 mesh 一起加進覆蓋層 */
+  labels: Mesh;
+  private text = new VortexText();
+  private raw = new Float32Array(RINGS);
+  private dirs = new Float32Array(RINGS * 2);
+  private labV = new Float32Array(RINGS);
+  private labHi = new Float32Array(RINGS);
+  private labLeft = new Float32Array(RINGS);
+  private labY = new Float32Array(RINGS);
+  private labA = new Float32Array(RINGS);
+  /** 字還在淡入淡出（閒置跳幀的迴圈要繼續跑） */
+  get busy(): boolean {
+    return this.text.busy;
+  }
   private mat: ShaderMaterial;
   private n = new Float32Array(RINGS);
   private g = new Float32Array(RINGS);
@@ -194,7 +241,7 @@ export class Vortex {
   private pa: Place = { x: 0, y: 0, r: 0, a: 0 };
   private pb: Place = { x: 0, y: 0, r: 0, a: 0 };
   /** 最近一次畫的位置與外圈半徑（CSS px）；tools/check-subject-box.mjs 把漩渦也算進主角 */
-  last = { x: 0, y: 0, r: 0, on: false };
+  last = { x: 0, y: 0, r: 0, on: false, rects: new Float32Array(7 * 5) };
   /** 十二個月 */
   readonly cells: { days: number; weeks49: number; fifty: number; months: number };
 
@@ -224,6 +271,10 @@ export class Vortex {
         uLit: { value: this.lit },
         uDpr: U.uDpr,
         uAnim: U.uAnim,
+        uDir: { value: this.dirs },
+        uLab: { value: this.labV },
+        uHi: { value: this.labHi },
+        uEnd: { value: 1 },
       },
       vertexShader: VERT,
       fragmentShader: FRAG,
@@ -235,6 +286,7 @@ export class Vortex {
     this.mesh.frustumCulled = false;
     this.mesh.renderOrder = 1.5;
     this.mesh.visible = false;
+    this.labels = this.text.mesh;
   }
 
   /** 某個 cue 的位置（W、H：CSS px） */
@@ -242,9 +294,12 @@ export class Vortex {
     const big = BIG.has(cue);
     const echo = cue.startsWith('echo-');
     if (mobile) {
-      out.x = big ? 0.5 : 0.2;
-      out.y = (big ? 198 : 168) / H;
-      out.r = big ? 76 : 50;
+      // sv-month7：說明框最高時上緣在 279，大字要放得進漩渦下緣與說明框之間，所以這一拍縮小一點
+      const m7 = cue === 'sv-month7';
+      // 小的拍：整個漩渦要落在月份列（下緣約 y=115）與說明框（上緣最高 279）之間，右側留給標籤欄與大字
+      out.x = big ? 0.5 : 0.25;
+      out.y = (m7 ? 180 : big ? 198 : 190) / H;
+      out.r = m7 ? 56 : big ? 76 : 53;
     } else {
       const dx = (big ? SIDE_X[cue] : DESK_X[cue]) ?? 0;
       out.x = 0.5 + dx;
@@ -256,13 +311,14 @@ export class Vortex {
 
   /**
    * 每幀。s：時間軸；W、H：CSS px；dpr：緩衝／CSS；dark：暗色程度；night：夜（0..1）；moonScreen：月亮在畫面上的位置（CSS px，coda 用）。
-   * 回傳漩渦現在有沒有畫。
+   * dt：這一幀的秒數（字的淡入淡出用）。回傳漩渦現在有沒有畫。
    */
-  update(s: number, W: number, H: number, dpr: number, mobile: boolean, dark: number, night: number, moonX: number, moonY: number): boolean {
+  update(s: number, W: number, H: number, dpr: number, mobile: boolean, dark: number, night: number, moonX: number, moonY: number, dt: number): boolean {
     const i0 = CUE_IDX['sv-sabbath'];
     const inCoda = s >= CUT['coda-night'];
     if (s < CUT['sv-sabbath'] - 0.05) {
       this.mesh.visible = false;
+      this.text.hide();
       return false;
     }
     const days = this.cells.days;
@@ -290,6 +346,7 @@ export class Vortex {
     this.g[5] = smooth(0, 0.18, L('sv-liberty'));
     this.l[5] = smooth(0.2, 1, L('sv-liberty'));
     // 最外圈的半徑：還沒長出後面的圈時，把漩渦放大到填滿框（不然只有一圈小燈縮在中間）
+    this.raw.set(this.g);
     const RADS = [0.14, 0.3, 0.5, 0.66, 0.81, 0.95];
     let outer = RADS[0];
     for (let k = 1; k < RINGS; k++) outer += this.g[k] * (RADS[k] - RADS[k - 1]);
@@ -355,10 +412,75 @@ export class Vortex {
     u.uPtr.value = ptrOut;
     u.uMarks.value = marksOut;
     this.mesh.visible = alpha > 0.01 && R > 1;
+    // ---- 字：每圈一個標籤（右側一欄，放不下就換到左側）、太陽正下方一行大字
+    const vis = this.mesh.visible;
+    const sc = R * rScale;
+    const endN = outer + 0.06;
+    const endPx = endN * sc;
+    const codaF = inCoda ? 1 - smooth(0.04, 0.3, lp(s, 'coda-night')) : 1;
+    const smallPx = mobile ? 12 : clamp(Math.round(H * 0.0165), 13, 17);
+    const bigPx = mobile ? 17 : clamp(Math.round(H * 0.031), 22, 30);
+    this.text.setSize(smallPx, bigPx, dpr);
+    const rowMode = mobile && !BIG.has(cur);
+    const rowGap = Math.min(18, (0.9 * endPx) / 2.5);
+    for (let k = 0; k < RINGS; k++) {
+      let dx = Math.cos(PHI[k]);
+      let dy = Math.sin(PHI[k]);
+      if (rowMode) {
+        // 手機的小漩渦：標籤排成等距的一欄（行距 18px，放不下才縮），引線的角度由行的高度反推
+        dy = clamp(((2.5 - k) * rowGap) / endPx, -0.92, 0.92);
+        dx = Math.sqrt(1 - dy * dy);
+      }
+      const tw = this.text.labelW[k];
+      // 預設在右側；手機上漩渦在正中間的拍（右上角有章名牌）改在左側；放不下就換邊
+      if (mobile && cx > W * 0.4) dx = -dx;
+      // 字的內側邊角離漩渦中心至少 endPx（上下兩端的行，字會往外推一點，才不壓到最外圈）
+      const ay = Math.max(0, Math.abs(dy * endPx) - smallPx * 0.6);
+      const reach = rowMode ? Math.sqrt(Math.max(0, endPx * endPx - ay * ay)) : Math.abs(dx) * endPx;
+      let left = dx > 0 ? cx + reach + 4 : cx - reach - 4 - tw;
+      if (left + tw > W - 6 || left < 6) {
+        dx = -dx;
+        left = dx > 0 ? cx + reach + 4 : cx - reach - 4 - tw;
+      }
+      this.labLeft[k] = left;
+      this.labY[k] = cy - dy * endPx;
+      this.dirs[k * 2] = dx;
+      this.dirs[k * 2 + 1] = dy;
+      this.labV[k] = this.g[k] * codaF;
+      this.labA[k] = this.raw[k] * (1 - 0.22 * (k < RINGS - 1 ? this.raw[k + 1] : 0));
+      this.labHi[k] = inCoda ? 0 : this.raw[k] * (1 - (k < RINGS - 1 ? this.raw[k + 1] : 0));
+    }
+    u.uEnd.value = endN;
+    const bigTarget = inCoda ? -1 : (BIG_OF[cur] ?? -1);
+    const bigGap = mobile ? 7 : 10;
+    if (vis) {
+      this.text.frame(dt, H, dpr, this.labLeft, this.labY, this.labA, this.labHi, bigTarget, cx, cy + endPx + bigGap, alpha * codaF, dark, night, this.ink, this.lit);
+    } else {
+      this.text.hide();
+    }
+    // 字的螢幕矩形（x0, y0, x1, y1, 不透明度；CSS px），給驗收腳本量有沒有被說明框蓋住
+    const rc = this.last.rects;
+    for (let k = 0; k < RINGS; k++) {
+      const tw = this.text.labelW[k];
+      rc[k * 5] = this.labLeft[k];
+      rc[k * 5 + 1] = this.labY[k] - smallPx * 0.6;
+      rc[k * 5 + 2] = this.labLeft[k] + tw;
+      rc[k * 5 + 3] = this.labY[k] + smallPx * 0.6;
+      rc[k * 5 + 4] = vis ? this.labA[k] * alpha * codaF : 0;
+    }
+    const bw = this.text.shownBigW;
+    rc[30] = cx - bw / 2;
+    rc[31] = cy + endPx + bigGap;
+    rc[32] = cx + bw / 2;
+    rc[33] = cy + endPx + bigGap + bigPx * 1.1;
+    rc[34] = vis && bw > 0 && bigTarget >= 0 ? alpha * codaF : 0;
     this.last.x = cx;
     this.last.y = cy;
-    this.last.r = R * rScale * Math.min(outer, 0.97);
-    this.last.on = this.mesh.visible;
-    return this.mesh.visible;
+    // 主角包圍盒：外圈；大字顯示時把大字的下緣也算進來
+    let lr = R * rScale * Math.min(outer, 0.97);
+    if (vis && this.text.shownBigW > 0) lr = Math.max(lr, endPx + bigGap + bigPx * 1.15);
+    this.last.r = lr;
+    this.last.on = vis;
+    return vis;
   }
 }

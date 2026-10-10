@@ -85,7 +85,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
   // 七的節奏的漩渦：畫在抹除之上、紙紋之下（抹除掃過時漩渦不跟著閃）
   const vortex = new Vortex();
   vortexLast = () => vortex.last;
-  overlay.add(wipe, vortex.mesh, grain);
+  overlay.add(wipe, vortex.mesh, vortex.labels, grain);
 
   // 時間跳躍抹除（回聲拍進出）：先把世界畫到離screen的畫布，再用斜向舊紙抹除合成
   const tMat = tjMat();
@@ -262,7 +262,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
     fr.fold = foldF;
 
     const hasPanel = findPanel(fr.s);
-    const busy = world.busy || hyssop.busy || wave.busy || SUMMER.busy || REST.busy || foldF !== foldT;
+    const busy = world.busy || hyssop.busy || wave.busy || SUMMER.busy || REST.busy || vortex.busy || foldF !== foldT;
     const hm = story.hyssop.marks;
     sig[0] = fr.s;
     sig[1] = story.day;
@@ -312,7 +312,7 @@ export const createScene: CreateScene = (opts: SceneOptions): SceneHandle | null
       moonX = pa.x / (bufW / W);
       moonY = (bufH - pa.y) / (bufH / H);
     }
-    vortex.update(fr.s, W, H, bufW / Math.max(W, 1), W <= 720, darkF, 1 - tracks.sky[2], moonX, moonY);
+    vortex.update(fr.s, W, H, bufW / Math.max(W, 1), W <= 720, darkF, 1 - tracks.sky[2], moonX, moonY, dt);
     hyssop.update(dt, fr.s, fr.idx);
     wave.update(dt, fr.s, fr.idx, fr.time, !fr.motionOff);
     updateDarkness(fr.s);
