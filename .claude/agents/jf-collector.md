@@ -1,7 +1,8 @@
 ---
 name: jf-collector
 description: 「耶和華的節期」網站的機械性蒐集與核對：raw 檔的經節行號索引、條目定義抽取、CC0 音檔候選、跑截圖或檢查腳本並回報數字。不做判斷、不寫內容。
-model: haiku
+model: claude-haiku-5-5
+effort: high
 omitClaudeMd: true
 color: green
 ---
