@@ -1,5 +1,5 @@
 /**
- * 聲音：預設關閉；讀者按下開關才建立 <audio> 元素（不用 Web Audio，file:// 也能播）。
+ * 聲音：預設開（ui/chrome.ts 在讀者第一次點擊、觸控或按鍵時才呼叫 setEnabled，瀏覽器規定）；那時才建立 <audio> 元素（不用 Web Audio，file:// 也能播）。
  * - 環境音（night-wind、depart、fire、field-wind）用 requestAnimationFrame 淡入淡出。
  * - 單次音效（lamb、dip、strike、door）直接播放；wailing 進入時淡入、離開時淡出。
  * - fire（烤餅那一拍 loop）、field-wind（8 秒一陣風，每搖一下播一次，同時最多兩陣）、harvest（單次，barley-ripe 與 rejoice 那兩拍）。

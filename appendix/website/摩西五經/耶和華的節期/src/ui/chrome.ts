@@ -21,9 +21,38 @@ function motionIcon(): SVGElement {
 }
 
 export function createChrome(host: HTMLElement, audio: AudioController, openCoach: () => void): void {
-  const sound = h('button', { type: 'button', class: 'jf-btn jf-sound', 'aria-pressed': 'false' }, eqIcon(), h('span', null, '聲音'));
-  sound.addEventListener('click', () => audio.setEnabled(!audio.enabled));
-  audio.onChange((on) => sound.setAttribute('aria-pressed', on ? 'true' : 'false'));
+  // 聲音預設開（使用者決定）；讀者關掉過就記住（localStorage jf-sound）。
+  // 瀏覽器不准網頁自己出聲，所以「開」的狀態先掛著，等讀者第一次點擊、觸控或按鍵才真正開始播。
+  const pref = readSound();
+  let pending = pref;
+  const sound = h('button', { type: 'button', class: 'jf-btn jf-sound', 'aria-pressed': pref ? 'true' : 'false' }, eqIcon(), h('span', null, '聲音'));
+  sound.addEventListener('click', () => {
+    // 還沒開始播時按聲音鈕：讀者多半是「怎麼沒聲音」，直接開始播
+    if (pending) {
+      pending = false;
+      audio.setEnabled(true);
+      return;
+    }
+    audio.setEnabled(!audio.enabled);
+  });
+  audio.onChange((on) => {
+    sound.setAttribute('aria-pressed', on ? 'true' : 'false');
+    writeSound(on);
+  });
+  if (pending) {
+    const events = ['pointerup', 'mousedown', 'touchend', 'keydown'] as const;
+    const start = (e: Event) => {
+      if (!pending) return;
+      // 聲音鈕自己的點擊交給上面的 click 處理
+      if (e.target instanceof Node && sound.contains(e.target)) return;
+      const act = (navigator as Navigator & { userActivation?: { isActive: boolean } }).userActivation;
+      if (act && !act.isActive) return;
+      pending = false;
+      for (const t of events) window.removeEventListener(t, start, true);
+      audio.setEnabled(true);
+    };
+    for (const t of events) window.addEventListener(t, start, true);
+  }
 
   const motion = h('button', { type: 'button', class: 'jf-btn jf-motion', 'aria-pressed': readMotion() ? 'true' : 'false', title: '動態' }, motionIcon(), h('span', { class: 'jf-motion-label' }, '動態'));
   motion.addEventListener('click', () => {
@@ -45,4 +74,20 @@ export function createChrome(host: HTMLElement, audio: AudioController, openCoac
       s('svg', { viewBox: '0 0 16 22', width: 16, height: 22, 'aria-hidden': 'true' },
         s('path', { d: 'M8 2 v16 M2 12 l6 7 l6 -7', fill: 'none', stroke: 'currentColor', 'stroke-width': 2.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }))),
   );
+}
+
+function readSound(): boolean {
+  try {
+    return localStorage.getItem('jf-sound') !== 'off';
+  } catch {
+    return true;
+  }
+}
+
+function writeSound(on: boolean): void {
+  try {
+    localStorage.setItem('jf-sound', on ? 'on' : 'off');
+  } catch {
+    /* 私密視窗等：不記也沒關係 */
+  }
 }
