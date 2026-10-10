@@ -274,18 +274,18 @@ describe.skipIf(!IN_VAULT)('故意弄壞資料：錯誤要指出哪一筆、哪�
     const errors = broken((d) => { d.story.trumpets[0].text = ''; }, { audio: allAudio() });
     expect(hit(errors, 'trumpets[seventh-month].text', '非空字串')).toBe(true);
   });
-  it('ot：kind 不對、ref 對不到經文、note 空或超過 60 字', () => {
+  it('ot：kind 不對、ref 對不到經文、note 空或超過 120 字', () => {
     const errors = broken((d) => {
       const ot = chapterOf(d, 'trumpets').ot;
       ot[0].kind = 'later';
       ot[1].ref = '詩81:99';
       ot[2].note = '';
-      ot[3].note = '字'.repeat(61);
+      ot[3].note = '字'.repeat(121);
     }, { audio: allAudio() });
     expect(hit(errors, 'chapters[trumpets].ot[0].kind', 'kept')).toBe(true);
     expect(hit(errors, 'chapters[trumpets].ot[1].ref', '超出')).toBe(true);
     expect(hit(errors, 'chapters[trumpets].ot[2].note', '非空字串')).toBe(true);
-    expect(hit(errors, 'chapters[trumpets].ot[3].note', '60 字')).toBe(true);
+    expect(hit(errors, 'chapters[trumpets].ot[3].note', '120 字')).toBe(true);
   });
   it('later_palette：缺色、色碼不對', () => {
     const errors = broken((d) => { delete d.feasts.later_palette.glow; d.feasts.later_palette.paper = 'beige'; }, { audio: allAudio() });

@@ -1383,8 +1383,8 @@ html[data-motion='off'] .jf-key-btn:active {
 }
 /* 桌機：圖放在說明框旁邊（另一側），fixed；手機：只顯示說明框裡的那一份 */
 .jf-bars[data-where='side'] {
-  position: fixed;
-  top: clamp(88px, 15svh, 150px);
+  position: absolute;
+  top: 0;
   z-index: 5;
   width: min(25rem, 34vw);
   max-height: calc(100svh - clamp(88px, 15svh, 150px) - 84px);
@@ -1409,16 +1409,38 @@ html[data-motion='off'] .jf-key-btn:active {
   opacity: 1;
   transform: none;
 }
+/* 說明框在右、圖在左：貼在框的左外側；反之貼在右外側 */
 .jf-bars[data-where='side'][data-at='left'] {
-  left: clamp(24px, 6vw, 96px);
+  right: calc(100% + 28px);
 }
 .jf-bars[data-where='side'][data-at='right'] {
-  right: clamp(110px, 9vw, 150px);
+  left: calc(100% + 28px);
+}
+:root[data-fold] .jf-bars[data-where='side'] {
+  display: none;
 }
 .jf-bars[data-where='inline'] {
   display: none;
 }
 
+/* 窄的桌機視窗：框旁邊放不下圖（日名會擠在一起、蓋住場景），改成跟手機一樣放在框裡 */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .jf-bars[data-where='side'] {
+    display: none;
+  }
+  .jf-bars[data-where='inline'] {
+    display: block;
+    --bars-h: 80px;
+    margin-top: 14px;
+  }
+  /* 圖排在敘述後面、經文前面，不必捲框就看得到 */
+  .jf-box[data-bars='true'] .jf-text {
+    order: -3;
+  }
+  .jf-box[data-bars='true'] .jf-bars[data-where='inline'] {
+    order: -2;
+  }
+}
 @media (max-width: 720px) {
   .jf-bars[data-where='side'] {
     display: none;

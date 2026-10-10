@@ -325,7 +325,9 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     ro.observe(body);
     for (const c of Array.from(body.children)) ro.observe(c);
   }
-  el.append(h('div', { class: 'jf-pin' }, panel, box, bars?.side));
+  // 桌機的長條圖掛在說明框旁邊、跟著框一起進出畫面（原本 fixed，前一拍的框還沒離開時會疊在一起）
+  if (bars) box.append(bars.side);
+  el.append(h('div', { class: 'jf-pin' }, panel, box));
   return {
     chapter,
     beat,

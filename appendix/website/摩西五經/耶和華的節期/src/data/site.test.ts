@@ -88,7 +88,7 @@ describe('site.json 一致性', () => {
         expect(['kept', 'word'], c.id).toContain(o.kind);
         expect(SITE.verses[o.ref], `${c.id} ot ${o.ref}`).toBeDefined();
         expect(o.note.trim().length, o.ref).toBeGreaterThan(0);
-        expect([...o.note].length, o.ref).toBeLessThanOrEqual(60);
+        expect([...o.note].length, o.ref).toBeLessThanOrEqual(120);
       }
     }
     for (const k of ['paper', 'ink', 'accent', 'glow'] as const) expect(SITE.laterPalette[k]).toMatch(/^#[0-9a-fA-F]{6}$/);

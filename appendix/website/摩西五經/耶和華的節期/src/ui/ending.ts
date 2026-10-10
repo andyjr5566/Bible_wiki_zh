@@ -35,7 +35,7 @@ function passageItem(ref: string): HTMLElement | null {
 /** 章末「舊約其他書卷」的兩小節：標題照規格；「同樣的字」那一節另有一行固定說明 */
 const OT_SECTIONS: { kind: OtNote['kind']; title: string; note?: string }[] = [
   { kind: 'kept', title: '後來的人怎麼守' },
-  { kind: 'word', title: '同樣的字，不同的場合', note: '這些經文用了同一個字，說的是別的聚會。' },
+  { kind: 'word', title: '同樣的字，不同的場合', note: '這些經文和本章的節期用了相同的說法，說的卻是別的場合；每一條都寫明原文是不是同一個字。' },
 ];
 
 function otItem(o: OtNote): HTMLElement | null {

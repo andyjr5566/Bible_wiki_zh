@@ -134,7 +134,7 @@ export interface OtNote {
   kind: 'kept' | 'word';
   /** 經文出處，例如「拉6:19-22」；全文由建置腳本從 raw_scripture 抽進 SiteData.verses */
   ref: string;
-  /** 網站自己的一句話：只寫經文自己交代的場合 */
+  /** 網站自己的話（120 字內）：交代讀者看什麼——這段跟本章律法的對照、經文自己給的原因；只寫經文與 STEP 能查到的 */
   note: string;
 }
 

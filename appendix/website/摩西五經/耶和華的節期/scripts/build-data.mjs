@@ -256,7 +256,8 @@ export function buildAll({ dataDir = resolve(SITE_DIR, 'data'), audioDir = resol
   const BAR_KEYS = ['label', 'ref'];
   const OT_KEYS = ['kind', 'ref', 'note'];
   const OT_KINDS = ['kept', 'word'];
-  const OT_NOTE_MAX = 60;
+  // 章末每一條要交代「讀者看什麼」（跟本章律法的對照），不只是重述經文，所以放寬到 120 字
+  const OT_NOTE_MAX = 120;
   const KINDS = ['opening', 'feast', 'passage'];
   /** 回聲拍的 echoes 要等所有拍都收齊才能查：[{where, id, self}] */
   const echoRefs = [];
