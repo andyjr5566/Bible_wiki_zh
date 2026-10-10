@@ -52,16 +52,22 @@ function otItem(o: OtNote): HTMLElement | null {
         block.kb ? h('p', { class: 'jf-ot-kb' }, ext(chapterUrl(block.bookNum, block.book, block.chapter), '知識庫這一章（另開網頁）')) : null)));
 }
 
-function otBlock(ot: OtNote[], echoes: HTMLElement[]): HTMLElement | null {
-  if (!ot.length && !echoes.length) return null;
+/**
+ * ot：本章自己的；carried：開場章（月朔）併進來的，另起「月朔」小標，免得讀者以為那幾段在講本章的節期。
+ */
+function otBlock(ot: OtNote[], carried: OtNote[], echoes: HTMLElement[]): HTMLElement | null {
+  if (!ot.length && !carried.length && !echoes.length) return null;
   const subs = OT_SECTIONS.map((sec) => {
     // 「後來的人怎麼守」：本章的回聲拍排在最前面，其餘 ot 照原順序接在後面
     const items = [...(sec.kind === 'kept' ? echoes : []), ...ot.filter((o) => o.kind === sec.kind).map(otItem).filter(Boolean)];
-    if (!items.length) return null;
+    const moon = carried.filter((o) => o.kind === sec.kind).map(otItem).filter(Boolean);
+    if (!items.length && !moon.length) return null;
     return h('section', { class: 'jf-ot-sub', 'data-kind': sec.kind },
       h('h4', { class: 'jf-ot-h' }, sec.title),
       sec.note ? h('p', { class: 'jf-ot-fixed' }, sec.note) : null,
-      h('ul', { class: 'jf-ot-list' }, items));
+      items.length ? h('ul', { class: 'jf-ot-list' }, items) : null,
+      moon.length ? h('p', { class: 'jf-ot-group' }, '月朔') : null,
+      moon.length ? h('ul', { class: 'jf-ot-list' }, moon) : null);
   }).filter(Boolean);
   if (!subs.length) return null;
   return h('div', { class: 'jf-end-block jf-ot' },
@@ -144,7 +150,7 @@ function buildEnding(chapter: StoryChapter, group: StoryChapter[], echo: EchoUI)
           h('h3', { class: 'jf-end-h' }, '新約'),
           h('ul', { class: 'jf-entries jf-entries-one' }, ntEls))
         : null,
-      otBlock(group.flatMap((c) => c.ot ?? []), chapter.beats.filter((b) => b.echoes?.length && b.verse).map((b) => echoItem(b.id, b.verse!, echo)).filter((x): x is HTMLElement => !!x)),
+      otBlock(chapter.ot ?? [], group.filter((c) => c.kind === 'opening').flatMap((c) => c.ot ?? []), chapter.beats.filter((b) => b.echoes?.length && b.verse).map((b) => echoItem(b.id, b.verse!, echo)).filter((x): x is HTMLElement => !!x)),
       n
         ? h('div', { class: 'jf-end-block jf-next' },
           h('h3', { class: 'jf-end-h' }, '下一個節期'),

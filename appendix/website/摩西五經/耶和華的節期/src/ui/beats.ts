@@ -83,6 +83,25 @@ export function closeOpenPanel(returnFocus = false): void {
 }
 export const anyPanelOpen = (): boolean => openRef !== null;
 
+/**
+ * 收起說明框：讀者按任何一框的「收起」，所有說明框一起收成一個小標籤，捲到下一拍也維持收起，
+ * 好看動畫的全貌；再按「展開說明」就全部回來。不存進 localStorage：重新整理就回到有字的狀態。
+ * 有互動的拍（吹、烤餅、搖禾捆……）收起時仍留著互動按鈕。
+ */
+const foldBtns: HTMLButtonElement[] = [];
+let folded = false;
+function setFolded(on: boolean, from?: HTMLButtonElement): void {
+  folded = on;
+  if (on) closeOpenPanel(false);
+  document.documentElement.toggleAttribute('data-fold', on);
+  for (const b of foldBtns) {
+    b.setAttribute('aria-expanded', on ? 'false' : 'true');
+    b.textContent = on ? '展開說明' : '收起';
+  }
+  // 焦點留在剛按的那顆（按鈕文字換了，位置不變）
+  from?.focus({ preventScroll: true });
+}
+
 export function buildBeats(main: HTMLElement, ui: InteractionUIs): BeatRef[] {
   const refs: BeatRef[] = [];
   // 說明框左右交替；有互動的那一拍固定落在左邊（牛膝草把手在畫面右側），其餘照奇偶往前後推
@@ -154,9 +173,17 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
     'data-bars': beat.bars?.length ? 'true' : null,
   });
   // 說明框的內容放進 .jf-box-body：桌機超過 max-height 時只有它捲動，框線與偏移墨塊（::before）不動
-  const body = h('div', { class: 'jf-box-body' });
+  const body = h('div', { class: 'jf-box-body', id: `${boxId}-body` });
   const hint = h('span', { class: 'jf-box-hint', 'aria-hidden': 'true', hidden: true }, '往下看');
-  box.append(body, hint);
+  const fold = h('button', {
+    type: 'button',
+    class: 'jf-boxfold',
+    'aria-expanded': folded ? 'false' : 'true',
+    'aria-controls': `${boxId}-body`,
+    onclick: () => setFolded(!folded, fold),
+  }, folded ? '展開說明' : '收起') as HTMLButtonElement;
+  foldBtns.push(fold);
+  box.append(fold, body, hint);
   // 回聲拍（後來的歷史）：左上一個小標籤
   if (later) box.append(h('span', { class: 'jf-later-tag' }, '後來'));
   if (beat.reason) body.append(h('p', { class: 'jf-reason' }, '經文自己說的理由'));
@@ -196,11 +223,18 @@ function buildBeat(chapter: StoryChapter, beat: Beat, bi: number, index: number,
   if (bars) body.append(bars.inline);
 
   if (beat.prompt) {
-    if (beat.interaction === 'hyssop') body.append(ui.hyssop.controls(beat.prompt));
-    else if (beat.interaction === 'bake') body.append(ui.bake.controls(beat.prompt));
-    else if (beat.interaction === 'wave') body.append(ui.wave.controls(beat.prompt));
-    else if (beat.interaction === 'count') body.append(ui.count.controls(beat.prompt));
-    else if (beat.interaction === 'blow') body.append(ui.blow.controls(beat.prompt));
+    let ctl: HTMLElement | undefined;
+    if (beat.interaction === 'hyssop') ctl = ui.hyssop.controls(beat.prompt);
+    else if (beat.interaction === 'bake') ctl = ui.bake.controls(beat.prompt);
+    else if (beat.interaction === 'wave') ctl = ui.wave.controls(beat.prompt);
+    else if (beat.interaction === 'count') ctl = ui.count.controls(beat.prompt);
+    else if (beat.interaction === 'blow') ctl = ui.blow.controls(beat.prompt);
+    if (ctl) {
+      // 收起說明框時，互動按鈕留著
+      ctl.classList.add('jf-ctl');
+      box.dataset.ctl = 'true';
+      body.append(ctl);
+    }
   }
 
   // ---- 就地展開 ----

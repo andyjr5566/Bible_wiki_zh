@@ -271,6 +271,21 @@
   line-height: 1.7;
   color: var(--jf-blood);
 }
+/* 開場章（月朔）併進來的 ot：另起一個小標 */
+.jf-ot-group {
+  margin: 20px 0 10px;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in oklab, currentColor 22%, transparent);
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.jf-ot-h + .jf-ot-group,
+.jf-ot-fixed + .jf-ot-group {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
 .jf-ot-list {
   display: grid;
   gap: 14px;

@@ -28,7 +28,8 @@ export const POSES2: Record<string, PosePair> = {
   // ---- 贖罪日（會幕院子中心在 (NX-6, -36)）
   veil: [[NX - 7.4, 1.6, -12, NX - 6.6, 1.6, -34, 58, 0], [NX - 6.5, 1.5, -35.4, NX - 6, 1.4, -40, 62, 0]],
   linen: [[NX + 2, 1.9, -32.8, NX - 3.8, 1.0, -32.1, 44, 0], [NX + 1.5, 1.8, -32.2, NX - 3.8, 1.05, -32.1, 44, 0]],
-  lots: [[NX - 15, 1.9, -30.5, NX - 5.8, 0.8, -31.8, 50, 0], [NX - 14, 1.9, -30.2, NX - 5.8, 0.8, -31.8, 50, 0]],
+  // 跟 linen 同一側（東邊往西看），鏡頭不必穿過羊群
+  lots: [[NX + 1.2, 2.0, -29.4, NX - 5.8, 0.8, -31.8, 50, 0], [NX + 0.6, 2.0, -29.6, NX - 5.8, 0.8, -31.8, 50, 0]],
   incense: [[NX - 6.75, 1.45, -39.85, NX - 5.8, 0.85, -43, 62, 0], [NX - 6.8, 1.4, -40, NX - 5.9, 0.9, -43.2, 60, 0]],
   sprinkle: [[NX - 6.75, 1.6, -39.9, NX - 5.9, 0.45, -42.4, 58, 0], [NX - 6.7, 1.55, -40, NX - 5.9, 0.4, -42.6, 56, 0]],
   confess: [[NX - 1.2, 1.7, -29.2, NX - 6.6, 0.9, -32, 46, 0], [NX - 2, 1.6, -29.6, NX - 6.6, 0.9, -32, 44, 0]],
@@ -43,7 +44,11 @@ export const POSES2: Record<string, PosePair> = {
   'eighth-day': [[BLX, 2.6, 18, BLX, 1.2, 4, 50, 0], [BLX, 3.4, 16, BLX, 1.2, 4, 50, 0]],
 };
 
-export const MOBILE_POSES2: Record<string, PosePair> = {};
+export const MOBILE_POSES2: Record<string, PosePair> = {
+  // 手機：說明框蓋住下半，主體要落在標題列與說明框之間的一條帶子裡，所以鏡頭拉低、拉近、視野放寬
+  afflict: [[NX - 3, 1.7, 2, NX - 7, 0.9, -12, 62, 0], [NX - 2.6, 1.9, 3, NX - 7, 0.9, -12, 62, 0]],
+  ingathering: [[BLX - 11, 1.6, 10, BLX - 14, 1.1, -11, 56, 0], [BLX - 10, 1.7, 9, BLX - 13, 1.1, -11, 56, 0]],
+};
 /** 手機：沿視線往後退的倍數（直式畫面水平視野窄，主體才進得了框） */
 export const MOBILE_K2: Record<string, number> = {
   'echo-gilgal': 1.5,
@@ -56,13 +61,11 @@ export const MOBILE_K2: Record<string, number> = {
   blow: 1.3,
   'trumpet-offerings': 1.5,
   linen: 1.6,
-  lots: 1.5,
+  lots: 1.3,
   confess: 1.6,
-  afflict: 1.3,
-  ingathering: 1.6,
   branches: 1.6,
   booth: 1.5,
-  bulls: 1.4,
+  bulls: 1.2,
   'booths-rejoice': 1.8,
   'eighth-day': 1.4,
 };
@@ -81,6 +84,6 @@ export const DX2: Record<string, number[]> = {
 export const UP2: Record<string, number[]> = {
   'echo-gilgal': [0.17], 'echo-hezekiah': [0.2], 'echo-ruth': [0.2], summer: [0.04],
   'seventh-moon': [0.17], blow: [0.17], 'trumpet-offerings': [0.2], 'echo-water-gate': [0.2],
-  veil: [0.12], linen: [0.17], lots: [0.17], incense: [0.14], sprinkle: [0.14], confess: [0.17], scapegoat: [0.15], afflict: [0.2],
-  ingathering: [0.18], branches: [0.18], booth: [0.2], bulls: [0.2], 'booths-rejoice': [0.2], 'eighth-day': [0.2], 'echo-roofs': [0.2],
+  veil: [0.12], linen: [0.17], lots: [0.17], incense: [0.14], sprinkle: [0.14], confess: [0.17], scapegoat: [0.15], afflict: [0.3],
+  ingathering: [0.1], branches: [0.18], booth: [0.2], bulls: [0.3], 'booths-rejoice': [0.2], 'eighth-day': [0.2], 'echo-roofs': [0.2],
 };

@@ -633,11 +633,12 @@ export class Village {
         it.x = lerp(base.x, ALT_X + 2.2, e);
         it.z = lerp(base.z, ALT_Z + 1.8, e);
         it.y = e > 0 && e < 1 ? Math.abs(Math.sin(e * 14)) * 0.04 : 0;
-        it.yaw = -PI / 2;
-        it.sc = e >= 1 ? 0.0001 : 0.72 * (1 - 0.9 * smooth(0.7, 1, e));
         it.walking = e > 0 && e < 1;
+        // 排隊等著的公牛會挪身子、低頭（動態開時）
+        it.yaw = -PI / 2 + (mo && !it.walking ? 0.22 * Math.sin(t * 0.8 + k * 1.9) : 0);
+        it.sc = e >= 1 ? 0.0001 : 0.72 * (1 - 0.9 * smooth(0.7, 1, e));
       }
-      this.bulls.update(t, mo, 0);
+      this.bulls.update(t, mo, 0.8);
     }
 
     // ---- booths-rejoice：棚子之間的人群，人群小幅擺動，孩子在棚子間跑

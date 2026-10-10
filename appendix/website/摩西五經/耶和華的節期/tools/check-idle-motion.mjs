@@ -18,7 +18,8 @@ async function run(motionOff, port) {
   await b.send('Page.navigate', { url });
   await sleep(5000);
   const beats = await b.evaluate(`JSON.stringify([...document.querySelectorAll('.jf-beat')].map(el => ({ cue: el.dataset.cue, id: el.dataset.beat })))`);
-  const list = JSON.parse(beats);
+  const only = process.argv.find((x) => x.startsWith('--only='))?.slice(7).split(',');
+  const list = JSON.parse(beats).filter((x) => !only || only.includes(x.cue));
   const cap = async () => (await b.send('Page.captureScreenshot', { format: 'png' })).data;
   const diff = (a, c) =>
     b.evaluate(`(async () => {

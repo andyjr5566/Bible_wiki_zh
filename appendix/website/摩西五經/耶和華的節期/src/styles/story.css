@@ -160,6 +160,68 @@
   margin-right: clamp(100px, 9vw, 150px);
 }
 
+/* 收起說明框：掛在框頂邊線上的小標籤；收起後整框只剩這個標籤（有互動的拍另外留著互動按鈕） */
+.jf-boxfold {
+  position: absolute;
+  top: -15px;
+  right: 16px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 2px 12px 2px 10px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  color: var(--jf-ink);
+  background: var(--jf-paper);
+  border: 2px solid var(--jf-ink);
+  cursor: pointer;
+}
+.jf-boxfold::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom: 7px solid var(--jf-blood);
+  border-top: 0;
+}
+.jf-boxfold:hover {
+  background: color-mix(in oklab, var(--jf-paper) 86%, var(--jf-ink));
+}
+.jf-boxfold:focus-visible {
+  outline: 3px solid var(--jf-blood);
+  outline-offset: 2px;
+}
+:root[data-fold] .jf-boxfold::before {
+  border-top: 7px solid var(--jf-blood);
+  border-bottom: 0;
+}
+/* 收起：沒有互動的拍，框只剩標籤 */
+:root[data-fold] .jf-box:not([data-ctl]) {
+  width: auto;
+  max-height: none;
+}
+:root[data-fold] .jf-box:not([data-ctl])::before,
+:root[data-fold] .jf-box:not([data-ctl]) .jf-box-body,
+:root[data-fold] .jf-box .jf-box-hint,
+:root[data-fold] .jf-box .jf-later-tag {
+  display: none;
+}
+:root[data-fold] .jf-box:not([data-ctl]) .jf-boxfold {
+  position: static;
+  padding: 4px 14px 4px 12px;
+  font-size: 14px;
+  box-shadow: 4px 4px 0 var(--jf-ink);
+}
+/* 收起：有互動的拍只留互動按鈕 */
+:root[data-fold] .jf-box[data-ctl] .jf-box-body > :not(.jf-ctl) {
+  display: none;
+}
+
 /* 進場：捲進來時淡入、從下方滑上來（有 JS 才先藏起來，沒有 JS 內容照常可讀） */
 .jf-js .jf-box {
   opacity: 0;
@@ -924,6 +986,16 @@
     align-self: stretch;
     margin-right: 8px;
     margin-left: 8px;
+  }
+  /* 收起後的標籤靠右下角，不擋畫面中央 */
+  :root[data-fold] .jf-box:not([data-ctl]),
+  :root[data-fold] .jf-beat[data-side='right'] .jf-box:not([data-ctl]) {
+    align-self: flex-end;
+    padding: 0;
+  }
+  .jf-boxfold {
+    right: 12px;
+    min-height: 32px;
   }
   .jf-text {
     font-size: 17px;
