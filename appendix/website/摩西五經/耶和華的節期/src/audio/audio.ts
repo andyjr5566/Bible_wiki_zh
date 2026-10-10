@@ -4,6 +4,7 @@
  * - 單次音效（lamb、dip、strike、door）直接播放；wailing 進入時淡入、離開時淡出。
  * - fire（烤餅那一拍 loop）、field-wind（8 秒一陣風，每搖一下播一次，同時最多兩陣）、harvest（單次，barley-ripe 與 rejoice 那兩拍）。
  * - 秋季：desert-wind（scapegoat 那一拍 loop）、branches（branches 拍進入時一次；booth、echo-roofs 拍隨拍內進度每過 0.2 一次）。
+ * - 背景音樂（music）：聲音開著就一直 loop，音量壓在環境音底下；wailing 那一拍與按住「吹」時讓開（降到三成多）。
  * - 吹角（blow）不是檔案：用 WebAudio 合成，見檔尾的 createBlowVoice。受聲音開關控制；動態開關不影響。
  * - 檔案載入或播放失敗、或 audio-sources.yaml 還沒登記的音檔，一律安靜略過。
  * 音檔清單與授權在 data/audio-sources.yaml，授權頁由 src/ui/ending.ts 列出。
@@ -41,7 +42,11 @@ const SPEC: Record<string, Pick<Track, 'max' | 'fadeIn' | 'fadeOut'>> = {
   harvest: { max: 0.5, fadeIn: 1.4, fadeOut: 1.8 },
   'desert-wind': { max: 0.5, fadeIn: 2, fadeOut: 1.6 },
   branches: { max: 0.7, fadeIn: 0.05, fadeOut: 0.6 },
+  music: { max: 0.4, fadeIn: 4, fadeOut: 2.5 },
 };
+
+/** 背景音樂讓開時的倍數 */
+const MUSIC_DUCK = 0.35;
 
 /** 每過拍內進度 0.2 觸發一次樹枝沙沙聲的拍 */
 const RUSTLE_STEP = 0.2;
@@ -80,6 +85,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
   const gusts: HTMLAudioElement[] = [];
   const blowVoice = createBlowVoice(() => enabled);
   let rustleStep = -1;
+  let blowing = false;
 
   const idxOf = (cue: string) => cues.indexOf(cue);
 
@@ -183,6 +189,7 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     setWant('fire', cue === 'bake' ? SPEC.fire.max : 0);
     setWant('harvest', cue === 'rejoice' || cue === 'barley-ripe' ? SPEC.harvest.max : 0);
     setWant('desert-wind', cue === 'scapegoat' ? SPEC['desert-wind'].max : 0);
+    setWant('music', SPEC.music.max * (cue === 'wailing' || blowing ? MUSIC_DUCK : 1));
   }
 
   function fire(id: string) {
@@ -288,6 +295,10 @@ export function createAudio(sources: AudioSource[], cues: string[], hasScene: ()
     },
     blow(holding: boolean, level: number) {
       blowVoice.update(holding, level);
+      if (holding !== blowing) {
+        blowing = holding;
+        reapply();
+      }
     },
     onChange(cb) {
       listeners.push(cb);

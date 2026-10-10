@@ -131,6 +131,17 @@
         "https://freesound.org/people/Bini_trns/sounds/354099/"
       ],
       "title": "Leaves_Rustling_Edited.wav；pile of boughs and branches breaks, close up, H6.wav"
+    },
+    {
+      "author": "Andrewkn",
+      "downloaded": "2026-10-10",
+      "edit": "整首照原樣（作者做成可接續循環），響度調整到 -26 LUFS，重新編碼 112 kbps",
+      "file": "music.mp3",
+      "id": "music",
+      "license": "CC0",
+      "loop": true,
+      "page": "https://freesound.org/people/Andrewkn/sounds/476772/",
+      "title": "Decline (Loop)"
     }
   ],
   "chapters": [

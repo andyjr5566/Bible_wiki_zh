@@ -121,3 +121,13 @@
     - https://freesound.org/people/Bini_trns/sounds/354099/
   downloaded: 2026-10-09
   edit: 葉子沙沙取前 3.6 秒，疊上延後 0.4 秒的枝條堆疊聲，淡入淡出，單聲道，響度調整
+
+- id: music
+  file: music.mp3
+  title: Decline (Loop)
+  author: Andrewkn
+  license: CC0
+  page: https://freesound.org/people/Andrewkn/sounds/476772/
+  downloaded: 2026-10-10
+  loop: true
+  edit: 整首照原樣（作者做成可接續循環），響度調整到 -26 LUFS，重新編碼 112 kbps
