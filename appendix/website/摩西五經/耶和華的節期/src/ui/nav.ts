@@ -176,9 +176,11 @@ export function createNav(host: HTMLElement, beats: BeatRef[]): Nav {
       if (hollow) marker.setAttribute('title', HOLLOW_TITLE);
       else marker.removeAttribute('title');
     }
-    if (story.month !== lastMonth) {
-      lastMonth = story.month;
-      for (const t of ticks) t.li.classList.toggle('is-current', t.month === story.month);
+    // 沒有月份的章不標「目前月份」，免得讀者以為這一章在那個月
+    const cur = hollow ? -1 : story.month;
+    if (cur !== lastMonth) {
+      lastMonth = cur;
+      for (const t of ticks) t.li.classList.toggle('is-current', t.month === cur);
     }
   }
 
