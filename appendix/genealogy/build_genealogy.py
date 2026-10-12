@@ -1502,7 +1502,7 @@ class Builder:
                     out += [f"歷代志下提到他：`{fmt_ref(king['chronicles_refs'], self.book)}`", ""]
                 if king.get("kings_refs"):
                     books = []
-                    for part in re.split(r"[,，]\s*", str(king["kings_refs"])):
+                    for part in re.split(r"[,，;；]\s*", str(king["kings_refs"])):
                         name = "撒母耳記" if part.startswith("撒") else "列王紀" if part.startswith("王") else ""
                         if name and name not in books:
                             books.append(name)
