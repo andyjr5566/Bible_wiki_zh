@@ -206,6 +206,19 @@ def _svg_defs(prefix: str) -> list[str]:
 
 
 
+
+TABLE_ROW_RE = re.compile(r"^(> )*\|")
+TABLE_LINK_RE = re.compile(r"\[\[([^\]|]*?[^\]|\\])\|([^\]]*)\]\]")
+
+
+def escape_table_links(page: str) -> str:
+    """Obsidian 表格裡的 [[目標|文字]] 要寫成 [[目標\\|文字]]，否則 | 會被當成欄位分隔。"""
+    lines = page.split("\n")
+    for i, line in enumerate(lines):
+        if TABLE_ROW_RE.match(line):
+            lines[i] = TABLE_LINK_RE.sub(lambda m: "[[" + m.group(1) + "\\|" + m.group(2) + "]]", line)
+    return "\n".join(lines)
+
 def bar_pads(names: list[str]) -> dict[str, str]:
     """長條圖名稱補齊。名稱全是全形字時沿用全形空白；混有半形字時依顯示寬度補半形空白。"""
     import unicodedata
@@ -1878,6 +1891,7 @@ def build_page(data_spec: str, check: bool = False, review: str | None = None,
     else:
         b.err("type", f"未知頁型：{b.page_type}")
         page = ""
+    page = escape_table_links(page)
     if review:
         Path(review).write_text(b.review(), encoding="utf-8")
     if b.errors:
