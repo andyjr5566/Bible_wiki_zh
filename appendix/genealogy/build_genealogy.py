@@ -1577,7 +1577,7 @@ class Builder:
             out.append("```text")
             for label, count in sorted(scoped, key=lambda row: -row[1]):
                 pad = pads[label]
-                bar = "█" * max(1, round(count / top * 30)) if count else "·"
+                bar = "█" * max(1, round(count / top * 14)) if count else "·"
                 out.append(f"{label}{pad} {bar} {count} 節")
             out += ["```", ""]
         else:
