@@ -11656,6 +11656,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞衲族的三個族長": {
+    "path": "link_folder/人物/亞衲族的三個族長.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞衲族的三個族長",
+    "status": "formal",
+    "aliases": []
+  },
   "亞西納": {
     "path": "link_folder/人物/亞西納.md",
     "type": "人物",
@@ -11989,6 +11997,14 @@
     "aliases": [
       "Onan"
     ]
+  },
+  "俄陀聶": {
+    "path": "link_folder/人物/俄陀聶.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "俄陀聶",
+    "status": "formal",
+    "aliases": []
   },
   "偉人": {
     "path": "link_folder/人物/偉人.md",
@@ -12387,6 +12403,14 @@
       "Jedidiah",
       "耶迪底亞"
     ]
+  },
+  "押撒": {
+    "path": "link_folder/人物/押撒.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "押撒",
+    "status": "formal",
+    "aliases": []
   },
   "押沙龍": {
     "path": "link_folder/人物/押沙龍.md",
@@ -18459,6 +18483,14 @@
       "埃及人的哀哭"
     ]
   },
+  "亞都冥坡": {
+    "path": "link_folder/地點/亞都冥坡.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞都冥坡",
+    "status": "formal",
+    "aliases": []
+  },
   "亞雅崙谷": {
     "path": "link_folder/地點/亞雅崙谷.md",
     "type": "地點",
@@ -18522,6 +18554,14 @@
     "aliases": [
       "曠野邊的以倘"
     ]
+  },
+  "以實陶": {
+    "path": "link_folder/地點/以實陶.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以實陶",
+    "status": "formal",
+    "aliases": []
   },
   "以得來": {
     "path": "link_folder/地點/以得來.md",
@@ -18655,6 +18695,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伯亞拉巴": {
+    "path": "link_folder/地點/伯亞拉巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯亞拉巴",
+    "status": "formal",
+    "aliases": []
+  },
   "伯亞文": {
     "path": "link_folder/地點/伯亞文.md",
     "type": "地點",
@@ -18713,6 +18761,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伯曷拉": {
+    "path": "link_folder/地點/伯曷拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯曷拉",
+    "status": "formal",
+    "aliases": []
+  },
   "伯毘珥": {
     "path": "link_folder/地點/伯毘珥.md",
     "type": "地點",
@@ -18726,6 +18782,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "伯特利",
+    "status": "formal",
+    "aliases": []
+  },
+  "伯示麥（猶大）": {
+    "path": "link_folder/地點/伯示麥（猶大）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯示麥（猶大）",
     "status": "formal",
     "aliases": []
   },
@@ -18806,6 +18870,14 @@
       "盟誓的井",
       "七之井"
     ]
+  },
+  "利乏音谷": {
+    "path": "link_folder/地點/利乏音谷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "利乏音谷",
+    "status": "formal",
+    "aliases": []
   },
   "利巴嫩": {
     "path": "link_folder/地點/利巴嫩.md",
@@ -19021,6 +19093,14 @@
       "城外不潔淨之處"
     ]
   },
+  "基伊拉": {
+    "path": "link_folder/地點/基伊拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基伊拉",
+    "status": "formal",
+    "aliases": []
+  },
   "基低斯": {
     "path": "link_folder/地點/基低斯.md",
     "type": "地點",
@@ -19165,6 +19245,14 @@
     "status": "formal",
     "aliases": []
   },
+  "基羅": {
+    "path": "link_folder/地點/基羅.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基羅",
+    "status": "formal",
+    "aliases": []
+  },
   "基色": {
     "path": "link_folder/地點/基色.md",
     "type": "地點",
@@ -19278,11 +19366,27 @@
       "Migdol"
     ]
   },
+  "尋的曠野": {
+    "path": "link_folder/地點/尋的曠野.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "尋的曠野",
+    "status": "formal",
+    "aliases": []
+  },
   "尼尼微": {
     "path": "link_folder/地點/尼尼微.md",
     "type": "地點",
     "secondary_types": [],
     "title": "尼尼微",
+    "status": "formal",
+    "aliases": []
+  },
+  "尼弗多亞的水源": {
+    "path": "link_folder/地點/尼弗多亞的水源.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "尼弗多亞的水源",
     "status": "formal",
     "aliases": []
   },
@@ -19718,6 +19822,22 @@
     "status": "formal",
     "aliases": []
   },
+  "梭哥（示非拉）": {
+    "path": "link_folder/地點/梭哥（示非拉）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "梭哥（示非拉）",
+    "status": "formal",
+    "aliases": []
+  },
+  "欣嫩子谷": {
+    "path": "link_folder/地點/欣嫩子谷.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "欣嫩子谷",
+    "status": "formal",
+    "aliases": []
+  },
   "歌珊地": {
     "path": "link_folder/地點/歌珊地.md",
     "type": "地點",
@@ -19899,11 +20019,27 @@
     "status": "formal",
     "aliases": []
   },
+  "波罕的磐石": {
+    "path": "link_folder/地點/波罕的磐石.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "波罕的磐石",
+    "status": "formal",
+    "aliases": []
+  },
   "洗扁": {
     "path": "link_folder/地點/洗扁.md",
     "type": "地點",
     "secondary_types": [],
     "title": "洗扁",
+    "status": "formal",
+    "aliases": []
+  },
+  "洗革拉": {
+    "path": "link_folder/地點/洗革拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "洗革拉",
     "status": "formal",
     "aliases": []
   },
@@ -19944,6 +20080,14 @@
     "status": "formal",
     "aliases": []
   },
+  "瑣拉": {
+    "path": "link_folder/地點/瑣拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "瑣拉",
+    "status": "formal",
+    "aliases": []
+  },
   "瑣珥": {
     "path": "link_folder/地點/瑣珥.md",
     "type": "地點",
@@ -19957,6 +20101,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "瑣腓田與毘斯迦山頂",
+    "status": "formal",
+    "aliases": []
+  },
+  "瑪利沙": {
+    "path": "link_folder/地點/瑪利沙.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "瑪利沙",
     "status": "formal",
     "aliases": []
   },
@@ -19997,6 +20149,14 @@
       "Marah"
     ]
   },
+  "瑪雲": {
+    "path": "link_folder/地點/瑪雲.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "瑪雲",
+    "status": "formal",
+    "aliases": []
+  },
   "瑪頓": {
     "path": "link_folder/地點/瑪頓.md",
     "type": "地點",
@@ -20010,6 +20170,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "田間",
+    "status": "formal",
+    "aliases": []
+  },
+  "甲薛": {
+    "path": "link_folder/地點/甲薛.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "甲薛",
     "status": "formal",
     "aliases": []
   },
@@ -20223,6 +20391,14 @@
     "status": "formal",
     "aliases": []
   },
+  "耶斯列（猶大）": {
+    "path": "link_folder/地點/耶斯列（猶大）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "耶斯列（猶大）",
+    "status": "formal",
+    "aliases": []
+  },
   "耶末": {
     "path": "link_folder/地點/耶末.md",
     "type": "地點",
@@ -20320,6 +20496,14 @@
       "Wilderness of Sinai",
       "西乃曠野"
     ]
+  },
+  "西弗（猶大山地）": {
+    "path": "link_folder/地點/西弗（猶大山地）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西弗（猶大山地）",
+    "status": "formal",
+    "aliases": []
   },
   "西曷河": {
     "path": "link_folder/地點/西曷河.md",
@@ -20465,6 +20649,22 @@
     "status": "formal",
     "aliases": []
   },
+  "隱示麥泉": {
+    "path": "link_folder/地點/隱示麥泉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "隱示麥泉",
+    "status": "formal",
+    "aliases": []
+  },
+  "隱羅結": {
+    "path": "link_folder/地點/隱羅結.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "隱羅結",
+    "status": "formal",
+    "aliases": []
+  },
   "雅博河": {
     "path": "link_folder/地點/雅博河.md",
     "type": "地點",
@@ -20533,6 +20733,14 @@
     "aliases": [
       "Shephelah"
     ]
+  },
+  "鹽城": {
+    "path": "link_folder/地點/鹽城.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "鹽城",
+    "status": "formal",
+    "aliases": []
   },
   "鹽海": {
     "path": "link_folder/地點/鹽海.md",
@@ -20613,6 +20821,14 @@
     "type": "文化",
     "secondary_types": [],
     "title": "以人肘為度",
+    "status": "formal",
+    "aliases": []
+  },
+  "以女兒許配立功者": {
+    "path": "link_folder/文化/以女兒許配立功者.md",
+    "type": "文化",
+    "secondary_types": [],
+    "title": "以女兒許配立功者",
     "status": "formal",
     "aliases": []
   },
@@ -30547,6 +30763,14 @@
     "status": "formal",
     "aliases": []
   },
+  "希伯崙與底璧被攻取了幾次": {
+    "path": "link_folder/解經爭議/希伯崙與底璧被攻取了幾次.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "希伯崙與底璧被攻取了幾次",
+    "status": "formal",
+    "aliases": []
+  },
   "帶到他弟兄那裡去是什麼意思": {
     "path": "link_folder/解經爭議/帶到他弟兄那裡去是什麼意思.md",
     "type": "解經爭議",
@@ -31657,6 +31881,14 @@
       "耶和華使者是基督嗎",
       "耶和華使者的身分"
     ]
+  },
+  "耶路撒冷屬猶大或便雅憫": {
+    "path": "link_folder/解經爭議/耶路撒冷屬猶大或便雅憫.md",
+    "type": "解經爭議",
+    "secondary_types": [],
+    "title": "耶路撒冷屬猶大或便雅憫",
+    "status": "formal",
+    "aliases": []
   },
   "聖所的器皿是什麼": {
     "path": "link_folder/解經爭議/聖所的器皿是什麼.md",

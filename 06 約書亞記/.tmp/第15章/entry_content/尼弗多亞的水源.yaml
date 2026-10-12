@@ -1,0 +1,25 @@
+name: 尼弗多亞的水源
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: |-
+  書15:9 猶大的北界「又從山頂延到尼弗多亞的水源，通到以弗崙山的城邑」。書18:15 便雅憫的南界也會經過這裡。
+
+  **名字與位置。** CT 給的原文字義「尼弗多亞」是「開口」，說它是位於耶路撒冷西北西約4公里、基遍南方約6公里的一個水泉；GT《串珠聖經注釋》說它在耶路撒冷西北三公里（二英里）；GT《約書亞記研經資料》的字義相同。
+
+  **一處泉水當地標。** BH 說這處可靠的水源靠近耶路撒冷的西邊通道，是猶大北界上的一個重要點；在乾旱的地方，泉水維持生命，也使周圍的地值得定居與耕種。
+accumulations:
+- book: 約書亞記
+  chapter: 15
+  summary: |-
+    第9節北界「延到尼弗多亞的水源」。CT 字義「開口」，說它是耶路撒冷西北西約4公里的一處水泉；GT《串珠》說在耶路撒冷西北三公里。
+  relation: |-
+    本章它是猶大北界離開耶路撒冷往西走的第一個水源標點。
+related_entries:
+- 基列耶琳
+- 耶路撒冷
+sources:
+- '逐節註解（ccbiblestudy CT）: 約書亞記第十五章註解 — 書十五9〔原文字義〕「尼弗多亞」開口與〔文意註解〕（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT15.htm>）'
+- '拾穗（ccbiblestudy GT）: 約書亞記第十五章拾穗 — 書十五9《串珠》《約書亞記研經資料》（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT15.htm>）'
+- '研經註解（BibleHub Study）: Joshua 15 — Joshua 15:9 — the border curved to the spring of the Waters of Nephtoah（<https://biblehub.com/study/joshua/15.htm>）'

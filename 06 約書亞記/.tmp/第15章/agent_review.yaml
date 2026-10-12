@@ -1,0 +1,125 @@
+version: 2
+book: 約書亞記
+chapter: 15
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 196463d767a7a6337594081c7b9e4f8479b0c29a1d4ed3df17b94c8ff1d08606
+      verdict: changes_required
+      findings_count: 3
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a131e8-a817-7d93-b1ec-e2c3763188d4
+    hash_inputs:
+    - entry_content/亞衲族的三個族長.yaml
+    - entry_content/亞都冥坡.yaml
+    - entry_content/以女兒許配立功者.yaml
+    - entry_content/以實陶.yaml
+    - entry_content/伯亞拉巴.yaml
+    - entry_content/伯曷拉.yaml
+    - entry_content/伯示麥（猶大）.yaml
+    - entry_content/俄陀聶.yaml
+    - entry_content/利乏音谷.yaml
+    - entry_content/基伊拉.yaml
+    - entry_content/基羅.yaml
+    - entry_content/尋的曠野.yaml
+    - entry_content/尼弗多亞的水源.yaml
+    - entry_content/希伯崙與底璧被攻取了幾次.yaml
+    - entry_content/押撒.yaml
+    - entry_content/梭哥（示非拉）.yaml
+    - entry_content/欣嫩子谷.yaml
+    - entry_content/波罕的磐石.yaml
+    - entry_content/洗革拉.yaml
+    - entry_content/瑣拉.yaml
+    - entry_content/瑪利沙.yaml
+    - entry_content/瑪雲.yaml
+    - entry_content/甲薛.yaml
+    - entry_content/耶斯列（猶大）.yaml
+    - entry_content/耶路撒冷屬猶大或便雅憫.yaml
+    - entry_content/西弗（猶大山地）.yaml
+    - entry_content/隱示麥泉.yaml
+    - entry_content/隱羅結.yaml
+    - entry_content/鹽城.yaml
+    own_sha256: b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+    verdict_sha: b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: 3236d83abc0eb231eec63dbabccd825964bd7a35415a44b6625f23016b5bcd1b
+    verdict_sha: 3236d83abc0eb231eec63dbabccd825964bd7a35415a44b6625f23016b5bcd1b
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 3979bbf773fcda079f00b36fd04fdf3050ae566250073da32189d5a884d650bc
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 79492524efbb6522334e68dd04ab6c3cb347ac0d5007daaafc471efd7b36416a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 3236d83abc0eb231eec63dbabccd825964bd7a35415a44b6625f23016b5bcd1b
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    thread_id: 01a131e8-a817-7d93-b1ec-e2c3763188d4
+    hash_inputs:
+    - parent:m3=b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+    - chapter_content.yaml
+    own_sha256: 9f7870da9b03b9d5d7b5d5934b6289ef9ecec8458378344544f5494c4aaf2466
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: c126be74f8b09869cc541d037395e3c7117cd8060402ae37ae36f016afa8bd7e
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 7f840524e68a1f2f60f8b7fb16b5f18d52f3e21219fcf0f1c75864106fa4c73a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: c126be74f8b09869cc541d037395e3c7117cd8060402ae37ae36f016afa8bd7e
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a131e8-a817-7d93-b1ec-e2c3763188d4
+    hash_inputs:
+    - parent:m3=b58936e1f427638468150cc5de45fe0aea3f13fac91f208e6541d53244b47c7c
+    - parent:m6=3236d83abc0eb231eec63dbabccd825964bd7a35415a44b6625f23016b5bcd1b
+    - link_updates.yaml
+    own_sha256: d881b958627719e3b9d3f440640f434787cbda2df32db5a3951e5fd90c6bde3a
+    verdict_sha: c126be74f8b09869cc541d037395e3c7117cd8060402ae37ae36f016afa8bd7e
+    findings_count: 0

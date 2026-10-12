@@ -1,0 +1,26 @@
+name: 以實陶
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: |-
+  書15:33 猶大「在高原有以實陶、瑣拉、亞實拿」。以實陶與瑣拉後來屬但支派（書19:41）。
+
+  **名字與位置。** CT 給的原文字義是「懇求」，說它位於耶路撒冷西方約22公里、基遍西南方約19公里；GT《約書亞記研經資料》字義相同。
+
+  **參孫的地方。** GT《串珠聖經注釋》說以實陶和瑣拉後屬但支派（見士13:25）。BH 說以實陶位在猶大與但共有的邊界地帶，參孫早年就與以實陶和瑣拉之間這一帶相連，耶和華的靈在那裡開始感動他（士13:25）。
+accumulations:
+- book: 約書亞記
+  chapter: 15
+  summary: |-
+    第33節高原城單的第一座。字義「懇求」；GT《串珠》說它後屬但支派（士13:25）；BH 說參孫早年在以實陶和瑣拉之間被耶和華的靈感動。
+  relation: |-
+    本章它和瑣拉一起列在猶大高原的第一組；兩座城後來都出現在但的名單與參孫的故事裡。
+related_entries:
+- 瑣拉
+- 高原（Shephelah）
+- 猶大支派
+sources:
+- '逐節註解（ccbiblestudy CT）: 約書亞記第十五章註解 — 書十五33〔原文字義〕「以實陶」懇求與〔文意註解〕（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT15.htm>）'
+- '拾穗（ccbiblestudy GT）: 約書亞記第十五章拾穗 — 書十五33《串珠》《約書亞記研經資料》（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT15.htm>）'
+- '研經註解（BibleHub Study）: Joshua 15 — Joshua 15:33 — Eshtaol（<https://biblehub.com/study/joshua/15.htm>）'

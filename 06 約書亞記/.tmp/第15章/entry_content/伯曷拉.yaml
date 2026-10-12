@@ -1,0 +1,27 @@
+name: 伯曷拉
+type: 地點
+secondary_types: []
+aliases: []
+status: formal
+definition: |-
+  書15:6 猶大的北界從約但河口「上到伯曷拉，過伯亞拉巴的北邊，上到流便之子波罕的磐石」。
+
+  **名字與位置。** CT 給的原文字義是「鷓鴣之地」，說它位於耶利哥東南方約10公里、耶路撒冷東方約26公里；GT《約書亞記研經資料》說字義是「鷓鴣的房屋」。GT《綜合解讀》解釋說「伯」原文的意思是「家」，凡是以「伯」開頭的地名，意思都是某某之家。
+
+  **一座邊界上的小鎮。** GT《串珠聖經注釋》說伯曷拉和伯亞拉巴都是猶大與便雅憫邊界上的小鎮，後來列入便雅憫境（參書18:19、21-22），顯示支派間在分地上互有調整。BH 也說它靠近約但河谷與死海北端，同時是猶大的北界與便雅憫的南界，位在河邊的通道附近。
+accumulations:
+- book: 約書亞記
+  chapter: 15
+  summary: |-
+    第6節北界「上到伯曷拉」。CT 字義「鷓鴣之地」，在耶利哥東南約10公里；GT《串珠》說它後來列入便雅憫境（書18:19、21-22）；BH 說它同時是猶大的北界與便雅憫的南界。
+  relation: |-
+    本章它是猶大北界從約但河口出發的第一個點；到書18，同一個名字會出現在便雅憫的地界與城邑中。
+related_entries:
+- 伯亞拉巴
+- 波罕的磐石
+- 約但河
+- 鹽海
+sources:
+- '逐節註解（ccbiblestudy CT）: 約書亞記第十五章註解 — 書十五6〔原文字義〕「伯曷拉」鷓鴣之地與〔文意註解〕（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT15.htm>）'
+- '拾穗（ccbiblestudy GT）: 約書亞記第十五章拾穗 — 書十五6《串珠》《綜合解讀》《約書亞記研經資料》（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT15.htm>）'
+- '研經註解（BibleHub Study）: Joshua 15 — Joshua 15:6 — went up to Beth-hoglah（<https://biblehub.com/study/joshua/15.htm>）'

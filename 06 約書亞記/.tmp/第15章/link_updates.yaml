@@ -1,0 +1,545 @@
+book: 約書亞記
+chapter: 15
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 猶大支派
+  path: link_folder/人物/猶大支派.md
+  summary: 第1-12節猶大支派按著宗族拈鬮所得之地的四界，第20-62節按南地、高原、山地、曠野列出城邑，第63節說猶大人不能趕出耶路撒冷的耶布斯人。CT 說根據雅各的祝福，流便失去的長子名分轉給猶大和約瑟，所以先拈出這兩個支派的地；GT《研經資料》說猶大分得大塊土地的主因是人口龐大（民26:22 有76,500人）；GT《聖經精讀本》說猶大所得之地遠遠超過其他支派。
+  relation: 本章是猶大在河西實際受分的一章：全書記得最詳細的支派地界與城單。GT《綜合解讀》說唯有猶大和便雅憫留下詳細的城邑清單；KC 說猶大才真正是合神心意的支派，但第63節也顯出這個支派缺少把仇敵趕盡的力量。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 13
+    - 14
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第1節「猶大支派按著宗族拈鬮所得之地」。GT《綜合解讀》說「表面上是人的手在拈鬮，實際上是神的手在管理」，並說每個支派都是按著宗族拈鬮，拈鬮的最小單位是宗族。KC 說使徒行傳1章是聖經最後一次用拈鬮來知道主的旨意，此後由聖靈引導。
+  relation: 第14章宣告河西要拈鬮分地，本章是第一個拈出來的支派。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 家室與宗族
+  path: link_folder/主題/家室與宗族.md
+  summary: 第1、12、20節三次說「按著宗族」。GT《綜合解讀》說「宗族」原文是部族、家族，是支派與父家之間的單位，由長老領導，同一宗族的土地形成一個行政區；CT 也說宗族是在支派和家族之間的單位。KC 說城單裡的「村莊」不像今天想的村子，而像一兩個家庭同住同工的小聚落，代表信徒在家庭這樣較小的範圍裡彼此分享福分。
+  relation: 本章把民數記點名造冊的單位落到地上：猶大的地是按宗族拈鬮分的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 以東
+  path: link_folder/地點/以東.md
+  summary: 第1節猶大的地「到以東的交界」，第21節南地的城「與以東交界相近」。CT 說以東地處死海的南面；BH 說這條邊界同時標出親屬關係與分隔。KC 說住在南地的人面對以東，以東是兄弟之邦，同時是最可恨的仇敵，代表信徒裡面的肉體。
+  relation: 本章以東是猶大南界外的鄰居，不是敘事對象。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 12
+    - 13
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 鹽海
+  path: link_folder/地點/鹽海.md
+  summary: 第2、5節猶大的南界從鹽海的盡邊起，東界是從鹽海南邊到約但河口。CT 說『鹽海』就是死海，『朝南的海汊』指死海南端如舌頭狀伸出的地岬；GT《研經資料》說「海汊」字義是舌頭、舌狀的海灣。
+  relation: 本章鹽海是猶大地界的起點，也是整條東界。
+  overview_review:
+    signals:
+    - development_blank
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 迦南四境的地名考據
+  path: link_folder/背景/迦南四境的地名考據.md
+  summary: 第2-4節猶大的南界。GT 華爾頓《約書亞記背景注釋》說按照民34:3-5，猶大的南界就是國界；亞克拉濱坡可能是納克布薩法，加低斯巴尼亞的遺址最有可能是庫代拉特泉，押們或為穆維利泉，埃及小河則是阿里什乾河；又說名單上各地間方向的描述十分籠統，只能提供粗略的方位。
+  relation: 民34 的南界在本章原封不動地成為猶大的南界。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 加低斯
+  path: link_folder/地點/加低斯.md
+  summary: 第3節南界「上到加低斯巴尼亞的南邊」。CT 說它位於別是巴西南南方約76公里；GT《綜合解讀》說這裡是十二探子出發窺探迦南、以色列人開始38年曠野飄流的地方，也是結束飄流、重新出發進迦南的地方。第23節的基低斯，CT 說可能就是加低斯。
+  relation: 本章加低斯從事件的現場變成猶大南界上的一個點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 埃及河的地理辨識
+  path: link_folder/解經爭議/埃及河的地理辨識.md
+  summary: 第4、47節「埃及小河」。GT《綜合解讀》說它是迦南和埃及的邊界阿里什旱溪；GT《研經資料》說是現今之阿里什乾河、應許之地的西南界；GT 所引 SDA 說是艾裡什河的北部支流；BH 也說一般認為是 Wadi el-Arish。CT 說它位於迦薩西南方約74公里，是一條流入地中海的小河。
+  relation: 本章 GT 多家與 BH 都採阿里什旱溪的辨識，CT 只給出位置與流向；它標出猶大南界與城單的西南端。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第5節東界到「約但河口」，北界「從約但河口的海汊起」。CT 說約但河口指約但河流入死海的入海口，是東界的終點、北界的起點；BH 說神曾在這裡使約但河的水停住。
+  relation: 本章約但河口是猶大東界與北界的交會點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 28
+    - 29
+    definition: keep
+    development: keep
+- title: 亞割谷
+  path: link_folder/地點/亞割谷.md
+  summary: 第7節北界「從亞割谷往北」。GT《綜合解讀》與《研經資料》都說亞割谷就是亞干被處死的地方（書7:26）；BH 說這個名叫「連累」的地方也成了猶大產業的一條界線，並預告何2:15 說它要成為指望的門。
+  relation: 第7章的刑場，本章成了猶大北界上的地標。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 耶布斯人
+  path: link_folder/人物/耶布斯人.md
+  summary: 第8節北界「貼近耶布斯的南界（耶布斯就是耶路撒冷）」；第63節「住耶路撒冷的耶布斯人，猶大人不能把他們趕出去，耶布斯人卻在耶路撒冷與猶大人同住，直到今日」。CT 說耶布斯是大衛未佔領以前的古城名；CT 話中之光說猶大人能趕出亞衲族的三個族長，卻不能趕出耶布斯人，「問題不在耶布斯人比亞衲族更強，問題乃在猶大人信心與順服的情況有了改變」。
+  relation: 本章耶布斯人是猶大地界內第一個沒被趕出的群體；GT 多家指出要到大衛時才攻取耶路撒冷（撒下5:6-7）。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 耶路撒冷
+  path: link_folder/地點/耶路撒冷.md
+  summary: 第8節猶大的北界貼著耶路撒冷南邊經過欣嫩子谷，第63節耶布斯人仍住在耶路撒冷。GT《綜合解讀》說猶大的邊界從耶路撒冷城的南邊繞過去，城屬於便雅憫；GT《研經資料》說它位於兩支派交界，成了三不管地帶；GT《雷氏研讀本》《啟導本》《綜合解讀》用上城、下城解釋士1:8，但對方位說法相反。
+  relation: 本章耶路撒冷是地界上的參照點，也是章末唯一點名的未得之城；歸屬問題另見耶路撒冷屬猶大或便雅憫這個爭議。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 基列耶琳
+  path: link_folder/地點/基列耶琳.md
+  summary: 第9節「巴拉就是基列耶琳」，第60節「基列巴力就是基列耶琳」。CT 說巴拉是基列耶琳的舊名，原文字義「森林之城」；GT《研經資料》說此城也被稱為基列巴力、巴拉；GT《綜合解讀》與 BH 都說約櫃從非利士地運回後存放在這裡多年（撒上7:1-2）。
+  relation: 第9章它是基遍聯盟的一城，本章它成了猶大北界上的點，又列在山地城單裡；本章給了它另外兩個名字巴拉與基列巴力。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亭拿（猶大）
+  path: link_folder/地點/亭拿（猶大）.md
+  summary: 第57節山地城單「該隱、基比亞、亭納」。GT《綜合解讀》說這亭納是猶大剪羊毛的地方；CT 說它不同於第10節的亭納，位於希伯崙北方約19公里；BH 也說它很可能不是士14 參孫去的那座邊界城。
+  relation: 創38 猶大剪羊毛的亭拿，本章出現在猶大山地的城單裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 以革倫
+  path: link_folder/地點/以革倫.md
+  summary: 第11節北界「通到以革倫北邊」，第45-46節「以革倫和屬以革倫的鎮市村莊」。GT《綜合解讀》說以革倫是非利士五城中最北的一座，猶大邊界從城北穿過，因此以革倫屬於猶大，後來轉屬但支派（書19:43）；GT 華爾頓說非利士人的城邑只是在名義上歸屬猶大，要到王國時代才歸降；BH 說它後來以敬拜巴力西卜出名（王下1:2-4）。
+  relation: 第13章它在未得之地的清單裡，本章它被劃進猶大的地界和城單，但實際上仍在非利士人手中。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: *id001
+- title: 大海（地中海）
+  path: link_folder/地點/大海（地中海）.md
+  summary: 第4、11、12、47節南界、北界都「直通到海為止」，第12節「西界就是大海和靠近大海之地」。KC 說猶大的東界與西界都用一片水標示；GT《聖經精讀本》說地中海沿岸的平地，非利士的五城一直未被征服，直到大衛時代才隸屬以色列。
+  relation: 本章大海是猶大的西界。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: *id001
+- title: 迦勒
+  path: link_folder/人物/迦勒.md
+  summary: 第13-19節約書亞照耶和華的吩咐把基列亞巴分給迦勒；迦勒從那裡趕出亞衲族的三個族長，又懸賞攻取基列西弗，把女兒押撒給攻下城的姪兒俄陀聶，並應押撒的請求把上泉下泉給她。KC 說他已八十五歲，仍像剛窺探那地時一樣無懼；巨人沒有變小，迦勒對神能力的信心也沒有變小。BH 說他以四十五年前同樣的信心行事。
+  relation: 第14章迦勒求這山地，本章他真的得著並趕出了仇敵；他也開始把產業交給下一代。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 迦勒求得希伯崙
+  path: link_folder/事件/迦勒求得希伯崙.md
+  summary: 第13-14節約書亞照耶和華的吩咐將基列亞巴分給迦勒，迦勒從那裡趕出亞衲族的三個族長。KC 說這裡我們讀到迦勒真的佔有了他的產業：他得了，也把仇敵趕出去了。GT《聖經精讀本》說亞衲族似乎又重新佔領了被約書亞所征服之地，迦勒分得希伯崙之後重又殲滅了他們；CT 說第14節是書10:37 的補充說明。
+  relation: 第14章是迦勒的請求與約書亞的賜地，本章是這件事的完成：地從應許變成佔有。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 基列亞巴
+  path: link_folder/地點/基列亞巴.md
+  summary: 第13節「基列亞巴……亞巴是亞衲族的始祖（基列亞巴就是希伯崙）」，第54節山地城單又列「基列亞巴（基列亞巴就是希伯崙）」。CT 說基列亞巴是亞衲族始祖亞巴佔據此城時所起的名字，迦勒取得後又改回叫希伯崙；原文字義「亞巴之城」。
+  relation: 本章兩次用這個舊名，並明說亞巴是亞衲族的始祖。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 亞巴（亞衲族）
+  path: link_folder/人物/亞巴（亞衲族）.md
+  summary: 第13節「亞巴是亞衲族的始祖」。CT 說基列亞巴是亞衲族始祖亞巴佔據此城時所起的名字；GT《研經資料》說「亞巴」字義是「第四」。BH 說亞巴與亞衲族相連，他們的身量與力量曾在加低斯巴尼亞嚇倒大半的以色列人。
+  relation: 書14:15 稱他為亞衲族中最尊大的人，本章改稱他是亞衲族的始祖。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 希伯崙
+  path: link_folder/地點/希伯崙.md
+  summary: 第13節基列亞巴就是希伯崙，第14節迦勒從那裡趕出亞衲族的三個族長，第54節希伯崙列在山地城單。GT《綜合解讀》說希伯崙是猶大山地的主要城市，是亞伯拉罕、撒拉、以撒、雅各埋葬的地方，大衛曾在這裡作猶大王七年半（撒下2:11）。KC 說迦勒取了意為「city of giants」（巨人之城）的基列亞巴，把它變成意為「fellowship」（交通）的希伯崙。
+  relation: 第14章希伯崙被給了迦勒，本章迦勒把亞衲族從這城趕出；同一章它又以猶大山地一組城的中心出現。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 亞衲族與偉人拿非林
+  path: link_folder/背景/亞衲族與偉人拿非林.md
+  summary: 第13節亞巴是亞衲族的始祖，第14節迦勒趕出「亞衲族的三個族長，就是示篩、亞希幔、撻買」。GT《研經資料》說這可能是三個亞衲家族，「三個族長」直譯是「三個族」。GT《聖經精讀本》說約書亞已殲滅亞衲的子孫（書11:21-22），亞衲族似乎又重新佔領了被征服之地；GT《啟導本》說大概是逃脫的亞衲族人回來重占。KC 說所有怕過他們的以色列人都死了。
+  relation: 民13:22 探子在希伯崙看見的三個名字，本章被迦勒趕出去；這也讓書11:21 已剪除亞衲族的記載與本章之間出現一個時間上的張力。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:13
+      - 申命記:1
+      - 申命記:9
+      - 約書亞記:11
+      - 約書亞記:14
+      - 約書亞記:15
+- title: 趕出（ya.rash）
+  path: link_folder/原文/趕出（ya.rash）.md
+  summary: 第14節「迦勒就從那裡趕出亞衲族的三個族長」，第63節「猶大人不能把他們趕出去」。STEP 語言資料顯示第14節是 va/i.Yo.resh（H3423H，Vh 形，譯義 and he dispossessed），第63節是 le./ho.ri.Sha/m（H3423H，Vh 形，譯義 to dispossess them）。CT 話中之光說：「問題不在耶布斯人比亞衲族更強，問題乃在猶大人信心與順服的情況有了改變。」
+  relation: 同一個動詞在本章頭尾各用一次：開頭是迦勒做到了，結尾是猶大做不到。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:13
+      - 約書亞記:14
+      - 約書亞記:15
+- title: 底璧（城）
+  path: link_folder/地點/底璧（城）.md
+  summary: 第15節迦勒攻擊底璧的居民，「這底璧從前名叫基列西弗」；第16-17節俄陀聶奪取了那城；第49節「基列薩拿就是底璧」。CT 說這底璧就是書10:38 的底璧，不同於第7節北界上的底璧；GT 華爾頓說「基列西弗」是「書城」或「條約鎮」之義，近代挖掘顯示拉布德廢墟可能是其遺址；GT《研經資料》說一般認為「基列薩拿」是「基列西弗」的誤寫。GT《雷氏研讀本》《串珠》說俄陀聶是第二次攻取。
+  relation: 書10 約書亞攻取底璧，本章俄陀聶又攻取一次；為什麼要再打，另見希伯崙與底璧被攻取了幾次這個爭議。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 南地
+  path: link_folder/地點/南地.md
+  summary: 第19節押撒說「你既將我安置在南地，求你也給我水泉」；第21-32節列出猶大「儘南邊的城邑」。CT 說南地指別是巴以南一片貧瘠乾地；GT《綜合解讀》說南地是猶大山地南方的半乾旱地帶，那裡的水泉通常是在旱溪附近挖掘的水井，要靠秋雨春雨才出水；BH 說在乾旱的南地，沒有可靠水源的地無法養活莊稼、羊群與家庭。
+  relation: 本章南地的乾旱成了押撒求水泉的理由，南地也是猶大四區城單的第一區。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 別是巴
+  path: link_folder/地點/別是巴.md
+  summary: 第28節南地城單「哈薩書亞、別是巴、比斯約他」。GT《綜合解讀》說別是巴是亞伯拉罕和以撒挖井的地方，是南地的主要城市，聖經常用「從但到別是巴」代表全以色列，後來劃給了西緬（書19:2）；GT 華爾頓說南部城鎮以別是巴為中心。
+  relation: 本章別是巴第一次在約書亞記出現，是猶大南地城單的中心，後來又出現在西緬的名單裡。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 迦南大敗直到何珥瑪
+  path: link_folder/歷史/迦南大敗直到何珥瑪.md
+  summary: 第30節南地城單「伊勒多臘、基失、何珥瑪」。BH 說何珥瑪這名字同時記著以色列先前的失敗與後來的得勝：不信之後擅自上去在何珥瑪被擊敗（民14:40-45），後來求告耶和華得勝並給那地方起名何珥瑪（民21:1-3）。CT 說何珥瑪位於別是巴東方約11公里。
+  relation: 本章何珥瑪只是南地城單的一個名字，BH 讓它帶著民14 與民21 的兩段記憶。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 高原（Shephelah）
+  path: link_folder/地點/高原（Shephelah）.md
+  summary: 第33節「在高原有以實陶、瑣拉、亞實拿」，第33-47節列出高原的城。CT 說『高原』原文是低原；GT《綜合解讀》說示非拉丘陵有五條東西走向的山谷，是從非利士沿海平原進入猶大山地的天然交通路線，也成了以色列人與非利士人經常爭戰的地方；GT 華爾頓說高原的城鎮自北至南分為四組，以拉吉為中心。
+  relation: 前幾章示非拉是戰場，本章它成了猶大的一個行政區，城單分成數組。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 耶末
+  path: link_folder/地點/耶末.md
+  summary: 第35節高原城單「耶末、亞杜蘭、梭哥、亞西加」。CT 說耶末位於伯利恆西方約22公里；GT 華爾頓說是耶路撒冷以西十六哩的雅穆克廢墟；BH 說耶末的王毘蘭加入攻擊基遍和約書亞的聯盟，它的失敗為猶大守住了低地的通道。
+  relation: 書10、書12 耶末是被擊敗的王城，本章它被列進猶大的城單。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 亞杜蘭
+  path: link_folder/地點/亞杜蘭.md
+  summary: 第35節高原城單。CT 說亞杜蘭位於希伯崙西北方約16公里；GT《綜合解讀》說大衛逃亡時曾躲在亞杜蘭（撒上22:1）；BH 說在亞杜蘭洞，神把受窘迫、欠債的人聚到大衛身邊。
+  relation: 創38 猶大去亞杜蘭人那裡，本章亞杜蘭成了猶大高原的一座城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 亞西加
+  path: link_folder/地點/亞西加.md
+  summary: 第35節高原城單。CT 說亞西加位於耶末西方約3公里；GT《綜合解讀》說亞西加扼守以拉谷西邊的入口，大衛在梭哥和亞西加中間的以拉谷殺死歌利亞；BH 說它在約書亞戰勝亞摩利聯軍時有份，後來又是猶大抵擋巴比倫的最後幾座堅固城之一（耶34:7）。
+  relation: 書10 冰雹落到亞西加，本章它被列進猶大的高原。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 拉吉
+  path: link_folder/地點/拉吉.md
+  summary: 第39節高原城單「拉吉、波斯加、伊磯倫」。GT《綜合解讀》說拉吉位於從沿海平原到猶大山地的路線上，是重要的防衛城市，亞述和巴比倫在攻打耶路撒冷之前都先攻佔拉吉；GT 華爾頓說高原城鎮以拉吉為中心，拉吉的城防在王國時代大事擴建；BH 說它是西拿基立大軍的主要目標。
+  relation: 書10 拉吉是第二天才攻下的城，本章它成了猶大高原的中心。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 伊磯倫
+  path: link_folder/地點/伊磯倫.md
+  summary: 第39節高原城單。CT 說伊磯倫位於希伯崙西方約36公里；GT 華爾頓說伊磯倫位置至今不明，認為它是黑西遺址的傳統說法並無根據；BH 說約書亞擊敗它的王、攻取這城（書10:34-35）。
+  relation: 書10、書12 伊磯倫是被攻取的王城，本章它列在猶大高原。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 瑪基大
+  path: link_folder/地點/瑪基大.md
+  summary: 第41節高原城單「基低羅、伯大袞、拿瑪、瑪基大」。CT 說瑪基大位於伯利恆西方約24公里；BH 說這裡是約書亞戰勝五個亞摩利王的地方，五王曾藏在洞裡。
+  relation: 書10 的五王之洞，本章成了猶大高原一組城的最後一座。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 立拿
+  path: link_folder/地點/立拿.md
+  summary: 第42節高原城單「又有立拿、以帖、亞珊」。CT 說立拿位於亞西加西面約6公里；GT 華爾頓說立拿可能是薩非遺址或博納特遺址；BH 說它後來成為利未城，在約蘭作王時背叛猶大，西拿基立也曾攻打它。
+  relation: 書10 立拿是南征的第二座城，本章它列在猶大高原。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 亞實突
+  path: link_folder/地點/亞實突.md
+  summary: 第46-47節「一切靠近亞實突之地」「亞實突和屬亞實突的鎮市村莊」。GT 華爾頓說非利士城邦只是在名義上歸屬猶大，要到王國時代才歸降；GT《聖經精讀本》說亞實突很久都未被征服，後被烏西亞王攻陷（代下26:6）；BH 說約櫃被擄時大袞在亞實突的廟中倒下（撒上5:1-7）。
+  relation: 書11 它是亞衲族留下的城，書13 它在未得之地清單裡，本章它被劃進猶大的地界，實際仍在非利士人手中。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 迦薩
+  path: link_folder/地點/迦薩.md
+  summary: 第47節「迦薩和屬迦薩的鎮市村莊；直到埃及小河」。CT 說迦薩是非利士五大城區之一，位於希伯崙西方約61公里；GT《綜合解讀》說沿海平原長期被擁有鐵車的非利士人控制，一直到大衛的時候才被攻取；BH 說參孫被囚在迦薩，最後在那裡推倒大袞的廟（士16:21-30）。
+  relation: 前幾章迦薩是邊界端點，本章它被列進猶大的城單，城單也停在它南邊的埃及小河。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 亞拿伯
+  path: link_folder/地點/亞拿伯.md
+  summary: 第50節山地城單「亞拿伯、以實提莫、亞念」。CT 說亞拿伯位於希伯崙西南方19公里；GT 華爾頓說是亞拿伯廢墟；BH 說亞拿伯與亞衲族相連，約書亞曾從這一帶剪除他們（書11:21-22）。
+  relation: 書11 亞拿伯是剪除亞衲族的地方之一，本章它列進猶大山地。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 曠野
+  path: link_folder/地點/曠野.md
+  summary: 第61節「在曠野有伯亞拉巴、密丁、西迦迦」。GT《綜合解讀》說猶大曠野位於猶大山地到死海西岸之間的狹長山坡，地形在20公里左右的距離內急速下降了900多米，只有少數綠洲有人居住；GT《研經資料》說惟有水泉和水井附近才能維生，因此只提到六個城鎮。KC 說曠野提醒信心：這世界沒有什麼可以給信心。
+  relation: 本章「曠野」是猶大城單的第四區，也是最小的一區。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 哈洗遜他瑪
+  path: link_folder/地點/哈洗遜他瑪.md
+  summary: 第62節曠野城單「匿珊、鹽城、隱基底」。CT 說隱基底原文字義「小羊的泉源」；GT 華爾頓說隱基底按考證是死海西岸朱爾恩遺址的溫泉綠洲，曠野六城中有把握知道位置的只有伯亞拉巴和隱基底；GT《綜合解讀》與 BH 說它是大衛在曠野躲避掃羅的綠洲（撒上23:29、24:1）。
+  relation: 創14 的哈洗遜他瑪，本章以後來的名字隱基底列進猶大的曠野城單。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:14
+      - 約書亞記:15
+- title: 歌珊（迦南南部）
+  path: link_folder/地點/歌珊（迦南南部）.md
+  summary: 第51節山地城單「歌珊、何倫、基羅」。CT 說這個歌珊不是埃及的歌珊，而是死海東面、山地南面的一塊地區（參書10:41）；GT《啟導本》說此處歌珊為一個城的名字，不同於書10:41 的「歌珊全地」；GT《研經資料》說它指一個城的名字，並非埃及的歌珊；BH 也說它不同於埃及的歌珊。
+  relation: 書10、書11 歌珊是一片地區，本章同一個名字成了猶大山地的一座城；CT 與 GT《啟導本》對兩者是否同指並不一致。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 直到今日
+  path: link_folder/主題/直到今日.md
+  summary: 第63節「耶布斯人卻在耶路撒冷與猶大人同住，直到今日」。GT《綜合解讀》說猶大人和便雅憫人都不能把耶布斯人趕出去，耶布斯人在耶路撒冷周圍的村莊與他們同住，「直到今日」，大衛的時代城裡還有耶布斯人（代上21:15）。
+  relation: 第14章「直到今日」說的是迦勒的產業留存下來，本章說的是一個沒有完成的征服留存下來。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: GT《綜合解讀》在第15節說，迦南地的所有權屬於神，以色列人分得了使用權，但許多「未得之地」（書13:1）還在迦南人手中，需要進一步的爭戰才能實際地享用應許。第45-47節非利士城邑與第63節耶路撒冷仍未得：GT 華爾頓說非利士城邑只是在名義上歸屬猶大。
+  relation: 第13章列出未得之地，第14章迦勒去得了一塊，本章猶大的城單裡就包含好幾處還沒得到的地方。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
