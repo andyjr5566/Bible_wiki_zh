@@ -149,7 +149,8 @@ def _king_interval(king: dict) -> tuple[int, int]:
 
 
 def _overlaps(first: tuple[int, int], second: tuple[int, int]) -> bool:
-    return max(first[1], second[1]) <= min(first[0], second[0])
+    # 主前年數字大＝早；只在前後交接的那一年相接不算重疊
+    return max(first[1], second[1]) < min(first[0], second[0])
 
 
 def _king_columns(kings: list[dict]) -> dict[int, tuple[float, float]]:
@@ -163,7 +164,7 @@ def _king_columns(kings: list[dict]) -> dict[int, tuple[float, float]]:
         group_end = None
         for king in rows:
             interval = _king_interval(king)
-            if group and interval[0] < group_end:
+            if group and interval[0] <= group_end:
                 groups.append(group)
                 group = []
                 group_end = None
@@ -204,6 +205,18 @@ def _svg_defs(prefix: str) -> list[str]:
     ]
 
 
+
+def bar_pads(names: list[str]) -> dict[str, str]:
+    """長條圖名稱補齊。名稱全是全形字時沿用全形空白；混有半形字時依顯示寬度補半形空白。"""
+    import unicodedata
+    if all(unicodedata.east_asian_width(ch) in "WF" for name in names for ch in name):
+        width = max(len(name) for name in names)
+        return {name: "　" * (width - len(name)) for name in names}
+    def cells(text: str) -> int:
+        return sum(2 if unicodedata.east_asian_width(ch) in "WF" else 1 for ch in text)
+    width = max(cells(name) for name in names)
+    return {name: " " * (width - cells(name)) for name in names}
+
 def timeline_svg(kings: list[dict], mini: bool = False) -> str:
     """產生不含空白段落的直式南北國年代 SVG。"""
     prefix = "mini" if mini else "full"
@@ -222,7 +235,7 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
         top_year += 10
         bottom_year -= 10
     scale = 1 if mini else 3
-    plot_top = 52 if mini else 58
+    plot_top = 98
     summary_space = 44 if mini else 40
     height = plot_top + (top_year - bottom_year) * scale + summary_space
     esc = lambda value: html.escape(str(value), quote=True)
@@ -230,22 +243,20 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
     lines.extend(_svg_defs(prefix))
 
     legend = [
-        ("good", 0), ("good_caveat", 76), ("good_to_bad", 181),
-        ("bad_to_good", 263), ("bad", 345), ("none", 410),
+        ("good", 0, 14), ("good_caveat", 160, 14), ("good_to_bad", 320, 14),
+        ("bad_to_good", 0, 32), ("bad", 160, 32), ("none", 320, 32),
     ]
-    for category, x in legend:
+    for category, x, y in legend:
         fill = f"url(#kgrad-{prefix}-{KING_GRADIENTS[category]})" if category in KING_GRADIENTS else KING_COLORS[category]
         stroke = f' stroke="{KING_GOLD}" stroke-width="2.5"' if category == "good_caveat" else ""
-        lines.append(f'<rect x="{x}" y="5" width="9" height="9" fill="{fill}"{stroke}/>')
-        lines.append(f'<text x="{x + 12}" y="13" font-size="9" fill="currentColor">{KING_MARKS[category]} {KING_LABELS[category]}</text>')
-
-    lines.append('<text x="0" y="28" font-size="9" fill="currentColor">※ 兩卷寫法不同</text>')
-    lines.append('<rect x="91" y="20" width="10" height="9" fill="#8a8f98" fill-opacity="0.3" stroke="#8a8f98" stroke-dasharray="3 2"/><text x="106" y="28" font-size="9" fill="currentColor">淡色虛線：共治</text>')
-    lines.append('<rect x="218" y="20" width="10" height="9" fill="#8a8f98" fill-opacity="0.4" stroke="currentColor" stroke-dasharray="3 2"/><text x="233" y="28" font-size="9" fill="currentColor">半透明虛線：推估</text>')
-    lines.append('<text x="365" y="28" font-size="9" fill="currentColor">並排：同時有兩位王</text>')
-    if not mini:
-        lines.append('<text x="192" y="49" text-anchor="middle" font-size="12" fill="currentColor">猶大</text>')
-        lines.append('<text x="288" y="49" text-anchor="middle" font-size="12" fill="currentColor">以色列</text>')
+        lines.append(f'<rect x="{x + 1}" y="{y - 10}" width="11" height="11" fill="{fill}"{stroke}/>')
+        lines.append(f'<text x="{x + 17}" y="{y}" font-size="11" fill="currentColor">{KING_MARKS[category]} {KING_LABELS[category]}</text>')
+    lines.append('<text x="0" y="50" font-size="11" fill="currentColor">※ 兩卷寫法不同</text>')
+    lines.append('<rect x="111" y="40" width="11" height="11" fill="#8a8f98" fill-opacity="0.3" stroke="#8a8f98" stroke-dasharray="3 2"/><text x="127" y="50" font-size="11" fill="currentColor">淡色虛線：共治</text>')
+    lines.append('<rect x="241" y="40" width="11" height="11" fill="#8a8f98" fill-opacity="0.4" stroke="currentColor" stroke-dasharray="3 2"/><text x="257" y="50" font-size="11" fill="currentColor">半透明虛線：推估</text>')
+    lines.append('<text x="0" y="66" font-size="11" fill="currentColor">同一國同時有兩位王（共治或並立）時，色條並排成窄欄。</text>')
+    lines.append('<text x="192" y="88" text-anchor="middle" font-size="12" fill="currentColor">猶大</text>')
+    lines.append('<text x="288" y="88" text-anchor="middle" font-size="12" fill="currentColor">以色列</text>')
 
     def y_of(year: int) -> float:
         return plot_top + (top_year - year) * scale
@@ -284,7 +295,7 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
         if mini:
             continue
         mark = KING_MARKS.get(category, "—") + ("※" if (king.get("verdict") or {}).get("differs") else "")
-        label = f"{king.get('name', king.get('id', ''))} {mark} {KING_LABELS.get(category, KING_LABELS['none'])}"
+        label = f"{king.get('name', king.get('id', ''))} {mark}"
         middle = (bar_top + bar_bottom) / 2
         if kingdom == "統一" and bar_height >= 14:
             label_rows["unified"].append((king, middle, middle, bar_top, label, "center"))
@@ -327,10 +338,10 @@ def timeline_svg(kings: list[dict], mini: bool = False) -> str:
     else:
         def count_for(kingdom: str, category: str) -> int:
             return sum(1 for king in kings if king.get("kingdom") == kingdom and (king.get("verdict") or {}).get("class", "none") == category)
-        judah = " · ".join(f"{KING_MARKS[c]} {KING_LABELS[c]} {count_for('猶大', c)}" for c in KING_CATEGORIES)
-        israel = " · ".join(f"{KING_MARKS[c]} {KING_LABELS[c]} {count_for('以色列', c)}" for c in KING_CATEGORIES)
-        lines.append(f'<text x="0" y="{height - 24}" font-size="8.5" fill="currentColor">猶大：{judah}</text>')
-        lines.append(f'<text x="0" y="{height - 8}" font-size="8.5" fill="currentColor">以色列：{israel}</text>')
+        judah = "　".join(f"{KING_MARKS[c]} {count_for('猶大', c)}" for c in KING_CATEGORIES)
+        israel = "　".join(f"{KING_MARKS[c]} {count_for('以色列', c)}" for c in KING_CATEGORIES)
+        lines.append(f'<text x="0" y="{height - 24}" font-size="11" fill="currentColor">猶大　{judah}</text>')
+        lines.append(f'<text x="0" y="{height - 8}" font-size="11" fill="currentColor">以色列　{israel}</text>')
     lines.append("</svg>")
     return "\n".join(lines)
 
@@ -1307,9 +1318,19 @@ class Builder:
                     self.render_list(r, 0, listing, sec["id"], "> ")
                 fold = "-" if len(listing) > 25 else "+"
                 out += [f"> [!abstract]{fold} 完整名單（{self.count_section(sec['id'])} 人）"] + listing + [""]
+            # 同一段裡連續、沒有小標題的名單合成一張表（表格本來就連續輸出，分開只會變成一列一張）
+            tables: list[dict] = []
             for st in sec.get("statements", []):
-                if "roster" in st:
-                    out += self.render_roster(st, sec)
+                if "roster" not in st:
+                    continue
+                for member in st["roster"]:
+                    member.setdefault("ref", st["ref"])
+                if not st.get("label") and tables and not tables[-1].get("label"):
+                    tables[-1]["roster"] = tables[-1]["roster"] + st["roster"]
+                else:
+                    tables.append({**st})
+            for st in tables:
+                out += self.render_roster(st, sec)
             facts = []
             for st in sec.get("statements", []):
                 ref = f"`{fmt_ref(st['ref'], self.book)}`"
@@ -1398,18 +1419,16 @@ class Builder:
             for king in kings:
                 if king.get("kingdom") == group.get("kingdom"):
                     out.append(f"  - [[#{king.get('title', king.get('name', king.get('id')))}|{king.get('name', king.get('id'))}]]")
-        out += ["", "## 年代圖", "", f"色條的長短照{registry['chronology']['label']}，經文本身沒有公元年份。", "",
-                "> [!info] 年代出處", f"> {registry['chronology']['source']}"]
+        out += ["", "## 年代圖", "", f"色條的長短照 {registry['chronology']['label']}，經文本身沒有公元年份。", "",
+                "> [!info] 年代出處", f"> - {registry['chronology']['source']}"]
         if registry["chronology"].get("estimate_source"):
-            out.append(f"> 推估年代：{registry['chronology']['estimate_source']}")
-        out.append(f"> {registry['chronology']['note']}")
+            out.append(f"> - 推估年代：{registry['chronology']['estimate_source']}")
+        out.append(f"> - {registry['chronology']['note']}")
         out += [""] + timeline_svg(kings).splitlines() + ["", "## 評語對照", ""]
         for group in groups:
             kingdom = group.get("kingdom")
             heading = str(group.get("heading", kingdom))
             out += [f"### {heading}的王", ""]
-            if group.get("intro"):
-                out += [str(group["intro"]).strip(), ""]
             out += ["| 王 | 分類 | 評語原句 | 但書或轉變 | 經節 |", "|---|---|---|---|---|"]
             for king in kings:
                 if king.get("kingdom") != kingdom:
@@ -1469,7 +1488,12 @@ class Builder:
                 if kingdom == "以色列" and king.get("chronicles_refs"):
                     out += [f"歷代志下提到他：`{fmt_ref(king['chronicles_refs'], self.book)}`", ""]
                 if king.get("kings_refs"):
-                    out += [f"列王紀：`{fmt_ref(king['kings_refs'], self.book)}`", ""]
+                    books = []
+                    for part in re.split(r"[,，]\s*", str(king["kings_refs"])):
+                        name = "撒母耳記" if part.startswith("撒") else "列王紀" if part.startswith("王") else ""
+                        if name and name not in books:
+                            books.append(name)
+                    out += [f"{'、'.join(books) or '列王紀'}：`{fmt_ref(king['kings_refs'], self.book)}`", ""]
                 if king.get("notes"):
                     out.append("> [!note] 讀經提醒")
                     for note in king["notes"]:
@@ -1536,10 +1560,10 @@ class Builder:
             scoped.append((str(item.get("short", item.get("data", ""))), count))
         if scoped:
             top = max(count for _, count in scoped)
-            width = max(len(label) for label, _ in scoped)
+            pads = bar_pads([label for label, _ in scoped])
             out.append("```text")
             for label, count in sorted(scoped, key=lambda row: -row[1]):
-                pad = "　" * (width - len(label))
+                pad = pads[label]
                 bar = "█" * max(1, round(count / top * 30)) if count else "·"
                 out.append(f"{label}{pad} {bar} {count} 節")
             out += ["```", ""]
@@ -1734,12 +1758,12 @@ class Builder:
             n = self.verse_count(g["ranges"]) if g["ranges"] else 0
             rows.append((g["name"], n, "、".join(r.replace("-", "–") for r in g["ranges"]) or "沒有獨立段落"))
         rows.sort(key=lambda r: -r[1])
-        width = max(len(r[0]) for r in rows)
+        pads = bar_pads([r[0] for r in rows])
         top = max(r[1] for r in rows)
         lines = ["```text"]
         for name, n, where in rows:
             bar = "█" * max(1, round(n / top * 30)) if n else "·"
-            pad = "　" * (width - len(name))
+            pad = pads[name]
             lines.append(f"{name}{pad} {bar} {n} 節" if n else f"{name}{pad} {bar} 沒有獨立段落")
         lines.append("```")
         return lines
