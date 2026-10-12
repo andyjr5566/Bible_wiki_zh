@@ -1,0 +1,546 @@
+book: 約書亞記
+chapter: 13
+A_use_directly: []
+B_needs_update:
+- name: 巴力的高處（Bamoth-baal）
+  suggested_type: 地點
+  evidence: 第17節「巴末巴力」；既有條目以民22:41 立條，GT《啟導本》已說它可能就是民21:19-20 的巴末，位於底本附近（書13:17）；BH
+    書13:17 稱 Bamoth-baal
+  surfaces:
+  - phrase: 巴末巴力
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 巴力的高處（Bamoth-baal）
+  existing_path: link_folder/地點/巴力的高處（Bamoth-baal）.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第1節「約書亞年紀老邁」
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第8、12、14、15、21、24、29、32、33節
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 非利士人
+  suggested_type: 地點
+  evidence: 第2節「非利士人的全境」、第3節「非利士人五個首領」
+  match_type: exact
+  existing_title: 非利士人
+  existing_path: link_folder/地點/非利士人.md
+- name: 迦薩
+  suggested_type: 地點
+  evidence: 第3節「迦薩人」
+  match_type: exact
+  existing_title: 迦薩
+  existing_path: link_folder/地點/迦薩.md
+- name: 亞實突
+  suggested_type: 地點
+  evidence: 第3節「亞實突人」
+  match_type: exact
+  existing_title: 亞實突
+  existing_path: link_folder/地點/亞實突.md
+- name: 迦特
+  suggested_type: 地點
+  evidence: 第3節「迦特人」
+  match_type: exact
+  existing_title: 迦特
+  existing_path: link_folder/地點/迦特.md
+- name: 亞衛人
+  suggested_type: 人物
+  evidence: 第3節「並有南方亞衛人之地」
+  match_type: exact
+  existing_title: 亞衛人
+  existing_path: link_folder/人物/亞衛人.md
+- name: 迦南人
+  suggested_type: 人物
+  evidence: 第3、4節
+  match_type: exact
+  existing_title: 迦南人
+  existing_path: link_folder/人物/迦南人.md
+- name: 西頓
+  suggested_type: 地點
+  evidence: 第4、6節「西頓人」
+  match_type: exact
+  existing_title: 西頓
+  existing_path: link_folder/地點/西頓.md
+- name: 亞摩利人
+  suggested_type: 人物
+  evidence: 第4節「直到亞摩利人的境界」、第10、21節「亞摩利王西宏」
+  match_type: exact
+  existing_title: 亞摩利人
+  existing_path: link_folder/人物/亞摩利人.md
+- name: 利巴嫩
+  suggested_type: 地點
+  evidence: 第5、6節
+  match_type: exact
+  existing_title: 利巴嫩
+  existing_path: link_folder/地點/利巴嫩.md
+- name: 黑門山
+  suggested_type: 地點
+  evidence: 第5節「黑門山根」、第11節「黑門全山」
+  surfaces:
+  - phrase: 黑門
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 黑門山
+  existing_path: link_folder/地點/黑門山.md
+- name: 巴力迦得
+  suggested_type: 地點
+  evidence: 第5節
+  match_type: exact
+  existing_title: 巴力迦得
+  existing_path: link_folder/地點/巴力迦得.md
+- name: 米斯利弗瑪音
+  suggested_type: 地點
+  evidence: 第6節
+  match_type: exact
+  existing_title: 米斯利弗瑪音
+  existing_path: link_folder/地點/米斯利弗瑪音.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第6節「將這地拈鬮分給以色列人為業」
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 迦南四境
+  suggested_type: 主題
+  evidence: GT 綜合解讀註第2-6節：神按著向摩西明確指示的迦南地四界（民34:2-12），從南到北列舉了「未得之地」
+  match_type: exact
+  existing_title: 迦南四境
+  existing_path: link_folder/主題/迦南四境.md
+- name: 逐漸趕出
+  suggested_type: 神學
+  evidence: CT 與 GT 綜合解讀註第1節：神定意「將這些國的民從你面前漸漸趕出」（申7:22），所以留下了許多未得之地
+  match_type: exact
+  existing_title: 逐漸趕出
+  existing_path: link_folder/神學/逐漸趕出.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第7、8、29、31節
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 流便
+  suggested_type: 人物
+  evidence: 第8、15、23節
+  match_type: exact
+  existing_title: 流便
+  existing_path: link_folder/人物/流便.md
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第8節「瑪拿西那半支派和流便、迦得二支派已經受了產業」
+  surfaces:
+  - phrase: 已經受了產業
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 兩支派半求河東之地為業
+  existing_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 河東之地是神的旨意還是神的允許
+  suggested_type: 解經爭議
+  evidence: GT 綜合解讀註第8節：河西之地是人在信心裡接受的神的應許，河東之地是人在堅持中要求的神的允許；CT 話中之光同；KC 第29-31節段說兩支派半憑眼目選地
+  match_type: exact
+  existing_title: 河東之地是神的旨意還是神的允許
+  existing_path: link_folder/解經爭議/河東之地是神的旨意還是神的允許.md
+- name: 瑪拿西半支派為何留在河東
+  suggested_type: 解經爭議
+  evidence: 第29節；CT：聖經並沒有記載瑪拿西支派要求留在約但河東岸；GT《靈修版》：他們有許多人選擇在河東定居，因為那地特別適於牧放牛羊
+  match_type: exact
+  existing_title: 瑪拿西半支派為何留在河東
+  existing_path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第8、23、27、32節
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 亞嫩河
+  suggested_type: 地點
+  evidence: 第9、16節「亞嫩谷」
+  surfaces:
+  - phrase: 亞嫩谷
+  match_type: exact
+  existing_title: 亞嫩河
+  existing_path: link_folder/地點/亞嫩河.md
+- name: 亞羅珥
+  suggested_type: 地點
+  evidence: 第9、16節「亞嫩谷邊的亞羅珥」
+  surfaces:
+  - phrase: 亞羅珥
+    verses:
+    - 9
+    - 16
+  match_type: exact
+  existing_title: 亞羅珥
+  existing_path: link_folder/地點/亞羅珥.md
+- name: 平原（mi.shor）
+  suggested_type: 地點
+  evidence: 第9、16、17、21節「米底巴的全平原」「希實本平原」「平原的各城」；STEP ha./mi.Shor（H4334）
+  surfaces:
+  - phrase: 平原
+    verses:
+    - 9
+    - 16
+    - 17
+    - 21
+  match_type: exact
+  existing_title: 平原（mi.shor）
+  existing_path: link_folder/地點/平原（mi.shor）.md
+- name: 底本
+  suggested_type: 地點
+  evidence: 第9、17節
+  match_type: exact
+  existing_title: 底本
+  existing_path: link_folder/地點/底本.md
+- name: 希實本
+  suggested_type: 地點
+  evidence: 第10、17、21、26、27節
+  match_type: exact
+  existing_title: 希實本
+  existing_path: link_folder/地點/希實本.md
+- name: 西宏
+  suggested_type: 人物
+  evidence: 第10、21、27節
+  match_type: exact
+  existing_title: 西宏
+  existing_path: link_folder/人物/西宏.md
+- name: 亞捫人
+  suggested_type: 人物
+  evidence: 第10節「直到亞捫人的境界」、第25節「亞捫人的一半地」
+  match_type: exact
+  existing_title: 亞捫人
+  existing_path: link_folder/人物/亞捫人.md
+- name: 基列
+  suggested_type: 地點
+  evidence: 第11、25、31節
+  match_type: exact
+  existing_title: 基列
+  existing_path: link_folder/地點/基列.md
+- name: 基述人和瑪迦人
+  suggested_type: 人物
+  evidence: 第11、13節「基述人、瑪迦人」；第2節「基述人的全地」GT 串珠、BH 說是南方另一個基述，不連到此條
+  surfaces:
+  - phrase: 基述人
+    verses:
+    - 11
+    - 13
+  match_type: exact
+  existing_title: 基述人和瑪迦人
+  existing_path: link_folder/人物/基述人和瑪迦人.md
+- name: 巴珊
+  suggested_type: 地點
+  evidence: 第11、12、30、31節
+  match_type: exact
+  existing_title: 巴珊
+  existing_path: link_folder/地點/巴珊.md
+- name: 撒迦
+  suggested_type: 地點
+  evidence: 第11節「直到撒迦」
+  match_type: exact
+  existing_title: 撒迦
+  existing_path: link_folder/地點/撒迦.md
+- name: 巴珊王噩
+  suggested_type: 人物
+  evidence: 第12、30、31節
+  match_type: exact
+  existing_title: 巴珊王噩
+  existing_path: link_folder/人物/巴珊王噩.md
+- name: 亞斯她錄
+  suggested_type: 地點
+  evidence: 第12、31節
+  match_type: exact
+  existing_title: 亞斯她錄
+  existing_path: link_folder/地點/亞斯她錄.md
+- name: 以得來
+  suggested_type: 地點
+  evidence: 第12、31節
+  match_type: exact
+  existing_title: 以得來
+  existing_path: link_folder/地點/以得來.md
+- name: 利乏音人
+  suggested_type: 人物
+  evidence: 第12節「利乏音人所存留的只剩下他」
+  match_type: exact
+  existing_title: 利乏音人
+  existing_path: link_folder/人物/利乏音人.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第14、33節「只是利未支派，摩西沒有把產業分給他們」
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 火祭（isheh）
+  suggested_type: 主題
+  evidence: 第14節「獻與耶和華─以色列神的火祭」；STEP 'i.Shei（H801）；GT《研經資料》引學者認為 SH801 與 SH800「火」音近但無關，只是祭物
+  match_type: exact
+  existing_title: 火祭（isheh）
+  existing_path: link_folder/主題/火祭（isheh）.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第14節兩次 na.cha.Lah（H5159）；第33節「耶和華─以色列的神是他們的產業」
+  surfaces:
+  - phrase: 產業
+    verses:
+    - 14
+    - 33
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 家室與宗族
+  suggested_type: 主題
+  evidence: 第15、24、29、31節「按著……宗族」；GT 綜合解讀：「宗族」是十二支派與各個父家之間的單位，以色列人分配土地是按宗族為單位；STEP
+    le./mish.pe.cho.Ta/m（H4940）
+  surfaces:
+  - phrase: 宗族
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 家室與宗族
+  existing_path: link_folder/主題/家室與宗族.md
+- name: 雅雜
+  suggested_type: 地點
+  evidence: 第18節
+  match_type: exact
+  existing_title: 雅雜
+  existing_path: link_folder/地點/雅雜.md
+- name: 基底莫
+  suggested_type: 地點
+  evidence: 第18節
+  match_type: exact
+  existing_title: 基底莫
+  existing_path: link_folder/地點/基底莫.md
+- name: 伯毘珥
+  suggested_type: 地點
+  evidence: 第20節
+  match_type: exact
+  existing_title: 伯毘珥
+  existing_path: link_folder/地點/伯毘珥.md
+- name: 瑣腓田與毘斯迦山頂
+  suggested_type: 地點
+  evidence: 第20節「毘斯迦山坡」
+  surfaces:
+  - phrase: 毘斯迦
+  match_type: exact
+  existing_title: 瑣腓田與毘斯迦山頂
+  existing_path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+- name: 伯耶西末
+  suggested_type: 地點
+  evidence: 第20節
+  match_type: exact
+  existing_title: 伯耶西末
+  existing_path: link_folder/地點/伯耶西末.md
+- name: 米甸的五王
+  suggested_type: 歷史
+  evidence: 第21節「米甸的族長以未、利金、蘇珥、戶珥、利巴」；CT：別處聖經稱他們是「王」（民31:8）
+  surfaces:
+  - phrase: 米甸的族長
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 米甸的五王
+  existing_path: link_folder/歷史/米甸的五王.md
+- name: 蘇珥（米甸首領）
+  suggested_type: 人物
+  evidence: 第21節
+  surfaces:
+  - phrase: 蘇珥
+    verses:
+    - 21
+  match_type: exact
+  existing_title: 蘇珥（米甸首領）
+  existing_path: link_folder/人物/蘇珥（米甸首領）.md
+- name: 巴蘭（比珥的兒子）
+  suggested_type: 人物
+  evidence: 第22節「比珥的兒子術士巴蘭」
+  surfaces:
+  - phrase: 巴蘭
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 巴蘭（比珥的兒子）
+  existing_path: link_folder/人物/巴蘭（比珥的兒子）.md
+- name: 巴蘭之死
+  suggested_type: 事件
+  evidence: 第22節「以色列人在所殺的人中，也用刀殺了……巴蘭」；KC：這似乎是摩西死前最後一次爭戰（民31:1-2、8）
+  match_type: exact
+  existing_title: 巴蘭之死
+  existing_path: link_folder/事件/巴蘭之死.md
+- name: 巴蘭是先知還是術士
+  suggested_type: 解經爭議
+  evidence: '第22節稱巴蘭為「術士」；STEP ha./ko.Sem（H7080，qa.sam: to divine）；CT 原文字義：術士＝占卜者'
+  surfaces:
+  - phrase: 術士
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 巴蘭是先知還是術士
+  existing_path: link_folder/解經爭議/巴蘭是先知還是術士.md
+- name: 雅謝
+  suggested_type: 地點
+  evidence: 第25節
+  match_type: exact
+  existing_title: 雅謝
+  existing_path: link_folder/地點/雅謝.md
+- name: 瑪哈念
+  suggested_type: 地點
+  evidence: 第26、30節
+  match_type: exact
+  existing_title: 瑪哈念
+  existing_path: link_folder/地點/瑪哈念.md
+- name: 疏割
+  suggested_type: 地點
+  evidence: 第27節
+  match_type: exact
+  existing_title: 疏割
+  existing_path: link_folder/地點/疏割.md
+- name: 基尼烈湖
+  suggested_type: 地點
+  evidence: 第27節「直到基尼烈海的極邊」
+  surfaces:
+  - phrase: 基尼烈海
+  match_type: exact
+  existing_title: 基尼烈湖
+  existing_path: link_folder/地點/基尼烈湖.md
+- name: 哈倭特睚珥
+  suggested_type: 地點
+  evidence: 第30節「在巴珊、睚珥的一切城邑，共六十個」；STEP cha.Vot ya.'Ir（H2333 加 H2971H）；GT《研經資料》：原文直譯作「在巴珊的睚珥的一切帳棚村莊」
+  surfaces:
+  - phrase: 睚珥的一切城邑
+    verses:
+    - 30
+  match_type: exact
+  existing_title: 哈倭特睚珥
+  existing_path: link_folder/地點/哈倭特睚珥.md
+- name: 瑪吉
+  suggested_type: 人物
+  evidence: 第31節「瑪拿西的兒子瑪吉的一半子孫」
+  match_type: exact
+  existing_title: 瑪吉
+  existing_path: link_folder/人物/瑪吉.md
+- name: 摩押平原
+  suggested_type: 地點
+  evidence: 第32節「對著耶利哥的摩押平原」
+  match_type: exact
+  existing_title: 摩押平原
+  existing_path: link_folder/地點/摩押平原.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第32節
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+C_new_formal:
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第1節「還有許多未得之地」，第2至6節逐區列出；CT、GT 綜合解讀把它連到申7:22「漸漸趕出」；GT《約書亞記研經資料》：直譯是「剩下要去得之地極多」；書18:3、23:4-5
+    再回到這個題目
+  target_path: link_folder/主題/未得之地.md
+- name: 趕出（ya.rash）
+  suggested_type: 原文
+  evidence: 'STEP 第1節「未得」le./rish.Ta/h、第6節「趕出」''o.ri.She/m、第12節「趕逐」va/i.yo.ri.She/m、第13節「沒有趕逐」ho.Ri.shu，同為
+    H3423H（ya.rash: to possess: take）；書15:63、16:10、17:12-13 續有「不能趕出」'
+  surfaces:
+  - phrase: 趕逐
+    verses:
+    - 12
+    - 13
+  - phrase: 趕出
+    verses:
+    - 6
+  target_path: link_folder/原文/趕出（ya.rash）.md
+- name: 西曷河
+  suggested_type: 地點
+  evidence: 第3節「從埃及前的西曷河往北」；STEP ha./shi.Chor（H7883G）；CT、GT 雷氏、啟導、串珠、研經資料對它是尼羅河支流還是埃及小河說法不一
+  target_path: link_folder/地點/西曷河.md
+- name: 以革倫
+  suggested_type: 地點
+  evidence: 第3節「直到以革倫的境界」「以革倫人」；STEP 'ek.rOn（H6138）；CT：非利士人最北的領地
+  target_path: link_folder/地點/以革倫.md
+- name: 亞實基倫
+  suggested_type: 地點
+  evidence: 第3節「亞實基倫人」；STEP ha./'esh.ke.lo.Ni（H832）
+  target_path: link_folder/地點/亞實基倫.md
+  semantic_hint:
+  - title: 以倫
+    score: 0.402
+    type: 人物
+- name: 米亞拉
+  suggested_type: 地點
+  evidence: 第4節「屬西頓人的米亞拉」
+  target_path: link_folder/地點/米亞拉.md
+- name: 迦巴勒
+  suggested_type: 地點
+  evidence: 第5節「還有迦巴勒人之地」；GT《丁道爾》《研經資料》：比伯洛／比布羅斯（Byblos）
+  target_path: link_folder/地點/迦巴勒.md
+- name: 哈馬口
+  suggested_type: 地點
+  evidence: 第5節「直到哈馬口」；CT：神命定給以色列人領地的最北端（參民34:8）
+  target_path: link_folder/地點/哈馬口.md
+- name: 米底巴
+  suggested_type: 地點
+  evidence: 第9、16節「米底巴的全平原」
+  target_path: link_folder/地點/米底巴.md
+- name: 伯巴力勉
+  suggested_type: 地點
+  evidence: 第17節；GT 串珠：又名巴力免（民32:38）或伯米恩（耶48:23）
+  target_path: link_folder/地點/伯巴力勉.md
+- name: 米法押
+  suggested_type: 地點
+  evidence: 第18節
+  target_path: link_folder/地點/米法押.md
+- name: 基列亭
+  suggested_type: 地點
+  evidence: 第19節；CT 字義「雙城」；GT《聖經精讀本》：流便支派所重建的摩押城邑（民32:37）
+  target_path: link_folder/地點/基列亭.md
+- name: 西比瑪
+  suggested_type: 地點
+  evidence: 第19節；BH：以葡萄園聞名，賽16:8、耶48:32 為它哀哭
+  target_path: link_folder/地點/西比瑪.md
+- name: 細列哈沙轄
+  suggested_type: 地點
+  evidence: 第19節「谷中山的細列哈沙轄」
+  target_path: link_folder/地點/細列哈沙轄.md
+- name: 拉抹米斯巴
+  suggested_type: 地點
+  evidence: 第26節「從希實本到拉抹米斯巴和比多寧」
+  target_path: link_folder/地點/拉抹米斯巴.md
+- name: 比多寧
+  suggested_type: 地點
+  evidence: 第26節
+  target_path: link_folder/地點/比多寧.md
+- name: 伯亞蘭
+  suggested_type: 地點
+  evidence: 第27節「谷中的伯亞蘭」
+  target_path: link_folder/地點/伯亞蘭.md
+  semantic_hint:
+  - title: 亞蘭
+    score: 0.414
+    type: 地點
+- name: 伯寧拉
+  suggested_type: 地點
+  evidence: 第27節
+  target_path: link_folder/地點/伯寧拉.md
+- name: 撒分
+  suggested_type: 地點
+  evidence: 第27節；字義「北方」
+  target_path: link_folder/地點/撒分.md
+- name: 拉巴前的亞羅珥
+  suggested_type: 地點
+  evidence: 第25節「直到拉巴前的亞羅珥」；CT：亞羅珥至少有四座同名不同城，這一座位於拉巴的南方約4公里；與第9、16節亞嫩谷邊的亞羅珥不同，故用經文片語命名
+  target_path: link_folder/地點/拉巴前的亞羅珥.md
+  semantic_hint:
+  - title: 拉班
+    score: 0.412
+    type: 人物
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-12T18:33:45Z'

@@ -1,0 +1,37 @@
+name: 趕出（ya.rash）
+type: 原文
+secondary_types: []
+aliases:
+- ya.rash
+status: formal
+definition: |-
+  書13 有四處經文，和合本分別譯作「未得」「趕出」「趕逐」三種說法，STEP 原文資料顯示用的是同一個動詞 ya.rash（H3423H，簡要詞典義 to possess: take）：
+
+  | 經文 | 和合本 | STEP 字形 | 形態碼 | 本節逐字譯義 |
+  |---|---|---|---|---|
+  | 書13:1 | 還有許多「未得」之地 | le./rish.Ta/h | HR/Vqcc/Sp3fs | to/ take possession of/ it |
+  | 書13:6 | 我必在以色列人面前「趕出」他們去 | 'o.ri.She/m | HVhi1cs/Sp3mp | I will dispossess/ them |
+  | 書13:12 | 這些地的人都是摩西所擊殺、所「趕逐」的 | va/i.yo.ri.She/m | Hc/Vhw3ms/Sp3mp | and/ he had dispossessed/ them |
+  | 書13:13 | 以色列人卻沒有「趕逐」基述人、瑪迦人 | ho.Ri.shu | HVhp3cp | they dispossessed |
+
+  書13:1 的形態碼是 Vq，譯義是 take possession（取得、佔有）；後三處的形態碼都是 Vh，譯義是 dispossess（使人失去產業、把人趕出）。一邊是自己得地，一邊是把原來住的人趕走，在原文裡用的是同一個動詞。這三個 Vh 的主詞也不同：書13:6 是神自己以第一人稱說要趕出，書13:12 是摩西，書13:13 是以色列人，而且是否定句。
+
+  **註釋怎麼讀這個字。** CT 的原文字義在書13:1 把「得」註為「佔有」，在書13:13 把「趕逐」註為「佔有，剝奪」，兩處註的正是同一組意思。GT《約書亞記研經資料》把書13:1 直譯為「剩下要去得之地極多」。KC 從這一組意思講屬靈應用：征服那地，表示那地還在仇敵手裡；享受那地與取得那地連在一起，而取得只能靠把仇敵趕走。BH 在書13:13 說，以色列各支派沒有完成在河東所分得之地的取得，基述與瑪迦繼續住在以色列的產業裡，使百姓暴露在外族的政治結盟與異教敬拜之下。
+accumulations:
+- book: 約書亞記
+  chapter: 13
+  summary: |-
+    STEP 顯示第1節「未得」、第6節「趕出」、第12、13節「趕逐」都是 ya.rash（H3423H）。第1節是 Vq 形，譯義 take possession；後三處是 Vh 形，譯義 dispossess。第6節主詞是神，第12節是摩西，第13節是以色列人而且是否定句「沒有趕逐」。CT 把第13節「趕逐」註為「佔有，剝奪」。
+  relation: |-
+    本章用同一個動詞把「還有許多未得之地」與「以色列人卻沒有趕逐基述人、瑪迦人」連在一起：分地段一開頭，就同時出現神的應許「我必在以色列人面前趕出他們去」與人的未完成。
+related_entries:
+- 未得之地
+- 基述人和瑪迦人
+- 逐漸趕出
+- 摩西
+sources:
+- '原文資料（STEP Bible）: Joshua 13:1, 13:6, 13:12, 13:13 — H3423H（ya.rash: to possess: take）字形、形態碼與逐字譯義（<https://github.com/STEPBible/STEPBible-Data>）'
+- '逐節註解（ccbiblestudy CT）: 約書亞記第十三章註解 — 書十三1、13〔原文字義〕（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06CT13.htm>）'
+- '拾穗（ccbiblestudy GT）: 約書亞記第十三章拾穗 — 書十三1《約書亞記研經資料》（<https://www.ccbiblestudy.org/Old%20Testament/06Josh/06GT13.htm>）'
+- '研經註解（KingComments）: Joshua 13 — 1-7 Land Still to Be Possessed（<https://www.kingcomments.com/en/bible-studies/Jos/13>）'
+- '研經註解（BibleHub Study）: Joshua 13:13 — but the Israelites did not drive out the Geshurites or the Maacathites（<https://biblehub.com/study/joshua/13.htm>）'

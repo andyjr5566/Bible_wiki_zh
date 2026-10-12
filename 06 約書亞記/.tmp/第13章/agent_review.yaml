@@ -1,0 +1,135 @@
+version: 2
+book: 約書亞記
+chapter: 13
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: 9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: null
+      reviewer: codex
+      sha256: 40f2e4b7f526e7d41f96eb4a12a356f87488e3aa95b2d3baddc338cba198522b
+      verdict: blocked
+      findings_count: 2
+      late_recorded: false
+    - attempt: 1
+      reviewer: codex
+      sha256: 29499053e64b749be454494eb502845f8504d22c5470b0c47b0b4e455efcd206
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/亞實基倫.yaml
+    - entry_content/以革倫.yaml
+    - entry_content/伯亞蘭.yaml
+    - entry_content/伯寧拉.yaml
+    - entry_content/伯巴力勉.yaml
+    - entry_content/哈馬口.yaml
+    - entry_content/基列亭.yaml
+    - entry_content/拉巴前的亞羅珥.yaml
+    - entry_content/拉抹米斯巴.yaml
+    - entry_content/撒分.yaml
+    - entry_content/未得之地.yaml
+    - entry_content/比多寧.yaml
+    - entry_content/米亞拉.yaml
+    - entry_content/米底巴.yaml
+    - entry_content/米法押.yaml
+    - entry_content/細列哈沙轄.yaml
+    - entry_content/西曷河.yaml
+    - entry_content/西比瑪.yaml
+    - entry_content/趕出（ya.rash）.yaml
+    - entry_content/迦巴勒.yaml
+    own_sha256: 9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+    verdict_sha: 9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 4
+    sha256: 951405673e073791561a467ad88c06e7c5d86a98e26da2c2387a7b4cdb8711d9
+    verdict_sha: 951405673e073791561a467ad88c06e7c5d86a98e26da2c2387a7b4cdb8711d9
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 34086abf2e097cf00958f0eb0cffb74ca8317812f010899b4413345e8bb92676
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 4c0793c25aed521e6f0524c70c9c0b1bf582ec44ee13e57b3e559b245a80a51b
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 537d3a6a2a6d21a1e307db7980d09e54e8e0b8c976c923378a129800117b0338
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+      mode: delta
+    - attempt: null
+      reviewer: codex
+      sha256: 951405673e073791561a467ad88c06e7c5d86a98e26da2c2387a7b4cdb8711d9
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    hash_inputs:
+    - parent:m3=9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+    - chapter_content.yaml
+    own_sha256: e349aaaa798c60cb4559ea44b0561db35c11bd51720d5b3d299cc95bb24ab387
+  link_updates:
+    round: 2
+    revision: 4
+    sha256: 8c08a9654a409e730e128b2d01b5889d884af013aea183ae118cd0b7ede38094
+    claude: unchanged
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_mode: delta_reviewed
+    delta_from_sha: a60f871c413ee0bb0e8c7df78d3d7c6f0850b88b63f3e7c280c94d4e829b1706
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: fe78466548832c67ecbc746a48486fba807cd3a6847f8ba74b4d4a843a61f1ac
+      verdict: changes_required
+      findings_count: 2
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: a60f871c413ee0bb0e8c7df78d3d7c6f0850b88b63f3e7c280c94d4e829b1706
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 8c08a9654a409e730e128b2d01b5889d884af013aea183ae118cd0b7ede38094
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+      mode: delta
+    hash_inputs:
+    - parent:m3=9baacf5756842c48614581138f2714d45a5c2f82c92e88df092396f18ead3d96
+    - parent:m6=951405673e073791561a467ad88c06e7c5d86a98e26da2c2387a7b4cdb8711d9
+    - link_updates.yaml
+    own_sha256: a2e92a9b2e2cad65ba07ee4115fef36d3921962f16e789299c31d5aa62188ffe
+    verdict_sha: 8c08a9654a409e730e128b2d01b5889d884af013aea183ae118cd0b7ede38094
+    findings_count: 0

@@ -1,7 +1,7 @@
 {
-  "total_warnings": 237,
+  "total_warnings": 241,
   "critical_count": 0,
-  "warning_count": 237,
+  "warning_count": 241,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -358,7 +358,7 @@
       "severity": "warning",
       "source": "link_folder/人物/摩西.md",
       "target": "第13章",
-      "message": "同一 alias「第13章」指向多個 target: 02 出埃及記/第13章, 03 利未記/第13章"
+      "message": "同一 alias「第13章」指向多個 target: 02 出埃及記/第13章, 03 利未記/第13章, 06 約書亞記/第13章"
     },
     {
       "type": "alias_target_conflict",
@@ -581,6 +581,13 @@
       "type": "alias_target_conflict",
       "severity": "warning",
       "source": "link_folder/人物/約書亞.md",
+      "target": "第13章",
+      "message": "同一 alias「第13章」指向多個 target: 04 民數記/第13章, 06 約書亞記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/約書亞.md",
       "target": "第31章",
       "message": "同一 alias「第31章」指向多個 target: 04 民數記/第31章, 05 申命記/第31章"
     },
@@ -653,6 +660,13 @@
       "source": "link_folder/人物/迦南人.md",
       "target": "第12章",
       "message": "同一 alias「第12章」指向多個 target: 01 創世記/第12章, 06 約書亞記/第12章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/人物/迦南人.md",
+      "target": "第13章",
+      "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 06 約書亞記/第13章"
     },
     {
       "type": "alias_target_conflict",
@@ -828,6 +842,20 @@
       "source": "link_folder/地點/疏割.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 01 創世記/第33章, 04 民數記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/疏割.md",
+      "target": "第13章",
+      "message": "同一 alias「第13章」指向多個 target: 02 出埃及記/第13章, 06 約書亞記/第13章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/地點/約但河.md",
+      "target": "第13章",
+      "message": "同一 alias「第13章」指向多個 target: 01 創世記/第13章, 06 約書亞記/第13章"
     },
     {
       "type": "alias_target_conflict",

@@ -2535,6 +2535,14 @@
       "潔淨水族標準"
     ]
   },
+  "未得之地": {
+    "path": "link_folder/主題/未得之地.md",
+    "type": "主題",
+    "secondary_types": [],
+    "title": "未得之地",
+    "status": "formal",
+    "aliases": []
+  },
   "板上的金環（套閂）": {
     "path": "link_folder/主題/板上的金環（套閂）.md",
     "type": "主題",
@@ -17672,6 +17680,16 @@
     "status": "formal",
     "aliases": []
   },
+  "趕出（ya.rash）": {
+    "path": "link_folder/原文/趕出（ya.rash）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "趕出（ya.rash）",
+    "status": "formal",
+    "aliases": [
+      "ya.rash"
+    ]
+  },
   "路14（Loukas 14）": {
     "path": "link_folder/原文/路14（Loukas 14）.md",
     "type": "原文",
@@ -18236,6 +18254,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞實基倫": {
+    "path": "link_folder/地點/亞實基倫.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞實基倫",
+    "status": "formal",
+    "aliases": []
+  },
   "亞實突": {
     "path": "link_folder/地點/亞實突.md",
     "type": "地點",
@@ -18561,6 +18587,14 @@
       "Elim"
     ]
   },
+  "以革倫": {
+    "path": "link_folder/地點/以革倫.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "以革倫",
+    "status": "formal",
+    "aliases": []
+  },
   "伊勒巴蘭": {
     "path": "link_folder/地點/伊勒巴蘭.md",
     "type": "地點",
@@ -18603,6 +18637,14 @@
     "status": "formal",
     "aliases": []
   },
+  "伯亞蘭": {
+    "path": "link_folder/地點/伯亞蘭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯亞蘭",
+    "status": "formal",
+    "aliases": []
+  },
   "伯利恆": {
     "path": "link_folder/地點/伯利恆.md",
     "type": "地點",
@@ -18618,6 +18660,22 @@
     "type": "地點",
     "secondary_types": [],
     "title": "伯和崙",
+    "status": "formal",
+    "aliases": []
+  },
+  "伯寧拉": {
+    "path": "link_folder/地點/伯寧拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯寧拉",
+    "status": "formal",
+    "aliases": []
+  },
+  "伯巴力勉": {
+    "path": "link_folder/地點/伯巴力勉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "伯巴力勉",
     "status": "formal",
     "aliases": []
   },
@@ -18879,6 +18937,14 @@
     "status": "formal",
     "aliases": []
   },
+  "哈馬口": {
+    "path": "link_folder/地點/哈馬口.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "哈馬口",
+    "status": "formal",
+    "aliases": []
+  },
   "哈麥": {
     "path": "link_folder/地點/哈麥.md",
     "type": "地點",
@@ -18954,6 +19020,14 @@
     "aliases": [
       "Kiriath-arba"
     ]
+  },
+  "基列亭": {
+    "path": "link_folder/地點/基列亭.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基列亭",
+    "status": "formal",
+    "aliases": []
   },
   "基列山": {
     "path": "link_folder/地點/基列山.md",
@@ -19428,6 +19502,22 @@
     "status": "formal",
     "aliases": []
   },
+  "拉巴前的亞羅珥": {
+    "path": "link_folder/地點/拉巴前的亞羅珥.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拉巴前的亞羅珥",
+    "status": "formal",
+    "aliases": []
+  },
+  "拉抹米斯巴": {
+    "path": "link_folder/地點/拉抹米斯巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "拉抹米斯巴",
+    "status": "formal",
+    "aliases": []
+  },
   "拉末": {
     "path": "link_folder/地點/拉末.md",
     "type": "地點",
@@ -19504,6 +19594,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "撒冷",
+    "status": "formal",
+    "aliases": []
+  },
+  "撒分": {
+    "path": "link_folder/地點/撒分.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "撒分",
     "status": "formal",
     "aliases": []
   },
@@ -19619,6 +19717,14 @@
     "aliases": [
       "Pi-hahiroth"
     ]
+  },
+  "比多寧": {
+    "path": "link_folder/地點/比多寧.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "比多寧",
+    "status": "formal",
+    "aliases": []
   },
   "比尼亞干": {
     "path": "link_folder/地點/比尼亞干.md",
@@ -19971,6 +20077,14 @@
     "status": "formal",
     "aliases": []
   },
+  "米亞拉": {
+    "path": "link_folder/地點/米亞拉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "米亞拉",
+    "status": "formal",
+    "aliases": []
+  },
   "米倫水": {
     "path": "link_folder/地點/米倫水.md",
     "type": "地點",
@@ -19987,6 +20101,14 @@
     "status": "formal",
     "aliases": []
   },
+  "米底巴": {
+    "path": "link_folder/地點/米底巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "米底巴",
+    "status": "formal",
+    "aliases": []
+  },
   "米所波大米": {
     "path": "link_folder/地點/米所波大米.md",
     "type": "地點",
@@ -20000,6 +20122,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "米斯利弗瑪音",
+    "status": "formal",
+    "aliases": []
+  },
+  "米法押": {
+    "path": "link_folder/地點/米法押.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "米法押",
     "status": "formal",
     "aliases": []
   },
@@ -20050,6 +20180,14 @@
     "aliases": [
       "紅海曠野的路"
     ]
+  },
+  "細列哈沙轄": {
+    "path": "link_folder/地點/細列哈沙轄.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "細列哈沙轄",
+    "status": "formal",
+    "aliases": []
   },
   "耶利哥": {
     "path": "link_folder/地點/耶利哥.md",
@@ -20157,6 +20295,22 @@
       "西乃曠野"
     ]
   },
+  "西曷河": {
+    "path": "link_folder/地點/西曷河.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西曷河",
+    "status": "formal",
+    "aliases": []
+  },
+  "西比瑪": {
+    "path": "link_folder/地點/西比瑪.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "西比瑪",
+    "status": "formal",
+    "aliases": []
+  },
   "西珥": {
     "path": "link_folder/地點/西珥.md",
     "type": "地點",
@@ -20250,6 +20404,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "迦密",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦巴勒": {
+    "path": "link_folder/地點/迦巴勒.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦巴勒",
     "status": "formal",
     "aliases": []
   },
@@ -35579,6 +35741,9 @@
   },
   "cha.lal": {
     "alias_of": "起首得那地（cha.lal）"
+  },
+  "ya.rash": {
+    "alias_of": "趕出（ya.rash）"
   },
   "路加福音 14": {
     "alias_of": "路14（Loukas 14）"

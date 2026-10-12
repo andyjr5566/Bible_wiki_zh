@@ -1,0 +1,770 @@
+book: 約書亞記
+chapter: 13
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 巴力的高處（Bamoth-baal）
+  path: link_folder/地點/巴力的高處（Bamoth-baal）.md
+  summary: 第17節流便所得的城中有「巴末巴力」，即民22:41 的巴力的高處。CT 給的原文字義是「高處，極高處」，說它位於希實本的西南方約11公里；GT《串珠》說在米底巴附近；BH 說名字意為巴力的高處，巴勒曾帶巴蘭到這一帶（民22:41）。
+  relation: 本章是這個地名從巴勒咒詛以色列的舞台，變成流便產業清單上一座城的一刻；BH 由此提醒，承受帶著異教印記的地方，就要除去那裡的偶像。同章第22節正好記巴蘭被殺。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:22
+      - 約書亞記:13
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1節「約書亞年紀老邁」，耶和華說還有許多未得之地，吩咐他照著吩咐拈鬮分給九個半支派。CT 用迦勒的年紀推算，說他當時至少八十五歲至九十歲之間；GT《啟導本》說年近百歲；GT《研經資料》說他距離死亡還有二十年以上。
+  relation: 本章把約書亞的任務從征服轉到分地。CT 與 GT《綜合解讀》都說留下未得之地不是因為他年老不能打仗，而是神定意漸漸趕出；KC 則反問他是否也沉進了安歇。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 29
+    - 30
+    definition: keep
+    development: keep
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 本章一再說河東的產業是摩西所分：第8節稱「耶和華的僕人摩西在約但河東所賜給他們的」，第15、24節說「摩西按著流便支派的宗族分給他們產業」「摩西按著迦得支派的宗族分給他們產業」，第29節說「摩西把產業分給瑪拿西半支派」，第32節總結是摩西在摩押平原所分；第33節則說利未的產業不是摩西給的。
+  relation: GT《聖經精讀本》說稱摩西為「耶和華的僕人」暗示分配河東之地合乎神旨意；KC 說第13節沒有趕逐基述人、瑪迦人，不是因為摩西，而是因為百姓不忠。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 82
+    - 83
+    definition: keep
+    development: keep
+- title: 非利士人
+  path: link_folder/地點/非利士人.md
+  summary: 第2節「非利士人的全境」、第3節「非利士人五個首領所管的」五城，列在未得之地的頭一塊。GT《雷氏研讀本》說這裡提到「非利士人」可能是編者的註解，說明這個後來屬於非利士人的地帶在約書亞的日子是屬於迦南人的；GT《綜合解讀》說非利士人是迦斐托島來的外來移民，不是迦南的後裔，神仍把這片地「算屬迦南人之地」。
+  relation: 本章是約書亞記第一次把非利士地正式劃進要分的範圍。GT《聖經精讀本》說這地雖分給了猶大支派（書15:47）卻並未征服，非利士人後來一直騷擾以色列。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 迦薩
+  path: link_folder/地點/迦薩.md
+  summary: 第3節「迦薩人」列在非利士人五個首領所管之地。CT 說五城按地理由南到北應為迦薩、亞實基倫、亞實突、迦特、以革倫；GT《研經資料》說迦薩字義「強壯」，位於巴勒斯坦的極西南邊。
+  relation: 本章迦薩從書10:41、11:22 的戰役邊界點，變成未得之地清單裡非利士五城的南端。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 亞實突
+  path: link_folder/地點/亞實突.md
+  summary: 第3節「亞實突人」列在非利士五城。GT《研經資料》說它早期是亞衲族人住的地方（書11:22），後來成為非利士的五大城市之一，距離海岸只有四公里；GT《聖經精讀本》說非利士人主要服侍大袞，神殿在迦薩與亞實突。
+  relation: 書11:22 說亞衲族人在亞實突有留下的；本章它以非利士五城之一的身分列入未得之地。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 迦特
+  path: link_folder/地點/迦特.md
+  summary: 第3節「迦特人」列在非利士五城。CT 與 GT《研經資料》字義「酒醡」；CT 與 GT《串珠》都說迦特、以革倫比沿海三城偏向內陸。
+  relation: 書11:22 記亞衲族人在迦特有留下的；本章它列入要分卻還沒得的非利士地。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亞衛人
+  path: link_folder/人物/亞衛人.md
+  summary: 第3節「並有南方亞衛人之地」。CT 說亞衛人原住迦薩地南方，後來被非利士人除滅；GT《研經資料》說亞衛字義「毀滅」，是迦薩和南方一帶的原住民；GT《綜合解讀》說非利士人佔領了原來「南方亞衛人之地」（申2:23）。
+  relation: 申2:23 記亞衛人被迦斐託人除滅；本章他們只剩一個地名，標出非利士地南邊的一塊未得之地。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 迦南人
+  path: link_folder/人物/迦南人.md
+  summary: 第3節從西曷河到以革倫的沿海「就算屬迦南人之地」，第4節「又有迦南人的全地」。CT 說這裡指迦南七族中的迦南人，散居各處，尚有多處未被以色列人佔領；GT《聖經精讀本》說「迦南人的全地」指腓尼基，亦即西頓和推羅及米亞拉一帶。
+  relation: 本章用「迦南人之地」當作分地的法理範圍：就連非利士人佔據的沿海，也算在迦南地之內要分。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 西頓
+  path: link_folder/地點/西頓.md
+  summary: 第4節「屬西頓人的米亞拉到亞弗」，第6節神說「所有的西頓人，我必在以色列人面前趕出他們去」。CT 說西頓人居住在從北面的米亞拉到南面亞弗的沿岸地帶；GT《聖經精讀本》說西頓分給了亞設支派（書19:28），因原住民勢力強大終未被驅逐，最終成為以色列的禍根。
+  relation: 書11:8 西頓是追擊的終點；本章它成了神親口應許要趕出、卻仍列在未得之地裡的一族。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亞摩利人
+  path: link_folder/人物/亞摩利人.md
+  summary: 第4節「直到亞摩利人的境界」，第10、21節「亞摩利王西宏」。GT《丁道爾》說第4節這裡的亞摩利人是很特別的用法，指晚銅時期的亞木魯王國（Ammurru），這一帶在卡伯河以北；GT《研經資料》則說此處應該是指巴勒斯坦山區。
+  relation: 本章同一個族名指兩件不同的事：北方未得之地的界線，以及河東已被擊敗的西宏王國。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development: *id001
+- title: 利巴嫩
+  path: link_folder/地點/利巴嫩.md
+  summary: 第5節「向日出的全利巴嫩」，第6節「從利巴嫩直到米斯利弗瑪音」。CT 說「向日出的全利巴嫩」即指利巴嫩東邊的山脈；GT《綜合解讀》把「全黎巴嫩」列為未得之地的第四個區域，從黑門山向北一直到哈馬口；BH 說利巴嫩的香柏樹後來供應所羅門的建造。
+  relation: 本章利巴嫩從書11:17 征服範圍北端的地標，變成仍待取得的一整片地。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 黑門山
+  path: link_folder/地點/黑門山.md
+  summary: 第5節「從黑門山根的巴力迦得」，第11節「黑門全山」列入河東。CT 說黑門山是八十公里山脈的最高峰，約三千公尺，峰頂現仍有巴力廟的遺址；GT《綜合解讀》說河東兩個半支派產業的北界是黑門山。
+  relation: 本章黑門山同時出現在兩份清單：它的南麓是未得之地的起點，它的全山又是河東產業的北界。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 巴力迦得
+  path: link_folder/地點/巴力迦得.md
+  summary: 第5節「從黑門山根的巴力迦得，直到哈馬口」。CT 說巴力迦得是利巴嫩東邊山脈的最南端，當時以色列人的佔領地僅到此為止（參書11:17）；GT《研經資料》說字義是「財神」「財富之主」。
+  relation: 前兩章它是已得之地的北端，本章它變成未得之地的起點：從這裡往北到哈馬口還沒有得。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 米斯利弗瑪音
+  path: link_folder/地點/米斯利弗瑪音.md
+  summary: 第6節「從利巴嫩直到米斯利弗瑪音」。CT 說它位於米倫西面的地中海岸，是迦南地的西界；GT《研經資料》說字義「燃燒的水」，也有學者認為可能是「靠水的石灰窯」，可能附屬於西頓城。
+  relation: 書11:8 它是追擊的終點之一；本章它標出神應許要趕出的西頓人山地範圍。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第6節神吩咐「你只管照我所吩咐的，將這地拈鬮分給以色列人為業」。CT 說第2至6節所列之地雖尚未實際佔領，但可視同領地給予拈鬮分配；GT《綜合解讀》說拈鬮正是神吩咐摩西的分地方式（民34:13），表明分地的過程必須憑信心接受神的權柄；KC 說拈鬮是神顯明祂旨意的方式（箴16:33）。
+  relation: 民數記立下拈鬮分地的原則，本章是神在約書亞手上第一次重申並要他照做；GT《綜合解讀》並對比河東之地不是拈鬮、而是摩西所賜。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: *id001
+- title: 迦南四境
+  path: link_folder/主題/迦南四境.md
+  summary: GT《綜合解讀》說第2至6節是神按著向摩西明確指示的迦南地四界（民34:2-12），從南到北列舉「未得之地」，並分成四個區域；GT《丁道爾》說迦南的邊界是根據舊約其他地方和埃及新國度的資料來界定。
+  relation: 民34 畫出四境，本章用同一套四境來量出還有多少沒得：清單的南端西曷河、北端哈馬口，都是那份地界的標點。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: *id001
+- title: 逐漸趕出
+  path: link_folder/神學/逐漸趕出.md
+  summary: CT 與 GT《綜合解讀》都說，留下「許多未得之地」不是因為約書亞年老，而是神定意「將這些國的民從你面前漸漸趕出」，吩咐百姓「不可把他們速速滅盡，恐怕野地的獸多起來害你」（申7:22）。
+  relation: 本章是這個原則在約書亞記的落點：征服的主力戰結束了，按神漸漸趕出的安排，還有大片的地留給各支派去得。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第7節分地給「九個支派和瑪拿西半個支派」，第29至31節記河東的瑪拿西半支派得巴珊全地。CT 說瑪拿西是約瑟的長子，但雅各改立以法蓮為長子；GT《聖經精讀本》說瑪吉是瑪拿西的獨子，瑪拿西支派共由七個宗族組成（民26:29-34）。
+  relation: 本章把這個支派一分為二的狀態寫成分地的事實：一半在河東由摩西所分，另一半等著在河西拈鬮。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 16
+    - 17
+    definition: keep
+    development: *id001
+- title: 流便
+  path: link_folder/人物/流便.md
+  summary: 第15至23節記流便所得之地：從亞嫩谷邊的亞羅珥，經米底巴高原到希實本，西到約但河。GT《雷氏研讀本》說這片地從前由摩押人佔領，位於死海的正東面；GT《聖經精讀本》說流便支派似乎未能長久保住分給他們的產業而被外邦勢力所奪去（士5:16）。
+  relation: 本章是流便支派的地第一次被逐城列出；KC 說第22節記巴蘭被殺，要成為流便人的警告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第8節「瑪拿西那半支派和流便、迦得二支派已經受了產業」，第32節總結這是摩西在摩押平原所分。GT《研經資料》說這在沒有進入約但河西的時候就已經分配（民32:33-42），這裡只是加以確認，畢竟兩個半支派已經履行承諾；GT《聖經精讀本》說河東之地適於牧養，流便與迦得因此請求。
+  relation: 民32 談成的條件，在本章兌現成逐支派的地界清單。KC 說他們憑眼目選地，那地沒有天然屏障，後來也是最先被亞述擄去的（代上5:26）。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 河東之地是神的旨意還是神的允許
+  path: link_folder/解經爭議/河東之地是神的旨意還是神的允許.md
+  summary: 第6節河西之地要拈鬮分，第8節河東之地是摩西所賜。GT《綜合解讀》與 CT 話中之光說：「河西之地是人在信心裡接受的神的應許，河東之地是人在堅持中要求的神的允許」；GT《聖經精讀本》卻說此處稱摩西為「耶和華的僕人」，暗示分配約但河以東之地是合乎神旨意。
+  relation: 本章給這個爭議添了兩個相反的證據：CT 與 GT《綜合解讀》看分地方式的差別，GT《聖經精讀本》看摩西的頭銜。GT《綜合解讀》另說神在河東設了一半的逃城，表明神並不丟棄河東的百姓。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 瑪拿西半支派為何留在河東
+  path: link_folder/解經爭議/瑪拿西半支派為何留在河東.md
+  summary: 第29節。CT 說聖經並沒有記載瑪拿西支派要求留在約但河東岸，也許摩西認為將他們的半個支派留在約但河東的外圍可以增強東岸的防禦力；GT《靈修版》說他們有許多人選擇在河東定居，因為那地特別適於牧放牛羊；GT《雷氏研讀本》說瑪拿西的半個支派定居在約但河東，其餘半個支派選擇住在約但河西。
+  relation: 本章為這個問題多加了兩種解釋：CT 的防禦說與 GT《靈修版》的牧場說。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: *id001
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第8、32節「約但河東」，第23節「流便人的境界就是約但河與靠近約但河的地」，第27節迦得的地沿約但河直到基尼烈海。
+  relation: 本章約但河是分地的分界：河東是摩西已分的，河西是要拈鬮分的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 27
+    - 28
+    definition: keep
+    development: keep
+- title: 亞嫩河
+  path: link_folder/地點/亞嫩河.md
+  summary: 第9、16節「亞嫩谷邊的亞羅珥」，是河東產業與流便支派的南界。CT 說亞嫩河谷深約五百公尺、寬約三公里，形成小型的峽谷；GT《綜合解讀》說河東兩個半支派產業的南界是亞嫩谷。
+  relation: 本章亞嫩谷從戰勝西宏的邊界，變成流便支派地界的起點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 亞羅珥
+  path: link_folder/地點/亞羅珥.md
+  summary: 第9、16節「亞嫩谷邊的亞羅珥」是河東產業與流便的南端。CT 說第25節「拉巴前的亞羅珥」是另一座，亞羅珥至少有四座同名不同城。
+  relation: 本章出現兩個亞羅珥：這一座（亞嫩谷邊）是流便的南端，另一座在拉巴前，是迦得的東端。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: *id001
+- title: 平原（mi.shor）
+  path: link_folder/地點/平原（mi.shor）.md
+  summary: 第9、16節「米底巴的全平原」，第17節「希實本平原」，第21節「平原的各城」。CT 說米底巴的全平原指亞嫩河谷和希實本之間、以米底巴為中心的高原，海拔約600公尺，希實本平原亦即米底巴高原；GT《串珠》說實為一高原。
+  relation: 本章這片平原整片劃給流便，是流便產業的主體。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 底本
+  path: link_folder/地點/底本.md
+  summary: 第9節「直到底本」，第17節列為流便的城。CT 說底本是亞嫩河北面五公里的古城，現已成廢墟；GT《串珠》說它在高原之南部；GT《研經資料》說是摩押的重要城邑；BH 說它後來出現在摩押歷史中，米沙石碑記載摩押對以色列的反叛。
+  relation: 民32:34 記迦得子孫建造底本，本章卻把它列在流便的城中。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第10、17、21、26、27節。CT 說希實本是亞摩利王西宏的京城（民21:26），位於約但河流入死海的河口東北東方24公里；BH 說它在王道上，被攻取後主要分給流便（書13:15-23）。
+  relation: 本章希實本同時是流便的城與迦得地界的起點（第26節「從希實本到拉抹米斯巴」），兩個支派在這裡相接。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 西宏
+  path: link_folder/人物/西宏.md
+  summary: 第10、21、27節。第21節說西宏的全國歸流便，CT 卻說西宏所管轄的全境是由流便和迦得兩個支派瓜分，GT《串珠》也說「並非全屬流便……此說乃大概而已」；第27節迦得得了「西宏國中的餘地」。GT《聖經精讀本》說米甸五王被西宏攻陷，淪為他的封臣。
+  relation: 書12 記他被擊敗，本章把他的國拆成流便與迦得的產業。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亞捫人
+  path: link_folder/人物/亞捫人.md
+  summary: 第10節「直到亞捫人的境界」，第25節迦得得了「亞捫人的一半地」。CT、GT《聖經精讀本》與 GT《綜合解讀》都說這一半地是亞摩利王西宏從亞捫人手中奪去的，以色列從西宏手中奪得，沒有違反神禁止侵犯亞捫的命令（申2:19）；後來亞捫王曾要求歸還（士11）。
+  relation: 本章亞捫人的地只以邊界和「一半地」出現；這塊地的來歷成了日後亞捫人與以色列爭地的伏筆。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 基列
+  path: link_folder/地點/基列.md
+  summary: 第11、25、31節。CT 說基列廣義泛指約但河東以色列人所佔領之地，狹義僅指雅博河以北；第25節迦得得基列的各城，第31節瑪拿西得「基列的一半」。KC 說基列一帶出了士師睚珥、耶弗他與先知以利亞。
+  relation: 本章基列被迦得與瑪拿西半支派分開承受，CT 特別提醒並非全部的基列都歸迦得。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 基述人和瑪迦人
+  path: link_folder/人物/基述人和瑪迦人.md
+  summary: 第11節「基述人、瑪迦人的地界」列入河東，第13節「以色列人卻沒有趕逐基述人、瑪迦人；這些人仍住在以色列中，直到今日」。CT 說兩個小邦直到大衛王的時代仍存在；BH 說大衛後來娶了基述王達買的女兒瑪迦，押沙龍殺了暗嫩後也逃往基述（撒下3:3、13:37-38）；KC 說沒有趕逐不是因為摩西，而是因為百姓不忠。第2節另有「基述人的全地」，GT《串珠》與 BH 說那是南方另一個基述。
+  relation: 本章是這兩族第一次被明說「沒有趕逐」。GT 這一節另有一段沒有標明出處的話說，河東支派與這些外邦人雜居，「埋下了屬靈危機的種子」。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:3
+      - 約書亞記:12
+      - 約書亞記:13
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第11、12、30節。CT 說巴珊位於雅博河以北、黑門山以南的高原（即今戈蘭高原），境內牧草繁茂；第30節巴珊全地歸瑪拿西半支派。KC 說噩的國以巴珊的橡樹聞名。
+  relation: 書12 寫出巴珊的四至，本章把它整片交給瑪拿西半支派。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 撒迦
+  path: link_folder/地點/撒迦.md
+  summary: 第11節「巴珊全地，直到撒迦」。CT 說撒迦位於巴珊地的最東面；BH 說撒迦標出巴珊的東南界。
+  relation: 本章撒迦仍是巴珊的外緣標點，只是這次它標的是瑪拿西半支派的產業。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 巴珊王噩
+  path: link_folder/人物/巴珊王噩.md
+  summary: 第12、30、31節。CT 說他身量高大，是最後一個利乏音人（申3:11）；第30節說巴珊王噩的全國歸瑪拿西半支派，第31節他的兩座京城亞斯她錄、以得來給了瑪吉的一半子孫。
+  relation: 書12 記他被擊敗，本章把他的國原封不動交給瑪拿西半支派。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亞斯她錄
+  path: link_folder/地點/亞斯她錄.md
+  summary: 第12、31節。CT 說亞斯他錄與以得來同為巴珊王噩的王城；GT《研經資料》說字義「星辰」，與迦南的女神同名，此處指巴珊的首都。
+  relation: 本章它從噩的王城變成瑪吉子孫的城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: *id001
+- title: 以得來
+  path: link_folder/地點/以得來.md
+  summary: 第12、31節。CT 說以得來是巴珊的副都；GT《研經資料》說字義「好的牧草地」，在懸崖上，可以留意到從南面或東面入侵的敵人，是噩重要的防禦地點。
+  relation: 本章它與亞斯她錄一起，從噩的王城變成瑪吉子孫的產業。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: *id001
+- title: 利乏音人
+  path: link_folder/人物/利乏音人.md
+  summary: 第12節噩「利乏音人所存留的只剩下他」。CT 說利乏音人是巨人族；GT《研經資料》列出舊約與巨人相關的各個希伯來字，說利乏音人這族身型高大，並引申3:11 噩的鐵床。
+  relation: 書12:4 已說噩是利乏音人所剩下的；本章重述一次，作為巴珊地歸屬的來歷。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第14節「只是利未支派，摩西（原文作他）沒有把產業分給他們。他們的產業乃是獻與耶和華─以色列神的火祭」，第33節「耶和華─以色列的神是他們的產業」。CT 說利未支派被揀選辦理會幕的事，所以沒有分配產業之地；GT《綜合解讀》說聖靈在分地過程中四次強調利未支派沒有產業（書13:14、33，書14:3，書18:7）；KC 說利未人有三重產業：火祭、耶和華自己、祭司的職分（書18:7）。
+  relation: 本章用利未支派框住河東分地的記錄，頭尾各說一次。KC 說兩個半支派所得之地與利未人的分形成強烈的對比。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 21
+    - 22
+    definition: keep
+    development: *id001
+- title: 火祭（isheh）
+  path: link_folder/主題/火祭（isheh）.md
+  summary: '第14節利未人的產業「乃是獻與耶和華─以色列神的火祭」。CT 說火祭的一部分預留給利未人，例如祭司可以吃陳設餅（利24:7、9）；GT《研經資料》引另一派學者說原文與「火」只是音近，兩者並無相關，僅僅是「祭物」的意思，七十士譯本支持後者；STEP 顯示是 ''i.Shei（H801，簡要詞典義 ish.shah: food offering）。'
+  relation: 本章是約書亞記第一次提到火祭，用來說明利未人沒有地業怎樣生活。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第14節兩次、第33節兩次說利未的「產業」；STEP 顯示這四處都是 H5159（第14節 na.cha.Lah、na.cha.la.T/o，第33節 na.cha.Lah、na.cha.la.Ta/m）。
+  relation: 本章用同一個字說兩種產業：河東支派得的是地，利未得的是火祭與耶和華自己。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
+- title: 家室與宗族
+  path: link_folder/主題/家室與宗族.md
+  summary: 第15、24、29、31節反覆說「按著……宗族」分地。GT《綜合解讀》說「宗族」是十二支派與各個父家之間的單位，由長老領導，以色列人分配土地是按宗族為單位，同一宗族的土地形成一個行政區；CT 說按著宗族意指按各宗族的人數分配大小不等的面積。
+  relation: 民數記用宗族點名造冊，本章用同一個單位分地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 雅雜
+  path: link_folder/地點/雅雜.md
+  summary: 第18節列為流便的城。CT 說雅雜位於希實本之東南約26公里、底本之東北約16公里；BH 說以色列在雅雜擊敗西宏（民21:23-24），後來雅雜成為米拉利族的利未城（書21:36）。
+  relation: 申2:32 雅雜是與西宏交戰的地點；本章它成了流便的城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 基底莫
+  path: link_folder/地點/基底莫.md
+  summary: 第18節列為流便的城。CT 說基底莫位於希實本之南約30公里；BH 說字義是東方的部分，摩西曾從基底莫的曠野差遣使者去見西宏（申2:26），後來它也分給米拉利族為利未城（書21:37）。
+  relation: 申2:26 它是向西宏求和的出發點；本章它成了流便的城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 伯毘珥
+  path: link_folder/地點/伯毘珥.md
+  summary: 第20節列為流便的城。CT 說伯毘珥位於希實本之西約9公里；BH 說以色列在這一帶陷在巴力毘珥的敬拜裡，摩西也葬在伯毘珥對面的谷中（申34:6）。
+  relation: 申3:29、34:6 伯毘珥是安營與埋葬摩西的地標；本章它成了流便的產業。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: *id001
+- title: 瑣腓田與毘斯迦山頂
+  path: link_folder/地點/瑣腓田與毘斯迦山頂.md
+  summary: 第20節「毘斯迦山坡」列為流便的地。CT 說毘斯迦山坡位於希實本西南方約9公里；BH 說摩西從毘斯迦上的尼波山觀看應許之地（申34:1-4），流便的產業延伸到摩西觀看迦南的地方。
+  relation: 摩西在這裡看見卻不能進去的地，本章它自己成了以色列的產業。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 伯耶西末
+  path: link_folder/地點/伯耶西末.md
+  summary: 第20節列為流便的城。CT 說伯耶西末位於希實本之西約21公里；BH 說字義是荒漠之家，在死海東北端，後來落入摩押手中，結25:9 把它列在對摩押的審判裡。
+  relation: 書12:3 它是西宏地界的一點；本章它成了流便的城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 米甸的五王
+  path: link_folder/歷史/米甸的五王.md
+  summary: 第21節「米甸的族長以未、利金、蘇珥、戶珥、利巴……這都是住那地屬西宏為首領的」。CT 說別處聖經稱他們是「王」（民31:8），後來被西宏所征服，向他稱臣；GT《聖經精讀本》說他們曾在米甸族類中擁有最強大的勢力，卻被西宏攻陷，淪為其封臣。
+  relation: 民31:8 稱他們為王，本章稱他們為族長、屬西宏為首領；CT 與 GT 都用這一點來解釋兩處稱呼的差別。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 蘇珥（米甸首領）
+  path: link_folder/人物/蘇珥（米甸首領）.md
+  summary: 第21節米甸的族長之一。CT 給的「蘇珥」字義是「磐石」。
+  relation: 本章只把他列在屬西宏的五個米甸族長中，與民31:8 的五王名單相同。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 巴蘭（比珥的兒子）
+  path: link_folder/人物/巴蘭（比珥的兒子）.md
+  summary: 第22節「以色列人在所殺的人中，也用刀殺了比珥的兒子術士巴蘭」。CT 說他因為貪財被巴勒雇用去咒詛以色列人，轉而獻策利用異教婦女迷惑以色列人（民31:16），因此被殺；KC 說這似乎是摩西死前最後一次爭戰（民31:1-2、8），要成為流便人的警告。
+  relation: 本章在分地清單裡插進巴蘭的死。GT《綜合解讀》說聖靈在分地之前再次提起巴蘭，提醒神的百姓不能跟從「巴蘭的計謀」。
+  overview_review:
+    signals:
+    - first_in_book
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 巴蘭之死
+  path: link_folder/事件/巴蘭之死.md
+  summary: 第22節「那時以色列人在所殺的人中，也用刀殺了比珥的兒子術士巴蘭」。GT《研經資料》說民22-25、民31:8 記這個假先知雖迫不得已祝福以色列人，仍在臨走前為巴勒獻上詭計，最終自食其果。
+  relation: 民31:8 的戰報在本章重述一次，位置換到流便的分地清單裡。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:31
+      - 約書亞記:13
+- title: 巴蘭是先知還是術士
+  path: link_folder/解經爭議/巴蘭是先知還是術士.md
+  summary: '第22節稱巴蘭為「術士」。CT 的原文字義是「占卜者」；GT《研經資料》同；STEP 顯示是 ha./ko.Sem（H7080，簡要詞典義 qa.sam: to divine）。BH 說他在神攔阻下祝福了以色列，後來卻藉米甸的影響使以色列犯罪。'
+  relation: 民數記讓巴蘭的身分保持曖昧，本章用「術士」稱呼他。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: *id001
+- title: 雅謝
+  path: link_folder/地點/雅謝.md
+  summary: 第25節「他們的境界是雅謝和基列的各城」。CT 說死海東北面、約但河東南端的一大片土地稱為雅謝地，此處是指雅謝地；BH 說雅謝最先在摩西時被攻取（民21:32），它豐美的牧場促使迦得與流便要求河東的地。
+  relation: 民32:1 兩支派看中的雅謝地，本章正式成為迦得境界的起點。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 瑪哈念
+  path: link_folder/地點/瑪哈念.md
+  summary: 第26節「從瑪哈念到底璧的境界」，第30節瑪拿西半支派「從瑪哈念起」。CT 說瑪哈念確實地點不能確定，較有可能在雅博河北岸；GT《研經資料》說它是雅各與天使相會的地方（創32:2）；BH 說它後來是大衛躲避押沙龍的地方。
+  relation: 創32 雅各在這裡遇見神的使者；本章它成了迦得與瑪拿西半支派的交界。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 疏割
+  path: link_folder/地點/疏割.md
+  summary: 第27節「谷中的伯亞蘭、伯寧拉、疏割、撒分」。CT 說疏割位於雅博河北岸；GT《研經資料》說字義「貨攤」；BH 說雅各回到應許之地後曾住在疏割（創33:17）。
+  relation: 雅各歸途中住過的疏割，本章成了迦得在約但河谷的城。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 基尼烈湖
+  path: link_folder/地點/基尼烈湖.md
+  summary: 第27節迦得的地「直到基尼烈海的極邊」。CT 說基尼烈海就是加利利海；GT《聖經精讀本》說新約稱它為加利利海、革尼撒勒湖、提比哩亞海，四面環山、水面低於海面，經常有暴風雨。
+  relation: 本章基尼烈海標出迦得沿約但河谷北上的終點。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 哈倭特睚珥
+  path: link_folder/地點/哈倭特睚珥.md
+  summary: 第30節「在巴珊、睚珥的一切城邑，共六十個」。GT《研經資料》說原文直譯作「在巴珊的睚珥的一切帳棚村莊」；GT《華爾頓約書亞記背景注釋》說這些城邑的位置無法確定，應該只是安營地點而已；STEP 顯示是 cha.Vot ya.'Ir（H2333 加 H2971H）。
+  relation: 民32:41 與申3:14 記睚珥為這些村莊命名；本章把它們列入瑪拿西半支派的產業。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: *id001
+- title: 瑪吉
+  path: link_folder/人物/瑪吉.md
+  summary: 第31節基列的一半與亞斯她錄、以得來「是按著宗族給瑪拿西的兒子瑪吉的一半子孫」。GT《聖經精讀本》說瑪吉是瑪拿西的獨子，可以代表整個瑪拿西支派；GT《研經資料》說瑪吉字義「賣出」，是瑪拿西的長子。
+  relation: 民32:39-40 記瑪吉子孫攻取基列；本章把他的「一半子孫」寫成河東產業的承受者。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: *id001
+- title: 摩押平原
+  path: link_folder/地點/摩押平原.md
+  summary: 第32節「以上是摩西在約但河東對著耶利哥的摩押平原所分給他們的產業」。CT 說這是摩西未死以前在摩押平原所作的。
+  relation: 本章用摩押平原為河東分地落款：分地的地點與時間都在摩西的時代。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: 第32節「對著耶利哥的摩押平原」。
+  relation: 本章耶利哥回到民數記時的角色，只是標明摩押平原位置的對岸地標。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 18
+    - 19
+    definition: keep
+    development: keep
