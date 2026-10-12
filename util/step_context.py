@@ -122,6 +122,66 @@ DEFAULT_QUERY_MAX_CHARS = 12000
 HARD_QUERY_MAX_CHARS = 12000
 
 
+# ---------------------------------------------------------------------------
+# 功能詞 stoplist
+#
+# M6 prompt 的 STEP selected candidates 與 find_step_candidates 的預設結果，原本只依
+# 「章內出現次數」排序，結果前幾名全是 kol／asher／ben／ad／et 這類高頻虛詞，吃光字元
+# 預算，卻對寫作沒有幫助。這份 stoplist 只用在「依頻率挑候選」的路徑
+# （discover_candidates(exclude_function_words=True)、M6 的 select_step_evidence、
+# find_step_candidates 預設）。M3 的 candidate-matched evidence 是依候選定位、不是依頻率，
+# 完全不看這份清單。條目／plan 明確點名的 Strong（signals 含 plan_target）一律保留，
+# 想看全部可用 find_step_candidates(include_function_words=True)。
+#
+# 收錄原則：冠詞、介系詞、連接詞、關係詞／疑問詞、受詞記號、否定詞、人稱／指示代名詞、
+# 「是／有」、「全部」、方位副詞等虛詞；不收數詞，也不收有實質詞義的名詞／動詞
+# （如 H776 land、H5414 give）。H1121 ben 在名單內：它在「某某之子」的格式裡是
+# 虛化的結構詞，章內頻率高而幾乎不帶寫作資訊（要看個別經節請用 query_step_context）。
+# ---------------------------------------------------------------------------
+_HEBREW_FUNCTION_WORD_STRONGS = (
+    # 受詞記號、關係詞、「全部」、「子」
+    "H853", "H834", "H3605", "H1121",
+    # 介系詞
+    "H413", "H5921", "H5704", "H4480", "H5973", "H854", "H996", "H1157", "H8478",
+    "H5048", "H4616",
+    # 連接詞、條件、因果
+    "H3588", "H518", "H3282", "H3808", "H408", "H1115", "H1097", "H369",
+    "H389", "H637", "H1571", "H7535", "H3651", "H3541",
+    # 「是／有」
+    "H1961", "H3426",
+    # 代名詞、指示詞、疑問詞
+    "H589", "H595", "H587", "H859", "H1931", "H1992",
+    "H2088", "H2063", "H428", "H4100", "H4310",
+    # 副詞、語助詞
+    "H2009", "H5750", "H6258", "H8033", "H4994",
+)
+_GREEK_FUNCTION_WORD_STRONGS = (
+    # 冠詞、連接詞、介系詞
+    "G3588", "G2532", "G1161", "G1063", "G235", "G2228", "G3767", "G3303",
+    "G1722", "G1519", "G1537", "G575", "G1223", "G2596", "G3844", "G4314",
+    "G1909", "G3326", "G4012", "G5259", "G4862",
+    # 關係詞、否定詞、從屬連接詞
+    "G3739", "G3748", "G3756", "G3361", "G3364", "G1487", "G3754", "G2443", "G5613",
+    # 人稱／指示代名詞
+    "G846", "G1473", "G4771", "G5210", "G3778", "G1565", "G5101", "G5100",
+    # 「是」、「全部」、「仍」
+    "G1510", "G3956", "G2089",
+)
+FUNCTION_WORD_STRONGS: frozenset[str] = frozenset(
+    _HEBREW_FUNCTION_WORD_STRONGS + _GREEK_FUNCTION_WORD_STRONGS
+)
+
+
+def is_function_word_strong(value: str) -> bool:
+    """該 Strong（任何 Extended 後綴都可）是否屬於功能詞 stoplist，或是 H9xxx 前綴／控制碼。"""
+    if not value:
+        return False
+    base = extract_stepbible.base_strong(value)
+    if extract_stepbible.is_step_control_strong(base):
+        return True
+    return base in FUNCTION_WORD_STRONGS
+
+
 class StepValidationError(ValueError):
     """A formal STEP source exists but fails deterministic validation."""
 
@@ -352,12 +412,18 @@ def discover_candidates(
     include_low: bool = False,
     max_results: int = DEFAULT_CANDIDATE_MAX,
     diagnostics: Optional[dict] = None,
+    exclude_function_words: bool = False,
 ) -> list[StepCandidate]:
     """Discover deterministic linguistic candidates from a validated STEP document.
 
     Excludes STEP control Strongs (H90xx), groups Extended Strong variants under
     their base Strong, scans bounded nearby chapters to score recurrence, and
     categorizes candidates into HIGH, MEDIUM, and LOW priorities.
+
+    ``exclude_function_words=True`` drops stoplist 功能詞 (kol／asher／ben／et… see
+    ``FUNCTION_WORD_STRONGS``) before ranking and truncation, so they cannot crowd out
+    content words; a plan target (Strong named by an entry) is always kept.  The default
+    is False so callers that locate evidence by candidate (M3) are unaffected.
     """
     max_count = min(max(1, int(max_results)), HARD_CANDIDATE_MAX)
     selected_verses = set(int(v) for v in verses) if verses is not None else set(document.verses)
@@ -461,6 +527,8 @@ def discover_candidates(
         )
         if is_plan_target:
             signals.append("plan_target")
+        elif exclude_function_words and is_function_word_strong(base):
+            continue
 
         count = len(occs)
         if count >= 3:
@@ -515,9 +583,12 @@ def discover_candidates(
         )
 
     priority_weight = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
+    # 同一優先級內，條目／plan 點名的 Strong（plan_target）先排：它們是寫作真正要用的詞，
+    # 不該輸給只是章內頻率較高的詞（沒有 plan_strongs 的呼叫端排序不受影響）。
     candidates.sort(
         key=lambda c: (
             priority_weight.get(c.priority, 3),
+            0 if "plan_target" in c.signals else 1,
             -len(c.occurrences),
             c.base_strong,
         )
@@ -961,8 +1032,12 @@ def select_step_evidence(
     verses: Optional[Iterable[int]] = None,
     nearby_window: int = DEFAULT_NEARBY_WINDOW,
     char_budget: int = DEFAULT_STEP_PROMPT_CHAR_BUDGET,
+    exclude_function_words: bool = True,
 ) -> StepEvidence:
-    """Filter and render HIGH/MEDIUM candidates within char_budget without padding LOW words."""
+    """Filter and render HIGH/MEDIUM candidates within char_budget without padding LOW words.
+
+    M6 prompt 的選取：預設排除功能詞（``FUNCTION_WORD_STRONGS``），條目點名的 plan_target 例外。
+    """
     if candidates is None:
         candidates = discover_candidates(
             document,
@@ -973,10 +1048,17 @@ def select_step_evidence(
             include_medium=True,
             include_low=False,
             max_results=HARD_CANDIDATE_MAX,
+            exclude_function_words=exclude_function_words,
         )
 
     # Automatic prompt context NEVER injects LOW candidates to fill remaining budget
     candidates = [c for c in candidates if c.priority in ("HIGH", "MEDIUM")]
+    if exclude_function_words:
+        # 呼叫端傳進來的 candidates 可能是沒過濾的；plan_target 例外照舊保留
+        candidates = [
+            c for c in candidates
+            if "plan_target" in c.signals or not is_function_word_strong(c.base_strong)
+        ]
 
     if not candidates:
         text = (
@@ -1363,6 +1445,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--base-strong", help="base Strong 代碼（例如 H1254 或 G3056）")
     parser.add_argument("--word", help="原文、音譯或 lexicon headword 子字串")
     parser.add_argument("--candidates", action="store_true", help="輸出本章 deterministic candidates 候選清單")
+    parser.add_argument("--include-function-words", action="store_true",
+                        help="--candidates 時連功能詞（kol／asher／ben／et… stoplist）一起列出")
     parser.add_argument("--occurrences", action="store_true", help="查詢相鄰章節 occurrences")
     parser.add_argument("--window", type=int, default=DEFAULT_NEARBY_WINDOW, help=f"相鄰章節視窗半徑（預設 {DEFAULT_NEARBY_WINDOW}）")
     parser.add_argument("--max-results", type=int, default=DEFAULT_CANDIDATE_MAX, help=f"最大回傳筆數（預設 {DEFAULT_CANDIDATE_MAX}）")
@@ -1403,7 +1487,10 @@ def main(argv=None) -> int:
         if args.candidates:
             raw = path.read_text(encoding="utf-8-sig", errors="strict")
             doc = extract_stepbible.parse_rendered_markdown_text(raw)
-            candidates = discover_candidates(doc, verses=verses, max_results=args.max_results)
+            candidates = discover_candidates(
+                doc, verses=verses, max_results=args.max_results,
+                exclude_function_words=not args.include_function_words,
+            )
             output = [
                 {
                     "base_strong": c.base_strong,

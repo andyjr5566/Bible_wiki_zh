@@ -99,10 +99,13 @@ review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷
      純文字。M3 的 alias 撞名由 `check` 報出，自己從 payload 移除。（§C）
    - **Reviewer gate**（M3、M6、B 類各一道）：
      1. `python util/agent_review.py submit 【書名】 X m3`（M6 用 `m6`，B 類用 `link_updates`）。
-     2. 請另一個 agent 唯讀審查：預設 Codex（`--sandbox read-only`），不能用時改 Antigravity
-        （`agent_antigravity_orchestrator_prompt.md`）。同一章延續同一個 thread（Codex `--resume`、
-        agy `--conversation`）。只給書卷、章、stage、目前 sha，請它依
-        `agent_evidence_audit_prompt.md` 審查，不另寫審查標準。
+        submit 會先跑前置檢查（引句回查含 `--min-chars 2`；B 類另跑 `link_updates.py apply --dry-run`），
+        沒過就不會寫 checkpoint——先修再送，不要等 PASS 後才被步驟 5b 抓到而多耗一次審查。
+     2. 請另一個 agent 唯讀審查：`python util/review_call.py 【書名】 X m3 [--reviewer antigravity]`。
+        它只給書卷、章、stage、目前 sha，請 reviewer 依 `agent_evidence_audit_prompt.md` 審查；
+        自動帶 Codex 的 MCP 核准旗標（少了會因 STEP 查詢被拒而 BLOCKED），同一章延續同一個 thread
+        （存在 `.tmp/第x章/reviewer_thread.yaml`），Antigravity 依 `agy models` 取最新一代 High，
+        並在審查前後比對 repo 指紋。審查進行中不要改檔。
      3. 依 reviewer 的 footer 代記：
         `python util/agent_review.py verdict 【書名】 X m3 <pass|changes_required|blocked> --sha <REVIEW_SHA256> --reviewer <codex|antigravity> --findings-count N`
      4. 有 findings 就修 `.tmp` 的 yaml 再 submit。採納前先對 raw_data `grep -F` 核對它引的原文，
@@ -128,7 +131,7 @@ review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷
    - preview 提出 challenge 而仍選 keep 時才填 `basis`；`already_covered` 要附 `covered_by`
      逐字節錄；條目欠帳而本章只一句帶過時填 `standing_debt`。（§D）
    - `development=update` 要在 `synthesis_scope` 列本章與至少另一章，並先改條目的
-     `## 主題發展`；不可把本章 summary／relation 換句話說貼進定義或主題發展。
+     `## 主題發展`（條目原本沒有這節時，加在 `## 按書卷累積` 之後、`## 相關條目` 之前）；不可把本章 summary／relation 換句話說貼進定義或主題發展。
    - 過 `link_updates` gate 後才 apply，重跑 apply 必須 0 變更：
      ```text
      python util/link_updates.py apply 【書名】 X --dry-run
@@ -192,7 +195,9 @@ review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷
 9. **全局 review 與 commit**
    - commit 前請 Antigravity 做一次唯讀全局 review：重大遺漏、內容失衡、M3／M6 或跨章條目不一致；
      wording 偏好不改。有實質問題就修 yaml、重跑受影響的驗證。
-   - Antigravity 不能用時跳過，commit 訊息註明「全局 review：略過（無 reviewer）」。
+     `python util/review_call.py 【書名】 X --global-review --reviewer antigravity`
+   - Antigravity 不能用（額度用完等）時，改由 Codex 開獨立 thread 做同一份全局 review
+     （`--reviewer codex`），commit 訊息註明；兩者都不能用才跳過，註明「全局 review：略過（無 reviewer）」。
    - 全部 PASS 後 commit + push，一章一個 commit。回報只列結論數字與需要人工決定的項目，不貼完整報告。
 
 ## 行為邊界

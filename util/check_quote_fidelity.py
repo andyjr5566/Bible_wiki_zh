@@ -207,31 +207,51 @@ def _yaml_text(path: Path, fields=None) -> str:
     return "\n".join(_yaml_strings(yaml.safe_load(path.read_text(encoding="utf-8")), fields))
 
 
-def collect_targets(book: str, chapter: int, root: Path = ROOT):
-    """回傳 [(標籤, 待查文字)]；每一項只取真正由本章寫出來的部分。"""
+# review stage -> 到該 stage submit 為止「應該已經存在、且已進入審查範圍」的檔。
+# agent_review.py submit 的前置檢查用它，避免被後面 stage 尚未定稿（或上一輪遺留）
+# 的檔擋住：m3 只看 entry_content；m6 加 chapter_content；link_updates 再加
+# link_updates.yaml 與（若已渲染）章 md 的「本章整理」。不指定 stage＝全部（預設）。
+STAGE_TARGETS = {
+    "m3": ("entry_content",),
+    "m6": ("entry_content", "chapter_content"),
+    "link_updates": ("entry_content", "chapter_content", "link_updates", "rendered"),
+}
+
+
+def collect_targets(book: str, chapter: int, root: Path = ROOT, stage: str | None = None):
+    """回傳 [(標籤, 待查文字)]；每一項只取真正由本章寫出來的部分。
+
+    ``stage``（m3／m6／link_updates）限定只掃到該 stage 為止的檔；None＝全部。
+    """
+    if stage is not None and stage not in STAGE_TARGETS:
+        raise ValueError(f"未知 stage：{stage}（可用：{', '.join(STAGE_TARGETS)}）")
+    wanted = set(STAGE_TARGETS[stage]) if stage else {
+        "entry_content", "chapter_content", "link_updates", "rendered"}
     base = book_directory(root, book) / ".tmp" / f"第{chapter}章"
     targets = []
-    for path in sorted(glob.glob(str(base / "entry_content" / "*.yaml"))):
-        targets.append((f"entry_content/{Path(path).name}", _yaml_text(Path(path))))
+    if "entry_content" in wanted:
+        for path in sorted(glob.glob(str(base / "entry_content" / "*.yaml"))):
+            targets.append((f"entry_content/{Path(path).name}", _yaml_text(Path(path))))
     chapter_yaml = base / "chapter_content.yaml"
-    if chapter_yaml.is_file():
+    if "chapter_content" in wanted and chapter_yaml.is_file():
         targets.append(("chapter_content.yaml", _yaml_text(chapter_yaml)))
     updates = base / "link_updates.yaml"
-    if updates.is_file():
+    if "link_updates" in wanted and updates.is_file():
         targets.append(("link_updates.yaml（summary／relation）",
                         _yaml_text(updates, {"summary", "relation"})))
     rendered = book_directory(root, book) / f"第{chapter}章.md"
-    if rendered.is_file():
+    if "rendered" in wanted and rendered.is_file():
         section = _organization_section(rendered.read_text(encoding="utf-8"))
         if section:
             targets.append((f"第{chapter}章.md（本章整理）", section))
     return targets
 
 
-def check_quotes(book: str, chapter: int, root: Path = ROOT, min_chars: int = MIN_QUOTE_CHARS):
+def check_quotes(book: str, chapter: int, root: Path = ROOT, min_chars: int = MIN_QUOTE_CHARS,
+                 stage: str | None = None):
     corpus, source_names = chapter_corpus(book, chapter, root)
     total, misses = 0, []
-    for label, text in collect_targets(book, chapter, root):
+    for label, text in collect_targets(book, chapter, root, stage):
         seen = set()
         for pattern in QUOTE_PATTERNS:
             for match in pattern.finditer(text):
@@ -311,6 +331,9 @@ def main() -> int:
     parser.add_argument("--entry", help="改驗單一 link_folder 條目的定義與主題發展")
     parser.add_argument("--references", action="store_true",
                         help="同時回查交叉引註（誤報較多，預設關閉）")
+    parser.add_argument("--stage", choices=tuple(STAGE_TARGETS),
+                        help="只掃到該 review stage 為止的檔（agent_review.py submit 前置檢查用）；"
+                             "省略＝掃全部")
     parser.add_argument("--min-chars", type=int, default=MIN_QUOTE_CHARS, metavar="N",
                         help=f"引句長度下限（預設 {MIN_QUOTE_CHARS}）。調低到 2~4 可掃出"
                              "「」被當強調記號用的短引句——那是常駐閘門驗不到的一型，"
@@ -336,7 +359,8 @@ def main() -> int:
         parser.error("要嘛給「書名 章」，要嘛給 --entry <條目路徑>")
     book = canonical_book_name(args.book)
 
-    total, misses, source_names = check_quotes(book, args.chapter, min_chars=args.min_chars)
+    total, misses, source_names = check_quotes(book, args.chapter, min_chars=args.min_chars,
+                                              stage=args.stage)
     print(f"語料：{'、'.join(source_names)}")
     print(f"引句 {total} 處，回查不到 {len(misses)} 處")
     for label, quote in misses:

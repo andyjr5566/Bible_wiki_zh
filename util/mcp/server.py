@@ -1632,11 +1632,16 @@ def find_step_candidates(
     include_low: bool = False,
     nearby_window: int = 5,
     max_results: int = 20,
+    include_function_words: bool = False,
 ) -> Dict[str, Any]:
     """Discover deterministic original-language candidates from this chapter's formal STEP TXT.
 
     Groups Extended Strong variants under their base Strong, checks nearby recurrence
     within ±nearby_window chapters, and categorizes into HIGH, MEDIUM, LOW priorities.
+
+    預設排除功能詞（kol／asher／ben／et／介系詞／連接詞／代名詞／H9xxx 前綴碼…，見
+    step_context.FUNCTION_WORD_STRONGS），免得高頻虛詞佔滿結果；需要時設
+    ``include_function_words=True`` 取回完整清單。
 
     【使用指引】不知道查什麼時使用此工具探索候選。
     selected STEP context 中沒有某詞，不代表正式 STEP raw 沒有該詞；候選缺席不是 absence evidence。
@@ -1677,6 +1682,7 @@ def find_step_candidates(
             include_low=include_low,
             max_results=max_count,
             diagnostics=diagnostics,
+            exclude_function_words=not include_function_words,
         )
         truncated = len(candidates) >= max_count
         return {
@@ -1707,6 +1713,7 @@ def find_step_candidates(
             "result_count": len(candidates),
             "max_results": max_count,
             "truncated": truncated,
+            "function_words_excluded": not include_function_words,
             "chapters_scanned": diagnostics.get("scanned_chapters", []),
             "missing_chapters": diagnostics.get("missing_chapters", []),
             "invalid_chapters": diagnostics.get("invalid_chapters", []),

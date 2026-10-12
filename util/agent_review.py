@@ -57,6 +57,19 @@ Two situations do not spend the two-review budget:
   The gate then passes as SKIPPED; ``summary`` lists every skipped stage so it
   can be reviewed later with a normal ``verdict`` once a reviewer is back.
 
+Pre-submit checks (``submit`` runs them BEFORE hashing / writing the checkpoint,
+and refuses with a non-zero exit when any FAILs; the checks never modify files):
+
+- m3 / m6 / link_updates: ``check_quote_fidelity`` in both the default and the
+  ``--min-chars 2`` mode, scoped to the files that exist up to that stage
+  (m3: entry_content; m6: + chapter_content; link_updates: + link_updates.yaml
+  and the rendered chapter md).
+- link_updates: also ``link_updates.py apply <book> <chapter> --dry-run``.
+
+Escape hatch: ``submit ... --no-precheck --reason "..."`` skips them; the reason
+is stored in that stage's ``review_history`` and ``summary`` lists the stages
+that used it.
+
 There is deliberately no ``--allow-same-sha`` style bypass: if the recorded sha
 does not match current content, re-submit (``FORCED PASS`` once the budget is
 spent) — never widen the gate to make a stale verdict fit.
@@ -65,6 +78,8 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
+import subprocess
 import sys
 from pathlib import Path
 from typing import Iterable
@@ -89,6 +104,10 @@ GATE_OK_STATUSES = ("pass", "skipped")
 _PARENT_LABELS = ("m3_sha256", "m6_sha256")
 REVIEWERS = ("codex", "antigravity")
 MAX_REVIEW_ATTEMPTS = 2
+
+
+# review_history 裡標記「這次 submit 用 --no-precheck 跳過前置檢查」的 verdict 值。
+NO_PRECHECK_VERDICT = "no_precheck"
 
 
 class ReviewGateError(ValueError):
@@ -281,7 +300,8 @@ def require_pass(book: str, chapter: int, stage: str, root: Path = ROOT) -> dict
     return record
 
 
-def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path, dict]:
+def submit(book: str, chapter: int, stage: str, root: Path = ROOT,
+           no_precheck_reason: str | None = None) -> tuple[Path, dict]:
     canonical, chapter_num, _ = _ctx(book, chapter, root)
     if stage == "m6":
         require_pass(canonical, chapter_num, "m3", root)
@@ -391,9 +411,79 @@ def submit(book: str, chapter: int, stage: str, root: Path = ROOT) -> tuple[Path
     # verdict 掛對了範圍，不必再靠「reviewer 自己加 --allow-same-sha」那種旁路。
     record["hash_inputs"] = stage_hash_inputs(canonical, chapter_num, stage, root)
     record["own_sha256"] = own
+    if no_precheck_reason:
+        record["review_history"] = _history(record) + [{
+            "attempt": None,
+            "reviewer": None,
+            "sha256": current,
+            "verdict": NO_PRECHECK_VERDICT,
+            "reason": no_precheck_reason,
+        }]
     state["stages"][stage] = record
     path = _write_state(canonical, chapter_num, state, root)
     return path, record
+
+
+def _import_quote_fidelity():
+    try:
+        from . import check_quote_fidelity as module
+    except ImportError:
+        import check_quote_fidelity as module  # type: ignore[no-redef]
+    return module
+
+
+def _run_link_updates_dry_run(book: str, chapter: int, root: Path = ROOT) -> tuple[int, str]:
+    """跑 ``link_updates.py apply <書> <章> --dry-run``；回傳 (returncode, 合併輸出)。
+
+    dry-run 只預覽不寫檔。獨立子行程執行，沿用 link_updates 自己的 ROOT 與 UTF-8 設定。
+    測試時 patch 這個函式即可，不必真的跑。
+    """
+    script = Path(__file__).resolve().parent / "link_updates.py"
+    result = subprocess.run(
+        [sys.executable, str(script), "apply", book, str(chapter), "--dry-run"],
+        cwd=str(root), capture_output=True, text=True, encoding="utf-8", errors="replace",
+        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+    )
+    return result.returncode, (result.stdout or "") + (result.stderr or "")
+
+
+def run_precheck(book: str, chapter: int, stage: str, root: Path = ROOT) -> list[str]:
+    """submit 前的機械前置檢查；回傳失敗訊息清單（空＝全部 PASS）。不改動任何檔案。"""
+    if stage not in STAGES:
+        raise ReviewGateError(f"未知 stage：{stage}")
+    canonical, chapter_num, _ = _ctx(book, chapter, root)
+    failures: list[str] = []
+    qf = _import_quote_fidelity()
+    for min_chars in (qf.MIN_QUOTE_CHARS, 2):
+        mode = "check_quote_fidelity" + (
+            "" if min_chars == qf.MIN_QUOTE_CHARS else f" --min-chars {min_chars}")
+        try:
+            total, misses, _names = qf.check_quotes(
+                canonical, chapter_num, root, min_chars=min_chars, stage=stage)
+        except FileNotFoundError as exc:
+            failures.append(f"{mode}：{exc}（缺 source_manifest.md，無法回查引句）")
+            continue
+        if misses:
+            lines = [f"{mode}：引句 {total} 處，回查不到 {len(misses)} 處"]
+            by_file: dict[str, list[str]] = {}
+            for label, quote in misses:
+                by_file.setdefault(label, []).append(quote)
+            for label, quotes in by_file.items():
+                lines.append(f"    要修的檔：{label}")
+                for quote in quotes[:10]:
+                    lines.append(f"      ✗ {quote[:80]}")
+                if len(quotes) > 10:
+                    lines.append(f"      …另有 {len(quotes) - 10} 處")
+            failures.append("\n".join(lines))
+    if stage == "link_updates":
+        code, output = _run_link_updates_dry_run(canonical, chapter_num, root)
+        if code != 0:
+            tail = "\n".join("      " + line for line in output.strip().splitlines()[-15:])
+            failures.append(
+                f"link_updates.py apply {canonical} {chapter_num} --dry-run 失敗（exit {code}）\n"
+                f"    要修的檔：link_updates.yaml（或其指向的 link_folder 條目路徑）\n{tail}"
+            )
+    return failures
 
 
 def skip_review(book: str, chapter: int, stage: str, reason: str,
@@ -647,7 +737,41 @@ def skipped_stages(book: str | None, root: Path = ROOT) -> list[tuple[str, int, 
     return sorted(rows, key=lambda r: (r[0], r[1], STAGES.index(r[2]) if r[2] in STAGES else 9))
 
 
+def no_precheck_stages(book: str | None, root: Path = ROOT) -> list[tuple[str, int, str, str]]:
+    """列出曾用 --no-precheck 略過前置檢查的 stage：(書卷, 章, stage, 原因)。"""
+    books = [canonical_book_name(book)] if book else []
+    if not book:
+        for directory in sorted(Path(root).glob("[0-9][0-9] *")):
+            try:
+                books.append(canonical_book_name(directory.name))
+            except ValueError:
+                continue
+    rows = []
+    for canonical in books:
+        tmp_root = book_directory(Path(root), canonical) / ".tmp"
+        if not tmp_root.is_dir():
+            continue
+        for state_path in sorted(tmp_root.glob(f"第*章/{STATE_FILENAME}")):
+            try:
+                data = yaml.safe_load(state_path.read_text(encoding="utf-8")) or {}
+            except yaml.YAMLError:
+                continue
+            for stage, record in (data.get("stages") or {}).items():
+                if not isinstance(record, dict):
+                    continue
+                for item in _history(record):
+                    if item.get("verdict") == NO_PRECHECK_VERDICT:
+                        rows.append((canonical, int(data.get("chapter") or 0), stage,
+                                     str(item.get("reason") or "")))
+    return sorted(rows, key=lambda r: (r[0], r[1], STAGES.index(r[2]) if r[2] in STAGES else 9))
+
+
 def _print_forced_pass_report(book: str | None, root: Path = ROOT) -> int:
+    no_precheck = no_precheck_stages(book, root)
+    if no_precheck:
+        print(f"曾用 --no-precheck 略過前置檢查：{len(no_precheck)} 筆")
+        for bk, ch, stage, reason in no_precheck:
+            print(f"  {bk} 第{ch}章 {stage}（{reason}）")
     skipped = skipped_stages(book, root)
     if skipped:
         print(f"待補審（SKIPPED，未經 reviewer）：{len(skipped)} 個 stage")
@@ -727,6 +851,11 @@ def main() -> int:
     submit_parser.add_argument("book")
     submit_parser.add_argument("chapter", type=int)
     submit_parser.add_argument("stage", choices=STAGES)
+    submit_parser.add_argument(
+        "--no-precheck", action="store_true",
+        help="逃生口：略過引句／link_updates dry-run 前置檢查（必須附 --reason，會記進該 stage 歷史）",
+    )
+    submit_parser.add_argument("--reason", help="--no-precheck 的原因（寫進 review_history）")
 
     verdict_parser = sub.add_parser("verdict", help="記錄 Codex/Antigravity 對指定 hash 的 review 結果")
     verdict_parser.add_argument("book")
@@ -767,7 +896,29 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.command == "submit":
-            path, record = submit(args.book, args.chapter, args.stage)
+            reason = None
+            if args.no_precheck:
+                reason = (args.reason or "").strip()
+                if not reason:
+                    print("❌ --no-precheck 必須附 --reason，說明為什麼略過前置檢查")
+                    return 2
+                print(f"⚠️ 略過前置檢查（--no-precheck）：{reason}")
+            elif args.reason:
+                print("❌ --reason 只能和 --no-precheck 一起用")
+                return 2
+            else:
+                failures = run_precheck(args.book, args.chapter, args.stage)
+                if failures:
+                    print(f"❌ submit 前置檢查 FAIL：{canonical_book_name(args.book)} "
+                          f"第{args.chapter}章 {args.stage}（未計算 hash、未寫 checkpoint）")
+                    for item in failures:
+                        print("  - " + item)
+                    print("  修好上面的檔後重新 submit；確定是誤報才用 "
+                          "--no-precheck --reason \"...\"。")
+                    return 1
+                print("✅ submit 前置檢查 PASS")
+            path, record = submit(args.book, args.chapter, args.stage,
+                                  no_precheck_reason=reason)
             _print_submit(canonical_book_name(args.book), args.chapter, args.stage, path, record)
             return 0
         if args.command == "verdict":
@@ -845,6 +996,8 @@ def main() -> int:
                 forced += " delta-review-pending"
             reviewer = _reviewer_agent(record) or "none"
             thread = f" thread={record.get('thread_id')}" if record.get("thread_id") else ""
+            if any(item.get("verdict") == NO_PRECHECK_VERDICT for item in _history(record)):
+                forced += " no-precheck-used"
             print(
                 f"- {stage}: {freshness}{forced} review_round={record.get('round')} "
                 f"revision={record.get('revision', record.get('round'))} "

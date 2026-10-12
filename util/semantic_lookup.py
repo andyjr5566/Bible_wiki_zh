@@ -25,6 +25,11 @@ evidence＋surfaces」合成富查詢（比裸名多很多訊號），一次批�
 發現「措辭不同、意思相同」的既有條目，改宣告該條目名走 B 類累積，避免建出
 近似重複。報告僅輔助人工分類，不改動任何檔案內容。
 
+報告另有「內文提及」一節：對將新建（C）的候選掃 link_folder 內文（排除 frontmatter 與本章
+自己的累積區塊），列出內文含候選名、或內文引用本章該候選所在經節（書13:17、書十三17…）的
+既有條目，有命中就在「摘要」加 ⚠——標題／alias／語義近鄰抓不到「同一實體、不同譯名」
+（例：書13「巴末巴力」＝民22:41 的「巴力的高處」）。
+
 程式化使用：
   from semantic_lookup import SemanticIndex
   index = SemanticIndex.load()
@@ -444,6 +449,241 @@ def _embedding_rule_verdict(sim_top1, suggested, threshold, resolver_mod,
     ), True
 
 
+# ---------------------------------------------------------------------------
+# 內文提及掃描
+#
+# 近鄰報告看的是標題／alias／embedding，抓不到「同一實體、不同譯名」：書13 的
+# 「巴末巴力」就是既有條目「巴力的高處（Bamoth-baal）」（民22:41 的意譯名），該條內文
+# 早就寫到「書13:17」，但標題、alias、近鄰分數（0.425）都沒指向它。這一節直接掃
+# link_folder 內文：誰提到了候選名、誰引用了本章該候選所在的經節。
+# ---------------------------------------------------------------------------
+MENTION_MAX_PER_KIND = 8
+MENTION_SNIPPET_RADIUS = 28
+_CJK_RE = re.compile(r"[一-鿿]")
+_CN_DIGITS = "一二三四五六七八九"
+
+
+def _chinese_number(value):
+    if value <= 0:
+        return str(value)
+    if value < 10:
+        return _CN_DIGITS[value - 1]
+    if value == 10:
+        return "十"
+    if value < 20:
+        return "十" + _CN_DIGITS[value - 11]
+    if value < 100:
+        tens, ones = divmod(value, 10)
+        return _CN_DIGITS[tens - 1] + "十" + ("" if ones == 0 else _CN_DIGITS[ones - 1])
+    return str(value)
+
+
+def _book_reference_names(canonical):
+    """該書卷在內文引註裡可能出現的中文寫法（簡稱＋全名），例如約書亞記 → 書、約書亞記。"""
+    try:
+        from . import extract_stepbible
+    except ImportError:
+        import extract_stepbible
+    names = {canonical}
+    meta = extract_stepbible.BOOK_BY_CANONICAL_NAME.get(canonical)
+    if meta:
+        for code, _en, _testament, aliases in extract_stepbible.BOOKS:
+            if code == meta["code"]:
+                names.update(a for a in aliases if _CJK_RE.search(a))
+    return sorted(names, key=len, reverse=True)
+
+
+def _candidate_verses(candidate):
+    """候選在本章的節號：evidence 開頭子句的「第N節」＋ surfaces 的 verses。"""
+    try:
+        from . import step_context
+    except ImportError:
+        import step_context
+    verses = set(step_context._surface_verses(candidate))
+    lead, _warnings, _is_full = step_context._evidence_verses(candidate.get("evidence") or "")
+    verses |= set(lead)
+    return verses
+
+
+def _chapter_reference_regex(canonical, chapter):
+    """本章經節引用：書13:17、書十三17、約書亞記13:15-23、書13:3,17 等寫法。"""
+    names = _book_reference_names(canonical)
+    name_alt = "|".join(re.escape(n) for n in names)
+    # 單字簡稱（書、民…）前面不能緊貼別的漢字（避免「走出13:17」這類），
+    # 但「見書13:17」「參書13:17」這種引導字要放行。
+    prefix = (r"(?:(?<![一-鿿])|(?<=[見參照及和與如也並或另])|"
+              r"(?<=\d)|(?<=[（(，、；：:]))")
+    chapter_variants = [str(chapter)]
+    cn = _chinese_number(chapter)
+    verse_spec = r"(\d{1,3}(?:\s*[\-–—~～至到,，、]\s*\d{1,3})*)"
+    pattern = (
+        prefix + r"(?:" + name_alt + r")\s*(?:"
+        + re.escape(chapter_variants[0]) + r"\s*[:：]\s*" + verse_spec
+        + r"|" + re.escape(cn) + r"\s*[:：]?\s*" + verse_spec
+        + r")"
+    )
+    return re.compile(pattern)
+
+
+def _parse_reference_verses(spec):
+    try:
+        from . import step_context
+    except ImportError:
+        import step_context
+    try:
+        return step_context.parse_verse_spec(spec)
+    except ValueError:
+        return set()
+
+
+def _strip_for_mention_scan(text, canonical, chapter):
+    """去掉 frontmatter 與本章自己的 accumulation 區塊——那是本章寫進去的，不算既有內文。"""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end >= 0:
+            text = text[end + 4:]
+    own = re.compile(
+        rf"<!--\s*accumulation:{re.escape(canonical)}:{int(chapter)}:start\s*-->"
+        rf"[\s\S]*?<!--\s*accumulation:{re.escape(canonical)}:{int(chapter)}:end\s*-->"
+    )
+    return own.sub("", text)
+
+
+def _snippet(text, start, end):
+    left = max(0, start - MENTION_SNIPPET_RADIUS)
+    right = min(len(text), end + MENTION_SNIPPET_RADIUS)
+    piece = text[left:right].replace("\n", " ").strip()
+    return ("…" if left > 0 else "") + piece + ("…" if right < len(text) else "")
+
+
+def scan_body_mentions(candidates, book, chapter, root=ROOT):
+    """對「將新建（C）」的候選，掃 link_folder 內文：
+
+    (a) 內文含該候選名（去掉括號音譯後的中文名）的條目；
+    (b) 內文含本章經節引用（書13:17／書十三17…；節號取自候選 evidence／surfaces）的條目。
+
+    只讀檔、不改任何檔案。link_folder 一次讀入後比對（約 3300 檔），不是每個候選各掃一遍。
+    回傳 {候選名: {"verses": [...], "name_hits": [...], "ref_hits": [...]}}，
+    hit 為 dict(title, type, path, snippet[, verses])。
+    """
+    root = Path(root)
+    canonical = canonical_book_name(book)
+    chapter = int(chapter)
+    link_dir = root / "link_folder"
+    results = {}
+    wanted = []
+    for candidate in candidates:
+        name = candidate.get("name") or ""
+        base = resolver.base_name(name)
+        verses = _candidate_verses(candidate)
+        results[name] = {"verses": sorted(verses), "name_hits": [], "ref_hits": [],
+                         "name_total": 0, "ref_total": 0}
+        wanted.append((name, base if len(base) >= 2 else "", verses))
+    if not wanted or not link_dir.is_dir():
+        return results
+
+    ref_regex = _chapter_reference_regex(canonical, chapter)
+    for path in sorted(link_dir.rglob("*.md")):
+        try:
+            raw = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            continue
+        body = _strip_for_mention_scan(raw, canonical, chapter)
+        referenced = {}   # verse -> (引用範圍大小, start, end)，取涵蓋該節最精確的一筆
+        for match in ref_regex.finditer(body):
+            ref_verses = _parse_reference_verses(match.group(1) or match.group(2))
+            for verse in ref_verses:
+                known = referenced.get(verse)
+                if known is None or len(ref_verses) < known[0]:
+                    referenced[verse] = (len(ref_verses), match.start(), match.end())
+        title = path.stem
+        kind = path.parent.name
+        rel = path.relative_to(root).as_posix()
+        for name, base, verses in wanted:
+            if title == name or title == base:
+                continue   # 同名條目是字面命中，不在這裡處理
+            entry = results[name]
+            if base:
+                pos = body.find(base)
+                if pos >= 0:
+                    entry["name_total"] += 1
+                    if len(entry["name_hits"]) < MENTION_MAX_PER_KIND:
+                        entry["name_hits"].append({
+                            "title": title, "type": kind, "path": rel,
+                            "snippet": _snippet(body, pos, pos + len(base)),
+                        })
+            common = sorted(verses & set(referenced))
+            if common:
+                entry["ref_total"] += 1
+                span, start, end = min((referenced[v] for v in common), key=lambda x: x[0])
+                entry["ref_hits"].append({
+                    "title": title, "type": kind, "path": rel, "verses": common,
+                    "span": span, "snippet": _snippet(body, start, end),
+                })
+    # 引用範圍越精確（單節）越前面；「書13:8-31」這種整段範圍排後面再截斷
+    for entry in results.values():
+        entry["ref_hits"].sort(key=lambda hit: (hit["span"], hit["title"]))
+        del entry["ref_hits"][MENTION_MAX_PER_KIND:]
+    return results
+
+
+def mention_section_lines(candidates, mentions, canonical, chapter):
+    """渲染「內文提及」一節；回傳 (lines, summary_items)。summary_items 供「需要判斷的項目」加 ⚠。"""
+    lines = [
+        "## 內文提及（link_folder 內文掃描）",
+        "對將新建（C）的候選，掃既有條目內文（排除 frontmatter 與本章自己的累積區塊）：",
+        "(a) 內文含候選名的條目；(b) 內文引用本章該候選所在經節的條目。"
+        "有命中表示可能是**同一實體的不同譯名**（標題／alias／語義近鄰看不到），請逐一確認。",
+        "",
+    ]
+    summary_items = []
+    any_hit = False
+    for candidate in candidates:
+        name = candidate.get("name") or ""
+        info = mentions.get(name) or {}
+        name_hits = info.get("name_hits") or []
+        ref_hits = info.get("ref_hits") or []
+        if not name_hits and not ref_hits:
+            continue
+        any_hit = True
+        stype = candidate.get("suggested_type") or candidate.get("type") or "?"
+        lines.append(f"### {name}（{stype}）")
+        verse_label = "、".join(f"第{v}節" for v in info.get("verses") or [])
+        if name_hits:
+            lines.append(f"(a) 內文含候選名「{resolver.base_name(name)}」：共 {info['name_total']} 個條目")
+            for hit in name_hits:
+                lines.append(f"- [[{hit['title']}]]（{hit['type']}）：{hit['snippet']}")
+            if info["name_total"] > len(name_hits):
+                lines.append(f"- …另有 {info['name_total'] - len(name_hits)} 個")
+        if ref_hits:
+            lines.append(f"(b) 內文引用本章經節（{canonical}第{chapter}章 {verse_label}）：共 {info['ref_total']} 個條目")
+            for hit in ref_hits:
+                verses = "、".join(str(v) for v in hit["verses"])
+                lines.append(f"- [[{hit['title']}]]（{hit['type']}，引到第{verses}節）：{hit['snippet']}")
+            if info["ref_total"] > len(ref_hits):
+                lines.append(f"- …另有 {info['ref_total'] - len(ref_hits)} 個")
+        lines.append("")
+        titles = []
+        for hit in name_hits + ref_hits:
+            if hit["title"] not in titles:
+                titles.append(hit["title"])
+        basis = []
+        if name_hits:
+            basis.append("內文含候選名")
+        if ref_hits:
+            basis.append("引用本章同節")
+        shown = "、".join(f"[[{t}]]" for t in titles[:4])
+        more = f" 等 {len(titles)} 個" if len(titles) > 4 else ""
+        summary_items.append(
+            (name, f"⚠ 內文提及：{shown}{more}（{'；'.join(basis)}）"
+                   "——可能是同一實體的不同譯名，確認是否改走 B 類累積")
+        )
+    if not any_hit:
+        lines.append("（沒有命中）")
+        lines.append("")
+    return lines, summary_items
+
+
 def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                      threshold=None, link_index=None, homonyms=None,
                      reranker=None, use_rerank=None, require_rerank=False,
@@ -559,6 +799,7 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
     review_items = []     # (候選名, 判定) — 需要 agent 判斷的項目
     literal_matches = []  # 字面直接對上既有條目、不需判斷
     flagged = 0
+    new_candidates = []   # 字面無對應、無同名歧義 → 將成為 C 類新建的候選
     rerankable_candidates = 0
     rerank_attempted = 0
     rerank_succeeded = 0
@@ -605,6 +846,9 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
                 lines.append("")
                 literal_matches.append(name)
                 continue
+
+            if lexical_entry is None and not attention:
+                new_candidates.append(candidate)
 
             lines.append(f"## {name}（{suggested or '?'}）")
             
@@ -811,9 +1055,19 @@ def candidate_report(book, chapter, top=5, root=ROOT, index=None,
         else:
             lines.append("（無 ≥ 門檻的配對）")
 
+        # 內文提及：掃 link_folder 內文，抓「同一實體、不同譯名」的既有條目
+        mentions = scan_body_mentions(new_candidates, canonical, chapter, root=root)
+        mention_lines, mention_items = mention_section_lines(
+            new_candidates, mentions, canonical, chapter)
+        lines.append("")
+        lines.extend(mention_lines)
+        flagged += len(mention_items)
+
         summary = ["## 摘要：需要判斷的項目", ""]
-        if review_items or pairs:
+        if review_items or pairs or mention_items:
             for item_name, item_verdict in review_items:
+                summary.append(f"- {item_name}：{item_verdict}")
+            for item_name, item_verdict in mention_items:
                 summary.append(f"- {item_name}：{item_verdict}")
             for score, name_a, name_b in pairs:
                 summary.append(f"- 候選互查 {score:.3f}：{name_a} ↔ {name_b}")

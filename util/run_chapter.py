@@ -1500,6 +1500,8 @@ def chapter_content_step(
                 include_medium=True,
                 include_low=False,
                 max_results=step_context.HARD_CANDIDATE_MAX,
+                # M6 prompt 不拿預算填 kol／asher／ben 這類功能詞（plan 點名的 Strong 例外保留）
+                exclude_function_words=True,
             )
         except Exception:
             step_candidates = None
