@@ -1,0 +1,405 @@
+book: 約書亞記
+chapter: 14
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第1節「祭司以利亞撒和嫩的兒子約書亞」主持分地。GT《丁道爾》說這是他頭一次出現在約書亞記，他曾參與約書亞的任命，有責任用烏陵和土明判斷神的旨意（民27:19-22）；GT《綜合解讀》推測他可能負責主持拈鬮，GT《研經資料》說一般認為他就是主持拈鬮的人。
+  relation: 本章他與約書亞並列為分地的主持者。KC 注意到經文把以利亞撒排在約書亞前面；CT 話中之光說亞倫的接班人以利亞撒代表神的恩典，摩西的接班人約書亞代表神的權柄。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第1節與以利亞撒一同主持分地；第6-13節迦勒在吉甲向他提起「耶和華在加低斯巴尼亞指著我與你」所說的話，約書亞為迦勒祝福，把希伯崙給他為業。
+  relation: 本章約書亞從征服者轉為分地的人；迦勒是他當年唯一的同伴。GT《綜合解讀》說分配地業從迦勒開始、到約書亞結束（書19:49-50），兩人首尾呼應。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 30
+    - 31
+    definition: keep
+    development: keep
+- title: 分地的十位支派首領
+  path: link_folder/主題/分地的十位支派首領.md
+  summary: 第1節「以色列各支派的族長」與以利亞撒、約書亞一同分地。CT 與 GT《綜合解讀》說神指定了協助分地的河西十個支派的族長（民34:19-28）；KC 說他們在場監督，可以杜絕偏袒任何支派的懷疑；BH 說他們以代表和見證人的身分參與。
+  relation: 民34 列出這十個名字，本章是他們實際上任：分地的主持團隊在這裡第一次出現在約書亞記。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 迦南地
+  path: link_folder/地點/迦南地.md
+  summary: 第1節「以色列人在迦南地所得的產業」。CT 說『迦南地』是對約但河以西之地的稱謂；GT《丁道爾》說法相同。
+  relation: 本章用「迦南地」標出從這裡開始分的是約但河西，與第13章河東的分地區隔。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 33
+    - 34
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第1、2、3、9、13、14節反覆說「產業／為業」。STEP 顯示第9節「永遠為業」是 le./na.cha.Lah（H5159）。CT 說『產業』指供居住並生產的土地。
+  relation: 本章用這個字串起分地的總說明與迦勒的個案：九個半支派的產業拈鬮分，迦勒的產業則照摩西起誓給。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 19
+    - 20
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第2節「把產業拈鬮分給九個半支派」。GT《丁道爾》說在約書亞記這裡是頭一次提到鬮，經文從未仔細說明它如何使用；CT 原文字義：抽籤用的小卵石。GT《綜合解讀》說拈鬮決定各支派的位置，地域的大小則根據人口分配（民26:53-56）；BH 說拈鬮使最強的支派或最有影響力的領袖不能自己決定自己的分。
+  relation: 民數記立下的方法，本章正式在河西開始執行；CT 說迦勒的希伯崙「相當於拈鬮分給」，因為神的應許和拈鬮兩者都是神的旨意。
+  overview_review:
+    signals:
+    - development_blank
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 摩西
+  path: link_folder/人物/摩西.md
+  summary: 第2、5節分地是「照耶和華藉摩西所吩咐的」；第6-10節迦勒三次提到摩西：神在加低斯巴尼亞對「神人摩西」說的話、摩西打發他窺探、摩西當日的起誓。CT 說『耶和華的僕人』與『神人』同樣用來稱呼摩西。
+  relation: 本章摩西已不在，但分地的每一步都還照他的話進行；迦勒的請求也以摩西的起誓為憑據。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 83
+    - 84
+    definition: keep
+    development: keep
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第3節「摩西在約但河東已經把產業分給那兩個半支派」。CT 請讀者參閱書13:15-32；BH 說他們在立誓帶兵過河幫助弟兄之後才得了河東。
+  relation: 本章用一句話把第13章的河東分地帶過，為河西拈鬮清出場地。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 6
+    - 7
+    definition: keep
+    development: *id001
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第3-4節「沒有把產業分給利未人」，但給他們城邑居住並城邑的郊野。CT 說利未人專職事奉神，神自己就是他們的產業；GT《綜合解讀》說利未散居、少算一個支派，約瑟分成兩個支派、多算一個，所以參與分地的支派總數仍是十二。
+  relation: 本章是約書亞記第三次說利未沒有地業（書13:14、33 之後），並第一次提到他們會得城邑。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep
+- title: 收納以法蓮與瑪拿西
+  path: link_folder/歷史/收納以法蓮與瑪拿西.md
+  summary: 第4節「約瑟的子孫是兩個支派，就是瑪拿西和以法蓮」。CT 說流便因犯罪失去長子名分，雅各改立約瑟為長子，可得雙份（創48:5、代上5:1-2）；GT《啟導本》說雅各將約瑟的二子與其他十一子同列，等於過繼孫兒為子；GT《綜合解讀》說約瑟多算一個支派、利未少算一個，分地的支派仍是十二。
+  relation: 創48 的收納，在本章變成分地時的算術：約瑟的雙份正好補上利未空出的那一份。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: keep
+- title: 瑪拿西
+  path: link_folder/人物/瑪拿西.md
+  summary: 第4節約瑟的子孫是瑪拿西和以法蓮兩個支派。BH 說雅各在創48:5 收納約瑟的兩個兒子，讓約瑟得長子的雙份。
+  relation: 本章瑪拿西出現在分地的算術裡：它與以法蓮各算一個支派。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 以法蓮
+  path: link_folder/人物/以法蓮.md
+  summary: 第4節約瑟的子孫是瑪拿西和以法蓮兩個支派。BH 說瑪拿西雖是長子，雅各卻把更大的祝福給以法蓮，以法蓮後來在北方支派中顯著。
+  relation: 本章是以法蓮在約書亞記第一次以支派身分出現，作為分地算術中的一份。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 利未人的四十八座城
+  path: link_folder/主題/利未人的四十八座城.md
+  summary: 第4節「但給他們城邑居住，並城邑的郊野，可以牧養他們的牲畜，安置他們的財物」。GT《聖經精讀本》說利未人得到了包括6個逃城的48個城邑與城四周的放牧草地；CT 請讀者參閱民35:2-8；BH 說這些城分散在各支派中。
+  relation: 民35 定下的安排，本章在分地開頭先預告一次，到書21 才實際分城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 郊野（mig.rash）
+  path: link_folder/原文/郊野（mig.rash）.md
+  summary: '第4節「並城邑的郊野」。STEP 為 u./Mig.re.shei./Hem（H4054，mig.rash: pasture）。BH 說利未城周圍的草場為他們的家庭和牲畜提供實際的供應。'
+  relation: 本章是約書亞記第一次出現這個字，用在利未人的城邑上。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 猶大支派
+  path: link_folder/人物/猶大支派.md
+  summary: 第6節「猶大人來到吉甲見約書亞」，迦勒是其中說話的人。KC 說來的是猶大人，經文卻只記一個人的心願；GT《研經資料》說關於猶大支派的記載是最詳盡的，可能跟以色列的統治者出自猶大有關。
+  relation: 本章猶大是河西第一個受分的支派，而它的分地從迦勒個人的請求開始。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 吉甲
+  path: link_folder/地點/吉甲.md
+  summary: 第6節「猶大人來到吉甲見約書亞」。CT 說吉甲是當時約書亞的指揮總部；KC 說猶大與約瑟的支派在吉甲受分，其餘七支派在示羅；GT《研經資料》說約書亞讓各支派去征服所分之地前，都在吉甲領導以色列軍。
+  relation: 本章吉甲成了分地的第一個地點；分地的後半段要到書18 才移到示羅。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 基尼洗人
+  path: link_folder/人物/基尼洗人.md
+  summary: 第6、14節「基尼洗族耶孚尼的兒子迦勒」。GT《研經資料》說此族並非以色列人的部族；KC 說迦勒的祖先大概是後來加入神百姓中間的，也可能是猶大的一個家族；BH 說他雖被稱為基尼洗人，已完全併入猶大。
+  relation: 本章兩次用這個族名稱呼迦勒；KC 由此說許多不是在神百姓中長大的人，反而更渴慕屬靈的福分。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 迦勒
+  path: link_folder/人物/迦勒.md
+  summary: 第6-15節迦勒八十五歲，在吉甲向約書亞提起四十五年前的應許，求得希伯崙。他說自己四十歲時被差窺探、「按著心意回報」，同去的弟兄使百姓的心消化，他卻專心跟從耶和華；又說「我還是強壯」。CT 說約書亞把希伯崙給他，等於把征服的任務交給他。
+  relation: 民數記與申命記一再提到的應許，本章由迦勒自己來領取；他是河西分地的第一筆。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:13
+      - 民數記:14
+      - 民數記:32
+      - 申命記:1
+      - 約書亞記:14
+- title: 加低斯巴尼亞事件
+  path: link_folder/歷史/加低斯巴尼亞事件.md
+  summary: 第6-8節迦勒說「耶和華在加低斯巴尼亞指著我與你對神人摩西所說的話，你都知道了」，又說同去的弟兄使百姓的心消化。CT 說加低斯巴尼亞是打發十二探子窺探迦南地的地方；BH 說以色列在那裡選擇了懼怕而不是信心。
+  relation: 本章是當年兩個忠心探子之一在四十五年後回顧這件事，用來領取產業。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:14
+      - 申命記:1
+      - 約書亞記:14
+- title: 加低斯
+  path: link_folder/地點/加低斯.md
+  summary: 第6、7節「加低斯巴尼亞」。BH 說加低斯巴尼亞位在迦南的南方入口，是一次全民失敗的現場；CT 字義「神聖的」。
+  relation: 本章它只出現在迦勒的回憶裡。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition: keep
+    development: *id001
+- title: 神人（ish ha.e.lo.him）
+  path: link_folder/原文/神人（ish ha.e.lo.him）.md
+  summary: 第6節「對神人摩西所說的話」。CT 說『神人』意指屬神的人（man of God），與「耶和華的僕人」同樣用來稱呼摩西。
+  relation: 本章是約書亞記第一次用這個稱呼，出自迦勒的口。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 十二探子窺探迦南地
+  path: link_folder/事件/十二探子窺探迦南地.md
+  summary: 第7-8節迦勒回憶摩西打發他窺探這地，那時他四十歲，他按著心意回報，同去的弟兄卻使百姓的心消化。GT《綜合解讀》說「按著心意回報」是實話實說，既不是因為懼怕人、也不是為了討好人；BH 說同享的經歷並沒有帶來同樣的信心。
+  relation: 本章從當事人的口重述這件事，並把它和迦勒的產業直接連在一起。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 專心跟從主與另一個心志
+  path: link_folder/神學/專心跟從主與另一個心志.md
+  summary: 第8、9、14節三次出現「專心跟從耶和華」：迦勒自述、引摩西的起誓、敘事者的總結。STEP 第8節為 mi.Le.ti 'a.cha.Rei（H4390 加 H310A）。GT《丁道爾》說「跟隨耶和華」一詞用在迦勒和約書亞身上，與不肯跟隨耶和華的以色列人形成對比。
+  relation: 本章這句話第一次由迦勒自己說出，並成了希伯崙歸他的理由。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:14
+      - 民數記:32
+      - 約書亞記:14
+- title: 出入（領袖用語）
+  path: link_folder/原文/出入（領袖用語）.md
+  summary: 第11節「無論是爭戰，是出入」。GT《研經資料》說「出入」原文直譯是「是出，是入」，猶太版英文聖經作 to go out and come in；CT 說『爭戰』指上戰場，『出入』指在家日常生活。
+  relation: 本章是這個用語用在一個八十五歲的人身上，說明他的力量還與當年一樣。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 亞衲族與偉人拿非林
+  path: link_folder/背景/亞衲族與偉人拿非林.md
+  summary: 第12節「那裡有亞衲族人，並寬大堅固的城」，第15節亞巴是亞衲族中最尊大的人。STEP 為 'a.na.Kim（H6062）。BH 說亞衲族的身量與名聲曾使其他十個探子懼怕。
+  relation: 本章迦勒指名要的就是亞衲族所住的山地，正是四十五年前嚇倒探子的那一族。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 希伯崙
+  path: link_folder/地點/希伯崙.md
+  summary: 第13-15節約書亞將希伯崙給迦勒為業，「直到今日」；希伯崙從前名叫基列亞巴。GT《研經資料》說它在耶路撒冷南方30公里左右，亞伯拉罕曾在此築壇（創13:18），大衛作王的前七年以它為首都；KC 把希伯崙解作相交，又說這城與死亡相連（撒拉葬在那裡）。
+  relation: 本章希伯崙從被攻取的城（書10）變成一個人的產業；GT《啟導本》預告它後來成為利未城與逃城（書21:11、20:7）。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 直到今日
+  path: link_folder/主題/直到今日.md
+  summary: 第14節「希伯崙作了……迦勒的產業，直到今日」。CT 說『今日』指《約書亞記》書成之日。
+  relation: 本章這句話用在一個正面的結果上：迦勒的產業一直保存到作者的時代。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 基列亞巴
+  path: link_folder/地點/基列亞巴.md
+  summary: 第15節「希伯崙從前名叫基列亞巴；亞巴是亞衲族中最尊大的人」。STEP 為 kir.Yat 'ar.Ba'（H7153）。CT 說基列亞巴是亞衲族始祖亞巴佔據此城時所起的名字，迦勒取得後又改回叫希伯崙；GT《研經資料》字義「亞巴之城」。
+  relation: 本章以舊名收尾，提醒迦勒要攻取的是一座以亞衲族最尊大的人命名的城。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 國中太平（sha.qat）
+  path: link_folder/原文/國中太平（sha.qat）.md
+  summary: 第15節「於是國中太平，沒有爭戰了」。STEP 為 sha.ke.Tah（H8252）。CT 備註說有人認為第6-15節是書11:21-23 的詳細解釋，兩段都以這句作結；GT《綜合解讀》說這表明攻取希伯崙是征服迦南的最後一戰；BH 說這太平不是所有仇敵都消失了。
+  relation: 本章是這句話在約書亞記的第二次出現；它把迦勒的故事和書11 的戰事綁在一起。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:11
+      - 約書亞記:14
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: GT《綜合解讀》與 CT 話中之光說，聖靈在眾支派面前用迦勒作見證，拉開分地的序幕，鼓勵百姓也照樣憑信心領取神分給他們的「未得之地」（書13:1）；GT《綜合解讀》又說迦勒之所以能得著未得之地作產業，是因為他專心跟從耶和華。
+  relation: 第13章列出未得之地的清單，本章給了第一個去得的人。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 趕出（ya.rash）
+  path: link_folder/原文/趕出（ya.rash）.md
+  summary: 第12節「我就把他們趕出去」。STEP 為 ve./Ho.rash.Ti/m（H3423H，Vh 形，譯義 I will dispossess them）。
+  relation: 第13章說以色列人沒有趕逐基述人、瑪迦人；本章迦勒用同一個動詞說出他要去趕出亞衲族。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001

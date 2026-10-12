@@ -163,6 +163,13 @@
       "fingerprint": "06c4f174e956ba59"
     },
     {
+      "path": "link_folder/地點/加低斯.md",
+      "title": "加低斯",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 12,
+      "fingerprint": "d006f4cd7303e9ce"
+    },
+    {
       "path": "link_folder/神學/分別為聖.md",
       "title": "分別為聖",
       "deferred_at": "申命記:22",
@@ -217,6 +224,20 @@
       "deferred_at": "申命記:9",
       "accumulated": 8,
       "fingerprint": "20d3d6244231e753"
+    },
+    {
+      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
+      "title": "拈鬮分地（go.ral）",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 7,
+      "fingerprint": "4a4bca6f706bdec9"
+    },
+    {
+      "path": "link_folder/事件/兩支派半求河東之地為業.md",
+      "title": "兩支派半求河東之地為業",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 7,
+      "fingerprint": "8e2bdfed0e8ff927"
     },
     {
       "path": "link_folder/人物/亞捫人.md",
@@ -310,13 +331,6 @@
       "fingerprint": "e273bfa01f9862ad"
     },
     {
-      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
-      "title": "拈鬮分地（go.ral）",
-      "deferred_at": "約書亞記:13",
-      "accumulated": 6,
-      "fingerprint": "2e0ea62eda460028"
-    },
-    {
       "path": "link_folder/地點/鹽海.md",
       "title": "鹽海",
       "deferred_at": "約書亞記:12",
@@ -336,13 +350,6 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 5,
       "fingerprint": "156ab27d00cf1335"
-    },
-    {
-      "path": "link_folder/歷史/加低斯巴尼亞事件.md",
-      "title": "加低斯巴尼亞事件",
-      "deferred_at": "申命記:9",
-      "accumulated": 5,
-      "fingerprint": "66219ada973fa61e"
     },
     {
       "path": "link_folder/解經爭議/瑪拿西半支派為何留在河東.md",
@@ -485,11 +492,32 @@
       "fingerprint": "e98246815b5fac95"
     },
     {
+      "path": "link_folder/主題/分地的十位支派首領.md",
+      "title": "分地的十位支派首領",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "8955cbdb6fe16739"
+    },
+    {
+      "path": "link_folder/主題/利未人的四十八座城.md",
+      "title": "利未人的四十八座城",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "2738e1e726a53584"
+    },
+    {
       "path": "link_folder/主題/各人行自己眼中看為正的事.md",
       "title": "各人行自己眼中看為正的事",
       "deferred_at": "申命記:13",
       "accumulated": 2,
       "fingerprint": "9a0c00268aa74477"
+    },
+    {
+      "path": "link_folder/主題/未得之地.md",
+      "title": "未得之地",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "2637b11e84d89cd3"
     },
     {
       "path": "link_folder/主題/迦南四境.md",
@@ -532,6 +560,27 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 2,
       "fingerprint": "5cc800d6e6039541"
+    },
+    {
+      "path": "link_folder/原文/神人（ish ha.e.lo.him）.md",
+      "title": "神人（ish ha.e.lo.him）",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "407e5a01c0708261"
+    },
+    {
+      "path": "link_folder/原文/趕出（ya.rash）.md",
+      "title": "趕出（ya.rash）",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "2637b11e84d89cd3"
+    },
+    {
+      "path": "link_folder/原文/郊野（mig.rash）.md",
+      "title": "郊野（mig.rash）",
+      "deferred_at": "約書亞記:14",
+      "accumulated": 2,
+      "fingerprint": "2738e1e726a53584"
     },
     {
       "path": "link_folder/地點/亞實突.md",

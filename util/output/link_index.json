@@ -5412,6 +5412,14 @@
     "status": "formal",
     "aliases": []
   },
+  "迦勒求得希伯崙": {
+    "path": "link_folder/事件/迦勒求得希伯崙.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "迦勒求得希伯崙",
+    "status": "formal",
+    "aliases": []
+  },
   "迦南諸王結盟": {
     "path": "link_folder/事件/迦南諸王結盟.md",
     "type": "事件",
@@ -11522,6 +11530,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞巴（亞衲族）": {
+    "path": "link_folder/人物/亞巴（亞衲族）.md",
+    "type": "人物",
+    "secondary_types": [],
+    "title": "亞巴（亞衲族）",
+    "status": "formal",
+    "aliases": []
+  },
   "亞干": {
     "path": "link_folder/人物/亞干.md",
     "type": "人物",
@@ -15571,6 +15587,16 @@
     "status": "formal",
     "aliases": [
       "將亡的亞蘭人"
+    ]
+  },
+  "或者（u.lay）": {
+    "path": "link_folder/原文/或者（u.lay）.md",
+    "type": "原文",
+    "secondary_types": [],
+    "title": "或者（u.lay）",
+    "status": "formal",
+    "aliases": [
+      "u.lay"
     ]
   },
   "戲笑": {
@@ -22192,6 +22218,14 @@
       "民族"
     ],
     "title": "希未人",
+    "status": "formal",
+    "aliases": []
+  },
+  "征服迦南歷時約七年": {
+    "path": "link_folder/歷史/征服迦南歷時約七年.md",
+    "type": "歷史",
+    "secondary_types": [],
+    "title": "征服迦南歷時約七年",
     "status": "formal",
     "aliases": []
   },
@@ -35210,6 +35244,9 @@
   },
   "將亡的亞蘭人": {
     "alias_of": "我祖原是一個將亡的亞蘭人（o.ved）"
+  },
+  "u.lay": {
+    "alias_of": "或者（u.lay）"
   },
   "所多瑪和蛾摩拉的呼喊": {
     "alias_of": "所多瑪罪惡的呼喊"

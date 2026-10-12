@@ -1,0 +1,64 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a131ae-24fc-7962-9a9e-c4a5622b3869
+--------
+user
+你是唯讀 evidence reviewer，不得修改任何檔案。請依 agent_evidence_audit_prompt.md 審查下面這個 stage，並照該檔「Verdict」一節的格式，在最後輸出 footer（REVIEW_STAGE／REVIEW_SHA256／REVIEW_REVIEWER／REVIEW_ATTEMPT／REVIEW_STATUS／FINDINGS_COUNT）。
+書卷：約書亞記
+章：14
+stage：link_updates
+sha256：52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+REVIEW_ATTEMPT：1（差異複核，不耗額度）
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會按差異複核範圍確認這次提交的 SHA、上游核准狀態，以及變動的 link_updates 欄位，再只針對變更與受影響處查證來源。
+mcp: vexp/run_pipeline started
+mcp: vexp/run_pipeline (failed)
+MCP tool call requires approval, but approval policy is never
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+codex
+收據顯示 link_updates 自身內容雜湊未變，差異來自 M6 上游 SHA 更新並標記為 forced pass。我正核對新 M6 內容與先前已審的 31 筆摘要／關聯是否出現矛盾或需重審的波及。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+codex
+差異複核完成：link_updates 自身內容未變；M6 上游更新未使其摘要、關聯或 overview_review 失準，未發現實質 finding。
+
+REVIEW_STAGE: link_updates
+REVIEW_SHA256: 52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+REVIEW_REVIEWER: codex
+REVIEW_ATTEMPT: 1
+REVIEW_STATUS: PASS
+FINDINGS_COUNT: 0
+tokens used
+620,385
+差異複核完成：link_updates 自身內容未變；M6 上游更新未使其摘要、關聯或 overview_review 失準，未發現實質 finding。
+
+REVIEW_STAGE: link_updates
+REVIEW_SHA256: 52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+REVIEW_REVIEWER: codex
+REVIEW_ATTEMPT: 1
+REVIEW_STATUS: PASS
+FINDINGS_COUNT: 0

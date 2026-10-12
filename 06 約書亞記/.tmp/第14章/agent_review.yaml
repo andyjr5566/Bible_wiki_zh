@@ -1,0 +1,103 @@
+version: 2
+book: 約書亞記
+chapter: 14
+stages:
+  m3:
+    round: 2
+    revision: 2
+    sha256: d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 1f17cc8623b509dd0fe4e965d53ca6be86819865c4e7ee0c7b99962aebb2793d
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a131ae-24fc-7962-9a9e-c4a5622b3869
+    hash_inputs:
+    - entry_content/亞巴（亞衲族）.yaml
+    - entry_content/征服迦南歷時約七年.yaml
+    - entry_content/或者（u.lay）.yaml
+    - entry_content/迦勒求得希伯崙.yaml
+    own_sha256: d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+    verdict_sha: d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: 88dc57c0ac2f17d10267ccef18b7af271e6ab78d5cfb7523586b8c4fe3ae9e66
+    verdict_sha: 88dc57c0ac2f17d10267ccef18b7af271e6ab78d5cfb7523586b8c4fe3ae9e66
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 9c5c3d15767b34e128e4b1498084cfc851d49db647f75317b3c784c1445d3cb7
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 6c589d0abd1ae1e0d0e3ea693babbb06700668defa7fc94e1d4f16001dac6c46
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 88dc57c0ac2f17d10267ccef18b7af271e6ab78d5cfb7523586b8c4fe3ae9e66
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    thread_id: 01a131ae-24fc-7962-9a9e-c4a5622b3869
+    hash_inputs:
+    - parent:m3=d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+    - chapter_content.yaml
+    own_sha256: 0d53330ec05c04a0ba0dd74f36bb893116b9c9da730fe7508c3baa9db2653fd2
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: 52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+    claude: unchanged
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 1
+    forced_pass: false
+    review_mode: delta_reviewed
+    delta_from_sha: 113b3dc34be4e75f6c7d4f808b3108325571fc250ae897a4292b68d8f2ffd84e
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 113b3dc34be4e75f6c7d4f808b3108325571fc250ae897a4292b68d8f2ffd84e
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+      mode: delta
+    thread_id: 01a131ae-24fc-7962-9a9e-c4a5622b3869
+    hash_inputs:
+    - parent:m3=d2e7f30f3ad74c2c5c05f6e69a1a677a3cc44e8db67afe4508b7cb0f04479960
+    - parent:m6=88dc57c0ac2f17d10267ccef18b7af271e6ab78d5cfb7523586b8c4fe3ae9e66
+    - link_updates.yaml
+    own_sha256: c5e8259bd3f61287349c460e84db2019f8ec84eede82ebe61d82b8eae5de2d3f
+    verdict_sha: 52f4cde7ff06a103876a37bb3e8703d7204b343ef3e56dac8bfd62e5b6083c33
+    findings_count: 0

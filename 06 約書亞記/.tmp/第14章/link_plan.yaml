@@ -1,0 +1,328 @@
+book: 約書亞記
+chapter: 14
+A_use_directly: []
+B_needs_update:
+- name: 以利亞撒
+  suggested_type: 人物
+  evidence: 第1節「祭司以利亞撒和嫩的兒子約書亞」；GT《丁道爾》：他頭一次出現在約書亞記，要用烏陵和土明判斷神的旨意；KC：以利亞撒排在約書亞前面
+  match_type: exact
+  existing_title: 以利亞撒
+  existing_path: link_folder/人物/以利亞撒.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第1、6、13節
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 分地的十位支派首領
+  suggested_type: 主題
+  evidence: 第1節「以色列各支派的族長所分給他們的」；CT、GT《綜合解讀》引民34:19-28
+  surfaces:
+  - phrase: 以色列各支派的族長
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 分地的十位支派首領
+  existing_path: link_folder/主題/分地的十位支派首領.md
+- name: 迦南地
+  suggested_type: 地點
+  evidence: 第1節「以色列人在迦南地所得的產業」；CT：『迦南地』是對約但河以西之地的稱謂
+  match_type: exact
+  existing_title: 迦南地
+  existing_path: link_folder/地點/迦南地.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第1、2、3、9、13、14節「產業／為業」；STEP 第9節 le./na.cha.Lah（H5159）
+  surfaces:
+  - phrase: 產業
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第2節「把產業拈鬮分給九個半支派」；GT《丁道爾》：在約書亞記，這裡是頭一次提到鬮；CT 原文字義：抽籤用的小卵石
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 摩西
+  suggested_type: 人物
+  evidence: 第2、3、5、6、7、9、10、11節
+  match_type: exact
+  existing_title: 摩西
+  existing_path: link_folder/人物/摩西.md
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第3節「摩西在約但河東已經把產業分給那兩個半支派」
+  surfaces:
+  - phrase: 把產業分給那兩個半支派
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 兩支派半求河東之地為業
+  existing_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第3、4節「沒有把產業分給利未人」
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 收納以法蓮與瑪拿西
+  suggested_type: 歷史
+  evidence: 第4節「約瑟的子孫是兩個支派，就是瑪拿西和以法蓮」；GT《啟導本》《綜合解讀》《研經資料》：約瑟代替流便得長子雙份，利未不分地，所以分地的支派仍是十二
+  surfaces:
+  - phrase: 約瑟的子孫是兩個支派
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 收納以法蓮與瑪拿西
+  existing_path: link_folder/歷史/收納以法蓮與瑪拿西.md
+- name: 瑪拿西
+  suggested_type: 人物
+  evidence: 第4節
+  match_type: exact
+  existing_title: 瑪拿西
+  existing_path: link_folder/人物/瑪拿西.md
+- name: 以法蓮
+  suggested_type: 人物
+  evidence: 第4節
+  match_type: exact
+  existing_title: 以法蓮
+  existing_path: link_folder/人物/以法蓮.md
+- name: 利未人的四十八座城
+  suggested_type: 主題
+  evidence: 第4節「但給他們城邑居住」；GT《聖經精讀本》：利未人得到了包括6個逃城的48個城邑；BH 同
+  surfaces:
+  - phrase: 給他們城邑居住
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 利未人的四十八座城
+  existing_path: link_folder/主題/利未人的四十八座城.md
+- name: 郊野（mig.rash）
+  suggested_type: 原文
+  evidence: '第4節「並城邑的郊野」；STEP u./Mig.re.shei./Hem（H4054，mig.rash: pasture）'
+  surfaces:
+  - phrase: 郊野
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 郊野（mig.rash）
+  existing_path: link_folder/原文/郊野（mig.rash）.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 第6節「那時猶大人來到吉甲見約書亞」；GT《研經資料》：關於猶大支派的記載是最詳盡的
+  surfaces:
+  - phrase: 猶大人
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 吉甲
+  suggested_type: 地點
+  evidence: 第6節；CT：當時約書亞的指揮總部所在地；KC：分地前段在吉甲，後七支派在示羅
+  match_type: exact
+  existing_title: 吉甲
+  existing_path: link_folder/地點/吉甲.md
+- name: 基尼洗人
+  suggested_type: 人物
+  evidence: 第6、14節「基尼洗族耶孚尼的兒子迦勒」；KC、GT《研經資料》、BH 討論迦勒的族源
+  surfaces:
+  - phrase: 基尼洗族
+  match_type: exact
+  existing_title: 基尼洗人
+  existing_path: link_folder/人物/基尼洗人.md
+- name: 迦勒
+  suggested_type: 人物
+  evidence: 第6、13、14節
+  match_type: exact
+  existing_title: 迦勒
+  existing_path: link_folder/人物/迦勒.md
+- name: 加低斯巴尼亞事件
+  suggested_type: 歷史
+  evidence: 第6節「耶和華在加低斯巴尼亞指著我與你對神人摩西所說的話」
+  surfaces:
+  - phrase: 加低斯巴尼亞
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 加低斯巴尼亞事件
+  existing_path: link_folder/歷史/加低斯巴尼亞事件.md
+- name: 加低斯
+  suggested_type: 地點
+  evidence: 第7節「從加低斯巴尼亞打發我窺探這地」；BH：Kadesh-barnea stood at the southern approach to
+    Canaan
+  surfaces:
+  - phrase: 加低斯巴尼亞
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 加低斯
+  existing_path: link_folder/地點/加低斯.md
+- name: 神人（ish ha.e.lo.him）
+  suggested_type: 原文
+  evidence: 第6節「神人摩西」；CT：『神人』意指屬神的人（man of God）
+  surfaces:
+  - phrase: 神人
+    verses:
+    - 6
+  match_type: exact
+  existing_title: 神人（ish ha.e.lo.him）
+  existing_path: link_folder/原文/神人（ish ha.e.lo.him）.md
+- name: 十二探子窺探迦南地
+  suggested_type: 事件
+  evidence: 第7、8節迦勒回憶被差窺探、眾弟兄使百姓的心消化
+  surfaces:
+  - phrase: 窺探這地
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 十二探子窺探迦南地
+  existing_path: link_folder/事件/十二探子窺探迦南地.md
+- name: 專心跟從主與另一個心志
+  suggested_type: 神學
+  evidence: 第8、9、14節「專心跟從耶和華」；STEP 第8節 mi.Le.ti 'a.cha.Rei（H4390 加 H310A），與民14:24
+    同組字；GT《丁道爾》《研經資料》說這詞用在迦勒和約書亞身上，與不肯跟隨耶和華的以色列人形成對比
+  surfaces:
+  - phrase: 專心跟從
+    verses:
+    - 8
+    - 9
+    - 14
+  match_type: exact
+  existing_title: 專心跟從主與另一個心志
+  existing_path: link_folder/神學/專心跟從主與另一個心志.md
+- name: 出入（領袖用語）
+  suggested_type: 原文
+  evidence: 第11節「無論是爭戰，是出入」；GT《研經資料》：原文直譯是「是出，是入」；CT：『出入』指在家日常生活
+  surfaces:
+  - phrase: 出入
+    verses:
+    - 11
+  match_type: exact
+  existing_title: 出入（領袖用語）
+  existing_path: link_folder/原文/出入（領袖用語）.md
+- name: 亞衲族與偉人拿非林
+  suggested_type: 背景
+  evidence: 第12、15節「亞衲族人」；STEP 'a.na.Kim（H6062）
+  surfaces:
+  - phrase: 亞衲族
+  match_type: exact
+  existing_title: 亞衲族與偉人拿非林
+  existing_path: link_folder/背景/亞衲族與偉人拿非林.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 第13、14、15節
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 直到今日
+  suggested_type: 主題
+  evidence: 第14節「直到今日」；CT：『今日』指《約書亞記》書成之日
+  surfaces:
+  - phrase: 直到今日
+    verses:
+    - 14
+  match_type: exact
+  existing_title: 直到今日
+  existing_path: link_folder/主題/直到今日.md
+- name: 基列亞巴
+  suggested_type: 地點
+  evidence: 第15節「希伯崙從前名叫基列亞巴」；STEP kir.Yat 'ar.Ba'（H7153）
+  match_type: exact
+  existing_title: 基列亞巴
+  existing_path: link_folder/地點/基列亞巴.md
+- name: 國中太平（sha.qat）
+  suggested_type: 原文
+  evidence: 第15節「於是國中太平，沒有爭戰了」；STEP sha.ke.Tah（H8252）；CT 備註：書11:23 也以同一句作結
+  surfaces:
+  - phrase: 國中太平
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 國中太平（sha.qat）
+  existing_path: link_folder/原文/國中太平（sha.qat）.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: GT《綜合解讀》與 CT 話中之光：迦勒的見證鼓勵百姓憑信心領取神分給他們的「未得之地」（書13:1）
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+- name: 趕出（ya.rash）
+  suggested_type: 原文
+  evidence: 第12節「我就把他們趕出去」；STEP ve./Ho.rash.Ti/m（H3423H，Vh 形，譯義 I will dispossess
+    them）
+  surfaces:
+  - phrase: 趕出去
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 趕出（ya.rash）
+  existing_path: link_folder/原文/趕出（ya.rash）.md
+C_new_formal:
+- name: 迦勒求得希伯崙
+  suggested_type: 事件
+  evidence: 第6至15節迦勒向約書亞求「這山地」，約書亞將希伯崙給他為業；書15:13-19、書21:11-12 續記；CT 備註與 GT《丁道爾》討論這段在時間上是否屬於征服時期
+  target_path: link_folder/事件/迦勒求得希伯崙.md
+  semantic_hint:
+  - title: 迦勒
+    score: 0.437
+    type: 人物
+  - title: 希伯崙
+    score: 0.404
+    type: 地點
+  - title: 迦巴勒
+    score: 0.4
+    type: 地點
+- name: 征服迦南歷時約七年
+  suggested_type: 歷史
+  evidence: 第7、10節迦勒四十歲被差窺探、四十五年後八十五歲；CT：在曠野行走共用了三十八年，另外七年用在迦南地南征北討；GT《啟導本》《綜合解讀》《研經資料》同樣推算六、七年
+  surfaces:
+  - phrase: 這四十五年
+    verses:
+    - 10
+  target_path: link_folder/歷史/征服迦南歷時約七年.md
+  semantic_hint:
+  - title: 迦南人
+    score: 0.529
+    type: 人物
+  - title: 迦南七族（迦南地原住民）
+    score: 0.505
+    type: 背景
+  - title: 迦南滅絕命令的歷史範圍
+    score: 0.489
+    type: 解經爭議
+- name: 或者（u.lay）
+  suggested_type: 原文
+  evidence: '第12節「或者耶和華照他所應許的與我同在」；STEP ''u.Lai（H194，u.lay: perhaps）；KC：In modesty,
+    he speaks of perhaps；CT、BH 都討論這個「或者」'
+  surfaces:
+  - phrase: 或者
+    verses:
+    - 12
+  target_path: link_folder/原文/或者（u.lay）.md
+- name: 亞巴（亞衲族）
+  suggested_type: 人物
+  evidence: 第15節「亞巴是亞衲族中最尊大的人」；CT 字義「偉人，四，巴力的力量」，說他是亞衲族始祖（參書15:13）；GT《研經資料》字義「第四」；BH、KC
+    都談到他
+  surfaces:
+  - phrase: 亞巴
+    verses:
+    - 15
+  target_path: link_folder/人物/亞巴（亞衲族）.md
+  semantic_hint:
+  - title: 亞捫人
+    score: 0.438
+    type: 人物
+  - title: 亞拉巴
+    score: 0.401
+    type: 地點
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-12T20:11:36Z'
