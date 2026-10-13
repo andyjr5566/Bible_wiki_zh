@@ -1,0 +1,94 @@
+version: 2
+book: 約書亞記
+chapter: 21
+stages:
+  m3:
+    round: 2
+    revision: 3
+    sha256: 8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: a92e4fcaec1f1e843e1e087f8a2b0129ea6c3819512e4fd98df1a8bc4d346ccd
+      verdict: changes_required
+      findings_count: 2
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a13594-c4a1-7e23-8391-a0a8341f3f22
+    hash_inputs:
+    - entry_content/亞拿突.yaml
+    - entry_content/亞雅崙（但）.yaml
+    - entry_content/迦特臨門（但）.yaml
+    - entry_content/迦特臨門（瑪拿西）.yaml
+    own_sha256: 8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+    verdict_sha: 8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 3
+    sha256: 05cff0ef5c161515cc195aae035cb7ddd68f1d402d8c7ba89d24145bb32be38e
+    verdict_sha: 05cff0ef5c161515cc195aae035cb7ddd68f1d402d8c7ba89d24145bb32be38e
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 97a5724d899ce46e87f477dc9d515a5c428dc759a57bc2ec6d00653660ccd46b
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: bc382a4a0487898de88f1872e25c7a4b3279dbb547b18dd9fc9aa7e78c6a6871
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 05cff0ef5c161515cc195aae035cb7ddd68f1d402d8c7ba89d24145bb32be38e
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    thread_id: 01a135a4-adaf-7630-b5a9-82676a467123
+    hash_inputs:
+    - parent:m3=8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+    - chapter_content.yaml
+    own_sha256: cff8863655b4d431b3c0119ea865a782864c16c64f1b00a305adf524a3a6a434
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 7e627163699b91cd1c372d4df4eedbada3978a396853cea90d507016fd8881e5
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 7e627163699b91cd1c372d4df4eedbada3978a396853cea90d507016fd8881e5
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - parent:m3=8f3c615f6888bf08002d246790ae90d3488381a064dad94245b570a9417c7f5e
+    - parent:m6=bc382a4a0487898de88f1872e25c7a4b3279dbb547b18dd9fc9aa7e78c6a6871
+    - link_updates.yaml
+    own_sha256: 3f87feb8dc1351a9eecd58a0fc7bba394e7b0c53769fe471b2ba216a211242b3
+    verdict_sha: 7e627163699b91cd1c372d4df4eedbada3978a396853cea90d507016fd8881e5
+    thread_id: 01a135ae-9d6e-7143-868e-6395789a9e2c
+    findings_count: 0

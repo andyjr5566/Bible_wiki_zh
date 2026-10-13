@@ -1,0 +1,558 @@
+book: 約書亞記
+chapter: 21
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 利未人的四十八座城
+  path: link_folder/主題/利未人的四十八座城.md
+  summary: 第1-42節利未人在示羅求城，以色列人從自己的地業中拈鬮給了利未人四十八座城和郊野：亞倫的子孫十三座、哥轄其餘的子孫十座、革順十三座、米拉利十二座。CT 說十二支派也分成四組；GT《雷氏研讀本》《聖經精讀本》說沒有人住在離利未人的城十六公里以外；KC 說四十八座是六座逃城加上七乘六，並說數目與代上6 不完全相合；GT《綜合解讀》說基色、他納、利合、拿哈拉後來沒有攻取，奉獻並不徹底。
+  relation: 民35 立下、書14 預告的四十八座城，本章真正分配完成。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:35
+      - 約書亞記:14
+      - 約書亞記:21
+- title: 郊野（mig.rash）
+  path: link_folder/原文/郊野（mig.rash）.md
+  summary: 第2-42節每座城都「和屬城的郊野」，第42節「城城都是如此」。STEP 為 mig.rash（H4054，pasture）；CT 說郊野是從城根起四圍往外量三千肘（民35:4-5），三千肘以外的田地村莊給迦勒；GT《研經資料》說原文是「共用土地」「空地」，1000肘約445公尺；GT《聖經精讀本》說以各城為中心前後左右各加912米；BH 說郊野供應利未人的牲畜與家用。
+  relation: 民35 給了尺寸、書14 說了用途，本章四十八座城每一座都附上郊野。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:35
+      - 約書亞記:14
+      - 約書亞記:21
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第1-8、41節利未人的眾族長到示羅求城，以色列人從自己的地業中給了利未人四十八座城。CT 說神自己就是他們的產業（民18:20）；GT《聖經精讀本》說直到所有支派都分得產業，利未支派才索取城邑；GT《研經資料》說散居的利未人像防腐劑一樣；KC 說本章是一個高峰；BH 說雅各說利未要分散，神把分散轉為祝福。
+  relation: 前幾章四次說利未人沒有地業，本章他們得了四十八座城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development: keep
+- title: 亞倫和他兒子（祭司）
+  path: link_folder/人物/亞倫和他兒子（祭司）.md
+  summary: 第4、10、13、19節亞倫的子孫從猶大、西緬、便雅憫拈得頭一鬮，共十三座城。GT《啟導本》《丁道爾》與 KC 說這些城靠近耶路撒冷，將來聖殿建成便於就近供職；GT《綜合解讀》說祭司的城都在後來的南國猶大境內，北國因此立凡民為祭司（王上12:31）；BH 說亞倫的祭司職分預表基督。
+  relation: 本章祭司家族第一次分到自己的住處，城都在南方。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep
+- title: 哥轄子孫
+  path: link_folder/人物/哥轄子孫.md
+  summary: 第4-5、9-26節哥轄族拈出頭一鬮：亞倫的子孫得十三座城，哥轄其餘的子孫從以法蓮、但、瑪拿西半支派得十座城，示劍是其中的逃城。CT 說哥轄其餘的子孫負責扛抬會幕的器具；GT《丁道爾》說他們的城在中央山地；KC 說其餘的哥轄人可能是摩西的後代。
+  relation: 民數記裡抬聖物的哥轄人，本章最先、也最多得城。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:4
+      - 民數記:26
+      - 約書亞記:21
+- title: 革順子孫
+  path: link_folder/人物/革順子孫.md
+  summary: 第6、27-33節革順的子孫從以薩迦、亞設、拿弗他利、巴珊的瑪拿西半支派得十三座城，哥蘭、基低斯是其中的逃城。CT 說他們看守和搬運帳幕的幔子、罩棚、門簾與繩子（民3:25-26）；GT《丁道爾》《研經資料》說他們的城在加利利和巴珊一帶；BH 說革順是利未的長子。
+  relation: 民數記裡搬幔子的革順人，本章的城都在北方。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:4
+      - 民數記:10
+      - 約書亞記:21
+- title: 米拉利子孫
+  path: link_folder/人物/米拉利子孫.md
+  summary: 第7、34-40節米拉利的子孫從西布倫、流便、迦得得十二座城，拉末是其中的逃城。CT 說他們看守和搬運帳幕的板、閂、柱子、帶卯的座（民3:36-37）；GT《丁道爾》《研經資料》說他們的城在約但河東和西布倫境內；GT《聖經精讀本》說米拉利是利未的么子，宗族最少。
+  relation: 民數記裡搬骨架的米拉利人，本章的城大半在約但河東。
+  overview_review:
+    signals:
+    - first_in_book
+    - development_blank
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:4
+      - 民數記:10
+      - 約書亞記:21
+- title: 以利亞撒
+  path: link_folder/人物/以利亞撒.md
+  summary: 第1節利未人的眾族長來到祭司以利亞撒和嫩的兒子約書亞並各支派的族長面前。BH 說以利亞撒是亞倫的繼任者，利未人到他面前，表示承認他在宗教事務上的權柄。
+  relation: 書14、17、19 他和約書亞一同主持分地，本章利未人的城也在他面前分定。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 17
+    - 18
+    definition: keep
+    development: keep
+- title: 示羅
+  path: link_folder/地點/示羅.md
+  summary: 第2節「在迦南地的示羅對他們說」。CT 說示羅是當時會幕的所在地，也是拈鬮分配產業的地方（書18:1、10）；BH 說在示羅聚集，把分地和敬拜耶和華連在一起。
+  relation: 書18、19 的分地在示羅進行，本章利未人的城也在示羅求得。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: 第4-8節「為哥轄族拈鬮」「按鬮得了」「按鬮分給利未人」。CT 說下面的城邑都是根據拈鬮而得，出於神的旨意；GT《啟導本》說亞倫祭司系統拈頭鬮；BH 說拈鬮在耶和華指引下給各利未家族指定位置。
+  relation: 書19:51 說地已分完，本章再用拈鬮把利未人的城分給四組。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 迦勒
+  path: link_folder/人物/迦勒.md
+  summary: 第12節「惟將屬城的田地和村莊給了耶孚尼的兒子迦勒為業」。CT 說此事記在書15:13，田地和村莊指三千肘以外；GT《綜合解讀》說迦勒把自己付代價攻取的城給了祭司，自己住在鄉村；GT《研經資料》說城和郊野給利未人，田地和村莊給迦勒；BH 說這樣保住了祭司的住處和神應許迦勒的地。
+  relation: 書14-15 迦勒求得並攻取希伯崙，本章他把城讓給祭司，留下田地村莊。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:14
+      - 約書亞記:15
+      - 約書亞記:21
+- title: 希伯崙
+  path: link_folder/地點/希伯崙.md
+  summary: 第11、13節基列亞巴就是希伯崙，是誤殺人的逃城，給了祭司亞倫的子孫。CT 說在耶路撒冷西南方約三十公里，原屬猶大；GT《綜合解讀》、BH 說迦勒把城給了祭司，自己保留田地村莊；BH 說它近麥比拉洞，大衛在此作王七年。
+  relation: 書20 它是逃城，本章它是祭司的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development: keep
+- title: 基列亞巴
+  path: link_folder/地點/基列亞巴.md
+  summary: 第11節「將猶大山地的基列亞巴和四圍的郊野給了他們。亞巴是亞衲族的始祖」。CT 給字義「第四」；BH 說名字意思是 City of Arba，亞衲族先前的據點成了利未人的城。
+  relation: 本章經文又一次先寫古名、再註明就是希伯崙。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 亞巴（亞衲族）
+  path: link_folder/人物/亞巴（亞衲族）.md
+  summary: 第11節「亞巴是亞衲族的始祖」。CT 說基列亞巴是亞衲族始祖亞巴佔據此城時所起的名字；BH 說那些令人懼怕之民從前的據點成了利未人的城。
+  relation: 書14:15 稱他最尊大的人，書15:13 稱始祖，本章再用始祖的說法。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:14
+      - 約書亞記:15
+      - 約書亞記:21
+- title: 逃城
+  path: link_folder/互文/逃城.md
+  summary: 第13、21、27、32、38節六座逃城都在利未人的城裡（第36節的比悉也是）。GT《研經資料》說民35:6 逃城都是利未人的城邑；KC 說四十八座中有六座是逃城。
+  relation: 書20 分定的六座逃城，本章一一歸入利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 立拿
+  path: link_folder/地點/立拿.md
+  summary: 第13節「立拿和屬城的郊野」給了亞倫的子孫。CT 說字義「鋪過的道路」，在希伯崙西北方約25公里，原屬猶大（書15:42）；BH 說在猶大的低地，成了另一個祭司中心。
+  relation: 書10 被攻取、書15 列在猶大城單，本章成了祭司的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 底璧（城）
+  path: link_folder/地點/底璧（城）.md
+  summary: 第15節「底璧和屬城的郊野」給了亞倫的子孫。CT 說字義「聖所」，在希伯崙西南方15公里，原屬猶大（書15:15）；BH 說原名基列西弗，意思是書城，後來給了祭司。
+  relation: 書15 俄陀聶攻取底璧，本章它成了祭司的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 伯示麥（猶大）
+  path: link_folder/地點/伯示麥（猶大）.md
+  summary: 第16節「伯示麥和屬城的郊野」給了亞倫的子孫。CT 說它不同於書15:10 的伯示麥，原屬西緬，所引的卻是書19:22 以薩迦的伯示麥；GT《綜合解讀》說它是祭司的城，所以城裡的人知道怎樣獻祭（撒上6:14-15）；GT 華爾頓、《研經資料》說在梭烈谷的非利士邊界上，是魯梅雷遺址；BH 說它後來接回約櫃（撒上6:12-15）。
+  relation: 書15 它是猶大北界上的點，本章它成了祭司的城；CT 對它的辨識與其他各家不同。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:21
+- title: 基遍
+  path: link_folder/地點/基遍.md
+  summary: 第17節「基遍和屬城的郊野」給了亞倫的子孫。CT 說在耶路撒冷西北方約9公里，原屬便雅憫（書18:25）；BH 說它與約書亞同基遍人立約及耶和華延長白晝的戰役有關，後來所羅門在基遍獻祭（王上3:4）。
+  relation: 書9 騙約、書10 被五王圍攻的基遍，本章成了祭司的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 迦巴
+  path: link_folder/地點/迦巴.md
+  summary: 第17節「迦巴和屬城的郊野」給了亞倫的子孫。CT 說在耶路撒冷北方約9公里，原屬便雅憫（書18:24）；BH 說迦巴靠近便雅憫北邊的邊界，約拿單攻擊迦巴的非利士防營（撒上13:3）。
+  relation: 書18 迦巴是便雅憫東部的城，本章成了祭司的城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:18
+      - 約書亞記:21
+- title: 示劍（城）
+  path: link_folder/地點/示劍（城）.md
+  summary: 第21節「以法蓮山地的示劍，就是誤殺人的逃城」給了哥轄其餘的子孫。CT 說原屬以法蓮（書20:7）；BH 說亞伯拉罕在此築壇，約書亞後來在此召聚以色列重新立約（書24:1-25）。
+  relation: 書20 示劍是逃城，本章它是利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 以法蓮山地
+  path: link_folder/地點/以法蓮山地.md
+  summary: 第21節「以法蓮山地的示劍」。BH 說以法蓮在中部山地，示劍是逃城，利未人在那裡保存神命令的知識。
+  relation: 書20 這片山地有一座逃城，本章同一座城給了利未人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 基色
+  path: link_folder/地點/基色.md
+  summary: 第21節「基色和屬城的郊野」給了哥轄其餘的子孫。CT 說原屬以法蓮（書16:10）；GT《綜合解讀》說以法蓮後來並沒能攻取基色（士1:29），所羅門在位時才首次佔據（王上9:16-17），所以這個奉獻並不徹底；GT 華爾頓說邱壇有十個柱像、所羅門式的城牆與城門；BH 說法老攻取基色給所羅門的女兒作嫁妝（王上9:16）。
+  relation: 書16:10 以法蓮沒有趕出基色的迦南人，本章基色卻列在給利未人的城裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 伯和崙
+  path: link_folder/地點/伯和崙.md
+  summary: 第22節「伯和崙和屬城的郊野」給了哥轄其餘的子孫。CT 說分上下伯和崙，究竟是哪一座未能確定（書16:3、5）；BH 說上下伯和崙扼守從沿海平原上山的要道，與書10:10-11 的冰雹有關，所羅門重修（王上9:17）。
+  relation: 書10 的戰場、書16 的界點，本章成了利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 他納
+  path: link_folder/地點/他納.md
+  summary: 第25節「他納和屬城的郊野」給了哥轄其餘的子孫。CT 說在米吉多東南方約8公里，原屬瑪拿西河西半支派（書17:11）；GT《綜合解讀》說瑪拿西後來也沒能攻取他納（士1:27），奉獻也不徹底；BH 說它後來出現在以色列與迦南的爭戰中（士5:19）。
+  relation: 書17:12 瑪拿西趕不出他納的居民，本章他納卻給了利未人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 巴珊
+  path: link_folder/地點/巴珊.md
+  summary: 第6、27節「住巴珊的瑪拿西半支派」「巴珊的哥蘭」。BH 說巴珊是摩西從噩手中取得的富饒之地，把革順人的城設在那裡，表示河東支派完全連在以色列的約中。
+  relation: 書20 巴珊有一座逃城，本章那裡的城也分給了革順人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 哥蘭
+  path: link_folder/地點/哥蘭.md
+  summary: 第27節「巴珊的哥蘭，就是誤殺人的逃城」給了革順的子孫。CT 說在以得來西北方約25公里，原屬瑪拿西河東半支派（申4:43）；BH 說哥蘭是摩西指示的六座逃城之一。
+  relation: 申4、書20 的逃城，本章給了革順人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 基低斯
+  path: link_folder/地點/基低斯.md
+  summary: 第32節「加利利的基低斯，就是誤殺人的逃城」給了革順的子孫。CT 說在夏瑣北方約11公里，原屬拿弗他利（書20:7）；BH 說字義 holy，在上加利利，使神的律法在遠離中央聖所的地區也能得著。
+  relation: 書20 的逃城，本章給了革順人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 加利利
+  path: link_folder/地點/加利利.md
+  summary: 第32節「加利利的基低斯」。CT 說「加利利」字義一帶，行政區；BH 說基低斯在上加利利。
+  relation: 書20 加利利用來標明逃城的位置，本章同一座城給了利未人。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:20
+      - 約書亞記:21
+- title: 約念
+  path: link_folder/地點/約念.md
+  summary: 第34節米拉利子孫從西布倫得了約念。CT 說在基順河的南岸，原屬西布倫（書19:11）；BH 說約念近迦密山，扼守耶斯列谷的要道。
+  relation: 書12 的王城、書19 的界標，本章成了利未人的城，正如 BH 在書12 所預告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 拿哈拉
+  path: link_folder/地點/拿哈拉.md
+  summary: 第35節「拿哈拉和屬城的郊野」給了米拉利的子孫。CT 說是基順河北岸的一座小城，原屬西布倫（書19:15）；GT《綜合解讀》說西布倫後來並沒能攻取拿哈拉（士1:30），奉獻並不徹底；BH 說士1:30 西布倫沒有趕出那裡的迦南人。
+  relation: 書19 西布倫的城，本章給了利未人，後來卻沒有攻取。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:19
+      - 約書亞記:21
+- title: 比悉
+  path: link_folder/地點/比悉.md
+  summary: 第36節「從流便支派的地業中給了他們比悉」。CT 說原屬流便（書20:8）；BH 說比悉是利未人的城，也是逃城之一。
+  relation: 申4、書20 的逃城，本章給了米拉利人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 雅雜
+  path: link_folder/地點/雅雜.md
+  summary: 第36節「雅雜和屬城的郊野」給了米拉利的子孫。CT 說在希實本之東南約26公里，原屬流便（書13:18）；BH 說以色列在雅雜附近靠神的能力擊敗西宏（民21:23）。
+  relation: 申2 的戰場、書13 流便的城，本章成了利未人的城，正如 BH 在書13 所預告。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 基底莫
+  path: link_folder/地點/基底莫.md
+  summary: 第37節「基底莫和屬城的郊野」給了米拉利的子孫。CT 說字義「東方的」，在希實本之南約30公里，原屬流便（書13:18）；BH 說摩西從基底莫的曠野差遣使者去見西宏（申2:26）。
+  relation: 申2、書13 的基底莫，本章成了利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 米法押
+  path: link_folder/地點/米法押.md
+  summary: 第37節「米法押和屬城的郊野」給了米拉利的子孫。CT 說字義「光彩，高度」，在希實本東方約14公里，原屬流便（書13:18）；BH 說它後來列在與摩押一同受審判的城中（耶48:21）。
+  relation: 書13 流便的城，本章成了利未人的城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:13
+      - 約書亞記:21
+- title: 拉末
+  path: link_folder/地點/拉末.md
+  summary: 第38節「基列的拉末，就是誤殺人的逃城」給了米拉利的子孫。CT 說原屬迦得（書20:8）；GT 華爾頓說實際地點無法肯定，可能性最高的是蘭撒南面三哩的蘭米思遺址；BH 說它地勢高，後世有軍事上的重要性（王上22:3）。
+  relation: 申4、書20 的逃城，本章給了米拉利人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 瑪哈念
+  path: link_folder/地點/瑪哈念.md
+  summary: 第38節「瑪哈念和屬城的郊野」給了米拉利的子孫。CT 說字義「雙營地」，確實地點不能確定，較有可能在雅博河北岸，原屬迦得（書13:26）；BH 說雅各在那裡遇見神的使者、稱那地為兩隊（創32:1-2），後來大衛逃避押沙龍時在那裡避難（撒下17:24）。
+  relation: 創32 雅各的兩隊、書13 迦得的地界，本章成了利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 希實本
+  path: link_folder/地點/希實本.md
+  summary: 第39節「希實本和屬城的郊野」給了米拉利的子孫。CT 說原屬迦得（書13:17）；GT《啟導本》《研經資料》說原為亞摩利人的要邑（民21:26），民32:37 和書13:17 都說屬流便，這裡已轉屬迦得；BH 說它是西宏的京城。
+  relation: 書13 列在流便名下，本章卻從迦得給了利未人。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 雅謝
+  path: link_folder/地點/雅謝.md
+  summary: 第39節「雅謝和屬城的郊野」給了米拉利的子孫。CT 說在希實本北北西方約25公里，原屬迦得；BH 說以肥沃的土地和葡萄園著稱（賽16:8-9），以色列在征服河東時攻取（民21:32）。
+  relation: 民32 的牧場、書13 迦得的界，本章成了利未人的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 神的應許應驗
+  path: link_folder/神學/神的應許應驗.md
+  summary: 第43-45節耶和華將向列祖起誓所應許的全地賜給以色列人，應許賜福的話一句也沒有落空，都應驗了。STEP「落空」是 na.Fal（H5307L），「應驗」是 Ba'（H935G）；CT 說每一細節也都正確地應驗；GT《雷氏研讀本》《啟導本》與 CT 說以色列人雖未完全征服，神已告訴他們要逐漸佔據（申7:22）；GT《綜合解讀》說這句話是根據利未人也得了安居之地；KC 說這是從創12:7 開始的美好應許。
+  relation: 創33、35 是雅各個人的應許應驗，本章是全族的應許。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 創世記:33
+      - 創世記:35
+      - 約書亞記:21
+- title: 安息
+  path: link_folder/神學/安息.md
+  summary: '第44節「使他們四境平安」。STEP 為 va/i.Ya.nach（H5117，nu.ach: to rest）；GT《綜合解讀》說「平安」原文是「安息」，定居迦南就是進入安息，但不是沒有仇敵（來4:8）；GT《聖經精讀本》說神曾應許要將平安賜給以色列（出33:14；申3:20；25:19）；KC 說書11:23、14:15、21:44 三次安息，本章最深。'
+  relation: 申12 說還沒有到安息地，本章說耶和華使他們四境平安。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 申命記:12
+      - 約書亞記:21
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第43-44節耶和華將全地賜給以色列人，一切仇敵都交在他們手中。CT、GT《雷氏研讀本》《啟導本》說以色列人雖未完全征服，神已告訴他們要逐漸佔據（申7:22）；GT《綜合解讀》說土地的使用權已屬以色列人；GT《串珠》思想題問44節與15:63、16:10、17:12-13 有沒有矛盾；KC 說百姓還沒勝過所有的敵人，卻已掌控全地。
+  relation: 書13-20 一再記下的缺口，本章在「全地賜給以色列人」這句話旁邊再被提起。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
