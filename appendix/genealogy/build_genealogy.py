@@ -1555,8 +1555,11 @@ class Builder:
         navigation = self.series_navigation()
         if navigation:
             out += [navigation, ""]
-        out += [str(data.get("intro", "")).strip(), "",
-                "<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", "",
+        out += [str(data.get("intro", "")).strip(), ""]
+        if data.get("see_also"):
+            # 系列以外的相關頁（例如「從亞當到耶穌的家譜」），只在總覽頁列一行，不加進系列導覽
+            out += [str(data["see_also"]).strip(), ""]
+        out += ["<!-- 本頁由 appendix/genealogy/build_genealogy.py 從 YAML 資料產生，請改資料檔，不要直接改本頁。 -->", "",
                 "## 主線", ""]
         mini_intro = str(data.get("mini_intro") or "依君王登錄檔的分類整理南北國君王在位年代。")
         out += self.overview_spine(data.get("spine", []) or []) + ["", "## 南北國評語分布", "",
@@ -2989,14 +2992,55 @@ class LineageBuilder:
                 links.append(f"[[{page}#{person['anchor']}|族譜頁]]")
             out.append(f"| {family.get('title', family.get('id', ''))} | {self._family_count(roots)} | "
                        f"{family.get('intro', '')} | {'、'.join(links)} |")
-        spine = set(self.lines["馬太"]) | set(self.lines["路加"])
-        reachable = self._father_descendants(spine)
-        nt_people = {str(pid) for family in self.data.get("nt_families", []) or []
-                     for pid in family.get("members", []) or []}
-        unattached = len(set(self.people) - reachable - nt_people)
+        unattached = len(self.unattached_people())
         out += ["", f"另有 {unattached} 位經文沒有交代與主線關係的人（多半是歷代志上各支派名單的源頭），"
                 "在網站的『接不上主線的家族』裡。", ""]
         return out
+
+    def unattached_people(self) -> set[str]:
+        """網站「接不上主線的家族」分頁收的人（網站用同一條規則）：
+        - 每人只有一個「樹上的父母」：先父親，沒有父親才看母親，都沒有才看後裔（代數不詳）的對象。
+        - 從亞當沿這條線往下的是主樹；新約家族另有分頁，不算。
+        - 沒有樹上父母、也沒有樹上子女，但和別人有任何記載關係的人（例如路得、他瑪是主線人物的母親），
+          在對方的資訊卡出現，不算接不上。
+        - 其餘的人（自成一支的家族，以及沒有任何關係的單獨記載）就是接不上主線的人。"""
+        tree_parent: dict[str, str] = {}
+        tree_children: dict[str, set[str]] = defaultdict(set)
+        for pid, person in self.people.items():
+            parents = person.get("parents", []) or []
+            father = next((r for r in parents if r.get("role") != "母" and r.get("id") in self.people), None)
+            mother = next((r for r in parents if r.get("role") == "母" and r.get("id") in self.people), None)
+            descend = next((r for r in person.get("descends", []) or [] if r.get("id") in self.people), None)
+            chosen = father or mother or descend
+            if chosen:
+                tree_parent[pid] = str(chosen["id"])
+                tree_children[str(chosen["id"])].add(pid)
+        main, stack = set(), ["亞當"]
+        while stack:
+            current = stack.pop()
+            if current in main:
+                continue
+            main.add(current)
+            stack.extend(tree_children[current] - main)
+        related: dict[str, set[str]] = defaultdict(set)
+        for pid, person in self.people.items():
+            for field in self.RELATION_FIELDS:
+                for relation in person.get(field, []) or []:
+                    other = str(relation.get("id", ""))
+                    if other in self.people and other != pid:
+                        related[pid].add(other)
+                        related[other].add(pid)
+        nt_people = {str(pid) for family in self.data.get("nt_families", []) or []
+                     for pid in family.get("members", []) or []}
+        result = set()
+        for pid in self.people:
+            if pid in main or pid in nt_people:
+                continue
+            lone = pid not in tree_parent and not tree_children[pid]
+            if lone and related[pid]:
+                continue
+            result.add(pid)
+        return result
 
     def _nt_relation(self, family: dict, pid: str) -> list[tuple[str, str]]:
         def shown(other: str, ref: str) -> str:
@@ -3196,6 +3240,7 @@ class LineageBuilder:
             "persons": persons, "spine": {"segments": segments, "lines": self.lines},
             "witnesses": [{k: v for k, v in witness.items() if not k.startswith("_")} for witness in self.witnesses],
             "ages": self.ages_result, "notes": self.notes, "tour": self.tour,
+            "unattached": sorted(self.unattached_people()),
             "families": [{"id": family.get("id"), "title": family.get("title"),
                           "roots": family.get("roots", []), "count": self._family_count(family.get("roots", [])),
                           "intro": family.get("intro", "")} for family in self.data.get("families", []) or []],
