@@ -1,7 +1,7 @@
 {
-  "total_warnings": 251,
+  "total_warnings": 253,
   "critical_count": 0,
-  "warning_count": 251,
+  "warning_count": 253,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -239,7 +239,7 @@
       "severity": "warning",
       "source": "link_folder/人物/利未支派.md",
       "target": "第18章",
-      "message": "同一 alias「第18章」指向多個 target: 04 民數記/第18章, 05 申命記/第18章"
+      "message": "同一 alias「第18章」指向多個 target: 04 民數記/第18章, 05 申命記/第18章, 06 約書亞記/第18章"
     },
     {
       "type": "alias_target_conflict",
@@ -1091,6 +1091,13 @@
     {
       "type": "alias_target_conflict",
       "severity": "warning",
+      "source": "link_folder/主題/立他名的居所（中央聖所）.md",
+      "target": "第18章",
+      "message": "同一 alias「第18章」指向多個 target: 05 申命記/第18章, 06 約書亞記/第18章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
       "source": "link_folder/主題/立約.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 05 申命記/第26章"
@@ -1360,6 +1367,13 @@
       "source": "link_folder/原文/產業（na.cha.lah）.md",
       "target": "第33章",
       "message": "同一 alias「第33章」指向多個 target: 04 民數記/第33章, 05 申命記/第33章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/原文/產業（na.cha.lah）.md",
+      "target": "第18章",
+      "message": "同一 alias「第18章」指向多個 target: 05 申命記/第18章, 06 約書亞記/第18章"
     },
     {
       "type": "alias_target_conflict",

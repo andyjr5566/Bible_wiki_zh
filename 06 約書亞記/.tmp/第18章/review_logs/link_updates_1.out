@@ -1,0 +1,407 @@
+OpenAI Codex v0.162.1
+--------
+workdir: C:\Obsidian\Hermes\scripture
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a13429-5b70-71e1-90cd-96ed7daa3806
+--------
+user
+你是唯讀 evidence reviewer，不得修改任何檔案。請依 agent_evidence_audit_prompt.md 審查下面這個 stage，並照該檔「Verdict」一節的格式，在最後輸出 footer（REVIEW_STAGE／REVIEW_SHA256／REVIEW_REVIEWER／REVIEW_ATTEMPT／REVIEW_STATUS／FINDINGS_COUNT）。
+書卷：約書亞記
+章：18
+stage：link_updates
+sha256：928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260
+REVIEW_ATTEMPT：1
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\andyj_adknr2z\.codex\config.toml): `c:\Users\andyj_adknr2z\.vscode\extensions\vexp.vexp-vscode-1.3.11\dist\mcp-server.cjs` is ignored.
+warning: failed to parse hooks config C:\Obsidian\Hermes\scripture\.codex\hooks.json: unknown field `_cc_bridge_version`, expected `description` or `hooks` at line 2 column 22
+codex
+我會核對本輪 link_updates 的雜湊與收據，逐筆比對 summary／relation、overview_review 與目標條目，並回查相關經文和本章來源原文；只讀，不會修改檔案。
+mcp: vexp/run_pipeline started
+mcp: vexp/run_pipeline (failed)
+MCP tool call requires approval, but approval policy is never
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+codex
+我已核對本輪 hash 與 39 筆更新清單。審查時發現 `review_evidence.md` 標成「主題發展空白」的若干條目，現行 wiki 內容卻已有相關段落；我正在確認 evidence 快照是否落後，以及這會不會影響 keep/update 判斷。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: hermes-scripture/query_step_context started
+mcp: hermes-scripture/query_step_context (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+codex
+來源抽查已確認主要經文、STEP 投影與多數評論歸屬一致。我正在核對一處看起來把伯特利攻取事件標到士師記 20:18 的經文引註；若正式經文確實不支持該引註，我會列為本輪 finding。
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (failed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: node_repl/js started
+mcp: node_repl/js (completed)
+context compacted
+codex
+我會以唯讀方式核對本次 `link_updates` 的 payload、現有條目與原始證據；`run_pipeline` 目前被環境的 approval gate 擋住，我會沿用可用的唯讀章節工具完成查核。
+mcp: hermes-scripture/get_chapter_status started
+mcp: hermes-scripture/get_chapter_status (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_wiki_entry started
+mcp: hermes-scripture/read_wiki_entry (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$prompt = Get-Content -LiteralPath '"'agent_evidence_audit_prompt.md' -Raw; [regex]::Match("'$prompt, '"'(?ms)"'^## Verdict.*?(?=''^## |'"\\z)').Value; "'$targets = @(@{Path='"'raw_data/ccbiblestudy_GT_joshua_18.txt'; Lines=@(215)}, @{Path='raw_scripture/士師記/第20章.txt'; Lines=@(18)}, @{Path='raw_scripture/士師記/第1章.txt'; Lines=@(22,24,25)}, @{Path='raw_scripture/約書亞記/第18章.txt'; Lines=@(4,5,6,8,9,10)}); foreach ("'$item in $targets) { $content = Get-Content -LiteralPath $item.Path; foreach ($n in $item.Lines) { if ($n -le $content.Count) { '"'{0}:{1}: {2}' -f "'$item.Path, $n, $content[$n-1] } } }' in C:\Obsidian\Hermes\scripture
+ succeeded in 265ms:
+## Verdict
+
+reviewer åœ¨å”¯è®€ sandbox è£¡è·‘ä¸äº†å¯«å…¥æŒ‡ä»¤ï¼Œæ‰€ä»¥è‡ªå·±ä¸åŸ·è¡Œ `agent_review.py verdict`ã€‚audit çµæŸæ™‚åªè¦æ¸…æ¥šè¼¸å‡ºä¸‹é¢é€™æ®µï¼Œç”± orchestratorï¼ˆæœ‰å¯«å…¥æ¬Šé™çš„é‚£ä¸€å´ï¼‰ä¾é€™æ®µè¼¸å‡ºä»£ç‚ºè¨˜éŒ„ï¼š
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <pass|changes_required|blocked> \
+  --sha <ç›®å‰ sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+è‹¥ orchestrator ä»£è¨˜æ™‚å…§å®¹å·²è¢« Claude æ”¹å‹•ã€sha å°ä¸ä¸Šï¼Œ**ä¸è¦æ”¾æŽ‰é€™æ¬¡ attempt**ï¼š
+ç”¨ reviewer footer çš„ `REVIEW_SHA256` è£œè¨˜â€”â€”
+
+```text
+python util/agent_review.py verdict æ›¸å ç«  stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+è£œè¨˜çš„ attempt ç…§ç®—ã€æ¨™ `late_recorded`ï¼Œä½†åªæŽ›åœ¨ reviewer ç•¶æ™‚çœ‹éŽçš„ sha ä¸Šï¼Œ
+ä¸è¿½èªç›®å‰å…§å®¹â€”â€”ç›®å‰ç‰ˆæœ¬ä»è¦é‡æ–° submit æ‰éŽ gateï¼ˆé¡åº¦ç”¨ç›¡å‰‡ FORCED PASSï¼‰ã€‚
+
+æœ€å¾Œè¼¸å‡ºï¼š
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <æ•´æ•¸>
+```
+
+Attempt 2/2 å¾Œä¸å¾—å†è¦æ±‚ reviewer è¤‡æ ¸ã€‚è‹¥ä»æœ‰ findingsï¼Œæ¸…æ¥šä¸€æ¬¡åˆ—å®Œï¼Œäº¤ Claude æœ€å¾Œä¿®æ­£ï¼Œè®“ç¨‹å¼èµ° `FORCED PASS`ã€‚
+
+raw_data/ccbiblestudy_GT_joshua_18.txt:215: ã€Œä¼¯ç‰¹åˆ©ã€ï¼ˆ22ç¯€ï¼‰æ˜¯é›…å„å¤¢è¦‹å¤©æ¢¯çš„åœ°æ–¹ï¼ˆå‰µäºŒåå…«19ï¼‰ï¼Œä½æ–¼èˆ‡ä»¥æ³•è“®çš„é‚Šç•Œä¸Šã€‚åœ¨ä¾¿é›…æ†«æ”¯æ´¾å¹¾ä¹Žè¢«æ»…çµ•æ™‚ï¼Œé€™åº§åŸŽå¸‚è½åˆ°äº†ä»¥æ³•è“®æ”¯æ´¾çš„æ‰‹ä¸­ï¼ˆå£«äºŒå18ï¼‰ï¼Œå¾Œä¾†æˆç‚ºåŒ—åœ‹è€¶ç¾…æ³¢å®‰è¨­ç«‹é‡‘ç‰›çŠ¢çš„åœ°æ–¹ä¹‹ä¸€ï¼ˆçŽ‹ä¸ŠåäºŒ29ï¼‰ã€‚â”€â”€
+raw_scripture/士師記/第20章.txt:18: ä»¥è‰²åˆ—äººå°±èµ·ä¾†ï¼Œåˆ°ä¼¯ç‰¹åˆ©åŽ»æ±‚å•ç¥žèªªï¼šæˆ‘å€‘ä¸­é–“èª°ç•¶é¦–å…ˆä¸ŠåŽ»èˆ‡ä¾¿é›…æ†«äººçˆ­æˆ°å‘¢ï¼Ÿè€¶å’Œè¯èªªï¼šçŒ¶å¤§ç•¶å…ˆä¸ŠåŽ»ã€‚
+raw_scripture/士師記/第1章.txt:22: ç´„ç‘Ÿå®¶ä¹Ÿä¸ŠåŽ»æ”»æ‰“ä¼¯ç‰¹åˆ©ï¼›è€¶å’Œè¯èˆ‡ä»–å€‘åŒåœ¨ã€‚
+raw_scripture/士師記/第1章.txt:24: çªºæŽ¢çš„äººçœ‹è¦‹ä¸€å€‹äººå¾žåŸŽè£¡å‡ºä¾†ï¼Œå°±å°ä»–èªªï¼šæ±‚ä½ å°‡é€²åŸŽçš„è·¯æŒ‡ç¤ºæˆ‘å€‘ï¼Œæˆ‘å€‘å¿…æ©å¾…ä½ ã€‚
+raw_scripture/士師記/第1章.txt:25: é‚£äººå°‡é€²åŸŽçš„è·¯æŒ‡ç¤ºä»–å€‘ï¼Œä»–å€‘å°±ç”¨åˆ€æ“Šæ®ºäº†åŸŽä¸­çš„å±…æ°‘ï¼Œä½†å°‡é‚£äººå’Œä»–å…¨å®¶æ”¾åŽ»ã€‚
+raw_scripture/約書亞記/第18章.txt:4: ä½ å€‘æ¯æ”¯æ´¾ç•¶é¸èˆ‰ä¸‰å€‹äººï¼Œæˆ‘è¦æ‰“ç™¼ä»–å€‘åŽ»ï¼Œä»–å€‘å°±è¦èµ·èº«èµ°éé‚£åœ°ï¼ŒæŒ‰è‘—å„æ”¯æ´¾æ‡‰å¾—çš„åœ°æ¥­å¯«æ˜Žï¼ˆæˆ–ä½œï¼šç•«åœ–ï¼‰ï¼Œå°±å›žåˆ°æˆ‘é€™è£¡ä¾†ã€‚
+raw_scripture/約書亞記/第18章.txt:5: ä»–å€‘è¦å°‡åœ°åˆ†åšä¸ƒåˆ†ï¼›çŒ¶å¤§ä»åœ¨å—æ–¹ï¼Œä½åœ¨ä»–çš„å¢ƒå…§ã€‚ç´„ç‘Ÿå®¶ä»åœ¨åŒ—æ–¹ï¼Œä½åœ¨ä»–çš„å¢ƒå…§ã€‚
+raw_scripture/約書亞記/第18章.txt:6: ä½ å€‘è¦å°‡åœ°åˆ†åšä¸ƒåˆ†ï¼Œå¯«æ˜Žäº†æ‹¿åˆ°æˆ‘é€™è£¡ä¾†ã€‚æˆ‘è¦åœ¨è€¶å’Œè¯â”€æˆ‘å€‘ç¥žé¢å‰ï¼Œç‚ºä½ å€‘æ‹ˆé¬®ã€‚
+raw_scripture/約書亞記/第18章.txt:8: åŠƒåœ°å‹¢çš„äººèµ·èº«åŽ»çš„æ™‚å€™ï¼Œç´„æ›¸äºžå›‘å’ä»–å€‘èªªï¼šä½ å€‘åŽ»èµ°éé‚£åœ°ï¼ŒåŠƒæ˜Žåœ°å‹¢ï¼Œå°±å›žåˆ°æˆ‘é€™è£¡ä¾†ã€‚æˆ‘è¦åœ¨ç¤ºç¾…é€™è£¡ï¼Œè€¶å’Œè¯é¢å‰ï¼Œç‚ºä½ å€‘æ‹ˆé¬®ã€‚
+raw_scripture/約書亞記/第18章.txt:9: ä»–å€‘å°±åŽ»äº†ï¼Œèµ°éé‚£åœ°ï¼ŒæŒ‰è‘—åŸŽé‚‘åˆ†åšä¸ƒåˆ†ï¼Œå¯«åœ¨å†Šå­ä¸Šï¼Œå›žåˆ°ç¤ºç¾…ç‡Ÿä¸­è¦‹ç´„æ›¸äºžã€‚
+raw_scripture/約書亞記/第18章.txt:10: ç´„æ›¸äºžå°±åœ¨ç¤ºç¾…ï¼Œè€¶å’Œè¯é¢å‰ï¼Œç‚ºä»–å€‘æ‹ˆé¬®ã€‚ç´„æ›¸äºžåœ¨é‚£è£¡ï¼ŒæŒ‰è‘—ä»¥è‰²åˆ—äººçš„æ”¯æ´¾ï¼Œå°‡åœ°åˆ†çµ¦ä»–å€‘ã€‚
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; Get-Content -LiteralPath 'agent_evidence_audit_prompt.md' -Encoding UTF8" in C:\Obsidian\Hermes\scripture
+ succeeded in 86ms:
+# Evidence Audit Protocol
+
+你是本專案的 **Evidence Reviewer**。預設 reviewer 是 Codex；Codex 額度／服務不可用時由 Antigravity 接手。你不是第二個作者：只查核 Claude 已完成、尚未正式落地的 payload，M3 另查重要條目是否漏掉。Audit 對 Claude-authored content **read-only**；findings 交回 Claude 修。
+
+**這個 read-only 是技術限制，不只是遵守約定。** 本 audit 呼叫在 `--sandbox read-only`（Codex）或 deny-write settings（Antigravity）下執行，因此在 CLI 層就不具備寫入能力，不是「有能力但選擇不寫」。完成 audit 後把 findings 以純文字回傳給 orchestrator，由 orchestrator（有寫入權限的那一側）記錄 verdict、驅動 Claude 修稿——reviewer 本身不寫任何檔案，包括不寫 `agent_review.yaml`。
+
+**同一章固定同一個 reviewer session/thread，不要每次 attempt 都開新的。** M3 Attempt 1、M3 Attempt 2、M6、link_updates 的所有 review 呼叫，都用 `--resume {threadId}`（Codex）或延續同一 `agy` conversation（Antigravity）接續同一個 thread；只有換 reviewer（Codex↔Antigravity 交接）或找不到可延續的舊 thread 時才開新的。Read-only sandbox 在整個 thread 生命週期內保持不變，resume 時不需要、也不應該重新指定 sandbox（Codex resume 本來就會沿用原 session 的 sandbox）。這樣 reviewer 能記得自己前一輪指出過什麼、上一輪 attempt 說了什麼，不必每次重新讀整章上下文。
+
+先讀 `AGENTS.md`。呼叫時／狀態檔會提供：`book`、`chapter`、`stage`、`sha256`、`review_attempts`。先確認 `.tmp/第x章/agent_review.yaml` 的 stage hash 與目前內容一致；不一致就 `BLOCKED`。
+
+## 兩次 review 預算（硬限制）
+
+**每個 stage（m3 / m6 / link_updates）最多只有 2 次 substantive review，Codex 與 Antigravity 共用同一預算；換 reviewer 不會重置。**
+
+- Attempt 1/2：做完整 audit。一次列齊所有會影響正確性、證據邊界或重要完整性的 findings；不要把可以現在指出的問題留到下一輪。
+- Attempt 2/2：這是**最後一次 reviewer 機會**。先複核上一輪修正，再一次列齊仍存在或修稿新引入的所有 material findings。不要要求 Round 3。
+- 不花 review 預算在純文風、措辭偏好、可有可無的「更完整」建議。
+- Attempt 2 若仍 `CHANGES_REQUIRED`，Claude 會做最後一次修正；之後 `util/agent_review.py submit` 對新 hash 建立明示 `FORCED PASS`，**禁止第三次 reviewer 呼叫**。
+- `BLOCKED`（例如 reviewer quota／tool failure／來源不可讀）不是 substantive review，不消耗次數；可改由另一 reviewer 接手同一 hash。
+
+你的責任因此是：**前兩次就把真正重要的問題抓完，不用無限來回。**
+
+### Attempt 1 強制 scope checklist（寫 verdict 前逐項走過）
+
+Attempt 1 的預算最容易被文風偏好稀釋，導致真問題留到 Attempt 2、再 forced pass。動手前先確認這一輪已涵蓋：
+
+- [ ] **忠實度**：每個歸於來源的事實／引文／翻譯／轉述都對照過該來源 raw。
+- [ ] **證據邊界**：STEP 只用來支持字形／lemma／Strong／morphology／本節譯義／簡要義域；沒有拿 lexicon 義域或 STEP absence 當神學結論。
+- [ ] **m3 條目完整度**（m3 必做）：`link_plan.yaml` 的 `C_new_formal` 都有實際 payload；且掃過四套 Commentary＋經文＋STEP＋`link_candidates.yaml`＋`candidate_similarity.md`，確認沒有「來源明確提到、值得跨章累積、無既有條目承接」的重要候選整個漏掉。
+- [ ] **一致性**：m6／link_updates 對照已核准的上游（m3／m6），沒有壓平 Commentary 分歧、沒把單章內容寫成跨章主題發展。
+- [ ] findings 已一次列齊，沒有「這個留到下一輪再說」。
+
+純文風、可有可無的「更完整」不列入 findings，也不因此要求 Attempt 2。
+
+## 證據來源
+
+- 經文本文／交叉引註 → `raw_scripture/`
+- Commentary attribution／解經 → 本章 `source_manifest.md` 宣告 OK 的 CT、GT、KingComments、BibleHub `raw_data/`
+- 原文字形、lemma、Strong / Extended Strong、morphology、context gloss、lexicon 義域 → 正式 STEP evidence / receipt / projection；需要時用允許的精確 STEP query
+- 專案規則 → `AGENTS.md` 與當次正式 prompt/schema
+
+STEP 是原文證據層，不是第五家 Commentary。lexicon 義域不能自動寫成本節確定義，morphology 不能自行推出神學結論，STEP absence 也不能用來否定 Commentary 延伸。
+
+### Attribution fidelity
+
+凡把內容歸於某一來源，都直接對照該來源判斷忠實度：
+
+- 同語言直接引文：文字內容須忠實，節錄不得改變原意或拼接成來源沒有的句子。
+- 跨語言翻譯：比較語義，不要求中文字串出現在英文來源；不得增加、刪除、強化、弱化或反轉來源的主張、範圍、否定、因果與不確定程度。
+- 具名轉述：不要求逐字，但內容必須由來源支持，且不能把某一家說法改掛給另一家。
+- 不因標點或引號本身判定是否屬直接引文；只有來源 attribution 與實際來源不符時才形成 finding。單純字串回查不到，不足以構成 finding。
+
+## Stage 範圍
+
+### m3
+
+同時做 **內容忠實度 + 條目完整度**：
+
+- 查 `entry_content/*.yaml` 的重要事實、來源 attribution、引文／翻譯／轉述、數字、經文、原文、分歧與異章污染。
+- 對照 `link_plan.yaml` 的 `C_new_formal`，確認計畫內條目都有實際 M3 payload。
+- 再對照本章四套 Commentary、經文、相關 STEP、`link_candidates.yaml`、`candidate_similarity.md`、`link_plan.yaml` 與既有 wiki，找出是否有「來源明確提到、具研讀價值、值得跨章累積、有內容可承載、又沒有既有條目承接」的重要候選整個漏掉。
+- 不為功能詞、單次薄弱提及、Strong 編號本身或同義既有條目另建頁。
+
+`missing entry candidate` 額外寫：Suggested entry、Evidence、Why material、Existing coverage check、Fix direction。若根因在 candidate 層，要求 Claude 回 `link_candidates.yaml` 修，之後由 orchestrator 重跑 similarity → resolve → prompts；不要繞過流程硬塞孤立 M3 YAML。
+
+### m6
+
+查 `chapter_content.yaml`，並參照已通過 M3：evidence fidelity、M3/M6 consistency、是否壓平 Commentary 分歧、是否漏掉會讓本章整理產生明顯偏差的重要 nuance。
+
+### 差異複核（review_mode: delta）
+
+`agent_review.py status` 顯示 `delta-review-pending` 時，本 stage 的檔案自上次 PASS 後沒有改，只有上游（M3／M6）改了。只查上游修改有沒有讓本 stage 內容失準（例如 M3 條目名或定義改了，M6 本章整理的連結與敘述是否仍對得上）；不重做整份 audit。這次審查不計入兩次額度。
+
+### link_updates
+
+查 `link_updates.yaml`，必要時讀 `review_evidence.md` 與被更新既有條目：`summary/relation` 是否忠於來源、`overview_review` 的 keep/update 是否合理、單章內容是否被誤寫成跨章主題發展、是否加入無來源原文／神學／解經史。
+
+## Finding 分類
+
+只用：
+
+- `overstated`
+- `unsupported`
+- `source mismatch`
+- `quotation mismatch`
+- `missing nuance`
+- `missing entry candidate`
+- `original-language overreach`
+- `cross-chapter contamination`
+
+完全有支持的內容不用逐條列。每個非 PASS finding 只寫：Target、分類、Issue、可驗證 Evidence、最小 Fix direction。不要代 Claude 重寫整段。
+
+### 舉證格式（硬性）
+
+reviewer 的 finding 曾出現整條編造的紀錄（附的「逐字引句」在 raw 全查無）。因此：
+
+- 每個 finding 的 **Evidence 必須是可機械複核的具體錨點**：`raw_data/<檔名>` 或 `raw_scripture/...` 的**行號**＋**逐字內容**（照抄，不改標點）。「某家沒有說」這種否定式，要附上你實際 grep 過的檔名與關鍵詞。
+- **`missing`／`quotation mismatch`／`source mismatch` 類 finding：送出前，Evidence 裡引到的每一段逐字內容都要先 `grep -F` 打過一遍**（在掛名來源與你聲稱的實際來源兩邊都打）。查無出處的引句不得寫進 finding。
+- 標到「應連既有條目」時，先確認那個條目名在庫裡真的存在（`search_wiki_entries`），資料夾／分類名也要寫對。
+- orchestrator 代記 verdict 前，會對 `missing` 類 finding 逐條 `grep -F` 抽查；查不到的 finding 不採納。
+
+## Verdict
+
+reviewer 在唯讀 sandbox 裡跑不了寫入指令，所以自己不執行 `agent_review.py verdict`。audit 結束時只要清楚輸出下面這段，由 orchestrator（有寫入權限的那一側）依這段輸出代為記錄：
+
+```text
+python util/agent_review.py verdict 書名 章 stage <pass|changes_required|blocked> \
+  --sha <目前 sha> --reviewer <codex|antigravity> --findings-count N
+```
+
+若 orchestrator 代記時內容已被 Claude 改動、sha 對不上，**不要放掉這次 attempt**：
+用 reviewer footer 的 `REVIEW_SHA256` 補記——
+
+```text
+python util/agent_review.py verdict 書名 章 stage <status> \
+  --sha <REVIEW_SHA256> --observed-sha <REVIEW_SHA256> --reviewer <...> --findings-count N
+```
+
+補記的 attempt 照算、標 `late_recorded`，但只掛在 reviewer 當時看過的 sha 上，
+不追認目前內容——目前版本仍要重新 submit 才過 gate（額度用盡則 FORCED PASS）。
+
+最後輸出：
+
+```text
+REVIEW_STAGE: <m3|m6|link_updates>
+REVIEW_SHA256: <sha>
+REVIEW_REVIEWER: <codex|antigravity>
+REVIEW_ATTEMPT: <1|2>
+REVIEW_STATUS: <PASS|CHANGES_REQUIRED|BLOCKED>
+FINDINGS_COUNT: <整數>
+```
+
+Attempt 2/2 後不得再要求 reviewer 複核。若仍有 findings，清楚一次列完，交 Claude 最後修正，讓程式走 `FORCED PASS`。
+
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+codex
+我已確認兩個需要仔細判斷的地方：伯特利摘要把士師記 20:18 指作「落到以法蓮手中」的依據；「拈鬮分地」則把本章記作 `standing_debt`，但摘要描述了先勘察、分成七份、再於示羅拈鬮的完整進展。我正在核實兩者的原文錨點與本 stage 收據。
+mcp: hermes-scripture/read_chapter_artifact started
+mcp: hermes-scripture/read_chapter_artifact (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+mcp: hermes-scripture/read_chapter_source started
+mcp: hermes-scripture/read_chapter_source (completed)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $p='"'06 約書亞記/.tmp/第18章'; Get-FileHash -LiteralPath \""'$p/link_updates.yaml" -Algorithm SHA256 | ForEach-Object { '"'payload_sha256=' + "'$_.Hash }; $review=Get-Content -LiteralPath "$p/agent_review.yaml" -Encoding UTF8; $i=0; for($n=0;$n -lt $review.Count;$n++){ if($review[$n] -match '"'"'^  link_updates:|''^link_updates:'"'){ "'$i=$n; break } }; $review | Select-Object -Skip $i -First 25; $checks=@(@{Path='"'raw_data/ccbiblestudy_GT_joshua_18.txt'; Pattern='在便雅憫支派幾乎被滅絕時，這座城市落到了以法蓮支派的手中（士二十18）'}, @{Path='raw_scripture/士師記/第20章.txt'; Pattern='以色列人就起來，到伯特利去求問神說：我們中間誰當首先上去與便雅憫人爭戰呢？耶和華說：猶大當先上去。'}, @{Path='raw_scripture/士師記/第1章.txt'; Pattern='約瑟家也上去攻打伯特利；耶和華與他們同在。'}, @{Path='raw_scripture/約書亞記/第18章.txt'; Pattern='你們每支派當選舉三個人，我要打發他們去，他們就要起身走遍那地，按著各支派應得的地業寫明（或作：畫圖），就回到我這裡來。'}, @{Path='raw_scripture/約書亞記/第18章.txt'; Pattern='你們要將地分做七分，寫明了拿到我這裡來。我要在耶和華─我們神面前，為你們拈鬮。'}, @{Path='raw_scripture/約書亞記/第18章.txt'; Pattern='他們就去了，走遍那地，按著城邑分做七分，寫在冊子上，回到示羅營中見約書亞。'}, @{Path='raw_scripture/約書亞記/第18章.txt'; Pattern='約書亞就在示羅，耶和華面前，為他們拈鬮。約書亞在那裡，按著以色列人的支派，將地分給他們。'}); foreach("'$c in $checks){ $m=Select-String -LiteralPath $c.Path -SimpleMatch -Pattern $c.Pattern; '"'{0}: {1}' -f "'$c.Path, (($m | ForEach-Object { $_.LineNumber }) -join '"',') }" in C:\Obsidian\Hermes\scripture
+ succeeded in 331ms:
+payload_sha256=577705FFD5581F90A586A80DFD0F8404E118FE063DCEF33B5EC899D0B62E4B72
+  link_updates:
+    round: 1
+    revision: 1
+    sha256: 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260
+    claude: ready
+    reviewer_status: pending
+    reviewer_agent: null
+    review_attempts: 0
+    forced_pass: false
+    review_history: []
+    hash_inputs:
+    - parent:m3=83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+    - parent:m6=4678ab902d80187524fb03ec0dcbaf332afe3b8a19cd11b0403bab2f945eb67a
+    - link_updates.yaml
+    own_sha256: 3f99915a67670244c9c0929a36811fb1c2d1227e8e16acfaac7c3813e3edc1e5
+raw_data/ccbiblestudy_GT_joshua_18.txt: 215
+raw_scripture/士師記/第20章.txt: 18
+raw_scripture/士師記/第1章.txt: 22
+raw_scripture/約書亞記/第18章.txt: 4
+raw_scripture/約書亞記/第18章.txt: 6
+raw_scripture/約書亞記/第18章.txt: 9
+raw_scripture/約書亞記/第18章.txt: 10
+
+codex
+### Finding 1
+
+- **Target:** `link_updates.yaml` → `updates[title=伯特利].summary`
+- **分類：** `source mismatch`
+- **Issue：** 摘要把「伯特利落到以法蓮手中」繫於士20:18；該節記載的是以色列人在伯特利求問誰先攻打便雅憫，沒有記載伯特利被攻取。士1:22、25 才記載約瑟家攻打伯特利及城中居民被擊殺。這項交叉引註及「便雅憫幾乎被滅絕時」的連結需要更正或刪除。
+- **Evidence：** `raw_data/ccbiblestudy_GT_joshua_18.txt:215`：「在便雅憫支派幾乎被滅絕時，這座城市落到了以法蓮支派的手中（士二十18）」；`raw_scripture/士師記/第20章.txt:18`：「以色列人就起來，到伯特利去求問神說：我們中間誰當首先上去與便雅憫人爭戰呢？耶和華說：猶大當先上去。」；`raw_scripture/士師記/第1章.txt:22`：「約瑟家也上去攻打伯特利；耶和華與他們同在。」；`raw_scripture/士師記/第1章.txt:25`：「那人將進城的路指示他們，他們就用刀擊殺了城中的居民，但將那人和他全家放去。」
+- **最小修正方向：** 更正伯特利被攻取的引註，並移除或分開處理其與便雅憫戰事的時間連結。
+
+### Finding 2
+
+- **Target：** `link_updates.yaml` → `updates[title=拈鬮分地（go.ral）].overview_review.development`
+- **分類：** `missing nuance`
+- **Issue：** `keep` 的理由 `standing_debt` 適用於本章只有簡短提及的情況。本章實際詳述各支派選人勘地、分成七份，再於示羅拈鬮的過程；這也延續並推進了前幾章的分地脈絡，足以支持跨章主題綜合。
+- **Evidence：** `raw_scripture/約書亞記/第18章.txt:4`：「你們每支派當選舉三個人，我要打發他們去，他們就要起身走遍那地，按著各支派應得的地業寫明（或作：畫圖），就回到我這裡來。」；`:6`：「你們要將地分做七分，寫明了拿到我這裡來。我要在耶和華─我們神面前，為你們拈鬮。」；`:9`：「他們就去了，走遍那地，按著城邑分做七分，寫在冊子上，回到示羅營中見約書亞。」；`:10`：「約書亞就在示羅，耶和華面前，為他們拈鬮。約書亞在那裡，按著以色列人的支派，將地分給他們。」
+- **最小修正方向：** 將主題發展改為 `update`，綜合本章與先前分地章節的推進。
+
+```text
+python util/agent_review.py verdict 約書亞記 18 link_updates changes_required --sha 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260 --reviewer codex --findings-count 2
+```
+
+REVIEW_STAGE: link_updates  
+REVIEW_SHA256: 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: CHANGES_REQUIRED  
+FINDINGS_COUNT: 2
+tokens used
+571,696
+### Finding 1
+
+- **Target:** `link_updates.yaml` → `updates[title=伯特利].summary`
+- **分類：** `source mismatch`
+- **Issue：** 摘要把「伯特利落到以法蓮手中」繫於士20:18；該節記載的是以色列人在伯特利求問誰先攻打便雅憫，沒有記載伯特利被攻取。士1:22、25 才記載約瑟家攻打伯特利及城中居民被擊殺。這項交叉引註及「便雅憫幾乎被滅絕時」的連結需要更正或刪除。
+- **Evidence：** `raw_data/ccbiblestudy_GT_joshua_18.txt:215`：「在便雅憫支派幾乎被滅絕時，這座城市落到了以法蓮支派的手中（士二十18）」；`raw_scripture/士師記/第20章.txt:18`：「以色列人就起來，到伯特利去求問神說：我們中間誰當首先上去與便雅憫人爭戰呢？耶和華說：猶大當先上去。」；`raw_scripture/士師記/第1章.txt:22`：「約瑟家也上去攻打伯特利；耶和華與他們同在。」；`raw_scripture/士師記/第1章.txt:25`：「那人將進城的路指示他們，他們就用刀擊殺了城中的居民，但將那人和他全家放去。」
+- **最小修正方向：** 更正伯特利被攻取的引註，並移除或分開處理其與便雅憫戰事的時間連結。
+
+### Finding 2
+
+- **Target：** `link_updates.yaml` → `updates[title=拈鬮分地（go.ral）].overview_review.development`
+- **分類：** `missing nuance`
+- **Issue：** `keep` 的理由 `standing_debt` 適用於本章只有簡短提及的情況。本章實際詳述各支派選人勘地、分成七份，再於示羅拈鬮的過程；這也延續並推進了前幾章的分地脈絡，足以支持跨章主題綜合。
+- **Evidence：** `raw_scripture/約書亞記/第18章.txt:4`：「你們每支派當選舉三個人，我要打發他們去，他們就要起身走遍那地，按著各支派應得的地業寫明（或作：畫圖），就回到我這裡來。」；`:6`：「你們要將地分做七分，寫明了拿到我這裡來。我要在耶和華─我們神面前，為你們拈鬮。」；`:9`：「他們就去了，走遍那地，按著城邑分做七分，寫在冊子上，回到示羅營中見約書亞。」；`:10`：「約書亞就在示羅，耶和華面前，為他們拈鬮。約書亞在那裡，按著以色列人的支派，將地分給他們。」
+- **最小修正方向：** 將主題發展改為 `update`，綜合本章與先前分地章節的推進。
+
+```text
+python util/agent_review.py verdict 約書亞記 18 link_updates changes_required --sha 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260 --reviewer codex --findings-count 2
+```
+
+REVIEW_STAGE: link_updates  
+REVIEW_SHA256: 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260  
+REVIEW_REVIEWER: codex  
+REVIEW_ATTEMPT: 1  
+REVIEW_STATUS: CHANGES_REQUIRED  
+FINDINGS_COUNT: 2

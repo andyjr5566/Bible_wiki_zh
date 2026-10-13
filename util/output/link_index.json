@@ -4480,6 +4480,14 @@
       "默默不言"
     ]
   },
+  "七支派勘地分作七分": {
+    "path": "link_folder/事件/七支派勘地分作七分.md",
+    "type": "事件",
+    "secondary_types": [],
+    "title": "七支派勘地分作七分",
+    "status": "formal",
+    "aliases": []
+  },
   "三大節期律例": {
     "path": "link_folder/事件/三大節期律例.md",
     "type": "事件",
@@ -12854,11 +12862,11 @@
     "status": "formal",
     "aliases": []
   },
-  "洗拉": {
-    "path": "link_folder/人物/洗拉.md",
+  "洗拉（拉麥之妻）": {
+    "path": "link_folder/人物/洗拉（拉麥之妻）.md",
     "type": "人物",
     "secondary_types": [],
-    "title": "洗拉",
+    "title": "洗拉（拉麥之妻）",
     "status": "formal",
     "aliases": []
   },
@@ -18434,6 +18442,14 @@
     "status": "formal",
     "aliases": []
   },
+  "亞文": {
+    "path": "link_folder/地點/亞文.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "亞文",
+    "status": "formal",
+    "aliases": []
+  },
   "亞斯她錄": {
     "path": "link_folder/地點/亞斯她錄.md",
     "type": "地點",
@@ -18953,6 +18969,14 @@
     "status": "formal",
     "aliases": []
   },
+  "俄弗拉（便雅憫）": {
+    "path": "link_folder/地點/俄弗拉（便雅憫）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "俄弗拉（便雅憫）",
+    "status": "formal",
+    "aliases": []
+  },
   "別是巴": {
     "path": "link_folder/地點/別是巴.md",
     "type": "地點",
@@ -19276,6 +19300,14 @@
       "以巴路山"
     ]
   },
+  "基利綠": {
+    "path": "link_folder/地點/基利綠.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基利綠",
+    "status": "formal",
+    "aliases": []
+  },
   "基博羅哈他瓦": {
     "path": "link_folder/地點/基博羅哈他瓦.md",
     "type": "地點",
@@ -19344,6 +19376,24 @@
     "type": "地點",
     "secondary_types": [],
     "title": "基提（Kittim）",
+    "status": "formal",
+    "aliases": []
+  },
+  "基比亞（便雅憫）": {
+    "path": "link_folder/地點/基比亞（便雅憫）.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "基比亞（便雅憫）",
+    "status": "formal",
+    "aliases": []
+  },
+  "基法阿摩尼": {
+    "path": "link_folder/地點/基法阿摩尼.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "基法阿摩尼",
     "status": "formal",
     "aliases": []
   },
@@ -19588,6 +19638,14 @@
     "status": "formal",
     "aliases": []
   },
+  "巴拉（便雅憫）": {
+    "path": "link_folder/地點/巴拉（便雅憫）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "巴拉（便雅憫）",
+    "status": "formal",
+    "aliases": []
+  },
   "巴旦亞蘭": {
     "path": "link_folder/地點/巴旦亞蘭.md",
     "type": "地點",
@@ -19771,6 +19829,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "拉沙崙",
+    "status": "formal",
+    "aliases": []
+  },
+  "拉瑪（便雅憫）": {
+    "path": "link_folder/地點/拉瑪（便雅憫）.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "拉瑪（便雅憫）",
     "status": "formal",
     "aliases": []
   },
@@ -20153,6 +20221,22 @@
     "status": "formal",
     "aliases": []
   },
+  "洗拉（便雅憫）": {
+    "path": "link_folder/地點/洗拉（便雅憫）.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "洗拉（便雅憫）",
+    "status": "formal",
+    "aliases": []
+  },
+  "洗瑪臉": {
+    "path": "link_folder/地點/洗瑪臉.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "洗瑪臉",
+    "status": "formal",
+    "aliases": []
+  },
   "洗革拉": {
     "path": "link_folder/地點/洗革拉.md",
     "type": "地點",
@@ -20368,6 +20452,16 @@
     "type": "地點",
     "secondary_types": [],
     "title": "示拿地",
+    "status": "formal",
+    "aliases": []
+  },
+  "示羅": {
+    "path": "link_folder/地點/示羅.md",
+    "type": "地點",
+    "secondary_types": [
+      "歷史"
+    ],
+    "title": "示羅",
     "status": "formal",
     "aliases": []
   },
@@ -20740,6 +20834,14 @@
     "type": "地點",
     "secondary_types": [],
     "title": "迦密",
+    "status": "formal",
+    "aliases": []
+  },
+  "迦巴": {
+    "path": "link_folder/地點/迦巴.md",
+    "type": "地點",
+    "secondary_types": [],
+    "title": "迦巴",
     "status": "formal",
     "aliases": []
   },

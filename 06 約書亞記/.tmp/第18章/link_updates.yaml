@@ -1,0 +1,528 @@
+book: 約書亞記
+chapter: 18
+review_schema_version: 2
+review_baseline: link_update_review_baseline.yaml
+review_guidance:
+  review_input: 判斷前先讀同資料夾的 review_evidence.md：它逐條列出目標條目的定義全文、主題發展段落索引與已累積章清單；段落索引不足以判定時再開條目原檔。再把本章 summary／relation 與既有內容一起判斷。
+  review_evidence: review_evidence.md 由 prepare 產生，是本章審查的證據檔；它取代逐一開啟每個條目的讀法，但不取代 already_covered 的逐字舉證。
+  definition: 定義回答『這是誰／什麼、如何辨識、範圍與邊界是什麼』；只在本章資料改變或澄清條目的穩定身分時更新，不得寫成本章事件摘要。
+  development: 主題發展是跨章綜合：至少使用兩個章節（可跨卷）的累積，說明推進、轉折、對照或整體意義；不是逐章累積的加長版，不得把本章 summary／relation 換句話說後貼進來。正確形狀：從前幾章講起、把本章當這條線的終點或轉折點，只寫跨章之間怎麼推進；本章的細節與引句留在本章 summary，主題發展不再重述一遍。定義與主題發展裡的經文引註一律寫「書卷簡稱＋章:節」（申32:15、民35:33），不可只寫「第15節」——條目是跨書卷跨章的，裸節號無從判斷是哪一卷哪一章；逐章累積在條目裡有章號標題涵蓋，可續用「第15節」。
+  accumulation: 逐章累積只記本章明確資料：summary 是本章重點，relation 是本章與條目的關聯；每章各自成塊，不負責總體定義或跨章綜合。
+  decision_rule: 每個 B 類條目只須分別填 definition／development 的 keep 或 update；這是審查義務，不是更新配額，全部 keep 也可通過。程式提出 challenge 而仍選 keep 時，才用受控 basis 代碼；update 則由實際區塊 diff 證明。
+  keep_basis: definition 可用 no_identity_change／already_covered／insufficient_evidence；development 可用 already_covered／single_chapter_only／insufficient_evidence／standing_debt。沒有 challenge 時直接填 keep。填 already_covered 必須同時給 covered_by：從該區塊現有內容逐字節錄一句，程式會比對；引不出來就不是 already_covered。條目本身欠帳（累積過多或主題發展空白）而本章只給了一句帶過的提及時，填 standing_debt——它會被記進 util/output/development_debt.json 等維護回合處理，不是把問題抹掉；這種情況不可用 insufficient_evidence。
+  signals: first_in_book=首次進入本卷；definition_blank／development_blank=總體區塊空白；many_accumulations=新增後達 7 筆或其後每隔 5 筆（7, 12, 17...）之提醒門檻。signals 只提高注意，不等於必須 update。
+updates:
+- title: 米斯巴
+  path: link_folder/原文/米斯巴.md
+  summary: 第26節便雅憫西部的城「米斯巴、基非拉、摩撒」。STEP 語言資料：ha./mitz.Peh（H4708I，Mizpeh）。CT 說這個米斯巴不同於書11:3 的米斯巴與書15:38 的米斯巴，位於耶路撒冷北方約12公里，字義「守望台」；GT《研經資料》說可能是納斯貝遺址；BH 說它是便雅憫重要的聚集處，士20:1 以色列人在這裡處理基比亞的罪，撒上7:5-12 撒母耳召百姓在這裡悔改禱告。
+  relation: 書11 的米斯巴在北方黑門山下，本章的米斯巴是便雅憫的城；同一個名字指不同地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 會幕（帳幕整體）
+  path: link_folder/主題/會幕（帳幕整體）.md
+  summary: 第1節「以色列的全會眾都聚集在示羅，把會幕設立在那裡」。STEP 語言資料：'O.hel mo.'Ed（H168G＋H4150I）；GT《研經資料》說原文作「聚會的帳幕」。GT《聖經精讀本》列出會幕的八個名稱，說它是以色列百姓宗教生活的中心，也象徵以色列的終極統治者是神；KC 說在曠野它叫見證的帳幕，在地上它叫會幕；BH 說從西奈經曠野到征服，會幕一路隨著以色列，如今在示羅成為敬拜的中心。
+  relation: 會幕第一次在約書亞記裡有了固定的地方：從吉甲搬到迦南地中央的示羅。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development: keep
+- title: 立他名的居所（中央聖所）
+  path: link_folder/主題/立他名的居所（中央聖所）.md
+  summary: 第1節會幕設立在示羅。GT 所引《丁道爾聖經注釋》與《研經資料》說這代表神應許的實現，祂要與以色列同住（利26:11-12；申12）；BH 說以色列人在聖所所在的地方聚集，開始遵行申12:5-14 的吩咐；KC 說示羅是將來在耶路撒冷才完全應驗之事的暫時應驗，並引耶7:12「我先前立為我名的居所」。
+  relation: 申12 說要到神選擇立名的地方，本章示羅是第一個這樣的地方。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 約書亞
+  path: link_folder/人物/約書亞.md
+  summary: 第3-10節約書亞責備七個支派「耽延不去得，要到幾時呢」，派人勘地，並在示羅耶和華面前為他們拈鬮。GT《綜合解讀》說約書亞了解百姓的軟弱，忠心地把會幕從吉甲遷到示羅，坐鎮迦南地的中心督促七個支派；KC 說約書亞在神面前、倚靠神拈鬮，又說約書亞沒有接班人，祭司以利亞撒卻有。
+  relation: 第14-17章約書亞在吉甲分地，本章他在示羅催促其餘七個支派。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 32
+    - 33
+    definition: keep
+    development: keep
+- title: 未得之地
+  path: link_folder/主題/未得之地.md
+  summary: 第2-3節「其餘的七個支派還沒有分給他們地業」，「你們耽延不去得，要到幾時呢」。CT 與 GT《綜合解讀》《聖經精讀本》都推想了耽延的三個原因；GT《綜合解讀》說此時迦南人已經不再是以色列人的威脅，七個支派卻安於現狀；BH 說雖然地已制伏，仍有相當多的地要去佔領。
+  relation: 第16、17章是已分到的地趕不出迦南人，本章是七個支派連地都還沒分。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 趕出（ya.rash）
+  path: link_folder/原文/趕出（ya.rash）.md
+  summary: 第3節「你們耽延不去得」。STEP 語言資料：la./Re.shet（H3423H，to take possession of），前面的「耽延」是 mit.ra.Pim（H7503，to slacken）。CT 原文字義「得」佔有，剝奪；GT《研經資料》說「得」是「佔有」「繼承」。
+  relation: 第17章同一個動詞是「不能趕出」，本章是「去得」：要得的不只是城裡的人，是整片還沒分的地。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition: keep
+    development: keep
+- title: 拈鬮分地（go.ral）
+  path: link_folder/主題/拈鬮分地（go.ral）.md
+  summary: '第6、8、10、11節「為你們拈鬮」。STEP 語言資料：第6節 ve./ya.Ri.ti go.Ral（H3384A，ya.ra: to shoot；H1486）。GT 所引華爾頓說拈鬮定的是各支派得哪片土地，古代近東瓜分遺產時長子先挑選，其他繼承人拈鬮；GT《聖經精讀本》說這不是出於僥倖心理的賭博，而是尋求神的旨意；BH 引箴16:33；CT 說確實的地界可能在拈鬮後稍作調整。'
+  relation: 前幾章在吉甲拈鬮，本章在示羅、在耶和華面前拈鬮，而且先勘察分好七分再拈。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 10
+    - 11
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 民數記:26
+      - 民數記:32
+      - 民數記:33
+      - 民數記:36
+      - 約書亞記:13
+      - 約書亞記:14
+      - 約書亞記:15
+      - 約書亞記:16
+      - 約書亞記:17
+      - 約書亞記:18
+- title: 猶大支派
+  path: link_folder/人物/猶大支派.md
+  summary: 第5節「猶大仍在南方，住在他的境內」，第11節便雅憫的地「在猶大、約瑟子孫中間」，第14節「猶大人的城基列巴力」。CT 說猶大的境界詳載於書15:1-12；GT《串珠》說便雅憫的南界正是猶大的北界；GT《綜合解讀》說南北分裂之後，便雅憫是唯一跟從南國猶大的支派。
+  relation: 本章猶大的地已定，便雅憫的南界沿著猶大的北界走。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 14
+    - 15
+    definition: keep
+    development: keep
+- title: 約瑟
+  path: link_folder/人物/約瑟.md
+  summary: 第5節「約瑟家仍在北方，住在他的境內」，第11節便雅憫的地在猶大、約瑟子孫中間。CT 說以法蓮與瑪拿西半支派的境界分別詳載於書16:5-9、書17:7-10；BH 說約瑟家的地包括示劍和示羅。GT《聖經精讀本》說便雅憫是約瑟唯一的同母兄弟，後裔之間似乎也有特殊的連帶關係（創43:29）。
+  relation: 本章約瑟家的地已定，便雅憫夾在約瑟與猶大之間。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 24
+    - 25
+    definition: keep
+    development: keep
+- title: 利未支派
+  path: link_folder/人物/利未支派.md
+  summary: 第7節「利未人在你們中間沒有分，因為供耶和華祭司的職任就是他們的產業」。CT 說這是事奉神並從神領受生活的供應；GT《聖經精讀本》說是有資格取用獻在神殿的祭物（出29:9），所以利未支派未得產業（書13:14）；KC 說這是特別的產業，直接和耶和華有關，賜福的那一位大過一切福分；BH 說耶和華自己是他們的產業（民18:20-24）。
+  relation: 書13:14、33 已兩次說利未人沒有產業，本章在分給其餘七個支派之前再說一次。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 23
+    - 24
+    definition: keep
+    development: keep
+- title: 兩支派半求河東之地為業
+  path: link_folder/事件/兩支派半求河東之地為業.md
+  summary: 第7節「迦得支派、流便支派，和瑪拿西半支派已經在約但河東得了地業，就是耶和華僕人摩西所給他們的」。CT 參民32:28-42；BH 說基列與巴珊適合他們眾多的牲畜，條件是他們答應武裝過河幫助弟兄，所以他們的地業已定，對全民的責任仍在。
+  relation: 本章把河東兩個半支派排除在這次分地之外，所以只剩七分。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: keep
+- title: 產業（na.cha.lah）
+  path: link_folder/原文/產業（na.cha.lah）.md
+  summary: 第4、7、20、28節「應得的地業」「就是他們的產業」「所得的地業」。STEP 語言資料：第4節 na.cha.la.Ta/m、第28節 na.cha.Lat（H5159）。第7節說利未人的產業是祭司的職任；BH 說以色列的產業不只是財產，是神應許給亞伯拉罕、經以撒雅各和摩西確認的約的恩賜。
+  relation: 本章的產業一面是七個支派還沒得的地，一面是利未人不以地為業的祭司職任。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 22
+    - 23
+    definition: keep
+    development: keep
+- title: 家室與宗族
+  path: link_folder/主題/家室與宗族.md
+  summary: 第11、20、21、28節「按著宗族」。STEP 語言資料：le./mish.pe.cho.Ta/m（H4940）。GT《聖經精讀本》說「按著宗族」常用來記錄土地分配的過程，強調神按著各宗族的需求充分地供給所用之地。
+  relation: 本章便雅憫的地界與城邑都是按著宗族所得的。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 便雅憫
+  path: link_folder/人物/便雅憫.md
+  summary: 第11-28節便雅憫支派的地界與二十六座城。CT 說便雅憫是雅各的小兒子，與約瑟同母；GT《綜合解讀》《雷氏研讀本》《聖經精讀本》與 KC 都說它的地在猶大與約瑟之間，包括耶路撒冷，應驗申33:12；GT《靈修版》說它是猶大和以法蓮之間的緩衝區；GT《聖經精讀本》說它位在連接南北的戰略要道上，好戰的傳統也與地理相合（創49:27）；KC 說士20 它袒護惡事，王國分裂時卻跟從猶大（王上12:21），掃羅與保羅都出自便雅憫。
+  relation: 雅各最小的兒子，本章成了第一個在示羅拈出來的支派，地夾在猶大與約瑟兩大支派之間。
+  overview_review:
+    signals:
+    - first_in_book
+    accumulation_count:
+    - 12
+    - 13
+    definition: keep
+    development: keep
+- title: 約但河
+  path: link_folder/地點/約但河.md
+  summary: 第12、19、20節便雅憫的北界從約但河起，南界到約但河的南頭，東界是約但河。CT 說約但河是便雅憫、以法蓮、瑪拿西、以薩迦、拿弗他利等支派的東界；BH 說以色列人在這裡過河進迦南，神使河水停住（書3:14-17）。
+  relation: 本章約但河是便雅憫地界的起點、終點和東界。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 31
+    - 32
+    definition: keep
+    development: &id001
+      decision: keep
+      basis: standing_debt
+- title: 耶利哥
+  path: link_folder/地點/耶利哥.md
+  summary: '第12節北界「往上貼近耶利哥的北邊」，第21節便雅憫的城邑第一個是耶利哥。STEP 語言資料：這裡是 Ke.tef ye.ri.Cho（H3802，簡要詞典義 ka.teph: shoulder，本節譯義 slope of）接 mi./tza.Fon（north），也就是耶利哥北邊的山坡；CT 說「貼近」二字原文沒有。GT《綜合解讀》說這裡的耶利哥不是已被燒毀的迦南人的耶利哥城（書6:26），而是在旁邊另建的城市；BH 說耶利哥原分給便雅憫，周圍地區也在與猶大的地界安排上有意義。'
+  relation: 第6章被毀的城，本章以便雅憫第一座城的身分出現；GT《綜合解讀》說這是另建的城。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 20
+    - 21
+    definition: keep
+    development: keep
+- title: 伯亞文
+  path: link_folder/地點/伯亞文.md
+  summary: 第12節北界「直到伯亞文的曠野」。CT 說確實地點不詳，應是伯特利東北方的一個曠野，字義「虛華之家，罪孽之家」；GT《研經資料》說字義是「犯罪之家」，這應該是伯特利；BH 說它靠近伯特利，後來和拜偶像連在一起（何4:15）。
+  relation: 書7 伯亞文是艾城旁的地標，本章它是便雅憫北界上的一點，緊接著就是伯特利。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:7
+      - 約書亞記:18
+- title: 路斯
+  path: link_folder/地點/路斯.md
+  summary: 第13節「從那裡往南接連到路斯，貼近路斯（路斯就是伯特利）」。CT 說路斯是伯特利的原來名字，位於耶路撒冷北方約16公里；GT《研經資料》說路斯是伯特利早期的名字（創28:19）。
+  relation: 第16章路斯與伯特利並列成兩個界點，本章經文直接說路斯就是伯特利。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 4
+    - 5
+    definition: keep
+    development: keep
+- title: 伯特利
+  path: link_folder/地點/伯特利.md
+  summary: 第13節「路斯就是伯特利」，第22節伯特利列在便雅憫的城邑。GT《聖經精讀本》說人們常認為伯特利是以法蓮的，本書卻明確記載它屬便雅憫；GT《綜合解讀》說它位於與以法蓮的邊界上，後來成為耶羅波安設金牛犢的地方（王上12:29）；GT《啟導本》說便雅憫的城邑裡伯特利和耶路撒冷都是宗教聖地；BH 也提到耶羅波安。
+  relation: 第16章伯特利是界點，本章它被列在便雅憫的城邑裡。
+  overview_review:
+    signals:
+    - many_accumulations
+    accumulation_count:
+    - 11
+    - 12
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: *id001
+- title: 亞他綠亞達
+  path: link_folder/地點/亞他綠亞達.md
+  summary: 第13節便雅憫的北界「又下到亞他綠亞達，靠近下伯和崙南邊的山」。CT 說它位於耶路撒冷北方約12公里、伯特利南方約4公里；GT《研經資料》字義「榮耀之冠」；BH 說這段下坡沿著中央山地的地勢。
+  relation: 第16章它是約瑟子孫與以法蓮的界點，本章它是便雅憫的北界。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:16
+      - 約書亞記:18
+- title: 伯和崙
+  path: link_folder/地點/伯和崙.md
+  summary: 第13、14節「靠近下伯和崙南邊的山」「從伯和崙南對面的山」。CT 說下伯和崙位於耶路撒冷西北方約20公里，海拔約400公尺；GT《研經資料》說兩城相隔約三公里，下伯和崙比較大；BH 說它靠近從沿海平原上到山地的戰略要道，書10:10-11 的戰役就在這一帶。
+  relation: 第16章伯和崙是約瑟子孫與以法蓮地界的點，本章它是便雅憫北界轉向西界的地方。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 2
+    - 3
+    definition: keep
+    development: keep
+- title: 基列耶琳
+  path: link_folder/地點/基列耶琳.md
+  summary: 第14節「直達到猶大人的城基列巴力（基列巴力就是基列耶琳）」，第15節南界「從基列耶琳的盡邊起」，第28節城單的「基列」。STEP 語言資料：第28節 kir.Yat（H7157，簡要詞典義 Kiriath-jearim）。GT 所引華爾頓說它在便雅憫和猶大交界之處，又稱巴拉、基列巴力；GT《串珠》說第28節的基列可能是基列耶琳，GT《研經資料》說七十士譯本作基列耶琳；CT 說第28節的基列確實地點不詳；BH 說約櫃從非利士回來後在這裡停了多年（撒上7:1-2）。
+  relation: 本章基列耶琳是便雅憫西界的終點和南界的起點；書18:28 的「基列」也可能就是它。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 2
+    - 3
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:9
+      - 約書亞記:15
+      - 約書亞記:18
+- title: 尼弗多亞的水源
+  path: link_folder/地點/尼弗多亞的水源.md
+  summary: 第15節南界「往西達到尼弗多亞的水源」。CT 說它是耶路撒冷西方約4公里、基遍南方約6公里的一個水泉，字義「開口」；BH 說它大概在現代的 Lifta 附近，水源在這片地上是持久的地標。
+  relation: 第15章它在猶大的北界上，本章它在便雅憫的南界上，是同一條線。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 欣嫩子谷
+  path: link_folder/地點/欣嫩子谷.md
+  summary: 第16節「又下到欣嫩子谷對面山的盡邊」「又下到欣嫩谷，貼近耶布斯的南邊」。CT 說欣嫩子谷是耶路撒冷西南側長約兩公里的山谷；GT《研經資料》與《靈修版》說它在耶利米的時代是拜摩洛的地方，後來成了地獄的同義詞；GT 所引華爾頓說這條邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；BH 說它後來的名字 Gehenna 成了神審判的意象。
+  relation: 第15章猶大的北界從谷中經過，本章便雅憫的南界也是同一條谷。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: *id001
+- title: 利乏音谷
+  path: link_folder/地點/利乏音谷.md
+  summary: 第16節「就是利乏音谷北邊的山」。CT 說利乏音谷始於耶路撒冷西南方約5公里，向西南延伸到伯利恆西北方約4公里；BH 說這裡土地肥沃、有軍事通道，大衛後來在這裡打敗非利士人，谷名讓人想起古時的利乏音人。
+  relation: 第15章它標在猶大北界上，本章標在便雅憫南界上。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 耶布斯人
+  path: link_folder/人物/耶布斯人.md
+  summary: 第16節南界「貼近耶布斯的南邊」，第28節「耶布斯（耶布斯就是耶路撒冷）」。STEP 語言資料：第28節 ve./ha/y.vu.Si（H2983H）。CT 說耶布斯是耶路撒冷的古城區；GT《研經資料》字義「打穀之地」；BH 說耶布斯人佔據耶路撒冷，直到大衛攻取這座保障（撒下5:6-9）。
+  relation: 第15章猶大人不能趕出耶布斯人，本章耶布斯被列在便雅憫的城邑裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 8
+    - 9
+    definition: keep
+    development: keep
+- title: 耶路撒冷
+  path: link_folder/地點/耶路撒冷.md
+  summary: 第28節「耶布斯（耶布斯就是耶路撒冷）」列在便雅憫的城邑。KC 說將來建造聖殿的城在便雅憫，應驗了申33:12；GT《綜合解讀》說它在大衛時成為首都，所羅門在此建殿；GT 所引華爾頓說邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；BH 說它在便雅憫與猶大的交界上，以色列並沒有立刻完全得著它。
+  relation: 第15章耶路撒冷在猶大北界的邊上、是未得之城，本章它被列在便雅憫的城單裡。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 5
+    - 6
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development: keep
+- title: 耶路撒冷屬猶大或便雅憫
+  path: link_folder/解經爭議/耶路撒冷屬猶大或便雅憫.md
+  summary: 第16、28節便雅憫的南界貼近耶布斯的南邊，耶布斯列在便雅憫的城邑。GT 所引華爾頓與《研經資料》都說這條邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；BH 說耶路撒冷位於便雅憫與猶大的交界上；KC 說耶路撒冷在便雅憫與猶大之間。
+  relation: 第15章給了問題的一半（猶大的北界與猶大人趕不出耶布斯人），本章給了另一半：城被列在便雅憫。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:18
+- title: 隱羅結
+  path: link_folder/地點/隱羅結.md
+  summary: 第16節「又下到隱羅結」。CT 說隱羅結位於耶路撒冷東南角，欣嫩子谷和汲淪溪的匯合處；GT《研經資料》字義「漂洗者的泉源」；BH 說它是可靠的泉源，後來與所羅門登基的事有關。
+  relation: 第15章它在猶大的北界上，本章它在便雅憫的南界上。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 隱示麥泉
+  path: link_folder/地點/隱示麥泉.md
+  summary: 第17節「又往北通到隱示麥」。STEP 語言資料：'ein She.mesh（H5885，En-shemesh）。CT 說隱示麥位於耶路撒冷東方約3公里，橄欖山麓的一條小溪，字義「太陽之泉」；GT《研經資料》字義相同；BH 說它是耶路撒冷東邊一個顯著的水源。
+  relation: 第15章猶大北界寫「隱示麥泉」，本章便雅憫南界寫「隱示麥」，是同一處。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 亞都冥坡
+  path: link_folder/地點/亞都冥坡.md
+  summary: 第17節「達到亞都冥坡對面的基利綠」。STEP 語言資料：ma.'a.Leh 'a.du.Mim（H4608＋H131）。CT 字義「紅潤的人」「安靜的人」；BH 說亞都冥坡是耶利哥與耶路撒冷之間的陡路，意思是紅色地方的上坡，後來和好撒瑪利亞人比喻的那條路有關，這片難走的地形自然地把便雅憫和猶大分開。
+  relation: 第15章猶大北界寫「亞都冥坡對面的吉甲」，本章便雅憫南界寫「亞都冥坡對面的基利綠」。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development: *id001
+- title: 波罕的磐石
+  path: link_folder/地點/波罕的磐石.md
+  summary: 第17節「又下到流便之子波罕的磐石」。STEP 語言資料：'E.ven Bo.han ben- re.'u.Ven（H68G＋H932＋H7205）。CT 說它是猶大支派與便雅憫支派的交界石（參書15:6），字義「拇指」；GT《聖經精讀本》說可以推測有一些流便子孫曾居住在猶大東北地區；BH 說這塊界石記念一個流便人，見證全以色列共同的歷史。
+  relation: 第15章它是猶大北界的界石，本章它是便雅憫南界的同一塊石頭。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:18
+- title: 亞拉巴
+  path: link_folder/地點/亞拉巴.md
+  summary: 第18節「又接連到亞拉巴對面，往北下到亞拉巴」。CT 說亞拉巴是約但河流域從加利利海到死海南端，以迄阿卡巴灣的河谷地帶，全長約460公里；GT《研經資料》說它可以是「沙漠曠野」「乾草原」，也可以是專有地名，指約旦河旁的曠野；BH 說界線從高地下到這條大裂谷，成了便雅憫東邊清楚的天然界線。
+  relation: 本章亞拉巴是便雅憫南界下到約但河谷的那一段。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 9
+    - 10
+    definition: keep
+    development: keep
+- title: 伯曷拉
+  path: link_folder/地點/伯曷拉.md
+  summary: 第19節南界「又接連到伯曷拉的北邊」，第21節列在便雅憫的城邑。CT 說伯曷拉位於耶利哥東南方約10公里，字義「鷓鴣的房屋，鷓鴣之地」；BH 說它在約但河谷靠近耶利哥，標出便雅憫與猶大的一段地界，後來又列入便雅憫的城邑。
+  relation: 第15章它是猶大北界的第一個點，本章它是便雅憫南界上的點，也是便雅憫的城。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:18
+- title: 鹽海
+  path: link_folder/地點/鹽海.md
+  summary: 第19節南界「直通到鹽海的北汊，就是約但河的南頭」。CT 說鹽海即死海，北汊即死海的北端、約但河流入死海的河口；GT《研經資料》說「汊」字義是「舌頭」，指舌狀的海灣；BH 說鹽海是便雅憫地業的東南角。
+  relation: 第15章鹽海是猶大的東界，本章鹽海的北汊是便雅憫南界的終點。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 7
+    - 8
+    definition: keep
+    development: *id001
+- title: 伯亞拉巴
+  path: link_folder/地點/伯亞拉巴.md
+  summary: 第22節便雅憫的城邑「伯亞拉巴、洗瑪臉、伯特利」。CT 說伯亞拉巴位於耶利哥東南方約6公里，字義「沙漠谷地的房屋，凹地之處」；GT《研經資料》說大概是加拉貝泉；BH 說它也出現在猶大的邊界描述中（書15:61），兩個支派的地在這片荒涼低地交會。
+  relation: 第15章它是猶大曠野的城，本章它列在便雅憫的城邑裡。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition:
+      decision: keep
+      basis: no_identity_change
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:15
+      - 約書亞記:18
+- title: 基遍
+  path: link_folder/地點/基遍.md
+  summary: 第25節便雅憫西部城邑第一座「基遍」。CT 說基遍位於耶路撒冷西北方約9公里，字義「丘陵城市」；GT《聖經精讀本》說它是以色列不戰而進駐的城，後來成為利未人的城（書21:17），大衛和所羅門時聖幕停在這裡（王上3:4）；GT《綜合解讀》說基遍後來被分給利未支派；GT《研經資料》說是現代的 el-Jib；BH 說以色列人起的誓約束了全民。
+  relation: 第9、10章的基遍，本章列進便雅憫的城邑。
+  overview_review:
+    signals: []
+    accumulation_count:
+    - 3
+    - 4
+    definition: keep
+    development: keep
+- title: 比錄
+  path: link_folder/地點/比錄.md
+  summary: 第25節「又有基遍、拉瑪、比錄」。CT 說比錄位於耶路撒冷西北方約8公里，字義「水井」；GT《研經資料》字義相同；BH 說比錄屬於基遍的聯盟，居民後來逃到基他音寄居（撒下4:2-3），並列出拉2:25、尼7:29。
+  relation: 第9章比錄是被誓言保住的基遍四城之一，本章它列在便雅憫的城邑裡。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:9
+      - 約書亞記:18
+- title: 基非拉
+  path: link_folder/地點/基非拉.md
+  summary: 第26節「米斯巴、基非拉、摩撒」。CT 說基非拉位於耶路撒冷西北西方約14公里、基遍西南方約8公里，字義「雌獅」；GT《研經資料》說是基遍西南西方8公里的克非雷廢墟；GT《綜合解讀》說基非拉也是基遍人的城邑；BH 說它屬於靠欺騙和以色列立約的基遍希未人的城，約書亞在誓言立下之後仍遵守它。
+  relation: 第9章基非拉是基遍四城之一，本章它列在便雅憫的城邑裡。
+  overview_review:
+    signals:
+    - development_blank
+    accumulation_count:
+    - 1
+    - 2
+    definition: keep
+    development:
+      decision: update
+      synthesis_scope:
+      - 約書亞記:9
+      - 約書亞記:18

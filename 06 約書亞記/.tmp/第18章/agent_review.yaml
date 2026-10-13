@@ -1,0 +1,118 @@
+version: 2
+book: 約書亞記
+chapter: 18
+stages:
+  m3:
+    round: 2
+    revision: 5
+    sha256: 83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+    verdict_sha: 83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 8a5a429c66d0fbd3b3f4b63b21e30effa4a305f68e68ccaccd0f513366f4fb4e
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 68f1213f42a513d31cd21ccbc74314e4d0bbc0920c34f3783db787dec15c12f1
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 8b61460745fa7380185ac1867d75e0ec29232d6e935587c352ecbf02dc8cedef
+      verdict: forced_pass
+      forced_pass: true
+    - attempt: null
+      reviewer: codex
+      sha256: 83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+      verdict: forced_pass
+      forced_pass: true
+    thread_id: 01a13429-5b70-71e1-90cd-96ed7daa3806
+    hash_inputs:
+    - entry_content/七支派勘地分作七分.yaml
+    - entry_content/亞文.yaml
+    - entry_content/俄弗拉（便雅憫）.yaml
+    - entry_content/基利綠.yaml
+    - entry_content/基比亞（便雅憫）.yaml
+    - entry_content/基法阿摩尼.yaml
+    - entry_content/巴拉（便雅憫）.yaml
+    - entry_content/拉瑪（便雅憫）.yaml
+    - entry_content/洗拉（便雅憫）.yaml
+    - entry_content/洗瑪臉.yaml
+    - entry_content/示羅.yaml
+    - entry_content/迦巴.yaml
+    own_sha256: 83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+  m6:
+    round: 2
+    revision: 3
+    sha256: 3bbd46f70a4d591b2fdf4f0ed17376fffb581ad07b09e3a130bb7ec88b539cc5
+    verdict_sha: 3bbd46f70a4d591b2fdf4f0ed17376fffb581ad07b09e3a130bb7ec88b539cc5
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 1dfa14c4a5152c512494952050c37935fdf5a1cf3152bbab9ef4b0aaa968f4aa
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 4678ab902d80187524fb03ec0dcbaf332afe3b8a19cd11b0403bab2f945eb67a
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 3bbd46f70a4d591b2fdf4f0ed17376fffb581ad07b09e3a130bb7ec88b539cc5
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    thread_id: 01a13429-5b70-71e1-90cd-96ed7daa3806
+    hash_inputs:
+    - parent:m3=83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+    - chapter_content.yaml
+    own_sha256: 4a6cb51bfb83968fec82d2d9bf8ef22154d40727917c035871b2cf263c40e8f6
+  link_updates:
+    round: 2
+    revision: 2
+    sha256: 7f24d66fa57c5d0e6b0ecef9898824d6f75cb41c3b2c3a21c771fee392bb5a75
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 928fc1316547cbe6a8f40f5f3abe188a5394c39f35752bd6ef768dc0286cc260
+      verdict: changes_required
+      findings_count: 2
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 7f24d66fa57c5d0e6b0ecef9898824d6f75cb41c3b2c3a21c771fee392bb5a75
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    thread_id: 01a13429-5b70-71e1-90cd-96ed7daa3806
+    hash_inputs:
+    - parent:m3=83c7e9d0185024ae18ec7a88131b7d3f2eb594ff5ed63e52a81e0437c6c46af4
+    - parent:m6=3bbd46f70a4d591b2fdf4f0ed17376fffb581ad07b09e3a130bb7ec88b539cc5
+    - link_updates.yaml
+    own_sha256: 6507fa0698a574e06383bdd67bf76d2d7121b54e7f5212b8c3cc8f0792618ec9
+    verdict_sha: 7f24d66fa57c5d0e6b0ecef9898824d6f75cb41c3b2c3a21c771fee392bb5a75
+    findings_count: 0

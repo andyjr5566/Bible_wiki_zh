@@ -1,0 +1,530 @@
+book: 約書亞記
+chapter: 18
+A_use_directly: []
+B_needs_update:
+- name: 米斯巴
+  suggested_type: 原文
+  evidence: 第26節「米斯巴、基非拉、摩撒」；STEP ha./mitz.Peh（H4708I）；CT：不同於書11:3、15:38 的米斯巴，耶路撒冷北方約12公里，字義「守望台」；GT《研經資料》：可能是納斯貝遺址；BH：以色列人聚集處理基比亞的罪（士20:1），撒母耳召百姓悔改禱告（撒上7:5-12）；既有「米斯巴」是這個名字（瞭望台）的原文條目，書11
+    已累積北方的米斯巴地，本章的便雅憫米斯巴照此累積
+  surfaces:
+  - phrase: 米斯巴
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 米斯巴
+  existing_path: link_folder/原文/米斯巴.md
+- name: 會幕（帳幕整體）
+  suggested_type: 主題
+  evidence: 第1節「把會幕設立在那裡」；STEP 'O.hel mo.'Ed（H168G＋H4150I）；GT《研經資料》：原文作「聚會的帳幕」；GT《聖經精讀本》：會幕的八個名稱；KC：民數記稱見證的帳幕，在地上稱會幕；BH：會幕從西奈經曠野到這裡，成了以色列敬拜的中心
+  surfaces:
+  - phrase: 會幕
+    verses:
+    - 1
+  match_type: exact
+  existing_title: 會幕（帳幕整體）
+  existing_path: link_folder/主題/會幕（帳幕整體）.md
+- name: 立他名的居所（中央聖所）
+  suggested_type: 主題
+  evidence: 第1節會幕設立在示羅；GT《研經資料》：申12:11 已經提到神定意設立會幕之地，這裡代表神要與以色列同住的應許實現（利26:11-12）；KC：使人想起申12:5
+    要在神選擇立名的地方尋求祂，示羅是要在耶路撒冷完全應驗的暫時應驗；BH：以色列開始實行申12:5-14 的吩咐
+  match_type: exact
+  existing_title: 立他名的居所（中央聖所）
+  existing_path: link_folder/主題/立他名的居所（中央聖所）.md
+- name: 約書亞
+  suggested_type: 人物
+  evidence: 第3-10節約書亞責備七支派耽延，派人勘地，在示羅耶和華面前拈鬮；KC：約書亞沒有繼承人，祭司以利亞撒有；GT《綜合解讀》：約書亞把會幕從吉甲遷到示羅，坐鎮迦南地的中心督促七個支派
+  surfaces:
+  - phrase: 約書亞
+    verses:
+    - 3
+    - 8
+    - 9
+    - 10
+  match_type: exact
+  existing_title: 約書亞
+  existing_path: link_folder/人物/約書亞.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第2-3節七個支派還沒有分給地業，「你們耽延不去得，要到幾時呢」；CT、GT《綜合解讀》《聖經精讀本》：耽延的三個原因；BH：仍有相當多的地要去佔領
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+- name: 趕出（ya.rash）
+  suggested_type: 原文
+  evidence: 第3節「你們耽延不去得」；STEP la./Re.shet（H3423H，to take possession of）；CT 原文字義「得」佔有，剝奪；GT《研經資料》：「得」是「佔有」「繼承」
+  surfaces:
+  - phrase: 去得
+    verses:
+    - 3
+  match_type: exact
+  existing_title: 趕出（ya.rash）
+  existing_path: link_folder/原文/趕出（ya.rash）.md
+- name: 拈鬮分地（go.ral）
+  suggested_type: 主題
+  evidence: 第6、8、10、11節「為你們拈鬮」；STEP 第6節 ve./ya.Ri.ti go.Ral（H3384A＋H1486）；GT《研經資料》：SH
+    3384+SH 1586；GT 華爾頓：藉拈鬮斷定神明旨意，古代近東瓜分遺產時長子先挑選、其他繼承人拈鬮；CT：拈鬮後確實地界可能稍作調整；GT《聖經精讀本》：不是僥倖心理的賭博；BH
+    引箴16:33
+  surfaces:
+  - phrase: 拈鬮
+    verses:
+    - 6
+    - 8
+    - 10
+    - 11
+  match_type: exact
+  existing_title: 拈鬮分地（go.ral）
+  existing_path: link_folder/主題/拈鬮分地（go.ral）.md
+- name: 猶大支派
+  suggested_type: 人物
+  evidence: 第5節「猶大仍在南方，住在他的境內」，第11節便雅憫的地在猶大、約瑟子孫中間，第14節「猶大人的城基列巴力」；CT：猶大的境界詳載於書15:1-12；GT
+    華爾頓：猶大的北界與便雅憫的南界大致相同
+  surfaces:
+  - phrase: 猶大
+    verses:
+    - 5
+    - 11
+    - 14
+  match_type: exact
+  existing_title: 猶大支派
+  existing_path: link_folder/人物/猶大支派.md
+- name: 約瑟
+  suggested_type: 人物
+  evidence: 第5節「約瑟家仍在北方」，第11節「在猶大、約瑟子孫中間」；BH：約瑟家的地包括示劍和示羅
+  surfaces:
+  - phrase: 約瑟
+    verses:
+    - 5
+    - 11
+  match_type: exact
+  existing_title: 約瑟
+  existing_path: link_folder/人物/約瑟.md
+- name: 利未支派
+  suggested_type: 人物
+  evidence: 第7節「利未人在你們中間沒有分，因為供耶和華祭司的職任就是他們的產業」；CT：事奉神並從神領受生活的供應；GT《聖經精讀本》：有資格取用獻在神殿的祭物（出29:9）；KC：祭司職分是特別的產業，賜福的那一位大過一切福分；BH：耶和華自己是他們的產業（民18:20-24）
+  surfaces:
+  - phrase: 利未人
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 利未支派
+  existing_path: link_folder/人物/利未支派.md
+- name: 兩支派半求河東之地為業
+  suggested_type: 事件
+  evidence: 第7節「迦得支派、流便支派和瑪拿西半支派已經在約但河東得了地業，就是耶和華僕人摩西所給他們的」；CT 參民32:28-42；BH：基列和巴珊適合他們的牲畜，條件是武裝過河幫助弟兄
+  match_type: exact
+  existing_title: 兩支派半求河東之地為業
+  existing_path: link_folder/事件/兩支派半求河東之地為業.md
+- name: 產業（na.cha.lah）
+  suggested_type: 原文
+  evidence: 第4、7、20、28節「應得的地業」「就是他們的產業」「所得的地業」；STEP 第4節 na.cha.la.Ta/m、第28節 na.cha.Lat（H5159）
+  surfaces:
+  - phrase: 地業
+    verses:
+    - 4
+    - 20
+    - 28
+  - phrase: 產業
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 產業（na.cha.lah）
+  existing_path: link_folder/原文/產業（na.cha.lah）.md
+- name: 家室與宗族
+  suggested_type: 主題
+  evidence: 第11、20、21、28節「按著宗族」；STEP le./mish.pe.cho.Ta/m（H4940）；GT《聖經精讀本》：「按著宗族」強調神按著各宗族的需求供給所用之地
+  surfaces:
+  - phrase: 宗族
+    verses:
+    - 11
+    - 20
+    - 21
+    - 28
+  match_type: exact
+  existing_title: 家室與宗族
+  existing_path: link_folder/主題/家室與宗族.md
+- name: 便雅憫
+  suggested_type: 人物
+  evidence: 第11-28節便雅憫支派的地界與城邑；CT：雅各的小兒子，與約瑟同母；GT《綜合解讀》《雷氏研讀本》《聖經精讀本》、KC：地在猶大與約瑟之間，包括耶路撒冷，應驗申33:12；GT《靈修版》：猶大與以法蓮之間的緩衝區；GT《聖經精讀本》、KC：分裂時只有便雅憫跟從猶大（王上12:21）；KC、BH：掃羅與保羅出自便雅憫
+  surfaces:
+  - phrase: 便雅憫
+    verses:
+    - 11
+    - 20
+    - 21
+    - 28
+  match_type: exact
+  existing_title: 便雅憫
+  existing_path: link_folder/人物/便雅憫.md
+- name: 約但河
+  suggested_type: 地點
+  evidence: 第12、19、20節便雅憫北界從約但河起，南界到約但河的南頭，東界是約但河；CT：約但河是便雅憫、以法蓮、瑪拿西、以薩迦、拿弗他利等支派的東界
+  surfaces:
+  - phrase: 約但河
+    verses:
+    - 12
+    - 19
+    - 20
+  match_type: exact
+  existing_title: 約但河
+  existing_path: link_folder/地點/約但河.md
+- name: 耶利哥
+  suggested_type: 地點
+  evidence: 第12節北界「貼近耶利哥的北邊」，第21節便雅憫的城邑第一個是耶利哥；STEP Ke.tef（H3802，shoulder）；GT《綜合解讀》：這裡的耶利哥是在被燒毀的迦南城旁邊另建的城（書6:26）
+  surfaces:
+  - phrase: 耶利哥
+    verses:
+    - 12
+    - 21
+  match_type: exact
+  existing_title: 耶利哥
+  existing_path: link_folder/地點/耶利哥.md
+- name: 伯亞文
+  suggested_type: 地點
+  evidence: 第12節「直到伯亞文的曠野」；CT：確實地點不詳，應是伯特利東北方的一個曠野，字義「虛華之家，罪孽之家」；GT《研經資料》：字義「犯罪之家」，這應該是伯特利；BH：靠近伯特利，後來與拜偶像相連（何4:15）
+  surfaces:
+  - phrase: 伯亞文
+    verses:
+    - 12
+  match_type: exact
+  existing_title: 伯亞文
+  existing_path: link_folder/地點/伯亞文.md
+- name: 路斯
+  suggested_type: 地點
+  evidence: 第13節「貼近路斯（路斯就是伯特利）」；CT：路斯是伯特利的原來名字；GT《研經資料》
+  surfaces:
+  - phrase: 路斯
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 路斯
+  existing_path: link_folder/地點/路斯.md
+- name: 伯特利
+  suggested_type: 地點
+  evidence: 第13節「路斯就是伯特利」，第22節伯特利列在便雅憫的城邑；GT《聖經精讀本》：人們常認為伯特利屬以法蓮，本書明確記載它屬便雅憫；GT《綜合解讀》：便雅憫幾乎被滅絕時落到以法蓮手中（士20:18），後來耶羅波安在此設金牛犢（王上12:29）；GT《啟導本》、BH
+  surfaces:
+  - phrase: 伯特利
+    verses:
+    - 13
+    - 22
+  match_type: exact
+  existing_title: 伯特利
+  existing_path: link_folder/地點/伯特利.md
+- name: 亞他綠亞達
+  suggested_type: 地點
+  evidence: 第13節「又下到亞他綠亞達，靠近下伯和崙南邊的山」；CT：耶路撒冷北方約12公里、伯特利南方約4公里；GT《研經資料》字義「榮耀之冠」；BH：Crowns
+    of Glory
+  surfaces:
+  - phrase: 亞他綠亞達
+    verses:
+    - 13
+  match_type: exact
+  existing_title: 亞他綠亞達
+  existing_path: link_folder/地點/亞他綠亞達.md
+- name: 伯和崙
+  suggested_type: 地點
+  evidence: 第13、14節「下伯和崙南邊的山」「從伯和崙南對面的山」；CT：下伯和崙海拔約400公尺；BH：靠近從沿海平原上到山地的戰略要道（書10:10-11），所羅門重建（王上9:17、代下8:5）
+  surfaces:
+  - phrase: 伯和崙
+    verses:
+    - 13
+    - 14
+  match_type: exact
+  existing_title: 伯和崙
+  existing_path: link_folder/地點/伯和崙.md
+- name: 基列耶琳
+  suggested_type: 地點
+  evidence: 第14節「基列巴力（基列巴力就是基列耶琳）」，第15節南界從基列耶琳的盡邊起，第28節城單的「基列」；STEP 第28節 kir.Yat（H7157，Kiriath-jearim）；GT
+    華爾頓：書15:9 稱巴拉、書15:60 與書18:14 稱基列巴力，位於便雅憫和猶大交界；GT《串珠》：第28節的基列可能是基列耶琳；GT《研經資料》：七十士譯本作基列耶琳；CT：第28節的基列確實地點不詳；BH：約櫃停在這裡多年（撒上7:1-2）
+  surfaces:
+  - phrase: 基列耶琳
+    verses:
+    - 14
+    - 15
+  - phrase: 基列巴力
+    verses:
+    - 14
+  - phrase: 基列
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 基列耶琳
+  existing_path: link_folder/地點/基列耶琳.md
+- name: 尼弗多亞的水源
+  suggested_type: 地點
+  evidence: 第15節「往西達到尼弗多亞的水源」；CT：耶路撒冷西方西約4公里、基遍南方約6公里的水泉，字義「開口」；BH：可能在現代 Lifta 附近
+  surfaces:
+  - phrase: 尼弗多亞的水源
+    verses:
+    - 15
+  match_type: exact
+  existing_title: 尼弗多亞的水源
+  existing_path: link_folder/地點/尼弗多亞的水源.md
+- name: 欣嫩子谷
+  suggested_type: 地點
+  evidence: 第16節「欣嫩子谷對面山的盡邊」「又下到欣嫩谷」；CT：耶路撒冷西南側長約兩公里的山谷；GT《研經資料》《靈修版》：耶利米時代拜摩洛，後來焚燒垃圾，成了地獄的同義詞；GT
+    華爾頓：邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；BH：Gehenna
+  surfaces:
+  - phrase: 欣嫩子谷
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 欣嫩子谷
+  existing_path: link_folder/地點/欣嫩子谷.md
+- name: 利乏音谷
+  suggested_type: 地點
+  evidence: 第16節「就是利乏音谷北邊的山」；CT：始於耶路撒冷西南方約5公里，向西南延伸；BH：大衛在這裡打敗非利士人
+  surfaces:
+  - phrase: 利乏音谷
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 利乏音谷
+  existing_path: link_folder/地點/利乏音谷.md
+- name: 耶布斯人
+  suggested_type: 人物
+  evidence: 第16節「貼近耶布斯的南邊」，第28節「耶布斯（耶布斯就是耶路撒冷）」；STEP 第28節 ve./ha/y.vu.Si（H2983H）；CT：耶布斯是耶路撒冷的古城區；GT《研經資料》字義「打穀之地」；BH：直到大衛攻取（撒下5:6-9）
+  surfaces:
+  - phrase: 耶布斯
+    verses:
+    - 16
+    - 28
+  match_type: exact
+  existing_title: 耶布斯人
+  existing_path: link_folder/人物/耶布斯人.md
+- name: 耶路撒冷
+  suggested_type: 地點
+  evidence: 第28節「耶布斯（耶布斯就是耶路撒冷）」列在便雅憫的城邑；GT 華爾頓、《研經資料》：邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；GT《綜合解讀》：大衛時成為首都，所羅門在此建殿；KC：建殿的城在便雅憫，應驗申33:12；BH：位於便雅憫與猶大的交界
+  surfaces:
+  - phrase: 耶路撒冷
+    verses:
+    - 28
+  match_type: exact
+  existing_title: 耶路撒冷
+  existing_path: link_folder/地點/耶路撒冷.md
+- name: 耶路撒冷屬猶大或便雅憫
+  suggested_type: 解經爭議
+  evidence: 第16、28節；GT 華爾頓、《研經資料》：這邊界經過欣嫩子谷，證明耶路撒冷在便雅憫屬地之內；BH：耶路撒冷位於便雅憫與猶大的交界；KC：耶路撒冷在便雅憫與猶大之間
+  match_type: exact
+  existing_title: 耶路撒冷屬猶大或便雅憫
+  existing_path: link_folder/解經爭議/耶路撒冷屬猶大或便雅憫.md
+- name: 隱羅結
+  suggested_type: 地點
+  evidence: 第16節「又下到隱羅結」；CT：耶路撒冷東南角，欣嫩子谷和汲淪溪的匯合處；GT《研經資料》字義「漂洗者的泉源」；BH：後來與所羅門登基的事有關
+  surfaces:
+  - phrase: 隱羅結
+    verses:
+    - 16
+  match_type: exact
+  existing_title: 隱羅結
+  existing_path: link_folder/地點/隱羅結.md
+- name: 隱示麥泉
+  suggested_type: 地點
+  evidence: 第17節「又往北通到隱示麥」；STEP 'ein She.mesh（H5885）；CT：耶路撒冷東方約3公里，橄欖山麓，字義「太陽之泉」；BH：spring
+    of the sun
+  surfaces:
+  - phrase: 隱示麥
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 隱示麥泉
+  existing_path: link_folder/地點/隱示麥泉.md
+- name: 亞都冥坡
+  suggested_type: 地點
+  evidence: 第17節「亞都冥坡對面的基利綠」；STEP ma.'a.Leh 'a.du.Mim（H4608＋H131）；BH：耶利哥往耶路撒冷的陡路，與好撒瑪利亞人的比喻有關
+  surfaces:
+  - phrase: 亞都冥坡
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 亞都冥坡
+  existing_path: link_folder/地點/亞都冥坡.md
+- name: 波罕的磐石
+  suggested_type: 地點
+  evidence: 第17節「又下到流便之子波罕的磐石」；CT：猶大與便雅憫的交界石（參書15:6）；GT《聖經精讀本》：可以推測有些流便子孫曾住在猶大東北地區；BH：公共的界石，記念一個流便人
+  surfaces:
+  - phrase: 波罕的磐石
+    verses:
+    - 17
+  match_type: exact
+  existing_title: 波罕的磐石
+  existing_path: link_folder/地點/波罕的磐石.md
+- name: 亞拉巴
+  suggested_type: 地點
+  evidence: 第18節「又接連到亞拉巴對面，往北下到亞拉巴」；CT：約但河谷從加利利海到亞喀巴灣的河谷，全長約460公里；GT《研經資料》：也可以是專有地名；BH：the
+    Arabah, the great Jordan Rift Valley
+  surfaces:
+  - phrase: 亞拉巴
+    verses:
+    - 18
+  match_type: exact
+  existing_title: 亞拉巴
+  existing_path: link_folder/地點/亞拉巴.md
+- name: 伯曷拉
+  suggested_type: 地點
+  evidence: 第19節「又接連到伯曷拉的北邊」，第21節列在便雅憫的城邑；CT：耶利哥東南方約10公里；BH：後來列入便雅憫的城邑
+  surfaces:
+  - phrase: 伯曷拉
+    verses:
+    - 19
+    - 21
+  match_type: exact
+  existing_title: 伯曷拉
+  existing_path: link_folder/地點/伯曷拉.md
+- name: 鹽海
+  suggested_type: 地點
+  evidence: 第19節「直通到鹽海的北汊，就是約但河的南頭」；CT：北汊即死海的北端，約但河流入死海的河口；GT《研經資料》：汊字義「舌頭」
+  surfaces:
+  - phrase: 鹽海
+    verses:
+    - 19
+  match_type: exact
+  existing_title: 鹽海
+  existing_path: link_folder/地點/鹽海.md
+- name: 伯亞拉巴
+  suggested_type: 地點
+  evidence: 第22節便雅憫的城邑「伯亞拉巴、洗瑪臉、伯特利」；CT：耶利哥東南方約6公里；GT《研經資料》：大概是加拉貝泉；BH：也出現在猶大的邊界描述中（書15:61）
+  surfaces:
+  - phrase: 伯亞拉巴
+    verses:
+    - 22
+  match_type: exact
+  existing_title: 伯亞拉巴
+  existing_path: link_folder/地點/伯亞拉巴.md
+- name: 基遍
+  suggested_type: 地點
+  evidence: 第25節「又有基遍、拉瑪、比錄」；CT：耶路撒冷西北方約9公里；GT《聖經精讀本》：不戰而進駐的城，後來成為利未人的城（書21:17），大衛所羅門時會幕停在這裡（王上3:4）；GT《綜合解讀》：基遍人的城邑，基非拉也是；BH
+  surfaces:
+  - phrase: 基遍
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 基遍
+  existing_path: link_folder/地點/基遍.md
+- name: 比錄
+  suggested_type: 地點
+  evidence: 第25節「基遍、拉瑪、比錄」；CT：耶路撒冷西北方約8公里，字義「水井」；BH：屬基遍聯盟，居民後來逃到基他音（撒下4:2-3），拉8:25、尼7:29
+  surfaces:
+  - phrase: 比錄
+    verses:
+    - 25
+  match_type: exact
+  existing_title: 比錄
+  existing_path: link_folder/地點/比錄.md
+- name: 基非拉
+  suggested_type: 地點
+  evidence: 第26節「米斯巴、基非拉、摩撒」；CT：耶路撒冷西北西方約14公里、基遍西南方約8公里，字義「雌獅」；GT《研經資料》：克非雷廢墟；GT《綜合解讀》：基遍人的城邑；BH：書9
+    基遍四城之一
+  surfaces:
+  - phrase: 基非拉
+    verses:
+    - 26
+  match_type: exact
+  existing_title: 基非拉
+  existing_path: link_folder/地點/基非拉.md
+C_new_formal:
+- name: 示羅
+  suggested_type: 地點
+  evidence: 第1、8、9、10節「聚集在示羅，把會幕設立在那裡」「在示羅這裡，耶和華面前」「回到示羅營中」；STEP shi.Loh（H7887）；CT：字義「安歇之地」，示劍南方約18公里、伯特利北方約15公里；GT
+    丁道爾、《研經資料》：克貝塞倫遺址，中銅時期的廟；GT《啟導本》《綜合解讀》：士師時代會幕一直在示羅，以利時約櫃被擄，神離棄示羅的帳幕（詩78:60；耶7:12）；GT《串珠》《聖經精讀本》：迦南地中央；KC：意思是「平安」，從吉甲到示羅；BH：申12:5-14
+    神選擇立名的地方
+  surfaces:
+  - phrase: 示羅
+    verses:
+    - 1
+    - 8
+    - 9
+    - 10
+  target_path: link_folder/地點/示羅.md
+- name: 七支派勘地分作七分
+  suggested_type: 事件
+  evidence: 第2-10節其餘七個支派還沒有得地業，約書亞責備他們耽延，叫每支派選三個人走遍那地、按城邑分作七分寫在冊子上，再在示羅耶和華面前拈鬮；STEP
+    第3節 mit.ra.Pim（H7503，to slacken）、第4、6、9節 ka.tav（H3789）、第9節 Se.fer（H5612H）；CT：耽延的三個可能原因、二十一人、羊皮卷；GT《綜合解讀》《聖經精讀本》：三個原因、土地委員會；GT
+    華爾頓：古代地圖製作、長子先挑其餘拈鬮的慣例；KC：七支派慢了，約書亞幫助百姓；BH：公開參與防止偏私
+  target_path: link_folder/事件/七支派勘地分作七分.md
+- name: 拉瑪（便雅憫）
+  suggested_type: 地點
+  evidence: 第25節「基遍、拉瑪、比錄」；STEP ha./ra.Mah（H7414G）；CT：耶路撒冷北方約9公里、基遍東方約4公里，字義「小山丘」，不同於書10:7
+    的拉瑪；GT《串珠》《研經資料》：耶路撒冷以北八公里；BH：被擄的人在拉瑪集合（耶40:1），拉結在拉瑪哭（耶31:15；太2:18）
+  surfaces:
+  - phrase: 拉瑪
+    verses:
+    - 25
+  target_path: link_folder/地點/拉瑪（便雅憫）.md
+- name: 基比亞（便雅憫）
+  suggested_type: 地點
+  evidence: 第28節「耶布斯、基比亞、基列」；STEP giv.'At（H1394）；CT：不同於書15:57 的基比亞，耶路撒冷北方約5公里；GT《啟導本》《綜合解讀》：掃羅的家鄉（撒上10:26），以色列王國第一個政治中心；BH、KC：士19-21
+    的罪與內戰；GT《研經資料》字義「山谷」
+  surfaces:
+  - phrase: 基比亞
+    verses:
+    - 28
+  target_path: link_folder/地點/基比亞（便雅憫）.md
+- name: 迦巴
+  suggested_type: 地點
+  evidence: 第24節「基法阿摩尼、俄弗尼、迦巴」；STEP va./Ga.va'（H1387G）；CT：耶路撒冷北方約9公里，字義「山」；GT《串珠》：伯特利以北十一公里；GT《研經資料》：可能是特珥廢墟；BH：約拿單攻擊迦巴的非利士防營（撒上13:3）
+  surfaces:
+  - phrase: 迦巴
+    verses:
+    - 24
+  target_path: link_folder/地點/迦巴.md
+- name: 俄弗拉（便雅憫）
+  suggested_type: 地點
+  evidence: 第23節「亞文、巴拉、俄弗拉」；STEP ve./'a.fe.Rah（H6084G）；CT：伯特利東北方約7公里，字義「幼鹿」；GT《串珠》：伯特利東北六公里；GT《研經資料》：可能是泰伊貝；BH：不要和瑪拿西境內基甸的俄弗拉混淆
+  surfaces:
+  - phrase: 俄弗拉
+    verses:
+    - 23
+  target_path: link_folder/地點/俄弗拉（便雅憫）.md
+- name: 洗瑪臉
+  suggested_type: 地點
+  evidence: 第22節「伯亞拉巴、洗瑪臉、伯特利」；STEP u./tze.ma.Ra.yim（H6787，(Mount) Zemaraim）；CT：伯特利東北方約4公里，字義「雙倍羊毛」；BH：亞比雅在洗瑪臉山向以色列人講話（代下13:4）
+  surfaces:
+  - phrase: 洗瑪臉
+    verses:
+    - 22
+  target_path: link_folder/地點/洗瑪臉.md
+- name: 巴拉（便雅憫）
+  suggested_type: 地點
+  evidence: 第23節「亞文、巴拉、俄弗拉」；STEP ve./ha./pa.Rah（H6511，Parah）；CT：不同於書15:9 與書15:29 的巴拉，耶路撒冷東北方約9公里，字義「母牛鎮」；GT《串珠》：在巴拿突城之東北；GT《研經資料》：應該是法拉廢墟；BH：可能在
+    Wadi Farah 一帶
+  surfaces:
+  - phrase: 巴拉
+    verses:
+    - 23
+  target_path: link_folder/地點/巴拉（便雅憫）.md
+- name: 基法阿摩尼
+  suggested_type: 地點
+  evidence: 第24節「基法阿摩尼、俄弗尼、迦巴」；STEP u./khe.Far ha./'a.mo.ni（H3723G＋H3726，(Chephar)-ammoni）；CT：伯特利北方約5公里，字義「亞摩利(山中居民)人的村莊」；GT《研經資料》字義「亞摩利人的村莊」；GT《串珠》：可能在伯特利以北五公里；BH：這城所在的地區與周圍民族有接觸，包括約但河東的亞捫人
+  surfaces:
+  - phrase: 基法阿摩尼
+    verses:
+    - 24
+  target_path: link_folder/地點/基法阿摩尼.md
+- name: 亞文
+  suggested_type: 地點
+  evidence: 第23節「亞文、巴拉、俄弗拉」；STEP ve./ha./'a.Vim（H5761H，context gloss the Avvites）；CT：耶路撒冷北方約15公里、伯特利東方約4公里，字義「毀滅」；GT《研經資料》字義相同；BH：名字像亞衛人，但不能確定這城和那族有關
+  surfaces:
+  - phrase: 亞文
+    verses:
+    - 23
+  target_path: link_folder/地點/亞文.md
+- name: 基利綠
+  suggested_type: 地點
+  evidence: 第17節「達到亞都冥坡對面的基利綠」；STEP ge.li.Lot（H1553，Geliloth）；CT：是一個地標而非城鎮，確實地點不詳，字義「圓圈」；GT《串珠》：可能是吉甲的別稱（參書15:7）；GT《研經資料》字義「圓圈」；BH
+  surfaces:
+  - phrase: 基利綠
+    verses:
+    - 17
+  target_path: link_folder/地點/基利綠.md
+- name: 洗拉（便雅憫）
+  suggested_type: 地點
+  evidence: 第28節「洗拉、以利弗、耶布斯」；STEP ve./tze.La'（H6762，Zela）；CT：耶路撒冷西北方約4公里、基比亞西南方約5公里，字義「肋骨」；GT《研經資料》字義「肋骨」；BH：掃羅和約拿單葬在洗拉、掃羅父親基士的墳墓裡（撒下21:14）；和合本創4:19
+    拉麥的妻子也譯作洗拉，已分檔為「洗拉（拉麥之妻）」並登記同名
+  surfaces:
+  - phrase: 洗拉
+    verses:
+    - 28
+  target_path: link_folder/地點/洗拉（便雅憫）.md
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-13T07:41:28Z'

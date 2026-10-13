@@ -30,18 +30,18 @@
       "fingerprint": "c371de9b809a6b8a"
     },
     {
+      "path": "link_folder/地點/約但河.md",
+      "title": "約但河",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 32,
+      "fingerprint": "ef4930dcc9900af3"
+    },
+    {
       "path": "link_folder/地點/迦南地.md",
       "title": "迦南地",
       "deferred_at": "申命記:33",
       "accumulated": 32,
       "fingerprint": "8b435232342a0a0b"
-    },
-    {
-      "path": "link_folder/地點/約但河.md",
-      "title": "約但河",
-      "deferred_at": "約書亞記:12",
-      "accumulated": 27,
-      "fingerprint": "3cae0d184c5b413b"
     },
     {
       "path": "link_folder/人物/亞伯拉罕.md",
@@ -170,6 +170,13 @@
       "fingerprint": "06c4f174e956ba59"
     },
     {
+      "path": "link_folder/地點/伯特利.md",
+      "title": "伯特利",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 12,
+      "fingerprint": "d28fbeafb45fcd1f"
+    },
+    {
       "path": "link_folder/地點/加低斯.md",
       "title": "加低斯",
       "deferred_at": "約書亞記:14",
@@ -182,13 +189,6 @@
       "deferred_at": "約書亞記:16",
       "accumulated": 12,
       "fingerprint": "a6c9ba2670666904"
-    },
-    {
-      "path": "link_folder/主題/拈鬮分地（go.ral）.md",
-      "title": "拈鬮分地（go.ral）",
-      "deferred_at": "約書亞記:17",
-      "accumulated": 10,
-      "fingerprint": "d40898d575e06a89"
     },
     {
       "path": "link_folder/人物/以薩迦（價值）.md",
@@ -224,6 +224,13 @@
       "deferred_at": "約書亞記:2",
       "accumulated": 8,
       "fingerprint": "dcb794aedbe5545e"
+    },
+    {
+      "path": "link_folder/地點/鹽海.md",
+      "title": "鹽海",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 8,
+      "fingerprint": "747f538532479713"
     },
     {
       "path": "link_folder/神學/不可為自己雕刻偶像.md",
@@ -364,13 +371,6 @@
       "deferred_at": "約書亞記:17",
       "accumulated": 7,
       "fingerprint": "e29b086599296810"
-    },
-    {
-      "path": "link_folder/地點/鹽海.md",
-      "title": "鹽海",
-      "deferred_at": "約書亞記:15",
-      "accumulated": 7,
-      "fingerprint": "8e843b23dc07ee39"
     },
     {
       "path": "link_folder/歷史/希未人.md",
@@ -681,6 +681,13 @@
       "fingerprint": "dcad957b308d7e61"
     },
     {
+      "path": "link_folder/地點/亞都冥坡.md",
+      "title": "亞都冥坡",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 2,
+      "fingerprint": "4446c33cdf7c46f8"
+    },
+    {
       "path": "link_folder/地點/他備拉.md",
       "title": "他備拉",
       "deferred_at": "申命記:9",
@@ -709,11 +716,11 @@
       "fingerprint": "bee2026f10c5c0bb"
     },
     {
-      "path": "link_folder/地點/基列耶琳.md",
-      "title": "基列耶琳",
-      "deferred_at": "約書亞記:15",
+      "path": "link_folder/地點/利乏音谷.md",
+      "title": "利乏音谷",
+      "deferred_at": "約書亞記:18",
       "accumulated": 2,
-      "fingerprint": "0ac509d14caff57a"
+      "fingerprint": "4446c33cdf7c46f8"
     },
     {
       "path": "link_folder/地點/基底莫.md",
@@ -730,11 +737,25 @@
       "fingerprint": "bee2026f10c5c0bb"
     },
     {
+      "path": "link_folder/地點/尼弗多亞的水源.md",
+      "title": "尼弗多亞的水源",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 2,
+      "fingerprint": "4446c33cdf7c46f8"
+    },
+    {
       "path": "link_folder/地點/押煞.md",
       "title": "押煞",
       "deferred_at": "約書亞記:12",
       "accumulated": 2,
       "fingerprint": "bee2026f10c5c0bb"
+    },
+    {
+      "path": "link_folder/地點/欣嫩子谷.md",
+      "title": "欣嫩子谷",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 2,
+      "fingerprint": "4446c33cdf7c46f8"
     },
     {
       "path": "link_folder/地點/瑪頓.md",
@@ -763,6 +784,20 @@
       "deferred_at": "約書亞記:13",
       "accumulated": 2,
       "fingerprint": "e2811cd2485e3f1f"
+    },
+    {
+      "path": "link_folder/地點/隱示麥泉.md",
+      "title": "隱示麥泉",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 2,
+      "fingerprint": "4446c33cdf7c46f8"
+    },
+    {
+      "path": "link_folder/地點/隱羅結.md",
+      "title": "隱羅結",
+      "deferred_at": "約書亞記:18",
+      "accumulated": 2,
+      "fingerprint": "4446c33cdf7c46f8"
     },
     {
       "path": "link_folder/地點/雅謝.md",
