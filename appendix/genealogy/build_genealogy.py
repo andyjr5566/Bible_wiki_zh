@@ -43,8 +43,11 @@ ABBR = {
     "哈": "哈巴谷書", "番": "西番雅書", "該": "哈該書", "亞": "撒迦利亞書", "瑪": "瑪拉基書",
     "太": "馬太福音", "可": "馬可福音", "路": "路加福音", "約": "約翰福音", "徒": "使徒行傳",
     "羅": "羅馬書", "林前": "哥林多前書", "林後": "哥林多後書", "加": "加拉太書",
-    "弗": "以弗所書", "腓": "腓立比書", "西": "歌羅西書", "來": "希伯來書", "雅": "雅各書",
-    "彼前": "彼得前書", "彼後": "彼得後書", "猶": "猶大書", "啟": "啟示錄",
+    "弗": "以弗所書", "腓": "腓立比書", "西": "歌羅西書",
+    "帖前": "帖撒羅尼迦前書", "帖後": "帖撒羅尼迦後書",
+    "提前": "提摩太前書", "提後": "提摩太後書", "多": "提多書", "門": "腓利門書",
+    "來": "希伯來書", "雅": "雅各書", "彼前": "彼得前書", "彼後": "彼得後書",
+    "約一": "約翰一書", "約二": "約翰二書", "約三": "約翰三書", "猶": "猶大書", "啟": "啟示錄",
 }
 FULL_TO_ABBR = {v: k for k, v in ABBR.items()}
 QUOTE_RE = re.compile(r"「([^「」]+)」")
@@ -108,6 +111,12 @@ def parse_refs(refs: str, default_book: str, scripture: Scripture | None = None)
             raise ValueError(f"跨章範圍請拆開寫：{part}")
     return out
 
+
+
+def prefix_book(refs: str, abbr: str) -> str:
+    """「4:5, 4:7」→「代上4:5, 代上4:7」：每一段沒有書卷簡稱的都補上。"""
+    parts = re.split(r"([,，;；]\s*)", str(refs).strip())
+    return "".join(p if (i % 2 or not p or re.match(r"^[^\d\s]", p)) else abbr + p for i, p in enumerate(parts))
 
 def norm(s: str) -> str:
     return PUNCT_RE.sub("", s)
@@ -1863,9 +1872,1346 @@ class Builder:
         return "\n".join(lines) + "\n"
 
 
+class LineageBuilder:
+    RELATION_FIELDS = ("parents", "spouses", "siblings", "kin", "descends")
+    MERGE_FIELDS = ("names", "parents", "spouses", "siblings", "kin", "descends", "maybe_same")
+    DIGITS = {"零": 0, "〇": 0, "○": 0, "一": 1, "二": 2, "兩": 2, "两": 2,
+              "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9}
+    UNITS = {"十": 10, "百": 100, "千": 1000}
+    BIG_UNITS = {"萬": 10000, "万": 10000, "億": 100000000}
+
+    def __init__(self, data_dir: Path) -> None:
+        self.dir = data_dir.resolve()
+        self.errors: list[str] = []
+        self.sc = Scripture()
+        self.people: OrderedDict[str, dict] = OrderedDict()
+        self.refs_used: OrderedDict[str, str] = OrderedDict()
+        self.imported: dict[str, dict] = {}
+        self.notes_by_person: dict[str, list[str]] = defaultdict(list)
+        self.marks_by_person: dict[str, list[dict]] = defaultdict(list)
+        self.lines: dict[str, list[str]] = {"馬太": [], "路加": []}
+        self.generations: dict[str, dict[str, int]] = defaultdict(dict)
+        self.witness_ranges: dict[str, tuple[int, int]] = {}
+        self.ages_result: dict = {"people": [], "events": [], "notes": []}
+        self.age_begat: dict[str, str] = {}
+        try:
+            self.data = yaml.safe_load((self.dir / "頁面.yaml").read_text(encoding="utf-8")) or {}
+            if not isinstance(self.data, dict):
+                raise ValueError("根節點必須是 mapping")
+            if self.data.get("type") != "lineage":
+                self.err("頁面.yaml", "type 必須是 lineage")
+        except (OSError, yaml.YAMLError, ValueError) as exc:
+            self.data = {}
+            self.err("頁面.yaml", f"無法讀取設定：{exc}")
+        if not self.data.get("output"):
+            self.err("頁面.yaml.output", "output 不能空白")
+        self.spine_data = self._yaml("spine.yaml", {}) or {}
+        self.witnesses = self._yaml("witnesses.yaml", []) or []
+        self.ages = self._yaml("ages.yaml", {}) or {}
+        self.notes = self._yaml("notes.yaml", []) or []
+        self.tour = self._yaml("tour.yaml", []) or []
+        self.sources = self._yaml("sources.yaml", []) or []
+        if not isinstance(self.spine_data, dict):
+            self.err("spine.yaml", "根節點必須是 mapping")
+            self.spine_data = {}
+        for attr in ("witnesses", "notes", "tour", "sources"):
+            if not isinstance(getattr(self, attr), list):
+                self.err(attr + ".yaml", "根節點必須是清單")
+                setattr(self, attr, [])
+        if not isinstance(self.ages, dict):
+            self.err("ages.yaml", "根節點必須是 mapping")
+            self.ages = {}
+        self._load_imports()
+        self._load_people()
+        self._validate_people()
+        self._build_spine()
+        self._validate_witnesses()
+        self._calculate_marks()
+        self._validate_notes()
+        self._validate_ages()
+        self._validate_families()
+        self._validate_tour()
+
+    def err(self, where: str, msg: str) -> None:
+        self.errors.append(f"[{where}] {msg}")
+
+    def _yaml(self, name: str, default):
+        key = Path(name).stem
+        files = self.data.get("files", {}) or {}
+        configured = self.data.get(key + "_file")
+        if not configured and isinstance(files, dict):
+            configured = files.get(key)
+        if not configured and isinstance(self.data.get(key), str):
+            configured = self.data[key]
+        path = (self.dir / str(configured)) if configured else (self.dir / name)
+        if not path.is_file():
+            return default
+        try:
+            value = yaml.safe_load(path.read_text(encoding="utf-8"))
+            return default if value is None else value
+        except (OSError, yaml.YAMLError) as exc:
+            self.err(name, f"無法讀取資料：{exc}")
+            return default
+
+    def refs(self, value: str, where: str) -> list[tuple[str, int, int]]:
+        text = str(value or "").strip()
+        if not text:
+            self.err(where, "經節不能空白")
+            return []
+        for part in re.split(r"[,，;；]\s*", text):
+            match = re.match(r"^([^\d\s]+)\s*\d+:\d+", part)
+            if not match or match.group(1) not in ABBR:
+                self.err(where, f"經節必須使用完整書卷簡稱：{part}")
+        try:
+            parsed = parse_refs(text, "", self.sc)
+        except ValueError as exc:
+            self.err(where, str(exc))
+            return []
+        for book, chapter, verse in parsed:
+            content = self.sc.verse(book, chapter, verse)
+            if content is None:
+                self.err(where, f"經節不存在：{FULL_TO_ABBR.get(book, book)}{chapter}:{verse}")
+            else:
+                self.refs_used[f"{FULL_TO_ABBR.get(book, book)}{chapter}:{verse}"] = content
+        return parsed
+
+    def text_of(self, parsed) -> str:
+        return "".join(self.sc.verse(book, chapter, verse) or "" for book, chapter, verse in parsed)
+
+    def need_exact(self, needle: str, parsed, where: str, label: str) -> None:
+        if parsed and str(needle) not in self.text_of(parsed):
+            self.err(where, f"{label}「{needle}」未逐字出現在所引經文")
+
+    def check_quotes(self, value: str, parsed, where: str) -> None:
+        for quote in QUOTE_RE.findall(value or ""):
+            self.need_exact(quote, parsed, where, "引句")
+
+    @staticmethod
+    def _dedupe_add(target: list, value) -> None:
+        if value not in target:
+            target.append(value)
+
+    def _maybe_same_rows(self, pid: str) -> list[dict]:
+        """可能同一人：兩邊任一方寫了就雙向顯示。"""
+        rows = [dict(m) for m in self.people[pid].get("maybe_same", [])]
+        seen = {str(m.get("id")) for m in rows}
+        for other, person in self.people.items():
+            for m in person.get("maybe_same", []):
+                if str(m.get("id")) == pid and other not in seen:
+                    rows.append({**m, "id": other})
+                    seen.add(other)
+        return rows
+
+    def _merge_person(self, item: dict, where: str, imported: dict | None = None) -> None:
+        if not isinstance(item, dict) or not item.get("id"):
+            self.err(where, "人物資料需要 id")
+            return
+        pid = str(item["id"])
+        if pid not in self.people:
+            self.people[pid] = {
+                "id": pid, "sex": None, "kind": "person", "names": [], "parents": [],
+                "spouses": [], "siblings": [], "kin": [], "descends": [], "maybe_same": [],
+                "desc": None, "note": None, "entry": None, "same_person": None,
+                "mother_name": None, "mother_ref": None, "imported": None, "anchor": None,
+            }
+        person = self.people[pid]
+        for field in ("sex", "desc", "entry", "same_person"):
+            if item.get(field) is not None:
+                if person[field] is not None:
+                    self.err(where, f"{pid} 的 {field} 只能在一處填寫")
+                else:
+                    person[field] = item[field]
+        if item.get("kind"):
+            person["kind"] = item["kind"]
+        if item.get("note"):
+            if person["note"] and person["note"] != item["note"]:
+                person["note"] += "\n\n" + str(item["note"])
+            else:
+                person["note"] = item["note"]
+        for field in self.MERGE_FIELDS:
+            values = item.get(field, []) or []
+            if not isinstance(values, list):
+                self.err(where + "." + field, "必須是清單")
+                continue
+            for value in values:
+                if not isinstance(value, dict):
+                    self.err(where + "." + field, "每筆資料必須是 mapping")
+                    continue
+                self._dedupe_add(person[field], dict(value))
+        if item.get("mother_name"):
+            person["mother_name"] = item["mother_name"]
+        if imported:
+            person["imported"] = imported.get("page")
+            person["anchor"] = imported.get("anchor")
+
+    def _load_imports(self) -> None:
+        for index, item in enumerate(self.data.get("imports", []) or []):
+            where = f"imports#{index + 1}"
+            try:
+                path = (self.dir / item["file"]).resolve()
+                imported_data = yaml.safe_load(path.read_text(encoding="utf-8"))
+                page = str(item["page"])
+                temp = Builder(path.parent, path.stem, str(item["file"]))
+                temp.load_genealogy(imported_data, page)
+                for error in temp.errors:
+                    self.err(where, error)
+                nodes = list(temp.nodes.values())
+            except (KeyError, OSError, yaml.YAMLError, ValueError, TypeError) as exc:
+                self.err(where, f"無法載入匯入資料：{exc}")
+                continue
+            ids = {node["id"] for node in nodes}
+            for node in nodes:
+                node_ref = str(node.get("ref", ""))
+                ref = prefix_book(node_ref, "代上")
+                names = [{"as": node.get("name") or display(node["id"]), "ref": ref}]
+                for alias_ref, alias in node.get("aliases", []):
+                    alias_ref = str(alias_ref)
+                    alias_ref = prefix_book(alias_ref, "代上")
+                    names.append({"as": alias, "ref": alias_ref})
+                # 代上族譜頁為了畫圖，把姊妹、宗族也掛在「parent」底下，用 rel 標明；匯入時依 rel 分開：
+                # 子／女是父母子女，妹子／姊妹是兄弟姊妹，其餘（子孫、諸族…）是後裔（代數不詳）。
+                rel = node.get("rel") or "子"
+                link = {"id": node["parent"], "ref": ref, "rel": rel, "imported": True} if node.get("parent") else None
+                record = {
+                    "id": node["id"], "names": names,
+                    "parents": [link] if link and rel in ("子", "女") else [],
+                    "siblings": [link] if link and rel in ("妹子", "姊妹") else [],
+                    "descends": [link] if link and rel not in ("子", "女", "妹子", "姊妹") else [],
+                }
+                self._merge_person(record, where + "." + node["id"],
+                                   {"page": page, "anchor": node.get("section_title", "")})
+            for node in nodes:
+                mother = node.get("mother")
+                if not mother:
+                    continue
+                person = self.people[node["id"]]
+                ref = str(node.get("ref", ""))
+                person["mother_ref"] = prefix_book(ref, "代上")
+                person["mother_name"] = mother
+
+    def _load_people(self) -> None:
+        files = self.data.get("files", {}) or {}
+        configured = self.data.get("people_dir")
+        if not configured and isinstance(files, dict):
+            configured = files.get("people")
+        if not configured and isinstance(self.data.get("people"), str):
+            configured = self.data["people"]
+        folder = (self.dir / str(configured)) if configured else self.dir / "people"
+        if not folder.is_dir():
+            self.err("people", "找不到 people 資料夾")
+            return
+        paths = sorted((p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in (".yaml", ".yml")),
+                       key=lambda p: p.name)
+        for path in paths:
+            try:
+                values = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+            except (OSError, yaml.YAMLError) as exc:
+                self.err(path.name, f"無法讀取人物資料：{exc}")
+                continue
+            if not isinstance(values, list):
+                self.err(path.name, "人物檔根節點必須是清單")
+                continue
+            for index, item in enumerate(values):
+                self._merge_person(item, f"{path.name}#{index + 1}")
+        # 匯入資料的母親是字串，不自動對到同名的人（代上的「他瑪」字串是猶大的兒婦，id「他瑪」卻是大衛的女兒）；
+        # 只照頁面設定 imports[].mothers 明列的對應接上。
+        mother_map: dict[str, str] = {}
+        for item in self.data.get("imports", []) or []:
+            mother_map.update({str(k): str(v) for k, v in (item.get("mothers") or {}).items()})
+        for person in self.people.values():
+            mother = person.get("mother_name")
+            target = mother_map.get(mother) if mother else None
+            if target and target in self.people:
+                self._dedupe_add(person["parents"], {
+                    "id": target, "ref": person.get("mother_ref", ""), "role": "母", "imported": True})
+                person["mother_name"] = None
+
+    def names_for(self, pid: str) -> list[str]:
+        person = self.people.get(pid, {})
+        names = [str(item.get("as", "")) for item in person.get("names", []) if item.get("as")]
+        if display(pid):
+            names.append(display(pid))
+        return list(dict.fromkeys(names))
+
+    def _validate_people(self) -> None:
+        for pid, person in self.people.items():
+            where = "people." + pid
+            if person["sex"] not in (None, "m", "f"):
+                self.err(where, "sex 只能是 m 或 f")
+            if person["kind"] not in ("person", "people"):
+                self.err(where, "kind 只能是 person 或 people")
+            if not person["names"]:
+                self.err(where, "人物至少需要一筆 names")
+            all_refs = []
+            for i, name in enumerate(person["names"]):
+                if not name.get("as"):
+                    self.err(f"{where}.names#{i + 1}", "as 不能空白")
+                parsed = self.refs(name.get("ref", ""), f"{where}.names#{i + 1}")
+                self.need_exact(str(name.get("as", "")), parsed, f"{where}.names#{i + 1}", "經文寫法")
+                all_refs.extend(parsed)
+            if person.get("same_person"):
+                for ref in person["same_person"].get("refs", []) or []:
+                    all_refs.extend(self.refs(ref, where + ".same_person"))
+            for i, maybe in enumerate(person.get("maybe_same", [])):
+                mwhere = f"{where}.maybe_same#{i + 1}"
+                if str(maybe.get("id", "")) not in self.people:
+                    self.err(mwhere, f"引用的人物不存在：{maybe.get('id')}")
+                if str(maybe.get("id", "")) == pid:
+                    self.err(mwhere, "不能指向自己")
+                for ref in maybe.get("refs", []) or []:
+                    all_refs.extend(self.refs(str(ref), mwhere))
+                for quote in QUOTE_RE.findall(str(maybe.get("note") or "")):
+                    self.need_exact(quote, [r for x in maybe.get("refs", []) or [] for r in self.refs(str(x), mwhere)], mwhere, "說明引句")
+            for field in self.RELATION_FIELDS:
+                for i, relation in enumerate(person[field]):
+                    rwhere = f"{where}.{field}#{i + 1}"
+                    other = str(relation.get("id", ""))
+                    if other not in self.people:
+                        self.err(rwhere, f"引用的人物不存在：{other}")
+                        continue
+                    parsed = self.refs(relation.get("ref", ""), rwhere)
+                    all_refs.extend(parsed)
+                    if relation.get("imported"):
+                        # 匯入自代上族譜頁：該頁的 Builder 已依它的規則（整段名單、鏈）驗證過，這裡不重驗
+                        continue
+                    owner_names = self.names_for(pid)
+                    other_names = self.names_for(other)
+                    if owner_names and not any(value in self.text_of(parsed) for value in owner_names):
+                        self.err(rwhere, f"本人物名「{display(pid)}」未逐字出現在所引經文")
+                    if other_names and not any(value in self.text_of(parsed) for value in other_names):
+                        self.err(rwhere, f"對方人名「{display(other)}」未逐字出現在所引經文")
+                    if field == "kin":
+                        self.need_exact(str(relation.get("rel", "")), parsed, rwhere, "親屬用字")
+                    if field == "parents" and relation.get("role") not in (None, "父", "母"):
+                        self.err(rwhere, "parent role 只能是父或母")
+                    if field == "descends" and relation.get("generations") in (2, 3, 4):
+                        term = {2: "孫", 3: "曾孫", 4: "玄孫"}[relation["generations"]]
+                        self.need_exact(term, parsed, rwhere, "代數用字")
+                    if field == "parents":
+                        prior = person["parents"][:i]
+                        role = relation.get("role") or "父"
+                        if any(old.get("ref") == relation.get("ref") and (old.get("role") or "父") == role for old in prior):
+                            self.err(rwhere, f"parents 同一經節重複：{relation.get('ref')}")
+            for quote in QUOTE_RE.findall(str(person.get("desc") or "") + "\n" + str(person.get("note") or "")):
+                self.need_exact(quote, all_refs, where, "人物說明引句")
+            if person.get("entry"):
+                path = ROOT / "link_folder" / (str(person["entry"]) + ".md")
+                if not path.is_file():
+                    self.err(where, f"知識庫條目不存在：{path.relative_to(ROOT).as_posix()}")
+            for sibling in person["siblings"]:
+                other = sibling.get("id")
+                if other not in self.people:
+                    continue
+                shared = {p.get("id") for p in person["parents"]} & {
+                    p.get("id") for p in self.people[other]["parents"]}
+                if shared:
+                    self.err(where, f"與 {other} 已有共同父母資料，不應再列 siblings")
+        self._check_parent_cycles()
+    def _check_parent_cycles(self) -> None:
+        state: dict[str, int] = {}
+        stack: list[str] = []
+        def visit(pid: str) -> None:
+            state[pid] = 1
+            stack.append(pid)
+            for relation in self.people.get(pid, {}).get("parents", []):
+                parent = relation.get("id")
+                if parent not in self.people:
+                    continue
+                if state.get(parent) == 1:
+                    self.err("parents", "父母關係形成環：" + " → ".join(stack[stack.index(parent):] + [parent]))
+                elif state.get(parent, 0) == 0:
+                    visit(parent)
+            stack.pop()
+            state[pid] = 2
+        for pid in self.people:
+            if state.get(pid, 0) == 0:
+                visit(pid)
+
+    def _validate_links(self) -> None:
+        for index, link in enumerate(self.spine_data.get("links", []) or []):
+            where = f"spine.links#{index + 1}"
+            source, target = str(link.get("from", "")), str(link.get("to", ""))
+            if source not in self.people or target not in self.people:
+                self.err(where, f"連結端點不存在：{source} → {target}")
+                continue
+            parsed = self.refs(link.get("ref", ""), where)
+            for pid, label in ((source, "起點人名"), (target, "終點人名")):
+                if not any(name in self.text_of(parsed) for name in self.names_for(pid)):
+                    self.err(where, f"{label}未逐字出現在所引經文")
+
+    def _check_segment_chain(self, chain: list[str], where: str) -> None:
+        if not chain:
+            self.err(where, "主線段落不能空白")
+        for pid in chain:
+            if pid not in self.people:
+                self.err(where, f"主線人物不存在：{pid}")
+
+    def _append_chain(self, target: list[str], chain: list[str], where: str, partial: bool) -> None:
+        if not chain:
+            return
+        if target and chain[0] == target[-1]:
+            target.extend(chain[1:])
+        else:
+            if target and not partial:
+                self.err(where, f"段落沒有首尾相接：{target[-1]} → {chain[0]}")
+            target.extend(chain)
+
+    def _build_spine(self) -> None:
+        segments = self.spine_data.get("segments", []) or []
+        if not isinstance(segments, list) or not segments:
+            self.err("spine.segments", "至少需要一個主線段落")
+            return
+        partial = bool(self.data.get("partial", False))
+        common: list[str] = []
+        for index, segment in enumerate(segments):
+            where = f"spine.segments#{index + 1}"
+            routes = segment.get("lines") or {}
+            if not isinstance(routes, dict):
+                self.err(where, "lines 必須是 mapping")
+                continue
+            if "common" in routes:
+                chain = [str(pid) for pid in routes.get("common", []) or []]
+                self._check_segment_chain(chain, where + ".common")
+                common.extend(chain)  # 首尾相接改在下面逐條線檢查（共同段之間可能夾著兩線小段）
+            for line in ("馬太", "路加"):
+                if line in routes:
+                    self._check_segment_chain([str(pid) for pid in routes.get(line, []) or []],
+                                              where + "." + line)
+        if not common:
+            self.err("spine", "需要 common 主線")
+        for line in ("馬太", "路加"):
+            # 依段落順序組成這條線：該段有這條線就走它，否則走共同段
+            full: list[str] = []
+            for index, segment in enumerate(segments):
+                routes = segment.get("lines") or {}
+                key = line if line in routes else ("common" if "common" in routes else None)
+                if key is None:
+                    continue
+                chain = [str(pid) for pid in routes.get(key, []) or []]
+                self._append_chain(full, chain, f"spine.{line}#{index + 1}", partial)
+            self.lines[line] = full
+            if len(full) != len(set(full)):
+                self.err("spine." + line, "同一條線不可重複出現人物")
+            for generation, pid in enumerate(full, 1):
+                self.generations[pid][line] = generation
+            if full and not partial and display(full[0]) != "亞當":
+                self.err("spine." + line, "主線必須從亞當開始")
+            if full and not partial and display(full[-1]) != "耶穌":
+                self.err("spine." + line, "主線必須到耶穌")
+            for parent, child in zip(full, full[1:]):
+                if parent not in self.people or child not in self.people:
+                    continue
+                has_parent = any(rel.get("id") == parent for rel in self.people[child]["parents"])
+                has_link = any(item.get("from") == parent and item.get("to") == child
+                               for item in self.spine_data.get("links", []) or [])
+                if not has_parent and not has_link and not partial:
+                    self.err("spine." + line, f"相鄰人物沒有父子關係或 links：{parent} → {child}")
+        for segment in segments:
+            for chain in (segment.get("lines") or {}).values():
+                for pid in chain or []:
+                    if pid not in self.people:
+                        self.err("spine", f"主線人物不存在：{pid}")
+        self._validate_links()
+
+    def _validate_witnesses(self) -> None:
+        for index, witness in enumerate(self.witnesses):
+            where = f"witnesses#{index + 1}({witness.get('id', '')})"
+            parsed = self.refs(witness.get("ref", ""), where)
+            text = norm(self.text_of(parsed))
+            cursor, ids = 0, []
+            for entry_index, entry in enumerate(witness.get("entries", []) or []):
+                ewhere = f"{where}.entries#{entry_index + 1}"
+                pid = str(entry.get("id", ""))
+                if pid not in self.people:
+                    self.err(ewhere, f"人物不存在：{pid}")
+                    continue
+                if entry.get("as"):
+                    shown = str(entry["as"])
+                else:
+                    candidates = [display(pid)] + [n for n in self.names_for(pid) if n != display(pid)]
+                    shown = next((n for n in candidates if text.find(norm(n), cursor) >= 0), candidates[0])
+                self.need_exact(shown, parsed, ewhere, "見證寫法")
+                position = text.find(norm(shown), cursor)
+                if position < 0:
+                    self.err(ewhere, f"見證寫法「{shown}」沒有依序出現在 {witness.get('ref')}")
+                else:
+                    cursor = position + len(norm(shown))
+                if not entry.get("side"):
+                    ids.append(pid)
+            if witness.get("line") not in ("common", "馬太", "路加"):
+                self.err(where, "line 必須是 common、馬太或路加")
+            direction = witness.get("direction", "down")
+            if direction not in ("down", "up"):
+                self.err(where, "direction 只能是 down 或 up")
+            witness["_spine_ids"] = ids[::-1] if direction == "up" else ids
+            marks = witness.get("marks")
+            if marks is not None and (not isinstance(marks, dict) or not marks.get("missing") or not marks.get("extra")):
+                self.err(where + ".marks", "marks 需要 missing 和 extra")
+        for line in ("馬太", "路加"):
+            positions = {pid: index for index, pid in enumerate(self.lines[line])}
+            for witness in self.witnesses:
+                if witness.get("line") not in (line, "common"):
+                    continue
+                indices = [positions[pid] for pid in witness.get("_spine_ids", []) if pid in positions]
+                if indices:
+                    self.witness_ranges[str(witness.get("id")) + ":" + line] = (min(indices), max(indices))
+
+    def _add_mark(self, pid: str, witness: dict, label: str) -> None:
+        self._dedupe_add(self.marks_by_person[pid],
+                         {"witness": str(witness.get("id", "")), "label": str(label)})
+
+    def _calculate_marks(self) -> None:
+        """標記由程式算：
+        - X未列：有 marks 的見證裡相鄰兩人，在它那條線上中間被跳過的人（例：太1:8 約蘭→烏西雅）。
+        - 只見X：只有這份見證列出的人，而且另一份見證把他前後兩人直接相接（例：路3:36 的該南）。"""
+        for line in ("馬太", "路加"):
+            route = self.lines[line]
+            pos = {pid: index for index, pid in enumerate(route)}
+            for witness in self.witnesses:
+                marks = witness.get("marks") or {}
+                if not marks or witness.get("line") != line:
+                    continue
+                seq = [pid for pid in witness.get("_spine_ids", []) if pid in pos]
+                for a, b in zip(seq, seq[1:]):
+                    if pos[b] - pos[a] > 1 and marks.get("missing"):
+                        for skipped in route[pos[a] + 1:pos[b]]:
+                            self._add_mark(skipped, witness, marks["missing"])
+                others = [w for w in self.witnesses if w is not witness]
+                for pid in seq:
+                    i = pos[pid]
+                    if i == 0 or i == len(route) - 1 or not marks.get("extra"):
+                        continue
+                    if any(pid in w.get("_spine_ids", []) for w in others):
+                        continue
+                    before, after = route[i - 1], route[i + 1]
+                    for w in others:
+                        ids = w.get("_spine_ids", [])
+                        if any(x == before and y == after for x, y in zip(ids, ids[1:])):
+                            self._add_mark(pid, witness, marks["extra"])
+                            break
+
+    def _source_map(self) -> dict[str, dict]:
+        return {str(source.get("id")): source for source in self.sources if source.get("id")}
+
+    def _source_text(self, source: dict, where: str) -> str:
+        raw = source.get("raw")
+        if not raw:
+            if not source.get("verified"):
+                self.err(where, "沒有 raw 時必須提供 verified 日期")
+            return ""
+        candidates = [(self.dir / str(raw)).resolve(), (ROOT / str(raw)).resolve()]
+        path = next((candidate for candidate in candidates if candidate.is_file()), None)
+        if path is None:
+            self.err(where, f"raw 檔不存在：{raw}")
+            return ""
+        try:
+            return path.read_text(encoding="utf-8")
+        except OSError as exc:
+            self.err(where, f"無法讀取 raw：{exc}")
+            return ""
+
+    def _validate_notes(self) -> None:
+        source_map = self._source_map()
+        raw_texts = {sid: self._source_text(source, "sources." + sid) for sid, source in source_map.items()}
+        for index, note in enumerate(self.notes):
+            where = f"notes#{index + 1}({note.get('id', '')})"
+            for pid in note.get("attach", []) or []:
+                if pid not in self.people:
+                    self.err(where, f"掛載人物不存在：{pid}")
+                else:
+                    self._dedupe_add(self.notes_by_person[pid], str(note.get("id", "")))
+            all_parsed = []
+            for j, scripture in enumerate(note.get("scripture", []) or []):
+                parsed = self.refs(scripture.get("ref", ""), f"{where}.scripture#{j + 1}")
+                all_parsed.extend(parsed)
+                if scripture.get("quote"):
+                    self.need_exact(str(scripture["quote"]), parsed, where, "引句")
+            self.check_quotes(str(note.get("text", "")), all_parsed, where + ".text")
+            for j, view in enumerate(note.get("views", []) or []):
+                vwhere = f"{where}.views#{j + 1}"
+                sid = str(view.get("source", ""))
+                if sid not in source_map:
+                    self.err(vwhere, f"來源不存在：{sid}")
+                    continue
+                raw = " ".join(raw_texts.get(sid, "").split())
+                quote = " ".join(str(view.get("quote", "")).split())
+                if quote and raw and quote not in raw:
+                    self.err(vwhere, f"來源引句未逐字出現在 raw：{sid}")
+    def _chinese_number(self, text: str) -> int:
+        value = str(text).strip()
+        if not value:
+            raise ValueError("空白數字")
+        if value.isdigit():
+            return int(value)
+        total = section = digit = 0
+        for char in value:
+            if char in self.DIGITS:
+                digit = self.DIGITS[char]
+            elif char in self.UNITS:
+                section += (digit or 1) * self.UNITS[char]
+                digit = 0
+            elif char in self.BIG_UNITS:
+                section += digit
+                total += section * self.BIG_UNITS[char]
+                section = digit = 0
+            else:
+                raise ValueError(f"不是支援的中文數字：{char}")
+        return total + section + digit
+
+    def _check_number(self, value, parsed, where: str, label: str) -> int | None:
+        if isinstance(value, int):
+            if label != "AM":
+                self.err(where, f"{label}必須使用經文中的中文數字寫法")
+            return value
+        text = str(value)
+        try:
+            number = self._chinese_number(text)
+        except ValueError as exc:
+            self.err(where, str(exc))
+            return None
+        self.need_exact(text, parsed, where, label)
+        return number
+
+    def _validate_ages(self) -> None:
+        event_data, event_years = {}, {}
+        for index, event in enumerate(self.ages.get("events", []) or []):
+            where = f"ages.events#{index + 1}({event.get('id', '')})"
+            if event.get("person") not in self.people:
+                self.err(where, f"人物不存在：{event.get('person')}")
+            parsed = self.refs(event.get("ref", ""), where)
+            event_data[str(event.get("id", ""))] = {
+                **event, "_age_num": self._check_number(event.get("age"), parsed, where, "年歲")}
+        records: OrderedDict[str, dict] = OrderedDict()
+        for index, item in enumerate(self.ages.get("people", []) or []):
+            pid = str(item.get("id", ""))
+            where = f"ages.people#{index + 1}({pid})"
+            if pid not in self.people:
+                self.err(where, f"人物不存在：{pid}")
+            if pid in records:
+                self.err(where, f"年歲資料重複：{pid}")
+            record = {**item, "_where": where, "_born_am": None, "_total_num": None,
+                      "_rest_num": 0, "_refs": []}
+            records[pid] = record
+            if (item.get("begat_age") or {}).get("age"):
+                self.age_begat[pid] = str(item["begat_age"]["age"])
+            born = item.get("born") or {}
+            selectors = [key for key in ("am", "father", "event", "derive") if born.get(key) is not None]
+            if len(selectors) != 1:
+                self.err(where + ".born", "born 必須且只能指定 am、father、event 或 derive 其中一種")
+            if born.get("am") is not None:
+                if display(pid) != "亞當":
+                    self.err(where + ".born.am", "只有亞當可以直接指定創世後年份（AM）")
+                record["_born_am"] = self._check_number(born["am"], [], where + ".born.am", "AM")
+            if born.get("father") and born.get("father") not in records and born.get("father") not in {
+                    str(row.get("id", "")) for row in people_rows}:
+                self.err(where + ".born", f"父親不在 ages.people：{born.get('father')}")
+            for j, rest in enumerate(item.get("rest", []) or []):
+                parsed = self.refs(rest.get("ref", ""), f"{where}.rest#{j + 1}")
+                record["_refs"].extend(parsed)
+                record["_rest_num"] += self._check_number(rest.get("years"), parsed, where + ".rest", "餘年") or 0
+            if item.get("total"):
+                parsed = self.refs(item["total"].get("ref", ""), where + ".total")
+                record["_refs"].extend(parsed)
+                record["_total_num"] = self._check_number(item["total"].get("years"), parsed, where + ".total", "壽數")
+            if item.get("begat_age"):
+                data = item["begat_age"]
+                parsed = self.refs(data.get("ref", ""), where + ".begat_age")
+                record["_refs"].extend(parsed)
+                record["_begat_num"] = self._check_number(data.get("age"), parsed, where + ".begat_age", "生子年歲")
+                if data.get("child") not in self.people:
+                    self.err(where + ".begat_age", f"子女不存在：{data.get('child')}")
+            for j, event in enumerate(item.get("events", []) or []):
+                parsed = self.refs(event.get("ref", ""), f"{where}.events#{j + 1}")
+                record["_refs"].extend(parsed)
+                self._check_number(event.get("age"), parsed, f"{where}.events#{j + 1}", "事件年歲")
+        for record in records.values():
+            if record["_total_num"] is None and record.get("_begat_num") is not None:
+                record["_total_num"] = record["_begat_num"] + record["_rest_num"]
+            if (record.get("_begat_num") is not None and record.get("_total_num") is not None
+                    and record.get("rest")
+                    and record["_begat_num"] + record["_rest_num"] != record["_total_num"]):
+                self.err(record["_where"], "生子年歲＋餘年不等於壽數")
+        unresolved = set(records)
+        for _ in range(len(records) + len(event_data) + 2):
+            changed = False
+            for pid in list(unresolved):
+                record, born = records[pid], records[pid].get("born") or {}
+                if record["_born_am"] is not None:
+                    unresolved.remove(pid)
+                    changed = True
+                elif born.get("father") in records and records[born["father"]].get("_born_am") is not None:
+                    where = record["_where"] + ".born"
+                    parsed = self.refs(born.get("ref", ""), where)
+                    age = self._check_number(born.get("age"), parsed, where, "父親生子年歲")
+                    if age is not None:
+                        record["_born_am"] = records[born["father"]]["_born_am"] + age
+                        record["_refs"].extend(parsed)
+                        unresolved.remove(pid)
+                        changed = True
+                elif born.get("event") in event_data and born.get("event") in event_years:
+                    where = record["_where"] + ".born"
+                    parsed = self.refs(born.get("ref", ""), where)
+                    after = self._check_number(born.get("after"), parsed, where, "事件後年數")
+                    if after is not None:
+                        record["_born_am"] = event_years[born["event"]] + after
+                        record["_refs"].extend(parsed)
+                        unresolved.remove(pid)
+                        changed = True
+                elif born.get("derive"):
+                    derive = born["derive"]
+                    base = str(derive.get("person", ""))
+                    if base not in records:
+                        self.err(record["_where"], f"derive 人物不存在：{base}")
+                        unresolved.remove(pid)
+                        changed = True
+                    elif records[base].get("_born_am") is not None:
+                        where = record["_where"] + ".born.derive"
+                        parsed = self.refs(derive.get("ref", ""), where)
+                        age = self._check_number(derive.get("person_age"), parsed, where, "參照人物年歲")
+                        this_refs = []
+                        for ref in derive.get("this_refs", []) or []:
+                            this_refs.extend(self.refs(ref, where + ".this_refs"))
+                        if isinstance(derive.get("this_age"), list):
+                            # 本人年歲由幾段經文數字相加（例如 三十歲＋七個豐年＋饑荒二年），每段各自逐字核對
+                            this_age = 0
+                            for k, part in enumerate(derive["this_age"]):
+                                part_refs = self.refs(str(part.get("ref", "")), f"{where}.this_age#{k + 1}")
+                                this_refs.extend(part_refs)
+                                value = self._check_number(part.get("n"), part_refs, f"{where}.this_age#{k + 1}", "本人年歲")
+                                this_age = None if value is None or this_age is None else this_age + value
+                        else:
+                            this_age = self._check_number(derive.get("this_age"), this_refs, where, "本人年歲")
+                        record["_refs"].extend(parsed + this_refs)
+                        if age is not None and this_age is not None:
+                            record["_born_am"] = records[base]["_born_am"] + age - this_age
+                            unresolved.remove(pid)
+                            changed = True
+            for event_id, event in event_data.items():
+                person_id = str(event.get("person", ""))
+                if event_id not in event_years and person_id in records and records[person_id].get("_born_am") is not None:
+                    if event.get("_age_num") is not None:
+                        event_years[event_id] = records[person_id]["_born_am"] + event["_age_num"]
+                        changed = True
+            if not changed:
+                break
+        for pid in unresolved:
+            self.err(records[pid]["_where"], "born 無法推算創世後年份（AM）")
+        for event_id, event in event_data.items():
+            if event.get("person") not in records:
+                self.err(f"ages.events({event_id})", f"事件人物缺少 ages.people：{event.get('person')}")
+        output = []
+        for pid, record in records.items():
+            born, total = record.get("_born_am"), record.get("_total_num")
+            refs = list(dict.fromkeys(
+                f"{FULL_TO_ABBR.get(book, book)}{chapter}:{verse}" for book, chapter, verse in record["_refs"]))
+            output.append({"id": pid, "born": born, "died": born + total if born is not None and total is not None else None,
+                           "total": total, "refs": refs})
+        events = [{key: value for key, value in event.items() if not key.startswith("_")} | {"am": event_years.get(eid)}
+                  for eid, event in event_data.items()]
+        self.ages_result = {"people": output, "events": events, "notes": self.ages.get("notes", []) or []}
+
+    def _validate_families(self) -> None:
+        for field in ("families", "nt_families"):
+            for index, family in enumerate(self.data.get(field, []) or []):
+                ids = family.get("roots", []) if field == "families" else family.get("members", [])
+                for pid in ids or []:
+                    if pid not in self.people:
+                        self.err(f"頁面.yaml.{field}#{index + 1}", f"人物不存在：{pid}")
+
+    def _validate_tour(self) -> None:
+        for index, stop in enumerate(self.tour):
+            where = f"tour#{index + 1}({stop.get('id', '')})"
+            for pid in stop.get("focus", []) or []:
+                if pid not in self.people:
+                    self.err(where, f"focus 人物不存在：{pid}")
+            parsed = self.refs(stop.get("refs", ""), where)
+            self.check_quotes(str(stop.get("text", "")), parsed, where)
+
+    def _name_link(self, pid: str) -> str:
+        person = self.people[pid]
+        name = display(pid)
+        if person.get("entry"):
+            return f"[[link_folder/{person['entry']}|{name}]]"
+        if person.get("imported"):
+            page = str(person["imported"])
+            page = page[:-3] if page.endswith(".md") else page
+            return f"[[{page}#{person.get('anchor') or ''}|{name}]]"
+        return name
+
+    def _site_person_link(self, pid: str, label: str | None = None) -> str:
+        from urllib.parse import quote
+        site = str(self.data.get("site", "")).strip()
+        if not site:
+            return label or display(pid)
+        target = f"{site}#p={quote(str(pid), safe='')}"
+        return f"[{label or display(pid)}](<{target}>)"
+
+    def _ref_link(self, ref: str) -> str:
+        match = re.match(r"^([^\d]+)(\d+):", str(ref))
+        if not match or match.group(1) not in ABBR:
+            return str(ref)
+        book = ABBR[match.group(1)]
+        if book in ("馬太福音", "馬可福音", "路加福音", "約翰福音", "使徒行傳", "羅馬書",
+                    "哥林多前書", "哥林多後書", "加拉太書", "以弗所書", "腓立比書", "歌羅西書",
+                    "帖撒羅尼迦前書", "帖撒羅尼迦後書", "提摩太前書", "提摩太後書", "提多書",
+                    "腓利門書", "希伯來書", "雅各書", "彼得前書", "彼得後書", "約翰一書",
+                    "約翰二書", "約翰三書", "猶大書", "啟示錄"):
+            return str(ref)
+        number = list(ABBR.values()).index(book) + 1
+        target = ROOT / f"{number:02d} {book}" / f"第{match.group(2)}章.md"
+        if target.is_file():
+            return f"[[{target.parent.name}/{target.stem}|{ref}]]"
+        return str(ref)
+
+    def _render_refs(self, refs: list[str]) -> str:
+        return "、".join(self._ref_link(ref) for ref in dict.fromkeys(refs) if ref)
+
+    def _segment_routes(self, segment: dict) -> dict[str, list[str]]:
+        return {str(key): [str(pid) for pid in value or []]
+                for key, value in (segment.get("lines") or {}).items()}
+
+    def _mark_labels(self, pid: str) -> list[str]:
+        labels = list(dict.fromkeys(mark["label"] for mark in self.marks_by_person.get(pid, [])))
+        if self.notes_by_person.get(pid):
+            labels.append("※")
+        return labels
+
+    def _split_segment(self, routes: dict[str, list[str]]) -> list[dict[str, list[str]]]:
+        if "common" in routes:
+            chain = routes["common"]
+            parts, start = [], 0
+            while start < len(chain):
+                end = min(start + 25, len(chain))
+                parts.append({"common": chain[start:end]})
+                if end == len(chain):
+                    break
+                start = end - 1
+            return parts or [routes]
+        keys = [key for key in ("馬太", "路加") if key in routes]
+        if len(set(pid for key in keys for pid in routes[key])) <= 25:
+            return [routes]
+        parts_by_line = {}
+        for key in keys:
+            chain, parts, start = routes[key], [], 0
+            chunk_size = 25 if len(keys) == 1 else 12
+            while start < len(chain):
+                end = min(start + chunk_size, len(chain))
+                parts.append(chain[start:end])
+                if end == len(chain):
+                    break
+                start = end - 1
+            parts_by_line[key] = parts
+        count = max((len(values) for values in parts_by_line.values()), default=1)
+        return [{key: values[index] for key, values in parts_by_line.items() if index < len(values)}
+                for index in range(count)] or [routes]
+
+    def _mermaid(self, routes: dict[str, list[str]], prefix: str) -> list[str]:
+        fence = chr(96) * 3
+        out = [fence + "mermaid", "flowchart TD",
+               "  classDef mt stroke:#c8892b,stroke-width:2px",
+               "  classDef lk stroke:#2f8f9d,stroke-width:2px"]
+        unique = list(dict.fromkeys(pid for chain in routes.values() for pid in chain))
+        ids = {pid: f"{prefix}n{index}" for index, pid in enumerate(unique, 1)}
+        def label(pid: str) -> str:
+            text = html.escape(display(pid), quote=True)
+            marks = self._mark_labels(pid)
+            if marks:
+                text += "<br/><small>" + html.escape("、".join(marks)) + "</small>"
+            return text
+        if "common" in routes:
+            chain = routes["common"]
+            for pid in chain:
+                out.append(f'  {ids[pid]}["{label(pid)}"]')
+            for parent, child in zip(chain, chain[1:]):
+                out.append(f"  {ids[parent]} --> {ids[child]}")
+        else:
+            shared = set(routes.get("馬太", [])) & set(routes.get("路加", []))
+            for pid in routes.get("馬太", []):
+                if pid in shared:
+                    out.append(f'  {ids[pid]}["{label(pid)}"]')
+            for line in ("馬太", "路加"):
+                if line not in routes:
+                    continue
+                line_title = "馬太福音" if line == "馬太" else "路加福音"
+                out.append(f'  subgraph {prefix}_{line}["{line_title}"]')
+                chain = routes[line]
+                for pid in chain:
+                    if pid not in shared:
+                        out.append(f'    {ids[pid]}["{label(pid)}"]')
+                out.append("  end")
+            # 連線寫在 subgraph 外面：寫在裡面時 mermaid 會把共同的人（例如大衛）也收進那一框
+            for line in ("馬太", "路加"):
+                chain = routes.get(line, [])
+                for parent, child in zip(chain, chain[1:]):
+                    out.append(f"  {ids[parent]} --> {ids[child]}")
+            for line, class_name in (("馬太", "mt"), ("路加", "lk")):
+                exclusive = [ids[pid] for pid in routes.get(line, []) if pid not in shared]
+                if exclusive:
+                    out.append("  class " + ",".join(exclusive) + " " + class_name)
+        out.append(fence)
+        return out
+
+    def _render_diagrams(self) -> list[str]:
+        out = ["## 主線分段圖", ""]
+        site = str(self.data.get("site", "")).strip()
+        for index, segment in enumerate(self.spine_data.get("segments", []) or []):
+            title = str(segment.get("title", segment.get("id", f"段落{index + 1}")))
+            parts = self._split_segment(self._segment_routes(segment))
+            for part_index, part in enumerate(parts, 1):
+                suffix = f"之{self._number_text(part_index)}" if len(parts) > 1 else ""
+                out += [f"### {title}{suffix}", ""]
+                out += self._mermaid(part, f"s{index}_{part_index}")
+                out.append("")
+                first = next((pid for key in ("common", "馬太", "路加")
+                              for pid in part.get(key, []) or []), None)
+                if site and first:
+                    out += [self._site_person_link(first, "在網站上看這一段"), ""]
+        return out
+
+    @staticmethod
+    def _number_text(number: int) -> str:
+        names = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"]
+        if number < 10:
+            return names[number]
+        if number < 20:
+            return "十" + (names[number % 10] if number % 10 else "")
+        return str(number)
+
+    def _witness_shown(self, witness: dict, pid: str) -> str:
+        for entry in witness.get("entries", []) or []:
+            if entry.get("id") == pid and not entry.get("side"):
+                return str(entry.get("as") or self.names_for(pid)[0])
+        return ""
+
+    def _render_table(self, ids: list[str], lines: list[str]) -> list[str]:
+        witnesses = [w for w in self.witnesses
+                     if any(self._witness_shown(w, pid).strip() for pid in ids)]
+        headers = ["代數", "人名"] + [str(w.get("title", w.get("id", ""))) for w in witnesses]
+        out = ["| " + " | ".join(headers) + " |", "|" + "|".join("---" for _ in headers) + "|"]
+        for pid in ids:
+            generations = [self.generations.get(pid, {}).get(line) for line in lines]
+            generations = [number for number in generations if number is not None]
+            if generations and len(set(generations)) == 1:
+                generation = str(generations[0])
+            else:
+                generation = "／".join(f"{line}{self.generations.get(pid, {}).get(line, '')}" for line in lines)
+            name = self._name_link(pid)
+            marks = [label for label in self._mark_labels(pid) if label != "※"]
+            if marks:
+                name += "（" + "、".join(marks) + "）"
+            note_titles = {str(note.get("id", "")): str(note.get("title", note.get("id", "")))
+                           for note in self.notes}
+            for note_id in self.notes_by_person.get(pid, []):
+                title = note_titles.get(str(note_id), str(note_id))
+                name += f" [[#{title}|※]]"
+            row = [generation, name] + [self._witness_shown(w, pid) for w in witnesses]
+            out.append("| " + " | ".join(row) + " |")
+        out.append("")
+        return out
+
+    def _render_tables(self) -> list[str]:
+        out = ["## 世代對照表", ""]
+        for index, segment in enumerate(self.spine_data.get("segments", []) or []):
+            routes = self._segment_routes(segment)
+            title = str(segment.get("title", segment.get("id", f"段落{index + 1}")))
+            if "common" in routes:
+                out += [f"### {title}", ""]
+                out += self._render_table(routes["common"], ["馬太", "路加"])
+            else:
+                for line in ("馬太", "路加"):
+                    if line in routes:
+                        out += [f"### {title}｜{line}線", ""]
+                        out += self._render_table(routes[line], [line])
+        return out
+
+    def _render_notes(self) -> list[str]:
+        out = ["## 經文記載不同的地方", ""]
+        sources = self._source_map()
+        for note in self.notes:
+            note_id = str(note.get("id", ""))
+            out += [f'<a id="{html.escape(note_id, quote=True)}"></a>',
+                    f"### {note.get('title', note_id)}", ""]
+            if note.get("scripture"):
+                out.append("> [!quote] 經文")
+            for scripture in note.get("scripture", []) or []:
+                ref = self._ref_link(str(scripture.get("ref", "")))
+                out.append(f"> - {ref}：「{scripture.get('quote', '')}」")
+            if note.get("scripture"):
+                out.append("")
+            if note.get("text"):
+                out += [str(note["text"]).strip(), ""]
+            if note.get("views"):
+                out += ["**各家說法**", ""]
+                for view in note["views"]:
+                    source = sources.get(str(view.get("source", "")), {})
+                    title = str(source.get("title", view.get("source", "")))
+                    by = f"（{view.get('by')}）" if view.get("by") else ""
+                    out.append(f"- **{title}**{by}：{str(view.get('text', '')).strip()}")
+                    translation = f"（{view.get('translation')}）" if view.get("translation") else ""
+                    out.append(f"  > 「{view.get('quote', '')}」{translation}")
+                out.append("")
+            source_links = []
+            for source_id in dict.fromkeys(str(v.get("source", "")) for v in note.get("views", []) or []):
+                source = sources.get(source_id, {})
+                if source.get("url"):
+                    source_links.append(f"[{source.get('title', source_id)}]({source['url']})")
+            if note.get("views"):
+                out += ["來源：" + "、".join(source_links), ""]
+        return out
+
+    def _timeline_svg(self) -> str:
+        people = self.ages_result["people"]
+        if not people:
+            return ""
+        event_years = [item["am"] for item in self.ages_result["events"] if item.get("am") is not None]
+        year_values = ([int(item["born"]) for item in people if item.get("born") is not None]
+                       + [int(item["died"]) for item in people if item.get("died") is not None]
+                       + [int(year) for year in event_years])
+        max_year = max(200, ((max(year_values or [0]) + 199) // 200) * 200)
+        width, left, right, top, row_height = 900, 92, 28, 54, 26
+        height = top + len(people) * row_height + 46
+        axis_y = height - 38
+        x = lambda year: left + max(0, min(max_year, year)) / max_year * (width - left - right)
+        main_line = set(self.lines["馬太"]) | set(self.lines["路加"])
+        out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-label="創世後年份時間軸">',
+               '<style>text{fill:currentColor;font:14px sans-serif}.caption{font-size:12px;opacity:.75}.tick-label{font-size:11px;opacity:.8}.grid{stroke:currentColor;stroke-width:1;opacity:.12}.axis{stroke:currentColor;stroke-width:1;opacity:.5}.life{stroke-width:9;stroke-linecap:round}.life-main{stroke:currentColor;opacity:.8}.life-other{stroke:#9aa0a8;opacity:.75}.dot-main,.dot-other{fill:#c8892b}.event{stroke:#2e9d6a;stroke-width:2;stroke-dasharray:4 3}</style>',
+               f'<text class="caption" x="{left}" y="18">依和合本的年歲推算</text>']
+        for index, year in enumerate(range(0, max_year + 1, 200)):
+            tick_x = x(year)
+            out.append(f'<line class="grid" x1="{tick_x:.1f}" y1="{top - 5}" x2="{tick_x:.1f}" y2="{axis_y}"/>')
+            if year % 400 == 0:
+                out.append(f'<text class="tick-label" x="{tick_x:.1f}" y="{axis_y + 18}" text-anchor="middle">創世後 {year} 年</text>')
+        for index, item in enumerate(people):
+            y = top + index * row_height
+            out.append(f'<text fill="currentColor" x="{left - 10}" y="{y + 4}" text-anchor="end">'
+                       f'{html.escape(display(item["id"]))}</text>')
+            born = int(item.get("born") or 0)
+            died = int(item["died"]) if item.get("died") is not None else born
+            kind = "main" if item["id"] in main_line else "other"
+            out.append(f'<line class="life life-{kind}" x1="{x(born):.1f}" y1="{y}" x2="{x(died):.1f}" y2="{y}"/>')
+            begat = self.age_begat.get(item["id"])
+            if begat:
+                at = born + self._chinese_number(begat)
+                out.append(f'<circle class="dot-{kind}" cx="{x(at):.1f}" cy="{y}" r="4"/>')
+        for event in self.ages_result["events"]:
+            if event.get("am") is not None:
+                event_x = x(event["am"])
+                out.append(f'<line class="event" x1="{event_x:.1f}" y1="{top - 5}" x2="{event_x:.1f}" y2="{axis_y}"/>')
+                label = "洪水" if str(event.get("id", "")) == "洪水" else str(event.get("label") or event.get("id", ""))
+                out.append(f'<text fill="currentColor" x="{event_x + 4:.1f}" y="{top - 9}">'
+                           f'{html.escape(label)}</text>')
+        out.append(f'<line class="axis" x1="{left}" y1="{axis_y}" x2="{width - right}" y2="{axis_y}"/>')
+        out.append("</svg>")
+        return "\n".join(out)
+
+    def _age_ref_ranges(self, refs: list[str]) -> list[str]:
+        book_order = {abbr: index for index, abbr in enumerate(ABBR)}
+        groups: dict[tuple[str, int], set[int]] = defaultdict(set)
+        extras = []
+        for ref in dict.fromkeys(str(value) for value in refs if value):
+            match = re.fullmatch(r"([^\d]+)(\d+):(\d+)", ref)
+            if match and match.group(1) in book_order:
+                groups[(match.group(1), int(match.group(2)))].add(int(match.group(3)))
+            else:
+                extras.append(ref)
+        result = []
+        for book, chapter in sorted(groups, key=lambda key: (book_order[key[0]], key[1])):
+            verses = sorted(groups[(book, chapter)])
+            if not verses:
+                continue
+            start = end = verses[0]
+            for verse in verses[1:]:
+                if verse == end + 1:
+                    end = verse
+                    continue
+                suffix = f"{start}-{end}" if end > start else str(start)
+                result.append(f"{book}{chapter}:{suffix}")
+                start = end = verse
+            suffix = f"{start}-{end}" if end > start else str(start)
+            result.append(f"{book}{chapter}:{suffix}")
+        result.extend(sorted(set(extras)))
+        return result
+
+    def _render_ages(self) -> list[str]:
+        out = ["## 年歲時間軸", ""]
+        svg = self._timeline_svg()
+        if svg:
+            out += [svg, ""]
+        out += ["| 人名 | 生於 | 壽數 | 死於 | 經節 |", "|---|---:|---:|---:|---|"]
+        for item in self.ages_result["people"]:
+            refs = self._age_ref_ranges(item.get("refs", []))
+            out.append(f"| {self._name_link(item['id'])} | {item.get('born', '')} | {item.get('total', '')} | "
+                       f"{item.get('died', '')} | {self._render_refs(refs)} |")
+        out.append("")
+        for note in self.ages_result.get("notes", []):
+            out.append(f"- {note.get('text', '')}" if isinstance(note, dict) else f"- {note}")
+        out.append("")
+        return out
+
+    def _family_count(self, roots: list[str]) -> int:
+        return len(self._father_descendants(roots))
+
+    def _father_descendants(self, roots) -> set[str]:
+        children: dict[str, set[str]] = defaultdict(set)
+        for child, person in self.people.items():
+            for relation in person["parents"]:
+                parent = str(relation.get("id", ""))
+                if parent in self.people and relation.get("role") != "母":
+                    children[parent].add(child)
+        seen, queue = {str(pid) for pid in roots}, [str(pid) for pid in roots]
+        while queue:
+            for child in children.get(queue.pop(0), set()):
+                if child not in seen:
+                    seen.add(child)
+                    queue.append(child)
+        return seen
+
+    def _render_families(self) -> list[str]:
+        out = ["## 旁支索引", "", "| 家族 | 人數 | 經文 | 連結 |", "|---|---:|---|---|"]
+        site = str(self.data.get("site", "")).strip()
+        for family in self.data.get("families", []) or []:
+            roots = [str(pid) for pid in family.get("roots", []) or []]
+            links = []
+            if site:
+                from urllib.parse import quote
+                family_id = quote(str(family.get("id", "")), safe="")
+                links.append(f"[網站](<{site}#family={family_id}>)")
+            imported_root = next((pid for pid in roots
+                                  if self.people.get(pid, {}).get("imported")
+                                  and self.people.get(pid, {}).get("anchor")), None)
+            if imported_root:
+                person = self.people[imported_root]
+                page = str(person["imported"])
+                page = page[:-3] if page.endswith(".md") else page
+                links.append(f"[[{page}#{person['anchor']}|族譜頁]]")
+            out.append(f"| {family.get('title', family.get('id', ''))} | {self._family_count(roots)} | "
+                       f"{family.get('intro', '')} | {'、'.join(links)} |")
+        spine = set(self.lines["馬太"]) | set(self.lines["路加"])
+        reachable = self._father_descendants(spine)
+        nt_people = {str(pid) for family in self.data.get("nt_families", []) or []
+                     for pid in family.get("members", []) or []}
+        unattached = len(set(self.people) - reachable - nt_people)
+        out += ["", f"另有 {unattached} 位經文沒有交代與主線關係的人（多半是歷代志上各支派名單的源頭），"
+                "在網站的『接不上主線的家族』裡。", ""]
+        return out
+
+    def _nt_relation(self, family: dict, pid: str) -> list[tuple[str, str]]:
+        person = self.people[pid]
+        rows = []
+        for relation in person["parents"]:
+            other = str(relation.get("id", ""))
+            if other not in self.people or other == pid:
+                continue
+            role = {"f": "女兒", "m": "兒子"}.get(person.get("sex"), "孩子")
+            prefix = str(relation.get("qualifier") or "")
+            rows.append(((prefix + "，" if prefix else "") + display(other) + "的" + role, str(relation.get("ref", ""))))
+        for relation in person["spouses"]:
+            other = str(relation.get("id", ""))
+            if other not in self.people or other == pid:
+                continue
+            role = {"f": "妻子", "m": "丈夫"}.get(person.get("sex"), "配偶")
+            rows.append((display(other) + "的" + role, str(relation.get("ref", ""))))
+        for relation in person["siblings"]:
+            other = str(relation.get("id", ""))
+            if other in self.people and other != pid:
+                rows.append((display(other) + "的兄弟姊妹", str(relation.get("ref", ""))))
+        for relation in person["kin"]:
+            other = str(relation.get("id", ""))
+            if other in self.people and other != pid:
+                rows.append((display(other) + "的" + str(relation.get("rel", "")),
+                             str(relation.get("ref", ""))))
+        for relation in person["descends"]:
+            other = str(relation.get("id", ""))
+            if other in self.people and other != pid:
+                rows.append((display(other) + "的後人", str(relation.get("ref", ""))))
+        return rows
+
+    def _render_nt_families(self) -> list[str]:
+        out = ["## 新約家族", ""]
+        for family in self.data.get("nt_families", []) or []:
+            out += [f"### {family.get('title', family.get('id', ''))}", ""]
+            if family.get("intro"):
+                out += [str(family["intro"]).strip(), ""]
+            out += ["| 人物 | 關係 | 經節 |", "|---|---|---|"]
+            for pid in family.get("members", []) or []:
+                if pid not in self.people:
+                    continue
+                grouped: dict[str, list[str]] = {}
+                for relation, ref in self._nt_relation(family, pid):
+                    grouped.setdefault(relation, [])
+                    if ref and ref not in grouped[relation]:
+                        grouped[relation].append(ref)
+                if not grouped:
+                    grouped["—"] = []
+                for relation, refs in grouped.items():
+                    out.append(f"| {self._site_person_link(str(pid))} | {relation} | "
+                               f"{self._render_refs(refs)} |")
+            out.append("")
+        return out
+
+    def render(self) -> str:
+        title = str(self.data.get("title", self.dir.name))
+        out = [f"# {title}", ""]
+        for field in ("intro", "reading"):
+            if self.data.get(field):
+                out += [str(self.data[field]).strip(), ""]
+        if self.data.get("site"):
+            out += [f"[互動網站](<{self.data['site']}>)", ""]
+        out += self._render_diagrams()
+        out += self._render_tables()
+        out += self._render_notes()
+        out += self._render_ages()
+        out += self._render_families()
+        out += self._render_nt_families()
+        out += ["## 資料來源", ""]
+        for source in self.sources:
+            date = source.get("accessed") or source.get("verified") or ""
+            out.append(f"- {source.get('title', source.get('id', ''))}（{source.get('kind', '')}，{date}）："
+                       f"{source.get('url', '')}".rstrip("："))
+        page = escape_table_links("\n".join(out).rstrip() + "\n")
+        lines = page.splitlines()
+        for index, line in enumerate(lines):
+            if line.lstrip().startswith(">"):
+                lines[index] = TABLE_LINK_RE.sub(
+                    lambda match: "[[" + match.group(1) + "\\|" + match.group(2) + "]]", line)
+        return "\n".join(lines).rstrip() + "\n"
+
+    def review(self) -> str:
+        out = [f"# {self.data.get('title', self.dir.name)} 複核", "", "## 主線逐代", ""]
+        for line in ("馬太", "路加"):
+            out += [f"### {line}線", ""]
+            for pid in self.lines[line]:
+                witnesses = []
+                for witness in self.witnesses:
+                    if witness.get("line") in (line, "common") and pid in witness.get("_spine_ids", []):
+                        witnesses.append(f"{witness.get('title', witness.get('id'))}："
+                                         f"{self._witness_shown(witness, pid)}（{witness.get('ref')}）")
+                suffix = "；" + "；".join(witnesses) if witnesses else "；目前見證未列"
+                out.append(f"- 第{self.generations.get(pid, {}).get(line, '?')}代 **{display(pid)}**{suffix}")
+        out += ["", "## 程式計算的標記", ""]
+        marked = [(pid, marks) for pid, marks in self.marks_by_person.items() if marks]
+        for pid, marks in marked or [(None, [])]:
+            if pid is None:
+                out.append("- （沒有計算出標記）")
+            else:
+                out.append(f"- {display(pid)}：" + "；".join(f"{m['label']}（{m['witness']}）" for m in marks))
+        out += ["", "## 見證對照", ""]
+        for witness in self.witnesses:
+            sequence = " → ".join(display(pid) for pid in witness.get("_spine_ids", []))
+            out.append(f"- **{witness.get('title', witness.get('id'))}**（{witness.get('ref')}；"
+                       f"{witness.get('line')}；{witness.get('direction', 'down')}）：{sequence}")
+        out += ["", "## 年歲推算", "", "| 人物 | 生於 AM | 壽數 | 死於 AM |", "|---|---:|---:|---:|"]
+        for item in self.ages_result.get("people", []):
+            out.append(f"| {display(item['id'])} | {item.get('born', '')} | {item.get('total', '')} | {item.get('died', '')} |")
+        out += ["", "## 關係經文抽查", ""]
+        for pid, person in self.people.items():
+            for field in self.RELATION_FIELDS:
+                for relation in person[field]:
+                    try:
+                        parsed = parse_refs(str(relation.get("ref", "")), "", self.sc)
+                    except ValueError:
+                        parsed = []
+                    out.append(f"- {display(pid)} — {field} → {display(str(relation.get('id', '')))}；"
+                               f"{relation.get('ref')}：{self.text_of(parsed)}")
+        return "\n".join(out).rstrip() + "\n"
+
+    def export(self, output_dir: Path) -> None:
+        import json
+        output_dir.mkdir(parents=True, exist_ok=True)
+        persons = []
+        for pid, person in self.people.items():
+            def relation_rows(field: str) -> list[dict]:
+                rows = []
+                for relation in person[field]:
+                    row = dict(relation)
+                    # qualifier 是關係本身的修飾（例如路3:23「依人看來」）；對方 id 的識別字另放 idQualifier
+                    row["qualifier"] = str(relation.get("qualifier") or "")
+                    row["idQualifier"] = str(row.get("id", "")).split("#", 1)[1] if "#" in str(row.get("id", "")) else ""
+                    row.pop("imported", None)
+                    rows.append(row)
+                return rows
+            gloss = ""
+            if person.get("entry"):
+                entry_path = ROOT / "link_folder" / (str(person["entry"]) + ".md")
+                if entry_path.is_file():
+                    text = entry_path.read_text(encoding="utf-8")
+                    match = re.search(r"(?ms)^## 定義\s*\n(.*?)(?=^## |\Z)", text)
+                    if match:
+                        first = match.group(1).strip().split("。", 1)[0]
+                        gloss = first + "。" if first else ""
+            persons.append({
+                "id": pid, "name": display(pid),
+                "qualifier": str(pid).split("#", 1)[1] if "#" in pid else "",
+                "sex": person.get("sex"), "kind": person.get("kind", "person"),
+                "names": person.get("names", []), "parents": relation_rows("parents"),
+                "spouses": relation_rows("spouses"), "siblings": relation_rows("siblings"),
+                "kin": relation_rows("kin"), "descends": relation_rows("descends"),
+                "maybeSame": self._maybe_same_rows(pid),
+                "desc": person.get("desc"), "note": person.get("note"), "entry": person.get("entry"),
+                "entryGloss": gloss, "mother_name": person.get("mother_name"),
+                "gen": self.generations.get(pid, {}),
+                "lines": (["common"] if pid in set(self.lines["馬太"]) & set(self.lines["路加"])
+                          else [line for line in ("馬太", "路加") if pid in self.lines[line]]),
+                "marks": self.marks_by_person.get(pid, []), "notes": self.notes_by_person.get(pid, []),
+                "imported": person.get("imported"), "anchor": person.get("anchor"),
+            })
+        segments = [{"id": segment.get("id"), "title": segment.get("title"),
+                     "lines": self._segment_routes(segment)}
+                    for segment in self.spine_data.get("segments", []) or []]
+        payload = {
+            "persons": persons, "spine": {"segments": segments, "lines": self.lines},
+            "witnesses": [{k: v for k, v in witness.items() if not k.startswith("_")} for witness in self.witnesses],
+            "ages": self.ages_result, "notes": self.notes, "tour": self.tour,
+            "families": [{"id": family.get("id"), "title": family.get("title"),
+                          "roots": family.get("roots", []), "count": self._family_count(family.get("roots", [])),
+                          "intro": family.get("intro", "")} for family in self.data.get("families", []) or []],
+            "ntFamilies": self.data.get("nt_families", []), "sources": self.sources,
+        }
+        (output_dir / "genealogy.json").write_text(
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
+        (output_dir / "verses.json").write_text(
+            json.dumps(self.refs_used, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
 def build_page(data_spec: str, check: bool = False, review: str | None = None,
-               print_summary: bool = True) -> bool:
+               print_summary: bool = True, export_json: str | None = None) -> bool:
     normalized = data_spec.replace(chr(92), "/")
+    candidate = Path(data_spec).expanduser()
+    lineage_dir = None
+    if candidate.is_absolute():
+        if candidate.is_dir() and (candidate / "頁面.yaml").is_file():
+            lineage_dir = candidate
+    else:
+        spec_dir = HERE / Path(*normalized.split("/"))
+        if spec_dir.is_dir() and (spec_dir / "頁面.yaml").is_file():
+            lineage_dir = spec_dir
+    if lineage_dir is not None:
+        b = LineageBuilder(lineage_dir)
+        page = b.render() if not b.errors else ""
+        if review:
+            review_path = Path(review)
+            review_path.parent.mkdir(parents=True, exist_ok=True)
+            review_path.write_text(b.review(), encoding="utf-8")
+        if b.errors:
+            print(f"FAIL：{len(b.errors)} 項")
+            for error in b.errors:
+                print(" ", error)
+            return False
+        if print_summary:
+            print(f"PASS：{len(b.people)} 人、馬太線 {len(b.lines['馬太'])} 代、路加線 {len(b.lines['路加'])} 代")
+        if not check:
+            output = Path(str(b.data.get("output", "")))
+            output = output if output.is_absolute() else ROOT / output
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(page, encoding="utf-8")
+            try:
+                shown = output.relative_to(ROOT).as_posix()
+            except ValueError:
+                shown = str(output)
+            print(f"已寫入 {shown}")
+        if export_json:
+            b.export(Path(export_json).expanduser())
+            print(f"已匯出 JSON：{Path(export_json).expanduser()}")
+        return True
     parts = normalized.split("/")
     if len(parts) == 1:
         book_dir, data_name = HERE / parts[0], "genealogy"
@@ -1920,6 +3266,7 @@ def main() -> int:
     ap.add_argument("book", nargs="?")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--review")
+    ap.add_argument("--export-json")
     ap.add_argument("--all", action="store_true")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
@@ -1940,7 +3287,8 @@ def main() -> int:
         return 1 if failed else 0
     if not args.book:
         ap.error("請指定資料頁，或使用 --all")
-    return 0 if build_page(args.book, check=args.check, review=args.review) else 1
+    return 0 if build_page(args.book, check=args.check, review=args.review,
+                           export_json=args.export_json) else 1
 
 
 if __name__ == "__main__":
