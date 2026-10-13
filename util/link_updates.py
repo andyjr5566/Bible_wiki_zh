@@ -1062,21 +1062,51 @@ def _load_development_debt(root):
     return {str(item["path"]): item for item in entries or [] if isinstance(item, dict) and item.get("path")}
 
 
+# 和合本慣用的書卷簡稱；不在表裡的書卷退回取書名第一個字（創、出、利、民、申……）。
+_BOOK_SHORT = {
+    "約書亞記": "書", "路得記": "得",
+    "撒母耳記上": "撒上", "撒母耳記下": "撒下",
+    "列王紀上": "王上", "列王紀下": "王下",
+    "歷代志上": "代上", "歷代志下": "代下",
+    "以斯拉記": "拉", "以斯帖記": "斯", "約伯記": "伯", "雅歌": "歌",
+    "以賽亞書": "賽", "耶利米哀歌": "哀", "以西結書": "結",
+    "何西阿書": "何", "約珥書": "珥", "阿摩司書": "摩", "俄巴底亞書": "俄",
+    "約拿書": "拿", "彌迦書": "彌", "那鴻書": "鴻", "哈巴谷書": "哈",
+    "西番雅書": "番", "哈該書": "該", "撒迦利亞書": "亞", "瑪拉基書": "瑪",
+    "馬太福音": "太", "馬可福音": "可", "路加福音": "路", "約翰福音": "約",
+    "使徒行傳": "徒", "羅馬書": "羅", "哥林多前書": "林前", "哥林多後書": "林後",
+    "加拉太書": "加", "以弗所書": "弗", "腓立比書": "腓", "歌羅西書": "西",
+    "帖撒羅尼迦前書": "帖前", "帖撒羅尼迦後書": "帖後",
+    "提摩太前書": "提前", "提摩太後書": "提後", "提多書": "多", "腓利門書": "門",
+    "希伯來書": "來", "雅各書": "雅", "彼得前書": "彼前", "彼得後書": "彼後",
+    "約翰一書": "約壹", "約翰二書": "約貳", "約翰三書": "約參", "猶大書": "猶",
+    "啟示錄": "啟",
+}
+
+
+def _book_short(book):
+    return _BOOK_SHORT.get(book, book[0])
+
+
 def _book_mentions(text, books):
-    """哪幾卷書在這段文字裡被點名（全名，或「創32」這種簡稱＋章號）。"""
+    """哪幾卷書在這段文字裡被點名（全名，或「書15」這種和合本簡稱＋章號）。"""
     found = set()
     for book in books:
         if book in text:
             found.add(book)
             continue
-        if book.endswith(("上", "下")):
-            short = book[0] + book[-1]
-        elif book.endswith(("前書", "後書", "一書", "二書", "三書")):
-            short = book[0] + book[-2]
-        else:
-            short = book[0]
-        if re.search(re.escape(short) + r"\s*\d", text):
+        if re.search(re.escape(_book_short(book)) + r"\s*\d", text):
             found.add(book)
+    return found
+
+
+def _chapter_mentions(text, chapters):
+    """哪幾個 (書卷, 章) 在這段文字裡以「書15」「書15:7」這種簡稱＋章號被點名。"""
+    found = set()
+    for book, chapter in chapters:
+        pattern = re.escape(_book_short(book)) + r"\s*" + str(int(chapter)) + r"(?![0-9])"
+        if re.search(pattern, text):
+            found.add((book, chapter))
     return found
 
 
@@ -1116,8 +1146,21 @@ def settle_development_debt(relative_path, root=None):
     body = section.strip()
     if not body or body in {"待累積", "（待累積）"}:
         raise ValueError(f"{key} 的主題發展仍是空白／待累積，還不能結清")
-    books = sorted({b for b, _c in _ACCUM_META_RE.findall(text)})
+    accumulated = sorted(set(_ACCUM_META_RE.findall(text)))
+    books = sorted({b for b, _c in accumulated})
     named = _book_mentions(body, books)
+    if len(books) == 1:
+        # 只在一卷書裡累積：比照 synthesis_scope，要點名該卷至少兩個已累積的章
+        chapters = _chapter_mentions(body, accumulated)
+        if len(chapters) < 2:
+            raise ValueError(
+                f"{key} 的累積只在 {books[0]} 一卷，主題發展要點名其中至少兩個已累積的章"
+                f"（例如「{_book_short(books[0])}{accumulated[0][1]}」），目前只點名 "
+                f"{len(chapters)} 章。"
+            )
+        item = ledger.pop(key)
+        _write_development_debt(root, ledger)
+        return item, sorted(f"{b}:{c}" for b, c in chapters)
     if len(named) < 2:
         raise ValueError(
             f"{key} 的主題發展只點名 {len(named)} 卷"

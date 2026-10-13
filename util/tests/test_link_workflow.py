@@ -538,6 +538,45 @@ class UpdateTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "只點名 1 卷"):
                 link_updates.settle_development_debt("link_folder/人物/測試.md", root=root)
 
+    def test_settle_single_book_entry_needs_two_cited_chapters(self):
+        """只在一卷書裡累積的條目，比照 synthesis_scope 以兩章為準；簡稱用和合本的「書」。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entry = root / "link_folder" / "地點" / "測試.md"
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            blocks = render_block("約書亞記", 15, {"summary": "甲", "relation": "乙"})
+            blocks += render_block("約書亞記", 18, {"summary": "丙", "relation": "丁"})
+            ledger = root / "util" / "output" / "development_debt.json"
+            ledger.parent.mkdir(parents=True, exist_ok=True)
+
+            def write(development):
+                entry.write_text(
+                    "# 測試\n\n## 定義\n\n身分。\n\n## 按書卷累積\n\n" + blocks
+                    + "\n\n## 主題發展\n\n" + development
+                    + "\n\n## 相關條目\n\n## 來源依據\n",
+                    encoding="utf-8",
+                )
+                ledger.write_text(json.dumps({"entries": [{
+                    "path": "link_folder/地點/測試.md", "title": "測試",
+                    "deferred_at": "約書亞記:18", "accumulated": 2, "fingerprint": "x",
+                }]}, ensure_ascii=False), encoding="utf-8")
+
+            write("書15:7 寫了一次，別章沒有。")
+            with self.assertRaisesRegex(ValueError, "只點名 1 章"):
+                link_updates.settle_development_debt("link_folder/地點/測試.md", root=root)
+
+            write("書15:7 是猶大的北界，書18:17 是便雅憫的南界。")
+            item, named = link_updates.settle_development_debt("link_folder/地點/測試.md", root=root)
+            self.assertEqual(["約書亞記:15", "約書亞記:18"], named)
+            self.assertEqual([], json.loads(ledger.read_text(encoding="utf-8"))["entries"])
+
+    def test_book_mentions_use_union_version_abbreviations(self):
+        text = "書15:7、王上9:16、代下8:5 與林前10:11"
+        self.assertEqual(
+            {"約書亞記", "列王紀上", "歷代志下", "哥林多前書"},
+            link_updates._book_mentions(text, ["約書亞記", "列王紀上", "歷代志下", "哥林多前書", "約翰福音"]),
+        )
+
     def test_standing_debt_needs_a_debt_signal(self):
         """沒有欠帳訊號時不可用 standing_debt 當萬用出口。"""
         with tempfile.TemporaryDirectory() as tmp:
