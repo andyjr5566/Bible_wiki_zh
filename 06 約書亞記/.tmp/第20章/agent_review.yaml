@@ -1,0 +1,97 @@
+version: 2
+book: 約書亞記
+chapter: 20
+stages:
+  m3:
+    round: 1
+    revision: 1
+    sha256: 14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+    claude: ready
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 1
+    forced_pass: false
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    hash_inputs:
+    - entry_content/加利利.yaml
+    own_sha256: 14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+    verdict_sha: 14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+    thread_id: 01a13561-0448-7431-ba75-f0ba3069d642
+    findings_count: 0
+  m6:
+    round: 2
+    revision: 4
+    sha256: 33f2c982785213dc919af76bdeefdc1de950b2302bfbe40ab51c9b67df673f36
+    verdict_sha: 33f2c982785213dc919af76bdeefdc1de950b2302bfbe40ab51c9b67df673f36
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: 7636966b8cf0f2fa43853b06f1812a0d3410c39d328c13516ca543dca65eb4fa
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: c2839a73bb50d810eb9d92d6e29d59cd39dd4b230818f2ea9a6414bc6e80c490
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 33f2c982785213dc919af76bdeefdc1de950b2302bfbe40ab51c9b67df673f36
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 0
+    thread_id: 01a13567-8a53-76c0-8452-508a31717def
+    hash_inputs:
+    - parent:m3=14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+    - chapter_content.yaml
+    own_sha256: 02ac663f62137403eb6cd2aa13dc5fdbd5021037e6ea5cdeef858f87db1f8134
+  link_updates:
+    round: 2
+    revision: 3
+    sha256: 0f4c452cf14d257bd57d586a1c800ba72c50fca1842d7a65823473acc41662f9
+    verdict_sha: 0f4c452cf14d257bd57d586a1c800ba72c50fca1842d7a65823473acc41662f9
+    claude: revised
+    reviewer_status: pass
+    reviewer_agent: codex
+    review_attempts: 2
+    forced_pass: true
+    forced_reason: max_review_attempts_exhausted_after_final_revision
+    review_history:
+    - attempt: 1
+      reviewer: codex
+      sha256: c6b864cbcf54715b2e69dbb4b67b0d5b22edc5f6414299edc3958b3368678b8b
+      verdict: pass
+      findings_count: 0
+      late_recorded: false
+    - attempt: 2
+      reviewer: codex
+      sha256: 2d20511ecf295ffafd23750c04545f499edb560881f218a3af799c2f7312a957
+      verdict: changes_required
+      findings_count: 1
+      late_recorded: false
+    - attempt: null
+      reviewer: codex
+      sha256: 0f4c452cf14d257bd57d586a1c800ba72c50fca1842d7a65823473acc41662f9
+      verdict: forced_pass
+      forced_pass: true
+    forced_from_findings_count: 1
+    thread_id: 01a13578-3853-7db2-9795-e9deac28c395
+    hash_inputs:
+    - parent:m3=14b9f0371d7ba4fd938f844c6c5afdc08aa7987ea2b1b026fe189f37f6d1875c
+    - parent:m6=33f2c982785213dc919af76bdeefdc1de950b2302bfbe40ab51c9b67df673f36
+    - link_updates.yaml
+    own_sha256: e49e202a5bce2ca7f4ff00bb1d9da4a1b33b583f85263f421e26a96f2b8e98f1

@@ -1,0 +1,241 @@
+book: 約書亞記
+chapter: 20
+A_use_directly: []
+B_needs_update:
+- name: 逃城
+  suggested_type: 互文
+  evidence: 第2-9節耶和華吩咐照著藉摩西所曉諭的設立逃城，河西三座、河東三座；STEP 第2、3節「逃城」是 'a.Rei ha./mik.Lat（H5892B＋H4733，refuge）；GT《研經資料》：逃城原文是「避難所」「收容所」，許多譯本作庇護城；GT《聖經精讀本》：古代諸民族也有類似場所，聖經的制度更有體系，並預表基督；CT、KC：六個城名的靈意；KC：每個地方教會可以是這樣的逃城；BH：逃城限制報血仇者，把審判交給會眾
+  surfaces:
+  - phrase: 逃城
+    verses:
+    - 2
+  match_type: exact
+  existing_title: 逃城
+  existing_path: link_folder/互文/逃城.md
+- name: 謀殺與誤殺的區分
+  suggested_type: 神學
+  evidence: 第3、5、9節「無心而誤殺人的」「素無仇恨，無心殺了人的」；STEP「誤」是 bi/sh.ga.Gah（H7684，unintentionally），「無心」是
+    bi/v.li- Da.'at（H1097＋H1847，without knowledge），「素無仇恨」是 ve./lo'- so.Ne' ... mi./te.Mol
+    shil.Shom（H8130，to hate；H8543＋H8032）；CT：無心而誤殺人即非蓄意殺害，「仇恨」原文無此字；GT 丁道爾：律法將事先計畫的有意謀殺和無心誤殺作了區分；KC：In
+    one case there is only a guilty hand, in the other case there is also a guilty
+    heart.；BH：意圖要仔細衡量
+  match_type: exact
+  existing_title: 謀殺與誤殺的區分
+  existing_path: link_folder/神學/謀殺與誤殺的區分.md
+- name: 報血仇的（ga.al）
+  suggested_type: 原文
+  evidence: '第3、5、9節「報血仇人」「報血仇的」；STEP go.''El ha./Dam（H1350H，ga.al: to redeem: avenge＋H1818）；CT：本著以命償命的原則，為死者報仇的至近親屬；GT《綜合解讀》：「報仇」原文是「贖回」，又被譯為「至近的親屬」（得3:9）和救贖主（詩78:35）；GT《研經資料》：為死者報仇和贖回產業都由至近的親屬執行，所以原文用同一個字；KC：報血仇的就是神自己（應用）；BH：逃城限制了他的角色'
+  surfaces:
+  - phrase: 報血仇人
+    verses:
+    - 3
+    - 9
+  - phrase: 報血仇的
+    verses:
+    - 5
+  match_type: exact
+  existing_title: 報血仇的（ga.al）
+  existing_path: link_folder/原文/報血仇的（ga.al）.md
+- name: 大祭司死了誤殺者才得釋放
+  suggested_type: 神學
+  evidence: 第6節「等到那時的大祭司死了，殺人的才可以回到本城本家」；STEP 'ad- mOt ha./ko.Hen ha./ga.Dol（H4194＋H3548＋H1419A）；CT：當任大祭司死時才得蒙特赦，大祭司之死預表基督救贖之死（民35:25）；GT
+    丁道爾、《研經資料》：大祭司代表全國，他的死象徵誤殺者所造成之罪的結束；GT：猶太傳統說大祭司的母親給避難者提供食物衣服（Mishnah Makkot 11a）；KC：大祭司的死預言性地指主耶穌結束在天上聖所的服事後與以色列重新連結；BH：預表更大的大祭司基督
+  match_type: exact
+  existing_title: 大祭司死了誤殺者才得釋放
+  existing_path: link_folder/神學/大祭司死了誤殺者才得釋放.md
+- name: 摩西分定河東三座逃城（ba.dal）
+  suggested_type: 事件
+  evidence: 第8節「又在約但河外耶利哥東……設立比悉……基列的拉末……巴珊的哥蘭」；KC：河東三座已經點名（申4:41-43），這裡由南到北再列一次；GT《研經資料》：申4:41-43
+    摩西就已經指明河東的三座逃城；GT 丁道爾：申19:1-10 說河西三座之外還要另設三座；BH：河東支派雖隔著河，仍在同一個約的群體與神的公義保護之中
+  match_type: exact
+  existing_title: 摩西分定河東三座逃城（ba.dal）
+  existing_path: link_folder/事件/摩西分定河東三座逃城（ba.dal）.md
+- name: 預備往逃城的道路
+  suggested_type: 主題
+  evidence: 第7-9節六座逃城平均分佈；GT《研經資料》：申19:3 曾提到要修繕通往逃城的道路；GT《綜合解讀》、CT〔話中之光〕：要修好道路、寫清路標，讓任何一個地方的人都可以在一天之內逃到附近的逃城；GT
+    所引馬唐納《約書亞記》：路要保持修補、三十二肘闊、清除障礙、河上有橋、轉彎處寫「避難所」；GT《聖經精讀本》：逃城都位於山頂，遠處也能望見；KC：河西三城都在山地，清楚可見
+  match_type: exact
+  existing_title: 預備往逃城的道路
+  existing_path: link_folder/主題/預備往逃城的道路.md
+- name: 以色列的長老
+  suggested_type: 文化
+  evidence: 第4-5節殺人的站在城門口，將他的事情說給城內的長老們聽，長老把他收進城裡，報血仇的追來，長老不可將他交出；CT：城門口通常有審判官或長老處理案件（得4:1；撒下15:2）；GT《聖經精讀本》：只有被判斷是誤殺的人才能進入城中；GT《綜合解讀》：城內的長老和會眾都是教導聖經的利未人；BH：長老是受尊重的領袖與審判者，給逃亡者公平的申訴機會
+  surfaces:
+  - phrase: 長老
+    verses:
+    - 4
+    - 5
+  match_type: exact
+  existing_title: 以色列的長老
+  existing_path: link_folder/文化/以色列的長老.md
+- name: 城門口公共場合
+  suggested_type: 歷史
+  evidence: 第4節「站在城門口，將他的事情說給城內的長老們聽」；CT：城門口通常有審判官或長老坐著處理案件（得4:1；撒下15:2）；KC：城門口是城裡行政與審判的地方（得4:1、11）；BH：城門是法律交易與公共事務的地方，這個場景顯出庇護申請的正式與合法
+  surfaces:
+  - phrase: 城門口
+    verses:
+    - 4
+  match_type: exact
+  existing_title: 城門口公共場合
+  existing_path: link_folder/歷史/城門口公共場合.md
+- name: 全會眾
+  suggested_type: 人物
+  evidence: 第6、9節「站在會眾面前聽審判」；STEP ha./'e.Dah（H5712，congregation）、la./mish.Pat（H4941G）；CT：會眾指陪審的公眾（民35:24）；GT《研經資料》：第9節原文僅有「直他站在會眾面前」，沒有「聽審判」一詞；GT《雷氏研讀本》：須在距離犯案現場最近的地方受審；BH：會眾按神的律法審查並作出判決
+  surfaces:
+  - phrase: 會眾
+    verses:
+    - 6
+    - 9
+  match_type: exact
+  existing_title: 全會眾
+  existing_path: link_folder/人物/全會眾.md
+- name: 寄居的
+  suggested_type: 原文
+  evidence: 第9節「為以色列眾人和在他們中間寄居的外人所分定的城邑」；STEP ve./la./Ger ha./Gar（H1616 ger＋H1481A
+    gur）；CT：寄居的外邦人也同樣可以獲得逃城的豁免權；GT《研經資料》：外人是旅居者、臨時居民；GT《綜合解讀》：逃城的恩典也是為外人預備的；BH：保護同樣適用於本地人和寄居的外人
+  surfaces:
+  - phrase: 寄居的
+    verses:
+    - 9
+  match_type: exact
+  existing_title: 寄居的
+  existing_path: link_folder/原文/寄居的.md
+- name: 寄居的與本地人同歸一例
+  suggested_type: 主題
+  evidence: 第9節逃城為以色列眾人和寄居的外人所分定；BH：神的供應同樣適用於以色列人和寄居的外人，以色列的公義不按族裔、財富或宗族地位，參照利24:22；CT〔話中之光〕：對誤殺的人不論是希伯來人或是外邦人，都可在那裡求庇護
+  match_type: exact
+  existing_title: 寄居的與本地人同歸一例
+  existing_path: link_folder/主題/寄居的與本地人同歸一例.md
+- name: 分別為聖
+  suggested_type: 神學
+  evidence: '第7節「以色列人……分定加利利的基低斯」；STEP va/i.yak.Di.shu（H6942J，qa.dash: to consecrate:
+    prepare），Hiphil；GT《研經資料》：「分定」原文是「分別為聖」「奉獻出」；KC：這些城被分別出來，為了神所定的目的與別的城分開'
+  surfaces:
+  - phrase: 分定
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 分別為聖
+  existing_path: link_folder/神學/分別為聖.md
+- name: 基低斯
+  suggested_type: 地點
+  evidence: 第7節「在拿弗他利山地分定加利利的基低斯」；CT：字義「聖潔，聖所」，在夏瑣北方約11公里，屬拿弗他利（書19:37）；GT《研經資料》：在胡列湖的北面約8公里；KC：意思是
+    holy，在北方的加利利；BH：使加利利和拿弗他利的人都能就近得庇護
+  surfaces:
+  - phrase: 基低斯
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 基低斯
+  existing_path: link_folder/地點/基低斯.md
+- name: 示劍（城）
+  suggested_type: 地點
+  evidence: 第7節「在以法蓮山地分定示劍」；CT：字義「肩膀，力量」，在耶路撒冷北方約48公里，屬瑪拿西境界（書17:7）；GT《串珠》：耶路撒冷以北五十公里；GT《研經資料》：耶路撒冷以北54公里；KC：意思是
+    shoulder，附近有雅各井（約4:5-6）；BH：亞伯拉罕在此築壇、約書亞後來在此召聚以色列（書24:1）
+  surfaces:
+  - phrase: 示劍
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 示劍（城）
+  existing_path: link_folder/地點/示劍（城）.md
+- name: 以法蓮山地
+  suggested_type: 地點
+  evidence: 第7節「在以法蓮山地分定示劍」；GT《啟導本》：示劍屬以法蓮支派；CT：示劍屬瑪拿西境界之內（書17:7）
+  surfaces:
+  - phrase: 以法蓮山地
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 以法蓮山地
+  existing_path: link_folder/地點/以法蓮山地.md
+- name: 基列亞巴
+  suggested_type: 地點
+  evidence: 第7節「在猶大山地分定基列亞巴（基列亞巴就是希伯崙）」；CT：基列亞巴是希伯崙的原名，是亞衲族始祖亞巴佔據此城時所起的名字，迦勒取得後又改回叫希伯崙（書15:13），字義「四之城」；GT《研經資料》：字義是「亞巴之城」
+  surfaces:
+  - phrase: 基列亞巴
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 基列亞巴
+  existing_path: link_folder/地點/基列亞巴.md
+- name: 希伯崙
+  suggested_type: 地點
+  evidence: 第7節「基列亞巴就是希伯崙」；CT：字義「聯合，朋友，交通」，在耶路撒冷西南方約三十公里；GT《聖經精讀本》：希伯崙原屬迦勒，被選作逃城時迦勒甘心讓給利未支派（書15:13；21:11）；GT《串珠》思想題：迦勒讓出希伯崙與書19
+    猶大讓地給西緬相比；KC：意思是 fellowship；BH：近麥比拉洞，族長的埋葬地
+  surfaces:
+  - phrase: 希伯崙
+    verses:
+    - 7
+  match_type: exact
+  existing_title: 希伯崙
+  existing_path: link_folder/地點/希伯崙.md
+- name: 比悉
+  suggested_type: 地點
+  evidence: 第8節「從流便支派中，在曠野的平原，設立比悉」；STEP Be.tzer（H1221G）；CT：字義「金礦，遠方的營寨」，在希實本東方約8公里，屬流便（申4:43）；GT《串珠》：大概在米底巴東北十三公里；GT《研經資料》：死海北端以東約35公里；BH：服事河東南部
+  surfaces:
+  - phrase: 比悉
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 比悉
+  existing_path: link_folder/地點/比悉.md
+- name: 平原（mi.shor）
+  suggested_type: 地點
+  evidence: 第8節「在曠野的平原，設立比悉」；STEP ba./mid.Bar ba./mi.Shor（H4057B＋H4334，plain）；BH：比悉在摩押高原上，流便的地業
+  surfaces:
+  - phrase: 平原
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 平原（mi.shor）
+  existing_path: link_folder/地點/平原（mi.shor）.md
+- name: 拉末
+  suggested_type: 地點
+  evidence: 第8節「從迦得支派中，設立基列的拉末」；STEP ra.Mot（H7216H）ba./gil.'Ad（H1568G）；CT：字義「高度，高原」，在以得來西南方約11公里、伯珊東方約51公里，屬迦得；GT《串珠》：在亞斯她錄以南約卅六公里；GT《研經資料》：在雅穆河附近，詳細地點不確定；BH：後來成為以色列與亞蘭爭戰的戰略城市（王上22:3-4）
+  surfaces:
+  - phrase: 拉末
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 拉末
+  existing_path: link_folder/地點/拉末.md
+- name: 哥蘭
+  suggested_type: 地點
+  evidence: 第8節「從瑪拿西支派中，設立巴珊的哥蘭」；STEP ga.lon（H1474）；CT：字義「他們的喜悅，他們的囚禁」，在以得來西北方約25公里；GT《研經資料》：在加利利湖以東約32公里；BH：服事巴珊北部
+  surfaces:
+  - phrase: 哥蘭
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 哥蘭
+  existing_path: link_folder/地點/哥蘭.md
+- name: 巴珊
+  suggested_type: 地點
+  evidence: 第8節「巴珊的哥蘭」；BH：巴珊是瑪拿西半支派所佔的肥沃之地，哥蘭服事巴珊北部
+  surfaces:
+  - phrase: 巴珊
+    verses:
+    - 8
+  match_type: exact
+  existing_title: 巴珊
+  existing_path: link_folder/地點/巴珊.md
+- name: 未得之地
+  suggested_type: 主題
+  evidence: 第7節河西只分定三座逃城；GT 丁道爾：申19:8-9 說神若擴張境界還要再添三座城，波爾金注意到約但河西只指定三座而非六座，可以肯定書13:1
+    所提全地尚未完全征服
+  match_type: exact
+  existing_title: 未得之地
+  existing_path: link_folder/主題/未得之地.md
+C_new_formal:
+- name: 加利利
+  suggested_type: 地點
+  evidence: 第7節「在拿弗他利山地分定加利利的基低斯」；STEP ba./ga.Lil（H1551，Galilee）；CT：字義「一帶，行政區」，加利利的基低斯在夏瑣北方約11公里、屬拿弗他利；KC：基低斯在北方的加利利，主耶穌在加利利的拿撒勒住了三十年，在那裡服事、教導門徒與群眾；BH：基低斯使住在加利利和拿弗他利的人都能就近得庇護
+  surfaces:
+  - phrase: 加利利
+    verses:
+    - 7
+  target_path: link_folder/地點/加利利.md
+D_new_candidate: []
+E_skip: []
+locked_at: '2026-10-13T13:15:09Z'

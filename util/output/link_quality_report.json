@@ -1,7 +1,7 @@
 {
-  "total_warnings": 256,
+  "total_warnings": 257,
   "critical_count": 0,
-  "warning_count": 256,
+  "warning_count": 257,
   "warnings": [
     {
       "type": "alias_target_conflict",
@@ -1472,6 +1472,13 @@
       "source": "link_folder/神學/亞伯拉罕之約.md",
       "target": "第26章",
       "message": "同一 alias「第26章」指向多個 target: 01 創世記/第26章, 03 利未記/第26章"
+    },
+    {
+      "type": "alias_target_conflict",
+      "severity": "warning",
+      "source": "link_folder/神學/分別為聖.md",
+      "target": "第20章",
+      "message": "同一 alias「第20章」指向多個 target: 03 利未記/第20章, 06 約書亞記/第20章"
     },
     {
       "type": "alias_target_conflict",

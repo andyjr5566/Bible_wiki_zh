@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "book": "約書亞記",
+  "chapter": 20,
+  "measurement": "Unicode code points (chars) and UTF-8 bytes; no token estimate",
+  "prompts": [
+    {
+      "stage": "chapter_content",
+      "path": "chapter_content.prompt.md",
+      "before": {
+        "chars": 69423,
+        "bytes": 97798
+      },
+      "after": {
+        "chars": 11526,
+        "bytes": 17880
+      },
+      "commentary_bodies_omitted": [
+        {
+          "label": "逐節註解（ccbiblestudy CT）",
+          "path": "raw_data/ccbiblestudy_CT_joshua_20.txt",
+          "chars": 4517,
+          "bytes": 12459
+        },
+        {
+          "label": "拾穗（ccbiblestudy GT）",
+          "path": "raw_data/ccbiblestudy_GT_joshua_20.txt",
+          "chars": 5867,
+          "bytes": 16487
+        },
+        {
+          "label": "研經註解（KingComments）",
+          "path": "raw_data/kingcomments_joshua_20.txt",
+          "chars": 6868,
+          "bytes": 6910
+        },
+        {
+          "label": "研經註解（BibleHub Study）",
+          "path": "raw_data/biblehub_study_joshua_20.txt",
+          "chars": 19917,
+          "bytes": 20217
+        }
+      ],
+      "step": [
+        {
+          "source": "raw_data/stepbible_joshua_20.txt",
+          "selection_mode": "selected_candidates",
+          "raw_chars": 28081,
+          "raw_bytes": 32411,
+          "projected_chars": 6764,
+          "projected_bytes": 7596,
+          "occurrences": 36,
+          "occurrence_count": 36,
+          "lexicon_entries": 19,
+          "selected_verses": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "candidate_count": 40,
+          "selected_candidate_count": 19,
+          "truncated": true,
+          "returned_chars": 6764,
+          "budget": 7000,
+          "fallback_used": false
+        }
+      ]
+    }
+  ]
+}
