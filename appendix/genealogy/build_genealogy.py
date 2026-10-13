@@ -1970,6 +1970,9 @@ class LineageBuilder:
         except ValueError as exc:
             self.err(where, str(exc))
             return []
+        if not parsed:
+            self.err(where, f"經節範圍是空的（起訖寫反了？）：{text}")
+            return []
         for book, chapter, verse in parsed:
             content = self.sc.verse(book, chapter, verse)
             if content is None:
@@ -2040,7 +2043,10 @@ class LineageBuilder:
                 if not isinstance(value, dict):
                     self.err(where + "." + field, "每筆資料必須是 mapping")
                     continue
-                self._dedupe_add(person[field], dict(value))
+                value = dict(value)
+                if not imported:
+                    value.pop("imported", None)  # 只有匯入程式可以標 imported，手寫資料不能藉此跳過檢查
+                self._dedupe_add(person[field], value)
         if item.get("mother_name"):
             person["mother_name"] = item["mother_name"]
         if imported:
@@ -2443,6 +2449,13 @@ class LineageBuilder:
                 quote = " ".join(str(view.get("quote", "")).split())
                 if quote and raw and quote not in raw:
                     self.err(vwhere, f"來源引句未逐字出現在 raw：{sid}")
+                letters = [c for c in quote if c.isalpha()]
+                if letters and sum(c.isascii() for c in letters) > len(letters) / 2 and not view.get("translation"):
+                    self.err(vwhere, "英文原句後面要附中譯（translation）")
+                scripture_text = norm(self.text_of(all_parsed))
+                for q in QUOTE_RE.findall(str(view.get("text", ""))):
+                    if q not in raw and norm(q) not in scripture_text:
+                        self.err(vwhere, f"轉述裡的引句「{q}」不在來源原文或本則經文裡")
     def _chinese_number(self, text: str) -> int:
         value = str(text).strip()
         if not value:
@@ -2488,7 +2501,8 @@ class LineageBuilder:
             event_data[str(event.get("id", ""))] = {
                 **event, "_age_num": self._check_number(event.get("age"), parsed, where, "年歲")}
         records: OrderedDict[str, dict] = OrderedDict()
-        for index, item in enumerate(self.ages.get("people", []) or []):
+        people_rows = self.ages.get("people", []) or []
+        for index, item in enumerate(people_rows):
             pid = str(item.get("id", ""))
             where = f"ages.people#{index + 1}({pid})"
             if pid not in self.people:
@@ -2508,6 +2522,8 @@ class LineageBuilder:
                 if display(pid) != "亞當":
                     self.err(where + ".born.am", "只有亞當可以直接指定創世後年份（AM）")
                 record["_born_am"] = self._check_number(born["am"], [], where + ".born.am", "AM")
+                if record["_born_am"] != 0:
+                    self.err(where + ".born.am", "亞當的出生年份必須是創世後 0 年")
             if born.get("father") and born.get("father") not in records and born.get("father") not in {
                     str(row.get("id", "")) for row in people_rows}:
                 self.err(where + ".born", f"父親不在 ages.people：{born.get('father')}")
@@ -2615,6 +2631,13 @@ class LineageBuilder:
         events = [{key: value for key, value in event.items() if not key.startswith("_")} | {"am": event_years.get(eid)}
                   for eid, event in event_data.items()]
         self.ages_result = {"people": output, "events": events, "notes": self.ages.get("notes", []) or []}
+        for index, note in enumerate(self.ages_result["notes"]):
+            if isinstance(note, dict):
+                nwhere = f"ages.notes#{index + 1}({note.get('id', '')})"
+                parsed = self.refs(str(note.get("refs", "")), nwhere) if note.get("refs") else []
+                if QUOTE_RE.search(str(note.get("text", ""))) and not parsed:
+                    self.err(nwhere, "說明有「」引句，需要 refs")
+                self.check_quotes(str(note.get("text", "")), parsed, nwhere)
 
     def _validate_families(self) -> None:
         for field in ("families", "nt_families"):
@@ -2641,7 +2664,7 @@ class LineageBuilder:
         if person.get("imported"):
             page = str(person["imported"])
             page = page[:-3] if page.endswith(".md") else page
-            return f"[[{page}#{person.get('anchor') or ''}|{name}]]"
+            return f"[[{page}#{person['anchor']}|{name}]]" if person.get("anchor") else name
         return name
 
     def _site_person_link(self, pid: str, label: str | None = None) -> str:
@@ -3082,7 +3105,7 @@ class LineageBuilder:
             if other in self.people and other != pid:
                 rows.append((display(other) + "的後人", str(relation.get("ref", ""))))
         # 反向關係：寫在家族其他成員身上的父母、配偶、兄弟姊妹（例如「底買的兒子巴底買」寫在巴底買那筆）
-        members = set(family.get("members", []) or [])
+        members = list(dict.fromkeys(family.get("members", []) or []))  # 照清單順序，輸出才穩定
         for other in members:
             if other == pid or other not in self.people:
                 continue
