@@ -1,0 +1,993 @@
+# 新約人物（太1:1-16、路3:23-38、耶穌的家人與新約其他家族）
+- id: 以撒
+  parents:
+  - {id: 亞伯拉罕, ref: '太1:2'}
+  - {id: 亞伯拉罕, ref: '路3:34'}
+  - {id: 亞伯拉罕, ref: '徒7:8'}
+  - {id: 亞伯拉罕, ref: '來11:17'}
+- id: 亞伯拉罕
+  parents:
+  - {id: 他拉, ref: '路3:34'}
+- id: 以色列
+  parents:
+  - {id: 以撒, ref: '太1:2'}
+  - {id: 以撒, ref: '路3:34'}
+  - {id: 以撒, ref: '徒7:8'}
+  names:
+  - {as: 雅各, ref: '太1:2'}
+- id: 猶大
+  parents:
+  - {id: 以色列, ref: '太1:2'}
+  - {id: 以色列, ref: '路3:34'}
+- id: 法勒斯
+  parents:
+  - {id: 猶大, ref: '太1:3'}
+  - {id: 他瑪#猶大的兒婦, ref: '太1:3', role: 母}
+  - {id: 猶大, ref: '路3:33'}
+- {id: 他瑪#猶大的兒婦}
+- id: 謝拉
+  parents:
+  - {id: 猶大, ref: '太1:3'}
+  - {id: 他瑪#猶大的兒婦, ref: '太1:3', role: 母}
+- id: 希斯崙
+  parents:
+  - {id: 法勒斯, ref: '太1:3'}
+  - {id: 法勒斯, ref: '路3:33'}
+- id: 蘭
+  parents:
+  - {id: 希斯崙, ref: '太1:3'}
+  - {id: 希斯崙, ref: '路3:33'}
+  names:
+  - {as: 亞蘭, ref: '太1:3'}
+- id: 亞米拿達
+  parents:
+  - {id: 蘭, ref: '太1:4'}
+  - {id: 蘭, ref: '路3:33'}
+- id: 拿順
+  parents:
+  - {id: 亞米拿達, ref: '太1:4'}
+  - {id: 亞米拿達, ref: '路3:33'}
+- id: 撒門
+  parents:
+  - {id: 拿順, ref: '太1:4'}
+  - {id: 拿順, ref: '路3:32'}
+- id: 波阿斯
+  parents:
+  - {id: 撒門, ref: '太1:5'}
+  - {id: 喇合, ref: '太1:5', role: 母}
+  - {id: 撒門, ref: '路3:32'}
+- {id: 喇合}
+- id: 俄備得
+  parents:
+  - {id: 波阿斯, ref: '太1:5'}
+  - {id: 路得, ref: '太1:5', role: 母}
+  - {id: 波阿斯, ref: '路3:32'}
+- {id: 路得}
+- id: 耶西
+  parents:
+  - {id: 俄備得, ref: '太1:5'}
+  - {id: 俄備得, ref: '路3:32'}
+- id: 大衛
+  parents:
+  - {id: 耶西, ref: '太1:6'}
+  - {id: 耶西, ref: '路3:32'}
+- id: 所羅門
+  parents:
+  - {id: 大衛, ref: '太1:6'}
+  - {id: 拔示巴, ref: '太1:6', role: 母}
+- id: 拔示巴
+  sex: f
+  names:
+  - {as: 烏利亞的妻子, ref: '太1:6'}
+- id: 羅波安
+  parents:
+  - {id: 所羅門, ref: '太1:7'}
+- id: 亞比雅
+  parents:
+  - {id: 羅波安, ref: '太1:7'}
+- id: 亞撒
+  parents:
+  - {id: 亞比雅, ref: '太1:7'}
+- id: 約沙法
+  parents:
+  - {id: 亞撒, ref: '太1:8'}
+- id: 約蘭
+  parents:
+  - {id: 約沙法, ref: '太1:8'}
+- id: 亞撒利雅#猶大王
+  parents:
+  - {id: 約蘭, ref: '太1:8'}
+  names:
+  - {as: 烏西雅, ref: '太1:8'}
+- id: 約坦
+  parents:
+  - {id: 亞撒利雅#猶大王, ref: '太1:9'}
+- id: 亞哈斯
+  parents:
+  - {id: 約坦, ref: '太1:9'}
+- id: 希西家
+  parents:
+  - {id: 亞哈斯, ref: '太1:9'}
+- id: 瑪拿西#猶大王
+  parents:
+  - {id: 希西家, ref: '太1:10'}
+- id: 亞們
+  parents:
+  - {id: 瑪拿西#猶大王, ref: '太1:10'}
+- id: 約西亞
+  parents:
+  - {id: 亞們, ref: '太1:10'}
+- id: 耶哥尼雅
+  parents:
+  - {id: 約西亞, ref: '太1:11'}
+- id: 撒拉鐵
+  parents:
+  - {id: 耶哥尼雅, ref: '太1:12'}
+  - {id: 尼利, ref: '路3:27'}
+- id: 所羅巴伯
+  parents:
+  - {id: 撒拉鐵, ref: '太1:12'}
+  - {id: 撒拉鐵, ref: '路3:27'}
+- id: 亞比玉
+  parents:
+  - {id: 所羅巴伯, ref: '太1:13'}
+  sex: m
+  names:
+  - {as: 亞比玉, ref: '太1:13'}
+- id: 以利亞敬#亞比玉
+  parents:
+  - {id: 亞比玉, ref: '太1:13'}
+  sex: m
+  names:
+  - {as: 以利亞敬, ref: '太1:13'}
+- id: 亞所
+  parents:
+  - {id: 以利亞敬#亞比玉, ref: '太1:13'}
+  sex: m
+  names:
+  - {as: 亞所, ref: '太1:13'}
+- id: 撒督#亞所
+  parents:
+  - {id: 亞所, ref: '太1:14'}
+  sex: m
+  names:
+  - {as: 撒督, ref: '太1:14'}
+- id: 亞金
+  parents:
+  - {id: 撒督#亞所, ref: '太1:14'}
+  sex: m
+  names:
+  - {as: 亞金, ref: '太1:14'}
+- id: 以律
+  parents:
+  - {id: 亞金, ref: '太1:14'}
+  sex: m
+  names:
+  - {as: 以律, ref: '太1:14'}
+- id: 以利亞撒#以律
+  parents:
+  - {id: 以律, ref: '太1:15'}
+  sex: m
+  names:
+  - {as: 以利亞撒, ref: '太1:15'}
+- id: 馬但
+  parents:
+  - {id: 以利亞撒#以律, ref: '太1:15'}
+  sex: m
+  names:
+  - {as: 馬但, ref: '太1:15'}
+- id: 雅各#馬但
+  parents:
+  - {id: 馬但, ref: '太1:15'}
+  sex: m
+  names:
+  - {as: 雅各, ref: '太1:15'}
+- id: 約瑟#馬利亞的丈夫
+  parents:
+  - {id: 雅各#馬但, ref: '太1:16'}
+  - {id: 希里, ref: '路3:23'}
+  sex: m
+  names:
+  - {as: 約瑟, ref: '太1:16'}
+  descends:
+  - {id: 大衛, ref: '太1:20'}
+  - {id: 大衛, ref: '路1:27'}
+- id: 耶穌
+  parents:
+  - {id: 馬利亞#耶穌的母親, ref: '太1:16', role: 母}
+  - {id: 約瑟#馬利亞的丈夫, ref: '路3:23', qualifier: 依人看來}
+  - {id: 馬利亞#耶穌的母親, ref: '太1:18', role: 母}
+  - {id: 馬利亞#耶穌的母親, ref: '路1:30-31', role: 母}
+  - {id: 馬利亞#耶穌的母親, ref: '太13:53-55', role: 母}
+  - {id: 馬利亞#耶穌的母親, ref: '約2:1', role: 母}
+  - {id: 馬利亞#耶穌的母親, ref: '徒1:14', role: 母}
+  sex: m
+  names:
+  - {as: 耶穌基督, ref: '太1:1'}
+  descends:
+  - {id: 大衛, ref: '太1:1'}
+  - {id: 亞伯拉罕, ref: '太1:1'}
+  - {id: 大衛, ref: '羅1:3'}
+- id: 馬利亞#耶穌的母親
+  sex: f
+  names:
+    - {as: 馬利亞, ref: 太1:16}
+    - {as: 耶穌的母親, ref: 約2:1}
+  spouses:
+    - {id: 約瑟#馬利亞的丈夫, ref: 太1:16}
+    - {id: 約瑟#馬利亞的丈夫, ref: 太1:18}
+    - {id: 約瑟#馬利亞的丈夫, ref: 太1:20}
+    - {id: 約瑟#馬利亞的丈夫, ref: 路1:27}
+    - {id: 約瑟#馬利亞的丈夫, ref: 路2:4-5}
+- id: 希里
+  parents:
+  - {id: '瑪塔#路3:24', ref: '路3:24'}
+  sex: m
+  names:
+  - {as: 希里, ref: '路3:23'}
+- id: 瑪塔#路3:24
+  parents:
+  - {id: '利未#路3:24', ref: '路3:24'}
+  sex: m
+  names:
+  - {as: 瑪塔, ref: '路3:24'}
+- id: 利未#路3:24
+  parents:
+  - {id: '麥基#路3:24', ref: '路3:24'}
+  sex: m
+  names:
+  - {as: 利未, ref: '路3:24'}
+- id: 麥基#路3:24
+  parents:
+  - {id: 雅拿, ref: '路3:24'}
+  sex: m
+  names:
+  - {as: 麥基, ref: '路3:24'}
+- id: 雅拿
+  parents:
+  - {id: '約瑟#路3:24', ref: '路3:24'}
+  sex: m
+  names:
+  - {as: 雅拿, ref: '路3:24'}
+- id: 約瑟#路3:24
+  parents:
+  - {id: '瑪他提亞#路3:25', ref: '路3:25'}
+  sex: m
+  names:
+  - {as: 約瑟, ref: '路3:24'}
+- id: 瑪他提亞#路3:25
+  parents:
+  - {id: 亞摩斯, ref: '路3:25'}
+  sex: m
+  names:
+  - {as: 瑪他提亞, ref: '路3:25'}
+- id: 亞摩斯
+  parents:
+  - {id: 拿鴻, ref: '路3:25'}
+  sex: m
+  names:
+  - {as: 亞摩斯, ref: '路3:25'}
+- id: 拿鴻
+  parents:
+  - {id: 以斯利, ref: '路3:25'}
+  sex: m
+  names:
+  - {as: 拿鴻, ref: '路3:25'}
+- id: 以斯利
+  parents:
+  - {id: 拿該, ref: '路3:25'}
+  sex: m
+  names:
+  - {as: 以斯利, ref: '路3:25'}
+- id: 拿該
+  parents:
+  - {id: 瑪押, ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 拿該, ref: '路3:25'}
+- id: 瑪押
+  parents:
+  - {id: '瑪他提亞#路3:26', ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 瑪押, ref: '路3:26'}
+- id: 瑪他提亞#路3:26
+  parents:
+  - {id: 西美, ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 瑪他提亞, ref: '路3:26'}
+- id: 西美
+  parents:
+  - {id: '約瑟#路3:26', ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 西美, ref: '路3:26'}
+- id: 約瑟#路3:26
+  parents:
+  - {id: '猶大#路3:26', ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 約瑟, ref: '路3:26'}
+- id: 猶大#路3:26
+  parents:
+  - {id: 約亞拿, ref: '路3:26'}
+  sex: m
+  names:
+  - {as: 猶大, ref: '路3:26'}
+- id: 約亞拿
+  parents:
+  - {id: 利撒, ref: '路3:27'}
+  sex: m
+  names:
+  - {as: 約亞拿, ref: '路3:26'}
+- id: 利撒
+  parents:
+  - {id: 所羅巴伯, ref: '路3:27'}
+  sex: m
+  names:
+  - {as: 利撒, ref: '路3:27'}
+- id: 尼利
+  parents:
+  - {id: '麥基#路3:28', ref: '路3:27'}
+  sex: m
+  names:
+  - {as: 尼利, ref: '路3:27'}
+- id: 麥基#路3:28
+  parents:
+  - {id: 亞底, ref: '路3:28'}
+  sex: m
+  names:
+  - {as: 麥基, ref: '路3:27'}
+- id: 亞底
+  parents:
+  - {id: 哥桑, ref: '路3:28'}
+  sex: m
+  names:
+  - {as: 亞底, ref: '路3:28'}
+- id: 哥桑
+  parents:
+  - {id: 以摩當, ref: '路3:28'}
+  sex: m
+  names:
+  - {as: 哥桑, ref: '路3:28'}
+- id: 以摩當
+  parents:
+  - {id: 珥#約細, ref: '路3:28'}
+  sex: m
+  names:
+  - {as: 以摩當, ref: '路3:28'}
+- id: 珥#約細
+  parents:
+  - {id: 約細, ref: '路3:28'}
+  sex: m
+  names:
+  - {as: 珥, ref: '路3:28'}
+- id: 約細
+  parents:
+  - {id: 以利以謝#約令, ref: '路3:29'}
+  sex: m
+  names:
+  - {as: 約細, ref: '路3:28'}
+- id: 以利以謝#約令
+  parents:
+  - {id: 約令, ref: '路3:29'}
+  sex: m
+  names:
+  - {as: 以利以謝, ref: '路3:29'}
+- id: 約令
+  parents:
+  - {id: '瑪塔#路3:29', ref: '路3:29'}
+  sex: m
+  names:
+  - {as: 約令, ref: '路3:29'}
+- id: 瑪塔#路3:29
+  parents:
+  - {id: '利未#路3:29', ref: '路3:29'}
+  sex: m
+  names:
+  - {as: 瑪塔, ref: '路3:29'}
+- id: 利未#路3:29
+  parents:
+  - {id: '西緬#路3:30', ref: '路3:30'}
+  sex: m
+  names:
+  - {as: 利未, ref: '路3:29'}
+- id: 西緬#路3:30
+  parents:
+  - {id: '猶大#路3:30', ref: '路3:30'}
+  sex: m
+  names:
+  - {as: 西緬, ref: '路3:30'}
+- id: 猶大#路3:30
+  parents:
+  - {id: '約瑟#路3:30', ref: '路3:30'}
+  sex: m
+  names:
+  - {as: 猶大, ref: '路3:30'}
+- id: 約瑟#路3:30
+  parents:
+  - {id: 約南, ref: '路3:30'}
+  sex: m
+  names:
+  - {as: 約瑟, ref: '路3:30'}
+- id: 約南
+  parents:
+  - {id: '以利亞敬#路3:30', ref: '路3:30'}
+  sex: m
+  names:
+  - {as: 約南, ref: '路3:30'}
+- id: 以利亞敬#路3:30
+  parents:
+  - {id: 米利亞, ref: '路3:31'}
+  sex: m
+  names:
+  - {as: 以利亞敬, ref: '路3:30'}
+- id: 米利亞
+  parents:
+  - {id: 買南, ref: '路3:31'}
+  sex: m
+  names:
+  - {as: 米利亞, ref: '路3:31'}
+- id: 買南
+  parents:
+  - {id: 瑪達他, ref: '路3:31'}
+  sex: m
+  names:
+  - {as: 買南, ref: '路3:31'}
+- id: 瑪達他
+  parents:
+  - {id: 拿單, ref: '路3:31'}
+  sex: m
+  names:
+  - {as: 瑪達他, ref: '路3:31'}
+- id: 拿單
+  parents:
+  - {id: 大衛, ref: '路3:31'}
+- id: 他拉
+  parents:
+  - {id: 拿鶴, ref: '路3:34'}
+- id: 拿鶴
+  parents:
+  - {id: 西鹿, ref: '路3:35'}
+- id: 西鹿
+  parents:
+  - {id: 拉吳, ref: '路3:35'}
+- id: 拉吳
+  parents:
+  - {id: 法勒, ref: '路3:35'}
+- id: 法勒
+  parents:
+  - {id: 希伯, ref: '路3:35'}
+- id: 希伯
+  parents:
+  - {id: 沙拉, ref: '路3:35'}
+- id: 沙拉
+  parents:
+  - {id: 該南#亞法撒, ref: '路3:36'}
+- id: 該南#亞法撒
+  parents:
+  - {id: 亞法撒, ref: '路3:36'}
+  sex: m
+  names:
+  - {as: 該南, ref: '路3:36'}
+- id: 亞法撒
+  parents:
+  - {id: 閃, ref: '路3:36'}
+- id: 閃
+  parents:
+  - {id: 挪亞, ref: '路3:36'}
+- id: 挪亞
+  parents:
+  - {id: 拉麥, ref: '路3:36'}
+- id: 拉麥
+  parents:
+  - {id: 瑪土撒拉, ref: '路3:37'}
+- id: 瑪土撒拉
+  parents:
+  - {id: 以諾, ref: '路3:37'}
+- id: 以諾
+  parents:
+  - {id: 雅列, ref: '路3:37'}
+- id: 雅列
+  parents:
+  - {id: 瑪勒列, ref: '路3:37'}
+- id: 瑪勒列
+  parents:
+  - {id: 該南, ref: '路3:37'}
+- id: 該南
+  parents:
+  - {id: 以挪士, ref: '路3:37'}
+- id: 以挪士
+  parents:
+  - {id: 塞特, ref: '路3:38'}
+- id: 塞特
+  parents:
+  - {id: 亞當, ref: '路3:38'}
+- {id: 亞當}
+- id: 雅各#耶穌的弟兄
+  sex: m
+  names:
+    - {as: 雅各, ref: 可6:3}
+  parents:
+    - {id: 馬利亞#耶穌的母親, ref: 可6:3, role: 母}
+  maybe_same:
+    - {id: 雅各#猶1:1, refs: [可6:3, 猶1:1]}
+- id: 約西#耶穌的弟兄
+  sex: m
+  names:
+  - {as: 約西, ref: '可6:3'}
+  parents:
+  - {id: 馬利亞#耶穌的母親, ref: '可6:3', role: 母}
+- id: 西門#耶穌的弟兄
+  sex: m
+  names:
+  - {as: 西門, ref: '可6:3'}
+  parents:
+  - {id: 馬利亞#耶穌的母親, ref: '可6:3', role: 母}
+- id: 猶大#耶穌的弟兄
+  sex: m
+  names:
+  - {as: 猶大, ref: '可6:3'}
+  parents:
+  - {id: 馬利亞#耶穌的母親, ref: '可6:3', role: 母}
+- id: 耶穌母親的姊妹
+  sex: f
+  names:
+  - {as: 他母親的姊妹, ref: '約19:25'}
+  kin:
+  - {id: 馬利亞#耶穌的母親, rel: 姊妹, ref: '約19:25'}
+- id: 馬利亞#革羅罷的妻子
+  sex: f
+  names:
+    - {as: 馬利亞, ref: 約19:25}
+  spouses:
+    - {id: 革羅罷, ref: 約19:25}
+  maybe_same:
+    - {id: 馬利亞#雅各和約西的母親, refs: [約19:25, 可15:40]}
+- id: 革羅罷
+  sex: m
+  names:
+  - {as: 革羅罷, ref: '約19:25'}
+- id: 馬利亞#雅各和約西的母親
+  sex: f
+  names:
+  - {as: 雅各和約西的母親馬利亞, ref: '太27:56'}
+  - {as: 小雅各和約西的母親馬利亞, ref: '可15:40'}
+  - {as: 雅各的母親馬利亞, ref: '可16:1'}
+- id: 雅各#小雅各
+  sex: m
+  names:
+    - {as: 小雅各, ref: 可15:40}
+  parents:
+    - {id: 馬利亞#雅各和約西的母親, ref: 可15:40, role: 母}
+    - {id: 馬利亞#雅各和約西的母親, ref: 太27:56, role: 母}
+  maybe_same:
+    - {id: 雅各#亞勒腓的兒子, refs: [可15:40, 太10:3]}
+- id: 約西#可15:40
+  sex: m
+  names:
+    - {as: 約西, ref: 可15:40}
+  parents:
+    - {id: 馬利亞#雅各和約西的母親, ref: 可15:40, role: 母}
+    - {id: 馬利亞#雅各和約西的母親, ref: 太27:56, role: 母}
+  maybe_same:
+    - {id: 約西#耶穌的弟兄, refs: [可15:40, 可6:3]}
+- id: 撒迦利亞#約翰的父親
+  sex: m
+  names:
+  - {as: 撒迦利亞, ref: '路1:5'}
+- id: 以利沙伯
+  sex: f
+  names:
+    - {as: 以利沙伯, ref: 路1:5}
+  spouses:
+    - {id: 撒迦利亞#約翰的父親, ref: 路1:5}
+  kin:
+    - {id: 馬利亞#耶穌的母親, rel: 親戚, ref: 路1:34-36}
+  descends:
+    - {id: 亞倫, ref: 路1:5}
+- id: 約翰#施洗
+  sex: m
+  names:
+  - {as: 約翰, ref: '路1:13'}
+  - {as: 施洗的約翰, ref: '可6:14'}
+  parents:
+  - {id: 撒迦利亞#約翰的父親, ref: '路1:13'}
+  - {id: 撒迦利亞#約翰的父親, ref: '路3:2'}
+  - {id: 以利沙伯, ref: '路1:57-60', role: 母}
+- id: 西庇太
+  sex: m
+  names:
+  - {as: 西庇太, ref: '太4:21'}
+- id: 雅各#西庇太
+  sex: m
+  names:
+  - {as: 雅各, ref: '太4:21'}
+  parents:
+  - {id: 西庇太, ref: '太4:21'}
+  - {id: 西庇太, ref: '可1:19'}
+  - {id: 西庇太, ref: '路5:10'}
+  - {id: 西庇太兒子的母親, ref: '太4:21, 太20:20', role: 母}
+- id: 約翰#西庇太
+  sex: m
+  names:
+  - {as: 約翰, ref: '太4:21'}
+  parents:
+  - {id: 西庇太, ref: '太4:21'}
+  - {id: 西庇太, ref: '可1:19'}
+  - {id: 西庇太, ref: '路5:10'}
+  - {id: 西庇太兒子的母親, ref: '太4:21, 太20:20', role: 母}
+- id: 西庇太兒子的母親
+  sex: f
+  names:
+  - {as: 西庇太兒子的母親, ref: '太20:20'}
+  - {as: 西庇太兩個兒子的母親, ref: '太27:56'}
+- id: 西門#彼得
+  sex: m
+  names:
+  - {as: 彼得, ref: '太4:18'}
+  - {as: 西門彼得, ref: '約1:40'}
+  - {as: 磯法, ref: '約1:42'}
+  - {as: 西門巴約拿, ref: '太16:17'}
+  parents:
+  - {id: 約翰#西門彼得的父親, ref: '約1:42'}
+  - {id: 約翰#西門彼得的父親, ref: '太16:17'}
+  - {id: 約翰#西門彼得的父親, ref: '約21:15'}
+- id: 約翰#西門彼得的父親
+  sex: m
+  names:
+  - {as: 約翰, ref: '約1:42'}
+  - {as: 約拿, ref: '太16:17'}
+- id: 安得烈
+  sex: m
+  names:
+  - {as: 安得烈, ref: '太4:18'}
+  siblings:
+  - {id: 西門#彼得, ref: '太4:18'}
+  - {id: 西門#彼得, ref: '約1:40-41'}
+- id: 雅各#亞勒腓的兒子
+  sex: m
+  names:
+  - {as: 雅各, ref: '太10:3'}
+  parents:
+  - {id: 亞勒腓#雅各的父親, ref: '太10:3'}
+  - {id: 亞勒腓#雅各的父親, ref: '可3:18'}
+- id: 亞勒腓#雅各的父親
+  sex: m
+  names:
+  - {as: 亞勒腓, ref: '太10:3'}
+- id: 利未#亞勒腓的兒子
+  sex: m
+  names:
+  - {as: 利未, ref: '可2:14'}
+  parents:
+  - {id: 亞勒腓#利未的父親, ref: '可2:14'}
+- id: 亞勒腓#利未的父親
+  sex: m
+  names:
+  - {as: 亞勒腓, ref: '可2:14'}
+- id: 猶大#雅各的兒子
+  sex: m
+  names:
+    - {as: 猶大, ref: 路6:16}
+  parents:
+    - {id: 雅各#路6:16, ref: 路6:16}
+  maybe_same:
+    - {id: 猶大#雅各的弟兄, refs: [路6:16, 猶1:1]}
+- id: 雅各#路6:16
+  sex: m
+  names:
+  - {as: 雅各, ref: '路6:16'}
+- id: 猶大#加略人
+  sex: m
+  names:
+  - {as: 加略人猶大, ref: '約13:2'}
+  parents:
+  - {id: 西門#加略人, ref: '約6:71'}
+  - {id: 西門#加略人, ref: '約13:2'}
+- id: 西門#加略人
+  sex: m
+  names:
+  - {as: 加略人西門, ref: '約6:71'}
+- id: 拉撒路
+  sex: m
+  names:
+  - {as: 拉撒路, ref: '約11:1'}
+  siblings:
+  - {id: 馬利亞#伯大尼, ref: '約11:2'}
+  - {id: 馬大, ref: '約11:1-3'}
+- id: 馬大
+  sex: f
+  names:
+  - {as: 馬大, ref: '約11:1'}
+  siblings:
+  - {id: 馬利亞#伯大尼, ref: '約11:1'}
+- id: 馬利亞#伯大尼
+  sex: f
+  names:
+  - {as: 馬利亞, ref: '約11:1'}
+- id: 馬大#路10:38
+  sex: f
+  names:
+    - {as: 馬大, ref: 路10:38}
+  maybe_same:
+    - {id: 馬大, refs: [路10:38, 約11:1]}
+- id: 馬利亞#路10:39
+  sex: f
+  names:
+    - {as: 馬利亞, ref: 路10:39}
+  siblings:
+    - {id: 馬大#路10:38, ref: 路10:38-39}
+  maybe_same:
+    - {id: 馬利亞#伯大尼, refs: [路10:39, 約11:1]}
+- id: 希律#太2:1
+  sex: m
+  names:
+  - {as: 希律, ref: '太2:1'}
+- id: 亞基老
+  sex: m
+  names:
+  - {as: 亞基老, ref: '太2:22'}
+  parents:
+  - {id: '希律#太2:1', ref: '太2:22'}
+- id: 希律#分封的王
+  sex: m
+  names:
+    - {as: 希律, ref: 太14:1}
+  maybe_same:
+    - {id: 希律#徒13:1, refs: [太14:1, 徒13:1]}
+- id: 腓力#太14:3
+  sex: m
+  names:
+    - {as: 腓力, ref: 太14:3}
+  kin:
+    - {id: 希律#分封的王, rel: 兄弟, ref: 太14:3}
+  maybe_same:
+    - {id: 腓力#路3:1, refs: [太14:3, 路3:1]}
+- id: 腓力#路3:1
+  sex: m
+  names:
+    - {as: 腓力, ref: 路3:1}
+  kin:
+    - {id: 希律#分封的王, rel: 兄弟, ref: 路3:1}
+- id: 希羅底
+  sex: f
+  names:
+  - {as: 希羅底, ref: '太14:3'}
+  spouses:
+  - {id: '腓力#太14:3', ref: '太14:3'}
+  - {id: 希律#分封的王, ref: '可6:17'}
+- id: 希羅底的女兒
+  sex: f
+  names:
+  - {as: 希羅底的女兒, ref: '太14:6'}
+  parents:
+  - {id: 希羅底, ref: '太14:6', role: 母}
+  - {id: 希羅底, ref: '可6:22', role: 母}
+- id: 希律#徒13:1
+  sex: m
+  names:
+  - {as: 希律, ref: '徒13:1'}
+- id: 馬念
+  kin:
+  - {id: '希律#徒13:1', rel: 同養, ref: '徒13:1'}
+  sex: m
+  names:
+  - {as: 馬念, ref: '徒13:1'}
+- id: 腓力斯
+  sex: m
+  names:
+  - {as: 腓力斯, ref: '徒24:24'}
+- id: 土西拉
+  sex: f
+  names:
+  - {as: 土西拉, ref: '徒24:24'}
+  spouses:
+  - {id: 腓力斯, ref: '徒24:24'}
+- id: 苦撒
+  sex: m
+  names:
+  - {as: 苦撒, ref: '路8:3'}
+- id: 約亞拿#苦撒的妻子
+  sex: f
+  names:
+  - {as: 約亞拿, ref: '路8:3'}
+  spouses:
+  - {id: 苦撒, ref: '路8:3'}
+- id: 亞那
+  sex: m
+  names:
+  - {as: 亞那, ref: '約18:13'}
+  kin:
+  - {id: 該亞法, rel: 岳父, ref: '約18:13'}
+- id: 該亞法
+  sex: m
+  names:
+  - {as: 該亞法, ref: '約18:13'}
+- id: 亞拿尼亞#撒非喇的丈夫
+  sex: m
+  names:
+  - {as: 亞拿尼亞, ref: '徒5:1'}
+- id: 撒非喇
+  sex: f
+  names:
+  - {as: 撒非喇, ref: '徒5:1'}
+  spouses:
+  - {id: 亞拿尼亞#撒非喇的丈夫, ref: '徒5:1'}
+- id: 亞居拉
+  sex: m
+  names:
+  - {as: 亞居拉, ref: '徒18:2'}
+- id: 百基拉
+  sex: f
+  names:
+  - {as: 百基拉, ref: '徒18:2'}
+  spouses:
+  - {id: 亞居拉, ref: '徒18:2'}
+- id: 提摩太
+  sex: m
+  names:
+  - {as: 提摩太, ref: '徒16:1'}
+  parents:
+  - {id: 友尼基, ref: '提後1:2, 提後1:5', role: 母}
+- id: 友尼基
+  sex: f
+  names:
+  - {as: 友尼基, ref: '提後1:5'}
+- id: 羅以
+  sex: f
+  names:
+  - {as: 羅以, ref: '提後1:5'}
+  kin:
+  - {id: 提摩太, rel: 外祖母, ref: '提後1:2, 提後1:5'}
+- id: 保羅
+  sex: m
+  names:
+    - {as: 保羅, ref: 羅1:1}
+    - {as: 掃羅, ref: 徒13:9}
+  descends:
+    - {id: 便雅憫, ref: '腓1:1, 腓3:5'}
+    - {id: 便雅憫, ref: '羅1:1, 羅11:1'}
+    - {id: 亞伯拉罕, ref: '羅1:1, 羅11:1'}
+- id: 保羅的外甥
+  sex: m
+  names:
+  - {as: 保羅的外甥, ref: '徒23:16'}
+  kin:
+  - {id: 保羅, rel: 外甥, ref: '徒23:16'}
+- id: 安多尼古
+  names:
+    - {as: 安多尼古, ref: 羅16:7}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:7'}
+- id: 猶尼亞
+  names:
+    - {as: 猶尼亞, ref: 羅16:7}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:7'}
+- id: 希羅天
+  names:
+    - {as: 希羅天, ref: 羅16:11}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:11'}
+- id: 路求#羅16:21
+  names:
+    - {as: 路求, ref: 羅16:21}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+- id: 耶孫#羅16:21
+  names:
+    - {as: 耶孫, ref: 羅16:21}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+- id: 所西巴德
+  names:
+    - {as: 所西巴德, ref: 羅16:21}
+  kin:
+    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+- id: 巴拿巴
+  sex: m
+  names:
+  - {as: 巴拿巴, ref: '西4:10'}
+  - {as: 約瑟, ref: '徒4:36'}
+- id: 馬可
+  sex: m
+  names:
+  - {as: 馬可, ref: '西4:10'}
+  - {as: 稱呼馬可的約翰, ref: '徒12:12'}
+  same_person:
+    basis: 徒15:37 稱「稱呼馬可的約翰」，徒15:39 同一件事改稱「馬可」
+    refs: ['徒15:37', '徒15:39']
+  kin:
+  - {id: 巴拿巴, rel: 表弟, ref: '西4:10'}
+  parents:
+  - {id: 馬利亞#馬可的母親, ref: '徒12:12', role: 母}
+- id: 馬利亞#馬可的母親
+  sex: f
+  names:
+  - {as: 馬利亞, ref: '徒12:12'}
+- id: 亞拿#法內力的女兒
+  sex: f
+  names:
+  - {as: 亞拿, ref: '路2:36'}
+  parents:
+  - {id: 法內力, ref: '路2:36'}
+  descends:
+  - {id: 亞設, ref: '路2:36'}
+- id: 法內力
+  sex: m
+  names:
+  - {as: 法內力, ref: '路2:36'}
+- id: 巴底買
+  sex: m
+  names:
+  - {as: 巴底買, ref: '可10:46'}
+  parents:
+  - {id: 底買, ref: '可10:46'}
+- id: 底買
+  sex: m
+  names:
+  - {as: 底買, ref: '可10:46'}
+- id: 西門#古利奈人
+  sex: m
+  names:
+  - {as: 古利奈人西門, ref: '可15:21'}
+- id: 亞力山大#西門之子
+  sex: m
+  names:
+  - {as: 亞力山大, ref: '可15:21'}
+  parents:
+  - {id: 西門#古利奈人, ref: '可15:21'}
+- id: 魯孚#西門之子
+  sex: m
+  names:
+  - {as: 魯孚, ref: '可15:21'}
+  parents:
+  - {id: 西門#古利奈人, ref: '可15:21'}
+- id: 撒迦利亞#巴拉加之子
+  sex: m
+  names:
+  - {as: 撒迦利亞, ref: '太23:35'}
+  parents:
+  - {id: 巴拉加, ref: '太23:35'}
+- id: 巴拉加
+  sex: m
+  names:
+  - {as: 巴拉加, ref: '太23:35'}
+- id: 所巴特
+  sex: m
+  names:
+  - {as: 所巴特, ref: '徒20:4'}
+  parents:
+  - {id: 畢羅斯, ref: '徒20:4'}
+- id: 畢羅斯
+  sex: m
+  names:
+  - {as: 畢羅斯, ref: '徒20:4'}
+- id: 彼得的岳母
+  sex: f
+  names:
+  - {as: 彼得的岳母, ref: '太8:14'}
+  - {as: 西門的岳母, ref: '可1:30'}
+  kin:
+  - {id: 西門#彼得, rel: 岳母, ref: '太8:14'}
+- id: 猶大#雅各的弟兄
+  sex: m
+  names:
+    - {as: 猶大, ref: 猶1:1}
+  siblings:
+    - {id: 雅各#猶1:1, ref: 猶1:1}
+  maybe_same:
+    - {id: 猶大#耶穌的弟兄, refs: [猶1:1, 可6:3]}
+- id: 雅各#猶1:1
+  sex: m
+  names:
+  - {as: 雅各, ref: '猶1:1'}
+- id: 掃羅
+  parents:
+  - {id: 基士, ref: '徒13:21'}
+- {id: 基士}
+- id: 約瑟
+  parents:
+  - {id: 以色列, ref: '約4:5'}
