@@ -56,3 +56,6 @@ skills-lock.json
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Vite dev server cache
+.vite/
