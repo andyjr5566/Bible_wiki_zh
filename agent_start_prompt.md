@@ -103,8 +103,8 @@ review 預算）以 `AGENTS.md` 為準，這裡不重抄；架構與設計判斷
         沒過就不會寫 checkpoint——先修再送，不要等 PASS 後才被步驟 5b 抓到而多耗一次審查。
      2. 請另一個 agent 唯讀審查：`python util/review_call.py 【書名】 X m3 [--reviewer antigravity]`。
         它只給書卷、章、stage、目前 sha，請 reviewer 依 `agent_evidence_audit_prompt.md` 審查；
-        自動帶 Codex 的 MCP 核准旗標（少了會因 STEP 查詢被拒而 BLOCKED），同一章延續同一個 thread
-        （存在 `.tmp/第x章/reviewer_thread.yaml`），Antigravity 依 `agy models` 取最新一代 High，
+        自動帶 Codex 的 MCP 核准旗標（少了會因 STEP 查詢被拒而 BLOCKED），每個 stage 各用自己的 thread、
+        同一 stage 的 Attempt 2 才延續（存在 `.tmp/第x章/reviewer_thread.yaml`），Antigravity 依 `agy models` 取最新一代 High，
         並在審查前後比對 repo 指紋。審查進行中不要改檔。
      3. 依 reviewer 的 footer 代記：
         `python util/agent_review.py verdict 【書名】 X m3 <pass|changes_required|blocked> --sha <REVIEW_SHA256> --reviewer <codex|antigravity> --findings-count N`

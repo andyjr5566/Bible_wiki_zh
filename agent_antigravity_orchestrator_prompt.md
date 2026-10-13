@@ -22,7 +22,7 @@ Antigravity fallback 一律使用 **當下 `agy models` live catalog 中最新�
 ```
 
 （不要加 `--dangerously-skip-permissions`，那會整組跳過這個 deny。）在這個設定下做 audit，findings 只能純文字回傳——reviewer 在 CLI 層就沒有寫檔／跑指令的能力，包括不能自己改 `util/agent_review.py` 或任何 gate 腳本。因為 deny 也擋掉 `command`，reviewer 自己跑不了 `agent_review.py verdict`；**改由 orchestrator（audit 結束後把 settings.json 恢復正常權限的那個 session）依 reviewer 的報告代記 verdict**，sha 對不上就記不進去，reviewer 偽造不了 PASS。
-5. **同一章的 review 呼叫延續同一個 `agy` conversation，不要每次 audit 都開新的。** M3 第一次 audit 用一般 `agy -p` 開對話並記下 conversation id；之後 M3 Attempt 2、M6 audit、link_updates audit 一律用 `--conversation {id}` 接續同一個 thread。settings.json 的 deny/allow 是每次呼叫時讀取，可以隨呼叫用途切換（做 orchestration 動作時切回正常權限、下一次做 audit 前再切回 deny），但**對話本身不必因為權限切換而重開**——reviewer 因此記得住自己前面已經審過、講過什麼，不必每次重新餵整章上下文。只有真的找不到可延續的舊 conversation，或 Codex／Antigravity 互相交接時，才視為新 thread。
+5. **同一章的 m3、m6、link_updates 各用自己的 `agy` conversation。** 每個 stage 第一次 audit 用一般 `agy -p` 開對話並記下 conversation id；同一 stage 的 Attempt 2 才用 `--conversation {id}` 接續。settings.json 的 deny/allow 是每次呼叫時讀取，可以隨呼叫用途切換（做 orchestration 動作時切回正常權限、下一次做 audit 前再切回 deny），但**對話本身不必因為權限切換而重開**——reviewer 因此記得住自己前面已經審過、講過什麼，不必每次重新餵整章上下文。只有真的找不到可延續的舊 conversation，或 Codex／Antigravity 互相交接時，才視為新 thread。
 6. 所有 reviewer verdict 用：
 
 ```text

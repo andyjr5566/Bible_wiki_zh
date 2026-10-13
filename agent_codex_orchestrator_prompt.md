@@ -16,7 +16,7 @@
 
 **process owner 與 Evidence Reviewer 是同一角色的兩個不同權限狀態，不是同一種權限。** process owner 的工作（run/render/apply/commit 等）保留專案預設 `workspace-write` sandbox；`agent_evidence_audit_prompt.md` 的 audit 呼叫則用 `--sandbox read-only`，不得在有寫入權限的 process-owner session 裡直接做審查。audit 只回傳 findings 純文字；`verdict`／`gate` 由 process-owner 那個有寫入權限的 session 記錄，reviewer 呼叫本身不寫任何檔案。
 
-**但同一章內的 review 呼叫要延續同一個 thread，不要每個 attempt 都重開。** 第一次進 M3 audit 時開一個 read-only Codex thread，記下 `threadId`；之後 M3 Attempt 2、M6、link_updates 的 audit 一律 `--resume {threadId}`，讓 reviewer 記得自己前面說過什麼、複核過什麼，不必每次重新餵整章上下文。resume 沿用原 session 的 sandbox，不需要（也不應該）重新指定。只有換到 Antigravity 接手，或這個 thread 明顯遺失／不可用時，才開新的。
+**同一章的 m3、m6、link_updates 各開自己的 review thread。** 每個 stage 第一次 audit 開一個 read-only Codex thread，同一 stage 的 Attempt 2 才 `--resume {threadId}`，讓 reviewer 記得自己上一輪說過什麼；M6、link_updates 不沿用 M3 的 thread。`util/review_call.py` 依 stage 自動記錄。resume 沿用原 session 的 sandbox，不需要（也不應該）重新指定。只有換到 Antigravity 接手，或這個 thread 明顯遺失／不可用時，才開新的。
 
 **Claude = 研經內容作者。** 負責全文讀四套 Commentary + `read_log.md`、`link_candidates.yaml` 語意選擇、M3、M6、B 類內容與依 findings 修稿。Codex不要自己先寫再自己審。
 

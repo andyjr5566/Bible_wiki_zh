@@ -473,7 +473,8 @@ def run_review(book: str, chapter: int, stage: str | None, *, reviewer: str = "c
     if reviewer not in REVIEWERS:
         raise ReviewCallError(f"--reviewer 必須是：{', '.join(REVIEWERS)}")
     root = Path(root)
-    scope = "global" if global_review else "review"
+    # 每個 stage 各用自己的 thread；同一 stage 的第二次審查才延續。
+    scope = "global" if global_review else str(stage)
     label = "global" if global_review else str(stage)
 
     sha = attempt = None

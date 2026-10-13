@@ -208,7 +208,7 @@ Intent auto-detection, hybrid ranking, session memory, auto-expanding budget.
 
 - Codex 是新章預設 host，先讀 `agent_codex_orchestrator_prompt.md`。
 - 負責 source/manifest/STEP machine validation、similarity/resolver/prompts、review receipt、check、run/render、B prepare/preview/apply、final gates、commit。
-- Claude交稿後依 `agent_evidence_audit_prompt.md` 查核；audit 對 Claude-authored content read-only，findings 退 Claude 修。這個 read-only 是技術限制：Codex 走獨立 `--sandbox read-only` 呼叫，Antigravity 走 `~/.gemini/antigravity-cli/settings.json` 的 deny-write 設定；audit 不寫任何檔案，verdict 由有寫入權限的 process-owner session 代記。reviewer 不得修改 `util/agent_review.py` 或任何 gate 腳本讓自己過關；每輪 audit 後先 `git status util/` 再採信 verdict。**同一章的 review 呼叫延續同一個 thread/conversation**（Codex `--resume`、Antigravity `--conversation`），不必每個 attempt 都重開，只有換 reviewer 或找不到可延續的舊 thread 時才開新的。
+- Claude交稿後依 `agent_evidence_audit_prompt.md` 查核；audit 對 Claude-authored content read-only，findings 退 Claude 修。這個 read-only 是技術限制：Codex 走獨立 `--sandbox read-only` 呼叫，Antigravity 走 `~/.gemini/antigravity-cli/settings.json` 的 deny-write 設定；audit 不寫任何檔案，verdict 由有寫入權限的 process-owner session 代記。reviewer 不得修改 `util/agent_review.py` 或任何 gate 腳本讓自己過關；每輪 audit 後先 `git status util/` 再採信 verdict。**同一章的 m3、m6、link_updates 各用自己的 reviewer thread**；同一 stage 的 Attempt 2 才延續該 stage 的 thread（Codex `--resume`、Antigravity `--conversation`）。全局 review 另用 global thread。`util/review_call.py` 依 stage 記在 `reviewer_thread.yaml`。
 - M3 必查已寫內容與 **missing entry candidate**；candidate 根因要退回 `link_candidates.yaml`，再重跑 deterministic steps。
 - Codex 不做第一次語意作者；否則會自己寫、自己審。
 

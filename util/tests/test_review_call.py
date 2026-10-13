@@ -213,7 +213,7 @@ class RunReviewTests(unittest.TestCase):
         self.assertIn("--sandbox", cmd)
         self.assertIn(self.sha, stdin_text)
         threads = review_call.load_threads(BOOK, CHAPTER, self.root)
-        self.assertEqual("11111111-2222-3333-4444-555555555555", threads["threads"]["review"]["codex"])
+        self.assertEqual("11111111-2222-3333-4444-555555555555", threads["threads"]["m3"]["codex"])
         logs = list((self.tmp_dir / review_call.LOG_DIRNAME).glob("m3_*.out"))
         self.assertEqual(["m3_1.out"], [p.name for p in logs])
         joined = "\n".join(self.out)
@@ -293,11 +293,26 @@ class RunReviewTests(unittest.TestCase):
         self.assertIn("plan", calls[0])
         threads = review_call.load_threads(BOOK, CHAPTER, self.root)
         self.assertEqual("123e4567-e89b-12d3-a456-426614174000",
-                         threads["threads"]["review"]["antigravity"])
+                         threads["threads"]["m3"]["antigravity"])
         # 第二次延續
         calls.clear()
         self._run(runner, reviewer="antigravity")
         self.assertEqual(["--conversation", "123e4567-e89b-12d3-a456-426614174000"], calls[0][-2:])
+
+    def test_each_stage_uses_its_own_thread(self):
+        self._run(self._fake_runner(_footer(self.sha), session_id="aaaaaaaa-0000-0000-0000-000000000001"))
+        agent_review.record_verdict(BOOK, CHAPTER, "m3", "pass", self.sha, reviewer="codex",
+                                    findings_count=0, root=self.root)
+        (self.tmp_dir / "chapter_content.yaml").write_text("organization: x\n", encoding="utf-8")
+        _path, m6 = agent_review.submit(BOOK, CHAPTER, "m6", self.root)
+        calls = []
+        self._run(self._fake_runner(_footer(m6["sha256"], stage="m6"),
+                                    session_id="cccccccc-0000-0000-0000-000000000003", calls=calls),
+                  stage="m6")
+        self.assertNotIn("resume", calls[0][0])           # m6 不沿用 m3 的 thread
+        threads = review_call.load_threads(BOOK, CHAPTER, self.root)["threads"]
+        self.assertEqual("aaaaaaaa-0000-0000-0000-000000000001", threads["m3"]["codex"])
+        self.assertEqual("cccccccc-0000-0000-0000-000000000003", threads["m6"]["codex"])
 
     def test_global_review_uses_separate_thread_and_log(self):
         self._run(self._fake_runner(_footer(self.sha), session_id="aaaaaaaa-0000-0000-0000-000000000001"))
@@ -312,7 +327,7 @@ class RunReviewTests(unittest.TestCase):
         self.assertNotIn("resume", cmd)                  # 不沿用審查 thread
         self.assertIn("GLOBAL_REVIEW", stdin_text)
         threads = review_call.load_threads(BOOK, CHAPTER, self.root)["threads"]
-        self.assertEqual("aaaaaaaa-0000-0000-0000-000000000001", threads["review"]["codex"])
+        self.assertEqual("aaaaaaaa-0000-0000-0000-000000000001", threads["m3"]["codex"])
         self.assertEqual("bbbbbbbb-0000-0000-0000-000000000002", threads["global"]["codex"])
         self.assertTrue((self.tmp_dir / review_call.LOG_DIRNAME / "global_1.out").is_file())
         self.assertNotIn("python util/agent_review.py verdict", "\n".join(self.out))
