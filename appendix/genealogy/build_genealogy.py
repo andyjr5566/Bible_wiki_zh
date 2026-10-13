@@ -2176,9 +2176,12 @@ class LineageBuilder:
                         continue
                     owner_names = self.names_for(pid)
                     other_names = self.names_for(other)
-                    if owner_names and not any(value in self.text_of(parsed) for value in owner_names):
+                    # who_ref：書信裡「我」「你」指誰的經節（例如羅1:1 寫信的是保羅），只用來核對人名，不顯示為依據
+                    name_parsed = parsed + (self.refs(str(relation["who_ref"]), rwhere + ".who_ref")
+                                            if relation.get("who_ref") else [])
+                    if owner_names and not any(value in self.text_of(name_parsed) for value in owner_names):
                         self.err(rwhere, f"本人物名「{display(pid)}」未逐字出現在所引經文")
-                    if other_names and not any(value in self.text_of(parsed) for value in other_names):
+                    if other_names and not any(value in self.text_of(name_parsed) for value in other_names):
                         self.err(rwhere, f"對方人名「{display(other)}」未逐字出現在所引經文")
                     if field == "kin":
                         self.need_exact(str(relation.get("rel", "")), parsed, rwhere, "親屬用字")
@@ -2786,7 +2789,7 @@ class LineageBuilder:
     def _render_table(self, ids: list[str], lines: list[str]) -> list[str]:
         witnesses = [w for w in self.witnesses
                      if any(self._witness_shown(w, pid).strip() for pid in ids)]
-        headers = ["代數", "人名"] + [str(w.get("title", w.get("id", ""))) for w in witnesses]
+        headers = ["代數", "人名"] + [str(w.get("ref") or w.get("title", w.get("id", ""))) for w in witnesses]
         out = ["| " + " | ".join(headers) + " |", "|" + "|".join("---" for _ in headers) + "|"]
         for pid in ids:
             generations = [self.generations.get(pid, {}).get(line) for line in lines]
@@ -2996,6 +2999,16 @@ class LineageBuilder:
         return out
 
     def _nt_relation(self, family: dict, pid: str) -> list[tuple[str, str]]:
+        def shown(other: str, ref: str) -> str:
+            """這一節經文實際用的寫法（例如太16:17 稱彼得的父親「約拿」，約1:42 稱「約翰」）。"""
+            try:
+                text = self.text_of(self.refs(ref, "nt_relation"))
+            except Exception:  # noqa: BLE001
+                return display(other)
+            names = sorted(self.names_for(other), key=len, reverse=True)
+            if display(other) in text:
+                return display(other)
+            return next((n for n in names if n in text), display(other))
         person = self.people[pid]
         rows = []
         for relation in person["parents"]:
@@ -3004,7 +3017,7 @@ class LineageBuilder:
                 continue
             role = {"f": "女兒", "m": "兒子"}.get(person.get("sex"), "孩子")
             prefix = str(relation.get("qualifier") or "")
-            rows.append(((prefix + "，" if prefix else "") + display(other) + "的" + role, str(relation.get("ref", ""))))
+            rows.append(((prefix + "，" if prefix else "") + shown(other, str(relation.get("ref", ""))) + "的" + role, str(relation.get("ref", ""))))
         for relation in person["spouses"]:
             other = str(relation.get("id", ""))
             if other not in self.people or other == pid:
@@ -3024,6 +3037,27 @@ class LineageBuilder:
             other = str(relation.get("id", ""))
             if other in self.people and other != pid:
                 rows.append((display(other) + "的後人", str(relation.get("ref", ""))))
+        # 反向關係：寫在家族其他成員身上的父母、配偶、兄弟姊妹（例如「底買的兒子巴底買」寫在巴底買那筆）
+        members = set(family.get("members", []) or [])
+        for other in members:
+            if other == pid or other not in self.people:
+                continue
+            for relation in self.people[other]["parents"]:
+                if relation.get("id") == pid:
+                    role = "母親" if relation.get("role") == "母" else "父親"
+                    prefix = str(relation.get("qualifier") or "")
+                    rows.append(((prefix + "，" if prefix else "") + shown(other, str(relation.get("ref", ""))) + "的" + role,
+                                 str(relation.get("ref", ""))))
+            for relation in self.people[other]["spouses"]:
+                if relation.get("id") == pid and not any(r.get("id") == other for r in person["spouses"]):
+                    role = {"f": "妻子", "m": "丈夫"}.get(person.get("sex"), "配偶")
+                    rows.append((display(other) + "的" + role, str(relation.get("ref", ""))))
+            for relation in self.people[other]["siblings"]:
+                if relation.get("id") == pid and not any(r.get("id") == other for r in person["siblings"]):
+                    rows.append((display(other) + "的兄弟姊妹", str(relation.get("ref", ""))))
+            for relation in self.people[other]["kin"]:
+                if relation.get("id") == pid:
+                    rows.append((display(other) + "是他的" + str(relation.get("rel", "")), str(relation.get("ref", ""))))
         return rows
 
     def _render_nt_families(self) -> list[str]:

@@ -830,7 +830,7 @@
   names:
   - {as: 提摩太, ref: '徒16:1'}
   parents:
-  - {id: 友尼基, ref: '提後1:2, 提後1:5', role: 母}
+  - {id: 友尼基, ref: 提後1:5, who_ref: 提後1:2, role: 母}
 - id: 友尼基
   sex: f
   names:
@@ -840,16 +840,16 @@
   names:
   - {as: 羅以, ref: '提後1:5'}
   kin:
-  - {id: 提摩太, rel: 外祖母, ref: '提後1:2, 提後1:5'}
+  - {id: 提摩太, rel: 外祖母, ref: 提後1:5, who_ref: 提後1:2}
 - id: 保羅
   sex: m
   names:
     - {as: 保羅, ref: 羅1:1}
     - {as: 掃羅, ref: 徒13:9}
   descends:
-    - {id: 便雅憫, ref: '腓1:1, 腓3:5'}
-    - {id: 便雅憫, ref: '羅1:1, 羅11:1'}
-    - {id: 亞伯拉罕, ref: '羅1:1, 羅11:1'}
+    - {id: 便雅憫, ref: 腓3:5, who_ref: 腓1:1}
+    - {id: 便雅憫, ref: 羅11:1, who_ref: 羅1:1}
+    - {id: 亞伯拉罕, ref: 羅11:1, who_ref: 羅1:1}
 - id: 保羅的外甥
   sex: m
   names:
@@ -860,32 +860,32 @@
   names:
     - {as: 安多尼古, ref: 羅16:7}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:7'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:7, who_ref: 羅1:1}
 - id: 猶尼亞
   names:
     - {as: 猶尼亞, ref: 羅16:7}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:7'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:7, who_ref: 羅1:1}
 - id: 希羅天
   names:
     - {as: 希羅天, ref: 羅16:11}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:11'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:11, who_ref: 羅1:1}
 - id: 路求#羅16:21
   names:
     - {as: 路求, ref: 羅16:21}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:21, who_ref: 羅1:1}
 - id: 耶孫#羅16:21
   names:
     - {as: 耶孫, ref: 羅16:21}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:21, who_ref: 羅1:1}
 - id: 所西巴德
   names:
     - {as: 所西巴德, ref: 羅16:21}
   kin:
-    - {id: 保羅, rel: 親屬, ref: '羅1:1, 羅16:21'}
+    - {id: 保羅, rel: 親屬, ref: 羅16:21, who_ref: 羅1:1}
 - id: 巴拿巴
   sex: m
   names:
